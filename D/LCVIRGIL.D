@@ -42,8 +42,15 @@ IF ~~ THEN BEGIN LCA_Hopelessness2
 	IF ~~ THEN REPLY @59 /* ~You'll be out soon enough, once Winston is apprehended. You'll have an opportunity for a fresh start. I suggest you make the most of it.~*/
 	GOTO LCA_Hopeful
 	
-	IF ~~ THEN REPLY @60 /* ~You're right. The stigma of being a slaver will follow you until you're dead. What a shame.~*/
-	GOTO LCA_GoToHell
+	IF ~
+		Gender(Player1, MALE)
+	~ THEN REPLY @60 /* ~You're right. The stigma of being a slaver will follow you until you're dead. What a shame.~*/
+	GOTO LCA_GoToHell_M
+	
+	IF ~
+		Gender(Player1, FEMALE)
+	~ THEN REPLY @60 /* ~You're right. The stigma of being a slaver will follow you until you're dead. What a shame.~*/
+	GOTO LCA_GoToHell_F
 END
 
 IF ~~ THEN BEGIN LCA_Hopeful
@@ -64,8 +71,14 @@ IF ~~ THEN BEGIN LCA_Hopeful
 	
 END
 
-IF ~~ THEN BEGIN LCA_GoToHell
-	SAY @61 /* ~Y-you really are a heartless bastard, you know that? Get out of my sight!~*/
+IF ~~ THEN BEGIN LCA_GoToHell_M
+	SAY @61 /* ~You really are a heartless bastard, you know that? Get out of my sight!~ [LCVIRG07]*/
+	
+	IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN LCA_GoToHell_F
+	SAY @64 /* ~You really are a heartless bitch, you know that? Get out of my sight!~ [LCVIRG09]*/
 	
 	IF ~~ THEN EXIT
 END
