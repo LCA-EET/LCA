@@ -1,0 +1,11 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeToColor([30.0],0)
+		Wait(3)
+		SetGlobal("LCA_StartTOB", "GLOBAL", 1)
+		TextScreen("CHSARA1")
+		StartCutscene("LCSARA")
+END

@@ -1,0 +1,112 @@
+BEGIN ~LCFFVALI~
+
+IF ~
+	Global("LCA_ByeRohma", "GLOBAL", 1)
+	IsGabber("LCCORWIN")
+~ THEN BEGIN LCA_Evening
+	SAY @14 /* ~Evening, Major.~ */
+	
+	IF ~~ THEN EXIT
+END
+
+IF ~
+	Global("LCA_ByeRohma", "GLOBAL", 1)
+	!IsGabber("LCCORWIN")
+	Gender(Player1, MALE)
+~ THEN BEGIN LCA_Evening
+	SAY @15 /* ~Evening, sir.~*/
+	
+	IF ~~ THEN EXIT
+END
+
+IF ~
+	Global("LCA_ByeRohma", "GLOBAL", 1)
+	!IsGabber("LCCORWIN")
+	Gender(Player1, FEMALE)
+~ THEN BEGIN LCA_Evening
+	SAY @16 /* ~Evening, ma'am.~ */
+	
+	IF ~~ THEN EXIT
+END
+
+IF ~
+	!Global("LCA_SpokeToValiant", "GLOBAL", 1)
+	!IsGabber("LCCORWIN")
+~ THEN BEGIN LCA_Greeting
+	SAY @5 /* ~Can I help you?~ */
+	
+	IF ~~ THEN REPLY @4 /* ~You seem exceptionally well-armed and armored.~ */
+	DO ~
+		SetGlobal("LCA_SpokeToValiant", "GLOBAL", 1)
+	~
+	GOTO LCA_Explain
+	
+	IF ~~ THEN REPLY @6 /* ~I heard Marshal Nederlok refer to you as a 'Valiant'. Could you explain what that is?~ */
+	DO ~
+		SetGlobal("LCA_SpokeToValiant", "GLOBAL", 1)
+	~
+	GOTO LCA_Explain
+END
+
+IF ~~ THEN BEGIN LCA_Explain
+	SAY @3 /* ~The Valiant program was established by Duke Eltan shortly after the defeat of Sarevok. Our mission is to protect the Council from unusually potent threats, such as those posed by the Bhaalspawn. We are some of the most skilled fighters that the Fist has to offer.~ */
+	
+	IF ~~ THEN REPLY @10 /* ~Very good. As you were.~ */
+	EXIT
+	
+	IF ~
+		Gender(Player1, MALE)
+	~ THEN REPLY @7 /* ~I see. Maybe you'd like to test your fighting prowess on me? I am a Bhaalspawn, after all.~ */
+	GOTO LCA_GetLostM
+
+	IF ~
+		!Gender(Player1, MALE)
+	~ THEN REPLY @7 /* ~I see. Maybe you'd like to test your fighting prowess on me? I am a Bhaalspawn, after all.~ */
+	GOTO LCA_GetLostF
+END
+
+IF ~~ THEN BEGIN LCA_GetLostM
+	SAY @8 /* ~This is hardly the time or place. I suggest you stay focused on the task at hand, sir.~ */
+	IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN LCA_GetLostF
+	SAY @9 /* ~This is hardly the time or place. I suggest you stay focused on the task at hand, ma'am.~ */
+	IF ~~ THEN EXIT
+END
+
+IF ~
+	IsGabber("LCCORWIN")
+~ THEN BEGIN LCA_CorwinGreeting
+	SAY @11 /* ~We stand ready to assist in the rescue of your daughter, ma'am.~  */
+	
+	IF ~~ THEN EXIT
+END
+
+IF ~
+	RandomNum(4,1)
+~ THEN BEGIN LCA0
+	SAY @0 /* ~Watch yourself.~*/
+	IF ~~ THEN EXIT
+END
+
+IF ~
+	RandomNum(4,2)
+~ THEN BEGIN LCA1
+	SAY @1 /* ~The safety of the Council is my highest priority.~ */
+	IF ~~ THEN EXIT
+END
+
+IF ~
+	RandomNum(4,3)
+~ THEN BEGIN LCA2
+	SAY @12 /* ~Tread carefully.~ */
+	IF ~~ THEN EXIT
+END
+
+IF ~
+	RandomNum(4,4)
+~ THEN BEGIN LCA3
+	SAY @13 /* ~Speak to the wizard Melkor if you require provisions.~ */
+	IF ~~ THEN EXIT
+END

@@ -1,0 +1,112 @@
+// Wyrm's Crossing - Return to Baldur's Gate
+
+//Spawn Creatures
+
+IF 
+	Global("LCA_PartyRemovalProcessing", "GLOBAL", 2)
+	!Global("LCA_WyrmNPCsCreated", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("Scar",DestroySelf())
+		ActionOverride("flamgg",DestroySelf())
+		ActionOverride("Quayle",DestroySelf())
+		
+		EraseJournalEntry(97346)  // Rillifane's avatar has appeared and cleared a path forward. I must go to the Tree of Life and confront Irenicus once and for all.
+		EraseJournalEntry(4352)  // Finding Irenicus in Hell Irenicus's death did not have the same effect as Bodhi's did, and my soul has not returned to me. Perhaps it was because of the power he gathered from the Tree of Life, or because Bodhi was undead. Regardless, Irenicus has fallen, dragging both my soul and myself inexorably behind. I am now alone in what must be the Nine Hells, but I am certain Irenicus is here somewhere... and somehow, in this, I must find the mage and battle him once and for all to get my soul back.
+		
+		AdvanceTime(FOURTEEN_DAYS)
+		ActionOverride(Player1,Rest())
+		ActionOverride(Player2,Rest())
+		ActionOverride(Player3,Rest())
+		ActionOverride(Player4,Rest())
+		ActionOverride(Player5,Rest())
+		ActionOverride(Player6,Rest())
+		
+		CreateCreature("LCNEDERL", [1553.1370], SE) // Nederlok
+		CreateCreature("LCBENCE", [1500.1396], SE) // Bence
+		CreateCreature("BDNOBF7", [1400.1300], SE) // City Official
+		CreateCreature("BDNOBM2", [1466.1263], SE) // City Official
+		CreateCreature("LCFF1248", [1415.1385], SE) // FF Officer
+		CreateCreature("LCFF1271", [1566.1288], SE) // FF Officer
+		
+		CreateCreature("BDFF1709", [4038.3160], SE) // Bridge Guard
+		CreateCreature("BDFF1002", [3916.3244], SE) // Bridge Guard
+		CreateCreature("BDFF1002", [2634.2404], SE) // Bridge Guard
+		CreateCreature("BDFF1709", [2891.2217], SE) // Bridge Guard
+		SetGlobal("LCA_WyrmNPCsCreated", "GLOBAL", 1)
+		SetGlobal("Chapter","GLOBAL",19)
+		SetGlobal("ThiefSecretQuestion","GLOBAL",0)
+		FadeFromColor([20.0],0)
+		Continue()
+END
+
+IF 
+	Global("LCA_PartyRemovalProcessing", "GLOBAL", 2)
+	Global("LCA_WyrmNPCsCreated", "GLOBAL", 1)
+THEN 
+	RESPONSE #100
+		Wait(1)
+		StartCutSceneMode()
+		SetCutSceneLite(TRUE)
+		ActionOverride("LCNEDERL", StartDialog("LCNEDERL", Player1))
+		Continue()
+END
+
+IF 
+	Global("LCA_BenceWyrm", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("BDNOBF7", MoveToPoint([3.827])
+		ActionOverride("BDNOBF7", EscapeArea())
+		SmallWait(2)
+		ActionOverride("BDNOBM2", MoveToPoint([3.827])
+		ActionOverride("BDNOBM2", EscapeArea())
+		SmallWait(2)
+		ActionOverride("LCFF1271", MoveToPoint([3.827])
+		ActionOverride("LCFF1271", EscapeArea())
+		SmallWait(2)
+		ActionOverride("LCFF1248", MoveToPoint([3.827])
+		ActionOverride("LCFF1248", EscapeArea())
+		SmallWait(2)
+		ActionOverride("LCNEDERL", MoveToPoint([3.827])
+		ActionOverride("LCNEDERL", EscapeArea())
+		SmallWait(2)
+		Wait(3)
+		ActionOverride("LCBENCE", StartDialog("LCBENCE", Player1))
+		Continue()
+END
+
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Global("LCA_DrawBridgeDown","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_DrawBridgeDown","GLOBAL",1)
+		CloseDoor("DoorDraw")
+		Continue()
+END
+
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 2)
+	Global("LCA_DrawBridgeDown","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_DrawBridgeDown","GLOBAL",0)
+		OpenDoor("DoorDraw")
+		Continue()
+END
+
+IF 
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Global("LCA_NPCsDestroyed","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_NPCsDestroyed","GLOBAL",1)
+		
+		ActionOverride("LCNEDERL", DestroySelf()) // Nederlok
+		ActionOverride("BDNOBF7", DestroySelf()) // City Official
+		ActionOverride("BDNOBM2", DestroySelf()) // City Official
+		ActionOverride("LCFF1248", DestroySelf()) // FF Officer
+		ActionOverride("LCFF1271", DestroySelf()) // FF Officer
+		
+END

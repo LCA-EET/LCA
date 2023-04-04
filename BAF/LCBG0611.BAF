@@ -1,0 +1,9 @@
+IF 
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Global("LCA_DestroyNPCs_0611", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_DestroyNPCs_0611", "GLOBAL", 1)
+		ActionOverride("IRON12", DestroySelf())
+		CreateCreature("LCWVGRD2", [320.400], SE)
+END

@@ -1,0 +1,19 @@
+IF
+	Clicked([ANYONE])
+	Global("ClickedHeads","LC4000",0)  // Spirit Heads
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		SetGlobal("ClickedHeads","LC4000",1)  // Spirit Heads
+		StartCutSceneMode()
+		StartCutScene("LC204a")
+END
+
+IF
+	Clicked([ANYONE])
+	Global("ClickedHeads","LC4000",1)  // Spirit Heads
+THEN
+	RESPONSE #100
+		DisplayString(Myself,70745)  // The heads have nothing further to say.
+END
+

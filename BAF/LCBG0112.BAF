@@ -1,0 +1,10 @@
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Global("LCA_NPCs_0112", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_NPCs_0112", "GLOBAL", 1)
+		ActionOverride("SLYTHE", DestroySelf())
+		ActionOverride("KRYSTIN", DestroySelf())
+		CreateCreature("LCJASPER", [420.1542], SSE)
+END

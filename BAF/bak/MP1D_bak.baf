@@ -1,0 +1,53 @@
+IF
+	GlobalTimerExpired("LCA_STtoBG","GLOBAL") // see MBREGA.d state M34
+	!Global("LCA_CS03_Done", "GLOBAL", 1)
+	OR(2)
+	Global("LCA_LetterSent", "GLOBAL", 1) // Corwin Love
+	Global("LCA_LetterSent", "GLOBAL", 2) // Corwin 
+THEN
+  RESPONSE #100
+	SetGlobal("LCA_CS03_Done", "GLOBAL", 1)
+    StartCutSceneMode()
+    StartCutSceneEx("LCAcs03a",FALSE)
+END
+
+IF
+	GlobalTimerExpired("LCA_STtoBG","GLOBAL") // see MBREGA.d state M34
+	Global("LCA_LetterSent", "GLOBAL", 3) // Duncan
+	!Global("LCA_CS02_Done", "GLOBAL", 1)
+THEN
+  RESPONSE #100
+	SetGlobal("LCA_CS02_Done", "GLOBAL", 1)
+    StartCutSceneMode()
+    StartCutSceneEx("LCAcs02a",FALSE)
+END
+
+IF
+  GlobalTimerExpired("LCA_CS04","GLOBAL")
+  !Global("LCA_CS04_Done", "GLOBAL", 1)
+THEN
+  RESPONSE #100
+	SetGlobal("LCA_CS04_Done", "GLOBAL", 1)
+    StartCutSceneMode()
+    StartCutSceneEx("LCAcs04a",FALSE)
+END
+
+IF
+  GlobalTimerExpired("LCA_CS05","GLOBAL")
+  !Global("LCA_CS05_Done", "GLOBAL", 1)
+THEN
+  RESPONSE #100
+	SetGlobal("LCA_CS05_Done", "GLOBAL", 1)
+    StartCutSceneMode()
+    StartCutSceneEx("LCAcs05a",FALSE)
+END
+
+IF
+  GlobalTimerExpired("LCA_CS01","GLOBAL")
+  !Global("LCA_CS01_Done", "GLOBAL", 1)
+THEN
+  RESPONSE #100
+	SetGlobal("LCA_CS01_Done", "GLOBAL", 1)
+    StartCutSceneMode()
+    StartCutSceneEx("LCAcs01a",FALSE)
+END

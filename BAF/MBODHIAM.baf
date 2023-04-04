@@ -1,0 +1,15 @@
+//Modifications to BODHIAMB.BCS
+//Daniel Valle
+//dan@danielvalle.net
+/* Revision History
+
+2022-11-25: Initial Commit
+
+*/
+IF
+	Global("LCA_CorwinBit","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Deactivate0801","AR0800",3)  // Graveyard
+		ForceSpell(Myself,DRYAD_TELEPORT)  // SPWI995.SPL (Dimension Door)
+END

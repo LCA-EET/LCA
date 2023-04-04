@@ -1,0 +1,9 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeFromColor([30.0],0)
+		Wait(3)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
+END

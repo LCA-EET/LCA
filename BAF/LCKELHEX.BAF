@@ -1,0 +1,65 @@
+IF
+	!Detect("hexxat")  // Hexxat
+	Global("LCA_CorwinHexxatFight","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ChangeAIScript("",GENERAL)
+		SetGlobal("LCA_CorwinHexxatFight","GLOBAL",2)
+		ChangeAIScript("",SPECIFICS)
+		JoinParty()
+END
+
+IF
+	See("hexxat")  // Hexxat
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(LastSeenBy(Myself),30)
+		Continue()
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		Attack(LastAttackerOf(Myself))
+		Continue()
+END
+
+IF
+	Delay(10)
+	See(NearestEnemyOfType([0.UNDEAD]))
+	Range(LastSeenBy(Myself),5)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		Turn()
+		Continue()
+END
+
+IF
+	Detect("hexxat")  // Hexxat
+	!See("hexxat")  // Hexxat
+	Range("hexxat",40)  // Hexxat
+	HaveSpell(INQUIS_TRUE_SIGHT)  // SPCL232.SPL (True Sight)
+THEN
+	RESPONSE #100
+		Spell(Myself,INQUIS_TRUE_SIGHT)  // SPCL232.SPL (True Sight)
+		Continue()
+END
+
+IF
+	See("hexxat")  // Hexxat
+	OR(6)
+		StateCheck(LastSeenBy(Myself),STATE_HASTED)
+		StateCheck(LastSeenBy(Myself),STATE_BLESS)
+		StateCheck(LastSeenBy(Myself),STATE_CHANT)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		StateCheck(LastSeenBy(Myself),STATE_BLUR)
+		HasImmunityEffects(LastSeenBy(Myself))
+	HaveSpell(INQUIS_DISPEL_MAGIC)  // SPCL231.SPL (Dispel Magic)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),INQUIS_DISPEL_MAGIC)  // SPCL231.SPL (Dispel Magic)
+END
+

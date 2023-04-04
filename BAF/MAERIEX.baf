@@ -1,0 +1,13 @@
+IF 
+	InParty(Myself)
+	See("Hexxat")
+	Global("LCA_Banter_CorwinHexxat", "GLOBAL", 7)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		LeaveParty()
+		ChangeAIScript("",DEFAULT)
+		ChangeAIScript("bdfigh01",GENERAL)
+		ChangeAIScript("LCAERHEX",SPECIFICS)
+		SetInterrupt(TRUE)
+END

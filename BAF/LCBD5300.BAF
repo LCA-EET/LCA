@@ -1,0 +1,39 @@
+IF 
+	!Global("LCA_CorwinInKanaglym", "GLOBAL",1)
+	IsValidForPartyDialogue("Corwin")
+	Dead("bdkherr")
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_CorwinInKanaglym", "GLOBAL",1)
+		Continue()
+END
+
+IF 
+	!Global("LCA_ViconiaInKanaglym", "GLOBAL",1)
+	IsValidForPartyDialogue("Viconia")
+	Dead("bdkherr")
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_ViconiaInKanaglym", "GLOBAL",1)
+		Continue()
+END
+
+IF 
+	!Global("LCA_JaheiraInKanaglym", "GLOBAL",1)
+	IsValidForPartyDialogue("Jaheira")
+	Dead("bdkherr")
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_JaheiraInKanaglym", "GLOBAL",1)
+		Continue()
+END
+
+IF 
+	!Global("LCA_DornInKanaglym", "GLOBAL",1)
+	IsValidForPartyDialogue("Dorn")
+	Dead("bdkherr")
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_DornInKanaglym", "GLOBAL",1)
+		Continue()
+END

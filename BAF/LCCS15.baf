@@ -1,0 +1,26 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		SetCutSceneLite(TRUE)
+		SetGlobal("LCA_LCCS15Cutscene", "GLOBAL", 1)
+		CutSceneId("LCCORWIN")
+		Wait(1)
+		DisplayStringHead("LCCORWIN", @0)
+		Wait(1)
+		DisplayStringHead("LCVAI", @1)
+		ActionOverride("LCVAI", MoveToPoint([1009.742]))
+		ActionOverride("LCCORWIN", MoveToPoint([1050.767]))
+		Wait(4)
+		ActionOverride("LCVAI", FaceObject("LCCORWIN"))
+		ActionOverride("LCCORWIN", FaceObject("LCVAI"))
+		Wait(1)
+		ActionOverride("LCVAI", FaceObject("LCCORWIN"))
+		ActionOverride("LCCORWIN", FaceObject("LCVAI"))
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", "LCVAI"))
+		ActionOverride("LCVAI", MoveToPoint([1661.1105]))
+		Wait(3)
+		ActionOverride("LCVAI", EscapeAreaObject("Door01100"))
+		EndCutSceneMode()
+END

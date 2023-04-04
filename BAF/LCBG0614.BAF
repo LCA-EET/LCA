@@ -1,0 +1,31 @@
+IF 
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!InMyArea("LCVIRGIL")
+	!Global("LCA_0614_VirgilSpawn", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("LCVIRGIL", [850.500], S)
+		CreateCreature("LCWVMER1", [281.407], N)
+		CreateCreature("LCWVMER2", [543.457], N)
+		CreateCreature("LCWVMER3", [784.914], S)
+		CreateCreature("LCWVGRD2", [1040.485], W)
+		CreateCreature("LCWVBART", [458.321], S)
+		SetGlobal("LCA_0614_VirgilSpawn", "GLOBAL", 1)
+END
+
+IF 
+	Global("LCA_VirgilInCustody", "GLOBAL", 1)
+	InMyArea("LCVIRGIL")
+THEN
+	RESPONSE #100
+		ActionOverride("LCVIRGIL", DestroySelf())
+END
+
+IF 
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Global("LCA_DestroyNPCs_0614", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_DestroyNPCs_0614", "GLOBAL", 1)
+		ActionOverride("WIRTHING", DestroySelf())
+END

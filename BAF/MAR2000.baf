@@ -1,0 +1,11 @@
+IF
+	GlobalGT("LCA_TM_ArcheryChallenge", "GLOBAL", 0)
+	TimeOfDay(DAY)
+	!Dead("trhmer01")
+	!Dead("celogan")
+	!Global("ArcherySignupSpawn", "GLOBAL", 1) 
+THEN
+	RESPONSE #100
+		SetGlobal("ArcherySignupSpawn", "GLOBAL", 1)
+		CreateCreature("LCTMARSU", [3477.2127], S)
+END

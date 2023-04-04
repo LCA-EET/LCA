@@ -1,0 +1,72 @@
+IF
+	HasItem("POTN08",Myself)  // Potion of Healing
+	HPPercentLT(Myself,80)
+THEN
+	RESPONSE #100
+		UseItem("POTN08",Myself)  // Potion of Healing
+END
+
+IF
+	HasItem("POTN52",Myself)  // Potion of Extra Healing
+	HPPercentLT(Myself,50)
+THEN
+	RESPONSE #100
+		UseItem("POTN52",Myself)  // Potion of Extra Healing
+END
+
+IF
+	See("hexxat")  // Hexxat
+	HaveSpell(CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
+	CheckStatGT(Myself,1,ARMORCLASS)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
+END
+
+IF
+	OR(2)
+		HPLT(Myself,5)
+		StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate(LastAttackerOf(Myself),30)
+END
+
+IF
+	See("hexxat")  // Hexxat
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate("hexxat",30)  // Hexxat
+END
+
+IF
+	Delay(10)
+	See("hexxat")  // Hexxat
+	Range(LastSeenBy(Myself),5)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		Turn()
+		Continue()
+END
+
+IF
+	!Detect("hexxat")  // Hexxat
+	Global("LCA_CorwinHexxatFight","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ChangeAIScript("",GENERAL)
+		SetGlobal("LCA_CorwinHexxatFight","GLOBAL",2)
+		ChangeAIScript("",SPECIFICS)
+		JoinParty()
+END
+

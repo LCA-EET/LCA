@@ -1,0 +1,10 @@
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Global("LCA_NPCDestroy_0600", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("DUN", DestroySelf())
+		ActionOverride("HECITO", DestroySelf())
+		SetGlobal("LCA_NPCDestroy_0600", "GLOBAL", 1)
+		Continue()
+END

@@ -1,0 +1,31 @@
+IF
+	GlobalTimerExpired("LCA_Ath", "GLOBAL")
+	Global("LCA_SkieSaved", "GLOBAL", 2) // Cache
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_SkieSaved", "GLOBAL", 3) // mark complete
+		CreateCreature("LCFFOFCR", [1033.563], SW)
+		//CreateCreature("BDFFMERC", [1012.519], SW)
+		//CreateCreature("BDFF1000", [1094.583], SW)
+		
+END
+
+IF
+	GlobalTimerExpired("LCA_Ath", "GLOBAL")
+	Global("LCA_SkieSaved", "GLOBAL", 1) // Corwin
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_SkieSaved", "GLOBAL", 3) // mark complete
+		CreateCreature("LCCORWIN", [1033.563], SW)
+END
+/*
+IF
+	Global("LCA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1) // Corwin
+	!Dead("LCCORWIN")
+	!InMyArea("LCCORWIN")
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_CorwinMeetAthkatlaCouncil", "GLOBAL", 2) 
+		CreateCreature("LCCORWIN", [1033.563], SW)
+END
+*/

@@ -1,0 +1,12 @@
+IF 
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Global("LCA_DestroyNPCs_0613", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_DestroyNPCs_0613", "GLOBAL", 1)
+		ActionOverride("KALESSIA", DestroySelf())
+		ActionOverride("IRON14", DestroySelf())
+		CreateCreature("LCWVMER2", [850.420], N)
+		CreateCreature("LCWVMER1", [910.460], E)
+		CreateCreature("LCWVGRD2", [380.640], N)
+END

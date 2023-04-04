@@ -1,0 +1,14 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ClearAllActions()
+		StorePartyLocations()
+		FadeToColor([30.0],0)
+		Wait(3)
+		ZoomLock(TRUE)
+		LeaveAreaLUAPanic("LCAcs06","",[3290.2400],NE)  // Trademeet
+		LeaveAreaLUA("LCAcs06","",[3290.2400],NE)
+		StartCutScene("LCAcs06b") 
+END

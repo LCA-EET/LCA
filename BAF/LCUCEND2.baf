@@ -1,0 +1,14 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		//Dismember
+		CutSceneId(Player1)
+		DisplayStringHead("LCBENO2", ~No... don't..!~)
+		Wait(2)
+		SetSequence(SEQ_ATTACK)
+		GiveItemCreate("LCBENOHD", Player1,0,0,0)
+		DisplayStringHead(Myself, ~You behead Beno with his own scimitar, and place his head into your pack. With Schael hoisted over your shoulder, you begin the journey back to the surface.~)
+		Wait(5)
+		StartCutscene("LCUCEND1")
+END

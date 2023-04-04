@@ -1,0 +1,41 @@
+IF 
+	Global("LCA_Reset_0608", "GLOBAL", 1)
+THEN 
+	RESPONSE #100
+		SetGlobal("LCA_Reset_0608", "GLOBAL", 0)
+		ActionOverride("KENT", JumpToPoint([380.309]))
+		ActionOverride("KENT", Face(W))
+		ActionOverride("LCNEDERL", JumpToPoint([233.399]))
+		ActionOverride("LCNEDERL", Face(NNE))
+END
+
+
+
+IF 
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Global("LCA_CreateNPCS_0608_Kent", "GLOBAL", 1)
+	!Dead("KENT")
+THEN 
+	RESPONSE #100
+		SetGlobal("LCA_CreateNPCS_0608_Kent", "GLOBAL", 1)
+		CreateCreature("KENT", [380.309], W)
+		Continue()
+END
+
+IF 
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Global("LCA_CreateNPCS_0608_Nederlok", "GLOBAL", 1)
+THEN 
+	RESPONSE #100
+		SetGlobal("LCA_DestroyNPCS_0608", "GLOBAL", 1)
+		SetGlobal("LCA_CreateNPCS_0608_Nederlok", "GLOBAL", 1)
+		CreateCreature("LCNEDERL", [233.399], NNE)
+		Continue()
+END
+
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		NoAction()
+END

@@ -1,0 +1,12 @@
+IF 
+	!InMyArea("LCBRIELB")
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	Global("LCA_BrielWasIn103", "GLOBAL", 1)
+	Global("HelpBrielbara","GLOBAL",1)
+	!Global("LCA_Briel1300", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("LCBRIELB", [1660.1360], NE)
+		SetGlobal("LCA_Briel1300", "GLOBAL", 1)
+		Continue()
+END

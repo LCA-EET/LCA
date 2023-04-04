@@ -1,0 +1,31 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ActionOverride("LCKENT", EscapeAreaObject("TrigExit"))
+		Wait(1)
+		ActionOverride("LCNEDERL", EscapeAreaObject("TrigExit"))
+		Wait(1)
+		ActionOverride("LCFFVAL1", EscapeAreaObject("TrigExit"))
+		Wait(1)
+		ActionOverride("LCFFVAL2", EscapeAreaObject("TrigExit"))
+		Wait(1)
+		ActionOverride("LCBENCE", EscapeAreaObject("TrigExit"))
+		Wait(1)
+		ActionOverride("LCELTAN", EscapeAreaObject("TrigExit"))
+		SmallWait(5)
+		ActionOverride("LCLIIA", EscapeAreaObject("TrigExit"))
+		SmallWait(5)
+		ActionOverride("LCBELT", EscapeAreaObject("TrigExit"))
+		SmallWait(5)
+		ActionOverride("LCENTAR", EscapeAreaObject("TrigExit"))
+		SmallWait(5)
+		ActionOverride("LCFFVAL3", EscapeAreaObject("TrigExit"))
+		SmallWait(5)
+		ActionOverride("LCSKIE", MoveToObject("TrigSS"))
+		//FadeToColor([30.0],0)
+		Wait(3)
+		ActionOverride("LCSKIE", StartDialog("LCSKIE", Player1))
+		
+END

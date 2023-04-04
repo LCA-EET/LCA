@@ -1,0 +1,28 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		SetCutSceneLite(TRUE)
+		SetGlobal("LCA_LCCS14Cutscene", "GLOBAL", 1)
+		CutSceneId("LCCORWIN")
+		Wait(1)
+		DisplayStringHead("LCCORWIN", @0)
+		Wait(1)
+		DisplayStringHead("LCROHMA", @1)
+		ActionOverride("LCROHMA", MoveToPoint([228.344]))
+		ActionOverride("LCCORWIN", MoveToPoint([266.336]))
+		ActionOverride("LCAUDAM", MoveToPoint([438.249]))
+		Wait(2)
+		ActionOverride("LCROHMA", FaceObject("LCCORWIN"))
+		ActionOverride("LCCORWIN", FaceObject("LCROHMA"))
+		ActionOverride("LCAUDAM", FaceObject("LCCORWIN"))
+		SetCutSceneLite(TRUE)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", "LCROHMA"))
+		ActionOverride("LCAUDAM", MoveToPoint([334.289])
+		Wait(2)
+		ActionOverride("LCCORWIN", FaceObject("LCAUDAM"))
+		SmallWait(2)
+		ActionOverride("LCAUDAM", StartDialogNoSet(Player1))
+		EndCutSceneMode()
+END

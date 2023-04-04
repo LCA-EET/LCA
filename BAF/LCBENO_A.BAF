@@ -1,0 +1,16 @@
+IF 
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		//ActionOverride("LCCORWIN", MoveToObject("TrigBeno"))
+		//Wait(3)
+		//EndCutSceneMode()
+		/*
+		Wait(5)
+		ActionOverride("LCCORWIN", FaceObject("LCBENO2"))
+		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
+		*/
+		//Corwin uses ST on Beno
+END

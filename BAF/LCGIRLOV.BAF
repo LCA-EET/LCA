@@ -1,0 +1,7 @@
+IF
+	!Global("LCA_GIRL2_Override", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_GIRL2_Override", "LOCALS", 1)
+		SetDialog("LCGIRL2")
+END

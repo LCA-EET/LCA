@@ -1,0 +1,18 @@
+IF 
+	Global("LCA_TiannaGoodBye", "GLOBAL", 1)
+THEN 
+	RESPONSE #100
+		SetGlobal("LCA_TiannaGoodBye", "GLOBAL", 2)
+		Wait(1)
+		StartDialog("LCTIANNA", Player1)
+END
+
+IF 
+	See("LCCORWIN")
+	IsValidForPartyDialog("LCCORWIN")
+	GlobalLT("LCA_TiannaIntroduction", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_TiannaIntroduction", "GLOBAL", 1)
+		StartDialog("LCTIANNA", Player1)
+END

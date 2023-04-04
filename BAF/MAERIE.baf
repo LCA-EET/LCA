@@ -1,0 +1,13 @@
+IF 
+	InParty(Myself)
+	See("Hexxat")
+	Global("LCA_CorwinHexxatFight", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		LeaveParty()
+		ChangeAIScript("",DEFAULT)
+		ChangeAIScript("bdfigh01",GENERAL)
+		ChangeAIScript("OHHAERI",SPECIFICS)
+		SetInterrupt(TRUE)
+END

@@ -1,0 +1,21 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ClearAllActions()
+		StorePartyLocations()
+		FadeToColor([30.0],0)
+		Wait(3)
+		ZoomLock(TRUE)
+		LeaveAreaLUAPanic("LCAcs03","",[2762.898],SW)  // Flaming Fist HQ, Level 1
+		LeaveAreaLUA("LCAcs03","",[2762.898],SW)
+		ActionOverride(Player2,LeaveAreaLUA("LCAcs03","",[2802.919],SW))  
+		ActionOverride(Player3,LeaveAreaLUA("LCAcs03","",[2800.848],SW))  
+		ActionOverride(Player4,LeaveAreaLUA("LCAcs03","",[2839.875],SW))  
+		ActionOverride(Player5,LeaveAreaLUA("LCAcs03","",[2830.801],SW))  
+		ActionOverride(Player6,LeaveAreaLUA("LCAcs03","",[2871.833],SW))  
+		CreateCreature("CorCut2",[1044.688],2)
+		 
+		StartCutScene("LCAcs03b")
+END

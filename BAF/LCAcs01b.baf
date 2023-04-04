@@ -1,0 +1,24 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ClearAllActions()
+		StorePartyLocations()
+		FadeToColor([30.0],0)
+		Wait(3)
+		ZoomLock(TRUE)
+		LeaveAreaLUAPanic("LCAcs01","",[2762.898],SW)  // Corwin's Home
+		LeaveAreaLUA("LCAcs01","",[2762.898],SW)
+		ActionOverride(Player2,LeaveAreaLUA("LCAcs01","",[2802.919],SW))  
+		ActionOverride(Player3,LeaveAreaLUA("LCAcs01","",[2800.848],SW))  
+		ActionOverride(Player4,LeaveAreaLUA("LCAcs01","",[2839.875],SW))  
+		ActionOverride(Player5,LeaveAreaLUA("LCAcs01","",[2830.801],SW))  
+		ActionOverride(Player6,LeaveAreaLUA("LCAcs01","",[2871.833],SW)) 
+		CreateCreature("CorCut1",[380.326],2)
+		
+		CreateCreature("bdaudam",[420.266],2)
+		ActionOverride("corwin", FaceObject("bdaudam"))  
+		ActionOverride("bdaudam", FaceObject("corwin"))
+		StartCutScene("LCAcs01d") // romance
+END

@@ -1,0 +1,12 @@
+IF 
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Global("LCA_0153_Replace", "GLOBAL", 1)
+	InMyArea("Alatos")
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_0153_Replace", "GLOBAL", 1)
+		ActionOverride("Alatos", SetDialog("LCALATOS"))
+		ActionOverride("Alatos", SetNumTimesTalkedTo(0))
+		ActionOverride("Alatos", ChangeAIScript("LCINITP1",CLASS))
+		//ActionOverride("Alatos",ChangeAIScript("INITDLG",CLASS))
+END

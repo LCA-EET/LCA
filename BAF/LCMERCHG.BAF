@@ -1,0 +1,8 @@
+IF 
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Global("LCA_DialogSwap", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_DialogSwap", "LOCALS", 1)
+		SetDialog("LCMERCHG")
+END

@@ -1,0 +1,26 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ClearAllActions()
+		FadeFromColor([30.0],0)
+		Explore()
+		//MultiPlayerSync()
+		Wait(1)
+		MoveViewPoint([2054.1093], BD_NORMAL)
+		Wait(1)
+		ActionOverride("LCCORWIN", MoveToObject("CSTrigger"))
+		MoveToObject("CSTrigger2")
+
+		Wait(1)
+		FaceObject("Door1316")
+		ActionOverride("LCCORWIN", FaceObject("Door1316"))
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
+		Wait(1)
+		ActionOverride("LCCORWIN", MoveToObject("Door1316"))
+		FadeToColor([30.0],0)
+		Wait(1)
+		StartCutScene("LCWLKH02")
+		
+END

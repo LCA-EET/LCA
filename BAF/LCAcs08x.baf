@@ -1,0 +1,10 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ZoomLock(FALSE)
+		//RestorePartyLocations()
+		FadeFromColor([30.0],0)
+		EndCutSceneMode()
+END

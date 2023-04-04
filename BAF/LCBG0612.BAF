@@ -1,0 +1,14 @@
+IF 
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Global("LCA_DestroyNPCs_0612", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_DestroyNPCs_0612", "GLOBAL", 1)
+		ActionOverride("DRATAN", DestroySelf())
+		ActionOverride("GREGOR", DestroySelf())
+		ActionOverride("TRALITHAN", DestroySelf())
+		CreateCreature("LCWVMER2", [300.410], N)
+		CreateCreature("LCWVMER1", [960.517], E)
+		CreateCreature("LCWVGRD2", [330.590], N)
+		CreateCreature("LCWVGRD2", [890.400], N)
+END

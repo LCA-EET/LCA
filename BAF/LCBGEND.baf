@@ -1,0 +1,21 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		DisplayStringHead("LCCORWIN", ~Rohma!~)
+		SmallWait(5)
+		ActionOverride("LCROHMA", FaceObject("LCCORWIN"))
+		SmallWait(1)
+		//454 311
+		//485 292
+		//545 285
+		DisplayStringHead("LCROHMA", ~Mommy!~)
+		ActionOverride("LCROHMA", MoveToObject("TrigRom"))
+		SmallWait(1)
+		ActionOverride("LCCORWIN", MoveToObject("TrigCor"))
+		SmallWait(1)
+		MoveToObject("TrigP1")
+		Wait(2)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
+END

@@ -1,0 +1,38 @@
+IF 
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	OR(2)
+		InMyArea("MICHAEL")
+		InMyArea("TAXEK")
+THEN
+	RESPONSE #100
+		ActionOverride("MICHAEL", DestroySelf())
+		ActionOverride("TAXEK", DestroySelf())
+		Continue()
+END
+
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	IsValidForPartyDialog("LCCORWIN")
+	IsValidForPartyDialog(Player1)
+	!InMyArea("LCROHMA")
+	!InMyArea("LCAUDAM")
+THEN
+	RESPONSE #100
+		CreateCreature("LCROHMA",[160.300], SE)
+		CreateCreature("LCAUDAM", [440.164], SE)
+		Continue()
+END
+
+// For when Corwin leaves because the player took too long to see her family.
+
+IF 
+	Global("LCA_CorwinMetFamily", "GLOBAL", 1)
+	InMyArea("LCCORWIN")
+	!InMyArea("LCROHMA")
+	!InMyArea("LCAUDAM")
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_CorwinFamilyTalk", "GLOBAL", 3)
+		CreateCreature("LCROHMA",[160.300], SE)
+		CreateCreature("LCAUDAM", [440.164], SE)
+END 

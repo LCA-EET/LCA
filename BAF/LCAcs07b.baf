@@ -1,0 +1,32 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("bodhiamb")
+		CreateVisualEffectObject("SPDISPMA",Myself)
+		JumpToObject("LCCORWIN")
+		FaceObject("LCCORWIN")
+		SetSequence(SEQ_ATTACK)
+		SmallWait(1)
+		//DisplayStringHead("LCCORWIN", @0)
+		ApplyDamagePercent("LCCORWIN", 50, PIERCING)
+		SmallWait(1)
+		CreateVisualEffectObject("SPDISPMA",Myself)
+		JumpToPoint([1950.1690]) 	 
+		Wait(1)
+		SetGlobal("LCA_CorwinBit","GLOBAL",1)
+		DestroySelf()
+		EndCutSceneMode()
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("bodhiamb")  // Bodhi
+		DialogInterrupt(FALSE)
+		CreateCreatureObject("VAMPIM01",Myself,0,0,0)  // Vampire
+		CreateCreatureObject("VAMPIM01",Myself,0,0,0)  // Vampire
+		CreateCreatureObject("VAMPIM01",Myself,0,0,0)  // Vampire
+		CreateCreatureObject("VAMPIM01",Myself,0,0,0)  // Vampire
+END

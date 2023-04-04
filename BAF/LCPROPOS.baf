@@ -1,0 +1,24 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ClearAllActions()
+		FadeToColor([30.0],0)
+		SetGlobal("LCA_CorwinProposalCS", "GLOBAL", 1)
+		Wait(3)
+		ZoomLock(TRUE)
+		DayNight(MIDNIGHT)
+		//LeaveAreaLUAPanic("LCAcs01","",[2762.898],SW)  // Corwin's Home
+		LeaveAreaLUA("LCWYRM","",[1420.480],NE)
+		ActionOverride("LCCORWIN",LeaveAreaLUA("LCWYRM","",[1430.435],NE)) 
+		
+		ActionOverride(Player1,Rest())
+		ActionOverride(Player2,Rest())
+		ActionOverride(Player3,Rest())
+		ActionOverride(Player4,Rest())
+		ActionOverride(Player5,Rest())
+		ActionOverride(Player6,Rest())		
+
+		StartCutScene("LCPROPO1") 
+END

@@ -1,0 +1,19 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("LCCORWIN")  // Corwin
+		DisplayStringHead(Myself, @0) /* ~Unhh..~ */
+		Wait(1)
+		DisplayStringHead(Player1, @1) /* ~Schael!~*/
+		SetSequence(SEQ_DIE)
+		ActionOverride(Player1, MoveToObject("LCCORWIN"))
+		Wait(1)
+		FadeToColor([30.0],0)
+		Wait(1)
+		ActionOverride(Player1, JumpToObject("LCCORWIN")) 	
+		ActionOverride(Player1, FaceObject("LCCORWIN"))
+		Wait(1)
+		ZoomLock(TRUE)
+		StartCutScene("LCAcs09b") 
+END

@@ -1,0 +1,13 @@
+IF 
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Global("LCA_CreateNPCS_0602", "GLOBAL", 1)
+	!Dead("Jhasso")
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_CreateNPCS_0602", "GLOBAL", 1)
+		CreateCreature("LCMERCH", [404.414], N)
+		CreateCreature("Jhasso", [452.370], SE)
+		ActionOverride("Jhasso", SetDialog("LCJHASSO"))
+		ActionOverride("Jhasso", SetNumTimesTalkedTo(0))
+		ActionOverride("Jhasso",ChangeAIScript("LCINITP1",CLASS))
+END

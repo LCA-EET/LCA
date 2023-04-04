@@ -1,0 +1,22 @@
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Global("LCA_DestroyNPCs_0616", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_DestroyNPCs_0616", "GLOBAL", 1)
+		ActionOverride("PANG", DestroySelf())
+		ActionOverride("DHANIAL", DestroySelf())
+		ActionOverride("IRON13", DestroySelf())
+		ActionOverride("TRIADO", DestroySelf())
+END
+
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Global("LCA_CreateNPCs_0616", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_CreateNPCs_0616", "GLOBAL", 1)
+		CreateCreature("LCWVMER1", [1011.639], SW)
+		CreateCreature("LCWVMER2", [1145.780], W)
+		CreateCreature("LCWVGRD1", [732.495], NW)
+END
