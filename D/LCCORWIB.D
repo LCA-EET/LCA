@@ -573,8 +573,15 @@ INTERJECT_COPY_TRANS JANJ 195 CORWIN_JANJ_195 //OK
 	== JANJ
 	IF ~
 		IsValidForPartyDialogue("LCCORWIN")
+		!Global("LCA_CorwinPromoted", "GLOBAL", 1)
 	~
 	@601 /* ~Oh, is that the sweet sound of laughter I hear? From our ever-stoic Captain Corwin? Look, she has a lovely smile too! I'm afraid no one would believe me if I told them it happened.~ */
+	== JANJ
+	IF ~
+		IsValidForPartyDialogue("LCCORWIN")
+		Global("LCA_CorwinPromoted", "GLOBAL", 1)
+	~
+	@731 /* ~Oh, is that the sweet sound of laughter I hear? From our ever-stoic Major Corwin? Look, she has a lovely smile too! I'm afraid no one would believe me if I told them it happened.~ */
 END
 
 INTERJECT_COPY_TRANS JANJ 189 CORWIN_JANJ_189 //OK
@@ -618,8 +625,15 @@ INTERJECT JANJ 126 CORWIN_JANJ_126 //OK
 	== JANJ
 	IF ~
 		IsValidForPartyDialogue("LCCORWIN")
+		!Global("LCA_CorwinPromoted", "GLOBAL",1)
 	~
 	@595 /* ~Yes, Captain?~ */
+	== JANJ
+	IF ~
+		IsValidForPartyDialogue("LCCORWIN")
+		Global("LCA_CorwinPromoted", "GLOBAL",1)
+	~
+	@732 /* ~Yes, Major?~ */
 	== LCCORWIB
 	IF ~
 		IsValidForPartyDialogue("LCCORWIN")
@@ -879,14 +893,21 @@ INTERJECT_COPY_TRANS VALYGARJ 50 Corwin_VALYGAR_50 // OK
 	== VICONIJ
 	IF ~
 		IsValidForPartyDialogue("LCCORWIN")
+		!Global("LCA_CorwinPromoted","GLOBAL",1)
 	~
 	@239 /* ~What about our dear Captain Corwin, then? You seem the type of man that would enjoy having a strong, authoritative female have her way with him.~   */
+	== VICONIJ
+	IF ~
+		IsValidForPartyDialogue("LCCORWIN")
+		Global("LCA_CorwinPromoted","GLOBAL",1)
+	~
+	@733 /* ~What about our dear Captain Corwin, then? You seem the type of man that would enjoy having a strong, authoritative female have her way with him.~   */
 	== VALYGARJ
 	IF ~
 		IsValidForPartyDialogue("LCCORWIN")
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	~
-	@240 /* ~Your 'insights' aside, the Captain is romantically involved.~   */
+	@240 /* ~Your 'insights' aside, she's romantically involved.~   */
 	== VALYGARJ
 	IF ~
 		IsValidForPartyDialogue("LCCORWIN")
@@ -908,8 +929,16 @@ INTERJECT_COPY_TRANS VALYGARJ 50 Corwin_VALYGAR_50 // OK
 	IF ~
 		IsValidForPartyDialogue("LCCORWIN")
 		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("LCA_CorwinPromoted", "GLOBAL", 1)
 	~
 	@244 /* ~I.. I appreciate the advice, Captain. ~*/
+	== VALYGARJ
+	IF ~
+		IsValidForPartyDialogue("LCCORWIN")
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("LCA_CorwinPromoted", "GLOBAL", 1)
+	~
+	@734 /* ~I.. I appreciate the advice, Major. ~*/
 END
 
 INTERJECT VALYGARJ 68 Corwin_VALYGARJ_68 // OK
@@ -919,7 +948,15 @@ INTERJECT VALYGARJ 68 Corwin_VALYGARJ_68 // OK
 	~
 	@238 /* ~Don't let her get to you, Valygar. Calm down.~ */
 	== VALYGARJ
+	IF ~
+		!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+	~
 	@480 /*~But she - damnit! No, you're right, Captain.~ */
+	== VALYGARJ
+	IF ~
+		Global("LCA_CorwinPromoted", "GLOBAL", 1)
+	~
+	@735 /*~But she - damnit! No, you're right, Major.~ */
 	== VICONIJ
 	@481 /* ~Just as I thought. Pathetic.~ */
 	== LCCORWIB
@@ -1106,7 +1143,15 @@ INTERJECT_COPY_TRANS2 BNALIA 11 Corwin_BNALIA_11 // OK
 	== BNALIA
 	IF ~
 		IsValidForPartyDialogue("LCCORWIN")
-	~ THEN @188 /* ~Perhaps, Captain, but you can't deny the negative effects these establishments have on the less fortunate among us.~ */
+		!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+	~ THEN 
+	@188 /* ~Perhaps, Captain, but you can't deny the negative effects these establishments have on the less fortunate among us.~ */
+	== BNALIA
+	IF ~
+		IsValidForPartyDialogue("LCCORWIN")
+		Global("LCA_CorwinPromoted", "GLOBAL", 1)
+	~ THEN 
+	@736 /* ~Perhaps, Captain, but you can't deny the negative effects these establishments have on the less fortunate among us.~ */
 END 
 
 INTERJECT_COPY_TRANS BNALIA 53 Corwin_BNALIA_53 // OK
@@ -1241,7 +1286,15 @@ CHAIN
 			SetGlobal("LCA_Banter_CorwinMazzy", "GLOBAL", 3)
 		~
 		== MAZZYJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@517 /*  ~Captain, I'd not have thought it so, but you're quite skilled as an adventurer.~ */
+		== MAZZYJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@737 /*  ~Major, I'd not have thought it so, but you're quite skilled as an adventurer.~ */
 		== LCCORWIB
 		@518 /* ~I wouldn't call myself an adventurer. I'm here on orders.~ */
 		=
@@ -1269,7 +1322,15 @@ CHAIN
 			SetGlobal("LCA_Banter_CorwinMazzy", "GLOBAL", 3)
 		~
 		== MAZZYJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@517 /*  ~Captain, I'd not have thought it so, but you're quite skilled as an adventurer.~ */
+		== MAZZYJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@737 /*  ~Major, I'd not have thought it so, but you're quite skilled as an adventurer.~ */
 		== LCCORWIB
 		@519 /* ~I wouldn't call myself an adventurer. I'm here on orders, and because <CHARNAME> needs me.~ */
 		=
@@ -1305,8 +1366,16 @@ CHAIN
 		== LCCORWIB
 		@532 /* ~Oh, of course - sorry. I didn't mean to offend.~ */
 		== MAZZYJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@533 /* ~It's alright, Captain. I know you didn't mean anything by it.~ */
-		=
+		== MAZZYJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@738 /* ~It's alright, Major. I know you didn't mean anything by it.~ */
+		== MAZZYJ
 		@534 /* ~I'm quite happy with the crossbow, infact, one of these days I'd like to challenge you to a friendly archery match.~ */
 		== LCCORWIB
 		@535 /* ~Hah, I'd like that! I must warn you though, it's been years since I've lost. ~  */
@@ -1337,7 +1406,15 @@ CHAIN
 	THEN LCCORWIB LCA_MazzyWonCompetition
 		@549 /* ~Mazzy, congratulations on your victory. That was quite the performance.~ */
 		== MAZZYJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@550 /* ~Thanks, Captain. You're one of the toughest I've competed against.~ */
+		== MAZZYJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@739 /* ~Thanks, Major. You're one of the toughest I've competed against.~ */
 END
 ++@551 EXTERN MAZZYJ LCA_MazzyWonCompetition2 /* ~You both performed well. I'm glad to have such skilled companions at my side.~ */
 
@@ -1380,8 +1457,16 @@ CHAIN
 		~
 		== NALIAJ
 		@381 /* ~The wealth disparity throughout Amn is maddening. Gilded cities full of slaves, and people who can't afford even a decent meal.~ */
-		=
+		== NALIAJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@376 /* ~Captain, what is it like in Baldur's Gate? Are things as bad as they are in Athkatla?~*/
+		== NALIAJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@740 /* ~Major, what is it like in Baldur's Gate? Are things as bad as they are in Athkatla?~*/
 		== LCCORWIB
 		@377 /* ~Not as bad as what I've seen during my time in Amn, but yes, there's a stark difference between the haves and have-nots.~ */
 		== NALIAJ
@@ -1391,7 +1476,7 @@ CHAIN
 		= 
 		@380 /* They don't have the time, energy, or willingness to risk themselves to change the status quo.~*/
 		== NALIAJ
-		@382 /* ~Thank you for your insight, Captain. There seems to be a lack of leadership among the poor and downtrodden. I'll think on what you said.~ */
+		@382 /* ~I see... it seems that there's a lack of leadership among the poor and downtrodden. I'll think on what you said.~ */
 EXIT
 
 CHAIN 
@@ -1460,16 +1545,28 @@ EXIT
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinHaerDalis", "GLOBAL", 2)
+		!Global("LCA_CorwinPromoted", "GLOBAL", 1)
 	~
-	THEN HAERDAJ BCorwinHaerDalis1
+	THEN HAERDAJ BCorwinHaerDalis1_C
 		@564 /* ~A moment of your time, Captain?~ [NOSOUND]*/
+END LCCORWIB BCorwinHaerDalis1
+
+CHAIN 
+	IF ~
+		Global("LCA_Banter_CorwinHaerDalis", "GLOBAL", 2)
+		Global("LCA_CorwinPromoted", "GLOBAL", 1)
+	~
+	THEN HAERDAJ BCorwinHaerDalis1_M
+		@742 /* ~A moment of your time, Major?~ [NOSOUND]*/
+END LCCORWIB BCorwinHaerDalis1
+
+CHAIN LCCORWIB BCorwinHaerDalis1
+		@363 /* ~Sure - what do you need?~ [LCCORB47] */
 		DO ~
 			SetGlobal("LCA_Banter_CorwinHaerDalis", "GLOBAL", 3)
 			ClearActions(Myself)
 			ClearActions("LCCORWIN")
-		~
-		== LCCORWIB
-		@363 /* ~Sure - what do you need?~ [LCCORB47] */		
+		~		
 		== HAERDAJ
 		@364 /* ~Did you know, my raven, that your arrows sing to me as they fly?~ */
 		=
@@ -1606,8 +1703,42 @@ EXIT
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinMinsc", "GLOBAL", 2)
+		Global("LCA_CorwinPromoted", "GLOBAL", 1)
 	~
-	THEN LCCORWIB BCorwinMinsc1
+	THEN LCCORWIB BCorwinMinsc1_M
+		@743 /* ~Minsc, I'm sorry about Dynaheir. I know that you two were very close.~ [LCCORB45] */
+		DO ~
+			SetGlobal("LCA_Banter_CorwinMinsc", "GLOBAL", 3)
+			ClearActions(Myself)
+			ClearActions("Minsc")
+		~
+		== MINSCJ
+		@353 /* ~Thank you, dear Major soldier lady. Justice demands that I crush the skull of the wizard that killed her. I am glad that you are here to help inflict the most painful goodness on the forces of evil.~ */
+		== LCCORWIB
+		@345/* ~Um.. right. So am I.~*/
+		== MINSCJ
+		@744 /* ~Major soldier lady, Boo would like to compliment you.~ */
+		== LCCORWIB
+		@347 /* ~Your hamster?~*/
+		== MINSCJ
+		@348 /*  ~Yes. Boo says that your hair is very soft and fine, like the hair on a space hamster's bottom.~*/
+		== LCCORWIB
+		@349 /* ~WHAT!?~*/
+		== MINSCJ
+		@350 /* ~Yes, and also that your eyelashes remind him of a donkey's beautiful -~ */
+		== LCCORWIB
+		@351 /* ~Choose your next words very, very carefully.~*/
+		== MINSCJ
+		@352 /* ~A donkey's beautiful.. erm .. beautiful .. well. Boo thinks you are beautiful.~ */
+		== LCCORWIB
+		@354 /* ~... ... That's very kind. Let's go.~ */
+EXIT
+CHAIN 
+	IF ~
+		Global("LCA_Banter_CorwinMinsc", "GLOBAL", 2)
+		!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+	~
+	THEN LCCORWIB BCorwinMinsc1_C
 		@343 /* ~Minsc, I'm sorry about Dynaheir. I know that you two were very close.~ [LCCORB45] */
 		DO ~
 			SetGlobal("LCA_Banter_CorwinMinsc", "GLOBAL", 3)
@@ -1639,8 +1770,9 @@ EXIT
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinMinsc", "GLOBAL", 4)
+		Global("LCA_CorwinPromoted", "GLOBAL", 1)
 	~
-	THEN LCCORWIB BCorwinMinsc2
+	THEN LCCORWIB BCorwinMinsc2_M
 		@325 /* ~Ugh, not now Minsc. I'm busy.~ [LCCORB43] */
 		DO ~
 			SetGlobal("LCA_Banter_CorwinMinsc", "GLOBAL", 5)
@@ -1648,7 +1780,7 @@ CHAIN
 			ClearActions("Minsc")
 		~
 		== MINSCJ
-		@326 /* ~Boo says that his question for Captain soldier lady is urgent.~ */
+		@745 /* ~Boo says that his question for Major soldier lady is urgent.~  */
 		== LCCORWIB
 		@327 /* ~(sigh) Fine. What is it Boo.~*/
 		== MINSCJ
@@ -1674,7 +1806,15 @@ CHAIN
 			ClearActions(Myself)
 		~
 		== MINSCJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@334 /* ~Of course, Captain soldier lady. How can Minsc and Boo help a fellow warrior of the greatest goodness?~ */
+		== MINSCJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@746 /* ~Of course, Major soldier lady. How can Minsc and Boo help a fellow warrior of the greatest goodness?~  */
 		== LCCORWIB
 		@335 /* ~How long did you and Dynaheir travel together?~*/
 		== MINSCJ
@@ -1717,11 +1857,19 @@ CHAIN
 		== LCCORWIB
 		@288 /* ~I - I don't think that's necessary - maybe some other time. ~ */
 		== RASAADJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@289 /* ~Please Captain. Let me help you.~*/
+		== RASAADJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@747 /* ~Please Major. Let me help you.~*/
 		== LCCORWIB
 		@290 /* ~Not right now. We have work to do. Let's get moving.~ */
 		== RASAADJ
-		@291 /* ~Very well, Captain. When you have the time, come and see me.~ */
+		@291 /* ~Very well. When you have the time, come and see me.~ */
 EXIT
 
 CHAIN 
@@ -1737,7 +1885,15 @@ CHAIN
 			ClearActions("Rasaad")
 		~
 		== RASAADJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@293 /*  ~Yes Captain - do you have some time now?~*/
+		== RASAADJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@748 /*  ~Yes Major - do you have some time now?~*/
 		== LCCORWIB
 		@294 /* ~Please, if you would teach me. I've been feeling especially anxious today.~ */
 		== RASAADJ
@@ -1752,7 +1908,15 @@ CHAIN
 		== LCCORWIB
 		@301 /* ~Thank you Rasaad... I'll be sure to practice that exercise.~ */
 		== RASAADJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@302 /* ~My pleasure, Captain.~ */
+		== RASAADJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@749 /* ~My pleasure, Major.~ */
 EXIT
 
 CHAIN 
@@ -1767,7 +1931,15 @@ CHAIN
 			ClearActions("Rasaad")
 		~
 		== RASAADJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@305 /*  ~Captain?~*/
+		== RASAADJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@750 /*  ~Major?~*/
 		== LCCORWIB
 		@306 /* ~I've been practicing that breathing exercise you showed me. It's been a big help.~ */
 		== RASAADJ
@@ -1779,7 +1951,15 @@ CHAIN
 		== LCCORWIB
 		@310 /* ~Yes, exactly. Though I'm sure you'd benefit as well.~ */
 		== RASAADJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@311 /* ~I look forward to it, Captain.~ */
+		== RASAADJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@751 /* ~I look forward to it, Major.~ */
 		== LCCORWIB
 		@312 /* ~You can drop the formalities. Schael will do just fine.~ */
 		== RASAADJ
@@ -1933,7 +2113,15 @@ CHAIN
 		== LCCORWIB
 		@493 /* Yoshimo? What is it?*/
 		== YOSHJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@496 /*  ~Oh, don't mind me, Captain. I'm just admiring the view.~ */
+		== YOSHJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@752 /*  ~Oh, don't mind me, Major. I'm just admiring the view.~ */
 		== LCCORWIB
 		@495 /* ~Ugh - grow up. Rasaad, let's continue.~ */
 		=
@@ -2002,8 +2190,17 @@ CHAIN
 			ClearActions("Yoshimo")
 		~
 		== YOSHJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@270 /* ~My lovely Captain, a question if you will.~ */
-		= @282 /* ~Do the tales of my exploits reach as far north as Baldur's Gate?~*/
+		== YOSHJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@753 /* ~My lovely Major, a question if you will.~ */
+		== YOSHJ
+		@282 /* ~Do the tales of my exploits reach as far north as Baldur's Gate?~*/
 		== LCCORWIB
 		@273 /* ~No, they don't.~ */
 		== YOSHJ
@@ -2034,7 +2231,15 @@ CHAIN
 			ClearActions("Cernd")
 		~
 		== CERNDJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@259 /* ~Thank you, Captain Corwin. ~ */
+		== CERNDJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@754 /* ~Thank you, Major Corwin. ~ */
 		== LCCORWIB
 		@260 /* ~I remember when my daughter Rohma was just a baby. Holding your baby in your arms changes you, doesn't it?~ */
 		== CERNDJ
@@ -2065,7 +2270,15 @@ CHAIN
 			ClearActions("Cernd")
 		~
 		== CERNDJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@259 /* ~Thank you, Captain Corwin. ~ */
+		== CERNDJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@754 /* ~Thank you, Major Corwin. ~ */
 		== LCCORWIB
 		@260 /* ~I remember when my daughter Rohma was just a baby. Holding your baby in your arms changes you, doesn't it?~ */
 		== CERNDJ
@@ -2122,13 +2335,22 @@ CHAIN
 		~ 
 		= @246 /* ~Well (she looks at Minsc), one that isn't completely out of his mind, anyway. ~*/
 		== VALYGARJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@247 /* ~Yes, thank you Captain. I'm interested in hearing why you chose to specialize in archery.~*/
-		= @248 /* ~I've always felt that a Ranger's strength lies in their versatility.~ */
+		== VALYGARJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@755 /* ~Yes, thank you Major. I'm interested in hearing why you chose to specialize in archery.~*/
+		== VALYGARJ
+		@248 /* ~I've always felt that a Ranger's strength lies in their versatility.~ */
 		== LCCORWIB
 		@249 /* ~Well, unlike most Rangers, I'm not typically sent out on my own. The need for that versatility is reduced.~ */
 		= @250 /* ~I tend to work as part of a team, and having a specialization can contribute more to the team's success.~ */
 		== VALYGARJ
-		@251 /* ~An interesting perspective, Captain. I think we will enjoy working together.~ */
+		@251 /* ~An interesting perspective. I think we will enjoy working together.~ */
 		== LCCORWIB
 		@252 /* ~So do I.~ */
 EXIT
@@ -2143,7 +2365,15 @@ CHAIN
 			SetGlobalTimer("LCA_CorwinValygarTimer2", "GLOBAL", THREE_DAYS)
 		~
 		== VALYGARJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@574 /* ~Yes, Captain?~*/
+		== VALYGARJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@756 /* ~Yes, Major?~*/
 		== LCCORWIB
 		@575 /* ~With Lavok dead, what will you do now?~*/
 		== VALYGARJ
@@ -2152,12 +2382,20 @@ CHAIN
 		@577 /* ~Understandable. When this business with Irenicus is over, I'd like for you to consider coming back to Baldur's Gate with me.~*/
 		= @578 /* ~The Flaming Fist is always looking for right-minded individuals of your caliber to join the team.~*/
 		== VALYGARJ
-		@579 /* ~I appreciate the offer, Captain. I must confess however that I'd be, ah, out of my element in the city.~*/
+		@579 /* ~I appreciate the offer, though. I must confess however that I'd be, ah, out of my element in the city.~*/
 		== LCCORWIB
 		@580 /* ~Well, you wouldn't be out on your own. You can shadow us on our patrols and see if it's a good fit for you.~*/
 		= @581 /* ~The Flaming Fist takes care of its own, and you'd have everything necessary to succeed.~*/
 		== VALYGARJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@582 /* ~I am intrigued. Give me some time to consider your offer, Captain.~*/
+		== VALYGARJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@757 /* ~I am intrigued. Give me some time to consider your offer, Major.~*/
 		== LCCORWIB
 		@583 /* Of course. Let's move out.~*/
 		
@@ -2175,7 +2413,7 @@ CHAIN
 			ClearActions("Neera")
 		~ 
 		== NEERAJ
-		@216 /* ~Good, Captain! What's new?~ */
+		@216 /* ~Good, Schael! What's new?~ */
 		== LCCORWIB
 		@217 /* ~Nothing, it seems. I noticed you're still struggling to control your magic.~*/
 		== NEERAJ
@@ -2236,7 +2474,15 @@ CHAIN
 			ClearActions("Hexxat")
 		~ 
 		== HEXXATJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@205 /* ~Yes, Captain?~ */
+		== HEXXATJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@756 /* ~Yes, Major?~ */
 		== LCCORWIB
 		@206 /* ~This is your one warning.~ */
 		= @207 /* ~Leave, now. Go back to your crypt, or wherever it is your kind comes from.~ */
@@ -2249,7 +2495,7 @@ CHAIN
 		== LCCORWIB
 		@211 /* ~Then you will be removed. One way, or the other.~ */
 		== HEXXATJ
-		@212 /* ~Brave words, Captain, but such empty threats are beneath you.~ */
+		@212 /* ~Brave words... but such empty threats are beneath you.~ */
 EXIT
 
 //Korgan Banters
@@ -2264,8 +2510,16 @@ CHAIN
 			ClearActions("Korgan")
 		~ 
 		== KORGANJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@144 /* ~But Captain, ye be the rarest of sights! A strong beauty, in uniform no less! ~ */
-		=
+		== KORGANJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@758 /* ~But Major, ye be the rarest of sights! A strong beauty, in uniform no less! ~ */
+		== KORGANJ
 		@139 /*  ~Ole Korgan nae hath seen one such as yerself. I simply needed a hand on yer ample bosom to see if ye be an illusion.~ */
 		== LCCORWIB
 		@140 /* ~Well, I hope you got all you needed. Touch me like that again, dwarf, and you'll regret it.~ */
@@ -2288,7 +2542,7 @@ CHAIN
 			ClearActions("Korgan")
 		~ 
 		== KORGANJ
-		@195 /* ~Aye, Captain. I feel yer eyes on me rear in battle. Doth ye like what ye see?~ */
+		@195 /* ~Aye, girlie. I feel yer eyes on me rear in battle. Doth ye like what ye see?~ */
 		== LCCORWIB
 		@196 /*  ~Not particularly, no. Well - I must admit that your skill with the axe is impressive.~ */
 		== KORGANJ
@@ -2315,7 +2569,15 @@ CHAIN
 			ClearActions("Viconia")
 		~ 
 		== VICONIJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@115 /* ~I noticed. See something you like, Captain?~ */
+		== VICONIJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@759 /* ~I noticed. See something you like, Major?~ */
 		== LCCORWIB
 		@116 /*  ~What? No, of course not!~ */
 		== VICONIJ
@@ -2327,7 +2589,15 @@ CHAIN
 		== LCCORWIB
 		@120 /*   ~Just... just don't try anything! Got it?~ */
 		== VICONIJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@121 /* ~Of course. I would never do anything to upset you, Captain.~   */
+		== VICONIJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@760 /* ~Of course. I would never do anything to upset you, Major.~   */
 EXIT
 
 CHAIN
@@ -2343,7 +2613,15 @@ CHAIN
 			ClearActions("Viconia")
 		~ 
 		== VICONIJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@115 /* ~I noticed. See something you like, Captain?~ */
+		== VICONIJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@759 /* ~I noticed. See something you like, Major?~ */
 		== LCCORWIB
 		@116 /*  ~What? No, of course not!~ */
 		== VICONIJ
@@ -2355,7 +2633,15 @@ CHAIN
 		== LCCORWIB
 		@120 /*   ~Just... just don't try anything! Got it?~ */
 		== VICONIJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@121 /* ~Of course. I would never do anything to upset you, Captain.~   */
+		== VICONIJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@760 /* ~Of course. I would never do anything to upset you, Major.~   */
 EXIT
 
 CHAIN
@@ -2379,7 +2665,15 @@ CHAIN
 		== LCCORWIB
 		@421 /* ~And here?~ */
 		== VICONIJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@422 /* ~...I told you that I'd never do anything to upset you, Captain. You wouldn't like what I have to say.~ */
+		== VICONIJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@761 /* ~...I told you that I'd never do anything to upset you, Major. You wouldn't like what I have to say.~ */
 		== LCCORWIB
 		@423 /* ~I'd rather you speak your mind, but fair enough. Let's get going.~ */
 EXIT
@@ -2407,13 +2701,21 @@ CHAIN
 		=
 		@429 /* ~Let me remind you, drow, that your kind has a well-earned reputation for violence and treachery. The Flaming Fist works to protect the innocent all threats, including those posed by the drow.~  */
 		== VICONIJ
-		@430 /* ~Is that so? Then why, Captain, are your cities full of thieves, slavers, molesters and murderers, all roaming free? It seems to me that your kind can learn a thing or to from the drow when it comes to the administration of justice and punishment.~ */
+		@430 /* ~Is that so? Then why are your cities full of thieves, slavers, molesters and murderers, all roaming free? It seems to me that your kind can learn a thing or to from the drow when it comes to the administration of justice and punishment!~ */
 		== LCCORWIB
 		@431 /* ~I don't have the time to argue about the criminal justice system. It's far from perfect, but we are doing the best that we can.~ */
 		=
 		@432 /*  ~What matters is that you've remained loyal thus far, which is more than I expected. Keep it up and I promise you won't need to worry about your safety while on the surface.~ */
 		== VICONIJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@433 /*  ~I.. I appreciate that, Captain.~ */
+		== VICONIJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@762 /*  ~I.. I appreciate that, Major.~ */
 		== LCCORWIB
 		@435 /* ~Just remember what I said - you'll have nothing to worry about so long as you remain true to us.~ */
 EXIT
@@ -2430,7 +2732,15 @@ CHAIN
 			ClearActions("Imoen")
 		~ 
 		== IMOEN2J
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@227 /* ~Nothing, Captain Corwin. I wanted to tell you that I'm glad you're here. I know it's been difficult being away from your family.~ */
+		== IMOEN2J
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@763 /* ~Nothing, Major Corwin. I wanted to tell you that I'm glad you're here. I know it's been difficult being away from your family.~ */
 		== LCCORWIB
 		@228 /*  ~I'm just glad that you're free from the wizard. Duke Jannath was very worried when she learned that you'd been kidnapped.~ */
 		== IMOEN2J
@@ -2442,7 +2752,15 @@ CHAIN
 		== LCCORWIB
 		@232 /* ~Don't compare your skills to those of that madman. You are an essential part of this team, and your contributions are valued, by all of us.~~ */
 		== IMOEN2J
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@233 /* ~Thanks, Captain.~  */
+		== IMOEN2J
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@764/* ~Thanks, Major.~  */
 		== LCCORWIB
 		@234 /* ~Imoen, I consider you a friend. There's no need to address me by rank - Schael will do just fine.~ */
 		== IMOEN2J
@@ -2619,7 +2937,7 @@ CHAIN
 		== LCCORWIB
 		@108 /*  ~As much as I hate to admit it, you are one of the finest spellcasters I have ever seen. You are an essential part of our success.~ */
 		== EDWINJ
-		@109 /* ~Oh.. *Ahem* Yes Captain, your acknowledgement of my superiority was long overdue, though late is better than never.~ */
+		@109 /* ~Oh.. *Ahem* Yes, your acknowledgement of my superiority was long overdue, though late is better than never.~ */
 		=
 		@123 /* ~You are quite talented as well, though your skills pale to those of the great Odesseiron. (What is she after?)~ */
 		== LCCORWIB
@@ -2711,7 +3029,15 @@ CHAIN
 			ClearActions("Jan")
 		~ 
 		== JANJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@75 /* ~Ah Captain! Just warming up some turnip stew. Would you like to try some?~ */
+		== JANJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@765 /* ~Ah Major! Just warming up some turnip stew. Would you like to try some?~ */
 		== LCCORWIB
 		@76 /*  ~Um... sure, Jan.~ */
 		== JANJ
@@ -2744,11 +3070,11 @@ CHAIN
 			ClearActions("Jan")
 		~ 
 		== JANJ
-		@515 /* ~Ah yes Captain, here it is.~ */
+		@515 /* ~Ah yes, here it is.~ */
 		== LCCORWIB
 		@516 /* Thanks again. ~ */
 		== JANJ
-		@82 /*~You know Captain, I'm looking to expand my turnip business outside of Athkatla. Perhaps you can help me set up a stall in Baldur's Gate? I'd share the profits with you, of course.~ */
+		@82 /*~You know, I'm looking to expand my turnip business outside of Athkatla. Perhaps you can help me set up a stall in Baldur's Gate? I'd share the profits with you, of course.~ */
 		== LCCORWIB
 		@83 /*  ~Uh, I appreciate the offer, but I'm not much of a salesperson.~  */
 		== JANJ
@@ -2819,7 +3145,15 @@ CHAIN
 			ClearActions("Keldorn")
 		~ 
 		== KELDORJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@61 /* ~Of course Captain. How can I help you?~ */
+		== KELDORJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@766 /* ~Of course Major. How can I help you?~ */
 		== LCCORWIB
 		@62 /*  ~I understand that you have children.~ */
 		== KELDORJ
@@ -2829,13 +3163,13 @@ CHAIN
 		=
 		@63 /* ~I ask because I have a daughter, and I feel like I am struggling to find the right balance.~ */
 		== KELDORJ
-		@64 /* ~That's something I've struggled with as well, Captain. There is no right answer. What is most important is that your daughter understands that you love her, and that at times it is necessary for you to be apart from her to perform your duties to the .. Flaming Fist, is it?~ */
+		@64 /* ~That's something I've struggled with as well. There is no right answer. What is most important is that your daughter understands that you love her, and that at times it is necessary for you to be apart from her to perform your duties to the .. Flaming Fist, is it?~ */
 		=
 		@65 /* ~Who is helping to raise your child while you are on this assignment?~ */
 		== LCCORWIB
 		@66 /*  ~My father, thankfully. He's a retired Fist, so I know that she is safe with him.~ */
 		== KELDORJ
-		@200 /* ~That is good, Captain. I am pleased that you involve the child's grandfather in her life.~ */
+		@200 /* ~That is good... I am pleased that you involve the child's grandfather in her life.~ */
 EXIT
 
 CHAIN
@@ -2850,7 +3184,15 @@ CHAIN
 			ClearActions("Keldorn")
 		~ 
 		== KELDORJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@202 /* ~Captain, I do not mean to pry. You mentioned earlier that your father was raising your child, yes?~ */
+		== KELDORJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@767 /* ~Major, I do not mean to pry. You mentioned earlier that your father was raising your child, yes?~ */
 		== LCCORWIB
 		@203 /* ~Yes, that's right.~ */
 		== KELDORJ
@@ -2858,13 +3200,13 @@ CHAIN
 		== LCCORWIB
 		@68 /* ~I'm not married - her father has never been a part of her life, which in this case is a good thing. ~ */
 		== KELDORJ
-		@69 /* ~I see... it's important, Captain, for a child's father, or a father figure, to be a part of a child's life.~  */
+		@69 /* ~I see... it's important for a child's father, or a father figure, to be a part of a child's life.~  */
 		== LCCORWIB
 		@70 /* ~I agree... my father has had a tremendous impact on my life, and my daughter's. I hope I've found someone to fill that need for Rohma (she shoots a glance in your direction)... time will tell.~ [LCCORB11] */
 		=
 		@71 /* ~I appreciate the advice - thank you, Keldorn.~ */
 		== KELDORJ
-		@72 /* ~Any time, Captain Corwin. Let us hope that we are both able to return to our families soon.~ */
+		@72 /* ~Any time, my friend. Let us hope that we are both able to return to our families soon.~ */
 EXIT
 
 CHAIN
@@ -2879,7 +3221,15 @@ CHAIN
 			ClearActions("Keldorn")
 		~ 
 		== KELDORJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@202 /* ~Captain, I do not mean to pry. You mentioned earlier that your father was raising your child, yes?~ */
+		== KELDORJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@767 /* ~Major, I do not mean to pry. You mentioned earlier that your father was raising your child, yes?~ */
 		== LCCORWIB
 		@203 /* ~Yes, that's right.~ */
 		== KELDORJ
@@ -2887,13 +3237,13 @@ CHAIN
 		== LCCORWIB
 		@68 /* ~I'm not married - her father has never been a part of her life, which in this case is a good thing. ~ */
 		== KELDORJ
-		@69 /* ~I see... it's important, Captain, for a child's father, or a father figure, to be a part of a child's life.~  */
+		@69 /* ~I see... it's important for a child's father, or a father figure, to be a part of a child's life.~  */
 		== LCCORWIB
 		@73 /* ~I agree... my father has had a tremendous impact on my life, and the life of my daughter. I hope that one day I'll find someone to fill that need for Rohma...~ [LCCORB10]   */
 		=
 		@71 /* ~I appreciate the advice - thank you, Keldorn.~ */
 		== KELDORJ
-		@72 /* ~Any time, Captain Corwin. Let us hope that we are both able to return to our families soon.~ */
+		@72 /* ~Any time, my friend. Let us hope that we are both able to return to our families soon.~ */
 EXIT
 
 
@@ -2944,8 +3294,16 @@ CHAIN
 			ClearActions("Anomen")
 		~ 
 		== ANOMENJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@164 /* ~Captain Corwin, I wish to apologize to you for my earlier behaviour.~ */
-		=
+		== ANOMENJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@768 /* ~Major Corwin, I wish to apologize to you for my earlier behaviour.~ */
+		== ANOMENJ
 		@165 /* = ~It's just that I'm quite unaccustomed to seeing a woman serve in a military organization, let alone in a leadership position.~ */
 		== LCCORWIB
 		@166 /* ~The Flaming Fist doesn't care if a recruit is a man or a woman. What matters is their ability and willingness to do what's needed of them.~ */
@@ -2956,7 +3314,7 @@ CHAIN
 		== LCCORWIB
 		@169 /* ~That's kind of you to say... thank you. I too should apologize.~  */
 		== ANOMENJ
-		@176 /* = ~For what, Captain?~ */
+		@176 /* = ~For what?~ */
 		== LCCORWIB
 		@170 /* = ~My family is not wealthy. As much as I want to be home with my father and daughter, I need to work to support them.~ */
 		=
@@ -2966,7 +3324,15 @@ CHAIN
 		== LCCORWIB
 		@173 /* @173 = ~It seems that we would both do well to, as they say, avoid judging a book by its cover.~  */
 		== ANOMENJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@175 /* ~Agreed, Captain.~ */
+		== ANOMENJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@769 /* ~Agreed, Major.~ */
 EXIT
 
 //Edwin Banters
@@ -2985,7 +3351,15 @@ CHAIN
 		~
 		=@1 /* ~I'm very sorry about Khalid. Your husband was good man, and a great warrior. Those who survived the siege on Bridgefort owe him their lives.~ */
 		== JAHEIRAJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@4 /* ~Thank you, Captain. The pain of his loss weighs heavily, though I am glad that the monster responsible is dead.~ */
+		== JAHEIRAJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@770 /* ~Thank you, Major. The pain of his loss weighs heavily, though I am glad that the monster responsible is dead.~ */
 		== LCCORWIB
 		@3 /* ~As am I.~ */
 EXIT
@@ -3003,7 +3377,15 @@ CHAIN
 		~
 		=@1 /* ~I'm very sorry about Khalid. Your husband was good man, and a great warrior. Those who survived the siege on Bridgefort owe him their lives.~ */
 		== JAHEIRAJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@2 /* ~Thank you, Captain. The pain of his loss weighs heavily. In time I will learn to cope with this, but for now I only wish to see Irenicus dead... and I am glad you are here to help in the hunt for that monster.~ */
+		== JAHEIRAJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@771 /* ~Thank you, Major. The pain of his loss weighs heavily. In time I will learn to cope with this, but for now I only wish to see Irenicus dead... and I am glad you are here to help in the hunt for that monster.~ */
 		== LCCORWIB
 		@3 /* ~As am I.~ */
 EXIT
@@ -3019,7 +3401,15 @@ CHAIN
 			ClearActions("Jaheira")
 		~ 
 		== JAHEIRAJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@9 /* ~Captain, a word please.~*/
+		== JAHEIRAJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@772 /* ~Major, a word please.~*/
 		== LCCORWIB
 		@10 /* ~Yes, Jaheira?~ */
 		== JAHEIRAJ
@@ -3045,7 +3435,15 @@ CHAIN
 			ClearActions("Jaheira")
 		~ 
 		== JAHEIRAJ
-		@17	/* ~Yes, Captain?~*/	 
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@17	/* ~Yes, Captain?~*/	
+		== JAHEIRAJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@756 /* ~Yes, Major?~*/		
 		== LCCORWIB
 		@18 /* ~Earlier, you wanted to know about my mother...~*/
 		= 
@@ -3084,7 +3482,15 @@ CHAIN
 			ClearActions("Aerie")
 		~  
 		== AERIEJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@40 /* ~It's n-nothing, Captain... well, can I ask you a question?~ */
+		== AERIEJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@773 /* ~It's n-nothing, Major... well, can I ask you a question?~ */
 		== LCCORWIB
 		@41 /* ~Yes, what is it Aerie?~ */
 		== AERIEJ
@@ -3092,7 +3498,7 @@ CHAIN
 		== LCCORWIB
 		@43 /* ~Aerie, scars serve as a reminder to us. They show us that we are stronger than the person that tried to hurt us.~ */
 		== AERIEJ
-		@44 /* ~That's a.. an interesting way of looking at things, Captain. How did you get your s-scars?~ */
+		@44 /* ~That's a.. an interesting way of looking at things... How did you get your s-scars?~ */
 		== LCCORWIB
 		@45 /* ~Through my duty to the Flaming Fist. This one here (she points under her right eye) came after I chased a thief into an alley... I triggered an acid trap. I learned an important lesson from that.~ */
 		== AERIEJ
@@ -3331,17 +3737,33 @@ CHAIN
 			ClearActions("Dorn")
 		~ 
 		== DORNJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@33 /* ~What do you mean by that, Captain?~*/
+		== DORNJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@774 /* ~What do you mean by that, Major?~*/
 		== LCCORWIB
 		@34 /* ~You claim to help <CHARNAME>, yet your leash is held firm by your patron.~*/
 		== DORNJ
-		@35 /* ~Watch your tongue, Captain. You are very far from home, and your precious Flaming Fist.~*/
+		@35 /* ~Watch your tongue, woman. You are very far from home, and your precious Flaming Fist.~*/
 		= 
 		@36 /* ~You are the one who is trying to serve two masters.~*/
 		== LCCORWIB
 		@37 /* ~The difference is that <CHARNAME>'s goals and those of the Dukes are aligned. Your patron only wants to feed on the death and destruction left in your wake.~*/
 		== DORNJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@38 /* ~Hmph. Be wary of the day then, Captain, when the goals of those you serve oppose one another.~*/
+		== DORNJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@775 /* ~Hmph. Be wary of the day then, Major, when the goals of those you serve oppose one another.~*/
 EXIT
 
 CHAIN
@@ -3362,7 +3784,15 @@ CHAIN
 		== LCCORWIB
 		@158 /* = ~How do you know that the orders you receive are legitimate? That they aren't sent by some other person, or thing?~ */
 		== DORNJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@159 /* = ~My patron communicates their thoughts to my mind. I can.. hear them, as clearly as I can hear your mewling voice, Captain.~ */
+		== DORNJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@776 /* = ~My patron communicates their thoughts to my mind. I can.. hear them, as clearly as I can hear your mewling voice, Major.~ */
 		== LCCORWIB
 		@160 /* ~So, you just follow the voice inside your head that tells you to murder things. Is that right?~*/
 		== DORNJ
@@ -3370,7 +3800,7 @@ CHAIN
 		== LCCORWIB
 		@162 /* = ~If that voice tells you to harm <CHARNAME>, or anyone else that I care about, then your patron will need to find themselves a new slave. I trust I've made myself clear.~ */
 		== DORNJ
-		@163 /* = ~These pathetic insults and threats are beneath you, Captain. I've no intention of betraying <CHARNAME>, certainly not while my patron benefits from our arrangement.~ */
+		@163 /* = ~These pathetic insults and threats are beneath you. I've no intention of betraying <CHARNAME>, certainly not while my patron benefits from our arrangement.~ */
 EXIT
 
 CHAIN
@@ -3401,7 +3831,15 @@ CHAIN
 	~ THEN LCCORWIB LCA_ComplimentFamily
 		@727 /* ~Oh... what a relief.~ */
 		== VALYGARJ
-		@720 /*  ~Captain Corwin, you have a lovely family.~ */
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@720 /*  ~Captain, you have a lovely family.~ */
+		== VALYGARJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@777 /*  ~Major, you have a lovely family.~ */
 		DO ~
 			SetGlobal("LCA_AVComplimentFamily", "GLOBAL", 2)
 		~

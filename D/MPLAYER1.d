@@ -365,6 +365,9 @@ CHAIN IF ~
 	@60 /* ~Sir?~*/
 	== LCNEDERL
 	@61 /* ~For your role in bringing Irenicus to justice, and for your fine work in supporting <CHARNAME>'s defeat of the Iron Throne, Sarevok, and Caelar, you are hereby promoted to the rank of Major. Congratulations, and keep up the good work!~ */
+	DO ~
+		SetGlobal("LCA_CorwinPromoted", "GLOBAL", 1)
+	~
 	== LCCORWIJ
 	@62 /* ~Thank you, sir!~ */
 	== LCBELT

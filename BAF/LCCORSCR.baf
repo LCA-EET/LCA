@@ -2802,6 +2802,9 @@ IF
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 3)
 	Global("LCA_Banter_CorwinDorn", "GLOBAL", 1)
 	ActionListEmpty()
+	OR(2)
+		!Dead("ohdazoth")  // Azothet
+		!Dead("ohdugoth")  // Ur-Gothoz
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
