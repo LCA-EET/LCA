@@ -1387,7 +1387,7 @@ CHAIN
 		@538 /* ~Is that so? Yes, I'm interested.~ */
 END
 ++@557 EXTERN MAZZYJ LCA_TMSignup /* ~Mazzy, you said the competition is held in Trademeet?~ */
-
+//NEED TO FIX 
 CHAIN
 	IF ~~ THEN MAZZYJ LCA_TMSignup
 		@539 /* ~Yes, that's right. The signup table is in the southeast of the city, if I remember correctly. Next time we are in the area, we can signup.~ [NOSOUND]*/
