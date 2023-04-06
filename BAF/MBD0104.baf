@@ -1,0 +1,12 @@
+IF
+	Global("chapter","global",13)
+	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
+	Global("bd_jail_visitors","bd0104",1)  // Flaming Fist HQ
+	!Dead("CORWIN")  // Corwin
+THEN
+	RESPONSE #100
+		SetGlobal("bd_jail_visitors","bd0104",2)  // Flaming Fist HQ
+		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)  // Flaming Fist HQ
+		CreateCreature("LCBDSCH2",[720.620],NW)  // Corwin
+		ActionOverride("LCBDSCH2",ChangeAIScript("bdvisit",OVERRIDE))
+END

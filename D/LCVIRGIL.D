@@ -14,11 +14,21 @@ IF ~
 	~
 	GOTO LCA_Hopelessness
 	
-	IF ~~ THEN REPLY @54 /*  ~It's what you deserve. Don't do the crime if you can't do the time.~ */
+	IF ~
+		Gender(Player1, MALE)
+	~ THEN REPLY @54 /*  ~It's what you deserve. Don't do the crime if you can't do the time.~ */
 	DO ~
 		SetGlobal("LCA_VirgilJailTalk", "GLOBAL", 1)
 	~
-	GOTO LCA_GoToHell
+	GOTO LCA_GoToHell_M
+	
+	IF ~
+		!Gender(Player1, MALE)
+	~ THEN REPLY @54 /*  ~It's what you deserve. Don't do the crime if you can't do the time.~ */
+	DO ~
+		SetGlobal("LCA_VirgilJailTalk", "GLOBAL", 1)
+	~
+	GOTO LCA_GoToHell_F
 END
 
 IF ~

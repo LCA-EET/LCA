@@ -2,7 +2,7 @@ BEGIN ~LCCORWIB~
 
 IF ~
 	Global("OHD_corwinconflict","GLOBAL",2)
-~ THEN LCCORWIB LCA_CorwinDornConflictChainInit
+~ THEN BEGIN LCA_CorwinDornConflictChainInit
 	SAY @658 /* ~Dorn - you seem to have taken a very strong interest in <CHARNAME>.~ */
 	
 	IF ~~ THEN
@@ -13,7 +13,7 @@ IF ~
 END
 IF ~
 	Global("LCA_Banter_CorwinAnomen", "GLOBAL", 2)
-~ THEN LCCORWIB BCorwinAnomen1A
+~ THEN BEGIN BCorwinAnomen1A
 	SAY @541 /* ~You've been glaring at me for the last hour Anomen. What is it?~ [LCCORB20] */
 	IF ~~ THEN
 	DO ~
@@ -37,7 +37,7 @@ END
 IF ~
 	Global("LCA_Banter_CorwinMazzy", "GLOBAL", 4)
 ~ THEN BEGIN LCA_Banter_CorwinMazzy2_Init
-	@528 /* ~Mazzy, I'm curious as to why you chose to specialize in the crossbow instead of the longbow.~ */
+	SAY @528 /* ~Mazzy, I'm curious as to why you chose to specialize in the crossbow instead of the longbow.~ */
 	
 	IF ~~ THEN 
 	DO ~
@@ -53,7 +53,7 @@ IF ~~ THEN BEGIN LCA_CorwinWonCompetition
 	IF ~~ THEN REPLY @551 /* ~You both performed well. I'm glad to have such skilled companions at my side.~ */
 	EXTERN LCCORWIJ LCA77
 	
-	IF ~~ THEN REPLY @5556 /* ~Schael, you were amazing.~  */
+	IF ~~ THEN REPLY @556 /* ~Schael, you were amazing.~  */
 	EXTERN LCCORWIJ LCA77
 END
 

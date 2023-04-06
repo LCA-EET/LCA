@@ -16,13 +16,10 @@ Defender of Baldur's Gate Cutscene - The Festival of the Middle Ages, by Taehoon
 Journey to Saradush Cutscene - Medeival City Under Siege, by Raymond Minnaar. https://www.deviantart.com/raymondminnaar/art/Avalon-Lords-Castle-Siege-450232609
 
 */
-
 BACKUP ~LCA/backup~
 
 AUTHOR ~Daniel Valle, dan@danielvalle.net~
-BACKUP ~LCA/backup~
 
-AUTHOR ~Daniel Valle, dan@danielvalle.net~
 
 //Link to LCA EET Discord: https://discord.gg/hwGf39gW9g 
 //Link to LCA YouTube Channel: https://www.youtube.com/@lcamod/videos 
@@ -220,7 +217,7 @@ COPY ~LCA/WAV/LCCORJ48.WAV~ ~override~
 COPY ~LCA/WAV/LCCORJ49.WAV~ ~override~
 COPY ~LCA/WAV/LCCORJ50.WAV~ ~override~
 COPY ~LCA/WAV/LCCORJ51.WAV~ ~override~
-COPY ~LCA/WAV/LCCORJ52.WAV~ ~override~
+//COPY ~LCA/WAV/LCCORJ52.WAV~ ~override~
 COPY ~LCA/WAV/LCCORJ53.WAV~ ~override~
 COPY ~LCA/WAV/LCCORJ54.WAV~ ~override~
 
@@ -678,6 +675,7 @@ WRITE_ASCII 0x24 ~BG0900~ #8
 WRITE_LONG 0x2C 3
 
 //Dialog Overrides
+EXTEND_TOP ~BD0104.bcs~ ~LCA/BAF/MBD0104.BAF~
 EXTEND_TOP ~NOBLBAZ.bcs~ ~LCA/BAF/LCNOBMOV.BAF~
 EXTEND_TOP ~NOBWBAZ.bcs~ ~LCA/BAF/LCNOBWOV.BAF~
 EXTEND_TOP ~MTOWBAZ.bcs~ ~LCA/BAF/LCTWNMOV.BAF~
