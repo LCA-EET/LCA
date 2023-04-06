@@ -36,17 +36,17 @@ IF ~~ THEN BEGIN LCA_A_1
 	GOTO LCA_A_2 //OK
 	
 	IF ~~ THEN REPLY @6 /* ~If you expect me to thank the Grand Dukes for their hospitality, you're going to be gravely disappointed.~ */
-	GOTO LCA_A_8
+	GOTO LCA_A_8 //OK
 END
 
 IF ~~ THEN BEGIN LCA_A_2
 	SAY @8 /* ~I can't do it. I'm sorry, <CHARNAME>. If I release you, you'll be hunted down as a fugitive.~ */
 	
 	IF ~~ THEN REPLY @9 /* ~We can leave here together - take Rohma and go some place no one will ever find us. Please, Schael, don't give up. There's still a future for us - if you want it.~ */
-	GOTO LCA_A_3
+	GOTO LCA_A_3 //OK
 	
 	IF ~~ THEN REPLY @11 /* ~If you've not come to help me, why are you here?~*/
-	GOTO LCA_A_7A
+	GOTO LCA_A_7A //OK
 	
 	IF ~~ THEN REPLY @12 /* ~I didn't kill Skie. You can't believe I'd ever do something like that.~ */
 	GOTO LCA_A_2A //OK
@@ -61,7 +61,7 @@ END
 
 IF ~~ THEN BEGIN LCA_A_3
 	SAY @13 /* ~You think I'd turn my back on the Flaming Fist? On my father? I thought you knew me.~ [BD54636]  */
-	IF ~~ THEN GOTO LCA_A_4
+	IF ~~ THEN GOTO LCA_A_4 //ok
 END
 
 IF ~~ THEN BEGIN LCA_A_4
@@ -80,7 +80,8 @@ END
 IF ~~ THEN BEGIN LCA_A_5
 	SAY @18 /* ~I'll not deny my feelings for you. Not ever. But how I feel means little beyond these walls.~ */
 	
-	IF ~~ THEN GOTO LCA_A_6
+	IF ~~ THEN 
+	GOTO LCA_A_6
 END
 
 IF ~~ THEN BEGIN LCA_A_6
@@ -93,6 +94,7 @@ IF ~~ THEN BEGIN LCA_A_6
 	GOTO LCA_A_15
 	
 	IF ~~ THEN REPLY @22 /* ~Let's see how we're feeling after you release me from this wretched cell.~ */
+	GOTO LCA_A_16
 END
 
 IF ~~ THEN BEGIN LCA_A_7
@@ -111,10 +113,10 @@ IF ~~ THEN BEGIN LCA_A_8
 	GOTO LCA_A_9 //OK
 	
 	IF ~~ THEN REPLY @28 /* ~Imagine how I feel.~ */
-	GOTO M78 //OK
+	GOTO LCA_A_18 //OK
 	
 	IF ~~ THEN REPLY @29 /* ~And so you came here seeking solace. I've none to give, and wouldn't offer it to you even if I did. Get out. You sicken me. Go!~ */ 
-	GOTO M94 //OK
+	GOTO LCA_A_20 //OK
 END
 
 IF ~~ THEN BEGIN LCA_A_9
@@ -127,6 +129,7 @@ IF ~~ THEN BEGIN LCA_A_9
 	GOTO LCA_A_15
 	
 	IF ~~ THEN REPLY @22 /* ~Let's see how we're feeling after you release me from this wretched cell.~ */
+	GOTO LCA_A_16 //OK
 END
 
 IF ~~ THEN BEGIN LCA_A_10
@@ -195,4 +198,36 @@ IF ~~ THEN BEGIN LCA_A_15
 	
 	IF ~~ THEN 
 	GOTO LCA_A_11 //OK 
+END
+
+IF ~~ THEN BEGIN LCA_A_16
+	SAY @43 /* ~I can't. At least, not yet.~ */
+	
+	IF ~~ THEN REPLY @44 /* ~What do you mean?~ */
+	GOTO LCA_A_17
+END
+
+IF ~~ THEN BEGIN LCA_A_17
+	SAY @5 /* ~Imoen and I haven't stopped advocating for your innocence. There are others, too, who feel execution is not the right answer - not after all you've done for the city.~*/
+	
+	IF ~~ THEN 
+	GOTO LCA_A_11
+END
+
+IF ~~ THEN BEGIN LCA_A_18
+	SAY @46 /* ~Your glib tongue betrays you, <CHARNAME>. A girl lies dead, her blood on your hands, and all you offer is another quip. Skie deserves better than that. As do I.~ [BD54641] */
+	
+	IF ~~ THEN 
+	GOTO LCA_A_4
+END
+
+IF ~~ THEN BEGIN LCA_A_20
+	SAY @47 /* ~You heartless... I can't believe I didn't see it before.~ */
+	= @48 /* ~Farewell, <CHARNAME>. I hope you are able to find some peace before the end.~ */
+	IF ~~ THEN DO 
+	~
+		SetGlobal("bd_corwin_romanceactive","global",0)
+		EscapeArea()
+	~ 
+	EXIT
 END
