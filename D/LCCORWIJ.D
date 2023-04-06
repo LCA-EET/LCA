@@ -5683,6 +5683,70 @@ IF ~~ THEN BEGIN LCA_ReadyToGetRohma
 	EXTERN LCNEDERL LCA_ReadyToGetRohmaEnd
 END
 
+IF ~~ THEN BEGIN LCA_CorwinDelciaA_End
+	SAY @505 /* ~Now, listen to me. I didn't travel all this way and risk my life only to be spoken down to by a pretentious, insufferable bitch. We are not your servants, and you are no better than the dirt on my heel. Get up.~  */
+	
+	IF ~
+		!IsValidForPartyDialogue(Player1)
+	~ THEN
+	DO ~
+		SetGlobal("LCA_SlappedDelcia", "GLOBAL", 1)
+	~
+	EXTERN DELCIA LCA_CorwinLeave
+	
+	IF ~
+		IsValidForPartyDialogue(Player1)
+	~ THEN
+	DO ~
+		SetGlobal("LCA_SlappedDelcia", "GLOBAL", 1)
+		SetGlobal("LCA_DelciaEnd", "GLOBAL", 1)
+		StartDialog("LCCORWIJ", Player1)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_CorwinDrizz_End
+	SAY @1297 /* ~<CHARNAME>?~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_CorwinDrizz_End", "GLOBAL", 1)
+		StartDialog("LCCORWIJ", Player1)
+	~
+	EXIT
+END
+
+IF ~
+	Global("LCA_CorwinDrizz_End", "GLOBAL", 1)
+~ THEN BEGIN LCA_CorwinDrizz_Transition
+	SAY @1298 /* ~We could use their help.~ */
+	
+	IF ~~ THEN REPLY @1299 /* ~Thank you for the offer, Drizzt, but we aren't in need of any assistance.~ */
+	DO ~
+		SetGlobal("LCA_CorwinDrizz_End", "GLOBAL", 2)
+	~
+	EXTERN C6DRIZZ1 54
+	
+	IF ~~ THEN REPLY @483 /* ~I have a proposal for you, Drizzt, if you will wait for a moment.~  */
+	DO ~
+		SetGlobal("LCA_CorwinDrizz_End", "GLOBAL", 2)
+	~
+	EXTERN C6DRIZZ1 LCA_CorwinDrizz2 
+END
+IF ~
+	Global("LCA_SlappedDelcia", "GLOBAL", 1)
+	Global("LCA_DelciaEnd", "GLOBAL", 1)
+~ THEN BEGIN LCA_CorwinDelciaA_Transition
+	SAY @506 /* ~Now get the hells out of here!~ */
+	IF ~~ THEN REPLY @511 /* ~(Remain silent.)~ */
+	EXTERN DELCIA LCA_CorwinLeave
+	
+	IF ~~ THEN REPLY @512 /* ~Are you deaf, woman? Get out!~ */
+	EXTERN DELCIA LCA_CorwinLeave
+	
+	IF ~~ THEN REPLY @1295 /* ~Better do what she says, lady.~    */
+	EXTERN DELCIA LCA_CorwinLeave
+END
 CHAIN 
 	IF ~~ THEN LCCORWIJ LCA_CorwinTiannaGoodbyeChain
 		@854 /* ~I hope you learned something from this Tianna. Next time, you might not be so lucky.~*/
@@ -5766,35 +5830,21 @@ END LCCORWIJ LCA_CorwinFamilyReuniteSwitch
 
 CHAIN 
 	IF ~~ THEN LCCORWIJ LCA_CorwinDelciaA
-		@507 /* ~I've heard enough. Forgive me, Nalia.~ */
+		@507 /* ~I've heard enough. */
+		== LCCORWIJ
+		IF ~
+			IsValidForPartyDialogue("Nalia")
+		~
+		@1296 /* Forgive me, Nalia.~ */
 		= 
 		@504 /* ~(Captain Corwin walks up to Lady Delcia and delivers a powerful, open-handed slap to her face that sends her crashing to the floor. Delcia looks up at Corwin, and is left quivering and speechless.)~ */
 		==NALIAJ
-		@508 /* ~(She stands in shock.)~ */
-		==LCCORWIJ
-		@505 /* ~Now, listen to me. I didn't travel all this way and risk my life only to be spoken down to by a pretentious, insufferable bitch. We are not your servants, and you are no better than the dirt on my heel. Get up.~  */
-		=
-		@506 /* ~Now get the hells out of here!~ */
-		DO ~
-			SetGlobal("LCA_SlappedDelcia", "GLOBAL", 1)
+		IF ~
+			IsValidForPartyDialogue("Nalia")
 		~
-END
-++@511 EXTERN DELCIA LCA_CorwinLeave
-++@512 EXTERN DELCIA LCA_CorwinLeave
-
-CHAIN 
-	IF ~~ THEN LCCORWIJ LCA_CorwinDelciaB
-		@503 /* ~I've heard enough.~ */
-		= 
-		@504 /* ~(Captain Corwin walks up to Lady Delcia and delivers a powerful, open-handed slap to her face that sends her crashing to the floor. Delcia looks up at Corwin, and is left quivering and speechless.)~ */
-		=
-		@505 /* ~Now, listen to me. I didn't travel all this way and risk my life only to be spoken down to by a pretentious, insufferable bitch. We are not your servants, and you are no better than the dirt on my heel. Get up.~  */
-		=
-		@506 /* ~Now get the hells out of here!~ */
-END
-++@511 EXTERN DELCIA LCA_CorwinLeave
-++@512 EXTERN DELCIA LCA_CorwinLeave
-
+		@508 /* ~(She stands in shock.)~ */
+END LCCORWIJ LCA_CorwinDelciaA_End
+		
 CHAIN 
 	IF ~~ THEN IMOEN2 LCA_CorwinImoenReunite
 		@500 /* ~It's good to see you again, Captain, but I'm surprised that you're here.~ */
@@ -5862,9 +5912,9 @@ CHAIN
 		@478 /* ~I do. I sense no deception from this woman, and her account of <CHARNAME>'s actions lead me to believe that <PRO_HESHE> is a force for good, not evil.~  */
 		=
 		@481 /* ~If you are in need of assistance, I will be glad to offer it. If not, I will wish you well and we shall be on our way back to the far north.~ */
-END
-++@482 EXTERN C6DRIZZ1 54 /* ~I am in need of nothing at the moment. Farewell.~ */
-++@483 EXTERN C6DRIZZ1 LCA_CorwinDrizz2 /* ~I have a proposal for you, Drizzt, if you will wait for a moment.~ */
+END LCCORWIJ LCA_CorwinDrizz_End
+
+
 
 CHAIN
 	IF ~~ THEN LCCORWIJ LCA_BackToBG_Chain

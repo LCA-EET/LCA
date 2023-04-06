@@ -18,6 +18,25 @@ EXTEND_BOTTOM SAREV25A 48
 	IF ~~ THEN REPLY @183 /* ~I was already on my way to Saradush before I was dragged here.~ */
 	GOTO 49
 END
+
+APPEND MAZZYJ
+	IF ~~ THEN BEGIN LCA_MazzyWonCompetition
+		SAY @184 /* ~Thank you, Schael. You're one of the toughest competitors I've faced.~ */
+		
+		IF ~~ THEN REPLY @185 /* ~You both performed well. I'm glad to have such skilled companions at my side.~  */
+		GOTO LCA_MazzyWonCompetition2
+	END
+	
+	IF ~
+		Global("LCA_TM_ArcheryChallenge", "GLOBAL", 2)
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN BEGIN LCA_Trademeet_Competition_SchaelWon
+		SAY @186 /* ~Schael, congratulations on your victory. That was quite the performance.~ */
+	
+		IF ~~ THEN 
+		EXTERN LCCORWIB LCA_CorwinWonCompetition
+	END
+END
 //RBALDU
 
 ADD_STATE_TRIGGER RBALDU 5
@@ -29,6 +48,18 @@ ADD_STATE_TRIGGER RBALDU 14
 ~
 	!Global("LCA_ReturnToBG", "GLOBAL", 1)
 ~
+APPEND DORNJ
+	IF ~~ THEN BEGIN LCA_CorwinDornConflictChainEnd
+		SAY @193 /* ~Laughable, woman. Stand in my way, and your neck will snap as easily as a tree in the midst of a hurricane.~ */
+		
+		IF ~~ THEN REPLY @194 /* ~That's enough. Dorn, I don't know what you think exists between us, but I love Schael and nothing is going to change that.~  */
+		GOTO LCA_ChooseCorwin
+		
+		IF ~~ THEN REPLY @195 /* ~Stop it, Dorn. You know my affections lie with you.~ */
+		EXTERN LCCORWIJ LCA_ChooseDorn
+	END
+
+END
 
 APPEND RBALDU
 	IF ~
@@ -768,6 +799,28 @@ APPEND ANOMENJ
 			SetGlobal("LCA_AnomenAskedDiviner", "GLOBAL", 1)
 		~
 		EXTERN LCDIVINE LCA_AskAway
+	END
+	
+	IF ~~ THEN BEGIN BCorwinAnomen1A
+		SAY @187 /* ~A mother's place is at home with her child, not on the battlefield.~ */
+	
+		= @188 /* ~You're a poor example of a parent.~ */
+		
+		IF ~~ THEN REPLY @189 /* ~You're out of line Anomen. Knock it off.~ */
+		EXTERN LCCORWIB BCorwinAnomen1B
+		
+		IF ~~ THEN REPLY @190 /* ~(Remain silent)~ */
+		EXTERN LCCORWIB BCorwinAnomen1B
+		
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~ THEN REPLY @191 /* ~You know little of what you speak. Captain Corwin is a fine mother.~ */
+		EXTERN LCCORWIB BCorwinAnomen1B
+		
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~ THEN REPLY @192 /* ~You know little of what you speak. Major Corwin is a fine mother.~ */
+		EXTERN LCCORWIB BCorwinAnomen1B
 	END
 END
 
@@ -1582,49 +1635,25 @@ ADD_TRANS_TRIGGER DELCIA 22 //OK
 EXTEND_BOTTOM DELCIA 11 //OK
 	IF ~
 		IsValidForPartyDialogue("LCCORWIN")
-		IsValidForPartyDialogue("NALIA")
 	~ THEN EXTERN LCCORWIJ LCA_CorwinDelciaA
-	
-	IF ~
-		IsValidForPartyDialogue("LCCORWIN")
-		!IsValidForPartyDialogue("NALIA")
-	~ THEN EXTERN LCCORWIJ LCA_CorwinDelciaB
 END
 
 EXTEND_BOTTOM DELCIA 14 //OK
 	IF ~
 		IsValidForPartyDialogue("LCCORWIN")
-		IsValidForPartyDialogue("NALIA")
 	~ THEN EXTERN LCCORWIJ LCA_CorwinDelciaA
-	
-	IF ~
-		IsValidForPartyDialogue("LCCORWIN")
-		!IsValidForPartyDialogue("NALIA")
-	~ THEN EXTERN LCCORWIJ LCA_CorwinDelciaB
 END
 
 EXTEND_BOTTOM DELCIA 21 //OK
 	IF ~
 		IsValidForPartyDialogue("LCCORWIN")
-		IsValidForPartyDialogue("NALIA")
 	~ THEN EXTERN LCCORWIJ LCA_CorwinDelciaA
-	
-	IF ~
-		IsValidForPartyDialogue("LCCORWIN")
-		!IsValidForPartyDialogue("NALIA")
-	~ THEN EXTERN LCCORWIJ LCA_CorwinDelciaB
 END
 
 EXTEND_BOTTOM DELCIA 22  //OK
 	IF ~
 		IsValidForPartyDialogue("LCCORWIN")
-		IsValidForPartyDialogue("NALIA")
 	~ THEN EXTERN LCCORWIJ LCA_CorwinDelciaA
-	
-	IF ~
-		IsValidForPartyDialogue("LCCORWIN")
-		!IsValidForPartyDialogue("NALIA")
-	~ THEN EXTERN LCCORWIJ LCA_CorwinDelciaB
 END
 
 APPEND DELCIA
@@ -1633,6 +1662,7 @@ APPEND DELCIA
 		
 		IF ~~ THEN
 		DO ~
+			SetGlobal("LCA_DelciaEnd", "GLOBAL", 2)
 			SetGlobal("DelceaMove","GLOBAL",1)
 			ActionOverride("kpsold01",EscapeArea())
 			SetGlobal("DelciaLeave","GLOBAL",1)

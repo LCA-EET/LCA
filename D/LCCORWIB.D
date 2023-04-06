@@ -1,5 +1,70 @@
 BEGIN ~LCCORWIB~
 
+IF ~
+	Global("OHD_corwinconflict","GLOBAL",2)
+~ THEN LCCORWIB LCA_CorwinDornConflictChainInit
+	SAY @658 /* ~Dorn - you seem to have taken a very strong interest in <CHARNAME>.~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("OHD_corwinconflict","GLOBAL",3)
+	~
+	EXTERN DORNJ LCA_CorwinDornConflictChain
+END
+IF ~
+	Global("LCA_Banter_CorwinAnomen", "GLOBAL", 2)
+~ THEN LCCORWIB BCorwinAnomen1A
+	SAY @541 /* ~You've been glaring at me for the last hour Anomen. What is it?~ [LCCORB20] */
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_Banter_CorwinAnomen", "GLOBAL", 3)
+		ClearActions(Myself)
+		ClearActions("Anomen")
+	~ 
+	EXTERN ANOMENJ BCorwinAnomen1A
+END
+
+IF ~
+	Global("LCA_TM_ArcheryChallenge", "GLOBAL", 2)
+	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+~ THEN BEGIN LCA_Trademeet_Competition_MazzyWon
+	SAY @549 /* ~Mazzy, congratulations on your victory. That was quite the performance.~ */
+	
+	IF ~~ THEN 
+	EXTERN MAZZYJ LCA_MazzyWonCompetition
+END
+
+IF ~
+	Global("LCA_Banter_CorwinMazzy", "GLOBAL", 4)
+~ THEN BEGIN LCA_Banter_CorwinMazzy2_Init
+	@528 /* ~Mazzy, I'm curious as to why you chose to specialize in the crossbow instead of the longbow.~ */
+	
+	IF ~~ THEN 
+	DO ~
+		SetGlobal("LCA_Banter_CorwinMazzy", "GLOBAL", 5)
+		SetGlobal("LCA_TM_ArcheryChallenge", "GLOBAL", 1)
+	~
+	EXTERN MAZZYJ BCorwinMazzy2
+END
+
+IF ~~ THEN BEGIN LCA_CorwinWonCompetition
+	SAY @555 /* ~Thanks, Mazzy. You're one of the toughest people I've competed against.~ */
+	
+	IF ~~ THEN REPLY @551 /* ~You both performed well. I'm glad to have such skilled companions at my side.~ */
+	EXTERN LCCORWIJ LCA77
+	
+	IF ~~ THEN REPLY @5556 /* ~Schael, you were amazing.~  */
+	EXTERN LCCORWIJ LCA77
+END
+
+IF ~~ THEN BEGIN BCorwinMazzy2_End
+	SAY @538 /* ~Is that so? Yes, I'm interested.~ */
+	
+	IF ~~ THEN REPLY @557 /* ~Mazzy, you said the competition is held in Trademeet?~ */
+	EXTERN MAZZYJ LCA_TMSignup
+END
+
+
 //Interjects
 INTERJECT_COPY_TRANS SAREV25A 52 CORWIN_SAREV25A_52
 	== LCCORWIB
@@ -1179,11 +1244,7 @@ INTERJECT_COPY_TRANS BAERIE 430 Corwin_BAERIE_430 // OK
 	~ THEN @177 /* ~Aerie! That's enough.~ */
 END 
 
-
-
 //Corwin Sick Banters
-
-
 CHAIN
 	IF ~
 		GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
@@ -1347,46 +1408,33 @@ CHAIN
 		@525 /* ~No need to apologize, Mazzy. Let's keep moving.~ */
 EXIT
 
-CHAIN
+CHAIN IF ~~ THEN MAZZYJ BCorwinMazzy2
+	@529 /*  ~Isn't it obvious?~*/
+	== LCCORWIB
+	@530 /* ~I'm sorry?~ */
+	== MAZZYJ
+	@531 /*  ~That longbow you carry is taller than me! Longbows are far too difficult for someone of my stature to wield properly.~ */
+	== LCCORWIB
+	@532 /* ~Oh, of course - sorry. I didn't mean to offend.~ */
+	== MAZZYJ
 	IF ~
-		Global("LCA_Banter_CorwinMazzy", "GLOBAL", 4)
+		!Global("LCA_CorwinPromoted", "GLOBAL", 1)
 	~
-	THEN LCCORWIB BCorwinMazzy2
-		@528 /* ~Mazzy, I'm curious as to why you chose to specialize in the crossbow instead of the longbow.~*/
-		DO ~
-			SetGlobal("LCA_Banter_CorwinMazzy", "GLOBAL", 5)
-			SetGlobal("LCA_TM_ArcheryChallenge", "GLOBAL", 1)
-		~
-		== MAZZYJ
-		@529 /*  ~Isn't it obvious?~*/
-		== LCCORWIB
-		@530 /* ~I'm sorry?~ */
-		== MAZZYJ
-		@531 /*  ~That longbow you carry is taller than me! Longbows are far too difficult for someone of my stature to wield properly.~ */
-		== LCCORWIB
-		@532 /* ~Oh, of course - sorry. I didn't mean to offend.~ */
-		== MAZZYJ
-		IF ~
-			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
-		~
-		@533 /* ~It's alright, Captain. I know you didn't mean anything by it.~ */
-		== MAZZYJ
-		IF ~
-			Global("LCA_CorwinPromoted", "GLOBAL", 1)
-		~
-		@738 /* ~It's alright, Major. I know you didn't mean anything by it.~ */
-		== MAZZYJ
-		@534 /* ~I'm quite happy with the crossbow, infact, one of these days I'd like to challenge you to a friendly archery match.~ */
-		== LCCORWIB
-		@535 /* ~Hah, I'd like that! I must warn you though, it's been years since I've lost. ~  */
-		== MAZZYJ
-		@536 /* ~That's not surprising given your skill, though I doubt you've faced someone of my caliber.~*/
-		=
-		@537 /* ~You know, Trademeet holds an annual archery competition around this time of the year. If you're game, you and I should sign up.~ */
-		== LCCORWIB
-		@538 /* ~Is that so? Yes, I'm interested.~ */
-END
-++@557 EXTERN MAZZYJ LCA_TMSignup /* ~Mazzy, you said the competition is held in Trademeet?~ */
+	@533 /* ~It's alright, Captain. I know you didn't mean anything by it.~ */
+	== MAZZYJ
+	IF ~
+		Global("LCA_CorwinPromoted", "GLOBAL", 1)
+	~
+	@738 /* ~It's alright, Major. I know you didn't mean anything by it.~ */
+	== MAZZYJ
+	@534 /* ~I'm quite happy with the crossbow, infact, one of these days I'd like to challenge you to a friendly archery match.~ */
+	== LCCORWIB
+	@535 /* ~Hah, I'd like that! I must warn you though, it's been years since I've lost. ~  */
+	== MAZZYJ
+	@536 /* ~That's not surprising given your skill, though I doubt you've faced someone of my caliber.~*/
+	=
+	@537 /* ~You know, Trademeet holds an annual archery competition around this time of the year. If you're game, you and I should sign up.~ */
+END LCCORWIB BCorwinMazzy2_End
 //NEED TO FIX 
 CHAIN
 	IF ~~ THEN MAZZYJ LCA_TMSignup
@@ -1398,25 +1446,6 @@ CHAIN
 		@558 /* ~Sounds good. Let's get going, we have work to do.~ */
 EXIT
 
-CHAIN
-	IF ~
-		Global("LCA_TM_ArcheryChallenge", "GLOBAL", 2)
-		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~
-	THEN LCCORWIB LCA_MazzyWonCompetition
-		@549 /* ~Mazzy, congratulations on your victory. That was quite the performance.~ */
-		== MAZZYJ
-		IF ~
-			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
-		~
-		@550 /* ~Thanks, Captain. You're one of the toughest I've competed against.~ */
-		== MAZZYJ
-		IF ~
-			Global("LCA_CorwinPromoted", "GLOBAL", 1)
-		~
-		@739 /* ~Thanks, Major. You're one of the toughest I've competed against.~ */
-END
-++@551 EXTERN MAZZYJ LCA_MazzyWonCompetition2 /* ~You both performed well. I'm glad to have such skilled companions at my side.~ */
 
 CHAIN
 	IF ~~ THEN MAZZYJ LCA_MazzyWonCompetition2
@@ -1430,18 +1459,6 @@ CHAIN
 		@553 /* ~As am I, my friend. Let's go.~ */
 EXIT
 
-CHAIN
-	IF ~
-		Global("LCA_TM_ArcheryChallenge", "GLOBAL", 2)
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~
-	THEN MAZZYJ LCA_CorwinWonCompetition
-		@554 /* ~Captain, congratulations on your victory. That was quite the performance.~ */
-		== LCCORWIB
-		@555 /* ~Thanks, Mazzy. You're one of the toughest people I've competed against.~ */
-END
-++@551 EXTERN LCCORWIJ LCA77 /* ~You both performed well. I'm glad to have such skilled companions at my side.~ */
-++@556 EXTERN LCCORWIJ LCA77 /* ~Schael, you were amazing.~  */
 
 //Nalia Banters
 CHAIN 
@@ -3246,28 +3263,6 @@ CHAIN
 		@72 /* ~Any time, my friend. Let us hope that we are both able to return to our families soon.~ */
 EXIT
 
-
-/* Anomen Banters */
-CHAIN
-	IF ~
-		Global("LCA_Banter_CorwinAnomen", "GLOBAL", 2)
-	~ THEN LCCORWIB BCorwinAnomen1A
-		@541 /* ~You've been glaring at me for the last hour Anomen. What is it?~ [LCCORB20] */
-		DO ~
-			SetGlobal("LCA_Banter_CorwinAnomen", "GLOBAL", 3)
-			ClearActions(Myself)
-			ClearActions("Anomen")
-		~ 
-		== ANOMENJ
-		@542 /* ~A mother's place is at home with her child, not on the battlefield.~ */
-		=
-		@543 /* ~You are a poor example of a parent.~ */
-END
-
-++@544+ BCorwinAnomen1B /* ~You are out of line Anomen. Knock it off.~*/
-++@545+ BCorwinAnomen1B /* ~(Remain silent)~  */
-++@546+ BCorwinAnomen1B /* ~You know little of what you speak. Captain Corwin is a fine mother.~  */
-
 CHAIN
 	IF ~~ THEN LCCORWIB BCorwinAnomen1B
 		@54 /* ~You think I don't want to be home with my daughter and father? ~ [LCCORB60]*/
@@ -3698,22 +3693,12 @@ EXIT
 
 // Dorn Banters
 CHAIN 
-	IF ~
-		Global("OHD_corwinconflict","GLOBAL",2)
-	~ THEN LCCORWIB LCA_CorwinDornConflict
-		@658 /* ~Dorn - you seem to have taken a very strong interest in <CHARNAME>.~ */
-		DO ~
-			SetGlobal("OHD_corwinconflict","GLOBAL",3)
-		~
-		== DORNJ
+	IF ~~ THEN DORNJ LCA_CorwinDornConflictChain
 		@659 /* ~It is not your concern.~ */
 		== LCCORWIB
 		@660 /* ~But it is. If you even think to stand in the way of our relationship, I promise that you'll regret it.~ */
-		== DORNJ
-		@661 /* ~Laughable, woman. Stand in my way, and your neck will snap as easily as a tree in the midst of a hurricane.~ */
-END
-++@662 EXTERN DORNJ LCA_ChooseCorwin /* ~That's enough. Dorn, I don't know what you think exists between us, but I love Schael and nothing is going to change that.~ */
-++@663 EXTERN LCCORWIJ LCA_ChooseDorn /* ~Stop it, Dorn. You know my affections lie with you.~  */
+END DORNJ LCA_CorwinDornConflictChainEnd
+
 
 CHAIN 
 	IF ~

@@ -479,7 +479,8 @@ IF
 	See("Dorn")
 THEN
 	RESPONSE #100
-		Interact("Dorn")
+		StartDialog("LCCORWIB", Player1)
+		//Interact("Dorn")
 END
 
 /*
@@ -1727,6 +1728,7 @@ END
 IF
 	Global("LCA_CorwinCanTalk", "GLOBAL", 1)
 	IfValidForPartyDialog("Mazzy")
+	IfValidForPartyDialog(Player1)
 	Global("LCA_Banter_CorwinMazzy", "GLOBAL", 4)
 	!Range("Mazzy", 6)
 	ActionListEmpty()
@@ -1740,6 +1742,7 @@ END
 IF
 	Global("LCA_CorwinCanTalk", "GLOBAL", 1)
 	IfValidForPartyDialog("Mazzy")
+	IfValidForPartyDialog(Player1)
 	Global("LCA_Banter_CorwinMazzy", "GLOBAL", 4)
 	Range("Mazzy", 7)
 	See("Mazzy")
@@ -1748,7 +1751,7 @@ THEN
 		//DisplayStringHead(Myself, ~DEBUG_079~)
 		////clearactions(Myself)
 		FaceObject("Mazzy")
-		Interact("Mazzy")
+		StartDialog("LCCORWIB", Player1)
 END
 
 /* Trademeet Archery Competition Ended - Corwin Won */
@@ -1762,7 +1765,7 @@ IF
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself, ~DEBUG_080~)
-		ActionOverride("Mazzy", StartDialog("MAZZYJ", "LCCORWIN"))
+		ActionOverride("Mazzy", StartDialog("MAZZYJ", Player1))
 END
 
 /* Trademeet Archery Competition Ended - Mazzy Won */
@@ -1776,7 +1779,8 @@ IF
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself, ~DEBUG_081~)
-		Interact("Mazzy")
+		StartDialog("LCCORWIB", Player1)
+		//Interact("Mazzy")
 END
 
 /* Nalia */
@@ -3489,6 +3493,7 @@ END
 
 IF
 	IfValidForPartyDialog("Anomen")
+	IfValidForPartyDialog(Player1)
 	Global("LCA_CorwinCanTalk", "GLOBAL", 1)
 	Global("LCA_Banter_CorwinAnomen", "GLOBAL", 2)
 	!Range("Anomen", 6)
@@ -3501,6 +3506,7 @@ END
 
 IF
 	IfValidForPartyDialog("Anomen")
+	IfValidForPartyDialog(Player1)
 	Global("LCA_CorwinCanTalk", "GLOBAL", 1)
 	Global("LCA_Banter_CorwinAnomen", "GLOBAL", 2)
 	See("Anomen")
@@ -3508,7 +3514,8 @@ THEN
 	RESPONSE #100
 		//clearactions(Myself)
 		ActionOverride("Anomen", FaceObject("LCCORWIN"))
-		Interact("Anomen")
+		//Interact("Anomen")
+		StartDialog("LCCORWIB", Player1)
 END
 
 /* Anomen - Corwin Second Interaction*/
