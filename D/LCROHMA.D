@@ -113,15 +113,15 @@ IF ~~ THEN BEGIN LCA_CorwinFamilyReunite3
 	SAY @10 /* ~(She turns to look at you.)~ */
 	
 	IF ~
-		!Global("EEMetRohma","Global",1)
+		!Global("LCA_MetRohma","Global",1)
 	~ THEN
 	DO ~
-		SetGlobal("EEMetRohma","Global",1)
+		SetGlobal("LCA_MetRohma","Global",1)
 	~
 	GOTO LCA_CorwinFamilyReunite3A1
 	
 	IF ~
-		Global("EEMetRohma","Global",1)
+		Global("LCA_MetRohma","Global",1)
 	~ THEN
 	GOTO LCA_CorwinFamilyReunite3B1
 END

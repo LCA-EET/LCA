@@ -5132,7 +5132,7 @@ IF ~~ THEN BEGIN LCA_BenceWyrm_6
 	
 	IF ~
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-		!Global("EEMetRohma", "GLOBAL", 1)
+		!Global("LCA_MetRohma", "GLOBAL", 1)
 	~ 
 	THEN 
 	DO ~
@@ -5143,7 +5143,7 @@ IF ~~ THEN BEGIN LCA_BenceWyrm_6
 END
 
 IF ~~ THEN BEGIN LCA_GetRohmaGift
-	SAY @715 /* ~(You think to yourself that it's been a while since you've seen Schael's family. To show Schael that you care about them, it may be worthwhile stopping at one of the General Stores and getting a gift for her daughter.)~ */
+	SAY @715 /* ~(You think to yourself that it's been a while since you've seen Schael's family. It may be worthwhile stopping at one of the General Stores and getting a gift for her daughter.)~ */
 	
 	IF ~~ THEN
 	DO ~
@@ -5197,7 +5197,7 @@ IF ~~ THEN BEGIN LCA_CorwinFamilyReunite4
 END
 
 IF ~~ THEN BEGIN LCA_WYRM_VALYGAR
-	SAY @710 /* ~Sir, allow me to introduce you to Valygar. He is a ranger from Amn who has expressed interest in joining the Flaming Fist. I know that he'd make a great addition to our team.~ */
+	SAY @710 /* ~Sir, allow me to introduce you to Valygar. He's a ranger from Amn who has expressed interest in joining the Flaming Fist. I know that he'd make a great addition to our team.~ */
 	
 	IF ~~ THEN
 	EXTERN LCNEDERL LCA_WYRM_VALYGAR2

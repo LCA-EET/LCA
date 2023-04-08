@@ -9,10 +9,13 @@
 
 EXTEND_BOTTOM SHOP06_ 0
 	IF ~
-		Global("EEMetRohma", "Global", 3)
+		OR(2)
+			GlobalGT("EEMetRohma", "Global", 0)
+			Global("LCA_MetRohma", "GLOBAL", 1)
 		!Global("BoughtDoll06", "Global", 2)
 		!Global("LCA_GaveDoll", "Global", 1)
 		!PartyHasItem("RDOLL")
+		InPartySlot(LastTalkedToBy, 0)
 	~
 	THEN REPLY @0 /* ~I'm looking for a gift for a young child, perhaps a doll of some sort. Do you have anything like that in your store?~ */
 	GOTO M0

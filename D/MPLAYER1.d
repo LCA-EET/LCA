@@ -180,13 +180,13 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN 
 		DO ~
-			SetGlobal("CorwinRomance", "GLOBAL", 2)
-			SetGlobal("ViconiaRomance", "GLOBAL", 3)
-			SetGlobal("AerieRomance", "GLOBAL", 3)
-			SetGlobal("JaheiraRomance", "GLOBAL", 3)
-			SetGlobal("AnomenRomance", "GLOBAL", 3)
-			SetGlobal("DornRomance", "GLOBAL", 3)
-			SetGlobal("NeeraRomance", "GLOBAL", 3)
+			SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
+			SetGlobal("ViconiaRomanceActive", "GLOBAL", 3)
+			SetGlobal("AerieRomanceActive", "GLOBAL", 3)
+			SetGlobal("JaheiraRomanceActive", "GLOBAL", 3)
+			SetGlobal("AnomenRomanceActive", "GLOBAL", 3)
+			SetGlobal("DornRomanceActive", "GLOBAL", 3)
+			SetGlobal("NeeraRomanceActive", "GLOBAL", 3)
 		~
 		EXTERN ~LCCORWIJ~ LCA37
 	END
