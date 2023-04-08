@@ -1,3 +1,32 @@
+IF 
+	InParty(Myself)
+	Global("LCA_CorwinEETCheck", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_CorwinEETCheck", "GLOBAL", 1)
+		Continue()
+END
+
+IF 
+	Global("LCA_CorwinEETCheck", "GLOBAL", 1)
+	GlobalGT("EECorwinBG1", "GLOBAL", 0) // this is set as part the CorwinEET mod.
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_CorwinEETCheck", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinEET", "GLOBAL", 1)
+		Continue()
+END
+
+IF 
+	Global("LCA_CorwinEETCheck", "GLOBAL", 1)
+	Global("EECorwinBG1", "GLOBAL", 0) // this is set as part the CorwinEET mod.
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_CorwinEETCheck", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinEET", "GLOBAL", 0)
+		Continue()
+END
+
 /*
 	Rejoin processing - triggered in LCCORWIN.D and LCCORWIP.D
 */
