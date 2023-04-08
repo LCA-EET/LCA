@@ -100,17 +100,6 @@ SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@70)
 SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@72)
 SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@72)
 
-/* Item Testing - Need to Remove for Final Version */
-
-/*
-COPY_EXISTING ~INN2616.STO~ ~override/INN2616.STO~
-ADD_STORE_ITEM ~LCORW1~ #0 #0 #0 ~IDENTIFIED~ #1
-ADD_STORE_ITEM ~LCORW2~ #0 #0 #0 ~IDENTIFIED~ #1
-ADD_STORE_ITEM ~LDUNC~ #0 #0 #0 ~IDENTIFIED~ #1
-ADD_STORE_ITEM ~LCSTDAG~ #0 #0 #0 ~IDENTIFIED~ #1
-ADD_STORE_ITEM ~CorwAm~ #0 #0 #0 ~IDENTIFIED~ #1
-*/
-
 /* Baldur's Gate - Trial at end of SoD*/
 /* Adds Corwin as a spectator (or participant) in the trial */
 
@@ -234,21 +223,7 @@ COPY ~LCA/STO/LCWVBAR.STO~ ~override~
 
 COPY ~LCA/STO/LCMELKOR.STO~ ~override~
 WRITE_LONG 0xc RESOLVE_STR_REF(@066)
-/*
-COPY_EXISTING ~BG1200.ARE~ ~override~
-LPF ALTER_AREA_REGION
-	INT_VAR
-	info_point = RESOLVE_STR_REF(@40)
-	STR_VAR
-    region_name = ~Info0616~
-END
-LPF ALTER_AREA_REGION
-	INT_VAR
-	info_point = RESOLVE_STR_REF(@40)
-	STR_VAR
-    region_name = ~Info0616b~
-END
-*/
+
 
 COPY_EXISTING ~BG1200.ARE~ ~override~
 LPF fj_are_structure
@@ -286,26 +261,22 @@ LPF fj_are_structure
     fj_structure_type = region
 	fj_name = ~LC0616b~
 END
-/*
-LPF fj_are_structure
-    INT_VAR
-	fj_loc_x 		= 394
-    fj_loc_y		= 652
-    fj_note_strref	= RESOLVE_STR_REF(@68)
-	fj_strref_loc 	= 1
-	fj_color		= 2
-	fj_note_id		= 7
-	STR_VAR
-    fj_structure_type = note
-END
-*/
-//Engagement Ring
+
+
+COPY ~LCA/BAM/LCMEDAL.BAM~ ~override~
+COPY ~LCA/ITM/LCMEDAL.ITM~ ~override~
+SAY NAME1 @081
+SAY NAME2 @081
+SAY UNIDENTIFIED_DESC @082
+SAY DESC @082
+
 COPY ~LCA/ITM/LCBENOHD.ITM~ ~override~
 SAY NAME1 @073
 SAY NAME2 @073
 SAY UNIDENTIFIED_DESC @074
 SAY DESC @074
 
+//Engagement Ring
 COPY ~LCA/BAM/LCRING.BAM~ ~override~
 COPY ~LCA/BAM/ILCRING.BAM~ ~override~
 COPY ~LCA/ITM/LCRINGA.ITM~ ~override~
@@ -379,6 +350,12 @@ SAY NAME1 @055
 SAY NAME2 @055
 SAY UNIDENTIFIED_DESC @054
 SAY DESC @054
+
+COPY ~LCA/ITM/LCLEDGER.ITM~ ~override~
+SAY NAME1 @064
+SAY NAME2 @064
+SAY UNIDENTIFIED_DESC @065
+SAY DESC @065
 
 COPY ~LCA/ITM/LCLEDGER.ITM~ ~override~
 SAY NAME1 @064

@@ -655,7 +655,19 @@ IF ~~ THEN BEGIN LCA_GiveMedal
 	
 	= @28 /* ~(He reaches into his desk, and pulls out a medal.)~ */
 	
-	= @29 /* ~Take this medal. You earned it.~ */
+	= @29 /* ~Take this medal.~ */
+	
+	IF ~~ THEN
+	DO ~
+		GiveItemCreate("LCMEDAL", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCMEDAL", IDENTIFIED,TRUE))
+	~
+	GOTO LCA_GiveMedal_
+	
+END
+
+IF ~~ THEN BEGIN LCA_GiveMedal_
+	SAY @118 /* ~You earned it.~ */
 	
 	IF ~~ THEN REPLY @30 /* ~Thank you, Marshal Nederlok. It was a pleasure to work with you and the rest of the coalition.~ */
 	GOTO LCA_GiveMedal3
