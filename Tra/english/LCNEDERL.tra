@@ -31,7 +31,7 @@
 @30 = ~Thank you, Marshal Nederlok. It was a pleasure to work with you and the rest of the coalition.~
 @31 = ~Thank you... you know, a word or two from you could have helped me greatly during my trial.~
 @32 = ~Certainly. See you at the debriefing.~
-@33 = ~I'd have vouched for you and your character if I had the opportunity to do so. As you know, I was tasked with neutralizing the last of Caelar's forces while your trial was taking place.~
+@33 = ~I'd have vouched for your character if I'd the opportunity to do so. As you know, I was tasked with neutralizing the last of Caelar's forces while your trial was taking place.~
 @34 = ~In any case, I doubt it would have made a difference. Duke Entar wanted you dead, and the evidence against you was damning.~ 
 @35 = ~As I understand, it was Captain Corwin who pleaded with Eltan, Belt and Jannath to exile you, rather than have you executed. I'm glad she was successful.~
 @36 = ~As am I, sir.~
@@ -54,7 +54,7 @@
 @53 = ~Using the encoded manifest, we convinced a clerk in Winston's company to provide us with the key.~
 @54 = ~I see... that's good. Captain, I suggest pressuring the clerk for more information. What we need is proof that Winston knew that the passengers were placed on the ship to be sold as slaves. If you could find a ledger, correspondence, or similar evidence that shows what Winston knew, we'll have him dead to rights.~
 @55 = ~Return to me once you have the last of the evidence.~
-@56 = ~We freed a slave in Athkatla, a child named Tina Bennett, and she told us that she was part of a group of refugees that fled to Baldur's Gate. They were told that they'd be taken to a new home, and boarded a ship to Athkatla. When they arrived, the children were forcibly separated from their parents and sold to slavers.~
+@56 = ~We freed a slave in Athkatla, a child named Tina Bennett. She told us that she was part of a group of refugees that fled to Baldur's Gate. They were told that they'd be taken to a new home, and boarded a ship to Athkatla. When they arrived, the children were forcibly separated from their parents and sold to slavers.~
 @57 = ~With the help of the Thieves' Guild, we were able to decode the shipping manifest using the cipher key we found in the Winston Ventures building. Look at the decoded manifest - it's a list of names! They were transporting people as cargo, undoubtedly to sell them as slaves!~
 @58 = ~Let me see that. This is evidence that people were transported, yes, but we don't even know if any of these people were sold into slavery. The only thing suspicious about all of this is why he would go through all the trouble to obfuscate such mundane information...~
 @59 = ~Good work. What you've gathered so far may be enough to warrant a more thorough investigation into the company. At this point it's just not enough to secure a conviction.~
@@ -69,7 +69,7 @@
 @68 = ~I spoke to Haspur the diviner. I asked him who was responsible for the recent slaver activity in the city. He told me that Lord Winston and his company were behind everything. Arrest him!~
 @69 = ~(He bursts into laughter.)~
 @70 = ~Thanks for the laugh, I needed it... wait, you're serious?~
-@71 = ~Listen, I appreciate the ah ... out of the box thinking, but the testimony of a carnival fortune teller is worth less than the dirt on my shoe in a court of law.~
+@71 = ~Listen, I appreciate the ah ... out of the box thinking, but the testimony of a carnival fortune teller is worth less than the dirt under my heel in a court of law.~
 @72 = ~It's great to have you back, Captain.~ [LCNDRL05]
 @73 = ~Captain Corwin - I'll see you at the debriefing.~
 @74 = ~Ah, <GABBER>, you're part of <CHARNAME>'s group, yes? The debriefing is tomorrow morning. I look forward to seeing you there.~
@@ -116,4 +116,5 @@
 @114 = ~Although you'll be going alone, there still may be a way we can help. Melkor, explain.~ [LCNDRL07]
 @115 = ~Granted.~ [LCNDRL09]
 @116 = ~Of course, sir.~
-@117 = ~I'd love to chat, but I really must get through this duty roster review.~
+@117 = ~Excuse me, but I really must get through this duty roster review. .~
+@118 = ~You earned it.~

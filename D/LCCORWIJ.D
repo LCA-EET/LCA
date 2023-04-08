@@ -3798,20 +3798,44 @@ IF ~~ THEN BEGIN LCA48
 	GOTO LCA51
 	
 	IF ~
+		!Global("LCA_AskedAboutFirstMeeting", "LOCALS", 1)
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("LCA_CorwinEET", "GLOBAL", 1)
 	~ THEN REPLY @180 /* ~I was thinking about the first time we met. Do you remember, love?~ */
 	DO ~
 		SetGlobal("LCA_AskedAboutFirstMeeting", "LOCALS", 1)
 	~
-	GOTO LCA54
+	GOTO LCA54_CorwinEET
 	
 	IF ~
+		!Global("LCA_AskedAboutFirstMeeting", "LOCALS", 1)
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("LCA_CorwinEET", "GLOBAL", 0)
+	~ THEN REPLY @180 /* ~I was thinking about the first time we met. Do you remember, love?~ */
+	DO ~
+		SetGlobal("LCA_AskedAboutFirstMeeting", "LOCALS", 1)
+	~
+	GOTO LCA54_NoCorwinEET
+	
+	IF ~
+		!Global("LCA_AskedAboutFirstMeeting", "LOCALS", 1)
 		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("LCA_CorwinEET", "GLOBAL", 1)
 	~ THEN REPLY @193 /* ~I was thinking about the first time we met. Do you remember?~ */
 	DO ~
 		SetGlobal("LCA_AskedAboutFirstMeeting", "LOCALS", 1)
 	~
-	GOTO LCA54
+	GOTO LCA54_CorwinEET
+	
+	IF ~
+		!Global("LCA_AskedAboutFirstMeeting", "LOCALS", 1)
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("LCA_CorwinEET", "GLOBAL", 0)
+	~ THEN REPLY @193 /* ~I was thinking about the first time we met. Do you remember?~ */
+	DO ~
+		SetGlobal("LCA_AskedAboutFirstMeeting", "LOCALS", 1)
+	~
+	GOTO LCA54_NoCorwinEET
 END
 
 IF ~~ THEN BEGIN LCA48A
@@ -3855,20 +3879,42 @@ IF ~~ THEN BEGIN LCA48A
 	IF ~
 		!Global("LCA_AskedAboutFirstMeeting", "LOCALS", 1)
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("LCA_CorwinEET", "GLOBAL", 1)
 	~ THEN REPLY @180 /* ~I was thinking about the first time we met. Do you remember, love?~ */
 	DO ~
 		SetGlobal("LCA_AskedAboutFirstMeeting", "LOCALS", 1)
 	~
-	GOTO LCA54 //OK
+	GOTO LCA54_CorwinEET
+	
+	IF ~
+		!Global("LCA_AskedAboutFirstMeeting", "LOCALS", 1)
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("LCA_CorwinEET", "GLOBAL", 0)
+	~ THEN REPLY @180 /* ~I was thinking about the first time we met. Do you remember, love?~ */
+	DO ~
+		SetGlobal("LCA_AskedAboutFirstMeeting", "LOCALS", 1)
+	~
+	GOTO LCA54_NoCorwinEET
 	
 	IF ~
 		!Global("LCA_AskedAboutFirstMeeting", "LOCALS", 1)
 		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("LCA_CorwinEET", "GLOBAL", 1)
 	~ THEN REPLY @193 /* ~I was thinking about the first time we met. Do you remember?~ */
 	DO ~
 		SetGlobal("LCA_AskedAboutFirstMeeting", "LOCALS", 1)
 	~
-	GOTO LCA54 //OK
+	GOTO LCA54_CorwinEET
+	
+	IF ~
+		!Global("LCA_AskedAboutFirstMeeting", "LOCALS", 1)
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("LCA_CorwinEET", "GLOBAL", 0)
+	~ THEN REPLY @193 /* ~I was thinking about the first time we met. Do you remember?~ */
+	DO ~
+		SetGlobal("LCA_AskedAboutFirstMeeting", "LOCALS", 1)
+	~
+	GOTO LCA54_NoCorwinEET
 	
 	IF ~
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
@@ -4069,7 +4115,21 @@ IF ~~ THEN BEGIN LCA53
 	EXIT
 END
 
-IF ~~ THEN BEGIN LCA54
+IF ~~ THEN BEGIN LCA54_NoCorwinEET
+	SAY @1300 /*  ~Of course. It was at the Ducal palace... we were under attack by assassins sent by the crusade.~ */
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1301 /* ~Even amidst the chaos of that night, I remember being capitvated by your beauty. I still am.~ */
+	GOTO LCA55 //OK
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1302 /* ~We defeated the assassins and left for Dragonspear the next morning.~ */
+	GOTO LCA56 //OK
+END
+
+IF ~~ THEN BEGIN LCA54_CorwinEET
 	SAY @181 /* ~Of course. It was at Wyrm's Crossing. Scar, rest his soul, introduced us. <CHARNAME>, the intrepid adventurer who had been battling bandits up and down the Sword Coast.~ */
 	
 	IF ~
