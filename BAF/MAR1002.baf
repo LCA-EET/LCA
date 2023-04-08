@@ -18,14 +18,3 @@ THEN
 		SetGlobal("LCA_SkieSaved", "GLOBAL", 3) // mark complete
 		CreateCreature("LCCORWIN", [1033.563], SW)
 END
-/*
-IF
-	Global("LCA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1) // Corwin
-	!Dead("LCCORWIN")
-	!InMyArea("LCCORWIN")
-THEN
-	RESPONSE #100
-		SetGlobal("LCA_CorwinMeetAthkatlaCouncil", "GLOBAL", 2) 
-		CreateCreature("LCCORWIN", [1033.563], SW)
-END
-*/

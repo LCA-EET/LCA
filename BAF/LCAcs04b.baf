@@ -11,6 +11,8 @@ THEN
 		CreateCreature("ENTCUT",[639.701],NW)
 		CreateCreature("FFWCUT",[555.613],S)
 		CreateCreature("ELTCUT",[826.546],SW)
+		CreateCreature("LCFFVALI", [982.448], SW)
+		CreateCreature("LCFFVAL2", [899.384], SW)
 		
 		Explore()
 		ActionOverride("BDENTAR", FaceObject("SKIE"))

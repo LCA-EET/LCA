@@ -732,6 +732,27 @@ END
 IF ~~ THEN BEGIN LCA_Menu_CreateItem
 	SAY @35 /* ~What item do you want me to create for you?~ */
 	
+	IF ~~ THEN REPLY @252 /* ~LCORW1~*/
+	DO ~
+		GiveItemCreate("LCORW1", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCORW1", IDENTIFIED,TRUE))
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @253 /* ~LCORW2~*/
+	DO ~
+		GiveItemCreate("LCORW2", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCORW2", IDENTIFIED,TRUE))
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @254 /* ~LDUNC~*/
+	DO ~
+		GiveItemCreate("LDUNC", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LDUNC", IDENTIFIED,TRUE))
+	~
+	GOTO LCA_ReturnToMainMenu
+	
 	IF ~~ THEN REPLY @234 /* ~LCSTDAG~ */
 	DO ~
 		GiveItemCreate("LCSTDAG", LastTalkedToBy(Myself),1,0,0)
@@ -1356,6 +1377,38 @@ END
 
 IF ~~ THEN BEGIN LCA_Menu_StartCutscene
 	SAY @15 /*  ~Of course. Which cutscene do you want to start?~ */
+	
+	IF ~~ THEN REPLY @249 /* ~BD0104 - Romance~ */
+	DO ~
+		SetGlobal("chapter", "global",13)
+		SetGlobalTimer("bd_jail_visitors_timer","bd0104",ONE_MINUTE) 
+		SetGlobal("bd_jail_visitors","bd0104",1)
+		SetGlobal("bd_corwin_romanceactive","global",2)
+		ActionOverride(Player1, LeaveAreaLUA("bd0104","",[405.339],SW))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @250 /* ~BD0104 - Non-Romance (Believe Innocent)~ */
+	DO ~
+		SetGlobal("chapter", "global",13)
+		SetGlobalTimer("bd_jail_visitors_timer","bd0104",ONE_MINUTE) 
+		SetGlobal("bd_jail_visitors","bd0104",1)
+		SetGlobal("bd_corwin_romanceactive","global",0)
+		SetGlobal("bd_player_exiled","global",1)
+		ActionOverride(Player1, LeaveAreaLUA("bd0104","",[405.339],SW))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @251 /* ~BD0104 - Non-Romance (Believe Guilty)~*/
+	DO ~
+		SetGlobal("chapter", "global",13)
+		SetGlobalTimer("bd_jail_visitors_timer","bd0104",ONE_MINUTE) 
+		SetGlobal("bd_jail_visitors","bd0104",1)
+		SetGlobal("bd_corwin_romanceactive","global",0)
+		SetGlobal("bd_player_exiled","global",0)
+		ActionOverride(Player1, LeaveAreaLUA("bd0104","",[405.339],SW))
+	~
+	EXIT
 	
 	IF ~~ THEN REPLY @237
 	DO ~
