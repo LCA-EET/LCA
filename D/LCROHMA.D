@@ -406,7 +406,15 @@ CHAIN LCCORWIJ LCA_ByeRohmaChain1
 	== LCCORWIJ
 	@43 /* ~It's a city, far away to the southeast. The Dukes are worried that if the Five aren't stopped, that they will come here to attack our city.~*/
 	== LCROHMA
+	IF ~
+		Global("LCA_CorwinEET", "GLOBAL", 1)
+	~
 	@44 /* ~Mommy, are you going to go and fight them? Like what happened with Sarevok and Caelar?~*/
+	== LCROHMA
+	IF ~
+		!Global("LCA_CorwinEET", "GLOBAL", 1)
+	~
+	@75 /* ~Mommy, are you going to go and fight them? Like what happened with  Caelar?~*/
 	== LCCORWIJ
 	@45 /* ~Yes, dear. <CHARNAME> and I are going to Saradush to help them fight off the Five.~*/
 	== LCROHMA
@@ -453,7 +461,15 @@ CHAIN LCCORWIJ LCA_ByeRohmaChain1_NR
 	== LCCORWIJ
 	@43 /* ~It's a city, far away to the southeast. The Dukes are worried that if the Five aren't stopped, that they will come here to attack our city.~*/
 	== LCROHMA
+	IF ~
+		Global("LCA_CorwinEET", "GLOBAL", 1)
+	~
 	@44 /* ~Mommy, are you going to go and fight them? Like what happened with Sarevok and Caelar?~*/
+	== LCROHMA
+	IF ~
+		!Global("LCA_CorwinEET", "GLOBAL", 1)
+	~
+	@75 /* ~Mommy, are you going to go and fight them? Like what happened with  Caelar?~*/
 	== LCCORWIJ
 	@66 /* ~Not this time, dear. I'm going to stay here and help prepare the city's defenses, just in case the Five try anything again.~ */
 	=@67 /* ~<CHARNAME> though is leaving for Saradush in a couple of days, to help the people over there.~ */
