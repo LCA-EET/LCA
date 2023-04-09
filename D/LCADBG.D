@@ -1387,6 +1387,7 @@ IF ~~ THEN BEGIN LCA_Menu_StartCutscene
 	
 	IF ~~ THEN REPLY @249 /* ~BD0104 - Romance~ */
 	DO ~
+		SetGlobal("bd_plot","global",600)
 		SetGlobal("chapter", "global",13)
 		SetGlobalTimer("bd_jail_visitors_timer","bd0104",ONE_MINUTE) 
 		SetGlobal("bd_jail_visitors","bd0104",1)
@@ -1397,6 +1398,7 @@ IF ~~ THEN BEGIN LCA_Menu_StartCutscene
 	
 	IF ~~ THEN REPLY @250 /* ~BD0104 - Non-Romance (Believe Innocent)~ */
 	DO ~
+		SetGlobal("bd_plot","global",600)
 		SetGlobal("chapter", "global",13)
 		SetGlobalTimer("bd_jail_visitors_timer","bd0104",ONE_MINUTE) 
 		SetGlobal("bd_jail_visitors","bd0104",1)
@@ -1408,6 +1410,7 @@ IF ~~ THEN BEGIN LCA_Menu_StartCutscene
 	
 	IF ~~ THEN REPLY @251 /* ~BD0104 - Non-Romance (Believe Guilty)~*/
 	DO ~
+		SetGlobal("bd_plot","global",600)
 		SetGlobal("chapter", "global",13)
 		SetGlobalTimer("bd_jail_visitors_timer","bd0104",ONE_MINUTE) 
 		SetGlobal("bd_jail_visitors","bd0104",1)
@@ -1644,15 +1647,84 @@ IF ~~ THEN BEGIN LCA_Menu_StartCutscene
 	~
 	EXIT
 	
+	IF ~~ THEN REPLY @259
+	DO ~
+		SetGlobal("chapter", "global",13)
+		SetGlobal("bd_plot","global",600)
+		SetGlobal("bd_mdd1697_plot","global",0)
+		ActionOverride(Player2, LeaveParty())
+		ActionOverride(Player3, LeaveParty())
+		ActionOverride(Player4, LeaveParty())
+		ActionOverride(Player5, LeaveParty())
+		ActionOverride(Player6, LeaveParty())
+		StartCutSceneMode()
+		StartCutScene("BDCUT61A")	
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @126
 	DO ~
+		SetGlobal("chapter", "global",13)
+		SetGlobal("bd_plot","global",600)
 		SetGlobal("bd_mdd1697_plot","global",0)
+		ActionOverride(Player2, LeaveParty())
+		ActionOverride(Player3, LeaveParty())
+		ActionOverride(Player4, LeaveParty())
+		ActionOverride(Player5, LeaveParty())
+		ActionOverride(Player6, LeaveParty())
 		StartCutSceneMode()
 		StartCutScene("BDCUT61T")	
 	~
 	EXIT
 	
+	IF ~~ THEN REPLY @256
+	DO ~
+		SetGlobal("chapter", "global",13)
+		SetGlobal("bd_plot","global",600)
+		SetGlobal("bd_mdd1697_plot","global",0)
+		SetGlobal("LCA_CorwinWitnessedDuel", "GLOBAL", 2)
+		ActionOverride(Player2, LeaveParty())
+		ActionOverride(Player3, LeaveParty())
+		ActionOverride(Player4, LeaveParty())
+		ActionOverride(Player5, LeaveParty())
+		ActionOverride(Player6, LeaveParty())
+		StartCutSceneMode()
+		StartCutScene("BDCUT61T")	
+	~
+	EXIT
 	
+	IF ~~ THEN REPLY @257
+	DO ~
+		SetGlobal("chapter", "global",13)
+		SetGlobal("bd_plot","global",600)
+		SetGlobal("bd_mdd1697_plot","global",0)
+		SetGlobal("bd_corwin_romanceactive","global",2)
+		ActionOverride(Player2, LeaveParty())
+		ActionOverride(Player3, LeaveParty())
+		ActionOverride(Player4, LeaveParty())
+		ActionOverride(Player5, LeaveParty())
+		ActionOverride(Player6, LeaveParty())
+		StartCutSceneMode()
+		StartCutScene("BDCUT61T")	
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @258
+	DO ~
+		SetGlobal("chapter", "global",13)
+		SetGlobal("bd_plot","global",600)
+		SetGlobal("bd_mdd1697_plot","global",0)
+		SetGlobal("bd_corwin_romanceactive","global",2)
+		SetGlobal("LCA_CorwinWitnessedDuel", "GLOBAL", 2)
+		ActionOverride(Player2, LeaveParty())
+		ActionOverride(Player3, LeaveParty())
+		ActionOverride(Player4, LeaveParty())
+		ActionOverride(Player5, LeaveParty())
+		ActionOverride(Player6, LeaveParty())
+		StartCutSceneMode()
+		StartCutScene("BDCUT61T")	
+	~
+	EXIT
 	
 	IF ~~ THEN REPLY @26
 	GOTO LCA_ReturnToMainMenu

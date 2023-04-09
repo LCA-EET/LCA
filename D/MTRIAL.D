@@ -99,15 +99,15 @@ EXTEND_BOTTOM BDBELT 6
 		Wait(3)
 		FaceObject(Player1)
 		Wait(1)
-		
+		CreateCreature("LCBDSCH2",[941.674], S)
 		SmallWait(5)
 		SmallWait(5)
-		ActionOverride("Corwin",MoveToPoint([621.720]))
+		ActionOverride("LCBDSCH2",MoveToPoint([621.720]))
 		SmallWait(55)
 		Face(E)
 		SmallWait(25)
 		Face(SSW)
-		ActionOverride("Corwin",Face(SW))
+		ActionOverride("LCBDSCH2",Face(SW))
 		SmallWait(6)
 		StartDialogNoSet(Player1)
 	~ 
@@ -170,7 +170,7 @@ APPEND BDBELT
 			SetGlobal("LCA_Trial", "GLOBAL", 2)
 			SetGlobal("LCA_CorwinSpokeAtTrial", "GLOBAL", 1)
 		~
-		EXTERN BDCORWIN LCA_CorwinTrial_0
+		EXTERN LCBDSCH2 LCA_CorwinTrial_0
 	END
 	
 	IF ~  
@@ -192,9 +192,9 @@ APPEND BDBELT
 		IF ~~ THEN 
 		DO ~
 			SetCutSceneLite(TRUE)
-			ActionOverride("Corwin",MoveToPoint([743.762]))
+			ActionOverride("LCBDSCH2",MoveToPoint([743.762]))
 			SmallWait(30)
-			ActionOverride("Corwin",MoveToPoint([1030.566]))
+			ActionOverride("LCBDSCH2",MoveToPoint([1030.566]))
 			Face(SSW)
 			Wait(3)
 			FaceObject(Player1)
@@ -208,13 +208,13 @@ APPEND BDBELT
 				Global("bd_corwin_romanceactive","global",1)
 				Global("bd_corwin_romanceactive","global",2)
 		~ THEN
-		EXTERN BDCORWIN LCA_CorwinTrial_1
+		EXTERN LCBDSCH2 LCA_CorwinTrial_1
 	END
 	
 	IF ~~ THEN BEGIN LCA4
 		SAY @6 /* ~Of course, Captain. What is it?~ */
 		IF ~~ THEN
-		EXTERN BDCORWIN LCA_CorwinTrial_2
+		EXTERN LCBDSCH2 LCA_CorwinTrial_2
 	END
 	
 	IF ~~ THEN BEGIN LCA5
@@ -222,9 +222,9 @@ APPEND BDBELT
 		IF ~~ THEN
 		DO ~
 			SetCutSceneLite(TRUE)
-			ActionOverride("Corwin",MoveToPoint([743.762]))
+			ActionOverride("LCBDSCH2",MoveToPoint([743.762]))
 			SmallWait(30)
-			ActionOverride("Corwin",MoveToPoint([1074.639]))
+			ActionOverride("LCBDSCH2",MoveToPoint([1030.566]))
 			Face(SSW)
 			Wait(3)
 			FaceObject(Player1)
@@ -232,37 +232,5 @@ APPEND BDBELT
 			StartDialogNoSet(Player1)
 		~ 
 		EXIT
-	END
-END
-
-APPEND BDCORWIN
-	IF ~~ THEN BEGIN LCA_CorwinTrial_0
-		SAY @1 /* ~<CHARNAME> led the assault on the castle. When the outer wall was breached, the coalition was confronted by the keep's defenders, led by Caelar's lieutenant, Ashatiel.~*/
-		= @2 /* ~Ashatiel was a fierce and powerful warrior, and she challenged <CHARNAME> to a duel. <CHARNAME> accepted the challenge and defeated her in single combat.~ */
-		= @3 /* ~The remaining crusaders either fled or laid down their weapons once they saw that Ashatiel was killed. Many who took part in the assault owe <CHARNAME> their lives.~ */
-		IF ~~ THEN
-		DO ~
-			IncrementGlobal("bd_trial_hero","bd0035",1)
-			IncrementGlobal("bd_trial_evil","bd0035",-1)
-			IncrementGlobal("bd_trial_case","bd0035",1)
-		~
-		EXTERN BDBELT LCA3
-	END
-	
-	IF ~~ THEN BEGIN LCA_CorwinTrial_1
-		SAY @5 /* ~If I may, sir, I have one more thing to add.~*/
-		IF ~~ THEN
-		EXTERN BDBELT LCA4
-	END
-	
-	IF ~~ THEN BEGIN LCA_CorwinTrial_2
-		SAY @7 /* ~I've gotten to know <CHARNAME> over these past months, and in spite of <PRO_HISHER> bloodline, I don't believe that <PRO_HESHE> would ever wittingly murder an innocent like Skie. I can't explain what has happened, but I believe in <CHARNAME>'s innocence.~*/
-		IF ~~ THEN REPLY @11 /* ~(Your eyes meet, and your heart is filled with gratitude and hope.)~ */
-		DO ~
-			IncrementGlobal("bd_trial_hero","bd0035",1)
-			IncrementGlobal("bd_trial_evil","bd0035",-1)
-			IncrementGlobal("bd_trial_case","bd0035",1)
-		~
-		EXTERN BDBELT LCA5
 	END
 END
