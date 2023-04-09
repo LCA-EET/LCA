@@ -1385,6 +1385,14 @@ END
 IF ~~ THEN BEGIN LCA_Menu_StartCutscene
 	SAY @15 /*  ~Of course. Which cutscene do you want to start?~ */
 	
+	IF ~~ THEN REPLY @260 
+	DO ~
+		SetGlobal("bd_plot","global",581)
+		StartCutSceneMode()
+		StartCutScene("bdcut59a")
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @249 /* ~BD0104 - Romance~ */
 	DO ~
 		SetGlobal("bd_plot","global",600)

@@ -1,3 +1,6 @@
+[1235.875]
+[1356.826]
+
 IF
 	Global("K#CleanAreaBG2","BD4300",0)  // Dragonspear Castle Basement
 	GlobalGT("Chapter","GLOBAL",13)
