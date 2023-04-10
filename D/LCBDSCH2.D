@@ -36,7 +36,8 @@ IF ~
 	AreaCheck("bd0104")
 	Global("bd_jail_visitors","bd0104",2)
 	Global("bd_corwin_romanceactive","global",2)
-~ THEN BEGIN LCA_0104_Greeting_A //Romance
+	Global("bd_player_exiled","global",1)
+~ THEN BEGIN LCA_0104_Greeting_A //Romance, Exile
 	SAY @0 /* ~<CHARNAME>. How are you?~ [BD54610] */
 	
 	IF ~~ THEN REPLY @1 /* ~I've had better days.~ */ 
@@ -263,8 +264,9 @@ END
 IF ~
 	AreaCheck("bd0104")
 	Global("bd_jail_visitors","bd0104",2)
+	!Global("bd_corwin_romanceactive","global",2)
 	Global("bd_player_exiled","global",1)
-~ THEN BEGIN LCA_0104_Greeting_B //Non-Romance, Believes in Innocence
+~ THEN BEGIN LCA_0104_Greeting_B //Non-Romance, Exile
 	SAY @0 /* ~<CHARNAME>. How are you?~ [BD54610] */
 	
 	IF ~~ THEN REPLY @1 /* ~I've had better days.~ */ 
@@ -417,7 +419,9 @@ END
 IF ~  
 	AreaCheck("bd0104")
 	Global("bd_jail_visitors","bd0104",2)
-~ THEN BEGIN LCA_0104_Greeting_C // Non-Romance, Believes Guilty
+	!Global("bd_corwin_romanceactive","global",2)
+	Global("bd_player_exiled","global",0)
+~ THEN BEGIN LCA_0104_Greeting_C // Non-Romance, Execution
 	SAY #239419 /* ~Good morning, <CHARNAME>.~ [BD39419] */
 	IF ~~ THEN REPLY #239420 /* ~Is it morning? It's hard to tell in here.~ */ 
 	DO ~
@@ -553,4 +557,33 @@ IF ~~ THEN BEGIN 38 // from: 32.2
 	
 	IF ~~ THEN 
 	GOTO 34
+END
+
+IF ~  
+	AreaCheck("bd0104")
+	Global("bd_jail_visitors","bd0104",2)
+	Global("bd_corwin_romanceactive","global",2)
+	Global("bd_player_exiled","global",0)
+~ THEN BEGIN LCA_0104_Greeting_D //Romance, Execution 
+	IF ~~ THEN REPLY @1 /* ~I've had better days.~ */ 
+	DO ~
+		SetGlobal("bd_jail_visitors","bd0104",6)
+		SetGlobal("bd_visit_player","locals",1)
+	~ 
+	GOTO LCA_A_1 //OK
+	
+	IF ~~ THEN REPLY @2 /* ~Schael. Thank the gods. You've got to get me out of here.~ */ 
+	DO ~
+		SetGlobal("bd_jail_visitors","bd0104",6)
+		SetGlobal("bd_visit_player","locals",1)
+	~ 
+	GOTO LCA_A_2 //OK
+	
+	IF ~~ THEN REPLY @3 /* ~You shouldn't be here, Schael. Go, now.~ */ 
+	DO ~
+		SetGlobal("bd_jail_visitors","bd0104",6)
+		SetGlobal("bd_visit_player","locals",1)
+	~ 
+	GOTO LCA_A_7 //OK
+
 END
