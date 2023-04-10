@@ -39,6 +39,7 @@ override/LCBENO.dlg
 override/LCVAI.dlg
 override/PIRMUR01.dlg
 override/MADAM.dlg
+override/BDWTREX.dlg
 override/MERLEA.dlg
 override/LCENTAR.dlg
 override/MARIA.dlg
@@ -119,6 +120,7 @@ override/AERIEJ.dlg
 override/LCSKIE.dlg
 override/PROST5.dlg
 override/RASAADJ.dlg
+override/BDFISTEX.dlg
 override/PROST8.dlg
 override/RBALDU.dlg
 override/YOSHJ.dlg
@@ -336,6 +338,7 @@ override/MBD4400.bcs
 override/MBDCORWI.bcs
 override/MBODHIAM.bcs
 override/MCLEANSE.bcs
+override/MCUT59B.bcs
 override/MGORGE.bcs
 override/MKELDORX.bcs
 override/MMAZZYX.bcs
@@ -424,6 +427,8 @@ override/LCELTAN.CRE
 override/LCENTAR.CRE
 override/LCKENT.CRE
 override/LCHEAD1.CRE
+override/BDFISTEX.CRE
+override/BDWTREX.CRE
 override/LCFGSC1.CRE
 override/LCFGSC2.CRE
 override/LCFGSC3.CRE
@@ -530,6 +535,7 @@ override/BG0128.bcs
 override/BG0129.bcs
 override/BG0134.bcs
 override/BG0112.bcs
+override/BDCUT59B.bcs
 override/LEAVECH7.bcs
 override/DOPPSS.bcs
 override/BDFAMARI.CRE

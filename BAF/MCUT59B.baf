@@ -1,0 +1,9 @@
+IF 
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		SetGlobal("LCA_ExtrasCreated", "GLOBAL", 1)
+		CreateCreature("bdfistex",[1345.820],NW) 
+		CreateCreature("bdwtrex",[1233.882],NW) 
+END

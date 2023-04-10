@@ -44,7 +44,7 @@ APPEND BDCORWIJ
 		SAY @4 /* ~(The two of you embrace and begin a long, passionate kiss. The soldiers nearby see the steamy scene unfolding in the hallway and break into raucous cheering and applause.)~ */
 		
 		IF ~~ THEN 
-		EXTERN BDFISTMS LCA_KissReaction 
+		EXTERN BDWTREX LCA_KissReaction 
 	END
 	
 	IF ~~ THEN BEGIN LCA_KissEnd
