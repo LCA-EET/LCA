@@ -1387,11 +1387,12 @@ IF ~~ THEN BEGIN LCA_Menu_StartCutscene
 	
 	IF ~~ THEN REPLY @260 
 	DO ~
-		SetGlobal("chapter", "global",13)
+		SetGlobal("LCA_Override", "GLOBAL", 1)
+		SetGlobal("chapter", "global",12)
 		SetGlobal("bd_plot","global",581)
 		CreateCreature("CORWIN7", [-1.-1], N)
 		ActionOverride("Corwin", JoinParty())
-		SetGlobal("bd_CorwinRomance6","GLOBAL",1)
+		SetGlobal("bd_corwin_romanceactive","global",2)
 		StartCutSceneMode()
 		StartCutScene("bdcut59a")
 	~
