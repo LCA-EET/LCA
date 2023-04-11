@@ -11,6 +11,63 @@
 2023-04-09: Initial Commit
 
 */
+ADD_TRANS_TRIGGER BDCORWIJ 235
+~
+	!Global("LCA_Override", "GLOBAL", 1)
+~
+DO 0 1 3
+
+EXTEND_BOTTOM BDCORWIJ 235
+	IF ~
+		Global("LCA_Override", "GLOBAL", 1)
+	~ THEN REPLY #267173 /* ~I am. Sarevok was my half-brother.~ */ 
+	DO ~
+		SetGlobal("LCA_ToldTruthBhaal", "GLOBAL", 1)
+	~
+	GOTO 236
+	
+	IF ~
+		Global("LCA_Override", "GLOBAL", 1)
+	~ THEN REPLY #267174 /* ~The truth does me no favors. I am what I said I am. The Lord of Murder was my father.~ */ 
+	DO ~
+		SetGlobal("LCA_ToldTruthBhaal", "GLOBAL", 1)
+	~	
+	GOTO 236
+	
+	IF ~
+		Global("LCA_Override", "GLOBAL", 1)
+	~ THEN REPLY #267176 /* ~Did I not say as much? Do you think me a liar?~ */ 
+	DO ~
+		SetGlobal("LCA_ToldTruthBhaal", "GLOBAL", 1)
+	~
+	GOTO 240
+END
+
+ADD_TRANS_TRIGGER BDCORWIJ 245
+~
+	!Global("LCA_Override", "GLOBAL", 1)
+~
+DO 0 1
+
+EXTEND_BOTTOM BDCORWIJ 245
+	
+	IF ~
+		Global("LCA_Override", "GLOBAL", 1)
+	~ THEN REPLY #267143 /* ~Like Sarevok, I am a child of Bhaal. But I assure you, a father is all we share.~ */ 
+	DO ~
+		SetGlobal("LCA_ToldTruthBhaal", "GLOBAL", 1)
+	~
+	GOTO 249
+  
+	IF ~
+		Global("LCA_Override", "GLOBAL", 1)
+	~ THEN REPLY #267144 /* ~Regrettably, that last is true. You can choose your friends, but not your family.~ */ 
+	DO ~
+		SetGlobal("LCA_ToldTruthBhaal", "GLOBAL", 1)
+	~
+	GOTO 249
+END
+
 ADD_TRANS_TRIGGER BDCORWIJ 296
 ~
 	OR(2)

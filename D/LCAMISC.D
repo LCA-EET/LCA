@@ -7,6 +7,25 @@
 2022-12-10: Initial Commit
 
 */
+ADD_TRANS_TRIGGER BDBENCE 85
+~
+	!Global("LCA_Override", "GLOBAL", 1)
+~
+
+EXTEND_BOTTOM BDBENCE 85
+	IF ~
+		Global("LCA_Override", "GLOBAL", 1)
+	~ THEN 
+	DO ~
+		SetGlobal("bd_plot","global",650)
+		ActionOverride("bdschae2", SetDialog("LCBDSCH2"))
+		SetDialog("LCBDBENC"))
+		ActionOverride("bdschae2", StartDialog("LCBDSCH2", Player1))
+	~
+	EXIT
+END
+
+
 EXTEND_BOTTOM SAREV25A 10
 	IF ~
 		IsValidForPartyDialogue("LCCORWIN")

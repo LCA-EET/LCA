@@ -896,6 +896,12 @@ END
 IF ~~ THEN BEGIN LCA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
 	
+	IF ~~ THEN REPLY @261
+	DO ~
+		SetGlobal("LCA_ToldTruthBhaal", "GLOBAL", 1)
+	~
+	
+	GOTO LCA_ReturnToMainMenu
 	IF ~~ THEN REPLY @228
 	DO ~
 		SetGlobal("LCA_CorwinSexFirst", "GLOBAL", 4)
@@ -1398,18 +1404,31 @@ IF ~~ THEN BEGIN LCA_Menu_StartCutscene
 	~
 	EXIT
 	
-	IF ~~ THEN REPLY @249 /* ~BD0104 - Romance~ */
+	IF ~~ THEN REPLY @249 /* ~BD0104 - Romance - Exile ~ */
 	DO ~
 		SetGlobal("bd_plot","global",600)
 		SetGlobal("chapter", "global",13)
 		SetGlobalTimer("bd_jail_visitors_timer","bd0104",ONE_MINUTE) 
 		SetGlobal("bd_jail_visitors","bd0104",1)
 		SetGlobal("bd_corwin_romanceactive","global",2)
+		SetGlobal("bd_player_exiled","global",1)
 		ActionOverride(Player1, LeaveAreaLUA("bd0104","",[405.339],SW))
 	~
 	EXIT
 	
-	IF ~~ THEN REPLY @250 /* ~BD0104 - Non-Romance (Believe Innocent)~ */
+	IF ~~ THEN REPLY @250 /* ~BD0104 - Romance - Execution ~ */
+	DO ~
+		SetGlobal("bd_plot","global",600)
+		SetGlobal("chapter", "global",13)
+		SetGlobalTimer("bd_jail_visitors_timer","bd0104",ONE_MINUTE) 
+		SetGlobal("bd_jail_visitors","bd0104",1)
+		SetGlobal("bd_corwin_romanceactive","global",2)
+		SetGlobal("bd_player_exiled","global",0)
+		ActionOverride(Player1, LeaveAreaLUA("bd0104","",[405.339],SW))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @251 /*  ~BD0104 - Non-Romance - Exile~ */
 	DO ~
 		SetGlobal("bd_plot","global",600)
 		SetGlobal("chapter", "global",13)
@@ -1421,7 +1440,7 @@ IF ~~ THEN BEGIN LCA_Menu_StartCutscene
 	~
 	EXIT
 	
-	IF ~~ THEN REPLY @251 /* ~BD0104 - Non-Romance (Believe Guilty)~*/
+	IF ~~ THEN REPLY @262 /*  ~BD0104 - Non-Romance - Execution~*/
 	DO ~
 		SetGlobal("bd_plot","global",600)
 		SetGlobal("chapter", "global",13)

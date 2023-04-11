@@ -247,9 +247,9 @@
 @246 = ~One Day.~
 @247 = ~How far do you want me to advance the current time?~
 @248 = ~Set Debrief Timer to One Day.~
-@249 = ~BD0104 - Romance~
-@250 = ~BD0104 - Non-Romance (Believe Innocent)~
-@251 = ~BD0104 - Non-Romance (Believe Guilty)~
+@249 = ~BD0104 - Romance - Exile ~
+@250 = ~BD0104 - Romance - Execution ~
+@251 = ~BD0104 - Non-Romance - Exile~
 @252 = ~LCORW1~
 @253 = ~LCORW2~
 @254 = ~LDUNC~
@@ -259,3 +259,5 @@
 @258 = ~BDCUT61T (Trial Cutscene, Corwin Witnessed Duel + Romance)~
 @259 = ~BDCUT61A (Trial Cutscene, Corwin Witnessed Duel)~
 @260 = ~BDCUT59A (Leaving Avernus)~
+@261 = ~Set LCA_ToldTruthBhaal to 1.~
+@262 = ~BD0104 - Non-Romance - Execution~

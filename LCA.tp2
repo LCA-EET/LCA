@@ -8,12 +8,19 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-/*
-ARTWORK
+/* ARTWORK CREDITS
 
 Defender of Baldur's Gate Cutscene - The Festival of the Middle Ages, by Taehoon Kang. https://www.artstation.com/taegongsin
 
 Journey to Saradush Cutscene - Medeival City Under Siege, by Raymond Minnaar. https://www.deviantart.com/raymondminnaar/art/Avalon-Lords-Castle-Siege-450232609
+
+*/
+
+/* DIALOG CREDITS
+
+The dialog from the revised sewer cutscene at the end of SoD used with permission from SilentGuy2011 (https://www.deviantart.com/silentguy2011). Check out his DA page, particularly the "Baldur's Gate SoD: Dragonspear Crusade" fanfiction - it's very good! 
+
+Thanks again for allowing me to use some of your work!
 
 */
 BACKUP ~LCA/backup~
@@ -503,6 +510,7 @@ EXTEND_TOP ~BG0129.bcs~ ~LCA/BAF/LCBG0129.BAF~ //Merchant's League L3
 EXTEND_TOP ~BG0134.bcs~ ~LCA/BAF/LCBG0134.BAF~ //Low Lantern D2
 EXTEND_TOP ~BG0112.bcs~ ~LCA/BAF/LCBG0112.BAF~ //Undercellar
 EXTEND_TOP ~BDCUT59B.bcs~ ~LCA/BAF/MCUT59B.BAF~ //Dragonspear basement
+EXTEND_TOP ~BD6000.bcs~ ~LCA/BAF/MBD6000.BAF~ //Abandoned Tunnels, Sewers
 
 
 EXTEND_TOP ~LEAVECH7.bcs~ ~LCA/BAF/LCRTBG.BAF~ 
