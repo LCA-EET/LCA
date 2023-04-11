@@ -19,7 +19,7 @@ EXTEND_BOTTOM BDBENCE 85
 	DO ~
 		SetGlobal("bd_plot","global",650)
 		ActionOverride("bdschae2", SetDialog("LCBDSCH2"))
-		SetDialog("LCBDBENC"))
+		SetDialog("LCBDBENC")
 		ActionOverride("bdschae2", StartDialog("LCBDSCH2", Player1))
 	~
 	EXIT

@@ -798,7 +798,8 @@ IF ~
 	
 	IF ~  
 		Global("bd_corwin_romanceactive","global",2)
-		Alignment(Player1,MASK_NEUTRAL)
+		!Alignment(Player1,MASK_GOOD)
+		!Alignment(Player1,MASK_EVIL)
 	~ THEN REPLY #239616 /* ~You would prevent my escape? I thought we had something, you and I.~ */ 
 	GOTO 40 //OK
   
@@ -924,7 +925,8 @@ IF ~~ THEN BEGIN 48 // from: 46.0
 	IF ~~ THEN REPLY #239645 /* ~I've done things I regret in my life, Schael. Making an orphan of Rohma won't be one of them. I surrender.~ */ 
 	GOTO 60
   
-	IF ~  
+	IF ~ 
+		!Global("LCA_ToldTruthBhaal", "GLOBAL", 1)
 		!Alignment(Player1,MASK_EVIL)
 	~ THEN REPLY #239646 /* ~Listen, just listen to me, please. Do you truly believe me so mad that I would, that I could even be capable of doing this thing I'm accused of? Do you truly think so little of me?~ */ 
 	GOTO 54
@@ -1147,8 +1149,8 @@ IF ~~ THEN BEGIN LCA_SG12_8
 END
 
 IF ~~ THEN BEGIN LCA_SG12_10
-	SAY @117 /*  ~No — damnit, Duncan! <CHARNAME>, run!~ */
-	
+	SAY @117 /* ~No! Gods damnit Duncan!~ */
+	= @123 /* ~<CHARNAME>, run! The cavern beyond the opening will get you out of the city! Go!~ */
 	IF ~
 		Global("bd_corwin_romanceactive","global",2)
 	~ THEN 
