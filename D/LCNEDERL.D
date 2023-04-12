@@ -101,8 +101,11 @@ IF ~
 	
 	IF ~~ THEN 
 	DO ~
+		AddJournalEntry(@119, QUEST_DONE)
 		SetGlobal("LCA_RefugeeQuestComplete", "GLOBAL", 1)
 		AddexperienceParty(200000)
+		ReputationInc(1)
+		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	GOTO LCA_NederlokSlaverPlotEnd1
 END

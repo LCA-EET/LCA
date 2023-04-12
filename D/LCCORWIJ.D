@@ -5147,6 +5147,7 @@ IF ~~ THEN BEGIN LCA_GetRohmaGift
 	
 	IF ~~ THEN
 	DO ~
+		AddJournalEntry(@1303, QUEST)
 		SetGlobalTimer("LCA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
 		SetGlobal("LCA_BenceWyrm", "GLOBAL", 2)
 		SetGlobal("LCA_ReturnToBG", "GLOBAL", 1)
@@ -5169,6 +5170,7 @@ IF ~~ THEN BEGIN LCA_FirstMeetingRohma
 	
 	IF ~~ THEN
 	DO ~
+		AddJournalEntry(@1304, QUEST)
 		SetGlobalTimer("LCA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
 		SetGlobal("LCA_BenceWyrm", "GLOBAL", 2)
 		SetGlobal("LCA_ReturnToBG", "GLOBAL", 1)
@@ -5741,6 +5743,62 @@ IF ~~ THEN BEGIN LCA_ReadyToGetRohma
 		SetGlobal("LCA_RohmaKidnapped", "GLOBAL", 5)
 	~
 	EXTERN LCNEDERL LCA_ReadyToGetRohmaEnd
+END
+
+IF ~
+	Global("LCA_TunnelAnxiety", "GLOBAL", 2)
+~ THEN BEGIN LCA_TunnelAnxiety2
+	SAY @1306 /* ~Are you alright?~ */
+	= @1307 /* ~You look like you've seen a ghost.~ */
+	
+	IF ~~ THEN REPLY @1313 /* ~It's nothing... come on, let's go.~ */
+	DO ~
+		SetGlobal("LCA_TunnelAnxiety", "GLOBAL", 3)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @1309 /* ~I... I'm fine... ~*/
+	DO ~
+		SetGlobal("LCA_TunnelAnxiety", "GLOBAL", 3)
+	~
+	GOTO LCA_TunnelAnxiety3
+END
+
+IF ~~ THEN BEGIN LCA_TunnelAnxiety3
+	SAY @1310 /* ~Honey, what's wrong? You can tell me.~ */
+	
+	IF ~~ THEN REPLY @1311 /* ~When Alatos brought up the tunnels beneath the city... it all came flooding back, Schael...~ */
+	GOTO LCA_TunnelAnxiety4
+	
+	IF ~~ THEN REPLY @1322 /* ~Really, it's nothing. Let's get moving.~*/
+	EXTERN LCALATOS LCA_AskAboutSlavery2A
+END
+
+IF ~~ THEN BEGIN LCA_TunnelAnxiety4
+	SAY @1312 /* ~I understand... it was a traumatic experience, for all of us.~ */
+	
+	IF ~~ THEN REPLY @1314 /* ~I think about it, still. Not as much as I used to, but... it's scary to think how close you were to... how close we were to —~ */
+	GOTO LCA_TunnelAnxiety5
+END
+
+IF ~~ THEN BEGIN LCA_TunnelAnxiety5
+	SAY @1316 /* ~I know, love. Come here.~  */
+	= @1317 /*  ~(You share a long and tender embrace.)~ */
+	
+	IF ~~ THEN REPLY @1318 /* ~Thank you, Schael... For believing in me, and for believing in us.~  */
+	GOTO LCA_TunnelAnxiety6
+END
+
+IF ~~ THEN BEGIN LCA_TunnelAnxiety6
+	SAY @1319 /* ~We have each other... and we have Rohma. The new memories we make together will drown out those dark echoes. You'll see.~*/
+	
+	IF ~~ THEN REPLY @1321 /* ~I look forward to it.~ */
+	DO ~
+		AddJournalEntry(@1320, INFO)
+		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("LCA_TunnelAnxiety", "GLOBAL", 2)
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN LCA_CorwinDelciaA_End
@@ -6372,10 +6430,10 @@ CHAIN
 		DO ~
 			SetGlobal("LCA_HandedOverManifests", "GLOBAL", 1)
 			GiveItemCreate("LCMANFST",LastTalkedToBy(Myself),1,0,0)
+			AddJournalEntry(@1305, QUEST)
 		~
 		== LCCORWIJ
 		@811 /* ~Thank you for your cooperation.~ */
-			
 END LCCORWIJ LCA_HarborCorwinChainEnd
 
 CHAIN 

@@ -161,6 +161,9 @@ IF ~~ THEN BEGIN LCA_AskAboutLedger4
 	SAY @31 /* ~Hopefully it's what you're looking for.~  */
 	
 	IF ~~ THEN REPLY @30 /* ~Thanks for the help.~*/
+	DO ~
+		AddJournalEntry(@37, QUEST)
+	~
 	EXIT
 END
 
@@ -174,10 +177,29 @@ IF ~~ THEN BEGIN LCA_AskAboutSlavery
 	GOTO LCA_AskAboutSlavery2
 END
 
+
 IF ~~ THEN BEGIN LCA_AskAboutSlavery2
 	SAY @9 /* ~Listen. There are only three ways into and out of the city: Wyrm's Crossing, the tunnels beneath the Flaming Fist headquarters, and the docks.~ */
 	
-	= @10 /* ~Wyrm's Crossing and the Flaming Fist headquarters are too heavily guarded to move slaves through. If I were you, I'd speak to the Harbor Master.~*/
+	IF ~~ THEN 
+	GOTO LCA_AskAboutSlavery2A
+	
+	IF ~
+		Global("bd_player_exiled","global",0)
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		IsValidForPartyDialogue("LCCORWIN")
+	~ THEN 
+	DO ~
+		SetGlobal("LCA_TunnelAnxiety", "GLOBAL", 1)
+		SetGlobalTimer("LCA_TunnelAnxietyTimer", "GLOBAL", ONE_ROUND)
+	~
+	GOTO LCA_AskAboutSlavery2A
+END
+
+IF ~~ THEN BEGIN LCA_AskAboutSlavery2A
+	SAY @10 /* ~Wyrm's Crossing and the Flaming Fist headquarters are too heavily guarded to move slaves through. If I were you, I'd speak to the Harbor Master.~ */
+	
+	= @37 /* ~If I were you, I'd speak to the Harbor Master.~ */
 	
 	IF ~
 		!PartyHasItem("LCMANFST")
@@ -199,6 +221,9 @@ IF ~~ THEN BEGIN LCA_AskAboutManifest
 	= @14 /* ~The good news is I recognize the type of device used to generate the encoding. The bad news is that without the cipher key, you won't be able to decode the manifests.~ */
 	
 	IF ~~ THEN REPLY @15 /* ~Interesting... how many other people or organizations use such devices?~ */
+	DO ~
+		AddJournalEntry(@38, QUEST)
+	~	
 	GOTO LCA_AskAboutManifest2
 END
 
@@ -206,7 +231,9 @@ IF ~~ THEN BEGIN LCA_AskAboutManifest2
 	SAY @16 /* ~Many. They're more common than you may think. Not long ago, we sold a batch of older models to that new outfit based out of the old Iron Throne building.~ */
 	
 	IF ~~ THEN REPLY @17 /* ~So, we need to find the cipher key and the machine to decode the message?~ */
-	
+	DO ~
+		SetGlobal("LCA_AskedAlatosAboutManifests", "GLOBAL", 1)
+	~
 	GOTO LCA_AskAboutManifest3
 END
 
@@ -221,9 +248,6 @@ IF ~~ THEN BEGIN LCA_AskAboutManifest3
 	IF ~
 		!PartyHasItem("LCLEDGER")
 	~ THEN REPLY @19 /* ~Thanks for the help. We'll return once we find the cipher key.~ */
-	DO ~
-		SetGlobal("LCA_AskedAlatosAboutManifests", "GLOBAL", 1)
-	~
 	EXIT
 END
 IF ~
@@ -240,11 +264,19 @@ IF ~~ THEN BEGIN LCA_CorwinAlatosChainManifestsEnd
 	
 	IF ~
 		!Dead("Aran")
-	~ THEN GOTO LCA_CorwinAlatosChainManifestsEnd2A
+	~ THEN 
+	DO ~
+		AddJournalEntry(@38, QUEST)
+	~
+	GOTO LCA_CorwinAlatosChainManifestsEnd2A
 	
 	IF ~
 		Dead("Aran")
-	~ THEN GOTO LCA_CorwinAlatosChainManifestsEnd2B
+	~ THEN 
+	DO ~
+		AddJournalEntry(@38, QUEST)
+	~
+	GOTO LCA_CorwinAlatosChainManifestsEnd2B
 END
 
 IF ~~ THEN BEGIN LCA_CorwinAlatosChainManifestsEnd2A
@@ -280,7 +312,24 @@ IF ~~ THEN BEGIN LCA_CorwinAlatosChainManifestsEnd2B
 END
 
 IF ~~ THEN BEGIN LCA_CorwinAlatosChainSlaversEnd
-	SAY @10 /* ~Wyrm's Crossing and the Flaming Fist headquarters are too heavily guarded to move slaves through. If I were you, I'd speak to the Harbor Master.~ */
+	SAY @10 /* ~Wyrm's Crossing and the Flaming Fist headquarters are too heavily guarded to move slaves through.~ */
+
+	IF ~~ THEN 
+	GOTO LCA_CorwinAlatosChainSlaversEnd2
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("bd_player_exiled","global",0)
+	~ THEN 
+	DO ~
+		SetGlobal("LCA_TunnelAnxiety", "GLOBAL", 1)
+		SetGlobalTimer("LCA_TunnelAnxietyTimer", "GLOBAL", ONE_ROUND)
+	~
+	GOTO LCA_CorwinAlatosChainSlaversEnd2
+END
+
+IF ~~ THEN BEGIN LCA_CorwinAlatosChainSlaversEnd2
+	SAY @37 /* ~If I were you, I'd speak to the Harbor Master.~ */
 	
 	IF ~~ THEN
 	EXTERN LCCORWIJ LCA_ThankAlatos1
@@ -291,7 +340,7 @@ IF ~~ THEN BEGIN LCA_CorwinAlatosChainSlaversEnd
 		Global("LCA_AskedAlatosAboutSlavers", "GLOBAL", 1)
 		!Global("LCA_AskedAlatosAboutManifests", "GLOBAL", 1)
 	~ THEN
-	EXTERN LCCORWIJ LCA_CorwinAlatosChainManifests	
+	EXTERN LCCORWIJ LCA_CorwinAlatosChainManifests
 END
 
 IF ~~ THEN BEGIN LCA_CorwinAlatosChainLedgerEnd
@@ -318,6 +367,9 @@ IF ~~ THEN BEGIN LCA_CorwinAlatosChainLedgerEnd2
 	SAY @33 /* ~Hopefully it's what you're looking for.~  */
 	
 	IF ~~ THEN
+	DO ~
+		AddJournalEntry(@37, QUEST)
+	~
 	EXTERN LCCORWIJ LCA_ThankAlatos3
 END
 
@@ -336,6 +388,7 @@ CHAIN
 		@9 /* ~Many. They're more common than you may think. Not long ago, we sold a batch of older models to that new outfit based out of the old Iron Throne building.~*/
 		== LCCORWIJ
 		@17 /* ~So, we need to find the cipher key and the machine to decode the message?~*/
+		
 END LCALATOS LCA_CorwinAlatosChainManifestsEnd
 
 CHAIN

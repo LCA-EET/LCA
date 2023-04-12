@@ -21,6 +21,7 @@ IF ~
 	
 	IF ~~ THEN
 	DO ~
+		AddJournalEntry(@36, QUEST)
 		SetGlobal("LCA_HandedOverManifests", "GLOBAL", 1)
 		GiveItemCreate("LCMANFST",LastTalkedToBy(Myself),1,0,0)
 	~

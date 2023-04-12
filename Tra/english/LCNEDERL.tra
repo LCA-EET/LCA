@@ -7,7 +7,7 @@
 @6 = ~Now, to business. Captain, <CHARNAME>, the Dukes have requested a debriefing from the both of you at 0800 tomorrow morning, in the Ducal Palace. I expect that it will last for several hours. Do not be late.~
 @7 = ~Your companions are welcome to take part in the debriefing as well.~
 @8 = ~When it's time for the debriefing, Corporal Duncan will escort you to the Dukes.~
-@9 = ~One more thing - the citizens have been informed of your return, <CHARNAME>, and of your innocence. I'm sure most will welcome you, though there may be a small number who will take exception to someone of your... nature... wandering the streets.~
+@9 = ~One more thing — the citizens have been informed of your return, <CHARNAME>, and of your innocence. I'm sure most will welcome you, though there may be a small number who will take exception to someone of your... nature... wandering the streets.~
 @10 = ~Of course Captain. Take as much time as you need. Also, it will be good for you to stop by headquarters. Some of your colleages are eager to see you again. When you and <CHARNAME> are ready for the debrief, talk to Duncan.~
 @11 = ~Captain, if anyone gives the hero a hard time, I want you to let me know, personally. Am I clear?~ [LCNDRL01]
 @12 = ~Very good. I must now return to my duties. I'll see you tomorrow morning at the debriefing.~
@@ -20,11 +20,11 @@
 @19 = ~We encountered a large number of refugees from Caelar's crusade. They told us that they were shipped out of Baldur's Gate to Athkatla.~
 @20 = ~Go on.~
 @21 = ~They were told that they were being moved to new homes in other cities. Instead, when they arrived in Athkatla, the children were separated from their parents and sold to slavers. We weren't able to find the parents, though we did free the children from their captors.~
-@22 = ~I see... Very well. Captain Corwin - I want you to assist <CHARNAME> in investigating the matter. I suggest checking with the harbor master first. No ships can enter or leave the city docks without him knowing about it.~
-@23 = ~<CHARNAME> - what can I do for you?~
+@22 = ~I see... Very well. Captain Corwin — I want you to assist <CHARNAME> in investigating the matter. I suggest checking with the harbor master first. No ships can enter or leave the city docks without him knowing about it.~
+@23 = ~<CHARNAME> — what can I do for you?~
 @24 = ~Nothing at the moment.~
 @25 = ~Very well. I'll see you at the debriefing.~ [LCNDRL02]
-@26 = ~<CHARNAME>, before you leave - I never had the opportunity to personally thank you for your efforts during the Dragonspear campaign.~ [LCNDRL03]
+@26 = ~<CHARNAME>, before you leave — I never had the opportunity to personally thank you for your efforts during the Dragonspear campaign.~ [LCNDRL03]
 @27 = ~I want you to know that we couldn't have succeeded without you. ~
 @28 = ~(He reaches into his desk, and pulls out a medal.)~
 @29 = ~Take this medal. You earned it.~ [LCNDRL04]
@@ -46,7 +46,7 @@
 @45 = ~Do you have any additional evidence?~
 @46 = ~We spoke to a contact in the Thieves' Guild, who said that they'd sold a cryptographic encoder to Winston Ventures, the same company who used the encoded shipping manifests.~
 @47 = ~What does that prove? All you've demonstrated is that Winston has done business with the Thieves' Guild. While that may indicate a willingness to engage in some unscrupulous behavior, it doesn't prove involvement in slaver activity.~
-@48 = ~With the help of the Thieves' Guild, we were able to decode the shipping manifest using the cipher key we found in the Winston Ventures building. Look at the decoded manifest - it's a list of names, and here's the name of the girl that we freed in Athkatla!~
+@48 = ~With the help of the Thieves' Guild, we were able to decode the shipping manifest using the cipher key we found in the Winston Ventures building. Look at the decoded manifest — it's a list of names, and here's the name of the girl that we freed in Athkatla!~
 @49 = ~Let me see that. This is compelling evidence to be sure. Lord Winston could argue, however, that he was deceived, and that he didn't know that the passengers on his ship would be sold into slavery.~
 @50 = ~Good work. What you've gathered so far is enough to warrant a more thorough investigation into the company. At this point it's not quite enough to secure a conviction.~
 @51 = ~Out of curiosity... how'd you obtain the cipher?~
@@ -55,7 +55,7 @@
 @54 = ~I see... that's good. Captain, I suggest pressuring the clerk for more information. What we need is proof that Winston knew that the passengers were placed on the ship to be sold as slaves. If you could find a ledger, correspondence, or similar evidence that shows what Winston knew, we'll have him dead to rights.~
 @55 = ~Return to me once you have the last of the evidence.~
 @56 = ~We freed a slave in Athkatla, a child named Tina Bennett. She told us that she was part of a group of refugees that fled to Baldur's Gate. They were told that they'd be taken to a new home, and boarded a ship to Athkatla. When they arrived, the children were forcibly separated from their parents and sold to slavers.~
-@57 = ~With the help of the Thieves' Guild, we were able to decode the shipping manifest using the cipher key we found in the Winston Ventures building. Look at the decoded manifest - it's a list of names! They were transporting people as cargo, undoubtedly to sell them as slaves!~
+@57 = ~With the help of the Thieves' Guild, we were able to decode the shipping manifest using the cipher key we found in the Winston Ventures building. Look at the decoded manifest — it's a list of names! They were transporting people as cargo, undoubtedly to sell them as slaves!~
 @58 = ~Let me see that. This is evidence that people were transported, yes, but we don't even know if any of these people were sold into slavery. The only thing suspicious about all of this is why he would go through all the trouble to obfuscate such mundane information...~
 @59 = ~Good work. What you've gathered so far may be enough to warrant a more thorough investigation into the company. At this point it's just not enough to secure a conviction.~
 @60 = ~We haven't uncovered anything else.~
@@ -71,7 +71,7 @@
 @70 = ~Thanks for the laugh, I needed it... wait, you're serious?~
 @71 = ~Listen, I appreciate the ah ... out of the box thinking, but the testimony of a carnival fortune teller is worth less than the dirt under my heel in a court of law.~
 @72 = ~It's great to have you back, Captain.~ [LCNDRL05]
-@73 = ~Captain Corwin - I'll see you at the debriefing.~
+@73 = ~Captain Corwin — I'll see you at the debriefing.~
 @74 = ~Ah, <GABBER>, you're part of <CHARNAME>'s group, yes? The debriefing is tomorrow morning. I look forward to seeing you there.~
 @75 = ~So, Lord Winston arranged for the refugees to be sold as slaves? You'll sign a sworn statement to that effect?~
 @76 = ~Yes.~
@@ -118,3 +118,6 @@
 @116 = ~Of course, sir.~
 @117 = ~Excuse me, but I really must get through this duty roster review. .~
 @118 = ~You earned it.~
+@119 = ~Slaver Conspiracy
+
+We uncovered enough evidence to prove Lord Winston's guilt. He'll be arrested for slave trading upon his return to Baldur's Gate. Hopefully, the city authorities will be able to help those families and individuals regain their freedom. Marshal Nederlok was very appreciative of our help in solving the case.~

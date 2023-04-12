@@ -896,12 +896,19 @@ END
 IF ~~ THEN BEGIN LCA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
 	
+	IF ~~ THEN REPLY @263
+	DO ~
+		SetGlobal("LCA_TunnelAnxiety", "GLOBAL", 1)
+		SetGlobalTimer("LCA_TunnelAnxietyTimer", "GLOBAL", ONE_ROUND)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
 	IF ~~ THEN REPLY @261
 	DO ~
 		SetGlobal("LCA_ToldTruthBhaal", "GLOBAL", 1)
 	~
-	
 	GOTO LCA_ReturnToMainMenu
+	
 	IF ~~ THEN REPLY @228
 	DO ~
 		SetGlobal("LCA_CorwinSexFirst", "GLOBAL", 4)

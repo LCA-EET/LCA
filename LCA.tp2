@@ -53,7 +53,7 @@ COPY ~LCA/WAV/APPL04.WAV~ ~override~
 COPY ~LCA/WAV/JEER01.WAV~ ~override~
 COPY ~LCA/WAV/BOWSHOT.WAV~ ~override~
 
-//Voiced Lines Removed - for AI-Voiced Lines, Install the LCA_VoicePack Mod
+//Most Voiced Lines Removed - for additional AI-Voiced Lines, Install the LCA_VoicePack Mod
 
 COPY ~LCA/WAV/CHDINNER.WAV~ ~override~
 COPY ~LCA/WAV/CHDINROM.WAV~ ~override~
@@ -67,6 +67,12 @@ COPY ~LCA/MOS/CHPTSARA.MOS~ ~override~
 COPY ~LCA/MOS/CHBG.MOS~ ~override~
 COPY ~LCA/MOS/CHDINNER.MOS~ ~override~
 COPY ~LCA/WAV/LCCHEER.WAV~ ~override~
+
+COPY ~LCA/WAV/LCA00001.WAV~ ~override~
+COPY ~LCA/WAV/LCA00002.WAV~ ~override~
+COPY ~LCA/WAV/LCA00003.WAV~ ~override~
+COPY ~LCA/WAV/LCA00004.WAV~ ~override~
+COPY ~LCA/WAV/LCA00005.WAV~ ~override~
 
 COPY ~LCA/2DA/CHSARA1.2DA~ ~override~
 SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@75)

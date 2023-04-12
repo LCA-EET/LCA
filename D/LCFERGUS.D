@@ -82,6 +82,7 @@ IF ~~ THEN BEGIN LCA_FergusMarriedC
 	
 	IF ~~ THEN
 	DO ~
+		AddJournalEntry(@15, INFO)
 		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		SetGlobal("LCA_FergusMarried", "GLOBAL", 1)
 	~

@@ -1,6 +1,6 @@
 @0 = ~Welcome, everyone, to the eighth annual Trademeet Archery Challenge!~ [TM06]
 @1 = ~*Cheering and Applause*~
-@2 = ~This year, we have five skilled contestants - before we get to introductions, Lord Logan will explain the rules.~ [TM04]
+@2 = ~This year, we have five skilled contestants. Before we get to introductions, Lord Logan will explain the rules.~ [TM04]
 @3 = ~Thank you, Guildmistress Busya. Our wizard here has summoned a special golem that the contestants will fire upon. The golem will report damage received from each contestant.~ [TM02]
 @4 = ~The contest has three rounds. Contestants are allowed one shot at the golem per round. For the first two rounds, the contestant that deals the least damage will be eliminated.~ [TM03]
 @5 = ~In the third and final round, the contestant that deals the most damage will be declared the winner.~ [TM01]
@@ -10,10 +10,10 @@
 @9 = ~Our third contestant is Corporal Alisyn Strannex of our local militia! Alisyn, for those that do not remember, won last year's challenge.~
 @10 = ~Our fourth and fifth contestants represent the Alibakkar and Lurraxol houses, respectively.~
 @11 = ~Are the contestants ready? Excellent! Let's begin.~
-@12 = ~Low damage - One point awarded.~
-@13 = ~Moderate damage - Two points awarded.~
-@14 = ~High damage - Three points awarded. ~
-@15 = ~Critical damage - Four points awarded. ~
+@12 = ~Low damage — One point awarded.~
+@13 = ~Moderate damage — Two points awarded.~
+@14 = ~High damage — Three points awarded. ~
+@15 = ~Critical damage — Four points awarded. ~
 @16 = ~Mazzy, you may fire when ready.~
 @17 = ~Captain Corwin, you may fire when ready.~
 @18 = ~Corporal Strannex, you may fire when ready.~
@@ -28,8 +28,8 @@
 @27 = ~And we have a winner! Trademeet's very own Mazzy Fentan! Congratulations!~
 @28 = ~Allow me to present to you this commemorative trophy, and an award of 2,500 gold.~
 @29 = ~Thank you!~
-@30 = ~You're welcome - thank you to all the contestants for participating.~
-@31 = ~Hah - I'd expect no less.~
+@30 = ~You're welcome — thank you to all the contestants for participating.~
+@31 = ~Hah — I'd expect no less.~
 @32 = ~Oh, you were saying?~
 @33 = ~Nice shot.~
 @34 = ~Right on target.~
@@ -45,7 +45,7 @@
 @44 = ~Great shot!~
 @45 = ~A miss. No damage - Zero points awarded.~ 
 @46 = ~Good luck, contestants!~
-@47 = ~Now, I will show you how it's done!~
+@47 = ~Now, I'll show you how it's done!~
 @48 = ~~
 @49 = ~*Cheering and Applause*~ [APPL01]
 @50 = ~*Cheering and Applause*~ [APPL02]

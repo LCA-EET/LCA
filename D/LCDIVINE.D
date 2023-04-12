@@ -232,7 +232,7 @@ IF ~~ THEN BEGIN LCA_Slavers
 	SAY @37 /* ~Lord Winston and his company are responsible. They have been selling refugees as slaves, under the guise of moving them to new homes in other cities.~ */
 	IF ~~ THEN REPLY @38 /* ~I see.~ */
 	DO ~
-		AddJournalEntry(@39, INFO)
+		AddJournalEntry(@39, QUEST)
 		SetGlobal("LCA_AskedDivinerAboutSlaves", "GLOBAL", 1)
 	~
 	GOTO LCA_AlreadyAsked

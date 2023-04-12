@@ -215,6 +215,16 @@ THEN
 		ActionOverride(Player6,LeaveAreaLUA("BG1316","",[400.315],NW))
 END
 
+IF 
+	Global("LCA_TunnelAnxiety", "GLOBAL", 1)
+	GlobalTimerExpired("LCA_TunnelAnxietyTimer", "GLOBAL")
+	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_TunnelAnxiety", "GLOBAL", 2)
+		StartDialog("LCCORWIJ", Player1)
+END
+
 IF
 	!AreaCheck("BG1316")
 	Global("LCA_ReturnToBG", "GLOBAL", 1)

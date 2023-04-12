@@ -1,18 +1,18 @@
 @0 = ~Schael!~ 
 @1 = ~Tianna... It's been a while.~
-@2 = ~You look great - how are you? I'd heard that you were on assignment in Amn.~
+@2 = ~You look great — how are you? I'd heard that you were on assignment in Amn.~
 @3 = ~I'm fine. We just returned today.~
 @4 = ~Schael, I.. I wanted to apologize, for the way things ended between us.~
 @5 = ~You mean for stealing from my family, and for calling my daughter a liar?~
 @6 = ~Yes... I'm sorry. I needed the money, but I shouldn't have done what I did.~
-@7 = ~If you needed money you should have just asked.~
+@7 = ~If you needed money you should've just asked.~
 @8 = ~Y-you're right. Who did you bring with you? D-do you need any refreshments?~
 @9 = ~*The* <CHARNAME>? Wow, what an honor it is to meet you.~
 @10 = ~If you have some time, m-maybe you can help me.~
 @11 = ~Tianna, this is <CHARNAME>, the hero of Baldur's Gate and the Sword Coast and... the <PRO_MANWOMAN> that I love.~
 @12 = ~Tianna, this is <CHARNAME>, the hero of Baldur's Gate and the Sword Coast.~
 @13 = ~So you and Schael are... t-that's great. I'm happy for you.~
-@14 = ~Listen, I know you have no reason to help me, but - ~
+@14 = ~Listen, I know you have no reason to help me, but —~
 @15 = ~Here it comes.~
 @16 = ~Could you l-lend me some money? My mother was sick and... I needed to borrow money to pay for her treatment. She's better now, thankfully, but I have no way of paying the lender back.~
 @17 = ~How much do you owe, and to whom?~
@@ -25,11 +25,11 @@
 @24 = ~Schael, what do you think? Do you believe her story?~
 @25 = ~My love, what do you think? Do you believe her story?~
 @26 = ~Oh, thank you! You can find Jasper in the Undercellar. I really appreciate your help.~
-@27 = ~She's lied to me before, but this time I think she's telling truth. I'd like for us to help her, but it's your decision.~
-@28 = ~Very well. Tianna - tell me, where is this Jasper fellow? Perhaps I can talk him into forgiving your debt.~
+@27 = ~She's lied to me before, but this time I think she's telling truth. If we can help her, we should do so.~
+@28 = ~Very well. Tianna — tell me, where is this Jasper fellow? Perhaps I can talk him into forgiving your debt.~
 @29 = ~Please, I really need your help. (She begins to weep.) I have no way to pay him back.~
 @30 = ~Get a grip, woman! Like I said, it's not my problem.~
-@31 = ~Fine - tell me where this Jasper fellow is. I'll see if I can persuade him to forgive your debt.~
+@31 = ~Fine — tell me where this Jasper fellow is. I'll see if I can persuade him to forgive your debt.~
 @32 = ~I *sob* u-understand. Please, if you reconsider, come and *sob* see me.~
 @33 = ~Have you reconsidered? Will you help me out of this mess I've gotten into?~
 @34 = ~I'm afraid you'll have to dig yourself out of this hole.~
@@ -44,8 +44,10 @@
 @43 = ~I made him an offer he couldn't refuse.~
 @44 = ~Can I speak to Schael? Or <CHARNAME>?~
 @45 = ~Help Tianna
+
 You agreed to help Tianna, Captain Corwin's ex-lover, settle her debt with Jasper. According to Tianna, Jasper can be found in the Undercellar.~
 @46 = ~Help Tianna
+
 I settled Tianna's debt with Jasper. I'll return to her with the good news.~
 @47 = ~I paid off the debt. It was a lot more than the 700 gold you claimed.~
 @48 = ~Thank you so much!~
@@ -56,7 +58,7 @@ I settled Tianna's debt with Jasper. I'll return to her with the good news.~
 @53 = ~Thank you, <CHARNAME>.~
 @54 = ~(She pulls you aside.)~ 
 @55 = ~I'm glad you and Schael are together. Take care of her. Give her the life she deserves. I wish I did.~
-@56 = ~Thank you for the kind words, Tianna. I will - she's a very special woman.~
+@56 = ~Thank you for the kind words, Tianna. I will — she's a very special woman.~
 @57 = ~Good-bye...~
 @58 = ~I've been doing a lot of thinking and... I don't think this city is a good fit for me. I'm going to take my mom south to Beregost, and try for a fresh start over there.~
 @59 = ~You're welcome.~
@@ -70,6 +72,7 @@ I settled Tianna's debt with Jasper. I'll return to her with the good news.~
 @67 = ~Sure - what do you have?~
 
 @70 = ~Help Tianna
+
 Captain Corwin has agreed to help her ex-lover, Tianna, settle her debt with Jasper. According to Tianna, Jasper can be found in the Undercellar.~
 @71 = ~<CHARNAME> was generous enough to pay it off on your behalf.~
 @72 = ~It's better that you don't ask.~

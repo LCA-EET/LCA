@@ -156,6 +156,9 @@ IF ~~ THEN BEGIN LCA_CorwinFamilyReunite3A4A1
 	SAY @14 /* ~Mommy always said those bad things people were saying about you were wrong, and that you would come back one day.~*/
 	
 	IF ~~ THEN REPLY @20 /* ~Your mommy was right. Rohma, here. I want you to have this. (Hand over the doll.)~ */
+	DO ~
+		AddJournalEntry(@77, QUEST_DONE)
+	~
 	GOTO LCA_CorwinFamilyReunite3A4A2
 END
 
@@ -255,6 +258,7 @@ IF ~~ THEN BEGIN LCA_CorwinFamilyReunite3B2B
 	IF ~~ THEN REPLY @20 /* ~Your mommy was right. Rohma, here. I want you to have this. (Hand her the doll.)~ */
 	DO ~
 		SetGlobal("LCA_JustBoughtDoll", "GLOBAL", 1)
+		AddJournalEntry(@76, QUEST_DONE)
 	~
 	GOTO LCA_CorwinFamilyReunite3A4A2
 	
