@@ -314,11 +314,12 @@ You recall the trepidation that you felt when you stepped out of the caravan ont
 To that end, you continue your friendship with Major Corwin. Over these past weeks, you've built a good rapport with her young daughter, Rohma, and her father, Audamar. Though you don't see each other as often as you once did, your friendship remains strong. Tonight, you've invited her to dinner at The Three Old Kegs, the very same tavern where the two of you shared a drink before embarking on the Dragonspear campaign...~ [CHDINNER]
 @072 = ~The Defender of Baldur's Gate~
 @073 = ~Beno's Head~
-@074 = ~Alas, poor Beno! You knew him well...
+@074 = ~This is the severed head of Schael Corwin's ex-lover, Beno Famari. He was killed after he tried to use his own daughter, Rohma, as bait in an attempt to lure you and Major Corwin to your deaths. Although he's been resurrected several times in the past, you surmise that it will be difficult for his benefactors to do so again, now that his head has been separated from his body.
+
+Alas, poor Beno! You knew him well...
 
 Well, not really.~
 //Corwin Romance, In Party 
-
 @75 = ~Your party boards the caravan for the long trek to Saradush. You think of Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, the two of them are safe within the Ducal Palace, under the watchful eye of the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger.
 
 Though your wagon is comfortable and well-provisioned, a good night's rest continues to elude you. When you're able to sleep, you suffer some truly disturbing nightmares, and tonight's no exception. You awaken startled and in a cold sweat, and your restlessness has woken up Schael. Concerned, she gently caresses your chest, and tries to settle you down.
@@ -384,3 +385,43 @@ The medal is enchanted to increase the wearer's resilience to magical attacks.
 
 Saving Throws: +1 (All)
 Magic Resistance: +5%~
+
+//BADEND1
+@083 = ~The battle is over. Rohma was saved, but at the cost of the woman you love. You have no hope of bringing her back. Overcome by grief, you fall to your hands and knees, and scream in agony. Hearing a low moan, you turn and see Beno stirring. It seems that, somehow, he is still alive. The sight of his sniveling face is enough to send you past the point of no return. You give into your dark nature, and transform into the Slayer. His pleas for mercy fall on deaf ears, and you rip his heart from his chest. You throw his lifeless body across the room, and begin to eat his still-beating heart.
+
+The taste and gore does little to satiate your bloodlust. You want more. You need more! This is who you are, you think to yourself. Why did you ever resist this kind of power? It's your birthright! 
+
+You make your way out of the Undercity, and into the Thieves' Maze. With ease, you tear through wall after wall, and make it into the Guild. Their feeble attempts to stop you prove fruitless, and you gleefully rip them limb from limb. The screams are heard throughout the city as you continue to decimate the Thieves' Guild. You make your way out into the street and head toward the Ducal Palace. Those foolish enough to remain in your path are easily swept aside.
+
+Upon entering the palace, you are quickly set upon by the Flaming Fist. Even their specially-trained Valiants and Wizards are not enough to stop you. You find the chamber where the Dukes are cowering, and you hear a scream — not from the Dukes, but from someone far more important to you... Rohma. The sight of Schael's daughter crying in terror is enough to snap you out of your murderous reverie. The transformation is undone, and the Dukes look at you, speechless and in horror. You tell Rohma that you are sorry; sorry for not protecting her mother, and sorry for what you have done. 
+
+Rohma and the Dukes are rushed out of the room. You beg one of the surviving Valiants to end your life, and they are happy to oblige. Your life flashes before your eyes as you feel the blade of the mighty halberd slice through your neck. Candlekeep. Imoen and Gorion. The mines of Nashkel. Sarevok. The first time you and Schael met. Rohma. The Siege of Dragonspear. Irenicus. All of your triumphs, and all of your defeats. Your last memory is of Schael, and how happy you were when she agreed to marry you.
+
+Your head hits the floor with a dull thud. The nightmare is over, both for you, and for the city of Baldur's Gate.~ [BADEND]
+
+//BADEND2
+@084 = ~The battle is over. Rohma was saved, but at the cost of the woman you love. You have no hope of bringing her back. Overcome by grief, you fall to your hands and knees, and scream in agony. Hearing a low moan, you turn and see Beno stirring. It seems that, somehow, he is still alive. The sight of his sniveling face is enough to send you past the point of no return. You give into your dark nature, and transform into the Slayer. His pleas for mercy fall on deaf ears, and you rip his heart from his chest. You throw his lifeless body across the room, and begin to eat his still-beating heart.
+
+The taste and gore does little to satiate your bloodlust. You want more. You need more! This is who you are, you think to yourself. Why did you ever resist this kind of power? It's your birthright! 
+
+You make your way out of the Undercity, and into the Thieves' Maze. With ease, you tear through wall after wall, and make it into the Guild. Their feeble attempts to stop you prove fruitless, and you gleefully rip them limb from limb. The screams are heard throughout the city as you continue to decimate the Thieves' Guild. You make your way out into the street and head toward the Ducal Palace. Those foolish enough to remain in your path are easily swept aside.
+
+Upon entering the palace, you are quickly set upon by the Flaming Fist. Even their specially-trained Valiants and Wizards are not enough to stop you. You find the chamber where the Dukes are cowering, and you hear a scream — not from the Dukes, but from someone far more important to you... Rohma. The sight of Schael's daughter crying in terror is enough to snap you out of your murderous reverie. The transformation is undone, and the Dukes look at you, speechless and in horror. You tell Rohma that you are sorry; sorry for not protecting her mother, and sorry for what you have done. 
+
+Rohma and the Dukes are rushed out of the room. You beg one of the surviving Valiants to end your life, and they are happy to oblige. Your life flashes before your eyes as you feel the blade of the mighty halberd slice through your neck. Candlekeep. Imoen and Gorion. The mines of Nashkel. Sarevok. The first time you and Schael met. Rohma. The Siege of Dragonspear. Irenicus. All of your triumphs, and all of your defeats. Your last memory is of Schael, and how happy you were when the two of you reunited in Athkatla.
+
+Your head hits the floor with a dull thud. The nightmare is over, both for you, and for the city of Baldur's Gate.~ [BADEND]
+
+//BADEND3
+@085 = ~The battle is over. Rohma was saved, but at the cost of your dear friend, Schael. You have no hope of bringing her back. Rohma will grow up to be an orphan, and it's because of who, and what you are. Overcome by grief, you fall to your hands and knees, and scream in rage. Hearing a low moan, you turn and see Beno stirring. It seems that, somehow, he is still alive. The sight of his sniveling face is enough to send you past the point of no return. You give into your dark nature, and transform into the Slayer. His pleas for mercy fall on deaf ears, and you rip his heart from his chest. You throw his lifeless body across the room, and begin to eat his still-beating heart.
+
+The taste and gore does little to satiate your bloodlust. You want more. You need more! This is who you are, you think to yourself. Why did you ever resist this kind of power? It's your birthright! 
+
+You make your way out of the Undercity, and into the Thieves' Maze. With ease, you tear through wall after wall, and make it into the Guild. Their feeble attempts to stop you prove fruitless, and you gleefully rip them limb from limb. The screams are heard throughout the city as you continue to decimate the Thieves' Guild. You make your way out into the street and head toward the Ducal Palace. Those foolish enough to remain in your path are easily swept aside.
+
+Upon entering the palace, you are quickly set upon by the Flaming Fist. Even their specially-trained Valiants and Wizards are not enough to stop you. You find the chamber where the Dukes are cowering, and you hear a scream — not from the Dukes, but from someone far more important to you... Rohma. The sight of Schael's daughter crying in terror is enough to snap you out of your murderous reverie. The transformation is undone, and the Dukes look at you, speechless and in horror. You tell Rohma that you are sorry; sorry for not protecting her mother, and sorry for what you have done. 
+
+Rohma and the Dukes are rushed out of the room. You beg one of the surviving Valiants to end your life, and they are happy to oblige. Your life flashes before your eyes as you feel the blade of the mighty halberd slice through your neck. Candlekeep. Imoen and Gorion. The mines of Nashkel. Sarevok. The first time you and Schael met. Rohma. The Siege of Dragonspear. Irenicus. All of your triumphs, and all of your defeats. Your last memories are of the celebration that the Dukes held in your honor, and the love and friendship that you shared with your comrades.
+
+Your head hits the floor with a dull thud. The nightmare is over, both for you, and for the city of Baldur's Gate.~ [BADEND]
+@086 = ~A Nightmare Made Manifest~

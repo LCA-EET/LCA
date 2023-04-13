@@ -110,7 +110,6 @@ override/DOGHMA.dlg
 override/ARAN.dlg
 override/VALYGARJ.dlg
 override/LCMERCH.dlg
-override/LCCORWID.dlg
 override/LCBENCE.dlg
 override/BDASHATI.dlg
 override/LCLANTAN.dlg
@@ -368,11 +367,19 @@ override/CHPTSARA.MOS
 override/CHBG.MOS
 override/CHDINNER.MOS
 override/LCCHEER.WAV
+override/BADEND.MOS
+override/BADEND.WAV
 override/LCA00001.WAV
 override/LCA00002.WAV
 override/LCA00003.WAV
 override/LCA00004.WAV
 override/LCA00005.WAV
+override/LCA00006.WAV
+override/LCA00007.WAV
+override/LCA00008.WAV
+override/LCA00009.WAV
+override/LCA00010.WAV
+override/LCA00011.WAV
 override/CHSARA1.2DA
 override/CHSARA2.2DA
 override/CHSARA3.2DA
@@ -381,6 +388,9 @@ override/CHBGROM.2DA
 override/CHBG.2DA
 override/CHDINNER.2DA
 override/CHDINROM.2DA
+override/BADEND1.2DA
+override/BADEND2.2DA
+override/BADEND3.2DA
 override/BD0035.ARE
 override/BG1300.ARE
 override/AR2000.ARE

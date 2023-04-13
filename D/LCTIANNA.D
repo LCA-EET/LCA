@@ -104,7 +104,7 @@ IF ~~ THEN BEGIN LCA_DebtResolved
 	
 	IF ~
 		Dead("LCJASPER")
-	~ THEN REPLY @40 /* ~I killed him. Problem solved.~*/
+	~ THEN REPLY @40 /* ~The same way I solve nearly all problems. I killed him.~*/
 	GOTO LCA_KilledJasper //OK
 	
 	IF ~
@@ -162,6 +162,7 @@ IF ~~ THEN BEGIN LCA_TiannaLeave
 		EraseJournalEntry(@45)
 		EraseJournalEntry(@46)
 		EraseJournalEntry(@70)
+		AddJournalEntry(@80, QUEST_DONE)
 		AddexperienceParty(100000)
 		EscapeArea()
 	~
@@ -175,6 +176,7 @@ IF ~~ THEN BEGIN LCA_KilledJasper
 		EraseJournalEntry(@45)
 		EraseJournalEntry(@46)
 		EraseJournalEntry(@70)
+		AddJournalEntry(@82, QUEST_DONE)
 		AddexperienceParty(25000)
 		EscapeArea()
 	~
@@ -191,6 +193,7 @@ IF ~~ THEN BEGIN LCA_GoodBye
 		EraseJournalEntry(@45)
 		EraseJournalEntry(@46)
 		EraseJournalEntry(@70)
+		AddJournalEntry(@81, QUEST_DONE)
 		AddexperienceParty(100000)
 		EscapeArea()
 	~
@@ -213,6 +216,7 @@ IF ~~ THEN BEGIN LCA_GoodByeRomance
 		EraseJournalEntry(@45)
 		EraseJournalEntry(@46)
 		EraseJournalEntry(@70)
+		AddJournalEntry(@80, QUEST_DONE)
 		AddexperienceParty(100000)
 		EscapeArea()
 	~
@@ -278,7 +282,11 @@ END
 IF ~~ THEN BEGIN LCA_StillWontHelp
 	SAY @32 /* ~I *sob* u-understand. Please, if you reconsider, come and *sob* see me.~ */
 	
-	IF ~~ THEN EXIT
+	IF ~~ THEN 
+	DO ~
+		AddJournalEntry(@79, QUEST)
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN LCA_HelpTianna

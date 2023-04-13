@@ -27,13 +27,39 @@ APPEND ~PLAYER1~
 		!InPartyAllowDead("LCCORWIN")
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN BEGIN LCA_IllaseraDead2
-		SAY @69 /* ~(The battle is over. Rohma was saved, but at the cost of the woman you love. You have no hope of bringing her back. Overcome by grief, you fall to your hands and knees, and scream in agony.)~ */
+		SAY @87 /* ~Schael? Schael! No...~*/
 		
-		IF ~~ THEN 
+		IF ~
+			Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("LCA_MarriageProposal", "GLOBAL", 1)
+		~ THEN 
 		DO ~
 			SetGlobal("LCA_IllaseraDead", "GLOBAL", 2)
+			TextScreen("BADEND1")
+			ActionOverride(Player1, Kill(Myself))
 		~
-		EXTERN LCBENO2 LCA_IllaseraCorwinDead
+		EXIT
+		
+		IF ~
+			Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("LCA_MarriageProposal", "GLOBAL", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("LCA_IllaseraDead", "GLOBAL", 2)
+			TextScreen("BADEND2")
+			ActionOverride(Player1, Kill(Myself))
+		~
+		EXIT
+		
+		IF ~
+			!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN 
+		DO ~
+			SetGlobal("LCA_IllaseraDead", "GLOBAL", 2)
+			TextScreen("BADEND3")
+			ActionOverride(Player1, Kill(Myself))
+		~
+		EXIT
 		
 	END
 	
@@ -114,8 +140,17 @@ APPEND ~PLAYER1~
 	~ THEN BEGIN LCA_Kidnap
 		SAY @9 /* ~(Quickly, you head to the nearest temple, and bring a healer back to the house. The healer sucessfully stabilizes Audamar, who is taken back to the temple for further treatment.)~ */
 		
-		= @13 /* ~(With Audamar now under the care of the city's healers, you and Schael take a look at the letter that was nailed to his back. It reads as follows.)~ */
-
+		
+		//= @13 /* ~(With Audamar now under the care of the city's healers, you and Schael take a look at the letter that was nailed to his back. It reads as follows.)~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("LCA_RohmaKidnapped", "GLOBAL", 4)
+			StartCutsceneMode()
+			StartCutscene("LCDUCAL")
+		~
+		EXIT
+		/*
 		IF ~
 			Gender(Player1, MALE)
 		~ THEN GOTO LCA_LetterSwitch_M
@@ -123,6 +158,7 @@ APPEND ~PLAYER1~
 		IF ~
 			!Gender(Player1, MALE)
 		~ THEN GOTO LCA_LetterSwitch_F
+		*/
 	END
 	
 	IF ~~ THEN BEGIN LCA_LetterSwitch_M

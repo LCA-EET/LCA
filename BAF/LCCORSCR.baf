@@ -118,6 +118,29 @@ IF
 	Global("LCA_BGEND3", "GLOBAL", 1)
 	Global("LCA_DidNotRequestCorwin", "GLOBAL", 1)
 	GlobalGT("LCA_CorwinOpinionOfPlayer", "GLOBAL", 0)
+	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		Wait(3)
+		StartDialog("LCCORWIJ", Player1)
+END
+
+IF
+	Global("LCA_BGEND3", "GLOBAL", 1)
+	Global("LCA_DidNotRequestCorwin", "GLOBAL", 1)
+	GlobalGT("LCA_CorwinOpinionOfPlayer", "GLOBAL", 0)
+	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		Wait(3)
+		PlaySong(146)
+		StartDialog("LCCORWIJ", Player1)
+END
+
+IF
+	Global("LCA_BGEND4", "GLOBAL", 1)
+	Global("LCA_DidRequestCorwin", "GLOBAL", 1)
+	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 THEN
 	RESPONSE #100
 		Wait(3)
@@ -127,9 +150,11 @@ END
 IF
 	Global("LCA_BGEND4", "GLOBAL", 1)
 	Global("LCA_DidRequestCorwin", "GLOBAL", 1)
+	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 THEN
 	RESPONSE #100
 		Wait(3)
+		PlaySong(146)
 		StartDialog("LCCORWIJ", Player1)
 END
 
@@ -222,6 +247,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_TunnelAnxiety", "GLOBAL", 2)
+		PlaySong(146)
 		StartDialog("LCCORWIJ", Player1)
 END
 
@@ -429,6 +455,7 @@ THEN
 		Wait(1)
 		StartDialog("LCCORWIJ", Player1)
 END
+
 
 /*
 	Drizzt
@@ -801,6 +828,7 @@ THEN
 		//DisplayStringHead(Myself, ~DEBUG_009~)
 		SetGlobal("LCA_AloneWithPhaere", "GLOBAL", 1)
 		SetGlobal("LCA_PhaereTalk", "GLOBAL", 1)
+		PlaySong(146)
 		StartDialogue("LCCORWIJ", PLAYER1)
 END
 
@@ -952,6 +980,7 @@ IF
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself, ~DEBUG_CS_004~)
+		PlaySong(146)
 		StartDialog("LCCORWIJ", Player1)
 END
 
@@ -1051,6 +1080,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_CorwinSexSecond", "GLOBAL", 2)
+		PlaySong(146)
 		StartDialog("LCCORWIJ", Player1)
 END
 
@@ -3791,6 +3821,7 @@ THEN
 	RESPONSE #100
 		//clearactions(Myself)
 		ActionOverride(Player1, FaceObject("LCCORWIN"))
+		PlaySong(146)
 		StartDialog("LCCORWIN", Player1)
 END
 		
@@ -3837,6 +3868,7 @@ THEN
 	RESPONSE #100
 		//clearactions(Myself)
 		ActionOverride(Player1, FaceObject("LCCORWIN"))
+		PlaySong(146)
 		StartDialogue("LCCORWIJ", Player1)
 END
 
@@ -3868,10 +3900,24 @@ END
 IF
 	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 	Global("LCA_Banter_CorwinPlayer", "GLOBAL", 4)
+	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	See(Player1)
 THEN
 	RESPONSE #100
 		//clearactions(Myself)
+		ActionOverride(Player1, FaceObject("LCCORWIN"))
+		StartDialogue("LCCORWIJ", Player1)
+END
+
+IF
+	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+	Global("LCA_Banter_CorwinPlayer", "GLOBAL", 4)
+	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	See(Player1)
+THEN
+	RESPONSE #100
+		//clearactions(Myself)
+		PlaySong(146)
 		ActionOverride(Player1, FaceObject("LCCORWIN"))
 		StartDialogue("LCCORWIJ", Player1)
 END
@@ -3905,6 +3951,20 @@ END
 IF
 	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 	Global("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
+	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	See(Player1)
+THEN
+	RESPONSE #100
+		//clearactions(Myself)
+		ActionOverride(Player1, FaceObject("LCCORWIN"))
+		PlaySong(146)
+		StartDialogue("LCCORWIJ", Player1)
+END
+
+IF
+	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+	Global("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
+	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	See(Player1)
 THEN
 	RESPONSE #100

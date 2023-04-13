@@ -294,6 +294,25 @@ END
 IF ~~ THEN BEGIN LCA_Menu_ChapterMovie
 	SAY @153 
 	
+	IF ~~ THEN REPLY @264 /* ~CHSARA1~ */
+	DO ~
+		TextScreen("BADEND1")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @265 /* ~CHSARA1~ */
+	DO ~
+		TextScreen("BADEND2")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @266 /* ~CHSARA1~ */
+	DO ~
+		TextScreen("BADEND3")
+	~
+	EXIT
+	
+	
 	IF ~~ THEN REPLY @240 /* ~CHSARA1~ */
 	DO ~
 		TextScreen("CHSARA4")

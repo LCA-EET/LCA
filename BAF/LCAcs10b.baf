@@ -6,5 +6,6 @@ THEN
 		FadeFromColor([30.0],0)
 		Wait(3)
 		SetCutSceneLite(TRUE)
+		PlaySong(146)
 		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 END

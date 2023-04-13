@@ -6,6 +6,7 @@ THEN
 		SetCutSceneLite(TRUE)
 		SetGlobal("LCA_LCCS14Cutscene", "GLOBAL", 1)
 		CutSceneId("LCCORWIN")
+		PlaySong(146)
 		Wait(1)
 		DisplayStringHead("LCCORWIN", @0)
 		Wait(1)

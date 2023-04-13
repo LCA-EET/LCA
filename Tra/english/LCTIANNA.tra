@@ -38,15 +38,15 @@
 @37 = ~Oh, I see. Please see him soon, I don't have enough money to make the next payment on the debt.~
 @38 = ~Yes. You won't have to worry about Jasper any more.~
 @39 = ~Oh, thank you! Thank you so much! How did you convince him to forgive my debt?~
-@40 = ~I killed him. Problem solved.~
+@40 = ~The same way I solve nearly all problems. I killed him.~
 @41 = ~You WHAT? Oh - oh n-no. I need to get out of the city. His associates will think that I had him killed.. oh... my..~
 @42 = ~I paid it off. It was a little more than the 700 gold you claimed.~
 @43 = ~I made him an offer he couldn't refuse.~
 @44 = ~Can I speak to Schael? Or <CHARNAME>?~
-@45 = ~Help Tianna
+@45 = ~Tianna's Problem
 
 You agreed to help Tianna, Captain Corwin's ex-lover, settle her debt with Jasper. According to Tianna, Jasper can be found in the Undercellar.~
-@46 = ~Help Tianna
+@46 = ~Tianna's Problem
 
 I settled Tianna's debt with Jasper. I'll return to her with the good news.~
 @47 = ~I paid off the debt. It was a lot more than the 700 gold you claimed.~
@@ -71,7 +71,7 @@ I settled Tianna's debt with Jasper. I'll return to her with the good news.~
 @66 = ~I'm fine, thanks.~
 @67 = ~Sure - what do you have?~
 
-@70 = ~Help Tianna
+@70 = ~Tianna's Problem
 
 Captain Corwin has agreed to help her ex-lover, Tianna, settle her debt with Jasper. According to Tianna, Jasper can be found in the Undercellar.~
 @71 = ~<CHARNAME> was generous enough to pay it off on your behalf.~
@@ -82,3 +82,15 @@ Captain Corwin has agreed to help her ex-lover, Tianna, settle her debt with Jas
 @76 = ~(They share an embrace.)~
 @77 = ~You too, Schael.~
 @78 = ~I hope you learned something from this Tianna. Next time, you might not be so lucky.~
+@79 = ~Tianna's Problem
+
+I was approached by Corwin's ex-lover, Tianna. Apparently, she's heavily in debt to a man named Jasper, and she has no way to pay him back. I told her that I could not help her. If I change my mind, I can find her in the Low Lantern.~
+@80 = ~Tianna's Problem
+
+I was able to resolve Tianna's debt. Now that she's free of her obligation to Jasper, she plans to take her mother and move south to Beregost, for a fresh start. Before leaving, she wished Schael and I well.~
+@81 = ~Tianna's Problem
+
+I was able to resolve Tianna's debt. Now that she's free of her obligation to Jasper, she plans to take her mother and move south to Beregost, for a fresh start.~
+@82 = ~Tianna's Problem
+
+I was able to resolve Tianna's debt by murdering her creditor. She left the city in fear of retribution from Jasper's associates.~

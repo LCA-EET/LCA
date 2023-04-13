@@ -13,6 +13,7 @@ IF ~
 	Global("LCA_BGEND3", "GLOBAL", 1)
 	Global("LCA_DidNotRequestCorwin", "GLOBAL", 1)
 	GlobalGT("LCA_CorwinOpinionOfPlayer", "GLOBAL", 0)
+	// play romance song (if in romance)
 ~ THEN BEGIN LCA_BGEND3_DidNotRequest
 	SAY @1223 /* ~I'm coming with you. Don't try and talk me out of it.~ */
 	
@@ -31,6 +32,7 @@ END
 IF ~
 	Global("LCA_BGEND4", "GLOBAL", 1)
 	Global("LCA_DidRequestCorwin", "GLOBAL", 1)
+	// play romance song (if in romance)
 ~ THEN BEGIN LCA_BGEND4_DidRequest
 	SAY @1280 /* ~I'm glad that you chose me for this assignment.~*/
 	
@@ -922,6 +924,9 @@ IF ~
 	= @960 /* ~What is it, love?~ */
 	
 	IF ~~ THEN REPLY @961 /* ~(Get down on one knee, and present her with the engagement ring.)~ */
+	DO ~
+		SetGlobal("LCA_MarriageProposal", "GLOBAL", 1)
+	~
 	GOTO LCA_CorwinProposal3B
 END
 
@@ -1097,7 +1102,14 @@ END
 IF ~~ THEN BEGIN LCA_CorwinDinner_Work
 	SAY @1024 /* ~That's your money. Consider it compensation for everything you've had to endure.~*/
 	
-	IF ~~ THEN REPLY @1025 /* ~It's as much yours, Schael, as it is mine... I wouldn't be here were it not for your efforts in securing my release.~ */
+	IF ~
+		Global("bd_player_exiled","global",0)
+	~ THEN REPLY @1323 /*~It's as much yours, Schael, as it is mine. You could've killed me during my escape. Instead, you showed mercy.~ */
+	GOTO LCA_CorwinDinner_Work2
+	
+	IF ~
+		Global("bd_player_exiled","global",1)
+	~ THEN REPLY @1025 /* ~It's as much yours, Schael, as it is mine... I wouldn't be here were it not for your efforts in securing my release.~ */
 	GOTO LCA_CorwinDinner_Work2
 END
 
@@ -2355,6 +2367,7 @@ IF ~
 	Global("LCA_CorwinSexAfterBodhi", "GLOBAL", 1)
 	!Global("LCA_CorwinSexFirst", "GLOBAL", 4) // Making sure she didn't already have sex
 	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
+	//play romance song
 ~ THEN BEGIN LCA_CorwinWantsSex
 	SAY @374 /* ~My love... do you have a moment?~ */
 	
@@ -2415,7 +2428,8 @@ END
 IF ~~ THEN LCA_CorwinWantsSex3
 	SAY @384 /* ~Yes, of course.. what I mean to say is.. Gods, why is this so hard?~ */
 	= @385 /* ~Let's not let our mission, our duties, get in the way of (she leans in) ... of our intimacy.~ */
-	
+	= @1335
+	= @1336
 	IF ~
 		Global("LCA_CorwinWantsToWait", "GLOBAL", 1)
 	~ THEN REPLY @387 /* ~But, I thought you wanted to wait until we returned home, to Baldur's Gate.~ */
@@ -2562,6 +2576,8 @@ IF ~
 	Global("LCA_SleepInn", "GLOBAL", 1)
 	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
 	AreaCheck("LCAcs10")
+	//play romance song
+	//x mod
 ~ THEN BEGIN LCA_CorwinSexInnM
 	SAY @320 /* ~(You enter your room) This room is perfect. (She turns to you.)~ */
 	
@@ -2752,6 +2768,7 @@ END
 IF ~
 	Global("LCA_CorwinSexSecond", "GLOBAL", 2)
 	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
+	//play romance song
 ~ THEN BEGIN LCA_CorwinSexSecond
 	SAY @529 /* ~I've been watching you, love, and of late I don't like what I see.~ [LCCORJ10] */
 	
@@ -2789,6 +2806,7 @@ IF ~
 	Global("LCA_CorwinSexSecond", "GLOBAL", 3)
 	Global("LCA_SleepInn", "GLOBAL", 1)
 	AreaCheck("LCAcs10")
+	// play romance song
 ~ THEN BEGIN LCA_CorwinSexSecond4
 	SAY @537 /* ~Gods, I've been looking forward to this all day. Help me get this armor off, lover.~ */
 	IF ~
@@ -3207,6 +3225,7 @@ IF ~
 	Global("LCA_Banter_CorwinPlayer", "GLOBAL", 4)
 	See(Player1)
 	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	// play romance song
 ~
 THEN BEGIN LCA_CorwinPlayerBant2A
 	SAY @162 /* ~My love, are you alright? You have a look of concern about you.~ */
@@ -3245,6 +3264,7 @@ IF ~
 	Global("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
 	See(Player1)
 	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	//play romance song
 ~
 THEN BEGIN LCA_DollThanksRomance
 	SAY @140 /* ~(You notice Schael staring into the distance, with sadness in her eyes.)~ */
@@ -3257,6 +3277,7 @@ IF ~
 	InParty(Myself)
 	Global("LCA_Banter_CorwinPlayer", "GLOBAL", 2)
 	Global("LCA_CorwinContinue", "GLOBAL", 1) //Friend
+	//play romance song
 ~
 THEN BEGIN LCA_SkieMessageDelivered_Friend
 	SAY @84 /* ~<CHARNAME>, do you have a moment?~ */
@@ -3268,6 +3289,7 @@ IF ~
 	InParty(Myself)
 	Global("LCA_Banter_CorwinPlayer", "GLOBAL", 2)
 	Global("LCA_CorwinContinue", "GLOBAL", 2) //Romance
+	//play romance song
 ~
 THEN BEGIN LCA_SkieMessageDelivered_Romance
 	SAY @100 /* ~My love, do you have a moment?~ */
@@ -5747,6 +5769,7 @@ END
 
 IF ~
 	Global("LCA_TunnelAnxiety", "GLOBAL", 2)
+	//play romance song
 ~ THEN BEGIN LCA_TunnelAnxiety2
 	SAY @1306 /* ~Are you alright?~ */
 	= @1307 /* ~You look like you've seen a ghost.~ */
@@ -6571,8 +6594,13 @@ CHAIN LCCORWIJ LCA_RohmaKidnapped5Chain
 	@1007 /* ~Yes. He's Rohma's father, as distasteful as it sounds.~ */
 	== LCLIIA
 	@1011 /* ~That bodes well for your daughter, then. I doubt that he would wish to see her harmed.~ */
+	== LCBELT
+	@1333 /* ~We could use that to our advantage.~ */
 	== LCCORWIJ
-	@1008 /* ~We're wasting time... I need to get her back!~ */
+	@1050 /* ~You mean to turn Beno against Illasera? I won't work. Beno's only ever cared for himself.~ */
+	= @1052 /* ~He won't stick his neck out for anyone, not even his own daughter — I'm sure of it.~ [LCA00011] */
+	== LCBELT
+	@1334  /* ~I see...~ */
 	== LCNEDERL
 	@1009 /* ~You'll almost certainly be walking into a trap. It would be better to send some additional support, perhaps a platoon of Valiants -~ */
 END LCCORWIJ LCA_RohmaKidnapped5ChainEnd
@@ -6590,7 +6618,7 @@ END LCCORWIJ LCA_CorwinBenoSTChainEnd
 CHAIN LCBENO2 LCA_CorwinKillBenoChain
 	@1185 /* ~To hells with you, and your father!~ */
 	== LCCORWIJ
-	@1192 /* ~(She picks up Beno's rusted scimitar, and, after a moment of hesitation, brings it down sharply upon his neck. The first blow did not fully detach the head from the body, and you hear a grotesque, gurgling sound as Beno struggles to breathe. The second blow mercifully finishes the job, and Beno's head rolls a couple of feet away from his body.)~ */
+	@1192 /* ~(She picks up Beno's rusted scimitar, and, after a moment of hesitation, brings it down sharply upon his neck. The first blow did not fully detach the head from the body, and you hear a grotesque, gurgling sound as Beno struggles to breathe. The second blow mercifully finishes the job. Beno's head hits the ground with a satisfying thud, then rolls a couple of feet away from his body.)~*/
 	=@1193 /* ~(Schael walks over to the now detached head, picks it up, and places it into her pack.)~  */
 	DO ~
 		GiveItemCreate("LCBENOHD", "LCCORWIN", 0,0,0)
