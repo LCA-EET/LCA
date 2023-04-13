@@ -7,6 +7,7 @@ THEN
 		CreateCreature("LCVIRGIL", [400.340], SSW)
 END
 
+/*
 IF 
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	!Dead("Vai")
@@ -17,6 +18,7 @@ THEN
 		SetGlobal("LCA_VaiCreated", "GLOBAL", 1)
 		Continue()
 END
+*/
 
 IF 
 	Global("LCA_ReturnToBG", "GLOBAL", 1)

@@ -69,6 +69,7 @@ override/BART0133.dlg
 override/BDBELT.dlg
 override/LCHEAD1.dlg
 override/FLAMBG.dlg
+override/LCNEOMA.dlg
 override/KENT.dlg
 override/SHOP06_.dlg
 override/IMOEN2.dlg
@@ -305,6 +306,7 @@ override/LCKILLP1.bcs
 override/LCMAZHEX.bcs
 override/LCMELKOR.bcs
 override/LCMERCHG.bcs
+override/LCNEOMA.bcs
 override/LCNOBMOV.bcs
 override/LCNOBWOV.bcs
 override/LCPROPO1.bcs
@@ -446,6 +448,7 @@ override/LCELTAN.CRE
 override/LCENTAR.CRE
 override/LCKENT.CRE
 override/LCHEAD1.CRE
+override/LCNEOMA.CRE
 override/BDFISTEX.CRE
 override/BDWTREX.CRE
 override/LCFGSC1.CRE

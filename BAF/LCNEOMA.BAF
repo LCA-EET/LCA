@@ -1,0 +1,32 @@
+IF 
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	See("LCCORWIN")
+	!Global("LCA_LCCS15Started", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_LCCS15Started", "GLOBAL", 1)
+		MoveViewObject(Myself, INSTANT)
+		//DisplayStringHead("LCNEOMA", ~Attempting LCCS15~)
+		FaceObject("LCCORWIN")
+		StartCutScene("LCCS15")
+END
+
+IF 
+	Global("LCA_LCCS15Cutscene", "GLOBAL", 2)
+	Range("LCCORWIN", 6)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		SetGlobal("LCA_LCCS15Cutscene", "GLOBAL", 3)
+		ActionOverride("LCCORWIN", FaceObject("LCNEOMA"))
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", "LCNEOMA"))
+END
+
+IF 
+	Global("LCA_LCCS15Cutscene", "GLOBAL", 4)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_LCCS15Cutscene", "GLOBAL", 5)
+		EscapeArea()
+END
+

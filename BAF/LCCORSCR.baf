@@ -277,26 +277,20 @@ THEN
 		StartCutScene("LCCS14")
 END
 
-IF 
-	AreaCheck("BG0607")
-	Global("LCA_ReturnToBG", "GLOBAL", 1)
-	See("LCVAI")
-	!Global("LCA_LCCS15Started", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("LCA_LCCS15Started", "GLOBAL", 1)
-		StartCutScene("LCCS15")
-END
+
 
 IF 
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
-	Global("LCA_LCCS15Cutscene", "GLOBAL", 2)
+	Global("LCA_LCCS15Cutscene", "GLOBAL", 5)
 	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	!See("LCVAI")
+	!See("LCNEOMA")
 	See(Player1)
+	Range(Player1, 8)
 	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 THEN
 	RESPONSE #100
+		PlaySong(146)
+		SetGlobal("LCA_LCCS15Cutscene", "GLOBAL", 6)
 		StartDialog("LCCORWIJ", Player1)
 END
 

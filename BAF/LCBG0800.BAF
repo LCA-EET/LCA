@@ -18,3 +18,13 @@ THEN
 		CreateCreature("MICK", [510.2938], N)
 		SetGlobal("LCA_CreateMickNPC", "GLOBAL", 1)
 END
+
+IF 
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Global("LCA_CreateNeomaNPC", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("LCNEOMA", [3075.1390], N)
+		SetGlobal("LCA_CreateNeomaNPC", "GLOBAL", 1)
+		ActionOverride("LCNEOMA", RandomWalkContinuous())
+END

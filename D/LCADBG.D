@@ -1417,6 +1417,23 @@ END
 IF ~~ THEN BEGIN LCA_Menu_StartCutscene
 	SAY @15 /*  ~Of course. Which cutscene do you want to start?~ */
 	
+	IF ~~ THEN REPLY @267 /* ~LCCS15 (Neoma, Corwin Reunite)~ */
+	DO ~
+		SetGlobal("LCA_ReturnToBG", "GLOBAL", 1)
+		SetGlobal("LCA_LCCS15Started", "GLOBAL", 0)
+		CreateCreature("LCNEOMA", [-1.-1], N)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @268 /* ~LCCS15 (Neoma, Corwin Reunite, Earrings)~ */
+	DO ~
+		SetGlobal("LCA_CorwinGaveEarrings", "GLOBAL", 1)
+		SetGlobal("LCA_ReturnToBG", "GLOBAL", 1)
+		SetGlobal("LCA_LCCS15Started", "GLOBAL", 0)
+		CreateCreature("LCNEOMA", [-1.-1], N)
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @260 
 	DO ~
 		SetGlobal("LCA_Override", "GLOBAL", 1)

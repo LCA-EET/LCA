@@ -7,6 +7,83 @@
 2022-12-10: Initial Commit
 
 */
+
+EXTEND_BOTTOM BDCORWIJ 318
+	IF ~~ THEN REPLY @202 /* ~Corwin, these are beautiful. This Neoma... you must be very special to her.~ */
+	GOTO LCA_Neoma
+END
+
+EXTEND_BOTTOM BDCORWIJ 319
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_CorwinGaveEarrings", "GLOBAL", 1)
+		AddJournalEntry(@207, INFO)
+	~
+	EXIT
+END
+
+EXTEND_BOTTOM BDCORWIJ 320
+	IF ~~ THEN 
+	DO ~
+		SetGlobal("LCA_CorwinGaveEarrings", "GLOBAL", 1)
+		AddJournalEntry(@207, INFO)
+	~
+	EXIT
+END
+
+APPEND BDCORWIJ
+	IF ~~ THEN LCA_Neoma
+		SAY @203 /*  ~We're good friends. Sometimes, a little more than that...~ */
+	
+		IF ~  
+			!IsValidForPartyDialogue("voghiln")
+		~ THEN REPLY @204 /* ~I see. I'm sure Voghiln will appreciate the thought.~*/ 
+		GOTO 319
+		
+		IF ~  
+			IsValidForPartyDialogue("voghiln")
+		~ THEN REPLY @204 /* ~I'm certain Voghiln will appreciate the thought.~ */ 
+		EXTERN ~BDVOGHIJ~ 170
+  
+		IF ~  
+			!IsValidForPartyDialogue("voghiln")
+		~ THEN REPLY #252321 /* ~I'd try to talk you out of giving up such a sentimental item, but I can see it would do no good.~ */ 
+		GOTO 319
+		
+		IF ~  
+			IsValidForPartyDialogue("voghiln")
+		~ THEN REPLY #252321 /* ~I'd try to talk you out of giving up such a sentimental item, but I can see it would do no good.~ */ 
+		EXTERN ~BDVOGHIJ~ 170
+		
+		IF ~~ THEN REPLY @205 /* ~Lucky her.~ */
+		GOTO LCA_Neoma2
+	END
+	
+	IF ~~ THEN LCA_Neoma2
+		SAY @206 /* ~Sorry? I didn't catch that.~ */
+		
+		IF ~  
+			!IsValidForPartyDialogue("voghiln")
+		~ THEN REPLY @208 /* ~It was nothing. I'm sure Voghiln will appreciate your kindness.~*/ 
+		GOTO 319
+		
+		IF ~  
+			IsValidForPartyDialogue("voghiln")
+		~ THEN REPLY @208 /* ~It was nothing. I'm sure Voghiln will appreciate your kindness.~ */ 
+		EXTERN ~BDVOGHIJ~ 170
+  
+		IF ~  
+			!IsValidForPartyDialogue("voghiln")
+		~ THEN REPLY #252321 /* ~I'd try to talk you out of giving up such a sentimental item, but I can see it would do no good.~ */ 
+		GOTO 319
+		
+		IF ~  
+			IsValidForPartyDialogue("voghiln")
+		~ THEN REPLY #252321 /* ~I'd try to talk you out of giving up such a sentimental item, but I can see it would do no good.~ */ 
+		EXTERN ~BDVOGHIJ~ 170
+	END
+END
+
 EXTEND_BOTTOM BAERIE 112
 	IF ~
 		GlobalGT("bd_asha_duel", "global", 0)

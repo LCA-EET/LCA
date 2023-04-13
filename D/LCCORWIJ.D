@@ -1492,56 +1492,110 @@ IF ~~ THEN BEGIN LCA_CorwinBGSlaverDiscuss2
 END
 
 IF ~
-	AreaCheck("BG0607")
-	Global("LCA_ReturnToBG", "GLOBAL", 1)
-	Global("LCA_LCCS15Cutscene", "GLOBAL", 2)
-	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	!InMyArea("LCVAI")
-~ THEN BEGIN LCA_CorwinVaiFWB
-	SAY @726 /* ~You remember her, don't you?~ */
+	Global("LCA_LCCS15Cutscene", "GLOBAL", 6)
+	//play romance song
+~ THEN BEGIN LCA_CorwinNeoma
+	SAY @726 /* ~Oh, Neoma...~ */
 	
-	IF ~~ THEN REPLY @727 /* ~I think so but.. refresh my memory.~ */
+	IF ~
+		Global("LCA_CorwinGaveEarrings", "GLOBAL", 1)
+	~ THEN REPLY @1337 /* ~Her name sounds familiar... oh, right — the earrings for Voghiln!~ */
 	DO ~
-		SetGlobal("LCA_LCCS15Cutscene", "GLOBAL", 3)
+		SetGlobal("LCA_LCCS15Cutscene", "GLOBAL", 7)
 	~
-	GOTO LCA_CorwinVaiFWB2
+	GOTO LCA_CorwinNeoma2
 	
-	IF ~~ THEN REPLY @728 /* ~I do. You two seem very... ah, friendly.~ */
+	IF ~~ THEN REPLY @728 /* ~You two seem very... ah, friendly.~ */
 	DO ~
-		SetGlobal("LCA_LCCS15Cutscene", "GLOBAL", 3)
+		SetGlobal("LCA_LCCS15Cutscene", "GLOBAL", 7)
 	~
-	GOTO LCA_CorwinVaiFWB4
+	GOTO LCA_CorwinNeoma4
 	
 END
 
-IF ~~ THEN LCA_CorwinVaiFWB2
-	SAY @730 /* ~She was posted to Beregost at the height of the bandit raids.~*/
+IF ~~ THEN BEGIN LCA_CorwinNeoma2
+	SAY @1338 /* ~Hah, I'm surprised you remember.~ */
 	
-	IF ~~ THEN REPLY @731 /* ~Oh, right. She paid 50 gold a head. The money was a big help at the time.~ */
-	GOTO LCA_CorwinVaiFWB3
+	IF ~~ THEN REPLY @1339 /* ~As if I didn't hang on your every word, love.~ */
+	GOTO LCA_CorwinNeoma3
 	
-	IF ~~ THEN REPLY @734 /* ~Right. I remember her staying in the tavern while I did all of the work.~ */
-	GOTO LCA_CorwinVaiFWB3
+	IF ~~ THEN REPLY @1340 /* ~Beautiful earrings for a beautiful woman. I remember.~ */
+	GOTO LCA_CorwinNeoma3
 END
 
-IF ~~ THEN LCA_CorwinVaiFWB3
-	SAY @738 /* ~Heh, is that so...~ */
+IF ~~ THEN BEGIN LCA_CorwinNeoma3
+	SAY @1341 /* ~She was a little upset when I told her I gave them away, but when I explained why, she understood.~ */
 	
-	IF ~~ THEN REPLY @736 /* ~You two seem very... ah, friendly.~ */
-	GOTO LCA_CorwinVaiFWB4	
+	IF ~~ THEN REPLY @728 /* ~You two seem very... ah, friendly.~ */
+	GOTO LCA_CorwinNeoma4
 	
 	IF ~~ THEN REPLY @737 /* ~I'm glad you were able to see her again, love. Let's go.~ */
 	EXIT
 END
 
-IF ~~ THEN LCA_CorwinVaiFWB4
-	SAY @739 /* ~Jessa and I are friends. Sometimes a little more than that. But you're the one I love, <CHARNAME>, not her.~*/
-	
-	IF ~~ THEN REPLY @732 /* ~Doesn't that pose a conflict for you? I mean, you're her superior.~ */
-	GOTO LCA_CorwinVaiFWB4A
+IF ~~ THEN LCA_CorwinNeoma4
+	SAY @739 /* ~Neoma and I are friends. Sometimes a little more than that, if you know what I mean. But you're the one I love, <CHARNAME>, not her.~ */
 	
 	IF ~~ THEN REPLY @745 /* ~I... see.~ */
-	GOTO LCA_CorwinVaiFWB5
+	GOTO LCA_CorwinNeoma5
+	
+	IF ~~ THEN REPLY @1342 /* ~Well... as long as your flings with her are a thing of the past...~ */
+	GOTO LCA_CorwinNeoma6
+END
+
+IF ~~ THEN LCA_CorwinNeoma5
+	SAY @740 /* ~Is my... friendship with Neoma going to be a problem? If so, I'll stop seeing her. I don't want anything to jeopardize the love that you and I have for oneanother.~*/
+	
+	IF ~~ THEN REPLY @741 /* ~I don't know, Schael. I've never been in any kind of long term relationship, before meeting you. It's hard for me to know what's healthy for a relationship and what isn't.~ */
+	GOTO LCA_CorwinNeoma5A
+	
+	IF ~~ THEN REPLY @742 /* ~It's not a problem, so long as you don't develop any serious feelings for her.~ */
+	GOTO LCA_CorwinNeoma5B
+	
+	IF ~~ THEN REPLY @743 /* ~Problem? No - in fact, I'm... ah... intrigued by some of the ... possibilities.~ */
+	GOTO LCA_CorwinNeoma5C
+END
+
+IF ~~ THEN LCA_CorwinNeoma5A
+	SAY @744 /* ~I understand. Thank you for being honest about your feelings, love. I'll tell Jessa that from now on, we are to be friends and nothing more. Let's go.~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_CorwinNeomaRelationship", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~~ THEN LCA_CorwinNeoma5B
+	SAY @746 /* ~And I won't. Thank you for being honest about your feelings, love. Let's go.~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_CorwinNeomaRelationship", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~~ THEN LCA_CorwinNeoma5C
+	SAY @747 /* ~(A mischievous smile graces her face.)~*/
+	= @748 /* ~Somehow, I knew you would be. I'll see if she's interested. Let's go.~ */
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_CorwinNeomaRelationship", "GLOBAL", 2)
+	~
+	EXIT
+END
+
+IF ~~ THEN LCA_CorwinNeoma6
+	SAY @1343 /* ~They are. Come here.~ */
+	= @1344 /* ~(You kiss and embrace).~ */
+	= @1346 /* ~Let's not let any past relationships jeopardize our love for one another.~*/
+	
+	IF ~~ THEN REPLY @1345 /* ~Right. Thank you, Schael.~*/
+	DO ~
+		SetGlobal("LCA_CorwinNeomaRelationship", "GLOBAL", 1)
+	~
+	EXIT
 END
 
 IF ~~ THEN LCA_MeetSkie3A
@@ -1552,57 +1606,6 @@ IF ~~ THEN LCA_MeetSkie3A
 	
 	IF ~~ THEN REPLY @911 /* ~Put that damned dagger away Skie. It's gotten me into enough trouble already!~  */
 	EXTERN LCSKIE LCA_MeetSkie4
-END
-
-IF ~~ THEN LCA_CorwinVaiFWB4A
-	SAY @733 /* ~I'm higher than her in rank, yes, but she doesn't report to me either directly or indirectly.~ */
-	
-	IF ~~ THEN
-	GOTO LCA_CorwinVaiFWB5
-END
-
-IF ~~ THEN LCA_CorwinVaiFWB5
-	SAY @740 /* ~Is my... friendship with Jessa going to be a problem? If so, I'll stop seeing her. I don't want anything to jeopardize the love that you and I have for oneanother.~*/
-	
-	IF ~~ THEN REPLY @741 /* ~I don't know, Schael. I've never been in any kind of long term relationship, before meeting you. It's hard for me to know what's healthy for a relationship and what isn't.~ */
-	GOTO LCA_CorwinVaiFWB5A
-	
-	IF ~~ THEN REPLY @742 /* ~It's not a problem, so long as you don't develop any serious feelings for her.~ */
-	GOTO LCA_CorwinVaiFWB5B
-	
-	IF ~~ THEN REPLY @743 /* ~Problem? No - in fact, I'm... ah... intrigued by some of the ... possibilities.~ */
-	GOTO LCA_CorwinVaiFWB5C
-	
-END
-
-IF ~~ THEN LCA_CorwinVaiFWB5A
-	SAY @744 /* ~I understand. Thank you for being honest about your feelings, love. I'll tell Jessa that from now on, we are to be friends and nothing more. Let's go.~ */
-	
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_CorwinVaiRelationship", "GLOBAL", 1)
-	~
-	EXIT
-END
-
-IF ~~ THEN LCA_CorwinVaiFWB5B
-	SAY @746 /* ~And I won't. Thank you for being honest about your feelings, love. Let's go.~ */
-	
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_CorwinVaiRelationship", "GLOBAL", 1)
-	~
-	EXIT
-END
-
-IF ~~ THEN LCA_CorwinVaiFWB5C
-	SAY @747 /* ~(A mischievous smile graces her face.)~*/
-	= @748 /* ~Somehow, I knew you would be. I'll see if she's interested. Let's go.~ */
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_CorwinVaiRelationship", "GLOBAL", 2)
-	~
-	EXIT
 END
 
 IF ~
@@ -5902,19 +5905,19 @@ END LCTIANNA LCA_GoodBye
 
 CHAIN 
 	IF ~
-		Global("LCA_LCCS15Cutscene", "GLOBAL", 1)
-	~ THEN LCCORWIJ LCA_CorwinVaiReunite
+		Global("LCA_LCCS15Cutscene", "GLOBAL", 3)
+	~ THEN LCCORWIJ LCA_CorwinNeomaReunite
 		@716 /* ~(They share a close embrace.)~ */
 		DO ~
-			SetGlobal("LCA_LCCS15Cutscene", "GLOBAL", 2)
+			SetGlobal("LCA_LCCS15Cutscene", "GLOBAL", 4)
 		~
-		== LCVAI
-		@717 /* ~Marshal Nederlok told us you'd be coming home! How are you?~ */
+		== LCNEOMA
+		@717 /* ~I heard you'd be coming home! How are you?~ */
 		== LCCORWIJ
 		@723 /* ~I'm just glad to be home. How are things with you?~ */
-		== LCVAI
+		== LCNEOMA
 		@721 /* ~(They speak amongst themselves for a time. You can't make out what they are saying.)~ */
-		== LCVAI
+		== LCNEOMA
 		IF ~
 			Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 		~
@@ -5924,12 +5927,12 @@ CHAIN
 			Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@718 /* ~(They break into laughter.)~*/
-		== LCVAI
-		@719 /* ~Listen, I'm about to head out on patrol. Let's get caught up later, over a drink or two.~ */
+		== LCNEOMA
+		@719 /* ~Listen, I have to start my shift soon. Let's get caught up later, over a drink or two.~*/
 		== LCCORWIJ
-		@724 /* ~Good. Be careful out there.~ */
-		== LCVAI
-		@725 /* ~(They embrace, and Vai leaves on her patrol.)~ */
+		@724 /* ~Sounds good. I'll see you later.~*/
+		== LCNEOMA
+		@725 /* ~(They embrace, and Neoma leaves after giving Schael a kiss on her cheek.)~ */
 EXIT
 
 CHAIN
