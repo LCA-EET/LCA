@@ -2137,11 +2137,13 @@ END
 IF ~
 	Global("LCA_PlayerSoulTalk", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinSoulTalk
-	SAY @432 /* ~(She places her hand on your shoulder.) Hey - are you alright?~ */
+	SAY @432 /* ~(She places her hand on your shoulder.)~ */
+	=@1349 /* ~Hey — you alright?~ */
+	
 	IF ~~ THEN REPLY @433 /* ~For just having my soul ripped out of me, yes, I feel fine.~ */
 	GOTO LCA_CorwinSoulTalk2
 	
-	IF ~~ THEN REPLY @434 /* ~I'm not sure. It's hard for to explain.... I feel empty.~ */
+	IF ~~ THEN REPLY @434 /* ~I'm not sure. It's hard for me to explain.... I feel... hollow?~ */
 	GOTO LCA_CorwinSoulTalk2
 END
 
