@@ -946,6 +946,7 @@ IF ~~ THEN LCA_CorwinProposal4
 		Global("LCA_RingEnchantment2", "GLOBAL", 1)
 		Global("LCA_RingEnchantment3", "GLOBAL", 1)
 		Global("LCA_RingEnchantment5", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
 	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
 	DO ~
 		GiveItemCreate("LCRING07","LCCORWIN",1,0,0) //OK
@@ -956,6 +957,7 @@ IF ~~ THEN LCA_CorwinProposal4
 		Global("LCA_RingEnchantment1", "GLOBAL", 1)
 		Global("LCA_RingEnchantment3", "GLOBAL", 1)
 		Global("LCA_RingEnchantment5", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
 	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
 	DO ~
 		GiveItemCreate("LCRING11","LCCORWIN",1,0,0) //OK
@@ -966,6 +968,7 @@ IF ~~ THEN LCA_CorwinProposal4
 		Global("LCA_RingEnchantment1", "GLOBAL", 1)
 		Global("LCA_RingEnchantment2", "GLOBAL", 1)
 		Global("LCA_RingEnchantment5", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
 	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
 	DO ~
 		GiveItemCreate("LCRING13","LCCORWIN",1,0,0) //OK
@@ -976,6 +979,7 @@ IF ~~ THEN LCA_CorwinProposal4
 		Global("LCA_RingEnchantment1", "GLOBAL", 1)
 		Global("LCA_RingEnchantment2", "GLOBAL", 1)
 		Global("LCA_RingEnchantment3", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
 	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
 	DO ~
 		GiveItemCreate("LCRING14","LCCORWIN",1,0,0) //OK
@@ -986,6 +990,7 @@ IF ~~ THEN LCA_CorwinProposal4
 		Global("LCA_RingEnchantment4", "GLOBAL", 1)
 		Global("LCA_RingEnchantment3", "GLOBAL", 1)
 		Global("LCA_RingEnchantment5", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
 	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
 	DO ~
 		GiveItemCreate("LCRING19","LCCORWIN",1,0,0) //OK
@@ -996,6 +1001,7 @@ IF ~~ THEN LCA_CorwinProposal4
 		Global("LCA_RingEnchantment4", "GLOBAL", 1)
 		Global("LCA_RingEnchantment2", "GLOBAL", 1)
 		Global("LCA_RingEnchantment5", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
 	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
 	DO ~
 		GiveItemCreate("LCRING21","LCCORWIN",1,0,0) //OK
@@ -1006,6 +1012,7 @@ IF ~~ THEN LCA_CorwinProposal4
 		Global("LCA_RingEnchantment4", "GLOBAL", 1)
 		Global("LCA_RingEnchantment2", "GLOBAL", 1)
 		Global("LCA_RingEnchantment3", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
 	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
 	DO ~
 		GiveItemCreate("LCRING22","LCCORWIN",1,0,0) //OK
@@ -1016,6 +1023,7 @@ IF ~~ THEN LCA_CorwinProposal4
 		Global("LCA_RingEnchantment4", "GLOBAL", 1)
 		Global("LCA_RingEnchantment1", "GLOBAL", 1)
 		Global("LCA_RingEnchantment5", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
 	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
 	DO ~
 		GiveItemCreate("LCRING25","LCCORWIN",1,0,0) //OK
@@ -1026,6 +1034,7 @@ IF ~~ THEN LCA_CorwinProposal4
 		Global("LCA_RingEnchantment4", "GLOBAL", 1)
 		Global("LCA_RingEnchantment1", "GLOBAL", 1)
 		Global("LCA_RingEnchantment3", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
 	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
 	DO ~
 		GiveItemCreate("LCRING26","LCCORWIN",1,0,0) //OK
@@ -1036,12 +1045,124 @@ IF ~~ THEN LCA_CorwinProposal4
 		Global("LCA_RingEnchantment4", "GLOBAL", 1)
 		Global("LCA_RingEnchantment1", "GLOBAL", 1)
 		Global("LCA_RingEnchantment2", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
 	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
 	DO ~
 		GiveItemCreate("LCRING28","LCCORWIN",1,0,0) //OK
 	~
 	GOTO LCA_CorwinProposal5
 
+	//Non-Imbued
+
+	IF ~
+		Global("LCA_RingEnchantment2", "GLOBAL", 1)
+		Global("LCA_RingEnchantment3", "GLOBAL", 1)
+		Global("LCA_RingEnchantment5", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 1)
+	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
+	DO ~
+		GiveItemCreate("LCRNG07A","LCCORWIN",1,0,0) //OK
+	~
+	GOTO LCA_CorwinProposal5
+
+	IF ~
+		Global("LCA_RingEnchantment1", "GLOBAL", 1)
+		Global("LCA_RingEnchantment3", "GLOBAL", 1)
+		Global("LCA_RingEnchantment5", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 1)
+	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
+	DO ~
+		GiveItemCreate("LCRNG11A","LCCORWIN",1,0,0) //OK
+	~
+	GOTO LCA_CorwinProposal5
+	
+	IF ~
+		Global("LCA_RingEnchantment1", "GLOBAL", 1)
+		Global("LCA_RingEnchantment2", "GLOBAL", 1)
+		Global("LCA_RingEnchantment5", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 1)
+	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
+	DO ~
+		GiveItemCreate("LCRNG13A","LCCORWIN",1,0,0) //OK
+	~
+	GOTO LCA_CorwinProposal5
+
+	IF ~
+		Global("LCA_RingEnchantment1", "GLOBAL", 1)
+		Global("LCA_RingEnchantment2", "GLOBAL", 1)
+		Global("LCA_RingEnchantment3", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 1)
+	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
+	DO ~
+		GiveItemCreate("LCRNG14A","LCCORWIN",1,0,0) //OK
+	~
+	GOTO LCA_CorwinProposal5
+
+	IF ~
+		Global("LCA_RingEnchantment4", "GLOBAL", 1)
+		Global("LCA_RingEnchantment3", "GLOBAL", 1)
+		Global("LCA_RingEnchantment5", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 1)
+	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
+	DO ~
+		GiveItemCreate("LCRNG19A","LCCORWIN",1,0,0) //OK
+	~
+	GOTO LCA_CorwinProposal5
+
+	IF ~
+		Global("LCA_RingEnchantment4", "GLOBAL", 1)
+		Global("LCA_RingEnchantment2", "GLOBAL", 1)
+		Global("LCA_RingEnchantment5", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 1)
+	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
+	DO ~
+		GiveItemCreate("LCRNG21A","LCCORWIN",1,0,0) //OK
+	~
+	GOTO LCA_CorwinProposal5
+	
+	IF ~
+		Global("LCA_RingEnchantment4", "GLOBAL", 1)
+		Global("LCA_RingEnchantment2", "GLOBAL", 1)
+		Global("LCA_RingEnchantment3", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 1)
+	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
+	DO ~
+		GiveItemCreate("LCRNG22A","LCCORWIN",1,0,0) //OK
+	~
+	GOTO LCA_CorwinProposal5
+
+	IF ~
+		Global("LCA_RingEnchantment4", "GLOBAL", 1)
+		Global("LCA_RingEnchantment1", "GLOBAL", 1)
+		Global("LCA_RingEnchantment5", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 1)
+	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
+	DO ~
+		GiveItemCreate("LCRNG25A","LCCORWIN",1,0,0) //OK
+	~
+	GOTO LCA_CorwinProposal5
+
+	IF ~
+		Global("LCA_RingEnchantment4", "GLOBAL", 1)
+		Global("LCA_RingEnchantment1", "GLOBAL", 1)
+		Global("LCA_RingEnchantment3", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 1)
+	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
+	DO ~
+		GiveItemCreate("LCRNG26A","LCCORWIN",1,0,0) //OK
+	~
+	GOTO LCA_CorwinProposal5
+
+	IF ~
+		Global("LCA_RingEnchantment4", "GLOBAL", 1)
+		Global("LCA_RingEnchantment1", "GLOBAL", 1)
+		Global("LCA_RingEnchantment2", "GLOBAL", 1)
+		Global("LCA_RingEnchanted", "GLOBAL", 1)
+	~ THEN REPLY @971 /* ~(Place the ring onto her finger.)~ */
+	DO ~
+		GiveItemCreate("LCRNG28A","LCCORWIN",1,0,0) //OK
+	~
+	GOTO LCA_CorwinProposal5
 END
 
 IF ~~ THEN LCA_CorwinProposal5
@@ -1208,18 +1329,18 @@ IF ~~ THEN BEGIN LCA_CorwinDinner_Romance7
 	SAY @936 /* ~It's getting late, love. I should head home.~ */
 	
 	IF ~
-		Global("LCA_RingEnchanted", "GLOBAL", 1)
+		GlobalGT("LCA_RingEnchanted", "GLOBAL", 0)
 	~ THEN REPLY @916 /* ~Let's take a walk.~ */
 	GOTO LCA_CorwinDinner_Romance8
 	
 	IF ~
-		!Global("LCA_RingEnchanted", "GLOBAL", 1)
+		GlobalLT("LCA_RingEnchanted", "GLOBAL", 1)
 		Gender(Player1, MALE)
 	~ THEN REPLY @940 /* ~I'll walk you home.~ */
 	GOTO LCA_CorwinDinner_WalkHome_Male
 	
 	IF ~
-		!Global("LCA_RingEnchanted", "GLOBAL", 1)
+		GlobalLT("LCA_RingEnchanted", "GLOBAL", 1)
 		!Gender(Player1, MALE)
 	~ THEN REPLY @940 /* ~I'll walk you home.~ */
 	GOTO LCA_CorwinDinner_WalkHome_Female
@@ -1502,6 +1623,7 @@ IF ~
 	~ THEN REPLY @1337 /* ~Her name sounds familiar... oh, right — the earrings for Voghiln!~ */
 	DO ~
 		SetGlobal("LCA_LCCS15Cutscene", "GLOBAL", 7)
+		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	GOTO LCA_CorwinNeoma2
 	
@@ -1519,7 +1641,15 @@ IF ~~ THEN BEGIN LCA_CorwinNeoma2
 	IF ~~ THEN REPLY @1339 /* ~As if I didn't hang on your every word, love.~ */
 	GOTO LCA_CorwinNeoma3
 	
-	IF ~~ THEN REPLY @1340 /* ~Beautiful earrings for a beautiful woman. I remember.~ */
+	IF ~~ THEN REPLY @1340 /* ~Beautiful earrings for an even more beautiful woman. I remember.~ */
+	GOTO LCA_CorwinNeoma2A
+END
+
+IF ~~ THEN BEGIN LCA_CorwinNeoma2A
+	SAY @1347 /* ~(She smiles)~ */
+	= @1348 /* ~Sweet of you to say.~ */
+	
+	IF ~~ THEN 
 	GOTO LCA_CorwinNeoma3
 END
 

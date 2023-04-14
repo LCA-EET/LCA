@@ -793,6 +793,8 @@ IF ~~ THEN BEGIN LCA_Menu_CreateItem
 	~
 	GOTO LCA_ReturnToMainMenu
 	
+	//Empowered Rings
+	
 	IF ~~ THEN REPLY @197 /* ~LCRING07~ */
 	DO ~
 		GiveItemCreate("LCRING07", LastTalkedToBy(Myself),1,0,0)
@@ -860,6 +862,78 @@ IF ~~ THEN BEGIN LCA_Menu_CreateItem
 	DO ~
 		GiveItemCreate("LCRING28", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRING28", IDENTIFIED,TRUE))
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	//Enchanted Rings
+	
+	IF ~~ THEN REPLY @269 /* ~LCRING07~ */
+	DO ~
+		GiveItemCreate("LCRNG07A", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG07A", IDENTIFIED,TRUE))
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @270 /* ~LCRING11~ */
+	DO ~
+		GiveItemCreate("LCRNG11A", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG11A", IDENTIFIED,TRUE))
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @271 /* ~LCRING13~ */
+	DO ~
+		GiveItemCreate("LCRNG13A", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG13A", IDENTIFIED,TRUE))
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @272 /* ~LCRING14~ */
+	DO ~
+		GiveItemCreate("LCRNG14A", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG14A", IDENTIFIED,TRUE))
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @273 /* ~LCRING19~ */
+	DO ~
+		GiveItemCreate("LCRNG19A", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG19A", IDENTIFIED,TRUE))
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @274 /* ~LCRING21~ */
+	DO ~
+		GiveItemCreate("LCRNG21A", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG21A", IDENTIFIED,TRUE))
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @275 /* ~LCRING22~ */
+	DO ~
+		GiveItemCreate("LCRNG22A", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG22A", IDENTIFIED,TRUE))
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @276 /* ~LCRING25~ */
+	DO ~
+		GiveItemCreate("LCRNG25A", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG25A", IDENTIFIED,TRUE))
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @277 /* ~LCRING26~ */
+	DO ~
+		GiveItemCreate("LCRNG26A", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG26A", IDENTIFIED,TRUE))
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @278 /* ~LCRING28~ */
+	DO ~
+		GiveItemCreate("LCRNG28A", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG28A", IDENTIFIED,TRUE))
 	~
 	GOTO LCA_ReturnToMainMenu
 	

@@ -44,14 +44,14 @@ IF ~
 	
 	IF ~
 		Global("LCA_RingGiftAldeth", "GLOBAL", 1)
-		!Global("LCA_RingEnchanted", "GLOBAL", 1)
+		GlobalLT("LCA_RingEnchanted", "GLOBAL", 1)
 		InPartySlot(LastTalkedToBy,0)
 	~ THEN REPLY @10 /* ~Listen... (approach and ask about enchanting the ring.)~*/
 	GOTO LCA_RingEnchant1__A //OK
 	
 	IF ~
 		Global("LCA_RingGiftJhasso", "GLOBAL", 1)
-		!Global("LCA_RingEnchanted", "GLOBAL", 1)
+		GlobalLT("LCA_RingEnchanted", "GLOBAL", 1)
 		InPartySlot(LastTalkedToBy,0)
 	~ THEN REPLY @10 /* ~Listen... (approach and ask about enchanting the ring.)~*/
 	GOTO LCA_RingEnchant1__J //OK
@@ -73,14 +73,14 @@ IF ~~ THEN BEGIN LCA_RefugeesCleared
 	
 	IF ~
 		Global("LCA_RingGiftAldeth", "GLOBAL", 1)
-		!Global("LCA_RingEnchanted", "GLOBAL", 1)
+		GlobalLT("LCA_RingEnchanted", "GLOBAL", 1)
 		InPartySlot(LastTalkedToBy,0)
 	~ THEN REPLY @10 /* ~Listen... (approach and ask about enchanting the ring.)~*/
 	GOTO LCA_RingEnchant1__A //OK
 	
 	IF ~
 		Global("LCA_RingGiftJhasso", "GLOBAL", 1)
-		!Global("LCA_RingEnchanted", "GLOBAL", 1)
+		GlobalLT("LCA_RingEnchanted", "GLOBAL", 1)
 		InPartySlot(LastTalkedToBy,0)
 	~ THEN REPLY @10 /* ~Listen... (approach and ask about enchanting the ring.)~*/
 	GOTO LCA_RingEnchant1__J //OK
@@ -280,7 +280,7 @@ IF ~~ THEN LCA_RingThirdEnchant
 	DO ~
 		SetGlobal("LCA_RingEnchantment1", "GLOBAL", 1)
 	~
-	GOTO LCA_RingThirdEnchant
+	GOTO LCA_RingEnchantBoost
 	
 	IF ~
 		!Global("LCA_RingEnchantment2", "GLOBAL", 1)
@@ -288,7 +288,7 @@ IF ~~ THEN LCA_RingThirdEnchant
 	DO ~
 		SetGlobal("LCA_RingEnchantment2", "GLOBAL", 1)
 	~
-	GOTO LCA_RingThirdEnchant
+	GOTO LCA_RingEnchantBoost
 	
 	IF ~
 		!Global("LCA_RingEnchantment3", "GLOBAL", 1)
@@ -296,7 +296,7 @@ IF ~~ THEN LCA_RingThirdEnchant
 	DO ~
 		SetGlobal("LCA_RingEnchantment3", "GLOBAL", 1)
 	~
-	GOTO LCA_RingThirdEnchant
+	GOTO LCA_RingEnchantBoost
 	
 	IF ~
 		!Global("LCA_RingEnchantment4", "GLOBAL", 1)
@@ -304,7 +304,7 @@ IF ~~ THEN LCA_RingThirdEnchant
 	DO ~
 		SetGlobal("LCA_RingEnchantment4", "GLOBAL", 1)
 	~
-	GOTO LCA_RingThirdEnchant
+	GOTO LCA_RingEnchantBoost
 	
 	IF ~
 		!Global("LCA_RingEnchantment5", "GLOBAL", 1)
@@ -312,11 +312,43 @@ IF ~~ THEN LCA_RingThirdEnchant
 	DO ~
 		SetGlobal("LCA_RingEnchantment5", "GLOBAL", 1)
 	~
-	GOTO LCA_RingThirdEnchant
+	GOTO LCA_RingEnchantBoost
 END
 
-IF ~~ THEN BEGIN LCA_RingEnchantEnd
-	SAY @35 /* ~Very good. Return to me in one week. The enchantments will be applied by then.~ */
+IF ~~ THEN BEGIN LCA_RingEnchantBoost
+	SAY @43 /* ~Very good. There's just one more matter to discuss.~ */
+	
+	IF ~~ THEN REPLY @44 /* ~What is it?~ */
+	GOTO LCA_RingEnchantBoost2
+	
+	IF ~~ THEN REPLY @46 /* ~What is it?~ */
+	GOTO LCA_RingEnchantBoost2
+END
+
+IF ~~ THEN BEGIN LCA_RingEnchantBoost2
+	SAY @45 /* ~As the child of a deity, you are a being of immense power... if you so choose, you can use a portion of your divine life force to boost the power of the enchantments to truly extraordinary levels.~ */
+
+	= @47 /* ~I must warn you that the process is irreversible. You will not be able to reclaim the life force used to fuel the enchantments, even if the ring, or its wearer, is destroyed.~ */
+	
+	IF ~~ THEN REPLY @48 /* ~How much of my life force will you need?~ */
+	GOTO LCA_HowMuch
+END
+
+IF ~~ THEN BEGIN LCA_HowMuch
+	SAY @50 /* ~It's hard to say... a tenth, or perhaps slightly more. The tradeoff in my opinion is worth it.~ */
+	
+	IF ~~ THEN REPLY @51 /* ~It sounds risky. I'll pass.~ */
+	GOTO LCA_RingEnchantEnd_NoImbue
+	
+	IF ~~ THEN REPLY @52 /* ~She's worth it. I'll do it.~ */
+	GOTO LCA_RingEnchantEnd_Imbue
+	
+	IF ~~ THEN REPLY @49 /* ~No, thanks. I've had enough of wizards trying to steal my power for one lifetime.~*/
+	GOTO LCA_RingEnchantEnd_NoImbue
+END
+
+IF ~~ THEN BEGIN LCA_RingEnchantEnd_NoImbue
+	SAY @35 /* ~Very well. Return to me in one week. The enchantments will be applied by then.~ */
 	
 	IF ~~ THEN
 	DO ~
@@ -326,7 +358,17 @@ IF ~~ THEN BEGIN LCA_RingEnchantEnd
 	EXIT
 END
 
-
+IF ~~ THEN BEGIN LCA_RingEnchantEnd_Imbue
+	SAY @53 /* ~Very well. Return to me in one week. The enchantments will be applied by then.~ */
+	= @54 /* ~You won't be disappointed.~ */
+	
+	IF ~~ THEN
+	DO ~
+		AddJournalEntry(@42, INFO)
+		SetGlobal("LCA_RingEnchanted", "GLOBAL", 2)
+	~
+	EXIT
+END
 
 IF ~~ THEN BEGIN LCA_AskAboutSlavers
 	SAY @7 /* ~What is there to say? They moved in to the Iron Throne headquarters at the peak of the crisis. Shortly thereafter the refugees were moved out of the city, one ship at a time.~ */
