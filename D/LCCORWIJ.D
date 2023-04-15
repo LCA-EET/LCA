@@ -5958,7 +5958,7 @@ IF ~~ THEN BEGIN LCA_SoDAnxiety5
 	= @1317 /*  ~(You share a long and tender embrace.)~ */
 	
 	IF ~~ THEN REPLY @1318 /* ~Thank you, Schael... For believing in me, and for believing in us.~  */
-	GOTO LCA_TunnelAnxiety6
+	GOTO LCA_SoDAnxiety6
 END
 
 IF ~~ THEN BEGIN LCA_SoDAnxiety6
