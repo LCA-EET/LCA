@@ -4392,6 +4392,138 @@ IF ~~ THEN BEGIN LCA_Congratulations2A
 		StartCutScene("CHDINROM")
 	~
 	EXIT 
+	
+	IF ~
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
+	~ THEN REPLY @1109 /* /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+	DO ~
+		ChangeStat(Player1, MAXHITPOINTS, -4, ADD)
+		StartCutSceneMode()
+		StartCutScene("CHDINROM")
+	~
+	EXIT
+	
+	IF ~
+		CheckStatGT(Player1, 49, MAXHITPOINTS)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
+	~ THEN REPLY @1109 /* /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+	DO ~
+		ChangeStat(Player1, MAXHITPOINTS, -5, ADD)
+		StartCutSceneMode()
+		StartCutScene("CHDINROM")
+	~
+	EXIT
+	
+	IF ~
+		CheckStatGT(Player1, 59, MAXHITPOINTS)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
+	~ THEN REPLY @1109 /* /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+	DO ~
+		ChangeStat(Player1, MAXHITPOINTS, -6, ADD)
+		StartCutSceneMode()
+		StartCutScene("CHDINROM")
+	~
+	EXIT
+	
+	IF ~
+		CheckStatGT(Player1, 69, MAXHITPOINTS)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
+	~ THEN REPLY @1109 /* /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+	DO ~
+		ChangeStat(Player1, MAXHITPOINTS, -7, ADD)
+		StartCutSceneMode()
+		StartCutScene("CHDINROM")
+	~
+	EXIT
+	
+	IF ~
+		CheckStatGT(Player1, 79, MAXHITPOINTS)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
+	~ THEN REPLY @1109 /* /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+	DO ~
+		ChangeStat(Player1, MAXHITPOINTS, -8, ADD)
+		StartCutSceneMode()
+		StartCutScene("CHDINROM")
+	~
+	EXIT
+	
+	IF ~
+		CheckStatGT(Player1, 89, MAXHITPOINTS)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
+	~ THEN REPLY @1109 /* /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+	DO ~
+		ChangeStat(Player1, MAXHITPOINTS, -9, ADD)
+		StartCutSceneMode()
+		StartCutScene("CHDINROM")
+	~
+	EXIT
+	
+	IF ~
+		CheckStatGT(Player1, 99, MAXHITPOINTS)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
+	~ THEN REPLY @1109 /* /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+	DO ~
+		ChangeStat(Player1, MAXHITPOINTS, -10, ADD)
+		StartCutSceneMode()
+		StartCutScene("CHDINROM")
+	~
+	EXIT
+	
+	IF ~
+		CheckStatGT(Player1, 109, MAXHITPOINTS)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
+	~ THEN REPLY @1109 /* /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+	DO ~
+		ChangeStat(Player1, MAXHITPOINTS, -11, ADD)
+		StartCutSceneMode()
+		StartCutScene("CHDINROM")
+	~
+	EXIT
+	
+	IF ~
+		CheckStatGT(Player1, 119, MAXHITPOINTS)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
+	~ THEN REPLY @1109 /* /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+	DO ~
+		ChangeStat(Player1, MAXHITPOINTS, -12, ADD)
+		StartCutSceneMode()
+		StartCutScene("CHDINROM")
+	~
+	EXIT
+	
+	
+	IF ~
+		CheckStatGT(Player1, 129, MAXHITPOINTS)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
+	~ THEN REPLY @1109 /* /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+	DO ~
+		ChangeStat(Player1, MAXHITPOINTS, -13, ADD)
+		StartCutSceneMode()
+		StartCutScene("CHDINROM")
+	~
+	EXIT
+	
+	IF ~
+		CheckStatGT(Player1, 139, MAXHITPOINTS)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
+	~ THEN REPLY @1109 /* /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+	DO ~
+		ChangeStat(Player1, MAXHITPOINTS, -14, ADD)
+		StartCutSceneMode()
+		StartCutScene("CHDINROM")
+	~
+	EXIT
+	
+	IF ~
+		CheckStatGT(Player1, 149, MAXHITPOINTS)
+		Global("LCA_RingEnchanted", "GLOBAL", 2)
+	~ THEN REPLY @1109 /* /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+	DO ~
+		ChangeStat(Player1, MAXHITPOINTS, -15, ADD)
+		StartCutSceneMode()
+		StartCutScene("CHDINROM")
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN LCA_Congratulations2B
