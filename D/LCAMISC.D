@@ -8,6 +8,26 @@
 
 */
 
+EXTEND_BOTTOM FORTHE 9
+	IF ~~ THEN 
+	DO ~
+		GiveGoldForce(200)
+		SetGlobal("LCA_HelpedForthe_BG1", "GLOBAL", 1)
+		EscapeArea()
+	~
+	EXIT
+END
+
+EXTEND_BOTTOM FORTHE 11
+	IF ~~ THEN 
+	DO ~
+		GiveGoldForce(200)
+		SetGlobal("LCA_HelpedForthe_BG1", "GLOBAL", 1)
+		EscapeArea()
+	~
+	EXIT
+END
+
 EXTEND_BOTTOM BDCORWIJ 318
 	IF ~~ THEN REPLY @202 /* ~Corwin, these are beautiful. This Neoma... you must be very special to her.~ */
 	GOTO LCA_Neoma

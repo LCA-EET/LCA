@@ -6756,7 +6756,7 @@ CHAIN
 	IF ~~ THEN LCCORWIJ LCA_Depart_RohmaChain
 		@872 /* ~Rohma, father, <CHARNAME> and I have some business to attend to in the city. I'll be back in a couple of hours.~ */
 		DO ~
-			SetGlobalTimer("LCA_CorwinReturnToFamily", "GLOBAL", THREE_HOURS)
+			SetGlobalTimer("LCA_CorwinReturnToFamily", "GLOBAL", FOUR_HOURS)
 		~
 		== LCAUDAM
 		@877 /*  ~Good. Don't take too long. Rohma, say bye to mommy.~ */
@@ -6814,7 +6814,7 @@ CHAIN
 		= @888 /* ~Be a good girl while I'm gone.~*/
 		== LCROHMA
 		@889 /* ~I will, mommy.~*/
-END
+EXIT
 
 CHAIN
 	IF ~~ THEN LCCORWIJ LCA_CorwinNederlok
