@@ -185,13 +185,14 @@ IF ~~ THEN BEGIN LCA_AskAboutSlavery2
 	GOTO LCA_AskAboutSlavery2A
 	
 	IF ~
-		Global("bd_player_exiled","global",0)
+		Global("LCA_SoDAnxiety", "GLOBAL", 0)
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 		IsValidForPartyDialogue("LCCORWIN")
 	~ THEN 
 	DO ~
-		SetGlobal("LCA_TunnelAnxiety", "GLOBAL", 1)
-		SetGlobalTimer("LCA_TunnelAnxietyTimer", "GLOBAL", ONE_ROUND)
+		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 1)
+		SetGlobalTimer("LCA_SoDAnxietyTimer", "GLOBAL", ONE_ROUND)
+		SetGlobal("LCA_SoDAnxietyAlatos", "GLOBAL", 1)
 	~
 	GOTO LCA_AskAboutSlavery2A
 END
@@ -319,11 +320,12 @@ IF ~~ THEN BEGIN LCA_CorwinAlatosChainSlaversEnd
 	
 	IF ~
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-		Global("bd_player_exiled","global",0)
+		Global("LCA_SoDAnxiety", "GLOBAL", 0)
 	~ THEN 
 	DO ~
-		SetGlobal("LCA_TunnelAnxiety", "GLOBAL", 1)
-		SetGlobalTimer("LCA_TunnelAnxietyTimer", "GLOBAL", ONE_ROUND)
+		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 1)
+		SetGlobal("LCA_SoDAnxietyAlatos", "GLOBAL", 1)
+		SetGlobalTimer("LCA_SoDAnxietyTimer", "GLOBAL", ONE_ROUND)
 	~
 	GOTO LCA_CorwinAlatosChainSlaversEnd2
 END

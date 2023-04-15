@@ -5903,43 +5903,57 @@ IF ~~ THEN BEGIN LCA_ReadyToGetRohma
 END
 
 IF ~
-	Global("LCA_TunnelAnxiety", "GLOBAL", 2)
+	Global("LCA_SoDAnxiety", "GLOBAL", 2)
 	//play romance song
-~ THEN BEGIN LCA_TunnelAnxiety2
+~ THEN BEGIN LCA_SoDAnxiety2
 	SAY @1306 /* ~Are you alright?~ */
 	= @1307 /* ~You look like you've seen a ghost.~ */
 	
 	IF ~~ THEN REPLY @1313 /* ~It's nothing... come on, let's go.~ */
 	DO ~
-		SetGlobal("LCA_TunnelAnxiety", "GLOBAL", 3)
+		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 3)
 	~
 	EXIT
 	
 	IF ~~ THEN REPLY @1309 /* ~I... I'm fine... ~*/
 	DO ~
-		SetGlobal("LCA_TunnelAnxiety", "GLOBAL", 3)
+		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 3)
 	~
-	GOTO LCA_TunnelAnxiety3
+	GOTO LCA_SoDAnxiety3
 END
 
-IF ~~ THEN BEGIN LCA_TunnelAnxiety3
+IF ~~ THEN BEGIN LCA_SoDAnxiety3
 	SAY @1310 /* ~Honey, what's wrong? You can tell me.~ */
 	
-	IF ~~ THEN REPLY @1311 /* ~When Alatos brought up the tunnels beneath the city... it all came flooding back, Schael...~ */
-	GOTO LCA_TunnelAnxiety4
+	IF ~
+		Global("LCA_SoDAnxietyAlatos", "GLOBAL", 1)
+	~ THEN REPLY @1311 /* ~When Alatos brought up the tunnels beneath the city... it all came flooding back, Schael.~ */
+	GOTO LCA_SoDAnxiety4
+	
+	IF ~
+		Global("LCA_SoDAnxietyCell", "GLOBAL", 1)
+	~ THEN REPLY @1340 /* ~Seeing my cell again... it all came flooding back, Schael.~ */
+	GOTO LCA_SoDAnxiety4
 	
 	IF ~~ THEN REPLY @1322 /* ~Really, it's nothing. Let's get moving.~*/
-	EXTERN LCALATOS LCA_AskAboutSlavery2A
+	EXIT
 END
 
-IF ~~ THEN BEGIN LCA_TunnelAnxiety4
+IF ~~ THEN BEGIN LCA_SoDAnxiety4
 	SAY @1312 /* ~I understand... it was a traumatic experience, for all of us.~ */
 	
-	IF ~~ THEN REPLY @1314 /* ~I think about it, still. Not as much as I used to, but... it's scary to think how close you were to... how close we were to —~ */
-	GOTO LCA_TunnelAnxiety5
+	IF ~
+		Global("bd_player_exiled","global",0)
+	~ THEN REPLY @1314 /* ~I think about it, still. Not as much as I used to, but... it's scary to think how close you were to... how close we were to —~ */
+	GOTO LCA_SoDAnxiety5
+	
+	IF ~
+		Global("bd_player_exiled","global",1)
+	~ THEN REPLY @1341 /* ~I think about it, still. Not just my exile, but how close I was to being —~ */
+	GOTO LCA_SoDAnxiety5
 END
 
-IF ~~ THEN BEGIN LCA_TunnelAnxiety5
+IF ~~ THEN BEGIN LCA_SoDAnxiety5
 	SAY @1316 /* ~I know, love. Come here.~  */
 	= @1317 /*  ~(You share a long and tender embrace.)~ */
 	
@@ -5947,14 +5961,26 @@ IF ~~ THEN BEGIN LCA_TunnelAnxiety5
 	GOTO LCA_TunnelAnxiety6
 END
 
-IF ~~ THEN BEGIN LCA_TunnelAnxiety6
+IF ~~ THEN BEGIN LCA_SoDAnxiety6
 	SAY @1319 /* ~We have each other... and we have Rohma. The new memories we make together will drown out those dark echoes. You'll see.~*/
 	
-	IF ~~ THEN REPLY @1321 /* ~I look forward to it.~ */
+	IF ~
+		Global("bd_player_exiled","global",0)
+	~ THEN REPLY @1321 /* ~I look forward to it.~ */
 	DO ~
 		AddJournalEntry(@1320, INFO)
 		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("LCA_TunnelAnxiety", "GLOBAL", 2)
+		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 2)
+	~
+	EXIT
+	
+	IF ~
+		Global("bd_player_exiled","global",1)
+	~ THEN REPLY @1321 /* ~I look forward to it.~ */
+	DO ~
+		AddJournalEntry(@1342, INFO)
+		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 2)
 	~
 	EXIT
 END

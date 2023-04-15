@@ -241,12 +241,12 @@ THEN
 END
 
 IF 
-	Global("LCA_TunnelAnxiety", "GLOBAL", 1)
-	GlobalTimerExpired("LCA_TunnelAnxietyTimer", "GLOBAL")
+	Global("LCA_SoDAnxiety", "GLOBAL", 1)
+	GlobalTimerExpired("LCA_SoDAnxietyTimer", "GLOBAL")
 	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_TunnelAnxiety", "GLOBAL", 2)
+		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 2)
 		PlaySong(146)
 		StartDialog("LCCORWIJ", Player1)
 END

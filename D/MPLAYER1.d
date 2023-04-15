@@ -7,6 +7,55 @@
 
 */
 APPEND ~PLAYER1~
+
+	IF ~
+		Global("LCA_SoDAnxiety", "GLOBAL", 0)
+		Global("LCA_SoDAnxietyCell", "GLOBAL", 1)
+	~ THEN BEGIN LCA_DarkMemories
+		SAY @88 /* ~(Upon seeing the cell in which you were once imprisoned, you recall the dark circumstances that forced your departure from the city...)~ */
+
+		IF ~
+			Global("bd_player_exiled","global",1)
+		~ THEN 
+		GOTO LCA_DarkMemories_Exile
+		
+		IF ~
+			Global("bd_player_exiled","global",0)
+		~ THEN 
+		GOTO LCA_DarkMemories_Escape
+		
+	END
+	
+	IF ~~ THEN BEGIN LCA_DarkMemories_Exile
+		SAY @91 /* ~(Skie's blood on your hands. The looks of disgust and abject horror on the faces of your coalition comrades. The trial, and the pain you felt upon hearing the citizens call for your execution. Irenicus' gloating. The powerless feeling of waiting for the Dukes to decide your fate...)~ */
+		
+		IF ~~ THEN
+		GOTO LCA_DarkMemories_End
+	END
+	
+	IF ~~ THEN BEGIN LCA_DarkMemories_Escape
+		SAY @89 /* ~(Skie's blood on your hands. The looks of disgust and abject horror on the faces of your coalition comrades. The trial, and the pain you felt upon hearing the citizens call for your execution. Irenicus' gloating. Your desparate escape through the sewers...)~ */
+		
+		IF ~~ THEN
+		GOTO LCA_DarkMemories_End
+	END
+	
+	IF ~~ THEN BEGIN LCA_DarkMemories_End
+		SAY @90 /* ~(Your heart is filled with dread. You want — no, you *need* to leave this place.)~ */
+		
+		IF ~~ THEN EXIT
+		
+		IF ~
+			IsValidForPartyDialogue("LCCORWIN")
+			Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN 
+		DO ~
+			SetGlobalTimer("LCA_SoDAnxietyTimer", "GLOBAL", ONE_ROUND)
+			SetGlobal("LCA_SoDAnxiety", "GLOBAL", 1)
+		~
+		EXIT
+	END
+	
 	IF ~
 		Global("LCA_IllaseraDead", "GLOBAL", 1)
 		Dead("LCCORWIN")
