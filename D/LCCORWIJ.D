@@ -3899,7 +3899,7 @@ IF ~~ THEN BEGIN LCA_OPT1Friend5
 	GOTO LCA_OPT1END //OK
 END
 
-IF ~~ THEN GOTO LCA_OPT1END
+IF ~~ THEN BEGIN LCA_OPT1END
 	SAY  @158 /* ~Let's get moving.~ */
 	
 	IF ~~ THEN REPLY @1353 /* ~Right.~ */
