@@ -5,6 +5,9 @@ IF ~
 ~ THEN BEGIN LCA_MainMenu
 	SAY @0 /* ~How can I help you?~ */
 	
+	IF ~~ THEN REPLY @280
+	GOTO LCA_TestInteraction
+	
 	IF ~~ THEN REPLY @156 /* ~Return to BG Mini Quest.~ */
 	DO ~
 		FadeToColor([30.0],0)
