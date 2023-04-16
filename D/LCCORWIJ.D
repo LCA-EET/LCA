@@ -3918,7 +3918,7 @@ IF ~~ THEN BEGIN LCA_OPT1END
 	GOTO LCA_OPT1END_InitRomance //OK
 END
 
-IF ~~ THEN GOTO LCA_OPT1END_InitRomance
+IF ~~ THEN BEGIN LCA_OPT1END_InitRomance
 	SAY @1356 /* ~Hm?~  */
 	
 	IF ~~ THEN REPLY @1355 /* ~Ah... nevermind. Let's go.~ */
@@ -3939,7 +3939,7 @@ IF ~~ THEN BEGIN LCA_OPT1END_InitRomance2
 	GOTO LCA35
 END
 
-IF ~~ THEN GOTO LCA_OPT1END_InitRomance_End
+IF ~~ THEN BEGIN LCA_OPT1END_InitRomance_End
 	SAY @1357 /* ~(A look of disappointment flashes across her face.)~*/
 	
 	= @1358 /*~Fine. Let's go.~*/
