@@ -4055,6 +4055,13 @@ IF ~~ THEN BEGIN LCA_OPT1Romance4_GaveDoll
 	
 END
 
+IF ~~ THEN BEGIN LCA_OPT1Romance4_GaveDoll2
+	SAY @152 /*~That one small act of kindness was more than her father ever did for her.~*/
+	
+	IF ~~ THEN 
+	GOTO LCA_OPT1Romance4_NoDoll3
+END
+
 IF ~~ THEN BEGIN LCA_OPT1RomanceEnd 
 	SAY @156 /*  ~I know you will. You step up to challenges instead of running from them. That's one of the reasons that I love you, <CHARNAME>. ~ */
 	= @158 /* ~Let's get moving.~ */
