@@ -81,6 +81,21 @@ IF ~
 	EXIT
 END
 
+IF ~~ THEN BEGIN LCA_TestInteraction
+	SAY @280
+	
+	IF ~~ THEN REPLY @279
+	DO ~
+		SetGlobal("LCA_HelpedForthel_BG1", "GLOBAL", 1)
+		CreateCreature("FORTHE", [500.910], N)
+		ActionOverride("FORTHE", SetDialog("LCFORTHE"))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @26 /* ~Go back to the prior menu.~ */
+	GOTO LCA_ReturnToMainMenu
+END
+
 IF ~~ THEN BEGIN LCA_Menu_AdvanceTime
 	SAY @247 /* ~How far do you want me to advance the current time?~*/
 	
