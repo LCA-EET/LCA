@@ -3381,32 +3381,7 @@ THEN BEGIN LCA_CorwinPlayerBant2B
 	IF ~~ THEN REPLY @167 /* ~Yes Schael, I am fine. I was just thinking about some of the places and people we've seen...~ */ GOTO LCA48 //OK
 END
 
-IF ~
-	InParty(Myself)
-	Global("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
-	See(Player1)
-	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-~
-THEN BEGIN LCA_DollThanksFriend
-	SAY @139 /* ~(You notice Captain Corwin staring into the distance, with sadness in her eyes.)~ */
-	
-	IF ~~ THEN REPLY @141 /*   ~Captain? Are you alright?~ */
-	GOTO LCA46
-END
 
-IF ~
-	InParty(Myself)
-	Global("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
-	See(Player1)
-	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	//play romance song
-~
-THEN BEGIN LCA_DollThanksRomance
-	SAY @140 /* ~(You notice Schael staring into the distance, with sadness in her eyes.)~ */
-	
-	IF ~~ THEN REPLY @142 /*  ~My love, are you alright?~ */
-	GOTO LCA40
-END
 
 IF ~
 	InParty(Myself)
@@ -3773,6 +3748,7 @@ IF ~~ THEN BEGIN LCA34A // friend
 	IF ~~ THEN REPLY @94 /*  ~Schael... I... I didn't realize how much I needed you near me, until you were gone. Your being here, now, fills a void in my heart that I did not know was there. I would like for us to move past friendship, into a more serious relationship. I... am in love with you, Schael.~*/
 	DO ~
 		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 3)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
 		SetGlobal("LCA_CorwinLoveBG2", "GLOBAL", 1)
 	~
 	GOTO LCA35
@@ -3844,91 +3820,247 @@ IF ~~ THEN BEGIN LCA39
 	EXIT
 END
 
-IF ~~ THEN BEGIN LCA40
-	SAY @144 /* ~(She snaps to attention) Yes, sorry. I was thinking about home. I just miss them, that's all.~ */
+/* Optional Interaction - Met Rohma */
+IF ~
+	InParty(Myself)
+	Global("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
+	See(Player1)
+	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+~
+THEN BEGIN LCA_OPT1Friend
+	SAY @139 /* ~(You notice Captain Corwin staring into the distance, with sadness in her eyes.)~ */
 	
-	IF ~~ THEN REPLY @149 /* ~Rohma and your father. I understand.~ */
-	GOTO LCA41
+	IF ~~ THEN REPLY @141 /* ~Captain? Are you alright?~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 3)
+	~
+	GOTO LCA_OPT1Friend2 //OK
 END
 
-IF ~~ THEN BEGIN LCA41
+IF ~~ THEN BEGIN LCA_OPT1Friend2
+	SAY @143 /* ~(She snaps to attention) ~ */
+	
+	= @1351 /* <CHARNAME>, yes. Sorry - I was thinking about home.~ */
+	
+	IF ~~ THEN REPLY @145 /* ~About your daughter and father. I understand.~ */
+	GOTO LCA_OPT1Friend3 //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Friend3
 	SAY @146 /* ~Yes... You know, Rohma asks about you.~ */
 	
-	IF ~~ THEN REPLY @147 /* ~Really? I didn't think I'd made much of an impression on her.~ */
-	GOTO LCA42
+	IF ~
+		Global("LCA_GaveDoll", "GLOBAL", 1)
+	~ THEN REPLY @147 /* ~Really? I didn't think I'd made much of an impression on her.~ */
+	GOTO LCA_OPT1Friend4_GaveDoll //OK
+	
+	IF ~
+		!Global("LCA_GaveDoll", "GLOBAL", 1)
+	~ THEN REPLY @147 /* ~Really? I didn't think I'd made much of an impression on her.~ */
+	GOTO LCA_OPT1Friend4_NoDoll //OK
 	
 	IF ~~ THEN REPLY @159 /* ~Of course she does. I am the *ahem* hero of Baldur's Gate, after all.~ */
-	GOTO LCA45
+	GOTO LCA_OPT1Friend3C //OK
 END
 
-IF ~~ THEN BEGIN LCA42
+IF ~~ THEN BEGIN LCA_OPT1Friend3C
+	SAY @160 /*  ~(She rolls her eyes)  */
+	= @1350 /* ~A little humility from time to time wouldn't hurt, you know. But yes, you did leave quite the impression on her.~ */
+	
+	IF ~
+		Global("LCA_GaveDoll", "GLOBAL", 1)
+	~ THEN
+	GOTO LCA_OPT1Friend4_GaveDoll //OK
+	
+	IF ~
+		!Global("LCA_GaveDoll", "GLOBAL", 1)
+	~ THEN
+	GOTO LCA_OPT1Friend4_NoDoll //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Friend4_GaveDoll
 	SAY @148 /* ~She loves the teddy you bought for her. It's her favorite toy.~ */
 	
-	IF ~
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @150 /* ~Oh yes, I remember! I bought it at the general store, not long after I met her for the first time.~ */
-	GOTO LCA43
-	
-	IF ~
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @151 /* ~It was a simple gesture.. I didn't think it would mean that much to her.~ */
-	GOTO LCA43
-	
-	IF ~
-		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @150 /* ~Oh yes, I remember! I bought it at the general store, not long after I met her for the first time.~ */
-	GOTO LCA47
-	
-	IF ~
-		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @151 /* ~It was a simple gesture.. I didn't think it would mean that much to her.~ */
-	GOTO LCA47
+	IF ~~ THEN REPLY @151 /* ~It was a simple gesture.. I didn't think it would mean that much to her.~ */
+	GOTO LCA_OPT1Friend5 //OK
 END
 
-IF ~~ THEN BEGIN LCA43
-	SAY @152 /* ~That one act of kindness from you is more than her father ever did for her.~ */
-	= @153 /* ~She deserves better.~ */
+IF ~~ THEN BEGIN LCA_OPT1Friend4_NoDoll
+	SAY @1362 /* ~The kindness that you showed her is more than her father ever did... thank you, <CHARNAME>.~*/
+	
+	IF ~~ THEN
+	GOTO LCA_OPT1END //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Friend5
+	SAY @157 /* ~That one act of kindness from you is more than her father ever did for her... thank you, <CHARNAME>.~*/
+
+	IF ~~ THEN
+	GOTO LCA_OPT1END //OK
+END
+
+IF ~~ THEN GOTO LCA_OPT1END
+	SAY  @158 /* ~Let's get moving.~ */
+	
+	IF ~~ THEN REPLY @1353 /* ~Right.~ */
+	EXIT
+	
+	IF ~
+		!Global("AerieRomanceActive","GLOBAL",2)
+		!Global("ViconiaRomanceActive","GLOBAL",2)
+		!Global("DornRomanceActive","GLOBAL",2)
+		!Global("NeeraRomanceActive","GLOBAL",2)
+		!Global("AnomenRomanceActive","GLOBAL",2)
+		!Global("JaheiraRomanceActive","GLOBAL",2)
+		!Global("HexxatRomanceActive","GLOBAL",2)
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1354 /* ~Capt — Schael, wait. There's something I need to tell you.~ */
+	GOTO LCA_OPT1END_InitRomance //OK
+END
+
+IF ~~ THEN GOTO LCA_OPT1END_InitRomance
+	SAY @1356 /* ~Hm?~  */
+	
+	IF ~~ THEN REPLY @1355 /* ~Ah... nevermind. Let's go.~ */
+	GOTO LCA_OPT1END_InitRomance_End //OK
+	
+	IF ~~ THEN REPLY @1358 /* ~I want you to know that I greatly appreciate your friendship. And I don't want to do anything to jeopardize that. But...~  */
+	GOTO LCA_OPT1END_InitRomance2 //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1END_InitRomance2
+	SAY @1361 /* ~What is it? You can tell me.~ */
+	
+	IF ~~ THEN REPLY @94 /* ~Schael... I... I didn't realize how much I needed you near me, until you were gone. Your being here, now, fills a void in my heart that I didn't know was there. I'd like for us to move past friendship, into a more serious relationship. I... I'm in love with you, Schael.~ */
+	DO ~
+		SetGlobal("LCA_CorwinLoveBG2", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~
+	GOTO LCA35
+END
+
+IF ~~ THEN GOTO LCA_OPT1END_InitRomance_End
+	SAY @1357 /* ~(A look of disappointment flashes across her face.)~*/
+	
+	= @1358 /*~Fine. Let's go.~*/
+	
+	IF ~~ THEN
+	EXIT
+END
+
+IF ~
+	InParty(Myself)
+	Global("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
+	See(Player1)
+	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	//play romance song
+~
+THEN BEGIN LCA_OPT1Romance
+	SAY @140 /* ~(You notice Schael staring into the distance, with sadness in her eyes.)~ */
+	
+	IF ~~ THEN REPLY @142 /*  ~My love, are you alright?~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 3)
+	~
+	GOTO LCA_OPT1Romance_2 //OK
+	
+	IF ~~ THEN @1343 /*   ~What's wrong, dear?~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 3)
+	~
+	GOTO LCA_OPT1Romance_2 //OK
+END
+IF ~~ THEN BEGIN LCA_OPT1Romance_2
+	SAY @144 /* ~(She snaps to attention)*/
+
+	=@1352 /*	~Yes, sorry. I was thinking about home. I just miss them, that's all.~*/
+	
+	IF ~~ THEN REPLY @149 /* ~Rohma and your father. I understand.~ */
+	GOTO  LCA_OPT1Romance_3 //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Romance_3
+	SAY @146 /* ~Yes... You know, Rohma asks about you.~ */
+	
+	IF ~
+		Global("LCA_GaveDoll", "GLOBAL", 1)
+	~ THEN REPLY @147 /* ~Really? I didn't think I'd made much of an impression on her.~ */
+	GOTO LCA_OPT1Romance4_GaveDoll //OK
+	
+	IF ~
+		!Global("LCA_GaveDoll", "GLOBAL", 1)
+	~ THEN REPLY @147 /* ~Really? I didn't think I'd made much of an impression on her.~ */
+	GOTO LCA_OPT1Romance4_NoDoll //OK
+	
+	IF ~~ THEN REPLY @159 /* ~Of course she does. I am the *ahem* hero of Baldur's Gate, after all.~ */
+	GOTO LCA_OPT1Romance_4 //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Romance_4
+	SAY @160 /*  ~(She rolls her eyes)  */
+	= @1350 /* ~A little humility from time to time wouldn't hurt, you know. But yes, you did leave quite the impression on her.~ */
+	
+	IF ~
+		Global("LCA_GaveDoll", "GLOBAL", 1)
+	~ THEN
+	GOTO LCA_OPT1Romance4_GaveDoll //OK
+	
+	IF ~
+		!Global("LCA_GaveDoll", "GLOBAL", 1)
+	~ THEN
+	GOTO LCA_OPT1Romance4_NoDoll //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Romance4_NoDoll
+	SAY @1344 /* ~I think of the kindness that you showed Rohma, and how good you've been with me... ~ */
+
+	= @1345 /* And then I think of Beno, and how stupid I was to be with scum like that... you must think I'm a fool. */
+	
+	IF ~~ THEN REPLY @1346 /* ~Schael, stop it. You're more than any <PRO_MANWOMAN> can hope for in this life, and a great mother to Rohma.~ */
+	GOTO LCA_OPT1Romance4_NoDoll2 //OK
+	
+	IF ~~ THEN REPLY @1347 /* ~Schael, I've never met anyone like you. I hope you understand how special you are. I do, and I know Rohma does.~ */
+	GOTO LCA_OPT1Romance4_NoDoll2 //OK
+	
+	IF ~~ THEN REPLY @1348 /*  ~Nonsense. Let go of the past, love. Focus on our future together — you, me, and Rohma.~  */
+	GOTO LCA_OPT1Romance4_NoDoll2 //OK
+	
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Romance4_NoDoll2
+	SAY @1349 /* ~The care and interest you've shown for her is more than Beno ever did.~ */
+	
+	IF ~~ THEN 
+	GOTO LCA_OPT1Romance4_NoDoll3 //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Romance4_NoDoll3
+	SAY @153 /* ~She deserves better.~ */
 	
 	IF ~~ THEN REPLY @154 /* ~She does. Listen, Schael - I don't know if I'd be a good step parent for Rohma. What I do know is that I'll do my best.~ */
-	GOTO LCA44
+	GOTO LCA_OPT1RomanceEnd //OK
 	
 	IF ~~ THEN REPLY @155 /* ~She does. Listen, Schael - I'm fully aware of the responsibilities and challenges of being a step parent, and I want you to know that I will welcome them.~ */
-	GOTO LCA44
-
+	GOTO LCA_OPT1RomanceEnd  //OK
 END
 
-IF ~~ THEN BEGIN LCA44
+IF ~~ THEN BEGIN LCA_OPT1Romance4_GaveDoll
+	SAY @148 /* ~She loves the teddy you bought for her. It's her favorite toy.~ */
+	
+	IF ~~ THEN REPLY @150 /* ~Oh yes, I remember! I bought it at the general store, not long after I met her for the first time.~ */
+	GOTO LCA_OPT1Romance4_GaveDoll2 //OK
+	
+	IF ~~ THEN REPLY @151 /* ~It was a simple gesture.. I didn't think it would mean that much to her.~ */
+	GOTO LCA_OPT1Romance4_GaveDoll2 //OK
+	
+END
+
+IF ~~ THEN BEGIN LCA_OPT1RomanceEnd 
 	SAY @156 /*  ~I know you will. You step up to challenges instead of running from them. That's one of the reasons that I love you, <CHARNAME>. ~ */
 	= @158 /* ~Let's get moving.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
-		SetGlobal("LCA_GaveDoll", "GLOBAL", 2)
-	~
-	EXIT
-END
-
-IF ~~ THEN BEGIN LCA45
-	SAY @160 /*  ~(She rolls her eyes) A little humility from time to time wouldn't hurt. But yes, you did leave quite the impression on her.~ */
-	IF ~~ THEN
-	GOTO LCA42
-END
-
-IF ~~ THEN BEGIN LCA46
-	SAY @143 /* ~(She snaps to attention) <CHARNAME>, yes. Sorry - I was thinking about home.~ */
-	
-	IF ~~ THEN REPLY @145 /* ~About your daughter and father. I understand.~ */
-	GOTO LCA41
-END
-
-IF ~~ THEN BEGIN LCA47
-	SAY @157 /*= ~That one act of kindness from you is more than her father ever did for her... thank you, <CHARNAME>.~*/
-	= @158 /* ~Let's get moving.~ */
-	
-	IF ~~ THEN 
-	DO ~
-		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
-		SetGlobal("LCA_GaveDoll", "GLOBAL", 2)
+		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 3)
 	~
 	EXIT
 END

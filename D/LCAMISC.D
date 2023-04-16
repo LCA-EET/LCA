@@ -12,7 +12,7 @@ EXTEND_BOTTOM FORTHE 9
 	IF ~~ THEN 
 	DO ~
 		GiveGoldForce(200)
-		SetGlobal("LCA_HelpedForthe_BG1", "GLOBAL", 1)
+		SetGlobal("LCA_HelpedForthel_BG1", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT
@@ -22,7 +22,7 @@ EXTEND_BOTTOM FORTHE 11
 	IF ~~ THEN 
 	DO ~
 		GiveGoldForce(200)
-		SetGlobal("LCA_HelpedForthe_BG1", "GLOBAL", 1)
+		SetGlobal("LCA_HelpedForthel_BG1", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT

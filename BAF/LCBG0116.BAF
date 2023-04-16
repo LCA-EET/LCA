@@ -1,0 +1,28 @@
+IF
+	Global("LCA_HelpedForthel_BG1", "GLOBAL", 1)
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	Global("LCA_FortheSpawn", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		CreateCreature("FORTHE", [500.910], N)
+		ActionOverride("FORTHE", SetDialog("LCFORTHE"))
+		SetGlobal("LCA_FortheSpawn", "GLOBAL", 1)
+END
+
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	Global("LCA_NPCSpawnBT0116", "GLOBAL", 0)
+THEN 
+	RESPONSE #100
+		SetGlobal("LCA_NPCSpawnBT0116", "GLOBAL", 1)
+		CreateCreature("BART9", [618.637], S)
+END
+
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	Global("LCA_NPCSpawnW0116", "GLOBAL", 0)
+THEN 
+	RESPONSE #100
+		SetGlobal("LCA_NPCSpawnW0116", "GLOBAL", 1)
+		CreateCreature("WAITER", [616.981], N)
+END

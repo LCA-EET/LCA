@@ -83,7 +83,7 @@
 @93 = ~It wasn't. I miss her everyday. But I need to be here, with you. Irenicus must be punished for the crimes he has committed.~
 @94 = ~Schael... I... I didn't realize how much I needed you near me, until you were gone. Your being here, now, fills a void in my heart that I didn't know was there. I'd like for us to move past friendship, into a more serious relationship. I... I'm in love with you, Schael.~
 @95 = ~<CHARNAME>, I missed you too, dearly... I also want us to be more to eachother than what we are now. My heart broke when I read your letter. I keep thinking that if I'd left with you, you wouldn't have been captured, maybe Khalid and Dynaheir would still be alive, maybe —~
-@96 = ~Stop it, Schael. Don't blame yourself. There is nothing that you could have done to stop what happened; Irenicus set his trap perfectly. It's better that you were not with me when we were captured — I shudder to think what Irenicus would've done to you had you been captured as well. ~
+@96 = ~Stop it, Schael. Don't blame yourself. There's nothing that you could have done to stop what happened; Irenicus set his trap perfectly. It's better that you were not with me when we were captured — I shudder to think what Irenicus would've done to you had you been captured as well. ~
 @97 = ~Schael, what matters is that we are here, together, now.~
 @98 = ~Come here, hero.~
 @99 = ~Gladly, my dear.~
@@ -119,8 +119,8 @@
 @140 = ~(You notice Schael staring into the distance, with sadness in her eyes.)~
 @141 = ~Captain? Are you alright?~
 @142 = ~My love, are you alright?~
-@143 = ~(She snaps to attention) <CHARNAME>, yes. Sorry — I was thinking about home.~
-@144 = ~(She snaps to attention) Yes, sorry. I was thinking about home. I just miss them, that's all.~
+@143 = ~(She snaps to attention)~
+@144 = ~(She snaps to attention)~
 @145 = ~About your daughter and father. I understand.~
 @149 = ~Rohma and your father. I understand.~
 @146 = ~Yes... You know, Rohma asks about you.~
@@ -1355,3 +1355,23 @@ You and Schael shared a tender moment; it seems that the two of you are still de
 @1341 = ~I think about it, still. Not just my exile, but how close I was to being —~ 
 @1342 = ~Dark Circumstances
 You and Schael shared a tender moment; it seems that the two of you are still dealing with the trauma of your imprisonment and exile from the city. Together, with Rohma, you and Schael hope to make new memories to silence the dark echoes of your past.~
+@1343 = ~What's wrong, dear?~
+@1344 = ~I think of the kindness that you showed Rohma, and how good you've been with me... ~
+@1345 = ~And then I think of Beno, and how stupid I was to be with scum like that... you must think I'm a fool.~
+@1346 = ~Schael, stop it. You're more than any <PRO_MANWOMAN> can hope for in this life, and you've been a great mother to Rohma.~
+@1347 = ~Schael, I've never met anyone like you. I hope you understand how special you are. I do, and I know Rohma does.~
+@1348 = ~Nonsense. Let go of the past, love. Focus on our future together — you, me, and Rohma.~ 
+@1349 = ~The care and interest you've shown for her is more than Beno ever did.~
+@1350 = ~A little humility from time to time wouldn't hurt, you know. But yes, you did leave quite the impression on her.~
+@1351 = ~<CHARNAME>, yes. Sorry - I was thinking about home.~
+@1352 = ~Yes, sorry. I was thinking about home. I just miss them, that's all.~
+@1353 = ~Right.~
+@1354 = ~Capt — Schael, wait. There's something I need to tell you.~
+@1355 = ~Ah... nevermind. Let's go.~
+@1356 = ~Hm?~ [BD68262]
+@1357 = ~(A look of disappointment flashes across her face.)~
+@1358 = ~Fine. Let's go.~
+@1359 = ~I want you to know that I greatly appreciate your friendship. And I don't want to do anything to jeopardize that. But...~ 
+@1360 = ~Schael... I... I didn't realize how much I needed you near me, until you were gone. Your being here, now, fills a void in my heart that I didn't know was there. I'd like for us to move past friendship, into a more serious relationship. I... I'm in love with you, Schael.~
+@1361 = ~What is it? You can tell me.~
+@1362 = ~The kindness that you showed her is more than her father ever did... thank you, <CHARNAME>.~
