@@ -9,6 +9,7 @@
 */ 
 BEGIN ~LCCORWIJ~
 
+//{ #region Corwin Not Chosen for Saradush - DLG-0001
 IF ~
 	Global("LCA_BGEND3", "GLOBAL", 1)
 	Global("LCA_DidNotRequestCorwin", "GLOBAL", 1)
@@ -21,92 +22,13 @@ IF ~
 	DO ~
 		SetGlobal("LCA_BGEND3", "GLOBAL", 2)
 	~
-	GOTO LCA_BGEND3_CorwinSaradushChain
+	GOTO LCA_BGEND3_CorwinSaradushChain //OK
+	
 	IF ~~ THEN REPLY @1226 /* ~As much as I want you to, your family, and this city, need you to protect them.~ */
 	DO ~
 		SetGlobal("LCA_BGEND3", "GLOBAL", 2)
 	~
-	GOTO LCA_BGEND3_DidNotRequest_B
-END
-
-IF ~
-	Global("LCA_BGEND4", "GLOBAL", 1)
-	Global("LCA_DidRequestCorwin", "GLOBAL", 1)
-	// play romance song (if in romance)
-~ THEN BEGIN LCA_BGEND4_DidRequest
-	SAY @1280 /* ~I'm glad that you chose me for this assignment.~*/
-	
-	IF ~
-		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @1282 /* ~I've learned to rely on your skill and counsel, my friend.~ */
-	DO ~
-		SetGlobal("LCA_BGEND4", "GLOBAL", 2)
-	~
-	GOTO LCA_NeedEachother_NR
-	
-	IF ~
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @1286 /* ~I need you Schael. You know that.~ */
-	DO ~
-		SetGlobal("LCA_BGEND4", "GLOBAL", 2)
-	~
-	GOTO LCA_NeedEachother
-	
-	IF ~~ THEN REPLY @1283 /* ~It was a difficult decision.~ */
-	DO ~
-		SetGlobal("LCA_BGEND4", "GLOBAL", 2)
-	~
-	GOTO LCA_HowSo
-	
-	IF ~~ THEN REPLY @1288 /* ~Really? I thought you might be upset.~ */
-	DO ~
-		SetGlobal("LCA_BGEND4", "GLOBAL", 2)
-	~
-	GOTO LCA_HowSo
-END
-
-IF ~~ THEN BEGIN LCA_NeedEachother_NR
-	SAY @1293 /*  ~And all of us here rely on you. I'd drive myself crazy if I had to stay here while the hero of Baldur's Gate was in some faraway land, risking <PRO_HIMHER>self to protect us.~  */
-	
-	IF ~~ THEN REPLY @1268 /* ~I imagine that's how Rohma and your father feel about you.~ */
-	GOTO LCA_BGEND3_3
-END
-IF ~~ THEN BEGIN LCA_SAREV_10
-	SAY @38 /* ~You've got to be kidding me. A deal? With you?~*/
-	
-	IF ~~ THEN EXTERN SAREV25A 14
-END
-IF ~~ THEN BEGIN LCA_NeedEachother
-	SAY @1292 /* ~And I need you. I'd drive myself crazy if I had to stay here while the <PRO_MANWOMAN> I love was out risking <PRO_HISHER> life in some faraway land.~ */
-	
-	IF ~~ THEN REPLY @1268 /* ~I imagine that's how Rohma and your father feel about you.~ */
-	GOTO LCA_BGEND3_3
-	
-	IF ~~ THEN REPLY @1272 /* ~I'd feel the same way if our roles were reversed, love.~ */
-	GOTO LCA_BGEND3_3A
-END
-
-IF ~~ THEN BEGIN LCA_HowSo
-	SAY @1284 /* ~How so?~ */
-	
-	IF ~~ THEN REPLY @1285 /* ~I know it's not easy for you to be away from your family.~*/
-	GOTO LCA_BGEND3_2
-	
-	IF ~~ THEN REPLY @1287 /* ~This is going to be dangerous, and I never want to see you get hurt.~  */
-	GOTO LCA_HowSo_2
-END
-
-IF ~~ THEN BEGIN LCA_HowSo_2
-	SAY @1290 /* ~It is, but... it's worth the risk.~  */
-	=@1291 /* ~You heard Nederlok, and the Dukes. The success of this mission is essential to the safety of this city. And that includes Rohma, and my father.~*/
-	
-	IF ~
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN GOTO LCA_BGEND3_2R
-	
-	IF ~
-		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN GOTO LCA_BGEND3_4
+	GOTO LCA_BGEND3_DidNotRequest_B //OK
 END
 
 IF ~~ THEN BEGIN LCA_BGEND3_DidNotRequest_B
@@ -115,29 +37,29 @@ IF ~~ THEN BEGIN LCA_BGEND3_DidNotRequest_B
 	IF ~
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @1221 /* ~I'm sure, my love. I can't risk losing you.~ */
-	GOTO LCA_BGEND3_DontWantCorwinR
+	GOTO LCA_BGEND3_DontWantCorwinR //OK
 	
 	IF ~
 		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @1222 /* ~I'm sure. The city can't risk losing the both of us.~ */
-	GOTO LCA_BGEND3_DontWantCorwinNR
+	GOTO LCA_BGEND3_DontWantCorwinNR //OK
 	
 	IF ~~ THEN REPLY @1275 /* ~You're right. The skill and counsel you've provided have proven invaluable, and I require them once again.~*/
 	GOTO LCA_BGEND3_CorwinSaradushChain
+END
+
+IF ~~ THEN BEGIN LCA_BGEND3_DontWantCorwinNR 
+	SAY @1235 /* ~Fine... Just be careful out there, please.~ */
+	
+	IF ~~ THEN REPLY @1276 /* ~I will - don't worry about me, my friend.~ */
+	GOTO LCA_BGEND3_DontWantCorwin2 //OK
 END
 
 IF ~~ THEN BEGIN LCA_BGEND3_DontWantCorwinR
 	SAY @1236 /* ~Fine... Just be careful out there, please. I can't bear to lose you.~ */
 	
 	IF ~~ THEN REPLY @1276 /* ~I will. I'll come back to you, my love - I promise.~ */
-	GOTO LCA_BGEND3_DontWantCorwin2
-END
-
-IF ~~ THEN BEGIN LCA_BGEND3_DontWantCorwinNR
-	SAY @1235 /* ~Fine... Just be careful out there, please.~ */
-	
-	IF ~~ THEN REPLY @1276 /* ~I will - don't worry about me, my friend.~ */
-	GOTO LCA_BGEND3_DontWantCorwin2
+	GOTO LCA_BGEND3_DontWantCorwin2 //OK
 END
 
 IF ~~ THEN BEGIN LCA_BGEND3_DontWantCorwin2
@@ -157,51 +79,131 @@ IF ~~ THEN BEGIN LCA_BGEND3_CorwinSaradushChainEnd
 	DO ~
 		SetGlobal("LCA_DidRequestCorwin", "GLOBAL", 1)
 	~
-	GOTO LCA_BGEND3_2
+	GOTO LCA_BGEND4_2
 END
 
-IF ~~ THEN BEGIN LCA_BGEND3_2
+//} #endregion
+
+//{ #region Corwin Chosen for Saradush - DLG-0002
+IF ~
+	Global("LCA_BGEND4", "GLOBAL", 1)
+	Global("LCA_DidRequestCorwin", "GLOBAL", 1)
+	// play romance song (if in romance)
+~ THEN BEGIN LCA_BGEND4_DidRequest
+	SAY @1280 /* ~I'm glad that you chose me for this assignment.~*/
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1282 /* ~I've learned to rely on your skill and counsel, my friend.~ */
+	DO ~
+		SetGlobal("LCA_BGEND4", "GLOBAL", 2)
+	~
+	GOTO LCA_NeedEachother_NR //OK
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1286 /* ~I need you Schael. You know that.~ */
+	DO ~
+		SetGlobal("LCA_BGEND4", "GLOBAL", 2)
+	~
+	GOTO LCA_NeedEachother //OK
+	
+	IF ~~ THEN REPLY @1283 /* ~It was a difficult decision.~ */
+	DO ~
+		SetGlobal("LCA_BGEND4", "GLOBAL", 2)
+	~
+	GOTO LCA_HowSo //OK
+	
+	IF ~~ THEN REPLY @1288 /* ~Really? I thought you might be upset.~ */
+	DO ~
+		SetGlobal("LCA_BGEND4", "GLOBAL", 2)
+	~
+	GOTO LCA_HowSo //OK
+END
+
+IF ~~ THEN BEGIN LCA_NeedEachother
+	SAY @1292 /* ~And I need you. I'd drive myself crazy if I had to stay here while the <PRO_MANWOMAN> I love was out risking <PRO_HISHER> life in some faraway land.~ */
+	
+	IF ~~ THEN REPLY @1268 /* ~I imagine that's how Rohma and your father feel about you.~ */
+	GOTO LCA_BGEND4_3 //OK
+	
+	IF ~~ THEN REPLY @1272 /* ~I'd feel the same way if our roles were reversed, love.~ */
+	GOTO LCA_BGEND4_3A //OK
+END
+
+IF ~~ THEN BEGIN LCA_HowSo
+	SAY @1284 /* ~How so?~ */
+	
+	IF ~~ THEN REPLY @1285 /* ~I know it's not easy for you to be away from your family.~*/
+	GOTO LCA_BGEND4_2 //OK
+	
+	IF ~~ THEN REPLY @1287 /* ~This is going to be dangerous, and I never want to see you get hurt.~  */
+	GOTO LCA_HowSo_2 //OK
+END
+
+IF ~~ THEN BEGIN LCA_HowSo_2 //OK
+	SAY @1290 /* ~It is, but... it's worth the risk.~  */
+	=@1291 /* ~You heard Nederlok, and the Dukes. The success of this mission is essential to the safety of this city. And that includes Rohma, and my father.~*/
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN GOTO LCA_BGEND4_2R //OK
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN GOTO LCA_BGEND4_4 //OK
+END
+
+IF ~~ THEN BEGIN LCA_NeedEachother_NR
+	SAY @1293 /*  ~And all of us here rely on you. I'd drive myself crazy if I had to stay here while the hero of Baldur's Gate was in some faraway land, risking <PRO_HIMHER>self to protect us.~  */
+	
+	IF ~~ THEN REPLY @1268 /* ~I imagine that's how Rohma and your father feel about you.~ */
+	GOTO LCA_BGEND4_3 //OK
+END
+
+
+IF ~~ THEN BEGIN LCA_BGEND4_2
 	SAY @1266 /* ~It never is, but... you heard Nederlok, and the Dukes. The success of this mission is essential to the safety of this city. And that includes Rohma, and my father.~ */
 	
 	IF ~
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN GOTO LCA_BGEND3_2R
+	~ THEN GOTO LCA_BGEND4_2R //OK
 	
 	IF ~
 		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN GOTO LCA_BGEND3_4
+	~ THEN GOTO LCA_BGEND4_4 //OK
 END
 
-IF ~~ THEN BEGIN LCA_BGEND3_2R
+IF ~~ THEN BEGIN LCA_BGEND4_2R
 	SAY @1267 /* ~Plus, I'd drive myself crazy if I had to stay here while the <PRO_MANWOMAN> I love was out risking <PRO_HISHER> life in some faraway land.~ */
 	
 	IF ~~ THEN REPLY @1268 /* ~I imagine that's how Rohma and your father feel about you.~ */
-	GOTO LCA_BGEND3_3
+	GOTO LCA_BGEND4_3 //OK
 	
 	IF ~~ THEN REPLY @1272 /* ~I'd feel the same way if our roles were reversed, love.~ */
-	GOTO LCA_BGEND3_3A
+	GOTO LCA_BGEND4_3A //OK
 END
 
-IF ~~ THEN BEGIN LCA_BGEND3_3
+IF ~~ THEN BEGIN LCA_BGEND4_3 //OK
 	SAY @1269 /* ~I know... it's definitely not easy for them, either.~*/
 	
-	IF ~~ THEN GOTO LCA_BGEND3_4
+	IF ~~ THEN GOTO LCA_BGEND4_4 //OK
 END
 
-IF ~~ THEN BEGIN LCA_BGEND3_3A
+IF ~~ THEN BEGIN LCA_BGEND4_3A //OK
 	SAY @1273 /* ~I know, dear... it's not easy for Rohma or my father either.~*/
 	
-	IF ~~ THEN GOTO LCA_BGEND3_4
+	IF ~~ THEN GOTO LCA_BGEND4_4 //OK
 END
 
-IF ~~ THEN BEGIN LCA_BGEND3_4
+IF ~~ THEN BEGIN LCA_BGEND4_4
 	SAY @1270 /* ~Speaking of Rohma, it's late, and I need to put her to bed.~*/
 	
 	IF ~~ THEN REPLY @1271 /* ~Let's break the news to her together, first.~ */
-	GOTO LCA_BGEND3_5
+	GOTO LCA_BGEND4_5 //OK
 END
 
-IF ~~ THEN BEGIN LCA_BGEND3_5
+IF ~~ THEN BEGIN LCA_BGEND4_5
 	SAY @1274 /* ~Right...~ */
 	
 	IF ~~ THEN
@@ -210,7 +212,9 @@ IF ~~ THEN BEGIN LCA_BGEND3_5
 	~
 	EXIT
 END
+//} #endregion
 
+//{ #region Rohma Rescued - DLG-0003
 IF ~
 	Global("LCA_RohmaSaved", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinRohmaReunite
@@ -222,7 +226,9 @@ IF ~
 	~
 	GOTO LCA_CorwinRohmaReuniteChain
 END
+//} #endregion
 
+//{ #region Beno Last Words (Soultaker) - DLG-0004
 IF ~
 	Global("LCA_CorwinBenoST", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinBenoST
@@ -235,7 +241,9 @@ IF ~
 	~
 	EXTERN LCBENO2 LCA_CorwinBenoSTChain
 END
+//} #endregion
 
+//{ #region Beno Last Words (Killed) - DLG-0005
 IF ~
 	Global("LCA_CorwinKillBeno", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinKillBenoLastWords
@@ -259,79 +267,9 @@ IF ~
 	~
 	EXTERN LCBENO2 LCA_CorwinMercyBenoChain
 END
+//} #endregion
 
-IF ~~ THEN BEGIN LCA_SaradushDiscussion7
-	SAY @1252 /* ~Thank you, sir.~ */
-	
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_DidRequestCorwin", "GLOBAL", 1)
-		StartCutscene("LCBGEND4")
-	~
-	EXIT
-END
-
-IF ~~ THEN LCA_CorwinBenoSTChainEnd
-	SAY @1188 /* ~It's over... I hope we've done the right thing.~ */
-	
-	IF ~
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @1189 /* ~It was the only way. He'll never trouble you again. Come - I'm sure Rohma is eager to see you, my love.~ */
-	GOTO LCA_CorwinBenoSTChainEndCS
-	
-	IF ~
-		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @1190 /* ~It was the only way. He'll never trouble you again. Come - I'm sure Rohma is eager to see you, my love.~ */
-	GOTO LCA_CorwinBenoSTChainEndCS
-END
-
-IF ~~ THEN LCA_CorwinKillBenoChainEnd
-	SAY @1194 /* ~It's over... ~ */
-	
-	IF ~
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @1195 /* ~Are you alright? That couldn't have been easy for you, love.~ */
-	GOTO LCA_CorwinKillBenoChainEndCS
-	
-	IF ~
-		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @1197 /* ~Are you alright? That couldn't have been easy for you.~*/
-	GOTO LCA_CorwinKillBenoChainEndCS
-END
-
-IF ~~ THEN LCA_CorwinMercyBenoChainEnd
-	SAY @1204 /* ~<CHARNAME> - help me get him on his feet. We'll take him into custody together.~  */
-	
-	IF ~~ THEN REPLY @1205 /* ~Gladly, Schael.~ */
-	DO ~
-		StartCutsceneMode()
-		StartCutscene("LCUCEND1")
-	~
-	EXIT
-END
-
-IF ~~ THEN LCA_CorwinBenoSTChainEndCS
-	SAY @1191 /* ~Right. Let's go.~ */
-	
-	IF ~~ THEN
-	DO ~
-		StartCutsceneMode()
-		StartCutscene("LCUCEND1")
-	~
-	EXIT
-END
-
-IF ~~ THEN LCA_CorwinKillBenoChainEndCS
-	SAY @1196 /* ~I'll be fine once I see Rohma. Let's go.~ */
-	
-	IF ~~ THEN
-	DO ~
-		StartCutsceneMode()
-		StartCutscene("LCUCEND1")
-	~
-	EXIT
-END
-
+//{ #region Illasera Killed - DLG-0006
 IF ~
 	Global("LCA_IllaseraDead", "GLOBAL", 1)
 ~ THEN BEGIN LCA_IllaseraDead
@@ -345,6 +283,7 @@ IF ~
 	EXTERN LCBENO2 LCA_IllaseraDead2 //OK
 	
 END
+
 
 IF ~~ THEN BEGIN LCA_IllaseraDead3
 	SAY @1146 /* ~Not for long.~ */
@@ -487,8 +426,6 @@ IF ~~ THEN BEGIN LCA_IllaseraDead_CorwilKillWithST
 	EXIT
 END
 
- 
-
 IF ~~ THEN BEGIN LCA_IllaseraDead_Mercy
 	SAY @1158 /* ~But, no! I can't just let him...~ */
 	= @1159 /* ~(She lets out a long sigh.)~ */
@@ -503,6 +440,117 @@ IF ~~ THEN BEGIN LCA_IllaseraDead_Mercy
 	EXIT
 
 END
+//} #endregion
+
+//{ #region Arrival in Undercity - DLG-0007
+IF ~
+	Global("LCA_ArrivedInUndercity", "GLOBAL", 1)
+~ THEN BEGIN LCA_ArrivedInUndercity
+	SAY @1118 /* ~The Undercity... They must be nearby.~*/
+	
+	= @1119 /* ~Look at these tracks. They lead toward the temple.~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_ArrivedInUndercity", "GLOBAL", 2)
+	~
+	REPLY @1121 /* ~We should scout around first. Be careful.~ */
+	GOTO LCA_ArrivedInUndercity2
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_ArrivedInUndercity", "GLOBAL", 2)
+	~
+	REPLY @1120 /* ~Let's go.~ */
+	GOTO LCA_ArrivedInUndercity2
+END
+
+IF ~~ THEN LCA_ArrivedInUndercity2
+	SAY @1122 /* ~Right.~ */
+	
+	IF ~~ THEN
+	EXIT
+END
+//} #endregion
+
+IF ~~ THEN BEGIN LCA_SaradushDiscussion7
+	SAY @1252 /* ~Thank you, sir.~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_DidRequestCorwin", "GLOBAL", 1)
+		StartCutscene("LCBGEND4")
+	~
+	EXIT
+END
+
+IF ~~ THEN LCA_CorwinBenoSTChainEnd
+	SAY @1188 /* ~It's over... I hope we've done the right thing.~ */
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1189 /* ~It was the only way. He'll never trouble you again. Come - I'm sure Rohma is eager to see you, my love.~ */
+	GOTO LCA_CorwinBenoSTChainEndCS
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1190 /* ~It was the only way. He'll never trouble you again. Come - I'm sure Rohma is eager to see you, my love.~ */
+	GOTO LCA_CorwinBenoSTChainEndCS
+END
+
+IF ~~ THEN LCA_CorwinKillBenoChainEnd
+	SAY @1194 /* ~It's over... ~ */
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1195 /* ~Are you alright? That couldn't have been easy for you, love.~ */
+	GOTO LCA_CorwinKillBenoChainEndCS
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1197 /* ~Are you alright? That couldn't have been easy for you.~*/
+	GOTO LCA_CorwinKillBenoChainEndCS
+END
+
+IF ~~ THEN LCA_CorwinMercyBenoChainEnd
+	SAY @1204 /* ~<CHARNAME> - help me get him on his feet. We'll take him into custody together.~  */
+	
+	IF ~~ THEN REPLY @1205 /* ~Gladly, Schael.~ */
+	DO ~
+		StartCutsceneMode()
+		StartCutscene("LCUCEND1")
+	~
+	EXIT
+END
+
+IF ~~ THEN LCA_CorwinBenoSTChainEndCS
+	SAY @1191 /* ~Right. Let's go.~ */
+	
+	IF ~~ THEN
+	DO ~
+		StartCutsceneMode()
+		StartCutscene("LCUCEND1")
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_SAREV_10
+	SAY @38 /* ~You've got to be kidding me. A deal? With you?~*/
+	
+	IF ~~ THEN EXTERN SAREV25A 14
+END
+
+IF ~~ THEN LCA_CorwinKillBenoChainEndCS
+	SAY @1196 /* ~I'll be fine once I see Rohma. Let's go.~ */
+	
+	IF ~~ THEN
+	DO ~
+		StartCutsceneMode()
+		StartCutscene("LCUCEND1")
+	~
+	EXIT
+END
+
 
 IF ~~ THEN BEGIN LCA_SkieTakesRing
 	SAY @1136 /* ~(Skie takes the ring from Schael.)~ */
@@ -567,34 +615,9 @@ IF ~~ THEN BEGIN LCA_MeetIllasera4
 	IF ~~ THEN EXTERN LCBENO LCA_MeetIllasera4
 END
 
-IF ~
-	Global("LCA_ArrivedInUndercity", "GLOBAL", 1)
-~ THEN BEGIN LCA_ArrivedInUndercity
-	SAY @1118 /* ~The Undercity... They must be nearby.~*/
-	
-	= @1119 /* ~Look at these tracks. They lead toward the temple.~ */
-	
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_ArrivedInUndercity", "GLOBAL", 2)
-	~
-	REPLY @1121 /* ~We should scout around first. Be careful.~ */
-	GOTO LCA_ArrivedInUndercity2
-	
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_ArrivedInUndercity", "GLOBAL", 2)
-	~
-	REPLY @1120 /* ~Let's go.~ */
-	GOTO LCA_ArrivedInUndercity2
-END
 
-IF ~~ THEN LCA_ArrivedInUndercity2
-	SAY @1122 /* ~Right.~ */
-	
-	IF ~~ THEN
-	EXIT
-END
+
+
 
 IF ~
 	Global("LCA_DukesDebriefed", "GLOBAL", 2)
