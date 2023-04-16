@@ -241,6 +241,31 @@ IF ~
 	~
 	EXTERN LCBENO2 LCA_CorwinBenoSTChain
 END
+
+IF ~~ THEN LCA_CorwinBenoSTChainEnd
+	SAY @1188 /* ~It's over... I hope we've done the right thing.~ */
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1189 /* ~It was the only way. He'll never trouble you again. Come - I'm sure Rohma is eager to see you, my love.~ */
+	GOTO LCA_CorwinBenoSTChainEndCS
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1190 /* ~It was the only way. He'll never trouble you again. Come - I'm sure Rohma is eager to see you, my love.~ */
+	GOTO LCA_CorwinBenoSTChainEndCS
+END
+
+IF ~~ THEN LCA_CorwinBenoSTChainEndCS
+	SAY @1191 /* ~Right. Let's go.~ */
+	
+	IF ~~ THEN
+	DO ~
+		StartCutsceneMode()
+		StartCutscene("LCUCEND1")
+	~
+	EXIT
+END
 //} #endregion
 
 //{ #region Beno Last Words (Killed) - DLG-0005
@@ -267,6 +292,43 @@ IF ~
 	~
 	EXTERN LCBENO2 LCA_CorwinMercyBenoChain
 END
+
+IF ~~ THEN LCA_CorwinKillBenoChainEnd
+	SAY @1194 /* ~It's over... ~ */
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1195 /* ~Are you alright? That couldn't have been easy for you, love.~ */
+	GOTO LCA_CorwinKillBenoChainEndCS //OK
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1197 /* ~Are you alright? That couldn't have been easy for you.~*/
+	GOTO LCA_CorwinKillBenoChainEndCS //OK
+END
+
+IF ~~ THEN LCA_CorwinMercyBenoChainEnd
+	SAY @1204 /* ~<CHARNAME> - help me get him on his feet. We'll take him into custody together.~  */
+	
+	IF ~~ THEN REPLY @1205 /* ~Gladly, Schael.~ */
+	DO ~
+		StartCutsceneMode()
+		StartCutscene("LCUCEND1")
+	~
+	EXIT
+END
+
+IF ~~ THEN LCA_CorwinKillBenoChainEndCS
+	SAY @1196 /* ~I'll be fine once I see Rohma. Let's go.~ */
+	
+	IF ~~ THEN
+	DO ~
+		StartCutsceneMode()
+		StartCutscene("LCUCEND1")
+	~
+	EXIT
+END
+
 //} #endregion
 
 //{ #region Illasera Killed - DLG-0006
@@ -473,152 +535,7 @@ IF ~~ THEN LCA_ArrivedInUndercity2
 END
 //} #endregion
 
-IF ~~ THEN BEGIN LCA_SaradushDiscussion7
-	SAY @1252 /* ~Thank you, sir.~ */
-	
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_DidRequestCorwin", "GLOBAL", 1)
-		StartCutscene("LCBGEND4")
-	~
-	EXIT
-END
-
-IF ~~ THEN LCA_CorwinBenoSTChainEnd
-	SAY @1188 /* ~It's over... I hope we've done the right thing.~ */
-	
-	IF ~
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @1189 /* ~It was the only way. He'll never trouble you again. Come - I'm sure Rohma is eager to see you, my love.~ */
-	GOTO LCA_CorwinBenoSTChainEndCS
-	
-	IF ~
-		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @1190 /* ~It was the only way. He'll never trouble you again. Come - I'm sure Rohma is eager to see you, my love.~ */
-	GOTO LCA_CorwinBenoSTChainEndCS
-END
-
-IF ~~ THEN LCA_CorwinKillBenoChainEnd
-	SAY @1194 /* ~It's over... ~ */
-	
-	IF ~
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @1195 /* ~Are you alright? That couldn't have been easy for you, love.~ */
-	GOTO LCA_CorwinKillBenoChainEndCS
-	
-	IF ~
-		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @1197 /* ~Are you alright? That couldn't have been easy for you.~*/
-	GOTO LCA_CorwinKillBenoChainEndCS
-END
-
-IF ~~ THEN LCA_CorwinMercyBenoChainEnd
-	SAY @1204 /* ~<CHARNAME> - help me get him on his feet. We'll take him into custody together.~  */
-	
-	IF ~~ THEN REPLY @1205 /* ~Gladly, Schael.~ */
-	DO ~
-		StartCutsceneMode()
-		StartCutscene("LCUCEND1")
-	~
-	EXIT
-END
-
-IF ~~ THEN LCA_CorwinBenoSTChainEndCS
-	SAY @1191 /* ~Right. Let's go.~ */
-	
-	IF ~~ THEN
-	DO ~
-		StartCutsceneMode()
-		StartCutscene("LCUCEND1")
-	~
-	EXIT
-END
-
-IF ~~ THEN BEGIN LCA_SAREV_10
-	SAY @38 /* ~You've got to be kidding me. A deal? With you?~*/
-	
-	IF ~~ THEN EXTERN SAREV25A 14
-END
-
-IF ~~ THEN LCA_CorwinKillBenoChainEndCS
-	SAY @1196 /* ~I'll be fine once I see Rohma. Let's go.~ */
-	
-	IF ~~ THEN
-	DO ~
-		StartCutsceneMode()
-		StartCutscene("LCUCEND1")
-	~
-	EXIT
-END
-
-
-IF ~~ THEN BEGIN LCA_SkieTakesRing
-	SAY @1136 /* ~(Skie takes the ring from Schael.)~ */
-	=@1137 /* ~Skie, whatever you do, don't put it on. You'll be teleported. You MUST place it on Rohma's finger.~*/
-	IF ~~ THEN EXTERN LCSKIE LCA_SkieTakesRing
-END
-IF ~~ THEN BEGIN LCA_Thanks3
-	SAY @1138 /* ~We won't tell. Just be careful.~*/
-	
-	IF ~~ THEN EXTERN LCSKIE LCA_SetUp
-END
-IF ~~ THEN BEGIN LCA_GiveSkieRing
-	SAY @1135 /*~One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~*/
-	
-	IF ~~ THEN EXTERN LCSKIE LCA_GiveRing
-END
-
-IF ~~ THEN BEGIN LCA_GiveSkieRing2
-	SAY @1139 /*~~Skie, do you think you can get to Rohma without being seen?~*/
-	
-	IF ~~ THEN EXTERN LCSKIE LCA_GiveSkieRing3
-END
-
-IF ~~ THEN BEGIN LCA_GiveSkieRing4
-	SAY @1141 /*~You wouldn't need to... One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~*/
-	
-	IF ~~ THEN EXTERN LCSKIE LCA_GiveRing
-END
-
-IF ~~ THEN BEGIN LCA_SkieUCChainEnd
-	SAY @1132 /* ~The man with the scar is Beno.~*/
-	
-	IF ~~ THEN REPLY @1133 /*~Skie, do you think you can sneak Rohma out of there?~ */
-	EXTERN LCSKIE LCA_CanGetRohma
-	
-	IF ~~ THEN REPLY @1134 /* ~How did you get in there without them detecting you?~ */
-	EXTERN LCSKIE LCA_NonDetection
-	
-	
-END
-
-IF ~~ THEN BEGIN LCA_DontNeedRing
-	SAY @1130 /* ~That won't be necessary. We only need the one.~ */
-	
-	IF ~~ THEN REPLY @1131 /* ~Schael is right. Once Rohma is safe, we'll put an end to Illasera, Beno, and anyone else that had a part in the kidnapping.~ */
-	EXTERN LCNEDERL LCA_DontNeedRing
-
-END
-
-IF ~~ THEN BEGIN LCA_MeetIllasera
-	SAY @1123 /* ~Rohma!~ */
-	
-	= @1124 /* ~What have you done with my daughter!?~ */
-	
-	IF ~~ THEN 
-	EXTERN LCBENO LCA_MeetIllasera
-END
-
-IF ~~ THEN BEGIN LCA_MeetIllasera4
-	SAY @1125 /* ~Beno, you fool! I'm going to - ~ */
-	
-	IF ~~ THEN EXTERN LCBENO LCA_MeetIllasera4
-END
-
-
-
-
-
+//{ #region Duke Debrief Break - DLG-0008
 IF ~
 	Global("LCA_DukesDebriefed", "GLOBAL", 2)
 ~ THEN BEGIN LCA_DukeDebrief02
@@ -786,6 +703,65 @@ IF ~~ THEN BEGIN LCA_DukeDebrief02_B2
 	IF ~~ THEN REPLY @1081 /* ~Besides the mention of my transformation, yes, I thought it went well. You did a great job recounting the events.~  */
 	GOTO LCA_DukeDebrief02_A1
 END
+//} #endregion
+
+//{ #region Corwin Walk Home - DLG-0009
+IF ~
+	Global("LCA_CorwinWalkHome", "GLOBAL", 1)
+~ THEN BEGIN LCA_WalkHome
+	SAY @985 /* ~Huh? The front door is open.~ */
+	
+	IF ~~ THEN REPLY @986 /* ~Were you expecting guests?~ */
+	DO ~
+		SetGlobal("LCA_CorwinWalkHome", "GLOBAL", 2)
+	~
+	GOTO LCA_WalkHome2
+END
+
+IF ~~ THEN BEGIN LCA_WalkHome2
+	SAY @987 /* ~No.. it looks like it was broken into..~*/
+	
+	IF ~~ THEN 
+	GOTO LCA_WalkHome3
+END
+
+IF ~~ THEN BEGIN LCA_WalkHome3
+	SAY @988 /* ~Oh, Gods! Father! Rohma!~ */
+	
+	= @989 /* ~(She runs inside, and you follow her in.)~ */
+	IF ~~ THEN 
+	EXIT
+END
+//} #endregion
+
+//{ #region Rohma Kidnapped 1316_1 - DLG-0010
+IF ~
+	Global("LCA_RohmaKidnapped", "GLOBAL", 1)
+~ THEN BEGIN LCA_RohmaKidnapped
+	SAY @975 /* ~Father!~ */
+	
+	IF ~~ THEN 
+	EXTERN LCAUDAM LCA_AudamarRohmaKidnapChain
+END
+
+//} #endregion 
+
+//{ #region Rohma Kidnapped 1316_2 - DLG-0011
+IF ~
+	Global("LCA_RohmaKidnapped", "GLOBAL", 2)
+~ THEN BEGIN LCA_RohmaKidnapped2
+	SAY @991 /* ~Beno...~  */
+	=@992 /* ~(She quivers, then screams in rage.)~ */
+	= @994 /* ~WILL I NEVER BE RID OF HIM!? AAAH!!~ */
+	
+	IF ~~ THEN REPLY @993 /* ~Schael! Try and stay calm - Audamar, they said they'd trade Rohma for me. Do they tell you where they'd make the exchange?~ */
+	DO ~
+		SetGlobal("LCA_RohmaKidnapped", "GLOBAL", 3)
+	~
+	EXTERN LCAUDAM LCA_RohmaKidnapped2A
+END
+//} #endregion
+
 
 IF ~~ THEN BEGIN LCA_ReadLetter
 	SAY @1041 /* ~I know we'd be walking into a trap... but Rohma's in danger! We have to go and get her!~ */
@@ -843,34 +819,9 @@ IF ~~ THEN BEGIN LCA_StartDucalCS
 	~
 	EXIT
 END
+//} #endregion
 
-IF ~
-	Global("LCA_CorwinWalkHome", "GLOBAL", 1)
-~ THEN BEGIN LCA_WalkHome
-	SAY @985 /* ~Huh? The front door is open.~ */
-	
-	IF ~~ THEN REPLY @986 /* ~Were you expecting guests?~ */
-	DO ~
-		SetGlobal("LCA_CorwinWalkHome", "GLOBAL", 2)
-	~
-	GOTO LCA_WalkHome2
-END
-
-IF ~~ THEN BEGIN LCA_WalkHome2
-	SAY @987 /* ~No.. it looks like it was broken into..~*/
-	
-	IF ~~ THEN 
-	GOTO LCA_WalkHome3
-END
-
-IF ~~ THEN BEGIN LCA_WalkHome3
-	SAY @988 /* ~Oh, Gods! Father! Rohma!~ */
-	
-	= @989 /* ~(She runs inside, and you follow her in.)~ */
-	IF ~~ THEN 
-	EXIT
-END
-
+//{ #region Rohma Kidnaped - Ducal Palace - DLG-0012
 IF ~
 	Global("LCA_RohmaKidnapped", "GLOBAL", 4)
 ~ THEN BEGIN LCA_NeedToGetRohma
@@ -878,29 +829,93 @@ IF ~
 	
 	IF ~~ THEN EXTERN LCLIIA LCA_NeedToGetRohmaChain
 END
+//} #endregion
 
-IF ~
-	Global("LCA_RohmaKidnapped", "GLOBAL", 1)
-~ THEN BEGIN LCA_RohmaKidnapped
-	SAY @975 /* ~Father!~ */
+
+IF ~~ THEN BEGIN LCA_SaradushDiscussion7
+	SAY @1252 /* ~Thank you, sir.~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_DidRequestCorwin", "GLOBAL", 1)
+		StartCutscene("LCBGEND4")
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_SAREV_10
+	SAY @38 /* ~You've got to be kidding me. A deal? With you?~*/
+	
+	IF ~~ THEN EXTERN SAREV25A 14
+END
+
+
+IF ~~ THEN BEGIN LCA_SkieTakesRing
+	SAY @1136 /* ~(Skie takes the ring from Schael.)~ */
+	=@1137 /* ~Skie, whatever you do, don't put it on. You'll be teleported. You MUST place it on Rohma's finger.~*/
+	IF ~~ THEN EXTERN LCSKIE LCA_SkieTakesRing
+END
+IF ~~ THEN BEGIN LCA_Thanks3
+	SAY @1138 /* ~We won't tell. Just be careful.~*/
+	
+	IF ~~ THEN EXTERN LCSKIE LCA_SetUp
+END
+IF ~~ THEN BEGIN LCA_GiveSkieRing
+	SAY @1135 /*~One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~*/
+	
+	IF ~~ THEN EXTERN LCSKIE LCA_GiveRing
+END
+
+IF ~~ THEN BEGIN LCA_GiveSkieRing2
+	SAY @1139 /*~~Skie, do you think you can get to Rohma without being seen?~*/
+	
+	IF ~~ THEN EXTERN LCSKIE LCA_GiveSkieRing3
+END
+
+IF ~~ THEN BEGIN LCA_GiveSkieRing4
+	SAY @1141 /*~You wouldn't need to... One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~*/
+	
+	IF ~~ THEN EXTERN LCSKIE LCA_GiveRing
+END
+
+IF ~~ THEN BEGIN LCA_SkieUCChainEnd
+	SAY @1132 /* ~The man with the scar is Beno.~*/
+	
+	IF ~~ THEN REPLY @1133 /*~Skie, do you think you can sneak Rohma out of there?~ */
+	EXTERN LCSKIE LCA_CanGetRohma
+	
+	IF ~~ THEN REPLY @1134 /* ~How did you get in there without them detecting you?~ */
+	EXTERN LCSKIE LCA_NonDetection
+	
+	
+END
+
+IF ~~ THEN BEGIN LCA_DontNeedRing
+	SAY @1130 /* ~That won't be necessary. We only need the one.~ */
+	
+	IF ~~ THEN REPLY @1131 /* ~Schael is right. Once Rohma is safe, we'll put an end to Illasera, Beno, and anyone else that had a part in the kidnapping.~ */
+	EXTERN LCNEDERL LCA_DontNeedRing
+
+END
+
+IF ~~ THEN BEGIN LCA_MeetIllasera
+	SAY @1123 /* ~Rohma!~ */
+	
+	= @1124 /* ~What have you done with my daughter!?~ */
 	
 	IF ~~ THEN 
-	EXTERN LCAUDAM LCA_AudamarRohmaKidnapChain
+	EXTERN LCBENO LCA_MeetIllasera
 END
 
-IF ~
-	Global("LCA_RohmaKidnapped", "GLOBAL", 2)
-~ THEN BEGIN LCA_RohmaKidnapped2
-	SAY @991 /* ~Beno...~  */
-	=@992 /* ~(She quivers, then screams in rage.)~ */
-	= @994 /* ~WILL I NEVER BE RID OF HIM!? AAAH!!~ */
+IF ~~ THEN BEGIN LCA_MeetIllasera4
+	SAY @1125 /* ~Beno, you fool! I'm going to - ~ */
 	
-	IF ~~ THEN REPLY @993 /* ~Schael! Try and stay calm - Audamar, they said they'd trade Rohma for me. Do they tell you where they'd make the exchange?~ */
-	DO ~
-		SetGlobal("LCA_RohmaKidnapped", "GLOBAL", 3)
-	~
-	EXTERN LCAUDAM LCA_RohmaKidnapped2A
+	IF ~~ THEN EXTERN LCBENO LCA_MeetIllasera4
 END
+
+
+
+
 
 IF ~
 	Global("LCA_CorwinProposalCS", "GLOBAL", 1)
