@@ -3964,7 +3964,7 @@ THEN BEGIN LCA_OPT1Romance
 	~
 	GOTO LCA_OPT1Romance_2 //OK
 	
-	IF ~~ THEN @1343 /*   ~What's wrong, dear?~ */
+	IF ~~ THEN REPLY @1343 /*   ~What's wrong, dear?~ */
 	DO ~
 		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 3)
 	~
