@@ -5,7 +5,7 @@ IF
 THEN
 	RESPONSE #100
 		CreateCreature("FORTHE", [500.910], N)
-		ActionOverride("FORTHE", SetDialog("LCFORTHE"))
+		ActionOverride("FORTHEL", SetDialog("LCFORTHE"))
 		SetGlobal("LCA_FortheSpawn", "GLOBAL", 1)
 END
 
