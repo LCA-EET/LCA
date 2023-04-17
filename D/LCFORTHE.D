@@ -26,6 +26,9 @@ IF ~~ THEN BEGIN LCA_TellMeMoreStories
 	
 	IF ~~ THEN REPLY @7 /*~The lot of a bard is to travel and learn. Why don't you go out and find your own stories?~*/
 	GOTO LCA_GoAndLearn //OK
+	
+	IF ~~ THEN REPLY @10 /* ~Of course. 500 gold, you say?~ */
+	GOTO LCA_TellStory //ok	
 END
 
 IF ~~ THEN BEGIN LCA_GoAndLearn
