@@ -731,6 +731,20 @@ COPY ~LCA/ITM/LCSTDAGI.bam~ ~override~
 COPY ~LCA/ITM/LCSTDAGG.BAM~ ~override~
 COPY ~LCA/ITM/LCSTDAGC.BAM~ ~override~
 
+//Letter from Corwin (Romantic)
+COPY ~LCA/ITM/LTRSCH.itm~ ~override~
+SAY NAME1 @092
+SAY NAME2 @092
+SAY UNIDENTIFIED_DESC @090
+SAY DESC @090
+
+//Letter from Corwin
+COPY ~LCA/ITM/LTRCOR.itm~ ~override~
+SAY NAME1 @093
+SAY NAME2 @093
+SAY UNIDENTIFIED_DESC @091
+SAY DESC @091
+
 //Letter to Corwin (Romantic)
 COPY ~LCA/ITM/LCORW1.itm~ ~override~
 SAY NAME1 @005
