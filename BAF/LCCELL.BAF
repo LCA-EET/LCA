@@ -2,7 +2,7 @@ IF
 	See(Player1)
 	Range(Player1, 7)
 	Global("LCA_SoDAnxiety", "GLOBAL", 0)
-	Global("LCA_SoDAnxietyCell", "GLOBAL", 1)
+	Global("LCA_SoDAnxietyCell", "GLOBAL", 0)
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_SoDAnxietyCell", "GLOBAL", 1)
