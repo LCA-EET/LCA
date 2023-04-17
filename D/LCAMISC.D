@@ -7,6 +7,76 @@
 2022-12-10: Initial Commit
 
 */
+ADD_TRANS_TRIGGER BDIMOEN 89
+~
+	GlobalLT("LCA_CorwinContinue", "GLOBAL", 1)
+~
+DO 2 3
+
+EXTEND_BOTTOM BDIMOEN 89
+	IF ~
+		Global("bd_player_exiled","global",1)
+		GlobalGT("LCA_CorwinContinue", "GLOBAL", 0)
+	~ THEN REPLY #239700 /* ~You and me both.~ */ 
+	DO ~
+		SetGlobal("bd_plot","global",665)
+	~ 
+	GOTO LCA_CorwinLetter
+  
+	IF ~
+		Global("bd_player_exiled","global",1)
+		GlobalGT("LCA_CorwinContinue", "GLOBAL", 0)
+	~ THEN REPLY #239701 /* ~You should never have doubted I would find a way to freedom. I never did.~ */ 
+	DO ~
+		SetGlobal("bd_plot","global",665)
+	~ 
+	GOTO LCA_CorwinLetter
+END
+
+APPEND BDIMOEN
+	IF ~~ THEN BEGIN LCA_CorwinLetter
+		SAY @209 /* ~Oh! Before I forget — Captain Corwin came to see me. She asked that I give you this letter.~ */
+		
+		IF ~
+			Global("LCA_CorwinContinue", "GLOBAL", 2)
+		~ THEN 
+		DO ~
+			GiveItemCreate("LTRSCH", LastTalkedToBy(Myself),0,0,0)
+			GiveItemCreate("LCAMULET", LastTalkedToBy(Myself),0,0,0)
+			SetGlobal("LCA_GaveCorwinLetter", "GLOBAL", 2)
+		~
+		GOTO LCA_GiveLetter_Schael
+		
+		IF ~
+			Global("LCA_CorwinContinue", "GLOBAL", 1)
+		~ THEN 
+		DO ~
+			GiveItemCreate("LTRCOR", LastTalkedToBy(Myself),0,0,0)
+			SetGlobal("LCA_GaveCorwinLetter", "GLOBAL", 1)
+		~
+		GOTO LCA_GiveLetter_Corwin
+	END
+	
+	IF ~~ THEN BEGIN LCA_GiveLetter_Schael
+		SAY @212 /* She said that she's sorry she couldn't see you, but that you'd understand once you've read the letter. */
+		
+		IF ~~ THEN REPLY @210 /* ~Thank you, Imoen. (Read the letter now).~ */
+		EXTERN PLAYER1 LCA_ReadCorwinLetter
+		
+		IF ~~ THEN REPLY @211 /* Thank you, Imoen. (Read the letter later).~ */
+		GOTO 92
+	END
+	
+	IF ~~ THEN BEGIN LCA_GiveLetter_Corwin
+		SAY @212 /* She said that she's sorry she couldn't see you, but that you'd understand once you've read the letter. */
+		
+		IF ~~ THEN REPLY @210 /* ~Thank you, Imoen. (Read the letter now).~ */
+		EXTERN PLAYER1 LCA_ReadCorwinLetter
+		
+		IF ~~ THEN REPLY @211 /* Thank you, Imoen. (Read the letter later).~ */
+		GOTO 92
+	END
+END
 
 EXTEND_BOTTOM FORTHE 9
 	IF ~~ THEN 

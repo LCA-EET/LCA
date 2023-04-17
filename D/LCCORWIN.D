@@ -233,11 +233,32 @@ END
 
 IF ~~ THEN BEGIN LCA9
 	SAY @40 /* ~Having to leave your side again.. it hurts. But I understand. ~ */
-	=@47 /* ~Take my amulet. Wear it and know that I love you always, <CHARNAME>.~ */
+	
+	IF ~
+		!Global("LCA_GaveCorwinLetter", "GLOBAL", 2)
+	~ THEN 
+	GOTO LCA9A
+	
+	IF ~
+		Global("LCA_GaveCorwinLetter", "GLOBAL", 2)
+	~ THEN 
+	GOTO LCA9B
+END
+
+IF ~~ THEN BEGIN LCA9A
+	SAY @47 /* ~Take my amulet. Wear it and know that I love you always, <CHARNAME>.~ */
+	
 	IF ~~ THEN REPLY @42 /* ~I will, dear.~ */
 	DO ~
-		GiveItemCreate("CorwAm",LastTalkedToBy(Myself),1,0,0)
+		GiveItemCreate("LCAMULET",LastTalkedToBy(Myself),0,0,0)
 	~
+	GOTO LCA12
+END
+
+IF ~~ THEN BEGIN LCA9B
+	SAY @59 /*  ~Wear my amulet and know that I love you always, <CHARNAME>.~ */
+	
+	IF ~~ THEN REPLY @42 /* ~I will, dear.~ */
 	GOTO LCA12
 END
 
@@ -260,7 +281,8 @@ IF ~~ THEN BEGIN LCA11
 END
 
 IF ~~ THEN BEGIN LCA12
-	SAY @41 /* ~(You share a long and somber embrace) Be careful, my love. Come back to me soon.~ */
+	SAY @41 /* ~(You share a long and somber embrace)~ */
+	=@58 /* ~Be careful, my love. Come back to me soon.~ [BDCOR10]~ */
 	IF ~~ THEN
 	DO ~
 		EscapeArea()
