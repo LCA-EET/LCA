@@ -9,6 +9,71 @@
 */ 
 BEGIN ~LCCORWIJ~
 
+//{ #region Unused
+IF ~~ THEN BEGIN LCA100
+	SAY @431 /* ~(She becomes visibly upset.) You bastard! Gods damnit... (She calms down.)~ */
+	IF ~~ THEN
+	GOTO LCA75
+END
+
+IF ~~ THEN BEGIN LCA_ReadLetter
+	SAY @1041 /* ~I know we'd be walking into a trap... but Rohma's in danger! We have to go and get her!~ */
+	
+	IF ~~ THEN REPLY @1043 /* ~Yes, and we will. They won't harm her, so long as she is useful to them in making the exchange.~*/
+	GOTO LCA_ReadLetter2
+END
+
+IF ~~ THEN BEGIN LCA_ReadLetter2
+	SAY @1045 /* ~So what are we to do in the meantime? I can't just sit here while Rohma's being held captive!~*/
+	
+	IF ~~ THEN REPLY @1046 /* ~Tell me about Beno. Do you think he has it in him to harm his own daughter?~*/
+	GOTO LCA_ReadLetter2A
+	
+	IF ~~ THEN REPLY @1044 /* ~I will rouse the Dukes right away - they may have insight into this 'Illasera'. Let us discuss the matter in the Ducal palace before we make our move.~*/
+	GOTO LCA_StartDucalCS
+END
+
+IF ~~ THEN BEGIN LCA_ReadLetter2A
+	SAY @1047 /* ~He's threatened my father and me for years, but never Rohma...~ */
+	
+	IF ~~ THEN REPLY @1048 /* ~That's good... we may be able to use that to our advantage.~ */
+	GOTO LCA_ReadLetter3
+END
+
+IF ~~ THEN BEGIN LCA_ReadLetter3
+	SAY @1050 /* ~You mean to turn Beno against Illasera? I doubt that'll work. Beno's only ever cared for himself.~*/
+	
+	= @1052 /* ~He won't stick his neck out for anyone, not even his own daughter - I'm sure of it.~ */
+	
+	IF ~~ THEN REPLY @1051 /* ~Still, it may be worth trying. I will rouse the Dukes right away - they may have insight into this 'Illasera'. Let us discuss the matter in the Ducal palace before we make our move.~*/
+	GOTO LCA_StartDucalCS
+END
+
+IF ~~ THEN BEGIN LCA_StartDucalCS
+	SAY @1049 /* ~Fine. But whatever we decide, we need to do it quickly. I'll go after her myself if I have to.~*/
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1054 /* ~We're in this together, love. Let's go and convene the meeting with the Dukes.~ */
+	DO ~
+		SetGlobal("LCA_RohmaKidnapped", "GLOBAL", 4)
+		StartCutsceneMode()
+		StartCutscene("LCDUCAL")
+	~
+	EXIT
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1053 /* ~I'll not abandon you in your hour of need, my friend. We will rescue Rohma, together. Let's go and convene the meeting with the Dukes.~ */
+	DO ~
+		SetGlobal("LCA_RohmaKidnapped", "GLOBAL", 4)
+		StartCutsceneMode()
+		StartCutscene("LCDUCAL")
+	~
+	EXIT
+END
+//} #endregion
+
 //{ #region Corwin Not Chosen for Saradush - DLG-0001
 IF ~
 	Global("LCA_BGEND3", "GLOBAL", 1)
@@ -212,6 +277,18 @@ IF ~~ THEN BEGIN LCA_BGEND4_5
 	~
 	EXIT
 END
+
+IF ~~ THEN BEGIN LCA_SaradushDiscussion7
+	SAY @1252 /* ~Thank you, sir.~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_DidRequestCorwin", "GLOBAL", 1)
+		StartCutscene("LCBGEND4")
+	~
+	EXIT
+END
+
 //} #endregion
 
 //{ #region Rohma Rescued - DLG-0003
@@ -746,82 +823,7 @@ END
 
 //} #endregion 
 
-//{ #region Rohma Kidnapped 1316_2 - DLG-0011
-IF ~
-	Global("LCA_RohmaKidnapped", "GLOBAL", 2)
-~ THEN BEGIN LCA_RohmaKidnapped2
-	SAY @991 /* ~Beno...~  */
-	=@992 /* ~(She quivers, then screams in rage.)~ */
-	= @994 /* ~WILL I NEVER BE RID OF HIM!? AAAH!!~ */
-	
-	IF ~~ THEN REPLY @993 /* ~Schael! Try and stay calm - Audamar, they said they'd trade Rohma for me. Do they tell you where they'd make the exchange?~ */
-	DO ~
-		SetGlobal("LCA_RohmaKidnapped", "GLOBAL", 3)
-	~
-	EXTERN LCAUDAM LCA_RohmaKidnapped2A
-END
-//} #endregion
-
-
-IF ~~ THEN BEGIN LCA_ReadLetter
-	SAY @1041 /* ~I know we'd be walking into a trap... but Rohma's in danger! We have to go and get her!~ */
-	
-	IF ~~ THEN REPLY @1043 /* ~Yes, and we will. They won't harm her, so long as she is useful to them in making the exchange.~*/
-	GOTO LCA_ReadLetter2
-END
-
-IF ~~ THEN BEGIN LCA_ReadLetter2
-	SAY @1045 /* ~So what are we to do in the meantime? I can't just sit here while Rohma's being held captive!~*/
-	
-	IF ~~ THEN REPLY @1046 /* ~Tell me about Beno. Do you think he has it in him to harm his own daughter?~*/
-	GOTO LCA_ReadLetter2A
-	
-	IF ~~ THEN REPLY @1044 /* ~I will rouse the Dukes right away - they may have insight into this 'Illasera'. Let us discuss the matter in the Ducal palace before we make our move.~*/
-	GOTO LCA_StartDucalCS
-END
-
-IF ~~ THEN BEGIN LCA_ReadLetter2A
-	SAY @1047 /* ~He's threatened my father and me for years, but never Rohma...~ */
-	
-	IF ~~ THEN REPLY @1048 /* ~That's good... we may be able to use that to our advantage.~ */
-	GOTO LCA_ReadLetter3
-END
-
-IF ~~ THEN BEGIN LCA_ReadLetter3
-	SAY @1050 /* ~You mean to turn Beno against Illasera? I doubt that'll work. Beno's only ever cared for himself.~*/
-	
-	= @1052 /* ~He won't stick his neck out for anyone, not even his own daughter - I'm sure of it.~ */
-	
-	IF ~~ THEN REPLY @1051 /* ~Still, it may be worth trying. I will rouse the Dukes right away - they may have insight into this 'Illasera'. Let us discuss the matter in the Ducal palace before we make our move.~*/
-	GOTO LCA_StartDucalCS
-END
-
-IF ~~ THEN BEGIN LCA_StartDucalCS
-	SAY @1049 /* ~Fine. But whatever we decide, we need to do it quickly. I'll go after her myself if I have to.~*/
-	
-	IF ~
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @1054 /* ~We're in this together, love. Let's go and convene the meeting with the Dukes.~ */
-	DO ~
-		SetGlobal("LCA_RohmaKidnapped", "GLOBAL", 4)
-		StartCutsceneMode()
-		StartCutscene("LCDUCAL")
-	~
-	EXIT
-	
-	IF ~
-		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @1053 /* ~I'll not abandon you in your hour of need, my friend. We will rescue Rohma, together. Let's go and convene the meeting with the Dukes.~ */
-	DO ~
-		SetGlobal("LCA_RohmaKidnapped", "GLOBAL", 4)
-		StartCutsceneMode()
-		StartCutscene("LCDUCAL")
-	~
-	EXIT
-END
-//} #endregion
-
-//{ #region Rohma Kidnaped - Ducal Palace - DLG-0012
+//{ #region Rohma Kidnaped - Ducal Palace - DLG-0011
 IF ~
 	Global("LCA_RohmaKidnapped", "GLOBAL", 4)
 ~ THEN BEGIN LCA_NeedToGetRohma
@@ -831,92 +833,7 @@ IF ~
 END
 //} #endregion
 
-
-IF ~~ THEN BEGIN LCA_SaradushDiscussion7
-	SAY @1252 /* ~Thank you, sir.~ */
-	
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_DidRequestCorwin", "GLOBAL", 1)
-		StartCutscene("LCBGEND4")
-	~
-	EXIT
-END
-
-IF ~~ THEN BEGIN LCA_SAREV_10
-	SAY @38 /* ~You've got to be kidding me. A deal? With you?~*/
-	
-	IF ~~ THEN EXTERN SAREV25A 14
-END
-
-
-IF ~~ THEN BEGIN LCA_SkieTakesRing
-	SAY @1136 /* ~(Skie takes the ring from Schael.)~ */
-	=@1137 /* ~Skie, whatever you do, don't put it on. You'll be teleported. You MUST place it on Rohma's finger.~*/
-	IF ~~ THEN EXTERN LCSKIE LCA_SkieTakesRing
-END
-IF ~~ THEN BEGIN LCA_Thanks3
-	SAY @1138 /* ~We won't tell. Just be careful.~*/
-	
-	IF ~~ THEN EXTERN LCSKIE LCA_SetUp
-END
-IF ~~ THEN BEGIN LCA_GiveSkieRing
-	SAY @1135 /*~One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~*/
-	
-	IF ~~ THEN EXTERN LCSKIE LCA_GiveRing
-END
-
-IF ~~ THEN BEGIN LCA_GiveSkieRing2
-	SAY @1139 /*~~Skie, do you think you can get to Rohma without being seen?~*/
-	
-	IF ~~ THEN EXTERN LCSKIE LCA_GiveSkieRing3
-END
-
-IF ~~ THEN BEGIN LCA_GiveSkieRing4
-	SAY @1141 /*~You wouldn't need to... One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~*/
-	
-	IF ~~ THEN EXTERN LCSKIE LCA_GiveRing
-END
-
-IF ~~ THEN BEGIN LCA_SkieUCChainEnd
-	SAY @1132 /* ~The man with the scar is Beno.~*/
-	
-	IF ~~ THEN REPLY @1133 /*~Skie, do you think you can sneak Rohma out of there?~ */
-	EXTERN LCSKIE LCA_CanGetRohma
-	
-	IF ~~ THEN REPLY @1134 /* ~How did you get in there without them detecting you?~ */
-	EXTERN LCSKIE LCA_NonDetection
-	
-	
-END
-
-IF ~~ THEN BEGIN LCA_DontNeedRing
-	SAY @1130 /* ~That won't be necessary. We only need the one.~ */
-	
-	IF ~~ THEN REPLY @1131 /* ~Schael is right. Once Rohma is safe, we'll put an end to Illasera, Beno, and anyone else that had a part in the kidnapping.~ */
-	EXTERN LCNEDERL LCA_DontNeedRing
-
-END
-
-IF ~~ THEN BEGIN LCA_MeetIllasera
-	SAY @1123 /* ~Rohma!~ */
-	
-	= @1124 /* ~What have you done with my daughter!?~ */
-	
-	IF ~~ THEN 
-	EXTERN LCBENO LCA_MeetIllasera
-END
-
-IF ~~ THEN BEGIN LCA_MeetIllasera4
-	SAY @1125 /* ~Beno, you fool! I'm going to - ~ */
-	
-	IF ~~ THEN EXTERN LCBENO LCA_MeetIllasera4
-END
-
-
-
-
-
+//{ #region Corwin Proposal - DLG-0012
 IF ~
 	Global("LCA_CorwinProposalCS", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinProposal
@@ -1227,7 +1144,9 @@ IF ~~ THEN LCA_CorwinProposal7
 	~
 	EXIT
 END
+//} #endregion
 
+//{ #region Dinner with Corwin (Romance) - DLG-0013
 IF ~
 	Global("LCA_CorwinDinner", "GLOBAL", 1)
 	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
@@ -1256,66 +1175,6 @@ IF ~~ THEN BEGIN LCA_CorwinDinner_Romance2
 		PartyGoldGT(999)
 	~ THEN REPLY @1023 /* ~You have enough money that you don't need to work ever again.~*/
 	GOTO LCA_CorwinDinner_Work
-END
-
-IF ~~ THEN BEGIN LCA_CorwinDinner_Work
-	SAY @1024 /* ~That's your money. Consider it compensation for everything you've had to endure.~*/
-	
-	IF ~
-		Global("bd_player_exiled","global",0)
-	~ THEN REPLY @1323 /*~It's as much yours, Schael, as it is mine. You could've killed me during my escape. Instead, you showed mercy.~ */
-	GOTO LCA_CorwinDinner_Work2
-	
-	IF ~
-		Global("bd_player_exiled","global",1)
-	~ THEN REPLY @1025 /* ~It's as much yours, Schael, as it is mine... I wouldn't be here were it not for your efforts in securing my release.~ */
-	GOTO LCA_CorwinDinner_Work2
-END
-
-IF ~~ THEN BEGIN LCA_CorwinDinner_Work2
-	SAY @1026 /* ~Even if it were my money, I'd probably keep working, at least for a while longer. Rohma needs to understand the value of hard work.~ */
-	
-	= @1027 /* ~Besides, I haven't given up on making colonel one day.~ */
-	
-	IF ~~ THEN REPLY @1028 /* ~Nor should you. Colonel Corwin... I think I like the sound of that.~*/
-	GOTO LCA_CorwinDinner_WorkEnd
-	
-	IF ~~ THEN REPLY @1035 /* ~Colonel? Seems a bit bureaucratic to me.~*/
-	GOTO LCA_CorwinDinner_Work3B
-END
-
-IF ~~ THEN BEGIN LCA_CorwinDinner_Work3B
-	SAY @1036 /* ~You think so?~ */
-	
-	IF ~~ THEN REPLY @1037 /* ~You've always struck me as more of a 'hands-on' type of person.~ */
-	GOTO LCA_CorwinDinner_Work4B
-	
-	IF ~~ THEN REPLY @1040 /* ~Sitting in an office all day? You'll get bored.~ */
-	GOTO LCA_CorwinDinner_Work4B
-END
-
-IF ~~ THEN BEGIN LCA_CorwinDinner_Work4B
-	SAY @1038 /* ~Maybe... but being so close to the action for so long has a tendency to shorten one's lifespan...~ */
-	
-	IF ~~ THEN REPLY @1039 /* ~I've think you've shown that you can handle whatever comes your way, Schael.~*/
-	GOTO LCA_CorwinDinner_WorkEnd
-END
-
-IF ~~ THEN BEGIN LCA_CorwinDinner_WorkEnd
-	SAY @1034 /* ~(She smiles.)~ */
-	
-	IF ~
-		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN GOTO LCA_CorwinDinner_NonRomance3
-	
-	IF ~
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN GOTO LCA_CorwinDinner_Romance3
-	
-	IF ~
-		Global("LCA_ValygarJoinFF", "GLOBAL", 1)
-	~ THEN REPLY @937 /* ~Speaking of work, how's Valygar? I heard he took Marshal Nederlok up on his offer to join the Flaming Fist.~ */
-	GOTO LCA_CorwinDinner_Romance2A
 END
 
 IF ~~ THEN BEGIN LCA_CorwinDinner_Romance2A
@@ -1394,7 +1253,9 @@ IF ~~ THEN BEGIN LCA_CorwinDinner_Romance8
 	~
 	EXIT
 END
+//} #endregion
 
+//{ #region Dinner with Corwin (Non-Romance) - DLG-0014
 IF ~
 	Global("LCA_CorwinDinner", "GLOBAL", 1)
 	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
@@ -1533,7 +1394,71 @@ IF ~~ THEN BEGIN LCA_CorwinDinner_WalkHome_Female
 	~
 	EXIT
 END
+//} #endregion
 
+//{ #region Dinner with Corwin (Common) DLG-0013 / 14
+IF ~~ THEN BEGIN LCA_CorwinDinner_Work
+	SAY @1024 /* ~That's your money. Consider it compensation for everything you've had to endure.~*/
+	
+	IF ~
+		Global("bd_player_exiled","global",0)
+	~ THEN REPLY @1323 /*~It's as much yours, Schael, as it is mine. You could've killed me during my escape. Instead, you showed mercy.~ */
+	GOTO LCA_CorwinDinner_Work2
+	
+	IF ~
+		Global("bd_player_exiled","global",1)
+	~ THEN REPLY @1025 /* ~It's as much yours, Schael, as it is mine... I wouldn't be here were it not for your efforts in securing my release.~ */
+	GOTO LCA_CorwinDinner_Work2
+END
+
+IF ~~ THEN BEGIN LCA_CorwinDinner_Work2
+	SAY @1026 /* ~Even if it were my money, I'd probably keep working, at least for a while longer. Rohma needs to understand the value of hard work.~ */
+	
+	= @1027 /* ~Besides, I haven't given up on making colonel one day.~ */
+	
+	IF ~~ THEN REPLY @1028 /* ~Nor should you. Colonel Corwin... I think I like the sound of that.~*/
+	GOTO LCA_CorwinDinner_WorkEnd
+	
+	IF ~~ THEN REPLY @1035 /* ~Colonel? Seems a bit bureaucratic to me.~*/
+	GOTO LCA_CorwinDinner_Work3B
+END
+
+IF ~~ THEN BEGIN LCA_CorwinDinner_Work3B
+	SAY @1036 /* ~You think so?~ */
+	
+	IF ~~ THEN REPLY @1037 /* ~You've always struck me as more of a 'hands-on' type of person.~ */
+	GOTO LCA_CorwinDinner_Work4B
+	
+	IF ~~ THEN REPLY @1040 /* ~Sitting in an office all day? You'll get bored.~ */
+	GOTO LCA_CorwinDinner_Work4B
+END
+
+IF ~~ THEN BEGIN LCA_CorwinDinner_Work4B
+	SAY @1038 /* ~Maybe... but being so close to the action for so long has a tendency to shorten one's lifespan...~ */
+	
+	IF ~~ THEN REPLY @1039 /* ~I've think you've shown that you can handle whatever comes your way, Schael.~*/
+	GOTO LCA_CorwinDinner_WorkEnd
+END
+
+IF ~~ THEN BEGIN LCA_CorwinDinner_WorkEnd
+	SAY @1034 /* ~(She smiles.)~ */
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN GOTO LCA_CorwinDinner_NonRomance3
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN GOTO LCA_CorwinDinner_Romance3
+	
+	IF ~
+		Global("LCA_ValygarJoinFF", "GLOBAL", 1)
+	~ THEN REPLY @937 /* ~Speaking of work, how's Valygar? I heard he took Marshal Nederlok up on his offer to join the Flaming Fist.~ */
+	GOTO LCA_CorwinDinner_Romance2A
+END
+//} #endregion
+
+//{ #region Corwin / Tianna DLG-0015
 IF ~
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	Global("LCA_AskCorwinAboutTianna", "GLOBAL", 1)
@@ -1553,50 +1478,6 @@ IF ~
 		SetGlobal("LCA_AskCorwinAboutTianna", "GLOBAL", 2)
 	~
 	GOTO LCA_CorwinTianna2
-END
-
-IF ~~ THEN BEGIN LCA_CorwinWillHelpTianna
-	SAY @862 /* ~Tianna... (sigh)~ */
-	=@863 /* ~Fine - we'll help you. <CHARNAME> and I will talk to Jasper about forgiving your debt.~ */
-	
-	IF ~~ THEN EXTERN LCTIANNA LCA_CorwinHelpTianna
-END
-
-IF ~~ THEN BEGIN LCA_CorwinLobarTiannaEnd
-	SAY @860 /* ~No, that won't be necessary.~ */
-
-	IF ~~ THEN EXIT
-	
-	IF ~
-		InMyArea(Player1)
-	~ THEN
-	DO ~
-		SetGlobal("LCA_AskCorwinAboutTianna", "GLOBAL", 1)
-	~
-	EXIT
-END
-
-
-
-IF ~~ THEN BEGIN LCA_NotYetTianna
-	SAY @864 /* ~We're working on it.~ */
-	
-	IF ~~ THEN EXTERN LCTIANNA LCA_HelpEnd
-END
-
-IF ~
-	Global("LCA_BGSlaverPlot", "GLOBAL", 1)
-	Global("LCA_CorwinSlaverPlot", "GLOBAL", 1)
-	AreaCheck("AR0405")
-	!InMyArea("girl2")
-~ THEN BEGIN LCA_CorwinBGSlaverDiscuss
-	SAY @753 /* ~I hope those kids can make it to safety. */
-	
-	IF ~~ THEN REPLY @755 /* ~So do I.~ */
-	GOTO LCA_CorwinBGSlaverDiscuss2
-	
-	IF ~~ THEN REPLY @754 /* ~They will, don't worry.~ */
-	GOTO LCA_CorwinBGSlaverDiscuss2
 END
 
 IF ~~ THEN BEGIN LCA_CorwinTianna2
@@ -1637,6 +1518,23 @@ IF ~~ THEN BEGIN LCA_CorwinTianna5
 	
 	IF ~~ THEN EXIT
 END
+//} #endregion
+
+//{ #region Corwin Slaver Girl Rescue - DLG-0016
+IF ~
+	Global("LCA_BGSlaverPlot", "GLOBAL", 1)
+	Global("LCA_CorwinSlaverPlot", "GLOBAL", 1)
+	AreaCheck("AR0405")
+	!InMyArea("girl2")
+~ THEN BEGIN LCA_CorwinBGSlaverDiscuss
+	SAY @753 /* ~I hope those kids can make it to safety. */
+	
+	IF ~~ THEN REPLY @755 /* ~So do I.~ */
+	GOTO LCA_CorwinBGSlaverDiscuss2
+	
+	IF ~~ THEN REPLY @754 /* ~They will, don't worry.~ */
+	GOTO LCA_CorwinBGSlaverDiscuss2
+END
 
 IF ~~ THEN BEGIN LCA_CorwinBGSlaverDiscuss2
 	SAY @756 /* ~Everytime the Fist thinks that the slaver problem is under control, we find out how wrong we are.~ */
@@ -1649,7 +1547,9 @@ IF ~~ THEN BEGIN LCA_CorwinBGSlaverDiscuss2
 	~
 	EXIT	
 END
+//} #endregion
 
+//{ #region Corwin Post Neoma Meeting - DLG-0017
 IF ~
 	Global("LCA_LCCS15Cutscene", "GLOBAL", 6)
 	//play romance song
@@ -1765,17 +1665,9 @@ IF ~~ THEN LCA_CorwinNeoma6
 	~
 	EXIT
 END
+//} #endregion
 
-IF ~~ THEN LCA_MeetSkie3A
-	SAY @910 /* ~Skie, listen to me - put the dagger down, slowly.~ [LCCORJ19]*/ 
-	
-	IF ~~ THEN REPLY @912 /* ~Do as she says, Skie.~ */
-	EXTERN LCSKIE LCA_MeetSkie4
-	
-	IF ~~ THEN REPLY @911 /* ~Put that damned dagger away Skie. It's gotten me into enough trouble already!~  */
-	EXTERN LCSKIE LCA_MeetSkie4
-END
-
+//{ #region Corwin Family Timer - DLG-0018
 IF ~
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	GlobalTimerExpired("LCA_CorwinFamilyTimer", "GLOBAL")
@@ -1792,7 +1684,9 @@ IF ~
 	~
 	EXIT
 END
+//} #endregion
 
+//{ #region Corwin Family Timer Expired (Non-Romance) - DLG-0019
 IF ~
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	GlobalTimerExpired("LCA_CorwinFamilyTimer", "GLOBAL")
@@ -1814,7 +1708,9 @@ IF ~
 	~
 	EXIT
 END
+//} #endregion
 
+//{ #region Corwin Family Timer Expired (Romance) - DLG-0020
 IF ~
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	GlobalTimerExpired("LCA_CorwinFamilyTimer", "GLOBAL")
@@ -1859,7 +1755,6 @@ IF ~~ THEN BEGIN LCA_WantToSpendWithSchael
 	IF ~~ THEN REPLY @793 /* ~I understand.~ */
 	GOTO LCA_DecideWhereSleeping
 END
-
 IF ~~ THEN BEGIN LCA_DecideWhereSleeping
 	SAY @792 /* ~So, what'll it be?~ */
 	
@@ -1933,7 +1828,9 @@ IF ~~ THEN BEGIN LCA_SexTonightX
 	EXIT
 	
 END
+//} #endregion
 
+//{ #region Go Back to BG (Romance) - DLG-0021
 IF ~
 	Global("LCA_BackToBG", "GLOBAL", 2)
 	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
@@ -1946,6 +1843,9 @@ IF ~
 	IF ~~ THEN REPLY @633 /* ~Not yet.~*/
 	GOTO LCA_BackToBG_RTL_NotYet
 END
+//} #endregion
+
+//{ #region Go Back to BG (Non-Romance) - DLG-0022
 
 IF ~
 	Global("LCA_BackToBG", "GLOBAL", 2)
@@ -1960,23 +1860,10 @@ IF ~
 	GOTO LCA_BackToBG_RTL_NotYet
 END
 
-IF ~~ THEN BEGIN LCA_BackToBG_RTL_Leave
-	SAY @635 /* ~Rohma... I'll be home soon...~ */
-	
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_BackToBG", "GLOBAL", 3)
-		SetGlobal("LCA_PartyRemovalProcessing", "GLOBAL", 1)
-	~
-	EXIT
-END
 
-IF ~~ THEN BEGIN LCA_BackToBG_RTL_NotYet
-	SAY @634 /* ~Take your time. Come and see me when you're ready.~ */
-	IF ~~ THEN
-	EXIT
-END
+//} #endregion
 
+//{ #region Corwin End BG2 (Romance) - DLG-0023
 IF ~
 	Global("LCA_BackToBG", "GLOBAL", 1)
 	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
@@ -2045,7 +1932,28 @@ IF ~~ THEN BEGIN LCA_BackToBG4_Romance
 	IF ~~ THEN REPLY @633 /* ~Not yet.~*/
 	GOTO LCA_BackToBG_RTL_NotYet
 END
+//} #endregion
 
+//{ #region Go Back to BG (Common) - DLG-0021/22/23
+IF ~~ THEN BEGIN LCA_BackToBG_RTL_Leave
+	SAY @635 /* ~Rohma... I'll be home soon...~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_BackToBG", "GLOBAL", 3)
+		SetGlobal("LCA_PartyRemovalProcessing", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_BackToBG_RTL_NotYet
+	SAY @634 /* ~Take your time. Come and see me when you're ready.~ */
+	IF ~~ THEN
+	EXIT
+END
+//} #endregion
+
+//{ #region Corwin Post Drizzt - DLG-0024
 IF ~
 	GlobalTimerExpired("LCA_CorwinVouchedDrizzTimer", "GLOBAL")
 	Global("LCA_CorwinVouchedDrizz", "GLOBAL", 1)
@@ -2158,6 +2066,9 @@ IF ~~ THEN BEGIN LCA_CorwinPlayerDrizz4B
 	~
 	EXIT
 END
+//} #endregion
+
+//{ #region Corwin Dorn Post Conflict - DLG-0025
 
 IF ~
 	Global("OHD_corwinconflict","GLOBAL",3)
@@ -2171,7 +2082,25 @@ IF ~
 	~
 	EXIT
 END
+//} #endregion
 
+//{ #region Corwin Dorn Post Sex - DLG-0026
+IF ~
+	Global("LCA_ComplainDornSex", "GLOBAL", 1)
+~ THEN BEGIN LCA_CorwinSexDorn
+	SAY @432 /* ~To think I even considered the possibility of you and I being together. Madness. Be with Dorn, then. I want nothing more to do with you.~ [BD54533] */
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 3)
+		SetGlobal("OHD_sexreactions","GLOBAL",2)
+		SetGlobal("LCA_ComplainDornSex", "GLOBAL", 2)
+		SetPlayerSound(Myself,268282,SELECT_ACTION6)
+	~
+	EXIT
+END
+//} #endregion
+
+//{ #region Corwin Player Soul Talk - DLG-0027
 IF ~
 	Global("LCA_PlayerSoulTalk", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinSoulTalk
@@ -2211,20 +2140,9 @@ IF ~~ THEN BEGIN LCA_CorwinSoulTalk4
 	EXIT
 END 
 
-IF ~
-	Global("LCA_ComplainDornSex", "GLOBAL", 1)
-~ THEN BEGIN LCA_CorwinSexDorn
-	SAY @432 /* ~To think I even considered the possibility of you and I being together. Madness. Be with Dorn, then. I want nothing more to do with you.~ [BD54533] */
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 3)
-		SetGlobal("OHD_sexreactions","GLOBAL",2)
-		SetGlobal("LCA_ComplainDornSex", "GLOBAL", 2)
-		SetPlayerSound(Myself,268282,SELECT_ACTION6)
-	~
-	EXIT
-END
+//} #endregion
 
+//{ #region Corwin Rep Warning - DLG-0028
 IF ~
 	Global("LCA_CorwinRepWarning", "GLOBAL", 2)
 ~ THEN BEGIN LCA_RepComplain
@@ -2241,7 +2159,9 @@ IF ~~ THEN BEGIN LCA_RepComplain2
 	~
 	EXIT
 END
+//} #endregion
 
+//{ #region Corwin Left - Bad Reputation - DLG-0029
 IF ~
 	ReputationLT(Player1,7)
 	Global("LCA_CorwinLeftPoorRep", "GLOBAL", 1)
@@ -2256,6 +2176,9 @@ IF ~
 	~
 	EXIT
 END  
+//} #endregion
+
+//{ #region Dorn Ritual Interject - DLG-0030
 
 IF ~
 	Global("OHD_ritual_interjects","GLOBAL",1)
@@ -2288,7 +2211,9 @@ IF ~~ THEN BEGIN LCA_RitualInterject2
 	~ THEN 
 	EXTERN ~KORGANJ~ 236
 END
+//} #endregion
 
+//{ #region Gorge Interject - DLG-0031
 IF ~
 	Global("OHD_GORGE_NTRJEX","OH5100",1)
 ~ THEN BEGIN LCA_GorgeClimb
@@ -2368,7 +2293,9 @@ IF ~~ THEN BEGIN LCA_GorgeClimb1
 	THEN EXTERN ~KELDORJ~ 265
 	
 END
+//} #endregion
 
+//{ #region Corwin Bit - First - DLG-0032
 IF ~
 	Global("LCA_CorwinBit", "GLOBAL", 2)
 ~
@@ -2477,8 +2404,9 @@ IF ~~ THEN BEGIN LCA_CorwinBitWokeUp3
 	UNSOLVED_JOURNAL @307 /* ~Bodhi appeared in an ambush shortly before I reached her haven, warning me that she was aware of my pursuit and wounding the one person that is dearest to my heart: Schael. Before she vanished and unleashed more of her undead creations upon me, Bodhi warned me that if I continue, I will lose even more than I thought possible. In spite of her threats, I must continue my pursuit of Bodhi and the Rhynn Lanthorn, though I am concerned that Schael's condition will worsen over time.~  */
 	EXIT
 END
+//} #endregion
 
-
+//{ #region Corwin Bit - Second - DLG-0033
 IF ~
 	Global("LCA_CorwinBit", "GLOBAL", 4)
 	GlobalTimerExpired("LCA_CorwinBitTimer", "GLOBAL")
@@ -2491,7 +2419,34 @@ IF ~
 	~
 	GOTO LCA86
 END
+IF ~~ THEN BEGIN LCA86
+	SAY @261 /* ~I can't seem to catch my breath.~ */
+	IF ~
+		!IsValidForPartyDialogue("KORGAN")
+	~ THEN REPLY @262 /* ~Come here, love (you put her arm over your shoulder). Take as much time as you need.~ */
+	GOTO LCA87
+	
+	IF ~
+		OR(4)
+			IsValidForPartyDialogue("KORGAN")
+			IsValidForPartyDialogue("AERIE")
+			IsValidForPartyDialogue("IMOEN2")
+			IsValidForPartyDialogue("JAHEIRA")
+	~ THEN REPLY @262 /* ~Come here, love (you put her arm over your shoulder). Take as much time as you need.~ */
+	DO ~
+		SetGlobalTimer("LCA_CorwinSickPartyTimer", "GLOBAL", TWO_HOURS)
+	~
+	GOTO LCA87
+END
 
+IF ~~ THEN BEGIN LCA87
+	SAY @263 /* ~(She takes several long, deep breaths) That's better... come on, we need to get that.. Lanthorn.~ */
+	IF ~~ THEN REPLY @264 /* ~(She is clearly unwell and her condition is rapidly deteriorating... you resolve to redouble your efforts to find and kill Bodhi. You hope it will be enough to cure Schael of her affliction.)~ */
+	EXIT
+END
+//} #endregion
+
+//{ #region Corwin Bit - Third - DLG-0034
 IF ~
 	Global("LCA_CorwinBit", "GLOBAL", 6)
 	GlobalTimerExpired("LCA_CorwinBitTimer", "GLOBAL")
@@ -2504,7 +2459,47 @@ IF ~
 	~
 	GOTO LCA88
 END
+IF ~~ THEN BEGIN LCA88
+	SAY @278 /* ~Thanks *cough* come on... we'd better find Bodhi and the Lanthorn soon... before I..~ */
+	IF ~
+		GlobalGT("bd_drinks_corwin", "GLOBAL", 0) // had a drink with Corwin back in Baldur's Gate 
+	~ THEN REPLY @279 /* ~It breaks my heart to see you like this, love.~ */
+	GOTO LCA89A
+	
+	IF ~
+		Global("bd_drinks_corwin", "GLOBAL", 0) // didn't have a drink with Corwin back in Baldur's Gate 
+	~ THEN REPLY @279 /* ~It breaks my heart to see you like this, love.~ */
+	GOTO LCA89B
+END
 
+IF ~~ THEN BEGIN LCA89A
+	SAY @282 /* ~Hah, I look that bad, eh? You should see *cough* yourself *cough* *cough*.~ */
+	= @275 /* ~One day, we'll look back on this and laugh *cough* over a couple of drinks at... at... where was it...~ */ 
+	IF ~~ THEN REPLY @274 /* ~The Three Old Kegs, love. You had the Berduskan dark wine, your favorite.~ */
+	GOTO LCA98
+END
+
+IF ~~ THEN BEGIN LCA89B
+	SAY @282 /* ~Hah, I look that bad, eh? You should see *cough* yourself *cough* *cough*.~ */
+	IF ~~ THEN REPLY @283 /* ~Hang in there, Schael. We're going to find Bodhi and cure you of this cursed affliction. Can you walk?~ */
+	GOTO LCA90
+END
+
+IF ~~ THEN BEGIN LCA90
+	SAY @284 /* ~Y-yes... come on, love.. let's go.~ */
+	= @280 /* ~(It's clear to you that Schael does not have much time left. You need to find and kill Bodhi, and soon, or you will lose the woman you love.)~  */
+	IF ~~ THEN 
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA98
+	SAY @273 /* ~Right *cough* *wheeze* *cough*... just before we *cough*.. left for Dragonspear...~ */
+	IF ~~ THEN REPLY @283 /* ~Hang in there, Schael. We're going to find Bodhi and cure you of this cursed affliction. Can you walk?~ */
+	GOTO LCA90
+END
+//} #endregion
+
+//{ #region Corwin Bit - Death - DLG-0035
 IF ~
 	Global("LCA_CorwinBit", "GLOBAL", 8)
 	GlobalTimerExpired("LCA_CorwinBitTimer", "GLOBAL")
@@ -2535,6 +2530,624 @@ IF ~
 	EXIT
 	//GOTO LCA91
 END
+//} #endregion
+
+//{ #region Corwin Firkraag Deal - DLG-0036
+IF ~
+	InParty(Myself)
+	Global("LCA_CorwinFirkraagDeal", "GLOBAL", 1)
+~ THEN BEGIN LCA_CorwinFirkraagDeal
+	SAY @199 /* ~I've gone as far as I can. When you regain your senses, you can find me at the Athkatla council building.~ */
+	
+	IF ~~ THEN
+	DO ~
+		LeaveParty()
+		EscapeAreaMove("AR1002",1033,563, SW)
+		SetGlobal("LCA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinFirkraagDeal", "GLOBAL", 2)
+	~
+	EXIT
+END
+//} #endregion
+
+//{ #region Corwin Phaere Sex - DLG-0037
+IF ~
+	InParty(Myself)
+	Global("LCA_PhaereTalk", "GLOBAL", 1)
+	Global("PhaereInnuendo", "GLOBAL", 2)
+~ THEN BEGIN LCA_PhaereTalk
+	SAY @216 /* ~You were with her for a while...~ */
+	
+	IF ~~ THEN REPLY @217 /* ~Listen, Schael. She didn't leave me any choice. I had to in order to maintain our cover.~ */
+	GOTO LCA69
+	
+	IF ~~ THEN REPLY @218 /*  ~It meant nothing to me. You are the one that I love.~ */
+	GOTO LCA70
+	
+	IF ~~ THEN REPLY @219 /* ~And? I did what I needed to, nothing more.~ */
+	GOTO LCA71
+END
+
+IF ~~ THEN BEGIN LCA69
+	SAY @221 /* ~I understand. Let's just get out of this hole and forget that it ever happened.~ */
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA70
+	SAY @220 /*  ~It means something to me. I understand though why you had to. Let's just get out of this hole and forget that it ever happened.~ */
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA71
+	SAY @222 /*  ~I see. And did you enjoy it?~ */
+	IF ~~ THEN REPLY @223 /* ~To be perfectly honest, I did.~ */
+	GOTO LCA75
+	
+	IF ~
+		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @428 /* ~Well, she's even better than you, so yes.~ */
+	DO ~
+		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", -1)
+	~
+	GOTO LCA75
+	
+	IF ~
+		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @429 /* ~She doesn't compare to you, love. No one does.~ */
+	DO ~
+		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+	~
+	GOTO LCA99
+	
+	IF ~~ THEN REPLY @224 /* ~That's none of your concern.~ */
+	GOTO LCA75
+	
+	IF ~~ THEN REPLY @225 /* ~No, I didn't. I feel nothing toward her but disgust.~ */
+	GOTO LCA69
+END
+
+IF ~~ THEN BEGIN LCA75
+	SAY @226 /* ~You've changed, love, and not in a good way. I can only hope that you'll return to normal once we've restored what the wizard stole from you. ~  */
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
+		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", -1)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA99
+	SAY @430 /* ~(A fleeting smile graces her face.) Let's just get out of this hole and forget that it ever happened.~  */
+	IF ~~ THEN
+	EXIT
+END
+//} #endregion
+
+//{ #region Corwin Phaere No Sex - DLG-0038
+IF ~
+	InParty(Myself)
+	Global("LCA_PhaereTalk", "GLOBAL", 1)
+	Global("PhaereInnuendo", "GLOBAL", 3)
+~ THEN BEGIN LCA_PhaereTalk
+	SAY @227 /* ~What'd she want?~ */
+	
+	IF ~~ THEN REPLY @228 /* ~For me to sleep with her.~ */
+	GOTO LCA72
+	
+	IF ~~ THEN REPLY @229 /*  ~Better not to ask. What matters is that she didn't get it.~*/
+	GOTO LCA74
+
+END
+
+IF ~~ THEN BEGIN LCA72
+	SAY @230 /* ~Really - how'd you manage to get out of that one?~ */
+	IF ~~ THEN REPLY @231 /* ~I told her you'd kill me for cheating on you.~ */
+	GOTO LCA73
+END
+
+IF ~~ THEN BEGIN LCA73
+	SAY @232 /* ~Hah! You lost your soul, but not your sense of humor, it seems. Come love, let's get going.~ */
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
+		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA74
+	SAY @233 /* ~Hm, I didn't see her as the type to be so easily turned away. Let's go love.~ */
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
+		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+	~
+	EXIT
+END
+//} #endregion
+
+//{ #region Corwin Bodhi Deal - DLG-0039
+IF ~
+	InParty(Myself)
+	Global("LCA_CorwinBodhiDeal", "GLOBAL", 1)
+~ THEN BEGIN LCA_CorwinBodhiDeal
+	SAY @199 /* ~I've gone as far as I can. When you regain your senses, you can find me at the Athkatla council building.~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinBodhiDeal", "GLOBAL", 2)
+		LeaveParty()
+		EscapeAreaMove("AR1002",1033,563, SW)
+	~
+	EXIT
+END
+//} #endregion
+
+//{ #region SoD Anxiety - DLG-0040
+
+IF ~
+	Global("LCA_SoDAnxiety", "GLOBAL", 2)
+	//play romance song
+~ THEN BEGIN LCA_SoDAnxiety2
+	SAY @1306 /* ~Are you alright?~ */
+	= @1307 /* ~You look like you've seen a ghost.~ */
+	
+	IF ~~ THEN REPLY @1313 /* ~It's nothing... come on, let's go.~ */
+	DO ~
+		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 3)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @1309 /* ~I... I'm fine... ~*/
+	DO ~
+		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 3)
+	~
+	GOTO LCA_SoDAnxiety3
+END
+
+IF ~~ THEN BEGIN LCA_SoDAnxiety3
+	SAY @1310 /* ~Honey, what's wrong? You can tell me.~ */
+	
+	IF ~
+		Global("LCA_SoDAnxietyAlatos", "GLOBAL", 1)
+	~ THEN REPLY @1311 /* ~When Alatos brought up the tunnels beneath the city... it all came flooding back, Schael.~ */
+	GOTO LCA_SoDAnxiety4
+	
+	IF ~
+		Global("LCA_SoDAnxietyCell", "GLOBAL", 1)
+	~ THEN REPLY @1340 /* ~Seeing my cell again... it all came flooding back, Schael.~ */
+	GOTO LCA_SoDAnxiety4
+	
+	IF ~~ THEN REPLY @1322 /* ~Really, it's nothing. Let's get moving.~*/
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_SoDAnxiety4
+	SAY @1312 /* ~I understand... it was a traumatic experience, for all of us.~ */
+	
+	IF ~
+		Global("bd_player_exiled","global",0)
+	~ THEN REPLY @1314 /* ~I think about it, still. Not as much as I used to, but... it's scary to think how close you were to... how close we were to —~ */
+	GOTO LCA_SoDAnxiety5
+	
+	IF ~
+		Global("bd_player_exiled","global",1)
+	~ THEN REPLY @1341 /* ~I think about it, still. Not just my exile, but how close I was to being —~ */
+	GOTO LCA_SoDAnxiety5
+END
+
+IF ~~ THEN BEGIN LCA_SoDAnxiety5
+	SAY @1316 /* ~I know, love. Come here.~  */
+	= @1317 /*  ~(You share a long and tender embrace.)~ */
+	
+	IF ~~ THEN REPLY @1318 /* ~Thank you, Schael... For believing in me, and for believing in us.~  */
+	GOTO LCA_SoDAnxiety6
+END
+
+IF ~~ THEN BEGIN LCA_SoDAnxiety6
+	SAY @1319 /* ~We have each other... and we have Rohma. The new memories we make together will drown out those dark echoes. You'll see.~*/
+	
+	IF ~
+		Global("bd_player_exiled","global",0)
+	~ THEN REPLY @1321 /* ~I look forward to it.~ */
+	DO ~
+		AddJournalEntry(@1320, INFO)
+		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 2)
+	~
+	EXIT
+	
+	IF ~
+		Global("bd_player_exiled","global",1)
+	~ THEN REPLY @1321 /* ~I look forward to it.~ */
+	DO ~
+		AddJournalEntry(@1342, INFO)
+		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 2)
+	~
+	EXIT
+END
+//} #endregion
+
+//{ #region Met Rohma Interaction BG2 (Non-Romance) - DLG-0041
+
+/* Optional Interaction - Met Rohma */
+IF ~
+	InParty(Myself)
+	Global("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
+	See(Player1)
+	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+~
+THEN BEGIN LCA_OPT1Friend
+	SAY @139 /* ~(You notice Captain Corwin staring into the distance, with sadness in her eyes.)~ */
+	
+	IF ~~ THEN REPLY @141 /* ~Captain? Are you alright?~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 3)
+	~
+	GOTO LCA_OPT1Friend2 //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Friend2
+	SAY @143 /* ~(She snaps to attention) ~ */
+	
+	= @1351 /* <CHARNAME>, yes. Sorry - I was thinking about home.~ */
+	
+	IF ~~ THEN REPLY @145 /* ~About your daughter and father. I understand.~ */
+	GOTO LCA_OPT1Friend3 //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Friend3
+	SAY @146 /* ~Yes... You know, Rohma asks about you.~ */
+	
+	IF ~
+		Global("LCA_GaveDoll", "GLOBAL", 1)
+	~ THEN REPLY @147 /* ~Really? I didn't think I'd made much of an impression on her.~ */
+	GOTO LCA_OPT1Friend4_GaveDoll //OK
+	
+	IF ~
+		!Global("LCA_GaveDoll", "GLOBAL", 1)
+	~ THEN REPLY @147 /* ~Really? I didn't think I'd made much of an impression on her.~ */
+	GOTO LCA_OPT1Friend4_NoDoll //OK
+	
+	IF ~~ THEN REPLY @159 /* ~Of course she does. I am the *ahem* hero of Baldur's Gate, after all.~ */
+	GOTO LCA_OPT1Friend3C //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Friend3C
+	SAY @160 /*  ~(She rolls her eyes)  */
+	= @1350 /* ~A little humility from time to time wouldn't hurt, you know. But yes, you did leave quite the impression on her.~ */
+	
+	IF ~
+		Global("LCA_GaveDoll", "GLOBAL", 1)
+	~ THEN
+	GOTO LCA_OPT1Friend4_GaveDoll //OK
+	
+	IF ~
+		!Global("LCA_GaveDoll", "GLOBAL", 1)
+	~ THEN
+	GOTO LCA_OPT1Friend4_NoDoll //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Friend4_GaveDoll
+	SAY @148 /* ~She loves the teddy you bought for her. It's her favorite toy.~ */
+	
+	IF ~~ THEN REPLY @151 /* ~It was a simple gesture.. I didn't think it would mean that much to her.~ */
+	GOTO LCA_OPT1Friend5 //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Friend4_NoDoll
+	SAY @1362 /* ~The kindness that you showed her is more than her father ever did... thank you, <CHARNAME>.~*/
+	
+	IF ~~ THEN
+	GOTO LCA_OPT1END //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Friend5
+	SAY @157 /* ~That one act of kindness from you is more than her father ever did for her... thank you, <CHARNAME>.~*/
+
+	IF ~~ THEN
+	GOTO LCA_OPT1END //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1END
+	SAY  @158 /* ~Let's get moving.~ */
+	
+	IF ~~ THEN REPLY @1353 /* ~Right.~ */
+	EXIT
+	
+	IF ~
+		!Global("AerieRomanceActive","GLOBAL",2)
+		!Global("ViconiaRomanceActive","GLOBAL",2)
+		!Global("DornRomanceActive","GLOBAL",2)
+		!Global("NeeraRomanceActive","GLOBAL",2)
+		!Global("AnomenRomanceActive","GLOBAL",2)
+		!Global("JaheiraRomanceActive","GLOBAL",2)
+		!Global("HexxatRomanceActive","GLOBAL",2)
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1354 /* ~Capt — Schael, wait. There's something I need to tell you.~ */
+	GOTO LCA_OPT1END_InitRomance //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1END_InitRomance
+	SAY @1356 /* ~Hm?~  */
+	
+	IF ~~ THEN REPLY @1355 /* ~Ah... nevermind. Let's go.~ */
+	GOTO LCA_OPT1END_InitRomance_End //OK
+	
+	IF ~~ THEN REPLY @1358 /* ~I want you to know that I greatly appreciate your friendship. And I don't want to do anything to jeopardize that. But...~  */
+	GOTO LCA_OPT1END_InitRomance2 //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1END_InitRomance2
+	SAY @1361 /* ~What is it? You can tell me.~ */
+	
+	IF ~~ THEN REPLY @94 /* ~Schael... I... I didn't realize how much I needed you near me, until you were gone. Your being here, now, fills a void in my heart that I didn't know was there. I'd like for us to move past friendship, into a more serious relationship. I... I'm in love with you, Schael.~ */
+	DO ~
+		SetGlobal("LCA_CorwinLoveBG2", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~
+	GOTO LCA35
+END
+
+IF ~~ THEN BEGIN LCA_OPT1END_InitRomance_End
+	SAY @1357 /* ~(A look of disappointment flashes across her face.)~*/
+	
+	= @1358 /*~Fine. Let's go.~*/
+	
+	IF ~~ THEN
+	EXIT
+END
+//} #endregion
+
+//{ #region Met Corwin Interaction BG2 (Romance) - DLG-0042
+IF ~
+	InParty(Myself)
+	Global("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
+	See(Player1)
+	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	//play romance song
+~
+THEN BEGIN LCA_OPT1Romance
+	SAY @140 /* ~(You notice Schael staring into the distance, with sadness in her eyes.)~ */
+	
+	IF ~~ THEN REPLY @142 /*  ~My love, are you alright?~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 3)
+	~
+	GOTO LCA_OPT1Romance_2 //OK
+	
+	IF ~~ THEN REPLY @1343 /*   ~What's wrong, dear?~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 3)
+	~
+	GOTO LCA_OPT1Romance_2 //OK
+END
+IF ~~ THEN BEGIN LCA_OPT1Romance_2
+	SAY @144 /* ~(She snaps to attention)*/
+
+	=@1352 /*	~Yes, sorry. I was thinking about home. I just miss them, that's all.~*/
+	
+	IF ~~ THEN REPLY @149 /* ~Rohma and your father. I understand.~ */
+	GOTO  LCA_OPT1Romance_3 //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Romance_3
+	SAY @146 /* ~Yes... You know, Rohma asks about you.~ */
+	
+	IF ~
+		Global("LCA_GaveDoll", "GLOBAL", 1)
+	~ THEN REPLY @147 /* ~Really? I didn't think I'd made much of an impression on her.~ */
+	GOTO LCA_OPT1Romance4_GaveDoll //OK
+	
+	IF ~
+		!Global("LCA_GaveDoll", "GLOBAL", 1)
+	~ THEN REPLY @147 /* ~Really? I didn't think I'd made much of an impression on her.~ */
+	GOTO LCA_OPT1Romance4_NoDoll //OK
+	
+	IF ~~ THEN REPLY @159 /* ~Of course she does. I am the *ahem* hero of Baldur's Gate, after all.~ */
+	GOTO LCA_OPT1Romance_4 //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Romance_4
+	SAY @160 /*  ~(She rolls her eyes)  */
+	= @1350 /* ~A little humility from time to time wouldn't hurt, you know. But yes, you did leave quite the impression on her.~ */
+	
+	IF ~
+		Global("LCA_GaveDoll", "GLOBAL", 1)
+	~ THEN
+	GOTO LCA_OPT1Romance4_GaveDoll //OK
+	
+	IF ~
+		!Global("LCA_GaveDoll", "GLOBAL", 1)
+	~ THEN
+	GOTO LCA_OPT1Romance4_NoDoll //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Romance4_NoDoll
+	SAY @1344 /* ~I think of the kindness that you showed Rohma, and how good you've been with me... ~ */
+
+	= @1345 /* And then I think of Beno, and how stupid I was to be with scum like that... you must think I'm a fool. */
+	
+	IF ~~ THEN REPLY @1346 /* ~Schael, stop it. You're more than any <PRO_MANWOMAN> can hope for in this life, and a great mother to Rohma.~ */
+	GOTO LCA_OPT1Romance4_NoDoll2 //OK
+	
+	IF ~~ THEN REPLY @1347 /* ~Schael, I've never met anyone like you. I hope you understand how special you are. I do, and I know Rohma does.~ */
+	GOTO LCA_OPT1Romance4_NoDoll2 //OK
+	
+	IF ~~ THEN REPLY @1348 /*  ~Nonsense. Let go of the past, love. Focus on our future together — you, me, and Rohma.~  */
+	GOTO LCA_OPT1Romance4_NoDoll2 //OK
+	
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Romance4_NoDoll2
+	SAY @1349 /* ~The care and interest you've shown for her is more than Beno ever did.~ */
+	
+	IF ~~ THEN 
+	GOTO LCA_OPT1Romance4_NoDoll3 //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Romance4_NoDoll3
+	SAY @153 /* ~She deserves better.~ */
+	
+	IF ~~ THEN REPLY @154 /* ~She does. Listen, Schael - I don't know if I'd be a good step parent for Rohma. What I do know is that I'll do my best.~ */
+	GOTO LCA_OPT1RomanceEnd //OK
+	
+	IF ~~ THEN REPLY @155 /* ~She does. Listen, Schael - I'm fully aware of the responsibilities and challenges of being a step parent, and I want you to know that I will welcome them.~ */
+	GOTO LCA_OPT1RomanceEnd  //OK
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Romance4_GaveDoll
+	SAY @148 /* ~She loves the teddy you bought for her. It's her favorite toy.~ */
+	
+	IF ~~ THEN REPLY @150 /* ~Oh yes, I remember! I bought it at the general store, not long after I met her for the first time.~ */
+	GOTO LCA_OPT1Romance4_GaveDoll2 //OK
+	
+	IF ~~ THEN REPLY @151 /* ~It was a simple gesture.. I didn't think it would mean that much to her.~ */
+	GOTO LCA_OPT1Romance4_GaveDoll2 //OK
+	
+END
+
+IF ~~ THEN BEGIN LCA_OPT1Romance4_GaveDoll2
+	SAY @152 /*~That one small act of kindness was more than her father ever did for her.~*/
+	
+	IF ~~ THEN 
+	GOTO LCA_OPT1Romance4_NoDoll3
+END
+
+IF ~~ THEN BEGIN LCA_OPT1RomanceEnd 
+	SAY @156 /*  ~I know you will. You step up to challenges instead of running from them. That's one of the reasons that I love you, <CHARNAME>. ~ */
+	= @158 /* ~Let's get moving.~ */
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 3)
+	~
+	EXIT
+END
+//} #endregion
+
+
+
+IF ~~ THEN BEGIN LCA_SAREV_10
+	SAY @38 /* ~You've got to be kidding me. A deal? With you?~*/
+	
+	IF ~~ THEN EXTERN SAREV25A 14
+END
+
+IF ~~ THEN BEGIN LCA_SkieTakesRing
+	SAY @1136 /* ~(Skie takes the ring from Schael.)~ */
+	=@1137 /* ~Skie, whatever you do, don't put it on. You'll be teleported. You MUST place it on Rohma's finger.~*/
+	IF ~~ THEN EXTERN LCSKIE LCA_SkieTakesRing
+END
+IF ~~ THEN BEGIN LCA_Thanks3
+	SAY @1138 /* ~We won't tell. Just be careful.~*/
+	
+	IF ~~ THEN EXTERN LCSKIE LCA_SetUp
+END
+IF ~~ THEN BEGIN LCA_GiveSkieRing
+	SAY @1135 /*~One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~*/
+	
+	IF ~~ THEN EXTERN LCSKIE LCA_GiveRing
+END
+
+IF ~~ THEN BEGIN LCA_GiveSkieRing2
+	SAY @1139 /*~~Skie, do you think you can get to Rohma without being seen?~*/
+	
+	IF ~~ THEN EXTERN LCSKIE LCA_GiveSkieRing3
+END
+
+IF ~~ THEN BEGIN LCA_GiveSkieRing4
+	SAY @1141 /*~You wouldn't need to... One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~*/
+	
+	IF ~~ THEN EXTERN LCSKIE LCA_GiveRing
+END
+
+IF ~~ THEN BEGIN LCA_SkieUCChainEnd
+	SAY @1132 /* ~The man with the scar is Beno.~*/
+	
+	IF ~~ THEN REPLY @1133 /*~Skie, do you think you can sneak Rohma out of there?~ */
+	EXTERN LCSKIE LCA_CanGetRohma
+	
+	IF ~~ THEN REPLY @1134 /* ~How did you get in there without them detecting you?~ */
+	EXTERN LCSKIE LCA_NonDetection
+	
+	
+END
+
+IF ~~ THEN BEGIN LCA_DontNeedRing
+	SAY @1130 /* ~That won't be necessary. We only need the one.~ */
+	
+	IF ~~ THEN REPLY @1131 /* ~Schael is right. Once Rohma is safe, we'll put an end to Illasera, Beno, and anyone else that had a part in the kidnapping.~ */
+	EXTERN LCNEDERL LCA_DontNeedRing
+
+END
+
+IF ~~ THEN BEGIN LCA_MeetIllasera
+	SAY @1123 /* ~Rohma!~ */
+	
+	= @1124 /* ~What have you done with my daughter!?~ */
+	
+	IF ~~ THEN 
+	EXTERN LCBENO LCA_MeetIllasera
+END
+
+IF ~~ THEN BEGIN LCA_MeetIllasera4
+	SAY @1125 /* ~Beno, you fool! I'm going to - ~ */
+	
+	IF ~~ THEN EXTERN LCBENO LCA_MeetIllasera4
+END
+
+
+IF ~~ THEN BEGIN LCA_CorwinWillHelpTianna
+	SAY @862 /* ~Tianna... (sigh)~ */
+	=@863 /* ~Fine - we'll help you. <CHARNAME> and I will talk to Jasper about forgiving your debt.~ */
+	
+	IF ~~ THEN EXTERN LCTIANNA LCA_CorwinHelpTianna
+END
+
+IF ~~ THEN BEGIN LCA_CorwinLobarTiannaEnd
+	SAY @860 /* ~No, that won't be necessary.~ */
+
+	IF ~~ THEN EXIT
+	
+	IF ~
+		InMyArea(Player1)
+	~ THEN
+	DO ~
+		SetGlobal("LCA_AskCorwinAboutTianna", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+
+
+IF ~~ THEN BEGIN LCA_NotYetTianna
+	SAY @864 /* ~We're working on it.~ */
+	
+	IF ~~ THEN EXTERN LCTIANNA LCA_HelpEnd
+END
+
+IF ~~ THEN LCA_MeetSkie3A
+	SAY @910 /* ~Skie, listen to me - put the dagger down, slowly.~ [LCCORJ19]*/ 
+	
+	IF ~~ THEN REPLY @912 /* ~Do as she says, Skie.~ */
+	EXTERN LCSKIE LCA_MeetSkie4
+	
+	IF ~~ THEN REPLY @911 /* ~Put that damned dagger away Skie. It's gotten me into enough trouble already!~  */
+	EXTERN LCSKIE LCA_MeetSkie4
+END
+
 
 IF ~
 	Global("LCA_CorwinSexAfterBodhi", "GLOBAL", 1)
@@ -3274,69 +3887,9 @@ IF ~
 	GOTO LCA60
 END
 
-IF ~
-	InParty(Myself)
-	Global("LCA_CorwinFirkraagDeal", "GLOBAL", 1)
-~ THEN BEGIN LCA_CorwinFirkraagDeal
-	SAY @199 /* ~I've gone as far as I can. When you regain your senses, you can find me at the Athkatla council building.~ */
-	
-	IF ~~ THEN
-	DO ~
-		LeaveParty()
-		EscapeAreaMove("AR1002",1033,563, SW)
-		SetGlobal("LCA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
-		SetGlobal("LCA_CorwinFirkraagDeal", "GLOBAL", 2)
-	~
-	EXIT
-END
 
-IF ~
-	InParty(Myself)
-	Global("LCA_PhaereTalk", "GLOBAL", 1)
-	Global("PhaereInnuendo", "GLOBAL", 2)
-~ THEN BEGIN LCA_PhaereTalk
-	SAY @216 /* ~You were with her for a while...~ */
-	
-	IF ~~ THEN REPLY @217 /* ~Listen, Schael. She didn't leave me any choice. I had to in order to maintain our cover.~ */
-	GOTO LCA69
-	
-	IF ~~ THEN REPLY @218 /*  ~It meant nothing to me. You are the one that I love.~ */
-	GOTO LCA70
-	
-	IF ~~ THEN REPLY @219 /* ~And? I did what I needed to, nothing more.~ */
-	GOTO LCA71
-END
 
-IF ~
-	InParty(Myself)
-	Global("LCA_PhaereTalk", "GLOBAL", 1)
-	Global("PhaereInnuendo", "GLOBAL", 3)
-~ THEN BEGIN LCA_PhaereTalk
-	SAY @227 /* ~What'd she want?~ */
-	
-	IF ~~ THEN REPLY @228 /* ~For me to sleep with her.~ */
-	GOTO LCA72
-	
-	IF ~~ THEN REPLY @229 /*  ~Better not to ask. What matters is that she didn't get it.~*/
-	GOTO LCA74
 
-END
-
-IF ~
-	InParty(Myself)
-	Global("LCA_CorwinBodhiDeal", "GLOBAL", 1)
-~ THEN BEGIN LCA_CorwinBodhiDeal
-	SAY @199 /* ~I've gone as far as I can. When you regain your senses, you can find me at the Athkatla council building.~ */
-	
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
-		SetGlobal("LCA_CorwinBodhiDeal", "GLOBAL", 2)
-		LeaveParty()
-		EscapeAreaMove("AR1002",1033,563, SW)
-	~
-	EXIT
-END
 
 IF ~
 	InParty(Myself)
@@ -3858,257 +4411,6 @@ IF ~~ THEN BEGIN LCA39
 	EXIT
 END
 
-/* Optional Interaction - Met Rohma */
-IF ~
-	InParty(Myself)
-	Global("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
-	See(Player1)
-	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-~
-THEN BEGIN LCA_OPT1Friend
-	SAY @139 /* ~(You notice Captain Corwin staring into the distance, with sadness in her eyes.)~ */
-	
-	IF ~~ THEN REPLY @141 /* ~Captain? Are you alright?~ */
-	DO ~
-		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 3)
-	~
-	GOTO LCA_OPT1Friend2 //OK
-END
-
-IF ~~ THEN BEGIN LCA_OPT1Friend2
-	SAY @143 /* ~(She snaps to attention) ~ */
-	
-	= @1351 /* <CHARNAME>, yes. Sorry - I was thinking about home.~ */
-	
-	IF ~~ THEN REPLY @145 /* ~About your daughter and father. I understand.~ */
-	GOTO LCA_OPT1Friend3 //OK
-END
-
-IF ~~ THEN BEGIN LCA_OPT1Friend3
-	SAY @146 /* ~Yes... You know, Rohma asks about you.~ */
-	
-	IF ~
-		Global("LCA_GaveDoll", "GLOBAL", 1)
-	~ THEN REPLY @147 /* ~Really? I didn't think I'd made much of an impression on her.~ */
-	GOTO LCA_OPT1Friend4_GaveDoll //OK
-	
-	IF ~
-		!Global("LCA_GaveDoll", "GLOBAL", 1)
-	~ THEN REPLY @147 /* ~Really? I didn't think I'd made much of an impression on her.~ */
-	GOTO LCA_OPT1Friend4_NoDoll //OK
-	
-	IF ~~ THEN REPLY @159 /* ~Of course she does. I am the *ahem* hero of Baldur's Gate, after all.~ */
-	GOTO LCA_OPT1Friend3C //OK
-END
-
-IF ~~ THEN BEGIN LCA_OPT1Friend3C
-	SAY @160 /*  ~(She rolls her eyes)  */
-	= @1350 /* ~A little humility from time to time wouldn't hurt, you know. But yes, you did leave quite the impression on her.~ */
-	
-	IF ~
-		Global("LCA_GaveDoll", "GLOBAL", 1)
-	~ THEN
-	GOTO LCA_OPT1Friend4_GaveDoll //OK
-	
-	IF ~
-		!Global("LCA_GaveDoll", "GLOBAL", 1)
-	~ THEN
-	GOTO LCA_OPT1Friend4_NoDoll //OK
-END
-
-IF ~~ THEN BEGIN LCA_OPT1Friend4_GaveDoll
-	SAY @148 /* ~She loves the teddy you bought for her. It's her favorite toy.~ */
-	
-	IF ~~ THEN REPLY @151 /* ~It was a simple gesture.. I didn't think it would mean that much to her.~ */
-	GOTO LCA_OPT1Friend5 //OK
-END
-
-IF ~~ THEN BEGIN LCA_OPT1Friend4_NoDoll
-	SAY @1362 /* ~The kindness that you showed her is more than her father ever did... thank you, <CHARNAME>.~*/
-	
-	IF ~~ THEN
-	GOTO LCA_OPT1END //OK
-END
-
-IF ~~ THEN BEGIN LCA_OPT1Friend5
-	SAY @157 /* ~That one act of kindness from you is more than her father ever did for her... thank you, <CHARNAME>.~*/
-
-	IF ~~ THEN
-	GOTO LCA_OPT1END //OK
-END
-
-IF ~~ THEN BEGIN LCA_OPT1END
-	SAY  @158 /* ~Let's get moving.~ */
-	
-	IF ~~ THEN REPLY @1353 /* ~Right.~ */
-	EXIT
-	
-	IF ~
-		!Global("AerieRomanceActive","GLOBAL",2)
-		!Global("ViconiaRomanceActive","GLOBAL",2)
-		!Global("DornRomanceActive","GLOBAL",2)
-		!Global("NeeraRomanceActive","GLOBAL",2)
-		!Global("AnomenRomanceActive","GLOBAL",2)
-		!Global("JaheiraRomanceActive","GLOBAL",2)
-		!Global("HexxatRomanceActive","GLOBAL",2)
-		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @1354 /* ~Capt — Schael, wait. There's something I need to tell you.~ */
-	GOTO LCA_OPT1END_InitRomance //OK
-END
-
-IF ~~ THEN BEGIN LCA_OPT1END_InitRomance
-	SAY @1356 /* ~Hm?~  */
-	
-	IF ~~ THEN REPLY @1355 /* ~Ah... nevermind. Let's go.~ */
-	GOTO LCA_OPT1END_InitRomance_End //OK
-	
-	IF ~~ THEN REPLY @1358 /* ~I want you to know that I greatly appreciate your friendship. And I don't want to do anything to jeopardize that. But...~  */
-	GOTO LCA_OPT1END_InitRomance2 //OK
-END
-
-IF ~~ THEN BEGIN LCA_OPT1END_InitRomance2
-	SAY @1361 /* ~What is it? You can tell me.~ */
-	
-	IF ~~ THEN REPLY @94 /* ~Schael... I... I didn't realize how much I needed you near me, until you were gone. Your being here, now, fills a void in my heart that I didn't know was there. I'd like for us to move past friendship, into a more serious relationship. I... I'm in love with you, Schael.~ */
-	DO ~
-		SetGlobal("LCA_CorwinLoveBG2", "GLOBAL", 1)
-		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~
-	GOTO LCA35
-END
-
-IF ~~ THEN BEGIN LCA_OPT1END_InitRomance_End
-	SAY @1357 /* ~(A look of disappointment flashes across her face.)~*/
-	
-	= @1358 /*~Fine. Let's go.~*/
-	
-	IF ~~ THEN
-	EXIT
-END
-
-IF ~
-	InParty(Myself)
-	Global("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
-	See(Player1)
-	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	//play romance song
-~
-THEN BEGIN LCA_OPT1Romance
-	SAY @140 /* ~(You notice Schael staring into the distance, with sadness in her eyes.)~ */
-	
-	IF ~~ THEN REPLY @142 /*  ~My love, are you alright?~ */
-	DO ~
-		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 3)
-	~
-	GOTO LCA_OPT1Romance_2 //OK
-	
-	IF ~~ THEN REPLY @1343 /*   ~What's wrong, dear?~ */
-	DO ~
-		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 3)
-	~
-	GOTO LCA_OPT1Romance_2 //OK
-END
-IF ~~ THEN BEGIN LCA_OPT1Romance_2
-	SAY @144 /* ~(She snaps to attention)*/
-
-	=@1352 /*	~Yes, sorry. I was thinking about home. I just miss them, that's all.~*/
-	
-	IF ~~ THEN REPLY @149 /* ~Rohma and your father. I understand.~ */
-	GOTO  LCA_OPT1Romance_3 //OK
-END
-
-IF ~~ THEN BEGIN LCA_OPT1Romance_3
-	SAY @146 /* ~Yes... You know, Rohma asks about you.~ */
-	
-	IF ~
-		Global("LCA_GaveDoll", "GLOBAL", 1)
-	~ THEN REPLY @147 /* ~Really? I didn't think I'd made much of an impression on her.~ */
-	GOTO LCA_OPT1Romance4_GaveDoll //OK
-	
-	IF ~
-		!Global("LCA_GaveDoll", "GLOBAL", 1)
-	~ THEN REPLY @147 /* ~Really? I didn't think I'd made much of an impression on her.~ */
-	GOTO LCA_OPT1Romance4_NoDoll //OK
-	
-	IF ~~ THEN REPLY @159 /* ~Of course she does. I am the *ahem* hero of Baldur's Gate, after all.~ */
-	GOTO LCA_OPT1Romance_4 //OK
-END
-
-IF ~~ THEN BEGIN LCA_OPT1Romance_4
-	SAY @160 /*  ~(She rolls her eyes)  */
-	= @1350 /* ~A little humility from time to time wouldn't hurt, you know. But yes, you did leave quite the impression on her.~ */
-	
-	IF ~
-		Global("LCA_GaveDoll", "GLOBAL", 1)
-	~ THEN
-	GOTO LCA_OPT1Romance4_GaveDoll //OK
-	
-	IF ~
-		!Global("LCA_GaveDoll", "GLOBAL", 1)
-	~ THEN
-	GOTO LCA_OPT1Romance4_NoDoll //OK
-END
-
-IF ~~ THEN BEGIN LCA_OPT1Romance4_NoDoll
-	SAY @1344 /* ~I think of the kindness that you showed Rohma, and how good you've been with me... ~ */
-
-	= @1345 /* And then I think of Beno, and how stupid I was to be with scum like that... you must think I'm a fool. */
-	
-	IF ~~ THEN REPLY @1346 /* ~Schael, stop it. You're more than any <PRO_MANWOMAN> can hope for in this life, and a great mother to Rohma.~ */
-	GOTO LCA_OPT1Romance4_NoDoll2 //OK
-	
-	IF ~~ THEN REPLY @1347 /* ~Schael, I've never met anyone like you. I hope you understand how special you are. I do, and I know Rohma does.~ */
-	GOTO LCA_OPT1Romance4_NoDoll2 //OK
-	
-	IF ~~ THEN REPLY @1348 /*  ~Nonsense. Let go of the past, love. Focus on our future together — you, me, and Rohma.~  */
-	GOTO LCA_OPT1Romance4_NoDoll2 //OK
-	
-END
-
-IF ~~ THEN BEGIN LCA_OPT1Romance4_NoDoll2
-	SAY @1349 /* ~The care and interest you've shown for her is more than Beno ever did.~ */
-	
-	IF ~~ THEN 
-	GOTO LCA_OPT1Romance4_NoDoll3 //OK
-END
-
-IF ~~ THEN BEGIN LCA_OPT1Romance4_NoDoll3
-	SAY @153 /* ~She deserves better.~ */
-	
-	IF ~~ THEN REPLY @154 /* ~She does. Listen, Schael - I don't know if I'd be a good step parent for Rohma. What I do know is that I'll do my best.~ */
-	GOTO LCA_OPT1RomanceEnd //OK
-	
-	IF ~~ THEN REPLY @155 /* ~She does. Listen, Schael - I'm fully aware of the responsibilities and challenges of being a step parent, and I want you to know that I will welcome them.~ */
-	GOTO LCA_OPT1RomanceEnd  //OK
-END
-
-IF ~~ THEN BEGIN LCA_OPT1Romance4_GaveDoll
-	SAY @148 /* ~She loves the teddy you bought for her. It's her favorite toy.~ */
-	
-	IF ~~ THEN REPLY @150 /* ~Oh yes, I remember! I bought it at the general store, not long after I met her for the first time.~ */
-	GOTO LCA_OPT1Romance4_GaveDoll2 //OK
-	
-	IF ~~ THEN REPLY @151 /* ~It was a simple gesture.. I didn't think it would mean that much to her.~ */
-	GOTO LCA_OPT1Romance4_GaveDoll2 //OK
-	
-END
-
-IF ~~ THEN BEGIN LCA_OPT1Romance4_GaveDoll2
-	SAY @152 /*~That one small act of kindness was more than her father ever did for her.~*/
-	
-	IF ~~ THEN 
-	GOTO LCA_OPT1Romance4_NoDoll3
-END
-
-IF ~~ THEN BEGIN LCA_OPT1RomanceEnd 
-	SAY @156 /*  ~I know you will. You step up to challenges instead of running from them. That's one of the reasons that I love you, <CHARNAME>. ~ */
-	= @158 /* ~Let's get moving.~ */
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 3)
-	~
-	EXIT
-END
 
 IF ~~ THEN BEGIN LCA48
 	SAY @189 /* ~What's on your mind?~ */
@@ -4884,89 +5186,13 @@ IF ~~ THEN BEGIN LCA68
 	EXTERN ~UDPHAE01~ 138
 END
 
-IF ~~ THEN BEGIN LCA69
-	SAY @221 /* ~I understand. Let's just get out of this hole and forget that it ever happened.~ */
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
-	~
-	EXIT
-END
 
-IF ~~ THEN BEGIN LCA70
-	SAY @220 /*  ~It means something to me. I understand though why you had to. Let's just get out of this hole and forget that it ever happened.~ */
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
-	~
-	EXIT
-END
 
-IF ~~ THEN BEGIN LCA71
-	SAY @222 /*  ~I see. And did you enjoy it?~ */
-	IF ~~ THEN REPLY @223 /* ~To be perfectly honest, I did.~ */
-	GOTO LCA75
-	
-	IF ~
-		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @428 /* ~Well, she's even better than you, so yes.~ */
-	DO ~
-		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", -1)
-	~
-	GOTO LCA75
-	
-	IF ~
-		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @429 /* ~She doesn't compare to you, love. No one does.~ */
-	DO ~
-		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-	~
-	GOTO LCA99
-	
-	IF ~~ THEN REPLY @224 /* ~That's none of your concern.~ */
-	GOTO LCA75
-	
-	IF ~~ THEN REPLY @225 /* ~No, I didn't. I feel nothing toward her but disgust.~ */
-	GOTO LCA69
-END
 
-IF ~~ THEN BEGIN LCA72
-	SAY @230 /* ~Really - how'd you manage to get out of that one?~ */
-	IF ~~ THEN REPLY @231 /* ~I told her you'd kill me for cheating on you.~ */
-	GOTO LCA73
-END
 
-IF ~~ THEN BEGIN LCA73
-	SAY @232 /* ~Hah! You lost your soul, but not your sense of humor, it seems. Come love, let's get going.~ */
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
-		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-	~
-	EXIT
-END
 
-IF ~~ THEN BEGIN LCA74
-	SAY @233 /* ~Hm, I didn't see her as the type to be so easily turned away. Let's go love.~ */
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
-		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-	~
-	EXIT
-END
 
-IF ~~ THEN BEGIN LCA75
-	SAY @226 /* ~You've changed, love, and not in a good way. I can only hope that you'll return to normal once we've restored what the wizard stole from you. ~  */
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
-		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", -1)
-	~
-	EXIT
-END
+
 
 IF ~~ THEN BEGIN LCA77
 	SAY @238 /* ~You know, I heard you cheering for me, love. It meant a lot.~ */
@@ -5052,64 +5278,9 @@ IF ~~ THEN BEGIN LCA83
 END
 
 
-IF ~~ THEN BEGIN LCA86
-	SAY @261 /* ~I can't seem to catch my breath.~ */
-	IF ~
-		!IsValidForPartyDialogue("KORGAN")
-	~ THEN REPLY @262 /* ~Come here, love (you put her arm over your shoulder). Take as much time as you need.~ */
-	GOTO LCA87
-	
-	IF ~
-		OR(4)
-			IsValidForPartyDialogue("KORGAN")
-			IsValidForPartyDialogue("AERIE")
-			IsValidForPartyDialogue("IMOEN2")
-			IsValidForPartyDialogue("JAHEIRA")
-	~ THEN REPLY @262 /* ~Come here, love (you put her arm over your shoulder). Take as much time as you need.~ */
-	DO ~
-		SetGlobalTimer("LCA_CorwinSickPartyTimer", "GLOBAL", TWO_HOURS)
-	~
-	GOTO LCA87
-END
 
-IF ~~ THEN BEGIN LCA87
-	SAY @263 /* ~(She takes several long, deep breaths) That's better... come on, we need to get that.. Lanthorn.~ */
-	IF ~~ THEN REPLY @264 /* ~(She is clearly unwell and her condition is rapidly deteriorating... you resolve to redouble your efforts to find and kill Bodhi. You hope it will be enough to cure Schael of her affliction.)~ */
-	EXIT
-END
 
-IF ~~ THEN BEGIN LCA88
-	SAY @278 /* ~Thanks *cough* come on... we'd better find Bodhi and the Lanthorn soon... before I..~ */
-	IF ~
-		GlobalGT("bd_drinks_corwin", "GLOBAL", 0) // had a drink with Corwin back in Baldur's Gate 
-	~ THEN REPLY @279 /* ~It breaks my heart to see you like this, love.~ */
-	GOTO LCA89A
-	
-	IF ~
-		Global("bd_drinks_corwin", "GLOBAL", 0) // didn't have a drink with Corwin back in Baldur's Gate 
-	~ THEN REPLY @279 /* ~It breaks my heart to see you like this, love.~ */
-	GOTO LCA89B
-END
 
-IF ~~ THEN BEGIN LCA89A
-	SAY @282 /* ~Hah, I look that bad, eh? You should see *cough* yourself *cough* *cough*.~ */
-	= @275 /* ~One day, we'll look back on this and laugh *cough* over a couple of drinks at... at... where was it...~ */ 
-	IF ~~ THEN REPLY @274 /* ~The Three Old Kegs, love. You had the Berduskan dark wine, your favorite.~ */
-	GOTO LCA98
-END
-
-IF ~~ THEN BEGIN LCA89B
-	SAY @282 /* ~Hah, I look that bad, eh? You should see *cough* yourself *cough* *cough*.~ */
-	IF ~~ THEN REPLY @283 /* ~Hang in there, Schael. We're going to find Bodhi and cure you of this cursed affliction. Can you walk?~ */
-	GOTO LCA90
-END
-
-IF ~~ THEN BEGIN LCA90
-	SAY @284 /* ~Y-yes... come on, love.. let's go.~ */
-	= @280 /* ~(It's clear to you that Schael does not have much time left. You need to find and kill Bodhi, and soon, or you will lose the woman you love.)~  */
-	IF ~~ THEN 
-	EXIT
-END
 
 IF ~~ THEN BEGIN LCA97
 	SAY @295 /* ~No! That will n-never happen! You will die ... f-for threatening ...my family...~ */
@@ -5118,23 +5289,11 @@ IF ~~ THEN BEGIN LCA97
 
 END
 
-IF ~~ THEN BEGIN LCA98
-	SAY @273 /* ~Right *cough* *wheeze* *cough*... just before we *cough*.. left for Dragonspear...~ */
-	IF ~~ THEN REPLY @283 /* ~Hang in there, Schael. We're going to find Bodhi and cure you of this cursed affliction. Can you walk?~ */
-	GOTO LCA90
-END
 
-IF ~~ THEN BEGIN LCA99
-	SAY @430 /* ~(A fleeting smile graces her face.) Let's just get out of this hole and forget that it ever happened.~  */
-	IF ~~ THEN
-	EXIT
-END
 
-IF ~~ THEN BEGIN LCA100
-	SAY @431 /* ~(She becomes visibly upset.) You bastard! Gods damnit... (She calms down.)~ */
-	IF ~~ THEN
-	GOTO LCA75
-END
+
+
+
 
 IF ~~ THEN BEGIN LCA_MeetMelkor5B6
 	SAY @913 /* ~<CHARNAME>... the caves beneath Dragonspear, remember? We encountered a rift into the Fugue plane. Hephernaan's acolytes were performing some sort of ritual there.~*/
@@ -6211,88 +6370,7 @@ IF ~~ THEN BEGIN LCA_ReadyToGetRohma
 	EXTERN LCNEDERL LCA_ReadyToGetRohmaEnd
 END
 
-IF ~
-	Global("LCA_SoDAnxiety", "GLOBAL", 2)
-	//play romance song
-~ THEN BEGIN LCA_SoDAnxiety2
-	SAY @1306 /* ~Are you alright?~ */
-	= @1307 /* ~You look like you've seen a ghost.~ */
-	
-	IF ~~ THEN REPLY @1313 /* ~It's nothing... come on, let's go.~ */
-	DO ~
-		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 3)
-	~
-	EXIT
-	
-	IF ~~ THEN REPLY @1309 /* ~I... I'm fine... ~*/
-	DO ~
-		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 3)
-	~
-	GOTO LCA_SoDAnxiety3
-END
 
-IF ~~ THEN BEGIN LCA_SoDAnxiety3
-	SAY @1310 /* ~Honey, what's wrong? You can tell me.~ */
-	
-	IF ~
-		Global("LCA_SoDAnxietyAlatos", "GLOBAL", 1)
-	~ THEN REPLY @1311 /* ~When Alatos brought up the tunnels beneath the city... it all came flooding back, Schael.~ */
-	GOTO LCA_SoDAnxiety4
-	
-	IF ~
-		Global("LCA_SoDAnxietyCell", "GLOBAL", 1)
-	~ THEN REPLY @1340 /* ~Seeing my cell again... it all came flooding back, Schael.~ */
-	GOTO LCA_SoDAnxiety4
-	
-	IF ~~ THEN REPLY @1322 /* ~Really, it's nothing. Let's get moving.~*/
-	EXIT
-END
-
-IF ~~ THEN BEGIN LCA_SoDAnxiety4
-	SAY @1312 /* ~I understand... it was a traumatic experience, for all of us.~ */
-	
-	IF ~
-		Global("bd_player_exiled","global",0)
-	~ THEN REPLY @1314 /* ~I think about it, still. Not as much as I used to, but... it's scary to think how close you were to... how close we were to —~ */
-	GOTO LCA_SoDAnxiety5
-	
-	IF ~
-		Global("bd_player_exiled","global",1)
-	~ THEN REPLY @1341 /* ~I think about it, still. Not just my exile, but how close I was to being —~ */
-	GOTO LCA_SoDAnxiety5
-END
-
-IF ~~ THEN BEGIN LCA_SoDAnxiety5
-	SAY @1316 /* ~I know, love. Come here.~  */
-	= @1317 /*  ~(You share a long and tender embrace.)~ */
-	
-	IF ~~ THEN REPLY @1318 /* ~Thank you, Schael... For believing in me, and for believing in us.~  */
-	GOTO LCA_SoDAnxiety6
-END
-
-IF ~~ THEN BEGIN LCA_SoDAnxiety6
-	SAY @1319 /* ~We have each other... and we have Rohma. The new memories we make together will drown out those dark echoes. You'll see.~*/
-	
-	IF ~
-		Global("bd_player_exiled","global",0)
-	~ THEN REPLY @1321 /* ~I look forward to it.~ */
-	DO ~
-		AddJournalEntry(@1320, INFO)
-		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 2)
-	~
-	EXIT
-	
-	IF ~
-		Global("bd_player_exiled","global",1)
-	~ THEN REPLY @1321 /* ~I look forward to it.~ */
-	DO ~
-		AddJournalEntry(@1342, INFO)
-		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 2)
-	~
-	EXIT
-END
 
 IF ~~ THEN BEGIN LCA_CorwinDelciaA_End
 	SAY @505 /* ~Now, listen to me. I didn't travel all this way and risk my life only to be spoken down to by a pretentious, insufferable bitch. We are not your servants, and you are no better than the dirt on my heel. Get up.~  */
