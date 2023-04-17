@@ -2694,7 +2694,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region SoD Anxiety - DLG-0040
+//{ #region SoD Anxiety - DLG-0040 - Tested 2023-04-17
 
 IF ~
 	Global("LCA_SoDAnxiety", "GLOBAL", 2)
@@ -3037,7 +3037,73 @@ IF ~~ THEN BEGIN LCA_OPT1RomanceEnd
 END
 //} #endregion
 
+//{ #region Neb Dead - DLG-0043
+IF ~
+	InParty(Myself)
+	Global("LCA_NebDead", "GLOBAL", 1)
+~ THEN BEGIN LCA_NebDead
+	SAY @202 /* ~He's dead. (Her hands tremble in anger) What kind of monster could murder one child, let alone dozens?~ */
+	=@210 /*~(Her hands tremble with anger.)~*/
+	=@211 /*~What kind of monster could murder one child, let alone dozens?~*/
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ 
+	THEN REPLY @203 /* ~The worst kind. (You hold her hands in yours) Are you alright, love?~ */
+	GOTO LCA60
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ 
+	THEN REPLY @204 /* ~The worst kind. Are you alright, Schael?~ */
+	GOTO LCA60
+END
 
+IF ~~ THEN BEGIN LCA60
+	SAY @205 /* ~I will be. What he said about Rohma...~ */
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ 
+	THEN REPLY @206 /* ~I wouldn't worry about it. He was just trying to rattle you.~ */
+	GOTO LCA61
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ 
+	THEN REPLY @207 /* ~Whatever his intentions, it doesn't matter now. He's dead, and the world is a better place for it.~*/
+	GOTO LCA61
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ 
+	THEN REPLY @206 /* ~I wouldn't worry about it. He was just trying to rattle you.~ */
+	GOTO LCA62
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ 
+	THEN REPLY @207 /* ~Whatever his intentions, it doesn't matter now. He's dead, and the world is a better place for it.~*/
+	GOTO LCA62
+END
+
+IF ~~ THEN BEGIN LCA61
+	SAY @208 /* ~You're right, my love. (She calms down) Let's get going.~ */
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_NebDead", "GLOBAL", 2)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA62
+	SAY @209 /* ~You're right. (She calms down) Let's get going.~  */
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_NebDead", "GLOBAL", 2)
+	~
+	EXIT
+END
+//} #endregion
 
 IF ~~ THEN BEGIN LCA_SAREV_10
 	SAY @38 /* ~You've got to be kidding me. A deal? With you?~*/
@@ -3868,24 +3934,7 @@ IF ~
 	EXIT
 END
 
-IF ~
-	InParty(Myself)
-	Global("LCA_NebDead", "GLOBAL", 1)
-~ THEN BEGIN LCA_NebDead
-	SAY @202 /* ~He's dead. (Her hands tremble in anger) What kind of monster could murder one child, let alone dozens?~ */
-	
-	IF ~
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ 
-	THEN REPLY @203 /* ~The worst kind. (You hold her hands in yours) Are you alright, love?~ */
-	GOTO LCA60
-	
-	IF ~
-		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ 
-	THEN REPLY @204 /* ~The worst kind. Are you alright, Schael?~ */
-	GOTO LCA60
-END
+
 
 
 
@@ -5127,51 +5176,7 @@ IF ~~ THEN BEGIN LCA_NEB_2
 	EXTERN ~NEB~ LCA0
 END
 
-IF ~~ THEN BEGIN LCA60
-	SAY @205 /* ~I will be. What he said about Rohma...~ */
-	
-	IF ~
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ 
-	THEN REPLY @206 /* ~I wouldn't worry about it. He was just trying to rattle you.~ */
-	GOTO LCA61
-	
-	IF ~
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ 
-	THEN REPLY @207 /* ~Whatever his intentions, it doesn't matter now. He's dead, and the world is a better place for it.~*/
-	GOTO LCA61
-	
-	IF ~
-		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ 
-	THEN REPLY @206 /* ~I wouldn't worry about it. He was just trying to rattle you.~ */
-	GOTO LCA62
-	
-	IF ~
-		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~ 
-	THEN REPLY @207 /* ~Whatever his intentions, it doesn't matter now. He's dead, and the world is a better place for it.~*/
-	GOTO LCA62
-END
 
-IF ~~ THEN BEGIN LCA61
-	SAY @208 /* ~You're right, my love. (She calms down) Let's get going.~ */
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_NebDead", "GLOBAL", 2)
-	~
-	EXIT
-END
-
-IF ~~ THEN BEGIN LCA62
-	SAY @209 /* ~You're right. (She calms down) Let's get going.~  */
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_NebDead", "GLOBAL", 2)
-	~
-	EXIT
-END
 
 
 IF ~~ THEN BEGIN LCA67
