@@ -1,9 +1,0 @@
-IF 
-	Global("LCA_ReturnToBG", "GLOBAL", 1)
-	!Global("LCA_0117_DeleteNPCS", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		ActionOverride("NOBW7", DestroySelf())
-		ActionOverride("HOUSG6", DestroySelf())
-		SetGlobal("LCA_0117_DeleteNPCS", "GLOBAL", 1)
-END
