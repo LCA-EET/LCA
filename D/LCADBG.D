@@ -1008,6 +1008,18 @@ END
 IF ~~ THEN BEGIN LCA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
 	
+	IF ~~ THEN REPLY @281
+	DO ~
+		SetGlobal("bd_player_exiled", "GLOBAL", 1)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @282
+	DO ~
+		SetGlobal("bd_player_exiled", "GLOBAL", 0)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
 	IF ~~ THEN REPLY @263
 	DO ~
 		SetGlobal("LCA_TunnelAnxiety", "GLOBAL", 1)
