@@ -239,7 +239,7 @@ INTERJECT_COPY_TRANS PPIRENI2 3 CORWIN_PPIRENI2_3
 	IF ~
 		IsValidForPartyDialogue("LCCORWIN")
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		GlobalGT("LCA_TimesHadSex", "GLOBAL", 0)
 		Alignment(Player1,MASK_GOOD)
 		Gender(Player1, MALE)
 		!Global("LCA_DisableXRatedContent", "GLOBAL", 1)
@@ -253,7 +253,7 @@ INTERJECT_COPY_TRANS PPIRENI2 3 CORWIN_PPIRENI2_3
 	IF ~
 		IsValidForPartyDialogue("LCCORWIN")
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		GlobalGT("LCA_TimesHadSex", "GLOBAL", 0)
 		!Alignment(Player1,MASK_GOOD)
 		Gender(Player1, MALE)
 		!Global("LCA_DisableXRatedContent", "GLOBAL", 1)
@@ -267,7 +267,7 @@ INTERJECT_COPY_TRANS PPIRENI2 3 CORWIN_PPIRENI2_3
 	IF ~
 		IsValidForPartyDialogue("LCCORWIN")
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		GlobalGT("LCA_TimesHadSex", "GLOBAL", 0)
 		Alignment(Player1,MASK_GOOD)
 		!Gender(Player1, MALE)
 		!Global("LCA_DisableXRatedContent", "GLOBAL", 1)
@@ -281,7 +281,7 @@ INTERJECT_COPY_TRANS PPIRENI2 3 CORWIN_PPIRENI2_3
 	IF ~
 		IsValidForPartyDialogue("LCCORWIN")
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		GlobalGT("LCA_TimesHadSex", "GLOBAL", 0)
 		!Alignment(Player1,MASK_GOOD)
 		!Gender(Player1, MALE)
 		!Global("LCA_DisableXRatedContent", "GLOBAL", 1)

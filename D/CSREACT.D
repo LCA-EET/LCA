@@ -129,7 +129,7 @@ APPEND_EARLY VICONIJ
 END
 APPEND_EARLY AERIEJ
 	IF ~
-		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		Global("LCA_CorwinSex_1", "GLOBAL", 4)
 		Global("LCA_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("LCCORWIN")
 		IsValidForPartyDialogue(Player1)
@@ -167,7 +167,7 @@ APPEND_EARLY AERIEJ
 	END
 	
 	IF ~
-		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		Global("LCA_CorwinSex_1", "GLOBAL", 4)
 		Global("LCA_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("LCCORWIN")
 		IsValidForPartyDialogue(Player1)
@@ -304,7 +304,7 @@ END
 
 APPEND_EARLY IMOEN2J
 	IF ~
-		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		Global("LCA_CorwinSex_1", "GLOBAL", 4)
 		Global("LCA_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("LCCORWIN")
 		IsValidForPartyDialogue(Player1)
@@ -342,7 +342,7 @@ APPEND_EARLY IMOEN2J
 	END
 	
 	IF ~
-		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		Global("LCA_CorwinSex_1", "GLOBAL", 4)
 		Global("LCA_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("LCCORWIN")
 		IsValidForPartyDialogue(Player1)
@@ -479,7 +479,7 @@ END
 
 APPEND_EARLY JAHEIRAJ
 	IF ~
-		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		Global("LCA_CorwinSex_1", "GLOBAL", 4)
 		Global("LCA_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("LCCORWIN")
 		IsValidForPartyDialogue(Player1)
@@ -517,7 +517,7 @@ APPEND_EARLY JAHEIRAJ
 	END
 	
 	IF ~
-		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		Global("LCA_CorwinSex_1", "GLOBAL", 4)
 		Global("LCA_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("LCCORWIN")
 		IsValidForPartyDialogue(Player1)
@@ -654,7 +654,7 @@ END
 
 APPEND_EARLY NALIAJ
 	IF ~
-		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		Global("LCA_CorwinSex_1", "GLOBAL", 4)
 		Global("LCA_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("LCCORWIN")
 		IsValidForPartyDialogue(Player1)
@@ -692,7 +692,7 @@ APPEND_EARLY NALIAJ
 	END
 	
 	IF ~
-		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		Global("LCA_CorwinSex_1", "GLOBAL", 4)
 		Global("LCA_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("LCCORWIN")
 		IsValidForPartyDialogue(Player1)
@@ -829,7 +829,7 @@ END
 
 APPEND_EARLY NEERAJ
 	IF ~
-		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		Global("LCA_CorwinSex_1", "GLOBAL", 4)
 		Global("LCA_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("LCCORWIN")
 		IsValidForPartyDialogue(Player1)
@@ -867,7 +867,7 @@ APPEND_EARLY NEERAJ
 	END
 	
 	IF ~
-		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		Global("LCA_CorwinSex_1", "GLOBAL", 4)
 		Global("LCA_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("LCCORWIN")
 		IsValidForPartyDialogue(Player1)

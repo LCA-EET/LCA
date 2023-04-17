@@ -1533,7 +1533,7 @@ APPEND MADAM
 		IF ~
 			Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
 			!Global("LCA_CorwinHitOnPlayer", "GLOBAL", 1)
-			!Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+			GlobalLT("LCA_TimesHadSex", "GLOBAL", 1)
 			Global("LCA_CorwinLoveBG2", "GLOBAL", 1) // only for romance that continues from SoD. 
 		~ THEN 
 		DO ~
@@ -1545,7 +1545,7 @@ APPEND MADAM
 		IF ~
 			Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
 			!Global("LCA_CorwinHitOnPlayer", "GLOBAL", 1)
-			!Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+			GlobalLT("LCA_TimesHadSex", "GLOBAL", 1)
 			!Global("LCA_CorwinLoveBG2", "GLOBAL", 1) // only for romance that continues from SoD. 
 		~ THEN 
 		DO ~

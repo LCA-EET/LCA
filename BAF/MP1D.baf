@@ -10,8 +10,8 @@ IF
 	GlobalTimerExpired("LCA_STtoBG","GLOBAL") // see MBREGA.d state M34
 	!Global("LCA_CS03_Done", "GLOBAL", 1)
 	OR(2)
-	Global("LCA_LetterSent", "GLOBAL", 1) // Corwin Love
-	Global("LCA_LetterSent", "GLOBAL", 2) // Corwin 
+		Global("LCA_LetterSent", "GLOBAL", 1) // Corwin Love
+		Global("LCA_LetterSent", "GLOBAL", 2) // Corwin 
 THEN
   RESPONSE #100
 	SetGlobal("LCA_CS03_Done", "GLOBAL", 1)
@@ -61,7 +61,7 @@ THEN
 END
 
 IF 
-	Global("LCA_CorwinSexFirst", "GLOBAL", 1)
+	Global("LCA_CorwinSex_1", "GLOBAL", 1)
 	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
 	OR(13)
 		AreaCheck("AR0021") //Crooked Crane 1FL
@@ -85,7 +85,7 @@ THEN
 END
 
 IF 
-	Global("LCA_CorwinSexSecond", "GLOBAL", 3)
+	Global("LCA_CorwinSex_2", "GLOBAL", 2)
 	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
 	OR(13)
 		AreaCheck("AR0021") //Crooked Crane 1FL
@@ -109,7 +109,7 @@ THEN
 END
 
 IF 
-	Global("LCA_CorwinSexFirst", "GLOBAL", 1)
+	Global("LCA_CorwinSex_1", "GLOBAL", 1)
 	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
 	AreaCheck("AR0406") // Copper Coronet
 THEN
@@ -121,9 +121,9 @@ END
 IF 
 	!Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
 	OR(3)
-		Global("LCA_CorwinSexFirst", "GLOBAL", 1)
-		Global("LCA_CorwinSexBG", "GLOBAL", 1)
-		Global("LCA_CorwinSexToB", "GLOBAL", 1)
+		Global("LCA_CorwinSex_1", "GLOBAL", 1)
+		Global("LCA_CorwinSex_2", "GLOBAL", 2)
+		Global("LCA_CorwinSex_3", "GLOBAL", 1)
 THEN 
 	RESPONSE #100
 		SetGlobal("LCA_TryToSleep", "GLOBAL", 1)

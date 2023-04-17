@@ -1035,7 +1035,7 @@ IF ~~ THEN BEGIN LCA_Menu_AdjustVariables
 	
 	IF ~~ THEN REPLY @228
 	DO ~
-		SetGlobal("LCA_CorwinSexFirst", "GLOBAL", 4)
+		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 4)
 		SetGlobal("LCA_SlappedDelcia", "GLOBAL", 1)
 		SetGlobal("LCA_CorwinWonTM", "GLOBAL", 1)
 		SetGlobal("LCA_CorwinCleansed", "GLOBAL", 1)
@@ -1451,37 +1451,37 @@ IF ~~ THEN BEGIN LCA_Menu_AdjustVariables
 	
 	IF ~~ THEN REPLY @140
 	DO ~
-		SetGlobal("LCA_CorwinSexFirst","GLOBAL",0)
+		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 0)
 	~
 	GOTO LCA_ReturnToMainMenu
 	
 	IF ~~ THEN REPLY @135
 	DO ~
-		SetGlobal("LCA_CorwinSexFirst","GLOBAL",1)
+		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 1)
 	~
 	GOTO LCA_ReturnToMainMenu
 	
 	IF ~~ THEN REPLY @136
 	DO ~
-		SetGlobal("LCA_CorwinSexFirst","GLOBAL",2)
+		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 3)
 	~
 	GOTO LCA_ReturnToMainMenu
 	
 	IF ~~ THEN REPLY @137
 	DO ~
-		SetGlobal("LCA_CorwinSexFirst","GLOBAL",3)
+		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 3)
 	~
 	GOTO LCA_ReturnToMainMenu
 	
 	IF ~~ THEN REPLY @138
 	DO ~
-		SetGlobal("LCA_CorwinSexFirst","GLOBAL",4)
+		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 4)
 	~
 	GOTO LCA_ReturnToMainMenu
 	
 	IF ~~ THEN REPLY @148
 	DO ~
-		SetGlobal("LCA_CorwinSexSecond","GLOBAL",3)
+		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 3)
 	~
 	GOTO LCA_ReturnToMainMenu
 	

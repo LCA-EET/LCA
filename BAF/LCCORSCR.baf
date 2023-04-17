@@ -927,7 +927,7 @@ END
 
 IF 
 	Global("LCA_CorwinCleansed", "GLOBAL", 2) 
-	!Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+	GlobalLT("LCA_TimesHadSex", "GLOBAL", 1)
 	!Global("LCA_CorwinSexAfterBodhiTimerSet", "GLOBAL", 1)
 	ActionListEmpty()
 THEN
@@ -940,7 +940,7 @@ END
 
 IF 
 	GlobalTimerExpired("LCA_CorwinSexAfterBodhiTimer", "GLOBAL")
-	!Global("LCA_CorwinSexFirst", "GLOBAL", 4) // She has not already had sex
+	GlobalLT("LCA_TimesHadSex", "GLOBAL", 1)
 	!Global("LCA_CorwinSexAfterBodhi", "GLOBAL", 1) //She has not asked for sex after Bodhi episode
 	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
 	ActionListEmpty()
@@ -982,7 +982,7 @@ END
 
 IF
 	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-	Global("LCA_CorwinSexFirst", "GLOBAL", 3)
+	Global("LCA_CorwinSex_1", "GLOBAL", 3)
 	See(Player1)
 THEN
 	RESPONSE #100
@@ -1056,24 +1056,23 @@ END
 /* Corwin - Sex Second*/
 
 IF
-	Global("LCA_CorwinSexFirst", "GLOBAL", 4)
-	!GlobalGT("LCA_CorwinSexSecond", "GLOBAL", 0)
+	GlobalGT("LCA_TimesHadSex", "GLOBAL", 0)
+	Global("LCA_CorwinSex_2", "GLOBAL", 0)
 	ActionListEmpty()
 THEN
 	RESPONSE #100
-		SetGlobalTimer("LCA_CorwinSexSecondTimer", "GLOBAL", THREE_DAYS)
-		SetGlobal("LCA_CorwinSexSecond", "GLOBAL", 1)
+		SetGlobalTimer("LCA_CorwinSex_2_Timer", "GLOBAL", THREE_DAYS)
+		SetGlobal("LCA_CorwinSex_2", "GLOBAL", 1)
 		Continue()
 END
 
 IF
-	GlobalTimerExpired("LCA_CorwinSexSecondTimer", "GLOBAL")
-	Global("LCA_CorwinSexSecond", "GLOBAL", 1)
+	GlobalTimerExpired("LCA_CorwinSex_2_Timer", "GLOBAL")
+	Global("LCA_CorwinSex_2", "GLOBAL", 1)
 	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 	See(Player1)
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_CorwinSexSecond", "GLOBAL", 2)
 		PlaySong(146)
 		StartDialog("LCCORWIJ", Player1)
 END
@@ -1082,7 +1081,7 @@ END
 
 IF
 	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-	Global("LCA_CorwinSexSecond", "GLOBAL", 4)
+	Global("LCA_CorwinSex_2", "GLOBAL", 4)
 	See(Player1)
 THEN
 	RESPONSE #100

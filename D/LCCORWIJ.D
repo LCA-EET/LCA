@@ -630,7 +630,7 @@ IF ~~ THEN BEGIN LCA_DukeDebrief02_A1
 
 	IF ~
 		!OR(5)
-			Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+			GlobalGT("LCA_TimesHadSex", "GLOBAL", 0)
 			Global("LCA_SlappedDelcia", "GLOBAL", 1)
 			Global("LCA_CorwinWonTM", "GLOBAL", 1)
 			Global("LCA_CorwinCleansed", "GLOBAL", 1)
@@ -640,7 +640,7 @@ IF ~~ THEN BEGIN LCA_DukeDebrief02_A1
 	
 	IF ~
 		OR(5)
-			Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+			GlobalGT("LCA_TimesHadSex", "GLOBAL", 0)
 			Global("LCA_SlappedDelcia", "GLOBAL", 1)
 			Global("LCA_CorwinWonTM", "GLOBAL", 1)
 			Global("LCA_CorwinCleansed", "GLOBAL", 1)
@@ -682,7 +682,7 @@ IF ~~ THEN BEGIN LCA_DukeDebrief_ForgotSomething
 	GOTO LCA_DukeDebrief02_TM
 	
 	IF ~
-		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		GlobalGT("LCA_TimesHadSex", "GLOBAL", 0)
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("LCA_Recall_Sex", "GLOBAL", 1)
 	~ THEN REPLY @1082 /* ~Our, ah, adventures in the bedroom. Especially that one time we kept the entire inn from getting any sleep.~ */
@@ -2236,7 +2236,7 @@ IF ~
 	GOTO LCA_GorgeClimb1
 	
 	IF ~
-		Global("LCA_CorwinSexFirst","GLOBAL",4)
+		GlobalGT("LCA_TimesHadSex", "GLOBAL", 0)
 	~ THEN REPLY @399 /*  ~Good advice. Climb many trees, love? Besides mine, I mean.~ */
 	DO ~
 		SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
@@ -2592,7 +2592,7 @@ IF ~~ THEN BEGIN LCA71
 	GOTO LCA75
 	
 	IF ~
-		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		GlobalGT("LCA_TimesHadSex", "GLOBAL", 0)
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @428 /* ~Well, she's even better than you, so yes.~ */
 	DO ~
@@ -2601,7 +2601,7 @@ IF ~~ THEN BEGIN LCA71
 	GOTO LCA75
 	
 	IF ~
-		Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		GlobalGT("LCA_TimesHadSex", "GLOBAL", 0)
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @429 /* ~She doesn't compare to you, love. No one does.~ */
 	DO ~
@@ -3105,6 +3105,272 @@ IF ~~ THEN BEGIN LCA62
 END
 //} #endregion
 
+//{ #region Corwin Sex 1 - DLG-0044
+IF ~
+	Global("LCA_CorwinSex_1", "GLOBAL", 1)
+	Global("LCA_SleepInn", "GLOBAL", 1)
+	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
+	AreaCheck("LCAcs10")
+	//play romance song
+	//x mod
+~ THEN BEGIN LCA_CorwinSexInnM
+	SAY @320 /* ~This room is perfect.~ */
+	= @321 /* ~(She turns to you.)~ */
+	
+	IF ~~ THEN 
+	GOTO LCA_CorwinSexInn7
+	
+	IF ~
+		Global("LCA_ExplicitModActive", "GLOBAL", 1)
+	~ THEN 
+	DO ~
+		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 2)
+		StartDialog("LCCORWIJ", Player1)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_CorwinSexInn7
+	SAY @322 /* ~(Install the LCA_Explicit mod to see this content.)~ */
+	
+	= @323 /* ~Mm, <CHARNAME>. That was wonderful.~ */
+	
+	= @324 /* (She plants a kiss on your forehead.) */
+	
+	= @325 /* ~You don't know how much I needed that. Thank you, love.~*/
+	
+	IF ~~ THEN REPLY @326 /* ~Schael, you were incredible, I - I can't even -~ */
+	GOTO LCA_CorwinSexInn8
+END
+
+IF ~~ THEN BEGIN LCA_CorwinSexInn8
+	SAY @251 /* ~(She smiles warmly, and places her finger across your lips.)~ */
+	
+	= @252 /* ~Shh, lover. It's time for us to get some rest. Just know that this, and more, is what awaits you when we finally return home. I love you, <CHARNAME>.~ */
+	
+	IF ~~ THEN REPLY @253 /* ~I love you too, Schael.~*/
+	GOTO LCA_CorwinSexInnEnd
+END
+
+IF ~~ THEN BEGIN LCA_CorwinSexInnEnd
+	SAY @254 /* ~(You kiss and embrace, and try to get some sleep. Eventually, you give up, and the two of you make love again, and again, and again. Mercifully, you finally pass out from sheer exhaustion).~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 3)
+		SetGlobal("LCA_SleepInn", "GLOBAL", 0)
+		IncrementGlobal("LCA_TimesHadSex", "GLOBAL", 1)
+		RestPartyEx(0,0,FALSE)
+	~
+	EXIT
+END
+
+IF ~
+	Global("LCA_CorwinSex_1", "GLOBAL", 3)
+	NumInPartyGT(2)
+	AreaCheck("LCAcs10")
+~ THEN BEGIN LCA_CorwinAfterSexAmnGT2
+	SAY @364 /* ~The others are waiting. Let's go, love.~ */
+
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 4)
+		SetGlobalTimer("LCA_CorwinSexNoSleep", "GLOBAL", TWO_ROUNDS)
+		SetGlobalTimer("LCA_CorwinSexTimer", "GLOBAL", THREE_DAYS)
+		ChangeStat(Player1,CON,1,ADD)
+		AddXPObject(Player1, 100000)
+		ChangeStat(Myself,CON,1,ADD)
+		AddXPObject("LCCORWIN", 100000)
+		AddJournalEntry(@366, INFO)
+		ChangeStat(Player1, FATIGUE, 7, SET)
+		ChangeStat(Player2, FATIGUE, 7, SET)
+		ChangeStat(Player3, FATIGUE, 7, SET)
+		ChangeStat(Player4, FATIGUE, 7, SET)
+		ChangeStat(Player5, FATIGUE, 7, SET)
+		ChangeStat(Player6, FATIGUE, 7, SET)
+		StartCutScene("LCAcsEx")
+		
+	~ 
+	EXIT
+	
+	IF ~
+		OR(5)
+			IsValidForPartyDialogue("Aerie")
+			IsValidForPartyDialogue("Imoen2")
+			IsValidForPartyDialogue("Nalia")
+			IsValidForPartyDialogue("Neera")
+			IsValidForPartyDialogue("Jaheira")
+	~ THEN
+	DO ~
+		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 4)
+		SetGlobalTimer("LCA_CorwinSexNoSleep", "GLOBAL", TWO_ROUNDS)
+		SetGlobalTimer("LCA_CorwinSexTimer", "GLOBAL", THREE_DAYS)
+		ChangeStat(Player1,CON,1,ADD)
+		AddXPObject(Player1, 100000)
+		ChangeStat(Myself,CON,1,ADD)
+		AddXPObject("LCCORWIN", 100000)
+		AddJournalEntry(@366, INFO)
+		ChangeStat(Player1, FATIGUE, 7, SET)
+		ChangeStat(Player2, FATIGUE, 7, SET)
+		ChangeStat(Player3, FATIGUE, 7, SET)
+		ChangeStat(Player4, FATIGUE, 7, SET)
+		ChangeStat(Player5, FATIGUE, 7, SET)
+		ChangeStat(Player6, FATIGUE, 7, SET)
+		StartCutScene("LCAcsEx")
+	~
+	EXIT
+END
+
+IF ~
+	Global("LCA_CorwinSex_1", "GLOBAL", 3)
+	!NumInPartyGT(2)
+	AreaCheck("LCAcs10")
+~ THEN BEGIN LCA_CorwinAfterSexAmnLT3
+	SAY @365 /* ~It's time to head out. Let's go, love.~ */
+
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 4)
+		SetGlobalTimer("LCA_CorwinSexNoSleep", "GLOBAL", TWO_ROUNDS)
+		SetGlobalTimer("LCA_CorwinSexTimer", "GLOBAL", THREE_DAYS)
+		ChangeStat(Player1,CON,1,ADD)
+		AddXPObject(Player1, 100000)
+		ChangeStat(Myself,CON,1,ADD)
+		AddXPObject("LCCORWIN", 100000)
+		AddJournalEntry(@366, INFO)
+		ChangeStat(Player1, FATIGUE, 7, SET)
+		ChangeStat(Player2, FATIGUE, 7, SET)
+		ChangeStat(Player3, FATIGUE, 7, SET)
+		ChangeStat(Player4, FATIGUE, 7, SET)
+		ChangeStat(Player5, FATIGUE, 7, SET)
+		ChangeStat(Player6, FATIGUE, 7, SET)
+		StartCutScene("LCAcsEx")
+		
+	~ 
+	EXIT
+END
+//} #endregion
+
+//{ #region Corwin Sex 2 Timer Initial - DLG-0045
+IF ~
+	GlobalTimerExpired("LCA_CorwinSex_2_Timer", "GLOBAL")
+	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
+	//play romance song
+~ THEN BEGIN LCA_CorwinSexSecond
+	SAY @529 /* ~I've been watching you, love, and of late I don't like what I see.~ [LCCORJ10] */
+	
+	IF ~~ THEN REPLY @530 /* ~What? I don't understand.~ */
+	DO ~
+		SetGlobal("LCA_CorwinSex_2", "GLOBAL", 2)
+	~
+	GOTO LCA_CorwinSexSecond2
+END
+
+IF ~~ THEN BEGIN LCA_CorwinSexSecond2
+	SAY @531 /* ~For all of your power, your fighting skills are suspect. I shouldn't be surprised, based on your upbringing in Candlekeep, but I'm concerned.~ */
+	= @536 /* ~You can be beaten by a seemingly lesser opponent if they recognize and exploit your lack of skill.~ */
+	
+	IF ~~ THEN REPLY @533 /* ~Perhaps you're right. I'm open to any tips you can give me.~ */
+	GOTO LCA_CorwinSexSecond3A
+	
+	IF ~~ THEN REPLY @532 /* ~You're talking to the <PRO_MANWOMAN> who defeated Sarevok and stopped Caelar's crusade. You're clearly mistaken, love.~ */
+	GOTO LCA_CorwinSexSecond3B
+END
+
+IF ~~ THEN BEGIN LCA_CorwinSexSecond3A
+	SAY @535 /* ~Very well. Get us a room and I'll show you what I mean. Let's go.~~ */
+	IF ~~ THEN
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_CorwinSexSecond3B
+	SAY @534 /* ~You defeated them with raw power, not skill. Get us a room and I'll show you what I mean. Let's go.~*/
+	IF ~~ THEN
+	EXIT
+END
+//} #endregion
+
+//{ #region Corwin Sex 2 - DLG-0046
+IF ~
+	Global("LCA_CorwinSex_2", "GLOBAL", 2)
+	Global("LCA_SleepInn", "GLOBAL", 1)
+	AreaCheck("LCAcs10")
+	// play romance song
+~ THEN BEGIN LCA_CorwinSexSecond4
+	SAY @537 /* ~Gods, I've been looking forward to this all day. Help me get this armor off, lover.~ */
+	
+	IF ~~ THEN
+	GOTO LCA_CorwinSexSecond15
+	
+	IF ~
+		Global("LCA_ExplicitModActive", "GLOBAL", 1)
+	~ THEN 
+	DO ~
+		SetGlobal("LCA_CorwinSex_2", "GLOBAL", 3)
+		StartDialog("LCCORWIJ", Player1)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_CorwinSexSecond15
+	SAY @322 /* ~(Install the LCA_Explicit mod to see this content.)~ */
+	
+	IF ~~ THEN 
+	GOTO LCA_CorwinSexSecond16
+END
+
+IF ~~ THEN BEGIN LCA_CorwinSexSecond16
+	SAY @602 /* ~You end up making love again before finally falling asleep.~ */
+	
+	IF ~~ THEN
+	DO ~
+		RestPartyEx(0,0,FALSE)
+		SetGlobal("LCA_CorwinSex_2", "GLOBAL", 4)
+		SetGlobal("LCA_SleepInn", "GLOBAL", 0)
+		IncrementGlobal("LCA_TimesHadSex", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~
+	Global("LCA_CorwinSex_2", "GLOBAL", 4)
+	NumInPartyGT(2)
+	AreaCheck("LCAcs10")
+~ THEN BEGIN LCA_CorwinSexSecondAfterGT2
+	SAY @364 /* ~The others are waiting. Let's go, love.~ */
+
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_CorwinSex_2", "GLOBAL", 4)
+		ChangeStat(Player1,DEX,1,ADD)
+		AddJournalEntry(@601, INFO)
+		AddXPObject(Player1, 125000)
+		AddXPObject("LCCORWIN", 125000)
+		StartCutScene("LCAcsEx")
+	~
+	EXIT
+END
+
+IF ~
+	Global("LCA_CorwinSex_2", "GLOBAL", 3)
+	!NumInPartyGT(2)
+	AreaCheck("LCAcs10")
+~ THEN BEGIN LCA_CorwinSexSecondAfterLT3
+	SAY @365 /* ~It's time to head out. Let's go, love.~ */
+
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_CorwinSex_2", "GLOBAL", 4)
+		ChangeStat(Player1,DEX,1,ADD)
+		AddJournalEntry(@601, INFO)
+		AddXPObject(Player1, 125000)
+		AddXPObject("LCCORWIN", 125000)
+		StartCutScene("LCAcsEx")
+	~
+	EXIT
+END
+//} #endregion
+
 IF ~~ THEN BEGIN LCA_SAREV_10
 	SAY @38 /* ~You've got to be kidding me. A deal? With you?~*/
 	
@@ -3217,7 +3483,7 @@ END
 
 IF ~
 	Global("LCA_CorwinSexAfterBodhi", "GLOBAL", 1)
-	!Global("LCA_CorwinSexFirst", "GLOBAL", 4) // Making sure she didn't already have sex
+	GlobalLT("LCA_TimesHadSex", "GLOBAL", 1)
 	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
 	//play romance song
 ~ THEN BEGIN LCA_CorwinWantsSex
@@ -3272,7 +3538,7 @@ IF ~~ THEN LCA_CorwinWantsSex2D
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("LCA_CorwinSexFirst", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 5)
 	~
 	EXIT
 END
@@ -3327,10 +3593,12 @@ END
 IF ~
 	!Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
 	Global("LCA_TryToSleep", "GLOBAL", 1)
-	OR(3)
-		Global("LCA_CorwinSexFirst", "GLOBAL", 1)
-		Global("LCA_CorwinSexBG", "GLOBAL", 1)
-		Global("LCA_CorwinSexToB", "GLOBAL", 1)
+	OR(5)
+		Global("LCA_CorwinSex_1", "GLOBAL", 1)
+		Global("LCA_CorwinSex_2", "GLOBAL", 1)
+		Global("LCA_CorwinSex_3", "GLOBAL", 1)
+		Global("LCA_CorwinSex_4", "GLOBAL", 1)
+		Global("LCA_CorwinSex_5", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinCantHaveSex
 	SAY @367 /* ~My dear... as much as I want you to make love to me...~ */
 	IF ~
@@ -3378,7 +3646,7 @@ END
 
 
 IF ~
-	Global("LCA_CorwinSexFirst", "GLOBAL", 1)
+	Global("LCA_CorwinSex_1", "GLOBAL", 1)
 	Global("LCA_SleepInn", "GLOBAL", 1)
 	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
 	AreaCheck("AR0406")
@@ -3407,7 +3675,7 @@ IF ~~ THEN BEGIN LCA_CorwinSexCC2
 END
 
 IF ~
-	Global("LCA_CorwinSexFirst", "GLOBAL", 1)
+	Global("LCA_CorwinSex_1", "GLOBAL", 1)
 	Global("LCA_SleepInn", "GLOBAL", 1)
 	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
 	AreaCheck("AR0406")
@@ -3417,528 +3685,11 @@ IF ~
 	= @71 /*  ~You know what? Forget it. I'm not in the mood anymore. Let's go.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("LCA_CorwinSexFirst", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 5)
 		SetGlobal("LCA_CorwinSexFirstComplain", "GLOBAL", 2)
 	~
 	EXIT
 END
-
-IF ~
-	Global("LCA_CorwinSexFirst", "GLOBAL", 1)
-	Global("LCA_SleepInn", "GLOBAL", 1)
-	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
-	AreaCheck("LCAcs10")
-	//play romance song
-	//x mod
-~ THEN BEGIN LCA_CorwinSexInnM
-	SAY @320 /* ~(You enter your room) This room is perfect. (She turns to you.)~ */
-	
-	IF ~
-		Global("LCA_DisableXRatedContent", "GLOBAL", 1)
-	~ THEN 
-	GOTO LCA_CorwinSexInn7
-	
-	IF ~
-		!Global("LCA_DisableXRatedContent", "GLOBAL", 1)
-	~ THEN 
-	GOTO LCA_CorwinSexInn1M
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexInn1M
-	SAY @353 /* ~Help me take this off. (You lift off her chainmail armor and set it aside.)~ */
-	
-	= @354 /* ~Thanks. (She turns around and kneels. After removing her boots, she releases the clasps on her two leg harnesses and discards them, then stands with her back towards you).~ */
-	= @355 /* ~(She slowly removes her vestment, revealing her bare shoulders and back. Her skin is smooth, and glistening with sweat. You notice her sharply defined back and shoulder muscles, and you feel your member stiffen in anticipation of what is about to happen.)~ */
-	= @356 /* ~(She steps out of her leggings, revealing her well-rounded bottom and shapely thighs. She then turns around and faces you.)~ */
-	= @321 /* ~(You stand in awe and silent amazement. Schael's breasts are round, full and tanned. Her legs, arms and midsection are packed with muscle, but her athleticism detracts in no way from her femininity. The fullness of her chest accentuates her slim waist and her wide, inviting hips. Her womanhood is hidden behind a delicate patch of hair, as dark as the hair on her head.)~ */
-	= @357 /* ~Well? (She snaps you out of your reverie)~ */
-	
-	IF ~~ THEN REPLY @358 /* ~Schael, y-you're so beautiful, I.. I - ~ */
-	GOTO LCA_CorwinSexInn2M
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexInn2M
-	SAY @359 /* ~What are you doing? Get out of those clothes! (She's as used to giving orders in the bedroom as she is outside of it, you think to yourself.)~ */
-	
-	IF ~~ THEN REPLY @360 /* ~R-right. (You hurriedly remove your armor and clothing, and nearly trip over your own pants while doing so. She laughs as you stand and face her.)~ */
-	GOTO LCA_CorwinSexInn3M	
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexInn3M
-	SAY @322 /* ~(A wide smile graces her face as she eyes your throbbing, erect member.) You're bigger than I expected. What a pleasant surprise.~ */
-	= @323 /* ~Come here, hero. (You pull eachother into a tight embrace, and lock lips during a long, sensual kiss. Slowly, you slide your hands down her back, from her shoulder blades to her waist, while she does the same. You caress and squeeze her round, firm behind, as she giggles in delight.)~ */
-	= @324 /* ~(Unable to resist, you place your head between her breasts, and begin to kiss them. They are warm and soft, and smell of lilacs.)~ */
-	= @325 /* ~(She chuckles.) It would seem that demigods have the same breast fixation as normal men. (She reaches down and begins to gently stroke your already leaking member with one hand, while massaging your jewels with the other. The feeling of her soft hands on your package is indescribable.)~  */
-	= @361 /* ~This is what you want, isn't it lover?~ */ 
-	IF ~~ THEN REPLY @326 /* ~(You let out a soft moan.) Ohhhh.... Schael...~ */
-	GOTO LCA_CorwinSexInn4M
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexInn4M
-	SAY @327 /* ~(In a fluid motion, she pulls back, and drops to her knees. Realizing what is about to happen, you brace yourself.) */
-	= @362 /* ~It's about time you received a worthy reward for all that you've done.~ */
-	= @328 /* ~(Crooning softly, Schael begins to kiss and lick your engorged member, starting at the base and slowly working her way up. You quiver in anticipation as she kisses your sensitive tip.)~ */
-	= @329 /* ~(She looks up at you and smiles, before quickly taking you into her mouth).~*/
-	= @330 /* ~(In and out. In and out. Her cheeks dimple as she bobs up and down on your member, while gazing lovingly into your eyes. Holding the base of your shaft firm in her left hand, she fingers herself sensually with her right hand.)~ */
-	= @331 /* ~(You begin to take stock of your situation. Just a short time ago, you were locked away in Candlekeep with your foster father Gorion, learning about things like science, history, love and sex from an old book in the library. Now, the woman you love, one of the most beautiful women in Toril, is giving you a fantastic blowjob. You think to yourself that heroism does indeed have its benefits.)~ */
-	= @332 /* ~(You're jerked back into yourself as she begins to deepthroat you. You moan uncontrollably while you run your hands through her silky dark hair.)~ */
-	= @333 /* ~(Your breathing becomes labored, and you begin to grunt. Schael, knowing what's about to happen, suddenly stops and ignores your groan as she rises to her feet.)~ */
-	= @334 /* ~Mm. Normally, I'd ask you to return the favor, but today is about you, love. Are you ready?~ */
-	
-	IF ~~ THEN REPLY @335 /* ~(Forcefully grab her hips and pull them into your own).~ */
-	GOTO LCA_CorwinSexInn5M
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexInn5M
-	SAY @363  /* ~I'll take that a yes.~ */
-	= @336 /* ~(She shoves you onto the bed, and climbs in so that she is atop your midsection. Without another word, she presses down on you).~ */
-	= @337 /* ~(Thanks to your pre-cum and her saliva, you slide into her easily. The feeling is exquisite, and you gasp in delight.)~ */
-	= @338 /* ~(You begin thrusting your hips upward with a steady rhythm, which causes her breasts to bounce, down, up and down again. The sight is extremely erotic. With your left hand, you hold her right hip, and you reach up with your right hand to gently massage her left breast.)~ */
-	= @339 /* ~Ohhh, <CHARNAME>... don't stop, take me, harder... harder... oh...~ */
-	= @340 /* ~(You increase the pace and strength of your thrusts. Suddenly, Schael lets out a loud moan and cries out your name. You fear that you may have hurt her, and stop your thrusting.)~ */
-	IF ~~ THEN REPLY @341 /* ~Schael, are you alright? Am I hurting - d-do you want me to stop?~  */
-	GOTO LCA_CorwinSexInn6M
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexInn6M
-	SAY @342  /* ~(She pulls your head up to hers and gives you a savage kiss.) No, you're not hurting me, but I may hurt you if you stop again. Fuck me, hero! FUCK ME!!~ */
-	= @343 /* ~(That was all you needed. With a roar you pull yourself out and throw her out of the bed, onto the floor. She lands on her back with a hiss. In a moment you are on her, ferociously penetrating her and pounding her into the floor. She howls in delight as you push and push, meeting your thrusts with thrusts of her own, while her nails rake into your back.)~ */
-	= @344 /* ~(Together, your animalistic cries reach a new pitch as you near your orgasms, and then you're there. You shudder and scream as you release your massive load into her. She scissors her taut, muscled legs around you and pulls you in, draining your member of every last drop.)~ */
-	= @345 /* ~(This last exertion on her part sends her over the edge, and she moans in ecstasy as the wave of her orgasm sweeps through her, from her toes to her head, crashing through her and carrying her away on a tide of pleasure.)~ */
-	= @346 /* ~(As you lay there together, you inhale the smells of sweat and sex in the air, and try to comprehend what just happened. Eventually, you are able to gather yourselves. Your member shrinks to its former size, and you pull out of her, but you remain locked in an embrace with her legs wrapped around your hips, and your head resting next to hers.)~ */
-	= @347 /* ~(Finally, you rise. Placing one arm around her back and the other around the bend of her knees, you pick her up and carry her with you into bed.)~  */
-	IF ~~ THEN 
-	GOTO LCA_CorwinSexInn7
-
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexInn7
-	SAY @348 /* ~Mm, <CHARNAME>. That was wonderful.~ */
-	= @349 /* ~You don't know how much I needed that. (She plants a kiss on your forehead) Thank you, love.~ */
-	IF ~~ THEN REPLY @350 /* ~Schael, you were incredible, I - I can't even -~ */
-	GOTO LCA_CorwinSexInnEnd
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexInnEnd
-	SAY @351 /* ~(She smiles warmly, and places her finger across your lips) Shh, lover. It's time for us to get some rest. Just know that this, and more, is what awaits you when we finally return home. I love you, <CHARNAME>.~ */
-	
-	IF ~~ THEN REPLY @352 /* ~I love you too, Schael. (You kiss and embrace, and try to get some sleep. Eventually, you give up, and the two of you make love again, and again, and again. Mercifully, you finally pass out from sheer exhaustion).~ */
-	DO ~
-		SetGlobal("LCA_CorwinSexFirst", "GLOBAL", 3)
-		SetGlobal("LCA_SleepInn", "GLOBAL", 0)
-		RestPartyEx(0,0,FALSE)
-	~
-	EXIT
-END
-
-
-IF ~
-	Global("LCA_CorwinSexFirst", "GLOBAL", 3)
-	NumInPartyGT(2)
-	AreaCheck("LCAcs10")
-~ THEN BEGIN LCA_CorwinAfterSexAmnGT2
-	SAY @364 /* ~The others are waiting. Let's go, love.~ */
-
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_CorwinSexFirst", "GLOBAL", 4)
-		SetGlobalTimer("LCA_CorwinSexNoSleep", "GLOBAL", TWO_ROUNDS)
-		SetGlobalTimer("LCA_CorwinSexTimer", "GLOBAL", THREE_DAYS)
-		ChangeStat(Player1,CON,1,ADD)
-		AddXPObject(Player1, 100000)
-		ChangeStat(Myself,CON,1,ADD)
-		AddXPObject("LCCORWIN", 100000)
-		AddJournalEntry(@366, INFO)
-		ChangeStat(Player1, FATIGUE, 7, SET)
-		ChangeStat(Player2, FATIGUE, 7, SET)
-		ChangeStat(Player3, FATIGUE, 7, SET)
-		ChangeStat(Player4, FATIGUE, 7, SET)
-		ChangeStat(Player5, FATIGUE, 7, SET)
-		ChangeStat(Player6, FATIGUE, 7, SET)
-		StartCutScene("LCAcsEx")
-		
-	~ 
-	EXIT
-	
-	IF ~
-		OR(5)
-			IsValidForPartyDialogue("Aerie")
-			IsValidForPartyDialogue("Imoen2")
-			IsValidForPartyDialogue("Nalia")
-			IsValidForPartyDialogue("Neera")
-			IsValidForPartyDialogue("Jaheira")
-	~ THEN
-	DO ~
-		SetGlobal("LCA_CorwinSexFirst", "GLOBAL", 4)
-		SetGlobalTimer("LCA_CorwinSexNoSleep", "GLOBAL", TWO_ROUNDS)
-		SetGlobalTimer("LCA_CorwinSexTimer", "GLOBAL", THREE_DAYS)
-		ChangeStat(Player1,CON,1,ADD)
-		AddXPObject(Player1, 100000)
-		ChangeStat(Myself,CON,1,ADD)
-		AddXPObject("LCCORWIN", 100000)
-		AddJournalEntry(@366, INFO)
-		ChangeStat(Player1, FATIGUE, 7, SET)
-		ChangeStat(Player2, FATIGUE, 7, SET)
-		ChangeStat(Player3, FATIGUE, 7, SET)
-		ChangeStat(Player4, FATIGUE, 7, SET)
-		ChangeStat(Player5, FATIGUE, 7, SET)
-		ChangeStat(Player6, FATIGUE, 7, SET)
-		StartCutScene("LCAcsEx")
-	~
-	EXIT
-END
-
-IF ~
-	Global("LCA_CorwinSexFirst", "GLOBAL", 3)
-	!NumInPartyGT(2)
-	AreaCheck("LCAcs10")
-~ THEN BEGIN LCA_CorwinAfterSexAmnLT3
-	SAY @365 /* ~It's time to head out. Let's go, love.~ */
-
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_CorwinSexFirst", "GLOBAL", 4)
-		SetGlobalTimer("LCA_CorwinSexNoSleep", "GLOBAL", TWO_ROUNDS)
-		SetGlobalTimer("LCA_CorwinSexTimer", "GLOBAL", THREE_DAYS)
-		ChangeStat(Player1,CON,1,ADD)
-		AddXPObject(Player1, 100000)
-		ChangeStat(Myself,CON,1,ADD)
-		AddXPObject("LCCORWIN", 100000)
-		AddJournalEntry(@366, INFO)
-		ChangeStat(Player1, FATIGUE, 7, SET)
-		ChangeStat(Player2, FATIGUE, 7, SET)
-		ChangeStat(Player3, FATIGUE, 7, SET)
-		ChangeStat(Player4, FATIGUE, 7, SET)
-		ChangeStat(Player5, FATIGUE, 7, SET)
-		ChangeStat(Player6, FATIGUE, 7, SET)
-		StartCutScene("LCAcsEx")
-		
-	~ 
-	EXIT
-END
-
-IF ~
-	Global("LCA_CorwinSexSecond", "GLOBAL", 2)
-	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
-	//play romance song
-~ THEN BEGIN LCA_CorwinSexSecond
-	SAY @529 /* ~I've been watching you, love, and of late I don't like what I see.~ [LCCORJ10] */
-	
-	IF ~~ THEN REPLY @530 /* ~What? I don't understand.~ */
-	DO ~
-		SetGlobal("LCA_CorwinSexSecond", "GLOBAL", 3)
-	~
-	GOTO LCA_CorwinSexSecond2
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond2
-	SAY @531 /* ~For all of your power, your fighting skills are suspect. I shouldn't be surprised, based on your upbringing in Candlekeep, but I'm concerned.~ */
-	= @536 /* ~You can be beaten by a seemingly lesser opponent if they recognize and exploit your lack of skill.~ */
-	
-	IF ~~ THEN REPLY @533 /* ~Perhaps you're right. I'm open to any tips you can give me.~ */
-	GOTO LCA_CorwinSexSecond3A
-	
-	IF ~~ THEN REPLY @532 /* ~You're talking to the <PRO_MANWOMAN> who defeated Sarevok and stopped Caelar's crusade. You're clearly mistaken, love.~ */
-	GOTO LCA_CorwinSexSecond3B
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond3A
-	SAY @535 /* ~Very well. Get us a room and I'll show you what I mean. Let's go.~~ */
-	IF ~~ THEN
-	EXIT
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond3B
-	SAY @534 /* ~You defeated them with raw power, not skill. Get us a room and I'll show you what I mean. Let's go.~*/
-	IF ~~ THEN
-	EXIT
-END
-
-IF ~
-	Global("LCA_CorwinSexSecond", "GLOBAL", 3)
-	Global("LCA_SleepInn", "GLOBAL", 1)
-	AreaCheck("LCAcs10")
-	// play romance song
-~ THEN BEGIN LCA_CorwinSexSecond4
-	SAY @537 /* ~Gods, I've been looking forward to this all day. Help me get this armor off, lover.~ */
-	IF ~
-		!Gender(Player1, MALE)
-	~
-	GOTO LCA_CorwinSexSecond16
-	
-	IF ~
-		Gender(Player1, MALE)
-	~ THEN
-	GOTO LCA_CorwinSexSecond4A
-	
-	IF ~
-		Global("LCA_DisableXRatedContent", "GLOBAL", 1)
-	~
-	GOTO LCA_CorwinSexSecond16
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond4A
-	SAY @538 /* ~(You happily oblige, and watch as Schael gets undressed. The experience is as exhilarating and titilating as the first time the two of you made love. You also undress, and you engage in some sensual and passionate foreplay.)~*/
-	
-	= @539 /* ~Mm. Before we get started. About what we discussed -~ */
-	
-	IF ~~ THEN REPLY @540 /* ~My fighting skill, you mean? You want to do this *now*? (You protest as your mighty cock bobs up and down with eager anticipation.)~    */
-	GOTO LCA_CorwinSexSecond5
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond5
-	SAY @541 /* ~Now's as good a time as any. Plus, (she smiles, and gives your member a playful squeeze) I think this will be a lot more fun in the nude.~ */
-
-	= @542 /* ~As I was saying earlier, your hand-to-hand skills are lacking, to put it mildly.~ */
-	
-	= @543 /* ~You can be easily overpowered and controlled by a lesser, but more skilled opponent.~ */
-	
-	IF ~~ THEN REPLY @599 /* ~Oh, I doubt that.~ */
-	GOTO LCA_CorwinSexSecond6
-	
-	IF ~~ THEN REPLY @544 /* ~Like who?~ */
-	GOTO LCA_CorwinSexSecond6
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond6
-	SAY @545 /* ~Me, for instance.~*/
-
-	IF ~~ THEN REPLY @546 /* ~Schael, I love you, but there's no way you can overpower me. For all of your strength, you're just a woman. A very beautiful, talented and strong woman, but a woman nonetheless.~ */
-	GOTO LCA_CorwinSexSecond7
-	
-	IF ~~ THEN REPLY @600 /* ~You're capable I'm sure, Schael, but I don't like your chances.~ */
-	GOTO LCA_CorwinSexSecond7
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond7
-	SAY @547 /* ~Is that so? I can beat you easily. Come on, try and hit me.~  */
-	
-	IF ~~ THEN REPLY @548 /* ~Are you serious?~ */
-	GOTO LCA_CorwinSexSecond8
-	
-	IF ~~ THEN REPLY @550 /* ~Fine. You asked for it. (Attack her.)~ */
-	GOTO LCA_CorwinSexSecond10
-
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond8
-	SAY @549 /* ~If it makes you feel better, love, I promise you won't hurt me.~ */
-	
-	IF ~~ THEN REPLY @550 /* ~Fine. You asked for it. (Attack her.)~ */
-	GOTO LCA_CorwinSexSecond10
-	
-	IF ~~ THEN REPLY @594 /* ~No. I'm not going to hit you.~ */
-	GOTO LCA_CorwinSexSecond9A //OK
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond9A
-	SAY @595 /* ~What are you afraid of? Hit me, Gods damnit!~ */
-	
-	IF ~~ THEN
-	GOTO LCA_CorwinSexSecond10
-	
-	IF ~
-		Global("LCA_PlayerSoulStolen", "GLOBAL", 1)
-	~
-	THEN GOTO LCA_CorwinSexSecond9B //OK
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond9B
-	SAY @596 /* ~Did Irenicus take your balls, as well as your soul!?~*/
-	
-	= @597 /* ~(Her last comment sets you off, and you attack.)~ */
-	IF ~~ THEN
-	GOTO LCA_CorwinSexSecond10 //OK
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond10
-	SAY @551 /* ~(You throw a looping right hook to her head. She easily ducks under it, advances forward and delivers a solid uppercut to your jaw that sends you crashing to the floor. (She stands over you with her hands on her hips.)~ */
-	
-	= @552 /* ~Get up.~ */
-	
-	= @553 /* ~(You shake off the cobwebs and get to your feet.)~ */
-	
-	= @554 /* ~Again, like you mean it this time.~ */
-	
-	= @555 /* ~(You throw a series of one-two combinations, but she easily dodges or parries your blows. Your throbbing member flails wildly as you try and fail to hit her. She laughs.)~ */
-	
-	= @556 /* ~As much as I like watching that big dick swing around, we're getting nowhere.~ */
-	
-	= @557 /* ~(You throw another right hook. She dodges, turns her body and grabs your right arm in one motion, then throws you over her back. As you try and scramble back to your feet, she takes your back and puts you in a sleeper hold, then wraps her legs around yours.)~ */
-	
-	= @558 /* ~Try and break out of this hold, lover.~ */
-	
-	= @559 /* ~(You're on your left side, with your left arm pinned behind your body. Her right forearm is tight across your neck, with her right hand holding her left bicep. Her left hand is behind your head, pushing it down into her right forearm. You try but are unable with your right arm to break her hold. She gradually increases the pressure, and you are on the verge of blacking out.)~ */
-	
-	= @560 /* ~Come on, hero. I thought a big strong man like you couldn't be beaten by a woman. You *are* a man, aren't you?~ */
-	
-	= @561 /* ~(In a fluid motion, she shifts her hold so that her left forearm is across your neck, while her right hand moves lower to seize your testicles.)~*/
-	
-	= @562 /* ~Yep, you're definitely a man, with all of a man's weaknesses. (She squeezes your balls gently at first, then harder.)~ */
-	
-	= @563 /* ~(Your member shrinks due to the pain, and you frantically try with your right arm to break the vice-like grip she has on your balls. She responds by increasing the pressue on your neck. Your vision becomes dark as you try instead to pull her arm away from your neck, but as you do, she squeezes your jewels harder. You cry out in pain.)~ */
-	
-	IF ~~ THEN REPLY @564 /* ~Schael, you're hurting me! Please, stop! Let... aagh... go!~ */
-	GOTO LCA_CorwinSexSecond11
-	
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond11
-	SAY @565 /* ~Is this all that it takes to defeat the hero of Baldur's Gate? I hope not. (She squeezes even harder.)~*/
-	
-	IF ~~ THEN REPLY @566 /* ~AAAHH!~ */ 
-	GOTO LCA_CorwinSexSecond11A
-	
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond11A
-	SAY @603 /* (You let out a high pitch scream that she quickly silences by increasing the pressure on your neck. Your vision darkens again, and one last, pitiful shudder marks the end of your feeble attempts at resistance. Thoroughly beaten, you unclench your fists in an involuntary sign of surrender, and lay still.)~ */
-	
-	IF ~~ THEN GOTO LCA_CorwinSexSecond12
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond12
-	SAY @567 /* ~(Just as you are about to lose consciousness, she mercifully releases her grip on your genitals and loosens her choke hold. You feel your blood rush back into your head, and you regain your lucidity.)~ */
-	
-	= @568 /* ~You see, love? Raw strength and power are not enough to win every fight. You need to learn how and where to apply your strength.~ */
-	
-	= @569 /* ~(She reaches down and grabs your genitals once again. She laughs as you flinch in fear.)~ */
-	
-	= @570 /* ~Relax, dear. You'll enjoy this. (Instead of squeezing, she begins to gently caress your aching genitals, while kissing your neck. In moments, you are once again sporting a rock hard erection.)~ */
-	
-	= @571 /* ~(She seizes your erect penis and gives you a vigorous handjob. It takes less than a minute for her to force your seed out of you and onto her hand, while you moan weakly in submission and defeat.)~ */
-	
-	= @572 /* ~(That she's so easily able to dominate you physically and sexually is equal parts humiliating and erotic, you think to yourself. She holds up and eyes her right hand, which is covered in your ejaculate.)~ */
-	
-	= @573 /* ~Mm. What a mess.~ */
-	
-	= @574 /* ~(She pushes you off her body and begins massaging her breasts with her left hand, while she fingers herself with the right.)~ */
-	
-	= @575 /* ~Ohhh... <CHARNAME>...~ */
-	
-	= @598 /* ~(The sight and sound of Schael pleasuring herself while moaning your name is enough to reinvigorate your aching member. You stand over your love. Eying your throbbing tool, she spreads her legs and invites you in.)~*/
-	
-	= @576 /* ~Give it to me, lover! Show me how a great and powerful hero fucks his woman!~    */
-	
-	= @577 /* ~(You immediately mount her and ram your member deep inside of her. She is extraordinarily tight, and the feeling is exquisite. You passionately kiss as you increase and try to synchronize the pace of your thrusts.)~ */
-	
-	= @578 /* ~(Once your thrusts are in sync, you fondle and then squeeze Schael's ample breasts. This is enough to send her over the edge, and she arches her body as she experiences an earth-shattering climax.)~*/
-	
-	= @579 /* ~(With a few more savage thrusts, you reach your own orgasm. Schael, still recovering from her own orgasm, weakly scissors her legs around your waist as you release your semen into her.)~  */
-	
-	= @580 /* ~(You pull out of Schael and roll over, so that you are laying side by side on the floor. You cover your still aching package with your hands, just in case Schael gets any more ideas. She gets up first, and groggily walks over and falls into bed. You follow her and similarly collapse into bed.)~ */
-	
-	= @581 /* ~(You both sleep soundly, for a while at least. After a couple of hours, you find yourself awake in bed and turn to look at Schael. You think of the confluence of events that have led you to eachother, and how much this beautiful, incredible woman has changed your life for the better.)~ */
-	
-	IF ~~ THEN REPLY @582 /* ~My love? Are you awake?~ */
-	GOTO LCA_CorwinSexSecond13 
-	
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond13
-	SAY @583 /* ~Mmm, yes hon. (She opens her eyes.) I hope I wasn't too rough with you earlier.~ */
-	
-	IF ~~ THEN REPLY @584 /* ~You were, a little, but ... how do I say this. I'm finding more and more that I enjoy being, ah, under your control in the bedroom.~ */
-	GOTO LCA_CorwinSexSecond14A
-	
-	IF ~~ THEN REPLY @586 /* ~No, you were amazing Schael. You certainly know how to keep things interesting in the bedroom.~*/
-	GOTO LCA_CorwinSexSecond14B
-	
-	IF ~~ THEN REPLY @249 /* ~Excruciating is perhaps a better word.~*/
-	GOTO LCA_CorwinSexSecond14C
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond14A
-	SAY @585 /* ~(She smiles.) Somehow I knew that you're the type of man that would appreciate being dominated by a woman.~*/
-	
-	IF ~~ THEN REPLY @588 /* ~So, what did I do wrong? How was I supposed to break out of that hold?~*/
-	GOTO LCA_CorwinSexSecond15
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond14B
-	SAY @587 /* ~(She smiles.) Variety is the spice of life, my love. I'd hate for our love life to become boring. Somehow... (she playfully pats your inert member), I dont think we'll need to worry about that.~*/
-	
-	IF ~~ THEN REPLY @588 /* ~So, what did I do wrong? How was I supposed to break out of that hold?~*/
-	GOTO LCA_CorwinSexSecond15
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond14C
-	SAY @250 /* ~I'm sorry. I guess I got a little carried away.~*/
-	
-	IF ~~ THEN REPLY @588 /* ~So, what did I do wrong? How was I supposed to break out of that hold?~*/
-	GOTO LCA_CorwinSexSecond15
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond15
-	SAY @589 /* ~You needed to shift your weight and turn your body to free your left arm. If you'd done that, you probably would've been able to pry my right arm away and break the hold over your neck. Also, when I was holding your neck with one arm, you should have been able to break free. Instead, you tried to free your balls from my grip.~*/
-	
-	= @590 /* ~Not that I blame you. They are precious, after all. (She reaches over and gently massages your package.)~ */
-	
-	= @591 /* ~Come on, get up. There are a few more things I need to show you.~ */
-	
-	= @592 /* ~(You spend the rest of the time going over a series of chokeholds, leglocks, and armbars. She teaches you how to apply them, and how to break free from them. It will take several years of practice before you're as proficient as she is, but you feel that the knowledge she's imparted to you has already increased your effectiveness as a fighter.)~ */
-	
-	= @593 /* ~(During the lessons, it was difficult at times to focus, as the now familiar, strangely comforting feeling of being under Schael's control sent your libido into overdrive.)~ */
-	
-	IF ~~ THEN
-	GOTO LCA_CorwinSexSecond16
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexSecond16
-	SAY @602 /* ~You end up making love again before finally falling asleep.~ */
-	
-	IF ~~ THEN
-	DO ~
-		RestPartyEx(0,0,FALSE)
-		SetGlobal("LCA_CorwinSexSecond", "GLOBAL", 4)
-		SetGlobal("LCA_SleepInn", "GLOBAL", 0)
-	~
-	EXIT
-END
-
-IF ~
-	Global("LCA_CorwinSexSecond", "GLOBAL", 4)
-	NumInPartyGT(2)
-	AreaCheck("LCAcs10")
-~ THEN BEGIN LCA_CorwinSexSecondAfterGT2
-	SAY @364 /* ~The others are waiting. Let's go, love.~ */
-
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_CorwinSexSecond", "GLOBAL", 5)
-		ChangeStat(Player1,DEX,1,ADD)
-		AddJournalEntry(@601, INFO)
-		AddXPObject(Player1, 125000)
-		AddXPObject("LCCORWIN", 125000)
-		StartCutScene("LCAcsEx")
-	~
-	EXIT
-END
-
-IF ~
-	Global("LCA_CorwinSexSecond", "GLOBAL", 4)
-	!NumInPartyGT(2)
-	AreaCheck("LCAcs10")
-~ THEN BEGIN LCA_CorwinSexSecondAfterLT3
-	SAY @365 /* ~It's time to head out. Let's go, love.~ */
-
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_CorwinSexSecond", "GLOBAL", 5)
-		ChangeStat(Player1,DEX,1,ADD)
-		AddJournalEntry(@601, INFO)
-		AddXPObject(Player1, 125000)
-		AddXPObject("LCCORWIN", 125000)
-		StartCutScene("LCAcsEx")
-	~
-	EXIT
-END
-
-
-
-
-
-
 
 IF ~
 	InParty(Myself)
@@ -4326,7 +4077,7 @@ IF ~~ THEN BEGIN LCA31C
 	SAY @308 /* ~Gladly, my dear.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("LCA_CorwinSexFirst", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -5191,14 +4942,6 @@ IF ~~ THEN BEGIN LCA68
 	EXTERN ~UDPHAE01~ 138
 END
 
-
-
-
-
-
-
-
-
 IF ~~ THEN BEGIN LCA77
 	SAY @238 /* ~You know, I heard you cheering for me, love. It meant a lot.~ */
 	
@@ -5282,23 +5025,12 @@ IF ~~ THEN BEGIN LCA83
 	EXTERN BODHIAMB LCA2
 END
 
-
-
-
-
-
 IF ~~ THEN BEGIN LCA97
 	SAY @295 /* ~No! That will n-never happen! You will die ... f-for threatening ...my family...~ */
 	IF ~~ THEN
 	EXTERN C6BODHI LCA3
 
 END
-
-
-
-
-
-
 
 IF ~~ THEN BEGIN LCA_MeetMelkor5B6
 	SAY @913 /* ~<CHARNAME>... the caves beneath Dragonspear, remember? We encountered a rift into the Fugue plane. Hephernaan's acolytes were performing some sort of ritual there.~*/
@@ -5470,7 +5202,6 @@ IF ~~ THEN BEGIN LCA_EdwinFF2
 	EXTERN EDWINJ LCA_EdwinFF3
 END
 
-
 IF ~~ THEN BEGIN LCA_DelciaLeft
 	SAY @513 /* ~Gods. I think she needed that as much as I did.~ */
 	
@@ -5530,7 +5261,7 @@ IF ~~ THEN BEGIN LCA_DelciaLeft3
 	EXIT
 	
 	IF ~
-		!Global("LCA_CorwinSexFirst", "GLOBAL", 4)
+		GlobalLT("LCA_TimesHadSex", "GLOBAL", 1)
 	~
 	THEN REPLY @523 /* ~You and I both... my love, I know of a couple of activities that can help us to relieve some of that stress...~ */
 	GOTO LCA_DelciaLeft4
@@ -5557,7 +5288,7 @@ IF ~~ THEN BEGIN LCA_DelciaLeft6
 	SAY @528 /* ~Good. (She gives you a kiss on the cheek.) Let's go.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("LCA_CorwinSexFirst", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -5786,15 +5517,6 @@ IF ~~ THEN BEGIN LCA_GetRohmaGift
 	EXIT
 END
 
-/*
-IF ~~ THEN BEGIN LCA_ForceMeetWithFamily
-	SAY @764 
-	
-	IF ~~ THEN
-	EXTERN LCBENCE LCA_ForceMeetWithFamily2
-END
-*/
-
 IF ~~ THEN BEGIN LCA_FirstMeetingRohma
 	SAY @713 /* ~(You think to yourself that this is the first time you'll have met Schael's family. You want to make a good impression. It may be worthwhile stopping at one of the General Stores in the city to see if you can find a gift for her daughter.)~ */
 	
@@ -5842,9 +5564,6 @@ IF ~~ THEN BEGIN LCA_WYRM_6A
 	EXTERN LCNEDERL LCA_WYRM_6B
 END
 
-
-
-
 IF ~~ THEN BEGIN LCA_CorwinFamilyReunite3A3
 	SAY @712 /* ~Rohma!~ */
 	
@@ -5863,10 +5582,6 @@ IF ~~ THEN BEGIN LCA_CorwinFamilyReunite3A4A3
 	IF ~~ THEN
 	EXTERN LCROHMA LCA_CorwinFamilyReunite3A4A4
 END
-
-
-	
-
 
 IF ~~ THEN BEGIN LCA_CorwinFamilyReuniteSwitch
 	SAY @769 /* ~(She turns to you.)~ */
@@ -5948,8 +5663,6 @@ IF ~~ THEN BEGIN LCA_RohmaTaunt4B
 	GOTO LCA_Depart_RohmaChain
 END
 
-
-
 IF ~~ THEN BEGIN LCA_Depart_Romance2
 	SAY @778 /*  ~So, where are you planning to stay tonight?~ */
 	
@@ -6030,8 +5743,6 @@ IF ~~ THEN BEGIN LCA_Depart_Romance5
 	~
 	EXTERN LCROHMA LCA_SayBye
 END
-
-
 
 IF ~~ THEN BEGIN LCA_CorwinMadLCNOBLW1
 	SAY @819 /* ~I see. Come with me to the Flaming Fist headquarters. I'm sure Duke Eltan would appreciate hearing how much of a fool he is for allowing <CHARNAME> back into the city.~ */
@@ -6374,8 +6085,6 @@ IF ~~ THEN BEGIN LCA_ReadyToGetRohma
 	~
 	EXTERN LCNEDERL LCA_ReadyToGetRohmaEnd
 END
-
-
 
 IF ~~ THEN BEGIN LCA_CorwinDelciaA_End
 	SAY @505 /* ~Now, listen to me. I didn't travel all this way and risk my life only to be spoken down to by a pretentious, insufferable bitch. We are not your servants, and you are no better than the dirt on my heel. Get up.~  */

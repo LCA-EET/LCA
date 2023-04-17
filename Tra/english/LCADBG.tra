@@ -133,12 +133,12 @@
 @132 = ~Set bd_corwin_romanceactive to 2.~
 @133 = ~Set bd_corwin_romanceactive to 3.~
 @134 = ~Set LCA_CorwinWitnessedDuel to 0.~
-@135 = ~Set LCA_CorwinSexFirst to 1.~
-@136 = ~Set LCA_CorwinSexFirst to 2.~
-@137 = ~Set LCA_CorwinSexFirst to 3.~
-@138 = ~Set LCA_CorwinSexFirst to 4.~
+@135 = ~Set LCA_CorwinSex_1 to 1.~
+@136 = ~Set LCA_CorwinSex_1 to 2.~
+@137 = ~Set LCA_CorwinSex_1 to 3.~
+@138 = ~Set LCA_CorwinSex_1 to 4.~
 @139 = ~Set LCA_CorwinSexAfterBodhi to 1.~
-@140 = ~Set LCA_CorwinSexFirst to 0.~
+@140 = ~Set LCA_CorwinSex_1 to 0.~
 @141 = ~Set LCA_CorwinSexNoSleepComplain to 1.~
 @142 = ~Set LCA_CorwinHostile to 1.~
 @143 = ~Set SvirHostile to 1.~
