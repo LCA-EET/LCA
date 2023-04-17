@@ -27,6 +27,7 @@ override/HOUSG3.dlg
 override/OGHMONK1.dlg
 override/LCKENT.dlg
 override/LCCORWIB.dlg
+override/LCFORTHE.dlg
 override/LCMERLEA.dlg
 override/LCDIVINE.dlg
 override/NALIAJ.dlg
@@ -43,6 +44,7 @@ override/BDWTREX.dlg
 override/MERLEA.dlg
 override/LCENTAR.dlg
 override/MARIA.dlg
+override/BDIMOEN.dlg
 override/GORAPP1.dlg
 override/C6WULF1.dlg
 override/LCILLASE.dlg
@@ -147,6 +149,7 @@ override/LCCORWIJ.dlg
 override/LCGAMES2.dlg
 override/IMOENJ.dlg
 override/DALESON.dlg
+override/FORTHE.dlg
 override/C6ELHAN2.dlg
 override/LCKERRAC.dlg
 override/LCBELT.dlg
@@ -234,10 +237,12 @@ override/LCBG0100.bcs
 override/LCBG0102.bcs
 override/LCBG0103.bcs
 override/LCBG0112.bcs
+override/LCBG0116.bcs
 override/LCBG0119.bcs
 override/LCBG0127.bcs
 override/LCBG0128.bcs
 override/LCBG0129.bcs
+override/LCBG0131.bcs
 override/LCBG0134.bcs
 override/LCBG0153.bcs
 override/LCBG0200.bcs
@@ -285,6 +290,7 @@ override/LCDEBR02.bcs
 override/LCDEBR03.bcs
 override/LCDEBREF.bcs
 override/LCDEBRST.bcs
+override/LCDELRBG.bcs
 override/LCDINN01.bcs
 override/LCDINNER.bcs
 override/LCDUCAL.bcs
@@ -292,6 +298,7 @@ override/LCFERGUS.bcs
 override/LCFFHUNT.bcs
 override/LCFFOFCR.bcs
 override/LCGIRLOV.bcs
+override/LCGORP.bcs
 override/LCGoToBG.bcs
 override/LCGUARD.bcs
 override/LCHEADS.bcs
@@ -505,6 +512,8 @@ override/LCMELKOR.CRE
 override/LCSKIE.CRE
 override/LCJASPER.CRE
 override/LCTIANNA.CRE
+override/NOBW7.CRE
+override/HOUSG6.CRE
 override/YAGO.CRE
 override/DOPZORL.CRE
 override/GAMES2.CRE
@@ -563,14 +572,17 @@ override/BG0703.bcs
 override/BG0704.bcs
 override/BG0724.bcs
 override/BG0725.bcs
+override/BG0112.bcs
+override/BG0116.bcs
 override/BG0119.bcs
 override/BG0127.bcs
 override/BG0128.bcs
 override/BG0129.bcs
+override/BG0131.bcs
 override/BG0134.bcs
-override/BG0112.bcs
 override/BDCUT59B.bcs
 override/BD6000.bcs
+override/GORPGANG.bcs
 override/LEAVECH7.bcs
 override/DOPPSS.bcs
 override/BDFAMARI.CRE
@@ -630,11 +642,13 @@ override/LCSTDAGF.itm
 override/LCSTDAGI.bam
 override/LCSTDAGG.BAM
 override/LCSTDAGC.BAM
+override/LTRSCH.itm
+override/LTRCOR.itm
 override/LCORW1.itm
 override/LCORW2.itm
 override/LDUNC.itm
 override/RDOLL.itm
-override/CorwAm.itm
+override/LCAMULET.itm
 override/LCMANFST.ITM
 override/LCMANFS2.ITM
 override/LCMANFS3.ITM
