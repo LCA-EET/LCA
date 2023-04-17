@@ -89,8 +89,8 @@ IF ~~ THEN BEGIN LCA_TestInteraction
 	
 	IF ~~ THEN REPLY @279
 	DO ~
-		SetGlobal("LCA_HelpedForthel_BG1", "GLOBAL", 1)
-		CreateCreature("FORTHE", [-1.-1], N)
+		MoveGlobal("MYAREA", "FORTHEL",[-1.-1])
+		//CreateCreature("FORTHE", [-1.-1], N)
 		ActionOverride("FORTHEL", SetDialog("LCFORTHE"))
 	~
 	EXIT
