@@ -408,7 +408,7 @@ END
 
 //} #endregion
 
-//{ #region Illasera Killed - DLG-0006
+//{ #region Illasera Killed - DLG-0006 - Tested
 IF ~
 	Global("LCA_IllaseraDead", "GLOBAL", 1)
 ~ THEN BEGIN LCA_IllaseraDead
@@ -581,7 +581,7 @@ IF ~~ THEN BEGIN LCA_IllaseraDead_Mercy
 END
 //} #endregion
 
-//{ #region Arrival in Undercity - DLG-0007
+//{ #region Arrival in Undercity - DLG-0007 - Tested
 IF ~
 	Global("LCA_ArrivedInUndercity", "GLOBAL", 1)
 ~ THEN BEGIN LCA_ArrivedInUndercity
@@ -1146,7 +1146,7 @@ IF ~~ THEN LCA_CorwinProposal7
 END
 //} #endregion
 
-//{ #region Dinner with Corwin (Romance) - DLG-0013
+//{ #region Dinner with Corwin (Romance) - DLG-0013 - Tested
 IF ~
 	Global("LCA_CorwinDinner", "GLOBAL", 1)
 	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
@@ -1255,7 +1255,7 @@ IF ~~ THEN BEGIN LCA_CorwinDinner_Romance8
 END
 //} #endregion
 
-//{ #region Dinner with Corwin (Non-Romance) - DLG-0014
+//{ #region Dinner with Corwin (Non-Romance) - DLG-0014 - Tested
 IF ~
 	Global("LCA_CorwinDinner", "GLOBAL", 1)
 	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
@@ -1396,7 +1396,7 @@ IF ~~ THEN BEGIN LCA_CorwinDinner_WalkHome_Female
 END
 //} #endregion
 
-//{ #region Dinner with Corwin (Common) DLG-0013 / 14
+//{ #region Dinner with Corwin (Common) DLG-0013 / 14 - Tested
 IF ~~ THEN BEGIN LCA_CorwinDinner_Work
 	SAY @1024 /* ~That's your money. Consider it compensation for everything you've had to endure.~*/
 	
@@ -1458,7 +1458,7 @@ IF ~~ THEN BEGIN LCA_CorwinDinner_WorkEnd
 END
 //} #endregion
 
-//{ #region Corwin / Tianna DLG-0015
+//{ #region Corwin / Tianna DLG-0015 
 IF ~
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	Global("LCA_AskCorwinAboutTianna", "GLOBAL", 1)
@@ -3096,7 +3096,7 @@ IF ~~ THEN BEGIN LCA62
 END
 //} #endregion
 
-//{ #region Corwin Sex 1 - DLG-0044
+//{ #region Corwin Sex 1 - DLG-0044 - Tested 2023-04-17
 IF ~
 	Global("LCA_CorwinSex_1", "GLOBAL", 1)
 	Global("LCA_SleepInn", "GLOBAL", 1)
@@ -3242,7 +3242,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region Corwin Sex 2 Timer Initial - DLG-0045
+//{ #region Corwin Sex 2 Timer Initial - DLG-0045 - Tested 2023-04-17
 IF ~
 	GlobalTimerExpired("LCA_CorwinSex_2_Timer", "GLOBAL")
 	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
@@ -3281,7 +3281,7 @@ IF ~~ THEN BEGIN LCA_CorwinSexSecond3B
 END
 //} #endregion
 
-//{ #region Corwin Sex 2 - DLG-0046
+//{ #region Corwin Sex 2 - DLG-0046 - Tested 2023-04-17
 IF ~
 	Global("LCA_CorwinSex_2", "GLOBAL", 2)
 	Global("LCA_SleepInn", "GLOBAL", 1)
@@ -3362,7 +3362,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region Corwin Arrest - DLG-0047
+//{ #region Corwin Arrest - DLG-0047 - Tested 2023-04-18
 IF ~
 	Global("LCA_CorwinArrest", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinArrest1
@@ -3379,7 +3379,7 @@ IF ~
 	GOTO LCA_CorwinArrest2
 	
 	IF ~
-		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @557 /*  ~No love, I don't think you did.~ */
 	GOTO LCA_CorwinArrest2
 END
