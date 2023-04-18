@@ -1808,26 +1808,17 @@ IF ~~ THEN BEGIN LCA_SexTonight
 	EXIT
 	
 	IF ~
-		Global("LCA_DisableXRatedContent", "GLOBAL", 0)
-		Gender(Player1, MALE)
-	~ THEN GOTO LCA_SexTonightX
-END
-
-IF ~~ THEN BEGIN LCA_SexTonightX
-	SAY @909 /* ~(She turns and leaves. As she walks away, you gaze longingly at her well-formed ass and shapely legs. Your mind fills with thoughts of what she has planned for tonight, and in moments, you're sporting a rock hard erection.)~  */
-	
-	IF ~~ THEN
+		Global("LCA_ExplicitModActive", "GLOBAL", 1)
+	~ THEN 
 	DO ~
 		SetGlobal("LCA_CorwinWithFamily", "GLOBAL", 1)
 		SetGlobal("LCA_CorwinMetFamily", "GLOBAL", 1)
-		SetLeavePartyDialogFile()
-		ChangeAIScript("",DEFAULT)
-		LeaveParty()
-		EscapeAreaMove("BG1316",400,250,S) 
+		SetGlobal("LCA_Explicit_0001", "GLOBAL", 1)
+		StartDialog("LCCORWIJ", Player1)
 	~
 	EXIT
-	
 END
+
 //} #endregion
 
 //{ #region Go Back to BG (Romance) - DLG-0021
