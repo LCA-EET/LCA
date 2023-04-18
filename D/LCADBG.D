@@ -96,6 +96,21 @@ IF ~~ THEN BEGIN LCA_TestInteraction
 	~
 	EXIT
 	
+	IF ~~ THEN REPLY @283 /* ~Corwin Sex 1.~*/
+	DO ~
+		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 2)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @284 /* ~Corwin Sex 2.~*/
+	DO ~
+		SetGlobal("LCA_CorwinSex_2", "GLOBAL", 3)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
+	~
+	EXIT
+	
+	
 	IF ~~ THEN REPLY @26 /* ~Go back to the prior menu.~ */
 	GOTO LCA_ReturnToMainMenu
 END
