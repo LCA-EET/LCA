@@ -26,6 +26,22 @@ APPEND ~PLAYER1~
 		
 	END
 	
+	IF ~~ THEN BEGIN LCA_CORWIN_PPIRENI2_3
+		SAY @96 /* ~(You begin to feel fear, not for yourself, but for the woman you love. If you had sent her away instead of accepting her aid, she wouldn't be facing this dire situation.)~ */
+		
+		IF ~~ THEN
+		EXTERN PPIRENI2 LCA_PPIRENI2_3_CHAIN_2
+		
+		IF ~
+			Global("LCA_ExplicitModActive", "GLOBAL", 1)
+		~ THEN
+		DO ~
+			SetGlobal("LCA_Explicit_0002", "GLOBAL", 1)
+			StartDialog("PLAYER1", Player1)
+		~
+		EXIT
+	END
+	
 	IF ~~ THEN BEGIN LCA_ReadCorwinLetter
 		SAY @93 /* ~(The letter reads as follows.)~ */
 		

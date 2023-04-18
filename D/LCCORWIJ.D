@@ -6026,7 +6026,18 @@ IF ~~ THEN BEGIN LCA_GoWithSchael
 	~ THEN REPLY @1017 /* ~Schael, if you're to come with me, I need you calm, cool and collected - for Rohma's sake. Can I count on you?~ */
 	GOTO LCA_CalmDown
 END
+IF ~~ THEN BEGIN LCA_PPIRENI2_3_CHAIN_2_END
+	SAY @551 /* ~Let.. me.. GO!~ */
+	
+	IF ~~ THEN REPLY #44251 /* ~What are you doing, Irenicus?! What is all of this?~ */ 
+	EXTERN PPIRENI2 5
 
+	IF ~~ THEN REPLY @552 /* ~Release us! I will kill you, I swear it!~ */ 
+	EXTERN PPIRENI2 4
+
+	IF ~~ THEN REPLY #44253 /* ~Where is Imoen?! What have you done to her?!~ */ 
+	EXTERN PPIRENI2 6 
+END
 IF ~~ THEN BEGIN LCA_GoAlone
 	SAY @1015 /* ~I can't let you do that!~ */
 	
@@ -6075,6 +6086,17 @@ IF ~~ THEN BEGIN LCA_ReadyToGetRohma
 		SetGlobal("LCA_RohmaKidnapped", "GLOBAL", 5)
 	~
 	EXTERN LCNEDERL LCA_ReadyToGetRohmaEnd
+END
+
+IF ~~ THEN BEGIN LCA_PPIRENI2_3_CHAIN_END
+	SAY @546 /* ~You won't get away with this, wizard!~ */
+	
+	IF ~~ THEN
+	EXTERN PPIRENI2 LCA_PPIRENI2_3_CHAIN_2
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN PLAYER1 LCA_CORWIN_PPIRENI2_3
 END
 
 IF ~~ THEN BEGIN LCA_CorwinDelciaA_End
@@ -6940,3 +6962,32 @@ CHAIN LCCORWIJ LCA_BGEND3_CorwinSaradushChain
 	== LCNEDERL 
 	@1261 /* ~And Major - don't worry about your family while you're gone. We'll make sure they are well-protected here in the palace, just in case the Five try anything again. Good hunting.~ */
 END LCCORWIJ LCA_BGEND3_CorwinSaradushChainEnd
+
+CHAIN PPIRENI2 LCA_PPIRENI2_3_CHAIN
+	@541 /* ~And you, young lady.~ */
+	= @542 /*~(He looks at Corwin, and the Flaming Fist insignia on her armor.)~*/
+	= @543 /*~I trust you are here to effect some appropriate punishment for what I did to Skie Silvershield?~*/
+	
+	== LCCORWIJ
+	@544 /* ~Ugh...~ */
+	= @545 /*~(She struggles mightily against her restraints.)~*/
+END LCCORWIJ LCA_PPIRENI2_3_CHAIN_END
+
+CHAIN PPIRENI2 LCA_PPIRENI2_3_CHAIN_2
+	@547 /* ~Worry not, my dear. Unlike the others, you will live past these next few minutes. Once I am done with <CHARNAME>, you'll soon be returned home, where you will assassinate the Council of Four on my behalf.~ */
+	
+	== LCCORWIJ
+	@548 /* ~What..? No, never!~ */
+	
+	== PPIRENI2
+	IF ~
+		See("Yoshimo")
+	~
+	@549 /* ~It's a trivial matter. You'll be enslaved just as easily as Yoshimo was. Enjoy your last moments of autonomy, child.~ */
+	
+	== PPIRENI2
+	IF ~
+		!See("Yoshimo")
+	~
+	@550 /* ~It's a trivial matter. You'll be enslaved through the use of a geas. Enjoy your last moments of autonomy, child.~ */
+END LCCORWIJ LCA_PPIRENI2_3_CHAIN_2_END

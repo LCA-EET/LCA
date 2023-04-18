@@ -214,7 +214,7 @@
 @225 =  ~I'm glad. Not about your shoes, but that your friend is back to normal. It must have been quite the experience.~
 @226 =  ~Imoen - what do you need?~ [LCCORB58]
 @227 =  ~Nothing, Captain Corwin. I wanted to tell you that I'm glad you're here. I know it's been difficult being away from your family.~
-@228 =  ~I'm just glad that you're free from the wizard. Duke Jannath was very worried when she learned that you'd been kidnapped.~
+@228 =  ~I'm just glad that you're free from the wizard. Duchess Jannath was very worried when she learned that you'd been kidnapped.~
 @229 =  ~Liia was worried about me? I miss her... she's a wonderful person, and a great teacher.~
 @230 =  ~Don't worry, you'll see her again once this is over. I'm sure she'd be proud of your progress in the magical arts. [LCCORB59]~
 @231 =  ~I hope so. My magic pales in comparison to Irenicus.~
@@ -625,17 +625,15 @@ Mazzy and Schael have expressed interest in taking part in this year's Trademeet
 @644 = ~Besides, <CHARNAME> ventured to one of the nine hells and came back alive. I'm sure that with <PRO_HISHER> help we'll be able to handle the Underdark.~
 @645 = ~These guilds are all the same, in every city. I feel dirty just by speaking to them, let alone working for them. Still, they are a necessary means to an end if we're to rescue Imoen.~
 @646 = ~I really don't like the sound of this.~
-@647 = ~And you, young lady. (He looks at Corwin, and the Flaming Fist insignia on her armor.) I trust you are here to effect some appropriate punishment for what I did to Skie Silvershield?~
-@648 = ~Ugh... (she struggles mightily against her restraints, to no avail) you won't get away with this, wizard!~
+@647 = ~And you, young lady.~
+
+@648 = ~Ugh...~
 @649 = ~What.. never!~
 @650 = ~Worry not, my dear. Unlike the others, you will live past these next few minutes. Once I am done with <CHARNAME>, you'll soon be returned home, where you will assassinate the Council of Four on my behalf.~
 @651 = ~It's a trivial matter. You'll be enslaved just as easily as Yoshimo was. Enjoy your last moments of autonomy, child.~
 @652 = ~It's a trivial matter. You'll be enslaved through the use of a geas. Enjoy your last moments of autonomy, child.~
 @653 = ~(You begin to feel fear, not for yourself, but for the woman you love. If you had sent her away instead of accepting her aid, she wouldn't be facing this dire situation.)~
-@654 = ~(In spite of your predicament, you find the sight of Schael straining helplessly against her bonds to be profoundly erotic, and you experience a tightening in your loins. You feel ashamed, and resolve to control your arousal before anyone notices.)~ 
-@655 = ~(In spite of your predicament, you find the sight of Schael straining helplessly against her bonds to be profoundly erotic, and you experience a tightening in your loins. You struggle to control your arousal before anyone notices. You think that if, somehow, the two of you survive this, you may want to try some creative new activities in the bedroom.)~  
-@656 = ~(In spite of your predicament, you find the sight of Schael straining helplessly against her bonds to be profoundly erotic. You feel ashamed.)~ 
-@657 = ~(In spite of your predicament, you find the sight of Schael straining helplessly against her bonds to be profoundly erotic. You think that if, somehow, the two of you survive this, you may want to try some creative new activities in the bedroom.)~  
+ 
 @658 = ~Dorn - you seem to have taken a very strong interest in <CHARNAME>.~
 @659 = ~It's none of your concern.~
 @660 = ~But it is. If you even think to stand in the way of our relationship, I promise that you'll regret it.~
@@ -756,3 +754,7 @@ Mazzy and Schael have expressed interest in taking part in this year's Trademeet
 @775 = ~Hmph. Be wary of the day then, Major, when the goals of those you serve oppose one another.~
 @776 = ~My patron communicates their thoughts to my mind. I can.. hear them, as clearly as I can hear your mewling voice, Major.~ 
 @777 = ~Major, you have a lovely family.~
+@778 = ~(He looks at Corwin, and the Flaming Fist insignia on her armor.)~
+@779 = ~I trust you are here to effect some appropriate punishment for what I did to Skie Silvershield?~
+@780 = ~(She struggles mightily against her restraints.)~
+@781 = ~You won't get away with this, wizard!~

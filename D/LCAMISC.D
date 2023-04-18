@@ -7,6 +7,13 @@
 2022-12-10: Initial Commit
 
 */
+
+EXTEND_BOTTOM PPIRENI2 3
+	IF ~
+		IsValidForPartyDialog("LCCORWIN")
+	~ THEN GOTO LCA_PPIRENI2_3_CHAIN
+END
+
 ADD_TRANS_TRIGGER BDIMOEN 89
 ~
 	GlobalLT("LCA_CorwinContinue", "GLOBAL", 1)
