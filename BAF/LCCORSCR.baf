@@ -219,6 +219,15 @@ END
 */
 
 IF 
+	Global("LCA_CorwinArrest", "GLOBAL", 1)
+	See(Player1)
+	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		StartDialog("LCCORWIJ", Player1)
+END
+
+IF 
 	Global("LCA_RohmaKidnapped", "GLOBAL", 2)
 	See(Player1)
 THEN

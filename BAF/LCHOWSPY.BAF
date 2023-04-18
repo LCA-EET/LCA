@@ -1,0 +1,16 @@
+IF 
+	!Global("LCA_CorwinArrest", "GLOBAL", 1)
+	OR(2)
+		See("LCCORWIN")
+		See(Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_CorwinArrest", "GLOBAL", 1)
+END
+
+IF
+	Global("LCA_CorwinArrest", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END

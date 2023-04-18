@@ -3362,6 +3362,128 @@ IF ~
 END
 //} #endregion
 
+//{ #region Corwin Arrest - DLG-0047
+IF ~
+	Global("LCA_CorwinArrest", "GLOBAL", 1)
+~ THEN BEGIN LCA_CorwinArrest1
+	SAY @553 /* ~The Hall of Wonders...~ */
+	
+	= @554 /*  ~<CHARNAME>, did I ever tell you how I got arrested?~ */
+	
+	IF ~~ THEN REPLY @555 /* ~You, arrested?~ */
+	GOTO LCA_CorwinArrest2
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @556 /* ~No, I don't think you did, Captain.~ */
+	GOTO LCA_CorwinArrest2
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @557 /*  ~No love, I don't think you did.~ */
+	GOTO LCA_CorwinArrest2
+END
+
+IF ~~ THEN BEGIN LCA_CorwinArrest2
+	SAY @558 /* ~Well... it was after my mother died. My father was still a Fist at the time, so when he left for work I'd leave the house to hang out with some ... friends of mine. It's how I met Beno.~ */
+	
+	= @559 /* ~We got ourselves into a *lot* of trouble.~ */
+	
+	IF ~~ THEN REPLY @560 /* ~Well? Tell me more.~ */
+	GOTO LCA_CorwinArrest3
+	
+	IF ~~ THEN REPLY @561 /* ~Hah, some things never change. You still get into a lot of trouble, only with me instead!~ */
+	GOTO LCA_CorwinArrest3
+END
+
+IF ~~ THEN BEGIN LCA_CorwinArrest3
+	SAY @562 /* ~One day, we had the brilliant idea to go to the Hall of Wonders and play hot potato with a jeweled egg. It was donated to the museum by an emissary from Tethyr. It must have been worth hundreds, or even thousands of gold.~ */
+	
+	= @563 /* ~There we were, throwing this very expensive and precious egg around, while the museum guards were frantically chasing us in and around the Hall.~ */
+	
+	= @564 /* ~Guess who was holding the egg when the music stopped?~ */
+	
+	IF ~~ THEN REPLY @565 /* ~You.~ */
+	GOTO LCA_CorwinArrest4
+END
+
+IF ~~ THEN BEGIN LCA_CorwinArrest4
+	SAY @566 /* ~That's right. I was arrested... and my 'friends' all ran away. It's a good thing that the egg wasn't damaged, otherwise I might still be in prison, hah.~ */
+	
+	= @567 /* ~My father could've gotten me out like he did so many times before, but this time, he didn't — and I'm glad. Spending that night in that cold cell was a major wake up call for me.~ */
+	
+	IF ~~ THEN REPLY @568 /* ~I know what you mean. I never want to see those cells again.~*/
+	GOTO LCA_CorwinArrest5A
+	
+	IF ~~ THEN REPLY @569 /* ~Do you ever think of how your life would have changed had you not been arrested?~ */
+	GOTO LCA_CorwinArrest5B
+END
+
+IF ~~ THEN BEGIN LCA_CorwinArrest5A
+	SAY @573 /* ~You know, sometimes I think how my life would've changed if I hadn't been arrested that day...~*/
+	
+	= @574 /* ~Would Rohma be here? Would I have joined the Fist? Taken part in the Dragonspear campaign?~ */
+	
+	IF ~~ THEN 
+	GOTO LCA_CorwinArrest6_NoRomance
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN GOTO LCA_CorwinArrest6_Romance
+END
+
+IF ~~ THEN BEGIN LCA_CorwinArrest5B
+	SAY @570 /* ~I do... Would Rohma be here? Would I have joined the Fist? Taken part in the Dragonspear campaign?~ */
+	
+	IF ~~ THEN 
+	GOTO LCA_CorwinArrest6_NoRomance
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN GOTO LCA_CorwinArrest6_Romance
+END
+
+IF ~~ THEN BEGIN LCA_CorwinArrest6_NoRomance
+	SAY @578 /* ~Only the Gods know, I guess...~ */
+	
+	IF ~~ THEN
+	EXIT
+	
+	IF ~
+		!Global("LCA_VisitedHOW", "GLOBAL", 1)
+	~ THEN 
+	GOTO LCA_CorwinArrest7	
+END
+
+IF ~~ THEN BEGIN LCA_CorwinArrest6_Romance
+	SAY @571 /* ~... Would I be in love with the most amazing and heroic <PRO_MANWOMAN> in Faerûn?~ */
+	
+	IF ~~ THEN REPLY @575 /* ~And would I be in love with such an incredible, beautiful and determined woman?~ */
+	GOTO LCA_CorwinArrest6_RomanceEnd
+END
+
+IF ~~ THEN BEGIN LCA_CorwinArrest6_RomanceEnd
+	SAY @576 /* ~(You share a warm embrace.)~ */
+	
+	IF ~~ THEN
+	EXIT
+	
+	IF ~
+		!Global("LCA_VisitedHOW", "GLOBAL", 1)
+	~ THEN 
+	GOTO LCA_CorwinArrest7
+END
+
+IF ~~ THEN BEGIN LCA_CorwinArrest7
+	SAY @577 /* ~Come on, let's head in. I'm sure they've set up some interesting new exhibits since the last time we were here.~  */
+	
+	IF ~~ THEN 
+	DO ~
+		SetGlobal("LCA_CorwinArrest", "GLOBAL", 2)
+	~
+	EXIT
+END
+//} #endregion
 IF ~~ THEN BEGIN LCA_SAREV_10
 	SAY @38 /* ~You've got to be kidding me. A deal? With you?~*/
 	
