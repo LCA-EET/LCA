@@ -3447,6 +3447,9 @@ IF ~~ THEN BEGIN LCA_CorwinArrest6_NoRomance
 	SAY @578 /* ~Only the Gods know, I guess...~ */
 	
 	IF ~~ THEN
+	DO ~
+		AddJournalEntry(@1363, INFO)
+	~
 	EXIT
 	
 	IF ~
@@ -3466,6 +3469,9 @@ IF ~~ THEN BEGIN LCA_CorwinArrest6_RomanceEnd
 	SAY @576 /* ~(You share a warm embrace.)~ */
 	
 	IF ~~ THEN
+	DO ~
+		AddJournalEntry(@1363, INFO)
+	~
 	EXIT
 	
 	IF ~
@@ -3480,10 +3486,12 @@ IF ~~ THEN BEGIN LCA_CorwinArrest7
 	IF ~~ THEN 
 	DO ~
 		SetGlobal("LCA_CorwinArrest", "GLOBAL", 2)
+		AddJournalEntry(@1363, INFO)
 	~
 	EXIT
 END
 //} #endregion
+
 IF ~~ THEN BEGIN LCA_SAREV_10
 	SAY @38 /* ~You've got to be kidding me. A deal? With you?~*/
 	
@@ -6285,6 +6293,43 @@ IF ~
 	IF ~~ THEN REPLY @1295 /* ~Better do what she says, lady.~    */
 	EXTERN DELCIA LCA_CorwinLeave
 END
+
+IF ~~ THEN BEGIN LCA_HOW_WhyNot
+	SAY @1377 /* ~Excuse us, ma'am.~ */
+	
+	= @1378 /* ~(She pulls you aside.)~ */
+	
+	= @1379 /* ~What's the problem? They're orphans — they have nothing. A few words from you could at least give them some inspiration.~ */
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 1)
+	~ THEN REPLY @1380 /* ~Public speaking isn't my forte... but I'll do it for you, dear.~ */
+	GOTO LCA_StartHOWCutscene2 
+	
+	IF ~~ THEN REPLY @1381 /* ~If it's just a few words, then fine.~ */
+	GOTO LCA_StartHOWCutscene2
+	
+END
+IF ~~ THEN BEGIN LCA_StartHOWCutscene
+	SAY @1376 /* ~Lead the way, Curator Magda.~ */
+	
+	IF ~~ THEN
+	DO ~
+		StartCutsceneMode()
+		StartCutscene("LCCSHOW")
+	~
+	EXIT
+END
+IF ~~ THEN BEGIN LCA_StartHOWCutscene2
+	SAY @1382 /* ~That's better. Lead the way, Curator Magda.~*/
+	
+	IF ~~ THEN
+	DO ~
+		StartCutsceneMode()
+		StartCutscene("LCCSHOW")
+	~
+	EXIT
+END
 CHAIN 
 	IF ~~ THEN LCCORWIJ LCA_CorwinTiannaGoodbyeChain
 		@854 /* ~I hope you learned something from this Tianna. Next time, you might not be so lucky.~*/
@@ -7113,3 +7158,32 @@ CHAIN PPIRENI2 LCA_PPIRENI2_3_CHAIN_2
 	~
 	@550 /* ~It's a trivial matter. You'll be enslaved through the use of a geas. Enjoy your last moments of autonomy, child.~ */
 END LCCORWIJ LCA_PPIRENI2_3_CHAIN_2_END
+
+CHAIN LCCORWIJ LCA_MagdaChain
+	IF ~
+		Global("LCA_CorwinMetFamily", "GLOBAL", 1)
+	~
+	@1366 /* ~They are well ma'am, thank you.~ */
+	
+	== LCCORWIJ
+	IF ~
+		!Global("LCA_CorwinMetFamily", "GLOBAL", 1)
+	~
+	@1367 /* ~We're going to see them shortly.~*/
+	
+	== LCCURATO
+	@1368 /* ~Ah, good. And who're you? I don't believe we've met.~ */
+	
+	== LCCORWIJ
+	@1369 /* ~Curator Magda, allow me to introduce you to <CHARNAME>, the hero of Baldur's Gate.~ */
+END LCCURATO LCA_Introduction
+
+CHAIN LCCURATO LCA_MagdaChain2
+	@1373 /* ~For many years... enough time to watch the Captain here grow from a rapscallious child into the fine young woman she is today.~ */
+	
+	== LCCORWIJ
+	@1374 /* ~(She blushes.)~ */
+	
+	== LCCURATO
+	@1375 /* ~Oh! <CHARNAME>, Captain — a number of troubled youths from the orphanage are visiting the High Hall of Wonders, as we speak. It would mean the world to them if you can take some time out of your day to give them some words of encouragement.~ */
+END LCCURATO LCA_AskToTalk
