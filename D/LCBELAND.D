@@ -153,7 +153,7 @@ IF ~~ THEN BEGIN LCA_MakeAmends
 	
 END
 
-IF ~~ THEN BEGIN LCA_MakeAmends
+IF ~~ THEN BEGIN LCA_PleaseEnter
 	SAY @23 /* ~Thank you.~ */
 	
 	IF ~~ THEN
