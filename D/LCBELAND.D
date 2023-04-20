@@ -142,7 +142,7 @@ IF ~~ THEN BEGIN LCA_TookMoney
 	GOTO LCA_MakeAmends
 END
 
-IF ~~ THEN BEGIN GOTO LCA_MakeAmends
+IF ~~ THEN BEGIN LCA_MakeAmends
 	SAY @17 /* ~Perhaps... if you could locate and return the Farseer to us, we would be grateful. In lieu of that, some time spent with our security personnel may prove beneficial. Gond is the god of inventiveness, and we could use the knowledge you impart to us to improve our ability to better protect our exhibits.~ */
 	
 	IF ~~ THEN REPLY @18 /* ~I'll try and locate the Farseer, and return it.~ */
