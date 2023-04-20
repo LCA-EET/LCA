@@ -1,0 +1,39 @@
+IF 
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("BRATHL")
+THEN
+	RESPONSE #100
+		ActionOverride("BRATHL", DestroySelf())
+		Continue()
+END
+
+IF
+	InMyArea("LCCORWIN")
+	InMyArea(Player1)
+	!Global("LCA_CuratorSpawned", "GLOBAL", 1)
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_CuratorSpawned", "GLOBAL", 1)
+		CreateCreature("LCCURATO", [730.950], SW)
+		Continue()
+END
+
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("BELAND")
+THEN
+	RESPONSE #100
+		ActionOverride("BELAND", SetDialog("LCBELAND"))
+		SmallWait(5)
+		Continue()
+END
+
+IF 
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	Global("LCA_BelandCheck", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_BelandCheck", "GLOBAL", 1)
+		SetGlobal("BelandEntranceFee","GLOBAL",0)
+END
