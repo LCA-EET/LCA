@@ -5,6 +5,16 @@ IF ~
 ~ THEN BEGIN LCA_MainMenu
 	SAY @0 /* ~How can I help you?~ */
 	
+	IF ~
+		IsGabber("LCCORWIN")
+	~ THEN REPLY @285
+	GOTO LCA_MainMenu
+	
+	IF ~
+		IsGabber(Player1)
+	~ THEN REPLY @285
+	GOTO LCA_MainMenu
+	
 	IF ~~ THEN REPLY @280
 	GOTO LCA_TestInteraction
 	

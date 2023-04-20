@@ -348,7 +348,8 @@ ADD_STATE_TRIGGER HOUSG3 1
 
 APPEND HOUSG3
 	IF ~
-		InPartySlot(LastTalkedToBy,0)
+		//IsGabber(Player1)
+		IsGabber(Player1)
 		RandomNum(2,1)
 		Global("LCA_ReturnToBG", "GLOBAL", 1)
 		!Global("LCA_TalkedToSkie", "GLOBAL", 1)
@@ -402,7 +403,8 @@ ADD_STATE_TRIGGER SERVA2 11
 
 APPEND SERVA2
 	IF ~
-		InPartySlot(LastTalkedToBy,0)
+		//IsGabber(Player1)
+		IsGabber(Player1)
 		RandomNum(3,1)
 		Global("LCA_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN LCA_PlayerGreeting
@@ -412,7 +414,8 @@ APPEND SERVA2
 	END
 
 	IF ~
-		InPartySlot(LastTalkedToBy,0)
+		//IsGabber(Player1)
+		IsGabber(Player1)
 		RandomNum(3,2)
 		Global("LCA_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN LCA_PlayerGreeting2
@@ -422,7 +425,8 @@ APPEND SERVA2
 	END
 
 	IF ~
-		InPartySlot(LastTalkedToBy,0)
+		//IsGabber(Player1)
+		IsGabber(Player1)
 		RandomNum(3,3)
 		Global("LCA_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN LCA_PlayerGreeting3
@@ -473,17 +477,17 @@ END
 //LOBAR
 ADD_STATE_TRIGGER LOBAR 7
 ~
-	!Name("LCCORWIN", LastTalkedToBy)
+	!IsGabber("LCCORWIN")
 ~
 
 ADD_STATE_TRIGGER LOBAR 0
 ~
-	!Name("LCCORWIN", LastTalkedToBy)
+	!IsGabber("LCCORWIN")
 ~
 
 ADD_STATE_TRIGGER LOBAR 8
 ~
-	!Name("LCCORWIN", LastTalkedToBy)
+	!IsGabber("LCCORWIN")
 ~
 
 EXTEND_BOTTOM LOBAR 0
@@ -500,7 +504,7 @@ END
 
 APPEND LOBAR
 	IF ~
-		Name("LCCORWIN", LastTalkedToBy)
+		IsGabber("LCCORWIN")
 		Global("LCA_CorwinLobar", "GLOBAL", 1)
 	~ THEN BEGIN LCA_CorwinGreeting2
 		SAY @163 /* ~Hello again, officer. How can the Low Lantern be of assistance?~ */
@@ -528,7 +532,7 @@ APPEND LOBAR
 	END
 	
 	IF ~
-		Name("LCCORWIN", LastTalkedToBy)
+		IsGabber("LCCORWIN")
 		!Global("LCA_CorwinLobar", "GLOBAL", 1)
 	~ THEN BEGIN LCA_CorwinGreeting
 		SAY @155 /*  ~Greetings officer, and welcome to the Low Lantern. Are you here for business, or for pleasure? Perhaps a little of both?~  */
@@ -1190,12 +1194,14 @@ APPEND THIEFG
 		SAY @64 /* ~That's the old password, you idiot! Give me the new password!~ */
 		
 		IF ~
-			!InPartySlot(LastTalkedToBy,0)
+			//!IsGabber(Player1)
+			!IsGabber(Player1)
 		~ THEN REPLY @65 /* ~I um... don't know the password.~*/
 		GOTO 1
 		
 		IF ~
-			InPartySlot(LastTalkedToBy,0)
+			//IsGabber(Player1)
+			IsGabber(Player1)
 		~ THEN REPLY @65 /* ~I um... don't know the password.~*/
 		GOTO LCA2A
 	END
@@ -1503,19 +1509,21 @@ END
 //MADAM
 ADD_TRANS_TRIGGER MADAM 0
 ~
-	!Name("LCCORWIN", LastTalkedToBy)
+	//!IsGabber("LCCORWIN")
+	!IsGabber("LCCORWIN")
 ~
 DO 1 4
 
 ADD_TRANS_TRIGGER MADAM 7
 ~
-	!Name("LCCORWIN", LastTalkedToBy)
+	//!IsGabber("LCCORWIN")
+	!IsGabber("LCCORWIN")
 ~
 DO 3 4
 
 APPEND MADAM
 	IF ~  
-		InPartySlot(LastTalkedToBy,0)
+		IsGabber(Player1)
 		Global("LCA_CorwinRomanceActive","GLOBAL",2)
 		Global("MadamUpset","GLOBAL",0)
 	~ THEN BEGIN LCA_CorwinMadam // from:

@@ -39,7 +39,7 @@ IF ~
 	AreaCheck("BG1316")
 	Global("LCA_CorwinWithFamily", "GLOBAL", 1)
 	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA_SeeYouLater
 	SAY @38 /* ~(She whispers in your ear.) I'll come see you in your room tonight, lover.~ */
 	
@@ -128,7 +128,7 @@ THEN BEGIN LCA_CorwinCleansed
 END
 
 IF ~
-	!InPartySlot(LastTalkedToBy,0)
+	!IsGabber(Player1)
 ~ THEN BEGIN LCA_PC
 	SAY @13 /* ~I need to speak to <CHARNAME>.~ */
 	IF ~~ THEN

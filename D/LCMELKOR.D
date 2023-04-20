@@ -64,7 +64,7 @@ END
 IF ~
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	!Global("LCA_TalkedToMelkor", "GLOBAL", 1)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA_MeetMelkor
 	SAY @0 /* ~Ah. <CHARNAME>. How can I help you?~ */
 	
@@ -100,7 +100,7 @@ IF ~
 END
 
 IF ~
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 	Global("LCA_TalkedToMelkor", "GLOBAL", 1)
 	!Global("LCA_TalkedToSkie", "GLOBAL", 1)
 ~ THEN BEGIN LCA_TalkedToSkieAmConcerned
@@ -110,7 +110,7 @@ IF ~
 END
 
 IF ~
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 	Global("LCA_TalkedToMelkor", "GLOBAL", 1)
 	Global("LCA_TalkedToSkie", "GLOBAL", 1)
 	!Global("LCA_ConcernedAboutSkie", "GLOBAL", 1)
@@ -122,7 +122,7 @@ IF ~
 END
 
 IF ~
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 	Global("LCA_TalkedToMelkor", "GLOBAL", 1)
 	Global("LCA_TalkedToSkie", "GLOBAL", 1)
 	Global("LCA_ConcernedAboutSkie", "GLOBAL", 1)

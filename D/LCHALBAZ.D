@@ -1,7 +1,7 @@
 BEGIN ~LCHALBAZ~
 
 IF ~
-	!InPartySlot(LastTalkedToBy,0)
+	!IsGabber(Player1)
 ~ THEN BEGIN LCA_NPCGreeting
 	SAY @4 /* ~Come to check out the wares of ol' Halbazzer, have ye?~*/
 	
@@ -14,7 +14,7 @@ END
 
 IF ~
 	!Global("LCA_HalbazGreeting", "LOCALS", 1)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA_Greeting
 	SAY @1 /* ~Ah, welcome. I'd heard that the hero of Baldur's Gate would be returning soon.~ */
 	
@@ -45,14 +45,14 @@ IF ~
 	IF ~
 		Global("LCA_RingGiftAldeth", "GLOBAL", 1)
 		GlobalLT("LCA_RingEnchanted", "GLOBAL", 1)
-		InPartySlot(LastTalkedToBy,0)
+		IsGabber(Player1)
 	~ THEN REPLY @10 /* ~Listen... (approach and ask about enchanting the ring.)~*/
 	GOTO LCA_RingEnchant1__A //OK
 	
 	IF ~
 		Global("LCA_RingGiftJhasso", "GLOBAL", 1)
 		GlobalLT("LCA_RingEnchanted", "GLOBAL", 1)
-		InPartySlot(LastTalkedToBy,0)
+		IsGabber(Player1)
 	~ THEN REPLY @10 /* ~Listen... (approach and ask about enchanting the ring.)~*/
 	GOTO LCA_RingEnchant1__J //OK
 END
@@ -74,14 +74,14 @@ IF ~~ THEN BEGIN LCA_RefugeesCleared
 	IF ~
 		Global("LCA_RingGiftAldeth", "GLOBAL", 1)
 		GlobalLT("LCA_RingEnchanted", "GLOBAL", 1)
-		InPartySlot(LastTalkedToBy,0)
+		IsGabber(Player1)
 	~ THEN REPLY @10 /* ~Listen... (approach and ask about enchanting the ring.)~*/
 	GOTO LCA_RingEnchant1__A //OK
 	
 	IF ~
 		Global("LCA_RingGiftJhasso", "GLOBAL", 1)
 		GlobalLT("LCA_RingEnchanted", "GLOBAL", 1)
-		InPartySlot(LastTalkedToBy,0)
+		IsGabber(Player1)
 	~ THEN REPLY @10 /* ~Listen... (approach and ask about enchanting the ring.)~*/
 	GOTO LCA_RingEnchant1__J //OK
 END

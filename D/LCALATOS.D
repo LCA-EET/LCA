@@ -1,15 +1,16 @@
 BEGIN ~LCALATOS~
 
 IF ~
-	!InPartySlot(LastTalkedToBy, 0)
-	!Name("LCCORWIN", LastTalkedToBy)
+	//!InPartySlot(LastTalkedToBy, 0)
+	!IsGabber(Player1)
+	!IsGabber("LCCORWIN")
 ~ THEN BEGIN LCA_WantsToTalkToPlayer
 	SAY @21 /* ~Welcome, friend! Please relax, and keep your weapons at your sides.~*/
 	IF ~~ THEN EXIT
 END
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 	!Global("LCA_TalkedToAlatos", "GLOBAL", 1)
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinAlatosIntro
@@ -23,7 +24,7 @@ IF ~
 END
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 	Global("LCA_TalkedToAlatos", "GLOBAL", 1)
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinAlatos
@@ -52,7 +53,8 @@ END
 IF ~
 	!Global("LCA_TalkedToAlatos", "GLOBAL", 1)
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
-	InPartySlot(LastTalkedToBy, 0)
+	//InPartySlot(LastTalkedToBy, 0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA0
 	SAY @0 /* ~Ah, <CHARNAME>. It's good to see you again.~ */
 	
@@ -81,7 +83,8 @@ END
 IF ~
 	Global("LCA_TalkedToAlatos", "GLOBAL", 1)
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
-	InPartySlot(LastTalkedToBy, 0)
+	//InPartySlot(LastTalkedToBy, 0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA0B
 	SAY @2 /* ~I take it this isn't a social visit. What can the Shadow Thieves do for you?~ */
 	

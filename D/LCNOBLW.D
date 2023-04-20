@@ -1,7 +1,7 @@
 BEGIN ~LCNOBLW~
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 	RandomNum(2,1)
 	!TimeOfDay(NIGHT)
 ~ THEN BEGIN LCA_GreetCorwin
@@ -10,7 +10,7 @@ IF ~
 END
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 	RandomNum(2,1)
 	TimeOfDay(NIGHT)
 ~ THEN BEGIN LCA_GreetCorwin2
@@ -19,7 +19,7 @@ IF ~
 END
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 	RandomNum(2,2)
 ~ THEN BEGIN LCA_GreetCorwin3
 	SAY @15 /* ~Thank you for your service, ma'am.~ */
@@ -70,7 +70,7 @@ END
 
 IF ~
 	RandomNum(8,4)
-	!InPartySlot(LastTalkedToBy,0)
+	!IsGabber(Player1)
 ~ THEN BEGIN LCA_4
 	SAY @3 /* ~My contacts in the palace have informed me that <CHARNAME> is returning to Baldur's Gate, after having been found innocent of the crime against Duke Entar's daughter. Good, I say. <PRO_HESHE> has done much to rid the Sword Coast of bandits and the like.~ */
 	IF ~~ THEN EXIT
@@ -78,7 +78,7 @@ END
 
 IF ~
 	RandomNum(8,5)
-	!InPartySlot(LastTalkedToBy,0)
+	!IsGabber(Player1)
 ~ THEN BEGIN LCA_5
 	SAY @4 /* ~The Dukes would be wise to avoid getting mixed up in any Bhaalspawn business. They are making a mistake in welcoming <CHARNAME> back to the city.~ */
 	
@@ -117,7 +117,7 @@ IF ~
 	RandomNum(8,6)
 	!Global("LCA_TownspersonHatesHero", "LOCALS", 1)
 	!Global("LCA_TownspersonSupportsHero", "LOCALS", 1)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA_6
 	SAY @5 /* ~You there! You look familiar.~   */
 	
@@ -144,7 +144,7 @@ IF ~
 	RandomNum(8,7)
 	!Global("LCA_TownspersonHatesHero", "LOCALS", 1)
 	!Global("LCA_TownspersonSupportsHero", "LOCALS", 1)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA_7
 	SAY @5 /* ~You there! You look familiar.~   */
 	

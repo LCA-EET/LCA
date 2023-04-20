@@ -156,7 +156,7 @@ SetGlobal("udPhaTimerOn","GLOBAL",1)
 I have met Phaere, the daughter of the matron mother, at the tavern as commanded. It seems her mother is very interested in me, and we are to perform another task. After Phaere leaves, Solaufein and I are to meet her within a few days at the city entrance to receive further instructions. Until then, my time is my own.~ */ EXIT
 END
 
-IF ~  InPartySlot(LastTalkedToBy,0)
+IF ~  IsGabber(Player1)
 Global("SolaufeinJob","GLOBAL",5)
 Global("PhaereJob","GLOBAL",1)
 ~ THEN BEGIN 25 // from:
@@ -250,7 +250,7 @@ IF ~~ THEN BEGIN 39 // from: 38.1
   IF ~~ THEN EXIT
 END
 
-IF ~  !InPartySlot(LastTalkedToBy,0)
+IF ~  !IsGabber(Player1)
 Gender(Player1,MALE)
 Gender(LastTalkedToBy,FEMALE)
 Global("SolaufeinJob","GLOBAL",5)
@@ -260,7 +260,7 @@ Global("PhaereJob","GLOBAL",1)
   IF ~~ THEN EXIT
 END
 
-IF ~  !InPartySlot(LastTalkedToBy,0)
+IF ~  !IsGabber(Player1)
 Gender(Player1,FEMALE)
 Gender(LastTalkedToBy,FEMALE)
 Global("SolaufeinJob","GLOBAL",5)
@@ -270,7 +270,7 @@ Global("PhaereJob","GLOBAL",1)
   IF ~~ THEN EXIT
 END
 
-IF ~  !InPartySlot(LastTalkedToBy,0)
+IF ~  !IsGabber(Player1)
 Gender(LastTalkedToBy,MALE)
 Global("SolaufeinJob","GLOBAL",5)
 Global("PhaereJob","GLOBAL",1)
@@ -370,7 +370,7 @@ EscapeAreaMove("AR2202",1000,756,S)
 Now that the beholder is dead, Phaere and Solaufein have gone to report to the matron mothers. Phaere has commanded me to meet with her again in the tavern within three days.~ */ EXIT
 END
 
-IF ~  !InPartySlot(LastTalkedToBy,0)
+IF ~  !IsGabber(Player1)
 Global("PhaereJob","GLOBAL",5)
 GlobalLT("SolaufeinJob","GLOBAL",6)
 ~ THEN BEGIN 54 // from:
@@ -378,7 +378,7 @@ GlobalLT("SolaufeinJob","GLOBAL",6)
   IF ~~ THEN EXIT
 END
 
-IF ~  InPartySlot(LastTalkedToBy,0)
+IF ~  IsGabber(Player1)
 Global("PhaereJob","GLOBAL",5)
 GlobalLT("SolaufeinJob","GLOBAL",6)
 ~ THEN BEGIN 55 // from:
@@ -539,7 +539,7 @@ EscapeAreaMove("ar2204",743,1008,S)
 Phaere has something else in store for me, commanding that I meet her in her private quarters within the Female Fighters' Society tower.~ */ EXIT
 END
 
-IF ~  InPartySlot(LastTalkedToBy,0)
+IF ~  IsGabber(Player1)
 Global("PhaereJob","GLOBAL",6)
 Global("SolaufeinJob","GLOBAL",7)
 ~ THEN BEGIN 73 // from:
@@ -697,7 +697,7 @@ Enemy()
 I have been discovered, and the alarm has been sounded throughout the drow city. Getting anywhere will be problematic at best. Obviously, I should have been more careful.~ */ EXIT
 END
 
-IF ~  !InPartySlot(LastTalkedToBy,0)
+IF ~  !IsGabber(Player1)
 Global("PhaereJob","GLOBAL",6)
 Global("SolaufeinJob","GLOBAL",7)
 ~ THEN BEGIN 91 // from:
@@ -714,7 +714,7 @@ GlobalGT("SolaufeinJob","GLOBAL",7)
 END
 
 IF ~  PartyHasItem("misc9w")
-!InPartySlot(LastTalkedToBy,0)
+!IsGabber(Player1)
 Global("PhaereJob","GLOBAL",6)
 GlobalGT("SolaufeinJob","GLOBAL",7)
 ~ THEN BEGIN 93 // from:
@@ -723,7 +723,7 @@ GlobalGT("SolaufeinJob","GLOBAL",7)
 END
 
 IF ~  PartyHasItem("misc9w")
-InPartySlot(LastTalkedToBy,0)
+IsGabber(Player1)
 Global("PhaereJob","GLOBAL",6)
 GlobalGT("SolaufeinJob","GLOBAL",7)
 ~ THEN BEGIN 94 // from:
@@ -1073,7 +1073,7 @@ I have returned with the blood, and Matron Ardulace was very pleased. She mentio
 Matron Ardulace told me to relax, but Phaere ordered me to meet her within her apartments within an hour. Obviously, she has something else in mind.~ */ EXIT
 END
 
-IF ~  !InPartySlot(LastTalkedToBy,0)
+IF ~  !IsGabber(Player1)
 Global("PhaereJob","GLOBAL",9)
 GlobalLT("udDrowPlot","GLOBAL",20)
 ~ THEN BEGIN 126 // from:
@@ -1081,7 +1081,7 @@ GlobalLT("udDrowPlot","GLOBAL",20)
   IF ~~ THEN EXIT
 END
 
-IF ~  InPartySlot(LastTalkedToBy,0)
+IF ~  IsGabber(Player1)
 Global("PhaereJob","GLOBAL",9)
 GlobalLT("udDrowPlot","GLOBAL",20)
 ~ THEN BEGIN 127 // from:

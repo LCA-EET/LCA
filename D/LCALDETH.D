@@ -1,15 +1,18 @@
 BEGIN ~LCALDETH~
 
 IF ~
-	!Name("LCCORWIN", LastTalkedToBy)
-	!InPartySlot(LastTalkedToBy, 0)
+	//!IsGabber("LCCORWIN")
+	//!InPartySlot(LastTalkedToBy, 0)
+	!IsGabber("LCCORWIN")
+	!IsGabber(Player1)
 ~ THEN BEGIN LCA_DefaultGreeting
 	SAY @32 /* ~Welcome to the Merchant's League.~*/
 	IF ~~ THEN EXIT
 END
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
+	//IsGabber("LCCORWIN")
 ~ THEN BEGIN LCA_CorwinGreeting
 	SAY @30 /* ~Welcome to the Merchant's League, Captain. Please, make yourself comfortable.~ */
 
@@ -28,7 +31,8 @@ END
 
 IF ~
 	!Global("LCA_AldethGreeting", "LOCALS", 1)
-	InPartySlot(LastTalkedToBy, 0)
+	//InPartySlot(LastTalkedToBy, 0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA_Greeting
 	SAY @0 /* ~<CHARNAME>, you've returned! It's wonderful to see you again.~ */
 	
@@ -43,7 +47,8 @@ END
 
 IF ~
 	Global("LCA_AldethGreeting", "LOCALS", 1)
-	InPartySlot(LastTalkedToBy, 0)
+	//InPartySlot(LastTalkedToBy, 0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA_SecondGreeting
 	SAY @25 /* ~Ah, you've returned. Please, stay for as long as you like. The Merchant's League is at your disposal.~*/
 	

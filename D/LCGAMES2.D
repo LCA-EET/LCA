@@ -1,7 +1,7 @@
 BEGIN ~LCGAMES2~
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 	RandomNum(2,1)
 	!TimeOfDay(NIGHT)
 ~ THEN BEGIN LCA_0
@@ -10,7 +10,7 @@ IF ~
 END
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 	RandomNum(2,1)
 	TimeOfDay(NIGHT)
 ~ THEN BEGIN LCA_0
@@ -19,7 +19,7 @@ IF ~
 END
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 	RandomNum(2,2)
 ~ THEN BEGIN LCA_0
 	SAY @5 /*  ~All of our games are legitimate, officer. These people are just having a good time.~ */

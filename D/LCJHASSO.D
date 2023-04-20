@@ -2,7 +2,7 @@ BEGIN ~LCJHASSO~
 
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 	Global("LCA_JhassoCorwinGreeting", "LOCALS", 1)
 ~ THEN BEGIN LCA_CorwinGreeting2
 	SAY @43 /* ~Good to see you again, Captain.~ */
@@ -11,7 +11,7 @@ IF ~
 END
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 	!Global("LCA_JhassoCorwinGreeting", "LOCALS", 1)
 ~ THEN BEGIN LCA_CorwinGreeting
 	SAY @42 /* ~Captain, I heard you'd be returning soon. Welcome home!~ */

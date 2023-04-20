@@ -32,7 +32,7 @@ IF ~
 END
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 	Gender(Player1, MALE)
 	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	!Global("LCA_RohmaPlayerDaddy", "LOCALS", 1)
@@ -47,7 +47,7 @@ IF ~
 END
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 ~ THEN BEGIN LCA_GreetMommyA
 	SAY @35 /* ~I love you mommy!~ */
 	
@@ -55,7 +55,7 @@ IF ~
 END
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 	Gender(Player1, MALE)
 	RandomNum(2,2)
 	!Global("LCA_RohmaPlayerDaddy", "LOCALS", 1)
@@ -69,7 +69,7 @@ IF ~
 	Global("LCA_CorwinMetFamily", "GLOBAL", 1)
 	Global("LCA_CorwinFamilyTalk", "GLOBAL", 3)
 	RandomNum(2,1)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA_Default
 	SAY @27 /* ~My mommy is the best.~ */
 	IF ~~ THEN 
@@ -79,7 +79,7 @@ END
 IF ~
 	Global("LCA_CorwinMetFamily", "GLOBAL", 1)
 	Global("LCA_CorwinFamilyTalk", "GLOBAL", 3)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 	RandomNum(2,2)
 ~ THEN BEGIN LCA_Default
 	SAY @28 /* ~Hi, <CHARNAME>.~ */
@@ -91,7 +91,7 @@ IF ~
 	Global("LCA_CorwinMetFamily", "GLOBAL", 1)
 	Global("LCA_CorwinFamilyTalk", "GLOBAL", 3)
 	RandomNum(2,1)
-	!InPartySlot(LastTalkedToBy,0)
+	!IsGabber(Player1)
 ~ THEN BEGIN LCA_Default
 	SAY @27 /* ~My mommy is the best.~ */
 	IF ~~ THEN 
@@ -101,7 +101,7 @@ END
 IF ~
 	Global("LCA_CorwinMetFamily", "GLOBAL", 1)
 	Global("LCA_CorwinFamilyTalk", "GLOBAL", 3)
-	!InPartySlot(LastTalkedToBy,0)
+	!IsGabber(Player1)
 	RandomNum(2,2)
 ~ THEN BEGIN LCA_Default
 	SAY @29 /* ~I love my mommy.~ */

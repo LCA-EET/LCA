@@ -20,7 +20,7 @@ IF ~
 END
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 	Gender(Player1, MALE)
 	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	!Global("LCA_AudamCorwinPlayer", "LOCALS", 1)
@@ -39,7 +39,7 @@ IF ~
 	Global("LCA_CorwinMetFamily", "GLOBAL", 1)
 	!Global("LCA_DukesDebriefed", "GLOBAL", 1)
 	Global("LCA_CorwinFamilyTalk", "GLOBAL", 3)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 	RandomNum(2,1)
 ~ THEN LCA_DontKeepDukesWaiting
 	SAY @2 /* ~Make sure you arrive for the debriefing on time. The Dukes don't like to be kept waiting.~*/
@@ -51,7 +51,7 @@ IF ~
 	Global("LCA_CorwinMetFamily", "GLOBAL", 1)
 	!Global("LCA_DukesDebriefed", "GLOBAL", 1)
 	Global("LCA_CorwinFamilyTalk", "GLOBAL", 3)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 	RandomNum(2,2)
 ~ THEN LCA_ThankYou
 	SAY @3 /* ~Thank you for bringing Schael back safe and sound.~*/
@@ -63,7 +63,7 @@ IF ~
 	Global("LCA_CorwinMetFamily", "GLOBAL", 1)
 	!Global("LCA_DukesDebriefed", "GLOBAL", 1)
 	Global("LCA_CorwinFamilyTalk", "GLOBAL", 3)
-	!InPartySlot(LastTalkedToBy,0)
+	!IsGabber(Player1)
 ~ THEN LCA_DontKeepDukesWaiting2
 	SAY @2 /* ~Make sure you arrive for the debriefing on time. The Dukes don't like to be kept waiting.~*/
 	IF ~~ THEN

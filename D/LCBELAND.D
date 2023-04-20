@@ -1,14 +1,4 @@
-// creator  : weidu (version 24900)
-// argument : BELAND.DLG
-// game     : .
-// source   : ./override/BELAND.DLG
-// dialog   : .\lang\en_us\dialog.tlk
-// dialogF  : (none)
-
 BEGIN ~LCBELAND~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
 IF ~ 
 	Global("BelandEntranceFee","GLOBAL",0)
@@ -104,7 +94,9 @@ IF ~~ THEN BEGIN LCA_CostIncrease
 	IF ~~ THEN REPLY @5 /* ~I'll not pay to enter a building open to the public!~ */
 	GOTO LCA_WontPay_3
 	
-	IF ~~ THEN REPLY @13 /* ~About that... (confess to your crime.)~ */
+	IF ~
+		IsGabber(Player1)
+	~ THEN REPLY @13 /* ~About that... (confess to your crime.)~ */
 	GOTO LCA_Confess
 	
 	IF ~

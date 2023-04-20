@@ -1,7 +1,7 @@
 BEGIN ~LCFERGUS~
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 	RandomNum(3,1)
 ~ THEN BEGIN LCA_CorwinGreeting1
 	SAY @12 /* ~Welcome back, Captain.~ */
@@ -9,7 +9,7 @@ IF ~
 END
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 	RandomNum(3,2)
 ~ THEN BEGIN LCA_CorwinGreeting2
 	SAY @13 /* ~Nothing unusual to report, ma'am.~ */
@@ -17,7 +17,7 @@ IF ~
 END
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 	RandomNum(3,3)
 ~ THEN BEGIN LCA_CorwinGreeting3
 	SAY @14 /* ~Glad to have you back, Captain.~*/
@@ -27,7 +27,7 @@ END
 IF ~
 	!Global("LCA_FergusMarried", "GLOBAL", 1)
 	Global("FERGUS1","GLOBAL",2)
-	!InPartySlot(LastTalkedToBy,0)
+	!IsGabber(Player1)
 ~ THEN BEGIN LCA_FergusCharname
 	SAY @10 /* ~Is <CHARNAME> with you? I'd like to speak with <PRO_HIMHER>, if <PRO_HESHE>'s available.~ */
 	IF ~~ THEN EXIT
@@ -35,7 +35,7 @@ END
 
 IF ~
 	Global("FERGUS1","GLOBAL",2)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 	!Global("LCA_FergusMarried", "GLOBAL", 1)
 ~ THEN BEGIN LCA_FergusMarried
 	SAY @0 /* <CHARNAME>! It's good to see you again!~*/

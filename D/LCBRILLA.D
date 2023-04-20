@@ -1,7 +1,7 @@
 BEGIN ~LCBRILLA~
 
 IF ~
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 	!Global("LCA_TalkedToBrilla", "GLOBAL", 1)
 ~ THEN BEGIN LCA_GreetPlayer
 	SAY @175 /* ~Oh it's you! You're <CHARNAME>, the <PRO_MANWOMAN> who saved my precious Skie!~*/

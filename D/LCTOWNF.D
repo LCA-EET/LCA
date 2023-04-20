@@ -2,7 +2,7 @@ BEGIN ~LCTOWNF~
 
 IF ~
 	Global("LCA_TownspersonSupportsHero", "LOCALS", 1)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA_SupportHero
 	SAY @11 /* ~Hello again! No one belived me when I told them I met the hero of Baldur's Gate!~ */
 	
@@ -11,7 +11,7 @@ END
 
 IF ~
 	Global("LCA_TownspersonHatesHero", "LOCALS", 1)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA_HatesHero
 	SAY @12 /* ~Oh, look, the "hero" returns! Come to whisk me away on a grand adventure? Get lost, you bum!~ */
 	
@@ -47,7 +47,7 @@ IF ~
 	RandomNum(8,4)
 	!Global("LCA_TownspersonHatesHero", "LOCALS", 1)
 	!Global("LCA_TownspersonSupportsHero", "LOCALS", 1)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA_4
 	SAY @3 /* ~You know, you bear a striking resemblance to the so-called hero of Baldur's Gate. Could you believe they're saying that <PRO_HESHE>'s innocent? Something's amiss, I tell you.~    */
 	
@@ -77,7 +77,7 @@ IF ~
 	RandomNum(8,6)
 	!Global("LCA_TownspersonHatesHero", "LOCALS", 1)
 	!Global("LCA_TownspersonSupportsHero", "LOCALS", 1)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA_6
 	SAY @7 /* ~I hear that Duke Entar's daughter is fully recovered, supposedly thanks to <CHARNAME>. Maybe the things said about <PRO_HIMHER> are true, and that they're a hero after all.~  */
 	
@@ -99,7 +99,7 @@ IF ~
 	RandomNum(8,7)
 	!Global("LCA_TownspersonHatesHero", "LOCALS", 1)
 	!Global("LCA_TownspersonSupportsHero", "LOCALS", 1)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA_7
 	SAY @13 /* ~I hear that <CHARNAME>, the <PRO_BROTHERSISTER> of that rotten Sarevok, is coming back to Baldur's Gate. They're saying <PRO_HESHE>'s innocent. Do you believe it?~   */
 	
@@ -121,7 +121,7 @@ IF ~
 	RandomNum(8,8)
 	!Global("LCA_TownspersonHatesHero", "LOCALS", 1)
 	!Global("LCA_TownspersonSupportsHero", "LOCALS", 1)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA_8
 	SAY @15 /* ~Did you hear the news? <CHARNAME>, the hero, the Sarevok slayer, is returning to Baldur's Gate! The Dukes proclaimed <PRO_HISHER> innocence!~  */
 	

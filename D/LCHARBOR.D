@@ -102,7 +102,7 @@ END
 IF ~
 	!Global("LCA_HarborGreeting", "GLOBAL", 1)
 	OR(2)
-		!Name("LCCORWIN", LastTalkedToBy)
+		!IsGabber("LCCORWIN")
 		!Global("LCA_BGSlaverPlot", "GLOBAL", 1)
 ~ THEN BEGIN LCA_HarborGreting1
 	SAY @30 /* ~Good to see you again!~*/
@@ -114,7 +114,7 @@ IF ~
 END
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 	Global("LCA_BGSlaverPlot", "GLOBAL", 1)
 ~ THEN BEGIN LCA_HarborGreeting1Corwin
 	SAY @31 /*  ~Captain! Good to see you again. It's been a while.~ */

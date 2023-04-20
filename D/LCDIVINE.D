@@ -8,14 +8,14 @@ IF ~
 END
 
 IF ~
-	!InPartySlot(LastTalkedToBy,0)
+	!IsGabber(Player1)
 ~ THEN BEGIN LCA_TalkToPlayer
 	SAY @25 /* ~I will speak with <CHARNAME>, the hero of this city.~ */
 	IF ~~ THEN EXIT
 END
 
 IF ~
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 	!Global("LCA_DivinerGreeting", "GLOBAL", 1)
 ~ THEN BEGIN LCA_Greeting
 	SAY @0 /* Ah. You've returned. Welcome.~ */

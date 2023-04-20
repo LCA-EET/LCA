@@ -11,7 +11,7 @@
 BEGIN ~LCCORWIN~
 
 IF ~
-	!InPartySlot(LastTalkedToBy,0)
+	!IsGabber(Player1)
 ~ THEN BEGIN LCA_PC
 	SAY @49 /* ~I need to speak to <CHARNAME>.~ */
 	IF ~~ THEN

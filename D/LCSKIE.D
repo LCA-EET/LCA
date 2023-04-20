@@ -129,7 +129,7 @@ END
 IF ~
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	!Global("LCA_TalkedToSkie", "GLOBAL", 1)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA_MeetSkie
 	SAY @0 /* ~<CHARNAME>! Welcome back!~*/
 	

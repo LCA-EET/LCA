@@ -1,7 +1,7 @@
 BEGIN ~LCJASPER~
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 ~ THEN BEGIN LCA_Officer
 	SAY @36 /* ~I didn't do nothin' officer, honest.~*/
 	IF ~~ THEN

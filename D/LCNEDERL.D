@@ -227,7 +227,7 @@ IF ~~ THEN BEGIN LCA_NederlokSlaverPlotEnd3
 END
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 	!Global("LCA_NederlokCorwin", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinGreeting
 	SAY @72 /* ~It's great to have you back, Captain Corwin.~ */
@@ -237,7 +237,7 @@ END
 
 
 IF ~
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 	Global("LCA_NederlokCorwin", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinGreeting2
 	SAY @73 /* ~Captain Corwin - I'll see you at the debriefing.~ */
@@ -246,8 +246,8 @@ IF ~
 END
 
 IF ~
-	!Name("LCCORWIN", LastTalkedToBy)
-	!InPartySlot(LastTalkedToBy,0)
+	!IsGabber("LCCORWIN")
+	!IsGabber(Player1)
 ~ THEN BEGIN LCA_OtherGreeting
 	SAY @74 /*  ~Ah, <GABBER>, you're part of <CHARNAME>'s group, yes? The debriefing is tomorrow morning. I look forward to seeing you there.~ */
 	
@@ -273,13 +273,13 @@ IF ~
 	
 	IF ~
 		!Global("LCA_NederlokMedal", "GLOBAL", 1)
-		InPartySlot(LastTalkedToBy,0)
+		IsGabber(Player1)
 	~ THEN REPLY @24 /* ~Nothing at the moment.~ */
 	GOTO LCA_GiveMedal
 	
 	IF ~
 		!Global("LCA_NederlokMedal", "GLOBAL", 1)
-		!InPartySlot(LastTalkedToBy,0)
+		!IsGabber(Player1)
 	~ THEN REPLY @24 /* ~Nothing at the moment.~ */
 	GOTO LCA_EndChat
 	
@@ -326,7 +326,7 @@ IF ~~ THEN BEGIN LCA_GiveHint_LookForWitness
 	
 	IF ~
 		!Global("LCA_NederlokMedal", "GLOBAL", 1)
-		InPartySlot(LastTalkedToBy,0)
+		IsGabber(Player1)
 	~ THEN REPLY @67 /* ~Thanks for the help.~  */
 	DO ~
 		SetGlobal("LCA_AskAboutWitness", "GLOBAL", 1)
@@ -343,7 +343,7 @@ IF ~~ THEN BEGIN LCA_GiveHint_AskHarborMaster
 	
 	IF ~
 		!Global("LCA_NederlokMedal", "GLOBAL", 1)
-		InPartySlot(LastTalkedToBy,0)
+		IsGabber(Player1)
 	~ THEN REPLY @67 /* ~Thanks for the help.~ */
 	GOTO LCA_GiveMedal
 END
@@ -356,7 +356,7 @@ IF ~~ THEN BEGIN LCA_GiveHint_AskAlatos
 	
 	IF ~
 		!Global("LCA_NederlokMedal", "GLOBAL", 1)
-		InPartySlot(LastTalkedToBy,0)
+		IsGabber(Player1)
 	~ THEN REPLY @67 /* ~Thanks for the help.~*/
 	GOTO LCA_GiveMedal
 END
@@ -369,7 +369,7 @@ IF ~~ THEN BEGIN LCA_GiveHint_DecodeManifest
 	
 	IF ~
 		!Global("LCA_NederlokMedal", "GLOBAL", 1)
-		InPartySlot(LastTalkedToBy,0)
+		IsGabber(Player1)
 	~ THEN REPLY @67 /* ~Thanks for the help.~ */
 	GOTO LCA_GiveMedal
 END

@@ -14,7 +14,7 @@ END
 IF ~
 	Global("LCA_RefugeeQuestComplete", "GLOBAL", 1)
 	Global("LCA_MaxFriendly_Charname", "GLOBAL", 1)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA_WinstonGuilty
 	SAY @68 /*~<CHARNAME> - What can I get ya?~ */
 	
@@ -48,7 +48,7 @@ END
 
 IF ~  
 	NumTimesTalkedTo(0)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA_GreetCharname // from:
 	SAY @4 /* ~Hey there, mate. Don't recognize you, which is strange, considering I know everyone here at Winston Ventures. Why don't you tell me who you are?~ */
 	

@@ -38,8 +38,8 @@ END
 
 IF ~
 	IsValidForPartyDialogue("LCCORWIN")
-	!Name("LCCORWIN", LastTalkedToBy)
-	!InPartySlot(LastTalkedToBy,0)
+	!IsGabber("LCCORWIN")
+	!IsGabber(Player1)
 ~ THEN BEGIN LCA_WantTalkToPCorSchael
 	SAY @44 /* ~Can I speak to Schael? Or <CHARNAME>?~ */
 	IF ~~ THEN EXIT
@@ -49,8 +49,8 @@ IF ~
 	Global("LCA_TiannaIntroduction", "GLOBAL", 2)
 	!Global("LCA_HelpTianna", "GLOBAL", 1)
 	OR(2)
-		Name("LCCORWIN", LastTalkedToBy)
-		InPartySlot(LastTalkedToBy,0)
+		IsGabber("LCCORWIN")
+		IsGabber(Player1)
 ~ THEN BEGIN LCA_IntroWontHelp
 	SAY @33 /* ~Have you reconsidered? Will you help me out of this mess I've gotten into?~ */
 	
@@ -64,7 +64,7 @@ END
 IF ~
 	Global("LCA_TiannaIntroduction", "GLOBAL", 2)
 	Global("LCA_HelpTianna", "GLOBAL", 1)
-	InPartySlot(LastTalkedToBy,0)
+	IsGabber(Player1)
 ~ THEN BEGIN LCA_IntroWillHelp
 	SAY @35 /* ~Hi! Were you able to talk to Jasper about resolving my debt?~*/
 	
@@ -84,7 +84,7 @@ END
 IF ~
 	Global("LCA_TiannaIntroduction", "GLOBAL", 2)
 	Global("LCA_HelpTianna", "GLOBAL", 1)
-	Name("LCCORWIN", LastTalkedToBy)
+	IsGabber("LCCORWIN")
 ~ THEN BEGIN LCA_IntroWillHelp
 	SAY @35 /* ~Hi! Were you able to talk to Jasper about resolving my debt?~*/
 	

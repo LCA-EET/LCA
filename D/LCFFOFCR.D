@@ -11,7 +11,7 @@
 BEGIN ~LCFFOFCR~
 
 	IF ~
-		!InPartySlot(LastTalkedToBy,0)
+		!IsGabber(Player1)
 	~ THEN BEGIN LCA_PC
 		SAY @15 /* ~I need to speak with <CHARNAME> - does <PRO_HESHE> travel with your group?~ */
 		
