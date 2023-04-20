@@ -119,14 +119,14 @@ END
 IF ~~ THEN BEGIN LCA_Confess
 	SAY @14 /*  ~Hmph. I see.~*/
 	
-	= @15 = /* ~While I appreciate your honesty, it does little to undo the damage you caused.~ */
+	= @15 /* ~While I appreciate your honesty, it does little to undo the damage you caused.~ */
 	
 	IF ~~ THEN REPLY @16 /* ~Is there anything I can do to make amends?~ */
 	GOTO LCA_MakeAmends
 	
 	IF ~
 		PartyGoldGT(999)
-	~ THEN REPLY @20
+	~ THEN REPLY @20 /* ~Here's 1000 gold. It's double what I received for stealing the Farseer.~ */
 	DO ~
 		TakePartyGold(1000)
 	~
