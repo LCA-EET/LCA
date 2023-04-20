@@ -106,6 +106,7 @@ override/HEXXAT.dlg
 override/VICG1.dlg
 override/PPIRENI1.dlg
 override/LCALDETH.dlg
+override/LCCURATO.dlg
 override/YUSUF.dlg
 override/LCAUDAM.dlg
 override/PROST6.dlg
@@ -132,6 +133,7 @@ override/UDPHAE01.dlg
 override/FIRKRA02.dlg
 override/C6BODHI.dlg
 override/EMBARL.dlg
+override/LCBELAND.dlg
 override/LCNEDERL.dlg
 override/DHARLOT2.dlg
 override/SHOP08_.dlg
@@ -242,6 +244,7 @@ override/LCBG0119.bcs
 override/LCBG0127.bcs
 override/LCBG0128.bcs
 override/LCBG0129.bcs
+override/LCBG0130.bcs
 override/LCBG0131.bcs
 override/LCBG0134.bcs
 override/LCBG0153.bcs
@@ -285,6 +288,7 @@ override/LCCS14.bcs
 override/LCCS15.bcs
 override/LCCS16a.bcs
 override/LCCS16b.bcs
+override/LCCURATO.bcs
 override/LCDEBR01.bcs
 override/LCDEBR02.bcs
 override/LCDEBR03.bcs
@@ -422,6 +426,7 @@ override/LCKIDNAP.ARE
 override/LCWLKHOM.ARE
 override/LCUC.ARE
 override/LCUCTEMP.ARE
+override/LCCSHOW.ARE
 override/LCWYRM.WED
 override/LCWYRMN.WED
 override/LCWYRMHT.BMP
@@ -459,6 +464,7 @@ override/LCENTAR.CRE
 override/LCKENT.CRE
 override/LCHEAD1.CRE
 override/LCHOWSPY.CRE
+override/LCCURATO.CRE
 override/LCNEOMA.CRE
 override/BDFISTEX.CRE
 override/BDWTREX.CRE
@@ -514,6 +520,8 @@ override/LCMELKOR.CRE
 override/LCSKIE.CRE
 override/LCJASPER.CRE
 override/LCTIANNA.CRE
+override/BRATHL.CRE
+override/BELAND.CRE
 override/NOBW7.CRE
 override/HOUSG6.CRE
 override/YAGO.CRE
@@ -580,6 +588,7 @@ override/BG0119.bcs
 override/BG0127.bcs
 override/BG0128.bcs
 override/BG0129.bcs
+override/BG0130.bcs
 override/BG0131.bcs
 override/BG0134.bcs
 override/BDCUT59B.bcs
