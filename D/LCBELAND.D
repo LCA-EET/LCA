@@ -71,7 +71,17 @@ IF ~~ THEN BEGIN LCA_ThreeGold
 	IF ~~ THEN REPLY @5 /* ~I'll not pay to enter a building open to the public!~ */
 	GOTO LCA_WontPay_3
 	
-	IF ~~ THEN REPLY @1 /*~Three gold, you say? The last time I was here, the entrance fee was a single gold piece.~*/
+	IF ~
+		IsValidForPartyDialog(Player1)
+	~ THEN REPLY @1 /*~Three gold, you say? The last time I was here, the entrance fee was a single gold piece.~*/
+	DO ~
+		SetGabber(Player1)
+	~
+	GOTO LCA_CostIncrease
+	
+	IF ~
+		!IsValidForPartyDialog(Player1)
+	~ THEN REPLY @1 /*~Three gold, you say? The last time I was here, the entrance fee was a single gold piece.~*/
 	GOTO LCA_CostIncrease
 	
 	IF ~
