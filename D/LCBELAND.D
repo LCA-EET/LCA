@@ -57,7 +57,7 @@ IF ~~ THEN BEGIN LCA_WontPay_1
 	GOTO LCA_PleaseEnter
 END
 
-IF ~~ THEN BEGIN LCA_WontPay_2
+IF ~~ THEN BEGIN LCA_WontPay_3
 	SAY @8 /* ~Oh, do reconsider! You'll not find these items anywhere else in Faerûn. It would be a shame to miss them, would it not?~  */
 	
 	IF ~~ THEN REPLY @4 /* ~I am afraid I cannot pay the suggested donation.~  */
