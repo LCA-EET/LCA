@@ -12,7 +12,7 @@ IF ~
 	
 	IF ~
 		IsGabber(Player1)
-	~ THEN REPLY @285
+	~ THEN REPLY @286
 	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @280
