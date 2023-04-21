@@ -6317,6 +6317,7 @@ IF ~~ THEN BEGIN LCA_StartHOWCutscene
 	DO ~
 		StartCutsceneMode()
 		StartCutscene("LCCSHOW")
+		EndCutSceneMode()
 	~
 	EXIT
 END
@@ -6327,6 +6328,7 @@ IF ~~ THEN BEGIN LCA_StartHOWCutscene2
 	DO ~
 		StartCutsceneMode()
 		StartCutscene("LCCSHOW")
+		EndCutSceneMode()
 	~
 	EXIT
 END
