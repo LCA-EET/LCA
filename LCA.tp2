@@ -507,13 +507,13 @@ SAY NAME1 @41
 SAY NAME2 @42
 
 COPY_EXISTING ~BRATHL.CRE~ ~override~
-WRITE_ASCII 0x260 ~BRATHL~ #8
+WRITE_ASCII 0x280 ~BRATHL~ #8 //assign script name to CRE that didn't originally have it
 
 COPY_EXISTING ~BELAND.CRE~ ~override~
-WRITE_ASCII 0x260 ~BELAND~ #8
+WRITE_ASCII 0x280 ~BELAND~ #8
 
 COPY_EXISTING ~NOBW7.CRE~ ~override~
-WRITE_ASCII 0x260 ~LCDELRBG~ #8
+WRITE_ASCII 0x260 ~LCDELRBG~ #8 //assign general script to CRE that didn't originally have it.
 
 COPY_EXISTING ~HOUSG6.CRE~ ~override~
 WRITE_ASCII 0x260 ~LCDELRBG~ #8
