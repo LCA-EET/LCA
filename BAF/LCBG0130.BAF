@@ -15,7 +15,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_CuratorSpawned", "GLOBAL", 1)
-		CreateCreature("LCCURATO", [730.950], SW)
+		CreateCreature("LCCURATO", [580.1175], SW)
 		Continue()
 END
 
