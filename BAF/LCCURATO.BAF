@@ -5,7 +5,7 @@ IF
 	GlobalLT("LCA_MagdaTalk", "GLOBAL", 1)
 	OR(2)
 		!InMyArea("BELAND")
-		Global("BelandEntranceFee","GLOBAL",1)
+		Global("BelandEntranceFee","GLOBAL",2)
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_MagdaTalk", "GLOBAL", 1)
