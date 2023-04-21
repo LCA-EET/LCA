@@ -25,7 +25,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("BELAND", SetDialog("LCBELAND"))
-		SmallWait(5)
+		Wait(1)
 		Continue()
 END
 
