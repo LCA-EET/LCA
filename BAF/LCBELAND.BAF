@@ -1,0 +1,9 @@
+IF 
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	Global("LCA_BelandDialogSwap", "LOCALS", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("BelandEntranceFee","GLOBAL",0)
+		SetGlobal("LCA_BelandDialogSwap", "LOCALS", 1)
+		SetDialog("LCBELAND")
+END
