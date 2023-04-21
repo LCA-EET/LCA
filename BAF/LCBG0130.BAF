@@ -27,6 +27,7 @@ THEN
 		ClearActions("BELAND")
 		ActionOverride("BELAND", SetDialog("LCBELAND"))
 		Wait(1)
+		ActionOverride("LCBELAND", ChangeAIScript("BELAND", RACE))
 		Continue()
 END
 
