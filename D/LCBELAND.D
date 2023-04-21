@@ -1,7 +1,7 @@
 BEGIN ~LCBELAND~
 
 IF ~ 
-	Global("BelandEntranceFee","GLOBAL",0)
+	Global("BelandEntranceFee","GLOBAL",1)
 ~ THEN BEGIN 0 // from:
 	SAY @0 /* ~Welcome, all, to the Hall of Wonders.~*/
 	
@@ -160,7 +160,7 @@ IF ~~ THEN BEGIN LCA_ThankYou
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("BelandEntranceFee","GLOBAL",1)
+		SetGlobal("BelandEntranceFee","GLOBAL",2)
 	~
 	EXIT
 END
@@ -176,7 +176,7 @@ IF ~~ THEN BEGIN LCA_PleaseEnter
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("BelandEntranceFee","GLOBAL",1)
+		SetGlobal("BelandEntranceFee","GLOBAL",2)
 	~
 	EXIT
 END

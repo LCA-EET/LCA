@@ -3,7 +3,19 @@ IF
 	Global("LCA_BelandDialogSwap", "LOCALS", 0)
 THEN
 	RESPONSE #100
-		SetGlobal("BelandEntranceFee","GLOBAL",0)
+		SetGlobal("BelandEntranceFee","GLOBAL",1)
 		SetGlobal("LCA_BelandDialogSwap", "LOCALS", 1)
 		SetDialog("LCBELAND")
+END
+
+
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	Global("BelandEntranceFee","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SmallWait(8)
+		StartDialog("LCBELAND",[PC])
 END
