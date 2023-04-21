@@ -5,13 +5,6 @@ IF ~
 ~ THEN BEGIN LCA_MainMenu
 	SAY @0 /* ~How can I help you?~ */
 	
-	IF ~
-		!Gabber("LCCORWIN")
-	~ THEN REPLY @287
-	DO ~
-		SetGabber("LCCORWIN")
-	~
-	GOTO LCA_MainMenu
 	
 	IF ~
 		IsGabber("LCCORWIN")

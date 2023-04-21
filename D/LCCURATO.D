@@ -5,13 +5,12 @@ IF ~
 ~ THEN BEGIN LCA_Meeting
 	SAY @2 /* ~Captain Corwin, welcome home! It's good to see you.~ */
 	
-	= @3 /* ~How is Rohma? And your father?~ */
-	
 	IF ~~ THEN 
 	DO ~
 		SetGlobal("LCA_MagdaTalk", "GLOBAL", 2)
 	~
 	EXTERN LCCORWIJ LCA_MagdaChain
+	
 END
 
 IF ~~ THEN BEGIN LCA_Introduction

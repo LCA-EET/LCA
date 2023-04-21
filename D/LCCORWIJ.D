@@ -6302,7 +6302,7 @@ IF ~~ THEN BEGIN LCA_HOW_WhyNot
 	= @1379 /* ~What's the problem? They're orphans — they have nothing. A few words from you could at least give them some inspiration.~ */
 	
 	IF ~
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 1)
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @1380 /* ~Public speaking isn't my forte... but I'll do it for you, dear.~ */
 	GOTO LCA_StartHOWCutscene2 
 	
@@ -7160,6 +7160,12 @@ CHAIN PPIRENI2 LCA_PPIRENI2_3_CHAIN_2
 END LCCORWIJ LCA_PPIRENI2_3_CHAIN_2_END
 
 CHAIN LCCORWIJ LCA_MagdaChain
+	@1364 /* ~Curator Magda! It's good to see you, too.~*/
+	
+	== LCCURATO 
+	@1365 /* ~How is Rohma? And your father?~ */
+	
+	==LCCORWIJ
 	IF ~
 		Global("LCA_CorwinMetFamily", "GLOBAL", 1)
 	~
