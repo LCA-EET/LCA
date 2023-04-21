@@ -24,6 +24,7 @@ IF
 	InMyArea("BELAND")
 THEN
 	RESPONSE #100
+		ClearActions("BELAND")
 		ActionOverride("BELAND", SetDialog("LCBELAND"))
 		Wait(1)
 		Continue()
