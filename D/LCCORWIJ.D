@@ -3492,6 +3492,37 @@ IF ~~ THEN BEGIN LCA_CorwinArrest7
 END
 //} #endregion
 
+//{ #region Hall of Wonders Cutscene - DLG-0048
+IF ~
+	Global("LCA_CSHOW_TALK", "GLOBAL", 1)
+~ THEN BEGIN LCA_CSHOW_TALK
+	SAY @1383 /* ~... ... so you see, even the smallest act of kindness can have a profound impact.~ */
+	
+	IF ~~ THEN 
+	EXTERN LCCURATO LCA_CSHOW_TALK_CHAIN
+END
+
+IF ~~ THEN BEGIN LCA_WantToTransform 
+	SAY @1415 /* ~(She looks at you with a knowing smile.)~  */
+	
+	= @1416 /* ~Normally I'd be against it, but it might be good to scare some sense into these kids.~ */
+	
+	IF ~~ THEN REPLY @1419 /* Right. (Transform into the Slayer).~ */
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("LCCSHOW2")
+	~	
+	EXIT
+	
+	IF ~~ THEN REPLY @1420 /* ~On second thought, no. Curator Magda — we really must get going.~  */
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("LCCSHOWX")
+	~	
+	EXIT
+END
+//} #endregion
+
 IF ~~ THEN BEGIN LCA_SAREV_10
 	SAY @38 /* ~You've got to be kidding me. A deal? With you?~*/
 	
@@ -7195,3 +7226,53 @@ CHAIN LCCURATO LCA_MagdaChain2
 	== LCCURATO
 	@1375 /* ~Oh! <CHARNAME>, Captain — a number of troubled youths from the orphanage are visiting the High Hall of Wonders, as we speak. It would mean the world to them if you can take some time out of your day to give them some words of encouragement.~ */
 END LCCURATO LCA_AskToTalk
+
+CHAIN LCCURATO LCA_CSHOW_TALK_CHAIN
+	@1406 /* ~That was wonderful, Captain. Thank you for sharing your experience with us today.~ */
+	= @1407 /* ~Children? Do you have any questions for Captain Corwin?~ */
+	= @1410 /* ~Ah, yes Hans, go ahead.~ */
+	== LCORPH01
+	IF ~
+		Gender(Player1, MALE)
+	~
+	@1408 /* ~Who's the guy standing next to you?~ */
+	== LCORPH01
+	IF ~
+		Gender(Player1, FEMALE)
+	~
+	@1413 /* ~Who's the lady standing next to you?~ */
+	== LCCORWIJ
+	@1409 /* ~This is <CHARNAME>, hero of Baldur's Gate and the Sword Coast!~ */
+	== LCCURATO
+	IF ~
+		Gender(Player1, MALE)
+	~
+	@1411 /* ~He's gracefully agreed to share with you some words of encouragement.~ */
+	== LCCURATO
+	IF ~
+		Gender(Player1, FEMALE)
+	~
+	@1412 /* ~She's gracefully agreed to share with you some words of encouragement.~ */
+	== LCORPH02
+	@1384 /* ~You're not <CHARNAME>!~ */
+END LCORPH02 LCA_CSHOW_TALK_CHAIN_END
+
+CHAIN LCORPH03 LCA_CSHOW_TALK_CHAIN_2
+	@1387 /* ~<CHARNAME> has horns, you dummy.~ */
+	== LCORPH04
+	@1388 /* ~Yeah! And a tail!~ */
+	== LCORPH05
+	@1389 /*  ~With spikes!~ */
+	== LCORPH06
+	@1390 /* ~And <PRO_HESHE>'s so ugly, that if <PRO_HESHE> looks at you, you turn to stone! */
+	== LCCURATO
+	@1402 /* ~<CHARNAME>, Captain, I'm so sorry about thi—~ */
+	== @1396 /* ~And <PRO_HESHE>'s so ugly, that if <PRO_HESHE> looks at you, you turn to stone!~ */
+	== LCCORWIJ
+	@1391 /* ~That's enough, all of you. Whatever rumors you've heard are untrue. This ...~ */
+	= @1392 /* ~(She gestures to you.)~ */
+	= @1393 /* ~... is *definitely* <CHARNAME>, hero of Baldur's Gate!~ */
+	== LCORPH01
+	@1394 /* ~Prove it!~ */
+	
+END LCORPH02 LCA_CSHOW_TALK_CHAIN_2_END
