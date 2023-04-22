@@ -1548,6 +1548,13 @@ END
 IF ~~ THEN BEGIN LCA_Menu_StartCutscene
 	SAY @15 /*  ~Of course. Which cutscene do you want to start?~ */
 	
+	IF ~~ THEN REPLY @288 /* ~LCCSHOW~ */
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("LCCSHOW")
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @267 /* ~LCCS15 (Neoma, Corwin Reunite)~ */
 	DO ~
 		SetGlobal("LCA_ReturnToBG", "GLOBAL", 1)
