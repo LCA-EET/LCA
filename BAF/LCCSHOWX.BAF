@@ -1,6 +1,23 @@
+//[825.780] Corwin
+//[896.828] Player
+//[718.858] Child 1
+//[748.894] Child 2
+//[727.892] Child 3
+//[781.921] Child 4
+//[832.927] Child 5
+//[812/945] Child 6
+//[700.820] Curator
 IF 
 	True()
 THEN
 	RESPONSE #100
+		CutSceneId(Player1)
+		ZoomLock(TRUE)
+		FadeToColor([30.0],0)
+		Wait(2)
+		RestorePartyLocations()
+		FadeToColor([30.0],0)
+		Wait(2)
+		ActionOverride("LCCURATO", StartDialog("LCCURATO", Player1))
 		EndCutSceneMode()
 END

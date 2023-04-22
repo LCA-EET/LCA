@@ -237,6 +237,8 @@ END
 
 IF 
 	!AreaCheck("BG1316")
+	!AreaCheck("BG0130") //Hall of Wonders
+	!AreaCheck("BG0131") //High Hall of Wonders
 	Global("LCA_ForceMeetWithFamily", "GLOBAL", 1)
 THEN
 	RESPONSE #100
@@ -262,10 +264,12 @@ END
 
 IF
 	!AreaCheck("BG1316")
+	!AreaCheck("BG0130") //Hall of Wonders
+	!AreaCheck("BG0131") //High Hall of Wonders
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	GlobalTimerExpired("LCA_CorwinFamilyTimer", "GLOBAL")
 	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-	!Global("LCA_CorwinMetFamily", "GLOBAL", 1)
+	!Global("LCA_CorwinMetFamily", "GLOBAL", 2)
 	See(Player1)
 THEN
 	RESPONSE #100
@@ -285,9 +289,6 @@ THEN
 		SetGlobal("LCA_LCCS14Started", "GLOBAL", 1)
 		StartCutScene("LCCS14")
 END
-
-
-
 IF 
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	Global("LCA_LCCS15Cutscene", "GLOBAL", 5)

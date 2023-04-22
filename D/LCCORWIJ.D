@@ -74,6 +74,40 @@ IF ~~ THEN BEGIN LCA_StartDucalCS
 END
 //} #endregion
 
+//{ #region Hall of Wonders Cutscene - DLG-0048
+IF ~
+	Global("LCA_CSHOW_TALK", "GLOBAL", 1)
+~ THEN BEGIN LCA_CSHOW_TALK
+	SAY @1383 /* ~... ... so you see, even the smallest act of kindness can have a profound impact.~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_CSHOW_TALK", "GLOBAL", 2)
+	~
+	EXTERN LCCURATO LCA_CSHOW_TALK_CHAIN
+END
+
+IF ~~ THEN BEGIN LCA_WantToTransform 
+	SAY @1415 /* ~(She looks at you with a knowing smile.)~  */
+	
+	= @1416 /* ~Normally I'd be against it, but it might be good to scare some sense into these kids.~ */
+	
+	IF ~~ THEN REPLY @1419 /* Right. (Transform into the Slayer).~ */
+	DO ~
+		SetGlobal("LCA_ScaredChildren", "GLOBAL", 1)
+		StartCutScene("LCCSHOW3")
+	~	
+	EXIT
+	
+	IF ~~ THEN REPLY @1420 /* ~On second thought, no. Curator Magda — we really must get going.~  */
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("LCCSHOWX")
+	~	
+	EXIT
+END
+//} #endregion
+
 //{ #region Corwin Not Chosen for Saradush - DLG-0001
 IF ~
 	Global("LCA_BGEND3", "GLOBAL", 1)
@@ -609,6 +643,47 @@ IF ~~ THEN LCA_ArrivedInUndercity2
 	
 	IF ~~ THEN
 	EXIT
+END
+
+
+IF ~~ THEN BEGIN LCA_SkieTakesRing
+	SAY @1136 /* ~(Skie takes the ring from Schael.)~ */
+	=@1137 /* ~Skie, whatever you do, don't put it on. You'll be teleported. You MUST place it on Rohma's finger.~*/
+	IF ~~ THEN EXTERN LCSKIE LCA_SkieTakesRing
+END
+IF ~~ THEN BEGIN LCA_Thanks3
+	SAY @1138 /* ~We won't tell. Just be careful.~*/
+	
+	IF ~~ THEN EXTERN LCSKIE LCA_SetUp
+END
+IF ~~ THEN BEGIN LCA_GiveSkieRing
+	SAY @1135 /*~One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~*/
+	
+	IF ~~ THEN EXTERN LCSKIE LCA_GiveRing
+END
+
+IF ~~ THEN BEGIN LCA_GiveSkieRing2
+	SAY @1139 /*~~Skie, do you think you can get to Rohma without being seen?~*/
+	
+	IF ~~ THEN EXTERN LCSKIE LCA_GiveSkieRing3
+END
+
+IF ~~ THEN BEGIN LCA_GiveSkieRing4
+	SAY @1141 /*~You wouldn't need to... One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~*/
+	
+	IF ~~ THEN EXTERN LCSKIE LCA_GiveRing
+END
+
+IF ~~ THEN BEGIN LCA_SkieUCChainEnd
+	SAY @1132 /* ~The man with the scar is Beno.~*/
+	
+	IF ~~ THEN REPLY @1133 /*~Skie, do you think you can sneak Rohma out of there?~ */
+	EXTERN LCSKIE LCA_CanGetRohma
+	
+	IF ~~ THEN REPLY @1134 /* ~How did you get in there without them detecting you?~ */
+	EXTERN LCSKIE LCA_NonDetection
+	
+	
 END
 //} #endregion
 
@@ -1518,6 +1593,34 @@ IF ~~ THEN BEGIN LCA_CorwinTianna5
 	
 	IF ~~ THEN EXIT
 END
+
+
+IF ~~ THEN BEGIN LCA_CorwinWillHelpTianna
+	SAY @862 /* ~Tianna... (sigh)~ */
+	=@863 /* ~Fine - we'll help you. <CHARNAME> and I will talk to Jasper about forgiving your debt.~ */
+	
+	IF ~~ THEN EXTERN LCTIANNA LCA_CorwinHelpTianna
+END
+
+IF ~~ THEN BEGIN LCA_CorwinLobarTiannaEnd
+	SAY @860 /* ~No, that won't be necessary.~ */
+
+	IF ~~ THEN EXIT
+	
+	IF ~
+		InMyArea(Player1)
+	~ THEN
+	DO ~
+		SetGlobal("LCA_AskCorwinAboutTianna", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_NotYetTianna
+	SAY @864 /* ~We're working on it.~ */
+	
+	IF ~~ THEN EXTERN LCTIANNA LCA_HelpEnd
+END
 //} #endregion
 
 //{ #region Corwin Slaver Girl Rescue - DLG-0016
@@ -1669,10 +1772,8 @@ END
 
 //{ #region Corwin Family Timer - DLG-0018
 IF ~
-	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	GlobalTimerExpired("LCA_CorwinFamilyTimer", "GLOBAL")
-	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-	!Global("LCA_CorwinMetFamily", "GLOBAL", 1)
+	GlobalLT("LCA_CorwinMetFamily", "GLOBAL", 1)
 	!Global("LCA_CorwinComplainFamily", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinFamilyTimer
 	SAY @680 /* ~<CHARNAME> - I really need to see my family. My home is in the southeast part of the city. Let's go.~*/
@@ -1688,19 +1789,15 @@ END
 
 //{ #region Corwin Family Timer Expired (Non-Romance) - DLG-0019
 IF ~
-	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	GlobalTimerExpired("LCA_CorwinFamilyTimer", "GLOBAL")
-	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-	!Global("LCA_CorwinMetFamily", "GLOBAL", 1)
-	Global("LCA_CorwinComplainFamily", "GLOBAL", 1)
 	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-~ THEN BEGIN LCA_CorwinFamilyTimer
+~ THEN BEGIN LCA_CorwinFamilyTimer_ExpiredNR
 	SAY @903 /* ~<CHARNAME>, I'm going home to spend the rest of the day with my family. I'll see you tomorrow morning at the debriefing.~*/
 	
 	IF ~~ THEN
 	DO ~
 		SetGlobal("LCA_CorwinWithFamily", "GLOBAL", 1)
-		SetGlobal("LCA_CorwinMetFamily", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinMetFamily", "GLOBAL", 2)
 		SetLeavePartyDialogFile()
 		ChangeAIScript("",DEFAULT)
 		LeaveParty()
@@ -1712,13 +1809,9 @@ END
 
 //{ #region Corwin Family Timer Expired (Romance) - DLG-0020
 IF ~
-	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	GlobalTimerExpired("LCA_CorwinFamilyTimer", "GLOBAL")
-	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-	!Global("LCA_CorwinMetFamily", "GLOBAL", 1)
-	Global("LCA_CorwinComplainFamily", "GLOBAL", 1)
 	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-~ THEN BEGIN LCA_CorwinFamilyTimer
+~ THEN BEGIN LCA_CorwinFamilyTimer_ExpiredRomance
 	SAY @904 /* ~My love, I'm going home to spend the rest of the day with my family. Have you decided where you're staying tonight?~*/
 	
 	IF ~~ THEN REPLY @786 /* ~I'll stay at the Three Old Kegs tonight.~ */
@@ -1799,7 +1892,7 @@ IF ~~ THEN BEGIN LCA_SexTonight
 	IF ~~ THEN
 	DO ~
 		SetGlobal("LCA_CorwinWithFamily", "GLOBAL", 1)
-		SetGlobal("LCA_CorwinMetFamily", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinMetFamily", "GLOBAL", 2)
 		SetLeavePartyDialogFile()
 		ChangeAIScript("",DEFAULT)
 		LeaveParty()
@@ -1812,7 +1905,7 @@ IF ~~ THEN BEGIN LCA_SexTonight
 	~ THEN 
 	DO ~
 		SetGlobal("LCA_CorwinWithFamily", "GLOBAL", 1)
-		SetGlobal("LCA_CorwinMetFamily", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinMetFamily", "GLOBAL", 2)
 		SetGlobal("LCA_Explicit_0001", "GLOBAL", 1)
 		StartDialog("LCCORWIJ", Player1)
 	~
@@ -3492,147 +3585,8 @@ IF ~~ THEN BEGIN LCA_CorwinArrest7
 END
 //} #endregion
 
-//{ #region Hall of Wonders Cutscene - DLG-0048
-IF ~
-	Global("LCA_CSHOW_TALK", "GLOBAL", 1)
-~ THEN BEGIN LCA_CSHOW_TALK
-	SAY @1383 /* ~... ... so you see, even the smallest act of kindness can have a profound impact.~ */
-	
-	IF ~~ THEN 
-	EXTERN LCCURATO LCA_CSHOW_TALK_CHAIN
-END
 
-IF ~~ THEN BEGIN LCA_WantToTransform 
-	SAY @1415 /* ~(She looks at you with a knowing smile.)~  */
-	
-	= @1416 /* ~Normally I'd be against it, but it might be good to scare some sense into these kids.~ */
-	
-	IF ~~ THEN REPLY @1419 /* Right. (Transform into the Slayer).~ */
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("LCCSHOW2")
-	~	
-	EXIT
-	
-	IF ~~ THEN REPLY @1420 /* ~On second thought, no. Curator Magda — we really must get going.~  */
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("LCCSHOWX")
-	~	
-	EXIT
-END
-//} #endregion
-
-IF ~~ THEN BEGIN LCA_SAREV_10
-	SAY @38 /* ~You've got to be kidding me. A deal? With you?~*/
-	
-	IF ~~ THEN EXTERN SAREV25A 14
-END
-
-IF ~~ THEN BEGIN LCA_SkieTakesRing
-	SAY @1136 /* ~(Skie takes the ring from Schael.)~ */
-	=@1137 /* ~Skie, whatever you do, don't put it on. You'll be teleported. You MUST place it on Rohma's finger.~*/
-	IF ~~ THEN EXTERN LCSKIE LCA_SkieTakesRing
-END
-IF ~~ THEN BEGIN LCA_Thanks3
-	SAY @1138 /* ~We won't tell. Just be careful.~*/
-	
-	IF ~~ THEN EXTERN LCSKIE LCA_SetUp
-END
-IF ~~ THEN BEGIN LCA_GiveSkieRing
-	SAY @1135 /*~One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~*/
-	
-	IF ~~ THEN EXTERN LCSKIE LCA_GiveRing
-END
-
-IF ~~ THEN BEGIN LCA_GiveSkieRing2
-	SAY @1139 /*~~Skie, do you think you can get to Rohma without being seen?~*/
-	
-	IF ~~ THEN EXTERN LCSKIE LCA_GiveSkieRing3
-END
-
-IF ~~ THEN BEGIN LCA_GiveSkieRing4
-	SAY @1141 /*~You wouldn't need to... One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~*/
-	
-	IF ~~ THEN EXTERN LCSKIE LCA_GiveRing
-END
-
-IF ~~ THEN BEGIN LCA_SkieUCChainEnd
-	SAY @1132 /* ~The man with the scar is Beno.~*/
-	
-	IF ~~ THEN REPLY @1133 /*~Skie, do you think you can sneak Rohma out of there?~ */
-	EXTERN LCSKIE LCA_CanGetRohma
-	
-	IF ~~ THEN REPLY @1134 /* ~How did you get in there without them detecting you?~ */
-	EXTERN LCSKIE LCA_NonDetection
-	
-	
-END
-
-IF ~~ THEN BEGIN LCA_DontNeedRing
-	SAY @1130 /* ~That won't be necessary. We only need the one.~ */
-	
-	IF ~~ THEN REPLY @1131 /* ~Schael is right. Once Rohma is safe, we'll put an end to Illasera, Beno, and anyone else that had a part in the kidnapping.~ */
-	EXTERN LCNEDERL LCA_DontNeedRing
-
-END
-
-IF ~~ THEN BEGIN LCA_MeetIllasera
-	SAY @1123 /* ~Rohma!~ */
-	
-	= @1124 /* ~What have you done with my daughter!?~ */
-	
-	IF ~~ THEN 
-	EXTERN LCBENO LCA_MeetIllasera
-END
-
-IF ~~ THEN BEGIN LCA_MeetIllasera4
-	SAY @1125 /* ~Beno, you fool! I'm going to - ~ */
-	
-	IF ~~ THEN EXTERN LCBENO LCA_MeetIllasera4
-END
-
-
-IF ~~ THEN BEGIN LCA_CorwinWillHelpTianna
-	SAY @862 /* ~Tianna... (sigh)~ */
-	=@863 /* ~Fine - we'll help you. <CHARNAME> and I will talk to Jasper about forgiving your debt.~ */
-	
-	IF ~~ THEN EXTERN LCTIANNA LCA_CorwinHelpTianna
-END
-
-IF ~~ THEN BEGIN LCA_CorwinLobarTiannaEnd
-	SAY @860 /* ~No, that won't be necessary.~ */
-
-	IF ~~ THEN EXIT
-	
-	IF ~
-		InMyArea(Player1)
-	~ THEN
-	DO ~
-		SetGlobal("LCA_AskCorwinAboutTianna", "GLOBAL", 1)
-	~
-	EXIT
-END
-
-
-
-IF ~~ THEN BEGIN LCA_NotYetTianna
-	SAY @864 /* ~We're working on it.~ */
-	
-	IF ~~ THEN EXTERN LCTIANNA LCA_HelpEnd
-END
-
-IF ~~ THEN LCA_MeetSkie3A
-	SAY @910 /* ~Skie, listen to me - put the dagger down, slowly.~ [LCCORJ19]*/ 
-	
-	IF ~~ THEN REPLY @912 /* ~Do as she says, Skie.~ */
-	EXTERN LCSKIE LCA_MeetSkie4
-	
-	IF ~~ THEN REPLY @911 /* ~Put that damned dagger away Skie. It's gotten me into enough trouble already!~  */
-	EXTERN LCSKIE LCA_MeetSkie4
-END
-
-
+//{ #region Corwin Intimate Bodhi - DLG-0049
 IF ~
 	Global("LCA_CorwinSexAfterBodhi", "GLOBAL", 1)
 	GlobalLT("LCA_TimesHadSex", "GLOBAL", 1)
@@ -3741,6 +3695,97 @@ IF ~~ THEN LCA_CorwinWantsSex5A
 	IF ~~ THEN
 	GOTO LCA29 //OK
 END
+//} #endregion
+
+//{ #region Corwin Cheap Date - DLG-0050
+
+IF ~
+	Global("LCA_CorwinSex_1", "GLOBAL", 1)
+	Global("LCA_SleepInn", "GLOBAL", 1)
+	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
+	AreaCheck("AR0406")
+	!Global("LCA_CorwinSexFirstComplain", "GLOBAL", 1)
+~ THEN BEGIN LCA_CorwinSexCC
+	SAY @66 /* ~When I said some place more private, I didn't mean this dump. It's filthy. Let's go to one of the better establishments in the city.~ */
+	
+	IF ~~ THEN REPLY @67 /* ~Right... sorry, love.~ */
+	DO ~
+		SetGlobal("LCA_CorwinSexFirstComplain", "GLOBAL", 1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @68 /* ~Rats, slavers, thieves, the stench, all of it bothers me. Let's go.~ */
+	GOTO LCA_CorwinSexCC2
+END
+
+IF ~~ THEN BEGIN LCA_CorwinSexCC2
+	SAY @69 /* ~Rats, slavers, thieves, the stench, all of it bothers me. Let's go.~ */
+	
+	IF ~~ THEN REPLY @67 /* ~Right... sorry, love.~ */
+	DO ~
+		SetGlobal("LCA_CorwinSexFirstComplain", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~
+	Global("LCA_CorwinSex_1", "GLOBAL", 1)
+	Global("LCA_SleepInn", "GLOBAL", 1)
+	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
+	AreaCheck("AR0406")
+	Global("LCA_CorwinSexFirstComplain", "GLOBAL", 1)
+~ THEN BEGIN LCA_CorwinSexCC3
+	SAY @70 /* ~I already told you, we are not making love in this dump.~ */
+	= @71 /*  ~You know what? Forget it. I'm not in the mood anymore. Let's go.~ */
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 5)
+		SetGlobal("LCA_CorwinSexFirstComplain", "GLOBAL", 2)
+	~
+	EXIT
+END
+//}
+
+//{ #region Meeting Illasera - DLG-0051
+IF ~~ THEN BEGIN LCA_MeetIllasera
+	SAY @1123 /* ~Rohma!~ */
+	
+	= @1124 /* ~What have you done with my daughter!?~ */
+	
+	IF ~~ THEN 
+	EXTERN LCBENO LCA_MeetIllasera
+END
+
+IF ~~ THEN BEGIN LCA_MeetIllasera4
+	SAY @1125 /* ~Beno, you fool! I'm going to - ~ */
+	
+	IF ~~ THEN EXTERN LCBENO LCA_MeetIllasera4
+END
+//} #endregion
+IF ~~ THEN BEGIN LCA_SAREV_10
+	SAY @38 /* ~You've got to be kidding me. A deal? With you?~*/
+	
+	IF ~~ THEN EXTERN SAREV25A 14
+END
+
+
+IF ~~ THEN BEGIN LCA_DontNeedRing
+	SAY @1130 /* ~That won't be necessary. We only need the one.~ */
+	
+	IF ~~ THEN REPLY @1131 /* ~Schael is right. Once Rohma is safe, we'll put an end to Illasera, Beno, and anyone else that had a part in the kidnapping.~ */
+	EXTERN LCNEDERL LCA_DontNeedRing
+
+END
+
+IF ~~ THEN LCA_MeetSkie3A
+	SAY @910 /* ~Skie, listen to me - put the dagger down, slowly.~ [LCCORJ19]*/ 
+	
+	IF ~~ THEN REPLY @912 /* ~Do as she says, Skie.~ */
+	EXTERN LCSKIE LCA_MeetSkie4
+	
+	IF ~~ THEN REPLY @911 /* ~Put that damned dagger away Skie. It's gotten me into enough trouble already!~  */
+	EXTERN LCSKIE LCA_MeetSkie4
+END
 
 IF ~
 	!Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
@@ -3797,51 +3842,6 @@ IF ~~ THEN BEGIN LCA_CorwinCantHaveSex3
 END
 
 
-IF ~
-	Global("LCA_CorwinSex_1", "GLOBAL", 1)
-	Global("LCA_SleepInn", "GLOBAL", 1)
-	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
-	AreaCheck("AR0406")
-	!Global("LCA_CorwinSexFirstComplain", "GLOBAL", 1)
-~ THEN BEGIN LCA_CorwinSexCC
-	SAY @66 /* ~When I said some place more private, I didn't mean this dump. It's filthy. Let's go to one of the better establishments in the city.~ */
-	
-	IF ~~ THEN REPLY @67 /* ~Right... sorry, love.~ */
-	DO ~
-		SetGlobal("LCA_CorwinSexFirstComplain", "GLOBAL", 1)
-	~
-	EXIT
-
-	IF ~~ THEN REPLY @68 /* ~Rats, slavers, thieves, the stench, all of it bothers me. Let's go.~ */
-	GOTO LCA_CorwinSexCC2
-END
-
-IF ~~ THEN BEGIN LCA_CorwinSexCC2
-	SAY @69 /* ~Rats, slavers, thieves, the stench, all of it bothers me. Let's go.~ */
-	
-	IF ~~ THEN REPLY @67 /* ~Right... sorry, love.~ */
-	DO ~
-		SetGlobal("LCA_CorwinSexFirstComplain", "GLOBAL", 1)
-	~
-	EXIT
-END
-
-IF ~
-	Global("LCA_CorwinSex_1", "GLOBAL", 1)
-	Global("LCA_SleepInn", "GLOBAL", 1)
-	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
-	AreaCheck("AR0406")
-	Global("LCA_CorwinSexFirstComplain", "GLOBAL", 1)
-~ THEN BEGIN LCA_CorwinSexCC3
-	SAY @70 /* ~I already told you, we are not making love in this dump.~ */
-	= @71 /*  ~You know what? Forget it. I'm not in the mood anymore. Let's go.~ */
-	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 5)
-		SetGlobal("LCA_CorwinSexFirstComplain", "GLOBAL", 2)
-	~
-	EXIT
-END
 
 IF ~
 	InParty(Myself)
@@ -3921,7 +3921,8 @@ IF ~
 THEN BEGIN LCA_CorwinPlayerBant2B
 	SAY @188 /* ~<CHARNAME>, are you alright? You have a look of concern about you.~ */
 	
-	IF ~~ THEN REPLY @167 /* ~Yes Schael, I am fine. I was just thinking about some of the places and people we've seen...~ */ GOTO LCA48 //OK
+	IF ~~ THEN REPLY @167 /* ~Yes Schael, I am fine. I was just thinking about some of the places and people we've seen...~ */ 
+	GOTO LCA48 //OK
 END
 
 
@@ -6938,7 +6939,7 @@ CHAIN
 	IF ~~ THEN LCCORWIJ LCA_Depart_RohmaChain
 		@872 /* ~Rohma, father, <CHARNAME> and I have some business to attend to in the city. I'll be back in a couple of hours.~ */
 		DO ~
-			SetGlobalTimer("LCA_CorwinReturnToFamily", "GLOBAL", FOUR_HOURS)
+			SetGlobalTimer("LCA_CorwinFamilyTimer", "GLOBAL", FOUR_HOURS)
 		~
 		== LCAUDAM
 		@877 /*  ~Good. Don't take too long. Rohma, say bye to mommy.~ */

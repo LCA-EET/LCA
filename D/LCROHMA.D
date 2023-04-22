@@ -308,7 +308,7 @@ IF ~~ THEN BEGIN LCA_SayBye
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @33 /* ~Bye Rohma! Take good care of your mommy for me. I'll see the two of you tomorrow.~ */
 	DO ~
-		SetGlobal("LCA_CorwinWithFamily", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinWithFamily", "GLOBAL", 2)
 		ActionOverride("LCCORWIN", LeaveParty())
 	~
 	EXIT
@@ -317,7 +317,7 @@ IF ~~ THEN BEGIN LCA_SayBye
 		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @34 /* ~Bye Rohma! It was nice to see you again. See you tomorrow, Schael.~*/
 	DO ~
-		SetGlobal("LCA_CorwinWithFamily", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinWithFamily", "GLOBAL", 2)
 		ActionOverride("LCCORWIN", LeaveParty())
 	~
 	EXIT

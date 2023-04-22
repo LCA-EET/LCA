@@ -1,6 +1,12 @@
+
 IF 
 	True()
 THEN
 	RESPONSE #100
+		CutSceneId(Player1)
+		ZoomLock(TRUE)
+		FadeToColor([30.0],0)
+		Wait(2)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 		EndCutSceneMode()
 END

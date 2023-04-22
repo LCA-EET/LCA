@@ -1,6 +1,31 @@
+//[825.780] Corwin
+//[896.828] Player
+//[718.858] Child 1
+//[748.894] Child 2
+//[727.892] Child 3
+//[781.921] Child 4
+//[832.927] Child 5
+//[812/945] Child 6
+//[700.820] Curator
 IF 
 	True()
 THEN
 	RESPONSE #100
-		EndCutSceneMode()
+		CutSceneId(Player1)
+		StorePartyLocations()
+		ZoomLock(TRUE)
+		FadeToColor([30.0],0)
+		SetGlobal("LCA_CSHOW_TALK", "GLOBAL", 1)
+		Wait(3)
+		
+		ActionOverride(Player1,LeaveAreaLUA("LCCSHOW","",[896.828],SW))
+		ActionOverride("LCCORWIN",LeaveAreaLUA("LCCSHOW","",[825.780],SW))
+		CreateCreature("LCORPH01", [718.858], NE)
+		CreateCreature("LCORPH02", [748.858], NE)
+		CreateCreature("LCORPH03", [727.892], NE)
+		CreateCreature("LCORPH04", [781.921], NE)
+		CreateCreature("LCORPH05", [832.927], NE)
+		CreateCreature("LCORPH06", [812.945], NE)
+		CreateCreature("LCCURATO", [700.820], SE)
+		StartCutscene("LCCSHOW2")
 END
