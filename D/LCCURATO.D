@@ -30,6 +30,9 @@ IF ~~ THEN BEGIN LCA_BadBehavior
 	SAY @17 /* ~Please excuse their poor behavior. With role models like the two of you however, I've no doubt that they will grow up to be productive members of society.~ */
 	
 	IF ~~ THEN
+	DO ~
+		AddJournalEntry(@19, INFO)
+	~
 	GOTO LCA_GoodBye
 END
 
@@ -37,6 +40,9 @@ IF ~~ THEN BEGIN LCA_NotHappy
 	SAY @15 /* ~While I strongly disapprove of that little show you put on, I'm sure that the children will be on their best behavior from now on.~ */
 	
 	IF ~~ THEN
+	DO ~
+		AddJournalEntry(@18, INFO)
+	~
 	GOTO LCA_GoodBye
 END
 
@@ -45,6 +51,8 @@ IF ~~ THEN BEGIN LCA_GoodBye
 	
 	IF ~~ THEN
 	DO ~
+		ChangeStat("LCCORWIN",XP,25000,ADD)
+		ChangeStat(Player1,XP,25000,ADD)
 		SetGlobal("LCA_LeaveArea", "LOCALS", 1)
 		EscapeArea()
 	~

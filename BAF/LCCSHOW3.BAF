@@ -30,6 +30,7 @@ THEN
 		DisplayStringHead("LCCORWIN", ~That's enough, <CHARNAME>.~)
 		Wait(3)
 		ApplySpell(Player1,SLAYER_BACK_TO_HUMAN_NOVIS) // slayer change // end slayer change
+		PlaySong(117)
 		StartCutSceneMode()
 		Wait(1)
 		ActionOverride("LCCORWIN", Face(SW))

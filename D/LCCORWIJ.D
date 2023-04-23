@@ -95,6 +95,7 @@ IF ~~ THEN BEGIN LCA_WantToTransform
 	IF ~~ THEN REPLY @1419 /* Right. (Transform into the Slayer).~ */
 	DO ~
 		SetGlobal("LCA_ScaredChildren", "GLOBAL", 1)
+		PlaySong(58)
 		StartCutScene("LCCSHOW3")
 	~	
 	EXIT
