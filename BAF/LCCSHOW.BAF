@@ -20,12 +20,6 @@ THEN
 		
 		ActionOverride(Player1,LeaveAreaLUA("LCCSHOW","",[896.828],SW))
 		ActionOverride("LCCORWIN",LeaveAreaLUA("LCCSHOW","",[825.780],SW))
-		CreateCreature("LCORPH01", [718.858], NE)
-		CreateCreature("LCORPH02", [748.858], NE)
-		CreateCreature("LCORPH03", [727.892], NE)
-		CreateCreature("LCORPH04", [781.921], NE)
-		CreateCreature("LCORPH05", [832.927], NE)
-		CreateCreature("LCORPH06", [812.945], NE)
-		CreateCreature("LCCURATO", [700.820], SE)
+
 		StartCutscene("LCCSHOW2")
 END
