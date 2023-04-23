@@ -5,7 +5,7 @@ THEN
 	RESPONSE #100
 		CutSceneId(Player1)
 		ZoomLock(TRUE)
-		ApplySpell(Player1,SLAYER_CHANGE_TWO) // slayer change
+		ApplySpell(Player1,SLAYER_CHANGE_CUT_SCENE) // slayer change
 		Wait(3)
 		ApplySpell(Player1,SLAYER_BACK_TO_HUMAN_NOVIS) // slayer change // end slayer change
 		Wait(3)
