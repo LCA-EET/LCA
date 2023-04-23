@@ -1,6 +1,56 @@
 BEGIN ~LCCURATO~
 
 IF ~
+	Global("LCA_LeaveArea", "LOCALS", 1)
+~ THEN BEGIN LCA_LeaveArea
+	SAY @16 /* ~Now, if you'll excuse me, I must return to my duties. Good day.~ */
+	
+	IF ~~ THEN
+	DO ~
+		EscapeArea()
+	~
+	EXIT
+END
+
+IF ~
+	Global("LCA_CSHOW_TALK", "GLOBAL", 2)
+~ THEN BEGIN LCA_CSHOW_END
+	SAY @14 /* ~Captain, <CHARNAME>, thank you again for taking time out of your day to share your insights with those orphans.~ */
+	
+	IF ~~ THEN
+	GOTO LCA_BadBehavior
+	
+	IF ~
+		Global("LCA_ScaredChildren", "GLOBAL", 1)
+	~ THEN 
+	GOTO LCA_NotHappy
+END
+
+IF ~~ THEN BEGIN LCA_BadBehavior
+	SAY @17 /* ~Please excuse their poor behavior. With role models like the two of you however, I've no doubt that they will grow up to be productive members of society.~ */
+	
+	IF ~~ THEN
+	GOTO LCA_GoodBye
+END
+
+IF ~~ THEN BEGIN LCA_NotHappy
+	SAY @15 /* ~While I strongly disapprove of that little show you put on, I'm sure that the children will be on their best behavior from now on.~ */
+	
+	IF ~~ THEN
+	GOTO LCA_GoodBye
+END
+
+IF ~~ THEN BEGIN LCA_GoodBye
+	SAY @16 /* ~Now, if you'll excuse me, I must return to my duties. Good day.~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_LeaveArea", "LOCALS", 1)
+		EscapeArea()
+	~
+	EXIT
+END
+IF ~
 	Global("LCA_MagdaTalk", "GLOBAL", 1)
 ~ THEN BEGIN LCA_Meeting
 	SAY @2 /* ~Captain Corwin, welcome home! It's good to see you.~ */
