@@ -5,7 +5,7 @@ THEN
 	RESPONSE #100
 		CutSceneId(Player1)
 		ZoomLock(TRUE)
-		ActionOverride(Player1, ReallyForceSpellRES("spin822", Myself)) // slayer change
+		ActionOverride(Player1, ApplySpell(Player1,SLAYER_CHANGE_TWO)) // slayer change
 		Wait(3)
 		ActionOverride(Player1, ReallyForceSpellRES("spin718a", Myself)) // end slayer change
 		Wait(3)

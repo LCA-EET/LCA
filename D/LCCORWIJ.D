@@ -7254,8 +7254,6 @@ CHAIN LCCURATO LCA_CSHOW_TALK_CHAIN
 		Gender(Player1, FEMALE)
 	~
 	@1412 /* ~She's gracefully agreed to share with you some words of encouragement.~ */
-	== LCORPH02
-	@1384 /* ~You're not <CHARNAME>!~ */
 END LCORPH02 LCA_CSHOW_TALK_CHAIN_END
 
 CHAIN LCORPH03 LCA_CSHOW_TALK_CHAIN_2
@@ -7268,7 +7266,8 @@ CHAIN LCORPH03 LCA_CSHOW_TALK_CHAIN_2
 	@1390 /* ~And <PRO_HESHE>'s so ugly, that if <PRO_HESHE> looks at you, you turn to stone! */
 	== LCCURATO
 	@1402 /* ~<CHARNAME>, Captain, I'm so sorry about thi—~ */
-	= @1396 /* ~And <PRO_HESHE>'s so ugly, that if <PRO_HESHE> looks at you, you turn to stone!~ */
+	== LCORPH01
+	@1396 /* ~And <PRO_HESHE>'s so ugly, that if <PRO_HESHE> looks at you, you turn to stone!~ */
 	== LCCORWIJ
 	@1391 /* ~That's enough, all of you. Whatever rumors you've heard are untrue. This ...~ */
 	= @1392 /* ~(She gestures to you.)~ */
