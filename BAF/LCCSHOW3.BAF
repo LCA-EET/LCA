@@ -5,9 +5,9 @@ THEN
 	RESPONSE #100
 		CutSceneId(Player1)
 		ZoomLock(TRUE)
-		ActionOverride(Player1, ApplySpell(Player1,SLAYER_CHANGE_TWO)) // slayer change
+		ApplySpell(Player1,SLAYER_CHANGE_TWO) // slayer change
 		Wait(3)
-		ActionOverride(Player1, ReallyForceSpellRES("spin718a", Myself)) // end slayer change
+		ApplySpell(Player1,SLAYER_BACK_TO_HUMAN_NOVIS) // slayer change // end slayer change
 		Wait(3)
 		StartCutScene("LCCSHOWX")
 END
