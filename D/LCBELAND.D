@@ -9,7 +9,7 @@ IF ~
 	GOTO LCA_OneGold
 	
 	IF ~
-		Global("HelpBrevlik","GLOBAL",2)
+		GlobalGT("HelpBrevlik","GLOBAL",0)
 	~ THEN 
 	GOTO LCA_ThreeGold
 END
@@ -72,6 +72,7 @@ IF ~~ THEN BEGIN LCA_ThreeGold
 	GOTO LCA_WontPay_3
 	
 	IF ~
+		GlobalGT("HelpBrevlik", "GLOBAL", 0)
 		IsValidForPartyDialog(Player1)
 	~ THEN REPLY @1 /*~Three gold, you say? The last time I was here, the entrance fee was a single gold piece.~*/
 	DO ~
@@ -105,9 +106,21 @@ IF ~~ THEN BEGIN LCA_CostIncrease
 	GOTO LCA_WontPay_3
 	
 	IF ~
+		Global("HelpBrevlik", "GLOBAL", 2)
 		IsGabber(Player1)
 	~ THEN REPLY @13 /* ~About that... (confess to your crime.)~ */
 	GOTO LCA_Confess
+	
+	IF ~
+		Global("HelpBrevlik", "GLOBAL", 2)
+		IsGabber(Player1)
+	~ THEN REPLY @24 /*~Perhaps I can help locate the Farseer.~*/
+	GOTO LCA_HelpFindFarseer_Stolen
+	
+	IF ~
+		!Global("HelpBrevlik", "GLOBAL", 2)
+	~ THEN REPLY @24 /*~Perhaps I can help locate the Farseer.~*/
+	GOTO LCA_HelpFindFarseer
 	
 	IF ~
 		PartyGoldGT(2)
@@ -144,26 +157,43 @@ IF ~~ THEN BEGIN LCA_TookMoney
 	GOTO LCA_MakeAmends
 END
 
-IF ~~ THEN BEGIN LCA_MakeAmends
-	SAY @17 /* ~Perhaps... if you could locate and return the Farseer to us, we would be grateful. In lieu of that, some time spent with our security personnel may prove beneficial. Gond is the god of inventiveness, and we could use the knowledge you impart to us to improve our ability to better protect our exhibits.~ */
-	
-	IF ~~ THEN REPLY @18 /* ~I'll try and locate the Farseer, and return it.~ */
-	GOTO LCA_ThankYou
-	
-	IF ~~ THEN REPLY @19 /* ~I'll show your security folks how I was able to steal the Farseer.~ */
-	GOTO LCA_ThankYou
-	
-END
-
-IF ~~ THEN BEGIN LCA_ThankYou
-	SAY @23 /* ~Thank you.~ */
+IF ~~ THEN BEGIN LCA_HelpFindFarseer
+	SAY @25 /* ~I appreciate the gesture, though I doubt you'll be able to find it. We launched our own investigation months ago and were unable to learn anything of its whereabouts.~ */
 	
 	IF ~~ THEN
 	DO ~
+		AddJournalEntry(@26, QUEST)
+		SetGlobal("LCA_SpawnBrevlik", "GLOBAL", 1)
 		SetGlobal("BelandEntranceFee","GLOBAL",2)
 	~
 	EXIT
 END
+
+IF ~~ THEN BEGIN LCA_HelpFindFarseer_Stolen
+	SAY @25 /* ~I appreciate the gesture, though I doubt you'll be able to find it. We launched our own investigation months ago and were unable to learn anything of its whereabouts.~ */
+	
+	IF ~~ THEN
+	DO ~
+		AddJournalEntry(@26, QUEST)
+		SetGlobal("LCA_SpawnBrevlik", "GLOBAL", 1)
+		SetGlobal("BelandEntranceFee","GLOBAL",2)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_MakeAmends
+	SAY @17 /* ~Perhaps... if you could locate and return the Farseer to us, we would be grateful. We launched our own investigation months ago and were unable to learn anything of its whereabouts.~*/
+	
+	IF ~~ THEN
+	DO ~
+		AddJournalEntry(@27, QUEST)
+		SetGlobal("LCA_SpawnBrevlik", "GLOBAL", 1)
+		SetGlobal("BelandEntranceFee","GLOBAL",2)
+	~
+	EXIT
+	
+END
+
 IF ~~ THEN BEGIN LCA_CantPay
 	SAY @11 /* ~It's but a small matter to momentarily lapse the entry fee, though if ye can soon afford a coin or two in the future, we'd sorely appreciate it.~ */
 	

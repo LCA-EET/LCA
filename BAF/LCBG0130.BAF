@@ -1,4 +1,19 @@
 IF
+	Global("LCA_SpawnBrevlik", "GLOBAL", 1)
+THEN
+	RESPONSE #20
+		SetGlobal("LCA_SpawnBrevlik", "GLOBAL", 2) //Blushing Mermaid BG0114
+	RESPONSE #20
+		SetGlobal("LCA_SpawnBrevlik", "GLOBAL", 3) //Three Old Kegs BG0119
+	RESPONSE #20
+		SetGlobal("LCA_SpawnBrevlik", "GLOBAL", 4) //Low Lantern BG0133
+	RESPONSE #20
+		SetGlobal("LCA_SpawnBrevlik", "GLOBAL", 5) //Helm and Cloak //BG0116
+	RESPONSE #20
+		SetGlobal("LCA_SpawnBrevlik", "GLOBAL", 6) //Splurging Sturgeon BG0103
+END
+
+IF
 	InMyArea("LCCORWIN")
 	InMyArea(Player1)
 	!Global("LCA_CuratorSpawned", "GLOBAL", 1)

@@ -8,6 +8,49 @@
 
 */
 
+EXTEND_BOTTOM BART8 0
+	IF ~
+		GlobalGT("LCA_BrevlikSpawn", "GLOBAL", 0)
+		!Global("LCA_FoundBrevlik", "GLOBAL", 1)
+		!Global("LCA_AskedAboutBrevlik", "GLOBAL", 1)
+	~ THEN REPLY @213 /* ~I'm looking for a gnome named Brevlik. Have you seen him recently?~*/
+	DO ~
+		SetGlobal("LCA_AskedAboutBrevlik", "GLOBAL", 1)
+	~
+	GOTO LCA_Brevlik
+END
+
+EXTEND_BOTTOM BART8 1
+	IF ~
+		GlobalGT("LCA_BrevlikSpawn", "GLOBAL", 0)
+		!Global("LCA_FoundBrevlik", "GLOBAL", 1)
+		!Global("LCA_AskedAboutBrevlik", "GLOBAL", 1)
+	~ THEN REPLY @213 /* ~I'm looking for a gnome named Brevlik. Have you seen him recently?~*/
+	DO ~
+		SetGlobal("LCA_AskedAboutBrevlik", "GLOBAL", 1)
+	~
+	GOTO LCA_Brevlik
+END
+
+APPEND BART8
+	IF ~~ THEN BEGIN LCA_Brevlik
+		SAY @214 /* ~Does that little runt owe you money too? He hasn't been allowed here in months, and it'll stay that way so long as he doesn't pay his tab.~*/
+		
+		IF ~~ THEN REPLY @215 /* ~Do you know where he is?~ */
+		GOTO LCA_Brevlik2
+	END
+	
+	IF ~~ THEN BEGIN LCA_Brevlik2
+		SAY @216  /* ~Alls I know is he ain't here, got it? Go check one of the other taverns 'round town.~ */
+		
+		IF ~~ THEN
+		DO ~
+			AddJournalEntry(@217, QUEST)
+		~
+		EXIT
+	END
+END
+
 EXTEND_BOTTOM PPIRENI2 3
 	IF ~
 		IsValidForPartyDialog("LCCORWIN")

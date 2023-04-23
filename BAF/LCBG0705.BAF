@@ -1,0 +1,10 @@
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Global("LCA_DestroyNPCs_0705", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("Brevlik", DestroySelf())
+		ActionOverride("CAUTERNUS", DestroySelf())
+		ActionOverride("HUSAM", DestroySelf())
+		SetGlobal("LCA_DestroyNPCs_0705", "GLOBAL", 1)
+END

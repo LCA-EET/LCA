@@ -1,0 +1,44 @@
+IF
+	AreaCheck("BG0114")
+	Global("LCA_SpawnBrevlik", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		CreateCreature("LCBREVLK", [0.0], N)
+		SetGlobal("LCA_SpawnBrevlik", "GLOBAL", 0)
+END
+
+IF
+	AreaCheck("BG0119")
+	Global("LCA_SpawnBrevlik", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		CreateCreature("LCBREVLK", [0.0], N)
+		SetGlobal("LCA_SpawnBrevlik", "GLOBAL", 0)
+END
+
+IF
+	AreaCheck("BG0133")
+	Global("LCA_SpawnBrevlik", "GLOBAL", 4)
+THEN
+	RESPONSE #100
+		CreateCreature("LCBREVLK", [0.0], N)
+		SetGlobal("LCA_SpawnBrevlik", "GLOBAL", 0)
+END
+
+IF
+	AreaCheck("BG0116")
+	Global("LCA_SpawnBrevlik", "GLOBAL", 5)
+THEN
+	RESPONSE #100
+		CreateCreature("LCBREVLK", [0.0], N)
+		SetGlobal("LCA_SpawnBrevlik", "GLOBAL", 0)
+END
+
+IF
+	AreaCheck("BG0103")
+	Global("LCA_SpawnBrevlik", "GLOBAL", 6)
+THEN
+	RESPONSE #100
+		CreateCreature("LCBREVLK", [0.0], N)
+		SetGlobal("LCA_SpawnBrevlik", "GLOBAL", 0)
+END
