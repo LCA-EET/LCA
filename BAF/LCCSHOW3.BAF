@@ -9,6 +9,7 @@ THEN
 		ActionOverride("LCCORWIN", FaceObject("LCORPH01"))
 		FaceObject("LCORPH01")
 		ApplySpell(Player1,SLAYER_CHANGE_CUT_SCENE) // slayer change
+		StartCutSceneMode()
 		Wait(1)
 		DisplayStringHead("LCCURATO", ~AAH!~)
 		SmallWait(5)
@@ -29,6 +30,7 @@ THEN
 		DisplayStringHead("LCCORWIN", ~That's enough, <CHARNAME>.~)
 		Wait(3)
 		ApplySpell(Player1,SLAYER_BACK_TO_HUMAN_NOVIS) // slayer change // end slayer change
+		StartCutSceneMode()
 		Wait(1)
 		DisplayStringHead("LCCORWIN", ~Now, listen kids.~)
 		Wait(3)
