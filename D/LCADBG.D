@@ -1550,6 +1550,7 @@ IF ~~ THEN BEGIN LCA_Menu_StartCutscene
 	
 	IF ~~ THEN REPLY @288 /* ~LCCSHOW~ */
 	DO ~
+		SetGlobal("LCA_MagdaTalk", "GLOBAL", 2)
 		StartCutSceneMode()
 		StartCutScene("LCCSHOW")
 	~
