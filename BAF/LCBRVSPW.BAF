@@ -3,7 +3,7 @@ IF
 	Global("LCA_SpawnBrevlik", "GLOBAL", 2)
 THEN
 	RESPONSE #100
-		CreateCreature("LCBREVLK", [0.0], N)
+		CreateCreature("LCBREVLK", [810.700], S)
 		SetGlobal("LCA_SpawnBrevlik", "GLOBAL", 0)
 END
 
@@ -12,7 +12,7 @@ IF
 	Global("LCA_SpawnBrevlik", "GLOBAL", 3)
 THEN
 	RESPONSE #100
-		CreateCreature("LCBREVLK", [0.0], N)
+		CreateCreature("LCBREVLK", [478.495], SW)
 		SetGlobal("LCA_SpawnBrevlik", "GLOBAL", 0)
 END
 
@@ -21,7 +21,7 @@ IF
 	Global("LCA_SpawnBrevlik", "GLOBAL", 4)
 THEN
 	RESPONSE #100
-		CreateCreature("LCBREVLK", [0.0], N)
+		CreateCreature("LCBREVLK", [494.469], NE)
 		SetGlobal("LCA_SpawnBrevlik", "GLOBAL", 0)
 END
 
@@ -30,7 +30,7 @@ IF
 	Global("LCA_SpawnBrevlik", "GLOBAL", 5)
 THEN
 	RESPONSE #100
-		CreateCreature("LCBREVLK", [0.0], N)
+		CreateCreature("LCBREVLK", [510.885], E)
 		SetGlobal("LCA_SpawnBrevlik", "GLOBAL", 0)
 END
 
@@ -39,6 +39,6 @@ IF
 	Global("LCA_SpawnBrevlik", "GLOBAL", 6)
 THEN
 	RESPONSE #100
-		CreateCreature("LCBREVLK", [0.0], N)
+		CreateCreature("LCBREVLK", [650.440], NW)
 		SetGlobal("LCA_SpawnBrevlik", "GLOBAL", 0)
 END
