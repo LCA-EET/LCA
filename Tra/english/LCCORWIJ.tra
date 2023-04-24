@@ -524,6 +524,11 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @576 = ~(You share a warm embrace.)~
 @577 = ~Come on, let's head in. I'm sure they've set up some interesting new exhibits since the last time we were here.~ 
 @578 = ~Only the Gods know, I guess...~
+@579 = ~Fine. But you and I are going to have a long talk about this.~
+@580 = ~(She turns, and looks at you with disappointment.)~
+@581 = ~You — gnome! Get out of here before I change my mind!~
+@582 = ~(She delivers a swift, powerful kick to his behind.)~
+@583 = ~(Keep quiet.)~
 @601 = ~Schael shared a number of submission and other hand-to-hand techniques with you to improve your effectiveness in combat. You also gained some valuable insight into who's really in charge, at least when it comes to bedroom 'activities'.~
 @602 = ~(You end up making love again before finally falling asleep.)~
 
@@ -624,10 +629,10 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @686 = ~Me too, father.~
 @687 = ~(They share a warm embrace.)~
 @688 = ~I see you've brought company.~
-@689 = ~~
+@689 = ~If you arrest him, you'll have to arrest me too, Captain. Let him go.~
 @690 = ~As am I, sir.~
 @691 = ~Corporal Duncan told us you'd be home soon. I can't tell you how much of a relief it is to have you back.~
-@692 = ~~
+@692 = ~Fine. But only because I love you.~
 @693 = ~Gods, where does the time go?~
 @694 = ~Gods, where does the time go?~
 @695 = ~Oh! Look what I got for you Rohma.~
@@ -843,7 +848,7 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @906 = ~I'm looking forward to it...~
 @907 = ~You'll do more than just see me, I hope.~
 @908 = ~(She laughs). Much more. See you later.~
-@909 = ~~ 
+@909 = ~(She gives you a distasteful look.)~ 
 @910 = ~Skie, listen to me — put the dagger down, slowly.~ [LCCORJ19]
 @911 = ~Put that damned dagger away Skie. It's gotten me into enough trouble already!~ 
 @912 = ~Do as she says, Skie.~
@@ -1311,9 +1316,9 @@ Captain Corwin shared the story of how she was arrested in the Hall of Wonders. 
 @1367 = ~We're going to see them shortly.~
 @1368 = ~Ah, good. And who're you? I don't believe we've met.~
 @1369 = ~Curator Magda, allow me to introduce you to <CHARNAME>, the hero of Baldur's Gate.~
-@1370 = ~~
-@1371 = ~~
-@1372 = ~~
+@1370 = ~We're not paying for stolen merchandise, gnome. Hand it over, or I'll have you arrested.~
+@1371 = ~Not so fast. You're under arrest, for grand larceny.~
+@1372 = ~If you arrest him, you'll have to arrest me too, love. Let him go.~
 @1373 = ~For many years... enough time to watch the Captain here grow from a rapscallious child into the fine young woman she is today.~
 @1374 = ~(She blushes.)~
 @1375 = ~Oh! <CHARNAME>, Captain — a number of troubled youths from the orphanage are visiting the High Hall of Wonders, as we speak. It would mean the world to them if you can take some time out of your day to give them some words of encouragement.~

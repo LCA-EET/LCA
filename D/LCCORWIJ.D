@@ -3952,6 +3952,78 @@ THEN BEGIN LCA_SkieMessageDelivered_Romance
 	GOTO LCA31
 END
 
+IF ~~ THEN BEGIN LCA_NotPaying
+	SAY @1370 /* ~We're not paying for stolen merchandise, gnome. Hand it over, or I'll have you arrested.~*/
+	
+	IF ~~ THEN 
+	EXTERN LCBREVLK LCA_GiveItToMe
+END
+
+IF ~~ THEN BEGIN LCA_ArrestBrevlik
+	SAY @1371 /* ~Not so fast. You're under arrest for grand larceny.~ */
+	
+	IF ~~ THEN
+	DO ~
+		StartCutSceneMode()
+		SetGlobal("LCA_BrevlikArrested", "GLOBAL", 1)
+		StartCutScene("LCARREST")
+	~
+	EXIT
+	
+	IF ~
+		Global("HelpBrevlik", "GLOBAL", 2)
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1372 /* ~If you arrest him, you'll have to arrest me too, love.~*/
+	DO ~
+		IncrementGlobal("LCA_CorwinOpinionOfPlayer", -1, ADD)
+	~
+	GOTO LCA_ArrestBrevlik_Mad
+	
+	IF ~
+		Global("HelpBrevlik", "GLOBAL", 2)
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @583 /* ~(Keep quiet.)~*/
+	DO ~
+		StartCutSceneMode()
+		SetGlobal("LCA_BrevlikArrested", "GLOBAL", 1)
+		StartCutScene("LCARREST")
+	~
+	EXIT
+	
+	IF ~
+		Global("HelpBrevlik", "GLOBAL", 2)
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @689 /* ~If you arrest him, you'll have to arrest me too, Captain.~*/
+	DO ~
+		IncrementGlobal("LCA_CorwinOpinionOfPlayer", -1, ADD)
+	~
+	GOTO LCA_ArrestBrevlik_Mad
+	
+	IF ~
+		Global("HelpBrevlik", "GLOBAL", 2)
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @583 /* ~(Keep quiet.)~*/
+	DO ~
+		StartCutSceneMode()
+		SetGlobal("LCA_BrevlikArrested", "GLOBAL", 1)
+		StartCutScene("LCARREST")
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_ArrestBrevlik_Mad
+	SAY @580 /*  ~(She turns, and looks at you with disappointment.)~*/
+	
+	= @579 /* ~Fine. But you and I are going to have a long talk about this.~ */
+	
+	= @581 /* ~You — gnome! Get out of here before I change my mind!~ */
+	
+	= @582 /* ~(She delivers a swift kick to his behind.)~ */
+	
+	IF ~~ THEN EXTERN 
+	LCBREVLK LCA_GetOut
+END
+
 IF ~~ THEN BEGIN LCA4 // from player1 3
 	SAY @10 /* ~Are you alright? It looked for a moment like you were about to keel over.~ */
 	
