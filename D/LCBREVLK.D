@@ -139,7 +139,7 @@ IF ~~ THEN BEGIN LCA_Whatever
 	SAY @17 /* ~Yeah, yeah, whatever.~ */
 	
 	IF ~~ THEN
-	GOTO LCA_Favor //OK
+	GOTO LCA_OutOfHere //OK
 END
 
 IF ~~ THEN BEGIN LCA_OutOfHere

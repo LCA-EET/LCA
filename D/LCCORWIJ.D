@@ -3975,7 +3975,7 @@ IF ~~ THEN BEGIN LCA_ArrestBrevlik
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @1372 /* ~If you arrest him, you'll have to arrest me too, love.~*/
 	DO ~
-		IncrementGlobal("LCA_CorwinOpinionOfPlayer", -1, ADD)
+		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", -1)
 	~
 	GOTO LCA_ArrestBrevlik_Mad
 	
@@ -3995,7 +3995,7 @@ IF ~~ THEN BEGIN LCA_ArrestBrevlik
 		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @689 /* ~If you arrest him, you'll have to arrest me too, Captain.~*/
 	DO ~
-		IncrementGlobal("LCA_CorwinOpinionOfPlayer", -1, ADD)
+		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", -1)
 	~
 	GOTO LCA_ArrestBrevlik_Mad
 	
