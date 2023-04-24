@@ -98,6 +98,14 @@ END
 IF ~~ THEN BEGIN LCA_TestInteraction
 	SAY @280
 	
+	IF ~~ THEN REPLY @291 /*~LCBREVLK (Help = 1)~*/
+	DO ~
+		SetGlobal("HelpBrevlik", "GLOBAL", 1)
+		CreateCreature("LCBREVLK", [-1.-1], N)
+		Wait(1)
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @290 /*~LCBREVLK (Help = 2)~*/
 	DO ~
 		SetGlobal("HelpBrevlik", "GLOBAL", 2)
