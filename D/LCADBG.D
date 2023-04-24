@@ -98,6 +98,14 @@ END
 IF ~~ THEN BEGIN LCA_TestInteraction
 	SAY @280
 	
+	IF ~~ THEN REPLY @290 /*~LCBREVLK (Help = 2)~*/
+	DO ~
+		SetGlobal("HelpBrevlik", "GLOBAL", 2)
+		CreateCreature("LCBREVLK", [-1.-1], N)
+		Wait(1)
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @279
 	DO ~
 		//MoveGlobal("MYAREA", "FORTHEL",[-1.-1])
@@ -1547,6 +1555,14 @@ END
 
 IF ~~ THEN BEGIN LCA_Menu_StartCutscene
 	SAY @15 /*  ~Of course. Which cutscene do you want to start?~ */
+	
+	IF ~~ THEN REPLY @289
+	DO ~
+		SetGlobal("LCA_BrevlikArrested", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutScene("LCARREST")
+	~
+	EXIT
 	
 	IF ~~ THEN REPLY @288 /* ~LCCSHOW~ */
 	DO ~

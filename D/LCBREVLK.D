@@ -1,28 +1,55 @@
 BEGIN ~LCBREVLK~
 
 IF ~
+	Global("LCA_BrevlikArrested", "GLOBAL", 1)
+	RandomNum(3,1)
+~ THEN BEGIN LCA_Arrested
+	SAY @30
+	
+	IF ~~ THEN EXIT
+END
+
+IF ~
+	Global("LCA_BrevlikArrested", "GLOBAL", 1)
+	RandomNum(3,2)
+~ THEN BEGIN LCA_Arrested
+	SAY @31
+	
+	IF ~~ THEN EXIT
+END
+
+IF ~
+	Global("LCA_BrevlikArrested", "GLOBAL", 1)
+	RandomNum(3,3)
+~ THEN BEGIN LCA_Arrested
+	SAY @32
+	
+	IF ~~ THEN EXIT
+END
+
+IF ~
 	IsGabber(Player1)
 	GlobalGT("HelpBrevlik", "GLOBAL", 0)
-	!Global("LCA_BrevIntro", "GLOBAL", 1)
+	!Global("LCA_BrevIntro", "LOCALS", 1)
 ~ THEN BEGIN LCA_Greeting
 	SAY @0 /*~Didn't think I'd see you again.~*/
 	
 	IF ~~ THEN REPLY @1 /* ~Brevlik. I'm seeking the Farseer.~ */
 	DO ~
-		SetGlobal("LCA_BrevIntro", "GLOBAL", 1)
+		SetGlobal("LCA_BrevIntro", "LOCALS", 1)
 	~
 	GOTO LCA_Farseer //OK
 END
 
 IF ~
 	!IsGabber(Player1)
-	!Global("LCA_BrevIntro", "GLOBAL", 1)
+	!Global("LCA_BrevIntro", "LOCALS", 1)
 ~ THEN BEGIN LCA_Greeting_NP
 	SAY @27 /* ~Whaddya want? Can't a gnome drink in peace 'round here?~ */
 	
 	IF ~~ THEN REPLY @28 /* ~Are you Brevlik? I'm seeking the Farseer.~ */
 	DO ~
-		SetGlobal("LCA_BrevIntro", "GLOBAL", 1)
+		SetGlobal("LCA_BrevIntro", "LOCALS", 1)
 	~
 	GOTO LCA_Farseer
 END

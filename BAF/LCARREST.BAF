@@ -1,0 +1,18 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneID(Player1)
+		FadeToColor([30.0],0)
+		Wait(2)
+		MoveGlobal("BG0607", "BREVLIK", [525.1000])
+		MoveGlobal("BG0607", Player1, [665.1095])
+		MoveGlobal("BG0607", Player2, [680.1070])
+		MoveGlobal("BG0607", Player3, [707.1084])
+		MoveGlobal("BG0607", Player4, [678.1111])
+		MoveGlobal("BG0607", Player5, [639.1108])
+		MoveGlobal("BG0607", Player6, [615.1125])
+		FadeFromColor([30.0],0)
+		Wait(2)
+		EndCutSceneMode()
+END
