@@ -1,4 +1,14 @@
 IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	Global("HelpBrevlik", "GLOBAL", 1)
+	!Global("LCA_DestroyScope", "BG0130", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_DestroyScope", "BG0130", 1)
+		ActionOverride("Container5", DestroyItem("MISC64")) 
+END
+
+IF
 	Global("LCA_SpawnBrevlik", "GLOBAL", 1)
 THEN
 	RESPONSE #20
