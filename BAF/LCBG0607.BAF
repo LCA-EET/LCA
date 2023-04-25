@@ -5,7 +5,8 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_Brev_0607", "GLOBAL", 1)
-		MoveGlobal("BG0607", "LCBREVLK", [525.1000])
+		//MoveGlobal("BG0607", "LCBREVLK", [525.1000])
+		CreateCreature("LCBREVLK", [525.1000], N)
 		Continue()
 END
 
