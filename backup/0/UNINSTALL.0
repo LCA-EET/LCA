@@ -3,6 +3,7 @@ override/SUJON.dlg
 override/KORGANJ.dlg
 override/LCJHASSO.dlg
 override/TOLGER.dlg
+override/BART8.dlg
 override/C6CATTI1.dlg
 override/JAHEIRAJ.dlg
 override/LCWVBART.dlg
@@ -10,6 +11,7 @@ override/INSPECT.dlg
 override/VALYGAR.dlg
 override/UDSILVER.dlg
 override/MINSCJ.dlg
+override/LCORPH05.dlg
 override/THIEFG.dlg
 override/BAERIE.dlg
 override/LEHTIN.dlg
@@ -26,6 +28,7 @@ override/MAZZY.dlg
 override/HOUSG3.dlg
 override/OGHMONK1.dlg
 override/LCKENT.dlg
+override/LCORPH03.dlg
 override/LCCORWIB.dlg
 override/LCFORTHE.dlg
 override/LCMERLEA.dlg
@@ -81,10 +84,12 @@ override/LCALATOS.dlg
 override/LCGIRL2.dlg
 override/LCNOBLW.dlg
 override/DORNJ.dlg
+override/LCORPH01.dlg
 override/PLAYER1.dlg
 override/LCCORWIN.dlg
 override/LCELTAN.dlg
 override/PROST7.dlg
+override/LCBREVLK.dlg
 override/HEXXATJ.dlg
 override/HAERDAJ.dlg
 override/MICK.dlg
@@ -149,6 +154,7 @@ override/BNALIA.dlg
 override/SAREV25A.dlg
 override/LCCORWIJ.dlg
 override/LCGAMES2.dlg
+override/LCORPH02.dlg
 override/IMOENJ.dlg
 override/DALESON.dlg
 override/FORTHE.dlg
@@ -171,9 +177,11 @@ override/BODHIAMB.dlg
 override/IMOEN2J.dlg
 override/DELCIA.dlg
 override/LCFFVALI.dlg
+override/LCORPH04.dlg
 override/BRIELB.dlg
 override/HELLJON.dlg
 override/BDORN.dlg
+override/LCORPH06.dlg
 override/CHDINNER.bcs
 override/CHDINROM.bcs
 override/CHSARA1.bcs
@@ -227,8 +235,10 @@ override/LCAcs60a.bcs
 override/LCAcsEx.bcs
 override/LCAERHEX.bcs
 override/LCANOHEX.bcs
+override/LCARREST.bcs
 override/LCAUDAM.bcs
 override/LCBD5300.bcs
+override/LCBELAND.bcs
 override/LCBENCE.bcs
 override/LCBENO2.bcs
 override/LCBENOF.bcs
@@ -264,6 +274,7 @@ override/LCBG0616.bcs
 override/LCBG0702.bcs
 override/LCBG0703.bcs
 override/LCBG0704.bcs
+override/LCBG0705.bcs
 override/LCBG0726.bcs
 override/LCBG0800.bcs
 override/LCBG0900.bcs
@@ -278,6 +289,8 @@ override/LCBGEND1.bcs
 override/LCBGEND2.bcs
 override/LCBGEND3.bcs
 override/LCBGEND4.bcs
+override/LCBRATHL.bcs
+override/LCBRVSPW.bcs
 override/LCBSPAWN.bcs
 override/LCCELL.bcs
 override/LCCHMPOV.bcs
@@ -288,6 +301,10 @@ override/LCCS14.bcs
 override/LCCS15.bcs
 override/LCCS16a.bcs
 override/LCCS16b.bcs
+override/LCCSHOW.bcs
+override/LCCSHOW2.bcs
+override/LCCSHOW3.bcs
+override/LCCSHOWX.bcs
 override/LCCURATO.bcs
 override/LCDEBR01.bcs
 override/LCDEBR02.bcs
@@ -464,6 +481,12 @@ override/LCENTAR.CRE
 override/LCKENT.CRE
 override/LCHEAD1.CRE
 override/LCHOWSPY.CRE
+override/LCORPH01.CRE
+override/LCORPH02.CRE
+override/LCORPH03.CRE
+override/LCORPH04.CRE
+override/LCORPH05.CRE
+override/LCORPH06.CRE
 override/LCCURATO.CRE
 override/LCNEOMA.CRE
 override/BDFISTEX.CRE
@@ -550,6 +573,7 @@ override/CHIMP5.bcs
 override/FERGUS.bcs
 override/CCGIRL2.bcs
 override/MERCHG.bcs
+override/BELAND.bcs
 override/BG0153.bcs
 override/BG1316.bcs
 override/BG1317.bcs
@@ -580,6 +604,7 @@ override/BG0615.bcs
 override/BG0726.bcs
 override/BG0703.bcs
 override/BG0704.bcs
+override/BG0705.bcs
 override/BG0724.bcs
 override/BG0725.bcs
 override/BG0112.bcs
@@ -591,6 +616,8 @@ override/BG0129.bcs
 override/BG0130.bcs
 override/BG0131.bcs
 override/BG0134.bcs
+override/BG0114.bcs
+override/BG0133.bcs
 override/BDCUT59B.bcs
 override/BD6000.bcs
 override/GORPGANG.bcs
@@ -615,6 +642,7 @@ override/LCTMARSU.CRE
 override/LCFF1271.CRE
 override/LCFF1248.CRE
 override/LCBDSCH2.CRE
+override/LCBREVLK.CRE
 override/LCVIRGIL.CRE
 override/LCADBG.CRE
 override/LCTarGol.CRE
@@ -624,6 +652,7 @@ override/LCACRW3.CRE
 override/LCACRW4.CRE
 override/LCACRW5.CRE
 override/LCCORBOD.itm
+override/LCFARSEE.ITM
 override/LCCORBOW.itm
 override/LCCORCHN.itm
 override/FFHUNT.BCS
