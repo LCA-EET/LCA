@@ -12,7 +12,8 @@ THEN
 		ActionOverride(Player4, LeaveAreaLUA("BG0607", "", [678.1111], NE))
 		ActionOverride(Player5, LeaveAreaLUA("BG0607", "", [639.1108], NE))
 		ActionOverride(Player6, LeaveAreaLUA("BG0607", "", [615.1125], NE))
-		CreateCreature("LCBREVLK", [525.1000], SE)
+		//CreateCreature("LCBREVLK", [550.1020], SE)
+		MoveGlobal("BG0607", "LCBREVLK", [525.1000])
 		FadeFromColor([30.0],0)
 		Wait(2)
 		
