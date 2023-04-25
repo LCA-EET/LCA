@@ -5,7 +5,8 @@ THEN
 		CutSceneID(Player1)
 		FadeToColor([30.0],0)
 		Wait(2)
-		
+
+		MoveGlobal("BG0607", "LCBREVLK", [525.1000])
 		LeaveAreaLUAPanic("BG0607", "", [665.1095], NE)
 		LeaveAreaLUA("BG0607", "", [665.1095], NE)
 		ActionOverride(Player2, LeaveAreaLUA("BG0607", "", [680.1070], NE))
