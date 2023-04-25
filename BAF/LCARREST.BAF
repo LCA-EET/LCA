@@ -5,7 +5,6 @@ THEN
 		CutSceneID(Player1)
 		FadeToColor([30.0],0)
 		Wait(2)
-		MoveGlobal("BG0607", "LCBREVLK", [525.1000])
 		LeaveAreaLUAPanic("BG0607", "", [665.1095], NE)
 		LeaveAreaLUA("BG0607", "", [665.1095], NE)
 		ActionOverride(Player2, LeaveAreaLUA("BG0607", "", [680.1070], NE))
@@ -13,11 +12,9 @@ THEN
 		ActionOverride(Player4, LeaveAreaLUA("BG0607", "", [678.1111], NE))
 		ActionOverride(Player5, LeaveAreaLUA("BG0607", "", [639.1108], NE))
 		ActionOverride(Player6, LeaveAreaLUA("BG0607", "", [615.1125], NE))
-		//CreateCreature("LCBREVLK", [550.1020], SE)
 		
 		FadeFromColor([30.0],0)
 		Wait(2)
 		
-		//MoveGlobal("BG0607", "LCBREVLK", [525.1000])
 		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 END
