@@ -3,5 +3,5 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_TrapActivated", "LOCALS", 1)
-		ForceSpell(LastTriggeredBy, TRAP_LIGHTNING_BOLT)
+		ForceSpell(LastTrigger, TRAP_LIGHTNING_BOLT)
 END
