@@ -188,6 +188,7 @@ override/CHSARA1.bcs
 override/CHSARA2.bcs
 override/CHSARA3.bcs
 override/CHSARA4.bcs
+override/LBTRAP.bcs
 override/LC100a.bcs
 override/LC100b.bcs
 override/LC204a.bcs
@@ -290,6 +291,7 @@ override/LCBGEND2.bcs
 override/LCBGEND3.bcs
 override/LCBGEND4.bcs
 override/LCBRATHL.bcs
+override/LCBREVLK.bcs
 override/LCBRVSPW.bcs
 override/LCBSPAWN.bcs
 override/LCCELL.bcs
@@ -444,6 +446,7 @@ override/LCWLKHOM.ARE
 override/LCUC.ARE
 override/LCUCTEMP.ARE
 override/LCCSHOW.ARE
+override/LCPAINT01.ARE
 override/LCWYRM.WED
 override/LCWYRMN.WED
 override/LCWYRMHT.BMP

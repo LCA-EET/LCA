@@ -1,16 +1,4 @@
 IF
-	Global("LCA_BrevlikArrested", "GLOBAL", 1)
-	!Dead("LCBREVLK")
-	!Global("LCA_Brev_0607", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("LCA_Brev_0607", "GLOBAL", 1)
-		//MoveGlobal("BG0607", "LCBREVLK", [525.1000])
-		CreateCreature("LCBREVLK", [525.1000], N)
-		Continue()
-END
-
-IF
 	!Global("LCA_CellSpyCreated", "GLOBAL", 1)
 	Global("LCA_ReturnToBG", "GLOBAL", 1)	
 THEN
