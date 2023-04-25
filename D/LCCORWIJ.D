@@ -3771,7 +3771,11 @@ IF ~
 ~ THEN BEGIN LCA_BrevlikArrested
 	SAY @538 /* ~Brevlik, your advocate will be with your shortly. <CHARNAME> — we better head back to the Hall of Wonders.~ */
 	
-	IF ~~ THEN EXIT
+	IF ~~ THEN 
+	DO ~
+		MoveGlobal("BG0607", "BREVLIK", [525.1000])
+	~
+	EXIT
 END
 //} #endregion
 IF ~~ THEN BEGIN LCA_SAREV_10
