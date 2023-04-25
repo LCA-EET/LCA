@@ -3763,6 +3763,17 @@ IF ~~ THEN BEGIN LCA_MeetIllasera4
 	IF ~~ THEN EXTERN LCBENO LCA_MeetIllasera4
 END
 //} #endregion
+
+//{ #region Brevlik Arrested - DLG-0052
+IF ~
+	Global("LCA_BrevlikArrested", "GLOBAL", 1)
+	!Global("LCA_GoBackHOW", "GLOBAL", 1)
+~ THEN BEGIN LCA_BrevlikArrested
+	SAY @538 /* ~Brevlik, your advocate will be with your shortly. <CHARNAME> — we better head back to the Hall of Wonders.~ */
+	
+	IF ~~ THEN EXIT
+END
+//} #endregion
 IF ~~ THEN BEGIN LCA_SAREV_10
 	SAY @38 /* ~You've got to be kidding me. A deal? With you?~*/
 	
