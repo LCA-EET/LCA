@@ -4,7 +4,7 @@ IF ~
 	Global("LCA_BrevlikArrested", "GLOBAL", 1)
 	RandomNum(3,1)
 ~ THEN BEGIN LCA_Arrested
-	SAY @30
+	SAY @30 /* ~I wish I never heard of that damned telescope!~*/
 	
 	IF ~~ THEN EXIT
 END
@@ -13,7 +13,7 @@ IF ~
 	Global("LCA_BrevlikArrested", "GLOBAL", 1)
 	RandomNum(3,2)
 ~ THEN BEGIN LCA_Arrested
-	SAY @31
+	SAY @31 /*~Beat it!~*/
 	
 	IF ~~ THEN EXIT
 END
@@ -22,7 +22,7 @@ IF ~
 	Global("LCA_BrevlikArrested", "GLOBAL", 1)
 	RandomNum(3,3)
 ~ THEN BEGIN LCA_Arrested
-	SAY @32
+	SAY @32 /*~Get lost!~*/
 	
 	IF ~~ THEN EXIT
 END

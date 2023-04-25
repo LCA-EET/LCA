@@ -1,5 +1,21 @@
 BEGIN ~LCBELAND~
 
+IF~
+	Global("BelandEntranceFee","GLOBAL",2)
+~ THEN BEGIN LCA_Greet2 
+	SAY @7 /* ~Please enter, and enjoy the works within.~ */
+	
+	IF ~
+		PartyHasItem("LCFARSEE")
+		!Global("LCA_GaveFarseer", "GLOBAL", 1)
+	~ THEN REPLY @28 /* ~We've recovered the Farseer. Unfortunately, it's been damaged, but perhaps you can repair it.~ */
+	DO ~
+		TakePartyItem("LCFARSEE")
+		SetGlobal("LCA_GaveFarseer", "GLOBAL", 1)
+	~
+	GOTO LCA_TakeFarseer
+END
+
 IF ~ 
 	Global("BelandEntranceFee","GLOBAL",1)
 ~ THEN BEGIN 0 // from:
@@ -12,6 +28,31 @@ IF ~
 		GlobalGT("HelpBrevlik","GLOBAL",0)
 	~ THEN 
 	GOTO LCA_ThreeGold
+END
+
+IF ~~ THEN BEGIN LCA_TakeFarseer
+	SAY @29 /* ~Oh, thank you! Yes... I see what you mean.~ */
+	
+	IF ~~ THEN 
+	GOTO LCA_TakeFarseer2
+	
+	IF ~
+		IsValidForPartyDialog("LCCORWIN")
+		Global("LCA_BrevlikArrested", "GLOBAL", 1)
+	~ THEN EXTERN LCCORWIJ LCA_TakeFarseer
+END
+
+IF ~~ THEN BEGIN LCA_TakeFarseer2
+	SAY @30 /* ~This may be a good project for one of our new adherents. Even if he's unable to repair it, we can use what we learn to possibly create a replica of the device.~ */
+	
+	= @31 /* ~Thank you again, and go with Gond's blessing.~ */
+	
+	IF ~~ THEN
+	DO ~
+		AddExperienceParty(25000)
+		AddJournalEntry(@32, QUEST_DONE)
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN LCA_OneGold

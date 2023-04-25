@@ -210,6 +210,9 @@ COPY ~LCA/ARE/LCUC.ARE~ ~override~
 COPY ~LCA/ARE/LCUCTEMP.ARE~ ~override~
 COPY ~LCA/ARE/LCCSHOW.ARE~ ~override~
 
+//Painting Miniquest
+COPY ~LCA/ARE/LCPAINT01.ARE~ ~override~
+
 COPY ~LCA/ARE/LCWYRM.WED~ ~override~
 COPY ~LCA/ARE/LCWYRMN.WED~ ~override~
 COPY ~LCA/ARE/LCWYRMHT.BMP~ ~override~

@@ -4040,6 +4040,13 @@ IF ~~ THEN BEGIN LCA4 // from player1 3
 	
 END
 
+IF ~~ THEN BEGIN LCA_TakeFarseer
+	SAY @703 /* ~The individual responsible has been arrested.~ */
+	
+	IF ~~ THEN
+	EXTERN LCBELAND LCA_TakeFarseer2
+END
+
 IF ~~ THEN BEGIN LCA5 // LCA4
 	SAY @13 /* ~Here, put your arm around my shoulder. I'll help to keep you steady. Just take it easy, <CHARNAME>.~ */
 	IF ~~ THEN
