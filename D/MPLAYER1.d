@@ -9,6 +9,48 @@
 APPEND ~PLAYER1~
 
 	IF ~
+		Global("LCA_AmuletPainting", "GLOBAL", 1)
+	~ THEN BEGIN LCA_AmuletPainting1
+		SAY @97 /* ~(For a moment, you could have sworn hearing a low hum emanate from the Amulet of the Seldarine. Odd.)~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("LCA_AmuletPainting", "GLOBAL", 2)
+		~
+		EXIT
+	END
+	
+	IF ~
+		Global("LCA_AmuletPainting", "GLOBAL", 3)
+	~ THEN BEGIN LCA_AmuletPainting2
+		SAY @98 /* ~(The humming from the amulet is louder now, and you're sure that you're not imagining it. Somehow it is responding to something — or someone — in this room.)~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("LCA_AmuletPainting", "GLOBAL", 4)
+		~
+		EXIT
+	END
+	
+	IF ~
+		Global("LCA_AmuletPainting", "GLOBAL", 5)
+	~ THEN BEGIN LCA_AmuletPainting3
+		SAY @99 /* ~(The humming turns into a shrill screech, and the amulet becomes hot to the touch. It seems to be responding to the painting in the southwest corner of the room.)~ */
+		
+		= @100 /* ~(The painting depicts three sailors sitting at a table, in what appears to be the hold of a ship. Without warning, the image depicted in the painting shifts and swirls, and you see and hear the sailors engaged in an animated conversaion over a game of cards. You can't make out what they are saying — the screeching coming from the amulet is deafening.)~ */
+		
+		= @101 /* ~(Suddenly, the amulet is silenced, and you hear coming from the painting the sound of a woman screaming!)~*/
+		
+		= @107 /* ~In unison, the sailors within the painting stand and turn to look at you, then leap out and attack! Dopplegangers!)~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("LCA_AmuletPainting", "GLOBAL", 6)
+		~
+		EXIT
+	END
+	
+	IF ~
 		Global("LCA_SoDAnxiety", "GLOBAL", 0)
 		Global("LCA_SoDAnxietyCell", "GLOBAL", 1)
 	~ THEN BEGIN LCA_DarkMemories

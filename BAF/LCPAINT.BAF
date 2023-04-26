@@ -1,0 +1,8 @@
+IF
+	Global("LCA_AmuletPainting", "GLOBAL", 4)
+	See(Player1)	
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_AmuletPainting", "GLOBAL", 5)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END
