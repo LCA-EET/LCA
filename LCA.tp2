@@ -273,8 +273,8 @@ LPF fj_are_structure
 	fj_cursor_idx	= 22
 	fj_vertex_0     = 77 + (377 << 16)
     fj_vertex_1     = 99 + (364 << 16)
-    fj_vertex_2     = 78 + (408 << 16)
-    fj_vertex_3     = 100 + (394 << 16)
+    fj_vertex_2     = 100 + (394 << 16)
+    fj_vertex_3     = 78 + (408 << 16)
 	fj_info_point_strref = RESOLVE_STR_REF(@67)
 	STR_VAR
     fj_structure_type = region
