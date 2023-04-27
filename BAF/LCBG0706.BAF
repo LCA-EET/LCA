@@ -1,12 +1,3 @@
-IF 
-	Global("LCA_AmuletPainting", "GLOBAL", 6)
-THEN
-	RESPONSE #100
-		SetGlobal("LCA_AmuletPainting", "GLOBAL", 7)
-		CreateCreature("LCDOPP01", [340.340], SW)
-		CreateCreature("LCDOPP02", [280.350], SW)
-		CreateCreature("LCDOPP03", [325.385], SW)
-END
 IF
 	InMyArea("ALYTH")
 	Global("LCA_ReturnToBG", "GLOBAL", 1)

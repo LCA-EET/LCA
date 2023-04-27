@@ -1,3 +1,11 @@
+IF
+	Global("LCA_AddCorwinMapNote", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_AddCorwinMapNote", "GLOBAL", 2)
+		AddMapNote([1732.1126],@0)
+END
+
 IF 
 	!InMyArea("LCBRIELB")
 	Global("LCA_ReturnToBG", "GLOBAL", 1)

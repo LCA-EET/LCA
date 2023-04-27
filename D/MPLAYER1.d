@@ -46,6 +46,22 @@ APPEND ~PLAYER1~
 		IF ~~ THEN
 		DO ~
 			SetGlobal("LCA_AmuletPainting", "GLOBAL", 6)
+			SetGlobal("LCA_DoppleSpawn_0706", "GLOBAL", 1)
+			CreateCreature("LCDOPP01", [340.340], SW)
+			CreateCreature("LCDOPP02", [280.350], SW)
+			CreateCreature("LCDOPP03", [325.385], SW)
+		~
+		EXIT
+	END
+	
+	IF ~
+		Global("LCA_AmuletPainting", "GLOBAL", 7)
+	~ THEN BEGIN LCA_InvestigatePainting
+		SAY @108 /* ~(The dopplegangers have been dispatched. Perhaps now, you can investigate the painting unmolested.)~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("LCA_AmuletPainting", "GLOBAL", 7)
 		~
 		EXIT
 	END

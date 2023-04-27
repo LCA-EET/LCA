@@ -5719,6 +5719,7 @@ IF ~~ THEN BEGIN LCA_BenceWyrm_6
 		SetGlobalTimer("LCA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
 		SetGlobal("LCA_BenceWyrm", "GLOBAL", 2)
 		SetGlobal("LCA_ReturnToBG", "GLOBAL", 1)
+		SetGlobal("LCA_AddCorwinMapNote", "GLOBAL", 1)
 		ActionOverride("LCBENCE", MoveToPoint([3.827])
 		ActionOverride("LCBENCE", EscapeArea())
 		EndCutSceneMode()

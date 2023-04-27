@@ -1,5 +1,15 @@
 IF
 	GlobalGT("LCA_TM_ArcheryChallenge", "GLOBAL", 0)
+	!Global("LCA_2000_MapNote", "AR2000", 1)
+THEN
+	RESPONSE #100
+		AddMapNote([3463.2123],@0)
+		SetGlobal("LCA_2000_MapNote", "AR2000", 1)
+		Continue()
+END
+
+IF
+	GlobalGT("LCA_TM_ArcheryChallenge", "GLOBAL", 0)
 	TimeOfDay(DAY)
 	!Dead("trhmer01")
 	!Dead("celogan")

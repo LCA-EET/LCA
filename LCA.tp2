@@ -158,37 +158,6 @@ LPF fj_are_structure
 	fj_name = Corwin
 END
 
-/* Baldur's Gate - Corwin's Home */
-
-COPY_EXISTING ~BG1300.ARE~ ~override~
-
-LPF fj_are_structure
-    INT_VAR
-    fj_loc_x       = 1732
-    fj_loc_y       = 1126
-	fj_color       = 0
-	fj_strref_loc  = 1 
-	fj_note_strref = RESOLVE_STR_REF(@16)
-	STR_VAR
-    fj_structure_type = note
-END
-
-/* Trademeet - Archery Competition Signup Area */
-
-COPY_EXISTING ~AR2000.ARE~ ~override~
-
-LPF fj_are_structure
-    INT_VAR
-    fj_loc_x       = 3463
-    fj_loc_y       = 2123
-	fj_color       = 0
-	fj_strref_loc  = 1 
-	fj_note_strref = RESOLVE_STR_REF(@24)
-	STR_VAR
-    fj_structure_type = note
-END
-
-
 COPY ~LCA/ARE/LCPEN.ARE~ ~override~
 COPY ~LCA/ARE/LCAcs01.ARE~ ~override~
 COPY ~LCA/ARE/LCAcs03.ARE~ ~override~
@@ -293,6 +262,24 @@ COPY ~LCA/STO/LCWVBAR.STO~ ~override~
 COPY ~LCA/STO/LCMELKOR.STO~ ~override~
 WRITE_LONG 0xc RESOLVE_STR_REF(@066)
 
+COPY_EXISTING ~BG0706.ARE~ ~override~
+LPF fj_are_structure
+	INT_VAR
+	fj_type 		= 1
+    fj_box_left		= 78
+    fj_box_top		= 365
+	fj_box_right	= 100
+	fj_box_bottom	= 396
+	fj_cursor_idx	= 22
+	fj_vertex_0     = 77 + (377 << 16)
+    fj_vertex_1     = 99 + (364 << 16)
+    fj_vertex_2     = 78 + (408 << 16)
+    fj_vertex_3     = 100 + (394 << 16)
+	fj_info_point_strref = RESOLVE_STR_REF(@67)
+	STR_VAR
+    fj_structure_type = region
+	fj_name = ~LC0706~
+END
 
 COPY_EXISTING ~BG1200.ARE~ ~override~
 LPF fj_are_structure
@@ -597,6 +584,7 @@ EXTEND_TOP ~CCGIRL2.bcs~ ~LCA/BAF/LCGIRLOV.BAF~
 EXTEND_TOP ~MERCHG.bcs~ ~LCA/BAF/LCMERCHG.BAF~
 EXTEND_TOP ~BELAND.bcs~ ~LCA/BAF/LCBELAND.BAF~
 
+EXTEND_TOP ~AR2000.bcs~ ~LCA/BAF/LCAR2000.BAF~ //Trademeet
 EXTEND_TOP ~BG0153.bcs~ ~LCA/BAF/LCBG0153.BAF~ //Thieves' Guild
 EXTEND_TOP ~BG1316.bcs~ ~LCA/BAF/LCBG1316.BAF~ //Corwin's Home, 1st Floor
 EXTEND_TOP ~BG1317.bcs~ ~LCA/BAF/LCBG1317.BAF~ //Corwin's Home, 2nd Floor
@@ -753,8 +741,6 @@ EXTEND_TOP ~AERIEX.bcs~ ~LCA/BAF/MAERIEX.baf~
 EXTEND_TOP ~MAZZYX.bcs~ ~LCA/BAF/MMAZZYX.baf~
 EXTEND_TOP ~ANOMX.bcs~ ~LCA/BAF/MANOMX.baf~
 EXTEND_TOP ~KELDORNX.bcs~ ~LCA/BAF/MKELDORX.baf~
-EXTEND_TOP ~AR2000.bcs~ ~LCA/BAF/MAR2000.baf~
-EXTEND_TOP ~AR2900.bcs~ ~LCA/BAF/MAR2900.baf~
 EXTEND_BOTTOM ~BODHIAMB.bcs~ ~LCA/BAF/MBODHIAM.BAF~
 
 COPY ~LCA/CRE/LCCORWIN.CRE~ ~override~
