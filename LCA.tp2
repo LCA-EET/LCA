@@ -279,6 +279,7 @@ LPF fj_are_structure
 	STR_VAR
     fj_structure_type = region
 	fj_name = ~LCP0706~
+	fj_reg_script = ~LCP0706~
 END
 
 COPY_EXISTING ~BG1200.ARE~ ~override~
