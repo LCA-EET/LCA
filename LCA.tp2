@@ -142,22 +142,6 @@ SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@85)
 SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@86)
 SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@86)
 
-
-/* Baldur's Gate - Trial at end of SoD*/
-/* Adds Corwin as a spectator (or participant) in the trial */
-
-COPY_EXISTING ~BD0035.ARE~ ~override~
-
-LPF fj_are_structure
-	INT_VAR
-    fj_loc_x       = 941
-    fj_loc_y       = 674
-	STR_VAR
-	fj_structure_type = actor
-	fj_cre_resref = CORWIN7
-	fj_name = Corwin
-END
-
 COPY ~LCA/ARE/LCPEN.ARE~ ~override~
 COPY ~LCA/ARE/LCAcs01.ARE~ ~override~
 COPY ~LCA/ARE/LCAcs03.ARE~ ~override~
