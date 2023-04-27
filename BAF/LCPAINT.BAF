@@ -1,5 +1,6 @@
 IF
 	Global("LCA_AmuletPainting", "GLOBAL", 4)
+	PartyHasItem("AMUL27")
 	See(Player1)	
 THEN
 	RESPONSE #100
