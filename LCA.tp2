@@ -278,7 +278,7 @@ LPF fj_are_structure
 	fj_info_point_strref = RESOLVE_STR_REF(@67)
 	STR_VAR
     fj_structure_type = region
-	fj_name = ~LC0706~
+	fj_name = ~LCP0706~
 END
 
 COPY_EXISTING ~BG1200.ARE~ ~override~

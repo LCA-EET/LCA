@@ -1,0 +1,7 @@
+IF
+	Clicked([ANYONE])
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_EnterPainting", "GLOBAL", 1)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END

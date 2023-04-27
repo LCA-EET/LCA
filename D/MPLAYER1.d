@@ -9,6 +9,97 @@
 APPEND ~PLAYER1~
 
 	IF ~
+		Global("LCA_EnterPainting", "GLOBAL", 1)
+	~ THEN BEGIN LCA_ApproachPainting
+		SAY @109 /* ~(You approach the painting...)~ */
+		
+		IF ~~ THEN 
+		DO ~
+			SetGlobal("LCA_EnterPainting", "GLOBAL", 0)
+		~
+		GOTO LCA_PaintingDescription2
+		
+		IF ~
+			!Global("LCA_PaintDesc", "GLOBAL", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("LCA_EnterPainting", "GLOBAL", 0)
+		~
+		GOTO LCA_PaintingDescription
+		
+	END
+	
+	
+	IF ~~ THEN BEGIN LCA_PaintingDescription2
+		SAY @104 /* ~(The image shifts and swirls, and once again you see the elvish woman. Though you can't hear what she is saying, you're certain that she is pleading for you to help. She gestures, and seems to want you to touch the painting.)~ */
+		
+		IF ~~ THEN 
+		GOTO LCA_WantToEnter
+	END
+	
+	IF ~~ THEN BEGIN LCA_PaintingDescription
+		SAY @102 /* ~(The image has changed to depict the face of an alluring elvish woman. In spite of her beauty, there is a pained expression of distress on her face.)~ */
+		
+		= @103 /* ~(The image becomes alive, and she looks at you with terror in her eyes. She mouths the words "Help Me!" and beckons to you. She seems to want you to touch the painting.)~ */
+		
+		IF ~~ THEN 
+		GOTO LCA_WantToEnter
+	END
+	
+	IF ~~ THEN BEGIN LCA_WantToEnter
+		SAY @110 /* ~(Touch the painting? Doing so could be extremely dangerous.)~ */
+		
+		IF ~
+			NumInPartyGT(1)
+		~ THEN REPLY @111 /* ~Yes.~ */
+		GOTO LCA_EnterPainting_GT1
+		
+		IF ~
+			!NumInPartyGT(1)
+		~ THEN REPLY @111 /* ~Yes.~ */
+		GOTO LCA_EnterPainting
+		
+		IF ~~ THEN REPLY @112 /* ~No.~ */
+		GOTO LCA_DoNotEnter
+		
+		IF ~
+			!Global("LCA_TriedDestroy", "GLOBAL", 1)
+		~ THEN REPLY @116 /* ~(Destroy the painting.)~ */
+		GOTO LCA_DestroyPainting
+	END
+	
+	IF ~~ THEN BEGIN LCA_DestroyPainting
+		SAY @117 /* ~(You strike the painting with your weapon to no effect. It seems to be protected by some powerful, unseen force. The woman in the painting again gestures for you to touch it.)~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("LCA_TriedDestroy", "GLOBAL", 1)
+		~
+		GOTO LCA_WantToEnter
+	END
+	
+	IF ~~ THEN BEGIN LCA_DoNotEnter
+		SAY @115 /* ~(Discretion is the better part of valor, you tell yourself, as you move away from the painting.)~ */
+		
+		IF ~~ THEN
+		EXIT
+	END
+	
+	IF ~~ THEN BEGIN LCA_EnterPainting_GT1
+		SAY @114 /* ~(With your companions gathered around you, you reach out to touch the painting. The image shifts and ripples as your fingers graze the surface. Without warning, you experience a profound sensation of vertigo, followed by a loss of consciousness.)~*/
+		
+		IF ~~ THEN 
+		EXIT
+	END
+	
+	IF ~~ THEN BEGIN LCA_EnterPainting
+		SAY @113 /* ~(You reach out to touch the painting. The image shifts and ripples as your fingers graze the surface. Without warning, you experience a profound sensation of vertigo, followed by a loss of consciousness.)~*/
+		
+		IF ~~ THEN 
+		EXIT
+	END
+	
+	IF ~
 		Global("LCA_AmuletPainting", "GLOBAL", 1)
 	~ THEN BEGIN LCA_AmuletPainting1
 		SAY @97 /* ~(For a moment, you could have sworn hearing a low hum emanate from the Amulet of the Seldarine. Odd.)~ */
