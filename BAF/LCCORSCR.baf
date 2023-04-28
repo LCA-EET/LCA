@@ -258,7 +258,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 2)
-		PlaySong(146)
+		PlaySong(142)
 		StartDialog("LCCORWIJ", Player1)
 END
 

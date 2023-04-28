@@ -65,6 +65,9 @@ APPEND ~PLAYER1~
 		IF ~
 			!Global("LCA_TriedDestroy", "GLOBAL", 1)
 		~ THEN REPLY @116 /* ~(Destroy the painting.)~ */
+		DO ~
+			SetGlobal("LCA_TriedDestroy", "GLOBAL", 1)
+		~
 		GOTO LCA_DestroyPainting
 	END
 	
@@ -72,9 +75,6 @@ APPEND ~PLAYER1~
 		SAY @117 /* ~(You strike the painting with your weapon to no effect. It seems to be protected by some powerful, unseen force. The woman in the painting again gestures for you to touch it.)~ */
 		
 		IF ~~ THEN
-		DO ~
-			SetGlobal("LCA_TriedDestroy", "GLOBAL", 1)
-		~
 		GOTO LCA_WantToEnter
 	END
 	
@@ -89,6 +89,8 @@ APPEND ~PLAYER1~
 		SAY @114 /* ~(With your companions gathered around you, you reach out to touch the painting. The image shifts and ripples as your fingers graze the surface. Without warning, you experience a profound sensation of vertigo, followed by a loss of consciousness.)~*/
 		
 		IF ~~ THEN 
+			StartCutSceneMode()
+			StartCutScene("LCPENT")
 		EXIT
 	END
 	

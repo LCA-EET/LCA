@@ -812,6 +812,13 @@ END
 IF ~~ THEN BEGIN LCA_Menu_CreateItem
 	SAY @35 /* ~What item do you want me to create for you?~ */
 	
+	IF ~~ THEN REPLY @292 /* ~AMUL27 (Selarrine Amulet).~ */
+	DO ~
+		GiveItemCreate("AMUL27", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("AMUL27", IDENTIFIED,TRUE))
+	~
+	GOTO LCA_ReturnToMainMenu
+	
 	IF ~~ THEN REPLY @255 /* LCMEDAL */
 	DO ~
 		GiveItemCreate("LCMEDAL", LastTalkedToBy(Myself),1,0,0)
