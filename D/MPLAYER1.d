@@ -89,8 +89,10 @@ APPEND ~PLAYER1~
 		SAY @114 /* ~(With your companions gathered around you, you reach out to touch the painting. The image shifts and ripples as your fingers graze the surface. Without warning, you experience a profound sensation of vertigo, followed by a loss of consciousness.)~*/
 		
 		IF ~~ THEN 
+		DO ~
 			StartCutSceneMode()
 			StartCutScene("LCPENT")
+		~
 		EXIT
 	END
 	
@@ -98,6 +100,10 @@ APPEND ~PLAYER1~
 		SAY @113 /* ~(You reach out to touch the painting. The image shifts and ripples as your fingers graze the surface. Without warning, you experience a profound sensation of vertigo, followed by a loss of consciousness.)~*/
 		
 		IF ~~ THEN 
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("LCPENT")
+		~
 		EXIT
 	END
 	
