@@ -9,6 +9,66 @@
 APPEND ~PLAYER1~
 
 	IF ~
+		Global("LCA_EnterG1", "GLOBAL", 1)
+	~ THEN BEGIN LCA_EnterG1
+		SAY @118 /*~(As you approach the painting, you feel a force probing your thoughts and memories. The image swirls, then depicts a castle under siege. You recognize it as Dragonspear. Touch the painting?)~*/
+		
+		IF ~~ THEN REPLY @111 /* Yes */
+		DO ~
+			SetGlobal("LCA_EnterG1", "GLOBAL", 0)
+			StartCutSceneMode()
+			StartCutScene("LCG1")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @112 /* No */
+		DO ~
+			SetGlobal("LCA_EnterG1", "GLOBAL", 0)
+		~
+		EXIT
+	END
+	
+	IF ~
+		Global("LCA_EnterG2", "GLOBAL", 1)
+	~ THEN BEGIN LCA_EnterG2
+		SAY @119 /*~(As you approach the painting, you feel a force probing your thoughts and memories. The image swirls, then depicts a magnificent library. You recognize it as Candlekeep. Touch the painting?)~*/
+		
+		IF ~~ THEN REPLY @111 /* Yes */
+		DO ~
+			SetGlobal("LCA_EnterG2", "GLOBAL", 0)
+			StartCutSceneMode()
+			StartCutScene("LCG2")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @112 /* No */
+		DO ~
+			SetGlobal("LCA_EnterG2", "GLOBAL", 0)
+		~
+		EXIT
+	END
+	
+	IF ~
+		Global("LCA_EnterG3", "GLOBAL", 1)
+	~ THEN BEGIN LCA_EnterG3
+		SAY @119 /*~(As you approach the painting, you feel a force probing your thoughts and memories. The image swirls, then depicts an underground laboratory. You recognize it as Irenicus' stronghold. Touch the painting?)~*/
+		
+		IF ~~ THEN REPLY @111 /* Yes */
+		DO ~
+			SetGlobal("LCA_EnterG3", "GLOBAL", 0)
+			StartCutSceneMode()
+			StartCutScene("LCG3")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @112 /* No */
+		DO ~
+			SetGlobal("LCA_EnterG3", "GLOBAL", 0)
+		~
+		EXIT
+	END
+	
+	IF ~
 		Global("LCA_EnterPainting", "GLOBAL", 1)
 	~ THEN BEGIN LCA_ApproachPainting
 		SAY @109 /* ~(You approach the painting...)~ */

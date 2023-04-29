@@ -1,7 +1,7 @@
 BEGIN ~LCLYRIEL~
 
 IF ~
-	!GlobalLT("LCA_Lyriel", "GLOBAL", 1)
+	GlobalLT("LCA_Lyriel", "GLOBAL", 1)
 ~ THEN BEGIN LCA_Startled
 	SAY @31 /* ~(Startled, she turns and faces you.)~ */
 	
