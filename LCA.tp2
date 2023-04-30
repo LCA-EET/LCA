@@ -267,7 +267,7 @@ LPF fj_are_structure
     fj_vertex_1     = 270 + (447 << 16)
     fj_vertex_2     = 271 + (475 << 16)
     fj_vertex_3     = 217 + (510 << 16)
-	//fj_info_point_strref = RESOLVE_STR_REF(@67)
+	fj_info_point_strref = RESOLVE_STR_REF(@98)
 	STR_VAR
     fj_structure_type = region
 	fj_name = ~LCP0706~
