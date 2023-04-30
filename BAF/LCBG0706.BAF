@@ -65,5 +65,5 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_PaintSpySpawn", "GLOBAL", 1)
-		CreateCreature("LCPAINT", [170.465], NE)
+		CreateCreature("LCPAINT", [250.560], NE)
 END
