@@ -27,7 +27,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_AmuletPainting", "GLOBAL", 7)
-		SetGlobal("LCA_DoppleSpawn_0706", "GLOBAL", 2)
+		SetGlobal("LCA_DoppleSpawn_0706", "GLOBAL", 3)
 		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 END
 
