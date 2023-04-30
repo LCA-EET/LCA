@@ -32,24 +32,10 @@ IF ~
 	~
 	GOTO LCA_AskedAboutGuardians
 	
-	IF ~
-		OR(5)
-			StateCheck(Player2, STATE_DEAD)
-			StateCheck(Player3, STATE_DEAD)
-			StateCheck(Player4, STATE_DEAD)
-			StateCheck(Player5, STATE_DEAD)
-			StateCheck(Player6, STATE_DEAD)
-	~ THEN REPLY @57 /* ~I need some healing.~ */
+	IF ~~ THEN REPLY @57 /* ~I need some healing.~ */
 	GOTO LCA_GiveRezAndHeal //OK
 	
-	IF ~
-		!StateCheck(Player2, STATE_DEAD)
-		!StateCheck(Player3, STATE_DEAD)
-		!StateCheck(Player4, STATE_DEAD)
-		!StateCheck(Player5, STATE_DEAD)
-		!StateCheck(Player6, STATE_DEAD)
-	~ THEN REPLY @57 /* ~I need some healing.~ */
-	GOTO LCA_GiveHeal //OK
+
 	
 	IF ~~ THEN REPLY @58 /*  ~Not right now.~ */
 	EXIT
@@ -69,24 +55,9 @@ IF ~~ THEN BEGIN LCA_AskedAboutDemon
 	~
 	GOTO LCA_AskedAboutGuardians
 	
-	IF ~
-		OR(5)
-			StateCheck(Player2, STATE_DEAD)
-			StateCheck(Player3, STATE_DEAD)
-			StateCheck(Player4, STATE_DEAD)
-			StateCheck(Player5, STATE_DEAD)
-			StateCheck(Player6, STATE_DEAD)
-	~ THEN REPLY @57 /* ~I need some healing.~ */
+	IF ~~ THEN REPLY @57 /* ~I need some healing.~ */
 	GOTO LCA_GiveRezAndHeal //OK
-	
-	IF ~
-		!StateCheck(Player2, STATE_DEAD)
-		!StateCheck(Player3, STATE_DEAD)
-		!StateCheck(Player4, STATE_DEAD)
-		!StateCheck(Player5, STATE_DEAD)
-		!StateCheck(Player6, STATE_DEAD)
-	~ THEN REPLY @57 /* ~I need some healing.~ */
-	GOTO LCA_GiveHeal //OK
+
 	
 	IF ~~ THEN REPLY @59 /* ~Thank you.~ */
 	EXIT
@@ -106,24 +77,8 @@ IF ~~ THEN BEGIN LCA_AskedAboutGuardians
 	~
 	GOTO LCA_AskedAboutDemon
 	
-	IF ~
-		OR(5)
-			StateCheck(Player2, STATE_DEAD)
-			StateCheck(Player3, STATE_DEAD)
-			StateCheck(Player4, STATE_DEAD)
-			StateCheck(Player5, STATE_DEAD)
-			StateCheck(Player6, STATE_DEAD)
-	~ THEN REPLY @57 /* ~I need some healing.~ */
+	IF ~~ THEN REPLY @57 /* ~I need some healing.~ */
 	GOTO LCA_GiveRezAndHeal //OK
-	
-	IF ~
-		!StateCheck(Player2, STATE_DEAD)
-		!StateCheck(Player3, STATE_DEAD)
-		!StateCheck(Player4, STATE_DEAD)
-		!StateCheck(Player5, STATE_DEAD)
-		!StateCheck(Player6, STATE_DEAD)
-	~ THEN REPLY @57 /* ~I need some healing.~ */
-	GOTO LCA_GiveHeal //OK
 	
 	IF ~~ THEN REPLY @59 /* ~Thank you.~ */
 	EXIT
@@ -320,25 +275,8 @@ END
 IF ~~ THEN BEGIN LCA_Healing
 	SAY @44 /* ~I can heal you and your companions. Do you need healing now?~ */
 	
-	IF ~
-		OR(5)
-			StateCheck(Player2, STATE_DEAD)
-			StateCheck(Player3, STATE_DEAD)
-			StateCheck(Player4, STATE_DEAD)
-			StateCheck(Player5, STATE_DEAD)
-			StateCheck(Player6, STATE_DEAD)
-	~ THEN REPLY @45 /* ~Yes, please.~ */
+	IF ~~ THEN REPLY @45 /* ~Yes, please.~ */
 	GOTO LCA_GiveRezAndHeal //OK
-	
-	IF ~
-		!StateCheck(Player2, STATE_DEAD)
-		!StateCheck(Player3, STATE_DEAD)
-		!StateCheck(Player4, STATE_DEAD)
-		!StateCheck(Player5, STATE_DEAD)
-		!StateCheck(Player6, STATE_DEAD)
-	~ THEN REPLY @45 /* ~Yes, please.~ */
-	GOTO LCA_GiveHeal //OK
-	
 END
 
 IF ~~ THEN BEGIN LCA_GiveHeal
@@ -346,11 +284,7 @@ IF ~~ THEN BEGIN LCA_GiveHeal
 
 	IF ~~ THEN
 	DO ~
-		ForceSpell(MostDamagedOf(Myself),CLERIC_CURE_CRITICAL_WOUNDS)
-		Wait(1)
-		ForceSpell(MostDamagedOf(Myself),CLERIC_CURE_CRITICAL_WOUNDS)
-		Wait(1)
-		ForceSpell(MostDamagedOf(Myself),CLERIC_CURE_CRITICAL_WOUNDS)
+		SetGlobal("LCA_LyrielHeal", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -360,17 +294,7 @@ IF ~~ THEN BEGIN LCA_GiveRezAndHeal
 
 	IF ~~ THEN
 	DO ~
-		ForceSpell(Player2,CLERIC_RESURRECTION)
-		ForceSpell(Player3,CLERIC_RESURRECTION)
-		ForceSpell(Player4,CLERIC_RESURRECTION)
-		ForceSpell(Player5,CLERIC_RESURRECTION)
-		ForceSpell(Player6,CLERIC_RESURRECTION)
-		Wait(1)
-		ForceSpell(MostDamagedOf(Myself),CLERIC_CURE_CRITICAL_WOUNDS)
-		Wait(1)
-		ForceSpell(MostDamagedOf(Myself),CLERIC_CURE_CRITICAL_WOUNDS)
-		Wait(1)
-		ForceSpell(MostDamagedOf(Myself),CLERIC_CURE_CRITICAL_WOUNDS)
+		SetGlobal("LCA_LyrielRez", "GLOBAL", 1)
 	~
 	EXIT
 END
