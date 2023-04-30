@@ -32,8 +32,25 @@ IF ~
 	~
 	GOTO LCA_AskedAboutGuardians
 	
-	IF ~~ THEN REPLY @57 /* ~I need some healing.~ */
-	GOTO LCA_GiveHeal
+	IF ~
+		OR(5)
+			Dead(Player2)
+			Dead(Player3)
+			Dead(Player4)
+			Dead(Player5)
+			Dead(Player6)
+	~ THEN REPLY @57 /* ~I need some healing.~ */
+	GOTO LCA_GiveRezAndHeal //OK
+	
+	IF ~
+		!OR(5)
+			Dead(Player2)
+			Dead(Player3)
+			Dead(Player4)
+			Dead(Player5)
+			Dead(Player6)
+	~ THEN REPLY @57 /* ~I need some healing.~ */
+	GOTO LCA_GiveHeal //OK
 	
 	IF ~~ THEN REPLY @58 /*  ~Not right now.~ */
 	EXIT
@@ -53,8 +70,25 @@ IF ~~ THEN BEGIN LCA_AskedAboutDemon
 	~
 	GOTO LCA_AskedAboutGuardians
 	
-	IF ~~ THEN REPLY @57 /* ~I need some healing.~ */
-	GOTO LCA_GiveHeal
+	IF ~
+		OR(5)
+			Dead(Player2)
+			Dead(Player3)
+			Dead(Player4)
+			Dead(Player5)
+			Dead(Player6)
+	~ THEN REPLY @57 /* ~I need some healing.~ */
+	GOTO LCA_GiveRezAndHeal //OK
+	
+	IF ~
+		!OR(5)
+			Dead(Player2)
+			Dead(Player3)
+			Dead(Player4)
+			Dead(Player5)
+			Dead(Player6)
+	~ THEN REPLY @57 /* ~I need some healing.~ */
+	GOTO LCA_GiveHeal //OK
 	
 	IF ~~ THEN REPLY @59 /* ~Thank you.~ */
 	EXIT
@@ -74,8 +108,25 @@ IF ~~ THEN BEGIN LCA_AskedAboutGuardians
 	~
 	GOTO LCA_AskedAboutDemon
 	
-	IF ~~ THEN REPLY @57 /* ~I need some healing.~ */
-	GOTO LCA_GiveHeal
+	IF ~
+		OR(5)
+			Dead(Player2)
+			Dead(Player3)
+			Dead(Player4)
+			Dead(Player5)
+			Dead(Player6)
+	~ THEN REPLY @57 /* ~I need some healing.~ */
+	GOTO LCA_GiveRezAndHeal //OK
+	
+	IF ~
+		!OR(5)
+			Dead(Player2)
+			Dead(Player3)
+			Dead(Player4)
+			Dead(Player5)
+			Dead(Player6)
+	~ THEN REPLY @57 /* ~I need some healing.~ */
+	GOTO LCA_GiveHeal //OK
 	
 	IF ~~ THEN REPLY @59 /* ~Thank you.~ */
 	EXIT
@@ -84,27 +135,37 @@ END
 IF ~~ THEN BEGIN LCA_Intro
 	SAY @0 /* Who are you! Answer me!~ */
 	
-	IF ~~ THEN REPLY @1 /* ~I'm <CHARNAME>. What is this place?~*/
+	IF ~~ THEN REPLY @63 /* ~Calm yourself, spirit. I am <CHARNAME>. What is this place?~*/
 	DO ~
 		SetGlobal("LCA_Lyriel", "GLOBAL", 1)
 		SetGlobal("LCA_WhatIsThisPlace", "LOCALS", 1)
 	~
-	GOTO LCA_WhatIsThisPlace //OK
+	GOTO LCA_FM_WhatIsThisPlace //OK
 	
 	IF ~~ THEN REPLY @2 /* ~I recognize you - you're the woman from the painting... but you're a ghost?~*/
 	DO ~
 		SetGlobal("LCA_Lyriel", "GLOBAL", 1)
 		SetGlobal("LCA_Canvas", "LOCALS", 1)
 	~
-	GOTO LCA_Canvas
-	
-	IF ~~ THEN REPLY @3 /* ~Am I inside of a painting?~ */
-	DO ~
-		SetGlobal("LCA_Lyriel", "GLOBAL", 1)
-		SetGlobal("LCA_WhatIsThisPlace", "LOCALS", 1)
-	~
-	GOTO LCA_WhatIsThisPlace //OK
+	GOTO LCA_Canvas_FM
 END
+
+IF ~~ THEN BEGIN LCA_Canvas_FM
+	SAY @4 /* ~It was my likeness on the canvas? Then he lured you, as well...~ */
+	
+	= @64 /* ~Forgive me... it's been so long since I've had any company.~  */
+	
+	IF ~~ THEN GOTO LCA_Spirit //OK
+END
+
+IF ~~ THEN BEGIN LCA_FM_WhatIsThisPlace
+	SAY @64 /* ~Forgive me... it's been so long since I've had any company.~ */
+	
+	IF ~~ THEN 
+	GOTO LCA_WhatIsThisPlace
+END
+
+
 
 IF ~~ THEN BEGIN LCA_WhatIsThisPlace
 	SAY @5 /* ~As I understand it, this ... reality ... was created as a prison for a powerful demon trapped within. Over the eons, he's learned to reshape it according to his needs. He can look and hear through the painting to your reality, and has even learned to send his creations through to the other side, though he himself can never escape.~ */
@@ -224,6 +285,8 @@ END
 IF ~~ THEN BEGIN LCA_Canvas
 	SAY @4 /* ~It was my likeness on the canvas? Then he lured you, as well...~ */
 	
+	
+	
 	IF ~~ THEN GOTO LCA_Spirit //OK
 END
 
@@ -260,21 +323,54 @@ END
 IF ~~ THEN BEGIN LCA_Healing
 	SAY @44 /* ~I can heal you and your companions. Do you need healing now?~ */
 	
-	IF ~~ THEN REPLY @45 /* ~Yes, please.~ */
+	IF ~
+		OR(5)
+			Dead(Player2)
+			Dead(Player3)
+			Dead(Player4)
+			Dead(Player5)
+			Dead(Player6)
+	~ THEN REPLY @45 /* ~Yes, please.~ */
+	GOTO LCA_GiveRezAndHeal //OK
+	
+	IF ~
+		!OR(5)
+			Dead(Player2)
+			Dead(Player3)
+			Dead(Player4)
+			Dead(Player5)
+			Dead(Player6)
+	~ THEN REPLY @45 /* ~Yes, please.~ */
 	GOTO LCA_GiveHeal //OK
 	
 END
 
 IF ~~ THEN BEGIN LCA_GiveHeal
 	SAY @47 /* ~Gather around me, friends.~ */
-	
+
 	IF ~~ THEN
 	DO ~
-		ForceSpell(MostDamagedOf(Myself),CLERIC_MASS_CURE)
+		ForceSpell(MostDamagedOf(Myself),CLERIC_CURE_CRITICAL_WOUNDS)
 		Wait(1)
-		ForceSpell(MostDamagedOf(Myself),CLERIC_MASS_CURE)
+		ForceSpell(MostDamagedOf(Myself),CLERIC_CURE_CRITICAL_WOUNDS)
 		Wait(1)
-		ForceSpell(MostDamagedOf(Myself),CLERIC_MASS_CURE)
+		ForceSpell(MostDamagedOf(Myself),CLERIC_CURE_CRITICAL_WOUNDS)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_GiveRezAndHeal
+	SAY @47 /* ~Gather around me, friends.~ */
+
+	IF ~~ THEN
+	DO ~
+		ForceSpell(MostDamagedOf(Myself),CLERIC_MASS_RAISE_DEAD)
+		Wait(1)
+		ForceSpell(MostDamagedOf(Myself),CLERIC_CURE_CRITICAL_WOUNDS)
+		Wait(1)
+		ForceSpell(MostDamagedOf(Myself),CLERIC_CURE_CRITICAL_WOUNDS)
+		Wait(1)
+		ForceSpell(MostDamagedOf(Myself),CLERIC_CURE_CRITICAL_WOUNDS)
 	~
 	EXIT
 END
