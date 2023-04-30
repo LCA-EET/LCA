@@ -120,6 +120,7 @@ override/ARAN.dlg
 override/VALYGARJ.dlg
 override/LCMERCH.dlg
 override/LCBENCE.dlg
+override/LCLYRIEL.dlg
 override/BDASHATI.dlg
 override/LCLANTAN.dlg
 override/LCWVMER.dlg
@@ -345,6 +346,8 @@ override/LCNOBMOV.bcs
 override/LCNOBWOV.bcs
 override/LCP0706.bcs
 override/LCPAINT.bcs
+override/LCPAINT1.bcs
+override/LCPENT.bcs
 override/LCPROPO1.bcs
 override/LCPROPOS.bcs
 override/LCROHMA1.bcs
@@ -352,6 +355,10 @@ override/LCRTBG.bcs
 override/LCSARA.bcs
 override/LCTIANNA.bcs
 override/LCTMARSU.bcs
+override/LCTRIGG1.bcs
+override/LCTRIGG2.bcs
+override/LCTRIGG3.bcs
+override/LCTRIGP2.bcs
 override/LCTWNFOV.bcs
 override/LCTWNMOV.bcs
 override/LCUC.bcs
@@ -428,7 +435,6 @@ override/CHDINROM.2DA
 override/BADEND1.2DA
 override/BADEND2.2DA
 override/BADEND3.2DA
-override/BD0035.ARE
 override/LCPEN.ARE
 override/LCAcs01.ARE
 override/LCAcs03.ARE
@@ -447,7 +453,10 @@ override/LCWLKHOM.ARE
 override/LCUC.ARE
 override/LCUCTEMP.ARE
 override/LCCSHOW.ARE
-override/LCPAINT01.ARE
+override/LCPAINT1.ARE
+override/LCINCUBW.ITM
+override/LCLYRIEL.CRE
+override/LCINCUB.CRE
 override/LCWYRM.WED
 override/LCWYRMN.WED
 override/LCWYRMHT.BMP
