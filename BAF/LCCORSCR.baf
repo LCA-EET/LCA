@@ -266,6 +266,7 @@ IF
 	!AreaCheck("BG1316")
 	!AreaCheck("BG0130") //Hall of Wonders
 	!AreaCheck("BG0131") //High Hall of Wonders
+	!AreaType(DUNEGON)
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	GlobalTimerExpired("LCA_CorwinFamilyTimer", "GLOBAL")
 	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
@@ -273,6 +274,7 @@ IF
 	See(Player1)
 THEN
 	RESPONSE #100
+		SetGlobal("LCA_CorwinFamilyTimerDialog", "GLOBAL", 1)
 		StartDialog("LCCORWIJ", Player1)
 END
 

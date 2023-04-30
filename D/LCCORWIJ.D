@@ -1773,6 +1773,7 @@ END
 
 //{ #region Corwin Family Timer - DLG-0018
 IF ~
+	Global("LCA_CorwinFamilyTimerDialog", "GLOBAL", 1)
 	GlobalTimerExpired("LCA_CorwinFamilyTimer", "GLOBAL")
 	GlobalLT("LCA_CorwinMetFamily", "GLOBAL", 1)
 	!Global("LCA_CorwinComplainFamily", "GLOBAL", 1)
@@ -1783,6 +1784,7 @@ IF ~
 	DO ~
 		SetGlobalTimer("LCA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
 		SetGlobal("LCA_CorwinComplainFamily", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinFamilyTimerDialog", "GLOBAL", 0)
 	~
 	EXIT
 END
@@ -1790,6 +1792,7 @@ END
 
 //{ #region Corwin Family Timer Expired (Non-Romance) - DLG-0019
 IF ~
+	Global("LCA_CorwinFamilyTimerDialog", "GLOBAL", 1)
 	GlobalTimerExpired("LCA_CorwinFamilyTimer", "GLOBAL")
 	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 ~ THEN BEGIN LCA_CorwinFamilyTimer_ExpiredNR
@@ -1797,6 +1800,7 @@ IF ~
 	
 	IF ~~ THEN
 	DO ~
+		SetGlobal("LCA_CorwinFamilyTimerDialog", "GLOBAL", 0)
 		SetGlobal("LCA_CorwinWithFamily", "GLOBAL", 1)
 		SetGlobal("LCA_CorwinMetFamily", "GLOBAL", 2)
 		SetLeavePartyDialogFile()
@@ -1810,6 +1814,7 @@ END
 
 //{ #region Corwin Family Timer Expired (Romance) - DLG-0020
 IF ~
+	Global("LCA_CorwinFamilyTimerDialog", "GLOBAL", 1)
 	GlobalTimerExpired("LCA_CorwinFamilyTimer", "GLOBAL")
 	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 ~ THEN BEGIN LCA_CorwinFamilyTimer_ExpiredRomance
@@ -1884,6 +1889,9 @@ IF ~~ THEN BEGIN LCA_SleepAtHotel
 	= @799 /* ~(She whispers in your ear.) I'll come see you in your room tonight, lover.~ */
 	
 	IF ~~ THEN REPLY @907 /* ~You'll do more than just see me, I hope.~ */
+	DO ~
+		SetGlobal("LCA_CorwinFamilyTimerDialog", "GLOBAL", 0)
+	~
 	GOTO LCA_SexTonight
 END
 
