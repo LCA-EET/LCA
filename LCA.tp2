@@ -165,6 +165,9 @@ COPY ~LCA/ARE/LCCSHOW.ARE~ ~override~
 
 //Painting Miniquest
 COPY ~LCA/ARE/LCPAINT1.ARE~ ~override~
+COPY ~LCA/ARE/LCG1.ARE~ ~override~
+COPY ~LCA/ARE/LCG2.ARE~ ~override~
+COPY ~LCA/ARE/LCG3.ARE~ ~override~
 COPY ~LCA/ITM/LCINCUBW.ITM~ ~override~
 COPY ~LCA/CRE/LCLYRIEL.CRE~ ~override~
 SAY NAME1 @097

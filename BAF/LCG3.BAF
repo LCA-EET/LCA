@@ -1,0 +1,18 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneID(Player1)
+		FadeToColor([30.0],0)
+		Wait(2)
+		LeaveAreaLUAPanic("LCG3", "", [825.872], NW)
+		LeaveAreaLUA("LCG3", "", [825.872], NW)
+		ActionOverride(Player2, LeaveAreaLUA("LCG3", "", [825.872], NW))
+		ActionOverride(Player3, LeaveAreaLUA("LCG3", "", [825.872], NW))
+		ActionOverride(Player4, LeaveAreaLUA("LCG3", "", [825.872], NW))
+		ActionOverride(Player5, LeaveAreaLUA("LCG3", "", [825.872], NW))
+		ActionOverride(Player6, LeaveAreaLUA("LCG3", "", [825.872], NW))
+		FadeFromColor([30.0],0)
+		Wait(1)
+		EndCutSceneMode()
+END
