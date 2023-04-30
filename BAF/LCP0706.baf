@@ -2,6 +2,7 @@ IF
 	Clicked([ANYONE])
 	Range(LastTrigger,10)
 	PartyHasItem("AMUL27")
+	Global("LCA_AmuletPainting", "GLOBAL", 8)
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_EnterPainting", "GLOBAL", 1)
@@ -19,7 +20,9 @@ END
 IF 
 	Clicked([ANYONE])
 	Range(LastTrigger,10)
-	!PartyHasItem("AMUL27")
+	OR(2)
+		!PartyHasItem("AMUL27")
+		Global("LCA_AmuletPainting", "GLOBAL", 8)
 THEN
 	RESPONSE #100
 		DisplayString(Myself,~The painting depicts three sailors playing a game of cards.~)
