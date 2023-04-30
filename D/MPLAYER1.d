@@ -174,7 +174,7 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("LCA_AmuletPainting", "GLOBAL", 2)
+			SetGlobal("LCA_AmuletPainting", "GLOBAL", 2) 
 		~
 		EXIT
 	END

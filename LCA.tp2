@@ -259,9 +259,9 @@ LPF fj_are_structure
 	INT_VAR
 	fj_type 		= 1
     fj_box_left		= 215
-    fj_box_top		= 510
+    fj_box_top		= 447
 	fj_box_right	= 271
-	fj_box_bottom	= 447
+	fj_box_bottom	= 510
 	fj_cursor_idx	= 22
 	fj_vertex_0     = 215 + (479 << 16)
     fj_vertex_1     = 270 + (447 << 16)

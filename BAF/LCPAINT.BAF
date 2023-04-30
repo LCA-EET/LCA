@@ -1,7 +1,8 @@
 IF
 	Global("LCA_AmuletPainting", "GLOBAL", 4)
 	PartyHasItem("AMUL27")
-	See(Player1)	
+	See(Player1)
+	Range(Player1, 10)
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_AmuletPainting", "GLOBAL", 5)
