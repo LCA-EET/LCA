@@ -258,16 +258,16 @@ COPY_EXISTING ~BG0706.ARE~ ~override~
 LPF fj_are_structure
 	INT_VAR
 	fj_type 		= 1
-    fj_box_left		= 78
-    fj_box_top		= 365
-	fj_box_right	= 100
-	fj_box_bottom	= 396
+    fj_box_left		= 0
+    fj_box_top		= 0
+	fj_box_right	= 0
+	fj_box_bottom	= 0
 	fj_cursor_idx	= 22
-	fj_vertex_0     = 77 + (377 << 16)
-    fj_vertex_1     = 99 + (364 << 16)
-    fj_vertex_2     = 100 + (394 << 16)
-    fj_vertex_3     = 78 + (408 << 16)
-	fj_info_point_strref = RESOLVE_STR_REF(@67)
+	fj_vertex_0     = 215 + (479 << 16)
+    fj_vertex_1     = 270 + (447 << 16)
+    fj_vertex_2     = 271 + (475 << 16)
+    fj_vertex_3     = 217 + (510 << 16)
+	//fj_info_point_strref = RESOLVE_STR_REF(@67)
 	STR_VAR
     fj_structure_type = region
 	fj_name = ~LCP0706~

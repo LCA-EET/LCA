@@ -206,9 +206,9 @@ APPEND ~PLAYER1~
 		DO ~
 			SetGlobal("LCA_AmuletPainting", "GLOBAL", 6)
 			SetGlobal("LCA_DoppleSpawn_0706", "GLOBAL", 1)
-			CreateCreature("LCDOPP01", [340.340], SW)
-			CreateCreature("LCDOPP02", [280.350], SW)
-			CreateCreature("LCDOPP03", [325.385], SW)
+			CreateCreature("LCDOPP01", [433.466], SW)
+			CreateCreature("LCDOPP02", [386.584], NW)
+			CreateCreature("LCDOPP03", [303.607], NW)
 		~
 		EXIT
 	END
