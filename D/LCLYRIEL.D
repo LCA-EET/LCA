@@ -360,11 +360,11 @@ IF ~~ THEN BEGIN LCA_GiveRezAndHeal
 
 	IF ~~ THEN
 	DO ~
-		ApplySpell(Player2,CLERIC_RESURRECTION)
-		ApplySpell(Player3,CLERIC_RESURRECTION)
-		ApplySpell(Player4,CLERIC_RESURRECTION)
-		ApplySpell(Player5,CLERIC_RESURRECTION)
-		ApplySpell(Player6,CLERIC_RESURRECTION)
+		ForceSpell(Player2,CLERIC_RESURRECTION)
+		ForceSpell(Player3,CLERIC_RESURRECTION)
+		ForceSpell(Player4,CLERIC_RESURRECTION)
+		ForceSpell(Player5,CLERIC_RESURRECTION)
+		ForceSpell(Player6,CLERIC_RESURRECTION)
 		Wait(1)
 		ForceSpell(MostDamagedOf(Myself),CLERIC_CURE_CRITICAL_WOUNDS)
 		Wait(1)
