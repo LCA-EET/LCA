@@ -258,10 +258,10 @@ COPY_EXISTING ~BG0706.ARE~ ~override~
 LPF fj_are_structure
 	INT_VAR
 	fj_type 		= 1
-    fj_box_left		= 0
-    fj_box_top		= 0
-	fj_box_right	= 0
-	fj_box_bottom	= 0
+    fj_box_left		= 215
+    fj_box_top		= 510
+	fj_box_right	= 271
+	fj_box_bottom	= 447
 	fj_cursor_idx	= 22
 	fj_vertex_0     = 215 + (479 << 16)
     fj_vertex_1     = 270 + (447 << 16)
