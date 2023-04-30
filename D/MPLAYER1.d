@@ -17,7 +17,7 @@ APPEND ~PLAYER1~
 		DO ~
 			SetGlobal("LCA_EnterG1", "GLOBAL", 0)
 			StartCutSceneMode()
-			StartCutScene("LCG1")
+			StartCutScene("LCG1ENT")
 		~
 		EXIT
 		
@@ -37,7 +37,7 @@ APPEND ~PLAYER1~
 		DO ~
 			SetGlobal("LCA_EnterG2", "GLOBAL", 0)
 			StartCutSceneMode()
-			StartCutScene("LCG2")
+			StartCutScene("LCG2ENT")
 		~
 		EXIT
 		
@@ -57,7 +57,7 @@ APPEND ~PLAYER1~
 		DO ~
 			SetGlobal("LCA_EnterG3", "GLOBAL", 0)
 			StartCutSceneMode()
-			StartCutScene("LCG3")
+			StartCutScene("LCG3ENT")
 		~
 		EXIT
 		

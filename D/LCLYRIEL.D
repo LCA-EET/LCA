@@ -98,6 +98,7 @@ IF ~~ THEN BEGIN LCA_Intro
 	DO ~
 		SetGlobal("LCA_Lyriel", "GLOBAL", 1)
 		SetGlobal("LCA_Canvas", "LOCALS", 1)
+		SetGlobal("LCA_Spirit", "LOCALS", 1)
 	~
 	GOTO LCA_Canvas_FM
 END

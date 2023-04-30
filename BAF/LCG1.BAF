@@ -1,18 +1,9 @@
-IF
-	True()
+IF 
+	InMyArea("LCCORWIN")
+	GlobalLT("LCA_Corwin_LCG1", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		CutSceneID(Player1)
-		FadeToColor([30.0],0)
-		Wait(2)
-		LeaveAreaLUAPanic("LCG1", "", [1400.2600], NE)
-		LeaveAreaLUA("LCG1", "", [1400.2600], NE)
-		ActionOverride(Player2, LeaveAreaLUA("LCG1", "", [1400.2600], NE))
-		ActionOverride(Player3, LeaveAreaLUA("LCG1", "", [1400.2600], NE))
-		ActionOverride(Player4, LeaveAreaLUA("LCG1", "", [1400.2600], NE))
-		ActionOverride(Player5, LeaveAreaLUA("LCG1", "", [1400.2600], NE))
-		ActionOverride(Player6, LeaveAreaLUA("LCG1", "", [1400.2600], NE))
-		FadeFromColor([30.0],0)
-		Wait(1)
-		EndCutSceneMode()
+		Wait(3)
+		SetGlobal("LCA_Corwin_LCG1", "GLOBAL", 1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 END
