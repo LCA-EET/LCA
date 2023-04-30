@@ -34,21 +34,21 @@ IF ~
 	
 	IF ~
 		OR(5)
-			Dead(Player2)
-			Dead(Player3)
-			Dead(Player4)
-			Dead(Player5)
-			Dead(Player6)
+			StateCheck(Player2, STATE_DEAD)
+			StateCheck(Player3, STATE_DEAD)
+			StateCheck(Player4, STATE_DEAD)
+			StateCheck(Player5, STATE_DEAD)
+			StateCheck(Player6, STATE_DEAD)
 	~ THEN REPLY @57 /* ~I need some healing.~ */
 	GOTO LCA_GiveRezAndHeal //OK
 	
 	IF ~
 		!OR(5)
-			Dead(Player2)
-			Dead(Player3)
-			Dead(Player4)
-			Dead(Player5)
-			Dead(Player6)
+			StateCheck(Player2, STATE_DEAD)
+			StateCheck(Player3, STATE_DEAD)
+			StateCheck(Player4, STATE_DEAD)
+			StateCheck(Player5, STATE_DEAD)
+			StateCheck(Player6, STATE_DEAD)
 	~ THEN REPLY @57 /* ~I need some healing.~ */
 	GOTO LCA_GiveHeal //OK
 	
@@ -72,21 +72,21 @@ IF ~~ THEN BEGIN LCA_AskedAboutDemon
 	
 	IF ~
 		OR(5)
-			Dead(Player2)
-			Dead(Player3)
-			Dead(Player4)
-			Dead(Player5)
-			Dead(Player6)
+			StateCheck(Player2, STATE_DEAD)
+			StateCheck(Player3, STATE_DEAD)
+			StateCheck(Player4, STATE_DEAD)
+			StateCheck(Player5, STATE_DEAD)
+			StateCheck(Player6, STATE_DEAD)
 	~ THEN REPLY @57 /* ~I need some healing.~ */
 	GOTO LCA_GiveRezAndHeal //OK
 	
 	IF ~
 		!OR(5)
-			Dead(Player2)
-			Dead(Player3)
-			Dead(Player4)
-			Dead(Player5)
-			Dead(Player6)
+			StateCheck(Player2, STATE_DEAD)
+			StateCheck(Player3, STATE_DEAD)
+			StateCheck(Player4, STATE_DEAD)
+			StateCheck(Player5, STATE_DEAD)
+			StateCheck(Player6, STATE_DEAD)
 	~ THEN REPLY @57 /* ~I need some healing.~ */
 	GOTO LCA_GiveHeal //OK
 	
@@ -110,21 +110,21 @@ IF ~~ THEN BEGIN LCA_AskedAboutGuardians
 	
 	IF ~
 		OR(5)
-			Dead(Player2)
-			Dead(Player3)
-			Dead(Player4)
-			Dead(Player5)
-			Dead(Player6)
+			StateCheck(Player2, STATE_DEAD)
+			StateCheck(Player3, STATE_DEAD)
+			StateCheck(Player4, STATE_DEAD)
+			StateCheck(Player5, STATE_DEAD)
+			StateCheck(Player6, STATE_DEAD)
 	~ THEN REPLY @57 /* ~I need some healing.~ */
 	GOTO LCA_GiveRezAndHeal //OK
 	
 	IF ~
 		!OR(5)
-			Dead(Player2)
-			Dead(Player3)
-			Dead(Player4)
-			Dead(Player5)
-			Dead(Player6)
+			StateCheck(Player2, STATE_DEAD)
+			StateCheck(Player3, STATE_DEAD)
+			StateCheck(Player4, STATE_DEAD)
+			StateCheck(Player5, STATE_DEAD)
+			StateCheck(Player6, STATE_DEAD)
 	~ THEN REPLY @57 /* ~I need some healing.~ */
 	GOTO LCA_GiveHeal //OK
 	
@@ -325,21 +325,21 @@ IF ~~ THEN BEGIN LCA_Healing
 	
 	IF ~
 		OR(5)
-			Dead(Player2)
-			Dead(Player3)
-			Dead(Player4)
-			Dead(Player5)
-			Dead(Player6)
+			StateCheck(Player2, STATE_DEAD)
+			StateCheck(Player3, STATE_DEAD)
+			StateCheck(Player4, STATE_DEAD)
+			StateCheck(Player5, STATE_DEAD)
+			StateCheck(Player6, STATE_DEAD)
 	~ THEN REPLY @45 /* ~Yes, please.~ */
 	GOTO LCA_GiveRezAndHeal //OK
 	
 	IF ~
 		!OR(5)
-			Dead(Player2)
-			Dead(Player3)
-			Dead(Player4)
-			Dead(Player5)
-			Dead(Player6)
+			StateCheck(Player2, STATE_DEAD)
+			StateCheck(Player3, STATE_DEAD)
+			StateCheck(Player4, STATE_DEAD)
+			StateCheck(Player5, STATE_DEAD)
+			StateCheck(Player6, STATE_DEAD)
 	~ THEN REPLY @45 /* ~Yes, please.~ */
 	GOTO LCA_GiveHeal //OK
 	
