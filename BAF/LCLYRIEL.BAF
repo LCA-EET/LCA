@@ -10,7 +10,7 @@ END
 
 IF
 	GlobalLT("LCA_Lyriel", "GLOBAL", 1)
-	Range([ANYONE], 6)
+	Range([ANYONE], 8)
 THEN
 	RESPONSE #100
 		FaceObject(Player1)
