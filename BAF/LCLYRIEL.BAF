@@ -13,7 +13,7 @@ IF
 	Range([ANYONE], 6)
 THEN
 	RESPONSE #100
-		Face(Player1)
+		FaceObject(Player1)
 		SmallWait(1)
 		StartDialog("LCLYRIEL", Player1)
 END
