@@ -1,0 +1,19 @@
+IF
+	GlobalLT("LCA_Lyriel", "GLOBAL", 1)
+	!Global("LCA_Sing", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_Sing", "LOCALS", 1)
+		DisplayStringHead(Myself, ~(Soft, melancholy singing.)~
+		Continue()
+END
+
+IF
+	GlobalLT("LCA_Lyriel", "GLOBAL", 1)
+	Range([ANYONE], 6)
+THEN
+	RESPONSE #100
+		Face(Player1)
+		SmallWait(1)
+		StartDialog("LCLYRIEL", Player1)
+END
