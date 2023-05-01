@@ -4,7 +4,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_Sing", "LOCALS", 1)
-		DisplayStringHead(Myself, ~(Soft, melancholy singing.)~
+		DisplayStringHead(Myself, ~(Soft, melancholy singing.)~)
 		Continue()
 END
 
