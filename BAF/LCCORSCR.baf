@@ -278,6 +278,15 @@ THEN
 		StartDialog("LCCORWIJ", Player1)
 END
 
+IF
+	GlobalTimerExpired("LCA_CorwinFamilyTimer", "GLOBAL")
+	!Global("LCA_CorwinMetFamily", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("LCA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
+END
+
+
 IF 
 	AreaCheck("BG1316")
 	Global("LCA_ReturnToBG", "GLOBAL", 1)

@@ -13,6 +13,7 @@ IF
 	Global("LCA_BenceWyrm", "GLOBAL", 2)
 	!Global("LCA_DukesFullyDebriefed", "GLOBAL", 1)
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	Global("LCA_CorwinMetFamily", "GLOBAL", 2)
 	OR(2)
 		GlobalTimerExpired("LCA_DukeDebriefTimer", "GLOBAL")
 		Global("LCA_ExtensionNeeded", "GLOBAL", 1)

@@ -3801,6 +3801,8 @@ END
 
 IF ~~ THEN BEGIN LCA_TrappedG1_2
 	SAY @1423 /* ~This seems so real... it's just how I remember it...~ */
+	
+	= @1424 /*~Sounds of fighting coming from the keep — let's go.~*/
 	IF ~~ THEN
 	EXIT
 END
