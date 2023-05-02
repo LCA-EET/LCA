@@ -1,0 +1,6 @@
+IF
+	!Allegiance(ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+END
