@@ -25,7 +25,7 @@ APPEND ~PLAYER1~
 		DO ~
 			SetGlobal("LCA_G1_Intro", "GLOBAL", 1)
 		~
-		EXTERN LCCORWIJ 
+		EXTERN LCCORWIJ LCA_TrappedG1
 	END
 	IF ~
 		Global("LCA_EnterG1", "GLOBAL", 1)
