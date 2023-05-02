@@ -2,6 +2,6 @@ IF
 	AreaCheck("LCG1")
 THEN
 	RESPONSE #100
-		ChangeAIScript("",OVERRIDE))
-		ChangeAIScript("",CLASS))
+		ChangeAIScript("",OVERRIDE)
+		ChangeAIScript("",CLASS)
 END
