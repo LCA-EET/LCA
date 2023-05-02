@@ -1,5 +1,5 @@
 IF
-	!Allegiance(ENEMY)
+	!Allegiance(Myself, ENEMY)
 THEN
 	RESPONSE #100
 		Enemy()
