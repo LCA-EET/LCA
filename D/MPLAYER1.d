@@ -9,6 +9,25 @@
 APPEND ~PLAYER1~
 
 	IF ~
+		Global("LCA_G1_Intro", "GLOBAL", 1)
+	~ THEN BEGIN LCA_G1_Intro
+		SAY @121 /* ~(You come to, and take stock of your surroundings. It would seem that somehow, the demon has recreated the coalition's siege of Dragonspear. The sounds of a raging battle emanate from the courtyard beyond the gate.)~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("LCA_G1_Intro", "GLOBAL", 1)
+		~
+		EXIT
+		
+		IF ~
+			IsValidForPartyDialogue("LCCORWIN")
+		~ THEN
+		DO ~
+			SetGlobal("LCA_G1_Intro", "GLOBAL", 1)
+		~
+		EXTERN LCCORWIJ 
+	END
+	IF ~
 		Global("LCA_EnterG1", "GLOBAL", 1)
 	~ THEN BEGIN LCA_EnterG1
 		SAY @118 /*~(As you approach the painting, you feel a force probing your thoughts and memories. The image swirls, then depicts a castle under siege. You recognize it as Dragonspear. Touch the painting?)~*/

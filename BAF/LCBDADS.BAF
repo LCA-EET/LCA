@@ -1,0 +1,6 @@
+IF
+	AreaCheck("LCG1")
+THEN
+	RESPONSE #100
+		NoAction()
+END

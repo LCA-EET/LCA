@@ -3787,22 +3787,17 @@ END
 
 
 //{ #region Entered G1 - DLG-0053
-IF ~
-	Global("LCA_Corwin_LCG1", "GLOBAL", 1)
-~ THEN BEGIN LCA_TrappedG1
+IF ~~ THEN BEGIN LCA_TrappedG1
 	SAY @1421 /* ~Are we — are we still trapped? ~ */
 	
-	IF ~~ THEN REPLY @1422 /* ~I think so. Look — it seems to be a recreation of the siege. Stay alert.~ */
-	DO ~
-		SetGlobal("LCA_Corwin_LCG1", "GLOBAL", 2)
-	~
+	IF ~~ THEN REPLY @1422 /* ~I think so. Look — it seems to be a recreation of the siege.~ */
 	GOTO LCA_TrappedG1_2
 END
 
 IF ~~ THEN BEGIN LCA_TrappedG1_2
 	SAY @1423 /* ~This seems so real... it's just how I remember it...~ */
 	
-	= @1424 /*~Sounds of fighting coming from the keep — let's go.~*/
+	= @1424 /*~Come on — let's head in.~*/
 	IF ~~ THEN
 	EXIT
 END
