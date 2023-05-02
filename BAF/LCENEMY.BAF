@@ -1,6 +1,7 @@
 IF
-	!Allegiance(Myself, ENEMY)
+	!Global("LCA_SetAllegiance", "LOCALS", 1)
 THEN
 	RESPONSE #100
+		SetGlobal("LCA_SetAllegiance", "LOCALS", 1)
 		Enemy()
 END
