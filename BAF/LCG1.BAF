@@ -2,7 +2,68 @@ IF
 	GlobalLT("LCA_G1_Intro", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		Wait(3)
+		Wait(1)
 		SetGlobal("LCA_G1_Intro", "GLOBAL", 1)
+		SetGlobalTimer("LCA_LCG1SpawnTimer_Crusaders", "LCG1", TWO_ROUNDS)
+		SetGlobalTimer("LCA_LCG1SpawnTimer_Coalition", "LCG1", TWO_ROUNDS)
 		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END
+
+IF
+	GlobalTimerExpired("LCA_LCG1SpawnTimer_Coalition", "LCG1")
+	Global("LCA_CoalitionKilled", "LCG1", 3)
+THEN
+	RESPONSE #25
+		SetGlobalTimer("LCA_LCG1SpawnTimer_Coalitionr", "LCG1", TWO_ROUNDS)
+		NoAction()
+	RESPONSE #25
+		SetGlobalTimer("LCA_LCG1SpawnTimer_Coalition", "LCG1", TWO_ROUNDS)
+		CreateCreature("LCCOAL01", [20.3300], NE)
+		CreateCreature("LCCOAL02", [50.3390], NE)
+		CreateCreature("LCCOAL03", [100.3400], NE)
+	RESPONSE #25
+		SetGlobalTimer("LCA_LCG1SpawnTimer_Coalition", "LCG1", TWO_ROUNDS)
+		CreateCreature("LCCOAL04", [20.3300], NE)
+		CreateCreature("LCCOAL05", [50.3390], NE)
+		CreateCreature("LCCOAL06", [100.3400], NE)
+	RESPONSE #25
+		SetGlobalTimer("LCA_LCG1SpawnTimer_Coalition", "LCG1", TWO_ROUNDS)
+		CreateCreature("LCCOAL07", [20.3300], NE)
+		CreateCreature("LCCOAL08", [50.3390], NE)
+		CreateCreature("LCCOAL09", [100.3400], NE)
+END
+
+IF
+	GlobalTimerExpired("LCA_LCG1SpawnTimer_Coalition", "LCG1")
+	!Global("LCA_CoalitionKilled", "LCG1", 3)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("LCA_LCG1SpawnTimer_Coalition", "LCG1", TWO_ROUNDS)
+END
+
+IF
+	GlobalTimerExpired("LCA_LCG1SpawnTimer_Crusaders", "LCG1")
+	Global("LCA_CrusadersKilled", "LCG1", 3)
+THEN
+	RESPONSE #20
+		SetGlobalTimer("LCA_LCG1SpawnTimer_Crusaders", "LCG1", TWO_ROUNDS)
+		NoAction()
+	RESPONSE #20
+		SetGlobalTimer("LCA_LCG1SpawnTimer_Crusaders", "LCG1", TWO_ROUNDS)
+		CreateCreature("LCCRUS01", [2690.1870], SW)
+		CreateCreature("LCCRUS02", [2660.1820], SW)
+		CreateCreature("LCCRUS03", [2750.1910], SW)
+	RESPONSE #20
+		SetGlobalTimer("LCA_LCG1SpawnTimer_Crusaders", "LCG1", TWO_ROUNDS)
+		CreateCreature("LCCRUS01", [1370.1460], SW)
+		CreateCreature("LCCRUS02", [1690.1570], SW)
+		CreateCreature("LCCRUS03", [1960.1600], SW)
+END
+
+IF
+	GlobalTimerExpired("LCA_LCG1SpawnTimer_Crusaders", "LCG1")
+	!Global("LCA_CrusadersKilled", "LCG1", 3)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("LCA_LCG1SpawnTimer_Crusaders", "LCG1", TWO_ROUNDS)
 END
