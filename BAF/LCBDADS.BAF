@@ -3,5 +3,5 @@ IF
 THEN
 	RESPONSE #100
 		ChangeAIScript("",OVERRIDE)
-		ChangeAIScript("",CLASS)
+		ChangeAIScript("LCCRTYRD",CLASS)
 END
