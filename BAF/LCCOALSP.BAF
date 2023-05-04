@@ -2,5 +2,5 @@ IF
 	Die()
 THEN
 	RESPONSE #100
-		IncrementGlobal(("LCA_CoalitionKilled", "LCG1", 1)
+		IncrementGlobal("LCA_CoalitionAlive", "GLOBAL", -1)
 END

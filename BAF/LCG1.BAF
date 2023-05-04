@@ -1,69 +1,114 @@
+IF
+	Global("LCA_CaelarTransform", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		Wait(1)
+		ActionOverride("LCCAELAR", ChangeAnimation("bdcaela2"))
+		ApplySpell("LCCAELAR", CLERIC_HEAL)
+		ActionOverride("LCCAELAR", DestroyItem("MONHP1"))
+		ChangeAlignment("LCCAELAR", LAWFUL_EVIL)
+		SetGlobal("LCA_CaelarTransform", "GLOBAL", 2)
+END
+
 IF 
 	GlobalLT("LCA_G1_Intro", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		Wait(1)
 		SetGlobal("LCA_G1_Intro", "GLOBAL", 1)
-		SetGlobalTimer("LCA_LCG1SpawnTimer_Crusaders", "LCG1", TWO_ROUNDS)
-		SetGlobalTimer("LCA_LCG1SpawnTimer_Coalition", "LCG1", TWO_ROUNDS)
+		SetGlobal("LCA_BeginSpawning", "GLOBAL", 1)
 		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 END
 
 IF
-	GlobalTimerExpired("LCA_LCG1SpawnTimer_Coalition", "LCG1")
-	Global("LCA_CoalitionKilled", "LCG1", 3)
+	GlobalLT("LCA_CoalitionAlive", "GLOBAL", 5)
+	Global("LCA_BeginSpawning", "GLOBAL", 1)
 THEN
-	RESPONSE #25
-		SetGlobalTimer("LCA_LCG1SpawnTimer_Coalitionr", "LCG1", TWO_ROUNDS)
-		NoAction()
-	RESPONSE #25
-		SetGlobalTimer("LCA_LCG1SpawnTimer_Coalition", "LCG1", TWO_ROUNDS)
+	RESPONSE #10
+		//DisplayStringHead(Player1, ~Coalition - No action.~)
+		Continue()
+	RESPONSE #10
+		//DisplayStringHead(Player1, ~Coalition - Spawn x3.~)
 		CreateCreature("LCCOAL01", [20.3300], NE)
+		IncrementGlobal("LCA_CoalitionAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
 		CreateCreature("LCCOAL02", [50.3390], NE)
+		IncrementGlobal("LCA_CoalitionAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
 		CreateCreature("LCCOAL03", [100.3400], NE)
-	RESPONSE #25
-		SetGlobalTimer("LCA_LCG1SpawnTimer_Coalition", "LCG1", TWO_ROUNDS)
+		IncrementGlobal("LCA_CoalitionAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
 		CreateCreature("LCCOAL04", [20.3300], NE)
+		IncrementGlobal("LCA_CoalitionAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
 		CreateCreature("LCCOAL05", [50.3390], NE)
+		IncrementGlobal("LCA_CoalitionAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
 		CreateCreature("LCCOAL06", [100.3400], NE)
-	RESPONSE #25
-		SetGlobalTimer("LCA_LCG1SpawnTimer_Coalition", "LCG1", TWO_ROUNDS)
+		IncrementGlobal("LCA_CoalitionAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
 		CreateCreature("LCCOAL07", [20.3300], NE)
+		IncrementGlobal("LCA_CoalitionAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
 		CreateCreature("LCCOAL08", [50.3390], NE)
+		IncrementGlobal("LCA_CoalitionAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
 		CreateCreature("LCCOAL09", [100.3400], NE)
+		IncrementGlobal("LCA_CoalitionAlive", "GLOBAL", 1)
+		Continue()
 END
 
-IF
-	GlobalTimerExpired("LCA_LCG1SpawnTimer_Coalition", "LCG1")
-	!Global("LCA_CoalitionKilled", "LCG1", 3)
-THEN
-	RESPONSE #100
-		SetGlobalTimer("LCA_LCG1SpawnTimer_Coalition", "LCG1", TWO_ROUNDS)
-END
 
 IF
-	GlobalTimerExpired("LCA_LCG1SpawnTimer_Crusaders", "LCG1")
-	Global("LCA_CrusadersKilled", "LCG1", 3)
+	GlobalLT("LCA_CrusadersAlive", "GLOBAL", 5)
+	Global("LCA_BeginSpawning", "GLOBAL", 1)
 THEN
-	RESPONSE #20
-		SetGlobalTimer("LCA_LCG1SpawnTimer_Crusaders", "LCG1", TWO_ROUNDS)
-		NoAction()
-	RESPONSE #20
-		SetGlobalTimer("LCA_LCG1SpawnTimer_Crusaders", "LCG1", TWO_ROUNDS)
+	RESPONSE #10
+		//DisplayStringHead(Player1, ~Crusader - No action.~)
+		Continue()
+	RESPONSE #10
 		CreateCreature("LCCRUS01", [2690.1870], SW)
+		IncrementGlobal("LCA_CrusadersAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
 		CreateCreature("LCCRUS02", [2660.1820], SW)
+		IncrementGlobal("LCA_CrusadersAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
 		CreateCreature("LCCRUS03", [2750.1910], SW)
-	RESPONSE #20
-		SetGlobalTimer("LCA_LCG1SpawnTimer_Crusaders", "LCG1", TWO_ROUNDS)
-		CreateCreature("LCCRUS01", [1370.1460], SW)
-		CreateCreature("LCCRUS02", [1690.1570], SW)
-		CreateCreature("LCCRUS03", [1960.1600], SW)
-END
-
-IF
-	GlobalTimerExpired("LCA_LCG1SpawnTimer_Crusaders", "LCG1")
-	!Global("LCA_CrusadersKilled", "LCG1", 3)
-THEN
-	RESPONSE #100
-		SetGlobalTimer("LCA_LCG1SpawnTimer_Crusaders", "LCG1", TWO_ROUNDS)
+		IncrementGlobal("LCA_CrusadersAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("LCCRUS04", [1370.1460], SW)
+		IncrementGlobal("LCA_CrusadersAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("LCCRUS05", [1690.1570], SW)
+		IncrementGlobal("LCA_CrusadersAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("LCCRUS06", [1960.1600], SW)
+		IncrementGlobal("LCA_CrusadersAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("LCCRUS07", [970.2300], SE)
+		IncrementGlobal("LCA_CrusadersAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("LCCRUS08", [970.1586], E)
+		IncrementGlobal("LCA_CrusadersAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("LCCRUS09", [2650.1880], SW)
+		IncrementGlobal("LCA_CrusadersAlive", "GLOBAL", 1)
+		Continue()
+		//1600.900
 END

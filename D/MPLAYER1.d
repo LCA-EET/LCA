@@ -15,7 +15,7 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("LCA_G1_Intro", "GLOBAL", 1)
+			SetGlobal("LCA_G1_Intro", "GLOBAL", 2)
 		~
 		EXIT
 		
@@ -23,7 +23,7 @@ APPEND ~PLAYER1~
 			IsValidForPartyDialogue("LCCORWIN")
 		~ THEN
 		DO ~
-			SetGlobal("LCA_G1_Intro", "GLOBAL", 1)
+			SetGlobal("LCA_G1_Intro", "GLOBAL", 2)
 		~
 		EXTERN LCCORWIJ LCA_TrappedG1
 	END
