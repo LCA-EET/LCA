@@ -10,6 +10,19 @@ THEN
 		SetGlobal("LCA_CaelarTransform", "GLOBAL", 2)
 END
 
+IF
+	Dead("LCCAELAR")
+	Dead("LCASHATI")
+	Dead("LCBARGHE")
+	Dead("LCHEPHER")
+	!Global("LCA_DemonSpeakG1", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_BeginSpawning", "GLOBAL", 0)
+		Wait(3)
+		SetGlobal("LCA_DemonSpeakG1", "GLOBAL", 1)
+END
+
 IF 
 	GlobalLT("LCA_G1_Intro", "GLOBAL", 1)
 THEN
