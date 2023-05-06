@@ -59,3 +59,6 @@ IF ~~ THEN BEGIN LCA_HaveSomethingDemonWants_Party
 	SAY @6 /*~You have something I want. Give it to me, and you and your companions shall have your freedom.~*/
 END
 
+IF ~~ THEN BEGIN LCA_GiveAmuletToDemon
+	SAY
+END
