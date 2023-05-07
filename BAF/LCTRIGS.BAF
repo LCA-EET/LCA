@@ -1,0 +1,28 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	GlobalGT("LCA_PrisonKnowledge", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_EnterIncubusSanctum", "GLOBAL", 1)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	GlobalLT("LCA_PrisonKnowledge", "GLOBAL", 4)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_EnterIncubusSanctum", "GLOBAL", 1)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,10)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~You are too far away to use that.~)
+END
+

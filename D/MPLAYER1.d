@@ -9,6 +9,112 @@
 APPEND ~PLAYER1~
 
 	IF ~
+		Global("LCA_EnterIncubusSanctum", "GLOBAL", 1)
+	~ THEN BEGIN LCA_EnterSanctum
+		SAY @130 /* ~(You approach the painting of the demon's inner sanctum.)~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("LCA_EnterIncubusSanctum", "GLOBAL", 0)
+		~
+		GOTO LCA_WantToEnterSanctum
+		
+		IF ~
+			!Global("LCA_WardsRemoved", "GLOBAL", 1)
+		~ THEN
+		DO ~
+			SetGlobal("LCA_EnterIncubusSanctum", "GLOBAL", 0)
+			SetGlobal("LCA_WardsRemoved", "GLOBAL", 1)
+		~
+		GOTO LCA_RemoveWards
+		
+		IF ~
+			GlobalLT("LCA_PrisonKnowledge", "GLOBAL", 4)
+		~ THEN
+		DO ~
+			SetGlobal("LCA_EnterIncubusSanctum", "GLOBAL", 0)
+		~
+		GOTO LCA_CannotEnter
+	END
+	
+	IF ~~ THEN BEGIN LCA_RemoveWards
+		SAY @132 /* ~(Using the knowledge gleaned from your interactions with the demon, you remove the wards protecting the painting.)~ */
+		
+		IF ~~ THEN
+		GOTO LCA_WantToEnterSanctum
+	END
+	
+	IF ~~ THEN BEGIN LCA_WantToEnterSanctum
+		SAY @133 /* ~(Enter the demon's sanctum?)~ */
+		
+		IF ~~ THEN REPLY @111 /* ~Yes.~ */
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("LCSENT")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @112 /* ~No.~ */
+		EXIT
+	END
+	
+	IF ~~ THEN BEGIN LCA_CannotEnter
+		SAY @131 /* ~(As you reach out to touch the painting, an invisible force pushes your hand back. You won't be able to enter.)~*/
+		
+		IF ~~ THEN
+		EXIT
+	END
+
+	IF ~
+		Global("LCA_MetIncubus", "GLOBAL", 1)
+		Global("LCA_PrisonKnowledge", "GLOBAL", 1)
+	~ THEN BEGIN LCA_PrisonKnowledge_1
+		SAY @122 /* ~(You awaken and find yourself back in the room that the demon created for Lyriel.)~ */
+		
+		= @123 /* ~(While he was transporting you, your minds linked for a moment, and you gained a better understanding of this place.)~ */
+		
+		= @124 /* ~(You think that if you can get him to transport you one, maybe two more times, you may gain enough knowledge to transport yourself into his warded sanctum.)~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("LCA_PrisonKnowledge", "GLOBAL", 2)
+		~
+		EXIT
+	END
+	
+	IF ~
+		Global("LCA_MetIncubus", "GLOBAL", 2)
+		Global("LCA_PrisonKnowledge", "GLOBAL", 3)
+	~ THEN BEGIN LCA_PrisonKnowledge_3
+		SAY @125 /* ~(Again, you've been transported back to Lyriel's room.)~ */
+		
+		= @126 /* ~(Your understanding of how the demon is able to manipulate the energies of this place has increased, and your confident that you can breach and enter his sanctum, if you choose to do so.)~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("LCA_PrisonKnowledge", "GLOBAL", 4)
+		~
+		EXIT
+	END
+	
+	IF ~
+		Global("LCA_MetIncubus", "GLOBAL", 3)
+		Global("LCA_PrisonKnowledge", "GLOBAL", 5)
+	~ THEN BEGIN LCA_PrisonKnowledge_5
+		SAY @127 /* ~(The demon has again transported you to Lyriel's room.)~ */
+		
+		= @128 /* you with the knowledge you need to manipulate this prison to your own benefit. The knowledge will come handy when you confront the demon, you think to yourself.)~*/
+		
+		= @129 /* ~(Enough games — the demon awaits in his sanctum.)~*/'
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("LCA_PrisonKnowledge", "GLOBAL", 6)
+		~
+		EXIT
+	END
+	
+	IF ~
 		Global("LCA_G1_Intro", "GLOBAL", 1)
 	~ THEN BEGIN LCA_G1_Intro
 		SAY @121 /* ~(You come to, and take stock of your surroundings. It would seem that somehow, the demon has recreated the coalition's siege of Dragonspear. The sounds of a raging battle emanate from the courtyard beyond the gate.)~ */

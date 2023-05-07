@@ -1,6 +1,115 @@
 BEGIN ~LCINCUB~
 
 IF ~
+	Global("LCA_ParleyAttack", "GLOBAL", 1)
+~ THEN BEGIN LCA_ParleyAttack
+	SAY @62 /* ~I invite you for parley, and this is how you respond? Do they no longer teach proper etiquette in the outside world? Begone!~  */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_ParleyAttack", "GLOBAL", 0)
+		StartCutSceneMode()
+		StartCutScene("LCPENT")
+	~
+	EXIT
+	
+	IF ~
+		Global("LCA_GaveTreasure", "GLOBAL", 1)
+	~ THEN 
+	DO ~
+		SetGlobal("LCA_ParleyAttack", "GLOBAL", 0)
+		ActionOverride(Player1, DestroyItem("LCAXE"))
+		ActionOverride(Player1, DestroyItem("LCGOOSE"))
+		ActionOverride(Player1, DestroyItem("LCGIRDLE"))
+		StartCutSceneMode()
+		StartCutScene("LCPENT")
+	~
+	EXIT
+	
+END
+
+IF ~
+	Global("LCA_GaveTreasure", "GLOBAL", 1)
+~ THEN BEGIN LCA_GaveTreasure
+	SAY @54 /* ~So? What've you decided?~ */
+	
+	IF ~
+		Gender(Player1,MALE)
+	~ THEN REPLY @55 /*~The amulet, and our freedom, in exchange for the axe.~*/
+	DO ~
+		SetGlobal("LCA_IncubusAxe", "GLOBAL", 1)
+		ActionOverride(Player1, DestroyItem("LCAXE"))
+		ActionOverride(Player1, DestroyItem("LCGOOSE"))
+		ActionOverride(Player1, DestroyItem("LCGIRDLE"))
+	~
+	GOTO LCA_GiveAmuletToDemon_M
+	
+	IF ~
+		Gender(Player1,FEMALE)
+	~ THEN REPLY @55 /*~The amulet, and our freedom, in exchange for the axe.~*/
+	DO ~
+		SetGlobal("LCA_IncubusAxe", "GLOBAL", 1)
+		ActionOverride(Player1, DestroyItem("LCAXE"))
+		ActionOverride(Player1, DestroyItem("LCGOOSE"))
+		ActionOverride(Player1, DestroyItem("LCGIRDLE"))
+	~
+	GOTO LCA_GiveAmuletToDemon_F
+	
+	IF ~
+		Gender(Player1, MALE)
+	~ THEN REPLY @56 /* ~The amulet, and our freedom, in exchange for the golden goose.~ */
+	DO ~
+		SetGlobal("LCA_IncubusGoose", "GLOBAL", 1)
+		ActionOverride(Player1, DestroyItem("LCAXE"))
+		ActionOverride(Player1, DestroyItem("LCGOOSE"))
+		ActionOverride(Player1, DestroyItem("LCGIRDLE"))
+	~
+	GOTO LCA_GiveAmuletToDemon_M
+	
+	IF ~
+		Gender(Player1, FEMALE)
+	~ THEN REPLY @56 /* ~The amulet, and our freedom, in exchange for the golden goose.~ */
+	DO ~
+		SetGlobal("LCA_IncubusGoose", "GLOBAL", 1)
+		ActionOverride(Player1, DestroyItem("LCAXE"))
+		ActionOverride(Player1, DestroyItem("LCGOOSE"))
+		ActionOverride(Player1, DestroyItem("LCGIRDLE"))
+	~
+	GOTO LCA_GiveAmuletToDemon_F
+	
+	IF ~
+		Gender(Player1, MALE)
+	~ THEN REPLY @57 /* ~The amulet, and our freedom, in exchange for the girdle.~ */
+	DO ~
+		SetGlobal("LCA_IncubusGirdle", "GLOBAL", 1)
+		ActionOverride(Player1, DestroyItem("LCAXE"))
+		ActionOverride(Player1, DestroyItem("LCGOOSE"))
+		ActionOverride(Player1, DestroyItem("LCGIRDLE"))
+	~
+	GOTO LCA_GiveAmuletToDemon_M
+	
+	IF ~
+		Gender(Player1, FEMALE)
+	~ THEN REPLY @57 /* ~The amulet, and our freedom, in exchange for the girdle.~ */
+	DO ~
+		SetGlobal("LCA_IncubusGirdle", "GLOBAL", 1)
+		ActionOverride(Player1, DestroyItem("LCAXE"))
+		ActionOverride(Player1, DestroyItem("LCGOOSE"))
+		ActionOverride(Player1, DestroyItem("LCGIRDLE"))
+	~
+	GOTO LCA_GiveAmuletToDemon_F
+	
+	IF ~~ THEN REPLY @60 /* ~I need more time to choose.~*/
+	GOTO LCA_ComeBackLater
+	
+	IF ~~ THEN REPLY @58 /* ~These trinkets are worthless. No deal.~ */
+	DO ~
+		SetGlobal("LCA_GaveTreasure", "GLOBAL", 0)
+	~
+	GOTO LCA_DontWantTreasure
+END
+
+IF ~
 	Global("LCA_MetIncubus", "GLOBAL", 0)
 ~ THEN BEGIN LCA_StartFirstMeet
 	SAY @0 /* ~Hm. Well done.~ */
@@ -318,7 +427,7 @@ IF ~~ THEN BEGIN LCA_WhatAreYouOffering
 	
 	IF ~~ THEN
 	DO ~
-	
+		SetGlobal("LCA_GaveTreasure", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -402,6 +511,12 @@ IF ~~ THEN BEGIN LCA_HaveSomethingDemonWants_Party
 	GOTO LCA_AskAboutLyriel //OK
 END
 
+IF ~~ THEN BEGIN LCA_ComeBackLater
+	SAY @61 /* ~Return once you've made your decision.~ */
+	
+	IF ~~ THEN EXIT
+END
+
 IF ~~ THEN BEGIN LCA_AskAboutLyriel
 	SAY @15 /* ~No! She is mine. Give me the amulet in exhange for your freedom from this place.~*/
 	
@@ -425,6 +540,20 @@ IF ~~ THEN BEGIN LCA_AskAboutLyriel
 	~ THEN REPLY @13 /*~Here, take it.~*/
 	GOTO LCA_GiveAmuletToDemon_F //OK
 	
+END
+
+IF ~~ THEN BEGIN LCA_DontWantTreasure
+	SAY @59 /*~You are a fool! Begone!~ */
+	
+	IF ~~ THEN 
+	DO ~
+		ActionOverride(Player1, DestroyItem("LCAXE"))
+		ActionOverride(Player1, DestroyItem("LCGOOSE"))
+		ActionOverride(Player1, DestroyItem("LCGIRDLE"))
+		StartCutSceneMode()
+		StartCutScene("LCPENT")
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN LCA_AskDemonAmulet
