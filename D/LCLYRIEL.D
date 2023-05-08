@@ -260,16 +260,12 @@ IF ~~ THEN BEGIN LCA_HowToEscape2
 	
 	= @16 /* ~(She gestures to the painting on the northeast wall of the room.)~ */
 	
-	= @17 /* ~You won't be able to enter it without defeating his guardians.~ */
-	
-	= @18 /* ~(She gestures to the three paintings on the northwest wall of the room.)~ */
-	
-	= @19 /*  ~Be careful — his guardians are fierce opponents.~ */
+	= @17 /* ~You won't be able to enter. It's warded. The other paintings are portals to different realities... maybe within them, you can find the knowledge you need to escape this place.~ */
 	
 	IF ~~ THEN REPLY @42 /* ~Is there any help you can give me?~ */
 	GOTO LCA_Healing //OK
 	
-	IF ~~ THEN REPLY @43 /* ~Defeat the guardians, then go after the demon. Got it.~ */
+	IF ~~ THEN REPLY @43 /* I'll see what I can do to get us out of here. */
 	EXIT
 END
 

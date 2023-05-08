@@ -82,6 +82,7 @@ override/LCBRILLA.dlg
 override/LCTMARSD.dlg
 override/LCALATOS.dlg
 override/LCGIRL2.dlg
+override/LCINCUB.dlg
 override/LCNOBLW.dlg
 override/DORNJ.dlg
 override/LCORPH01.dlg
@@ -346,6 +347,7 @@ override/LCHEXCOR.bcs
 override/LCHOWSPY.bcs
 override/LCILBENO.bcs
 override/LCILLASE.bcs
+override/LCINCUB.bcs
 override/LCINITP1.bcs
 override/LCKELHEX.bcs
 override/LCKIDN01.bcs
@@ -368,12 +370,13 @@ override/LCPROPOS.bcs
 override/LCROHMA1.bcs
 override/LCRTBG.bcs
 override/LCSARA.bcs
+override/LCSENT.bcs
 override/LCTIANNA.bcs
 override/LCTMARSU.bcs
 override/LCTRIGG1.bcs
 override/LCTRIGG2.bcs
 override/LCTRIGG3.bcs
-override/LCTRIGP2.bcs
+override/LCTRIGS.bcs
 override/LCTWNFOV.bcs
 override/LCTWNMOV.bcs
 override/LCUC.bcs

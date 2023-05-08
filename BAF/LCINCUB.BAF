@@ -1,0 +1,15 @@
+IF 
+	
+THEN
+	RESPONSE #100
+	
+END
+IF
+	HPPercentLT(Myself, 100)
+	!Global("LCA_ParleyAttack", "GLOBAL", 1)
+	InMyArea(Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_ParleyAttack", "GLOBAL", 1)
+		StartDialog("LCINCUB", Player1)
+END

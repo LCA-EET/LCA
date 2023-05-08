@@ -98,6 +98,13 @@ END
 IF ~~ THEN BEGIN LCA_TestInteraction
 	SAY @280
 	
+	IF ~~ THEN REPLY @294 /*LCINCUB*/
+	DO ~
+		CreateCreature("LCINCUB", [-1.-1], N)
+		Wait(1)
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @293 /*~LCLYRIEL~*/
 	DO ~
 		CreateCreature("LCLYRIEL", [-1.-1], N)
@@ -1063,6 +1070,60 @@ END
 
 IF ~~ THEN BEGIN LCA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
+	
+	IF ~~ THEN REPLY @295
+	DO ~
+		SetGlobal("LCA_GaveTreasure", "GLOBAL", 1)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @296
+	DO ~
+		SetGlobal("LCA_MetIncubus", "GLOBAL", 0)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @297
+	DO ~
+		SetGlobal("LCA_MetIncubus", "GLOBAL", 1)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @298
+	DO ~
+		SetGlobal("LCA_MetIncubus", "GLOBAL", 2)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @299
+	DO ~
+		SetGlobal("LCA_MetIncubus", "GLOBAL", 3)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @300
+	DO ~
+		SetGlobal("LCA_MetIncubus", "GLOBAL", 4)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @301
+	DO ~
+		SetGlobal("LCA_CompletedG1", "GLOBAL", 1)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @302
+	DO ~
+		SetGlobal("LCA_CompletedG2", "GLOBAL", 1)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @303
+	DO ~
+		SetGlobal("LCA_CompletedG3", "GLOBAL", 1)
+	~
+	GOTO LCA_ReturnToMainMenu
 	
 	IF ~~ THEN REPLY @281
 	DO ~

@@ -5,6 +5,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("LCA_Sing", "LOCALS", 1)
 		DisplayStringHead(Myself, ~(Soft, melancholy singing.)~)
+		SetGlobalTimer("LCA_LyrielSingTimer", "GLOBAL", TWO_ROUNDS)
 		Continue()
 END
 
@@ -16,4 +17,14 @@ THEN
 		FaceObject(Player1)
 		SmallWait(1)
 		StartDialog("LCLYRIEL", Player1)
+END
+
+IF
+	GlobalTimerExpired("LCA_LyrielSingTimer", "GLOBAL")
+THEN
+	RESPONSE #50
+		DisplayStringHead(Myself, ~(Soft, melancholy singing.)~)
+		SetGlobalTimer("LCA_LyrielSingTimer", "GLOBAL", TWO_ROUNDS)
+	RESPONSE #50
+		SetGlobalTimer("LCA_LyrielSingTimer", "GLOBAL", TWO_ROUNDS)
 END

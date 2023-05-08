@@ -105,7 +105,7 @@ APPEND ~PLAYER1~
 		
 		= @128 /* you with the knowledge you need to manipulate this prison to your own benefit. The knowledge will come handy when you confront the demon, you think to yourself.)~*/
 		
-		= @129 /* ~(Enough games — the demon awaits in his sanctum.)~*/'
+		= @129 /* ~(Enough games — the demon awaits in his sanctum.)~*/
 		
 		IF ~~ THEN
 		DO ~

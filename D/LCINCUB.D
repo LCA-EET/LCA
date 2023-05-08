@@ -10,6 +10,7 @@ IF ~
 		SetGlobal("LCA_ParleyAttack", "GLOBAL", 0)
 		StartCutSceneMode()
 		StartCutScene("LCPENT")
+		DestroySelf()
 	~
 	EXIT
 	
@@ -23,6 +24,7 @@ IF ~
 		ActionOverride(Player1, DestroyItem("LCGIRDLE"))
 		StartCutSceneMode()
 		StartCutScene("LCPENT")
+		DestroySelf()
 	~
 	EXIT
 	
@@ -110,7 +112,7 @@ IF ~
 END
 
 IF ~
-	Global("LCA_MetIncubus", "GLOBAL", 0)
+	Global("LCA_MetIncubus", "GLOBAL", 1)
 ~ THEN BEGIN LCA_StartFirstMeet
 	SAY @0 /* ~Hm. Well done.~ */
 	
@@ -162,7 +164,7 @@ IF ~
 END
 
 IF ~
-	Global("LCA_MetIncubus", "GLOBAL", 1)
+	Global("LCA_MetIncubus", "GLOBAL", 3)
 ~ THEN BEGIN LCA_StartSecondMeet
 	SAY @27 /*~Again, you succeed in besting my pets.~ */
 	
@@ -204,7 +206,7 @@ IF ~
 END
 
 IF ~
-	Global("LCA_MetIncubus", "GLOBAL", 2)
+	Global("LCA_MetIncubus", "GLOBAL", 5)
 ~ THEN BEGIN LCA_StartThirdMeet
 	SAY @39 /*~Ah, you've returned.~ */
 	
@@ -419,7 +421,7 @@ IF ~~ THEN BEGIN LCA_Suffering2
 	IF ~~ THEN REPLY @44 /* ~What exactly are you offering?~ */
 	GOTO LCA_WhatAreYouOffering
 	IF ~~ THEN REPLY @53 /* ~No deal. And the next time we meet will be our last.~ */
-	GOTO 
+	GOTO LCA_DontWantTreasure
 END
 
 IF ~~ THEN BEGIN LCA_WhatAreYouOffering
