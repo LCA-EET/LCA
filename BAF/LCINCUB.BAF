@@ -1,9 +1,15 @@
 IF 
-	
+	InMyArea(Player1)
+	Global("LCA_DemonSpeak", "GLOBAL", 1)
+	Global("LCA_SanctumCS_End", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-	
+		SetGlobal("LCA_DemonSpeak", "GLOBAL", 0)
+		SetGlobal("LCA_SanctumCS_End", "GLOBAL", 0)
+		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
+		StartDialog("LCINCUB", Player1)
 END
+
 IF
 	HPPercentLT(Myself, 100)
 	!Global("LCA_ParleyAttack", "GLOBAL", 1)
@@ -11,5 +17,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_ParleyAttack", "GLOBAL", 1)
+		SetGlobal("LCA_HealDemon", "GLOBAL", 1)
 		StartDialog("LCINCUB", Player1)
 END

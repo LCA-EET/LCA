@@ -98,6 +98,13 @@ END
 IF ~~ THEN BEGIN LCA_TestInteraction
 	SAY @280
 	
+	IF ~~ THEN REPLY @309
+	DO ~
+		CreateCreature("LCG1001A", [-1.-1], N)
+		Wait(1)
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @294 /*LCINCUB*/
 	DO ~
 		CreateCreature("LCINCUB", [-1.-1], N)
@@ -1071,6 +1078,30 @@ END
 IF ~~ THEN BEGIN LCA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
 	
+	IF ~~ THEN REPLY @307
+	DO ~
+		SetGlobal("LCA_DemonDebug", "GLOBAL", 0)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @308
+	DO ~
+		SetGlobal("LCA_DemonDebug", "GLOBAL", 1)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @305
+	DO ~
+		SetGlobal("LCA_DemonSpeak", "GLOBAL", 0)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @306
+	DO ~
+		SetGlobal("LCA_DemonSpeak", "GLOBAL", 1)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
 	IF ~~ THEN REPLY @295
 	DO ~
 		SetGlobal("LCA_GaveTreasure", "GLOBAL", 1)
@@ -1104,6 +1135,12 @@ IF ~~ THEN BEGIN LCA_Menu_AdjustVariables
 	IF ~~ THEN REPLY @300
 	DO ~
 		SetGlobal("LCA_MetIncubus", "GLOBAL", 4)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @304
+	DO ~
+		SetGlobal("LCA_MetIncubus", "GLOBAL", 5)
 	~
 	GOTO LCA_ReturnToMainMenu
 	
@@ -1638,6 +1675,13 @@ END
 
 IF ~~ THEN BEGIN LCA_Menu_StartCutscene
 	SAY @15 /*  ~Of course. Which cutscene do you want to start?~ */
+	
+	IF ~~ THEN REPLY @310
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("LCPENT")
+	~
+	EXIT
 	
 	IF ~~ THEN REPLY @289
 	DO ~

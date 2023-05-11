@@ -1,26 +1,31 @@
-IF
-	Global("LCA_CaelarTransform", "GLOBAL", 1)
+IF 
+	Global("LCA_BeginSpawning", "GLOBAL", 1)
+	OR(2)
+		Dead("LCCAELA1")
+		Dead("LCCAELA2")
 THEN
 	RESPONSE #100
-		Wait(1)
-		ActionOverride("LCCAELAR", ChangeAnimation("bdcaela2"))
-		ApplySpell("LCCAELAR", CLERIC_HEAL)
-		ActionOverride("LCCAELAR", DestroyItem("MONHP1"))
-		ChangeAlignment("LCCAELAR", LAWFUL_EVIL)
-		SetGlobal("LCA_CaelarTransform", "GLOBAL", 2)
+		SetGlobal("LCA_BeginSpawning", "GLOBAL", 2)
 END
 
 IF
-	Dead("LCCAELAR")
+	OR(2)
+		Dead("LCCAELA1")
+		Dead("LCCAELA2")
 	Dead("LCASHATI")
 	Dead("LCBARGHE")
 	Dead("LCHEPHER")
-	!Global("LCA_DemonSpeakG1", "GLOBAL", 1)
+	!Global("LCA_DemonSpeak", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_BeginSpawning", "GLOBAL", 0)
+		SetInterrupt(FALSE)
+		SetGlobal("LCA_CompletedG1", "GLOBAL", 1)
+		DisplayStringHead(Myself, ~Your vision darkens...~)
 		Wait(3)
-		SetGlobal("LCA_DemonSpeakG1", "GLOBAL", 1)
+		SetGlobal("LCA_DemonSpeak", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		StartCutSceneMode()
+		StartCutScene("LCSENT")
 END
 
 IF 

@@ -1,0 +1,7 @@
+IF
+	HPPercentLT("LCINCUB", 100)
+	GlobalLT("LCA_ConfrontDemon", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ApplySpell("LCINCUB", CLERIC_HEAL)
+END

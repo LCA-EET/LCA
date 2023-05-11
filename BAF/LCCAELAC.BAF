@@ -1,11 +1,25 @@
+IF 
+	Global("LCA_CaelarTransform", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ApplySpell(Myself, CLERIC_HEAL)
+		SmallWait(1)
+		DestroyItem("MONHP01")
+		SmallWait(1)
+		ActionOverride("LCCAELAR", ChangeAnimation("LCG1001B"))
+		SetGlobal("LCA_CaelarTransform", "GLOBAL", 2)SetGlobal("LCA_BeginSpawning", "GLOBAL", 2)
+		SetInterrupt(TRUE)
+END
 IF
 	HPPercentLT(Myself, 10)
 	GlobalLT("LCA_CaelarTransform", "GLOBAL", 1)
 THEN
 	RESPONSE #100
+		SetInterrupt(FALSE)
 		DisplayStringHead(Myself, ~No! Master, grant me POWER!~)
 		SetGlobal("LCA_CaelarTransform", "GLOBAL", 1)
-		
+		SetInterrupt(TRUE)
 END
 
 IF
@@ -33,29 +47,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("BD_IHeal","LOCALS",0)
-END
-
-IF
-	Alignment(Myself,LAWFUL_EVIL)
-	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	HPPercentLT(Myself,76)
-	HasItem("POTN10",Myself)  // Potion of Invisibility
-	HasItem("POTN52",Myself)  // Potion of Extra Healing
-	Global("BD_IHeal","LOCALS",0)
-	!StateCheck(Myself,STATE_INVISIBLE)
-	!CheckSpellState(Myself,CANNOT_TURN_INVISIBLE)
-	!CheckStatGT(NearestEnemyOf(Myself),0,TRUE_SIGHT)
-	!CheckStatGT(SecondNearestEnemyOf(Myself),0,TRUE_SIGHT)
-	!CheckStatGT(ThirdNearestEnemyOf(Myself),0,TRUE_SIGHT)
-	!CheckStatGT(FourthNearestEnemyOf(Myself),0,TRUE_SIGHT)
-	!CheckStatGT(FifthNearestEnemyOf(Myself),0,TRUE_SIGHT)
-	!CheckStatGT(SixthNearestEnemyOf(Myself),0,TRUE_SIGHT)
-THEN
-	RESPONSE #100
-		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		SetGlobal("BD_IHeal","LOCALS",1)
-		UseItem("POTN10",Myself)  // Potion of Invisibility
-		DisplayStringHead(Myself,256560)  // *quaffs a potion*
 END
 
 IF

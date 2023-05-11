@@ -1,6 +1,37 @@
 BEGIN ~LCINCUB~
 
 IF ~
+	Global("LCA_ConfrontDemon", "GLOBAL", 1)
+~ THEN BEGIN LCA_ConfrontDemon
+	SAY @67 /* ~What's this?~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_ConfrontDemon", "GLOBAL", 2)
+	~
+	GOTO LCA_ConfrontDemon2
+END
+
+IF ~~ THEN BEGIN LCA_ConfrontDemon2
+	SAY @70 /* ~How did you get past the wards?~ */
+	
+	IF ~~ THEN REPLY @66 /* ~Surprised?~ */
+	GOTO LCA_ConfrontDemon3
+	
+	IF ~~ THEN REPLY @68 /* ~Your time has finally come, demon.~ */
+	GOTO LCA_ConfrontDemon3
+END
+
+IF ~~ THEN BEGIN LCA_ConfrontDemon3
+	SAY @70 /* ~You've made a grave mistake in coming here, child of Bhaal. I gave you the chance of leaving here with your life, but you instead have chosen death.~ */
+	
+	= @71 /* ~At least now I shall have the amulet, and with it, I will claim the love of my dear Lyriel.~ */
+	
+	IF ~~ THEN
+	EXIT
+END
+
+IF ~
 	Global("LCA_ParleyAttack", "GLOBAL", 1)
 ~ THEN BEGIN LCA_ParleyAttack
 	SAY @62 /* ~I invite you for parley, and this is how you respond? Do they no longer teach proper etiquette in the outside world? Begone!~  */
@@ -139,7 +170,7 @@ IF ~
 	IF ~
 		Global("LCA_CompletedG3", "GLOBAL", 1)
 		!Global("LCA_AskAboutGorion", "GLOBAL", 1)
-	~ THEN REPLY @34 /* ~That trial was not at all how I remembered it.~ */
+	~ THEN REPLY @38 /* ~You'll pay for mocking the memory of my foster father!~ */
 	DO ~
 		SetGlobal("LCA_AskAboutGorion", "GLOBAL", 1)
 		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
@@ -258,20 +289,22 @@ IF ~
 END
 
 IF ~~ THEN BEGIN LCA_AskAboutGorion
-	SAY @40 /* ~Spare me the indignation. You've always wondered what Gorion would think of the <PRO_MANWOMAN> you've become.~*/
+	SAY @40 /* ~Spare me the indignation, child.~ */
+
+	= @65 /* You've always wondered what Gorion would think of the <PRO_MANWOMAN> you've become.~*/
 	
 	IF ~
-		Global("LCA_MetIncubus", "GLOBAL", 1)
+		Global("LCA_MetIncubus", "GLOBAL", 2)
 	~ THEN 
 	GOTO LCA_FirstMeeting //OK
 	
 	IF ~
-		Global("LCA_MetIncubus", "GLOBAL", 2)
+		Global("LCA_MetIncubus", "GLOBAL", 4)
 	~ THEN
 	GOTO LCA_SecondMeeting //OK
 	
 	IF ~
-		Global("LCA_MetIncubus", "GLOBAL", 3)
+		Global("LCA_MetIncubus", "GLOBAL", 6)
 	~ THEN
 	GOTO LCA_ThirdMeeting //OK
 END
@@ -282,17 +315,17 @@ IF ~~ THEN BEGIN LCA_AskAboutDS
 	= @8 /* ~I hope you enjoyed it as much as I enjoyed watching you do what you do best... though the skill and power of the pawns you defeated pale in comparison to my own.~ */
 	
 	IF ~
-		Global("LCA_MetIncubus", "GLOBAL", 1)
+		Global("LCA_MetIncubus", "GLOBAL", 2)
 	~ THEN 
 	GOTO LCA_FirstMeeting //OK
 	
 	IF ~
-		Global("LCA_MetIncubus", "GLOBAL", 2)
+		Global("LCA_MetIncubus", "GLOBAL", 4)
 	~ THEN
 	GOTO LCA_SecondMeeting //OK
 	
 	IF ~
-		Global("LCA_MetIncubus", "GLOBAL", 3)
+		Global("LCA_MetIncubus", "GLOBAL", 6)
 	~ THEN
 	GOTO LCA_ThirdMeeting //OK
 END
@@ -303,17 +336,17 @@ IF ~~ THEN BEGIN LCA_AskAboutTrial
 	= @35 /*  ~Think of what you saw as one possible outcome... one of many.~ */
 	
 	IF ~
-		Global("LCA_MetIncubus", "GLOBAL", 1)
+		Global("LCA_MetIncubus", "GLOBAL", 2)
 	~ THEN 
 	GOTO LCA_FirstMeeting //OK
 	
 	IF ~
-		Global("LCA_MetIncubus", "GLOBAL", 2)
+		Global("LCA_MetIncubus", "GLOBAL", 4)
 	~ THEN
 	GOTO LCA_SecondMeeting //OK
 	
 	IF ~
-		Global("LCA_MetIncubus", "GLOBAL", 3)
+		Global("LCA_MetIncubus", "GLOBAL", 6)
 	~ THEN
 	GOTO LCA_ThirdMeeting //OK
 	
@@ -437,7 +470,11 @@ END
 IF ~~ THEN LCA_TakeAmulet
 	SAY @32 /* ~There's no need. Sooner or later you'll come to your senses, whether it take a day, a year, or an eon. Give Lyriel my regards.~  */
 	
-	IF ~~ THEN
+	IF ~~ THEN EXIT
+	
+	IF ~
+		!Global("LCA_DemonDebug", "GLOBAL", 1)
+	~ THEN
 	DO ~
 		StartCutSceneMode()
 		StartCutScene("LCPENT")
@@ -524,12 +561,26 @@ IF ~~ THEN BEGIN LCA_AskAboutLyriel
 	
 	IF ~
 		!NumInPartyGT(1)
+		Global("LCA_MetIncubus", "GLOBAL", 2)
 	~ THEN REPLY @12 /* ~No. I'll find my own way out of this place.~ */
 	GOTO LCA_WontGiveAmulet //OK
 	
 	IF ~
 		NumInPartyGT(1)
+		Global("LCA_MetIncubus", "GLOBAL", 2)
 	~ THEN REPLY @26 /* ~No. We'll find our own way out of here.~ */
+	GOTO LCA_WontGiveAmulet //OK
+	
+	IF ~
+		!NumInPartyGT(1)
+		Global("LCA_MetIncubus", "GLOBAL", 4)
+	~ THEN REPLY @63 /* ~No. I'll find my own way out of this place.~ */
+	GOTO LCA_WontGiveAmulet //OK
+	
+	IF ~
+		NumInPartyGT(1)
+		Global("LCA_MetIncubus", "GLOBAL", 4)
+	~ THEN REPLY @63 /* ~No. We'll find our own way out of here.~ */
 	GOTO LCA_WontGiveAmulet //OK
 	
 	IF ~
@@ -544,10 +595,35 @@ IF ~~ THEN BEGIN LCA_AskAboutLyriel
 	
 END
 
+IF ~~ THEN BEGIN LCA_StillWontGiveAmulet
+	SAY @64 /*~I can afford to wait. As I mentioned earlier, time is meaningless here. Give Lyriel my regards.~ */
+	
+	IF ~~ THEN EXIT
+	
+	IF ~
+		!Global("LCA_DemonDebug", "GLOBAL", 1)
+	~ THEN
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("LCPENT")
+	~
+	EXIT
+END
+
 IF ~~ THEN BEGIN LCA_DontWantTreasure
 	SAY @59 /*~You are a fool! Begone!~ */
 	
-	IF ~~ THEN 
+	IF ~~ THEN
+	DO ~
+		ActionOverride(Player1, DestroyItem("LCAXE"))
+		ActionOverride(Player1, DestroyItem("LCGOOSE"))
+		ActionOverride(Player1, DestroyItem("LCGIRDLE"))
+	~
+	EXIT
+	
+	IF ~
+		!Global("LCA_DemonDebug", "GLOBAL", 1)
+	~ THEN
 	DO ~
 		ActionOverride(Player1, DestroyItem("LCAXE"))
 		ActionOverride(Player1, DestroyItem("LCGOOSE"))
@@ -556,6 +632,7 @@ IF ~~ THEN BEGIN LCA_DontWantTreasure
 		StartCutScene("LCPENT")
 	~
 	EXIT
+
 END
 
 IF ~~ THEN BEGIN LCA_AskDemonAmulet
@@ -586,7 +663,11 @@ END
 IF ~~ THEN BEGIN LCA_WontGiveAmulet
 	SAY @17 /* ~Very well. Time is of no consequence, in this place. Eventually you will acquiesce to my demands. Begone.~ */
 	
-	IF ~~ THEN
+	IF ~~ THEN EXIT
+	
+	IF ~
+		!Global("LCA_DemonDebug", "GLOBAL", 1)
+	~ THEN
 	DO ~
 		StartCutSceneMode()
 		StartCutScene("LCPENT")

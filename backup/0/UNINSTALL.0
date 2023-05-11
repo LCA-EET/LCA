@@ -323,6 +323,7 @@ override/LCDEBR03.bcs
 override/LCDEBREF.bcs
 override/LCDEBRST.bcs
 override/LCDELRBG.bcs
+override/LCDEMSAN.bcs
 override/LCDINN01.bcs
 override/LCDINNER.bcs
 override/LCDOPP.bcs
@@ -365,12 +366,14 @@ override/LCP0706.bcs
 override/LCPAINT.bcs
 override/LCPAINT1.bcs
 override/LCPENT.bcs
+override/LCPEXIT.bcs
 override/LCPROPO1.bcs
 override/LCPROPOS.bcs
 override/LCROHMA1.bcs
 override/LCRTBG.bcs
 override/LCSARA.bcs
 override/LCSENT.bcs
+override/LCSENT1.bcs
 override/LCTIANNA.bcs
 override/LCTMARSU.bcs
 override/LCTRIGG1.bcs
@@ -475,6 +478,7 @@ override/LCPAINT1.ARE
 override/LCG1.ARE
 override/LCG2.ARE
 override/LCG3.ARE
+override/LCDEMSAN.ARE
 override/LCG1001A.CRE
 override/LCG1001B.CRE
 override/LCG1002.CRE

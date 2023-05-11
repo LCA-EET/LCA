@@ -49,6 +49,7 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN REPLY @111 /* ~Yes.~ */
 		DO ~
+			SetGlobal("LCA_ConfrontDemon", "GLOBAL", 1)
 			StartCutSceneMode()
 			StartCutScene("LCSENT")
 		~

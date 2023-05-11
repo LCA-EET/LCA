@@ -2,17 +2,21 @@ IF
 	True()
 THEN
 	RESPONSE #100
+		SetInterrupt(FALSE)
 		CutSceneID(Player1)
 		FadeToColor([30.0],0)
 		Wait(2)
-		LeaveAreaLUAPanic("LCDEMSAN", "", [290.425], NE)
-		LeaveAreaLUA("LCDEMSAN", "", [290.425], NE)
-		ActionOverride(Player2, LeaveAreaLUA("LCDEMSAN", "", [290.425], NE))
-		ActionOverride(Player3, LeaveAreaLUA("LCDEMSAN", "", [290.425], NE))
-		ActionOverride(Player4, LeaveAreaLUA("LCDEMSAN", "", [290.425], NE))
-		ActionOverride(Player5, LeaveAreaLUA("LCDEMSAN", "", [290.425], NE))
-		ActionOverride(Player6, LeaveAreaLUA("LCDEMSAN", "", [290.425], NE))
+		LeaveAreaLUAPanic("LCDEMSAN", "", [320.320], N)
+		LeaveAreaLUA("LCDEMSAN", "", [320.320], N)
+		ActionOverride(Player2, LeaveAreaLUA("LCDEMSAN", "", [320.320], N))
+		ActionOverride(Player3, LeaveAreaLUA("LCDEMSAN", "", [320.320], N))
+		ActionOverride(Player4, LeaveAreaLUA("LCDEMSAN", "", [320.320], N))
+		ActionOverride(Player5, LeaveAreaLUA("LCDEMSAN", "", [320.320], N))
+		ActionOverride(Player6, LeaveAreaLUA("LCDEMSAN", "", [320.320], N))
 		FadeFromColor([30.0],0)
 		Wait(1)
+		SetGlobal("LCA_SanctumCS_End", "GLOBAL", 1)
+		SetInterrupt(TRUE)
 		EndCutSceneMode()
+		
 END
