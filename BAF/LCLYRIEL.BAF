@@ -21,6 +21,7 @@ END
 
 IF
 	GlobalTimerExpired("LCA_LyrielSingTimer", "GLOBAL")
+	!Global("LCA_LeavePrison", "GLOBAL", 1)
 THEN
 	RESPONSE #50
 		DisplayStringHead(Myself, ~(Soft, melancholy singing.)~)

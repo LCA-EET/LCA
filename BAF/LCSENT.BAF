@@ -2,10 +2,11 @@ IF
 	True()
 THEN
 	RESPONSE #100
-		SetInterrupt(FALSE)
 		CutSceneID(Player1)
 		FadeToColor([30.0],0)
 		Wait(2)
+		CopyGroundPilesTo("LCPAINT1", [370.290])
+		Wait(1)
 		LeaveAreaLUAPanic("LCDEMSAN", "", [320.320], N)
 		LeaveAreaLUA("LCDEMSAN", "", [320.320], N)
 		ActionOverride(Player2, LeaveAreaLUA("LCDEMSAN", "", [320.320], N))
@@ -16,7 +17,6 @@ THEN
 		FadeFromColor([30.0],0)
 		Wait(1)
 		SetGlobal("LCA_SanctumCS_End", "GLOBAL", 1)
-		SetInterrupt(TRUE)
 		EndCutSceneMode()
 		
 END
