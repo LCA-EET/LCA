@@ -9,6 +9,21 @@ THEN
 END
 
 IF
+	Global("LCA_BypassG1", "GLOBAL", 1)
+	!Global("LCA_CompletedG1", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("LCA_CompletedG1", "GLOBAL", 1)
+		DisplayStringHead(Myself, ~Your vision darkens...~)
+		Wait(3)
+		SetGlobal("LCA_DemonSpeak", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		StartCutSceneMode()
+		StartCutScene("LCSENT")
+END
+
+IF
 	OR(2)
 		Dead("LCCAELA1")
 		Dead("LCCAELA2")
@@ -16,6 +31,7 @@ IF
 	Dead("LCBARGHE")
 	Dead("LCHEPHER")
 	!Global("LCA_DemonSpeak", "GLOBAL", 1)
+	!Global("LCA_CompletedG1", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)

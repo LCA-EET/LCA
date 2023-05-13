@@ -683,6 +683,8 @@ IF ~~ THEN BEGIN LCA_GiveAmuletToDemon_M
 	DO ~
 		SetGlobal("LCA_GaveUpAmulet", "GLOBAL", 1)
 		SetGlobal("LCA_LeavePrison", "GLOBAL", 1)
+		AddexperienceParty(50000)
+		AddJournalEntry(@72, INFO)
 		StartCutSceneMode()
 		StartCutScene("LCPEXIT")
 	~
@@ -696,6 +698,8 @@ IF ~~ THEN BEGIN LCA_GiveAmuletToDemon_F
 	DO ~
 		SetGlobal("LCA_GaveUpAmulet", "GLOBAL", 1)
 		SetGlobal("LCA_LeavePrison", "GLOBAL", 1)
+		AddexperienceParty(50000)
+		AddJournalEntry(@72, INFO)
 		StartCutSceneMode()
 		StartCutScene("LCPEXIT")
 	~

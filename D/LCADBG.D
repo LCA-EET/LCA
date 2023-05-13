@@ -1078,6 +1078,24 @@ END
 IF ~~ THEN BEGIN LCA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
 	
+	IF ~~ THEN REPLY @311
+	DO ~
+		SetGlobal("LCA_BypassG1", "GLOBAL", 1)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @312
+	DO ~
+		SetGlobal("LCA_BypassG2", "GLOBAL", 1)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @313
+	DO ~
+		SetGlobal("LCA_BypassG3", "GLOBAL", 1)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
 	IF ~~ THEN REPLY @307
 	DO ~
 		SetGlobal("LCA_DemonDebug", "GLOBAL", 0)

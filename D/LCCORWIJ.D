@@ -3790,7 +3790,14 @@ END
 IF ~~ THEN BEGIN LCA_TrappedG1
 	SAY @1421 /* ~Are we — are we still trapped? ~ */
 	
-	IF ~~ THEN REPLY @1422 /* ~I think so. Look — it seems to be a recreation of the siege.~ */
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1425 /* ~I think so, Captain. Look — it seems to be a recreation of the siege.~*/
+	GOTO LCA_TrappedG1_2
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1422 /* ~I think so. Look — it seems to be a recreation of the siege.~ */
 	GOTO LCA_TrappedG1_2
 END
 

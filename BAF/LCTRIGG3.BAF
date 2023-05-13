@@ -1,7 +1,7 @@
 IF
 	Clicked([ANYONE])
 	Range(LastTrigger,10)
-	!Global("LCA_Guardian3_Defeated", "GLOBAL",1)
+	!Global("LCA_CompletedG3", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_EnterG3", "GLOBAL", 1)
@@ -19,7 +19,7 @@ END
 IF 
 	Clicked([ANYONE])
 	Range(LastTrigger,10)
-	Global("LCA_Guardian3_Defeated", "GLOBAL",1)
+	Global("LCA_CompletedG3", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		DisplayString(Myself,~The painting depicts an underground laboratory.~)
