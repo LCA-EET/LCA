@@ -11,6 +11,7 @@ END
 IF
 	Global("LCA_BypassG1", "GLOBAL", 1)
 	!Global("LCA_CompletedG1", "GLOBAL", 1)
+	IsValidForPartyDialogue(Player1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)

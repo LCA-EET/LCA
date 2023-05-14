@@ -28,6 +28,19 @@ IF ~~ THEN BEGIN LCA_ConfrontDemon3
 	= @71 /* ~At least now I shall have the amulet, and with it, I will claim the love of my dear Lyriel.~ */
 	
 	IF ~~ THEN
+	DO ~
+		StartCutsceneMode()
+		StartCutScene("LCDEM1")
+	~
+	EXIT
+	
+	IF ~
+		Global("LCA_PrisonKnowledge", "GLOBAL", 6)
+	~ THEN
+	DO ~
+		StartCutsceneMode()
+		StartCutScene("LCDEM2")
+	~
 	EXIT
 END
 

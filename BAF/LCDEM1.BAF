@@ -1,0 +1,15 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneID(Player1)
+		CreateVisualEffect("SPPORTAL",[200.225])
+		CreateVisualEffect("SPPORTAL",[430.235])
+		CreateVisualEffect("SPPORTAL",[185.400])
+		CreateVisualEffect("SPPORTAL",[445.400])
+		Wait(2)
+		CreateCreature("LCDEM01",[200.225],SE)  
+		CreateCreature("LCDEM02",[430.235],SW)  
+		CreateCreature("LCDEM03",[185.400],NE)
+		CreateCreature("LCDEM04",[445.400],NW)
+END
