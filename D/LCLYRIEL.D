@@ -274,6 +274,9 @@ IF ~~ THEN BEGIN LCA_Healing
 	
 	IF ~~ THEN REPLY @45 /* ~Yes, please.~ */
 	GOTO LCA_GiveRezAndHeal //OK
+	
+	IF ~~ THEN REPLY @65 /*~No, not right now. I'll work on getting us out of here.~*/
+	EXIT
 END
 
 IF ~~ THEN BEGIN LCA_GiveHeal

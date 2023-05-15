@@ -5,9 +5,19 @@ THEN
 	RESPONSE #50
 		SetGlobal("LCA_ChooseAllegiance", "LOCALS", 1)
 		ChangeEnemyAlly(Myself,ALLY)
-		DisplayStringHead(Myself, "No... I serve the Bhaalspawn.")
+		DisplayStringHead(Myself, ~No... I serve the Bhaalspawn.~)
 	RESPONSE #50
 		SetGlobal("LCA_ChooseAllegiance", "LOCALS", 1)
 		ChangeEnemyAlly(Myself,ENEMY)
-		DisplayStringHead(Myself, "Yes... master.")
+		DisplayStringHead(Myself, ~Yes... master.~)
+END
+
+IF 
+	!Global("LCA_PrisonKnowledge", "GLOBAL", 6)
+	!Global("LCA_ChooseAllegiance", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_ChooseAllegiance", "LOCALS", 1)
+		ChangeEnemyAlly(Myself,ENEMY)
+		DisplayStringHead(Myself, ~Yes... master.~)
 END

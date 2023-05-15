@@ -1,0 +1,11 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		CutSceneID(Player1)
+		ActionOverride("LCINCUB", Enemy())
+		ActionOverride("LCINCUB", DestroyItem("MINHP1"))
+		SetGlobal("LCA_DemonSpawn", "GLOBAL", 2)
+		EndCutSceneMode()
+END

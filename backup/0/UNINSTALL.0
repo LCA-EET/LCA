@@ -323,6 +323,9 @@ override/LCDEBR03.bcs
 override/LCDEBREF.bcs
 override/LCDEBRST.bcs
 override/LCDELRBG.bcs
+override/LCDEM1.bcs
+override/LCDEM23.bcs
+override/LCDEM4.bcs
 override/LCDEMSAN.bcs
 override/LCDINN01.bcs
 override/LCDINNER.bcs
@@ -348,6 +351,7 @@ override/LCHEXCOR.bcs
 override/LCHOWSPY.bcs
 override/LCILBENO.bcs
 override/LCILLASE.bcs
+override/LCINCSUM.bcs
 override/LCINCUB.bcs
 override/LCINITP1.bcs
 override/LCKELHEX.bcs
@@ -508,6 +512,10 @@ override/LCCRUS06.CRE
 override/LCCRUS07.CRE
 override/LCCRUS08.CRE
 override/LCCRUS09.CRE
+override/LCDEM01.CRE
+override/LCDEM02.CRE
+override/LCDEM03.CRE
+override/LCDEM04.CRE
 override/LCMUTANK.CRE
 override/LCFERRUS.CRE
 override/BDADS1.bcs

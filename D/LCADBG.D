@@ -1078,6 +1078,18 @@ END
 IF ~~ THEN BEGIN LCA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
 	
+	IF ~~ THEN REPLY @314
+	DO ~
+		SetGlobal("LCA_PrisonKnowledge", "GLOBAL", 4)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @315
+	DO ~
+		SetGlobal("LCA_PrisonKnowledge", "GLOBAL", 6)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
 	IF ~~ THEN REPLY @311
 	DO ~
 		SetGlobal("LCA_BypassG1", "GLOBAL", 1)

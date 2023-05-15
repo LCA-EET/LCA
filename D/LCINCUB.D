@@ -13,7 +13,7 @@ IF ~
 END
 
 IF ~~ THEN BEGIN LCA_ConfrontDemon2
-	SAY @70 /* ~How did you get past the wards?~ */
+	SAY @69 /* ~How did you get past the wards?~ */
 	
 	IF ~~ THEN REPLY @66 /* ~Surprised?~ */
 	GOTO LCA_ConfrontDemon3
@@ -27,12 +27,34 @@ IF ~~ THEN BEGIN LCA_ConfrontDemon3
 	
 	= @71 /* ~At least now I shall have the amulet, and with it, I will claim the love of my dear Lyriel.~ */
 	
-	IF ~~ THEN
+	IF ~
+		NumInPartyLT(2)
+	~ THEN 
 	DO ~
-		StartCutsceneMode()
-		SetGlobal("LCA_DemonSpawn", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutScene("LCDEM1")
 	~
 	EXIT
+	
+	IF ~
+		NumInPartyGT(1)
+		NumInPartyLT(4)
+	~ THEN 
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("LCDEM23")
+	~
+	EXIT
+	
+	IF ~
+		NumInPartyGT(3)
+	~ THEN 
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("LCDEM4")
+	~
+	EXIT
+	
 END
 
 IF ~
