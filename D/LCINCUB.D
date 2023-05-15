@@ -32,6 +32,7 @@ IF ~~ THEN BEGIN LCA_ConfrontDemon3
 		StartCutsceneMode()
 		SetGlobal("LCA_DemonSpawn", "GLOBAL", 1)
 	~
+	EXIT
 END
 
 IF ~
