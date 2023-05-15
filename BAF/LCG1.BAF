@@ -16,7 +16,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("LCA_CompletedG1", "GLOBAL", 1)
-		DisplayStringHead(Myself, ~Your vision darkens...~)
+		DisplayStringHead(Player1, ~The world swirls, and your vision darkens...~)
 		Wait(3)
 		SetGlobal("LCA_DemonSpeak", "GLOBAL", 1)
 		SetInterrupt(TRUE)

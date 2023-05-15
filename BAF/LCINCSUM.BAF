@@ -11,4 +11,3 @@ THEN
 		ChangeEnemyAlly(Myself,ENEMY)
 		DisplayStringHead(Myself, "Yes... master.")
 END
-

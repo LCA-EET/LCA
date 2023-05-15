@@ -30,18 +30,8 @@ IF ~~ THEN BEGIN LCA_ConfrontDemon3
 	IF ~~ THEN
 	DO ~
 		StartCutsceneMode()
-		StartCutScene("LCDEM1")
+		SetGlobal("LCA_DemonSpawn", "GLOBAL", 1)
 	~
-	EXIT
-	
-	IF ~
-		Global("LCA_PrisonKnowledge", "GLOBAL", 6)
-	~ THEN
-	DO ~
-		StartCutsceneMode()
-		StartCutScene("LCDEM2")
-	~
-	EXIT
 END
 
 IF ~
