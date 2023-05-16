@@ -1,6 +1,82 @@
 BEGIN ~LCLYRIEL~
 
 IF ~
+	Global("LCA_DemonDead", "GLOBAL", 5)
+~ THEN BEGIN LCA_ReadyToLeave
+	SAY @73 /* ~Are you ready to leave?~ */
+	
+	IF ~~ THEN REPLY @74 /* ~Yes. Let's go.~ */
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("LCPEXIT")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @75 /* ~I need more time to prepare.~ */
+	EXIT
+	
+END
+
+IF ~
+	OR(2)
+		Global("LCA_DemonDead", "GLOBAL", 2)
+		Global("LCA_DemonDead", "GLOBAL", 3)
+~ THEN BEGIN LCA_IncubusDead
+	SAY @66 /* ~You've done it! Please hero, hold still and allow me to tend to your wounds.~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_DemonDead", "GLOBAL", 3)
+	~
+	EXIT
+END
+
+IF ~
+	Global("LCA_DemonDead", "GLOBAL", 4)
+~ THEN BEGIN LCA_IncubusDead2
+	SAY @67 /* ~You were able to break the wards and defeat the demon in his own enclave. Surely, you can lead us out of this place.~ */
+	
+	IF ~~ THEN 
+	DO ~
+		SetGlobal("LCA_DemonDead", "GLOBAL", 5)
+	~
+	GOTO LCA_IncubusDead3
+END
+
+IF ~~ THEN BEGIN LCA_IncubusDead3
+	SAY @76 /* ~Surely, you can lead us out of this place.~ */
+	
+	IF ~~ THEN REPLY @69 /* ~Right. Let's go.~ */
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("LCPEXIT")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @68 /* ~I need a moment to prepare.~ */
+	EXIT
+	
+	IF ~~ THEN REPLY @70 /* ~Before he died... he told me that he loved you.~ */
+	GOTO LCA_IncubusLove
+END
+
+IF ~~ THEN BEGIN LCA_IncubusLove
+	SAY @71 /* ~Hm... perhaps in his own way, he did. But I could never love such a monster.~ */
+	
+	= @72 /*  ~As much as he wronged me, I feel... I feel pity for him. I'm glad that his long imprisonment is finally over.~ */
+	
+	IF ~~ THEN REPLY @77 /* ~It's time to leave.~ */
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("LCPEXIT")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @78 /* ~Listen, I need a moment to gather some things. I'll speak to you again when I'm ready to leave.~ */
+	EXIT
+END
+
+IF ~
 	GlobalLT("LCA_Lyriel", "GLOBAL", 1)
 ~ THEN BEGIN LCA_Startled
 	SAY @31 /* ~(Startled, she turns and faces you.)~ */

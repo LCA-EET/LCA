@@ -1,4 +1,13 @@
 IF
+	HPPercentLT(Myself, 10)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself, ~Tell Lyriel... I love...~)
+		Wait(1)
+		Kill(Myself)
+END
+
+IF
 	Global("LCA_ConfrontDemon", "GLOBAL", 1)
 	InMyArea(Player1)
 THEN

@@ -1,4 +1,21 @@
 IF
+	AreaCheck("LCDEMSAN")
+	Global("LCA_DemonDead", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_DemonDead", "GLOBAL", 2)
+		StartDialog("LCLYRIEL", Player1)
+END
+
+IF
+	Global("LCA_DemonDead", "GLOBAL", 4)
+THEN
+	RESPONSE #100
+		StartDialog("LCLYRIEL", Player1)
+END
+
+IF
+	AreaCheck("LCPAINT1")
 	GlobalLT("LCA_Lyriel", "GLOBAL", 1)
 	!Global("LCA_Sing", "LOCALS", 1)
 THEN
@@ -10,6 +27,7 @@ THEN
 END
 
 IF
+	AreaCheck("LCPAINT1")
 	GlobalLT("LCA_Lyriel", "GLOBAL", 1)
 	Range([ANYONE], 8)
 THEN
@@ -20,6 +38,7 @@ THEN
 END
 
 IF
+	AreaCheck("LCPAINT1")
 	GlobalTimerExpired("LCA_LyrielSingTimer", "GLOBAL")
 	!Global("LCA_LeavePrison", "GLOBAL", 1)
 THEN

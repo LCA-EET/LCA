@@ -1,3 +1,42 @@
+IF
+	Global("LCA_DemonDead", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		ActionOverride("LCLYRIEL", SetSequence(SEQ_CAST))
+		Wait(2)
+		ApplySpell(Player1, CLERIC_RESURRECTION)
+		ApplySpell(Player2, CLERIC_RESURRECTION)
+		ApplySpell(Player3, CLERIC_RESURRECTION)
+		ApplySpell(Player4, CLERIC_RESURRECTION)
+		ApplySpell(Player5, CLERIC_RESURRECTION)
+		ApplySpell(Player6, CLERIC_RESURRECTION)
+		ActionOverride("LCLYRIEL", SetSequence(SEQ_READY))
+		Wait(2)
+		ActionOverride("LCLYRIEL", SetSequence(SEQ_CAST))
+		Wait(2)
+		ApplySpell(Player1, CLERIC_CURE_CRITICAL_WOUNDS)
+		ApplySpell(Player2, CLERIC_CURE_CRITICAL_WOUNDS)
+		ApplySpell(Player3, CLERIC_CURE_CRITICAL_WOUNDS)
+		ApplySpell(Player4, CLERIC_CURE_CRITICAL_WOUNDS)
+		ApplySpell(Player5, CLERIC_CURE_CRITICAL_WOUNDS)
+		ApplySpell(Player6, CLERIC_CURE_CRITICAL_WOUNDS)
+		ActionOverride("LCLYRIEL", SetSequence(SEQ_READY))
+		SetGlobal("LCA_DemonDead", "GLOBAL", 4)
+END
+
+
+IF
+	Dead("LCINCUB")
+	GlobalLT("LCA_DemonDead", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("LCA_DemonDead", "GLOBAL", 1)
+		CreateVisualEffect("SPPORTAL",[320.320])
+		Wait(2)
+		CreateCreature("LCLYRIEL",[320.320],N)
+		SetInterrupt(TRUE)
+END
 
 IF
 	HPPercentLT("LCINCUB", 100)
