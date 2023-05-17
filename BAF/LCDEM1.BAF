@@ -3,7 +3,7 @@ IF
 THEN
 	RESPONSE #100
 		StartCutSceneMode()
-		CutSceneID(Player1)
+		CutSceneId(Player1)
 		ActionOverride("LCINCUB", Enemy())
 		SetGlobal("LCA_DemonSpawn", "GLOBAL", 2)
 		EndCutSceneMode()

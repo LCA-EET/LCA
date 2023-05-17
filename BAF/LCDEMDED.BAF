@@ -2,8 +2,12 @@ IF
 	True()
 THEN
 	RESPONSE #100
-		StartCutSceneMode()
-		CutSceneID(Player1)
+		CutSceneId(Player1)
+		Kill("LCDEM01")
+		Kill("LCDEM02")
+		Kill("LCDEM03")
+		Kill("LCDEM04")
+		Wait(2)
 		CreateVisualEffect("SPPORTAL",[320.320])
 		Wait(2)
 		CreateCreature("LCLYRIEL",[320.320],N)

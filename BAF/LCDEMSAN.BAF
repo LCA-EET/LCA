@@ -30,12 +30,15 @@ IF
 	GlobalLT("LCA_DemonDead", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetInterrupt(FALSE)
 		SetGlobal("LCA_DemonDead", "GLOBAL", 1)
-		CreateVisualEffect("SPPORTAL",[320.320])
-		Wait(2)
-		CreateCreature("LCLYRIEL",[320.320],N)
-		SetInterrupt(TRUE)
+		StartCutSceneMode()
+		StartCutScene("LCDEMDED")
+		//SetInterrupt(FALSE)
+		//SetGlobal("LCA_DemonDead", "GLOBAL", 1)
+		//CreateVisualEffect("SPPORTAL",[320.320])
+		//Wait(2)
+		//CreateCreature("LCLYRIEL",[320.320],N)
+		//SetInterrupt(TRUE)
 END
 
 IF
