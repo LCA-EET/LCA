@@ -484,7 +484,11 @@ override/LCG1.ARE
 override/LCG2.ARE
 override/LCG3.ARE
 override/LCDEMSAN.ARE
+override/LCSWORD.ITM
 override/LCCHICK.ITM
+override/ILCEGG.BAM
+override/LCEGG.BAM
+override/LCEGG.ITM
 override/LCG1001A.CRE
 override/LCG1001B.CRE
 override/LCG1002.CRE
@@ -518,6 +522,12 @@ override/LCDEM01.CRE
 override/LCDEM02.CRE
 override/LCDEM03.CRE
 override/LCDEM04.CRE
+override/LCVOIDWA.CRE
+override/LCVOIDWE.CRE
+override/LCVOIDFA.CRE
+override/LCVOIDFE.CRE
+override/LCVOIDLA.CRE
+override/LCVOIDLE.CRE
 override/LCMUTANK.CRE
 override/LCFERRUS.CRE
 override/BDADS1.bcs
