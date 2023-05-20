@@ -78,7 +78,7 @@ IF ~
 		SetGlobal("LCA_ParleyAttack", "GLOBAL", 0)
 		ActionOverride(Player1, DestroyItem("LCSWORD"))
 		ActionOverride(Player1, DestroyItem("LCCHICK"))
-		ActionOverride(Player1, DestroyItem("LCGIRDLE"))
+		ActionOverride(Player1, DestroyItem("LCMSRING"))
 		StartCutSceneMode()
 		StartCutScene("LCPENT")
 		DestroySelf()
@@ -99,7 +99,7 @@ IF ~
 		SetGlobal("LCA_IncubusSword", "GLOBAL", 1)
 		ActionOverride(Player1, DestroyItem("LCSWORD"))
 		ActionOverride(Player1, DestroyItem("LCCHICK"))
-		ActionOverride(Player1, DestroyItem("LCGIRDLE"))
+		ActionOverride(Player1, DestroyItem("LCMSRING"))
 	~
 	GOTO LCA_GiveAmuletToDemon_M
 	
@@ -110,7 +110,7 @@ IF ~
 		SetGlobal("LCA_IncubusSword", "GLOBAL", 1)
 		ActionOverride(Player1, DestroyItem("LCSWORD"))
 		ActionOverride(Player1, DestroyItem("LCCHICK"))
-		ActionOverride(Player1, DestroyItem("LCGIRDLE"))
+		ActionOverride(Player1, DestroyItem("LCMSRING"))
 	~
 	GOTO LCA_GiveAmuletToDemon_F
 	
@@ -121,7 +121,7 @@ IF ~
 		SetGlobal("LCA_IncubusGoose", "GLOBAL", 1)
 		ActionOverride(Player1, DestroyItem("LCSWORD"))
 		ActionOverride(Player1, DestroyItem("LCCHICK"))
-		ActionOverride(Player1, DestroyItem("LCGIRDLE"))
+		ActionOverride(Player1, DestroyItem("LCMSRING"))
 	~
 	GOTO LCA_GiveAmuletToDemon_M
 	
@@ -132,29 +132,29 @@ IF ~
 		SetGlobal("LCA_IncubusGoose", "GLOBAL", 1)
 		ActionOverride(Player1, DestroyItem("LCSWORD"))
 		ActionOverride(Player1, DestroyItem("LCCHICK"))
-		ActionOverride(Player1, DestroyItem("LCGIRDLE"))
+		ActionOverride(Player1, DestroyItem("LCMSRING"))
 	~
 	GOTO LCA_GiveAmuletToDemon_F
 	
 	IF ~
 		Gender(Player1, MALE)
-	~ THEN REPLY @57 /* ~The amulet, and our freedom, in exchange for the girdle.~ */
+	~ THEN REPLY @57 /* ~The amulet, and our freedom, in exchange for the ring.~ */
 	DO ~
-		SetGlobal("LCA_IncubusGirdle", "GLOBAL", 1)
+		SetGlobal("LCA_IncubusRing", "GLOBAL", 1)
 		ActionOverride(Player1, DestroyItem("LCSWORD"))
 		ActionOverride(Player1, DestroyItem("LCCHICK"))
-		ActionOverride(Player1, DestroyItem("LCGIRDLE"))
+		ActionOverride(Player1, DestroyItem("LCMSRING"))
 	~
 	GOTO LCA_GiveAmuletToDemon_M
 	
 	IF ~
 		Gender(Player1, FEMALE)
-	~ THEN REPLY @57 /* ~The amulet, and our freedom, in exchange for the girdle.~ */
+	~ THEN REPLY @57 /* ~The amulet, and our freedom, in exchange for the ring.~ */
 	DO ~
-		SetGlobal("LCA_IncubusGirdle", "GLOBAL", 1)
+		SetGlobal("LCA_IncubusRing", "GLOBAL", 1)
 		ActionOverride(Player1, DestroyItem("LCSWORD"))
 		ActionOverride(Player1, DestroyItem("LCCHICK"))
-		ActionOverride(Player1, DestroyItem("LCGIRDLE"))
+		ActionOverride(Player1, DestroyItem("LCMSRING"))
 	~
 	GOTO LCA_GiveAmuletToDemon_F
 	
@@ -457,7 +457,11 @@ IF ~~ THEN BEGIN LCA_ThirdMeeting
 	IF ~~ THEN REPLY @46 /* ~How long have you been imprisoned here? Allow me to end your suffering.~ */
 	GOTO LCA_Suffering
 	
+	IF ~~ THEN REPLY @44 /* ~What exactly are you offering?~ */
+	GOTO LCA_WhatAreYouOffering
 	
+	IF ~~ THEN REPLY @53 /* ~No deal. And the next time we meet will be our last.~ */
+	GOTO LCA_DontWantTreasure
 END
 
 IF ~~ THEN BEGIN LCA_Suffering
@@ -479,6 +483,7 @@ IF ~~ THEN BEGIN LCA_Suffering2
 	
 	IF ~~ THEN REPLY @44 /* ~What exactly are you offering?~ */
 	GOTO LCA_WhatAreYouOffering
+	
 	IF ~~ THEN REPLY @53 /* ~No deal. And the next time we meet will be our last.~ */
 	GOTO LCA_DontWantTreasure
 END
@@ -489,6 +494,12 @@ IF ~~ THEN BEGIN LCA_WhatAreYouOffering
 	IF ~~ THEN
 	DO ~
 		SetGlobal("LCA_GaveTreasure", "GLOBAL", 1)
+		GiveItemCreate("LCSWORD", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCSWORD", IDENTIFIED,TRUE))
+		GiveItemCreate("LCCHICK", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCCHICK", IDENTIFIED,TRUE))
+		GiveItemCreate("LCMSRING", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCMSRING", IDENTIFIED,TRUE))
 	~
 	EXIT
 END
@@ -643,7 +654,7 @@ IF ~~ THEN BEGIN LCA_DontWantTreasure
 	DO ~
 		ActionOverride(Player1, DestroyItem("LCSWORD"))
 		ActionOverride(Player1, DestroyItem("LCCHICK"))
-		ActionOverride(Player1, DestroyItem("LCGIRDLE"))
+		ActionOverride(Player1, DestroyItem("LCMSRING"))
 	~
 	EXIT
 	
@@ -653,7 +664,7 @@ IF ~~ THEN BEGIN LCA_DontWantTreasure
 	DO ~
 		ActionOverride(Player1, DestroyItem("LCSWORD"))
 		ActionOverride(Player1, DestroyItem("LCCHICK"))
-		ActionOverride(Player1, DestroyItem("LCGIRDLE"))
+		ActionOverride(Player1, DestroyItem("LCMSRING"))
 		StartCutSceneMode()
 		StartCutScene("LCPENT")
 	~
