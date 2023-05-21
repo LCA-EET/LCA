@@ -1,0 +1,14 @@
+IF
+	Global("LCA_EndG2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("LCA_EndG2", "GLOBAL", 1)
+		SetGlobal("LCA_CompletedG2", "GLOBAL", 1)
+		DisplayStringHead(Player1, ~(The world swirls, and your vision darkens...)~)
+		Wait(3)
+		SetGlobal("LCA_DemonSpeak", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		StartCutSceneMode()
+		StartCutScene("LCSENT")
+END
