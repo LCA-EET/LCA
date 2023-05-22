@@ -6,9 +6,15 @@ IF ~
 	SAY @0 /* ~Hello, child. It's good to see you again.~ */
 	
 	IF ~~ THEN REPLY @22 /* ~Whoever, or whatever you are, you are not Gorion.~ */
+	DO ~
+		SetGlobal("LCA_GorionTalk", "GLOBAL", 1)
+	~
 	GOTO LCA_NotGorion
 	
 	IF ~~ THEN REPLY @21 /* ~What trickery is this?  */
+	DO ~
+		SetGlobal("LCA_GorionTalk", "GLOBAL", 1)
+	~
 	GOTO LCA_NotGorion2
 END
 

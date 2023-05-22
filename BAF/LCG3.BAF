@@ -1,4 +1,14 @@
 IF
+	InMyArea(Player1)
+	!Global("LCA_GorionDialogInit", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		Wait(2)
+		SetGlobal("LCA_GorionDialogInit", "GLOBAL", 1)
+		ActionOverride("LCGORION", StartDialog("LCGORION", Player1))
+END
+
+IF
 	Global("LCA_GorionHostile", "GLOBAL", 1)
 	HPPercentLT("LCGORION", 100)
 THEN
