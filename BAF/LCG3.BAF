@@ -1,3 +1,16 @@
+IF
+	Global("LCA_GorionHostile", "GLOBAL", 1)
+	HPPercentLT("LCGORION", 100)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_GorionHostile", "GLOBAL", 2)
+		ApplySpell("LCGORION", WIZARD_SHIELD)
+		ApplySpell("LCGORION", WIZARD_STONE_SKIN)
+		ApplySpell("LCGORION", WIZARD_MIRROR_IMAGE)
+		ApplySpell("LCGORION", WIZARD_GLOBE_OF_INVULNERABILITY)
+		ActionOverride("LCGORION", Enemy())
+END
+
 IF 
 	Dead("LCGORION")
 	GlobalLT("LCA_EndG3", "GLOBAL", 1)
