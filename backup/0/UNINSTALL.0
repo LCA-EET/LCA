@@ -11,6 +11,7 @@ override/INSPECT.dlg
 override/VALYGAR.dlg
 override/UDSILVER.dlg
 override/MINSCJ.dlg
+override/LCGORION.dlg
 override/LCORPH05.dlg
 override/THIEFG.dlg
 override/BAERIE.dlg
@@ -341,7 +342,9 @@ override/LCFFHUNT.bcs
 override/LCFFOFCR.bcs
 override/LCG1.bcs
 override/LCG1ENT.bcs
+override/LCG2.bcs
 override/LCG2ENT.bcs
+override/LCG3.bcs
 override/LCG3ENT.bcs
 override/LCGIRLOV.bcs
 override/LCGORP.bcs
@@ -492,6 +495,7 @@ override/LCCHICK.ITM
 override/ILCEGG.BAM
 override/LCEGG.BAM
 override/LCEGG.ITM
+override/LCGORION.CRE
 override/LCG1001A.CRE
 override/LCG1001B.CRE
 override/LCG1002.CRE

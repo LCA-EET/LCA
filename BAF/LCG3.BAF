@@ -3,7 +3,6 @@ IF
 	!Global("LCA_GorionDialogInit", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		Wait(2)
 		SetGlobal("LCA_GorionDialogInit", "GLOBAL", 1)
 		ActionOverride("LCGORION", StartDialog("LCGORION", Player1))
 END

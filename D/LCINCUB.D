@@ -171,7 +171,7 @@ END
 IF ~
 	Global("LCA_MetIncubus", "GLOBAL", 1)
 ~ THEN BEGIN LCA_StartFirstMeet
-	SAY @0 /* ~Hm. Well done.~ */
+	SAY @0 /* ~Welcome.~ */
 	
 	IF ~
 		Global("LCA_CompletedG1", "GLOBAL", 1)
@@ -195,6 +195,7 @@ IF ~
 	
 	IF ~
 		Global("LCA_CompletedG3", "GLOBAL", 1)
+		Global("LCA_GorionTalk", "GLOBAL", 2)
 		!Global("LCA_AskAboutGorion", "GLOBAL", 1)
 	~ THEN REPLY @38 /* ~You'll pay for mocking the memory of my foster father!~ */
 	DO ~
@@ -202,6 +203,17 @@ IF ~
 		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
 	~
 	GOTO LCA_AskAboutGorion //OK
+	
+	IF ~
+		Global("LCA_CompletedG3", "GLOBAL", 1)
+		Global("LCA_GorionTalk", "GLOBAL", 1)
+		!Global("LCA_AskAboutGorion", "GLOBAL", 1)
+	~ THEN REPLY @73 /* ~Why go through the trouble of creating a falsification of my dead foster father?~ */
+	DO ~
+		SetGlobal("LCA_AskAboutGorion", "GLOBAL", 1)
+		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
+	~
+	GOTO LCA_AskAboutGorion2 //OK
 	
 	IF ~
 		NumInPartyGT(1)
@@ -223,7 +235,7 @@ END
 IF ~
 	Global("LCA_MetIncubus", "GLOBAL", 3)
 ~ THEN BEGIN LCA_StartSecondMeet
-	SAY @27 /*~Again, you succeed in besting my pets.~ */
+	SAY @27 /*~I hope that now, you are willing to listen to reason.~*/
 	
 	IF ~
 		Global("LCA_CompletedG1", "GLOBAL", 1)
@@ -247,6 +259,7 @@ IF ~
 	
 	IF ~
 		Global("LCA_CompletedG3", "GLOBAL", 1)
+		Global("LCA_GorionTalk", "GLOBAL", 2)
 		!Global("LCA_AskAboutGorion", "GLOBAL", 1)
 	~ THEN REPLY @38 /* ~You'll pay for mocking the memory of my foster father!~ */
 	DO ~
@@ -254,6 +267,17 @@ IF ~
 		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
 	~
 	GOTO LCA_AskAboutGorion //OK
+	
+	IF ~
+		Global("LCA_CompletedG3", "GLOBAL", 1)
+		Global("LCA_GorionTalk", "GLOBAL", 1)
+		!Global("LCA_AskAboutGorion", "GLOBAL", 1)
+	~ THEN REPLY @73 /* ~Why go through the trouble of creating a falsification of my dead foster father?~ */
+	DO ~
+		SetGlobal("LCA_AskAboutGorion", "GLOBAL", 1)
+		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
+	~
+	GOTO LCA_AskAboutGorion2 //OK
 	
 	IF ~~ THEN REPLY @37 /* ~You. Again.~ */
 	DO ~
@@ -265,7 +289,7 @@ END
 IF ~
 	Global("LCA_MetIncubus", "GLOBAL", 5)
 ~ THEN BEGIN LCA_StartThirdMeet
-	SAY @39 /*~Ah, you've returned.~ */
+	SAY @39 /*~Surely you're tired of this by now, yes?~*/
 	
 	IF ~
 		Global("LCA_CompletedG1", "GLOBAL", 1)
@@ -289,6 +313,7 @@ IF ~
 	
 	IF ~
 		Global("LCA_CompletedG3", "GLOBAL", 1)
+		Global("LCA_GorionTalk", "GLOBAL", 2)
 		!Global("LCA_AskAboutGorion", "GLOBAL", 1)
 	~ THEN REPLY @38 /* ~You'll pay for mocking the memory of my foster father!~ */
 	DO ~
@@ -296,6 +321,17 @@ IF ~
 		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
 	~
 	GOTO LCA_AskAboutGorion //OK
+	
+	IF ~
+		Global("LCA_CompletedG3", "GLOBAL", 1)
+		Global("LCA_GorionTalk", "GLOBAL", 1)
+		!Global("LCA_AskAboutGorion", "GLOBAL", 1)
+	~ THEN REPLY @73 /* ~Why go through the trouble of creating a falsification of my dead foster father?~ */
+	DO ~
+		SetGlobal("LCA_AskAboutGorion", "GLOBAL", 1)
+		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
+	~
+	GOTO LCA_AskAboutGorion2 //OK
 	
 	IF ~
 		!NumInPartyGT(1)
@@ -314,25 +350,30 @@ IF ~
 	GOTO LCA_ThirdMeeting //OK
 END
 
-IF ~~ THEN BEGIN LCA_AskAboutGorion
-	SAY @40 /* ~Spare me the indignation, child.~ */
-
-	= @65 /* You've always wondered what Gorion would think of the <PRO_MANWOMAN> you've become.~*/
+IF ~~ THEN BEGIN LCA_AskAboutGorion2
+	SAY @65 /*  ~I sensed that you often wonder what Gorion would think of your actions. Most mortals would jump at the opportunity to speak to a deceased loved one, even if it was just a similacrum.~*/
 	
 	IF ~
-		Global("LCA_MetIncubus", "GLOBAL", 2)
+		GlobalGT("LCA_MetIncubus", "GLOBAL", 0)
 	~ THEN 
 	GOTO LCA_FirstMeeting //OK
 	
 	IF ~
-		Global("LCA_MetIncubus", "GLOBAL", 4)
+		GlobalGT("LCA_MetIncubus", "GLOBAL", 2)
 	~ THEN
 	GOTO LCA_SecondMeeting //OK
 	
 	IF ~
-		Global("LCA_MetIncubus", "GLOBAL", 6)
+		GlobalGT("LCA_MetIncubus", "GLOBAL", 4)
 	~ THEN
 	GOTO LCA_ThirdMeeting //OK
+END
+
+IF ~~ THEN BEGIN LCA_AskAboutGorion
+	SAY @40 /* ~Spare me the indignation, child.~ */
+
+	IF ~~ THEN 
+	GOTO LCA_AskAboutGorion2
 END
 
 IF ~~ THEN BEGIN LCA_AskAboutDS
@@ -341,17 +382,17 @@ IF ~~ THEN BEGIN LCA_AskAboutDS
 	= @8 /* ~I hope you enjoyed it as much as I enjoyed watching you do what you do best... though the skill and power of the pawns you defeated pale in comparison to my own.~ */
 	
 	IF ~
-		Global("LCA_MetIncubus", "GLOBAL", 2)
+		GlobalGT("LCA_MetIncubus", "GLOBAL", 0)
 	~ THEN 
 	GOTO LCA_FirstMeeting //OK
 	
 	IF ~
-		Global("LCA_MetIncubus", "GLOBAL", 4)
+		GlobalGT("LCA_MetIncubus", "GLOBAL", 2)
 	~ THEN
 	GOTO LCA_SecondMeeting //OK
 	
 	IF ~
-		Global("LCA_MetIncubus", "GLOBAL", 6)
+		GlobalGT("LCA_MetIncubus", "GLOBAL", 4)
 	~ THEN
 	GOTO LCA_ThirdMeeting //OK
 END
@@ -362,17 +403,17 @@ IF ~~ THEN BEGIN LCA_AskAboutTrial
 	= @35 /*  ~Think of what you saw as one possible outcome... one of many.~ */
 	
 	IF ~
-		Global("LCA_MetIncubus", "GLOBAL", 2)
+		GlobalGT("LCA_MetIncubus", "GLOBAL", 0)
 	~ THEN 
 	GOTO LCA_FirstMeeting //OK
 	
 	IF ~
-		Global("LCA_MetIncubus", "GLOBAL", 4)
+		GlobalGT("LCA_MetIncubus", "GLOBAL", 2)
 	~ THEN
 	GOTO LCA_SecondMeeting //OK
 	
 	IF ~
-		Global("LCA_MetIncubus", "GLOBAL", 6)
+		GlobalGT("LCA_MetIncubus", "GLOBAL", 4)
 	~ THEN
 	GOTO LCA_ThirdMeeting //OK
 	

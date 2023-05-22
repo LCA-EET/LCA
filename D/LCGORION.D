@@ -43,34 +43,8 @@ IF ~~ THEN BEGIN LCA_WhyHere
 	~
 	GOTO LCA_Leave
 	
-	IF ~
-		!Global("LCA_Prepare", "LOCALS", 1)
-	~ THEN REPLY @6 /* ~Why didn't you prepare Imoen and I for what was coming?~*/
-	DO ~
-		SetGlobal("LCA_Prepare", "LOCALS", 1)
-		IncrementGlobal("LCA_GorionQuestions", "GLOBAL", 1)
-	~
-	GOTO LCA_Prepare
-	
-	IF ~
-		!Global("LCA_Prepare", "LOCALS", 1)
-	~ THEN REPLY @7 /* ~You've always known what Imoen and I were. Why didn't you tell us?~ */
-	DO ~
-		SetGlobal("LCA_Prepare", "LOCALS", 1)
-		IncrementGlobal("LCA_GorionQuestions", "GLOBAL", 1)
-	~
-	GOTO LCA_Prepare
-	
-	IF ~
-		!Global("LCA_Mother", "LOCALS", 1)
-	~ THEN REPLY @29 /* ~What can you tell me about my mother?~ */
-	DO ~
-		SetGlobal("LCA_Mother", "LOCALS", 1)
-		IncrementGlobal("LCA_GorionQuestions", "GLOBAL", 1)
-	~
-	GOTO LCA_Mother
-	
-	
+	IF ~~ THEN REPLY @54 /* ~Interesting... fine. I'll entertain this, at least for now.~*/
+	GOTO LCA_MoreQuestions
 END
 
 IF ~~ THEN BEGIN LCA_Mother
@@ -87,13 +61,29 @@ IF ~~ THEN BEGIN LCA_Mother
 	IF ~~ THEN REPLY @34 /* ~Not yet.~ */
 	GOTO LCA_NoRelationship
 END
+
+IF ~~ THEN BEGIN LCA_HasRelationship
+	SAY @36 /* ~That's wonderful! Your foster father would be pleased, child.~ */
+	
+	IF ~~ THEN
+	GOTO LCA_MoreQuestions
+END
+
+IF ~~ THEN BEGIN LCA_NoRelationship
+	SAY @35 /* ~That's unfortunate, though not surprising. Given the dangers you face, it's no wonder that you're reluctant to engage in such relationships.~ */
+	
+	IF ~~ THEN
+	GOTO LCA_MoreQuestions
+END
+
 IF ~~ THEN BEGIN LCA_Prepare
 	SAY @8 /* ~Ah... I'd hoped that Alaundo was wrong. I thought that sheltering you from the outside world would spare you from all of the death and bloodshed that was ultimately thrust upon you. Forgive me.~ */	
+	IF ~~ THEN
 	GOTO LCA_MoreQuestions
 END
 
 IF ~~ THEN BEGIN LCA_MoreQuestions
-	SAY @37 /* ~You have more questions?~ */
+	SAY @37 /* ~You have questions?~ */
 	
 	IF ~
 		GlobalLT("LCA_GorionQuestions", "GLOBAL", 3)
@@ -102,6 +92,11 @@ IF ~~ THEN BEGIN LCA_MoreQuestions
 		SetGlobal("LCA_GorionTalk", "GLOBAL", 2)
 	~
 	GOTO LCA_Leave
+	
+	IF ~
+		GlobalGT("LCA_GorionQuestions", "GLOBAL", 2)
+	~ THEN REPLY @47 /* ~No more questions. I appreciate the insight you've provided.~ */
+	GOTO LCA_Leave3
 	
 	IF ~
 		!Global("LCA_Prepare", "LOCALS", 1)
@@ -158,6 +153,27 @@ IF ~~ THEN BEGIN LCA_MoreQuestions
 		IncrementGlobal("LCA_GorionQuestions", "GLOBAL", 1)
 	~
 	GOTO LCA_GorionImpression
+	
+	IF ~
+		!Global("LCA_WhyHarpers", "LOCALS", 1)
+	~ THEN REPLY @55 /* ~Why join the Harpers?~ */
+	DO ~
+		SetGlobal("LCA_WhyHarpers", "LOCALS", 1)
+		IncrementGlobal("LCA_GorionQuestions", "GLOBAL", 1)
+	~
+	GOTO LCA_WhyHarpers
+END
+
+IF ~~ THEN BEGIN LCA_WhyHarpers
+	SAY @56 /* ~Like you, child, I was once young and full of energy. I chose to embark on a life of adventure, and met many interesting people along the way.~ */
+	
+	= @57 /* ~Among them were the Harpers. Our goals and ideals were aligned in a multitude of ways, and I decided to join them. Many of their number became close friends of mine, and I cherished those relationships for the remainder of my life.~*/
+	
+	= @58 /* ~You've met many of them already. I hope, <CHARNAME>, that you are able to maintain the friendships and relationships with your companions, as I did with mine. Doing so will benefit you and your comrades in ways that are not always easy to see.~
+ */
+ 
+	IF ~~ THEN
+	GOTO LCA_MoreQuestions
 END
 
 IF ~~ THEN BEGIN LCA_GorionImpression
@@ -202,6 +218,7 @@ END
 IF ~~ THEN BEGIN LCA_Leave2
 	SAY @52 /* ~I sense that our time is running short. I hope that you're able to find your way out of this prison. One last bit of advice. ~ */
 	
+	= @53 /* ~Though you defeated Sarevok, Aluando's prophecy spoke of scores of Bhaalspawn sowing chaos throughout the land. It's likely the case that fate is not done with you. You must remain vigilant at all times, child. Good luck.~ */
 	IF ~~ THEN
 	DO ~
 		SetGlobal("LCA_EndG3", "GLOBAL", 1)
@@ -257,6 +274,7 @@ END
 IF ~~ THEN BEGIN LCA_WhatWillHappen
 	SAY @13 /* ~I will very likely cease to exist. But worry not, child. A part of me, no... a part of Gorion... will always be with you.~ */
 	
+	IF ~~ THEN
 	GOTO LCA_MoreQuestions
 END
 
@@ -291,4 +309,14 @@ IF ~~ THEN BEGIN LCA_Leave
 		SetGlobal("LCA_EndG3", "GLOBAL", 1)
 	~
 	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_Leave3
+	SAY @48 /* ~It was my pleasure. Good luck to you, child.~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_EndG3", "GLOBAL", 1)
+	~
+	EXIT	
 END
