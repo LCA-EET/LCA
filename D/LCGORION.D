@@ -89,7 +89,9 @@ END
 IF ~~ THEN BEGIN LCA_MoreQuestions
 	SAY @37 /* ~You have more questions?~ */
 	
-	IF ~~ THEN REPLY @24 /* ~No. This is a waste of time. Send me back to Lyriel.~ */
+	IF ~
+		GlobalLT("LCA_GorionQuestions", "GLOBAL", 3)
+	~ THEN REPLY @24 /* ~No. This is a waste of time. Send me back to Lyriel.~ */
 	DO ~
 		SetGlobal("LCA_GorionTalk", "GLOBAL", 2)
 	~
@@ -155,8 +157,95 @@ END
 IF ~~ THEN BEGIN LCA_GorionImpression
 	SAY @15 /* Hm... */
 	
+	IF ~
+		ReputationGT(Player1, 18)
+		Gender(Player1, MALE)
+	~ THEN
+	GOTO LCA_GorionImpression_VeryGood_M
+
+	IF ~
+		ReputationGT(Player1, 18)
+		Gender(Player1, FEMALE)
+	~ THEN
+	GOTO LCA_GorionImpression_VeryGood_F
 	
+	IF ~
+		ReputationGT(Player1, 15)
+		ReputationLT(Player1, 19)
+	~ THEN
+	GOTO LCA_GorionImpression_Good
 	
+	IF ~
+		ReputationGT(Player1, 11)
+		ReputationLT(Player1, 16)
+	~ THEN
+	GOTO LCA_GorionImpression_OK
+	
+	IF ~
+		ReputationGT(Player1, 5)
+		ReputationLT(Player1, 12)
+	~ THEN 
+	GOTO LCA_GorionImpression_Bad
+	
+	IF ~
+		ReputationLT(Player1, 6)
+	~ THEN 
+	GOTO LCA_GorionImpression_VeryBad
+END
+
+IF ~~ THEN BEGIN LCA_Leave2
+	SAY @52 /* ~I sense that our time is running short. I hope that you're able to find your way out of this prison. One last bit of advice. ~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_EndG3", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_GorionImpression_VeryGood_M
+	SAY @49 /* ~You've always strived to do what is right, and your many heroic deeds speak for themselves. He'd be proud... no... he'd be honored to have played a role in your upbringing, young man.~ */
+	
+	IF ~~ THEN 
+	GOTO LCA_Leave2
+END
+
+IF ~~ THEN BEGIN LCA_GorionImpression_VeryGood_F
+	SAY @50 /* ~You've always strived to do what is right, and your many heroic deeds speak for themselves. He'd be proud... no... he'd be honored to have played a role in your upbringing, young lady.~ */
+	
+	IF ~~ THEN 
+	GOTO LCA_Leave2
+END
+
+IF ~~ THEN BEGIN LCA_GorionImpression_Good
+	SAY @16 /* ~He would be pleased. You've overcome your dark nature, and have become a force for good. Yes, he would be pleased.~ */
+	
+	IF ~~ THEN 
+	GOTO LCA_Leave2
+END
+
+IF ~~ THEN BEGIN LCA_GorionImpression_OK
+	SAY @46 /* ~He'd be pleased to see that you're doing well, and he would encourage you to continue to apply his teachings.~ */
+	
+	IF ~~ THEN 
+	GOTO LCA_Leave2
+END
+
+IF ~~ THEN BEGIN LCA_GorionImpression_Bad
+	SAY @20 /* ~He would be disappointed. Your actions thus far have shown a disregard for the well-being of others. He would encourage you to remember his teachings, and to become the type of <PRO_MANWOMAN> that others would look up to.~ */
+	
+	IF ~~ THEN 
+	GOTO LCA_Leave2
+END
+
+IF ~~ THEN BEGIN LCA_GorionImpression_VeryBad
+	SAY @17 /* ~He would be disgusted and filled with regret. You've discarded his teachings entirely, and have terrorized the people of Amn and the Sword Coast. He would do everything in his power to stop you.~ */
+	
+	IF ~~ THEN
+	DO ~
+		Enemy()
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN LCA_WhatWillHappen
@@ -193,7 +282,7 @@ IF ~~ THEN BEGIN LCA_Leave
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("LCA_EndG2", "GLOBAL", 1)
+		SetGlobal("LCA_EndG3", "GLOBAL", 1)
 	~
 	EXIT
 END
