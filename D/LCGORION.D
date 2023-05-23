@@ -16,6 +16,21 @@ IF ~
 		SetGlobal("LCA_GorionTalk", "GLOBAL", 1)
 	~
 	GOTO LCA_NotGorion2
+	
+	IF ~~ THEN REPLY @59 /* ~Father?~ */
+	DO ~
+		SetGlobal("LCA_GorionTalk", "GLOBAL", 1)
+	~
+	GOTO LCA_NotGorion2
+	
+	IF ~
+		Global("LCA_DemonDebug", "GLOBAL", 1)
+	~ THEN REPLY @60 /* ~Set as Enemy.~ */
+	DO ~
+		SetGlobal("LCA_GorionHostile", "GLOBAL", 1)
+		Enemy()
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN LCA_NotGorion
@@ -266,6 +281,7 @@ IF ~~ THEN BEGIN LCA_GorionImpression_VeryBad
 	
 	IF ~~ THEN
 	DO ~
+		SetGlobal("LCA_GorionHostile", "GLOBAL", 1)
 		Enemy()
 	~
 	EXIT

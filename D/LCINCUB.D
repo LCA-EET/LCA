@@ -88,7 +88,7 @@ IF ~
 END
 
 IF ~
-	Global("LCA_GaveTreasure", "GLOBAL", 1)
+	Global("LCA_GaveTreasure", "LOCALS", 1)
 ~ THEN BEGIN LCA_GaveTreasure
 	SAY @54 /* ~So? What've you decided?~ */
 	
@@ -105,7 +105,7 @@ IF ~
 	
 	IF ~
 		Gender(Player1,FEMALE)
-	~ THEN REPLY @55 /*~The amulet, and our freedom, in exchange for the axe.~*/
+	~ THEN REPLY @55 /* ~The amulet, and our freedom, in exchange for the sword.~*/
 	DO ~
 		SetGlobal("LCA_IncubusSword", "GLOBAL", 1)
 		ActionOverride(Player1, DestroyItem("LCSWORD"))
@@ -116,7 +116,7 @@ IF ~
 	
 	IF ~
 		Gender(Player1, MALE)
-	~ THEN REPLY @56 /* ~The amulet, and our freedom, in exchange for the golden goose.~ */
+	~ THEN REPLY @56 /* ~The amulet, and our freedom, in exchange for the hen.~*/
 	DO ~
 		SetGlobal("LCA_IncubusGoose", "GLOBAL", 1)
 		ActionOverride(Player1, DestroyItem("LCSWORD"))
@@ -127,7 +127,7 @@ IF ~
 	
 	IF ~
 		Gender(Player1, FEMALE)
-	~ THEN REPLY @56 /* ~The amulet, and our freedom, in exchange for the golden goose.~ */
+	~ THEN REPLY @56 /* ~The amulet, and our freedom, in exchange for the ring.~ */
 	DO ~
 		SetGlobal("LCA_IncubusGoose", "GLOBAL", 1)
 		ActionOverride(Player1, DestroyItem("LCSWORD"))
@@ -163,7 +163,7 @@ IF ~
 	
 	IF ~~ THEN REPLY @58 /* ~These trinkets are worthless. No deal.~ */
 	DO ~
-		SetGlobal("LCA_GaveTreasure", "GLOBAL", 0)
+		SetGlobal("LCA_GaveTreasure", "LOCALS", 0)
 	~
 	GOTO LCA_DontWantTreasure
 END
@@ -174,66 +174,90 @@ IF ~
 	SAY @0 /* ~Welcome.~ */
 	
 	IF ~
-		Global("LCA_CompletedG1", "GLOBAL", 1)
-		!Global("LCA_AskAboutDS", "GLOBAL", 1)
-	~ THEN REPLY @4 /* ~Why did you send me to Dragonspear?~ */
+		!Global("LCA_AskWho", "LOCALS", 1)
+	~ THEN REPLY @74 /* ~Who are you?~ */
 	DO ~
-		SetGlobal("LCA_AskAboutDS", "GLOBAL", 1)
-		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
+		SetGlobal("LCA_AskWho", "LOCALS", 1)
 	~
-	GOTO LCA_AskAboutDS //OK
+	GOTO LCA_AskWho
 	
 	IF ~
-		Global("LCA_CompletedG2", "GLOBAL", 1)
-		!Global("LCA_AskAboutTrial", "GLOBAL", 1)
-	~ THEN REPLY @34 /* ~That trial was not at all how I remembered it.~ */
+		!Global("LCA_AskWhat", "LOCALS", 1)
+	~ THEN REPLY @79 /* ~What is this place?~ */
 	DO ~
-		SetGlobal("LCA_AskAboutTrial", "GLOBAL", 1)
-		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
+		SetGlobal("LCA_AskWhat", "LOCALS", 1)
 	~
-	GOTO LCA_AskAboutTrial //OK
+	GOTO LCA_AskWhat
 	
 	IF ~
-		Global("LCA_CompletedG3", "GLOBAL", 1)
-		Global("LCA_GorionTalk", "GLOBAL", 2)
-		!Global("LCA_AskAboutGorion", "GLOBAL", 1)
-	~ THEN REPLY @38 /* ~You'll pay for mocking the memory of my foster father!~ */
-	DO ~
-		SetGlobal("LCA_AskAboutGorion", "GLOBAL", 1)
-		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
-	~
-	GOTO LCA_AskAboutGorion //OK
-	
-	IF ~
-		Global("LCA_CompletedG3", "GLOBAL", 1)
-		Global("LCA_GorionTalk", "GLOBAL", 1)
-		!Global("LCA_AskAboutGorion", "GLOBAL", 1)
-	~ THEN REPLY @73 /* ~Why go through the trouble of creating a falsification of my dead foster father?~ */
-	DO ~
-		SetGlobal("LCA_AskAboutGorion", "GLOBAL", 1)
-		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
-	~
-	GOTO LCA_AskAboutGorion2 //OK
-	
-	IF ~
+		!Global("LCA_AskWhy", "LOCALS", 1)
 		NumInPartyGT(1)
-	~ THEN REPLY @1 /* ~Why have you brought me here?~ */
+	~ THEN REPLY @78 /* ~Why have you brought us here?~ */
 	DO ~
 		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
+		SetGlobal("LCA_AskWhy", "LOCALS", 1)
 	~
-	GOTO LCA_HaveSomethingDemonWants_Party
+	GOTO LCA_HaveSomethingDemonWants
 	
 	IF ~
+		!Global("LCA_AskWhy", "LOCALS", 1)
 		!NumInPartyGT(1)
 	~ THEN REPLY @1 /* ~Why have you brought me here?~ */
 	DO ~
-		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
+		SetGlobal("LCA_AskWhy", "LOCALS", 1)
 	~
 	GOTO LCA_HaveSomethingDemonWants
+	
+	
+END
+
+IF ~~ THEN BEGIN LCA_AskWho
+	SAY @75 /* ~Who am I? What an odd question...~ */
+	
+	= @76 /* ~I did have a name once. Yes, I did. But that was eons ago, and I've long since forgotten what it was.~ */
+	
+	= @77 /* ~I do however remember my nature. In your tongue, I am called an Incubus — an invader of dreams.~ */
+	
+	IF ~
+		Global("LCA_MetIncubus", "GLOBAL", 1)
+	~ THEN 
+	GOTO LCA_FirstMeeting //OK
+	
+	IF ~
+		Global("LCA_MetIncubus", "GLOBAL", 2)
+	~ THEN
+	GOTO LCA_SecondMeeting //OK
+	
+	IF ~
+		Global("LCA_MetIncubus", "GLOBAL", 3)
+	~ THEN
+	GOTO LCA_ThirdMeeting //OK 
+
+END
+
+IF ~~ THEN BEGIN LCA_AskWhat
+	SAY @80 /* ~This place was originally created as a prison for me long ago, by a wizard of some repute.~*/
+	
+	= @81 /* ~I've since mastered the energies by which this reality is sustained, and as such I am capable of altering it to suit my needs.~ */
+	
+	IF ~
+		Global("LCA_MetIncubus", "GLOBAL", 1)
+	~ THEN 
+	GOTO LCA_FirstMeeting //OK
+	
+	IF ~
+		Global("LCA_MetIncubus", "GLOBAL", 2)
+	~ THEN
+	GOTO LCA_SecondMeeting //OK
+	
+	IF ~
+		Global("LCA_MetIncubus", "GLOBAL", 3)
+	~ THEN
+	GOTO LCA_ThirdMeeting //OK 
 END
 
 IF ~
-	Global("LCA_MetIncubus", "GLOBAL", 3)
+	Global("LCA_MetIncubus", "GLOBAL", 2)
 ~ THEN BEGIN LCA_StartSecondMeet
 	SAY @27 /*~I hope that now, you are willing to listen to reason.~*/
 	
@@ -243,7 +267,6 @@ IF ~
 	~ THEN REPLY @4 /* ~Why did you send me to Dragonspear?~ */
 	DO ~
 		SetGlobal("LCA_AskAboutDS", "GLOBAL", 1)
-		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
 	~
 	GOTO LCA_AskAboutDS //OK
 	
@@ -253,7 +276,6 @@ IF ~
 	~ THEN REPLY @34 /* ~That trial was not at all how I remembered it.~ */
 	DO ~
 		SetGlobal("LCA_AskAboutTrial", "GLOBAL", 1)
-		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
 	~
 	GOTO LCA_AskAboutTrial //OK
 	
@@ -264,7 +286,6 @@ IF ~
 	~ THEN REPLY @38 /* ~You'll pay for mocking the memory of my foster father!~ */
 	DO ~
 		SetGlobal("LCA_AskAboutGorion", "GLOBAL", 1)
-		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
 	~
 	GOTO LCA_AskAboutGorion //OK
 	
@@ -275,19 +296,31 @@ IF ~
 	~ THEN REPLY @73 /* ~Why go through the trouble of creating a falsification of my dead foster father?~ */
 	DO ~
 		SetGlobal("LCA_AskAboutGorion", "GLOBAL", 1)
-		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
 	~
 	GOTO LCA_AskAboutGorion2 //OK
 	
 	IF ~~ THEN REPLY @37 /* ~You. Again.~ */
-	DO ~
-		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
-	~
 	GOTO LCA_SecondMeeting //OK
+	
+	IF ~
+		!Global("LCA_AskWho", "LOCALS", 1)
+	~ THEN REPLY @74 /* ~Who are you?~ */
+	DO ~
+		SetGlobal("LCA_AskWho", "LOCALS", 1)
+	~
+	GOTO LCA_AskWho
+	
+	IF ~
+		!Global("LCA_AskWhat", "LOCALS", 1)
+	~ THEN REPLY @79 /* ~What is this place?~ */
+	DO ~
+		SetGlobal("LCA_AskWhat", "LOCALS", 1)
+	~
+	GOTO LCA_AskWhat
 END
 
 IF ~
-	Global("LCA_MetIncubus", "GLOBAL", 5)
+	Global("LCA_MetIncubus", "GLOBAL", 3)
 ~ THEN BEGIN LCA_StartThirdMeet
 	SAY @39 /*~Surely you're tired of this by now, yes?~*/
 	
@@ -297,7 +330,6 @@ IF ~
 	~ THEN REPLY @4 /* ~Why did you send me to Dragonspear?~ */
 	DO ~
 		SetGlobal("LCA_AskAboutDS", "GLOBAL", 1)
-		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
 	~
 	GOTO LCA_AskAboutDS //OK
 	
@@ -307,7 +339,6 @@ IF ~
 	~ THEN REPLY @34 /* ~That trial was not at all how I remembered it.~ */
 	DO ~
 		SetGlobal("LCA_AskAboutTrial", "GLOBAL", 1)
-		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
 	~
 	GOTO LCA_AskAboutTrial //OK
 	
@@ -318,7 +349,6 @@ IF ~
 	~ THEN REPLY @38 /* ~You'll pay for mocking the memory of my foster father!~ */
 	DO ~
 		SetGlobal("LCA_AskAboutGorion", "GLOBAL", 1)
-		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
 	~
 	GOTO LCA_AskAboutGorion //OK
 	
@@ -329,42 +359,51 @@ IF ~
 	~ THEN REPLY @73 /* ~Why go through the trouble of creating a falsification of my dead foster father?~ */
 	DO ~
 		SetGlobal("LCA_AskAboutGorion", "GLOBAL", 1)
-		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
 	~
 	GOTO LCA_AskAboutGorion2 //OK
 	
 	IF ~
 		!NumInPartyGT(1)
 	~ THEN REPLY @41 /* ~My patience is not without limits, beast. Free me, or you'll regret it.~ */
-	DO ~
-		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
-	~
 	GOTO LCA_ThirdMeeting //OK
 	
 	IF ~
 		NumInPartyGT(1)
 	~ THEN REPLY @42 /* ~Our patience is not without limits, beast. Free us, or you'll regret it.~ */
-	DO ~
-		IncrementGlobal("LCA_MetIncubus", "GLOBAL", 1)
-	~
 	GOTO LCA_ThirdMeeting //OK
+	
+	IF ~
+		!Global("LCA_AskWho", "LOCALS", 1)
+	~ THEN REPLY @74 /* ~Who are you?~ */
+	DO ~
+		SetGlobal("LCA_AskWho", "LOCALS", 1)
+	~
+	GOTO LCA_AskWho
+	
+	IF ~
+		!Global("LCA_AskWhat", "LOCALS", 1)
+	~ THEN REPLY @79 /* ~What is this place?~ */
+	DO ~
+		SetGlobal("LCA_AskWhat", "LOCALS", 1)
+	~
+	GOTO LCA_AskWhat
 END
 
 IF ~~ THEN BEGIN LCA_AskAboutGorion2
 	SAY @65 /*  ~I sensed that you often wonder what Gorion would think of your actions. Most mortals would jump at the opportunity to speak to a deceased loved one, even if it was just a similacrum.~*/
 	
 	IF ~
-		GlobalGT("LCA_MetIncubus", "GLOBAL", 0)
+		Global("LCA_MetIncubus", "GLOBAL", 1)
 	~ THEN 
 	GOTO LCA_FirstMeeting //OK
 	
 	IF ~
-		GlobalGT("LCA_MetIncubus", "GLOBAL", 2)
+		Global("LCA_MetIncubus", "GLOBAL", 2)
 	~ THEN
 	GOTO LCA_SecondMeeting //OK
 	
 	IF ~
-		GlobalGT("LCA_MetIncubus", "GLOBAL", 4)
+		Global("LCA_MetIncubus", "GLOBAL", 3)
 	~ THEN
 	GOTO LCA_ThirdMeeting //OK
 END
@@ -382,17 +421,17 @@ IF ~~ THEN BEGIN LCA_AskAboutDS
 	= @8 /* ~I hope you enjoyed it as much as I enjoyed watching you do what you do best... though the skill and power of the pawns you defeated pale in comparison to my own.~ */
 	
 	IF ~
-		GlobalGT("LCA_MetIncubus", "GLOBAL", 0)
+		Global("LCA_MetIncubus", "GLOBAL", 1)
 	~ THEN 
 	GOTO LCA_FirstMeeting //OK
 	
 	IF ~
-		GlobalGT("LCA_MetIncubus", "GLOBAL", 2)
+		Global("LCA_MetIncubus", "GLOBAL", 2)
 	~ THEN
 	GOTO LCA_SecondMeeting //OK
 	
 	IF ~
-		GlobalGT("LCA_MetIncubus", "GLOBAL", 4)
+		Global("LCA_MetIncubus", "GLOBAL", 3)
 	~ THEN
 	GOTO LCA_ThirdMeeting //OK
 END
@@ -403,17 +442,17 @@ IF ~~ THEN BEGIN LCA_AskAboutTrial
 	= @35 /*  ~Think of what you saw as one possible outcome... one of many.~ */
 	
 	IF ~
-		GlobalGT("LCA_MetIncubus", "GLOBAL", 0)
+		Global("LCA_MetIncubus", "GLOBAL", 1)
 	~ THEN 
 	GOTO LCA_FirstMeeting //OK
 	
 	IF ~
-		GlobalGT("LCA_MetIncubus", "GLOBAL", 2)
+		Global("LCA_MetIncubus", "GLOBAL", 2)
 	~ THEN
 	GOTO LCA_SecondMeeting //OK
 	
 	IF ~
-		GlobalGT("LCA_MetIncubus", "GLOBAL", 4)
+		Global("LCA_MetIncubus", "GLOBAL", 3)
 	~ THEN
 	GOTO LCA_ThirdMeeting //OK
 	
@@ -423,33 +462,53 @@ IF ~~ THEN LCA_FirstMeeting
 	SAY @18 /*~I'm sure you have questions, <CHARNAME>.~*/
 
 	IF ~
+		!Global("LCA_AskWhy", "LOCALS", 1)
 		NumInPartyGT(1)
-	~ THEN REPLY @1 /* ~Why have you brought me here?~ */
-	GOTO LCA_HaveSomethingDemonWants_Party //OK
+	~ THEN REPLY @78 /* ~Why have you brought us here?~ */
+	DO ~
+		SetGlobal("LCA_AskWhy", "LOCALS", 1)
+	~
+	GOTO LCA_HaveSomethingDemonWants
 	
 	IF ~
+		!Global("LCA_AskWhy", "LOCALS", 1)
 		!NumInPartyGT(1)
 	~ THEN REPLY @1 /* ~Why have you brought me here?~ */
-	GOTO LCA_HaveSomethingDemonWants //OK
+	DO ~
+		SetGlobal("LCA_AskWhy", "LOCALS", 1)
+	~
+	GOTO LCA_HaveSomethingDemonWants
 	
 	IF ~
 		NumInPartyGT(1)
-	~ THEN REPLY @2 /* ~You must be the demon Lyriel told me about.~*/
+	~ THEN REPLY @83 /* ~You must be the demon Lyriel told us about.~*/
+	DO ~
+		SetGlobal("LCA_AskWhy", "LOCALS", 1)
+	~
 	GOTO LCA_HaveSomethingDemonWants_Party //OK
 	
 	IF ~
 		!NumInPartyGT(1)
 	~ THEN REPLY @2 /*~You must be the demon Lyriel told me about.~ */
+	DO ~
+		SetGlobal("LCA_AskWhy", "LOCALS", 1)
+	~
 	GOTO LCA_HaveSomethingDemonWants //OK
 	
 	IF ~
 		NumInPartyGT(1)
 	~ THEN REPLY @3 /* ~Release me and my companions from this prison!~*/
+	DO ~
+		SetGlobal("LCA_AskWhy", "LOCALS", 1)
+	~
 	GOTO LCA_HaveSomethingDemonWants_Party //OK
 	
 	IF ~
 		!NumInPartyGT(1)
-	~ THEN REPLY @3 /*~Release me and my companions from this prison!~ */
+	~ THEN REPLY @82 /*~~Release me from this prison!~~ */
+	DO ~
+		SetGlobal("LCA_AskWhy", "LOCALS", 1)
+	~
 	GOTO LCA_HaveSomethingDemonWants //OK
 END
 
@@ -639,25 +698,25 @@ IF ~~ THEN BEGIN LCA_AskAboutLyriel
 	
 	IF ~
 		!NumInPartyGT(1)
-		Global("LCA_MetIncubus", "GLOBAL", 2)
+		Global("LCA_MetIncubus", "GLOBAL", 1)
 	~ THEN REPLY @12 /* ~No. I'll find my own way out of this place.~ */
 	GOTO LCA_WontGiveAmulet //OK
 	
 	IF ~
 		NumInPartyGT(1)
-		Global("LCA_MetIncubus", "GLOBAL", 2)
+		Global("LCA_MetIncubus", "GLOBAL", 1)
 	~ THEN REPLY @26 /* ~No. We'll find our own way out of here.~ */
 	GOTO LCA_WontGiveAmulet //OK
 	
 	IF ~
 		!NumInPartyGT(1)
-		Global("LCA_MetIncubus", "GLOBAL", 4)
+		Global("LCA_MetIncubus", "GLOBAL", 2)
 	~ THEN REPLY @63 /* ~No. I'll find my own way out of this place.~ */
 	GOTO LCA_WontGiveAmulet //OK
 	
 	IF ~
 		NumInPartyGT(1)
-		Global("LCA_MetIncubus", "GLOBAL", 4)
+		Global("LCA_MetIncubus", "GLOBAL", 2)
 	~ THEN REPLY @63 /* ~No. We'll find our own way out of here.~ */
 	GOTO LCA_WontGiveAmulet //OK
 	

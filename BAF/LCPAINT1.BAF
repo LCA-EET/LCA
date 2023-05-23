@@ -33,6 +33,7 @@ THEN
 END
 
 IF
+	InMyArea(Player1)
 	Global("LCA_MetIncubus", "GLOBAL", 1)
 	Global("LCA_PrisonKnowledge", "GLOBAL", 0)
 THEN
@@ -42,6 +43,7 @@ THEN
 END
 
 IF
+	InMyArea(Player1)
 	Global("LCA_MetIncubus", "GLOBAL", 2)
 	Global("LCA_PrisonKnowledge", "GLOBAL", 2)
 THEN
@@ -51,6 +53,7 @@ THEN
 END
 
 IF
+	InMyArea(Player1)
 	Global("LCA_MetIncubus", "GLOBAL", 3)
 	Global("LCA_PrisonKnowledge", "GLOBAL", 4)
 THEN

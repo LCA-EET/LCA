@@ -22,5 +22,5 @@ IF
 	Global("LCA_CompletedG3", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		DisplayString(Myself,~The painting depicts an underground laboratory.~)
+		DisplayString(Myself,~The painting depicts a magnificent library.~)
 END
