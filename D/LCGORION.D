@@ -119,6 +119,7 @@ IF ~~ THEN BEGIN LCA_MoreQuestions
 	DO ~
 		SetGlobal("LCA_Prepare", "LOCALS", 1)
 		IncrementGlobal("LCA_GorionQuestions", "GLOBAL", 1)
+		ChangeStat(Player1, XP, 2000, ADD)
 	~
 	GOTO LCA_Prepare
 	
@@ -128,6 +129,7 @@ IF ~~ THEN BEGIN LCA_MoreQuestions
 	DO ~
 		SetGlobal("LCA_Prepare", "LOCALS", 1)
 		IncrementGlobal("LCA_GorionQuestions", "GLOBAL", 1)
+		ChangeStat(Player1, XP, 2000, ADD)
 	~
 	GOTO LCA_Prepare
 	
@@ -137,6 +139,7 @@ IF ~~ THEN BEGIN LCA_MoreQuestions
 	DO ~
 		SetGlobal("LCA_Mother", "LOCALS", 1)
 		IncrementGlobal("LCA_GorionQuestions", "GLOBAL", 1)
+		ChangeStat(Player1, XP, 2000, ADD)
 	~
 	GOTO LCA_Mother
 	
@@ -146,6 +149,7 @@ IF ~~ THEN BEGIN LCA_MoreQuestions
 	DO ~
 		SetGlobal("LCA_Escape", "LOCALS", 1)
 		IncrementGlobal("LCA_GorionQuestions", "GLOBAL", 1)
+		ChangeStat(Player1, XP, 2000, ADD)
 	~
 	GOTO LCA_Escape
 	
@@ -156,6 +160,7 @@ IF ~~ THEN BEGIN LCA_MoreQuestions
 	DO ~
 		SetGlobal("LCA_WhatWillHappen", "LOCALS", 1)
 		IncrementGlobal("LCA_GorionQuestions", "GLOBAL", 1)
+		ChangeStat(Player1, XP, 2000, ADD)
 	~
 	GOTO LCA_WhatWillHappen
 	
@@ -166,6 +171,7 @@ IF ~~ THEN BEGIN LCA_MoreQuestions
 	DO ~
 		SetGlobal("LCA_GorionImpression", "LOCALS", 1)
 		IncrementGlobal("LCA_GorionQuestions", "GLOBAL", 1)
+		ChangeStat(Player1, XP, 5000, ADD)
 	~
 	GOTO LCA_GorionImpression
 	
@@ -175,6 +181,7 @@ IF ~~ THEN BEGIN LCA_MoreQuestions
 	DO ~
 		SetGlobal("LCA_WhyHarpers", "LOCALS", 1)
 		IncrementGlobal("LCA_GorionQuestions", "GLOBAL", 1)
+		ChangeStat(Player1, XP, 2000, ADD)
 	~
 	GOTO LCA_WhyHarpers
 END

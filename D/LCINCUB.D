@@ -31,6 +31,7 @@ IF ~~ THEN BEGIN LCA_ConfrontDemon3
 		NumInPartyLT(2)
 	~ THEN 
 	DO ~
+		SetGlobal("LCA_IncubusHostile", "LOCALS", 1)
 		StartCutSceneMode()
 		StartCutScene("LCDEM1")
 	~
@@ -41,6 +42,7 @@ IF ~~ THEN BEGIN LCA_ConfrontDemon3
 		NumInPartyLT(4)
 	~ THEN 
 	DO ~
+		SetGlobal("LCA_IncubusHostile", "LOCALS", 1)
 		StartCutSceneMode()
 		StartCutScene("LCDEM23")
 	~
@@ -50,6 +52,7 @@ IF ~~ THEN BEGIN LCA_ConfrontDemon3
 		NumInPartyGT(3)
 	~ THEN 
 	DO ~
+		SetGlobal("LCA_IncubusHostile", "LOCALS", 1)
 		StartCutSceneMode()
 		StartCutScene("LCDEM4")
 	~

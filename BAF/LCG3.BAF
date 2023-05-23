@@ -4,52 +4,8 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_GorionDialogInit", "GLOBAL", 1)
+		DisplayStringHead(Myself, ~STATE 0~)
 		ActionOverride("LCGORION", StartDialog("LCGORION", Player1))
-END
-
-IF
-	GlobalLT("LCA_GorionHostile", "GLOBAL", 2)
-	OR(2)
-		Global("LCA_GorionHostile", "GLOBAL", 1)
-		HPPercentLT("LCGORION", 100)
-THEN
-	RESPONSE #100
-		SetGlobal("LCA_GorionHostile", "GLOBAL", 2)
-		ActionOverride("LCGORION", Enemy())
-		Continue()
-END
-
-IF
-	Global("LCA_GorionHostile", "GLOBAL", 2)
-THEN
-	RESPONSE #100
-		ApplySpell("LCGORION", WIZARD_SHIELD)
-		Continue()
-END
-
-IF
-	Global("LCA_GorionHostile", "GLOBAL", 2)
-THEN
-	RESPONSE #100
-		ApplySpell("LCGORION", WIZARD_STONE_SKIN)
-		Continue()
-END
-
-IF
-	Global("LCA_GorionHostile", "GLOBAL", 2)
-THEN
-	RESPONSE #100
-		ApplySpell("LCGORION", WIZARD_MIRROR_IMAGE)
-		Continue()
-END
-
-IF
-	Global("LCA_GorionHostile", "GLOBAL", 2)
-THEN
-	RESPONSE #100
-		ApplySpell("LCGORION", WIZARD_GLOBE_OF_INVULNERABILITY)
-		SetGlobal("LCA_GorionHostile", "GLOBAL", 2)
-		Continue()
 END
 
 IF 

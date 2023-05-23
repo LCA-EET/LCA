@@ -1,9 +1,28 @@
 IF
+	Global("LCA_IncubusHostile", "LOCALS", 1)
+	!Global("LCA_IncubusBuff", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("LCA_IncubusBuff", "LOCALS", 1)
+		ClearActions(Myself)
+		ReallyForceSpell(Myself, WIZARD_GLOBE_OF_INVULNERABILITY)
+		ReallyForceSpell(Myself, WIZARD_MIRROR_IMAGE)
+		ReallyForceSpell(Myself, WIZARD_STONE_SKIN)
+		ReallyForceSpell(Myself, WIZARD_SHIELD)
+		
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
 	HPPercentLT(Myself, 10)
+	Global("LCA_IncubusHostile", "LOCALS", 1)
 THEN
 	RESPONSE #100
 		DisplayStringHead(Myself, ~Tell Lyriel... I love...~)
 		Wait(1)
+		CreateCreatureAtLocation("LCINCUB","GLOBAL","LCCHICK")
 		Kill(Myself)
 END
 
@@ -38,3 +57,115 @@ THEN
 		SetGlobal("LCA_HealDemon", "GLOBAL", 1)
 		StartDialog("LCINCUB", Player1)
 END
+
+IF 
+	!Global("LCA_IncubusHostile", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+//fight AI
+
+IF
+	See(NearestEnemyOfType([0.0.0.0.0.SUMMONED]))
+	Range(LastSeenBy(Myself),15)
+	LevelLT(LastSeenBy(Myself),10)
+	!GlobalTimerNotExpired("LCA_IncubusDeath","LOCALS")
+	RandomNum(2,1)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("LCA_IncubusDeath","LOCALS",TWO_ROUNDS)
+		ForceSpell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)  // SPWI605.SPL (Death Spell)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),10)
+	CheckStat(Myself,0,STONESKINS)
+	!GlobalTimerNotExpired("LCA_IncubusStone","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("LCA_IncubusStone","LOCALS",TWO_MINUTES)
+		ForceSpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	RandomNum(2,1)
+	!StateCheck(NearestEnemyOf(Myself),STATE_CHARMED)
+	!StateCheck(NearestEnemyOf(Myself),STATE_CONFUSED)
+	!GlobalTimerNotExpired("LCA_Gaze","LOCALS")
+THEN
+	RESPONSE #50
+		SetGlobalTimer("LCA_Gaze","LOCALS",TWO_ROUNDS)
+		FaceObject(NearestEnemyOf(Myself))
+		ReallyForceSpellRES("beguile",NearestEnemyOf(Myself))
+	RESPONSE #50
+		SetGlobalTimer("LCA_Gaze","LOCALS",TWO_ROUNDS)
+		FaceObject(NearestEnemyOf(Myself))
+		ReallyForceSpellRES("insanity",NearestEnemyOf(Myself))  
+		
+END
+
+IF
+	!GlobalTimerNotExpired("LCA_Finger","LOCALS")
+	RandomNum(3,1)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobalTimer("LCA_Finger","LOCALS",THREE_MINUTES)
+		ForceSpell(NearestEnemyOf(Myself),CLERIC_FINGER_OF_DEATH)
+END
+
+IF
+	!GlobalTimerNotExpired("LCA_Unholy","LOCALS")
+	RandomNum(2,1)
+	See(NearestEnemyOf(Myself))
+	!Alignment(NearestEnemyOf(Myself),MASK_EVIL)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("LCA_Unholy","LOCALS",FIVE_ROUNDS)
+		ForceSpell(Myself,CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+END
+
+IF
+	!GlobalTimerNotExpired("LCA_Quake","LOCALS")
+	RandomNum(3,1)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobalTimer("LCA_Quake","LOCALS",TEN_ROUNDS)
+		ForceSpell(Myself,CLERIC_EARTHQUAKE)  // SPPR720.SPL (Earthquake)
+END
+
+IF
+	GlobalTimerNotExpired("LCA_Harm","LOCALS")
+	RandomNum(3,1)
+	OR(2)
+		See(NearestEnemyOf(Myself))
+		See(LeastDamagedOf(Myself))
+	Range(LastSeenBy(Myself),10)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("LCA_Harm","LOCALS",FOUR_MINUTES)
+		ForceSpell(LastSeenBy(Myself),ENEMY_CLERIC_HARM) 
+END
+
+IF
+	Range(NearestEnemyOf(Myself),4)
+THEN
+	RESPONSE #100
+		RunAwayFrom(NearestEnemyOf(Myself),30)
+	RESPONSE #50
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	Detect(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
