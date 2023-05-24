@@ -1,6 +1,63 @@
 BEGIN ~LCLYRIEL~
 
 IF ~
+	Global("LCA_SavedLyriel", "GLOBAL", 1)
+~ THEN BEGIN LCA_Escaped
+	SAY @79 /* ~We've escaped! Thank you!~ */
+	
+	IF ~~ THEN REPLY @80 /* ~What will you do now?~ */
+	GOTO LCA_WhatWillDo
+	
+	IF ~
+		PartyHasItem("AMUL27")
+	~ THEN
+	GOTO LCA_EnchantAmulet
+END
+
+IF ~~ THEN BEGIN LCA_EnchantAmulet
+	SAY @81 /* Allow me this opportunity to express my gratitude.~*/
+	
+	= @82 /* ~(She places her spectral hand on the amulet, and closes her eyes.)~ */
+	
+	IF ~~ THEN
+	DO ~
+		TakePartyItem("AMUL27")
+		GiveItemCreate("LCLYAMUL", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCLYAMUL", IDENTIFIED,TRUE))
+		AddJournalEntry(@90, INFO)
+	~
+	GOTO LCA_EnchantAmulet2
+END
+
+IF ~~ THEN BEGIN LCA_EnchantAmulet2
+	SAY @83 /*  ~There. Go, hero, with my blessing.~ */
+	
+	IF ~~ THEN REPLY @80 /* ~What will you do now?~ */
+	GOTO LCA_WhatWillDo
+END
+
+IF ~~ THEN BEGIN LCA_WhatWillDo
+	SAY @85 /* ~I... I don't know if I'm ready to leave yet. Being in this place again fills me with the bittersweet memory of my lost love.~ */
+	
+	= @86 /* ~I think I'll remain here and return to my mourning, at least for now. Thank you for all of your help.~*/
+	
+	IF ~~ THEN REPLY @87 /* ~Goodbye, Lyriel.~ */
+	GOTO LCA_GoodBye
+END
+
+IF ~~ THEN BEGIN LCA_GoodBye
+	SAY @88 /* ~Goodbye, <CHARNAME>.~*/
+	
+	IF ~~ THEN
+	DO ~
+		AddExperienceParty(100000)
+		AddJournalEntry(@89, QUEST_DONE)
+		DestroySelf()
+	~
+	EXIT
+END
+
+IF ~
 	Global("LCA_DemonDead", "GLOBAL", 5)
 ~ THEN BEGIN LCA_ReadyToLeave
 	SAY @73 /* ~Are you ready to leave?~ */

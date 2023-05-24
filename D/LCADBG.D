@@ -833,6 +833,13 @@ END
 IF ~~ THEN BEGIN LCA_Menu_CreateItem
 	SAY @35 /* ~What item do you want me to create for you?~ */
 	
+	IF ~~ THEN REPLY @319
+	DO ~
+		GiveItemCreate("LCLYAMUL", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCLYAMUL", IDENTIFIED,TRUE))
+	~
+	GOTO LCA_ReturnToMainMenu
+	
 	IF ~~ THEN REPLY @318
 	DO ~
 		GiveItemCreate("LCMSRING", LastTalkedToBy(Myself),1,0,0)
