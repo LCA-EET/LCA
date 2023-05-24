@@ -7,6 +7,7 @@ IF ~
 	
 	IF ~~ THEN REPLY @74 /* ~Yes. Let's go.~ */
 	DO ~
+		SetGlobal("LCA_SavedLyriel", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("LCPEXIT")
 	~
@@ -48,6 +49,7 @@ IF ~~ THEN BEGIN LCA_IncubusDead3
 	
 	IF ~~ THEN REPLY @69 /* ~Right. Let's go.~ */
 	DO ~
+		SetGlobal("LCA_SavedLyriel", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("LCPEXIT")
 	~
@@ -67,6 +69,7 @@ IF ~~ THEN BEGIN LCA_IncubusLove
 	
 	IF ~~ THEN REPLY @77 /* ~It's time to leave.~ */
 	DO ~
+		SetGlobal("LCA_SavedLyriel", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("LCPEXIT")
 	~

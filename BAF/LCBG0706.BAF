@@ -1,4 +1,18 @@
 IF
+	Global("LCA_SavedLyriel", "GLOBAL", 1)
+	InMyArea(Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_SavedLyriel", "GLOBAL", 2)
+		//400,, 480
+		CreateVisualEffect("SPPORTAL",[400.480])
+		Wait(2)
+		CreateCreature("LCLYRIEL",[400.480],SW)
+		Wait(1)
+		ActionOverride("LCLYRIEL", StartDialog("LCLYRIEL", Player1))
+END
+
+IF
 	InMyArea("ALYTH")
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 THEN

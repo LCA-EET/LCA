@@ -20,6 +20,29 @@ IF ~~ THEN BEGIN LCA_ConfrontDemon2
 	
 	IF ~~ THEN REPLY @68 /* ~Your time has finally come, demon.~ */
 	GOTO LCA_ConfrontDemon3
+	
+	IF ~~ THEN REPLY @84 /*~This is your last chance. Release us, or die.~*/
+	GOTO LCA_LastChance
+END
+
+IF ~~ THEN BEGIN LCA_LastChance
+	SAY @85 /* ~*MY* last chance? Hah! End this foolishness and give me the amulet.~  */
+	
+	IF ~
+		PartyHasItem("AMUL27")
+		Gender(Player1, MALE)
+	~ THEN REPLY @13 /* Here, take it.~ */
+	GOTO LCA_GiveAmuletToDemon_M
+	
+	IF ~
+		PartyHasItem("AMUL27")
+		Gender(Player1, FEMALE)
+	~ THEN REPLY @13 /* Here, take it.~ */
+	GOTO LCA_GiveAmuletToDemon_F
+	
+	IF ~~ THEN REPLY @86 /* Never! */
+	GOTO LCA_ConfrontDemon3
+	
 END
 
 IF ~~ THEN BEGIN LCA_ConfrontDemon3

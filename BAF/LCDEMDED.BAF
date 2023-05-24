@@ -8,6 +8,8 @@ THEN
 		Kill("LCDEM03")
 		Kill("LCDEM04")
 		Wait(2)
+		CreateCreature("LCCHICK", [165.200], SE)
+		SmallWait(1)
 		CreateVisualEffect("SPPORTAL",[320.320])
 		Wait(2)
 		CreateCreature("LCLYRIEL",[320.320],N)

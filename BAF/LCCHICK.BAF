@@ -1,0 +1,22 @@
+IF
+	!Global("LCA_TimerInit", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_TimerInit", "LOCALS", 1)
+		SetGlobalTimer("LCA_CluckTimer", "LOCALS", ONE_ROUND)
+END
+IF
+	GlobalTimerExpired("LCA_CluckTimer", "LOCALS")
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself, ~Cluck!~)
+		SetGlobalTimer("LCA_CluckTimer", "LOCALS", ONE_ROUND)
+	RESPONSE #100
+		DisplayStringHead(Myself, ~Cheep!~)
+		SetGlobalTimer("LCA_CluckTimer", "LOCALS", ONE_ROUND)
+	RESPONSE #100
+		DisplayStringHead(Myself, ~Cluck! Cluck!~)
+		SetGlobalTimer("LCA_CluckTimer", "LOCALS", ONE_ROUND)
+	RESPONSE #100
+		SetGlobalTimer("LCA_CluckTimer", "LOCALS", ONE_ROUND)
+END

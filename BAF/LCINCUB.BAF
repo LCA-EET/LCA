@@ -1,5 +1,22 @@
 IF
 	Global("LCA_IncubusHostile", "LOCALS", 1)
+	Global("LCA_PrisonKnowledge", "GLOBAL", 6)
+	!Global("LCA_IncubusBuff", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("LCA_IncubusBuff", "LOCALS", 1)
+		ClearActions(Myself)
+		ReallyForceSpell(Myself, WIZARD_GLOBE_OF_INVULNERABILITY)
+		ReallyForceSpell(Myself, WIZARD_STONE_SKIN)
+		
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("LCA_IncubusHostile", "LOCALS", 1)
+	Global("LCA_PrisonKnowledge", "GLOBAL", 4)
 	!Global("LCA_IncubusBuff", "LOCALS", 1)
 THEN
 	RESPONSE #100
@@ -20,10 +37,10 @@ IF
 	Global("LCA_IncubusHostile", "LOCALS", 1)
 THEN
 	RESPONSE #100
+		SetInterrupt(FALSE)
 		DisplayStringHead(Myself, ~Tell Lyriel... I love...~)
-		Wait(1)
-		CreateCreatureAtLocation("LCINCUB","GLOBAL","LCCHICK")
-		Kill(Myself)
+		Kill(Myself)		
+		SetInterrupt(TRUE)
 END
 
 IF
