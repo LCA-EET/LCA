@@ -1,4 +1,13 @@
 IF
+	AreaCheck("BG0706")
+	Global("LCA_SavedLyriel", "GLOBAL", 2)
+	InMyArea(Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_SavedLyriel", "GLOBAL", 3)
+		StartDialog("LCLYRIEL", Player1)
+END
+IF
 	AreaCheck("LCDEMSAN")
 	Global("LCA_DemonDead", "GLOBAL", 1)
 THEN

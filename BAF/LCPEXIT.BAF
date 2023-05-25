@@ -4,6 +4,7 @@ THEN
 	RESPONSE #100
 		CutSceneID(Player1)
 		FadeToColor([30.0],0)
+		SetGlobal("LCA_ExitPrison", "GLOBAL", 1)
 		Wait(2)
 		
 		LeaveAreaLUAPanic("LCPAINT1", "", [290.425], NE)

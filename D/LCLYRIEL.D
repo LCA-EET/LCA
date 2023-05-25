@@ -1,7 +1,7 @@
 BEGIN ~LCLYRIEL~
 
 IF ~
-	Global("LCA_SavedLyriel", "GLOBAL", 1)
+	Global("LCA_SavedLyriel", "GLOBAL", 3)
 ~ THEN BEGIN LCA_Escaped
 	SAY @79 /* ~We've escaped! Thank you!~ */
 	

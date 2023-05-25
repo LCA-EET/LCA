@@ -1,6 +1,35 @@
 IF
+	Global("LCA_IncubusSword", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_IncubusSword", "GLOBAL", 2)
+		GiveItemCreate("LCSWORD", Player1)
+		ActionOverride(Player1, SetItemFlags("LCSWORD", IDENTIFIED,TRUE))
+END
+
+IF
+	Global("LCA_IncubusGoose", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_IncubusGoose", "GLOBAL", 2)
+		GiveItemCreate("LCCHICK", Player1)
+		ActionOverride(Player1, SetItemFlags("LCCHICK", IDENTIFIED,TRUE))
+END
+
+IF
+	Global("LCA_IncubusRing", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_IncubusRing", "GLOBAL", 2)
+		GiveItemCreate("LCMSRING", Player1)
+		ActionOverride(Player1, SetItemFlags("LCMSRING", IDENTIFIED,TRUE))
+END
+
+IF
+	AreaCheck("BG0706")
 	Global("LCA_SavedLyriel", "GLOBAL", 1)
 	InMyArea(Player1)
+	Global("LCA_ExitPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_SavedLyriel", "GLOBAL", 2)
@@ -8,8 +37,6 @@ THEN
 		CreateVisualEffect("SPPORTAL",[400.480])
 		Wait(2)
 		CreateCreature("LCLYRIEL",[400.480],SW)
-		Wait(1)
-		ActionOverride("LCLYRIEL", StartDialog("LCLYRIEL", Player1))
 END
 
 IF
@@ -18,6 +45,13 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("alyth", DestroySelf())
+END
+
+IF 
+	Global("LCA_ExitPrison", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		NoAction()
 END
 
 IF
@@ -33,6 +67,7 @@ END
 IF 
 	GlobalTimerExpired("LCA_Amulet1Timer", "GLOBAL")
 	GlobalLT("LCA_AmuletPainting", "GLOBAL", 1)
+	PartyHasItem("AMUL27")
 	InMyArea(Player1)
 THEN
 	RESPONSE #100
@@ -54,6 +89,7 @@ END
 IF 
 	GlobalTimerExpired("LCA_Amulet2Timer", "GLOBAL")
 	GlobalLT("LCA_AmuletPainting", "GLOBAL", 3)
+	PartyHasItem("AMUL27")
 	InMyArea(Player1)
 THEN
 	RESPONSE #100
@@ -74,6 +110,7 @@ END
 
 IF 
 	GlobalTimerExpired("LCA_Amulet3Timer", "GLOBAL")
+	PartyHasItem("AMUL27")
 	InMyArea(Player1)
 	!Global("LCA_PaintSpySpawn", "GLOBAL", 1)
 THEN
