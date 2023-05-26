@@ -1,0 +1,32 @@
+IF
+	Global("LCA_G2Init", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_G2Init", "GLOBAL", 2)
+		StartDialog("LCSAREVO", Player1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(Player1,5)
+THEN
+	RESPONSE #10
+		AttackReevaluate(Player1,45)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(NearestEnemyOf(Myself),3)
+THEN
+	RESPONSE #10
+		AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+
+IF
+	AttackedBy([PC],DEFAULT)
+	!Range(NearestEnemyOf(Myself),7)
+THEN
+	RESPONSE #10
+		AttackReevaluate(LastAttackerOf(Myself),30)
+END
+

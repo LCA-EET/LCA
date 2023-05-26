@@ -3,7 +3,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_IncubusSword", "GLOBAL", 2)
-		GiveItemCreate("LCSWORD", Player1)
+		GiveItemCreate("LCSWORD", Player1,1,0,0)
 		ActionOverride(Player1, SetItemFlags("LCSWORD", IDENTIFIED,TRUE))
 END
 
@@ -12,7 +12,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_IncubusGoose", "GLOBAL", 2)
-		GiveItemCreate("LCCHICK", Player1)
+		GiveItemCreate("LCCHICK", Player1,1,0,0)
 		ActionOverride(Player1, SetItemFlags("LCCHICK", IDENTIFIED,TRUE))
 END
 
@@ -21,7 +21,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_IncubusRing", "GLOBAL", 2)
-		GiveItemCreate("LCMSRING", Player1)
+		GiveItemCreate("LCMSRING", Player1,1,0,0)
 		ActionOverride(Player1, SetItemFlags("LCMSRING", IDENTIFIED,TRUE))
 END
 

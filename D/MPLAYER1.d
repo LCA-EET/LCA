@@ -157,7 +157,7 @@ APPEND ~PLAYER1~
 	IF ~
 		Global("LCA_EnterG2", "GLOBAL", 1)
 	~ THEN BEGIN LCA_EnterG2
-		SAY @119 /*~(As you approach the painting, you feel a force probing your thoughts and memories. The image swirls, then depicts a magnificent library. You recognize it as Candlekeep. Touch the painting?)~*/
+		SAY @120 /*~(As you approach the painting, you feel a force probing your thoughts and memories. The image swirls, then depicts a magnificent library. You recognize it as Candlekeep. Touch the painting?)~*/
 		
 		IF ~~ THEN REPLY @111 /* Yes */
 		DO ~

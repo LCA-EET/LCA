@@ -55,6 +55,7 @@ override/C6WULF1.dlg
 override/LCILLASE.dlg
 override/LCVIRGIL.dlg
 override/KERRAC.dlg
+override/LCCOMM.dlg
 override/DEGARD.dlg
 override/RUFFIAN.dlg
 override/LCHALBAZ.dlg
@@ -67,11 +68,13 @@ override/LCBRIELB.dlg
 override/LCJASPER.dlg
 override/LCNOBLM.dlg
 override/LCTOWNF.dlg
+override/LCSAREVO.dlg
 override/OGRELEAD.dlg
 override/DILLAR.dlg
 override/ROGER.dlg
 override/SBWENCH.dlg
 override/C6DRIZZ1.dlg
+override/LCCOMW.dlg
 override/BART0133.dlg
 override/BDBELT.dlg
 override/LCHEAD1.dlg
@@ -384,6 +387,7 @@ override/LCPROPOS.bcs
 override/LCROHMA1.bcs
 override/LCRTBG.bcs
 override/LCSARA.bcs
+override/LCSAREVO.bcs
 override/LCSENT.bcs
 override/LCSENT1.bcs
 override/LCTIANNA.bcs
@@ -500,6 +504,9 @@ override/LCCHICK.ITM
 override/ILCEGG.BAM
 override/LCEGG.BAM
 override/LCEGG.ITM
+override/LCCOMW.CRE
+override/LCCOMM.CRE
+override/LCSAREVO.CRE
 override/LCGORION.CRE
 override/LCG1001A.CRE
 override/LCG1001B.CRE
