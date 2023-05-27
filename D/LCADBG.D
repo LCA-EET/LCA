@@ -1734,6 +1734,13 @@ END
 IF ~~ THEN BEGIN LCA_Menu_StartCutscene
 	SAY @15 /*  ~Of course. Which cutscene do you want to start?~ */
 	
+	IF ~~ THEN REPLY @320
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("LCG2ENT")
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @310
 	DO ~
 		StartCutSceneMode()

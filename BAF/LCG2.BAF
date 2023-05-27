@@ -1,4 +1,14 @@
 IF
+	Global("LCA_G2Init", "GLOBAL", 1)
+	InMyArea(Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_G2Init", "GLOBAL", 2)
+		StartCutSceneMode()
+		StartCutScene("LCCSG2A")
+END
+
+IF
 	Global("LCA_EndG2", "GLOBAL", 1)
 THEN
 	RESPONSE #100

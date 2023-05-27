@@ -318,6 +318,7 @@ override/LCCS14.bcs
 override/LCCS15.bcs
 override/LCCS16a.bcs
 override/LCCS16b.bcs
+override/LCCSG2A.bcs
 override/LCCSHOW.bcs
 override/LCCSHOW2.bcs
 override/LCCSHOW3.bcs
@@ -506,6 +507,9 @@ override/LCEGG.BAM
 override/LCEGG.ITM
 override/LCCOMW.CRE
 override/LCCOMM.CRE
+override/LCCOMW1.CRE
+override/LCCOMM1.CRE
+override/LCFFEXEC.CRE
 override/LCSAREVO.CRE
 override/LCGORION.CRE
 override/LCG1001A.CRE

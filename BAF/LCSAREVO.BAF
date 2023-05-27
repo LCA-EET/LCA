@@ -1,10 +1,4 @@
-IF
-	Global("LCA_G2Init", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("LCA_G2Init", "GLOBAL", 2)
-		StartDialog("LCSAREVO", Player1)
-END
+
 
 IF
 	See(NearestEnemyOf(Myself))
