@@ -19,13 +19,9 @@ IF ~~ THEN BEGIN LCA_Execute
 	SAY @6 /* ~Executioner! Carry out the sentence!~ */
 	
 	IF ~~ THEN
-	EXIT
-	/*
 	DO ~
 		StartCutSceneMode()
-		StartCutScene("LCCSG2A")
+		StartCutScene("LCCSG2B")
 	~
-	*/
-	
-	
+	EXIT
 END
