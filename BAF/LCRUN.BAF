@@ -1,0 +1,43 @@
+IF
+	OR(2)
+		Global("LCA_SarevokHostile", "GLOBAL", 1)
+		HPPercentLT(Myself, 100)
+	!Global("LCA_RunAway", "LOCALS", 1)
+THEN
+	RESPONSE #10
+		SetGlobal("LCA_RunAway", "LOCALS", 1)
+		DisplayStringHead(Myself, ~Eek!~)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("LCA_RunAway", "LOCALS", 1)
+		DisplayStringHead(Myself, ~Oh no!~)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("LCA_RunAway", "LOCALS", 1)
+		DisplayStringHead(Myself, ~AAH!~)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("LCA_RunAway", "LOCALS", 1)
+		DisplayStringHead(Myself, ~Get out of my way!~)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("LCA_RunAway", "LOCALS", 1)
+		DisplayStringHead(Myself, ~Run!~)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("LCA_RunAway", "LOCALS", 1)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("LCA_RunAway", "LOCALS", 1)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("LCA_RunAway", "LOCALS", 1)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("LCA_RunAway", "LOCALS", 1)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("LCA_RunAway", "LOCALS", 1)
+		EscapeArea()
+END
+	

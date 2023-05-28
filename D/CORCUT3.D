@@ -25,5 +25,19 @@ CHAIN LCSAREVO LCA_G2Chain
 	== LCSAREVO
 	@4 /* ~You'd dare disobey the order of a Grand Duke! I'll have your head!~ */
 	= @5 /* ~Angelo! Zhalimar! Destroy them!~ */
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_SarevokHostile", "GLOBAL", 1)
+		ChangeEnemyAlly("LCSAREVO", ENEMY)
+		ChangeEnemyAlly("LCSEMAJ", ENEMY)
+		ChangeEnemyAlly("LCANGELO", ENEMY)
+		ChangeEnemyAlly("LCZHALIM", ENEMY)
+		ChangeEnemyAlly("CORCUT3", ALLY)
+		ChangeEnemyAlly("LCLIIA", ALLY)
+		ChangeEnemyAlly("LCBELT", ALLY)
+		ChangeEnemyAlly("LCFFEXEC", ALLY)
+		ChangeEnemyAlly("LCFF1248", ALLY)
+		ChangeEnemyAlly("LCFF1271", ALLY)
+	~
 EXIT
 
