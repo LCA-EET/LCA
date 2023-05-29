@@ -390,8 +390,10 @@ override/LCPROPO1.bcs
 override/LCPROPOS.bcs
 override/LCROHMA1.bcs
 override/LCRTBG.bcs
+override/LCRUN.bcs
 override/LCSARA.bcs
 override/LCSAREVO.bcs
+override/LCSEMAJ.bcs
 override/LCSENT.bcs
 override/LCSENT1.bcs
 override/LCTIANNA.bcs
@@ -513,6 +515,9 @@ override/LCCOMM.CRE
 override/LCCOMW1.CRE
 override/LCCOMM1.CRE
 override/CorCut3.CRE
+override/LCZHALIM.CRE
+override/LCANGELO.CRE
+override/LCSEMAJ.CRE
 override/LCFFEXEC.CRE
 override/LCSAREVO.CRE
 override/LCGORION.CRE
