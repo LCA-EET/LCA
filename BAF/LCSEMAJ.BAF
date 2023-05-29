@@ -6,15 +6,6 @@ THEN
 END
 
 IF
-	Global("SemajDim","GLOBAL",0)
-	Global("LCA_SarevokHostile", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		ForceSpellPoint([821.966],WIZARD_DIMENSION_DOOR)  // SPWI402.SPL (Dimension Door)
-		SetGlobal("SemajDim","GLOBAL",1)
-END
-
-IF
 	StateCheck(Myself,STATE_SILENCED)
 THEN
 	RESPONSE #100

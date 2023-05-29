@@ -1,0 +1,30 @@
+IF
+	Global("LCA_EndG2", "GLOBAL", 1)
+	!ActionListEmpty()
+	!Global("LCA_ActionSet", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		SetGlobal("LCA_ActionSet", "LOCALS", 1)
+		MoveToObject(Player1)
+		Continue()
+END
+
+IF
+	Global("LCA_EndG2", "GLOBAL", 1)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_ActionSet", "LOCALS", 1)
+		MoveToObject(Player1)
+		Continue()
+END
+
+IF
+	Range(Player1, 6)
+	Global("LCA_EndG2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_EndG2", "GLOBAL", 2)
+		StartDialog("CORCUT3", Player1)
+END

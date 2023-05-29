@@ -299,7 +299,7 @@ IF ~
 	IF ~
 		Global("LCA_CompletedG2", "GLOBAL", 1)
 		!Global("LCA_AskAboutTrial", "GLOBAL", 1)
-	~ THEN REPLY @34 /* ~That trial was not at all how I remembered it.~ */
+	~ THEN REPLY @34 /* ~Sarevok, a Grand Duke? What was the point of that farce?~  */
 	DO ~
 		SetGlobal("LCA_AskAboutTrial", "GLOBAL", 1)
 	~
@@ -362,7 +362,7 @@ IF ~
 	IF ~
 		Global("LCA_CompletedG2", "GLOBAL", 1)
 		!Global("LCA_AskAboutTrial", "GLOBAL", 1)
-	~ THEN REPLY @34 /* ~That trial was not at all how I remembered it.~ */
+	~ THEN REPLY @34 /* ~Sarevok, a Grand Duke? What was the point of that farce?~  */
 	DO ~
 		SetGlobal("LCA_AskAboutTrial", "GLOBAL", 1)
 	~

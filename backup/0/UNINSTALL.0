@@ -197,6 +197,7 @@ override/CHSARA1.bcs
 override/CHSARA2.bcs
 override/CHSARA3.bcs
 override/CHSARA4.bcs
+override/CORCUT3.bcs
 override/LBTRAP.bcs
 override/LC100a.bcs
 override/LC100b.bcs
@@ -499,6 +500,7 @@ override/LCCSHOW.ARE
 override/LCPAINT1.ARE
 override/LCG1.ARE
 override/LCG2.ARE
+override/LCG2A.ARE
 override/LCG3.ARE
 override/LCDEMSAN.ARE
 override/LCMSRING.BAM
@@ -516,6 +518,8 @@ override/LCCOMW1.CRE
 override/LCCOMM1.CRE
 override/CorCut3.CRE
 override/LCZHALIM.CRE
+override/LCAASIM.CRE
+override/LCGARDUS.CRE
 override/LCANGELO.CRE
 override/LCSEMAJ.CRE
 override/LCFFEXEC.CRE
@@ -775,6 +779,7 @@ override/LCLUXG.CRE
 override/LCDEMIN.CRE
 override/LCTMARSU.CRE
 override/LCFF1271.CRE
+override/LCFF1272.CRE
 override/LCFF1248.CRE
 override/LCBDSCH2.CRE
 override/LCBREVLK.CRE
