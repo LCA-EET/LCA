@@ -21,6 +21,7 @@ IF
 	Dead("LCZHALIM")
 	Dead("LCGARDUS")
 	Dead("LCAASIM")
+	Dead("LCDIYAB")
 	GlobalLT("LCA_EndG2", "GLOBAL", 1)
 THEN
 	RESPONSE #100

@@ -1,3 +1,11 @@
+IF 
+	!Global("LCA_ChangeClass", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		ChangeClass(Myself, NONE)
+		SetGlobal("LCA_ChangeClass", "LOCALS", 1)
+END
+
 IF
 	OR(2)
 		Global("LCA_SarevokHostile", "GLOBAL", 1)
@@ -23,6 +31,13 @@ THEN
 	RESPONSE #10
 		SetGlobal("LCA_RunAway", "LOCALS", 1)
 		DisplayStringHead(Myself, ~Run!~)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("LCA_RunAway", "LOCALS", 1)
+		DisplayStringHead(Myself, ~Clear the square!~)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("LCA_RunAway", "LOCALS", 1)
 		EscapeArea()
 	RESPONSE #10
 		SetGlobal("LCA_RunAway", "LOCALS", 1)

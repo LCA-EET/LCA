@@ -21,12 +21,7 @@ THEN
 		ActionOverride("LCFFEXEC", FaceObject("CORCUT3"))
 		FaceObject("CORCUT3")
 		SmallWait(1)
-		//ActionOverride("LCCOMM", MoveToPoint([965.690]))
-		SmallWait(1)
-		//ActionOverride("LCCOMW1", MoveToPoint([1190.760]))
-		SmallWait(1)
-		//ActionOverride("LCCOMW", MoveToPoint([825.825]))
-		SmallWait(1)
+		
 		ActionOverride("LCFF1272", MoveToObject("TRIGFF3"))
 		Wait(1)
 		ActionOverride("LCFF1248", MoveToObject("TRIGFF1"))

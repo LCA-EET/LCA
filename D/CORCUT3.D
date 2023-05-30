@@ -91,12 +91,14 @@ CHAIN LCSAREVO LCA_G2Chain
 		ChangeEnemyAlly("LCZHALIM", ENEMY)
 		ChangeEnemyAlly("LCAASIM", ENEMY)
 		ChangeEnemyAlly("LCGARDUS", ENEMY)
+		ChangeEnemyAlly("LCDIYAB", ENEMY)
 		ChangeEnemyAlly("CORCUT3", ALLY)
 		ChangeEnemyAlly("LCLIIA", ALLY)
 		ChangeEnemyAlly("LCBELT", ALLY)
 		ChangeEnemyAlly("LCFFEXEC", ALLY)
 		ChangeEnemyAlly("LCFF1248", ALLY)
 		ChangeEnemyAlly("LCFF1271", ALLY)
+		ChangeEnemyAlly("BDFISTCC", ALLY)
 	~
 EXIT
 

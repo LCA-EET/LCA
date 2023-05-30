@@ -24,9 +24,9 @@ THEN
 		Wait(4)
 		DisplayStringHead("LCSAREVO", @6)
 		Wait(1)
-		//DisplayStringHead("LCCOMM1", @7)
+		DisplayStringHead("LCCOMM1", @7)
 		SmallWait(1)
-		//DisplayStringHead("LCCOMW1", @8)
+		DisplayStringHead("LCCOMW1", @8)
 		Wait(3)
 		ActionOverride("LCSAREVO", StartDialog("LCSAREVO", Player1))
 		

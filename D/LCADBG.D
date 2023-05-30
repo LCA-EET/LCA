@@ -98,6 +98,13 @@ END
 IF ~~ THEN BEGIN LCA_TestInteraction
 	SAY @280
 	
+	IF ~~ THEN REPLY @321
+	DO ~
+		CreateCreature("LCGORION", [-1.-1], N)
+		Wait(1)
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @309
 	DO ~
 		CreateCreature("LCG1001A", [-1.-1], N)
