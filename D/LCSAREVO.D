@@ -1,7 +1,7 @@
 BEGIN ~LCSAREVO~
 
 IF ~
-	Global("LCA_G2Init", "GLOBAL", 2)
+	Global("LCA_G2_Intro", "GLOBAL", 4)
 ~ THEN BEGIN LCA_Intro
 	SAY @2 /* ~Any final words?~ */
 	

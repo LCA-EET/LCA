@@ -1,3 +1,10 @@
+IF 
+	Global("LCA_G2_Intro", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_G2_Intro", "GLOBAL", 2)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END
 
 IF
 	Global("LCA_EndG2", "GLOBAL", 3)
@@ -64,11 +71,11 @@ THEN
 END
 
 IF
-	Global("LCA_G2Init", "GLOBAL", 1)
+	Global("LCA_G2_Intro", "GLOBAL", 3)
 	InMyArea(Player1)
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_G2Init", "GLOBAL", 2)
+		SetGlobal("LCA_G2_Intro", "GLOBAL", 4)
 		StartCutSceneMode()
 		StartCutScene("LCCSG2A")
 END

@@ -155,6 +155,20 @@ APPEND ~PLAYER1~
 	END
 	
 	IF ~
+		Global("LCA_G2_Intro", "GLOBAL", 2)
+	~ THEN BEGIN LCA_G2_Intro
+		SAY @134
+		= @135
+		= @136
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("LCA_G2_Intro", "GLOBAL", 3)
+		~
+		EXIT
+	END
+	
+	IF ~
 		Global("LCA_EnterG2", "GLOBAL", 1)
 	~ THEN BEGIN LCA_EnterG2
 		SAY @120 /*~(As you approach the painting, you feel a force probing your thoughts and memories. The image swirls, then depicts a magnificent library. You recognize it as Candlekeep. Touch the painting?)~*/
@@ -175,9 +189,21 @@ APPEND ~PLAYER1~
 	END
 	
 	IF ~
+		Global("LCA_G3_Intro", "GLOBAL", 2)
+	~ THEN BEGIN LCA_G3_Intro
+		SAY @137 /* ~(You regain consciousness and are greeted by a loving and familiar countenance...)~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("LCA_G3_Intro", "GLOBAL", 3)
+		~
+		EXIT
+	END
+	
+	IF ~
 		Global("LCA_EnterG3", "GLOBAL", 1)
 	~ THEN BEGIN LCA_EnterG3
-		SAY @119 /*~(As you approach the painting, you feel a force probing your thoughts and memories. The image swirls, then depicts an underground laboratory. You recognize it as Irenicus' stronghold. Touch the painting?)~*/
+		SAY @119 /*~(As you approach the painting, you feel a force probing your thoughts and memories. The image swirls, then depicts a magnificent library. You recognize it as Candlekeep. Touch the painting?)~*/
 		
 		IF ~~ THEN REPLY @111 /* Yes */
 		DO ~
