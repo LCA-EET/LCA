@@ -2,7 +2,7 @@ IF
 	!Global("LCA_ChangeClass", "LOCALS", 1)
 THEN
 	RESPONSE #100
-		ChangeClass(Myself, NONE)
+		ChangeClass(Myself, 0)
 		SetGlobal("LCA_ChangeClass", "LOCALS", 1)
 END
 

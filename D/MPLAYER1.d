@@ -191,7 +191,7 @@ APPEND ~PLAYER1~
 	IF ~
 		Global("LCA_G3_Intro", "GLOBAL", 2)
 	~ THEN BEGIN LCA_G3_Intro
-		SAY @137 /* ~(You regain consciousness and are greeted by a loving and familiar countenance...)~ */
+		SAY @137 /* ~(You regain consciousness and are greeted with the sight of a loving and familiar countenance...)~ */
 		
 		IF ~~ THEN
 		DO ~

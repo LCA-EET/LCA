@@ -4,6 +4,7 @@ THEN
 	RESPONSE #100
 		CutSceneID(Player1)
 		FadeToColor([30.0],0)
+		SetGlobal("LCA_G3_Intro", "GLOBAL", 1)
 		Wait(2)
 		LeaveAreaLUAPanic("LCG3", "", [1086.1416], NW)
 		LeaveAreaLUA("LCG3", "", [1086.1416], NW)

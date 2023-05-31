@@ -23,7 +23,7 @@ THEN
 		SmallWait(1)
 		
 		ActionOverride("LCFF1272", MoveToObject("TRIGFF3"))
-		Wait(1)
+		SmallWait(5)
 		ActionOverride("LCFF1248", MoveToObject("TRIGFF1"))
 		Wait(1)
 		ActionOverride("LCFF1271", MoveToObject("TRIGFF2"))

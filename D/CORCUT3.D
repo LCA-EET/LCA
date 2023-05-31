@@ -81,6 +81,7 @@ CHAIN LCSAREVO LCA_G2Chain
 	@2 /*~Executioner, release the prisoner.~ */
 	== LCFFEXEC
 	@3 /* ~Yes, Captain.~ */
+	= @21 /* ~(The executioner undoes your restraints.)~ */
 	== LCSAREVO
 	@4 /* ~You'd dare disobey the order of a Grand Duke! Destroy them!~ */
 	DO ~
