@@ -1741,6 +1741,14 @@ END
 IF ~~ THEN BEGIN LCA_Menu_StartCutscene
 	SAY @15 /*  ~Of course. Which cutscene do you want to start?~ */
 	
+	IF ~~ THEN REPLY @322
+	DO ~
+		SetGlobal("LCA_DemonSpeak", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutScene("LCSENT")
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @320
 	DO ~
 		StartCutSceneMode()

@@ -98,7 +98,7 @@ IF ~
 	EXIT
 	
 	IF ~
-		Global("LCA_GaveTreasure", "GLOBAL", 1)
+		Global("LCA_GaveTreasure", "LOCALS", 1)
 	~ THEN 
 	DO ~
 		SetGlobal("LCA_ParleyAttack", "GLOBAL", 0)
@@ -619,7 +619,7 @@ IF ~~ THEN BEGIN LCA_WhatAreYouOffering
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("LCA_GaveTreasure", "GLOBAL", 1)
+		SetGlobal("LCA_GaveTreasure", "LOCALS", 1)
 		GiveItemCreate("LCSWORD", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCSWORD", IDENTIFIED,TRUE))
 		GiveItemCreate("LCCHICK", LastTalkedToBy(Myself),1,0,0)
