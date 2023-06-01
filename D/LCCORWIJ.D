@@ -6493,6 +6493,13 @@ IF ~~ THEN BEGIN LCA_StartHOWCutscene2
 	~
 	EXIT
 END
+
+IF ~~ THEN BEGIN LCA_AlythReport
+	SAY @1426 /* ~Ma'am, did you report these disappearances to the Flaming Fist?~ */
+	
+	IF ~~ THEN
+	EXTERN LCALYTH LCA_ReportToFF
+END
 CHAIN 
 	IF ~~ THEN LCCORWIJ LCA_CorwinTiannaGoodbyeChain
 		@854 /* ~I hope you learned something from this Tianna. Next time, you might not be so lucky.~*/

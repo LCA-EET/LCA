@@ -1,5 +1,15 @@
 IF
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Global("LCA_Alyth0705", "LOCALS", 1)
+	!Dead("alyth")
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_Alyth0705", "LOCALS", 1)
+		CreateCreature("LCALYTH", [870.640], SE)
+END
+
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	!Global("LCA_DestroyNPCs_0705", "GLOBAL", 1)
 THEN
 	RESPONSE #100
