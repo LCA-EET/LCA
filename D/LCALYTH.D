@@ -97,6 +97,13 @@ IF ~~ THEN BEGIN LCA_Investigation
 	GOTO LCA_CantHelpNow
 END
 
+IF ~~ THEN BEGIN LCA_CantHelpNow
+	SAY @20 /* ~I understand... you must be tired from your journey. If you have a change of heart, please see me.~ */
+	
+	IF ~~ THEN
+	EXIT
+END
+
 IF ~~ THEN BEGIN LCA_ReportToFF
 	SAY @14 /* ~I did, Captain. They performed an investigation, but to no avail. Until the matter can be resolved, I've stopped our remaining patrons from going upstairs.~ */
 	
