@@ -160,6 +160,16 @@ IF ~
 	GOTO LCA_AskedAboutDemon
 	
 	IF ~
+		!Global("LCA_AskedAboutPatrons", "GLOBAL", 1)
+		Global("LCA_AlythIntro", "GLOBAL", 1)
+	~ THEN REPLY @92 /* ~When I spoke with Alyth, proprietor of the Elfsong, she told me that three of her regulars had gone missing. Do you know anything about what happened to them?~*/
+	DO ~
+		AddJournalEntry(@93, INFO)
+		SetGlobal("LCA_AskedAboutPatrons", "GLOBAL", 1)
+	~
+	GOTO LCA_AskedAboutPatrons
+	
+	IF ~
 		!Global("LCA_AskedAboutGuardians", "LOCALS",1)
 	~ THEN REPLY @54 /* ~Tell me about the guardians.~ */
 	DO ~
@@ -171,9 +181,35 @@ IF ~
 	IF ~~ THEN REPLY @57 /* ~I need some healing.~ */
 	GOTO LCA_GiveRezAndHeal //OK
 	
-
-	
 	IF ~~ THEN REPLY @58 /*  ~Not right now.~ */
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_AskedAboutPatrons
+	SAY @92 /* ~I do. They were lured here, as you and I were, and transmogrified into dopplegangers by the demon. Hideous, grotesque creatures.~ */
+	
+	IF ~
+		!Global("LCA_AskedAboutGuardians", "LOCALS",1)
+	~ THEN REPLY @54 /* ~Tell me about the guardians.~ */
+	DO ~
+		SetGlobal("LCA_AskedAboutGuardians", "LOCALS",1)
+		AddJournalEntry(@62, INFO)
+	~
+	GOTO LCA_AskedAboutGuardians
+	
+	IF ~
+		!Global("LCA_AskedAboutDemon", "LOCALS",1)
+	~ THEN REPLY @50 /* ~Tell me more about the demon trapped with us.~*/
+	DO ~
+		SetGlobal("LCA_AskedAboutDemon", "LOCALS",1)
+		AddJournalEntry(@61, INFO)
+	~
+	GOTO LCA_AskedAboutDemon
+	
+	IF ~~ THEN REPLY @57 /* ~I need some healing.~ */
+	GOTO LCA_GiveRezAndHeal //OK
+	
+	IF ~~ THEN REPLY @59 /* ~Thank you.~ */
 	EXIT
 END
 
@@ -190,6 +226,15 @@ IF ~~ THEN BEGIN LCA_AskedAboutDemon
 		AddJournalEntry(@62, INFO)
 	~
 	GOTO LCA_AskedAboutGuardians
+	
+	IF ~
+		!Global("LCA_AskedAboutPatrons", "GLOBAL", 1)
+		Global("LCA_AlythIntro", "GLOBAL", 1)
+	~ THEN REPLY @92 /* ~When I spoke with Alyth, proprietor of the Elfsong, she told me that three of her regulars had gone missing. Do you know anything about what happened to them?~*/
+	DO ~
+		AddJournalEntry(@93, INFO)
+	~
+	GOTO LCA_AskedAboutPatrons
 	
 	IF ~~ THEN REPLY @57 /* ~I need some healing.~ */
 	GOTO LCA_GiveRezAndHeal //OK
@@ -212,6 +257,15 @@ IF ~~ THEN BEGIN LCA_AskedAboutGuardians
 		AddJournalEntry(@61, INFO)
 	~
 	GOTO LCA_AskedAboutDemon
+	
+	IF ~
+		!Global("LCA_AskedAboutPatrons", "GLOBAL", 1)
+		Global("LCA_AlythIntro", "GLOBAL", 1)
+	~ THEN REPLY @92 /* ~When I spoke with Alyth, proprietor of the Elfsong, she told me that three of her regulars had gone missing. Do you know anything about what happened to them?~*/
+	DO ~
+		AddJournalEntry(@93, INFO)
+	~
+	GOTO LCA_AskedAboutPatrons
 	
 	IF ~~ THEN REPLY @57 /* ~I need some healing.~ */
 	GOTO LCA_GiveRezAndHeal //OK
