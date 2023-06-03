@@ -98,6 +98,21 @@ END
 IF ~~ THEN BEGIN LCA_TestInteraction
 	SAY @280
 	
+	IF ~~ THEN REPLY @326
+	DO ~
+		CreateCreature("LC800M", [-1.-1], N)
+		CreateCreature("LC800W", [-1.-1], N)
+		Wait(1)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @323
+	DO ~
+		CreateCreature("LCALYTH", [-1.-1], N)
+		Wait(1)
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @321
 	DO ~
 		CreateCreature("LCGORION", [-1.-1], N)
@@ -1112,6 +1127,18 @@ END
 
 IF ~~ THEN BEGIN LCA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
+	
+	IF ~~ THEN REPLY @324
+	DO ~
+		SetGlobal("LCA_SavedLyriel", "GLOBAL", 1)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
+	IF ~~ THEN REPLY @325
+	DO ~
+		SetGlobal("LCA_ExitPrison", "GLOBAL", 1)
+	~
+	GOTO LCA_ReturnToMainMenu
 	
 	IF ~~ THEN REPLY @314
 	DO ~

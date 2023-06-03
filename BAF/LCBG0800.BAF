@@ -2,6 +2,7 @@ IF
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	!Global("LCA_CreateElfsong", "GLOBAL", 1)
 	!Dead("alyth")
+	!Global("LCA_SavedElfsong", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_CreateElfsong", "GLOBAL", 1)
@@ -19,6 +20,7 @@ IF
 	InMyArea("LC800M")
 	InMyArea("LC800W")
 	!Global("LCA_ElfsongTimerSet", "LOCALS", 1)
+	!Global("LCA_SavedElfsong", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_ElfsongTimerSet", "LOCALS", 1)
@@ -28,7 +30,8 @@ END
 IF 
 	InMyArea("LC800M")
 	InMyArea("LC800W")
-	GlobalTimerExpired("LCA_ElfsongTimer", "GLOBAL") 
+	GlobalTimerExpired("LCA_ElfsongTimer", "GLOBAL")
+	!Global("LCA_SavedElfsong", "GLOBAL", 1)	
 	!Global("LCA_800MW", "GLOBAL", 1)
 THEN
 	RESPONSE #50

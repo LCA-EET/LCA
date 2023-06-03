@@ -1832,7 +1832,9 @@ IF ~
 	~
 	GOTO LCA_SleepAtHotel
 	
-	IF ~~ THEN REPLY @790 /* ~I'll stay at the Elfsong Tavern tonight.~*/
+	IF ~
+		Global("LCA_SavedElfsong", "GLOBAL", 1)
+	~ THEN REPLY @790 /* ~I'll stay at the Elfsong Tavern tonight.~*/
 	DO ~
 		SetGlobal("LCA_StayingAtElfsongTavern", "GLOBAL", 1)
 	~
@@ -1869,7 +1871,9 @@ IF ~~ THEN BEGIN LCA_DecideWhereSleeping
 	~
 	GOTO LCA_SleepAtHotel
 	
-	IF ~~ THEN REPLY @790 /* ~I'll stay at the Elfsong Tavern tonight.~*/
+	IF ~
+		Global("LCA_SavedElfsong", "GLOBAL", 1)
+	~ THEN REPLY @790 /* ~I'll stay at the Elfsong Tavern tonight.~*/
 	DO ~
 		SetGlobal("LCA_StayingAtElfsongTavern", "GLOBAL", 1)
 	~
@@ -5960,7 +5964,9 @@ IF ~~ THEN BEGIN LCA_Depart_Romance2
 	~
 	GOTO LCA_Depart_Romance5
 	
-	IF ~~ THEN REPLY @790 /* ~I'll stay at the Elfsong Tavern tonight.~*/
+	IF ~
+		Global("LCA_SavedElfsong", "GLOBAL", 1)
+	~ THEN REPLY @790 /* ~I'll stay at the Elfsong Tavern tonight.~*/
 	DO ~
 		SetGlobal("LCA_StayingAtElfsongTavern", "GLOBAL", 1)
 	~
@@ -5998,7 +6004,9 @@ IF ~~ THEN BEGIN LCA_Depart_Romance4
 	~
 	GOTO LCA_Depart_Romance5
 	
-	IF ~~ THEN REPLY @790 /* ~I'll stay at the Elfsong Tavern tonight.~*/
+	IF ~
+		Global("LCA_SavedElfsong", "GLOBAL", 1)
+	~ THEN REPLY @790 /* ~I'll stay at the Elfsong Tavern tonight.~*/
 	DO ~
 		SetGlobal("LCA_StayingAtElfsongTavern", "GLOBAL", 1)
 	~

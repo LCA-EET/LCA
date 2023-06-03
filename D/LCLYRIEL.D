@@ -21,9 +21,12 @@ IF ~~ THEN BEGIN LCA_EnchantAmulet
 	
 	IF ~~ THEN
 	DO ~
-		TakePartyItem("AMUL27")
-		GiveItemCreate("LCLYAMUL", LastTalkedToBy(Myself),1,0,0)
-		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCLYAMUL", IDENTIFIED,TRUE))
+		ActionOverride(Player1,TransformItem("AMUL27","LCLYAMUL"))
+		ActionOverride(Player2,TransformItem("AMUL27","LCLYAMUL"))
+		ActionOverride(Player3,TransformItem("AMUL27","LCLYAMUL"))
+		ActionOverride(Player4,TransformItem("AMUL27","LCLYAMUL"))
+		ActionOverride(Player5,TransformItem("AMUL27","LCLYAMUL"))
+		ActionOverride(Player6,TransformItem("AMUL27","LCLYAMUL"))
 		AddJournalEntry(@90, INFO)
 	~
 	GOTO LCA_EnchantAmulet2

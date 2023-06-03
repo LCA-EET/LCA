@@ -9,7 +9,7 @@ IF ~
 END
 
 IF ~
-	Global("LCA_SavedLyriel", "GLOBAL", 1)
+	GlobalGT("LCA_SavedLyriel", "GLOBAL", 0)
 ~ THEN BEGIN LCA_LyrielSaved
 	SAY @21 /* ~Are my ears deceiving me?~*/
 	
@@ -57,14 +57,28 @@ IF ~~ THEN BEGIN LCA_WhatHappened
 	GOTO LCA_End2
 	
 	IF ~
-		Global("LCA_SavedLyriel", "GLOBAL", 1)
+		GlobalGT("LCA_SavedLyriel", "GLOBAL", 0)
 	~ THEN GOTO LCA_End1
 END
 
 IF ~~ THEN BEGIN LCA_End2
 	SAY @38 /* ~Since it's warded, I don't know how we'll rid ourselves of the painting... I think I'll have one of the local builders seal it off from the rest of the dining hall. That should keep us safe, at least until I can find a wizard strong enough to defeat the wards and destroy the painting for good.~*/
 	
-	= @39 /*  ~You may have just saved my business and livelihood. Most importantly, you have made this place safe again for my clients. I wish I could do more to reward you, but I spent the last of my funds trying to keep this place open. Just know that you will always be welcome here at the Elfsong, <CHARNAME>.~ */
+	IF ~~ THEN REPLY @40 /* ~That seems foolish. Destroy the wards, and the demon within may escape.~ */
+	GOTO LCA_End2A
+	
+	IF ~~ THEN REPLY @41 /* ~(Remain silent.)~*/
+	GOTO LCA_End3
+END
+
+IF ~~ THEN BEGIN LCA_End2A
+	SAY @42 /* ~Hm. You may be right. It would be better, on second thought, to seal off that section of the dining hall.~ */
+	
+	IF ~~ THEN GOTO LCA_End3
+END
+
+IF ~~ THEN BEGIN LCA_End3
+	SAY @39 /*  ~You may have just saved my business and livelihood. Most importantly, you have made this place safe again for my clients. I wish I could do more to reward you, but I spent the last of my funds trying to keep this place open. Just know that you will always be welcome here at the Elfsong, <CHARNAME>.~ */
 	
 	IF ~~ THEN REPLY @35 /* ~Thank you.~ */
 	DO ~
@@ -81,6 +95,8 @@ IF ~~ THEN BEGIN LCA_End1
 	
 	IF ~~ THEN REPLY @35 /* ~Thank you.~ */
 	DO ~
+		GiveItemCreate("BDBELT13", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("BDBELT13", IDENTIFIED,TRUE))
 		ReputationInc(2)
 	~
 	GOTO LCA_ThankYou
@@ -165,6 +181,7 @@ IF ~~ THEN BEGIN LCA_HowMany
 	GOTO LCA_Investigation
 	
 	IF ~
+		See("LCCORWIN")
 		IsValidForPartyDialogue("LCCORWIN")
 	~ THEN
 	EXTERN LCCORWIJ LCA_AlythReport
