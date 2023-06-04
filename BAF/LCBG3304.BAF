@@ -4,5 +4,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_VaiSwap", "LOCALS", 1)
-		ActionOverride("Vai", ChangeAIScript("LCVAI", DEFAULT))
+		ActionOverride("Vai", ChangeAIScript("", DEFAULT))
+		ActionOverride("Vai", JumpToPoint([500.930]))
+		ActionOverride("Vai", Face(S))
 END
