@@ -22,6 +22,8 @@ THEN
 		ActionOverride(Player5,Rest())
 		ActionOverride(Player6,Rest())
 		
+		//HideAreaOnMap(
+		
 		CreateCreature("LCNEDERL", [1553.1370], SE) // Nederlok
 		CreateCreature("LCBENCE", [1500.1396], SE) // Bence
 		CreateCreature("BDNOBF7", [1400.1300], SE) // City Official

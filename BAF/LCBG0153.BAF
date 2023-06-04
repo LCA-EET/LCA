@@ -9,4 +9,14 @@ THEN
 		ActionOverride("Alatos", SetNumTimesTalkedTo(0))
 		ActionOverride("Alatos", ChangeAIScript("LCINITP1",CLASS))
 		//ActionOverride("Alatos",ChangeAIScript("INITDLG",CLASS))
+		Continue()
+END
+
+IF 
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("DENKOD")
+THEN
+	RESPONSE #100
+		ActionOverride("DENKOD", DestroySelf()
+		Continue()
 END

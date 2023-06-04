@@ -144,8 +144,37 @@ IF ~~ THEN BEGIN LCA_CorwinRomance3
 END
 
 IF ~~ THEN BEGIN LCA_CorwinRomance4
-	SAY @16 /* ~You can and you will. I owe both my life and my business to you, friend. She'll love it. Plus, the metal will take well to enchantment, so I'm told. You may want to pay a visit to Halbazzer's shop if you have the time.~  */
+	SAY @16 /* ~You can and you will. I owe both my life and my business to you, friend.~  */
 	
+	IF ~~ THEN 
+	GOTO LCA_CorwinRomance4_END
+	
+	IF ~
+		Global("LCA_AldethFF", "GLOBAL", 1)
+	~ THEN
+	GOTO LCA_CorwinRomance4A
+END
+
+IF ~~ THEN BEGIN LCA_CorwinRomance4A
+	SAY @34 /* ~And, truth be told, I owe you an apology. I turned you over to the Flaming Fist when you came to me for aid.~ */
+	
+	IF ~~ THEN REPLY @35 /*  ~Apology accepted.~ */
+	GOTO LCA_CorwinRomance4_END
+	
+	IF ~~ THEN REPLY @36 /*  ~This doesn't quite make up for your betrayal.~ */
+	GOTO LCA_CorwinRomance4B
+END
+
+IF ~~ THEN BEGIN LCA_CorwinRomance4B
+	SAY @37 /* ~Then let this be a first step toward making amends.~ */
+	
+	IF ~~ THEN 
+	GOTO LCA_CorwinRomance4_END
+END
+
+IF ~~ THEN BEGIN LCA_CorwinRomance4_END
+	SAY @33 /* ~She'll love it. Plus, the metal will take well to enchantment, so I'm told. You may want to pay a visit to Halbazzer's shop if you have the time.~   */
+
 	IF ~~ THEN REPLY @22 /* ~But what if it doesn't fit her?~*/
 	GOTO LCA_CorwinRomance5 //OK
 	

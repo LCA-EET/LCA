@@ -1,4 +1,12 @@
 IF
+	InMyArea("Alan")
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("Alan", DestroySelf())
+END
+
+IF
 	Global("LCA_AddCorwinMapNote", "GLOBAL", 1)
 THEN
 	RESPONSE #100
