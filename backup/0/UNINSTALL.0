@@ -1,3 +1,4 @@
+override/ALDETH.dlg
 override/LCADBG.dlg
 override/SUJON.dlg
 override/KORGANJ.dlg
@@ -15,7 +16,9 @@ override/LCGORION.dlg
 override/LCORPH05.dlg
 override/THIEFG.dlg
 override/BAERIE.dlg
+override/ALANBL.dlg
 override/LEHTIN.dlg
+override/DELTAN2.dlg
 override/BODHI.dlg
 override/LCFERGUS.dlg
 override/PPSAEM.dlg
@@ -83,6 +86,7 @@ override/BART0133.dlg
 override/BDBELT.dlg
 override/LCHEAD1.dlg
 override/FLAMBG.dlg
+override/MCOOK4.dlg
 override/LCNEOMA.dlg
 override/KENT.dlg
 override/SHOP06_.dlg
@@ -107,6 +111,7 @@ override/MICK.dlg
 override/LCCOOK.dlg
 override/DELTOW01.dlg
 override/IDJINNI.dlg
+override/NEB_.dlg
 override/LCBENO2.dlg
 override/LCTOWNM.dlg
 override/KESHEE.dlg
@@ -135,6 +140,7 @@ override/LCLYRIEL.dlg
 override/BDASHATI.dlg
 override/LCLANTAN.dlg
 override/LCWVMER.dlg
+override/SUTHIE.dlg
 override/LCHARBOR.dlg
 override/LCMELKOR.dlg
 override/AERIEJ.dlg
@@ -144,6 +150,7 @@ override/RASAADJ.dlg
 override/BDFISTEX.dlg
 override/PROST8.dlg
 override/RBALDU.dlg
+override/SORREL.dlg
 override/YOSHJ.dlg
 override/SERVA2.dlg
 override/UDPHAE01.dlg
@@ -266,7 +273,9 @@ override/LCBENO_C.bcs
 override/LCBG0100.bcs
 override/LCBG0102.bcs
 override/LCBG0103.bcs
+override/LCBG0109.bcs
 override/LCBG0112.bcs
+override/LCBG0114.bcs
 override/LCBG0116.bcs
 override/LCBG0119.bcs
 override/LCBG0127.bcs
@@ -289,6 +298,7 @@ override/LCBG0613.bcs
 override/LCBG0614.bcs
 override/LCBG0615.bcs
 override/LCBG0616.bcs
+override/LCBG0700.bcs
 override/LCBG0702.bcs
 override/LCBG0703.bcs
 override/LCBG0704.bcs
@@ -302,6 +312,7 @@ override/LCBG1200.bcs
 override/LCBG1300.bcs
 override/LCBG1316.bcs
 override/LCBG1317.bcs
+override/LCBG3304.bcs
 override/LCBG7245.bcs
 override/LCBGEND.bcs
 override/LCBGEND1.bcs
@@ -416,6 +427,7 @@ override/LCUCEND2.bcs
 override/LCUCEND3.bcs
 override/LCUCITY.bcs
 override/LCUCTEMP.bcs
+override/LCVAI.bcs
 override/LCVAIEX.bcs
 override/LCVIRGIL.bcs
 override/LCWLKH01.bcs
@@ -722,15 +734,24 @@ override/FERGUS.bcs
 override/CCGIRL2.bcs
 override/MERCHG.bcs
 override/BELAND.bcs
+override/BG3304.bcs
 override/AR2000.bcs
 override/BG0153.bcs
 override/BG1316.bcs
 override/BG1317.bcs
+override/WINSKI.bcs
+override/VOLETA.bcs
+override/SARRUN.bcs
+override/FLAM10.bcs
+override/FLAM10A.bcs
+override/FLAMAL.bcs
+override/REDEDGE.bcs
 override/BG0100.bcs
 override/BG0102.bcs
 override/BG0200.bcs
 override/BG0300.bcs
 override/BG0103.bcs
+override/BG0114.bcs
 override/BG0600.bcs
 override/BG0700.bcs
 override/BG0702.bcs
@@ -766,7 +787,6 @@ override/BG0129.bcs
 override/BG0130.bcs
 override/BG0131.bcs
 override/BG0134.bcs
-override/BG0114.bcs
 override/BG0133.bcs
 override/BDCUT59B.bcs
 override/BD6000.bcs
@@ -776,6 +796,7 @@ override/DOPPSS.bcs
 override/BDFAMARI.CRE
 override/BDFAMAR1.CRE
 override/BDFAMAR2.CRE
+override/NILA.CRE
 override/CorCut1.CRE
 override/SkieCut1.CRE
 override/SkieCut2.CRE

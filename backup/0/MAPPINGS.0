@@ -1,3 +1,4 @@
+override/ALDETH.dlgTB#"SPACE"LCA/backup/0/ALDETH.dlg
 override/LCADBG.dlgTB#"SPACE"LCA/backup/0/LCADBG.dlg
 override/SUJON.dlgTB#"SPACE"LCA/backup/0/override.SUJON.dlg
 override/KORGANJ.dlgTB#"SPACE"LCA/backup/0/override.KORGANJ.dlg
@@ -14,7 +15,9 @@ override/MINSCJ.dlgTB#"SPACE"LCA/backup/0/override.MINSCJ.dlg
 override/LCORPH05.dlgTB#"SPACE"LCA/backup/0/LCORPH05.dlg
 override/THIEFG.dlgTB#"SPACE"LCA/backup/0/override.THIEFG.dlg
 override/BAERIE.dlgTB#"SPACE"LCA/backup/0/override.BAERIE.dlg
+override/ALANBL.dlgTB#"SPACE"LCA/backup/0/ALANBL.dlg
 override/LEHTIN.dlgTB#"SPACE"LCA/backup/0/override.LEHTIN.dlg
+override/DELTAN2.dlgTB#"SPACE"LCA/backup/0/DELTAN2.dlg
 override/BODHI.dlgTB#"SPACE"LCA/backup/0/override.BODHI.dlg
 override/LCFERGUS.dlgTB#"SPACE"LCA/backup/0/LCFERGUS.dlg
 override/PPSAEM.dlgTB#"SPACE"LCA/backup/0/override.PPSAEM.dlg
@@ -75,6 +78,7 @@ override/BART0133.dlgTB#"SPACE"LCA/backup/0/override.BART0133.dlg
 override/BDBELT.dlgTB#"SPACE"LCA/backup/0/override.BDBELT.dlg
 override/LCHEAD1.dlgTB#"SPACE"LCA/backup/0/LCHEAD1.dlg
 override/FLAMBG.dlgTB#"SPACE"LCA/backup/0/override.FLAMBG.dlg
+override/MCOOK4.dlgTB#"SPACE"LCA/backup/0/MCOOK4.dlg
 override/LCNEOMA.dlgTB#"SPACE"LCA/backup/0/LCNEOMA.dlg
 override/KENT.dlgTB#"SPACE"LCA/backup/0/override.KENT.dlg
 override/SHOP06_.dlgTB#"SPACE"LCA/backup/0/override.SHOP06_.dlg
@@ -97,6 +101,7 @@ override/MICK.dlgTB#"SPACE"LCA/backup/0/override.MICK.dlg
 override/LCCOOK.dlgTB#"SPACE"LCA/backup/0/LCCOOK.dlg
 override/DELTOW01.dlgTB#"SPACE"LCA/backup/0/override.DELTOW01.dlg
 override/IDJINNI.dlgTB#"SPACE"LCA/backup/0/override.IDJINNI.dlg
+override/NEB_.dlgTB#"SPACE"LCA/backup/0/NEB_.dlg
 override/LCBENO2.dlgTB#"SPACE"LCA/backup/0/LCBENO2.dlg
 override/LCTOWNM.dlgTB#"SPACE"LCA/backup/0/LCTOWNM.dlg
 override/KESHEE.dlgTB#"SPACE"LCA/backup/0/override.KESHEE.dlg
@@ -124,6 +129,7 @@ override/LCBENCE.dlgTB#"SPACE"LCA/backup/0/LCBENCE.dlg
 override/BDASHATI.dlgTB#"SPACE"LCA/backup/0/override.BDASHATI.dlg
 override/LCLANTAN.dlgTB#"SPACE"LCA/backup/0/LCLANTAN.dlg
 override/LCWVMER.dlgTB#"SPACE"LCA/backup/0/LCWVMER.dlg
+override/SUTHIE.dlgTB#"SPACE"LCA/backup/0/SUTHIE.dlg
 override/LCHARBOR.dlgTB#"SPACE"LCA/backup/0/LCHARBOR.dlg
 override/LCMELKOR.dlgTB#"SPACE"LCA/backup/0/LCMELKOR.dlg
 override/AERIEJ.dlgTB#"SPACE"LCA/backup/0/override.AERIEJ.dlg
@@ -133,6 +139,7 @@ override/RASAADJ.dlgTB#"SPACE"LCA/backup/0/override.RASAADJ.dlg
 override/BDFISTEX.dlgTB#"SPACE"LCA/backup/0/override.BDFISTEX.dlg
 override/PROST8.dlgTB#"SPACE"LCA/backup/0/override.PROST8.dlg
 override/RBALDU.dlgTB#"SPACE"LCA/backup/0/override.RBALDU.dlg
+override/SORREL.dlgTB#"SPACE"LCA/backup/0/SORREL.dlg
 override/YOSHJ.dlgTB#"SPACE"LCA/backup/0/override.YOSHJ.dlg
 override/SERVA2.dlgTB#"SPACE"LCA/backup/0/override.SERVA2.dlg
 override/UDPHAE01.dlgTB#"SPACE"LCA/backup/0/UDPHAE01.dlg
@@ -584,15 +591,23 @@ override/FERGUS.bcsTB#"SPACE"LCA/backup/0/override.FERGUS.bcs
 override/CCGIRL2.bcsTB#"SPACE"LCA/backup/0/CCGIRL2.bcs
 override/MERCHG.bcsTB#"SPACE"LCA/backup/0/override.MERCHG.bcs
 override/BELAND.bcsTB#"SPACE"LCA/backup/0/override.BELAND.bcs
+override/BG3304.bcsTB#"SPACE"LCA/backup/0/BG3304.bcs
 override/AR2000.bcsTB#"SPACE"LCA/backup/0/override.AR2000.bcs
 override/BG0153.bcsTB#"SPACE"LCA/backup/0/override.BG0153.bcs
 override/BG1316.bcsTB#"SPACE"LCA/backup/0/override.BG1316.bcs
 override/BG1317.bcsTB#"SPACE"LCA/backup/0/override.BG1317.bcs
+override/VOLETA.bcsTB#"SPACE"LCA/backup/0/VOLETA.bcs
+override/SARRUN.bcsTB#"SPACE"LCA/backup/0/SARRUN.bcs
+override/FLAM10.bcsTB#"SPACE"LCA/backup/0/FLAM10.bcs
+override/FLAM10A.bcsTB#"SPACE"LCA/backup/0/FLAM10A.bcs
+override/FLAMAL.bcsTB#"SPACE"LCA/backup/0/FLAMAL.bcs
+override/REDEDGE.bcsTB#"SPACE"LCA/backup/0/REDEDGE.bcs
 override/BG0100.bcsTB#"SPACE"LCA/backup/0/override.BG0100.bcs
 override/BG0102.bcsTB#"SPACE"LCA/backup/0/override.BG0102.bcs
 override/BG0200.bcsTB#"SPACE"LCA/backup/0/override.BG0200.bcs
 override/BG0300.bcsTB#"SPACE"LCA/backup/0/override.BG0300.bcs
 override/BG0103.bcsTB#"SPACE"LCA/backup/0/override.BG0103.bcs
+override/BG0114.bcsTB#"SPACE"LCA/backup/0/override.BG0114.bcs
 override/BG0600.bcsTB#"SPACE"LCA/backup/0/override.BG0600.bcs
 override/BG0700.bcsTB#"SPACE"LCA/backup/0/override.BG0700.bcs
 override/BG0702.bcsTB#"SPACE"LCA/backup/0/override.BG0702.bcs
@@ -628,7 +643,6 @@ override/BG0129.bcsTB#"SPACE"LCA/backup/0/override.BG0129.bcs
 override/BG0130.bcsTB#"SPACE"LCA/backup/0/override.BG0130.bcs
 override/BG0131.bcsTB#"SPACE"LCA/backup/0/override.BG0131.bcs
 override/BG0134.bcsTB#"SPACE"LCA/backup/0/override.BG0134.bcs
-override/BG0114.bcsTB#"SPACE"LCA/backup/0/override.BG0114.bcs
 override/BG0133.bcsTB#"SPACE"LCA/backup/0/override.BG0133.bcs
 override/BDCUT59B.bcsTB#"SPACE"LCA/backup/0/override.BDCUT59B.bcs
 override/BD6000.bcsTB#"SPACE"LCA/backup/0/override.BD6000.bcs
@@ -638,6 +652,7 @@ override/DOPPSS.bcsTB#"SPACE"LCA/backup/0/override.DOPPSS.bcs
 override/BDFAMARI.CRETB#"SPACE"LCA/backup/0/override.BDFAMARI.CRE
 override/BDFAMAR1.CRETB#"SPACE"LCA/backup/0/override.BDFAMAR1.CRE
 override/BDFAMAR2.CRETB#"SPACE"LCA/backup/0/override.BDFAMAR2.CRE
+override/NILA.CRETB#"SPACE"LCA/backup/0/NILA.CRE
 override/CorCut1.CRETB#"SPACE"LCA/backup/0/CorCut1.CRE
 override/SkieCut1.CRETB#"SPACE"LCA/backup/0/SkieCut1.CRE
 override/SkieCut2.CRETB#"SPACE"LCA/backup/0/SkieCut2.CRE

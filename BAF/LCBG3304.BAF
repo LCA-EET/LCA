@@ -1,0 +1,8 @@
+IF
+	GlobalGT("Chapter", "GLOBAL", 3)
+	!Global("LCA_VaiSwap", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_VaiSwap", "LOCALS", 1)
+		ActionOverride("Vai", ChangeAIScript("LCVAI", DEFAULT))
+END

@@ -9,7 +9,14 @@ THEN
 		Continue()
 END
 
-
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("Lothtyran")
+THEN
+	RESPONSE #100
+		ActionOverride("Lothtyran", DestroySelf())
+		Continue()
+END
 
 IF
 	Global("LCA_ReturnToBG", "GLOBAL", 1)

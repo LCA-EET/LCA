@@ -7,6 +7,10 @@
 2022-12-10: Initial Commit
 
 */
+ADD_STATE_TRIGGER MCOOK4 1
+~
+	!Global("LCA_ReturnToBG", "GLOBAL", 1)
+~
 
 ADD_STATE_TRIGGER DELTAN2 0
 ~
@@ -205,6 +209,16 @@ APPEND SORREL
 	END
 END
 
+ADD_STATE_TRIGGER VAI 6
+~
+	!Global("LCA_Override", "GLOBAL", 1)
+~
+
+ADD_STATE_TRIGGER VAI 7
+~
+	!Global("LCA_Override", "GLOBAL", 1)
+~
+
 
 APPEND VAI
 	
@@ -238,6 +252,13 @@ APPEND VAI
 			StartCutScene("LCVAIEX")
 		~
 		EXIT
+	END
+	
+	IF ~  
+		True()
+	~ THEN BEGIN 7 // from:
+		SAY #219703 /* ~I hope your travels have gone well, <CHARNAME>. Remember, if you want the reward for dead bandits, you have to bring me their scalps. A rather bloody task, but I must have some proof.~ */
+		IF ~~ THEN EXIT
 	END
 END
 

@@ -1,0 +1,11 @@
+IF
+	!Global("LCA_VaiMove3304", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("LCA_VaiMove3304", "LOCALS", 1)
+		MoveToPoint([500.930])
+		Wait(1)
+		Face(SW)
+		SetInterrupt(TRUE)
+END

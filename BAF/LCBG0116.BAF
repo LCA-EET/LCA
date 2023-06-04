@@ -1,4 +1,13 @@
 IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("TRIADO")
+THEN
+	RESPONSE #100
+		ActionOverride("TRIADO", DestroySelf())
+		Continue()
+END
+
+IF
 	Global("LCA_HelpedForthel_BG1", "GLOBAL", 1)
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	Global("LCA_FortheSpawn", "GLOBAL", 0)
@@ -7,6 +16,7 @@ THEN
 		CreateCreature("FORTHE", [500.910], N)
 		ActionOverride("FORTHEL", SetDialog("LCFORTHE"))
 		SetGlobal("LCA_FortheSpawn", "GLOBAL", 1)
+		Continue()
 END
 
 IF
@@ -16,6 +26,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("LCA_NPCSpawnBT0116", "GLOBAL", 1)
 		CreateCreature("BART9", [618.637], S)
+		Continue()
 END
 
 IF
@@ -25,4 +36,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("LCA_NPCSpawnW0116", "GLOBAL", 1)
 		CreateCreature("WAITER", [616.981], N)
+		Continue()
 END

@@ -34,6 +34,9 @@ IF ~
 	~
 	EXIT
 	
+	IF ~~ THEN REPLY @327
+	GOTO LCA_ChangeChapter
+	
 	IF ~~ THEN REPLY @216 /* ~Open Store.~ */
 	GOTO LCA_Menu_StartStore
 	
@@ -71,7 +74,7 @@ IF ~
 		ActionOverride("LCCORWIN", LeaveParty())
 		ActionOverride("LCCORWIN", EscapeAreaMove("BG1316", 350,300,N))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @74 /* Increment Banter Counter. */
 	GOTO LCA_Menu_IncrementBanter
@@ -83,16 +86,35 @@ IF ~
 	DO ~
 		ForceSpell("LCCORWIN",CLERIC_CURE_DISEASE)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @248
 	DO ~
 		SetGlobalTimer("LCA_DukeDebriefTimer", "GLOBAL",ONE_DAY)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @12 /* ~I do not need assistance at this time.~ */
 	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_ChangeChapter
+	SAY @327
+	
+	IF ~~ THEN REPLY @328
+	DO ~
+		SetGlobal("chapter", "GLOBAL", 3)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @329
+	DO ~
+		SetGlobal("chapter", "GLOBAL", 4)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @26
+	GOTO LCA_MainMenu
 END
 
 IF ~~ THEN BEGIN LCA_TestInteraction

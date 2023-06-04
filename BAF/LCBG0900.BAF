@@ -1,5 +1,14 @@
 // Wyrm's Crossing - Return to Baldur's Gate
 
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("Smuggler")
+THEN
+	RESPONSE #100
+		ActionOverride("Smuggler", DestroySelf())
+		Continue()
+END
+
 //Spawn Creatures
 
 IF 

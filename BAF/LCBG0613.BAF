@@ -6,7 +6,18 @@ THEN
 		SetGlobal("LCA_DestroyNPCs_0613", "GLOBAL", 1)
 		ActionOverride("KALESSIA", DestroySelf())
 		ActionOverride("IRON14", DestroySelf())
+		
 		CreateCreature("LCWVMER2", [850.420], N)
 		CreateCreature("LCWVMER1", [910.460], E)
 		CreateCreature("LCWVGRD2", [380.640], N)
+		Continue()
+END
+
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("NORTUARY")
+THEN
+	RESPONSE #100
+		ActionOverride("NORTUARY", DestroySelf())
+		Continue()
 END
