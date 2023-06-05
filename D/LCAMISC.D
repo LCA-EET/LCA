@@ -7,6 +7,35 @@
 2022-12-10: Initial Commit
 
 */
+ADD_TRANS_TRIGGER CONNOL 0
+~
+	!Global("LCA_ReturnToBG", "GLOBAL", 1)
+~
+
+EXTEND_BOTTOM CONNOL 0
+	IF ~
+		Global("LCA_ReturnToBG", "GLOBAL", 1)
+	~ THEN REPLY #219533 /* ~Tell me what the common folk are talking about these days.~ */ 
+	GOTO LCA1
+	
+	IF ~
+		Global("LCA_ReturnToBG", "GLOBAL", 1)
+	~ THEN REPLY #219619 /* ~What have you heard bandied about the bar lately?~ */ 
+	GOTO LCA1
+END
+
+APPEND CONNOL 
+	IF ~~ THEN BEGIN LCA1
+		SAY @225 /* ~Aye, remember <CHARNAME>, the so-called hero of Baldur's Gate? The one who was arrested for killing the Duke's daughter? Well, the Dukes are now tellin' everyone now that <PRO_HESHE> was innocent the whole time! What's more, Skie Silvershield is up and about, healthy and lively as ever. Could you believe it? Word on the street is that <PRO_HESHE>'s on <PRO_HISHER> way back to the city as we speak. Good on <PRO_HIMHER>, I s'pose.~ */
+		
+		IF ~~ THEN 
+		DO ~
+			EscapeArea()
+		~ 
+		EXIT
+	END
+END
+
 ADD_STATE_TRIGGER MCOOK4 1
 ~
 	!Global("LCA_ReturnToBG", "GLOBAL", 1)

@@ -1,0 +1,11 @@
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Dead("CONNOLY")
+	!InMyArea("CONNOLY")
+	!Global("LCA_CONNOLSpawn", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("CONNOL", [323.356], SE)
+		SetGlobal("LCA_ConnolSpawn", "LOCALS", 1)
+		Continue()
+END

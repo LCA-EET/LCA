@@ -6,3 +6,12 @@ THEN
 		ActionOverride("addy", DestroySelf())
 		Continue()
 END
+
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("Dabron")
+THEN
+	RESPONSE #100
+		ActionOverride("Dabron", DestroySelf())
+		Continue()
+END
