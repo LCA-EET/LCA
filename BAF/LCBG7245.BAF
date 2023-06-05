@@ -4,4 +4,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("LCA_DialogSwap_7245", "GLOBAL", 1)
 		ActionOverride("GAMES2", SetDialog("LCGAMES2"))
+		Continue()
 END

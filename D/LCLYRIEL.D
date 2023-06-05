@@ -54,6 +54,7 @@ IF ~~ THEN BEGIN LCA_GoodBye
 	IF ~~ THEN
 	DO ~
 		AddExperienceParty(100000)
+		SetGlobalTimer("LCA_LyrielSingTimer", "GLOBAL", TEN_MINUTES)
 		AddJournalEntry(@89, QUEST_DONE)
 		DestroySelf()
 	~

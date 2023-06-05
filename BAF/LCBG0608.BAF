@@ -7,6 +7,7 @@ THEN
 		ActionOverride("KENT", Face(W))
 		ActionOverride("LCNEDERL", JumpToPoint([233.399]))
 		ActionOverride("LCNEDERL", Face(NNE))
+		Continue()
 END
 
 

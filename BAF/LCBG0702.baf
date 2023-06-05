@@ -6,4 +6,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("LCA_NPCDialogChange_0702", "GLOBAL", 1)
 		ActionOverride("HARBOR", SetDialog("LCHARBOR"))
+		Continue()
 END

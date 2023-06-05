@@ -4,4 +4,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("LCA_ChangeDialog_0726", "GLOBAL", 1)
 		ActionOverride("DIVINE", SetDialog("LCDIVINE"))
+		Continue()
 END

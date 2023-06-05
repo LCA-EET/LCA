@@ -8,4 +8,5 @@ THEN
 		CreateCreature("LCMERCH", [276.407], N)
 		CreateCreature("LCMERCH", [463.312], S)
 		CreateCreature("LCMERCH", [386.316], E)
+		Continue()
 END

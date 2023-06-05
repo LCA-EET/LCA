@@ -10,4 +10,5 @@ THEN
 		ActionOverride("Jhasso", SetDialog("LCJHASSO"))
 		ActionOverride("Jhasso", SetNumTimesTalkedTo(0))
 		ActionOverride("Jhasso",ChangeAIScript("LCINITP1",CLASS))
+		Continue()
 END

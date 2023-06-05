@@ -7,4 +7,5 @@ THEN
 		ActionOverride("Vai", ChangeAIScript("", DEFAULT))
 		ActionOverride("Vai", JumpToPoint([500.930]))
 		ActionOverride("Vai", Face(S))
+		Continue()
 END

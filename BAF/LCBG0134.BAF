@@ -7,4 +7,5 @@ THEN
 		ActionOverride("DESRET", DestroySelf())
 		ActionOverride("VAYYA", DestroySelf())
 		CreateCreature("LCTIANNA", [832.622],NW)
+		Continue()
 END

@@ -7,4 +7,5 @@ THEN
 		ActionOverride("OULAM", DestroySelf())
 		ActionOverride("WHEBER", DestroySelf())
 		ActionOverride("WILLIAM", DestroySelf())
+		Continue()
 END

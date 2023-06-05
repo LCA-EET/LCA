@@ -6,4 +6,5 @@ THEN
 		SetGlobal("LCA_DestroyNPCS_0603", "GLOBAL", 1)
 		ActionOverride("SSDopple", DestroySelf())
 		ActionOverride("Jhasso", DestroySelf())
+		Continue()
 END

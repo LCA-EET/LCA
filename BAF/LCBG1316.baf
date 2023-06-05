@@ -35,4 +35,5 @@ THEN
 		SetGlobal("LCA_CorwinFamilyTalk", "GLOBAL", 3)
 		CreateCreature("LCROHMA",[160.300], SE)
 		CreateCreature("LCAUDAM", [440.164], SE)
+		Continue()
 END 

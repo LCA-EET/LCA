@@ -24,4 +24,5 @@ THEN
 		CreateCreature("LCWVMER3", [600.440], N)
 		CreateCreature("LCWVMER1", [500.760], E)
 		CreateCreature("LCWVGRD2", [770.415], W)
+		Continue()
 END

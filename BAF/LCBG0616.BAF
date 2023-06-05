@@ -8,6 +8,7 @@ THEN
 		ActionOverride("DHANIAL", DestroySelf())
 		ActionOverride("IRON13", DestroySelf())
 		ActionOverride("TRIADO", DestroySelf())
+		Continue()
 END
 
 IF
@@ -19,4 +20,5 @@ THEN
 		CreateCreature("LCWVMER1", [1011.639], SW)
 		CreateCreature("LCWVMER2", [1145.780], W)
 		CreateCreature("LCWVGRD1", [732.495], NW)
+		Continue()
 END

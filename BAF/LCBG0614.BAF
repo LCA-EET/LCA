@@ -11,6 +11,7 @@ THEN
 		CreateCreature("LCWVGRD2", [1040.485], W)
 		CreateCreature("LCWVBART", [458.321], S)
 		SetGlobal("LCA_0614_VirgilSpawn", "GLOBAL", 1)
+		Continue()
 END
 
 IF 
@@ -19,6 +20,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("LCVIRGIL", DestroySelf())
+		Continue()
 END
 
 IF 
@@ -28,4 +30,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("LCA_DestroyNPCs_0614", "GLOBAL", 1)
 		ActionOverride("WIRTHING", DestroySelf())
+		Continue()
 END

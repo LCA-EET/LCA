@@ -7,4 +7,5 @@ THEN
 		ActionOverride("halbaz", SetDialog("LCHALBAZ"))
 		ActionOverride("halbaz", SetNumTimesTalkedTo(0))
 		ActionOverride("halbaz", ChangeAIScript("INITDLG",CLASS))
+		Continue()
 END
