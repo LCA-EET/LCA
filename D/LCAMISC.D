@@ -7,6 +7,21 @@
 2022-12-10: Initial Commit
 
 */
+
+ADD_TRANS_TRIGGER LARZE 3
+~
+	!Global("LCA_Override", "GLOBAL", 1)
+~
+DO 1
+
+EXTEND_BOTTOM LARZE 3
+	IF ~~ THEN REPLY #218270 /* ~Larze, my poor confused ogre. There is only one thing for you to do. You have to go back and take a closer look at the picture. I'm sure once you've had a second look, you'll know what a big mistake you've made. Now run along, we'll be waiting right here.~ */ 
+	DO ~
+		SetGlobal("LCA_TrickedLarze", "GLOBAL", 1)
+	~
+	GOTO 5
+END
+
 ADD_TRANS_TRIGGER CONNOL 0
 ~
 	!Global("LCA_ReturnToBG", "GLOBAL", 1)
