@@ -1,0 +1,18 @@
+IF
+	!Global("LCA_LarzeSwap", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_LarzeSwap", "LOCALS", 1)
+		SetDialog("LCLARZE")
+		MoveToObject(Player1)
+		Continue()
+END
+
+IF
+	Range(Player1, 6)
+	Seet(Player1)
+	!Global("LCA_LarzeIntro", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		StartDialog("LCLARZE", Player1)
+END

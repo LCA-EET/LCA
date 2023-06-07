@@ -1,19 +1,19 @@
 BEGIN ~LCLARZE~
 
 IF ~
-	!Global("LCA_Intro", "LOCALS", 1)
+	!Global("LCA_LarzeIntro", "LOCALS", 1)
 ~ THEN BEGIN LCA_Intro
 	SAY @0 /* ~Hah. Larze found you. You are <CHARNAME>.~ */
 	
 	IF ~~ THEN REPLY @1 /* ~Sorry? Do I know you?~ */
 	DO ~
-		SetGlobal("LCA_Intro", "LOCALS", 1)
+		SetGlobal("LCA_LarzeIntro", "LOCALS", 1)
 	~
 	GOTO LCA2
 	
 	IF ~~ THEN REPLY @13 /* ~Get lost, beast.~ */
 	DO ~
-		SetGlobal("LCA_Intro", "LOCALS", 1)
+		SetGlobal("LCA_LarzeIntro", "LOCALS", 1)
 	~
 	GOTO LCA_Fight
 END

@@ -4,7 +4,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_LantanaraProphecy", "GLOBAL", 2)
-		CreateCreature("LCLANTAN", [567.372], SW)
+		CreateCreature("LCLANTAN", [466.630], NE)
 		Continue()
 END
 
