@@ -1150,6 +1150,12 @@ END
 IF ~~ THEN BEGIN LCA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
 	
+	IF ~~ THEN REPLY @330
+	DO ~
+		SetGlobal("LCA_TrickedLarze", "GLOBAL", 1)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
 	IF ~~ THEN REPLY @324
 	DO ~
 		SetGlobal("LCA_SavedLyriel", "GLOBAL", 1)

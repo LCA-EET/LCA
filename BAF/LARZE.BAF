@@ -10,7 +10,7 @@ END
 
 IF
 	Range(Player1, 6)
-	Seet(Player1)
+	See(Player1)
 	!Global("LCA_LarzeIntro", "LOCALS", 1)
 THEN
 	RESPONSE #100
