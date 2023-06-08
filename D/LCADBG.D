@@ -1150,6 +1150,12 @@ END
 IF ~~ THEN BEGIN LCA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
 	
+	IF ~~ THEN REPLY @331
+	DO ~
+		SetGlobal("LCA_WonLottery", "GLOBAL", 1)
+	~
+	GOTO LCA_ReturnToMainMenu
+	
 	IF ~~ THEN REPLY @330
 	DO ~
 		SetGlobal("LCA_TrickedLarze", "GLOBAL", 1)
@@ -1795,6 +1801,13 @@ END
 
 IF ~~ THEN BEGIN LCA_Menu_StartCutscene
 	SAY @15 /*  ~Of course. Which cutscene do you want to start?~ */
+	
+	IF ~~ THEN REPLY @332
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("CHDINLOT")
+	~
+	EXIT
 	
 	IF ~~ THEN REPLY @322
 	DO ~
