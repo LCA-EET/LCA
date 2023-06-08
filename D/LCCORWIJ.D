@@ -5121,7 +5121,18 @@ END
 IF ~~ THEN BEGIN LCA_Congratulations3
 	SAY @1117 /* ~Come on! Let's go and celebrate!~ */
 	
-	IF ~~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+	IF ~
+		Global("LCA_WonLottery", "GLOBAL", 1)
+	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("CHDINLOT")
+	~
+	EXIT
+	
+	IF ~
+		!Global("LCA_WonLottery", "GLOBAL", 1)
+	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
 	DO ~
 		StartCutSceneMode()
 		StartCutScene("CHDINNER")
@@ -5132,7 +5143,18 @@ END
 IF ~~ THEN BEGIN LCA_Congratulations3_Aerie
 	SAY @1112 /* ~Come on! Let's go and celebrate!~ */
 	
-	IF ~~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+	IF ~
+		Global("LCA_WonLottery", "GLOBAL", 1)
+	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("CHDINLOT")
+	~
+	EXIT
+	
+	IF ~
+		!Global("LCA_WonLottery", "GLOBAL", 1)
+	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
 	DO ~
 		StartCutSceneMode()
 		StartCutScene("CHDINNER")
@@ -5143,7 +5165,18 @@ END
 IF ~~ THEN BEGIN LCA_Congratulations3_Jaheira
 	SAY @1113 /* ~Come on! Let's go and celebrate!~ */
 	
-	IF ~~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+	IF ~
+		Global("LCA_WonLottery", "GLOBAL", 1)
+	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("CHDINLOT")
+	~
+	EXIT
+	
+	IF ~
+		!Global("LCA_WonLottery", "GLOBAL", 1)
+	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
 	DO ~
 		StartCutSceneMode()
 		StartCutScene("CHDINNER")
@@ -5154,7 +5187,18 @@ END
 IF ~~ THEN BEGIN LCA_Congratulations3_Neera
 	SAY @1114 /* ~Come on! Let's go and celebrate!~ */
 	
-	IF ~~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+	IF ~
+		Global("LCA_WonLottery", "GLOBAL", 1)
+	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("CHDINLOT")
+	~
+	EXIT
+	
+	IF ~
+		!Global("LCA_WonLottery", "GLOBAL", 1)
+	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
 	DO ~
 		StartCutSceneMode()
 		StartCutScene("CHDINNER")
@@ -5165,7 +5209,18 @@ END
 IF ~~ THEN BEGIN LCA_Congratulations3_Valygar
 	SAY @1115 /* ~Come on! Let's go and celebrate!~ */
 	
-	IF ~~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+	IF ~
+		Global("LCA_WonLottery", "GLOBAL", 1)
+	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("CHDINLOT")
+	~
+	EXIT
+	
+	IF ~
+		!Global("LCA_WonLottery", "GLOBAL", 1)
+	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
 	DO ~
 		StartCutSceneMode()
 		StartCutScene("CHDINNER")
@@ -5176,7 +5231,18 @@ END
 IF ~~ THEN BEGIN LCA_Congratulations3_Anomen
 	SAY @1116 /* ~Come on! Let's go and celebrate!~ */
 	
-	IF ~~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+	IF ~
+		Global("LCA_WonLottery", "GLOBAL", 1)
+	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("CHDINLOT")
+	~
+	EXIT
+	
+	IF ~
+		!Global("LCA_WonLottery", "GLOBAL", 1)
+	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
 	DO ~
 		StartCutSceneMode()
 		StartCutScene("CHDINNER")

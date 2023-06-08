@@ -122,6 +122,9 @@ IF ~~ THEN BEGIN LCA_PlayerQuestion
 	GOTO LCA_IrenicusGone
 	
 	IF ~~ THEN REPLY @61 /* ~What are next week's winning lottery numbers?~ */
+	DO ~
+		SetGlobal("LCA_WonLottery", "GLOBAL", 1)
+	~
 	GOTO LCA_LottoNumbers
 	
 	IF ~
