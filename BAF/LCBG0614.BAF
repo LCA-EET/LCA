@@ -1,7 +1,7 @@
 IF 
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	!InMyArea("LCVIRGIL")
-	!Global("LCA_0614_VirgilSpawn", "GLOBAL", 1)
+	!Global("LCA_0614_VirgilSpawn", "BG0614", 1)
 THEN
 	RESPONSE #100
 		CreateCreature("LCVIRGIL", [850.500], S)
@@ -10,7 +10,7 @@ THEN
 		CreateCreature("LCWVMER3", [784.914], S)
 		CreateCreature("LCWVGRD2", [1040.485], W)
 		CreateCreature("LCWVBART", [458.321], S)
-		SetGlobal("LCA_0614_VirgilSpawn", "GLOBAL", 1)
+		SetGlobal("LCA_0614_VirgilSpawn", "BG0614", 1)
 		Continue()
 END
 

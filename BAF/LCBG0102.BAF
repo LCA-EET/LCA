@@ -2,20 +2,20 @@ IF
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	!InMyArea("BRILLA")
 	!Dead("BRILLA")
-	!Global("LCA_BG0102_BrillaSpawn", "GLOBAL", 1)
+	!Global("LCA_BG0102_BrillaSpawn", "BG0102", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_BG0102_BrillaSpawn", "GLOBAL", 1)
+		SetGlobal("LCA_BG0102_BrillaSpawn", "BG0102", 1)
 		CreateCreature("BRILLA", [1643.299], SW)
 		Continue()
 END
 
 IF 
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
-	!Global("LCA_CreateNPC_BG0102", "GLOBAL", 1)
+	!Global("LCA_CreateNPC_BG0102", "BG0102", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_CreateNPC_BG0102", "GLOBAL", 1)
+		SetGlobal("LCA_CreateNPC_BG0102", "BG0102", 1)
 		ApplySpellRES("ohdestbg","mcook3")
 		CreateCreature("LCCOOK", [353.969], NE)
 		CreateCreature("LCMELKOR", [677.770], S)
@@ -34,21 +34,21 @@ END
 
 IF
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
-	!Global("LCA_BG0102_SwapBrilla", "GLOBAL", 1)
+	!Global("LCA_BG0102_SwapBrilla", "BG0102", 1)
 	!Dead("BRILLA")
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_BG0102_SwapBrilla", "GLOBAL", 1)
+		SetGlobal("LCA_BG0102_SwapBrilla", "BG0102", 1)
 		ActionOverride("BRILLA", SetDialog("LCBRILLA"))
 		Continue()
 END
 
 IF 
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
-	!Global("LCA_BG0102_SwapSkie", "GLOBAL", 1)
+	!Global("LCA_BG0102_SwapSkie", "BG0102", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_BG0102_SwapSkie", "GLOBAL", 1)
+		SetGlobal("LCA_BG0102_SwapSkie", "BG0102", 1)
 		ActionOverride("SKIE", SetDialog("LCSKIE"))
 		Continue()
 END

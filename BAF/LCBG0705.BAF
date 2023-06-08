@@ -12,11 +12,11 @@ END
 
 IF
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
-	!Global("LCA_Alyth0705", "LOCALS", 1)
+	!Global("LCA_Alyth0705", "BG0705", 1)
 	!Dead("alyth")
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_Alyth0705", "LOCALS", 1)
+		SetGlobal("LCA_Alyth0705", "BG0705", 1)
 		CreateCreature("LCALYTH", [870.640], SE)
 		Continue()
 END

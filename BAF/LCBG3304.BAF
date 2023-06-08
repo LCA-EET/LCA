@@ -1,9 +1,9 @@
 IF
 	GlobalGT("Chapter", "GLOBAL", 3)
-	!Global("LCA_VaiSwap", "LOCALS", 1)
+	!Global("LCA_VaiSwap", "BG3304", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_VaiSwap", "LOCALS", 1)
+		SetGlobal("LCA_VaiSwap", "BG3304", 1)
 		ActionOverride("Vai", ChangeAIScript("", DEFAULT))
 		ActionOverride("Vai", JumpToPoint([500.930]))
 		ActionOverride("Vai", Face(S))

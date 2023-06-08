@@ -1,9 +1,9 @@
 IF 
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
-	!Global("LCA_DestroyNPCs_0615", "GLOBAL", 1)
+	!Global("LCA_DestroyNPCs_0615", "BG0615", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_DestroyNPCs_0615", "GLOBAL", 1)
+		SetGlobal("LCA_DestroyNPCs_0615", "BG0615", 1)
 		ActionOverride("CYTHAN", DestroySelf())
 		ActionOverride("AASIM", DestroySelf())
 		ActionOverride("ALAI", DestroySelf())

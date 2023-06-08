@@ -19,11 +19,11 @@ END
 IF 
 	InMyArea("LC800M")
 	InMyArea("LC800W")
-	!Global("LCA_ElfsongTimerSet", "LOCALS", 1)
+	!Global("LCA_ElfsongTimerSet", "BG0800", 1)
 	!Global("LCA_SavedElfsong", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_ElfsongTimerSet", "LOCALS", 1)
+		SetGlobal("LCA_ElfsongTimerSet", "BG0800", 1)
 		SetGlobalTimer("LCA_ElfsongTimer", "GLOBAL", TWO_MINUTES) 
 END
 

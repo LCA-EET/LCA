@@ -8,21 +8,21 @@ THEN
 END
 
 IF
-	!Global("LCA_CellSpyCreated", "GLOBAL", 1)
+	!Global("LCA_CellSpyCreated", "BG0607", 1)
 	Global("LCA_ReturnToBG", "GLOBAL", 1)	
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_CellSpyCreated", "GLOBAL", 1)
+		SetGlobal("LCA_CellSpyCreated", "BG0607", 1)
 		CreateCreature("LCCELL", [330.440], SEE)
 		Continue()
 END
 
 IF 
 	Global("LCA_VirgilInCustody", "GLOBAL", 1)
-	!Global("LCA_VirgilCreated_0607", "GLOBAL", 1)
+	!Global("LCA_VirgilCreated_0607", "BG0607", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_VirgilCreated_0607", "GLOBAL", 1)
+		SetGlobal("LCA_VirgilCreated_0607", "BG0607", 1)
 		CreateCreature("LCVIRGIL", [400.340], SSW)
 		Continue()
 END
@@ -71,10 +71,10 @@ END
 IF 
 	InMyArea("LCBENCE")
 	Global("LCA_DukesDebriefed", "GLOBAL", 1)
-	!Global("LCA_MovedBence0607", "GLOBAL", 1)
+	!Global("LCA_MovedBence0607", "BG0607", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_MovedBence0607", "GLOBAL", 1)
+		SetGlobal("LCA_MovedBence0607", "BG0607", 1)
 		ActionOverride("LCBENCE", JumpToPoint([834.735]))
 		Continue()
 END

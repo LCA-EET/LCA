@@ -1,9 +1,9 @@
 IF
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
-	!Global("LCA_CreateHOWSpy_0600", "GLOBAL", 1)
+	!Global("LCA_CreateHOWSpy_0600", "BG0600", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_CreateHOWSpy_0600", "GLOBAL", 1)
+		SetGlobal("LCA_CreateHOWSpy_0600", "BG0600", 1)
 		CreateCreature("LCHOWSPY", [4254.909], NW)
 		CreateCreature("LCHOWSPY", [1580.2424], NW)
 		Continue()
@@ -20,11 +20,11 @@ END
 
 IF
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
-	!Global("LCA_NPCDestroy_0600", "GLOBAL", 1)
+	!Global("LCA_NPCDestroy_0600", "BG0600", 1)
 THEN
 	RESPONSE #100
 		ActionOverride("DUN", DestroySelf())
 		ActionOverride("HECITO", DestroySelf())
-		SetGlobal("LCA_NPCDestroy_0600", "GLOBAL", 1)
+		SetGlobal("LCA_NPCDestroy_0600", "BG0600", 1)
 		Continue()
 END

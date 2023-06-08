@@ -1,9 +1,9 @@
 IF
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
-	!Global("LCA_NPCs_0134", "GLOBAL", 1)
+	!Global("LCA_NPCs_0134", "BG0134", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_NPCs_0134", "GLOBAL", 1)
+		SetGlobal("LCA_NPCs_0134", "BG0134", 1)
 		ActionOverride("DESRET", DestroySelf())
 		ActionOverride("VAYYA", DestroySelf())
 		CreateCreature("LCTIANNA", [832.622],NW)

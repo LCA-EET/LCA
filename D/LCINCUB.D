@@ -120,6 +120,7 @@ IF ~
 	
 	IF ~
 		Gender(Player1,MALE)
+		PartyHasItem("AMUL27")
 	~ THEN REPLY @55 /*~The amulet, and our freedom, in exchange for the axe.~*/
 	DO ~
 		SetGlobal("LCA_IncubusSword", "GLOBAL", 1)
@@ -131,6 +132,7 @@ IF ~
 	
 	IF ~
 		Gender(Player1,FEMALE)
+		PartyHasItem("AMUL27")
 	~ THEN REPLY @55 /* ~The amulet, and our freedom, in exchange for the sword.~*/
 	DO ~
 		SetGlobal("LCA_IncubusSword", "GLOBAL", 1)
@@ -142,6 +144,7 @@ IF ~
 	
 	IF ~
 		Gender(Player1, MALE)
+		PartyHasItem("AMUL27")
 	~ THEN REPLY @56 /* ~The amulet, and our freedom, in exchange for the hen.~*/
 	DO ~
 		SetGlobal("LCA_IncubusGoose", "GLOBAL", 1)
@@ -153,6 +156,7 @@ IF ~
 	
 	IF ~
 		Gender(Player1, FEMALE)
+		PartyHasItem("AMUL27")
 	~ THEN REPLY @56 /* ~The amulet, and our freedom, in exchange for the ring.~ */
 	DO ~
 		SetGlobal("LCA_IncubusGoose", "GLOBAL", 1)
@@ -164,6 +168,7 @@ IF ~
 	
 	IF ~
 		Gender(Player1, MALE)
+		PartyHasItem("AMUL27")
 	~ THEN REPLY @57 /* ~The amulet, and our freedom, in exchange for the ring.~ */
 	DO ~
 		SetGlobal("LCA_IncubusRing", "GLOBAL", 1)
@@ -175,6 +180,7 @@ IF ~
 	
 	IF ~
 		Gender(Player1, FEMALE)
+		PartyHasItem("AMUL27")
 	~ THEN REPLY @57 /* ~The amulet, and our freedom, in exchange for the ring.~ */
 	DO ~
 		SetGlobal("LCA_IncubusRing", "GLOBAL", 1)
@@ -543,6 +549,7 @@ IF ~~ THEN BEGIN LCA_SecondMeeting
 	
 	IF ~
 		!Global("LCA_AskAboutLyriel", "GLOBAL", 1)
+		PartyHasItem("AMUL27")
 	~ THEN REPLY @22 /* ~The amulet of the Seldarine? I will give it to you, but only if you agree to release Lyriel as well.~ */
 	DO ~
 		SetGlobal("LCA_AskAboutLyriel", "GLOBAL", 1)
@@ -552,28 +559,37 @@ IF ~~ THEN BEGIN LCA_SecondMeeting
 	IF ~
 		!NumInPartyGT(1)
 		Gender(Player1, MALE)
+		PartyHasItem("AMUL27")
 	~ THEN REPLY @30 /* ~I grow tired of your games. Take the amulet and release me.~*/
 	GOTO LCA_GiveAmuletToDemon_M //OK
 	
 	IF ~
 		NumInPartyGT(1)
 		Gender(Player1, MALE)
+		PartyHasItem("AMUL27")
 	~ THEN REPLY @31 /* ~We're tired of your games. Take the amulet and release us.~ */
 	GOTO LCA_GiveAmuletToDemon_M //OK
 	
 	IF ~
 		!NumInPartyGT(1)
 		Gender(Player1, FEMALE)
+		PartyHasItem("AMUL27")
 	~ THEN REPLY @30 /* ~I grow tired of your games. Take the amulet and release me.~*/
 	GOTO LCA_GiveAmuletToDemon_F //OK
 	
 	IF ~
 		NumInPartyGT(1)
 		Gender(Player1, FEMALE)
+		PartyHasItem("AMUL27")
 	~ THEN REPLY @31 /* ~We're tired of your games. Take the amulet and release us.~ */
 	GOTO LCA_GiveAmuletToDemon_F //OK
 		
-	IF ~~ THEN REPLY @29 /* ~The amulet is mine. If you want it, come and take it!~*/
+	IF ~
+		PartyHasItem("AMUL27")
+	~ THEN REPLY @29 /* ~The amulet is mine. If you want it, come and take it!~*/
+	GOTO LCA_TakeAmulet //OK
+	
+	IF ~~ THEN REPLY @87 /* ~No deal.~*/
 	GOTO LCA_TakeAmulet //OK
 END
 
@@ -664,6 +680,7 @@ IF ~~ THEN BEGIN LCA_HaveSomethingDemonWants
 	
 	IF ~
 		!Global("LCA_AskDemonAmulet", "GLOBAL", 1)
+		PartyHasItem("AMUL27")
 	~ THEN REPLY @10 /* ~The amulet, you mean... why do you want it?~ */
 	DO ~
 		SetGlobal("LCA_AskDemonAmulet", "GLOBAL", 1)
@@ -675,6 +692,7 @@ IF ~~ THEN BEGIN LCA_HaveSomethingDemonWants
 	
 	IF ~
 		!Global("LCA_AskAboutLyriel", "GLOBAL", 1)
+		PartyHasItem("AMUL27")
 	~ THEN REPLY @22 /* ~The amulet of the Seldarine? I will give it to you, but only if you agree to release Lyriel as well.~ */
 	DO ~
 		SetGlobal("LCA_AskAboutLyriel", "GLOBAL", 1)
@@ -699,6 +717,7 @@ IF ~~ THEN BEGIN LCA_HaveSomethingDemonWants_Party
 	
 	IF ~
 		!Global("LCA_AskDemonAmulet", "GLOBAL", 1)
+		PartyHasItem("AMUL27")
 	~ THEN REPLY @10 /* ~The amulet, you mean... why do you want it?~ */
 	DO ~
 		SetGlobal("LCA_AskDemonAmulet", "GLOBAL", 1)
@@ -710,6 +729,7 @@ IF ~~ THEN BEGIN LCA_HaveSomethingDemonWants_Party
 	
 	IF ~
 		!Global("LCA_AskAboutLyriel", "GLOBAL", 1)
+		PartyHasItem("AMUL27")
 	~ THEN REPLY @22 /* ~The amulet of the Seldarine? I will give it to you, but only if you agree to release Lyriel as well.~ */
 	DO ~
 		SetGlobal("LCA_AskAboutLyriel", "GLOBAL", 1)

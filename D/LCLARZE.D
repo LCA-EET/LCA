@@ -68,8 +68,9 @@ IF ~~ THEN BEGIN LCA6
 	
 	IF ~
 		PartyGoldGT(299)
-	~ THEN REPLY @20 /* ~Here.~ */
+	~ THEN REPLY @20 /* ~Here. (Hand over the gold.)~ */
 	DO ~
+		TakePartyGold(300)
 		EscapeArea()
 	~
 	EXIT

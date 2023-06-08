@@ -1,20 +1,20 @@
 IF 
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
-	!Global("LCA_Door0101Deactivated", "GLOBAL", 1) //Door to Silvershield Estate
+	!Global("LCA_Door0101Deactivated", "BG0100", 1) //Door to Silvershield Estate
 THEN
 	RESPONSE #100
 		//TriggerActivation("Door0101",FALSE)
-		SetGlobal("LCA_Door0101Deactivated", "GLOBAL", 1)
-		//Continue()
+		SetGlobal("LCA_Door0101Deactivated", "BG0100", 1)
+		Continue()
 END
 
 IF
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	InMyArea("OCELLI")
-	!Global("LCA_DestroyNPCs_0100", "LOCALS", 1)
+	!Global("LCA_DestroyNPCs_0100", "BG0100", 1)
 THEN
 	RESPONSE #100
 		ActionOverride("OCELLI", DestroySelf())
-		SetGlobal("LCA_DestroyNPCs_0100", "LOCALS", 1)
+		SetGlobal("LCA_DestroyNPCs_0100", "BG0100", 1)
 		Continue()
 END
