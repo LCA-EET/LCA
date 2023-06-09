@@ -1,0 +1,7 @@
+IF
+	!Global("LCA_Override", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_Override", "GLOBAL", 1)
+		Continue()
+END
