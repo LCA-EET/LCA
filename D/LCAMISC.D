@@ -584,6 +584,25 @@ EXTEND_BOTTOM SAREV25A 48
 END
 
 APPEND MAZZYJ
+	IF ~~ THEN BEGIN BCorwinMazzy2_BREAK
+		SAY @226 /* ~It's alright. I know you didn't mean anything by it. Besides, I'm quite happy with the crossbow.~*/
+		
+		IF ~
+			GlobalLT("LCA_ReturnToBG", "GLOBAL", 0)
+		~ THEN GOTO BCorwinMazzy2_RBG
+		
+		IF ~
+			GlobalLT("LCA_ReturnToBG", "GLOBAL", 1)
+		~ THEN GOTO BCorwinMazzy2_RESUME		
+	END
+	
+	IF ~~ THEN BEGIN BCorwinMazzy2_RBG
+		SAY @227 /* ~Looks like the others are ready... let's get moving.~ */
+		
+		IF ~~ THEN 
+		EXIT
+	END
+	
 	IF ~~ THEN BEGIN LCA_MazzyWonCompetition
 		SAY @184 /* ~Thank you, Schael. You're one of the toughest competitors I've faced.~ */
 		

@@ -441,7 +441,7 @@
 @458 =  ~Definitely!~
 @459 =  ~Not really.. I just have a lot on my mind. I've been hearing rumors that Amnish leaders are planning to criminalize vagrancy. Those that can't afford to pay the fines will be imprisoned.~
 @461 =  ~That seems ridiculous. There isn't enough room in the jails for that many people.~
-@462 =  ~These people have very little already. How can people be so cruel to imprison people for being poor?~
+@462 =  ~These people have very little already. How can people be so cruel to imprison those less fortunate for being poor?~
 @463 =  ~Do they do the same up north? In Beregost? Baldur's Gate?~
 @464 =  ~No, the poor are generally left alone, unless they start making trouble.~
 @465 =  ~Making trouble? How do you mean?~
@@ -488,7 +488,7 @@
 @508 =  ~The unpredictability of my wild magic is one of the things that makes me, well, me. I guess I don't want to turn into a boring old mage - not that you are boring, Imoen! Just the opposite!~
 @509 =  ~I understand the need to carve out your own niche in life. Still, I think you would benefit from what I can show you. My offer stands should you decide to reconsider.~ 
 @510 =  ~Thanks. Maybe someday I will. For now, though, I just want to be myself.~
-@511 =  ~Could I have the recipe? I'd like to make some for my father and daughter when I get home.~
+@511 =  ~Could I have the recipe? I think my family will love it.~
 @512 =  ~Of course, my dear. Come see me later, I'll write it down for you.~
 @513 =  ~Thanks, Jan.~
 @514 =  ~Jan? About the turnip stew recipe - ~ [LCCORB66]
@@ -510,7 +510,7 @@
 @531 =  ~That longbow you carry is taller than me! Longbows are far too difficult for someone of my stature to wield properly.~
 @532 =  ~Oh, of course - sorry. I didn't mean to offend.~
 @533 =  ~It's alright, Captain. I know you didn't mean anything by it.~
-@534 =  ~I'm quite happy with the crossbow, in fact, one of these days I'd like to challenge you to a friendly archery match.~
+@534 =  ~You know, one of these days I'd like to challenge you to a friendly archery match.~
 @535 =  ~Hah, I'd like that! I must warn you though, it's been years since I've lost. ~
 @536 =  ~That's not surprising given your skill, though I doubt you've faced someone of my caliber.~
 @537 =  ~You know, Trademeet holds an annual archery competition around this time of the year. If you're game, you and I should sign up.~
@@ -721,7 +721,7 @@ Mazzy and Schael have expressed interest in taking part in this year's Trademeet
 @742 = ~A moment of your time, Major?~ [NOSOUND]
 @743 =  ~Thank you, dear Major soldier lady. Justice demands that I crush the skull of the wizard that killed her. I am glad that you are here to help inflict the most painful goodness on the forces of evil.~
 @744 = ~Major soldier lady, Boo would like to compliment you.~
-@745 =  ~Boo says that his question for Major soldier lady is urgent.~ 
+@745 = ~Boo says that his question for Major soldier lady is urgent.~ 
 @746 = ~Of course, Major soldier lady. How can Minsc and Boo help a fellow warrior of the greatest goodness?~ 
 @747 = ~Please Major. Let me help you.~
 @748 = ~Yes Major - do you have some time now?~
@@ -758,3 +758,19 @@ Mazzy and Schael have expressed interest in taking part in this year's Trademeet
 @779 = ~I trust you are here to effect some appropriate punishment for what I did to Skie Silvershield?~
 @780 = ~(She struggles mightily against her restraints.)~
 @781 = ~You won't get away with this, wizard!~
+@782 = ~(She walks over and pulls you aside.)~
+@783 = ~We need to find Bodhi and kill her before Schael gets any worse. I don't want you to lose her like I lost Khalid.~ 
+@784 = ~It seems that everywhere we go, we're confronted with maddening wealth disparities. I used to think that it was unique to Amn, but clearly I was mistaken.~
+@785 = ~I can't understand why the people don't band together to demand change.~
+@786 = ~You have a good heart, Nalia. There are some problems, though, that are beyond our capability to deal with.~ 
+@787 = ~That's it? It's too hard, so just give up?~
+@788 = ~No... but you need to focus your energy on problems that you can solve. There was a prayer that my mother taught me when I was a child... what was it...~
+@789 = ~Oh yes... "Grant me the serenity to accept the things that I cannot change, the courage to change the things I can, and the wisdom to know the difference."~
+@790 = ~That... that's actually helpful advice. Thank you, Schael.~ 
+@791 = ~Anytime, Nalia.~
+@792 = ~Thank you, dear Major soldier lady. Boo is glad that skull crushing justice was exacted upon the wizard that murdered her.~
+@792 = ~Thank you, dear Captain soldier lady. Boo is glad that skull crushing justice was exacted upon the wizard that murdered her.~
+@793 = ~Boo says that his question for Captain soldier lady is urgent.~ 
+@794 = ~Major, you seem troubled.~
+@795 = ~Captain, you seem troubled.~
+@796 = ~In your travels, have you ever met one of my k-kind? An Avariel? Before me, I mean.~

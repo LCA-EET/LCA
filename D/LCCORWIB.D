@@ -1230,7 +1230,9 @@ CHAIN
 		= 
 		@690 /* ~I'll make a fire for you, stay here for a moment while I talk to <CHARNAME>.~*/
 		=
-		@691 /*  ~(She walks over and pulls you aside.) We need to find Bodhi and kill her before Schael gets any worse. I don't think she has much time left.~ */
+		@782 /*  ~(She walks over and pulls you aside.)~*/
+		=
+		@783 /* ~We need to find Bodhi and kill her before Schael gets any worse. I don't want you to lose her like I lost Khalid.~ */
 EXIT
 //Mazzy Banters
 
@@ -1292,7 +1294,10 @@ CHAIN
 		@737 /*  ~Major, I'd not have thought it so, but you're quite skilled as an adventurer.~ */
 		== LCCORWIB
 		@519 /* ~I wouldn't call myself an adventurer. I'm here on orders, and because <CHARNAME> needs me.~ */
-		=
+		== LCCORWIB
+		IF ~
+			GlobalLT("LCA_ReturnToBG", "GLOBAL", 1)
+		~
 		@520 /* ~I'll head back to Baldur's Gate once Irenicus is killed or captured.~ */
 		== MAZZYJ 
 		@521 /* ~I see. Have you considered adventuring as a profession? Your leadership and skill with the bow would benefit almost any party.~ */
@@ -1314,18 +1319,10 @@ CHAIN IF ~~ THEN MAZZYJ BCorwinMazzy2
 	@531 /*  ~That longbow you carry is taller than me! Longbows are far too difficult for someone of my stature to wield properly.~ */
 	== LCCORWIB
 	@532 /* ~Oh, of course - sorry. I didn't mean to offend.~ */
-	== MAZZYJ
-	IF ~
-		!Global("LCA_CorwinPromoted", "GLOBAL", 1)
-	~
-	@533 /* ~It's alright, Captain. I know you didn't mean anything by it.~ */
-	== MAZZYJ
-	IF ~
-		Global("LCA_CorwinPromoted", "GLOBAL", 1)
-	~
-	@738 /* ~It's alright, Major. I know you didn't mean anything by it.~ */
-	== MAZZYJ
-	@534 /* ~I'm quite happy with the crossbow, infact, one of these days I'd like to challenge you to a friendly archery match.~ */
+END MAZZYJ BCorwinMazzy2_BREAK
+
+CHAIN IF ~~ THEN MAZZYJ BCorwinMazzy2_RESUME
+	@534 /* ~You know, one of these days I'd like to challenge you to a friendly archery match.~ */
 	== LCCORWIB
 	@535 /* ~Hah, I'd like that! I must warn you though, it's been years since I've lost. ~  */
 	== MAZZYJ
@@ -1362,6 +1359,25 @@ EXIT
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinNalia", "GLOBAL", 2)
+		GlobalGT("LCA_ReturnToBG", "GLOBAL", 0)
+	~
+	THEN LCCORWIB BCorwinNalia1_RBG
+		@375 /* ~Nalia - you seem agitated. What's bothering you?~ [LCCORB48] */
+		DO ~
+			SetGlobal("LCA_Banter_CorwinNalia", "GLOBAL", 3)
+			ClearActions(Myself)
+			ClearActions("Nalia")
+		~
+		== NALIAJ
+		@784 /* ~It seems that everywhere we go, we're confronted with maddening wealth disparities. I used to think that it was unique to Amn, but clearly I was mistaken.~ */
+		= 
+		@785 /* ~I can't understand why the people don't band together to demand change.~ */
+END LCCORWIB BCorwinNalia1_END
+
+CHAIN 
+	IF ~
+		Global("LCA_Banter_CorwinNalia", "GLOBAL", 2)
+		GlobalLT("LCA_ReturnToBG", "GLOBAL", 1)
 	~
 	THEN LCCORWIB BCorwinNalia1
 		@375 /* ~Nalia - you seem agitated. What's bothering you?~ [LCCORB48] */
@@ -1386,7 +1402,10 @@ CHAIN
 		@377 /* ~Not as bad as what I've seen during my time in Amn, but yes, there's a stark difference between the haves and have-nots.~ */
 		== NALIAJ
 		@378 /*  ~I'm sorry to hear that. I can't understand why the people don't band together to demand change.~*/
-		== LCCORWIB
+END LCCORWIB BCorwinNalia1_END
+
+CHAIN
+	IF ~~ THEN LCCORWIB BCorwinNalia1_END
 		@379 /* ~Human nature, I suppose. Most people are only concerned with the well-being of their loved ones.~ */
 		= 
 		@380 /* They don't have the time, energy, or willingness to risk themselves to change the status quo.~*/
@@ -1424,6 +1443,39 @@ EXIT
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinNalia", "GLOBAL", 6)
+		GlobalGT("LCA_ReturnToBG", "GLOBAL", 0)
+	~
+	THEN LCCORWIB BCorwinNalia3_RBG
+		@560 /* ~Nalia? Something bothering you?~*/
+		DO ~
+			SetGlobal("LCA_Banter_CorwinNalia", "GLOBAL", 7)
+			ClearActions(Myself)
+			ClearActions("Nalia")
+		~
+		== NALIAJ
+		@459 /*  ~Not really.. I just have a lot on my mind. I've been hearing rumors that Amnish leaders are planning to criminalize vagrancy. Those that can't afford to pay the fines will be imprisoned~ */
+		== LCCORWIB
+		@461 /* ~That seems ridiculous. There isn't enough room in the jails for that many people.~ */
+		== NALIAJ
+		@462 /* ~These people have very little already. How can people be so cruel to imprison those less fortunate for being poor?~ */
+		== LCCORWIB
+		@786 /* ~You have a good heart, Nalia. Some problems are simply beyond our ability to solve.~ */
+		== NALIAJ
+		@787 /* ~That's it? It's too hard, so just give up?~ */
+		== LCCORWIB
+		@788 /* ~No... but you need to focus your energy on problems that you can solve. There was a prayer that my mother taught me... what was it...~ */
+		= 
+		@789 /*  ~Oh yes... "Grant me the serenity to accept the things that I cannot change, the courage to change the things I can, and the wisdom to know the difference."~ */
+		== NALIAJ
+		@790 /*~That... that's actually helpful advice. Thank you, Schael.~ */
+		== LCCORWIB
+		@791
+EXIT
+
+CHAIN 
+	IF ~
+		Global("LCA_Banter_CorwinNalia", "GLOBAL", 6)
+		GlobalLT("LCA_ReturnToBG", "GLOBAL", 1)
 	~
 	THEN LCCORWIB BCorwinNalia3
 		@560 /* ~Nalia? Something bothering you?~*/
@@ -1437,7 +1489,7 @@ CHAIN
 		== LCCORWIB
 		@461 /* ~That seems ridiculous. There isn't enough room in the jails for that many people.~ */
 		== NALIAJ
-		@462 /* ~These people have very little already. How can people be so cruel to imprison people for being poor?~ */
+		@462 /* ~These people have very little already. How can people be so cruel to imprison those less fortunate for being poor?~ */
 		=
 		@463 /* Do they do the same up north? In Beregost? Baldur's Gate?~ */
 		== LCCORWIB
@@ -1628,7 +1680,7 @@ CHAIN
 			ClearActions("Minsc")
 		~
 		== MINSCJ
-		@353 /* ~Thank you, dear Major soldier lady. Justice demands that I crush the skull of the wizard that killed her. I am glad that you are here to help inflict the most painful goodness on the forces of evil.~ */
+		@792 /* ~Thank you, dear Major soldier lady. Boo is glad that skull crushing justice was exacted upon the wizard that murdered her.~ */
 		== LCCORWIB
 		@345/* ~Um.. right. So am I.~*/
 		== MINSCJ
@@ -1685,7 +1737,6 @@ EXIT
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinMinsc", "GLOBAL", 4)
-		Global("LCA_CorwinPromoted", "GLOBAL", 1)
 	~
 	THEN LCCORWIB BCorwinMinsc2_M
 		@325 /* ~Ugh, not now Minsc. I'm busy.~ [LCCORB43] */
@@ -1695,7 +1746,15 @@ CHAIN
 			ClearActions("Minsc")
 		~
 		== MINSCJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@745 /* ~Boo says that his question for Major soldier lady is urgent.~  */
+		== MINSCJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@793 /* ~Boo says that his question for Captain soldier lady is urgent.~   */
 		== LCCORWIB
 		@327 /* ~(sigh) Fine. What is it Boo.~*/
 		== MINSCJ
@@ -1751,9 +1810,10 @@ EXIT
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinRasaad", "GLOBAL", 2)
+		!Global("LCA_CorwinPromoted", "GLOBAL", 1)
 	~
-	THEN RASAADJ BCorwinRasaad1
-		@561 /* ~Captain Corwin, you seem troubled.~ [LCCORB63] */
+	THEN RASAADJ BCorwinRasaad1_C
+		@795 /* Captain, you seem troubled.~*/
 		DO ~
 			SetGlobal("LCA_Banter_CorwinRasaad", "GLOBAL", 3)
 			ClearActions(Myself)
@@ -1772,14 +1832,38 @@ CHAIN
 		== LCCORWIB
 		@288 /* ~I - I don't think that's necessary - maybe some other time. ~ */
 		== RASAADJ
-		IF ~
-			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
-		~
 		@289 /* ~Please Captain. Let me help you.~*/
+		== LCCORWIB
+		@290 /* ~Not right now. We have work to do. Let's get moving.~ */
 		== RASAADJ
-		IF ~
-			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		@291 /* ~Very well. When you have the time, come and see me.~ */
+EXIT
+
+CHAIN 
+	IF ~
+		Global("LCA_Banter_CorwinRasaad", "GLOBAL", 2)
+		Global("LCA_CorwinPromoted", "GLOBAL", 1)
+	~
+	THEN RASAADJ BCorwinRasaad1_M
+		@794 /* ~Major, you seem troubled.~*/
+		DO ~
+			SetGlobal("LCA_Banter_CorwinRasaad", "GLOBAL", 3)
+			ClearActions(Myself)
+			ClearActions("LCCORWIN")
 		~
+		== LCCORWIB
+		@283 /* ~Rasaad.. it's nothing, I...~ [LCCORB28] */
+		== RASAADJ
+		@284 /* ~Yes?~ */
+		== LCCORWIB
+		@285 /* ~It's just that I miss my daughter, my father. My city. I thought that after the Dragonspear campaign that I'd be done with these long duration deployments.~*/
+		= @286 /* ~I don't regret taking this assignment, and I am proud to stand at <CHARNAME>'s side, yet it doesn't make being away from home any easier.~ */
+		== RASAADJ
+		@292 /* ~I understand. It's natural to feel that way.~ */
+		= @287 /* ~Allow me to share with you a simple breathing exercise to help you focus, and relax. It will help relieve some of the anxiety you are feeling.~ */
+		== LCCORWIB
+		@288 /* ~I - I don't think that's necessary - maybe some other time. ~ */
+		== RASAADJ
 		@747 /* ~Please Major. Let me help you.~*/
 		== LCCORWIB
 		@290 /* ~Not right now. We have work to do. Let's get moving.~ */
@@ -2225,13 +2309,22 @@ CHAIN
 			ClearActions("Valygar")
 		~ 
 		== VALYGARJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@247 /* ~Yes, thank you Captain. I'm interested in hearing why you chose to specialize in archery.~*/
-		= @248 /* ~I've always felt that a Ranger's strength lies in their versatility.~ */
+		== VALYGARJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@755 /* ~Yes, thank you Major. I'm interested in hearing why you chose to specialize in archery.~*/
+		== VALYGARJ
+		@248 /* ~I've always felt that a Ranger's strength lies in their versatility.~ */
 		== LCCORWIB
 		@249 /* ~Well, unlike most Rangers, I'm not typically sent out on my own. The need for that versatility is reduced.~ */
 		= @250 /* ~I tend to work as part of a team, and having a specialization can contribute more to the team's success.~ */
 		== VALYGARJ
-		@251 /* ~An interesting perspective, Captain. I think we will enjoy working together.~ */
+		@251 /* ~An interesting perspective. I think we will enjoy working together.~ */
 		== LCCORWIB
 		@252 /* ~So do I.~ */
 EXIT
@@ -2272,11 +2365,12 @@ EXIT
 
 CHAIN 
 	IF ~
-		Global("LCA_Banter_CorwinValygar", "GLOBAL", 6)
+		Global("LCA_CorwinValygarLavok", "GLOBAL", 1)
 	~ THEN LCCORWIB BCorwinValygar2
 		@573 /* ~So, Valygar.~*/
 		DO ~
-			SetGlobal("LCA_Banter_CorwinValygar", "GLOBAL", 7)
+			SetGlobal("LCA_CorwinValygarLavok", "GLOBAL", 2)
+			SetGlobal("LCA_Banter_CorwinValygar", "GLOBAL", 3)
 			SetGlobalTimer("LCA_CorwinValygarTimer2", "GLOBAL", THREE_DAYS)
 		~
 		== VALYGARJ
@@ -3429,10 +3523,24 @@ CHAIN
 		== LCCORWIB
 		@101 /* ~Sure. What's on your mind?~ */
 		== AERIEJ
+		IF ~
+			!Global("LCA_AerieInBG", "GLOBAL", 1)
+		~
 		@102 /* ~I've encountered so many d-different people, cultures and races while in the circus. The circus never travelled to Baldur's Gate before. What are the people there like?~ */
+		== AERIEJ
+		IF ~
+			Global("LCA_AerieInBG", "GLOBAL", 1)
+		~
+		@796 /* ~~In your travels, have you ever met one of my k-kind? An Avariel? Before me, I mean.~*/
 		== LCCORWIB
+		IF ~
+			!Global("LCA_AerieInBG", "GLOBAL", 1)
+		~
 		@103 /* ~Not much different than Athkatla, Aerie. Most of the population is human, but there are dwarves, gnomes, elves, even some half-orcs in the city.~*/
 		== AERIEJ
+		IF ~
+			!Global("LCA_AerieInBG", "GLOBAL", 1)
+		~
 		@104 /* ~I see.. have you m-met an Avariel before? Before me, I mean.~ */
 		== LCCORWIB
 		@87 /* ~Yes, <CHARNAME> and I have met one of your kind before.~*/

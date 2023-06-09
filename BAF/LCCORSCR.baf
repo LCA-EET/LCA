@@ -2515,6 +2515,27 @@ THEN
 		Continue()
 END
 
+IF
+	Global("LavokDead", "GLOBAL", 1)
+	!Global("LCA_CorwinLavokTimerSet", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_CorwinLavokTimerSet", "GLOBAL", 1)
+		SetGlobalTimer("LCA_CorwinLavokTimer", "GLOBAL", ONE_HOUR)
+END
+
+IF 
+	IsValidForPartyDialog("Valygar")
+	Global("LCA_CorwinCanTalk", "GLOBAL", 1)
+	GlobalTimerExpired("LCA_CorwinLavokTimer", "GLOBAL")
+	GlobalLT("LCA_CorwinValygarLavok", "GLOBAL", 1)
+	GlobalLT("LCA_ReturnToBG", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_CorwinValygarLavok", "GLOBAL", 1)
+		Interact("Valygar")
+END
+
 IF 
 	Global("LCA_Banter_CorwinValygar", "GLOBAL", 4)
 	Global("LavokDead", "GLOBAL", 1)

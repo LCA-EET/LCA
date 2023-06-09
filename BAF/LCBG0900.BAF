@@ -2,6 +2,16 @@
 
 IF
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("Aerie")
+	!Global("LCA_AerieInBG", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_AerieInBG", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	InMyArea("Smuggler")
 THEN
 	RESPONSE #100
