@@ -76,6 +76,9 @@ IF ~
 	~
 	GOTO LCA_MainMenu
 	
+	IF ~~ THEN REPLY @334 /* ~Dialog Test.~*/
+	GOTO LCA_DialogTest
+	
 	IF ~~ THEN REPLY @74 /* Increment Banter Counter. */
 	GOTO LCA_Menu_IncrementBanter
 	
@@ -96,6 +99,21 @@ IF ~
 	
 	IF ~~ THEN REPLY @12 /* ~I do not need assistance at this time.~ */
 	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_DialogTest
+	SAY @334
+	
+	IF ~~ THEN REPLY @333
+	DO ~
+		SetGlobal("LCA_Banter_CorwinAerie", "GLOBAL", 5)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Aerie"))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @26
+	GOTO LCA_MainMenu
 END
 
 IF ~~ THEN BEGIN LCA_ChangeChapter
@@ -1149,6 +1167,12 @@ END
 
 IF ~~ THEN BEGIN LCA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
+	
+	IF ~~ THEN REPLY @335
+	DO ~
+		SetGlobal("LCA_AerieInBG", "GLOBAL", 1)
+	~
+	GOTO LCA_ReturnToMainMenu
 	
 	IF ~~ THEN REPLY @331
 	DO ~
