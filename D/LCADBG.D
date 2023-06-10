@@ -325,175 +325,247 @@ IF ~~ THEN BEGIN LCA_DialogTest
 
 	IF ~~ THEN REPLY @361 /* ~Dialog B-25~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinRasaad", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinPromoted", "GLOBAL", 0)
 		Wait(1)
+		ActionOverride("Rasaad", StartDialog("RASAADJ", "LCCORWIN"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @362 /* ~Dialog B-26~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinRasaad", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinPromoted", "GLOBAL", 1)
 		Wait(1)
+		ActionOverride("Rasaad", StartDialog("RASAADJ", "LCCORWIN"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @363 /* ~Dialog B-27~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinRasaad", "GLOBAL", 4)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Rasaad"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @364 /* ~Dialog B-28~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinRasaad", "GLOBAL", 6)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Rasaad"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @365 /* ~Dialog B-29~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinRasaad", "GLOBAL", 8)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Rasaad"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @366 /* ~Dialog B-30~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinRasaad", "GLOBAL", 8)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Rasaad"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @367 /* ~Dialog B-31~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinRasaad", "GLOBAL", 8)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Rasaad"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @368 /* ~Dialog B-32~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinRasaad", "GLOBAL", 8)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Rasaad"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @369 /* ~Dialog B-33~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinRasaad", "GLOBAL", 8)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Rasaad"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @370 /* ~Dialog B-34~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinYoshimo", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Yoshimo"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @371 /* ~Dialog B-35~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinCernd", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Cernd"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @372 /* ~Dialog B-36~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinCernd", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 0)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Cernd"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @373 /* ~Dialog B-37~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinValygar", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Valygar"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @374 /* ~Dialog B-38~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinValygar", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Valygar"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @375 /* ~Dialog B-39~ */
 	DO ~
+		SetGlobal("LCA_CorwinValygarLavok", "GLOBAL", 1)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Valygar"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @376 /* ~Dialog B-40~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinNeera", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Neera"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @377 /* ~Dialog B-41~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinNeera", "GLOBAL", 4)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Neera"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @378 /* ~Dialog B-42~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinHexxat", "GLOBAL", 4)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Hexxat"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @379 /* ~Dialog B-43~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinKorgan", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Korgan"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @380 /* ~Dialog B-44~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinKorgan", "GLOBAL", 4)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Korgan"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @381 /* ~Dialog B-45~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinViconia", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 0)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Viconia"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @382 /* ~Dialog B-46~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinViconia", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Viconia"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @383 /* ~Dialog B-47~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinViconia", "GLOBAL", 4)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Viconia"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @384 /* ~Dialog B-48~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinViconia", "GLOBAL", 6)
 		Wait(1)
+		ActionOverride("Viconia", StartDialog("VICONIJ", "LCCORWIN"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @385 /* ~Dialog B-49~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinImoen", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Imoen2"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @386 /* ~Dialog B-50~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinImoen", "GLOBAL", 3)
+		SetGlobal("LCA_BodhiDead", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		SetGlobal("LCA_ImoenSoulReturned", "GLOBAL", 0)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Imoen2"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @387 /* ~Dialog B-51~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinImoen", "GLOBAL", 3)
+		SetGlobal("LCA_BodhiDead", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 0)
+		SetGlobal("LCA_ImoenSoulReturned", "GLOBAL", 0)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Imoen2"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @388 /* ~Dialog B-52~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinImoen", "GLOBAL", 4)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Imoen2"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @389 /* ~Dialog B-53~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinImoen", "GLOBAL", 4)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 0)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Imoen2"))
 	~
 	EXIT
 

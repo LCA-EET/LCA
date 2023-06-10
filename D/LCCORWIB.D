@@ -2894,7 +2894,7 @@ EXIT
 CHAIN 
 	IF ~
 		GlobalGT("LCA_Banter_CorwinImoen", "GLOBAL", 2)
-		GlobalTimerExpired("LCA_CorwinImoenSoulTimer", "GLOBAL")
+		Global("LCA_BodhiDead", "GLOBAL", 2)
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("LCA_ImoenSoulReturned", "GLOBAL", 1)
 	~ THEN LCCORWIB BCorwinImoenSoulA
@@ -2918,7 +2918,7 @@ EXIT
 CHAIN 
 	IF ~
 		GlobalGT("LCA_Banter_CorwinImoen", "GLOBAL", 2)
-		GlobalTimerExpired("LCA_CorwinImoenSoulTimer", "GLOBAL")
+		Global("LCA_BodhiDead", "GLOBAL", 2)
 		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("LCA_ImoenSoulReturned", "GLOBAL", 1)
 	~ THEN LCCORWIB BCorwinImoenSoulB
