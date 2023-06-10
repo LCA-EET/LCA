@@ -1254,13 +1254,17 @@ IF
 		IsValidForPartyDialogue("JAHEIRA")
 THEN
 	RESPONSE #25
+		SetGlobal("LCA_CorwinSick_Jaheira", "GLOBAL", 1)
 		ActionOverride("JAHEIRA", StartDialog("JAHEIRAJ", "LCCORWIN"))
 	RESPONSE #25
+		SetGlobal("LCA_CorwinSick_Aerie", "GLOBAL", 1)
 		ActionOverride("AERIE", StartDialog("AERIEJ", "LCCORWIN"))
 	RESPONSE #25
+		SetGlobal("LCA_CorwinSick_Korgan", "GLOBAL", 1)
 		ActionOverride("KORGAN", StartDialog("KORGANJ", Player1))
 	RESPONSE #25
-		ActionOverride("IMOEN2", StartDialog("IMOEN2", "LCCORWIN"))
+		SetGlobal("LCA_CorwinSick_Imoen", "GLOBAL", 1)
+		ActionOverride("IMOEN2", StartDialog("IMOEN2J", "LCCORWIN"))
 END
 
 IF 

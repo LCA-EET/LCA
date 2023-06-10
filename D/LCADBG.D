@@ -103,21 +103,586 @@ END
 
 IF ~~ THEN BEGIN LCA_DialogTest
 	SAY @334
-	IF ~~ THEN REPLY @336 /*@336 = ~Dialog B-0~*/
-
-	IF ~~ THEN REPLY @336
-
-
-EXIT
-
 	
-	IF ~~ THEN REPLY @333
+	IF ~~ THEN REPLY @336 /* ~Dialog B-0~ */
 	DO ~
-		SetGlobal("LCA_Banter_CorwinAerie", "GLOBAL", 5)
+		SetGlobal("OHD_corwinconflict","GLOBAL",2)
 		Wait(1)
-		ActionOverride("LCCORWIN", Interact("Aerie"))
+		ActionOverride("LCCORWIN", Interact("Dorn"))
 	~
 	EXIT
+
+	IF ~~ THEN REPLY @337 /* ~Dialog B-1~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinAnomen", "GLOBAL", 2)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Anomen"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @338 /* ~Dialog B-2~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinMinsc", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinPromoted", "GLOBAL", 1)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Minsc"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @339 /* ~Dialog B-3~ */
+	DO ~
+		SetGlobal("LCA_TM_ArcheryChallenge", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 0)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Mazzy"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @340 /* ~Dialog B-4~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinMazzy", "GLOBAL", 4)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Mazzy"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @341 /* ~Dialog B-5~ */
+	DO ~
+		SetGlobal("LCA_CorwinSick_Aerie", "GLOBAL", 1)
+		Wait(1)
+		ActionOverride("Aerie", StartDialog("AERIEJ", "LCCORWIN"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @342 /* ~Dialog B-6~ */
+	DO ~
+		SetGlobal("LCA_CorwinSick_Jaheira", "GLOBAL", 1)
+		Wait(1)
+		ActionOverride("Jaheira", StartDialog("JAHEIRAJ", "LCCORWIN"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @343 /* ~Dialog B-7~ */
+	DO ~
+		SetGlobal("LCA_CorwinSick_Korgan", "GLOBAL", 1)
+		Wait(1)
+		ActionOverride("Korgan", StartDialog("KORGANJ", Player1))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @344 /* ~Dialog B-8~ */
+	DO ~
+		SetGlobal("LCA_CorwinSick_Imoen", "GLOBAL", 1)
+		Wait(1)
+		ActionOverride("IMOEN2", StartDialog("IMOEN2J", "LCCORWIN"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @345 /* ~Dialog B-9~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinMazzy", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 0)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Mazzy"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @346 /* ~Dialog B-10~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinMazzy", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Mazzy"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @347 /* ~Dialog B-11~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinNalia", "GLOBAL", 2)
+		SetGlobal("LCA_ReturnToBG", "GLOBAL", 1)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Nalia"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @348 /* ~Dialog B-12~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinNalia", "GLOBAL", 2)
+		SetGlobal("LCA_ReturnToBG", "GLOBAL", 0)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Nalia"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @349 /* ~Dialog B-13~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinNalia", "GLOBAL", 4)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Nalia"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @350 /* ~Dialog B-14~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinNalia", "GLOBAL", 6)
+		SetGlobal("LCA_ReturnToBG", "GLOBAL", 1)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Nalia"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @351 /* ~Dialog B-15~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinNalia", "GLOBAL", 6)
+		SetGlobal("LCA_ReturnToBG", "GLOBAL", 0)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Nalia"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @352 /* ~Dialog B-16~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinHaerDalis", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinPromoted", "GLOBAL", 0)
+		Wait(1)
+		ActionOverride("HaerDalis", StartDialog("HAERDAJ", "LCCORWIN"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @353 /* ~Dialog B-17~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinHaerDalis", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinPromoted", "GLOBAL", 1)
+		Wait(1)
+		ActionOverride("HaerDalis", StartDialog("HAERDAJ", "LCCORWIN"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @354 /* ~Dialog B-18~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinHaerDalis", "GLOBAL", 4)
+		SetGlobal("LCA_CorwinRomanceActive","GLOBAL",2)
+		SetGlobal("HaerDalisRomanceActive","GLOBAL",2)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("HaerDalis"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @355 /* ~Dialog B-19~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinHaerDalis", "GLOBAL", 4)
+		SetGlobal("LCA_CorwinRomanceActive","GLOBAL",2)
+		SetGlobal("HaerDalisRomanceActive","GLOBAL",0)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("HaerDalis"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @356 /* ~Dialog B-20~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinHaerDalis", "GLOBAL", 4)
+		SetGlobal("LCA_CorwinRomanceActive","GLOBAL",1)
+		SetGlobal("HaerDalisRomanceActive","GLOBAL",2)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("HaerDalis"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @357 /* ~Dialog B-21~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinHaerDalis", "GLOBAL", 4)
+		SetGlobal("LCA_CorwinRomanceActive","GLOBAL",0)
+		SetGlobal("HaerDalisRomanceActive","GLOBAL",0)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("HaerDalis"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @358 /* ~Dialog B-22~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinMinsc", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinPromoted", "GLOBAL", 0)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Minsc"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @359 /* ~Dialog B-23~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinMinsc", "GLOBAL", 4)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Minsc"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @360 /* ~Dialog B-24~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @361 /* ~Dialog B-25~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @362 /* ~Dialog B-26~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @363 /* ~Dialog B-27~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @364 /* ~Dialog B-28~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @365 /* ~Dialog B-29~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @366 /* ~Dialog B-30~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @367 /* ~Dialog B-31~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @368 /* ~Dialog B-32~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @369 /* ~Dialog B-33~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @370 /* ~Dialog B-34~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @371 /* ~Dialog B-35~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @372 /* ~Dialog B-36~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @373 /* ~Dialog B-37~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @374 /* ~Dialog B-38~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @375 /* ~Dialog B-39~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @376 /* ~Dialog B-40~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @377 /* ~Dialog B-41~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @378 /* ~Dialog B-42~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @379 /* ~Dialog B-43~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @380 /* ~Dialog B-44~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @381 /* ~Dialog B-45~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @382 /* ~Dialog B-46~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @383 /* ~Dialog B-47~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @384 /* ~Dialog B-48~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @385 /* ~Dialog B-49~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @386 /* ~Dialog B-50~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @387 /* ~Dialog B-51~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @388 /* ~Dialog B-52~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @389 /* ~Dialog B-53~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @390 /* ~Dialog B-54~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @391 /* ~Dialog B-55~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @392 /* ~Dialog B-56~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @393 /* ~Dialog B-57~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @394 /* ~Dialog B-58~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @395 /* ~Dialog B-59~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @396 /* ~Dialog B-60~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @397 /* ~Dialog B-61~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @398 /* ~Dialog B-62~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @399 /* ~Dialog B-63~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @400 /* ~Dialog B-64~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @401 /* ~Dialog B-65~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @402 /* ~Dialog B-66~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @403 /* ~Dialog B-67~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @404 /* ~Dialog B-68~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @405 /* ~Dialog B-69~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @406 /* ~Dialog B-70~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @407 /* ~Dialog B-71~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @408 /* ~Dialog B-72~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @409 /* ~Dialog B-73~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @410 /* ~Dialog B-74~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @411 /* ~Dialog B-75~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @412 /* ~Dialog B-76~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @413 /* ~Dialog B-77~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @414 /* ~Dialog B-78~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @415 /* ~Dialog B-79~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @416 /* ~Dialog B-80~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @417 /* ~Dialog B-81~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @418 /* ~Dialog B-82~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @419 /* ~Dialog B-83~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @420 /* ~Dialog B-84~ */
+	DO ~
+		Wait(1)
+	~
+	EXIT
+
+
+
 	
 	IF ~~ THEN REPLY @26
 	GOTO LCA_MainMenu

@@ -1154,14 +1154,13 @@ END
 //{ region Dialog B-5
 CHAIN
 	IF ~
-		GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
-		GlobalTimerExpired("LCA_CorwinSickPartyTimer", "GLOBAL")
-		!Global("LCA_CorwinPartySick", "GLOBAL", 1)
+		Global("LCA_CorwinSick_Aerie", "GLOBAL", 1)
 	~
 	THEN AERIEJ BCorwinSickAerie
 		@677 /* ~Schael, you haven't been able to k-keep any fluids down. Sit down for a m-moment, let me have a look at you.~ */
 		DO ~
 			SetGlobal("LCA_CorwinPartySick", "GLOBAL", 1)
+			SetGlobal("LCA_CorwinSick_Aerie", "GLOBAL", 0)
 		~
 		== LCCORWIB
 		@678 /* ~N-no *cough* we need to... we need to keep *cough* moving...~*/
@@ -1172,20 +1171,21 @@ CHAIN
 		== LCCORWIB
 		@681 /* ~Yes, thanks *cough* Aerie..~ */
 		== AERIEJ
-		@682 /*  ~(She walks over and pulls you aside.) We need to find Bodhi and k-kill her before Schael gets any worse. I don't think she has much time left.~  */
+		@782  /*~(She walks over and pulls you aside.)~*/
+		=
+		@682 /*  ~We need to find Bodhi and k-kill her before Schael gets any worse. I don't think she has much time left.~  */
 EXIT
 //}
 
 //{ region Dialog B-6
 CHAIN
 	IF ~
-		GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
-		GlobalTimerExpired("LCA_CorwinSickPartyTimer", "GLOBAL")
-		!Global("LCA_CorwinPartySick", "GLOBAL", 1)
+		Global("LCA_CorwinSick_Jaheira", "GLOBAL", 1)
 	~
 	THEN JAHEIRAJ BCorwinSickJaheira
 		@683 /* ~Captain, you haven't been able to keep any fluids down. Sit down for a moment, let me have a look at you.~ */
 		DO ~
+			SetGlobal("LCA_CorwinSick_Jaheira", "GLOBAL", 0)
 			SetGlobal("LCA_CorwinPartySick", "GLOBAL", 1)
 		~
 		== LCCORWIB
@@ -1205,37 +1205,41 @@ CHAIN
 		=
 		@690 /* ~I'll make a fire for you, stay here for a moment while I talk to <CHARNAME>.~ */
 		=
-		@691 /* ~(She walks over and pulls you aside.) We need to find Bodhi and kill her before Schael gets any worse. She doesn't have much time left. I don't want you to lose her, like I lost Khalid.~ */
+		@782 /*~(She walks over and pulls you aside.)~*/
+		=
+		@691 /* ~We need to find Bodhi and kill her before Schael gets any worse. She doesn't have much time left. I don't want you to lose her, like I lost Khalid.~ */
 EXIT
 //}
 
 //{ region Dialog B-7
 CHAIN
 	IF ~
-		GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
-		GlobalTimerExpired("LCA_CorwinSickPartyTimer", "GLOBAL")
-		!Global("LCA_CorwinPartySick", "GLOBAL", 1)
+		Global("LCA_CorwinSick_Korgan", "GLOBAL", 1)
 	~
 	THEN KORGANJ BCorwinSickKorgan
 		@692 /* ~Aye, <CHARNAME>. Ye girlie ain't doing well at all. She's as tough as they come, though I'd wager me clan's name that Schael won't make it through the night.~  */
-		=
-		@693 /* ~It be not my place to tell ye what to do, but if ye cares about yer woman, you'd do well to find that neck-biting bitch and ram a stake through her heart, ye hear?~ */
 		DO ~
+			SetGlobal("LCA_CorwinSick_Korgan", "GLOBAL", 0)
 			SetGlobal("LCA_CorwinPartySick", "GLOBAL", 1)
 		~
+		== KORGANJ
+		IF ~
+			Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		~
+		@693 /* ~It be not my place to tell ye what to do, but if ye cares about yer woman, you'd do well to find that neck-biting bitch and ram a stake through her heart, ye hear?~ */
+		
 EXIT
 //}
 
 //{ region Dialog B-8
 CHAIN
 	IF ~
-		GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
-		GlobalTimerExpired("LCA_CorwinSickPartyTimer", "GLOBAL")
-		!Global("LCA_CorwinPartySick", "GLOBAL", 1)
+		Global("LCA_CorwinSick_Imoen", "GLOBAL", 1)
 	~
 	THEN IMOEN2J BCorwinSickImoen2
 		@694 /* ~Schael, you haven't been able to keep any fluids down. Sit down for a moment, let me have a look at you.~ */
 		DO ~
+			SetGlobal("LCA_CorwinSick_Imoen", "GLOBAL", 0)
 			SetGlobal("LCA_CorwinPartySick", "GLOBAL", 1)
 		~
 		== LCCORWIB
@@ -1712,7 +1716,7 @@ EXIT
 
 //Minsc Banters
 
-//{ region Dialog B-21
+//{ region Dialog B-2
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinMinsc", "GLOBAL", 2)
