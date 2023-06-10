@@ -1251,7 +1251,7 @@ CHAIN
 		=
 		@782 /*  ~(She walks over and pulls you aside.)~*/
 		=
-		@783 /* ~We need to find Bodhi and kill her before Schael gets any worse. I don't want you to lose her like I lost Khalid.~ */
+		@797 /* ~We need to find Bodhi and kill her before Schael gets any worse. I don't want you to lose her like I lost Khalid.~ */
 EXIT
 //}
 

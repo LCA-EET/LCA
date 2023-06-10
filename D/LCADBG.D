@@ -317,7 +317,9 @@ IF ~~ THEN BEGIN LCA_DialogTest
 
 	IF ~~ THEN REPLY @360 /* ~Dialog B-24~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinMinsc", "GLOBAL", 6)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Minsc"))
 	~
 	EXIT
 
