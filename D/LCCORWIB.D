@@ -1,5 +1,6 @@
 BEGIN ~LCCORWIB~
 
+//{ region: Dialog B-0
 IF ~
 	Global("OHD_corwinconflict","GLOBAL",2)
 ~ THEN BEGIN LCA_CorwinDornConflictChainInit
@@ -11,6 +12,9 @@ IF ~
 	~
 	EXTERN DORNJ LCA_CorwinDornConflictChain
 END
+//}
+
+//{ region: Dialog B-1
 IF ~
 	Global("LCA_Banter_CorwinAnomen", "GLOBAL", 2)
 ~ THEN BEGIN BCorwinAnomen1A
@@ -23,7 +27,9 @@ IF ~
 	~ 
 	EXTERN ANOMENJ BCorwinAnomen1A
 END
+//}
 
+//{ region: Dialog B-3
 IF ~
 	Global("LCA_TM_ArcheryChallenge", "GLOBAL", 2)
 	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
@@ -33,7 +39,9 @@ IF ~
 	IF ~~ THEN 
 	EXTERN MAZZYJ LCA_MazzyWonCompetition
 END
+//}
 
+//{ region Dialog B-4
 IF ~
 	Global("LCA_Banter_CorwinMazzy", "GLOBAL", 4)
 ~ THEN BEGIN LCA_Banter_CorwinMazzy2_Init
@@ -46,6 +54,7 @@ IF ~
 	~
 	EXTERN MAZZYJ BCorwinMazzy2
 END
+//}
 
 IF ~~ THEN BEGIN LCA_CorwinWonCompetition
 	SAY @555 /* ~Thanks, Mazzy. You're one of the toughest people I've competed against.~ */
@@ -65,7 +74,7 @@ IF ~~ THEN BEGIN BCorwinMazzy2_End
 END
 
 
-//Interjects
+//{ region: Interjects
 INTERJECT_COPY_TRANS SAREV25A 52 CORWIN_SAREV25A_52
 	== LCCORWIB
 	IF ~
@@ -1141,8 +1150,8 @@ INTERJECT_COPY_TRANS BAERIE 430 Corwin_BAERIE_430 // OK
 		IsValidForPartyDialogue("LCCORWIN")
 	~ THEN @177 /* ~Aerie! That's enough.~ */
 END 
-
-//Corwin Sick Banters
+//}
+//{ region Dialog B-5
 CHAIN
 	IF ~
 		GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
@@ -1165,7 +1174,9 @@ CHAIN
 		== AERIEJ
 		@682 /*  ~(She walks over and pulls you aside.) We need to find Bodhi and k-kill her before Schael gets any worse. I don't think she has much time left.~  */
 EXIT
+//}
 
+//{ region Dialog B-6
 CHAIN
 	IF ~
 		GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
@@ -1196,7 +1207,9 @@ CHAIN
 		=
 		@691 /* ~(She walks over and pulls you aside.) We need to find Bodhi and kill her before Schael gets any worse. She doesn't have much time left. I don't want you to lose her, like I lost Khalid.~ */
 EXIT
+//}
 
+//{ region Dialog B-7
 CHAIN
 	IF ~
 		GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
@@ -1211,7 +1224,9 @@ CHAIN
 			SetGlobal("LCA_CorwinPartySick", "GLOBAL", 1)
 		~
 EXIT
+//}
 
+//{ region Dialog B-8
 CHAIN
 	IF ~
 		GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
@@ -1234,8 +1249,11 @@ CHAIN
 		=
 		@783 /* ~We need to find Bodhi and kill her before Schael gets any worse. I don't want you to lose her like I lost Khalid.~ */
 EXIT
+//}
+
 //Mazzy Banters
 
+//{ region Dialog B-9
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinMazzy", "GLOBAL", 2)
@@ -1271,7 +1289,9 @@ CHAIN
 		== LCCORWIB
 		@525 /* ~No need to apologize, Mazzy. Let's keep moving.~ */
 EXIT
+//}
 
+//{ region Dialog B-10
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinMazzy", "GLOBAL", 2)
@@ -1310,6 +1330,7 @@ CHAIN
 		== LCCORWIB
 		@525 /* ~No need to apologize, Mazzy. Let's keep moving.~ */
 EXIT
+//}
 
 CHAIN IF ~~ THEN MAZZYJ BCorwinMazzy2
 	@529 /*  ~Isn't it obvious?~*/
@@ -1330,7 +1351,7 @@ CHAIN IF ~~ THEN MAZZYJ BCorwinMazzy2_RESUME
 	=
 	@537 /* ~You know, Trademeet holds an annual archery competition around this time of the year. If you're game, you and I should sign up.~ */
 END LCCORWIB BCorwinMazzy2_End
-//NEED TO FIX 
+
 CHAIN
 	IF ~~ THEN MAZZYJ LCA_TMSignup
 		@539 /* ~Yes, that's right. The signup table is in the southeast of the city, if I remember correctly. Next time we are in the area, we can signup.~ [NOSOUND]*/
@@ -1340,7 +1361,6 @@ CHAIN
 		== LCCORWIB
 		@558 /* ~Sounds good. Let's get going, we have work to do.~ */
 EXIT
-
 
 CHAIN
 	IF ~~ THEN MAZZYJ LCA_MazzyWonCompetition2
@@ -1356,6 +1376,8 @@ EXIT
 
 
 //Nalia Banters
+
+//{ region Dialog B-11
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinNalia", "GLOBAL", 2)
@@ -1373,7 +1395,9 @@ CHAIN
 		= 
 		@785 /* ~I can't understand why the people don't band together to demand change.~ */
 END LCCORWIB BCorwinNalia1_END
+//}
 
+//{ region Dialog B-12
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinNalia", "GLOBAL", 2)
@@ -1403,6 +1427,7 @@ CHAIN
 		== NALIAJ
 		@378 /*  ~I'm sorry to hear that. I can't understand why the people don't band together to demand change.~*/
 END LCCORWIB BCorwinNalia1_END
+//}
 
 CHAIN
 	IF ~~ THEN LCCORWIB BCorwinNalia1_END
@@ -1413,6 +1438,7 @@ CHAIN
 		@382 /* ~I see... it seems that there's a lack of leadership among the poor and downtrodden. I'll think on what you said.~ */
 EXIT
 
+//{ region Dialog B-13
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinNalia", "GLOBAL", 4)
@@ -1439,7 +1465,9 @@ CHAIN
 		=
 		@391 /* ~In the meantime, the Flaming Fist and like-minded organizations will continue to fight to preserve the current order. And so will I. ~  */
 EXIT
+//}
 
+//{ region Dialog B-14
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinNalia", "GLOBAL", 6)
@@ -1471,7 +1499,9 @@ CHAIN
 		== LCCORWIB
 		@791
 EXIT
+//}
 
+//{ region Dialog B-15
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinNalia", "GLOBAL", 6)
@@ -1507,8 +1537,11 @@ CHAIN
 		== LCCORWIB
 		@472 /* ~The situation is slowly getting better as more refugees are resettled - not fast enough for my liking, but some progress is better than none. Come on, let's keep moving.~  */
 EXIT
+//}
 
 //HaerDalis Banters
+
+//{ region Dialog B-16
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinHaerDalis", "GLOBAL", 2)
@@ -1517,7 +1550,9 @@ CHAIN
 	THEN HAERDAJ BCorwinHaerDalis1_C
 		@564 /* ~A moment of your time, Captain?~ [NOSOUND]*/
 END LCCORWIB BCorwinHaerDalis1
+//}
 
+//{ region Dialog B-17
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinHaerDalis", "GLOBAL", 2)
@@ -1526,6 +1561,7 @@ CHAIN
 	THEN HAERDAJ BCorwinHaerDalis1_M
 		@742 /* ~A moment of your time, Major?~ [NOSOUND]*/
 END LCCORWIB BCorwinHaerDalis1
+//}
 
 CHAIN LCCORWIB BCorwinHaerDalis1
 		@363 /* ~Sure - what do you need?~ [LCCORB47] */
@@ -1552,6 +1588,7 @@ CHAIN LCCORWIB BCorwinHaerDalis1
 		@365 /* ~I always do. Come on, let's keep moving.~*/
 EXIT
 
+//{ region Dialog B-18
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinHaerDalis", "GLOBAL", 4)
@@ -1581,7 +1618,9 @@ CHAIN
 		== LCCORWIB
 		@374 /*  ~Gladly, friend. Let's go.~ */
 EXIT
+//}
 
+//{ region Dialog B-19
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinHaerDalis", "GLOBAL", 4)
@@ -1608,7 +1647,9 @@ CHAIN
 		== LCCORWIB
 		@374 /*  ~Gladly, friend. Let's go.~ */
 EXIT
+//}
 
+//{ region Dialog B-20
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinHaerDalis", "GLOBAL", 4)
@@ -1638,7 +1679,9 @@ CHAIN
 		== LCCORWIB
 		@374 /*  ~Gladly, friend. Let's go.~ */
 EXIT
+//}
 
+//{ region Dialog B-21
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinHaerDalis", "GLOBAL", 4)
@@ -1665,8 +1708,11 @@ CHAIN
 		== LCCORWIB
 		@374 /*  ~Gladly, friend. Let's go.~ */
 EXIT
+//}
 
 //Minsc Banters
+
+//{ region Dialog B-21
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinMinsc", "GLOBAL", 2)
@@ -1700,6 +1746,9 @@ CHAIN
 		== LCCORWIB
 		@354 /* ~... ... That's very kind. Let's go.~ */
 EXIT
+//}
+
+//{ region Dialog B-22
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinMinsc", "GLOBAL", 2)
@@ -1733,7 +1782,9 @@ CHAIN
 		== LCCORWIB
 		@354 /* ~... ... That's very kind. Let's go.~ */
 EXIT
+//}
 
+//{ region Dialog B-23
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinMinsc", "GLOBAL", 4)
@@ -1767,7 +1818,9 @@ CHAIN
 		== LCCORWIB
 		@332 /* ~I'm sure he does. Can we get going now?~*/
 EXIT
+//}
 
+//{ region Dialog B-24
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinMinsc", "GLOBAL", 6)
@@ -1805,8 +1858,11 @@ CHAIN
 		== LCCORWIB
 		@342 /* ~Gods, help us.~ */
 EXIT
+//}
 
 //Rasaad Banters
+
+//{ region Dialog B-25
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinRasaad", "GLOBAL", 2)
@@ -1838,7 +1894,9 @@ CHAIN
 		== RASAADJ
 		@291 /* ~Very well. When you have the time, come and see me.~ */
 EXIT
+//}
 
+//{ region Dialog B-26
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinRasaad", "GLOBAL", 2)
@@ -1870,7 +1928,9 @@ CHAIN
 		== RASAADJ
 		@291 /* ~Very well. When you have the time, come and see me.~ */
 EXIT
+//}
 
+//{ region Dialog B-27
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinRasaad", "GLOBAL", 4)
@@ -1917,7 +1977,9 @@ CHAIN
 		~
 		@749 /* ~My pleasure, Major.~ */
 EXIT
+//}
 
+//{ region Dialog B-28
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinRasaad", "GLOBAL", 6)
@@ -1964,7 +2026,9 @@ CHAIN
 		== RASAADJ
 		@313 /* ~Thank you, Schael. I appreciate that.~ */
 EXIT
+//}
 
+//{ region Dialog B-29
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinRasaad", "GLOBAL", 8)
@@ -1998,7 +2062,9 @@ CHAIN
 		== RASAADJ
 		@562 /* ~Great. Thank you, Schael. I'll be sure to incorporate this into my morning routine.~ */
 EXIT
+//}
 
+//{ region Dialog B-30
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinRasaad", "GLOBAL", 8)
@@ -2040,7 +2106,9 @@ CHAIN
 		== RASAADJ
 		@562 /* ~Great. Thank you, Schael. I'll be sure to incorporate this into my morning routine.~ */
 EXIT
+//}
 
+//{ region Dialog B-31
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinRasaad", "GLOBAL", 8)
@@ -2082,7 +2150,9 @@ CHAIN
 		== RASAADJ
 		@562 /* ~Great. Thank you, Schael. I'll be sure to incorporate this into my morning routine.~ */
 EXIT
+//}
 
+//{ region Dialog B-32
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinRasaad", "GLOBAL", 8)
@@ -2132,7 +2202,9 @@ CHAIN
 		== RASAADJ
 		@562 /* ~Great. Thank you, Schael. I'll be sure to incorporate this into my morning routine.~ */
 EXIT
+//}
 
+//{ region Dialog B-33
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinRasaad", "GLOBAL", 8)
@@ -2175,8 +2247,11 @@ CHAIN
 		== RASAADJ
 		@562 /* ~Great. Thank you, Schael. I'll be sure to incorporate this into my morning routine.~ */
 EXIT
+//}
 
 //Yoshimo Banters
+
+//{ region Dialog B-34
 CHAIN 
 	IF ~
 		Global("LCA_Banter_CorwinYoshimo", "GLOBAL", 2)
@@ -2215,8 +2290,10 @@ CHAIN
 		== LCCORWIB
 		@278 /* ~Then stay focused on our mission. Let's go.~ */
 EXIT
+//}
 
 //Cernd Banters
+//{ region Dialog B-35
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinCernd", "GLOBAL", 2)
@@ -2255,7 +2332,9 @@ CHAIN
 		== LCCORWIB
 		@268 /* ~I hope so. Let's get moving.~ */
 EXIT
+//}
 
+//{ region Dialog B-36
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinCernd", "GLOBAL", 2)
@@ -2294,8 +2373,11 @@ CHAIN
 		== LCCORWIB
 		@268 /* ~I hope so. Let's get moving.~ */
 EXIT
+//}
 
 //Valygar Banters
+
+//{ region Dialog B-37
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinValygar", "GLOBAL", 2)
@@ -2328,7 +2410,9 @@ CHAIN
 		== LCCORWIB
 		@252 /* ~So do I.~ */
 EXIT
+//}
 
+//{ region Dialog B-38
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinValygar", "GLOBAL", 2)
@@ -2362,7 +2446,9 @@ CHAIN
 		== LCCORWIB
 		@252 /* ~So do I.~ */
 EXIT
+//}
 
+//{ region Dialog B-39
 CHAIN 
 	IF ~
 		Global("LCA_CorwinValygarLavok", "GLOBAL", 1)
@@ -2409,8 +2495,11 @@ CHAIN
 		@583 /* Of course. Let's move out.~*/
 		
 EXIT
+//}
 
 //Neera Banters
+
+//{ region Dialog B-40
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinNeera", "GLOBAL", 2)
@@ -2442,7 +2531,9 @@ CHAIN
 		== LCCORWIB
 		@225 /* ~I'm glad. Not about your shoes, but that your friend is back to normal. It must have been quite the experience.~ */
 EXIT
+//}
 
+//{ region Dialog B-41
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinNeera", "GLOBAL", 4)
@@ -2470,8 +2561,11 @@ CHAIN
 		== NEERAJ
 		@510 /*  ~Thanks. Maybe someday I will. For now, though, I just want to be myself.~ */
 EXIT
+//}
 
 //Hexxat Banters
+
+//{ region Dialog B-42
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinHexxat", "GLOBAL", 4)
@@ -2506,8 +2600,11 @@ CHAIN
 		== HEXXATJ
 		@212 /* ~Brave words... but such empty threats are beneath you.~ */
 EXIT
+//}
 
 //Korgan Banters
+
+//{ region Dialog B-43
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinKorgan", "GLOBAL", 2)
@@ -2539,7 +2636,9 @@ CHAIN
 		== KORGANJ
 		@143 /*   ~Bed, floor, or field doth make no difference to I, longlimbs. You are nae ready now, but when ye are, come and see Korgan for a night you shan't forget. ~ */
 EXIT
+//}
 
+//{ region Dialog B-44
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinKorgan", "GLOBAL", 4)
@@ -2561,9 +2660,10 @@ CHAIN
 		== LCCORWIB
 		@199 /* ~Duly noted. ~ */
 EXIT
-
+//}
 
 //Viconia Banters
+//{ region Dialog B-45
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinViconia", "GLOBAL", 2)
@@ -2608,7 +2708,9 @@ CHAIN
 		~
 		@760 /* ~Of course. I would never do anything to upset you, Major.~   */
 EXIT
+//}
 
+//{ region Dialog B-46
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinViconia", "GLOBAL", 2)
@@ -2652,7 +2754,9 @@ CHAIN
 		~
 		@760 /* ~Of course. I would never do anything to upset you, Major.~   */
 EXIT
+//}
 
+//{ region Dialog B-47
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinViconia", "GLOBAL", 4)
@@ -2686,7 +2790,9 @@ CHAIN
 		== LCCORWIB
 		@423 /* ~I'd rather you speak your mind, but fair enough. Let's get going.~ */
 EXIT
+//}
 
+//{ region Dialog B-48
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinViconia", "GLOBAL", 6)
@@ -2728,8 +2834,11 @@ CHAIN
 		== LCCORWIB
 		@435 /* ~Just remember what I said - you'll have nothing to worry about so long as you remain true to us.~ */
 EXIT
+//}
 
 //Imoen Banters
+
+//{ region Dialog B-49
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinImoen", "GLOBAL", 2)
@@ -2775,7 +2884,9 @@ CHAIN
 		== IMOEN2J
 		@235 /* ~I too consider you a friend, Schael. Thank you.~  */
 EXIT
+//}
 
+//{ region Dialog B-50
 CHAIN 
 	IF ~
 		GlobalGT("LCA_Banter_CorwinImoen", "GLOBAL", 2)
@@ -2797,7 +2908,9 @@ CHAIN
 		== LCCORWIB
 		@571 /* ~Right... thank you, Imoen. Let's go. ~  */
 EXIT
+//}
 
+//{ region Dialog B-51
 CHAIN 
 	IF ~
 		GlobalGT("LCA_Banter_CorwinImoen", "GLOBAL", 2)
@@ -2818,7 +2931,9 @@ CHAIN
 		== LCCORWIB
 		@571 /* ~Right... thank you, Imoen. Let's go. ~  */
 EXIT
+//}
 
+//{ region Dialog B-52
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinImoen", "GLOBAL", 4)
@@ -2849,7 +2964,9 @@ CHAIN
 		== IMOEN2J
 		@458 /* ~Definitely.~  */
 EXIT
+//}
 
+//{ region Dialog B-53
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinImoen", "GLOBAL", 4)
@@ -2880,8 +2997,11 @@ CHAIN
 		== IMOEN2J
 		@458 /* ~Definitely.~  */
 EXIT
+//}
 
 //Edwin Banters
+
+//{ region Dialog B-54
 CHAIN
 	IF ~
 		Global("LCA_CorwinEdwinThat", "GLOBAL", 1)
@@ -2910,8 +3030,10 @@ CHAIN
 		DO ~
 			IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
-END
+EXIT
+//}
 
+//{ region Dialog B-55
 CHAIN
 	IF ~
 		Gender("Edwin",FEMALE)
@@ -2929,7 +3051,9 @@ CHAIN
 		== EDWINJ
 		@181 /*~Quiet, you flirtatious wench! Those who would dare catcall the great Odesseiron shall suffer his -  erm.. her wrath!~ */
 EXIT
+//}
 
+//{ region Dialog B-56
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinEdwin", "GLOBAL", 2)
@@ -2959,7 +3083,9 @@ CHAIN
 		== EDWINJ
 		@133 /* ~(Well played, Odesseiron, well played. She will assume her rightful position at your feet before long).~   */
 EXIT
+//}
 
+//{ region Dialog B-57
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinEdwin", "GLOBAL", 4)
@@ -2991,7 +3117,9 @@ CHAIN
 		== EDWINJ
 		@402 /* ~Very well, but do not wait too long. I am eager to begin your instruction.~ */
 EXIT
+//}
 
+//{ region Dialog B-58
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinEdwin", "GLOBAL", 6)
@@ -3025,8 +3153,11 @@ CHAIN
 		== EDWINJ
 		@415 /* @415 = ~So be it. I should have expected such from a Flaming Fist wench. You will rue the day you rejected Edwin Odesseiron!~ */
 EXIT
+//}
 
 //Jan Banters
+
+//{ region Dialog B-59
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinJan", "GLOBAL", 2)
@@ -3066,7 +3197,9 @@ CHAIN
 		== LCCORWIB
 		@513 /* ~Thanks, Jan.~ */
 EXIT
+//}
 
+//{ region Dialog B-60
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinJan", "GLOBAL", 4)
@@ -3092,9 +3225,11 @@ CHAIN
 		@85 /* ~Thanks? I think? */
 		=@86 /* ~We can talk about this another time. Let's keep moving.~ [LCCORB24]*/
 EXIT
+//}
 
 //Keldorn Banters
 
+//{ region Dialog B-61
 CHAIN 
 	IF ~
 		Global("LCA_CorwinAngryAtKeldorn", "GLOBAL", 1)
@@ -3118,7 +3253,9 @@ CHAIN
 		== LCCORWIB
 		@615 /* Good. Let's go.~ */
 EXIT
+//}
 
+//{ region Dialog B-62
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinKeldornOpt1", "GLOBAL", 2)
@@ -3142,7 +3279,9 @@ CHAIN
 		== KELDORJ
 		@479 /* ~As am I. Come, my friend, there is work to be done.~*/
 EXIT
+//}
 
+//{ region Dialog B-63
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinKeldorn", "GLOBAL", 2)
@@ -3180,7 +3319,9 @@ CHAIN
 		== KELDORJ
 		@200 /* ~That is good... I am pleased that you involve the child's grandfather in her life.~ */
 EXIT
+//}
 
+//{ region Dialog B-64
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinKeldorn", "GLOBAL", 4)
@@ -3217,7 +3358,9 @@ CHAIN
 		== KELDORJ
 		@72 /* ~Any time, my friend. Let us hope that we are both able to return to our families soon.~ */
 EXIT
+//}
 
+//{ region Dialog B-65
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinKeldorn", "GLOBAL", 4)
@@ -3254,7 +3397,9 @@ CHAIN
 		== KELDORJ
 		@72 /* ~Any time, my friend. Let us hope that we are both able to return to our families soon.~ */
 EXIT
+//}
 
+//{ region Dialog B-66
 CHAIN
 	IF ~~ THEN LCCORWIB BCorwinAnomen1B
 		@54 /* ~You think I don't want to be home with my daughter and father? ~ [LCCORB60]*/
@@ -3268,7 +3413,9 @@ CHAIN
 		== LCCORWIB
 		@57 /* ~I think you heard me quite clearly. Let's move out.~ [LCCORB21] */
 EXIT
+//}
 
+//{ region Dialog B-67
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinAnomen", "GLOBAL", 4)
@@ -3321,10 +3468,13 @@ CHAIN
 		~
 		@769 /* ~Agreed, Major.~ */
 EXIT
+//}
 
 //Edwin Banters
  
 // Jaheira Banters
+
+//{ region Dialog B-68
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinJaheira", "GLOBAL", 2)
@@ -3350,7 +3500,9 @@ CHAIN
 		== LCCORWIB
 		@3 /* ~As am I.~ */
 EXIT
+//}
 
+//{ region Dialog B-69
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinJaheira", "GLOBAL", 2)
@@ -3376,7 +3528,9 @@ CHAIN
 		== LCCORWIB
 		@3 /* ~As am I.~ */
 EXIT
+//}
 
+//{ region Dialog B-70
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinJaheira", "GLOBAL", 5)
@@ -3410,7 +3564,9 @@ CHAIN
 		@14 /* ~My mother... that's a long story.~*/
 		= @15 /* ~Let's leave it for another day, shall we?~*/
 EXIT
+//}
 
+//{ region Dialog B-71
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinJaheira", "GLOBAL", 7)
@@ -3455,9 +3611,11 @@ CHAIN
 		== JAHEIRAJ
 		@29 /* ~Hm. I appreciate you sharing this with me, Captain. Such things are never easy to talk about.~*/
 EXIT
+//}
 
 //Aerie Banters
 
+//{ region Dialog B-72
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinAerie", "GLOBAL", 2)
@@ -3499,7 +3657,9 @@ CHAIN
 		== AERIEJ
 		@50 /* ~I - I understand. Thank you... Schael.~ */
 EXIT
+//}
 
+//{ region Dialog B-74
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinAerie", "GLOBAL", 5)
@@ -3559,7 +3719,9 @@ CHAIN
 		== AERIEJ
 		@131 /* ~Right.. okay, t-thank you, Schael.~ */
 EXIT
+//}
 
+//{ region Dialog B-75
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinAerie", "GLOBAL", 7)
@@ -3596,7 +3758,9 @@ CHAIN
 		== LCCORWIB
 		@439 /* ~She... no. That's enough for now. We'll finish next time. Let's get moving.~ */
 EXIT
+//}
 
+//{ region Dialog B-76
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinAerie", "GLOBAL", 9)
@@ -3629,7 +3793,9 @@ CHAIN
 		== AERIEJ
 		@445 /* ~I understand. Thank you, Schael.~ */
 EXIT
+//}
 
+//{ region Dialog B-77
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinAerie", "GLOBAL", 7)
@@ -3664,7 +3830,9 @@ CHAIN
 		== LCCORWIB
 		@439 /*  ~She... no. That's enough for now. We'll finish next time. Let's get moving.~ */
 EXIT
+//}
 
+//{ region Dialog B-78
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinAerie", "GLOBAL", 9)
@@ -3696,6 +3864,7 @@ CHAIN
 		@445 /* ~I understand. Thank you, Schael.~ */
 		
 EXIT
+//}
 
 // Dorn Banters
 CHAIN 
@@ -3705,7 +3874,7 @@ CHAIN
 		@660 /* ~But it is. If you even think to stand in the way of our relationship, I promise that you'll regret it.~ */
 END DORNJ LCA_CorwinDornConflictChainEnd
 
-
+//{ region Dialog B-79
 CHAIN 
 	IF ~
 		Global("OHD_corwinconflict","GLOBAL",3)
@@ -3716,7 +3885,9 @@ CHAIN
 			SetGlobal("DornRomanceActive", "GLOBAL", 3)
 		~
 EXIT
+//}
 
+//{ region Dialog B-80
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinDorn", "GLOBAL", 2)
@@ -3756,7 +3927,9 @@ CHAIN
 		~
 		@775 /* ~Hmph. Be wary of the day then, Major, when the goals of those you serve oppose one another.~*/
 EXIT
+//}
 
+//{ region Dialog B-81
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinDorn", "GLOBAL", 4)
@@ -3793,7 +3966,9 @@ CHAIN
 		== DORNJ
 		@163 /* = ~These pathetic insults and threats are beneath you. I've no intention of betraying <CHARNAME>, certainly not while my patron benefits from our arrangement.~ */
 EXIT
+//}
 
+//{ region Dialog B-82
 CHAIN
 	IF ~
 		IsValidForPartyDialogue("Aerie")
@@ -3813,7 +3988,9 @@ CHAIN
 		== LCCORWIB
 		@719 /* ~You're as sweet as they come. I'm sure you'll find the right person, Aerie.~ */
 EXIT
+//}
 
+//{ region Dialog B-83
 CHAIN
 	IF ~
 		!IsValidForPartyDialogue("Aerie")
@@ -3847,7 +4024,9 @@ CHAIN
 		== VALYGARJ
 		@726 /* ~Right... Let's go.~ */
 EXIT
+//}
 
+//{ region Dialog B-84
 CHAIN
 	IF ~
 		IsValidForPartyDialogue("Aerie")
@@ -3877,3 +4056,4 @@ CHAIN
 		== VALYGARJ
 		@726 /* ~Right... Let's go.~ */
 EXIT
+//}

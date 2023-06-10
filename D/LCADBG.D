@@ -103,6 +103,13 @@ END
 
 IF ~~ THEN BEGIN LCA_DialogTest
 	SAY @334
+	IF ~~ THEN REPLY @336 /*@336 = ~Dialog B-0~*/
+
+	IF ~~ THEN REPLY @336
+
+
+EXIT
+
 	
 	IF ~~ THEN REPLY @333
 	DO ~
