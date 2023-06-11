@@ -3,16 +3,34 @@ BEGIN ~LCCORWIB~
 //{ region: Dialog B-0
 IF ~
 	Global("OHD_corwinconflict","GLOBAL",2)
-~ THEN BEGIN LCA_CorwinDornConflictChainInit
+~ THEN BEGIN LCA_CorwinDornConflict1
 	SAY @658 /* ~Dorn - you seem to have taken a very strong interest in <CHARNAME>.~ */
 	
 	IF ~~ THEN
 	DO ~
 		SetGlobal("OHD_corwinconflict","GLOBAL",3)
 	~
-	EXTERN DORNJ LCA_CorwinDornConflictChain
+	EXTERN DORNJ LCA_CorwinDornConflict2
 END
 //}
+
+IF ~~ THEN BEGIN LCA_CorwinDornConflict3
+	SAY @660 /* ~But it is. If you even think to stand in the way of our relationship, I promise that you'll regret it.~ */
+	
+	IF ~~ THEN
+	EXTERN DORNJ LCA_CorwinDornConflict4
+END
+
+IF ~~ THEN BEGIN LCA_ChooseDorn
+	SAY @470 /* ~To think I even considered the possibility of you and I being together. Madness. Be with Dorn, then. I want nothing more to do with you.~ [BD54533] */
+	IF ~~ THEN
+	DO ~
+		SetGlobal("OHD_corwinconflict","GLOBAL",4)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 3)
+		SetPlayerSound(Myself,268282,SELECT_ACTION6)
+	~
+	EXIT
+END
 
 //{ region: Dialog B-1
 IF ~
@@ -24,12 +42,14 @@ IF ~
 		SetGlobal("LCA_Banter_CorwinAnomen", "GLOBAL", 3)
 		ClearActions(Myself)
 		ClearActions("Anomen")
+		SetGlobal("LCA_BCorwinAnomen1A", "GLOBAL", 1)
+		ActionOverride("Anomen", StartDialog("ANOMENJ", Player1))
 	~ 
-	EXTERN ANOMENJ BCorwinAnomen1A
+	EXIT
 END
 //}
 
-//{ region: Dialog B-3
+//{ region: Dialog B-3A
 IF ~
 	Global("LCA_TM_ArcheryChallenge", "GLOBAL", 2)
 	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
@@ -739,8 +759,7 @@ INTERJECT_COPY_TRANS KELDORJ 182 Corwin_KELDORJ_182 // OK
 	~
 	@608 /*  ~(She gives Keldorn a sharp stare.)~ */
 	DO ~
-		SetGlobal("LCA_CorwinAngryAtKeldorn", "GLOBAL", 1)
-		SetGlobalTimer("LCA_CorwinScoldKeldorn", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("LCA_CorwinScoldKeldornTimer", "GLOBAL", ONE_ROUND)
 	~
 END
 
@@ -752,8 +771,7 @@ INTERJECT_COPY_TRANS KELDORJ 236 Corwin_KELDORJ_236 // OK
 	~
 	@608 /*  ~(She gives Keldorn a sharp stare.)~ */
 	DO ~
-		SetGlobal("LCA_CorwinAngryAtKeldorn", "GLOBAL", 1)
-		SetGlobalTimer("LCA_CorwinScoldKeldorn", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("LCA_CorwinScoldKeldornTimer", "GLOBAL", ONE_ROUND)
 	~
 END
 
@@ -1723,7 +1741,7 @@ CHAIN
 		Global("LCA_CorwinPromoted", "GLOBAL", 1)
 	~
 	THEN LCCORWIB BCorwinMinsc1_M
-		@743 /* ~Minsc, I'm sorry about Dynaheir. I know that you two were very close.~ [LCCORB45] */
+		@343 /* ~Minsc, I'm sorry about Dynaheir. I know that you two were very close.~ [LCCORB45] */
 		DO ~
 			SetGlobal("LCA_Banter_CorwinMinsc", "GLOBAL", 3)
 			ClearActions(Myself)
@@ -2398,14 +2416,16 @@ CHAIN
 		IF ~
 			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
 		~
-		@247 /* ~Yes, thank you Captain. I'm interested in hearing why you chose to specialize in archery.~*/
+		@247 /* ~Yes, thank you Captain. I've been meaning to talk to you about something... do you have a moment?~*/
 		== VALYGARJ
 		IF ~
 			Global("LCA_CorwinPromoted", "GLOBAL", 1)
 		~
-		@755 /* ~Yes, thank you Major. I'm interested in hearing why you chose to specialize in archery.~*/
+		@755 /* ~Yes, thank you Major. I've been meaning to talk to you about something... do you have a moment?~*/
+		== LCCORWIB
+		@803 /* ~Of course. What's on your mind?~ */
 		== VALYGARJ
-		@248 /* ~I've always felt that a Ranger's strength lies in their versatility.~ */
+		@248 /* ~I'm interested in hearing why you chose to specialize in archery. I've always felt that a Ranger's strength lies in their versatility.~ */
 		== LCCORWIB
 		@249 /* ~Well, unlike most Rangers, I'm not typically sent out on my own. The need for that versatility is reduced.~ */
 		= @250 /* ~I tend to work as part of a team, and having a specialization can contribute more to the team's success.~ */
@@ -2870,9 +2890,25 @@ CHAIN
 		== LCCORWIB
 		@230 /* ~Don't worry, you'll see her again once this is over. I'm sure she'd be proud of your progress in the magical arts.~ [LCCORB59] */
 		== IMOEN2J
+		IF ~
+			Global("LCA_IrenicusBeat", "GLOBAL", 1)
+		~
+		@798 /* ~I hope so. My magic pales in comparison to what Irenicus possessed.~ */
+		== IMOEN2J
+		IF ~
+			!Global("LCA_IrenicusBeat", "GLOBAL", 1)
+		~
 		@231 /* ~I hope so. My magic pales in comparison to Irenicus.~ */
 		== LCCORWIB
-		@232 /* ~Don't compare your skills to those of that madman. You are an essential part of this team, and your contributions are valued, by all of us.~~ */
+		IF ~
+			Global("LCA_IrenicusBeat", "GLOBAL", 1)
+		~
+		@799 /* ~His magic didn't help him in the end. You're an essential part of this team, and your contributions are valued, by all of us.~ */
+		== LCCORWIB
+		IF ~
+			!Global("LCA_IrenicusBeat", "GLOBAL", 1)
+		~
+		@232 /* ~Don't compare your skills to those of that madman. You're an essential part of this team, and your contributions are valued, by all of us.~~ */
 		== IMOEN2J
 		IF ~
 			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
@@ -3008,8 +3044,7 @@ EXIT
 //{ region Dialog B-54
 CHAIN
 	IF ~
-		Global("LCA_CorwinEdwinThat", "GLOBAL", 1)
-		GlobalTimerExpired("LCA_CorwinEdwinThayTimer", "GLOBAL")
+		Global("LCA_CorwinEdwinThay", "GLOBAL", 1)
 	~ THEN LCCORWIB BCorwinEdwinThay
 		@700 /* ~Edwin, what was that about? Why are the Thayans after you?~ */
 		DO ~
@@ -3029,24 +3064,18 @@ CHAIN
 		@706 /* ~And once I learned of their decision to exile me, I may have pilfered a few baubles here and there, to pay for certain provisions and amenities.~*/
 		== LCCORWIB
 		@707 /* ~Provisions and amenities, sure. I'm sure the brothels appreciated your patronage.~*/
-		=
-		@708 /* (She approaches you.) You made the right decision, by the way. For all of his - I mean her - faults, Edwin has proven to be a loyal and valuable companion. Come on, let's go. */
-		DO ~
-			IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		~
 EXIT
 //}
 
 //{ region Dialog B-55
 CHAIN
 	IF ~
-		Gender("Edwin",FEMALE)
 		Global("LCA_EdwinWasMale", "GLOBAL", 1)
-		!Global("LCA_CorwinEdwinFemale", "GLOBAL", 1)
+		Global("LCA_CorwinEdwinFemale", "GLOBAL", 1)
 	~ THEN LCCORWIB BCorwinEdwin2
 		@178 /*  ~Well, what have we here?~ [LCCORB38] */
 		DO ~
-			SetGlobal("LCA_CorwinEdwinFemale", "GLOBAL", 1)
+			SetGlobal("LCA_CorwinEdwinFemale", "GLOBAL", 2)
 		~
 		=
 		@179 /* ~I can hear the catcalls from the sailors at the Blushing Mermaid already.~ */
@@ -3085,7 +3114,7 @@ CHAIN
 		== LCCORWIB
 		@112 /*   ~Ugh. Why do I bother.~ */
 		== EDWINJ
-		@133 /* ~(Well played, Odesseiron, well played. She will assume her rightful position at your feet before long).~   */
+		@113 /* ~(Well played, Odesseiron, well played. She will assume her rightful position at your feet before long.)~   */
 EXIT
 //}
 
@@ -3237,8 +3266,6 @@ EXIT
 CHAIN 
 	IF ~
 		Global("LCA_CorwinAngryAtKeldorn", "GLOBAL", 1)
-		GlobalTimerExpired("LCA_CorwinScoldKeldorn", "GLOBAL")
-		Global("LCA_InUnderdark", "GLOBAL", 1)
 	~ THEN LCCORWIB BCorwinScoldKeldorn
 		@609 /* ~Keldorn - what happened back there?~ */
 		DO ~
@@ -3356,7 +3383,11 @@ CHAIN
 		== KELDORJ
 		@69 /* ~I see... it's important for a child's father, or a father figure, to be a part of a child's life.~  */
 		== LCCORWIB
-		@70 /* ~I agree... my father has had a tremendous impact on my life, and my daughter's. I hope I've found someone to fill that need for Rohma (she shoots a glance in your direction)... time will tell.~ [LCCORB11] */
+		@70 /* ~I agree... my father has had a tremendous impact on my life, and my daughter's. I hope I've found someone to fill that need for Rohma... */
+		=
+		@800 /* ~(She shoots a quick glance in your direction.)~*/
+		=
+		@801 /* ~Time will tell, I suppose.~*/
 		=
 		@71 /* ~I appreciate the advice - thank you, Keldorn.~ */
 		== KELDORJ
@@ -3403,7 +3434,6 @@ CHAIN
 EXIT
 //}
 
-//{ region Dialog B-66
 CHAIN
 	IF ~~ THEN LCCORWIB BCorwinAnomen1B
 		@54 /* ~You think I don't want to be home with my daughter and father? ~ [LCCORB60]*/
@@ -3482,7 +3512,7 @@ EXIT
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinJaheira", "GLOBAL", 2)
-		Global("IrenicusBeat", "AR2806", 2)
+		Global("LCA_IrenicusBeat", "GLOBAL", 1)
 	~ THEN LCCORWIB jahRemorseChain1
 		@0 /* ~Jaheira.~ [LCCORB16] */
 		DO ~
@@ -3510,7 +3540,7 @@ EXIT
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinJaheira", "GLOBAL", 2)
-		!Global("IrenicusBeat", "AR2806", 2)
+		!Global("LCA_IrenicusBeat", "GLOBAL", 1)
 	~ THEN LCCORWIB jahRemorseChain2
 		@0 /* ~Jaheira.~ [LCCORB16] */
 		DO ~
@@ -3613,7 +3643,15 @@ CHAIN
 		== LCCORWIB
 		@28 /* ~That's when my father began teaching me how to fight. I often wonder how different things would be had she not been murdered...~*/
 		== JAHEIRAJ
+		IF ~
+			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
 		@29 /* ~Hm. I appreciate you sharing this with me, Captain. Such things are never easy to talk about.~*/
+		== JAHEIRAJ
+		IF ~
+			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+		~
+		@58 /* ~Hm. I appreciate you sharing this with me, Major. Such things are never easy to talk about.~*/
 EXIT
 //}
 
@@ -3870,26 +3908,10 @@ CHAIN
 EXIT
 //}
 
-// Dorn Banters
-CHAIN 
-	IF ~~ THEN DORNJ LCA_CorwinDornConflictChain
-		@659 /* ~It is not your concern.~ */
-		== LCCORWIB
-		@660 /* ~But it is. If you even think to stand in the way of our relationship, I promise that you'll regret it.~ */
-END DORNJ LCA_CorwinDornConflictChainEnd
 
-//{ region Dialog B-79
-CHAIN 
-	IF ~
-		Global("OHD_corwinconflict","GLOBAL",3)
-	~ THEN DORNJ LCA_ChooseCorwin
-		@664 /* ~Bah! To hell with the lot of you!~ */
-		DO ~
-			SetGlobal("OHD_corwinconflict","GLOBAL",4)
-			SetGlobal("DornRomanceActive", "GLOBAL", 3)
-		~
-EXIT
-//}
+
+
+
 
 //{ region Dialog B-80
 CHAIN
@@ -3937,9 +3959,7 @@ EXIT
 CHAIN
 	IF ~
 		Global("LCA_Banter_CorwinDorn", "GLOBAL", 4)
-		OR(2)
-			!Dead("ohdazoth")  // Azothet
-			!Dead("ohdugoth")  // Ur-Gothoz
+		!Global("LCA_DornPatronsDead", "GLOBAL", 1)
 	~ THEN LCCORWIB BCorwinDorn2
 		@156 /* ~Dorn, I give orders to those under my command either verbally, or in writing. How do you receive orders from your patron?~ [LCCORB04] */
 		DO ~
@@ -3998,6 +4018,7 @@ EXIT
 CHAIN
 	IF ~
 		!IsValidForPartyDialogue("Aerie")
+		!IsValidForPartyDialogue("Neera")
 		IsValidForPartyDialogue("Valygar")
 		Global("LCA_AVComplimentFamily", "GLOBAL", 1)
 	~ THEN LCCORWIB LCA_ComplimentFamily
@@ -4007,6 +4028,9 @@ CHAIN
 			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
 		~
 		@720 /*  ~Captain, you have a lovely family.~ */
+		DO ~
+			SetGlobal("LCA_AVComplimentFamily", "GLOBAL", 2)
+		~
 		== VALYGARJ
 		IF ~
 			Global("LCA_CorwinPromoted", "GLOBAL", 1)
@@ -4049,6 +4073,58 @@ CHAIN
 		@718 /* ~I hope one day I'll have some c-children of my own...~ */
 		== LCCORWIB
 		@719 /* ~You're as sweet as they come. I'm sure you'll find the right person, Aerie.~ */
+		== VALYGARJ
+		@722 /* ~Having a family to provide for and protect is a great responsibility. I... I would welcome that responsibility.~ */
+		== LCCORWIB
+		@723 /* ~You'd excel at it Valygar, if you give yourself the opportunity.~*/
+		== VALYGARJ
+		@724 /* ~What do you mean?~ */
+		== LCCORWIB
+		@725 /* ~You have a chance here to forget about your past and your family's curse, and to start a new life.~ */
+		== VALYGARJ
+		@726 /* ~Right... Let's go.~ */
+EXIT
+//}
+
+//{ region Dialog B-66
+CHAIN
+	IF ~
+		IsValidForPartyDialogue("Neera")
+		!IsValidForPartyDialogue("Valygar")
+		Global("LCA_AVComplimentFamily", "GLOBAL", 1)
+	~ THEN LCCORWIB LCA_ComplimentFamily
+		@727 /* ~Oh... what a relief.~ */
+		== NEERAJ
+		@716 /*  ~Schael, your daughter is just *so* precious! I love her!~ */
+		DO ~
+			SetGlobal("LCA_AVComplimentFamily", "GLOBAL", 2)
+		~
+		== LCCORWIB
+		@443 /* ~Thanks Neera. She's a wonderful kid.~ */
+		== NEERAJ
+		@434 /* ~You know, I've never given much thought to having kids, but now...~ */
+		== LCCORWIB
+		@802 /* ~Being a parent is a tremendous responsibility, but it's worth it Neera. I would give up everything for my child. Everything.~ */
+EXIT
+//}
+
+//{ region Dialog B-79
+CHAIN
+	IF ~
+		IsValidForPartyDialogue("Neera")
+		IsValidForPartyDialogue("Valygar")
+		Global("LCA_AVComplimentFamily", "GLOBAL", 1)
+	~ THEN LCCORWIB LCA_ComplimentFamily
+		@727 /* ~Oh... what a relief.~ */
+		== NEERAJ
+		@716 /*  ~Schael, your daughter is just *so* precious! I love her!~ */
+		DO ~
+			SetGlobal("LCA_AVComplimentFamily", "GLOBAL", 2)
+		~
+		== LCCORWIB
+		@443 /* ~Thanks Neera. She's a wonderful kid.~ */
+		== NEERAJ
+		@434 /* ~You know, I've never given much thought to having kids, but now...~ */
 		== VALYGARJ
 		@722 /* ~Having a family to provide for and protect is a great responsibility. I... I would welcome that responsibility.~ */
 		== LCCORWIB

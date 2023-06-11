@@ -33,6 +33,16 @@ THEN
 		Continue()
 END
 
+IF
+	!Global("LCA_DornPatronsDead", "GLOBAL", 1)
+	Dead("ohdazoth")  // Azothet
+	Dead("ohdugoth")  // Ur-Gothoz
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_DornPatronsDead", "GLOBAL", 1)
+		Continue()
+END
+
 IF 
 	InParty(Myself)
 	Global("LCA_MetRohmaCheck", "GLOBAL", 0)
@@ -786,12 +796,13 @@ END
 IF
 	IsValidForPartyDialog("Keldorn")
 	Global("LCA_CorwinCanTalk", "GLOBAL", 1)
-	Global("LCA_CorwinAngryAtKeldorn", "GLOBAL", 1)
-	GlobalTimerExpired("LCA_CorwinScoldKeldorn", "GLOBAL")
+	GlobalTimerExpired("LCA_CorwinScoldKeldornTimer", "GLOBAL")
 	Global("LCA_InUnderdark", "GLOBAL", 1)
 	See("Keldorn")
+	GlobalLT("LCA_CorwinAngryAtKeldorn", "GLOBAL", 1)
 THEN
 	RESPONSE #100
+		SetGlobal("LCA_CorwinAngryAtKeldorn", "GLOBAL", 1)
 		Interact("Keldorn")
 END
 
@@ -2927,6 +2938,8 @@ END
 
 /* Dorn */
 
+
+
 /* Dorn - Corwin First Interaction */
 
 IF
@@ -2934,9 +2947,7 @@ IF
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 3)
 	Global("LCA_Banter_CorwinDorn", "GLOBAL", 1)
 	ActionListEmpty()
-	OR(2)
-		!Dead("ohdazoth")  // Azothet
-		!Dead("ohdugoth")  // Ur-Gothoz
+	!Global("LCA_DornPatronsDead", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
@@ -3309,10 +3320,11 @@ IF
 	Global("LCA_CorwinCanTalk", "GLOBAL", 1)
 	Gender("Edwin",FEMALE)
 	Global("LCA_EdwinWasMale", "GLOBAL", 1)
-	!Global("LCA_CorwinEdwinFemale", "GLOBAL", 1)
+	GlobalLT("LCA_CorwinEdwinFemale", "GLOBAL", 1)
 	See("Edwin")
 THEN
 	RESPONSE #100
+		SetGlobal("LCA_CorwinEdwinFemale", "GLOBAL", 1)
 		Interact("Edwin")
 END
 
@@ -3434,6 +3446,17 @@ THEN
 	RESPONSE #100
 		//clearactions("Edwin")
 		FaceObject("Edwin")
+		Interact("Edwin")
+END
+
+// Corwin Edwin Thay Interaction
+
+IF
+	GlobalTimerExpired("LCA_CorwinEdwinThayTimer", "GLOBAL")
+	GlobalLT("LCA_CorwinEdwinThay", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_CorwinEdwinThay", "GLOBAL", 1)
 		Interact("Edwin")
 END
 
@@ -3640,9 +3663,7 @@ IF
 	See("Anomen")
 THEN
 	RESPONSE #100
-		//clearactions(Myself)
 		ActionOverride("Anomen", FaceObject("LCCORWIN"))
-		//Interact("Anomen")
 		StartDialog("LCCORWIB", Player1)
 END
 
@@ -3652,6 +3673,7 @@ IF
 	InParty(Myself)
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 2)
 	Global("LCA_Banter_CorwinAnomen", "GLOBAL", 3)
+	!Global("LCA_CorwinHatesAnomen", "GLOBAL", 1)
 	ActionListEmpty()
 THEN
 	RESPONSE #100

@@ -2165,21 +2165,7 @@ IF ~~ THEN BEGIN LCA_CorwinPlayerDrizz4B
 END
 //} #endregion
 
-//{ #region Corwin Dorn Post Conflict - DLG-0025
 
-IF ~
-	Global("OHD_corwinconflict","GLOBAL",3)
-~ THEN BEGIN LCA_ChooseDorn
-	SAY @442 /* ~To think I even considered the possibility of you and I being together. Madness. Be with Dorn, then. I want nothing more to do with you.~ [BD54533] */
-	IF ~~ THEN
-	DO ~
-		SetGlobal("OHD_corwinconflict","GLOBAL",4)
-		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 3)
-		SetPlayerSound(Myself,268282,SELECT_ACTION6)
-	~
-	EXIT
-END
-//} #endregion
 
 //{ #region Corwin Dorn Post Sex - DLG-0026
 IF ~
@@ -5296,13 +5282,16 @@ END
 IF ~~ THEN BEGIN LCA77
 	SAY @238 /* ~You know, I heard you cheering for me, love. It meant a lot.~ */
 	
-	IF ~~ THEN REPLY @239 /* ~(You share a warm embrace) Let me see that trophy.~ */
+	= @195
+	
+	IF ~~ THEN REPLY @239 /* ~Let me see that trophy.~ */
 	GOTO LCA78
 END
 
 IF ~~ THEN BEGIN LCA78
-	SAY @240 /* ~(She hands it over.) So, what do you think?~ */
+	SAY @1427 /* ~(She hands it over.)~  */
 	
+	= @240 /* ~So, what do you think?~ */
 	IF ~~ THEN REPLY @241 /* ~I think that you'll never cease to amaze me.~ */
 	GOTO LCA79
 	
@@ -6724,7 +6713,9 @@ CHAIN
 		== LCCORWIJ
 		@471 /* ~His name was Harold Loggerson.~ */
 		== C6DRIZZ1
-		@472 /* ~(His expression changes from one of suspicion to one of surprise.) Very well. Lower your weapons, friends. This woman is telling us the truth.~ */
+		@472 /* ~(His expression changes from one of suspicion to one of surprise.)~ */
+		=
+		@540 /* ~Very well. Lower your weapons, friends. She is telling us the truth.~ */
 		=
 		@473 /* ~Scar was a good man. I am sorry to hear that he has passed. You said you were after a wizard? What has this person done to warrant the attention of the Flaming Fist?~ */
 		== LCCORWIJ

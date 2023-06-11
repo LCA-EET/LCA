@@ -588,7 +588,7 @@ APPEND MAZZYJ
 		SAY @226 /* ~It's alright. I know you didn't mean anything by it. Besides, I'm quite happy with the crossbow.~*/
 		
 		IF ~
-			GlobalLT("LCA_ReturnToBG", "GLOBAL", 0)
+			GlobalGT("LCA_ReturnToBG", "GLOBAL", 0)
 		~ THEN GOTO BCorwinMazzy2_RBG
 		
 		IF ~
@@ -632,16 +632,39 @@ ADD_STATE_TRIGGER RBALDU 14
 	!Global("LCA_ReturnToBG", "GLOBAL", 1)
 ~
 APPEND DORNJ
-	IF ~~ THEN BEGIN LCA_CorwinDornConflictChainEnd
+	IF ~~ THEN BEGIN LCA_CorwinDornConflict2
+		SAY @229 /* ~It is not your concern.~ */
+		
+		IF ~~ THEN 
+		EXTERN LCCORWIB LCA_CorwinDornConflict3
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinDornConflict4
 		SAY @193 /* ~Laughable, woman. Stand in my way, and your neck will snap as easily as a tree in the midst of a hurricane.~ */
 		
 		IF ~~ THEN REPLY @194 /* ~That's enough. Dorn, I don't know what you think exists between us, but I love Schael and nothing is going to change that.~  */
+		DO ~
+			SetGlobal("LCA_CorwinDornConflict", "GLOBAL", 2)
+		~
 		GOTO LCA_ChooseCorwin
 		
 		IF ~~ THEN REPLY @195 /* ~Stop it, Dorn. You know my affections lie with you.~ */
-		EXTERN LCCORWIJ LCA_ChooseDorn
+		DO ~
+			SetGlobal("LCA_CorwinDornConflict", "GLOBAL", 2)
+		~
+		EXTERN LCCORWIB LCA_ChooseDorn
 	END
-
+	
+	IF ~~ THEN BEGIN LCA_ChooseCorwin
+		SAY @230 /* ~Bah! To hell with the lot of you!~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("OHD_corwinconflict","GLOBAL",4)
+			SetGlobal("DornRomanceActive", "GLOBAL", 3)
+		~
+		EXIT
+	END
 END
 
 APPEND RBALDU
@@ -1388,26 +1411,54 @@ APPEND ANOMENJ
 		EXTERN LCDIVINE LCA_AskAway
 	END
 	
-	IF ~~ THEN BEGIN BCorwinAnomen1A
+	IF ~
+		Global("LCA_BCorwinAnomen1A", "GLOBAL", 1)
+	~ THEN BEGIN BCorwinAnomen1A
 		SAY @187 /* ~A mother's place is at home with her child, not on the battlefield.~ */
 	
 		= @188 /* ~You're a poor example of a parent.~ */
 		
 		IF ~~ THEN REPLY @189 /* ~You're out of line Anomen. Knock it off.~ */
+		DO ~
+			SetGlobal("LCA_BCorwinAnomen1A", "GLOBAL", 2)
+		~
 		EXTERN LCCORWIB BCorwinAnomen1B
 		
 		IF ~~ THEN REPLY @190 /* ~(Remain silent)~ */
+		DO ~
+			SetGlobal("LCA_BCorwinAnomen1A", "GLOBAL", 2)
+		~
 		EXTERN LCCORWIB BCorwinAnomen1B
 		
 		IF ~
 			!Global("LCA_CorwinPromoted", "GLOBAL", 1)
+			!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @191 /* ~You know little of what you speak. Captain Corwin is a fine mother.~ */
+		DO ~
+			SetGlobal("LCA_BCorwinAnomen1A", "GLOBAL", 2)
+			IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		~
 		EXTERN LCCORWIB BCorwinAnomen1B
 		
 		IF ~
 			Global("LCA_CorwinPromoted", "GLOBAL", 1)
+			!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @192 /* ~You know little of what you speak. Major Corwin is a fine mother.~ */
+		DO ~
+			SetGlobal("LCA_BCorwinAnomen1A", "GLOBAL", 2)
+			IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		~
 		EXTERN LCCORWIB BCorwinAnomen1B
+		
+		IF ~
+			Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @228 /* ~You know little of what you speak. Schael is a fine mother.~ */
+		DO ~
+			SetGlobal("LCA_BCorwinAnomen1A", "GLOBAL", 2)
+			IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		~
+		EXTERN LCCORWIB BCorwinAnomen1B
+		
 	END
 END
 
@@ -2133,7 +2184,7 @@ EXTEND_BOTTOM DEGARD 4 //OK
 	~ THEN REPLY @21 /* ~If I should happen across this "Edwin," I'll be sure to seek you out and let you know where he is.~ */
 	DO ~
 		SetGlobalTimer("LCA_CorwinEdwinThayTimer", "GLOBAL", TWO_ROUNDS)
-		SetGlobal("LCA_CorwinEdwinThay", "GLOBAL", 1)
+		//SetGlobal("LCA_CorwinEdwinThay", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT

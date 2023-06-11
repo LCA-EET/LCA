@@ -76,6 +76,9 @@ IF ~
 	~
 	GOTO LCA_MainMenu
 	
+	IF ~~ THEN REPLY @424
+	GOTO LCA_LCCORWIJ_Test
+	
 	IF ~~ THEN REPLY @334 /* ~Dialog Test.~*/
 	GOTO LCA_DialogTest
 	
@@ -101,6 +104,13 @@ IF ~
 	EXIT
 END
 
+IF ~~ THEN BEGIN LCA_LCCORWIJ_Test
+	SAY @424
+	
+	IF ~~ THEN
+	EXIT
+END
+
 IF ~~ THEN BEGIN LCA_DialogTest
 	SAY @334
 	
@@ -108,7 +118,7 @@ IF ~~ THEN BEGIN LCA_DialogTest
 	DO ~
 		SetGlobal("OHD_corwinconflict","GLOBAL",2)
 		Wait(1)
-		ActionOverride("LCCORWIN", Interact("Dorn"))
+		ActionOverride("LCCORWIN", Interact(Player1))
 	~
 	EXIT
 
@@ -129,12 +139,21 @@ IF ~~ THEN BEGIN LCA_DialogTest
 	~
 	EXIT
 
-	IF ~~ THEN REPLY @339 /* ~Dialog B-3~ */
+	IF ~~ THEN REPLY @339 /* ~Dialog B-3A~ */
 	DO ~
 		SetGlobal("LCA_TM_ArcheryChallenge", "GLOBAL", 2)
 		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 0)
 		Wait(1)
 		ActionOverride("LCCORWIN", Interact("Mazzy"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @422 /* ~Dialog B-3B~ */
+	DO ~
+		SetGlobal("LCA_TM_ArcheryChallenge", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		Wait(1)
+		ActionOverride("Mazzy", StartDialog("MAZZYJ", Player1))
 	~
 	EXIT
 
@@ -571,115 +590,159 @@ IF ~~ THEN BEGIN LCA_DialogTest
 
 	IF ~~ THEN REPLY @390 /* ~Dialog B-54~ */
 	DO ~
+		SetGlobal("LCA_CorwinEdwinThay", "GLOBAL", 1)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Edwin"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @391 /* ~Dialog B-55~ */
 	DO ~
+		SetGlobal("LCA_EdwinWasMale", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinEdwinFemale", "GLOBAL", 1)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Edwin"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @392 /* ~Dialog B-56~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinEdwin", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Edwin"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @393 /* ~Dialog B-57~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinEdwin", "GLOBAL", 4)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Edwin"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @394 /* ~Dialog B-58~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinEdwin", "GLOBAL", 6)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Edwin"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @395 /* ~Dialog B-59~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinJan", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Jan"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @396 /* ~Dialog B-60~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinJan", "GLOBAL", 4)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Jan"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @397 /* ~Dialog B-61~ */
 	DO ~
+		SetGlobal("LCA_CorwinAngryAtKeldorn", "GLOBAL", 1)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Keldorn"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @398 /* ~Dialog B-62~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinKeldornOpt1", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Keldorn"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @399 /* ~Dialog B-63~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinKeldorn", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Keldorn"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @400 /* ~Dialog B-64~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinKeldorn", "GLOBAL", 4)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Keldorn"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @401 /* ~Dialog B-65~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinKeldorn", "GLOBAL", 4)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 0)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Keldorn"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @402 /* ~Dialog B-66~ */
 	DO ~
+		SetGlobal("LCA_AVComplimentFamily", "GLOBAL", 1)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Neera"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @403 /* ~Dialog B-67~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinAnomen", "GLOBAL", 4)
+		SetGlobal("LCA_CorwinHatesAnomen", "GLOBAL", 0)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Anomen"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @404 /* ~Dialog B-68~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinJaheira", "GLOBAL", 2)
+		SetGlobal("LCA_IrenicusBeat", "GLOBAL", 1)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Jaheira"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @405 /* ~Dialog B-69~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinJaheira", "GLOBAL", 2)
+		SetGlobal("LCA_IrenicusBeat", "GLOBAL", 0)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Jaheira"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @406 /* ~Dialog B-70~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinJaheira", "GLOBAL", 5)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Jaheira"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @407 /* ~Dialog B-71~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinJaheira", "GLOBAL", 7)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Jaheira"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @408 /* ~Dialog B-72~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinAerie", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Aerie"))
 	~
 	EXIT
 
@@ -691,71 +754,96 @@ IF ~~ THEN BEGIN LCA_DialogTest
 
 	IF ~~ THEN REPLY @410 /* ~Dialog B-74~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinAerie", "GLOBAL", 5)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Aerie"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @411 /* ~Dialog B-75~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinAerie", "GLOBAL", 7)
+		SetGlobal("bd_asha_duel","global",3)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Aerie"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @412 /* ~Dialog B-76~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinAerie", "GLOBAL", 9)
+		SetGlobal("bd_asha_duel","global",3)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Aerie"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @413 /* ~Dialog B-77~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinAerie", "GLOBAL", 7)
+		SetGlobal("bd_asha_duel","global",0)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Aerie"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @414 /* ~Dialog B-78~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinAerie", "GLOBAL", 9)
+		SetGlobal("bd_asha_duel","global",0)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Aerie"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @415 /* ~Dialog B-79~ */
 	DO ~
+		SetGlobal("LCA_AVComplimentFamily", "GLOBAL", 1)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Neera"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @416 /* ~Dialog B-80~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinDorn", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Dorn"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @417 /* ~Dialog B-81~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinDorn", "GLOBAL", 4)
+		SetGlobal("LCA_DornPatronsDead", "GLOBAL", 0)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Dorn"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @418 /* ~Dialog B-82~ */
 	DO ~
+		SetGlobal("LCA_AVComplimentFamily", "GLOBAL", 1)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Aerie"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @419 /* ~Dialog B-83~ */
 	DO ~
+		SetGlobal("LCA_AVComplimentFamily", "GLOBAL", 1)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Aerie"))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @420 /* ~Dialog B-84~ */
 	DO ~
+		SetGlobal("LCA_AVComplimentFamily", "GLOBAL", 1)
 		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Aerie"))
 	~
 	EXIT
-
-
 
 	
 	IF ~~ THEN REPLY @26
@@ -868,7 +956,7 @@ IF ~~ THEN BEGIN LCA_TestInteraction
 	
 	
 	IF ~~ THEN REPLY @26 /* ~Go back to the prior menu.~ */
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 END
 
 IF ~~ THEN BEGIN LCA_Menu_AdvanceTime
@@ -878,28 +966,28 @@ IF ~~ THEN BEGIN LCA_Menu_AdvanceTime
 	DO ~
 		AdvanceTime(ONE_HOUR)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @243
 	DO ~
 		AdvanceTime(TWO_HOURS)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @244
 	DO ~
 		AdvanceTime(FOUR_HOURS)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @245
 	DO ~
 		AdvanceTime(EIGHT_HOURS)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @26 /* ~Go back to the prior menu.~ */
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 END
 
 IF ~~ THEN BEGIN LCA_Menu_StartStore
@@ -930,7 +1018,7 @@ IF ~~ THEN BEGIN LCA_Menu_StartStore
 	EXIT
 	
 	IF ~~ THEN REPLY @26 /* ~Go back to the prior menu.~ */
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 END
 
 IF ~~ THEN BEGIN LCA_Menu_ChangeTime
@@ -940,145 +1028,145 @@ IF ~~ THEN BEGIN LCA_Menu_ChangeTime
 	DO ~
 		DAYNIGHT(0)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @163
 	DO ~
 		DAYNIGHT(1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @164
 	DO ~
 		DAYNIGHT(2)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @165
 	DO ~
 		DAYNIGHT(3)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @166
 	DO ~
 		DAYNIGHT(4)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @167
 	DO ~
 		DAYNIGHT(5)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @168
 	DO ~
 		DAYNIGHT(6)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @169
 	DO ~
 		DAYNIGHT(7)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @170
 	DO ~
 		DAYNIGHT(8)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @171
 	DO ~
 		DAYNIGHT(9)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @172
 	DO ~
 		DAYNIGHT(10)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @173
 	DO ~
 		DAYNIGHT(11)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @174
 	DO ~
 		DAYNIGHT(12)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @175
 	DO ~
 		DAYNIGHT(13)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @176
 	DO ~
 		DAYNIGHT(14)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @177
 	DO ~
 		DAYNIGHT(15)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @178
 	DO ~
 		DAYNIGHT(16)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @179
 	DO ~
 		DAYNIGHT(17)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @180
 	DO ~
 		DAYNIGHT(18)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @181
 	DO ~
 		DAYNIGHT(19)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @182
 	DO ~
 		DAYNIGHT(20)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @183
 	DO ~
 		DAYNIGHT(21)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @184
 	DO ~
 		DAYNIGHT(22)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @185
 	DO ~
 		DAYNIGHT(23)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 END
 
 IF ~~ THEN BEGIN LCA_Menu_ChapterMovie
@@ -1152,63 +1240,9 @@ IF ~~ THEN BEGIN LCA_Menu_ChapterMovie
 	EXIT
 	
 	IF ~~ THEN REPLY @26
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 END
 
-IF ~~ THEN BEGIN LCA_ReturnToMainMenu
-	SAY @13 /* ~Anything else?~ */
-	
-	IF ~~ THEN REPLY @216 /* ~Open Store.~ */
-	GOTO LCA_Menu_StartStore
-	
-	IF ~~ THEN REPLY @241 /* ~Advance Time~ */
-	GOTO LCA_Menu_AdvanceTime
-	
-	IF ~~ THEN REPLY @186 /* ~Change the Time.~ */
-	GOTO LCA_Menu_ChangeTime
-	
-	IF ~~ THEN REPLY @1 /* ~Add character to party.~ */
-	GOTO LCA_Menu_AddCharacter
-	
-	IF ~~ THEN REPLY @2 /* ~Start cutscene.~ */
-	GOTO LCA_Menu_StartCutscene
-	
-	IF ~~ THEN REPLY @24 /* ~I need more help, or would like to contribute.~ */
-	GOTO LCA_NeedMoreHelp
-	
-	IF ~~ THEN REPLY @27 /* Adjust variables */
-	GOTO LCA_Menu_AdjustVariables
-	
-	IF ~~ THEN REPLY @34 /* Create Item */
-	GOTO LCA_Menu_CreateItem
-
-	IF ~~ THEN REPLY @39 /* Create Creature */
-	GOTO LCA_Menu_CreateCreature
-	
-	IF ~~ THEN REPLY @45 /* Move to a New Area */
-	GOTO LCA_Menu_NewArea
-	
-	IF ~~ THEN REPLY @74 /* Increment Banter Counter. */
-	GOTO LCA_Menu_IncrementBanter
-	
-	IF ~~ THEN REPLY @100 /* Cure Corwin Disease. */
-	DO ~
-		ForceSpell("LCCORWIN",CLERIC_CURE_DISEASE)
-	~
-	GOTO LCA_ReturnToMainMenu
-	
-	IF ~~ THEN REPLY @152 /* Play Chapter Movie. */
-	GOTO LCA_Menu_ChapterMovie
-	
-	IF ~~ THEN REPLY @248
-	DO ~
-		SetGlobalTimer("LCA_DukeDebriefTimer", "GLOBAL", ONE_DAY)
-	~
-	GOTO LCA_ReturnToMainMenu
-	
-	IF ~~ THEN REPLY @12 /* ~I do not need assistance at this time.~ */
-	EXIT
-END
 
 IF ~~ THEN BEGIN LCA_Menu_IncrementBanter
 	SAY @75 /* ~Which counter do you want me to increment?~ */
@@ -1219,279 +1253,279 @@ IF ~~ THEN BEGIN LCA_Menu_IncrementBanter
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @104 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 2)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @105 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 3)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @106 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 4)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @107 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 5)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @108 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 6)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @109 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 7)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @110 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 8)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @111 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 9)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @112 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 10)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @113 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 11)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @114 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 12)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @115 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 13)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @116 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 14)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @117 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 15)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @118 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 16)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @119 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 17)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @120 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 18)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @121 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 19)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @122 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 20)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @123 
 	DO ~
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 21)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @53 /* ~Increment Corwin Banter - Anomen~ */
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @54 /* ~Increment Corwin Banter - Aerie~*/
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinAerie", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @55 /* ~Increment Corwin Banter - Anomen~*/
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinAnomen", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @56 /* ~Increment Corwin Banter - Cernd~*/
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinCernd", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @57 /*~Increment Corwin Banter - Dorn~ */
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinDorn", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @58 /* ~Increment Corwin Banter - Edwin~*/
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinEdwin", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @59 /* ~Increment Corwin Banter - HaerDalis~*/
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinHaerDalis", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @60 /* ~Increment Corwin Banter - Hexxat~*/
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinHexxat", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @61 /* ~Increment Corwin Banter - Imoen~*/
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinImoen", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @62 /* ~Increment Corwin Banter - Jaheira~*/
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinJaheira", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @63 /* ~Increment Corwin Banter - Jan~*/
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinJan", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @64 /* ~Increment Corwin Banter - Keldorn~*/
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinKeldorn", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @65 /* ~Increment Corwin Banter - Korgan~*/
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinKorgan", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @66 /* ~Increment Corwin Banter - Mazzy~*/
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinMazzy", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @67 /* ~Increment Corwin Banter - Minsc~*/
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinMinsc", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @68 /* ~Increment Corwin Banter - Nalia~*/
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinNalia", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @69 /* ~Increment Corwin Banter - Neera~*/
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinNeera", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @70 /* ~Increment Corwin Banter - Rasaad~*/
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinRasaad", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @71 /* ~Increment Corwin Banter - Valygar~*/
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinValygar", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @72 /* ~Increment Corwin Banter - Viconia~*/
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinViconia", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @73 /* ~Increment Corwin Banter - Yoshimo~*/
 	DO ~
 		IncrementGlobal("LCA_Banter_CorwinYoshimo", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	
 	
 	IF ~~ THEN REPLY @26
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 END
 
 IF ~~ THEN BEGIN LCA_NeedMoreHelp
@@ -1516,7 +1550,7 @@ IF ~~ THEN BEGIN LCA_Menu_NewArea
 	EXIT
 	
 	IF ~~ THEN REPLY @26 /* ~Go back to the prior menu.~ */
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 END
 
 IF ~~ THEN BEGIN LCA_Menu_CreateCreature
@@ -1526,16 +1560,16 @@ IF ~~ THEN BEGIN LCA_Menu_CreateCreature
 	DO ~
 		CreateCreature("NEB", [-1.-1], S)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @52
 	DO ~
 		CreateCreature("LCCORWIN", [-1.-1], S)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @26 /* ~Go back to the prior menu.~ */
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 END
 
 IF ~~ THEN BEGIN LCA_Menu_CreateItem
@@ -1546,77 +1580,77 @@ IF ~~ THEN BEGIN LCA_Menu_CreateItem
 		GiveItemCreate("LCLYAMUL", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCLYAMUL", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @318
 	DO ~
 		GiveItemCreate("LCMSRING", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCMSRING", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @317
 	DO ~
 		GiveItemCreate("LCSWORD", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCSWORD", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @316
 	DO ~
 		GiveItemCreate("LCCHICK", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCCHICK", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @292 /* ~AMUL27 (Selarrine Amulet).~ */
 	DO ~
 		GiveItemCreate("AMUL27", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("AMUL27", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @255 /* LCMEDAL */
 	DO ~
 		GiveItemCreate("LCMEDAL", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCMEDAL", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @252 /* ~LCORW1~*/
 	DO ~
 		GiveItemCreate("LCORW1", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCORW1", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @253 /* ~LCORW2~*/
 	DO ~
 		GiveItemCreate("LCORW2", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCORW2", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @254 /* ~LDUNC~*/
 	DO ~
 		GiveItemCreate("LDUNC", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LDUNC", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @234 /* ~LCSTDAG~ */
 	DO ~
 		GiveItemCreate("LCSTDAG", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCSTDAG", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @214 /* LCLEDGER */
 	DO ~
 		GiveItemCreate("LCLEDGER", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCLEDGER", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	//Empowered Rings
 	
@@ -1625,70 +1659,70 @@ IF ~~ THEN BEGIN LCA_Menu_CreateItem
 		GiveItemCreate("LCRING07", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRING07", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @198 /* ~LCRING11~ */
 	DO ~
 		GiveItemCreate("LCRING11", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRING11", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @199 /* ~LCRING13~ */
 	DO ~
 		GiveItemCreate("LCRING13", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRING13", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @200 /* ~LCRING14~ */
 	DO ~
 		GiveItemCreate("LCRING14", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRING14", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @201 /* ~LCRING19~ */
 	DO ~
 		GiveItemCreate("LCRING19", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRING19", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @202 /* ~LCRING21~ */
 	DO ~
 		GiveItemCreate("LCRING21", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRING21", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @203 /* ~LCRING22~ */
 	DO ~
 		GiveItemCreate("LCRING22", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRING22", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @204 /* ~LCRING25~ */
 	DO ~
 		GiveItemCreate("LCRING25", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRING25", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @205 /* ~LCRING26~ */
 	DO ~
 		GiveItemCreate("LCRING26", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRING26", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @206 /* ~LCRING28~ */
 	DO ~
 		GiveItemCreate("LCRING28", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRING28", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	//Enchanted Rings
 	
@@ -1697,118 +1731,118 @@ IF ~~ THEN BEGIN LCA_Menu_CreateItem
 		GiveItemCreate("LCRNG07A", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG07A", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @270 /* ~LCRING11~ */
 	DO ~
 		GiveItemCreate("LCRNG11A", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG11A", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @271 /* ~LCRING13~ */
 	DO ~
 		GiveItemCreate("LCRNG13A", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG13A", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @272 /* ~LCRING14~ */
 	DO ~
 		GiveItemCreate("LCRNG14A", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG14A", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @273 /* ~LCRING19~ */
 	DO ~
 		GiveItemCreate("LCRNG19A", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG19A", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @274 /* ~LCRING21~ */
 	DO ~
 		GiveItemCreate("LCRNG21A", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG21A", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @275 /* ~LCRING22~ */
 	DO ~
 		GiveItemCreate("LCRNG22A", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG22A", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @276 /* ~LCRING25~ */
 	DO ~
 		GiveItemCreate("LCRNG25A", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG25A", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @277 /* ~LCRING26~ */
 	DO ~
 		GiveItemCreate("LCRNG26A", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG26A", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @278 /* ~LCRING28~ */
 	DO ~
 		GiveItemCreate("LCRNG28A", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRNG28A", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @195 /* ~Engagement Ring (Aldeth).~ */
 	DO ~
 		GiveItemCreate("LCRINGA", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRINGA", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @196 /* ~Engagement Ring (Jhasso).~ */
 	DO ~
 		GiveItemCreate("LCRINGJ", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCRINGJ", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @187 /* ~Shipping Manifests (LCMANFST)~*/
 	DO ~
 		GiveItemCreate("LCMANFST",LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("LCMANFST", IDENTIFIED,TRUE))
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @36 /* Genie's Flask */
 	DO ~
 		GiveItemCreate("misc4d",LastTalkedToBy(Myself),1,0,0)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @101 /* ~Bodhi's Heart.~ */
 	DO ~
 		GiveItemCreate("MISCBP",LastTalkedToBy(Myself),1,0,0)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @102 /* ~Corwin's Body.~*/
 	DO ~
 		GiveItemCreate("LCCORBOD",LastTalkedToBy(Myself),1,0,0)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @160 /* ~Doll for Rohma.~*/
 	DO ~
 		GiveItemCreate("RDOLL",LastTalkedToBy(Myself),1,0,0)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @26 /* ~Go back to the prior menu.~ */
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 END
 
 IF ~~ THEN BEGIN LCA_Menu_AdjustVariables 
@@ -1818,170 +1852,170 @@ IF ~~ THEN BEGIN LCA_Menu_AdjustVariables
 	DO ~
 		SetGlobal("LCA_AerieInBG", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @331
 	DO ~
 		SetGlobal("LCA_WonLottery", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @330
 	DO ~
 		SetGlobal("LCA_TrickedLarze", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @324
 	DO ~
 		SetGlobal("LCA_SavedLyriel", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @325
 	DO ~
 		SetGlobal("LCA_ExitPrison", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @314
 	DO ~
 		SetGlobal("LCA_PrisonKnowledge", "GLOBAL", 4)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @315
 	DO ~
 		SetGlobal("LCA_PrisonKnowledge", "GLOBAL", 6)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @311
 	DO ~
 		SetGlobal("LCA_BypassG1", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @312
 	DO ~
 		SetGlobal("LCA_BypassG2", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @313
 	DO ~
 		SetGlobal("LCA_BypassG3", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @307
 	DO ~
 		SetGlobal("LCA_DemonDebug", "GLOBAL", 0)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @308
 	DO ~
 		SetGlobal("LCA_DemonDebug", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @305
 	DO ~
 		SetGlobal("LCA_DemonSpeak", "GLOBAL", 0)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @306
 	DO ~
 		SetGlobal("LCA_DemonSpeak", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @295
 	DO ~
 		SetGlobal("LCA_GaveTreasure", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @296
 	DO ~
 		SetGlobal("LCA_MetIncubus", "GLOBAL", 0)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @297
 	DO ~
 		SetGlobal("LCA_MetIncubus", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @298
 	DO ~
 		SetGlobal("LCA_MetIncubus", "GLOBAL", 2)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @299
 	DO ~
 		SetGlobal("LCA_MetIncubus", "GLOBAL", 3)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @300
 	DO ~
 		SetGlobal("LCA_MetIncubus", "GLOBAL", 4)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @304
 	DO ~
 		SetGlobal("LCA_MetIncubus", "GLOBAL", 5)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @301
 	DO ~
 		SetGlobal("LCA_CompletedG1", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @302
 	DO ~
 		SetGlobal("LCA_CompletedG2", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @303
 	DO ~
 		SetGlobal("LCA_CompletedG3", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @281
 	DO ~
 		SetGlobal("bd_player_exiled", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @282
 	DO ~
 		SetGlobal("bd_player_exiled", "GLOBAL", 0)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @263
 	DO ~
 		SetGlobal("LCA_TunnelAnxiety", "GLOBAL", 1)
 		SetGlobalTimer("LCA_TunnelAnxietyTimer", "GLOBAL", ONE_ROUND)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @261
 	DO ~
 		SetGlobal("LCA_ToldTruthBhaal", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @228
 	DO ~
@@ -1991,7 +2025,7 @@ IF ~~ THEN BEGIN LCA_Menu_AdjustVariables
 		SetGlobal("LCA_CorwinCleansed", "GLOBAL", 1)
 		SetGlobal("LCA_CorwinCleansed", "GLOBAL", 2)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @197 /* ~LCRING07~ */
 	DO ~
@@ -2000,7 +2034,7 @@ IF ~~ THEN BEGIN LCA_Menu_AdjustVariables
 		SetGlobal("LCA_RingEnchantment5", "GLOBAL", 1)
 		SetGlobal("LCA_RingEnchanted", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @198 /* ~LCRING11~ */
 	DO ~
@@ -2009,7 +2043,7 @@ IF ~~ THEN BEGIN LCA_Menu_AdjustVariables
 		SetGlobal("LCA_RingEnchantment5", "GLOBAL", 1)
 		SetGlobal("LCA_RingEnchanted", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @199 /* ~LCRING13~ */
 	DO ~
@@ -2018,7 +2052,7 @@ IF ~~ THEN BEGIN LCA_Menu_AdjustVariables
 		SetGlobal("LCA_RingEnchantment5", "GLOBAL", 1)
 		SetGlobal("LCA_RingEnchanted", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @200 /* ~LCRING14~ */
 	DO ~
@@ -2027,7 +2061,7 @@ IF ~~ THEN BEGIN LCA_Menu_AdjustVariables
 		SetGlobal("LCA_RingEnchantment3", "GLOBAL", 1)
 		SetGlobal("LCA_RingEnchanted", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @201 /* ~LCRING19~ */
 	DO ~
@@ -2036,7 +2070,7 @@ IF ~~ THEN BEGIN LCA_Menu_AdjustVariables
 		SetGlobal("LCA_RingEnchantment5", "GLOBAL", 1)
 		SetGlobal("LCA_RingEnchanted", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @202 /* ~LCRING21~ */
 	DO ~
@@ -2045,7 +2079,7 @@ IF ~~ THEN BEGIN LCA_Menu_AdjustVariables
 		SetGlobal("LCA_RingEnchantment5", "GLOBAL", 1)
 		SetGlobal("LCA_RingEnchanted", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @203 /* ~LCRING22~ */
 	DO ~
@@ -2054,7 +2088,7 @@ IF ~~ THEN BEGIN LCA_Menu_AdjustVariables
 		SetGlobal("LCA_RingEnchantment3", "GLOBAL", 1)
 		SetGlobal("LCA_RingEnchanted", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @204 /* ~LCRING25~ */
 	DO ~
@@ -2063,7 +2097,7 @@ IF ~~ THEN BEGIN LCA_Menu_AdjustVariables
 		SetGlobal("LCA_RingEnchantment5", "GLOBAL", 1)
 		SetGlobal("LCA_RingEnchanted", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @205 /* ~LCRING26~ */
 	DO ~
@@ -2072,7 +2106,7 @@ IF ~~ THEN BEGIN LCA_Menu_AdjustVariables
 		SetGlobal("LCA_RingEnchantment3", "GLOBAL", 1)
 		SetGlobal("LCA_RingEnchanted", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @206 /* ~LCRING28~ */
 	DO ~
@@ -2081,79 +2115,79 @@ IF ~~ THEN BEGIN LCA_Menu_AdjustVariables
 		SetGlobal("LCA_RingEnchantment2", "GLOBAL", 1)
 		SetGlobal("LCA_RingEnchanted", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @215
 	DO ~
 		SetGlobal("LCA_CorwinProposalCS", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @213
 	DO ~
 		SetGlobal("LCA_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @210
 	DO ~
 		SetGlobal("LCA_MaxFriendly_Corwin", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @211
 	DO ~
 		SetGlobal("LCA_MaxFriendly_Charname", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @212
 	DO ~
 		SetGlobal("LCA_RefugeeQuestComplete", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @209 /* ~Set LCA_VirgilInCustody to 1.~ */
 	DO ~
 		SetGlobal("LCA_VirgilInCustody", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @208 
 	DO ~
 		SetGlobal("LCA_Reset_0608", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @193
 	DO ~
 		SetGlobal("LCA_DukesDebriefed", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @194
 	DO ~
 		SetGlobal("LCA_DukesDebriefed", "GLOBAL", 0)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @192 
 	DO ~
 		SetGlobal("LCA_NederlokGreeting", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @191 /* Global("LCA_BGSlaverPlot", "GLOBAL", 1)*/
 	DO ~
 		SetGlobal("LCA_BGSlaverPlot", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @190
 	DO ~
 		SetGlobal("LCA_CorwinJoinOverride", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @189
 	DO ~
@@ -2162,311 +2196,311 @@ IF ~~ THEN BEGIN LCA_Menu_AdjustVariables
 		SetGlobal("LCA_LCCS14Cutscene", "GLOBAL", 0)
 		SetGlobal("LCA_LCCS14Started", "GLOBAL", 0)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @188
 	DO ~
 		SetGlobal("LCA_ReturnToBG", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @161
 	DO ~
 		SetGlobal("LCA_JustBoughtDoll", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @158
 	DO ~
 		SetGlobal("EEMetRohma", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @159
 	DO ~
 		SetGlobal("LCA_GaveDoll", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @157
 	DO ~
 		SetGlobal("LCA_CorwinWonTM", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @145
 	DO ~
 		SetGlobal("LCA_DisableXRatedContent", "GLOBAL", 0)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @146
 	DO ~
 		SetGlobal("LCA_DisableXRatedContent", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @127
 	DO ~
 		SetGlobal("LCA_Override", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @144
 	DO ~
 		SetGlobal("LCA_CorwinWentToAvernus", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @76
 	DO ~
 		SetGlobal("bd_asha_duel", "GLOBAL", 3)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @77
 	DO ~
 		SetGlobal("bd_asha_duel", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @128
 	DO ~
 		SetGlobal("LCA_CorwinWitnessedDuel", "GLOBAL", 2)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @134
 	DO ~
 		SetGlobal("LCA_CorwinWitnessedDuel", "GLOBAL", 0)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @95
 	DO ~
 		SetGlobal("bd_drinks_corwin","global",1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @97
 	DO ~
 		SetGlobal("BodhiDead","GLOBAL",1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @42
 	DO ~
 		SetGlobal("BodhiJob","GLOBAL",2)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @43
 	DO ~
 		SetGlobal("BodhiJob","GLOBAL",3)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @44
 	DO ~
 		SetGlobal("BodhiJob","GLOBAL",4)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @32
 	DO ~
 		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @33
 	DO ~
 		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @29 /* ~Set EEMetRohma to 3.~ */
 	DO ~
 		SetGlobal("EEMetRohma", "GLOBAL", 3)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 
 	IF ~~ THEN REPLY @124
 	DO ~
 		SetGlobal("HaerDalisRomanceActive","GLOBAL",1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @125
 	DO ~
 		SetGlobal("HaerDalisRomanceActive","GLOBAL",2)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @49
 	DO ~
 		SetGlobal("LCA_BanterCountInit", "GLOBAL", 0)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @89
 	DO ~
 		SetGlobal("LCA_CorwinBit", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @90
 	DO ~
 		SetGlobal("LCA_CorwinBit", "GLOBAL", 2)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @91
 	DO ~
 		SetGlobal("LCA_CorwinBit", "GLOBAL", 3)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @92
 	DO ~
 		SetGlobal("LCA_CorwinBit", "GLOBAL", 4)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @94 /* ~Set LCA_CorwinCleansed to 1 (and create LCCORWIN).~ */
 	DO ~
 		SetGlobal("LCA_CorwinCleansed", "GLOBAL", 1)
 		CreateCreature("LCCORWIN", [-1.-1], S)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @30
 	DO ~
 		SetGlobal("LCA_CorwinContinue", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @31 
 	DO ~
 		SetGlobal("LCA_CorwinContinue", "GLOBAL", 2)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @51
 	DO ~
 		SetGlobal("LCA_TM_ArcheryChallenge", "GLOBAL", 2)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @37
 	DO ~
 		SetGlobal("MurdersSolved","GLOBAL",0)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @38
 	DO ~
 		SetGlobal("MurdersSolved","GLOBAL",1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @129
 	DO ~
 		SetGlobal("bd_bridgefort_saved","GLOBAL",1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @130
 	DO ~
 		SetGlobal("bd_bridgefort_sabotaged","GLOBAL",1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @131
 	DO ~
 		SetGlobal("bd_corwin_romanceactive","GLOBAL",1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @132
 	DO ~
 		SetGlobal("bd_corwin_romanceactive","GLOBAL",2)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @133
 	DO ~
 		SetGlobal("bd_corwin_romanceactive","GLOBAL",3)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @140
 	DO ~
 		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 0)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @135
 	DO ~
 		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @136
 	DO ~
 		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 3)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @137
 	DO ~
 		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 3)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @138
 	DO ~
 		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 4)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @148
 	DO ~
 		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 3)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @139
 	DO ~
 		SetGlobal("LCA_CorwinSexAfterBodhi", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @141
 	DO ~
 		SetGlobal("LCA_CorwinSexNoSleepComplain", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @142
 	DO ~
 		SetGlobal("LCA_CorwinHostile", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @143
 	DO ~
 		SetGlobal("SvirHostile", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @147
 	DO ~
 		SetGlobal("LCA_CorwinSexBoost", "GLOBAL", 1)
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @26 /* ~Go back to the prior menu.~ */
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 END
 
 IF ~~ THEN BEGIN LCA_Menu_StartCutscene
@@ -2902,7 +2936,7 @@ IF ~~ THEN BEGIN LCA_Menu_StartCutscene
 	EXIT
 	
 	IF ~~ THEN REPLY @26
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 END
 
 IF ~~ THEN BEGIN LCA_Menu_AddCharacter
@@ -2913,138 +2947,152 @@ IF ~~ THEN BEGIN LCA_Menu_AddCharacter
 		CreateCreature("AERIE12", [-1.-1], S)
 		ActionOverride("Aerie", JoinParty())
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
+	
+	IF ~~ THEN REPLY @421 /* Anomen */
+	DO ~
+		CreateCreature("ANOMEN9", [-1.-1], S)
+		ActionOverride("Anomen", JoinParty()) 
+	~
+	GOTO LCA_MainMenu
+	
+	IF ~~ THEN REPLY @423 /* ~Cernd (CERND12.CRE)~ */
+	DO ~
+		CreateCreature("CERND12", [-1.-1], S)
+		ActionOverride("Cernd", JoinParty())
+	~
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @4 /* ~Corwin (LCCORWIN).~ */
 	DO ~
 		CreateCreature("LCCORWIN", [-1.-1], S)
 		ActionOverride("LCCORWIN", JoinParty())
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @86 /* @86 = ~Dorn (DORN10.CRE)~*/
 	DO ~
 		CreateCreature("DORN10", [-1.-1], S)
 		ActionOverride("Dorn", JoinParty())
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
-	IF ~~ THEN REPLY @86 /* @86 = ~Dorn (DORN10.CRE)~*/
+	IF ~~ THEN REPLY @88 /* @88 = ~Edwin (EDWIN11.CRE)~*/
 	DO ~
 		CreateCreature("EDWIN11", [-1.-1], S)
 		ActionOverride("Edwin", JoinParty())
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @87 /* @87 = ~HaerDalis (HAER10.CRE)~*/
 	DO ~
 		CreateCreature("HAER10", [-1.-1], S)
 		ActionOverride("HaerDalis", JoinParty())
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @11 /* ~Hexxat (OHHEX15).~*/
 	DO ~
 		CreateCreature("OHHEX15", [-1.-1], S)
 		ActionOverride("Hexxat", JoinParty())
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @80 /* ~Imoen (IMOEN10).~*/
 	DO ~
 		CreateCreature("IMOEN10", [-1.-1], S)
 		ActionOverride("Imoen2", JoinParty())
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 		
 	IF ~~ THEN REPLY @10 /* ~Jaheira (JAHEIR11).~*/
 	DO ~
 		CreateCreature("JAHEIR11", [-1.-1], S)
 		ActionOverride("Jaheira", JoinParty())
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @78 /* ~Jan (JAN12).~*/
 	DO ~
 		CreateCreature("JAN12", [-1.-1], S)
 		ActionOverride("Jan", JoinParty())
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @9 /* ~Keldorn (KELDOR12).~*/
 	DO ~
 		CreateCreature("KELDOR12", [-1.-1], S)
 		ActionOverride("Keldorn", JoinParty())
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @8 /* ~Korgan (KORGAN11).~*/
 	DO ~
 		CreateCreature("KORGAN11", [-1.-1], S)
 		ActionOverride("Korgan", JoinParty())
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @50 /* ~Mazzy (MAZZY11).~*/
 	DO ~
 		CreateCreature("MAZZY11", [-1.-1], S)
 		ActionOverride("Mazzy", JoinParty())
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @79 /* ~Minsc (MINSC9).~*/
 	DO ~
 		CreateCreature("MINSC9", [-1.-1], S)
 		ActionOverride("Minsc", JoinParty())
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @82 /* ~Nalia (NALIA11).~*/
 	DO ~
 		CreateCreature("NALIA11", [-1.-1], S)
 		ActionOverride("Nalia", JoinParty())
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @81 /* ~Neera (NEERA8).~*/
 	DO ~
 		CreateCreature("NEERA8", [-1.-1], S)
 		ActionOverride("Neera", JoinParty())
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @85 /* @85 = ~Rasaad (RASAAD9.CRE)~*/
 	DO ~
 		CreateCreature("RASAAD9", [-1.-1], S)
 		ActionOverride("Rasaad", JoinParty())
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @83 /* ~Valygar (VALYG9.CRE)~*/
 	DO ~
 		CreateCreature("VALYG9", [-1.-1], S)
 		ActionOverride("Valygar", JoinParty())
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @7 /* @7 = ~Viconia (VICONI13).~*/
 	DO ~
 		CreateCreature("VICONI13", [-1.-1], S)
 		ActionOverride("Viconia", JoinParty())
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	IF ~~ THEN REPLY @84 /* @84 = ~Yoshimo (YOSHI10.CRE)~*/
 	DO ~
 		CreateCreature("YOSHI10", [-1.-1], S)
 		ActionOverride("Yoshimo", JoinParty())
 	~
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 	
 	
 	
 	IF ~~ THEN REPLY @26
-	GOTO LCA_ReturnToMainMenu
+	GOTO LCA_MainMenu
 END
 
 IF ~~ THEN BEGIN LCA_Exit

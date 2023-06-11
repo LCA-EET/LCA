@@ -332,12 +332,12 @@
 @331 = ~Set LCA_WonLottery to 1.~
 @332 = ~CHDINLOT~
 @333 = ~Corwin Aerie Banter 5.~
-@334 = ~Dialog Test.~
+@334 = ~Banter Dialog Test.~
 @335 = ~Set LCA_AerieInBG to 1.~
 @336 = ~Dialog B-0~
 @337 = ~Dialog B-1~
 @338 = ~Dialog B-2~
-@339 = ~Dialog B-3~
+@339 = ~Dialog B-3A~
 @340 = ~Dialog B-4~
 @341 = ~Dialog B-5~
 @342 = ~Dialog B-6~
@@ -419,3 +419,7 @@
 @418 = ~Dialog B-82~
 @419 = ~Dialog B-83~
 @420 = ~Dialog B-84~
+@421 = ~Anomen (ANOMEN9.CRE)~
+@422 = ~Dialog B-3B~
+@423 = ~Cernd (CERND12.CRE)~
+@424 = ~LCCORWIJ Dialog Test.~

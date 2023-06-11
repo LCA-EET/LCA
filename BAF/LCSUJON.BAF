@@ -1,0 +1,8 @@
+IF
+	HP(Myself,1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_IrenicusBeat", "GLOBAL", 1)
+		SetGlobal("IrenicusBeat","AR2806",1)  // Tree of Life
+		StartDialogueNoSet([PC])
+END

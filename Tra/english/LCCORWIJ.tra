@@ -172,7 +172,7 @@
 @192 = ~Indeed. I too am grateful.~
 @193 = ~I was thinking about the first time we met. Do you remember?~
 @194 = ~That's enough reminiscing, for now. Let's get going, Schael.~
-@195 = ~(You share a warm embrace)~
+@195 = ~(You share a warm embrace.)~
 @196 = ~You nearly sacrificed my soul to that damned demon.. what was its name? Thrax?~
 @197 = ~Thrix the Profane, if I remember correctly. Your soul was never in danger — I'd never let a demon like that outsmart me.~
 @198 = ~Still, it was quite a gamble. Next time risk your own damned soul, or better yet, don't play such high stakes games with demons, got it?~
@@ -225,11 +225,12 @@
 @236 = ~You both performed well. I'm glad to have such skilled companions at my side.~
 @237 = ~Schael, you were amazing.~
 @238 = ~You know, I heard you cheering for me, love. It meant a lot.~
-@239 = ~(You share a warm embrace) Let me see that trophy.~
-@240 = ~(She hands it over.) So, what do you think?~
+@239 = ~Let me see that trophy.~
+@240 = ~So, what do you think?~
 @241 = ~I think that you'll never cease to amaze me.~
 @242 = ~Hah, that much is obvious. What do you think about the *trophy*.~
-@243 = ~Hm... (You examine the trophy — it's a figurine of an archer cast in gold, with a plaque beneath that states 'Schael Corwin - Winner - Trademeet Archery Competition'.) Very nice. Your father will be proud.~
+@243 = ~Hm... (You examine the trophy — it's a figurine of an archer cast in gold, with a plaque beneath that states 'Schael Corwin - Winner - Trademeet Archery Competition'.) 
+Very nice. Your father will be proud.~
 @244 = ~Thanks. I think Rohma might appreciate it more... I can't wait to see them again. Let's get going, love.~
 
 @245 = ~You... you monster! What you did to Skie, to Imoen, to <CHARNAME>, and the others... it can never be forgiven. You nearly destroyed my hope of a future with the <PRO_MANWOMAN> I love. Prepare to meet your end, Irenicus!~ 
@@ -406,16 +407,16 @@
 @460 = ~She's alive and well, thanks to <CHARNAME>. I'll fill you in on the details later. We need to get moving.~
 @461 = ~Aye Drizzt, I recognize that insignia on her armor. Yer far from home, aren't ye girl?~
 @462 = ~She must be some kind of imposter. The Flaming Fist puts bandits to the sword — they don't fight alongside them!~
-@463 = ~He's right, Drizzt. We can't be allowin' these bandits to run free... knows what horrid acts they've committed upon others?~
+@463 = ~He's right, Drizzt. We can't be allowin' these bandits to run free... who knows what horrid acts they'll commit if we don't stop 'em?~
 @464 = ~That's enough, all of you. You (he points at Corwin) — who are you, and what is your business here?~
 @465 = ~I am Captain Schael Corwin of the Flaming Fist. I'm travelling with <CHARNAME> on a special assignment to apprehend a wizard, Jon Irenicus.~
 @466 = ~How do I know you aren't an impostor, as my friend suggests? I know a bit of the Flaming Fist and its reporting structure. Tell me, who are your commanding officers? Answer carefully.~
-@467 = ~Marshall Nederlok, and Duke Eltan.~
+@467 = ~Marshall Nederlok and Duke Eltan.~
 @468 = ~I know of another in the Flaming Fist. Based on your claimed rank, you should be reporting to them.~
 @469 = ~If you're referring to Scar, he was assassinated several months ago, as part of a plot to usurp control over the city. <CHARNAME> brought both the assassin and the usurper to justice. Scar was a good friend, and I miss him dearly.~
 @470 = ~You say you were a friend to Scar. If you were truly his friend, you would know his real name.~
 @471 = ~His name was Harold Loggerson.~
-@472 = ~(His expression changes from one of suspicion to one of surprise.) Very well. Lower your weapons, friends. She is telling us the truth.~
+@472 = ~(His expression changes from one of suspicion to one of surprise.)~ 
 @473 = ~Scar was a good man. I'm sorry to hear that he has passed. You said you were after a wizard? What has this person done to warrant the attention of the Flaming Fist?~
 @474 = ~Yes. The wizard nearly murdered Skie Silvershield, the daughter of one of the Grand Dukes, and framed <CHARNAME> for the crime. <CHARNAME> found evidence proving <PRO_HISHER> innocence and is responsible for Skie's restoration.~
 @475 = ~Once <PRO_HISHER>'s innocence was established, I was assigned to them to assist in the hunt for the wizard.~
@@ -486,6 +487,7 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @537 = ~Gods, I've been looking forward to this all day. Help me get this armor off, lover.~
 @538 = ~Brevlik, your advocate will be with your shortly. <CHARNAME> — we better head back to the Hall of Wonders.~
 @539 = ~Mm. Before we get started. About what we discussed —~
+@540 = ~Very well. Lower your weapons, friends. She is telling us the truth.~
 @541 = ~And you, young lady.~
 @542 = ~(He looks at Corwin, and the Flaming Fist insignia on her armor.)~
 @543 = ~I trust you are here to effect some appropriate punishment for what I did to Skie Silvershield?~
@@ -1373,3 +1375,4 @@ Captain Corwin shared the story of how she was arrested in the Hall of Wonders. 
 @1424 = ~Let's head in.~
 @1425 = ~I think so, Captain. Look — it seems to be a recreation of the siege.~
 @1426 = ~Ma'am, did you report these disappearances to the Flaming Fist?~
+@1427 = ~(She hands it over.)~ 
