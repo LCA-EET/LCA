@@ -74,7 +74,7 @@ IF ~~ THEN BEGIN LCA_StartDucalCS
 END
 //} #endregion
 
-//{ #region Hall of Wonders Cutscene - DLG-0048
+//{ #region Hall of Wonders Cutscene - Dialog J-0
 IF ~
 	Global("LCA_CSHOW_TALK", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CSHOW_TALK
@@ -109,7 +109,7 @@ IF ~~ THEN BEGIN LCA_WantToTransform
 END
 //} #endregion
 
-//{ #region Corwin Not Chosen for Saradush - DLG-0001
+//{ #region Corwin Not Chosen for Saradush - Dialog J-1
 IF ~
 	Global("LCA_BGEND3", "GLOBAL", 1)
 	Global("LCA_DidNotRequestCorwin", "GLOBAL", 1)
@@ -184,7 +184,7 @@ END
 
 //} #endregion
 
-//{ #region Corwin Chosen for Saradush - DLG-0002
+//{ #region Corwin Chosen for Saradush - Dialog J-2
 IF ~
 	Global("LCA_BGEND4", "GLOBAL", 1)
 	Global("LCA_DidRequestCorwin", "GLOBAL", 1)
@@ -326,7 +326,7 @@ END
 
 //} #endregion
 
-//{ #region Rohma Rescued - DLG-0003
+//{ #region Rohma Rescued - Dialog J-3
 IF ~
 	Global("LCA_RohmaSaved", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinRohmaReunite
@@ -340,7 +340,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region Beno Last Words (Soultaker) - DLG-0004
+//{ #region Beno Last Words (Soultaker) - Dialog J-4
 IF ~
 	Global("LCA_CorwinBenoST", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinBenoST
@@ -380,7 +380,7 @@ IF ~~ THEN LCA_CorwinBenoSTChainEndCS
 END
 //} #endregion
 
-//{ #region Beno Last Words (Killed) - DLG-0005
+//{ #region Beno Last Words (Killed) - Dialog J-5
 IF ~
 	Global("LCA_CorwinKillBeno", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinKillBenoLastWords
@@ -443,7 +443,7 @@ END
 
 //} #endregion
 
-//{ #region Illasera Killed - DLG-0006 - Tested
+//{ #region Illasera Killed - Dialog J-6
 IF ~
 	Global("LCA_IllaseraDead", "GLOBAL", 1)
 ~ THEN BEGIN LCA_IllaseraDead
@@ -616,7 +616,7 @@ IF ~~ THEN BEGIN LCA_IllaseraDead_Mercy
 END
 //} #endregion
 
-//{ #region Arrival in Undercity - DLG-0007 - Tested
+//{ #region Arrival in Undercity - Dialog J-7 - Tested
 IF ~
 	Global("LCA_ArrivedInUndercity", "GLOBAL", 1)
 ~ THEN BEGIN LCA_ArrivedInUndercity
@@ -688,7 +688,7 @@ IF ~~ THEN BEGIN LCA_SkieUCChainEnd
 END
 //} #endregion
 
-//{ #region Duke Debrief Break - DLG-0008
+//{ #region Duke Debrief Break - Dialog J-8
 IF ~
 	Global("LCA_DukesDebriefed", "GLOBAL", 2)
 ~ THEN BEGIN LCA_DukeDebrief02
@@ -858,7 +858,7 @@ IF ~~ THEN BEGIN LCA_DukeDebrief02_B2
 END
 //} #endregion
 
-//{ #region Corwin Walk Home - DLG-0009
+//{ #region Corwin Walk Home - Dialog J-9
 IF ~
 	Global("LCA_CorwinWalkHome", "GLOBAL", 1)
 ~ THEN BEGIN LCA_WalkHome
@@ -887,7 +887,7 @@ IF ~~ THEN BEGIN LCA_WalkHome3
 END
 //} #endregion
 
-//{ #region Rohma Kidnapped 1316_1 - DLG-0010
+//{ #region Rohma Kidnapped 1316_1 - Dialog J-10
 IF ~
 	Global("LCA_RohmaKidnapped", "GLOBAL", 1)
 ~ THEN BEGIN LCA_RohmaKidnapped
@@ -899,7 +899,7 @@ END
 
 //} #endregion 
 
-//{ #region Rohma Kidnaped - Ducal Palace - DLG-0011
+//{ #region Rohma Kidnaped - Ducal Palace - Dialog J-11
 IF ~
 	Global("LCA_RohmaKidnapped", "GLOBAL", 4)
 ~ THEN BEGIN LCA_NeedToGetRohma
@@ -909,7 +909,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region Corwin Proposal - DLG-0012
+//{ #region Corwin Proposal - Dialog J-12
 IF ~
 	Global("LCA_CorwinProposalCS", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinProposal
@@ -947,6 +947,7 @@ IF ~~ THEN BEGIN LCA_CorwinProposal2B
 	EXIT
 END
 
+//{ region: Dialog J-13 
 IF ~
 	Global("LCA_CorwinProposalCS", "GLOBAL", 2)
 ~ THEN BEGIN LCA_CorwinProposal2C
@@ -960,6 +961,7 @@ IF ~
 	~
 	GOTO LCA_CorwinProposal3B
 END
+//} endregion
 
 IF ~~ THEN BEGIN LCA_CorwinProposal3B
 	SAY @964 /* ~W-what are you.. oh.. my..~*/
@@ -1222,7 +1224,7 @@ IF ~~ THEN LCA_CorwinProposal7
 END
 //} #endregion
 
-//{ #region Dinner with Corwin (Romance) - DLG-0013 - Tested
+//{ #region Dinner with Corwin (Romance) - Dialog J-14 - Tested
 IF ~
 	Global("LCA_CorwinDinner", "GLOBAL", 1)
 	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
@@ -1331,7 +1333,7 @@ IF ~~ THEN BEGIN LCA_CorwinDinner_Romance8
 END
 //} #endregion
 
-//{ #region Dinner with Corwin (Non-Romance) - DLG-0014 - Tested
+//{ #region Dinner with Corwin (Non-Romance) - Dialog J-15 - Tested
 IF ~
 	Global("LCA_CorwinDinner", "GLOBAL", 1)
 	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
@@ -1534,18 +1536,26 @@ IF ~~ THEN BEGIN LCA_CorwinDinner_WorkEnd
 END
 //} #endregion
 
-//{ #region Corwin / Tianna DLG-0015 
+//{ #region Corwin / Tianna Dialog J-15
 IF ~
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	Global("LCA_AskCorwinAboutTianna", "GLOBAL", 1)
 ~ THEN BEGIN LCA_AskCorwinAboutTianna
 	SAY @861 /* ~(You hear her muttering under her breath.)~ */
 	
-	IF ~~ THEN 
+	IF ~~ THEN REPLY @1428 /* ~(Leave her be.)~*/
 	DO ~
 		SetGlobal("LCA_AskCorwinAboutTianna", "GLOBAL", 2)
 	~
-	EXIT
+	EXIT	
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @603 /* ~Something wrong?~*/
+	DO ~
+		SetGlobal("LCA_AskCorwinAboutTianna", "GLOBAL", 2)
+	~
+	GOTO LCA_CorwinTianna2
 	
 	IF ~
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
@@ -1559,8 +1569,32 @@ END
 IF ~~ THEN BEGIN LCA_CorwinTianna2
 	SAY @839 /* ~Yes... Tianna and I were seeing eachother for a time. A very short time.~ */
 	
-	IF ~~ THEN REPLY @840 /* ~I see... What happened? I mean, why did you two break up?~ */
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @840 /* ~I see... What happened? I mean, why did you two break up?~ */
 	GOTO LCA_CorwinTianna3
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1429 /* ~Well? Go on.~ */
+	GOTO LCA_CorwinTianna3
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @840 /* ~I see... What happened? I mean, why did you two break up?~ */
+	GOTO LCA_CorwinTianna3_END
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1429 /* ~Well? Go on.~ */
+	GOTO LCA_CorwinTianna3_END
+END
+
+IF ~~ THEN BEGIN LCA_CorwinTianna3_END
+	SAY @1430 /* ~Eh... forget I said anything. I know you have enough on your mind already. Let's go.~ */
+	
+	IF ~~ THEN 
+	EXIT
 END
 
 IF ~~ THEN BEGIN LCA_CorwinTianna3
@@ -1624,7 +1658,7 @@ IF ~~ THEN BEGIN LCA_NotYetTianna
 END
 //} #endregion
 
-//{ #region Corwin Slaver Girl Rescue - DLG-0016
+//{ #region Corwin Slaver Girl Rescue - Dialog J-16
 IF ~
 	Global("LCA_BGSlaverPlot", "GLOBAL", 1)
 	Global("LCA_CorwinSlaverPlot", "GLOBAL", 1)
@@ -1653,7 +1687,7 @@ IF ~~ THEN BEGIN LCA_CorwinBGSlaverDiscuss2
 END
 //} #endregion
 
-//{ #region Corwin Post Neoma Meeting - DLG-0017
+//{ #region Corwin Post Neoma Meeting - Dialog J-17
 IF ~
 	Global("LCA_LCCS15Cutscene", "GLOBAL", 6)
 	//play romance song
@@ -1771,7 +1805,7 @@ IF ~~ THEN LCA_CorwinNeoma6
 END
 //} #endregion
 
-//{ #region Corwin Family Timer - DLG-0018
+//{ #region Corwin Family Timer - Dialog J-18
 IF ~
 	Global("LCA_CorwinFamilyTimerDialog", "GLOBAL", 1)
 	GlobalTimerExpired("LCA_CorwinFamilyTimer", "GLOBAL")
@@ -1790,7 +1824,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region Corwin Family Timer Expired (Non-Romance) - DLG-0019
+//{ #region Corwin Family Timer Expired (Non-Romance) - Dialog J-19
 IF ~
 	Global("LCA_CorwinFamilyTimerDialog", "GLOBAL", 1)
 	GlobalTimerExpired("LCA_CorwinFamilyTimer", "GLOBAL")
@@ -1812,7 +1846,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region Corwin Family Timer Expired (Romance) - DLG-0020
+//{ #region Corwin Family Timer Expired (Romance) - Dialog J-20
 IF ~
 	Global("LCA_CorwinFamilyTimerDialog", "GLOBAL", 1)
 	GlobalTimerExpired("LCA_CorwinFamilyTimer", "GLOBAL")
@@ -1927,7 +1961,7 @@ END
 
 //} #endregion
 
-//{ #region Go Back to BG (Romance) - DLG-0021
+//{ #region Go Back to BG (Romance) - Dialog J-21
 IF ~
 	Global("LCA_BackToBG", "GLOBAL", 2)
 	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
@@ -1942,7 +1976,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region Go Back to BG (Non-Romance) - DLG-0022
+//{ #region Go Back to BG (Non-Romance) - Dialog J-22
 
 IF ~
 	Global("LCA_BackToBG", "GLOBAL", 2)
@@ -1960,7 +1994,7 @@ END
 
 //} #endregion
 
-//{ #region Corwin End BG2 (Romance) - DLG-0023
+//{ #region Corwin End BG2 (Romance) - Dialog J-23
 IF ~
 	Global("LCA_BackToBG", "GLOBAL", 1)
 	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
@@ -1981,7 +2015,9 @@ IF ~
 END
 
 IF ~~ THEN BEGIN LCA_BackToBG2
-	SAY @622 /* ~I think it'll pale in comparison to the one the city will throw for us upon our return. (She smiles.)~ */
+	SAY @1431 /* ~(She smiles.)~ */
+	
+	= @622 /* ~I think it'll pale in comparison to the one the city will throw for us upon our return. (She smiles.)~ */
 
 	IF ~~ THEN REPLY @623 /* ~Baldur's Gate? Are they expecting us?~ */
 	GOTO LCA_BackToBG3
@@ -2050,7 +2086,7 @@ IF ~~ THEN BEGIN LCA_BackToBG_RTL_NotYet
 END
 //} #endregion
 
-//{ #region Corwin Post Drizzt - DLG-0024
+//{ #region Corwin Post Drizzt - Dialog J-24
 IF ~
 	GlobalTimerExpired("LCA_CorwinVouchedDrizzTimer", "GLOBAL")
 	Global("LCA_CorwinVouchedDrizz", "GLOBAL", 1)
@@ -2167,7 +2203,7 @@ END
 
 
 
-//{ #region Corwin Dorn Post Sex - DLG-0026
+//{ #region Corwin Dorn Post Sex - Dialog J-25
 IF ~
 	Global("LCA_ComplainDornSex", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinSexDorn
@@ -2183,7 +2219,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region Corwin Player Soul Talk - DLG-0027
+//{ #region Corwin Player Soul Talk - Dialog J-26
 IF ~
 	Global("LCA_PlayerSoulTalk", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinSoulTalk
@@ -2225,7 +2261,7 @@ END
 
 //} #endregion
 
-//{ #region Corwin Rep Warning - DLG-0028
+//{ #region Corwin Rep Warning - Dialog J-27
 IF ~
 	Global("LCA_CorwinRepWarning", "GLOBAL", 2)
 ~ THEN BEGIN LCA_RepComplain
@@ -2244,7 +2280,7 @@ IF ~~ THEN BEGIN LCA_RepComplain2
 END
 //} #endregion
 
-//{ #region Corwin Left - Bad Reputation - DLG-0029
+//{ #region Corwin Left - Bad Reputation - Dialog J-28
 IF ~
 	ReputationLT(Player1,7)
 	Global("LCA_CorwinLeftPoorRep", "GLOBAL", 1)
@@ -2261,7 +2297,7 @@ IF ~
 END  
 //} #endregion
 
-//{ #region Dorn Ritual Interject - DLG-0030
+//{ #region Dorn Ritual Interject - Dialog J-29
 
 IF ~
 	Global("OHD_ritual_interjects","GLOBAL",1)
@@ -2296,7 +2332,7 @@ IF ~~ THEN BEGIN LCA_RitualInterject2
 END
 //} #endregion
 
-//{ #region Gorge Interject - DLG-0031
+//{ #region Gorge Interject - Dialog J-30
 IF ~
 	Global("OHD_GORGE_NTRJEX","OH5100",1)
 ~ THEN BEGIN LCA_GorgeClimb
@@ -2378,7 +2414,7 @@ IF ~~ THEN BEGIN LCA_GorgeClimb1
 END
 //} #endregion
 
-//{ #region Corwin Bit - First - DLG-0032
+//{ #region Corwin Bit - First - Dialog J-31
 IF ~
 	Global("LCA_CorwinBit", "GLOBAL", 2)
 ~
@@ -2489,7 +2525,7 @@ IF ~~ THEN BEGIN LCA_CorwinBitWokeUp3
 END
 //} #endregion
 
-//{ #region Corwin Bit - Second - DLG-0033
+//{ #region Corwin Bit - Second - Dialog J-32
 IF ~
 	Global("LCA_CorwinBit", "GLOBAL", 4)
 	GlobalTimerExpired("LCA_CorwinBitTimer", "GLOBAL")
@@ -2529,7 +2565,7 @@ IF ~~ THEN BEGIN LCA87
 END
 //} #endregion
 
-//{ #region Corwin Bit - Third - DLG-0034
+//{ #region Corwin Bit - Third - Dialog J-33
 IF ~
 	Global("LCA_CorwinBit", "GLOBAL", 6)
 	GlobalTimerExpired("LCA_CorwinBitTimer", "GLOBAL")
@@ -2582,7 +2618,7 @@ IF ~~ THEN BEGIN LCA98
 END
 //} #endregion
 
-//{ #region Corwin Bit - Death - DLG-0035
+//{ #region Corwin Bit - Death - Dialog J-34
 IF ~
 	Global("LCA_CorwinBit", "GLOBAL", 8)
 	GlobalTimerExpired("LCA_CorwinBitTimer", "GLOBAL")
@@ -2597,7 +2633,7 @@ IF ~
 		StartCutSceneMode()
 		StartCutSceneEx("LCcs08a", FALSE)
 	~
-	UNSOLVED_JOURNAL @285 /* ~Schael died in your arms, mere hours after being bit by Bodhi. You believe that the bite was intended to turn Schael into a vampire, but she died before the transition could complete. There may still be a way to revive her. You resolve to find Bodhi and make her pay for the loss of your love with her life.~  */
+	UNSOLVED_JOURNAL @285 /* ~Schael died in my arms, mere hours after being bit by Bodhi. I believe that the bite was intended to turn Schael into a vampire, but she died before the transition could complete. There may still be a way to revive her. I will find Bodhi and make her pay for the loss of my love, with her life.~*/
 	EXIT
 	
 	IF ~
@@ -2609,13 +2645,13 @@ IF ~
 		StartCutSceneMode()
 		StartCutSceneEx("LCcs08c", FALSE)
 	~
-	UNSOLVED_JOURNAL @285 /* ~Schael died in your arms, mere hours after being bit by Bodhi. You believe that the bite was intended to turn Schael into a vampire, but she died before the transition could complete. There may still be a way to revive her. You resolve to find Bodhi and make her pay for the loss of your love with her life.~  */
+	UNSOLVED_JOURNAL @285 /* ~Schael died in my arms, mere hours after being bit by Bodhi. I believe that the bite was intended to turn Schael into a vampire, but she died before the transition could complete. There may still be a way to revive her. I will find Bodhi and make her pay for the loss of my love, with her life.~ */
 	EXIT
 	//GOTO LCA91
 END
 //} #endregion
 
-//{ #region Corwin Firkraag Deal - DLG-0036
+//{ #region Corwin Firkraag Deal - Dialog J-35
 IF ~
 	InParty(Myself)
 	Global("LCA_CorwinFirkraagDeal", "GLOBAL", 1)
@@ -2633,7 +2669,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region Corwin Phaere Sex - DLG-0037
+//{ #region Corwin Phaere Sex - Dialog J-36
 IF ~
 	InParty(Myself)
 	Global("LCA_PhaereTalk", "GLOBAL", 1)
@@ -2716,7 +2752,7 @@ IF ~~ THEN BEGIN LCA99
 END
 //} #endregion
 
-//{ #region Corwin Phaere No Sex - DLG-0038
+//{ #region Corwin Phaere No Sex - Dialog J-37
 IF ~
 	InParty(Myself)
 	Global("LCA_PhaereTalk", "GLOBAL", 1)
@@ -2759,7 +2795,7 @@ IF ~~ THEN BEGIN LCA74
 END
 //} #endregion
 
-//{ #region Corwin Bodhi Deal - DLG-0039
+//{ #region Corwin Bodhi Deal - Dialog J-38
 IF ~
 	InParty(Myself)
 	Global("LCA_CorwinBodhiDeal", "GLOBAL", 1)
@@ -2777,7 +2813,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region SoD Anxiety - DLG-0040 - Tested 2023-04-17
+//{ #region SoD Anxiety - Dialog J-39
 
 IF ~
 	Global("LCA_SoDAnxiety", "GLOBAL", 2)
@@ -2863,7 +2899,7 @@ IF ~~ THEN BEGIN LCA_SoDAnxiety6
 END
 //} #endregion
 
-//{ #region Met Rohma Interaction BG2 (Non-Romance) - DLG-0041
+//{ #region Met Rohma Interaction BG2 (Non-Romance) - Dialog J-40
 
 /* Optional Interaction - Met Rohma */
 IF ~
@@ -2880,6 +2916,12 @@ THEN BEGIN LCA_OPT1Friend
 		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 3)
 	~
 	GOTO LCA_OPT1Friend2 //OK
+	
+	IF ~~ THEN REPLY @1428 /* ~(Leave her be.)~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 3)
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN LCA_OPT1Friend2
@@ -2994,7 +3036,7 @@ IF ~~ THEN BEGIN LCA_OPT1END_InitRomance_End
 END
 //} #endregion
 
-//{ #region Met Corwin Interaction BG2 (Romance) - DLG-0042
+//{ #region Met Corwin Interaction BG2 (Romance) - Dialog J-41
 IF ~
 	InParty(Myself)
 	Global("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
@@ -3016,6 +3058,12 @@ THEN BEGIN LCA_OPT1Romance
 		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 3)
 	~
 	GOTO LCA_OPT1Romance_2 //OK
+	
+	IF ~~ THEN REPLY @1428
+	DO ~
+		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 3)
+	~
+	EXIT
 END
 IF ~~ THEN BEGIN LCA_OPT1Romance_2
 	SAY @144 /* ~(She snaps to attention)*/
@@ -3120,7 +3168,7 @@ IF ~~ THEN BEGIN LCA_OPT1RomanceEnd
 END
 //} #endregion
 
-//{ #region Neb Dead - DLG-0043
+//{ #region Neb Dead - Dialog J-43
 IF ~
 	InParty(Myself)
 	Global("LCA_NebDead", "GLOBAL", 1)
@@ -3188,7 +3236,7 @@ IF ~~ THEN BEGIN LCA62
 END
 //} #endregion
 
-//{ #region Corwin Sex 1 - DLG-0044 - Tested 2023-04-17
+//{ #region Corwin Sex 1 - Dialog J-43
 IF ~
 	Global("LCA_CorwinSex_1", "GLOBAL", 1)
 	Global("LCA_SleepInn", "GLOBAL", 1)
@@ -3236,7 +3284,7 @@ IF ~~ THEN BEGIN LCA_CorwinSexInn8
 END
 
 IF ~~ THEN BEGIN LCA_CorwinSexInnEnd
-	SAY @254 /* ~(You kiss and embrace, and try to get some sleep. Eventually, you give up, and the two of you make love again, and again, and again. Mercifully, you finally pass out from sheer exhaustion).~ */
+	SAY @254 /* ~(You kiss and embrace, and try to get some sleep. Eventually you give up, and the two of you make love several move times before mercifully succumbing to sheer exhaustion).~ */
 	
 	IF ~~ THEN
 	DO ~
@@ -3248,6 +3296,7 @@ IF ~~ THEN BEGIN LCA_CorwinSexInnEnd
 	EXIT
 END
 
+//{region: Dialog J-44
 IF ~
 	Global("LCA_CorwinSex_1", "GLOBAL", 3)
 	NumInPartyGT(2)
@@ -3303,7 +3352,9 @@ IF ~
 	~
 	EXIT
 END
+//} endregion
 
+//{region: Dialog J-45
 IF ~
 	Global("LCA_CorwinSex_1", "GLOBAL", 3)
 	!NumInPartyGT(2)
@@ -3334,7 +3385,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region Corwin Sex 2 Timer Initial - DLG-0045 - Tested 2023-04-17
+//{ #region Corwin Sex 2 Timer Initial - Dialog J-46 - Tested 2023-04-17
 IF ~
 	GlobalTimerExpired("LCA_CorwinSex_2_Timer", "GLOBAL")
 	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
@@ -3373,7 +3424,7 @@ IF ~~ THEN BEGIN LCA_CorwinSexSecond3B
 END
 //} #endregion
 
-//{ #region Corwin Sex 2 - DLG-0046 - Tested 2023-04-17
+//{ #region Corwin Sex 2 - Dialog J-47 - Tested 2023-04-17
 IF ~
 	Global("LCA_CorwinSex_2", "GLOBAL", 2)
 	Global("LCA_SleepInn", "GLOBAL", 1)
@@ -3415,6 +3466,8 @@ IF ~~ THEN BEGIN LCA_CorwinSexSecond16
 	EXIT
 END
 
+//{ Dialog J-48
+
 IF ~
 	Global("LCA_CorwinSex_2", "GLOBAL", 4)
 	NumInPartyGT(2)
@@ -3433,7 +3486,9 @@ IF ~
 	~
 	EXIT
 END
+//}
 
+//{ Dialog J-49
 IF ~
 	Global("LCA_CorwinSex_2", "GLOBAL", 3)
 	!NumInPartyGT(2)
@@ -3454,7 +3509,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region Corwin Arrest - DLG-0047 - Tested 2023-04-18
+//{ #region Corwin Arrest - Dialog J-50 - Tested 2023-04-18
 IF ~
 	Global("LCA_CorwinArrest", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinArrest1
@@ -3585,7 +3640,7 @@ END
 //} #endregion
 
 
-//{ #region Corwin Intimate Bodhi - DLG-0049
+//{ #region Corwin Intimate Bodhi - Dialog J-51
 IF ~
 	Global("LCA_CorwinSexAfterBodhi", "GLOBAL", 1)
 	GlobalLT("LCA_TimesHadSex", "GLOBAL", 1)
@@ -3696,7 +3751,7 @@ IF ~~ THEN LCA_CorwinWantsSex5A
 END
 //} #endregion
 
-//{ #region Corwin Cheap Date - DLG-0050
+//{ #region Corwin Cheap Date - Dialog J-52
 
 IF ~
 	Global("LCA_CorwinSex_1", "GLOBAL", 1)
@@ -3727,6 +3782,7 @@ IF ~~ THEN BEGIN LCA_CorwinSexCC2
 	EXIT
 END
 
+//{ Dialog J-53
 IF ~
 	Global("LCA_CorwinSex_1", "GLOBAL", 1)
 	Global("LCA_SleepInn", "GLOBAL", 1)
@@ -3762,7 +3818,7 @@ IF ~~ THEN BEGIN LCA_MeetIllasera4
 END
 //} #endregion
 
-//{ #region Brevlik Arrested - DLG-0052
+//{ #region Brevlik Arrested - Dialog J-54
 IF ~
 	Global("LCA_BrevlikArrested", "GLOBAL", 1)
 	!Global("LCA_GoBackHOW", "GLOBAL", 1)
@@ -3776,7 +3832,7 @@ END
 //} #endregion
 
 
-//{ #region Entered G1 - DLG-0053
+//{ #region Entered G1 - Dialog J-55
 IF ~~ THEN BEGIN LCA_TrappedG1
 	SAY @1421 /* ~Are we — are we still trapped? ~ */
 	
@@ -3826,6 +3882,7 @@ IF ~~ THEN LCA_MeetSkie3A
 	EXTERN LCSKIE LCA_MeetSkie4
 END
 
+//{ Dialog J-56
 IF ~
 	!Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
 	Global("LCA_TryToSleep", "GLOBAL", 1)
@@ -3880,8 +3937,9 @@ IF ~~ THEN BEGIN LCA_CorwinCantHaveSex3
 	EXIT
 END
 
+//}
 
-
+//{ Dialog J-57
 IF ~
 	InParty(Myself)
 	Global("LCA_Banter_CorwinHexxat", "GLOBAL", 6)
@@ -3900,7 +3958,9 @@ IF ~
 	~
 	EXIT
 END
+//}
 
+//{ Dialog J-58
 IF ~
 	InParty(Myself)
 	Global("LCA_Banter_CorwinHexxat", "GLOBAL", 6)
@@ -3918,6 +3978,8 @@ IF ~
 	~
 	EXIT
 END
+//}
+
 
 IF ~
 	InParty(Myself)

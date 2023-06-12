@@ -184,7 +184,7 @@
 @201 = ~I don't believe it! <CHARNAME>, this is Neb, the fugitive who murdered more than two dozen children in Baldur's Gate! Your time has come, monster!~
 
 @202 = ~He's dead...~ 
-@203 = ~The worst kind. (You hold her hands in yours) Are you alright, love?~
+@203 = ~The worst kind. (Hold her hands in yours.) Are you alright, love?~
 @204 = ~The worst kind. Are you alright, Schael?~
 @205 = ~I will be. What he said about Rohma...~
 @206 = ~I wouldn't worry about it. He was just trying to rattle you.~
@@ -242,7 +242,7 @@ Very nice. Your father will be proud.~
 @251 = ~(She smiles warmly, and places her finger across your lips.)~
 @252 = ~Shh, lover. It's time for us to get some rest. Just know that this, and more, is what awaits you when we finally return home. I love you, <CHARNAME>.~
 @253 = ~I love you too, Schael.~
-@254 = ~(You kiss and embrace, and try to get some sleep. Eventually, you give up, and the two of you make love again, and again, and again. Mercifully, you finally pass out from sheer exhaustion).~
+@254 = ~(You kiss and embrace, and try to get some sleep. Eventually you give up, and the two of you make love several move times before mercifully succumbing to sheer exhaustion).~
 @255 = ~~
 @256 = ~~
 @257 = ~~
@@ -273,7 +273,7 @@ Very nice. Your father will be proud.~
 @282 = ~Hah, I look that bad, eh? You should see *cough* yourself *cough* *cough*.~ 
 @283 = ~Hang in there, Schael. We're going to find Bodhi and cure you of this cursed affliction. Can you walk?~
 @284 = ~Y-yes... come on, love.. let's go.~
-@285 = ~Schael died in your arms, mere hours after being bit by Bodhi. You believe that the bite was intended to turn Schael into a vampire, but she died before the transition could complete. There may still be a way to revive her. You resolve to find Bodhi and make her pay for the loss of your love, with her life.~
+@285 = ~Schael died in my arms, mere hours after being bit by Bodhi. I believe that the bite was intended to turn Schael into a vampire, but she died before the transition could complete. There may still be a way to revive her. I will find Bodhi and make her pay for the loss of my love, with her life.~
 @286 = ~(Schael collapses as you plunge the stake through Bodhi's heart.)~ [NOSOUND]
 @287 = ~Schael! (You run over to her.)~
 @288 = ~(She slowly opens her eyes.)~
@@ -533,7 +533,7 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @583 = ~(Keep quiet.)~
 @601 = ~Schael shared a number of submission and other hand-to-hand techniques with you to improve your effectiveness in combat. You also gained some valuable insight into who's really in charge, at least when it comes to bedroom 'activities'.~
 @602 = ~(You end up making love again before finally falling asleep.)~
-
+@603 = ~Something bothering you?~
 @604 = ~What manner of creature is imprisoned here?~  
 @605 = ~Bastard! You lied to us! You knew it was Demogorgon that was imprisoned the entire time!~
 @606 = ~Justice has finally come for you, wizard. Prepare to die!~ 
@@ -564,7 +564,7 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @619 = ~That was one hell of a party.~ [LCCORJ14]
 @620 = ~It definitely was.~ 
 @621 = ~A better liquor selection would have been nice...~
-@622 = ~I think it'll pale in comparison to the one the city will throw for us upon our return. (She smiles.)~
+@622 = ~I think it'll pale in comparison to the one the city will throw for us upon our return.~
 @623 = ~Baldur's Gate? Are they expecting us?~
 @624 = ~They are. While you were recovering, I asked the elves to send word to the Council that Irenicus was dead, and that we'd be returning to the city soon. Gods, I can't wait to see Rohma and my father.~
 @625 = ~We can head back home as soon as you are ready, love. The elves were gracious enough to arrange a caravan for us. Before we go, I suggest that you first check with the team to see who'll be coming with us. I imagine some'll want to stay here and help the elves with their wounded.~
@@ -1376,3 +1376,7 @@ Captain Corwin shared the story of how she was arrested in the Hall of Wonders. 
 @1425 = ~I think so, Captain. Look — it seems to be a recreation of the siege.~
 @1426 = ~Ma'am, did you report these disappearances to the Flaming Fist?~
 @1427 = ~(She hands it over.)~ 
+@1428 = ~(Leave her be.)~
+@1429 = ~Well? Go on.~
+@1430 = ~Ahh... forget I said anything. You have enough on your mind already. Let's go.~
+@1431 = ~(She smiles.)~
