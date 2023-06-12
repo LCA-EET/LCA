@@ -394,9 +394,12 @@ IF ~~ THEN BEGIN LCA_LCCORWIJ_Test
 
 	IF ~~ THEN REPLY @459 /* ~Dialog J-34~ */
 	DO ~
+		/*
 		SetGlobal("LCA_CorwinBit", "GLOBAL", 8)
 		Wait(1)
 		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
+		*/
+		SetGlobal("LCA_J34Test", "GLOBAL", 1)
 	~
 	EXIT
 
@@ -410,25 +413,35 @@ IF ~~ THEN BEGIN LCA_LCCORWIJ_Test
 
 	IF ~~ THEN REPLY @461 /* ~Dialog J-36~ */
 	DO ~
+		SetGlobal("LCA_PhaereTalk", "GLOBAL", 1)
+		SetGlobal("PhaereInnuendo", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @462 /* ~Dialog J-37~ */
 	DO ~
+		SetGlobal("LCA_PhaereTalk", "GLOBAL", 1)
+		SetGlobal("PhaereInnuendo", "GLOBAL", 3)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @463 /* ~Dialog J-38~ */
 	DO ~
+		SetGlobal("LCA_CorwinBodhiDeal", "GLOBAL", 1)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @464 /* ~Dialog J-39~ */
 	DO ~
+		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
