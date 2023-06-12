@@ -162,7 +162,7 @@ IF ~~ THEN BEGIN LCA_LCCORWIJ_Test
 	~
 	EXIT
 	
-	IF ~~ THEN REPLY @495 /* ~Dialog J-5 Opinion 5~ */
+	IF ~~ THEN REPLY @493 /* ~Dialog J-5 Opinion 5~ */
 	DO ~
 		SetGlobal("LCA_CorwinKillBeno", "GLOBAL", 1)
 		SetGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 5)
