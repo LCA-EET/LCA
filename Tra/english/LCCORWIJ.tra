@@ -94,8 +94,10 @@
 @104 = ~He will be. And when this is done, love, we'll go back to Baldur's Gate and start our new life together, with Rohma.~
 @105 = ~I've been looking forward to that day... more than you know. Let's go, love.~
 @106 =  ~(You share a passionate embrace and kiss)~
+@107 = ~Not now.~
+@115 = ~Gladly, my dear. [LCCORJ13]
 
-@115 = ~~
+(You slide over so there is enough room on the bed for the two of you. When she climbs in, you kiss and rest in eachother's embrace.)~ 
 @117 = ~You're a poor example of a parent.~
 @118 = ~You think I don't want to be home with my daughter and father? ~
 @119 = ~I'm here to fulfil my duties to <CHARNAME>, the Grand Dukes, and the Flaming Fist. If you knew anything about duty or responsibility, you would understand.~
@@ -250,22 +252,22 @@ Very nice. Your father will be proud.~
 @259 = ~*Cough* My love, can we... can we s-stop, for just a minute.~ [LCCORJ01]
 @260 = ~Schael? What's wrong?~
 @261 = ~I can't seem ... *wheeze* ... to catch my breath.~
-@262 = ~Come here, love (you put her arm over your shoulder). Take as much time as you need.~
-@263 = ~(She takes several long, deep breaths) That's better... come on, we need to get that.. Lanthorn.~ 
+@262 = ~Come here, love. Take as much time as you need.~
+@263 = ~(She takes several long, deep breaths.)~ 
 @264 = ~(She is clearly unwell and her condition is rapidly deteriorating... you resolve to redouble your efforts to find and kill Bodhi. You hope it will be enough to cure Schael of her affliction.)~
-@265 = ~*Cough* <CHARNAME> *Cough* ... (she retches, and begins vomitting blood).~ [LCA00006]
-@266 = ~Schael! (You run over to her and she collapses into your arms). ~
-@267 = ~~
-@268 = ~~
-@269 = ~~
-@270 = ~~
+@265 = ~*Cough* <CHARNAME> *Cough* ...~ [LCA00006]
+@266 = ~Schael!~
+@267 = ~That's better... come on, we need to get that.. Lanthorn.~
+@268 = ~(She retches, and begins vomitting blood.)~
+@269 = ~(She stumbles and falls to her hands and knees.)~
+@270 = ~(You run over to her and she collapses into your arms.)~
 @271 = ~~
 @272 = ~~
 @273 = ~Right *cough* *wheeze* *cough*... just before we *cough*.. left for Dragonspear...~
 @274 = ~The Three Old Kegs, love. You had the Berduskan dark wine, your favorite.~
 @275 = ~One day, we'll look back on this and laugh *cough* over a couple of drinks at... at... where was it...~
-@276 = ~Ugh... (She stumbles and falls to her hands and knees).~
-@277 = ~Schael! (You help her back to her feet. She appears to be in very bad shape. Her eyes are bloodshot, she's covered in sweat, and her skin is pale and cold to the touch.)~
+@276 = ~Ugh...~
+@277 = ~Schael!~ 
 @278 = ~Thanks *cough* come on... we'd better find Bodhi and the Lanthorn soon... before I..~
 @279 = ~It breaks my heart to see you like this, love.~
 @280 = ~(It's clear to you that Schael does not have much time left. You need to find and kill Bodhi, and soon, or you will lose the woman you love.)~ 
@@ -558,9 +560,7 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @618 = ~Please, stay with me.
  
 (You reach out and take hold of her hand.)~
-@115 = ~Gladly, my dear. [LCCORJ13]
 
-(You slide over so there is enough room on the bed for the two of you. When she climbs in, you kiss and rest in eachother's embrace.)~ 
 @619 = ~That was one hell of a party.~ [LCCORJ14]
 @620 = ~It definitely was.~ 
 @621 = ~A better liquor selection would have been nice...~
@@ -1120,7 +1120,7 @@ Do not keep us waiting for long."~
 @1181 = ~No, I'm sorry. No mercy.~
 @1182 = ~You have the Soultaker dagger. Give it to me, I'll do the deed. It's the only way you'll be free of him for good.~
 @1183 = ~You have the Soultaker dagger. Give it to me, I'll do the deed. It's the only way we'll be free of him for good.~
-@1184 = ~Any last words?~ [LCA00012]
+@1184 = ~Any last words?~
 @1185 = ~To hells with you, and your father!~ [LCBENO00]
 @1186 = ~(She plunges the dagger into his heart. His mouth opens as if to cry in pain, but strangely, no sound is heard. A gray mist rises out of the gaping wound in his chest, and coalesces into the form of a man; it's Beno, you're sure of it.)~
 @1187 = ~(For a brief moment, the spirit gazes down at its physical body, with a look of wonder and confusion. That confusion turns to terror as the spirit is slowly drawn into the blade of the dagger. The spirit turns as if to flee, but it is no use. You hear a piercing scream in your mind as the last remnants of the spirit are swallowed up by the dagger.)~   
@@ -1200,7 +1200,7 @@ Corwin has arrested Beno Famari for kidnapping and attempted murder. Hopefully, 
 @1258 = ~What is it, Major?~
 @1259 = ~Request permission to accompany <CHARNAME> to Saradush.~
 @1260 = ~Yes, sir.~
-@1261 = ~And Major — don't worry about your family while you're gone. We'll make sure they are well-protected here in the palace, just in case the Five try anything again. Good hunting.~ [LCNDRL08]
+@1261 = ~And Major — don't worry about your family while you're gone. We'll make sure they are well-protected here in the palace, just in case the Five try anything again. Good hunting.~ [LCA00012]
 @1262 = ~Thank you, sir.~
 @1263 = ~We better let Rohma know...~
 @1264 = ~Thanks for volunteering for this assignment, Schael.~
@@ -1286,17 +1286,9 @@ You and Schael shared a tender moment; it seems that the two of you are still de
 @1347 = ~(She smiles)~
 @1348 = ~Sweet of you to say.~
 @1349 =  ~Hey — you alright?~
-@1340 = ~Seeing my cell again... it all came flooding back, Schael.~ 
-@1341 = ~I think about it, still. Not just my exile, but how close I was to being —~ 
-@1342 = ~Dark Circumstances
-You and Schael shared a tender moment; it seems that the two of you are still dealing with the trauma of your imprisonment and exile from the city. Together, with Rohma, you and Schael hope to make new memories to silence the dark echoes of your past.~
-@1343 = ~What's wrong, dear?~
-@1344 = ~I think of the kindness that you showed Rohma, and how good you've been with me... ~
-@1345 = ~And then I think of Beno, and how stupid I was to be with scum like that... you must think I'm a fool.~
-@1346 = ~Schael, stop it. You're more than any <PRO_MANWOMAN> can hope for in this life, and you've been a great mother to Rohma.~
-@1347 = ~Schael, I've never met anyone like you. I hope you understand how special you are. I do, and I know Rohma does.~
-@1348 = ~Nonsense. Let go of the past, love. Focus on our future together — you, me, and Rohma.~ 
-@1349 = ~The care and interest you've shown for her is more than Beno ever did.~
+
+
+
 @1350 = ~A little humility from time to time wouldn't hurt, you know. But yes, you did leave quite the impression on her.~
 @1351 = ~<CHARNAME>, yes. Sorry - I was thinking about home.~
 @1352 = ~Yes, sorry. I was thinking about home. I just miss them, that's all.~
@@ -1380,3 +1372,22 @@ Captain Corwin shared the story of how she was arrested in the Hall of Wonders. 
 @1429 = ~Well? Go on.~
 @1430 = ~Ahh... forget I said anything. You have enough on your mind already. Let's go.~
 @1431 = ~(She smiles.)~
+
+@1432 = ~Seeing my cell again... it all came flooding back, Schael.~ 
+@1433 = ~I think about it, still. Not just my exile, but how close I was to being —~ 
+@1434 = ~Dark Circumstances
+You and Schael shared a tender moment; it seems that the two of you are still dealing with the trauma of your imprisonment and exile from the city. Together, with Rohma, you and Schael hope to make new memories to silence the dark echoes of your past.~
+@1435 = ~What's wrong, dear?~
+@1436 = ~I think of the kindness that you showed Rohma, and how good you've been with me... ~
+@1437 = ~And then I think of Beno, and how stupid I was to be with scum like that... you must think I'm a fool.~
+@1438 = ~Schael, stop it. You're more than any <PRO_MANWOMAN> can hope for in this life, and you've been a great mother to Rohma.~
+@1439 = ~Schael, I've never met anyone like you. I hope you understand how special you are. I do, and I know Rohma does.~
+@1440 = ~Nonsense. Let go of the past, love. Focus on our future together — you, me, and Rohma.~ 
+@1441 = ~The care and interest you've shown for her is more than Beno ever did.~
+@1442 = ~In a heartbeat.~
+@1443 = ~No - I'm not the same person that I was.~
+@1444 = ~Let's not get into hypotheticals.~
+@1445 = ~And I'd rather you be open with me. Fine. Let's go.~
+@1446 = ~I'm sorry. I can't be a part of this any longer. If you ever clean up your act, come and see me.~
+@1447 = ~(You help her back to her feet. She appears to be in very bad shape. Her eyes are bloodshot, she's covered in sweat, and her skin is pale and cold to the touch.)~ 
+@1448 = ~~

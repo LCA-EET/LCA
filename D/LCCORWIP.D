@@ -84,7 +84,7 @@ THEN BEGIN LCA_CantLeave
 END
 
 IF ~
-	GlobalGT("LCA_CorwinBit", "GLOBAL", 2)
+	GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
 	!Global("LCA_CorwinCleansed", "GLOBAL", 1)
 ~
 THEN BEGIN LCA_CorwinSick
@@ -98,7 +98,7 @@ THEN BEGIN LCA_CorwinSick
 END
 
 IF ~
-	GlobalGT("LCA_CorwinBit", "GLOBAL", 1)
+	GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
 	!Global("LCA_CorwinCleansed", "GLOBAL", 1)
 ~
 THEN BEGIN LCA_CorwinSick
@@ -112,7 +112,7 @@ THEN BEGIN LCA_CorwinSick
 END
 
 IF ~
-	GlobalGT("LCA_CorwinBit", "GLOBAL", 1)
+	GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
 	Global("LCA_CorwinCleansed", "GLOBAL", 1)
 ~
 THEN BEGIN LCA_CorwinCleansed

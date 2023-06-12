@@ -246,13 +246,17 @@ IF ~~ THEN BEGIN LCA_LCCORWIJ_Test
 
 	IF ~~ THEN REPLY @441 /* ~Dialog J-16~ */
 	DO ~
+		SetGlobal("LCA_CorwinSlaverPlot", "GLOBAL", 1)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @442 /* ~Dialog J-17~ */
 	DO ~
+		SetGlobal("LCA_LCCS15Cutscene", "GLOBAL", 6)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
@@ -264,13 +268,19 @@ IF ~~ THEN BEGIN LCA_LCCORWIJ_Test
 
 	IF ~~ THEN REPLY @444 /* ~Dialog J-19~ */
 	DO ~
+		SetGlobal("LCA_CorwinFamilyTimerDialog", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 0)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @445 /* ~Dialog J-20~ */
 	DO ~
+		SetGlobal("LCA_CorwinFamilyTimerDialog", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
@@ -294,73 +304,107 @@ IF ~~ THEN BEGIN LCA_LCCORWIJ_Test
 
 	IF ~~ THEN REPLY @449 /* ~Dialog J-24~ */
 	DO ~
+		SetGlobal("LCA_CorwinVouchedDrizz", "GLOBAL", 1)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @450 /* ~Dialog J-25~ */
 	DO ~
+		SetGlobal("LCA_ComplainDornSex", "GLOBAL", 1)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @451 /* ~Dialog J-26~ */
 	DO ~
+		SetGlobal("LCA_PlayerSoulTalk", "GLOBAL", 1)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @452 /* ~Dialog J-27~ */
 	DO ~
+		SetGlobal("LCA_CorwinRepWarning", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
-	IF ~~ THEN REPLY @453 /* ~Dialog J-28~ */
+	IF ~~ THEN REPLY @453 /* ~Dialog J-28A~ */
 	DO ~
+		SetGlobal("LCA_CorwinLeftPoorRep", "GLOBAL", 1)
+		SetGlobal("chapter", "GLOBAL", 10)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @453 /* ~Dialog J-28B~ */
+	DO ~
+		SetGlobal("LCA_CorwinLeftPoorRep", "GLOBAL", 1)
+		SetGlobal("chapter", "GLOBAL", 20)
+		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @454 /* ~Dialog J-29~ */
 	DO ~
+		SetGlobal("OHD_ritual_interjects","GLOBAL",1)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @455 /* ~Dialog J-30~ */
 	DO ~
+		SetGlobal("OHD_GORGE_NTRJEX","GLOBAL",1)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @456 /* ~Dialog J-31~ */
 	DO ~
+		SetGlobal("LCA_CorwinBit", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @457 /* ~Dialog J-32~ */
 	DO ~
+		SetGlobal("LCA_CorwinBit", "GLOBAL", 4)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @458 /* ~Dialog J-33~ */
 	DO ~
+		SetGlobal("LCA_CorwinBit", "GLOBAL", 6)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @459 /* ~Dialog J-34~ */
 	DO ~
+		SetGlobal("LCA_CorwinBit", "GLOBAL", 8)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @460 /* ~Dialog J-35~ */
 	DO ~
+		SetGlobal("LCA_CorwinFirkraagDeal", "GLOBAL", 1)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
