@@ -3980,7 +3980,7 @@ IF ~
 END
 //}
 
-
+//{ Dialog J-59
 IF ~
 	InParty(Myself)
 	Global("LCA_Banter_CorwinHexxat", "GLOBAL", 2)
@@ -3999,6 +3999,9 @@ IF ~
 	GOTO LCA38
 END
 
+//}
+
+//{ Dialog J-60
 IF ~
 	InParty(Myself)
 	Global("LCA_Banter_CorwinPlayer", "GLOBAL", 4)
@@ -4013,6 +4016,9 @@ THEN BEGIN LCA_CorwinPlayerBant2A
 	GOTO LCA48 //OK
 END
 
+//}
+
+//{ Dialog J-61
 IF ~
 	InParty(Myself)
 	Global("LCA_Banter_CorwinPlayer", "GLOBAL", 4)
@@ -4025,9 +4031,9 @@ THEN BEGIN LCA_CorwinPlayerBant2B
 	IF ~~ THEN REPLY @167 /* ~Yes Schael, I am fine. I was just thinking about some of the places and people we've seen...~ */ 
 	GOTO LCA48 //OK
 END
+//}
 
-
-
+//{ Dialog J-62
 IF ~
 	InParty(Myself)
 	Global("LCA_Banter_CorwinPlayer", "GLOBAL", 2)
@@ -4039,7 +4045,9 @@ THEN BEGIN LCA_SkieMessageDelivered_Friend
 	IF ~~ THEN REPLY @85 /* ~Of course Schael, what's on your mind?~ */
 	GOTO LCA31
 END
+//}
 
+//{ Dialog J-63
 IF ~
 	InParty(Myself)
 	Global("LCA_Banter_CorwinPlayer", "GLOBAL", 2)
@@ -4051,6 +4059,7 @@ THEN BEGIN LCA_SkieMessageDelivered_Romance
 	IF ~~ THEN REPLY @101 /* ~Of course dear, what's on your mind?~ */
 	GOTO LCA31
 END
+//}
 
 IF ~~ THEN BEGIN LCA_NotPaying
 	SAY @1370 /* ~We're not paying for stolen merchandise, gnome. Hand it over, or I'll have you arrested.~*/
@@ -6548,6 +6557,7 @@ IF ~~ THEN BEGIN LCA_CorwinDrizz_End
 	EXIT
 END
 
+//{ Dialog J-64
 IF ~
 	Global("LCA_CorwinDrizz_End", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinDrizz_Transition
@@ -6565,6 +6575,9 @@ IF ~
 	~
 	EXTERN C6DRIZZ1 LCA_CorwinDrizz2 
 END
+//}
+
+//{ Dialog J-65
 IF ~
 	Global("LCA_SlappedDelcia", "GLOBAL", 1)
 	Global("LCA_DelciaEnd", "GLOBAL", 1)
@@ -6579,6 +6592,7 @@ IF ~
 	IF ~~ THEN REPLY @1295 /* ~Better do what she says, lady.~    */
 	EXTERN DELCIA LCA_CorwinLeave
 END
+//}
 
 IF ~~ THEN BEGIN LCA_HOW_WhyNot
 	SAY @1377 /* ~Excuse us, ma'am.~ */
@@ -6637,6 +6651,8 @@ CHAIN
 		= @856 /* ~(They share an embrace.)~ */ 
 END LCTIANNA LCA_GoodBye
 
+//{ Dialog J-66
+
 CHAIN 
 	IF ~
 		Global("LCA_LCCS15Cutscene", "GLOBAL", 3)
@@ -6648,7 +6664,7 @@ CHAIN
 		== LCNEOMA
 		@717 /* ~I heard you'd be coming home! How are you?~ */
 		== LCCORWIJ
-		@723 /* ~I'm just glad to be home. How are things with you?~ */
+		@723 /* ~I'm so glad to be back. How're things with you?~ */
 		== LCNEOMA
 		@721 /* ~(They speak amongst themselves for a time. You can't make out what they are saying.)~ */
 		== LCNEOMA
@@ -6668,7 +6684,9 @@ CHAIN
 		== LCNEOMA
 		@725 /* ~(They embrace, and Neoma leaves after giving Schael a kiss on her cheek.)~ */
 EXIT
+//}
 
+//{ Dialog J-67
 CHAIN
 	IF ~
 		Global("LCA_LCCS14Cutscene", "GLOBAL", 1)
@@ -6683,6 +6701,8 @@ CHAIN
 		== LCROHMA
 		@684 /* ~I missed you too mommy!~ */
 EXIT
+//}
+
 CHAIN IF ~~ THEN LCCORWIJ LCA_CorwinFamilyReunite2
 	@686 /* ~Me too, father.~ */
 	= @687 /* ~(They share a warm embrace.)~ */
@@ -6740,9 +6760,6 @@ CHAIN
 		~
 EXIT
 
-
-
-
 CHAIN
 	IF ~~ THEN LCCORWIJ LCA_CorwinDrizz
 		@479 /* ~Hold your tongue, drow. I've never known <CHARNAME> to resort to banditry. I suggest that you and your companions move along - now.~*/
@@ -6793,8 +6810,6 @@ CHAIN
 		=
 		@481 /* ~If you are in need of assistance, I will be glad to offer it. If not, I will wish you well and we shall be on our way back to the far north.~ */
 END LCCORWIJ LCA_CorwinDrizz_End
-
-
 
 CHAIN
 	IF ~~ THEN LCCORWIJ LCA_BackToBG_Chain

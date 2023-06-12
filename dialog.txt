@@ -1,508 +1,406 @@
-IF ~~ THEN REPLY @336 /* ~Dialog B-0~ */
+IF ~~ THEN REPLY @425 /* ~Dialog J-0~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @337 /* ~Dialog B-1~ */
+IF ~~ THEN REPLY @426 /* ~Dialog J-1~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @338 /* ~Dialog B-2~ */
+IF ~~ THEN REPLY @427 /* ~Dialog J-2~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @339 /* ~Dialog B-3~ */
+IF ~~ THEN REPLY @428 /* ~Dialog J-3~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @340 /* ~Dialog B-4~ */
+IF ~~ THEN REPLY @429 /* ~Dialog J-4~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @341 /* ~Dialog B-5~ */
+IF ~~ THEN REPLY @430 /* ~Dialog J-5~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @342 /* ~Dialog B-6~ */
+IF ~~ THEN REPLY @431 /* ~Dialog J-6~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @343 /* ~Dialog B-7~ */
+IF ~~ THEN REPLY @432 /* ~Dialog J-7~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @344 /* ~Dialog B-8~ */
+IF ~~ THEN REPLY @433 /* ~Dialog J-8~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @345 /* ~Dialog B-9~ */
+IF ~~ THEN REPLY @434 /* ~Dialog J-9~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @346 /* ~Dialog B-10~ */
+IF ~~ THEN REPLY @435 /* ~Dialog J-10~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @347 /* ~Dialog B-11~ */
+IF ~~ THEN REPLY @436 /* ~Dialog J-11~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @348 /* ~Dialog B-12~ */
+IF ~~ THEN REPLY @437 /* ~Dialog J-12~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @349 /* ~Dialog B-13~ */
+IF ~~ THEN REPLY @438 /* ~Dialog J-13~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @350 /* ~Dialog B-14~ */
+IF ~~ THEN REPLY @439 /* ~Dialog J-14~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @351 /* ~Dialog B-15~ */
+IF ~~ THEN REPLY @440 /* ~Dialog J-15~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @352 /* ~Dialog B-16~ */
+IF ~~ THEN REPLY @441 /* ~Dialog J-16~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @353 /* ~Dialog B-17~ */
+IF ~~ THEN REPLY @442 /* ~Dialog J-17~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @354 /* ~Dialog B-18~ */
+IF ~~ THEN REPLY @443 /* ~Dialog J-18~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @355 /* ~Dialog B-19~ */
+IF ~~ THEN REPLY @444 /* ~Dialog J-19~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @356 /* ~Dialog B-20~ */
+IF ~~ THEN REPLY @445 /* ~Dialog J-20~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @357 /* ~Dialog B-21~ */
+IF ~~ THEN REPLY @446 /* ~Dialog J-21~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @358 /* ~Dialog B-22~ */
+IF ~~ THEN REPLY @447 /* ~Dialog J-22~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @359 /* ~Dialog B-23~ */
+IF ~~ THEN REPLY @448 /* ~Dialog J-23~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @360 /* ~Dialog B-24~ */
+IF ~~ THEN REPLY @449 /* ~Dialog J-24~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @361 /* ~Dialog B-25~ */
+IF ~~ THEN REPLY @450 /* ~Dialog J-25~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @362 /* ~Dialog B-26~ */
+IF ~~ THEN REPLY @451 /* ~Dialog J-26~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @363 /* ~Dialog B-27~ */
+IF ~~ THEN REPLY @452 /* ~Dialog J-27~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @364 /* ~Dialog B-28~ */
+IF ~~ THEN REPLY @453 /* ~Dialog J-28~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @365 /* ~Dialog B-29~ */
+IF ~~ THEN REPLY @454 /* ~Dialog J-29~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @366 /* ~Dialog B-30~ */
+IF ~~ THEN REPLY @455 /* ~Dialog J-30~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @367 /* ~Dialog B-31~ */
+IF ~~ THEN REPLY @456 /* ~Dialog J-31~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @368 /* ~Dialog B-32~ */
+IF ~~ THEN REPLY @457 /* ~Dialog J-32~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @369 /* ~Dialog B-33~ */
+IF ~~ THEN REPLY @458 /* ~Dialog J-33~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @370 /* ~Dialog B-34~ */
+IF ~~ THEN REPLY @459 /* ~Dialog J-34~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @371 /* ~Dialog B-35~ */
+IF ~~ THEN REPLY @460 /* ~Dialog J-35~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @372 /* ~Dialog B-36~ */
+IF ~~ THEN REPLY @461 /* ~Dialog J-36~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @373 /* ~Dialog B-37~ */
+IF ~~ THEN REPLY @462 /* ~Dialog J-37~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @374 /* ~Dialog B-38~ */
+IF ~~ THEN REPLY @463 /* ~Dialog J-38~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @375 /* ~Dialog B-39~ */
+IF ~~ THEN REPLY @464 /* ~Dialog J-39~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @376 /* ~Dialog B-40~ */
+IF ~~ THEN REPLY @465 /* ~Dialog J-40~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @377 /* ~Dialog B-41~ */
+IF ~~ THEN REPLY @466 /* ~Dialog J-41~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @378 /* ~Dialog B-42~ */
+IF ~~ THEN REPLY @467 /* ~Dialog J-42~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @379 /* ~Dialog B-43~ */
+IF ~~ THEN REPLY @468 /* ~Dialog J-43~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @380 /* ~Dialog B-44~ */
+IF ~~ THEN REPLY @469 /* ~Dialog J-44~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @381 /* ~Dialog B-45~ */
+IF ~~ THEN REPLY @470 /* ~Dialog J-45~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @382 /* ~Dialog B-46~ */
+IF ~~ THEN REPLY @471 /* ~Dialog J-46~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @383 /* ~Dialog B-47~ */
+IF ~~ THEN REPLY @472 /* ~Dialog J-47~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @384 /* ~Dialog B-48~ */
+IF ~~ THEN REPLY @473 /* ~Dialog J-48~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @385 /* ~Dialog B-49~ */
+IF ~~ THEN REPLY @474 /* ~Dialog J-49~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @386 /* ~Dialog B-50~ */
+IF ~~ THEN REPLY @475 /* ~Dialog J-50~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @387 /* ~Dialog B-51~ */
+IF ~~ THEN REPLY @476 /* ~Dialog J-51~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @388 /* ~Dialog B-52~ */
+IF ~~ THEN REPLY @477 /* ~Dialog J-52~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @389 /* ~Dialog B-53~ */
+IF ~~ THEN REPLY @478 /* ~Dialog J-53~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @390 /* ~Dialog B-54~ */
+IF ~~ THEN REPLY @479 /* ~Dialog J-54~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @391 /* ~Dialog B-55~ */
+IF ~~ THEN REPLY @480 /* ~Dialog J-55~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @392 /* ~Dialog B-56~ */
+IF ~~ THEN REPLY @481 /* ~Dialog J-56~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @393 /* ~Dialog B-57~ */
+IF ~~ THEN REPLY @482 /* ~Dialog J-57~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @394 /* ~Dialog B-58~ */
+IF ~~ THEN REPLY @483 /* ~Dialog J-58~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @395 /* ~Dialog B-59~ */
+IF ~~ THEN REPLY @484 /* ~Dialog J-59~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @396 /* ~Dialog B-60~ */
+IF ~~ THEN REPLY @485 /* ~Dialog J-60~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @397 /* ~Dialog B-61~ */
+IF ~~ THEN REPLY @486 /* ~Dialog J-61~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @398 /* ~Dialog B-62~ */
+IF ~~ THEN REPLY @487 /* ~Dialog J-62~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @399 /* ~Dialog B-63~ */
+IF ~~ THEN REPLY @488 /* ~Dialog J-63~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @400 /* ~Dialog B-64~ */
+IF ~~ THEN REPLY @489 /* ~Dialog J-64~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @401 /* ~Dialog B-65~ */
+IF ~~ THEN REPLY @490 /* ~Dialog J-65~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @402 /* ~Dialog B-66~ */
+IF ~~ THEN REPLY @491 /* ~Dialog J-66~ */
 DO ~
 	Wait(1)
 ~
 EXIT
 
-IF ~~ THEN REPLY @403 /* ~Dialog B-67~ */
-DO ~
-	Wait(1)
-~
-EXIT
-
-IF ~~ THEN REPLY @404 /* ~Dialog B-68~ */
-DO ~
-	Wait(1)
-~
-EXIT
-
-IF ~~ THEN REPLY @405 /* ~Dialog B-69~ */
-DO ~
-	Wait(1)
-~
-EXIT
-
-IF ~~ THEN REPLY @406 /* ~Dialog B-70~ */
-DO ~
-	Wait(1)
-~
-EXIT
-
-IF ~~ THEN REPLY @407 /* ~Dialog B-71~ */
-DO ~
-	Wait(1)
-~
-EXIT
-
-IF ~~ THEN REPLY @408 /* ~Dialog B-72~ */
-DO ~
-	Wait(1)
-~
-EXIT
-
-IF ~~ THEN REPLY @409 /* ~Dialog B-73~ */
-DO ~
-	Wait(1)
-~
-EXIT
-
-IF ~~ THEN REPLY @410 /* ~Dialog B-74~ */
-DO ~
-	Wait(1)
-~
-EXIT
-
-IF ~~ THEN REPLY @411 /* ~Dialog B-75~ */
-DO ~
-	Wait(1)
-~
-EXIT
-
-IF ~~ THEN REPLY @412 /* ~Dialog B-76~ */
-DO ~
-	Wait(1)
-~
-EXIT
-
-IF ~~ THEN REPLY @413 /* ~Dialog B-77~ */
-DO ~
-	Wait(1)
-~
-EXIT
-
-IF ~~ THEN REPLY @414 /* ~Dialog B-78~ */
-DO ~
-	Wait(1)
-~
-EXIT
-
-IF ~~ THEN REPLY @415 /* ~Dialog B-79~ */
-DO ~
-	Wait(1)
-~
-EXIT
-
-IF ~~ THEN REPLY @416 /* ~Dialog B-80~ */
-DO ~
-	Wait(1)
-~
-EXIT
-
-IF ~~ THEN REPLY @417 /* ~Dialog B-81~ */
-DO ~
-	Wait(1)
-~
-EXIT
-
-IF ~~ THEN REPLY @418 /* ~Dialog B-82~ */
-DO ~
-	Wait(1)
-~
-EXIT
-
-IF ~~ THEN REPLY @419 /* ~Dialog B-83~ */
-DO ~
-	Wait(1)
-~
-EXIT
-
-IF ~~ THEN REPLY @420 /* ~Dialog B-84~ */
+IF ~~ THEN REPLY @492 /* ~Dialog J-67~ */
 DO ~
 	Wait(1)
 ~
