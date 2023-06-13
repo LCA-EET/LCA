@@ -70,6 +70,7 @@ IF ~
 	IF ~~ THEN REPLY @236 /* ~Move Corwin to BG1316, and make her leave the party.~*/
 	DO ~
 		ActionOverride("LCCORWIN", SetLeavePartyDialogFile())
+		ActionOverride("LCCORWIN", ChangeAIScript("", OVERRIDE))
 		ActionOverride("LCCORWIN", ChangeAIScript("", DEFAULT))
 		ActionOverride("LCCORWIN", LeaveParty())
 		ActionOverride("LCCORWIN", EscapeAreaMove("BG1316", 350,300,N))
@@ -394,12 +395,12 @@ IF ~~ THEN BEGIN LCA_LCCORWIJ_Test
 
 	IF ~~ THEN REPLY @459 /* ~Dialog J-34~ */
 	DO ~
-		/*
+		
 		SetGlobal("LCA_CorwinBit", "GLOBAL", 8)
 		Wait(1)
 		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
-		*/
-		SetGlobal("LCA_J34Test", "GLOBAL", 1)
+		
+		//SetGlobal("LCA_J34Test", "GLOBAL", 1)
 	~
 	EXIT
 
@@ -437,8 +438,18 @@ IF ~~ THEN BEGIN LCA_LCCORWIJ_Test
 	~
 	EXIT
 
-	IF ~~ THEN REPLY @464 /* ~Dialog J-39~ */
+	IF ~~ THEN REPLY @464 /* ~Dialog J-39 (Alatos)~ */
 	DO ~
+		SetGlobal("LCA_SoDAnxietyAlatos", "GLOBAL", 1)
+		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 2)
+		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @495 /* ~Dialog J-39 (Cell)~ */
+	DO ~
+		SetGlobal("LCA_SoDAnxietyCell", "GLOBAL", 1)
 		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 2)
 		Wait(1)
 		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
@@ -447,13 +458,19 @@ IF ~~ THEN BEGIN LCA_LCCORWIJ_Test
 
 	IF ~~ THEN REPLY @465 /* ~Dialog J-40~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 0)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 
 	IF ~~ THEN REPLY @466 /* ~Dialog J-41~ */
 	DO ~
+		SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 

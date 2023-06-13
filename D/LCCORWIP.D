@@ -30,6 +30,7 @@ IF ~
 	
 	IF ~~ THEN
 	DO ~
+		ChangeAIScript("LCCORSCR", OVERRIDE)
 		SetGlobal("LCA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
@@ -64,6 +65,7 @@ IF ~
 	IF ~~ THEN REPLY @34 /* ~Yes, you're right. Let's stay together, at least for the time being.~ */
 	
 	DO ~
+		ChangeAIScript("LCCORSCR", OVERRIDE)
 		SetGlobal("LCA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
@@ -78,6 +80,7 @@ THEN BEGIN LCA_CantLeave
 	IF ~~ THEN REPLY @34 /* ~Yes, you're right. Let's stay together, at least for the time being.~ */
 	
 	DO ~
+		ChangeAIScript("LCCORSCR", OVERRIDE)
 		SetGlobal("LCA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
@@ -92,6 +95,7 @@ THEN BEGIN LCA_CorwinSick
 	
 	IF ~~ THEN REPLY @31 /* ~You're right, my dear. Stay with me. I'll look after you as best I can.~ */
 	DO ~
+		ChangeAIScript("LCCORSCR", OVERRIDE)
 		SetGlobal("LCA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
@@ -106,6 +110,7 @@ THEN BEGIN LCA_CorwinSick
 	
 	IF ~~ THEN REPLY @31 /* ~You're right, my dear. Stay with me. I'll look after you as best I can.~ */
 	DO ~
+		ChangeAIScript("LCCORSCR", OVERRIDE)
 		SetGlobal("LCA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
@@ -178,6 +183,7 @@ IF ~~ THEN BEGIN LCA1
 	SAY @4 /* ~Gladly, my friend.~ */
 	IF ~~ THEN
 	DO ~
+		ChangeAIScript("LCCORSCR", OVERRIDE)
 		SetGlobal("LCA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
@@ -187,6 +193,7 @@ IF ~~ THEN BEGIN LCA2
 	SAY @3 /* ~That's all I needed to hear. Let's go.~ [BD54525] */
 	IF ~~ THEN
 	DO ~
+		ChangeAIScript("LCCORSCR", OVERRIDE)
 		SetGlobal("LCA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT

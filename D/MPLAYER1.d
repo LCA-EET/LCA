@@ -9,6 +9,21 @@
 APPEND ~PLAYER1~
 
 	IF ~
+		Global("LCA_CorwinDiedFromBite", "GLOBAL", 1)
+	~ THEN BEGIN LCA_CorwinDiedFromBite
+		SAY @138 /* ~(You are nearly overcome by grief and anger — not just toward Bodhi and Irenicus, but also yourself, for your failure to save the woman you love.)~ */
+		
+		= @139 /* ~(You examine her body. Her skin is pale, and cold to the touch. In her mouth, you notice what appear to be fangs partially emerged from her gumline. You surmise that Bodhi's bite was meant to turn her into a vampire, but Schael died before the transformation could complete. Perhaps there is still a way to revive her. You lift up her body and continue your search for Bodhi and the Lanthorn.)~*/
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("LCA_CorwinDiedFromBite", "GLOBAL", 2)
+			StartCutSceneMode()
+			StartCutScene("LCAcs08x")
+		~
+		EXIT
+	END
+	IF ~
 		Global("LCA_EnterIncubusSanctum", "GLOBAL", 1)
 	~ THEN BEGIN LCA_EnterSanctum
 		SAY @130 /* ~(You approach the painting of the demon's inner sanctum.)~ */

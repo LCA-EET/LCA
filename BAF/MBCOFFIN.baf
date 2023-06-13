@@ -12,7 +12,7 @@ IF
 	Clicked([ANYONE])
 	Range(LastTrigger,12)
 	Global("Coffin","AR0809",0)  // Bodhi's Lair (Abduction Plot, getting Imoen's soul)
-	!Global("LCA_CorwinDiedFromBite", "GLOBAL", 1)
+	GlobalLT("LCA_CorwinDiedFromBite", "GLOBAL", 1)
 	GlobalGT("LCA_CorwinBit","GLOBAL", 0)
 THEN
 	RESPONSE #100
@@ -24,7 +24,7 @@ IF
 	Clicked([ANYONE])
 	Range(LastTrigger,12)
 	Global("Coffin","AR0809",0)  // Bodhi's Lair (Abduction Plot, getting Imoen's soul)
-	Global("LCA_CorwinDiedFromBite", "GLOBAL", 1)
+	GlobalGT("LCA_CorwinDiedFromBite", "GLOBAL", 0)
 THEN
 	RESPONSE #100
 		DisplayString(Myself,@1)  /* ~After a desperate battle, Bodhi has retreated to her coffin. It is time to end this. If you have a stake, you can destroy her, free Imoen's soul, and take vengeance for the death of Schael.~ */
@@ -36,7 +36,7 @@ IF
 	Range(LastTrigger,12)
 	PartyHasItem("MISC6W")  // Wooden Stake
 	Global("Coffin","AR0809",1)  // Bodhi's Lair (Abduction Plot, getting Imoen's soul)
-	Global("LCA_CorwinDiedFromBite", "GLOBAL", 1)
+	GlobalGT("LCA_CorwinDiedFromBite", "GLOBAL", 0)
 THEN
 	RESPONSE #100
 		DisplayString(Myself,54932)  // Bodhi crumbles before you, her body no more than an empty shell as the stolen soul within is freed. There is the faint glimpse of an apparition of some sort, and then... nothing. With her death, a panel opens inside her coffin. The Lanthorn is within.

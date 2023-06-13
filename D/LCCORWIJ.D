@@ -1837,6 +1837,7 @@ IF ~
 		SetGlobal("LCA_CorwinWithFamily", "GLOBAL", 1)
 		SetGlobal("LCA_CorwinMetFamily", "GLOBAL", 2)
 		SetLeavePartyDialogFile()
+		ChangeAIScript("", OVERRIDE)
 		ChangeAIScript("",DEFAULT)
 		LeaveParty()
 		EscapeAreaMove("BG1316",400,250,S) 
@@ -1939,6 +1940,7 @@ IF ~~ THEN BEGIN LCA_SexTonight
 		SetGlobal("LCA_CorwinWithFamily", "GLOBAL", 1)
 		SetGlobal("LCA_CorwinMetFamily", "GLOBAL", 2)
 		SetLeavePartyDialogFile()
+		ChangeAIScript("", OVERRIDE)
 		ChangeAIScript("",DEFAULT)
 		LeaveParty()
 		EscapeAreaMove("BG1316",400,250,S) 
@@ -2307,6 +2309,8 @@ IF ~
 	DO ~
 		SetGlobal("LCA_CorwinLeftPoorRep", "GLOBAL", 0)
 		SetLeavePartyDialogFile()
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
 		LeaveParty()
 		EscapeAreaMove("AR1002",1033,563, SW)
 	~
@@ -2325,6 +2329,8 @@ IF ~
 	DO ~
 		SetGlobal("LCA_CorwinLeftPoorRep", "GLOBAL", 0)
 		SetLeavePartyDialogFile()
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
 		LeaveParty()
 		EscapeArea()
 	~
@@ -2630,7 +2636,8 @@ IF ~
 	IF ~~ THEN REPLY @266 /* ~Schael!~*/
 	DO ~
 		SetGlobal("LCA_CorwinDiedFromBite", "GLOBAL", 1)
-		ClearAllActions()
+		ChangeAIScript("", OVERRIDE)
+		ClearAllActions()	
 	~
 	GOTO LCA_CorwinCollapse
 END
@@ -2641,22 +2648,24 @@ IF ~~ THEN BEGIN LCA_CorwinCollapse
 	
 	IF ~
 		GlobalGT("bd_drinks_corwin", "GLOBAL", 0)
-	~ THEN 
+	~ THEN
 	DO ~
+		//SetGlobal("LCA_CS08A", "GLOBAL", 1)
 		StartCutSceneMode()
-		StartCutScene("LCcs08a")
+		StartCutScene("LCAcs08a")
 	~
-	//UNSOLVED_JOURNAL @285 /* ~Schael died in my arms, mere hours after being bit by Bodhi. I believe that the bite was intended to turn Schael into a vampire, but she died before the transition could complete. There may still be a way to revive her. I will find Bodhi and make her pay for the loss of my love, with her life.~*/
+	UNSOLVED_JOURNAL @285 /* ~Schael died in my arms, mere hours after being bit by Bodhi. I believe that the bite was intended to turn Schael into a vampire, but she died before the transition could complete. There may still be a way to revive her. I will find Bodhi and make her pay for the loss of my love, with her life.~*/
 	EXIT
 	
 	IF ~
 		Global("bd_drinks_corwin", "GLOBAL", 0)
 	~ THEN 
 	DO ~
+		//SetGlobal("LCA_CS08A", "GLOBAL", 1)
 		StartCutSceneMode()
-		StartCutScene("LCcs08c")
+		StartCutScene("LCAcs08c")
 	~
-	//UNSOLVED_JOURNAL @285 /* ~Schael died in my arms, mere hours after being bit by Bodhi. I believe that the bite was intended to turn Schael into a vampire, but she died before the transition could complete. There may still be a way to revive her. I will find Bodhi and make her pay for the loss of my love, with her life.~ */
+	UNSOLVED_JOURNAL @285 /* ~Schael died in my arms, mere hours after being bit by Bodhi. I believe that the bite was intended to turn Schael into a vampire, but she died before the transition could complete. There may still be a way to revive her. I will find Bodhi and make her pay for the loss of my love, with her life.~ */
 	EXIT
 END
 
@@ -2669,6 +2678,8 @@ IF ~
 	
 	IF ~~ THEN
 	DO ~
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
 		LeaveParty()
 		EscapeAreaMove("AR1002",1033,563, SW)
 		SetGlobal("LCA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
@@ -2687,30 +2698,33 @@ IF ~
 	SAY @216 /* ~You were with her for a while...~ */
 	
 	IF ~~ THEN REPLY @217 /* ~Listen, Schael. She didn't leave me any choice. I had to in order to maintain our cover.~ */
+	DO ~
+		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
+	~
 	GOTO LCA69
 	
 	IF ~~ THEN REPLY @218 /*  ~It meant nothing to me. You are the one that I love.~ */
+	DO ~
+		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
+	~
 	GOTO LCA70
 	
 	IF ~~ THEN REPLY @219 /* ~And? I did what I needed to, nothing more.~ */
+	DO ~
+		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
+	~
 	GOTO LCA71
 END
 
 IF ~~ THEN BEGIN LCA69
 	SAY @221 /* ~I understand. Let's just get out of this hole and forget that it ever happened.~ */
 	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
-	~
 	EXIT
 END
 
 IF ~~ THEN BEGIN LCA70
 	SAY @220 /*  ~It means something to me. I understand though why you had to. Let's just get out of this hole and forget that it ever happened.~ */
 	IF ~~ THEN
-	DO ~
-		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
-	~
 	EXIT
 END
 
@@ -2748,7 +2762,6 @@ IF ~~ THEN BEGIN LCA75
 	SAY @226 /* ~You've changed, love, and not in a good way. I can only hope that you'll return to normal once we've restored what the wizard stole from you. ~  */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
 		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", -1)
 	~
 	EXIT
@@ -2770,9 +2783,15 @@ IF ~
 	SAY @227 /* ~What'd she want?~ */
 	
 	IF ~~ THEN REPLY @228 /* ~For me to sleep with her.~ */
+	DO ~
+		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
+	~
 	GOTO LCA72
 	
 	IF ~~ THEN REPLY @229 /*  ~Better not to ask. What matters is that she didn't get it.~*/
+	DO ~
+		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
+	~
 	GOTO LCA74
 
 END
@@ -2787,7 +2806,6 @@ IF ~~ THEN BEGIN LCA73
 	SAY @232 /* ~Hah! You lost your soul, but not your sense of humor, it seems. Come love, let's get going.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
 		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	EXIT
@@ -2797,7 +2815,6 @@ IF ~~ THEN BEGIN LCA74
 	SAY @233 /* ~Hm, I didn't see her as the type to be so easily turned away. Let's go love.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("LCA_PhaereTalk", "GLOBAL", 2)
 		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	EXIT
@@ -2813,6 +2830,8 @@ IF ~
 	
 	IF ~~ THEN
 	DO ~
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
 		SetGlobal("LCA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
 		SetGlobal("LCA_CorwinBodhiDeal", "GLOBAL", 2)
 		LeaveParty()
@@ -2914,7 +2933,6 @@ END
 IF ~
 	InParty(Myself)
 	Global("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
-	See(Player1)
 	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 ~
 THEN BEGIN LCA_OPT1Friend
@@ -2939,6 +2957,9 @@ IF ~~ THEN BEGIN LCA_OPT1Friend2
 	= @1351 /* <CHARNAME>, yes. Sorry - I was thinking about home.~ */
 	
 	IF ~~ THEN REPLY @145 /* ~About your daughter and father. I understand.~ */
+	GOTO LCA_OPT1Friend3 //OK
+	
+	IF ~~ THEN REPLY @255 /* ~No need to apologize. It must be difficult for you to be away from your family.~*/
 	GOTO LCA_OPT1Friend3 //OK
 END
 
@@ -3014,18 +3035,31 @@ IF ~~ THEN BEGIN LCA_OPT1END
 	GOTO LCA_OPT1END_InitRomance //OK
 END
 
+IF ~~ THEN BEGIN LCA_KissEnd
+	SAY @78 /* ~Let's go, love. We have work to do.~*/
+	
+	IF ~~ THEN REPLY @79
+	DO ~
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~
+	EXIT
+END
+
 IF ~~ THEN BEGIN LCA_OPT1END_InitRomance
 	SAY @1356 /* ~Hm?~  */
 	
 	IF ~~ THEN REPLY @1355 /* ~Ah... nevermind. Let's go.~ */
 	GOTO LCA_OPT1END_InitRomance_End //OK
 	
-	IF ~~ THEN REPLY @1358 /* ~I want you to know that I greatly appreciate your friendship. And I don't want to do anything to jeopardize that. But...~  */
+	IF ~~ THEN REPLY @1448 /* ~I want you to know that I greatly appreciate your friendship. And I don't want to do anything to jeopardize that. But...~  */
 	GOTO LCA_OPT1END_InitRomance2 //OK
 END
 
 IF ~~ THEN BEGIN LCA_OPT1END_InitRomance2
 	SAY @1361 /* ~What is it? You can tell me.~ */
+	
+	IF ~~ THEN REPLY @1355 /* ~Ah... nevermind. Let's go.~ */
+	GOTO LCA_OPT1END_InitRomance_End //OK
 	
 	IF ~~ THEN REPLY @94 /* ~Schael... I... I didn't realize how much I needed you near me, until you were gone. Your being here, now, fills a void in my heart that I didn't know was there. I'd like for us to move past friendship, into a more serious relationship. I... I'm in love with you, Schael.~ */
 	DO ~
@@ -3049,7 +3083,6 @@ END
 IF ~
 	InParty(Myself)
 	Global("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
-	See(Player1)
 	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	//play romance song
 ~
@@ -3080,7 +3113,10 @@ IF ~~ THEN BEGIN LCA_OPT1Romance_2
 	=@1352 /*	~Yes, sorry. I was thinking about home. I just miss them, that's all.~*/
 	
 	IF ~~ THEN REPLY @149 /* ~Rohma and your father. I understand.~ */
-	GOTO  LCA_OPT1Romance_3 //OK
+	GOTO LCA_OPT1Romance_3 //OK
+	
+	IF ~~ THEN REPLY @255 /* ~No need to apologize. It must be difficult for you to be away from your family.~*/
+	GOTO LCA_OPT1Romance_3 //OK
 END
 
 IF ~~ THEN BEGIN LCA_OPT1Romance_3
@@ -4510,10 +4546,16 @@ IF ~~ THEN BEGIN LCA35
 	SAY @95 /* ~<CHARNAME>, I missed you too, dearly... I also want us to be more to eachother than what we are now. My heart broke when I read your letter. I keep thinking that if I had left with you, you wouldn't have been captured, maybe Khalid and Dynaheir would still be alive, maybe - ~*/
 	
 	IF ~~ THEN REPLY @96 /* ~Stop it, Schael. Do not blame yourself. There is nothing that you could have done to stop what happened; Irenicus set his trap perfectly. It's better that you were not with me when we were captured - I shudder to think what Irenicus would have done to you, had you been captured as well. ~ */
-	EXTERN ~LCCORWIN~ LCAKiss
+	GOTO LCAKiss
 	
 	IF ~~ THEN REPLY @97 /* ~Schael, what matters is that we are here, together, now.~ */
-	EXTERN ~LCCORWIN~ LCAKiss
+	GOTO LCAKiss
+END
+
+IF ~~ THEN BEGIN LCAKiss
+	SAY @73 /* Come here, hero -~ */
+	IF ~~ THEN
+	GOTO LCAKissChain
 END
 
 IF ~~ THEN BEGIN LCA36
@@ -6032,8 +6074,9 @@ IF ~~ THEN BEGIN LCA_Depart_NonRomance2
 	
 	IF ~~ THEN 
 	DO ~
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
 		SetLeavePartyDialogFile()
-		ChangeAIScript("",DEFAULT)
 	~
 	EXTERN LCROHMA LCA_SayBye
 END
@@ -6163,8 +6206,9 @@ IF ~~ THEN BEGIN LCA_Depart_Romance5
 	= @798 /* ~Sweetie, come and say bye to <CHARNAME>.~ */
 	IF ~~ THEN
 	DO ~
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
 		SetLeavePartyDialogFile()
-		ChangeAIScript("",DEFAULT)
 	~
 	EXTERN LCROHMA LCA_SayBye
 END
@@ -7562,3 +7606,26 @@ CHAIN LCORPH03 LCA_CSHOW_TALK_CHAIN_2
 	@1394 /* ~Prove it!~ */
 	
 END LCORPH02 LCA_CSHOW_TALK_CHAIN_2_END
+
+CHAIN
+	IF ~~ THEN LCCORWIJ LCAKissChain
+		@74 /* ~(You share a passionate embrace and kiss.)~ */
+		
+		== AERIEJ
+		IF ~
+			IsValidForPartyDialogue("Aerie")
+		~
+		@75 /* ~Oh my... that's s-so romantic!~ */
+		
+		== HAERDAJ
+		IF ~
+			IsValidForPartyDialogue("HaerDalis")
+		~
+		@76 /* ~Ah, the lovers' embrace - the inspiration for many a playwright, myself included.~  */
+		
+		== IMOEN2J
+		IF ~
+			IsValidForPartyDialogue("Imoen2")
+		~
+		@77 /* ~Gorion would be so happy for you, <CHARNAME>...~ */
+END LCCORWIJ LCA_KissEnd

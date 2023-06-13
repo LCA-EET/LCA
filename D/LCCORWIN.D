@@ -104,6 +104,7 @@ IF ~~ THEN BEGIN LCAJoinLove
 	SAY @38 /* ~That's all I needed to hear. Let's go.~ [BD54525]*/
 	IF ~~ THEN
 	DO ~
+		ChangeAIScript("LCCORSCR", OVERRIDE)
 		SetGlobal("LCA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
@@ -113,6 +114,7 @@ IF ~~ THEN BEGIN LCAJoinFriend
 	SAY @39 /* ~Gladly, my friend.~ [BDCORP4] */
 	IF ~~ THEN
 	DO ~
+		ChangeAIScript("LCCORSCR", OVERRIDE)
 		SetGlobal("LCA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
@@ -294,6 +296,7 @@ IF ~~ THEN BEGIN LCAKissEnd
 	SAY @53 /* ~Gladly, my dear.~*/
 	IF ~~ THEN
 	DO ~
+		ChangeAIScript("LCCORSCR", OVERRIDE)
 		SetGlobal("LCA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT

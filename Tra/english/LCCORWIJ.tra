@@ -69,7 +69,14 @@
 @69 = ~Rats, slavers, thieves, the stench, all of it bothers me. Let's go.~
 @70 = ~I already told you, we're not making love in this dump.~ 
 @71 = ~You know what? Forget it. I'm not in the mood anymore. Let's go.~
-
+@72 = ~And look at the reflection of the moonlight on the river...~ [LCCORJ33]
+@73 = ~Come here, hero —~
+@74 = ~(You share a passionate embrace and kiss.)~
+@75 = ~Oh my... that's s-so romantic!~
+@76 = ~Ah, the lovers' embrace - the inspiration for many a playwright, myself included.~ 
+@77 = ~Gorion would be so happy for you, <CHARNAME>...~ 
+@78 = ~Let's go, love. We have work to do.~
+@79 = ~Gladly, my dear.~
 @83 = ~With your help, he will be, my friend. Let's go.~
 @84 = ~<CHARNAME>, do you have a moment?~
 @85 = ~Of course Schael, what's on your mind?~
@@ -83,7 +90,7 @@
 @93 = ~It wasn't. I miss her everyday. But I need to be here, with you. Irenicus must be punished for the crimes he has committed.~
 @94 = ~Schael... I... I didn't realize how much I needed you near me, until you were gone. Your being here, now, fills a void in my heart that I didn't know was there. I'd like for us to move past friendship, into a more serious relationship. I... I'm in love with you, Schael.~
 @95 = ~<CHARNAME>, I missed you too, dearly... I also want us to be more to eachother than what we are now. My heart broke when I read your letter. I keep thinking that if I'd left with you, you wouldn't have been captured, maybe Khalid and Dynaheir would still be alive, maybe —~
-@96 = ~Stop it, Schael. Don't blame yourself. There's nothing that you could have done to stop what happened; Irenicus set his trap perfectly. It's better that you were not with me when we were captured — I shudder to think what Irenicus would've done to you had you been captured as well. ~
+@96 = ~Stop it, Schael. You can't blame yourself for what happened. There's nothing that you could have done to stop it; Irenicus set his trap perfectly. It's better that you were not with me when we were captured — I shudder to think what Irenicus would've done to you had you been captured as well. ~
 @97 = ~Schael, what matters is that we are here, together, now.~
 @98 = ~Come here, hero.~
 @99 = ~Gladly, my dear.~
@@ -121,14 +128,13 @@
 @140 = ~(You notice Schael staring into the distance, with sadness in her eyes.)~
 @141 = ~Captain? Are you alright?~
 @142 = ~My love, are you alright?~
-@143 = ~(She snaps to attention)~
-@144 = ~(She snaps to attention)~
+@143 = ~(She snaps to attention.)~
+@144 = ~(She snaps to attention.)~
 @145 = ~About your daughter and father. I understand.~
-@149 = ~Rohma and your father. I understand.~
 @146 = ~Yes... You know, Rohma asks about you.~
 @147 = ~Really? I didn't think I'd made much of an impression on her.~
-@159 = ~Of course she does. I am the *ahem* hero of Baldur's Gate, after all.~
 @148 = ~She loves the teddy you bought for her. It's her favorite toy.~
+@149 = ~Rohma and your father. I understand.~
 @150 = ~Oh yes, I remember! I bought it at the general store, not long after I met her for the first time.~
 @151 = ~It was a simple gesture.. I didn't think it would mean that much to her.~
 @152 = ~That one small act of kindness was more than her father ever did for her.~
@@ -137,8 +143,10 @@
 @155 = ~She does. Listen, Schael — I'm fully aware of the responsibilities and challenges of being a step parent, and I want you to know that I welcome them.~
 @156 = ~I know you will. You step up to challenges instead of running from them. That's one of the reasons that I love you, <CHARNAME>. ~
 @157 = ~That one small act of kindness from you is more than her father ever did for her... thank you, <CHARNAME>.~
-@158 = ~Let's get moving.~
-@160 = ~(She rolls her eyes) A little humility from time to time wouldn't hurt. But yes, you did leave quite the impression on her.~
+@158 = ~Let's get moving, love.~
+
+@159 = ~Of course she does. I am the *ahem* hero of Baldur's Gate, after all.~
+@160 = ~(She rolls her eyes.)~
 @161 = ~You did.~
 
 @162 = ~<CHARNAME>, are you alright? You have a look of concern about you.~
@@ -179,7 +187,7 @@
 @197 = ~Thrix the Profane, if I remember correctly. Your soul was never in danger — I'd never let a demon like that outsmart me.~
 @198 = ~Still, it was quite a gamble. Next time risk your own damned soul, or better yet, don't play such high stakes games with demons, got it?~
 
-@199 = ~I've gone as far as I can. When you regain your senses, you can find me at the Copper Coronet.~
+@199 = ~I've gone as far as I can. When you regain your senses, you can find me at the Athkatla magistrate.~
 
 @200 = ~I'm not comfortable with this at all. When you come to your senses, you can find me at the Copper Coronet.~
 
@@ -245,7 +253,7 @@ Very nice. Your father will be proud.~
 @252 = ~Shh, lover. It's time for us to get some rest. Just know that this, and more, is what awaits you when we finally return home. I love you, <CHARNAME>.~
 @253 = ~I love you too, Schael.~
 @254 = ~(You kiss and embrace, and try to get some sleep. Eventually you give up, and the two of you make love several move times before mercifully succumbing to sheer exhaustion).~
-@255 = ~~
+@255 = ~No need to apologize. It must be difficult for you to be away from your family.~
 @256 = ~~
 @257 = ~~
 @258 = ~~ 
@@ -896,7 +904,7 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @952 = ~And you, Schael? How are you and Rohma adjusting to being together again?~
 @953 = ~It's been great... speaking of... look at the time. I should get going.~ 
 @954 = ~The stars are beautiful tonight... ~ [LCCORJ32]
-@72 = ~And look at the reflection of the moonlight on the river...~ [LCCORJ33]
+
 @955 = ~<CHARNAME>?~
 @956 = ~I was just remembering when we first met.~
 @957 = ~It is beautiful... but its beauty pales in comparison to your own, Schael.~
@@ -1260,12 +1268,13 @@ The harbor master provided you with the shipping manifests for a new company cal
 @1312 = ~I understand... it was a traumatic experience, for all of us.~ [LCA00002]
 @1313 = ~It's nothing... come on, let's go.~
 @1314 = ~I think about it, still. Not as much as I used to, but... it's scary to think how close you were to... how close we were to —~
+
 @1316 = ~I know, love. Come here.~ 
 @1317 = ~(You share a long and tender embrace.)~
 @1318 = ~Thank you, Schael... For believing in me, and for believing in us.~ 
 @1319 = ~We have each other... and we have Rohma. The new memories we make together will drown out those dark echoes. You'll see.~
 @1320 = ~Dark Circumstances
-You and Schael shared a tender moment; it seems that the two of you are still dealing with the trauma of your escape from the city. Together, with Rohma, you and Schael hope to make new memories to silence the dark echoes of your past.~ 
+Schael and I shared a tender moment; it seems that we are still dealing with the trauma of my escape from the city. Together, with Rohma, maybe we can make new memories to silence the dark echoes of my past.~ 
 @1321 = ~I look forward to it.~
 @1322 = ~Really, it's nothing. Let's get moving.~
 @1323 = ~It's as much yours, Schael, as it is mine. You could've killed me during my escape. Instead, you showed mercy.~
@@ -1390,4 +1399,4 @@ You and Schael shared a tender moment; it seems that the two of you are still de
 @1445 = ~And I'd rather you be open with me. Fine. Let's go.~
 @1446 = ~I'm sorry. I can't be a part of this any longer. If you ever clean up your act, come and see me.~
 @1447 = ~(You help her back to her feet. She appears to be in very bad shape. Her eyes are bloodshot, she's covered in sweat, and her skin is pale and cold to the touch.)~ 
-@1448 = ~~
+@1448 = ~I want you to know that I greatly appreciate your friendship. And I don't want to do anything to jeopardize that. But...~

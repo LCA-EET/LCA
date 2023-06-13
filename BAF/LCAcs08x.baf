@@ -2,9 +2,14 @@ IF
 	True()
 THEN
 	RESPONSE #100
-		CutSceneId(Player1)
+		CutSceneId("LCCORWIN")
+		
+		FadeToColor([30.0],0)
+		DropInventory()
+		MoveGlobal("BG2627","LCCORWIN",[2565.1677])
+		GiveItemCreate("LCCORBOD", Player1, 0,0,0)
+		
 		ZoomLock(FALSE)
-		//RestorePartyLocations()
 		FadeFromColor([30.0],0)
 		EndCutSceneMode()
 END

@@ -1,15 +1,3 @@
-//{ #region  J Dialog Testing
-IF
-	Global("LCA_J34Test", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("LCA_J34Test", "GLOBAL", 0)
-		SetGlobal("LCA_CorwinBit", "GLOBAL", 8)
-		Wait(1)
-		StartDialog("LCCORWIJ", Player1)
-END
-//} #endregion
-
 IF 
 	InParty(Myself)
 	Global("LCA_CorwinEETCheck", "GLOBAL", 0)

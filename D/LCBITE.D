@@ -168,7 +168,7 @@ APPEND ~C6BODHI~
 		GOTO LCA1 //Schael is still alive
 		
 		IF ~
-			Global("LCA_CorwinDiedFromBite", "GLOBAL", 1)
+			GlobalGT("LCA_CorwinDiedFromBite", "GLOBAL", 0)
 		~ THEN REPLY @7 /* ~I will avenge what you have done to me, Schael and Imoen. You will pay for your crimes.~ */
 		GOTO LCA2 //Schael is dead due to Bodhi's bite
 		
