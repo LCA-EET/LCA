@@ -2774,13 +2774,14 @@ THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself, ~DEBUG_135~)
 		SetInterrupt(FALSE)
+		LeaveParty()
 		SetLeavePartyDialogFile()
+		ChangeAIScript("",DEFAULT)
 		ChangeAIScript("",OVERRIDE)
 		ChangeAIScript("LCCORHEX",SPECIFICS)
-		LeaveParty()
-		
 		
 		ActionOverride("Hexxat", LeaveParty())
+		ActionOverride("Hexxat", SetLeavePartyDialogFile())
 		ActionOverride("Hexxat", ChangeAIScript("",DEFAULT))
 		ActionOverride("Hexxat", ChangeAIScript("useitem",GENERAL))
 		ActionOverride("Hexxat", ChangeAIScript("LCHEXCOR",SPECIFICS))

@@ -15,8 +15,10 @@ THEN
 		SetInterrupt(FALSE)
 		LeaveParty()
 		SetLeavePartyDialogFile()
+		ChangeAIScript("",DEFAULT)
 		ChangeAIScript("useitem",GENERAL)
 		ChangeAIScript("LCCORHEX",SPECIFICS)
 		SetGlobal("LCA_HostileHexxat", "LOCALS", 2)
+		
 		SetInterrupt(TRUE)
 END

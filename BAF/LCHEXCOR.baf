@@ -1,4 +1,19 @@
 IF
+	HasItemEquiped("ohhexam4",Myself)  // Hexxat's Amulet
+	Global("LCA_CorwinHexxatFight", "GLOBAL", 1)
+	!InParty(Myself)
+THEN
+	RESPONSE #100
+		SetGlobal("OHH_hexxatfightdead","GLOBAL",1)
+		ActionOverride(Player1,DestroyItem("ohhbag"))  // Dragomir's Respite
+		ActionOverride(Player2,DestroyItem("ohhbag"))  // Dragomir's Respite
+		ActionOverride(Player3,DestroyItem("ohhbag"))  // Dragomir's Respite
+		ActionOverride(Player4,DestroyItem("ohhbag"))  // Dragomir's Respite
+		ActionOverride(Player5,DestroyItem("ohhbag"))  // Dragomir's Respite
+		ActionOverride(Player6,DestroyItem("ohhbag"))  // Dragomir's Respite
+		EscapeAreaDestroy(3)
+END
+IF
 	Dead("LCCORWIN")  
 	Global("LCA_CorwinHexxatFight","GLOBAL",1)
 THEN

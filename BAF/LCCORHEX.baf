@@ -1,3 +1,14 @@
+/*
+IF
+	!Global("LCA_ReportCHSet", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself, ~LCCORHEX Script Set~)
+		SetGlobal("LCA_ReportCHSet", "LOCALS", 1)
+		Continue()
+END
+*/
+
 IF
 	HasItem("POTN08",Myself)  // Potion of Healing
 	HPPercentLT(Myself,80)
@@ -513,6 +524,7 @@ THEN
 END
 
 IF
+	!Name("LCCORWIN", Myself)
 	AttackedBy([ANYONE],DEFAULT)
 THEN
 	RESPONSE #100
@@ -521,6 +533,7 @@ THEN
 END
 
 IF
+	!Name("LCCORWIN", Myself)
 	See("hexxat")  // Hexxat
 	Range("hexxat",10)  // Hexxat
 THEN
@@ -530,12 +543,33 @@ THEN
 END
 
 IF
+	!Name("LCCORWIN", Myself)
 	See("hexxat")  // Hexxat
 	!Range("hexxat",10)  // Hexxat
 THEN
 	RESPONSE #100
 		EquipRanged()
 		AttackReevaluate("hexxat",30)  // Hexxat
+END
+
+IF
+	Name("LCCORWIN", Myself)
+	See("hexxat")
+	CanEquipRanged()
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate("hexxat",30)
+END
+
+IF
+	Name("LCCORWIN", Myself)
+	See("hexxat")
+	!CanEquipRanged()
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate("hexxat",30)
 END
 
 IF
@@ -560,6 +594,7 @@ THEN
 		ChangeAIScript("BDFIGH01",GENERAL)
 		ChangeAIScript("",SPECIFICS)
 		SetGlobal("LCA_CorwinHexxatFight", "GLOBAL", 2)
+		DestroyItem("ohhbag") 
 		JoinParty()
 END
 
