@@ -58,12 +58,12 @@
 @58 = ~(Kiss her) I look forward to that day.~
 @59 = ~(Kiss her) Why wait?~
 @60 = ~Mm. As much as I want to, this is hardly the time or place, and duty must come before pleasure. Let's go love. We have work to do.~
-@61 = ~Mm, is that an order, hero? (She smiles, and places her arms around your shoulders) Gods know it's been too long already.~
+@61 = ~Mm, is that an order, hero?~
 @62 = ~Let's find some place more private, shall we? ~
 @63 = ~What did you have in mind?~
 @64 = ~The street in mid-day, or perhaps the amphitheater. Gods, what do you think? There are plenty of inns in the city, pick one!~
 @65 = ~Come with me love, I know just the place. (You resolve to pay for a room at one of the nearby inns.)~
-@66 = ~When I said some place more private, I didn't mean this dump. It's filthy. Let's go to one of the better establishments in the city.~
+@66 = ~When I said to get us a room, I didn't mean this dump. It's filthy. Let's go to one of the cleaner establishments in the city.~
 @67 = ~Right... sorry, love.~
 @68 = ~The rats bother you, eh?~
 @69 = ~Rats, slavers, thieves, the stench, all of it bothers me. Let's go.~
@@ -89,9 +89,9 @@
 @92 = ~But not you. Schael, your belief in my innocence was what kept me going. I want you to know that. I also want you to know that I appreciate dearly your being here. It couldn't have been easy for you to leave Rohma.~
 @93 = ~It wasn't. I miss her everyday. But I need to be here, with you. Irenicus must be punished for the crimes he has committed.~
 @94 = ~Schael... I... I didn't realize how much I needed you near me, until you were gone. Your being here, now, fills a void in my heart that I didn't know was there. I'd like for us to move past friendship, into a more serious relationship. I... I'm in love with you, Schael.~
-@95 = ~<CHARNAME>, I missed you too, dearly... I also want us to be more to eachother than what we are now. My heart broke when I read your letter. I keep thinking that if I'd left with you, you wouldn't have been captured, maybe Khalid and Dynaheir would still be alive, maybe —~
-@96 = ~Stop it, Schael. You can't blame yourself for what happened. There's nothing that you could have done to stop it; Irenicus set his trap perfectly. It's better that you were not with me when we were captured — I shudder to think what Irenicus would've done to you had you been captured as well. ~
-@97 = ~Schael, what matters is that we are here, together, now.~
+@95 = ~<CHARNAME>, I missed you too, dearly... and I've been thinking about this for a long time. I also want us to be more to eachother than what we are now.~
+@96 = ~Stop it, Schael. You can't blame yourself for what happened. There's nothing that you could have done to stop it; Irenicus set his trap perfectly. It's better that you were not with me when we were captured — I shudder to think what Irenicus would've done to you had you been captured as well.~
+@97 = ~Schael, forget the past. What matters is that we are here together, now.~
 @98 = ~Come here, hero.~
 @99 = ~Gladly, my dear.~
 @100 = ~My love, do you have a moment?~
@@ -102,9 +102,17 @@
 @105 = ~I've been looking forward to that day... more than you know. Let's go, love.~
 @106 =  ~(You share a passionate embrace and kiss)~
 @107 = ~Not now.~
+@108 = ~(She smiles, and places her arms around your shoulders.)~
+@109 = ~Gods know it's been too long already.~
+@110 = ~Not right now.~
+@111 = ~I know you have a lot on your mind, but surely, you can spare a minute.~
+@112 = ~Fine, what is it?~
+@113 = ~Like I said, I'm busy.~
+@114 = ~Fine. Sorry to have bothered you.~
 @115 = ~Gladly, my dear. [LCCORJ13]
 
 (You slide over so there is enough room on the bed for the two of you. When she climbs in, you kiss and rest in eachother's embrace.)~ 
+@116 = ~It's nothing... Let's go.~
 @117 = ~You're a poor example of a parent.~
 @118 = ~You think I don't want to be home with my daughter and father? ~
 @119 = ~I'm here to fulfil my duties to <CHARNAME>, the Grand Dukes, and the Flaming Fist. If you knew anything about duty or responsibility, you would understand.~
@@ -112,7 +120,12 @@
 @121 = ~Well, we don't all grow up in wealthy households. Some of us have to work to support their family, instead of playing dress up as a knight in shining armor.~ 
 @122 = ~I beg your pardon?~ 
 @123 = ~I think you heard me quite clearly. Let's move out.~ [LCCORB21]
-
+@124 = ~(She's momentarily taken aback.)~
+@125 = ~My... my heart broke when I read your letter. I keep thinking that if I'd left with you, you wouldn't have been captured, maybe Khalid and Dynaheir would still be alive, maybe —~
+@126 = ~~
+@127 = ~~
+@128 = ~~
+@129 = ~~
 @130 = ~<CHARNAME>. We need to talk.~
 @131 = ~What is it, Captain?~
 @132 = ~Of course love, what's on your mind?~
@@ -149,7 +162,7 @@
 @160 = ~(She rolls her eyes.)~
 @161 = ~You did.~
 
-@162 = ~<CHARNAME>, are you alright? You have a look of concern about you.~
+@162 = ~Are you alright, hon? You've a look of concern about you.~
 @163 = ~Yes love, I'm fine. I was just thinking about some of the places and people we've seen...~
 @164 = ~Before I was exiled, I remember the city was still struggling with the refugee crisis. Have the Dukes had any success in resettling the refugees?~
 @165 = ~Yes, at least those whose homes were not completely destroyed by the crusade. Many still need to be resettled.~
@@ -199,13 +212,13 @@
 @205 = ~I will be. What he said about Rohma...~
 @206 = ~I wouldn't worry about it. He was just trying to rattle you.~
 @207 = ~Whatever his intentions, it doesn't matter now. He's dead, and the world is a better place for it.~
-@208 = ~You're right, my love. (She calms down) Let's get going.~
-@209 = ~You're right. (She calms down) Let's get going.~ 
+@208 = ~You're right...~
+@209 = ~Let's get going.~ 
 
 @210 = ~(Her hands tremble with anger.)~
 @211 = ~What kind of monster could murder one child, let alone dozens?~
-@212 = ~~
-@213 = ~~
+@212 = ~(She calms down.)~
+@213 = ~Let's get going, love.~
 @214 = ~Thank you.~
 
 @215 = ~What does Irenicus gain from a war between the surface elves and the drow? There must be a reason.~
@@ -310,7 +323,7 @@ Very nice. Your father will be proud.~
 @309 = ~Right.. let's get going.~
 @310 = ~Heh. I'm sure there's plenty more where that came from.~
 @311 = ~Get dressed, love. It's time to leave.~
-
+@312 = ~What is it, Major?~
 @320 = ~This room is perfect.~ 
 @321 = ~(She turns to you.)~
 @322 = ~(Install the LCA_Explicit mod to see this content.)~
@@ -320,8 +333,8 @@ Very nice. Your father will be proud.~
 @326 = ~Schael, you were incredible, I - I can't even —~
 @364 = ~The others are waiting. Let's go, love.~
 @365 = ~It's time to head out. Let's go, love.~
-@366 = ~You and Schael made love for the first time. You feel revitalized — it was an amazing, extremely passionate experience that the two of you will remember for as long as you live.~
-@367 = ~My dear... as much as I want you to make love to me...~
+@366 = ~Schael and I made love for the first time. I feel revitalized — it was an amazing, extremely passionate experience that the two of us will remember for as long as we live.~
+@367 = ~My dear... as much as I'd love to sleep with you...~
 @368 = ~You really need to have those wounds looked at first.~
 @369 = ~I really need to have these wounds looked at first.~
 @370 = ~This bite... I'm not feeling well *cough* at all.~
@@ -342,7 +355,7 @@ Very nice. Your father will be proud.~
 @385 = ~Let's not let our mission, our duties, get in the way of...~
 @386 = ~I want you, <CHARNAME>. I want you to make love to me.~
 @387 = ~But, I thought you wanted to wait until we returned home, to Baldur's Gate.~
-@388 = ~I agree wholeheartedly. (You smile broadly, and kiss her.)~  
+@388 = ~I agree wholeheartedly.~  
 @389 = ~It wasn't that I didn't want to. I do want to. It's just that I've always put my duty ahead of my own desires.~
 @390 = ~Let me be perfectly clear. I want you, <CHARNAME>. I want you to make love to me.~
 @391 = ~Are you saying what I think you're saying?~
@@ -541,7 +554,7 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @581 = ~You — gnome! Get out of here before I change my mind!~
 @582 = ~(She delivers a swift, powerful kick to his behind.)~
 @583 = ~(Keep quiet.)~
-@601 = ~Schael shared a number of submission and other hand-to-hand techniques with you to improve your effectiveness in combat. You also gained some valuable insight into who's really in charge, at least when it comes to bedroom 'activities'.~
+@601 = ~Schael shared a number of submission and other hand-to-hand techniques with me to improve my effectiveness in combat. I also gained some valuable insight into who's really in charge, at least when it comes to certain activities in the bedroom.~
 @602 = ~(You end up making love again before finally falling asleep.)~
 @603 = ~Something bothering you?~
 @604 = ~What manner of creature is imprisoned here?~  

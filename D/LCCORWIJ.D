@@ -3213,12 +3213,12 @@ IF ~~ THEN BEGIN LCA_OPT1RomanceEnd
 END
 //} #endregion
 
-//{ #region Neb Dead - Dialog J-43
+//{ #region Neb Dead - Dialog J-42
 IF ~
 	InParty(Myself)
 	Global("LCA_NebDead", "GLOBAL", 1)
 ~ THEN BEGIN LCA_NebDead
-	SAY @202 /* ~He's dead. (Her hands tremble in anger) What kind of monster could murder one child, let alone dozens?~ */
+	SAY @202 /* ~He's dead. */
 	=@210 /*~(Her hands tremble with anger.)~*/
 	=@211 /*~What kind of monster could murder one child, let alone dozens?~*/
 	IF ~
@@ -3263,7 +3263,12 @@ IF ~~ THEN BEGIN LCA60
 END
 
 IF ~~ THEN BEGIN LCA61
-	SAY @208 /* ~You're right, my love. (She calms down) Let's get going.~ */
+	SAY @208 /* ~You're right...*/
+	
+	= @212 /* ~(She calms down.)~ */
+	
+	= @213 /* ~Let's get going, love.~ */
+	
 	IF ~~ THEN
 	DO ~
 		SetGlobal("LCA_NebDead", "GLOBAL", 2)
@@ -3272,7 +3277,12 @@ IF ~~ THEN BEGIN LCA61
 END
 
 IF ~~ THEN BEGIN LCA62
-	SAY @209 /* ~You're right. (She calms down) Let's get going.~  */
+	SAY @208 /* ~You're right...*/
+	
+	= @212 /* ~(She calms down.)~ */
+	
+	= @209 /* ~Let's get going.~ */
+	
 	IF ~~ THEN
 	DO ~
 		SetGlobal("LCA_NebDead", "GLOBAL", 2)
@@ -3345,7 +3355,6 @@ END
 IF ~
 	Global("LCA_CorwinSex_1", "GLOBAL", 3)
 	NumInPartyGT(2)
-	AreaCheck("LCAcs10")
 ~ THEN BEGIN LCA_CorwinAfterSexAmnGT2
 	SAY @364 /* ~The others are waiting. Let's go, love.~ */
 
@@ -3432,14 +3441,14 @@ END
 
 //{ #region Corwin Sex 2 Timer Initial - Dialog J-46 - Tested 2023-04-17
 IF ~
-	GlobalTimerExpired("LCA_CorwinSex_2_Timer", "GLOBAL")
-	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
+	Global("LCA_CorwinSex2_Init", "GLOBAL", 1)
 	//play romance song
 ~ THEN BEGIN LCA_CorwinSexSecond
 	SAY @529 /* ~I've been watching you, love, and of late I don't like what I see.~ [LCCORJ10] */
 	
 	IF ~~ THEN REPLY @530 /* ~What? I don't understand.~ */
 	DO ~
+		SetGlobal("LCA_CorwinSex2_Init", "GLOBAL", 2)
 		SetGlobal("LCA_CorwinSex_2", "GLOBAL", 2)
 	~
 	GOTO LCA_CorwinSexSecond2
@@ -3522,7 +3531,7 @@ IF ~
 
 	IF ~~ THEN
 	DO ~
-		SetGlobal("LCA_CorwinSex_2", "GLOBAL", 4)
+		SetGlobal("LCA_CorwinSex_2", "GLOBAL", 5)
 		ChangeStat(Player1,DEX,1,ADD)
 		AddJournalEntry(@601, INFO)
 		AddXPObject(Player1, 125000)
@@ -3535,7 +3544,7 @@ END
 
 //{ Dialog J-49
 IF ~
-	Global("LCA_CorwinSex_2", "GLOBAL", 3)
+	Global("LCA_CorwinSex_2", "GLOBAL", 4)
 	!NumInPartyGT(2)
 	AreaCheck("LCAcs10")
 ~ THEN BEGIN LCA_CorwinSexSecondAfterLT3
@@ -3543,7 +3552,7 @@ IF ~
 
 	IF ~~ THEN
 	DO ~
-		SetGlobal("LCA_CorwinSex_2", "GLOBAL", 4)
+		SetGlobal("LCA_CorwinSex_2", "GLOBAL", 5)
 		ChangeStat(Player1,DEX,1,ADD)
 		AddJournalEntry(@601, INFO)
 		AddXPObject(Player1, 125000)
@@ -3688,8 +3697,6 @@ END
 //{ #region Corwin Intimate Bodhi - Dialog J-51
 IF ~
 	Global("LCA_CorwinSexAfterBodhi", "GLOBAL", 1)
-	GlobalLT("LCA_TimesHadSex", "GLOBAL", 1)
-	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
 	//play romance song
 ~ THEN BEGIN LCA_CorwinWantsSex
 	SAY @374 /* ~My love... do you have a moment?~ */
@@ -3799,21 +3806,23 @@ END
 //{ #region Corwin Cheap Date - Dialog J-52
 
 IF ~
-	Global("LCA_CorwinSex_1", "GLOBAL", 1)
-	Global("LCA_SleepInn", "GLOBAL", 1)
-	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
-	AreaCheck("AR0406")
-	!Global("LCA_CorwinSexFirstComplain", "GLOBAL", 1)
+	Global("LCA_CorwinComplainSex", "GLOBAL", 1)
+	GlobalLT("LCA_CorwinComplainSexCount", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinSexCC
 	SAY @66 /* ~When I said some place more private, I didn't mean this dump. It's filthy. Let's go to one of the better establishments in the city.~ */
 	
 	IF ~~ THEN REPLY @67 /* ~Right... sorry, love.~ */
 	DO ~
-		SetGlobal("LCA_CorwinSexFirstComplain", "GLOBAL", 1)
+		IncrementGlobal("LCA_CorwinComplainSexCount", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinComplainSex", "GLOBAL", 0)
 	~
 	EXIT
 
-	IF ~~ THEN REPLY @68 /* ~Rats, slavers, thieves, the stench, all of it bothers me. Let's go.~ */
+	IF ~~ THEN REPLY @68 /* ~The rats bother you, eh?~ */
+	DO ~
+		IncrementGlobal("LCA_CorwinComplainSexCount", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinComplainSex", "GLOBAL", 0)
+	~
 	GOTO LCA_CorwinSexCC2
 END
 
@@ -3821,26 +3830,40 @@ IF ~~ THEN BEGIN LCA_CorwinSexCC2
 	SAY @69 /* ~Rats, slavers, thieves, the stench, all of it bothers me. Let's go.~ */
 	
 	IF ~~ THEN REPLY @67 /* ~Right... sorry, love.~ */
-	DO ~
-		SetGlobal("LCA_CorwinSexFirstComplain", "GLOBAL", 1)
-	~
 	EXIT
 END
 
-//{ Dialog J-53
+//{ Dialog J-53A
 IF ~
+	Global("LCA_CorwinComplainSex", "GLOBAL", 1)
+	Global("LCA_CorwinComplainSexCount", "GLOBAL", 1)
 	Global("LCA_CorwinSex_1", "GLOBAL", 1)
-	Global("LCA_SleepInn", "GLOBAL", 1)
-	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
-	AreaCheck("AR0406")
-	Global("LCA_CorwinSexFirstComplain", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinSexCC3
 	SAY @70 /* ~I already told you, we are not making love in this dump.~ */
 	= @71 /*  ~You know what? Forget it. I'm not in the mood anymore. Let's go.~ */
 	IF ~~ THEN
 	DO ~
 		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 5)
-		SetGlobal("LCA_CorwinSexFirstComplain", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinComplainSex", "GLOBAL", 0)
+		SetGlobal("LCA_CorwinComplainSexCount", "GLOBAL", 0)
+	~
+	EXIT
+END
+//}
+
+//{ Dialog J-53B
+IF ~
+	Global("LCA_CorwinComplainSex", "GLOBAL", 1)
+	Global("LCA_CorwinComplainSexCount", "GLOBAL", 1)
+	Global("LCA_CorwinSex_2", "GLOBAL", 2)
+~ THEN BEGIN LCA_CorwinSexCC3
+	SAY @70 /* ~I already told you, we are not making love in this dump.~ */
+	= @71 /*  ~You know what? Forget it. I'm not in the mood anymore. Let's go.~ */
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_CorwinSex_2", "GLOBAL", 5)
+		SetGlobal("LCA_CorwinComplainSex", "GLOBAL", 0)
+		SetGlobal("LCA_CorwinComplainSexCount", "GLOBAL", 0)
 	~
 	EXIT
 END
@@ -3866,12 +3889,14 @@ END
 //{ #region Brevlik Arrested - Dialog J-54
 IF ~
 	Global("LCA_BrevlikArrested", "GLOBAL", 1)
-	!Global("LCA_GoBackHOW", "GLOBAL", 1)
+	!Global("LCA_GoBackHOW", "LOCALS", 1)
 ~ THEN BEGIN LCA_BrevlikArrested
 	SAY @538 /* ~Brevlik, your advocate will be with your shortly. <CHARNAME> — we better head back to the Hall of Wonders.~ */
 	
 	IF ~~ THEN 
-	
+	DO ~
+		SetGlobal("LCA_GoBackHOW", "LOCALS", 1)
+	~
 	EXIT
 END
 //} #endregion
@@ -3933,12 +3958,12 @@ IF ~
 	Global("LCA_TryToSleep", "GLOBAL", 1)
 	OR(5)
 		Global("LCA_CorwinSex_1", "GLOBAL", 1)
-		Global("LCA_CorwinSex_2", "GLOBAL", 1)
+		Global("LCA_CorwinSex_2", "GLOBAL", 2)
 		Global("LCA_CorwinSex_3", "GLOBAL", 1)
 		Global("LCA_CorwinSex_4", "GLOBAL", 1)
 		Global("LCA_CorwinSex_5", "GLOBAL", 1)
 ~ THEN BEGIN LCA_CorwinCantHaveSex
-	SAY @367 /* ~My dear... as much as I want you to make love to me...~ */
+	SAY @367 /* ~My dear... as much as I'd love to sleep with you...~*/
 	IF ~
 		GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
 	~ THEN
@@ -4000,6 +4025,7 @@ IF ~
 	IF ~~ THEN
 	DO ~
 		SetGlobal("LCA_Banter_CorwinHexxat", "GLOBAL", 7)
+		SetGlobal("LCA_CorwinHexxatFight", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -4027,7 +4053,6 @@ END
 
 //{ Dialog J-59
 IF ~
-	InParty(Myself)
 	Global("LCA_Banter_CorwinHexxat", "GLOBAL", 2)
 	IsValidForPartyDialogue("Hexxat")
 ~ THEN BEGIN LCA_CorwinHexxat1
@@ -4040,7 +4065,14 @@ IF ~
 	
 	IF ~
 		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("LCA_CorwinPromoted", "GLOBAL", 1)
 	~ THEN REPLY @131 /*  ~What is it, Captain?~*/
+	GOTO LCA38
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("LCA_CorwinPromoted", "GLOBAL", 1)
+	~ THEN REPLY @312 /*  What is it, Major?~*/
 	GOTO LCA38
 END
 
@@ -4048,39 +4080,52 @@ END
 
 //{ Dialog J-60
 IF ~
-	InParty(Myself)
 	Global("LCA_Banter_CorwinPlayer", "GLOBAL", 4)
-	See(Player1)
 	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	// play romance song
 ~
 THEN BEGIN LCA_CorwinPlayerBant2A
-	SAY @162 /* ~My love, are you alright? You have a look of concern about you.~ */
+	SAY @162 /*~Are you alright, hon? You've a look of concern about you.~ */
 	
 	IF ~~ THEN REPLY @163 /* ~Yes love, I am fine. I was just thinking about some of the places and people we've seen...~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 5)
+	~
 	GOTO LCA48 //OK
+	
+	IF ~~ THEN REPLY @116 /* ~It's nothing... Let's go.~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 5)
+	~
+	EXIT
 END
 
 //}
 
 //{ Dialog J-61
 IF ~
-	InParty(Myself)
 	Global("LCA_Banter_CorwinPlayer", "GLOBAL", 4)
-	See(Player1)
 	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 ~
 THEN BEGIN LCA_CorwinPlayerBant2B
 	SAY @188 /* ~<CHARNAME>, are you alright? You have a look of concern about you.~ */
 	
 	IF ~~ THEN REPLY @167 /* ~Yes Schael, I am fine. I was just thinking about some of the places and people we've seen...~ */ 
+	DO ~
+		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 5)
+	~
 	GOTO LCA48 //OK
+	
+	IF ~~ THEN REPLY @116 /* ~It's nothing... Let's go.~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 5)
+	~
+	EXIT
 END
 //}
 
 //{ Dialog J-62
 IF ~
-	InParty(Myself)
 	Global("LCA_Banter_CorwinPlayer", "GLOBAL", 2)
 	Global("LCA_CorwinContinue", "GLOBAL", 1) //Friend
 	//play romance song
@@ -4088,13 +4133,41 @@ IF ~
 THEN BEGIN LCA_SkieMessageDelivered_Friend
 	SAY @84 /* ~<CHARNAME>, do you have a moment?~ */
 	IF ~~ THEN REPLY @85 /* ~Of course Schael, what's on your mind?~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 3)
+	~
 	GOTO LCA31
+	
+	IF ~~ THEN REPLY @110 /* ~Not right now.~*/
+	DO ~
+		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 3)
+	~
+	GOTO LCA31A
 END
 //}
 
+IF ~~ THEN BEGIN LCA31A
+	SAY @111 /* ~I know you have a lot on your mind, but surely, you can spare a minute.~*/
+	
+	IF ~~ THEN REPLY @112 /* ~Fine, what is it?~*/
+	GOTO LCA31
+	
+	IF ~~ THEN REPLY @113 /* ~Like I said, I'm busy.~ */
+	GOTO LCA31B
+END
+
+IF ~~ THEN BEGIN LCA31B
+	SAY @114 /* ~Fine. Sorry to have bothered you.~*/
+	
+	IF ~~ THEN
+	DO ~
+		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", -2)
+	~
+	EXIT
+END
+
 //{ Dialog J-63
 IF ~
-	InParty(Myself)
 	Global("LCA_Banter_CorwinPlayer", "GLOBAL", 2)
 	Global("LCA_CorwinContinue", "GLOBAL", 2) //Romance
 	//play romance song
@@ -4102,7 +4175,16 @@ IF ~
 THEN BEGIN LCA_SkieMessageDelivered_Romance
 	SAY @100 /* ~My love, do you have a moment?~ */
 	IF ~~ THEN REPLY @101 /* ~Of course dear, what's on your mind?~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 3)
+	~
 	GOTO LCA31
+	
+	IF ~~ THEN REPLY @110 /* ~Not right now.~*/
+	DO ~
+		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 3)
+	~
+	GOTO LCA31A
 END
 //}
 
@@ -4438,11 +4520,14 @@ IF ~~ THEN BEGIN LCA29
 END
 
 IF ~~ THEN BEGIN LCA30A
-	SAY @61 /* ~Mm, is that an order, hero? (She smiles, and places her arms around your shoulders) Gods know it's been too long already. ~ */
+	SAY @61 /* ~Mm, is that an order, hero?~ */
+	
+	= @108 /* ~(She smiles, and places her arms around your shoulders.)~ */
+	
+	= @109 /* ~Gods know it's been too long already.~ */
+	
 	IF ~~ THEN
 	GOTO LCA29
-	
-	
 END
 
 IF ~~ THEN BEGIN LCA30B
@@ -4517,7 +4602,6 @@ IF ~~ THEN BEGIN LCA34A // friend
 	
 	IF ~~ THEN REPLY @83 /*  ~With your help, he will be, my friend. Let's go.~ */
 	DO ~
-		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 3)
 		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 3)
 		SetPlayerSound(Myself,268282,SELECT_ACTION6)
 	~
@@ -4525,7 +4609,6 @@ IF ~~ THEN BEGIN LCA34A // friend
 	
 	IF ~~ THEN REPLY @94 /*  ~Schael... I... I didn't realize how much I needed you near me, until you were gone. Your being here, now, fills a void in my heart that I did not know was there. I would like for us to move past friendship, into a more serious relationship. I... am in love with you, Schael.~*/
 	DO ~
-		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 3)
 		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
 		SetGlobal("LCA_CorwinLoveBG2", "GLOBAL", 1)
 	~
@@ -4543,12 +4626,16 @@ IF ~~ THEN BEGIN LCA34B // romance
 END
 
 IF ~~ THEN BEGIN LCA35
-	SAY @95 /* ~<CHARNAME>, I missed you too, dearly... I also want us to be more to eachother than what we are now. My heart broke when I read your letter. I keep thinking that if I had left with you, you wouldn't have been captured, maybe Khalid and Dynaheir would still be alive, maybe - ~*/
+	SAY @124 /* ~(She's momentarily taken aback.)~ */
 	
-	IF ~~ THEN REPLY @96 /* ~Stop it, Schael. Do not blame yourself. There is nothing that you could have done to stop what happened; Irenicus set his trap perfectly. It's better that you were not with me when we were captured - I shudder to think what Irenicus would have done to you, had you been captured as well. ~ */
+	= @95 /*  ~<CHARNAME>, I missed you too, dearly... and I've been thinking about this for a long time. I also want us to be more to eachother than what we are now.~*/
+	
+	= @125 /* ~My... my heart broke when I read your letter. I keep thinking that if I'd left with you, you wouldn't have been captured, maybe Khalid and Dynaheir would still be alive, maybe —~ */
+	
+	IF ~~ THEN REPLY @96 /* ~Stop it, Schael. You can't blame yourself for what happened. There's nothing that you could have done to stop it; Irenicus set his trap perfectly. It's better that you were not with me when we were captured — I shudder to think what Irenicus would've done to you had you been captured as well.~*/
 	GOTO LCAKiss
 	
-	IF ~~ THEN REPLY @97 /* ~Schael, what matters is that we are here, together, now.~ */
+	IF ~~ THEN REPLY @97 /*  ~Schael, forget the past. What matters is that we are here together, now.~ */
 	GOTO LCAKiss
 END
 
@@ -4753,9 +4840,6 @@ IF ~~ THEN BEGIN LCA48A
 			Global("LCA_AskedAboutDSFriends", "LOCALS", 1)
 			Global("LCA_AskedAboutRefugees", "LOCALS", 1)
 	~ THEN REPLY @171 /* ~That's enough reminiscing, for now. Let's get going, love.~ */
-	DO ~
-		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 5)
-	~
 	EXIT
 	
 	IF ~
@@ -4767,9 +4851,6 @@ IF ~~ THEN BEGIN LCA48A
 			Global("LCA_AskedAboutRefugees", "LOCALS", 1)
 	~ 
 	THEN REPLY @171 /* ~That's enough reminiscing, for now. Let's get going, Schael.~ */
-	DO ~
-		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 5)
-	~
 	EXIT
 END
 
@@ -4891,9 +4972,6 @@ IF ~~ THEN BEGIN LCA52
 			Global("LCA_AskedAboutDSFriends", "LOCALS", 1)
 			Global("LCA_AskedAboutRefugees", "LOCALS", 1)
 	~ THEN REPLY @171 /* ~That's enough reminiscing, for now. Let's get going, love.~ */
-	DO ~
-		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 5)
-	~
 	EXIT
 	
 	IF ~
@@ -4903,9 +4981,6 @@ IF ~~ THEN BEGIN LCA52
 			Global("LCA_AskedAboutDSFriends", "LOCALS", 1)
 			Global("LCA_AskedAboutRefugees", "LOCALS", 1)
 	~ THEN REPLY @171 /* ~That's enough reminiscing, for now. Let's get going, Schael.~ */
-	DO ~
-		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 5)
-	~
 	EXIT
 END
 
@@ -4926,9 +5001,6 @@ IF ~~ THEN BEGIN LCA53
 			Global("LCA_AskedAboutDSFriends", "LOCALS", 1)
 			Global("LCA_AskedAboutRefugees", "LOCALS", 1)
 	~ THEN REPLY @171 /* ~That's enough reminiscing, for now. Let's get going, love.~ */
-	DO ~
-		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 5)
-	~
 	EXIT
 	
 	IF ~
@@ -4938,9 +5010,6 @@ IF ~~ THEN BEGIN LCA53
 			Global("LCA_AskedAboutDSFriends", "LOCALS", 1)
 			Global("LCA_AskedAboutRefugees", "LOCALS", 1)
 	~ THEN REPLY @171 /* ~That's enough reminiscing, for now. Let's get going, Schael.~ */
-	DO ~
-		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 5)
-	~
 	EXIT
 END
 
@@ -4990,9 +5059,6 @@ IF ~~ THEN BEGIN LCA55
 			Global("LCA_AskedAboutDSFriends", "LOCALS", 1)
 			Global("LCA_AskedAboutRefugees", "LOCALS", 1)
 	~ THEN REPLY @171 /* ~That's enough reminiscing, for now. Let's get going, love.~ */
-	DO ~
-		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 5)
-	~
 	EXIT
 	
 	IF ~
@@ -5002,9 +5068,6 @@ IF ~~ THEN BEGIN LCA55
 			Global("LCA_AskedAboutDSFriends", "LOCALS", 1)
 			Global("LCA_AskedAboutRefugees", "LOCALS", 1)
 	~ THEN REPLY @171 /* ~That's enough reminiscing, for now. Let's get going, Schael.~ */
-	DO ~
-		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 5)
-	~
 	EXIT
 END
 
@@ -5025,9 +5088,6 @@ IF ~~ THEN BEGIN LCA56
 			Global("LCA_AskedAboutDSFriends", "LOCALS", 1)
 			Global("LCA_AskedAboutRefugees", "LOCALS", 1)
 	~ THEN REPLY @171 /* ~That's enough reminiscing, for now. Let's get going, Schael.~ */
-	DO ~
-		SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 5)
-	~
 	EXIT
 END
 

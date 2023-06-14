@@ -1,12 +1,4 @@
 IF
-	!Global("LCA_Override", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("LCA_Override", "GLOBAL", 1)
-		Continue()
-END
-
-IF
 	GlobalTimerExpired("LCA_STtoBG","GLOBAL") // see MBREGA.d state M34
 	!Global("LCA_CS03_Done", "GLOBAL", 1)
 	OR(2)
@@ -109,12 +101,14 @@ THEN
 END
 
 IF 
-	Global("LCA_CorwinSex_1", "GLOBAL", 1)
+	OR(2)
+		Global("LCA_CorwinSex_1", "GLOBAL", 1)
+		Global("LCA_CorwinSex_2", "GLOBAL", 2)
 	Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
 	AreaCheck("AR0406") // Copper Coronet
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_SleepInn", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinComplainSex", "GLOBAL", 1)
 		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 END
 

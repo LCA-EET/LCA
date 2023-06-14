@@ -392,10 +392,10 @@ override/LCILLASE.bcs
 override/LCINCSUM.bcs
 override/LCINCUB.bcs
 override/LCINITP1.bcs
-override/LCKELHEX.bcs
 override/LCKIDN01.bcs
 override/LCKIDN02.bcs
 override/LCKIDNAP.bcs
+override/LCKILHEX.bcs
 override/LCKILLP1.bcs
 override/LCLARZE.bcs
 override/LCLYRIEL.bcs
@@ -444,7 +444,7 @@ override/LCWLKHOM.bcs
 override/LCWVGRD2.bcs
 override/MAERIE.bcs
 override/MAERIEX.bcs
-override/MANOMX.bcs
+override/MANOM.bcs
 override/MAR1002.bcs
 override/MAR2900.bcs
 override/MBCOFFIN.bcs
@@ -456,8 +456,7 @@ override/MBODHIAM.bcs
 override/MCLEANSE.bcs
 override/MCUT59B.bcs
 override/MGORGE.bcs
-override/MKELDORX.bcs
-override/MMAZZYX.bcs
+override/MKELDORN.bcs
 override/MP1D.bcs
 override/MP1DSEX.bcs
 override/SVIRHOST.bcs
@@ -853,10 +852,11 @@ override/CLEANSE.bcs
 override/BCOFFIN.bcs
 override/player1d.bcs
 override/AR1002.bcs
-override/AERIEX.bcs
-override/MAZZYX.bcs
-override/ANOMX.bcs
-override/KELDORNX.bcs
+override/AERI25.bcs
+override/MAZZ25.bcs
+override/ANOMEN.bcs
+override/ANOM25.bcs
+override/KELD25.bcs
 override/BODHIAMB.bcs
 override/LCCORWIN.CRE
 override/LCSTDAG.itm
