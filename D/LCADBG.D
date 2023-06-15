@@ -663,9 +663,25 @@ IF ~~ THEN BEGIN LCA_LCCORWIJ_Test
 	~
 	EXIT
 
-	IF ~~ THEN REPLY @490 /* ~Dialog J-65~ */
+	IF ~~ THEN REPLY @490 /* ~Dialog J-65 SC0~ */
 	DO ~
+		SetGlobal("LCA_SlappedDelcia", "GLOBAL", 1)
+		SetGlobal("LCA_DelciaEnd", "GLOBAL", 1)
+		SetGlobal("LCA_TimesHadSex", "GLOBAL", 0)
+		CreateCreature("DELCIA", [-1.-1], N)
 		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @497 /* ~Dialog J-65 SC1~ */
+	DO ~
+		SetGlobal("LCA_SlappedDelcia", "GLOBAL", 1)
+		SetGlobal("LCA_DelciaEnd", "GLOBAL", 1)
+		SetGlobal("LCA_TimesHadSex", "GLOBAL", 1)
+		CreateCreature("DELCIA", [-1.-1], N)
+		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 

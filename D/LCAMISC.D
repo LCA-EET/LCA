@@ -2193,7 +2193,9 @@ END
 // NALIAJ
 APPEND NALIAJ
 	IF ~~ THEN BEGIN LCA_CorwinStruckDelcia
-		SAY @20 /* ~(She finally regains her composure) How DARE you! That's my aunt you just struck!~ */
+		SAY @20 /* ~(She finally regains her composure)~ */
+
+		= @231 /* How DARE you! That's my aunt you just struck!~ */
 		
 		IF ~
 			Global("LCA_CorwinRomanceActive", "GLOBAL", 2)

@@ -9,6 +9,18 @@
 APPEND ~PLAYER1~
 
 	IF ~
+		Global("LCA_GetRoom", "GLOBAL", 1)
+	~ THEN BEGIN LCA_GetRoom
+		SAY @140 /* ~(You resolve to pay for a room at one of the nearby inns.)~*/
+		
+		IF ~~ THEN 
+		DO ~
+			SetGlobal("LCA_GetRoom", "GLOBAL", 0)
+		~
+		EXIT
+	END
+	
+	IF ~
 		Global("LCA_CorwinDiedFromBite", "GLOBAL", 1)
 	~ THEN BEGIN LCA_CorwinDiedFromBite
 		SAY @138 /* ~(You are nearly overcome by grief and anger — not just toward Bodhi and Irenicus, but also yourself, for your failure to save the woman you love.)~ */
@@ -720,7 +732,8 @@ APPEND ~PLAYER1~
 		~
 		EXTERN ~LCCORWIJ~ LCA37
 	END
-END
+	
+END	
 
 ADD_TRANS_TRIGGER ~PLAYER1~ 3
 ~

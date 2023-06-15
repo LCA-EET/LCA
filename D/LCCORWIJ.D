@@ -4046,6 +4046,7 @@ IF ~
 	IF ~~ THEN
 	DO ~
 		SetGlobal("LCA_Banter_CorwinHexxat", "GLOBAL", 7)
+		SetGlobal("LCA_CorwinHexxatFight", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -4435,6 +4436,9 @@ END
 
 IF ~~ THEN BEGIN LCA21
 	SAY @42 /* ~Irenicus needs to be stopped. While he is alive no one is safe, and that includes Rohma. Being at your side, love, is the best way I can protect her, and Baldur's Gate.~ */
+	
+	= @1462 /* ~(You share a warm embrace, and steel yourself for the battle ahead.)~ */
+	
 	IF ~~ THEN REPLY @43 /* ~Thank you, my love.*/
 	GOTO LCA_P33Transitions
 END
@@ -4480,13 +4484,17 @@ IF ~~ THEN BEGIN LCA_P1_25B
 END
 
 IF ~~ THEN BEGIN LCA27A
-	SAY @421 /* ~~Don't look so disappointed, love. We'll have plenty of time for those... activities (she smiles)... once we're back home. (She leans in for a kiss.)~~ */
+	SAY @421 /* ~~Don't look so disappointed, love. We'll have plenty of time for those... activities (she smiles)... once we're back home.~ */
+	= @1463 /* ~(She leans in for a kiss.)~*/
 	IF ~~ THEN REPLY @58 /* ~(Kiss her) I look forward to that day.~ */
 	GOTO LCA28 //OK
 END
 
 IF ~~ THEN BEGIN LCA27
-	SAY @52 /*  ~(She laughs) Don't look so disappointed, love. When we return to Baldur's Gate I'll be sure to give you the... (she glances down, then back up again) attention... you so clearly need. (She leans in for a kiss)~ */
+	SAY @52 /*  ~(She laughs) */
+	
+	= @53 /* Don't look so disappointed, love. When we return to Baldur's Gate I'll be sure to give you the... (she glances down, then back up again) attention... you so clearly need.~ */
+	
 	IF ~~ THEN REPLY @58 /* ~(Kiss her) I look forward to that day.~ */
 	GOTO LCA28 //OK
 	
@@ -4515,7 +4523,7 @@ IF ~~ THEN BEGIN LCA29
 	IF ~~ THEN REPLY @63 /* ~What did you have in mind?~ */
 	GOTO LCA30C
 	
-	IF ~~ THEN REPLY @65 /* ~Come with me love, I know just the place. (You resolve to pay for a room at one of the nearby inns.)~ */
+	IF ~~ THEN REPLY @65 /* ~Come with me love, I know just the place.~ */
 	GOTO LCA31C
 END
 
@@ -4541,7 +4549,7 @@ END
 
 IF ~~ THEN BEGIN LCA30C
 	SAY @64 /* ~The street in mid-day, or perhaps the amphitheater. Gods, what do you think? There are plenty of inns in the city, pick one!~ */
-	IF ~~ THEN REPLY @65 /* ~Come with me, I know just the place (You resolve to pay for a room at one of the nearby inns).~ */
+	IF ~~ THEN REPLY @65 /* ~Come with me, I know just the place.~ */
 	GOTO LCA31C
 END
 
@@ -4550,6 +4558,8 @@ IF ~~ THEN BEGIN LCA31C
 	IF ~~ THEN
 	DO ~
 		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 1)
+		SetGlobal("LCA_GetRoom", "GLOBAL", 1)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 	~
 	EXIT
 END
@@ -5477,7 +5487,7 @@ IF ~~ THEN BEGIN LCA78
 	IF ~~ THEN REPLY @241 /* ~I think that you'll never cease to amaze me.~ */
 	GOTO LCA79
 	
-	IF ~~ THEN REPLY @243 /* @243 = ~Hm... (You examine the trophy - it's a figurine of an archer cast in gold, with a plaque beneath that states 'Schael Corwin - Winner - Trademeet Archery Competition'.) Very nice. Your father will be proud.~ */
+	IF ~~ THEN REPLY @1464 /* ~(Examine the trophy.)~ */
 	GOTO LCA80
 END
 
@@ -5489,7 +5499,31 @@ IF ~~ THEN BEGIN LCA79
 END
 
 IF ~~ THEN BEGIN LCA80
+	SAY @243 /* You examine the trophy — it's a figurine of an archer cast in gold, with a plaque beneath that states 'Schael Corwin - Winner - Trademeet Archery Competition'.*/
+	
+	IF ~~ THEN REPLY @1465 /* ~Very nice. Your father will be proud.~*/
+	GOTO LCA80A
+	
+	IF ~~ THEN REPLY @1466 /* ~The figurine doesn't quite do you justice, dear.~ */
+	GOTO LCA80B
+END
+
+IF ~~ THEN BEGIN LCA80A
 	SAY @244 /* ~Thanks. I think Rohma might appreciate it more... I can't wait to see them again. Let's get going, love.~ */
+	
+	IF ~~ THEN 
+	DO ~
+		GiveGoldForce(2500)
+		AddExperienceParty(35000)
+		SetGlobal("LCA_TM_ArcheryChallenge", "GLOBAL", 3)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA80B
+	SAY @1467 /* ~(She lets out a hearty laugh.)~*/
+	
+	= @1468 /* ~Rohma will still appreciate it, I'm sure. Gods, I can't wait to see them again... Come, love. Duty calls.~ */
 	
 	IF ~~ THEN 
 	DO ~
@@ -5682,7 +5716,9 @@ IF ~~ THEN BEGIN LCA_DHARLOT2A
 END
 
 IF ~~ THEN BEGIN LCA_DHARLOT2B
-	SAY @426 /* ~Really, <CHARNAME>? Very funny. (She punches you in the shoulder.)~ */
+	SAY @426 /* ~Really, <CHARNAME>? Very funny.~ */
+	
+	= @1469 /* (She punches you in the shoulder.)~ */
 	IF ~~ THEN REPLY @427 /* Ow! */
 	GOTO LCA_DHARLOT2A
 END
@@ -5779,8 +5815,8 @@ IF ~~ THEN BEGIN LCA_DelciaLeft3
 	SAY @521 /* ~I've just been so stressed lately... I wouldn't normally do something like that.~ */
 	
 	
-	IF ~~ THEN REPLY @522 /* ~I know it's tough being away from your family. I'm glad you're here though. (You share a warm embrace, and kiss.) Let's get moving, love.~ */
-	EXIT
+	IF ~~ THEN REPLY @522 /* ~I know it's tough being away from your family. I'm glad you're here though. */
+	GOTO LCA_GladHere
 	
 	IF ~
 		GlobalLT("LCA_TimesHadSex", "GLOBAL", 1)
@@ -5788,6 +5824,83 @@ IF ~~ THEN BEGIN LCA_DelciaLeft3
 	THEN REPLY @523 /* ~You and I both... my love, I know of a couple of activities that can help us to relieve some of that stress...~ */
 	GOTO LCA_DelciaLeft4
 END
+
+IF ~~ THEN BEGIN LCA_GladHereExit
+	SAY @1452 /* ~Right.~ */
+	
+	IF ~~ THEN
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_GladHere
+	SAY @1449 /* ~So am I... look at me complaining. You've been through the ringer and you keep moving forward. You'd have made a great officer, you know.~ */
+	
+	IF ~~ THEN REPLY @1450 /* ~Doubtful, but I appreciate the sentiment. Let's get going.~*/
+	GOTO LCA_GladHereExit
+	
+	IF ~~ THEN REPLY @1451 /* ~And I may still. Who knows what the future holds in store? Let's get going.~*/
+	GOTO LCA_GladHereExit
+	
+	IF ~~ THEN REPLY @1453 /* ~With you as my commander? Sounds intriguing — I bet you'd *love* ordering me around, wouldn't you hon?~*/
+	GOTO LCA_GladHere2	
+END
+
+IF ~~ THEN BEGIN LCA_GladHere2
+	SAY @1454 /* ~(She smiles wryly.)~ */
+	
+	= @1455 /* ~I would. But not as much as you'd enjoy it.~ */
+	
+	IF ~
+		GlobalGT("LCA_TimesHadSex", "GLOBAL", 0)
+		Gender(Player1, MALE)
+	~ THEN REPLY @1458 /* ~Is that so?~ */
+	GOTO LCA_GladHere_HadSex_M
+	
+	IF ~
+		GlobalGT("LCA_TimesHadSex", "GLOBAL", 0)
+		Gender(Player1, FEMALE)
+	~ THEN REPLY @1458 /* ~Is that so?~ */
+	GOTO LCA_GladHere_HadSex_F
+	
+	IF ~
+		GlobalLT("LCA_TimesHadSex", "GLOBAL", 1)
+	~ THEN REPLY @1458 /*  ~Is that so?~ */
+	GOTO LCA_GladHere_WantSex
+END
+
+IF ~~ THEN BEGIN LCA_GladHere_WantSex
+	SAY @1456 /* ~Get us a room, love, and we'll see how good you are at following orders.~ */
+	
+	IF ~~ THEN REPLY @1457 /* ~Yes, ma'am!~ */
+	DO ~
+		SetGlobal("LCA_CorwinSex_1", "GLOBAL", 1)
+		SetGlobal("LCA_GetRoom", "GLOBAL", 1)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_GladHere_HadSex_M
+	SAY @1459 /* ~Judging by how... ahh... stiffly, you stood at attention the last time we were together... yes. ~ */
+	
+	IF ~~ THEN 
+	GOTO LCA_GladHere_HadSex_Exit
+END
+
+IF ~~ THEN BEGIN LCA_GladHere_HadSex_F
+	SAY @1461 /*  ~Well you did ... ahh ... gush with exuberance the last time we were together. Multiple times, if I remember correctly.~ */
+	
+	IF ~~ THEN 
+	GOTO LCA_GladHere_HadSex_Exit
+END
+
+IF ~~ THEN BEGIN LCA_GladHere_HadSex_Exit
+	SAY @1460 /* ~But enough distractions, lover — we've work to do. Let's get to it.~ */
+	
+	IF ~~ THEN
+	EXIT
+END
+
 
 IF ~~ THEN BEGIN LCA_DelciaLeft4
 	SAY @524 /* ~(She smiles.) I think I know what you have in mind. (She walks up to you, leans in and whispers.) It's on my mind, all the time.~   */
