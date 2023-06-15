@@ -759,6 +759,7 @@ INTERJECT_COPY_TRANS KELDORJ 182 Corwin_KELDORJ_182 // OK
 	~
 	@608 /*  ~(She gives Keldorn a sharp stare.)~ */
 	DO ~
+		SetGlobal("LCA_CorwinAngryAtKeldorn", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinScoldKeldornTimer", "GLOBAL", ONE_ROUND)
 	~
 END
@@ -771,6 +772,7 @@ INTERJECT_COPY_TRANS KELDORJ 236 Corwin_KELDORJ_236 // OK
 	~
 	@608 /*  ~(She gives Keldorn a sharp stare.)~ */
 	DO ~
+		SetGlobal("LCA_CorwinAngryAtKeldorn", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinScoldKeldornTimer", "GLOBAL", ONE_ROUND)
 	~
 END
@@ -2481,7 +2483,7 @@ CHAIN
 		DO ~
 			SetGlobal("LCA_CorwinValygarLavok", "GLOBAL", 2)
 			SetGlobal("LCA_Banter_CorwinValygar", "GLOBAL", 3)
-			SetGlobalTimer("LCA_CorwinValygarTimer2", "GLOBAL", THREE_DAYS)
+			SetGlobalTimer("LCA_CorwinValygarTimer", "GLOBAL", THREE_DAYS)
 		~
 		== VALYGARJ
 		IF ~
@@ -2518,6 +2520,15 @@ CHAIN
 		== LCCORWIB
 		@583 /* Of course. Let's move out.~*/
 		
+EXIT
+//}
+
+//{ Dialog B-85
+CHAIN
+	IF ~
+		Global("LCA_CorwinValygarBG", "GLOBAL", 1)
+	~ THEN VALYGARJ BCorwinValygar3A
+	
 EXIT
 //}
 
@@ -2650,7 +2661,7 @@ CHAIN
 		~
 		@758 /* ~But Major, ye be the rarest of sights! A strong beauty, in uniform no less! ~ */
 		== KORGANJ
-		@139 /*  ~Ole Korgan nae hath seen one such as yerself. I simply needed a hand on yer ample bosom to see if ye be an illusion.~ */
+		@139 /*  ~Ole Korgan nae hath seen one such as yerself. I simply needed a hand on yer wondrous bottom to see if ye be an illusion.~*/
 		== LCCORWIB
 		@140 /* ~Well, I hope you got all you needed. Touch me like that again, dwarf, and you'll regret it.~ */
 		== KORGANJ
@@ -2929,14 +2940,12 @@ EXIT
 //{ region Dialog B-50
 CHAIN 
 	IF ~
-		GlobalGT("LCA_Banter_CorwinImoen", "GLOBAL", 2)
-		Global("LCA_BodhiDead", "GLOBAL", 2)
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-		!Global("LCA_ImoenSoulReturned", "GLOBAL", 1)
+		Global("LCA_CorwinImoenSoulTalk", "GLOBAL", 1)
 	~ THEN LCCORWIB BCorwinImoenSoulA
 		@565 /*  ~Imoen, I can't tell you how relieved I am that you're better.~ [NOSOUND] */
 		DO ~
-			SetGlobal("LCA_ImoenSoulReturned", "GLOBAL", 1)
+			SetGlobal("LCA_CorwinImoenSoulTalk", "GLOBAL", 2)
 		~
 		== IMOENJ
 		@566 /* ~Yes, Schael. With my soul returned, I feel like myself again.~ */
@@ -2953,14 +2962,12 @@ EXIT
 //{ region Dialog B-51
 CHAIN 
 	IF ~
-		GlobalGT("LCA_Banter_CorwinImoen", "GLOBAL", 2)
-		Global("LCA_BodhiDead", "GLOBAL", 2)
 		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-		!Global("LCA_ImoenSoulReturned", "GLOBAL", 1)
+		Global("LCA_CorwinImoenSoulTalk", "GLOBAL", 1)
 	~ THEN LCCORWIB BCorwinImoenSoulB
 		@565 /*  ~Imoen, I can't tell you how relieved I am that you're better.~ [NOSOUND] */
 		DO ~
-			SetGlobal("LCA_ImoenSoulReturned", "GLOBAL", 1)
+			SetGlobal("LCA_CorwinImoenSoulTalk", "GLOBAL", 2)
 		~
 		== IMOENJ
 		@566 /* ~Yes, Schael. With my soul returned, I feel like myself again.~ */
@@ -3265,11 +3272,11 @@ EXIT
 //{ region Dialog B-61
 CHAIN 
 	IF ~
-		Global("LCA_CorwinAngryAtKeldorn", "GLOBAL", 1)
+		Global("LCA_CorwinAngryAtKeldorn", "GLOBAL", 2)
 	~ THEN LCCORWIB BCorwinScoldKeldorn
 		@609 /* ~Keldorn - what happened back there?~ */
 		DO ~
-			SetGlobal("LCA_CorwinAngryAtKeldorn", "GLOBAL", 2)
+			SetGlobal("LCA_CorwinAngryAtKeldorn", "GLOBAL", 3)
 		~
 		== KELDORJ
 		@610 /* ~Captain?~ */
@@ -3908,11 +3915,6 @@ CHAIN
 EXIT
 //}
 
-
-
-
-
-
 //{ region Dialog B-80
 CHAIN
 	IF ~
@@ -4137,3 +4139,4 @@ CHAIN
 		@726 /* ~Right... Let's go.~ */
 EXIT
 //}
+

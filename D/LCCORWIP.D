@@ -10,19 +10,7 @@
 
 BEGIN ~LCCORWIP~
 
-/*
-IF ~
-	Global("LCA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
-~
-THEN BEGIN LCA_LeftToGoBackToCouncil
-	SAY @14  
-	IF ~~ THEN
-	DO ~
-		EscapeArea()
-	~
-	EXIT
-END
-*/
+//{ Dialog P-0
 IF ~
 	Global("LCA_CorwinJoinOverride", "GLOBAL", 1)
 ~ THEN BEGIN LCA_JoinOverride
@@ -35,7 +23,9 @@ IF ~
 	~
 	EXIT
 END
+//}
 
+//{ Dialog P-1
 IF ~
 	AreaCheck("BG1316")
 	Global("LCA_CorwinWithFamily", "GLOBAL", 1)
@@ -46,7 +36,9 @@ IF ~
 	
 	IF ~~ THEN EXIT
 END
+//}
 
+//{ Dialog P-2
 IF ~
 	AreaCheck("BG1316")
 	Global("LCA_CorwinWithFamily", "GLOBAL", 1)
@@ -55,22 +47,9 @@ IF ~
 	
 	IF ~~ THEN EXIT
 END
+//}
 
-IF ~
-	Global("LCA_ReturnToBG", "GLOBAL", 1)
-	!Global("LCA_CorwinWithFamily", "GLOBAL", 1)
-~ THEN BEGIN LCA_CorwinReturnToBG
-	SAY @37 /* ~Let's stick together for now.~*/
-	
-	IF ~~ THEN REPLY @34 /* ~Yes, you're right. Let's stay together, at least for the time being.~ */
-	
-	DO ~
-		ChangeAIScript("LCCORSCR", OVERRIDE)
-		SetGlobal("LCA_CorwinRejoinProcessed", "GLOBAL", 1)
-	~
-	EXIT
-END
-
+//{ Dialog P-3
 IF ~
 	!Global("LCA_CanLeaveParty", "GLOBAL", 1)
 ~
@@ -85,7 +64,26 @@ THEN BEGIN LCA_CantLeave
 	~
 	EXIT
 END
+//}
 
+//{ Dialog P-4
+IF ~
+	Global("LCA_ReturnToBG", "GLOBAL", 1)
+	!Global("LCA_CorwinWithFamily", "GLOBAL", 1)
+~ THEN BEGIN LCA_CorwinReturnToBG
+	SAY @37 /* ~Let's stick together for now.~*/
+	
+	IF ~~ THEN REPLY @34 /* ~Yes, you're right. Let's stay together, at least for the time being.~ */
+	
+	DO ~
+		ChangeAIScript("LCCORSCR", OVERRIDE)
+		SetGlobal("LCA_CorwinRejoinProcessed", "GLOBAL", 1)
+	~
+	EXIT
+END
+//}
+
+//{ Dialog P-5
 IF ~
 	GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
 	!Global("LCA_CorwinCleansed", "GLOBAL", 1)
@@ -100,22 +98,9 @@ THEN BEGIN LCA_CorwinSick
 	~
 	EXIT
 END
+//}
 
-IF ~
-	GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
-	!Global("LCA_CorwinCleansed", "GLOBAL", 1)
-~
-THEN BEGIN LCA_CorwinSick
-	SAY @30 /* ~My love? This bite... I'm not feeling well, at all. Please, don't leave my side.~ */
-	
-	IF ~~ THEN REPLY @31 /* ~You're right, my dear. Stay with me. I'll look after you as best I can.~ */
-	DO ~
-		ChangeAIScript("LCCORSCR", OVERRIDE)
-		SetGlobal("LCA_CorwinRejoinProcessed", "GLOBAL", 1)
-	~
-	EXIT
-END
-
+//{ Dialog P-6
 IF ~
 	GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
 	Global("LCA_CorwinCleansed", "GLOBAL", 1)
@@ -131,6 +116,7 @@ THEN BEGIN LCA_CorwinCleansed
 	~
 	GOTO LCA4
 END
+//}
 
 IF ~
 	!IsGabber(Player1)

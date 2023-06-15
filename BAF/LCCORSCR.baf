@@ -1,3 +1,4 @@
+//{ Determines if CorwinEET is Installed
 IF 
 	InParty(Myself)
 	Global("LCA_CorwinEETCheck", "GLOBAL", 0)
@@ -32,17 +33,9 @@ THEN
 		SetGlobal("LCA_MetRohmaCheck", "GLOBAL", 1)
 		Continue()
 END
+//}
 
-IF
-	!Global("LCA_DornPatronsDead", "GLOBAL", 1)
-	Dead("ohdazoth")  // Azothet
-	Dead("ohdugoth")  // Ur-Gothoz
-THEN
-	RESPONSE #100
-		SetGlobal("LCA_DornPatronsDead", "GLOBAL", 1)
-		Continue()
-END
-
+//{ Checks if the Player met Rohma prior to the events of SoA
 IF 
 	InParty(Myself)
 	Global("LCA_MetRohmaCheck", "GLOBAL", 0)
@@ -54,12 +47,9 @@ THEN
 		SetGlobal("LCA_MetRohmaCheck", "GLOBAL", 1)
 		Continue()
 END
+//}
 
-/*
-	Rejoin processing - triggered in LCCORWIN.D and LCCORWIP.D
-*/
-
-
+//{	Rejoin processing - triggered in LCCORWIN.D and LCCORWIP.D
 IF 
 	!InParty(Myself)
 	Global("LCA_CorwinRejoinProcessed", "GLOBAL", 1)
@@ -74,12 +64,9 @@ THEN
 		SetGlobal("LCA_CorwinRejoinProcessed", "GLOBAL", 2)
 		JoinParty()
 END
+//}
 
-/*
-	See if Corwin Can Talk
-*/
-
-
+//{ Corwin Can Talk Check
 IF 
 	Global("LCA_CorwinCanTalk", "GLOBAL", 1)
 	ActionListEmpty()
@@ -103,11 +90,9 @@ THEN
 		SetGlobal("LCA_CorwinCanTalk", "GLOBAL", 1)
 		Continue()
 END
+//}
 
-/*
-	See if Corwin Can Talk to Player
-*/
-
+//{ Corwin Can Talk to Player Check
 IF 
 	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 	ActionListEmpty()
@@ -120,82 +105,6 @@ THEN
 		Continue()
 END
 
-/*
-	End of BG Miniquest
-*/
-
-IF
-	Global("LCA_BGEND3", "GLOBAL", 1)
-	Global("LCA_DidNotRequestCorwin", "GLOBAL", 1)
-	GlobalGT("LCA_CorwinOpinionOfPlayer", "GLOBAL", 0)
-	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-THEN
-	RESPONSE #100
-		Wait(3)
-		StartDialog("LCCORWIJ", Player1)
-END
-
-IF
-	Global("LCA_BGEND3", "GLOBAL", 1)
-	Global("LCA_DidNotRequestCorwin", "GLOBAL", 1)
-	GlobalGT("LCA_CorwinOpinionOfPlayer", "GLOBAL", 0)
-	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-THEN
-	RESPONSE #100
-		Wait(3)
-		PlaySong(146)
-		StartDialog("LCCORWIJ", Player1)
-END
-
-IF
-	Global("LCA_BGEND4", "GLOBAL", 1)
-	Global("LCA_DidRequestCorwin", "GLOBAL", 1)
-	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-THEN
-	RESPONSE #100
-		Wait(3)
-		StartDialog("LCCORWIJ", Player1)
-END
-
-IF
-	Global("LCA_BGEND4", "GLOBAL", 1)
-	Global("LCA_DidRequestCorwin", "GLOBAL", 1)
-	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-THEN
-	RESPONSE #100
-		Wait(3)
-		PlaySong(146)
-		StartDialog("LCCORWIJ", Player1)
-END
-
-/*
-	Kill Beno
-*/
-
-IF 
-	OR(2)
-		Global("LCA_CorwinKillBeno", "GLOBAL", 1)
-		Global("LCA_CorwinBenoST", "GLOBAL", 1)
-	ActionListEmpty()
-	!Range("LCBENO2", 4)
-THEN
-	RESPONSE #100
-		MoveToObject("TRIGBENO")
-		//MoveToPoint([735.675])
-		Continue()
-END
-
-IF 
-	OR(2)
-		Global("LCA_CorwinKillBeno", "GLOBAL", 1)
-		Global("LCA_CorwinBenoST", "GLOBAL", 1)
-	Range("LCBENO2", 4)
-THEN
-	RESPONSE #100
-		ActionOverride("LCCORWIN", FaceObject("LCBENO2"))
-		//Wait(1)
-		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
-END
 
 IF
 	!Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
@@ -207,27 +116,11 @@ THEN
 		SetGlobal("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 		Continue()
 END
+//}
 
-/*
-	BG Slaver Plot
-*/
+//{ Interactions concerning the Return to BG Mini Quest
 
-IF 
-	Global("LCA_BGSlaverPlot", "GLOBAL", 1)
-	Global("LCA_CorwinSlaverPlot", "GLOBAL", 1)
-	AreaCheck("AR0405")
-	!InMyArea("girl2")
-	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-	See(Player1)
-THEN
-	RESPONSE #100
-		StartDialog("LCCORWIJ", Player1)
-END
-
-/* 
-	Return To BG Mini Quest
-*/
-
+//{ Corwin Hall of Wonders Arrest
 IF 
 	Global("LCA_CorwinArrest", "GLOBAL", 1)
 	See(Player1)
@@ -236,6 +129,7 @@ THEN
 	RESPONSE #100
 		StartDialog("LCCORWIJ", Player1)
 END
+//}
 
 IF 
 	Global("LCA_RohmaKidnapped", "GLOBAL", 2)
@@ -298,7 +192,19 @@ THEN
 		SetGlobalTimer("LCA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
 END
 
+//{ Meet Tianna
+IF
+	Global("LCA_AskCorwinAboutTianna", "GLOBAL", 1)
+	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+	See(Player1)
+THEN
+	RESPONSE #100
+		Wait(1)
+		StartDialog("LCCORWIJ", Player1)
+END
+//}
 
+//{ Corwin Return Home
 IF 
 	AreaCheck("BG1316")
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
@@ -312,6 +218,9 @@ THEN
 		SetGlobal("LCA_LCCS14Started", "GLOBAL", 1)
 		StartCutScene("LCCS14")
 END
+//}
+
+//{ Dialog init after Corwin / Neoma reunite
 IF 
 	Global("LCA_ReturnToBG", "GLOBAL", 1)
 	Global("LCA_LCCS15Cutscene", "GLOBAL", 5)
@@ -326,11 +235,84 @@ THEN
 		SetGlobal("LCA_LCCS15Cutscene", "GLOBAL", 6)
 		StartDialog("LCCORWIJ", Player1)
 END
+//}
 
-/*
-	Join Checks
-*/
+//{ Request Corwin ToB
+IF
+	Global("LCA_BGEND3", "GLOBAL", 1)
+	Global("LCA_DidNotRequestCorwin", "GLOBAL", 1)
+	GlobalGT("LCA_CorwinOpinionOfPlayer", "GLOBAL", 0)
+	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		Wait(3)
+		StartDialog("LCCORWIJ", Player1)
+END
 
+IF
+	Global("LCA_BGEND3", "GLOBAL", 1)
+	Global("LCA_DidNotRequestCorwin", "GLOBAL", 1)
+	GlobalGT("LCA_CorwinOpinionOfPlayer", "GLOBAL", 0)
+	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		Wait(3)
+		PlaySong(146)
+		StartDialog("LCCORWIJ", Player1)
+END
+
+IF
+	Global("LCA_BGEND4", "GLOBAL", 1)
+	Global("LCA_DidRequestCorwin", "GLOBAL", 1)
+	!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		Wait(3)
+		StartDialog("LCCORWIJ", Player1)
+END
+
+IF
+	Global("LCA_BGEND4", "GLOBAL", 1)
+	Global("LCA_DidRequestCorwin", "GLOBAL", 1)
+	Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		Wait(3)
+		PlaySong(146)
+		StartDialog("LCCORWIJ", Player1)
+END
+//}
+
+//{ Kill Beno
+IF 
+	OR(2)
+		Global("LCA_CorwinKillBeno", "GLOBAL", 1)
+		Global("LCA_CorwinBenoST", "GLOBAL", 1)
+	ActionListEmpty()
+	!Range("LCBENO2", 4)
+THEN
+	RESPONSE #100
+		MoveToObject("TRIGBENO")
+		//MoveToPoint([735.675])
+		Continue()
+END
+
+IF 
+	OR(2)
+		Global("LCA_CorwinKillBeno", "GLOBAL", 1)
+		Global("LCA_CorwinBenoST", "GLOBAL", 1)
+	Range("LCBENO2", 4)
+THEN
+	RESPONSE #100
+		ActionOverride("LCCORWIN", FaceObject("LCBENO2"))
+		//Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
+END
+//}
+
+//} BGMiniQuest Interaction End
+
+//{ Event Checks on Join
 /* If certain events occurred while Corwin was not in the party, remove the ability to enter states associated with those events (eg. events which will cause her to leave). */
 
 IF 
@@ -424,7 +406,7 @@ THEN
 END
 
 /* Any join checks should be completed by this point. Set the LCA_ResetJoinChecks to two to stop the checks from occurring in the future (unless she exits and rejoins the party). */
-
+// Reset Join Checks is set back to 1 when Corwin rejoins the party.
 IF
 	Global("LCA_ResetJoinChecks", "GLOBAL", 1)
 THEN
@@ -432,11 +414,9 @@ THEN
 		SetGlobal("LCA_ResetJoinChecks", "GLOBAL", 2)
 		Continue()
 END
+//}
 
-/* 
-	Reputation Handlers
-*/
-
+//{ Reputation Handling
 IF
 	InParty(Myself)
 	ReputationLT(Player1,8)
@@ -469,178 +449,17 @@ THEN
 		SetGlobal("LCA_CorwinLeftPoorRep", "GLOBAL", 1)
 		StartDialog("LCCORWIJ", Player1)
 END
-/*
-	Tianna
-*/
+//}
 
-IF
-	Global("LCA_AskCorwinAboutTianna", "GLOBAL", 1)
-	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-	See(Player1)
-THEN
-	RESPONSE #100
-		Wait(1)
-		StartDialog("LCCORWIJ", Player1)
-END
-
-
-/*
-	Drizzt
-*/
-
-IF 
-	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-	GlobalTimerExpired("LCA_CorwinVouchedDrizzTimer", "GLOBAL")
-	See(Player1)
-THEN
-	RESPONSE #100
-		SetGlobal("LCA_CorwinVouchedDrizz", "GLOBAL", 1)
-		StartDialog("LCCORWIJ", Player1)
-END
-
-/*
-	Grove Poisoning
-*/
-
-IF
-	InParty(Myself)
-	Global("GrovePoisoned", "GLOBAL", 1)
-	!Global("LCA_CorwinHostile", "GLOBAL", 1)
-	!Global("LCA_LeftPartyGrove", "LOCALS", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("LCA_CorwinHostle", "GLOBAL", 1)
-		SetGlobal("LCA_LeftPartyGrove", "LOCALS", 1)
-		Continue()
-END
-
-/*
-	Svir Gnomes Hostile	
-*/
-
-IF
-	InParty(Myself)
-	Global("SvirHostile", "GLOBAL", 1)
-	!Global("LCA_CorwinHostile", "GLOBAL", 1)
-	!Global("LCA_LeftPartySvir", "LOCALS", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("LCA_CorwinHostile", "GLOBAL", 1)
-		SetGlobal("LCA_LeftPartySvir", "LOCALS", 1)
-		Continue()
-END
-
-IF 
-	InParty(Myself)
-	Global("LCA_CorwinHostile", "GLOBAL", 1)
-THEN 
-	RESPONSE #100
-		SetGlobal("LCA_CorwinHostile", "GLOBAL", 2)
-		DisplayStringHead(Myself, @11)
-		SetLeavePartyDialogFile()
-		ChangeAIScript("", DEFAULT)
-		LeaveParty()
-		Enemy()
-END
-
-/*
-	Dorn Conflict
-*/
-
-IF
-	IfValidForPartyDialog("dorn")  // Dorn
-	IfValidForPartyDialog("LCCORWIN")  // corwin
-	OR(2)
-		Global("DornRomanceActive","GLOBAL",1)
-		Global("DornRomanceActive","GLOBAL",2)
-	GlobalGT("DornLovetalks","GLOBAL",9)
-	OR(2)
-		Global("LCA_CorwinRomanceActive","GLOBAL",1)
-		Global("LCA_CorwinRomanceActive","GLOBAL",2)
-	Global("OHD_corwinconflict","GLOBAL",0)
-THEN
-	RESPONSE #100
-		SetGlobal("OHD_corwinconflict","GLOBAL",1)
-		RealSetGlobalTimer("OHD_corwinconflict_timer","GLOBAL",NINE_HOURS)
-		Continue()
-END
-
-IF
-	IfValidForPartyDialog("dorn")  // Dorn
-	IfValidForPartyDialog("LCCORWIN")  // corwin
-	OR(2)
-		Global("DornRomanceActive","GLOBAL",1)
-		Global("DornRomanceActive","GLOBAL",2)
-	OR(2)
-		Global("LCA_CorwinRomanceActive","GLOBAL",1)
-		Global("LCA_CorwinRomanceActive","GLOBAL",2)
-	Global("OHD_corwinconflict","GLOBAL",1)
-	RealGlobalTimerExpired("OHD_corwinconflict_timer","GLOBAL")
-THEN
-	RESPONSE #100
-		SetGlobal("OHD_corwinconflict","GLOBAL",2)
-		Continue()
-END
-
-IF
-	IfValidForPartyDialog("dorn")  // Dorn
-	Global("LCA_CorwinCanTalk", "GLOBAL", 1)
-	!AreaType(DUNGEON)
-	!See([ENEMY])
-	Global("OHD_corwinconflict","GLOBAL",2)
-	See("Dorn")
-THEN
-	RESPONSE #100
-		StartDialog("LCCORWIB", Player1)
-		//Interact("Dorn")
-END
-
-/*
-	Interaction with Player after their soul was stolen
-*/
-
-IF 
-	Global("OpenJonBedroom","GLOBAL",1)
-	!Global("LCA_PlayerSoulStolen", "GLOBAL", 1)
-	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-	See(Player1)
-THEN
-	RESPONSE #100
-		SetGlobal("LCA_PlayerSoulStolen", "GLOBAL", 1)
-		SetGlobal("LCA_PlayerSoulTalk", "GLOBAL", 1)
-		StartDialog("LCCORWIJ", Player1)
-END
-
-/*
-	Dorn Sex
-*/
-
-IF
-	Global("OHD_sexreactions","GLOBAL",1)
-	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)  
-	!Global("LCA_DornSex", "GLOBAL", 1)
-	See(Player1)
-	OR(2)
-		Global("LCA_CorwinRomanceActive","GLOBAL",1)
-		Global("LCA_CorwinRomanceActive","GLOBAL",2)
-THEN
-	RESPONSE #100
-		SetGlobal("LCA_DornSex", "GLOBAL", 1)
-		SetGlobal("LCA_ComplainDornSex", "GLOBAL", 1)
-		StartDialog("LCCORWIJ", Player1)
-END
-
-/* 
-	Able to Leave Party
-*/
-
+//{ Corwin Can Leave Party Check
 IF 
 	InParty(Myself)
 	!Global("LCA_CanLeaveParty", "GLOBAL", 1)
-	!OR(3)
+	!OR(4)
 		Global("LCA_PlanarSphere", "GLOBAL", 1)
 		Global("LCA_PlanarPrison", "GLOBAL", 1)
 		Global("LCA_InUnderdark", "GLOBAL", 1)
+		Global("LCA_TrappedInDemonPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_CanLeaveParty", "GLOBAL", 1)
@@ -650,20 +469,53 @@ END
 IF 
 	InParty(Myself)
 	Global("LCA_CanLeaveParty", "GLOBAL", 1)
-	OR(3)
+	OR(4)
 		Global("LCA_PlanarSphere", "GLOBAL", 1)
 		Global("LCA_PlanarPrison", "GLOBAL", 1)
 		Global("LCA_InUnderdark", "GLOBAL", 1)
+		Global("LCA_TrappedInDemonPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_CanLeaveParty", "GLOBAL", 0)
 		Continue()
 END
+//}
 
-/*
-	Planar Sphere
-*/
+//{ Check if the Player is in the Demon's Prison 
+IF
+	InParty(Myself)
+	!Global("LCA_TrappedInDemonPrison", "GLOBAL", 1)
+	OR(6)
+		AreaCheck("LCDEMSAN")
+		AreaCheck("LCG1")
+		AreaCheck("LCG2")
+		AreaCheck("LCG2A")
+		AreaCheck("LCG3")
+		AreaCheck("LCPAINT1")
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_TrappedInDemonPrison", "GLOBAL", 1)
+		Continue()
+END
 
+IF
+	InParty(Myself)
+	Global("LCA_TrappedInDemonPrison", "GLOBAL", 1)
+	!OR(6)
+		AreaCheck("LCDEMSAN")
+		AreaCheck("LCG1")
+		AreaCheck("LCG2")
+		AreaCheck("LCG2A")
+		AreaCheck("LCG3")
+		AreaCheck("LCPAINT1")
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_TrappedInDemonPrison", "GLOBAL", 0)
+		Continue()
+END
+//}
+
+//{ Check if the Player is in the Planar Sphere
 IF 
 	InParty(Myself)
 	!Global("LCA_PlanarSphere", "GLOBAL", 1)
@@ -695,11 +547,9 @@ THEN
 		SetGlobal("LCA_PlanarSphere", "GLOBAL", 0)
 		Continue()
 END
+//} End Planar Sphere Check
 
-/*
-	Planar Prison
-*/
-
+//{ Check if the Player is in the Planar Prison
 IF 
 	InParty(Myself)
 	!Global("LCA_PlanarPrison", "GLOBAL", 1)
@@ -731,12 +581,10 @@ THEN
 		SetGlobal("LCA_PlanarPrison", "GLOBAL", 0)
 		Continue()
 END
+//} End Planar Prison Check
 
-/*
-	Underdark
-*/
-
-If
+//{ Check if the Player is in the Underdark
+IF
 	InParty(Myself)
 	!Global("LCA_InUnderdark", "GLOBAL", 1)
 	OR(18)
@@ -765,7 +613,7 @@ THEN
 		Continue()
 END
 
-If
+IF
 	InParty(Myself)
 	Global("LCA_InUnderdark", "GLOBAL", 1)
 	!OR(18)
@@ -793,23 +641,52 @@ THEN
 		SetGlobal("LCA_InUnderdark", "GLOBAL", 0)
 		Continue()
 END
+//} End Underdark Check
 
+
+//{ SoA initiated dialogs
+
+//{ Svir Gnome Hostilities
 IF
-	IsValidForPartyDialog("Keldorn")
-	Global("LCA_CorwinCanTalk", "GLOBAL", 1)
-	GlobalTimerExpired("LCA_CorwinScoldKeldornTimer", "GLOBAL")
-	Global("LCA_InUnderdark", "GLOBAL", 1)
-	See("Keldorn")
-	GlobalLT("LCA_CorwinAngryAtKeldorn", "GLOBAL", 1)
+	InParty(Myself)
+	Global("SvirHostile", "GLOBAL", 1)
+	!Global("LCA_CorwinHostile", "GLOBAL", 1)
+	!Global("LCA_LeftPartySvir", "LOCALS", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_CorwinAngryAtKeldorn", "GLOBAL", 1)
-		Interact("Keldorn")
+		SetGlobal("LCA_CorwinHostile", "GLOBAL", 1)
+		SetGlobal("LCA_LeftPartySvir", "LOCALS", 1)
+		Continue()
 END
+//}
 
-/*
-	Resurrection Gorge 
-*/
+//{ Met with Drizzt - Corwin vouched
+IF 
+	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+	GlobalTimerExpired("LCA_CorwinVouchedDrizzTimer", "GLOBAL")
+	See(Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_CorwinVouchedDrizz", "GLOBAL", 1)
+		StartDialog("LCCORWIJ", Player1)
+END
+//}
+
+//{ Grove Poisoning
+IF
+	InParty(Myself)
+	Global("GrovePoisoned", "GLOBAL", 1)
+	!Global("LCA_CorwinHostile", "GLOBAL", 1)
+	!Global("LCA_LeftPartyGrove", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_CorwinHostle", "GLOBAL", 1)
+		SetGlobal("LCA_LeftPartyGrove", "LOCALS", 1)
+		Continue()
+END
+//}
+
+//{ Resurrection Gorge
 IF
 	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 	Global("OHD_ritual_interjects","GLOBAL",0)
@@ -825,10 +702,43 @@ THEN
 		SetGlobal("OHD_ritual_interjects","GLOBAL",1)
 		StartDialog("LCCORWIJ",Player1)
 END
+//}
+
+//{ Slaver Stockade
+IF 
+	Global("LCA_BGSlaverPlot", "GLOBAL", 1)
+	Global("LCA_CorwinSlaverPlot", "GLOBAL", 1)
+	AreaCheck("AR0405")
+	!InMyArea("girl2")
+	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+	See(Player1)
+THEN
+	RESPONSE #100
+		StartDialog("LCCORWIJ", Player1)
+END
+//}
+
+//{ Player's Soul Stolen
+IF 
+	Global("OpenJonBedroom","GLOBAL",1)
+	!Global("LCA_PlayerSoulStolen", "GLOBAL", 1)
+	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+	See(Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_PlayerSoulStolen", "GLOBAL", 1)
+		SetGlobal("LCA_PlayerSoulTalk", "GLOBAL", 1)
+		StartDialog("LCCORWIJ", Player1)
+END
+//}
+
+//} End SoA initiated dialogs
 
 /* 
 	Active Checks
 */
+
+
 
 /* Checks if Corwin was in the party when Bodhi was killed */
 
@@ -921,122 +831,25 @@ THEN
 		StartDialogue("LCCORWIJ", PLAYER1)
 END
 
+//{ Corwin Turn Hostile
+IF 
+	InParty(Myself)
+	Global("LCA_CorwinHostile", "GLOBAL", 1)
+THEN 
+	RESPONSE #100
+		SetGlobal("LCA_CorwinHostile", "GLOBAL", 2)
+		DisplayStringHead(Myself, @11)
+		SetLeavePartyDialogFile()
+		ChangeAIScript("", DEFAULT)
+		LeaveParty()
+		Enemy()
+END
+//}
 /* Corwin / CHARNAME Sex */
 
 /* Checks conditions for Corwin to have sex with PC */
 
-IF
-	Global("LCA_BiteSoundSet", "GLOBAL", 1)
-	Global("LCA_CorwinBit", "GLOBAL", 0)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetPlayerSound(Myself,268296,MORALE)
-		SetPlayerSound(Myself,268292,HAPPY)
-		SetPlayerSound(Myself,268293,UNHAPPY_ANNOYED)
-		SetPlayerSound(Myself,268294,UNHAPPY_SERIOUS)
-		SetPlayerSound(Myself,268295,UNHAPPY_BREAKING_POINT)
-		SetPlayerSound(Myself,268256,LEADER)
-		SetPlayerSound(Myself,268257,TIRED)
-		SetPlayerSound(Myself,268258,BORED)
-		SetPlayerSound(Myself,268251,BATTLE_CRY1)
-		SetPlayerSound(Myself,268252,BATTLE_CRY2)
-		SetPlayerSound(Myself,268253,BATTLE_CRY3)
-		SetPlayerSound(Myself,268254,BATTLE_CRY4)
-		SetPlayerSound(Myself,268255,BATTLE_CRY5)
-		SetPlayerSound(Myself,268273,DAMAGE)
-		SetPlayerSound(Myself,268274,DYING)
-		SetPlayerSound(Myself,268259,HURT)
-		SetPlayerSound(Myself,268275,AREA_FOREST)
-		SetPlayerSound(Myself,268276,AREA_CITY)
-		SetPlayerSound(Myself,268277,AREA_DUNGEON)
-		SetPlayerSound(Myself,268278,AREA_DAY)
-		SetPlayerSound(Myself,268279,AREA_NIGHT)
-		SetPlayerSound(Myself,268260,SELECT_COMMON1)
-		SetPlayerSound(Myself,268261,SELECT_COMMON2)
-		SetPlayerSound(Myself,268262,SELECT_COMMON3)
-		SetPlayerSound(Myself,268263,SELECT_COMMON4)
-		SetPlayerSound(Myself,268264,SELECT_COMMON5)
-		SetPlayerSound(Myself,268265,SELECT_COMMON6)
-		SetPlayerSound(Myself,268266,SELECT_ACTION1)
-		SetPlayerSound(Myself,268267,SELECT_ACTION2)
-		SetPlayerSound(Myself,268268,SELECT_ACTION3)
-		SetPlayerSound(Myself,268280,SELECT_ACTION4)
-		SetPlayerSound(Myself,268281,SELECT_ACTION5)
-		SetPlayerSound(Myself,@9,SELECT_ACTION6) 
-		SetPlayerSound(Myself,268283,SELECT_ACTION7)
-		SetPlayerSound(Myself,268297,REACT_TO_DIE_GENERAL)
-		SetPlayerSound(Myself,268298,REACT_TO_DIE_SPECIFIC)
-		SetPlayerSound(Myself,268280,SELECT_RARE1)
-		SetPlayerSound(Myself,268281,SELECT_RARE2)
-		SetPlayerSound(Myself,268284,CRITICAL_HIT)
-		SetPlayerSound(Myself,268285,CRITICAL_MISS)
-		SetPlayerSound(Myself,268286,TARGET_IMMUNE)
-		SetPlayerSound(Myself,268287,INVENTORY_FULL)
-		SetPlayerSound(Myself,268288,PICKED_POCKET)
-		SetPlayerSound(Myself,268289,HIDDEN_IN_SHADOWS)
-		SetPlayerSound(Myself,268290,SPELL_DISRUPTED)
-		SetPlayerSound(Myself,268291,SET_A_TRAP)
-		SetGlobal("LCA_BiteSoundSet", "GLOBAL", 0)
-		SetInterrupt(TRUE)
-		Continue()
-END
 
-IF
-	GlobalGT("LCA_CorwinBit", "GLOBAL", 2)
-	!Global("LCA_BiteSoundSet", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetPlayerSound(Myself,@12,MORALE)
-		SetPlayerSound(Myself,@13,HAPPY)
-		SetPlayerSound(Myself,@14,UNHAPPY_ANNOYED)
-		SetPlayerSound(Myself,@12,UNHAPPY_SERIOUS)
-		SetPlayerSound(Myself,@13,UNHAPPY_BREAKING_POINT)
-		SetPlayerSound(Myself,@14,LEADER)
-		SetPlayerSound(Myself,@12,TIRED)
-		SetPlayerSound(Myself,@13,BORED)
-		SetPlayerSound(Myself,@14,BATTLE_CRY1)
-		SetPlayerSound(Myself,@12,BATTLE_CRY2)
-		SetPlayerSound(Myself,@13,BATTLE_CRY3)
-		SetPlayerSound(Myself,@14,BATTLE_CRY4)
-		SetPlayerSound(Myself,@12,BATTLE_CRY5)
-		SetPlayerSound(Myself,268273,DAMAGE)
-		SetPlayerSound(Myself,268274,DYING)
-		SetPlayerSound(Myself,@13,HURT)
-		SetPlayerSound(Myself,@14,AREA_FOREST)
-		SetPlayerSound(Myself,@12,AREA_CITY)
-		SetPlayerSound(Myself,@13,AREA_DUNGEON)
-		SetPlayerSound(Myself,@14,AREA_DAY)
-		SetPlayerSound(Myself,@12,AREA_NIGHT)
-		SetPlayerSound(Myself,@13,SELECT_COMMON1)
-		SetPlayerSound(Myself,@14,SELECT_COMMON2)
-		SetPlayerSound(Myself,@12,SELECT_COMMON3)
-		SetPlayerSound(Myself,@13,SELECT_COMMON4)
-		SetPlayerSound(Myself,@14,SELECT_COMMON5)
-		SetPlayerSound(Myself,@12,SELECT_COMMON6)
-		SetPlayerSound(Myself,@13,SELECT_ACTION1)
-		SetPlayerSound(Myself,@14,SELECT_ACTION2)
-		SetPlayerSound(Myself,@12,SELECT_ACTION3)
-		SetPlayerSound(Myself,@13,SELECT_ACTION4)
-		SetPlayerSound(Myself,@14,SELECT_ACTION5)
-		SetPlayerSound(Myself,@12,SELECT_ACTION6) 
-		SetPlayerSound(Myself,@13,SELECT_ACTION7)
-		SetPlayerSound(Myself,@14,REACT_TO_DIE_GENERAL)
-		SetPlayerSound(Myself,@12,REACT_TO_DIE_SPECIFIC)
-		SetPlayerSound(Myself,@13,SELECT_RARE1)
-		SetPlayerSound(Myself,@14,SELECT_RARE2)
-		SetPlayerSound(Myself,@12,CRITICAL_HIT)
-		SetPlayerSound(Myself,@13,CRITICAL_MISS)
-		SetPlayerSound(Myself,@14,TARGET_IMMUNE)
-		SetPlayerSound(Myself,@14,INVENTORY_FULL)
-		SetPlayerSound(Myself,@12,PICKED_POCKET)
-		SetPlayerSound(Myself,@13,SPELL_DISRUPTED)
-		SetPlayerSound(Myself,@14,SET_A_TRAP)
-		SetGlobal("LCA_BiteSoundSet", "GLOBAL", 1)
-		SetInterrupt(TRUE)
-		Continue()
-END
 
 IF
 	!Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
@@ -1249,71 +1062,15 @@ IF
 	ActionListEmpty()
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_014~)
 		SetGlobal("LCA_Banter_CorwinKeldornOpt1", "GLOBAL", 1)
 		Continue()
 END
 
-IF 
-	Global("LCA_CorwinCanTalk", "GLOBAL", 1)
-	IsValidForPartyDialogue("Imoen2")
-	Global("LCA_BodhiDead", "GLOBAL", 1)
-	GlobalTimerExpired("LCA_CorwinImoenSoulTimer", "GLOBAL")
-	See("Imoen2")
-THEN
-	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_015~)
-		SetGlobal("LCA_BodhiDead", "GLOBAL", 2)
-		Interact("Imoen2")
-END
 
-/* Corwin Bite Handling */
 
-/* This initiates the LCCORWIP dialog, after Corwin's resurrection at the Shadow Temple */
+//{ Corwin Bite Disease Interactions
 
-IF 
-	!InParty(Myself)
-	Global("LCA_CorwinCleansed", "GLOBAL", 1)
-	See(Player1)
-THEN
-	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_000~)
-		StartDialogNoSet(Player1)
-END
-
-/* Corwin Bite Disease */
-/* This will reapply the disease while CorwinBit is greater than 0. CorwinBit is set to zero when Corwin is cleansed (or resurrected in the Shadow Temple). */
-
-IF 
-	GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
-	!CheckSpellState(Myself, DISEASED)
-THEN 
-	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_016~)
-		ForceSpellRES("bdisease",Myself)
-		Continue()
-END
-
-/* Corwin Disease Cured */
-
-IF 
-	Global("LCA_CorwinCleansed", "GLOBAL", 2)
-	!Global("LCA_CorwinCured", "GLOBAL", 1)
-THEN 
-	RESPONSE #100
-		//ForceSpell("LCCORWIN",CLERIC_CURE_DISEASE)
-		//DisplayStringHead(Myself, ~DEBUG_017~)
-		SetGlobal("LCA_CorwinCured", "GLOBAL", 1)
-		ChangeStat(Myself,CON,1,ADD)
-		ChangeStat(Myself,DEX,1,ADD)
-		ChangeStat(Myself,STR,1,ADD)
-		ChangeStat(Myself,CHR,1,ADD)
-		
-		Continue()
-END
-
-/* Corwin Bite Interactions */
-
+//{ First Bit
 IF 
 	Global("LCA_CorwinBit", "GLOBAL", 1)
 	CombatCounter(0)
@@ -1323,31 +1080,6 @@ THEN
 		//DisplayStringHead(Myself, ~DEBUG_018~)
 		SetGlobal("LCA_CorwinBit", "GLOBAL", 2)
 		Continue()
-END
-
-IF 
-	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-	GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
-	GlobalTimerExpired("LCA_CorwinSickPartyTimer", "GLOBAL")
-	!Global("LCA_CorwinPartySick", "GLOBAL", 1)
-	OR(4)
-		IsValidForPartyDialogue("KORGAN")
-		IsValidForPartyDialogue("AERIE")
-		IsValidForPartyDialogue("IMOEN2")
-		IsValidForPartyDialogue("JAHEIRA")
-THEN
-	RESPONSE #25
-		SetGlobal("LCA_CorwinSick_Jaheira", "GLOBAL", 1)
-		ActionOverride("JAHEIRA", StartDialog("JAHEIRAJ", "LCCORWIN"))
-	RESPONSE #25
-		SetGlobal("LCA_CorwinSick_Aerie", "GLOBAL", 1)
-		ActionOverride("AERIE", StartDialog("AERIEJ", "LCCORWIN"))
-	RESPONSE #25
-		SetGlobal("LCA_CorwinSick_Korgan", "GLOBAL", 1)
-		ActionOverride("KORGAN", StartDialog("KORGANJ", Player1))
-	RESPONSE #25
-		SetGlobal("LCA_CorwinSick_Imoen", "GLOBAL", 1)
-		ActionOverride("IMOEN2", StartDialog("IMOEN2J", "LCCORWIN"))
 END
 
 IF 
@@ -1369,10 +1101,12 @@ IF
 	See(Player1)
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_020~)
+		//Dialog J-31
 		StartDialog("LCCORWIJ", Player1)
 END
+//}
 
+//{ Bite Death Warning 2
 IF 
 	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 	Global("LCA_CorwinBit", "GLOBAL", 3)
@@ -1380,11 +1114,13 @@ IF
 	See(Player1)
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_021~)
 		SetGlobal("LCA_CorwinBit", "GLOBAL", 4)
+		//Dialog J-32
 		StartDialog("LCCORWIJ", Player1)
 END
+//}
 
+//{ Bite Death Warning 3
 IF 
 	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 	Global("LCA_CorwinBit", "GLOBAL", 5)
@@ -1392,11 +1128,13 @@ IF
 	See(Player1)
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_022~)
 		SetGlobal("LCA_CorwinBit", "GLOBAL", 6)
+		//Dialog J-33
 		StartDialog("LCCORWIJ", Player1)
 END
+//}
 
+//{ Death from Bite
 IF 
 	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 	Global("LCA_CorwinBit", "GLOBAL", 7)
@@ -1404,13 +1142,182 @@ IF
 	See(Player1)
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_023~)
 		SetGlobal("LCA_CorwinBit", "GLOBAL", 8)
+		//Dialog J-34
 		StartDialog("LCCORWIJ", Player1)
 END
+//}
 
+//{ Reset Sounds to Original
+IF
+	Global("LCA_BiteSoundSet", "GLOBAL", 1)
+	Global("LCA_CorwinBit", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetPlayerSound(Myself,268296,MORALE)
+		SetPlayerSound(Myself,268292,HAPPY)
+		SetPlayerSound(Myself,268293,UNHAPPY_ANNOYED)
+		SetPlayerSound(Myself,268294,UNHAPPY_SERIOUS)
+		SetPlayerSound(Myself,268295,UNHAPPY_BREAKING_POINT)
+		SetPlayerSound(Myself,268256,LEADER)
+		SetPlayerSound(Myself,268257,TIRED)
+		SetPlayerSound(Myself,268258,BORED)
+		SetPlayerSound(Myself,268251,BATTLE_CRY1)
+		SetPlayerSound(Myself,268252,BATTLE_CRY2)
+		SetPlayerSound(Myself,268253,BATTLE_CRY3)
+		SetPlayerSound(Myself,268254,BATTLE_CRY4)
+		SetPlayerSound(Myself,268255,BATTLE_CRY5)
+		SetPlayerSound(Myself,268273,DAMAGE)
+		SetPlayerSound(Myself,268274,DYING)
+		SetPlayerSound(Myself,268259,HURT)
+		SetPlayerSound(Myself,268275,AREA_FOREST)
+		SetPlayerSound(Myself,268276,AREA_CITY)
+		SetPlayerSound(Myself,268277,AREA_DUNGEON)
+		SetPlayerSound(Myself,268278,AREA_DAY)
+		SetPlayerSound(Myself,268279,AREA_NIGHT)
+		SetPlayerSound(Myself,268260,SELECT_COMMON1)
+		SetPlayerSound(Myself,268261,SELECT_COMMON2)
+		SetPlayerSound(Myself,268262,SELECT_COMMON3)
+		SetPlayerSound(Myself,268263,SELECT_COMMON4)
+		SetPlayerSound(Myself,268264,SELECT_COMMON5)
+		SetPlayerSound(Myself,268265,SELECT_COMMON6)
+		SetPlayerSound(Myself,268266,SELECT_ACTION1)
+		SetPlayerSound(Myself,268267,SELECT_ACTION2)
+		SetPlayerSound(Myself,268268,SELECT_ACTION3)
+		SetPlayerSound(Myself,268280,SELECT_ACTION4)
+		SetPlayerSound(Myself,268281,SELECT_ACTION5)
+		SetPlayerSound(Myself,@9,SELECT_ACTION6) 
+		SetPlayerSound(Myself,268283,SELECT_ACTION7)
+		SetPlayerSound(Myself,268297,REACT_TO_DIE_GENERAL)
+		SetPlayerSound(Myself,268298,REACT_TO_DIE_SPECIFIC)
+		SetPlayerSound(Myself,268280,SELECT_RARE1)
+		SetPlayerSound(Myself,268281,SELECT_RARE2)
+		SetPlayerSound(Myself,268284,CRITICAL_HIT)
+		SetPlayerSound(Myself,268285,CRITICAL_MISS)
+		SetPlayerSound(Myself,268286,TARGET_IMMUNE)
+		SetPlayerSound(Myself,268287,INVENTORY_FULL)
+		SetPlayerSound(Myself,268288,PICKED_POCKET)
+		SetPlayerSound(Myself,268289,HIDDEN_IN_SHADOWS)
+		SetPlayerSound(Myself,268290,SPELL_DISRUPTED)
+		SetPlayerSound(Myself,268291,SET_A_TRAP)
+		SetGlobal("LCA_BiteSoundSet", "GLOBAL", 0)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Set Sickness Sounds
+
+IF
+	GlobalGT("LCA_CorwinBit", "GLOBAL", 2)
+	!Global("LCA_BiteSoundSet", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetPlayerSound(Myself,@12,MORALE)
+		SetPlayerSound(Myself,@13,HAPPY)
+		SetPlayerSound(Myself,@14,UNHAPPY_ANNOYED)
+		SetPlayerSound(Myself,@12,UNHAPPY_SERIOUS)
+		SetPlayerSound(Myself,@13,UNHAPPY_BREAKING_POINT)
+		SetPlayerSound(Myself,@14,LEADER)
+		SetPlayerSound(Myself,@12,TIRED)
+		SetPlayerSound(Myself,@13,BORED)
+		SetPlayerSound(Myself,@14,BATTLE_CRY1)
+		SetPlayerSound(Myself,@12,BATTLE_CRY2)
+		SetPlayerSound(Myself,@13,BATTLE_CRY3)
+		SetPlayerSound(Myself,@14,BATTLE_CRY4)
+		SetPlayerSound(Myself,@12,BATTLE_CRY5)
+		SetPlayerSound(Myself,268273,DAMAGE)
+		SetPlayerSound(Myself,268274,DYING)
+		SetPlayerSound(Myself,@13,HURT)
+		SetPlayerSound(Myself,@14,AREA_FOREST)
+		SetPlayerSound(Myself,@12,AREA_CITY)
+		SetPlayerSound(Myself,@13,AREA_DUNGEON)
+		SetPlayerSound(Myself,@14,AREA_DAY)
+		SetPlayerSound(Myself,@12,AREA_NIGHT)
+		SetPlayerSound(Myself,@13,SELECT_COMMON1)
+		SetPlayerSound(Myself,@14,SELECT_COMMON2)
+		SetPlayerSound(Myself,@12,SELECT_COMMON3)
+		SetPlayerSound(Myself,@13,SELECT_COMMON4)
+		SetPlayerSound(Myself,@14,SELECT_COMMON5)
+		SetPlayerSound(Myself,@12,SELECT_COMMON6)
+		SetPlayerSound(Myself,@13,SELECT_ACTION1)
+		SetPlayerSound(Myself,@14,SELECT_ACTION2)
+		SetPlayerSound(Myself,@12,SELECT_ACTION3)
+		SetPlayerSound(Myself,@13,SELECT_ACTION4)
+		SetPlayerSound(Myself,@14,SELECT_ACTION5)
+		SetPlayerSound(Myself,@12,SELECT_ACTION6) 
+		SetPlayerSound(Myself,@13,SELECT_ACTION7)
+		SetPlayerSound(Myself,@14,REACT_TO_DIE_GENERAL)
+		SetPlayerSound(Myself,@12,REACT_TO_DIE_SPECIFIC)
+		SetPlayerSound(Myself,@13,SELECT_RARE1)
+		SetPlayerSound(Myself,@14,SELECT_RARE2)
+		SetPlayerSound(Myself,@12,CRITICAL_HIT)
+		SetPlayerSound(Myself,@13,CRITICAL_MISS)
+		SetPlayerSound(Myself,@14,TARGET_IMMUNE)
+		SetPlayerSound(Myself,@14,INVENTORY_FULL)
+		SetPlayerSound(Myself,@12,PICKED_POCKET)
+		SetPlayerSound(Myself,@13,SPELL_DISRUPTED)
+		SetPlayerSound(Myself,@14,SET_A_TRAP)
+		SetGlobal("LCA_BiteSoundSet", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Corwin Resurrected At Shadow Temple
+IF 
+	!InParty(Myself)
+	Global("LCA_CorwinCleansed", "GLOBAL", 1)
+	GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
+	See(Player1)
+THEN
+	RESPONSE #100
+		//Dialog P-6
+		StartDialogNoSet(Player1)
+END
+//}
+
+//{ Corwin Bit - Apply Disease
+/* Corwin Bite Disease */
+/* This will reapply the disease while CorwinBit is greater than 0. CorwinBit is set to zero when Corwin is cleansed (or resurrected in the Shadow Temple). */
+
+IF 
+	GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
+	!CheckSpellState(Myself, DISEASED)
+THEN 
+	RESPONSE #100
+		//DisplayStringHead(Myself, ~DEBUG_016~)
+		ForceSpellRES("bdisease",Myself)
+		Continue()
+END
+//}
+
+//{ Corwin Cured from Bodhi Disease
+/* Corwin Disease Cured */
+// Might need to re-write this. Concerned that if the script is interrupted, stat gains could erroneously continue
+IF 
+	Global("LCA_CorwinCleansed", "GLOBAL", 2)
+	!Global("LCA_CorwinCured", "GLOBAL", 1)
+THEN 
+	RESPONSE #100
+		//ForceSpell("LCCORWIN",CLERIC_CURE_DISEASE)
+		//DisplayStringHead(Myself, ~DEBUG_017~)
+		SetInterrupt(FALSE)
+		ChangeStat(Myself,CON,1,ADD)
+		ChangeStat(Myself,DEX,1,ADD)
+		ChangeStat(Myself,STR,1,ADD)
+		ChangeStat(Myself,CHR,1,ADD)
+		SetGlobal("LCA_CorwinCured", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+//}
+
+//{ Corwin Healed with Bodhi's Death
 /* This handles Bodhi's death when Corwin was bit, is still alive, and in the party. */
-
 IF
 	InParty(Myself)
 	GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
@@ -1423,7 +1330,42 @@ THEN
 		StartCutSceneMode()
 		StartCutSceneEx("LCAcs09a", FALSE)
 END
+//}
 
+//{ Party Concerned Corwin Sick
+IF 
+	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+	GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
+	GlobalTimerExpired("LCA_CorwinSickPartyTimer", "GLOBAL")
+	!Global("LCA_CorwinPartySick", "GLOBAL", 1)
+	OR(4)
+		IsValidForPartyDialogue("KORGAN")
+		IsValidForPartyDialogue("AERIE")
+		IsValidForPartyDialogue("IMOEN2")
+		IsValidForPartyDialogue("JAHEIRA")
+THEN
+	RESPONSE #25
+		SetGlobal("LCA_CorwinSick_Jaheira", "GLOBAL", 1)
+		//Dialog B-6
+		ActionOverride("JAHEIRA", StartDialog("JAHEIRAJ", "LCCORWIN"))
+	RESPONSE #25
+		SetGlobal("LCA_CorwinSick_Aerie", "GLOBAL", 1)
+		//Dialog B-5
+		ActionOverride("AERIE", StartDialog("AERIEJ", "LCCORWIN"))
+	RESPONSE #25
+		SetGlobal("LCA_CorwinSick_Korgan", "GLOBAL", 1)
+		//Dialog B-7
+		ActionOverride("KORGAN", StartDialog("KORGANJ", Player1))
+	RESPONSE #25
+		SetGlobal("LCA_CorwinSick_Imoen", "GLOBAL", 1)
+		//Dialog B-8
+		ActionOverride("IMOEN2", StartDialog("IMOEN2J", "LCCORWIN"))
+END
+//}
+
+//} End Corwin Disease Interactions
+
+//{ Banter Initialization
 /* Initialize Banters */
 
 IF
@@ -1455,6 +1397,7 @@ THEN
 		SetGlobal("LCA_Banter_CorwinHaerDalis", "GLOBAL", 1)
 		SetGlobal("LCA_Banter_CorwinNalia", "GLOBAL", 1)
 		SetGlobal("LCA_Banter_CorwinMazzy", "GLOBAL", 1)
+		SetGlobal("LCA_Banter_CorwinBanter", "GLOBAL", 1)
 		SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 		Continue()
 END
@@ -1494,9 +1437,11 @@ THEN
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_HOUR)
 		Continue()
 END
+//} End Banter Initialization
+
+//{ Banter Randomizer
 
 /* Randomizes the next banter interaction */
-
 IF
 	InParty(Myself)
 	Global("LCA_BanterCountInit", "GLOBAL", 1)
@@ -1588,10 +1533,14 @@ THEN
 		//DisplayStringHead(Myself, ~DEBUG_051~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 21) /* Mazzy */
 		Continue()
+	RESPONSE #100
+		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 22) /* Sarevok */
+		Continue()
 END
+//}
 
+//{ Banter Reset to 0 is Subject is Unavailable
 /* If the next subject of interaction is not valid, set the next subject to 0, which will re-run the randomizer the next time the script executes */
-
 IF
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 1) /* Aerie */
 	OR(2)
@@ -1844,8 +1793,20 @@ THEN
 		Continue()
 END
 
-/* Neb Killed While Corwin in Party */
+IF
+	Global("LCA_Banter_NextInteraction", "GLOBAL", 22) /* Sarevok */
+	OR(2)
+		!IfValidForPartyDialog("Sarevok")
+		!See("Sarevok")
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself, ~DEBUG_072~)
+		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
+		Continue()
+END
+//} End Banter Resets
 
+//{ Neb Killed While Corwin in Party 
 IF
 	Global("LCA_NebFight", "GLOBAL", 1)
 	Dead("Neb")
@@ -1857,10 +1818,11 @@ THEN
 		SetGlobal("LCA_NebDead", "GLOBAL", 1)
 		StartDialog("LCCORWIJ", Player1)
 END
+//}
 
-/* Mazzy */
+//{ Mazzy Interactions
 
-/* Mazzy First Interaction */
+//{ Mazzy First Interaction 
 
 IF 
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 21) /* Mazzy */
@@ -1900,8 +1862,9 @@ THEN
 		FaceObject("Mazzy")
 		Interact("Mazzy")
 END
+//}
 
-/* Mazzy Second Interaction */
+//{ Mazzy Second Interaction 
 
 IF 
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 21) /* Mazzy */
@@ -1943,9 +1906,9 @@ THEN
 		FaceObject("Mazzy")
 		StartDialog("LCCORWIB", Player1)
 END
+//}
 
-/* Trademeet Archery Competition Ended - Corwin Won */
-
+//{ Trademeet Archery Competition Ended - Corwin Won 
 IF 
 	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 	IfValidForPartyDialog("Mazzy")
@@ -1957,9 +1920,9 @@ THEN
 		//DisplayStringHead(Myself, ~DEBUG_080~)
 		ActionOverride("Mazzy", StartDialog("MAZZYJ", Player1))
 END
+//}
 
-/* Trademeet Archery Competition Ended - Mazzy Won */
-
+//{ Trademeet Archery Competition Ended - Mazzy Won
 IF 
 	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 	IfValidForPartyDialog("Mazzy")
@@ -1972,11 +1935,12 @@ THEN
 		StartDialog("LCCORWIB", Player1)
 		//Interact("Mazzy")
 END
+//}
+//} End Mazzy Interactions
 
-/* Nalia */
+//{ Nalia Interactions
 
-/* Nalia First Interaction */
-
+//{ Nalia First Interaction
 IF 
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 20) /* Nalia */
 	Global("LCA_Banter_CorwinNalia", "GLOBAL", 1)
@@ -2000,9 +1964,9 @@ THEN
 		FaceObject("Nalia")
 		Interact("Nalia")
 END
+//}
 
-/* Nalia Second Interaction */
-
+//{ Nalia Second Interaction
 IF 
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 20) /* Nalia */
 	Global("LCA_Banter_CorwinNalia", "GLOBAL", 3)
@@ -2042,9 +2006,9 @@ THEN
 		FaceObject("Nalia")
 		Interact("Nalia")
 END
+//}
 
-/* Nalia Third Interaction */
-
+//{ Nalia Third Interaction
 IF 
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 20) /* Nalia */
 	Global("LCA_Banter_CorwinNalia", "GLOBAL", 5)
@@ -2083,11 +2047,13 @@ THEN
 		FaceObject("Nalia")
 		Interact("Nalia")
 END
+//}
 
-/* HaerDalis */
+//} End Nalia Interactions
 
-/* HaerDalis First Interaction */
+//{ HaerDalis Interactions
 
+//{ HaerDalis First Interaction
 IF 
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 19) /* HaerDalis */
 	Global("LCA_Banter_CorwinHaerDalis", "GLOBAL", 1)
@@ -2127,9 +2093,9 @@ THEN
 		FaceObject("HaerDalis")
 		ActionOverride("HaerDalis", StartDialog("HAERDAJ", "LCCORWIN"))
 END
+//}
 
-/* HaerDalis Second Interaction */
-
+//{ HaerDalis Second Interaction
 IF 
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 19) /* HaerDalis */
 	Global("LCA_Banter_CorwinHaerDalis", "GLOBAL", 3)
@@ -2168,10 +2134,12 @@ THEN
 		FaceObject("HaerDalis")
 		Interact("HaerDalis")
 END
+//}
+//} End HaerDalis Interactions
 
-/* Minsc */
+//{ Minsc Interactions
 
-/* Minsc First Interaction*/
+//{ Minsc First Interaction
 
 IF 
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 18) /* Minsc */
@@ -2213,8 +2181,9 @@ THEN
 		FaceObject("Minsc")
 		Interact("Minsc")
 END
+//}
 
-/* Minsc Second Interaction*/
+//{ Minsc Second Interaction
 
 IF 
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 18) /* Minsc */
@@ -2253,8 +2222,9 @@ THEN
 		FaceObject("Minsc")
 		Interact("Minsc")
 END
+//}
 
-/* Minsc Third Interaction*/
+//{ Minsc Third Interaction
 
 IF 
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 18) /* Minsc */
@@ -2296,10 +2266,13 @@ THEN
 		FaceObject("Minsc")
 		Interact("Minsc")
 END
+//}
 
-/* Rasaad */
+//} End Minsc Interactions
 
-/* Rasaad First Interaction*/
+//{ Rasaad Interactions
+
+//{ Rasaad First Interaction
 
 IF 
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 17) /* Rasaad */
@@ -2339,8 +2312,9 @@ THEN
 		FaceObject("Rasaad")
 		ActionOverride("Rasaad", StartDialog("RASAADJ", "LCCORWIN"))
 END
+//}
 
-/* Rasaad Second Interaction*/
+//{ Rasaad Second Interaction
 
 IF 
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 17) /* Rasaad */
@@ -2379,8 +2353,9 @@ THEN
 		//clearactions(Myself)
 		Interact("Rasaad")
 END
+//}
 
-/* Rasaad Third Interaction*/
+//{ Rasaad Third Interaction
 
 IF 
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 17) /* Rasaad */
@@ -2419,8 +2394,9 @@ THEN
 		//clearactions(Myself)
 		Interact("Rasaad")
 END
+//}
 
-/* Rasaad Fourth Interaction*/
+//{ Rasaad Fourth Interaction
 
 IF 
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 17) /* Rasaad */
@@ -2459,10 +2435,13 @@ THEN
 		//clearactions(Myself)
 		Interact("Rasaad")
 END
+//}
 
-/* Yoshimo */
+//} End Rasaad Interactions
 
-/* Yoshimo First Interaction*/
+//{ Yoshimo Interactions
+
+//{ Yoshimo First Interaction
 
 IF 
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 16) /* Yoshimo */
@@ -2502,11 +2481,13 @@ THEN
 		FaceObject("Yoshimo")
 		Interact("Yoshimo")
 END
+//}
 
-/* Cernd */
+//} End Yoshimo Interactions
 
-/* Cernd First Interaction */
+//{ Cernd Interactions
 
+//{ Cernd First Interaction
 IF 
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 15) /* Cernd */
 	Global("LCA_Banter_CorwinCernd", "GLOBAL", 1)
@@ -2514,7 +2495,6 @@ IF
 	ActionListEmpty()
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_120~)
 		SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 		SetGlobal("LCA_Banter_CorwinCernd", "GLOBAL", 2)
 		Continue()
@@ -2528,7 +2508,6 @@ IF
 	ActionListEmpty()
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_121~)
 		MoveToObject("Cernd")
 		Continue()
 END
@@ -2541,15 +2520,17 @@ IF
 	See("Cernd")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_122~)
-		//clearactions(Myself)
 		ActionOverride("Cernd", FaceObject("LCCORWIN"))
+		//Dialog B-35
 		Interact("Cernd")
 END
+//}
 
-/* Valygar */
+//} End Cernd Interactions
 
-/* Valygar First Interaction */
+//{ Valygar Interactions
+
+//{ Valygar First Interaction 
 
 IF 
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 14) /* Valygar */
@@ -2584,24 +2565,13 @@ IF
 	See("Valygar")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_125~)
-		//clearactions(Myself)
 		ActionOverride("Valygar", FaceObject("LCCORWIN"))
+		//Dialogs B-37, B-38
 		Interact("Valygar")
 END
+//}
 
-IF 
-	Global("LCA_Banter_NextInteraction", "GLOBAL", 14) /* Valygar */
-	Global("LCA_Banter_CorwinValygar", "GLOBAL", 3)
-	ActionListEmpty()
-THEN
-	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_Valy3_0~)
-		SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
-		SetGlobal("LCA_Banter_CorwinValygar", "GLOBAL", 4)
-		Continue()
-END
-
+//{ Valygar Second Interaction
 IF
 	Global("LavokDead", "GLOBAL", 1)
 	!Global("LCA_CorwinLavokTimerSet", "GLOBAL", 1)
@@ -2609,6 +2579,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("LCA_CorwinLavokTimerSet", "GLOBAL", 1)
 		SetGlobalTimer("LCA_CorwinLavokTimer", "GLOBAL", ONE_HOUR)
+		Continue()
 END
 
 IF 
@@ -2620,43 +2591,57 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_CorwinValygarLavok", "GLOBAL", 1)
+		//Dialog B-39
 		Interact("Valygar")
 END
+//}
 
-IF 
-	Global("LCA_Banter_CorwinValygar", "GLOBAL", 4)
-	Global("LavokDead", "GLOBAL", 1)
-	ActionListEmpty()
-THEN
-	RESPONSE #100
-		SetGlobal("LCA_Banter_CorwinValygar", "GLOBAL", 5)
-		SetGlobalTimer("LCA_CorwinValygarTimer", "GLOBAL", FOUR_HOURS)
-		Continue()
-END
-
-IF 
-	Global("LCA_Banter_CorwinValygar", "GLOBAL", 5)
+//{ Valygar Third Interaction
+IF
 	GlobalTimerExpired("LCA_CorwinValygarTimer", "GLOBAL")
+	IsValidForPartyDialog("Valygar")
+	Global("LCA_CorwinCanTalk", "GLOBAL", 1)
+	GlobalLT("LCA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("LCA_CorwinValygarBG", "GLOBAL", 1)
 	ActionListEmpty()
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_Banter_CorwinValygar", "GLOBAL", 6)
+		SetGlobal("LCA_CorwinValygarBG", "GLOBAL", 1)
 		Continue()
 END
 
 IF
-	Global("LCA_Banter_CorwinValygar", "GLOBAL", 6)
+	IsValidForPartyDialog("Valygar")
 	Global("LCA_CorwinCanTalk", "GLOBAL", 1)
-	IfValidForPartyDialog("Valygar")
+	Global("LCA_CorwinValygarBG", "GLOBAL", 1)
+	!Range("Valygar", 6)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		ActionOverride("Valygar", MoveToObject("LCCORWIN"))
+		Continue()
+END
+
+IF
+	IsValidForPartyDialog("Valygar")
+	Global("LCA_CorwinCanTalk", "GLOBAL", 1)
+	Global("LCA_CorwinValygarBG", "GLOBAL", 1)
+	Range("Valygar", 7)
 	See("Valygar")
 THEN
 	RESPONSE #100
-		Interact("Valygar")
+		SetGlobal("LCA_CorwinValygarBG", "GLOBAL", 1)
+		//Dialog B-85
+		ActionOverride("Valygar", StartDialog("VALYGARJ", "LCCORWIN"))
 END
+	
+//}
 
-/* Hexxat */
+//} End Valygar Interactions
 
-/* Hexxat - Corwin First Interaction */
+//{ Hexxat Interactions
+
+//{ Hexxat - Corwin First Interaction 
 
 IF 
 	InParty(Myself)
@@ -2695,8 +2680,9 @@ THEN
 		ActionOverride(Player1, FaceObject("LCCORWIN"))
 		StartDialogue("LCCORWIJ", Player1)
 END
+//}
 
-/* Hexxat - Corwin Second Interaction */
+//{ Hexxat - Corwin Second Interaction 
 
 IF 
 	InParty(Myself)
@@ -2737,9 +2723,9 @@ THEN
 		ActionOverride("Hexxat", FaceObject("LCCORWIN"))
 		Interact("Hexxat")
 END
+//}
 
-/* Hexxat - Corwin Third Interaction */
-
+//{ Hexxat - Corwin Third Interaction 
 IF 
 	InParty(Myself)
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 6) /* Hexxat */
@@ -2763,9 +2749,9 @@ THEN
 		ActionOverride("Hexxat", FaceObject("LCCORWIN"))
 		StartDialogue("LCCORWIJ","Hexxat")
 END
+//}
 
-/* Hexxat - Corwin Fight */
-
+//{ Hexxat Corwin Fight
 IF 
 	InParty(Myself)
 	IfValidForPartyDialog("Hexxat")
@@ -2788,10 +2774,13 @@ THEN
 		
 		SetInterrupt(TRUE)
 END
+//}
 
-/* Jaheira */
+//} End Hexxat Interaction
 
-/* Jaheira - Corwin First Interaction */
+//{ Jaheira Interactions
+
+//{ Jaheira - Corwin First Interaction 
 
 IF
 	InParty(Myself)
@@ -2832,8 +2821,9 @@ THEN
 		ActionOverride("Jaheira", FaceObject("LCCORWIN"))
 		Interact("Jaheira")
 END
+//}
 
-/* Jaheira - Corwin Second Interaction */
+//{ Jaheira - Corwin Second Interaction
 
 IF
 	InParty(Myself)
@@ -2885,9 +2875,9 @@ THEN
 		FaceObject("Jaheira")
 		Interact("Jaheira")
 END
+//}
 
-/* Jaheira - Corwin Third Interaction */
-
+//{ Jaheira - Corwin Third Interaction
 IF
 	InParty(Myself)
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 7)
@@ -2924,10 +2914,14 @@ THEN
 		ActionOverride("Jaheira", FaceObject("LCCORWIN"))
 		Interact("Jaheira")
 END
+//}
 
+//} End Jaheira Interactions
+
+//{ Neera Interactions
 /* Neera */
 
-/* Neera - Corwin First Interaction */
+//{ Neera - Corwin First Interaction 
 
 IF
 	InParty(Myself)
@@ -2965,8 +2959,9 @@ THEN
 		ActionOverride("Neera", FaceObject("LCCORWIN"))
 		Interact("Neera")
 END
+//}
 
-/* Neera - Corwin Second Interaction */
+//{ Neera - Corwin Second Interaction 
 
 IF
 	InParty(Myself)
@@ -2990,12 +2985,90 @@ THEN
 	RESPONSE #100
 		Interact("Neera")
 END
+//}
 
-/* Dorn */
+//} End Neera Interactions
 
+//{ Dorn Interactions
 
+//{ Dorn / Corwin Love Conflict
+IF
+	IfValidForPartyDialog("dorn")  // Dorn
+	IfValidForPartyDialog("LCCORWIN")  // corwin
+	OR(2)
+		Global("DornRomanceActive","GLOBAL",1)
+		Global("DornRomanceActive","GLOBAL",2)
+	GlobalGT("DornLovetalks","GLOBAL",9)
+	OR(2)
+		Global("LCA_CorwinRomanceActive","GLOBAL",1)
+		Global("LCA_CorwinRomanceActive","GLOBAL",2)
+	Global("OHD_corwinconflict","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("OHD_corwinconflict","GLOBAL",1)
+		RealSetGlobalTimer("OHD_corwinconflict_timer","GLOBAL",NINE_HOURS)
+		Continue()
+END
 
-/* Dorn - Corwin First Interaction */
+IF
+	IfValidForPartyDialog("dorn")  // Dorn
+	IfValidForPartyDialog("LCCORWIN")  // corwin
+	OR(2)
+		Global("DornRomanceActive","GLOBAL",1)
+		Global("DornRomanceActive","GLOBAL",2)
+	OR(2)
+		Global("LCA_CorwinRomanceActive","GLOBAL",1)
+		Global("LCA_CorwinRomanceActive","GLOBAL",2)
+	Global("OHD_corwinconflict","GLOBAL",1)
+	RealGlobalTimerExpired("OHD_corwinconflict_timer","GLOBAL")
+THEN
+	RESPONSE #100
+		SetGlobal("OHD_corwinconflict","GLOBAL",2)
+		Continue()
+END
+
+IF
+	IfValidForPartyDialog("dorn")  // Dorn
+	Global("LCA_CorwinCanTalk", "GLOBAL", 1)
+	!AreaType(DUNGEON)
+	!See([ENEMY])
+	Global("OHD_corwinconflict","GLOBAL",2)
+	See("Dorn")
+THEN
+	RESPONSE #100
+		StartDialog("LCCORWIB", Player1)
+		//Interact("Dorn")
+END
+
+IF
+	Global("OHD_sexreactions","GLOBAL",1)
+	Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)  
+	!Global("LCA_DornSex", "GLOBAL", 1)
+	See(Player1)
+	OR(2)
+		Global("LCA_CorwinRomanceActive","GLOBAL",1)
+		Global("LCA_CorwinRomanceActive","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_DornSex", "GLOBAL", 1)
+		SetGlobal("LCA_ComplainDornSex", "GLOBAL", 1)
+		StartDialog("LCCORWIJ", Player1)
+END
+//}
+
+//{ Checks if the patrons are dead
+IF
+	!Global("LCA_DornPatronsDead", "GLOBAL", 1)
+	Dead("ohdazoth")  // Azothet
+	Dead("ohdugoth")  // Ur-Gothoz
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_DornPatronsDead", "GLOBAL", 1)
+		Continue()
+END
+//}
+
+//{ Dorn - Corwin First Interaction 
 
 IF
 	InParty(Myself)
@@ -3034,8 +3107,9 @@ THEN
 		ActionOverride("Dorn", FaceObject("LCCORWIN"))
 		Interact("Dorn")
 END
+//}
 
-/* Dorn - Corwin Second Interaction */
+//{ Dorn - Corwin Second Interaction 
 
 IF
 	InParty(Myself)
@@ -3073,11 +3147,29 @@ THEN
 		ActionOverride("Dorn", FaceObject("LCCORWIN"))
 		Interact("Dorn")
 END
+//}
 
-/* Keldorn */
+//} End Dorn Interactions
 
-/* Keldorn - Corwin Optional Interaction (Reconciled with Maria) */
+//{ Keldorn Interactions 
 
+//{ Corwin Mad at Keldorn - Underdark
+IF
+	IsValidForPartyDialog("Keldorn")
+	Global("LCA_CorwinCanTalk", "GLOBAL", 1)
+	GlobalTimerExpired("LCA_CorwinScoldKeldornTimer", "GLOBAL")
+	Global("LCA_InUnderdark", "GLOBAL", 1)
+	See("Keldorn")
+	Global("LCA_CorwinAngryAtKeldorn", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_CorwinAngryAtKeldorn", "GLOBAL", 2)
+		//Dialog B-61
+		Interact("Keldorn")
+END
+//}
+
+//{ Keldorn - Corwin Optional Interaction (Reconciled with Maria) 
 IF
 	InParty(Myself)
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 9)
@@ -3110,13 +3202,13 @@ IF
 	See("Keldorn")
 THEN
 	RESPONSE #100
-		//clearactions("Keldorn")
 		FaceObject("Keldorn")
+		//Dialog B-62
 		Interact("Keldorn")
 END
+//}
 
-/* Keldorn - Corwin First Interaction */
-
+//{ Keldorn - Corwin First Interaction 
 IF
 	InParty(Myself)
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 9)
@@ -3149,13 +3241,13 @@ IF
 	See("Keldorn")
 THEN
 	RESPONSE #100
-		//clearactions(Myself)
 		ActionOverride("Keldorn", FaceObject("LCCORWIN"))
+		//Dialog B-63
 		Interact("Keldorn")
 END
+//}
 
-/* Keldorn - Corwin Second Interaction */
-
+//{ Keldorn - Corwin Second Interaction 
 IF
 	InParty(Myself)
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 9)
@@ -3190,12 +3282,16 @@ THEN
 	RESPONSE #100
 		//clearactions("Keldorn")
 		FaceObject("Keldorn")
+		//Dialogs B-64, B-65
 		Interact("Keldorn")
 END
+//}
 
-/* Korgan */
+//} End Keldorn Interactions
 
-/* Korgan - Corwin First Interaction*/
+//{ Korgan Interactions
+
+//{ Korgan - Corwin First Interaction
 
 IF
 	InParty(Myself)
@@ -3231,10 +3327,12 @@ THEN
 	RESPONSE #100
 		//clearactions("Korgan")
 		FaceObject("Korgan")
+		//Dialog B-43
 		Interact("Korgan")
 END
+//}
 
-/* Korgan - Corwin Second Interaction*/
+//{ Korgan - Corwin Second Interaction
 
 IF
 	InParty(Myself)
@@ -3268,14 +3366,17 @@ IF
 	See("Korgan")
 THEN
 	RESPONSE #100
-		//clearactions("Korgan")
 		FaceObject("Korgan")
+		//Dialog B-44
 		Interact("Korgan")
 END
+//}
 
-/* Jan */
+//} End Korgan Interactions
 
-/* Jan - Corwin First Interaction*/
+//{ Jan Interactions
+
+//{ Jan - Corwin First Interaction
 
 IF
 	InParty(Myself)
@@ -3309,12 +3410,13 @@ IF
 	See("Jan")
 THEN
 	RESPONSE #100
-		//clearactions(Myself)
 		ActionOverride("Jan", FaceObject("LCCORWIN"))
+		//Dialog B-59
 		Interact("Jan")
 END
+//}
 
-/* Jan - Corwin Second Interaction*/
+//{ Jan - Corwin Second Interaction
 
 IF
 	InParty(Myself)
@@ -3350,13 +3452,16 @@ THEN
 	RESPONSE #100
 		//clearactions(Myself)
 		ActionOverride("Jan", FaceObject("LCCORWIN"))
+		//Dialog B-60
 		Interact("Jan")
 END
+//}
 
-/* Edwin */
+//} End Jan Interactions
 
-/* Edwin - Corwin Change to Female Interaction */
+//{ Edwin Interactions
 
+//{ Edwin - Corwin Change to Female Interaction */
 
 IF
 	InParty(Myself)
@@ -3380,11 +3485,12 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("LCA_CorwinEdwinFemale", "GLOBAL", 1)
+		//Dialog B-55
 		Interact("Edwin")
 END
+//}
 
-
-/* Edwin - Corwin First Interaction */
+//{  Edwin - Corwin First Interaction 
 
 IF
 	InParty(Myself)
@@ -3421,10 +3527,12 @@ THEN
 	RESPONSE #100
 		//clearactions(Myself)
 		ActionOverride("Edwin", FaceObject("LCCORWIN"))
+		//Dialog B-56
 		Interact("Edwin")
 END
+//}
 
-/* Edwin - Corwin Second Interaction */
+//{  Edwin - Corwin Second Interaction 
 
 IF
 	InParty(Myself)
@@ -3461,10 +3569,12 @@ THEN
 	RESPONSE #100
 		//clearactions("Edwin")
 		FaceObject("Edwin")
+		//Dialog B-57
 		Interact("Edwin")
 END
+//}
 
-/* Edwin - Corwin Third Interaction */
+//{  Edwin - Corwin Third Interaction 
 
 IF
 	InParty(Myself)
@@ -3501,10 +3611,12 @@ THEN
 	RESPONSE #100
 		//clearactions("Edwin")
 		FaceObject("Edwin")
+		//Dialog B-58
 		Interact("Edwin")
 END
+//}
 
-// Corwin Edwin Thay Interaction
+//{  Corwin Edwin Thay Interaction
 
 IF
 	GlobalTimerExpired("LCA_CorwinEdwinThayTimer", "GLOBAL")
@@ -3514,10 +3626,13 @@ THEN
 		SetGlobal("LCA_CorwinEdwinThay", "GLOBAL", 1)
 		Interact("Edwin")
 END
+//}
 
-/* Aerie */
+//} End Edwin Interactions
 
-/* Aerie - Corwin First Interaction */
+//{ Aerie Interactions
+
+//{ Aerie - Corwin First Interaction 
 
 IF
 	InParty(Myself)
@@ -3550,12 +3665,13 @@ IF
 	See("Aerie")
 THEN
 	RESPONSE #100
-		//clearactions(Myself)
 		ActionOverride("Aerie", FaceObject("LCCORWIN"))
+		//Dialog B-72
 		Interact("Aerie")
 END
+//}
 
-/* Aerie - Corwin Second Interaction */
+//{ Aerie - Corwin Second Interaction 
 
 IF
 	InParty(Myself)
@@ -3600,12 +3716,13 @@ IF
 	See("Aerie")
 THEN
 	RESPONSE #100
-		//clearactions("Aerie")
 		FaceObject("Aerie")
+		//Dialog B-74
 		Interact("Aerie")
 END
+//}
 
-/* Aerie - Corwin Third Interaction */
+//{ Aerie - Corwin Third Interaction 
 
 IF
 	InParty(Myself)
@@ -3638,12 +3755,13 @@ IF
 	See("Aerie")
 THEN
 	RESPONSE #100
-		//clearactions(Myself)
 		ActionOverride("Aerie", FaceObject("LCCORWIN"))
+		//Dialogs B-75, B-77
 		Interact("Aerie")
 END
+//}
 
-/* Aerie - Corwin Fourth Interaction */
+//{ Aerie - Corwin Fourth Interaction 
 
 IF
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 1)
@@ -3676,14 +3794,17 @@ IF
 	See("Aerie")
 THEN
 	RESPONSE #100
-		//clearactions("Aerie")
 		FaceObject("Aerie")
+		//Dialogs B-76, B-78
 		ActionOverride("Aerie", StartDialog("AERIEJ", "LCCORWIN"))
 END
+//}
 
-/* Anomen */
+//} End Aerie Interactions
 
-/* Anomen - Corwin First Interaction*/
+//{ Anomen Interactions
+
+//{ Anomen - Corwin First Interaction*/
 
 IF
 	InParty(Myself)
@@ -3719,10 +3840,12 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("Anomen", FaceObject("LCCORWIN"))
+		//Dialog B-1
 		StartDialog("LCCORWIB", Player1)
 END
+//}
 
-/* Anomen - Corwin Second Interaction*/
+//{ Anomen - Corwin Second Interaction*/
 
 IF
 	InParty(Myself)
@@ -3756,15 +3879,17 @@ IF
 	See("Anomen")
 THEN
 	RESPONSE #100
-		//clearactions("Anomen")
 		FaceObject("Anomen")
+		//Dialog B-67
 		Interact("Anomen")
 END
+//}
 
-/* Viconia */
+//} End Anomen Interactions
 
-/* Viconia - Corwin First Interaction*/
+//{ Viconia Interactions
 
+//{ Viconia - Corwin First Interaction*/
 IF
 	InParty(Myself)
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 13)
@@ -3797,10 +3922,12 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("Viconia", FaceObject("LCCORWIN"))
+		//Dialog B-45
 		Interact("Viconia")
 END
+//}
 
-/* Viconia - Corwin Second Interaction*/
+//{ Viconia - Corwin Second Interaction*/
 
 IF
 	InParty(Myself)
@@ -3823,10 +3950,12 @@ IF
 	Global("LCA_Banter_CorwinViconia", "GLOBAL", 4)
 THEN
 	RESPONSE #100
+		//Dialog B-47
 		Interact("Viconia")
 END
+//}
 
-/* Viconia - Corwin Third Interaction*/
+//{ Viconia - Corwin Third Interaction*/
 
 IF
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 13)
@@ -3847,13 +3976,31 @@ IF
 	See("Viconia")
 THEN
 	RESPONSE #100
+		//Dialog B-48
 		ActionOverride("Viconia", StartDialog("VICONIJ", "LCCORWIN"))
 END
+//}
 
-/* Imoen */
+//} End Viconia Corwin Interactions
 
-/* Imoen - Corwin First Interaction*/
+//{ Imoen Interactions
 
+//{ Imoen Soul Returned
+IF 
+	Global("LCA_CorwinCanTalk", "GLOBAL", 1)
+	IsValidForPartyDialogue("Imoen2")
+	GlobalTimerExpired("LCA_CorwinImoenSoulTimer", "GLOBAL")
+	See("Imoen2")
+	GlobalLT("LCA_CorwinImoenSoulTalk", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LCA_CorwinImoenSoulTalk", "GLOBAL", 1)
+		//Dialogs B-50, B-51
+		Interact("Imoen2")
+END
+//}
+
+//{ Imoen - Corwin First Interaction
 IF
 	InParty(Myself)
 	Global("LCA_Banter_NextInteraction", "GLOBAL", 5)
@@ -3885,12 +4032,13 @@ IF
 	See("Imoen2")
 THEN
 	RESPONSE #100
-		//clearactions("Imoen2")
 		FaceObject("Imoen2")
+		//Dialog B-49
 		Interact("Imoen2")
 END
+//}
 
-/* Imoen - Corwin Second Interaction*/
+//{ Imoen - Corwin Second Interaction*/
 
 IF
 	InParty(Myself)
@@ -3923,11 +4071,13 @@ IF
 	See("Imoen2")
 THEN
 	RESPONSE #100
-		//clearactions(Myself)
 		FaceObject("Imoen2")
+		//Dialog B-52
 		Interact("Imoen2")
 END
+//}
 
+//} End Imoen Interactions
 /* Player */
 
 /* Player - Corwin Reunite */
@@ -4097,8 +4247,8 @@ THEN
 		Interact("Valygar")
 END
 
-/* Override any other romances if Corwin's romance is active */
-
+//{ Romance Overrides
+//might want to edit this in a future release.
 IF
 	InParty(Myself)
 	Global("LCA_CorwinRomanceActive","GLOBAL",2)
@@ -4182,6 +4332,9 @@ THEN
 		SetGlobal("HexxatRomanceActive","GLOBAL",3)
 		Continue()
 END
+//}
+
+//{ Exp Boosts on Join
 
 IF
   Global("BD_JOINXP","LOCALS",0)
@@ -4293,6 +4446,8 @@ THEN
     ChangeStat(Myself,XP,2000000,SET)
     SetInterrupt(TRUE)
 END
+
+//} End Exp Boosts on Join
 
 /* Reset the next interaction to zero; the current subject of the interaction has exhausted all of their banters */
 

@@ -2466,6 +2466,7 @@ THEN BEGIN LCA_CorwinBitWokeUp
 	
 	IF ~~ THEN REPLY @298 /* ~You're hurt, Schael. Here, let me help you.~*/
 	DO ~
+		SetGlobalTimer("LCA_CorwinBitTimer", "GLOBAL", EIGHT_HOURS)
 		SetGlobal("LCA_CorwinBit", "GLOBAL", 3)
 		SetGlobal("LCA_CorwinCured", "GLOBAL", 0)
 	~
@@ -2507,7 +2508,6 @@ IF ~~ THEN BEGIN LCA_CorwinBitWokeUp3
 	= @306 /* ~(She's up and about, but still unsteady - you become concerned that her condition may deteriorate over time).~ */
 	IF ~~ THEN 
 	DO ~
-		
 		SetGlobal("LCA_CorwinJoined","LOCALS",1)
 		SetGlobal("LCA_AskedToRejoin", "LOCALS", 0)
 		SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
@@ -2527,8 +2527,15 @@ END
 IF ~
 	Global("LCA_CorwinBit", "GLOBAL", 4)
 ~ THEN BEGIN LCA_CorwinBitByBodhi2
-	SAY @259 /* ~My love, can we... can we s-stop, for just a minute.~ */
+	SAY @259 /* ~Hey, can we... can we s-stop, for just a minute.~ */
 	IF ~~ THEN REPLY @260 /* ~Schael? What's wrong?~*/
+	DO ~
+		SetGlobal("LCA_CorwinBit", "GLOBAL", 5)
+		SetGlobalTimer("LCA_CorwinBitTimer", "GLOBAL", SIX_HOURS)
+	~
+	GOTO LCA86
+	
+	IF ~~ THEN REPLY @257 /* ~Are you alright?~ */
 	DO ~
 		SetGlobal("LCA_CorwinBit", "GLOBAL", 5)
 		SetGlobalTimer("LCA_CorwinBitTimer", "GLOBAL", SIX_HOURS)
@@ -2536,10 +2543,10 @@ IF ~
 	GOTO LCA86
 END
 IF ~~ THEN BEGIN LCA86
-	SAY @261 /* ~I can't seem to catch my breath.~ */
+	SAY @261 /* ~I can't *wheeze* ... I can't seem ... to catch my breath.~ */
 	IF ~
 		!IsValidForPartyDialogue("KORGAN")
-	~ THEN REPLY @262 /* ~Come here, love (you put her arm over your shoulder). Take as much time as you need.~ */
+	~ THEN REPLY @262 /* ~Come here, love. Put your arm around my shoulder. Take as much time as you need.~ */
 	GOTO LCA87
 	
 	IF ~
@@ -2548,7 +2555,7 @@ IF ~~ THEN BEGIN LCA86
 			IsValidForPartyDialogue("AERIE")
 			IsValidForPartyDialogue("IMOEN2")
 			IsValidForPartyDialogue("JAHEIRA")
-	~ THEN REPLY @262 /* ~Come here, love (you put her arm over your shoulder). Take as much time as you need.~ */
+	~ THEN REPLY @262 /* ~Come here, love. Take as much time as you need.~ */
 	DO ~
 		SetGlobalTimer("LCA_CorwinSickPartyTimer", "GLOBAL", TWO_HOURS)
 	~
@@ -2556,7 +2563,7 @@ IF ~~ THEN BEGIN LCA86
 END
 
 IF ~~ THEN BEGIN LCA87
-	SAY @263 /* ~(She takes several long, deep breaths.) */
+	SAY @263 /* ~(She takes several long, deep breaths.)~  */
 	
 	= @267 /* ~That's better... come on, we need to get that.. Lanthorn.~ */
 	
