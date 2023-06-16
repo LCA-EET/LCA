@@ -2528,7 +2528,15 @@ CHAIN
 	IF ~
 		Global("LCA_CorwinValygarBG", "GLOBAL", 1)
 	~ THEN VALYGARJ BCorwinValygar3A
-	
+		@804 /* ~Captain, a word please.~*/
+		== LCCORWIB
+		@807
+		== VALYGARJ
+		@805 /* ~I've given this a lot of thought. When <CHARNAME>'s hunt for Irenicus is over, I'd like to accompany you back to Baldur's Gate, and join the Flaming Fist.~ */
+		== LCCORWIB
+		@808 /* ~Excellent! You won't regret it. When we arrive, I'll introduce you to my commanding officer, Marshal Kirill Nederlok.~ */
+		== VALYGARJ
+		@809 /* ~I look forward to our meeting.~ */
 EXIT
 //}
 

@@ -644,10 +644,7 @@ APPEND ~PLAYER1~
 	IF ~
 		Global("LCA_RohmaKidnapped", "GLOBAL", 3)
 	~ THEN BEGIN LCA_Kidnap
-		SAY @9 /* ~(Quickly, you head to the nearest temple, and bring a healer back to the house. The healer sucessfully stabilizes Audamar, who is taken back to the temple for further treatment.)~ */
-		
-		
-		//= @13 /* ~(With Audamar now under the care of the city's healers, you and Schael take a look at the letter that was nailed to his back. It reads as follows.)~ */
+		SAY @9 /* ~(Quickly, you made way to the nearest temple, and brought a healer back to the home. The healer sucessfully stabilized Audamar, who was taken back to the temple for further treatment. After a short discussion, you and Schael agree that it would be best to rouse the Dukes, and to discuss the matter with them before deciding on a course of action.)~ [NOSOUND] */
 		
 		IF ~~ THEN
 		DO ~
@@ -656,15 +653,6 @@ APPEND ~PLAYER1~
 			StartCutscene("LCDUCAL")
 		~
 		EXIT
-		/*
-		IF ~
-			Gender(Player1, MALE)
-		~ THEN GOTO LCA_LetterSwitch_M
-		
-		IF ~
-			!Gender(Player1, MALE)
-		~ THEN GOTO LCA_LetterSwitch_F
-		*/
 	END
 	
 	IF ~~ THEN BEGIN LCA_LetterSwitch_M

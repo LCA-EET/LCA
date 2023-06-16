@@ -1,4 +1,6 @@
 BEGIN ~LCAUDAM~
+
+//{ Dialog M-0
 IF ~
 	Global("LCA_CorwinFamilyTalk", "GLOBAL", 1)
 ~ THEN BEGIN LCA_WelcomeHome
@@ -10,6 +12,7 @@ IF ~
 	~
 	EXTERN LCCORWIJ LCA_CorwinFamilyReunite2
 END
+//}
 IF ~
 	Global("LCA_ByeRohma", "GLOBAL", 1)
 ~ THEN BEGIN LCA_Sleeping

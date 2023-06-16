@@ -896,8 +896,24 @@ IF ~
 	IF ~~ THEN 
 	EXTERN LCAUDAM LCA_AudamarRohmaKidnapChain
 END
-
 //} #endregion 
+
+//{ Dialog J-68
+IF ~
+	Global("LCA_RohmaKidnapped", "GLOBAL", 2)
+~ THEN BEGIN LCA_RohmaKidnapped2
+	SAY @991 /* ~Beno...~  */
+	=@992 /* ~(She quivers, then screams in rage.)~ */
+	= @994 /* ~WILL I NEVER BE RID OF HIM!? AAAH!!~ */
+	
+	IF ~~ THEN REPLY @993 /* ~Schael! Try and stay calm - Audamar, they said they'd trade Rohma for me. Do they tell you where they'd make the exchange?~ */
+	DO ~
+		SetGlobal("LCA_RohmaKidnapped", "GLOBAL", 3)
+	~
+	EXTERN LCAUDAM LCA_RohmaKidnapped2A
+END
+//}
+
 
 //{ #region Rohma Kidnaped - Ducal Palace - Dialog J-11
 IF ~
@@ -2918,7 +2934,6 @@ IF ~~ THEN BEGIN LCA_SoDAnxiety6
 	DO ~
 		AddJournalEntry(@1320, INFO)
 		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 2)
 	~
 	EXIT
 	
@@ -2928,7 +2943,6 @@ IF ~~ THEN BEGIN LCA_SoDAnxiety6
 	DO ~
 		AddJournalEntry(@1434, INFO)
 		IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("LCA_SoDAnxiety", "GLOBAL", 2)
 	~
 	EXIT
 END
@@ -3579,16 +3593,25 @@ IF ~
 	= @554 /*  ~<CHARNAME>, did I ever tell you how I got arrested?~ */
 	
 	IF ~~ THEN REPLY @555 /* ~You, arrested?~ */
+	DO ~
+		SetGlobal("LCA_CorwinArrest", "GLOBAL", 2)
+	~
 	GOTO LCA_CorwinArrest2
 	
 	IF ~
 		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @556 /* ~No, I don't think you did, Captain.~ */
+	DO ~
+		SetGlobal("LCA_CorwinArrest", "GLOBAL", 2)
+	~
 	GOTO LCA_CorwinArrest2
 	
 	IF ~
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @557 /*  ~No love, I don't think you did.~ */
+	DO ~
+		SetGlobal("LCA_CorwinArrest", "GLOBAL", 2)
+	~
 	GOTO LCA_CorwinArrest2
 END
 
@@ -3693,7 +3716,6 @@ IF ~~ THEN BEGIN LCA_CorwinArrest7
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("LCA_CorwinArrest", "GLOBAL", 2)
 		AddJournalEntry(@1363, INFO)
 	~
 	EXIT
@@ -4062,7 +4084,6 @@ END
 //{ Dialog J-59
 IF ~
 	Global("LCA_Banter_CorwinHexxat", "GLOBAL", 2)
-	IsValidForPartyDialogue("Hexxat")
 ~ THEN BEGIN LCA_CorwinHexxat1
 	SAY @130 /* ~<CHARNAME>. We need to talk.~ */
 	
@@ -7329,7 +7350,7 @@ CHAIN
 		== VALYGARJ
 		IF ~
 			IsValidForPartyDialogue("Valygar")
-			!Global("LCA_Banter_CorwinValygar", "GLOBAL", 7)
+			GlobalLT("LCA_CorwinValygarLavok", "GLOBAL", 1)
 		~
 		@660 /* ~No, I won't be joining you. I'm going back to my cabin in the woods. I'll use the time and seclusion to decide what to do with my life.~ */
 		DO ~
@@ -7339,7 +7360,8 @@ CHAIN
 		== VALYGARJ
 		IF ~
 			IsValidForPartyDialogue("Valygar")
-			Global("LCA_Banter_CorwinValygar", "GLOBAL", 7)
+			GlobalGT("LCA_CorwinValygarLavok", "GLOBAL", 0)
+			!Global("LCA_CorwinValygarBG", "GLOBAL", 1)
 		~
 		@658 /* ~There is nothing left for me in Amn. Captain, I'd like to take you up on your offer and join the Flaming Fist, at least on an interim basis.~ */
 		DO ~
@@ -7349,10 +7371,28 @@ CHAIN
 		== LCCORWIB
 		IF ~
 			IsValidForPartyDialogue("Valygar")
-			Global("LCA_Banter_CorwinValygar", "GLOBAL", 7)
+			GlobalGT("LCA_CorwinValygarLavok", "GLOBAL", 0)
+			!Global("LCA_CorwinValygarBG", "GLOBAL", 1)
+		~
+		@1471 /* ~Excellent! You won't regret it. When we arrive, I'll introduce you to my commanding officer, Marshal Kirill Nederlok.~ */
+		== VALYGARJ
+		IF ~
+			IsValidForPartyDialogue("Valygar")
+			GlobalGT("LCA_CorwinValygarLavok", "GLOBAL", 0)
+			Global("LCA_CorwinValygarBG", "GLOBAL", 1)
+		~
+		@1470 /* ~Captain as we discussed, I will return with you to Baldur's Gate to join the Flaming Fist.~*/
+		DO ~
+			SetGlobal("LCA_BackToBG_Valygar", "GLOBAL", 1)
+		~
+		
+		== LCCORWIB
+		IF ~
+			IsValidForPartyDialogue("Valygar")
+			GlobalGT("LCA_CorwinValygarLavok", "GLOBAL", 0)
+			Global("LCA_CorwinValygarBG", "GLOBAL", 1)
 		~
 		@659 /* ~Excellent - you'll make a fine addition to the team.~ */
-		
 		== NEERAJ
 		IF ~
 			IsValidForPartyDialogue("Neera")

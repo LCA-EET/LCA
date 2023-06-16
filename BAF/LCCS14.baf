@@ -19,11 +19,13 @@ THEN
 		ActionOverride("LCCORWIN", FaceObject("LCROHMA"))
 		ActionOverride("LCAUDAM", FaceObject("LCCORWIN"))
 		SetCutSceneLite(TRUE)
+		//Dialog J-67
 		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", "LCROHMA"))
 		ActionOverride("LCAUDAM", MoveToPoint([334.289])
 		Wait(2)
 		ActionOverride("LCCORWIN", FaceObject("LCAUDAM"))
 		SmallWait(2)
+		//Dialog M-0
 		ActionOverride("LCAUDAM", StartDialogNoSet(Player1))
 		EndCutSceneMode()
 END

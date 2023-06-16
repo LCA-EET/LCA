@@ -10,6 +10,7 @@
 
 BEGIN ~LCCORWIN~
 
+//{ Dialog I-0
 IF ~
 	!IsGabber(Player1)
 ~ THEN BEGIN LCA_PC
@@ -17,7 +18,9 @@ IF ~
 	IF ~~ THEN
 	EXIT
 END
+//}
 
+//{ Dialog I-1
 IF ~
 	Global("LCA_CorwinContinue", "GLOBAL", 2) 
 	!Global("LCA_CorwinReunited", "GLOBAL", 1)
@@ -38,7 +41,9 @@ IF ~
 	~
 	GOTO LCA2
 END
+//}
 
+//{ Dialog I-2
 IF ~
 	Global("LCA_CorwinContinue", "GLOBAL", 1) // Friend
 	!Global("LCA_CorwinReunited", "GLOBAL", 1)
@@ -58,7 +63,9 @@ IF ~
 	~
 	GOTO LCA2
 END
+//}
 
+//{ Dialog I-3
 IF ~ 
 	Global("LCA_CorwinReunited", "GLOBAL", 1)
 ~
@@ -93,6 +100,7 @@ THEN BEGIN LCAJoinAsk
 	IF ~~ THEN REPLY @37 /* ~Nothing at the moment, Schael.~ */
 	GOTO LCARejectJoin
 END
+//}
 
 IF ~~ THEN BEGIN LCAJoin_RepLT7
 	SAY @54 /* ~As much as I'd like to help you, I can't. Your reputation precedes you. If you ever clean up your act, you'll know where to find me.~ */

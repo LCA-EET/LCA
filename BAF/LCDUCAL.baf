@@ -9,5 +9,5 @@ THEN
 		ActionOverride("LCCORWIN",LeaveAreaLUA("LCDUCAL","",[736.409],NW))  
 		FadeFromColor([30.0],0)
 		Wait(3)
-		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", "LCLIIA"))
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 END
