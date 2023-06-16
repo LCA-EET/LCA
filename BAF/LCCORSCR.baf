@@ -1436,6 +1436,7 @@ THEN
 		SetGlobal("LCA_Banter_CorwinNalia", "GLOBAL", 1)
 		SetGlobal("LCA_Banter_CorwinMazzy", "GLOBAL", 1)
 		SetGlobal("LCA_Banter_CorwinBanter", "GLOBAL", 1)
+		SetGlobal("LCA_Banter_CorwinSarevok", "GLOBAL", 1)
 		SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 		Continue()
 END
@@ -4078,6 +4079,48 @@ END
 	//}
 
 //} End Imoen Interactions
+
+//{ Sarevok Interactions
+
+	//{ Sarevok First Interaction
+	IF
+		InParty(Myself)
+		Global("LCA_Banter_NextInteraction", "GLOBAL", 22)
+		Global("LCA_Banter_CorwinSarevok", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("LCA_Banter_CorwinSarevok", "GLOBAL", 2)
+	END
+	
+	IF
+		IfValidForPartyDialog("Sarevok")
+		Global("LCA_CorwinCanTalk", "GLOBAL", 1)
+		Global("LCA_Banter_CorwinSarevok", "GLOBAL", 2)
+		!Range("Sarevok", 6)
+		ActionListEmpty()
+	THEN
+		RESPONSE #100
+			MoveToObject("Sarevok")
+			Continue()
+	END
+
+	IF
+		IfValidForPartyDialog("Sarevok")
+		Global("LCA_CorwinCanTalk", "GLOBAL", 1)
+		Global("LCA_Banter_CorwinSarevok", "GLOBAL", 2)
+		See("Sarevok")
+	THEN
+		RESPONSE #100
+			ActionOverride("Sarevok", FaceObject("LCCORWIN"))
+			//Dialog B-45
+			Interact("Sarevok")
+	END
+	//}
+	
+	
+//} End Sarevok Interactions
+
+
 
 //{ Corwin / Player Interactions
 

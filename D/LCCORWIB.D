@@ -4148,3 +4148,64 @@ CHAIN
 EXIT
 //}
 
+//{ Sarevok Banters
+CHAIN
+	IF ~
+		Global("LCA_Banter_CorwinSarevok", "GLOBAL", 2)
+	~ THEN LCCORWIB LCA_SarevokBanter1
+		@815 /* ~Sarevok.~ */
+		== SAREV25J
+		@816 /* ~Ah, Captain — excuse me, *Major* Corwin, to what do I owe the pleasure?~ */
+		DO ~
+			SetGlobal("LCA_Banter_CorwinSarevok", "GLOBAL", 3)
+		~
+		== LCCORWIB
+		@810 /*~<CHARNAME> may be able to look past your crimes, but I'm not. If I even suspect that you're —~ */
+		== SAREV25J
+		@811 /*  ~Silence, woman. I should've had my lackeys kill you first, instead of Scar. ~   */
+		== LCCORWIB
+		@812 /* ~Weren't man enough to do it yourself, eh? You'd rather rely on monsters and brigands to do your dirty work.~ */
+		== SAREV25J
+		@813 /*~I had more important matters to attend to. Consider yourself fortunate. Tell me, how has the city fared in my absence?~ */
+		== LCCORWIB
+		@817 /* ~You needn't concern yourself with that. You'll never set foot in my city ever again.~ */
+		== SAREV25J
+		@818 /*~Rest assured Major, I've no further designs on Baldur's Gate, its citizens, or the Dukes ... or you, for that matter.~*/
+		== LCCORWIB
+		@824 /* ~Just know that I'll be watching you. Try *anything*, and I'll send you back to the grave.~ */
+EXIT
+
+CHAIN
+	IF ~
+		Global("LCA_Banter_CorwinSarevok", "GLOBAL", 4)
+	~ THEN SAREV25J LCA_SarevokBanter2
+		@825 /* ~Major, a word please.~ */
+		== LCCORWIB
+		@826 /* ~What is it?~ */
+		== SAREV25J
+		@827 /* ~Shortly before my attempted coup, Zhalimar informed me that a number of high ranking Flaming Fist officials, yourself included, left the city to take part in a training exercise. I always found the timing suspicious...~*/
+		== LCCORWIB
+		@831 /* ... */
+		== SAREV25J
+		@828 /* ~Tell me ... what was the real reason you and the others were sent away?~ */
+		== LCCORWIB
+		@832 /* ~All I will say is that the Council is wiser than you know.~  */
+		== SAREV25J
+		@830 /* ~There was no training exercise, was there? You were sent away, because they somehow knew or suspected that we would attempt to destroy the leadership of the Fist.~ */
+		= @833 /* ~I suppose then that your orders were to take control of the city, in the event that I, or someone else associated with the Iron Throne, were to overtly usurp control.~ */
+		= @835 /* ~Would you have been successful, I wonder? I doubt you'd have had the numbers, or the strength, to wrest control away from us.~*/
+		== LCCORWIB
+		@836 /* ~You would have been defeated, because like always, your arrogance would've been your own undoing.~ */
+		== SAREV25J
+		@837 /* Hmph. */
+EXIT
+
+CHAIN
+	IF ~
+		Global("LCA_Banter_CorwinSarevok", "GLOBAL", 6)
+	~ THEN LCCORWIB LCA_SarevokBanter3
+		@838 /* ~What are you staring at?~ */
+		== SAREV25J
+		@839 /*~You. You remind me in many ways of my Tamoko. Strong, fierce, and assertive. I was wrong about you, you know.~*/
+EXIT
+//}
