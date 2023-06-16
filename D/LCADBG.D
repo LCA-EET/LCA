@@ -1435,7 +1435,48 @@ IF ~~ THEN BEGIN LCA_DialogTest
 		ActionOverride("LCCORWIN", Interact("Aerie"))
 	~
 	EXIT
+	
+	IF ~~ THEN REPLY @498 /* ~Dialog B-85~ */
+	DO ~
+		SetGlobal("LCA_CorwinValygarBG", "GLOBAL", 1)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Valygar"))
+	~
+	EXIT
 
+	IF ~~ THEN REPLY @499 /* ~Dialog B-86~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinSarevok", "GLOBAL", 2)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Sarevok"))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @500 /* ~Dialog B-87~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinSarevok", "GLOBAL", 4)
+		Wait(1)
+		ActionOverride("Sarevok", StartDialog("SAREV25J", "LCCORWIN"))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @501 /* ~Dialog B-88 R~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinSarevok", "GLOBAL", 6)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Sarevok"))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @502 /* ~Dialog B-88 NR~ */
+	DO ~
+		SetGlobal("LCA_Banter_CorwinSarevok", "GLOBAL", 6)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 0)
+		Wait(1)
+		ActionOverride("LCCORWIN", Interact("Sarevok"))
+	~
+	EXIT
 	
 	IF ~~ THEN REPLY @26
 	GOTO LCA_MainMenu
@@ -3652,12 +3693,14 @@ IF ~~ THEN BEGIN LCA_Menu_AddCharacter
 	~
 	GOTO LCA_MainMenu
 	
-	IF ~~ THEN REPLY @85 /* @85 = ~Rasaad (RASAAD9.CRE)~*/
+	IF ~~ THEN REPLY @503 /* @503 = ~Sarevok (SAREVOK.CRE)~*/
 	DO ~
-		CreateCreature("RASAAD9", [-1.-1], S)
-		ActionOverride("Rasaad", JoinParty())
+		CreateCreature("SAREVOK", [-1.-1], S)
+		ActionOverride("Sarevok", JoinParty())
 	~
 	GOTO LCA_MainMenu
+	
+	
 	
 	IF ~~ THEN REPLY @83 /* ~Valygar (VALYG9.CRE)~*/
 	DO ~

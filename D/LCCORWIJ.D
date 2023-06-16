@@ -7361,7 +7361,7 @@ CHAIN
 		IF ~
 			IsValidForPartyDialogue("Valygar")
 			GlobalGT("LCA_CorwinValygarLavok", "GLOBAL", 0)
-			!Global("LCA_CorwinValygarBG", "GLOBAL", 1)
+			GlobalLT("LCA_CorwinValygarBG", "GLOBAL", 1)
 		~
 		@658 /* ~There is nothing left for me in Amn. Captain, I'd like to take you up on your offer and join the Flaming Fist, at least on an interim basis.~ */
 		DO ~
@@ -7372,14 +7372,14 @@ CHAIN
 		IF ~
 			IsValidForPartyDialogue("Valygar")
 			GlobalGT("LCA_CorwinValygarLavok", "GLOBAL", 0)
-			!Global("LCA_CorwinValygarBG", "GLOBAL", 1)
+			GlobalLT("LCA_CorwinValygarBG", "GLOBAL", 1)
 		~
 		@1471 /* ~Excellent! You won't regret it. When we arrive, I'll introduce you to my commanding officer, Marshal Kirill Nederlok.~ */
 		== VALYGARJ
 		IF ~
 			IsValidForPartyDialogue("Valygar")
 			GlobalGT("LCA_CorwinValygarLavok", "GLOBAL", 0)
-			Global("LCA_CorwinValygarBG", "GLOBAL", 1)
+			GlobalGT("LCA_CorwinValygarBG", "GLOBAL", 0)
 		~
 		@1470 /* ~Captain as we discussed, I will return with you to Baldur's Gate to join the Flaming Fist.~*/
 		DO ~
@@ -7390,7 +7390,7 @@ CHAIN
 		IF ~
 			IsValidForPartyDialogue("Valygar")
 			GlobalGT("LCA_CorwinValygarLavok", "GLOBAL", 0)
-			Global("LCA_CorwinValygarBG", "GLOBAL", 1)
+			GlobalGT("LCA_CorwinValygarBG", "GLOBAL", 0)
 		~
 		@659 /* ~Excellent - you'll make a fine addition to the team.~ */
 		== NEERAJ

@@ -8,6 +8,22 @@
 
 */
 
+APPEND SAREV25J
+	IF ~~ THEN BEGIN LCA_SarevokBanter3Chain_END
+		SAY @232 /* ~I realize now that I was wrong. Your skill in battle is considerable, as is your ability to lead others.~ */
+		
+		IF ~
+			Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN 
+		GOTO LCA_SarevokBanter3_Romance_Chain
+		
+		IF ~
+			!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN 
+		GOTO LCA_SarevokBanter3_NonRomance_Chain
+	END
+END
+
 ADD_TRANS_TRIGGER LARZE 3
 ~
 	!Global("LCA_Override", "GLOBAL", 1)

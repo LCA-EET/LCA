@@ -4112,11 +4112,79 @@ END
 	THEN
 		RESPONSE #100
 			ActionOverride("Sarevok", FaceObject("LCCORWIN"))
-			//Dialog B-45
+			//Dialog B-86
 			Interact("Sarevok")
 	END
 	//}
 	
+	//{ Sarevok Second Interaction
+	IF
+		InParty(Myself)
+		Global("LCA_Banter_NextInteraction", "GLOBAL", 22)
+		Global("LCA_Banter_CorwinSarevok", "GLOBAL", 3)
+	THEN
+		RESPONSE #100
+			SetGlobal("LCA_Banter_CorwinSarevok", "GLOBAL", 4)
+	END
+	
+	IF
+		IfValidForPartyDialog("Sarevok")
+		Global("LCA_CorwinCanTalk", "GLOBAL", 1)
+		Global("LCA_Banter_CorwinSarevok", "GLOBAL", 4)
+		!Range("Sarevok", 6)
+		ActionListEmpty()
+	THEN
+		RESPONSE #100
+			ActionOverride("Sarevok", MoveToObject("LCCORWIN"))
+			Continue()
+	END
+
+	IF
+		IfValidForPartyDialog("Sarevok")
+		Global("LCA_CorwinCanTalk", "GLOBAL", 1)
+		Global("LCA_Banter_CorwinSarevok", "GLOBAL", 4)
+		See("Sarevok")
+	THEN
+		RESPONSE #100
+			//Dialog B-87
+			ActionOverride("Sarevok", StartDialog("SAREV25J", "LCCORWIN"))
+			
+	END
+	//}
+	
+	//{ Sarevok Third Interaction
+	IF
+		InParty(Myself)
+		Global("LCA_Banter_NextInteraction", "GLOBAL", 22)
+		Global("LCA_Banter_CorwinSarevok", "GLOBAL", 5)
+	THEN
+		RESPONSE #100
+			SetGlobal("LCA_Banter_CorwinSarevok", "GLOBAL", 6)
+	END
+	
+	IF
+		IfValidForPartyDialog("Sarevok")
+		Global("LCA_CorwinCanTalk", "GLOBAL", 1)
+		Global("LCA_Banter_CorwinSarevok", "GLOBAL", 6)
+		!Range("Sarevok", 6)
+		ActionListEmpty()
+	THEN
+		RESPONSE #100
+			MoveToObject("Sarevok")
+			Continue()
+	END
+
+	IF
+		IfValidForPartyDialog("Sarevok")
+		Global("LCA_CorwinCanTalk", "GLOBAL", 1)
+		Global("LCA_Banter_CorwinSarevok", "GLOBAL", 6)
+		See("Sarevok")
+	THEN
+		RESPONSE #100
+			//Dialog B-88
+			Interact("Sarevok")
+	END
+	//}
 	
 //} End Sarevok Interactions
 
