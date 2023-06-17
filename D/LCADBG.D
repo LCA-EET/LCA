@@ -702,7 +702,7 @@ IF ~~ THEN BEGIN LCA_LCCORWIJ_Test
 		SetGlobal("LCA_CorwinComplainSarevok", "GLOBAL", 2)
 		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
 		Wait(1)
-		ActionOverride("LCCORWIJ", StartDialog("LCCORWIJ", Player1))
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 	
@@ -711,7 +711,15 @@ IF ~~ THEN BEGIN LCA_LCCORWIJ_Test
 		SetGlobal("LCA_CorwinComplainSarevok", "GLOBAL", 2)
 		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 0)
 		Wait(1)
-		ActionOverride("LCCORWIJ", StartDialog("LCCORWIJ", Player1))
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @506 /* ~Dialog J-70~ */
+	DO ~
+		SetGlobal("LCA_SaradushDestroyed", "GLOBAL", 1)
+		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
 

@@ -5,8 +5,10 @@ IF
 	GlobalGT("EECorwinBG1", "GLOBAL", 0) // this is set as part the CorwinEET mod.
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_CorwinEETCheck", "GLOBAL", 1)
+		SetInterrupt(FALSE)
 		SetGlobal("LCA_CorwinEET", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinEETCheck", "GLOBAL", 1)
+		SetInterrupt(TRUE)
 		Continue()
 END
 
@@ -16,8 +18,10 @@ IF
 	Global("EECorwinBG1", "GLOBAL", 0) // this is set as part the CorwinEET mod.
 THEN
 	RESPONSE #100
-		SetGlobal("LCA_CorwinEETCheck", "GLOBAL", 1)
+		SetInterrupt(FALSE)
 		SetGlobal("LCA_CorwinEET", "GLOBAL", 0)
+		SetGlobal("LCA_CorwinEETCheck", "GLOBAL", 1)
+		SetInterrupt(TRUE)
 		Continue()
 END
 
@@ -29,8 +33,10 @@ IF
 		GlobalGT("EEMetRohma", "GLOBAL", 0)
 THEN
 	RESPONSE #100
+		SetInterrupt(FALSE)
 		SetGlobal("LCA_MetRohma", "GLOBAL", 1)
 		SetGlobal("LCA_MetRohmaCheck", "GLOBAL", 1)
+		SetInterrupt(TRUE)
 		Continue()
 END
 //}
@@ -43,8 +49,10 @@ IF
 	!GlobalGT("EEMetRohma", "GLOBAL", 0) //Met Rohma in CorwinEET
 THEN
 	RESPONSE #100
+		SetInterrupt(FALSE)
 		SetGlobal("LCA_MetRohma", "GLOBAL", 0)
 		SetGlobal("LCA_MetRohmaCheck", "GLOBAL", 1)
+		SetInterrupt(TRUE)
 		Continue()
 END
 //}
@@ -56,12 +64,14 @@ IF
 THEN 
 	RESPONSE #100
 		//DisplayStringHead(Myself, ~DEBUG_CRejoin~)
+		SetInterrupt(FALSE)
 		SetGlobal("LCA_CorwinJoined","LOCALS",1)
 		SetGlobal("LCA_AskedToRejoin", "LOCALS", 0)
 		SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 		SetGlobal("LCA_ResetJoinChecks", "GLOBAL", 1)
 		SetGlobal("LCA_CorwinRepWarning", "GLOBAL", 0)
 		SetGlobal("LCA_CorwinRejoinProcessed", "GLOBAL", 2)
+		SetInterrupt(TRUE)
 		JoinParty()
 END
 //}
@@ -175,13 +185,15 @@ END
 		Global("LCA_ForceMeetWithFamily", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("LCA_ForceMeetWithFamily", "GLOBAL", 2)
+			SetInterrupt(FALSE)
 			ActionOverride(Player1,LeaveAreaLUA("BG1316","",[400.315],NW))
 			ActionOverride(Player2,LeaveAreaLUA("BG1316","",[400.315],NW))
 			ActionOverride(Player3,LeaveAreaLUA("BG1316","",[400.315],NW))
 			ActionOverride(Player4,LeaveAreaLUA("BG1316","",[400.315],NW))
 			ActionOverride(Player5,LeaveAreaLUA("BG1316","",[400.315],NW))
 			ActionOverride(Player6,LeaveAreaLUA("BG1316","",[400.315],NW))
+			SetGlobal("LCA_ForceMeetWithFamily", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -192,10 +204,12 @@ END
 		Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_SoDAnxiety", "GLOBAL", 2)
 			PlaySong(142)
 			//Dialog J-39
 			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -213,9 +227,11 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinFamilyTimerDialog", "GLOBAL", 1)
 			//Dialogs J-18, J-20
 			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 
 	IF
@@ -235,9 +251,11 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			Wait(1)
 			//Dialog J-15
 			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -252,8 +270,10 @@ END
 		!Global("LCA_LCCS14Started", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_LCCS14Started", "GLOBAL", 1)
 			StartCutScene("LCCS14")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -268,10 +288,12 @@ END
 		Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			PlaySong(146)
 			SetGlobal("LCA_LCCS15Cutscene", "GLOBAL", 6)
 			//Dialog J-17
 			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -283,9 +305,11 @@ END
 		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			Wait(3)
 			//Dialog J-2
 			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 
 	IF
@@ -295,10 +319,12 @@ END
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			Wait(3)
 			PlaySong(146)
 			//Dialog J-2
 			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 
 	IF
@@ -307,9 +333,11 @@ END
 		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			Wait(3)
 			//Dialog J-2
 			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 
 	IF
@@ -318,10 +346,12 @@ END
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			Wait(3)
 			PlaySong(146)
 			//Dialog J-2
 			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -345,9 +375,11 @@ END
 		Range("LCBENO2", 4)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			ActionOverride("LCCORWIN", FaceObject("LCBENO2"))
 			//Dialog J-5
 			ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -464,8 +496,10 @@ IF
 	!Global("LCA_CorwinRepWarning", "GLOBAL", 1)
 THEN 
 	RESPONSE #100
-		SetGlobal("LCA_CorwinRepWarning", "GLOBAL", 1)
+		SetInterrupt(FALSE)
 		SetGlobalTimer("LCA_CorwinRepWarningTimer", "GLOBAL", ONE_HOUR)
+		SetGlobal("LCA_CorwinRepWarning", "GLOBAL", 1)
+		SetInterrupt(TRUE)
 		Continue()
 END
 
@@ -476,8 +510,10 @@ IF
 	See(Player1)
 THEN
 	RESPONSE #100
+		SetInterrupt(FALSE)
 		SetGlobal("LCA_CorwinRepWarning", "GLOBAL", 2)
 		StartDialog("LCCORWIJ", Player1)
+		SetInterrupt(TRUE)
 END
 
 IF 
@@ -487,8 +523,10 @@ IF
 	See(Player1)
 THEN
 	RESPONSE #100
+		SetInterrupt(FALSE)
 		SetGlobal("LCA_CorwinLeftPoorRep", "GLOBAL", 1)
 		StartDialog("LCCORWIJ", Player1)
+		SetInterrupt(TRUE)
 END
 //}
 
@@ -686,6 +724,20 @@ END
 
 //{ Event Checks
 
+	//{ Entered Yaga-Shura Camp
+	IF
+		!Global("LCA_YagaTimerSet", "GLOBAL", 1)
+		AreaCheck("AR5203")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("LCA_YagaTimer", "GLOBAL", ONE_ROUND)
+			SetGlobal("LCA_YagaTimerSet", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+	
 	//{ Sarevok Joined Party
 	IF
 		InParty("Sarevok")
@@ -693,8 +745,10 @@ END
 		GlobalLT("LCA_CorwinComplainSarevok", "GLOBAL", 0)
 	THEN
 		RESPONSE #100
-			SetGlobal("LCA_CorwinComplainSarevok", "GLOBAL", 1)
+			SetInterrupt(FALSE)
 			SetGlobalTimer("LCA_CorwinComplainSarevokTimer", "GLOBAL", ONE_HOUR)
+			SetGlobal("LCA_CorwinComplainSarevok", "GLOBAL", 1)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 	//}
@@ -721,8 +775,10 @@ END
 		!Global("LCA_LeftPartySvir", "LOCALS", 1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinHostile", "GLOBAL", 1)
 			SetGlobal("LCA_LeftPartySvir", "LOCALS", 1)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 	//}
@@ -734,8 +790,10 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinVouchedDrizz", "GLOBAL", 1)
 			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -747,8 +805,10 @@ END
 		!Global("LCA_LeftPartyGrove", "LOCALS", 1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinHostle", "GLOBAL", 1)
 			SetGlobal("LCA_LeftPartyGrove", "LOCALS", 1)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 	//}
@@ -766,8 +826,10 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("OHD_ritual_interjects","GLOBAL",1)
 			StartDialog("LCCORWIJ",Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -793,9 +855,11 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_PlayerSoulStolen", "GLOBAL", 1)
 			SetGlobal("LCA_PlayerSoulTalk", "GLOBAL", 1)
 			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -807,10 +871,10 @@ END
 		!Global("LCA_BodhiDead", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			//DisplayStringHead(Myself, ~DEBUG_008~)
-			SetGlobal("LCA_BodhiDead", "GLOBAL", 1)
+			SetInterrupt(FALSE)
 			SetGlobalTimer("LCA_CorwinImoenSoulTimer", "GLOBAL", ONE_HOUR)
-			Continue()
+			SetGlobal("LCA_BodhiDead", "GLOBAL", 1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -825,10 +889,12 @@ END
 	THEN
 		RESPONSE #100
 			//DisplayStringHead(Myself, ~DEBUG_009~)
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_AloneWithPhaere", "GLOBAL", 1)
 			SetGlobal("LCA_PhaereTalk", "GLOBAL", 1)
 			PlaySong(146)
 			StartDialogue("LCCORWIJ", PLAYER1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -841,10 +907,12 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_FirkraagDeal", "GLOBAL", 1)
 			SetGlobal("LCA_CorwinFirkraagDeal", "GLOBAL", 1)
 			//Dialog J-35
 			StartDialogue("LCCORWIJ", PLAYER1)
+			SetInterrupt(TRUE)
 	END
 	//}
 	
@@ -857,10 +925,11 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
-			//DisplayStringHead(Myself, ~DEBUG_011~)
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_BodhiDeal2", "GLOBAL", 1)
 			SetGlobal("LCA_CorwinBodhiDeal", "GLOBAL", 1)
 			StartDialogue("LCCORWIJ", PLAYER1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -873,10 +942,11 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
-			//DisplayStringHead(Myself, ~DEBUG_012~)
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_BodhiDeal3", "GLOBAL", 1)
 			SetGlobal("LCA_CorwinBodhiDeal", "GLOBAL", 1)
 			StartDialogue("LCCORWIJ", PLAYER1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -889,10 +959,11 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
-			//DisplayStringHead(Myself, ~DEBUG_013~)
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_BodhiDeal4", "GLOBAL", 1)
 			SetGlobal("LCA_CorwinBodhiDeal", "GLOBAL", 1)
 			StartDialogue("LCCORWIJ", PLAYER1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -904,12 +975,14 @@ IF
 	Global("LCA_CorwinHostile", "GLOBAL", 1)
 THEN 
 	RESPONSE #100
+		SetInterrupt(FALSE)
 		SetGlobal("LCA_CorwinHostile", "GLOBAL", 2)
 		DisplayStringHead(Myself, @11)
 		SetLeavePartyDialogFile()
 		ChangeAIScript("", DEFAULT)
 		LeaveParty()
 		Enemy()
+		SetInterrupt(TRUE)
 END
 //}
 
@@ -957,8 +1030,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobalTimer("LCA_CorwinSexAfterBodhiTimer", "GLOBAL", ONE_DAY)
 			SetGlobal("LCA_CorwinSexAfterBodhiTimerSet", "GLOBAL", 1)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -995,9 +1070,11 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			PlaySong(146)
 			//Dialog J-51
 			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -1008,9 +1085,11 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			Wait(1)
 			//Dialog J-44
 			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -1037,25 +1116,30 @@ END
 			IsValidForPartyDialogue("Jaheira")
 	THEN
 		RESPONSE #20
-			//DisplayStringHead(Myself, ~DEBUG_CS_006A~)
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_NoSleepComplain_Aerie", "GLOBAL", 1)
 			ActionOverride("Aerie", StartDialog("AERIEJ", Player1))
+			SetInterrupt(TRUE)
 		RESPONSE #20
-			//DisplayStringHead(Myself, ~DEBUG_CS_006B~)
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_NoSleepComplain_Imoen", "GLOBAL", 1)
 			ActionOverride("Imoen2", StartDialog("IMOEN2J", Player1))
+			SetInterrupt(TRUE)
 		RESPONSE #20
-			//DisplayStringHead(Myself, ~DEBUG_CS_006C~)
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_NoSleepComplain_Nalia", "GLOBAL", 1)
 			ActionOverride("Nalia", StartDialog("NALIAJ", Player1))
+			SetInterrupt(TRUE)
 		RESPONSE #20
-			//DisplayStringHead(Myself, ~DEBUG_CS_006D~)
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_NoSleepComplain_Neera", "GLOBAL", 1)
 			ActionOverride("Neera", StartDialog("NEERAJ", Player1))
+			SetInterrupt(TRUE)
 		RESPONSE #20
-			//DisplayStringHead(Myself, ~DEBUG_CS_006E~)
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_NoSleepComplain_Jaheira", "GLOBAL", 1)
 			ActionOverride("Jaheira", StartDialog("JAHEIRAJ", Player1))
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -1064,8 +1148,8 @@ END
 		Global("LCA_CorwinSexBoost", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("LCA_CorwinSexBoost", "GLOBAL", 0)
 			SetInterrupt(FALSE)
+			SetGlobal("LCA_CorwinSexBoost", "GLOBAL", 0)
 			SetGlobalTimer("LCA_CorwinSexTimer", "GLOBAL", THREE_DAYS)
 			IncrementGlobal("LCA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 			ApplySpellRES("bdrejuve","LCCORWIN")
@@ -1084,8 +1168,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobalTimer("LCA_CorwinSex_2_Timer", "GLOBAL", THREE_DAYS)
 			SetGlobal("LCA_CorwinSex_2", "GLOBAL", 1)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -1098,10 +1184,12 @@ END
 		Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinSex2_Init", "GLOBAL", 1)
 			PlaySong(146)
 			//Dialog J-46
 			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -1112,8 +1200,10 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			Wait(1)
 			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -1165,9 +1255,11 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinBit", "GLOBAL", 4)
 			//Dialog J-32
 			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -1179,9 +1271,11 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinBit", "GLOBAL", 6)
 			//Dialog J-33
 			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -1193,9 +1287,11 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinBit", "GLOBAL", 8)
 			//Dialog J-34
 			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -1376,10 +1472,11 @@ END
 		CombatCounter(0)
 	THEN
 		RESPONSE #100
-			//DisplayStringHead(Myself, ~DEBUG_024~)
+			SetInterrupt(FALSE)
 			ClearAllActions()
 			StartCutSceneMode()
 			StartCutSceneEx("LCAcs09a", FALSE)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -1396,21 +1493,29 @@ END
 			IsValidForPartyDialogue("JAHEIRA")
 	THEN
 		RESPONSE #25
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinSick_Jaheira", "GLOBAL", 1)
 			//Dialog B-6
 			ActionOverride("JAHEIRA", StartDialog("JAHEIRAJ", "LCCORWIN"))
+			SetInterrupt(TRUE)
 		RESPONSE #25
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinSick_Aerie", "GLOBAL", 1)
 			//Dialog B-5
 			ActionOverride("AERIE", StartDialog("AERIEJ", "LCCORWIN"))
+			SetInterrupt(TRUE)
 		RESPONSE #25
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinSick_Korgan", "GLOBAL", 1)
 			//Dialog B-7
 			ActionOverride("KORGAN", StartDialog("KORGANJ", Player1))
+			SetInterrupt(TRUE)
 		RESPONSE #25
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinSick_Imoen", "GLOBAL", 1)
 			//Dialog B-8
 			ActionOverride("IMOEN2", StartDialog("IMOEN2J", "LCCORWIN"))
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -1425,6 +1530,7 @@ IF
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself, ~DEBUG_025~)
+		SetInterrupt(FALSE)
 		SetGlobal("LCA_BanterCountInit", "GLOBAL", 1)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0) 
 		SetGlobal("LCA_Banter_CorwinAerie", "GLOBAL", 1)
@@ -1451,6 +1557,7 @@ THEN
 		SetGlobal("LCA_Banter_CorwinBanter", "GLOBAL", 1)
 		SetGlobal("LCA_Banter_CorwinSarevok", "GLOBAL", 1)
 		SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
+		SetInterrupt(TRUE)
 		Continue()
 END
 
@@ -1459,11 +1566,12 @@ IF
 	Global("LCA_ResetBanterTimer", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_026~)
+		SetInterrupt(FALSE)
 		SetGlobal("LCA_CorwinMeetCC", "GLOBAL", 0)
 		SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 0)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0) 
 		SetGlobalTimer("LCA_CorwinBanter", "GLOBAL", ONE_DAY)
+		SetInterrupt(TRUE)
 		Continue()
 END
 
@@ -1600,7 +1708,6 @@ IF
 		!See("Aerie")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_052~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1612,7 +1719,6 @@ IF
 		!See("Anomen")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_053~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1624,7 +1730,6 @@ IF
 		!See("Dorn")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_054~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1636,7 +1741,6 @@ IF
 		!See("Edwin")
 THEN
 	RESPONSE #100	
-		//DisplayStringHead(Myself, ~DEBUG_055~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1648,7 +1752,6 @@ IF
 		!See("Imoen2")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_056~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1660,7 +1763,6 @@ IF
 		!See("Hexxat")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_057~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1672,7 +1774,6 @@ IF
 		!See("Jaheira")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_058~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1684,7 +1785,6 @@ IF
 		!See("Jan")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_059~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1696,7 +1796,6 @@ IF
 		!See("Keldorn")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_060~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1708,7 +1807,6 @@ IF
 		!See("Korgan")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_061~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1720,7 +1818,6 @@ IF
 		!See("Neera")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_062~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1732,7 +1829,6 @@ IF
 		!See(Player1)
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_063~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1744,7 +1840,6 @@ IF
 		!See("Viconia")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_064~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1756,7 +1851,6 @@ IF
 		!See("Valygar")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_065~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1768,7 +1862,6 @@ IF
 		!See("Cernd")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_066~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1780,7 +1873,6 @@ IF
 		!See("Yoshimo")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_067~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1792,7 +1884,6 @@ IF
 		!See("Rasaad")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_068~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1804,7 +1895,6 @@ IF
 		!See("Minsc")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_069~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1816,7 +1906,6 @@ IF
 		!See("Haerdalis")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_070~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1828,7 +1917,6 @@ IF
 		!See("Nalia")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_071~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1840,7 +1928,6 @@ IF
 		!See("Mazzy")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_072~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1852,7 +1939,6 @@ IF
 		!See("Sarevok")
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_072~)
 		SetGlobal("LCA_Banter_NextInteraction", "GLOBAL", 0)
 		Continue()
 END
@@ -1866,9 +1952,10 @@ IF
 	See(Player1)
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_073~)
+		SetInterrupt(FALSE)
 		SetGlobal("LCA_NebDead", "GLOBAL", 1)
 		StartDialog("LCCORWIJ", Player1)
+		SetInterrupt(TRUE)
 END
 //}
 
@@ -1882,8 +1969,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinMazzy", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -1895,7 +1984,9 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			ActionOverride("Mazzy", MoveToObject("LCCORWIN"))
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -1907,9 +1998,11 @@ END
 		See("Mazzy")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("Mazzy")
 			//Dialogs B-9, B-10
 			Interact("Mazzy")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -1921,8 +2014,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinMazzy", "GLOBAL", 4)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -1948,9 +2043,11 @@ END
 		See("Mazzy")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("Mazzy")
 			//Dialog B-4
 			StartDialog("LCCORWIB", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -1993,8 +2090,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinNalia", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2004,9 +2103,11 @@ END
 		Global("LCA_Banter_CorwinNalia", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("Nalia")
 			//Dialog B-11, B-12
 			Interact("Nalia")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2018,9 +2119,11 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinNalia", "GLOBAL", 4)
 			DisplayStringHead("Nalia", @6) /*~Captain, do you have a moment?~ */
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2043,9 +2146,11 @@ END
 		See("Nalia")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("Nalia")
 			//Dialog B-13
 			Interact("Nalia")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2057,8 +2162,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinNalia", "GLOBAL", 6)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2082,9 +2189,11 @@ END
 		See("Nalia")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("Nalia")
 			//Dialogs B-14, B-15
 			Interact("Nalia")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2101,8 +2210,10 @@ END
 	THEN
 		RESPONSE #100
 			//DisplayStringHead(Myself, ~DEBUG_090~)
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinHaerDalis", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2126,9 +2237,11 @@ END
 		See("HaerDalis")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("HaerDalis")
 			//Dialog B-16
 			ActionOverride("HaerDalis", StartDialog("HAERDAJ", "LCCORWIN"))
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2139,8 +2252,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinHaerDalis", "GLOBAL", 4)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2164,9 +2279,11 @@ END
 		See("HaerDalis")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("HaerDalis")
 			//Dialog B-18, B-19, B-20, B-21
 			Interact("HaerDalis")
+			SetInterrupt(TRUE)
 	END
 	//}
 //} End HaerDalis Interactions
@@ -2183,9 +2300,11 @@ END
 		See("Minsc")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinMinsc", "GLOBAL", 2)
 			DisplayStringHead("Minsc",@3)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2209,9 +2328,11 @@ END
 		See("Minsc")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("Minsc")
 			//Dialogs B-2, B-22
 			Interact("Minsc")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2224,8 +2345,10 @@ END
 	THEN
 		RESPONSE #100
 			//DisplayStringHead(Myself, ~DEBUG_099~)
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinMinsc", "GLOBAL", 4)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2249,9 +2372,11 @@ END
 		See("Minsc")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("Minsc")
 			//Dialog B-23
 			Interact("Minsc")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2264,9 +2389,11 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinMinsc", "GLOBAL", 6)
 			DisplayStringHead(Myself, @4) /* ~Minsc! Come here!~ */
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2290,10 +2417,12 @@ END
 		See("Minsc")
 	THEN
 		RESPONSE #100
-			clearactions("Minsc")
+			SetInterrupt(FALSE)
+			ClearActions("Minsc")
 			FaceObject("Minsc")
 			//Dialog B-24
 			Interact("Minsc")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2310,8 +2439,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinRasaad", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2335,9 +2466,11 @@ END
 		See("Rasaad")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("Rasaad")
 			//Dialogs B-25, B-26
 			ActionOverride("Rasaad", StartDialog("RASAADJ", "LCCORWIN"))
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2350,8 +2483,10 @@ END
 	THEN
 		RESPONSE #100
 			//DisplayStringHead(Myself, ~DEBUG_108~)
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinRasaad", "GLOBAL", 4)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2388,8 +2523,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinRasaad", "GLOBAL", 6)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2426,8 +2563,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinRasaad", "GLOBAL", 8)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2468,8 +2607,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinYoshimo", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2493,9 +2634,11 @@ END
 		See("Yoshimo")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("Yoshimo")
 			//Dialog B-34
 			Interact("Yoshimo")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2511,8 +2654,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinCernd", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2536,9 +2681,11 @@ END
 		See("Cernd")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			ActionOverride("Cernd", FaceObject("LCCORWIN"))
 			//Dialog B-35
 			Interact("Cernd")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2554,8 +2701,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinValygar", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2579,9 +2728,11 @@ END
 		See("Valygar")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			ActionOverride("Valygar", FaceObject("LCCORWIN"))
 			//Dialogs B-37, B-38
 			Interact("Valygar")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2591,8 +2742,10 @@ END
 		!Global("LCA_CorwinLavokTimerSet", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("LCA_CorwinLavokTimerSet", "GLOBAL", 1)
+			SetInterrupt(FALSE)
 			SetGlobalTimer("LCA_CorwinLavokTimer", "GLOBAL", ONE_HOUR)
+			SetGlobal("LCA_CorwinLavokTimerSet", "GLOBAL", 1)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2604,9 +2757,11 @@ END
 		GlobalLT("LCA_ReturnToBG", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinValygarLavok", "GLOBAL", 1)
 			//Dialog B-39
 			Interact("Valygar")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2644,9 +2799,11 @@ END
 		See("Valygar")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinValygarBG", "GLOBAL", 1)
 			//Dialog B-85
 			ActionOverride("Valygar", StartDialog("VALYGARJ", "LCCORWIN"))
+			SetInterrupt(TRUE)
 	END
 		
 	//}
@@ -2665,8 +2822,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinHexxat", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2690,9 +2849,11 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			ActionOverride(Player1, FaceObject("LCCORWIN"))
 			//Dialog J-59
 			StartDialogue("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2705,8 +2866,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinHexxat", "GLOBAL", 4)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2730,9 +2893,11 @@ END
 		See("Hexxat")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			ActionOverride("Hexxat", FaceObject("LCCORWIN"))
 			//Dialog B-42
 			Interact("Hexxat")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2745,8 +2910,10 @@ END
 	THEN
 		RESPONSE #100
 			//DisplayStringHead(Myself, ~DEBUG_132~)
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinHexxat", "GLOBAL", 6)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2757,9 +2924,11 @@ END
 		See("Hexxat")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			ActionOverride("Hexxat", FaceObject("LCCORWIN"))
 			//Dialog J-57, Dialog J-58
 			StartDialogue("LCCORWIJ","Hexxat")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2801,8 +2970,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinJaheira", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2826,9 +2997,11 @@ END
 		See("Jaheira")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			ActionOverride("Jaheira", FaceObject("LCCORWIN"))
 			//Dialogs B-68, B-69
 			Interact("Jaheira")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2841,9 +3014,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
-			//DisplayStringHead(Myself, ~DEBUG_139~)
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinJaheira", "GLOBAL", 4)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2854,9 +3028,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
-			//DisplayStringHead(Myself, ~DEBUG_140~)
+			SetInterrupt(FALSE)
 			DisplayStringHead(Myself, @1)
 			SetGlobal("LCA_Banter_CorwinJaheira", "GLOBAL", 5)
+			SetInterrupt(TRUE)
 			Continue()
 	END 
 
@@ -2880,9 +3055,11 @@ END
 		See("Jaheira")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("Jaheira")
 			//Dialog B-70
 			Interact("Jaheira")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2894,8 +3071,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinJaheira", "GLOBAL", 7)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2919,9 +3098,11 @@ END
 		See("Jaheira")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			ActionOverride("Jaheira", FaceObject("LCCORWIN"))
 			//Dialog B-71
 			Interact("Jaheira")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2938,8 +3119,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinNeera", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -2963,9 +3146,11 @@ END
 		See("Neera")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			//Dialog B-40
 			ActionOverride("Neera", FaceObject("LCCORWIN"))
 			Interact("Neera")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2978,8 +3163,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinNeera", "GLOBAL", 4)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3014,8 +3201,10 @@ END
 		Global("OHD_corwinconflict","GLOBAL",0)
 	THEN
 		RESPONSE #100
-			SetGlobal("OHD_corwinconflict","GLOBAL",1)
+			SetInterrupt(FALSE)
 			RealSetGlobalTimer("OHD_corwinconflict_timer","GLOBAL",NINE_HOURS)
+			SetGlobal("OHD_corwinconflict","GLOBAL",1)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3059,10 +3248,12 @@ END
 			Global("LCA_CorwinRomanceActive","GLOBAL",2)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_DornSex", "GLOBAL", 1)
 			SetGlobal("LCA_ComplainDornSex", "GLOBAL", 1)
 			//Dialog J-25
 			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -3088,8 +3279,10 @@ END
 		!Global("LCA_DornPatronsDead", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinDorn", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3113,10 +3306,11 @@ END
 		See("Dorn")
 	THEN
 		RESPONSE #100
-			//clearactions(Myself)
+			SetInterrupt(FALSE)
 			ActionOverride("Dorn", FaceObject("LCCORWIN"))
 			//Dialog B-80
 			Interact("Dorn")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -3130,8 +3324,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinDorn", "GLOBAL", 4)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3157,10 +3353,11 @@ END
 		See("Dorn")
 	THEN
 		RESPONSE #100
-			//clearactions(Myself)
+			SetInterrupt(FALSE)
 			ActionOverride("Dorn", FaceObject("LCCORWIN"))
 			//Dialog B-81
 			Interact("Dorn")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -3178,9 +3375,11 @@ END
 		Global("LCA_CorwinAngryAtKeldorn", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinAngryAtKeldorn", "GLOBAL", 2)
 			//Dialog B-61
 			Interact("Keldorn")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -3192,8 +3391,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinKeldornOpt1", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3217,9 +3418,11 @@ END
 		See("Keldorn")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("Keldorn")
 			//Dialog B-62
 			Interact("Keldorn")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -3231,8 +3434,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinKeldorn", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3256,9 +3461,11 @@ END
 		See("Keldorn")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			ActionOverride("Keldorn", FaceObject("LCCORWIN"))
 			//Dialog B-63
 			Interact("Keldorn")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -3270,8 +3477,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinKeldorn", "GLOBAL", 4)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3295,10 +3504,11 @@ END
 		See("Keldorn")
 	THEN
 		RESPONSE #100
-			//clearactions("Keldorn")
+			SetInterrupt(FALSE)
 			FaceObject("Keldorn")
 			//Dialogs B-64, B-65
 			Interact("Keldorn")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -3315,8 +3525,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinKorgan", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3340,10 +3552,11 @@ END
 		See("Korgan")
 	THEN
 		RESPONSE #100
-			//clearactions("Korgan")
+			SetInterrupt(FALSE)
 			FaceObject("Korgan")
 			//Dialog B-43
 			Interact("Korgan")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -3356,8 +3569,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinKorgan", "GLOBAL", 4)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3381,9 +3596,11 @@ END
 		See("Korgan")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("Korgan")
 			//Dialog B-44
 			Interact("Korgan")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -3400,8 +3617,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinJan", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3425,9 +3644,11 @@ END
 		See("Jan")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			ActionOverride("Jan", FaceObject("LCCORWIN"))
 			//Dialog B-59
 			Interact("Jan")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -3440,8 +3661,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinJan", "GLOBAL", 4)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3465,10 +3688,11 @@ END
 		See("Jan")
 	THEN
 		RESPONSE #100
-			//clearactions(Myself)
+			SetInterrupt(FALSE)
 			ActionOverride("Jan", FaceObject("LCCORWIN"))
 			//Dialog B-60
 			Interact("Jan")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -3499,13 +3723,15 @@ END
 		See("Edwin")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinEdwinFemale", "GLOBAL", 1)
 			//Dialog B-55
 			Interact("Edwin")
+			SetInterrupt(TRUE)
 	END
 	//}
 
-	//{  Edwin - Corwin First Interaction 
+	//{ Edwin - Corwin First Interaction 
 
 	IF
 		InParty(Myself)
@@ -3515,8 +3741,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinEdwin", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3540,13 +3768,15 @@ END
 		See("Edwin")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			ActionOverride("Edwin", FaceObject("LCCORWIN"))
 			//Dialog B-56
 			Interact("Edwin")
+			SetInterrupt(TRUE)
 	END
 	//}
 
-	//{  Edwin - Corwin Second Interaction 
+	//{ Edwin - Corwin Second Interaction 
 
 	IF
 		InParty(Myself)
@@ -3556,8 +3786,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinEdwin", "GLOBAL", 4)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3581,13 +3813,15 @@ END
 		See("Edwin")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("Edwin")
 			//Dialog B-57
 			Interact("Edwin")
+			SetInterrupt(TRUE)
 	END
 	//}
 
-	//{  Edwin - Corwin Third Interaction 
+	//{ Edwin - Corwin Third Interaction 
 
 	IF
 		InParty(Myself)
@@ -3597,8 +3831,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinEdwin", "GLOBAL", 6)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3622,23 +3858,26 @@ END
 		See("Edwin")
 	THEN
 		RESPONSE #100
-			//clearactions("Edwin")
+			SetInterrupt(FALSE)
 			FaceObject("Edwin")
 			//Dialog B-58
 			Interact("Edwin")
+			SetInterrupt(TRUE)
 	END
 	//}
 
-	//{  Corwin Edwin Thay Interaction
+	//{ Corwin Edwin Thay Interaction
 
 	IF
 		GlobalTimerExpired("LCA_CorwinEdwinThayTimer", "GLOBAL")
 		GlobalLT("LCA_CorwinEdwinThay", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinEdwinThay", "GLOBAL", 1)
 			//Dialog B-54
 			Interact("Edwin")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -3655,8 +3894,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinAerie", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3679,9 +3920,11 @@ END
 		See("Aerie")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			ActionOverride("Aerie", FaceObject("LCCORWIN"))
 			//Dialog B-72
 			Interact("Aerie")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -3694,8 +3937,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinAerie", "GLOBAL", 4)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3706,8 +3951,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			DisplayStringHead(Myself,@0)
 			SetGlobal("LCA_Banter_CorwinAerie", "GLOBAL", 5)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3730,9 +3977,11 @@ END
 		See("Aerie")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("Aerie")
 			//Dialog B-74
 			Interact("Aerie")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -3745,8 +3994,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinAerie", "GLOBAL", 7)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3769,9 +4020,11 @@ END
 		See("Aerie")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			ActionOverride("Aerie", FaceObject("LCCORWIN"))
 			//Dialogs B-75, B-77
 			Interact("Aerie")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -3784,8 +4037,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinAerie", "GLOBAL", 9)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3808,9 +4063,11 @@ END
 		See("Aerie")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("Aerie")
 			//Dialogs B-76, B-78
 			ActionOverride("Aerie", StartDialog("AERIEJ", "LCCORWIN"))
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -3827,8 +4084,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinAnomen", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3853,9 +4112,11 @@ END
 		See("Anomen")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			ActionOverride("Anomen", FaceObject("LCCORWIN"))
 			//Dialog B-1
 			StartDialog("LCCORWIB", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -3869,8 +4130,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinAnomen", "GLOBAL", 4)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3893,9 +4156,11 @@ END
 		See("Anomen")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("Anomen")
 			//Dialog B-67
 			Interact("Anomen")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -3911,8 +4176,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinViconia", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3935,9 +4202,11 @@ END
 		See("Viconia")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			ActionOverride("Viconia", FaceObject("LCCORWIN"))
 			//Dialog B-45
 			Interact("Viconia")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -3953,8 +4222,10 @@ END
 		//Weather(NOWEATHER)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinViconia", "GLOBAL", 4)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3978,8 +4249,10 @@ END
 		Global("LCA_CorwinCanTalk", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinViconia", "GLOBAL", 6)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -4008,9 +4281,11 @@ END
 		GlobalLT("LCA_CorwinImoenSoulTalk", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinImoenSoulTalk", "GLOBAL", 1)
 			//Dialogs B-50, B-51
 			Interact("Imoen2")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -4022,8 +4297,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinImoen", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -4046,9 +4323,11 @@ END
 		See("Imoen2")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("Imoen2")
 			//Dialog B-49
 			Interact("Imoen2")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -4061,8 +4340,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinImoen", "GLOBAL", 4)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -4085,9 +4366,11 @@ END
 		See("Imoen2")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			FaceObject("Imoen2")
 			//Dialog B-52
 			Interact("Imoen2")
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -4124,9 +4407,11 @@ END
 		See("Sarevok")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			ActionOverride("Sarevok", FaceObject("LCCORWIN"))
 			//Dialog B-86
 			Interact("Sarevok")
+			SetInterrupt(TRUE)
 	END
 	//}
 	
@@ -4209,11 +4494,12 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
-			//clearactions(Myself)
+			SetInterrupt(FALSE)
 			ActionOverride(Player1, FaceObject("LCCORWIN"))
 			PlaySong(146)
 			// Dialog I-1
 			StartDialog("LCCORWIN", Player1)
+			SetInterrupt(TRUE)
 	END
 			
 	IF
@@ -4236,8 +4522,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -4258,10 +4546,12 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
-			//clearactions(Myself)
+			SetInterrupt(FALSE)
 			ActionOverride(Player1, FaceObject("LCCORWIN"))
 			PlaySong(146)
+			//Dialogs J-62, J-63
 			StartDialogue("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 	
@@ -4274,8 +4564,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinPlayer", "GLOBAL", 4)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -4296,10 +4588,11 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
-			//clearactions(Myself)
+			SetInterrupt(FALSE)
 			ActionOverride(Player1, FaceObject("LCCORWIN"))
 			//Dialogs J-60, J-61
 			StartDialogue("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -4313,8 +4606,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_ResetBanterTimer", "GLOBAL", 1)
 			SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -4335,11 +4630,13 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
 			ActionOverride(Player1, FaceObject("LCCORWIN"))
 			PlaySong(146)
 			//Dialogs J-40, J-41
 			StartDialogue("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -4379,13 +4676,16 @@ END
 	//}
 
 	//{ Saradush Destruction
-	IF ~
-		Global("LCA_SaradushDestroyed", "GLOBAL", 1)
+	IF 
+		GlobalTimerExpired("LCA_YagaTimer", "GLOBAL")
+		GlobalLT("LCA_SaradushDestroyed", "GLOBAL", 1)
 		Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-	~ THEN
+	THEN
 		RESPONSE #100
-			SetGlobal("LCA_SaradushDestroyed", "GLOBAL", 2)
+			SetInterrupt(FALSE)
+			SetGlobal("LCA_SaradushDestroyed", "GLOBAL", 1)
 			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 //} End Player Interactions

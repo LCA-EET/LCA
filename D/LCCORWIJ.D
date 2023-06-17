@@ -76,34 +76,52 @@ END
 
 //{ Dialog J-70
 IF ~
-	Global("LCA_SaradushDestroyed", "GLOBAL", 2)
+	Global("LCA_SaradushDestroyed", "GLOBAL", 1)
 ~ THEN BEGIN LCA_SaradushDestroyed
 	SAY @1507 /* ~Stand ready — this place has been overrun by giants.~ */
 	
 	IF ~~ THEN REPLY @1508 /* ~The city's been completely destroyed.~ */
+	DO ~
+		SetGlobal("LCA_SaradushDestroyed", "GLOBAL", 2)
+	~
 	GOTO LCA_TimeToGrieveLater
 	
 	IF ~~ THEN REPLY @1509 /* ~I haven't seen destruction like this since Caelar's crusade.~ */
+	DO ~
+		SetGlobal("LCA_SaradushDestroyed", "GLOBAL", 2)
+	~
 	GOTO LCA_TimeToGrieveLater
 	
 	IF ~
 		IsValidForPartyDialogue("Jaheira")
 	~ THEN
+	DO ~
+		SetGlobal("LCA_SaradushDestroyed", "GLOBAL", 2)
+	~
 	EXTERN JAHEIRAJ LCA_SaradushDestroyed 
 	
 	IF ~
 		IsValidForPartyDialogue("Imoen2")
 	~ THEN
+	DO ~
+		SetGlobal("LCA_SaradushDestroyed", "GLOBAL", 2)
+	~
 	EXTERN IMOEN2J LCA_SaradushDestroyed
 	
 	IF ~
 		IsValidForPartyDialogue("Neera")
 	~ THEN
+	DO ~
+		SetGlobal("LCA_SaradushDestroyed", "GLOBAL", 2)
+	~
 	EXTERN NEERAJ LCA_SaradushDestroyed
 	
 	IF ~
 		IsValidForPartyDialogue("Aerie")
 	~ THEN
+	DO ~
+		SetGlobal("LCA_SaradushDestroyed", "GLOBAL", 2)
+	~
 	EXTERN AERIEJ LCA_SaradushDestroyed
 END
 
