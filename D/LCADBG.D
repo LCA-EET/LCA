@@ -697,6 +697,24 @@ IF ~~ THEN BEGIN LCA_LCCORWIJ_Test
 	~
 	EXIT
 
+	IF ~~ THEN REPLY @504 /* ~Dialog J-69 R~ */
+	DO ~
+		SetGlobal("LCA_CorwinComplainSarevok", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		Wait(1)
+		ActionOverride("LCCORWIJ", StartDialog("LCCORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @505 /* ~Dialog J-69 NR~ */
+	DO ~
+		SetGlobal("LCA_CorwinComplainSarevok", "GLOBAL", 2)
+		SetGlobal("LCA_CorwinRomanceActive", "GLOBAL", 0)
+		Wait(1)
+		ActionOverride("LCCORWIJ", StartDialog("LCCORWIJ", Player1))
+	~
+	EXIT
+
 	IF ~~ THEN REPLY @26
 	GOTO LCA_MainMenu
 

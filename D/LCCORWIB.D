@@ -99,42 +99,12 @@ END
 //{ Interjects
 INTERJECT_COPY_TRANS SAREV25A 52 CORWIN_SAREV25A_52
 	== LCCORWIB
-	IF ~
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~
-	@16 /* ~That would be a mistake. Don't listen to him, love.~ */
-	== SAREV25A
-	IF ~
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~
-	@728 /* ~Love? I see... you'd risk your life to aid my brother in <PRO_HISHER> quest? You remind me in many ways of Tamoko... */
-	== LCCORWIB
-	IF ~
-		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~
-	@729 /* ~That would be a mistake. Don't listen to him, <CHARNAME>.~ */
-	== SAREV25A
-	@730 /* ~I assure you woman, I have no further designs on the Dukes, the Flaming Fist, or Baldur's Gate.~ */
+	@16 /* ~You can't be serious. <CHARNAME>, he'll turn on us at the first opportunity.~ */
 END
 
 INTERJECT_COPY_TRANS SAREV25A 53 CORWIN_SAREV25A_53
 	== LCCORWIB
-	IF ~
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~
-	@16 /* ~That would be a mistake. Don't listen to him, love.~ */
-	== SAREV25A
-	IF ~
-		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~
-	@728 /* ~Love? I see... you'd risk your life to aid my brother in <PRO_HISHER> quest? You remind me in many ways of Tamoko... */
-	== LCCORWIB
-	IF ~
-		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
-	~
-	@729 /* ~That would be a mistake. Don't listen to him, <CHARNAME>.~ */
-	== SAREV25A
-	@730 /* ~I assure you woman, I have no further designs on the Dukes, the Flaming Fist, or Baldur's Gate.~ */
+	@16 /* ~You can't be serious. <CHARNAME>, he'll turn on us at the first opportunity.~ */
 END
 
 INTERJECT_COPY_TRANS PPIRENI1 22 CORWIN_PPIRENI1_22

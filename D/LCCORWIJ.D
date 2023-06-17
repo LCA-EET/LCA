@@ -184,6 +184,141 @@ END
 
 //} #endregion
 
+//{ Dialog J-69
+IF ~
+	Global("LCA_CorwinComplainSarevok", "GLOBAL", 2)
+~ THEN BEGIN LCA_CorwinComplainSarevokInit
+	SAY @1472 /* ~We need to talk.~ */
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1473 /* ~What's on your mind, love.~ */
+	DO ~
+		SetGlobal("LCA_CorwinComplainSarevok", "GLOBAL", 3)
+	~
+	GOTO LCA_CorwinComplainSarevok
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1474 /* ~What's on your mind, Major?~ */
+	DO ~
+		SetGlobal("LCA_CorwinComplainSarevok", "GLOBAL", 3)
+	~
+	GOTO LCA_CorwinComplainSarevok
+	
+	IF ~~ THEN REPLY @1475 /* ~This isn't a good time.~*/
+	DO ~
+		SetGlobal("LCA_CorwinComplainSarevok", "GLOBAL", 3)
+	~
+	GOTO LCA_NotAGoodTime
+END
+
+IF ~~ THEN BEGIN LCA_NotAGoodTime
+	SAY @1476 /*  ~No, this is the perfect time.~ */
+	
+	IF ~~ THEN GOTO LCA_CorwinComplainSarevok
+END
+
+IF ~~ THEN BEGIN LCA_CorwinComplainSarevok
+	SAY @1477 /* ~I can't believe you allowed Sarevok, of all people, to join us. I've learned to trust your judgment, but I can't help thinking that you've made a grave mistake.~ */
+	
+	IF ~~ THEN REPLY @1479 /* ~The truth is, you're probably right. I don't trust him, but we need his strength and his knowledge.~ */
+	GOTO LCA_CorwinComplainSarevok2B
+	
+	IF ~~ THEN REPLY @1478 /* ~I understand your concern, and I share them to some extent. He has paid for his crimes, however.~ */
+	GOTO LCA_CorwinComplainSarevok2B
+	
+	IF ~~ THEN REPLY @1481 /* ~Everyone deserves a second chance. Even Sarevok.~ */
+	GOTO LCA_CorwinComplainSarevok2B
+END
+
+IF ~~ THEN BEGIN LCA_CorwinComplainSarevok2B
+	SAY @1480 /* ~Maybe ... but how many more innocents will suffer, now that he's returned? Men like him never change — he'll always be a bloodthirsty maniac.~ */
+	
+	IF ~~ THEN REPLY @1482 /* ~I'll keep him on a short leash, don't worry.~ */
+	GOTO LCA_CorwinComplainSarevok_2B1
+	
+	IF ~~ THEN REPLY @1483 /* ~That's why I need you to keep an eye on him. If there's any indication of betrayal, you need to let me know immediately. He's died by my hand once, and he shall do so again if the need arises.~ */
+	GOTO LCA_CorwinComplainSarevok_2B2_END
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1493 /* ~Major, I have to believe that people can change, that they can forge a new destiny. If not, I'm doomed to follow in my father's footsteps.~ */
+	GOTO LCA_ChangeDestiny_NR
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1494 /* ~Schael, I have to believe that people can change, that they can forge a new destiny. If not, I'm doomed to follow in my father's footsteps.~*/
+	GOTO LCA_ChangeDestiny_R
+END
+
+IF ~~ THEN BEGIN LCA_ChangeDestiny_NR
+	SAY @1496 /* ~I ... I understand where you're coming from. I didn't mean to imply that you were anything like him.~ */
+	
+	IF ~~ THEN REPLY @1497 /*~But I am like him. Were it not for the actions of Gorion in rescuing me, who is to say that I'd not have ended up the same as him?~*/
+	GOTO LCA_ChangeDestiny_NR_END
+END
+
+IF ~~ THEN BEGIN LCA_ChangeDestiny_R
+	SAY @1495 /* ~I ... understand. I didn't mean to imply that you were anything like him, love.~ */
+	
+	IF ~~ THEN REPLY @1497 /*~But I am like him. Were it not for the actions of Gorion in rescuing me, who is to say that I'd not have ended up the same as him?~*/
+	GOTO LCA_ChangeDestiny_R_END
+END
+
+IF ~~ THEN BEGIN LCA_ChangeDestiny_R_END
+	SAY @1498 /* ~... Perhaps you're right. Still, I'm going to keep a close eye on him. If I sense even for a moment that he's planning to betray us, I'll take action.~ */
+	
+	IF ~~ THEN REPLY @1499 /* ~Thank you, love. Let's get moving.~ */
+	EXIT
+	
+	IF ~~ THEN REPLY @1500 /* ~He's my brother, and my responsibility, love. If the need arises, I will end his life as I did once before. Let's go.~ */
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_ChangeDestiny_NR_END
+	SAY @1498 /* ~... Perhaps you're right. Still, I'm going to keep a close eye on him. If I sense even for a moment that he's planning to betray us, I'll take action.~ */
+	
+	IF ~~ THEN REPLY @1501 /* ~Thank you, Schael. Let's get moving.~*/
+	EXIT
+	
+	IF ~~ THEN REPLY @1502 /* ~He's my brother, and my responsibility, Major. If the need arises, I will end his life as I did once before. Let's go.~ */
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_CorwinComplainSarevok_2B1
+	SAY @1486 /* ~We need to keep our eyes on him at all times. If I get any sense that he's going to break his word, I swear I'll —~*/
+	
+	IF ~~ THEN REPLY @1490 /* ~I appreciate your vigilance.~ */
+	GOTO LCA_CorwinComplainSarevok_2B1_END
+	
+	IF ~~ THEN REPLY @1491 /*  ~Not if I kill him first.~ */
+	GOTO LCA_CorwinComplainSarevok_2B1_END
+END
+
+IF ~~ THEN BEGIN LCA_CorwinComplainSarevok_2B1_END
+	SAY @1492 /* ~Right. Let's go.~*/
+	
+	IF ~~ THEN
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_CorwinComplainSarevok_2B2_END
+	SAY @1484 /* ~Right. You can count on me.~*/
+	
+	IF ~
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1488 /* ~I know I can. Let's go, love.~*/
+	EXIT 
+	
+	IF ~
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1489 /* ~I know I can. Let's go, my friend.~ */
+	EXIT	
+END
+
+//}
+
 //{ #region Corwin Chosen for Saradush - Dialog J-2
 IF ~
 	Global("LCA_BGEND4", "GLOBAL", 1)

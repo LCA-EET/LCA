@@ -686,6 +686,19 @@ END
 
 //{ Event Checks
 
+	//{ Sarevok Joined Party
+	IF
+		InParty("Sarevok")
+		InParty(Myself)
+		GlobalLT("LCA_CorwinComplainSarevok", "GLOBAL", 0)
+	THEN
+		RESPONSE #100
+			SetGlobal("LCA_CorwinComplainSarevok", "GLOBAL", 1)
+			SetGlobalTimer("LCA_CorwinComplainSarevokTimer", "GLOBAL", ONE_HOUR)
+			Continue()
+	END
+	//}
+	
 	//{ Keldorn Wife Reconciled
 	IF 
 		Global("LadyMaria","GLOBAL",5)
@@ -4188,8 +4201,6 @@ END
 	
 //} End Sarevok Interactions
 
-
-
 //{ Corwin / Player Interactions
 
 	//{ Corwin Sees Player for the First Time Since SoD
@@ -4332,6 +4343,40 @@ END
 	END
 	//}
 
+	//{ Corwin Complain about Sarevok
+	IF
+		InParty(Myself)
+		InParty("Sarevok")
+		GlobalTimerExpired("LCA_CorwinComplainSarevokTimer", "GLOBAL")
+		Global("LCA_CorwinComplainSarevok", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("LCA_CorwinComplainSarevok", "GLOBAL", 2)
+			Continue()
+	END
+	
+	IF 
+		Global("LCA_CorwinComplainSarevok", "GLOBAL", 2)
+		Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		!Range(Player1, 6)
+		ActionListEmpty()
+	THEN
+		RESPONSE #100
+			MoveToObject(Player1)
+			Continue()
+	END
+	
+	IF 
+		Global("LCA_CorwinComplainSarevok", "GLOBAL", 2)
+		Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Range(Player1, 7)
+		See(Player1)
+	THEN
+		RESPONSE #100
+			//Dialog J-69
+			StartDialog("LCCORWIJ", Player1)
+	END
+	//}
 //} End Player Interactions
 
 //{ Romance Overrides
