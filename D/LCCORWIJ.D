@@ -74,6 +74,49 @@ IF ~~ THEN BEGIN LCA_StartDucalCS
 END
 //} #endregion
 
+//{ Dialog J-70
+IF ~
+	Global("LCA_SaradushDestroyed", "GLOBAL", 2)
+~ THEN BEGIN LCA_SaradushDestroyed
+	SAY @1507 /* ~Stand ready — this place has been overrun by giants.~ */
+	
+	IF ~~ THEN REPLY @1508 /* ~The city's been completely destroyed.~ */
+	GOTO LCA_TimeToGrieveLater
+	
+	IF ~~ THEN REPLY @1509 /* ~I haven't seen destruction like this since Caelar's crusade.~ */
+	GOTO LCA_TimeToGrieveLater
+	
+	IF ~
+		IsValidForPartyDialogue("Jaheira")
+	~ THEN
+	EXTERN JAHEIRAJ LCA_SaradushDestroyed 
+	
+	IF ~
+		IsValidForPartyDialogue("Imoen2")
+	~ THEN
+	EXTERN IMOEN2J LCA_SaradushDestroyed
+	
+	IF ~
+		IsValidForPartyDialogue("Neera")
+	~ THEN
+	EXTERN NEERAJ LCA_SaradushDestroyed
+	
+	IF ~
+		IsValidForPartyDialogue("Aerie")
+	~ THEN
+	EXTERN AERIEJ LCA_SaradushDestroyed
+END
+
+IF ~~ THEN BEGIN LCA_TimeToGrieveLater
+	SAY @1504 /* @1504 = ~There'll be time to grieve later. This is what the Five likely have in store for the rest of the Sword Coast, including Baldur's Gate. We have to stop them.~ */
+	
+	IF ~~ THEN REPLY @1505 /* ~We will. First Yaga-Shura, then the rest.~ */
+	EXIT
+	
+	IF ~~ THEN REPLY @1506 /* Right */
+	EXIT
+END
+
 //{ #region Hall of Wonders Cutscene - Dialog J-0
 IF ~
 	Global("LCA_CSHOW_TALK", "GLOBAL", 1)

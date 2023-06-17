@@ -4377,6 +4377,17 @@ END
 			StartDialog("LCCORWIJ", Player1)
 	END
 	//}
+
+	//{ Saradush Destruction
+	IF ~
+		Global("LCA_SaradushDestroyed", "GLOBAL", 1)
+		Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+	~ THEN
+		RESPONSE #100
+			SetGlobal("LCA_SaradushDestroyed", "GLOBAL", 2)
+			StartDialog("LCCORWIJ", Player1)
+	END
+	//}
 //} End Player Interactions
 
 //{ Romance Overrides

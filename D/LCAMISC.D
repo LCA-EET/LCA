@@ -8,6 +8,24 @@
 
 */
 
+APPEND NEERAJ
+	IF ~~ THEN BEGIN LCA_SaradushDestroyed
+		SAY @233
+		
+		IF ~~ THEN
+		EXTERN LCCORWIJ LCA_TimeToGrieveLater
+	END
+END
+
+APPEND AERIEJ
+	IF ~~ THEN BEGIN LCA_SaradushDestroyed
+		SAY @234
+		
+		IF ~~ THEN
+		EXTERN LCCORWIJ LCA_TimeToGrieveLater
+	END
+END
+
 APPEND SAREV25J
 	IF ~~ THEN BEGIN LCA_SarevokBanter3Chain_END
 		SAY @232 /* ~I realize now that I was wrong. Your skill in battle is considerable, as is your ability to lead others.~ */
@@ -1488,6 +1506,13 @@ APPEND JAHEIRAJ
 		~
 		EXTERN LCDIVINE LCA_AskAway
 	END
+	
+	IF ~~ THEN BEGIN LCA_SaradushDestroyed
+		SAY @233
+		
+		IF ~~ THEN
+		EXTERN LCCORWIJ LCA_TimeToGrieveLater
+	END
 END
 
 APPEND IMOEN2J
@@ -1499,6 +1524,13 @@ APPEND IMOEN2J
 			SetGlobal("LCA_ImoenAskedDiviner", "GLOBAL", 1)
 		~
 		EXTERN LCDIVINE LCA_AskAway
+	END
+	
+	IF ~~ THEN BEGIN LCA_SaradushDestroyed
+		SAY @233
+		
+		IF ~~ THEN
+		EXTERN LCCORWIJ LCA_TimeToGrieveLater
 	END
 END
 //KENT
