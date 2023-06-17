@@ -724,6 +724,39 @@ END
 
 //{ Event Checks
 
+	//{ Left BG Romance Check
+	IF
+		Global("LCA_ReturnToBG", "GLOBAL", 2)
+		GlobalLT("LCA_CheckInRomanceLeftBG", "GLOBAL", 1)
+		Gender(Player1, MALE)
+	THEN
+		RESPONSE #100
+			SetGlobal("LCA_CheckInRomanceLeftBG", "GLOBAL", 1)
+			Continue()
+	END
+	
+	IF
+		Global("LCA_CheckInRomanceLeftBG", "GLOBAL", 1)
+		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("LCA_CorwinPregnant", "GLOBAL", 1)
+			SetGlobalTimer("LCA_CorwinPregnantTimer", "GLOBAL", THIRTY_DAYS)
+			SetGlobal("LCA_CheckInRomanceLeftBG", "GLOBAL", 2)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		Global("LCA_CheckInRomanceLeftBG", "GLOBAL", 1)
+		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetGlobal("LCA_CheckInRomanceLeftBG", "GLOBAL", 2)
+	END
+	//}
+	
 	//{ Entered Yaga-Shura Camp
 	IF
 		!Global("LCA_YagaTimerSet", "GLOBAL", 1)
@@ -997,6 +1030,7 @@ END
 		!HPPercentLT(Player1, 50)
 		!Global("LCA_RohmaKidnapped", "GLOBAL", 3)
 		Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		GlobalLT("LCA_CorwinPregnant", "GLOBAL", 2)
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
@@ -1007,13 +1041,14 @@ END
 	IF 
 		Global("LCA_CorwinCanHaveSex", "GLOBAL", 1)
 		ActionListEmpty()
-		OR(5)
+		OR(7)
 			GlobalGT("LCA_RohmaKidnapped", "GLOBAL", 0)
 			GlobalGT("LCA_CorwinBit", "GLOBAL", 0)
 			!Gender(Player1, MALE)
 			HPPercentLT(Myself, 50)
 			HPPercentLT(Player1, 50)
 			!Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+			GlobalGT("LCA_CorwinPregnant", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetGlobal("LCA_CorwinCanHaveSex", "GLOBAL", 0)
@@ -4689,6 +4724,22 @@ END
 	END
 	//}
 //} End Player Interactions
+
+//{ Corwin Pregnant Interactions
+	//{ Initial Timer Expiration
+	IF 
+		Global("LCA_CorwinPregnant", "GLOBAL", 1)
+		GlobalTimerExpired("LCA_CorwinPregnantTimer", "GLOBAL")
+		Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("LCA_CorwinPregnant", "GLOBAL", 2)
+			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+//}
 
 //{ Romance Overrides
 //might want to edit this in a future release.

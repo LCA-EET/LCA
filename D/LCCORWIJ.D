@@ -74,6 +74,72 @@ IF ~~ THEN BEGIN LCA_StartDucalCS
 END
 //} #endregion
 
+//{ Dialog J-71
+IF ~
+	Global("LCA_CorwinPregnant", "GLOBAL", 2)
+~ THEN BEGIN LCA_CorwinPregnantInitial
+	SAY @1510 /* ~Unhh...~ */
+	
+	
+	IF ~~ THEN REPLY @1511 /*  ~You look a little under the weather, love. Is everything alright?~ */
+	DO ~
+		SetGlobal("LCA_CorwinPregnant", "GLOBAL", 3)
+		SetGlobalTimer("LCA_CorwinPregnantTimer", "GLOBAL", THREE_DAYS)
+	~
+	GOTO LCA_CorwinPregnantInitial_END
+	
+	IF ~
+		IsValidForPartyDialogue("Jaheira")
+		See("Jaheira")
+	~ THEN
+	DO ~
+		SetGlobal("LCA_CorwinPregnant", "GLOBAL", 3)
+		SetGlobalTimer("LCA_CorwinPregnantTimer", "GLOBAL", THREE_DAYS)
+	~
+	GOTO LCA_CorwinPregnantInitial_Jaheira
+		
+	IF ~
+		IsValidForPartyDialogue("Aerie")
+		See("Aerie")
+	~ THEN
+	DO ~
+		SetGlobal("LCA_CorwinPregnant", "GLOBAL", 3)
+		SetGlobalTimer("LCA_CorwinPregnantTimer", "GLOBAL", THREE_DAYS)
+	~
+	GOTO LCA_CorwinPregnantInitial_Aerie
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnantInitial_Aerie
+	SAY @1515 /* ~Aerie, do you have a minute? I need to talk to you about something, in private.~ */
+	
+	IF ~~ THEN
+	EXTERN AERIEJ LCA_CorwinPregnantInitial_Aerie
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnantInitial_Jaheira
+	SAY @1516 /* ~Jaheira, do you have a minute? I need to talk to you about something, in private.~ */
+	
+	IF ~~ THEN
+	EXTERN JAHEIRAJ LCA_CorwinPregnantInitial_Jaheira
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnantInitial_Shh
+	SAY @1513 /* ~Shh! I don't want him to ...~ */
+	
+	= @1514 /* ~(You can't make out the rest of their discussion. It ends, and Schael turns to you.)~ */
+	
+	IF ~~ THEN REPLY @1511 /* ~You look a little under the weather, love. Is everything alright?~ */
+	GOTO LCA_CorwinPregnantInitial_END
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnantInitial_END
+	SAY @1512 /* ~Yeah... it must've been something I ate. Don't worry, I'll be fine. Let's keep moving.~*/
+	
+	IF ~~ THEN
+	EXIT
+END
+//}
+
 //{ Dialog J-70
 IF ~
 	Global("LCA_SaradushDestroyed", "GLOBAL", 1)

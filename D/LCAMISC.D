@@ -19,10 +19,24 @@ END
 
 APPEND AERIEJ
 	IF ~~ THEN BEGIN LCA_SaradushDestroyed
-		SAY @234
+		SAY @234 /* ~The city's been completely d-destroyed... all those people...~ */
 		
 		IF ~~ THEN
 		EXTERN LCCORWIJ LCA_TimeToGrieveLater
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantInitial_Aerie
+		SAY @237 /* ~Of course. W-what do you need?~ */
+		
+		= @239 /* ~(They have a long discussion, but you can't make out the details.)~ */
+		
+		= @235 /* ~Oh, Schael! That's wonderf—~ */
+		
+		IF ~~ THEN 
+		DO ~
+			SetGlobal("LCA_CorwinPregnantAerie", "GLOBAL", 1)
+		~
+		EXTERN LCCORWIJ LCA_CorwinPregnantInitial_Shh
 	END
 END
 
@@ -1512,6 +1526,20 @@ APPEND JAHEIRAJ
 		
 		IF ~~ THEN
 		EXTERN LCCORWIJ LCA_TimeToGrieveLater
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantInitial_Jaheira
+		SAY @238 /* ~Of course. What do you need?~ */
+		
+		= @239 /* ~(They have a long discussion, but you can't make out the details.)~ */
+		
+		= @236 /* ~Schael! At a time like this? How could you allow yourself—~ */
+		
+		IF ~~ THEN 
+		DO ~
+			SetGlobal("LCA_CorwinPregnantJaheira", "GLOBAL", 1)
+		~
+		EXTERN LCCORWIJ LCA_CorwinPregnantInitial_Shh
 	END
 END
 

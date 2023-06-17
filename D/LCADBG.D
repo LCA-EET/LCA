@@ -722,6 +722,14 @@ IF ~~ THEN BEGIN LCA_LCCORWIJ_Test
 		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
 	~
 	EXIT
+	
+	IF ~~ THEN REPLY @506 /* ~Dialog J-71~ */
+	DO ~
+		SetGlobal("LCA_CorwinPregnant", "GLOBAL", 2)
+		Wait(1)
+		ActionOverride("LCCORWIN", StartDialog("LCCORWIJ", Player1))
+	~
+	EXIT
 
 	IF ~~ THEN REPLY @26
 	GOTO LCA_MainMenu
