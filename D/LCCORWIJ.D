@@ -140,6 +140,272 @@ IF ~~ THEN BEGIN LCA_CorwinPregnantInitial_END
 END
 //}
 
+//{ Dialog J-72
+IF ~
+	Global("LCA_CorwinPregnant", "GLOBAL", 4)
+~ THEN BEGIN LCA_CorwinPregnant2
+	SAY @1517 /* ~<CHARNAME> ... there's something I need to tell you. I ...~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("LCA_CorwinPregnant", "GLOBAL", 5)
+	~
+	GOTO LCA_CorwinPregnant2_1
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_1
+	SAY @1518 /* ~I'm pregnant.~ */
+	
+	IF ~~ THEN REPLY @1521 /* ~Schael, that's wonderful news!~ */
+	DO ~
+		SetGlobal("LCA_PregnantNews", "LOCALS", 1)
+	~
+	GOTO LCA_CorwinPregnant2_GoodNews
+	
+	IF ~~ THEN REPLY @1519 /* ~What? But you don't look pregnant — are you sure?~ */
+	DO ~
+		SetGlobal("LCA_PregnantSure", "LOCALS", 1)
+	~
+	GOTO LCA_CorwinPregnant2_DontLookPregnant
+	
+	IF ~~ THEN REPLY @1523 /* But... how can that be? */
+	DO ~
+		SetGlobal("LCA_PregnantHow", "LOCALS", 1)
+	~
+	GOTO LCA_CorwinPregnant2_How
+	
+	IF ~~ THEN REPLY @1533 /* ~Schael, you know that I love you. But a baby, now?~ */
+	GOTO LCA_CorwinPregnant2_BabyNow
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_BabyNow
+	SAY @1532 /* ~I'm going to have this baby. Don't ask me not to. The timing is terrible I know, but I can still do everything that I need to, on or off the battlefield. Once I start showing, that might change ...~ */
+	
+	IF ~~ THEN 
+	GOTO LCA_CorwinPregnant2_GoHome_Medic
+	
+	IF ~
+		Global("LCA_CorwinPregnantAerie", "GLOBAL", 1)
+	~ THEN GOTO LCA_CorwinPregnant2_GoHome_Aerie
+	
+	IF ~
+		Global("LCA_CorwinPregnantJaheira", "GLOBAL", 1)
+	~ THEN GOTO LCA_CorwinPregnant2_GoHome_Jaheira
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_DontLookPregnant
+	SAY @1520 /* ~I'm certain. I'm late this month, and a couple of days ago the morning sickness started. It's the same as when I was pregnant with Rohma. I won't start showing for probably six to eight weeks, but I'm definitely with child.~ */
+	
+	IF ~~ THEN REPLY @1521 /* ~Schael, that's wonderful news!~ */
+	GOTO LCA_CorwinPregnant2_GoodNews
+	
+	IF ~
+		!Global("LCA_PregnantHow", "LOCALS", 1)
+	~ THEN REPLY @1523 /* But... how can that be? */
+	DO ~
+		SetGlobal("LCA_PregnantHow", "LOCALS", 1)
+	~
+	GOTO LCA_CorwinPregnant2_How
+	
+	IF ~~ THEN REPLY @1533 /* ~Schael, you know that I love you. But a baby, now?~ */
+	GOTO LCA_CorwinPregnant2_BabyNow
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_How
+	SAY @1524 /* ~What do you mean, how? We were intimate two or three times a week for over a month. It was bound to happen.~ */
+	
+	IF ~~ THEN REPLY @1521 /* ~Schael, that's wonderful news!~ */
+	GOTO LCA_CorwinPregnant2_GoodNews
+	
+	IF ~
+		!Global("LCA_PregnantSure", "LOCALS", 1)
+	~ THEN REPLY @1519 /* ~What? But you don't look pregnant — are you sure?~ */
+	DO ~
+		SetGlobal("LCA_PregnantSure", "LOCALS", 1)
+	~
+	GOTO LCA_CorwinPregnant2_DontLookPregnant
+	
+	IF ~~ THEN REPLY @1533 /* ~Schael, you know that I love you. But a baby, now?~ */
+	GOTO LCA_CorwinPregnant2_BabyNow
+	
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_GoodNews
+	SAY @1522 /* ~It is. I'm so happy to be carrying our child. You're going to make a great father.~ */
+	
+	IF ~~ THEN REPLY @1525 /* ~But Schael ... We need to find a way to get you home. We can't risk the safety of our child.~*/
+	GOTO LCA_CorwinPregnant2_GoHome
+	
+	IF ~~ THEN REPLY @1534 /* ~It's too dangerous for you to remain here.~*/
+	GOTO LCA_CorwinPregnant2_GoHome
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_GoHome
+	SAY @1527 /* ~No, I won't leave your side. At least not yet. The timing is terrible of course, but I can still do everything that I need to, on or off the battlefield. Once I start showing, that might change ...~*/
+	
+	IF ~~ THEN 
+	GOTO LCA_CorwinPregnant2_GoHome_Medic
+	
+	IF ~
+		Global("LCA_CorwinPregnantAerie", "GLOBAL", 1)
+	~ THEN GOTO LCA_CorwinPregnant2_GoHome_Aerie
+	
+	IF ~
+		Global("LCA_CorwinPregnantJaheira", "GLOBAL", 1)
+	~ THEN GOTO LCA_CorwinPregnant2_GoHome_Jaheira
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_GoHome_Aerie
+	SAY @1528 /*~But, I did speak to Aerie about this... I think you might've overheard some of our discussion. The baby will be fine, so long as I'm fine. Even if I'm killed, as long as I'm resurrected, our baby will be as well.~*/
+	
+	IF ~~ THEN REPLY @1536 /* ~Is there anything that I can do for you? I hear pregnant women get some odd cravings from time to time.~ */
+	GOTO LCA_CorwinPregnant2_NeedAnything
+	
+	IF ~~ THEN REPLY @1550 /* ~Did Aerie tell you if it was a boy or a girl?~ */
+	GOTO LCA_CorwinPregnant2_BabyGender
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_GoHome_Jaheira
+	SAY @1529 /*~But, I did speak to Jaheira about this... I think you might've overheard some of our discussion. The baby will be fine, so long as I'm fine. Even if I'm killed, as long as I'm resurrected, our baby will be as well.~*/
+	
+	IF ~~ THEN REPLY @1536 /* ~Is there anything that I can do for you? I hear pregnant women get some odd cravings from time to time.~ */
+	GOTO LCA_CorwinPregnant2_NeedAnything
+	
+	IF ~~ THEN REPLY @1551 /* ~Did Jaheira tell you if it was a boy or a girl?~ */
+	GOTO LCA_CorwinPregnant2_BabyGender
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_BabyGender
+	SAY @1552 /* ~No, I didn't ask her. It's better not to know, I think. Speaking of ...~  */
+	
+	IF ~~ THEN
+	GOTO LCA_CorwinPregnant2_DontTell
+	
+	IF ~
+		Global("LCA_CorwinPregnantAerie", "GLOBAL", 1)
+	~ THEN
+	GOTO LCA_CorwinPregnant2_DontTell_Aerie
+	
+	IF ~
+		Global("LCA_CorwinPregnantJaheira", "GLOBAL", 1)
+	~ THEN
+	GOTO LCA_CorwinPregnant2_DontTell_Jaheira 
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_GoHome_Medic
+	SAY @1530 /* ~Before we left Baldur's Gate, I spoke with one of the Fist's medics, just as a precaution. She told me that a baby in its mothers womb will remain healthy so long as the mother is. Even if I'm killed, as long as I'm resurrected, our baby will be as well.~ */
+	
+	IF ~~ THEN REPLY @1536 /* ~Is there anything that I can do for you? I hear pregnant women get some odd cravings from time to time.~ */
+	GOTO LCA_CorwinPregnant2_NeedAnything
+	
+	IF ~~ THEN REPLY @1553 /* ~Any guess as to whether it's a boy or a girl?~ */
+	GOTO LCA_CorwinPregnant2_BabyGender2
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_BabyGender2
+	SAY @1554 /* ~No ... even if I could know, I don't think I'd want to. It would spoil the surprise. Speaking of ...~*/
+	
+	IF ~~ THEN
+	GOTO LCA_CorwinPregnant2_DontTell
+	
+	IF ~
+		Global("LCA_CorwinPregnantAerie", "GLOBAL", 1)
+	~ THEN
+	GOTO LCA_CorwinPregnant2_DontTell_Aerie
+	
+	IF ~
+		Global("LCA_CorwinPregnantJaheira", "GLOBAL", 1)
+	~ THEN
+	GOTO LCA_CorwinPregnant2_DontTell_Jaheira 
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_NeedAnything
+	SAY @1537 /* ~Thank you, but I'm fine love. If I need anything, I'll let you know. But ... since you mentioned it, there is one thing ...~*/
+	
+	IF ~~ THEN
+	GOTO LCA_CorwinPregnant2_DontTell
+	
+	IF ~
+		Global("LCA_CorwinPregnantAerie", "GLOBAL", 1)
+	~ THEN
+	GOTO LCA_CorwinPregnant2_DontTell_Aerie
+	
+	IF ~
+		Global("LCA_CorwinPregnantJaheira", "GLOBAL", 1)
+	~ THEN
+	GOTO LCA_CorwinPregnant2_DontTell_Jaheira
+	
+	
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_DontTell_Aerie
+	SAY @1539 /* ~I don't want anyone to give me any special treatment. Aerie knows, but I don't want the rest to know I'm pregnant. Eventually they'll find out of course, but for now, let's keep it between us.~ */
+	
+	IF ~~ THEN REPLY @1541 /* ~As you wish, dear.~*/
+	GOTO LCA_CorwinPregnant2_End
+	
+	IF ~
+		InParty("Imoen2")
+	~ THEN REPLY @1546 /* ~Not even Imoen?~ */
+	GOTO LCA_CorwinPregnant2_Imoen
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_Imoen
+	SAY @1547 /* ~Well, sure. She's your sister after all, and I know she can keep a secret. But no one else, please. Auntie Imoen ... has a nice ring to it, eh? ~ */
+	
+	IF ~~ THEN REPLY @1548 /* ~It does. She's going to be thrilled when she hears the news.~ */
+	DO ~
+		SetGlobalTimer("LCA_CorwinPregnantImoenTimer", "GLOBAL", ONE_DAY)
+	~
+	GOTO LCA_CorwinPregnant2_End
+	
+	IF ~~ THEN REPLY @1555 /* ~I'm going to be a father ...~*/
+	DO ~
+		SetGlobalTimer("LCA_CorwinPregnantImoenTimer", "GLOBAL", ONE_DAY)
+	~
+	GOTO LCA_CorwinPregnant2_End
+	
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_DontTell_Jaheira
+	SAY @1540 /* ~I don't want anyone to give me any special treatment. Jaheira knows, but I don't want the rest to know I'm pregnant. Eventually they'll find out of course, but for now, let's keep it between us.~ */
+	
+	IF ~~ THEN REPLY @1541 /* ~As you wish, dear.~*/
+	GOTO LCA_CorwinPregnant2_End
+	
+	IF ~
+		InParty("Imoen2")
+	~ THEN REPLY @1546 /* ~Not even Imoen?~ */
+	GOTO LCA_CorwinPregnant2_Imoen
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_DontTell
+	SAY @1538 /* ~I don't want anyone to give me any special treatment, or to even know I'm pregnant. Eventually they'll find out of course, but for now, let's keep it between us.~*/
+	
+	IF ~~ THEN REPLY @1541 /* ~As you wish, dear.~*/
+	GOTO LCA_CorwinPregnant2_End
+	
+	IF ~
+		InParty("Imoen2")
+	~ THEN REPLY @1546 /* ~Not even Imoen?~ */
+	GOTO LCA_CorwinPregnant2_Imoen
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_End
+	SAY @1542 /* ~Come here, hero.~*/
+	
+	= @1545 /* ~(You share a warm embrace, followed by a passionate kiss.)~*/
+	
+	= @1543 /* ~I love you. More than you know.~ */
+	
+	IF ~~ THEN REPLY @1544 /* ~And I love you */
+	DO ~
+		SetGlobalTimer("LCA_CorwinPregnantTimer", "GLOBAL", ONE_MONTH)
+	~
+	EXIT
+END
+ //}
+
 //{ Dialog J-70
 IF ~
 	Global("LCA_SaradushDestroyed", "GLOBAL", 1)

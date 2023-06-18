@@ -4739,6 +4739,45 @@ END
 			SetInterrupt(TRUE)
 	END
 	//}
+	
+	//{ Second Interaction
+	IF
+		Global("LCA_CorwinPregnant", "GLOBAL", 3)
+		GlobalTimerExpired("LCA_CorwinPregnantTimer", "GLOBAL")
+		Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		See(Player1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("LCA_CorwinPregnant", "GLOBAL", 4)
+			DisplayStringHead(Myself, @15)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		Global("LCA_CorwinPregnant", "GLOBAL", 4)
+		!Range(Player1,7)
+		ActionListEmpty()
+		
+	THEN
+		RESPONSE #100
+			MoveToObject(Player1)
+			Continue()
+	END
+	
+	IF
+		Global("LCA_CorwinPregnant", "GLOBAL", 4)
+		Range(Player1,8)
+		ActionListEmpty()
+	THEN
+		RESPONSE #100
+			StartDialog("LCCORWIJ", Player1)
+	END
+	//}
+	
+	
+	
 //}
 
 //{ Romance Overrides
