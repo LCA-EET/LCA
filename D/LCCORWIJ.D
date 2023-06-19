@@ -176,6 +176,22 @@ IF ~~ THEN BEGIN LCA_CorwinPregnant2_1
 	
 	IF ~~ THEN REPLY @1533 /* ~Schael, you know that I love you. But a baby, now?~ */
 	GOTO LCA_CorwinPregnant2_BabyNow
+	
+	IF ~~ THEN REPLY @1556 /* ~Schael, I ... I'm not sure if I'm ready for this responsibility.~ */
+	GOTO LCA_CorwinPregnant2_NotReady
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_NotReady
+	SAY @1557 /* ~I understand your misgivings, and that this is a lot to process. But you are ready. I've seen how great you are with Rohma. I know you'd be a great father to our child.~*/
+	
+	IF ~~ THEN REPLY @1558 /* But a baby, now? Given all of the danger we face?~ */
+	GOTO LCA_CorwinPregnant2_BabyNow
+	
+	IF ~~ THEN REPLY @1559 /*~Are you sure? That you're pregnant, I mean?~ */
+	GOTO LCA_CorwinPregnant2_DontLookPregnant
+
+	IF ~~ THEN REPLY @1560 /* I'm not as sure ... but I promise you, I'm going to give it my all.~*/
+	GOTO LCA_CorwinPregnant2_GoodNews
 END
 
 IF ~~ THEN BEGIN LCA_CorwinPregnant2_BabyNow
@@ -255,68 +271,201 @@ IF ~~ THEN BEGIN LCA_CorwinPregnant2_GoHome
 	~ THEN GOTO LCA_CorwinPregnant2_GoHome_Jaheira
 END
 
-IF ~~ THEN BEGIN LCA_CorwinPregnant2_GoHome_Aerie
-	SAY @1528 /*~But, I did speak to Aerie about this... I think you might've overheard some of our discussion. The baby will be fine, so long as I'm fine. Even if I'm killed, as long as I'm resurrected, our baby will be as well.~*/
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_Questions
+	SAY @1566 /* ~She told me that a baby in its mothers womb will remain healthy so long as the mother is. Even if I'm killed, once I'm resurrected, our baby will be as well.~ */
 	
-	IF ~~ THEN REPLY @1536 /* ~Is there anything that I can do for you? I hear pregnant women get some odd cravings from time to time.~ */
+	IF ~
+		!IsValidForPartyDialogue("Jan")
+		!Global("LCA_Pregnant_NeedAnything", "LOCALS", 1)
+	~ THEN REPLY @1536 /* ~Is there anything that I can do for you? I hear pregnant women get some odd cravings from time to time.~ */
+	DO ~
+		SetGlobal("LCA_Pregnant_NeedAnything", "LOCALS", 1)
+	~
 	GOTO LCA_CorwinPregnant2_NeedAnything
 	
-	IF ~~ THEN REPLY @1550 /* ~Did Aerie tell you if it was a boy or a girl?~ */
+	IF ~
+		IsValidForPartyDialogue("Jan")
+		!Global("LCA_Pregnant_NeedAnything", "LOCALS", 1)
+	~ THEN REPLY @1536 /* ~Is there anything that I can do for you? I hear pregnant women get some odd cravings from time to time.~ */
+	DO ~
+		SetGlobal("LCA_Pregnant_NeedAnything", "LOCALS", 1)
+	~
+	GOTO LCA_CorwinPregnant2_NeedAnything_Jan
+	
+	IF ~
+		!Global("LCA_Pregnant_Gender", "LOCALS", 1)
+		OR(2)
+			GlobalGT("LCA_CorwinPregnantAerie", "GLOBAL", 0)
+			GlobalGT("LCA_CorwinPregnantJaheira", "GLOBAL", 0)
+	~ THEN REPLY @1550 /* ~Did she tell you if it was a boy or a girl?~ */
+	DO ~
+		SetGlobal("LCA_Pregnant_Gender", "LOCALS", 1)
+	~
 	GOTO LCA_CorwinPregnant2_BabyGender
+	
+	IF ~
+		!Global("LCA_Pregnant_DueDate", "LOCALS", 1)
+		OR(2)
+			GlobalGT("LCA_CorwinPregnantAerie", "GLOBAL", 0)
+			GlobalGT("LCA_CorwinPregnantJaheira", "GLOBAL", 0)
+	~ THEN REPLY @1562 /* ~Did she give you a due date?~ */
+	DO ~
+		SetGlobal("LCA_Pregnant_DueDate", "LOCALS", 1)
+	~
+	GOTO LCA_CorwinPregnant2_DueDate
+	
+	IF ~
+		!Global("LCA_Pregnant_DueDate", "LOCALS", 1)
+		!OR(2)
+			GlobalGT("LCA_CorwinPregnantAerie", "GLOBAL", 0)
+			GlobalGT("LCA_CorwinPregnantJaheira", "GLOBAL", 0)
+	~ THEN REPLY @1565 /* ~Do you know when you're expecting?~ */
+	DO ~
+		SetGlobal("LCA_Pregnant_DueDate", "LOCALS", 1)
+	~
+	GOTO LCA_CorwinPregnant2_DueDate
+	
+	IF ~
+		!Global("LCA_Pregnant_NeedAnything", "LOCALS", 1)
+	~ THEN REPLY @1563 /* ~I'm here for you, my love. If there's anything you require, you need only ask.~*/
+	DO ~
+		SetGlobal("LCA_Pregnant_NeedAnything", "LOCALS", 1)
+	~
+	GOTO LCA_CorwinPregnant2_NeedAnything
 END
 
 IF ~~ THEN BEGIN LCA_CorwinPregnant2_GoHome_Jaheira
-	SAY @1529 /*~But, I did speak to Jaheira about this... I think you might've overheard some of our discussion. The baby will be fine, so long as I'm fine. Even if I'm killed, as long as I'm resurrected, our baby will be as well.~*/
+	SAY @1529 /*~But, I did speak to Jaheira about this... I think you might've overheard some of our discussion.*/
 	
-	IF ~~ THEN REPLY @1536 /* ~Is there anything that I can do for you? I hear pregnant women get some odd cravings from time to time.~ */
+	IF ~~ THEN REPLY @1567 /*~What did she say?~*/
+	GOTO LCA_CorwinPregnant2_Questions
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_GoHome_Aerie
+	SAY @1528 /*~But, I did speak to Aerie about this... I think you might've overheard some of our discussion.*/
+	
+	IF ~~ THEN REPLY @1567 /*~What did she say?~*/
+	GOTO LCA_CorwinPregnant2_Questions
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_GoHome_Medic
+	SAY @1530 /*~~Before we left Baldur's Gate, I spoke with Helena, one of the Fist's medics, just as a precaution.~ */
+	
+	IF ~~ THEN REPLY @1567 /*~What did she say?~*/
+	GOTO LCA_CorwinPregnant2_Questions
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_NeedAnything_Jan
+	SAY @1564 /*  ~Funny you mention that. When I was pregnant with Rohma, one night I had the strongest craving for roasted turnips. Not mashed, diced, or boiled, they *had* to be roasted. The market was closed, so my father had to go to the greengrocer's house in the middle of the night to buy some, then come back and cook them. I guess Jan would have us covered this time around, should that particular craving return. There is one thing that I ask, though ...~ */
+	
+	IF ~~ THEN
+	GOTO LCA_CorwinPregnant2_DontTell
+	
+	IF ~
+		Global("LCA_CorwinPregnantAerie", "GLOBAL", 1)
+	~ THEN
+	GOTO LCA_CorwinPregnant2_DontTell_Aerie
+	
+	IF ~
+		Global("LCA_CorwinPregnantJaheira", "GLOBAL", 1)
+	~ THEN
+	GOTO LCA_CorwinPregnant2_DontTell_Jaheira 
+END
+
+IF ~~ THEN BEGIN LCA_CorwinPregnant2_DueDate
+	SAY @1562 /* ~No, but I figure I'm between four and six weeks in. Probably closer to six, which means I'll likely start showing ten to twelve weeks from now. We still have time to do what we need to here.~*/
+	
+		IF ~
+		!IsValidForPartyDialogue("Jan")
+		!Global("LCA_Pregnant_NeedAnything", "LOCALS", 1)
+	~ THEN REPLY @1536 /* ~Is there anything that I can do for you? I hear pregnant women get some odd cravings from time to time.~ */
+	DO ~
+		SetGlobal("LCA_Pregnant_NeedAnything", "LOCALS", 1)
+	~
 	GOTO LCA_CorwinPregnant2_NeedAnything
 	
-	IF ~~ THEN REPLY @1551 /* ~Did Jaheira tell you if it was a boy or a girl?~ */
+	IF ~
+		IsValidForPartyDialogue("Jan")
+		!Global("LCA_Pregnant_NeedAnything", "LOCALS", 1)
+	~ THEN REPLY @1536 /* ~Is there anything that I can do for you? I hear pregnant women get some odd cravings from time to time.~ */
+	DO ~
+		SetGlobal("LCA_Pregnant_NeedAnything", "LOCALS", 1)
+	~
+	GOTO LCA_CorwinPregnant2_NeedAnything_Jan
+	
+	IF ~
+		!Global("LCA_Pregnant_Gender", "LOCALS", 1)
+		OR(2)
+			GlobalGT("LCA_CorwinPregnantAerie", "GLOBAL", 0)
+			GlobalGT("LCA_CorwinPregnantJaheira", "GLOBAL", 0)
+	~ THEN REPLY @1550 /* ~Did she tell you if it was a boy or a girl?~ */
+	DO ~
+		SetGlobal("LCA_Pregnant_Gender", "LOCALS", 1)
+	~
 	GOTO LCA_CorwinPregnant2_BabyGender
+	
+	
+	IF ~
+		!Global("LCA_Pregnant_NeedAnything", "LOCALS", 1)
+	~ THEN REPLY @1563 /* ~I'm here for you, my love. If there's anything you require, you need only ask.~*/
+	DO ~
+		SetGlobal("LCA_Pregnant_NeedAnything", "LOCALS", 1)
+	~
+	GOTO LCA_CorwinPregnant2_NeedAnything
 END
+
+
 
 IF ~~ THEN BEGIN LCA_CorwinPregnant2_BabyGender
 	SAY @1552 /* ~No, I didn't ask her. It's better not to know, I think. Speaking of ...~  */
 	
-	IF ~~ THEN
-	GOTO LCA_CorwinPregnant2_DontTell
-	
 	IF ~
-		Global("LCA_CorwinPregnantAerie", "GLOBAL", 1)
-	~ THEN
-	GOTO LCA_CorwinPregnant2_DontTell_Aerie
-	
-	IF ~
-		Global("LCA_CorwinPregnantJaheira", "GLOBAL", 1)
-	~ THEN
-	GOTO LCA_CorwinPregnant2_DontTell_Jaheira 
-END
-
-IF ~~ THEN BEGIN LCA_CorwinPregnant2_GoHome_Medic
-	SAY @1530 /* ~Before we left Baldur's Gate, I spoke with one of the Fist's medics, just as a precaution. She told me that a baby in its mothers womb will remain healthy so long as the mother is. Even if I'm killed, as long as I'm resurrected, our baby will be as well.~ */
-	
-	IF ~~ THEN REPLY @1536 /* ~Is there anything that I can do for you? I hear pregnant women get some odd cravings from time to time.~ */
+		!IsValidForPartyDialogue("Jan")
+		!Global("LCA_Pregnant_NeedAnything", "LOCALS", 1)
+	~ THEN REPLY @1536 /* ~Is there anything that I can do for you? I hear pregnant women get some odd cravings from time to time.~ */
+	DO ~
+		SetGlobal("LCA_Pregnant_NeedAnything", "LOCALS", 1)
+	~
 	GOTO LCA_CorwinPregnant2_NeedAnything
 	
-	IF ~~ THEN REPLY @1553 /* ~Any guess as to whether it's a boy or a girl?~ */
-	GOTO LCA_CorwinPregnant2_BabyGender2
-END
-
-IF ~~ THEN BEGIN LCA_CorwinPregnant2_BabyGender2
-	SAY @1554 /* ~No ... even if I could know, I don't think I'd want to. It would spoil the surprise. Speaking of ...~*/
-	
-	IF ~~ THEN
-	GOTO LCA_CorwinPregnant2_DontTell
+	IF ~
+		IsValidForPartyDialogue("Jan")
+		!Global("LCA_Pregnant_NeedAnything", "LOCALS", 1)
+	~ THEN REPLY @1536 /* ~Is there anything that I can do for you? I hear pregnant women get some odd cravings from time to time.~ */
+	DO ~
+		SetGlobal("LCA_Pregnant_NeedAnything", "LOCALS", 1)
+	~
+	GOTO LCA_CorwinPregnant2_NeedAnything_Jan
 	
 	IF ~
-		Global("LCA_CorwinPregnantAerie", "GLOBAL", 1)
-	~ THEN
-	GOTO LCA_CorwinPregnant2_DontTell_Aerie
+		!Global("LCA_Pregnant_DueDate", "LOCALS", 1)
+		OR(2)
+			GlobalGT("LCA_CorwinPregnantAerie", "GLOBAL", 0)
+			GlobalGT("LCA_CorwinPregnantJaheira", "GLOBAL", 0)
+	~ THEN REPLY @1562 /* ~Did she give you a due date?~ */
+	DO ~
+		SetGlobal("LCA_Pregnant_DueDate", "LOCALS", 1)
+	~
+	GOTO LCA_CorwinPregnant2_DueDate
 	
 	IF ~
-		Global("LCA_CorwinPregnantJaheira", "GLOBAL", 1)
-	~ THEN
-	GOTO LCA_CorwinPregnant2_DontTell_Jaheira 
+		!Global("LCA_Pregnant_DueDate", "LOCALS", 1)
+		!OR(2)
+			GlobalGT("LCA_CorwinPregnantAerie", "GLOBAL", 0)
+			GlobalGT("LCA_CorwinPregnantJaheira", "GLOBAL", 0)
+	~ THEN REPLY @1565 /* ~Do you know when you're expecting?~ */
+	DO ~
+		SetGlobal("LCA_Pregnant_DueDate", "LOCALS", 1)
+	~
+	GOTO LCA_CorwinPregnant2_DueDate
+	
+	IF ~
+		!Global("LCA_Pregnant_NeedAnything", "LOCALS", 1)
+	~ THEN REPLY @1563 /* ~I'm here for you, my love. If there's anything you require, you need only ask.~*/
+	DO ~
+		SetGlobal("LCA_Pregnant_NeedAnything", "LOCALS", 1)
+	~
+	GOTO LCA_CorwinPregnant2_NeedAnything
 END
 
 IF ~~ THEN BEGIN LCA_CorwinPregnant2_NeedAnything
@@ -334,8 +483,6 @@ IF ~~ THEN BEGIN LCA_CorwinPregnant2_NeedAnything
 		Global("LCA_CorwinPregnantJaheira", "GLOBAL", 1)
 	~ THEN
 	GOTO LCA_CorwinPregnant2_DontTell_Jaheira
-	
-	
 END
 
 IF ~~ THEN BEGIN LCA_CorwinPregnant2_DontTell_Aerie
