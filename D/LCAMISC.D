@@ -38,6 +38,67 @@ APPEND AERIEJ
 		~
 		EXTERN LCCORWIJ LCA_CorwinPregnantInitial_Shh
 	END
+	
+	//{ Dialog J-74
+	IF ~
+		Global("LCA_CorwinPregnantBabyName_Aerie", "GLOBAL", 1)
+	~ THEN BEGIN LCA_CorwinPregnantBabyName_Aerie
+		SAY @253 /* ~<CHARNAME>, I'm so h-happy for you and Schael!~*/
+		
+		IF ~~ THEN REPLY @254 /* ~Thanks Aerie.~ */
+		DO ~
+			SetGlobal("LCA_CorwinPregnantBabyName_Aerie", "GLOBAL", 2)
+		~
+		GOTO LCA_CorwinPregnantBabyName_Aerie_PickName
+		
+		IF ~~ THEN REPLY @256 /* ~For what?~ */
+		DO ~
+			SetGlobal("LCA_CorwinPregnantBabyName_Aerie", "GLOBAL", 2)
+		~
+		GOTO LCA_CorwinPregnantBabyName_Aerie_Silly
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantBabyName_Aerie_Silly
+		SAY @257 /* ~Hee hee, she's pregnant with your child, silly!~ */
+		
+		IF ~~ THEN REPLY @254 /* ~Thanks Aerie.~*/
+		GOTO LCA_CorwinPregnantBabyName_Aerie_PickName
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantBabyName_Aerie_PickName
+		SAY @255 /* Have you given any thought as to the baby's name?~*/
+		
+		IF ~~ THEN REPLY @242 /* ~If it's a boy, I was thinking of naming him Gorion, to honor our foster father. If it's a girl, Schael wants to name her Ilara, after her mother.~*/
+		GOTO LCA_CorwinPregnantBabyName_Aerie_GorionIlara
+
+		IF ~~ THEN REPLY @244 /* ~I haven't. Do you have any ideas?~*/
+		GOTO LCA_CorwinPregnantBabyName_Aerie_Ideas
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantBabyName_Aerie_Ideas
+		SAY @258 /* ~Hmm... a lot of people n-name their children after people who've had a profound impact on their life. If I ever have a baby boy, I'm going to name him Quayle. Oh, I'm so excited to see your baby!~*/
+		
+		IF ~~ THEN REPLY @260 /* ~There's still a long way to go. I'll be counting on you to help keep Schael and our unborn child healthy.~*/
+		GOTO LCA_CorwinPregnantBabyName_Aerie_WontLetDown
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantBabyName_Aerie_GorionIlara
+		SAY @262 /* ~Those are both beautiful n-names ... oh, I'm so excited to see your baby!*/
+		
+		IF ~~ THEN REPLY @260 /* ~There's still a long way to go. I'll be counting on you to keep Schael and our unborn child healthy.~ */
+		GOTO LCA_CorwinPregnantBabyName_Aerie_WontLetDown		
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantBabyName_Aerie_WontLetDown
+		SAY @261 /* ~I won't let you down. I promise.~ */
+		
+		IF ~~ THEN REPLY @263 /*~Thank you, Aerie.~ */
+		EXIT
+	
+	END
+	//}
+	
+	
 END
 
 APPEND SAREV25J
@@ -1541,6 +1602,83 @@ APPEND JAHEIRAJ
 		~
 		EXTERN LCCORWIJ LCA_CorwinPregnantInitial_Shh
 	END
+	
+	//{ Dialog J-75
+	IF ~
+		Global("LCA_CorwinPregnantBabyName_Jaheira", "GLOBAL", 1)
+	~ THEN BEGIN LCA_CorwinPregnantBabyName_Jaheira
+		SAY @264 /*~<CHARNAME>. Congratulations.~*/ 
+		
+		IF ~~ THEN REPLY @275 /*~Thank you, Jaheira.~*/
+		DO ~
+			SetGlobal("LCA_CorwinPregnantBabyName_Jaheira", "GLOBAL", 2)
+		~
+		GOTO LCA_CorwinPregnantBabyName_Jaheira_BabyName
+		
+		IF ~~ THEN REPLY @269 /* For? */
+		DO ~
+			SetGlobal("LCA_CorwinPregnantBabyName_Jaheira", "GLOBAL", 2)
+		~
+		GOTO LCA_CorwinPregnantBabyName_Jaheira_For
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantBabyName_Jaheira_For
+		SAY @270 /*~Major Cor — Schael's pregancy, of course. It is wonderful news.~*/
+		
+		IF ~~ THEN REPLY @265 /* ~Is that so? I overheard parts of your conversation, and you didn't sound happy with her at all.~ */
+		GOTO LCA_CorwinPregnantBabyName_Jaheira_NotHappy
+		
+		IF ~~ THEN REPLY @275 /*~Thank you, Jaheira.~*/
+		GOTO LCA_CorwinPregnantBabyName_Jaheira_BabyName
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantBabyName_Jaheira_NotHappy
+		SAY @266 /* ~Yes. I was surprised that Schael would allow herself to get pregnant under these circumstances. After thinking on it some more however, there was no way you or she could know what was to happen. I cannot in fairness fault her, or you, for the unfortunate timing.~ */
+		
+		IF ~~ THEN
+		GOTO LCA_CorwinPregnantBabyName_Jaheira_BabyName
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantBabyName_Jaheira_BabyName
+		SAY @268 /* ~So, child. Have you given any thought as to the baby's name?~ */
+		
+		IF ~~ THEN REPLY @242 /* ~If it's a boy, I was thinking of naming him Gorion, to honor our foster father. If it's a girl, Schael wants to name her Ilara, after her mother.~ */
+		GOTO LCA_CorwinPregnantBabyName_Jaheira_GorionIlara
+		
+		IF ~~ THEN REPLY @244 /* ~I haven't. Do you have any ideas?~ */
+		GOTO LCA_CorwinPregnantBabyName_Jaheira_Ideas
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantBabyName_Jaheira_Ideas
+		SAY @276 /* ~Hmm... many name their children after those who've had a profound impact on their life. Khalid and I often spoke of naming our child after the one who first introduced us to each other.~ */
+		
+		= @277 /* ~Khalid... he would be pleased to hear this news, and to learn that you've selected such good and strong woman as your mate. The two of you will do a wonderful job as parents.~ */
+		
+		IF ~~ THEN 
+		GOTO LCA_CorwinPregnantBabyName_Jaheira_FriendlyArm
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantBabyName_Jaheira_GorionIlara
+		SAY @271 /* ~Gorion would be honored. He'd also be proud of the man you've become, and that you've chosen such a good and strong woman as your mate. The two of you will do a wonderful job as parents.~*/
+		
+		IF ~~ THEN 
+		GOTO LCA_CorwinPregnantBabyName_Jaheira_FriendlyArm
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantBabyName_Jaheira_FriendlyArm
+		SAY @272 /*~It seems that just yesterday you walked in to the Friendly Arm inn, lost and confused after the murder of your foster father. So much has happened since then...~*/
+		
+		IF ~~ THEN REPLY @273 /* ~And you've stood by my side through all of it. Now, I must rely on you again to help ensure Schael's health, and the health of our unborn child.~*/
+		GOTO LCA_CorwinPregnantBabyName_Jaheira_END
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantBabyName_Jaheira_END
+		SAY @274 /*~You can count on me, now and always, my friend.~*/
+		
+		IF ~~ THEN REPLY @275 /*~Thank you, Jaheira.~*/
+		EXIT
+	END
+	//}
 END
 
 APPEND IMOEN2J
@@ -1560,6 +1698,76 @@ APPEND IMOEN2J
 		IF ~~ THEN
 		EXTERN LCCORWIJ LCA_TimeToGrieveLater
 	END
+	//{ Dialog J-73
+	IF ~
+		Global("LCA_CorwinPregnantBabyName_Imoen", "GLOBAL", 1)
+	~ THEN BEGIN LCA_CorwinPregnantBabyName_Imoen
+		SAY @240 /* ~Schael just told me the news. I'm so happy for you two!!~ */
+		
+		IF ~~ THEN REPLY @247 /* ~News?~ */
+		DO ~
+			SetGlobal("LCA_CorwinPregnantBabyName_Imoen", "GLOBAL", 2)
+		~
+		GOTO LCA_CorwinPregnantBabyName_Imoen_WhatNews
+		
+		IF ~~ THEN REPLY @249 /* ~Thanks, Imoen. I can't believe I'm going to be a dad.~ */
+		DO ~
+			SetGlobal("LCA_CorwinPregnantBabyName_Imoen", "GLOBAL", 2)
+		~
+		GOTO LCA_CorwinPregnantBabyName_Imoen_Dad
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantBabyName_Imoen_WhatNews
+		SAY @248 /* ~Yes, that she's pregnant! Sheesh!~*/
+		
+		IF ~~ THEN REPLY @249 /* ~Thanks, Imoen. I can't believe I'm going to be a dad.~ */
+		GOTO LCA_CorwinPregnantBabyName_Imoen_Dad
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantBabyName_Imoen_Dad
+		SAY @241 /* ~Have you given any thought as to the baby's name?~ */
+		
+		IF ~~ THEN REPLY @244 /*~I haven't. Do you have any ideas?~*/
+		GOTO LCA_CorwinPregnantBabyName_Imoen_Ideas
+		
+		IF ~~ THEN REPLY @242 /* ~If it's a boy, I was thinking of naming him Gorion, to honor our foster father. If it's a girl, Schael wants to name her Ilara, after her mother.~ */
+		GOTO LCA_CorwinPregnantBabyName_Imoen_GorionIlara
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantBabyName_Imoen_Ideas
+		SAY @246 /* ~Hmm... a lot of people name their children after people who've had a profound impact on their life.~ */
+		
+		IF ~~ THEN 
+		GOTO LCA_CorwinPregnantBabyName_Imoen_Spoil2
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantBabyName_Imoen_GorionIlara
+		SAY @243 /* ~Those are great names. Oh, I'm so excited! Gorion would be *so* proud of you.~ */
+		
+		IF ~~ THEN 
+		GOTO LCA_CorwinPregnantBabyName_Imoen_Spoil
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantBabyName_Imoen_Spoil
+		SAY @245 /* ~And just so you know ... I'm going to spoil my niece or nephew rotten!~ */
+		
+		IF ~~ THEN REPLY @250 /* ~Hahahah. Going to leave all of the disciplining to Schael and I, eh?~*/
+		GOTO LCA_CorwinPregnantBabyName_Imoen_END
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantBabyName_Imoen_Spoil2
+		SAY @252 /* ~Whatever you two decide ... I want you know that I'm going to spoil my niece or nephew rotten!~*/
+		
+		IF ~~ THEN REPLY @250 /* ~Hahahah. Going to leave all of the disciplining to Schael and I, eh?~*/
+		GOTO LCA_CorwinPregnantBabyName_Imoen_END
+	END
+	
+	IF ~~ THEN BEGIN LCA_CorwinPregnantBabyName_Imoen_END
+		SAY @251 /* ~You got that right.~ */
+		
+		IF ~~ THEN EXIT
+	END
+	//}
 END
 //KENT
 ADD_STATE_TRIGGER KENT 0

@@ -355,13 +355,15 @@ IF ~~ THEN BEGIN LCA_CorwinPregnant2_Imoen
 	
 	IF ~~ THEN REPLY @1548 /* ~It does. She's going to be thrilled when she hears the news.~ */
 	DO ~
-		SetGlobalTimer("LCA_CorwinPregnantImoenTimer", "GLOBAL", ONE_DAY)
+		SetGlobalTimer("LCA_CorwinPregnantImoenTimer", "GLOBAL", TWO_DAYS)
+		SetGlobal("LCA_CorwinPregnantImoen", "GLOBAL", 1)
 	~
 	GOTO LCA_CorwinPregnant2_End
 	
 	IF ~~ THEN REPLY @1555 /* ~I'm going to be a father ...~*/
 	DO ~
-		SetGlobalTimer("LCA_CorwinPregnantImoenTimer", "GLOBAL", ONE_DAY)
+		SetGlobalTimer("LCA_CorwinPregnantImoenTimer", "GLOBAL", TWO_DAYS)
+		SetGlobal("LCA_CorwinPregnantImoen", "GLOBAL", 1)
 	~
 	GOTO LCA_CorwinPregnant2_End
 	

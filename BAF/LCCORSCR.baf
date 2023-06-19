@@ -738,6 +738,7 @@ END
 	IF
 		Global("LCA_CheckInRomanceLeftBG", "GLOBAL", 1)
 		Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalGT("LCA_CorwinOpinionOfPlayer", "GLOBAL", 3)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -750,7 +751,9 @@ END
 	
 	IF
 		Global("LCA_CheckInRomanceLeftBG", "GLOBAL", 1)
-		!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+		OR(2)
+			!Global("LCA_CorwinRomanceActive", "GLOBAL", 2)
+			GlobalLT("LCA_CorwinOpinionOfPlayer", "GLOBAL", 4)
 	THEN
 		RESPONSE #100
 			SetGlobal("LCA_CheckInRomanceLeftBG", "GLOBAL", 2)
@@ -925,7 +928,7 @@ END
 			SetInterrupt(FALSE)
 			SetGlobal("LCA_AloneWithPhaere", "GLOBAL", 1)
 			SetGlobal("LCA_PhaereTalk", "GLOBAL", 1)
-			PlaySong(146)
+			PlaySong(142)
 			StartDialogue("LCCORWIJ", PLAYER1)
 			SetInterrupt(TRUE)
 	END
@@ -4735,6 +4738,7 @@ END
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinPregnant", "GLOBAL", 2)
+			PlaySong(142)
 			StartDialog("LCCORWIJ", Player1)
 			SetInterrupt(TRUE)
 	END
@@ -4772,12 +4776,95 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			PlaySong(146)
 			StartDialog("LCCORWIJ", Player1)
 	END
 	//}
 	
+	//{ Baby Name Interaction Imoen
+	IF
+		GlobalTimerExpired("LCA_CorwinPregnantImoenTimer", "GLOBAL")
+		GlobalLT("LCA_CorwinPregnantBabyName_Imoen", "GLOBAL", 1)
+		IsValidForPartyDialog("Imoen2")
+	THEN
+		RESPONSE #100
+			SetGlobal("LCA_CorwinPregnantBabyName_Imoen", "GLOBAL", 1)
+			Continue()
+	END
 	
+	IF
+		Global("LCA_CorwinPregnantBabyName_Imoen", "GLOBAL", 1)
+		See("Imoen2")
+		See(Player1)
+	THEN
+		RESPONSE #100
+			//Dialog J-73
+			ActionOverride("Imoen2", StartDialog("IMOEN2J", Player1))
+	END
+	//}
 	
+	//{ Baby Name Interaction Aerie
+	IF
+		Global("LCA_CorwinPregnant", "GLOBAL", 5)
+		Global("LCA_CorwinPregnantAerie", "GLOBAL", 1)
+		!Global("LCA_CorwinPregnantImoen", "GLOBAL", 1)
+		!Global("LCA_CorwinPregnantAerieTimerSet", "GLOBAL", 1)
+		InParty("Aerie")
+		InParty(Myself)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("LCA_CorwinPregnantAerieTimer", "GLOBAL", TWO_DAYS)
+			SetGlobal("LCA_CorwinPregnantAerieTimerSet", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+	END
+	
+	IF
+		GlobalTimerExpired("LCA_CorwinPregnantAerieTimer", "GLOBAL")
+		IsValidForPartyDialogue("Aerie")
+		GlobalLT("LCA_CorwinPregnantBabyName_Aerie", "GLOBAL", 1)
+		See(Player1)
+		See("Aerie")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("LCA_CorwinPregnantBabyName_Aerie", "GLOBAL", 1)
+			//Dialog J-74
+			ActionOverride("Aerie", StartDialog("AERIEJ", Player1))
+			SetInterrupt(TRUE)
+	END
+	//}
+	
+	//{ Baby Name Interaction Jaheira
+	IF
+		Global("LCA_CorwinPregnant", "GLOBAL", 5)
+		Global("LCA_CorwinPregnantJaheira", "GLOBAL", 1)
+		!Global("LCA_CorwinPregnantImoen", "GLOBAL", 1)
+		!Global("LCA_CorwinPregnantJaheiraTimerSet", "GLOBAL", 1)
+		InParty("Jaheira")
+		InParty(Myself)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("LCA_CorwinPregnantJaheiraTimer", "GLOBAL", TWO_DAYS)
+			SetGlobal("LCA_CorwinPregnantJaheiraTimerSet", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+	END
+	
+	IF
+		GlobalTimerExpired("LCA_CorwinPregnantJaheiraTimer", "GLOBAL")
+		IsValidForPartyDialogue("Jaheira")
+		GlobalLT("LCA_CorwinPregnantBabyName_Jaheira", "GLOBAL", 1)
+		See(Player1)
+		See("Jaheira")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("LCA_CorwinPregnantBabyName_Jaheira", "GLOBAL", 1)
+			ActionOverride("Jaheira", StartDialog("JAHEIRAJ", Player1))
+			SetInterrupt(TRUE)
+	END
+	//}
 //}
 
 //{ Romance Overrides
