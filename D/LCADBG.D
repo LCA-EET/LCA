@@ -770,6 +770,48 @@ IF ~~ THEN BEGIN LCA_LCCORWIJ_Test
 		SetGlobal("LCA_CorwinPregnantBabyName_Imoen", "GLOBAL", 1)
 	~
 	EXIT
+	
+	IF ~~ THEN REPLY @513 /* ~Dialog J-74 ~ */
+	DO ~
+		SetGlobal("LCA_CorwinPregnantBabyName_Aerie", "GLOBAL", 0)
+		SetGlobal("LCA_CorwinPregnant", "GLOBAL", 5)
+		SetGlobal("LCA_CorwinPregnantJaheira", "GLOBAL", 0)
+		SetGlobal("LCA_CorwinPregnantAerie", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinPregnantImoen", "GLOBAL", 0)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @514 /* ~Dialog J-75 ~ */
+	DO ~
+		SetGlobal("LCA_CorwinPregnantBabyName_Jah", "GLOBAL", 0)
+		SetGlobal("LCA_CorwinPregnant", "GLOBAL", 5)
+		SetGlobal("LCA_CorwinPregnantJaheira", "GLOBAL", 1)
+		SetGlobal("LCA_CorwinPregnantAerie", "GLOBAL", 0)
+		SetGlobal("LCA_CorwinPregnantImoen", "GLOBAL", 0)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @516 /* ~Dialog J-74 ~ */
+	DO ~
+		SetGlobal("LCA_CorwinPregnantBabyName_Aerie", "GLOBAL", 1)
+		Wait(1)
+		ActionOverride("Aerie", StartDialog("AERIEJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @517 /* ~Dialog J-75 ~ */
+	DO ~
+		SetGlobal("LCA_CorwinPregnantBabyName_Jah", "GLOBAL", 1)
+		Wait(1)
+		ActionOverride("Jaheira", StartDialog("JAHEIRAJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @515 /* ~Dialog J-76 ~ */
+	DO ~
+		SetGlobal("LCA_CorwinParentAdvice", "GLOBAL", 1)
+	~
+	EXIT
 
 	IF ~~ THEN REPLY @26
 	GOTO LCA_MainMenu

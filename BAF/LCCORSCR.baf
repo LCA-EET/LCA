@@ -1,3 +1,5 @@
+//Note: Variable Key Max Length Appears to be 32.
+
 //{ Determines if CorwinEET is Installed
 IF 
 	InParty(Myself)
@@ -724,6 +726,21 @@ END
 
 //{ Event Checks
 
+	//{ Aerie Pregnant Check
+	IF
+		GlobalGT("babytalk", "GLOBAL", 0)
+		IsValidForPartyDialog("Aerie")
+		!Global("LCA_CorwinAerieBabyTimerSet", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("LCA_CorwinAerieBabyTimerSet", "GLOBAL", 1)
+			SetGlobalTimer("LCA_CorwinAerieBabyTimer", "GLOBAL", ONE_DAY)
+			SetInterrupt(TRUE)
+			Continue()
+	END	
+	//}
+	
 	//{ Left BG Romance Check
 	IF
 		Global("LCA_ReturnToBG", "GLOBAL", 2)
@@ -4729,6 +4746,43 @@ END
 //} End Player Interactions
 
 //{ Corwin Pregnant Interactions
+	
+	//{ Aerie Baby Parent Advice
+	IF 
+		GlobalTimerExpired("LCA_CorwinAerieBabyTimer", "GLOBAL")
+		Global("LCA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		IsValidForPartyDialogue("Aerie")
+		GlobalLT("LCA_CorwinParentAdvice", "GLOBAL", 1)
+		GlobalGT("LCA_CorwinOpinionOfPlayer", "GLOBAL", 3)
+	THEN
+		RESPONSE #100
+			SetGlobal("LCA_CorwinParentAdvice", "GLOBAL", 1)
+			Continue()
+	END
+	
+	IF
+		Global("LCA_CorwinParentAdvice", "GLOBAL", 1)
+		!Range(Player1, 7)
+		ActionListEmpty()
+	THEN
+		RESPONSE #100
+			MoveToObject(Player1)
+			Continue()
+	END
+	
+	IF
+		Global("LCA_CorwinParentAdvice", "GLOBAL", 1)
+		Range(Player1,8)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("LCA_CorwinParentAdvice", "GLOBAL", 2)
+			//Dialog J-76
+			StartDialog("LCCORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+	
 	//{ Initial Timer Expiration
 	IF 
 		Global("LCA_CorwinPregnant", "GLOBAL", 1)
@@ -4788,7 +4842,10 @@ END
 		IsValidForPartyDialog("Imoen2")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinPregnantBabyName_Imoen", "GLOBAL", 1)
+			//DisplayStringHead(Myself, ~C~)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 	
@@ -4799,7 +4856,10 @@ END
 	THEN
 		RESPONSE #100
 			//Dialog J-73
+			SetInterrupt(FALSE)
+			//DisplayStringHead(Myself, ~J-73 Init~)
 			ActionOverride("Imoen2", StartDialog("IMOEN2J", Player1))
+			SetInterrupt(TRUE)
 	END
 	//}
 	
@@ -4815,8 +4875,11 @@ END
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobalTimer("LCA_CorwinPregnantAerieTimer", "GLOBAL", TWO_DAYS)
+			//DisplayStringHead(Myself, ~B~)
+			//SetGlobalTimer("LCA_CorwinPregnantAerieTimer", "GLOBAL", ONE_ROUND)
 			SetGlobal("LCA_CorwinPregnantAerieTimerSet", "GLOBAL", 1)
 			SetInterrupt(TRUE)
+			Continue()
 	END
 	
 	IF
@@ -4829,6 +4892,7 @@ END
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("LCA_CorwinPregnantBabyName_Aerie", "GLOBAL", 1)
+			DisplayStringHead(Myself, ~J-74 Init~)
 			//Dialog J-74
 			ActionOverride("Aerie", StartDialog("AERIEJ", Player1))
 			SetInterrupt(TRUE)
@@ -4840,27 +4904,32 @@ END
 		Global("LCA_CorwinPregnant", "GLOBAL", 5)
 		Global("LCA_CorwinPregnantJaheira", "GLOBAL", 1)
 		!Global("LCA_CorwinPregnantImoen", "GLOBAL", 1)
-		!Global("LCA_CorwinPregnantJaheiraTimerSet", "GLOBAL", 1)
+		!Global("LCA_CorwinPregnantJahTimerSet", "GLOBAL", 1)
 		InParty("Jaheira")
 		InParty(Myself)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobalTimer("LCA_CorwinPregnantJaheiraTimer", "GLOBAL", TWO_DAYS)
-			SetGlobal("LCA_CorwinPregnantJaheiraTimerSet", "GLOBAL", 1)
+			SetGlobalTimer("LCA_CorwinPregnantJahTimer", "GLOBAL", TWO_DAYS)
+			//SetGlobalTimer("LCA_CorwinPregnantJahTimer", "GLOBAL", ONE_ROUND)
+			SetGlobal("LCA_CorwinPregnantJahTimerSet", "GLOBAL", 1)
+			//DisplayStringHead(Myself, ~A~)
 			SetInterrupt(TRUE)
+			Continue()
 	END
 	
 	IF
-		GlobalTimerExpired("LCA_CorwinPregnantJaheiraTimer", "GLOBAL")
+		GlobalTimerExpired("LCA_CorwinPregnantJahTimer", "GLOBAL")
 		IsValidForPartyDialogue("Jaheira")
-		GlobalLT("LCA_CorwinPregnantBabyName_Jaheira", "GLOBAL", 1)
+		GlobalLT("LCA_CorwinPregnantBabyName_Jah", "GLOBAL", 1)
 		See(Player1)
 		See("Jaheira")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("LCA_CorwinPregnantBabyName_Jaheira", "GLOBAL", 1)
+			//DisplayStringHead(Myself, ~J-75 Init~)
+			SetGlobal("LCA_CorwinPregnantBabyName_Jah", "GLOBAL", 1)
+			//Dialog J-75
 			ActionOverride("Jaheira", StartDialog("JAHEIRAJ", Player1))
 			SetInterrupt(TRUE)
 	END

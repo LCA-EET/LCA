@@ -74,6 +74,85 @@ IF ~~ THEN BEGIN LCA_StartDucalCS
 END
 //} #endregion
 
+//{ Dialog J-76
+IF ~
+	Global("LCA_CorwinParentAdvice", "GLOBAL", 2)
+~ THEN BEGIN LCA_ParentAdvice
+	SAY @1568 /* ~Aerie told me the news. Congratulations, <CHARNAME>. You're going to be a father.~ */
+	
+	IF ~~ THEN REPLY @1569 /* ~She told you? I thought she wanted to keep it a secret, at least for the time being.~ */
+	DO ~
+		SetGlobal("LCA_CorwinParentAdvice", "GLOBAL", 3)
+	~
+	GOTO LCA_ParentAdvice_AerieSecret
+	
+	IF ~~ THEN REPLY @1571 /* ~Thanks, Schael.~ */
+	DO ~
+		SetGlobal("LCA_CorwinParentAdvice", "GLOBAL", 3)
+	~
+	GOTO LCA_ParentAdvice_ThanksSchael
+END
+
+IF ~~ THEN BEGIN LCA_ParentAdvice_AerieSecret
+	SAY @1570 /* ~She did. She was bouncing with energy, so naturally I asked her what was going on ... It didn't take long for her to spill the beans.~*/
+
+	IF ~~ THEN REPLY @1578 /* ~Hah, I'm not surprised.~*/
+	GOTO LCA_ParentAdvice_ThanksSchael
+	
+	IF ~~ THEN REPLY @1579 /* ~Somehow, I don't think she'd last long in a Flaming Fist interrogation.~*/
+	GOTO LCA_ParentAdvice_ThanksSchael
+END
+
+IF ~~ THEN BEGIN LCA_ParentAdvice_ThanksSchael
+	SAY @1572 /* ~I think you're going to do great as parents. Care for a bit of advice?~ */
+	
+	IF ~~ THEN REPLY @1574 /*~Certainly.~*/
+	GOTO LCA_ParentAdvice_FirstAdvice
+	
+	IF ~~ THEN REPLY @1575 /*~Not right now — we need to get moving. I'll pick your brain over the coming days and weeks, I'm sure.~*/
+	GOTO LCA_ParentAdvice_NotRightNow
+END
+
+IF ~~ THEN BEGIN LCA_ParentAdvice_FirstAdvice
+	SAY @1581 /* ~The first few months with a newborn are always rough. It's easier to take care of your baby and to be a loving parent when you are in a good place, mentally, physically and emotionally. You and Aerie will need to work together to share the load.~*/
+	
+	IF ~~ THEN REPLY @1582 /* ~So, we need to practice good self-care, in other words.~ */
+	GOTO LCA_ParentAdvice_SecondAdvice
+END
+
+IF ~~ THEN BEGIN LCA_ParentAdvice_SecondAdvice
+	SAY @1583 /* ~Right. Also, you'll need to spend a lot of time cuddling and holding your baby. It helps a lot to read to your baby, too. Cuddling will make them feel loved and secure, and reading to them will help them to understand language.~ */
+	
+	IF ~~ THEN REPLY @1584 /*~That makes sense ... any additional advice?~*/
+	GOTO LCA_ParentAdvice_ThirdAdvice
+END
+
+IF ~~ THEN BEGIN LCA_ParentAdvice_ThirdAdvice
+	SAY @1585 /* ~When your child is Rohma's age, the most important thing you can do for them is to make sure that they feel safe, loved and valued. In that order, preferably. Your child will struggle without a safe and stable environment, and their sense of self-worth will suffer if you don't show them the unconditional love that only a parent can.~ */
+	
+	IF ~~ THEN REPLY @1586 /*~That is great advice. You've given me a lot to think about... thank you, my friend.~*/
+	GOTO LCA_ParentAdvice_Questions
+END
+
+IF ~~ THEN BEGIN LCA_ParentAdvice_Questions
+	SAY @1587 /* ~Anytime. If you or Aerie have any questions, please, just ask.~*/
+	
+	IF ~~ THEN 
+	DO ~
+		AddJournalEntry(@1588, INFO)
+		AddXPObject(Player1, 25000)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN LCA_ParentAdvice_NotRightNow
+	SAY @1576 /* ~Sounds good.~ */
+	
+	IF ~~ THEN
+	EXIT
+END
+//}
+
 //{ Dialog J-71
 IF ~
 	Global("LCA_CorwinPregnant", "GLOBAL", 2)
@@ -615,6 +694,7 @@ IF ~~ THEN BEGIN LCA_TimeToGrieveLater
 	IF ~~ THEN REPLY @1506 /* Right */
 	EXIT
 END
+//}
 
 //{ #region Hall of Wonders Cutscene - Dialog J-0
 IF ~

@@ -1605,19 +1605,19 @@ APPEND JAHEIRAJ
 	
 	//{ Dialog J-75
 	IF ~
-		Global("LCA_CorwinPregnantBabyName_Jaheira", "GLOBAL", 1)
+		Global("LCA_CorwinPregnantBabyName_Jah", "GLOBAL", 1)
 	~ THEN BEGIN LCA_CorwinPregnantBabyName_Jaheira
 		SAY @264 /*~<CHARNAME>. Congratulations.~*/ 
 		
 		IF ~~ THEN REPLY @275 /*~Thank you, Jaheira.~*/
 		DO ~
-			SetGlobal("LCA_CorwinPregnantBabyName_Jaheira", "GLOBAL", 2)
+			SetGlobal("LCA_CorwinPregnantBabyName_Jah", "GLOBAL", 2)
 		~
 		GOTO LCA_CorwinPregnantBabyName_Jaheira_BabyName
 		
 		IF ~~ THEN REPLY @269 /* For? */
 		DO ~
-			SetGlobal("LCA_CorwinPregnantBabyName_Jaheira", "GLOBAL", 2)
+			SetGlobal("LCA_CorwinPregnantBabyName_Jah", "GLOBAL", 2)
 		~
 		GOTO LCA_CorwinPregnantBabyName_Jaheira_For
 	END
