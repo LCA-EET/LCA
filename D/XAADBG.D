@@ -77,7 +77,7 @@ IF ~
 	~
 	GOTO XA_MainMenu
 	
-	IF ~~ THEN REPLY @424
+	IF ~~ THEN REPLY @424 /* ~XACORWIJ Dialog Test.~ */
 	GOTO XA_XACORWIJ_Test
 	
 	IF ~~ THEN REPLY @334 /* ~Dialog Test.~*/
