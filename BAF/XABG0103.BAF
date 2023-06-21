@@ -1,0 +1,43 @@
+IF
+	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_LantanaraProphecy", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LantanaraProphecy", "GLOBAL", 1)
+		Continue()
+END
+
+IF 
+	InMyArea("Brielbara")
+	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_BrielWasIn103", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BrielWasIn103", "GLOBAL", 1)
+		Continue()
+END
+
+IF 
+	Global("XA_BrielWasIn103", "GLOBAL", 1)
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("Brielbara")
+THEN
+	RESPONSE #100
+		ActionOverride("Brielbara", DestroySelf())
+		Continue()
+END
+
+IF
+	Global("XA_TrickedLarze", "GLOBAL", 1)
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Dead("LARZE")
+	!Global("XA_LarzeSpawn", "GLOBAL", 1)
+	InMyArea(Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LarzeSpawn", "GLOBAL", 1)
+		Wait(5)
+		CreateCreature("LARZE", [830.482], W)
+		ActionOverride("LARZE", ChangeAIScript("XALARZE", OVERRIDE))
+		Continue()
+END

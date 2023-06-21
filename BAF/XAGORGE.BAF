@@ -1,0 +1,9 @@
+IF
+	IfValidForPartyDialog("XACORWIN")  
+	CombatCounter(0)
+	Global("OHD_GORGE_NTRJEX","OH5100",1)  // Dorn - Resurrection Gorge
+THEN
+	RESPONSE #100
+		TriggerActivation("GorgeInterjects",FALSE)
+		ActionOverride("XACORWIN",StartDialogueNoSet(Player1))
+END

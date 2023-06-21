@@ -1,0 +1,78 @@
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_CreateElfsong", "GLOBAL", 1)
+	!Dead("alyth")
+	!Global("XA_SavedElfsong", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CreateElfsong", "GLOBAL", 1)
+		CreateCreature("XA800M", [3150.1260], S)
+		CreateCreature("XA800W", [3100.1260], S)
+		SetInterrupt(FALSE)
+		DisplayStringHead("XA800W", ~You hear? Another one's gone missing over at Elfsong.~)
+		Wait(3)
+		DisplayStringHead("XA800M", ~Aye. Poor Alyth must be pullin' her hair out tryin' to figure what's going on.~)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	InMyArea("XA800M")
+	InMyArea("XA800W")
+	!Global("XA_ElfsongTimerSet", "BG0800", 1)
+	!Global("XA_SavedElfsong", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_ElfsongTimerSet", "BG0800", 1)
+		SetGlobalTimer("XA_ElfsongTimer", "GLOBAL", TWO_MINUTES) 
+END
+
+IF 
+	InMyArea("XA800M")
+	InMyArea("XA800W")
+	GlobalTimerExpired("XA_ElfsongTimer", "GLOBAL")
+	!Global("XA_SavedElfsong", "GLOBAL", 1)	
+	!Global("XA_800MW", "GLOBAL", 1)
+THEN
+	RESPONSE #50
+		SetGlobalTimer("XA_ElfsongTimer", "GLOBAL", TWO_MINUTES) 
+	RESPONSE #50
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_ElfsongTimer", "GLOBAL", TWO_MINUTES) 
+		DisplayStringHead("XA800W", ~You hear? Another one's gone missing over at Elfsong.~)
+		Wait(3)
+		DisplayStringHead("XA800M", ~Aye. Poor Alyth must be pullin' her hair out tryin' to figure what's going on.~)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_NPCDestroy", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("NIKLOS", DestroySelf())
+		ActionOverride("ELMIN5", DestroySelf())
+		SetGlobal("XA_NPCDestroy", "GLOBAL", 1)
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_CreateMickNPC", "GLOBAL", 1)
+	!InMyArea("MICK")
+THEN
+	RESPONSE #100
+		CreateCreature("MICK", [510.2938], N)
+		SetGlobal("XA_CreateMickNPC", "GLOBAL", 1)
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_CreateNeomaNPC", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("XANEOMA", [3075.1390], N)
+		SetGlobal("XA_CreateNeomaNPC", "GLOBAL", 1)
+		ActionOverride("XANEOMA", RandomWalkContinuous())
+END

@@ -1,0 +1,22 @@
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_0153_Replace", "BG0153", 1)
+	InMyArea("Alatos")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_0153_Replace", "BG0153", 1)
+		ActionOverride("Alatos", SetDialog("XAALATOS"))
+		ActionOverride("Alatos", SetNumTimesTalkedTo(0))
+		ActionOverride("Alatos", ChangeAIScript("XAINITP1",CLASS))
+		//ActionOverride("Alatos",ChangeAIScript("INITDLG",CLASS))
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("DENKOD")
+THEN
+	RESPONSE #100
+		ActionOverride("DENKOD", DestroySelf()
+		Continue()
+END

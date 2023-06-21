@@ -1,0 +1,22 @@
+IF
+	GlobalTimerExpired("XA_Ath", "GLOBAL")
+	Global("XA_SkieSaved", "GLOBAL", 2) // Cache
+THEN
+	RESPONSE #100
+		SetGlobal("XA_SkieSaved", "GLOBAL", 3) // mark complete
+		CreateCreature("XAFFOFCR", [1033.563], SW)
+		Continue()
+		//CreateCreature("BDFFMERC", [1012.519], SW)
+		//CreateCreature("BDFF1000", [1094.583], SW)
+		
+END
+
+IF
+	GlobalTimerExpired("XA_Ath", "GLOBAL")
+	Global("XA_SkieSaved", "GLOBAL", 1) // Corwin
+THEN
+	RESPONSE #100
+		SetGlobal("XA_SkieSaved", "GLOBAL", 3) // mark complete
+		CreateCreature("XACORWIN", [1033.563], SW)
+		Continue()
+END

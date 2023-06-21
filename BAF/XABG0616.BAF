@@ -1,0 +1,24 @@
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_DestroyNPCs_0616", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_DestroyNPCs_0616", "GLOBAL", 1)
+		ActionOverride("PANG", DestroySelf())
+		ActionOverride("DHANIAL", DestroySelf())
+		ActionOverride("IRON13", DestroySelf())
+		ActionOverride("TRIADO", DestroySelf())
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_CreateNPCs_0616", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CreateNPCs_0616", "GLOBAL", 1)
+		CreateCreature("XAWVMER1", [1011.639], SW)
+		CreateCreature("XAWVMER2", [1145.780], W)
+		CreateCreature("XAWVGRD1", [732.495], NW)
+		Continue()
+END

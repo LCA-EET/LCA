@@ -1,0 +1,12 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("CORWIN")
+		Wait(2)
+		DisplayStringHead("CORWIN",@0) /* ~And father, <CHARNAME> is my friend and has done much for the city. I can't let <PRO_HIMHER> face this alone.~ */
+		Wait(5)
+		StartCutScene("XAAcs01g")
+		
+END
+

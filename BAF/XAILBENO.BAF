@@ -1,0 +1,51 @@
+IF
+	True()
+THEN 
+	RESPONSE #100
+		CutSceneID(Player1)
+		ActionOverride("illasera", FaceObject("XABENO"))
+		ActionOverride("XABENO", FaceObject("illasera"))
+		ActionOverride("XABENO", SetSequence(SEQ_ATTACK))
+		Wait(1)
+		ActionOverride("XABENO", SetSequence(SEQ_ATTACK))
+		ActionOverride("illasera",ForceSpell("XABENO",WIZARD_SUN_FIRE))
+		Wait(2)
+		ActionOverride("XABENO", SetSequence(SEQ_ATTACK))
+		Wait(1)
+		ActionOverride("illasera",ReallyForceSpell("XABENO",WIZARD_FINGER_OF_DEATH))
+		SmallWait(5)
+		DisplayStringHead("XABENO", ~S..save her..~)
+		Kill("XABENO")
+		ActionOverride("illasera", FaceObject("XAROHMA3"))
+		Wait(1)
+		DisplayStringHead("illasera", ~Now, for -~)
+		
+		ActionOverride("XAROHMA3", ReallyForceSpell("XAROHMA3",DRYAD_TELEPORT))
+		SmallWait(10)
+		ActionOverride("XAROHMA", DestroySelf())
+		Wait(1)
+		DisplayStringHead("illasera", ~What!?~)
+		Wait(2)
+		DisplayStringHead("illasera", ~It is of no concern - kill them!~)
+		//ActionOverride("XAROHMA", DestroySelf())
+		ActionOverride("XAROHMA3", DestroySelf())
+		CreateCreature("ZILFGT01",[890.750],N)  // Black Reaver
+		ActionOverride("ZILFGT01", FaceObject(Player1))
+				
+		CreateCreature("ZILMAG01",[525.640],NE)  // Black Reaver
+		ActionOverride("ZILMAG01", FaceObject(Player1))
+				
+		CreateCreature("ZILFGT02",[570.800],S)  // Black Reaver
+		ActionOverride("ZILFGT02", FaceObject(Player1))
+				
+		CreateCreature("ZILARC01",[810.575],NW)  // Black Reaver
+		ActionOverride("ZILARC01", FaceObject(Player1))
+		
+		
+		ActionOverride(Player1,EndCutSceneMode())
+		ActionOverride("ZILARC01", Enemy())
+		ActionOverride("ZILFGT02", Enemy())
+		ActionOverride("ZILMAG01", Enemy())
+		ActionOverride("ZILFGT01", Enemy())
+		ActionOverride("illasera", Enemy())
+END

@@ -1,0 +1,9 @@
+IF
+	See([PC])
+	!Global("TalkedToOfficer", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+		SetGlobal("TalkedToOfficer", "LOCALS", 1)
+		StartDialogueNoSet(Player1)
+END

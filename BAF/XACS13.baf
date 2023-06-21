@@ -1,0 +1,306 @@
+IF 
+	GlobalLT("XA_BackToBG", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		Wait(1)
+		SetGlobal("XA_BackToBG", "GLOBAL", 1)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+END
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//StartCutSceneMode()
+		Continue()
+END
+
+//Imoen2
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	InPartyAllowDead("Imoen2")
+	!Global("XA_BackToBG_Imoen", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//ActionOverride("Imoen2",SetGlobal("KickedOut","LOCALS",1))
+		//ActionOverride("Imoen2", SetLeavePartyDialogFile())
+		ActionOverride("Imoen2", LeaveParty())
+		Continue()
+END
+
+//Hexxat
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	InPartyAllowDead("Imoen2")
+	!Global("XA_BackToBG_Imoen", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//ActionOverride("Hexxat",SetGlobal("KickedOut","LOCALS",1))
+		//ActionOverride("Hexxat", SetLeavePartyDialogFile())
+		ActionOverride("Hexxat", LeaveParty())
+		Continue()
+END
+
+//Jaheira
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	InPartyAllowDead("Jaheira")
+	!Global("XA_BackToBG_Jaheira", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//ActionOverride("Jaheira",SetGlobal("KickedOut","LOCALS",1))
+		//ActionOverride("Jaheira", SetLeavePartyDialogFile())
+		ActionOverride("Jaheira", LeaveParty())
+		Continue()
+END
+
+//Viconia
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	InPartyAllowDead("Viconia")
+	!Global("XA_BackToBG_Viconia", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//ActionOverride("Viconia",SetGlobal("KickedOut","LOCALS",1))
+		//ActionOverride("Viconia", SetLeavePartyDialogFile())
+		ActionOverride("Viconia", LeaveParty())
+		Continue()
+END
+
+//Jan
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	InPartyAllowDead("Jan")
+	!Global("XA_BackToBG_Jan", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//ActionOverride("Jan",SetGlobal("KickedOut","LOCALS",1))
+		//ActionOverride("Jan", SetLeavePartyDialogFile())
+		ActionOverride("Jan", LeaveParty())
+		Continue()
+END
+
+//Edwin
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	InPartyAllowDead("Edwin")
+	!Global("XA_BackToBG_Edwin", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//ActionOverride("Edwin",SetGlobal("KickedOut","LOCALS",1))
+		//ActionOverride("Edwin", SetLeavePartyDialogFile())
+		ActionOverride("Edwin", LeaveParty())
+		Continue()
+END
+
+//Minsc
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	InPartyAllowDead("Minsc")
+	!Global("XA_BackToBG_Minsc", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//ActionOverride("Minsc",SetGlobal("KickedOut","LOCALS",1))
+		//ActionOverride("Minsc", SetLeavePartyDialogFile())
+		ActionOverride("Minsc", LeaveParty())
+		Continue()
+END
+
+//Aerie
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	InPartyAllowDead("Aerie")
+	!Global("XA_BackToBG_Aerie", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//ActionOverride("Aerie",SetGlobal("KickedOut","LOCALS",1))
+		//ActionOverride("Aerie", SetLeavePartyDialogFile())
+		ActionOverride("Aerie", LeaveParty())
+		Continue()
+END
+
+//Nalia
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	InPartyAllowDead("Nalia")
+	!Global("XA_BackToBG_Nalia", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//ActionOverride("Nalia",SetGlobal("KickedOut","LOCALS",1))
+		//ActionOverride("Nalia", SetLeavePartyDialogFile())
+		ActionOverride("Nalia", LeaveParty())
+		Continue()
+END
+
+//Korgan
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	InPartyAllowDead("Korgan")
+	!Global("XA_BackToBG_Korgan", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//ActionOverride("Korgan",SetGlobal("KickedOut","LOCALS",1))
+		//ActionOverride("Korgan", SetLeavePartyDialogFile())
+		ActionOverride("Korgan", LeaveParty())
+		Continue()
+END
+
+//Keldorn
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	InPartyAllowDead("Keldorn")
+	!Global("XA_BackToBG_Keldorn", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//ActionOverride("Keldorn",SetGlobal("KickedOut","LOCALS",1))
+		//ActionOverride("Keldorn", SetLeavePartyDialogFile())
+		ActionOverride("Keldorn", LeaveParty())
+		Continue()
+END
+
+//Anomen
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	InPartyAllowDead("Anomen")
+	!Global("XA_BackToBG_Anomen", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//ActionOverride("Anomen",SetGlobal("KickedOut","LOCALS",1))
+		//ActionOverride("Anomen", SetLeavePartyDialogFile())
+		ActionOverride("Anomen", LeaveParty())
+		Continue()
+END
+
+//Dorn
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	InPartyAllowDead("Dorn")
+	!Global("XA_BackToBG_Dorn", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//ActionOverride("Dorn",SetGlobal("KickedOut","LOCALS",1))
+		//ActionOverride("Dorn", SetLeavePartyDialogFile())
+		ActionOverride("Dorn", LeaveParty())
+		Continue()
+END
+
+//Valygar
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	InPartyAllowDead("Valygar")
+	!Global("XA_BackToBG_Valygar", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//ActionOverride("Valygar",SetGlobal("KickedOut","LOCALS",1))
+		//ActionOverride("Valygar", SetLeavePartyDialogFile())
+		ActionOverride("Valygar", LeaveParty())
+		Continue()
+END
+
+//Neera
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	InPartyAllowDead("Neera")
+	!Global("XA_BackToBG_Neera", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//ActionOverride("Neera",SetGlobal("KickedOut","LOCALS",1))
+		//ActionOverride("Neera", SetLeavePartyDialogFile())
+		ActionOverride("Neera", LeaveParty())
+		Continue()
+END
+
+//Cernd
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	InPartyAllowDead("Cernd")
+	!Global("XA_BackToBG_Cernd", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//ActionOverride("Cernd",SetGlobal("KickedOut","LOCALS",1))
+		//ActionOverride("Cernd", SetLeavePartyDialogFile())
+		ActionOverride("Cernd", LeaveParty())
+		Continue()
+END
+
+//Rasaad
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	InPartyAllowDead("Rasaad")
+	!Global("XA_BackToBG_Rasaad", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//ActionOverride("Rasaad",SetGlobal("KickedOut","LOCALS",1))
+		//ActionOverride("Rasaad", SetLeavePartyDialogFile())
+		ActionOverride("Rasaad", LeaveParty())
+		Continue()
+END
+
+/////////////////////////
+
+
+
+IF
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_PartyRemovalProcessing", "GLOBAL", 2)
+		Continue()
+END
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 2)
+	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+THEN 
+	RESPONSE #100
+		FadeToColor([30.0],0)
+		Wait(1)
+		TextScreen("CHBGROM")
+		AdvanceTime(SEVEN_DAYS)
+		DayNight(8)
+		ActionOverride(Player1,LeaveAreaLUA("BG0900","",[1628.1456],NW))
+		ActionOverride(Player2,LeaveAreaLUA("BG0900","",[1664.1531],NW))
+		ActionOverride(Player3,LeaveAreaLUA("BG0900","",[1797.1452],NW))
+		ActionOverride(Player4,LeaveAreaLUA("BG0900","",[1719.1544],NW))
+		ActionOverride(Player5,LeaveAreaLUA("BG0900","",[1777.1510],NW))
+		ActionOverride(Player6,LeaveAreaLUA("BG0900","",[1770.1517],NW))
+		ActionOverride("XACORWIN",LeaveAreaLUA("BG0900","",[1694.1423],NW)) 	
+END
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 2)
+	!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+THEN 
+	RESPONSE #100
+		FadeToColor([30.0],0)
+		Wait(1)
+		TextScreen("CHBG")
+		AdvanceTime(SEVEN_DAYS)
+		DayNight(8)
+		ActionOverride(Player1,LeaveAreaLUA("BG0900","",[1628.1456],NW))
+		ActionOverride(Player2,LeaveAreaLUA("BG0900","",[1664.1531],NW))
+		ActionOverride(Player3,LeaveAreaLUA("BG0900","",[1797.1452],NW))
+		ActionOverride(Player4,LeaveAreaLUA("BG0900","",[1719.1544],NW))
+		ActionOverride(Player5,LeaveAreaLUA("BG0900","",[1777.1510],NW))
+		ActionOverride(Player6,LeaveAreaLUA("BG0900","",[1770.1517],NW))
+		ActionOverride("XACORWIN",LeaveAreaLUA("BG0900","",[1694.1423],NW)) 
+END
+
+

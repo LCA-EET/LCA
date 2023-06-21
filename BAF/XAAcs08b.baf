@@ -1,0 +1,32 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("XACORWIN")  // Corwin
+		//ActionOverride(Player1, FaceObject("XACORWIN"))
+		LeaveParty()
+		SetLeavePartyDialogFile()
+		FadeFromColor([30.0],0)
+		Wait(1)
+		ActionOverride(Player1, FaceObject("XACORWIN"))
+		SetGlobal("XA_CorwinVampire","GLOBAL",1)
+		Wait(1)
+		DisplayStringHead("XACORWIN", @0) /* ~I'm sorry, my love.. I don't think I'll make it back *cough* for those drinks.. after all..~ */
+		Wait(5)
+		DisplayStringHead(Player1, @1) /* ~Don't speak love - you need to save your strength.~*/
+		Wait(5)
+		DisplayStringHead("XACORWIN", @2) /* ~Just listen, I don't have *cough* much time... When you defeat Irenicus, please go back to Baldur's Gate...~ */
+		Wait(5)
+		DisplayStringHead("XACORWIN", @3) /* ~Find Rohma and my father... tell them.. tell them I (sob) love them...~ */
+		Wait(5)
+		DisplayStringHead(Player1, @4) /* ~You will tell them that yourself, once you are better. ~Please, Schael, hold on for just a little longer!~  */
+		Wait(5)
+		DisplayStringHead("XACORWIN", @5) /* ~I can't ... I'm sorry, <CHARNAME>. I wanted so much to (sob)... to be with you... I ... love you ... ...~ */
+		Wait(5)
+		DisplayStringHead(Player1, @9) /* ~Schael? Schael!~ */
+		Wait(3)
+		DisplayStringHead(Player1, @6) /* ~(She dies in your arms).~ */
+		Wait(3)
+		ActionOverride(Player1,StartDialog("PLAYER1", Player1))
+
+END

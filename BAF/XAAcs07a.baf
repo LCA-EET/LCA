@@ -1,0 +1,34 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("bodhiamb")
+		CreateVisualEffectObject("SPDISPMA",Myself)
+		JumpToObject("XACORWIN")
+		FaceObject("XACORWIN")
+		SetSequence(SEQ_ATTACK)
+		SmallWait(1)
+		DisplayStringHead("XACORWIN", @0) /* @0 = ~Ow!~ [BD68273] */
+		SmallWait(1)
+		CreateVisualEffectObject("SPDISPMA",Myself)
+		JumpToPoint([1950.1690]) 	
+		ReallyForceSpellRES("BGSleep","XACORWIN") 
+		Wait(1)
+		SetGlobal("XA_CorwinBit","GLOBAL",1)
+		//ForceSpell("XACORWIN",HELL_HOLD)
+		
+		DestroySelf()
+		EndCutSceneMode()
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("bodhiamb")  // Bodhi
+		DialogInterrupt(FALSE)
+		CreateCreatureObject("VAMPIM01",Myself,0,0,0)  // Vampire
+		CreateCreatureObject("VAMPIM01",Myself,0,0,0)  // Vampire
+		CreateCreatureObject("VAMPIM01",Myself,0,0,0)  // Vampire
+		CreateCreatureObject("VAMPIM01",Myself,0,0,0)  // Vampire
+END

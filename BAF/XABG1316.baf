@@ -1,0 +1,39 @@
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	OR(2)
+		InMyArea("MICHAEL")
+		InMyArea("TAXEK")
+THEN
+	RESPONSE #100
+		ActionOverride("MICHAEL", DestroySelf())
+		ActionOverride("TAXEK", DestroySelf())
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	IsValidForPartyDialog("XACORWIN")
+	IsValidForPartyDialog(Player1)
+	!InMyArea("XAROHMA")
+	!InMyArea("XAAUDAM")
+THEN
+	RESPONSE #100
+		CreateCreature("XAROHMA",[160.300], SE)
+		CreateCreature("XAAUDAM", [440.164], SE)
+		Continue()
+END
+
+// For when Corwin leaves because the player took too long to see her family.
+
+IF 
+	Global("XA_CorwinMetFamily", "GLOBAL", 1)
+	InMyArea("XACORWIN")
+	!InMyArea("XAROHMA")
+	!InMyArea("XAAUDAM")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CorwinFamilyTalk", "GLOBAL", 3)
+		CreateCreature("XAROHMA",[160.300], SE)
+		CreateCreature("XAAUDAM", [440.164], SE)
+		Continue()
+END 

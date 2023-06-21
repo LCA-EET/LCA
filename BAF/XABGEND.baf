@@ -1,0 +1,21 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		DisplayStringHead("XACORWIN", ~Rohma!~)
+		SmallWait(5)
+		ActionOverride("XAROHMA", FaceObject("XACORWIN"))
+		SmallWait(1)
+		//454 311
+		//485 292
+		//545 285
+		DisplayStringHead("XAROHMA", ~Mommy!~)
+		ActionOverride("XAROHMA", MoveToObject("TrigRom"))
+		SmallWait(1)
+		ActionOverride("XACORWIN", MoveToObject("TrigCor"))
+		SmallWait(1)
+		MoveToObject("TrigP1")
+		Wait(2)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+END

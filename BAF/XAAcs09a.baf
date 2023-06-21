@@ -1,0 +1,19 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("XACORWIN")  // Corwin
+		DisplayStringHead(Myself, @0) /* ~Unhh..~ */
+		Wait(1)
+		DisplayStringHead(Player1, @1) /* ~Schael!~*/
+		SetSequence(SEQ_DIE)
+		ActionOverride(Player1, MoveToObject("XACORWIN"))
+		Wait(1)
+		FadeToColor([30.0],0)
+		Wait(1)
+		ActionOverride(Player1, JumpToObject("XACORWIN")) 	
+		ActionOverride(Player1, FaceObject("XACORWIN"))
+		Wait(1)
+		ZoomLock(TRUE)
+		StartCutScene("XAAcs09b") 
+END

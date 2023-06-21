@@ -1,0 +1,21 @@
+IF
+	GlobalGT("XA_TM_ArcheryChallenge", "GLOBAL", 0)
+	!Global("XA_2000_MapNote", "AR2000", 1)
+THEN
+	RESPONSE #100
+		AddMapNote([3463.2123],@0)
+		SetGlobal("XA_2000_MapNote", "AR2000", 1)
+		Continue()
+END
+
+IF
+	GlobalGT("XA_TM_ArcheryChallenge", "GLOBAL", 0)
+	TimeOfDay(DAY)
+	!Dead("trhmer01")
+	!Dead("celogan")
+	!Global("ArcherySignupSpawn", "GLOBAL", 1) 
+THEN
+	RESPONSE #100
+		SetGlobal("ArcherySignupSpawn", "GLOBAL", 1)
+		CreateCreature("XATMARSU", [3477.2127], S)
+END

@@ -1,0 +1,14 @@
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_CreateNPCS_0602", "BG0602", 1)
+	!Dead("Jhasso")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CreateNPCS_0602", "BG0602", 1)
+		CreateCreature("XAMERCH", [404.414], N)
+		CreateCreature("Jhasso", [452.370], SE)
+		ActionOverride("Jhasso", SetDialog("XAJHASSO"))
+		ActionOverride("Jhasso", SetNumTimesTalkedTo(0))
+		ActionOverride("Jhasso",ChangeAIScript("XAINITP1",CLASS))
+		Continue()
+END

@@ -1,0 +1,24 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		SetCutSceneLite(TRUE)
+		SetGlobal("XA_XACS15Cutscene", "GLOBAL", 2)
+		CutSceneId("XACORWIN")
+		ActionOverride("XANEOMA", FaceObject("XACORWIN"))
+		SmallWait(5)
+		DisplayStringHead("XANEOMA", ~Schael!~)
+		Wait(1)
+		ActionOverride("XANEOMA", MoveToObject("XACORWIN"))
+		ActionOverride("XACORWIN", FaceObject("XANEOMA"))
+		Wait(1)
+		DisplayStringHead("XACORWIN", ~Neoma!~)
+		Wait(1)
+		
+		//Wait(1)
+		ActionOverride("XACORWIN", MoveToObject("XANEOMA"))
+		Wait(1)
+		EndCutSceneMode()
+END

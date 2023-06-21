@@ -1,0 +1,41 @@
+IF 
+	Global("XA_Reset_0608", "BG0608", 1)
+THEN 
+	RESPONSE #100
+		SetGlobal("XA_Reset_0608", "BG0608", 0)
+		ActionOverride("KENT", JumpToPoint([380.309]))
+		ActionOverride("KENT", Face(W))
+		ActionOverride("XANEDERL", JumpToPoint([233.399]))
+		ActionOverride("XANEDERL", Face(NNE))
+		Continue()
+END
+
+
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_CreateNPCS_0608_Kent", "BG0608", 1)
+	!Dead("KENT")
+THEN 
+	RESPONSE #100
+		SetGlobal("XA_CreateNPCS_0608_Kent", "BG0608", 1)
+		CreateCreature("KENT", [380.309], W)
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_CreateNPCS_0608_Nederlok", "BG0608", 1)
+THEN 
+	RESPONSE #100
+		SetGlobal("XA_CreateNPCS_0608_Nederlok", "BG0608", 1)
+		CreateCreature("XANEDERL", [233.399], NNE)
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		NoAction()
+END

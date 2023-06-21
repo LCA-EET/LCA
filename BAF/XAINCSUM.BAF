@@ -1,0 +1,34 @@
+IF
+	Dead("XAINCUB")
+THEN
+	RESPONSE #100
+		Kill(Myself)
+END
+
+IF
+	Global("XA_PrisonKnowledge", "GLOBAL", 6)
+	!Global("XA_ChooseAllegiance", "LOCALS", 1)
+THEN
+	RESPONSE #33
+		SetGlobal("XA_ChooseAllegiance", "LOCALS", 1)
+		ChangeEnemyAlly(Myself,ALLY)
+		DisplayStringHead(Myself, ~No... I serve the Bhaalspawn.~)
+	RESPONSE #33
+		SetGlobal("XA_ChooseAllegiance", "LOCALS", 1)
+		ChangeEnemyAlly(Myself,ALLY)
+		DisplayStringHead(Myself, ~No... I serve the Bhaalspawn.~)
+	RESPONSE #34
+		SetGlobal("XA_ChooseAllegiance", "LOCALS", 1)
+		ChangeEnemyAlly(Myself,ENEMY)
+		DisplayStringHead(Myself, ~Yes... master.~)
+END
+
+IF 
+	!Global("XA_PrisonKnowledge", "GLOBAL", 6)
+	!Global("XA_ChooseAllegiance", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_ChooseAllegiance", "LOCALS", 1)
+		ChangeEnemyAlly(Myself,ENEMY)
+		DisplayStringHead(Myself, ~Yes... master.~)
+END

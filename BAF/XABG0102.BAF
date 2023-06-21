@@ -1,0 +1,62 @@
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!InMyArea("BRILLA")
+	!Dead("BRILLA")
+	!Global("XA_BG0102_BrillaSpawn", "BG0102", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BG0102_BrillaSpawn", "BG0102", 1)
+		CreateCreature("BRILLA", [1643.299], SW)
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_CreateNPC_BG0102", "BG0102", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CreateNPC_BG0102", "BG0102", 1)
+		ApplySpellRES("ohdestbg","mcook3")
+		CreateCreature("XACOOK", [353.969], NE)
+		CreateCreature("XAMELKOR", [677.770], S)
+		CreateCreature("XASKIE", [710.1265], SW)
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("SKIE")
+THEN
+	RESPONSE #100
+		ApplySpellRES("ohdestbg","SKIE")
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_BG0102_SwapBrilla", "BG0102", 1)
+	!Dead("BRILLA")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BG0102_SwapBrilla", "BG0102", 1)
+		ActionOverride("BRILLA", SetDialog("XABRILLA"))
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_BG0102_SwapSkie", "BG0102", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BG0102_SwapSkie", "BG0102", 1)
+		ActionOverride("SKIE", SetDialog("XASKIE"))
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("Entar")
+THEN
+	RESPONSE #100
+		ApplySpellRES("ohdestbg","Entar")
+END

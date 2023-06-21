@@ -1,4 +1,4 @@
-//LCCORWID
+//XACORWID
 //Daniel Valle
 //dan@danielvalle.net
 
@@ -8,12 +8,12 @@
 
 */
 
-BEGIN ~LCCORWID~
+BEGIN ~XACORWID~
 
 IF ~
-	Global("LCA_ScriptIDTest", "GLOBAL", 1)
+	Global("XA_ScriptIDTest", "GLOBAL", 1)
 ~
-THEN BEGIN LCA_ID
+THEN BEGIN XA_ID
 	SAY @0
 	IF ~~ THEN
 	EXIT

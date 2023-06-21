@@ -1,0 +1,27 @@
+IF
+	InMyArea("XABENCE")
+	Global("XA_DukesFullyDebriefed", "GLOBAL", 1)
+	!AreaCheck("BG0607")
+THEN
+	RESPONSE #100
+		ActionOverride("XABENCE", DestroySelf())
+		Continue()
+END
+
+IF
+	!InMyArea("XABENCE")
+	Global("XA_BenceWyrm", "GLOBAL", 2)
+	!Global("XA_DukesFullyDebriefed", "GLOBAL", 1)
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_CorwinMetFamily", "GLOBAL", 2)
+	OR(2)
+		GlobalTimerExpired("XA_DukeDebriefTimer", "GLOBAL")
+		Global("XA_ExtensionNeeded", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("XABENCE",[-1.-1], N)
+		ActionOverride("XABENCE", JumpToObject(Player1))
+		Continue()
+END
+
+

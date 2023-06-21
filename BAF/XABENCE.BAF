@@ -1,0 +1,32 @@
+IF
+	!Range(Player1, 10)
+	Global("XA_BenceWyrm", "GLOBAL", 2)
+	!Global("XA_DukesDebriefed", "GLOBAL", 1)
+	!AreaCheck("BG0900")
+THEN 
+	RESPONSE #100
+		MoveToObjectFollow(Player1)
+		Continue()
+END
+
+IF 
+	!Range(Player1, 20)
+	Global("XA_BenceWyrm", "GLOBAL", 2)
+	!Global("XA_DukesDebriefed", "GLOBAL", 1)
+	!AreaCheck("BG0900")
+THEN
+	RESPONSE #100
+		JumpToObject(Player1)
+		Continue()
+END
+
+IF 
+	Global("XA_BenceWyrm", "GLOBAL", 2)
+	!Global("XA_DukesDebriefed", "GLOBAL", 1)
+	GlobalTimerExpired("XA_DukeDebriefTimer", "GLOBAL")
+	!AreaCheck("BG0900")
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		StartDialog("XABENCE", Player1)
+END

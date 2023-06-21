@@ -1,0 +1,10 @@
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_NPCDialogChange_0702", "GLOBAL", 1)
+	InMyArea("HARBOR")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_NPCDialogChange_0702", "GLOBAL", 1)
+		ActionOverride("HARBOR", SetDialog("XAHARBOR"))
+		Continue()
+END

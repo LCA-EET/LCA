@@ -1,0 +1,32 @@
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	See("XACORWIN")
+	!Global("XA_XACS15Started", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_XACS15Started", "GLOBAL", 1)
+		MoveViewObject(Myself, INSTANT)
+		//DisplayStringHead("XANEOMA", ~Attempting XACS15~)
+		FaceObject("XACORWIN")
+		StartCutScene("XACS15")
+END
+
+IF 
+	Global("XA_XACS15Cutscene", "GLOBAL", 2)
+	Range("XACORWIN", 6)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		SetGlobal("XA_XACS15Cutscene", "GLOBAL", 3)
+		ActionOverride("XACORWIN", FaceObject("XANEOMA"))
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", "XANEOMA"))
+END
+
+IF 
+	Global("XA_XACS15Cutscene", "GLOBAL", 4)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_XACS15Cutscene", "GLOBAL", 5)
+		EscapeArea()
+END
+

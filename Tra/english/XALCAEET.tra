@@ -1,0 +1,649 @@
+
+@001=~Dagger~
+@002=~Soultaker Dagger~
+@003=~You found this dagger in Irenicus' stronghold. Could this be the dagger used to murder Skie Silvershield?~
+@004=~Merely having this weapon on your person makes you fills you with a sense of dread. Holding it in your hand, you can almost hear the whispers of the souls trapped within. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illuminations and still be so deathly black at its core, you do not know.~
+@005=~Letter to Corwin~
+@006=~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
+
+My love,
+
+I pray this letter finds you, Rohma and your father well. There is much that I need to tell you. After being forced to depart Baldur’s Gate, our party was set upon by thieves who quickly incapacitated us. We were delivered to Athkatla and held captive in the stronghold of a mad wizard named Irenicus – the very same “Hooded Man” that we encountered during the Dragonspear campaign. My recollection of events from that point is hazy… I do know that we were tortured and experimented upon for purposes that are unclear to me. We were not all fortunate to escape the wizard’s enclave with our lives. The bastard murdered Khalid and Dynaheir. By the time we found their corpses, nothing could be done to resurrect them.
+
+While fleeing the stronghold, I came upon the dagger that is enclosed with this letter. I believe that this is the very same Soultaker Dagger that was used to murder Skie; if I am correct, the city priests can use it to restore Skie’s soul to her body and perform the resurrection. Please take the dagger to the city priests as soon as you are able. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. 
+
+After our escape, Imoen and Irenicus were abducted by the Cowled Wizards for unsanctioned use of magical power within the city. They were taken to a prison for magic practitioners called Spellhold. I must venture forth to Spellhold, rescue Imoen, and exact my revenge on Irenicus. The mage will pay for what he did to Khalid and Dynaheir, for framing me for Skie’s murder, for my exile from the city, and for keeping us apart. I will see you again, my love, once my innocence is established and this matter with Irenicus is resolved.
+
+Yours always,
+	
+<CHARNAME>~ 
+@007=~Letter to Corwin~
+@008=~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
+
+Schael,
+
+I hope this letter finds you, Rohma and your father well. There is much that I need to tell you. After being forced to depart Baldur’s Gate, our party was set upon by thieves who quickly incapacitated us. We were delivered to Athkatla and held captive in the stronghold of a mad wizard named Irenicus – the very same “Hooded Man” that we encountered during the Dragonspear campaign. My recollection of events from that point is hazy… I do know that we were tortured and experimented upon for purposes that are unclear to me. We were not all fortunate to escape the wizard’s enclave with our lives. The bastard murdered Khalid and Dynaheir. By the time we found their corpses, nothing could be done to resurrect them.
+
+While fleeing the stronghold, I came upon the dagger that is enclosed with this letter. I believe that this is the very same Soultaker Dagger that was used to murder Skie; if I am correct, the city priests can use it to restore Skie’s soul to her body and perform the resurrection. Please take the dagger to the city priests as soon as you are able. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. 
+
+After our escape, Imoen and Irenicus were abducted by the Cowled Wizards for unsanctioned use of magical power within the city. They were taken to a prison for magic practitioners called Spellhold. I must venture forth to Spellhold, rescue Imoen, and exact my revenge on Irenicus. The mage will pay for what he did to Khalid and Dynaheir, for framing me for Skie’s murder, and for my exile from the city. I hope to see you again once my innocence is established and this matter with Irenicus is resolved.
+
+Regards,
+
+<CHARNAME>~ 
+@009=~Letter to Duncan~
+@010=~This is the letter you plan to send to Corporal Duncan in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
+
+Corporal,
+
+I have reason to believe that the dagger included with this letter is the very same Soultaker Dagger that was used to murder Skie Silvershield. If I am correct, the city priests can use it to restore Skie’s soul to her body and perform the resurrection. Please take the dagger to the city priests as soon as you are able. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. The dagger belongs to a mad wizard named Irenicus. He is the “Hooded Man” that murdered Skie and framed me for the act. Rest assured, he will pay a heavy price for his transgressions against Skie, the city of Baldur’s Gate, my companions, and myself.
+  
+Please give my regards to Captain Corwin and her father. 
+
+Regards,
+
+<CHARNAME>~ 
+
+@011=~Love Conquers All (LCA)~
+@012=~This mod requires the EET (Gibberlings 3) mod.~
+@013=~ISTDAG~
+@014=~Toy Doll~
+@015=~A toy doll. A young child would enjoy playing with this.~
+@016 = ~Corwin's Home~
+@017 = ~test~
+@018 = ~Corwin's Amulet
+
+This amulet was given to you by Schael Corwin, as a token of her love for you. It contains a small portrait of her daughter, Rohma. Though the amulet isn't magical, when you wear it you are filled with hope and a renewed sense of purpose. You resolve to overcome whatever ordeals lie ahead, so that you can return to the arms of the woman you love.
+
+Equipped abilities:
+– Charisma: +1
+– Saving Throws: +3
+– Magic Resistance: +5%
+
+Usable by: <CHARNAME>
+~
+@019 = ~Corwin's Amulet~
+@020 = ~Corwin's Bow +2~
+@021 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+
+The bow was further enhanced by Flaming Fist mages to help Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus.
+
+Equipped abilities: 
+– Dexterity: +1
+
+Combat abilities: 
+– 15% chance per hit of entangling the target for 3 rounds (Save vs. Breath negates)
+
+STATISTICS:
+
+THAC0: +3
+Damage: +3
+Speed Factor: 6
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 9
+
+Usable by: Corwin
+~
+@022 = ~Corwin's Armor +3~
+@023 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
+
+The armor was further enhanced by Flaming Fist mages to help Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus.
+
+STATISTICS:
+
+Equipped abilities:
+– Movement Speed: +1
+– Magic Resistance: +15%
+
+Armor Class: 2 (0 vs. slashing, 4 vs. crushing)
+Requires: 
+ 5 Strength
+
+Weight: 7
+
+Usable by: Corwin
+~
+
+@024 = ~Archery Competition Signup~
+@025 = ~Debug Assistant~
+@026 = ~This mod is exclusive to EET.~
+@027 = ~Corwin's Body~
+@028 = ~Schael was infected with vampirism by Bodhi, and died just as the transformation had completed. There may be some way to revive her, though you don't know what it would be.
+
+STATISTICS:
+
+Weight: 125~
+@029 = ~Corwin~
+
+@030 = ~At last!
+
+You, Schael and the rest of your companions board the elvish caravan and begin the long journey back to Baldur's Gate. 
+
+You and the woman you love share one wagon, while your companions are split amongst the others. The long journey provides the necessary time and privacy to have some frank, and often difficult, conversations concerning your relationship. Certain aspects, including living and security arrangements, your role in parenting Rohma, and dealing with your celebrity, are left unclear. What is clear is that the love you share for oneanother has never been stronger, and that you are both fully committed to making the relationship work. 
+
+Your excitement at the thought of returning to Baldur's Gate gradually turns to apprehension as the caravan moves closer to its destination. You were, after all, forced to leave the city under some very dark circumstances, and many in the city wanted to see you executed. Seeing your growing unease, your love tries to reassure you:
+
+"You have nothing to worry about, love. The city and the Council will welcome you. I'm sure of it."
+
+Her words should comfort you, but they do not. If nothing else, your experiences over these past months have taught you to hope for the best, but to expect the worst. With that thought in mind, the caravan driver makes the announcement:
+
+"We have reached Wyrm's Crossing."  
+
+Holding Schael's hand, you take a deep breath and step out of your wagon. A group of Flaming Fist officers and city officials approach as you stand on the bridge.~ [CHBGROM]   
+@031 = ~The Return to Baldur's Gate~
+@032 = ~At last!
+
+You, Captain Corwin and the rest of your companions board the elvish caravan and begin the long journey back to Baldur's Gate. 
+
+During one of the caravan's many stops, you visit Captain Corwin's wagon. Unsurprisingly, she is quite energetic and eager to see her family again. In contrast, your initial excitement at the thought of returning to the city has turned into apprehension. The last time you were in Baldur's Gate, you were nearly executed for a crime you did not commit. Seeing your unease, Corwin tries to reassure you:
+
+"The city and the Council will welcome you, I'm sure of it. There's nothing to worry about."
+
+Her words should comfort you, but they do not. If nothing else, your experiences over these past months have taught you to hope for the best, but to expect the worst. With that thought in mind, the caravan driver makes the announcement:
+
+"We have reached Wyrm's Crossing."  
+
+You take a deep breath and step out of your wagon. A group of Flaming Fist officers and city officials approach as you stand on the bridge.~  [CHBG]    
+@033 = ~Shipping Manifests (Encoded)~
+@034 = ~These are the shipping manifests you received from the harbor master while investigating slaver activity in Baldur's Gate. The manifests are encoded and you have no way to decipher them. Perhaps the Thieves' Guild can help you to decode the manifests.~
+@035 = ~Shipping Manifests (Decoded)~
+@036 = ~These are the shipping manifests you decoded with the help of the Thieves' Guild. It's a list of names, ages, and physical characteristics. With these manifests, you can prove that Winston Ventures was transporting people as cargo.~
+@037 = ~Shipping Manifests (Decoded)~
+@038 = ~These are the shipping manifests you decoded with the help of the Thieves' Guild. It's a list of names, ages, and physical characteristics. You notice a familiar name — Tina Bennett. She is the girl that you had freed from the slavers in Athkatla. With these manifests, you can prove that Winston Ventures was transporting people as cargo, and that at least some of those people were sold into slavery.~
+@039 = ~The old Iron Throne sign is defaced. Beneath it is a plaque that reads "Winston Ventures"~
+@040 = ~Winston Ventures~
+@041 = ~Tianna~
+@042 = ~Tianna~
+@043 = ~Jasper~
+@044 = ~Jasper~
+@045 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's resistance to magic, resilience against physical attacks, and defense against mental effects. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Magic and Elemental Damage Reistance: +20% (All)
+- Saving Throws: +2 (All)
+- Physical Damage Resistance: +20%
+- Armor Class: +2
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //00111, 07
+
+@046 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's speed, resilience against physical attacks, and defense against mental effects. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Movement Speed: +2
+- Attacks Per Round: +1
+- Physical Damage Resistance: +20%
+- Armor Class: +2
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //01011, 11
+
+@047 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's speed, resistance to magic, and defense against mental effects. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Movement Speed: +2
+- Attacks Per Round: +1
+- Magic and Elemental Damage Reistance: +20% (All)
+- Saving Throws: +2 (All)
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //01101, 13
+@048 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's speed, resistance to magic, and resilience against physical attacks. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Movement Speed: +2
+- Attacks Per Round: +1
+- Magic and Elemental Damage Reistance: +20% (All)
+- Saving Throws: +2 (All)
+- Physical Damage Resistance: +20%
+- Armor Class: +2~ //01110, 14
+
+@049 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, resilience against physical attacks, and defense against mental effects. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Maximum Hit Points: +15
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Physical Damage Resistance: +20%
+- Armor Class: +2
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //10011, 19
+
+@050 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, resistance to magic, and defense against mental effects. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Maximum Hit Points: +15
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Magic and Elemental Damage Reistance: +20% (All)
+- Saving Throws: +2 (All)
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //10101, 21
+
+@051 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, resistance to magic, and resilience against physical attacks. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Maximum Hit Points: +15
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Magic and Elemental Damage Reistance: +20% (All)
+- Saving Throws: +2 (All)
+- Physical Damage Resistance: +20%
+- Armor Class: +2~ //10110, 22
+
+@052 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, speed, and defense against mental effects. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Maximum Hit Points: +15
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Movement Speed: +2
+- Attacks Per Round: +1
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //11001, 25 OK
+
+@053 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, speed, and resilience against physical attacks. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Maximum Hit Points: +15
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Movement Speed: +2
+- Attacks Per Round: +1
+- Physical Damage Resistance: +20%
+- Armor Class: +2~ //11010, 26 OK
+
+@054 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, speed, and resistance to magic. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Maximum Hit Points: +15
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Movement Speed: +2
+- Attacks Per Round: +1
+- Magic and Elemental Damage Reistance: +20% (All)
+- Saving Throws: +2 (All)~ //11100, 28 OK
+@055 = ~Love Conquers All~
+@056 = ~Engagement Ring~
+@057 = ~Engagement Ring
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It was commissioned by Jhasso after he learned that you and Schael were romantically involved. Jhasso recommended bringing the ring to Halbazzer, the proprietor of Sorcerous Sundries, to have it enchanted prior to giving it to your love.~ 
+@058 = ~Engagement Ring
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It was commissioned by Aldeth after he learned that you and Schael were romantically involved. Aldeth recommended bringing the ring to Halbazzer, the proprietor of Sorcerous Sundries, to have it enchanted prior to giving it to your love.~ 
+@059=~Dagger~
+@060=~Soultaker Dagger?~
+@061=~Though this appears to be the Soultaker dagger, it is different somehow. It doesn't feel as heavy as it did, and you don't feel that palpable sense of dread that you did when you found it in Amn. The gem in the hilt is dark and lifeless. Odd.~
+@062 = ~Melkor~
+@063 = ~Virgil~
+@064 = ~Winston's Ledger~
+@065 = ~This meticulously detailed ledger lists Winston Ventures' shipping manifest numbers, dates shipped, and the keys necessary to decode the manifests. The records start at around the time of the refugee crisis, and end only a few weeks ago.~
+@066 = ~Emergency Provisions~
+@067 = ~Winston Ventures~
+@068 = ~Winston Ventures Headquarters~
+@069 = ~Flaming Fist Valiant~
+@070 = ~The week long festival thrown by the Dukes in your honor was a spectacle that you'll never forget. Food, drink, song and dance were shared by all, rich and poor alike, and you experienced the wholehearted adoration of the city. In the weeks that followed, you slowly began to embrace your new role as the city's protector — the Defender of Baldur's Gate. Though you miss your days of adventuring, you cannot deny that for the first time in your adult life, you feel a true sense of belonging, as though this city is where you are meant to be...
+
+You recall the trepidation that you felt when you stepped out of the caravan onto Wyrm's Crossing. You were certain at the time that, somehow, fate would intervene for the worse, as it did so many times before. It seems now however that, finally, you've been able to escape your father's shadow, and live your life on your terms...
+
+To that end, you continue your courtship of Schael Corwin. The love you share for one another has continued to grow. Over these past weeks, you've begun to build a good relationship with her young daughter, Rohma, and you sense that her father, Audamar, is finally warming up to you. It is your intention for them to move in with you to the Ducal Palace, but Schael has expressed some reservations. 
+
+"You've been great with Rohma, but she needs just a little bit more time. Soon, love."
+
+Although you're not living together, the two of you spend a great deal of your free time with one another. Tonight is a date night, and you've decided to take Schael to dinner at The Three Old Kegs, the very same tavern where the two of you shared a drink before embarking on the Dragonspear campaign...~ [XADINROM]
+@071 = ~The week long festival thrown by the Dukes in your honor was a spectacle that you'll never forget. Food, drink, song and dance were shared by all, rich and poor alike, and you experienced the wholehearted adoration of the city. In the weeks that followed, you slowly began to embrace your new role as the city's protector — the Defender of Baldur's Gate. Though you miss your days of adventuring, you cannot deny that for the first time in your adult life, you feel a true sense of belonging, as though this city is where you are meant to be...
+
+You recall the trepidation that you felt when you stepped out of the caravan onto Wyrm's Crossing. You were certain at the time that, somehow, fate would intervene for the worse, as it did so many times before. It seems now however that, finally, you've been able to escape your father's shadow, and live your life on your terms...
+
+To that end, you continue your friendship with Major Corwin. Over these past weeks, you've built a good rapport with her young daughter, Rohma, and her father, Audamar. Though you don't see each other as often as you once did, your friendship remains strong. Tonight, you've invited her to dinner at The Three Old Kegs, the very same tavern where the two of you shared a drink before embarking on the Dragonspear campaign...~ [XADINNER]
+@072 = ~The Defender of Baldur's Gate~
+@073 = ~Beno's Head~
+@074 = ~This is the severed head of Schael Corwin's ex-lover, Beno Famari. He was killed after he tried to use his own daughter, Rohma, as bait in an attempt to lure you and Major Corwin to your deaths. Although he's been resurrected several times in the past, you surmise that it will be difficult for his benefactors to do so again, now that his head has been separated from his body.
+
+Alas, poor Beno! You knew him well...
+
+Well, not really.~
+//Corwin Romance, In Party 
+@75 = ~Your party boards the caravan for the long trek to Saradush. You think of Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, the two of them are safe within the Ducal Palace, under the watchful eye of the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger.
+
+Though your wagon is comfortable and well-provisioned, a good night's rest continues to elude you. When you're able to sleep, you suffer some truly disturbing nightmares, and tonight's no exception. You awaken startled and in a cold sweat, and your restlessness has woken up Schael. Concerned, she gently caresses your chest, and tries to settle you down.
+
+"More nightmares?", she asks.
+
+You explain how they've been plaguing you these past nights. Though you can't recall the details, you know that in each one, you're forced to make an extremely difficult and painful decision. 
+ 
+"Whatever happens love, we'll face it together."
+
+She lays her head down on your chest, and you begin to slowly run your fingers through her soft, dark hair. After a time you're able to calm down, and the two of you fall asleep in a loving, tender embrace.
+
+It's the next morning, and the caravan has come to a halt. You and Schael get dressed and exit your wagon. The driver says that you've reached your destination, on the outskirts of the forest northwest of Saradush. The rest of the journey will be on foot. As the party moves toward the forest, your nostrils are assailed by the acrid smoke. With your eyes watering, you look up and see that the sky is covered in a thick, gray haze.
+
+The forest, and the besieged city beyond it, await.~ [XASARA1]
+//Corwin Non-Romance
+@76 = ~Your party boards the caravan for the long trek to Saradush. You think of Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, Schael's family is safe within the Ducal Palace, under the watchful eye of the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger.
+
+Though your wagon is comfortable and well-provisioned, a good night's rest continues to elude you. When you're able to sleep, you suffer some truly disturbing nightmares, and tonight's no exception. You wake startled and in a cold sweat. Since the caravan has stopped for the night, you step outside of your wagon for some fresh air. While outside, you see Schael sitting next to a pond. She stands as you approach. She stands as you approach.
+
+"Couldn't sleep either, eh?", she asks. You nod. 
+
+"I was just thinking of Rohma, and my father. They're safe of course, but I worry about them whenever I'm away on assignment. So, what's troubling you?"
+
+You tell her of the nightmares that've been plaguing you of late. Though you can't recall the details, you know that in each one, you're forced to make an extremely difficult and painful decision. She places her hand on your shoulder to reassure you. 
+
+"Whatever happens my friend, we'll face it together."
+
+After some idle chatter, you return to your wagons to get some sleep.
+
+It's the next morning, and the caravan has reached its destination on the outskirts of the forest northwest of Saradush. The rest of the journey will be on foot. As the party moves toward the forest, your nostrils are assailed by the acrid smoke. With your eyes watering, you look up and see that the sky is covered in a thick, gray haze.
+
+The forest, and the besieged city beyond it, await.~ [XASARA2]
+
+//Corwin Romance, Not in Party  
+@77 = ~Your party boards the caravan for the long trek east to Saradush. You think of Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, the two of them are safe within the walls of the Ducal Palace, under the watchful eye of the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger. 
+
+Your mind drifts to Schael. You fondly remember making love to her on the evening before you left for Saradush, and you're eager to return to her warm, tender embrace. Though it pains you greatly to be apart from her, you're sure that you made the right decision in leaving her behind to protect the city, and her family. Furthermore, you've made good use of the time alone to steel yourself for what will likely be your most difficult challenge yet.
+
+Though your wagon is comfortable and well-provisioned, a good night's rest continues to elude you. When you are able to sleep, you experience some truly disturbing nightmares, and tonight is no exception. Startled and in a cold sweat, you wake up from your latest terror. Strangely, you cannot recall any details, but you know that in each nightmare you're forced to make an extremely difficult and painful decision.
+
+It's the next morning, and the caravan has reached its destination on the outskirts of the forest northwest of Saradush. The rest of the journey will be on foot. As the party moves toward the forest, your nostrils are assailed by the acrid smoke. With your eyes watering, you look up and see that the sky is covered in a thick, gray haze. The fire giants have been busy.
+
+The forest, and the besieged city beyond it, await.~ [XASARA3]
+//Corwin Non-Romance, Not in Party  
+@78 = ~Your party boards the caravan and begins the long trek east to Saradush. You think of Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, the two of them are safe within the walls of the Ducal Palace, under the watchful eye of Marshal Nederlok and the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger. 
+
+Your mind drifts to Major Corwin. Though her skill, counsel and friendship have proven invaluable to you, you're sure that you made the right decision in leaving her behind to protect the city, and her family. Furthermore, you've made good use of the time alone to steel yourself for what will likely be your most difficult challenge yet.
+
+Though your wagon is comfortable and well-provisioned, a good night's rest continues to elude you. When you are able to sleep, you experience some truly disturbing nightmares, and tonight is no exception. Startled and in a cold sweat, you wake up from your latest terror. Strangely, you cannot recall any details, but you know that in each nightmare you're forced to make an extremely difficult and painful decision.
+
+It's the next morning, and the caravan has reached its destination on the outskirts of the forest northwest of Saradush. The rest of the journey will be on foot. As the party moves toward the forest, your nostrils are assailed by the acrid smoke. With your eyes watering, you look up and see that the sky is covered in a thick, gray haze. The fire giants have been busy.
+
+The forest, and the besieged city beyond it, await.~ [XASARA4]
+@79 = ~The Journey to Saradush~
+@80 = ~Fire Giant Scout~
+@081 = ~Dragonspear Medal~
+@082 = ~This heavy, golden medal depicts the emblem of Dragonspear castle. The inscription on the back of the medal reads as follows:
+
+'Awarded to <CHARNAME> for displaying exceptional courage and gallantry during the Dragonspear campaign.'
+
+The medal is enchanted to increase the wearer's resilience to magical attacks.
+
+Saving Throws: +1 (All)
+Magic Resistance: +5%~
+
+//BADEND1
+@083 = ~The battle is over. Rohma was saved, but at the cost of the woman you love. You have no hope of bringing her back. Overcome by grief, you fall to your hands and knees, and scream in agony. Hearing a low moan, you turn and see Beno stirring. It seems that, somehow, he is still alive. The sight of his sniveling face is enough to send you past the point of no return. You give into your dark nature, and transform into the Slayer. His pleas for mercy fall on deaf ears, and you rip his heart from his chest. You throw his lifeless body across the room, and begin to eat his still-beating heart.
+
+The taste and gore does little to satiate your bloodlust. You want more. You need more! This is who you are, you think to yourself. Why did you ever resist this kind of power? It's your birthright! 
+
+You make your way out of the Undercity, and into the Thieves' Maze. With ease, you tear through wall after wall, and make it into the Guild. Their feeble attempts to stop you prove fruitless, and you gleefully rip them limb from limb. The screams are heard throughout the city as you continue to decimate the Thieves' Guild. You make your way out into the street and head toward the Ducal Palace. Those foolish enough to remain in your path are easily swept aside.
+
+Upon entering the palace, you are quickly set upon by the Flaming Fist. Even their specially-trained Valiants and Wizards are not enough to stop you. You find the chamber where the Dukes are cowering, and you hear a scream — not from the Dukes, but from someone far more important to you... Rohma. The sight of Schael's daughter crying in terror is enough to snap you out of your murderous reverie. The transformation is undone, and the Dukes look at you, speechless and in horror. You tell Rohma that you are sorry; sorry for not protecting her mother, and sorry for what you have done. 
+
+Rohma and the Dukes are rushed out of the room. You beg one of the surviving Valiants to end your life, and they are happy to oblige. Your life flashes before your eyes as you feel the blade of the mighty halberd slice through your neck. Candlekeep. Imoen and Gorion. The mines of Nashkel. Sarevok. The first time you and Schael met. Rohma. The Siege of Dragonspear. Irenicus. All of your triumphs, and all of your defeats. Your last memory is of Schael, and how happy you were when she agreed to marry you.
+
+Your head hits the floor with a dull thud. The nightmare is over, both for you, and for the city of Baldur's Gate.~ [BADEND]
+
+//BADEND2
+@084 = ~The battle is over. Rohma was saved, but at the cost of the woman you love. You have no hope of bringing her back. Overcome by grief, you fall to your hands and knees, and scream in agony. Hearing a low moan, you turn and see Beno stirring. It seems that, somehow, he is still alive. The sight of his sniveling face is enough to send you past the point of no return. You give into your dark nature, and transform into the Slayer. His pleas for mercy fall on deaf ears, and you rip his heart from his chest. You throw his lifeless body across the room, and begin to eat his still-beating heart.
+
+The taste and gore does little to satiate your bloodlust. You want more. You need more! This is who you are, you think to yourself. Why did you ever resist this kind of power? It's your birthright! 
+
+You make your way out of the Undercity, and into the Thieves' Maze. With ease, you tear through wall after wall, and make it into the Guild. Their feeble attempts to stop you prove fruitless, and you gleefully rip them limb from limb. The screams are heard throughout the city as you continue to decimate the Thieves' Guild. You make your way out into the street and head toward the Ducal Palace. Those foolish enough to remain in your path are easily swept aside.
+
+Upon entering the palace, you are quickly set upon by the Flaming Fist. Even their specially-trained Valiants and Wizards are not enough to stop you. You find the chamber where the Dukes are cowering, and you hear a scream — not from the Dukes, but from someone far more important to you... Rohma. The sight of Schael's daughter crying in terror is enough to snap you out of your murderous reverie. The transformation is undone, and the Dukes look at you, speechless and in horror. You tell Rohma that you are sorry; sorry for not protecting her mother, and sorry for what you have done. 
+
+Rohma and the Dukes are rushed out of the room. You beg one of the surviving Valiants to end your life, and they are happy to oblige. Your life flashes before your eyes as you feel the blade of the mighty halberd slice through your neck. Candlekeep. Imoen and Gorion. The mines of Nashkel. Sarevok. The first time you and Schael met. Rohma. The Siege of Dragonspear. Irenicus. All of your triumphs, and all of your defeats. Your last memory is of Schael, and how happy you were when the two of you reunited in Athkatla.
+
+Your head hits the floor with a dull thud. The nightmare is over, both for you, and for the city of Baldur's Gate.~ [BADEND]
+
+//BADEND3
+@085 = ~The battle is over. Rohma was saved, but at the cost of your dear friend, Schael. You have no hope of bringing her back. Rohma will grow up to be an orphan, and it's because of who, and what you are. Overcome by grief, you fall to your hands and knees, and scream in rage. Hearing a low moan, you turn and see Beno stirring. It seems that, somehow, he is still alive. The sight of his sniveling face is enough to send you past the point of no return. You give into your dark nature, and transform into the Slayer. His pleas for mercy fall on deaf ears, and you rip his heart from his chest. You throw his lifeless body across the room, and begin to eat his still-beating heart.
+
+The taste and gore does little to satiate your bloodlust. You want more. You need more! This is who you are, you think to yourself. Why did you ever resist this kind of power? It's your birthright! 
+
+You make your way out of the Undercity, and into the Thieves' Maze. With ease, you tear through wall after wall, and make it into the Guild. Their feeble attempts to stop you prove fruitless, and you gleefully rip them limb from limb. The screams are heard throughout the city as you continue to decimate the Thieves' Guild. You make your way out into the street and head toward the Ducal Palace. Those foolish enough to remain in your path are easily swept aside.
+
+Upon entering the palace, you are quickly set upon by the Flaming Fist. Even their specially-trained Valiants and Wizards are not enough to stop you. You find the chamber where the Dukes are cowering, and you hear a scream — not from the Dukes, but from someone far more important to you... Rohma. The sight of Schael's daughter crying in terror is enough to snap you out of your murderous reverie. The transformation is undone, and the Dukes look at you, speechless and in horror. You tell Rohma that you are sorry; sorry for not protecting her mother, and sorry for what you have done. 
+
+Rohma and the Dukes are rushed out of the room. You beg one of the surviving Valiants to end your life, and they are happy to oblige. Your life flashes before your eyes as you feel the blade of the mighty halberd slice through your neck. Candlekeep. Imoen and Gorion. The mines of Nashkel. Sarevok. The first time you and Schael met. Rohma. The Siege of Dragonspear. Irenicus. All of your triumphs, and all of your defeats. Your last memories are of the celebration that the Dukes held in your honor, and the love and friendship that you shared with your comrades.
+
+Your head hits the floor with a dull thud. The nightmare is over, both for you, and for the city of Baldur's Gate.~ [BADEND]
+@086 = ~A Nightmare Made Manifest~
+@087 = ~Neoma~
+@088 = ~Target Golem~
+@089 = ~Spectators~
+@945 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's resistance to magic, resilience against physical attacks, and defense against mental effects.
+
+Equipped abilities:
+- Magic and Elemental Damage Reistance: +10% (All)
+- Saving Throws: +1 (All)
+- Physical Damage Resistance: +10%
+- Armor Class: +1
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //00111, 07
+
+@946 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's speed, resilience against physical attacks, and defense against mental effects.
+
+Equipped abilities:
+- Movement Speed: +1
+- Attacks Per Round: + (1/2)
+- Physical Damage Resistance: +10%
+- Armor Class: +1
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //01011, 11
+
+@947 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's speed, resistance to magic, and defense against mental effects.
+
+Equipped abilities:
+- Movement Speed: +1
+- Attacks Per Round: + (1/2)
+- Magic and Elemental Damage Reistance: +10% (All)
+- Saving Throws: +1 (All)
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //01101, 13
+@948 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's speed, resistance to magic, and resilience against physical attacks.
+
+Equipped abilities:
+- Movement Speed: +1
+- Attacks Per Round: + (1/2)
+- Magic and Elemental Damage Reistance: +10% (All)
+- Saving Throws: +1 (All)
+- Physical Damage Resistance: +10%
+- Armor Class: +1~ //01110, 14
+
+@949 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, resilience against physical attacks, and defense against mental effects.
+
+Equipped abilities:
+- Maximum Hit Points: +5
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Physical Damage Resistance: +10%
+- Armor Class: +1
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //10011, 19
+
+@950 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, resistance to magic, and defense against mental effects.
+
+Equipped abilities:
+- Maximum Hit Points: +5
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Magic and Elemental Damage Reistance: +10% (All)
+- Saving Throws: +1 (All)
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //10101, 21
+
+@951 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, resistance to magic, and resilience against physical attacks.
+
+Equipped abilities:
+- Maximum Hit Points: +5
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Magic and Elemental Damage Reistance: +10% (All)
+- Saving Throws: +1 (All)
+- Physical Damage Resistance: +10%
+- Armor Class: +1~ //10110, 22
+
+@952 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, speed, and defense against mental effects.
+
+Equipped abilities:
+- Maximum Hit Points: +5
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Movement Speed: +1
+- Attacks Per Round: + (1/2)
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //11001, 25 OK
+
+@953 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, speed, and resilience against physical attacks.
+
+Equipped abilities:
+- Maximum Hit Points: +5
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Movement Speed: +1
+- Attacks Per Round: + (1/2)
+- Physical Damage Resistance: +10%
+- Armor Class: +1~ //11010, 26 OK
+
+@954 = ~Love Conquers All
+
+This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, speed, and resistance to magic.
+
+Equipped abilities:
+- Maximum Hit Points: +5
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Movement Speed: +1
+- Attacks Per Round: + (1/2)
+- Magic and Elemental Damage Reistance: +10% (All)
+- Saving Throws: +1 (All)~ //11100, 28 OK
+@090 = ~<CHARNAME>,
+
+By the time you read this, you'll have escaped from the city. I'm sorry that I wasn't able to see you one last time before you left. When Belt, Eltan and Jannath made the decision to exile you, the Fist was put on high alert to prevent Entar and his associates from trying to take matters into their own hands. 
+
+You now have the time you need to find some way to prove your innocence. If you're able to recover the Soultaker dagger, you must send it to me. The wizards believe they can restore Skie, but only if the dagger is in their possession. Once restored, she can corroborate your account of what happened on that night in Dragonspear. With your innocence established, love, we'll be together once again.    
+
+I've enclosed my amulet with this letter. Wear it and know that I love you, always. 
+
+Yours, 
+
+Schael~
+@091 = ~<CHARNAME>,
+
+By the time you read this, you'll have escaped from the city. I'm sorry that I wasn't able to see you one last time before you left. When Belt, Eltan and Jannath made the decision to exile you, the Fist was put on high alert to prevent Entar and his associates from trying to take matters into their own hands. 
+
+You now have the time you need to find some way to prove your innocence. If you're able to recover the Soultaker dagger, you must send it to me. The wizards believe they can restore Skie, but only if the dagger is in their possession. Once restored, she can corroborate your account of what happened on that night in Dragonspear. You'll be able to return to the city once your innocence is established.   
+
+Good luck to you, my friend. 
+
+Regards, 
+
+Captain Corwin~
+@092 = ~Schael's Letter~
+@093 = ~Corwin's Letter~
+@094 = ~Curator Magda~
+@095 = ~While the physics behind a telescope have been well known for some time, the glass-grinding skills required to actually construct one are still quite specialized. The outer lens of this telescope is cracked, however, and the collapsible tubing is dented such that the scope cannot fully extend.
+
+STATISTICS:
+
+Weight: 1~
+@096 = ~Incubus~
+@097 = ~Lyriel~
+@098 = ~Mutated Ankheg~
+@099 = ~The Hen that Layed the Golden Egg~
+@100 = ~Legend tells of a couple that was renowned throughout the town for their insatiable greed. One day, a playful goblin who was passing through overheard the townsfolk speak of just how greedy this husband and wife were. Wanting to learn if the rumors of their greed were true, the goblin decided to pay them a visit. 
+
+The goblin appeared to the husband from within a tree trunk, and asked him why he looked so troubled. "Are you ill? Are you hungry? Tired?"
+
+Though frightened by the presence of the goblin, the husband explained that he wasn't sick, tired or hungry. Instead, he told the goblin that he and his wife were poor, and that could not afford all of the fancy clothes, baubles, and other items that they wanted.
+
+"If you are not hungry, cold, or ill, then rejoice because you are not poor!", said the goblin. 
+
+"But I am poor! A man with little or no gold is poor!", explained the husband.
+
+Upon hearing this, the goblin erupted into laughter. He then produced a hen, and explained to the husband that this hen was magical. Every morning, it would produce a golden egg. The goblin offered the hen to the husband, but warned that it would not provide the happiness and contentment that he sought.
+
+The husband quickly took the hen from the goblin and ran home to his wife. Though she didn't believe that the hen was magical, she could at least use the eggs to make a nice omelet, she thought to herself. 
+
+Early the next morning the hen began to cluck, and shortly after, a huge, bright golden egg appeared beneath it! The couple was ecstatic as they held the egg in their hands, but their mood quickly turned sour.
+
+"Well... it seems we'll have to wait until tomorrow for another egg. It will take many weeks before we have enough eggs to be the richest in town. That must be why the goblin laughed when he gave me the hen.", the husband said.
+
+The wife replied, "I've always heard that hens already have all the eggs they will lay inside of them... if this is true, why do we not kill the hen and take all of the eggs at once!" The husband agreed, and without hesitation, the couple killed the poor hen, and opened up her body. To their dismay, they saw that the there were no eggs inside. They then began to weep, for they realized that through their own greed and stupidity, they had lost forever the hen that layed the golden eggs.
+
+Abilities:
+- Use to produce a golden egg, once per day.
+
+Weight: 1~ 
+@101 = ~This heavy, aureate egg is surely worth its weight in gold.
+
+Weight: 2~
+@102 = ~Golden Egg~ 
+@103 = ~Void Blade +5~
+@104 = ~This is the blade that the Incubus offered to you in exchange for Lyriel's amulet. The hilt is made of carved bone, and the jet black blade, if one can call it that, reflects no light. Looking at the blade for any length of time gives you the unnerving impression that some malevolent force is watching you from within the void.
+
+STATISTICS:
+
+THAC0: +5
+Damage: 1d8+5
+Dagage type: Slashing
+Speed Factor: 4
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 3~ 
+@105 = ~Void Wisp~
+@106 = ~Void Fiend~
+@107 = ~Void Lord~
+@108 = ~Ring of Mind Shielding~
+@109 = ~This powerful ring affords its wearer complete protection against mind altering effects. It is rumored that dying while wearing such a ring will transfer one's soul into it. You aren't eager to find out if the rumors are in fact true.
+
+Abilities
+- Immunity to fear, confusion, feeblemind, charm and domination.~
+@110 = ~Hen~
+@111 = ~Lyriel's Gratitude~
+@112 = ~A reward from the elven queen Ellesime for saving the Tree of Life, this amulet protects the wearer against all forms of enchantments and spells. The amulet was further enchanted by Lyriel, the spirit you encountered in the Elfsong tavern, after you freed her from the demon's prison.
+ 
+STATISTICS:
+
+Equipped abilities:
+– Saving Throws: +1
+– Magic Resistance: +10%
+
+Charge abilities:
+– Casts Resurrection once per day.
+– Casts Cure Critical Wounds once per day.
+
+Weight: 1~
+@113 = ~Duke Sarevok Anchev~
+@114 = ~Flaming Fist Executioner~

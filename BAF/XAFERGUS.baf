@@ -1,0 +1,9 @@
+IF
+	Global("XA_ReturnToBG","GLOBAL",1)
+	Global("oh_dialog_set_3","locals",0)
+THEN
+	RESPONSE #100
+		SetGlobal("oh_dialog_set_3","locals",1)
+		SetDialog("XAFERGUS")
+END
+

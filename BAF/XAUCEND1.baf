@@ -1,0 +1,21 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeToColor([30.0],0)
+		Wait(3)
+		CopyGroundPilesTo("XADUC3",[780.500])
+		ApplySpell("XACORWIN",CLERIC_RESURRECTION)  // SPPR712.SPL (Resurrection)
+		ApplySpellRES("cdpr417",Myself)  // Lesser Restoration
+		ApplySpellRES("cdpr417","XACORWIN")  // Lesser Restoration
+		//780,500
+		Wait(3)
+		ActionOverride("XACORWIN",LeaveAreaLUA("XADUC3","",[540.250],SW)) 
+		//ActionOverride("JON1",LeaveAreaLUA("XADUC3","",[540.250],SW)) 
+		LeaveAreaLUA("XADUC3","",[580.210],SW) 
+		SetGlobal("XA_RohmaSaved", "GLOBAL", 1)
+		FadeFromColor([30.0],0)
+		Wait(2)
+		StartCutscene("XABGEND1")
+END

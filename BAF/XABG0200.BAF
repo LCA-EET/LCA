@@ -1,0 +1,17 @@
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("NEMEKLIN")
+THEN
+	RESPONSE #100
+		ActionOverride("NEMEKLIN", DestroySelf())
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("SORREL")
+THEN
+	RESPONSE #100
+		ActionOverride("SORREL", DestroySelf())
+		Continue()
+END

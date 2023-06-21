@@ -1,0 +1,7 @@
+IF
+	!Global("XA_GIRL2_Override", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_GIRL2_Override", "LOCALS", 1)
+		SetDialog("XAGIRL2")
+END

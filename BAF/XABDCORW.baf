@@ -1,0 +1,11 @@
+IF
+	Dead("bdashati")
+	Global("bd_asha_duel", "GLOBAL", 3)
+	IsValidForPartyDialog(Player1)
+	Global("XA_CorwinWitnessedDuel", "GLOBAL", 1)
+	CombatCounter(0)
+THEN
+	RESPONSE #100
+		StartDialog("BDCORWIJ", Player1)
+END
+

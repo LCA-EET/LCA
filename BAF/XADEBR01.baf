@@ -1,0 +1,16 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		DisplayStringHead("XABENCE", ~<CHARNAME>, Captain, this way please.~)
+		Wait(2)
+		ActionOverride("XACORWIN", MoveToObject("TrigCC"))
+		Wait(1)
+		//MoveToPoint([363.502])
+		MoveToObject("TrigP1")
+		Wait(2)
+		ActionOverride("XABENCE", MoveToPoint([434.464]))
+		Wait(2)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+END

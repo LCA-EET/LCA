@@ -1,0 +1,28 @@
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_DestroyNPCs_0615", "BG0615", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_DestroyNPCs_0615", "BG0615", 1)
+		ActionOverride("CYTHAN", DestroySelf())
+		ActionOverride("AASIM", DestroySelf())
+		ActionOverride("ALAI", DestroySelf())
+		ActionOverride("DIYAB", DestroySelf())
+		ActionOverride("EMITAR3", DestroySelf())
+		ActionOverride("GARDUSH", DestroySelf())
+		ActionOverride("NAAMAN", DestroySelf())
+		ActionOverride("THALDO", DestroySelf())
+		ActionOverride("ZHALIMAR", DestroySelf())
+		ActionOverride("EMITAR2", DestroySelf())
+		ActionOverride("Container 3", DestroyItem("SCRL1I"))
+		ActionOverride("Container 3", DestroyItem("SCRL1K"))
+		ActionOverride("Container 3", DestroyItem("SCRL3A"))
+		ActionOverride("Container 3", DestroyItem("SCRL3C"))
+		ActionOverride("Container 3", CreateItem("XALEDGER",1,0,0))
+		ActionOverride("Container 3", CreateItem("MISC07",1986,0,0))
+		ActionOverride("Container 3", SetItemFlags("XALEDGER", IDENTIFIED,TRUE))
+		CreateCreature("XAWVMER3", [600.440], N)
+		CreateCreature("XAWVMER1", [500.760], E)
+		CreateCreature("XAWVGRD2", [770.415], W)
+		Continue()
+END

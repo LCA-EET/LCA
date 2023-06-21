@@ -1,0 +1,20 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		CutSceneId(Player1)
+		FadeToColor([30.0],0)
+		Wait(3)
+		//[200.375]
+		//[273.356]
+		ActionOverride(Player1,LeaveAreaLUA("BG0608","",[225.440],NW))
+		ActionOverride(Player2,LeaveAreaLUA("BG0608","",[264.264],NW))
+		ActionOverride(Player3,LeaveAreaLUA("BG0608","",[300.400],NW))
+		ActionOverride(Player4,LeaveAreaLUA("BG0608","",[430.520],NW))
+		ActionOverride(Player5,LeaveAreaLUA("BG0608","",[320.480],NW))
+		ActionOverride(Player6,LeaveAreaLUA("BG0608","",[365.500],NW))
+		//ActionOverride("XACORWIN",LeaveAreaLUA("BG0608","",[110.390],NW))
+		SetGlobal("XA_NederlokVirgil", "GLOBAL", 1)
+		StartCutscene("XACS16b")
+END

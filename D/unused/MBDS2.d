@@ -10,17 +10,17 @@
 
 ADD_STATE_TRIGGER BDSCHAE2 0
 ~
-	!Global("LCA_Override", "Global", 1)
+	!Global("XA_Override", "Global", 1)
 ~
 
 ADD_STATE_TRIGGER BDSCHAE2 25
 ~
-	!Global("LCA_Override", "Global", 1)
+	!Global("XA_Override", "Global", 1)
 ~
 
 ADD_STATE_TRIGGER BDSCHAE2 63
 ~
-	!Global("LCA_Override", "Global", 1)
+	!Global("XA_Override", "Global", 1)
 ~
 
 APPEND BDSCHAE2
@@ -261,8 +261,8 @@ APPEND BDSCHAE2
 		~ 
 		THEN 
 		DO ~
-			SetGlobal("LCA_CorwinContinue","Global",2) /* continue romance into BG2 */
-			SetGlobal("LCA_CorwinRomanceActive", "Global", 2) /* continue romance into BG2 */
+			SetGlobal("XA_CorwinContinue","Global",2) /* continue romance into BG2 */
+			SetGlobal("XA_CorwinRomanceActive", "Global", 2) /* continue romance into BG2 */
 			AddJournalEntry(@59,INFO)
 			EscapeArea()
 		~ 
@@ -270,7 +270,7 @@ APPEND BDSCHAE2
 		
 		IF ~~ THEN 
 		DO ~
-			SetGlobal("LCA_CorwinContinue","Global",1) /* continue friendship into BG2 */
+			SetGlobal("XA_CorwinContinue","Global",1) /* continue friendship into BG2 */
 			EscapeArea()
 		~ 
 		EXIT

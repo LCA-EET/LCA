@@ -1,0 +1,7 @@
+IF
+	!Global("XA_Override", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Override", "GLOBAL", 1)
+		Continue()
+END

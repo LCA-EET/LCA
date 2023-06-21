@@ -1,0 +1,20 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1) 
+		ClearAllActions()
+		StorePartyLocations()
+		FadeToColor([30.0],0)
+		Wait(3)
+		ZoomLock(TRUE)
+		//LeaveAreaLUA("XACS10","",[1000.1000],NE)
+		//ActionOverride("XACORWIN",LeaveAreaLUA("XACS10","",[2000.2000],SW))	
+		LeaveAreaLUA("XACS10","",[455.299],NE)
+		ActionOverride("XACORWIN",LeaveAreaLUA("XACS10","",[489.273],SW))		
+		//MoveViewPoint([2000.2000],INSTANT)
+		Wait(1)
+		//HideGUI()
+		ZoomLock(TRUE)
+		StartCutScene("XAAcs10b") 
+END

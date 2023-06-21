@@ -1,0 +1,30 @@
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_CreateHOWSpy_0600", "BG0600", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CreateHOWSpy_0600", "BG0600", 1)
+		CreateCreature("XAHOWSPY", [4254.909], NW)
+		CreateCreature("XAHOWSPY", [1580.2424], NW)
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("Lothtyran")
+THEN
+	RESPONSE #100
+		ActionOverride("Lothtyran", DestroySelf())
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_NPCDestroy_0600", "BG0600", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("DUN", DestroySelf())
+		ActionOverride("HECITO", DestroySelf())
+		SetGlobal("XA_NPCDestroy_0600", "BG0600", 1)
+		Continue()
+END

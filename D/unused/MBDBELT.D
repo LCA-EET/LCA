@@ -8,7 +8,7 @@
 
 ADD_TRANS_TRIGGER BDBELT 40 
 ~
-	!Global("LCA_Override", "GLOBAL", 1)
+	!Global("XA_Override", "GLOBAL", 1)
 ~ DO 2
 
 EXTEND_BOTTOM BDBELT 40
@@ -18,5 +18,5 @@ EXTEND_BOTTOM BDBELT 40
 			Global("EECorwinBG1","Global",51)
 	~ 
 	THEN REPLY @0 /* ~Captain Corwin? I can think of no better companion.~ */
-	EXTERN ~BDSCHAEL~ LCA283
+	EXTERN ~BDSCHAEL~ XAA283
 END

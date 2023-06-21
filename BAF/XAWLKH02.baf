@@ -1,0 +1,11 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ClearAllActions()
+		LeaveAreaLUA("XAKIDNAP","",[375.310],NE)
+		ActionOverride("XACORWIN",LeaveAreaLUA("XAKIDNAP","",[420.266],NW))
+		SetGlobal("XA_RohmaKidnapped", "GLOBAL", 1)
+		StartCutScene("XAKIDNAP")
+END

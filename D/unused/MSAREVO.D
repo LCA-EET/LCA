@@ -8,7 +8,7 @@
 
 ADD_TRANS_TRIGGER SAREVO 6
 ~
-	!Global("LCA_Override", "Global", 1)
+	!Global("XA_Override", "Global", 1)
 ~
 DO 1
 
@@ -20,5 +20,5 @@ EXTEND_BOTTOM SAREVO 6
 	DO ~
 		SetGlobal("EECorwSarevDukes","GLOBAL",1)
 	~ 
-	EXTERN ~BDCORWIJ~ LCA496
+	EXTERN ~BDCORWIJ~ XAA496
 END

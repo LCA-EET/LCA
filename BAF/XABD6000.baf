@@ -1,0 +1,11 @@
+IF
+	Global("XA_Override", "GLOBAL", 1)
+	!Global("XA_BD6000_DialogSwap", "GLOBAL", 0)
+	InMyArea("bdschae2")
+	InMyArea("bdbence")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BD6000_DialogSwap", "GLOBAL", 1)
+		ActionOverride("bdbence", SetDialog("XABDBENC"))
+		ActionOverride("bdschae2", SetDialog("XABDSCH2"))
+END

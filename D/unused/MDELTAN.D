@@ -9,7 +9,7 @@
 
 ADD_TRANS_TRIGGER DELTAN 0
 ~
-	!Global("LCA_Override", "Global", 1)
+	!Global("XA_Override", "Global", 1)
 ~
 DO 3
 
@@ -21,5 +21,5 @@ EXTEND_BOTTOM DELTAN 0
 	DO ~
 		SetGlobal("EECorVsIT","GLOBAL",1)
 	~ 
-	EXTERN ~BDCORWIJ~ LCA463
+	EXTERN ~BDCORWIJ~ XAA463
 END

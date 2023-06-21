@@ -1,0 +1,58 @@
+IF 
+	!Global("XA_ChangeClass", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		ChangeClass(Myself, 0)
+		SetGlobal("XA_ChangeClass", "LOCALS", 1)
+END
+
+IF
+	OR(2)
+		Global("XA_SarevokHostile", "GLOBAL", 1)
+		HPPercentLT(Myself, 100)
+	!Global("XA_RunAway", "LOCALS", 1)
+THEN
+	RESPONSE #10
+		SetGlobal("XA_RunAway", "LOCALS", 1)
+		DisplayStringHead(Myself, ~Eek!~)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("XA_RunAway", "LOCALS", 1)
+		DisplayStringHead(Myself, ~Oh no!~)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("XA_RunAway", "LOCALS", 1)
+		DisplayStringHead(Myself, ~AAH!~)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("XA_RunAway", "LOCALS", 1)
+		DisplayStringHead(Myself, ~Get out of my way!~)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("XA_RunAway", "LOCALS", 1)
+		DisplayStringHead(Myself, ~Run!~)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("XA_RunAway", "LOCALS", 1)
+		DisplayStringHead(Myself, ~Clear the square!~)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("XA_RunAway", "LOCALS", 1)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("XA_RunAway", "LOCALS", 1)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("XA_RunAway", "LOCALS", 1)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("XA_RunAway", "LOCALS", 1)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("XA_RunAway", "LOCALS", 1)
+		EscapeArea()
+	RESPONSE #10
+		SetGlobal("XA_RunAway", "LOCALS", 1)
+		EscapeArea()
+END
+	

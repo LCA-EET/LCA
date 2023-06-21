@@ -1,0 +1,80 @@
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("FLAME4")
+THEN
+	RESPONSE #100
+		ActionOverride("FLAME4", DestroySelf())
+		Continue()
+END
+
+IF
+	!Global("XA_CellSpyCreated", "BG0607", 1)
+	Global("XA_ReturnToBG", "GLOBAL", 1)	
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CellSpyCreated", "BG0607", 1)
+		CreateCreature("XACELL", [330.440], SEE)
+		Continue()
+END
+
+IF 
+	Global("XA_VirgilInCustody", "GLOBAL", 1)
+	!Global("XA_VirgiXAreated_0607", "BG0607", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_VirgiXAreated_0607", "BG0607", 1)
+		CreateCreature("XAVIRGIL", [400.340], SSW)
+		Continue()
+END
+
+/*
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Dead("Vai")
+	!Global("XA_VaiCreated", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("XAVAI",[961.693], SE)
+		SetGlobal("XA_VaiCreated", "GLOBAL", 1)
+		Continue()
+END
+*/
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("Neb")
+THEN
+	RESPONSE #100
+		ActionOverride("Neb", DestroySelf())
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("BENJY")
+THEN
+	RESPONSE #100
+		ActionOverride("BENJY", DestroySelf())
+		Continue()
+END
+
+
+IF
+	!InMyArea("XABENCE")
+	Global("XA_DukesDebriefed", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("XABENCE",[834.745], SE)
+		Continue()
+END
+
+IF 
+	InMyArea("XABENCE")
+	Global("XA_DukesDebriefed", "GLOBAL", 1)
+	!Global("XA_MovedBence0607", "BG0607", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_MovedBence0607", "BG0607", 1)
+		ActionOverride("XABENCE", JumpToPoint([834.735]))
+		Continue()
+END

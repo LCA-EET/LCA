@@ -1,0 +1,22 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneID("Vai")
+		//[445.1100]
+		CreateCreature("XAVAI2", [445.1100], N)
+		Wait(1)
+		ActionOverride("XAVAI2", FaceObject("Vai"))
+		Wait(1)
+		DisplayStringHead("XAVAI2", ~Officer Vai.~)
+		Wait(1)
+		FaceObject("XAVAI2")
+		Wait(1)
+		DisplayStringHead("XAVAI2", ~New orders from Captain Corwin.~)
+		Wait(2)
+		ActionOverride("XAVAI2", MoveToPoint([480.980]))
+		Wait(2)
+		ClearAllActions()
+		SetGlobal("XA_VaiExit", "GLOBAL", 1)
+		StartDialog("VAI", Player1)
+END

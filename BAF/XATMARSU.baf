@@ -1,0 +1,25 @@
+IF
+	Global("XA_TM_ArcheryChallenge", "GLOBAL", 1)
+	!Global("XA_TM_ArcheryTimerInit", "GLOBAL", 1)
+	!Dead("celogan")
+	!Dead("trhmer01")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_TM_ArcheryTimerInit", "GLOBAL", 1)
+		SetGlobalTimer("XA_TM_ArcheryTimer", "GLOBAL", ONE_ROUND)
+END
+
+IF
+	Global("XA_TM_ArcheryChallenge", "GLOBAL", 1)
+	Global("XA_TM_ArcheryTimerInit", "GLOBAL", 1)
+	GlobalTimerExpired("XA_TM_ArcheryTimer", "GLOBAL")
+	!Dead("trhmer01")
+	!Dead("celogan")
+THEN
+	RESPONSE #50
+		SetGlobalTimer("XA_TM_ArcheryTimer", "GLOBAL", ONE_ROUND)
+		DisplayStringHead("XATMARSU", @0)
+	RESPONSE #50
+		SetGlobalTimer("XA_TM_ArcheryTimer", "GLOBAL", ONE_ROUND)
+		DisplayStringHead("XATMARSU", @1)
+END

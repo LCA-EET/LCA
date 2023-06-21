@@ -8,7 +8,7 @@
 
 ADD_TRANS_TRIGGER HARBOR 9
 ~
-	!Global("LCA_Override", "Global", 1)
+	!Global("XA_Override", "Global", 1)
 ~
 DO 2
 
@@ -20,11 +20,11 @@ EXTEND_BOTTOM HARBOR 9
 	DO ~
 		SetGlobal("EECorwRescEltanHarb","GLOBAL",1)
 	~ 
-	EXTERN ~BDCORWIJ~ LCA491
+	EXTERN ~BDCORWIJ~ XAA491
 END
 
 APPEND HARBOR
-	IF ~~ THEN BEGIN LCA14
+	IF ~~ THEN BEGIN XAA14
 		SAY @0 /* ~He'll be at the safest place this town has these days and in the best of care, worry not for him, Captain Corwin. All your effort now needs to be to stop Sarevok. We pray for you - and for <CHARNAME>.~ */
 		IF ~  
 			!Global("TalkedToPang","GLOBAL",1)

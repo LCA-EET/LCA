@@ -9,13 +9,13 @@
 
 ADD_TRANS_TRIGGER BDCORWIN 6
 ~
-	!Global("LCA_Override", "Global", 1)
+	!Global("XA_Override", "Global", 1)
 ~
 DO 5
 
 ADD_TRANS_TRIGGER BDCORWIN 60
 ~
-	!Global("LCA_Override", "Global", 1)
+	!Global("XA_Override", "Global", 1)
 ~
 
 EXTEND_BOTTOM BDCORWIN 6
@@ -31,44 +31,44 @@ EXTEND_BOTTOM BDCORWIN 60
 	DO ~
 		SetGlobal("EECorwinScar","Global",2)
 	~ 
-	GOTO LCA62
+	GOTO XAA62
   
 	IF ~~ THEN REPLY @14 /* ~These are strange times, Captain Corwin. I have learned to listen first and judge afterwards.~*/ 
 	DO ~
 		SetGlobal("EECorwinScar","Global",2)
 	~ 
-	GOTO LCA62
+	GOTO XAA62
   
 	IF ~~ THEN REPLY @1 /* ~I always have time to listen to an attractive woman, in her uniform or out of it.~ */ 
-	GOTO LCA61
+	GOTO XAA61
 END
 
 APPEND BDCORWIN
-	IF ~~ THEN BEGIN LCA61
+	IF ~~ THEN BEGIN XAA61
 		SAY @7 /* ~I don't care for your glib motifs as long as you listen...~ */
 		
-		IF ~~ THEN GOTO LCA62
+		IF ~~ THEN GOTO XAA62
 	END
 	
-	IF ~~ THEN BEGIN LCA62 // from: 61.0 60.2 60.0
+	IF ~~ THEN BEGIN XAA62 // from: 61.0 60.2 60.0
 		SAY @2 /* ~It's not easy for me to admit, but these are troubled times, and Commander Scar and I have reason to suspect that we cannot trust certain individuals within our ranks.~ */
-		IF ~~ THEN GOTO LCA63
+		IF ~~ THEN GOTO XAA63
 	END
 	
-	IF ~~ THEN BEGIN LCA63 // from: 62.0
+	IF ~~ THEN BEGIN XAA63 // from: 62.0
 		SAY @3/* ~I'm not referring only to the Iron Crisis. There are greater things afoot. Duke Eltan trusts Scar, and he trusts me. It was his idea to seek the assistance of trustworthy and competent candidates who can venture where we cannot, at least officially.~ */
   
 		IF ~~ THEN REPLY @8 /* ~Our situations are similar - for some reason, assassins have been sent after me, I believe by the same people that are behind the Iron Crisis. Some assistance would be welcome.~ */ 
-		GOTO LCA64
+		GOTO XAA64
   
 		IF ~~ THEN REPLY @9 /* ~I have my own reasons to pursue the issues of Baldur's Gate. The less people I hardly know are involved, the better.~ */ 
-		GOTO LCA64
+		GOTO XAA64
 		
 		IF ~~ THEN REPLY @10 /* ~Scar was right to trust us, and to provide us with someone who has some knowledge of what has been going on in the city.~ */ 
-		GOTO LCA64
+		GOTO XAA64
 	END
 	
-	IF ~~ THEN BEGIN LCA64 // from: 63.3 63.2 63.1 63.0
+	IF ~~ THEN BEGIN XAA64 // from: 63.3 63.2 63.1 63.0
 		SAY @5 /* ~Listen, <CHARNAME>. My loyalty to this city and its people is my highest goal. It's why joined the Flaming Fist and confide in Duke Eltan. The people threatening the city are more than likely the same group that you have been battling up and down the Sword Coast. We would be well served to work together against this threat.~ */
 
 		IF ~~ THEN REPLY @11 /* ~I am open to us working together, though I must warn you. If you betray me, Corwin, the consequences will be severe.~   */ 

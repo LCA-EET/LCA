@@ -1,0 +1,12 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		//Jail
+		CutSceneId(Player1)
+		MoveToObject("XATRBENO")
+		Wait(3)
+		DisplayStringHead(Myself, ~You tie Beno's hands and feet with the rope that Skie used to climb down from the roof. The Flaming Fist will handle the rest.~)
+		Wait(5)
+		StartCutscene("XAUCEND1")
+END

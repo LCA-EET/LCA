@@ -1,0 +1,18 @@
+IF
+	OR(2)
+		InMyArea("SLEEPMH")
+		InMyArea("SLEEPFH")
+THEN
+	RESPONSE #100
+		ActionOverride("SLEEPMH", DestroySelf())
+		ActionOverride("SLEEPFH", DestroySelf())
+		Continue()
+END
+
+IF
+	True()
+	Global("XA_CorwinFamilyTalk", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		NoAction()
+END

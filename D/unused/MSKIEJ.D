@@ -8,11 +8,11 @@
 
 ADD_TRANS_TRIGGER SKIEJ 14
 ~
-	!Global("LCA_Override", "Global", 1)
+	!Global("XA_Override", "Global", 1)
 ~
 DO 2
 
 EXTEND_BOTTOM SKIEJ 14
 	IF ~~ THEN 
-	EXTERN ~BDCORWIJ~ LCA495
+	EXTERN ~BDCORWIJ~ XAA495
 END

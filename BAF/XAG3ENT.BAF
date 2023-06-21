@@ -1,0 +1,14 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneID(Player1)
+		FadeToColor([30.0],0)
+		SetGlobal("XA_G3_Intro", "GLOBAL", 1)
+		Wait(2)
+		LeaveAreaLUAPanic("XAG3", "", [1086.1416], NW)
+		LeaveAreaLUA("XAG3", "", [1086.1416], NW)
+		FadeFromColor([30.0],0)
+		Wait(1)
+		EndCutSceneMode()
+END
