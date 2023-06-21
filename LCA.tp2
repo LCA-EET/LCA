@@ -26,7 +26,7 @@ The dialog from the revised sewer cutscene at the end of SoD used with permissio
 Thanks again for allowing me to use some of your work!
 
 */
-BACKUP ~LCA/backup~
+BACKUP ~LCA/BACKUP~
 
 AUTHOR ~Daniel Valle, dan@danielvalle.net~
 
@@ -36,7 +36,7 @@ AUTHOR ~Daniel Valle, dan@danielvalle.net~
 //Link to GitHub: https://github.com/XAA-EET/XAA
 
 AUTO_TRA ~LCA/TRA/%s~ //automatically associate .tras to their respective .D files
-LANGUAGE ~English~ ~english~ ~LCA/Tra/english/XALCAEET.tra~
+LANGUAGE ~English~ ~english~ ~LCA/TRA/ENGLISH/XALCAEET.TRA~
 
 BEGIN
 @011 /* ~Love Conquers All (LCA)~ */
@@ -56,7 +56,7 @@ COPY ~LCA/WAV/XAAPPL04.WAV~ ~override~
 COPY ~LCA/WAV/XAJEER01.WAV~ ~override~
 COPY ~LCA/WAV/XABOWSHT.WAV~ ~override~
 
-//Most Voiced Lines Removed - for additional AI-Voiced Lines, Install the XAA_VoicePack Mod
+//Most Voiced Lines Removed - for additional AI-Voiced Lines, Install the LCA_VoicePack Mod
 
 COPY ~LCA/WAV/XADINNER.WAV~ ~override~
 COPY ~LCA/WAV/XADINROM.WAV~ ~override~
