@@ -1,8 +1,0 @@
-IF
-	Global("LCA_ArrivedInUndercity", "GLOBAL", 2)
-THEN
-	RESPONSE #100
-		SetGlobal("LCA_ArrivedInUndercity", "GLOBAL", 3)
-		Wait(1)
-		ActionOverride("LCSKIE", StartDialog("LCSKIE", Player1))
-END

@@ -1,6 +1,0 @@
-IF
-	Global("LCA_ReturnToBG", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		DestroySelf()
-END

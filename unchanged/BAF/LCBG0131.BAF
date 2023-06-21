@@ -1,7 +1,0 @@
-IF 
-	GlobalGT("LCA_ReturnToBG", "GLOBAL", 0)
-	InMyArea("FORTHEL")
-THEN
-	RESPONSE #100
-		ActionOverride("FORTHEL", DestroySelf())
-END

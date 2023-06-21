@@ -1,9 +1,0 @@
-IF 
-	True()
-THEN
-	RESPONSE #100
-		CutSceneId(Player1)
-		DisplayStringHead("LCCORWIN", ~B~)
-		//Corwin kills Beno
-		EndCutSceneMode()
-END

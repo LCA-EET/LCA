@@ -1,9 +1,0 @@
-IF 
-	True()
-THEN
-	RESPONSE #100
-		CutSceneId(Player1)
-		DisplayStringHead("LCCORWIN", ~C~)
-		//Beno is taken into custody
-		EndCutSceneMode()
-END

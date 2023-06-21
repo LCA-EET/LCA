@@ -1,8 +1,0 @@
-BEGIN ~LCCOMM~
-
-IF ~~ THEN BEGIN LCA_Shout
-	SAY @0 /* ~Kill <PRO_HIMHER>!~*/
-	
-	IF ~~ THEN 
-	EXIT
-END

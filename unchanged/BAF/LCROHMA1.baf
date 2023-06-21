@@ -1,7 +1,0 @@
-IF 
-	AreaCheck("BG1316")
-	Global("LCA_CorwinFamilyTalk", "GLOBAL", 3)
-THEN
-	RESPONSE #100
-		RandomWalk()
-END

@@ -1,7 +1,0 @@
-IF
-	AreaCheck("LCG1")
-THEN
-	RESPONSE #100
-		ChangeAIScript("",OVERRIDE)
-		ChangeAIScript("LCCRTYRD",CLASS)
-END

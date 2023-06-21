@@ -1,6 +1,0 @@
-IF
-	Die()
-THEN
-	RESPONSE #100
-		IncrementGlobal("LCA_CoalitionAlive", "GLOBAL", -1)
-END

@@ -1,7 +1,0 @@
-IF
-	Global("LCA_TrapActivated", "LOCALS", 0)
-THEN
-	RESPONSE #100
-		SetGlobal("LCA_TrapActivated", "LOCALS", 1)
-		ForceSpell(LastTrigger, TRAP_LIGHTNING_BOLT)
-END
