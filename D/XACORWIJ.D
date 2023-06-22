@@ -219,6 +219,15 @@ IF ~~ THEN BEGIN XA_CorwinPregnantInitial_END
 END
 //}
 
+//{ Dialog J-73 Continued
+IF ~~ THEN BEGIN XA_DeliverTwoLetters
+	SAY @1589 /* ~Two letters. One to the Dukes, and one to my father. I need to let my family know that we're fine.~*/
+	
+	IF ~~ THEN
+	EXTERN XAHAMZA XA_DeliverTwoLetters
+END
+//}
+
 //{ Dialog J-72
 IF ~
 	Global("XA_CorwinPregnant", "GLOBAL", 4)
