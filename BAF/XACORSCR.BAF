@@ -726,6 +726,36 @@ END
 
 //{ Event Checks
 
+	//{ Entered Amkethran
+	IF
+		InParty(Myself)
+		AreaCheck("AR5500")
+		!Global("XA_AmkethranTimerSet", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_AmkethranTimer", "GLOBAL", ONE_ROUND)
+			SetGlobal("XA_AmkethranTimerSet", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	
+	IF
+		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		GlobalTimerExpired("XA_AmkethranTimer", "GLOBAL", ONE_ROUND)
+		GlobalLT("XA_MessageToBG", "GLOBAL", 1)
+		See(Player1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			PlaySong(142)
+			SetGlobal("XA_MessageToBG", "GLOBAL", 1)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+	
 	//{ Aerie Pregnant Check
 	IF
 		GlobalGT("babytalk", "GLOBAL", 0)
@@ -5151,6 +5181,38 @@ THEN
 		Continue()
 END
 
-
+//{ Check for old SoD items
+IF 
+	InParty(Myself)
+	OR(2)
+		!Global("XA_SoDItemCheckTimerSet", "GLOBAL", 1)
+		GlobalTimerExpired("XA_SoDItemCheckTimer", "GLOBAL")
+	OR(2)
+		PartyHasItem("BDBOW06") // Corwin's Bow (SoD)
+		PartyHasItem("BDCHAN05") // Corwin's Armor (SoD)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_SoDItemCheckTimer", "GLOBAL", ONE_DAY)
+		SetGlobal("XA_SoDItemCheckTimerSet", "GLOBAL", 1)
+		
+		ActionOverride(Player1, DestroyItem("BDBOW06"))
+		ActionOverride(Player2, DestroyItem("BDBOW06"))
+		ActionOverride(Player3, DestroyItem("BDBOW06"))
+		ActionOverride(Player4, DestroyItem("BDBOW06"))
+		ActionOverride(Player5, DestroyItem("BDBOW06"))
+		ActionOverride(Player6, DestroyItem("BDBOW06"))
+		
+		ActionOverride(Player1, DestroyItem("BDCHAN05"))
+		ActionOverride(Player2, DestroyItem("BDCHAN05"))
+		ActionOverride(Player3, DestroyItem("BDCHAN05"))
+		ActionOverride(Player4, DestroyItem("BDCHAN05"))
+		ActionOverride(Player5, DestroyItem("BDCHAN05"))
+		ActionOverride(Player6, DestroyItem("BDCHAN05"))
+		SetInterrupt(TRUE)
+		
+		Continue()
+END
+//}
 
 

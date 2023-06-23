@@ -74,6 +74,112 @@ IF ~~ THEN BEGIN XA_StartDucaXAS
 END
 //} #endregion
 
+//{ Dialog J-79
+IF ~
+	Global("XA_MessageToBG", "GLOBAL", 1)
+	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
+~ THEN BEGIN XA_AmkethranCourier_Pregnant
+	SAY @1596 /* ~Listen — we need to provide a status update to the Dukes. They'll want to know that the fire giants have been dealt with, and they'll need my assessment of the threat posed by the remaining members of the Five. I also need to let my family know that we're fine ... and that I'm with child.~*/
+	
+	IF ~~ THEN REPLY @1597 /* ~Of course, love.~ */
+	DO ~
+		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
+		SetGlobal("XA_NeedCourier", "GLOBAL", 1)
+	~
+	GOTO XA_AmkethranCourier_END
+	
+	IF ~~ THEN REPLY @1593 /* ~What do you suggest we do?~ */
+	DO ~
+		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
+		SetGlobal("XA_NeedCourier", "GLOBAL", 1)
+	~
+	GOTO XA_AmkethranCourier_END
+	
+	IF ~~ THEN REPLY @1598 /* ~How do you think your father will take the news? And Rohma?~ */
+	DO ~
+		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
+		SetGlobal("XA_NeedCourier", "GLOBAL", 1)
+	~
+	GOTO XA_AudamarCorwinPregnant
+END
+
+IF ~~ THEN BEGIN XA_AudamarCorwinPregnant
+	SAY @1599 /* ~Rohma will be thrilled, and I know she'll be a wonderful big sister to our baby. As for my father ... he'll be happy to have another grandchild, certainly, but he's going to have some stern words for me when I get back.~   */
+	
+	IF ~~ THEN REPLY @1600 /* ~What do you suggest we do, love?~*/
+	GOTO XA_AmkethranCourier_END
+END
+//}
+
+//{ Dialog J-78
+IF ~
+	Global("XA_MessageToBG", "GLOBAL", 1)
+	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	GlobalLT("XA_CorwinPregnant", "GLOBAL", 3)
+~ THEN BEGIN XA_AmkethranCourier_Romance
+	SAY @1595 /* ~Listen — we need to provide a status update to the Dukes. They'll want to know that the fire giants have been dealt with, and they'll need an assessment of the threat posed by the remaining members of the Five. I also need to let my family know that we're fine ...~ */
+	
+	IF ~~ THEN REPLY @1597 /* ~Of course, love.~ */
+	DO ~
+		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
+		SetGlobal("XA_NeedCourier", "GLOBAL", 1)
+	~
+	GOTO XA_AmkethranCourier_END
+	
+	IF ~~ THEN REPLY @1593 /* ~What do you suggest we do?~ */
+	DO ~
+		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
+		SetGlobal("XA_NeedCourier", "GLOBAL", 1)
+	~
+	GOTO XA_AmkethranCourier_END
+END
+//}
+
+//{ Dialog J-77
+IF ~
+	Global("XA_MessageToBG", "GLOBAL", 1)
+~ THEN BEGIN XA_AmkethranCourier
+	SAY @1595 /* ~Listen — we need to provide a status update to the Dukes. They'll want to know that the fire giants have been dealt with, and they'll need an assessment of the threat posed by the remaining members of the Five. I also need to let my family know that we're fine ...~ */
+	
+	IF ~~ THEN REPLY @1592 /* ~Of course.~ */
+	DO ~
+		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
+		SetGlobal("XA_NeedCourier", "GLOBAL", 1)
+	~
+	GOTO XA_AmkethranCourier_END
+	
+	IF ~~ THEN REPLY @1593 /* ~What do you suggest we do?~ */
+	DO ~
+		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
+		SetGlobal("XA_NeedCourier", "GLOBAL", 1)
+	~
+	GOTO XA_AmkethranCourier_END
+END
+//}
+
+//{ Common to Dialogs 77 through 79
+IF ~~ THEN BEGIN XA_AmkethranCourier_END
+	SAY @1594 /* ~This town might have a message courier we can use. Let's have a look around.~*/
+	
+	IF ~
+		GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
+	~ THEN REPLY @403 /* Right */
+	DO ~
+		AddJournalEntry(@1602, INFO)
+	~
+	EXIT
+	
+	IF ~
+		!GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
+	~ THEN REPLY @403 /* Right */
+	DO ~
+		AddJournalEntry(@1601, INFO)
+	~
+	EXIT
+END
+//}
+
 //{ Dialog J-76
 IF ~
 	Global("XA_CorwinParentAdvice", "GLOBAL", 2)
@@ -219,14 +325,33 @@ IF ~~ THEN BEGIN XA_CorwinPregnantInitial_END
 END
 //}
 
-//{ Dialog J-73 Continued
+
 IF ~~ THEN BEGIN XA_DeliverTwoLetters
 	SAY @1589 /* ~Two letters. One to the Dukes, and one to my father. I need to let my family know that we're fine.~*/
 	
 	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_NeedLettersDelivered", "GLOBAL", 2)
+	~
 	EXTERN XAHAMZA XA_DeliverTwoLetters
 END
-//}
+
+IF ~~ THEN BEGIN XA_DeliverTwoLetters2
+	SAY @1589 /* ~Two letters. One to the Dukes, and one to my father. I need to let my family know that we're fine.~*/
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_NeedLettersDelivered", "GLOBAL", 2)
+	~
+	EXTERN XAHAMZA XA_DeliverToBG
+END
+
+IF ~~ THEN BEGIN XA_DeliverAdditional
+	SAY @1590 /* ~I need an additional letter delivered ... My family needs to know that we're fine.~ */
+	
+	IF ~~ THEN
+	EXTERN XAHAMZA XA_DeliverAdditional
+END
 
 //{ Dialog J-72
 IF ~
@@ -7659,6 +7784,7 @@ IF ~~ THEN BEGIN XA_AlythReport
 	IF ~~ THEN
 	EXTERN XAALYTH XA_ReportToFF
 END
+
 CHAIN 
 	IF ~~ THEN XACORWIJ XA_CorwinTiannaGoodbyeChain
 		@854 /* ~I hope you learned something from this Tianna. Next time, you might not be so lucky.~*/

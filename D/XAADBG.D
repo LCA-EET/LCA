@@ -812,6 +812,42 @@ IF ~~ THEN BEGIN XA_XACORWIJ_Test
 		SetGlobal("XA_CorwinParentAdvice", "GLOBAL", 1)
 	~
 	EXIT
+	
+	IF ~~ THEN REPLY @519 /* ~Dialog J-77~ */
+	DO ~
+		SetGlobal("XA_MessageToBG", "GLOBAL", 1)
+		SetGlobal("XA_CorwinPregnant", "GLOBAL", 0)
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 0)
+		Wait(1)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @520 /* ~Dialog J-78~ */
+	DO ~
+		SetGlobal("XA_MessageToBG", "GLOBAL", 1)
+		SetGlobal("XA_CorwinPregnant", "GLOBAL", 0)
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Wait(1)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @521 /* ~Dialog J-79~ */
+	DO ~
+		SetGlobal("XA_MessageToBG", "GLOBAL", 1)
+		SetGlobal("XA_CorwinPregnant", "GLOBAL", 3)
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Wait(1)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @522 /* ~Dialog J-77 Init from Script~*/
+	DO ~
+		SetGlobalTimer("XA_AmkethranTimer", "GLOBAL", ONE_ROUND)
+	~
+	EXIT
 
 	IF ~~ THEN REPLY @26
 	GOTO XA_MainMenu
@@ -1619,6 +1655,13 @@ END
 
 IF ~~ THEN BEGIN XA_TestInteraction
 	SAY @280
+	
+	IF ~~ THEN REPLY @518
+	DO ~
+		CreateCreature("XAHAMZA", [-1.-1], N)
+		Wait(1)
+	~
+	EXIT
 	
 	IF ~~ THEN REPLY @326
 	DO ~

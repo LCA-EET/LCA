@@ -1,14 +1,106 @@
 BEGIN ~XAHAMZA~
 
-//{ Dialog NPC-00
+//{ Dialog XAHAMZA-03
 IF ~
-	Global("XA_HamzaIntro", "LOCALS", 1)
-	!Global("XA_WillDeliver", "LOCALS", 1)
-~ THEN BEGIN XA_IntroDone
-	SAY @
+	Global("XA_PaidToDeliver", "GLOBAL", 2)
+~ THEN BEGIN XA_PaidAlready_2
+	SAY @34 /* ~Don't worry — your letters will be delivered. I'll be leaving for the Sword Coast on the morrow.~ */
+	
+	IF ~~ THEN EXIT
 END
 //}
-//{ Dialog NPC-01
+
+//{ Dialog XAHAMZA-02
+IF ~
+	Global("XA_NeedLettersDelivered", "GLOBAL", 1)
+	GlobalGT("XA_PaidToDeliver", "GLOBAL", 0)
+~ THEN BEGIN XA_PaidAlready_1
+	SAY @33 /* ~Don't worry — your letter will be delivered. I'll be leaving for the Sword Coast on the morrow.~ */
+	
+	IF ~~ THEN EXIT
+	
+	IF ~
+		!IsGabber("XACORWIN")
+		IsValidForPartyDialogue("XACORWIN")
+	~ THEN 
+	EXTERN XACORWIJ XA_DeliverAdditional
+
+	IF ~
+		Global("XA_NeedLettersDelivered", "GLOBAL", 1)
+		IsGabber("XACORWIN")
+	~ THEN REPLY @37 /* ~I need an additional letter delivered ... My family needs to know that we're fine.~ */
+	DO ~
+		SetGlobal("XA_NeedLettersDelivered", "GLOBAL", 2)
+	~
+	GOTO XA_DeliverAdditional
+END
+//}
+
+//{ Dialog XAHAMZA-00
+IF ~
+	Global("XA_HamzaIntro", "LOCALS", 1)
+~ THEN BEGIN XA_IntroDone
+	SAY @20 /* Yes? */
+	
+	IF ~
+		!IsGabber("XACORWIN")
+		!IsValidForPartyDialogue("XACORWIN")
+		Global("XA_NeedLettersDelivered", "GLOBAL", 1)
+	~ THEN REPLY @31 /* ~I need a letter delivered.~*/
+	GOTO XA_DeliverToBG
+	
+	IF ~
+		!IsGabber("XACORWIN")
+		IsValidForPartyDialogue("XACORWIN")
+		Global("XA_NeedLettersDelivered", "GLOBAL", 1)
+	~ THEN REPLY @31 /* ~I need a letter delivered.~ */
+	EXTERN XACORWIJ XA_DeliverTwoLetters2
+	
+	IF ~
+		IsGabber("XACORWIN")
+		Global("XA_NeedLettersDelivered", "GLOBAL", 2)
+	~ THEN REPLY @30 /* ~We need two letters delivered.~ */
+	GOTO XA_DeliverToBG
+	
+	IF ~
+		!IsGabber("XACORWIN")
+		!IsValidForPartyDialogue("XACORWIN")
+		GlobalLT("XA_NeedLettersDelivered", "GLOBAL", 1)
+	~ THEN REPLY @9 /* ~I need to deliver a letter to Baldur's Gate.~ */
+	DO ~
+		SetGlobal("XA_NeedLettersDelivered", "GLOBAL", 1)
+	~
+	GOTO XA_DeliverLetter
+	
+	IF ~
+		!IsGabber("XACORWIN")
+		IsValidForPartyDialogue("XACORWIN")
+		GlobalLT("XA_NeedLettersDelivered", "GLOBAL", 1)
+	~ THEN REPLY @9 /* ~I need to deliver a letter to Baldur's Gate.~ */
+	EXTERN XACORWIJ XA_DeliverTwoLetters
+	
+	IF ~
+		IsGabber("XACORWIN")
+		GlobalLT("XA_NeedLettersDelivered", "GLOBAL", 1)
+	~ THEN REPLY @14 /* ~We need to have two letters delivered to Baldur's Gate.~*/
+	DO ~
+		SetGlobal("XA_NeedLettersDelivered", "GLOBAL", 2)
+	~
+	GOTO XA_DeliverTwoLetters
+	
+	IF ~
+		!Global("XA_CourierDangerous", "LOCALS", 1)
+	~ THEN REPLY @18 /* ~Mail courier? That's a dangerous occupation these days, isn't it?~ */
+	DO ~
+		SetGlobal("XA_CourierDangerous", "LOCALS", 1)
+	~
+	GOTO XA_DangerousOccupation 
+	
+	IF ~~ THEN REPLY @32 /* ~I don't need anything right now.~ */
+	EXIT
+END
+//}
+//{ Dialog XAHAMZA-01
 IF ~
 	!Global("XA_HamzaIntro", "LOCALS", 1)
 ~ THEN BEGIN XA_Intro
@@ -30,16 +122,47 @@ IF ~
 END
 //}
 
+IF ~~ THEN BEGIN XA_DeliverAdditional
+	SAY @36 /* ~To Baldur's Gate, yes? The cost is 300 gold.~ */
+	
+	IF ~
+		PartyGoldGT(299)
+	~ THEN REPLY @22 /* ~Here (Hand over 300 gold.)~ */
+	DO ~
+		TakePartyGold(300)
+		SetGlobal("XA_PaidToDeliver", "GLOBAL", 2)
+	~
+	GOTO XA_ThankYou_One
+	
+	IF ~
+		!PartyGoldGT(299)
+		Global("XA_NeedLettersDelivered", "GLOBAL", 2)
+	~ THEN REPLY @25 /* ~I'm afraid I don't have enough money.~ */
+	GOTO XA_NotEnoughMoney
+END
+
+IF ~~ THEN BEGIN XA_DeliverToBG
+	SAY @29 /* ~Yes, to Baldur's Gate. I remember.~ */
+	
+	IF ~~ THEN 
+	GOTO XA_HowMuch
+END
+
 IF ~~ THEN BEGIN XA_WhoAreYou
 	SAY @11 /* ~My name is Hamza. I'm the mail courier for this region. And you are?~*/
 	
 	IF ~
-		!Gabber("XACORWIN")
+		!IsGabber("XACORWIN")
 		Global("XA_NeedCourier", "GLOBAL", 1)
-	~ THEN REPLY @12 /* ~I'm <GABBER> ... you offer courier services, yes? We need to have a letter delivered to Baldur's Gate.~ */
+	~ THEN REPLY @12 /* ~I'm <IsGabber> ... you offer courier services, yes? We need to have a letter delivered to Baldur's Gate.~ */
 	EXTERN XACORWIJ XA_DeliverTwoLetters
 	
-	IF ~~ THEN REPLY @18 /* ~Mail courier? That's a dangerous occupation these days, isn't it?~ */
+	IF ~
+		!Global("XA_CourierDangerous", "LOCALS", 1)
+	~ THEN REPLY @18 /* ~Mail courier? That's a dangerous occupation these days, isn't it?~ */
+	DO ~
+		SetGlobal("XA_CourierDangerous", "LOCALS", 1)
+	~
 	GOTO XA_DangerousOccupation
 END
 
@@ -54,20 +177,42 @@ IF ~~ THEN BEGIN XA_HeardAboutCourier
 	SAY @2 /* ~Yes, I'm Hamza. And yes, I do offer courier services.~ */
 	
 	IF ~
-		!Gabber("XACORWIN")
+		!IsGabber("XACORWIN")
+		!IsValidForPartyDialogue("XACORWIN")
+	~ THEN REPLY @9 /* ~I need to deliver a letter to Baldur's Gate.~ */
+	DO ~
+		SetGlobal("XA_NeedLettersDelivered", "GLOBAL", 1)
 	~
+	GOTO XA_DeliverLetter
 	
 	IF ~
-		Gabber("XACORWIN")
+		!IsGabber("XACORWIN")
+		IsValidForPartyDialogue("XACORWIN")
+	~ THEN REPLY @9 /* ~I need to deliver a letter to Baldur's Gate.~ */
+	EXTERN XACORWIJ XA_DeliverTwoLetters
+	
+	IF ~
+		IsGabber("XACORWIN")
 	~ THEN REPLY @14 /* ~We need to have two letters delivered to Baldur's Gate.~*/
+	DO ~
+		SetGlobal("XA_NeedLettersDelivered", "GLOBAL", 2)
+	~
 	GOTO XA_DeliverTwoLetters
+	
+	IF ~
+		!Global("XA_CourierDangerous", "LOCALS", 1)
+	~ THEN REPLY @18 /* ~Mail courier? That's a dangerous occupation these days, isn't it?~ */
+	DO ~
+		SetGlobal("XA_CourierDangerous", "LOCALS", 1)
+	~
+	GOTO XA_DangerousOccupation
 END
 
-IF ~~ THEN BEGIN XA_DeliverTwoLetters
-	SAY @3 /* ~Baldur's Gate, you say? Fortunately for you, I'm scheduled to make a run to the Sword Coast the morning after next. I can deliver your letters for a small incremental cost.~ */
+IF ~~ THEN BEGIN XA_DeliverLetter
+	SAY @21 /* ~Baldur's Gate, you say? Fortunately for you, I'm scheduled to make a run to the Sword Coast the morning after next. I can deliver your letter for a small incremental cost.~ */
 	
 	IF ~~ THEN REPLY @4 /* ~How much?~ */
-	GOTO 
+	GOTO XA_HowMuch
 	
 	IF ~
 		!Global("XA_HowLong", "LOCALS", 1)
@@ -76,6 +221,165 @@ IF ~~ THEN BEGIN XA_DeliverTwoLetters
 		SetGlobal("XA_HowLong", "LOCALS", 1)
 	~
 	GOTO XA_HowLong
+
+	IF ~
+		!Global("XA_CourierDangerous", "LOCALS", 1)
+	~ THEN REPLY @18 /* ~Mail courier? That's a dangerous occupation these days, isn't it?~ */
+	DO ~
+		SetGlobal("XA_CourierDangerous", "LOCALS", 1)
+	~
+	GOTO XA_DangerousOccupation
+END
+
+IF ~~ THEN BEGIN XA_HowMuch
+	SAY @5 /* ~The cost is 300 gold, per letter.~ */
+	
+	IF ~
+		PartyGoldGT(599)
+		Global("XA_NeedLettersDelivered", "GLOBAL", 2)
+	~ THEN REPLY @6 /* ~Here (Hand over 600 gold.)~ */
+	DO ~
+		TakePartyGold(600)
+		SetGlobal("XA_PaidToDeliver", "GLOBAL", 2)
+		SetGlobalTimer("XA_HamzaLeave", "GLOBAL", ONE_DAY)
+	~
+	GOTO XA_ThankYou_Two
+	
+	IF ~
+		!PartyGoldGT(599)
+		Global("XA_NeedLettersDelivered", "GLOBAL", 2)
+	~ THEN REPLY @25 /* ~I'm afraid I don't have enough money.~ */
+	DO ~
+		SetGlobalTimer("XA_HamzaLeave", "GLOBAL", ONE_DAY)
+	~
+	GOTO XA_NotEnoughMoney
+	
+	IF ~
+		PartyGoldGT(299)
+		Global("XA_NeedLettersDelivered", "GLOBAL", 1)
+	~ THEN REPLY @22 /* ~Here (Hand over 300 gold.)~ */
+	DO ~
+		TakePartyGold(300)
+		SetGlobal("XA_PaidToDeliver", "GLOBAL", 1)
+		SetGlobalTimer("XA_HamzaLeave", "GLOBAL", ONE_DAY)
+	~
+	GOTO XA_ThankYou_One
+	
+	IF ~
+		!PartyGoldGT(299)
+		Global("XA_NeedLettersDelivered", "GLOBAL", 1)
+	~ THEN REPLY @25 /* ~I'm afraid I don't have enough money.~ */
+	DO ~
+		SetGlobalTimer("XA_HamzaLeave", "GLOBAL", ONE_DAY)
+	~
+	GOTO XA_NotEnoughMoney
+	
+	IF ~~ THEN REPLY @10 /* ~That's outrageous! You're already planning to head to the Sword Coast. Why does it cost so much to deliver two extra letters?~ */
+	GOTO XA_ExorbitantPricing
+END
+
+IF ~~ THEN BEGIN XA_ExorbitantPricing
+	SAY @27 /* ~What do you want me to say? Hiring security isn't cheap these days.~ */
+	
+	= @28 /* ~So, do you want the letters delivered, or not?~ */
+	
+	IF ~
+		PartyGoldGT(599)
+		Global("XA_NeedLettersDelivered", "GLOBAL", 2)
+	~ THEN REPLY @6 /* ~Here (Hand over 600 gold.)~ */
+	DO ~
+		TakePartyGold(600)
+		SetGlobal("XA_PaidToDeliver", "GLOBAL", 2)
+		SetGlobalTimer("XA_HamzaLeave", "GLOBAL", ONE_DAY)
+	~
+	GOTO XA_ThankYou_Two
+	
+	IF ~
+		!PartyGoldGT(599)
+		Global("XA_NeedLettersDelivered", "GLOBAL", 2)
+	~ THEN REPLY @25 /* ~I'm afraid I don't have enough money.~ */
+	DO ~
+		SetGlobalTimer("XA_HamzaLeave", "GLOBAL", ONE_DAY)
+	~
+	GOTO XA_NotEnoughMoney
+	
+	IF ~
+		PartyGoldGT(299)
+		Global("XA_NeedLettersDelivered", "GLOBAL", 1)
+	~ THEN REPLY @22 /* ~Here (Hand over 300 gold.)~ */
+	DO ~
+		TakePartyGold(300)
+		SetGlobal("XA_PaidToDeliver", "GLOBAL", 1)
+		SetGlobalTimer("XA_HamzaLeave", "GLOBAL", ONE_DAY)
+	~
+	GOTO XA_ThankYou_One
+	
+	IF ~
+		!PartyGoldGT(299)
+		Global("XA_NeedLettersDelivered", "GLOBAL", 1)
+	~ THEN REPLY @25 /* ~I'm afraid I don't have enough money.~ */
+	DO ~
+		SetGlobalTimer("XA_HamzaLeave", "GLOBAL", ONE_DAY)
+	~
+	GOTO XA_NotEnoughMoney
+END
+
+IF ~~ THEN BEGIN XA_NotEnoughMoney
+	SAY @26 /* Return when you do. I'll be in town for the next day or so.~ */
+	
+	IF ~~ THEN 
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_ThankYou_One
+	SAY @24 /* ~Thank you. Here's a pad and paper. I'll take the letter and mailing address when you're ready...~*/
+	
+	IF ~~ THEN
+	DO ~
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		AddExperienceParty(25000)
+		StartCutSceneMode()
+		StartCutScene("XACSHAM1")
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_ThankYou_Two
+	SAY @23 /* ~Thank you. Here's a pad and paper. I'll take those letters and mailing addresses when you're ready...~*/
+	
+	IF ~~ THEN
+	DO ~
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
+		AddExperienceParty(50000)
+		StartCutSceneMode()
+		StartCutScene("XACSHAM2")
+	~
+	EXIT
+END
+
+
+
+IF ~~ THEN BEGIN XA_DeliverTwoLetters
+	SAY @3 /* ~Baldur's Gate, you say? Fortunately for you, I'm scheduled to make a run to the Sword Coast the morning after next. I can deliver your letters for a small incremental cost.~ */
+	
+	IF ~~ THEN REPLY @4 /* ~How much?~ */
+	GOTO XA_HowMuch
+	
+	IF ~
+		!Global("XA_HowLong", "LOCALS", 1)
+	~ THEN REPLY @7 /* ~How long do you think it will take to deliver our letters?~ */
+	DO ~
+		SetGlobal("XA_HowLong", "LOCALS", 1)
+	~
+	GOTO XA_HowLong
+	
+	IF ~
+		!Global("XA_CourierDangerous", "LOCALS", 1)
+	~ THEN REPLY @18 /* ~Mail courier? That's a dangerous occupation these days, isn't it?~ */
+	DO ~
+		SetGlobal("XA_CourierDangerous", "LOCALS", 1)
+	~
+	GOTO XA_DangerousOccupation
 END
 
 IF ~~ THEN BEGIN XA_HowLong
@@ -83,7 +387,14 @@ IF ~~ THEN BEGIN XA_HowLong
 	
 	= @15 /* ~But, with the roads as dangerous as they are, we may have to take a detour or two. Still it shouldn't add significant travel time.~  */
 	
-	IF ~~ THEN REPLY @16 /* ~I see.~*/
-	
 	IF ~~ THEN REPLY @17 /* ~So, how much will this cost me?~*/
+	GOTO XA_HowMuch
+	
+	IF ~
+		!Global("XA_CourierDangerous", "LOCALS", 1)
+	~ THEN REPLY @18 /* ~Mail courier? That's a dangerous occupation these days, isn't it?~ */
+	DO ~
+		SetGlobal("XA_CourierDangerous", "LOCALS", 1)
+	~
+	GOTO XA_DangerousOccupation
 END
