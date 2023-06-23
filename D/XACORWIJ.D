@@ -177,6 +177,27 @@ IF ~~ THEN BEGIN XA_AmkethranCourier_END
 		AddJournalEntry(@1601, INFO)
 	~
 	EXIT
+	
+	IF ~
+		GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
+		IsValidForPartyDialogue("Rasaad")
+		See("Rasaad")
+	~ THEN
+	DO ~
+		AddJournalEntry(@1602, INFO)
+	~
+	EXTERN RASAADJ XA_AmkethranCourier_END
+	
+	IF ~
+		!GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
+		IsValidForPartyDialogue("Rasaad")
+		See("Rasaad")
+	~ THEN
+	DO ~
+		AddJournalEntry(@1601, INFO)
+	~
+	EXTERN RASAADJ XA_AmkethranCourier_END
+	
 END
 //}
 

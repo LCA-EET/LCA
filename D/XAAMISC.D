@@ -8,6 +8,15 @@
 
 */
 
+APPEND RASAADJ
+	IF ~~ THEN BEGIN XA_AmkethranCourier_END
+		SAY @278 /* ~Major, <CHARNAME> — long ago I rescued a courier based out of this village. He had been beset by brigands on the roads northwest of here. His name was Hamza. If he is here, he will surely help us.~ */
+		
+		IF ~~ THEN
+		EXIT
+	END
+END
+
 APPEND NEERAJ
 	IF ~~ THEN BEGIN XA_SaradushDestroyed
 		SAY @233

@@ -36,6 +36,21 @@ IF ~
 END
 //}
 
+//{ Dialog XAHAMZA-04
+IF ~
+	Gabber("Rasaad")
+	!Global("XA_HamzaIntro", "LOCALS", 1)
+~ THEN BEGIN XA_IntroDone_Rasaad
+	SAY @38 /* ~Rasaad! It's good to see you, my friend.~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_HamzaIntro", "LOCALS", 1)
+	~
+	GOTO XA_HamzaRasaadChain
+END
+//}
+
 //{ Dialog XAHAMZA-00
 IF ~
 	Global("XA_HamzaIntro", "LOCALS", 1)
@@ -98,8 +113,25 @@ IF ~
 	
 	IF ~~ THEN REPLY @32 /* ~I don't need anything right now.~ */
 	EXIT
+	
+	IF ~
+		See("Rasaad")
+		IsValidForPartyDialogue("Rasaad")
+	~ THEN
+	DO ~
+		SetGlobal("XA_HamzaIntro", "LOCALS", 1)
+	~	
+	GOTO XA_SeeRasaad
+	
 END
 //}
+
+IF ~~ THEN BEGIN XA_SeeRasaad
+	SAY @38 /* ~Rasaad! It's good to see you, my friend.~ */
+	
+	IF ~~ THEN
+	GOTO XA_HamzaRasaadChain
+END
 //{ Dialog XAHAMZA-01
 IF ~
 	!Global("XA_HamzaIntro", "LOCALS", 1)
@@ -119,6 +151,15 @@ IF ~
 		SetGlobal("XA_HamzaIntro", "LOCALS", 1)
 	~
 	GOTO XA_HeardAboutCourier
+	
+	IF ~
+		See("Rasaad")
+		IsValidForPartyDialogue("Rasaad")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_HamzaIntro", "LOCALS", 1)
+	~	
+	GOTO XA_SeeRasaad
 END
 //}
 
@@ -241,7 +282,6 @@ IF ~~ THEN BEGIN XA_HowMuch
 	DO ~
 		TakePartyGold(600)
 		SetGlobal("XA_PaidToDeliver", "GLOBAL", 2)
-		SetGlobalTimer("XA_HamzaLeave", "GLOBAL", ONE_DAY)
 	~
 	GOTO XA_ThankYou_Two
 	
@@ -249,9 +289,6 @@ IF ~~ THEN BEGIN XA_HowMuch
 		!PartyGoldGT(599)
 		Global("XA_NeedLettersDelivered", "GLOBAL", 2)
 	~ THEN REPLY @25 /* ~I'm afraid I don't have enough money.~ */
-	DO ~
-		SetGlobalTimer("XA_HamzaLeave", "GLOBAL", ONE_DAY)
-	~
 	GOTO XA_NotEnoughMoney
 	
 	IF ~
@@ -261,7 +298,6 @@ IF ~~ THEN BEGIN XA_HowMuch
 	DO ~
 		TakePartyGold(300)
 		SetGlobal("XA_PaidToDeliver", "GLOBAL", 1)
-		SetGlobalTimer("XA_HamzaLeave", "GLOBAL", ONE_DAY)
 	~
 	GOTO XA_ThankYou_One
 	
@@ -269,9 +305,6 @@ IF ~~ THEN BEGIN XA_HowMuch
 		!PartyGoldGT(299)
 		Global("XA_NeedLettersDelivered", "GLOBAL", 1)
 	~ THEN REPLY @25 /* ~I'm afraid I don't have enough money.~ */
-	DO ~
-		SetGlobalTimer("XA_HamzaLeave", "GLOBAL", ONE_DAY)
-	~
 	GOTO XA_NotEnoughMoney
 	
 	IF ~~ THEN REPLY @10 /* ~That's outrageous! You're already planning to head to the Sword Coast. Why does it cost so much to deliver two extra letters?~ */
@@ -290,7 +323,6 @@ IF ~~ THEN BEGIN XA_ExorbitantPricing
 	DO ~
 		TakePartyGold(600)
 		SetGlobal("XA_PaidToDeliver", "GLOBAL", 2)
-		SetGlobalTimer("XA_HamzaLeave", "GLOBAL", ONE_DAY)
 	~
 	GOTO XA_ThankYou_Two
 	
@@ -298,9 +330,6 @@ IF ~~ THEN BEGIN XA_ExorbitantPricing
 		!PartyGoldGT(599)
 		Global("XA_NeedLettersDelivered", "GLOBAL", 2)
 	~ THEN REPLY @25 /* ~I'm afraid I don't have enough money.~ */
-	DO ~
-		SetGlobalTimer("XA_HamzaLeave", "GLOBAL", ONE_DAY)
-	~
 	GOTO XA_NotEnoughMoney
 	
 	IF ~
@@ -310,7 +339,6 @@ IF ~~ THEN BEGIN XA_ExorbitantPricing
 	DO ~
 		TakePartyGold(300)
 		SetGlobal("XA_PaidToDeliver", "GLOBAL", 1)
-		SetGlobalTimer("XA_HamzaLeave", "GLOBAL", ONE_DAY)
 	~
 	GOTO XA_ThankYou_One
 	
@@ -318,9 +346,6 @@ IF ~~ THEN BEGIN XA_ExorbitantPricing
 		!PartyGoldGT(299)
 		Global("XA_NeedLettersDelivered", "GLOBAL", 1)
 	~ THEN REPLY @25 /* ~I'm afraid I don't have enough money.~ */
-	DO ~
-		SetGlobalTimer("XA_HamzaLeave", "GLOBAL", ONE_DAY)
-	~
 	GOTO XA_NotEnoughMoney
 END
 
@@ -337,6 +362,7 @@ IF ~~ THEN BEGIN XA_ThankYou_One
 	IF ~~ THEN
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobalTimer("XA_HamzaLeaveTimer", "GLOBAL", ONE_DAY)
 		AddExperienceParty(25000)
 		StartCutSceneMode()
 		StartCutScene("XACSHAM1")
@@ -350,6 +376,7 @@ IF ~~ THEN BEGIN XA_ThankYou_Two
 	IF ~~ THEN
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
+		SetGlobalTimer("XA_HamzaLeaveTimer", "GLOBAL", ONE_DAY)
 		AddExperienceParty(50000)
 		StartCutSceneMode()
 		StartCutScene("XACSHAM2")
@@ -398,3 +425,29 @@ IF ~~ THEN BEGIN XA_HowLong
 	~
 	GOTO XA_DangerousOccupation
 END
+
+CHAIN XAHAMZA XA_HamzaRasaadChain
+	@39 /* ~How long has it been?~ */
+
+	== RASAADJ
+	@40 /* ~Too long, Hamza. Listen — my friends and I are in need of your services. We need to send a letter to Baldur's Gate, on an urgent matter.~ */
+	
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+	~
+	@44 /* ~Two letters. One to the Dukes, and one to my father. I need to let my family know that we're fine.~ */
+	
+	== RASAADJ
+	@42 /* ~Can you help us?~*/
+	
+	== XACORWIJ
+	@43 /*  ~It would be my pleasure. Here's a pad and paper. I'll take those letters and mailing addresses when you're ready...~ */
+	DO ~
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
+		SetGlobalTimer("XA_HamzaLeaveTimer", "GLOBAL", ONE_DAY)
+		AddExperienceParty(50000)
+		StartCutSceneMode()
+		StartCutScene("XACSHAM2")
+	~
+EXIT
