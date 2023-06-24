@@ -34,8 +34,6 @@ THEN
 END
 //}
 
-
-
 //{ Determines if CorwinEET is Installed
 IF 
 	InParty(Myself)

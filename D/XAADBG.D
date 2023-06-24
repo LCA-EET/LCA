@@ -2657,6 +2657,13 @@ END
 IF ~~ THEN BEGIN XA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
 	
+	IF ~~ THEN REPLY @526 /*~Set XA_MessageToBG to 2.~*/
+	DO ~
+		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
+	~
+	GOTO XA_MainMenu
+	
+	
 	IF ~~ THEN REPLY @335
 	DO ~
 		SetGlobal("XA_AerieInBG", "GLOBAL", 1)
@@ -3874,6 +3881,13 @@ IF ~~ THEN BEGIN XA_Menu_AddCharacter
 	DO ~
 		CreateCreature("NEERA8", [-1.-1], S)
 		ActionOverride("Neera", JoinParty())
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @85
+	DO ~
+		CreateCreature("RASAAD9", [-1.-1], S)
+		ActionOverride("Rasaad", JoinParty())
 	~
 	GOTO XA_MainMenu
 	
