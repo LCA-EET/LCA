@@ -80,6 +80,12 @@ IF ~
 	IF ~~ THEN REPLY @424 /* ~XACORWIJ Dialog Test.~ */
 	GOTO XA_XACORWIJ_Test
 	
+	IF ~~ THEN REPLY @523
+	DO ~
+		ActionOverride("XACORWIN", TakeCreatureItems("Corwin", BACKPACK))
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @334 /* ~Dialog Test.~*/
 	GOTO XA_DialogTest
 	
@@ -3758,6 +3764,13 @@ IF ~~ THEN BEGIN XA_Menu_AddCharacter
 	DO ~
 		CreateCreature("XACORWIN", [-1.-1], S)
 		ActionOverride("XACORWIN", JoinParty())
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @524 /* ~Corwin (CORWIN7).~ */
+	DO ~
+		CreateCreature("CORWIN7", [-1.-1], S)
+		ActionOverride("Corwin", JoinParty())
 	~
 	GOTO XA_MainMenu
 	

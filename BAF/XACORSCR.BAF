@@ -1,5 +1,22 @@
 //Note: Variable Key Max Length Appears to be 32.
 
+//{ Copy items from SoD Corwin
+IF
+	//InParty(Myself)
+	!Global("XA_CopyCorwinItems", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		TakeCreatureItems("Corwin", BACKPACK)
+		SetGlobal("XA_CopyCorwinItems", "LOCALS", 1)
+		SetInterrupt(TRUE)
+END
+//}
+
+//{ Copy stats from SoD Corwin
+
+//}
+
 //{ Determines if CorwinEET is Installed
 IF 
 	InParty(Myself)
@@ -743,7 +760,7 @@ END
 	
 	IF
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-		GlobalTimerExpired("XA_AmkethranTimer", "GLOBAL", ONE_ROUND)
+		GlobalTimerExpired("XA_AmkethranTimer", "GLOBAL")
 		GlobalLT("XA_MessageToBG", "GLOBAL", 1)
 		See(Player1)
 	THEN

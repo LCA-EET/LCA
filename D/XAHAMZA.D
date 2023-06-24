@@ -38,7 +38,7 @@ END
 
 //{ Dialog XAHAMZA-04
 IF ~
-	Gabber("Rasaad")
+	IsGabber("Rasaad")
 	!Global("XA_HamzaIntro", "LOCALS", 1)
 ~ THEN BEGIN XA_IntroDone_Rasaad
 	SAY @38 /* ~Rasaad! It's good to see you, my friend.~ */
