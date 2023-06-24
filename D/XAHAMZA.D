@@ -430,7 +430,7 @@ CHAIN XAHAMZA XA_HamzaRasaadChain
 	@39 /* ~How long has it been?~ */
 
 	== RASAADJ
-	@40 /* ~Too long, Hamza. Listen — my friends and I are in need of your services. We need to send a letter to Baldur's Gate, on an urgent matter.~ */
+	@40 /* ~Too long, Hamza. Listen — my friends and I are in need of your services. We urgently need to send a letter to Baldur's Gate.~ */
 	
 	== XACORWIJ
 	IF ~
