@@ -43,7 +43,7 @@ THEN
 END
 
 IF 
-	GLOBAL("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_ReturnToBG", "GLOBAL", 1)
 	OR(4)
 		InMyArea("JONAVI")
 		InMyArea("KOLVAR")
