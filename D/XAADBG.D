@@ -55,6 +55,17 @@ IF ~
 	IF ~~ THEN REPLY @241 /* ~Advance Time~ */
 	GOTO XA_Menu_AdvanceTime
 	
+	IF ~~ THEN REPLY @525
+	DO ~
+		ChangeStat("Corwin", STR, 20, SET)
+		ChangeStat("Corwin", DEX, 19, SET)
+		ChangeStat("Corwin", CHR, 18, SET)
+		ChangeStat("Corwin", WIS, 17, SET)
+		ChangeStat("Corwin", INT, 16, SET)
+		ChangeStat("Corwin", CON, 15, SET)
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @27 /* Adjust variables */
 	GOTO XA_Menu_AdjustVariables
 	
