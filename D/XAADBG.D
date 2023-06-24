@@ -82,7 +82,8 @@ IF ~
 	
 	IF ~~ THEN REPLY @523
 	DO ~
-		ActionOverride("XACORWIN", TakeCreatureItems("Corwin", BACKPACK))
+		//ActionOverride("XACORWIN", TakeCreatureItems("Corwin", BACKPACK))
+		SetGlobal("XA_CopyItemTest", "GLOBAL", 1)
 	~
 	EXIT
 	

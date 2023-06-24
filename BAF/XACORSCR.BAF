@@ -3,19 +3,57 @@
 //{ Copy items from SoD Corwin
 IF
 	//InParty(Myself)
-	!Global("XA_CopyCorwinItems", "LOCALS", 1)
+	//!Global("XA_CopyCorwinItems", "LOCALS", 1)
+	Global("XA_CopyItemTest", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
+		XEquipItem("", "Corwin", SLOT_AMULET,EQUIP) 
+		XEquipItem("", "Corwin", SLOT_ARMOR,EQUIP)
+		XEquipItem("", "Corwin", SLOT_BELT,EQUIP)
+		XEquipItem("", "Corwin", SLOT_BOOTS,EQUIP)
+		XEquipItem("", "Corwin", SLOT_CLOAK,EQUIP)     
+		XEquipItem("", "Corwin", SLOT_GAUNTLETS,EQUIP) 
+		XEquipItem("", "Corwin", SLOT_HELMET,EQUIP)    
+		XEquipItem("", "Corwin", SLOT_RING_LEFT,EQUIP) 
+		XEquipItem("", "Corwin", SLOT_RING_RIGHT,EQUIP)
+		XEquipItem("", "Corwin", SLOT_SHIELD,EQUIP)
+		XEquipItem("", "Corwin", SLOT_AMMO0,EQUIP)     
+		XEquipItem("", "Corwin", SLOT_AMMO1,EQUIP)     
+		XEquipItem("", "Corwin", SLOT_AMMO2,EQUIP)     
+		XEquipItem("", "Corwin", SLOT_AMMO3,EQUIP)   
+		XEquipItem("", "Corwin", SLOT_WEAPON0,EQUIP)   
+		XEquipItem("", "Corwin", SLOT_WEAPON1,EQUIP)   
+		XEquipItem("", "Corwin", SLOT_WEAPON2,EQUIP)   
+		XEquipItem("", "Corwin", SLOT_WEAPON3,EQUIP) 
+		XEquipItem("", "Corwin", SLOT_MISC0,EQUIP)
+		XEquipItem("", "Corwin", SLOT_MISC1,EQUIP)
+		XEquipItem("", "Corwin", SLOT_MISC2,EQUIP)
+		XEquipItem("", "Corwin", SLOT_MISC3,EQUIP)
+		XEquipItem("", "Corwin", SLOT_MISC4,EQUIP)
+		XEquipItem("", "Corwin", SLOT_MISC5,EQUIP)
+		XEquipItem("", "Corwin", SLOT_MISC6,EQUIP)
+		XEquipItem("", "Corwin", SLOT_MISC7,EQUIP)
+		XEquipItem("", "Corwin", SLOT_MISC8,EQUIP)
+		XEquipItem("", "Corwin", SLOT_MISC9,EQUIP)
+		XEquipItem("", "Corwin", SLOT_MISC10,EQUIP)
+		XEquipItem("", "Corwin", SLOT_MISC11,EQUIP)
+		XEquipItem("", "Corwin", SLOT_MISC12,EQUIP)
+		XEquipItem("", "Corwin", SLOT_MISC13,EQUIP)
+		XEquipItem("", "Corwin", SLOT_MISC14,EQUIP)
+		XEquipItem("", "Corwin", SLOT_MISC15,EQUIP)
+		XEquipItem("", "Corwin", SLOT_MISC16,EQUIP)
+		XEquipItem("", "Corwin", SLOT_MISC17,EQUIP)
+		XEquipItem("", "Corwin", SLOT_MISC18,EQUIP)
+		XEquipItem("", "Corwin", SLOT_MISC19,EQUIP)		
 		TakeCreatureItems("Corwin", BACKPACK)
-		SetGlobal("XA_CopyCorwinItems", "LOCALS", 1)
+		//SetGlobal("XA_CopyCorwinItems", "LOCALS", 1)
+		SetGlobal("XA_CopyItemTest", "GLOBAL", 0)
 		SetInterrupt(TRUE)
 END
 //}
 
-//{ Copy stats from SoD Corwin
 
-//}
 
 //{ Determines if CorwinEET is Installed
 IF 
@@ -5232,4 +5270,189 @@ THEN
 END
 //}
 
+//{ Copy Stats - SoD Corwin
+
+IF
+	!CheckStat("Corwin", 18, STR)
+	GlobalLT("XA_Corwin_STR_Changed", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 1)
+		Continue()
+END
+
+//{ Adjust STR to Match SoD Corwin
+IF
+	CheckStat("Corwin", 20, STR)
+	Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ChangeStat(Myself, STR, 20, SET)
+		SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	CheckStat("Corwin", 19, STR)
+	Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ChangeStat(Myself, STR, 19, SET)
+		SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	CheckStat("Corwin", 18, STR)
+	Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ChangeStat(Myself, STR, 18, SET)
+		SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	CheckStat("Corwin", 17, STR)
+	Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ChangeStat(Myself, STR, 17, SET)
+		SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	CheckStat("Corwin", 16, STR)
+	Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ChangeStat(Myself, STR, 16, SET)
+		SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+		SetInterrupt(TRUE)
+END
+
+IF
+	CheckStat("Corwin", 15, STR)
+	Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ChangeStat(Myself, STR, 15, SET)
+		SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+		SetInterrupt(TRUE)
+END
+
+IF
+	CheckStat("Corwin", 14, STR)
+	Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ChangeStat(Myself, STR, 14, SET)
+		SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+		SetInterrupt(TRUE)
+END
+
+IF
+	CheckStat("Corwin", 13, STR)
+	Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ChangeStat(Myself, STR, 13, SET)
+		SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+		SetInterrupt(TRUE)
+END
+
+IF
+	CheckStat("Corwin", 12, STR)
+	Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ChangeStat(Myself, STR, 12, SET)
+		SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+		SetInterrupt(TRUE)
+END
+
+IF
+	CheckStat("Corwin", 11, STR)
+	Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ChangeStat(Myself, STR, 11, SET)
+		SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+		SetInterrupt(TRUE)
+END
+
+IF
+	CheckStat("Corwin", 10, STR)
+	Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ChangeStat(Myself, STR, 10, SET)
+		SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+		SetInterrupt(TRUE)
+END
+//}
+
+
+IF
+	!CheckStat("Corwin", 15, DEX)
+	GlobalLT("XA_Corwin_DEX_Changed", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Corwin_DEX_Changed", "LOCALS", 1)
+		Continue()
+END
+
+IF
+	!CheckStat("Corwin", 14, CON)
+	GlobalLT("XA_Corwin_CON_Changed", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Corwin_CON_Changed", "LOCALS", 1)
+		Continue()
+END
+
+IF
+	!CheckStat("Corwin", 12, INT)
+	GlobalLT("XA_Corwin_INT_Changed", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Corwin_INT_Changed", "LOCALS", 1)
+		Continue()
+END
+
+IF
+	!CheckStat("Corwin", 14, WIS)
+	GlobalLT("XA_Corwin_WIS_Changed", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Corwin_WIS_Changed", "LOCALS", 1)
+		Continue()
+END
+
+IF
+	!CheckStat("Corwin", 14, CHR)
+	GlobalLT("XA_Corwin_CHR_Changed", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Corwin_CHR_Changed", "LOCALS", 1)
+		Continue()
+END
+
+//}
 
