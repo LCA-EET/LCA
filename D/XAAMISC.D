@@ -8,6 +8,26 @@
 
 */
 
+//{ HGWRA01.D
+EXTEND_BOTTOM HGWRA01
+	IF ~
+		Global("XA_CorwinRomanceActive","GLOBAL",2)
+		IsValidForPartyDialogue("XACORWIN")
+	~ THEN GOTO XA_Corwin
+END
+
+APPEND HGWRA01
+	IF ~~ THEN BEGIN XA_Corwin
+		SAY @287 /* ~What of the inevitable pain you must give to the one you love? The woman you call "Schael."~ */
+		IF ~
+			
+		~ THEN
+		EXTERN XACORWIJ XA_Corwin_Wraith
+	END
+END
+//}
+
+//{ SARVOLO.D
 EXTEND_TOP SARVOLO 9
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
@@ -61,7 +81,9 @@ APPEND SARVOLO
 		GOTO 9
 	END	
 END
+//}
 
+//{ RASAADJ
 APPEND RASAADJ
 	IF ~~ THEN BEGIN XA_AmkethranCourier_END
 		SAY @278 /* ~Major, <CHARNAME> — long ago I rescued a courier based out of this village. He had been beset by brigands on the roads northwest of here. His name was Hamza. If he is here, he will surely help us.~ */
@@ -70,7 +92,9 @@ APPEND RASAADJ
 		EXIT
 	END
 END
+//}
 
+//{ NEERAJ
 APPEND NEERAJ
 	IF ~~ THEN BEGIN XA_SaradushDestroyed
 		SAY @233
@@ -79,7 +103,9 @@ APPEND NEERAJ
 		EXTERN XACORWIJ XA_TimeToGrieveLater
 	END
 END
+//}
 
+//{ AERIEJ
 APPEND AERIEJ
 	IF ~~ THEN BEGIN XA_SaradushDestroyed
 		SAY @234 /* ~The city's been completely d-destroyed... all those people...~ */
@@ -163,7 +189,9 @@ APPEND AERIEJ
 	
 	
 END
+//}
 
+//{ SAREV25J
 APPEND SAREV25J
 	IF ~~ THEN BEGIN XA_SarevokBanter3Chain_END
 		SAY @232 /* ~I realize now that I was wrong. Your skill in battle is considerable, as is your ability to lead others.~ */
@@ -179,7 +207,9 @@ APPEND SAREV25J
 		GOTO XA_SarevokBanter3_NonRomance_Chain
 	END
 END
+//}
 
+//{ LARZE
 ADD_TRANS_TRIGGER LARZE 3
 ~
 	!Global("XA_Override", "GLOBAL", 1)
@@ -193,7 +223,9 @@ EXTEND_BOTTOM LARZE 3
 	~
 	GOTO 5
 END
+//}
 
+//{ CONNOL
 ADD_TRANS_TRIGGER CONNOL 0
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
@@ -222,12 +254,14 @@ APPEND CONNOL
 		EXIT
 	END
 END
+//}
 
 ADD_STATE_TRIGGER MCOOK4 1
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
+//{ DELTAN2 *Need to Revisit Per Comment on Forums*
 ADD_STATE_TRIGGER DELTAN2 0
 ~
 	!Global("XA_Override", "GLOBAL", 1)
@@ -255,7 +289,7 @@ APPEND DELTAN2
 		Global("EltanMove","GLOBAL",0)
 	~ THEN BEGIN 0 // from:
 		
-		SAY @224 /* ~I am again in your debt. That creature has kept me helpless for too long. Perhaps if I hadn't been incapacitated, I might have been able to prevent Scar's death. *cough* Angelo will soon hear of my recovery. It is important that you take me away from here; I'm sure Angelo won't want me coherent and among the living. Take me to the Harbor Master's building — he is a good friend of mine. I can rest there, and send word to Nederlok and Corwin to return to the city immediately. They're loyalty is beyond reproach, and they can retake control of the Fist while I recover. Take this letter; I managed to fiXAh it off Rashad when he was "caring" for me. From what I read of it, it seems that Sarevok has dire plans for the city. I fear for the lives of my fellow Dukes, Liia and Belt. If they were to die, Sarevok would take over the city. You must find Slythe and Krystin, and stop them... *cough* Hurry! We must make haste.~  */
+		SAY @224 /* ~I am again in your debt. That creature has kept me helpless for too long. Perhaps if I hadn't been incapacitated, I might have been able to prevent Scar's death. *cough* Angelo will soon hear of my recovery. It is important that you take me away from here; I'm sure Angelo won't want me coherent and among the living. Take me to the Harbor Master's building — he is a good friend of mine. I can rest there, and send word to Nederlok and Corwin to return to the city immediately. They're loyalty is beyond reproach, and they can retake control of the Fist while I recover. Take this letter; I managed to filch it off Rashad when he was "caring" for me. From what I read of it, it seems that Sarevok has dire plans for the city. I fear for the lives of my fellow Dukes, Liia and Belt. If they were to die, Sarevok would take over the city. You must find Slythe and Krystin, and stop them... *cough* Hurry! We must make haste.~  */
 
 		IF ~~ THEN 
 		DO ~
@@ -280,6 +314,7 @@ APPEND DELTAN2
 		EXIT
 	END
 END
+//}
 
 ADD_STATE_TRIGGER SUTHIE 0
 ~

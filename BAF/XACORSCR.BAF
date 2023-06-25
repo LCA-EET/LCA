@@ -31,6 +31,7 @@ THEN
 		SetGlobal("XA_CopyCorwinItems", "GLOBAL", 1)
 		//SetGlobal("XA_CopyItemTest", "GLOBAL", 0)
 		SetInterrupt(TRUE)
+		Continue()
 END
 //}
 
