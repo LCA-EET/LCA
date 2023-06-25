@@ -7107,6 +7107,20 @@ IF ~~ THEN BEGIN XA_FirstMeetingRohma
 	EXIT
 END
 
+IF ~~ THEN BEGIN XA_Corwin_Sarvolo
+	SAY @1603 /* ~You make it sound as though we're heroes out of some legend. To be honest, I've never given much thought to what people would say about us. About what we've accomplished together...~*/
+	
+	IF ~~ THEN
+	EXTERN SARVOLO XA_Corwin_Sarvolo_END 
+END
+
+IF ~~ THEN BEGIN XA_Schael_Sarvolo
+	SAY @1604 /* ~Volo, <CHARNAME> is the only hero here. To be honest, I've never given much thought to what people would say about us, <CHARNAME>. About what we've accomplished together... and our love for one another...~*/
+	
+	IF ~~ THEN
+	EXTERN SARVOLO XA_Schael_Sarvolo_END 
+END
+
 IF ~~ THEN BEGIN XA_NotMetFamily
 	SAY @679 /* ~No - I still need to see my family.~ */
 	

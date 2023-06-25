@@ -8,6 +8,60 @@
 
 */
 
+EXTEND_TOP SARVOLO 9
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @279 /* ~Tell me about Schael.~*/
+	GOTO XA_Schael
+	
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @280 /* ~Tell me about Corwin.~*/
+	GOTO XA_Corwin
+END
+
+APPEND SARVOLO
+	IF ~~ THEN BEGIN XA_Corwin
+		SAY @281 /* ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. The pair have achieved feats that no one could have imagined, and her devotion to <CHARNAME>'s cause has only grown since <PRO_HESHE> helped rescue her daughter from Illasera the Quick. Though no one can say what the future has in store for this duo, one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~ */
+		
+		IF ~~ THEN 
+		EXTERN XACORWIJ XA_Corwin_Sarvolo
+	END
+	
+	IF ~~ THEN BEGIN XA_Schael
+		SAY @282 /* ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. <CHARNAME> was smitten by her beauty, and their relationship gradually evolved from friendship into something far more profound. Their fierce devotion toward one another was only strengthened after <CHARNAME> helped rescue her daughter from Illasera the Quick. Their love, to this point, has endured against all odds. Whether it will continue to do so, no one can say, though one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~ */
+		
+		IF ~~ THEN
+		EXTERN XACORWIJ XA_Schael_Sarvolo		
+	END
+	
+	IF ~~ THEN BEGIN XA_Corwin_Sarvolo_END
+		SAY @283 /* ~Don't sell yourself short, Major. When people read and hear the story of <CHARNAME>, they'll know that <PRO_HESHE> couldn't have succeeded were it not for your bravery and loyalty. You're as much a hero in this story as <PRO_HESHE> is.~   */
+		
+		IF ~~ THEN
+		GOTO 9
+		
+		IF ~
+			IsGabber(Player1)
+		~ THEN REPLY @285
+		GOTO 9
+	END
+
+	IF ~~ THEN BEGIN XA_Schael_Sarvolo_END
+		SAY @284 /* ~Don't sell yourself short, Major. When people read and hear the story of <CHARNAME>, they'll know that <PRO_HESHE> couldn't have succeeded were it not for your bravery and loyalty, and more importantly, the love you two have for one another. You're as much a hero in this story as <PRO_HESHE> is.~     */
+		
+		IF ~~ THEN
+		GOTO 9
+		
+		IF ~
+			IsGabber(Player1)
+		~ THEN REPLY @285
+		GOTO 9
+	END	
+END
+
 APPEND RASAADJ
 	IF ~~ THEN BEGIN XA_AmkethranCourier_END
 		SAY @278 /* ~Major, <CHARNAME> — long ago I rescued a courier based out of this village. He had been beset by brigands on the roads northwest of here. His name was Hamza. If he is here, he will surely help us.~ */
