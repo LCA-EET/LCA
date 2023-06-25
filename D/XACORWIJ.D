@@ -46,10 +46,10 @@ IF ~~ THEN BEGIN XA_ReadLetter3
 	= @1052 /* ~He won't stick his neck out for anyone, not even his own daughter - I'm sure of it.~ */
 	
 	IF ~~ THEN REPLY @1051 /* ~Still, it may be worth trying. I will rouse the Dukes right away - they may have insight into this 'Illasera'. Let us discuss the matter in the Ducal palace before we make our move.~*/
-	GOTO XA_StartDucaXAS
+	GOTO XA_StartDucalCS
 END
 
-IF ~~ THEN BEGIN XA_StartDucaXAS
+IF ~~ THEN BEGIN XA_StartDucalCS
 	SAY @1049 /* ~Fine. But whatever we decide, we need to do it quickly. I'll go after her myself if I have to.~*/
 	
 	IF ~
@@ -7819,6 +7819,15 @@ IF ~~ THEN BEGIN XA_AlythReport
 	IF ~~ THEN
 	EXTERN XAALYTH XA_ReportToFF
 END
+
+//{ Wraith Interaction
+IF ~~ THEN BEGIN XA_Corwin_Wraith
+	SAY @1605 /* ~Love must dare to risk. Otherwise, it isn't love at all.~ */
+	
+	IF ~~ THEN
+	EXTERN HGWRA01 24
+END
+//}
 
 CHAIN 
 	IF ~~ THEN XACORWIJ XA_CorwinTiannaGoodbyeChain

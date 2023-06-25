@@ -9,11 +9,24 @@
 */
 
 //{ HGWRA01.D
-EXTEND_BOTTOM HGWRA01
+EXTEND_BOTTOM HGWRA01 18
 	IF ~
 		Global("XA_CorwinRomanceActive","GLOBAL",2)
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN GOTO XA_Corwin
+END
+
+EXTEND_BOTTOM HGWRA01 24
+	IF ~
+		Global("XA_CorwinRomanceActive","GLOBAL",2)
+		IsValidForPartyDialogue("XACORWIN")
+	~ THEN
+	DO ~
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutSceneEx("XACSWRA1",FALSE)
+	~
+	EXIT
 END
 
 APPEND HGWRA01
