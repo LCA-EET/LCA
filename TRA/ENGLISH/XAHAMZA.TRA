@@ -2,7 +2,7 @@
 @1 = ~Are you Hamza? I heard that you offer courier services.~
 @2 = ~Yes, I'm Hamza. And yes, I do offer courier services.~
 @3 = ~Baldur's Gate, you say? Fortunately for you, I'm scheduled to make a run to the Sword Coast the morning after next. I can deliver your letters for a small incremental cost.~
-@4 = ~How much?~
+@4 = ~How much will this cost?~
 @5 = ~The cost is 300 gold, per letter.~
 @6 = ~Here (Hand over 600 gold.)~
 @7 = ~How long do you think it will take to deliver our letters?~
@@ -19,7 +19,7 @@
 @18 = ~Courier? That's a dangerous occupation these days, isn't it?~
 @19 = ~Only if you're not familiar with the routes. Now, if you've no business to discuss, please leave me to my drink.~
 @20 = ~Yes?~
-@21 = ~Baldur's Gate, you say? Fortunately for you, I'm scheduled to make a run to the Sword Coast the morning after next. I can deliver your letter for a small incremental cost.~
+@21 = ~Baldur's Gate, you say? Fortunately for you, I'm scheduled to make a run to the Sword Coast the morning after next.~
 @22 = ~Here (Hand over 300 gold.)~
 @23 = ~Thank you. Here's a pad and paper. I'll take those letters and mailing addresses when you're ready...~
 @24 = ~Thank you. Here's a pad and paper. I'll take the letter and mailing address when you're ready...~
@@ -50,3 +50,7 @@
 @49 = ~Thank you, Hamza.~
 @50 = ~It's good to see you again, Rasaad.~
 @51 = ~Listen, Hamza — my friends and I are in need of your services. We urgently need to send a letter to Baldur's Gate.~ 
+@52 = ~I'm Major Schael Corwin of the Baldur's Gate Flaming Fist. We need to send two letters back to the city.~
+@53 = ~No. Not for that cost.~
+@54 = ~Normally I'd charge 300 gold per letter, but you seem like a good person. I'll do it at no cost to you.~
+@55 = ~Thank you for your generosity.~

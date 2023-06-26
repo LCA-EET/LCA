@@ -87,7 +87,6 @@ IF ~
 		!IsGabber("XACORWIN")
 		!IsValidForPartyDialogue("XACORWIN")
 		Global("XA_NeedLettersDelivered", "GLOBAL", 1)
-		GlobalGT("XA_MessageToBG", "GLOBAL", 0)
 	~ THEN REPLY @31 /* ~I need a letter delivered.~*/
 	GOTO XA_DeliverToBG
 	
@@ -95,14 +94,12 @@ IF ~
 		!IsGabber("XACORWIN")
 		IsValidForPartyDialogue("XACORWIN")
 		Global("XA_NeedLettersDelivered", "GLOBAL", 1)
-		GlobalGT("XA_MessageToBG", "GLOBAL", 0)
 	~ THEN REPLY @31 /* ~I need a letter delivered.~ */
 	EXTERN XACORWIJ XA_DeliverTwoLetters2
 	
 	IF ~
-		IsGabber("XACORWIN")
+		//IsGabber("XACORWIN")
 		Global("XA_NeedLettersDelivered", "GLOBAL", 2)
-		GlobalGT("XA_MessageToBG", "GLOBAL", 0)
 	~ THEN REPLY @30 /* ~We need two letters delivered.~ */
 	GOTO XA_DeliverToBG
 	
@@ -233,7 +230,6 @@ IF ~~ THEN BEGIN XA_WhoAreYou
 	
 	IF ~
 		!IsGabber("XACORWIN")
-		Global("XA_NeedCourier", "GLOBAL", 1)
 		GlobalGT("XA_MessageToBG", "GLOBAL", 0)
 	~ THEN REPLY @12 /* ~I'm <IsGabber> ... you offer courier services, yes? We need to have a letter delivered to Baldur's Gate.~ */
 	EXTERN XACORWIJ XA_DeliverTwoLetters
@@ -245,6 +241,11 @@ IF ~~ THEN BEGIN XA_WhoAreYou
 		SetGlobal("XA_CourierDangerous", "LOCALS", 1)
 	~
 	GOTO XA_DangerousOccupation
+	
+	IF ~
+		IsGabber("XACORWIN")
+	~ THEN REPLY @52 /* ~I'm Major Schael Corwin of the Baldur's Gate Flaming Fist. We need to send two letters back to the city.~ */
+	GOTO XA_DeliverLetter
 END
 
 IF ~~ THEN BEGIN XA_DangerousOccupation
@@ -293,10 +294,17 @@ IF ~~ THEN BEGIN XA_HeardAboutCourier
 END
 
 IF ~~ THEN BEGIN XA_DeliverLetter
-	SAY @21 /* ~Baldur's Gate, you say? Fortunately for you, I'm scheduled to make a run to the Sword Coast the morning after next. I can deliver your letter for a small incremental cost.~ */
+	SAY @21 /* ~Baldur's Gate, you say? Fortunately for you, I'm scheduled to make a run to the Sword Coast the morning after next.~ */
 	
-	IF ~~ THEN REPLY @4 /* ~How much?~ */
+	IF ~
+		!StateCheck(Myself, STATE_CHARMED)
+	~ THEN REPLY @4 /* ~How much?~ */
 	GOTO XA_HowMuch
+	
+	IF ~
+		StateCheck(Myself, STATE_CHARMED)
+	~ THEN REPLY @4 /* ~How much?~ */
+	GOTO XA_HowMuch_Charmed
 	
 	IF ~
 		!Global("XA_HowLong", "LOCALS", 1)
@@ -315,6 +323,25 @@ IF ~~ THEN BEGIN XA_DeliverLetter
 	GOTO XA_DangerousOccupation
 END
 
+IF ~~ THEN BEGIN XA_HowMuch_Charmed
+	SAY @54 /* ~Normally I'd charge 300 gold per letter, but you seem like a good person. I'll do it at no cost to you.~*/
+	
+	IF ~
+		Global("XA_NeedLettersDelivered", "GLOBAL", 2)
+	~ THEN REPLY @55
+	DO ~
+		SetGlobal("XA_PaidToDeliver", "GLOBAL", 2)
+	~
+	GOTO XA_ThankYou_Two
+	
+	IF ~
+		Global("XA_NeedLettersDelivered", "GLOBAL", 1)
+	~ THEN REPLY @55
+	DO ~
+		SetGlobal("XA_PaidToDeliver", "GLOBAL", 1)
+	~
+	GOTO XA_ThankYou_One
+END
 IF ~~ THEN BEGIN XA_HowMuch
 	SAY @5 /* ~The cost is 300 gold, per letter.~ */
 	
@@ -390,6 +417,9 @@ IF ~~ THEN BEGIN XA_ExorbitantPricing
 		Global("XA_NeedLettersDelivered", "GLOBAL", 1)
 	~ THEN REPLY @25 /* ~I'm afraid I don't have enough money.~ */
 	GOTO XA_NotEnoughMoney
+	
+	IF ~~ THEN REPLY @53 /* ~No. Not for that cost.~*/
+	EXIT
 END
 
 IF ~~ THEN BEGIN XA_NotEnoughMoney

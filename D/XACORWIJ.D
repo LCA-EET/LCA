@@ -30,7 +30,7 @@ IF ~~ THEN BEGIN XA_ReadLetter2
 	GOTO XA_ReadLetter2A
 	
 	IF ~~ THEN REPLY @1044 /* ~I will rouse the Dukes right away - they may have insight into this 'Illasera'. Let us discuss the matter in the Ducal palace before we make our move.~*/
-	GOTO XA_StartDucaXAS
+	GOTO XA_StartDucalCS
 END
 
 IF ~~ THEN BEGIN XA_ReadLetter2A
@@ -85,21 +85,18 @@ IF ~
 	IF ~~ THEN REPLY @1597 /* ~Of course, love.~ */
 	DO ~
 		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
-		SetGlobal("XA_NeedCourier", "GLOBAL", 1)
 	~
 	GOTO XA_AmkethranCourier_END
 	
 	IF ~~ THEN REPLY @1593 /* ~What do you suggest we do?~ */
 	DO ~
 		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
-		SetGlobal("XA_NeedCourier", "GLOBAL", 1)
 	~
 	GOTO XA_AmkethranCourier_END
 	
 	IF ~~ THEN REPLY @1598 /* ~How do you think your father will take the news? And Rohma?~ */
 	DO ~
 		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
-		SetGlobal("XA_NeedCourier", "GLOBAL", 1)
 	~
 	GOTO XA_AudamarCorwinPregnant
 END
@@ -123,14 +120,12 @@ IF ~
 	IF ~~ THEN REPLY @1597 /* ~Of course, love.~ */
 	DO ~
 		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
-		SetGlobal("XA_NeedCourier", "GLOBAL", 1)
 	~
 	GOTO XA_AmkethranCourier_END
 	
 	IF ~~ THEN REPLY @1593 /* ~What do you suggest we do?~ */
 	DO ~
 		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
-		SetGlobal("XA_NeedCourier", "GLOBAL", 1)
 	~
 	GOTO XA_AmkethranCourier_END
 END
@@ -145,14 +140,12 @@ IF ~
 	IF ~~ THEN REPLY @1592 /* ~Of course.~ */
 	DO ~
 		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
-		SetGlobal("XA_NeedCourier", "GLOBAL", 1)
 	~
 	GOTO XA_AmkethranCourier_END
 	
 	IF ~~ THEN REPLY @1593 /* ~What do you suggest we do?~ */
 	DO ~
 		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
-		SetGlobal("XA_NeedCourier", "GLOBAL", 1)
 	~
 	GOTO XA_AmkethranCourier_END
 END
