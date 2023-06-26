@@ -7827,7 +7827,22 @@ IF ~~ THEN BEGIN XA_Corwin_Wraith
 	IF ~~ THEN
 	EXTERN HGWRA01 24
 END
+
+IF ~~ THEN BEGIN XA_RohmaWraithChain_END
+	SAY @1613 /* ~N-no, Rohma! I love you more than anything! Oh, gods, no...~*/
+	
+	IF ~~ THEN REPLY @1611 /* ~Schael, calm yourself! Rohma is safe with your father at the Ducal palace. Whatever this thing is, it isn't your daughter.~ */
+	EXTERN HGWRA01 25
+	
+	IF ~~ THEN REPLY @1614 /*~Enough! I won't allow this to continue!~ */
+	EXTERN HGWRA01 25
+	
+	IF ~~ THEN REPLY @1615 /*~Whatever you are, enough! She doesn't deserve this!~*/
+	EXTERN HGWRA01 25
+END
 //}
+
+
 
 CHAIN 
 	IF ~~ THEN XACORWIJ XA_CorwinTiannaGoodbyeChain
@@ -8785,3 +8800,19 @@ CHAIN
 		~
 		@77 /* ~Gorion would be so happy for you, <CHARNAME>...~ */
 END XACORWIJ XA_KissEnd
+
+CHAIN XACORWIJ XA_RohmaWraithChain
+	@1606 /*~R-Rohma!? Honey, what are you doing here?~*/
+	
+	== XAROHMA4
+	@1607 /*~Mommy, why didn't you come home? Why weren't you there to protect us?~*/
+	
+	== XACORWIJ
+	@1608 /*~What ... what do you mean? What happened!~*/
+	
+	== XAROHMA4
+	@1609 /*~They came... they killed grandpa and then they killed me, mommy... You killed me!~*/
+	
+	= @1612 /* ~You wanted us to die, so that you could start a new family with <CHARNAME>! You never loved me!~*/
+	
+END XACORWIJ XA_RohmaWraithChain_END

@@ -1674,6 +1674,13 @@ END
 IF ~~ THEN BEGIN XA_TestInteraction
 	SAY @280
 	
+	IF ~~ THEN REPLY @527
+	DO ~
+		CreateCreature("HGWRA01", [-1.-1], N)
+		Wait(1)
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @518
 	DO ~
 		CreateCreature("XAHAMZA", [-1.-1], N)
