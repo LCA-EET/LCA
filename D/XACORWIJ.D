@@ -363,8 +363,15 @@ END
 IF ~~ THEN BEGIN XA_DeliverAdditional
 	SAY @1590 /* ~I need an additional letter delivered ... My family needs to know that we're fine.~ */
 	
-	IF ~~ THEN
+	IF ~
+		!StateCheck("XAHAMZA", STATE_CHARMED)
+	~ THEN
 	EXTERN XAHAMZA XA_DeliverAdditional
+	
+	IF ~
+		StateCheck("XAHAMZA", STATE_CHARMED)
+	~ THEN
+	EXTERN XAHAMZA XA_DeliverAdditional_Charmed
 END
 
 //{ Dialog J-72

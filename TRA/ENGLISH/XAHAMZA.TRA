@@ -21,8 +21,8 @@
 @20 = ~Yes?~
 @21 = ~Baldur's Gate, you say? Fortunately for you, I'm scheduled to make a run to the Sword Coast the morning after next.~
 @22 = ~Here (Hand over 300 gold.)~
-@23 = ~Thank you. Here's a pad and paper. I'll take those letters and mailing addresses when you're ready...~
-@24 = ~Thank you. Here's a pad and paper. I'll take the letter and mailing address when you're ready...~
+@23 = ~Thank you. Here's a pen and paper. I'll take those letters and mailing addresses when you're ready...~
+@24 = ~Thank you. Here's a pen and paper. I'll take the letter and mailing address when you're ready...~
 @25 = ~I'm afraid I don't have enough money.~
 @26 = ~Return when you do. I'll be in town for the next day or so.~
 @27 = ~What do you want me to say? Hiring security isn't cheap these days.~
@@ -54,3 +54,10 @@
 @53 = ~No. Not for that cost.~
 @54 = ~Normally I'd charge 300 gold per letter, but you seem like a good person. I'll do it at no cost to you.~
 @55 = ~Thank you for your generosity.~
+@56 = ~To Baldur's Gate, yes? You seem like a good person. I'll deliver the letter free of charge.~
+@57 = ~Progress Thus Far
+Hamza, a mail courier based out of Amkethran, has agreed to deliver two letters back to Baldur's Gate on our behalf. One is addressed to the Dukes, and it includes Schael's report on the events that have transpired since we left the city. The second is addressed to her father, to let him and Rohma know that we're alive and well, and that she is with child.~
+@58 = ~Progress Thus Far
+Hamza, a mail courier based out of Amkethran, has agreed to deliver two letters back to Baldur's Gate on our behalf. One is addressed to the Dukes, and it includes Schael's report on the events that have transpired since we left the city. The second is addressed to her father, to let him and Rohma know that we're alive and well.~
+@59 = ~Progress Thus Far
+Hamza, a mail courier based out of Amkethran, has agreed to deliver a letter back to Baldur's Gate on our behalf. It is addressed to the Dukes, and it includes Schael's report on the events that have transpired since we left the city.~

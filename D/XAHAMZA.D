@@ -28,12 +28,22 @@ IF ~
 	IF ~
 		Global("XA_NeedLettersDelivered", "GLOBAL", 1)
 		IsGabber("XACORWIN")
-		GlobalGT("XA_MessageToBG", "GLOBAL", 0)
+		!StateCheck(Myself, STATE_CHARMED)
 	~ THEN REPLY @37 /* ~I need an additional letter delivered ... My family needs to know that we're fine.~ */
 	DO ~
 		SetGlobal("XA_NeedLettersDelivered", "GLOBAL", 2)
 	~
 	GOTO XA_DeliverAdditional
+	
+	IF ~
+		Global("XA_NeedLettersDelivered", "GLOBAL", 1)
+		IsGabber("XACORWIN")
+		StateCheck(Myself, STATE_CHARMED)
+	~ THEN REPLY @37 /* ~I need an additional letter delivered ... My family needs to know that we're fine.~ */
+	DO ~
+		SetGlobal("XA_NeedLettersDelivered", "GLOBAL", 2)
+	~
+	GOTO XA_DeliverAdditional_Charmed
 END
 //}
 
@@ -199,6 +209,16 @@ IF ~
 END
 //}
 
+IF ~~ THEN BEGIN XA_DeliverAdditional_Charmed
+	SAY @56 /* ~To Baldur's Gate, yes? You seem like a good person. I'll deliver the letter free of charge.~*/
+	
+	IF ~~ THEN REPLY @55/* ~Here (Hand over 300 gold.)~ */
+	DO ~
+		SetGlobal("XA_PaidToDeliver", "GLOBAL", 2)
+	~
+	GOTO XA_ThankYou_Additional
+END
+
 IF ~~ THEN BEGIN XA_DeliverAdditional
 	SAY @36 /* ~To Baldur's Gate, yes? The cost is 300 gold.~ */
 	
@@ -209,7 +229,7 @@ IF ~~ THEN BEGIN XA_DeliverAdditional
 		TakePartyGold(300)
 		SetGlobal("XA_PaidToDeliver", "GLOBAL", 2)
 	~
-	GOTO XA_ThankYou_One
+	GOTO XA_ThankYou_Additional
 	
 	IF ~
 		!PartyGoldGT(299)
@@ -221,8 +241,15 @@ END
 IF ~~ THEN BEGIN XA_DeliverToBG
 	SAY @29 /* ~Yes, to Baldur's Gate. I remember.~ */
 	
-	IF ~~ THEN 
+	IF ~
+		!StateCheck(Myself, STATE_CHARMED)
+	~ THEN 
 	GOTO XA_HowMuch
+	
+	IF ~
+		StateCheck(Myself, STATE_CHARMED)
+	~ THEN 
+	GOTO XA_HowMuch_Charmed
 END
 
 IF ~~ THEN BEGIN XA_WhoAreYou
@@ -245,6 +272,9 @@ IF ~~ THEN BEGIN XA_WhoAreYou
 	IF ~
 		IsGabber("XACORWIN")
 	~ THEN REPLY @52 /* ~I'm Major Schael Corwin of the Baldur's Gate Flaming Fist. We need to send two letters back to the city.~ */
+	DO ~
+		SetGlobal("XA_NeedLettersDelivered", "GLOBAL", 2)
+	~
 	GOTO XA_DeliverLetter
 END
 
@@ -429,12 +459,43 @@ IF ~~ THEN BEGIN XA_NotEnoughMoney
 	EXIT
 END
 
+IF ~~ THEN BEGIN XA_ThankYou_Additional
+	SAY @24 /* ~Thank you. Here's a pad and paper. I'll take the letter and mailing address when you're ready...~*/
+	
+	IF ~
+		GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
+	~ THEN
+	DO ~
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		AddJournalEntry(@57, INFO)
+		SetGlobalTimer("XA_HamzaLeaveTimer", "GLOBAL", ONE_DAY)
+		AddExperienceParty(25000)
+		StartCutSceneMode()
+		StartCutScene("XACSHAM1")
+	~
+	EXIT
+	
+	IF ~
+		!GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
+	~ THEN
+	DO ~
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		AddJournalEntry(@58, INFO)
+		SetGlobalTimer("XA_HamzaLeaveTimer", "GLOBAL", ONE_DAY)
+		AddExperienceParty(25000)
+		StartCutSceneMode()
+		StartCutScene("XACSHAM1")
+	~
+	EXIT
+END
+
 IF ~~ THEN BEGIN XA_ThankYou_One
 	SAY @24 /* ~Thank you. Here's a pad and paper. I'll take the letter and mailing address when you're ready...~*/
 	
 	IF ~~ THEN
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		AddJournalEntry(@59, INFO)
 		SetGlobalTimer("XA_HamzaLeaveTimer", "GLOBAL", ONE_DAY)
 		AddExperienceParty(25000)
 		StartCutSceneMode()
@@ -446,15 +507,32 @@ END
 IF ~~ THEN BEGIN XA_ThankYou_Two
 	SAY @23 /* ~Thank you. Here's a pad and paper. I'll take those letters and mailing addresses when you're ready...~*/
 	
-	IF ~~ THEN
+	IF ~
+		GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
+	~ THEN
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
+		AddJournalEntry(@57, INFO)
 		SetGlobalTimer("XA_HamzaLeaveTimer", "GLOBAL", ONE_DAY)
 		AddExperienceParty(50000)
 		StartCutSceneMode()
 		StartCutScene("XACSHAM2")
 	~
 	EXIT
+	
+	IF ~
+		!GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
+	~ THEN
+	DO ~
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
+		AddJournalEntry(@58, INFO)
+		SetGlobalTimer("XA_HamzaLeaveTimer", "GLOBAL", ONE_DAY)
+		AddExperienceParty(50000)
+		StartCutSceneMode()
+		StartCutScene("XACSHAM2")
+	~
+	EXIT
+	
 END
 
 
@@ -462,8 +540,15 @@ END
 IF ~~ THEN BEGIN XA_DeliverTwoLetters
 	SAY @3 /* ~Baldur's Gate, you say? Fortunately for you, I'm scheduled to make a run to the Sword Coast the morning after next. I can deliver your letters for a small incremental cost.~ */
 	
-	IF ~~ THEN REPLY @4 /* ~How much?~ */
+	IF ~
+		!StateCheck(Myself, STATE_CHARMED)
+	~ THEN REPLY @4 /* ~How much?~ */
 	GOTO XA_HowMuch
+	
+	IF ~
+		StateCheck(Myself, STATE_CHARMED)
+	~ THEN REPLY @4 /* ~How much?~ */
+	GOTO XA_HowMuch_Charmed
 	
 	IF ~
 		!Global("XA_HowLong", "LOCALS", 1)
@@ -487,8 +572,15 @@ IF ~~ THEN BEGIN XA_HowLong
 	
 	= @15 /* ~But, with the roads as dangerous as they are, we may have to take a detour or two. Still it shouldn't add significant travel time.~  */
 	
-	IF ~~ THEN REPLY @17 /* ~So, how much will this cost me?~*/
+	IF ~
+		!StateCheck(Myself, STATE_CHARMED)
+	~ THEN REPLY @17 /* ~So, how much will this cost us?~ */
 	GOTO XA_HowMuch
+	
+	IF ~
+		StateCheck(Myself, STATE_CHARMED)
+	~ THEN REPLY @17 /* ~So, how much will this cost us?~ */
+	GOTO XA_HowMuch_Charmed
 	
 	IF ~
 		!Global("XA_CourierDangerous", "LOCALS", 1)
@@ -535,11 +627,12 @@ CHAIN XAHAMZA XA_HamzaRasaadChain
 	== RASAADJ
 	@42 /* ~Can you help us?~*/
 	
-	== XACORWIJ
+	== XAHAMZA
 	@43 /*  ~It would be my pleasure. Here's a pad and paper. I'll take those letters and mailing addresses when you're ready...~ */
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
 		SetGlobalTimer("XA_HamzaLeaveTimer", "GLOBAL", ONE_DAY)
+		SetGlobal("XA_PaidToDeliver", "GLOBAL", 2)
 		AddExperienceParty(50000)
 		StartCutSceneMode()
 		StartCutScene("XACSHAM2")
@@ -558,11 +651,12 @@ CHAIN RASAADJ XA_HamzaRasaadChain3
 	== RASAADJ
 	@42 /* ~Can you help us?~*/
 	
-	== XACORWIJ
+	== XAHAMZA
 	@43 /*  ~It would be my pleasure. Here's a pad and paper. I'll take those letters and mailing addresses when you're ready...~ */
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
 		SetGlobalTimer("XA_HamzaLeaveTimer", "GLOBAL", ONE_DAY)
+		SetGlobal("XA_PaidToDeliver", "GLOBAL", 2)
 		AddExperienceParty(50000)
 		StartCutSceneMode()
 		StartCutScene("XACSHAM2")
