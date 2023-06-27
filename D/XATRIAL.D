@@ -8,66 +8,6 @@
 
 */
 
-ADD_TRANS_TRIGGER BDBELT 0
-~
-	!Global("XA_Override", "GLOBAL", 1)
-~
-
-EXTEND_BOTTOM BDBELT 0
-	IF ~~ THEN 
-	DO ~
-		StartCutSceneMode()
-		SetCutSceneLite(TRUE)
-		SetGlobal("bd_mdd1697_plot","GLOBAL",1)
-		SetGlobal("XA_Trial","GLOBAL",1)
-		SmallWait(5)
-		ApplySpellRES("bdslow","bence_guard")
-		ApplySpellRES("bdslow","bdbence")
-		ActionOverride("bence_guard",MoveToPoint([746.729]))
-		SmallWait(5)
-		ActionOverride("bdbence",MoveToPoint([621.720]))
-		SmallWait(55)
-		ActionOverride("bence_guard",Face(SSW))
-		Face(E)
-		SmallWait(25)
-		Face(SSW)
-		ActionOverride("bdbence",Face(SW))
-		SmallWait(6)
-		StartDialogNoSet("Commoner_talk1")
-	~ 
-	EXIT
-END
-
-ADD_TRANS_TRIGGER BDBELT 1
-~
-	!Global("XA_Override", "GLOBAL", 1)
-~
-
-EXTEND_BOTTOM BDBELT 1
-	IF ~~ THEN 
-	DO ~
-		StartCutSceneMode()
-		SetCutSceneLite(TRUE)
-		SetGlobal("bd_mdd1697_plot","GLOBAL",1)
-		SetGlobal("XA_Trial","GLOBAL",1)
-		SmallWait(5)
-		ApplySpellRES("bdslow","bence_guard")
-		ApplySpellRES("bdslow","bdbence")
-		ActionOverride("bence_guard",MoveToPoint([746.729]))
-		SmallWait(5)
-		ActionOverride("bdbence",MoveToPoint([621.720]))
-		SmallWait(55)
-		ActionOverride("bence_guard",Face(SSW))
-		Face(E)
-		SmallWait(25)
-		Face(SSW)
-		ActionOverride("bdbence",Face(SW))
-		SmallWait(6)
-		StartDialogNoSet("Commoner_talk1")
-	~ 
-	EXIT
-END
-
 ADD_TRANS_TRIGGER BDBELT 6
 ~
 	OR(2)

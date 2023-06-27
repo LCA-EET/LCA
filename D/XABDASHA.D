@@ -10,27 +10,15 @@
 
 ADD_TRANS_TRIGGER BDASHATI 6
 ~
-	!Global("XA_Override", "GLOBAL", 1)
+	!IsValidForPartyDialogue("Corwin")
 ~
+DO 0
 
 EXTEND_BOTTOM BDASHATI 6
-	IF ~
-		!IsValidForPartyDialogue("Corwin")
-	~ THEN REPLY @0 /* ~I'm ready. Let the battle begin.~ */ 
-	DO ~
-		StartCutSceneMode()
-		SetGlobal("bd_asha_duel","global",3)
-		StartCutSceneEx("bdcut44",FALSE)
-	~ 
-	EXIT
-  
 	IF ~
 		IsValidForPartyDialogue("Corwin")
 	~ THEN REPLY @0 /* ~I'm ready. Let the battle begin.~ */ 
 	EXTERN BDCORWIJ XA_AshatielDuel_0
-  
-	IF ~~ THEN REPLY @2 /* ~I changed my mind. You and all your followers die now.~ */ 
-	GOTO 7
 END
 
 APPEND BDCORWIJ
@@ -54,11 +42,19 @@ APPEND BDCORWIJ
 	~ THEN BEGIN XA_AshatielDuel_1
 		SAY @7 /* ~<CHARNAME> - thank goodness! (She gives you a hug)~ */
 		
+		= @14 /* ~(She gives you a hug.)~ */
+		
 		IF ~~ THEN REPLY @6 /* ~Schael? Were you worried about me?~ */
 		DO ~
 			SetGlobal("XA_CorwinWitnessedDuel", "GLOBAL", 2)
 		~
 		GOTO XA_AshatielDuel_3 
+		
+		IF ~~ THEN REPLY @15 /* ~Is that it, then? I need only risk my life in a duel to the death to get you to show me some affection?~*/
+		DO ~
+			SetGlobal("XA_CorwinWitnessedDuel", "GLOBAL", 2)
+		~
+		GOTO XA_AshatielDuel_3A
 	END
 	
 	IF ~ 
@@ -76,15 +72,29 @@ APPEND BDCORWIJ
 	END
 	
 	IF ~~ THEN BEGIN XA_AshatielDuel_3
-		SAY @5 /* ~Gods, of course I was! (She punches you in the shoulder) */
+		SAY @5 /* ~Gods, of course I was!  */
+		
+		= @13 /* ~(She punches you in the shoulder.)~ */
 		
 		IF ~~ THEN REPLY @11 /* ~Ow!~ */
+		GOTO XA_AshatielDuel_5
+	END
+	
+	IF ~~ THEN BEGIN XA_AshatielDuel_3A
+		SAY @16 /* ~Hah! Very funny.~  */
+		
+		= @13 /* ~(She punches you in the shoulder.)~*/
+		
+		IF ~~ THEN REPLY @17 /* ~Ow! I was only kidding!~ */
 		GOTO XA_AshatielDuel_5
 	END
 	
 	IF ~~ THEN BEGIN XA_AshatielDuel_4
 		SAY @10 /* ~Look! The crusaders are fleeing or laying down their weapons. Your victory has likely saved many lives, on both sides. I'll make sure that the higher-ups know about what you did here today. Let's go.~ */
 		IF ~~ THEN
+		DO ~
+			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		~
 		EXIT
 	END
 	

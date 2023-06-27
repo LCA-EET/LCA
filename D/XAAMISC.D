@@ -7,7 +7,90 @@
 2022-12-10: Initial Commit
 
 */
+//{ Altered Transitions
+	//{ BDBELT
+	ADD_TRANS_ACTION BDBELT
+	BEGIN 0 1 END
+	BEGIN 0 END
+	~
+		SetGlobal("XA_Trial","GLOBAL",1)
+	~
+	//}
 
+	//{ BDCORWIJ
+	ADD_TRANS_ACTION BDCORWIJ 
+	BEGIN 235 END
+	BEGIN 0 1 3 END
+	~
+		SetGlobal("XA_ToldTruthBhaal", "GLOBAL", 1)
+	~
+	
+	ADD_TRANS_ACTION BDCORWIJ  
+	BEGIN 245 END
+	BEGIN 0 1 END
+	~
+		SetGlobal("XA_ToldTruthBhaal", "GLOBAL", 1)
+	~
+	
+	ALTER_TRANS BDCORWIJ
+	BEGIN 297 END
+	BEGIN 0 1 END
+	BEGIN
+		"EPILOGUE"
+		~GOTO XA_Kiss~
+	END
+	//}
+	
+	//{ LARZE
+	ADD_TRANS_ACTION LARZE
+	BEGIN 3 END
+	BEGIN 1 END
+	~
+		SetGlobal("XA_TrickedLarze","GLOBAL",1)
+	~
+	//}
+	
+	//{ ALDETH
+	ADD_TRANS_ACTION ALDETH
+	BEGIN 23 END
+	BEGIN 1 END
+	~
+		SetGlobal("XA_AldethFF","GLOBAL",1)
+	~
+	//}
+	
+	
+	//{ VAI
+	ADD_TRANS_ACTION VAI
+	BEGIN 6 END
+	BEGIN 0 END
+	~
+		IncrementGlobal("XA_CorwinOpinionOfPlayer","GLOBAL",2)
+	~
+
+	//{ BDBENCE
+	ALTER_TRANS BDBENCE
+	BEGIN 85 END
+	BEGIN 0 END
+	BEGIN
+		"ACTION"
+		~
+			SetGlobal("bd_plot","global",650)
+			ActionOverride("bdschae2", SetDialog("XABDSCH2"))
+			SetDialog("XABDBENC")
+			ActionOverride("bdschae2", StartDialog("XABDSCH2", Player1))
+		~
+	END
+
+	ALTER_TRANS BDBENCE
+	BEGIN 85 END
+	BEGIN 0 END
+	BEGIN
+		"EPILOGUE"
+		~EXIT~
+	END
+	//}
+//}
 //{ SARMEL01
 EXTEND_BOTTOM SARMEL01 68
 	IF ~
@@ -312,21 +395,6 @@ APPEND SAREV25J
 END
 //}
 
-//{ LARZE
-ADD_TRANS_TRIGGER LARZE 3
-~
-	!Global("XA_Override", "GLOBAL", 1)
-~
-DO 1
-
-EXTEND_BOTTOM LARZE 3
-	IF ~~ THEN REPLY #218270 /* ~Larze, my poor confused ogre. There is only one thing for you to do. You have to go back and take a closer look at the picture. I'm sure once you've had a second look, you'll know what a big mistake you've made. Now run along, we'll be waiting right here.~ */ 
-	DO ~
-		SetGlobal("XA_TrickedLarze", "GLOBAL", 1)
-	~
-	GOTO 5
-END
-//}
 
 //{ CONNOL
 ADD_TRANS_TRIGGER CONNOL 0
@@ -364,61 +432,6 @@ ADD_STATE_TRIGGER MCOOK4 1
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-//{ DELTAN2 *Need to Revisit Per Comment on Forums*
-ADD_STATE_TRIGGER DELTAN2 0
-~
-	!Global("XA_Override", "GLOBAL", 1)
-~
-
-ADD_STATE_TRIGGER DELTAN2 1
-~
-	!Global("XA_Override", "GLOBAL", 1)
-~
-
-APPEND DELTAN2
-	IF ~  
-		Global("EltanMove","GLOBAL",1)
-	~ THEN BEGIN 1 // from:
-		SAY @223 /* ~I should be safe here. In the mean time, you have quite the task ahead of you. If I'm right, the Iron Throne is going to stage a coup. I fear that Nederlok, Corwin and the others won't return in time.  You're the only ones who'll be able to stop the coup.~  */
-		
-		IF ~~ THEN 
-		DO ~
-			SetGlobal("EltanMove","GLOBAL",2)
-		~ 
-		EXIT
-	END
-	
-	IF ~  
-		Global("EltanMove","GLOBAL",0)
-	~ THEN BEGIN 0 // from:
-		
-		SAY @224 /* ~I am again in your debt. That creature has kept me helpless for too long. Perhaps if I hadn't been incapacitated, I might have been able to prevent Scar's death. *cough* Angelo will soon hear of my recovery. It is important that you take me away from here; I'm sure Angelo won't want me coherent and among the living. Take me to the Harbor Master's building — he is a good friend of mine. I can rest there, and send word to Nederlok and Corwin to return to the city immediately. They're loyalty is beyond reproach, and they can retake control of the Fist while I recover. Take this letter; I managed to filch it off Rashad when he was "caring" for me. From what I read of it, it seems that Sarevok has dire plans for the city. I fear for the lives of my fellow Dukes, Liia and Belt. If they were to die, Sarevok would take over the city. You must find Slythe and Krystin, and stop them... *cough* Hurry! We must make haste.~  */
-
-		IF ~~ THEN 
-		DO ~
-			GiveItemCreate("MISC55",LastTalkedToBy,0,0,0)
-			GiveItemCreate("SCRL2R",LastTalkedToBy,0,0,0)
-			AddJournalEntry(226959,QUEST)
-			DestroySelf()
-		~ UNSOLVED_JOURNAL #226960 /* ~Slythe and Krystin
-		We must travel to the Undercellar and find Slythe and Krystin, two of Sarevok's assassins. Eltan thinks that Sarevok may want to murder the Grand Dukes Belt and Liia. We must make sure that this doesn't happen.~ */ 
-		EXIT
-		
-		IF ~  
-			Dead("Krystin")
-			Dead("Slythe")
-		~ THEN 
-		DO ~
-			GiveItemCreate("MISC55",LastTalkedToBy,0,0,0)
-			GiveItemCreate("SCRL2R",LastTalkedToBy,0,0,0)
-			AddJournalEntry(226959,QUEST)
-			DestroySelf()
-		~ 
-		EXIT
-	END
-END
-//}
-
 ADD_STATE_TRIGGER SUTHIE 0
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
@@ -444,177 +457,7 @@ APPEND SUTHIE
 	END
 END
 
-ADD_TRANS_TRIGGER NEB_ 2
-~
-	!Global("XA_Override", "GLOBAL", 1)
-~
-DO 1
 
-
-ADD_TRANS_TRIGGER NEB_ 0
-~
-	!Global("XA_Override", "GLOBAL", 1)
-~
-DO 1
-
-EXTEND_BOTTOM NEB_ 2
-	IF ~~ THEN REPLY #202157 /* ~So Neb, do you know what's been going on in the city lately?~ */
-	GOTO XAA3
-END
-
-EXTEND_BOTTOM NEB_ 0
-	IF ~~ THEN REPLY #202157 /* ~So Neb, do you know what's been going on in the city lately?~ */
-	GOTO XAA3
-END
-
-APPEND NEB_
-	IF ~~ THEN BEGIN XAA3
-		SAY @38 /* ~Oh yeah, lots of stuff. You know about Duke Eltan, don't ya? He's been diseased. That's why Angelo's in charge now. It'd have been Scar, but he went out and got assassinated, and that Corwin bitch who arrested me's on some training exercise up north with Marshal Nederlok. Ya, the city's gone downhill over the last week. Too bad, heh heh.~*/
-		
-		IF ~~ THEN UNSOLVED_JOURNAL #226846 /* ~Afoul of the Law
-		Once Angelo locked me up, I learned from a criminal called Neb that Duke Eltan is sick and Scar has died.~ */
-		EXIT
-	END
-END
-
-ADD_TRANS_TRIGGER ALDETH 23
-~
-	!Global("XA_Override", "GLOBAL", 1)
-~
-DO 1
-
-EXTEND_BOTTOM ALDETH 23
-	IF ~~ THEN REPLY #202132 /* ~We surrender.~ */ 
-	DO ~
-		SetGlobal("XA_AldethFF", "GLOBAL", 1)
-	~
-	JOURNAL #206534 /* ~Aldeth Sashenstar betrayed us to the Flaming Fist!~ */ 
-	EXTERN ~FLAMAL~ 1
-END
-
-ADD_TRANS_TRIGGER ALANBL 1
-~
-	!Global("XA_Override", "GLOBAL", 1)
-~
-DO 1
-
-EXTEND_BOTTOM ALANBL 1
-	IF ~~ THEN REPLY #209726 /* ~What will the Flaming Fist do without effective leadership?~ */ 
-	GOTO XAA5
-END
-
-ADD_TRANS_TRIGGER ALANBL 4
-~
-	!Global("XA_Override", "GLOBAL", 1)
-~
-DO 1
-
-EXTEND_BOTTOM ALANBL 4
-	IF ~~ THEN REPLY #209726 /* ~What will the Flaming Fist do without effective leadership?~ */ 
-	GOTO XAA5
-END
-
-APPEND ALANBL
-	IF ~~ THEN BEGIN XAA5
-		SAY @222 /* ~They still have leadership. How effective it is, I do not know. With Captain Corwin sent on some training exercise up north, I hear Angelo Dosan is now effectively in control. Such a weasel he is. I am surprised he has the support of the troops. He's got powerful friends though, and I hear that he takes orders straight from Sarevok. You've heard of him, right? With Entar dead, the other Dukes have called an emergency election. Sarevok is the frontrunner, and his stand against Amn is very popular. Imagine how much pull he will have if he actually has the Flaming Fist in his back pocket.~*/
-		
-		IF ~~ THEN REPLY #209745 /* ~Duke Eltan would never stand by and let someone take control of the Flaming Fist.~ */ 
-		GOTO 6
-	END
-END
-
-ADD_TRANS_TRIGGER SORREL 0
-~
-	!Global("XA_Override", "GLOBAL", 1)
-~
-DO 1
-
-ADD_TRANS_TRIGGER SORREL 1
-~
-	!Global("XA_Override", "GLOBAL", 1)
-~
-DO 0
-
-EXTEND_BOTTOM SORREL 0
-	IF ~
-		Global("XA_Override", "GLOBAL", 1)
-	~ THEN REPLY #209698 /* ~What do you want?~ */
-	GOTO XAA2 
-END
-
-EXTEND_BOTTOM SORREL 1
-	IF ~
-		Global("XA_Override", "GLOBAL", 1)
-	~ THEN REPLY #209699 /* ~A price on my head? And you'll not take it?~ */ 
-	JOURNAL #209705 /* ~Word of my recent misadventures in Candlekeep appear to have reached Baldur's Gate. The Flaming Fist has placed a value on my head and I am sure more than one private mercenary has also taken interest. It would be wise to proceed with caution, I am sure.~ */
-	GOTO XAA2 
-END
-
-APPEND SORREL
-	IF ~~ THEN BEGIN XAA2
-		SAY @221 /* ~There's trouble in the Fist, <CHARNAME>, big trouble. Duke Eltan's fallen sick and Scar was killed, supposedly in a simple robbery but I have my doubts... It's all Angelo, he's making a power grab, taking control of the Fist and, with Scar gone and Corwin sent on some bogus errand up north, there's nothing to stop him! I've seen him paying visits to the Iron Throne, too, and I don't like it one bit... There are some of us that are still loyal to Eltan and, lucky for you, I happen to be one of them. Please, for your sake and ours, keep your head down and, if you get the chance, sniff around the Iron Throne's base. If you can find a way to talk to Duke Eltan, even better, but they're keeping him in the middle of Fist headquarters... Damn it, Angelo will pay dearly for this and I hope it's soon...~*/
-		
-		IF ~~ THEN 
-		DO ~
-			EscapeArea()
-		~ 
-		JOURNAL #209703 /* ~Angelo is making a power grab within the Flaming Fist and may be responsible both for Duke Eltan's sickness and Scar's death. His reputed connections to the Iron Throne leave me more than suspicious. It's a question of where to turn. Shall I go back to the Iron Throne and continue my investigations there or should I seek out Duke Eltan at the Flaming Fist compound and test my suspicions regarding his disease?~ */ 
-		EXIT
-	END
-END
-
-ADD_STATE_TRIGGER VAI 6
-~
-	!Global("XA_Override", "GLOBAL", 1)
-~
-
-ADD_STATE_TRIGGER VAI 7
-~
-	!Global("XA_Override", "GLOBAL", 1)
-~
-
-
-APPEND VAI
-	
-	IF ~
-		Global("XA_VaiExit", "GLOBAL", 1)
-	~ THEN BEGIN XA_ExitVai2
-		SAY @219 /* ~Let me see that.~ */
-		= @220 /* ~Good. <CHARNAME>, I've received new orders from my commanding officer. My contingent and I have been asked to return to Baldur's Gate and make our reports. You will figure prominently in them and I assure you that our accounts will be favorable.~*/
-		IF ~~ THEN 
-		DO ~
-			ReputationInc(1)
-			EraseJournalEntry(227501)
-			AddJournalEntry(227502,QUEST_DONE)
-			EscapeArea()
-			ActionOverride("XAVAI2", EscapeArea())
-		~ 
-		EXIT
-	END
-	
-	
-	IF ~
-		Global("MetVai","GLOBAL",1)
-		GlobalGT("Chapter","GLOBAL",3)
-		!PartyHasItem("MISC86")
-	~ THEN BEGIN XA_ExitVai
-		SAY @218 /* ~Ah, <CHARNAME>. Good to see you again.~ */
-		
-		IF ~~ THEN
-		DO ~
-			StartCutSceneMode()
-			StartCutScene("XAVAIEX")
-		~
-		EXIT
-	END
-	
-	IF ~  
-		True()
-	~ THEN BEGIN 7 // from:
-		SAY #219703 /* ~I hope your travels have gone well, <CHARNAME>. Remember, if you want the reward for dead bandits, you have to bring me their scalps. A rather bloody task, but I must have some proof.~ */
-		IF ~~ THEN EXIT
-	END
-END
 
 EXTEND_BOTTOM BART8 0
 	IF ~
@@ -862,23 +705,9 @@ APPEND BAERIE
 	END
 END
 
-ADD_TRANS_TRIGGER BDBENCE 85
-~
-	!Global("XA_Override", "GLOBAL", 1)
-~
 
-EXTEND_BOTTOM BDBENCE 85
-	IF ~
-		Global("XA_Override", "GLOBAL", 1)
-	~ THEN 
-	DO ~
-		SetGlobal("bd_plot","global",650)
-		ActionOverride("bdschae2", SetDialog("XABDSCH2"))
-		SetDialog("XABDBENC")
-		ActionOverride("bdschae2", StartDialog("XABDSCH2", Player1))
-	~
-	EXIT
-END
+
+
 
 
 EXTEND_BOTTOM SAREV25A 10
