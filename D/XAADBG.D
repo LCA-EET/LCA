@@ -1674,6 +1674,47 @@ END
 IF ~~ THEN BEGIN XA_TestInteraction
 	SAY @280
 	
+	IF ~~ THEN REPLY @532
+	DO ~
+		SetGlobal("TalkedSarMel01","GLOBAL",1)
+		SetGlobal("MelissanJob","GLOBAL",2)
+		SetGlobal("Mel01GromnirDeath","GLOBAL",0)
+		SetGlobal("HadBhaal25Dream1","GLOBAL",1)
+		CreateCreature("MEL01", [-1.-1], N)
+		Wait(1)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @528
+	DO ~
+		CreateCreature("SARBUL05", [-1.-1], N)
+		Wait(1)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @529
+	DO ~
+		CreateCreature("SARPROVF", [-1.-1], N)
+		SetGlobal("XA_CorwinCleansed", "GLOBAL", 2)
+		Wait(1)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @531
+	DO ~
+		CreateCreature("SARPROVF", [-1.-1], N)
+		SetGlobal("XA_CorwinCleansed", "GLOBAL", 0)
+		Wait(1)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @530
+	DO ~
+		CreateCreature("SARPRO01", [-1.-1], N)
+		Wait(1)
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @527
 	DO ~
 		CreateCreature("HGWRA01", [-1.-1], N)

@@ -74,6 +74,80 @@ IF ~~ THEN BEGIN XA_StartDucalCS
 END
 //} #endregion
 
+//{ SARMEL01
+IF ~~ THEN BEGIN XA_SARMEL01_68
+	SAY @1626 /* ~Illasera's dead. <CHARNAME> and I saw to that after she kidnapped my daughter.~ */
+	
+	IF ~~ THEN
+	EXTERN SARMEL01 XA_SARMEL01_68_2
+END
+
+IF ~~ THEN BEGIN XA_SARMEL01_68_3
+	SAY @1628 /* ~She is... and neither the Dukes nor the Flaming Fist will allow the Five to threaten Baldur's Gate again.~ */
+	
+	IF ~~ THEN
+	EXTERN SARMEL01 XA_SARMEL01_68_4
+END
+//}
+//{ SARPRO01
+IF ~~ THEN BEGIN XA_SARPRO01_11
+	SAY @1616 /* ~We don't have time for games. Let's go.~ */
+	
+	IF ~~ THEN REPLY @1617 /* ~I'm sorry, my love... I was just trying to lighten the grim mood.~ */
+	GOTO XA_SARPRO01_Funny
+	
+	IF ~~ THEN REPLY @1618 /* ~Jealous? At least she doesn't come with a kid.~*/
+	GOTO XA_SARPRO01_EndRomance
+END 
+
+IF ~~ THEN BEGIN XA_SARPRO01_EndRomance
+	SAY @1619 /* ~Unbelievable, <CHARNAME>! If you really can't keep it in your pants during a time like this, then fine! Enjoy your whore — we're through.~ */
+	
+	IF ~~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinRomanceActive","GLOBAL",3)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -2)
+	~ 
+	EXTERN ~SARPRO01~ 12
+END
+
+IF ~~ THEN BEGIN XA_SARPRO01_Funny
+	SAY @1620 /* ~You know that I love your playfulness and sense of humor, but this really isn't the time. Let's give the girl a bit of money so that she doesn't need to work the streets, then get on with our mission.~*/
+	
+	IF ~~ THEN 
+	EXTERN ~SARPRO01~ 3
+END
+//}
+
+//{ SARPROVF
+IF ~~ THEN BEGIN XA_SARPROVF_0
+	SAY @1625 /* ~You know I don't approve of this... but there's something about her. She may have some important information that she'll only disclose in private. Go with her, but watch your back.*/
+	
+	IF ~~ THEN
+	DO ~
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -1)
+	~
+	EXTERN ~SARPROVF~ 1
+END
+
+IF ~~ THEN BEGIN XA_SARPROVF_0_BodhiBite
+	SAY @1621 /* ~(She reaches up and touches the scar left behind from Bodhi's bite.)~*/
+	
+	IF ~~ THEN REPLY @1623 /* ~Are you alright?~*/
+	DO ~
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -1)
+	~
+	GOTO XA_SARPROVF_0_BodhiBite2
+END
+
+IF ~~ THEN BEGIN XA_SARPROVF_0_BodhiBite2
+	SAY @1624 /* ~I don't know ... for a moment I felt a strange sensation. Something's wrong here. I think there's more to this woman than meets the eye. Go with her, but watch your back.~   */
+	
+	IF ~~ THEN
+	EXTERN ~SARPROVF~ 1
+END
+//}
+
 //{ Dialog J-79
 IF ~
 	Global("XA_MessageToBG", "GLOBAL", 1)

@@ -161,6 +161,10 @@ COPY ~LCA/ARE/XACS12.ARE~ ~override~
 COPY ~LCA/ARE/XACS13.ARE~ ~override~
 COPY ~LCA/ARE/XA4000.ARE~ ~override~
 
+//String Sets
+STRING_SET 66306 @116 //SARMEL01 State 68
+
+
 //Return to BG Quest
 
 COPY ~LCA/ARE/XAKIDNAP.ARE~ ~override~	// Kidnapping Cutscene Area

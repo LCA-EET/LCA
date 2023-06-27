@@ -8,6 +8,86 @@
 
 */
 
+//{ SARMEL01
+EXTEND_BOTTOM SARMEL01 68
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+	~ THEN
+	EXTERN XACORWIJ XA_SARMEL01_68
+END
+
+APPEND SARMEL01
+	IF ~~ THEN BEGIN XA_SARMEL01_68_2
+		SAY @289 /* ~Oh, dear! I trust your daughter is alright?~ */
+		
+		IF ~~ THEN
+		EXTERN XACORWIJ XA_SARMEL01_68_3
+	END
+	
+	IF ~~ THEN BEGIN XA_SARMEL01_68_4
+		SAY @290 /* ~I'm glad to hear that your child is fine... but I've not heard of the Five before.~ */
+		
+		IF ~~ THEN REPLY @291 /* ~That's odd. I'd have thought that someone with as much knowledge on the matter would be familiar with them. In any case, with Illasera gone, what other Bhaalspawn should I be concerned with?~ */
+		GOTO 69
+	END
+END
+//}
+
+//{ SARPROVF
+EXTEND_BOTTOM SARPROVF 0
+
+	IF ~  
+		PartyGoldGT(49)
+		Global("XA_CorwinRomanceActive","GLOBAL",2)
+		IsValidForPartyDialogue("XACORWIN")
+		!Global("ToldVampires","GLOBAL",1)
+		!GlobalGT("XA_CorwinCleansed", "GLOBAL", 0)
+	~ THEN REPLY #71341 /* ~Sounds good to me!~ */ 
+	DO ~
+		TakePartyGold(50)
+	~ 
+	EXTERN ~XACORWIJ~ XA_SARPROVF_0
+	
+	IF ~  
+		PartyGoldGT(49)
+		Global("XA_CorwinRomanceActive","GLOBAL",2)
+		IsValidForPartyDialogue("XACORWIN")
+		!Global("ToldVampires","GLOBAL",1)
+		GlobalGT("XA_CorwinCleansed", "GLOBAL", 0)
+	~ THEN REPLY #71341 /* ~Sounds good to me!~ */ 
+	DO ~
+		TakePartyGold(50)
+	~ 
+	EXTERN ~XACORWIJ~ XA_SARPROVF_0_BodhiBite
+END
+
+EXTEND_BOTTOM SARPROVF 5
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+		Global("XA_CorwinRomanceActive","GLOBAL",2)
+		GlobalGT("XA_CorwinCleansed", "GLOBAL", 0)
+	~ THEN
+	EXTERN ~XACORWIJ~ XA_SARPROVF_0_BodhiBite
+	
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+		Global("XA_CorwinRomanceActive","GLOBAL",2)
+		!GlobalGT("XA_CorwinCleansed", "GLOBAL", 0)
+	~ THEN
+	EXTERN ~XACORWIJ~ XA_SARPROVF_0
+END
+//}
+
+//{ SARPRO01.D
+EXTEND_BOTTOM SARPRO01 11
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		IsValidForPartyDialogue("XACORWIN")
+	~ THEN REPLY #71333
+	EXTERN XACORWIJ XA_SARPRO01_11
+END
+//}
+
 //{ HGWRA01.D
 EXTEND_BOTTOM HGWRA01 18
 	IF ~
@@ -43,13 +123,13 @@ END
 //{ SARVOLO.D
 EXTEND_TOP SARVOLO 9
 	IF ~
-		IsValidForPartyDialogue("XACORWIN")
+		InParty("XACORWIN")
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @279 /* ~Tell me about Schael.~*/
 	GOTO XA_Schael
 	
 	IF ~
-		IsValidForPartyDialogue("XACORWIN")
+		InParty("XACORWIN")
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @280 /* ~Tell me about Corwin.~*/
 	GOTO XA_Corwin
@@ -59,7 +139,12 @@ APPEND SARVOLO
 	IF ~~ THEN BEGIN XA_Corwin
 		SAY @281 /* ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. The pair have achieved feats that no one could have imagined, and her devotion to <CHARNAME>'s cause has only grown since <PRO_HESHE> helped rescue her daughter from Illasera the Quick. Though no one can say what the future has in store for this duo, one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~ */
 		
-		IF ~~ THEN 
+		IF ~~ THEN
+		GOTO 9
+		
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ THEN 
 		EXTERN XACORWIJ XA_Corwin_Sarvolo
 	END
 	
@@ -67,6 +152,11 @@ APPEND SARVOLO
 		SAY @282 /* ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. <CHARNAME> was smitten by her beauty, and their relationship gradually evolved from friendship into something far more profound. Their fierce devotion toward one another was only strengthened after <CHARNAME> helped rescue her daughter from Illasera the Quick. Their love, to this point, has endured against all odds. Whether it will continue to do so, no one can say, though one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~ */
 		
 		IF ~~ THEN
+		GOTO 9
+		
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ THEN 
 		EXTERN XACORWIJ XA_Schael_Sarvolo		
 	END
 	
@@ -3108,7 +3198,7 @@ CHAIN
 		IF ~
 			IsValidForPartyDialogue("Keldorn")
 		~
-		@39 /* ~Life, I say. My hope is for these priests to one day redeem themselves in the eyes of Helm, and they cannot do that if they are dead.~  */
+		@288 /* ~These false priests deserve death, yet... part of me wishes that they are one day able to redeem themselves in the eyes of Helm, and they cannot do that if they are dead. I will support whatever you decide.~ */
 		DO ~
 			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
 		~

@@ -97,13 +97,41 @@ END
 
 
 //{ Interjects
+
+INTERJECT_COPY_TRANS GORMAD1 2 CORWIN_GORMAD1_2
+	== XACORWIB
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+	~
+	@858 /* ~We're not going to get anywhere with this one. He's nuts.~*/
+END
+//{ Saradush
+INTERJECT_COPY_TRANS2 SARBUL05 2 CORWIN_SARBUL05_2
+	== XACORWIB
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+	~
+	@857 /* ~No. I won't be a party to the murder of defenseless refugees. Goodbye, <CHARNAME>.~*/
+	DO ~
+		LeaveParty()
+		EscapeArea()
+	~
+END
+//}
+
 INTERJECT_COPY_TRANS SAREV25A 52 CORWIN_SAREV25A_52
 	== XACORWIB
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+	~
 	@16 /* ~You can't be serious. <CHARNAME>, he'll turn on us at the first opportunity.~ */
 END
 
 INTERJECT_COPY_TRANS SAREV25A 53 CORWIN_SAREV25A_53
 	== XACORWIB
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+	~
 	@16 /* ~You can't be serious. <CHARNAME>, he'll turn on us at the first opportunity.~ */
 END
 
