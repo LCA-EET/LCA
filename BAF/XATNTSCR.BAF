@@ -1,0 +1,10 @@
+/*
+IF
+	Global("XA_TentCS", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_TentCS", "GLOBAL", 4)
+		StartCutSceneMode()
+		StartCutScene("XATNTEND")
+END
+*/

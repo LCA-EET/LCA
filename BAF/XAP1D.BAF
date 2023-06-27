@@ -1,4 +1,29 @@
 IF
+	!Dead("Corwin")
+	InMyArea("Corwin")
+	AreaCheck("BD3000") //Allied Siege Camp
+	GlobalLT("XA_TentCS", "GLOBAL", 1)	
+THEN
+	RESPONSE #100
+		SetGlobal("XA_TentCS", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutSceneEx("XATNTCS",FALSE)
+END
+
+IF
+	!Dead("Corwin")
+	InMyArea("Corwin")
+	AreaCheck("BD1000") // Coast Way Crossing
+	See("BDTHAIRD")
+	GlobalLT("XA_TentCS", "GLOBAL", 1)	
+THEN
+	RESPONSE #100
+		SetGlobal("XA_TentCS", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutSceneEx("XATNTCS",FALSE)
+END
+
+IF
 	GlobalTimerExpired("XA_STtoBG","GLOBAL") // see MBREGA.d state M34
 	!Global("XA_CS03_Done", "GLOBAL", 1)
 	OR(2)

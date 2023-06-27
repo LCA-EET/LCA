@@ -223,7 +223,9 @@ COPY ~LCA/CRE/XACOMW.CRE~ ~override~
 COPY ~LCA/CRE/XACOMM.CRE~ ~override~
 COPY ~LCA/CRE/XACOMW1.CRE~ ~override~
 COPY ~LCA/CRE/XACOMM1.CRE~ ~override~
-COPY ~LCA/CRE/XACC3.CRE~ ~override~		// Corwin, Cutscene 03
+COPY ~LCA/CRE/XACC2.CRE~ ~override~		// Corwin, Cutscene 03
+COPY ~LCA/CRE/XACC3.CRE~ ~override~		// Corwin, Demon Painting
+COPY ~LCA/CRE/XACC4.CRE~ ~override~		// Corwin, SoD Tent Cutscene
 COPY ~LCA/CRE/XAZHALIM.CRE~ ~override~
 COPY ~LCA/CRE/XADIYAB.CRE~ ~override~
 COPY ~LCA/CRE/XAAASIM.CRE~ ~override~
@@ -321,6 +323,7 @@ COPY ~LCA/ARE/XAWYRMLM.BMP~ ~override~
 COPY ~LCA/ARE/XAWYRMLN.BMP~ ~override~
 COPY ~LCA/ARE/XAWYRMSR.BMP~ ~override~
 COPY ~LCA/ARE/XAWYRM.ARE~ ~override~
+COPY ~LCA/ARE/XATENT.ARE~ ~override~
 COPY ~LCA/ARE/XATOK.ARE~ ~override~
 COPY ~LCA/ARE/XADUCAL.ARE~ ~override~
 COPY ~LCA/ARE/XADUCAL2.ARE~ ~override~

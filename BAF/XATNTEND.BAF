@@ -1,0 +1,12 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		RestParty()
+		//FadeToColor([30.0],0)
+		RestorePartyLocations()
+		//FadeFromColor([30.0],0)
+		EndCutSceneMode()
+		
+END

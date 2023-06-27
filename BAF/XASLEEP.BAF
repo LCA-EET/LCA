@@ -1,0 +1,9 @@
+IF
+	!Global("XA_Sleeping", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetSequence(SEQ_DIE)
+		SetGlobal("XA_Sleeping", "LOCALS", 1)
+		SetInterrupt(TRUE)
+END

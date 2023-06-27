@@ -7,7 +7,7 @@
 2022-12-10: Initial Commit
 
 */
-//{ Altered Transitions
+//{ Altered Transitions	
 	//{ BDBELT
 	ADD_TRANS_ACTION BDBELT
 	BEGIN 0 1 END

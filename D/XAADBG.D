@@ -3370,6 +3370,21 @@ END
 IF ~~ THEN BEGIN XA_Menu_StartCutscene
 	SAY @15 /*  ~Of course. Which cutscene do you want to start?~ */
 	
+	IF ~~ THEN REPLY @534
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("XATNTEND")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @533
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("XATNTCS")
+	~
+	EXIT
+	
+	
 	IF ~~ THEN REPLY @332
 	DO ~
 		StartCutSceneMode()
