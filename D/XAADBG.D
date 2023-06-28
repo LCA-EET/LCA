@@ -1674,6 +1674,15 @@ END
 IF ~~ THEN BEGIN XA_TestInteraction
 	SAY @280
 	
+	IF ~~ THEN REPLY @535
+	DO ~
+		SetGlobal("XA_XACC4_Debug","GLOBAL", 1)
+		SetGlobal("XA_TentCS", "GLOBAL", 1)
+		CreateCreature("XACC4", [-1.-1], N)
+		Wait(1)
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @532
 	DO ~
 		SetGlobal("TalkedSarMel01","GLOBAL",1)
@@ -3379,8 +3388,7 @@ IF ~~ THEN BEGIN XA_Menu_StartCutscene
 	
 	IF ~~ THEN REPLY @533
 	DO ~
-		StartCutSceneMode()
-		StartCutScene("XATNTCS")
+		SetGlobal("XA_TNTCSDebug", "GLOBAL", 1)
 	~
 	EXIT
 	

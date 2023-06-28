@@ -3,7 +3,6 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
-		ClearAllActions()
 		StorePartyLocations()
 		FadeToColor([30.0],0)
 		Wait(3)
@@ -22,6 +21,7 @@ THEN
 		ActionOverride(Player6,PlayDead(120))  		
 		ApplySpellRES("bdhide","Corwin")  // No such index
 		FaceObject("XACC4")
+		Wait(1)
 		PlayDead(2)
 		FadeFromColor([30.0],0)
 		SetGlobal("XA_TentCS", "GLOBAL", 1)

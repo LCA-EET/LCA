@@ -30,6 +30,12 @@ IF ~~ THEN BEGIN XA_TentCS_DutyRoster2
 		StartCutScene("XATNTCS2")
 	~
 	EXIT
+	
+	IF ~
+		Global("XA_XACC4_Debug","GLOBAL", 1)
+	~ THEN
+	EXIT
+	
 END
 
 IF ~
@@ -49,9 +55,16 @@ IF ~~ THEN BEGIN XA_TentCS_Sentry
 	
 	= @9 /* ~(As she continues with her explanation of the duty roster, you realize that this is the first time you've seen Corwin without her armor and other equipment. Moreover, sitting so close to her affords you a much better view of her incredible physique. Though you've always found her attractive, you never quite appreciated her beauty until this moment.)~ */
 	
-	= @10 /* ~<CHARNAME>? <CHARNAME>!~ */
+	= @10 /* ~<CHARNAME>?~ */
 	
-	IF ~~ THEN REPLY @11 /* ~Sorry, what was that?~ */
+	IF ~~ THEN REPLY @31 /* ~...~ */
+	GOTO XA_Charname
+END
+
+IF ~~ THEN BEGIN XA_Charname
+	SAY @32 /*  ~<CHARNAME>!~ */
+
+	IF ~~ THEN REPLY @11 /*  ~Sorry, what was that? I was, uh, distracted.~*/
 	GOTO XA_TentCS_Beautiful
 END
 
@@ -60,6 +73,121 @@ IF ~~ THEN BEGIN XA_TentCS_Beautiful
 	
 	IF ~~ THEN REPLY @13 /* ~No, your explanation was sufficient. Thank you, Captain.~ */
 	GOTO XA_TentCS_END
+	
+	IF ~
+		GlobalLT("CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @19 /* ~Are you single, by any chance?~ */
+	GOTO XA_Single
+	
+	IF ~
+		GlobalLT("CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @16 /* ~Why don't you take a break from those papers and join me in bed, Captain.~*/
+	GOTO XA_TakeBreak
+	
+	IF ~
+		Global("CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @30 /* ~Why don't you take a break from those papers and join me in bed, Schael.~*/
+	GOTO XA_Single3
+END
+
+IF ~~ THEN BEGIN XA_Tempting
+	SAY @29 /* ~Tempting. But this isn't time, or the place.~ */
+	
+	IF ~~ THEN 
+	GOTO XA_Single3
+END
+
+IF ~~ THEN BEGIN XA_Single
+	SAY @20 /* ~<CHARNAME>, I don't know what you think is going on here, but there's a very good chance that we won't make it back home. This really isn't the time.~*/
+	
+	IF ~~ THEN REPLY @21 /* ~You didn't answer my question.~*/
+	GOTO XA_Single2
+	
+	IF ~~ THEN REPLY @22 /* ~You're right. I'm just trying to lighten up the mood. Thank you for explaining those rosters to me.~*/
+	GOTO XA_TentCS_END
+END
+
+IF ~~ THEN BEGIN XA_Single2
+	SAY @23 /* ~That's right ... and what if I am single? Are you going to sweep me off my feet? Show me things that I've never dreamed of, and love me like no other? Let's just focus on surviving the next week or two, alright?~ */
+	
+	IF ~~ THEN REPLY @25 /*~Fair enough.~*/
+	GOTO XA_Single3
+	
+	IF ~~ THEN REPLY @26 /*~You know, you're right. We could be dead tomorrow. I can't think of a better way to spend my last night among the living than in the arms of a woman as beautiful as you.~*/
+	GOTO XA_Flattering
+END
+
+IF ~~ THEN BEGIN XA_Flattering
+	SAY @27 /* ~Very flattering... you know, you're not too hard on the eyes yourself... Gods, what am I saying?~ */
+	
+	= @28 /*  ~Enough. Get some rest. I'll see you in the morning.~ */
+	
+	IF ~~ THEN 
+	DO ~
+		AddJournalEntry(@15, INFO)
+		ChangeStat("Corwin", XP, 10000, ADD)
+		ChangeStat(Player1, XP, 10000, ADD)
+		RestParty()
+	~
+	EXIT
+	
+	IF ~
+		Global("XA_XACC4_Debug","GLOBAL", 1)
+	~ THEN
+	DO ~
+		AddJournalEntry(@15, INFO)
+		ChangeStat("Corwin", XP, 10000, ADD)
+		ChangeStat(Player1, XP, 10000, ADD)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_Single3
+	SAY @24 /* ~Get some rest, hero. I'll see you tomorrow.~*/
+	
+	IF ~~ THEN 
+	DO ~
+		AddJournalEntry(@15, INFO)
+		ChangeStat("Corwin", XP, 10000, ADD)
+		ChangeStat(Player1, XP, 10000, ADD)
+		RestParty()
+	~
+	EXIT
+	
+	IF ~
+		Global("XA_XACC4_Debug","GLOBAL", 1)
+	~ THEN
+	DO ~
+		AddJournalEntry(@15, INFO)
+		ChangeStat("Corwin", XP, 10000, ADD)
+		ChangeStat(Player1, XP, 10000, ADD)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_TakeBreak
+	SAY @17 /* ~Gods, that's the best you could come up with? I've heard better propositions from sailors that were too drunk to stand.~ */
+	
+	= @18 /* ~All kidding aside, I need to get through this roster. Get some rest. I'll see you tomorrow.~ */
+	
+	IF ~~ THEN 
+	DO ~
+		AddJournalEntry(@15, INFO)
+		ChangeStat("Corwin", XP, 10000, ADD)
+		ChangeStat(Player1, XP, 10000, ADD)
+		RestParty()
+	~
+	EXIT
+	
+	IF ~
+		Global("XA_XACC4_Debug","GLOBAL", 1)
+	~ THEN
+	DO ~
+		AddJournalEntry(@15, INFO)
+		ChangeStat("Corwin", XP, 10000, ADD)
+		ChangeStat(Player1, XP, 10000, ADD)
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN XA_TentCS_END
@@ -70,8 +198,17 @@ IF ~~ THEN BEGIN XA_TentCS_END
 		AddJournalEntry(@15, INFO)
 		ChangeStat("Corwin", XP, 10000, ADD)
 		ChangeStat(Player1, XP, 10000, ADD)
-		StartCutSceneMode()
-		StartCutScene("XATNTEND")
+		RestParty()
+	~
+	EXIT
+	
+	IF ~
+		Global("XA_XACC4_Debug","GLOBAL", 1)
+	~ THEN
+	DO ~
+		AddJournalEntry(@15, INFO)
+		ChangeStat("Corwin", XP, 10000, ADD)
+		ChangeStat(Player1, XP, 10000, ADD)
 	~
 	EXIT
 END

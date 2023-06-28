@@ -1,4 +1,15 @@
 //Note: Variable Key Max Length Appears to be 32.
+IF
+	Global("XA_TNTCSDebug", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_TNTCSDebug", "GLOBAL", 2)
+		SetGlobal("XA_TentCS", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutSceneEx("XATNTCS",FALSE)
+		SetInterrupt(TRUE)
+END
 
 //{ Copy items from SoD Corwin
 IF
