@@ -8,6 +8,52 @@
 
 */
 //{ Altered Transitions	
+	EXTEND_BOTTOM JARLAXLE 0
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ THEN
+		EXTERN XACORWIJ XA_JARLAXLE_0
+	END
+
+	EXTEND_BOTTOM UDPHAE01 88
+		IF ~
+			!IsValidForPartyDialogue("Jaheira")
+			!IsValidForPartyDialogue("Imoen2")
+			IsValidForPartyDialogue("XACORWIN")
+		~ THEN 
+		DO ~
+			SetGlobal("SolaufeinJob","GLOBAL",8)
+			SetGlobalTimer("udPhaTimer","GLOBAL",THREE_DAYS)
+			SetGlobal("udPhaTimerOn","GLOBAL",1)
+		~ 
+		UNSOLVED_JOURNAL #23485
+		EXTERN XACORWIJ XA_UDPHAE01_88
+	END
+
+	EXTEND_BOTTOM IMOEN2J 23
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ THEN 
+		DO ~
+			SetGlobal("SolaufeinJob","GLOBAL",8)
+			SetGlobalTimer("udPhaTimer","GLOBAL",THREE_DAYS)
+			SetGlobal("udPhaTimerOn","GLOBAL",1)
+		~ 
+		EXTERN XACORWIJ XA_UDPHAE01_IJ_88
+	END
+	
+	EXTEND_BOTTOM JAHEIRAJ 472
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ THEN 
+		DO ~
+			SetGlobal("SolaufeinJob","GLOBAL",8)
+			SetGlobalTimer("udPhaTimer","GLOBAL",THREE_DAYS)
+			SetGlobal("udPhaTimerOn","GLOBAL",1)
+		~ 
+		EXTERN XACORWIJ XA_UDPHAE01_IJ_88
+	END
+	
 	//{ BDBELT
 	ADD_TRANS_ACTION BDBELT
 	BEGIN 0 1 END

@@ -1,15 +1,4 @@
 //Note: Variable Key Max Length Appears to be 32.
-IF
-	Global("XA_TNTCSDebug", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_TNTCSDebug", "GLOBAL", 2)
-		SetGlobal("XA_TentCS", "GLOBAL", 1)
-		StartCutSceneMode()
-		StartCutSceneEx("XATNTCS",FALSE)
-		SetInterrupt(TRUE)
-END
 
 //{ Copy items from SoD Corwin
 IF
@@ -436,13 +425,21 @@ END
 //{ Event Checks on Join
 /* If certain events occurred while Corwin was not in the party, remove the ability to enter states associated with those events (eg. events which will cause her to leave). */
 
-IF 
+IF
 	Global("XA_ResetJoinChecks", "GLOBAL", 1)
 	Global("OpenJonBedroom","GLOBAL",1)
 THEN
 	RESPONSE #100
+	
+END
+
+IF 
+	Global("XA_ResetJoinChecks", "GLOBAL", 1)
+	Global("OHD_WEDDING_HOSTILE","OH5000",3)
+THEN
+	RESPONSE #100
 		//DisplayStringHead(Myself, ~DEBUG_PSS~)
-		SetGlobal("XA_PlayerSoulStolen", "GLOBAL", 1)
+		SetGlobal("XA_WeddingHostile", "GLOBAL", 1)
 		Continue()
 END
 
@@ -772,6 +769,19 @@ END
 
 //{ Event Checks
 
+	//{ Wedding Hostile
+	IF 
+		Global("OHD_WEDDING_HOSTILE","OH5000",3)
+		!Global("XA_WeddingHostile", "GLOBAL", 1)
+		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_WeddingHostile", "GLOBAL", 1)
+			SetGlobal("XA_CorwinLeaveWedding", "GLOBAL", 1)
+			Continue()
+	END
+	//}
+	
 	//{ Entered Amkethran
 	IF
 		InParty(Myself)

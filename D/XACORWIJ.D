@@ -9,6 +9,50 @@
 */ 
 BEGIN ~XACORWIJ~
 
+
+
+// XA_JARLAXLE_0
+IF ~~ THEN BEGIN XA_JARLAXLE_0
+	SAY @1634 /* ~Nice trick. You must be Jarlaxle.~*/
+	
+	IF ~~ THEN
+	EXTERN JARLAXLE 1
+END
+//}
+
+//{ XA_UDPHAE01
+IF ~~ THEN BEGIN XA_UDPHAE01_IJ_88
+	SAY @1632 /* ~She's right. If we can find a way to turn Solaufein, he would prove a valuable ally.~*/
+	
+	IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN XA_UDPHAE01_88
+	SAY @1633 /* ~<CHARNAME> - We may be able to use this situation to our advantage. If we can turn Solaufein instead of killing him, he would prove a valuable ally.~*/
+	
+	IF ~~ THEN EXIT
+END
+//}
+//{ Wedding Hostility
+IF ~
+	Global("XA_CorwinLeaveWedding", "GLOBAL", 1)
+~ THEN BEGIN XA_CorwinLeaveWedding
+	SAY @1631 /* ~I won't be party to this madness any longer. If you ever clean up your act, you can find me in the Athkatla magistrate.~ */
+	
+	IF ~~ THEN
+	DO ~
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -6)
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
+		LeaveParty()
+		EscapeAreaMove("AR1002",1033,563, SW)
+		SetGlobal("XA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
+		SetGlobal("XA_CorwinLeaveWedding", "GLOBAL", 2)
+	~
+	EXIT
+END
+//}
+
 //{ #region Unused
 IF ~~ THEN BEGIN XAA100
 	SAY @431 /* ~(She becomes visibly upset.) You bastard! Gods damnit... (She calms down.)~ */
@@ -136,6 +180,7 @@ IF ~~ THEN BEGIN XA_SARPROVF_0_BodhiBite
 	IF ~~ THEN REPLY @1623 /* ~Are you alright?~*/
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -1)
+		
 	~
 	GOTO XA_SARPROVF_0_BodhiBite2
 END
@@ -8890,3 +8935,4 @@ CHAIN XACORWIJ XA_RohmaWraithChain
 	= @1612 /* ~You wanted us to die, so that you could start a new family with <CHARNAME>! You never loved me!~*/
 	
 END XACORWIJ XA_RohmaWraithChain_END
+
