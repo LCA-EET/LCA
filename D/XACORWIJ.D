@@ -2854,18 +2854,70 @@ END
 
 //{ #region Corwin Family Timer - Dialog J-18
 IF ~
-	Global("XA_CorwinFamilyTimerDialog", "GLOBAL", 1)
-	GlobalTimerExpired("XA_CorwinFamilyTimer", "GLOBAL")
+	Global("XA_CorwinNeedSeeFamily", "GLOBAL", 1)
 	GlobalLT("XA_CorwinMetFamily", "GLOBAL", 1)
-	!Global("XA_CorwinComplainFamily", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinFamilyTimer
 	SAY @680 /* ~<CHARNAME> - I really need to see my family. My home is in the southeast part of the city. Let's go.~*/
 	
-	IF ~~ THEN
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalLT("XA_CorwinFamilyTimer_Hours", "GLOBAL", 4)
+	~ THEN REPLY @1636 /* ~Soon, love.~ */
 	DO ~
 		SetGlobalTimer("XA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
-		SetGlobal("XA_CorwinComplainFamily", "GLOBAL", 1)
-		SetGlobal("XA_CorwinFamilyTimerDialog", "GLOBAL", 0)
+		SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 0)
+	~
+	EXIT
+	
+	IF ~
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalLT("XA_CorwinFamilyTimer_Hours", "GLOBAL", 4)
+	~ THEN REPLY @1635 /* ~Soon, Captain.~ */
+	DO ~
+		SetGlobalTimer("XA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
+		SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 0)
+	~
+	EXIT
+	
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!GlobalLT("XA_CorwinFamilyTimer_Hours", "GLOBAL", 4)
+	~ THEN REPLY @1636 /* ~Soon, love.~ */
+	GOTO XA_SeeFamilyNow
+	
+	IF ~
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!GlobalLT("XA_CorwinFamilyTimer_Hours", "GLOBAL", 4)
+	~ THEN REPLY @1635 /* ~Soon, Captain.~ */
+	GOTO XA_SeeFamilyNow
+	
+	IF ~~ THEN REPLY @1637 /* ~Lead the way.~ */
+	DO ~
+		SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 0)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_SeeFamilyNow
+	SAY @1638 /* ~You've been saying that for the last four hours. Either come with me now, or I'll see you tomorrow during the debriefing.~ */
+	
+	IF ~~ THEN REPLY @1639 /* ~See you tomorrow, then.~ */
+	DO ~
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -1)
+		SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 0)
+		SetGlobal("XA_CorwinWithFamily", "GLOBAL", 1)
+		SetGlobal("XA_CorwinMetFamily", "GLOBAL", 2)
+		SetLeavePartyDialogFile()
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("",DEFAULT)
+		LeaveParty()
+		EscapeAreaMove("BG1316",400,250,S) 
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @1637 /* ~Lead the way.~ */
+	DO ~
+		SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 0)
 	~
 	EXIT
 END
@@ -2873,14 +2925,14 @@ END
 
 //{ #region Corwin Family Timer Expired (Non-Romance) - Dialog J-19
 IF ~
-	Global("XA_CorwinFamilyTimerDialog", "GLOBAL", 1)
+	Global("XA_CorwinLeaveForFamily", "GLOBAL", 1)
 	!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 ~ THEN BEGIN XA_CorwinFamilyTimer_ExpiredNR
 	SAY @903 /* ~<CHARNAME>, I'm going home to spend the rest of the day with my family. I'll see you tomorrow morning at the debriefing.~*/
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinFamilyTimerDialog", "GLOBAL", 0)
+		SetGlobal("XA_CorwinLeaveForFamily", "GLOBAL", 2)
 		SetGlobal("XA_CorwinWithFamily", "GLOBAL", 1)
 		SetGlobal("XA_CorwinMetFamily", "GLOBAL", 2)
 		SetLeavePartyDialogFile()
@@ -2895,7 +2947,7 @@ END
 
 //{ #region Corwin Family Timer Expired (Romance) - Dialog J-20
 IF ~
-	Global("XA_CorwinFamilyTimerDialog", "GLOBAL", 1)
+	Global("XA_CorwinLeaveForFamily", "GLOBAL", 1)
 	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 ~ THEN BEGIN XA_CorwinFamilyTimer_ExpiredRomance
 	SAY @904 /* ~My love, I'm going home to spend the rest of the day with my family. Have you decided where you're staying tonight?~*/
@@ -2974,7 +3026,7 @@ IF ~~ THEN BEGIN XA_SleepAtHotel
 	
 	IF ~~ THEN REPLY @907 /* ~You'll do more than just see me, I hope.~ */
 	DO ~
-		SetGlobal("XA_CorwinFamilyTimerDialog", "GLOBAL", 0)
+		SetGlobal("XA_CorwinLeaveForFamily", "GLOBAL", 2)
 	~
 	GOTO XA_SexTonight
 END
@@ -8559,7 +8611,8 @@ CHAIN
 	IF ~~ THEN XACORWIJ XA_Depart_RohmaChain
 		@872 /* ~Rohma, father, <CHARNAME> and I have some business to attend to in the city. I'll be back in a couple of hours.~ */
 		DO ~
-			SetGlobalTimer("XA_CorwinFamilyTimer", "GLOBAL", FOUR_HOURS)
+			SetGlobalTimer("XA_CorwinLeaveForFamilyTimer", "GLOBAL", ONE_HOUR)
+			
 		~
 		== XAAUDAM
 		@877 /*  ~Good. Don't take too long. Rohma, say bye to mommy.~ */

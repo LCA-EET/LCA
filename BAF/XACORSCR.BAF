@@ -250,36 +250,126 @@ END
 	END
 	//}
 
-	//{ Family Timer Checks
+	//{ Time Stop Area
+	
+	/* Rationale: The timer is set to one hour instead of four, because I want to give the perception that time has stopped, while the player is in the Demon's Painting. If the player spends more than four hours in the painting, I don't want a bunch of dialogs to pop up as soon as they step out. That is why the timer ticks once per hour, and only when the player is outside of the painting. The same logic is used for the Duke debriefing timer. */
 	IF
-		!AreaCheck("BG1316")
-		!AreaCheck("BG0130") //Hall of Wonders
-		!AreaCheck("BG0131") //High Hall of Wonders
-		!AreaType(DUNGEON)
+		Global("XA_RBGTimerActive", "GLOBAL", 0)
 		Global("XA_ReturnToBG", "GLOBAL", 1)
-		GlobalTimerExpired("XA_CorwinFamilyTimer", "GLOBAL")
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-		!Global("XA_CorwinMetFamily", "GLOBAL", 2)
-		GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
-		See(Player1)
+		!OR(4)
+			AreaCheck("BG1316")
+			AreaCheck("BG0130") //Hall of Wonders
+			AreaCheck("BG0131") //High Hall of Wonders
+			AreaType(DUNGEON)
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_CorwinFamilyTimerDialog", "GLOBAL", 1)
-			//Dialogs J-18, J-20
-			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
+			SetGlobal("XA_RBGTimerActive", "GLOBAL", 1)
+			Continue()
 	END
-
+	
 	IF
-		GlobalTimerExpired("XA_CorwinFamilyTimer", "GLOBAL")
-		!Global("XA_CorwinMetFamily", "GLOBAL", 2)
-		GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+		Global("XA_RBGTimerActive", "GLOBAL", 1)
+		Global("XA_ReturnToBG", "GLOBAL", 1)
+		OR(4)
+			AreaCheck("BG1316")
+			AreaCheck("BG0130") //Hall of Wonders
+			AreaCheck("BG0131") //High Hall of Wonders
+			AreaType(DUNGEON)
 	THEN
 		RESPONSE #100
-			SetGlobalTimer("XA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
+			SetGlobal("XA_RBGTimerActive", "GLOBAL", 0)
+			Continue()
 	END
 	//}
+	
+	//{ Family Timer Checks
+	
+		//{ Leave for Family Timer
+		IF
+			Global("XA_RBGTimerActive", "GLOBAL", 1)
+			GlobalTimerExpired("XA_CorwinLeaveForFamilyTimer", "GLOBAL")
+			GlobalLT("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				IncrementGlobal("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 1) // TICK
+				SetGlobal("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+		
+		IF
+			Global("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
+			GlobalGT("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 3)
+			Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+			See(Player1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 2)
+				SetGlobal("XA_CorwinLeaveForFamily", "GLOBAL", 1)
+				StartDialog("XACORWIJ", Player1)
+				SetInterrupt(TRUE)
+		END
+		
+		IF
+			Global("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
+			!GlobalGT("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 3)
+			//If the timer has ticked, but has not reached the maximum alloted time, reset the timer.
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 0)
+				SetGlobalTimer("XA_CorwinLeaveForFamilyTimer", "GLOBAL", ONE_HOUR)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+		//}	
+		
+		//{ See Family Timer
+		IF
+			Global("XA_RBGTimerActive", "GLOBAL", 1)
+			GlobalTimerExpired("XA_CorwinFamilyTimer", "GLOBAL")
+			GlobalLT("XA_CorwinFamilyTimerTicked", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_CorwinFamilyTimerTicked", "GLOBAL", 1)
+				IncrementGlobal("XA_CorwinFamilyTimer_Hours", "GLOBAL", 1)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+		
+		IF
+			Global("XA_CorwinFamilyTimerTicked", "GLOBAL", 1)
+			Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+			GlobalLT("XA_CorwinMetFamily", "GLOBAL", 1)
+			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+			See(Player1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_CorwinFamilyTimerTicked", "GLOBAL", 0)	
+				SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 1)
+				//Dialogs J-18, J-20
+				StartDialog("XACORWIJ", Player1)
+				SetInterrupt(TRUE)
+		END
+
+		IF
+			Global("XA_CorwinFamilyTimerTicked", "GLOBAL", 1)
+			GlobalTimerExpired("XA_CorwinFamilyTimer", "GLOBAL")
+			!Global("XA_CorwinMetFamily", "GLOBAL", 2)
+			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_CorwinFamilyTimerTicked", "GLOBAL", 0)
+				SetGlobalTimer("XA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+		//}
 
 	//{ Meet Tianna
 	IF

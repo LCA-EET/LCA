@@ -8,6 +8,13 @@
 
 */
 //{ Altered Transitions	
+	ADD_TRANS_ACTION IDJINNI
+	BEGIN 12 END
+	BEGIN 0 END
+	~
+		GiveItemCreate("XASTDAG",LastTalkedToBy(Myself),1,0,0)
+	~
+	
 	EXTEND_BOTTOM JARLAXLE 0
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
