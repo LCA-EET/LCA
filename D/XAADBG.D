@@ -115,7 +115,7 @@ IF ~
 	
 	IF ~~ THEN REPLY @248
 	DO ~
-		SetGlobalTimer("XA_DukeDebriefTimer", "GLOBAL",ONE_DAY)
+		SetGlobalTimer("XA_DukeDebriefTimer", "GLOBAL",EIGHT_HOURS)
 	~
 	GOTO XA_MainMenu
 	
@@ -3378,6 +3378,14 @@ END
 
 IF ~~ THEN BEGIN XA_Menu_StartCutscene
 	SAY @15 /*  ~Of course. Which cutscene do you want to start?~ */
+	
+	IF ~~ THEN REPLY @536
+	DO ~
+		SetGlobal("XA_ReturnToBG", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutScene("XAGOHOME")
+	~
+	EXIT
 	
 	IF ~~ THEN REPLY @534
 	DO ~

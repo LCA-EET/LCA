@@ -1,0 +1,112 @@
+//{ Leave for Family Timer
+	IF
+		Global("XA_ReturnToBG", "GLOBAL", 1)
+		GlobalTimerExpired("XA_CorwinLeaveForFamilyTimer", "GLOBAL")
+		GlobalLT("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
+		GlobalLT("XA_CorwinMetFamily", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			IncrementGlobal("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 1) // TICK
+			SetGlobal("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
+			Continue()
+	END
+	
+	IF
+		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
+		GlobalGT("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 3)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 2)
+			SetGlobal("XA_CorwinLeaveForFamily", "GLOBAL", 1)
+	END
+	
+	IF
+		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
+		!GlobalGT("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 3)
+		//If the timer has ticked, but has not reached the maximum alloted time, reset the timer.
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 0)
+			SetGlobalTimer("XA_CorwinLeaveForFamilyTimer", "GLOBAL", ONE_HOUR)
+			Continue()
+	END
+//}	
+		
+//{ See Family Timer
+	IF
+		Global("XA_ReturnToBG", "GLOBAL", 1)
+		GlobalTimerExpired("XA_CorwinFamilyTimer", "GLOBAL")
+		GlobalLT("XA_CorwinFamilyTimerTicked", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_CorwinFamilyTimerTicked", "GLOBAL", 1)
+			IncrementGlobal("XA_CorwinFamilyTimer_Hours", "GLOBAL", 1)
+			Continue()
+	END
+	
+	IF
+		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_CorwinFamilyTimerTicked", "GLOBAL", 1)
+		GlobalLT("XA_CorwinMetFamily", "GLOBAL", 1)
+		GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_CorwinFamilyTimerTicked", "GLOBAL", 0)	
+			SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 1)
+			Continue()
+	END
+
+	IF
+		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_CorwinFamilyTimerTicked", "GLOBAL", 1)
+		!Global("XA_CorwinMetFamily", "GLOBAL", 2)
+		GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_CorwinFamilyTimerTicked", "GLOBAL", 0)
+			SetGlobalTimer("XA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
+			Continue()
+	END
+//}
+
+//{ Duke Debfried Timer
+	IF
+		Global("XA_ReturnToBG", "GLOBAL", 1)
+		GlobalLT("XA_DukeDebriefTimerTick", "GLOBAL", 1)
+		GlobalTimerExpired("XA_DukeDebriefTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			IncrementGlobal("XA_DukeDebriefTimer_Hours", "GLOBAL", 8) // TICK
+			SetGlobal("XA_DukeDebriefTimerTick", "GLOBAL", 1)
+			Continue()
+	END
+//}
+	
+//{ 24 Hours Elapsed
+	IF
+		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_DukeDebriefTimerTick", "GLOBAL", 1)
+		GlobalGT("XA_DukeDebriefTimer_Hours", "GLOBAL", 23)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_DukeDebriefTimerTick", "GLOBAL", 2)
+			SetGlobal("XA_DukeDebrief_BenceSpawn", "GLOBAL", 1)
+			SetGlobal("XA_DukeDebrief_TimerElapsed", "GLOBAL", 1)
+			Continue()
+	END
+//}
+	
+//{ Less than 24 Hours Has Elapsed
+	IF
+		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_DukeDebriefTimerTick", "GLOBAL", 1)
+		GlobalLT("XA_DukeDebriefTimer_Hours", "GLOBAL", 23)
+	THEN
+		RESPONSE #100
+			SetGlobalTimer("XA_DukeDebriefTimer", "GLOBAL", EIGHT_HOURS)
+			SetGlobal("XA_DukeDebriefTimerTick", "GLOBAL", 0)
+			Continue()
+	END
+//}

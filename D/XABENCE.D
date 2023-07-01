@@ -28,7 +28,7 @@ IF ~~ THEN BEGIN XA_BenceWyrm_1
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobalTimer("XA_DukeDebriefTimer","GLOBAL", ONE_DAY)
+		SetGlobalTimer("XA_DukeDebriefTimer","GLOBAL", ONE_HOUR)
 	~
 	EXTERN XACORWIJ XA_BenceWyrm_2
 END
@@ -50,20 +50,20 @@ IF ~~ THEN BEGIN XA_BenceWyrm_5
 END
 
 IF ~
-	Global("XA_BenceWyrm", "GLOBAL", 2)
-	!Global("XA_DukesDebriefed", "GLOBAL", 1)
-	GlobalTimerExpired("XA_DukeDebriefTimer", "GLOBAL")
+	Global("XA_BenceDukeDebrief", "GLOBAL", 1)
+	GlobalLT("XA_ExtensionNeeded", "GLOBAL", 1)
 ~ THEN BEGIN XA_TimeToSeeTheDukes
 	SAY @10 /* ~<CHARNAME>, it's time. I will escort you to the Ducal Palace for your debriefing.~ */
 	
 	IF ~~ THEN REPLY @11 /* ~Fine. Let's go.~ */
+	DO ~
+		SetGlobal("XA_BenceDukeDebrief", "GLOBAL", 2)
+	~
 	GOTO XA_StartDukeDebriefing
 	
-	IF ~
-		!Global("XA_ExtensionNeeded", "GLOBAL", 1)
-	~ THEN REPLY @12 /* ~Can I have a little more time before we begin?~ */
+	IF ~~ THEN REPLY @12 /* ~Can I have a little more time before we begin?~ */
 	DO ~
-		SetGlobalTimer("XA_DukeDebriefTimer", "GLOBAL", ONE_HOUR)
+		SetGlobalTimer("XA_DukeDebriefOneHourTimer", "GLOBAL", ONE_HOUR)
 		SetGlobal("XA_ExtensionNeeded", "GLOBAL", 1)
 	~
 	GOTO XA_OneMoreHour
@@ -81,13 +81,16 @@ IF ~~ THEN BEGIN XA_StartDukeDebriefing
 END
 
 IF ~
-	Global("XA_BenceWyrm", "GLOBAL", 2)
+	Global("XA_ExtensionNeeded", "GLOBAL", 1)
 	!Global("XA_DukesDebriefed", "GLOBAL", 1)
 	!AreaCheck("BG0900")
 ~ THEN BEGIN XA_BenceWyrm
 	SAY @7 /* ~Are you ready to begin the debriefing?~ */
 
 	IF ~~ THEN REPLY @8 /* ~Yes. Let's go.~ */
+	DO ~
+		SetGlobal("XA_ExtensionNeeded", "GLOBAL", 2)
+	~
 	GOTO XA_StartDukeDebriefing	
 END
 
@@ -95,4 +98,13 @@ IF ~~ THEN BEGIN XA_OneMoreHour
 	SAY @13 /* ~Ugh... fine. One more hour. I'll accompany you until it's time.~ */
 
 	IF ~~ THEN EXIT
+END
+
+IF ~
+	!Global("XA_DukesFullyDebriefed", "GLOBAL", 1)
+~ THEN BEGIN XA_DebriefTomorrow
+	SAY @17 /* ~I'll come and get you when it's time for the debriefing. In the meantime, take some time to enjoy the city. I'm sure you've missed it.~ */
+	
+	IF ~~ THEN
+	EXIT
 END

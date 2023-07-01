@@ -2894,6 +2894,8 @@ IF ~
 	IF ~~ THEN REPLY @1637 /* ~Lead the way.~ */
 	DO ~
 		SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 0)
+		StartCutSceneMode()
+		StartCutscene("XAGOHOME")
 	~
 	EXIT
 END
@@ -2918,6 +2920,8 @@ IF ~~ THEN BEGIN XA_SeeFamilyNow
 	IF ~~ THEN REPLY @1637 /* ~Lead the way.~ */
 	DO ~
 		SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 0)
+		StartCutSceneMode()
+		StartCutscene("XAGOHOME")
 	~
 	EXIT
 END
@@ -8076,6 +8080,10 @@ CHAIN
 		~
 		== XAROHMA
 		@684 /* ~I missed you too mommy!~ */
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XACS14A")
+		~
 EXIT
 //}
 

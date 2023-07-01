@@ -231,9 +231,9 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite3B1
 END
 
 IF ~~ THEN BEGIN XA_CorwinFamilyReunite3B1A
-	SAY @16 /* ~You got me my dolly! She's my favorite!~
+	SAY @16 /* ~You got me my dolly! She's my favorite!~ */
 
-(She holds up the doll you bought for her, many months ago. You had nearly forgotten about it. It warms your heart to see that she treasures it as much as she does.)~*/
+	= @78 /* ~(She holds up the doll you bought for her many months ago. You had nearly forgotten about it. It warms your heart to see that she treasures it as much as she does.)~ */
 
 	IF ~~ THEN
 	DO ~

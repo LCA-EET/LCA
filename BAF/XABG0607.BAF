@@ -27,19 +27,6 @@ THEN
 		Continue()
 END
 
-/*
-IF 
-	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Dead("Vai")
-	!Global("XA_VaiCreated", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		CreateCreature("XAVAI",[961.693], SE)
-		SetGlobal("XA_VaiCreated", "GLOBAL", 1)
-		Continue()
-END
-*/
-
 IF 
 	Global("XA_ReturnToBG", "GLOBAL", 1)
 	InMyArea("Neb")
@@ -58,23 +45,3 @@ THEN
 		Continue()
 END
 
-
-IF
-	!InMyArea("XABENCE")
-	Global("XA_DukesDebriefed", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		CreateCreature("XABENCE",[834.745], SE)
-		Continue()
-END
-
-IF 
-	InMyArea("XABENCE")
-	Global("XA_DukesDebriefed", "GLOBAL", 1)
-	!Global("XA_MovedBence0607", "BG0607", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_MovedBence0607", "BG0607", 1)
-		ActionOverride("XABENCE", JumpToPoint([834.735]))
-		Continue()
-END

@@ -2,30 +2,21 @@ IF
 	True()
 THEN
 	RESPONSE #100
-		StartCutSceneMode()
-		SetCutSceneLite(TRUE)
-		SetGlobal("XA_XACS14Cutscene", "GLOBAL", 1)
+		
 		CutSceneId("XACORWIN")
-		PlaySong(146)
 		Wait(1)
 		DisplayStringHead("XACORWIN", @0)
 		Wait(1)
 		DisplayStringHead("XAROHMA", @1)
 		ActionOverride("XAROHMA", MoveToPoint([228.344]))
-		ActionOverride("XACORWIN", MoveToPoint([266.336]))
+		MoveToPoint([266.336])
 		ActionOverride("XAAUDAM", MoveToPoint([438.249]))
 		Wait(2)
 		ActionOverride("XAROHMA", FaceObject("XACORWIN"))
-		ActionOverride("XACORWIN", FaceObject("XAROHMA"))
+		FaceObject("XAROHMA")
 		ActionOverride("XAAUDAM", FaceObject("XACORWIN"))
-		SetCutSceneLite(TRUE)
+		
 		//Dialog J-67
-		ActionOverride("XACORWIN", StartDialog("XACORWIJ", "XAROHMA"))
-		ActionOverride("XAAUDAM", MoveToPoint([334.289])
-		Wait(2)
-		ActionOverride("XACORWIN", FaceObject("XAAUDAM"))
-		SmallWait(2)
-		//Dialog M-0
-		ActionOverride("XAAUDAM", StartDialogNoSet(Player1))
-		EndCutSceneMode()
+		StartDialog("XACORWIJ", "XAROHMA")
+		
 END

@@ -172,22 +172,36 @@ END
 		AreaCheck("BG1300") //SE Baldur's Gate
 		Global("XA_AVComplimentFamily", "GLOBAL", 1)
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
-		OR(3)
-			IsValidForPartyDialogue("Aerie")
-			IsValidForPartyDialogue("Valygar")
-			IsValidForPartyDialogue("Neera")
-		OR(3)
-			InMyArea("Aerie")
-			InMyArea("Valygar")
-			InMyArea("Neera")
+		IsValidForPartyDialogue("Aerie")
+		
 	THEN
 		//Dialog B-66, B-79, B-82, B-83, B-84
-		RESPONSE #33
+		RESPONSE #100
 			Interact("Aerie")
-		RESPONSE #33
-			Interact("Valygar")
-		RESPONSE #34
+	END
+	
+	IF
+		AreaCheck("BG1300") //SE Baldur's Gate
+		Global("XA_AVComplimentFamily", "GLOBAL", 1)
+		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		IsValidForPartyDialogue("Neera")
+		
+	THEN
+		//Dialog B-66, B-79, B-82, B-83, B-84
+		RESPONSE #100
 			Interact("Neera")
+	END
+	
+	IF
+		AreaCheck("BG1300") //SE Baldur's Gate
+		Global("XA_AVComplimentFamily", "GLOBAL", 1)
+		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		IsValidForPartyDialogue("Valygar")
+		
+	THEN
+		//Dialog B-66, B-79, B-82, B-83, B-84
+		RESPONSE #100
+			Interact("Valygar")
 	END
 	//}
 
@@ -214,26 +228,6 @@ END
 	END
 	//}
 
-	//{ Force Meeting with Family
-	IF 
-		!AreaCheck("BG1316")
-		!AreaCheck("BG0130") //Hall of Wonders
-		!AreaCheck("BG0131") //High Hall of Wonders
-		Global("XA_ForceMeetWithFamily", "GLOBAL", 1)
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			ActionOverride(Player1,LeaveAreaLUA("BG1316","",[400.315],NW))
-			ActionOverride(Player2,LeaveAreaLUA("BG1316","",[400.315],NW))
-			ActionOverride(Player3,LeaveAreaLUA("BG1316","",[400.315],NW))
-			ActionOverride(Player4,LeaveAreaLUA("BG1316","",[400.315],NW))
-			ActionOverride(Player5,LeaveAreaLUA("BG1316","",[400.315],NW))
-			ActionOverride(Player6,LeaveAreaLUA("BG1316","",[400.315],NW))
-			SetGlobal("XA_ForceMeetWithFamily", "GLOBAL", 2)
-			SetInterrupt(TRUE)
-	END
-	//}
-
 	//{ SoD Anxiety
 	IF 
 		Global("XA_SoDAnxiety", "GLOBAL", 1)
@@ -249,127 +243,30 @@ END
 			SetInterrupt(TRUE)
 	END
 	//}
-
-	//{ Time Stop Area
 	
-	/* Rationale: The timer is set to one hour instead of four, because I want to give the perception that time has stopped, while the player is in the Demon's Painting. If the player spends more than four hours in the painting, I don't want a bunch of dialogs to pop up as soon as they step out. That is why the timer ticks once per hour, and only when the player is outside of the painting. The same logic is used for the Duke debriefing timer. */
+	//{ Corwin Leave for Family
 	IF
-		Global("XA_RBGTimerActive", "GLOBAL", 0)
-		Global("XA_ReturnToBG", "GLOBAL", 1)
-		!OR(4)
-			AreaCheck("BG1316")
-			AreaCheck("BG0130") //Hall of Wonders
-			AreaCheck("BG0131") //High Hall of Wonders
-			AreaType(DUNGEON)
+		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CorwinLeaveForFamily", "GLOBAL", 1)
+		See(Player1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_RBGTimerActive", "GLOBAL", 1)
-			Continue()
-	END
-	
-	IF
-		Global("XA_RBGTimerActive", "GLOBAL", 1)
-		Global("XA_ReturnToBG", "GLOBAL", 1)
-		OR(4)
-			AreaCheck("BG1316")
-			AreaCheck("BG0130") //Hall of Wonders
-			AreaCheck("BG0131") //High Hall of Wonders
-			AreaType(DUNGEON)
-	THEN
-		RESPONSE #100
-			SetGlobal("XA_RBGTimerActive", "GLOBAL", 0)
-			Continue()
+			//Dialogs J-19, J-20
+			StartDialog("XACORWIJ", Player1)
 	END
 	//}
 	
-	//{ Family Timer Checks
-	
-		//{ Leave for Family Timer
-		IF
-			Global("XA_RBGTimerActive", "GLOBAL", 1)
-			GlobalTimerExpired("XA_CorwinLeaveForFamilyTimer", "GLOBAL")
-			GlobalLT("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
-		THEN
-			RESPONSE #100
-				SetInterrupt(FALSE)
-				IncrementGlobal("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 1) // TICK
-				SetGlobal("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
-				SetInterrupt(TRUE)
-				Continue()
-		END
-		
-		IF
-			Global("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
-			GlobalGT("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 3)
-			Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-			See(Player1)
-		THEN
-			RESPONSE #100
-				SetInterrupt(FALSE)
-				SetGlobal("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 2)
-				SetGlobal("XA_CorwinLeaveForFamily", "GLOBAL", 1)
-				StartDialog("XACORWIJ", Player1)
-				SetInterrupt(TRUE)
-		END
-		
-		IF
-			Global("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
-			!GlobalGT("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 3)
-			//If the timer has ticked, but has not reached the maximum alloted time, reset the timer.
-		THEN
-			RESPONSE #100
-				SetInterrupt(FALSE)
-				SetGlobal("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 0)
-				SetGlobalTimer("XA_CorwinLeaveForFamilyTimer", "GLOBAL", ONE_HOUR)
-				SetInterrupt(TRUE)
-				Continue()
-		END
-		//}	
-		
-		//{ See Family Timer
-		IF
-			Global("XA_RBGTimerActive", "GLOBAL", 1)
-			GlobalTimerExpired("XA_CorwinFamilyTimer", "GLOBAL")
-			GlobalLT("XA_CorwinFamilyTimerTicked", "GLOBAL", 1)
-		THEN
-			RESPONSE #100
-				SetInterrupt(FALSE)
-				SetGlobal("XA_CorwinFamilyTimerTicked", "GLOBAL", 1)
-				IncrementGlobal("XA_CorwinFamilyTimer_Hours", "GLOBAL", 1)
-				SetInterrupt(TRUE)
-				Continue()
-		END
-		
-		IF
-			Global("XA_CorwinFamilyTimerTicked", "GLOBAL", 1)
-			Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-			GlobalLT("XA_CorwinMetFamily", "GLOBAL", 1)
-			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
-			See(Player1)
-		THEN
-			RESPONSE #100
-				SetInterrupt(FALSE)
-				SetGlobal("XA_CorwinFamilyTimerTicked", "GLOBAL", 0)	
-				SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 1)
-				//Dialogs J-18, J-20
-				StartDialog("XACORWIJ", Player1)
-				SetInterrupt(TRUE)
-		END
-
-		IF
-			Global("XA_CorwinFamilyTimerTicked", "GLOBAL", 1)
-			GlobalTimerExpired("XA_CorwinFamilyTimer", "GLOBAL")
-			!Global("XA_CorwinMetFamily", "GLOBAL", 2)
-			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
-		THEN
-			RESPONSE #100
-				SetInterrupt(FALSE)
-				SetGlobal("XA_CorwinFamilyTimerTicked", "GLOBAL", 0)
-				SetGlobalTimer("XA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
-				SetInterrupt(TRUE)
-				Continue()
-		END
-		//}
+	//{ Corwin Need to See Family
+	IF
+		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CorwinNeedSeeFamily", "GLOBAL", 1)
+		See(Player1)
+	THEN
+		RESPONSE #100
+			//Dialog J-18
+			StartDialog("XACORWIJ", Player1)
+	END
+	//}	
 
 	//{ Meet Tianna
 	IF
@@ -382,24 +279,6 @@ END
 			Wait(1)
 			//Dialog J-15
 			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
-	END
-	//}
-
-	//{ Corwin Return Home
-	IF 
-		AreaCheck("BG1316")
-		Global("XA_ReturnToBG", "GLOBAL", 1)
-		!Global("XA_CorwinMetFamily", "GLOBAL", 1)
-		GlobalLT("XA_XACS14Cutscene", "GLOBAL", 2)
-		InMyArea("XAROHMA")
-		InMyArea("XAAUDAM")
-		!Global("XA_XACS14Started", "GLOBAL", 1)
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_XACS14Started", "GLOBAL", 1)
-			StartCutScene("XACS14")
 			SetInterrupt(TRUE)
 	END
 	//}

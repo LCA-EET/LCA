@@ -1,6 +1,6 @@
 IF
 	!Range(Player1, 10)
-	Global("XA_BenceWyrm", "GLOBAL", 2)
+	Global("XA_DukeDebrief_TimerElapsed", "GLOBAL", 1)
 	!Global("XA_DukesDebriefed", "GLOBAL", 1)
 	!AreaCheck("BG0900")
 THEN 
@@ -11,7 +11,7 @@ END
 
 IF 
 	!Range(Player1, 20)
-	Global("XA_BenceWyrm", "GLOBAL", 2)
+	Global("XA_DukeDebrief_TimerElapsed", "GLOBAL", 1)
 	!Global("XA_DukesDebriefed", "GLOBAL", 1)
 	!AreaCheck("BG0900")
 THEN
@@ -21,11 +21,21 @@ THEN
 END
 
 IF 
-	Global("XA_BenceWyrm", "GLOBAL", 2)
 	!Global("XA_DukesDebriefed", "GLOBAL", 1)
-	GlobalTimerExpired("XA_DukeDebriefTimer", "GLOBAL")
+	Global("XA_DukeDebrief_TimerElapsed", "GLOBAL", 1)
 	!AreaCheck("BG0900")
-	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_BenceDukeDebrief", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_BenceDukeDebrief", "GLOBAL", 1)
+		StartDialog("XABENCE", Player1)
+		SetInterrupt(TRUE)
+END
+
+IF 
+	Global("XA_ExtensionNeeded", "GLOBAL", 1)
+	GlobalTimerExpired("XA_DukeDebriefOneHourTimer", "GLOBAL")
 THEN
 	RESPONSE #100
 		StartDialog("XABENCE", Player1)

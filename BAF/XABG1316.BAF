@@ -37,3 +37,19 @@ THEN
 		CreateCreature("XAAUDAM", [440.164], SE)
 		Continue()
 END 
+
+IF
+	GlobalLT("XA_CorwinMetFamily", "GLOBAL", 1)
+	InMyArea("XACORWIN")
+	InMyArea(Player1)
+	InMyArea("XAROHMA")
+	InMyArea("XAAUDAM")
+	GlobalLT("XA_XACS14Started", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_XACS14Started", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutScene("XACS14")
+		SetInterrupt(TRUE)
+END
