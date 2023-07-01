@@ -207,7 +207,9 @@ IF ~~ THEN BEGIN XA_PayPartialAmount
 END
 
 IF ~~ THEN XA_ThreatenJasper
-	SAY @28 /* ~Oh y-you must be <CHARNAME>, the B-B-Bhaalspawn. (He begins to tremble in fear.)~ */
+	SAY @37 /* ~(He begins to tremble in fear.)~ */
+	
+	= @28 /* ~Oh y-you must be <CHARNAME>, the B-B-Bhaalspawn.~ */
 	
 	IF ~~ THEN REPLY @29 /* ~I am. In all my travels and tribulations, there's one thing that I haven't experienced. Do you know what that is? */
 	DO ~

@@ -468,7 +468,8 @@ APPEND_EARLY IMOEN2J
 	
 	IF ~~ THEN BEGIN XA_CorwinSex9
 		SAY @17 /* ~Oh I see now, no wonder you two look so happy! Next time, keep it down a notch, will ya?~ */
-		= @18 /* ~(She pulls you aside and whispers.) Hah, way to go kid!~*/
+		= @18 /* ~(She pulls you aside and whispers.)*/
+		= @29 /*  ~Hah, way to go kid!~ */
 		IF ~~ THEN
 		DO ~
 			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)

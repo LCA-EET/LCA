@@ -237,7 +237,8 @@ APPEND HABREGA
 	END
 	
 	IF ~~ THEN BEGIN M34
-		SAY @9  /* ~(You hand over the dagger and the letter to Brega) I'll have my courier pick these up first thing in the morning. It will take a few days for it to reach Baldur's Gate. Thank you again for your service, citizen.~ */
+		SAY @9  /* ~(You hand over the dagger and the letter to Brega)~ */
+		= @35 /*  ~I'll have my courier pick these up first thing in the morning. It will take a few days for it to reach Baldur's Gate. Thank you again for your service, citizen.~	 */
 		IF ~~ THEN
 		DO ~
 			TakePartyItem("XASTDAG")
