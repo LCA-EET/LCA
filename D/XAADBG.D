@@ -84,7 +84,7 @@ IF ~
 		ActionOverride("XACORWIN", ChangeAIScript("", OVERRIDE))
 		ActionOverride("XACORWIN", ChangeAIScript("", DEFAULT))
 		ActionOverride("XACORWIN", LeaveParty())
-		ActionOverride("XACORWIN", EscapeAreaMove("BG1316", 350,300,N))
+		ActionOverride("XACORWIN", EscapeAreaMove("XAHOME", 350,300,N))
 	~
 	GOTO XA_MainMenu
 	

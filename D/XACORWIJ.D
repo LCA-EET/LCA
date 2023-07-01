@@ -2913,7 +2913,7 @@ IF ~~ THEN BEGIN XA_SeeFamilyNow
 		ChangeAIScript("", OVERRIDE)
 		ChangeAIScript("",DEFAULT)
 		LeaveParty()
-		EscapeAreaMove("BG1316",400,250,S) 
+		EscapeAreaMove("XAHOME",400,250,S) 
 	~
 	EXIT
 	
@@ -2943,7 +2943,7 @@ IF ~
 		ChangeAIScript("", OVERRIDE)
 		ChangeAIScript("",DEFAULT)
 		LeaveParty()
-		EscapeAreaMove("BG1316",400,250,S) 
+		EscapeAreaMove("XAHOME",400,250,S) 
 	~
 	EXIT
 END
@@ -3046,7 +3046,7 @@ IF ~~ THEN BEGIN XA_SexTonight
 		ChangeAIScript("", OVERRIDE)
 		ChangeAIScript("",DEFAULT)
 		LeaveParty()
-		EscapeAreaMove("BG1316",400,250,S) 
+		EscapeAreaMove("XAHOME",400,250,S) 
 	~
 	EXIT
 	

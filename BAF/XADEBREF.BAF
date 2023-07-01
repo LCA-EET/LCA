@@ -33,7 +33,7 @@ THEN
 		ActionOverride(Player6, LeaveParty())
 		ActionOverride(Player6, LeaveAreaLUA("XAPEN", "", [500.500],N))
 		
-		LeaveAreaLUA("BG1316","",[700.465],NE)
+		LeaveAreaLUA("XAHOME","",[700.465],NE)
 		ActionOverride("XACORWIN", JoinParty())
 		Wait(1)
 		StartCutScene("XADEBRST")

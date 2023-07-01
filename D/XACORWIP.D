@@ -27,7 +27,7 @@ END
 
 //{ Dialog P-1
 IF ~
-	AreaCheck("BG1316")
+	AreaCheck("XAHOME")
 	Global("XA_CorwinWithFamily", "GLOBAL", 1)
 	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	IsGabber(Player1)
@@ -40,7 +40,7 @@ END
 
 //{ Dialog P-2
 IF ~
-	AreaCheck("BG1316")
+	AreaCheck("XAHOME")
 	Global("XA_CorwinWithFamily", "GLOBAL", 1)
 ~ THEN BEGIN XA_SeeYouLater2
 	SAY @39 /* ~<GABBER>, I'll see you at the debriefing.~ */
@@ -69,7 +69,7 @@ END
 //{ Dialog P-4
 IF ~
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_CorwinWithFamily", "GLOBAL", 1)
+	GlobalLT("XA_CorwinWithFamily", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinReturnToBG
 	SAY @37 /* ~Let's stick together for now.~*/
 	

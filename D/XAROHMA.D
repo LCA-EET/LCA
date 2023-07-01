@@ -308,7 +308,7 @@ IF ~~ THEN BEGIN XA_SayBye
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @33 /* ~Bye Rohma! Take good care of your mommy for me. I'll see the two of you tomorrow.~ */
 	DO ~
-		SetGlobal("XA_CorwinWithFamily", "GLOBAL", 2)
+		SetGlobal("XA_CorwinWithFamily", "GLOBAL", 1)
 		ActionOverride("XACORWIN", LeaveParty())
 	~
 	EXIT
@@ -317,7 +317,7 @@ IF ~~ THEN BEGIN XA_SayBye
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @34 /* ~Bye Rohma! It was nice to see you again. See you tomorrow, Schael.~*/
 	DO ~
-		SetGlobal("XA_CorwinWithFamily", "GLOBAL", 2)
+		SetGlobal("XA_CorwinWithFamily", "GLOBAL", 1)
 		ActionOverride("XACORWIN", LeaveParty())
 	~
 	EXIT
