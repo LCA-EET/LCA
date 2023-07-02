@@ -8,7 +8,9 @@
 */
 APPEND ~PLAYER1~
 	IF ~
-		Global("XA_SleepInn", "GLOBAL", 1)
+		OR(2)
+			Global("XA_SleepInn", "GLOBAL", 1)
+			Global("XA_SexDebug", "GLOBAL", 1)
 	~ THEN BEGIN XA_ExplicitModCheck
 		SAY @142 /* ~(You and Schael eagerly step into the room, and make your way to the bed...)~ */
 		
@@ -78,7 +80,7 @@ APPEND ~PLAYER1~
 		~ THEN
 		DO ~
 			StartCutSceneMode()
-			StartCutScene("XACS1EX")
+			StartCutScene("XAEX01EX")
 		~
 		EXIT
 		
@@ -88,7 +90,7 @@ APPEND ~PLAYER1~
 		THEN
 		DO ~
 			StartCutSceneMode()
-			StartCutScene("XACS2EX")
+			StartCutScene("XAEX02EX")
 		~
 		EXIT
 	END

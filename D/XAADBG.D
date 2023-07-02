@@ -5,6 +5,19 @@ IF ~
 ~ THEN BEGIN XA_MainMenu
 	SAY @0 /* ~How can I help you?~ */
 	
+	IF ~~ THEN REPLY @537
+	DO ~
+		SetGlobal("XA_SexDebug", "GLOBAL", 1)
+		SetGlobal("XA_CorwinSex_1", "GLOBAL", 1)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @538
+	DO ~
+		SetGlobal("XA_SexDebug", "GLOBAL", 1)
+		SetGlobal("XA_CorwinSex_1", "GLOBAL", 2)
+	~
+	EXIT
 	
 	IF ~
 		IsGabber("XACORWIN")

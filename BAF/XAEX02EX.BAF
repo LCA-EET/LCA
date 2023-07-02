@@ -10,9 +10,5 @@ THEN
 		AddJournalEntry(@0, INFO)
 		AddXPObject(Player1, 125000)
 		AddXPObject("XACORWIN", 125000)
-		FadeToColor([30.0],0)
-		Wait(3)
-		RestorePartyLocations()
-		FadeFromColor([30.0],0)
-		EndCutSceneMode()
+		StartCutscene("XAEXPLEX")
 END

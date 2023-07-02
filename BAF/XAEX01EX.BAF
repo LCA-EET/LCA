@@ -20,10 +20,5 @@ THEN
 		ChangeStat(Player4, FATIGUE, 7, SET)
 		ChangeStat(Player5, FATIGUE, 7, SET)
 		ChangeStat(Player6, FATIGUE, 7, SET)
-		ZoomLock(FALSE)
-		FadeToColor([30.0],0)
-		Wait(3)
-		RestorePartyLocations()
-		FadeFromColor([30.0],0)
-		EndCutSceneMode()
+		StartCutScene("XAEXPLEX")
 END

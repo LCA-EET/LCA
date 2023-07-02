@@ -22,7 +22,9 @@ THEN
 END
 
 IF 
-	Global("XA_SleepInn", "GLOBAL", 1)
+	OR(2)
+		Global("XA_SleepInn", "GLOBAL", 1)
+		Global("XA_SexDebug", "GLOBAL", 1)
 	OR(2)
 		Global("XA_CorwinSex_1", "GLOBAL", 1)
 		Global("XA_CorwinSex_2", "GLOBAL", 1)
