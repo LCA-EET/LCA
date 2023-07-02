@@ -25,7 +25,7 @@ THEN
 		PlayDead(2)
 		FadeFromColor([30.0],0)
 		SetGlobal("XA_TentCS", "GLOBAL", 1)
-		DisplayStringHead(Player1, ~Yawn...~)
+		DisplayStringHead(Player1, @0)
 		Wait(2)
 		ActionOverride("XACC4", FaceObject(Player1))
 		SmallWait(1)

@@ -30,7 +30,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_Sing", "LOCALS", 1)
-		DisplayStringHead(Myself, ~(Soft, melancholy singing.)~)
+		DisplayStringHead(Myself, @94)
 		SetGlobalTimer("XA_LyrielSingTimer", "GLOBAL", TWO_ROUNDS)
 		Continue()
 END
@@ -52,7 +52,7 @@ IF
 	!Global("XA_LeavePrison", "GLOBAL", 1)
 THEN
 	RESPONSE #50
-		DisplayStringHead(Myself, ~(Soft, melancholy singing.)~)
+		DisplayStringHead(Myself, @94)
 		SetGlobalTimer("XA_LyrielSingTimer", "GLOBAL", TWO_ROUNDS)
 	RESPONSE #50
 		SetGlobalTimer("XA_LyrielSingTimer", "GLOBAL", TWO_ROUNDS)

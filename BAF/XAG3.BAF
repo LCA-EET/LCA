@@ -31,7 +31,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_EndG3", "GLOBAL", 2)
 		SetGlobal("XA_CompletedG3", "GLOBAL", 1)
-		DisplayStringHead(Player1, ~(The world swirls, and your vision darkens...)~)
+		DisplayStringHead(Player1, @0)
 		Wait(3)
 		SetGlobal("XA_DemonSpeak", "GLOBAL", 1)
 		SetInterrupt(TRUE)

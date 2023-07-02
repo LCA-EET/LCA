@@ -9,14 +9,15 @@ THEN
 		CreateCreature("XA800M", [3150.1260], S)
 		CreateCreature("XA800W", [3100.1260], S)
 		SetInterrupt(FALSE)
-		DisplayStringHead("XA800W", ~You hear? Another one's gone missing over at Elfsong.~)
+		DisplayStringHead("XA800W", @0)
 		Wait(3)
-		DisplayStringHead("XA800M", ~Aye. Poor Alyth must be pullin' her hair out tryin' to figure what's going on.~)
+		DisplayStringHead("XA800M", @1)
 		SetInterrupt(TRUE)
 		Continue()
 END
 
 IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
 	InMyArea("XA800M")
 	InMyArea("XA800W")
 	!Global("XA_ElfsongTimerSet", "BG0800", 1)
@@ -28,6 +29,7 @@ THEN
 END
 
 IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
 	InMyArea("XA800M")
 	InMyArea("XA800W")
 	GlobalTimerExpired("XA_ElfsongTimer", "GLOBAL")
@@ -39,9 +41,9 @@ THEN
 	RESPONSE #50
 		SetInterrupt(FALSE)
 		SetGlobalTimer("XA_ElfsongTimer", "GLOBAL", TWO_MINUTES) 
-		DisplayStringHead("XA800W", ~You hear? Another one's gone missing over at Elfsong.~)
+		DisplayStringHead("XA800W", @0)
 		Wait(3)
-		DisplayStringHead("XA800M", ~Aye. Poor Alyth must be pullin' her hair out tryin' to figure what's going on.~)
+		DisplayStringHead("XA800M", @1)
 		SetInterrupt(TRUE)
 END
 

@@ -7,7 +7,7 @@ THEN
 		Wait(3)
 		FadeFromColor([30.0],0)
 		Wait(2)
-		DisplayStringHead("XABENCE", ~Captain, <CHARNAME> - the Council is ready to see you. This way.~)
+		DisplayStringHead("XABENCE", @0)
 		Wait(1)
 		ActionOverride("XABENCE", MoveToPoint([550.370]))
 		Wait(1)

@@ -7,14 +7,6 @@ THEN
 		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
 END
 
-IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		//StartCutSceneMode()
-		Continue()
-END
-
 //Imoen2
 
 IF 

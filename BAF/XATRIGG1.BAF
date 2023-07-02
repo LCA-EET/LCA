@@ -13,7 +13,7 @@ IF
 	!Range(LastTrigger,10)
 THEN
 	RESPONSE #100
-		DisplayString(Myself,~You are too far away to use that.~)
+		DisplayString(Myself,@0)
 END
 
 IF 
@@ -22,5 +22,5 @@ IF
 	Global("XA_CompletedG1", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		DisplayString(Myself,~The painting depicts a castle under siege.~)
+		DisplayString(Myself,@1)
 END

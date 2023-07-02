@@ -4,7 +4,7 @@ THEN
 	RESPONSE #100
 		StartCutSceneMode()
 		CutSceneId(Player1)
-		DisplayStringHead("XAINCUB", ~Come forth, my minions...~)
+		DisplayStringHead("XAINCUB", @0)
 		CreateVisualEffect("SPPORTAL",[200.225])
 		CreateVisualEffect("SPPORTAL",[430.235])
 		Wait(2)

@@ -17,7 +17,7 @@ IF
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		DisplayStringHead(Myself, ~No! Master, grant me POWER!~)
+		DisplayStringHead(Myself, @0)
 		SetGlobal("XA_CaelarTransform", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 END
@@ -27,7 +27,7 @@ IF
 	GlobalLT("XA_CaelarSawPlayer", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		DisplayStringHead(Myself, ~There <PRO_HESHE> is! Destroy the Bhaalspawn!~)
+		DisplayStringHead(Myself, @1)
 		SetGlobal("XA_CaelarSawPlayer", "GLOBAL", 1)
 END
 

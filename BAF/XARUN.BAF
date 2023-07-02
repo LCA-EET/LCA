@@ -14,27 +14,27 @@ IF
 THEN
 	RESPONSE #10
 		SetGlobal("XA_RunAway", "LOCALS", 1)
-		DisplayStringHead(Myself, ~Eek!~)
+		DisplayStringHead(Myself, @0)
 		EscapeArea()
 	RESPONSE #10
 		SetGlobal("XA_RunAway", "LOCALS", 1)
-		DisplayStringHead(Myself, ~Oh no!~)
+		DisplayStringHead(Myself, @1)
 		EscapeArea()
 	RESPONSE #10
 		SetGlobal("XA_RunAway", "LOCALS", 1)
-		DisplayStringHead(Myself, ~AAH!~)
+		DisplayStringHead(Myself, @2)
 		EscapeArea()
 	RESPONSE #10
 		SetGlobal("XA_RunAway", "LOCALS", 1)
-		DisplayStringHead(Myself, ~Get out of my way!~)
+		DisplayStringHead(Myself, @3)
 		EscapeArea()
 	RESPONSE #10
 		SetGlobal("XA_RunAway", "LOCALS", 1)
-		DisplayStringHead(Myself, ~Run!~)
+		DisplayStringHead(Myself, @4)
 		EscapeArea()
 	RESPONSE #10
 		SetGlobal("XA_RunAway", "LOCALS", 1)
-		DisplayStringHead(Myself, ~Clear the square!~)
+		DisplayStringHead(Myself, @5)
 		EscapeArea()
 	RESPONSE #10
 		SetGlobal("XA_RunAway", "LOCALS", 1)

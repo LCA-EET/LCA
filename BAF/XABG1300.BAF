@@ -27,7 +27,6 @@ THEN
 		Unlock("Door1316")
 		TriggerActivation("XAHOMETR", TRUE)
 		TriggerActivation("Door1316", FALSE)
-		DisplayStringHead(Myself, ~Door1316 Deactivated~)
 		Continue()
 END
 

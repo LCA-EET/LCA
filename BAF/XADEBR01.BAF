@@ -3,7 +3,7 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
-		DisplayStringHead("XABENCE", ~<CHARNAME>, Captain, this way please.~)
+		DisplayStringHead("XABENCE", @0)
 		Wait(2)
 		ActionOverride("XACORWIN", MoveToObject("TrigCC"))
 		Wait(1)

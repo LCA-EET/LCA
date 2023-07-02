@@ -5,8 +5,10 @@ IF
 	!Dead("trhmer01")
 THEN
 	RESPONSE #100
+		SetInterrupt(FALSE)
 		SetGlobal("XA_TM_ArcheryTimerInit", "GLOBAL", 1)
 		SetGlobalTimer("XA_TM_ArcheryTimer", "GLOBAL", ONE_ROUND)
+		SetInterrupt(TRUE)
 END
 
 IF
@@ -17,9 +19,13 @@ IF
 	!Dead("celogan")
 THEN
 	RESPONSE #50
+		SetInterrupt(FALSE)
 		SetGlobalTimer("XA_TM_ArcheryTimer", "GLOBAL", ONE_ROUND)
 		DisplayStringHead("XATMARSU", @0)
+		SetInterrupt(TRUE)
 	RESPONSE #50
+		SetInterrupt(FALSE)
 		SetGlobalTimer("XA_TM_ArcheryTimer", "GLOBAL", ONE_ROUND)
 		DisplayStringHead("XATMARSU", @1)
+		SetInterrupt(TRUE)
 END

@@ -3,7 +3,7 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
-		DisplayStringHead("XACORWIN", ~Rohma!~)
+		DisplayStringHead("XACORWIN", @0)
 		SmallWait(5)
 		ActionOverride("XAROHMA", FaceObject("XACORWIN"))
 		ActionOverride("XASKIE", FaceObject("XACORWIN"))
@@ -12,7 +12,7 @@ THEN
 		//485 292
 		//545 285
 		//216 393
-		DisplayStringHead("XAROHMA", ~Mommy!~)
+		DisplayStringHead("XAROHMA", @1)
 		ActionOverride("XAROHMA", MoveToObject("TrigRom"))
 		ActionOverride("XACORWIN", MoveToPoint([485.292]))
 		SmallWait(1)

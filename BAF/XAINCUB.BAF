@@ -38,7 +38,7 @@ IF
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		DisplayStringHead(Myself, ~Tell Lyriel... I love...~)
+		DisplayStringHead(Myself, @88)
 		Kill(Myself)		
 		SetInterrupt(TRUE)
 END

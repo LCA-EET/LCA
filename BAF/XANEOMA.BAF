@@ -4,11 +4,12 @@ IF
 	!Global("XA_XACS15Started", "GLOBAL", 1)
 THEN
 	RESPONSE #100
+		SetInterrupt(FALSE)
 		SetGlobal("XA_XACS15Started", "GLOBAL", 1)
 		MoveViewObject(Myself, INSTANT)
-		//DisplayStringHead("XANEOMA", ~Attempting XACS15~)
 		FaceObject("XACORWIN")
 		StartCutScene("XACS15")
+		SetInterrupt(TRUE)
 END
 
 IF 
@@ -17,9 +18,11 @@ IF
 THEN
 	RESPONSE #100
 		ClearAllActions()
+		SetInterrupt(FALSE)
 		SetGlobal("XA_XACS15Cutscene", "GLOBAL", 3)
 		ActionOverride("XACORWIN", FaceObject("XANEOMA"))
 		ActionOverride("XACORWIN", StartDialog("XACORWIJ", "XANEOMA"))
+		SetInterrupt(TRUE)
 END
 
 IF 
