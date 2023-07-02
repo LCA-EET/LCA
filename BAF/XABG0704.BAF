@@ -1,4 +1,5 @@
-IF 
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
 	!Global("XA_DestroyNPCs_0704", "GLOBAL", 1)
 THEN
 	RESPONSE #100

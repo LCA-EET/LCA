@@ -1,4 +1,5 @@
 IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
 	!Dead("halbaz")
 	!Global("XA_DialogSwap_0703", "GLOBAL", 1)
 THEN

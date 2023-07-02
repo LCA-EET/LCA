@@ -1,9 +1,10 @@
 IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
 	GlobalTimerExpired("XA_LyrielSingTimer", "GLOBAL")
 THEN
 	RESPONSE #100
 		SetGlobalTimer("XA_LyrielSingTimer", "GLOBAL", TEN_MINUTES)
-		DisplayStringHead(Myself, ~You hear a soft, soothing voice sing a somber melody.~) 
+		DisplayStringHead(Myself, @0) 
 		Continue()
 	RESPONSE #100
 		SetGlobalTimer("XA_LyrielSingTimer", "GLOBAL", TEN_MINUTES)
