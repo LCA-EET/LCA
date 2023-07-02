@@ -585,7 +585,7 @@ IF ~~ THEN BEGIN XA_XACORWIJ_Test
 	DO ~
 		SetGlobal("XA_CorwinComplainSex", "GLOBAL", 1)
 		SetGlobal("XA_CorwinComplainSexCount", "GLOBAL", 1)
-		SetGlobal("XA_CorwinSex_2", "GLOBAL", 2)
+		SetGlobal("XA_CorwinSex_2", "GLOBAL", 1)
 		Wait(1)
 		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
 	~
@@ -3306,41 +3306,6 @@ IF ~~ THEN BEGIN XA_Menu_AdjustVariables
 	~
 	GOTO XA_MainMenu
 	
-	IF ~~ THEN REPLY @140
-	DO ~
-		SetGlobal("XA_CorwinSex_1", "GLOBAL", 0)
-	~
-	GOTO XA_MainMenu
-	
-	IF ~~ THEN REPLY @135
-	DO ~
-		SetGlobal("XA_CorwinSex_1", "GLOBAL", 1)
-	~
-	GOTO XA_MainMenu
-	
-	IF ~~ THEN REPLY @136
-	DO ~
-		SetGlobal("XA_CorwinSex_1", "GLOBAL", 3)
-	~
-	GOTO XA_MainMenu
-	
-	IF ~~ THEN REPLY @137
-	DO ~
-		SetGlobal("XA_CorwinSex_1", "GLOBAL", 3)
-	~
-	GOTO XA_MainMenu
-	
-	IF ~~ THEN REPLY @138
-	DO ~
-		SetGlobal("XA_CorwinSex_1", "GLOBAL", 4)
-	~
-	GOTO XA_MainMenu
-	
-	IF ~~ THEN REPLY @148
-	DO ~
-		SetGlobal("XA_CorwinSex_1", "GLOBAL", 3)
-	~
-	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @139
 	DO ~

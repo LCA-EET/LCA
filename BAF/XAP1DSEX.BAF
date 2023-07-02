@@ -4,7 +4,7 @@ IF
 	RandomNum(2,1)
 	GlobalTimerExpired("XA_CorwinSexTimer", "GLOBAL")
 	!AreaType(DUNGEON)
-	GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 0)
+	GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 4)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CorwinSexBoost", "GLOBAL", 1)

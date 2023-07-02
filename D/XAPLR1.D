@@ -7,7 +7,92 @@
 
 */
 APPEND ~PLAYER1~
-
+	IF ~
+		Global("XA_SleepInn", "GLOBAL", 1)
+	~ THEN BEGIN XA_ExplicitModCheck
+		SAY @142 /* ~(You and Schael eagerly step into the room, and make your way to the bed...)~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_SleepInn", "GLOBAL", 0)
+		~
+		EXIT
+		
+		IF ~
+			Global("XA_CorwinSex_1", "GLOBAL", 1)
+		~ THEN
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XACS1EX")
+		~
+		EXIT
+		
+		IF ~
+			Global("XA_CorwinSex_2", "GLOBAL", 1)
+		~
+		THEN
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XACS2EX")
+		~
+		EXIT
+		
+		IF ~
+			Global("XA_CorwinSex_1", "GLOBAL", 1)
+			Gender(Player1, MALE)
+		~ THEN
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XAEXPL01")
+		~
+		EXIT
+		
+		IF ~
+			Global("XA_CorwinSex_2", "GLOBAL", 1)
+			Gender(Player1, MALE)
+		~
+		THEN
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XAEXPL02")
+		~
+		EXIT
+		
+		IF ~
+			!Global("XA_ExplicitModActive", "GLOBAL", 1)
+		~ THEN
+		GOTO XA_NeedExplicitMod
+	END
+	
+	IF ~~ THEN BEGIN XA_NeedExplicitMod
+		SAY @143 /* ~(Install the LCA_Explicit mod to experience this content.)~*/
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_SleepInn", "GLOBAL", 0)
+		~
+		EXIT
+		
+		IF ~
+			Global("XA_CorwinSex_1", "GLOBAL", 1)
+		~ THEN
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XACS1EX")
+		~
+		EXIT
+		
+		IF ~
+			Global("XA_CorwinSex_2", "GLOBAL", 1)
+		~
+		THEN
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XACS2EX")
+		~
+		EXIT
+	END
+	
 	IF ~
 		Global("XA_GetRoom", "GLOBAL", 1)
 	~ THEN BEGIN XA_GetRoom

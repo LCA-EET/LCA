@@ -3040,6 +3040,7 @@ IF ~~ THEN BEGIN XA_SexTonight
 	
 	IF ~~ THEN
 	DO ~
+		SetGlobal("XA_CorwinSex_3", "GLOBAL", 1)
 		SetGlobal("XA_CorwinWithFamily", "GLOBAL", 1)
 		SetGlobal("XA_CorwinMetFamily", "GLOBAL", 2)
 		SetLeavePartyDialogFile()
@@ -3047,17 +3048,6 @@ IF ~~ THEN BEGIN XA_SexTonight
 		ChangeAIScript("",DEFAULT)
 		LeaveParty()
 		EscapeAreaMove("XAHOME",400,250,S) 
-	~
-	EXIT
-	
-	IF ~
-		Global("XA_ExplicitModActive", "GLOBAL", 1)
-	~ THEN 
-	DO ~
-		SetGlobal("XA_CorwinWithFamily", "GLOBAL", 1)
-		SetGlobal("XA_CorwinMetFamily", "GLOBAL", 2)
-		SetGlobal("XA_Explicit_0001", "GLOBAL", 1)
-		StartDialog("XACORWIJ", Player1)
 	~
 	EXIT
 END
@@ -4399,152 +4389,12 @@ IF ~~ THEN BEGIN XAA62
 END
 //} #endregion
 
-//{ #region Corwin Sex 1 - Dialog J-43
-IF ~
-	Global("XA_CorwinSex_1", "GLOBAL", 1)
-	Global("XA_SleepInn", "GLOBAL", 1)
-	Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
-	AreaCheck("XACS10")
-	//play romance song
-	//x mod
-~ THEN BEGIN XA_CorwinSexInnM
-	SAY @320 /* ~This room is perfect.~ */
-	= @321 /* ~(She turns to you.)~ */
-	
-	IF ~~ THEN 
-	GOTO XA_CorwinSexInn7
-	
-	IF ~
-		Global("XA_ExplicitModActive", "GLOBAL", 1)
-	~ THEN 
-	DO ~
-		SetGlobal("XA_CorwinSex_1", "GLOBAL", 2)
-		StartDialog("XACORWIJ", Player1)
-	~
-	EXIT
-END
-
-IF ~~ THEN BEGIN XA_CorwinSexInn7
-	SAY @322 /* ~(Install the XA_Explicit mod to see this content.)~ */
-	
-	= @323 /* ~Mm, <CHARNAME>. That was wonderful.~ */
-	
-	= @324 /* (She plants a kiss on your forehead.) */
-	
-	= @325 /* ~You don't know how much I needed that. Thank you, love.~*/
-	
-	IF ~~ THEN REPLY @326 /* ~Schael, you were incredible, I - I can't even -~ */
-	GOTO XA_CorwinSexInn8
-END
-
-IF ~~ THEN BEGIN XA_CorwinSexInn8
-	SAY @251 /* ~(She smiles warmly, and places her finger across your lips.)~ */
-	
-	= @252 /* ~Shh, lover. It's time for us to get some rest. Just know that this, and more, is what awaits you when we finally return home. I love you, <CHARNAME>.~ */
-	
-	IF ~~ THEN REPLY @253 /* ~I love you too, Schael.~*/
-	GOTO XA_CorwinSexInnEnd
-END
-
-IF ~~ THEN BEGIN XA_CorwinSexInnEnd
-	SAY @254 /* ~(You kiss and embrace, and try to get some sleep. Eventually you give up, and the two of you make love several move times before mercifully succumbing to sheer exhaustion).~ */
-	
-	IF ~~ THEN
-	DO ~
-		SetGlobal("XA_CorwinSex_1", "GLOBAL", 3)
-		SetGlobal("XA_SleepInn", "GLOBAL", 0)
-		IncrementGlobal("XA_TimesHadSex", "GLOBAL", 1)
-		RestPartyEx(0,0,FALSE)
-	~
-	EXIT
-END
-
 //{region: Dialog J-44
-IF ~
-	Global("XA_CorwinSex_1", "GLOBAL", 3)
-	NumInPartyGT(2)
-~ THEN BEGIN XA_CorwinAfterSexAmnGT2
-	SAY @364 /* ~The others are waiting. Let's go, love.~ */
 
-	IF ~~ THEN
-	DO ~
-		SetGlobal("XA_CorwinSex_1", "GLOBAL", 4)
-		SetGlobalTimer("XA_CorwinSexNoSleep", "GLOBAL", TWO_ROUNDS)
-		SetGlobalTimer("XA_CorwinSexTimer", "GLOBAL", THREE_DAYS)
-		ChangeStat(Player1,CON,1,ADD)
-		AddXPObject(Player1, 100000)
-		ChangeStat(Myself,CON,1,ADD)
-		AddXPObject("XACORWIN", 100000)
-		AddJournalEntry(@366, INFO)
-		ChangeStat(Player1, FATIGUE, 7, SET)
-		ChangeStat(Player2, FATIGUE, 7, SET)
-		ChangeStat(Player3, FATIGUE, 7, SET)
-		ChangeStat(Player4, FATIGUE, 7, SET)
-		ChangeStat(Player5, FATIGUE, 7, SET)
-		ChangeStat(Player6, FATIGUE, 7, SET)
-		StartCutScene("XAAcsEx")
-		
-	~ 
-	EXIT
-	
-	IF ~
-		OR(5)
-			IsValidForPartyDialogue("Aerie")
-			IsValidForPartyDialogue("Imoen2")
-			IsValidForPartyDialogue("Nalia")
-			IsValidForPartyDialogue("Neera")
-			IsValidForPartyDialogue("Jaheira")
-	~ THEN
-	DO ~
-		SetGlobal("XA_CorwinSex_1", "GLOBAL", 4)
-		SetGlobalTimer("XA_CorwinSexNoSleep", "GLOBAL", TWO_ROUNDS)
-		SetGlobalTimer("XA_CorwinSexTimer", "GLOBAL", THREE_DAYS)
-		ChangeStat(Player1,CON,1,ADD)
-		AddXPObject(Player1, 100000)
-		ChangeStat(Myself,CON,1,ADD)
-		AddXPObject("XACORWIN", 100000)
-		AddJournalEntry(@366, INFO)
-		ChangeStat(Player1, FATIGUE, 7, SET)
-		ChangeStat(Player2, FATIGUE, 7, SET)
-		ChangeStat(Player3, FATIGUE, 7, SET)
-		ChangeStat(Player4, FATIGUE, 7, SET)
-		ChangeStat(Player5, FATIGUE, 7, SET)
-		ChangeStat(Player6, FATIGUE, 7, SET)
-		StartCutScene("XAAcsEx")
-	~
-	EXIT
-END
 //} endregion
 
 //{region: Dialog J-45
-IF ~
-	Global("XA_CorwinSex_1", "GLOBAL", 3)
-	!NumInPartyGT(2)
-	AreaCheck("XACS10")
-~ THEN BEGIN XA_CorwinAfterSexAmnLT3
-	SAY @365 /* ~It's time to head out. Let's go, love.~ */
 
-	IF ~~ THEN
-	DO ~
-		SetGlobal("XA_CorwinSex_1", "GLOBAL", 4)
-		SetGlobalTimer("XA_CorwinSexNoSleep", "GLOBAL", TWO_ROUNDS)
-		SetGlobalTimer("XA_CorwinSexTimer", "GLOBAL", THREE_DAYS)
-		ChangeStat(Player1,CON,1,ADD)
-		AddXPObject(Player1, 100000)
-		ChangeStat(Myself,CON,1,ADD)
-		AddXPObject("XACORWIN", 100000)
-		AddJournalEntry(@366, INFO)
-		ChangeStat(Player1, FATIGUE, 7, SET)
-		ChangeStat(Player2, FATIGUE, 7, SET)
-		ChangeStat(Player3, FATIGUE, 7, SET)
-		ChangeStat(Player4, FATIGUE, 7, SET)
-		ChangeStat(Player5, FATIGUE, 7, SET)
-		ChangeStat(Player6, FATIGUE, 7, SET)
-		StartCutScene("XAAcsEx")
-		
-	~ 
-	EXIT
-END
 //} #endregion
 
 //{ #region Corwin Sex 2 Timer Initial - Dialog J-46 - Tested 2023-04-17
@@ -4557,7 +4407,7 @@ IF ~
 	IF ~~ THEN REPLY @530 /* ~What? I don't understand.~ */
 	DO ~
 		SetGlobal("XA_CorwinSex2_Init", "GLOBAL", 2)
-		SetGlobal("XA_CorwinSex_2", "GLOBAL", 2)
+		SetGlobal("XA_CorwinSex_2", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinSexSecond2
 END
@@ -4582,91 +4432,6 @@ END
 IF ~~ THEN BEGIN XA_CorwinSexSecond3B
 	SAY @534 /* ~You defeated them with raw power, not skill. Get us a room and I'll show you what I mean. Let's go.~*/
 	IF ~~ THEN
-	EXIT
-END
-//} #endregion
-
-//{ #region Corwin Sex 2 - Dialog J-47 - Tested 2023-04-17
-IF ~
-	Global("XA_CorwinSex_2", "GLOBAL", 2)
-	Global("XA_SleepInn", "GLOBAL", 1)
-	AreaCheck("XACS10")
-	// play romance song
-~ THEN BEGIN XA_CorwinSexSecond4
-	SAY @537 /* ~Gods, I've been looking forward to this all day. Help me get this armor off, lover.~ */
-	
-	IF ~~ THEN
-	GOTO XA_CorwinSexSecond15
-	
-	IF ~
-		Global("XA_ExplicitModActive", "GLOBAL", 1)
-	~ THEN 
-	DO ~
-		SetGlobal("XA_CorwinSex_2", "GLOBAL", 3)
-		StartDialog("XACORWIJ", Player1)
-	~
-	EXIT
-END
-
-IF ~~ THEN BEGIN XA_CorwinSexSecond15
-	SAY @322 /* ~(Install the XA_Explicit mod to see this content.)~ */
-	
-	IF ~~ THEN 
-	GOTO XA_CorwinSexSecond16
-END
-
-IF ~~ THEN BEGIN XA_CorwinSexSecond16
-	SAY @602 /* ~You end up making love again before finally falling asleep.~ */
-	
-	IF ~~ THEN
-	DO ~
-		RestPartyEx(0,0,FALSE)
-		SetGlobal("XA_CorwinSex_2", "GLOBAL", 4)
-		SetGlobal("XA_SleepInn", "GLOBAL", 0)
-		IncrementGlobal("XA_TimesHadSex", "GLOBAL", 1)
-	~
-	EXIT
-END
-
-//{ Dialog J-48
-
-IF ~
-	Global("XA_CorwinSex_2", "GLOBAL", 4)
-	NumInPartyGT(2)
-	AreaCheck("XACS10")
-~ THEN BEGIN XA_CorwinSexSecondAfterGT2
-	SAY @364 /* ~The others are waiting. Let's go, love.~ */
-
-	IF ~~ THEN
-	DO ~
-		SetGlobal("XA_CorwinSex_2", "GLOBAL", 5)
-		ChangeStat(Player1,DEX,1,ADD)
-		AddJournalEntry(@601, INFO)
-		AddXPObject(Player1, 125000)
-		AddXPObject("XACORWIN", 125000)
-		StartCutScene("XAAcsEx")
-	~
-	EXIT
-END
-//}
-
-//{ Dialog J-49
-IF ~
-	Global("XA_CorwinSex_2", "GLOBAL", 4)
-	!NumInPartyGT(2)
-	AreaCheck("XACS10")
-~ THEN BEGIN XA_CorwinSexSecondAfterLT3
-	SAY @365 /* ~It's time to head out. Let's go, love.~ */
-
-	IF ~~ THEN
-	DO ~
-		SetGlobal("XA_CorwinSex_2", "GLOBAL", 5)
-		ChangeStat(Player1,DEX,1,ADD)
-		AddJournalEntry(@601, INFO)
-		AddXPObject(Player1, 125000)
-		AddXPObject("XACORWIN", 125000)
-		StartCutScene("XAAcsEx")
-	~
 	EXIT
 END
 //} #endregion
@@ -5074,7 +4839,7 @@ IF ~
 	Global("XA_TryToSleep", "GLOBAL", 1)
 	OR(5)
 		Global("XA_CorwinSex_1", "GLOBAL", 1)
-		Global("XA_CorwinSex_2", "GLOBAL", 2)
+		Global("XA_CorwinSex_2", "GLOBAL", 1)
 		Global("XA_CorwinSex_3", "GLOBAL", 1)
 		Global("XA_CorwinSex_4", "GLOBAL", 1)
 		Global("XA_CorwinSex_5", "GLOBAL", 1)

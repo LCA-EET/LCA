@@ -1,0 +1,18 @@
+IF
+	True() 
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		SetGlobal("XA_CorwinSex_2", "GLOBAL", 5)
+		SetGlobal("XA_SleepInn", "GLOBAL", 0)
+		IncrementGlobal("XA_TimesHadSex", "GLOBAL", 1)
+		ChangeStat(Player1,DEX,1,ADD)
+		AddJournalEntry(@0, INFO)
+		AddXPObject(Player1, 125000)
+		AddXPObject("XACORWIN", 125000)
+		FadeToColor([30.0],0)
+		Wait(3)
+		RestorePartyLocations()
+		FadeFromColor([30.0],0)
+		EndCutSceneMode()
+END
