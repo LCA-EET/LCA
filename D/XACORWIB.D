@@ -3132,10 +3132,15 @@ END
 //}
 
 //{ Sarevok Banters
+	//{ Dialog B-XX
+	
+	//}
+
 	//{ Dialog B-86
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinSarevok", "GLOBAL", 2)
+			!Alignment("Sarevok",CHAOTIC_GOOD)
 		~ THEN XACORWIB XA_SarevokBanter1
 			@815 /* ~Sarevok.~ */
 			== SAREV25J
@@ -3155,6 +3160,27 @@ END
 			@817 /* ~You needn't concern yourself with that. You'll never set foot in my city ever again.~ */
 			== SAREV25J
 			@818 /*~Rest assured Major, I've no further designs on Baldur's Gate, its citizens, or the Dukes ... or you, for that matter.~*/
+			== XACORWIB
+			@824 /* ~Just know that I'll be watching you. Try *anything*, and I'll send you back to the grave.~ */
+	EXIT
+	//}
+
+	//{ Dialog B-86B
+	CHAIN
+		IF ~
+			Global("XA_Banter_CorwinSarevok", "GLOBAL", 2)
+			Alignment("Sarevok",CHAOTIC_GOOD)
+		~ THEN XACORWIB XA_SarevokBanter1
+			@815 /* ~Sarevok.~ */
+			== SAREV25J
+			@816 /* ~Ah, Captain — excuse me, *Major* Corwin, to what do I owe the pleasure?~ */
+			DO ~
+				SetGlobal("XA_Banter_CorwinSarevok", "GLOBAL", 3)
+			~
+			== XACORWIB
+			@810 /*~<CHARNAME> may be able to look past your crimes, but I'm not. If I even suspect that you're —~ */
+			== SAREV25J
+			@869 /*  ~Enough. I know that I must atone for my sins. I've no wish to add to that burden by betraying <CHARNAME>, or any of you, for that matter.~  */
 			== XACORWIB
 			@824 /* ~Just know that I'll be watching you. Try *anything*, and I'll send you back to the grave.~ */
 	EXIT

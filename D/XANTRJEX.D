@@ -109,6 +109,22 @@
 	END
 //}
 
+//{ BSAREV25
+	INTERJECT_COPY_TRANS BSAREV25 37 XA_BSAREV25_37
+		==XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@157 /* ~You chose poorly in your first life, then. Dopplegangers? Scum like Angelo, Zhalimar and the others? For all our sakes, let's hope that you choices were better this time around.~ */
+		
+		==BSAREV25
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@158 /* ~Those choices you so readily mock nearly led me to godhood.~ */
+	END
+//}
+
 //{ XA_PPIRENI1_22
 	INTERJECT_COPY_TRANS PPIRENI1 22 XA_PPIRENI1_22
 		== XACORWIB
