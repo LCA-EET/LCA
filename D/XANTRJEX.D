@@ -305,7 +305,15 @@
 	END
 //}
 
-
+//{ MAZZY
+	INTERJECT_COPY_TRANS BMAZZY 77 XA_BMAZZY_77
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@156
+	END
+//}
 
 //{ VICG1
 	INTERJECT_COPY_TRANS VICG1 2 XA_VICG1_2
@@ -1103,6 +1111,72 @@
 	END
 //}
 
+//{ Anomen
+	//{ BANOMEN
+	INTERJECT_COPY_TRANS BANOMEN 10 XA_BANOMEN_10
+		==XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@146 /* ~Hah!~ */
+	END
+
+	INTERJECT_COPY_TRANS BANOMEN 14 XA_BANOMEN_14
+		==XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@147 /* ~~Anomen, if you think a title is going to make people respect you, you're mistaken. One's actions determine whether they are worthy of respect, not their title.~~ */
+		
+		==BANOMEN
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@148 /* ~I couldn't disagree more.~  */
+	END
+	
+	INTERJECT_COPY_TRANS BANOMEN 16 XA_BANOMEN_16
+		==XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@147 /* ~~Anomen, if you think a title is going to make people respect you, you're mistaken. One's actions determine whether they are worthy of respect, not their title.~~ */
+		
+		==BANOMEN
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@148 /* ~I couldn't disagree more.~  */
+	END
+	
+	INTERJECT_COPY_TRANS BANOMEN 42 XA_BANOMEN_42
+		==XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@149 /* ~Anomen! That's enough!~ */
+	END
+	
+	INTERJECT_COPY_TRANS BANOMEN 50 XA_BANOMEN_50
+		==XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+			Gender(Player1, MALE)
+		~
+		@150 /* ~You're out of line, as usual. <CHARNAME> is many things, but a coward is not one of them. He's put his life on the line for Baldur's Gate and the Sword Coast more times than I can count.~ */
+		
+		==XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+			Gender(Player1, FEMALE)
+		~
+		@151 /* ~You're out of line, as usual. <CHARNAME> is many things, but a coward is not one of them. She's put her life on the line for Baldur's Gate and the Sword Coast more times than I can count.~ */
+		
+		== BANOMEN
+		@152 /* ~Ah, Baldur's Gate — a corrupt, crime-ridden boil on the arse of Toril. It'd have been better had Caelar's crusade razed the city to the ground.~ */
+	END
+	//}
+//}
 
 //{ Dorn
 
@@ -1268,15 +1342,36 @@
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
 		~ 
-		@132 /* ~Berduskan wine? Oh, my dear, you need to develop some better taste. As soon as <CHARNAME>'s quest is over with, you and I will visit my friend Frantz. He is perhaps the finest sommelier in Amn, and he'd be more than pleased to take us on a wine tasting excursion.~ */
+		@153 /*  ~Berduskan wine? Surely, you've had better than that swill.~ */
 		
 		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ 
+		@154 /*~I don't have expensive tastes. Can't afford to, I'm afraid.~*/
+		
+		== BNALIA
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ 
+		@155 /* ~As soon as <CHARNAME>'s quest is over with, you and I will visit my friend Frantz. He is perhaps the finest sommelier in Amn, and he'd be more than pleased to take us on a wine tasting excursion.~*/
+		
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ 
 		@133 /* ~Wine tasting? Thanks, but as soon as this is over, I'm going home to my family.~*/
 		
 		== BNALIA
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ 
 		@134 /* ~I understand. In that case, I'll have a case of his finest stock shipped to you.~*/
 		
 		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ 
 		@135 /* ~Thanks, Nalia. Just not anything *too* pretentious, alright?~ */
 	END
 //}
