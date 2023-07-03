@@ -65,15 +65,7 @@
 	END
 //}
 
-//{ XA_DORN_16
-	INTERJECT DORN 16 XA_DORN_16
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@7 /* ~Beast! You boast of murdering children!? There's only one punishment befitting your crimes!~*/
-	EXTERN DORN 9
-//}
+
 
 //{ XA_GORMAD1_2
 	INTERJECT_COPY_TRANS GORMAD1 2 XA_GORMAD1_2
@@ -313,44 +305,7 @@
 	END
 //}
 
-//{ AERIEJ
-	INTERJECT_COPY_TRANS AERIEJ 136 XA_AERIEJ_136 // OK
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@33 /* ~Aerie - whether we take the boat or not - you are strong enough for this.~ */
-		
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinWentToAvernus", "GLOBAL", 1)
-		~
-		@34 /* ~Besides, <CHARNAME> ventured to one of the nine hells and came back alive. I'm sure that with <PRO_HISHER> help we'll be able to handle the Underdark.~ */
-		
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinWentToAvernus", "GLOBAL", 1)
-		~
-		@35 /* ~Besides, <CHARNAME> and I ventured to one of the nine hells and came back alive. I'm sure that together we can handle the Underdark.~*/
-		
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinWentToAvernus", "GLOBAL", 1)
-		~
-		@36 /* ~I-if you say so, Schael... I'll do my best...~ */
-	END
 
-	INTERJECT_COPY_TRANS AERIEJ 114 XA_AERIEJ_114 // OK
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@37 /* ~I'm not sure I trust her either, but... she did prove her worth in supporting the coalition against Caelar's crusade. We should give her a chance.~ */
-	END
-//}
 
 //{ VICG1
 	INTERJECT_COPY_TRANS VICG1 2 XA_VICG1_2
@@ -728,14 +683,6 @@
 		~
 		@79 /* ~She has her moments.~ */
 	END
-
-	INTERJECT_COPY_TRANS VALYGAR 18 XA_VALYGAR_18 //OK
-		== XACORWIB 
-		IF ~ 
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@80 /* ~Let's hear what he has to say. I'm inclined to believe the word of another ranger over that of a wizard.~ */
-	END
 //}
 
 //{ KELDORJ
@@ -876,16 +823,6 @@
 	END
 //}
 
-//{ DORNJ	
-	INTERJECT_COPY_TRANS DORNJ 769 XA_DORNJ_769 // OK
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@94 /* ~Dorn - you have a chance to be free. Take it!~ */
-	END
-//}
-
 //{ FIRKRA02
 	INTERJECT_COPY_TRANS2 FIRKRA02 21 XA_FIRKRA02_21 // OK
 		== XACORWIB
@@ -916,6 +853,16 @@
 //} 
 
 //{ VALYGAR
+	INTERJECT_COPY_TRANS VALYGAR 18 XA_VALYGAR_18 //OK
+		== XACORWIB 
+		IF ~ 
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@80 /* ~Let's hear what he has to say. I'm inclined to believe the word of another ranger over that of a wizard.~ */
+	END
+//}
+
+//{ VALYGARJ
 	INTERJECT_COPY_TRANS VALYGARJ 58 XA_VALYGARJ_58 // OK
 		== XACORWIB
 		IF ~
@@ -1156,21 +1103,107 @@
 	END
 //}
 
-//{ BDORN
-	INTERJECT_COPY_TRANS BDORN 51 XA_BDORN_51 // OK
+
+//{ Dorn
+
+	//{ DORN
+	INTERJECT DORN 16 XA_DORN_16
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
 		~
-		@118 /* ~ ~You could have all of that done that without giving yourself to a demon, blackguard.~ */
-		== BDORN
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@119 /* ~Mine was a choice between life and death, woman. I chose life. You would have done the same.~ */
-	END
-//}
-	
+		@7 /* ~Beast! You boast of murdering children!? There's only one punishment befitting your crimes!~*/
+	EXTERN DORN 9
+	//}
+
+	//{ DORNJ	
+		INTERJECT_COPY_TRANS DORNJ 769 XA_DORNJ_769 // OK
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@94 /* ~Dorn - you have a chance to be free. Take it!~ */
+		END
+	//}
+
+	//{ BDORN
+		INTERJECT_COPY_TRANS BDORN 51 XA_BDORN_51 // OK
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@118 /* ~ ~You could have all of that done that without giving yourself to a demon, blackguard.~ */
+			== BDORN
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@119 /* ~Mine was a choice between life and death, woman. I chose life. You would have done the same.~ */
+		END
+		
+		INTERJECT_COPY_TRANS BDORN 2 XA_BDORN_2 
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@136 /*~Ignore him, Rasaad.~*/
+		END
+		
+		INTERJECT_COPY_TRANS BDORN 16 XA_BDORN_16 
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@137 /*~Dorn! That's enough.~*/
+		END
+		
+		INTERJECT_COPY_TRANS BDORN 23 XA_BDORN_23
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@138 /*~Doubtful. What's certain is that we'd be better off without you, blackguard. Why <CHARNAME> is incapable of seeing this I'll never understand.~*/
+			
+			== BDORN
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@139 /* ~Hmph. <CHARNAME> understands the power that I possess. And <PRO_HESHE>'d be a fool to cast it aside, especially at the behest of a woman as foolish as yourself.~*/
+			
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@140 /* ~Foolish? I'm not the one who sold himself to a demon.~ */
+			
+			== BDORN
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@141 /* ~Yes, foolish. The proper place for a woman is the home, ideally with her legs spread, or perhaps in the birthing room with a midwife. The battlefield is the dominion of men.~ */
+			
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@142 /* ~You're disgusting.~*/
+		END
+		
+		INTERJECT_COPY_TRANS BDORN 36 XA_BDORN_36
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@143 /*~'Slave' would be more appropriate.~*/
+			
+			== BDORN
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@144 /* ~Not now, woman. I suggest you find a man and put something of his in your mouth, lest you voice another boring, predictable insult.~*/
+		END
+	//}
+//}	
+
 //{ BNALIA
 	INTERJECT_COPY_TRANS BNALIA 3 XA_BNALIA_3 // OK
 		== XACORWIB 
@@ -1222,10 +1255,89 @@
 			IsValidForPartyDialogue("XACORWIN")
 		~ 
 		@126 /* ~Certainly, and I did not mean to imply that the lives of the higher born have no meaning. It's just that it is easier, in a sense, for a poorer person to find meaning than a wealthy one.~ */
-	END 
+	END
+
+	INTERJECT_COPY_TRANS BNALIA 72 XA_BNALIA_72
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ 
+		@131 /* ~Vilhon Reach? I don't think I've ever tried that... I've always enjoyed dark wine from Berdusk.~*/
+		
+		== BNALIA
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ 
+		@132 /* ~Berduskan wine? Oh, my dear, you need to develop some better taste. As soon as <CHARNAME>'s quest is over with, you and I will visit my friend Frantz. He is perhaps the finest sommelier in Amn, and he'd be more than pleased to take us on a wine tasting excursion.~ */
+		
+		== XACORWIB
+		@133 /* ~Wine tasting? Thanks, but as soon as this is over, I'm going home to my family.~*/
+		
+		== BNALIA
+		@134 /* ~I understand. In that case, I'll have a case of his finest stock shipped to you.~*/
+		
+		== XACORWIB
+		@135 /* ~Thanks, Nalia. Just not anything *too* pretentious, alright?~ */
+	END
 //}
+
+//{ HaerDalis
+
+	//{ BHAERDA
+	INTERJECT_COPY_TRANS BHAERDA 142 XA_BHAERDA_142
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@145
+	END
 	
-//{ BAERIE
+	//}
+
+//}
+
+//{ Aerie
+
+	//{ AERIEJ
+		INTERJECT_COPY_TRANS AERIEJ 136 XA_AERIEJ_136 // OK
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@33 /* ~Aerie - whether we take the boat or not - you are strong enough for this.~ */
+			
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+				!Global("XA_CorwinWentToAvernus", "GLOBAL", 1)
+			~
+			@34 /* ~Besides, <CHARNAME> ventured to one of the nine hells and came back alive. I'm sure that with <PRO_HISHER> help we'll be able to handle the Underdark.~ */
+			
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+				!Global("XA_CorwinWentToAvernus", "GLOBAL", 1)
+			~
+			@35 /* ~Besides, <CHARNAME> and I ventured to one of the nine hells and came back alive. I'm sure that together we can handle the Underdark.~*/
+			
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+				!Global("XA_CorwinWentToAvernus", "GLOBAL", 1)
+			~
+			@36 /* ~I-if you say so, Schael... I'll do my best...~ */
+		END
+
+		INTERJECT_COPY_TRANS AERIEJ 114 XA_AERIEJ_114 // OK
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@37 /* ~I'm not sure I trust her either, but... she did prove her worth in supporting the coalition against Caelar's crusade. We should give her a chance.~ */
+		END
+	//}
+
+	//{ BAERIE
 	INTERJECT_COPY_TRANS BAERIE 186 XA_BAERIE_186 // OK
 		== XACORWIB 
 		IF ~
@@ -1233,10 +1345,33 @@
 		~ THEN @127 /* ~Aerie, a mother would never stop looking for their child. Don't give up on the hope of seeing her again.~ */
 	END 
 
+	INTERJECT_COPY_TRANS BAERIE 234 XA_BARIE_234
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ THEN @129 /* ~The circus? Don't be ridiculous, Aerie. You're a valuable part of this team.~ */
+	END
+
+	INTERJECT_COPY_TRANS BAERIE 255 XA_BAERIE_255
+		== XACORWIB 
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ THEN @130 /*  ~Wow... Aerie, that was a lot better.~ */
+	END
+
 	INTERJECT_COPY_TRANS BAERIE 430 XA_BAERIE_430 // OK
 		== XACORWIB 
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
 		~ THEN @128 /* ~Aerie! That's enough.~ */
 	END 
+	
+	INTERJECT_COPY_TRANS BAERIE 433 XA_BAERIE_433 // OK
+		== XACORWIB 
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ THEN @128 /* ~Aerie! That's enough.~ */
+	END 
 //}
+//}
+	
