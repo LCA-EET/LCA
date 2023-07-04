@@ -1,0 +1,27 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		
+		DisplayStringHead(Player1, @0) /* ~The gate will take you home, love.~ */
+		Wait(3)
+		DisplayStringHead("XACORWIN", @2) /* ~(You share a final embrace.)~*/
+		Wait(3)
+		DisplayStringHead("XACORWIN", @3) /* ~Be careful. Come home to me - to us - when this is all over.~ */
+		Wait(5)
+		DisplayStringHead(Player1, @4) /* ~I love you, Schael.~*/
+		Wait(4)
+		DisplayStringHead("XACORWIN", @5) /* ~I love you too, <CHARNAME>.~ */
+		Wait(4)
+		ActionOverride("XACORWIN", MoveToPoint([1990.1080]))
+		Wait(3)
+		ActionOverride("XACORWIN", FaceObject(Player1))
+		Wait(2)
+		ActionOverride("XACORWIN", MoveToPoint([1990.975]))
+		Wait(2)
+		ActionOverride("XACORWIN", EscapeAreaMove("XAHOME", 380, 300, NW))
+		
+		
+		
+END
