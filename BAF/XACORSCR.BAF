@@ -578,10 +578,9 @@ END
 IF
 	InParty(Myself)
 	!Global("XA_TrappedInDemonPrison", "GLOBAL", 1)
-	OR(6)
+	OR(5)
 		AreaCheck("XADEMSAN")
 		AreaCheck("XAG1")
-		AreaCheck("XAG2")
 		AreaCheck("XAG2A")
 		AreaCheck("XAG3")
 		AreaCheck("XAPAINT1")
@@ -594,10 +593,9 @@ END
 IF
 	InParty(Myself)
 	Global("XA_TrappedInDemonPrison", "GLOBAL", 1)
-	!OR(6)
+	!OR(5)
 		AreaCheck("XADEMSAN")
 		AreaCheck("XAG1")
-		AreaCheck("XAG2")
 		AreaCheck("XAG2A")
 		AreaCheck("XAG3")
 		AreaCheck("XAPAINT1")
