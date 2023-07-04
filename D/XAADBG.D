@@ -1661,6 +1661,28 @@ IF ~~ THEN BEGIN XA_DialogTest
 	~
 	EXIT
 	
+	IF ~~ THEN REPLY @539 /* ~Dialog B-89A~ */
+	DO ~
+		SetGlobal("XA_SarevokSoul", "GLOBAL", 2)
+		SetGlobal("ImoenGiveSoul","GLOBAL",0)
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)
+		SetGlobal("XA_89ADebug", "GLOBAL", 1)
+		Wait(1)
+		ActionOverride("XACORWIN", Interact("Sarevok"))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @540 /* ~Dialog B-89B~ */
+	DO ~
+		SetGlobal("XA_SarevokSoul", "GLOBAL", 2)
+		SetGlobal("ImoenGiveSoul","GLOBAL",0)
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)
+		SetGlobal("XA_89BDebug", "GLOBAL", 1)
+		Wait(1)
+		ActionOverride("XACORWIN", Interact("Sarevok"))
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @26
 	GOTO XA_MainMenu
 END

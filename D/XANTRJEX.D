@@ -565,131 +565,7 @@
 	END
 //}
 
-//{ JANJ
-	INTERJECT_COPY_TRANS JANJ 197 XA_JANJ_197 //OK
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@60 /* ~Some would say you never left it.~*/
-	END
 
-	INTERJECT_COPY_TRANS JANJ 195 XA_JANJ_195 //OK
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@61 /* ~(A smile crosses her lips, as she tries and fails to stifle a hearty laugh.)~ */
-		== JANJ
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinPromoted", "GLOBAL", 1)
-		~
-		@62 /* ~Oh, is that the sweet sound of laughter I hear? From our ever-stoic Captain Corwin? Look, she has a lovely smile too! I'm afraid no one would believe me if I told them it happened.~ */
-		== JANJ
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-			Global("XA_CorwinPromoted", "GLOBAL", 1)
-		~
-		@63 /* ~Oh, is that the sweet sound of laughter I hear? From our ever-stoic Major Corwin? Look, she has a lovely smile too! I'm afraid no one would believe me if I told them it happened.~ */
-	END
-
-	INTERJECT_COPY_TRANS JANJ 189 XA_JANJ_189 //OK
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@64 /* ~What... the... hells?~*/
-	END
-
-	INTERJECT_COPY_TRANS JANJ 175 XA_JANJ_175 //OK
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@65 /*  ~Agreed - we need to pick up the pace. Imoen needs us.~ */
-	END
-
-	INTERJECT_COPY_TRANS JANJ 142 XA_JANJ_142 //OK
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@66 /* ~Jan, this - really - isn't the time!~ */
-	END 
-
-	INTERJECT_COPY_TRANS JANJ 136 XA_JANJ_136 //OK
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@67 /* ~It seems Athkatla and Baldur's Gate are not so different, at least in that regard.~ */
-	END
-
-	INTERJECT JANJ 126 XA_JANJ_126 //OK
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@68 /* ~Jan?~ */
-		== JANJ
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinPromoted", "GLOBAL",1)
-		~
-		@69 /* ~Yes, Captain?~ */
-		== JANJ
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-			Global("XA_CorwinPromoted", "GLOBAL",1)
-		~
-		@70 /* ~Yes, Major?~ */
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@71 /* ~Shut up. ~*/
-		== JANJ
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@72 /* ~Now, there's no need to be rude. It was just a simple story of furry feet and the foibles of being a teenaged gnome. Ah, youth! I still remember her laughter as -~  */
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@73 /* ~Your mouth. Shut it, or I'll tie your tongue to an arrow and fire it into the ass of the nearest horse. That would make for a fun story, wouldn't it?~*/
-		== JANJ
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@74 /* ~Erm... perhaps. But I'm not keen on it. I'll be quiet.~ */
-	END
-
-	INTERJECT_COPY_TRANS JANJ 113 XA_JANJ_113 //OK
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@75 /* ~We should heed his warning. Let's prepare before we head in.~*/
-	END
-
-	INTERJECT_COPY_TRANS JANJ 89 XA_JANJ_89 //OK
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@76 /* ~Is there a point to this story?~*/
-	END
-
-	INTERJECT_COPY_TRANS2 JANJ 20 XA_JANJ_20 //OK
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@77 /* ~Harsh truths are never easy to accept, Jan. It's good that you did.~ */
-	END
-//}
 
 //{ HAERDAJ
 	INTERJECT_COPY_TRANS HAERDAJ 114 XA_HAERDAJ_114 //OK
@@ -1294,102 +1170,145 @@
 	//}
 //}	
 
-//{ BNALIA
-	INTERJECT_COPY_TRANS BNALIA 3 XA_BNALIA_3 // OK
-		== XACORWIB 
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ 
-		@120 /* ~Don't be so sure. In my experience, wealth, or the lack thereof, has no impact on one's capability for compassion or cruelty.~ */
-	END 
 
-	INTERJECT_COPY_TRANS BNALIA 4 XA_BNALIA_4 // OK
-		== XACORWIB 
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ 
-		@121 /* ~On that we can agree.~ */
-	END 
+//{ Jan
 
-	INTERJECT_COPY_TRANS2 BNALIA 11 XA_BNALIA_11 // OK
-		== XACORWIB 
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ 
-		@122 /* ~I disagree. Some time at the tavern can do wonders for troop morale and camaraderie. They don't exist solely to exploit the poor.~ */
-		
-		== BNALIA
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinPromoted", "GLOBAL", 1)
-		~  
-		@123 /* ~Perhaps, Captain, but you can't deny the negative effects these establishments have on the less fortunate among us.~ */
-		
-		== BNALIA
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-			Global("XA_CorwinPromoted", "GLOBAL", 1)
-		~  
-		@124 /* ~Perhaps, Captain, but you can't deny the negative effects these establishments have on the less fortunate among us.~ */
-	END 
+	//{ JANJ
+		INTERJECT_COPY_TRANS JANJ 197 XA_JANJ_197 //OK
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@60 /* ~Some would say you never left it.~*/
+		END
 
-	INTERJECT_COPY_TRANS BNALIA 53 XA_BNALIA_53 // OK
-		== XACORWIB 
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ 
-		@125 /* ~Nalia, one needn't be poor to find meaning in their life. Duke Eltan, for example, has dedicated his life to the safety of Baldur's Gate and its citizens.~ */
-		
-		== BNALIA
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ 
-		@126 /* ~Certainly, and I did not mean to imply that the lives of the higher born have no meaning. It's just that it is easier, in a sense, for a poorer person to find meaning than a wealthy one.~ */
-	END
+		INTERJECT_COPY_TRANS JANJ 195 XA_JANJ_195 //OK
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@61 /* ~(A smile crosses her lips, as she tries and fails to stifle a hearty laugh.)~ */
+			== JANJ
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+				!Global("XA_CorwinPromoted", "GLOBAL", 1)
+			~
+			@62 /* ~Oh, is that the sweet sound of laughter I hear? From our ever-stoic Captain Corwin? Look, she has a lovely smile too! I'm afraid no one would believe me if I told them it happened.~ */
+			== JANJ
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+				Global("XA_CorwinPromoted", "GLOBAL", 1)
+			~
+			@63 /* ~Oh, is that the sweet sound of laughter I hear? From our ever-stoic Major Corwin? Look, she has a lovely smile too! I'm afraid no one would believe me if I told them it happened.~ */
+		END
 
-	INTERJECT_COPY_TRANS BNALIA 72 XA_BNALIA_72
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ 
-		@131 /* ~Vilhon Reach? I don't think I've ever tried that... I've always enjoyed dark wine from Berdusk.~*/
-		
-		== BNALIA
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ 
-		@153 /*  ~Berduskan wine? Surely, you've had better than that swill.~ */
-		
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ 
-		@154 /*~I don't have expensive tastes. Can't afford to, I'm afraid.~*/
-		
-		== BNALIA
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ 
-		@155 /* ~As soon as <CHARNAME>'s quest is over with, you and I will visit my friend Frantz. He is perhaps the finest sommelier in Amn, and he'd be more than pleased to take us on a wine tasting excursion.~*/
-		
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ 
-		@133 /* ~Wine tasting? Thanks, but as soon as this is over, I'm going home to my family.~*/
-		
-		== BNALIA
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ 
-		@134 /* ~I understand. In that case, I'll have a case of his finest stock shipped to you.~*/
-		
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ 
-		@135 /* ~Thanks, Nalia. Just not anything *too* pretentious, alright?~ */
-	END
+		INTERJECT_COPY_TRANS JANJ 189 XA_JANJ_189 //OK
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@64 /* ~What... the... hells?~*/
+		END
+
+		INTERJECT_COPY_TRANS JANJ 175 XA_JANJ_175 //OK
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@65 /*  ~Agreed - we need to pick up the pace. Imoen needs us.~ */
+		END
+
+		INTERJECT_COPY_TRANS JANJ 142 XA_JANJ_142 //OK
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@66 /* ~Jan, this - really - isn't the time!~ */
+		END 
+
+		INTERJECT_COPY_TRANS JANJ 136 XA_JANJ_136 //OK
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@67 /* ~It seems Athkatla and Baldur's Gate are not so different, at least in that regard.~ */
+		END
+
+		INTERJECT JANJ 126 XA_JANJ_126 //OK
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@68 /* ~Jan?~ */
+			== JANJ
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+				!Global("XA_CorwinPromoted", "GLOBAL",1)
+			~
+			@69 /* ~Yes, Captain?~ */
+			== JANJ
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+				Global("XA_CorwinPromoted", "GLOBAL",1)
+			~
+			@70 /* ~Yes, Major?~ */
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@71 /* ~Shut up. ~*/
+			== JANJ
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@72 /* ~Now, there's no need to be rude. It was just a simple story of furry feet and the foibles of being a teenaged gnome. Ah, youth! I still remember her laughter as -~  */
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@73 /* ~Your mouth. Shut it, or I'll tie your tongue to an arrow and fire it into the ass of the nearest horse. That would make for a fun story, wouldn't it?~*/
+			== JANJ
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@74 /* ~Erm... perhaps. But I'm not keen on it. I'll be quiet.~ */
+		END
+
+		INTERJECT_COPY_TRANS JANJ 113 XA_JANJ_113 //OK
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@75 /* ~We should heed his warning. Let's prepare before we head in.~*/
+		END
+
+		INTERJECT_COPY_TRANS JANJ 89 XA_JANJ_89 //OK
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@76 /* ~Is there a point to this story?~*/
+		END
+
+		INTERJECT_COPY_TRANS2 JANJ 20 XA_JANJ_20 //OK
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@77 /* ~Harsh truths are never easy to accept, Jan. It's good that you did.~ */
+		END
+	//}
+
+	//{ BJAN25
+		INTERJECT_COPY_TRANS BJAN25 10 XA_BJAN25_10
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@161 /* ~Grow up, Jan. This isn't the time... it's never the time for your nonsense, infact!~ */
+		END
+	//}
+
 //}
 
 //{ HaerDalis
@@ -1400,7 +1319,7 @@
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
 		~
-		@145
+		@145 /* ~(She rolls her eyes.)~ */
 	END
 	
 	//}
@@ -1449,40 +1368,165 @@
 	//}
 
 	//{ BAERIE
-	INTERJECT_COPY_TRANS BAERIE 186 XA_BAERIE_186 // OK
-		== XACORWIB 
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ THEN @127 /* ~Aerie, a mother would never stop looking for their child. Don't give up on the hope of seeing her again.~ */
-	END 
+		INTERJECT_COPY_TRANS BAERIE 186 XA_BAERIE_186 // OK
+			== XACORWIB 
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~ THEN @127 /* ~Aerie, a mother would never stop looking for their child. Don't give up on the hope of seeing her again.~ */
+		END 
 
-	INTERJECT_COPY_TRANS BAERIE 234 XA_BARIE_234
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ THEN @129 /* ~The circus? Don't be ridiculous, Aerie. You're a valuable part of this team.~ */
-	END
+		INTERJECT_COPY_TRANS BAERIE 234 XA_BARIE_234
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~ THEN @129 /* ~The circus? Don't be ridiculous, Aerie. You're a valuable part of this team.~ */
+		END
 
-	INTERJECT_COPY_TRANS BAERIE 255 XA_BAERIE_255
-		== XACORWIB 
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ THEN @130 /*  ~Wow... Aerie, that was a lot better.~ */
-	END
+		INTERJECT_COPY_TRANS BAERIE 255 XA_BAERIE_255
+			== XACORWIB 
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~ THEN @130 /*  ~Wow... Aerie, that was a lot better.~ */
+		END
 
-	INTERJECT_COPY_TRANS BAERIE 430 XA_BAERIE_430 // OK
-		== XACORWIB 
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ THEN @128 /* ~Aerie! That's enough.~ */
-	END 
-	
-	INTERJECT_COPY_TRANS BAERIE 433 XA_BAERIE_433 // OK
-		== XACORWIB 
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ THEN @128 /* ~Aerie! That's enough.~ */
-	END 
+		INTERJECT_COPY_TRANS BAERIE 430 XA_BAERIE_430 // OK
+			== XACORWIB 
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~ THEN @128 /* ~Aerie! That's enough.~ */
+		END 
+		
+		INTERJECT_COPY_TRANS BAERIE 433 XA_BAERIE_433 // OK
+			== XACORWIB 
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~ THEN @128 /* ~Aerie! That's enough.~ */
+		END 
+	//}
 //}
-//}
 	
+//{ Minsc
+	//{ BMINSC25
+		INTERJECT_COPY_TRANS BMINSC25 37 XA_BMINSC25_37
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@159 /* ~... More importantly, two cards short of a full deck...~ */
+		END
+	//}
+//}
+
+//{ Neera
+	//{ BNEERA25
+		INTERJECT_COPY_TRANS BNEERA25 14 XA_BNEERA_14
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@160 /* ~I couldn't agree more. Let's get moving.~ */
+		END
+	//}
+//}
+
+//{ Nalia
+	//{ BNALIA
+		INTERJECT_COPY_TRANS BNALIA 3 XA_BNALIA_3 // OK
+			== XACORWIB 
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~ 
+			@120 /* ~Don't be so sure. In my experience, wealth, or the lack thereof, has no impact on one's capability for compassion or cruelty.~ */
+		END 
+
+		INTERJECT_COPY_TRANS BNALIA 4 XA_BNALIA_4 // OK
+			== XACORWIB 
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~ 
+			@121 /* ~On that we can agree.~ */
+		END 
+
+		INTERJECT_COPY_TRANS2 BNALIA 11 XA_BNALIA_11 // OK
+			== XACORWIB 
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~ 
+			@122 /* ~I disagree. Some time at the tavern can do wonders for troop morale and camaraderie. They don't exist solely to exploit the poor.~ */
+			
+			== BNALIA
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+				!Global("XA_CorwinPromoted", "GLOBAL", 1)
+			~  
+			@123 /* ~Perhaps, Captain, but you can't deny the negative effects these establishments have on the less fortunate among us.~ */
+			
+			== BNALIA
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+				Global("XA_CorwinPromoted", "GLOBAL", 1)
+			~  
+			@124 /* ~Perhaps, Captain, but you can't deny the negative effects these establishments have on the less fortunate among us.~ */
+		END 
+
+		INTERJECT_COPY_TRANS BNALIA 53 XA_BNALIA_53 // OK
+			== XACORWIB 
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~ 
+			@125 /* ~Nalia, one needn't be poor to find meaning in their life. Duke Eltan, for example, has dedicated his life to the safety of Baldur's Gate and its citizens.~ */
+			
+			== BNALIA
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~ 
+			@126 /* ~Certainly, and I did not mean to imply that the lives of the higher born have no meaning. It's just that it is easier, in a sense, for a poorer person to find meaning than a wealthy one.~ */
+		END
+
+		INTERJECT_COPY_TRANS BNALIA 72 XA_BNALIA_72
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~ 
+			@131 /* ~Vilhon Reach? I don't think I've ever tried that... I've always enjoyed dark wine from Berdusk.~*/
+			
+			== BNALIA
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~ 
+			@153 /*  ~Berduskan wine? Surely, you've had better than that swill.~ */
+			
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~ 
+			@154 /*~I don't have expensive tastes. Can't afford to, I'm afraid.~*/
+			
+			== BNALIA
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~ 
+			@155 /* ~As soon as <CHARNAME>'s quest is over with, you and I will visit my friend Frantz. He is perhaps the finest sommelier in Amn, and he'd be more than pleased to take us on a wine tasting excursion.~*/
+			
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~ 
+			@133 /* ~Wine tasting? Thanks, but as soon as this is over, I'm going home to my family.~*/
+			
+			== BNALIA
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~ 
+			@134 /* ~I understand. In that case, I'll have a case of his finest stock shipped to you.~*/
+			
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~ 
+			@135 /* ~Thanks, Nalia. Just not anything *too* pretentious, alright?~ */
+		END
+	//}
+
+
+//}

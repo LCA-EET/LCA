@@ -738,6 +738,22 @@ END
 
 //{ Event Checks
 
+	//{ Player gives soul fragment to Sarevok
+	IF
+		GlobalGT("SarevokAlive", "GLOBAL", 0)
+		GlobalLT("ImoenGiveSoul","GLOBAL",2)
+		Global("XA_CorwinRomanceActive","GLOBAL",2)
+		!Global("XA_SarevokSoulTimerSet", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_SarevokSoulTimer", "GLOBAL",TWO_DAYS)
+			SetGlobal("XA_SarevokSoulTimerSet", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
 	//{ Wedding Hostile
 	IF 
 		Global("OHD_WEDDING_HOSTILE","OH5000",3)
@@ -745,8 +761,10 @@ END
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("XA_WeddingHostile", "GLOBAL", 1)
 			SetGlobal("XA_CorwinLeaveWedding", "GLOBAL", 1)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 	//}
@@ -4488,6 +4506,46 @@ END
 
 //{ Sarevok Interactions
 
+	//{ Sarevok - <CHARNAME> Soul Interaction
+	IF
+		GlobalTimerExpired("XA_SarevokSoulTimer", "GLOBAL")
+		GlobalLT("XA_SarevokSoul", "GLOBAL", 1)
+		Global("XA_CorwinRomanceActive", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_SarevokSoul", "GLOBAL", 1)
+			Interact("Sarevok")
+			SetInterrupt(TRUE)
+	END
+	
+	IF
+		IfValidForPartyDialog("Sarevok")
+		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_SarevokSoul", "GLOBAL", 1)
+		!Range("Sarevok", 6)
+		ActionListEmpty()
+	THEN
+		RESPONSE #100
+			MoveToObject("Sarevok")
+			Continue()
+	END
+
+	IF
+		IfValidForPartyDialog("Sarevok")
+		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_SarevokSoul", "GLOBAL", 1)
+		See("Sarevok")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_SarevokSoul", "GLOBAL", 2)
+			//Dialog B-89A, B-89B
+			Interact("Sarevok")
+			SetInterrupt(TRUE)
+	END
+	//}
+
 	//{ Sarevok First Interaction
 	IF
 		InParty(Myself)
@@ -4885,7 +4943,76 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			PlaySong(146)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+	
+	//{ Third Interaction
+	IF
+		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_CorwinPregnant", "GLOBAL", 5)
+		GlobalTimerExpired("XA_CorwinPregnantTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_CorwinPregnant", "GLOBAL", 6)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		Global("XA_CorwinPregnant", "GLOBAL", 6)
+		See(Player1)
+	THEN
+		RESPONSE #100
+			StartDialog("XACORWIJ", Player1)
+	END
+	//}
+	
+	//{ Fourth Interaction
+	IF
+		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_CorwinPregnant", "GLOBAL", 7)
+		GlobalTimerExpired("XA_CorwinPregnantTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_CorwinPregnant", "GLOBAL", 8)
+			Continue()
+	END
+	
+	IF
+		Global("XA_CorwinPregnant", "GLOBAL", 8)
+		See(Player1)
+	THEN
+		RESPONSE #100
+			StartDialog("XACORWIJ", Player1)
+	END
+	//}
+	
+	//{ Final Interaction
+	IF
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_CorwinPregnant", "GLOBAL", 9)
+		GlobalTimerExpired("XA_CorwinPregnantTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_CorwinPregnant", "GLOBAL", 10)
+			Continue()
+	END
+	
+	IF
+		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_CorwinPregnant", "GLOBAL", 10)
+		AreaCheck("AR4500")
+		See(Player1)
+	THEN
+		RESPONSE #100
 			StartDialog("XACORWIJ", Player1)
 	END
 	//}

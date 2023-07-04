@@ -3132,11 +3132,80 @@ END
 //}
 
 //{ Sarevok Banters
-	//{ Dialog B-XX
-	
+
+	//{ Dialog B-89B
+	CHAIN
+		IF ~
+			GlobalLT("ImoenGiveSoul","GLOBAL",2)
+			Global("XA_SarevokSoul", "GLOBAL", 2)
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			OR(2)
+				Alignment("Sarevok",CHAOTIC_GOOD)
+				Global("XA_89BDebug", "GLOBAL", 1)
+		~ THEN XACORWIB XA_SarevokBanter_Soul
+			@870 /* ~So, what's it like?~ */
+			== SAREV25J
+			@879 /* ~Pardon?~ */
+			DO ~
+				SetGlobal("XA_SarevokSoul", "GLOBAL", 3)
+			~
+			== XACORWIB
+			@871 /* ~You're carrying part of <CHARNAME>'s soul. Maybe having <PRO_HIMHER> inside of you will make you a better person. But I expect that it won't.~ */
+			== SAREV25J
+			@872 /*  ~What do you wish to know, woman? What are you curious about?~ */
+			= @873 /* ~Perhaps you would be interested to know that I can feel the triumph of Dragonspear, and the heat of Avernus. I've experienced the despair of that prison cell after being framed for murder. I remember the pain of our separation, and the sense of betrayal after being exiled from the city that I fought to defend.~ */
+			== XACORWIB
+			@882 /* ~Wait — you have <PRO_HISHER>'s memories?~ */
+			== SAREV25J
+			@874 /* ~I do. I can even feel the knives of Irenicus, slicing into my skin, torturing me. I can feel his hands and his breath... and... I can feel the unbridled joy of seeing you again, in Athkatla. I recall the fear of losing you to Bodhi, and Rohma to Illasera.~ */
+			== XACORWIB
+			@876 /* ~That's enough.~ */
+			== SAREV25J
+			@883 /* ~There's something else that you should know. Your <PRO_MANWOMAN> loves you with every fiber of <PRO_HISHER> being... I've never felt anything quite like it, in either of my lives...~*/
+			== XACORWIB
+			@885 /*~... Thank you. I feel the same way about <PRO_HIMHER>.~ */
+	EXIT
 	//}
 
-	//{ Dialog B-86
+	//{ Dialog B-89A
+	CHAIN
+		IF ~
+			GlobalLT("ImoenGiveSoul","GLOBAL",2)
+			Global("XA_SarevokSoul", "GLOBAL", 2)
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			OR(2)
+				!Alignment("Sarevok",CHAOTIC_GOOD)
+				Global("XA_89ADebug", "GLOBAL", 1)
+		~ THEN XACORWIB XA_SarevokBanter_Soul
+			@870 /* ~So, what's it like?~ */
+			== SAREV25J
+			@879 /* ~Pardon?~ */
+			DO ~
+				SetGlobal("XA_SarevokSoul", "GLOBAL", 3)
+			~
+			== XACORWIB
+			@871 /* ~You're carrying part of <CHARNAME>'s soul. Maybe having <PRO_HIMHER> inside of you will make you a better person. But I expect that it won't.~ */
+			== SAREV25J
+			@872 /*  ~What do you wish to know, woman? What are you curious about?~ */
+			= @873 /* ~Perhaps you would be interested to know that I can feel the triumph of Dragonspear, and the heat of Avernus. I've experienced the despair of that prison cell after being framed for murder. I remember the pain of our separation, and the sense of betrayal after being exiled from the city that I fought to defend.~ */
+			== XACORWIB
+			@882 /* ~Wait — you have <PRO_HISHER>'s memories?~ */
+			== SAREV25J
+			@874 /* ~I do. I can even feel the knives of Irenicus, slicing into my skin, torturing me. I can feel his hands and his breath... and... I can feel the unbridled joy of seeing you again, in Athkatla. I recall the fear of losing you to Bodhi, and Rohma to Illasera.~ */
+			== XACORWIB
+			@876 /* ~That's enough.~ */
+			== SAREV25J
+			@877 /* ~And Schael... I remember us sharing some *very* intimate—~ */
+			== XACORWIB
+			@878 /* ~Enough, gods damnit!~ */
+			== SAREV25J
+			@881 /* ~Hah, forgive me, but there's something else that you should know. Your <PRO_MANWOMAN> loves you with every fiber of <PRO_HISHER> being... I've never felt anything quite like it, in either of my lives. But as I'm sure you know, such things are not meant to last...~ */
+			== XACORWIB
+			@884 /* ~...~ */
+	EXIT
+	//}
+
+	//{ Dialog B-86A
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinSarevok", "GLOBAL", 2)

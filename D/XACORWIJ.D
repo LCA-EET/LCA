@@ -193,6 +193,180 @@ IF ~~ THEN BEGIN XA_SARPROVF_0_BodhiBite2
 END
 //}
 
+//{ Dialog J-82
+IF ~
+	Global("XA_CorwinPregnant", "GLOBAL", 10)
+~ THEN BEGIN XA_CorwinPregnant_Final
+	SAY @1667 /* ~<CHARNAME>... It's time. I need to go home. Have the gateway send me back to Baldur's Gate.~*/
+	
+	IF ~~ THEN REPLY @1676 /* ~Can't you stay with me for a while longer? I need you.~*/
+	GOTO XA_CorwinPregnant_Final_2
+END
+
+IF ~~ THEN BEGIN XA_CorwinPregnant_Final_2
+	SAY @1677 /* ~I want to, more than anything. But I can't. Look, love.~ */
+	
+	= @1678 /* ~(She moves her hand around her belly... it's clear that she'll no longer able to hide that she's pregnant.)~ */
+	
+	IF ~~ THEN REPLY @1679 /* ~I... I understand, love.~ */
+	GOTO XA_CorwinPregnant_Final_3
+END
+
+IF ~~ THEN BEGIN XA_CorwinPregnant_Final_3
+	SAY @1668 /*  ~Before I go, come here...~ */
+	
+	= @1669 /* ~(She takes your hand and places it on her belly, underneath her armor and vestment.)~*/
+	
+	= @1670 /* ~Wait for it...~*/
+	
+	= @1671/*~(You feel the baby kick.)~*/
+	
+	IF ~~ THEN REPLY @1672 /* ~I felt it! I felt our baby kick!~*/
+	GOTO XA_CorwinPregnant_Final_4
+END
+
+IF ~~ THEN BEGIN XA_CorwinPregnant_Final_4
+	SAY @1673 /* ~Mm. That's your child, love. It's going to need its father to come home. And so will I.~*/
+	
+	= @1674 /*  ~(She struggles to hold back tears.)~*/
+	
+	= @1675 /* ~Please, my love... promise me... promise me you'll come home...~ */
+	
+	IF ~~ THEN REPLY @1680 /* ~I will. I promise.~*/
+	GOTO XA_CorwinPregnant_Final_5A
+	
+	IF ~~ THEN REPLY @1681 /* ~I'll do everything in my power to return to you, Schael.~*/
+	GOTO XA_CorwinPregnant_Final_5A
+END
+
+IF ~~ THEN BEGIN XA_CorwinPregnant_Final_5A
+	SAY @1683 /* ~I'll be waiting, love... Be *sob* careful, alright?~ */
+	
+	= @1682 /* ~(You share a tender and very emotional embrace.)~  */
+	
+	IF ~~ THEN
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("XACORBYE")
+	~
+	EXIT
+END
+//}
+
+//{ Dialog J-81
+IF ~
+	Global("XA_CorwinPregnant", "GLOBAL", 8)
+~ THEN BEGIN XA_CorwinPregnant_Fourth
+	SAY @1661 /* ~My love, a moment of your time?~ */
+	
+	IF ~~ THEN REPLY @1662 /* ~Of course, what's on your mind?~ */
+	DO ~
+		SetGlobal("XA_CorwinPregnant", "GLOBAL", 9)
+		SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", "ONE_MONTH")
+	~
+	GOTO XA_CorwinPregnant_Fourth_2
+END
+
+IF ~~ THEN BEGIN XA_CorwinPregnant_Fourth_2
+	SAY @1663 /* ~We'd discussed a couple of months ago that I'd need to go home once I started showing.~ */
+	
+	= @1664 /* ~I don't want to leave your side, but I won't be nearly as effective in the field. Plus, if one of your enemies sees that I'm pregnant, they'll use that against you.~ */
+	
+	IF ~~ THEN REPLY @1665 /* ~Right... how long do you think it will be, before you're visibly pregnant?~*/
+	GOTO XA_CorwinPregnant_Fourth_3
+END
+
+IF ~~ THEN BEGIN XA_CorwinPregnant_Fourth_3
+	SAY @1666 /* ~I'd guess around four weeks. Maybe less. Hopefully we can wrap up what we need to here, then head back home. Let's go.~ */
+	
+	IF ~~ THEN
+	EXIT
+END
+//}
+
+//{ Dialog J-80
+IF ~
+	Global("XA_CorwinPregnant", "GLOBAL", 6)
+~ THEN BEGIN XA_CorwinPregnant_Third
+	SAY @1640 /* ~Mmm...~ */
+	
+	IF ~~ THEN REPLY @1641 /* ~How are you feeling, love?~ */
+	DO ~
+		SetGlobal("XA_CorwinPregnant", "GLOBAL", 7)
+		SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", "ONE_MONTH")
+	~
+	GOTO XA_CorwinPregnant_Third_2
+	
+	IF ~~ THEN REPLY @1642 /* ~What is it?~ */
+	DO ~
+		SetGlobal("XA_CorwinPregnant", "GLOBAL", 7)
+		SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", "ONE_MONTH")
+	~
+	GOTO XA_CorwinPregnant_Third_2
+	
+	IF ~~ THEN REPLY @1648 /* ~Hungry? I'm sure we can find something our packs to satisfy any new cravings.~ */
+	DO ~
+		SetGlobal("XA_CorwinPregnant", "GLOBAL", 7)
+		SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", "ONE_MONTH")
+	~
+	GOTO XA_CorwinPregnant_Third_2
+END
+
+IF ~~ THEN BEGIN XA_CorwinPregnant_Third_2
+	SAY @1643 /* ~I'm fine, hon. I was just remembering something... in the caravan, on our way to Saradush, you said you were having nightmares. Something... about having to make a difficult decision...~*/
+	
+	= @1645 /* ~I didn't understand what you meant at the time, but I think that I'm beginning to...~ */
+	
+	IF ~~ THEN REPLY @1646 /* ~Yes... I've been thinking about that as well.~ */
+	GOTO XA_CorwinPregnant_Third_3
+	
+	IF ~~ THEN REPLY @1647 /* ~Where are you going with this?~ */
+	GOTO XA_CorwinPregnant_Third_3
+END
+
+IF ~~ THEN BEGIN XA_CorwinPregnant_Third_3
+	SAY @1649 /* ~I see a change in you, love. Your skill in battle is unlike anything I've ever seen. You're becoming something... greater, if that makes sense.~ */
+	
+	= @1650 /* ~You know that I've never been one to believe in prophecies. But, if you did have to choose between godhood, and this life... what would that mean for us? For our child? There's nothing I can offer you that can compare with that.~ */
+	
+	IF ~~ THEN REPLY @1651 /*  ~Your love is enough, Schael. It's more than any <PRO_MANWOMAN> can ask for.~*/
+	GOTO XA_CorwinPregnant_Third_4A
+	
+	IF ~~ THEN REPLY @1653 /* ~If I did become a god, I'd still love you. I'd be able to do things for you, and our child, that I could never do as a <PRO_MANWOMAN>.~ */
+	GOTO XA_CorwinPregnant_Third_4B
+END
+
+IF ~~ THEN BEGIN XA_CorwinPregnant_Third_4B
+	SAY @1656 /* ~I imagine you'd be able to do anything. Except be with me, that is. Besides, what are mortal concerns like love, children, and companionship, to an immortal being?~  */
+	
+	IF ~~ THEN
+	GOTO XA_CorwinPregnant_Third_5
+END
+
+IF ~~ THEN BEGIN XA_CorwinPregnant_Third_4A
+	SAY @1652 /* ~But don't you see, that's exactly it! A <PRO_MANWOMAN> is mortal, and a god is not. What are mortal concerns like love, children, and companionship, to an immortal being?~ */
+	
+	IF ~~ THEN
+	GOTO XA_CorwinPregnant_Third_5
+END
+
+IF ~~ THEN BEGIN XA_CorwinPregnant_Third_5
+	SAY @1655 /* ~I - I'm sorry. I know you have enough on your mind already, and me worrying about these things isn't good for our baby.~ */
+	
+	IF ~~ THEN REPLY @1658 /* ~And how is our baby?~ */
+	GOTO XA_CorwinPregnant_Third_6
+	
+END
+
+IF ~~ THEN BEGIN XA_CorwinPregnant_Third_6
+	SAY @1659 /* ~(She smiles.)~ */
+	= @1660 /* ~Good, love. I just can't wait to get home. Come on, let's go.~ */
+	
+	IF ~~ THEN
+	EXIT
+END
+//}
+
 //{ Dialog J-79
 IF ~
 	Global("XA_MessageToBG", "GLOBAL", 1)
