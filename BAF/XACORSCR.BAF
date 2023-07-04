@@ -4967,7 +4967,10 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
+			PlaySong(142)
 			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 	
@@ -4988,7 +4991,10 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
+			PlaySong(142)
 			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 	
@@ -5011,7 +5017,10 @@ END
 		See(Player1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
+			PlaySong(146)
 			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 	

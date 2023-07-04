@@ -245,9 +245,45 @@ IF ~~ THEN BEGIN XA_CorwinPregnant_Final_5A
 	= @1682 /* ~(You share a tender and very emotional embrace.)~  */
 	
 	IF ~~ THEN
+	GOTO XA_GoodbyeChainEnd
+	
+	IF ~
+		OR(13)
+			IsValidForPartyDialogue("Aerie")
+			IsValidForPartyDialogue("HaerDalis")
+			IsValidForPartyDialogue("Imoen2")
+			IsValidForPartyDialogue("Jaheira")
+			IsValidForPartyDialogue("Jan")
+			IsValidForPartyDialogue("Keldorn")
+			IsValidForPartyDialogue("Korgan")
+			IsValidForPartyDialogue("Mazzy")
+			IsValidForPartyDialogue("Minsc")
+			IsValidForPartyDialogue("Nalia")
+			IsValidForPartyDialogue("Neera")
+			IsValidForPartyDialogue("Rasaad")
+			IsValidForPartyDialogue("Valygar")
+	~ THEN
+	GOTO XA_GoodbyeChain
+	
+END
+
+IF ~~ THEN BEGIN XA_GoodbyeChainEnd
+	SAY @1684 /* ~Here, take my pack. I won't need it anymore...~ */
+	
+	IF ~~ THEN
+	DO ~
+		ActionOverride(Player1, TakeCreatureItems("XACORWIN", BACKPACK))
+	~
+	GOTO XA_GoodbyeChainEnd2
+END
+
+IF ~~ THEN BEGIN XA_GoodbyeChainEnd2
+	SAY @1685 /* ~I'm ready, love. Send me home.~ */
+	
+	IF ~~ THEN REPLY @1686 /* ~As you wish, dear...~ */
 	DO ~
 		StartCutSceneMode()
-		StartCutScene("XACORBYE")
+		StartCutScene("XABYE")
 	~
 	EXIT
 END
@@ -4887,6 +4923,7 @@ IF ~~ THEN BEGIN XA_CorwinSexCC2
 	IF ~~ THEN REPLY @67 /* ~Right... sorry, love.~ */
 	EXIT
 END
+//}
 
 //{ Dialog J-53A
 IF ~
@@ -8936,3 +8973,242 @@ CHAIN XACORWIJ XA_RohmaWraithChain
 	
 END XACORWIJ XA_RohmaWraithChain_END
 
+CHAIN XACORWIJ XA_GoodbyeChain
+	@1716 /* ~(She turns to your comrades.)~ */
+	
+	//{ Aerie Goodbye
+	== AERIEJ
+	IF ~
+		IsValidForPartyDialogue("Aerie")
+	~
+	@1687 /* ~Oh Schael *sob*, I — I'll miss you!~*/
+	
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("Aerie")
+	~
+	@1688 /* ~I'll miss you too, Aerie. Please look after <CHARNAME> for me while I'm gone.~*/
+	//}
+	
+	//{ Keldorn Goodbye
+	== KELDORJ
+	IF ~
+		IsValidForPartyDialogue("Keldorn")
+	~
+	@1689 /* ~It's been an honor to fight at your side, Major.~*/
+	
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("Keldorn")
+	~
+	@1690 /* ~The honor is mine. Thank you, Keldorn.~*/
+	//}
+	
+	//{ Minsc Goodbye
+	== MINSCJ
+	IF ~
+		IsValidForPartyDialogue("Minsc")
+	~
+	@1709 /*~Major soldier lady, Boo wishes you well, and asks if you would be so kind as to kiss him.~ */
+	
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("Minsc")
+	~
+	@1710 /*~No. I'm not kissing anyone's rode—, excuse me, 'space-hamster'.~  */
+	
+	== MINSCJ
+	IF ~
+		IsValidForPartyDialogue("Minsc")
+	~
+	@1711 /*  ~In that case, can Boo give you a kiss? Just a peck on the cheek?~*/
+	
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("Minsc")
+	~
+	@1712 /*~(Sigh.)~ */
+	
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("Minsc")
+	~
+	@1713 /*~Sure, Minsc.~ */
+	
+	== MINSCJ
+	IF ~
+		IsValidForPartyDialogue("Minsc")
+	~
+	@1714 /* ~(She leans in, and Boo head-bumps her on her cheek.)~*/
+	
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("Minsc")
+	~
+	@1715 /* ~Ugh...~ */
+	//}
+	
+	//{ Korgan Goodbye
+	== KORGANJ
+	IF ~
+		IsValidForPartyDialogue("Korgan")
+	~
+	@1691 /* ~Aye girlie, don't ye worry yer sweet little behind. Ole Korgan'll make sure yer <PRO_MANWOMAN> comes home in one piece.~*/
+	
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("Korgan")
+	~
+	@1692 /* ~Thank you, Korgan.~*/
+	//}
+	
+	//{ Imoen Goodbye
+	== IMOEN2J
+	IF ~
+		IsValidForPartyDialogue("Imoen2")
+	~
+	@1693 /* ~Schael! I'll miss you! Please, give Liia my regards.~*/
+	
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("Imoen2")
+	~
+	@1694 /* ~I will Imoen... and I'll miss you too. Take good care of your <PRO_BROTHERSISTER> for me.~*/
+	//}
+	
+	//{ Neera Goodbye
+	== NEERAJ
+	IF ~
+		IsValidForPartyDialogue("Neera")
+	~
+	@1695 /* ~Good luck with the babies! (Hee-hee)~*/
+	
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("Neera")
+	~
+	@1696 /* ~Sorry, what was that?~*/
+	
+	== NEERAJ
+	IF ~
+		IsValidForPartyDialogue("Neera")
+	~
+	@1697 /* ~I said, good luck with the baby!~*/
+	
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("Neera")
+	~
+	@1698 /* ~Thank you, Neera. I appreciate it.~  */
+	//}
+
+	//{ Valygar Goodbye
+	== VALYGARJ
+	IF ~
+		IsValidForPartyDialogue("Valygar")
+	~
+	@1699 /* ~Take care of yourself, Major.~*/
+	
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("Valygar")
+	~
+	@1700 /* ~You too, Valygar.~ */
+	//}
+
+	//{ Rasaad Goodbye
+	== RASAADJ
+	IF ~
+		IsValidForPartyDialogue("Rasaad")
+	~
+	@1701 /* ~Schael — I shall miss you, my friend.~ */
+	
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("Rasaad")
+	~
+	@1702 /* ~I'll miss you too Rasaad. Take care of yourself.~ */
+	//}
+	
+	//{ Jaheira Goodbye
+	== JAHEIRAJ
+	IF ~
+		IsValidForPartyDialogue("Jaheira")
+	~
+	@1703 /* ~Though it must hurt to leave <PRO_HISHER>, in time you'll realize that you've made the right decision, Schael. The battlefield is no place for an expecting mother.~ */
+	
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("Jaheira")
+	~
+	@1704 /* ~Right... thank you Jaheira.~*/
+	//}
+	
+	//{ Nalia Goodbye
+	== NALIAJ
+	IF ~
+		IsValidForPartyDialogue("Nalia")
+	~
+	@1705 /* ~I'll miss our little discussions on the plight of the poor, and how best to tackle the inequality that plagues our cities.~ */
+	
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("Nalia")
+	~
+	@1706 /* ~I... won't. But I'll miss you, Nalia.~ */
+	//}
+	
+	//{ Mazzy Goodbye
+	== MAZZYJ
+	IF ~
+		IsValidForPartyDialogue("Mazzy")
+	~
+	@1707 /* ~Schael, I'm fortunate to have been able to fight alongside you these past months. You will be missed, by all of us.~ */
+	
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("Mazzy")
+	~
+	@1708 /* ~And I'm fortunate to be able to call you a friend, Mazzy. Be well.~*/
+	//}
+
+	//{ HaerDalis Goodbye
+	== HAERDAJ
+	IF ~
+		IsValidForPartyDialogue("HaerDalis")
+	~
+	@1717/*  ~Alas, it is time for my raven to take flight and return to her nest.~ */
+	
+	== HAERDAJ
+	IF ~
+		IsValidForPartyDialogue("HaerDalis")
+	~
+	@1718 /* ~Goodbye, Haer'Dalis.~ */
+	//}
+	
+	//{ Jan Goodbye
+	== JANJ
+	IF ~
+		IsValidForPartyDialogue("Jan")
+	~
+	@1721 /* ~This reminds me of the time when —~*/
+	
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("Jan")
+	~
+	@1722 /* ~Jan. I'll miss you, too.~*/
+	
+	== JANJ
+	IF ~
+		IsValidForPartyDialogue("Jan")
+	~
+	@1723 /* ~Aye. Before you go Schael, take this recipe. It's for a buttered turnip puree. My children loved it when they were wee small.~*/
+	
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("Jan")
+	~
+	@1720 /* ~That's very kind of you. Thank you.~*/
+	//}
+END XACORWIJ XA_GoodbyeChainEnd

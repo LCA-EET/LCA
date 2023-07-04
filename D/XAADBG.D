@@ -880,6 +880,27 @@ IF ~~ THEN BEGIN XA_XACORWIJ_Test
 	~
 	EXIT
 
+	IF ~~ THEN REPLY @544 /* Dialog J-80 */
+	DO ~
+		SetGlobal("XA_CorwinPregnant", "GLOBAL", 6)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @543 /* Dialog J-81 */
+	DO ~
+		SetGlobal("XA_CorwinPregnant", "GLOBAL", 8)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+
+	IF ~~ THEN REPLY @542 /* Dialog J-82 */
+	DO ~
+		SetGlobal("XA_CorwinPregnant", "GLOBAL", 10)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+
 	IF ~~ THEN REPLY @26
 	GOTO XA_MainMenu
 
@@ -3378,6 +3399,13 @@ END
 
 IF ~~ THEN BEGIN XA_Menu_StartCutscene
 	SAY @15 /*  ~Of course. Which cutscene do you want to start?~ */
+	
+	IF ~~ THEN REPLY @541
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("XABYE")
+	~
+	EXIT
 	
 	IF ~~ THEN REPLY @536
 	DO ~
