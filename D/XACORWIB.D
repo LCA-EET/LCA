@@ -105,7 +105,7 @@ END
 		THEN AERIEJ BCorwinSickAerie
 			@677 /* ~Schael, you haven't been able to k-keep any fluids down. Sit down for a m-moment, let me have a look at you.~ */
 			DO ~
-				SetGlobal("XA_CorwinPartySick", "GLOBAL", 1)
+				SetGlobal("XA_CorwinPartySick", "GLOBAL", 2)
 				SetGlobal("XA_CorwinSick_Aerie", "GLOBAL", 0)
 			~
 			== XACORWIB
@@ -132,7 +132,7 @@ END
 			@683 /* ~Captain, you haven't been able to keep any fluids down. Sit down for a moment, let me have a look at you.~ */
 			DO ~
 				SetGlobal("XA_CorwinSick_Jaheira", "GLOBAL", 0)
-				SetGlobal("XA_CorwinPartySick", "GLOBAL", 1)
+				SetGlobal("XA_CorwinPartySick", "GLOBAL", 2)
 			~
 			== XACORWIB
 			@678 /* ~N-no *cough* we need to... we need to keep *cough* moving...~*/
@@ -166,7 +166,7 @@ END
 			@692 /* ~Aye, <CHARNAME>. Ye girlie ain't doing well at all. She's as tough as they come, though I'd wager me clan's name that Schael won't make it through the night.~  */
 			DO ~
 				SetGlobal("XA_CorwinSick_Korgan", "GLOBAL", 0)
-				SetGlobal("XA_CorwinPartySick", "GLOBAL", 1)
+				SetGlobal("XA_CorwinPartySick", "GLOBAL", 2)
 			~
 			== KORGANJ
 			IF ~
@@ -186,7 +186,7 @@ END
 			@694 /* ~Schael, you haven't been able to keep any fluids down. Sit down for a moment, let me have a look at you.~ */
 			DO ~
 				SetGlobal("XA_CorwinSick_Imoen", "GLOBAL", 0)
-				SetGlobal("XA_CorwinPartySick", "GLOBAL", 1)
+				SetGlobal("XA_CorwinPartySick", "GLOBAL", 2)
 			~
 			== XACORWIB
 			@695 /* ~N-no *cough* we need to... we need to keep *cough* moving...~*/

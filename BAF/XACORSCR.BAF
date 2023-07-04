@@ -29,7 +29,6 @@ THEN
 
 		TakeCreatureItems("Corwin", BACKPACK)
 		SetGlobal("XA_CopyCorwinItems", "GLOBAL", 1)
-		//SetGlobal("XA_CopyItemTest", "GLOBAL", 0)
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -100,7 +99,6 @@ IF
 	Global("XA_CorwinRejoinProcessed", "GLOBAL", 1)
 THEN 
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_CRejoin~)
 		SetInterrupt(FALSE)
 		SetGlobal("XA_CorwinJoined","LOCALS",1)
 		SetGlobal("XA_AskedToRejoin", "LOCALS", 0)
@@ -143,9 +141,10 @@ END
 IF 
 	Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 	ActionListEmpty()
-	OR(2)
+	OR(3)
 		!Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		!IsValidForPartyDialogue(Player1)
+		!See(Player1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CorwinCanTalkToPlayer", "GLOBAL", 0)
@@ -158,6 +157,7 @@ IF
 	Global("XA_CorwinCanTalk", "GLOBAL", 1)
 	ActionListEmpty()
 	IsValidForPartyDialogue(Player1)
+	See(Player1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
@@ -208,7 +208,6 @@ END
 	//{ Corwin Hall of Wonders Arrest
 	IF 
 		Global("XA_CorwinArrest", "GLOBAL", 1)
-		See(Player1)
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -248,7 +247,6 @@ END
 	IF
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 		Global("XA_CorwinLeaveForFamily", "GLOBAL", 1)
-		See(Player1)
 	THEN
 		RESPONSE #100
 			//Dialogs J-19, J-20
@@ -260,7 +258,6 @@ END
 	IF
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 		Global("XA_CorwinNeedSeeFamily", "GLOBAL", 1)
-		See(Player1)
 	THEN
 		RESPONSE #100
 			//Dialog J-18
@@ -272,7 +269,6 @@ END
 	IF
 		Global("XA_AskCorwinAboutTianna", "GLOBAL", 1)
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-		See(Player1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -289,7 +285,6 @@ END
 		Global("XA_XACS15Cutscene", "GLOBAL", 5)
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		!See("XANEOMA")
-		See(Player1)
 		Range(Player1, 8)
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 	THEN
@@ -399,7 +394,8 @@ IF
 	Global("OpenJonBedroom","GLOBAL",1)
 THEN
 	RESPONSE #100
-	
+		SetGlobal("XA_PlayerSoulStolen", "GLOBAL", 1)
+		Continue()
 END
 
 IF 
@@ -407,7 +403,6 @@ IF
 	Global("OHD_WEDDING_HOSTILE","OH5000",3)
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_PSS~)
 		SetGlobal("XA_WeddingHostile", "GLOBAL", 1)
 		Continue()
 END
@@ -417,7 +412,6 @@ IF
 	Global("OHD_sexreactions","GLOBAL",1)
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_000~)
 		SetGlobal("XA_DornSex", "GLOBAL", 1)
 		Continue()
 END
@@ -427,7 +421,6 @@ IF
 	Global("BodhiDead","GLOBAL",1)
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_001~)
 		SetGlobal("XA_BodhiDead", "GLOBAL", 1)
 		Continue()
 END
@@ -437,7 +430,6 @@ IF
 	Global("LadyMaria","GLOBAL",5) /* Keldorn reconciled with his wife */
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_002~)
 		SetGlobal("XA_KeldornMaria", "GLOBAL", 1)
 		Continue()
 END
@@ -447,7 +439,6 @@ IF
 	GlobalGT("PhaereInnuendo","GLOBAL",1)
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_003~)
 		SetGlobal("XA_AloneWithPhaere", "GLOBAL", 1)
 		Continue()
 END
@@ -457,7 +448,6 @@ IF
 	Global("BodhiJob","GLOBAL",2)
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_004~)
 		SetGlobal("XA_BodhiDeal2", "GLOBAL", 1)
 		Continue()
 END
@@ -467,7 +457,6 @@ IF
 	Global("BodhiJob","GLOBAL",3)
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_005~)
 		SetGlobal("XA_BodhiDeal3", "GLOBAL", 1)
 		Continue()
 END
@@ -477,7 +466,6 @@ IF
 	Global("BodhiJob","GLOBAL",4)
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_006~)
 		SetGlobal("XA_BodhiDeal4", "GLOBAL", 1)
 		Continue()
 END
@@ -487,7 +475,6 @@ IF
 	Global("FirkraagDeal","GLOBAL",1)
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_007~)
 		SetGlobal("XA_FirkraagDeal", "GLOBAL", 1)
 		Continue()
 END
@@ -521,7 +508,6 @@ IF
 	Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 	ReputationLT(Player1,8)
 	GlobalTimerExpired("XA_CorwinRepWarningTimer", "GLOBAL")
-	See(Player1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -534,7 +520,6 @@ IF
 	Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 	ReputationLT(Player1,7)
 	Global("XA_CanLeaveParty", "GLOBAL", 1)
-	See(Player1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -736,6 +721,18 @@ END
 
 //{ Event Checks
 
+	//{ Checks if Dorn's patrons are dead
+	IF
+		!Global("XA_DornPatronsDead", "GLOBAL", 1)
+		Dead("ohdazoth")  // Azothet
+		Dead("ohdugoth")  // Ur-Gothoz
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_DornPatronsDead", "GLOBAL", 1)
+			Continue()
+	END
+	//}
+
 	//{ Player gives soul fragment to Sarevok
 	IF
 		GlobalGT("SarevokAlive", "GLOBAL", 0)
@@ -786,7 +783,6 @@ END
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 		GlobalTimerExpired("XA_AmkethranTimer", "GLOBAL")
 		GlobalLT("XA_MessageToBG", "GLOBAL", 1)
-		See(Player1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -845,6 +841,7 @@ END
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_CheckInRomanceLeftBG", "GLOBAL", 2)
+			Continue()
 	END
 	//}
 	
@@ -886,7 +883,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("XA_Banter_CorwinKeldornOpt1", "GLOBAL", 1)
+			SetGlobal("XA_KeldornMaria", "GLOBAL", 1)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 	//}
@@ -911,7 +911,6 @@ END
 	IF 
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 		GlobalTimerExpired("XA_CorwinVouchedDrizzTimer", "GLOBAL")
-		See(Player1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -947,7 +946,6 @@ END
 			Dead("ohdvern")  // Vernus
 			!Exists("ohdvern")  // Vernus
 		Range("RituaXAircle",20)
-		See(Player1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -964,7 +962,6 @@ END
 		AreaCheck("AR0405")
 		!InMyArea("girl2")
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-		See(Player1)
 	THEN
 		RESPONSE #100
 			StartDialog("XACORWIJ", Player1)
@@ -976,7 +973,6 @@ END
 		Global("OpenJonBedroom","GLOBAL",1)
 		!Global("XA_PlayerSoulStolen", "GLOBAL", 1)
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-		See(Player1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1009,10 +1005,8 @@ END
 		!Global("XA_AloneWithPhaere", "GLOBAL", 1)
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-		See(Player1)
 	THEN
 		RESPONSE #100
-			//DisplayStringHead(Myself, ~DEBUG_009~)
 			SetInterrupt(FALSE)
 			SetGlobal("XA_AloneWithPhaere", "GLOBAL", 1)
 			SetGlobal("XA_PhaereTalk", "GLOBAL", 1)
@@ -1028,7 +1022,6 @@ END
 		Global("FirkraagDeal","GLOBAL",1)
 		!Global("XA_FirkraagDeal", "GLOBAL", 1)
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-		See(Player1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1046,7 +1039,6 @@ END
 		Global("BodhiJob","GLOBAL",2)
 		!Global("XA_BodhiDeal2", "GLOBAL", 1)
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-		See(Player1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1063,7 +1055,6 @@ END
 		Global("BodhiJob","GLOBAL",3)
 		!Global("XA_BodhiDeal3", "GLOBAL", 1)
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-		See(Player1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1080,7 +1071,6 @@ END
 		Global("BodhiJob","GLOBAL",4)
 		!Global("XA_BodhiDeal4", "GLOBAL", 1)
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-		See(Player1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1116,7 +1106,7 @@ END
 	IF
 		!Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
 		!GlobalGT("XA_CorwinBit", "GLOBAL", 0)
-		//Gender(Player1, MALE)
+		Gender(Player1, MALE)
 		!HPPercentLT(Myself, 50)
 		!HPPercentLT(Player1, 50)
 		!Global("XA_RohmaKidnapped", "GLOBAL", 3)
@@ -1180,7 +1170,6 @@ END
 		Global("XA_CorwinSexAfterBodhi", "GLOBAL", 1)
 		Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
 		!Range(Player1, 6)
-		See(Player1)
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
@@ -1193,7 +1182,6 @@ END
 		Global("XA_CorwinSexAfterBodhi", "GLOBAL", 1)
 		Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
 		Range(Player1, 7)
-		See(Player1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1208,7 +1196,6 @@ END
 	IF
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 		Global("XA_CorwinSex_1", "GLOBAL", 3)
-		See(Player1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1230,42 +1217,67 @@ END
 			Continue()
 	END
 
-	IF 
+	IF
 		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-		ActionListEmpty()
-		OR(5)
-			IsValidForPartyDialogue("Aerie")
-			IsValidForPartyDialogue("Imoen2")
-			IsValidForPartyDialogue("Nalia")
-			IsValidForPartyDialogue("Neera")
-			IsValidForPartyDialogue("Jaheira")
+		IsValidForPartyDialog("Aerie")
 	THEN
-		RESPONSE #20
+		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_NoSleepComplain_Aerie", "GLOBAL", 1)
 			ActionOverride("Aerie", StartDialog("AERIEJ", Player1))
 			SetInterrupt(TRUE)
-		RESPONSE #20
+	END
+	
+	IF
+		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		IsValidForPartyDialog("Imoen2")
+	THEN
+		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_NoSleepComplain_Imoen", "GLOBAL", 1)
 			ActionOverride("Imoen2", StartDialog("IMOEN2J", Player1))
 			SetInterrupt(TRUE)
-		RESPONSE #20
+	END
+	
+	IF
+		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		IsValidForPartyDialog("Nalia")
+	THEN
+		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_NoSleepComplain_Nalia", "GLOBAL", 1)
 			ActionOverride("Nalia", StartDialog("NALIAJ", Player1))
 			SetInterrupt(TRUE)
-		RESPONSE #20
+	END
+	
+	IF
+		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		IsValidForPartyDialog("Neera")
+	THEN
+		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_NoSleepComplain_Neera", "GLOBAL", 1)
 			ActionOverride("Neera", StartDialog("NEERAJ", Player1))
 			SetInterrupt(TRUE)
-		RESPONSE #20
+	END
+	
+	IF
+		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		IsValidForPartyDialog("Jaheira")
+	THEN
+		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_NoSleepComplain_Jaheira", "GLOBAL", 1)
 			ActionOverride("Jaheira", StartDialog("JAHEIRAJ", Player1))
 			SetInterrupt(TRUE)
+	END
+	
+	IF 
+		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
+			Continue()
 	END
 	//}
 
@@ -1305,7 +1317,6 @@ END
 		GlobalTimerExpired("XA_CorwinSex_2_Timer", "GLOBAL")
 		Global("XA_CorwinSex_2", "GLOBAL", 1)
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-		See(Player1)
 		GlobalLT("XA_CorwinSex2_Init", "GLOBAL", 1)
 		Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
 	THEN
@@ -1314,20 +1325,6 @@ END
 			SetGlobal("XA_CorwinSex2_Init", "GLOBAL", 1)
 			PlaySong(146)
 			//Dialog J-46
-			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
-	END
-	//}
-
-	//{ Corwin After Sex Interaction 2
-	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-		Global("XA_CorwinSex_2", "GLOBAL", 4)
-		See(Player1)
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			Wait(1)
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)
 	END
@@ -1365,7 +1362,6 @@ END
 		Global("XA_CorwinBit", "GLOBAL", 2)
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 		Range(Player1, 7)
-		See(Player1)
 	THEN
 		RESPONSE #100
 			//Dialog J-31
@@ -1378,7 +1374,6 @@ END
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 		Global("XA_CorwinBit", "GLOBAL", 3)
 		GlobalTimerExpired("XA_CorwinBitTimer", "GLOBAL")
-		See(Player1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1394,7 +1389,6 @@ END
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 		Global("XA_CorwinBit", "GLOBAL", 5)
 		GlobalTimerExpired("XA_CorwinBitTimer", "GLOBAL")
-		See(Player1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1410,7 +1404,6 @@ END
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 		Global("XA_CorwinBit", "GLOBAL", 7)
 		GlobalTimerExpired("XA_CorwinBitTimer", "GLOBAL")
-		See(Player1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1423,7 +1416,7 @@ END
 
 	//{ Reset Sounds to Original
 	IF
-		Global("XA_BiteSoundSet", "GLOBAL", 1)
+		Global("XA_BiteSoundSet", "LOCALS", 1)
 		Global("XA_CorwinBit", "GLOBAL", 0)
 	THEN
 		RESPONSE #100
@@ -1474,7 +1467,7 @@ END
 			SetPlayerSound(Myself,268289,HIDDEN_IN_SHADOWS)
 			SetPlayerSound(Myself,268290,SPELL_DISRUPTED)
 			SetPlayerSound(Myself,268291,SET_A_TRAP)
-			SetGlobal("XA_BiteSoundSet", "GLOBAL", 0)
+			SetGlobal("XA_BiteSoundSet", "LOCALS", 0)
 			SetInterrupt(TRUE)
 			Continue()
 	END
@@ -1484,7 +1477,7 @@ END
 
 	IF
 		GlobalGT("XA_CorwinBit", "GLOBAL", 2)
-		!Global("XA_BiteSoundSet", "GLOBAL", 1)
+		!Global("XA_BiteSoundSet", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1533,7 +1526,7 @@ END
 			SetPlayerSound(Myself,@12,PICKED_POCKET)
 			SetPlayerSound(Myself,@13,SPELL_DISRUPTED)
 			SetPlayerSound(Myself,@14,SET_A_TRAP)
-			SetGlobal("XA_BiteSoundSet", "GLOBAL", 1)
+			SetGlobal("XA_BiteSoundSet", "LOCALS", 1)
 			SetInterrupt(TRUE)
 			Continue()
 	END
@@ -1607,41 +1600,71 @@ END
 	//}
 
 	//{ Party Concerned Corwin Sick
-	IF 
+	IF
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 		GlobalGT("XA_CorwinBit", "GLOBAL", 0)
 		GlobalTimerExpired("XA_CorwinSickPartyTimer", "GLOBAL")
 		!Global("XA_CorwinPartySick", "GLOBAL", 1)
-		OR(4)
-			IsValidForPartyDialogue("KORGAN")
-			IsValidForPartyDialogue("AERIE")
-			IsValidForPartyDialogue("IMOEN2")
-			IsValidForPartyDialogue("JAHEIRA")
 	THEN
-		RESPONSE #25
+		RESPONSE #100
+			SetGlobal("XA_CorwinPartySick", "GLOBAL", 1)
+			Continue()
+	END
+	
+	IF
+		Global("XA_CorwinPartySick", "GLOBAL", 1)
+		IsValidForPartyDialogue("Jaheira")
+	THEN
+		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_CorwinSick_Jaheira", "GLOBAL", 1)
 			//Dialog B-6
 			ActionOverride("JAHEIRA", StartDialog("JAHEIRAJ", "XACORWIN"))
 			SetInterrupt(TRUE)
-		RESPONSE #25
+	END
+	
+	IF
+		Global("XA_CorwinPartySick", "GLOBAL", 1)
+		IsValidForPartyDialogue("Aerie")
+	THEN
+		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_CorwinSick_Aerie", "GLOBAL", 1)
 			//Dialog B-5
 			ActionOverride("AERIE", StartDialog("AERIEJ", "XACORWIN"))
 			SetInterrupt(TRUE)
-		RESPONSE #25
+	END
+
+	IF
+		Global("XA_CorwinPartySick", "GLOBAL", 1)
+		IsValidForPartyDialogue("Korgan")
+	THEN
+		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_CorwinSick_Korgan", "GLOBAL", 1)
 			//Dialog B-7
 			ActionOverride("KORGAN", StartDialog("KORGANJ", Player1))
 			SetInterrupt(TRUE)
-		RESPONSE #25
+	END
+	
+	IF
+		Global("XA_CorwinPartySick", "GLOBAL", 1)
+		IsValidForPartyDialogue("Imoen2")
+	THEN
+		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_CorwinSick_Imoen", "GLOBAL", 1)
 			//Dialog B-8
 			ActionOverride("IMOEN2", StartDialog("IMOEN2J", "XACORWIN"))
 			SetInterrupt(TRUE)
+	END
+
+	IF
+		Global("XA_CorwinPartySick", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_CorwinPartySick", "GLOBAL", 2)
+			Continue()
 	END
 	//}
 
@@ -1708,19 +1731,19 @@ IF
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself, ~DEBUG_027~)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", FOUR_HOURS)
+		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", FORTY_MINUTES)
 		Continue()
 	RESPONSE #100
 		//DisplayStringHead(Myself, ~DEBUG_028~)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", THREE_HOURS)
+		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", THIRTY_MINUTES)
 		Continue()
 	RESPONSE #100
 		//DisplayStringHead(Myself, ~DEBUG_029~)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", TWO_HOURS)
+		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", TWENTY_MINUTES)
 		Continue()
 	RESPONSE #100
 		//DisplayStringHead(Myself, ~DEBUG_030~)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_HOUR)
+		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", TEN_MINUTES)
 		Continue()
 END
 //} End Banter Initialization
@@ -1736,87 +1759,66 @@ IF
 	GlobalLT("XA_CorwinBit", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_031~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 1) /* Aerie */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_032~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 2) /* Anomen */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_033~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 3) /* Dorn */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_034~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 4) /* Edwin */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_035~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 5) /* Imoen */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_036~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 6) /* Hexxat */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_037~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 7) /* Jaheira */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_038~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 8) /* Jan */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_039~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 9) /* Keldorn */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_040~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 10) /* Korgan */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_041.~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 11) /* Neera */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_042~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 12) /* Player */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_043~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 13) /* Viconia */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_044~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 14) /* Valygar */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_045~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 15) /* Cernd */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_046~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 16) /* Yoshimo */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_047~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 17) /* Rasaad */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_048~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 18) /* Minsc */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_049~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 19) /* Haer Dalis */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_050~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 20) /* Nalia */
 		Continue()
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_051~)
 		SetGlobal("XA_Banter_NextInteraction", "GLOBAL", 21) /* Mazzy */
 		Continue()
 	RESPONSE #100
@@ -2075,7 +2077,6 @@ IF
 	Global("XA_NebFight", "GLOBAL", 1)
 	Dead("Neb")
 	Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-	See(Player1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -2121,7 +2122,6 @@ END
 		IfValidForPartyDialog("Mazzy")
 		Global("XA_Banter_CorwinMazzy", "GLOBAL", 2)
 		Range("Mazzy", 7)
-		See("Mazzy")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -2166,7 +2166,6 @@ END
 		IfValidForPartyDialog(Player1)
 		Global("XA_Banter_CorwinMazzy", "GLOBAL", 4)
 		Range("Mazzy", 7)
-		See("Mazzy")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -2269,7 +2268,6 @@ END
 		IfValidForPartyDialog("Nalia")
 		Global("XA_Banter_CorwinNalia", "GLOBAL", 4)
 		Range("Nalia", 7)
-		See("Nalia")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -2312,7 +2310,6 @@ END
 		IfValidForPartyDialog("Nalia")
 		Global("XA_Banter_CorwinNalia", "GLOBAL", 6)
 		Range("Nalia", 7)
-		See("Nalia")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -2360,7 +2357,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinHaerDalis", "GLOBAL", 2)
 		Range("HaerDalis", 7)
-		See("HaerDalis")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -2402,7 +2398,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinHaerDalis", "GLOBAL", 4)
 		Range("HaerDalis", 7)
-		See("HaerDalis")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -2423,7 +2418,6 @@ END
 		Global("XA_Banter_CorwinMinsc", "GLOBAL", 1)
 		CombatCounter(0)
 		ActionListEmpty()
-		See("Minsc")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -2451,7 +2445,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinMinsc", "GLOBAL", 2)
 		Range("Minsc", 7)
-		See("Minsc")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -2495,7 +2488,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinMinsc", "GLOBAL", 4)
 		Range("Minsc", 7)
-		See("Minsc")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -2540,7 +2532,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinMinsc", "GLOBAL", 6)
 		Range("Minsc", 7)
-		See("Minsc")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -2589,7 +2580,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 2)
 		Range("Rasaad", 7)
-		See("Rasaad")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -2633,7 +2623,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 4)
 		Range("Rasaad", 7)
-		See("Rasaad")
 	THEN
 		RESPONSE #100
 			//Dialog B-27
@@ -2673,7 +2662,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 6)
 		Range("Rasaad", 7)
-		See("Rasaad")
 	THEN
 		RESPONSE #100
 			//Dialog B-28
@@ -2713,7 +2701,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 8)
 		Range("Rasaad", 7)
-		See("Rasaad")
 	THEN
 		RESPONSE #100
 			//Dialogs B-29, B-30, B-31, B-32, B-33
@@ -2757,7 +2744,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinYoshimo", "GLOBAL", 2)
 		Range("Yoshimo", 7)
-		See("Yoshimo")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -2804,7 +2790,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinCernd", "GLOBAL", 2)
 		Range("Cernd", 7)
-		See("Cernd")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -2851,7 +2836,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinValygar", "GLOBAL", 2)
 		Range("Valygar", 7)
-		See("Valygar")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -2881,6 +2865,7 @@ END
 		GlobalTimerExpired("XA_CorwinLavokTimer", "GLOBAL")
 		GlobalLT("XA_CorwinValygarLavok", "GLOBAL", 1)
 		GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+		See("Valygar")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -2972,7 +2957,6 @@ END
 		Global("XA_Banter_CorwinHexxat", "GLOBAL", 2)
 		IsValidForPartyDialogue("Hexxat")
 		Range(Player1, 7)
-		See(Player1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3016,7 +3000,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinHexxat", "GLOBAL", 4)
 		Range("Hexxat", 7)
-		See("Hexxat")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3047,7 +3030,6 @@ END
 		IfValidForPartyDialog("Hexxat")
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinHexxat", "GLOBAL", 6)
-		See("Hexxat")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3120,7 +3102,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinJaheira", "GLOBAL", 2)
 		Range("Jaheira", 7)
-		See("Jaheira")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3178,7 +3159,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinJaheira", "GLOBAL", 5)
 		Range("Jaheira", 7)
-		See("Jaheira")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3221,7 +3201,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinJaheira", "GLOBAL", 7)
 		Range("Jaheira", 7)
-		See("Jaheira")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3269,7 +3248,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinNeera", "GLOBAL", 2)
 		Range("Neera", 7)
-		See("Neera")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3301,7 +3279,6 @@ END
 		IsValidForPartyDialog("Imoen2")
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinNeera", "GLOBAL", 4)
-		See("Neera")
 	THEN
 		RESPONSE #100
 			//Dialog B-41
@@ -3368,7 +3345,6 @@ END
 		Global("OHD_sexreactions","GLOBAL",1)
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)  
 		!Global("XA_DornSex", "GLOBAL", 1)
-		See(Player1)
 		OR(2)
 			Global("XA_CorwinRomanceActive","GLOBAL",1)
 			Global("XA_CorwinRomanceActive","GLOBAL",2)
@@ -3380,18 +3356,6 @@ END
 			//Dialog J-25
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)
-	END
-	//}
-
-	//{ Checks if the patrons are dead
-	IF
-		!Global("XA_DornPatronsDead", "GLOBAL", 1)
-		Dead("ohdazoth")  // Azothet
-		Dead("ohdugoth")  // Ur-Gothoz
-	THEN
-		RESPONSE #100
-			SetGlobal("XA_DornPatronsDead", "GLOBAL", 1)
-			Continue()
 	END
 	//}
 
@@ -3429,7 +3393,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinDorn", "GLOBAL", 2)
 		Range("Dorn", 7)
-		See("Dorn")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3476,7 +3439,6 @@ END
 		Global("XA_Banter_CorwinDorn", "GLOBAL", 4)
 		!Global("XA_DornPatronsDead", "GLOBAL", 1)
 		Range("Dorn", 7)
-		See("Dorn")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3527,7 +3489,7 @@ END
 	IF
 		IfValidForPartyDialog("Keldorn")
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
-		Global("XA_Banter_CorwinKeldornOpt1n", "GLOBAL", 2)
+		Global("XA_Banter_CorwinKeldornOpt1", "GLOBAL", 2)
 		!Range("Keldorn", 6)
 		ActionListEmpty()
 	THEN
@@ -3541,7 +3503,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinKeldornOpt1", "GLOBAL", 2)
 		Range("Keldorn", 7)
-		See("Keldorn")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3584,7 +3545,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinKeldorn", "GLOBAL", 2)
 		Range("Keldorn", 7)
-		See("Keldorn")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3627,7 +3587,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinKeldorn", "GLOBAL", 4)
 		Range("Keldorn", 7)
-		See("Keldorn")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3675,7 +3634,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinKorgan", "GLOBAL", 2)
 		Range("Korgan", 7)
-		See("Korgan")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3719,7 +3677,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinKorgan", "GLOBAL", 4)
 		Range("Korgan", 7)
-		See("Korgan")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3767,7 +3724,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinJan", "GLOBAL", 2)
 		Range("Jan", 7)
-		See("Jan")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3811,7 +3767,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinJan", "GLOBAL", 4)
 		Range("Jan", 7)
-		See("Jan")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3891,7 +3846,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinEdwin", "GLOBAL", 2)
 		Range("Edwin", 7)
-		See("Edwin")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3936,7 +3890,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinEdwin", "GLOBAL", 4)
 		Range("Edwin", 7)
-		See("Edwin")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3981,7 +3934,6 @@ END
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinEdwin", "GLOBAL", 6)
 		Range("Edwin", 7)
-		See("Edwin")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3997,6 +3949,8 @@ END
 	IF
 		GlobalTimerExpired("XA_CorwinEdwinThayTimer", "GLOBAL")
 		GlobalLT("XA_CorwinEdwinThay", "GLOBAL", 1)
+		IfValidForPartyDialog("Edwin")
+		See("Edwin")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -4043,7 +3997,6 @@ END
 		IfValidForPartyDialog("Aerie")
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 2)
-		See("Aerie")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -4100,7 +4053,6 @@ END
 		IfValidForPartyDialog("Aerie")
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 5)
-		See("Aerie")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -4143,7 +4095,6 @@ END
 		IfValidForPartyDialog("Aerie")
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 7)
-		See("Aerie")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -4186,7 +4137,6 @@ END
 		IfValidForPartyDialog("Aerie")
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 9)
-		See("Aerie")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -4235,7 +4185,6 @@ END
 		IfValidForPartyDialog(Player1)
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinAnomen", "GLOBAL", 2)
-		See("Anomen")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -4279,7 +4228,6 @@ END
 		IfValidForPartyDialog("Anomen")
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinAnomen", "GLOBAL", 4)
-		See("Anomen")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -4325,7 +4273,6 @@ END
 		IfValidForPartyDialog("Viconia")
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinViconia", "GLOBAL", 2)
-		See("Viconia")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -4386,7 +4333,6 @@ END
 		IfValidForPartyDialog("Viconia")
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinViconia", "GLOBAL", 6)
-		See("Viconia")
 	THEN
 		RESPONSE #100
 			//Dialog B-48
@@ -4446,7 +4392,7 @@ END
 		IfValidForPartyDialog("Imoen2")
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinImoen", "GLOBAL", 2)
-		See("Imoen2")
+		Range("Imoen2", 7)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -4489,7 +4435,7 @@ END
 		IfValidForPartyDialog("Imoen2")
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinImoen", "GLOBAL", 4)
-		See("Imoen2")
+		Range("Imoen2", 7)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -4533,6 +4479,7 @@ END
 		IfValidForPartyDialog("Sarevok")
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_SarevokSoul", "GLOBAL", 1)
+		Range("Sarevok", 7)
 		See("Sarevok")
 	THEN
 		RESPONSE #100
@@ -4552,6 +4499,7 @@ END
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_Banter_CorwinSarevok", "GLOBAL", 2)
+			Continue()
 	END
 	
 	IF
@@ -4570,7 +4518,7 @@ END
 		IfValidForPartyDialog("Sarevok")
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinSarevok", "GLOBAL", 2)
-		See("Sarevok")
+		Range("Sarevok", 7)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -4589,6 +4537,7 @@ END
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_Banter_CorwinSarevok", "GLOBAL", 4)
+			Continue()
 	END
 	
 	IF
@@ -4607,12 +4556,11 @@ END
 		IfValidForPartyDialog("Sarevok")
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinSarevok", "GLOBAL", 4)
-		See("Sarevok")
+		Range("Sarevok", 7)
 	THEN
 		RESPONSE #100
 			//Dialog B-87
 			ActionOverride("Sarevok", StartDialog("SAREV25J", "XACORWIN"))
-			
 	END
 	//}
 	
@@ -4624,6 +4572,7 @@ END
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_Banter_CorwinSarevok", "GLOBAL", 6)
+			Continue()
 	END
 	
 	IF
@@ -4642,7 +4591,7 @@ END
 		IfValidForPartyDialog("Sarevok")
 		Global("XA_CorwinCanTalk", "GLOBAL", 1)
 		Global("XA_Banter_CorwinSarevok", "GLOBAL", 6)
-		See("Sarevok")
+		Range("Sarevok", 7)
 	THEN
 		RESPONSE #100
 			//Dialog B-88
@@ -4657,6 +4606,16 @@ END
 	//{ Corwin Sees Player for the First Time Since SoD
 	IF
 		!Global("XA_CorwinReunited", "GLOBAL", 1)
+		!Range(Player1, 6)
+		ActionListEmpty()
+	THEN
+		RESPONSE #100
+			MoveToObject(Player1)
+			Continue()
+	END
+	
+	IF
+		!Global("XA_CorwinReunited", "GLOBAL", 1)
 		See(Player1)
 	THEN
 		RESPONSE #100
@@ -4666,16 +4625,6 @@ END
 			// Dialog I-1
 			StartDialog("XACORWIN", Player1)
 			SetInterrupt(TRUE)
-	END
-			
-	IF
-		!Global("XA_CorwinReunited", "GLOBAL", 1)
-		!Range(Player1, 6)
-		ActionListEmpty()
-	THEN
-		RESPONSE #100
-			MoveToObject(Player1)
-			Continue()
 	END
 	//}
 	
@@ -4709,7 +4658,7 @@ END
 	IF
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 		Global("XA_Banter_CorwinPlayer", "GLOBAL", 2)
-		See(Player1)
+		Range(Player1, 7)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -4751,7 +4700,7 @@ END
 	IF
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 		Global("XA_Banter_CorwinPlayer", "GLOBAL", 4)
-		See(Player1)
+		Range(Player1, 7)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -4793,7 +4742,7 @@ END
 	IF
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 		Global("XA_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
-		See(Player1)
+		Range(Player1, 7)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -4833,7 +4782,6 @@ END
 		Global("XA_CorwinComplainSarevok", "GLOBAL", 2)
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 		Range(Player1, 7)
-		See(Player1)
 	THEN
 		RESPONSE #100
 			//Dialog J-69
@@ -4873,7 +4821,7 @@ END
 	
 	IF
 		Global("XA_CorwinParentAdvice", "GLOBAL", 1)
-		!Range(Player1, 7)
+		!Range(Player1, 6)
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
@@ -4883,7 +4831,7 @@ END
 	
 	IF
 		Global("XA_CorwinParentAdvice", "GLOBAL", 1)
-		Range(Player1,8)
+		Range(Player1,7)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -4914,7 +4862,6 @@ END
 		Global("XA_CorwinPregnant", "GLOBAL", 3)
 		GlobalTimerExpired("XA_CorwinPregnantTimer", "GLOBAL")
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-		See(Player1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -4926,7 +4873,7 @@ END
 	
 	IF
 		Global("XA_CorwinPregnant", "GLOBAL", 4)
-		!Range(Player1,7)
+		!Range(Player1,6)
 		ActionListEmpty()
 		
 	THEN
@@ -4937,8 +4884,7 @@ END
 	
 	IF
 		Global("XA_CorwinPregnant", "GLOBAL", 4)
-		Range(Player1,8)
-		ActionListEmpty()
+		Range(Player1,7)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -5014,7 +4960,6 @@ END
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_CorwinPregnant", "GLOBAL", 10)
 		AreaCheck("AR4500")
-		See(Player1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -5046,7 +4991,6 @@ END
 		RESPONSE #100
 			//Dialog J-73
 			SetInterrupt(FALSE)
-			//DisplayStringHead(Myself, ~J-73 Init~)
 			ActionOverride("Imoen2", StartDialog("IMOEN2J", Player1))
 			SetInterrupt(TRUE)
 	END
@@ -5064,8 +5008,6 @@ END
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobalTimer("XA_CorwinPregnantAerieTimer", "GLOBAL", TWO_DAYS)
-			//DisplayStringHead(Myself, ~B~)
-			//SetGlobalTimer("XA_CorwinPregnantAerieTimer", "GLOBAL", ONE_ROUND)
 			SetGlobal("XA_CorwinPregnantAerieTimerSet", "GLOBAL", 1)
 			SetInterrupt(TRUE)
 			Continue()
@@ -5081,7 +5023,6 @@ END
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_CorwinPregnantBabyName_Aerie", "GLOBAL", 1)
-			DisplayStringHead(Myself, ~J-74 Init~)
 			//Dialog J-74
 			ActionOverride("Aerie", StartDialog("AERIEJ", Player1))
 			SetInterrupt(TRUE)
@@ -5100,9 +5041,7 @@ END
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobalTimer("XA_CorwinPregnantJahTimer", "GLOBAL", TWO_DAYS)
-			//SetGlobalTimer("XA_CorwinPregnantJahTimer", "GLOBAL", ONE_ROUND)
 			SetGlobal("XA_CorwinPregnantJahTimerSet", "GLOBAL", 1)
-			//DisplayStringHead(Myself, ~A~)
 			SetInterrupt(TRUE)
 			Continue()
 	END
@@ -5116,7 +5055,6 @@ END
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			//DisplayStringHead(Myself, ~J-75 Init~)
 			SetGlobal("XA_CorwinPregnantBabyName_Jah", "GLOBAL", 1)
 			//Dialog J-75
 			ActionOverride("Jaheira", StartDialog("JAHEIRAJ", Player1))
@@ -5212,120 +5150,6 @@ THEN
 END
 //}
 
-//{ Exp Boosts on Join
-
-IF
-  Global("BD_JOINXP","LOCALS",0)
-  InParty(Myself)
-  XPGT(Player1,249999)
-  XPLT(Player1,500000)
-  XPLT(Myself,500000)
-THEN
-  RESPONSE #100
-    SetInterrupt(FALSE)
-    SetGlobal("BD_JOINXP","LOCALS",1)
-    ChangeStat(Myself,XP,250000,SET)
-    SetInterrupt(TRUE)
-END
-
-IF
-  Global("BD_JOINXP","LOCALS",0)
-  InParty(Myself)
-  XPGT(Player1,499999)
-  XPLT(Player1,750000)
-  XPLT(Myself,750000)
-THEN
-  RESPONSE #100
-    SetInterrupt(FALSE)
-    SetGlobal("BD_JOINXP","LOCALS",1)
-    ChangeStat(Myself,XP,500000,SET)
-    SetInterrupt(TRUE)
-END
-
-IF
-  Global("BD_JOINXP","LOCALS",0)
-  InParty(Myself)
-  XPGT(Player1,749999)
-  XPLT(Player1,1000000)
-  XPLT(Myself,1000000)
-THEN
-  RESPONSE #100
-    SetInterrupt(FALSE)
-    SetGlobal("BD_JOINXP","LOCALS",1)
-    ChangeStat(Myself,XP,750000,SET)
-    SetInterrupt(TRUE)
-END
-
-IF
-  Global("BD_JOINXP","LOCALS",0)
-  InParty(Myself)
-  XPGT(Player1,999999)
-  XPLT(Player1,1250000)
-  XPLT(Myself,1250000)
-THEN
-  RESPONSE #100
-    SetInterrupt(FALSE)
-    SetGlobal("BD_JOINXP","LOCALS",1)
-    ChangeStat(Myself,XP,1000000,SET)
-    SetInterrupt(TRUE)
-END
-
-IF
-  Global("BD_JOINXP","LOCALS",0)
-  InParty(Myself)
-  XPGT(Player1,1249999)
-  XPLT(Player1,1500000)
-  XPLT(Myself,1500000)
-THEN
-  RESPONSE #100
-    SetInterrupt(FALSE)
-    SetGlobal("BD_JOINXP","LOCALS",1)
-    ChangeStat(Myself,XP,1250000,SET)
-    SetInterrupt(TRUE)
-END
-
-IF
-  Global("BD_JOINXP","LOCALS",0)
-  InParty(Myself)
-  XPGT(Player1,1499999)
-  XPLT(Player1,1750000)
-  XPLT(Myself,1750000)
-THEN
-  RESPONSE #100
-    SetInterrupt(FALSE)
-    SetGlobal("BD_JOINXP","LOCALS",1)
-    ChangeStat(Myself,XP,1500000,SET)
-    SetInterrupt(TRUE)
-END
-
-IF
-  Global("BD_JOINXP","LOCALS",0)
-  InParty(Myself)
-  XPGT(Player1,1749999)
-  XPLT(Player1,2000000)
-  XPLT(Myself,2000000)
-THEN
-  RESPONSE #100
-    SetInterrupt(FALSE)
-    SetGlobal("BD_JOINXP","LOCALS",1)
-    ChangeStat(Myself,XP,1750000,SET)
-    SetInterrupt(TRUE)
-END
-
-IF
-  Global("BD_JOINXP","LOCALS",0)
-  InParty(Myself)
-  XPGT(Player1,1999999)
-  XPLT(Myself,2000000)
-THEN
-  RESPONSE #100
-    SetInterrupt(FALSE)
-    SetGlobal("BD_JOINXP","LOCALS",1)
-    ChangeStat(Myself,XP,2000000,SET)
-    SetInterrupt(TRUE)
-END
-
-//} End Exp Boosts on Join
 
 /* Reset the next interaction to zero; the current subject of the interaction has exhausted all of their banters */
 
@@ -6237,3 +6061,109 @@ END
 	//}
 
 //}
+
+//{ Exp Boosts on Join
+
+IF
+  Global("BD_JOINXP","LOCALS",0)
+  InParty(Myself)
+  XPGT(Player1,249999)
+  XPLT(Player1,500000)
+  XPLT(Myself,500000)
+THEN
+  RESPONSE #100
+    ChangeStat(Myself,XP,250000,SET)
+	Continue()
+END
+
+IF
+  Global("BD_JOINXP","LOCALS",0)
+  InParty(Myself)
+  XPGT(Player1,499999)
+  XPLT(Player1,750000)
+  XPLT(Myself,750000)
+THEN
+  RESPONSE #100
+    ChangeStat(Myself,XP,500000,SET)
+	Continue()
+END
+
+IF
+  Global("BD_JOINXP","LOCALS",0)
+  InParty(Myself)
+  XPGT(Player1,749999)
+  XPLT(Player1,1000000)
+  XPLT(Myself,1000000)
+THEN
+  RESPONSE #100
+    ChangeStat(Myself,XP,750000,SET)
+	Continue()
+END
+
+IF
+  Global("BD_JOINXP","LOCALS",0)
+  InParty(Myself)
+  XPGT(Player1,999999)
+  XPLT(Player1,1250000)
+  XPLT(Myself,1250000)
+THEN
+  RESPONSE #100
+    ChangeStat(Myself,XP,1000000,SET)
+	Continue()
+END
+
+IF
+  Global("BD_JOINXP","LOCALS",0)
+  InParty(Myself)
+  XPGT(Player1,1249999)
+  XPLT(Player1,1500000)
+  XPLT(Myself,1500000)
+THEN
+  RESPONSE #100
+    ChangeStat(Myself,XP,1250000,SET)
+	Continue()
+END
+
+IF
+  Global("BD_JOINXP","LOCALS",0)
+  InParty(Myself)
+  XPGT(Player1,1499999)
+  XPLT(Player1,1750000)
+  XPLT(Myself,1750000)
+THEN
+  RESPONSE #100
+    ChangeStat(Myself,XP,1500000,SET)
+	Continue()
+END
+
+IF
+  Global("BD_JOINXP","LOCALS",0)
+  InParty(Myself)
+  XPGT(Player1,1749999)
+  XPLT(Player1,2000000)
+  XPLT(Myself,2000000)
+THEN
+  RESPONSE #100
+    ChangeStat(Myself,XP,1750000,SET)
+	Continue()
+END
+
+IF
+  Global("BD_JOINXP","LOCALS",0)
+  InParty(Myself)
+  XPGT(Player1,1999999)
+  XPLT(Myself,2000000)
+THEN
+  RESPONSE #100
+    ChangeStat(Myself,XP,2000000,SET)
+	Continue()
+END
+
+IF 
+	Global("BD_JOINXP","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("BD_JOINXP","LOCALS",1)
+END
+
+//} End Exp Boosts on Join

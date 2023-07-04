@@ -296,7 +296,7 @@ APPEND_EARLY AERIEJ
 		= @16 /* ~I'm glad that you were able to ... express your love for eachother, but could you p-please do so more q-quietly in the future?~ */
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
 		~
 		EXIT
 	END
@@ -472,7 +472,7 @@ APPEND_EARLY IMOEN2J
 		= @29 /*  ~Hah, way to go kid!~ */
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
 		~
 		EXIT
 	END
@@ -647,7 +647,7 @@ APPEND_EARLY JAHEIRAJ
 		= @14 /* ~Next time, let us know so the rest of us can book a room on the other side of town, or perhaps in a different city. Maybe then we can get some sleep!~*/
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
 		~
 		EXIT
 	END
@@ -822,7 +822,7 @@ APPEND_EARLY NALIAJ
 		= @14 /* ~Next time, let us know so the rest of us can book a room on the other side of town, or perhaps in a different city. Maybe then we can get some sleep!~*/
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
 		~
 		EXIT
 	END
@@ -996,7 +996,7 @@ APPEND_EARLY NEERAJ
 		SAY @17 /* ~Oh I see now, no wonder you two look so happy! Next time, keep it down a notch, will ya?~*/
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
 		~
 		EXIT
 	END
