@@ -901,6 +901,78 @@ IF ~~ THEN BEGIN XA_XACORWIJ_Test
 	~
 	EXIT
 
+	IF ~~ THEN REPLY @545 /* Dialog J-83 (Aerie) */
+	DO ~
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)
+		SetGlobal("XA_RomanceConflictTalk", "GLOBAL", 1)
+		SetGlobal("AerieRomanceActive", "GLOBAL", 2)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @546 /* Dialog J-83 (Viconia) */
+	DO ~
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)
+		SetGlobal("XA_RomanceConflictTalk", "GLOBAL", 1)
+		SetGlobal("ViconiaRomanceActive", "GLOBAL", 2)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @547 /* Dialog J-83 (Dorn) */
+	DO ~
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)
+		SetGlobal("XA_RomanceConflictTalk", "GLOBAL", 1)
+		SetGlobal("DornRomanceActive", "GLOBAL", 2)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @548 /* Dialog J-83 (Neera) */
+	DO ~
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)
+		SetGlobal("XA_RomanceConflictTalk", "GLOBAL", 1)
+		SetGlobal("NeeraRomanceActive", "GLOBAL", 2)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @549 /* Dialog J-83 (Anomen) */
+	DO ~
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)
+		SetGlobal("XA_RomanceConflictTalk", "GLOBAL", 1)
+		SetGlobal("AnomenRomanceActive", "GLOBAL", 2)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @550 /* Dialog J-83 (Jaheira) */
+	DO ~
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)
+		SetGlobal("XA_RomanceConflictTalk", "GLOBAL", 1)
+		SetGlobal("JaheiraRomanceActive", "GLOBAL", 2)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @551 /* Dialog J-83 (Hexxat) */
+	DO ~
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)
+		SetGlobal("XA_RomanceConflictTalk", "GLOBAL", 1)
+		SetGlobal("HexxatRomanceActive", "GLOBAL", 2)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @552 /* ~Dialog J-83 (Rasaad)~ */
+	DO ~
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)
+		SetGlobal("XA_RomanceConflictTalk", "GLOBAL", 1)
+		SetGlobal("RasaadRomanceActive", "GLOBAL", 2)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+
 	IF ~~ THEN REPLY @26
 	GOTO XA_MainMenu
 

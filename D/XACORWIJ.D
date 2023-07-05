@@ -9,7 +9,257 @@
 */ 
 BEGIN ~XACORWIJ~
 
+//{ Dialog J-83 - Romance Conflict
 
+IF ~
+	Global("XA_RomanceConflictTalk", "GLOBAL", 1)
+	OR(8)
+		Global("AerieRomanceActive","GLOBAL",2)
+		Global("ViconiaRomanceActive","GLOBAL",2)
+		Global("DornRomanceActive","GLOBAL",2)
+		Global("NeeraRomanceActive","GLOBAL",2)
+		Global("AnomenRomanceActive","GLOBAL",2)
+		Global("JaheiraRomanceActive","GLOBAL",2)
+		Global("HexxatRomanceActive","GLOBAL",2)
+		Global("RasaadRomanceActive","GLOBAL",2)
+~ THEN BEGIN XA_RomanceConflictTalk
+	SAY @1724 /*  ~<CHARNAME>. I think we need to have a talk.~ */
+	
+	IF ~~ THEN REPLY @1725  /* ~What's on your mind, love?~*/
+	DO ~
+		SetGlobal("XA_RomanceConflictTalk", "GLOBAL", 2)
+	~
+	GOTO XA_RomanceConflict2
+	
+	IF ~~ THEN REPLY @1726 /* ~Sure — what is it?~*/
+	DO ~
+		SetGlobal("XA_RomanceConflictTalk", "GLOBAL", 2)
+	~
+	GOTO XA_RomanceConflict2
+END
+
+IF ~~ THEN BEGIN XA_RomanceConflict2
+	SAY @1727 /* ~You made it clear to me, I thought, that you wanted us to be together.~ */
+	
+	IF ~
+		Global("AerieRomanceActive", "GLOBAL", 2)
+	~ THEN 
+	GOTO XA_RomanceConflict_Aerie
+	
+	IF ~
+		Global("ViconiaRomanceActive", "GLOBAL", 2)
+	~ THEN 
+	GOTO XA_RomanceConflict_Viconia
+	
+	IF ~
+		Global("DornRomanceActive", "GLOBAL", 2)
+	~ THEN 
+	GOTO XA_RomanceConflict_Dorn
+	
+	IF ~
+		Global("NeeraRomanceActive", "GLOBAL", 2)
+	~ THEN 
+	GOTO XA_RomanceConflict_Neera
+	
+	IF ~
+		Global("AnomenRomanceActive", "GLOBAL", 2)
+	~ THEN 
+	GOTO XA_RomanceConflict_Anomen
+	
+	IF ~
+		Global("JaheiraRomanceActive", "GLOBAL", 2)
+	~ THEN 
+	GOTO XA_RomanceConflict_Jaheira
+	
+	IF ~
+		Global("HexxatRomanceActive", "GLOBAL", 2)
+	~ THEN 
+	GOTO XA_RomanceConflict_Hexxat
+	
+	IF ~
+		Global("RasaadRomanceActive", "GLOBAL", 2)
+	~ THEN 
+	GOTO XA_RomanceConflict_Rasaad
+END
+
+//{ Aerie
+IF ~~ THEN BEGIN XA_RomanceConflict_Aerie
+	SAY @1731 /* ~Why, then, are you spending so much time with Aerie? Do you have feelings for her? She's a sweet girl, and you shouldn't lead her on.~ */
+	
+	IF ~~ THEN REPLY @1734 /* ~She's just a friend. You're the woman I love Schael, not her. I'll make it clear to her, in case it wasn't already.~ */
+	DO ~
+		SetGlobal("AerieRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_Continue
+	
+	IF ~~ THEN REPLY @1735 /* ~I do love her. I'm sorry, Schael. I thought you and I had something, but I realize now I was mistaken.~ */
+	DO ~
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_EndCR_F
+END
+//}
+
+//{ Neera
+IF ~~ THEN BEGIN XA_RomanceConflict_Neera
+	SAY @1732 /* ~Why, then, are you spending so much time with Neera? Do you have feelings for her? She's a sweet girl, and you shouldn't lead her on.~ */
+	
+	IF ~~ THEN REPLY @1734 /* ~She's just a friend. You're the woman I love Schael, not her. I'll make it clear to her, in case it wasn't already.~ */
+	DO ~
+		SetGlobal("NeeraRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_Continue
+	
+	IF ~~ THEN REPLY @1735 /* ~I do love her. I'm sorry, Schael. I thought you and I had something, but I realize now I was mistaken.~ */
+	DO ~
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_EndCR_F
+END
+//}
+
+//{ Jaheira
+IF ~~ THEN BEGIN XA_RomanceConflict_Jaheira
+	SAY @1733 /* ~Why, then, are you spending so much time with Jaheira? Do you have feelings for her? She's been through a lot with the loss of her husband, and you shouldn't lead her on.~ */
+	
+	IF ~~ THEN REPLY @1734 /* ~She's just a friend. You're the woman I love Schael, not her. I'll make it clear to her, in case it wasn't already.~ */
+	DO ~
+		SetGlobal("JaheiraRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_Continue
+	
+	IF ~~ THEN REPLY @1735 /* ~I do love her. I'm sorry, Schael. I thought you and I had something, but I realize now I was mistaken.~ */
+	DO ~
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_EndCR_F
+END
+//}
+
+//{ Rasaad
+IF ~~ THEN BEGIN XA_RomanceConflict_Rasaad
+	SAY @1739 /* ~Why, then, are you spending so much time with Rasaad? Do you have feelings for him? You shouldn't lead him on.~ */
+	
+	IF ~~ THEN REPLY @1740 /* ~He's just a friend. You're the one I love Schael, not him. I'll make it clear to him, in case it wasn't already.~ */
+	DO ~
+		SetGlobal("RasaadRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_Continue
+	
+	IF ~~ THEN REPLY @1741 /* ~I do love him. I'm sorry, Schael. I thought you and I had something, but I realize now that I was mistaken.~ */
+	DO ~
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_EndCR_M
+END
+//}
+
+//{ Anomen
+IF ~~ THEN BEGIN XA_RomanceConflict_Anomen
+	SAY @1742 /* ~Why, then, are you spending so much time with Anomen? Do you have feelings for that insufferable braggart? You shouldn't lead him on.~ */
+	
+	IF ~~ THEN REPLY @1740 /* ~He's just a friend. You're the one I love Schael, not him. I'll make it clear to him, in case it wasn't already.~ */
+	DO ~
+		SetGlobal("AnomenRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_Continue
+	
+	IF ~~ THEN REPLY @1741 /* ~I do love him. I'm sorry, Schael. I thought you and I had something, but I realize now that I was mistaken.~ */
+	DO ~
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_EndCR_M
+END
+//}
+
+//{ Hexxat
+IF ~~ THEN BEGIN XA_RomanceConflict_Hexxat
+	SAY @1743 /* ~Why, then, are you spending so much time with Hexxat? Do you have feelings for that monster?~ */
+	
+	IF ~~ THEN REPLY @1747 /* ~You're the one I love Schael, not her. I'll make it clear to her, in case it wasn't already.~*/
+	DO ~
+		SetGlobal("HexxatRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_Continue
+	
+	IF ~~ THEN REPLY @1735 /* ~I do love her. I'm sorry, Schael. I thought you and I had something, but I realize now I was mistaken.~ */
+	DO ~
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_EndCR_Bad
+END
+//}
+
+//{ Dorn
+IF ~~ THEN BEGIN XA_RomanceConflict_Dorn
+	SAY @1745 /* ~Why, then, is Dorn spending so much time with you? Do you have feelings for that filthy blackguard?~  */
+	
+	IF ~~ THEN REPLY @1746 /* ~You're the one I love Schael, not him. I'll make it clear to him, in case it wasn't already.~ */
+	DO ~
+		SetGlobal("DornRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_Continue
+	
+	IF ~~ THEN REPLY @1741 /* ~I do love him. I'm sorry, Schael. I thought you and I had something, but I realize now that I was mistaken.~ */
+	DO ~
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_EndCR_Bad
+END
+//}
+
+//{ Viconia
+IF ~~ THEN BEGIN XA_RomanceConflict_Viconia
+	SAY @1748 /* ~Why, then, is Viconia spending so much time with you? Do you have feelings for that wretched drow?~  */
+	
+	IF ~~ THEN REPLY @1747 /* ~You're the one I love Schael, not her. I'll make it clear to her, in case it wasn't already.~*/
+	DO ~
+		SetGlobal("ViconiaRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_Continue
+	
+	IF ~~ THEN REPLY @1735 /* ~I do love her. I'm sorry, Schael. I thought you and I had something, but I realize now that I was mistaken.~ */
+	DO ~
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_EndCR_Bad2
+END
+//}
+
+IF ~~ THEN BEGIN XA_RomanceConflict_EndCR_Bad
+	SAY @1744 /* ~Unbelievable! Irenicus must've done a number on your senses. There's no other explanation for you choosing that beast over me. As soon as this mission is over, we're through.~  */
+	
+	IF ~~ THEN 
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_RomanceConflict_EndCR_Bad2
+	SAY @1749 /* ~Unbelievable! Irenicus must've done a number on your senses. There's no other explanation for you choosing that ... that slut, over me. As soon as this mission is over, we're through.~   */
+	
+	IF ~~ THEN 
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_RomanceConflict_Continue
+	SAY @1738 /* ~That's all I needed to hear. Let's go.~ [BD54525] */
+	
+	IF ~~ THEN 
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_RomanceConflict_EndCR_F
+	SAY @1736 /* ~Fine. Be with her. I can't tell you how much this hurts... but I appreciate your honesty. Let's go.~ */
+	
+	IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN XA_RomanceConflict_EndCR_M
+	SAY @1737 /* ~Fine. Be with him. I can't tell you how much this hurts... but I appreciate your honesty. Let's go.~  */
+	
+	IF ~~ THEN EXIT
+END
+
+//}
 
 // XA_JARLAXLE_0
 IF ~~ THEN BEGIN XA_JARLAXLE_0

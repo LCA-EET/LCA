@@ -5063,93 +5063,144 @@ END
 	//}
 //}
 
-//{ Romance Overrides
-//might want to edit this in a future release.
-IF
-	InParty(Myself)
-	Global("XA_CorwinRomanceActive","GLOBAL",2)
-	OR(2)
-		Global("AerieRomanceActive","GLOBAL",1)
-		Global("AerieRomanceActive","GLOBAL",2)
-THEN
-	RESPONSE #100
-		SetGlobal("AerieRomanceActive","GLOBAL",3)
-		Continue()
-END
+//{ Romance Conflicts
 
-IF
-	InParty(Myself)
-	Global("XA_CorwinRomanceActive","GLOBAL",2)
-	OR(2)
-		Global("ViconiaRomanceActive","GLOBAL",1)
-		Global("ViconiaRomanceActive","GLOBAL",2)
-THEN
-	RESPONSE #100
-		SetGlobal("ViconiaRomanceActive","GLOBAL",3)
-		Continue()
-END
+	//{ Other Romance == 2
+	IF
+		GlobalLT("XA_RomanceConflictTimerSet", "GLOBAL", 1)
+		Global("XA_CorwinRomanceActive","GLOBAL",2)
+		OR(8)
+			Global("AerieRomanceActive","GLOBAL",2)
+			Global("ViconiaRomanceActive","GLOBAL",2)
+			Global("DornRomanceActive","GLOBAL",2)
+			Global("NeeraRomanceActive","GLOBAL",2)
+			Global("AnomenRomanceActive","GLOBAL",2)
+			Global("JaheiraRomanceActive","GLOBAL",2)
+			Global("HexxatRomanceActive","GLOBAL",2)
+			Global("RasaadRomanceActive","GLOBAL",2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_RomanceConflictTimer", "GLOBAL", ONE_DAY)
+			SetGlobal("XA_RomanceConflictTimerSet", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+	END
+	
+	IF
+		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		GlobalTimerExpired("XA_RomanceConflictTimer", "GLOBAL")
+		GlobalLT("XA_RomanceConflictTalk", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_RomanceConflictTalk", "GLOBAL", 1)
+			//Dialog J-83
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
 
-IF
-	InParty(Myself)
-	Global("XA_CorwinRomanceActive","GLOBAL",2)
-	OR(2)
-		Global("DornRomanceActive","GLOBAL",1)
-		Global("DornRomanceActive","GLOBAL",2)
-THEN
-	RESPONSE #100
-		SetGlobal("DornRomanceActive","GLOBAL",3)
-		Continue()
-END
+	//{ Other Romance < 2
+	
+		//{ Aerie
+		IF
+			InParty(Myself)
+			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			GlobalLT("AerieRomanceActive", "GLOBAL", 2)
+		THEN
+			RESPONSE #100
+				SetGlobal("AerieRomanceActive","GLOBAL",3)
+				Continue()
+		END
+		//}
 
-IF
-	InParty(Myself)
-	Global("XA_CorwinRomanceActive","GLOBAL",2)
-	OR(2)
-		Global("NeeraRomanceActive","GLOBAL",1)
-		Global("NeeraRomanceActive","GLOBAL",2)
-THEN
-	RESPONSE #100
-		SetGlobal("NeeraRomanceActive","GLOBAL",3)
-		Continue()
-END
+		//{ Viconia
+		IF
+			InParty(Myself)
+			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			GlobalLT("ViconiaRomanceActive","GLOBAL",2)
+		THEN
+			RESPONSE #100
+				SetGlobal("ViconiaRomanceActive","GLOBAL",3)
+				Continue()
+		END
+		//}
 
-IF
-	InParty(Myself)
-	Global("XA_CorwinRomanceActive","GLOBAL",2)
-	OR(2)
-		Global("AnomenRomanceActive","GLOBAL",1)
-		Global("AnomenRomanceActive","GLOBAL",2)
-THEN
-	RESPONSE #100
-		SetGlobal("AnomenRomanceActive","GLOBAL",3)
-		Continue()
-END
+		//{ Dorn
+		IF
+			InParty(Myself)
+			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			GlobalLT("DornRomanceActive","GLOBAL",2)
+		THEN
+			RESPONSE #100
+				SetGlobal("DornRomanceActive","GLOBAL",3)
+				Continue()
+		END
+		//}
+		
+		//{ Neera
+		IF
+			InParty(Myself)
+			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			GlobalLT("NeeraRomanceActive","GLOBAL",2)
+		THEN
+			RESPONSE #100
+				SetGlobal("NeeraRomanceActive","GLOBAL",3)
+				Continue()
+		END
+		//}
 
-IF
-	InParty(Myself)
-	Global("XA_CorwinRomanceActive","GLOBAL",2)
-	OR(2)
-		Global("JaheiraRomanceActive","GLOBAL",1)
-		Global("JaheiraRomanceActive","GLOBAL",2)
-THEN
-	RESPONSE #100
-		SetGlobal("JaheiraRomanceActive","GLOBAL",3)
-		Continue()
-END
+		//{ Anomen
+		IF
+			InParty(Myself)
+			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			GlobalLT("AnomenRomanceActive","GLOBAL",2)
+		THEN
+			RESPONSE #100
+				SetGlobal("AnomenRomanceActive","GLOBAL",3)
+				Continue()
+		END
+		//}
 
-IF
-	InParty(Myself)
-	Global("XA_CorwinRomanceActive","GLOBAL",2)
-	OR(2)
-		Global("HexxatRomanceActive","GLOBAL",1)
-		Global("HexxatRomanceActive","GLOBAL",2)
-THEN
-	RESPONSE #100
-		SetGlobal("HexxatRomanceActive","GLOBAL",3)
-		Continue()
-END
+		//{ Jaheira
+		IF
+			InParty(Myself)
+			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			GlobalLT("JaheiraRomanceActive","GLOBAL",2)
+		THEN
+			RESPONSE #100
+				SetGlobal("JaheiraRomanceActive","GLOBAL",3)
+				Continue()
+		END
+		//}
+
+		//{ Hexxat
+		IF
+			InParty(Myself)
+			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			GlobalLT("HexxatRomanceActive","GLOBAL",2)
+		THEN
+			RESPONSE #100
+				SetGlobal("HexxatRomanceActive","GLOBAL",3)
+				Continue()
+		END
+		//}
+		
+		//{ Rasaad
+		IF
+			InParty(Myself)
+			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			GlobalLT("RasaadRomanceActive","GLOBAL",2)
+		THEN
+			RESPONSE #100
+				SetGlobal("RasaadRomanceActive","GLOBAL",3)
+				Continue()
+		END
+		//}
+		
+	//}
+
 //}
-
 
 /* Reset the next interaction to zero; the current subject of the interaction has exhausted all of their banters */
 
