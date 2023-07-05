@@ -4328,7 +4328,10 @@ IF ~~ THEN BEGIN XAA75
 END
 
 IF ~~ THEN BEGIN XAA99
-	SAY @430 /* ~(A fleeting smile graces her face.) Let's just get out of this hole and forget that it ever happened.~  */
+	SAY @252 /* ~ ~(A fleeting smile graces her face.)~*/
+	
+	= @253 /*~Let's just get out of this hole and forget that it ever happened.~*/
+	
 	IF ~~ THEN
 	EXIT
 END
@@ -6009,7 +6012,7 @@ IF ~~ THEN BEGIN XAA36
 		SetGlobal("DornRomanceActive", "GLOBAL", 3)
 		SetGlobal("NeeraRomanceActive", "GLOBAL", 3)
 		SetGlobal("HexxatRomanceActive", "GLOBAL", 3)
-		SetPlayerSound(Myself,@452,SELECT_ACTION6)
+		//SetPlayerSound(Myself,@452,SELECT_ACTION6)
 	~
 	EXIT
 END
@@ -7039,13 +7042,17 @@ IF ~~ THEN BEGIN XA_Daleson
 END
 
 IF ~~ THEN BEGIN XA_FFCUST04A
-	SAY @422 /* ~Thanks, but (she nods in your direction) <PRO_HESHE>'s got me covered.~ */
+	SAY @249 /* ~Thanks, but...~*/
+	
+	= @250 /* ~(She nods in your direction.)~ */
+	
+	= @251 /* ~My <PRO_MANWOMAN>'s got me covered.~ */
 	IF ~~ THEN
 	EXIT
 END
 
 IF ~~ THEN BEGIN XA_FFCUST04B
-	SAY @423 /* ~I'm here on duty, not to pick up men... and certainly not to spend my evening with a drunkard.~ */
+	SAY @424 /* ~I'm here on duty, not to pick up men... and certainly not to spend my evening with a drunkard.~ */
 	IF ~~ THEN
 	EXIT
 END
@@ -7096,7 +7103,10 @@ IF ~~ THEN BEGIN XA_KORGANJ_151
 END
 
 IF ~~ THEN BEGIN XA_EdwinFF2
-	SAY @458 /* ~What was that? (She gives him a dirty look.)~ */
+	SAY @458 /* ~What was that?~ */
+	
+	= @457 /* ~(She gives him a dirty look.)~ */
+	
 	IF ~~ THEN
 	EXTERN EDWINJ XA_EdwinFF3
 END
@@ -8385,7 +8395,9 @@ CHAIN
 		== C6CATTI1
 		@463 /* ~He's right, Drizzt. We can't be allowin' these bandits to run free... knows what horrid acts they've committed upon others?~*/
 		== C6DRIZZ1
-		@464 /* ~That's enough, all of you. You (he points at Corwin) - who are you, and what is your business here?~ */
+		@254 /* ~That's enough, all of you. You there!~ */
+		= @256 /* ~(He points at Corwin.)~ */
+		= @258 /* ~Who are you, and what is your business here?~ */
 		== XACORWIJ
 		@465 /* ~I am Captain Schael Corwin of the Flaming Fist. I'm travelling with <CHARNAME> on a special assignment to apprehend a wizard, Jon Irenicus.~ */
 		== C6DRIZZ1
