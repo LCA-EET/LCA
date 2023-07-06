@@ -110,9 +110,7 @@
 @112 = ~Fine, what is it?~
 @113 = ~Like I said, I'm busy.~
 @114 = ~Fine. Sorry to have bothered you.~
-@115 = ~Gladly, my dear. [XACORJ13]
-
-(You slide over so there is enough room on the bed for the two of you. When she climbs in, you kiss and rest in eachother's embrace.)~ 
+@115 = ~Gladly, my dear.~ [XACORJ13] 
 @116 = ~It's nothing... Let's go.~
 @117 = ~You're a poor example of a parent.~
 @118 = ~You think I don't want to be home with my daughter and father? ~
@@ -482,7 +480,6 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @508 = ~(She stands in shock.)~
 @509 = ~(She leaves in a hurry, with her hand covering the bruise on her face.)~
 @510 = ~The de'Arnise keep has been invaded
-
 Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on her own, after Captain Corwin smacked some sense into her. The fact that she has left is... ah... something of a blessing.~
 @511 = ~(Remain silent.)~
 @512 = ~Are you deaf, woman? Get out!~
@@ -497,11 +494,11 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @521 = ~I've just been so stressed lately... I wouldn't normally do something like that.~
 @522 = ~I know it's tough being away from your family. I'm glad you're here though. ~
 @523 = ~You and I both... my love, I know of a couple of activities that can help us to relieve some of that stress...~
-@524 = ~(She smiles.) I think I know what you have in mind.~  
-@525 = ~Let's finish up here. Afterward, I want you to find a nice place for the two of us to ... relieve some of our stress.~
+@524 = ~I think I know what you have in mind. Let's finish up here. Afterward, I want you to find a nice place for the two of us to ... relieve some of our stress.~  
+@525 = ~~
 @526 = ~I know just the place. (You resolve to pay for a room at one of the nearby inns.)~
 @527 = ~What do you suggest?~
-@528 = ~Good. (She gives you a kiss on the cheek.) Let's go.~
+@528 = ~Good.~
 @529 = ~I've been watching you, love, and of late I don't like what I see.~ [XA000008]
 @530 = ~What? I don't understand.~
 @531 = ~For all of your power, your fighting skills are suspect. You're not bad with a weapon, but your hand-to-hand skills are sorely lacking. I shouldn't be surprised based on your upbringing in Candlekeep, but I'm concerned.~
@@ -510,9 +507,9 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @534 = ~You defeated them with raw power, not skill. Get us a room and I'll show you what I mean. Let's go.~
 @535 = ~Very well. Get us a room and I'll show you what I mean. Let's go.~
 @536 = ~You can be beaten by a seemingly lesser opponent if they recognize and exploit your lack of skill.~
-@537 = ~Gods, I've been looking forward to this all day. Help me get this armor off, lover.~
+@537 = ~~
 @538 = ~Brevlik, your advocate will be with your shortly. <CHARNAME> — we better head back to the Hall of Wonders.~
-@539 = ~Mm. Before we get started. About what we discussed —~
+@539 = ~~
 @540 = ~Very well. Lower your weapons, friends. She is telling us the truth.~
 @541 = ~And you, young lady.~
 @542 = ~(He looks at Corwin, and the Flaming Fist insignia on her armor.)~
@@ -525,7 +522,7 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @549 = ~It's a trivial matter. You'll be enslaved just as easily as Yoshimo was. Enjoy your last moments of autonomy, child.~
 @550 = ~It's a trivial matter. You'll be enslaved through the use of a geas. Enjoy your last moments of autonomy, child.~
 @551 = ~Let.. me.. GO!~
-@552 = ~Release us! I will kill you, I swear it!~
+@552 = ~Release us! I'll kill you, I swear it!~
 @553 = ~The Hall of Wonders...~
 @554 = ~<CHARNAME>, did I ever tell you how I got arrested?~
 @555 = ~You, arrested?~
@@ -542,7 +539,7 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @566 = ~That's right. I was arrested... and my 'friends' all ran away. It's a good thing that the egg wasn't damaged, otherwise I might still be in prison, hah.~
 @567 = ~My father could've gotten me out like he did so many times before, but this time, he didn't — and I'm glad. Spending that night in that cold cell was a major wake up call for me.~
 @568 = ~I know what you mean. I never want to see those cells again.~
-@569 = ~Do you ever think of how your life would have changed had you not been arrested?~
+@569 = ~Do you ever think of how the course of your life would've changed had you not been arrested?~
 @570 = ~I do... Would Rohma be here? Would I have joined the Fist? Taken part in the Dragonspear campaign?~
 @571 = ~... Would I be in love with the most amazing and heroic <PRO_MANWOMAN> in Faerûn?~
 @572 = ~Only the Gods know. Come on, let's head in. I'm sure they've set up some interesting new exhibits since the last time we were here.~ 
@@ -558,7 +555,7 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @582 = ~(She delivers a swift, powerful kick to his behind.)~
 @583 = ~(Keep quiet.)~
 @601 = ~~
-@602 = ~(You end up making love again before finally falling asleep.)~
+@602 = ~~
 @603 = ~Something bothering you?~
 @604 = ~What manner of creature is imprisoned here?~  
 @605 = ~Bastard! You lied to us! You knew it was Demogorgon that was imprisoned the entire time!~
@@ -569,22 +566,14 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @608 = ~S-Schael...? How long was I...?~ 
 @609 = ~Two days... *sob* ... h-how are you feeling?~
 @610 = ~Good, just ... tired. A-are you crying? What happened?~
-@611 = ~Nothing, it's just... (her voice cracks) I thought I'd *sob* lost you...~
-@612 = ~Come here, love. 
-(She lays her head down on your chest, and you hold her tenderly in your arms.)~  
+@611 = ~Nothing, it's just...~ 
+@612 = ~Come here, love.~  
 @613 = ~(She finally loses her composure and begins to weep in earnest.)~
-@614 = ~It's alright Schael, let it out. I'm here.
- 
-(You gently caress her head as you feel her warm tears touch your skin.)~  
+@614 = ~It's alright Schael, let it out. I'm here.~  
 @615 = ~(She lifts her head up, and wipes the tears from her eyes and face.)~
-@616 = ~Get some rest love. I'll check in on you later.
-
-(She plants a kiss on your forehead.)~ 
+@616 = ~Get some rest love. I'll check in on you later.~ 
 @617 = ~Thank you Schael. For everything.~
-@618 = ~Please, stay with me.
- 
-(You reach out and take hold of her hand.)~
-
+@618 = ~Please, stay with me.~
 @619 = ~That was one hell of a party.~ [XACORJ14]
 @620 = ~It definitely was.~ 
 @621 = ~A better liquor selection would have been nice...~
@@ -612,12 +601,12 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @643 = ~Back to Athkatla for me, I'm afraid. The turnips need tending to. Safe travels, my friends.~
 @644 = ~We're in a city of magical knowledge that few humans have set foot in, and you want me to go back to that diseased backwater of a city? Bah! I'll remain here and learn the secrets of the elves. (That is, until they throw me out.)~
 @645 = ~I would go with you, but Boo has become intensely infatuated with a squirrel that he saw on the Tree of Life. I must find this squirrel and determine if she is a worthy mate for Boo.~
-@646 = ~(She points at Hexxat.) She will not be joining us. I'll not allow the monster to feed on the citizens I'm sworn to protect.~
+@646 = ~(She points at Hexxat.)~
 @647 = ~Oh, of course I will go with you! M-maybe we can also see Candlekeep? It'll be fun to see where you g-grew up.~
 @648 = ~O-oh, I think it'll be better for me to stay here. There are still many injured, and the elves can use my help.~
 @649 = ~T-thank you, <CHARNAME> for everything. For freeing me from the circus, and for taking me on this grand adventure. I've learned so much about the world, and.. and about m-myself. I h-hope to see you again soon.~
 @650 = ~(You share a warm embrace.)~
-@651 = ~This is an opportunity to understand the plight of the poor from a broader perspective. I'll go with you. ~
+@651 = ~This is an opportunity to understand the plight of the poor from a broader perspective. I'll go with you.~
 @652 = ~I will remain here for a time, my sparrow. I wish to see this place restored to its former beauty. May our paths cross again in the near future.~
 @653 = ~Aye, I'll go with ye. It hath been many a year since I travelled the Sword Coast, plus I be sick of these queers already. I'll stop at Beregost on the way and pay an old friend of mine a visit.~
 @654 = ~I promised my wife that I would return home after putting an end to Irenicus, and I will do so. Good-bye, my friend. May Torm guide your path.~
@@ -658,7 +647,7 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @689 = ~If you arrest him, you'll have to arrest me too, Captain. Let him go.~
 @690 = ~As am I, sir.~
 @691 = ~Corporal Duncan told us you'd be home soon. I can't tell you how much of a relief it is to have you back.~
-@692 = ~Fine. But only because I love you.~
+@692 = ~~
 @693 = ~Gods, where does the time go?~
 @694 = ~Gods, where does the time go?~
 @695 = ~Oh! Look what I got for you Rohma.~
@@ -668,14 +657,14 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @699 = ~Annual. Remember, sound it out one part at a time.~
 @700 = ~Annual... trade..meet... ar..chery.. c-comp.. comp-e-ti-tion!~
 @701 = ~Great job honey. Your reading has improved quite a bit.~
-@702 = ~Mommy and <CHARNAME> have some business to attend to before tomorrow morning, when we meet with the Dukes.~ 
+@702 = ~~ 
 @703 = ~The individual responsible has been arrested.~
 @704 = ~I'm coming back here as soon as we're done. Give me a kiss, sweetie.~
 @705 = ~(Rohma gives her mom a hug and a kiss.)~
 @706 = ~I love you mommy.~
 @707 = ~I love you too, Rohma. Father, I'll see you later.~
-@708 = ~Right. Take care of what you need to. We'll be here when you get back.~
-@709 = ~<CHARNAME>, Duncan is waiting outside. Let's inform him that we're ready to see the Dukes.~
+@708 = ~~
+@709 = ~~
 @710 = ~Sir, allow me to introduce you to Valygar. He's a ranger from Amn who has expressed interest in joining the Flaming Fist. I know that he'd make a great addition to our team.~
 @711 = ~Yes, sir.~
 @712 = ~Rohma!~
@@ -788,18 +777,20 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @820 = ~Is that so? Duke Entar would love to hear more of your wisdom, citizen. Come with me. Now.~
 @821 = ~Mind your tone, citizen! In disparaging <CHARNAME>, you disrespect the Council who has exonerated <PRO_HIMHER>!~
 @822 = ~The Dukes have proclaimed <CHARNAME>'s innocence. Do you mean to imply that they're mistaken?~
-@823 = ~I received the shipping manifests from the harbor master, but they are encoded and I cannot decipher them. Captain Corwin recommended visiting the Thieves' Guild to see if they can help decode the manifests.~
+@823 = ~Slaver Conspiracy
+I received the shipping manifests from the harbor master, but they are encoded and I cannot decipher them. Captain Corwin recommended visiting the Thieves' Guild to see if they can help decode the manifests.~
 @824 = ~It's good to be back, sir. How have the Fist and the city fared in my absence?~
-@825 = ~Both are doing well, thankfully. We've gained some promising new recruits, and the refugee crisis has been brought under control. Between the Iron Crisis, Sarevok, Caelar, and the situation with <CHARNAME> and Skie, it's been a rough couple of years. It's good that things've finally settled down.~
+@825 = ~Both are doing well, thankfully. We've gained some promising new recruits, and the refugee crisis has been brought under control. Between the Iron Crisis, Sarevok, Caelar, and the situation with <CHARNAME> and Skie, it's been a rough couple of years. It's good that things've finally started to settle down.~
 @826 = ~Have the townspeople given you or <CHARNAME> any problems?~
-@827 = ~Most've been accepting, even weXAoming. There were just a few loudmouths, but they've been straightened out.~
+@827 = ~Most've been accepting, even welcoming. There were just a few loudmouths, but they've been straightened out.~
 @828 = ~That's good to hear. Before I forget — Duke Eltan's tied up with some unrelated business, but he wanted me to tell you that he's glad that you and <CHARNAME> are back, and that he'll see you at the debriefing.~
 @829 = ~Thank you sir. I'll leave you to your work.~ [XA000009]
 @830 = ~Duke Eltan is tied up with some unrelated business. He wanted you to know that he's glad that you and <CHARNAME> have returned, and that he'll see the two of you at the debriefing.~
 @831 = ~Most've welcomed our hero with open arms. (She smiles at you.)~
 @832 = ~Very good, Captain. I'll see you at the debriefing.~
 @833 = ~Let's pay this Winston Ventures company a visit. We might be able to find a way to decode the manifests.~
-@834 = ~I received the shipping manifests from the harbor master, but they are encoded and I cannot decipher them. Captain Corwin suggested that we head to the old Iron Throne tower, now the headquarters of the company we're investigating, to see if we could find a way to decode the manifests.~
+@834 = ~Slaver Conspiracy
+I received the shipping manifests from the harbor master, but they are encoded and I cannot decipher them. Captain Corwin suggested that we head to the old Iron Throne tower, now the headquarters of the company we're investigating, to see if we could find a way to decode the manifests.~
 @835 = ~We're here on Flaming Fist business. Let us through.~
 @836 = ~Tina Bennett — <CHARNAME>, that's the name of the child that we rescued in Athkatla.~
 @837 = ~That's right — Kerrachus, do you know anything else that might help?~
@@ -889,7 +880,7 @@ Nalia's aunt, Lady Delcia, has been rescued. She has gone to leave the keep on h
 @921 = ~It was. You ready for another drink?~
 @922 = ~No, thanks. Two was enough. Work in the morning, you know?~
 @923 = ~So, love. Tell me — how's life in the Ducal palace?~
-@924 = ~Good... It'l be better though once the three of you move in.~
+@924 = ~Good... It'll be better though once the three of you move in.~
 @925 = ~I don't doubt it. You've been great with Rohma... She's adjusted well to our being together, I think.~
 @926 = ~I'm just about settled in.~
 @927 = ~Right.~
@@ -997,7 +988,7 @@ Do not keep us waiting for long."~
 @1024 = ~That's your money. Consider it compensation for everything you've had to endure.~
 @1025 = ~It's as much yours, Schael, as it is mine... I wouldn't be here were it not for your efforts in securing my release.~
 @1026 = ~Even if it were my money, I'd probably keep working, at least for a while longer. Rohma needs to understand the value of hard work.~
-@1027 = ~Besides, I haven't given up on making colonel one day.~ 
+@1027 = ~Besides, I haven't given up on making Colonel one day.~ 
 @1028 = ~Nor should you. Colonel Corwin... I think I like the sound of that.~
 @1029 = ~What did the healers say? Is my father going to make it?~
 @1030 = ~(She begins to slowly breathe in and out. You recognize this as the breathing exercise that Rasaad taught her in Amn.)~ 
@@ -1152,7 +1143,7 @@ Do not keep us waiting for long."~
 @1189 = ~It was the only way. He'll never trouble us again. Come — I'm sure Rohma is eager to see you, my love.~
 @1190 = ~It was the only way. He'll never trouble you or your family again. Come — I'm sure Rohma is eager to see you.~
 @1191 = ~Right. Let's go.~
-@1192 = ~(She picks up Beno's rusted scimitar, and, after a moment of hesitation, brings it down sharply upon his neck. The first blow did not fully detach the head from the body, and you hear a grotesque, gurgling sound as Beno struggles to breathe. The second blow mercifully finishes the job. Beno's head hits the ground with a satisfying thud, then rolls a couple of feet away from his body.)~
+@1192 = ~(She picks up Beno's rusted scimitar, and, after a moment of hesitation, brings it down sharply upon his neck. The first blow did not fully sever the head from the body, and you hear a grotesque gurgling sound as Beno struggles to breathe. The second blow mercifully finishes the job. Beno's head hits the ground with a satisfying thud, then rolls a couple of feet away from his body.)~
 @1193 = ~(Schael walks over to the now detached head, picks it up, and places it into her pack.)~
 @1194 = ~It's over...~
 @1195 = ~Are you alright? That couldn't have been easy for you, love.~
@@ -1267,13 +1258,10 @@ Corwin has arrested Beno Famari for kidnapping and attempted murder. Hopefully, 
 @1301 = ~Even amidst all that chaos, I remember being capitvated by your beauty. I still am.~
 @1302 = ~We defeated the assassins and left for Dragonspear shortly thereafter.~
 @1303 = ~A Gift for Rohma
-
 It's been a while since you've seen Schael's family. It may be worthwhile stopping at one of the General Stores and getting a gift for her daughter.~
 @1304 = ~Meeting Schael's Family
-
 You're eager to finally meet Schael's family, and you'd like to make a good impression. It may be worthwhile stopping at one of the General Stores in the city to see if you can find a gift for her daughter.~
 @1305 = ~Slaver Conspiracy
-
 The harbor master provided you with the shipping manifests for a new company called Winston Ventures. Unfortunately, the manifests are encrypted. You'll have to find some way to decode them.~
 @1306 = ~Are you alright?~ [XA000001]
 @1307 = ~You look like you've seen a ghost.~
@@ -1284,7 +1272,6 @@ The harbor master provided you with the shipping manifests for a new company cal
 @1312 = ~I understand... it was a traumatic experience, for all of us.~ [XA000002]
 @1313 = ~It's nothing... come on, let's go.~
 @1314 = ~I think about it, still. Not as much as I used to, but... it's scary to think how close you were to... how close we were to —~
-
 @1316 = ~I know, love. Come here.~ 
 @1317 = ~(You share a long and tender embrace.)~
 @1318 = ~Thank you, Schael... For believing in me, and for believing in us.~ 
@@ -1311,9 +1298,6 @@ Schael and I shared a tender moment; it seems that we are still dealing with the
 @1347 = ~(She smiles)~
 @1348 = ~Sweet of you to say.~
 @1349 =  ~Hey — you alright?~
-
-
-
 @1350 = ~A little humility from time to time wouldn't hurt, you know. But yes, you did leave quite the impression on her.~
 @1351 = ~<CHARNAME>, yes. Sorry — I was thinking about home.~
 @1352 = ~Yes, sorry. I was thinking about home. I just miss them, that's all.~
@@ -1494,7 +1478,7 @@ You and Schael shared a tender moment; it seems that the two of you are still de
 @1524 = ~What do you mean, how? We were intimate two or three times a week for over a month. It was bound to happen.~
 @1525 = ~But Schael ... We need to find a way to get you home. We can't risk the safety of our child.~
 @1526 = ~I spoke with Aerie about this.~
-@1527 = ~No, I won't leave your side. At least not yet. The timing is terrible of course, but I can still do everything that I need to, on or off the battlefield. Once I start showing, that might change ...~
+@1527 = ~No, I won't leave your side. At least not yet. The timing is terrible of course, but I can still do everything that I need to, on or off the battlefield. Once I start showing, that might change...~
 @1528 = ~But, I did speak to Aerie about this... I think you might've overheard some of our discussion. ~
 @1529 = ~But, I did speak to Jaheira about this... I think you might've overheard some of our discussion.~
 @1530 = ~Before we left Baldur's Gate, I spoke with Helena, one of the Fist's medics, just as a precaution.~
@@ -1502,7 +1486,7 @@ You and Schael shared a tender moment; it seems that the two of you are still de
 @1532 = ~I'm going to have this baby. Don't ask me not to. The timing is terrible I know, but I can still do everything that I need to, on or off the battlefield. Once I start showing, that might change ... and I might need to return home.~
 @1533 = ~Schael, you know that I love you. But a baby, now?~ 
 @1534 = ~It's too dangerous for you to remain here, with me.~
-@1535 = ~So I'm going to be a father ... ~
+@1535 = ~So I'm going to be a father... ~
 @1536 = ~Is there anything that I can do for you? I hear pregnant women get some odd cravings from time to time.~
 @1537 = ~Thank you, but I'm fine love. If I need anything, I'll let you know. But ... since you mentioned it, there is one thing ...~
 @1538 = ~I don't want anyone to give me any special treatment, or to even know I'm pregnant. Eventually they'll find out of course, but for now, let's keep it between us.~
@@ -1516,9 +1500,9 @@ You and Schael shared a tender moment; it seems that the two of you are still de
 @1546 = ~Not even Imoen?~
 @1547 = ~Well, sure. She's your sister after all, and I know she can keep a secret. But no one else, please. Auntie Imoen ... has a nice ring to it, eh? ~
 @1548 = ~It does. She's going to be thrilled when she hears the news.~
-@1549 = ~That's good to know. Still, I'm concerned I'll protect you and our child as best I can.~
+@1549 = ~That's good to know. Still, I'm concerned. I'll protect you and our child as best I can.~
 @1550 = ~Did she tell you if it was a boy or a girl?~
-@1551 = ~Did Jaheira tell you if it was a boy or a girl?~
+@1551 = ~~
 @1552 = ~No, I didn't ask her. It's better not to know, I think.~ 
 @1553 = ~Any guess as to whether it's a boy or a girl?~
 @1554 = ~No ... even if I could know, I don't think I'd want to. It would spoil the surprise. Speaking of ...~
@@ -1559,12 +1543,12 @@ You and Schael shared a tender moment; it seems that the two of you are still de
 Major Corwin offered me some valuable parenting advice, which I gladly accepted.~ 
 @1589 = ~Two letters. One to the Dukes, and one to my father. I need to let my family know that we're fine.~
 @1590 = ~I need an additional letter delivered ... My family needs to know that we're fine.~
-@1591 = ~Listen - we need to provide a status update to the Dukes ... and I need to let my family know that we're fine.~
+@1591 = ~~
 @1592 = ~Of course.~
 @1593 = ~What do you suggest we do?~
 @1594 = ~This town might have a message courier we can use. Let's have a look around.~
-@1595 = ~Listen — we need to provide a status update to the Dukes. They'll want to know that the fire giants have been dealt with, and they'll need my report on what we've learned concerning the Five. I also need to let my family know that we're fine ...~
-@1596 = ~Listen — we need to provide a status update to the Dukes. They'll want to know that the fire giants have been dealt with, and they'll need my report on what we've learned concerning the Five. I also need to let my family know that we're fine ... and that I'm with child.~
+@1595 = ~Listen — we need to provide a status update to the Dukes. They'll want to know that the fire giants have been dealt with, and they'll need my report on what we've learned concerning the Five. I also need to let my family know that we're fine...~
+@1596 = ~Listen — we need to provide a status update to the Dukes. They'll want to know that the fire giants have been dealt with, and they'll need my report on what we've learned concerning the Five. I also need to let my family know that we're fine... and that I'm with child.~
 @1597 = ~Of course, love.~
 @1598 = ~How do you think your father will take the news? And Rohma?~
 @1599 = ~Rohma will be thrilled, and I know she'll be a wonderful big sister to our baby. As for my father ... he'll be happy to have another grandchild, certainly, but he's going to have some stern words for me when I get back.~ 
@@ -1573,8 +1557,8 @@ Major Corwin offered me some valuable parenting advice, which I gladly accepted.
 Schael needs to send a message to the Dukes to inform them of our progress thus far. She also needs to let her family know that she is alive and well. This town may have a courier service we can use to send the message.~
 @1602 = ~Progress Thus Far
 Schael needs to send a message to the Dukes to inform them of our progress thus far. She also needs to let her family know that she is alive and well, and that she is pregnant with our child. This town may have a courier service we can use to send the message.~
-@1603 = ~To be honest, I've never given much thought as to what people would say about us, and what we've accomplished. <CHARNAME> is the only hero here, Volo. I doubt people would be interested in my story.~
-@1604 = ~To be honest, I've never given much thought as to what people would say about us, and what we've accomplished. Or, for that matter, the love we share. <CHARNAME> is the only hero here, Volo. I doubt people would be interested in my story.~
+@1603 = ~To be honest, I've never given much thought as to what people would say about us, and what we've accomplished. What's certain is that <CHARNAME> is the only hero here, Volo. I doubt people would be interested in my story.~
+@1604 = ~To be honest, I've never given much thought as to what people would say about us, and what we've accomplished. Or, for that matter, the love we share. What's certain is that <CHARNAME> is the only hero here, Volo. I doubt people would be interested in my story.~
 @1605 = ~Love must dare to risk. Otherwise, it isn't love at all.~
 @1606 = ~R-Rohma!? Honey, what are you doing here?~
 @1607 = ~Mommy, why didn't you come home? Why weren't you there to protect us?~
@@ -1720,21 +1704,22 @@ Schael needs to send a message to the Dukes to inform them of our progress thus 
 @1747 = ~You're the one I love Schael, not her. I'll make it clear to her, in case it wasn't already.~
 @1748 = ~Why, then, is Viconia spending so much time with you? Do you have feelings for that wretched drow?~ 
 @1749 = ~Unbelievable! Irenicus must've done a number on your senses. There's no other explanation for you choosing that ... that slut, over me. As soon as this mission is over, we're through.~ 
-@1750 = ~~
-@1751 = ~~
-@1752 = ~~
-@1753 = ~~
-@1754 = ~~
-@1755 = ~~
-@1756 = ~~
-@1757 = ~~
-@1758 = ~~
-@1759 = ~~
-@1760 = ~~
-@1761 = ~~
-@1762 = ~~
-@1763 = ~~
-@1764 = ~~
+@1750 = ~(She smiles.)~
+@1751 = ~(She gives you a kiss on the cheek.)~
+@1752 = ~Let's go.~
+@1753 = ~(Her voice cracks.)~
+@1754 = ~I thought I'd *sob* lost you...~
+@1755 = ~(She lays her head down on your chest, and you hold her tenderly in your arms. In moments, she finally loses her composure and begins to weep in earnest.)~
+@1756 = ~ (You gently caress her head as you feel her tears touch your skin.)~
+@1757 = ~(You gently caress her head as you feel her warm tears touch your skin.)~
+@1758 = ~(She plants a kiss on your forehead.)~
+@1759 = ~(You reach out and take hold of her hand.)~
+@1760 = ~(You slide over so there is enough room on the bed for the two of you. When she climbs in, you kiss and rest in eachother's embrace.)~
+@1761 = ~She won't be joining us. I'll not allow the monster to feed on the citizens I'm sworn to protect.~
+@1762 = ~Are you and Rasaad settled in?~
+@1763 = ~Engagement Ring
+I proposed to Schael, and she accepted! We're to be married!~
+@1764 = ~Come on! Let's go get Rasaad and celebrate!~
 @1765 = ~~
 @1766 = ~~
 @1767 = ~~

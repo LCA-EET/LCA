@@ -2480,7 +2480,17 @@ END
 IF ~~ THEN XA_CorwinProposal4
 	SAY @969 /* ~Yes! Yes of course I will!~ */
 	
-	= @970 /* ~(You share a long and passionate embrace.)~ */
+	IF ~~ THEN
+	DO ~
+		AddJournalEntry(@1763, INFO)
+		ChangeStat(Myself, XP, 25000, ADD)
+		ChangeStat(Player1, XP, 25000, ADD)
+	~
+	GOTO XA_CorwinProposal4B
+END
+
+IF ~~ THEN BEGIN XA_CorwinProposal4B
+	SAY @970 /* ~(You share a long and passionate embrace.)~ */
 	
 	IF ~
 		Global("XA_RingEnchantment2", "GLOBAL", 1)
@@ -2724,6 +2734,7 @@ IF ~~ THEN XA_CorwinProposal7
 	
 	IF ~~ THEN REPLY @974 /* ~Of course, my dear. Let's go.~ */
 	DO ~
+		
 		StartCutSceneMode()
 		StartCutScene("XAWLKHOM")
 	~
@@ -2907,6 +2918,12 @@ IF ~~ THEN BEGIN XA_CorwinDinner_NonRomance3
 		Global("NeeraRomanceActive", "GLOBAL",2)
 	~ THEN 
 	GOTO XA_CorwinDinner_NonRomance_Neera
+	
+	IF ~
+		Global("XA_BackToBG_Rasaad", "GLOBAL", 1)
+		Global("RasaadRomanceActive", "GLOBAL",2)
+	~ THEN 
+	GOTO XA_CorwinDinner_NonRomance_Rasaad
 END
 
 IF ~~ THEN BEGIN XA_CorwinDinner_NonRomance_Anomen
@@ -2932,6 +2949,13 @@ END
 
 IF ~~ THEN BEGIN XA_CorwinDinner_NonRomance_Neera
 	SAY @949 /* ~Are you and Neera settled in?~*/
+	
+	IF ~~ THEN REPLY @944 /*~Just about. It's a big adjustment from what we're used to.~*/
+	GOTO XA_CorwinDinner_NonRomance6
+END
+
+IF ~~ THEN BEGIN XA_CorwinDinner_NonRomance_Rasaad
+	SAY @1762 /* ~Are you and Rasaad settled in?~*/
 	
 	IF ~~ THEN REPLY @944 /*~Just about. It's a big adjustment from what we're used to.~*/
 	GOTO XA_CorwinDinner_NonRomance6
@@ -6637,11 +6661,37 @@ IF ~~ THEN BEGIN XA_Congratulations2B
 	IF ~
 		Global("AnomenRomanceActive", "GLOBAL", 2)
 	~ THEN GOTO XA_Congratulations3_Anomen
+	
+	IF ~
+		Global("RasaadRomanceActive", "GLOBAL", 2)
+	~ THEN GOTO XA_Congratulations3_Rasaad
 END
 
 
 IF ~~ THEN BEGIN XA_Congratulations3
 	SAY @1117 /* ~Come on! Let's go and celebrate!~ */
+	
+	IF ~
+		Global("XA_WonLottery", "GLOBAL", 1)
+	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("XADINLOT")
+	~
+	EXIT
+	
+	IF ~
+		!Global("XA_WonLottery", "GLOBAL", 1)
+	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("XADINNER")
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_Congratulations3_Rasaad
+	SAY @1764 /* ~Come on! Let's go get Rasaad and celebrate!~ */
 	
 	IF ~
 		Global("XA_WonLottery", "GLOBAL", 1)
@@ -7254,8 +7304,7 @@ END
 
 
 IF ~~ THEN BEGIN XA_DelciaLeft4
-	SAY @524 /* ~(She smiles.) I think I know what you have in mind. (She walks up to you, leans in and whispers.) It's on my mind, all the time.~   */
-	= @525 /* ~Let's finish up here. Afterward, I want you to find a nice place for the two of us to relieve ... some of that stress.~ */
+	SAY @524 /* ~I think I know what you have in mind. (She walks up to you, leans in and whispers.) It's on my mind, all the time.~   */
 	
 	IF ~~ THEN REPLY @527 /* ~What do you suggest?~ */
 	GOTO XA_DelciaLeft5
@@ -7271,7 +7320,9 @@ IF ~~ THEN BEGIN XA_DelciaLeft5
 END
 
 IF ~~ THEN BEGIN XA_DelciaLeft6
-	SAY @528 /* ~Good. (She gives you a kiss on the cheek.) Let's go.~ */
+	SAY @528 /* ~Good. */
+	= @1751 /* ~(She gives you a kiss on the cheek.)~ */
+	= @1752 /* ~Let's go.~ */
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_CorwinSex_1", "GLOBAL", 1)
@@ -7311,21 +7362,34 @@ IF ~~ THEN BEGIN XA_SUELLE2_0_A
 END
 
 IF ~~ THEN BEGIN XA_SUELLE2_0_B
-	SAY @611 /* ~(Her voice cracks.) I thought I *sob* lost you...~ */
+	SAY @611 /* ~Nothing, it's just...~  */
 	
-	IF ~~ THEN REPLY @612 /* ~Come here, love. (She lays her head down on your chest, and you hold her in your arms.)~  */
+	= @1753 /*~(Her voice cracks.)~*/
+	
+	= @1754 /*~I thought I'd *sob* lost you...~*/
+	
+	IF ~~ THEN REPLY @612 /* ~Come here, love. ~  */
 	GOTO XA_SUELLE2_0_C
 END
 
 IF ~~ THEN BEGIN XA_SUELLE2_0_C
-	SAY @613 /* ~(She finally loses her composure and begins to weep in earnest.)~ */
+	SAY @1755 /* ~(She lays her head down on your chest, and you hold her tenderly in your arms. In moments, she finally loses her composure and begins to weep in earnest.)~ */
 	
-	IF ~~ THEN REPLY @614 /* ~It's alright Schael, let it out. I'm here. (You gently caress her head as you feel her tears touch your skin.)~ */
+	IF ~~ THEN REPLY @614 /* ~It's alright Schael, let it out. I'm here.~ */
+	GOTO XA_SUELLE2_0_C2
+END
+
+IF ~~ THEN BEGIN XA_SUELLE2_0_C2
+	SAY @1757 /*~(You gently caress her head as you feel her warm tears touch your skin.)~*/
+	
+	IF ~~ THEN
 	EXTERN SUELLE2 XA_SUELLE2_0_D
 END
 
 IF ~~ THEN BEGIN XA_SUELLE2_5
-	SAY @616 /* ~Get some rest love. (She plants a kiss on your forehead.) I'll check in with the others.~ */
+	SAY @616 /* ~Get some rest love. I'll check in on you later.~ */
+	
+	= @1758 /*~(She plants a kiss on your forehead.)~*/
 	
 	IF ~~ THEN REPLY @617 /* ~Thank you Schael. For everything.~ */
 	DO ~
@@ -7348,8 +7412,9 @@ IF ~~ THEN BEGIN XA_GiveMedal2A
 END
 
 IF ~~ THEN BEGIN XA_SUELLE2_5_8
-	SAY @115 /* ~Gladly, dear. 
-	(You slide over so there is enough room on the bed for the two of you. When she climbs in, you share a passionate kiss, and fall asleep in eachother's embrace.)~  */
+	SAY @1759 /* ~(You reach out and take hold of her hand.)~ */
+	= @115 /* ~Gladly, dear. */
+	= @1760 /*~(You slide over so there is enough room on the bed for the two of you. When she climbs in, you kiss and rest in eachother's embrace.)~*/
 
 	IF ~~ THEN
 	DO ~
@@ -8440,7 +8505,8 @@ CHAIN
 		IF ~
 			IsValidForPartyDialogue("Hexxat")
 		~
-		@646 /* ~(She points at Hexxat.) She will not be joining us. I'll not allow the monster to feed on the citizens I've sworn to protect.~*/
+		@646 /* ~(She points at Hexxat.)~*/
+		= @1761 /* ~She won't be joining us. I'll not allow the monster to feed on the citizens I'm sworn to protect.~ */
 		DO ~
 			ActionOverride("Hexxat", SetLeavePartyDialogFile())
 			ActionOverride("Hexxat", ChangeAIScript("", DEFAULT))
