@@ -1,12 +1,12 @@
 @0 = ~Hi I'm Rohma.~
 @1 = ~I'm six now!~
-@2 = ~~
-@3 = ~~
-@4 = ~~
-@5 = ~~
+@2 = ~Winner.. eighth an-annu...~
+@3 = ~Annual... trade..meet... ar..chery.. c-com-comp...~
+@4 = ~(Rohma gives her mom a hug and a kiss.)~
+@5 = ~I love you mommy.~
 @6 = ~You're <CHARNAME>! I remember you!~
-@7 = ~~
-@8 = ~~
+@7 = ~I remember you too, dear. You've grown since I last saw you.~
+@8 = ~The last time I saw you Rohma, you were five years old. How old are you now?~
 @9 = ~My name is <CHARNAME>. It's a pleasure to finally meet you, Rohma!~
 @10 = ~(She turns to look at you.)~
 @11 = ~Who're you?~
@@ -37,7 +37,7 @@ First comes love, then comes — ~
 @34 = ~Bye Rohma! It was so nice to see you again. See you tomorrow, Schael.~
 @35 = ~I love you mommy!~
 @36 = ~Mommy, is <CHARNAME> going to be my daddy now?~
-@37 = ~~
+@37 = ~Mommy!~
 @38 = ~What matters is that he'll never hurt you, or anyone else, ever again.~
 @39 = ~Auntie Skie said you and <CHARNAME> saved me, but who was the man that took me? The one that hurt grandpa.~
 @40 = ~Mommy, what did the Dukes want?~
@@ -71,13 +71,15 @@ First comes love, then comes — ~
 @68 = ~You, mommy and grandpa are going to stay here until I return from my trip. There's a guest room for you downstairs.~
 @69 = ~(Yawn)~
 @70 = ~I want mommy...~
-@71 = ~~
+@71 = ~You're going to have so much fun here! Did you know that there's a game room?~
 @72 = ~That's right, honey.~
 @73 = ~There's even a games room. I'll show it to you tomorrow. You're going to have so much fun here, Rohma!~
 @74 = ~A games room! Wow, thanks Auntie!~
 @75 = ~Mommy, are you going to go and fight them? Like what happened with Caelar?~
 @76 = ~A Gift for Rohma
+
 It's been a while since you've seen Schael's family. It may be worthwhile stopping at one of the General Stores and getting a gift for her daughter.~
 @77 = ~Meeting Schael's Family
+
 You're eager to finally meet Schael's family, and you'd like to make a good impression. It may be worthwhile stopping at one of the General Stores in the city to see if you can find a gift for her daughter.~
 @78 = ~(She holds up the doll you bought for her many months ago. You had nearly forgotten about it. It warms your heart to see that she treasures it as much as she does.)~

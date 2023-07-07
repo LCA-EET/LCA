@@ -6,9 +6,9 @@
 @5 = ~Ah... yes. I was reassigned to deal with the refugee crisis shortly after we'd neutralized the last remnants of Caelar's crusade.~
 @6 = ~Now, to business. Captain, <CHARNAME>, the Dukes have requested a debriefing from the both of you at 0800 tomorrow morning, in the Ducal Palace. I expect that it will last for several hours. Do not be late.~
 @7 = ~Your companions are welcome to take part in the debriefing as well.~
-@8 = ~~
+@8 = ~When it's time for the debriefing, Corporal Duncan will escort you to the Dukes.~
 @9 = ~One more thing — the citizens have been informed of your return, <CHARNAME>, and of your innocence. I'm sure most will welcome you, though there may be a small number who will take exception to someone of your... nature... wandering the streets.~
-@10 = ~~
+@10 = ~Of course Captain. Take as much time as you need. Also, it will be good for you to stop by headquarters. Some of your colleages are eager to see you again. When you and <CHARNAME> are ready for the debrief, talk to Duncan.~
 @11 = ~Captain, if anyone gives the hero a hard time, I want you to let me know, personally. Am I clear?~ [XANDRL01]
 @12 = ~Very good. I must now return to my duties. I'll see you tomorrow morning at the debriefing.~
 @13 = ~Excellent. It's good to meet you, Valygar. I'm Marshal Kyrill Nederlok. As I'm sure Captain Corwin mentioned, the Flaming Fist is always seeking to recruit high caliber individuals, such as yourself.~
@@ -34,13 +34,13 @@
 @33 = ~I'd have vouched for your character if I'd the opportunity to do so. As you know, I was tasked with neutralizing the last of Caelar's forces while your trial was taking place.~
 @34 = ~In any case, I doubt it would have made a difference. Duke Entar wanted you dead, and the evidence against you was damning.~ 
 @35 = ~As I understand, it was Captain Corwin who pleaded with Eltan, Belt and Jannath to exile you, rather than have you executed. I'm glad she was successful.~
-@36 = ~~
+@36 = ~As am I, sir.~
 @37 = ~And so am I. Thank you, both.~
 @38 = ~I'd like to go over our progress in the investigation into slaver activity in Baldur's Gate.~
 @39 = ~Of course. What have you found so far?~ 
 @40 = ~We spoke to the harbor master. He provided us shipping manifests belonging to Winston Ventures, the company that just moved into the Iron Throne headquarters. The manifests were encoded so that they could not be deciphered. Why would a legitimate company want to obfuscate their shipping manifests?~
 @41 = ~It's unusual to be sure, but not unheard of.~
-@42 = ~~
+@42 = ~Do you have any advice?~
 @43 = ~We freed a slave in Athkatla, a child, and she told us that she was part of a group of refugees that fled to Baldur's Gate. They were told that they would be taken to a new home, and boarded a ship to Athkatla. When they arrived, the children were forcibly separated from their parents and sold to slavers.~
 @44 = ~I emphasize with the plight of that poor child. Even if we could bring her here to testify, however, the word of such a young child will not carry much weight in any courtroom. And, if I remember correctly, she didn't know the name of the individual or company that placed her on that ship.~
 @45 = ~Do you have any additional evidence?~
@@ -50,7 +50,7 @@
 @49 = ~Let me see that. This is compelling evidence to be sure. Lord Winston could argue, however, that he was deceived, and that he didn't know that the passengers on his ship would be sold into slavery.~
 @50 = ~Good work. What you've gathered so far is enough to warrant a more thorough investigation into the company. At this point it's not quite enough to secure a conviction.~
 @51 = ~Out of curiosity... how'd you obtain the cipher?~
-@52 = ~~
+@52 = ~We broke into Lord Winston's office and found it in his desk.~
 @53 = ~Using the encoded manifest, we convinced a clerk in Winston's company to provide us with the key.~
 @54 = ~I see... that's good. Captain, I suggest pressuring the clerk for more information. What we need is proof that Winston knew that the passengers were placed on the ship to be sold as slaves. If you could find a ledger, correspondence, or similar evidence that shows what Winston knew, we'll have him dead to rights.~
 @55 = ~Return to me once you have the last of the evidence.~
@@ -86,12 +86,13 @@
 @85 = ~You did. But participating in slaver activity is a very serious crime. I can't just let you go free, at least not yet. The fact that you cooperated will significantly reduce the severity of your punishment. Kent, take him away.~
 @86 = ~Yes, sir.~
 @87 = ~Hahah, <CHARNAME>, excellent work. You'd have made a great investigator.~
+
 @88 = ~I couldn't have done it without Captain Corwin's help.~
 @89 = ~The two of you have been back for less than a day and have already made a difference. You make a great team.~
 @90 = ~What's going to happen to Virgil and Lord Winston?~
 @91 = ~Virgil will be held in custody, at least until Lord Winston is apprehended.~
 @92 = ~As for Winston, he has many friends and connections within the city. He will certainly be punished, though I suspect not as severely as his crimes warrant.~
-@93 = ~~
+@93 = ~I'm glad to help.~
 @94 = ~What about the refugees that were sold into slavery?~
 @95 = ~Well, now that we can decode the manifests, we'll work with the appropriate authorities in Athkatla, Calimshan, and other cities to repatriate the refugees, and arrest the slavers who purchased them.~
 @96 = ~Once again, great job. I'll let the Dukes know of the good you've done today. See you at the debriefing.~ [XANDRL06]
@@ -118,4 +119,5 @@
 @117 = ~Excuse me, but I really must get through this duty roster review. .~
 @118 = ~You earned it.~
 @119 = ~Slaver Conspiracy
+
 We uncovered enough evidence to prove Lord Winston's guilt. He'll be arrested for slave trading upon his return to Baldur's Gate. Hopefully, the city authorities will be able to help those families and individuals regain their freedom. Marshal Nederlok was very appreciative of our help in solving the case.~
