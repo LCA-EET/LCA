@@ -1247,9 +1247,17 @@ END
 			== XACORWIB
 			@275 /* ~No, I've never heard of you.~*/
 			== YOSHJ
-			@276 /* ~You mean to tell me you haven't heard of my daring raid on the archives of the Unseen? My heroic defense of the town of Easthaven? The rescue of the virgin maiden of -~ */
+			@276 /* ~You mean to tell me you haven't heard of my daring raid on the archives of the Unseen?~ */
 			== XACORWIB
-			@277 /* ~Enough! Be quiet, or people will hear the story of Yoshimo the Silent, the braggart thief whose jaw was broken by the Flaming Fist!~ */
+			@889 /* No. */
+			== YOSHJ
+			@891 /*~What about my heroic defense of the town of Easthaven?~*/
+			== XACORWIB
+			@890 /* ~No! Gods damnit, man —~ */
+			== YOSHJ
+			@892 /* ~But you must've heard that I rescued the virgin maiden of—~ */
+			== XACORWIB
+			@277 /* ~For Tymora's sake, enough! Be quiet, or people will hear the story of Yoshimo the Silent, the braggart thief whose jaw was crushed because he wouldn't shut up!~ */
 			== YOSHJ
 			@271 /* ~That doesn't sound like a story I'd want to hear.~ */
 			== XACORWIB
@@ -1397,7 +1405,9 @@ END
 				ClearActions(Myself)
 				ClearActions("Valygar")
 			~ 
-			= @246 /* ~Well (she looks at Minsc), one that isn't completely out of his mind, anyway. ~*/
+			= @246 /* ~Well */
+			= @886 /*~(She looks at Minsc, and shakes her head.)~*/
+			= @887 /* ~...One that isn't completely out of his mind, anyway. ~*/
 			== VALYGARJ
 			IF ~
 				!Global("XA_CorwinPromoted", "GLOBAL", 1)
