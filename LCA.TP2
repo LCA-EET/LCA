@@ -1300,17 +1300,28 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	//}
 
 	//{ Corwin's Armor (Improved)
-	COPY ~LCA/Itm/XACORCHN.ITM~ ~override~
+	COPY ~LCA/ITM/XACORCHN.ITM~ ~override~
 	SAY NAME1 @022
 	SAY NAME2 @022
 	SAY UNIDENTIFIED_DESC @023
 	SAY DESC @023
 	//}
 	
-	//{ Corwin's Bow (Improved)
-	COPY ~LCA/Itm/XACORBOW.ITM~ ~override~
+	//{ Quiver + 4
+	COPY ~LCA/ITM/XAQUIVER.ITM~ ~override~
+	SAY NAME2 @140
+	SAY DESC @141
+	
+	//{ Corwin's Bow + 2 (Improved)
+	COPY ~LCA/ITM/XACORBOW.ITM~ ~override~
 	SAY NAME2 @020
 	SAY DESC @021
+	//}
+	
+	//{ Corwin's Bow + 4 (Gond)
+	COPY ~LCA/ITM/XACORBO2.ITM~ ~override~
+	SAY NAME2 @139
+	SAY DESC @138
 	//}
 	
 	//{ Farseer

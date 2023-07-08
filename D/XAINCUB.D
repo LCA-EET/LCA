@@ -105,6 +105,7 @@ IF ~
 		ActionOverride(Player1, DestroyItem("XASWORD"))
 		ActionOverride(Player1, DestroyItem("XACHICK"))
 		ActionOverride(Player1, DestroyItem("XAMSRING"))
+		ActionOverride(Player1, DestroyItem("XAQUIVER"))
 		StartCutSceneMode()
 		StartCutScene("XAPENT")
 		DestroySelf()
@@ -121,12 +122,13 @@ IF ~
 	IF ~
 		Gender(Player1,MALE)
 		PartyHasItem("AMUL27")
-	~ THEN REPLY @55 /*~The amulet, and our freedom, in exchange for the axe.~*/
+	~ THEN REPLY @55 /*~The amulet, and our freedom, in exchange for the sword.~*/
 	DO ~
 		SetGlobal("XA_IncubusSword", "GLOBAL", 1)
 		ActionOverride(Player1, DestroyItem("XASWORD"))
 		ActionOverride(Player1, DestroyItem("XACHICK"))
 		ActionOverride(Player1, DestroyItem("XAMSRING"))
+		ActionOverride(Player1, DestroyItem("XAQUIVER"))
 	~
 	GOTO XA_GiveAmuletToDemon_M
 	
@@ -139,6 +141,33 @@ IF ~
 		ActionOverride(Player1, DestroyItem("XASWORD"))
 		ActionOverride(Player1, DestroyItem("XACHICK"))
 		ActionOverride(Player1, DestroyItem("XAMSRING"))
+		ActionOverride(Player1, DestroyItem("XAQUIVER"))
+	~
+	GOTO XA_GiveAmuletToDemon_F
+	
+	IF ~
+		Gender(Player1,MALE)
+		PartyHasItem("AMUL27")
+	~ THEN REPLY @89 /*~The amulet, and our freedom, in exchange for the quiver.~*/
+	DO ~
+		SetGlobal("XA_IncubusQuiver", "GLOBAL", 1)
+		ActionOverride(Player1, DestroyItem("XASWORD"))
+		ActionOverride(Player1, DestroyItem("XACHICK"))
+		ActionOverride(Player1, DestroyItem("XAMSRING"))
+		ActionOverride(Player1, DestroyItem("XAQUIVER"))
+	~
+	GOTO XA_GiveAmuletToDemon_M
+	
+	IF ~
+		Gender(Player1,FEMALE)
+		PartyHasItem("AMUL27")
+	~ THEN REPLY @89 /*~The amulet, and our freedom, in exchange for the quiver.~*/
+	DO ~
+		SetGlobal("XA_IncubusQuiver", "GLOBAL", 1)
+		ActionOverride(Player1, DestroyItem("XASWORD"))
+		ActionOverride(Player1, DestroyItem("XACHICK"))
+		ActionOverride(Player1, DestroyItem("XAMSRING"))
+		ActionOverride(Player1, DestroyItem("XAQUIVER"))
 	~
 	GOTO XA_GiveAmuletToDemon_F
 	
@@ -151,6 +180,7 @@ IF ~
 		ActionOverride(Player1, DestroyItem("XASWORD"))
 		ActionOverride(Player1, DestroyItem("XACHICK"))
 		ActionOverride(Player1, DestroyItem("XAMSRING"))
+		ActionOverride(Player1, DestroyItem("XAQUIVER"))
 	~
 	GOTO XA_GiveAmuletToDemon_M
 	
@@ -163,6 +193,7 @@ IF ~
 		ActionOverride(Player1, DestroyItem("XASWORD"))
 		ActionOverride(Player1, DestroyItem("XACHICK"))
 		ActionOverride(Player1, DestroyItem("XAMSRING"))
+		ActionOverride(Player1, DestroyItem("XAQUIVER"))
 	~
 	GOTO XA_GiveAmuletToDemon_F
 	
@@ -175,6 +206,7 @@ IF ~
 		ActionOverride(Player1, DestroyItem("XASWORD"))
 		ActionOverride(Player1, DestroyItem("XACHICK"))
 		ActionOverride(Player1, DestroyItem("XAMSRING"))
+		ActionOverride(Player1, DestroyItem("XAQUIVER"))
 	~
 	GOTO XA_GiveAmuletToDemon_M
 	
@@ -187,6 +219,7 @@ IF ~
 		ActionOverride(Player1, DestroyItem("XASWORD"))
 		ActionOverride(Player1, DestroyItem("XACHICK"))
 		ActionOverride(Player1, DestroyItem("XAMSRING"))
+		ActionOverride(Player1, DestroyItem("XAQUIVER"))
 	~
 	GOTO XA_GiveAmuletToDemon_F
 	
@@ -642,6 +675,8 @@ IF ~~ THEN BEGIN XA_WhatAreYouOffering
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XACHICK", IDENTIFIED,TRUE))
 		GiveItemCreate("XAMSRING", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XAMSRING", IDENTIFIED,TRUE))
+		GiveItemCreate("XAQUIVER", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XAQUIVER", IDENTIFIED,TRUE))
 	~
 	EXIT
 END
@@ -807,6 +842,7 @@ IF ~~ THEN BEGIN XA_DontWantTreasure
 		ActionOverride(Player1, DestroyItem("XASWORD"))
 		ActionOverride(Player1, DestroyItem("XACHICK"))
 		ActionOverride(Player1, DestroyItem("XAMSRING"))
+		ActionOverride(Player1, DestroyItem("XAQUIVER"))
 	~
 	EXIT
 	
@@ -816,7 +852,7 @@ IF ~~ THEN BEGIN XA_DontWantTreasure
 	DO ~
 		ActionOverride(Player1, DestroyItem("XASWORD"))
 		ActionOverride(Player1, DestroyItem("XACHICK"))
-		ActionOverride(Player1, DestroyItem("XAMSRING"))
+		ActionOverride(Player1, DestroyItem("XAQUIVER"))
 		StartCutSceneMode()
 		StartCutScene("XAPENT")
 	~

@@ -12,12 +12,24 @@ THEN
 END
 
 IF
+	Global("XA_IncubusQuiver", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_IncubusQuiver", "GLOBAL", 2)
+		GiveItemCreate("XAQUIVER", Player1,1,0,0)
+		ActionOverride(Player1, SetItemFlags("XAQUIVER", IDENTIFIED,TRUE))
+		AddJournalEntry(@2, INFO)
+		Continue()
+END
+
+IF
 	Global("XA_IncubusSword", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_IncubusSword", "GLOBAL", 2)
 		GiveItemCreate("XASWORD", Player1,1,0,0)
 		ActionOverride(Player1, SetItemFlags("XASWORD", IDENTIFIED,TRUE))
+		AddJournalEntry(@1, INFO)
 		Continue()
 END
 
@@ -28,6 +40,7 @@ THEN
 		SetGlobal("XA_IncubusGoose", "GLOBAL", 2)
 		GiveItemCreate("XACHICK", Player1,1,0,0)
 		ActionOverride(Player1, SetItemFlags("XACHICK", IDENTIFIED,TRUE))
+		AddJournalEntry(@4, INFO)
 		Continue()
 END
 
@@ -38,6 +51,7 @@ THEN
 		SetGlobal("XA_IncubusRing", "GLOBAL", 2)
 		GiveItemCreate("XAMSRING", Player1,1,0,0)
 		ActionOverride(Player1, SetItemFlags("XAMSRING", IDENTIFIED,TRUE))
+		AddJournalEntry(@3, INFO)
 		Continue()
 END
 
