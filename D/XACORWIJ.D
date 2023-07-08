@@ -9,6 +9,112 @@
 */ 
 BEGIN ~XACORWIJ~
 
+//{ Dialog J-84 - Leave after SoA
+IF ~
+	OR(2)
+		Global("XA_CorwinDepart", "GLOBAL", 1)
+		Global("XA_CorwinDepart", "GLOBAL", 2)
+~ THEN BEGIN XA_LeaveAfterSoA_100
+	SAY @313 /* ~Finally, it's over. Congratulations on your victory, <CHARNAME>.~  */
+	
+	IF ~~ THEN REPLY @315 /* ~What will you do now?~ */
+	GOTO XA_LeaveAfterSoA_100_2
+	
+	IF ~~ THEN REPLY @316 /* ~Thank you, Captain.~*/
+	GOTO XA_LeaveAfterSoA_100_2
+END
+
+
+IF ~~ THEN BEGIN XA_LeaveAfterSoA_100_2
+	SAY @314 /* ~I'm heading back to Baldur's Gate. The elves were kind enough to arrange a caravan to take me home.~*/
+	
+	IF ~~ THEN
+	GOTO XA_LeaveAfterSoA_100_3
+	
+	IF ~
+		Global("DornRomanceActive", "GLOBAL", 2)
+		Global("XA_CorwinDepart", "GLOBAL", 1)
+	~ THEN
+	GOTO XA_LeaveAfterSoA_100_Dorn
+	
+	IF ~
+		Global("HexxatRomanceActive", "GLOBAL", 2)
+		Global("XA_CorwinDepart", "GLOBAL", 1)
+	~ THEN
+	GOTO XA_LeaveAfterSoA_100_Hexxat
+	
+	IF ~
+		Global("ViconiaRomanceActive", "GLOBAL", 2)
+		Global("XA_CorwinDepart", "GLOBAL", 1)
+	~ THEN
+	GOTO XA_LeaveAfterSoA_100_Viconia
+END
+
+IF ~~ THEN BEGIN XA_LeaveAfterSoA_100_3
+	SAY @320 /* ~I know we've had our ups and downs, but I wish you well. If you ever want to give us another try, come and see me in Baldur's Gate. Farewell.~*/
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_CorwinDepart", "GLOBAL", 3)
+		ActionOverride(Player1, TakeCreatureItems("XACORWIN", BACKPACK))
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
+		LeaveParty()
+		StartCutSceneMode()
+		StartCutScene("XA100EX")
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_LeaveAfterSoA_100_Dorn
+	SAY @319  /* ~I'd stay and celebrate, but my stomach can't stand the sight of you and Dorn together any longer. Farewell.~*/
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_CorwinDepart", "GLOBAL", 3)
+		ActionOverride(Player1, TakeCreatureItems("XACORWIN", BACKPACK))
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
+		LeaveParty()
+		StartCutSceneMode()
+		StartCutScene("XA100EX")
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_LeaveAfterSoA_100_Hexxat
+	SAY @318  /* ~I'd stay and celebrate, but my stomach can't stand the sight of you and Dorn together any longer. Farewell.~*/
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_CorwinDepart", "GLOBAL", 3)
+		ActionOverride(Player1, TakeCreatureItems("XACORWIN", BACKPACK))
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
+		LeaveParty()
+		StartCutSceneMode()
+		StartCutScene("XA100EX")
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_LeaveAfterSoA_100_Viconia
+	SAY @317  /* ~I'd stay and celebrate, but my stomach can't stand the sight of you and Viconia together any longer. Farewell.~*/
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_CorwinDepart", "GLOBAL", 3)
+		ActionOverride(Player1, TakeCreatureItems("XACORWIN", BACKPACK))
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
+		LeaveParty()
+		StartCutSceneMode()
+		StartCutScene("XA100EX")
+	~
+	EXIT
+END
+//}
+
 //{ Dialog J-83 - Romance Conflict
 
 IF ~
@@ -229,14 +335,20 @@ END
 IF ~~ THEN BEGIN XA_RomanceConflict_EndCR_Bad
 	SAY @1744 /* ~Unbelievable! Irenicus must've done a number on your senses. There's no other explanation for you choosing that beast over me. As soon as this mission is over, we're through.~  */
 	
-	IF ~~ THEN 
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LeaveAfterSoA", "GLOBAL", 1)
+	~
 	EXIT
 END
 
 IF ~~ THEN BEGIN XA_RomanceConflict_EndCR_Bad2
 	SAY @1749 /* ~Unbelievable! Irenicus must've done a number on your senses. There's no other explanation for you choosing that ... that slut, over me. As soon as this mission is over, we're through.~   */
 	
-	IF ~~ THEN 
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LeaveAfterSoA", "GLOBAL", 1)
+	~	
 	EXIT
 END
 

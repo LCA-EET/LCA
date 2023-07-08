@@ -2135,7 +2135,7 @@ EXTEND_BOTTOM SUELLE2 18
 	DO ~
 		ClearAllActions()
 		StartCutSceneMode()
-		StartCutSceneEx("XA100a",FALSE)
+		StartCutSceneEx("XA100A",FALSE)
 	~
 	EXIT
 	
@@ -2147,7 +2147,41 @@ EXTEND_BOTTOM SUELLE2 18
 	DO ~
 		ClearAllActions()
 		StartCutSceneMode()
-		StartCutSceneEx("XA100b",FALSE)
+		StartCutSceneEx("XA100B",FALSE)
+	~
+	EXIT
+	
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+		ReputationLT(Player1,10)
+		Global("XA_LeaveAfterSoA", "GLOBAL", 1)
+		OR(3)
+			Global("DornRomanceActive","GLOBAL",2)
+			Global("HexxatRomanceActive","GLOBAL",2)
+			Global("ViconiaRomanceActive","GLOBAL",2)
+	~
+	THEN
+	DO ~
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutSceneEx("XA100C",FALSE)
+	~
+	EXIT
+	
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+		ReputationGT(Player1,9)
+		Global("XA_LeaveAfterSoA", "GLOBAL", 1)
+		OR(3)
+			Global("DornRomanceActive","GLOBAL",2)
+			Global("HexxatRomanceActive","GLOBAL",2)
+			Global("ViconiaRomanceActive","GLOBAL",2)
+	~
+	THEN 
+	DO ~
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutSceneEx("XA100D",FALSE)
 	~
 	EXIT
 END

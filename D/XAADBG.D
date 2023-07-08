@@ -973,6 +973,41 @@ IF ~~ THEN BEGIN XA_XACORWIJ_Test
 	~
 	EXIT
 
+	IF ~~ THEN REPLY @553 /* ~Dialog J-84 Depart 1, Dorn~ */
+	DO ~
+		SetGlobal("XA_CorwinDepart", "GLOBAL", 1)
+		SetGlobal("DornRomanceActive", "GLOBAL", 2)
+		Wait(1)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @554 /* ~Dialog J-84 Depart 1, Hexxat~ */
+	DO ~
+		SetGlobal("XA_CorwinDepart", "GLOBAL", 1)
+		SetGlobal("HexxatRomanceActive", "GLOBAL", 2)
+		Wait(1)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @555 /* ~Dialog J-84 Depart 1, Viconia~ */
+	DO ~
+		SetGlobal("XA_CorwinDepart", "GLOBAL", 1)
+		SetGlobal("ViconiaRomanceActive", "GLOBAL", 2)
+		Wait(1)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @556 /* ~Dialog J-84 Depart 2~ */
+	DO ~
+		SetGlobal("XA_CorwinDepart", "GLOBAL", 2)
+		Wait(1)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @26
 	GOTO XA_MainMenu
 
