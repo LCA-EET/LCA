@@ -318,6 +318,8 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 //}
 
 //{ Script Modifications
+	EXTEND_TOP ~BOTSMITH.BCS~ ~LCA/BAF/XACESPY.BAF~
+	EXTEND_TOP ~AR2802.BCS~ ~LCA/BAF/XAAR2802.BAF~
 	EXTEND_TOP ~BD0104.BCS~ ~LCA/BAF/XABD0104.BAF~
 	EXTEND_TOP ~NOBLBAZ.BCS~ ~LCA/BAF/XANOBMOV.BAF~
 	EXTEND_TOP ~NOBWBAZ.BCS~ ~LCA/BAF/XANOBWOV.BAF~
@@ -900,6 +902,14 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	COPY ~LCA/CRE/XAVIRGIL.CRE~ ~override~
 	SAY NAME1 @063
 	SAY NAME2 @063
+	
+	COPY ~LCA/CRE/XABOWYER.CRE~ ~override~
+	SAY NAME1 @150
+	SAY NAME2 @150
+	
+	COPY ~LCA/CRE/XAESMITH.CRE~ ~override~
+	SAY NAME1 @151
+	SAY NAME2 @151
 //}
 
 //{ Modifications to Existing Creatures
@@ -1299,7 +1309,7 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	SAY DESC @038
 	//}
 
-	//{ Corwin's Armor (Improved)
+	//{ Corwin's Armor +3
 	COPY ~LCA/ITM/XACORCHN.ITM~ ~override~
 	SAY NAME1 @022
 	SAY NAME2 @022
@@ -1307,21 +1317,42 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	SAY DESC @023
 	//}
 	
+	//{ Corwin's Armor +4
+	COPY ~LCA/ITM/XACORCH4.ITM~ ~override~
+	SAY NAME1 @152
+	SAY NAME2 @152
+	SAY UNIDENTIFIED_DESC @153
+	SAY DESC @153
+	//}
+	
 	//{ Quiver + 4
 	COPY ~LCA/ITM/XAQUIVER.ITM~ ~override~
 	SAY NAME2 @140
 	SAY DESC @141
-	
-	//{ Corwin's Bow + 2 (Improved)
-	COPY ~LCA/ITM/XACORBOW.ITM~ ~override~
-	SAY NAME2 @020
-	SAY DESC @021
 	//}
 	
-	//{ Corwin's Bow + 4 (Gond)
-	COPY ~LCA/ITM/XACORBO2.ITM~ ~override~
-	SAY NAME2 @139
-	SAY DESC @138
+	//{ Corwin's Bow + 2 
+	COPY ~LCA/ITM/XACORBOW.ITM~ ~override~
+	SAY NAME2 @142
+	SAY DESC @143
+	//}
+	
+	//{ Corwin's Bow + 3 
+	COPY ~LCA/ITM/XACORBO3.ITM~ ~override~
+	SAY NAME2 @144
+	SAY DESC @145
+	//}
+	
+	//{ Corwin's Bow + 4 
+	COPY ~LCA/ITM/XACORBO4.ITM~ ~override~
+	SAY NAME2 @146
+	SAY DESC @147
+	//}
+	
+	//{ Corwin's Bow + 5 
+	COPY ~LCA/ITM/XACORBO5.ITM~ ~override~
+	SAY NAME2 @148
+	SAY DESC @149
 	//}
 	
 	//{ Farseer

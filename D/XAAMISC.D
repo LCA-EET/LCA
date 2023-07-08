@@ -120,6 +120,7 @@
 	~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer","GLOBAL",2)
 	~
+	//}
 
 	//{ BDBENCE
 	ALTER_TRANS BDBENCE
@@ -143,7 +144,169 @@
 		~EXIT~
 	END
 	//}
+	
+
 //}
+
+//{ BOTSMITH
+	ADD_STATE_TRIGGER BOTSMITH 2
+	~
+		Global("XA_MakeCorbow4", "GLOBAL", 0)
+		Global("XA_MakeCorbow5", "GLOBAL", 0)
+	~
+
+	EXTEND_BOTTOM BOTSMITH 78
+		
+		IF ~
+			OR(2)
+				PartyHasItem("XACORBOW")
+				PartyHasItem("XACORBO3")
+		~ 
+		THEN REPLY @89 /* ~Understood.~*/
+		GOTO 82
+	
+		IF ~
+			!IsGabber("XACORWIN")
+			OR(2)
+				PartyHasItem("XACORBOW")
+				PartyHasItem("XACORBO3")
+		~
+		THEN REPLY @39 /* ~What about Corwin's bow? Could the string be used to improve it?~ */
+		GOTO XA_CorwinBowGond
+		
+		IF ~
+			IsGabber("XACORWIN")
+			OR(2)
+				PartyHasItem("XACORBOW")
+				PartyHasItem("XACORBO3")
+		~
+		THEN REPLY @72 /* ~What about my bow? Could the string be used to improve it?~ */
+		GOTO XA_CorwinBowGond
+	END
+
+	EXTEND_BOTTOM BOTSMITH 79
+		IF ~
+			!IsGabber("XACORWIN")
+			OR(2)
+				PartyHasItem("XACORBOW")
+				PartyHasItem("XACORBO3")
+		~
+		THEN REPLY @39 /* ~What about Corwin's bow? Could the string be used to improve it?~ */
+		GOTO XA_CorwinBowGond
+		
+		IF ~
+			IsGabber("XACORWIN")
+			OR(2)
+				PartyHasItem("XACORBOW")
+				PartyHasItem("XACORBO3")
+		~
+		THEN REPLY @72 /* ~What about my bow? Could the string be used to improve it?~ */
+		GOTO XA_CorwinBowGond
+	END
+	
+	EXTEND_BOTTOM BOTSMITH 80
+		IF ~
+			!IsGabber("XACORWIN")
+			OR(2)
+				PartyHasItem("XACORBOW")
+				PartyHasItem("XACORBO3")
+		~
+		THEN REPLY @39 /* ~What about Corwin's bow? Could the string be used to improve it?~ */
+		GOTO XA_CorwinBowGond
+		
+		IF ~
+			IsGabber("XACORWIN")
+			OR(2)
+				PartyHasItem("XACORBOW")
+				PartyHasItem("XACORBO3")
+		~
+		THEN REPLY @72 /* ~What about my bow? Could the string be used to improve it?~ */
+		GOTO XA_CorwinBowGond
+	END
+	
+	EXTEND_BOTTOM BOTSMITH 81
+		IF ~
+			!IsGabber("XACORWIN")
+			OR(2)
+				PartyHasItem("XACORBOW")
+				PartyHasItem("XACORBO3")
+		~
+		THEN REPLY @39 /* ~What about Corwin's bow? Could the string be used to improve it?~ */
+		GOTO XA_CorwinBowGond
+		
+		IF ~
+			IsGabber("XACORWIN")
+			OR(2)
+				PartyHasItem("XACORBOW")
+				PartyHasItem("XACORBO3")
+		~
+		THEN REPLY @72 /* ~What about my bow? Could the string be used to improve it?~ */
+		GOTO XA_CorwinBowGond
+	END
+	
+	APPEND BOTSMITH
+		IF ~
+			OR(2)
+				Global("XA_MakeCorbow5", "GLOBAL", 2)
+				Global("XA_MakeCorbow4", "GLOBAL", 2)
+		~ THEN BEGIN XA_BowCreated
+			SAY #70888 /* ~Enjoy! Now Cespenar goes back to his duties, oh yes! Lots of goodies to find, lots to collect!~ [BOTSM10] */
+			
+			IF ~~ THEN
+			DO ~
+				SetGlobal("XA_MakeCorbow5", "GLOBAL", 0)
+				SetGlobal("XA_MakeCorbow4", "GLOBAL", 0)
+			~
+			EXIT
+		END
+	
+		IF ~~ THEN BEGIN XA_CorwinBowGond
+			SAY @71  /*~Ooo! Lets me see, lets me see! Very nice.... yes! Cespenar can replace the string on this bow, with Bowstring of Gond! Make very powerful, for 5000 gold. You wants?~ */
+			
+			IF ~
+				PartyGoldGT(4999)
+				PartyHasItem("XACORBO3")
+			~
+			THEN REPLY #66862 /* ~Sure, go ahead.~ */
+			DO ~
+				SetGlobal("XA_MakeCorbow5", "GLOBAL", 1)
+				TakePartyGold(5000)
+				TakePartyItemNum("XACORBO3",1)
+				DestroyItem("XACORBO3")
+				TakePartyItemNum("compon10",1)
+				DestroyItem("compon10")
+				DestroyGold(5000)
+			~
+			GOTO 11
+			
+			IF ~
+				PartyGoldGT(4999)
+				PartyHasItem("XACORBOW")
+			~
+			THEN REPLY #66862 /* ~Sure, go ahead.~ */
+			DO ~
+				SetGlobal("XA_MakeCorbow4", "GLOBAL", 1)
+				TakePartyGold(5000)
+				TakePartyItemNum("XACORBOW",1)
+				DestroyItem("XACORBOW")
+				TakePartyItemNum("compon10",1)
+				DestroyItem("compon10")
+				DestroyGold(5000)
+			~
+			GOTO 11
+			
+			IF ~
+				PartyGoldLT(5000)
+			~ THEN REPLY #66606 /* ~I don't have that much gold.~ */
+			GOTO 10
+			
+			IF ~~ THEN REPLY #66787 /* ~No. What else?~ */ 
+			GOTO 82
+		END
+	END
+//}
+
+
 //{ SARMEL01
 EXTEND_BOTTOM SARMEL01 68
 	IF ~

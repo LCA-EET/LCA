@@ -1,0 +1,9 @@
+IF
+	GlobalLT("XA_BowSmithSpawn", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("XABOWYER", [175.330], E)
+		CreateCreature("XAESMITH", [640.310], W)
+		SetGlobal("XA_BowSmithSpawn", "MYAREA", 1)
+		Continue()
+END

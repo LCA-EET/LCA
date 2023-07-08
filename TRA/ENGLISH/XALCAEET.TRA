@@ -63,31 +63,8 @@ Equipped abilities:
 Usable by: <CHARNAME>
 ~
 @019 = ~Corwin's Amulet~
-@020 = ~Corwin's Bow +2~
-@021 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
-
-The bow was further enhanced by Flaming Fist mages to help Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus.
-
-Equipped abilities: 
-– Dexterity: +1
-
-Combat abilities: 
-– 15% chance per hit of entangling the target for 3 rounds (Save vs. Breath negates)
-
-STATISTICS:
-
-THAC0: +3
-Damage: +3
-Speed Factor: 6
-Proficiency Type: Longbow
-Type: Two-handed
-Requires:
- 18 Strength
-
-Weight: 9
-
-Usable by: Corwin
-~
+@020 = ~~
+@021 = ~~
 @022 = ~Corwin's Armor +3~
 @023 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
 
@@ -105,9 +82,7 @@ Requires:
 
 Weight: 7
 
-Usable by: Corwin
-~
-
+Usable by: Corwin~
 @024 = ~Archery Competition Signup~
 @025 = ~Debug Assistant~
 @026 = ~This mod is exclusive to EET.~
@@ -672,21 +647,55 @@ Weight: 1~
 
 I freed the genie Malaaq by retrieving a flask from three dryads and giving it to him. In return, he returned some equipment that he was keeping in storage for the wizard Irenicus. The items include a magical weapon that I will undoubtedly make use of, and a dagger that the genie referred to as a prison of souls. Could this be the Soultaker dagger used to murder and imprison Skie Silvershield? If it is, I need to find a way to have it sent to Baldur's Gate as soon as possible.~
 @137 = ~You are welcome to try. While I am bound, neither myself nor the flask can be damaged. While I am bound, I cannot give you the master's dagger, or your weapon.~
-@138 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+@138 = ~~
+@139 = ~~
+@140 = ~Quiver of Plenty + 4~
+@141 = ~How the demon came to be in possession of this quiver, you'll never know. What is certain, however, is the devastating impact that these powerfully enchanted arrows will have on your enemies.
 
-The bow was further enhanced by Flaming Fist mages to help then Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. 
+STATISTICS:
 
-With the addition of the Bowstring of Gond, this weapon has reached its full potential. In the hands of an archer as talented as Corwin, it is capable of dealing death faster than anything you've ever seen. 
+Equipped abilities:
+– Unlimited +4 arrows
+
+Weight: 0~
+@142 = ~Corwin's Bow +2~
+@143 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+
+The bow was further enhanced by Flaming Fist mages to help Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus.
 
 Equipped abilities: 
 – Dexterity: +1
 
 Combat abilities: 
-– 20% chance per hit of entangling the target for 3 rounds (Save vs. Breath negates)
+– 15% chance per hit of entangling the target for 3 rounds (Save vs. Breath negates)
 
 STATISTICS:
 
-THAC0: +5
+THAC0: +3
+Damage: +4
+Speed Factor: 5
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 9
+
+Usable by: Corwin~
+@144 = ~Corwin's Bow +3~
+@145 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+
+The bow was further enhanced by Flaming Fist mages to help Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. Additional enchantments were placed on the weapon by the master bowyer of Suldanessellar, as a token of gratitude for saving the elven city.
+
+Equipped abilities: 
+– Dexterity: +1
+
+Combat abilities: 
+– 19% chance per hit of entangling the target for 3 rounds (Save vs. Breath negates)
+
+STATISTICS:
+
+THAC0: +4
 Damage: +5
 Speed Factor: 4
 Proficiency Type: Longbow
@@ -697,13 +706,78 @@ Requires:
 Weight: 9
 
 Usable by: Corwin~
-@139 = ~Corwin's Bow + 4~
-@140 = ~Quiver of Plenty + 4~
-@141 = ~How or why the Incubus was in possession of this quiver, you'll never know. What is certain is the devastating impact that these powerfully enchanted arrows will have on your enemies.
+@146 = ~Corwin's Bow +4~
+@147 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+
+The bow was further enhanced by Flaming Fist mages to help then Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. 
+
+With the addition of the Bowstring of Gond, this weapon has reached its full potential. In the hands of an archer as talented as Corwin, it is capable of dealing death faster than anything you've ever seen. 
+
+Equipped abilities: 
+– Dexterity: +1
+
+Combat abilities: 
+– 22% chance per hit of entangling the target for 3 rounds (Save vs. Breath negates)
+– Extra half attack per round
+
+STATISTICS:
+
+THAC0: +5
+Damage: +6
+Speed Factor: 3
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 9
+
+Usable by: Corwin~
+@148 = ~Corwin's Bow +5~
+@149 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+
+The bow was further enhanced by Flaming Fist mages to help then Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. Additional enchantments were placed on the weapon by the master bowyer of Suldanessellar, as a token of gratitude for saving the elven city.
+
+With the addition of the Bowstring of Gond, this weapon has reached its full potential. In the hands of an archer as talented as Corwin, it is capable of dealing death faster than anything you've ever seen. 
+
+Equipped abilities: 
+– Dexterity: +1
+
+Combat abilities: 
+– 24% chance per hit of entangling the target for 3 rounds (Save vs. Breath negates)
+– Extra half attack per round
+
+STATISTICS:
+
+THAC0: +6
+Damage: +7
+Speed Factor: 2
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 9
+
+Usable by: Corwin~
+@150 = ~Master Bowyer~
+@151 = ~Elven Smith~
+@152 = ~Corwin's Armor +4~
+@153 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
+
+The armor was further enhanced by Flaming Fist mages to help Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. Additional enchantments were placed on the armor by the master smith of Suldanessellar, as a token of gratitude for saving the elven city.
 
 STATISTICS:
 
 Equipped abilities:
-– Unlimited +4 arrows
+– Movement Speed: +1
+– Magic Resistance: +15%
+– Saving Throws: +1
 
-Weight: 0~
+Armor Class: 1 (-1 vs. slashing, 3 vs. crushing)
+Requires: 
+ 5 Strength
+
+Weight: 7
+
+Usable by: Corwin~

@@ -1837,6 +1837,13 @@ END
 IF ~~ THEN BEGIN XA_TestInteraction
 	SAY @280
 	
+	IF ~~ THEN REPLY @563 /* ~Cespenar.~ */
+	DO ~
+		CreateCreature("BOTSMITH", [-1.-1], N)
+		Wait(1)
+	~	
+	EXIT
+	
 	IF ~~ THEN REPLY @535
 	DO ~
 		SetGlobal("XA_XACC4_Debug","GLOBAL", 1)
@@ -2603,6 +2610,64 @@ END
 
 IF ~~ THEN BEGIN XA_Menu_CreateItem
 	SAY @35 /* ~What item do you want me to create for you?~ */
+	
+	IF ~~ THEN REPLY @562  /* ~Bowstring of Gond.~*/
+	DO ~
+		GiveItemCreate("compon10", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("compon10", IDENTIFIED,TRUE))
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @560 /*~Transform Corwin Armor.~ */
+	DO ~
+		ActionOverride(Player1, TransformItem("XACORCHN", "XACORCH4"))
+		ActionOverride(Player2, TransformItem("XACORCHN", "XACORCH4"))
+		ActionOverride(Player3, TransformItem("XACORCHN", "XACORCH4"))
+		ActionOverride(Player4, TransformItem("XACORCHN", "XACORCH4"))
+		ActionOverride(Player5, TransformItem("XACORCHN", "XACORCH4"))
+		ActionOverride(Player6, TransformItem("XACORCHN", "XACORCH4"))
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @561 /* ~Transform Corwin Bow.~*/
+	DO ~
+		ActionOverride(Player1, TransformItem("XACORBOW", "XACORBO3"))
+		ActionOverride(Player2, TransformItem("XACORBOW", "XACORBO3"))
+		ActionOverride(Player3, TransformItem("XACORBOW", "XACORBO3"))
+		ActionOverride(Player4, TransformItem("XACORBOW", "XACORBO3"))
+		ActionOverride(Player5, TransformItem("XACORBOW", "XACORBO3"))
+		ActionOverride(Player6, TransformItem("XACORBOW", "XACORBO3"))
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @559
+	DO ~
+		GiveItemCreate("XACORCH4", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XACORCH4", IDENTIFIED,TRUE))
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @558
+	DO ~
+		GiveItemCreate("XAQUIVER", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XAQUIVER", IDENTIFIED,TRUE))
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @557
+	DO ~
+		GiveItemCreate("BDBOW06", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("BDBOW06", IDENTIFIED,TRUE))
+		GiveItemCreate("XACORBOW", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XACORBOW", IDENTIFIED,TRUE))
+		GiveItemCreate("XACORBO3", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XACORBO3", IDENTIFIED,TRUE))
+		GiveItemCreate("XACORBO4", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XACORBO4", IDENTIFIED,TRUE))
+		GiveItemCreate("XACORBO5", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XACORBO5", IDENTIFIED,TRUE))
+	~
+	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @319
 	DO ~
