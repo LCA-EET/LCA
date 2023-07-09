@@ -32,7 +32,6 @@
 	THIS IS NOT NECESSARY WHEN YOUR EXTEND_BOTTOM DOES NOT INCLUDE A REPLY.
 */
 
-*/
 //{ Altered Transitions	
 	ADD_TRANS_ACTION KERRAC
 	BEGIN 3 4 5 6 END
@@ -194,6 +193,57 @@
 	//}
 	
 
+//}
+
+//{ FINSOL01
+	EXTEND_BOTTOM FINSOL01 5
+		IF ~
+			!Dead("XACORWIN")
+			Global("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
+		~ THEN REPLY @73 /*~Before I decide anything, tell me — does my child also carry the essence?~*/
+		GOTO XA_Twins
+	END
+	
+	EXTEND_BOTTOM FINSOL01 27
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ EXTERN XACORWIJ XA_Choice
+	END
+	
+	APPEND FINSOL01
+		IF ~~ THEN BEGIN XA_Twins
+			SAY @74 /* ~No. The children growing in your companion's womb are free of the taint of Bhaal.~ */
+			
+			IF ~~ THEN REPLY @80 /*~Wait... children? You mean...~*/
+			GOTO XA_Twins3A
+			
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~ THEN
+			EXTERN XACORWIJ XA_Twins2
+		END
+		
+		IF ~~ THEN BEGIN XA_Twins3 
+			SAY @76 /* ~Yes, I can see your future clearly, child. You will give birth to fraternal twins.~*/
+			
+			IF ~~ THEN
+			DO ~
+				SetGlobal("XA_CorwinTwins", "GLOBAL", 1)
+			~
+			EXTERN XACORWIJ XA_Twins4
+		END
+		
+		IF ~~ THEN BEGIN XA_Twins3A
+			SAY @79 /* ~Yes, her future is clear to me, child. She will give birth to fraternal twins. Now, let us get back to the matter at hand. A choice lies before you — one that will shape the future of the planes.~*/
+			COPY_TRANS FINSOL01 5
+		END
+		
+		IF ~~ THEN BEGIN XA_Twins5
+			SAY @78 /* ~Enough. Let us get back to the matter at hand. <CHARNAME>, a choice lies before you. One that will shape the future of the planes.~ */
+			COPY_TRANS FINSOL01 5
+		END
+	END
 //}
 
 //{ BOTSMITH

@@ -9,6 +9,67 @@
 */ 
 BEGIN ~XACORWIJ~
 
+//{ FINSOL01 
+	IF ~~ THEN BEGIN XA_Twins2
+		SAY @117 /*~Thank goodness... wait... children? You mean...~*/
+		
+		IF ~~ THEN
+		EXTERN FINSOL01 XA_Twins3 
+	END
+	
+	IF ~~ THEN BEGIN XA_Twins4
+		SAY @118 /* ~Oh my...~ */
+		
+		IF ~~ THEN
+		EXTERN FINSOL01 XA_Twins5 
+	END
+	
+	IF ~~ THEN BEGIN XA_Choice
+		SAY @119 /*~Oh, <CHARNAME>. I... I knew this was coming. You did too, I think... those nightmares you had about this very decision. I tried to — to somehow convince myself that there was a future for us, and our child.~*/
+		
+		= @120 /* ~(She takes hold of your hand.)~ */
+		
+		= @121 /* ~I want you to know that I'll always treasure our time together... and I'll tell our children about what an amazing man their father was. A hero, in every sense of the word. I love you, <CHARNAME>, now and always.~ */
+		
+		IF ~~ THEN REPLY @122 /* ~I don't want to leave you, Schael. I love you, more than anything.~ */
+		GOTO XA_ChoiceA
+		
+		IF ~~ THEN REPLY @126 /* ~You think I should give up the essence?~*/
+		GOTO XA_ChoiceB
+		
+		IF ~~ THEN REPLY @128 /* ~I'm sorry, Schael. I feel I have to go forward and accept my birthright.~ */
+		GOTO XA_ChoiceC
+		
+		IF ~~ THEN REPLY @106 /* ~I don't know what I should do.~ */
+		GOTO XA_ChoiceB
+		
+		IF ~~ THEN REPLY @44 /* ~Schael, you're the strongest, most determined woman I've ever known. You'll be fine.~ */
+		GOTO XA_ChoiceD
+		
+	END
+	
+	IF ~~ THEN BEGIN XA_ChoiceA
+		SAY @123 /* ~Love, children, and a life together with you... it's all that I could ever want. But I don't have to decide between that, and godhood. I don't know how anyone could...~ */
+	END
+	
+	IF ~~ THEN BEGIN XA_ChoiceB
+		SAY @127 /* ~I won't lie to you. I want you to stay. Love, children, and a life together with you... it's all that I could ever want. But I don't have to decide between that, and godhood. I don't know how anyone could...~ */
+	END
+	
+	IF ~~ THEN BEGIN XA_ChoiceC
+		SAY @129 /* ~I know. After everything you've been through... everything you've had to endure. You deserve it.~ */
+		
+		GOTO XA_ChoiceB
+	END
+	
+	IF ~~ THEN BEGIN XA_ChoiceD
+		SAY @45 /*~It's going to hurt, for a while. The pain of not having you near me, of not waking up in your arms... it might never go away. But you're right... I'll learn to live with it.~*/
+		
+		IF ~~ THEN
+		GOTO XA_ChoiceB
+	END
+//}
+
 //{ Dialog J-84 - Leave after SoA
 IF ~
 	OR(2)
@@ -1074,6 +1135,7 @@ IF ~
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_CorwinPregnant", "GLOBAL", 5)
+		SetGlobal("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinPregnant2_1
 END
@@ -5668,6 +5730,7 @@ THEN BEGIN XA_SkieMessageDelivered_Romance
 	GOTO XAA31A
 END
 //}
+
 
 IF ~~ THEN BEGIN XA_NotPaying
 	SAY @1370 /* ~We're not paying for stolen merchandise, gnome. Hand it over, or I'll have you arrested.~*/
