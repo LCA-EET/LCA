@@ -2371,6 +2371,7 @@ END
 			@67 /* ~And where is your husband? Is he not helping to raise her?~  */
 			== XACORWIB
 			@68 /* ~I'm not married - her father has never been a part of her life, which in this case is a good thing. ~ */
+			= @59 /* ~You know, it's ironic that you'd ask about him. When Rohma was born, he wanted me to leave her at a temple of the Radiant Heart. Could you imagine? Giving up my baby like that? That was when I knew that it would never work between us.~ */
 			== KELDORJ
 			@69 /* ~I see... it's important for a child's father, or a father figure, to be a part of a child's life.~  */
 			== XACORWIB
@@ -2414,6 +2415,7 @@ END
 			@67 /* ~And where is your husband? Is he not helping to raise her?~  */
 			== XACORWIB
 			@68 /* ~I'm not married - her father has never been a part of her life, which in this case is a good thing. ~ */
+			= @59 /* ~You know, it's ironic that you'd ask about him. When Rohma was born, he wanted me to leave her at a temple of the Radiant Heart. Could you imagine? Giving up my baby like that? That was when I knew that it would never work between us.~ */
 			== KELDORJ
 			@69 /* ~I see... it's important for a child's father, or a father figure, to be a part of a child's life.~  */
 			== XACORWIB
