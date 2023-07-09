@@ -1008,6 +1008,36 @@ IF ~~ THEN BEGIN XA_XACORWIJ_Test
 	~
 	EXIT
 	
+	IF ~~ THEN REPLY @565 
+	DO ~
+		SetGlobal("XA_FINSOL01_Debug", "GLOBAL", 1)
+		SetGlobal("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 0)
+		SetGlobal("XA_CorwinTwins", "GLOBAL", 0)
+		Wait(1)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @566 
+	DO ~
+		SetGlobal("XA_FINSOL01_Debug", "GLOBAL", 1)
+		SetGlobal("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
+		SetGlobal("XA_CorwinTwins", "GLOBAL", 0)
+		Wait(1)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @567 
+	DO ~
+		SetGlobal("XA_FINSOL01_Debug", "GLOBAL", 1)
+		SetGlobal("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
+		SetGlobal("XA_CorwinTwins", "GLOBAL", 1)
+		Wait(1)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @26
 	GOTO XA_MainMenu
 

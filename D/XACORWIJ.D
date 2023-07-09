@@ -9,7 +9,101 @@
 */ 
 BEGIN ~XACORWIJ~
 
-//{ FINSOL01 
+//{ FINSOL01 Debug
+	IF ~
+		Global("XA_FINSOL01_Debug", "GLOBAL", 1)
+	~ THEN BEGIN XA_FINSOL01_Debug
+		SAY @482
+		
+		IF ~
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_FINSOL01_Debug", "GLOBAL", 0)
+		~
+		GOTO XA_Choice
+		
+		IF ~
+			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_FINSOL01_Debug", "GLOBAL", 0)
+		~
+		GOTO XA_Choice_NonRomance
+	END
+//}
+
+//{ FINSOL01
+	//{ Chose to Stay
+	IF ~~ THEN BEGIN XA_StayMortal
+		SAY @625 /* ~Wh...What? I - I don't believe it. You chose to stay, instead of becoming a god?~ */
+		
+		IF ~~ THEN REPLY @626 /* ~I never wanted any of that, Schael. All I want is a life together with you.~ */
+		GOTO XA_HappyEnd
+		
+		IF ~
+			Global("XA_HappyEnding","GLOBAL",1)
+		~ THEN REPLY @627 /* ~Don't you remember? I told you once long ago that some stories have happy endings. I'd like for our story to be one of them, Schael.~ */
+		GOTO XA_HappyEnd2
+		
+		IF ~~ THEN REPLY @602 /* ~Why so surprised? If evil wizards, demons, dragons, and liches couldn't keep us apart... wait, did I forget anything?~ */
+		GOTO XA_HappyEnd3
+	END
+	
+	IF ~~ THEN BEGIN XA_HappyEnd
+		SAY @628 /* ~(She covers her mouth, as her eyes fill with tears of joy. After a moment, she regains her composure.)~ */
+	
+		= @600 /* ~And you shall have it, hero.~ */
+		
+		IF ~~ THEN
+		GOTO XA_HappyEnd_END
+	END
+	
+	IF ~~ THEN BEGIN XA_HappyEnd2
+		SAY @628 /* ~(She covers her mouth, as her eyes fill with tears of joy. After a moment, she regains her composure.)~ */
+		
+		= @615 /* ~And it will be, love, I promise you.~ */
+		
+		IF ~~ THEN
+		GOTO XA_HappyEnd_END
+	END
+	
+	IF ~~ THEN BEGIN XA_HappyEnd3
+		SAY @599 /* ~(She laughs, as her eyes fill with tears of joy.)~ */
+		
+		= @598 /* ~Let's see... Kobolds. Crusaders. Also, Beholders, Mind Flayers, Basilisks... and who can forget the Bhaalspawn...~ */
+		
+		IF ~~ THEN REPLY @597 /* ~Oh, right, can't forget the Eye Tyrants. But, as I was saying, if all of those beasties couldn't keep us apart, what would make you think that the promise of godhood would? I love you Schael. All I want is a life together with you.~*/
+		GOTO XA_HappyEnd3A
+	END
+	
+	IF ~~ THEN BEGIN XA_HappyEnd3A
+		SAY @600 /* ~And you shall have it, hero.~ */
+		
+		IF ~~ THEN
+		GOTO XA_HappyEnd_END
+	END
+	
+	IF ~~ THEN BEGIN XA_HappyEnd_END
+		SAY @613  /* ~(You share a tender and passionate embrace.)~ */
+		
+		= @601 /* ~Back to the city, then, as soon as we can.~ */
+		
+		COPY_TRANS FINSOL01 32
+	END
+	//}
+
+	//{ Non-Romance
+	IF ~~ THEN BEGIN XA_Choice_NonRomance
+		SAY @584 /* ~I don't envy your decision. To become a god... only to enter into a new struggle against other gods and planar powers. An endless battle, for perhaps all of eternity... I can't even begin to fathom what that would be like. Would you ever find peace? If I were in your shoes... well. I know what I'd choose.~*/
+		
+		= @585 /* ~Whatever you decide, <CHARNAME>, I want you to know that I appreciate everything you've done for me, for Rohma, and for Baldur's Gate. Thank you. It's been an honor to fight at your side, hero.~ */
+		
+		COPY_TRANS FINSOL01 27
+	END
+	//}
+ 
+	//{ Romance
 	IF ~~ THEN BEGIN XA_Twins2
 		SAY @117 /*~Thank goodness... wait... children? You mean...~*/
 		
@@ -25,11 +119,74 @@ BEGIN ~XACORWIJ~
 	END
 	
 	IF ~~ THEN BEGIN XA_Choice
-		SAY @119 /*~Oh, <CHARNAME>. I... I knew this was coming. You did too, I think... those nightmares you had about this very decision. I tried to — to somehow convince myself that there was a future for us, and our child.~*/
+		SAY @119 /*~Oh, my love. I... I knew this was coming. You did too, I think... those nightmares you had about this very decision. But knowing that this was coming doesn't make it any easier, now that it's here. I tried to — to somehow convince myself that there was a future for us... but deep down, I knew.~*/
 		
 		= @120 /* ~(She takes hold of your hand.)~ */
 		
-		= @121 /* ~I want you to know that I'll always treasure our time together... and I'll tell our children about what an amazing man their father was. A hero, in every sense of the word. I love you, <CHARNAME>, now and always.~ */
+		IF ~~ THEN
+		GOTO XA_ChoiceNotPregnant
+		
+		IF ~
+			Global("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
+		~ THEN GOTO XA_ChoicePregnant
+		
+		IF ~
+			Global("XA_CorwinTwins", "GLOBAL", 1)
+		~ THEN GOTO XA_ChoiceTwins
+	END
+	
+	//{ Not Pregnant Interactions
+	IF ~~ THEN BEGIN XA_ChoiceNotPregnant
+		SAY @178  /* ~I want you to know that I'll always treasure our time together... You're a hero, in every sense of the word. I love you, <CHARNAME>, now and always.~ */
+		
+		IF ~~ THEN REPLY @122 /* ~I don't want to leave you, Schael. I love you, more than anything.~ */
+		GOTO XA_ChoiceA_NP
+		
+		IF ~~ THEN REPLY @126 /* ~You think I should give up the essence?~*/
+		GOTO XA_ChoiceB_NP
+		
+		IF ~~ THEN REPLY @128 /* ~I'm sorry, Schael. I feel I have to go forward and accept my birthright.~ */
+		GOTO XA_ChoiceC_NP
+		
+		IF ~~ THEN REPLY @106 /* ~I don't know what I should do.~ */
+		GOTO XA_ChoiceB_NP
+		
+		IF ~~ THEN REPLY @44 /* ~Schael, you're the strongest, most determined woman I've ever known. You'll be fine.~ */
+		GOTO XA_ChoiceD_NP
+	END
+	
+	IF ~~ THEN BEGIN XA_ChoiceA_NP
+		SAY @179 /* ~Love, Rohma, and a life together with you... it's all that I could ever want. But I don't have to decide between that, and godhood. I don't know how anyone could...~ */
+		
+		IF ~~ THEN 
+		GOTO XA_ChoicePeace
+	END
+	
+	IF ~~ THEN BEGIN XA_ChoiceB_NP
+		SAY @185 /* ~I won't lie to you. I want you to stay. Love, Rohma, and a life together with you... it's all that I could ever want. But I don't have to decide between that, and godhood. I don't know how anyone could...~ */
+		
+		IF ~~ THEN 
+		GOTO XA_ChoicePeace
+	END
+	
+	IF ~~ THEN BEGIN XA_ChoiceC_NP
+		SAY @129 /* ~I know. After everything you've been through... everything you've had to endure. You deserve it.~ */
+		
+		IF ~~ THEN
+		GOTO XA_ChoiceB_NP
+	END
+	
+	IF ~~ THEN BEGIN XA_ChoiceD_NP
+		SAY @45 /*~It's going to hurt, for a while. The pain of not having you near me, of not waking up in your arms... it might never go away. Rohma will be heartbroken too. But you're right... we'll learn to live with it, and we'll be stronger for it.~*/
+		
+		IF ~~ THEN
+		GOTO XA_ChoiceB_NP
+	END
+	//}
+	
+	//{ Pregnant / Twins Interactions
+	IF ~~ THEN BEGIN XA_ChoicePregnant
+		SAY @161 /* ~I want you to know that I'll always treasure our time together... and I'll tell our child about what an amazing man their father was. A hero, in every sense of the word. I love you, <CHARNAME>, now and always.~ */
 		
 		IF ~~ THEN REPLY @122 /* ~I don't want to leave you, Schael. I love you, more than anything.~ */
 		GOTO XA_ChoiceA
@@ -45,20 +202,45 @@ BEGIN ~XACORWIJ~
 		
 		IF ~~ THEN REPLY @44 /* ~Schael, you're the strongest, most determined woman I've ever known. You'll be fine.~ */
 		GOTO XA_ChoiceD
+	END
+	
+	IF ~~ THEN BEGIN XA_ChoiceTwins
+		SAY @121 /*~I want you to know that I'll always treasure our time together... and I'll tell our children about what an amazing man their father was. A hero, in every sense of the word. I love you, <CHARNAME>, now and always.~*/
 		
+		IF ~~ THEN REPLY @122 /* ~I don't want to leave you, Schael. I love you, more than anything.~ */
+		GOTO XA_ChoiceA
+		
+		IF ~~ THEN REPLY @126 /* ~You think I should give up the essence?~*/
+		GOTO XA_ChoiceB
+		
+		IF ~~ THEN REPLY @128 /* ~I'm sorry, Schael. I feel I have to go forward and accept my birthright.~ */
+		GOTO XA_ChoiceC
+		
+		IF ~~ THEN REPLY @106 /* ~I don't know what I should do.~ */
+		GOTO XA_ChoiceB
+		
+		IF ~~ THEN REPLY @44 /* ~Schael, you're the strongest, most determined woman I've ever known. You'll be fine.~ */
+		GOTO XA_ChoiceD
 	END
 	
 	IF ~~ THEN BEGIN XA_ChoiceA
 		SAY @123 /* ~Love, children, and a life together with you... it's all that I could ever want. But I don't have to decide between that, and godhood. I don't know how anyone could...~ */
+		
+		IF ~~ THEN 
+		GOTO XA_ChoicePeace
 	END
 	
 	IF ~~ THEN BEGIN XA_ChoiceB
 		SAY @127 /* ~I won't lie to you. I want you to stay. Love, children, and a life together with you... it's all that I could ever want. But I don't have to decide between that, and godhood. I don't know how anyone could...~ */
+		
+		IF ~~ THEN 
+		GOTO XA_ChoicePeace
 	END
 	
 	IF ~~ THEN BEGIN XA_ChoiceC
 		SAY @129 /* ~I know. After everything you've been through... everything you've had to endure. You deserve it.~ */
 		
+		IF ~~ THEN
 		GOTO XA_ChoiceB
 	END
 	
@@ -68,6 +250,57 @@ BEGIN ~XACORWIJ~
 		IF ~~ THEN
 		GOTO XA_ChoiceB
 	END
+	//}
+	
+	IF ~~ THEN BEGIN XA_ChoicePeace
+		SAY @321  /* ~If what the celestial said is true though... you'd be leaving the struggle of this life, only to enter into a new struggle against gods and other planar powers. An endless battle, for perhaps all of eternity... I can't even begin to fathom what that would be like. Will you ever find peace? Will you ever find ... love, again?~*/
+
+		IF ~
+			!Global("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
+			!Global("XA_CorwinTwins", "GLOBAL", 1)
+		~ THEN REPLY @323 /* ~You've given me a lot to think about. If I do accept this power, I promise you that at the very least, I will keep you and Rohma safe from any who would seek to do you harm.~*/
+		GOTO XA_ChoiceEmbrace
+		
+		IF ~
+			Global("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
+			Global("XA_CorwinTwins", "GLOBAL", 1)
+		~ THEN REPLY @324 /* ~You've given me a lot to think about. If I do accept this power, I promise you that at the very least, I will keep you, Rohma, and our children safe from any who would seek to do you harm.~*/
+		GOTO XA_ChoiceEmbrace
+		
+		IF ~
+			Global("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
+			!Global("XA_CorwinTwins", "GLOBAL", 1)
+		~ THEN REPLY @322 /* ~You've given me a lot to think about. If I do accept this power, I promise you that at the very least, I will keep you, Rohma, and our child safe from any who would seek to do you harm.~*/
+		GOTO XA_ChoiceEmbrace
+	END
+	
+	IF ~~ THEN BEGIN XA_ChoiceEmbrace
+		SAY @80 /* ~Come here...~ */
+		
+		= @81 /* ~(You share a tender and emotional embrace.)~ */
+		
+		COPY_TRANS FINSOL01 27
+	END
+	
+	IF ~~ THEN BEGIN XA_ChoiceThankYou
+		SAY @486 /* ~Go... and thank you, love. Thank you for everything you've done for me, for Rohma, and for Baldur's Gate... and for the memories that I'll cherish for as long as I live. Farewell.~*/
+		
+		COPY_TRANS FINSOL01 29
+	END
+	
+	IF ~~ THEN BEGIN XA_ChoiceThankYouChild
+		SAY @485 /* ~Go... and thank you, love. Thank you for everything you've done for me, for Rohma, and for Baldur's Gate. Thank you for giving me a child, and for the memories that I'll cherish for as long as I live. Farewell.~*/
+		
+		COPY_TRANS FINSOL01 29
+	END
+	
+	IF ~~ THEN BEGIN XA_ChoiceThankYouTwins
+		SAY @484  /*~Go... and thank you, love. Thank you for everything you've done for me, for Rohma, and for Baldur's Gate. Thank you for giving me children, and for the memories that I'll cherish for as long as I live. Farewell.~ */
+		
+		COPY_TRANS FINSOL01 29
+	END
+	//}
+	
 //}
 
 //{ Dialog J-84 - Leave after SoA

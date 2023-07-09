@@ -2,9 +2,6 @@
 //Generally, this file will contain modifications less than 100 lines long. Modifications 100 lines or longer will typically have their own file.
 //Daniel Valle
 //dan@danielvalle.net
-/* Revision History
-
-2022-12-10: Initial Commit
 
 /* NOTE ON THE USE OF EXTEND_BOTTOM 
 	When using EXTEND_BOTTOM to add reply options to a state that originally did not have a reply option, such as the following:
@@ -33,6 +30,13 @@
 */
 
 //{ Altered Transitions	
+	ADD_TRANS_ACTION BDCORWIJ
+	BEGIN 280 END
+	BEGIN 0 END
+	~
+		SetGlobal("XA_HappyEnding","GLOBAL",1)
+	~
+	
 	ADD_TRANS_ACTION KERRAC
 	BEGIN 3 4 5 6 END
 	BEGIN 0 END
@@ -204,11 +208,126 @@
 		GOTO XA_Twins
 	END
 	
-	EXTEND_BOTTOM FINSOL01 27
+	EXTEND_BOTTOM FINSOL01 27  /* Player must make a choice */
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ EXTERN XACORWIJ XA_Choice_NonRomance
+	
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
 			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		~ EXTERN XACORWIJ XA_Choice
+	END
+	
+	EXTEND_BOTTOM FINSOL01 29 /* Player chose godhood - evil */
+		
+		IF ~
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_CorwinPCGod", "GLOBAL", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinPCGod", "GLOBAL", 1)
+		~
+		EXTERN XACORWIJ XA_ChoiceThankYou
+		
+		
+		IF ~
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
+			!Global("XA_CorwinPCGod", "GLOBAL", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinPCGod", "GLOBAL", 1)
+		~ 
+		EXTERN XACORWIJ XA_ChoiceThankYouChild
+		
+		IF ~
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_CorwinTwins", "GLOBAL", 1)
+			!Global("XA_CorwinPCGod", "GLOBAL", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinPCGod", "GLOBAL", 1)
+		~ 
+		EXTERN XACORWIJ XA_ChoiceThankYouTwins
+	END
+	
+	EXTEND_BOTTOM FINSOL01 30 /* Player chose godhood - neutral */
+		
+		IF ~
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_CorwinPCGod", "GLOBAL", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinPCGod", "GLOBAL", 1)
+		~
+		EXTERN XACORWIJ XA_ChoiceThankYou
+		
+		
+		IF ~
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
+			!Global("XA_CorwinPCGod", "GLOBAL", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinPCGod", "GLOBAL", 1)
+		~ 
+		EXTERN XACORWIJ XA_ChoiceThankYouChild
+		
+		IF ~
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_CorwinTwins", "GLOBAL", 1)
+			!Global("XA_CorwinPCGod", "GLOBAL", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinPCGod", "GLOBAL", 1)
+		~ 
+		EXTERN XACORWIJ XA_ChoiceThankYouTwins
+	END
+	
+	EXTEND_BOTTOM FINSOL01 31 /* Player chose godhood - good */
+		
+		IF ~
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_CorwinPCGod", "GLOBAL", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinPCGod", "GLOBAL", 1)
+		~
+		EXTERN XACORWIJ XA_ChoiceThankYou
+		
+		
+		IF ~
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
+			!Global("XA_CorwinPCGod", "GLOBAL", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinPCGod", "GLOBAL", 1)
+		~ 
+		EXTERN XACORWIJ XA_ChoiceThankYouChild
+		
+		IF ~
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_CorwinTwins", "GLOBAL", 1)
+			!Global("XA_CorwinPCGod", "GLOBAL", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinPCGod", "GLOBAL", 1)
+		~ 
+		EXTERN XACORWIJ XA_ChoiceThankYouTwins
+	END
+	
+	EXTEND_BOTTOM FINSOL01 32 /* Player chose to remain mortal */
+		IF ~
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_CorwinPCNotGod", "GLOBAL", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinPCNotGod", "GLOBAL", 1)
+		~
+		EXTERN XACORWIJ XA_StayMortal
 	END
 	
 	APPEND FINSOL01
