@@ -6,8 +6,56 @@
 
 2022-12-10: Initial Commit
 
+/* NOTE ON THE USE OF EXTEND_BOTTOM 
+	When using EXTEND_BOTTOM to add reply options to a state that originally did not have a reply option, such as the following:
+	
+	IF ~~ THEN BEGIN StateLabel
+		SAY @0  
+		
+		IF ~~ THEN
+		GOTO OtherStateLabel
+	END
+	
+	You need to ADD_TRANS_TRIGGER to the original transition. The trigger you add should be the negation of the trigger associated with your EXTEND_BOTTOM. For example:
+	
+	ADD_TRANS_TRIGGER DIALOG StateLabel
+	~
+		!Gender(Player1, MALE)
+	~
+	
+	EXTEND_BOTTOM DIALOG StateLabel
+		IF ~
+			Gender(Player1, MALE)
+		~ THEN REPLY @1 
+	END
+
+	THIS IS NOT NECESSARY WHEN YOUR EXTEND_BOTTOM DOES NOT INCLUDE A REPLY.
+*/
+
 */
 //{ Altered Transitions	
+	ADD_TRANS_ACTION KERRAC
+	BEGIN 3 4 5 6 END
+	BEGIN 0 END
+	~
+		SetGlobal("XA_MetKerrac","GLOBAL",1)
+	~
+	
+	ADD_TRANS_ACTION BDCORWIJ
+	BEGIN 319 320 END
+	BEGIN 0 END
+	~
+		SetGlobal("XA_CorwinGaveEarrings", "GLOBAL", 1)
+		AddJournalEntry(@207, INFO)
+	~
+	
+	ADD_TRANS_ACTION FORTHE
+	BEGIN 9 11 END
+	BEGIN 0 END
+	~
+		SetGlobal("XA_HelpedForthel_BG1", "GLOBAL", 1)
+	~
+
 	ADD_TRANS_ACTION IDJINNI
 	BEGIN 12 END
 	BEGIN 0 END
@@ -154,9 +202,15 @@
 		Global("XA_MakeCorbow4", "GLOBAL", 0)
 		Global("XA_MakeCorbow5", "GLOBAL", 0)
 	~
+	
+	ADD_TRANS_TRIGGER BOTSMITH 78
+	~
+		!PartyHasItem("XACORBOW")
+		!PartyHasItem("XACORBO3")
+	~
+	DO 0
 
-	EXTEND_BOTTOM BOTSMITH 78
-		
+	EXTEND_BOTTOM BOTSMITH 78  /* Don't have Darkfire or Taralash */
 		IF ~
 			OR(2)
 				PartyHasItem("XACORBOW")
@@ -166,7 +220,6 @@
 		GOTO 82
 	
 		IF ~
-			!IsGabber("XACORWIN")
 			OR(2)
 				PartyHasItem("XACORBOW")
 				PartyHasItem("XACORBO3")
@@ -174,73 +227,45 @@
 		THEN REPLY @39 /* ~What about Corwin's bow? Could the string be used to improve it?~ */
 		GOTO XA_CorwinBowGond
 		
-		IF ~
-			IsGabber("XACORWIN")
-			OR(2)
-				PartyHasItem("XACORBOW")
-				PartyHasItem("XACORBO3")
-		~
-		THEN REPLY @72 /* ~What about my bow? Could the string be used to improve it?~ */
-		GOTO XA_CorwinBowGond
 	END
 
-	EXTEND_BOTTOM BOTSMITH 79
+	EXTEND_BOTTOM BOTSMITH 79 /* Has both Darkfire and Taralash*/
 		IF ~
-			!IsGabber("XACORWIN")
 			OR(2)
 				PartyHasItem("XACORBOW")
 				PartyHasItem("XACORBO3")
 		~
 		THEN REPLY @39 /* ~What about Corwin's bow? Could the string be used to improve it?~ */
-		GOTO XA_CorwinBowGond
-		
-		IF ~
-			IsGabber("XACORWIN")
-			OR(2)
-				PartyHasItem("XACORBOW")
-				PartyHasItem("XACORBO3")
-		~
-		THEN REPLY @72 /* ~What about my bow? Could the string be used to improve it?~ */
 		GOTO XA_CorwinBowGond
 	END
 	
-	EXTEND_BOTTOM BOTSMITH 80
+	EXTEND_BOTTOM BOTSMITH 80 /* Has Darkfire*/
 		IF ~
-			!IsGabber("XACORWIN")
 			OR(2)
 				PartyHasItem("XACORBOW")
 				PartyHasItem("XACORBO3")
 		~
 		THEN REPLY @39 /* ~What about Corwin's bow? Could the string be used to improve it?~ */
-		GOTO XA_CorwinBowGond
-		
-		IF ~
-			IsGabber("XACORWIN")
-			OR(2)
-				PartyHasItem("XACORBOW")
-				PartyHasItem("XACORBO3")
-		~
-		THEN REPLY @72 /* ~What about my bow? Could the string be used to improve it?~ */
 		GOTO XA_CorwinBowGond
 	END
 	
-	EXTEND_BOTTOM BOTSMITH 81
+	EXTEND_BOTTOM BOTSMITH 81 /* Has Taralash*/
 		IF ~
-			!IsGabber("XACORWIN")
 			OR(2)
 				PartyHasItem("XACORBOW")
 				PartyHasItem("XACORBO3")
 		~
 		THEN REPLY @39 /* ~What about Corwin's bow? Could the string be used to improve it?~ */
 		GOTO XA_CorwinBowGond
-		
+	END
+	
+	EXTEND_BOTTOM BOTSMITH 88 /* Has Firetooth*/
 		IF ~
-			IsGabber("XACORWIN")
 			OR(2)
 				PartyHasItem("XACORBOW")
 				PartyHasItem("XACORBO3")
 		~
-		THEN REPLY @72 /* ~What about my bow? Could the string be used to improve it?~ */
+		THEN REPLY @39 /* ~What about Corwin's bow? Could the string be used to improve it?~ */
 		GOTO XA_CorwinBowGond
 	END
 	
@@ -308,7 +333,7 @@
 
 
 //{ SARMEL01
-EXTEND_BOTTOM SARMEL01 68
+EXTEND_BOTTOM SARMEL01 68 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN
@@ -333,7 +358,7 @@ END
 //}
 
 //{ SARPROVF
-EXTEND_BOTTOM SARPROVF 0
+EXTEND_BOTTOM SARPROVF 0 /* OK */
 
 	IF ~  
 		PartyGoldGT(49)
@@ -360,7 +385,15 @@ EXTEND_BOTTOM SARPROVF 0
 	EXTERN ~XACORWIJ~ XA_SARPROVF_0_BodhiBite
 END
 
-EXTEND_BOTTOM SARPROVF 5
+ADD_TRANS_TRIGGER SARPROVF 5
+~
+	OR(2)
+		!IsValidForPartyDialogue("XACORWIN")
+		!Global("XA_CorwinRomanceActive","GLOBAL",2)
+~
+DO 0
+
+EXTEND_BOTTOM SARPROVF 5 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 		Global("XA_CorwinRomanceActive","GLOBAL",2)
@@ -378,7 +411,7 @@ END
 //}
 
 //{ SARPRO01.D
-EXTEND_BOTTOM SARPRO01 11
+EXTEND_BOTTOM SARPRO01 11 /* OK */
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		IsValidForPartyDialogue("XACORWIN")
@@ -388,14 +421,14 @@ END
 //}
 
 //{ HGWRA01.D
-EXTEND_BOTTOM HGWRA01 18
+EXTEND_BOTTOM HGWRA01 18 /* OK */
 	IF ~
 		Global("XA_CorwinRomanceActive","GLOBAL",2)
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN GOTO XA_Corwin
 END
 
-EXTEND_BOTTOM HGWRA01 24
+EXTEND_BOTTOM HGWRA01 24 /* OK */
 	IF ~
 		Global("XA_CorwinRomanceActive","GLOBAL",2)
 		IsValidForPartyDialogue("XACORWIN")
@@ -420,7 +453,7 @@ END
 //}
 
 //{ SARVOLO.D
-EXTEND_TOP SARVOLO 9
+EXTEND_TOP SARVOLO 9 /* OK */
 	IF ~
 		InParty("XACORWIN")
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -618,7 +651,7 @@ ADD_TRANS_TRIGGER CONNOL 0
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-EXTEND_BOTTOM CONNOL 0
+EXTEND_BOTTOM CONNOL 0 /* OK */
 	IF ~
 		Global("XA_ReturnToBG", "GLOBAL", 1)
 	~ THEN REPLY #219533 /* ~Tell me what the common folk are talking about these days.~ */ 
@@ -673,9 +706,7 @@ APPEND SUTHIE
 	END
 END
 
-
-
-EXTEND_BOTTOM BART8 0
+EXTEND_BOTTOM BART8 0 /* OK */
 	IF ~
 		GlobalGT("XA_BrevlikSpawn", "GLOBAL", 0)
 		!Global("XA_FoundBrevlik", "GLOBAL", 1)
@@ -687,7 +718,7 @@ EXTEND_BOTTOM BART8 0
 	GOTO XA_Brevlik
 END
 
-EXTEND_BOTTOM BART8 1
+EXTEND_BOTTOM BART8 1 /* OK */
 	IF ~
 		GlobalGT("XA_BrevlikSpawn", "GLOBAL", 0)
 		!Global("XA_FoundBrevlik", "GLOBAL", 1)
@@ -718,7 +749,7 @@ APPEND BART8
 	END
 END
 
-EXTEND_BOTTOM PPIRENI2 3
+EXTEND_BOTTOM PPIRENI2 3 /* OK */
 	IF ~
 		IsValidForPartyDialog("XACORWIN")
 	~ THEN GOTO XA_PPIRENI2_3_CHAIN
@@ -730,7 +761,7 @@ ADD_TRANS_TRIGGER BDIMOEN 89
 ~
 DO 2 3
 
-EXTEND_BOTTOM BDIMOEN 89
+EXTEND_BOTTOM BDIMOEN 89 /* OK */
 	IF ~
 		Global("bd_player_exiled","global",1)
 		GlobalGT("XA_CorwinContinue", "GLOBAL", 0)
@@ -795,47 +826,9 @@ APPEND BDIMOEN
 	END
 END
 
-EXTEND_BOTTOM FORTHE 9
-	IF ~~ THEN 
-	DO ~
-		GiveGoldForce(200)
-		SetGlobal("XA_HelpedForthel_BG1", "GLOBAL", 1)
-		EscapeArea()
-	~
-	EXIT
-END
-
-EXTEND_BOTTOM FORTHE 11
-	IF ~~ THEN 
-	DO ~
-		GiveGoldForce(200)
-		SetGlobal("XA_HelpedForthel_BG1", "GLOBAL", 1)
-		EscapeArea()
-	~
-	EXIT
-END
-
-EXTEND_BOTTOM BDCORWIJ 318
+EXTEND_BOTTOM BDCORWIJ 318  /* OK */
 	IF ~~ THEN REPLY @202 /* ~Corwin, these are beautiful. This Neoma... you must be very special to her.~ */
 	GOTO XA_Neoma
-END
-
-EXTEND_BOTTOM BDCORWIJ 319
-	IF ~~ THEN
-	DO ~
-		SetGlobal("XA_CorwinGaveEarrings", "GLOBAL", 1)
-		AddJournalEntry(@207, INFO)
-	~
-	EXIT
-END
-
-EXTEND_BOTTOM BDCORWIJ 320
-	IF ~~ THEN 
-	DO ~
-		SetGlobal("XA_CorwinGaveEarrings", "GLOBAL", 1)
-		AddJournalEntry(@207, INFO)
-	~
-	EXIT
 END
 
 APPEND BDCORWIJ
@@ -921,21 +914,23 @@ APPEND BAERIE
 	END
 END
 
-
-
-
-
-
-EXTEND_BOTTOM SAREV25A 10
+EXTEND_BOTTOM SAREV25A 10 /* OK*/
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN 
 	EXTERN XACORWIJ XA_SAREV_10
 END
 
+ADD_TRANS_TRIGGER SAREV25A 48
+~
+	False()
+~
+
 EXTEND_BOTTOM SAREV25A 48
-	IF ~~ THEN REPLY @183 /* ~I was already on my way to Saradush before I was dragged here.~ */
-	GOTO 49
+	IF ~~ THEN 
+	UNSOLVED_JOURNAL #73856
+	REPLY @183 /* ~I was already on my way to Saradush before I was dragged here.~ */
+	FLAGS 128 GOTO 49
 END
 
 APPEND MAZZYJ
@@ -986,6 +981,7 @@ ADD_STATE_TRIGGER RBALDU 14
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
+
 APPEND DORNJ
 	IF ~~ THEN BEGIN XA_CorwinDornConflict2
 		SAY @229 /* ~It is not your concern.~ */
@@ -1073,7 +1069,8 @@ APPEND NALIAJ
 		IF ~~ THEN EXTERN XACOOK XA_NaliaRefused
 	END
 END
-//HOUSG3
+
+//{ HOUSG3
 ADD_STATE_TRIGGER HOUSG3 0
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
@@ -1127,8 +1124,9 @@ APPEND HOUSG3
 	
 	
 END
+//}
 
-//SERVA2
+//{ SERVA2
 ADD_STATE_TRIGGER SERVA2 0
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
@@ -1211,8 +1209,9 @@ APPEND SERVA2
 		IF ~~ THEN EXIT
 	END
 END
+//}
 
-//LOBAR
+//{ LOBAR
 ADD_STATE_TRIGGER LOBAR 7
 ~
 	!IsGabber("XACORWIN")
@@ -1326,10 +1325,10 @@ APPEND LOBAR
 		GOTO XA_LobarTianna
 	END
 END
+//}
 
 
-
-//NOBW9
+//{ NOBW9
 ADD_STATE_TRIGGER NOBW9 6
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
@@ -1364,11 +1363,12 @@ APPEND NOBW9
 		IF ~~ THEN EXIT
 	END
 END
+//}
 
-//BART0133
+//{ BART0133
 ADD_STATE_TRIGGER BART0133 0
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND BART0133
@@ -1386,9 +1386,9 @@ APPEND BART0133
 		EXIT
 	END
 END
+//}
 
-
-//PROST3
+//{ PROST3
 ADD_STATE_TRIGGER PROST3 2
 ~
 	InMyArea("YAGO")
@@ -1415,13 +1415,12 @@ APPEND PROST3
 		IF ~~ THEN EXIT
 	END
 END
+//}
 
-
-
-//DILLAR
+//{ DILLAR
 ADD_STATE_TRIGGER DILLAR 7
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
 EXTEND_BOTTOM DILLAR 0
@@ -1463,11 +1462,12 @@ APPEND DILLAR
 		EXIT
 	END
 END
+//}
 
-//PROST8
+//{ PROST8
 ADD_STATE_TRIGGER PROST8 3
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND PROST8
@@ -1479,11 +1479,12 @@ APPEND PROST8
 		IF ~~ THEN EXIT
 	END
 END
+//}
 
-//PROST7
+//{ PROST7
 ADD_STATE_TRIGGER PROST7 6
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND PROST7
@@ -1495,11 +1496,12 @@ APPEND PROST7
 		IF ~~ THEN EXIT
 	END
 END
+//}
 
-//PROST6
+//{ PROST6
 ADD_STATE_TRIGGER PROST6 2
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND PROST6
@@ -1511,11 +1513,12 @@ APPEND PROST6
 		IF ~~ THEN EXIT
 	END
 END
+//}
 
-//PROST5
+//{ PROST5
 ADD_STATE_TRIGGER PROST5 4
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND PROST5
@@ -1527,45 +1530,9 @@ APPEND PROST5
 		IF ~~ THEN EXIT
 	END
 END
+//}
 
-//KERRAC
-EXTEND_BOTTOM KERRAC 3
-	IF ~~ THEN
-	DO ~
-		SetGlobal("XA_MetKerrac", "GLOBAL", 1)
-		EscapeArea()
-	~
-	EXIT
-END
-
-EXTEND_BOTTOM KERRAC 4
-	IF ~~ THEN
-	DO ~
-		SetGlobal("XA_MetKerrac", "GLOBAL", 1)
-		EscapeArea()
-	~
-	EXIT
-END
-
-EXTEND_BOTTOM KERRAC 5
-	IF ~~ THEN
-	DO ~
-		SetGlobal("XA_MetKerrac", "GLOBAL", 1)
-		EscapeArea()
-	~
-	EXIT
-END
-
-EXTEND_BOTTOM KERRAC 6
-	IF ~~ THEN
-	DO ~
-		SetGlobal("XA_MetKerrac", "GLOBAL", 1)
-		EscapeArea()
-	~
-	EXIT
-END
-
-//KESHEE
+//{ KESHEE
 ADD_TRANS_TRIGGER KESHEE 2
 ~
 	!Dead("HAISH2")
@@ -1630,11 +1597,12 @@ APPEND KESHEE
 		EXIT
 	END
 END
+//}
 
-//THIEFM
+//{ THIEFM
 ADD_STATE_TRIGGER THIEFM 3
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND THIEFM
@@ -1646,11 +1614,12 @@ APPEND THIEFM
 		IF ~~ THEN EXIT
 	END
 END
+//}
 
-//MERLEA
+//{ MERLEA
 ADD_STATE_TRIGGER MERLEA 0
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 4 5 6
 
@@ -1722,8 +1691,9 @@ APPEND MERLEA
 		EXIT
 	END
 END
+//}
 
-//BRIELB
+//{ BRIELB
 ADD_STATE_TRIGGER BRIELB 3
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
@@ -1742,6 +1712,7 @@ APPEND BRIELB
 		GOTO 5
 	END
 END
+//}
 
 APPEND VICONIJ
 	IF ~~ THEN BEGIN XA_AskDiviner
@@ -2015,10 +1986,11 @@ APPEND IMOEN2J
 	END
 	//}
 END
-//KENT
+
+//{ KENT
 ADD_STATE_TRIGGER KENT 0
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND KENT
@@ -2045,11 +2017,12 @@ APPEND KENT
 		EXIT
 	END
 END
- 
-//FLAMBG
+//}
+
+//{ FLAMBG
 ADD_STATE_TRIGGER FLAMBG 0
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 5 6
 
@@ -2073,11 +2046,10 @@ APPEND FLAMBG
 		
 		IF ~~ THEN EXIT
 	END
-	
-
 END
+//}
 
-//VALYGARJ
+//{ VALYGARJ
 APPEND VALYGARJ
 	IF ~~ THEN BEGIN XA_WYRM_VALYGAR3
 		SAY @82 /* ~It's good to meet you too, sir.~ */
@@ -2086,15 +2058,16 @@ APPEND VALYGARJ
 		EXTERN XANEDERL XA_WYRM_3
 	END
 END
+//}
 
-//THIEFG
+//{ THIEFG
 ADD_TRANS_TRIGGER THIEFG 0
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 DO 1
 
-EXTEND_BOTTOM THIEFG 0
+EXTEND_BOTTOM THIEFG 0 /* OK */
 	
 	IF ~
 		Global("XA_ReturnToBG", "GLOBAL", 1)
@@ -2176,11 +2149,12 @@ APPEND THIEFG
 		EXIT
 	END
 END
+//}
 
-//FATMBA
+//{ FATMBA
 ADD_STATE_TRIGGER FATMBA 4
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND FATMBA
@@ -2192,12 +2166,12 @@ APPEND FATMBA
 		EXIT
 	END
 END
+//}
 
-
-//MICK
+//{ MICK
 ADD_STATE_TRIGGER MICK 0
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND MICK
@@ -2212,11 +2186,12 @@ APPEND MICK
 		EXIT
 	END
 END
+//}
 
-//OGRELEAD
+//{ OGRELEAD
 ADD_STATE_TRIGGER OGRELEAD 0
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND OGRELEAD
@@ -2232,18 +2207,19 @@ APPEND OGRELEAD
 	END
 	
 END
+//}
 
 /* 
 	End of SoA - Ask who wants to go to Baldur's Gate
 */
 
-//SUELLE2
+//{ SUELLE2
 ADD_STATE_TRIGGER SUELLE2 0
 ~
 	!Global("XA_59AOverride", "GLOBAL", 1)
 ~
 
-EXTEND_BOTTOM SUELLE2 0
+EXTEND_BOTTOM SUELLE2 0 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -2251,7 +2227,7 @@ EXTEND_BOTTOM SUELLE2 0
 	EXTERN XACORWIJ XA_SUELLE2_0
 END
 
-EXTEND_BOTTOM SUELLE2 5
+EXTEND_BOTTOM SUELLE2 5 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -2259,7 +2235,7 @@ EXTEND_BOTTOM SUELLE2 5
 	EXTERN XACORWIJ XA_SUELLE2_5
 END
 
-EXTEND_BOTTOM SUELLE2 8
+EXTEND_BOTTOM SUELLE2 8 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -2267,7 +2243,7 @@ EXTEND_BOTTOM SUELLE2 8
 	EXTERN XACORWIJ XA_SUELLE2_8
 END
 
-EXTEND_BOTTOM SUELLE2 13
+EXTEND_BOTTOM SUELLE2 13 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 	~
@@ -2278,7 +2254,7 @@ EXTEND_BOTTOM SUELLE2 13
 	GOTO 15
 END
 
-EXTEND_BOTTOM SUELLE2 14
+EXTEND_BOTTOM SUELLE2 14 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 	~
@@ -2289,7 +2265,7 @@ EXTEND_BOTTOM SUELLE2 14
 	GOTO 15
 END
 
-EXTEND_BOTTOM SUELLE2 18
+EXTEND_BOTTOM SUELLE2 18 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 		ReputationLT(Player1,10)
@@ -2366,32 +2342,37 @@ APPEND SUELLE2
 	END
 	
 END
+//}
 
-//SUJON
+//{ SUJON
 EXTEND_BOTTOM SUJON 14
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 	~
+	DO ~
+		Enemy()
+	~
 	EXTERN XACORWIJ XA_SUJON_14
 END
+//}
 
-//UDSVIR03
-ADD_TRANS_TRIGGER UDSVIR03 25
+//{ UDSVIR03
+ADD_TRANS_TRIGGER UDSVIR03 25 
 ~
 	!IsValidForPartyDialogue("XACORWIN")
 ~
 DO 0
 
-EXTEND_BOTTOM UDSVIR03 25
+EXTEND_BOTTOM UDSVIR03 25 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 		!Global("XA_CorwinStopSvirFight", "GLOBAL", 1)
 	~ THEN REPLY @58 /* ~Saying that was a mistake, fool! I will kill you and take the stone! Forget your deal!~  */
 	EXTERN XACORWIJ XA_Svir
 END
+//}
 
-
-//UDPHAE01
+//{ UDPHAE01
 EXTEND_TOP ~UDPHAE01~ 106
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -2411,8 +2392,9 @@ EXTEND_BOTTOM ~UDPHAE01~ 136
 	~
 	THEN EXTERN ~XACORWIJ~ XAA68
 END
+//}
 
-//BODHIAMB
+//{ BODHIAMB
 EXTEND_BOTTOM BODHIAMB 5
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -2457,8 +2439,9 @@ APPEND BODHIAMB
 		EXIT
 	END
 END
+//}
 
-//SUDEMIN
+//{ SUDEMIN
 ADD_TRANS_TRIGGER SUDEMIN 39
 ~
 	!IsValidForPartyDialogue("XACORWIN")
@@ -2480,8 +2463,9 @@ APPEND SUDEMIN
 		GOTO 41
 	END
 END
+//}
 
-//MADAM
+//{ MADAM
 ADD_TRANS_TRIGGER MADAM 0
 ~
 	//!IsGabber("XACORWIN")
@@ -2545,9 +2529,10 @@ APPEND MADAM
 		EXTERN ~XACORWIJ~ XAA27
 	END	
 END
+//}
 
-//HELLJON
-EXTEND_BOTTOM HELLJON 7
+//{ HELLJON
+EXTEND_BOTTOM HELLJON 7 /* OK */
 
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
@@ -2562,7 +2547,7 @@ EXTEND_BOTTOM HELLJON 7
 	THEN EXTERN ~XACORWIJ~ XA_HELLJON_7B
 END
 
-EXTEND_BOTTOM HELLJON 8
+EXTEND_BOTTOM HELLJON 8 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -2576,7 +2561,7 @@ EXTEND_BOTTOM HELLJON 8
 	THEN EXTERN ~XACORWIJ~ XA_HELLJON_8B
 END
 
-EXTEND_BOTTOM HELLJON 9
+EXTEND_BOTTOM HELLJON 9 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -2590,7 +2575,7 @@ EXTEND_BOTTOM HELLJON 9
 	THEN EXTERN ~XACORWIJ~ XA_HELLJON_9B
 END
 
-EXTEND_BOTTOM HELLJON 10
+EXTEND_BOTTOM HELLJON 10 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -2604,9 +2589,18 @@ EXTEND_BOTTOM HELLJON 10
 	THEN EXTERN ~XACORWIJ~ XA_HELLJON_10B
 END
 
-//NEB
+//{ NEB
+ADD_TRANS_TRIGGER NEB 2
+~
+	OR(2)
+		!IsValidForPartyDialogue("XACORWIN")
+		!InMyArea("XACORWIN")
+~
+DO 0
+
 EXTEND_BOTTOM NEB 2
 	IF ~
+		InMyArea("XACORWIN")
 		IsValidForPartyDialogue("XACORWIN")
 	~
 	THEN EXTERN ~XACORWIJ~ XA_NEB_2
@@ -2624,9 +2618,9 @@ APPEND NEB
 		EXIT
 	END
 END
+//}
 
-
-//HAERDAJ
+//{ HAERDAJ
 APPEND HAERDAJ
 	IF ~~ THEN BEGIN XA_CorwinWantsSex5B
 		SAY @49 /* ~Bah, hardly. You should read some of my earlier work.~ */
@@ -2634,8 +2628,9 @@ APPEND HAERDAJ
 		EXTERN XACORWIJ XAA29
 	END
 END
+//}
 
-//GORODR1
+//{ GORODR1
 EXTEND_BOTTOM GORODR1 17 //OK
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
@@ -2660,7 +2655,7 @@ END
 EXTEND_BOTTOM GORODR1 39 //OK	
 	IF ~
 		//GlobalLT("Chapter","GLOBAL",20)
-		OR(15)
+		OR(16)
 			IsValidForPartyDialogue("XACORWIN")
 			IsValidForPartyDialogue("Aerie")
 			IsValidForPartyDialogue("Anomen")
@@ -2676,8 +2671,9 @@ EXTEND_BOTTOM GORODR1 39 //OK
 			IsValidForPartyDialogue("Dorn")
 			IsValidForPartyDialogue("Cernd")
 			IsValidForPartyDialogue("Edwin")
+			IsValidForPartyDialogue("Sarevok")
 	~
-	THEN REPLY @22 /* ~(You turn to your comrades.) What say you? Should the treacherous cowards live, or should they die?~ */
+	THEN REPLY @22 /* ~What say you, my loyal comrades? They wronged you as much as I. Should they be allowed to live, or must the treacherous cowards taste steel?~ */
 	
 	EXTERN GORODR1 XA_OdrenJudgeSOA
 END
@@ -2736,7 +2732,9 @@ APPEND GORODR1
 		
 	END
 END
-// DEGARD
+//}
+
+//{ DEGARD
 ADD_TRANS_TRIGGER DEGARD 4 //OK
 ~
 	!IsValidForPartyDialogue("XACORWIN")
@@ -2753,8 +2751,9 @@ EXTEND_BOTTOM DEGARD 4 //OK
 	~
 	EXIT
 END
+//}
 
-// NALIAJ
+//{ NALIAJ
 APPEND NALIAJ
 	IF ~~ THEN BEGIN XA_CorwinStruckDelcia
 		SAY @20 /* ~(She finally regains her composure)~ */
@@ -2786,8 +2785,9 @@ APPEND NALIAJ
 		EXTERN XACORWIJ XA_DelciaLeft2
 	END
 END
+//}
 
-// KELDORJ
+//{ KELDORJ
 
 APPEND KELDORJ
 	IF ~~ THEN BEGIN XA_CorwinStruckDelcia
@@ -2818,7 +2818,9 @@ APPEND KELDORJ
 		EXTERN XACORWIJ XA_DelciaLeft2
 	END
 END
-// DELCIA
+//}
+
+//{ DELCIA
 
 ADD_TRANS_TRIGGER DELCIA 11 //OK
 ~
@@ -2880,7 +2882,9 @@ APPEND DELCIA
 		EXTERN XACORWIJ XA_DelciaLeft
 	END
 END
-// C6DRIZZ1
+//}
+
+//{ C6DRIZZ1
 EXTEND_BOTTOM C6DRIZZ1 1  //OK
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
@@ -2906,16 +2910,18 @@ APPEND C6DRIZZ1
 		GOTO 34
 	END
 END
+//}
 
-// IMOEN2
+//{ IMOEN2
 EXTEND_BOTTOM IMOEN2 21 //OK
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 	~
-	THEN GOTO XA_CorwinImoenReunite	
+	THEN GOTO XA_CorwinImoenReuniteChain	
 END
+//}
 
-// INSPECT
+//{ INSPECT
 
 ADD_TRANS_TRIGGER INSPECT 46 
 ~
@@ -2930,8 +2936,9 @@ EXTEND_BOTTOM INSPECT 46
 	~
 	THEN EXTERN EDWINJ XA_EdwinFF1
 END
+//}
 
-// EDWINJ
+//{ EDWINJ
 
 APPEND EDWINJ
 	IF ~~ THEN BEGIN XA_EdwinFF1
@@ -2951,6 +2958,7 @@ APPEND EDWINJ
 		~ THEN EXTERN ~YOSHJ~ 54
 	END
 END
+//}
 
 // KORGANJ
 
@@ -3152,6 +3160,15 @@ CHAIN
 			IsValidForPartyDialogue("XACORWIN")
 		~
 		@24 /* ~They deserve to die. Not just for their treachery, but also for their cowardice. There's been so much death already, though... If you decide to spare them, I will understand.~ */
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
+		~
+		
+		== SAREV25J
+		IF ~
+			IsValidForPartyDialogue("SAREVOK")
+		~
+		@292  /* ~Must you even ask? Death. The more excruciating, the better.~ */
 		DO ~
 			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
 		~

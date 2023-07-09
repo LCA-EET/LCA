@@ -7456,7 +7456,8 @@ END
 
 IF ~~ THEN BEGIN XA_SUJON_14
 	SAY @606 /* ~Justice has finally come for you, wizard. Prepare to die!~ */
-	COPY_TRANS SUJON 14
+	
+	IF ~~ THEN EXIT
 END
 
 IF ~~ THEN BEGIN XA_SUELLE2_0
@@ -8541,7 +8542,7 @@ CHAIN
 END XACORWIJ XA_CorwinDelcia_End
 		
 CHAIN 
-	IF ~~ THEN IMOEN2 XA_CorwinImoenReunite
+	IF ~~ THEN IMOEN2 XA_CorwinImoenReuniteChain
 		@500 /* ~It's good to see you again, Captain, but I'm surprised that you're here.~ */
 		== XACORWIJ
 		@459 /* ~It's good to see you too, Imoen. As for why I'm here, <CHARNAME> found evidence proving that Irenicus was behind what happened to Skie. I was assigned to assist <PRO_HIMHER> in the hunt for the wizard.~ */

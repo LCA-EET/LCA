@@ -2611,6 +2611,13 @@ END
 IF ~~ THEN BEGIN XA_Menu_CreateItem
 	SAY @35 /* ~What item do you want me to create for you?~ */
 	
+	IF ~~ THEN REPLY @563
+	DO ~
+		GiveItemCreate("bow20", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("bow20", IDENTIFIED,TRUE))
+	~
+	GOTO XA_MainMenu
+	
 	IF ~~ THEN REPLY @562  /* ~Bowstring of Gond.~*/
 	DO ~
 		GiveItemCreate("compon10", LastTalkedToBy(Myself),1,0,0)
