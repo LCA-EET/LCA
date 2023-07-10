@@ -6437,13 +6437,6 @@ IF ~~ THEN BEGIN XAA36
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)
-		SetGlobal("ViconiaRomanceActive", "GLOBAL", 3)
-		SetGlobal("AerieRomanceActive", "GLOBAL", 3)
-		SetGlobal("JaheiraRomanceActive", "GLOBAL", 3)
-		SetGlobal("AnomenRomanceActive", "GLOBAL", 3)
-		SetGlobal("DornRomanceActive", "GLOBAL", 3)
-		SetGlobal("NeeraRomanceActive", "GLOBAL", 3)
-		SetGlobal("HexxatRomanceActive", "GLOBAL", 3)
 		//SetPlayerSound(Myself,@452,SELECT_ACTION6)
 	~
 	EXIT
