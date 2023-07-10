@@ -1,0 +1,9 @@
+BEGIN ~XANEDTOB~
+
+IF ~
+	GlobalLT("XA_NedToB", "GLOBAL", 1)
+~ THEN BEGIN XA_NedToB 
+	SAY @0
+	
+	IF ~~ THEN EXIT
+END

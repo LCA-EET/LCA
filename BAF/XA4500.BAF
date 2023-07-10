@@ -12,4 +12,5 @@ THEN
 		ActionOverride("XACORWIN",SetGlobal("KickedOut","LOCALS",0))
 		ActionOverride("XACORWIN",SetNumTimesTalkedTo(0))
 		SetGlobal("XA_CorwinSpawnPlane", "GLOBAL", 1)
+		ActionOverride("XACORWIN",StartDialog("XACORWIP", Player1))
 END
