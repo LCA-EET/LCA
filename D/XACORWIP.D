@@ -19,6 +19,7 @@ IF ~
 	IF ~~ THEN
 	DO ~
 		ChangeAIScript("XACORSCR", OVERRIDE)
+		SetGlobal("XA_CorwinJoinOverride", "GLOBAL", 0)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
@@ -86,7 +87,7 @@ END
 //{ Dialog P-5
 IF ~
 	GlobalGT("XA_CorwinBit", "GLOBAL", 0)
-	!Global("XA_CorwinCleansed", "GLOBAL", 1)
+	GlobalLT("XA_CorwinCleansed", "GLOBAL", 1)
 ~
 THEN BEGIN XA_CorwinSick
 	SAY @30 /* ~My love? This bite... I'm not feeling well, at all. Please, don't leave my side.~ */
@@ -135,7 +136,14 @@ IF ~
 	
 	IF ~
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_CorwinPromoted", "GLOBAL", 1)
 	~ THEN REPLY @6 /* ~Your assistance would be welcome Captain. Join me.~ */
+	GOTO XAA1
+	
+	IF ~
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_CorwinPromoted", "GLOBAL", 1)
+	~ THEN REPLY @41 /* ~Your assistance would be welcome Major. Join me.~ */
 	GOTO XAA1
 	
 	IF ~

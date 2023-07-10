@@ -1,0 +1,15 @@
+IF
+	Global("NEWGAME_TOB","GLOBAL",0)
+	Global("CORWINSummoned", "GLOBAL", 1)
+	Global("XA_CorwinSpawnPlane", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		CreateVisualEffect("SPPORTAL",[1999.1218])
+		Wait(2)
+		MoveGlobal("AR4500","XACORWIN",[1999.1218])
+		ActionOverride("XACORWIN",Face(S))
+		ActionOverride("XACORWIN",SetGlobal("BD_JOINXP","LOCALS",0))
+		ActionOverride("XACORWIN",SetGlobal("KickedOut","LOCALS",0))
+		ActionOverride("XACORWIN",SetNumTimesTalkedTo(0))
+		SetGlobal("XA_CorwinSpawnPlane", "GLOBAL", 1)
+END

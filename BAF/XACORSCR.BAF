@@ -6233,6 +6233,17 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("BD_JOINXP","LOCALS",1)
+		Continue()
 END
 
 //} End Exp Boosts on Join
+
+//{ Mark as In-Party in BG2 (For later summoning via the fate-spirit)
+IF
+	InParty(Myself)
+	!Global("XA_CorwinInPartyBG2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CorwinInPartyBG2", "GLOBAL", 1)
+END
+//}

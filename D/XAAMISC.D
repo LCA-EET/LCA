@@ -196,6 +196,53 @@
 	END
 	//}
 	
+	//{ FATESP
+		//{ FATESP State 6 Trans 24
+		ALTER_TRANS FATESP
+		BEGIN 6 END
+		BEGIN 24 END
+		BEGIN
+			"TRIGGER"
+			~
+				Global("CORWINSummoned","GLOBAL",0)
+				OR(2)
+					Dead("Corwin")
+					Dead("XACORWIN")
+			~
+		END
+		//}
+		
+		//{ FATESP State 6 Trans 25
+		ALTER_TRANS FATESP
+		BEGIN 6 END
+		BEGIN 25 END
+		BEGIN
+			"TRIGGER"
+			~
+				Global("CORWINSummoned","GLOBAL",0)
+				GlobalLT("XA_CorwinInPartyBG2", "GLOBAL", 1)
+				!Dead("Corwin")
+				!Dead("XACORWIN")
+			~
+		END
+		//}
+		
+		//{ FATESP State 6 Trans 26
+		ALTER_TRANS FATESP
+		BEGIN 6 END
+		BEGIN 26 END
+		BEGIN
+			"TRIGGER"
+			~
+				Global("CORWINSummoned","GLOBAL",0)
+				Global("XA_CorwinInPartyBG2", "GLOBAL", 1)
+				!Dead("Corwin")
+				!Dead("XACORWIN")
+			~
+		END
+		//}
+	//}
+	
 
 //}
 
@@ -505,6 +552,7 @@
 EXTEND_BOTTOM SARMEL01 68 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
+		Global("XA_MeetIllasera", "GLOBAL", 1)
 	~ THEN
 	EXTERN XACORWIJ XA_SARMEL01_68
 END
@@ -626,18 +674,34 @@ EXTEND_TOP SARVOLO 9 /* OK */
 	IF ~
 		InParty("XACORWIN")
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_MeetIllasera", "GLOBAL", 1)
+	~ THEN REPLY @279 /* ~Tell me about Schael.~*/
+	GOTO XA_Schael_Illasera
+	
+	IF ~
+		InParty("XACORWIN")
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_MeetIllasera", "GLOBAL", 1)
+	~ THEN REPLY @280 /* ~Tell me about Corwin.~*/
+	GOTO XA_Corwin_Illasera
+	
+	IF ~
+		InParty("XACORWIN")
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_MeetIllasera", "GLOBAL", 1)
 	~ THEN REPLY @279 /* ~Tell me about Schael.~*/
 	GOTO XA_Schael
 	
 	IF ~
 		InParty("XACORWIN")
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_MeetIllasera", "GLOBAL", 1)
 	~ THEN REPLY @280 /* ~Tell me about Corwin.~*/
 	GOTO XA_Corwin
 END
 
 APPEND SARVOLO
-	IF ~~ THEN BEGIN XA_Corwin
+	IF ~~ THEN BEGIN XA_Corwin_Illasera
 		SAY @281 /* ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. The pair have achieved feats that no one could have imagined, and her devotion to <CHARNAME>'s cause has only grown since <PRO_HESHE> helped rescue her daughter from Illasera the Quick. Though no one can say what the future has in store for this duo, one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~ */
 		
 		IF ~~ THEN
@@ -649,8 +713,32 @@ APPEND SARVOLO
 		EXTERN XACORWIJ XA_Corwin_Sarvolo
 	END
 	
-	IF ~~ THEN BEGIN XA_Schael
+	IF ~~ THEN BEGIN XA_Schael_Illasera
 		SAY @282 /* ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. <CHARNAME> was smitten by her beauty, and their relationship gradually evolved from friendship into something far more profound. Their fierce devotion toward one another was only strengthened after <CHARNAME> helped rescue her daughter from Illasera the Quick. Their love, to this point, has endured against all odds. Whether it will continue to do so, no one can say, though one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~ */
+		
+		IF ~~ THEN
+		GOTO 9
+		
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ THEN 
+		EXTERN XACORWIJ XA_Schael_Sarvolo		
+	END
+	
+	IF ~~ THEN BEGIN XA_Corwin
+		SAY @90 /* ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. The pair have achieved feats that no one could have imagined, and her devotion to <CHARNAME>'s cause has only grown since <PRO_HESHE> saved the life of Skie Silvershield, the daughter of one of the Grand Dukes. Though no one can say what the future has in store for this duo, one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~ */
+		
+		IF ~~ THEN
+		GOTO 9
+		
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ THEN 
+		EXTERN XACORWIJ XA_Corwin_Sarvolo
+	END
+	
+	IF ~~ THEN BEGIN XA_Schael
+		SAY @91 /* ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. <CHARNAME> was smitten by her beauty, and their relationship gradually evolved from friendship into something far more profound. Their fierce devotion toward one another was only strengthened after <CHARNAME> saved the life of Skie Silvershield, the daughter of one of the Grand Dukes. Their love, to this point, has endured against all odds. Whether it will continue to do so, no one can say, though one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~ */
 		
 		IF ~~ THEN
 		GOTO 9

@@ -144,6 +144,25 @@ THEN
 END
 
 IF
+	InPartyAllowDead("XACORWIN")
+	Global("CORWINSummoned", "GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("CORWINSummoned", "GLOBAL",2)
+		Continue()
+END
+
+IF 
+	Global("NEWGAME_TOB","GLOBAL",0)
+	Global("CORWINSummoned", "GLOBAL",0)
+	!BeenInParty("XACORWIN")
+THEN
+	RESPONSE #100
+		SetGlobal("CORWINSummoned", "GLOBAL",2)
+		Continue()
+END
+
+IF
 	InPartyAllowDead("Aerie")  // Aerie
 	Global("AerieSummoned","GLOBAL",0)
 THEN
