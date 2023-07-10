@@ -4383,6 +4383,7 @@ IF ~
 	
 	IF ~
 		GlobalGT("XA_TimesHadSex", "GLOBAL", 0)
+		Gender(Player1, MALE)
 	~ THEN REPLY @399 /*  ~Good advice. Climb many trees, love? Besides mine, I mean.~ */
 	DO ~
 		SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)

@@ -857,6 +857,18 @@ END
 			SetInterrupt(TRUE)
 			Continue()
 	END
+	
+	IF 
+		AreaCheck("AR5203")
+		Gender(Player1, MALE)
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalLT("XA_PregnantOverride", "GLOBAL", 1)
+		Global("XA_CheckInRomanceLeftBG", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_PregnantOverride", "GLOBAL", 1)
+			Continue()
+	END
 	//}
 	
 	//{ Sarevok Joined Party
@@ -4798,6 +4810,7 @@ END
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_SaradushDestroyed", "GLOBAL", 1)
+			//Dialog J-70
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)
 	END
@@ -4844,14 +4857,19 @@ END
 	
 	//{ Initial Timer Expiration
 	IF 
+		!AreaCheck("AR5203") // Yaga-Shura Camp
 		Global("XA_CorwinPregnant", "GLOBAL", 1)
-		GlobalTimerExpired("XA_CorwinPregnantTimer", "GLOBAL")
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		OR(2)
+			Global("XA_PregnantOverride", "GLOBAL", 1)
+			GlobalTimerExpired("XA_CorwinPregnantTimer", "GLOBAL")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
+			SetGlobal("XA_PregnantOverride", "GLOBAL", 2)
 			SetGlobal("XA_CorwinPregnant", "GLOBAL", 2)
 			PlaySong(142)
+			//Dialog J-71
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)
 	END
