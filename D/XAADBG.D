@@ -1867,6 +1867,13 @@ END
 IF ~~ THEN BEGIN XA_TestInteraction
 	SAY @280
 	
+	IF ~~ THEN REPLY @568
+	DO ~
+		CreateCreature("BOTSMITH", [-1.-1], N)
+		
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @563 /* ~Cespenar.~ */
 	DO ~
 		CreateCreature("BOTSMITH", [-1.-1], N)

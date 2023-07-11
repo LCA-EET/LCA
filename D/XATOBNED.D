@@ -1,4 +1,4 @@
-BEGIN ~XANEDTOB~
+BEGIN ~XATOBNED~
 
 IF ~
 	Global("XA_NedToB", "GLOBAL", 1)
@@ -29,13 +29,8 @@ IF ~~ THEN BEGIN XA_CorwinJoin
 	IF ~~ THEN REPLY @6
 	DO ~
 		AddJournalEntry(@7, INFO)
-		FadeToColor([30.0],0)
-		Wait(1)
-		ChangeAIScript("XACORSCR", OVERRIDE)
-		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
-		DestroySelf()
-		Wait(1)
-		FadeFromColor([30.0],0)
+		StartCutSceneMode()
+		StartCutScene("XANEDEX")
 	~
 	EXIT
 END

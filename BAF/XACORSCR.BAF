@@ -1,5 +1,16 @@
 //Note: Variable Key Max Length Appears to be 32.
 
+//{ Mark as In-Party in BG2 (For later summoning via the fate-spirit)
+IF
+	InParty(Myself)
+	!Global("XA_CorwinInPartyBG2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CorwinInPartyBG2", "GLOBAL", 1)
+		Continue()
+END
+//}
+
 //{ Copy items from SoD Corwin
 IF
 	//InParty(Myself)
@@ -6238,12 +6249,4 @@ END
 
 //} End Exp Boosts on Join
 
-//{ Mark as In-Party in BG2 (For later summoning via the fate-spirit)
-IF
-	InParty(Myself)
-	!Global("XA_CorwinInPartyBG2", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_CorwinInPartyBG2", "GLOBAL", 1)
-END
-//}
+

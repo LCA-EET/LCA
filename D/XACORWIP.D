@@ -64,14 +64,14 @@ END
 IF ~~ THEN BEGIN XA_JoinToB_BadTime_R
 	SAY @51 /* ~A *very* bad time... Bastard! You left me behind, then went off and killed Irenicus without me! Don't you know how worried I was!~~  */
 	
-	IF ~~ THEN REPLY @44 /* ~I'm sorry, I didn't want to risk losi—~ */
+	IF ~~ THEN REPLY @43 /* ~I'm sorry, I didn't want to risk losi—~ */
 	GOTO XA_JoinToB_HiMad2
 END
 
 IF ~~ THEN BEGIN XA_JoinToB_HiMad
 	SAY @42 /* ~Hi yourself. You left me behind, then went off and killed Irenicus without me! Don't you know how worried I was!~ */
 	
-	IF ~~ THEN REPLY @44 /* ~I'm sorry, I didn't want to risk losi—~ */
+	IF ~~ THEN REPLY @43 /* ~I'm sorry, I didn't want to risk losi—~ */
 	GOTO XA_JoinToB_HiMad2
 END
 
@@ -124,11 +124,8 @@ IF ~~ THEN BEGIN XA_SendHome
 	
 	IF ~~ THEN REPLY @71
 	DO ~
-		FadeToColor([30.0],0)
-		Wait(2)
-		MoveGlobal("XAHOME","XACORWIN",[1999.1218])
-		Wait(1)
-		FadeFromColor([30.0],0)
+		StartCutSceneMode()
+		StartCutScene("XACOREX")
 	~
 	EXIT
 END
@@ -137,16 +134,20 @@ IF ~~ THEN BEGIN XA_NedToB2
 	SAY @53 /* ~I'm sorry, sir. <CHARNAME> brought us here to discuss what <PRO_HESHE> believes is a significant threat to the Baldur's Gate, and the Sword Coast.~ */
 	
 	IF ~~ THEN REPLY @54 /*  ~(Explain the threat posed by the Five) */
-	EXTERN XANEDTOB XA_Threat
+	EXTERN XATOBNED XA_Threat
 END
 
 IF ~~ THEN BEGIN XA_Threat2
 	SAY @59 /*~I understand, sir.~*/
 	
-	IF ~~ THEN REPLY @60 /* ~So, Capt — excuse me, Major. What is your decision?~ */
+	IF ~
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @60 /* ~So, Capt — excuse me, Major. What is your decision?~ */
 	GOTO XA_Threat3
 	
-	IF ~~ THEN REPLY @61 /* ~So, Schael. What is your decision?~ */
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @61 /* ~So, Schael. What is your decision?~ */
 	GOTO XA_Threat3
 END
 
@@ -177,7 +178,7 @@ IF ~~ THEN BEGIN XA_Threat4_Join
 	= @62 /* ~Sir, I'll accompany <CHARNAME>. We'll put an end to the Five. Please inform the Dukes... and please... let my family know that I'll be home as soon as I can.~ */
 	
 	IF ~~ THEN
-	EXTERN XANEDTOB XA_CorwinJoin
+	EXTERN XATOBNED XA_CorwinJoin
 END
 
 IF ~~ THEN BEGIN XA_Threat4_NoJoin
@@ -187,7 +188,7 @@ IF ~~ THEN BEGIN XA_Threat4_NoJoin
 	DO ~
 		AddJournalEntry(@70, INFO)
 		StartCutSceneMode()
-		StartCutScene("XATOBHOM")
+		StartCutScene("XATWOHOM")
 	~
 	EXIT
 END
