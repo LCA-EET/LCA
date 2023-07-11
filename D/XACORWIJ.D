@@ -9,6 +9,22 @@
 */ 
 BEGIN ~XACORWIJ~
 
+//{ Lathander Amkethran
+	IF ~~ THEN BEGIN XA_LathBeno_Head
+		SAY @54 /* ~He kidnapped my daughter, so we killed him. I'd do it again if I could. His head was taken to prevent someone like you from resurrecting him, again.~*/
+		
+		IF ~~ THEN 
+		EXTERN XALATH01 XA_KidnappedRohma
+	END
+	
+	IF ~~ THEN BEGIN XA_LathBeno_Soul
+		SAY @56 /* ~He kidnapped my daughter, so we killed him. I'd do it again if I could. His soul was taken to prevent someone like you from resurrecting him, again.~*/
+		
+		IF ~~ THEN 
+		EXTERN XALATH01 XA_KidnappedRohma
+	END
+//}
+
 //{ FINSOL01 Debug
 	IF ~
 		Global("XA_FINSOL01_Debug", "GLOBAL", 1)
@@ -2247,6 +2263,12 @@ IF ~
 	IF ~~ THEN 
 	DO ~
 		SetGlobal("XA_CorwinBenoST", "GLOBAL", 2)
+		ActionOverride(Player1, TransformItem("XASTDAG", "XASTDAGB"))
+		ActionOverride(Player2, TransformItem("XASTDAG", "XASTDAGB"))
+		ActionOverride(Player3, TransformItem("XASTDAG", "XASTDAGB"))
+		ActionOverride(Player4, TransformItem("XASTDAG", "XASTDAGB"))
+		ActionOverride(Player5, TransformItem("XASTDAG", "XASTDAGB"))
+		ActionOverride(Player6, TransformItem("XASTDAG", "XASTDAGB"))
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	EXTERN XABENO2 XA_CorwinBenoSTChain

@@ -1,0 +1,19 @@
+IF
+	ActionListEmpty()
+	GlobalLT("XA_LathMetPlayer", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		MoveToPoint([2000.1280])
+		Continue()
+END
+
+IF 
+	See(Player1)
+	GlobalLT("XA_LathMetPlayer", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LathMetPlayer", "GLOBAL", 1)
+		StartDialog("XALATH", Player1)
+		SetInterrupt(TRUE)
+END

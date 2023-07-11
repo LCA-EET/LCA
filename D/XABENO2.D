@@ -65,12 +65,27 @@ IF ~~ THEN BEGIN XA_DealWithBeno
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalGT("XA_MarriageProposal", "GLOBAL", 0)
 	~ THEN REPLY @25 /* ~Not likely. I'm going to dismember you, slowly, and scatter your remains across the four corners of Toril. I might keep your head as a wedding gift for Schael. What, you didn't hear the news? She and I are to be married!~*/
+	GOTO XA_KillBeno_Dismember
+	
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalLT("XA_MarriageProposal", "GLOBAL", 1)
+	~ THEN REPLY @35 /* ~Not likely. I'm going to dismember you, slowly, and scatter your remains across the four corners of Toril. I might keep your head as a gift for Schael. She can use it for target practice.~*/
 	GOTO XA_KillBeno_Dismember
 	
 	IF ~
 		PartyHasItem("XASTDAG")
 	~ THEN REPLY @11 /* ~Kill you? No, I have a better idea. (Stab him with the Soultaker Dagger.)~ */
+	DO ~
+		ActionOverride(Player1, TransformItem("XASTDAG", "XASTDAGB"))
+		ActionOverride(Player2, TransformItem("XASTDAG", "XASTDAGB"))
+		ActionOverride(Player3, TransformItem("XASTDAG", "XASTDAGB"))
+		ActionOverride(Player4, TransformItem("XASTDAG", "XASTDAGB"))
+		ActionOverride(Player5, TransformItem("XASTDAG", "XASTDAGB"))
+		ActionOverride(Player6, TransformItem("XASTDAG", "XASTDAGB"))
+	~
 	GOTO XA_KillBeno_ST
 	
 	IF ~~ THEN REPLY @17 /* ~I'm not going to kill you. I'm taking you to jail.~ */

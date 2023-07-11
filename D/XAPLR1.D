@@ -543,7 +543,7 @@ APPEND ~PLAYER1~
 
 		You now have the time you need to find some way to prove your innocence. If you're able to recover the Soultaker dagger, you must send it to me. The wizards believe they can restore Skie, but only if the dagger is in their possession. Once restored, she can corroborate your account of what happened on that night in Dragonspear. With your innocence established, love, we'll be together once again.    
 
-		've enclosed my amulet with this letter. Wear it and know that I love you, always. 
+		I've enclosed my amulet with this letter. Wear it and know that I love you, always. 
 
 		Yours, 
 

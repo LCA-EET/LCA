@@ -1216,6 +1216,14 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	SAY UNIDENTIFIED_DESC @003				//the unidentified description
 	SAY DESC @004							//the identified description
 	//}
+	
+	//{ Soultaker Dagger - Beno
+	COPY ~LCA/Itm/XASTDAGB.ITM~ ~override~
+	SAY NAME1 @154 							//the unidentified name
+	SAY NAME2 @155							//the identified name
+	SAY UNIDENTIFIED_DESC @156				//the unidentified description
+	SAY DESC @156							//the identified description
+	//}
 
 	//{ Soultaker Dagger - Fake
 	COPY ~LCA/Itm/XASTDAGF.ITM~ ~override~

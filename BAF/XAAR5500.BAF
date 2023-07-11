@@ -1,0 +1,23 @@
+IF
+	GlobalLT("XA_LathanderEncounterTimerSet", "GLOBAL", 1)
+	OR(2)
+		PartyHasItem("XABENOHD")
+		PartyHasItem("XASTDAGB")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("XA_LathanderEncounter5500", "GLOBAL", TWO_ROUNDS)
+		SetGlobal("XA_LathanderEncounterTimerSet", "GLOBAL", 1)
+		Continue()
+END
+
+IF 
+	GlobalTimerExpired("XA_LathanderEncounter5500", "GLOBAL")
+	GlobalLT("XA_LathSpawn", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("XALATH01", [3700.2470], NW)
+		CreateCreature("XALATH02", [3640.2640], NW)
+		CreateCreature("XALATH03", [3660.2570], NW)
+		SetGlobal("XA_LathSpawn", "GLOBAL", 1)
+		Continue()
+END

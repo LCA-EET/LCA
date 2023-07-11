@@ -789,7 +789,6 @@ END
 			Continue()
 	END
 	
-	
 	IF
 		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
 		GlobalTimerExpired("XA_AmkethranTimer", "GLOBAL")
