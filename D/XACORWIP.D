@@ -122,8 +122,70 @@ END
 IF ~~ THEN BEGIN XA_SendHome
 	SAY @50 /* ~You're unbelievable, do you know that? Send me home. Now.~ */
 	
+	IF ~~ THEN REPLY @71
+	DO ~
+		FadeToColor([30.0],0)
+		Wait(2)
+		MoveGlobal("XAHOME","XACORWIN",[1999.1218])
+		Wait(1)
+		FadeFromColor([30.0],0)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_NedToB2
+	SAY @53 /* ~I'm sorry, sir. <CHARNAME> brought us here to discuss what <PRO_HESHE> believes is a significant threat to the Baldur's Gate, and the Sword Coast.~ */
+	
+	IF ~~ THEN REPLY @54 /*  ~(Explain the threat posed by the Five) */
+	EXTERN XANEDTOB XA_Threat
+END
+
+IF ~~ THEN BEGIN XA_Threat2
+	SAY @59 /*~I understand, sir.~*/
+	
+	IF ~~ THEN REPLY @60 /* ~So, Capt — excuse me, Major. What is your decision?~ */
+	GOTO XA_Threat3
+	
+	IF ~~ THEN REPLY @61 /* ~So, Schael. What is your decision?~ */
+	GOTO XA_Threat3
+END
+
+IF ~~ THEN BEGIN XA_Threat3
+	SAY @64 /*~...~*/
+	
+	IF ~~ THEN REPLY @66 /*~Well?~*/
+	GOTO XA_Threat4
+END
+
+IF ~~ THEN BEGIN XA_Threat4
+	SAY @65 /* ~I'm thinking.~ */
+	
+	IF ~
+		!ReputationLT(Player1,7)
+	~ THEN REPLY @67 /*~Listen, Schael. I was wrong to cast you aside, and I need your help. I can't do this without you. If not for me, do it for your city. The Five won't stop until the entire continent is in flames!~*/
+	GOTO XA_Threat4_Join
+	
+	IF ~
+		ReputationLT(Player1,7)
+	~ THEN REPLY @67 /*~Listen, Schael. I was wrong to cast you aside, and I need your help. I can't do this without you. If not for me, do it for your city. The Five won't stop until the entire continent is in flames!~*/
+	GOTO XA_Threat4_NoJoin
+END
+
+IF ~~ THEN BEGIN XA_Threat4_Join
+	SAY @68 /* ~(Sigh.)~ */
+	
+	= @62 /* ~Sir, I'll accompany <CHARNAME>. We'll put an end to the Five. Please inform the Dukes... and please... let my family know that I'll be home as soon as I can.~ */
+	
+	IF ~~ THEN
+	EXTERN XANEDTOB XA_CorwinJoin
+END
+
+IF ~~ THEN BEGIN XA_Threat4_NoJoin
+	SAY @69 /* ~You know... you almost had me convinced, <CHARNAME>. But I've been keeping tabs on you. You want me to help you defeat the Five? You're just as bad as they are, possibly worse. No. This is where we part ways, for the last time. Send us home.~ */
+	
 	IF ~~ THEN
 	DO ~
+		AddJournalEntry(@70, INFO)
 		StartCutSceneMode()
 		StartCutScene("XATOBHOM")
 	~

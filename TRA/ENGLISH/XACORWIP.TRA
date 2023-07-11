@@ -48,17 +48,27 @@
 @47 = ~What in the Nine Hells — Major!? <CHARNAME>!?~
 @48 = ~Good point. Let me clear it with your commander. (Bring Marshal Nederlok in through the gate.)~
 @49 = ~You're right. This was a mistake. I'll send you back through the gate.~
-@50 = ~You're unbelievable, do you know that? Send me home. Now.~
+@50 = ~You're unbelievable, you know that? Send me home. Now.~
 @51 = ~A *very* bad time... Bastard! You left me behind, then went after Irenicus without me! Don't you know how worried I was!~ 
 @52 = ~N-no! Gods damnit!~
-@53 = ~I'm sorry to disturb you, sir. <CHARNAME> has some information on a potential threat that you need to hear.~
-@54 = ~(Explain the threat posed by the Five.)~
+@53 = ~Calm down, sir. <CHARNAME> brought us here to discuss what <PRO_HESHE> believes is a significant threat to the Baldur's Gate, and the Sword Coast.~
+@54 = ~(Explain the circumstances of the pocket dimension, and the threat posed by the Five.)~
 @55 = ~Hm. We've been hearing rumors of chaos in the vicinity of Saradush... fire giants, sieges, and large armies preparing for war.~
-@56 = ~Sir? I wasn't aware of such.~
-@57 = ~The Dukes have been trying to keep it under wraps, as to not allow panic to spread. It seems as though they've underestimated the threat, if what you're telling me is true, <CHARNAME>.~
+@56 = ~~
+@57 = ~The Dukes have been trying to keep it under wraps, with the hope of preventing a panic. If what you're telling me is true, <CHARNAME>, it seems that we may have underestimated the threat.~
 @58 = ~Major, I leave it up to you as to whether you'll part in this assignment. Under normal circumstances, I wouldn't hesitate to order you to. But these are far from normal circumstances... just look at this place.~
 @59 = ~I understand, sir.~
 @60 = ~So, Capt — excuse me, Major. What is your decision?~
 @61 = ~So, Schael. What is your decision?~
-@62 = ~I accept the assignment. Sir, please inform the Dukes... and please... let my family know that I'll be home as soon as I can.~
-@63 = ~Of course, Major. We will begin preparing the city's defenses, in case you and <CHARNAME> are unsuccessful. Good hunting.~
+@62 = ~Sir, I'll accompany <CHARNAME>. We'll put an end to the Five. Please inform the Dukes... and please... let my family know that I'll be home as soon as I can.~
+@63 = ~~
+@64 = ~...~
+@65 = ~I'm thinking.~
+@66 = ~Well?~
+@67 = ~Listen, Schael. I was wrong to cast you aside, and I need your help. I can't do this without you. If not for me, do it for your city. The Five won't stop until the entire continent is in flames!~
+@68 = ~(Sigh.)~
+@69 = ~You know... you almost had me convinced, <CHARNAME>. But I've been keeping tabs on you. You want me to help you defeat the Five? You're just as bad as they are, possibly worse. No. This is where we part ways, for the last time. Send us home.~
+@70 = ~No Help At All
+Major Corwin refused to join me in my hunt for the Five. She believes that I'm just as much a force for evil as those I seek to destroy.~ 
+@71 = ~The gate will take you back.~
+
