@@ -9,18 +9,21 @@ IF ~
 	IF ~~ THEN REPLY @63  /* ~That was a satisfying explosion. Great job.~ */
 	DO ~
 		SetGlobal("XA_BenoBoom", "GLOBAL", 3)
+		GiveItemCreate("XASTDAGD", LastTalkedToBy(Myself),1,0,0)
 	~
 	GOTO XA_BenoBoom_ST_2
 	
 	IF ~~ THEN REPLY @64 /*~Did I forget to tell you? The dagger contains multiple souls, not just Beno's.~ */
 	DO ~
 		SetGlobal("XA_BenoBoom", "GLOBAL", 3)
+		GiveItemCreate("XASTDAGD", LastTalkedToBy(Myself),1,0,0)
 	~
 	GOTO XA_BenoBoom_ST_2
 	
 	IF ~~ THEN REPLY @65 /* ~Hahahah... you should take a look at yourself!~ */
 	DO ~
 		SetGlobal("XA_BenoBoom", "GLOBAL", 3)
+		GiveItemCreate("XASTDAGD", LastTalkedToBy(Myself),1,0,0)
 	~
 	GOTO XA_BenoBoom_ST_2
 END
@@ -60,6 +63,7 @@ IF ~~ THEN BEGIN XA_BenoBoom_ST_2
 	IF ~~ THEN REPLY @68  /*~You did the best you can. Go home. There's nothing more you can do here.~ */
 	GOTO XA_BenoBoom_GoHome
 END
+
 
 IF ~~ THEN BEGIN XA_BenoBoom_GoHome
 	SAY @69 /*~I'm afraid your right. With his body obliterated, there's no hope for Beno's resurrection. Brothers, help me clean up this mess. Afterward, we'll head back home.~ */
@@ -140,6 +144,7 @@ IF ~
 	GOTO XA_MissingSoul
 END
 
+//{ Head
 IF ~~ THEN BEGIN XA_MissingHead
 	SAY @3 /* ~I am Bonaiutus, and I am a priest of the Morning Lord. My colleagues and I have been tasked with locating the lost head of one Beno Famari.~ */
 	
@@ -166,7 +171,9 @@ IF ~~ THEN BEGIN XA_MissingHead
 	~ THEN REPLY @23 /* ~All those hours of self-flagellation for such a mundane revelation? Even a schoolboy knows you cannot restore a body without its head. Pester me no more, I know nothing of this missing head or its whereabouts.~ */
 	EXTERN XALATH03 XA_ToldALie
 END
+//} 
 
+//{ Soul
 IF ~~ THEN BEGIN XA_MissingSoul
 	SAY @4 /* ~I am Bonaiutus, and I am a priest of the Morning Lord. My colleagues and I have been tasked with locating the lost soul of one Beno Famari.~ */
 	
@@ -193,7 +200,7 @@ IF ~~ THEN BEGIN XA_MissingSoul
 	~ THEN REPLY @24 /* ~All those hours of self-flagellation for such a mundane revelation? Even a schoolboy knows you cannot restore a man without his soul. Pester me no more, I know nothing of this soul or its whereabouts.~ */
 	EXTERN XALATH03 XA_ToldALie
 END
-
+//}
 IF ~~ THEN BEGIN XA_ToldALie2
 	SAY @25 /* ~Indeed. Am I correct in assuming that you were the one to take his life? If so, why?~ */
 	
@@ -235,6 +242,17 @@ IF ~~ THEN BEGIN XA_KidnappedRohma
 	GOTO XA_HowMany
 	
 	IF ~
+		OR(2)
+			See("XALATH02")
+			See("XALATH03")
+	~ THEN 
+	GOTO XA_BadMemory
+END
+
+IF ~~ THEN BEGIN XA_BadMemory
+	SAY @77 /* ~If memory serves, this will be the sixth time we've had to resurrect him.~ */
+	
+	IF ~
 		See("XALATH02")
 	~ THEN
 	EXTERN XALATH02 XA_HowMany
@@ -253,7 +271,7 @@ IF ~~ THEN BEGIN XA_HowMany
 END
 
 IF ~~ THEN BEGIN XA_HowMany2
-	SAY @27 /* ~I'm quite tired of it already, as I'm sure you can imagine.~ */
+	SAY @27 /* ~Lathander forgive me, but I'm quite tired of this nonsense.~ */
 	
 	IF ~~ THEN REPLY @19 /*~Why bother? I thought priests of Lathander weren't keen on associating themselves with scum like Beno.~ */
 	GOTO XA_WhyBother
@@ -262,10 +280,14 @@ END
 IF ~~ THEN BEGIN XA_WhyBother
 	SAY @20  /* ~Ah, it's complicated, you see. Beno's family has friends within the upper echelon of our clergy. If it were up to me... well. The point is, it's not up to me.~ */
 	
-	IF ~~ THEN REPLY @30 /* ~Just tell them you couldn't find the head.~ */
+	IF ~
+		PartyHasItem("XABENOHD")
+	~ THEN REPLY @30 /* ~Just tell them you couldn't find the head.~ */
 	GOTO XA_HateLying
 	
-	IF ~~ THEN REPLY @31 /* ~Just tell them you couldn't locate his soul.~ */
+	IF ~
+		PartyHasItem("XASTDAGB")
+	~ THEN REPLY @31 /* ~Just tell them you couldn't locate his soul.~ */
 	GOTO XA_HateLying
 	
 	IF ~~ THEN REPLY @32 /* ~I can kill you if that will ease your suffering, priest.~ */
@@ -275,10 +297,14 @@ END
 IF ~~ THEN BEGIN XA_KillPriest
 	SAY @33 /* ~Perhaps it will, but it will not ease your own. The church will continue to send its priests and clergy in search of what's needed for the resurrection. Search parties will also be sent for us, and any other of our number you may kill. Eventually, you'll be overwhelmed by sheer force of numbers.~ */
 	
-	IF ~~ THEN REPLY @30 /* ~Just tell them you couldn't find the head.~ */
+	IF ~
+		PartyHasItem("XABENOHD")
+	~ THEN REPLY @30 /* ~Just tell them you couldn't find the head.~ */
 	GOTO XA_HateLying
 	
-	IF ~~ THEN REPLY @31 /* ~Just tell them you couldn't locate his soul.~ */
+	IF ~
+		PartyHasItem("XASTDAGB")
+	~ THEN REPLY @31 /* ~Just tell them you couldn't locate his soul.~ */
 	GOTO XA_HateLying
 END
 
@@ -309,6 +335,7 @@ IF ~~ THEN BEGIN XA_BroughtBody_Soul
 		ActionOverride(Player4, DestroyItem("XASTDAGB"))
 		ActionOverride(Player5, DestroyItem("XASTDAGB"))
 		ActionOverride(Player6, DestroyItem("XASTDAGB"))
+		SetGlobal("XA_GaveDagger", "LOCALS", 1)
 	~
 	GOTO XA_GaveDagger
 END
@@ -343,13 +370,28 @@ IF ~~ THEN BEGIN XA_BroughtBody_Head2
 	IF ~
 		See("XALATH02")
 	~ THEN 
+	GOTO XA_AskSutures
+	
+	IF ~
+		See("XALATH03")
+	~ THEN 
+	GOTO XA_AskSutures
+END
+
+IF ~~ THEN BEGIN XA_AskSutures
+	SAY @45 /* ~Brother, did you bring the suture kit?~ */
+	
+	IF ~
+		See("XALATH02")
+	~ THEN 
 	EXTERN XALATH02 XA_Reattach
 	
 	IF ~
 		See("XALATH03")
 	~ THEN 
-	EXTERN XALATH03 XA_Reattach
+	EXTERN XALATH02 XA_Reattach
 END
+
 IF ~~ THEN BEGIN XA_Reattach
 	SAY @46 /* ~Now, if I can just find the suture kit... Ah! Here it is.~ */
 	

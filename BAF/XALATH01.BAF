@@ -14,6 +14,6 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LathMetPlayer", "GLOBAL", 1)
-		StartDialog("XALATH", Player1)
+		StartDialog("XALATH01", Player1)
 		SetInterrupt(TRUE)
 END

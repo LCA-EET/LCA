@@ -663,7 +663,6 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 
 //{ New Creatures
 	COPY ~LCA/CRE/XABENOAM.CRE~ ~override~
-	COPY ~LCA/CRE/XALATH01.CRE~ ~override~
 	COPY ~LCA/CRE/XALATH02.CRE~ ~override~
 	COPY ~LCA/CRE/XALATH03.CRE~ ~override~
 	COPY ~LCA/CRE/XACORWIN.CRE~ ~override~
@@ -785,6 +784,10 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	COPY ~LCA/CRE/XABRIELB.CRE~ ~override~
 	COPY ~LCA/CRE/XALANTAN.CRE~ ~override~
 	COPY ~LCA/CRE/XACOOK.CRE~ ~override~
+	
+	COPY ~LCA/CRE/XALATH01.CRE~ ~override~
+	SAY NAME1 @157
+	SAY NAME2 @157
 	
 	COPY ~LCA/CRE/XANEOMA.CRE~ ~override~
 	SAY NAME1 @087
@@ -1215,7 +1218,7 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	//}
 	
 	//{ Soultaker Dagger (SoA)
-	COPY ~LCA/Itm/XASTDAG.ITM~ ~override~
+	COPY ~LCA/ITM/XASTDAG.ITM~ ~override~
 	SAY NAME1 @001 							//the unidentified name
 	SAY NAME2 @002							//the identified name
 	SAY UNIDENTIFIED_DESC @003				//the unidentified description
@@ -1223,15 +1226,23 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	//}
 	
 	//{ Soultaker Dagger - Beno
-	COPY ~LCA/Itm/XASTDAGB.ITM~ ~override~
+	COPY ~LCA/ITM/XASTDAGB.ITM~ ~override~
 	SAY NAME1 @154 							//the unidentified name
 	SAY NAME2 @155							//the identified name
 	SAY UNIDENTIFIED_DESC @156				//the unidentified description
 	SAY DESC @156							//the identified description
 	//}
+	
+	//{ Soultaker Dagger - Beno Boom
+	COPY ~LCA/ITM/XASTDAGD.ITM~ ~override~
+	SAY NAME1 @154 							//the unidentified name
+	SAY NAME2 @155							//the identified name
+	SAY UNIDENTIFIED_DESC @158				//the unidentified description
+	SAY DESC @158							//the identified description
+	//}
 
 	//{ Soultaker Dagger - Fake
-	COPY ~LCA/Itm/XASTDAGF.ITM~ ~override~
+	COPY ~LCA/ITM/XASTDAGF.ITM~ ~override~
 	SAY NAME1 @059 							//the unidentified name
 	SAY NAME2 @060							//the identified name
 	SAY UNIDENTIFIED_DESC @061				//the unidentified description

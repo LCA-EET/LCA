@@ -21,3 +21,16 @@ THEN
 		SetGlobal("XA_LathSpawn", "GLOBAL", 1)
 		Continue()
 END
+
+IF 
+	GlobalGT("XA_BenoBoom", "GLOBAL", 0)
+	OR(3)
+		InMyArea("XALATH01")
+		InMyArea("XALATH02")
+		InMyArea("XALATH03")
+THEN
+	RESPONSE #100
+		ActionOverride("XALATH01", DestroySelf())
+		ActionOverride("XALATH02", DestroySelf())
+		ActionOverride("XALATH03", DestroySelf())
+END

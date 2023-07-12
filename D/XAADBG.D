@@ -1867,10 +1867,23 @@ END
 IF ~~ THEN BEGIN XA_TestInteraction
 	SAY @280
 	
-	IF ~~ THEN REPLY @568
+	IF ~~ THEN REPLY @572
 	DO ~
-		CreateCreature("BOTSMITH", [-1.-1], N)
-		
+		CreateCreature("XALATH01", [-1.-1], N)
+		CreateCreature("XALATH02", [-1.-1], N)
+		CreateCreature("XALATH03", [-1.-1], N)
+		GiveItemCreate("XABENOHD", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XABENOHD", IDENTIFIED,TRUE))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @571
+	DO ~
+		CreateCreature("XALATH01", [-1.-1], N)
+		CreateCreature("XALATH02", [-1.-1], N)
+		CreateCreature("XALATH03", [-1.-1], N)
+		GiveItemCreate("XASTDAGB", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XASTDAGB", IDENTIFIED,TRUE))
 	~
 	EXIT
 	
@@ -3620,6 +3633,13 @@ IF ~~ THEN BEGIN XA_Menu_StartCutscene
 	DO ~
 		StartCutSceneMode()
 		StartCutScene("XABENORS")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @570
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("XABENORH")
 	~
 	EXIT
 	
