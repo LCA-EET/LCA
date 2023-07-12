@@ -1,5 +1,104 @@
 BEGIN ~XALATH01~
 
+//{ Beno Boom
+IF ~
+	Global("XA_BenoBoom", "GLOBAL", 1)
+~ THEN BEGIN XA_BenoBoom_ST
+	SAY @62 /* ~(He turns to you. He's covered in ... well... Beno.)~ */
+	
+	IF ~~ THEN REPLY @63  /* ~That was a satisfying explosion. Great job.~ */
+	DO ~
+		SetGlobal("XA_BenoBoom", "GLOBAL", 3)
+	~
+	GOTO XA_BenoBoom_ST_2
+	
+	IF ~~ THEN REPLY @64 /*~Did I forget to tell you? The dagger contains multiple souls, not just Beno's.~ */
+	DO ~
+		SetGlobal("XA_BenoBoom", "GLOBAL", 3)
+	~
+	GOTO XA_BenoBoom_ST_2
+	
+	IF ~~ THEN REPLY @65 /* ~Hahahah... you should take a look at yourself!~ */
+	DO ~
+		SetGlobal("XA_BenoBoom", "GLOBAL", 3)
+	~
+	GOTO XA_BenoBoom_ST_2
+END
+
+IF ~
+	Global("XA_BenoBoom", "GLOBAL", 2)
+~ THEN BEGIN XA_BenoBoom_Zombie
+	SAY @62 /* ~(He turns to you. He's covered in ... well... Beno.)~ */
+	
+	IF ~~ THEN REPLY @70 /* ~What the hells happened!?~*/
+	GOTO XA_BenoBoom_Zombie2
+END
+
+IF ~~ THEN BEGIN XA_BenoBoom_Zombie2
+	SAY @71 /* It seems the head was too badly decomposed. Instead of being resurrected as a human, he was instead raised as a zombie... and, as warrior-priests of the Morning Lord...~ */
+	
+	IF ~~ THEN REPLY @72  /* ~You're magically protected against lower forms of undead.~ */
+	GOTO XA_BenoBoom_Zombie3
+END
+
+IF ~~ THEN BEGIN XA_BenoBoom_Zombie3
+	SAY @73 /* ~Yes. Hence, the explosion. I should have prepared for this possibility. How in Lathander's name will I explain what happened...~ */
+	
+	IF ~~ THEN REPLY @67  /* ~Tell them the truth. They should've sent someone more competent.~*/
+	GOTO XA_BenoBoom_GoHome
+	
+	IF ~~ THEN REPLY @68  /*~You did the best you can. Go home. There's nothing more you can do here.~ */
+	GOTO XA_BenoBoom_GoHome
+END
+
+IF ~~ THEN BEGIN XA_BenoBoom_ST_2
+	SAY @66 /* ~Sufficeth to say, that didn't go according to plan. How in Lathander's name will I explain what happened...~*/
+	
+	IF ~~ THEN REPLY @67  /* ~Tell them the truth. They should've sent someone more competent.~*/
+	GOTO XA_BenoBoom_GoHome
+	
+	IF ~~ THEN REPLY @68  /*~You did the best you can. Go home. There's nothing more you can do here.~ */
+	GOTO XA_BenoBoom_GoHome
+END
+
+IF ~~ THEN BEGIN XA_BenoBoom_GoHome
+	SAY @69 /*~I'm afraid your right. With his body obliterated, there's no hope for Beno's resurrection. Brothers, help me clean up this mess. Afterward, we'll head back home.~ */
+	
+	IF ~~ THEN REPLY @74 /* Safe travels.~*/
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("XALATHEX")
+	~
+	EXIT
+	
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+	~ THEN REPLY @53 /* ~Schael... you have some ... ahhh... Beno on you. On your shoulder.~*/
+	EXTERN XACORWIJ XA_BenoBoom
+	
+	IF ~
+		IsValidForPartyDialogue("Aerie")
+	~ THEN REPLY @54  /* ~Aerie... you got some, ahh, Beno in your hair.~ */
+	EXTERN AERIEJ XA_BenoBoom
+	
+	IF ~
+		IsValidForPartyDialogue("Jaheira")
+	~ THEN REPLY @55  /* ~Jaheira there's, ahh, some Beno on you. On your backside, dear.~*/
+	EXTERN JAHEIRAJ XA_BenoBoom
+	
+	IF ~
+		IsValidForPartyDialogue("Imoen2")
+	~ THEN REPLY @76  /*  ~Imoen you've got some... erm, you've got some Beno on your back.~ */
+	EXTERN IMOEN2J XA_BenoBoom
+	
+	IF ~
+		IsValidForPartyDialogue("Neera")
+	~ THEN REPLY @75  /* ~Neera, oh dear, you have some Beno on your shoes.~ */
+	EXTERN NEERAJ XA_BenoBoom
+END
+//}
+
+//{ Initial Meeting
 IF ~
 	Global("XA_LathMetPlayer", "GLOBAL", 1)
 	OR(2)
@@ -11,21 +110,33 @@ IF ~
 	IF ~
 		PartyHasItem("XABENOHD")
 	~ THEN REPLY @1 /* ~What is it?~ */
+	DO ~
+		SetGlobal("XA_LathMetPlayer", "GLOBAL", 2)
+	~
 	GOTO XA_MissingHead
 	
 	IF ~
 		PartyHasItem("XASTDAGB")
 	~ THEN REPLY @1 /* ~What is it?~*/
+	DO ~
+		SetGlobal("XA_LathMetPlayer", "GLOBAL", 2)
+	~
 	GOTO XA_MissingSoul
 	
 	IF ~
 		PartyHasItem("XABENOHD")
 	~ THEN REPLY @2 /* ~Who are you?~*/
+	DO ~
+		SetGlobal("XA_LathMetPlayer", "GLOBAL", 2)
+	~
 	GOTO XA_MissingHead
 	
 	IF ~
 		PartyHasItem("XASTDAGB")
 	~ THEN REPLY @2 /* ~Who are you?~*/
+	DO ~
+		SetGlobal("XA_LathMetPlayer", "GLOBAL", 2)
+	~
 	GOTO XA_MissingSoul
 END
 
@@ -308,3 +419,4 @@ IF ~~ THEN BEGIN XA_Reassociate2
 	~
 	EXIT
 END
+//}

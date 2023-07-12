@@ -788,6 +788,19 @@ END
 
 //{ NEERAJ
 APPEND NEERAJ
+	IF ~~ THEN BEGIN XA_BenoBoom
+		SAY @293 /* ~Eek! Oh, ewwww! Get it off me! Aah! You're covered in it worse than me!~ */
+		
+		= @297 /* ~Ohhhh! This village better have a bathhouse!~*/
+		
+		IF ~~ THEN 
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XALATHEX")
+		~
+		EXIT
+	END
+
 	IF ~~ THEN BEGIN XA_SaradushDestroyed
 		SAY @233
 		
@@ -799,6 +812,19 @@ END
 
 //{ AERIEJ
 APPEND AERIEJ
+	IF ~~ THEN BEGIN XA_BenoBoom
+		SAY @293 /* ~Eek! Oh, ewwww! Get it off me!~ */
+		
+		= @294 /* ~Ohhhh! I hope this v-village has a bathhouse!~ */
+		
+		IF ~~ THEN 
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XALATHEX")
+		~
+		EXIT
+	END
+
 	IF ~~ THEN BEGIN XA_SaradushDestroyed
 		SAY @234 /* ~The city's been completely d-destroyed... all those people...~ */
 		
@@ -2046,6 +2072,19 @@ APPEND ANOMENJ
 END
 
 APPEND JAHEIRAJ
+	IF ~~ THEN BEGIN XA_BenoBoom
+		SAY @286 /* ~You're covered as well! No, don't put your hands on me, they're filthy!~ */
+		
+		= @298 /* ~With luck, we'll find a hot spring to wash in. Let's go.~ */
+		
+		IF ~~ THEN 
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XALATHEX")
+		~
+		EXIT
+	END
+
 	IF ~~ THEN BEGIN XA_AskDiviner
 		SAY @114 /* ~No. To know the future is unnatural and risks upsetting the balance.~ */
 		
@@ -2156,6 +2195,19 @@ APPEND JAHEIRAJ
 END
 
 APPEND IMOEN2J
+	IF ~~ THEN BEGIN XA_BenoBoom
+		SAY @295 /* ~I'm covered in it, ugh. Don't laugh! You are too!~ */
+		
+		= @296 /* ~This is worse than the time we fell into the manure pile at Candlekeep. Come on. Maybe we'll get lucky and find a bathhouse in this village... this village in the middle of the desert. Gods, help us.~ */
+		
+		IF ~~ THEN 
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XALATHEX")
+		~
+		EXIT
+	END
+
 	IF ~~ THEN BEGIN XA_AskDiviner
 		SAY @104 /* ~Thanks, but no. Knowing my future won't change it, and it will take away all of the surprise.~ */
 		

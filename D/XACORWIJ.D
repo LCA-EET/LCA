@@ -8,6 +8,20 @@
 
 */ 
 BEGIN ~XACORWIJ~
+//{ Beno Boom
+	IF ~~ THEN BEGIN XA_BenoBoom
+		SAY @82 /* ~I'm covered in him! Gods, you are too!~ */
+		
+		= @98 /* ~At least he won't be coming back this time... Pray to Tymora that there's a bathhouse in this village. Let's go.~ */
+		
+		IF ~~ THEN 
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XALATHEX")
+		~
+		EXIT
+	END
+//}
 
 //{ Lathander Amkethran
 	IF ~~ THEN BEGIN XA_LathBeno_Head
