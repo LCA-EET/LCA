@@ -92,7 +92,7 @@ Daleson mentioned that Lord de'Arnise may still be alive, possibly in a dungeon 
 @89 = ~Understood.~
 @90 = ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. The pair have achieved feats that no one could have imagined, and her devotion to <CHARNAME>'s cause has only grown since <PRO_HESHE> saved the life of Skie Silvershield, the daughter of one of the Grand Dukes. Though no one can say what the future has in store for this duo, one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~
 @91 = ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. <CHARNAME> was smitten by her beauty, and their relationship gradually evolved from friendship into something far more profound. Their fierce devotion toward one another was only strengthened after <CHARNAME> saved the life of Skie Silvershield, the daughter of one of the Grand Dukes. Their love, to this point, has endured against all odds. Whether it will continue to do so, no one can say, though one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~
-@92 = ~~
+@92 = ~I want to go to Kanaglym, and release the souls contained in the Soultaker.~
 @93 = ~~
 @94 = ~~
 @95 = ~~
@@ -220,13 +220,14 @@ Captain Corwin was kind enough to give up her beautiful silver earrings to help 
 @216 = ~Alls I know is he ain't here, got it? Go check one of the other taverns 'round town.~
 @217 = ~Locating the Farseer
 The bartender at the Elfsong Tavern hasn't seen Brevlik in months. Apparently, he hasn't been allowed back because of some bad debts. He suggested that I check some of the other taverns in the city.~
-@218 = ~~
-@219 = ~~
-@220 = ~~
-@221 = ~~
-@222 = ~~
-@223 = ~~
-@224 = ~~
+@218 = ~Nevermind.~
+@219 = ~I do. How would I go about releasing the souls trapped inside?~
+@220 = ~Soultaker Dagger
+Cespenar told me that in order to free the souls trapped within the Soultaker Dagger, that I'd need to take it to the Fugue Plane. If I remember right, there was a rift to the Fugue Plane in Kanaglym beneath Dragonspear castle. Perhaps I can use the planar gate to go there.~
+@221 = ~Go ahead.~
+@222 = ~No, thanks.~
+@223 = ~Go to Fugue Plane! Souls will break free of dagger there. But how to go to Fugue Plane if not dead? Thinking make Cespenar's head ache... oh, well. Would you like me to make you shiny ones? I look though items, yes?~
+@224 = ~I want to release the souls trapped inside.~
 @225 = ~Aye, remember <CHARNAME>, the so-called hero of Baldur's Gate? The one who was arrested for killing the Duke's daughter? Well, the Dukes are now tellin' everyone now that <PRO_HESHE> was innocent the whole time! What's more, Skie Silvershield is up and about, healthy and lively as ever. Could you believe it? Word on the street is that <PRO_HESHE>'s on <PRO_HISHER> way back to the city as we speak. Good on <PRO_HIMHER>, I s'pose.~
 @226 = ~It's alright. I know you didn't mean anything by it. Besides, I'm quite happy with the crossbow.~
 @227 = ~Looks like the others are ready... let's get moving.~
@@ -261,7 +262,7 @@ The bartender at the Elfsong Tavern hasn't seen Brevlik in months. Apparently, h
 @256 = ~For what?~
 @257 = ~Hee hee, she's pregnant with your child, silly!~
 @258 = ~Hmm... a lot of people n-name their children after people who've had a profound impact on their life. If I ever have a baby boy, I'm going to name him Quayle. Oh, I'm so excited to see your baby!~
-@259 = ~~
+@259 = ~Are you familiar with the Soultaker dagger?~
 @260 = ~There's still a long way to go. I'll be counting on you to help keep Schael and our unborn child healthy.~
 @261 = ~I won't let you down. I promise.~
 @262 = ~Those are both beautiful n-names ... oh, I'm so excited to see your baby!~
@@ -269,7 +270,7 @@ The bartender at the Elfsong Tavern hasn't seen Brevlik in months. Apparently, h
 @264 = ~<CHARNAME>. Congratulations.~
 @265 = ~Is that so? I overheard parts of your conversation, and you didn't sound happy with her at all.~
 @266 = ~Yes. I was surprised that Schael would allow herself to get pregnant under these circumstances. After thinking on it some more however, there was no way you or she could know what was to happen. I cannot in fairness fault her, or you, for the unfortunate timing.~
-@267 = ~~
+@267 = ~Soul prison, yes. Very nasty. Why you ask? You gots dagger?~
 @268 = ~So, child. Have you given any thought as to the baby's name?~
 @269 = ~For?~
 @270 = ~Major Cor — Schael's pregancy, of course. It is wonderful news.~
@@ -301,4 +302,6 @@ The bartender at the Elfsong Tavern hasn't seen Brevlik in months. Apparently, h
 @296 = ~This is worse than the time we fell into that manure pile outside of Dreppin's shed. Come on. Maybe we'll get lucky and find a bathhouse in this village... this village in the middle of the desert. Gods, help us.~
 @297 = ~Ohhhh! This village better have a bathhouse!~
 @298 = ~With luck, we'll find a hot spring to wash in. Let's go.~
+@299 = ~Soultaker Dagger
+Cespenar told me that in order to free the souls trapped within the Soultaker Dagger, that I'd need to take it to the Fugue Plane. How can one go to the Fugue Plane, if they're not dead? I'm not sure whether there's anything I can do for those trapped in the dagger.~
 

@@ -176,6 +176,7 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 //}
 
 //{ New Areas
+	COPY ~LCA/ARE/XA5300.ARE~ ~override~
 	COPY ~LCA/ARE/XA5501.ARE~ ~override~
 	COPY ~LCA/ARE/XAPEN.ARE~ ~override~
 	COPY ~LCA/ARE/XACS01.ARE~ ~override~

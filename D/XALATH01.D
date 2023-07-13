@@ -9,6 +9,7 @@ IF ~
 	IF ~~ THEN REPLY @63  /* ~That was a satisfying explosion. Great job.~ */
 	DO ~
 		SetGlobal("XA_BenoBoom", "GLOBAL", 3)
+		SetGlobalTimer("XA_CorwinBenoSoul", "GLOBAL", ONE_DAY)
 		GiveItemCreate("XASTDAGD", LastTalkedToBy(Myself),1,0,0)
 	~
 	GOTO XA_BenoBoom_ST_2
@@ -16,6 +17,7 @@ IF ~
 	IF ~~ THEN REPLY @64 /*~Did I forget to tell you? The dagger contains multiple souls, not just Beno's.~ */
 	DO ~
 		SetGlobal("XA_BenoBoom", "GLOBAL", 3)
+		SetGlobalTimer("XA_CorwinBenoSoul", "GLOBAL", ONE_DAY)
 		GiveItemCreate("XASTDAGD", LastTalkedToBy(Myself),1,0,0)
 	~
 	GOTO XA_BenoBoom_ST_2
@@ -23,6 +25,7 @@ IF ~
 	IF ~~ THEN REPLY @65 /* ~Hahahah... you should take a look at yourself!~ */
 	DO ~
 		SetGlobal("XA_BenoBoom", "GLOBAL", 3)
+		SetGlobalTimer("XA_CorwinBenoSoul", "GLOBAL", ONE_DAY)
 		GiveItemCreate("XASTDAGD", LastTalkedToBy(Myself),1,0,0)
 	~
 	GOTO XA_BenoBoom_ST_2

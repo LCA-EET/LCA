@@ -196,6 +196,40 @@
 	END
 	//}
 	
+	//{ PPGUY01
+	EXTEND_BOTTOM PPGUY01 0
+		IF ~
+			OR(2)
+				Global("XA_ST_Kanaglym", "GLOBAL", 1)
+				Global("XA_AskCespenarDagger", "GLOBAL", 2)
+			OR(3)
+				PartyHasItem("XASTDAG")
+				PartyHasItem("XASTDAGB")
+				PartyHasItem("XASTDAGD")
+		~ THEN REPLY @92
+		GOTO XA_Kanaglym
+	END
+	
+	APPEND PPGUY01
+		IF ~~ THEN BEGIN XA_Kanaglym
+			SAY #71071 /*  ~As you wish.~ */
+			
+			IF ~~ THEN 
+			DO ~
+				LeaveAreaLUAPanic("XA5300","",[780.550],SE)
+				ActionOverride(Player1,LeaveAreaLUA("XA5300","",[780.550],SE))
+				ActionOverride(Player2,LeaveAreaLUA("XA5300","",[750.540],SE))
+				ActionOverride(Player3,LeaveAreaLUA("XA5300","",[810.540],SE))
+				ActionOverride(Player4,LeaveAreaLUA("XA5300","",[840.530],SE))
+				ActionOverride(Player5,LeaveAreaLUA("XA5300","",[720.530],SE))
+				ActionOverride(Player6,LeaveAreaLUA("XA5300","",[730.520],SE))
+				DestroySelf()
+			~
+			EXIT
+		END
+	END
+	//}
+	
 	//{ FATESP
 		//{ FATESP State 6 Trans 24
 		ALTER_TRANS FATESP
@@ -485,7 +519,68 @@
 		GOTO XA_CorwinBowGond
 	END
 	
+	EXTEND_BOTTOM BOTSMITH 2
+		IF ~
+			Global("XA_AskCespenarDagger", "GLOBAL", 1)
+			OR(3)
+				PartyHasItem("XASTDAG")
+				PartyHasItem("XASTDAGB")
+				PartyHasItem("XASTDAGD")
+		~ THEN REPLY @259 /* ~Are you familiar with the Soultaker dagger?~ */
+		GOTO XA_SoulTakerFamiliar
+	END
+	
 	APPEND BOTSMITH
+		IF ~~ THEN BEGIN XA_SoulTakerFamiliar
+			SAY @267 /* ~Soul prison, yes. Very nasty. Why you ask? You gots dagger?~ */
+			
+			IF ~~ THEN REPLY @218 /* ~Nevermind.~*/
+			EXIT
+			
+			IF ~~ THEN REPLY @219  /*~I do. How would I go about releasing the souls trapped inside?~*/
+			GOTO XA_SoulTakerFamiliar2
+		END
+		
+		IF ~~ THEN BEGIN XA_SoulTakerFamiliar2
+			SAY @223 /* ~Go to Fugue Plane! Souls will break free of dagger there. But how to go to Fugue Plane if not dead? Thinking make Cespenar's head ache... oh, well. Would you like me to make you shiny ones? I look though items, yes?~*/
+			
+			IF ~
+				Dead("bdkherr")
+			~ THEN REPLY #66556 /* ~No, not right now. Go back to doing whatever it was... you do.~*/
+			DO ~
+				AddJournalEntry(@220, INFO)
+				SetGlobal("XA_AskCespenarDagger", "GLOBAL", 2)
+			~
+			GOTO 3
+			
+			IF ~
+				Dead("bdkherr")
+			~ THEN REPLY @221 /* ~Go ahead.~*/
+			DO ~
+				AddJournalEntry(@220, INFO)
+				SetGlobal("XA_AskCespenarDagger", "GLOBAL", 2)
+			~
+			GOTO 4
+			
+			IF ~
+				!Dead("bdkherr")
+			~ THEN REPLY #66556 /* ~No, not right now. Go back to doing whatever it was... you do.~*/
+			DO ~
+				AddJournalEntry(@299, INFO)
+				SetGlobal("XA_AskCespenarDagger", "GLOBAL", 3)
+			~
+			GOTO 3
+			
+			IF ~
+				!Dead("bdkherr")
+			~ THEN REPLY @221 /* ~Go ahead.~*/
+			DO ~
+				AddJournalEntry(@299, INFO)
+				SetGlobal("XA_AskCespenarDagger", "GLOBAL", 3)
+			~
+			GOTO 4
+		END
+		
 		IF ~
 			OR(2)
 				Global("XA_MakeCorbow5", "GLOBAL", 2)
@@ -500,6 +595,7 @@
 			~
 			EXIT
 		END
+		
 	
 		IF ~~ THEN BEGIN XA_CorwinBowGond
 			SAY @71  /*~Ooo! Lets me see, lets me see! Very nice.... yes! Cespenar can replace the string on this bow, with Bowstring of Gond! Make very powerful, for 5000 gold. You wants?~ */

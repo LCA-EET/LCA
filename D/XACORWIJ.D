@@ -8,6 +8,80 @@
 
 */ 
 BEGIN ~XACORWIJ~
+//{ Corwin Beno Soul Talk Dialog J-85
+	IF ~
+		Global("XA_CorwinBenoSoulTalk", "GLOBAL", 1)
+	~ THEN BEGIN XA_CorwinBenoSoulTalk
+		SAY @286 /*  ~A moment of your time, <CHARNAME>?~*/
+		
+		IF ~~ THEN REPLY @287 /* ~Sure, what's on your mind?~*/
+		DO ~
+			SetGlobal("XA_CorwinBenoSoulTalk", "GLOBAL", 2)
+		~
+		GOTO XA_CorwinBenoSoulTalk2
+		
+		IF ~~ THEN REPLY @288 /* ~For you, of course.~*/
+		DO ~
+			SetGlobal("XA_CorwinBenoSoulTalk", "GLOBAL", 2)
+		~
+		GOTO XA_CorwinBenoSoulTalk2
+		
+		IF ~~ THEN REPLY @289 /*~A moment, a smidgen, a wee bit... whatever you need.~ */
+		DO ~
+			SetGlobal("XA_CorwinBenoSoulTalk", "GLOBAL", 2)
+		~
+		GOTO XA_CorwinBenoSoulTalk2
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinBenoSoulTalk2
+		SAY @290 /* ~I've been doing a lot of thinking... about Beno. In spite of everything he did, I don't think that he should spend eternity in that damned dagger.~ */
+		
+		= @291 /*~Plus, with his body destroyed, he can never harm Rohma or my father ever again. If there's a way we can release his soul...~*/
+		
+		IF ~
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @292 /* ~I understand. Perhaps Cespenar knows something that can help us.~ */
+		DO ~
+			SetGlobal("XA_AskCespenarDagger", "GLOBAL", 1)
+		~
+		GOTO XA_CorwinBenoSoulTalk3_Romance
+		
+		IF ~
+			Global("XA_ST_Kanaglym", "GLOBAL", 1)
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @296 /* ~I remember the wizard Melkor had mentioned something about the Fugue Plane... If we can bring the dagger to Kanaglym, he thought that it would release the souls trapped within.~ */
+		GOTO XA_CorwinBenoSoulTalk3_Romance
+		
+		IF ~
+			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @292 /* ~I understand. Perhaps Cespenar knows something that can help us.~ */
+		DO ~
+			SetGlobal("XA_AskCespenarDagger", "GLOBAL", 1)
+		~
+		GOTO XA_CorwinBenoSoulTalk3
+		
+		IF ~
+			Global("XA_ST_Kanaglym", "GLOBAL", 1)
+			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @296 /* ~I remember the wizard Melkor had mentioned something about the Fugue Plane... If we can bring the dagger to Kanaglym, he thought that it would release the souls trapped within.~ */
+		GOTO XA_CorwinBenoSoulTalk3
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinBenoSoulTalk3
+		SAY @294  /* ~It's worth a try. Thank you, <CHARNAME>.~ */
+		
+		IF ~~ THEN
+		EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinBenoSoulTalk3_Romance
+		SAY @293  /* ~It's worth a try. Thank you, love.~ */
+		
+		IF ~~ THEN
+		EXIT
+	END
+//}
+
 //{ Beno Boom
 	IF ~~ THEN BEGIN XA_BenoBoom
 		SAY @82 /* ~I'm covered in him! Gods, you are too!~ */

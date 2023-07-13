@@ -315,15 +315,16 @@ IF ~~ THEN BEGIN XA_MeetMelkor5B7
 		Dead("bdkherr")
 	~ THEN REPLY @34  /*  ~Give me the dagger, then. I'll take it to Dragonspear and release the souls within.~ */
 	DO ~
+		SetGlobal("XA_ST_Kanaglym", "GLOBAL", 1)
 		AddJournalEntry(@53, INFO)
 	~
-	
 	GOTO XA_MeetMelkor5B8
 	
 	IF ~
 		!Dead("bdkherr")
 	~ THEN REPLY @68 /* ~Give me the dagger then. If I learn of such a place in my travels, I'll bring the dagger there and release the souls trapped inside.~*/
 	DO ~
+		SetGlobal("XA_ST_Kanaglym", "GLOBAL", 1)
 		AddJournalEntry(@67, INFO)
 	~
 	GOTO XA_MeetMelkor5B8

@@ -732,6 +732,20 @@ END
 
 //{ Event Checks
 
+	//{ Beno Exploded
+	IF
+		InParty(Myself)
+		GlobalTimerExpired("XA_CorwinBenoSoul", "GLOBAL")
+		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_CorwinBenoSoulTalk", "GLOBAL", 1)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
 	//{ Checks if Dorn's patrons are dead
 	IF
 		!Global("XA_DornPatronsDead", "GLOBAL", 1)
