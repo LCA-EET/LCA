@@ -1,0 +1,17 @@
+IF
+	OR(6)
+		Range(Player1,8)
+		Range(Player2,8)
+		Range(Player3,8)
+		Range(Player4,8)
+		Range(Player5,8)
+		Range(Player6,8)
+	OR(3)
+		PartyHasItem("XASTDAG")
+		PartyHasItem("XASTDAGB")
+		PartyHasItem("XASTDAGD")
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself, @0)
+		TriggerActivation(Myself,FALSE)
+END
