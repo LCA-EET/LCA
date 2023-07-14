@@ -1880,6 +1880,17 @@ END
 IF ~~ THEN BEGIN XA_TestInteraction
 	SAY @280
 	
+	IF ~~ THEN REPLY @574
+	DO ~
+		CreateCreature("XAELF01", [-1.-1], N)
+		CreateCreature("XAELF02", [-1.-1], N)
+		CreateCreature("XAELF03", [-1.-1], N)
+		SetGlobal("XA_LodobDead", "GLOBAL", 1)
+		Wait(1)
+		ActionOverride("XAELF01", StartDialog("XAELF01", Player1))
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @572
 	DO ~
 		CreateCreature("XALATH01", [-1.-1], N)

@@ -7,6 +7,67 @@
 
 */
 APPEND ~PLAYER1~
+
+	IF ~
+		Global("XA_DaggerDestruction", "GLOBAL", 1)
+	~ THEN BEGIN XA_DaggerDestruction
+		SAY @12 /* ~(You approach the rift, holding the Soultaker Dagger in your hand. With each step, the vibration from the dagger increases, and you struggle to maintain your grip. Suddenly, the dagger becomes extremely hot, and you're forced to release your grip before your hand is burned. A blinding flash of white light envelops the area as the dagger hits the ground, and shatters...)~*/
+		
+		IF ~
+			PartyHasItem("XASTDAG") //Lodob
+		~ THEN
+		DO ~
+			ActionOverride(Player1, DestroyItem("XASTDAG"))
+			ActionOverride(Player2, DestroyItem("XASTDAG"))
+			ActionOverride(Player3, DestroyItem("XASTDAG"))
+			ActionOverride(Player4, DestroyItem("XASTDAG"))
+			ActionOverride(Player5, DestroyItem("XASTDAG"))
+			ActionOverride(Player6, DestroyItem("XASTDAG"))
+			SetGlobal("XA_DaggerDestruction", "GLOBAL", 2)
+			SetGlobal("XA_Lodob", "GLOBAL", 1)
+			StartCutSceneMode()
+			StartCutScene("XADAG2A")
+		~
+		EXIT
+		
+		IF ~
+			PartyHasItem("XASTDAGB") //Beno, Lodob
+			IsValidForPartyDialog("XACORWIN")
+		~ THEN
+		DO ~
+			ActionOverride(Player1, DestroyItem("XASTDAGB"))
+			ActionOverride(Player2, DestroyItem("XASTDAGB"))
+			ActionOverride(Player3, DestroyItem("XASTDAGB"))
+			ActionOverride(Player4, DestroyItem("XASTDAGB"))
+			ActionOverride(Player5, DestroyItem("XASTDAGB"))
+			ActionOverride(Player6, DestroyItem("XASTDAGB"))
+			SetGlobal("XA_DaggerDestruction", "GLOBAL", 2)
+			SetGlobal("XA_BenoSpirit", "GLOBAL", 1)
+			SetGlobal("XA_Lodob", "GLOBAL", 1)
+			StartCutSceneMode()
+			StartCutScene("XADAG2B")
+		~
+		EXIT
+		
+		IF ~
+			PartyHasItem("XASTDAGD") //Beno
+			IsValidForPartyDialog("XACORWIN")
+		~ THEN
+		DO ~
+			ActionOverride(Player1, DestroyItem("XASTDAGD"))
+			ActionOverride(Player2, DestroyItem("XASTDAGD"))
+			ActionOverride(Player3, DestroyItem("XASTDAGD"))
+			ActionOverride(Player4, DestroyItem("XASTDAGD"))
+			ActionOverride(Player5, DestroyItem("XASTDAGD"))
+			ActionOverride(Player6, DestroyItem("XASTDAGD"))
+			SetGlobal("XA_DaggerDestruction", "GLOBAL", 2)
+			SetGlobal("XA_BenoSpirit", "GLOBAL", 1)
+			StartCutSceneMode()
+			StartCutScene("XADAG2C")
+		~
+		EXIT
+	END
+	
 	IF ~
 		OR(2)
 			Global("XA_SleepInn", "GLOBAL", 1)

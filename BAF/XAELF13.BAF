@@ -1,0 +1,10 @@
+IF 
+	Global("XA_LodobDead", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ForceSpell(Myself, FLASHY_2)
+		Wait(1)
+		DestroySelf()
+		SetInterrupt(TRUE)
+END
