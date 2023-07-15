@@ -21,10 +21,16 @@ END
 IF ~~ THEN BEGIN XA_Lodob2
 	SAY @1 /* ~I AM LODOB, BARON OF THE HELLS. WHERE IS IRENICUS? I SHALL DEVOUR HIS SOUL, AS HE IMPRISONED MINE!~ */
 	
-	IF ~~ THEN REPLY @5
+	IF ~~ THEN REPLY @2 /*~Is he the one that imprisoned you?~*/
+	DO ~
+		AddJournalEntry(@8, INFO)
+	~
 	GOTO XA_Lodob3
 	
-	IF ~~ THEN REPLY @6
+	IF ~~ THEN REPLY @6 /*~It may please you to know that he is dead.~*/
+	DO ~
+		AddJournalEntry(@8, INFO)
+	~
 	GOTO XA_Lodob3
 END
 

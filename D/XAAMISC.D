@@ -920,6 +920,13 @@ APPEND AERIEJ
 		~
 		EXIT
 	END
+	
+	IF ~~ THEN BEGIN XA_HowMany
+		SAY @300 /* ~A-are you sure that's a good idea? It's been so long since he died...~ */
+		
+		IF ~~ THEN 
+		EXTERN XALATH01 XA_HowMany2
+	END
 
 	IF ~~ THEN BEGIN XA_SaradushDestroyed
 		SAY @234 /* ~The city's been completely d-destroyed... all those people...~ */
@@ -2181,6 +2188,13 @@ APPEND JAHEIRAJ
 		EXIT
 	END
 
+	IF ~~ THEN BEGIN XA_HowMany
+		SAY @301 /* ~You mean to attempt a resurrection, after the body has been dead for this long? Nothing good can come from this.~*/
+		
+		IF ~~ THEN 
+		EXTERN XALATH01 XA_HowMany2
+	END
+	
 	IF ~~ THEN BEGIN XA_AskDiviner
 		SAY @114 /* ~No. To know the future is unnatural and risks upsetting the balance.~ */
 		

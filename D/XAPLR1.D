@@ -45,7 +45,7 @@ APPEND ~PLAYER1~
 			SetGlobal("XA_BenoSpirit", "GLOBAL", 1)
 			SetGlobal("XA_Lodob", "GLOBAL", 1)
 			StartCutSceneMode()
-			StartCutScene("XADAG2B")
+			StartCutScene("XADAG2A")
 		~
 		EXIT
 		
@@ -63,7 +63,7 @@ APPEND ~PLAYER1~
 			SetGlobal("XA_DaggerDestruction", "GLOBAL", 2)
 			SetGlobal("XA_BenoSpirit", "GLOBAL", 1)
 			StartCutSceneMode()
-			StartCutScene("XADAG2C")
+			StartCutScene("XADAG2B")
 		~
 		EXIT
 	END

@@ -1,12 +1,18 @@
 IF
-	Global("XA_Lodob", "GLOBAL", 2)
 	Dead("XALODOB")
 	GlobalLT("XA_LodobDead", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LodobDead", "GLOBAL", 1)
+		//DisplayStringHead(Myself, ~Lodob Dead.~)
+		Continue()
+END
+
+IF
 	InMyArea("XAELF01")
 	!Dead("XAELF01")
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LodobDead", "GLOBAL", 1)
 		ActionOverride("XAELF01", StartDialog("XAELF01", Player1))
 END
 

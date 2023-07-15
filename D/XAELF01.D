@@ -64,6 +64,7 @@ IF ~~ THEN BEGIN XA_LodobDead4A
 	
 	IF ~~ THEN
 	DO ~
+		AddJournalEntry(@17, INFO)
 		AddExperienceParty(50000)
 	~
 	EXIT
@@ -98,6 +99,7 @@ IF ~~ THEN BEGIN XA_LodobDead6
 	
 	IF ~~ THEN
 	DO ~
+		AddJournalEntry(@17, INFO)
 		AddExperienceParty(50000)
 	~
 	EXIT

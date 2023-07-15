@@ -1,0 +1,34 @@
+IF 
+	Global("XA_ElfSpirit", "GLOBAL", 2)
+	!IsValidForPartyDialogue("XACORWIN")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ForceSpell(Myself, FLASHY_2)
+		Wait(1)
+		DestroySelf()
+		SetInterrupt(TRUE)
+END
+
+IF 
+	Global("XA_BenoGoodbye", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ForceSpell(Myself, FLASHY_2)
+		Wait(1)
+		DestroySelf()
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("XA_ElfSpirit", "GLOBAL", 2)
+	GlobalLT("XA_BenoGoodbye", "GLOBAL", 1)
+	IsValidForPartyDialogue("XACORWIN")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_BenoGoodbye", "GLOBAL", 1)
+		StartDialog("XABENOSP", Player1)
+		SetInterrupt(TRUE)
+END

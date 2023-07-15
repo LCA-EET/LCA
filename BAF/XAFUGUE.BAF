@@ -16,7 +16,7 @@ IF
 THEN
 	RESPONSE #100
 		StartCutSceneMode()
-		StartCutScene("XADAGDES")
+		StartCutScene("XADAG1")
 END
 
 IF

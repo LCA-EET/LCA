@@ -12,6 +12,16 @@ IF ~~ THEN BEGIN XA_HowMany
 	
 	IF ~~ THEN 
 	EXTERN XALATH01 XA_HowMany2
+	
+	IF ~
+		IsValidForPartyDialogue("Aerie")
+	~ THEN
+	EXTERN AERIEJ XA_HowMany
+	
+	IF ~
+		IsValidForPartyDialogue("Jaheira")
+	~ THEN
+	EXTERN JAHEIRAJ XA_HowMany
 END
 
 IF ~~ THEN BEGIN XA_Reattach

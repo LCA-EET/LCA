@@ -1,12 +1,14 @@
 BEGIN ~XABENOSP~
 
 IF ~
-	Global("XA_LodobDead", "GLOBAL", 2)
-	Global("XA_ElfSpirit", "GLOBAL", 2)
+	Global("XA_BenoGoodbye", "GLOBAL", 1)
 ~ THEN BEGIN XA_BenoSpirit
 	SAY @0 /* ~Schael... It's me.~ */
 	
 	IF ~~ THEN 
+	DO ~
+		SetGlobal("XA_BenoGoodbye", "GLOBAL", 2)
+	~
 	EXTERN XABENOSP XA_GoodbyeChain
 END
 
@@ -46,4 +48,8 @@ CHAIN XABENOSP XA_GoodbyeChain
 	@14 /* ~And <CHARNAME>... thank you for saving Rohma...~*/
 	== XABENOSP
 	@15 /* ~Farewell...~*/
+	DO ~
+		AddJournalEntry(@17, INFO)
+		AddexperienceParty(50000)
+	~
 EXIT
