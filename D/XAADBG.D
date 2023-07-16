@@ -1880,6 +1880,15 @@ END
 IF ~~ THEN BEGIN XA_TestInteraction
 	SAY @280
 	
+	IF ~~ THEN REPLY @579
+	DO ~
+		SetGlobal("XA_AshatielSpirit", "GLOBAL", 1)
+		CreateCreature("XAASHASP", [-1.-1], N)
+		Wait(1)
+		ActionOverride("XAASHASP", StartDialog("XAASHASP", Player1))
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @574
 	DO ~
 		CreateCreature("XAELF01", [-1.-1], N)
@@ -3037,6 +3046,31 @@ END
 IF ~~ THEN BEGIN XA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
 	
+	IF ~~ THEN REPLY @583
+	DO ~
+		SetGlobal("DemoGorgonIsDead","GLOBAL",1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @582
+	DO ~
+		SetGlobal("XA_IncubusDefeated", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	
+	IF ~~ THEN REPLY @581
+	DO ~
+		SetGlobal("XA_CaelarStayedInAvernus","GLOBAL",1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @580
+	DO ~
+		SetGlobal("XA_KanaDream", "GLOBAL", 3)
+	~
+	GOTO XA_MainMenu
+	
 	IF ~~ THEN REPLY @526 /*~Set XA_MessageToBG to 2.~*/
 	DO ~
 		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
@@ -3666,6 +3700,22 @@ END
 
 IF ~~ THEN BEGIN XA_Menu_StartCutscene
 	SAY @15 /*  ~Of course. Which cutscene do you want to start?~ */
+	
+	IF ~~ THEN REPLY @577
+	DO ~
+		SetGlobal("XA_KanaDream", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutScene("XADREAM")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @578
+	DO ~
+		SetGlobal("XA_KanaDream", "GLOBAL", 2)
+		StartCutSceneMode()
+		StartCutScene("XADREAM")
+	~
+	EXIT
 	
 	IF ~~ THEN REPLY @569
 	DO ~

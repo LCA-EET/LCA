@@ -6834,12 +6834,12 @@ IF ~~ THEN BEGIN XAA51
 	SAY @173 /* ~I do, too. It's only natural, I suppose. It was a traumatic experience for all of us.~ */
 	
 	IF ~
-		Dead("bdcaelar")
+		GlobalLT("XA_CaelarStayedInAvernus","GLOBAL",1)
 	~ THEN REPLY @174 /* ~Yes. I often wonder about Aun, Caelar's uncle. Do you think he is still alive, in Avernus?~ */
 	GOTO XAA52 //OK
 	
 	IF ~
-		!Dead("bdcaelar")
+		Global("XA_CaelarStayedInAvernus","GLOBAL",1)
 	~ THEN REPLY @175 /* ~Yes. I often wonder about Caelar, and whether she is still alive, in Avernus.~ */
 	GOTO XAA53 //OK
 END
@@ -7346,12 +7346,12 @@ IF ~~ THEN BEGIN XAA58
 	SAY @198 /* ~Still, it was quite a gamble. Next time risk your own damned soul, or better yet, don't play such high stakes games with demons, got it?~ */
 	
 	IF ~
-		Dead("bdcaelar")
+		GlobalLT("XA_CaelarStayedInAvernus","GLOBAL",1)
 	~ THEN REPLY @174 /* ~Yes. I often wonder about Aun, Caelar's uncle. Do you think he is still alive, in Avernus?~ */
 	GOTO XAA52 //OK
 	
 	IF ~
-		!Dead("bdcaelar")
+		Global("XA_CaelarStayedInAvernus","GLOBAL",1)
 	~ THEN REPLY @175 /* ~Yes. I often wonder about Caelar, and whether she is still alive, in Avernus.~ */
 	GOTO XAA53 //OK
 END

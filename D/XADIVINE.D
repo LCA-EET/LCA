@@ -128,7 +128,7 @@ IF ~~ THEN BEGIN XA_PlayerQuestion
 	GOTO XA_LottoNumbers
 	
 	IF ~
-		!Dead("bdcaelar")
+		Global("XA_CaelarStayedInAvernus","GLOBAL",1)
 	~ THEN REPLY @54 /* ~Does Caelar Argent still live?~ */
 	GOTO XA_Caelar
 

@@ -1,4 +1,17 @@
 IF
+	GlobalLT("XA_AshaSpawn", "XA5300", 1)
+	Global("XA_CaelarStayedInAvernus","GLOBAL",1)
+	OR(2)
+		Global("XA_IncubusDefeated", "GLOBAL", 1)
+		GlobalGT("DemoGorgonIsDead","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_AshaSpawn", "XA5300", 1)
+		CreateCreature("XAASHASP", [800.590], NNE)
+		Continue()
+END
+
+IF
 	InMyArea("XABENOSP")
 	Global("XA_ElfSpirit", "GLOBAL", 2)
 	!InMyArea("XAELF01")

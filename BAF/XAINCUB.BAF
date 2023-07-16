@@ -41,6 +41,7 @@ THEN
 		DisplayStringHead(Myself, @88)
 		CreateItem("XAQUIVER",0,0,0)
 		DropItem("XAQUIVER",[-1.-1])
+		SetGlobal("XA_IncubusDefeated", "GLOBAL", 1)
 		Kill(Myself)		
 		SetInterrupt(TRUE)
 	RESPONSE #33
@@ -48,6 +49,7 @@ THEN
 		DisplayStringHead(Myself, @88)
 		CreateItem("XASWORD",0,0,0)
 		DropItem("XASWORD",[-1.-1])
+		SetGlobal("XA_IncubusDefeated", "GLOBAL", 1)
 		Kill(Myself)		
 		SetInterrupt(TRUE)
 	RESPONSE #33
@@ -55,6 +57,7 @@ THEN
 		DisplayStringHead(Myself, @88)
 		CreateItem("XAMSRING",0,0,0)
 		DropItem("XAMSRING",[-1.-1])
+		SetGlobal("XA_IncubusDefeated", "GLOBAL", 1)
 		Kill(Myself)		
 		SetInterrupt(TRUE)
 END

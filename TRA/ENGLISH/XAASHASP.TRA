@@ -1,7 +1,7 @@
 @0 = ~<CHARNAME>... You've returned.~
 @1 = ~I recognize you... Ashatiel. Caelar's right hand.~
 @2 = ~Why are you here, Bhaalspawn?~
-@3 = ~I could ask you the same thing. Why haven't you moved on, spirit? There's an entrance to the Fugue Plane not ten paces from you.~
+@3 = ~I could ask you the same thing. Why haven't you moved on, spirit? There's an entrance to the Fugue Plane right over there.~
 @4 = ~We tried, but we cannot.~
 @5 = ~We? There are others?~
 @6 = ~The Shining Lady's most devoted followers swore an oath to serve her in life... and in death. Those who took part in the ritual... we're still bound by that oath, and we cannot move on.~
@@ -9,7 +9,7 @@
 @8 = ~Yes. She's still alive, in Avernus. Though something has changed...~
 @9 = ~She still lives!? After all this time?~
 @10 = ~That she's still alive doesn't surprise me.~
-@11 = ~You've no reason to help us. To go back to that horrible place, and rescue our Shining Lady... All I can offer you is our eternal gratitude.~
+@11 = ~You've no reason to help any of us. To go back to that horrible place, and rescue our Shining Lady... All I can offer you is our eternal gratitude.~
 @12 = ~I barely escaped the first time. I'm sorry, but there's no way I'm going back there.~
 @13 = ~You said something has changed. What did you mean?~
 @14 = ~We're bound to her life force. Until recently, it was very strong. Now, it is very faint. I feel as though something terrible has happened to her.~
@@ -19,11 +19,17 @@
 @18 = ~Since we last met, I've gained access to a planar gate. Perhaps I can use it to reach Avernus.~
 @19 = ~I recognize you... Ashatiel. The Shining Lady's lapdog.~
 @20 = ~We? How many of you are there?~
-@21 = ~See for yourself. Crusaders! Reveal yourselves!~
+@21 = ~Hundreds, all of whom participated in the rituals.~
 @22 = ~It's none of your concern, spirit.~
 @23 = ~I remember you, Ashatiel. You were as brave as you were foolish.~
 @24 = ~To kill you once again, spirit!~
 @25 = ~If that were possible, I'd welcome it.~ 
 @26 = ~Then I wish you good luck. If you're successful, you must bring Caelar back to us, that she may release us from our servitude. Only then will we be able to move on.~
-@27 = ~I won't help you. Caelar is exactly where she belongs.~
+@27 = ~I won't help you. Caelar is exactly where she belongs, and the world is better for it.~
 @28 = ~Remember, you must bring Caelar here so that she can release us from our oath. Only then will we be able to move on to whatever awaits us.~
+@29 = ~What do you mean? Wasn't it you who told me to come here, in my dream?~
+@30 = ~It most assuredly was not. Interesting...~
+@31 = ~The voice in the dream... it must have been Caelar's! She told me that she needed my help against some powerful force...~
+@32 = ~Somehow, she reached out to you. I... I don't think she'd do that unless it was absolutely necessary.~
+@33 = ~You said you're tied to Caelar's life force in some way, and that it has become weak. If that's the case, then she'll be dead soon enough, and you'll be free to move on, spirit.~
+@34 = ~Have you reconsidered? Will you help rescue Caelar?~

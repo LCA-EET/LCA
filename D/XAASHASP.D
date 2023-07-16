@@ -26,6 +26,7 @@ IF ~
 		SetGlobal("XA_ShowCrusaders", "GLOBAL", 2)
 		SetGlobal("XA_HelpAshatiel", "GLOBAL", 1)
 	~
+	GOTO XA_DecideToHelp
 	
 	IF ~~ THEN REPLY @27 /* ~I won't help you. Caelar is exactly where she belongs.~ */
 	DO ~
@@ -69,6 +70,18 @@ IF ~~ THEN BEGIN XA_Ashatiel
 	
 	IF ~~ THEN REPLY @24 /* ~To kill you once again, spirit!~ */
 	GOTO XA_CantDie
+	
+	IF ~
+		Global("XA_KanaDream", "GLOBAL", 3)
+	~ THEN REPLY @29 /* ~What do you mean? Wasn't it you who told me to come here, in my dream?~*/
+	GOTO XA_Dream
+END
+
+IF ~~ THEN BEGIN XA_Dream
+	SAY @30 /* ~It most assuredly was not. Interesting...~*/
+	
+	IF ~~ THEN 
+	GOTO XA_Dream
 END
 
 IF ~~ THEN BEGIN XA_CantDie
@@ -106,16 +119,30 @@ IF ~~ THEN BEGIN XA_CaelarAlive2
 	
 	IF ~~ THEN REPLY @20 /* ~We? How many of you are there?~ */
 	GOTO XA_HowMany
+	
+	IF ~
+		Global("XA_KanaDream", "GLOBAL", 3)
+	~ THEN REPLY @31 /*  ~The voice in the dream... it must have been Caelar's! She told me that she needed my help against some powerful force.~*/
+	GOTO XA_Dream_Help
+END
+
+IF ~~ THEN BEGIN XA_Dream_Help
+	SAY @32 /* ~Somehow, she reached out to you. I... I don't think she'd do that unless it was absolutely necessary.~*/
+	
+	IF ~~ THEN
+	GOTO XA_HelpCaelar2
 END
 
 IF ~~ THEN BEGIN XA_HowMany
-	SAY @21 /* ~See for yourself. Crusaders! Reveal yourselves!~*/
+	SAY @21 /* ~Hundreds, all of whom participated in the rituals.~*/
 	
-	IF ~~ THEN
-	DO ~
-		SetGlobal("XA_ShowCrusaders", "GLOBAL", 1)
-	~
-	EXIT
+	IF ~~ THEN REPLY @33 /* ~You said you're tied to Caelar's life force in some way, and that it has become weak. If that's the case, then she'll be dead soon enough, and you'll be free to move on, spirit.~*/
+	GOTO XA_HelpCaelar
+	
+	IF ~
+		Global("XA_KanaDream", "GLOBAL", 3)
+	~ THEN REPLY @31 /*  ~The voice in the dream... it must have been Caelar's! She told me that she needed my help against some powerful force.~*/
+	GOTO XA_Dream_Help
 END
 
 IF ~~ THEN BEGIN XA_HelpCaelar
@@ -126,9 +153,19 @@ IF ~~ THEN BEGIN XA_HelpCaelar
 END
 
 IF ~~ THEN BEGIN XA_HelpCaelar2
-	SAY @11 /* ~You've no reason to help us. To go back to that horrible place... All I can offer you is our eternal gratitude.~*/
+	SAY @11 /* ~You've no reason to help any of us. To go back to that horrible place, and rescue our Shining Lady... All I can offer you is our eternal gratitude.~*/
 	
 	IF ~~ THEN REPLY @12 /* ~I barely escaped the first time. I'm sorry, but there's no way I'm going back there.~*/
+	GOTO XA_GoInPeace
+	
+	IF ~~ THEN REPLY @18 /* ~Since we last met, I've gained access to a planar gate. Perhaps I can use it to reach Avernus.~ */
+	DO ~
+		SetGlobal("XA_HelpAshatiel", "GLOBAL", 1)
+	~
+	GOTO XA_DecideToHelp
+	
+	IF ~~ THEN REPLY @27 /* ~I won't help you. Caelar is exactly where she belongs.~ */
+	GOTO XA_GoInPeace
 END
 
 IF ~~ THEN BEGIN XA_GoInPeace
@@ -136,4 +173,29 @@ IF ~~ THEN BEGIN XA_GoInPeace
 	
 	IF ~~ THEN
 	EXIT
+END
+
+IF ~~ THEN BEGIN XA_DecideToHelp
+	SAY @26  /* ~Then I wish you good luck. If you're successful, you must bring Caelar back to us, that she may release us from our servitude. Only then will we be able to move on.~ */
+	
+	IF ~~ THEN 
+	EXIT
+END
+
+IF ~
+	GlobalLT("XA_HelpAshatiel", "GLOBAL", 1)
+~ THEN BEGIN XA_Reconsider
+	SAY @34 /* ~Have you reconsidered? Will you help rescue Caelar?~*/
+	
+	IF ~~ THEN REPLY @12 /* ~I barely escaped the first time. I'm sorry, but there's no way I'm going back there.~*/
+	GOTO XA_GoInPeace
+	
+	IF ~~ THEN REPLY @18 /* ~Since we last met, I've gained access to a planar gate. Perhaps I can use it to reach Avernus.~ */
+	DO ~
+		SetGlobal("XA_HelpAshatiel", "GLOBAL", 1)
+	~
+	GOTO XA_DecideToHelp
+	
+	IF ~~ THEN REPLY @27 /* ~I won't help you. Caelar is exactly where she belongs.~ */
+	GOTO XA_GoInPeace
 END

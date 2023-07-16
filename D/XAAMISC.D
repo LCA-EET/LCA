@@ -30,6 +30,14 @@
 */
 
 //{ Altered Transitions	
+
+	ADD_TRANS_ACTION BDCAELAR
+	BEGIN 87 END
+	BEGIN 0 END
+	~
+		SetGlobal("XA_CaelarStayedInAvernus","GLOBAL",1)
+	~
+
 	ADD_TRANS_ACTION BDCORWIJ
 	BEGIN 280 END
 	BEGIN 0 END

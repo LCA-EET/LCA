@@ -1,3 +1,39 @@
+//{ Caelar Rescue Quest Timer Init
+IF
+	GlobalLT("XA_KanaDreamTimerSet", "GLOBAL",1)
+	Global("XA_ClearedKanaglym", "GLOBAL",1)
+	Global("XA_EnteredSaradush", "GLOBAL", 1)
+	OR(2)
+		Global("XA_IncubusDefeated", "GLOBAL", 1)
+		GlobalGT("DemoGorgonIsDead","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_KanaDreamTimerSet", "GLOBAL",1)
+		SetGlobalTimer("XA_KanaDreamTimer", "GLOBAL", ONE_DAY)
+		Continue()
+END
+
+IF
+	GlobalTimerExpired("XA_KanaDreamTimer", "GLOBAL")
+	GlobalLT("XA_KanaDream", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_KanaDream", "GLOBAL", 1)
+		SetGlobalTimer("XA_KanaDreamTimer", "GLOBAL", EIGHT_HOURS)
+		StartCutSceneMode()
+		StartCutScene("XADREAM")
+END
+
+IF
+	GlobalTimerExpired("XA_KanaDreamTimer", "GLOBAL")
+	Global("XA_KanaDream", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_KanaDream", "GLOBAL", 2)
+		StartCutSceneMode()
+		StartCutScene("XADREAM")
+END
+//}
 
 IF
 	Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
