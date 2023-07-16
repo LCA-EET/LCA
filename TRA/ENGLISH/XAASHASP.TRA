@@ -1,5 +1,5 @@
 @0 = ~<CHARNAME>... You've returned.~
-@1 = ~I recognize you... Ashatiel. Caelar's right hand.~
+@1 = ~I recognize you. You were Caelar's right hand.~
 @2 = ~Why are you here, Bhaalspawn?~
 @3 = ~I could ask you the same thing. Why haven't you moved on, spirit? There's an entrance to the Fugue Plane right over there.~
 @4 = ~We tried, but we cannot.~
@@ -17,11 +17,11 @@
 @16 = ~Perhaps... but if there's a way you can help her, in spite of the death and destruction that she — that *we* caused.~
 @17 = ~I understand... Go in peace, <CHARNAME>.~
 @18 = ~Since we last met, I've gained access to a planar gate. Perhaps I can use it to reach Avernus.~
-@19 = ~I recognize you... Ashatiel. The Shining Lady's lapdog.~
+@19 = ~If it isn't the Shining Lady's lapdog.~
 @20 = ~We? How many of you are there?~
 @21 = ~Hundreds, all of whom participated in the rituals.~
 @22 = ~It's none of your concern, spirit.~
-@23 = ~I remember you, Ashatiel. You were as brave as you were foolish.~
+@23 = ~You were as brave as you were foolish, Ashatiel.~
 @24 = ~To kill you once again, spirit!~
 @25 = ~If that were possible, I'd welcome it.~ 
 @26 = ~Then I wish you good luck. If you're successful, you must bring Caelar back to us, that she may release us from our servitude. Only then will we be able to move on.~
@@ -33,3 +33,10 @@
 @32 = ~Somehow, she reached out to you. I... I don't think she'd do that unless it was absolutely necessary.~
 @33 = ~You said you're tied to Caelar's life force in some way, and that it has become weak. If that's the case, then she'll be dead soon enough, and you'll be free to move on, spirit.~
 @34 = ~Have you reconsidered? Will you help rescue Caelar?~
+@35 = ~Why are you still so loyal to her? She threw the lives of you and your fellow crusaders away just so she could free her uncle from a hell of her own making.~
+@36 = ~I've asked myself that same question. It's hard to explain... but I will try.~
+@37 = ~All of us, everyone that took part in the crusade, experienced a profound loss. I myself lost my family at the hands of Sarevok. It's why I hated you, <CHARNAME>. I learned that you — like him — were a Bhaalspawn, and I wrongly took my anger out on you.~
+@38 = ~As I was saying, we all had lost someone or something that was precious to us. Caelar filled us with hope that we would one day be reunited with our loved ones. She united us, and gave us a sense of purpose...~
+@39 = ~Her motivations, at least in the beginning, were honest and pure. It wasn't until she started relying more on Hephernaan that things took a dark turn. I'm not absolving her of the responsibility for what happened... but Caelar, in spite of everything, is a good person.~ 
+@40 = ~Go on.~
+@41 = ~Guilt by association. You're not the first to fall victim to that trap, and you certainly won't be the last.~

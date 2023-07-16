@@ -33,6 +33,14 @@ IF ~
 		SetGlobal("XA_ShowCrusaders", "GLOBAL", 2)
 	~
 	GOTO XA_GoInPeace
+	
+	IF ~
+		GlobalLT("XA_WhyLoyal", "LOCALS", 1)
+	~ THEN REPLY @35 /* ~Why are you still so loyal to her? She threw the lives of you and your fellow crusaders away just so she could free her uncle from a hell of her own making.~ */
+	DO ~
+		SetGlobal("XA_WhyLoyal", "LOCALS", 1)
+	~
+	GOTO XA_WhyLoyal
 END
 
 IF ~
@@ -166,6 +174,52 @@ IF ~~ THEN BEGIN XA_HelpCaelar2
 	
 	IF ~~ THEN REPLY @27 /* ~I won't help you. Caelar is exactly where she belongs.~ */
 	GOTO XA_GoInPeace
+	
+	IF ~
+		GlobalLT("XA_WhyLoyal", "LOCALS", 1)
+	~ THEN REPLY @35 /* ~Why are you still so loyal to her? She threw the lives of you and your fellow crusaders away just so she could free her uncle from a hell of her own making.~ */
+	DO ~
+		SetGlobal("XA_WhyLoyal", "LOCALS", 1)
+	~
+	GOTO XA_WhyLoyal
+END
+
+IF ~~ THEN BEGIN XA_WhyLoyal
+	SAY @36 /*~I've asked myself that same question. It's hard to explain... but I will try.~*/
+	
+	= @37 /*~All of us, everyone that took part in the crusade, experienced a profound loss. I myself lost my family at the hands of Sarevok. It's why I hated you, <CHARNAME>. I learned that you were a Bhaalspawn, and I was unable to look past your nature...~*/
+	
+	IF ~~ THEN REPLY @40 /*~Go on.~*/
+	GOTO XA_WhyLoyal2
+	
+	IF ~~ THEN REPLY @41 /* ~Guilt by association. You're not the first to fall victim to that trap, and you certainly won't be the last.~*/
+	GOTO XA_WhyLoyal2
+END
+
+IF ~~ THEN BEGIN XA_WhyLoyal2
+	SAY @38 /*~As I was saying, we all had lost someone or something that was precious to us. Caelar filled us with hope that we would one day be reunited with our loved ones. She united us, and gave us a sense of purpose...~*/
+	
+	= @39 /* ~Her motivations, at least in the beginning, were honest and pure. It wasn't until she started relying more on Hephernaan that things took a dark turn. I'm not absolving her of her responsibility for what happened... but Caelar is, in spite of everything, still a good person.~  */
+	
+	IF ~~ THEN REPLY @12 /* ~I barely escaped the first time. I'm sorry, but there's no way I'm going back there.~*/
+	GOTO XA_GoInPeace
+	
+	IF ~~ THEN REPLY @18 /* ~Since we last met, I've gained access to a planar gate. Perhaps I can use it to reach Avernus.~ */
+	DO ~
+		SetGlobal("XA_HelpAshatiel", "GLOBAL", 1)
+	~
+	GOTO XA_DecideToHelp
+	
+	IF ~~ THEN REPLY @27 /* ~I won't help you. Caelar is exactly where she belongs.~ */
+	GOTO XA_GoInPeace
+	
+	IF ~
+		GlobalLT("XA_WhyLoyal", "LOCALS", 1)
+	~ THEN REPLY @35 /* ~Why are you still so loyal to her? She threw the lives of you and your fellow crusaders away just so she could free her uncle from a hell of her own making.~ */
+	DO ~
+		SetGlobal("XA_WhyLoyal", "LOCALS", 1)
+	~
+	GOTO XA_WhyLoyal
 END
 
 IF ~~ THEN BEGIN XA_GoInPeace
@@ -198,4 +252,12 @@ IF ~
 	
 	IF ~~ THEN REPLY @27 /* ~I won't help you. Caelar is exactly where she belongs.~ */
 	GOTO XA_GoInPeace
+	
+	IF ~
+		GlobalLT("XA_WhyLoyal", "LOCALS", 1)
+	~ THEN REPLY @35 /* ~Why are you still so loyal to her? She threw the lives of you and your fellow crusaders away just so she could free her uncle from a hell of her own making.~ */
+	DO ~
+		SetGlobal("XA_WhyLoyal", "LOCALS", 1)
+	~
+	GOTO XA_WhyLoyal
 END
