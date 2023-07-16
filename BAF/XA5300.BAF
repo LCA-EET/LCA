@@ -1,19 +1,39 @@
 IF
+	InMyArea("XABENOSP")
+	Global("XA_ElfSpirit", "GLOBAL", 2)
+	!InMyArea("XAELF01")
+	!InMyArea("XAELF02")
+	!InMyArea("XAELF03")
+	IsValidForPartyDialogue("XACORWIN")
+	GlobalLT("XA_BenoGoodbye", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BenoGoodbye", "GLOBAL", 1)
+		ActionOverride("XABENOSP", StartDialog("XABENOSP", "XACORWIN"))
+END
+
+IF
+	InMyArea("XABENOSP")
+	Global("XA_ElfSpirit", "GLOBAL", 2)
+	!InMyArea("XAELF01")
+	!InMyArea("XAELF02")
+	!InMyArea("XAELF03")
+	!IsValidForPartyDialogue("XACORWIN")
+	GlobalLT("XA_BenoGoodbye", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BenoGoodbye", "GLOBAL", 2)
+		Continue()
+END
+
+IF
 	Dead("XALODOB")
 	GlobalLT("XA_LodobDead", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LodobDead", "GLOBAL", 1)
-		//DisplayStringHead(Myself, ~Lodob Dead.~)
+		SetGlobal("XA_ElfSpirit", "GLOBAL", 1)
 		Continue()
-END
-
-IF
-	InMyArea("XAELF01")
-	!Dead("XAELF01")
-THEN
-	RESPONSE #100
-		ActionOverride("XAELF01", StartDialog("XAELF01", Player1))
 END
 
 IF
@@ -21,4 +41,47 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("XAELF01", StartDialog("XAELF01", Player1))
+END
+
+IF
+	Global("XA_ElfSpirit", "GLOBAL", 2)
+	InMyArea("XAELF01")
+THEN
+	RESPONSE #100
+		ActionOverride("XAELF01", ForceSpell("XAELF01", FLASHY_2))
+		Wait(1)
+		ActionOverride("XAELF01", DestroySelf())
+		Continue()
+END
+
+IF
+	Global("XA_ElfSpirit", "GLOBAL", 2)
+	InMyArea("XAELF02")
+THEN
+	RESPONSE #100
+		ActionOverride("XAELF02", ForceSpell("XAELF02", FLASHY_2))
+		Wait(1)
+		ActionOverride("XAELF02", DestroySelf())
+		Continue()
+END
+
+IF
+	Global("XA_ElfSpirit", "GLOBAL", 2)
+	InMyArea("XAELF03")
+THEN
+	RESPONSE #100
+		ActionOverride("XAELF03", ForceSpell("XAELF03", FLASHY_2))
+		Wait(1)
+		ActionOverride("XAELF03", DestroySelf())
+		Continue()
+END
+
+IF
+	Global("XA_BenoGoodbye", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		ActionOverride("XABENOSP", ForceSpell("XABENOSP", FLASHY_2))
+		Wait(1)
+		ActionOverride("XABENOSP", DestroySelf())
+		Continue()
 END

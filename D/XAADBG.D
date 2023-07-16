@@ -2820,6 +2820,20 @@ IF ~~ THEN BEGIN XA_Menu_CreateItem
 	~
 	GOTO XA_MainMenu
 	
+	IF ~~ THEN REPLY @575 /* ~XASTDAGB~ */
+	DO ~
+		GiveItemCreate("XASTDAGB", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XASTDAGB", IDENTIFIED,TRUE))
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @576 /* ~XASTDAGD~ */
+	DO ~
+		GiveItemCreate("XASTDAGD", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XASTDAGD", IDENTIFIED,TRUE))
+	~
+	GOTO XA_MainMenu
+	
 	IF ~~ THEN REPLY @214 /* XALEDGER */
 	DO ~
 		GiveItemCreate("XALEDGER", LastTalkedToBy(Myself),1,0,0)

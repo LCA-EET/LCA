@@ -9,12 +9,10 @@ IF ~
 	DO ~
 		SetGlobal("XA_BenoGoodbye", "GLOBAL", 2)
 	~
-	EXTERN XABENOSP XA_GoodbyeChain
+	EXTERN XACORWIJ XA_GoodbyeBenoChain
 END
 
-CHAIN XABENOSP XA_GoodbyeChain
-	@0 /* ~Schael... It's me.~ */
-	== XACORWIJ
+CHAIN XACORWIJ XA_GoodbyeBenoChain
 	@4 /* ~Beno...~*/
 	= @5 /* ~I should've figured you'd continue to torment me, even though you're dead.~*/
 	== XABENOSP
