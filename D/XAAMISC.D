@@ -207,6 +207,7 @@
 	//{ PPGUY01
 	EXTEND_BOTTOM PPGUY01 0
 		IF ~
+			!Global("XA_KanaDream", "GLOBAL", 3)
 			OR(2)
 				Global("XA_ST_Kanaglym", "GLOBAL", 1)
 				Global("XA_AskCespenarDagger", "GLOBAL", 2)
@@ -216,9 +217,57 @@
 				PartyHasItem("XASTDAGD")
 		~ THEN REPLY @92
 		GOTO XA_Kanaglym
+		
+		IF ~
+			Global("XA_KanaDream", "GLOBAL", 3)
+		~ THEN REPLY @92
+		GOTO XA_Kanaglym
+		
+		IF ~
+			GlobalGT("XA_AshatielSpirit", "GLOBAL", 1)
+		~ THEN REPLY @93 /* ~Send me to Avernus.~ */
+		GOTO XA_Avernus
 	END
 	
 	APPEND PPGUY01
+		IF ~~ THEN BEGIN XA_Avernus
+			SAY @94 /*~Be warned, child of Bhaal. Avernus is protected by a magical barrier that is fueled by the life force of an exceptionally powerful demonic presence. Though you will be able to enter, the barrier may interfere with your ability to teleport back to this Pocket Plane.~*/
+			
+			IF ~~ THEN REPLY @95 /* ~I understand the risk. Send me to Avernus.~*/
+			GOTO XA_Avernus_2
+			
+			IF ~~ THEN REPLY @96 /*~On second thought, I don't want to go there.~*/
+			EXIT
+			
+			IF ~
+				GlobalLT("XA_CantGoBack", "LOCALS", 1)
+			~ THEN REPLY @97 /**/
+			DO ~
+				SetGlobal("XA_CantGoBack", "LOCALS", 1)
+			~
+			GOTO XA_AvernusReturn
+		END
+		
+		IF ~~ THEN BEGIN XA_AvernusReturn
+			SAY @98 /*~That is correct.~*/
+			
+			IF ~~ THEN REPLY @95 /* ~I understand the risk. Send me to Avernus.~*/
+			GOTO XA_Avernus_2
+			
+			IF ~~ THEN REPLY @96 /*~On second thought, I don't want to go there.~*/
+			EXIT
+		END
+		
+		IF ~~ THEN BEGIN XA_Avernus_2
+			SAY @99
+			
+			IF ~~ THEN
+			DO ~
+				SetGlobal("XA_ReturnToAvernus", "GLOBAL", 1)
+			~
+			EXIT
+		END
+		
 		IF ~~ THEN BEGIN XA_Kanaglym
 			SAY #71071 /*  ~As you wish.~ */
 			
