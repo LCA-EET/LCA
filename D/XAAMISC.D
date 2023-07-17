@@ -225,13 +225,35 @@
 		
 		IF ~
 			GlobalGT("XA_AshatielSpirit", "GLOBAL", 1)
-		~ THEN REPLY @93 /* ~Send me to Avernus.~ */
+		~ THEN REPLY @93 /* ~Send me to Caelar Argent, in Avernus.~ */
+		DO ~
+			SetGlobal("XA_BringCaelar", "LOCALS", 1)
+		~
 		GOTO XA_Avernus
+		
+		IF ~
+			GlobalGT("XA_AshatielSpirit", "GLOBAL", 1)
+			GlobalLT("XA_BringCaelar", "LOCALS", 1)
+		~ THEN REPLY @100 /* ~~Bring me Caelar Argent.~ */
+		DO ~
+			SetGlobal("XA_BringCaelar", "LOCALS", 1)
+		~
+		GOTO XA_BringCaelar
 	END
 	
 	APPEND PPGUY01
+		IF ~~ THEN BEGIN XA_BringCaelar
+			SAY @101 /*~Impossible. Though it is certain that she is in Avernus, her precise location cannot be determined.~*/
+			
+			IF ~~ THEN REPLY @102 /*~Then send me to Avernus. I'll find her and bring her back.~*/
+			GOTO XA_Avernus
+			
+			IF ~~ THEN REPLY @103 /*~Nevermind, then.~*/
+			EXIT
+		END
+	
 		IF ~~ THEN BEGIN XA_Avernus
-			SAY @94 /*~Be warned, child of Bhaal. Avernus is protected by a magical barrier that is fueled by the life force of an exceptionally powerful demonic presence. Though you will be able to enter, the barrier may interfere with your ability to teleport back to this Pocket Plane.~*/
+			SAY @94 /* ~Though her precise location cannot be ascertained, she is likely being held in what was once Belhifet's tower. The tower is protected by a magical barrier that is fueled by the life force of an exceptionally powerful demonic presence. It is for this reason that you cannot be sent directly to her, nor can she be brought here. Be warned, child of Bhaal. Once you enter the tower, the barrier may interfere with your ability to teleport back to this Pocket Plane.~ */
 			
 			IF ~~ THEN REPLY @95 /* ~I understand the risk. Send me to Avernus.~*/
 			GOTO XA_Avernus_2
@@ -241,7 +263,7 @@
 			
 			IF ~
 				GlobalLT("XA_CantGoBack", "LOCALS", 1)
-			~ THEN REPLY @97 /**/
+			~ THEN REPLY @97 /*~If I destroy the presence, then I'll be able to return, right?~*/
 			DO ~
 				SetGlobal("XA_CantGoBack", "LOCALS", 1)
 			~
@@ -259,7 +281,7 @@
 		END
 		
 		IF ~~ THEN BEGIN XA_Avernus_2
-			SAY @99
+			SAY @99 /* ~As you wish. You will be sent to the steps leading up to the tower.~ */
 			
 			IF ~~ THEN
 			DO ~
