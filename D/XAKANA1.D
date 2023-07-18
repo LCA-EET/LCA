@@ -1,6 +1,30 @@
 BEGIN ~XAKANA1~
 
 IF ~
+	Global("XA_VoiceSpawn", "GLOBAL", 1)
+~ THEN BEGIN XA_Avernus
+	SAY @14
+	
+	IF ~~ THEN REPLY @15
+	GOTO XA_Avernus2
+	
+	IF ~~ THEN REPLY @16
+	GOTO XA_Avernus2
+END
+
+IF ~~ THEN BEGIN XA_Avernus2
+	SAY @17
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_VoiceSpawn", "GLOBAL", 2)
+		SetGlobal("XA_TowerUnlock", "GLOBAL", 1)
+		DestroySelf()
+	~
+	EXIT
+END
+
+IF ~
 	Global("XA_KanaDream", "GLOBAL", 1)
 ~ THEN BEGIN XA_KanaDream_1_Intro
 	SAY @0 /* ~<CHARNAME>...~ */

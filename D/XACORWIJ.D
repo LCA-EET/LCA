@@ -8,6 +8,20 @@
 
 */ 
 BEGIN ~XACORWIJ~
+//{ Corwin Avernus Return
+	IF ~
+		Global("XA_AvernusChat", "GLOBAL", 1)
+	~ THEN BEGIN XA_AvernusEntry
+		SAY @981 /* ~Back in Avernus. What in Tymora's name were we thinking? We must have a deathwish.~ */
+		
+		IF ~~ THEN REPLY @982
+		DO ~
+			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
+		~
+		EXIT
+	END
+//}
+
 //{ Corwin Beno Soul Talk Dialog J-85
 	IF ~
 		Global("XA_CorwinBenoSoulTalk", "GLOBAL", 1)

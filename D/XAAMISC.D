@@ -286,6 +286,14 @@
 			IF ~~ THEN
 			DO ~
 				SetGlobal("XA_ReturnToAvernus", "GLOBAL", 1)
+				LeaveAreaLUAPanic("XA4500","",[475.1550],NE)
+				ActionOverride(Player1,LeaveAreaLUA("XA4500","",[475.1550],NE))
+				ActionOverride(Player2,LeaveAreaLUA("XA4500","",[400.1555],NE))
+				ActionOverride(Player3,LeaveAreaLUA("XA4500","",[500.1620],NE))
+				ActionOverride(Player4,LeaveAreaLUA("XA4500","",[300.1665],NE))
+				ActionOverride(Player5,LeaveAreaLUA("XA4500","",[330.1730],NE))
+				ActionOverride(Player6,LeaveAreaLUA("XA4500","",[400.1775],NE))
+				DestroySelf()
 			~
 			EXIT
 		END
@@ -987,6 +995,34 @@ END
 
 //{ AERIEJ
 APPEND AERIEJ
+	IF ~
+		Global("XA_AvernusChat", "GLOBAL", 1)
+	~ THEN BEGIN XA_AvernusEntry
+		SAY @305 /* ~Ohh... *cough* it's so h-hot down here! These poor souls!~ */
+		
+		IF ~~ THEN REPLY @303 /* ~We'll be out of here as soon as we find Caelar. Stay alert.~ */
+		DO ~
+			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
+		~
+		EXIT
+		
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ THEN
+		DO ~
+			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
+		~
+		EXTERN XACORWIJ XA_AvernusEntry
+		
+		IF ~
+			IsValidForPartyDialogue("Keldorn")
+		~ THEN 
+		DO ~
+			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
+		~
+		EXTERN KELDORJ XA_AvernusEntry
+	END
+
 	IF ~~ THEN BEGIN XA_BenoBoom
 		SAY @293 /* ~Eek! Oh, ewwww! Get it off me!~ */
 		
@@ -1093,6 +1129,43 @@ END
 
 //{ SAREV25J
 APPEND SAREV25J
+	IF ~
+		Global("XA_AvernusChat", "GLOBAL", 1)
+	~ THEN BEGIN XA_AvernusEntry
+		SAY @302 /* ~Hmph. I wasn't expecting to be back in the Hells so soon. I'd almost begun to miss the tortured screams of the damned.~ */
+		
+		IF ~~ THEN REPLY @303 /* ~We'll be out of here as soon as we find Caelar. Stay alert.~ */
+		DO ~
+			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
+		~
+		EXIT
+		
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ THEN
+		DO ~
+			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
+		~
+		EXTERN XACORWIJ XA_AvernusEntry
+		
+		IF ~
+			IsValidForPartyDialogue("Keldorn")
+		~ THEN 
+		DO ~
+			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
+		~
+		EXTERN KELDORJ XA_AvernusEntry
+		
+		IF ~
+			IsValidForPartyDialogue("Aerie")
+		~ THEN
+		DO ~
+			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
+		~
+		EXTERN AERIEJ XA_AvernusEntry
+	
+	END
+
 	IF ~~ THEN BEGIN XA_SarevokBanter3Chain_END
 		SAY @232 /* ~I realize now that I was wrong. Your skill in battle is considerable, as is your ability to lead others.~ */
 		
@@ -3288,6 +3361,26 @@ END
 //{ KELDORJ
 
 APPEND KELDORJ
+	IF ~
+		Global("XA_AvernusChat", "GLOBAL", 1)
+	~ THEN BEGIN XA_AvernusEntry
+		SAY @306 /*~In Torm's name... the Hells are far worse than I could've imagined!~ */
+		
+		IF ~~ THEN REPLY @303 /* ~We'll be out of here as soon as we find Caelar. Stay alert.~ */
+		DO ~
+			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
+		~
+		EXIT
+		
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ THEN
+		DO ~
+			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
+		~
+		EXTERN XACORWIJ XA_AvernusEntry
+	END
+
 	IF ~~ THEN BEGIN XA_CorwinStruckDelcia
 		SAY @12 /* ~That's... not how I would have handled the matter, Captain, but at least the Lady is out of harm's way.~ */
 		

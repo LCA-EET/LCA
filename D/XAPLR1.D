@@ -9,6 +9,26 @@
 APPEND ~PLAYER1~
 
 	IF ~
+		Global("XA_TowerUnlock", "GLOBAL", 1)
+	~ THEN BEGIN XA_TowerUnlocked
+		SAY @144 /* ~(An opening appears in the barrier. You'll be able to enter the tower through the iron doors. While inside, you won't be able to teleport back to your Pocket Plane. Enter?)~*/
+		
+		IF ~~ THEN REPLY @84 /* ~Yes.~*/
+		DO ~
+			SetGlobal("XA_TowerUnlock", "GLOBAL", 2)
+			StartCutSceneMode()
+			StartCutScene("XAAVENTR")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @85 /* ~No.~ */
+		DO ~
+			SetGlobal("XA_TowerUnlock", "GLOBAL", 2)
+		~
+		EXIT
+	END
+
+	IF ~
 		Global("XA_DaggerDestruction", "GLOBAL", 1)
 	~ THEN BEGIN XA_DaggerDestruction
 		SAY @12 /* ~(You approach the rift, holding the Soultaker Dagger in your hand. With each step, the vibration from the dagger increases, and you struggle to maintain your grip. Suddenly, the dagger becomes extremely hot, and you're forced to release your grip before your hand is burned. A blinding flash of white light envelops the area as the dagger hits the ground, and shatters...)~*/

@@ -1,0 +1,8 @@
+IF
+	Clicked([ANYONE])
+	Name("door",Myself)
+	AreaCheck("XA4500") 
+THEN
+	RESPONSE #100
+		DisplayString(Myself, @0)
+END

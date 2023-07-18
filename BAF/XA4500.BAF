@@ -1,16 +1,56 @@
 IF
-	Global("NEWGAME_TOB","GLOBAL",0)
-	Global("CORWINSummoned", "GLOBAL", 1)
-	Global("XA_CorwinSpawnPlane", "GLOBAL", 0)
+	Global("XA_TowerUnlock", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		CreateVisualEffect("SPPORTAL",[1999.1218])
-		Wait(2)
-		MoveGlobal("AR4500","XACORWIN",[1999.1218])
-		ActionOverride("XACORWIN",Face(S))
-		ActionOverride("XACORWIN",SetGlobal("BD_JOINXP","LOCALS",0))
-		ActionOverride("XACORWIN",SetGlobal("KickedOut","LOCALS",0))
-		ActionOverride("XACORWIN",SetNumTimesTalkedTo(0))
-		SetGlobal("XA_CorwinSpawnPlane", "GLOBAL", 1)
-		ActionOverride("XACORWIN",StartDialog("XACORWIP", Player1))
+		Unlock("door01")
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END
+
+IF
+	GlobalLT("XA_4500Journal", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_4500Journal", "MYAREA", 1)
+		AddJournalEntry(@0, INFO)
+		Continue()
+END
+
+IF
+	IsValidForPartyDialogue("Sarevok")
+	GlobalLT("XA_AvernusChat", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_AvernusChat", "GLOBAL", 1)
+		Wait(3)
+		ActionOverride("Sarevok", StartDialog("SAREV25J", Player1))
+END
+
+IF
+	IsValidForPartyDialogue("Aerie")
+	GlobalLT("XA_AvernusChat", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_AvernusChat", "GLOBAL", 1)
+		Wait(3)
+		ActionOverride("Aerie", StartDialog("AERIEJ", Player1))
+END
+
+IF
+	IsValidForPartyDialogue("Keldorn")
+	GlobalLT("XA_AvernusChat", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_AvernusChat", "GLOBAL", 1)
+		Wait(3)
+		ActionOverride("Keldorn", StartDialog("KELDORJ", Player1))
+END
+
+IF
+	IsValidForPartyDialogue("XACORWIN")
+	GlobalLT("XA_AvernusChat", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_AvernusChat", "GLOBAL", 1)
+		Wait(3)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
 END

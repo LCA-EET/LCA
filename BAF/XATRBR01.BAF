@@ -1,0 +1,23 @@
+IF
+	GlobalLT("XA_BridgeSpawn", "LOCALS", 1) 
+	OR(6)
+		IsOverMe(Player1)
+		IsOverMe(Player2)
+		IsOverMe(Player3)
+		IsOverMe(Player4)
+		IsOverMe(Player5)
+		IsOverMe(Player6)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_BridgeSpawn", "LOCALS", 1)
+		CreateVisualEffect("SPFLESHS",[870.1070])
+		CreateVisualEffect("SPFLESHS",[980.1150])
+		CreateVisualEffect("SPFLESHS",[460.1360])
+		CreateVisualEffect("SPFLESHS",[625.1415])
+		CreateCreature("DEMOSUM1",[870.1070],SW)  
+		CreateCreature("DEMOSUM2",[980.1150],SW)  
+		CreateCreature("DEMOSUM3",[460.1360],NE)  
+		CreateCreature("DEMOSUM4",[625.1415],NE)  
+		SetInterrupt(TRUE)
+END

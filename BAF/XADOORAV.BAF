@@ -1,0 +1,18 @@
+IF
+	GlobalLT("XA_ThrixSpawn","GLOBAL",1)
+	Range([PC],45)
+	!Range([EVILCUTOFF],45)
+	CombatCounter(0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CreateVisualEffect("SPSUMGTE",[2270.460])
+		Wait(4)
+		CreateCreature("XATHRIX",[2270.490],W)  // Thrix
+		SetGlobal("XA_ThrixSpawn","GLOBAL",1)
+		ActionOverride("XATHRIX",SetSequence(SEQ_AWAKE))
+		Wait(3)
+		ActionOverride("XATHRIX",StartDialogueNoSet(Player1))
+		SetInterrupt(TRUE)
+END
+
