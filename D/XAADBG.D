@@ -5,18 +5,10 @@ IF ~
 ~ THEN BEGIN XA_MainMenu
 	SAY @0 /* ~How can I help you?~ */
 	
-	IF ~~ THEN REPLY @573 /* ~XA5300 Test~*/
-	DO ~
-		LeaveAreaLUAPanic("XA5300","",[780.550],SE)
-		ActionOverride(Player1,LeaveAreaLUA("XA5300","",[780.550],SE))
-		ActionOverride(Player2,LeaveAreaLUA("XA5300","",[750.540],SE))
-		ActionOverride(Player3,LeaveAreaLUA("XA5300","",[810.540],SE))
-		ActionOverride(Player4,LeaveAreaLUA("XA5300","",[840.530],SE))
-		ActionOverride(Player5,LeaveAreaLUA("XA5300","",[720.530],SE))
-		ActionOverride(Player6,LeaveAreaLUA("XA5300","",[730.520],SE))
-		DestroySelf()
-	~
-	EXIT
+	IF ~~ THEN REPLY @585
+	GOTO XA_AreaTest
+	
+	
 	
 	IF ~~ THEN REPLY @537
 	DO ~
@@ -147,6 +139,39 @@ IF ~
 	
 	IF ~~ THEN REPLY @12 /* ~I do not need assistance at this time.~ */
 	EXIT
+END
+
+IF ~~ THEN BEGIN XA_AreaTest
+	SAY @585
+	
+	IF ~~ THEN REPLY @573 /* ~XA5300 Test~*/
+	DO ~
+		LeaveAreaLUAPanic("XA5300","",[780.550],SE)
+		ActionOverride(Player1,LeaveAreaLUA("XA5300","",[780.550],SE))
+		ActionOverride(Player2,LeaveAreaLUA("XA5300","",[750.540],SE))
+		ActionOverride(Player3,LeaveAreaLUA("XA5300","",[810.540],SE))
+		ActionOverride(Player4,LeaveAreaLUA("XA5300","",[840.530],SE))
+		ActionOverride(Player5,LeaveAreaLUA("XA5300","",[720.530],SE))
+		ActionOverride(Player6,LeaveAreaLUA("XA5300","",[730.520],SE))
+		DestroySelf()
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @586 /* ~XA4500 Test~*/
+	DO ~
+		LeaveAreaLUAPanic("XA4500","",[400.1650],SE)
+		ActionOverride(Player1,LeaveAreaLUA("XA4500","",[400.1650],SE))
+		ActionOverride(Player2,LeaveAreaLUA("XA4500","",[400.1650],SE))
+		ActionOverride(Player3,LeaveAreaLUA("XA4500","",[400.1650],SE))
+		ActionOverride(Player4,LeaveAreaLUA("XA4500","",[400.1650],SE))
+		ActionOverride(Player5,LeaveAreaLUA("XA4500","",[400.1650],SE))
+		ActionOverride(Player6,LeaveAreaLUA("XA4500","",[400.1650],SE))
+		DestroySelf()
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @26
+	GOTO XA_MainMenu
 END
 
 IF ~~ THEN BEGIN XA_XACORWIJ_Test
@@ -1879,6 +1904,15 @@ END
 
 IF ~~ THEN BEGIN XA_TestInteraction
 	SAY @280
+	
+	IF ~~ THEN REPLY @584 /*~XATHRIX~*/
+	DO ~
+		SetGlobal("XA_ThrixSpawn", "GLOBAL", 1)
+		CreateCreature("XATHRIX", [-1.-1], N)
+		Wait(1)
+		ActionOverride("XATHRIX", StartDialog("XATHRIX", Player1))
+	~
+	EXIT
 	
 	IF ~~ THEN REPLY @579
 	DO ~

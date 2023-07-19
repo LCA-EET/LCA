@@ -1,9 +1,11 @@
 IF
-	Global("XA_TowerUnlock", "GLOBAL", 1)
+	Global("XA_ThrixSpawn", "GLOBAL", 2)
+	InMyArea("XATHRIX")
 THEN
 	RESPONSE #100
-		Unlock("door01")
-		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+		CreateVisualEffect("SPFLESHS",[2165.380])
+		Wait(1)
+		ActionOverride("XATHRIX", DestroySelf())
 END
 
 IF
