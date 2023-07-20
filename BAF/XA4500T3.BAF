@@ -21,13 +21,7 @@ END
 IF
 	Dead("bdthrix")
 	GlobalLT("XA_VoiceSpawn", "GLOBAL", 1)
-	OR(6)
-		IsOverMe(Player1)
-		IsOverMe(Player2)
-		IsOverMe(Player3)
-		IsOverMe(Player4)
-		IsOverMe(Player5)
-		IsOverMe(Player6)
+	IsOverMe([PC])
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)

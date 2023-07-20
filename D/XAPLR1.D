@@ -17,7 +17,7 @@ APPEND ~PLAYER1~
 		DO ~
 			SetGlobal("XA_TowerUnlock", "GLOBAL", 2)
 			StartCutSceneMode()
-			StartCutScene("XAAVENTR")
+			StartCutScene("XAGO4700")
 		~
 		EXIT
 		

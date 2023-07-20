@@ -1,14 +1,4 @@
 IF
-	Global("XA_ThrixSpawn", "GLOBAL", 2)
-	InMyArea("XATHRIX")
-THEN
-	RESPONSE #100
-		CreateVisualEffect("SPFLESHS",[2165.380])
-		Wait(1)
-		ActionOverride("XATHRIX", DestroySelf())
-END
-
-IF
 	GlobalLT("XA_4500Journal", "MYAREA", 1)
 THEN
 	RESPONSE #100

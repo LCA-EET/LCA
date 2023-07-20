@@ -37,9 +37,6 @@ IF ~~ THEN BEGIN XA_AssumeThrone
 	
 	IF ~~ THEN REPLY @2 /*~Your master? Belhifet is long dead. Who is 
 	now in charge of this place?~*/
-	DO ~
-		SetGlobal("XA_ThrixSpawn","GLOBAL",2)
-	~
 	GOTO XA_NewMaster
 END
 
@@ -49,16 +46,10 @@ IF ~~ THEN BEGIN XA_Caelar
 	= @8 /*~She is with the master, in his tower.~*/
 	
 	IF ~~ THEN REPLY @1 /*~I destroyed your master, and I'll destroy you if you don't get out of my way!~*/
-	DO ~
-		SetGlobal("XA_ThrixSpawn","GLOBAL",2)
-	~
 	GOTO XA_OutOfWay
 	
 	IF ~~ THEN REPLY @2 /*~Your master? Belhifet is long dead. Who is 
 	now in charge of this place?~*/
-	DO ~
-		SetGlobal("XA_ThrixSpawn","GLOBAL",2)
-	~
 	GOTO XA_NewMaster
 END
 
@@ -75,6 +66,7 @@ IF ~~ THEN BEGIN XA_EnterTower
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_TowerUnlock", "GLOBAL", 1)
+		SetGlobal("BD_Thrix_Leaves","LOCALS",1)
 	~
 	EXIT
 END
@@ -85,6 +77,7 @@ IF ~~ THEN BEGIN XA_NewMaster
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_TowerUnlock", "GLOBAL", 1)
+		SetGlobal("BD_Thrix_Leaves","LOCALS",1)
 	~
 	EXIT
 END

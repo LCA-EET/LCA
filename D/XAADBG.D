@@ -159,14 +159,8 @@ IF ~~ THEN BEGIN XA_AreaTest
 	
 	IF ~~ THEN REPLY @586 /* ~XA4500 Test~*/
 	DO ~
-		LeaveAreaLUAPanic("XA4500","",[400.1650],SE)
-		ActionOverride(Player1,LeaveAreaLUA("XA4500","",[400.1650],SE))
-		ActionOverride(Player2,LeaveAreaLUA("XA4500","",[400.1650],SE))
-		ActionOverride(Player3,LeaveAreaLUA("XA4500","",[400.1650],SE))
-		ActionOverride(Player4,LeaveAreaLUA("XA4500","",[400.1650],SE))
-		ActionOverride(Player5,LeaveAreaLUA("XA4500","",[400.1650],SE))
-		ActionOverride(Player6,LeaveAreaLUA("XA4500","",[400.1650],SE))
-		DestroySelf()
+		StartCutSceneMode()
+		StartCutScene("XAGO4500")
 	~
 	EXIT
 	

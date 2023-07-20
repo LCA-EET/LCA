@@ -6,3 +6,12 @@ THEN
 	RESPONSE #100
 		DisplayString(Myself, @0)
 END
+
+IF
+	Clicked([ANYONE])
+	Name("TranBD4400",Myself)
+	AreaCheck("XA4500") 
+THEN
+	RESPONSE #100
+		DisplayString(Myself, @1)
+END

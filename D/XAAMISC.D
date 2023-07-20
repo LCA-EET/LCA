@@ -224,7 +224,13 @@
 		GOTO XA_Kanaglym
 		
 		IF ~
+			Global("XA_ReturnToAvernus", "GLOBAL", 1)
+		~ THEN REPLY @93
+		GOTO XA_Avernus_KnowRisk
+		
+		IF ~
 			GlobalGT("XA_AshatielSpirit", "GLOBAL", 1)
+			GlobalLT("XA_ReturnToAvernus", "GLOBAL", 1)
 		~ THEN REPLY @93 /* ~Send me to Caelar Argent, in Avernus.~ */
 		DO ~
 			SetGlobal("XA_BringCaelar", "LOCALS", 1)
@@ -234,6 +240,7 @@
 		IF ~
 			GlobalGT("XA_AshatielSpirit", "GLOBAL", 1)
 			GlobalLT("XA_BringCaelar", "LOCALS", 1)
+			GlobalLT("XA_ReturnToAvernus", "GLOBAL", 1)
 		~ THEN REPLY @100 /* ~~Bring me Caelar Argent.~ */
 		DO ~
 			SetGlobal("XA_BringCaelar", "LOCALS", 1)
@@ -242,6 +249,17 @@
 	END
 	
 	APPEND PPGUY01
+		IF ~~ THEN BEGIN XA_Avernus_KnowRisk
+			SAY @16
+			
+			IF ~~ THEN
+			DO ~
+				StartCutSceneMode()
+				StartCutScene("XAGO4500")
+			~
+			EXIT
+		END
+	
 		IF ~~ THEN BEGIN XA_BringCaelar
 			SAY @101 /*~Impossible. Though it is certain that she is in Avernus, her precise location cannot be determined.~*/
 			
@@ -285,15 +303,8 @@
 			
 			IF ~~ THEN
 			DO ~
-				SetGlobal("XA_ReturnToAvernus", "GLOBAL", 1)
-				LeaveAreaLUAPanic("XA4500","",[475.1550],NE)
-				ActionOverride(Player1,LeaveAreaLUA("XA4500","",[475.1550],NE))
-				ActionOverride(Player2,LeaveAreaLUA("XA4500","",[400.1555],NE))
-				ActionOverride(Player3,LeaveAreaLUA("XA4500","",[500.1620],NE))
-				ActionOverride(Player4,LeaveAreaLUA("XA4500","",[300.1665],NE))
-				ActionOverride(Player5,LeaveAreaLUA("XA4500","",[330.1730],NE))
-				ActionOverride(Player6,LeaveAreaLUA("XA4500","",[400.1775],NE))
-				DestroySelf()
+				StartCutSceneMode()
+				StartCutScene("XAGO4500")
 			~
 			EXIT
 		END

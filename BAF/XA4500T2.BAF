@@ -1,5 +1,5 @@
 IF
-	GlobalLT("XA_BridgeSpawn2", "LOCALS", 1) 
+	GlobalLT("XA_BridgeSpawn2", "MYAREA", 1) 
 	OR(6)
 		IsOverMe(Player1)
 		IsOverMe(Player2)
@@ -10,7 +10,7 @@ IF
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_BridgeSpawn2", "LOCALS", 1)
+		SetGlobal("XA_BridgeSpawn2", "MYAREA", 1)
 		CreateVisualEffect("SPFLESHS",[1540.850])
 		CreateVisualEffect("SPFLESHS",[1325.850])
 		CreateVisualEffect("SPFLESHS",[1445.900])

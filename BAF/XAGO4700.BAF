@@ -6,7 +6,7 @@ THEN
 		FadeToColor([30.0],0)
 		Wait(1)
 		LeaveAreaLUAPanic("XA4700","",[1325.870],NE)
-		ActionOverride(Player1,LeaveAreaLUA("XA4700","",[1325.870],NE))
+		LeaveAreaLUA("XA4700","",[1325.870],NE)
 		ActionOverride(Player2,LeaveAreaLUA("XA4700","",[1225.865],NE))
 		ActionOverride(Player3,LeaveAreaLUA("XA4700","",[1270.895],NE))
 		ActionOverride(Player4,LeaveAreaLUA("XA4700","",[1320.915],NE))
