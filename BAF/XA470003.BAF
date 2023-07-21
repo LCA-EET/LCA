@@ -3,22 +3,23 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
+		MoveViewObject(Player1, INSTANT)
 		Wait(1)
-		DisplayStringHead("XADEMGOR", @0) /* ~Caelar! Rise!~*/
+		DisplayStringHead("XAAVBOSS", @0) /* ~Caelar! Rise!~*/
 		Wait(2)
 		DisplayStringHead("XACAELAR", @8) /* ~Ugh...~*/
 		Wait(1)
 		ActionOverride("XACAELAR", SetSequence(SEQ_AWAKE))
 		Wait(1)
-		DisplayStringHead("XADEMGOR", @3) /* ~Who is your master?~*/
+		DisplayStringHead("XAAVBOSS", @3) /* ~Who is your master?~*/
 		Wait(3)
 		DisplayStringHead("XACAELAR", @4) /* ~Y-you are m-my lord...~*/
 		Wait(2)
-		DisplayStringHead("XADEMGOR", @1) /* ~Very good, my pet. And what is your purpose?~ */
+		DisplayStringHead("XAAVBOSS", @1) /* ~Very good, my pet. And what is your purpose?~ */
 		Wait(3)
 		DisplayStringHead("XACAELAR", @5) /* ~To serve you and to...~*/
 		Wait(2)
-		DisplayStringHead("XADEMGOR", @7) /* ~And to what?~*/
+		DisplayStringHead("XAAVBOSS", @7) /* ~And to what?~*/
 		Wait(2)
 		DisplayStringHead("XACAELAR", @6) /* ~To... to pleasure you, master.~ */
 		Wait(1)
@@ -28,7 +29,7 @@ THEN
 		DisplayStringHead("Imoen2", @12) 	/* ~Disgusting.~*/
 		DisplayStringHead("Aerie", @15) 	/* ~Wh..why has she given up?~*/
 		Wait(1)
-		DisplayStringHead("XADEMGOR", @9) /* ~Hahahah... Excellent. You may return to your cage, my pet.~ */
+		DisplayStringHead("XAAVBOSS", @9) /* ~Hahahah... Excellent. You may return to your cage, my pet.~ */
 		Wait(2)
 		DisplayStringHead("XACAELAR", @16)  /* ~Thank you, master.~ */
 		Wait(2)
@@ -38,6 +39,6 @@ THEN
 		CloseDoor("Door03")
 		Lock("Door03")
 		Wait(1)
-		ActionOverride("XADEMGOR", StartDialog("XADEMGOR", Player1))
+		ActionOverride("XAAVBOSS", StartDialog("XAAVBOSS", Player1))
 		
 END

@@ -146,6 +146,7 @@ IF ~~ THEN BEGIN XA_AreaTest
 	
 	IF ~~ THEN REPLY @588 /* ~XA4700~*/
 	DO ~
+		ActionOverride(Player1,AddSpecialAbility("SPIN649")) 
 		SetGlobal("XA_IncubusDefeated", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XAGO4700")
@@ -154,6 +155,7 @@ IF ~~ THEN BEGIN XA_AreaTest
 	
 	IF ~~ THEN REPLY @587 /* ~XA4700~*/
 	DO ~
+		ActionOverride(Player1,AddSpecialAbility("SPIN649")) 
 		SetGlobal("DemoGorgonIsDead","GLOBAL",1)
 		StartCutSceneMode()
 		StartCutScene("XAGO4700")

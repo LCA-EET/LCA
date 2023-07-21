@@ -1,19 +1,40 @@
-BEGIN ~XADEMGOR~
+BEGIN ~XAAVBOSS~
 
 IF ~
-	GlobalLT("XA_DemGorTalk", "LOCALS", 1)
+	GlobalLT("XA_AVBossTalk", "LOCALS", 1)
+	Global("XA_4700_Demogorgon", "GLOBAL",1)
 ~ THEN BEGIN XA_Intro
 	SAY @7  /* ~Ah, welcome <CHARNAME>. How good it is to see you once again.~   */
 	
 	IF ~~ THEN REPLY @0  /* ~Demogorgon. I should've known.~*/
 	DO ~
-		SetGlobal("XA_DemGorTalk", "LOCALS", 1)
+		SetGlobal("XA_AVBossTalk", "LOCALS", 1)
 	~
-	GOTO XA_2
+	GOTO XA_2A
 END
 
-IF ~~ THEN BEGIN XA_2
+IF ~
+	GlobalLT("XA_AVBossTalk", "LOCALS", 1)
+	Global("XA_4700_Incubus", "GLOBAL",1)
+~ THEN BEGIN XA_Intro
+	SAY @7  /* ~Ah, welcome <CHARNAME>. How good it is to see you once again.~   */
+	
+	IF ~~ THEN REPLY @25 /*  ~The Incubus. I should've known.~*/
+	DO ~
+		SetGlobal("XA_AVBossTalk", "LOCALS", 1)
+	~
+	GOTO XA_2B
+END
+
+IF ~~ THEN BEGIN XA_2A
 	SAY @1 /* ~Indeed. After my defeat at Watcher's Keep, I awoke here. It seems the first of the Hells needed a new master. I hope you like what I've done with the place, hahah.~ */
+	
+	IF ~~ THEN REPLY @2  /* ~We're here for Caelar, not you. If you attempt to interfere —~ */
+	GOTO XA_Caelar
+END
+
+IF ~~ THEN BEGIN XA_2B
+	SAY @26 /* ~Indeed. After my defeat at Watcher's Keep, I awoke here. It seems the first of the Hells needed a new master. I hope you like what I've done with the place, hahah.~ */
 	
 	IF ~~ THEN REPLY @2  /* ~We're here for Caelar, not you. If you attempt to interfere —~ */
 	GOTO XA_Caelar
@@ -31,7 +52,7 @@ IF ~~ THEN BEGIN XA_Caelar
 END
 
 IF ~
-	Global("XA_DemGorTalk", "LOCALS", 1)
+	Global("XA_AVBossTalk", "LOCALS", 1)
 ~ THEN BEGIN XA_CaelarGrovelEnd
 	SAY @8  /* ~Hmph. Though she's grown tiresome, I think I'll keep her alive a while longer. She does fulfill certain... needs of mine.~*/
 	
@@ -85,6 +106,7 @@ IF ~~ THEN BEGIN XA_Fight
 	
 	IF ~~ THEN
 	DO ~
+		SetGlobal("XA_Hostile4700", "GLOBAL", 1)
 		Enemy()
 	~
 	EXIT
@@ -95,6 +117,7 @@ IF ~~ THEN BEGIN XA_FightMulti
 	
 	IF ~~ THEN
 	DO ~
+		SetGlobal("XA_Hostile4700", "GLOBAL", 1)
 		Enemy()
 	~
 	EXIT

@@ -8,6 +8,17 @@
 */
 APPEND ~PLAYER1~
 	
+	IF ~
+		Global("XA_AVBossFled", "GLOBAL", 2)
+	~ THEN BEGIN XA_DemonFled
+		SAY @105 /*~(The demon has fled to another part of Avernus. You feel that the barrier surrounding the tower has weakened; you resolve to free Caelar and get out of here before the demon can return with reinforcements.)~*/
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_AVBossFled", "GLOBAL", 3)
+		~
+		EXIT
+	END
 
 	IF ~
 		Global("XA_TowerUnlock", "GLOBAL", 1)
