@@ -1,6 +1,19 @@
 BEGIN ~XAASHASP~
 
 IF ~
+	Gabber("Aerie")
+	GlobalLT("XA_AerieAshatiel", "GLOBAL", 1)
+~ THEN BEGIN XA_AerieAshatiel
+	SAY @42 /* ~Yes, child?~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_AerieAshatiel", "GLOBAL", 1)
+	~
+	EXTERN AERIEJ XA_AerieAshatielChain
+END
+
+IF ~
 	Global("XA_HelpAshatiel", "GLOBAL", 1)
 ~ THEN BEGIN XA_AgreedToHelp
 	SAY @28 /* ~Remember, you must bring Caelar here so that she can release us from our oath. Only then will we be able to move on to whatever awaits us.~*/
@@ -260,4 +273,27 @@ IF ~
 		SetGlobal("XA_WhyLoyal", "LOCALS", 1)
 	~
 	GOTO XA_WhyLoyal
+END
+
+CHAIN AERIEJ XA_AerieAshatielChain
+	@43 /* ~In life, you were one of the avariel, were you not? You must have been so beautiful...~*/ 
+	== XAASHASP
+	@44 /* ~I was... I see you bear the markings of our kind as well, but where are your wings?~*/
+	== AERIEJ
+	@45 /* ~I was c-captured and imprisoned... They became infected and they needed to be cut off...~*/
+	== XAASHASP
+	@46 /* ~Oh, dear. I'm sorry that you had to endure such suffering. What is your name?~*/
+	== AERIEJ
+	@47  /* ~Thank you... my name is Aerie. I used to be so bitter about what happened.~*/
+	== XAASHASP
+	@48 /*~Used to? What changed?~*/
+	== AERIEJ
+	@49 /* ~Well... if I hadn't been captured, I'd never have met <CHARNAME> and <PRO_HISHER> friends. I would've never seen the world in the way I do now, or have had the opportunity to help so many people...~ */
+	== XAASHASP
+	@50 /*~That's almost exactly how I felt when I met Caelar. You see, my husband was killed by the Bhaalspawn Sarevok. I was so full of hatred and bitterness. Caelar helped me to find a new purpose in life. Even though things ended poorly for us... I'm still grateful for the hope that she gave me.~*/
+	== AERIEJ
+	@53 /* ~Oh... the pain of losing a loved one... my poor mother. I wonder if she is still out there, looking for me....~*/
+	= @51 /* ~T-thank you for sharing your experience with me, Ashatiel. I hope that you and your comrades are able to find r-release.~*/
+	== XAASHASP
+	@52 /* ~Thank you, Aerie. And I hope that you will one day be reunited with your mother.~ */
 END

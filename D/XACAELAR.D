@@ -18,6 +18,7 @@ IF ~~ THEN BEGIN XA_CaelarAshaChain_END
 	
 	IF ~~ THEN REPLY @30 /* ~With pleasure.~ */
 	DO ~
+		SetGlobal("XA_KilledCaelar", "GLOBAL", 1)
 		SetGlobal("XA_OathRelease", "GLOBAL", 1)
 		Kill(Myself)
 	~
@@ -39,6 +40,7 @@ IF ~~ THEN BEGIN XA_CaelarWait
 	
 	IF ~~ THEN REPLY @38  /* ~Very well. (Kill her.)~ */
 	DO ~
+		SetGlobal("XA_KilledCaelar", "GLOBAL", 1)
 		SetGlobal("XA_OathRelease", "GLOBAL", 1)
 		Kill(Myself)
 	~

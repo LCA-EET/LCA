@@ -1,4 +1,23 @@
 IF
+	Global("XA_CrusadersGone", "GLOBAL", 1)
+	Global("XA_KilledCaelar", "GLOBAL", 1)
+	GlobalLT("XA_CrusaderJournal", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CrusaderJournal", "MYAREA", 1)
+		AddJournalEntry(@1, INFO)
+END
+
+IF
+	Global("XA_CrusadersGone", "GLOBAL", 1)
+	GlobalLT("XA_CrusaderJournal", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CrusaderJournal", "MYAREA", 1)
+		AddJournalEntry(@0, INFO)
+END
+
+IF
 	Global("XA_CaelarRescue", "GLOBAL", 1)
 	GlobalLT("XA_CaelarSpawn", "XA5300", 1)
 THEN
