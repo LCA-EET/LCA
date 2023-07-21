@@ -1,6 +1,15 @@
 BEGIN ~XAASHASP~
 
 IF ~
+	Gabber("Sarevok")
+~ THEN BEGIN XA_SarevokAshatiel
+	SAY @54 /* ~I will not have words with you, beast. You, who are responsible for the murder of my brother, Arran.~ */
+	
+	IF ~~ THEN
+	EXIT
+END
+
+IF ~
 	Gabber("Aerie")
 	GlobalLT("XA_AerieAshatiel", "GLOBAL", 1)
 ~ THEN BEGIN XA_AerieAshatiel
