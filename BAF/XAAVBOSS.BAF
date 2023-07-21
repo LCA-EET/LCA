@@ -1,10 +1,27 @@
 IF
 	HPPercentLT(Myself, 21)
 	GlobalLT("XA_AVBossFled", "GLOBAL", 1)
+	GlobalGT("DemoGorgonIsDead","GLOBAL",0)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		DisplayStringHead(Myself, @27) /*~Impressive. You've grown in power, <CHARNAME>. But this is not the end. I'll hunt you until the day you die!~ */
+		DisplayStringHead(Myself, @27) /*~Impressive. But this is not the end, <CHARNAME>. I'll find a way back to the Prime Material Plane, and when I do...~ */
+		AddexperienceParty(100000)
+		Wait(3)
+		ForceSpellRES("BDTELAW",Myself)  // Teleport Without Error
+		SetGlobal("XA_AVBossFled", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	HPPercentLT(Myself, 21)
+	GlobalLT("XA_AVBossFled", "GLOBAL", 1)
+	!GlobalGT("DemoGorgonIsDead","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		DisplayStringHead(Myself, @27) /*~Impressive. But this is not the end, <CHARNAME>. I'll find a way back to the Prime Material Plane, and when I do...~ */
+		AddexperienceParty(75000)
 		Wait(3)
 		ForceSpellRES("BDTELAW",Myself)  // Teleport Without Error
 		SetGlobal("XA_AVBossFled", "GLOBAL", 1)
