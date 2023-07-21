@@ -1,6 +1,17 @@
 BEGIN ~XAASHASP~
 
 IF ~
+	OR(2)
+		InMyArea("XACAELAR")
+		Global("XA_OathRelease", "GLOBAL", 1)
+~ THEN BEGIN XA_ThankYou
+	SAY @56 /*~Thank you for bringing Caelar back to us.~*/
+	
+	IF ~~ THEN
+	EXIT
+END
+
+IF ~
 	Gabber("Sarevok")
 ~ THEN BEGIN XA_SarevokAshatiel
 	SAY @54 /* ~I will not have words with you, beast. You, who are responsible for the murder of my brother, Arran.~ */
@@ -191,6 +202,7 @@ IF ~~ THEN BEGIN XA_HelpCaelar2
 	IF ~~ THEN REPLY @18 /* ~Since we last met, I've gained access to a planar gate. Perhaps I can use it to reach Avernus.~ */
 	DO ~
 		SetGlobal("XA_HelpAshatiel", "GLOBAL", 1)
+		AddJournalEntry(@55, INFO)
 	~
 	GOTO XA_DecideToHelp
 	
@@ -229,6 +241,7 @@ IF ~~ THEN BEGIN XA_WhyLoyal2
 	IF ~~ THEN REPLY @18 /* ~Since we last met, I've gained access to a planar gate. Perhaps I can use it to reach Avernus.~ */
 	DO ~
 		SetGlobal("XA_HelpAshatiel", "GLOBAL", 1)
+		AddJournalEntry(@55, INFO)
 	~
 	GOTO XA_DecideToHelp
 	
@@ -269,6 +282,7 @@ IF ~
 	IF ~~ THEN REPLY @18 /* ~Since we last met, I've gained access to a planar gate. Perhaps I can use it to reach Avernus.~ */
 	DO ~
 		SetGlobal("XA_HelpAshatiel", "GLOBAL", 1)
+		AddJournalEntry(@55, INFO)
 	~
 	GOTO XA_DecideToHelp
 	
