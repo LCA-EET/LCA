@@ -1,4 +1,14 @@
 IF
+	Global("XA_CaelarRescue", "GLOBAL", 1)
+	GlobalLT("XA_CaelarSpawn", "XA5300", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CaelarSpawn", "XA5300", 1)
+		CreateCreature("XACAELAR", [787.555], S)
+		Continue()
+END
+
+IF
 	GlobalLT("XA_AshaSpawn", "XA5300", 1)
 	Global("XA_CaelarStayedInAvernus","GLOBAL",1)
 	OR(2)
@@ -9,6 +19,16 @@ THEN
 		SetGlobal("XA_AshaSpawn", "XA5300", 1)
 		CreateCreature("XAASHASP", [800.590], NNE)
 		Continue()
+END
+
+IF
+	InMyArea("XACAELAR")
+	InMyArea("XAASHASP")
+	GlobalLT("XA_AshaCaelar", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		Wait(1)
+		ActionOverride("XACAELAR", StartDialog("XACAELAR", Player1))
 END
 
 IF

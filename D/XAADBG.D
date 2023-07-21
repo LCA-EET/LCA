@@ -164,14 +164,19 @@ IF ~~ THEN BEGIN XA_AreaTest
 	
 	IF ~~ THEN REPLY @573 /* ~XA5300 Test~*/
 	DO ~
-		LeaveAreaLUAPanic("XA5300","",[780.550],SE)
-		ActionOverride(Player1,LeaveAreaLUA("XA5300","",[780.550],SE))
-		ActionOverride(Player2,LeaveAreaLUA("XA5300","",[750.540],SE))
-		ActionOverride(Player3,LeaveAreaLUA("XA5300","",[810.540],SE))
-		ActionOverride(Player4,LeaveAreaLUA("XA5300","",[840.530],SE))
-		ActionOverride(Player5,LeaveAreaLUA("XA5300","",[720.530],SE))
-		ActionOverride(Player6,LeaveAreaLUA("XA5300","",[730.520],SE))
-		DestroySelf()
+		StartCutSceneMode()
+		StartCutScene("XAGO5300")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @589 /* ~XA5300 (Caelar)~*/
+	DO ~
+		SetGlobal("XA_CaelarRescue", "GLOBAL", 1)
+		SetGlobal("XA_CaelarStayedInAvernus","GLOBAL",1)
+		SetGlobal("XA_IncubusDefeated", "GLOBAL", 1)
+		//SetGlobal("XA_OathRelease", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutScene("XAGO5300")
 	~
 	EXIT
 	

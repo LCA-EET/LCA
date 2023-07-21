@@ -314,14 +314,8 @@
 			
 			IF ~~ THEN 
 			DO ~
-				LeaveAreaLUAPanic("XA5300","",[780.550],SE)
-				ActionOverride(Player1,LeaveAreaLUA("XA5300","",[780.550],SE))
-				ActionOverride(Player2,LeaveAreaLUA("XA5300","",[750.540],SE))
-				ActionOverride(Player3,LeaveAreaLUA("XA5300","",[810.540],SE))
-				ActionOverride(Player4,LeaveAreaLUA("XA5300","",[840.530],SE))
-				ActionOverride(Player5,LeaveAreaLUA("XA5300","",[720.530],SE))
-				ActionOverride(Player6,LeaveAreaLUA("XA5300","",[730.520],SE))
-				DestroySelf()
+				StartCutSceneMode()
+				StartCutScene("XAGO5300")
 			~
 			EXIT
 		END
