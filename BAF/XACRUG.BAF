@@ -42,6 +42,7 @@ THEN
 		DisplayStringHead(Myself,@11)
 		Wait(3)
 		AddexperienceParty(15000)
+		SetGlobal("XA_CrusadersGone", "GLOBAL", 1)
 		DestroySelf()
 		SetInterrupt(TRUE)
 END
