@@ -144,6 +144,22 @@ END
 IF ~~ THEN BEGIN XA_AreaTest
 	SAY @585
 	
+	IF ~~ THEN REPLY @588 /* ~XA4700~*/
+	DO ~
+		SetGlobal("XA_IncubusDefeated", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutScene("XAGO4700")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @587 /* ~XA4700~*/
+	DO ~
+		SetGlobal("DemoGorgonIsDead","GLOBAL",1)
+		StartCutSceneMode()
+		StartCutScene("XAGO4700")
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @573 /* ~XA5300 Test~*/
 	DO ~
 		LeaveAreaLUAPanic("XA5300","",[780.550],SE)

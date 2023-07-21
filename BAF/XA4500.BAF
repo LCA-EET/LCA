@@ -1,4 +1,13 @@
 IF
+	Dead("XATHRIX")
+	GlobalLT("XA_TowerUnlock", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_TowerUnlock", "GLOBAL", 1)
+		Continue()
+END
+
+IF
 	GlobalLT("XA_4500Journal", "MYAREA", 1)
 THEN
 	RESPONSE #100

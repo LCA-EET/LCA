@@ -1,0 +1,11 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		CreateVisualEffect("SPPORTAL",[1320.865])
+		Wait(2)
+		CreateCreature("XADEMGOR", [1320.865], NE)
+		ActionOverride("XADEMGOR", StartDialog("XADEMGOR", Player1))
+		EndCutSceneMode()
+END

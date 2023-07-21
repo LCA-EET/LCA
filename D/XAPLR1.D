@@ -7,6 +7,7 @@
 
 */
 APPEND ~PLAYER1~
+	
 
 	IF ~
 		Global("XA_TowerUnlock", "GLOBAL", 1)

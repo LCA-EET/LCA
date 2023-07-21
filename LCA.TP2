@@ -31,8 +31,8 @@ BACKUP ~LCA/BACKUP~
 AUTHOR ~Daniel Valle, dan@danielvalle.net~
 
 //Link to LCA EET Discord: https://discord.gg/hwGf39gW9g 
-//Link to LCA YouTube Channel: https://www.youtube.com/@XAamod/videos 
-//Link to GitHub: https://github.com/XAA-EET/XAA
+//Link to LCA YouTube Channel: https://www.youtube.com/@lcamod/videos 
+//Link to GitHub: https://github.com/LCA-EET/XAA
 
 AUTO_TRA ~LCA/TRA/%s~ //automatically associate .tras to their respective .D files
 LANGUAGE ~English~ ~english~ ~LCA/TRA/ENGLISH/XALCAEET.TRA~
@@ -674,6 +674,8 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 //}
 
 //{ New Creatures
+	COPY ~LCA/CRE/XADEMGOR.CRE~ ~override~
+	COPY ~LCA/CRE/XACAELAR.CRE~ ~override~
 	COPY ~LCA/CRE/XATHRIX.CRE~ ~override~
 	COPY ~LCA/CRE/XAASHASP.CRE~ ~override~
 	COPY ~LCA/CRE/XABENOSP.CRE~ ~override~

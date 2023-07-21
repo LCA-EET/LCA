@@ -2338,6 +2338,7 @@ APPEND ANOMENJ
 END
 
 APPEND JAHEIRAJ
+
 	IF ~~ THEN BEGIN XA_BenoBoom
 		SAY @286 /* ~You're covered as well! No, don't put your hands on me, they're filthy!~ */
 		
