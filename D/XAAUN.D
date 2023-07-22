@@ -51,10 +51,11 @@ CHAIN XACAELAR XA_AunCaelarChain
 END XAAUN XA_AunCaelarChainEnd
 
 CHAIN XAAUN XA_AunCaelarFarewell
-	@10
+	@10 /*~Walk in the light, <CHARNAME>.~*/
 	== XACAELAR
-	@11
+	@11 /*~Goodbye... and thank you.~  */
 	DO ~
+		AddJournalEntry(@13, INFO)
 		SetGlobal("XA_CaelarHome", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XACAEBYE")

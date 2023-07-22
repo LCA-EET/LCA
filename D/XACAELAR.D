@@ -1,6 +1,43 @@
 BEGIN ~XACAELAR~
 
 IF ~
+	Global("XA_SparedCaelar", "GLOBAL", 1)
+	Global("XA_CrusadersGone", "GLOBAL", 1)
+	GlobalLT("XA_CaelarChoice", "GLOBAL", 1)
+~ THEN BEGIN XA_Choice
+	SAY @44 /*~They're free... <CHARNAME>, you spared my life, but for what purpose? What do you intend to do with me?~*/
+	
+	IF ~~ THEN REPLY @45 /* ~I'm going to send you to the Flaming Fist, so that you can be tried for your crimes.~*/
+	GOTO XA_GoToJail
+	
+	IF ~~ THEN REPLY @46 /* ~You've suffered enough. I'm going to send you to live with your uncle.~ */
+	GOTO XA_LiveWithAun
+	
+	IF ~~ THEN REPLY @47 /*~I want you to join me, and fight at my side.~ */
+	GOTO XA_Join
+END
+
+IF ~~ THEN BEGIN XA_GoToJail
+	SAY @
+END
+
+IF ~~ THEN BEGIN XA_Join
+	SAY @48 /*~I... I don't know if I still have the will to fight.~*/
+	
+	IF ~~ THEN REPLY @49 /*~You must. The fate of the world may be at stake. (Explain the threat posed by the Five.)~*/
+	GOTO XA_Join2
+	
+	IF ~~ THEN REPLY @50 /*~You're right. You've suffered enough. I'm going to send you to live with your uncle.~*/
+	GOTO XA_LiveWithAun
+	
+	IF ~~ THEN REPLY @
+END
+
+IF ~~ THEN BEGIN XA_Join2
+	SAY @
+END
+
+IF ~
 	GlobalLT("XA_AshaCaelar", "GLOBAL", 1)
 	AreaCheck("XA5300")
 ~ THEN BEGIN XA_CaelarAsha
@@ -62,6 +99,7 @@ IF ~~ THEN BEGIN XA_CaelarWait3
 	
 	IF ~~ THEN
 	DO ~
+		SetGlobal("XA_SparedCaelar", "GLOBAL", 1)
 		SetGlobal("XA_OathRelease", "GLOBAL", 1)
 	~
 	EXIT

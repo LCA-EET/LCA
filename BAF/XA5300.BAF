@@ -1,20 +1,22 @@
 IF
 	Global("XA_CrusadersGone", "GLOBAL", 1)
+	Global("XA_SparedCaelar", "GLOBAL", 1)
+	GlobalLT("XA_CrusaderJournal", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CrusaderJournal", "MYAREA", 1)
+		AddJournalEntry(@0, INFO)
+		ActionOverride("XACAELAR", StartDialog("XACAELAR", Player1))
+END
+
+IF
+	Global("XA_CrusadersGone", "GLOBAL", 1)
 	Global("XA_KilledCaelar", "GLOBAL", 1)
 	GlobalLT("XA_CrusaderJournal", "MYAREA", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CrusaderJournal", "MYAREA", 1)
 		AddJournalEntry(@1, INFO)
-END
-
-IF
-	Global("XA_CrusadersGone", "GLOBAL", 1)
-	GlobalLT("XA_CrusaderJournal", "MYAREA", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_CrusaderJournal", "MYAREA", 1)
-		AddJournalEntry(@0, INFO)
 END
 
 IF
