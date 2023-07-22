@@ -4,7 +4,7 @@ IF ~
 	GlobalLT("XA_AshaCaelar", "GLOBAL", 1)
 	AreaCheck("XA5300")
 ~ THEN BEGIN XA_CaelarAsha
-	SAY @20 /* ~Ashatiel... why are you confined to this place?~*/
+	SAY @20 /*  ~My loyal Adras... forgive me. Why are you confined to this place?~*/
 	
 	IF ~~ THEN
 	DO ~
@@ -90,6 +90,7 @@ IF ~~ THEN BEGIN XA_WonBattle3
 	IF ~~ THEN
 	DO ~
 		ActionOverride(Player1,AddSpecialAbility("SPIN649"))
+		CopyGroundPilesTo("AR4500", [1985.1250])
 		StartCutSceneMode()
 		StartCutScene("XAGO5300")
 	~
