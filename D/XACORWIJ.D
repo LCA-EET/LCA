@@ -8,6 +8,79 @@
 
 */ 
 BEGIN ~XACORWIJ~
+
+//{ Caelar Sent to prison
+	IF ~
+		Global("XA_CorwinCaelarJailTalk", "GLOBAL", 1)
+	~ THEN BEGIN XA_CaelarSentJail
+		SAY @591 /* You decided to send her to prison, instead of letting her go. Interesting. I'll need to let the Dukes know about this.~ */
+		
+		IF ~~ THEN REPLY @587 /*~You don't approve?~*/
+		DO ~
+			SetGlobal("XA_CorwinCaelarJailTalk", "GLOBAL", 2)
+			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		~
+		GOTO XA_CaelarSentJail2
+		
+		IF ~~ THEN REPLY @589 /*~Would you have chosen differently?~*/
+		DO ~
+			SetGlobal("XA_CorwinCaelarJailTalk", "GLOBAL", 2)
+			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		~
+		GOTO XA_CaelarSentJail2
+		
+		IF ~~ THEN REPLY @590 /*~You have a problem with that?~*/
+		DO ~
+			SetGlobal("XA_CorwinCaelarJailTalk", "GLOBAL", 2)
+			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		~
+		GOTO XA_CaelarSentJail2
+	END
+	
+	IF ~~ THEN BEGIN XA_CaelarSentJail2
+		SAY @592 /*~I... I'm sworn to uphold the law, and Caelar deserves to be punished for what she did. In spite of that, I would've let her go. Whatever she endured in Avernus was greater than any punishment the Fist can dole out. I just hope that it's the last we've seen and heard of her. Let's go.~*/
+		
+		IF ~~ THEN
+		EXIT
+	END
+//}
+
+//{ Caelar Sent Home Instead of Jail
+	IF ~
+		Global("XA_CorwinCaelarHomeTalk", "GLOBAL", 1)
+	~ THEN BEGIN XA_CaelarSentHome
+		SAY @586 /*~You decided to send her home, instead of jail? Interesting. I'll need to let the Dukes know about this.~*/
+		
+		IF ~~ THEN REPLY @587 /*~You don't approve?~*/
+		DO ~
+			SetGlobal("XA_CorwinCaelarHomeTalk", "GLOBAL", 2)
+			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		~
+		GOTO XA_CaelarSentHome2
+		
+		IF ~~ THEN REPLY @589 /*~Would you have chosen differently?~*/
+		DO ~
+			SetGlobal("XA_CorwinCaelarHomeTalk", "GLOBAL", 2)
+			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		~
+		GOTO XA_CaelarSentHome2
+		
+		IF ~~ THEN REPLY @590 /*~You have a problem with that?~*/
+		DO ~
+			SetGlobal("XA_CorwinCaelarHomeTalk", "GLOBAL", 2)
+			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		~
+		GOTO XA_CaelarSentHome2
+	END
+	
+	IF ~~ THEN BEGIN XA_CaelarSentHome2
+		SAY @588 /*~Were it up to me... I think I'd have let her go too. Whatever she endured in Avernus was greater than any punishment we'd have doled out. I just hope that it's the last we've heard of her. Let's go.~*/
+		
+		IF ~~ THEN
+		EXIT
+	END
+//}
+
 //{ Corwin Avernus Return
 	IF ~
 		Global("XA_AvernusChat", "GLOBAL", 1)

@@ -731,6 +731,55 @@ END
 //} End Underdark Check
 
 //{ Event Checks
+	//{ Caelar Jailed
+	IF 
+		Global("XA_CorwinCaelarJail", "GLOBAL", 1)
+		GlobalLT("XA_CorwinCaelarJailTimerSet", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_CorwinCaelarJailTimer", "GLOBAL", TWO_ROUNDS)
+			SetGlobal("XA_CorwinCaelarJailTimerSet", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+	END
+	
+	IF
+		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		GlobalTimerExpired("XA_CorwinCaelarJailTimer", "GLOBAL")
+		GlobalLT("XA_CorwinCaelarJailTalk", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_CorwinCaelarJailTalk", "GLOBAL", 1)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Caelar Went Home
+	IF 
+		Global("XA_CorwinCaelarHome", "GLOBAL", 1)
+		GlobalLT("XA_CorwinCaelarHomeTimerSet", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_CorwinCaelarHomeTimer", "GLOBAL", TWO_ROUNDS)
+			SetGlobal("XA_CorwinCaelarHomeTimerSet", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+	END
+	
+	IF
+		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		GlobalTimerExpired("XA_CorwinCaelarHomeTimer", "GLOBAL")
+		GlobalLT("XA_CorwinCaelarHomeTalk", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_CorwinCaelarHomeTalk", "GLOBAL", 1)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
 
 	//{ Beno Exploded
 	IF

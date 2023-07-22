@@ -151,6 +151,13 @@ IF ~~ THEN BEGIN XA_CaelarRescue3
 	EXIT
 END
 
+IF ~~ THEN BEGIN XA_OffToJail
+	SAY @42 /* ~Before I go. <CHARNAME>, thank you for rescuing me from Avernus, and for allowing me to release the spirits of my fallen crusaders. Farewell.~ */
+	
+	IF ~~ THEN REPLY @43 /*~Corporal, the gate will bring you to the Flaming Fist Headquarters.~*/
+	EXTERN XABENCE2 XA_OffToJail2
+END
+
 CHAIN XAASHASP XA_CaelarAshaChain
 	@21 /* ~Caelar! Blessed be, our Shining Lady has returned to us!~*/
 	= @22 /* ~But... oh my... your injuries. What happened?~*/

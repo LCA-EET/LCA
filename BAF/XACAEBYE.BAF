@@ -1,0 +1,14 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeToColor([30.0],0)
+		Wait(1)
+		ActionOverride("XACAELAR", DestroySelf())
+		ActionOverride("XAAUN", DestroySelf())
+		ActionOverride("XABENCE2", DestroySelf())
+		Wait(1)
+		FadeFromColor([30.0],0)
+		EndCutSceneMode()
+END
