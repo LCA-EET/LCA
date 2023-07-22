@@ -21,7 +21,7 @@ THEN
 END
 
 IF
-	Name("XAASHASP")
+	Name("XAASHASP", Myself)
 	Global("XA_Hidden", "LOCALS", 1)
 	Global("XA_CaelarStayedInAvernus","GLOBAL",1)
 THEN
@@ -32,7 +32,7 @@ THEN
 END
 
 IF
-	Name("XAASHASP")
+	Name("XAASHASP", Myself)
 	Global("XA_OathRelease", "GLOBAL", 1)
 THEN
 	RESPONSE #100
@@ -50,7 +50,7 @@ END
 IF
 	Global("XA_OathRelease", "GLOBAL", 1)
 	GlobalLT("XA_DestroySelf", "LOCALS", 1)
-	!Name("XAASHASP")
+	!Name("XAASHASP", Myself)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -116,7 +116,7 @@ END
 
 IF 
 	Global("XA_DestroySelf", "LOCALS", 1)
-	!Name("XAASHASP")
+	!Name("XAASHASP", Myself)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
