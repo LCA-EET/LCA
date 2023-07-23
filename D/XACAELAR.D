@@ -8,17 +8,44 @@ IF ~
 	SAY @44 /*~They're free... <CHARNAME>, you spared my life, but for what purpose? What do you intend to do with me?~*/
 	
 	IF ~~ THEN REPLY @45 /* ~I'm going to send you to the Flaming Fist, so that you can be tried for your crimes.~*/
+	DO ~
+		SetGlobal("XA_CaelarChoice", "GLOBAL", 1)
+	~
 	GOTO XA_GoToJail
 	
 	IF ~~ THEN REPLY @46 /* ~You've suffered enough. I'm going to send you to live with your uncle.~ */
+	DO ~
+		SetGlobal("XA_CaelarChoice", "GLOBAL", 1)
+	~
 	GOTO XA_LiveWithAun
 	
-	IF ~~ THEN REPLY @47 /*~I want you to join me, and fight at my side.~ */
+	IF ~~ THEN REPLY @47 /*~I want you to fight at my side.~ */
+	DO ~
+		SetGlobal("XA_CaelarChoice", "GLOBAL", 1)
+	~
 	GOTO XA_Join
 END
 
+IF ~~ THEN BEGIN XA_LiveWithAun
+	SAY @53 /*~My... my uncle Aun? To see him again... thank you, <CHARNAME>, for your mercy.~*/
+	
+	IF ~~ THEN
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("XACAHOME")
+	~
+	EXIT
+END
+
 IF ~~ THEN BEGIN XA_GoToJail
-	SAY @
+	SAY @52 /*~I understand. Justice must be served.~*/
+	
+	IF ~~ THEN
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("XACAJAIL")
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN XA_Join
@@ -30,11 +57,19 @@ IF ~~ THEN BEGIN XA_Join
 	IF ~~ THEN REPLY @50 /*~You're right. You've suffered enough. I'm going to send you to live with your uncle.~*/
 	GOTO XA_LiveWithAun
 	
-	IF ~~ THEN REPLY @
+	IF ~~ THEN REPLY @54 /* ~You're right. I'm going to send you to the Flaming Fist, so that you can be tried for your crimes.~ */
+	GOTO XA_GoToJail
 END
 
 IF ~~ THEN BEGIN XA_Join2
-	SAY @
+	SAY @51 /* ~I had no idea... Very well. I will support you in any way that I can. If nothing else, it will help to make amends for the harm caused by the crusade. Lead the way.~ */
+	
+	IF ~~ THEN
+	DO ~
+		AddJournalEntry(@55, INFO)
+		JoinParty()
+	~
+	EXIT
 END
 
 IF ~

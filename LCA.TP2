@@ -674,6 +674,8 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 //}
 
 //{ New Creatures
+	COPY ~LCA/CRE/XABENCE2.CRE~ ~override~
+	COPY ~LCA/CRE/XAAUN.CRE~ ~override~
 	COPY ~LCA/CRE/XAAVC1.CRE~ ~override~
 	COPY ~LCA/CRE/XAAVC2.CRE~ ~override~
 	COPY ~LCA/CRE/XAAVC3.CRE~ ~override~
@@ -1067,6 +1069,14 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 
 //{ New Items
 
+	//{ Broken Gear
+	COPY ~LCA/ITM/XABROKEN.ITM~ ~override~
+	SAY NAME1 @162
+	SAY NAME2 @162
+	SAY UNIDENTIFIED_DESC @163
+	DAY DESC @163
+	//}
+	
 	//{ Engagement Ring
 
 		//{ Normal Rings
