@@ -8,7 +8,11 @@ IF ~
 	IF ~~ THEN REPLY @585
 	GOTO XA_AreaTest
 	
-	
+	IF ~~ THEN REPLY @590
+	DO ~
+		ActionOverride(Player1,AddSpecialAbility("SPIN649"))
+	~
+	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @537
 	DO ~

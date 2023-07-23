@@ -29,10 +29,10 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("ImpForgeStuff","GLOBAL",0)
-		GiveItemCreate("BDHELMCA",Player1,0,0,0)
-		GiveItemCreate("BDCHANCA",Player1,0,0,0)
-		GiveItemCreate("BDSHLDCA",Player1,0,0,0)
-		GiveItemCreate("BDSW1HCA",Player1,0,0,0)
+		GiveItemCreate("XAHELMCA",Player1,0,0,0)
+		GiveItemCreate("XACHANCA",Player1,0,0,0)
+		GiveItemCreate("XASHLDCA",Player1,0,0,0)
+		GiveItemCreate("XASW1HCA",Player1,0,0,0)
 		StartDialogueNoSet(Player1)
 		SetInterrupt(TRUE)
 END
