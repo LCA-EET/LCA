@@ -541,8 +541,7 @@
 //{ BOTSMITH
 	ADD_STATE_TRIGGER BOTSMITH 2
 	~
-		Global("XA_MakeCorbow4", "GLOBAL", 0)
-		Global("XA_MakeCorbow5", "GLOBAL", 0)
+		Global("XA_ItemMaker","GLOBAL",0)
 	~
 	
 	ADD_TRANS_TRIGGER BOTSMITH 78
@@ -620,9 +619,51 @@
 				PartyHasItem("XASTDAGD")
 		~ THEN REPLY @259 /* ~Are you familiar with the Soultaker dagger?~ */
 		GOTO XA_SoulTakerFamiliar
+		
+		IF ~
+			PartyHasItem("XABROKEN")
+			GlobalLT("XA_AskHowMuch", "LOCALS", 1)
+		~
+		THEN REPLY @310 /*~Take a look at this broken sword and armor. Can they be repaired?~*/
+		DO ~
+			SetGlobal("XA_AskHowMuch", "LOCALS", 1)
+		~
+		GOTO XA_FixCaelarArmor
+		
+		IF ~
+			PartyHasItem("XABROKEN")
+			Global("XA_AskHowMuch", "LOCALS", 1)
+			PartyGoldGT(14999)
+		~
+		THEN REPLY @312 /* ~The broken armor and sword we discussed. Here's the gold you need to fix it. (Pay 15,000 gold.)~*/
+		DO ~
+			SetGlobal("XA_ItemMaker","GLOBAL",3)
+			TakePartyGold(15000)
+			TakePartyItemNum("XABROKEN", 1)
+			DestroyItem("XABROKEN")
+		~
+		GOTO 11
 	END
 	
 	APPEND BOTSMITH
+		IF ~~ THEN BEGIN XA_FixCaelarArmor
+			SAY @311 /*~Ooo let's me see... yuck! These stink like righteousness! Cespenar can fix, yes, but I needs lots and lots of gold... 15,000 gold!~*/
+			
+			IF ~
+				PartyGoldGT(14999)
+			~ THEN REPLY @313 /* ~Here. (Pay 15,000 gold.)~ */
+			DO ~
+				SetGlobal("XA_ItemMaker","GLOBAL",3)
+				TakePartyGold(15000)
+				TakePartyItemNum("XABROKEN", 1)
+				DestroyItem("XABROKEN")
+			~
+			GOTO 11
+			
+			IF ~~ THEN REPLY @314 /*~Nevermind.~*/
+			EXIT
+		END
+	
 		IF ~~ THEN BEGIN XA_SoulTakerFamiliar
 			SAY @267 /* ~Soul prison, yes. Very nasty. Why you ask? You gots dagger?~ */
 			
@@ -674,16 +715,13 @@
 		END
 		
 		IF ~
-			OR(2)
-				Global("XA_MakeCorbow5", "GLOBAL", 2)
-				Global("XA_MakeCorbow4", "GLOBAL", 2)
+			GlobalGT("XA_ItemMaker", "GLOBAL", 0)
 		~ THEN BEGIN XA_BowCreated
 			SAY #70888 /* ~Enjoy! Now Cespenar goes back to his duties, oh yes! Lots of goodies to find, lots to collect!~ [BOTSM10] */
 			
 			IF ~~ THEN
 			DO ~
-				SetGlobal("XA_MakeCorbow5", "GLOBAL", 0)
-				SetGlobal("XA_MakeCorbow4", "GLOBAL", 0)
+				SetGlobal("XA_ItemMaker", "GLOBAL", 0)
 			~
 			EXIT
 		END
@@ -698,7 +736,7 @@
 			~
 			THEN REPLY #66862 /* ~Sure, go ahead.~ */
 			DO ~
-				SetGlobal("XA_MakeCorbow5", "GLOBAL", 1)
+				SetGlobal("XA_ItemMaker", "GLOBAL", 2)
 				TakePartyGold(5000)
 				TakePartyItemNum("XACORBO3",1)
 				DestroyItem("XACORBO3")
@@ -714,7 +752,7 @@
 			~
 			THEN REPLY #66862 /* ~Sure, go ahead.~ */
 			DO ~
-				SetGlobal("XA_MakeCorbow4", "GLOBAL", 1)
+				SetGlobal("XA_ItemMaker", "GLOBAL", 1)
 				TakePartyGold(5000)
 				TakePartyItemNum("XACORBOW",1)
 				DestroyItem("XACORBOW")

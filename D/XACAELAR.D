@@ -66,6 +66,7 @@ IF ~~ THEN BEGIN XA_Join2
 	
 	IF ~~ THEN
 	DO ~
+		DestroyItem("MINHP1")
 		AddJournalEntry(@55, INFO)
 		JoinParty()
 	~

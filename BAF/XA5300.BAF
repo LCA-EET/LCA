@@ -38,7 +38,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_AshaSpawn", "XA5300", 1)
-		CreateCreature("XAASHASP", [800.590], NNE)
 		Continue()
 END
 

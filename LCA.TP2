@@ -1068,13 +1068,13 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 //}
 
 //{ New Items
-
+	
 	//{ Broken Gear
 	COPY ~LCA/ITM/XABROKEN.ITM~ ~override~
 	SAY NAME1 @162
 	SAY NAME2 @162
 	SAY UNIDENTIFIED_DESC @163
-	DAY DESC @163
+	SAY DESC @163
 	//}
 	
 	//{ Engagement Ring

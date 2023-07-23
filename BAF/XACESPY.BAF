@@ -1,26 +1,38 @@
 IF
-	Global("XA_MakeCorbow4", "GLOBAL", 1)
+	Global("XA_ItemMaker", "GLOBAL", 1)
 	Global("ImpForgeStuff","GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("ImpForgeStuff","GLOBAL",0)
 		GiveItemCreate("XACORBO4",Player1,0,0,0)
-		SetGlobal("XA_MakeCorbow4", "GLOBAL", 2)		
 		StartDialogueNoSet(Player1)
 		SetInterrupt(TRUE)
 END
 
 IF
-	Global("XA_MakeCorbow5", "GLOBAL", 1)
+	Global("XA_ItemMaker", "GLOBAL", 2)
 	Global("ImpForgeStuff","GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("ImpForgeStuff","GLOBAL",0)
 		GiveItemCreate("XACORBO5",Player1,0,0,0)
-		SetGlobal("XA_MakeCorbow5", "GLOBAL", 2)		
 		StartDialogueNoSet(Player1)
 		SetInterrupt(TRUE)
 END
 
+IF
+	Global("XA_ItemMaker", "GLOBAL", 3)
+	Global("ImpForgeStuff","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("ImpForgeStuff","GLOBAL",0)
+		GiveItemCreate("BDHELMCA",Player1,0,0,0)
+		GiveItemCreate("BDCHANCA",Player1,0,0,0)
+		GiveItemCreate("BDSHLDCA",Player1,0,0,0)
+		GiveItemCreate("BDSW1HCA",Player1,0,0,0)
+		StartDialogueNoSet(Player1)
+		SetInterrupt(TRUE)
+END
