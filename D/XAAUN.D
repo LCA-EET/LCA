@@ -9,7 +9,7 @@ IF ~
 	DO ~
 		SetGlobal("XA_AunCaelar", "GLOBAL", 1)
 	~
-	EXTERN XACAELAR XA_AunCaelarChain
+	EXTERN XACAELA2 XA_AunCaelarChain
 	
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
@@ -18,7 +18,7 @@ IF ~
 		SetGlobal("XA_AunCaelar", "GLOBAL", 1)
 		SetGlobal("XA_CorwinCaelarHome", "GLOBAL", 1)
 	~
-	EXTERN XACAELAR XA_AunCaelarChain
+	EXTERN XACAELA2 XA_AunCaelarChain
 END
 
 IF ~~ THEN BEGIN XA_AunCaelarChainEnd
@@ -38,21 +38,21 @@ IF ~~ THEN BEGIN XA_HelpRecover
 	GOTO XA_AunCaelarFarewell
 END
 
-CHAIN XACAELAR XA_AunCaelarChain
+CHAIN XACAELA2 XA_AunCaelarChain
 	@1 /*~(They share a warm embrace.)~*/
 	== XAAUN
 	@2 /*~In Lathander's name... what happened? Who did this to you?~*/
-	== XACAELAR
+	== XACAELA2
 	@3 /*~I... I'm not ready to talk about it, uncle. One day, I will be. But not today.~ */
 	== XAAUN
 	@4 /*~I understand all too well...~*/
-	== XACAELAR
+	== XACAELA2
 	@5 /*~What matters is that I'm finally free from that horrible place, thanks to <CHARNAME>.~*/
 END XAAUN XA_AunCaelarChainEnd
 
 CHAIN XAAUN XA_AunCaelarFarewell
 	@10 /*~Walk in the light, <CHARNAME>.~*/
-	== XACAELAR
+	== XACAELA2
 	@11 /*~Goodbye... and thank you.~  */
 	DO ~
 		AddJournalEntry(@13, INFO)

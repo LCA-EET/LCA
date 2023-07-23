@@ -1,4 +1,4 @@
-BEGIN ~XACAELAR~
+BEGIN ~XACAELA2~
 
 IF ~
 	Global("XA_SparedCaelar", "GLOBAL", 1)
@@ -68,7 +68,8 @@ IF ~~ THEN BEGIN XA_Join2
 	DO ~
 		DestroyItem("MINHP1")
 		AddJournalEntry(@55, INFO)
-		JoinParty()
+		StartCutSceneMode()
+		StartCutScene("XACAJOIN")
 	~
 	EXIT
 END
@@ -235,16 +236,16 @@ END
 CHAIN XAASHASP XA_CaelarAshaChain
 	@21 /* ~Caelar! Blessed be, our Shining Lady has returned to us!~*/
 	= @22 /* ~But... oh my... your injuries. What happened?~*/
-	== XACAELAR
+	== XACAELA2
 	@23 /* ~... It's what I deserved, in many ways. I led all of you to your deaths. The destruction that we wrought across the Sword Coast...~*/
 	== XAASHASP
 	@24 /* ~It was Hephernaaan, not you. He —~*/
-	== XACAELAR
+	== XACAELA2
 	@25 /* ~No! He betrayed me, yes, but it was I who was willing to throw your lives away, all so that I could see my uncle again... I deserve your scorn, not your pity.~*/
 	== XAASHASP
 	@26 /* ~I... I see.~*/
-	== XACAELAR
+	== XACAELA2
 	@27 /* ~Now. Tell me, spirit, why you haven't moved on.~*/
 	== XAASHASP
 	@28 /* ~We, your most loyal followers, swore an oath to serve you in life, and in death. The oath cannot be broken. You must either release us from your servitude, or... you must die.~*/
-END XACAELAR XA_CaelarAshaChain_END
+END XACAELA2 XA_CaelarAshaChain_END

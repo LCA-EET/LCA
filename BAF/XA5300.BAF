@@ -6,7 +6,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("XA_CrusaderJournal", "MYAREA", 1)
 		AddJournalEntry(@0, INFO)
-		ActionOverride("XACAELAR", StartDialog("XACAELAR", Player1))
+		ActionOverride("XACAELA2", StartDialog("XACAELA2", Player1))
 END
 
 IF
@@ -25,7 +25,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CaelarSpawn", "XA5300", 1)
-		CreateCreature("XACAELAR", [787.555], S)
+		CreateCreature("XACAELA2", [787.555], S)
 		Continue()
 END
 
@@ -42,13 +42,13 @@ THEN
 END
 
 IF
-	InMyArea("XACAELAR")
+	InMyArea("XACAELA2")
 	InMyArea("XAASHASP")
 	GlobalLT("XA_AshaCaelar", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		Wait(1)
-		ActionOverride("XACAELAR", StartDialog("XACAELAR", Player1))
+		ActionOverride("XACAELA2", StartDialog("XACAELA2", Player1))
 END
 
 IF

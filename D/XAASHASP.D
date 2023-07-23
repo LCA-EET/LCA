@@ -2,7 +2,7 @@ BEGIN ~XAASHASP~
 
 IF ~
 	OR(2)
-		InMyArea("XACAELAR")
+		InMyArea("XACAELA2")
 		Global("XA_OathRelease", "GLOBAL", 1)
 ~ THEN BEGIN XA_ThankYou
 	SAY @56 /*~Thank you for bringing Caelar back to us.~*/

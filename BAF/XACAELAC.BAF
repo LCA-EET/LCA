@@ -7,8 +7,9 @@ THEN
 		SmallWait(1)
 		DestroyItem("MONHP01")
 		SmallWait(1)
-		ActionOverride("XACAELAR", ChangeAnimation("XAG1001B"))
-		SetGlobal("XA_CaelarTransform", "GLOBAL", 2)SetGlobal("XA_BeginSpawning", "GLOBAL", 2)
+		ActionOverride("XACAELA1", ChangeAnimation("XAG1001B"))
+		SetGlobal("XA_CaelarTransform", "GLOBAL",2)
+		SetGlobal("XA_BeginSpawning", "GLOBAL", 2)
 		SetInterrupt(TRUE)
 END
 IF
