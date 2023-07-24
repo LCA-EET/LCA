@@ -3348,4 +3348,26 @@ END
 			@856 /*~That's the first thing you've said that I agree with. Let's go.~*/
 	EXIT
 	//}
+	
+	//{ Dialog B-90
+	CHAIN 
+		IF ~
+			Global("XA_Banter_CorwinCaelar", "GLOBAL", 2)
+		~ THEN XACAELAB XA_CaelarCorwinBanter1Chain
+		@858 /*~I can feel you staring at me. Is something on your mind, Major?~*/
+		DO ~
+			SetGlobal("XA_Banter_CorwinCaelar", "GLOBAL", 3)
+		~
+		== XACORWIB
+		@859 /* ~The Fist lost a lot of good people fighting against your crusade. Mothers, fathers, sons and daughters, many of whom I considered friends.~*/
+		== XACAELAB
+		@860 /* ~I understand, and I'm sorry. There's nothing I can do, however.~*/
+		== XACORWIB
+		@861 /*~I thought I'd hate you, but... I don't. The fact that you're here, helping <CHARNAME> and I with our mission is the reason why.~*/
+		= @862 /* ~If we succeed, we'll vouch for your actions after your release from Avernus. The Dukes might be open to sparing your life, especially when they learn of what you've already suffered. You'd still have to worry about the Waterdhavian and Daggerford authorities, however.~*/
+		== XACAELAB
+		@863 /* ~I appreciate that Major, and I want to assure you that when the time comes, I'll accept whatever justice awaits me. Let's move out.~ */
+EXIT
+	
+	//}
 //}

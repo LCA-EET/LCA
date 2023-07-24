@@ -1474,6 +1474,14 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	SAY UNIDENTIFIED_DESC @095
 	SAY DESC @095
 	//}
+	
+	//{ Illumination Cloak
+	COPY ~LCA/ITM/XAFINCA1.ITM~ ~override~
+	SAY NAME1 @165
+	SAY NAME2 @165
+	SAY UNIDENTIFIED_DESC @166
+	SAY DESC @166
+	//}
 //}
 
 //{ Stores (New and Modified)

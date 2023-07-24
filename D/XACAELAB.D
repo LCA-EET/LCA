@@ -1,12 +1,12 @@
 BEGIN ~XACAELAB~
 
-
+//{ Dialog B-91
 CHAIN IF ~
-	Global("XA_CaelarSarevokBanter", "GLOBAL", 1)
+	Global("XA_Banter_CaelarSarevok", "GLOBAL", 2)
 ~ THEN SAREV25J XA_CaelarSarevokBanter1Chain
 	@0 /*~It's interesting isn't it?~*/
 	DO ~
-		SetGlobal("XA_CaelarSarevokBanter", "GLOBAL", 2)
+		SetGlobal("XA_Banter_CaelarSarevok", "GLOBAL", 3)
 	~
 	== XACAELAB
 	@1 /*~Pardon?~*/
@@ -22,13 +22,15 @@ CHAIN IF ~
 	== SAREV25J
 	@7 /*~Hmph.~*/
 EXIT
+//}
 
+//{ Dialog B-92
 CHAIN IF ~
-	Global("XA_CaelarKeldornBanter", "GLOBAL", 1)
+	Global("XA_Banter_CaelarKeldorn", "GLOBAL", 2)
 ~ THEN KELDORJ XA_CaelarKeldornBanter1Chain
 	@8 /* ~Lady Argent, I never dreamed that I would one day fight alongside an aasimar. It's been quite an honor.~ */
 	DO ~
-		SetGlobal("XA_CaelarKeldornBanter", "GLOBAL", 2)
+		SetGlobal("XA_Banter_CaelarKeldorn", "GLOBAL", 3)
 	~
 	== XACAELAB
 	@9 /* ~The honor is mine. <CHARNAME> chose <PRO_HISHER> companions well, Sir Keldorn.~*/
@@ -41,31 +43,15 @@ CHAIN IF ~
 	== XACAELAB
 	@14 /* ~Thank you... I will take some time to consider your offer. Come. We are called to duty.~ */
 EXIT
+//}
 
+//{ Dialog B-93
 CHAIN IF ~
-	Global("XA_CaelarCorwinBanter", "GLOBAL", 1)
-~ THEN XACAELAB XA_CaelarCorwinBanter1Chain
-	@15 /*~I can feel you staring at me. Is something on your mind, Major?~*/
-	DO ~
-		SetGlobal("XA_CaelarCorwinBanter", "GLOBAL", 2)
-	~
-	== XACORWIB
-	@16 /* ~The Fist lost a lot of good people fighting against your crusade. Mothers, fathers, sons and daughters, many of whom I considered friends.~*/
-	== XACAELAB
-	@17 /* ~I understand, and I'm sorry. There's nothing I can do, however.~*/
-	== XACORWIB
-	@18 /*~I thought I'd hate you, but... I don't. The fact that you're here, helping <CHARNAME> and I with our mission is the reason why.~*/
-	= @19 /* ~If we succeed, we'll vouch for your actions after your release from Avernus. The Dukes might be open to sparing your life, especially when they learn of what you've already suffered. You'd still have to worry about the Waterdhavian and Daggerford authorities, however.~*/
-	== XACAELAB
-	@20 /* ~I appreciate that Major, and I want to assure you that when the time comes, I'll accept whatever justice awaits me. Let's move out.~ */
-EXIT
-
-CHAIN IF ~
-	Global("XA_CaelarRasaadBanter", "GLOBAL", 1)
+	Global("XA_Banter_CaelarRasaad", "GLOBAL", 2)
 ~ THEN RASAADJ XA_CaelarRasaadBanter1Chain
 	@21 /*~Caelar? Your hand is trembling — is something wrong?~*/
 	DO ~
-		SetGlobal("XA_CaelarRasaadBanter", "GLOBAL", 2)
+		SetGlobal("XA_Banter_CaelarRasaad", "GLOBAL", 3)
 	~
 	== XACAELAB
 	@22 /*~It's nothing, Rasaad. I was just remembering...~*/ 
@@ -81,11 +67,16 @@ CHAIN IF ~
 	== RASAADJ
 	@28 /*~Of course. Come — the others are waiting.~ */
 EXIT
+//}
 
+//{ Dialog B-94
 CHAIN IF ~
-	Global("XA_CaelarJaheiraBanter", "GLOBAL", 1)
+	Global("XA_Banter_CaelarJaheira", "GLOBAL", 2)
 ~ THEN XACAELAB XA_CaelarJaheiraBanter1Chain
 	@29 /*~Jaheria... a moment of your time?~*/
+	DO ~
+		SetGlobal("XA_Banter_CaelarJaheira", "GLOBAL", 3)
+	~
 	== JAHEIRAJ
 	@30 /*~Of course, Lady Argent. What is it?~*/
 	== XACAELAB
@@ -101,13 +92,15 @@ CHAIN IF ~
 	== JAHEIRAJ
 	@36 /* ~I do. Thank you, Caelar.~ */
 EXIT
+//}
 
+//{ Dialog B-95
 CHAIN IF ~
-	Global("XA_CaelarMazzyBanter", "GLOBAL", 1)
+	Global("XA_Banter_CaelarMazzy", "GLOBAL", 2)
 ~ THEN MAZZYJ XA_CaelarMazzyBanter1Chain
 	@55 /*~Lady Argent, do you have a moment?~*/
 	DO ~
-		SetGlobal("XA_CaelarMazzyBanter", "GLOBAL", 2)
+		SetGlobal("XA_Banter_CaelarMazzy", "GLOBAL", 3)
 	~
 	== XACAELAB
 	@37 /*~Yes, Mazzy. What can I do for you?~ */
@@ -128,13 +121,15 @@ CHAIN IF ~
 	== XACAELAB
 	@45 /* ~Yes... I hope that the people can be united once again, this time by a leader and a cause that that is worthy of them. Let's go.~ */
 EXIT
+//}
 
+//{ Dialog B-96
 CHAIN IF ~
-	Global("XA_CaelarDornBanter", "GLOBAL", 1)
+	Global("XA_Banter_CaelarDorn", "GLOBAL", 2)
 ~ THEN DORNJ XA_CaelarDornBanter1Chain
 	@56 /*~Caelar...~*/
 	DO ~
-		SetGlobal("XA_CaelarDornBanter", "GLOBAL", 2)
+		SetGlobal("XA_Banter_CaelarDorn", "GLOBAL", 3)
 	~
 	== XACAELAB
 	@46 /*~Out with it, blackguard.~*/
@@ -155,3 +150,4 @@ CHAIN IF ~
 	== XACAELAB
 	@54 /*~Begone! Try and tempt me again, slave, and you and I will have more than words!~*/
 EXIT
+//}

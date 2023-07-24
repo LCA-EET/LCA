@@ -124,7 +124,7 @@ END
 
 //{ Corwin Can Talk Check
 IF 
-	Global("XA_CorwinCanTalk", "GLOBAL", 1)
+	Global("XA_CanTalk", "LOCALS", 1)
 	ActionListEmpty()
 	OR(3)
 		!IsValidForPartyDialogue(Myself)
@@ -132,46 +132,46 @@ IF
 		GlobalGT("XA_ArrivedInUndercity", "GLOBAL", 0)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CorwinCanTalk", "GLOBAL", 0)
+		SetGlobal("XA_CanTalk", "LOCALS", 0)
 		Continue()
 END
 
 IF
-	!Global("XA_CorwinCanTalk", "GLOBAL", 1)
+	!Global("XA_CanTalk", "LOCALS", 1)
 	ActionListEmpty()
 	IsValidForPartyDialogue(Myself)
 	CombatCounter(0)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CorwinCanTalk", "GLOBAL", 1)
+		SetGlobal("XA_CanTalk", "LOCALS", 1)
 		Continue()
 END
 //}
 
 //{ Corwin Can Talk to Player Check
 IF 
-	Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+	Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	ActionListEmpty()
 	OR(3)
-		!Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		!Global("XA_CanTalk", "LOCALS", 1)
 		!IsValidForPartyDialogue(Player1)
 		!See(Player1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CorwinCanTalkToPlayer", "GLOBAL", 0)
+		SetGlobal("XA_CanTalkToPlayer", "LOCALS", 0)
 		Continue()
 END
 
 
 IF
-	!Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
-	Global("XA_CorwinCanTalk", "GLOBAL", 1)
+	!Global("XA_CanTalkToPlayer", "LOCALS", 1)
+	Global("XA_CanTalk", "LOCALS", 1)
 	ActionListEmpty()
 	IsValidForPartyDialogue(Player1)
 	See(Player1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		SetGlobal("XA_CanTalkToPlayer", "LOCALS", 1)
 		Continue()
 END
 //}
@@ -182,7 +182,7 @@ END
 	IF
 		AreaCheck("BG1300") //SE Baldur's Gate
 		Global("XA_AVComplimentFamily", "GLOBAL", 1)
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		IsValidForPartyDialogue("Aerie")
 		
 	THEN
@@ -194,7 +194,7 @@ END
 	IF
 		AreaCheck("BG1300") //SE Baldur's Gate
 		Global("XA_AVComplimentFamily", "GLOBAL", 1)
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		IsValidForPartyDialogue("Neera")
 		
 	THEN
@@ -206,7 +206,7 @@ END
 	IF
 		AreaCheck("BG1300") //SE Baldur's Gate
 		Global("XA_AVComplimentFamily", "GLOBAL", 1)
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		IsValidForPartyDialogue("Valygar")
 		
 	THEN
@@ -219,7 +219,7 @@ END
 	//{ Corwin Hall of Wonders Arrest
 	IF 
 		Global("XA_CorwinArrest", "GLOBAL", 1)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			//Dialog J-50
@@ -242,7 +242,7 @@ END
 	IF 
 		Global("XA_SoDAnxiety", "GLOBAL", 1)
 		GlobalTimerExpired("XA_SoDAnxietyTimer", "GLOBAL")
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -256,7 +256,7 @@ END
 	
 	//{ Corwin Leave for Family
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_CorwinLeaveForFamily", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -267,7 +267,7 @@ END
 	
 	//{ Corwin Need to See Family
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_CorwinNeedSeeFamily", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -279,7 +279,7 @@ END
 	//{ Meet Tianna
 	IF
 		Global("XA_AskCorwinAboutTianna", "GLOBAL", 1)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -297,7 +297,7 @@ END
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		!See("XANEOMA")
 		Range(Player1, 8)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -516,7 +516,7 @@ THEN
 END
 
 IF 
-	Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+	Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	ReputationLT(Player1,8)
 	GlobalTimerExpired("XA_CorwinRepWarningTimer", "GLOBAL")
 THEN
@@ -528,7 +528,7 @@ THEN
 END
 
 IF 
-	Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+	Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	ReputationLT(Player1,7)
 	Global("XA_CanLeaveParty", "GLOBAL", 1)
 THEN
@@ -744,7 +744,7 @@ END
 	END
 	
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		GlobalTimerExpired("XA_CorwinCaelarJailTimer", "GLOBAL")
 		GlobalLT("XA_CorwinCaelarJailTalk", "GLOBAL", 1)
 	THEN
@@ -769,7 +769,7 @@ END
 	END
 	
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		GlobalTimerExpired("XA_CorwinCaelarHomeTimer", "GLOBAL")
 		GlobalLT("XA_CorwinCaelarHomeTalk", "GLOBAL", 1)
 	THEN
@@ -785,7 +785,7 @@ END
 	IF
 		InParty(Myself)
 		GlobalTimerExpired("XA_CorwinBenoSoul", "GLOBAL")
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -827,7 +827,7 @@ END
 	IF 
 		Global("OHD_WEDDING_HOSTILE","OH5000",3)
 		!Global("XA_WeddingHostile", "GLOBAL", 1)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -853,7 +853,7 @@ END
 	END
 	
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		GlobalTimerExpired("XA_AmkethranTimer", "GLOBAL")
 		GlobalLT("XA_MessageToBG", "GLOBAL", 1)
 	THEN
@@ -963,7 +963,7 @@ END
 	IF 
 		Global("LadyMaria","GLOBAL",5)
 		!Global("XA_KeldornMaria", "GLOBAL", 1)
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		GlobalLT("XA_Banter_CorwinKeldornOpt1", "GLOBAL", 1)
 		ActionListEmpty()
 	THEN
@@ -994,7 +994,7 @@ END
 
 	//{ Met with Drizzt - Corwin vouched
 	IF 
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		GlobalTimerExpired("XA_CorwinVouchedDrizzTimer", "GLOBAL")
 	THEN
 		RESPONSE #100
@@ -1023,7 +1023,7 @@ END
 
 	//{ Resurrection Gorge
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("OHD_ritual_interjects","GLOBAL",0)
 		!InParty("dorn")  // Dorn
 		AreaCheck("oh5120")  // Dorn - Resurrection Gorge Tree Interior
@@ -1046,7 +1046,7 @@ END
 		Global("XA_CorwinSlaverPlot", "GLOBAL", 1)
 		AreaCheck("AR0405")
 		!InMyArea("girl2")
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			StartDialog("XACORWIJ", Player1)
@@ -1057,7 +1057,7 @@ END
 	IF 
 		Global("OpenJonBedroom","GLOBAL",1)
 		!Global("XA_PlayerSoulStolen", "GLOBAL", 1)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1088,7 +1088,7 @@ END
 	IF 
 		GlobalGT("PhaereInnuendo","GLOBAL",1)
 		!Global("XA_AloneWithPhaere", "GLOBAL", 1)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
@@ -1106,7 +1106,7 @@ END
 	IF 
 		Global("FirkraagDeal","GLOBAL",1)
 		!Global("XA_FirkraagDeal", "GLOBAL", 1)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1123,7 +1123,7 @@ END
 	IF 
 		Global("BodhiJob","GLOBAL",2)
 		!Global("XA_BodhiDeal2", "GLOBAL", 1)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1139,7 +1139,7 @@ END
 	IF 
 		Global("BodhiJob","GLOBAL",3)
 		!Global("XA_BodhiDeal3", "GLOBAL", 1)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1155,7 +1155,7 @@ END
 	IF 
 		Global("BodhiJob","GLOBAL",4)
 		!Global("XA_BodhiDeal4", "GLOBAL", 1)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1195,7 +1195,7 @@ END
 		!HPPercentLT(Myself, 50)
 		!HPPercentLT(Player1, 50)
 		!Global("XA_RohmaKidnapped", "GLOBAL", 3)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		GlobalLT("XA_CorwinPregnant", "GLOBAL", 2)
 		ActionListEmpty()
 	THEN
@@ -1213,7 +1213,7 @@ END
 			!Gender(Player1, MALE)
 			HPPercentLT(Myself, 50)
 			HPPercentLT(Player1, 50)
-			!Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+			!Global("XA_CanTalkToPlayer", "LOCALS", 1)
 			GlobalGT("XA_CorwinPregnant", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -1251,7 +1251,7 @@ END
 	END
 		
 	IF 
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_CorwinSexAfterBodhi", "GLOBAL", 1)
 		Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
 		!Range(Player1, 6)
@@ -1263,7 +1263,7 @@ END
 	END
 
 	IF 
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_CorwinSexAfterBodhi", "GLOBAL", 1)
 		Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
 		Range(Player1, 7)
@@ -1279,7 +1279,7 @@ END
 
 	//{ Corwin After Sex Interaction 1
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_CorwinSex_1", "GLOBAL", 3)
 	THEN
 		RESPONSE #100
@@ -1304,7 +1304,7 @@ END
 
 	IF
 		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		IsValidForPartyDialog("Aerie")
 	THEN
 		RESPONSE #100
@@ -1315,7 +1315,7 @@ END
 	
 	IF
 		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		IsValidForPartyDialog("Imoen2")
 	THEN
 		RESPONSE #100
@@ -1326,7 +1326,7 @@ END
 	
 	IF
 		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		IsValidForPartyDialog("Nalia")
 	THEN
 		RESPONSE #100
@@ -1337,7 +1337,7 @@ END
 	
 	IF
 		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		IsValidForPartyDialog("Neera")
 	THEN
 		RESPONSE #100
@@ -1348,7 +1348,7 @@ END
 	
 	IF
 		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		IsValidForPartyDialog("Jaheira")
 	THEN
 		RESPONSE #100
@@ -1401,7 +1401,7 @@ END
 	IF
 		GlobalTimerExpired("XA_CorwinSex_2_Timer", "GLOBAL")
 		Global("XA_CorwinSex_2", "GLOBAL", 1)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		GlobalLT("XA_CorwinSex2_Init", "GLOBAL", 1)
 		Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
 	THEN
@@ -1433,7 +1433,7 @@ END
 
 	IF 
 		Global("XA_CorwinBit", "GLOBAL", 2)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		!Range(Player1, 6)
 		ActionListEmpty()
 	THEN
@@ -1445,7 +1445,7 @@ END
 
 	IF 
 		Global("XA_CorwinBit", "GLOBAL", 2)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Range(Player1, 7)
 	THEN
 		RESPONSE #100
@@ -1456,7 +1456,7 @@ END
 
 	//{ Bite Death Warning 2
 	IF 
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_CorwinBit", "GLOBAL", 3)
 		GlobalTimerExpired("XA_CorwinBitTimer", "GLOBAL")
 	THEN
@@ -1471,7 +1471,7 @@ END
 
 	//{ Bite Death Warning 3
 	IF 
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_CorwinBit", "GLOBAL", 5)
 		GlobalTimerExpired("XA_CorwinBitTimer", "GLOBAL")
 	THEN
@@ -1486,7 +1486,7 @@ END
 
 	//{ Death from Bite
 	IF 
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_CorwinBit", "GLOBAL", 7)
 		GlobalTimerExpired("XA_CorwinBitTimer", "GLOBAL")
 	THEN
@@ -1686,7 +1686,7 @@ END
 
 	//{ Party Concerned Corwin Sick
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		GlobalGT("XA_CorwinBit", "GLOBAL", 0)
 		GlobalTimerExpired("XA_CorwinSickPartyTimer", "GLOBAL")
 		!Global("XA_CorwinPartySick", "GLOBAL", 1)
@@ -1790,6 +1790,7 @@ THEN
 		SetGlobal("XA_Banter_CorwinMazzy", "GLOBAL", 1)
 		SetGlobal("XA_Banter_CorwinBanter", "GLOBAL", 1)
 		SetGlobal("XA_Banter_CorwinSarevok", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CorwinCaelar", "GLOBAL", 1)
 		SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 		SetInterrupt(TRUE)
 		Continue()
@@ -1804,31 +1805,31 @@ THEN
 		SetGlobal("XA_CorwinMeetCC", "GLOBAL", 0)
 		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
 		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0) 
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_DAY)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", SIXTEEN_HOURS)
 		SetInterrupt(TRUE)
 		Continue()
 END
 
 IF
 	InParty(Myself)
-	GlobalTimerExpired("XA_CorwinBanter", "GLOBAL")	
+	GlobalTimerExpired("XA_BanterTimer", "LOCALS")	
 	AreaType(DUNGEON)
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself, ~DEBUG_027~)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", FORTY_MINUTES)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", FORTY_MINUTES)
 		Continue()
 	RESPONSE #100
 		//DisplayStringHead(Myself, ~DEBUG_028~)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", THIRTY_MINUTES)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", THIRTY_MINUTES)
 		Continue()
 	RESPONSE #100
 		//DisplayStringHead(Myself, ~DEBUG_029~)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", TWENTY_MINUTES)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", TWENTY_MINUTES)
 		Continue()
 	RESPONSE #100
 		//DisplayStringHead(Myself, ~DEBUG_030~)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", TEN_MINUTES)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", TEN_MINUTES)
 		Continue()
 END
 //} End Banter Initialization
@@ -1840,7 +1841,7 @@ IF
 	InParty(Myself)
 	Global("XA_BanterCountInit", "LOCALS", 1)
 	Global("XA_Banter_NextInteraction", "LOCALS", 0)
-	GlobalTimerExpired("XA_CorwinBanter", "GLOBAL")	
+	GlobalTimerExpired("XA_BanterTimer", "LOCALS")	
 	GlobalLT("XA_CorwinBit", "GLOBAL", 1)
 THEN
 	RESPONSE #100
@@ -1908,6 +1909,9 @@ THEN
 		Continue()
 	RESPONSE #100
 		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 22) /* Sarevok */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 23) /* Caelar */
 		Continue()
 END
 //}
@@ -2155,13 +2159,26 @@ THEN
 		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
 		Continue()
 END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 23) /* Caelar */
+	OR(2)
+		!IfValidForPartyDialog("XACAELAR")
+		!See("XACAELAR")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
 //} End Banter Resets
+
+
 
 //{ Neb Killed While Corwin in Party 
 IF
 	Global("XA_NebFight", "GLOBAL", 1)
 	Dead("Neb")
-	Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+	Global("XA_CanTalkToPlayer", "LOCALS", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -2189,7 +2206,7 @@ END
 	END
 
 	IF
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		IfValidForPartyDialog("Mazzy")
 		Global("XA_Banter_CorwinMazzy", "GLOBAL", 2)
 		!Range("Mazzy", 6)
@@ -2203,7 +2220,7 @@ END
 	END
 
 	IF
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		IfValidForPartyDialog("Mazzy")
 		Global("XA_Banter_CorwinMazzy", "GLOBAL", 2)
 		Range("Mazzy", 7)
@@ -2233,7 +2250,7 @@ END
 	END
 
 	IF
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		IfValidForPartyDialog("Mazzy")
 		IfValidForPartyDialog(Player1)
 		Global("XA_Banter_CorwinMazzy", "GLOBAL", 4)
@@ -2246,7 +2263,7 @@ END
 	END
 
 	IF
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		IfValidForPartyDialog("Mazzy")
 		IfValidForPartyDialog(Player1)
 		Global("XA_Banter_CorwinMazzy", "GLOBAL", 4)
@@ -2263,7 +2280,7 @@ END
 
 	//{ Trademeet Archery Competition Ended - Corwin Won 
 	IF 
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		IfValidForPartyDialog("Mazzy")
 		Global("XA_TM_ArcheryChallenge", "GLOBAL", 2)
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -2277,7 +2294,7 @@ END
 
 	//{ Trademeet Archery Competition Ended - Mazzy Won
 	IF 
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		IfValidForPartyDialog("Mazzy")
 		Global("XA_TM_ArcheryChallenge", "GLOBAL", 2)
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -2308,7 +2325,7 @@ END
 	END
 
 	IF
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		IfValidForPartyDialog("Nalia")
 		Global("XA_Banter_CorwinNalia", "GLOBAL", 2)
 	THEN
@@ -2338,7 +2355,7 @@ END
 	END
 
 	IF
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		IfValidForPartyDialog("Nalia")
 		Global("XA_Banter_CorwinNalia", "GLOBAL", 4)
 		!Range("Nalia", 6)
@@ -2349,7 +2366,7 @@ END
 	END
 
 	IF
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		IfValidForPartyDialog("Nalia")
 		Global("XA_Banter_CorwinNalia", "GLOBAL", 4)
 		Range("Nalia", 7)
@@ -2379,7 +2396,7 @@ END
 	END
 
 	IF
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		IfValidForPartyDialog("Nalia")
 		Global("XA_Banter_CorwinNalia", "GLOBAL", 6)
 		!Range("Nalia", 6)
@@ -2391,7 +2408,7 @@ END
 	END
 
 	IF
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		IfValidForPartyDialog("Nalia")
 		Global("XA_Banter_CorwinNalia", "GLOBAL", 6)
 		Range("Nalia", 7)
@@ -2426,7 +2443,7 @@ END
 	END
 
 	IF
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		IfValidForPartyDialog("HaerDalis")
 		Global("XA_Banter_CorwinHaerDalis", "GLOBAL", 2)
 		!Range("HaerDalis", 6)
@@ -2439,7 +2456,7 @@ END
 
 	IF
 		IfValidForPartyDialog("HaerDalis")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinHaerDalis", "GLOBAL", 2)
 		Range("HaerDalis", 7)
 	THEN
@@ -2468,7 +2485,7 @@ END
 
 	IF
 		IfValidForPartyDialog("HaerDalis")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinHaerDalis", "GLOBAL", 4)
 		!Range("HaerDalis", 6)
 		ActionListEmpty()
@@ -2480,7 +2497,7 @@ END
 
 	IF
 		IfValidForPartyDialog("HaerDalis")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinHaerDalis", "GLOBAL", 4)
 		Range("HaerDalis", 7)
 	THEN
@@ -2515,7 +2532,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Minsc")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinMinsc", "GLOBAL", 2)
 		!Range("Minsc", 6)
 		ActionListEmpty()
@@ -2527,7 +2544,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Minsc")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinMinsc", "GLOBAL", 2)
 		Range("Minsc", 7)
 	THEN
@@ -2558,7 +2575,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Minsc")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinMinsc", "GLOBAL", 4)
 		!Range("Minsc", 6)
 		ActionListEmpty()
@@ -2570,7 +2587,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Minsc")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinMinsc", "GLOBAL", 4)
 		Range("Minsc", 7)
 	THEN
@@ -2602,7 +2619,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Minsc")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinMinsc", "GLOBAL", 6)
 		!Range("Minsc", 6)
 		ActionListEmpty()
@@ -2614,7 +2631,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Minsc")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinMinsc", "GLOBAL", 6)
 		Range("Minsc", 7)
 	THEN
@@ -2650,7 +2667,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Rasaad")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 2)
 		!Range("Rasaad", 6)
 		ActionListEmpty()
@@ -2662,7 +2679,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Rasaad")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 2)
 		Range("Rasaad", 7)
 	THEN
@@ -2693,7 +2710,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Rasaad")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 4)
 		!Range("Rasaad", 6)
 		ActionListEmpty()
@@ -2705,7 +2722,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Rasaad")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 4)
 		Range("Rasaad", 7)
 	THEN
@@ -2732,7 +2749,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Rasaad")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 6)
 		!Range("Rasaad", 6)
 		ActionListEmpty()
@@ -2744,7 +2761,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Rasaad")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 6)
 		Range("Rasaad", 7)
 	THEN
@@ -2771,7 +2788,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Rasaad")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 8)
 		!Range("Rasaad", 6)
 		ActionListEmpty()
@@ -2783,7 +2800,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Rasaad")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 8)
 		Range("Rasaad", 7)
 	THEN
@@ -2814,7 +2831,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Yoshimo")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinYoshimo", "GLOBAL", 2)
 		!Range("Yoshimo", 6)
 		ActionListEmpty()
@@ -2826,7 +2843,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Yoshimo")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinYoshimo", "GLOBAL", 2)
 		Range("Yoshimo", 7)
 	THEN
@@ -2860,7 +2877,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Cernd")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinCernd", "GLOBAL", 2)
 		!Range("Cernd", 6)
 		ActionListEmpty()
@@ -2872,7 +2889,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Cernd")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinCernd", "GLOBAL", 2)
 		Range("Cernd", 7)
 	THEN
@@ -2906,7 +2923,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Valygar")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinValygar", "GLOBAL", 2)
 		!Range("Valygar", 6)
 		ActionListEmpty()
@@ -2918,7 +2935,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Valygar")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinValygar", "GLOBAL", 2)
 		Range("Valygar", 7)
 	THEN
@@ -2946,7 +2963,7 @@ END
 
 	IF 
 		IsValidForPartyDialog("Valygar")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		GlobalTimerExpired("XA_CorwinLavokTimer", "GLOBAL")
 		GlobalLT("XA_CorwinValygarLavok", "GLOBAL", 1)
 		GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
@@ -2965,7 +2982,7 @@ END
 	IF
 		GlobalTimerExpired("XA_CorwinValygarTimer", "GLOBAL")
 		IsValidForPartyDialog("Valygar")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 		GlobalLT("XA_CorwinValygarBG", "GLOBAL", 1)
 		ActionListEmpty()
@@ -2977,7 +2994,7 @@ END
 
 	IF
 		IsValidForPartyDialog("Valygar")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_CorwinValygarBG", "GLOBAL", 1)
 		!Range("Valygar", 6)
 		ActionListEmpty()
@@ -2989,7 +3006,7 @@ END
 
 	IF
 		IsValidForPartyDialog("Valygar")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_CorwinValygarBG", "GLOBAL", 1)
 		Range("Valygar", 7)
 		See("Valygar")
@@ -3026,7 +3043,7 @@ END
 	END
 
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_Banter_CorwinHexxat", "GLOBAL", 2)
 		IsValidForPartyDialogue("Hexxat")
 		!Range(Player1, 6)
@@ -3038,7 +3055,7 @@ END
 	END
 
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_Banter_CorwinHexxat", "GLOBAL", 2)
 		IsValidForPartyDialogue("Hexxat")
 		Range(Player1, 7)
@@ -3070,7 +3087,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Hexxat")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinHexxat", "GLOBAL", 4)
 		!Range("Hexxat", 6)
 		ActionListEmpty()
@@ -3082,7 +3099,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Hexxat")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinHexxat", "GLOBAL", 4)
 		Range("Hexxat", 7)
 	THEN
@@ -3113,7 +3130,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Hexxat")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinHexxat", "GLOBAL", 6)
 	THEN
 		RESPONSE #100
@@ -3172,7 +3189,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Jaheira")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinJaheira", "GLOBAL", 2)
 		!Range("Jaheira", 6)
 		ActionListEmpty()
@@ -3184,7 +3201,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Jaheira")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinJaheira", "GLOBAL", 2)
 		Range("Jaheira", 7)
 	THEN
@@ -3215,7 +3232,7 @@ END
 
 	IF 
 		IfValidForPartyDialog("Jaheira")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinJaheira", "GLOBAL", 4)
 		ActionListEmpty()
 	THEN
@@ -3229,7 +3246,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Jaheira")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinJaheira", "GLOBAL", 5)
 		!Range("Jaheira", 6)
 		ActionListEmpty()
@@ -3241,7 +3258,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Jaheira")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinJaheira", "GLOBAL", 5)
 		Range("Jaheira", 7)
 	THEN
@@ -3271,7 +3288,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Jaheira")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinJaheira", "GLOBAL", 7)
 		!Range("Jaheira", 6)
 		ActionListEmpty()
@@ -3283,7 +3300,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Jaheira")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinJaheira", "GLOBAL", 7)
 		Range("Jaheira", 7)
 	THEN
@@ -3318,7 +3335,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Neera")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinNeera", "GLOBAL", 2)
 		!Range("Neera", 6)
 		ActionListEmpty()
@@ -3330,7 +3347,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Neera")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinNeera", "GLOBAL", 2)
 		Range("Neera", 7)
 	THEN
@@ -3362,7 +3379,7 @@ END
 	IF
 		IsValidForPartyDialog("Neera")
 		IsValidForPartyDialog("Imoen2")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinNeera", "GLOBAL", 4)
 	THEN
 		RESPONSE #100
@@ -3415,7 +3432,7 @@ END
 
 	IF
 		IfValidForPartyDialog("dorn")  // Dorn
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		!AreaType(DUNGEON)
 		!See([ENEMY])
 		Global("OHD_corwinconflict","GLOBAL",2)
@@ -3428,7 +3445,7 @@ END
 
 	IF
 		Global("OHD_sexreactions","GLOBAL",1)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)  
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)  
 		!Global("XA_DornSex", "GLOBAL", 1)
 		OR(2)
 			Global("XA_CorwinRomanceActive","GLOBAL",1)
@@ -3463,7 +3480,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Dorn")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinDorn", "GLOBAL", 2)
 		!Range("Dorn", 6)
 		ActionListEmpty()
@@ -3475,7 +3492,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Dorn")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinDorn", "GLOBAL", 2)
 		Range("Dorn", 7)
 	THEN
@@ -3507,7 +3524,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Dorn")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinDorn", "GLOBAL", 4)
 		!Range("Dorn", 6)
 		!Global("XA_DornPatronsDead", "GLOBAL", 1)
@@ -3520,7 +3537,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Dorn")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinDorn", "GLOBAL", 4)
 		!Global("XA_DornPatronsDead", "GLOBAL", 1)
 		Range("Dorn", 7)
@@ -3541,7 +3558,7 @@ END
 	//{ Corwin Mad at Keldorn - Underdark
 	IF
 		IsValidForPartyDialog("Keldorn")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		GlobalTimerExpired("XA_CorwinScoldKeldornTimer", "GLOBAL")
 		Global("XA_InUnderdark", "GLOBAL", 1)
 		See("Keldorn")
@@ -3573,7 +3590,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Keldorn")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinKeldornOpt1", "GLOBAL", 2)
 		!Range("Keldorn", 6)
 		ActionListEmpty()
@@ -3585,7 +3602,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Keldorn")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinKeldornOpt1", "GLOBAL", 2)
 		Range("Keldorn", 7)
 	THEN
@@ -3615,7 +3632,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Keldorn")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinKeldorn", "GLOBAL", 2)
 		!Range("Keldorn", 6)
 		ActionListEmpty()
@@ -3627,7 +3644,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Keldorn")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinKeldorn", "GLOBAL", 2)
 		Range("Keldorn", 7)
 	THEN
@@ -3657,7 +3674,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Keldorn")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinKeldorn", "GLOBAL", 4)
 		!Range("Keldorn", 6)
 		ActionListEmpty()
@@ -3669,7 +3686,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Keldorn")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinKeldorn", "GLOBAL", 4)
 		Range("Keldorn", 7)
 	THEN
@@ -3704,7 +3721,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Korgan")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinKorgan", "GLOBAL", 2)
 		!Range("Korgan", 6)
 		ActionListEmpty()
@@ -3716,7 +3733,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Korgan")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinKorgan", "GLOBAL", 2)
 		Range("Korgan", 7)
 	THEN
@@ -3747,7 +3764,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Korgan")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinKorgan", "GLOBAL", 4)
 		!Range("Korgan", 6)
 		ActionListEmpty()
@@ -3759,7 +3776,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Korgan")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinKorgan", "GLOBAL", 4)
 		Range("Korgan", 7)
 	THEN
@@ -3794,7 +3811,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Jan")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinJan", "GLOBAL", 2)
 		!Range("Jan", 6)
 		ActionListEmpty()
@@ -3806,7 +3823,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Jan")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinJan", "GLOBAL", 2)
 		Range("Jan", 7)
 	THEN
@@ -3837,7 +3854,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Jan")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinJan", "GLOBAL", 4)
 		!Range("Jan", 6)
 		ActionListEmpty()
@@ -3849,7 +3866,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Jan")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinJan", "GLOBAL", 4)
 		Range("Jan", 7)
 	THEN
@@ -3882,7 +3899,7 @@ END
 
 	IF 
 		IfValidForPartyDialog("Edwin")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Gender("Edwin",FEMALE)
 		Global("XA_EdwinWasMale", "GLOBAL", 1)
 		GlobalLT("XA_CorwinEdwinFemale", "GLOBAL", 1)
@@ -3916,7 +3933,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Edwin")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinEdwin", "GLOBAL", 2)
 		!Range("Edwin", 6)
 		ActionListEmpty()
@@ -3928,7 +3945,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Edwin")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinEdwin", "GLOBAL", 2)
 		Range("Edwin", 7)
 	THEN
@@ -3960,7 +3977,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Edwin")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinEdwin", "GLOBAL", 4)
 		!Range("Edwin", 6)
 		ActionListEmpty()
@@ -3972,7 +3989,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Edwin")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinEdwin", "GLOBAL", 4)
 		Range("Edwin", 7)
 	THEN
@@ -4004,7 +4021,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Edwin")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinEdwin", "GLOBAL", 6)
 		!Range("Edwin", 6)
 		ActionListEmpty()
@@ -4016,7 +4033,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Edwin")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinEdwin", "GLOBAL", 6)
 		Range("Edwin", 7)
 	THEN
@@ -4068,7 +4085,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Aerie")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 2)
 		!Range("Aerie", 6)
 		ActionListEmpty()
@@ -4080,7 +4097,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Aerie")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
@@ -4110,7 +4127,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Aerie")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 4)
 		ActionListEmpty()
 	THEN
@@ -4124,7 +4141,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Aerie")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 5)
 		!Range("Aerie", 6)
 		ActionListEmpty()
@@ -4136,7 +4153,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Aerie")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 5)
 	THEN
 		RESPONSE #100
@@ -4166,7 +4183,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Aerie")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 7)
 		!Range("Aerie", 6)
 		ActionListEmpty()
@@ -4178,7 +4195,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Aerie")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 7)
 	THEN
 		RESPONSE #100
@@ -4195,7 +4212,7 @@ END
 	IF
 		Global("XA_Banter_NextInteraction", "LOCALS", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 8)
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
@@ -4208,7 +4225,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Aerie")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 9)
 		!Range("Aerie", 6)
 		ActionListEmpty()
@@ -4220,7 +4237,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Aerie")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 9)
 	THEN
 		RESPONSE #100
@@ -4255,7 +4272,7 @@ END
 	IF
 		IfValidForPartyDialog("Anomen")
 		IfValidForPartyDialog(Player1)
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinAnomen", "GLOBAL", 2)
 		!Range("Anomen", 6)
 		ActionListEmpty()
@@ -4268,7 +4285,7 @@ END
 	IF
 		IfValidForPartyDialog("Anomen")
 		IfValidForPartyDialog(Player1)
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinAnomen", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
@@ -4299,7 +4316,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Anomen")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinAnomen", "GLOBAL", 4)
 		!Range("Anomen", 6)
 		ActionListEmpty()
@@ -4311,7 +4328,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Anomen")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinAnomen", "GLOBAL", 4)
 	THEN
 		RESPONSE #100
@@ -4344,7 +4361,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Viconia")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinViconia", "GLOBAL", 2)
 		!Range("Viconia", 6)
 		ActionListEmpty()
@@ -4356,7 +4373,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Viconia")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinViconia", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
@@ -4389,7 +4406,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Viconia")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinViconia", "GLOBAL", 4)
 	THEN
 		RESPONSE #100
@@ -4404,7 +4421,7 @@ END
 		Global("XA_Banter_NextInteraction", "LOCALS", 13)
 		Global("XA_Banter_CorwinViconia", "GLOBAL", 5)
 		AreaType(CITY)
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -4416,7 +4433,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Viconia")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinViconia", "GLOBAL", 6)
 	THEN
 		RESPONSE #100
@@ -4431,7 +4448,7 @@ END
 
 	//{ Imoen Soul Returned
 	IF 
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		IsValidForPartyDialogue("Imoen2")
 		GlobalTimerExpired("XA_CorwinImoenSoulTimer", "GLOBAL")
 		See("Imoen2")
@@ -4463,7 +4480,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Imoen2")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinImoen", "GLOBAL", 2)
 		!Range("Imoen2", 6)
 		ActionListEmpty()
@@ -4475,7 +4492,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Imoen2")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinImoen", "GLOBAL", 2)
 		Range("Imoen2", 7)
 	THEN
@@ -4506,7 +4523,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Imoen2")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinImoen", "GLOBAL", 4)
 		!Range("Imoen2", 6)
 		ActionListEmpty()
@@ -4518,7 +4535,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Imoen2")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinImoen", "GLOBAL", 4)
 		Range("Imoen2", 7)
 	THEN
@@ -4550,7 +4567,7 @@ END
 	
 	IF
 		IfValidForPartyDialog("Sarevok")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_SarevokSoul", "GLOBAL", 1)
 		!Range("Sarevok", 6)
 		ActionListEmpty()
@@ -4562,7 +4579,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Sarevok")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_SarevokSoul", "GLOBAL", 1)
 		Range("Sarevok", 7)
 		See("Sarevok")
@@ -4589,7 +4606,7 @@ END
 	
 	IF
 		IfValidForPartyDialog("Sarevok")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinSarevok", "GLOBAL", 2)
 		!Range("Sarevok", 6)
 		ActionListEmpty()
@@ -4601,7 +4618,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Sarevok")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinSarevok", "GLOBAL", 2)
 		Range("Sarevok", 7)
 	THEN
@@ -4627,7 +4644,7 @@ END
 	
 	IF
 		IfValidForPartyDialog("Sarevok")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinSarevok", "GLOBAL", 4)
 		!Range("Sarevok", 6)
 		ActionListEmpty()
@@ -4639,7 +4656,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Sarevok")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinSarevok", "GLOBAL", 4)
 		Range("Sarevok", 7)
 	THEN
@@ -4662,7 +4679,7 @@ END
 	
 	IF
 		IfValidForPartyDialog("Sarevok")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinSarevok", "GLOBAL", 6)
 		!Range("Sarevok", 6)
 		ActionListEmpty()
@@ -4674,7 +4691,7 @@ END
 
 	IF
 		IfValidForPartyDialog("Sarevok")
-		Global("XA_CorwinCanTalk", "GLOBAL", 1)
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinSarevok", "GLOBAL", 6)
 		Range("Sarevok", 7)
 	THEN
@@ -4685,6 +4702,48 @@ END
 	//}
 	
 //} End Sarevok Interactions
+
+//{ Caelar Interactions
+
+	//{ Caelar First interaction
+	IF
+		InParty(Myself)
+		Global("XA_Banter_NextInteraction", "LOCALS", 23)
+		Global("XA_Banter_CorwinCaelar", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_Banter_CorwinCaelar", "GLOBAL", 2)
+			Continue()
+	END
+	
+	IF
+		IfValidForPartyDialog("XACAELAR")
+		Global("XA_CanTalk", "LOCALS", 1)
+		Global("XA_Banter_CorwinCaelar", "GLOBAL", 2)
+		!Range("XACAELAR", 6)
+		ActionListEmpty()
+	THEN
+		RESPONSE #100
+			MoveToObject("XACAELAR")
+			Continue()
+	END
+
+	IF
+		IfValidForPartyDialog("XACAELAR")
+		Global("XA_CanTalk", "LOCALS", 1)
+		Global("XA_Banter_CorwinCaelar", "GLOBAL", 2)
+		Range("XACAELAR", 7)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			ActionOverride("XACAELAR", FaceObject("XACORWIN"))
+			//Dialog B-86
+			SmallWait(5)
+			ActionOverride("XACAELAR", Interact("XACORWIN"))
+			SetInterrupt(TRUE)
+	END
+	//}
+//}
 
 //{ Corwin / Player Interactions
 
@@ -4730,7 +4789,7 @@ END
 	END
 
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_Banter_CorwinPlayer", "GLOBAL", 2)
 		!Range(Player1, 6)
 		ActionListEmpty()
@@ -4741,7 +4800,7 @@ END
 	END
 
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_Banter_CorwinPlayer", "GLOBAL", 2)
 		Range(Player1, 7)
 	THEN
@@ -4772,7 +4831,7 @@ END
 	END
 
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_Banter_CorwinPlayer", "GLOBAL", 4)
 		!Range(Player1, 6)
 		ActionListEmpty()
@@ -4783,7 +4842,7 @@ END
 	END
 
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_Banter_CorwinPlayer", "GLOBAL", 4)
 		Range(Player1, 7)
 	THEN
@@ -4814,7 +4873,7 @@ END
 	END
 
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
 		!Range(Player1, 6)
 		ActionListEmpty()
@@ -4825,7 +4884,7 @@ END
 	END
 
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
 		Range(Player1, 7)
 	THEN
@@ -4854,7 +4913,7 @@ END
 	
 	IF 
 		Global("XA_CorwinComplainSarevok", "GLOBAL", 2)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		!Range(Player1, 6)
 		ActionListEmpty()
 	THEN
@@ -4865,7 +4924,7 @@ END
 	
 	IF 
 		Global("XA_CorwinComplainSarevok", "GLOBAL", 2)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Range(Player1, 7)
 	THEN
 		RESPONSE #100
@@ -4878,7 +4937,7 @@ END
 	IF 
 		GlobalTimerExpired("XA_YagaTimer", "GLOBAL")
 		GlobalLT("XA_SaradushDestroyed", "GLOBAL", 1)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -4895,7 +4954,7 @@ END
 	//{ Aerie Baby Parent Advice
 	IF 
 		GlobalTimerExpired("XA_CorwinAerieBabyTimer", "GLOBAL")
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		IsValidForPartyDialogue("Aerie")
 		GlobalLT("XA_CorwinParentAdvice", "GLOBAL", 1)
 		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 3)
@@ -4932,7 +4991,7 @@ END
 	IF 
 		!AreaCheck("AR5203") // Yaga-Shura Camp
 		Global("XA_CorwinPregnant", "GLOBAL", 1)
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		OR(2)
 			Global("XA_PregnantOverride", "GLOBAL", 1)
 			GlobalTimerExpired("XA_CorwinPregnantTimer", "GLOBAL")
@@ -4952,7 +5011,7 @@ END
 	IF
 		Global("XA_CorwinPregnant", "GLOBAL", 3)
 		GlobalTimerExpired("XA_CorwinPregnantTimer", "GLOBAL")
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -4987,7 +5046,7 @@ END
 	
 	//{ Third Interaction
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_CorwinPregnant", "GLOBAL", 5)
 		GlobalTimerExpired("XA_CorwinPregnantTimer", "GLOBAL")
@@ -5013,7 +5072,7 @@ END
 	
 	//{ Fourth Interaction
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_CorwinPregnant", "GLOBAL", 7)
 		GlobalTimerExpired("XA_CorwinPregnantTimer", "GLOBAL")
@@ -5047,7 +5106,7 @@ END
 	END
 	
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_CorwinPregnant", "GLOBAL", 10)
 		AreaCheck("AR4500")
@@ -5178,7 +5237,7 @@ END
 	END
 	
 	IF
-		Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		GlobalTimerExpired("XA_RomanceConflictTimer", "GLOBAL")
 		GlobalLT("XA_RomanceConflictTalk", "GLOBAL", 1)
 	THEN
@@ -5299,7 +5358,7 @@ IF
 	InParty(Myself)
 	!Global("XA_Banter_NextInteraction", "LOCALS", 0)
 	ActionListEmpty()
-	GlobalTimerExpired("XA_CorwinBanter", "GLOBAL") // not strictly necessary, but it is here to support debugging
+	GlobalTimerExpired("XA_BanterTimer", "LOCALS") // not strictly necessary, but it is here to support debugging
 THEN
 	RESPONSE #100
 		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)

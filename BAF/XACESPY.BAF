@@ -33,6 +33,7 @@ THEN
 		GiveItemCreate("XACHANCA",Player1,0,0,0)
 		GiveItemCreate("XASHLDCA",Player1,0,0,0)
 		GiveItemCreate("XASW1HCA",Player1,0,0,0)
+		GiveItemCreate("XAFINCA1",Player1,0,0,0)
 		StartDialogueNoSet(Player1)
 		SetInterrupt(TRUE)
 END

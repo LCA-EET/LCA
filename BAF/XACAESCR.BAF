@@ -1,3 +1,730 @@
+//{	Rejoin processing 
+IF 
+	!InParty(Myself)
+	Global("XA_CaelarRejoinProcessed", "GLOBAL", 1)
+THEN 
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_CaelarJoined","LOCALS",1)
+		SetGlobal("XA_AskedToRejoin", "LOCALS", 0)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
+		SetGlobal("XA_ResetJoinChecks", "GLOBAL", 1)
+		SetGlobal("XA_CaelarRepWarning", "GLOBAL", 0)
+		SetGlobal("XA_CaelarRejoinProcessed", "GLOBAL", 2)
+		SetInterrupt(TRUE)
+		JoinParty()
+END
+//}
+
+//{ Can Talk Check
+IF 
+	Global("XA_CanTalk", "LOCALS", 1)
+	ActionListEmpty()
+	OR(2)
+		!IsValidForPartyDialogue(Myself)
+		!CombatCounter(0)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CanTalk", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	!Global("XA_CanTalk", "LOCALS", 1)
+	ActionListEmpty()
+	IsValidForPartyDialogue(Myself)
+	CombatCounter(0)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CanTalk", "LOCALS", 1)
+		Continue()
+END
+//}
+
+//{ Can Talk to Player Check
+IF 
+	Global("XA_CanTalkToPlayer", "LOCALS", 1)
+	ActionListEmpty()
+	OR(3)
+		!Global("XA_CanTalk", "LOCALS", 1)
+		!IsValidForPartyDialogue(Player1)
+		!See(Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CanTalkToPlayer", "LOCALS", 0)
+		Continue()
+END
+
+
+IF
+	!Global("XA_CanTalkToPlayer", "LOCALS", 1)
+	Global("XA_CanTalk", "LOCALS", 1)
+	ActionListEmpty()
+	IsValidForPartyDialogue(Player1)
+	See(Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CanTalkToPlayer", "LOCALS", 1)
+		Continue()
+END
+//}
+
+//{ Banter Initialization
+/* Initialize Banters */
+
+IF
+	InParty(Myself)
+	!Global("XA_BanterCountInit", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself, ~DEBUG_025~)
+		SetInterrupt(FALSE)
+		SetGlobal("XA_BanterCountInit", "LOCALS", 1)
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0) 
+		SetGlobal("XA_Banter_CaelarAerie", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarAnomen", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarCernd", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarDorn", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarEdwin", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarHexxat", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarImoen", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarJaheira", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarJan", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarKeldorn", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarKorgan", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarNeera", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarPlayer", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarRasaad", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarValygar", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarViconia", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarYoshimo", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarMinsc", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarHaerDalis", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarNalia", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarMazzy", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarBanter", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarSarevok", "GLOBAL", 1)
+		SetGlobal("XA_Banter_CaelarCaelar", "GLOBAL", 1)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	InParty(Myself)
+	Global("XA_ResetBanterTimer", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0) 
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", SIXTEEN_HOURS)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	GlobalTimerExpired("XA_BanterTimer", "LOCALS")	
+	AreaType(DUNGEON)
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself, ~DEBUG_027~)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", FORTY_MINUTES)
+		Continue()
+	RESPONSE #100
+		//DisplayStringHead(Myself, ~DEBUG_028~)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", THIRTY_MINUTES)
+		Continue()
+	RESPONSE #100
+		//DisplayStringHead(Myself, ~DEBUG_029~)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", TWENTY_MINUTES)
+		Continue()
+	RESPONSE #100
+		//DisplayStringHead(Myself, ~DEBUG_030~)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", TEN_MINUTES)
+		Continue()
+END
+//} End Banter Initialization
+
+//{ Banter Randomizer
+
+/* Randomizes the next banter interaction */
+IF
+	InParty(Myself)
+	Global("XA_BanterCountInit", "LOCALS", 1)
+	Global("XA_Banter_NextInteraction", "LOCALS", 0)
+	GlobalTimerExpired("XA_BanterTimer", "LOCALS")	
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 1) /* Aerie */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 2) /* Anomen */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 3) /* Dorn */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 4) /* Edwin */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 5) /* Imoen */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 6) /* Hexxat */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 7) /* Jaheira */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 8) /* Jan */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 9) /* Keldorn */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 10) /* Korgan */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 11) /* Neera */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 12) /* Player */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 13) /* Viconia */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 14) /* Valygar */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 15) /* Cernd */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 16) /* Yoshimo */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 17) /* Rasaad */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 18) /* Minsc */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 19) /* Haer Dalis */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 20) /* Nalia */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 21) /* Mazzy */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 22) /* Sarevok */
+		Continue()
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 23) /* Corwin */
+		Continue()
+END
+//}
+
+//{ Banter Reset to 0 is Subject is Unavailable
+/* If the next subject of interaction is not valid, set the next subject to 0, which will re-run the randomizer the next time the script executes */
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 1) /* Aerie */
+	OR(2)
+		!IfValidForPartyDialog("Aerie")
+		!See("Aerie")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 2) /* Anomen */
+	OR(2)
+		!IfValidForPartyDialog("Anomen")
+		!See("Anomen")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 3) /* Dorn */
+	OR(2)
+		!IfValidForPartyDialog("Dorn")
+		!See("Dorn")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 4) /* Edwin */
+	OR(2)
+		!IfValidForPartyDialog("Edwin")
+		!See("Edwin")
+THEN
+	RESPONSE #100	
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 5) /* Imoen2 */
+	OR(2)
+		!IfValidForPartyDialog("Imoen2")
+		!See("Imoen2")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 6) /* Hexxat */
+	OR(2)
+		!IfValidForPartyDialog("Hexxat")
+		!See("Hexxat")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 7) /* Jaheira */
+	OR(2)
+		!IfValidForPartyDialog("Jaheira")
+		!See("Jaheira")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 8) /* Jan */
+	OR(2)
+		!IfValidForPartyDialog("Jan")
+		!See("Jan")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 9) /* Keldorn */
+	OR(2)
+		!IfValidForPartyDialog("Keldorn")
+		!See("Keldorn")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 10) /* Korgan */
+	OR(2)
+		!IfValidForPartyDialog("Korgan")
+		!See("Korgan")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 11) /* Neera */
+	OR(2)
+		!IfValidForPartyDialog("Neera")
+		!See("Neera")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 12) /* Player */
+	OR(2)
+		!IfValidForPartyDialog(Player1)
+		!See(Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 13) /* Viconia */
+	OR(2)
+		!IfValidForPartyDialog("Viconia")
+		!See("Viconia")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 14) /* Valygar */
+	OR(2)
+		!IfValidForPartyDialog("Valygar")
+		!See("Valygar")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 15) /* Cernd */
+	OR(2)
+		!IfValidForPartyDialog("Cernd")
+		!See("Cernd")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 16) /* Yoshimo */
+	OR(2)
+		!IfValidForPartyDialog("Yoshimo")
+		!See("Yoshimo")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 17) /* Rasaad */
+	OR(2)
+		!IfValidForPartyDialog("Rasaad")
+		!See("Rasaad")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 18) /* Minsc */
+	OR(2)
+		!IfValidForPartyDialog("Minsc")
+		!See("Minsc")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 19) /* Haer Dalis */
+	OR(2)
+		!IfValidForPartyDialog("Haerdalis")
+		!See("Haerdalis")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 20) /* Nalia */
+	OR(2)
+		!IfValidForPartyDialog("Nalia")
+		!See("Nalia")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 21) /* Mazzy */
+	OR(2)
+		!IfValidForPartyDialog("Mazzy")
+		!See("Mazzy")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 22) /* Sarevok */
+	OR(2)
+		!IfValidForPartyDialog("Sarevok")
+		!See("Sarevok")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+
+IF
+	Global("XA_Banter_NextInteraction", "LOCALS", 24) /* Corwin */
+	OR(2)
+		!IfValidForPartyDialog("XACORWIN")
+		!See("XACORWIN")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		Continue()
+END
+//} End Banter Resets
+
+//{ Banters
+	//{ Sarevok
+		
+		//{ Sarevok First Interaction
+		IF
+			InParty(Myself)
+			Global("XA_Banter_NextInteraction", "LOCALS", 22)
+			Global("XA_Banter_CaelarSarevok", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_Banter_CaelarSarevok", "GLOBAL", 2)
+				Continue()
+		END
+		
+		IF
+			IfValidForPartyDialog("Sarevok")
+			Global("XA_CanTalk", "LOCALS", 1)
+			Global("XA_Banter_CaelarSarevok", "GLOBAL", 2)
+			!Range("Sarevok", 6)
+			ActionListEmpty()
+		THEN
+			RESPONSE #100
+				ActionOverride("Sarevok", MoveToObject("XACAELAR"))
+				Continue()
+		END
+
+		IF
+			IfValidForPartyDialog("Sarevok")
+			Global("XA_CanTalk", "LOCALS", 1)
+			Global("XA_Banter_CaelarSarevok", "GLOBAL", 2)
+			Range("Sarevok", 7)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				ActionOverride("Sarevok", StartDialog("SAREV25J", "XACAELAR"))
+				//Dialog B-91
+				SetInterrupt(TRUE)
+		END
+		//}
+
+	//}
+	
+	//{ Keldorn
+	
+		//{ Keldorn First interaction
+		IF
+			InParty(Myself)
+			Global("XA_Banter_NextInteraction", "LOCALS", 9)
+			Global("XA_Banter_CaelarKeldorn", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_Banter_CaelarKeldorn", "GLOBAL", 2)
+				Continue()
+		END
+		
+		IF
+			IfValidForPartyDialog("Keldorn")
+			Global("XA_CanTalk", "LOCALS", 1)
+			Global("XA_Banter_CaelarKeldorn", "GLOBAL", 2)
+			!Range("Keldorn", 6)
+			ActionListEmpty()
+		THEN
+			RESPONSE #100
+				ActionOverride("Keldorn", MoveToObject("XACAELAR"))
+				Continue()
+		END
+
+		IF
+			IfValidForPartyDialog("Keldorn")
+			Global("XA_CanTalk", "LOCALS", 1)
+			Global("XA_Banter_CaelarKeldorn", "GLOBAL", 2)
+			Range("Keldorn", 7)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				ActionOverride("Keldorn", StartDialog("KELDORJ", "XACAELAR"))
+				//Dialog B-92
+				SetInterrupt(TRUE)
+		END
+		//}
+	
+	//}
+
+	//{ Rasaad
+		//{ Rasaad First interaction
+		IF
+			InParty(Myself)
+			Global("XA_Banter_NextInteraction", "LOCALS", 17)
+			Global("XA_Banter_CaelarRasaad", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_Banter_CaelarRasaad", "GLOBAL", 2)
+				Continue()
+		END
+		
+		IF
+			IfValidForPartyDialog("Rasaad")
+			Global("XA_CanTalk", "LOCALS", 1)
+			Global("XA_Banter_CaelarRasaad", "GLOBAL", 2)
+			!Range("Rasaad", 6)
+			ActionListEmpty()
+		THEN
+			RESPONSE #100
+				ActionOverride("Rasaad", MoveToObject("XACAELAR"))
+				Continue()
+		END
+
+		IF
+			IfValidForPartyDialog("Rasaad")
+			Global("XA_CanTalk", "LOCALS", 1)
+			Global("XA_Banter_CaelarRasaad", "GLOBAL", 2)
+			Range("Rasaad", 7)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				ActionOverride("Rasaad", StartDialog("RASAADJ", "XACAELAR"))
+				//Dialog B-93
+				SetInterrupt(TRUE)
+		END
+		//}
+	
+	//}
+	
+	//{ Jaheira
+		//{ Jaheira First interaction
+		IF
+			InParty(Myself)
+			Global("XA_Banter_NextInteraction", "LOCALS", 7)
+			Global("XA_Banter_CaelarJaheira", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_Banter_CaelarJaheira", "GLOBAL", 2)
+				Continue()
+		END
+		
+		IF
+			IfValidForPartyDialog("Jaheira")
+			Global("XA_CanTalk", "LOCALS", 1)
+			Global("XA_Banter_CaelarJaheira", "GLOBAL", 2)
+			!Range("Jaheira", 6)
+			ActionListEmpty()
+		THEN
+			RESPONSE #100
+				MoveToObject("Jaheira")
+				Continue()
+		END
+
+		IF
+			IfValidForPartyDialog("Jaheira")
+			Global("XA_CanTalk", "LOCALS", 1)
+			Global("XA_Banter_CaelarJaheira", "GLOBAL", 2)
+			Range("Jaheira", 7)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				Interact("Jaheira")
+				//Dialog B-94
+				SetInterrupt(TRUE)
+		END
+		//}
+	//}
+	
+	//{ Mazzy
+		//{ Mazzy First interaction
+		IF
+			InParty(Myself)
+			Global("XA_Banter_NextInteraction", "LOCALS", 21)
+			Global("XA_Banter_CaelarMazzy", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_Banter_CaelarMazzy", "GLOBAL", 2)
+				Continue()
+		END
+		
+		IF
+			IfValidForPartyDialog("Mazzy")
+			Global("XA_CanTalk", "LOCALS", 1)
+			Global("XA_Banter_CaelarMazzy", "GLOBAL", 2)
+			!Range("Mazzy", 6)
+			ActionListEmpty()
+		THEN
+			RESPONSE #100
+				ActionOverride("Mazzy", MoveToObject("XACAELAR"))
+				Continue()
+		END
+
+		IF
+			IfValidForPartyDialog("Mazzy")
+			Global("XA_CanTalk", "LOCALS", 1)
+			Global("XA_Banter_CaelarMazzy", "GLOBAL", 2)
+			Range("Mazzy", 7)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				ActionOverride("Mazzy", StartDialog("MAZZYJ", "XACAELAR"))
+				//Dialog B-95
+				SetInterrupt(TRUE)
+		END
+		//}
+	//}
+	
+	//{ Dorn
+		//{ Dorn First interaction
+		IF
+			InParty(Myself)
+			Global("XA_Banter_NextInteraction", "LOCALS", 3)
+			Global("XA_Banter_CaelarDorn", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_Banter_CaelarDorn", "GLOBAL", 2)
+				Continue()
+		END
+		
+		IF
+			IfValidForPartyDialog("Dorn")
+			Global("XA_CanTalk", "LOCALS", 1)
+			Global("XA_Banter_CaelarDorn", "GLOBAL", 2)
+			!Range("Dorn", 6)
+			ActionListEmpty()
+		THEN
+			RESPONSE #100
+				ActionOverride("Dorn", MoveToObject("XACAELAR"))
+				Continue()
+		END
+
+		IF
+			IfValidForPartyDialog("Dorn")
+			Global("XA_CanTalk", "LOCALS", 1)
+			Global("XA_Banter_CaelarDorn", "GLOBAL", 2)
+			Range("Dorn", 7)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				ActionOverride("Dorn", StartDialog("DORNJ", "XACAELAR"))
+				//Dialog B-96
+				SetInterrupt(TRUE)
+		END
+		//}
+	//}
+
+//}
 
 //{ Exp Boosts on Join
 

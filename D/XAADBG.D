@@ -2552,147 +2552,147 @@ IF ~~ THEN BEGIN XA_Menu_IncrementBanter
 	IF ~~ THEN REPLY @53 /* ~Increment Corwin Banter - Anomen~ */
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinPlayer", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @54 /* ~Increment Corwin Banter - Aerie~*/
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinAerie", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @55 /* ~Increment Corwin Banter - Anomen~*/
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinAnomen", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @56 /* ~Increment Corwin Banter - Cernd~*/
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinCernd", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @57 /*~Increment Corwin Banter - Dorn~ */
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinDorn", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @58 /* ~Increment Corwin Banter - Edwin~*/
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinEdwin", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @59 /* ~Increment Corwin Banter - HaerDalis~*/
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinHaerDalis", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @60 /* ~Increment Corwin Banter - Hexxat~*/
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinHexxat", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @61 /* ~Increment Corwin Banter - Imoen~*/
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinImoen", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @62 /* ~Increment Corwin Banter - Jaheira~*/
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinJaheira", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @63 /* ~Increment Corwin Banter - Jan~*/
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinJan", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @64 /* ~Increment Corwin Banter - Keldorn~*/
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinKeldorn", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @65 /* ~Increment Corwin Banter - Korgan~*/
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinKorgan", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @66 /* ~Increment Corwin Banter - Mazzy~*/
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinMazzy", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @67 /* ~Increment Corwin Banter - Minsc~*/
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinMinsc", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @68 /* ~Increment Corwin Banter - Nalia~*/
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinNalia", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @69 /* ~Increment Corwin Banter - Neera~*/
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinNeera", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @70 /* ~Increment Corwin Banter - Rasaad~*/
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinRasaad", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @71 /* ~Increment Corwin Banter - Valygar~*/
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinValygar", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @72 /* ~Increment Corwin Banter - Viconia~*/
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinViconia", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @73 /* ~Increment Corwin Banter - Yoshimo~*/
 	DO ~
 		IncrementGlobal("XA_Banter_CorwinYoshimo", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinBanter", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_ROUND)
 	~
 	GOTO XA_MainMenu
 	

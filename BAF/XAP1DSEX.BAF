@@ -1,5 +1,5 @@
 IF
-	Global("XA_CorwinCanTalkToPlayer", "GLOBAL", 1)
+	Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
 	RandomNum(2,1)
 	GlobalTimerExpired("XA_CorwinSexTimer", "GLOBAL")
