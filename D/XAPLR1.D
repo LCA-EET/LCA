@@ -9,6 +9,19 @@
 APPEND ~PLAYER1~
 	
 	IF ~
+		Global("XA_KanaDreamTimerSet", "GLOBAL",1)
+	~ THEN BEGIN XA_KanaDream
+		SAY @145 /*~(It's been a long journey... sleep will come soon to you, you think to yourself. Just before you drift away, you hear a familiar voice call your name. Though you can't quite place it, you know that it's a voice you've heard before. Thinking it may have been one of your comrades, you get up to look around and find them fast asleep. Odd. You tell yourself that it must have been your imagination, as you lay back down to rest.)~*/
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_KanaDreamTimerSet", "GLOBAL",2)
+			RestParty()
+		~
+		EXIT
+	END
+	
+	IF ~
 		Global("XA_AVBossFled", "GLOBAL", 2)
 	~ THEN BEGIN XA_DemonFled
 		SAY @105 /*~(The demon has fled to another part of Avernus. You feel that the barrier surrounding the tower has weakened; you resolve to free Caelar and get out of here before the demon can return with reinforcements.)~*/

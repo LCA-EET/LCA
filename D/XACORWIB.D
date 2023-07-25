@@ -2665,6 +2665,7 @@ END
 			@39 /* ~Aerie, what's wrong? You seem worried... more than usual, anyway.~ [XACORB13] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinAerie", "GLOBAL", 3)
+				SetGlobal("XA_CorwinAerieScars", "GLOBAL", 1)
 				ClearActions(Myself)
 				ClearActions("Aerie")
 			~  

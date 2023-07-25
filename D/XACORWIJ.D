@@ -5967,17 +5967,38 @@ IF ~~ THEN BEGIN XA_CorwinCantHaveSex1
 	SAY @370 /* ~This bite... I'm not feeling well *cough* at all.~ */
 	IF ~~ THEN REPLY @371 /* ~I understand, love.~ */
 	EXIT
+	
+	IF ~~ THEN REPLY @372 /*~Let's just try and get some rest instead.~*/
+	DO ~
+		SetGlobal("XA_OnlySleep", "GLOBAL", 1)
+		RestParty()
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN XA_CorwinCantHaveSex2
 	SAY @369 /* ~I really need to have these wounds looked at first.~ */
 	IF ~~ THEN REPLY @371 /* ~I understand, love.~ */
 	EXIT
+	
+	IF ~~ THEN REPLY @372/*~Let's just try and get some rest instead.~*/
+	DO ~
+		SetGlobal("XA_OnlySleep", "GLOBAL", 1)
+		RestParty()
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN XA_CorwinCantHaveSex3
 	SAY @368 /* ~You really need to have those wounds looked at first.~ */
 	IF ~~ THEN REPLY @371 /* ~I understand, love.~ */
+	EXIT
+	
+	IF ~~ THEN REPLY @372/*~Let's just try and get some rest instead.~*/
+	DO ~
+		SetGlobal("XA_OnlySleep", "GLOBAL", 1)
+		RestParty()
+	~
 	EXIT
 END
 

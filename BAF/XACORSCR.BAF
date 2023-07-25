@@ -502,10 +502,22 @@ END
 //}
 
 //{ Reputation Handling
+IF 
+	Global("XA_CanTalkToPlayer", "LOCALS", 1)
+	ReputationLT(Player1,7)
+	Global("XA_CanLeaveParty", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_CorwinLeftPoorRep", "GLOBAL", 1)
+		StartDialog("XACORWIJ", Player1)
+		SetInterrupt(TRUE)
+END
+
 IF
 	InParty(Myself)
 	ReputationLT(Player1,8)
-	!Global("XA_CorwinRepWarning", "GLOBAL", 1)
+	GlobalLT("XA_CorwinRepWarning", "GLOBAL", 1)
 THEN 
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -516,6 +528,7 @@ THEN
 END
 
 IF 
+	Global("XA_CorwinRepWarning", "GLOBAL", 1)
 	Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	ReputationLT(Player1,8)
 	GlobalTimerExpired("XA_CorwinRepWarningTimer", "GLOBAL")
@@ -528,15 +541,12 @@ THEN
 END
 
 IF 
-	Global("XA_CanTalkToPlayer", "LOCALS", 1)
-	ReputationLT(Player1,7)
-	Global("XA_CanLeaveParty", "GLOBAL", 1)
+	GlobalGT("XA_CorwinRepWarning", "GLOBAL", 0)
+	ReputationGT(Player1,7)
 THEN
 	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_CorwinLeftPoorRep", "GLOBAL", 1)
-		StartDialog("XACORWIJ", Player1)
-		SetInterrupt(TRUE)
+		SetGlobal("XA_CorwinRepWarning", "GLOBAL", 0)
+		Continue()
 END
 //}
 
@@ -1186,7 +1196,6 @@ END
 //}
 
 //{ Corwin Sex Scripting
-
 	//{ Checks is Corwin is Able
 	IF
 		!Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
@@ -1200,7 +1209,10 @@ END
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_OnlySleep", "GLOBAL", 0)
 			SetGlobal("XA_CorwinCanHaveSex", "GLOBAL", 1)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 	

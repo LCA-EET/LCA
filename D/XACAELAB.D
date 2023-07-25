@@ -151,3 +151,109 @@ CHAIN IF ~
 	@54 /*~Begone! Try and tempt me again, slave, and you and I will have more than words!~*/
 EXIT
 //}
+
+//{ Dialog B-97
+CHAIN IF ~
+	Global("XA_CaelarAerieScars", "GLOBAL", 1)
+	Global("XA_CorwinAerieScars", "GLOBAL", 1)
+	InParty("XACORWIN")
+~ THEN XACAELAB XA_CaelarAerieScars
+	@59 /*~Good... we could all use some rest. Aerie — would you help me with my armor?~*/
+	DO ~
+		SetGlobal("XA_CaelarAerieScars", "GLOBAL", 2)
+	~
+	== AERIEJ
+	@60 /*~Of course, my lady.~*/
+	= @61 /*~(As she lifts Caelar's chainmail, she momentarily lifts her vestment with it, and exposes a truly hideous scar on the aasimar's back.)~*/
+	= @57 /*~Oh my! Caelar, I — I'm so sorry!~*/
+	== XACAELAB
+	@62 /*~It's alright, Aerie.~*/
+	== AERIEJ
+	@63 /*~D-did they do that to you, in Avernus?~*/
+	== XACAELAB
+	@64 /*~They did far worse than that, I'm afraid.~*/
+	== AERIEJ
+	@66 /*~You know, Schael told me that scars help us remember that we are stronger than those that tried to hurt us. She's right.~*/
+	== XACAELAB
+	@67 /*~Maybe for you and her, that's true... but I look at mine differently. My scars remind me of the good men and women that are dead because of my actions. I have use what's left of this life to make their deaths count for something.~*/
+	== AERIEJ
+	@68 /*~You are, by helping us. Come, let's get some rest.~*/
+	DO ~
+		RestParty()
+	~
+EXIT
+//}
+
+//{ Dialog B-98
+CHAIN IF ~
+	Global("XA_CaelarAerieScars", "GLOBAL", 1)
+	OR(2)
+		!Global("XA_CorwinAerieScars", "GLOBAL", 1)
+		!InParty("XACORWIN")
+~ THEN XACAELAB XA_CaelarAerieScars
+	@59 /*~Good... we could all use some rest. Aerie — would you help me with my armor?~*/
+	DO ~
+		SetGlobal("XA_CaelarAerieScars", "GLOBAL", 2)
+	~
+	== AERIEJ
+	@60 /*~Of course, my lady.~*/
+	= @61 /*~(As she lifts Caelar's chainmail, she momentarily lifts her vestment with it, and exposes a truly hideous scar on the aasimar's back.)~*/
+	= @57 /*~Oh my! Caelar, I — I'm so sorry!~*/
+	== XACAELAB
+	@62 /*~It's alright, Aerie.~*/
+	== AERIEJ
+	@63 /*~D-did they do that to you, in Avernus?~*/
+	== XACAELAB
+	@64 /*~They did far worse than that, I'm afraid.~*/
+	== AERIEJ
+	@65 /*~Oh, you poor thing...~ */
+	== XACAELAB
+	@69 /*~It's what I deserve. These scars serve to remind me of the good men and women that are dead because of my actions. I have use what's left of this life to make their deaths count for something.~*/
+	== AERIEJ
+	@68 /*~You are, by helping us. Come, let's get some rest.~*/
+	DO ~
+		RestParty()
+	~
+EXIT
+//}
+
+//{ Dialog B-99
+CHAIN IF ~
+	Global("XA_Banter_CaelarNeera", "GLOBAL", 2)
+~ THEN XACAELAB XA_CaelarNeeraBanter1Chain
+	@76 /*~Neera, a word please.~*/
+	DO ~
+		SetGlobal("XA_Banter_CaelarNeera", "GLOBAL", 3)
+	~
+	== NEERAJ
+	@77 /*~Sure Caelar, what's on your mind?~*/
+	== XACAELAB
+	@78 /*~I've heard of your kind before... wild mages, yes?~*/
+	== NEERAJ
+	@79 /*~Uh huh. What about it?~*/
+	== XACAELAB
+	@80 /*~I've also heard how destructive and how out of control these wild surges of yours can be. If you lost your focus...~*/
+	== NEERAJ
+	@81 /*~Here we go again.~*/
+	== XACAELAB
+	@82 /*~... in the middle of a town, or during a battle, you could —~*/
+	== NEERAJ
+	@70 /* ~Enough! Everyone always complains about my wild surges, and I'm tired of it! Once I open up a portal to the hells, or ravage a countryside or two, then *you* can complain, but not before!~ */
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+	~
+	@83 /*~Neera!~*/
+	== XACAELAB
+	@71 /*~...~*/
+	== NEERAJ
+	@72 /*~I, um... I didn't mean that. It was kind of a low blow, wasn't it... I'm sorry.~*/
+	== XACAELAB
+	@73 /*~Don't worry about it. You're right. I was foolish, and my mistakes cost many lives. I just don't want you to err in the same ways that I did.~*/
+	== NEERAJ
+	@74 /*~I appreciate your concern, but let me handle this in my own way.~*/
+	== XACAELAB
+	@75 /*~Fair enough. Let's go.~*/
+EXIT
+
+//}

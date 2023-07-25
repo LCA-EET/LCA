@@ -69,6 +69,54 @@ THEN
 END
 //}
 
+//{ Reputation Handling
+IF 
+	Global("XA_CanTalkToPlayer", "LOCALS", 1)
+	ReputationLT(Player1,7)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_CaelarLeftPoorRep", "GLOBAL", 1)
+		StartDialog("XACAELAJ", Player1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	InParty(Myself)
+	ReputationLT(Player1,8)
+	GlobalLT("XA_CaelarRepWarning", "GLOBAL", 1)
+THEN 
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_CaelarRepWarningTimer", "GLOBAL", ONE_HOUR)
+		SetGlobal("XA_CaelarRepWarning", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	Global("XA_CanTalkToPlayer", "LOCALS", 1)
+	Global("XA_CaelarRepWarning", "GLOBAL", 1)
+	ReputationLT(Player1,8)
+	GlobalTimerExpired("XA_CaelarRepWarningTimer", "GLOBAL")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_CaelarRepWarning", "GLOBAL", 2)
+		StartDialog("XACAELAJ", Player1)
+		SetInterrupt(TRUE)
+END
+
+IF 
+	GlobalGT("XA_CaelarRepWarning", "GLOBAL", 0)
+	ReputationGT(Player1,7)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CaelarRepWarning", "GLOBAL", 0)
+		Continue()
+END
+//}
+
 //{ Banter Initialization
 /* Initialize Banters */
 

@@ -898,35 +898,80 @@ END
 //{ SARVOLO.D
 EXTEND_TOP SARVOLO 9 /* OK */
 	IF ~
+		InParty("XACAELAR")
+		GlobalLT("XA_AskAboutCaelar", "LOCALS", 1)
+	~ THEN REPLY @315 /*~Tell me about Caelar.~*/
+	DO ~
+		SetGlobal("XA_AskAboutCaelar", "LOCALS", 1)
+	~
+	GOTO XA_Caelar
+
+	IF ~
 		InParty("XACORWIN")
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_MeetIllasera", "GLOBAL", 1)
+		GlobalLT("XA_AskAboutCorwin", "LOCALS", 1)
 	~ THEN REPLY @279 /* ~Tell me about Schael.~*/
+	DO ~
+		SetGlobal("XA_AskAboutCorwin", "LOCALS", 1)
+	~
 	GOTO XA_Schael_Illasera
 	
 	IF ~
 		InParty("XACORWIN")
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_MeetIllasera", "GLOBAL", 1)
+		GlobalLT("XA_AskAboutCorwin", "LOCALS", 1)
 	~ THEN REPLY @280 /* ~Tell me about Corwin.~*/
+	DO ~
+		SetGlobal("XA_AskAboutCorwin", "LOCALS", 1)
+	~
 	GOTO XA_Corwin_Illasera
 	
 	IF ~
 		InParty("XACORWIN")
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("XA_MeetIllasera", "GLOBAL", 1)
+		GlobalLT("XA_AskAboutCorwin", "LOCALS", 1)
 	~ THEN REPLY @279 /* ~Tell me about Schael.~*/
+	DO ~
+		SetGlobal("XA_AskAboutCorwin", "LOCALS", 1)
+	~
 	GOTO XA_Schael
 	
 	IF ~
 		InParty("XACORWIN")
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("XA_MeetIllasera", "GLOBAL", 1)
+		GlobalLT("XA_AskAboutCorwin", "LOCALS", 1)
 	~ THEN REPLY @280 /* ~Tell me about Corwin.~*/
+	DO ~
+		SetGlobal("XA_AskAboutCorwin", "LOCALS", 1)
+	~
 	GOTO XA_Corwin
 END
 
 APPEND SARVOLO
+	IF ~~ THEN BEGIN XA_Caelar
+		SAY @316 /*~Caelar... Argent? By the gods, it IS her! I'd heard rumors that a glorious warrior matching her description was travelling with you, but I didn't think it possible! How — how did you manage to free her from Avernus?~*/
+		
+		IF ~~ THEN REPLY @318 /*~I'll spare you the bloody details. All that matters is that she is here now, and that we are fighting for the same cause.~*/
+		GOTO XA_CaelarSarvolo2
+		
+		IF ~
+			IsValidForPartyDialogue("XACAELAR")
+			See("XACAELAR")
+		~ THEN REPLY @319 /* ~She can explain.~ */
+		EXTERN XACAELAJ XA_CaelarSarvolo
+	END
+
+	IF ~~ THEN BEGIN XA_CaelarSarvolo2
+		SAY @317 /*~Amazing! Remarkable! To willigly venture to Avernus again, this time to rescue the Shining Lady herself!~*/
+		
+		IF ~~ THEN
+		GOTO 9
+	END
+
 	IF ~~ THEN BEGIN XA_Corwin_Illasera
 		SAY @281 /* ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. The pair have achieved feats that no one could have imagined, and her devotion to <CHARNAME>'s cause has only grown since <PRO_HESHE> helped rescue her daughter from Illasera the Quick. Though no one can say what the future has in store for this duo, one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~ */
 		

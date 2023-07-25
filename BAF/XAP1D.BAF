@@ -1,3 +1,16 @@
+//{ Caelar Aerie Scar Banter
+IF
+	IsValidForPartyDialogue("XACAELAR")
+	IsValidForPartyDialogue("Aerie")
+	GlobalLT("XA_CaelarAerieScars", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 1~)
+		SetGlobal("XA_CaelarAerieScars", "GLOBAL", 1)
+		ActionOverride("XACAELAR", Interact("Aerie"))
+END
+//}
+
 //{ Caelar Rescue Quest Timer Init
 IF
 	GlobalLT("XA_KanaDreamTimerSet", "GLOBAL",1)
@@ -8,9 +21,10 @@ IF
 		GlobalGT("DemoGorgonIsDead","GLOBAL",0)
 THEN
 	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 2~)
 		SetGlobal("XA_KanaDreamTimerSet", "GLOBAL",1)
 		SetGlobalTimer("XA_KanaDreamTimer", "GLOBAL", ONE_DAY)
-		Continue()
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 END
 
 IF
@@ -18,6 +32,7 @@ IF
 	GlobalLT("XA_KanaDream", "GLOBAL", 1)
 THEN
 	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 3~)
 		SetGlobal("XA_KanaDream", "GLOBAL", 1)
 		SetGlobalTimer("XA_KanaDreamTimer", "GLOBAL", EIGHT_HOURS)
 		StartCutSceneMode()
@@ -29,6 +44,7 @@ IF
 	Global("XA_KanaDream", "GLOBAL", 1)
 THEN
 	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 4~)
 		SetGlobal("XA_KanaDream", "GLOBAL", 2)
 		StartCutSceneMode()
 		StartCutScene("XADREAM")
@@ -37,6 +53,9 @@ END
 
 IF
 	Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
+	OR(2)
+		Global("XA_CorwinSex_1", "GLOBAL", 1)
+		Global("XA_CorwinSex_2", "GLOBAL", 1)
 	OR(13)
 		AreaCheck("AR0021") //Crooked Crane 1FL
 		AreaCheck("AR0022") //Crooked Crane 2FL
@@ -53,19 +72,8 @@ IF
 		AreaCheck("AR2010") //Trademeet's Inn
 THEN
 	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 5~)
 		SetGlobal("XA_SleepInn", "GLOBAL", 1)
-		Continue()
-END
-
-IF 
-	OR(2)
-		Global("XA_SleepInn", "GLOBAL", 1)
-		Global("XA_SexDebug", "GLOBAL", 1)
-	OR(2)
-		Global("XA_CorwinSex_1", "GLOBAL", 1)
-		Global("XA_CorwinSex_2", "GLOBAL", 1)
-THEN
-	RESPONSE #100
 		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 END
 
@@ -76,6 +84,7 @@ IF
 	GlobalLT("XA_TentCS", "GLOBAL", 1)	
 THEN
 	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 7~)
 		SetGlobal("XA_TentCS", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutSceneEx("XATNTCS",FALSE)
@@ -89,6 +98,7 @@ IF
 	GlobalLT("XA_TentCS", "GLOBAL", 1)	
 THEN
 	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 8~)
 		SetGlobal("XA_TentCS", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutSceneEx("XATNTCS",FALSE)
@@ -101,10 +111,11 @@ IF
 		Global("XA_LetterSent", "GLOBAL", 1) // Corwin Love
 		Global("XA_LetterSent", "GLOBAL", 2) // Corwin 
 THEN
-  RESPONSE #100
-	SetGlobal("XA_CS03_Done", "GLOBAL", 1)
-    StartCutSceneMode()
-    StartCutSceneEx("XAAcs03a",FALSE)
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 9~)
+		SetGlobal("XA_CS03_Done", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutSceneEx("XAAcs03a",FALSE)
 END
 
 IF
@@ -112,43 +123,45 @@ IF
 	Global("XA_LetterSent", "GLOBAL", 3) // Duncan
 	!Global("XA_CS02_Done", "GLOBAL", 1)
 THEN
-  RESPONSE #100
-	SetGlobal("XA_CS02_Done", "GLOBAL", 1)
-    StartCutSceneMode()
-    StartCutSceneEx("XAAcs02a",FALSE)
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 10~)
+		SetGlobal("XA_CS02_Done", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutSceneEx("XAAcs02a",FALSE)
 END
 
 IF
-  GlobalTimerExpired("XA_CS04","GLOBAL")
-  !Global("XA_CS04_Done", "GLOBAL", 1)
+	GlobalTimerExpired("XA_CS04","GLOBAL")
+	!Global("XA_CS04_Done", "GLOBAL", 1)
 THEN
-  RESPONSE #100
-	SetGlobal("XA_CS04_Done", "GLOBAL", 1)
-    StartCutSceneMode()
-    StartCutSceneEx("XAAcs04a",FALSE)
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 11~)
+		SetGlobal("XA_CS04_Done", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutSceneEx("XAAcs04a",FALSE)
 END
 
 IF
-  GlobalTimerExpired("XA_CS05","GLOBAL")
-  !Global("XA_CS05_Done", "GLOBAL", 1)
+	GlobalTimerExpired("XA_CS05","GLOBAL")
+	!Global("XA_CS05_Done", "GLOBAL", 1)
 THEN
-  RESPONSE #100
-	SetGlobal("XA_CS05_Done", "GLOBAL", 1)
-    StartCutSceneMode()
-    StartCutSceneEx("XAAcs05a",FALSE)
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 12~)
+		SetGlobal("XA_CS05_Done", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutSceneEx("XAAcs05a",FALSE)
 END
 
 IF
-  GlobalTimerExpired("XA_CS01","GLOBAL")
-  !Global("XA_CS01_Done", "GLOBAL", 1)
+	GlobalTimerExpired("XA_CS01","GLOBAL")
+	!Global("XA_CS01_Done", "GLOBAL", 1)
 THEN
-  RESPONSE #100
-	SetGlobal("XA_CS01_Done", "GLOBAL", 1)
-    StartCutSceneMode()
-    StartCutSceneEx("XAAcs01a",FALSE)
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 13~)
+		SetGlobal("XA_CS01_Done", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutSceneEx("XAAcs01a",FALSE)
 END
-
-
 
 IF 
 	OR(2)
@@ -158,11 +171,13 @@ IF
 	AreaCheck("AR0406") // Copper Coronet
 THEN
 	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 14~)
 		SetGlobal("XA_CorwinComplainSex", "GLOBAL", 1)
 		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
 END
 
 IF 
+	GlobalLT("XA_OnlySleep", "GLOBAL", 1)
 	!Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
 	OR(3)
 		Global("XA_CorwinSex_1", "GLOBAL", 1)
@@ -170,14 +185,7 @@ IF
 		Global("XA_CorwinSex_3", "GLOBAL", 1)
 THEN 
 	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 15~)
 		SetGlobal("XA_TryToSleep", "GLOBAL", 1)
 		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
-END
-
-IF
-	Global("XA_ExplicitModActive", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_ExplicitModActive", "GLOBAL", 1)
-		Continue()
 END

@@ -1900,6 +1900,48 @@ IF ~~ THEN BEGIN XA_DialogTest
 	~
 	EXIT
 	
+	IF ~~ THEN REPLY @591
+	DO ~
+		SetGlobal("XA_Banter_CorwinCaelar", "GLOBAL", 2)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @592
+	DO ~
+		SetGlobal("XA_Banter_CaelarSarevok", "GLOBAL", 2)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @593
+	DO ~
+		SetGlobal("XA_Banter_CaelarKeldorn", "GLOBAL", 2)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @594
+	DO ~
+		SetGlobal("XA_Banter_CaelarRasaad", "GLOBAL", 2)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @595
+	DO ~
+		SetGlobal("XA_Banter_CaelarJaheira", "GLOBAL", 2)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @596
+	DO ~
+		SetGlobal("XA_Banter_CaelarMazzy", "GLOBAL", 2)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @597
+	DO ~
+		SetGlobal("XA_Banter_CaelarDorn", "GLOBAL", 2)
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @26
 	GOTO XA_MainMenu
 END
@@ -3100,6 +3142,28 @@ END
 
 IF ~~ THEN BEGIN XA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
+	
+	IF ~~ THEN REPLY @600
+	DO ~
+		
+		SetGlobal("XA_ClearedKanaglym", "GLOBAL",1)
+		SetGlobal("XA_EnteredSaradush", "GLOBAL", 1)
+		SetGlobal("XA_IncubusDefeated", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @598
+	DO ~
+		SetGlobal("XA_CorwinAerieScars", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @599
+	DO ~
+		SetGlobal("XA_CorwinAerieScars", "GLOBAL", 0)
+	~
+	GOTO XA_MainMenu
+	
 	
 	IF ~~ THEN REPLY @583
 	DO ~

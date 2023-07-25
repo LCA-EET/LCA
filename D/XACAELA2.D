@@ -109,6 +109,10 @@ IF ~~ THEN BEGIN XA_CaelarWait
 	
 	= @34 /* ~Please... end this. End this suffering...~ */
 	
+	
+	IF ~~ THEN REPLY @56 /* */
+	GOTO XA_CaelarWait2
+	
 	IF ~~ THEN REPLY @35  /* ~Caelar, you may have given up on yourself, but I haven't given up on you. There's still a path forward, and you'll come out of this stronger, and wiser, if you give yourself the chance.~ */
 	GOTO XA_CaelarWait2
 	
@@ -124,7 +128,7 @@ END
 IF ~~ THEN BEGIN XA_CaelarWait2
 	SAY @36 /* ~What do you mean?~ */
 	
-	IF ~~ THEN REPLY @37  /* ~Release these spirits from their oath to you.~ */
+	IF ~~ THEN REPLY @37  /* ~I will show you, but first you must release these spirits from their oath to you.~*/
 	GOTO XA_CaelarWait3
 END
 
