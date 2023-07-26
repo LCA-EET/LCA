@@ -772,6 +772,115 @@ END
 		//}
 	//}
 
+	//{ Neera
+		//{ Neera First interaction
+		IF
+			InParty(Myself)
+			Global("XA_Banter_NextInteraction", "LOCALS", 11)
+			Global("XA_Banter_CaelarNeera", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_Banter_CaelarNeera", "GLOBAL", 2)
+				Continue()
+		END
+		
+		IF
+			Global("XA_CanTalk", "LOCALS", 1)
+			Global("XA_Banter_CaelarNeera", "GLOBAL", 2)
+			!Range("Neera", 6)
+			ActionListEmpty()
+		THEN
+			RESPONSE #100
+				MoveToObject(Player1)
+				Continue()
+		END
+
+		IF
+			Global("XA_CanTalk", "LOCALS", 1)
+			Global("XA_Banter_CaelarNeera", "GLOBAL", 2)
+			Range("Neera", 7)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				Interact("Neera")
+				//Dialog B-100
+				SetInterrupt(TRUE)
+		END
+		//}
+	//}
+	//{ Player
+		//{ Player First interaction
+		IF
+			InParty(Myself)
+			Global("XA_Banter_NextInteraction", "LOCALS", 12)
+			Global("XA_Banter_CaelarPlayer", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_Banter_CaelarPlayer", "GLOBAL", 2)
+				Continue()
+		END
+		
+		IF
+			Global("XA_CanTalkToPlayer", "LOCALS", 1)
+			Global("XA_Banter_CaelarPlayer", "GLOBAL", 2)
+			!Range(Player1, 6)
+			ActionListEmpty()
+			GlobalLT("XA_CaelarBanterDelay", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				MoveToObject(Player1)
+				Continue()
+		END
+
+		IF
+			Global("XA_CanTalkToPlayer", "LOCALS", 1)
+			Global("XA_Banter_CaelarPlayer", "GLOBAL", 2)
+			Range(Player1, 7)
+			GlobalLT("XA_CaelarBanterDelay", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				Interact(Player1)
+				//Dialog B-100
+				SetInterrupt(TRUE)
+		END
+		//}
+		
+		//{ Player First interaction (Delayed)
+		IF
+			InParty(Myself)
+			GlobalTimerExpired("XA_BanterDelayTimer", "GLOBAL")
+			Global("XA_CaelarBanterDelay", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_CaelarBanterDelay", "GLOBAL", 2)
+				Continue()
+		END
+		
+		IF
+			Global("XA_CanTalkToPlayer", "LOCALS", 1)
+			Global("XA_CaelarBanterDelay", "GLOBAL", 2)
+			!Range(Player1, 6)
+			ActionListEmpty()
+		THEN
+			RESPONSE #100
+				MoveToObject(Player1)
+				Continue()
+		END
+
+		IF
+			Global("XA_CanTalkToPlayer", "LOCALS", 1)
+			Global("XA_CaelarBanterDelay", "GLOBAL", 2)
+			Range(Player1, 7)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				Interact(Player1)
+				//Dialog B-100
+				SetInterrupt(TRUE)
+		END
+		//}
+	//}
 //}
 
 //{ Exp Boosts on Join

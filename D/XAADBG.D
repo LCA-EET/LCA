@@ -1900,47 +1900,67 @@ IF ~~ THEN BEGIN XA_DialogTest
 	~
 	EXIT
 	
-	IF ~~ THEN REPLY @591
+	IF ~~ THEN REPLY @591 /*~Dialog B-90 (Schael)~*/
 	DO ~
 		SetGlobal("XA_Banter_CorwinCaelar", "GLOBAL", 2)
 	~
 	EXIT
 	
-	IF ~~ THEN REPLY @592
+	IF ~~ THEN REPLY @592 /*~Dialog B-91 (Sarevok)~*/
 	DO ~
 		SetGlobal("XA_Banter_CaelarSarevok", "GLOBAL", 2)
 	~
 	EXIT
 	
-	IF ~~ THEN REPLY @593
+	IF ~~ THEN REPLY @593 /*~Dialog B-92 (Keldorn)~*/
 	DO ~
 		SetGlobal("XA_Banter_CaelarKeldorn", "GLOBAL", 2)
 	~
 	EXIT
 	
-	IF ~~ THEN REPLY @594
+	IF ~~ THEN REPLY @594 /*~Dialog B-93 (Rasaad)~*/
 	DO ~
 		SetGlobal("XA_Banter_CaelarRasaad", "GLOBAL", 2)
 	~
 	EXIT
 	
-	IF ~~ THEN REPLY @595
+	IF ~~ THEN REPLY @595 /*~Dialog B-94 (Jaheira)~*/
 	DO ~
 		SetGlobal("XA_Banter_CaelarJaheira", "GLOBAL", 2)
 	~
 	EXIT
 	
-	IF ~~ THEN REPLY @596
+	IF ~~ THEN REPLY @596 /*~Dialog B-95 (Mazzy)~*/
 	DO ~
 		SetGlobal("XA_Banter_CaelarMazzy", "GLOBAL", 2)
 	~
 	EXIT
 	
-	IF ~~ THEN REPLY @597
+	IF ~~ THEN REPLY @597 /*~Dialog B-96 (Dorn)~*/
 	DO ~
 		SetGlobal("XA_Banter_CaelarDorn", "GLOBAL", 2)
 	~
 	EXIT
+	
+	IF ~~ THEN REPLY @603 /*~Dialog B-99~*/
+	DO ~
+		SetGlobal("XA_Banter_CaelarNeera", "GLOBAL", 2)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @601 /*~Dialog B-100~*/
+	DO ~
+		SetGlobal("XA_Banter_CaelarPlayer", "GLOBAL", 2)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @602 /*~Dialog B-101~*/
+	DO ~
+		SetGlobal("XA_Banter_CaelarPlayer", "GLOBAL", 2)
+		SetGlobal("XA_CaelarBanterDelay", "GLOBAL", 2)
+	~
+	EXIT
+	
 	
 	IF ~~ THEN REPLY @26
 	GOTO XA_MainMenu
