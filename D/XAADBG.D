@@ -211,7 +211,7 @@ IF ~~ THEN BEGIN XA_XACORWIJ_Test
 	DO ~
 		SetGlobal("XA_BGEND3", "GLOBAL", 1)
 		SetGlobal("XA_DidNotRequestCorwin", "GLOBAL", 1)
-		SetGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 101)
 		Wait(1)
 		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
 	~
@@ -246,7 +246,7 @@ IF ~~ THEN BEGIN XA_XACORWIJ_Test
 	IF ~~ THEN REPLY @430 /* ~Dialog J-5 Opinion 6~ */
 	DO ~
 		SetGlobal("XA_CorwinKillBeno", "GLOBAL", 1)
-		SetGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 6)
+		SetGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 10)
 		CreateCreature("XABENO2", [-1.-1], N)
 		Wait(1)
 		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
@@ -256,7 +256,7 @@ IF ~~ THEN BEGIN XA_XACORWIJ_Test
 	IF ~~ THEN REPLY @493 /* ~Dialog J-5 Opinion 5~ */
 	DO ~
 		SetGlobal("XA_CorwinKillBeno", "GLOBAL", 1)
-		SetGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 5)
+		SetGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 105)
 		CreateCreature("XABENO2", [-1.-1], N)
 		Wait(1)
 		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))

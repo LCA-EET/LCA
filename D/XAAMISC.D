@@ -391,6 +391,10 @@
 			IsValidForPartyDialogue("XACORWIN")
 			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		~ EXTERN XACORWIJ XA_Choice
+		
+		IF ~
+			IsValidForPartyDialogue("XACAELAR")
+		~ EXTERN XACAELAJ XA_Choice
 	END
 	
 	EXTEND_BOTTOM FINSOL01 29 /* Player chose godhood - evil */
@@ -3315,8 +3319,9 @@ END
 EXTEND_BOTTOM GORODR1 39 //OK	
 	IF ~
 		//GlobalLT("Chapter","GLOBAL",20)
-		OR(16)
+		OR(18)
 			IsValidForPartyDialogue("XACORWIN")
+			IsValidForPartyDialogue("XACAELAR")
 			IsValidForPartyDialogue("Aerie")
 			IsValidForPartyDialogue("Anomen")
 			IsValidForPartyDialogue("Imoen2")
@@ -3332,8 +3337,12 @@ EXTEND_BOTTOM GORODR1 39 //OK
 			IsValidForPartyDialogue("Cernd")
 			IsValidForPartyDialogue("Edwin")
 			IsValidForPartyDialogue("Sarevok")
+			IsValidForPartyDialogue("Jan")
 	~
 	THEN REPLY @22 /* ~What say you, my loyal comrades? They wronged you as much as I. Should they be allowed to live, or must the treacherous cowards taste steel?~ */
+	DO ~
+		SetGlobal("XA_OdrenShouldDie", "GLOBAL", 100)
+	~
 	
 	EXTERN GORODR1 XA_OdrenJudgeSOA
 END
@@ -3350,17 +3359,17 @@ APPEND GORODR1
 		SAY @42 /* ~Please, I ask you once again to forgive us, <CHARNAME>.~ */
 		
 		IF ~
-			GlobalGT("XA_OdrenShouldDie", "GLOBAL", 0)
+			GlobalGT("XA_OdrenShouldDie", "GLOBAL", 100)
 		~ THEN REPLY @43 /* ~Prepare to die, you treacherous cowards!~  */
 		GOTO 45
 		
 		IF ~
-			GlobalLT("XA_OdrenShouldDie", "GLOBAL", 0)
+			GlobalLT("XA_OdrenShouldDie", "GLOBAL", 100)
 		~ THEN REPLY @44 /* ~We've decided that you and your treacherous comrades will live. Get out of my sight!~  */
 		GOTO 55
 		
 		IF ~
-			GlobalLT("XA_OdrenShouldDie", "GLOBAL", 0)
+			GlobalLT("XA_OdrenShouldDie", "GLOBAL", 100)
 		~ THEN REPLY @45 /* ~We've decided that you and your treacherous comrades will live. Give us our reward, and get out of my sight!~  */
 		DO ~
 			GiveGoldForce(10000)
@@ -3369,7 +3378,7 @@ APPEND GORODR1
 		GOTO 57
 		
 		IF ~
-			Global("XA_OdrenShouldDie", "GLOBAL", 0)
+			Global("XA_OdrenShouldDie", "GLOBAL", 100)
 		~
 		THEN GOTO XA_OdrenDecisionDecidingVote
 	END
@@ -3842,6 +3851,24 @@ CHAIN
 		@24 /* ~They deserve to die. Not just for their treachery, but also for their cowardice. There's been so much death already, though... If you decide to spare them, I will understand.~ */
 		DO ~
 			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
+		~
+		
+		== XACAELAJ
+		IF ~
+			IsValidForPartyDialogue("XACAELAR")
+		~
+		@320 /* ~Surely, there must be some way for these priests to find redemption. Life, I say.~*/
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+		~
+		
+		== JANJ
+		IF ~
+			IsValidForPartyDialogue("Jan")
+		~
+		@321 /* ~I'll not have their blood on my hands; I'd need to wash them before picking my turnips. Let them live, <CHARNAME>.*/
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
 		~
 		
 		== SAREV25J

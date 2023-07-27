@@ -79,6 +79,11 @@ IF ~~ THEN BEGIN XA_BenoBoom_GoHome
 	EXIT
 	
 	IF ~
+		IsValidForPartyDialogue("XACAELAR")
+	~ THEN REPLY @78  /*  ~Caelar... you have a, uh, chunk of Beno stuck on your tiara.~ */
+	EXTERN XACAELAJ XA_BenoBoom
+	
+	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN REPLY @53 /* ~Schael... you have some ... ahhh... Beno on you. On your shoulder.~*/
 	EXTERN XACORWIJ XA_BenoBoom

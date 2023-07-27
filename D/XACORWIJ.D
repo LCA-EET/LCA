@@ -2067,7 +2067,7 @@ END
 IF ~
 	Global("XA_BGEND3", "GLOBAL", 1)
 	Global("XA_DidNotRequestCorwin", "GLOBAL", 1)
-	GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 0)
+	GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 99)
 	// play romance song (if in romance)
 ~ THEN BEGIN XA_BGEND3_DidNotRequest
 	SAY @1223 /* ~I'm coming with you. Don't try and talk me out of it.~ */
@@ -2482,7 +2482,7 @@ IF ~
 	SAY @1184 /* ~Any last words?~ */
 	
 	IF ~
-		GlobalLT("XA_CorwinOpinionOfPlayer", "GLOBAL", 6)
+		GlobalLT("XA_CorwinOpinionOfPlayer", "GLOBAL", 100)
 	~ THEN 
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
@@ -2491,7 +2491,7 @@ IF ~
 	EXTERN XABENO2 XA_CorwinKillBenoChain
 	
 	IF ~
-		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 5)
+		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 99)
 	~ THEN 
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)

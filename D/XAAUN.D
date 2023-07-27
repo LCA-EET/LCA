@@ -125,4 +125,4 @@ CHAIN XAAUN XA_AunByeChain
 		StartCutSceneMode()
 		StartCutScene("XACAEBYE")
 	~
-END
+EXIT

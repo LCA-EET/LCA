@@ -22,6 +22,11 @@ IF ~~ THEN BEGIN XA_HowMany
 		IsValidForPartyDialogue("Jaheira")
 	~ THEN
 	EXTERN JAHEIRAJ XA_HowMany
+	
+	IF ~
+		IsValidForPartyDialogue("XACAELAR")
+	~ THEN
+	EXTERN XACAELAJ XA_HowMany
 END
 
 IF ~~ THEN BEGIN XA_Reattach

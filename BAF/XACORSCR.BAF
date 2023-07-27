@@ -1,5 +1,18 @@
 //Note: Variable Key Max Length Appears to be 32.
 
+//{ Corwin Opinion Baseline
+IF
+	GlobalLT("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 100)
+		SetGlobal("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
 //{ Mark as In-Party in BG2 (For later summoning via the fate-spirit)
 IF
 	InParty(Myself)
@@ -313,7 +326,7 @@ END
 	IF
 		Global("XA_BGEND3", "GLOBAL", 1)
 		Global("XA_DidNotRequestCorwin", "GLOBAL", 1)
-		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 0)
+		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 99)
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
@@ -327,7 +340,7 @@ END
 	IF
 		Global("XA_BGEND3", "GLOBAL", 1)
 		Global("XA_DidNotRequestCorwin", "GLOBAL", 1)
-		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 0)
+		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 99)
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
@@ -905,7 +918,7 @@ END
 	IF
 		Global("XA_CheckInRomanceLeftBG", "GLOBAL", 1)
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 3)
+		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 97)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -920,7 +933,7 @@ END
 		Global("XA_CheckInRomanceLeftBG", "GLOBAL", 1)
 		OR(2)
 			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-			GlobalLT("XA_CorwinOpinionOfPlayer", "GLOBAL", 4)
+			GlobalLT("XA_CorwinOpinionOfPlayer", "GLOBAL", 98)
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_CheckInRomanceLeftBG", "GLOBAL", 2)
@@ -4969,7 +4982,7 @@ END
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		IsValidForPartyDialogue("Aerie")
 		GlobalLT("XA_CorwinParentAdvice", "GLOBAL", 1)
-		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 3)
+		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 97)
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_CorwinParentAdvice", "GLOBAL", 1)

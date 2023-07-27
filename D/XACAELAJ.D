@@ -7,7 +7,8 @@ IF ~
 	
 	IF ~~ THEN
 	DO ~
-	
+		ChangeAIScript("", OVERRIDE)
+		EscapeArea()
 	~
 	EXIT
 
@@ -30,4 +31,40 @@ IF ~~ THEN BEGIN XA_CaelarSarvolo
 	
 	IF ~~ THEN
 	EXTERN SARVOLO XA_CaelarSarvolo2
+END
+
+IF ~~ THEN BEGIN XA_BenoBoom
+	SAY @1  /* ~Ugh! By the light, it's everywhere!~ */
+	
+	= @2 /*~Perhaps someone in this village will be kind enough to allow us the use of their wash room.~ */
+	
+	IF ~~ THEN 
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("XALATHEX")
+	~
+	EXIT	
+END
+
+IF ~~ THEN BEGIN XA_HowMany
+	SAY @3 /* ~Brother, surely you're aware of the risks asssociated with performing a resurrection so long after the death of the subject?~*/
+	
+	IF ~~ THEN 
+	EXTERN XALATH01 XA_HowMany2
+END
+
+IF ~~ THEN BEGIN XA_Choice
+	SAY @4  /* ~I'm honored to have helped in your ascension to divinity, <CHARNAME>. There is no one more worthy of this transformation than you.~ */
+
+	COPY_TRANS FINSOL01 27
+	
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ EXTERN XACORWIJ XA_Choice_NonRomance
+	
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ EXTERN XACORWIJ XA_Choice
 END

@@ -351,8 +351,10 @@ IF ~
 	SAY @32 /* ~You want me out of here? Fine. If you ever clean up your act, you can find me in the Athkatla magistrate.~ */
 	IF ~~ THEN
 	DO ~
-		EscapeArea()
 		SetGlobal("XA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
+		EscapeArea()
 	~
 	EXIT
 END
@@ -428,8 +430,10 @@ IF ~~ THEN BEGIN XAA8
 	SAY @29 /* ~(Sigh) Fair enough. I'll be waiting for you, love.~ */
 	IF ~~ THEN
 	DO ~
-		EscapeArea()
 		SetGlobal("XA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
+		EscapeArea()
 	~
 	EXIT
 END
