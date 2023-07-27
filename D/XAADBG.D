@@ -5,6 +5,9 @@ IF ~
 ~ THEN BEGIN XA_MainMenu
 	SAY @0 /* ~How can I help you?~ */
 	
+	IF ~~ THEN REPLY @604
+	GOTO XA_EpilogueTest
+	
 	IF ~~ THEN REPLY @585
 	GOTO XA_AreaTest
 	
@@ -140,6 +143,83 @@ IF ~
 		SetGlobalTimer("XA_DukeDebriefTimer", "GLOBAL",EIGHT_HOURS)
 	~
 	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @12 /* ~I do not need assistance at this time.~ */
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_EpilogueTest
+	SAY @604 /*~Test Epilogues.~ */
+	
+	IF ~~ THEN REPLY @612
+	DO ~
+		SetGlobal("PlayerChoseEssence","GLOBAL",1)
+		ActionOverride(Player1, LeaveAreaLUAPanic("AR6200", "", [400.1400], NE))
+		ActionOverride(Player1, LeaveAreaLUA("AR6200", "", [400.1400], NE))
+		ActionOverride(Player2, LeaveAreaLUA("AR6200", "", [400.1400], NE))
+		ActionOverride(Player3, LeaveAreaLUA("AR6200", "", [400.1400], NE))
+		ActionOverride(Player4, LeaveAreaLUA("AR6200", "", [400.1400], NE))
+		ActionOverride(Player5, LeaveAreaLUA("AR6200", "", [400.1400], NE))
+		ActionOverride(Player6, LeaveAreaLUA("AR6200", "", [400.1400], NE))
+		SetGlobal("StartEndBios","AR6200",1)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @613
+	DO ~
+		SetGlobal("PlayerChoseEssence","GLOBAL",0)
+		ActionOverride(Player1, LeaveAreaLUAPanic("AR6200", "", [400.1400], NE))
+		ActionOverride(Player1, LeaveAreaLUA("AR6200", "", [400.1400], NE))
+		ActionOverride(Player2, LeaveAreaLUA("AR6200", "", [400.1400], NE))
+		ActionOverride(Player3, LeaveAreaLUA("AR6200", "", [400.1400], NE))
+		ActionOverride(Player4, LeaveAreaLUA("AR6200", "", [400.1400], NE))
+		ActionOverride(Player5, LeaveAreaLUA("AR6200", "", [400.1400], NE))
+		ActionOverride(Player6, LeaveAreaLUA("AR6200", "", [400.1400], NE))
+		SetGlobal("StartEndBios","AR6200",1)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @605  /* ~XACORND1 (Coriwn, Romance, Male)~*/
+	DO ~
+		TextScreen("XACORND1")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @606 /* ~XACORND2 (Coriwn, Romance, Female)~*/
+	DO ~
+		TextScreen("XACORND2")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @607 /* ~XACORND3 (Coriwn, Romance, Male (Godhood))~*/
+	DO ~
+		TextScreen("XACORND3")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @608 /* ~XACORND4 (Coriwn, Romance, Female (Godhood))~*/
+	DO ~
+		TextScreen("XACORND4")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @609 /* ~XACORND5 (Corwin, Non-Romance)~*/
+	DO ~
+		TextScreen("XACORND5")
+	~	
+	EXIT
+	
+	IF ~~ THEN REPLY @610 /* ~XACAEEND (Caelar)~*/
+	DO ~
+		TextScreen("XACAEEND")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @611 /* ~XACORND6 (Corwin, Non-Romance (Godhood))~*/
+	DO ~
+		TextScreen("XACORND6")
+	~	
+	EXIT
 	
 	IF ~~ THEN REPLY @12 /* ~I do not need assistance at this time.~ */
 	EXIT
