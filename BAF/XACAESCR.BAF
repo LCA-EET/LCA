@@ -880,6 +880,20 @@ END
 				SetInterrupt(TRUE)
 		END
 		//}
+		
+		IF 
+			Global("XA_CanTalkToPlayer", "LOCALS", 1)
+			GlobalTimerExpired("XA_CaelarThanks", "GLOBAL")
+			Global("XA_SummonAun", "GLOBAL", 3)
+			Range(Player1, 7)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_SummonAun", "GLOBAL", 4)
+				//Dialog B-102
+				Interact(Player1)
+				SetInterrupt(TRUE)
+		END
 	//}
 //}
 

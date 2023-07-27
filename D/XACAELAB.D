@@ -1,5 +1,42 @@
 BEGIN ~XACAELAB~
 
+//{ Dialog B-102
+IF ~
+	Global("XA_SummonAun", "GLOBAL", 4)
+~ THEN BEGIN XA_CaelarThanks
+	SAY @121 /*~<CHARNAME> — before we move on, I want you to know how much I truly appreciate everything that you've done for me. Thank you... my friend.~*/
+	
+	IF ~~ THEN REPLY @122 /*~You're welcome.~*/
+	DO ~
+		SetGlobal("XA_SummonAun", "GLOBAL", 5)
+	~
+	GOTO XA_CaelarThanks2
+	
+	IF ~~ THEN REPLY @123 /*~Were our roles reversed, you'd have done the same.~*/
+	DO ~
+		SetGlobal("XA_SummonAun", "GLOBAL", 5)
+	~
+	GOTO XA_CaelarThanks2
+	
+	IF ~~ THEN REPLY @124 /*~I'm glad to have been able to help.~*/
+	DO ~
+		SetGlobal("XA_SummonAun", "GLOBAL", 5)
+	~
+	GOTO XA_CaelarThanks2
+END
+
+IF ~~ THEN BEGIN XA_CaelarThanks2
+	SAY @126 /*~The others are waiting. Let's go.~*/
+	
+	IF ~~ THEN
+	DO ~
+		ChangeStat(Myself, XP, 50000, ADD)
+		AddJournalEntry(@125, INFO)
+	~
+	EXIT
+END
+//}
+
 //{ Dialog B-101
 IF ~
 	Global("XA_Banter_CaelarPlayer", "GLOBAL", 2)

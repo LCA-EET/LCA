@@ -1,4 +1,14 @@
 IF
+	Global("XA_SummonAun", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_SummonAun", "GLOBAL", 2)
+		Wait(3)
+		StartCutSceneMode()
+		StartCutScene("XACAAUN")
+END
+
+IF
 	Global("NEWGAME_TOB","GLOBAL",0)
 	Global("CORWINSummoned", "GLOBAL", 1)
 	Global("XA_CorwinSpawnPlane", "GLOBAL", 0)
