@@ -1,0 +1,7 @@
+IF
+	Global("XAAssist", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Player1, ~Test~)
+		ActionOverride(Player1,StartDialog("player1",Player1))
+END

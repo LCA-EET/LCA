@@ -158,23 +158,146 @@ THEN
 		Continue()
 END
 
+//{ Banter Interval
+
+IF 
+	Global("XA_CaelarBanterTimerReset", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 0)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
 IF 
 	InParty(Myself)
 	Global("XA_ResetBanterTimer", "LOCALS", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 2)
 		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0) 
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	Global("XA_CaelarBanterInterval", "GLOBAL", 0) // Default
+	Global("XA_ResetBanterTimer", "LOCALS", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
 		SetGlobalTimer("XA_BanterTimer", "LOCALS", SIXTEEN_HOURS)
 		SetInterrupt(TRUE)
 		Continue()
 END
 
+IF 
+	Global("XA_CaelarBanterInterval", "GLOBAL", 1) 
+	Global("XA_ResetBanterTimer", "LOCALS", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_HOUR)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	Global("XA_CaelarBanterInterval", "GLOBAL", 2) 
+	Global("XA_ResetBanterTimer", "LOCALS", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", TWO_HOURS)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	Global("XA_CaelarBanterInterval", "GLOBAL", 3) 
+	Global("XA_ResetBanterTimer", "LOCALS", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", FOUR_HOURS)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	Global("XA_CaelarBanterInterval", "GLOBAL", 4) 
+	Global("XA_ResetBanterTimer", "LOCALS", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", EIGHT_HOURS)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	Global("XA_CaelarBanterInterval", "GLOBAL", 5) 
+	Global("XA_ResetBanterTimer", "LOCALS", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", SIXTEEN_HOURS)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	Global("XA_CaelarBanterInterval", "GLOBAL", 6) 
+	Global("XA_ResetBanterTimer", "LOCALS", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_DAY)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	Global("XA_CaelarBanterInterval", "GLOBAL", 7) 
+	Global("XA_ResetBanterTimer", "LOCALS", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", TWO_DAYS)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	Global("XA_CaelarBanterInterval", "GLOBAL", 8) 
+	Global("XA_ResetBanterTimer", "LOCALS", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", THREE_DAYS)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+//}
+
 IF
 	InParty(Myself)
 	GlobalTimerExpired("XA_BanterTimer", "LOCALS")	
 	AreaType(DUNGEON)
+	Global("XA_BanterInDungeon", "GLOBAL", 0)
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself, ~DEBUG_027~)
