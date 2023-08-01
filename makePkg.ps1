@@ -17,7 +17,8 @@ Copy-Item -Path "WAV" -Destination "LCA\WAV" -Recurse
 Copy-Item -Path "SPL" -Destination "LCA\SPL" -Recurse
 Copy-Item -Path "LCA.TP2" -Destination "LCA"
 Copy-Item -Path "LICENSE.md" -Destination "LCA"
-Copy-Item -Path "README.md" -Destination "LCA"
+<# Copy-Item -Path "README.md" -Destination "LCA" #>
+Copy-Item -Path "User Guide.pdf" -Destination "LCA"
 
 Compress-Archive -Path "LCA" -DestinationPath "LoveConquersAll_EET.zip"
 Compress-Archive -Path "weidu.exe" -Update -DestinationPath "LoveConquersAll_EET.zip"
