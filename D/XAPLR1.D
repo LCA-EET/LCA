@@ -33,6 +33,28 @@ APPEND ~PLAYER1~
 		IF ~~ THEN REPLY @166 /* ~Report a bug.~ */
 		GOTO XA_ReportBug
 		
+		IF ~~ THEN REPLY @168 /*  ~Open Debugger.~ */
+		GOTO XA_Debug
+		
+		IF ~~ THEN REPLY @160 /* ~Exit.~ */
+		GOTO XA_Exit
+	END
+
+	IF ~~ THEN BEGIN XA_Debug
+		SAY @169 /* ~WARNING: The debugger is meant to be used for testing purposes only. Improper alterations to the game state can crash the game, or make it so that you cannot complete the game.~*/
+		
+		IF ~~ THEN REPLY @170 /*~I understand the risks. Proceed.~*/
+		DO ~
+			ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
+			SetGlobal("XAAssist","GLOBAL",0)
+			CreateCreature("XAADBG", [-1.-1], N)
+			SetGlobal("XA_DebugInit","GLOBAL",1)
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @171 /*~Return to the main menu.~*/
+		GOTO XA_Assistant
+		
 		IF ~~ THEN REPLY @160 /* ~Exit.~ */
 		GOTO XA_Exit
 	END
@@ -51,6 +73,7 @@ APPEND ~PLAYER1~
 		SAY @165 /* ~Thanks for playing!~ */
 		IF ~~ THEN 
 		DO ~
+			ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
 			SetGlobal("XAAssist","GLOBAL",0)
 		~
 		EXIT

@@ -5,6 +5,9 @@ IF ~
 ~ THEN BEGIN XA_MainMenu
 	SAY @0 /* ~How can I help you?~ */
 	
+	IF ~~ THEN REPLY @614
+	GOTO XA_Assistant
+	
 	IF ~~ THEN REPLY @604
 	GOTO XA_EpilogueTest
 	
@@ -145,6 +148,16 @@ IF ~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @12 /* ~I do not need assistance at this time.~ */
+	EXIT
+END
+
+IF ~~ THEN XA_Assistant
+	SAY @614
+	
+	IF ~~ THEN 
+	DO ~
+		ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
+	~
 	EXIT
 END
 
