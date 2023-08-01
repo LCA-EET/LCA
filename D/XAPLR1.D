@@ -30,12 +30,25 @@ APPEND ~PLAYER1~
 		~
 		GOTO XA_ChangeDone
 		
+		IF ~~ THEN REPLY @166 /* ~Report a bug.~ */
+		GOTO XA_ReportBug
+		
 		IF ~~ THEN REPLY @160 /* ~Exit.~ */
 		GOTO XA_Exit
 	END
 	
+	IF ~~ THEN BEGIN XA_ReportBug
+		SAY @167 /*~You can report a bug by e-mailing LCAMod@danielvalle.net. It is recommended (but not required) that you include your save game with the bug report.~*/
+		
+		IF ~~ THEN REPLY @159 /* ~Return to main menu.~*/
+		GOTO XA_Assistant
+		
+		IF ~~ THEN REPLY @160 /*~Exit.~ */
+		GOTO XA_Exit 
+	END
+	
 	IF ~~ THEN BEGIN XA_Exit
-		SAY @165 
+		SAY @165 /* ~Thanks for playing!~ */
 		IF ~~ THEN 
 		DO ~
 			SetGlobal("XAAssist","GLOBAL",0)

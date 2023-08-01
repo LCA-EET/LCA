@@ -1,7 +1,44 @@
+//{ Explicit Mod Check
+
+IF
+	GlobalTimerExpired("XA_ExplicitModCheckTimer", "GLOBAL")
+	GlobalLT("XA_ExplicitCheckComplete", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_ExplicitModActive", "GLOBAL", 0)
+		SetGlobal("XA_ExplicitCheckComplete", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	GlobalLT("XA_ExplicitModCheckTimerSet", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_ExplicitModCheckTimer", "GLOBAL", ONE_HOUR)
+		SetGlobal("XA_ExplicitModCheckTimerSet", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_ExplicitCheckComplete", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_ExplicitModCheckTimer", "GLOBAL", ONE_HOUR)
+		SetGlobal("XA_ExplicitCheckComplete", "GLOBAL", 0)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+//}
+
 IF
 	Global("XAAssist", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Player1, ~Test~)
 		ActionOverride(Player1,StartDialog("player1",Player1))
 END
