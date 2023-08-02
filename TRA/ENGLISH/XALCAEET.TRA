@@ -53,14 +53,12 @@ Regards,
 @017 = ~test~
 @018 = ~Corwin's Amulet
 
-This amulet was given to you by Schael Corwin, as a token of her love for you. It contains a small portrait of her daughter, Rohma. Though the amulet isn't magical, when you wear it you are filled with hope and a renewed sense of purpose. You resolve to overcome whatever ordeals lie ahead, so that you can return to the arms of the woman you love.
+This amulet was given to you by Schael Corwin, as a token of her love for you. It contains a small portrait of her daughter, Rohma. Though the amulet isn't magical, when you wear it you are filled with hope and a renewed sense of purpose. You resolve to overcome whatever ordeals lie ahead, so that you can return to the arms of your love.
 
 Equipped abilities:
 – Charisma: +1
 – Saving Throws: +3
 – Magic Resistance: +5%
-
-Usable by: <CHARNAME>
 ~
 @019 = ~Corwin's Amulet~
 @020 = ~~
@@ -81,8 +79,7 @@ Requires:
  5 Strength
 
 Weight: 7
-
-Usable by: Corwin~
+~
 @024 = ~Archery Competition Signup~
 @025 = ~Debug Assistant~
 @026 = ~This mod is exclusive to EET.~
@@ -522,7 +519,7 @@ Equipped abilities:
 - Saving Throws: +1 (All)~ //11100, 28 OK
 @090 = ~<CHARNAME>,
 
-By the time you read this, you'll have escaped from the city. I'm sorry that I wasn't able to see you one last time before you left. When Belt, Eltan and Jannath made the decision to exile you, the Fist was put on high alert to prevent Entar and his associates from trying to take matters into their own hands. 
+By the time you read this, you'll have departed the city. I'm sorry that I wasn't able to see you one last time before you left. When Belt, Eltan and Jannath made the decision to exile you, the Fist was put on high alert to prevent Entar and his associates from trying to take matters into their own hands. 
 
 You now have the time you need to find some way to prove your innocence. If you're able to recover the Soultaker dagger, you must send it to me. The wizards believe they can restore Skie, but only if the dagger is in their possession. Once restored, she can corroborate your account of what happened on that night in Dragonspear. With your innocence established, love, we'll be together once again.    
 
@@ -533,7 +530,7 @@ Yours,
 Schael~
 @091 = ~<CHARNAME>,
 
-By the time you read this, you'll have escaped from the city. I'm sorry that I wasn't able to see you one last time before you left. When Belt, Eltan and Jannath made the decision to exile you, the Fist was put on high alert to prevent Entar and his associates from trying to take matters into their own hands. 
+By the time you read this, you'll have departed the city. I'm sorry that I wasn't able to see you one last time before you left. When Belt, Eltan and Jannath made the decision to exile you, the Fist was put on high alert to prevent Entar and his associates from trying to take matters into their own hands. 
 
 You now have the time you need to find some way to prove your innocence. If you're able to recover the Soultaker dagger, you must send it to me. The wizards believe they can restore Skie, but only if the dagger is in their possession. Once restored, she can corroborate your account of what happened on that night in Dragonspear. You'll be able to return to the city once your innocence is established.   
 
@@ -680,8 +677,7 @@ Requires:
  18 Strength
 
 Weight: 9
-
-Usable by: Corwin~
+~
 @144 = ~Corwin's Bow +3~
 @145 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
 
@@ -704,8 +700,7 @@ Requires:
  18 Strength
 
 Weight: 9
-
-Usable by: Corwin~
+~
 @146 = ~Corwin's Bow +4~
 @147 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
 
@@ -731,8 +726,7 @@ Requires:
  18 Strength
 
 Weight: 9
-
-Usable by: Corwin~
+~
 @148 = ~Corwin's Bow +5~
 @149 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
 
@@ -758,8 +752,7 @@ Requires:
  18 Strength
 
 Weight: 9
-
-Usable by: Corwin~
+~
 @150 = ~Master Bowyer~
 @151 = ~Elven Smith~
 @152 = ~Corwin's Armor +4~
@@ -779,8 +772,7 @@ Requires:
  5 Strength
 
 Weight: 7
-
-Usable by: Corwin~
+~
 @154=~Dagger~
 @155=~Soultaker Dagger~
 @156=~Merely having this weapon on your person makes you fills you with a sense of dread. Holding it in your hand, you can almost hear the whispers of the souls trapped within. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illuminations and still be so deathly black at its core, you do not know.
@@ -804,8 +796,7 @@ STATISTICS:
 Equipped abilities:
 – Armor Class: +1
 – Saving Throws: +1
-
-Usable by: Caelar~
+~
 @167 = ~After leaving <CHARNAME>'s company, Caelar began the long journey back to Waterdeep, determined to face justice for the crimes that she and her soldiers had committed during the crusade. Upon her arrival in the city, she was detained and interrogated by the Waterdhavian authorities, who were stunned to learn of what had transpired in Avernus. 
 
 In spite of the suffering that she'd already endured and her actions in helping <CHARNAME> defeat the Bhaalspawn terrorizing Tethyr, she was sentenced to death by hanging. On hearing this, Aun Argent pleaded with the city leaders to spare his niece. Pressured by Aun, who was seen as a hero by the citizens of Waterdeep, and fearful of an uprising by those still sympathetic to her, the leaders decided to exile her instead. Aun joined her, and the two of them lived a life of seclusion as they helped eachother overcome the mental and psychological scars left behind from their experience in Avernus. 

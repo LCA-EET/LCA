@@ -207,8 +207,8 @@ IF ~~ THEN BEGIN XA_A_13
 
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_CorwinContinue","Global",2) /* continue romance into BG2 */
-		SetGlobal("XA_CorwinRomanceActive", "Global", 2) /* continue romance into BG2 */
+		SetGlobal("XA_CorwinContinue","GLOBAL",2) /* continue romance into BG2 */
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2) /* continue romance into BG2 */
 		AddJournalEntry(@39,INFO)
 		EscapeArea()
 	~ 
@@ -375,7 +375,7 @@ IF ~~ THEN BEGIN XA_B_13
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_CorwinContinue","Global",1) /* continue friendship into BG2 */
+		SetGlobal("XA_CorwinContinue","GLOBAL",1) /* continue friendship into BG2 */
 		AddJournalEntry(@53,INFO)
 		EscapeArea()
 	~ 

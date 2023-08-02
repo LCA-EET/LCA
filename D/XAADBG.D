@@ -3256,6 +3256,18 @@ END
 IF ~~ THEN BEGIN XA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
 	
+	IF ~~ THEN REPLY @616
+	DO ~
+		SetGlobal("XA_GaveCorwinLetter", "GLOBAL", 2)
+	~
+	GOTO XA_MainMenu	
+	
+	IF ~~ THEN REPLY @617
+	DO ~
+		SetGlobal("XA_GaveCorwinLetter", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu	
+	
 	IF ~~ THEN REPLY @615
 	DO ~
 		SetGlobal("bd_CorwinRomance4","GLOBAL",1)

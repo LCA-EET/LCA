@@ -24,7 +24,7 @@ EXTEND_BOTTOM BDBELT 6
 	~ THEN 
 	DO ~
 		SetCutSceneLite(TRUE)
-		
+		SetGlobal("bd_mdd1697_plot","global",500)
 		ApplySpellRES("bdslow","bence_guard")
 		ApplySpellRES("bdslow","bdbence")
 		ActionOverride("bdbence",MoveToPoint([743.762]))
@@ -56,74 +56,18 @@ END
 
 
 APPEND BDBELT
-	IF ~
-		AreaCheck("bd0035")
-		Global("XA_Trial","GLOBAL",1)
-	~ THEN BEGIN XAA0
-		SAY @10 /* ~Corporal Bence Duncan bore witness to a disturbing incident involving the accused at Boareskyr Bridge. He is here to share his recollections.~ [BD69760] */
-		
-		IF ~~ THEN 
-		DO ~
-			SetGlobal("XA_Trial","GLOBAL",2)
-		~ 
-		EXTERN ~BDBENCE~ 4
-  
-		IF ~  
-			Gender(Player1,FEMALE)
-		~ THEN 
-		DO ~
-			SetGlobal("XA_Trial","GLOBAL",2)
-		~ 
-		EXTERN ~BDBENCE~ 5
-		
-		IF ~  
-			Global("bd_bridgefort_sabotaged","GLOBAL",1)
-		~ THEN 
-		DO ~
-			SetGlobal("XA_Trial","GLOBAL",2)
-		~ 
-		EXTERN ~BDBENCE~ 1
-		
-		IF ~  
-			Global("bd_bridgefort_saved","GLOBAL",1)
-		~ THEN 
-		DO ~
-			SetGlobal("XA_Trial","GLOBAL",2)
-		~ 
-		EXTERN ~BDBENCE~ 0
-	END
 	
 	IF ~
-		AreaCheck("bd0035")
-		Global("XA_Trial", "GLOBAL", 2)
-		!Global("XA_CorwinSpokeAtTrial", "GLOBAL", 1)
-		!Dead("Corwin")
-		OR(2)
-			Global("XA_CorwinWitnessedDuel", "GLOBAL", 1)
-			Global("XA_CorwinWitnessedDuel", "GLOBAL", 2)
+		Global("bd_mdd1697_plot","global",500)
 	~ THEN BEGIN XAA1
 		SAY @0 /* ~Now, we will hear from Captain Schael Corwin, who accompanied the accused during their assault on Dragonspear castle.~ */
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("bd_mdd1697_plot","global",15)
-			SetGlobal("XA_Trial", "GLOBAL", 2)
+			SetGlobal("bd_mdd1697_plot","global",10)
 			SetGlobal("XA_CorwinSpokeAtTrial", "GLOBAL", 1)
 		~
 		EXTERN XABDSCH2 XA_CorwinTrial_0
-	END
-	
-	IF ~  
-		AreaCheck("bd0035")
-		Global("XA_Trial", "GLOBAL", 2)
-	~ THEN BEGIN XAA2 // from:
-		SAY @9 /* ~As for you, <CHARNAME>...~ [BD70371] */
-		IF ~~ THEN 
-		DO ~
-			SetGlobal("bd_mdd1697_plot","global",15)
-			SetGlobal("XA_Trial", "GLOBAL", 3)
-		~ 
-		GOTO 8
 	END
 	
 	IF ~~ THEN BEGIN XAA3

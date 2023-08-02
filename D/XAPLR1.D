@@ -40,6 +40,30 @@ APPEND ~PLAYER1~
 		GOTO XA_Exit
 	END
 
+	IF ~
+		Global("XA_ReadCorwinLetter", "GLOBAL", 1)
+	~ THEN BEGIN XA_ReadCorwinLetter
+		SAY @93 /* ~(The letter reads as follows.)~ */
+		
+		IF ~
+			Global("XA_CorwinContinue", "GLOBAL", 2)
+		~ THEN
+		DO ~
+			SetGlobal("XA_ReadCorwinLetter", "GLOBAL", 2)
+			SetGlobal("bd_plot","global",665)
+		~
+		GOTO XA_ReadLetter_Romantic
+		
+		IF ~
+			Global("XA_CorwinContinue", "GLOBAL", 1)
+		~ THEN
+		DO ~
+			SetGlobal("XA_ReadCorwinLetter", "GLOBAL", 2)
+			SetGlobal("bd_plot","global",665)
+		~
+		GOTO XA_ReadLetter_Friend
+	END
+
 	IF ~~ THEN BEGIN XA_Debug
 		SAY @169 /* ~WARNING: The debugger is meant to be used for testing purposes only. Improper alterations to the game state can crash the game, or make it so that you cannot complete the game.~*/
 		
@@ -829,20 +853,6 @@ APPEND ~PLAYER1~
 			StartDialog("PLAYER1", Player1)
 		~
 		EXIT
-	END
-	
-	IF ~~ THEN BEGIN XA_ReadCorwinLetter
-		SAY @93 /* ~(The letter reads as follows.)~ */
-		
-		IF ~
-			Global("XA_CorwinContinue", "GLOBAL", 2)
-		~ THEN
-		GOTO XA_ReadLetter_Romantic
-		
-		IF ~
-			Global("XA_CorwinContinue", "GLOBAL", 1)
-		~ THEN
-		GOTO XA_ReadLetter_Friend
 	END
 	
 	IF ~~ THEN BEGIN XA_ReadLetter_Romantic

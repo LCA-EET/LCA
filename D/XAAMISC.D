@@ -72,6 +72,12 @@
 	BEGIN 0 END
 	~
 		GiveItemCreate("XASTDAG",LastTalkedToBy(Myself),1,0,0)
+		AddJournalEntry(@322, INFO)
+	~
+	
+	ADD_STATE_TRIGGER BDIMOEN 129
+	~
+		Global("bd_player_exiled","global",0)
 	~
 	
 	EXTEND_BOTTOM JARLAXLE 0
@@ -1385,33 +1391,29 @@ EXTEND_BOTTOM PPIRENI2 3 /* OK */
 	~ THEN GOTO XA_PPIRENI2_3_CHAIN
 END
 
-ADD_TRANS_TRIGGER BDIMOEN 89
-~
-	GlobalLT("XA_CorwinContinue", "GLOBAL", 1)
-~
-DO 2 3
 
 EXTEND_BOTTOM BDIMOEN 89 /* OK */
+	
 	IF ~
 		Global("bd_player_exiled","global",1)
 		GlobalGT("XA_CorwinContinue", "GLOBAL", 0)
-	~ THEN REPLY #239700 /* ~You and me both.~ */ 
-	DO ~
-		SetGlobal("bd_plot","global",665)
-	~ 
-	GOTO XA_CorwinLetter
-  
-	IF ~
-		Global("bd_player_exiled","global",1)
-		GlobalGT("XA_CorwinContinue", "GLOBAL", 0)
-	~ THEN REPLY #239701 /* ~You should never have doubted I would find a way to freedom. I never did.~ */ 
-	DO ~
-		SetGlobal("bd_plot","global",665)
-	~ 
-	GOTO XA_CorwinLetter
+	~ GOTO XA_CorwinLetter
+	
+	
 END
 
 APPEND BDIMOEN
+	
+	IF ~  
+		AreaCheck("bd6100")
+		GlobalLT("bd_plot","global",675)
+		Global("bd_player_exiled","global",1)
+	~ THEN BEGIN XA_EntarTrail // from:
+		SAY @323 /* ~I'm pretty sure that Entar's men aren't on our trail. Can we take a break, just for a minute?~ */
+		
+		COPY_TRANS BDIMOEN 129
+	END
+
 	IF ~~ THEN BEGIN XA_CorwinLetter
 		SAY @209 /* ~Oh! Before I forget — Captain Corwin came to see me. She asked that I give you this letter.~ */
 		
@@ -1439,20 +1441,62 @@ APPEND BDIMOEN
 		SAY @212 /* She said that she's sorry she couldn't see you, but that you'd understand once you've read the letter. */
 		
 		IF ~~ THEN REPLY @210 /* ~Thank you, Imoen. (Read the letter now).~ */
-		EXTERN PLAYER1 XA_ReadCorwinLetter
+		DO ~
+			SetGlobal("XA_ReadCorwinLetter", "GLOBAL", 1)
+			ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+		~
+		EXIT
 		
-		IF ~~ THEN REPLY @211 /* Thank you, Imoen. (Read the letter later).~ */
-		GOTO 92
+		IF ~  
+			Global("bd_player_exiled","global",1)
+		~ THEN REPLY #269868 /* ~Imoen! How did you know where to find me?~ */ 
+		DO ~
+			SetGlobal("bd_plot","global",665)
+		~ 
+		GOTO 91
+		
+		IF ~~ THEN REPLY #239701 /* ~You should never have doubted I would find a way to freedom. I never did.~ */ 
+		DO ~
+			SetGlobal("bd_plot","global",665)
+		~ GOTO 92
+  
+		IF ~  
+			Global("bd_player_exiled","global",1)
+		~ THEN REPLY #269869 /* ~I thought I was leaving the city in secret.~ */ 
+		DO ~
+			SetGlobal("bd_plot","global",665)
+		~ GOTO 91
 	END
 	
 	IF ~~ THEN BEGIN XA_GiveLetter_Corwin
 		SAY @212 /* She said that she's sorry she couldn't see you, but that you'd understand once you've read the letter. */
 		
 		IF ~~ THEN REPLY @210 /* ~Thank you, Imoen. (Read the letter now).~ */
-		EXTERN PLAYER1 XA_ReadCorwinLetter
+		DO ~
+			SetGlobal("XA_ReadCorwinLetter", "GLOBAL", 1)
+			ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+		~
+		EXIT
 		
-		IF ~~ THEN REPLY @211 /* Thank you, Imoen. (Read the letter later).~ */
-		GOTO 92
+		IF ~  
+			Global("bd_player_exiled","global",1)
+		~ THEN REPLY #269868 /* ~Imoen! How did you know where to find me?~ */ 
+		DO ~
+			SetGlobal("bd_plot","global",665)
+		~ 
+		GOTO 91
+		
+		IF ~~ THEN REPLY #239701 /* ~You should never have doubted I would find a way to freedom. I never did.~ */ 
+		DO ~
+			SetGlobal("bd_plot","global",665)
+		~ GOTO 92
+  
+		IF ~  
+			Global("bd_player_exiled","global",1)
+		~ THEN REPLY #269869 /* ~I thought I was leaving the city in secret.~ */ 
+		DO ~
+			SetGlobal("bd_plot","global",665)
+		~ GOTO 91
 	END
 END
 

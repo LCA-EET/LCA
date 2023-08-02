@@ -614,3 +614,5 @@
 @613 = ~Start End Bios (Mortal)~
 @614 = ~Add LCA Assistant ability.~
 @615 = ~Set Global("bd_CorwinRomance4","GLOBAL",1)~
+@616 = ~Set Global("XA_GaveCorwinLetter", "GLOBAL", 2)~
+@617 = ~Set Global("XA_GaveCorwinLetter", "GLOBAL", 1)~
