@@ -1682,7 +1682,7 @@ END
 				!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 				Gender(Player1, FEMALE)
 		~ THEN XACORWIB BCorwinViconia1A
-			@114 /* ~I'm watching you, drow. Don't you even think about betraying us.~ [XACORB03] */
+			#267545 /* ~Never forget that I'm watching you.~ [XACORB03] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinViconia", "GLOBAL", 3)
 				ClearActions(Myself)
@@ -2094,7 +2094,7 @@ END
 			=
 			@123 /* ~You are quite talented as well, though your skills pale to those of the great Odesseiron. (What is she after?)~ */
 			== XACORWIB
-			@110 /*  ~I can still hear you when you do that, you know.~ */
+			#258890 /*  ~I can hear you, you know. We all can~ */
 			== EDWINJ
 			@111 /* ~When I do what? (Is this some sort of Flaming Fist trick? Not likely, as the witless wench lacks the guile to fool me.)~*/
 			= @122 /* ~(Ah, of course. Her infatuation is apparent. Patience - I must not be seen as desparate.)~  */
@@ -2269,7 +2269,7 @@ END
 			== KELDORJ
 			@612 /* ~I let my anger get the better of me, I'm afraid.~ */
 			== XACORWIB
-			@613 /* ~Listen - if they suspect that we aren't drow, we're done for. There's no way we'd make it out of the Underdark alive.~ */
+			#267544 /* ~Rein it in. If you can't control yourself, you're a danger to us all.~ */
 			== KELDORJ
 			@614 /* ~I understand, Captain. I will hold my tongue while in the presence of the drow.~ */
 			== XACORWIB

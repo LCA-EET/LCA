@@ -127,7 +127,7 @@ IF ~~ THEN BEGIN XA_Flattering
 		AddJournalEntry(@15, INFO)
 		ChangeStat("Corwin", XP, 10000, ADD)
 		ChangeStat(Player1, XP, 10000, ADD)
-		RestParty()
+		//RestParty()
 	~
 	EXIT
 	
@@ -150,7 +150,7 @@ IF ~~ THEN BEGIN XA_Single3
 		AddJournalEntry(@15, INFO)
 		ChangeStat("Corwin", XP, 10000, ADD)
 		ChangeStat(Player1, XP, 10000, ADD)
-		RestParty()
+		//RestParty()
 	~
 	EXIT
 	
@@ -175,7 +175,7 @@ IF ~~ THEN BEGIN XA_TakeBreak
 		AddJournalEntry(@15, INFO)
 		ChangeStat("Corwin", XP, 10000, ADD)
 		ChangeStat(Player1, XP, 10000, ADD)
-		RestParty()
+		//RestParty()
 	~
 	EXIT
 	
@@ -198,7 +198,7 @@ IF ~~ THEN BEGIN XA_TentCS_END
 		AddJournalEntry(@15, INFO)
 		ChangeStat("Corwin", XP, 10000, ADD)
 		ChangeStat(Player1, XP, 10000, ADD)
-		RestParty()
+		//RestParty()
 	~
 	EXIT
 	

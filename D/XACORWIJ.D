@@ -5262,6 +5262,8 @@ END
 IF ~~ THEN BEGIN XA_OPT1END_InitRomance_End
 	SAY @1357 /* ~(A look of disappointment flashes across her face.)~*/
 	
+	= @1 /* ~That... That's it? That's all you wanted to say?~ [XA100001] */
+	
 	= @1358 /*~Fine. Let's go.~*/
 	
 	IF ~~ THEN
