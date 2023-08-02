@@ -1643,6 +1643,8 @@ END
 			@142 /* ~Hah, don't make me laugh. No one in their right mind would share their bed with you.~ */
 			== KORGANJ
 			@143 /*   ~Bed, floor, or field doth make no difference to I, longlimbs. You are nae ready now, but when ye are, come and see Korgan for a night you shan't forget. ~ */
+			== XACORWIB
+			#267544 /* Next time you open your mouth, close it quickly—before that sort of idiocy spills off your tongue. */
 	EXIT
 	//}
 
@@ -1889,15 +1891,7 @@ END
 			~
 			@231 /* ~I hope so. My magic pales in comparison to Irenicus.~ */
 			== XACORWIB
-			IF ~
-				Global("XA_IrenicusBeat", "GLOBAL", 1)
-			~
-			@799 /* ~His magic didn't help him in the end. You're an essential part of this team, and your contributions are valued, by all of us.~ */
-			== XACORWIB
-			IF ~
-				!Global("XA_IrenicusBeat", "GLOBAL", 1)
-			~
-			@232 /* ~Don't compare your skills to those of that madman. You're an essential part of this team, and your contributions are valued, by all of us.~~ */
+			#258937 /* You're doing a good job. Your skills are proving invaluable.~ */
 			== IMOEN2J
 			IF ~
 				!Global("XA_CorwinPromoted", "GLOBAL", 1)
@@ -2835,6 +2829,8 @@ END
 			@97 /* ~The lesson is this: war places people into untenable situations, and for that reason it must be avoided whenever possible.~ [XACORB25] */
 			== AERIEJ
 			@445 /* ~I understand. Thank you, Schael.~ */
+			== XACORWIB
+			#267546  /* That's what I like to see. Would that there were more like you. */
 	EXIT
 	//}
 
@@ -2905,6 +2901,8 @@ END
 			@97 /* ~The lesson is this: war places people into untenable situations, and for that reason it must be avoided whenever possible.~ [XACORB25] */
 			== AERIEJ
 			@445 /* ~I understand. Thank you, Schael.~ */
+			== XACORWIB
+			#267546  /* That's what I like to see. Would that there were more like you. */
 			
 	EXIT
 	//}
@@ -3214,7 +3212,7 @@ END
 			== SAREV25J
 			@881 /* ~Hah, forgive me, but there's something else that you should know. Your <PRO_MANWOMAN> loves you with every fiber of <PRO_HISHER> being... I've never felt anything quite like it, in either of my lives. But as I'm sure you know, such things are not meant to last...~ */
 			== XACORWIB
-			@884 /* ~...~ */
+			#267555 /* I disagree strenuously. Keep talking and I may start to disagree violently. */
 	EXIT
 	//}
 

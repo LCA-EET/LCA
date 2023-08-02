@@ -1,5 +1,4 @@
 IF
-	Global("XA_Override", "GLOBAL", 1)
 	!Global("XA_BD6000_DialogSwap", "GLOBAL", 0)
 	InMyArea("bdschae2")
 	InMyArea("bdbence")
