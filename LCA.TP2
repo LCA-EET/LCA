@@ -1453,7 +1453,17 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	SAY DESC @015
 	//}
 
-	//{ Corwin's Amulet 
+	//{ Corwin's Amulet (Corwin)
+	COPY ~LCA/BAM/XAAMULET.BAM~ ~override~
+	COPY ~LCA/ITM/XAAMUL1.ITM~ ~override~
+	SAY NAME1 @019
+	SAY NAME2 @019
+	SAY UNIDENTIFIED_DESC @178
+	SAY DESC @178
+	//}
+
+	//{ Corwin's Amulet  (Player)
+	COPY ~LCA/BAM/XAAMULET.BAM~ ~override~
 	COPY ~LCA/ITM/XAAMULET.ITM~ ~override~
 	SAY NAME1 @019
 	SAY NAME2 @019
