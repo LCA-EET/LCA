@@ -276,6 +276,28 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 //}
 
 //{ Modifications to Existing Areas
+	COPY_EXISTING ~BG1316.ARE~ ~override~
+	LPF fj_are_structure
+		INT_VAR
+		fj_type 		= 2
+		fj_box_left		= 533
+		fj_box_top		= 108
+		fj_box_right	= 580
+		fj_box_bottom	= 205
+		fj_cursor_idx	= 22
+		fj_alt_x		= 550
+		fj_alt_y		= 150
+		fj_flags		= 1024
+		fj_vertex_0     = 533 + (156 << 16)
+		fj_vertex_1     = 580 + (205 << 16)
+		fj_vertex_2     = 580 + (158 << 16)
+		fj_vertex_3     = 533 + (108 << 16)
+		STR_VAR
+		fj_structure_type = region
+		fj_name = ~XA1316FP~
+		fj_reg_script = ~XA1316FP~
+	END
+
 	COPY_EXISTING ~BG0706.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
@@ -1520,6 +1542,14 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	SAY NAME2 @165
 	SAY UNIDENTIFIED_DESC @166
 	SAY DESC @166
+	//}
+	
+	//{ Burned Letter
+	COPY ~LCA/ITM/XALTRBRN.ITM~ ~override~
+	SAY NAME1 @177
+	SAY NAME2 @177
+	SAY UNIDENTIFIED_DESC @176
+	SAY DESC @176
 	//}
 //}
 
