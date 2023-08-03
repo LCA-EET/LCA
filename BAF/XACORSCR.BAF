@@ -1,5 +1,45 @@
 //Note: Variable Key Max Length Appears to be 32.
 
+//{ Corwin Amulet 
+IF
+	InParty(Myself)
+	PartyHasItem("XAAMULET")	
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ActionOverride(Player1, DestroyItem("XAAMULET"))
+		ActionOverride(Player2, DestroyItem("XAAMULET"))
+		ActionOverride(Player3, DestroyItem("XAAMULET"))
+		ActionOverride(Player4, DestroyItem("XAAMULET"))
+		ActionOverride(Player5, DestroyItem("XAAMULET"))
+		ActionOverride(Player6, DestroyItem("XAAMULET"))
+		GiveItemCreate("XAAMUL2", Myself, 0,0,0)
+		XEquipItem("XAAMUL2","Corwin",SLOT_AMULET,EQUIP)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Corwin Amulet 
+IF
+	InParty(Myself)
+	PartyHasItem("XAAMUL1")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ActionOverride(Player1, DestroyItem("XAAMUL1"))
+		ActionOverride(Player2, DestroyItem("XAAMUL1"))
+		ActionOverride(Player3, DestroyItem("XAAMUL1"))
+		ActionOverride(Player4, DestroyItem("XAAMUL1"))
+		ActionOverride(Player5, DestroyItem("XAAMUL1"))
+		ActionOverride(Player6, DestroyItem("XAAMUL1"))
+		GiveItemCreate("XAAMUL2", Myself, 0,0,0)
+		XEquipItem("XAAMUL1","Corwin",SLOT_AMULET,EQUIP)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
 //{ Corwin Opinion Baseline
 IF
 	GlobalLT("XA_CorwinOpinionBaselined", "GLOBAL", 1)

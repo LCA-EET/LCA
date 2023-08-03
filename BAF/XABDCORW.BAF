@@ -1,3 +1,17 @@
+//{ Amulet
+IF
+	GlobalLT("XA_CorwinAmulet", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		GiveItemCreate("XAAMUL1", Myself, 0,0,0)
+		XEquipItem("XAAMUL1","Corwin",SLOT_AMULET,EQUIP)
+		SetGlobal("XA_CorwinAmulet", "LOCALS", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
 //{ Corwin Opinion Baseline
 IF
 	GlobalLT("XA_CorwinOpinionBaselined", "GLOBAL", 1)
