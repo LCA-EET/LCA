@@ -10,7 +10,7 @@ THEN
 		CreateCreature("BDFFMAGE",[643.670],N)
 		CreateCreature("XAENTCUT",[639.701],NW)
 		CreateCreature("XAFFWCUT",[555.613],S)
-		CreateCreature("ELTCUT",[826.546],SW)
+		CreateCreature("XAELTCUT",[826.546],SW)
 		CreateCreature("XAFFVALI", [982.448], SW)
 		CreateCreature("XAFFVAL2", [899.384], SW)
 		

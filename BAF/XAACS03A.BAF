@@ -15,6 +15,13 @@ THEN
 		ActionOverride(Player4,LeaveAreaLUA("XACS03","",[2839.875],SW))  
 		ActionOverride(Player5,LeaveAreaLUA("XACS03","",[2830.801],SW))  
 		ActionOverride(Player6,LeaveAreaLUA("XACS03","",[2871.833],SW))  
+		Wait(1)
+		ApplySpellRES("bdhide", Player1)
+		ApplySpellRES("bdhide", Player2)
+		ApplySpellRES("bdhide", Player3)
+		ApplySpellRES("bdhide", Player4)
+		ApplySpellRES("bdhide", Player5)
+		ApplySpellRES("bdhide", Player6)
 		CreateCreature("XACC2",[1044.688],2)
 		 
 		StartCutScene("XAAcs03b")

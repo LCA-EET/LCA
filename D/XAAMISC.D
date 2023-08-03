@@ -31,6 +31,39 @@
 
 //{ Altered Transitions	
 
+	ADD_TRANS_TRIGGER HABREGA 13
+	~
+		!PartyHasItem("XASTDAG")
+	~
+	
+	EXTEND_BOTTOM HABREGA 13
+		IF ~
+			PartyHasItem("XASTDAG")
+			Global("XA_HelpBrega", "GLOBAL", 1)
+		~ THEN REPLY @324 /* ~About the dagger — you said you'd send it to Baldur's Gate if I helped solve your case.~*/
+		DO ~
+			AddexperienceParty(45000)
+			ActionOverride("Faraji",DestroySelf())
+			SetGlobal("MurdersSolved","GLOBAL",1)
+			GiveGoldForce(500)
+			ReputationInc(1)
+		~
+		GOTO M30
+		
+		IF ~
+			PartyHasItem("XASTDAG")
+			!Global("XA_HelpBrega", "GLOBAL", 1)
+		~ THEN REPLY @325 /*~I need to send this dagger to Baldur's Gate. I believe it is the weapon used to murder the daughter of one of the Grand Dukes.~ */
+		DO ~
+			AddexperienceParty(45000)
+			ActionOverride("Faraji",DestroySelf())
+			SetGlobal("MurdersSolved","GLOBAL",1)
+			GiveGoldForce(500)
+			ReputationInc(1)
+		~
+		GOTO M30
+	END
+
 	ADD_TRANS_ACTION BDCAELAR
 	BEGIN 87 END
 	BEGIN 0 END

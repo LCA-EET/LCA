@@ -249,7 +249,7 @@ APPEND HABREGA
 			DestroyItem("XAORW1")
 			DestroyItem("XAORW2")
 			DestroyItem("XALDUNC")
-			SetGlobalTimer("XA_STtoBG","GLOBAL",THREE_DAYS)
+			SetGlobalTimer("XA_STtoBG","GLOBAL",TWO_DAYS)
 			AddexperienceParty(35000)
 		~
 		EXIT

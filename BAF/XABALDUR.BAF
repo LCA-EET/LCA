@@ -42,3 +42,12 @@ THEN
 	RESPONSE #100
 		ActionOverride(Player1,StartDialog("player1",Player1))
 END
+
+IF 
+	GlobalTimerExpired("XA_Ath","GLOBAL")
+	GlobalLT("XA_CheckWithBrega", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CheckWithBrega", "GLOBAL", 1)
+		ActionOverride(Player1,StartDialog("player1",Player1))
+END

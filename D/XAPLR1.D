@@ -8,6 +8,18 @@
 */
 APPEND ~PLAYER1~
 	IF ~
+		Global("XA_CheckWithBrega", "GLOBAL", 1)
+	~ THEN BEGIN XA_Reminder
+		SAY @178  /*~(It's been a few days since you sent the letter and dagger to Baldur's Gate. Perhaps it's worthwhile to visit Brega and see if there is any news concerning Skie.)~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_CheckWithBrega", "GLOBAL", 2)
+		~
+		EXIT
+	END
+
+	IF ~
 		Global("XAAssist","GLOBAL",1)
 	~ THEN BEGIN XA_Assistant
 		SAY @146 /* ~Welcome to the LCA Configuration Assistant. Select one of the options below.~*/
@@ -30,6 +42,9 @@ APPEND ~PLAYER1~
 		~
 		GOTO XA_ChangeDone
 		
+		IF ~~ THEN REPLY @177
+		GOTO XA_AdvanceTime
+		
 		IF ~~ THEN REPLY @166 /* ~Report a bug.~ */
 		GOTO XA_ReportBug
 		
@@ -38,6 +53,46 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN REPLY @160 /* ~Exit.~ */
 		GOTO XA_Exit
+	END
+
+	IF ~~ THEN BEGIN XA_AdvanceTime
+		SAY @177
+		
+		IF ~~ THEN REPLY @172
+		DO ~
+			AdvanceTime(FOUR_HOURS)
+		~
+		GOTO XA_ChangeDone
+		
+		IF ~~ THEN REPLY @173
+		DO ~
+			AdvanceTime(EIGHT_HOURS)
+		~
+		GOTO XA_ChangeDone
+		
+		IF ~~ THEN REPLY @174
+		DO ~
+			AdvanceTime(ONE_DAY)
+		~
+		GOTO XA_ChangeDone
+		
+		IF ~~ THEN REPLY @175
+		DO ~
+			AdvanceTime(TWO_DAYS)
+		~
+		GOTO XA_ChangeDone
+		
+		IF ~~ THEN REPLY @176
+		DO ~
+			AdvanceTime(THREE_DAYS)
+		~
+		GOTO XA_ChangeDone
+		
+		IF ~~ THEN REPLY @171 /*~Return to the main menu.~*/
+		GOTO XA_Assistant
+		
+		IF ~~ THEN REPLY @160 /*~Exit.~ */
+		GOTO XA_Exit 
 	END
 
 	IF ~

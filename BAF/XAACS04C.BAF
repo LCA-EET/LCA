@@ -26,7 +26,7 @@ THEN
 		DisplayStringHead("BDBELT",@5) // ~Agreed - we cannot send the Flaming Fist to Amn to apprehend one man.~
 		Wait(5)
 		DisplayStringHead("BDBELT",@6) // ~That said, we do have an opportunity to assist <CHARNAME> in his hunt for the wizard, and I think we should take it...~
-		SetGlobalTimer("XA_Ath","GLOBAL",FOUR_DAYS)
+		SetGlobalTimer("XA_Ath","GLOBAL",TWO_DAYS)
 		SetGlobal("XA_SkieSaved", "GLOBAL", 2)
 		FadeToColor([30.0],0)
 		Wait(2)
