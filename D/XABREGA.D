@@ -16,6 +16,7 @@ ADD_STATE_TRIGGER HABREGA 0
 
 APPEND_EARLY HABREGA
 	IF ~
+		GlobalLT("XA_LetterSent", "GLOBAL",1)
 		!PartyHasItem("XASTDAG")
 		OR(3)
 		PartyHasItem("XAORW1")
@@ -29,6 +30,7 @@ APPEND_EARLY HABREGA
 	END
 	
 	IF ~
+		GlobalLT("XA_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
 		PartyHasItem("XAORW1")
 	~
@@ -49,6 +51,7 @@ APPEND_EARLY HABREGA
 	END
 	
 	IF ~
+		GlobalLT("XA_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
 		PartyHasItem("XAORW2")
 	~
@@ -69,6 +72,7 @@ APPEND_EARLY HABREGA
 	END
 	
 	IF ~
+		GlobalLT("XA_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
 		PartyHasItem("XALDUNC")
 	~
@@ -93,13 +97,15 @@ END
 EXTEND_BOTTOM HABREGA 0
 	
 	IF ~
+		GlobalLT("XA_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
 		Global("XA_DaggerCHROverride", "GLOBAL", 1)
 	~
 	THEN REPLY @34 /* ~You said you'd help me to send this dagger to Baldur's Gate.~ */
 	GOTO M30
 	
-	IF ~  
+	IF ~ 
+		GlobalLT("XA_LetterSent", "GLOBAL",1)
 		!Global("XA_HelpBrega", "GLOBAL", 1)
 		PartyHasItem("XASTDAG")
 		!Global("MurdersSolved","GLOBAL",1)
@@ -108,6 +114,7 @@ EXTEND_BOTTOM HABREGA 0
 	GOTO M0
 	
 	IF ~  
+		GlobalLT("XA_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
 		Global("MurdersSolved","GLOBAL",1)
 		Global("XA_HelpBrega", "GLOBAL", 1)
@@ -119,6 +126,7 @@ EXTEND_BOTTOM HABREGA 0
 	GOTO M30
 
 	IF ~  
+		GlobalLT("XA_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
 		Global("MurdersSolved","GLOBAL",1)
 		!Global("XA_HelpBrega", "GLOBAL", 1)
@@ -130,6 +138,7 @@ EXTEND_BOTTOM HABREGA 0
 	GOTO M30 	
 	
 	IF ~  
+		GlobalLT("XA_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
 		Global("MurdersSolved","GLOBAL",1)
 		PartyHasItem("XAORW1")
@@ -138,6 +147,7 @@ EXTEND_BOTTOM HABREGA 0
 	GOTO M36a 
 	
 	IF ~  
+		GlobalLT("XA_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
 		Global("MurdersSolved","GLOBAL",1)
 		PartyHasItem("XAORW2")
@@ -146,6 +156,7 @@ EXTEND_BOTTOM HABREGA 0
 	GOTO M36b 
 	
 	IF ~  
+		GlobalLT("XA_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
 		Global("MurdersSolved","GLOBAL",1)
 		PartyHasItem("XALDUNC")

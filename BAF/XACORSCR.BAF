@@ -1,5 +1,33 @@
 //Note: Variable Key Max Length Appears to be 32.
 
+//{ Include the letter sent by the Player
+IF
+	InParty(Myself)
+	Global("XA_LetterSent", "GLOBAL", 1)
+	GlobalLT("XA_CreatedLetterInventory", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CreateItem("XAORW1",0,0,0)
+		SetGlobal("XA_CreatedLetterInventory", "LOCALS", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	Global("XA_LetterSent", "GLOBAL", 2)
+	GlobalLT("XA_CreatedLetterInventory", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CreateItem("XAORW2",0,0,0)
+		SetGlobal("XA_CreatedLetterInventory", "LOCALS", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
 //{ Corwin Amulet 
 IF
 	InParty(Myself)
