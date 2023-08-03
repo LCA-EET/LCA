@@ -1105,7 +1105,7 @@ APPEND ~PLAYER1~
 	IF ~
 		Global("XA_RohmaKidnapped", "GLOBAL", 3)
 	~ THEN BEGIN XA_Kidnap
-		SAY @9 /* ~(Quickly, you made way to the nearest temple, and brought a healer back to the home. The healer sucessfully stabilized Audamar, who was taken back to the temple for further treatment. After a short discussion, you and Schael agree that it would be best to rouse the Dukes, and to discuss the matter with them before deciding on a course of action.)~ [XANONE] */
+		SAY @9 /* ~(Quickly, you made way to the nearest temple, and brought a healer back to the home. The healer sucessfully stabilized Audamar, who was taken back to the temple for further treatment. After a short discussion, you and Schael agree that it would be best to rouse the Dukes, and to discuss the matter with them before deciding on a course of action.)~ [XA100067] */
 		
 		IF ~~ THEN
 		DO ~

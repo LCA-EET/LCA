@@ -26,8 +26,9 @@ IF ~
 	!Global("XA_CorwinReunited", "GLOBAL", 1)
 ~ THEN BEGIN XAA0
 	SAY @7 /* ~<CHARNAME>! Thank Tymora...~ */
-	=@8 /* ~I've missed you... (You share a passionate embrace and kiss)~ */
-	IF ~~ THEN REPLY @30 /* ~Schael! What are you doing here?~ */ 
+	=@8 /* ~I've missed you...~ */
+	= @60  /* ~(You share a warm and emotional embrace.)~*/
+	IF ~~ THEN REPLY @30 /* ~Schael! What're you doing here?~ */ 
 	DO ~
 		SetGlobal("XA_CorwinReunited", "GLOBAL", 1)
 		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)

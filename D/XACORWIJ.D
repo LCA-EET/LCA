@@ -2127,7 +2127,7 @@ IF ~~ THEN BEGIN XA_BGEND3_DontWantCorwin2
 END
 
 IF ~~ THEN BEGIN XA_BGEND3_CorwinSaradushChainEnd
-	SAY @1262 /* ~I appreciate that. Thank you, sir.~ */
+	SAY @1262 /* ~Thank you, sir.~ [XA100054] */
 	
 	IF ~~ THEN REPLY @1265 /* ~Schael - I really appreciate you doing this. I know it's not easy for you to be away from your family.~ */
 	DO ~
@@ -2142,7 +2142,7 @@ END
 IF ~
 	Global("XA_CorwinComplainSarevok", "GLOBAL", 2)
 ~ THEN BEGIN XA_CorwinComplainSarevokInit
-	SAY @1472 /* ~We need to talk.~ */
+	SAY @1472 /* ~We need to talk.~ [BD54471]*/
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -2258,17 +2258,11 @@ IF ~~ THEN BEGIN XA_CorwinComplainSarevok_2B1_END
 END
 
 IF ~~ THEN BEGIN XA_CorwinComplainSarevok_2B2_END
-	SAY @1484 /* ~Right. You can count on me.~*/
+	SAY @1492 /* ~Right. You can count on me.~*/
 	
-	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @1488 /* ~I know I can. Let's go, love.~*/
+	IF ~~ THEN
 	EXIT 
 	
-	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @1489 /* ~I know I can. Let's go, my friend.~ */
-	EXIT	
 END
 
 //}
@@ -2403,7 +2397,7 @@ IF ~~ THEN BEGIN XA_BGEND4_5
 END
 
 IF ~~ THEN BEGIN XA_SaradushDiscussion7
-	SAY @1252 /* ~Thank you, sir.~ */
+	SAY @1262 /* ~Thank you, sir.~ */
 	
 	IF ~~ THEN
 	DO ~
@@ -2450,7 +2444,9 @@ IF ~
 END
 
 IF ~~ THEN XA_CorwinBenoSTChainEnd
-	SAY @1188 /* ~It's over... I hope we've done the right thing.~ */
+	SAY @1248 /*  ~It's done. Thank the gods.~ [BD39327] */
+	
+	= @1249 /* ~I just hope we've done the right thing.~*/
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -2464,7 +2460,7 @@ IF ~~ THEN XA_CorwinBenoSTChainEnd
 END
 
 IF ~~ THEN XA_CorwinBenoSTChainEndCS
-	SAY @1191 /* ~Right. Let's go.~ */
+	SAY @1191 /* ~Right. Let's go.~ [BD58846]*/
 	
 	IF ~~ THEN
 	DO ~
@@ -2501,7 +2497,7 @@ IF ~
 END
 
 IF ~~ THEN XA_CorwinKillBenoChainEnd
-	SAY @1194 /* ~It's over... ~ */
+	SAY  @1248 /* ~It's done. Thank the gods.~ [BD39327] */
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -2565,7 +2561,7 @@ IF ~~ THEN BEGIN XA_IllaseraDead3
 END
 
 IF ~~ THEN BEGIN XA_IllaseraDead4
-	SAY @1150 /* ~What is it?~ */
+	SAY @1150 /* ~What is it?~ [XA100030] */
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -2681,7 +2677,7 @@ IF ~~ THEN BEGIN XA_IllaseraDead_BenoSTCorwin2
 END
 
 IF ~~ THEN BEGIN XA_IllaseraDead_BenoSTCorwin
-	SAY @1172 /* ~No... You've been forced into enough killing already. Hand me the dagger.~ */
+	SAY @1172 /* ~No... You've been forced into enough killing already. Hand me the dagger.~ [XA100070]*/
 	= @1174 /* ~(You hand her the dagger.)~ */
 	IF ~~ THEN GOTO XA_IllaseraDead_CorwilKillWithST
 END
@@ -7490,7 +7486,7 @@ END
 IF ~~ THEN BEGIN XAA77
 	SAY @238 /* ~You know, I heard you cheering for me, love. It meant a lot.~ */
 	
-	= @195
+	= @195 /* ~(You share a warm embrace.)~ */
 	
 	IF ~~ THEN REPLY @239 /* ~Let me see that trophy.~ */
 	GOTO XAA78
@@ -7525,7 +7521,14 @@ IF ~~ THEN BEGIN XAA80
 END
 
 IF ~~ THEN BEGIN XAA80A
-	SAY @244 /* ~Thanks. I think Rohma might appreciate it more... I can't wait to see them again. Let's get going, love.~ */
+	SAY @237  /* ~I think Rohma will appreciate it more... gods, I miss them...~*/
+	
+	IF ~~ THEN 
+	GOTO XAA80C
+END
+
+IF ~~ THEN BEGIN XAA80C
+	SAY @244  /* Well, that was an entertaining distraction, but it WAS a distraction. We have work to do. Let's go, love.*/
 	
 	IF ~~ THEN 
 	DO ~
@@ -7539,15 +7542,8 @@ END
 IF ~~ THEN BEGIN XAA80B
 	SAY @1467 /* ~(She lets out a hearty laugh.)~*/
 	
-	= @1468 /* ~Rohma will still appreciate it, I'm sure. Gods, I can't wait to see them again... Come, love. Duty calls.~ */
-	
 	IF ~~ THEN 
-	DO ~
-		GiveGoldForce(2500)
-		AddExperienceParty(35000)
-		SetGlobal("XA_TM_ArcheryChallenge", "GLOBAL", 3)
-	~
-	EXIT
+	GOTO XAA80C
 END
 
 IF ~~ THEN BEGIN XA_HELLJON_7A
@@ -9087,7 +9083,8 @@ CHAIN
 		= @256 /* ~(He points at Corwin.)~ */
 		= @258 /* ~Who are you, and what is your business here?~ */
 		== XACORWIJ
-		@465 /* ~I am Captain Schael Corwin of the Flaming Fist. I'm travelling with <CHARNAME> on a special assignment to apprehend a wizard, Jon Irenicus.~ */
+		@465 /* ~I am Captain Schael Corwin of the Flaming Fist. [XA100005]*/
+		= @464  /* ~I'm travelling with <CHARNAME> on a special assignment to apprehend a wizard, Jon Irenicus.~*/
 		== C6DRIZZ1
 		@466 /* ~How do I know you aren't an impostor, as my friend suggests? I know a bit of the Flaming Fist and its reporting structure. Tell me, who are your commanding officers? Answer carefully.~ */
 		== XACORWIJ

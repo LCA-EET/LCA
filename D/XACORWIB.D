@@ -307,7 +307,7 @@ END
 
 	CHAIN
 		IF ~~ THEN MAZZYJ XA_TMSignup
-			@539 /* ~Yes, that's right. The signup table is in the southeast of the city, if I remember correctly. Next time we are in the area, we can signup.~ [XANONE]*/
+			@539 /* ~Yes, that's right. The signup table is in the southeast of the city, if I remember correctly. Next time we are in the area, we can signup.~ [XA100067]*/
 			DO ~
 				AddJournalEntry(@540, INFO)
 			~
@@ -505,7 +505,7 @@ END
 			!Global("XA_CorwinPromoted", "GLOBAL", 1)
 		~
 		THEN HAERDAJ BCorwinHaerDalis1_C
-			@564 /* ~A moment of your time, Captain?~ [XANONE]*/
+			@564 /* ~A moment of your time, Captain?~ [XA100067]*/
 	END XACORWIB BCorwinHaerDalis1
 	//}
 
@@ -516,7 +516,7 @@ END
 			Global("XA_CorwinPromoted", "GLOBAL", 1)
 		~
 		THEN HAERDAJ BCorwinHaerDalis1_M
-			@742 /* ~A moment of your time, Major?~ [XANONE]*/
+			@742 /* ~A moment of your time, Major?~ [XA100067]*/
 	END XACORWIB BCorwinHaerDalis1
 	//}
 
@@ -751,7 +751,7 @@ END
 			Global("XA_Banter_CorwinMinsc", "GLOBAL", 4)
 		~
 		THEN XACORWIB BCorwinMinsc2_M
-			@325 /* ~Ugh, not now Minsc. I'm busy.~ [XACORB43] */
+			@325 /* ~Oh let's not, please.~ [BD63913] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinMinsc", "GLOBAL", 5)
 				ClearActions(Myself)
@@ -853,7 +853,7 @@ END
 			== RASAADJ
 			@289 /* ~Please Captain. Let me help you.~*/
 			== XACORWIB
-			@290 /* ~Not right now. We have work to do. Let's get moving.~ */
+			@290 /* ~No, please don't. I mean... I'm fine. Thank you.~ [BD58946] */
 			== RASAADJ
 			@291 /* ~Very well. When you have the time, come and see me.~ */
 	EXIT
@@ -928,7 +928,7 @@ END
 			== RASAADJ
 			@300 /* ~Yes, just like that. ~ */
 			== XACORWIB
-			@301 /* ~Thank you Rasaad... I'll be sure to practice that exercise.~ */
+			@301 /* ~Thank you. I appreciate this. Let's go.~ [BD58487] */
 			== RASAADJ
 			IF ~
 				!Global("XA_CorwinPromoted", "GLOBAL", 1)
@@ -1002,7 +1002,7 @@ END
 				!IsValidForPartyDialogue("Valygar")
 		~
 		THEN XACORWIB BCorwinRasaad4A
-			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XANONE] */
+			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XA100067] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinRasaad", "GLOBAL", 9)
 				ClearActions(Myself)
@@ -1038,7 +1038,7 @@ END
 				!IsValidForPartyDialogue("Valygar")
 		~
 		THEN XACORWIB BCorwinRasaad4B
-			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XANONE] */
+			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XA100067] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinRasaad", "GLOBAL", 9)
 				ClearActions(Myself)
@@ -1082,7 +1082,7 @@ END
 				!IsValidForPartyDialogue("Valygar")
 		~
 		THEN XACORWIB BCorwinRasaad4B
-			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XANONE] */
+			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XA100067] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinRasaad", "GLOBAL", 9)
 				ClearActions(Myself)
@@ -1126,7 +1126,7 @@ END
 				!IsValidForPartyDialogue("Valygar")
 		~
 		THEN XACORWIB BCorwinRasaad4C
-			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XANONE] */
+			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XA100067] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinRasaad", "GLOBAL", 9)
 				ClearActions(Myself)
@@ -1177,7 +1177,7 @@ END
 			IsValidForPartyDialogue("Valygar")
 		~
 		THEN XACORWIB BCorwinRasaad4D
-			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XANONE] */
+			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XA100067] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinRasaad", "GLOBAL", 9)
 				ClearActions(Myself)
@@ -1457,7 +1457,7 @@ END
 			@576 /* ~For the time being, I'd like to remain part of this group.~*/
 			== XACORWIB
 			@577 /* ~Understandable. When this business with Irenicus is over, I'd like for you to consider coming back to Baldur's Gate with me.~*/
-			= @578 /* ~The Flaming Fist is always looking for right-minded individuals of your caliber to join the team.~*/
+			= @578 /* ~The Flaming Fist could offer much to a warrior of your caliber.~ [BD37019]*/
 			== VALYGARJ
 			@579 /* ~I appreciate the offer, though. I must confess however that I'd be, ah, out of my element in the city.~*/
 			== XACORWIB
@@ -1542,7 +1542,7 @@ END
 		IF ~
 			Global("XA_Banter_CorwinNeera", "GLOBAL", 4)
 		~ THEN XACORWIB BCorwinNeera1
-			@502 /* ~You know, Neera, Imoen here studied under one of the finest mages in Baldur's Gate.~ [XANONE] */
+			@502 /* ~You know, Neera, Imoen here studied under one of the finest mages in Baldur's Gate.~ [XA100067] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinNeera", "GLOBAL", 5)
 				ClearActions(Myself)
@@ -1730,7 +1730,7 @@ END
 			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 			Gender(Player1, MALE)
 		~ THEN XACORWIB BCorwinViconia1B
-			@114 /* ~I'm watching you, drow. Don't you even think about betraying us.~ [XACORB03] */
+			@114 /* ~Never forget that I'm watching you.~ [BD67545] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinViconia", "GLOBAL", 3)
 				ClearActions(Myself)
@@ -1825,7 +1825,7 @@ END
 			== VICONIJ
 			@427 /* ~Ah, the surface. Where bigoted fools attack others based soley on their appearance... like your precious Flaming Fist.~ */
 			== XACORWIB
-			@428 /* ~This must be what you wanted to get off your chest earlier.~ */
+			@428 /* ~What are you playing at here, drow?~ [BD58878] */
 			=
 			@429 /* ~Let me remind you, drow, that your kind has a well-earned reputation for violence and treachery. The Flaming Fist works to protect the innocent all threats, including those posed by the drow.~  */
 			== VICONIJ
@@ -1891,7 +1891,7 @@ END
 			~
 			@231 /* ~I hope so. My magic pales in comparison to Irenicus.~ */
 			== XACORWIB
-			#258937 /* You're doing a good job. Your skills are proving invaluable.~ */
+			@237 /* You're doing a good job. Your skills are proving invaluable.~ */
 			== IMOEN2J
 			IF ~
 				!Global("XA_CorwinPromoted", "GLOBAL", 1)
@@ -1915,7 +1915,7 @@ END
 			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 			Global("XA_CorwinImoenSoulTalk", "GLOBAL", 1)
 		~ THEN XACORWIB BCorwinImoenSoulA
-			@565 /*  ~Imoen, I can't tell you how relieved I am that you're better.~ [XANONE] */
+			@565 /*  ~Imoen, I can't tell you how relieved I am that you're better.~  */
 			DO ~
 				SetGlobal("XA_CorwinImoenSoulTalk", "GLOBAL", 2)
 			~
@@ -1937,7 +1937,7 @@ END
 			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 			Global("XA_CorwinImoenSoulTalk", "GLOBAL", 1)
 		~ THEN XACORWIB BCorwinImoenSoulB
-			@565 /*  ~Imoen, I can't tell you how relieved I am that you're better.~ [XANONE] */
+			@565 /*  ~Imoen, I can't tell you how relieved I am that you're better.~ [XA100067] */
 			DO ~
 				SetGlobal("XA_CorwinImoenSoulTalk", "GLOBAL", 2)
 			~
@@ -1991,7 +1991,7 @@ END
 			Global("XA_Banter_CorwinImoen", "GLOBAL", 4)
 			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN XACORWIB BCorwinImoen2A
-			@448 /* ~Imoen, could I ask you something?~ [XANONE] */
+			@448 /* ~Imoen, could I ask you something?~ [XA100067] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinImoen", "GLOBAL", 5)
 				ClearActions(Myself)
@@ -2088,7 +2088,7 @@ END
 			=
 			@123 /* ~You are quite talented as well, though your skills pale to those of the great Odesseiron. (What is she after?)~ */
 			== XACORWIB
-			#258890 /*  ~I can hear you, you know. We all can~ */
+			@110 /*  ~I can hear you, you know. We all can~ [BD58890]*/
 			== EDWINJ
 			@111 /* ~When I do what? (Is this some sort of Flaming Fist trick? Not likely, as the witless wench lacks the guile to fool me.)~*/
 			= @122 /* ~(Ah, of course. Her infatuation is apparent. Patience - I must not be seen as desparate.)~  */
@@ -2220,7 +2220,7 @@ END
 		IF ~
 			Global("XA_Banter_CorwinJan", "GLOBAL", 4)
 		~ THEN XACORWIB BCorwinJan2
-			@514 /* ~Jan? About the turnip stew recipe - ~ [XANONE] */
+			@514 /* ~Jan? About the turnip stew recipe - ~ [XA100067] */
 			DO ~
 				SetGlobal("XA_BackToBG_Jan", "GLOBAL", 1)
 				SetGlobal("XA_Banter_CorwinJan", "GLOBAL", 5)
@@ -2238,8 +2238,7 @@ END
 			== JANJ
 			@84 /* ~Nonsense! A beautiful woman such as yourself selling my turnips would do wonders for my business.~ */
 			== XACORWIB
-			@85 /* ~Thanks? I think? */
-			=@86 /* ~We can talk about this another time. Let's keep moving.~ [XACORB24]*/
+			@85 /*  ~This isn't the time. I have a mission. That's all that matters. So let's go.~ [BD54384]*/
 	EXIT
 	//}
 	
@@ -2276,7 +2275,7 @@ END
 		IF ~
 			Global("XA_Banter_CorwinKeldornOpt1", "GLOBAL", 2)
 		~ THEN XACORWIB BCorwinKeldorn1
-			@473 /* ~Yes, Keldorn?~ [XANONE]*/
+			@473 /* ~Yes, Keldorn?~ [XA100067]*/
 			DO ~
 				SetGlobal("XA_Banter_CorwinKeldornOpt1", "GLOBAL", 3)
 				ClearActions(Myself)
@@ -2364,12 +2363,18 @@ END
 			== KELDORJ
 			@67 /* ~And where is your husband? Is he not helping to raise her?~  */
 			== XACORWIB
-			@68 /* ~I'm not married - her father has never been a part of her life, which in this case is a good thing. ~ */
+			@51 /* ~I'm not married - her father has never been a part of her life, which in this case is a good thing. ~ */
+			== KELDORJ
+			@52  /* ~I'm afraid I don't understand.~*/
+			== XACORWIB
+			@53 /* ~He was there when she was conceived. He was never her father. When I told him about Rohma...~ [BD52089]*/
 			= @59 /* ~You know, it's ironic that you'd ask about him. When Rohma was born, he wanted me to leave her at a temple of the Radiant Heart. Could you imagine? Giving up my baby like that? That was when I knew that it would never work between us.~ */
 			== KELDORJ
 			@69 /* ~I see... it's important for a child's father, or a father figure, to be a part of a child's life.~  */
 			== XACORWIB
-			@70 /* ~I agree... my father has had a tremendous impact on my life, and my daughter's. I hope I've found someone to fill that need for Rohma... */
+			@70 /* ~I agree... my father has had a tremendous impact on my life, and my daughter's... */
+			=
+			@5 /*~I hope to one day share the honor of being her parent with the right person... it's a big job.~ [XA100024] */
 			=
 			@800 /* ~(She shoots a quick glance in your direction.)~*/
 			=
@@ -2413,7 +2418,9 @@ END
 			== KELDORJ
 			@69 /* ~I see... it's important for a child's father, or a father figure, to be a part of a child's life.~  */
 			== XACORWIB
-			@73 /* ~I agree... my father has had a tremendous impact on my life, and the life of my daughter. I hope that one day I'll find someone to fill that need for Rohma...~ [XACORB10]   */
+			@70 /*~I agree... my father's done so much for me, and for my daughter...~  */
+			=
+			@5  /* ~I hope to one day share the honor of being her parent with the right person... it's a big job.~ [XA100024] */
 			=
 			@71 /* ~I appreciate the advice - thank you, Keldorn.~ */
 			== KELDORJ
@@ -2456,27 +2463,17 @@ END
 			=
 			@168 /* ~I have much to learn from your example.~ */
 			== XACORWIB
-			@169 /* ~That's kind of you to say... thank you. I too should apologize.~  */
-			== ANOMENJ
-			@176 /* = ~For what?~ */
-			== XACORWIB
-			@170 /* = ~My family is not wealthy. As much as I want to be home with my father and daughter, I need to work to support them.~ */
+			@169 /* ~That's kind of you to say  */
+			=
+			@170 /* = ~I too must aplogize. My family isn't wealthy. As much as I want to be home with my father and daughter, I need to work to support them.~ */
 			=
 			@171 /* = ~I have certain... pre-conceptions about people who come from wealth. It was unfair of me to apply them to you.~ */
 			== ANOMENJ
 			@172 /* = ~I understand. In Athkatla especially, there are many families that have acquired their wealth through... less than honorable means. I assure you, however, that my family is not one of them.~ */
+			=
+			@173 /* ~It seems that we would both do well to, as they say, avoid judging a book by its cover.~  */
 			== XACORWIB
-			@173 /* @173 = ~It seems that we would both do well to, as they say, avoid judging a book by its cover.~  */
-			== ANOMENJ
-			IF ~
-				!Global("XA_CorwinPromoted", "GLOBAL", 1)
-			~
-			@175 /* ~Agreed, Captain.~ */
-			== ANOMENJ
-			IF ~
-				Global("XA_CorwinPromoted", "GLOBAL", 1)
-			~
-			@769 /* ~Agreed, Major.~ */
+			@177  /* ~Aye. That would be for the best, I think.~ [BD54407]*/
 	EXIT
 	//}
 
@@ -2561,7 +2558,7 @@ END
 		IF ~
 			Global("XA_Banter_CorwinJaheira", "GLOBAL", 5)
 		~ THEN XACORWIB BCorwinJaheira1
-			@30 /* ~(She adjusts the string on her bow)~ [XANONE]   */
+			@30 /* ~(She adjusts the string on her bow)~ [XA100067]   */
 			DO ~
 				SetGlobal("XA_Banter_CorwinJaheira", "GLOBAL", 6)
 				ClearActions(Myself)
@@ -2701,7 +2698,7 @@ END
 		IF ~
 			Global("XA_Banter_CorwinAerie", "GLOBAL", 5)
 		~ THEN XACORWIB BCorwinAerie2
-			@124 /* ~This damn thing...~ [XACORB39] */
+			@124 /*  ~Damn it!~ [XA100035]  */
 			DO ~
 				SetGlobal("XA_Banter_CorwinAerie", "GLOBAL", 6)
 				ClearActions(Myself)
@@ -2803,7 +2800,7 @@ END
 			Global("XA_Banter_CorwinAerie", "GLOBAL", 9)
 			Global("bd_asha_duel","global",3) //CHARNAME dueled Ashatiel honorably
 		~ THEN AERIEJ BCorwinAerie4A
-			@441 /* ~Schael? Do you have time now to finish the story a-about Ashatiel?~ [XANONE] */
+			@441 /* ~Schael? Do you have time now to finish the story a-about Ashatiel?~ [XA100067] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinAerie", "GLOBAL", 10)
 				ClearActions(Myself)
@@ -2877,7 +2874,7 @@ END
 			Global("XA_Banter_CorwinAerie", "GLOBAL", 9)
 			!Global("bd_asha_duel","global",3) //CHARNAME refused to duel Ashatiel, or cheated
 		~ THEN AERIEJ BCorwinAerie4B
-			@441 /* ~Schael? Do you have time now to finish the story a-about Ashatiel?~ [XANONE] */
+			@441 /* ~Schael? Do you have time now to finish the story a-about Ashatiel?~ [XA100067] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinAerie", "GLOBAL", 10)
 				ClearActions(Myself)
