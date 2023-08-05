@@ -30,18 +30,6 @@ APPEND ~PLAYER1~
 		IF ~~ THEN REPLY @148 /* ~Adjust Caelar banter timers.~*/
 		GOTO XA_AdjustCaelarBanterTimer
 		
-		IF ~~ THEN REPLY @163 /* ~Allow Corwin / Caelar banters while in a dungeon.~*/
-		DO ~
-			SetGlobal("XA_BanterInDungeon", "GLOBAL", 1)
-		~
-		GOTO XA_ChangeDone
-		
-		IF ~~ THEN REPLY @164 /* ~Disallow Corwin / Caelar banters while in a dungeon. (Default)~ */
-		DO ~
-			SetGlobal("XA_BanterInDungeon", "GLOBAL", 0)
-		~
-		GOTO XA_ChangeDone
-		
 		IF ~~ THEN REPLY @177
 		GOTO XA_AdvanceTime
 		
@@ -189,31 +177,38 @@ APPEND ~PLAYER1~
 		~
 		GOTO XA_ChangeDone
 		
-		IF ~~ THEN REPLY @154 /*~Sixteen hour.~ */
+		IF ~~ THEN REPLY @106 /*~Twelve Hours.~ */
 		DO ~
 			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
 			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 5) 
 		~
 		GOTO XA_ChangeDone
 		
-		IF ~~ THEN REPLY @155 /*~One day.~ */
+		IF ~~ THEN REPLY @154 /*~Sixteen hour.~ */
 		DO ~
 			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
 			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 6) 
 		~
 		GOTO XA_ChangeDone
 		
-		IF ~~ THEN REPLY @156 /*~Two days.~ */
+		IF ~~ THEN REPLY @155 /*~One day.~ */
 		DO ~
 			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
 			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 7) 
 		~
 		GOTO XA_ChangeDone
 		
-		IF ~~ THEN REPLY @162 /*~Three days.~ */
+		IF ~~ THEN REPLY @156 /*~Two days.~ */
 		DO ~
 			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
 			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 8) 
+		~
+		GOTO XA_ChangeDone
+		
+		IF ~~ THEN REPLY @162 /*~Three days.~ */
+		DO ~
+			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 9) 
 		~
 		GOTO XA_ChangeDone
 		

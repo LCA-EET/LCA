@@ -67,7 +67,7 @@ END
 IF ~
 	Global("XA_Banter_CorwinMazzy", "GLOBAL", 4)
 ~ THEN BEGIN XA_Banter_CorwinMazzy2_Init
-	SAY @528 /* ~Mazzy, I'm curious as to why you chose to specialize in the crossbow instead of the longbow.~ */
+	SAY @528 /* ~Mazzy, I'm curious as to why you chose to specialize in the crossbow instead of the longbow.~ [XA100071]*/
 	
 	IF ~~ THEN 
 	DO ~
@@ -89,7 +89,7 @@ IF ~~ THEN BEGIN XA_CorwinWonCompetition
 END
 
 IF ~~ THEN BEGIN BCorwinMazzy2_End
-	SAY @538 /* ~Is that so? Yes, I'm interested.~ */
+	SAY @533 /* ~Is that so? Yes, I'm interested, so long as it's not too much of a diversion.~*/ 
 	
 	IF ~~ THEN REPLY @557 /* ~Mazzy, you said the competition is held in Trademeet?~ */
 	EXTERN MAZZYJ XA_TMSignup
@@ -212,7 +212,7 @@ END
 			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		THEN XACORWIB BCorwinMazzy1A
-			@526 /* ~Mazzy? What do you need?~ */
+			@526 /* ~Mazzy? What do you need?~ [BD56086]*/
 			DO ~
 				SetGlobal("XA_Banter_CorwinMazzy", "GLOBAL", 3)
 			~
@@ -250,7 +250,7 @@ END
 			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		THEN XACORWIB BCorwinMazzy1B
-			@526 /* ~Mazzy? What do you need?~ */
+			@526 /* ~Mazzy? What do you need?~ [BD56086]*/
 			DO ~
 				SetGlobal("XA_Banter_CorwinMazzy", "GLOBAL", 3)
 			~
@@ -307,12 +307,12 @@ END
 
 	CHAIN
 		IF ~~ THEN MAZZYJ XA_TMSignup
-			@539 /* ~Yes, that's right. The signup table is in the southeast of the city, if I remember correctly. Next time we are in the area, we can signup.~ [XA100067]*/
+			@539 /* ~Yes, that's right. The signup table is in the southeast of the city, if I remember correctly. Next time we are in the area, we can signup.~*/
 			DO ~
 				AddJournalEntry(@540, INFO)
 			~
 			== XACORWIB
-			@558 /* ~Sounds good. Let's get going, we have work to do.~ */
+			@538 /* ~Now that's a plan. Let's go.~ [BD50018]*/
 	EXIT
 
 	CHAIN
@@ -339,7 +339,7 @@ END
 			GlobalGT("XA_ReturnToBG", "GLOBAL", 0)
 		~
 		THEN XACORWIB BCorwinNalia1_RBG
-			@375 /* ~Nalia - you seem agitated. What's bothering you?~ [XACORB48] */
+			@375 /* ~Nalia — you seem agitated. What's bothering you?~ [XA100040] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinNalia", "GLOBAL", 3)
 				ClearActions(Myself)
@@ -359,7 +359,7 @@ END
 			GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 		~
 		THEN XACORWIB BCorwinNalia1
-			@375 /* ~Nalia - you seem agitated. What's bothering you?~ [XACORB48] */
+			@375 /* ~~Nalia — you seem agitated. What's bothering you?~ [XA100040] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinNalia", "GLOBAL", 3)
 				ClearActions(Myself)
@@ -385,7 +385,7 @@ END
 	
 	CHAIN
 		IF ~~ THEN XACORWIB BCorwinNalia1_END
-			@379 /* ~Human nature, I suppose. Most people are only concerned with the well-being of their loved ones.~ */
+			@379 /* ~I suppose it's human nature. Most people are only concerned with the well-being of their loved ones.~ [XA100041] */
 			= 
 			@380 /* They don't have the time, energy, or willingness to risk themselves to change the status quo.~*/
 			== NALIAJ
@@ -399,7 +399,7 @@ END
 			Global("XA_Banter_CorwinNalia", "GLOBAL", 4)
 		~
 		THEN XACORWIB BCorwinNalia2
-			@384 /* ~Sure, Nalia. What's on your mind?~ [XACORB40] */
+			@384 /* ~Sure, Nalia. What's on your mind?~ [XA100026] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinNalia", "GLOBAL", 5)
 				ClearActions(Myself)
@@ -412,7 +412,7 @@ END
 			=
 			@387 /* ~... Like yourself and the Flaming Fist, I'm afraid.~ */
 			== XACORWIB
-			@388 /*  ~Our society has it's flaws to be sure, but people need order and safety as much as they do food and shelter. The way of things must be preserved. The alternative is chaos.~  */
+			@388 /*  ~Our society has it's flaws to be sure, but people need order and safety as much as they do food and shelter. The way of things must be preserved. The alternative is chaos.~ [XA100042] */
 			== NALIAJ
 			@389 /* ~There has to be a better way.~ */
 			== XACORWIB 
@@ -429,7 +429,7 @@ END
 			GlobalGT("XA_ReturnToBG", "GLOBAL", 0)
 		~
 		THEN XACORWIB BCorwinNalia3_RBG
-			@560 /* ~Nalia? Something bothering you?~*/
+			@560 /* ~Nalia? You alright?~ [BD64597]*/
 			DO ~
 				SetGlobal("XA_Banter_CorwinNalia", "GLOBAL", 7)
 				ClearActions(Myself)
@@ -452,7 +452,7 @@ END
 			== NALIAJ
 			@790 /*~That... that's actually helpful advice. Thank you, Schael.~ */
 			== XACORWIB
-			@791
+			@791 /*~Anytime, Nalia.~*/
 	EXIT
 	//}
 
@@ -463,7 +463,7 @@ END
 			GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 		~
 		THEN XACORWIB BCorwinNalia3
-			@560 /* ~Nalia? Something bothering you?~*/
+			@560 /* ~Nalia? You alright?~ [BD64597]*/
 			DO ~
 				SetGlobal("XA_Banter_CorwinNalia", "GLOBAL", 7)
 				ClearActions(Myself)
@@ -522,7 +522,7 @@ END
 
 	//{ End of B-16, B-17
 	CHAIN XACORWIB BCorwinHaerDalis1
-		@363 /* ~Sure - what do you need?~ [XACORB47] */
+		@363 /* ~Sure. What do you need?~ [BD56086]*/
 		DO ~
 			SetGlobal("XA_Banter_CorwinHaerDalis", "GLOBAL", 3)
 			ClearActions(Myself)
@@ -533,11 +533,15 @@ END
 		=
 		@357 /* ~They sing a song of death and destruction that belies the lovely countenance of the one who set them aflight.~~*/
 		== XACORWIB
+		@7 /*~Flatterer...~ [XA100073]*/
+		=
 		@358 /* ~You certainly have a talent for making the mundane seem dramatic.~ [XACORB61]*/
 		== HAERDAJ
 		@359 /*  ~There is nothing mundane about you - a bird of prey, as deadly as she is beautiful.~*/
 		== XACORWIB
-		@360 /* ~You've very kind - really. But playwrights and poets are not my type.~*/
+		@356 /* ~That's kind of you to say...~ [BD67552] */
+		=
+		@360 /* ~... But you should know that playwrights and poets aren't my type.~*/
 		== HAERDAJ
 		@361 /* ~Ah, but I am no ordinary playwright, just as you are no ordinary raven. Together, we could soar to heights that neither of us thought possible.~ */
 		= 
@@ -557,7 +561,7 @@ END
 				Global("HaerDalisRomanceActive","GLOBAL",1)
 		~
 		THEN XACORWIB BCorwinHaerDalis2
-			@366 /* ~Haer'Dalis? What is it?~ [XACORB56] */
+			@366 /* ~Haer'Dalis? What is it?~ [XA100039] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinHaerDalis", "GLOBAL", 5)
 				ClearActions(Myself)
@@ -568,14 +572,14 @@ END
 			== XACORWIB
 			@368 /* ~I have. My goal is to complete my mission, then return home, with <CHARNAME>, to my daughter and father.~*/
 			=
-			@370 /* ~As interesting as your travels sound, my loved ones are here, in this plane, and I won't abandon them.~ [XACORB62]*/
+			@370 /* ~As interesting as your travels sound, my loved ones are here, in this plane, and I won't abandon them.~*/
 			=
 			@371 /* ~Besides, I see how you and Aerie look at eachother. I wouldn't want to stand in the way of a relationship between the two of you.~ */
 			== HAERDAJ
 			@372 /*   ~Ah... I see. You'd have made a wondrous addition to my flock, but I understand the desire to return to the nest you have created for you and your loved ones.~*/
 			= @373 /* ~Let us enjoy then our time together, before our flights diverge for the last time, my raven.~ */
 			== XACORWIB
-			@374 /*  ~Gladly, friend. Let's go.~ */
+			@374 /*  Gladly, friend. Let's go.~ [XA100072] */
 	EXIT
 	//}
 
@@ -604,7 +608,7 @@ END
 			@372 /*   ~Ah... I see. You'd have made a wondrous addition to my flock, but I understand the desire to return to the nest you have created for you and your loved ones.~*/
 			= @373 /* ~Let us enjoy then our time together, before our flights diverge for the last time, my raven.~ */
 			== XACORWIB
-			@374 /*  ~Gladly, friend. Let's go.~ */
+			@374 /*  ~Gladly, friend. Let's go.~ [XA100072] */
 	EXIT
 	//}
 
@@ -636,7 +640,7 @@ END
 			@372 /*   ~Ah... I see. You'd have made a wondrous addition to my flock, but I understand the desire to return to the nest you have created for you and your loved ones.~*/
 			= @373 /* ~Let us enjoy then our time together, before our flights diverge for the last time, my raven.~ */
 			== XACORWIB
-			@374 /*  ~Gladly, friend. Let's go.~ */
+			@374 /*  ~Gladly, friend. Let's go.~ [XA100072]*/
 	EXIT
 	//}
 
@@ -1362,7 +1366,7 @@ END
 			!InParty("Minsc")
 		~
 		THEN XACORWIB BCorwinValygar1A
-			@245 /* ~Valygar. It's good to have another Ranger on the team.~ [XACORB34] */
+			@245 /* ~Valygar. It's good to have another Ranger on the team.~ [XA100033] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinValygar", "GLOBAL", 3)
 				ClearActions(Myself)
@@ -1399,7 +1403,7 @@ END
 			InParty("Minsc")
 		~
 		THEN XACORWIB BCorwinValygar1B
-			@245 /* ~Valygar. It's good to have another Ranger on the team.~ [XACORB34] */
+			@245 /* ~Valygar. It's good to have another Ranger on the team.~ [XA100033]*/
 			DO ~
 				SetGlobal("XA_Banter_CorwinValygar", "GLOBAL", 3)
 				ClearActions(Myself)
@@ -1474,7 +1478,7 @@ END
 			~
 			@757 /* ~I am intrigued. Give me some time to consider your offer, Major.~*/
 			== XACORWIB
-			@583 /* Of course. Let's move out.~*/
+			@542 /* ~Right. Let's go.~ [BD58846]*/
 			
 	EXIT
 	//}
@@ -1496,6 +1500,8 @@ END
 			@808 /* ~Excellent! You won't regret it. When we arrive, I'll introduce you to my commanding officer, Marshal Kirill Nederlok.~ */
 			== VALYGARJ
 			@809 /* ~I look forward to our meeting.~ */
+			== XACORWIB
+			@214 /*~That's what I like to see. Would that there were more like you.~ [BD67546]*/
 	EXIT
 	//}
 	
@@ -1533,7 +1539,7 @@ END
 			== NEERAJ
 			@224 /*  ~Oh, one of my friends was able to counteract the spell, but not before my llama friend spit on my shoes.~ */
 			== XACORWIB
-			@225 /* ~I'm glad. Not about your shoes, but that your friend is back to normal. It must have been quite the experience.~ */
+			@213 /* ~Well, that was... That was something. Let's go.~ [BD50374] */
 	EXIT
 	//}
 
@@ -1576,7 +1582,7 @@ END
 		IF ~
 			Global("XA_Banter_CorwinHexxat", "GLOBAL", 4)
 		~ THEN XACORWIB BCorwinHexxat1
-			@204 /* ~Hexxat.~ [XACORB37] */
+			@204 /* ~Hexxat.~ [XA100031]*/
 			DO ~
 				SetGlobal("XA_Banter_CorwinHexxat", "GLOBAL", 5)
 				ClearActions(Myself)
@@ -1644,7 +1650,7 @@ END
 			== KORGANJ
 			@143 /*   ~Bed, floor, or field doth make no difference to I, longlimbs. You are nae ready now, but when ye are, come and see Korgan for a night you shan't forget. ~ */
 			== XACORWIB
-			#267544 /* Next time you open your mouth, close it quickly—before that sort of idiocy spills off your tongue. */
+			@238/* ~Next time you open your mouth, close it quickly—before that sort of idiocy spills off your tongue.~ [BD67544] */
 	EXIT
 	//}
 
@@ -1665,7 +1671,9 @@ END
 			@196 /*  ~Not particularly, no. Well - I must admit that your skill with the axe is impressive.~ */
 			== KORGANJ
 			@197 /* ~Aye, as is your skill with the bow. Nae hath I seen so many foes fall before I can even reach em. ~ */
-			=
+			== XACORWIB
+			@616 /*Spoken like someone who barely knows me, but I'll take what compliments I can get and do what I can not to change your mind.~ [BD34332]*/
+			== KORGANJ
 			@198 /* ~Don't you worry my beauty. Ole Korgan will stay at the front and keep ye safe. Just leave a few for me, will ye? Me axe doth get thirsty from time to time.~ */
 			== XACORWIB
 			@199 /* ~Duly noted. ~ */
@@ -1684,7 +1692,7 @@ END
 				!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 				Gender(Player1, FEMALE)
 		~ THEN XACORWIB BCorwinViconia1A
-			#267545 /* ~Never forget that I'm watching you.~ [XACORB03] */
+			@114 /*  ~Never forget that I'm watching you.~ [BD67545] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinViconia", "GLOBAL", 3)
 				ClearActions(Myself)
@@ -1783,9 +1791,9 @@ END
 			== VICONIJ
 			@417 /* ~I'm glad someone is. The warmth I don't mind, but I'll never understand how you surfacers can enjoy being bathed in this blinding light.~ */
 			== XACORWIB
-			@418 /*   ~I imagine it's as hard for you as it would be for me living underground.~ */
+			@314 /* ~This must be a tough time for you, then.~ [BD35157] */
 			== VICONIJ
-			@419 /* ~It would be harder for you, I'm afraid. For all of your skill and bravado, you wouldn't last long on your own in the Underdark. Few would.~~ */
+			@419 /* ~It would be harder for you living underground, I'm afraid. For all of your skill and bravado, you wouldn't last long on your own in the Underdark. Few would.~ */
 			=
 			@420 /* ~There, the threats come from horrors that are beyond your comprehension.~ */
 			== XACORWIB
@@ -1827,7 +1835,7 @@ END
 			== XACORWIB
 			@428 /* ~What are you playing at here, drow?~ [BD58878] */
 			=
-			@429 /* ~Let me remind you, drow, that your kind has a well-earned reputation for violence and treachery. The Flaming Fist works to protect the innocent all threats, including those posed by the drow.~  */
+			@429 /* ~Let me remind you that your kind has a well-earned reputation for violence and treachery. The Flaming Fist works to protect the innocent all threats, including those posed by the drow.~  */
 			== VICONIJ
 			@430 /* ~Is that so? Then why are your cities full of thieves, slavers, molesters and murderers, all roaming free? It seems to me that your kind can learn a thing or to from the drow when it comes to the administration of justice and punishment!~ */
 			== XACORWIB
@@ -1927,7 +1935,8 @@ END
 			@569 /* ~Once we defeat Irenicus and take back what was stolen from <CHARNAME>, I'm sure that <PRO_HESHE> will be back to normal.~ */
 			= @570 /* ~The two of you have made it this far, Schael. Don't give up hope of a future together.~ */
 			== XACORWIB
-			@571 /* ~Right... thank you, Imoen. Let's go. ~  */
+			@554 /* ~My father always said to hope for the best but prepare for the worst.~ [BD37000] */
+			= @550 /*~You're right though, Imoen, and I won't give up... let's get moving.~*/
 	EXIT
 	//}
 
@@ -1977,6 +1986,11 @@ END
 			== IMOEN2J
 			@454 /* ~Oh, I've got lots of stories... I think you'll like the one about the time <PRO_HESHE> first tried to ... (they have a long and animated discussion, though you can't quite make out what they are saying)~ */
 			== XACORWIB
+			@480 /*~Heh. Most just call that the "hard way."[XA100077]*/
+			== IMOEN2J
+			@481 /*~Then there was the time <PRO_HESHE> thought <PRO_HESHE> could get away with taking Jessup's...~*/
+			= @482 /*~(Again, you can't make out what's being said.)~*/
+			== XACORWIB
 			@455 /* ~(She bursts into laughter) Really? (She looks at you) I would never have guessed!~ */
 			=
 			@456 /* ~Hahah... thank you Imoen. It sounds like the two of you had some fun times together.~ */
@@ -2010,6 +2024,11 @@ END
 			== IMOEN2J
 			@454 /* ~Oh, I've got lots of stories... I think you'll like the one about the time <PRO_HESHE> first tried to ... (they have a long and animated discussion, though you can't quite make out what they are saying)~ */
 			== XACORWIB
+			@480 /*~Heh. Most just call that the "hard way."[XA100077]*/
+			== IMOEN2J
+			@481 /*~Then there was the time <PRO_HESHE> thought <PRO_HESHE> could get away with taking Jessup's...~*/
+			= @482 /*~(Again, you can't make out what's being said.)~*/
+			== XACORWIB
 			@455 /* ~(She bursts into laughter) Really? (She looks at you) I would never have guessed!~ */
 			=
 			@456 /* ~Hahah... thank you Imoen. It sounds like the two of you had some fun times together.~ */
@@ -2034,7 +2053,7 @@ END
 			== EDWINJ
 			@701 /* ~It is not your concern. You needn't worry about that fool Degardan.~ */
 			== XACORWIB
-			@702 /* ~We covered for you. The least you can do is to tell us what's going on.~ */
+			@702 /* ~Tell us what you know, wizard.~ [BD42217]~ */
 			== EDWINJ
 			@703 /* ~You want to know? Fine! I expressed some spirited ... criticism (yes, that is a good way to put it) of the ruling clan, and was exiled! The fools!~ */
 			== XACORWIB
@@ -2123,7 +2142,7 @@ END
 			== EDWINJ
 			@398 /* ~You will leave these simians and become bethrothed to me.~*/
 			== XACORWIB
-			@399 /*  ~Hah! Are you serious?~ */
+			@253 /*  ~You can't be serious. Have you taken leave of your senses?~ [XA100078]*/
 			== EDWINJ
 			@400 /* ~Of course I am! (Why wouldn't I be!?)~   */
 			== XACORWIB
@@ -2147,9 +2166,9 @@ END
 			== EDWINJ
 			@405 /* ~It is time for you to make your decision. (Yes, I have waited quite long enough.) Will you become by bethrothed in exchange for the mystical knowledge I offer you?~ */
 			== XACORWIB
-			@406 /*   ~Sorry - I'm not interested in the secrets of a group of maladjusted wizards, or becoming your wife.~ */
+			@403 /*~You aren't going to let this go, are you?~ [BD66686]*/
 			=
-			@407 /*  ~Well, on second thought...~*/
+			@406 /*   ~Fine. Let me be perfectly clear — I'm not interested in the secrets of a group of maladjusted wizards, or in becoming your wife... Well... on second thought...~ */
 			=
 			@408 /* ~Yes, there is one thing you could teach me.~ */
 			== EDWINJ
@@ -2178,7 +2197,7 @@ END
 		IF ~
 			Global("XA_Banter_CorwinJan", "GLOBAL", 2)
 		~ THEN XACORWIB BCorwinJan1
-			@74 /* ~What... what is that smell?~ [XACORB23] */
+			@440 /* ~Uh, what are you doing?~ [BD40510]*/
 			DO ~
 				SetGlobal("XA_Banter_CorwinJan", "GLOBAL", 3)
 				ClearActions(Myself)
@@ -2262,7 +2281,7 @@ END
 			== KELDORJ
 			@612 /* ~I let my anger get the better of me, I'm afraid.~ */
 			== XACORWIB
-			#267544 /* ~Rein it in. If you can't control yourself, you're a danger to us all.~ */
+			@73/* ~Rein it in. If you can't control yourself, you're a danger to us all.~ */
 			== KELDORJ
 			@614 /* ~I understand, Captain. I will hold my tongue while in the presence of the drow.~ */
 			== XACORWIB
@@ -2292,7 +2311,9 @@ END
 			== XACORWIB
 			@478 /* ~You and I both. I'm just glad I was able to help.~ */
 			== KELDORJ
-			@479 /* ~As am I. Come, my friend, there is work to be done.~*/
+			@460 /* ~Indeed... I'm seeing more and more that your ability to lead is as impressive as your skill with the bow, if not moreso.~*/
+			== XACORWIB
+			@491 /* ~That's high praise, coming from someone who knows his way around a sword as well as you.~ [BD58923] */
 	EXIT
 	//}
 
@@ -2318,7 +2339,7 @@ END
 			~
 			@766 /* ~Of course Major. How can I help you?~ */
 			== XACORWIB
-			@62 /*  ~I understand that you have children.~ */
+			@62 /*  ~Do you have any children?~ [BD54420] */
 			== KELDORJ
 			@145 /* ~Yes, two daughters. I love them dearly.~ */
 			== XACORWIB
@@ -2460,10 +2481,8 @@ END
 			@166 /* ~The Flaming Fist doesn't care if a recruit is a man or a woman. What matters is their ability and willingness to do what's needed of them.~ */
 			== ANOMENJ
 			@167 /* ~They are fortunate to have you among their ranks. Your skill in battle is among the best I have seen, as is your ability to lead.~*/
-			=
-			@168 /* ~I have much to learn from your example.~ */
 			== XACORWIB
-			@169 /* ~That's kind of you to say  */
+			@193 /* ~You noticed. Good eye.~ [BD39880] */
 			=
 			@170 /* = ~I too must aplogize. My family isn't wealthy. As much as I want to be home with my father and daughter, I need to work to support them.~ */
 			=
@@ -2580,7 +2599,12 @@ END
 			@11 /*  ~You are quite skilled as a fighter, far moreso than the Flaming Fist I've encountered in my travels. Where did you acquire such skill?~ */
 			== XACORWIB
 			@12	/* ~My father was a Fist as well. He taught me how to fight at a young age. ~  */
-			= @31 /* ~By the time I joined the Fist, I had more fighting ability than many of the officers, so I was placed into a more advanced training regimen to further refine my skills.~~*/
+			== JAHEIRAJ
+			@191 /* ~A young age? It must have been difficult for you, then.~ */
+			== XACORWIB
+			@190 /*~Heh. My father let me fall down a lot. At the time, it made me angry. I thought I'd never forgive him. Then I realized how hard it was for him to let me struggle—and fail—on my own. It made me the woman I am.~ [BD58841]*/
+			= 
+			@31 /* ~By the time I joined the Fist, I had more fighting ability than many of the officers, so I was placed into a more advanced training regimen to further refine my skills.~~*/
 			== JAHEIRAJ
 			@13	/*~I see, your father did you a great service. And your mother?~*/
 			== XACORWIB
@@ -2594,7 +2618,7 @@ END
 		IF ~
 			Global("XA_Banter_CorwinJaheira", "GLOBAL", 7)
 		~ THEN XACORWIB BCorwinJaheira2
-			@0 /* ~Jaheira.~*/
+			@0 /* ~~Jaheira.~ [XA100055]~*/
 			DO ~
 				SetGlobal("XA_Banter_CorwinJaheira", "GLOBAL", 8)
 				ClearActions(Myself)
@@ -2641,6 +2665,8 @@ END
 				Global("XA_CorwinPromoted", "GLOBAL", 1)
 			~
 			@58 /* ~Hm. I appreciate you sharing this with me, Major. Such things are never easy to talk about.~*/
+			== XACORWIB
+			@6 /*~You're right. Let's go.~ [BD58529]*/
 	EXIT
 	//}
 	
@@ -2774,7 +2800,9 @@ END
 			== AERIEJ
 			@134 /* ~Caelar Argent? I-I'm sorry, who is she?~ */
 			== XACORWIB
-			@93 /* ~Caelar was an Aasimar, and an extremely charismatic leader. She rallied many to her banner, in spite of the death and destruction that she and her army caused across the Sword Coast.~ */
+			@149 /* ~A charismatic leader. An acolyte of the Order of the Aster, once.~ [XA100080] */
+			=
+			@93 /* ~She rallied many to her banner, in spite of the death and destruction that she and her army caused across the Sword Coast.~*/
 			=
 			@436 /* ~After a series of defeats at the hand of <CHARNAME> and the coalition, Caelar and her forces retreated north, back to Dragonspear castle.~ */
 			== AERIEJ
@@ -2827,7 +2855,7 @@ END
 			== AERIEJ
 			@445 /* ~I understand. Thank you, Schael.~ */
 			== XACORWIB
-			#267546  /* That's what I like to see. Would that there were more like you. */
+			@214  /* ~That's what I like to see. Would that there were more like you.~ [BD67546]*/
 	EXIT
 	//}
 
@@ -2850,7 +2878,9 @@ END
 			== AERIEJ
 			@134 /* ~Caelar Argent? I-I'm sorry, who is she?~ */
 			== XACORWIB
-			@93 /* ~Caelar was an Aasimar, and an extremely charismatic leader. She rallied many to her banner, in spite of the death and destruction that she and her army caused across the Sword Coast.~ */
+			@149 /* ~A charismatic leader. An acolyte of the Order of the Aster, once.~ [XA100080] */
+			=
+			@93 /* ~She rallied many to her banner, in spite of the death and destruction that she and her army caused across the Sword Coast.~*/
 			=
 			@436 /* ~After a series of defeats at the hand of <CHARNAME> and the coalition, Caelar and her forces retreated north, back to Dragonspear castle.~ */
 			== AERIEJ
@@ -2899,7 +2929,7 @@ END
 			== AERIEJ
 			@445 /* ~I understand. Thank you, Schael.~ */
 			== XACORWIB
-			#267546  /* That's what I like to see. Would that there were more like you. */
+			@214 /* ~That's what I like to see. Would that there were more like you.~ [BD67546]*/
 			
 	EXIT
 	//}
@@ -2983,7 +3013,9 @@ END
 			== XACORWIB
 			@162 /* = ~If that voice tells you to harm <CHARNAME>, or anyone else that I care about, then your patron will need to find themselves a new slave. I trust I've made myself clear.~ */
 			== DORNJ
-			@163 /* = ~These pathetic insults and threats are beneath you. I've no intention of betraying <CHARNAME>, certainly not while my patron benefits from our arrangement.~ */
+			@163 /* = ~You are a truly pathetic woman. Even still, such insults and threats are beneath you. I've no intention of betraying <CHARNAME>, certainly not while my patron benefits from our arrangement.~ */
+			== XACORWIB
+			@182 /*~Next time, keep that thrice-damned pit of hell you call a mouth shut or I'll shut it for you.~ [XA100081]*/
 	EXIT
 	//}
 
@@ -3001,7 +3033,9 @@ END
 				SetGlobal("XA_AVComplimentFamily", "GLOBAL", 2)
 			~
 			== XACORWIB
-			@717 /* ~Thanks Aerie. She's a wonderful kid.~ */
+			@169 /*~That's kind of you to say...~ [BD67552]*/
+			=
+			@717 /* ~She's such a wonderful kid... I'd do anything for her. Anything.~ */
 			== AERIEJ
 			@718 /* ~I hope one day I'll have some c-children of my own...~ */
 			== XACORWIB
@@ -3039,7 +3073,9 @@ END
 				SetGlobal("XA_AVComplimentFamily", "GLOBAL", 2)
 			~
 			== XACORWIB
-			@721 /* ~Thanks Valygar. Everything I do is for them, especially Rohma.~ */
+			= @169 /*~That's kind of you to say...~ [BD67552]*/
+			=
+			@721 /* ~Everything I do is for them, especially Rohma.~ */
 			== VALYGARJ
 			@722 /* ~Having a family to provide for and protect is a great responsibility. I... I would welcome that responsibility.~ */
 			== XACORWIB
@@ -3067,7 +3103,9 @@ END
 				SetGlobal("XA_AVComplimentFamily", "GLOBAL", 2)
 			~
 			== XACORWIB
-			@717 /* ~Thanks Aerie. She's a wonderful kid.~ */
+			@169 /*~That's kind of you to say...~ [BD67552]*/
+			=
+			@717 /* ~She's such a wonderful kid... I'd do anything for her. Anything.~ */
 			== AERIEJ
 			@718 /* ~I hope one day I'll have some c-children of my own...~ */
 			== XACORWIB
@@ -3099,11 +3137,16 @@ END
 				SetGlobal("XA_AVComplimentFamily", "GLOBAL", 2)
 			~
 			== XACORWIB
-			@443 /* ~Thanks Neera. She's a wonderful kid.~ */
+			@169 /*~That's kind of you to say...~ [BD67552]*/
+			=
+			@717 /* ~She's such a wonderful kid... I'd do anything for her. Anything.~ */
 			== NEERAJ
-			@434 /* ~You know, I've never given much thought to having kids, but now...~ */
+			@434 /* ~You know, I've never given much thought to having kids...~*/
 			== XACORWIB
-			@802 /* ~Being a parent is a tremendous responsibility, but it's worth it Neera. I would give up everything for my child. Everything.~ */
+			@584 /*~That's fair. Being a parent has many rewards, but it brings its share of difficulties too.~ [BD65225]*/
+			= @617 /*~It's worth it though, Neera. It really is.~*/
+			== NEERAJ
+			@618 /* ~I guess if I can find the right person, then one day, MAYBE. Oh, look. The others are leaving us in the dust. Time to go.~*/
 	EXIT
 	//}
 
@@ -3121,7 +3164,9 @@ END
 				SetGlobal("XA_AVComplimentFamily", "GLOBAL", 2)
 			~
 			== XACORWIB
-			@443 /* ~Thanks Neera. She's a wonderful kid.~ */
+			@169 /*~That's kind of you to say...~ [BD67552]*/
+			=
+			@717 /* ~She's such a wonderful kid... I'd do anything for her. Anything.~ */
 			== NEERAJ
 			@434 /* ~You know, I've never given much thought to having kids, but now...~ */
 			== VALYGARJ
@@ -3171,7 +3216,8 @@ END
 			== SAREV25J
 			@883 /* ~There's something else that you should know. Your <PRO_MANWOMAN> loves you with every fiber of <PRO_HISHER> being... I've never felt anything quite like it, in either of my lives...~*/
 			== XACORWIB
-			@885 /*~... Thank you. I feel the same way about <PRO_HIMHER>.~ */
+			@885 /*~I said, enough... but, thank you. I feel the same way about <PRO_HIMHER>.~ */
+			= @888 /*~Hrm. There may be more to you than I thought... Now let's get going.~ [XA100082]*/
 	EXIT
 	//}
 
@@ -3205,11 +3251,7 @@ END
 			== SAREV25J
 			@877 /* ~And Schael... I remember us sharing some *very* intimate—~ */
 			== XACORWIB
-			@878 /* ~Enough, gods damnit!~ */
-			== SAREV25J
-			@881 /* ~Hah, forgive me, but there's something else that you should know. Your <PRO_MANWOMAN> loves you with every fiber of <PRO_HISHER> being... I've never felt anything quite like it, in either of my lives. But as I'm sure you know, such things are not meant to last...~ */
-			== XACORWIB
-			#267555 /* I disagree strenuously. Keep talking and I may start to disagree violently. */
+			@875 /*~I'm going to stop talking to you now. And I'm especially going to stop listening.~ [BD58915]*/
 	EXIT
 	//}
 
@@ -3226,6 +3268,8 @@ END
 				SetGlobal("XA_Banter_CorwinSarevok", "GLOBAL", 3)
 			~
 			== XACORWIB
+			@114 /*~Never forget that I'm watching you.~ [BD67545]*/
+			=
 			@810 /*~<CHARNAME> may be able to look past your crimes, but I'm not. If I even suspect that you're —~ */
 			== SAREV25J
 			@811 /*  ~Silence, woman. I should've had my lackeys kill you first, instead of Scar. ~   */
@@ -3237,8 +3281,6 @@ END
 			@817 /* ~You needn't concern yourself with that. You'll never set foot in my city ever again.~ */
 			== SAREV25J
 			@818 /*~Rest assured Major, I've no further designs on Baldur's Gate, its citizens, or the Dukes ... or you, for that matter.~*/
-			== XACORWIB
-			@824 /* ~Just know that I'll be watching you. Try *anything*, and I'll send you back to the grave.~ */
 	EXIT
 	//}
 
@@ -3255,11 +3297,11 @@ END
 				SetGlobal("XA_Banter_CorwinSarevok", "GLOBAL", 3)
 			~
 			== XACORWIB
+			@114 /*~Never forget that I'm watching you.~ [BD67545]*/
+			=
 			@810 /*~<CHARNAME> may be able to look past your crimes, but I'm not. If I even suspect that you're —~ */
 			== SAREV25J
 			@869 /*  ~Enough. I know that I must atone for my sins. I've no wish to add to that burden by betraying <CHARNAME>, or any of you, for that matter.~  */
-			== XACORWIB
-			@824 /* ~Just know that I'll be watching you. Try *anything*, and I'll send you back to the grave.~ */
 	EXIT
 	//}
 
@@ -3281,13 +3323,15 @@ END
 			== SAREV25J
 			@828 /* ~Tell me ... what was the real reason you and the others were sent away?~ */
 			== XACORWIB
+			@403 /*You aren't going to let this go, are you [BD66686]*/
+			=
 			@832 /* ~All I will say is that the Council is wiser than you know.~  */
 			== SAREV25J
 			@830 /* ~There was no training exercise, was there? You were sent away, because they somehow knew or suspected that we would attempt to destroy the leadership of the Fist.~ */
 			= @833 /* ~I suppose then that your orders were to take control of the city, in the event that I, or someone else associated with the Iron Throne, were to overtly usurp control.~ */
 			= @835 /* ~Would you have been successful, I wonder? I doubt you'd have had the numbers, or the strength, to wrest control away from us.~*/
 			== XACORWIB
-			@836 /* ~You would have been defeated because, as always, your own arrogance would've been your undoing.~ */
+			@407 /* ~Next time you open your mouth, close it quickly—before that sort of idiocy spills off your tongue.~ [BD67544] */
 			== SAREV25J
 			@837 /* Hmph. */
 	EXIT
@@ -3309,7 +3353,7 @@ END
 			== SAREV25J
 			@842 /* ~Given your rank, as well as with your youth and allure, I naturally assumed that you had slept to the top. Certainly with Nederlok. Perhaps even with Duke Eltan himself.~*/
 			== XACORWIB
-			@843 /* ~You're disgusting.~ */	
+			@527 /* ~For the love of the gods, save that filth for a chamberpot!~ [XA100003] */	
 	END SAREV25J XA_SarevokBanter3Chain_END
 
 	CHAIN 
@@ -3333,7 +3377,7 @@ END
 			== SAREV25J
 			@851 /* ~It would've been a trivial matter... you have a daughter, yes? She would've been all the leverage I needed to turn you, Major.~*/
 			== XACORWIB
-			@852 /*  ~Mention her again, and I'll bury you where you stand.~ */
+			@543 /*  ~Don't bring her into this. You won't like where that ends.~ [BD39644]~*/
 			== SAREV25J
 			@853 /* ~Relax, Major. As I told you before, I've no further interest in Baldur's Gate or its citizens. But others ... those who think like I do ... wouldn't hesitate to use your daughter against you.~ */
 			== XACORWIB 
@@ -3355,6 +3399,8 @@ END
 			SetGlobal("XA_Banter_CorwinCaelar", "GLOBAL", 3)
 		~
 		== XACORWIB
+		@544 /*~Scores, if not hundreds, of innocent people have been slain by those in your service.~ [BD56584]*/
+		=
 		@859 /* ~The Fist lost a lot of good people fighting against your crusade. Mothers, fathers, sons and daughters, many of whom I considered friends.~*/
 		== XACAELAB
 		@860 /* ~I understand, and I'm sorry. There's nothing I can do, however.~*/

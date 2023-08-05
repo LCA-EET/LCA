@@ -53,11 +53,15 @@ END
 IF ~~ THEN BEGIN XA_TentCS_Sentry
 	SAY @8 /* ~Sure. Let's start with sentry duty, since that's the easiest to explain. Each corner of the camp has two sentries, and they each work a 12-hour shift. When the shift ends, the new rotation relieves them and ...~ */
 	
-	= @9 /* ~(As she continues with her explanation of the duty roster, you realize that this is the first time you've seen Corwin without her armor and other equipment. Moreover, sitting so close to her affords you a much better view of her incredible physique. Though you've always found her attractive, you never quite appreciated her beauty until this moment.)~ */
+	= @9 /* ~(As she continues with her explanation of the duty roster, you realize that this is the first time you've seen Corwin without her armor and other equipment. She really is quite attractive, you think to yourself.)~*/
+	
+	= @33 /* ~...two scouts, six in the vanguard, three on either side and behind. Eight-hour rotations...~ */
+	
+	= @34 /* ~(Moreover, being this close to her affords you a much better view of her impressive physique, which you'd never truly appreciated until now...)~ */
 	
 	= @10 /* ~<CHARNAME>?~ */
 	
-	IF ~~ THEN REPLY @31 /* ~...~ */
+	IF ~~ THEN REPLY @31 /* ~.....~ */
 	GOTO XA_Charname
 END
 

@@ -124,7 +124,7 @@ Schael"~
 @103 = ~(The image becomes alive, and she looks at you with terror in her eyes. She mouths the words "Help Me!", and beckons to you. She seems to want you to touch the painting.)~
 @104 = ~(The image shifts and swirls, and once again you see the elvish woman. Though you can't hear what she is saying, you're certain that she is pleading for you to help. She gestures, and seems to want you to touch the painting.)~
 @105 = ~(The demon has fled to another part of Avernus. You feel that the barrier surrounding the tower has weakened; you resolve to free Caelar and get out of here before the demon can return with reinforcements.)~
-@106 = ~~
+@106 = ~Twelve hours.~
 @107 = ~(In unison, the sailors within the painting stand and turn to look at you, then leap out and attack! Dopplegangers!)~
 @108 = ~(The dopplegangers have been dispatched. Perhaps now, you can investigate the painting unmolested.)~
 @109 = ~(You approach the painting, and the Amulet of the Seldarine begins to hum once again...)~
@@ -167,7 +167,7 @@ Schael"~
 @146 = ~Welcome to the LCA Configuration Assistant. Select one of the options below.~
 @147 = ~Adjust Corwin banter timers.~
 @148 = ~Adjust Caelar banter timers.~
-@149 = ~Select the new interval between banters. The default is sixteen hours.~
+@149 = ~Select the new interval between banters. The default is twelve hours.~
 @150 = ~One hour.~
 @151 = ~Two hours.~
 @152 = ~Four hours.~
