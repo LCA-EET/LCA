@@ -3073,7 +3073,7 @@ END
 				SetGlobal("XA_AVComplimentFamily", "GLOBAL", 2)
 			~
 			== XACORWIB
-			= @169 /*~That's kind of you to say...~ [BD67552]*/
+			@169 /*~That's kind of you to say...~ [BD67552]*/
 			=
 			@721 /* ~Everything I do is for them, especially Rohma.~ */
 			== VALYGARJ
