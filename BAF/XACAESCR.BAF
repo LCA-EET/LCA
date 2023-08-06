@@ -22,7 +22,7 @@ IF
 	ActionListEmpty()
 	OR(2)
 		!IsValidForPartyDialogue(Myself)
-		!CombatCounter(0)
+		ActuallyInCombat()
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CanTalk", "LOCALS", 0)
@@ -33,7 +33,7 @@ IF
 	!Global("XA_CanTalk", "LOCALS", 1)
 	ActionListEmpty()
 	IsValidForPartyDialogue(Myself)
-	CombatCounter(0)
+	!ActuallyInCombat()
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CanTalk", "LOCALS", 1)
@@ -307,24 +307,14 @@ END
 
 IF
 	InParty(Myself)
-	GlobalTimerExpired("XA_BanterTimer", "LOCALS")	
-	!CombatCounter(0)
+	GlobalTimerExpired("XA_BanterTimer", "LOCALS")
+	ActuallyInCombat()
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_027~)
-		SetGlobalTimer("XA_BanterTimer", "LOCALS", FORTY_MINUTES)
-		Continue()
-	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_028~)
-		SetGlobalTimer("XA_BanterTimer", "LOCALS", THIRTY_MINUTES)
-		Continue()
-	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_029~)
-		SetGlobalTimer("XA_BanterTimer", "LOCALS", TWENTY_MINUTES)
-		Continue()
-	RESPONSE #100
-		//DisplayStringHead(Myself, ~DEBUG_030~)
+		SetInterrupt(FALSE)
 		SetGlobalTimer("XA_BanterTimer", "LOCALS", TEN_MINUTES)
+		DisplayStringHead(Myself, ~DEBUG: 22-13A~)
+		SetInterrupt(TRUE)
 		Continue()
 END
 //} End Banter Initialization

@@ -138,7 +138,7 @@ IF
 	Global("BD_THRIX_TALK","MYAREA",0)
 	See([PC])
 	!Detect([0.0.DEMONIC])
-	CombatCounter(0)
+	!ActuallyInCombat()
 THEN
 	RESPONSE #100
 		DialogInterrupt(TRUE)

@@ -8,7 +8,7 @@ END
 
 IF
 	Global("XA_AVBossFled", "GLOBAL", 1)
-	CombatCounter(0)
+	!ActuallyInCombat()
 THEN
 	RESPONSE #100
 		SetGlobal("XA_AVBossFled", "GLOBAL", 2)

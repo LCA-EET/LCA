@@ -1,6 +1,6 @@
 IF
 	IfValidForPartyDialog("XACORWIN")  
-	CombatCounter(0)
+	!ActuallyInCombat()
 	Global("OHD_GORGE_NTRJEX","OH5100",1)  // Dorn - Resurrection Gorge
 THEN
 	RESPONSE #100

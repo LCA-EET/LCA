@@ -2,7 +2,7 @@ IF
 	GlobalLT("XA_ThrixSpawn","GLOBAL",1)
 	Range([PC],45)
 	!Range([EVILCUTOFF],45)
-	CombatCounter(0)
+	!ActuallyInCombat()
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)

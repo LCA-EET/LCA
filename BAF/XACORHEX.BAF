@@ -576,7 +576,7 @@ IF
 	!Detect("hexxat")  // Hexxat
 	Name("XACORWIN", Myself)
 	Global("XA_CorwinHexxatFight", "GLOBAL", 1)
-	CombatCounter(0)
+	!ActuallyInCombat()
 THEN
 	RESPONSE #100
 		ChangeAIScript("XACORSCR",OVERRIDE)
@@ -590,7 +590,7 @@ END
 IF
 	!Detect("hexxat")  // Hexxat
 	Global("XA_HostileHexxat", "LOCALS", 2)
-	CombatCounter(0)
+	!ActuallyInCombat()
 THEN
 	RESPONSE #100
 		ChangeAIScript("",GENERAL)

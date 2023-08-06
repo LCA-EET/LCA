@@ -15,7 +15,7 @@ IF
 		!InMyArea("ZILARC01")
 	IsValidForPartyDialogue("XACORWIN")
 	IsValidForPartyDialogue(Player1)
-	CombatCounter(0)
+	!ActuallyInCombat()
 THEN
 	RESPONSE #100
 		CreateCreature("XABENO2", [760.630], SE)
@@ -39,7 +39,7 @@ IF
 		Dead("ZILARC01")
 		!InMyArea("ZILARC01")
 	Dead("XACORWIN")
-	CombatCounter(0)
+	!ActuallyInCombat()
 THEN
 	RESPONSE #100
 		CreateCreature("XABENO2", [760.630], SE)

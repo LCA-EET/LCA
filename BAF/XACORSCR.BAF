@@ -215,7 +215,7 @@ IF
 	ActionListEmpty()
 	OR(3)
 		!IsValidForPartyDialogue(Myself)
-		!CombatCounter(0)
+		ActuallyInCombat()
 		GlobalGT("XA_ArrivedInUndercity", "GLOBAL", 0)
 THEN
 	RESPONSE #100
@@ -227,7 +227,7 @@ IF
 	!Global("XA_CanTalk", "LOCALS", 1)
 	ActionListEmpty()
 	IsValidForPartyDialogue(Myself)
-	CombatCounter(0)
+	!ActuallyInCombat()
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CanTalk", "LOCALS", 1)
@@ -1668,7 +1668,7 @@ END
 	//{ First Bit
 	IF 
 		Global("XA_CorwinBit", "GLOBAL", 1)
-		CombatCounter(0)
+		!ActuallyInCombat()
 		IsValidForPartyDialog(Player1)
 	THEN
 		RESPONSE #100
@@ -1919,7 +1919,7 @@ END
 		InParty(Myself)
 		GlobalGT("XA_CorwinBit", "GLOBAL", 0)
 		Global("BodhiDead","GLOBAL",1)
-		CombatCounter(0)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -2205,12 +2205,12 @@ END
 IF
 	InParty(Myself)
 	GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-	!CombatCounter(0)
+	ActuallyInCombat()
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobalTimer("XA_BanterTimer", "LOCALS", TEN_MINUTES)
-		DisplayStringHead(Myself, ~DEBUG: 22-13~)
+		DisplayStringHead(Myself, ~DEBUG: 22-13A~)
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -2229,7 +2229,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 1) /* Aerie */
-		DisplayStringHead(Myself, ~DEBUG: 22-13~)
+		DisplayStringHead(Myself, ~DEBUG: 22-13B~)
 		SetInterrupt(TRUE)
 		Continue()
 	RESPONSE #100
@@ -2862,7 +2862,7 @@ END
 	IF 
 		Global("XA_Banter_NextInteraction", "LOCALS", 20) /* Nalia */
 		Global("XA_Banter_CorwinNalia", "GLOBAL", 3)
-		CombatCounter(0)
+		!ActuallyInCombat()
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
@@ -2904,7 +2904,7 @@ END
 	IF 
 		Global("XA_Banter_NextInteraction", "LOCALS", 20) /* Nalia */
 		Global("XA_Banter_CorwinNalia", "GLOBAL", 5)
-		CombatCounter(0)
+		!ActuallyInCombat()
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
@@ -2950,7 +2950,7 @@ END
 	IF 
 		Global("XA_Banter_NextInteraction", "LOCALS", 19) /* HaerDalis */
 		Global("XA_Banter_CorwinHaerDalis", "GLOBAL", 1)
-		CombatCounter(0)
+		!ActuallyInCombat()
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
@@ -3038,7 +3038,7 @@ END
 	IF 
 		Global("XA_Banter_NextInteraction", "LOCALS", 18) /* Minsc */
 		Global("XA_Banter_CorwinMinsc", "GLOBAL", 1)
-		CombatCounter(0)
+		!ActuallyInCombat()
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
@@ -3125,7 +3125,7 @@ END
 	IF 
 		Global("XA_Banter_NextInteraction", "LOCALS", 18) /* Minsc */
 		Global("XA_Banter_CorwinMinsc", "GLOBAL", 5)
-		CombatCounter(0)
+		!ActuallyInCombat()
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
@@ -3174,7 +3174,7 @@ END
 	IF 
 		Global("XA_Banter_NextInteraction", "LOCALS", 17) /* Rasaad */
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 1)
-		CombatCounter(0)
+		!ActuallyInCombat()
 		ActionListEmpty()
 	THEN
 		RESPONSE #100
