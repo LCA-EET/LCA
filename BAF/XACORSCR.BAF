@@ -1,55 +1,56 @@
 //Note: Variable Key Max Length Appears to be 32.
 
-//{ Include the letter sent by the Player
-IF
-	InParty(Myself)
-	Global("XA_LetterSent", "GLOBAL", 1)
-	GlobalLT("XA_CreatedLetterInventory", "LOCALS", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		CreateItem("XAORW1",0,0,0)
-		SetGlobal("XA_CreatedLetterInventory", "LOCALS", 1)
-		SetInterrupt(TRUE)
-		Continue()
-END
+//{ Amulet / Letter on Party Join
+	//{ Include the letter sent by the Player
+	IF
+		InParty(Myself)
+		Global("XA_LetterSent", "GLOBAL", 1)
+		GlobalLT("XA_CreatedLetterInventory", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			CreateItem("XAORW1",0,0,0)
+			SetGlobal("XA_CreatedLetterInventory", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
 
-IF
-	InParty(Myself)
-	Global("XA_LetterSent", "GLOBAL", 2)
-	GlobalLT("XA_CreatedLetterInventory", "LOCALS", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		CreateItem("XAORW2",0,0,0)
-		SetGlobal("XA_CreatedLetterInventory", "LOCALS", 1)
-		SetInterrupt(TRUE)
-		Continue()
-END
-//}
+	IF
+		InParty(Myself)
+		Global("XA_LetterSent", "GLOBAL", 2)
+		GlobalLT("XA_CreatedLetterInventory", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			CreateItem("XAORW2",0,0,0)
+			SetGlobal("XA_CreatedLetterInventory", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
 
-//{ Corwin Amulet 
-IF
-	InParty(Myself)
-	PartyHasItem("XAAMULET")	
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		GiveItemCreate("XAAMUL2", Myself, 0,0,0)
-		XEquipItem("XAAMUL2","XACORWIN",SLOT_AMULET,EQUIP)
-		ActionOverride(Player1, DestroyItem("XAAMULET"))
-		ActionOverride(Player2, DestroyItem("XAAMULET"))
-		ActionOverride(Player3, DestroyItem("XAAMULET"))
-		ActionOverride(Player4, DestroyItem("XAAMULET"))
-		ActionOverride(Player5, DestroyItem("XAAMULET"))
-		ActionOverride(Player6, DestroyItem("XAAMULET"))
-		
-		SetInterrupt(TRUE)
-		Continue()
-END
-//}
+	//{ Corwin Amulet 
+	IF
+		InParty(Myself)
+		PartyHasItem("XAAMULET")	
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			GiveItemCreate("XAAMUL2", Myself, 0,0,0)
+			XEquipItem("XAAMUL2","XACORWIN",SLOT_AMULET,EQUIP)
+			ActionOverride(Player1, DestroyItem("XAAMULET"))
+			ActionOverride(Player2, DestroyItem("XAAMULET"))
+			ActionOverride(Player3, DestroyItem("XAAMULET"))
+			ActionOverride(Player4, DestroyItem("XAAMULET"))
+			ActionOverride(Player5, DestroyItem("XAAMULET"))
+			ActionOverride(Player6, DestroyItem("XAAMULET"))
+			
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
 
-//{ Corwin Amulet 
+	//{ Corwin Amulet 
 IF
 	InParty(Myself)
 	PartyHasItem("XAAMUL1")
@@ -67,6 +68,7 @@ THEN
 		SetInterrupt(TRUE)
 		Continue()
 END
+//}
 //}
 
 //{ Corwin Opinion Baseline
@@ -823,10 +825,157 @@ END
 //} End Underdark Check
 
 //{ Event Checks
+
+	//{ Entered Beholder's Lair
+	IF
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_AR2101TimerSet", "LOCALS", 1)
+		AreaCheck("AR2101")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_AR2101TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_AR2101Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_AR2101Timer", "LOCALS")
+		GlobalLT("XA_AR2101_Talk", "LOCALS", 1)
+		AreaCheck("AR2101")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @17)	
+			SetGlobal("XA_AR2101_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Entered Adventurer's Mart
+	IF
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_AR0702TimerSet", "LOCALS", 1)
+		AreaCheck("AR0702")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_AR0702TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_AR0702Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_AR0702Timer", "LOCALS")
+		GlobalLT("XA_AR0702_Talk", "LOCALS", 1)
+		AreaCheck("AR0702")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @19)	
+			SetGlobal("XA_AR0702_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Entered Sewers
+	IF
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_AR0701TimerSet", "LOCALS", 1)
+		AreaCheck("AR0701")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_AR0701TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_AR0701Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_AR0701Timer", "LOCALS")
+		GlobalLT("XA_AR0701_Talk", "LOCALS", 1)
+		AreaCheck("AR0701")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @18)	
+			SetGlobal("XA_AR0701_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Entered Planar Prison
+	IF
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_AR0516TimerSet", "LOCALS", 1)
+		AreaCheck("AR0516")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_AR0516TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_AR0516Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_AR0516Timer", "LOCALS")
+		GlobalLT("XA_AR0516_Talk", "LOCALS", 1)
+		AreaCheck("AR0516")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @17)	
+			SetGlobal("XA_AR0516_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Entered Circus Tent (Illusion)
+	IF
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_AR0604TimerSet", "LOCALS", 1)
+		AreaCheck("AR0604")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_AR0604TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_AR0604Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_AR0604Timer", "LOCALS")
+		GlobalLT("XA_AR0604_Talk", "LOCALS", 1)
+		AreaCheck("AR0604")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @16)	
+			SetGlobal("XA_AR0604_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
 	//{ Caelar Jailed
 	IF 
 		Global("XA_CorwinCaelarJail", "GLOBAL", 1)
 		GlobalLT("XA_CorwinCaelarJailTimerSet", "GLOBAL", 1)
+		
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
