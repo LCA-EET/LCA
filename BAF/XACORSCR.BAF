@@ -829,6 +829,36 @@ END
 
 //{ 18: Event Checks
 
+
+	//{ Entered Maze
+	IF
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_AR1202TimerSet", "LOCALS", 1)
+		AreaCheck("AR1202")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_AR1202TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_AR1202Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_AR1202Timer", "LOCALS")
+		GlobalLT("XA_AR1202_Talk", "LOCALS", 1)
+		AreaCheck("AR1202")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @20)	
+			SetGlobal("XA_AR1202_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
 	//{ Entered Beholder's Lair
 	IF
 		Global("XA_CanTalk", "LOCALS", 1)
