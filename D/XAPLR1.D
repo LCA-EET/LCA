@@ -48,30 +48,42 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN REPLY @172
 		DO ~
+			ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
 			AdvanceTime(FOUR_HOURS)
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @173
 		DO ~
+			ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
 			AdvanceTime(EIGHT_HOURS)
+		~
+		GOTO XA_ChangeDone
+		
+		IF ~~ THEN REPLY @179
+		DO ~
+			ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
+			AdvanceTime(TWELVE_HOURS)
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @174
 		DO ~
+			ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
 			AdvanceTime(ONE_DAY)
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @175
 		DO ~
+			ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
 			AdvanceTime(TWO_DAYS)
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @176
 		DO ~
+			ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
 			AdvanceTime(THREE_DAYS)
 		~
 		GOTO XA_ChangeDone

@@ -25,7 +25,7 @@ IF ~
 	Global("XA_CorwinContinue", "GLOBAL", 2) 
 	!Global("XA_CorwinReunited", "GLOBAL", 1)
 ~ THEN BEGIN XAA0
-	SAY @7 /* ~<CHARNAME>! Thank Tymora...~ */
+	SAY @7 /* ~<CHARNAME>! There you are... thank the gods.~ [XA100085] */
 	=@8 /* ~I've missed you...~ */
 	= @60  /* ~(You share a warm and emotional embrace.)~*/
 	IF ~~ THEN REPLY @30 /* ~Schael! What're you doing here?~ */ 
@@ -302,8 +302,9 @@ IF ~~ THEN BEGIN XAA12
 END
 
 IF ~~ THEN BEGIN XAAKissEnd
-	SAY @53 /* ~Gladly, my dear.~*/
-	IF ~~ THEN
+	SAY @52 /* ~We have work to do. Let's go.~ [XA100015]*/
+	
+	IF ~~ THEN REPLY @53  /* ~Gladly, dear.~*/
 	DO ~
 		ChangeAIScript("XACORSCR", OVERRIDE)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
@@ -332,5 +333,4 @@ CHAIN
 			IsValidForPartyDialogue("Imoen2")
 		~
 		@57 /* ~Gorion would be so happy for you, <CHARNAME>...~ */
-END
-++@52+ XAAKissEnd /* ~Let's go, love. We have work to do.~ */
+END XACORWIN XAAKissEnd
