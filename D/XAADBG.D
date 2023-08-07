@@ -2081,6 +2081,22 @@ END
 IF ~~ THEN BEGIN XA_TestInteraction
 	SAY @280
 	
+	IF ~~ THEN REPLY @620
+	DO ~
+		SetGlobal("XA_CorwinNebAthkatla", "GLOBAL", 1)
+		Wait(1)
+		CreateCreature("Neb", [-1.-1],N)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @621
+	DO ~
+		SetGlobal("XA_CorwinNebAthkatla", "GLOBAL", 0)
+		Wait(1)
+		CreateCreature("Neb", [-1.-1],N)
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @584 /*~XATHRIX~*/
 	DO ~
 		SetGlobal("XA_ThrixSpawn", "GLOBAL", 1)

@@ -2556,7 +2556,10 @@ END
 				ClearActions(Myself)
 				ClearActions("Jaheira")
 			~
-			=@1 /* ~I'm very sorry about Khalid. Your husband was good man, and a great warrior. Those who survived the siege on Bridgefort owe him their lives.~ */
+			== JAHEIRAJ
+			@17 /* ~Yes, Captain?~*/
+			== XACORWIB
+			@1 /* ~I'm very sorry about Khalid. Your husband was good man, and a great warrior. Those who survived the siege on Bridgefort owe him their lives.~ */
 			== JAHEIRAJ
 			IF ~
 				!Global("XA_CorwinPromoted", "GLOBAL", 1)
@@ -2665,8 +2668,6 @@ END
 				Global("XA_CorwinPromoted", "GLOBAL", 1)
 			~
 			@58 /* ~Hm. I appreciate you sharing this with me, Major. Such things are never easy to talk about.~*/
-			== XACORWIB
-			@6 /*~You're right. Let's go.~ [BD58529]*/
 	EXIT
 	//}
 	

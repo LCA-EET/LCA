@@ -3343,20 +3343,33 @@ EXTEND_BOTTOM NEB 2
 	IF ~
 		InMyArea("XACORWIN")
 		IsValidForPartyDialogue("XACORWIN")
+		!Global("XA_CorwinNebAthkatla", "GLOBAL", 1)
 	~
 	THEN EXTERN ~XACORWIJ~ XA_NEB_2
+	
+	IF ~
+		InMyArea("XACORWIN")
+		IsValidForPartyDialogue("XACORWIN")
+		Global("XA_CorwinNebAthkatla", "GLOBAL", 1)
+	~
+	THEN EXTERN ~XACORWIJ~ XA_NEB_2A
 END
 
 APPEND NEB
 	IF ~~ THEN BEGIN XAA0
-		SAY @50 /* ~You look familiar... Captain Corwin, yes? You had me arrested just before I could introduce myself to your sweet daughter.~ */
-		= @51 /*  ~I don't know how you found me, but I promise that when I'm done with you, I'll be sure to pay her a visit. Die!~ */
+		SAY @50 /*~You look familiar... yes... Captain Corwin, is it? You had me arrested just before I could introduce myself to your sweet, precious little daughter.~*/
+		= @51 /*   ~I don't know how you found me, but I promise that when I'm done with you, I'll be sure to pay her a visit!~*/
 		IF ~~ THEN
 		DO ~
 			SetGlobal("XA_NebFight", "GLOBAL", 1)
 			Enemy()
 		~
 		EXIT
+		
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ THEN EXTERN XACORWIJ XA_NebFight
+		
 	END
 END
 //}

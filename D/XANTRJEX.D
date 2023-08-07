@@ -2,6 +2,19 @@
 
 //Interjects associated with the LCA Mod
 
+//{ SCDUR
+	INTERJECT_COPY_TRANS SCDUR 20 XA_SCDUR_20
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@162  /* ~Neb is here!? <CHARNAME>, Neb is wanted for the murder of dozens of children in Baldur's Gate! He escaped our custody just weeks before I arrived here. We have to apprehend him!~*/
+		DO ~
+			SetGlobal("XA_CorwinNebAthkatla", "GLOBAL", 1)
+		~
+	END
+//}
+
 //{ JARLAXLE
 	INTERJECT JARLAXLE 16 XA_JARLAXLE_16
 		== XACORWIJ
