@@ -5226,7 +5226,7 @@ END
 	END
 
 	IF
-		Global("XA_CanTalkToImoen2", "LOCALS", 1))
+		Global("XA_CanTalkToImoen2", "LOCALS", 1)
 		Global("XA_Banter_CorwinImoen", "GLOBAL", 4)
 		!Range("Imoen2", 6)
 		ActionListEmpty()
@@ -6049,7 +6049,7 @@ END
 
 IF 
 	InParty(Myself)
-	!Global("XA_Banter_NextInteraction", "LOCALS", 0)
+	GlobalGT("XA_Banter_NextInteraction", "LOCALS", 0)
 	ActionListEmpty()
 	GlobalTimerExpired("XA_BanterTimer", "LOCALS") // not strictly necessary, but it is here to support debugging
 THEN
