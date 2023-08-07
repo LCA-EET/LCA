@@ -797,8 +797,6 @@ END
 	//}
 //}
 
-
-
 //{ 10: Interactions concerning the Return to BG Mini Quest
 
 	//{ Complimenting Corwin's Family
@@ -1365,7 +1363,64 @@ END
 
 //{ 18: Event Checks
 
-
+	//{ Entered Troll Hill
+	IF
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_AR1904TimerSet", "LOCALS", 1)
+		AreaCheck("AR1904")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_AR1904TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_AR1904Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_AR1904Timer", "LOCALS")
+		GlobalLT("XA_AR1904_Talk", "LOCALS", 1)
+		AreaCheck("AR1904")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @21)	
+			SetGlobal("XA_AR1904_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+	
+	//{ Entered Demon Plane (Planar Sphere)
+	IF
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_AR0414TimerSet", "LOCALS", 1)
+		AreaCheck("AR0414")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_AR0414TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_AR0414Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_AR0414Timer", "LOCALS")
+		GlobalLT("XA_AR0414_Talk", "LOCALS", 1)
+		AreaCheck("AR0414")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @17)	
+			SetGlobal("XA_AR0414_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+	
 	//{ Entered Maze
 	IF
 		Global("XA_CanTalk", "LOCALS", 1)
