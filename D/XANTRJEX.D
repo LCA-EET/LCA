@@ -3,7 +3,7 @@
 //Interjects associated with the LCA Mod
 
 //{ SCDUR
-	INTERJECT_COPY_TRANS SCDUR 20 XA_SCDUR_20
+	INTERJECT_COPY_TRANS SCDUR 25 XA_SCDUR_25
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
