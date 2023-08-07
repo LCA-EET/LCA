@@ -2977,7 +2977,7 @@ END
 			SetGlobal("XA_AerieBanterTimerInit", "LOCALS", 1)
 			Continue()
 	END
-
+	//{ Timer Randomizer
 	IF
 		ActionListEmpty()
 		Global("XA_AerieBanterTimerInit", "LOCALS", 1)
@@ -3127,6 +3127,7 @@ END
 			SetInterrupt(TRUE)
 			Continue()
 	END
+	//}
 	
 	IF
 		ActionListEmpty()
@@ -3135,6 +3136,7 @@ END
 		GlobalTimerExpired("XA_AerieBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
 		!Global("XA_ResetBanterTimer", "LOCALS", 1)
+		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3148,9 +3150,10 @@ END
 		ActionListEmpty()
 		GlobalGT("XA_AerieBanterTimerInit", "LOCALS", 0)
 		GlobalTimerExpired("XA_AerieBanterTimer", "LOCALS")
-		OR(2)
+		OR(3)
 			!Global("XA_CanTalkToAerie", "LOCALS", 1)
 			!GlobalTimerExpired("XA_BanterTimer", "LOCALS")
+			!Global("XA_Banter_NextInteraction", "LOCALS", 0)
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_AerieBanterTimerInit", "LOCALS", 0)
@@ -3169,6 +3172,7 @@ END
 			Continue()
 	END
 
+	//{ Timer Randomizer
 	IF
 		ActionListEmpty()
 		Global("XA_AnomenBanterTimerInit", "LOCALS", 1)
@@ -3318,6 +3322,7 @@ END
 			SetInterrupt(TRUE)
 			Continue()
 	END
+	//}
 	
 	IF
 		ActionListEmpty()
@@ -3326,6 +3331,7 @@ END
 		GlobalTimerExpired("XA_AnomenBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
 		!Global("XA_ResetBanterTimer", "LOCALS", 1)
+		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -3339,9 +3345,10 @@ END
 		ActionListEmpty()
 		GlobalGT("XA_AnomenBanterTimerInit", "LOCALS", 0)
 		GlobalTimerExpired("XA_AnomenBanterTimer", "LOCALS")
-		OR(2)
+		OR(3)
 			!Global("XA_CanTalkToAnomen", "LOCALS", 1)
 			!GlobalTimerExpired("XA_BanterTimer", "LOCALS")
+			!Global("XA_Banter_NextInteraction", "LOCALS", 0)
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_AnomenBanterTimerInit", "LOCALS", 0)
