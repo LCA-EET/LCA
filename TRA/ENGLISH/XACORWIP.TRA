@@ -61,7 +61,7 @@
 @60 = ~So, Capt — excuse me, Major. What is your decision?~
 @61 = ~So, Schael. What is your decision?~
 @62 = ~Sir, I'll accompany <CHARNAME>. We'll put an end to the Five. Please inform the Dukes... and please... let my family know that I'll be home as soon as I can.~
-@63 = ~~
+@63 = ~<CHARNAME>. What do you need?~ [XA100032]
 @64 = ~...~
 @65 = ~I'm thinking.~
 @66 = ~Well?~
@@ -71,4 +71,6 @@
 @70 = ~No Help At All
 Major Corwin refused to join me in my hunt for the Five. She believes that I'm just as much a force for evil as those I seek to destroy.~ 
 @71 = ~The gate will take you back.~
-
+@72 = ~Nothing at the moment.~
+@73 = ~I'll meet you back at the Athkatla magistrate building.~
+@74 = ~Very well. Don't take too long.~

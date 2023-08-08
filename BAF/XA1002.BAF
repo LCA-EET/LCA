@@ -1,4 +1,12 @@
 IF
+	Global("XA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		MoveGlobal("AR1002", "XACORWIN", [1033.563])
+		SetGlobal("XA_CorwinMeetAthkatlaCouncil", "GLOBAL", 0)
+END
+
+IF
 	GlobalTimerExpired("XA_Ath", "GLOBAL")
 	Global("XA_SkieSaved", "GLOBAL", 2) // Cache
 THEN

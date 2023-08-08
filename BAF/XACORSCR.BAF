@@ -343,8 +343,8 @@ END
 	//{ Can Talk to Caelar
 	IF
 		ActionListEmpty()
-		See("Caelar")
-		IsValidForPartyDialogue("Caelar")
+		See("XACAELAR")
+		IsValidForPartyDialogue("XACAELAR")
 		!Global("XA_CanTalkToCaelar", "LOCALS", 1)
 	THEN
 		RESPONSE #100
@@ -356,8 +356,8 @@ END
 		ActionListEmpty()
 		Global("XA_CanTalkToCaelar", "LOCALS", 1)
 		OR(2)	
-			!See("Caelar")
-			!IsValidForPartyDialogue("Caelar")
+			!See("XACAELAR")
+			!IsValidForPartyDialogue("XACAELAR")
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_CanTalkToCaelar", "LOCALS", 0)
@@ -839,6 +839,7 @@ END
 			Continue()
 	END
 	//}
+
 //}
 
 //{ 10: Interactions concerning the Return to BG Mini Quest
@@ -5911,6 +5912,7 @@ END
 		Global("XA_CanTalkToMazzy", "LOCALS", 1)
 		Global("XA_Banter_CorwinMazzy", "GLOBAL", 2)
 		Range("Mazzy", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -5955,6 +5957,7 @@ END
 		IfValidForPartyDialog(Player1)
 		Global("XA_Banter_CorwinMazzy", "GLOBAL", 4)
 		Range("Mazzy", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -5972,6 +5975,7 @@ END
 		Global("XA_CanTalkToMazzy", "LOCALS", 1)
 		Global("XA_TM_ArcheryChallenge", "GLOBAL", 2)
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			//Dialog B-3A
@@ -5985,6 +5989,7 @@ END
 		Global("XA_CanTalkToMazzy", "LOCALS", 1)
 		Global("XA_TM_ArcheryChallenge", "GLOBAL", 2)
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			//Dialog B-3B
@@ -6015,6 +6020,7 @@ END
 	IF
 		Global("XA_CanTalkToNalia", "LOCALS", 1)
 		Global("XA_Banter_CorwinNalia", "GLOBAL", 2)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6057,6 +6063,7 @@ END
 		Global("XA_CanTalkToNalia", "LOCALS", 1)
 		Global("XA_Banter_CorwinNalia", "GLOBAL", 4)
 		Range("Nalia", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6099,6 +6106,7 @@ END
 		Global("XA_CanTalkToNalia", "LOCALS", 1)
 		Global("XA_Banter_CorwinNalia", "GLOBAL", 6)
 		Range("Nalia", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6147,6 +6155,7 @@ END
 		Global("XA_CanTalkToHaerDalis", "LOCALS", 1)
 		Global("XA_Banter_CorwinHaerDalis", "GLOBAL", 2)
 		Range("HaerDalis", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6189,6 +6198,7 @@ END
 		Global("XA_CanTalkToHaerDalis", "LOCALS", 1)
 		Global("XA_Banter_CorwinHaerDalis", "GLOBAL", 4)
 		Range("HaerDalis", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6237,6 +6247,7 @@ END
 		Global("XA_CanTalkToMinsc", "LOCALS", 1)
 		Global("XA_Banter_CorwinMinsc", "GLOBAL", 2)
 		Range("Minsc", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6280,6 +6291,7 @@ END
 		Global("XA_CanTalkToMinsc", "LOCALS", 1)
 		Global("XA_Banter_CorwinMinsc", "GLOBAL", 4)
 		Range("Minsc", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6323,6 +6335,7 @@ END
 		Global("XA_CanTalkToMinsc", "LOCALS", 1)
 		Global("XA_Banter_CorwinMinsc", "GLOBAL", 6)
 		Range("Minsc", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6371,6 +6384,7 @@ END
 		Global("XA_CanTalkToRasaad", "LOCALS", 1)
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 2)
 		Range("Rasaad", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6414,6 +6428,7 @@ END
 		Global("XA_CanTalkToRasaad", "LOCALS", 1)
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 4)
 		Range("Rasaad", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			//Dialog B-27
@@ -6453,6 +6468,7 @@ END
 		Global("XA_CanTalkToRasaad", "LOCALS", 1)
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 6)
 		Range("Rasaad", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			//Dialog B-28
@@ -6492,6 +6508,7 @@ END
 		Global("XA_CanTalkToRasaad", "LOCALS", 1)
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 8)
 		Range("Rasaad", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			//Dialogs B-29, B-30, B-31, B-32, B-33
@@ -6536,6 +6553,7 @@ END
 		Global("XA_CanTalkToYoshimo", "LOCALS", 1)
 		Global("XA_Banter_CorwinYoshimo", "GLOBAL", 2)
 		Range("Yoshimo", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6583,6 +6601,7 @@ END
 		Global("XA_CanTalkToCernd", "LOCALS", 1)
 		Global("XA_Banter_CorwinCernd", "GLOBAL", 2)
 		Range("Cernd", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6630,6 +6649,7 @@ END
 		Global("XA_CanTalkToValygar", "LOCALS", 1)
 		Global("XA_Banter_CorwinValygar", "GLOBAL", 2)
 		Range("Valygar", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6662,6 +6682,7 @@ END
 		GlobalLT("XA_CorwinValygarLavok", "GLOBAL", 1)
 		GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 		See("Valygar")
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6700,6 +6721,7 @@ END
 		Global("XA_CanTalkToValygar", "LOCALS", 1)
 		Global("XA_CorwinValygarBG", "GLOBAL", 1)
 		Range("Valygar", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6750,6 +6772,7 @@ END
 		Global("XA_Banter_CorwinHexxat", "GLOBAL", 2)
 		InPartyAllowDead("Hexxat")
 		Range(Player1, 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6792,6 +6815,7 @@ END
 		Global("XA_CanTalkToHexxat", "LOCALS", 1)
 		Global("XA_Banter_CorwinHexxat", "GLOBAL", 4)
 		Range("Hexxat", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6822,6 +6846,7 @@ END
 	IF
 		Global("XA_CanTalkToHexxat", "LOCALS", 1)
 		Global("XA_Banter_CorwinHexxat", "GLOBAL", 6)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6893,6 +6918,7 @@ END
 		Global("XA_CanTalkToJaheira", "LOCALS", 1)
 		Global("XA_Banter_CorwinJaheira", "GLOBAL", 2)
 		Range("Jaheira", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6948,6 +6974,7 @@ END
 		Global("XA_CanTalkToJaheira", "LOCALS", 1)
 		Global("XA_Banter_CorwinJaheira", "GLOBAL", 5)
 		Range("Jaheira", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6989,6 +7016,7 @@ END
 		Global("XA_CanTalkToJaheira", "LOCALS", 1)
 		Global("XA_Banter_CorwinJaheira", "GLOBAL", 7)
 		Range("Jaheira", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7035,6 +7063,7 @@ END
 		Global("XA_CanTalkToNeera", "LOCALS", 1)
 		Global("XA_Banter_CorwinNeera", "GLOBAL", 2)
 		Range("Neera", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7066,6 +7095,7 @@ END
 		Global("XA_CanTalkToImoen2", "LOCALS", 1)
 		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinNeera", "GLOBAL", 4)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			//Dialog B-41
@@ -7122,6 +7152,7 @@ END
 		!See([ENEMY])
 		Global("OHD_corwinconflict","GLOBAL",2)
 		See("Dorn")
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			//Dialog B-0
@@ -7132,6 +7163,7 @@ END
 		Global("OHD_sexreactions","GLOBAL",1)
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)  
 		!Global("XA_DornSex", "GLOBAL", 1)
+		!ActuallyInCombat()
 		OR(2)
 			Global("XA_CorwinRomanceActive","GLOBAL",1)
 			Global("XA_CorwinRomanceActive","GLOBAL",2)
@@ -7178,6 +7210,7 @@ END
 		Global("XA_CanTalkToDorn", "LOCALS", 1)
 		Global("XA_Banter_CorwinDorn", "GLOBAL", 2)
 		Range("Dorn", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7222,6 +7255,7 @@ END
 		Global("XA_Banter_CorwinDorn", "GLOBAL", 4)
 		!Global("XA_DornPatronsDead", "GLOBAL", 1)
 		Range("Dorn", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7244,6 +7278,7 @@ END
 		Global("XA_InUnderdark", "GLOBAL", 1)
 		See("Keldorn")
 		Global("XA_CorwinAngryAtKeldorn", "GLOBAL", 1)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7285,6 +7320,7 @@ END
 		Global("XA_CanTalk", "LOCALS", 1)
 		Global("XA_Banter_CorwinKeldornOpt1", "GLOBAL", 2)
 		Range("Keldorn", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7325,6 +7361,7 @@ END
 		Global("XA_CanTalkToKeldorn", "LOCALS", 1)
 		Global("XA_Banter_CorwinKeldorn", "GLOBAL", 2)
 		Range("Keldorn", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7365,6 +7402,7 @@ END
 		Global("XA_CanTalkToKeldorn", "LOCALS", 1)
 		Global("XA_Banter_CorwinKeldorn", "GLOBAL", 4)
 		Range("Keldorn", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7411,6 +7449,7 @@ END
 		Global("XA_CanTalkToKorgan", "LOCALS", 1)
 		Global("XA_Banter_CorwinKorgan", "GLOBAL", 2)
 		Range("Korgan", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7452,6 +7491,7 @@ END
 		Global("XA_CanTalkToKorgan", "LOCALS", 1)
 		Global("XA_Banter_CorwinKorgan", "GLOBAL", 4)
 		Range("Korgan", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7498,6 +7538,7 @@ END
 		Global("XA_CanTalkToJan", "LOCALS", 1)
 		Global("XA_Banter_CorwinJan", "GLOBAL", 2)
 		Range("Jan", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7539,6 +7580,7 @@ END
 		Global("XA_CanTalkToJan", "LOCALS", 1)
 		Global("XA_Banter_CorwinJan", "GLOBAL", 4)
 		Range("Jan", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7573,7 +7615,7 @@ END
 		Gender("Edwin",FEMALE)
 		Global("XA_EdwinWasMale", "GLOBAL", 1)
 		GlobalLT("XA_CorwinEdwinFemale", "GLOBAL", 1)
-		See("Edwin")
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7616,6 +7658,7 @@ END
 		Global("XA_CanTalkToEdwin", "LOCALS", 1)
 		Global("XA_Banter_CorwinEdwin", "GLOBAL", 2)
 		Range("Edwin", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7658,6 +7701,7 @@ END
 		Global("XA_CanTalkToEdwin", "LOCALS", 1)
 		Global("XA_Banter_CorwinEdwin", "GLOBAL", 4)
 		Range("Edwin", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7700,6 +7744,7 @@ END
 		Global("XA_CanTalkToEdwin", "LOCALS", 1)
 		Global("XA_Banter_CorwinEdwin", "GLOBAL", 6)
 		Range("Edwin", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7762,6 +7807,7 @@ END
 		Global("XA_CanTalkToAerie", "LOCALS", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 2)
 		Range("Aerie", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7815,6 +7861,8 @@ END
 	IF
 		Global("XA_CanTalkToAerie", "LOCALS", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 5)
+		Range("Aerie", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7856,6 +7904,7 @@ END
 		Global("XA_CanTalkToAerie", "LOCALS", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 7)
 		Range("Aerie", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7897,6 +7946,7 @@ END
 		Global("XA_CanTalkToAerie", "LOCALS", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 9)
 		Range("Aerie", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7943,6 +7993,7 @@ END
 		Global("XA_CanTalkToAnomen", "LOCALS", 1)
 		Global("XA_Banter_CorwinAnomen", "GLOBAL", 2)
 		Range("Anomen", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7985,6 +8036,7 @@ END
 		Global("XA_CanTalkToAnomen", "LOCALS", 1)
 		Global("XA_Banter_CorwinAnomen", "GLOBAL", 4)
 		Range("Anomen", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8030,6 +8082,7 @@ END
 		Global("XA_CanTalkToViconia", "LOCALS", 1)
 		Global("XA_Banter_CorwinViconia", "GLOBAL", 2)
 		Range("Viconia", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8063,6 +8116,7 @@ END
 	IF
 		Global("XA_CanTalkToViconia", "LOCALS", 1)
 		Global("XA_Banter_CorwinViconia", "GLOBAL", 4)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			//Dialog B-47
@@ -8090,6 +8144,7 @@ END
 	IF
 		Global("XA_CanTalkToViconia", "LOCALS", 1)
 		Global("XA_Banter_CorwinViconia", "GLOBAL", 6)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			//Dialog B-48
@@ -8107,6 +8162,7 @@ END
 		Global("XA_CanTalkToImoen2", "LOCALS", 1)
 		GlobalTimerExpired("XA_CorwinImoenSoulTimer", "GLOBAL")
 		GlobalLT("XA_CorwinImoenSoulTalk", "GLOBAL", 1)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8147,6 +8203,7 @@ END
 		Global("XA_CanTalkToImoen2", "LOCALS", 1)
 		Global("XA_Banter_CorwinImoen", "GLOBAL", 2)
 		Range("Imoen2", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8188,6 +8245,7 @@ END
 		Global("XA_CanTalkToImoen2", "LOCALS", 1)
 		Global("XA_Banter_CorwinImoen", "GLOBAL", 4)
 		Range("Imoen2", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8231,6 +8289,7 @@ END
 		Global("XA_CanTalkToSarevok", "LOCALS", 1)
 		Global("XA_SarevokSoul", "GLOBAL", 1)
 		Range("Sarevok", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8268,6 +8327,7 @@ END
 		Global("XA_CanTalkToSarevok", "LOCALS", 1)
 		Global("XA_Banter_CorwinSarevok", "GLOBAL", 2)
 		Range("Sarevok", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8305,6 +8365,7 @@ END
 		Global("XA_CanTalkToSarevok", "LOCALS", 1)
 		Global("XA_Banter_CorwinSarevok", "GLOBAL", 4)
 		Range("Sarevok", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			//Dialog B-87
@@ -8339,6 +8400,7 @@ END
 		Global("XA_CanTalkToSarevok", "LOCALS", 1)
 		Global("XA_Banter_CorwinSarevok", "GLOBAL", 6)
 		Range("Sarevok", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			//Dialog B-88
@@ -8378,6 +8440,7 @@ END
 		Global("XA_CanTalkToCaelar", "LOCALS", 1)
 		Global("XA_Banter_CorwinCaelar", "GLOBAL", 2)
 		Range("XACAELAR", 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8407,6 +8470,7 @@ END
 	IF
 		!Global("XA_CorwinReunited", "GLOBAL", 1)
 		See(Player1)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8449,6 +8513,7 @@ END
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_Banter_CorwinPlayer", "GLOBAL", 2)
 		Range(Player1, 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8491,6 +8556,7 @@ END
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_Banter_CorwinPlayer", "GLOBAL", 4)
 		Range(Player1, 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8533,6 +8599,7 @@ END
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
 		Range(Player1, 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8574,6 +8641,7 @@ END
 		Global("XA_CorwinComplainSarevok", "GLOBAL", 2)
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Range(Player1, 7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			//Dialog J-69
@@ -8586,6 +8654,7 @@ END
 		GlobalTimerExpired("XA_YagaTimer", "GLOBAL")
 		GlobalLT("XA_SaradushDestroyed", "GLOBAL", 1)
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8628,6 +8697,7 @@ END
 		Global("XA_CorwinParentAdvice", "GLOBAL", 1)
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Range(Player1,7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8643,6 +8713,7 @@ END
 		!AreaCheck("AR5203") // Yaga-Shura Camp
 		Global("XA_CorwinPregnant", "GLOBAL", 1)
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+		!ActuallyInCombat()
 		OR(2)
 			Global("XA_PregnantOverride", "GLOBAL", 1)
 			GlobalTimerExpired("XA_CorwinPregnantTimer", "GLOBAL")
@@ -8686,6 +8757,7 @@ END
 	IF
 		Global("XA_CorwinPregnant", "GLOBAL", 4)
 		Range(Player1,7)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8713,6 +8785,7 @@ END
 	IF
 		Global("XA_CorwinPregnant", "GLOBAL", 6)
 		See(Player1)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8738,6 +8811,7 @@ END
 	IF
 		Global("XA_CorwinPregnant", "GLOBAL", 8)
 		See(Player1)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8764,6 +8838,7 @@ END
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_CorwinPregnant", "GLOBAL", 10)
 		AreaCheck("AR4500")
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8792,6 +8867,7 @@ END
 		Global("XA_CorwinPregnantBabyName_Imoen", "GLOBAL", 1)
 		Global("XA_CanTalkToImoen2", "LOCALS", 1)
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			//Dialog J-73
@@ -8824,6 +8900,7 @@ END
 		Global("XA_CanTalkToAerie", "LOCALS", 1)
 		GlobalLT("XA_CorwinPregnantBabyName_Aerie", "GLOBAL", 1)
 		See(Player1)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8858,6 +8935,7 @@ END
 		GlobalLT("XA_CorwinPregnantBabyName_Jah", "GLOBAL", 1)
 		See(Player1)
 		See("Jaheira")
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8897,6 +8975,7 @@ END
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		GlobalTimerExpired("XA_RomanceConflictTimer", "GLOBAL")
 		GlobalLT("XA_RomanceConflictTalk", "GLOBAL", 1)
+		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)

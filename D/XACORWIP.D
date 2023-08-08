@@ -194,21 +194,7 @@ IF ~~ THEN BEGIN XA_Threat4_NoJoin
 END
 
 //}
-//{ Dialog P-0
-IF ~
-	Global("XA_CorwinJoinOverride", "GLOBAL", 1)
-~ THEN BEGIN XA_JoinOverride
-	SAY @40 /* ~Join Override triggered.~*/
-	
-	IF ~~ THEN
-	DO ~
-		ChangeAIScript("XACORSCR", OVERRIDE)
-		SetGlobal("XA_CorwinJoinOverride", "GLOBAL", 0)
-		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
-	~
-	EXIT
-END
-//}
+
 
 //{ Dialog P-1
 IF ~
@@ -319,13 +305,11 @@ IF ~
 	SAY @0 /* ~<CHARNAME>? Are you sure you don't want me with you?~ [BDCORP6] */
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("XA_CorwinPromoted", "GLOBAL", 1)
 	~ THEN REPLY @6 /* ~Your assistance would be welcome Captain. Join me.~ */
 	GOTO XAA1
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_CorwinPromoted", "GLOBAL", 1)
 	~ THEN REPLY @41 /* ~Your assistance would be welcome Major. Join me.~ */
 	GOTO XAA1
@@ -341,6 +325,12 @@ IF ~
 		SetGlobal("XA_CorwinJoined", "LOCALS", 0)
 	~
 	GOTO XAA3
+	
+	IF ~
+		!AreaCheck("AR1002")
+		GlobalLT("Chapter", "GLOBAL", 20)
+	~ THEN REPLY @73  /* ~Go. I'll meet you back at the Athkatla magistrate.~*/
+	GOTO XA_MeetAth
 END
 
 IF ~
@@ -349,6 +339,49 @@ IF ~
 	ReputationLT(Player1,7)
 ~ THEN BEGIN XA_AreYouSure_RepLT7
 	SAY @32 /* ~You want me out of here? Fine. If you ever clean up your act, you can find me in the Athkatla magistrate.~ */
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
+		EscapeArea()
+	~
+	EXIT
+END
+
+IF ~
+	Global("XA_AskedToRejoin", "LOCALS", 1)
+~ THEN BEGIN XA_MadeDecision
+	SAY @63  /*~<CHARNAME>. What do you need?~ [XA100032] */
+	
+	IF ~~ THEN REPLY @72  /* ~Nothing at the moment.~*/
+	EXIT
+	
+	IF ~
+		!Global("XA_CorwinPromoted", "GLOBAL", 1)
+	~ THEN REPLY @6 /* ~Your assistance would be welcome Captain. Join me.~ */
+	GOTO XAA1
+	
+	IF ~
+		Global("XA_CorwinPromoted", "GLOBAL", 1)
+	~ THEN REPLY @41 /* ~Your assistance would be welcome Major. Join me.~ */
+	GOTO XAA1
+	
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1 /* ~I need you at my side, now more than ever. Join me.~ */
+	GOTO XAA2
+	
+	IF ~
+		!AreaCheck("AR1002")
+		GlobalLT("Chapter", "GLOBAL", 20)
+	~ THEN REPLY @73  /* ~Go. I'll meet you back at the Athkatla magistrate.~*/
+	GOTO XA_MeetAth
+END
+
+IF ~~ THEN BEGIN XA_MeetAth
+	SAY @74  /*  ~Very well. Don't take too long.~*/
+	
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
