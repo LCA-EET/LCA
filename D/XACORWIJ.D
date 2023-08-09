@@ -1033,7 +1033,9 @@ IF ~~ THEN BEGIN XA_SARPROVF_0_BodhiBite
 END
 
 IF ~~ THEN BEGIN XA_SARPROVF_0_BodhiBite2
-	SAY @1624 /* ~I don't know ... for a moment I felt a strange sensation. Something's wrong here. I think there's more to this woman than meets the eye. Go with her, but watch your back.~   */
+	SAY @1627 /*~Something's not right here.~ [BD62258] */
+	
+	= @1624 /* ~I don't approve of this, but I think there's more to this woman than meets the eye. Go with her, and watch your back.~   */
 	
 	IF ~~ THEN
 	EXTERN ~SARPROVF~ 1
@@ -1453,7 +1455,7 @@ END
 IF ~
 	Global("XA_CorwinPregnant", "GLOBAL", 2)
 ~ THEN BEGIN XA_CorwinPregnantInitial
-	SAY @1510 /* ~Unhh...~ */
+	SAY @1510 /* ~Unhh...~ [XA100068]*/ 
 	
 	
 	IF ~~ THEN REPLY @1511 /*  ~You look a little under the weather, love. Is everything alright?~ */
@@ -1897,7 +1899,9 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_NeedAnything
 END
 
 IF ~~ THEN BEGIN XA_CorwinPregnant2_DontTell_Aerie
-	SAY @1539 /* ~I don't want anyone to give me any special treatment. Aerie knows, but I don't want the rest to know I'm pregnant. Eventually they'll find out of course, but for now, let's keep it between us.~ */
+	SAY @1561 /*~The fewer people who learn of this, the better.~ [XA100088]*/
+	
+	= @1539 /* ~I don't want anyone to give me any special treatment. Aerie knows, but I don't want the rest to know I'm pregnant. Eventually they'll find out of course, but for now, let's keep it between us.~ */
 	
 	IF ~~ THEN REPLY @1541 /* ~As you wish, dear.~*/
 	GOTO XA_CorwinPregnant2_End
@@ -1928,7 +1932,9 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_Imoen
 END
 
 IF ~~ THEN BEGIN XA_CorwinPregnant2_DontTell_Jaheira
-	SAY @1540 /* ~I don't want anyone to give me any special treatment. Jaheira knows, but I don't want the rest to know I'm pregnant. Eventually they'll find out of course, but for now, let's keep it between us.~ */
+	SAY @1561 /*~The fewer people who learn of this, the better.~ [XA100088]*/
+	
+	= @1540 /* ~I don't want anyone to give me any special treatment. Jaheira knows, but I don't want the rest to know I'm pregnant. Eventually they'll find out of course, but for now, let's keep it between us.~*/
 	
 	IF ~~ THEN REPLY @1541 /* ~As you wish, dear.~*/
 	GOTO XA_CorwinPregnant2_End
@@ -1940,7 +1946,9 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_DontTell_Jaheira
 END
 
 IF ~~ THEN BEGIN XA_CorwinPregnant2_DontTell
-	SAY @1538 /* ~I don't want anyone to give me any special treatment, or to even know I'm pregnant. Eventually they'll find out of course, but for now, let's keep it between us.~*/
+	SAY @1561 /*~The fewer people who learn of this, the better.~ [XA100088]*/
+	
+	= @1538 /* ~I don't want anyone to give me any special treatment, or to even know I'm pregnant. Eventually they'll find out of course, but for now, let's keep it between us.~*/
 	
 	IF ~~ THEN REPLY @1541 /* ~As you wish, dear.~*/
 	GOTO XA_CorwinPregnant2_End
@@ -2070,7 +2078,7 @@ IF ~
 	GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 99)
 	// play romance song (if in romance)
 ~ THEN BEGIN XA_BGEND3_DidNotRequest
-	SAY @1223 /* ~I'm coming with you. Don't try and talk me out of it.~ */
+	SAY @1223 /* ~I'm going with you. Don't try and talk me out of it.~ [XA100099] */
 	
 	IF ~~ THEN REPLY @1225 /* ~Right. I need you by my side.~ */
 	DO ~
@@ -2086,7 +2094,7 @@ IF ~
 END
 
 IF ~~ THEN BEGIN XA_BGEND3_DidNotRequest_B
-	SAY @1220 /* ~Are you sure? You're going to need my help...~*/
+	SAY @2 /* ~You sure you don't want me with you?~ [XA100101]*/
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -6512,7 +6520,7 @@ IF ~~ THEN BEGIN XAA28
 END
 
 IF ~~ THEN BEGIN XAA29
-	SAY @62 /* ~Let's find some place more private, shall we?  ~ */
+	SAY @62 /* ~Let's go find some place a little more private...~ [XA100102] ~ */
 	IF ~~ THEN REPLY @63 /* ~What did you have in mind?~ */
 	GOTO XAA30C
 	
@@ -7502,6 +7510,8 @@ END
 
 IF ~~ THEN BEGIN XAA77
 	SAY @238 /* ~You know, I heard you cheering for me, love. It meant a lot.~ */
+	
+	= @236 /*~You don’t know how much I appreciate that.~ [XA100093]*/
 	
 	= @195 /* ~(You share a warm embrace.)~ */
 	

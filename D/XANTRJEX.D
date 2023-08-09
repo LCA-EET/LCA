@@ -2,6 +2,16 @@
 
 //Interjects associated with the LCA Mod
 
+//{ FIRKRA02
+	INTERJECT_COPY_TRANS FIRKRA02 4 XA_FIRKRA02_4
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@132 /*~That's all this is to you? Revenge?~ [BD35761] */
+	END
+//}
+
 //{ SCDUR
 	INTERJECT_COPY_TRANS SCDUR 25 XA_SCDUR_25
 		== XACORWIB

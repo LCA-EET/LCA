@@ -1,6 +1,6 @@
 @0 = ~<CHARNAME>? Are you sure that you don't need my help?~
 @1 = ~That... That's it? That's all you wanted to say?~ [XA100001]
-@2 = ~~
+@2 = ~You sure you don't want me with you?~ [XA100101]
 @3 = ~~
 @4 = ~~
 @5 = ~~
@@ -60,7 +60,7 @@
 @59 = ~(Kiss her) Why wait?~
 @60 = ~Mm. As much as I want to, this is hardly the time or place, and duty must come before pleasure. Let's go love. We've work to do.~
 @61 = ~Mm, is that an order, hero?~
-@62 = ~Let's find some place more private, shall we? ~
+@62 = ~Let's go find some place a little more private...~ [XA100102]
 @63 = ~What did you have in mind?~
 @64 = ~The street in mid-day, or perhaps the amphitheater. Gods, what do you think? There are plenty of inns in the city, pick one!~
 @65 = ~Come with me love, I know just the place.~
@@ -78,7 +78,7 @@
 @77 = ~Gorion would be so happy for you, <CHARNAME>...~ 
 @78 = ~Let's go, love. We have work to do.~
 @79 = ~Gladly, my dear.~
-@80 = ~Come here...~
+@80 = ~Come here...~ [BD54548]
 @81 = ~(You share a tender and emotional embrace.)~
 @82 = ~I'm covered in him! Gods, you are too!~
 @83 = ~With your help, he will be, my friend. Let's go.~
@@ -212,7 +212,7 @@
 @211 = ~What kind of monster could murder one child, let alone dozens?~
 @212 = ~(She calms down.)~
 @213 = ~Let's get going, love.~
-@214 = ~Thank you.~
+@214 = ~Thank you.~ [XA100091]
 @215 = ~What does Irenicus gain from a war between the surface elves and the drow? There must be a reason.~
 @216 = ~You were with her for a while...~
 @217 = ~Listen, Schael. She didn't leave me any choice. I had to in order to maintain our cover.~
@@ -234,9 +234,9 @@
 @233 = ~Hm, I didn't see her as the type to be so easily turned away. Let's go love.~
 @234 = ~~
 @235 = ~~
-@236 = ~~
+@236 = ~You don’t know how much I appreciate that.~ [XA100093]
 @237 = ~I think Rohma will appreciate it more... gods, I miss them...~
-@238 = ~You know, I heard you cheering for me, love. It meant a lot.~
+@238 = ~You know, I heard you cheering for me, love...~
 @239 = ~Let me see that trophy.~
 @240 = ~So, what do you think?~
 @241 = ~I think that you'll never cease to amaze me.~
@@ -1231,7 +1231,7 @@ Corwin has arrested Beno Famari for kidnapping and attempted murder. Hopefully, 
 @1220 = ~Are you sure? You're going to need my help...~
 @1221 = ~I'm sure, my love. I can't risk losing you.~
 @1222 = ~I'm sure. The city can't risk losing the both of us.~
-@1223 = ~I'm coming with you. Don't try and talk me out of it.~
+@1223 = ~I'm going with you. Don't try and talk me out of it.~ [XA100099]
 @1224 = ~~
 @1225 = ~Right. I need you by my side.~
 @1226 = ~As much as I want you to, your family, and this city, need you to protect them.~
@@ -1466,7 +1466,7 @@ You and Schael shared a tender moment; it seems that the two of you are still de
 @1449 = ~So am I... look at me complaining. You've been through the ringer and you keep moving forward. You'd have made a great officer, you know.~
 @1450 = ~Doubtful, but I appreciate the sentiment. Let's get going.~
 @1451 = ~And I may still. Who knows what the future holds in store for us? Let's get going.~
-@1452 = ~Right.~
+@1452 = ~Right.~ [XA100096]
 @1453 = ~With you as my commander? Sounds intriguing — I bet you'd *love* ordering me around, wouldn't you hon?~
 @1454 = ~(She smiles wryly.)~
 @1455 = ~I would. But not as much as you'd enjoy it.~
@@ -1524,7 +1524,7 @@ You and Schael shared a tender moment; it seems that the two of you are still de
 @1507 = ~Stand ready — this place has been overrun by giants.~
 @1508 = ~The city's been completely destroyed.~
 @1509 = ~I haven't seen destruction like this since Caelar's crusade.~
-@1510 = ~Unhh...~
+@1510 = ~Unhh...~ [XA100068]
 @1511 = ~You look a little under the weather, love. Is everything alright?~
 @1512 = ~Yeah... it must've been something I ate. Don't worry, I'll be fine. Let's keep moving.~
 @1513 = ~Shh! I don't want him to ...~
@@ -1532,7 +1532,7 @@ You and Schael shared a tender moment; it seems that the two of you are still de
 @1515 = ~Aerie, do you have a minute? I need to talk to you about something, in private.~
 @1516 = ~Jaheira, do you have a minute? I need to talk to you about something, in private.~
 @1517 = ~<CHARNAME> ... there's something I need to tell you. I ...~
-@1518 = ~I'm pregnant.~
+@1518 = ~I'm pregnant.~ [XA100098]
 @1519 = ~What? But you don't look pregnant — are you sure?~
 @1520 = ~I'm certain. I'm late this month, and a couple of days ago the morning sickness started. It's the same as when I was pregnant with Rohma. I won't start showing for probably six to eight weeks, but I'm definitely with child.~
 @1521 = ~Schael, that's wonderful news!~
@@ -1571,11 +1571,11 @@ You and Schael shared a tender moment; it seems that the two of you are still de
 @1554 = ~~
 @1555 = ~I'm going to be a father ...~
 @1556 = ~Schael, I ... I'm not sure if I'm ready for this responsibility.~
-@1557 = ~I understand your misgivings, and that this is a lot to process. But you're ready for this. I've seen how great you are with Rohma. I know you'd be a great father to our child ... I know it.~
+@1557 = ~I understand your misgivings, and that this is a lot to process. But you're ready for this. I've seen how you are with Rohma. I know you'd be a great father to our child ... I know it.~
 @1558 = ~But a baby, now? Given all of the danger we face?~
 @1559 = ~Are you sure? That you're pregnant, I mean?~
 @1560 = ~I'm not as sure ... but I promise you, I'm going to give it my all. This is wonderful news!~
-@1561 = ~~
+@1561 = ~The fewer people who learn of this, the better.~ [XA100088]
 @1562 = ~No, but I figure I'm between four and six weeks in. Probably closer to six, which means I'll likely start showing ten to twelve weeks from now. We still have time to do what we need to here.~
 @1563 = ~I'm here for you, my love. If there's anything you require, you need only ask.~
 @1564 = ~Funny you mention that. When I was pregnant with Rohma, one night I had the strongest craving for roasted turnips. Not mashed, diced, or boiled, they *had* to be roasted. The market was closed, so my father had to go to the greengrocer's house in the middle of the night to buy some, then come back and cook them. I guess Jan would have us covered this time around, should that particular craving return. There is one thing that I ask, though ...~ 
@@ -1641,10 +1641,10 @@ Schael needs to send a message to the Dukes to inform them of our progress thus 
 @1621 = ~(She reaches up and touches the scar left behind from Bodhi's bite.)~
 @1622 = ~~
 @1623 = ~Are you alright?~
-@1624 = ~I don't know ... for a moment I felt a strange sensation. I don't approve of this but I think there's more to this woman than meets the eye. Go with her, and watch your back.~  
+@1624 = ~I don't approve of this, but I think there's more to this woman than meets the eye. Go with her, and watch your back.~  
 @1625 = ~You know I don't approve of this... but there's something about her. She may have some important information that she'll only disclose in private. Go with her, but watch your back.~
 @1626 = ~Illasera's dead. <CHARNAME> and I saw to that after she kidnapped my daughter.~
-@1627 = ~~
+@1627 = ~Something's not right here.~ [BD62258]
 @1628 = ~She is... and neither I, nor the Dukes, nor the Flaming Fist will allow the Five to threaten Baldur's Gate or its citizens again.~
 @1629 = ~~
 @1630 = ~~
@@ -1741,7 +1741,7 @@ Schael needs to send a message to the Dukes to inform them of our progress thus 
 @1721 = ~This reminds me of the time when —~
 @1722 = ~Jan. I'll miss you, too.~
 @1723 = ~Aye. Before you go Schael, take this recipe. It's for a buttered turnip puree. My children loved it when they were wee small.~
-@1724 = ~<CHARNAME>, I think we need to have a talk.~
+@1724 = ~<CHARNAME>. We need to talk.~ [BD54471]
 @1725 = ~What's on your mind, love?~
 @1726 = ~Sure — what is it?~
 @1727 = ~You made it clear to me, I thought, that you wanted us to be together.~
@@ -1769,7 +1769,7 @@ Schael needs to send a message to the Dukes to inform them of our progress thus 
 @1749 = ~Unbelievable! Irenicus must've done a number on your senses. There's no other explanation for you choosing that ... that slut, over me. As soon as this mission is over, we're through.~ 
 @1750 = ~~
 @1751 = ~(She gives you a kiss on the cheek.)~
-@1752 = ~Let's go.~
+@1752 = ~Let's go.~ [XA100097]
 @1753 = ~(Her voice cracks.)~
 @1754 = ~I thought I'd *sob* lost you...~
 @1755 = ~(She lays her head down on your chest, and you hold her tenderly in your arms. In moments, she finally loses her composure and begins to weep in earnest.)~
