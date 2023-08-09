@@ -21,6 +21,7 @@ END
 
 IF
 	Global("XA_CaelarRescue", "GLOBAL", 1)
+	GlobalLT("XA_CaelarSuicide", "GLOBAL", 1)
 	GlobalLT("XA_CaelarSpawn", "XA5300", 1)
 THEN
 	RESPONSE #100
@@ -30,15 +31,11 @@ THEN
 END
 
 IF
-	GlobalLT("XA_AshaSpawn", "XA5300", 1)
-	Global("XA_CaelarStayedInAvernus","GLOBAL",1)
-	OR(2)
-		Global("XA_IncubusDefeated", "GLOBAL", 1)
-		GlobalGT("DemoGorgonIsDead","GLOBAL",0)
+	Global("XA_CaelarRescue", "GLOBAL", 1)
+	Global("XA_CaelarSuicide", "GLOBAL", 2)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_AshaSpawn", "XA5300", 1)
-		Continue()
+		ActionOverride("XAASHASP", StartDialog("XAASHASP", Player1))
 END
 
 IF
@@ -138,3 +135,4 @@ THEN
 		ActionOverride("XABENOSP", DestroySelf())
 		Continue()
 END
+

@@ -265,7 +265,6 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 
 //{ New Areas
 	COPY ~LCA/ARE/XA4700.ARE~ ~override~
-	COPY ~LCA/ARE/XA4500.ARE~ ~override~
 	COPY ~LCA/ARE/XA5300.ARE~ ~override~
 	COPY ~LCA/ARE/XA5501.ARE~ ~override~
 	COPY ~LCA/ARE/XAPEN.ARE~ ~override~
@@ -292,6 +291,14 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	COPY ~LCA/ARE/XACSHOW.ARE~ ~override~	// Hall of Wonders Cutscene Area
 	COPY ~LCA/ARE/XAHOME.ARE~ ~override~ 	// Corwin's Home
 	COPY ~LCA/ARE/XAHOMEL2.ARE~ ~override~ 	// Corwin's Home L2
+	
+	//{ XA4500
+	COPY ~LCA/ARE/XA4500.ARE~ ~override~
+	COPY ~LCA/ARE/XA4500.WED~ ~override~
+	COPY ~LCA/ARE/XA4500HT.BMP~ ~override~
+	COPY ~LCA/ARE/XA4500LM.BMP~ ~override~
+	COPY ~LCA/ARE/XA4500SR.BMP~ ~override~
+	//}
 	
 	//{ XACS12
 	COPY ~LCA/ARE/XACS12.ARE~ ~override~

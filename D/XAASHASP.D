@@ -1,6 +1,44 @@
 BEGIN ~XAASHASP~
 
 IF ~
+	Global("XA_CaelarSuicide", "GLOBAL", 2)
+~ THEN BEGIN XA_CaelarSuicide
+	SAY @57  /* ~You've returned... we sensed Caelar's passing, and the way to the beyond is open to us. Before we depart this plane, tell me... how did she die?~*/
+	
+	IF ~~ THEN REPLY @58  /* ~Not well. (Explain what happened.)~*/
+	DO ~
+		SetGlobal("XA_CaelarSuicide", "GLOBAL", 3)
+	~
+	GOTO XA_CaelarSuicide_2A
+	
+	IF ~~ THEN REPLY @59  /* ~It matters not. Go now, spirit.~*/
+	DO ~
+		SetGlobal("XA_CaelarSuicide", "GLOBAL", 3)
+	~
+	GOTO XA_CaelarSuicide_2B
+END
+
+IF ~~ THEN BEGIN XA_CaelarSuicide_2A
+	SAY @61 /* ~You're cruelty is boundless, Bhaalspawn... but I've no tears left to spare. This wretched crusade began in blood, and thus so it has ended. Farewell.~*/
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_OathRelease", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_CaelarSuicide_2B
+	SAY @60 /* ~Very well, then. Thank you <CHARNAME>, and farewell.~*/
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_OathRelease", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~
 	OR(2)
 		InMyArea("XACAELA2")
 		Global("XA_OathRelease", "GLOBAL", 1)

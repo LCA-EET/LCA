@@ -1,4 +1,15 @@
 IF
+	Global("XA_Return5300", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Return5300", "MYAREA", 2)
+		ActionOverride(Player1,AddSpecialAbility("SPIN649"))
+		CopyGroundPilesTo("AR4500", [1985.1250])
+		StartCutSceneMode()
+		StartCutScene("XAGO5300")
+END
+
+IF
 	GlobalLT("XA_RemovePocketPlane", "MYAREA", 1)
 THEN
 	RESPONSE #100

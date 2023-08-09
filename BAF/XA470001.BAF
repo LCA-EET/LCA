@@ -3,9 +3,9 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
-		CreateVisualEffect("SPPORTAL",[1320.865])
+		CreateVisualEffect("SPPORTAL",[1465.765])
 		Wait(2)
-		CreateCreature("XAINCUB2", [1320.865], NE)
+		CreateCreature("XAINCUB2", [1465.765], NE)
 		SetGlobal("XA_4700_Incubus", "GLOBAL",1)
 		Wait(1)
 		FaceObject("XAAVBOSS")

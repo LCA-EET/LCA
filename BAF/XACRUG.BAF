@@ -34,12 +34,30 @@ END
 IF
 	Name("XAASHASP", Myself)
 	Global("XA_OathRelease", "GLOBAL", 1)
+	GlobalLT("XA_CaelarSuicide", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_DestroySelf", "LOCALS", 2)
 		Wait(10)
 		DisplayStringHead(Myself,@11)
+		Wait(3)
+		AddexperienceParty(15000)
+		SetGlobal("XA_CrusadersGone", "GLOBAL", 1)
+		DestroySelf()
+		SetInterrupt(TRUE)
+END
+
+IF
+	Name("XAASHASP", Myself)
+	Global("XA_OathRelease", "GLOBAL", 1)
+	GlobalGT("XA_CaelarSuicide", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_DestroySelf", "LOCALS", 2)
+		Wait(10)
+		DisplayStringHead(Myself,@12)
 		Wait(3)
 		AddexperienceParty(15000)
 		SetGlobal("XA_CrusadersGone", "GLOBAL", 1)

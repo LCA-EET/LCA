@@ -154,12 +154,52 @@ IF ~
 	
 	IF ~~ THEN REPLY @15  /* ~Caelar... your ordeal is over. Come with me. (Take her hand.)~*/
 	GOTO XA_WonBattle2
+	
+	IF ~~ THEN REPLY @57  /* ~Of course I did. Now, back in your cage.~ */
+	GOTO XA_LeaveInCage
+END
+
+IF ~~ THEN BEGIN XA_LeaveInCage
+	SAY @58  /* ~What? You mean to... to leave me here? Please, take me with you! I can't bear this any longer!~*/
+	
+	IF ~~ THEN REPLY @59  /* ~You're right... you've suffered enough. Come with me. (Take her hand.)~*/
+	GOTO XA_WonBattle2
+	
+	IF ~~ THEN REPLY @61  /* ~What a pathetic sight. The so-called 'Shining Lady', broken, humbled and begging at my feet. Would that your crusaders could see you now.~*/
+	GOTO XA_LeaveInCage2
+END
+
+IF ~~ THEN BEGIN XA_LeaveInCage2
+	SAY @62  /* ~Please... I - I'll do anything! Just take me from this place!~ */
+	
+	IF ~~ THEN REPLY @63  /*~You've suffered much, but not nearly enough. No, you will remain here.~*/
+	GOTO XA_CaelarSuicide
+	
+	IF ~~ THEN REPLY @64  /* ~Humility suits you. Come, you've suffered enough. (Take her hand.)~ */
+	GOTO XA_WonBattle2
+END
+
+IF ~~ THEN BEGIN XA_CaelarSuicide
+	SAY @65  /* ~No... NO! I won't let him touch me again!~ */
+	
+	= @66  /* ~(Desparate and wild-eyed, she rises to her feet and nearly bowls you over. Using the last of her divine strength, she runs toward the edge of the tower...)~*/
+	
+	IF ~~ THEN 
+	DO ~
+		SetGlobal("XA_CaelarSuicide", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutScene("XACAESUI")
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN XA_WonBattle2
 	SAY @17  /*  ~Where? Where can I go? No one would have me, after what I've done, and what he did to me...~ */
 	
 	IF ~~ THEN REPLY @18 /* ~I know at least one person who'd be happy to see you. But first, we need to go to Kanaglym.~*/
+	GOTO XA_WonBattle3
+	
+	IF ~~ THEN REPLY @60 /* ~We'll figure that out later. We need to leave before the demon returns.~*/
 	GOTO XA_WonBattle3
 END
 
@@ -168,10 +208,7 @@ IF ~~ THEN BEGIN XA_WonBattle3
 	
 	IF ~~ THEN
 	DO ~
-		ActionOverride(Player1,AddSpecialAbility("SPIN649"))
-		CopyGroundPilesTo("AR4500", [1985.1250])
-		StartCutSceneMode()
-		StartCutScene("XAGO5300")
+		SetGlobal("XA_Return5300", "MYAREA", 1)
 	~
 	EXIT
 END

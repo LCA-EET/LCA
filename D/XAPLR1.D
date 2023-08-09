@@ -43,6 +43,21 @@ APPEND ~PLAYER1~
 		GOTO XA_Exit
 	END
 
+	IF ~
+		Global("XA_CaelarSuicide", "GLOBAL", 1)
+	~ THEN BEGIN XA_CaelarSuicided
+		SAY @180  /* ~(You peek over the edge of the tower... through the smoke and haze, you see Caelar's body. Her elbow is bent backwards, and her head is split open, its contents splayed across a rocky outcropping at the base of the tower. It would seem that her life, and her suffering, has truly come to an end.)~ */
+		
+		= @181  /* ~(The demon will be back soon, you think to yourself. It's time to leave.)~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_CaelarSuicide", "GLOBAL", 2)
+			SetGlobal("XA_Return5300", "MYAREA", 1)
+		~
+		EXIT
+	END
+
 	IF ~~ THEN BEGIN XA_AdvanceTime
 		SAY @177
 		
