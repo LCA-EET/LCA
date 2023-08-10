@@ -11,69 +11,21 @@ BEGIN ~XACORWIJ~
 
 //{ Player Statue Talk
 	IF ~
-		Global("XA_PlayerStatueTalk", "GLOBAL", 1)
+		Global("XA_CorwinStatueTalk", "GLOBAL", 1)
+		GlobalGT("XA_CorwinStatue", "GLOBAL", 0)
 	~ THEN BEGIN XA_CorwinStatueTalk
 		SAY @235  /* ~What have we here?~ [BD60998] */
-		
-		IF ~~ THEN REPLY @326  /* ~This statue makes me look like a damned troll! Look, the arms are nearly as long as the legs! And gods, that nose!~*/
-		DO ~
-			SetGlobal("XA_PlayerStatueTalk", "GLOBAL", 2)
-		~
-		GOTO XA_PlayerStatueTalk_2A
-		
-		IF ~~ THEN REPLY @327  /* ~Do you think this looks like me?~*/
-		DO ~
-			SetGlobal("XA_PlayerStatueTalk", "GLOBAL", 2)
-		~
-		GOTO XA_PlayerStatueTalk_2B
-		
-		
-	END
-	
-	IF ~~ THEN BEGIN XA_PlayerStatueTalk_2A
-		SAY @332 /* ~(She tries, and fails, to stifle a laugh.)~ */
-		
-		= @331  /* ~This must be a tough time for you, then.~ [BD35157]*/ 
-		
-		IF ~~ THEN
-		GOTO XA_CorwinStatueTalk_3
-		
-	END
-	
-	IF ~~ THEN BEGIN XA_PlayerStatueTalk_2B
-		SAY @329 /* ~Not at all...~ */
-		
-		= @328  /* ~Take it as a compliment.~ [BD39876] */
-		
-		IF ~~ THEN
-		GOTO XA_CorwinStatueTalk_3
-	END
-//}
 
-//{ Corwin Statue Talk
-	IF ~
-		Global("XA_CorwinStatueTalk", "GLOBAL", 1)
-	~ THEN BEGIN XA_CorwinStatueTalk
-		SAY @271  /* ~What the hells is this now?~ [BD50195] */
+		= @1308 /*~(She looks at the statue the townsfolk erected in her image.)~*/
 		
 		IF ~~ THEN REPLY @4  /* ~They, ah... seem to have exagerrated some of your attributes.~*/
-		DO ~
-			SetGlobal("XA_CorwinStatueTalk", "GLOBAL", 2)
-		~
 		GOTO XA_CorwinStatueTalk_2A
 		
 		IF ~~ THEN REPLY @5  /* ~It's a beautiful statue.~*/
-		DO ~
-			SetGlobal("XA_CorwinStatueTalk", "GLOBAL", 2)
-		~
 		GOTO XA_CorwinStatueTalk_2B
 		
 		IF ~~ THEN REPLY @6  /* ~It doesn't do you justice, I'm afraid.~*/
-		DO ~
-			SetGlobal("XA_CorwinStatueTalk", "GLOBAL", 2)
-		~
 		GOTO XA_CorwinStatueTalk_2C
-		
 	END
 	
 	IF ~~ THEN BEGIN XA_CorwinStatueTalk_2A
@@ -82,26 +34,71 @@ BEGIN ~XACORWIJ~
 		= @234  /* ~A little.~ [BD35159]*/ 
 		
 		IF ~~ THEN
-		GOTO XA_CorwinStatueTalk_3
-		
+		GOTO XA_CorwinStatueTalkEnd
 	END
 	
 	IF ~~ THEN BEGIN XA_CorwinStatueTalk_2B
 		SAY @7 /* ~Flatterer.~ [XA100073] */
 		
 		IF ~~ THEN
-		GOTO XA_CorwinStatueTalk_3
+		GOTO XA_CorwinStatueTalkEnd
 	END
 	
 	IF ~~ THEN BEGIN XA_CorwinStatueTalk_2C
 		SAY @7 /* ~Flatterer.~ [XA100073] */
 		
 		IF ~~ THEN
-		GOTO XA_CorwinStatueTalk_3
+		GOTO XA_CorwinStatueTalkEnd
 	END
 	
-	IF ~~ THEN BEGIN XA_CorwinStatueTalk_3
-		SAY @246 /* ~Come on. Let's have a look at the others!~*/
+	IF ~~ THEN BEGIN XA_CorwinStatueTalkEnd
+		SAY @1315 /* ~~(She looks at the statue the townsfolk made of you.)~~*/
+		
+		IF ~~ THEN
+		GOTO XA_PlayerStatueTalk
+	END
+	
+//}
+
+//{ Corwin Statue Talk
+	IF ~
+		Global("XA_CorwinStatueTalk", "GLOBAL", 1)
+	~ THEN BEGIN XA_PlayerStatueTalk
+		SAY @271  /* ~What the hells is this now?~ [BD50195] */
+		
+		IF ~~ THEN REPLY @326  /* ~This statue makes me look like a damned troll! Look, the arms are nearly as long as the legs! And gods, that nose!~*/
+		DO ~
+			SetGlobal("XA_CorwinStatueTalk", "GLOBAL", 2)
+		~
+		GOTO XA_PlayerStatueTalk_2A
+		
+		IF ~~ THEN REPLY @327  /* ~Do you think this looks like me?~*/
+		DO ~
+			SetGlobal("XA_CorwinStatueTalk", "GLOBAL", 2)
+		~
+		GOTO XA_PlayerStatueTalk_2B
+		
+	END
+	
+	IF ~~ THEN BEGIN XA_PlayerStatueTalk_2A
+		SAY @332 /* ~(She tries, and fails, to stifle a laugh.)~ */
+		
+		= @331  /* ~This must be a tough time for you, then.~ [BD35157]*/ 
+		IF ~~ THEN REPLY @1200
+		GOTO XA_PlayerStatueTalkEnd
+	END
+	
+	IF ~~ THEN BEGIN XA_PlayerStatueTalk_2B
+		SAY @329 /* ~Not at all...~ */
+
+		= @328  /* ~Take it as a compliment.~ [BD39876] */
+		
+		IF ~~ THEN
+		GOTO XA_PlayerStatueTalkEnd
+	END
+	
+	IF ~~ THEN BEGIN XA_PlayerStatueTalkEnd
+		SAY @816 /*~That was an entertaining distraction, but it WAS a distraction. We have work to do. Let's go.~ [BD47449]*/
 		
 		IF ~~ THEN
 		EXIT

@@ -28,7 +28,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CorStatue", "MYAREA", 1)
-		SetGlobal("XA_CorwinStatue2", "GLOBAL", 1)
+		SetGlobal("XA_CorwinStatue", "GLOBAL", 2)
 		Continue()
 END
 
@@ -39,7 +39,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CorStatue", "MYAREA", 1)
-		SetGlobal("XA_CorwinStatue3", "GLOBAL", 1)
+		SetGlobal("XA_CorwinStatue", "GLOBAL", 3)
 		Continue()
 END
 
@@ -50,7 +50,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CorStatue", "MYAREA", 1)
-		SetGlobal("XA_CorwinStatue4", "GLOBAL", 1)
+		SetGlobal("XA_CorwinStatue", "GLOBAL", 4)
 		Continue()
 END
 
@@ -61,7 +61,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CorStatue", "MYAREA", 1)
-		SetGlobal("XA_CorwinStatue5", "GLOBAL", 1)
+		SetGlobal("XA_CorwinStatue", "GLOBAL", 5)
 		Continue()
 END
 
@@ -72,6 +72,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CorStatue", "MYAREA", 1)
-		SetGlobal("XA_CorwinStatue6", "GLOBAL", 1)
+		SetGlobal("XA_CorwinStatue", "GLOBAL", 6)
 		Continue()
 END

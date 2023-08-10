@@ -1566,6 +1566,8 @@ END
 	
 	//{ See Statue
 	IF
+		GlobalLT("XA_CorwinStatueTalk", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		OR(6)
 			See("statue01")
 			See("statue02")
@@ -1582,7 +1584,8 @@ END
 			Range("statue06", 10)
 	THEN
 		RESPONSE #100
-		
+			SetGlobal("XA_CorwinStatueTalk", "GLOBAL", 1)
+			StartDialog("XACORWIJ", Player1)
 	END
 	//}
 

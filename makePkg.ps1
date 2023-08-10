@@ -1,5 +1,6 @@
 Remove-Item -LiteralPath "LCA" -Force -Recurse
 Remove-Item "LoveConquersAll_EET.zip" -Force
+Remove-Item "Setup-LCA.exe" -Force
 
 Copy-Item -Path "2DA" -Destination "LCA\2DA" -Recurse
 Copy-Item -Path "ARE" -Destination "LCA\ARE" -Recurse
@@ -19,8 +20,9 @@ Copy-Item -Path "LCA.TP2" -Destination "LCA"
 Copy-Item -Path "LICENSE.md" -Destination "LCA"
 <# Copy-Item -Path "README.md" -Destination "LCA" #>
 Copy-Item -Path "User Guide.pdf" -Destination "LCA"
+Copy-Item -Path "weidu.exe" -Destination "Setup-LCA.exe"
 
 Compress-Archive -Path "LCA" -DestinationPath "LoveConquersAll_EET.zip"
-Compress-Archive -Path "weidu.exe" -Update -DestinationPath "LoveConquersAll_EET.zip"
+Compress-Archive -Path "Setup-LCA.exe" -Update -DestinationPath "LoveConquersAll_EET.zip"
 
 Get-FileHash LoveConquersAll_EET.zip -Algorithm SHA256 > output.txt

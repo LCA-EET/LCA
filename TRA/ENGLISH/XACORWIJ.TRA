@@ -817,7 +817,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @813 = ~We should pay a visit to the Thieves' Guild. They may know how to decode them.~
 @814 = ~Right. Let's go.~
 @815 = ~That's better. You'd be well served to keep your tongue on a short leash.~
-@816 = ~~
+@816 = ~That was an entertaining distraction, but it WAS a distraction. We have work to do. Let's go.~ [BD47449]
 @817 = ~Good. I better not that hear that foolishness from you again.~
 @818 = ~Good. That's what I thought.~
 @819 = ~I see. Come with me to the Flaming Fist headquarters. I'm sure Duke Eltan would appreciate hearing how much of a fool he is for allowing <CHARNAME> back into the city.~
@@ -1205,7 +1205,7 @@ Do not keep us waiting for long."~
 @1197 = ~Are you alright? That couldn't have been easy for you.~
 @1198 = ~Schael... I'm sorry.~
 @1199 = ~What?~
-@1200 = ~~
+@1200 = ~I'm glad one of us is enjoying this.~
 @1201 = ~(She lets out a long sigh.)~
 @1202 = ~No. This is wrong. Killing you, again, isn't going to solve anything. I've at least learned that much.~ 
 @1203 = ~Beno, you're under arrest for the crimes of kidnapping and attempted murder.~
@@ -1319,14 +1319,14 @@ You're eager to finally meet Schael's family, and you'd like to make a good impr
 The harbor master provided you with the shipping manifests for a new company called Winston Ventures. Unfortunately, the manifests are encrypted. You'll have to find some way to decode them.~
 @1306 = ~You alright?~ [BD64597]
 @1307 = ~You look like you've seen a ghost.~
-@1308 = ~~
+@1308 = ~(She looks at the statue the townsfolk erected in her image.)~
 @1309 = ~I... I'm fine... ~
 @1310 = ~Honey, what's wrong? You can tell me.~
 @1311 = ~Alatos ... when he brought up the tunnels beneath the city ... it all came flooding back, Schael.~
 @1312 = ~I understand... it was a traumatic experience, for all of us.~ 
 @1313 = ~It's nothing... come on, let's go.~
 @1314 = ~I think about it, still. Not as much as I used to, but... it's scary to think how close you were to... how close we were to —~
-@1315 = ~~
+@1315 = ~(She turns to look at the statue the townsfolk made of you.)~
 @1316 = ~I know, love. Come here.~ 
 @1317 = ~(You share a long and tender embrace.)~
 @1318 = ~Thank you, Schael... For believing in me, and for believing in us.~ 
