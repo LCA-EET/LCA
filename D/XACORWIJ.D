@@ -7010,7 +7010,7 @@ IF ~~ THEN BEGIN XA_SlaveGirl5
 END
 
 IF ~~ THEN BEGIN XAA50
-	SAY @169  /* ~Hah, how could anyone forget. Hopefully they are doing well.~ */
+	SAY @169  /* ~Hah, how could anyone forget. I miss our colleagues from the coalition as well... even that prick de Lancie. Hopefully they're doing well.~ */
 	
 	IF ~
 		OR(3)
@@ -7050,6 +7050,7 @@ IF ~~ THEN BEGIN XAA51
 	
 	IF ~
 		Global("XA_CaelarStayedInAvernus","GLOBAL",1)
+		GlobalLT("XA_CaelarRescue", "GLOBAL", 1)
 	~ THEN REPLY @175 /* ~Yes. I often wonder about Caelar, and whether she is still alive, in Avernus.~ */
 	GOTO XAA53 //OK
 END
@@ -7562,6 +7563,7 @@ IF ~~ THEN BEGIN XAA58
 	
 	IF ~
 		Global("XA_CaelarStayedInAvernus","GLOBAL",1)
+		GlobalLT("XA_CaelarRescue", "GLOBAL", 1)
 	~ THEN REPLY @175 /* ~Yes. I often wonder about Caelar, and whether she is still alive, in Avernus.~ */
 	GOTO XAA53 //OK
 END

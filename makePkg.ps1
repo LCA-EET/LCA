@@ -25,4 +25,4 @@ Copy-Item -Path "weidu.exe" -Destination "Setup-LCA.exe"
 Compress-Archive -Path "LCA" -DestinationPath "LoveConquersAll_EET.zip"
 Compress-Archive -Path "Setup-LCA.exe" -Update -DestinationPath "LoveConquersAll_EET.zip"
 
-Get-FileHash LoveConquersAll_EET.zip -Algorithm SHA256 > output.txt
+Get-FileHash LoveConquersAll_EET.zip -Algorithm SHA256 > SHA256.txt
