@@ -350,7 +350,7 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 
 //{ Modifications to Existing Areas
 	COPY_EXISTING ~AR2000.ARE~ ~override~
-	
+	/*
 	LPF ALTER_AREA_REGION
 		INT_VAR
 		type			= 2
@@ -404,7 +404,7 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 		region_name		= ~StatueInfo6~
 		region_script	= ~XASTAT06~
 	END
-
+	*/
 
 	COPY_EXISTING ~BG1316.ARE~ ~override~
 	LPF fj_are_structure

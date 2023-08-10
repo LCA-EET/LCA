@@ -1563,6 +1563,28 @@ END
 //} End Underdark Check
 
 //{ 18: Event Checks
+	
+	//{ See Statue
+	IF
+		OR(6)
+			See("statue01")
+			See("statue02")
+			See("statue03")
+			See("statue04")
+			See("statue05")
+			See("statue06")
+		OR(6)
+			Range("statue01", 10)
+			Range("statue02", 10)
+			Range("statue03", 10)
+			Range("statue04", 10)
+			Range("statue05", 10)
+			Range("statue06", 10)
+	THEN
+		RESPONSE #100
+		
+	END
+	//}
 
 	//{ Entered Troll Hill
 	IF
