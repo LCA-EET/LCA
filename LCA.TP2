@@ -349,6 +349,63 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 //}
 
 //{ Modifications to Existing Areas
+	COPY_EXISTING ~AR2000.ARE~ ~override~
+	
+	LPF ALTER_AREA_REGION
+		INT_VAR
+		type			= 2
+		info_point		= 0
+		STR_VAR
+		region_name		= ~StatueInfo~
+		region_script	= ~XASTAT01~
+	END
+	
+	LPF ALTER_AREA_REGION
+		INT_VAR
+		type			= 2
+		info_point		= 0
+		STR_VAR
+		region_name		= ~StatueInfo2~
+		region_script	= ~XASTAT02~
+	END
+
+	LPF ALTER_AREA_REGION
+		INT_VAR
+		type			= 2
+		info_point		= 0
+		STR_VAR
+		region_name		= ~StatueInfo3~
+		region_script	= ~XASTAT03~
+	END
+
+	LPF ALTER_AREA_REGION
+		INT_VAR
+		type			= 2
+		info_point		= 0
+		STR_VAR
+		region_name		= ~StatueInfo4~
+		region_script	= ~XASTAT04~
+	END
+	
+	LPF ALTER_AREA_REGION
+		INT_VAR
+		type			= 2
+		info_point		= 0
+		STR_VAR
+		region_name		= ~StatueInfo5~
+		region_script	= ~XASTAT05~
+	END
+
+	LPF ALTER_AREA_REGION
+		INT_VAR
+		type			= 2
+		info_point		= 0
+		STR_VAR
+		region_name		= ~StatueInfo6~
+		region_script	= ~XASTAT06~
+	END
+
+
 	COPY_EXISTING ~BG1316.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR

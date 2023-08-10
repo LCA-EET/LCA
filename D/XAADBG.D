@@ -5,6 +5,24 @@ IF ~
 ~ THEN BEGIN XA_MainMenu
 	SAY @0 /* ~How can I help you?~ */
 	
+	IF ~~ THEN REPLY @624
+	DO ~
+		CreateCreatureObjectCopy("statue01",Player1Fill,0,0,0)  // Magical Sword
+		CreateCreatureObjectCopy("statue02",Player2Fill,0,0,0)  // Magical Sword
+		CreateCreatureObjectCopy("statue03",Player3Fill,0,0,0)  // Magical Sword
+		CreateCreatureObjectCopy("statue04",Player4Fill,0,0,0)  // Magical Sword
+		CreateCreatureObjectCopy("statue05",Player5Fill,0,0,0)  // Magical Sword
+		CreateCreatureObjectCopy("statue06",Player6Fill,0,0,0)  // Magical Sword
+		ActionOverride("statue01",MoveBetweenAreas("AR2000",[1732.1302],S))  // Trademeet
+		ActionOverride("statue02",MoveBetweenAreas("AR2000",[1851.1293],SE))  // Trademeet
+		ActionOverride("statue03",MoveBetweenAreas("AR2000",[1888.1211],E))  // Trademeet
+		ActionOverride("statue04",MoveBetweenAreas("AR2000",[1812.1145],N))  // Trademeet
+		ActionOverride("statue05",MoveBetweenAreas("AR2000",[1689.1160],W))  // Trademeet
+		ActionOverride("statue06",MoveBetweenAreas("AR2000",[1644.1240],SW))  // Trademeet
+		SetGlobal("XA_MakeStatue", "GLOBAL", 1)
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @614
 	GOTO XA_Assistant
 	
@@ -3279,6 +3297,12 @@ END
 IF ~~ THEN BEGIN XA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
 	
+	IF ~~ THEN REPLY @622
+	DO ~
+		SetGlobal("MakeStatue","GLOBAL",1)
+	~
+	GOTO XA_MainMenu
+	
 	IF ~~ THEN REPLY @616
 	DO ~
 		SetGlobal("XA_GaveCorwinLetter", "GLOBAL", 2)
@@ -3973,6 +3997,13 @@ END
 
 IF ~~ THEN BEGIN XA_Menu_StartCutscene
 	SAY @15 /*  ~Of course. Which cutscene do you want to start?~ */
+	
+	IF ~~ THEN REPLY @623
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("cut37a")
+	~
+	EXIT
 	
 	IF ~~ THEN REPLY @577
 	DO ~

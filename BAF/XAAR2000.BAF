@@ -18,4 +18,60 @@ THEN
 	RESPONSE #100
 		SetGlobal("ArcherySignupSpawn", "GLOBAL", 1)
 		CreateCreature("XATMARSU", [3477.2127], S)
+		Continue()
+END
+
+IF
+	Global("MakeStatue","GLOBAL",1)
+	Name("XACORWIN", Player2)
+	!Global("XA_CorStatue", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CorStatue", "MYAREA", 1)
+		SetGlobal("XA_CorwinStatue2", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	Global("MakeStatue","GLOBAL",1)
+	Name("XACORWIN", Player3)
+	!Global("XA_CorStatue", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CorStatue", "MYAREA", 1)
+		SetGlobal("XA_CorwinStatue3", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	Global("MakeStatue","GLOBAL",1)
+	Name("XACORWIN", Player4)
+	!Global("XA_CorStatue", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CorStatue", "MYAREA", 1)
+		SetGlobal("XA_CorwinStatue4", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	Global("MakeStatue","GLOBAL",1)
+	Name("XACORWIN", Player5)
+	!Global("XA_CorStatue", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CorStatue", "MYAREA", 1)
+		SetGlobal("XA_CorwinStatue5", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	Global("MakeStatue","GLOBAL",1)
+	Name("XACORWIN", Player6)
+	!Global("XA_CorStatue", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CorStatue", "MYAREA", 1)
+		SetGlobal("XA_CorwinStatue6", "GLOBAL", 1)
+		Continue()
 END
