@@ -56,9 +56,8 @@ IF
 	OR(2)
 		Global("XA_CorwinSex_1", "GLOBAL", 1)
 		Global("XA_CorwinSex_2", "GLOBAL", 1)
-	OR(15)
-		AreaCheck("AR0021") //Crooked Crane 1FL
-		AreaCheck("AR0022") //Crooked Crane 2FL
+	OR(13)
+		
 		AreaCheck("AR0313") //Sea Bounty 1FL
 		AreaCheck("AR0314") //Sea Bounty 2FL
 		AreaCheck("AR0509") //Five Flagons, 1FL
@@ -170,7 +169,10 @@ IF
 		Global("XA_CorwinSex_1", "GLOBAL", 1)
 		Global("XA_CorwinSex_2", "GLOBAL", 1)
 	Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
-	AreaCheck("AR0406") // Copper Coronet
+	OR(3)
+		AreaCheck("AR0406") // Copper Coronet
+		AreaCheck("AR0021") // Crooked Crane 1FL
+		AreaCheck("AR0022") // Crooked Crane 2FL
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself,~Debug Player1D - 14~)

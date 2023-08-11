@@ -287,6 +287,17 @@
 		GOTO XA_BringCaelar
 	END
 	
+	APPEND SALVANAS
+		IF ~
+			!InPartySlot(LastTalkedToBy,0)
+			Name("XACORWIN", LastTalkedToBy)
+		~ THEN BEGIN XA_MeetCorwin
+			SAY @327 /*~My, oh my...~*/
+			
+			IF ~~ THEN 
+			EXTERN XACORWIB XA_SavanasCorwinChain
+		END
+	END
 	APPEND PPGUY01
 		IF ~~ THEN BEGIN XA_Avernus_KnowRisk
 			SAY @16

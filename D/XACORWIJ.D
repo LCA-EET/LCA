@@ -5893,12 +5893,31 @@ IF ~
 	~
 	EXIT
 
-	IF ~~ THEN REPLY @68 /* ~The rats bother you, eh?~ */
+	IF ~
+		AreaCheck("AR0406") // Copper Coronet
+	~ THEN REPLY @68 /* ~The rats bother you, eh?~ */
 	DO ~
 		IncrementGlobal("XA_CorwinComplainSexCount", "GLOBAL", 1)
 		SetGlobal("XA_CorwinComplainSex", "GLOBAL", 0)
 	~
 	GOTO XA_CorwinSexCC2
+	
+	IF ~
+		AreaCheck("AR0021") // Crooked Crane 1FL
+		AreaCheck("AR0022") // Crooked Crane 2FL
+	~ THEN REPLY @68 /* ~The rats bother you, eh?~ */
+	DO ~
+		IncrementGlobal("XA_CorwinComplainSexCount", "GLOBAL", 1)
+		SetGlobal("XA_CorwinComplainSex", "GLOBAL", 0)
+	~
+	GOTO XA_CorwinSexCrane
+END
+
+IF ~~ THEN BEGIN XA_CorwinSexCrane
+	SAY @771 /*~That, and we're not making love in a gods damn stable. Let's go.~*/
+	
+	IF ~~ THEN REPLY @67 /* ~Right... sorry, love.~ */
+	EXIT
 END
 
 IF ~~ THEN BEGIN XA_CorwinSexCC2

@@ -3410,7 +3410,18 @@ END
 		= @862 /* ~If we succeed, we'll vouch for your actions after your release from Avernus. The Dukes might be open to sparing your life, especially when they learn of what you've already suffered. You'd still have to worry about the Waterdhavian and Daggerford authorities, however.~*/
 		== XACAELAB
 		@863 /* ~I appreciate that Major, and I want to assure you that when the time comes, I'll accept whatever justice awaits me. Let's move out.~ */
-EXIT
+	EXIT
 	
+	CHAIN XACORWIB XA_SavanasCorwinChain
+		@619 /* ~Here it comes...~ [BD58941] */
+		== SALVANAS
+		@620 /* ~There's nothing that gets my blood pumping like seeing a strong, beautiful woman in uniform... Come, love, and let us get to know each other over a drink or two.~*/
+		== XACORWIB
+		@621 /* ~Oh, let's not, please.~ [BD63913] */
+		== SALVANAS
+		@622 /*~I wonder... what delightful pleasures are you hiding behind all of that armor? I'll show you mine if you show me yours...~*/
+		== XACORWIB
+		@623 /*~~For the love of the gods, save that filth for a chamberpot.~ [XA100003]*/
+	EXIT
 	//}
 //}
