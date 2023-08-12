@@ -31,6 +31,9 @@ APPEND ~PLAYER1~
 		IF ~~ THEN REPLY @148 /* ~Adjust Caelar banter timers.~*/
 		GOTO XA_AdjustCaelarBanterTimer
 		
+		IF ~~ THEN REPLY @182
+		GOTO XA_VersionCheck
+		
 		IF ~
 			Global("XA_ExplicitModActive", "GLOBAL", 1)
 		~ THEN REPLY @43  /* ~Check if the LCA_Explicit mod is active.~ */
@@ -54,6 +57,13 @@ APPEND ~PLAYER1~
 		GOTO XA_Exit
 	END
 
+	IF ~~ THEN BEGIN XA_VersionCheck
+		SAY @183
+		
+		IF ~~ THEN 
+		GOTO XA_Assistant
+	END
+
 	IF ~~ THEN BEGIN XA_ExplicitActive
 		SAY @69  /* ~The LCA_Explicit mod is active.~ */
 		
@@ -73,42 +83,42 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN REPLY @172
 		DO ~
-			ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
+			//ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
 			AdvanceTime(FOUR_HOURS)
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @173
 		DO ~
-			ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
+			//ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
 			AdvanceTime(EIGHT_HOURS)
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @179
 		DO ~
-			ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
+			//ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
 			AdvanceTime(TWELVE_HOURS)
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @174
 		DO ~
-			ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
+			//ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
 			AdvanceTime(ONE_DAY)
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @175
 		DO ~
-			ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
+			//ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
 			AdvanceTime(TWO_DAYS)
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @176
 		DO ~
-			ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
+			//ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
 			AdvanceTime(THREE_DAYS)
 		~
 		GOTO XA_ChangeDone
