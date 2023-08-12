@@ -3,8 +3,8 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
-		SetGlobalTimer("XA_CorwinSexNoSleep", "GLOBAL", TWO_ROUNDS)
 		SetGlobalTimer("XA_CorwinSexTimer", "GLOBAL", THREE_DAYS)
+		
 		ChangeStat(Player1,CON,1,ADD)
 		AddXPObject(Player1, 100000)
 		ChangeStat(Myself,CON,1,ADD)
@@ -20,5 +20,6 @@ THEN
 		ChangeStat(Player4, FATIGUE, 7, SET)
 		ChangeStat(Player5, FATIGUE, 7, SET)
 		ChangeStat(Player6, FATIGUE, 7, SET)
+		
 		StartCutScene("XAEXPLEX")
 END

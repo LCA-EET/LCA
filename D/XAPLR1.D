@@ -19,6 +19,7 @@ APPEND ~PLAYER1~
 		EXIT
 	END
 
+	//{ LCA Assistant
 	IF ~
 		Global("XAAssist","GLOBAL",1)
 	~ THEN BEGIN XA_Assistant
@@ -29,6 +30,16 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN REPLY @148 /* ~Adjust Caelar banter timers.~*/
 		GOTO XA_AdjustCaelarBanterTimer
+		
+		IF ~
+			Global("XA_ExplicitModActive", "GLOBAL", 1)
+		~ THEN REPLY @43  /* ~Check if the LCA_Explicit mod is active.~ */
+		GOTO XA_ExplicitActive
+		
+		IF ~
+			!Global("XA_ExplicitModActive", "GLOBAL", 1)
+		~ THEN REPLY @43  /* ~Check if the LCA_Explicit mod is active.~ */
+		GOTO XA_ExplicitInactive
 		
 		IF ~~ THEN REPLY @177
 		GOTO XA_AdvanceTime
@@ -43,21 +54,20 @@ APPEND ~PLAYER1~
 		GOTO XA_Exit
 	END
 
-	IF ~
-		Global("XA_CaelarSuicide", "GLOBAL", 1)
-	~ THEN BEGIN XA_CaelarSuicided
-		SAY @180  /* ~(You peek over the edge of the tower... through the smoke and haze, you see Caelar's body. Her elbow is bent backwards, and her head is split open, its contents splayed across a rocky outcropping at the base of the tower. It would seem that her life, and her suffering, has truly come to an end.)~ */
+	IF ~~ THEN BEGIN XA_ExplicitActive
+		SAY @69  /* ~The LCA_Explicit mod is active.~ */
 		
-		= @181  /* ~(The demon will be back soon, you think to yourself. It's time to leave.)~ */
-		
-		IF ~~ THEN
-		DO ~
-			SetGlobal("XA_CaelarSuicide", "GLOBAL", 2)
-			SetGlobal("XA_Return5300", "MYAREA", 1)
-		~
-		EXIT
+		IF ~~ THEN 
+		GOTO XA_Assistant
 	END
-
+	
+	IF ~~ THEN BEGIN XA_ExplicitInactive
+		SAY @86  /* ~The LCA_Explicit mod is NOT active.~*/
+		
+		IF ~~ THEN 
+		GOTO XA_Assistant
+	END
+	
 	IF ~~ THEN BEGIN XA_AdvanceTime
 		SAY @177
 		
@@ -109,31 +119,8 @@ APPEND ~PLAYER1~
 		IF ~~ THEN REPLY @160 /*~Exit.~ */
 		GOTO XA_Exit 
 	END
-
-	IF ~
-		Global("XA_ReadCorwinLetter", "GLOBAL", 1)
-	~ THEN BEGIN XA_ReadCorwinLetter
-		SAY @93 /* ~(The letter reads as follows.)~ */
-		
-		IF ~
-			Global("XA_CorwinContinue", "GLOBAL", 2)
-		~ THEN
-		DO ~
-			SetGlobal("XA_ReadCorwinLetter", "GLOBAL", 2)
-			SetGlobal("bd_plot","global",665)
-		~
-		GOTO XA_ReadLetter_Romantic
-		
-		IF ~
-			Global("XA_CorwinContinue", "GLOBAL", 1)
-		~ THEN
-		DO ~
-			SetGlobal("XA_ReadCorwinLetter", "GLOBAL", 2)
-			SetGlobal("bd_plot","global",665)
-		~
-		GOTO XA_ReadLetter_Friend
-	END
-
+	
+	
 	IF ~~ THEN BEGIN XA_Debug
 		SAY @169 /* ~WARNING: The debugger is meant to be used for testing purposes only. Improper alterations to the game state can crash the game, or make it so that you cannot complete the game.~*/
 		
@@ -311,6 +298,48 @@ APPEND ~PLAYER1~
 		IF ~~ THEN REPLY @160 /*~Exit.~ */
 		GOTO XA_Exit
 	END
+	//}
+
+	IF ~
+		Global("XA_CaelarSuicide", "GLOBAL", 1)
+	~ THEN BEGIN XA_CaelarSuicided
+		SAY @180  /* ~(You peek over the edge of the tower... through the smoke and haze, you see Caelar's body. Her elbow is bent backwards, and her head is split open, its contents splayed across a rocky outcropping at the base of the tower. It would seem that her life, and her suffering, has truly come to an end.)~ */
+		
+		= @181  /* ~(The demon will be back soon, you think to yourself. It's time to leave.)~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_CaelarSuicide", "GLOBAL", 2)
+			SetGlobal("XA_Return5300", "MYAREA", 1)
+		~
+		EXIT
+	END
+
+
+	IF ~
+		Global("XA_ReadCorwinLetter", "GLOBAL", 1)
+	~ THEN BEGIN XA_ReadCorwinLetter
+		SAY @93 /* ~(The letter reads as follows.)~ */
+		
+		IF ~
+			Global("XA_CorwinContinue", "GLOBAL", 2)
+		~ THEN
+		DO ~
+			SetGlobal("XA_ReadCorwinLetter", "GLOBAL", 2)
+			SetGlobal("bd_plot","global",665)
+		~
+		GOTO XA_ReadLetter_Romantic
+		
+		IF ~
+			Global("XA_CorwinContinue", "GLOBAL", 1)
+		~ THEN
+		DO ~
+			SetGlobal("XA_ReadCorwinLetter", "GLOBAL", 2)
+			SetGlobal("bd_plot","global",665)
+		~
+		GOTO XA_ReadLetter_Friend
+	END
+
 
 	IF ~
 		Global("XA_KanaDreamTimerSet", "GLOBAL",1)
@@ -471,7 +500,7 @@ APPEND ~PLAYER1~
 		EXIT
 		
 		IF ~
-			!Global("XA_ExplicitModActive", "GLOBAL", 1)
+			GlobalLT("XA_ExplicitModActive", "GLOBAL", 1)
 		~ THEN
 		GOTO XA_NeedExplicitMod
 	END

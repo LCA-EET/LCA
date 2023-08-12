@@ -43,7 +43,7 @@ Do not keep us waiting for long."~
 @40 = ~Captain, do you agree? Has <CHARNAME> been able to maintain <PRO_HISHER> control over this new power?~
 @41 = ~Yes, ma'am. I'd trust <PRO_HIMHER> with my life, any day.~
 @42 = ~Corporal Duncan, please escort <CHARNAME> and Captain Corwin to the study.~
-@43 = ~~
+@43 = ~Check if the LCA_Explicit mod is active.~
 @44 = ~(Again, you and Captain Corwin step into the meeting chamber. While you are inwardly annoyed at having been kept waiting for so long, you do a good job of concealing this from the Council. You briefly glance at the faces of the Dukes. They are expressionless, and yield no indication of what they discussed, or what is about to take place.)~ [XA100067]
 @45 = ~Ah, Captain, <CHARNAME> - please forgive us for the delay. We needed time to make the appropriate arrangements.~
 @46 = ~Arrangements?~
@@ -69,8 +69,8 @@ Do not keep us waiting for long."~
 @66 = ~(You were victorious — Rohma is safe, though Schael requires immediate medical attention.)~
 @67 = ~(It seems Beno Famari is still alive.)~
 @68 = ~(You were victorious, but at great cost. Schael sacrificed herself to save Rohma. Sadly, there is no hope of bringing her back.)~
-@69 = ~~
-@70 = ~(Filled with rage, you turn to him. The sight of his snivelling face is enough to send you past the point of no return. You give into your dark nature, and transform into the Slayer. His pleas for mercy fall on deaf ears, and you rip his heart from his chest. You throw his lifeless body across the room, and begin to eat his still-beating heart.)~
+@69 = ~The LCA_Explicit mod is active.~
+@70 = ~(Filled with rage, you turn to him. The sight of his sniveling face is enough to send you past the point of no return. You give into your dark nature, and transform into the Slayer. His pleas for mercy fall on deaf ears, and you rip his heart from his chest. You throw his lifeless body across the room, and begin to eat his still-beating heart.)~
 @71 = ~(The taste and gore does little to satiate your bloodlust. You want more. You need more! This is who you are, you think to yourself. Why did you ever resist this kind of power? It's your birthright!)~
 @72 = ~(You make your way out of the Undercity, and into the Thieves' Maze. You break through wall after wall with ease, and make it into the Guild. Their feeble attempts to stop you prove fruitless, and you gleefully rip them limb from limb.)~
 @73 = ~(The screams are heard throughout the city as you decimate the Thieves' Guild. You make your way out into the street, and head to the Ducal Palace. Those foolish enough to remain in your path are easily swept aside.)~
@@ -86,7 +86,7 @@ Do not keep us waiting for long."~
 @83 = ~(You lift Schael and carry her over your shoulder, and make your way back to the surface.)~
 @84 = ~Yes.~
 @85 = ~No.~
-@86 = ~~
+@86 = ~The LCA_Explicit mod is NOT active.~
 @87 = ~Schael? Schael! No...~
 @88 = ~(Upon seeing the cell in which you were once imprisoned, you recall the dark circumstances that forced your departure from the city...)~
 @89 = ~(Skie's blood on your hands. The looks of disgust and abject horror on the faces of your coalition comrades. The trial, and the pain you felt upon hearing the citizens call for your execution. Irenicus' gloating. Your desperate escape through the sewers...)~

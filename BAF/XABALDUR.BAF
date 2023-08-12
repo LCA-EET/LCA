@@ -1,37 +1,15 @@
 //{ Explicit Mod Check
-
-IF
+IF 
 	GlobalTimerExpired("XA_ExplicitModCheckTimer", "GLOBAL")
-	GlobalLT("XA_ExplicitCheckComplete", "GLOBAL", 1)
+	Global("XA_ExplicitModCheckTimerSet", "GLOBAL", 1)
+	Global("XA_ExplicitModActive","GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_ExplicitModCheckTimer", "GLOBAL", ONE_HOUR)
 		SetGlobal("XA_ExplicitModActive", "GLOBAL", 0)
-		SetGlobal("XA_ExplicitCheckComplete", "GLOBAL", 1)
+		SetGlobal("XA_ExplicitModCheckTimerSet", "GLOBAL", 0)
 		SetInterrupt(TRUE)
-		Continue()
-END
-
-IF
-	GlobalLT("XA_ExplicitModCheckTimerSet", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("XA_ExplicitModCheckTimer", "GLOBAL", ONE_HOUR)
-		SetGlobal("XA_ExplicitModCheckTimerSet", "GLOBAL", 1)
-		SetInterrupt(TRUE)
-		Continue()
-END
-
-IF
-	Global("XA_ExplicitCheckComplete", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("XA_ExplicitModCheckTimer", "GLOBAL", ONE_HOUR)
-		SetGlobal("XA_ExplicitCheckComplete", "GLOBAL", 0)
-		SetInterrupt(TRUE)
-		Continue()
 END
 
 //}

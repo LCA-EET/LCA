@@ -1367,11 +1367,10 @@ IF
 	ActionListEmpty()
 	InParty(Myself)
 	!Global("XA_CanLeaveParty", "GLOBAL", 1)
-	!OR(4)
-		Global("XA_PlanarSphere", "GLOBAL", 1)
-		Global("XA_PlanarPrison", "GLOBAL", 1)
-		Global("XA_InUnderdark", "GLOBAL", 1)
-		Global("XA_TrappedInDemonPrison", "GLOBAL", 1)
+	!Global("XA_PlanarSphere", "GLOBAL", 1)
+	!Global("XA_PlanarPrison", "GLOBAL", 1)
+	!Global("XA_InUnderdark", "GLOBAL", 1)
+	!Global("XA_TrappedInDemonPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CanLeaveParty", "GLOBAL", 1)
@@ -1415,12 +1414,11 @@ IF
 	ActionListEmpty()
 	InParty(Myself)
 	Global("XA_TrappedInDemonPrison", "GLOBAL", 1)
-	!OR(5)
-		AreaCheck("XADEMSAN")
-		AreaCheck("XAG1")
-		AreaCheck("XAG2A")
-		AreaCheck("XAG3")
-		AreaCheck("XAPAINT1")
+	!AreaCheck("XADEMSAN")
+	!AreaCheck("XAG1")
+	!AreaCheck("XAG2A")
+	!AreaCheck("XAG3")
+	!AreaCheck("XAPAINT1")
 THEN
 	RESPONSE #100
 		SetGlobal("XA_TrappedInDemonPrison", "GLOBAL", 0)
@@ -1433,7 +1431,7 @@ IF
 	ActionListEmpty()
 	InParty(Myself)
 	!Global("XA_PlanarSphere", "GLOBAL", 1)
-	OR(5)
+	OR(6)
 		AreaCheck("AR0410")
 		AreaCheck("AR0411")
 		AreaCheck("AR0412")
@@ -1450,13 +1448,12 @@ IF
 	ActionListEmpty()
 	InParty(Myself)
 	Global("XA_PlanarSphere", "GLOBAL", 1)
-	!OR(5)
-		AreaCheck("AR0410")
-		AreaCheck("AR0411")
-		AreaCheck("AR0412")
-		AreaCheck("AR0413")
-		AreaCheck("AR0414")
-		AreaCheck("AR0415")
+	!AreaCheck("AR0410")
+	!AreaCheck("AR0411")
+	!AreaCheck("AR0412")
+	!AreaCheck("AR0413")
+	!AreaCheck("AR0414")
+	!AreaCheck("AR0415")
 THEN 
 	RESPONSE #100
 		SetGlobal("XA_PlanarSphere", "GLOBAL", 0)
@@ -1486,13 +1483,12 @@ IF
 	ActionListEmpty()
 	InParty(Myself)
 	Global("XA_PlanarPrison", "GLOBAL", 1)
-	!OR(6)
-		AreaCheck("AR0516")
-		AreaCheck("AR0517")
-		AreaCheck("AR0518")
-		AreaCheck("AR0519")
-		AreaCheck("AR0520")
-		AreaCheck("AR0521")
+	!AreaCheck("AR0516")
+	!AreaCheck("AR0517")
+	!AreaCheck("AR0518")
+	!AreaCheck("AR0519")
+	!AreaCheck("AR0520")
+	!AreaCheck("AR0521")
 THEN 
 	RESPONSE #100
 		SetGlobal("XA_PlanarPrison", "GLOBAL", 0)
@@ -1535,25 +1531,24 @@ IF
 	ActionListEmpty()
 	InParty(Myself)
 	Global("XA_InUnderdark", "GLOBAL", 1)
-	!OR(18)
-		AreaCheck("AR2100") // Underdark
-		AreaCheck("AR2101") // Beholder Cave in Underdark
-		AreaCheck("AR2102") // Adalon's Cave
-		AreaCheck("AR2200") // Ust Natha
-		AreaCheck("AR2201") // Ust Natha Temple
-		AreaCheck("AR2202") // Ust Natha Inn 1FL
-		AreaCheck("AR2203") // Ust Natha Inn 2FL
-		AreaCheck("AR2204") // Ust Natha House
-		AreaCheck("AR2205") // Ust Natha House
-		AreaCheck("AR2206") // Qilue's House
-		AreaCheck("AR2207") // Deirex's Tower
-		AreaCheck("AR2208") // Jarlaxle's House
-		AreaCheck("AR2209") // Jarlaxle's House
-		AreaCheck("AR2210") // Deirex's Cave
-		AreaCheck("AR2300") // Sahuagin City
-		AreaCheck("AR2400") // Mind Flayers
-		AreaCheck("AR2401") // Cave to Exit
-		AreaCheck("AR2402") // Kuo Toa
+	!AreaCheck("AR2100") // Underdark
+	!AreaCheck("AR2101") // Beholder Cave in Underdark
+	!AreaCheck("AR2102") // Adalon's Cave
+	!AreaCheck("AR2200") // Ust Natha
+	!AreaCheck("AR2201") // Ust Natha Temple
+	!AreaCheck("AR2202") // Ust Natha Inn 1FL
+	!AreaCheck("AR2203") // Ust Natha Inn 2FL
+	!AreaCheck("AR2204") // Ust Natha House
+	!AreaCheck("AR2205") // Ust Natha House
+	!AreaCheck("AR2206") // Qilue's House
+	!AreaCheck("AR2207") // Deirex's Tower
+	!AreaCheck("AR2208") // Jarlaxle's House
+	!AreaCheck("AR2209") // Jarlaxle's House
+	!AreaCheck("AR2210") // Deirex's Cave
+	!AreaCheck("AR2300") // Sahuagin City
+	!AreaCheck("AR2400") // Mind Flayers
+	!AreaCheck("AR2401") // Cave to Exit
+	!AreaCheck("AR2402") // Kuo Toa
 THEN 
 	RESPONSE #100
 		//DisplayStringHead(Myself, ~DEBUG_Not In Underdark~)
@@ -2435,13 +2430,55 @@ END
 	//}
 
 	//{ After Sex Party Banter
+	IF
+		ActionListEmpty()
+		Global("XA_CorwinSex_1", "GLOBAL", 4)
+		GlobalLT("XA_CorwinSexNoSleepTimerSet", "GLOBAL", 1)
+	THEN
+		RESPONSE #100	
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_CorwinSexNoSleepTimer", "GLOBAL", ONE_ROUND)
+			SetGlobal("XA_CorwinSexNoSleepTimerSet", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
 	IF 
 		ActionListEmpty()
-		GlobalTimerExpired("XA_CorwinSexNoSleep", "GLOBAL")
-		!Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		GlobalTimerExpired("XA_CorwinSexNoSleepTimer", "GLOBAL")
+		GlobalLT("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		OR(6)
+			IsValidForPartyDialogue("Aerie")
+			IsValidForPartyDialogue("Neera")
+			IsValidForPartyDialogue("Nalia")
+			IsValidForPartyDialogue("Imoen2")
+			IsValidForPartyDialogue("Jaheira")
+			IsValidForPartyDialogue("Viconia")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+			//DisplayStringHead(Myself, ~DEBUG: CSNC A~)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_CorwinSexNoSleepTimer", "GLOBAL")
+		GlobalLT("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		!IsValidForPartyDialogue("Aerie")
+		!IsValidForPartyDialogue("Neera")
+		!IsValidForPartyDialogue("Nalia")
+		!IsValidForPartyDialogue("Imoen2")
+		!IsValidForPartyDialogue("Jaheira")
+		!IsValidForPartyDialogue("Viconia")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
+			//DisplayStringHead(Myself, ~DEBUG: CSNC B~)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -3134,6 +3171,7 @@ END
 			SetGlobal("XA_AerieBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 1)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -3262,6 +3300,7 @@ END
 			SetGlobal("XA_AnomenBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 2)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -3388,6 +3427,7 @@ END
 			SetGlobal("XA_DornBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 3)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -3513,6 +3553,7 @@ END
 			SetGlobal("XA_EdwinBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 4)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -3639,6 +3680,7 @@ END
 			SetGlobal("XA_ImoenBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 5)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -3765,6 +3807,7 @@ END
 			SetGlobal("XA_HexxatBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 6)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -3891,6 +3934,7 @@ END
 			SetGlobal("XA_JaheiraBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 7)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -4017,6 +4061,7 @@ END
 			SetGlobal("XA_JanBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 8)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -4143,6 +4188,7 @@ END
 			SetGlobal("XA_KeldornBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 9)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -4269,6 +4315,7 @@ END
 			SetGlobal("XA_KorganBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 10)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -4395,6 +4442,7 @@ END
 			SetGlobal("XA_NeeraBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 11)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -4521,6 +4569,7 @@ END
 			SetGlobal("XA_PlayerBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 12)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -4647,6 +4696,7 @@ END
 			SetGlobal("XA_ViconiaBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 13)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -4773,6 +4823,7 @@ END
 			SetGlobal("XA_ValygarBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 14)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -4899,6 +4950,7 @@ END
 			SetGlobal("XA_CerndBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 15)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -4929,6 +4981,7 @@ END
 			Continue()
 	END
 
+	//{ Timer Randomizer
 	IF
 		ActionListEmpty()
 		Global("XA_YoshimoBanterTimerInit", "LOCALS", 1)
@@ -5006,6 +5059,7 @@ END
 			SetInterrupt(TRUE)
 			Continue()
 	END
+	//}
 	
 	IF
 		ActionListEmpty()
@@ -5023,6 +5077,7 @@ END
 			SetGlobal("XA_YoshimoBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 16)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -5149,6 +5204,7 @@ END
 			SetGlobal("XA_RasaadBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 17)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -5275,6 +5331,7 @@ END
 			SetGlobal("XA_MinscBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 18)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -5401,6 +5458,7 @@ END
 			SetGlobal("XA_HaerDalisBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 19)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -5527,6 +5585,7 @@ END
 			SetGlobal("XA_NaliaBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 20)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -5653,6 +5712,7 @@ END
 			SetGlobal("XA_MazzyBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 21)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -5779,6 +5839,7 @@ END
 			SetGlobal("XA_SarevokBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 22)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -5906,6 +5967,7 @@ END
 			SetGlobal("XA_CaelarBanterTimerInit", "LOCALS", 0)	
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_NextInteraction", "LOCALS", 23)
+			SetGlobalTimer("XA_PauseBeforeBanterTimer", "LOCALS", TWO_ROUNDS)
 			SetInterrupt(TRUE)
 	END
 	
@@ -5934,6 +5996,7 @@ END
 
 	IF 
 		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToMazzy", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 21) /* Mazzy */
 		Global("XA_Banter_CorwinMazzy", "GLOBAL", 1)
@@ -5978,10 +6041,11 @@ END
 	//{ Mazzy Second Interaction 
 
 	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToMazzy", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 21) /* Mazzy */
 		Global("XA_Banter_CorwinMazzy", "GLOBAL", 3)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6055,10 +6119,11 @@ END
 
 	//{ Nalia First Interaction
 	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToNalia", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 20) /* Nalia */
 		Global("XA_Banter_CorwinNalia", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6085,10 +6150,11 @@ END
 
 	//{ Nalia Second Interaction
 	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToNalia", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 20) /* Nalia */
 		Global("XA_Banter_CorwinNalia", "GLOBAL", 3)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6128,11 +6194,12 @@ END
 
 	//{ Nalia Third Interaction
 	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToNalia", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 20) /* Nalia */
 		Global("XA_Banter_CorwinNalia", "GLOBAL", 5)
 		!ActuallyInCombat()
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6176,11 +6243,12 @@ END
 
 	//{ HaerDalis First Interaction
 	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToHaerDalis", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 19) /* HaerDalis */
 		Global("XA_Banter_CorwinHaerDalis", "GLOBAL", 1)
 		!ActuallyInCombat()
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			//DisplayStringHead(Myself, ~DEBUG_090~)
@@ -6221,10 +6289,11 @@ END
 
 	//{ HaerDalis Second Interaction
 	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToHaerDalis", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 19) /* HaerDalis */
 		Global("XA_Banter_CorwinHaerDalis", "GLOBAL", 3)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6268,11 +6337,12 @@ END
 	//{ Minsc First Interaction
 
 	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToMinsc", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 18) /* Minsc */
 		Global("XA_Banter_CorwinMinsc", "GLOBAL", 1)
 		!ActuallyInCombat()
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6313,10 +6383,11 @@ END
 	//{ Minsc Second Interaction
 
 	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToMinsc", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 18) /* Minsc */
 		Global("XA_Banter_CorwinMinsc", "GLOBAL", 3)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			//DisplayStringHead(Myself, ~DEBUG_099~)
@@ -6357,10 +6428,11 @@ END
 	//{ Minsc Third Interaction
 
 	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToMinsc", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 18) /* Minsc */
 		Global("XA_Banter_CorwinMinsc", "GLOBAL", 5)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6407,10 +6479,11 @@ END
 	//{ Rasaad First Interaction
 
 	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToRasaad", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 17) /* Rasaad */
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6450,10 +6523,11 @@ END
 	//{ Rasaad Second Interaction
 
 	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToRasaad", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 17) /* Rasaad */
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 3)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			//DisplayStringHead(Myself, ~DEBUG_108~)
@@ -6491,10 +6565,11 @@ END
 	//{ Rasaad Third Interaction
 
 	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToRasaad", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 17) /* Rasaad */
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 5)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6531,10 +6606,11 @@ END
 	//{ Rasaad Fourth Interaction
 
 	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToRasaad", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 17) /* Rasaad */
 		Global("XA_Banter_CorwinRasaad", "GLOBAL", 7)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6576,10 +6652,11 @@ END
 	//{ Yoshimo First Interaction
 
 	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToYoshimo", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 16) /* Yoshimo */
 		Global("XA_Banter_CorwinYoshimo", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6623,11 +6700,12 @@ END
 
 	//{ Cernd First Interaction
 	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToCernd", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 15) /* Cernd */
 		Global("XA_Banter_CorwinCernd", "GLOBAL", 1)
 		Global("CerndBaby","GLOBAL",1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6672,10 +6750,11 @@ END
 	//{ Valygar First Interaction 
 
 	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToValygar", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 14) /* Valygar */
 		Global("XA_Banter_CorwinValygar", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6715,10 +6794,11 @@ END
 
 	//{ Valygar Second Interaction
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToValygar", "LOCALS", 1)
 		Global("LavokDead", "GLOBAL", 1)
 		!Global("XA_CorwinLavokTimerSet", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6747,11 +6827,12 @@ END
 
 	//{ Valygar Third Interaction
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_CorwinValygarTimer", "GLOBAL")
 		Global("XA_CanTalkToValygar", "LOCALS", 1)
 		GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 		GlobalLT("XA_CorwinValygarBG", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_CorwinValygarBG", "GLOBAL", 1)
@@ -6793,10 +6874,11 @@ END
 	//{ Hexxat - Corwin First Interaction 
 
 	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 6) /* Hexxat */
 		Global("XA_Banter_CorwinHexxat", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6838,10 +6920,11 @@ END
 	//{ Hexxat - Corwin Second Interaction 
 
 	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToHexxat", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 6) /* Hexxat */
 		Global("XA_Banter_CorwinHexxat", "GLOBAL", 3)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6880,10 +6963,11 @@ END
 
 	//{ Hexxat - Corwin Third Interaction 
 	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToHexxat", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 6) /* Hexxat */
 		Global("XA_Banter_CorwinHexxat", "GLOBAL", 5)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			//DisplayStringHead(Myself, ~DEBUG_132~)
@@ -6941,10 +7025,11 @@ END
 	//{ Jaheira - Corwin First Interaction 
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToJaheira", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 7)
 		Global("XA_Banter_CorwinJaheira", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6984,10 +7069,11 @@ END
 	//{ Jaheira - Corwin Second Interaction
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToJaheira", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 7)
 		Global("XA_Banter_CorwinJaheira", "GLOBAL", 3)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7039,10 +7125,11 @@ END
 
 	//{ Jaheira - Corwin Third Interaction
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToJaheira", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 7)
 		Global("XA_Banter_CorwinJaheira", "GLOBAL", 6)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7087,10 +7174,11 @@ END
 	//{ Neera - Corwin First Interaction 
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToNeera", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 11)
 		Global("XA_Banter_CorwinNeera", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7129,10 +7217,11 @@ END
 	//{ Neera - Corwin Second Interaction 
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToNeera", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 11)
 		Global("XA_Banter_CorwinNeera", "GLOBAL", 3)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7233,10 +7322,11 @@ END
 	//{ Dorn - Corwin First Interaction 
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToDorn", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 3)
 		Global("XA_Banter_CorwinDorn", "GLOBAL", 1)
-		ActionListEmpty()
 		!Global("XA_DornPatronsDead", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -7276,11 +7366,12 @@ END
 	//{ Dorn - Corwin Second Interaction 
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToDorn", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 3)
 		Global("XA_Banter_CorwinDorn", "GLOBAL", 3)
 		!Global("XA_DornPatronsDead", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7385,10 +7476,11 @@ END
 
 	//{ Keldorn - Corwin First Interaction 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToKeldorn", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 9)
 		Global("XA_Banter_CorwinKeldorn", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7426,10 +7518,11 @@ END
 
 	//{ Keldorn - Corwin Second Interaction 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToKeldorn", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 9)
 		Global("XA_Banter_CorwinKeldorn", "GLOBAL", 3)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7473,10 +7566,11 @@ END
 	//{ Korgan - Corwin First Interaction
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToKorgan", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 10)
 		Global("XA_Banter_CorwinKorgan", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7515,10 +7609,11 @@ END
 	//{ Korgan - Corwin Second Interaction
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToKorgan", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 10)
 		Global("XA_Banter_CorwinKorgan", "GLOBAL", 3)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7562,10 +7657,11 @@ END
 	//{ Jan - Corwin First Interaction
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToJan", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 8)
 		Global("XA_Banter_CorwinJan", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7604,10 +7700,11 @@ END
 	//{ Jan - Corwin Second Interaction
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToJan", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 8)
 		Global("XA_Banter_CorwinJan", "GLOBAL", 3)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7681,11 +7778,12 @@ END
 	//{ Edwin - Corwin First Interaction 
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToEdwin", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 4)
 		Global("XA_Banter_CorwinEdwin", "GLOBAL", 1)
 		Gender("Edwin",MALE)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7724,11 +7822,12 @@ END
 	//{ Edwin - Corwin Second Interaction 
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToEdwin", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 4)
 		Global("XA_Banter_CorwinEdwin", "GLOBAL", 3)
 		Gender("Edwin",MALE)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7767,11 +7866,12 @@ END
 	//{ Edwin - Corwin Third Interaction 
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToEdwin", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 4)
 		Global("XA_Banter_CorwinEdwin", "GLOBAL", 5)
 		Gender("Edwin",MALE)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7831,10 +7931,11 @@ END
 	//{ Aerie - Corwin First Interaction 
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToAerie", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7873,10 +7974,11 @@ END
 	//{ Aerie - Corwin Second Interaction 
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToAerie", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 3)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7928,10 +8030,11 @@ END
 	//{ Aerie - Corwin Third Interaction 
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToAerie", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 6)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -7970,10 +8073,11 @@ END
 	//{ Aerie - Corwin Fourth Interaction 
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_Banter_NextInteraction", "LOCALS", 1)
 		Global("XA_Banter_CorwinAerie", "GLOBAL", 8)
 		Global("XA_CanTalkToAerie", "LOCALS", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8017,10 +8121,11 @@ END
 	//{ Anomen - Corwin First Interaction*/
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToAnomen", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 2)
 		Global("XA_Banter_CorwinAnomen", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8059,11 +8164,12 @@ END
 	//{ Anomen - Corwin Second Interaction*/
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToAnomen", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 2)
 		Global("XA_Banter_CorwinAnomen", "GLOBAL", 3)
 		!Global("XA_CorwinHatesAnomen", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8106,10 +8212,11 @@ END
 
 	//{ Viconia - Corwin First Interaction*/
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToViconia", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 13)
 		Global("XA_Banter_CorwinViconia", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8149,6 +8256,7 @@ END
 
 	IF
 		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToViconia", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 13)
 		Global("XA_Banter_CorwinViconia", "GLOBAL", 3)
@@ -8180,6 +8288,7 @@ END
 
 	IF
 		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_Banter_NextInteraction", "LOCALS", 13)
 		Global("XA_Banter_CorwinViconia", "GLOBAL", 5)
 		AreaType(CITY)
@@ -8227,10 +8336,11 @@ END
 
 	//{ Imoen - Corwin First Interaction
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToImoen2", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 5)
 		Global("XA_Banter_CorwinImoen", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8269,10 +8379,11 @@ END
 	//{ Imoen - Corwin Second Interaction*/
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToImoen2", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 5)
 		Global("XA_Banter_CorwinImoen", "GLOBAL", 3)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8355,6 +8466,7 @@ END
 	//{ Sarevok First Interaction
 	IF
 		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToSarevok", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 22)
 		Global("XA_Banter_CorwinSarevok", "GLOBAL", 1)
@@ -8393,6 +8505,7 @@ END
 	//{ Sarevok Second Interaction
 	IF
 		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToSarevok", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 22)
 		Global("XA_Banter_CorwinSarevok", "GLOBAL", 3)
@@ -8428,6 +8541,7 @@ END
 	//{ Sarevok Third Interaction
 	IF
 		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToSarevok", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 22)
 		Global("XA_Banter_CorwinSarevok", "GLOBAL", 5)
@@ -8468,6 +8582,7 @@ END
 	//{ Caelar First interaction
 	IF
 		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToCaelar", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 23)
 		Global("XA_Banter_CorwinCaelar", "GLOBAL", 1)
@@ -8537,10 +8652,11 @@ END
 	//{ First Banter
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		InParty(Myself)
 		Global("XA_Banter_NextInteraction", "LOCALS", 12)
 		Global("XA_Banter_CorwinPlayer", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8580,10 +8696,11 @@ END
 	//{ Second Banter
 
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		InParty(Myself)
 		Global("XA_Banter_NextInteraction", "LOCALS", 12)
 		Global("XA_Banter_CorwinPlayer", "GLOBAL", 3)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -8621,12 +8738,13 @@ END
 
 	//{ Optional Banter 1
 	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		InParty(Myself)
 		Global("XA_MetRohma", "GLOBAL", 1)
 		GlobalGT("XA_Banter_CorwinPlayer", "GLOBAL", 2)
 		Global("XA_Banter_NextInteraction", "LOCALS", 12)
 		GlobalLT("XA_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
-		ActionListEmpty()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)

@@ -1825,9 +1825,8 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_Questions
 	
 	IF ~
 		!Global("XA_Pregnant_DueDate", "LOCALS", 1)
-		!OR(2)
-			GlobalGT("XA_CorwinPregnantAerie", "GLOBAL", 0)
-			GlobalGT("XA_CorwinPregnantJaheira", "GLOBAL", 0)
+		GlobalLT("XA_CorwinPregnantAerie", "GLOBAL", 1)
+		GlobalLT("XA_CorwinPregnantJaheira", "GLOBAL", 1)
 	~ THEN REPLY @1565 /* ~Do you know when you're expecting?~ */
 	DO ~
 		SetGlobal("XA_Pregnant_DueDate", "LOCALS", 1)
@@ -1959,9 +1958,8 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_BabyGender
 	
 	IF ~
 		!Global("XA_Pregnant_DueDate", "LOCALS", 1)
-		!OR(2)
-			GlobalGT("XA_CorwinPregnantAerie", "GLOBAL", 0)
-			GlobalGT("XA_CorwinPregnantJaheira", "GLOBAL", 0)
+		GlobalLT("XA_CorwinPregnantAerie", "GLOBAL", 1)
+		GlobalLT("XA_CorwinPregnantJaheira", "GLOBAL", 1)
 	~ THEN REPLY @1565 /* ~Do you know when you're expecting?~ */
 	DO ~
 		SetGlobal("XA_Pregnant_DueDate", "LOCALS", 1)
@@ -2900,12 +2898,11 @@ IF ~~ THEN BEGIN XA_DukeDebrief02_A1
 	SAY @1076 /* ~Thanks. I keep a journal whenever I'm deployed. It helps a lot when I need to deliver reports to my superiors.~ */
 
 	IF ~
-		!OR(5)
-			GlobalGT("XA_TimesHadSex", "GLOBAL", 0)
-			Global("XA_SlappedDelcia", "GLOBAL", 1)
-			Global("XA_CorwinWonTM", "GLOBAL", 1)
-			Global("XA_CorwinCleansed", "GLOBAL", 1)
-			Global("XA_CorwinCleansed", "GLOBAL", 2)
+		!GlobalGT("XA_TimesHadSex", "GLOBAL", 0)
+		!Global("XA_SlappedDelcia", "GLOBAL", 1)
+		!Global("XA_CorwinWonTM", "GLOBAL", 1)
+		!Global("XA_CorwinCleansed", "GLOBAL", 1)
+		!Global("XA_CorwinCleansed", "GLOBAL", 2)
 	~ THEN REPLY @1098 /* ~Hm. I wonder what they're discussing...~*/
 	GOTO XA_DukeDebrief_WaitForDukes
 	

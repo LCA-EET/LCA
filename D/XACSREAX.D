@@ -9,9 +9,12 @@ dan@danielvalle.net
 
 */
 
+//{ Corwin
 APPEND XACORWIJ
 	IF ~~ THEN BEGIN XA_CorwinSex6
-		SAY @6 /* ~Um. Yes, a little.~ */
+		SAY @6 /* ~Um... yes.~ */
+		
+		= @30  /*  ~A little.~ [BD35159]*/
 		
 		IF ~
 			IsValidForPartyDialogue("Imoen2")
@@ -86,6 +89,9 @@ APPEND XACORWIJ
 		EXTERN VICONIJ XA_CorwinSex9
 	END
 END
+//}
+
+//{ Valygar
 APPEND_EARLY VALYGARJ
 	IF ~~ THEN BEGIN XA_CorwinSex11
 		SAY @22 /* ~Very funny. Can we go now?~ */
@@ -96,6 +102,9 @@ APPEND_EARLY VALYGARJ
 		EXIT
 	END
 END
+//}
+
+//{ Viconia
 APPEND_EARLY VICONIJ
 	IF ~~ THEN BEGIN XA_CorwinSex9
 		SAY @19 /* ~Ah, of course. I didn't notice it until now, but emanating from the two of you is the unmistakable aroma of sex.~ */
@@ -127,6 +136,9 @@ APPEND_EARLY VICONIJ
 		EXIT
 	END
 END
+//}
+
+//{ Aerie
 APPEND_EARLY AERIEJ
 	IF ~
 		Global("XA_CorwinSex_1", "GLOBAL", 4)
@@ -171,11 +183,10 @@ APPEND_EARLY AERIEJ
 		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 		IsValidForPartyDialogue(Player1)
-		!OR(4)
-			IsValidForPartyDialogue("Imoen2")
-			IsValidForPartyDialogue("Neera")
-			IsValidForPartyDialogue("Nalia")
-			IsValidForPartyDialogue("Jaheira")
+		!IsValidForPartyDialogue("Imoen2")
+		!IsValidForPartyDialogue("Neera")
+		!IsValidForPartyDialogue("Nalia")
+		!IsValidForPartyDialogue("Jaheira")
 	~ THEN BEGIN XA_CorwinSex1A
 		SAY @24 /* ~*Yawn* oh - I'm so tired. I didn't get m-much rest..~ */
 		= @25 /* ~There was a lot of... noise... coming from the next room.~ */
@@ -301,7 +312,9 @@ APPEND_EARLY AERIEJ
 		EXIT
 	END
 END
+//}
 
+//{ Imoen
 APPEND_EARLY IMOEN2J
 	IF ~
 		Global("XA_CorwinSex_1", "GLOBAL", 4)
@@ -346,11 +359,10 @@ APPEND_EARLY IMOEN2J
 		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 		IsValidForPartyDialogue(Player1)
-		!OR(4)
-			IsValidForPartyDialogue("Aerie")
-			IsValidForPartyDialogue("Neera")
-			IsValidForPartyDialogue("Nalia")
-			IsValidForPartyDialogue("Jaheira")
+		!IsValidForPartyDialogue("Aerie")
+		!IsValidForPartyDialogue("Neera")
+		!IsValidForPartyDialogue("Nalia")
+		!IsValidForPartyDialogue("Jaheira")
 	~ THEN BEGIN XA_CorwinSex1A
 		SAY @28 /* ~*Yawn* Oh, I'm so tired. I didn't get much rest..~ */
 		= @25 /* ~There was a lot of... noise... coming from the next room.~*/
@@ -477,7 +489,9 @@ APPEND_EARLY IMOEN2J
 		EXIT
 	END
 END
+//}
 
+//{ Jaheira
 APPEND_EARLY JAHEIRAJ
 	IF ~
 		Global("XA_CorwinSex_1", "GLOBAL", 4)
@@ -522,11 +536,10 @@ APPEND_EARLY JAHEIRAJ
 		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 		IsValidForPartyDialogue(Player1)
-		!OR(4)
-			IsValidForPartyDialogue("Aerie")
-			IsValidForPartyDialogue("Neera")
-			IsValidForPartyDialogue("Nalia")
-			IsValidForPartyDialogue("IMOEN2")
+		!IsValidForPartyDialogue("Aerie")
+		!IsValidForPartyDialogue("Neera")
+		!IsValidForPartyDialogue("Nalia")
+		!IsValidForPartyDialogue("IMOEN2")
 	~ THEN BEGIN XA_CorwinSex1A
 		SAY @26 /* ~~Must we leave *yawn* so soon? I could use some more rest.~*/
 		= @27 /* ~The noise from one of the rooms next to mine kept me from getting any sleep.~ */
@@ -652,7 +665,9 @@ APPEND_EARLY JAHEIRAJ
 		EXIT
 	END
 END
+//}
 
+//{ Nalia
 APPEND_EARLY NALIAJ
 	IF ~
 		Global("XA_CorwinSex_1", "GLOBAL", 4)
@@ -697,11 +712,10 @@ APPEND_EARLY NALIAJ
 		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 		IsValidForPartyDialogue(Player1)
-		!OR(4)
-			IsValidForPartyDialogue("Aerie")
-			IsValidForPartyDialogue("Neera")
-			IsValidForPartyDialogue("Jaheira")
-			IsValidForPartyDialogue("IMOEN2")
+		!IsValidForPartyDialogue("Aerie")
+		!IsValidForPartyDialogue("Neera")
+		!IsValidForPartyDialogue("Jaheira")
+		!IsValidForPartyDialogue("IMOEN2")
 	~ THEN BEGIN XA_CorwinSex1A
 		SAY @26 /* ~~Must we leave *yawn* so soon? I could use some more rest.~*/
 		= @27 /* ~The noise from one of the rooms next to mine kept me from getting any sleep.~ */
@@ -827,7 +841,9 @@ APPEND_EARLY NALIAJ
 		EXIT
 	END
 END
+//}
 
+//{ Neera
 APPEND_EARLY NEERAJ
 	IF ~
 		Global("XA_CorwinSex_1", "GLOBAL", 4)
@@ -872,11 +888,10 @@ APPEND_EARLY NEERAJ
 		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 		IsValidForPartyDialogue(Player1)
-		!OR(4)
-			IsValidForPartyDialogue("Aerie")
-			IsValidForPartyDialogue("Nalia")
-			IsValidForPartyDialogue("Jaheira")
-			IsValidForPartyDialogue("IMOEN2")
+		!IsValidForPartyDialogue("Aerie")
+		!IsValidForPartyDialogue("Nalia")
+		!IsValidForPartyDialogue("Jaheira")
+		!IsValidForPartyDialogue("IMOEN2")
 	~ THEN BEGIN XA_CorwinSex1A
 		SAY @28 /* ~*Yawn* Oh, I'm so tired. I didn't get much rest..~*/
 		= @25 /* ~There was a lot of... noise... coming from the next room.~*/
@@ -1001,3 +1016,4 @@ APPEND_EARLY NEERAJ
 		EXIT
 	END
 END
+//}
