@@ -865,7 +865,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobalTimer("XA_BanterTimer", "LOCALS", TEN_MINUTES)
-		DisplayStringHead(Myself, ~DEBUG: 22-13A~)
+		////DisplayStringHead(Myself, ~DEBUG: 22-13A~)
 		SetInterrupt(TRUE)
 		Continue()
 END

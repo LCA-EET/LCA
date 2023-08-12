@@ -3242,7 +3242,7 @@ APPEND MADAM
 		IF ~  
 			IsValidForPartyDialogue("XACORWIN")
 		~ THEN 
-		EXTERN ~XACORWIJ~ XA_CorwinMadam2
+		EXTERN XACORWIJ XA_CorwinMadam2
 		
 		IF ~  
 			!IsValidForPartyDialogue("XACORWIN")
