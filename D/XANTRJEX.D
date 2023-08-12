@@ -2,6 +2,16 @@
 
 //Interjects associated with the LCA Mod
 
+//{ JAHERIAJ
+	INTERJECT_COPY_TRANS JAHEIRAJ 351 XA_JAHEIRAJ_351
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@113  /*~Enough! Infighting isn't going to help any of us achieve our goals. Let's move out.~*/
+	END
+//}
+
 //{ FIRKRA02
 	INTERJECT_COPY_TRANS FIRKRA02 4 XA_FIRKRA02_4
 		== XACORWIB

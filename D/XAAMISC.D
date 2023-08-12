@@ -64,6 +64,20 @@
 		GOTO M30
 	END
 
+	ADD_TRANS_ACTION BOY3 
+	BEGIN 0 END
+	BEGIN 0 END 
+	~
+		IncrementGlobal("XA_SlaveKidsFreed", "GLOBAL", 1)
+	~
+	
+	ADD_TRANS_ACTION GIRL1 
+	BEGIN 1 END
+	BEGIN 0 END 
+	~
+		IncrementGlobal("XA_SlaveKidsFreed", "GLOBAL", 1)
+	~
+
 	ADD_TRANS_ACTION BDCAELAR
 	BEGIN 87 END
 	BEGIN 0 END
@@ -243,6 +257,8 @@
 	END
 	//}
 	
+	
+//}	
 	//{ PPGUY01
 	EXTEND_BOTTOM PPGUY01 0
 		IF ~

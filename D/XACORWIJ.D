@@ -3896,6 +3896,7 @@ END
 //{ #region Corwin Slaver Girl Rescue - Dialog J-16
 IF ~
 	Global("XA_CorwinSlaverPlot", "GLOBAL", 1)
+	Global("XA_SlaveKidsFreed", "GLOBAL", 3)
 ~ THEN BEGIN XA_CorwinBGSlaverDiscuss
 	SAY @753 /* ~I hope those kids can make it to safety. */
 	
@@ -3905,7 +3906,26 @@ IF ~
 	~
 	GOTO XA_CorwinBGSlaverDiscuss2
 	
-	IF ~~ THEN REPLY @754 /* ~They will, don't worry.~ */
+	IF ~~ THEN REPLY @754 /* ~Even if we haven't, we've dealt a serious blow to the slavers.~ */
+	DO ~
+		SetGlobal("XA_CorwinSlaverPlot", "GLOBAL", 2)
+	~
+	GOTO XA_CorwinBGSlaverDiscuss2
+END
+
+IF ~
+	Global("XA_CorwinSlaverPlot", "GLOBAL", 1)
+	GlobalLT("XA_SlaveKidsFreed", "GLOBAL", 3)
+~ THEN BEGIN XA_CorwinBGSlaverDiscuss
+	SAY @764 /* ~That girl said that at least two other children were being held here. We have to find them.~*/
+	
+	IF ~~ THEN REPLY @765 /* ~Right.~ */
+	DO ~
+		SetGlobal("XA_CorwinSlaverPlot", "GLOBAL", 2)
+	~
+	GOTO XA_CorwinBGSlaverDiscuss2
+	
+	IF ~~ THEN REPLY @766 /* ~Hopefully they're still alive.~ */
 	DO ~
 		SetGlobal("XA_CorwinSlaverPlot", "GLOBAL", 2)
 	~
@@ -7019,13 +7039,49 @@ IF ~~ THEN BEGIN XA_SlaveGirl3
 	SAY @751 /* ~Here, take this gold.~ */
 	
 	IF ~~ THEN 
+	DO ~
+		SetGlobal("XA_GaveSlaveGirlMoney", "GLOBAL", 1)
+		ActionOverride("girl2", TakePartyGold(100))
+	~
 	EXTERN XAGIRL2 XA_SlaveGirl4
 END
 
-IF ~~ THEN BEGIN XA_SlaveGirl5
-	SAY @752 /* ~Listen to me. Take the others and get out of here, then head to the Government District. Speak to Inspector Brega, and tell him everything that happened. Go, now!~   */
+IF ~~ THEN BEGIN XA_SlaveGirl5A
+	SAY @729  /* ~Us? How many more of you are there?~ */
 	
-	IF ~~ THEN EXTERN XAGIRL2 4
+	IF ~~ THEN 
+	EXTERN XAGIRL2 XA_SlaveGirl5B
+END
+
+IF ~~ THEN BEGIN XA_SlaveGirl5C
+	SAY @750  /* ~Do you know if there are others being held here?~ */
+	
+	IF ~~ THEN
+	EXTERN XAGIRL2 XA_SlaveGirl5B
+END
+
+IF ~~ THEN BEGIN XA_SlaveGirl5C_A
+	SAY @772 /* ~We've already freed them. Tina, listen to me. Get out of here, then head to the Government District. Speak to Inspector Brega, and tell him everything that happened. Go, now!~   */
+	
+	IF ~
+		Global("XA_GaveSlaveGirlMoney", "GLOBAL", 1)
+	~ THEN EXTERN XAGIRL2 5
+	
+	IF ~
+		!Global("XA_GaveSlaveGirlMoney", "GLOBAL", 1)
+	~ THEN EXTERN XAGIRL2 4
+END
+
+IF ~~ THEN BEGIN XA_SlaveGirl5C_B
+	SAY @752 /* ~We'll find them, don't worry. Get out of here, then head to the Government District. Speak to Inspector Brega, and tell him everything that happened. Go, now!~   */
+	
+	IF ~
+		Global("XA_GaveSlaveGirlMoney", "GLOBAL", 1)
+	~ THEN EXTERN XAGIRL2 5
+	
+	IF ~
+		!Global("XA_GaveSlaveGirlMoney", "GLOBAL", 1)
+	~ THEN EXTERN XAGIRL2 4
 END
 
 IF ~~ THEN BEGIN XAA50

@@ -4,7 +4,11 @@ IF ~  NumTimesTalkedTo(0)
 ~ THEN BEGIN 0 // from:
 	SAY @0 /* ~*gasp* My... my thanks to you, kind <PRO_SIRMAAM>, for saving our lives. That monster surely would have killed us!~  */
 	
-	IF ~~ THEN REPLY @1 /* ~True enough. You are free now, so I suggest you flee while you can.~ */ GOTO 1
+	IF ~~ THEN REPLY @1 /* ~True enough. You are free now, so I suggest you flee while you can.~ */ 
+	DO ~
+		IncrementGlobal("XA_SlaveKidsFreed", "GLOBAL", 1)
+	~
+	GOTO 1
 END
 
 IF ~~ THEN BEGIN 1 // from: 0.0
@@ -49,21 +53,34 @@ IF ~~ THEN BEGIN XA_SlaveGirl2
 	
 	= @13 /* ~I don't know who it was that put us on the ships.. just that he was some wealthy noble. I don't even know *sob* if my parents are still alive.~ */
 	
-	IF ~~ THEN EXTERN XACORWIJ XA_SlaveGirl5
+	IF ~~ THEN 
+	EXTERN XACORWIJ XA_SlaveGirl5C
 	
 	IF ~
 		PartyGoldGT(99)
-	~ THEN EXTERN XACORWIJ XA_SlaveGirl3
+	~ THEN 
+	EXTERN XACORWIJ XA_SlaveGirl3
 END
 
 IF ~~ THEN BEGIN XA_SlaveGirl4
 	SAY @15 /* ~T-thank you! This might get some of us to safety...~ */
 	
 	IF ~~ THEN 
-	DO ~
-		TakePartyGold(100)
-	~
-	EXTERN XACORWIJ XA_SlaveGirl5
+	EXTERN XACORWIJ XA_SlaveGirl5A
+END
+
+IF ~~ THEN BEGIN XA_SlaveGirl5B
+	SAY @19  /* ~I - I don't know, I think a boy and a girl. You have to save them!~ */
+	
+	IF ~
+		Global("XA_SlaveKidsFreed", "GLOBAL", 3)
+	~ THEN 
+	EXTERN XACORWIJ XA_SlaveGirl5C_A
+	
+	IF ~
+		GlobalLT("XA_SlaveKidsFreed", "GLOBAL", 3)
+	~ THEN 
+	EXTERN XACORWIJ XA_SlaveGirl5C_B
 END
 
 IF ~~ THEN BEGIN 2 // from: 1.0
