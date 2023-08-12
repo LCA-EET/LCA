@@ -691,21 +691,31 @@
 	END
 //}
 
+//{ HENDAK
+	INTERJECT_COPY_TRANS HENDAK 4 XA_HENDAK_4
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@163 /*~<CHARNAME> — Let's get them out of there.~ [BD40129] */
+	END
+	
+	INTERJECT_COPY_TRANS HENDAK 19 XA_HENDAK_19
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@164 /*~We have to stop them, even if it temporarily pulls us away from our mission.~ */
+	END
+//}
+
 //{ LEHTIN
 	INTERJECT_COPY_TRANS LEHTIN 15 XA_LEHTIN_15
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
 		~
-		@90 /* ~Your time has come. You'll pay for what you did to those children!~ */
-	END
-	//}//{ LEHTIN
-	INTERJECT_COPY_TRANS LEHTIN 15 XA_LEHTIN_15
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@90 /* ~Your time has come. You'll pay for what you did to those children!~ */
+		@90 /* ~You'll pay for your crimes, slaver scum!~*/
 	END
 //}
 
