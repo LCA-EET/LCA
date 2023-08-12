@@ -35,7 +35,16 @@
 	~
 		!PartyHasItem("XASTDAG")
 	~
-	
+	EXTEND_BOTTOM HABREGA 0
+		IF ~
+			GlobalGT("XA_SlaveKidsFreed", "GLOBAL", 0)
+			GlobalLT("XA_SlavesBrega", "LOCALS", 1)
+		~ THEN REPLY @328  /*~Inspector, we freed some children that were being held captive in the slaver stockade. Did they make it back here safely?~ */
+		DO ~
+			SetGlobal("XA_SlavesBrega", "LOCALS", 1)
+		~
+		GOTO XA_KidsFreed1
+	END
 	EXTEND_BOTTOM HABREGA 13
 		IF ~
 			PartyHasItem("XASTDAG")
@@ -259,6 +268,58 @@
 	
 	
 //}	
+
+	//{ HABREGA
+	APPEND HABREGA
+		IF ~
+			True()
+		~
+		THEN BEGIN XA_BregaKidsFreed
+			SAY #30605 /* ~Is there somethin' that ye need, citizen?~ [BREGAX02] */
+			
+			COPY_TRANS HABREGA 0
+			
+			IF ~
+				GlobalGT("XA_SlaveKidsFreed", "GLOBAL", 0)
+				GlobalLT("XA_SlavesBrega", "LOCALS", 1)
+			~ THEN REPLY @328  /*~Inspector, we freed some children that were being held captive in the slaver stockade. Did they make it back here safely?~ */
+			DO ~
+				SetGlobal("XA_SlavesBrega", "LOCALS", 1)
+			~
+			GOTO XA_KidsFreed1
+		END
+		
+		IF ~~ THEN BEGIN XA_KidsFreed1
+			SAY @329  /* ~They did. Efforts are being made to locate their parents, though to be perfectly honest I doubt we'll be successful.~*/
+			
+			IF ~~ THEN REPLY @331 /* ~I see...~*/
+			GOTO XA_KidsFreed_END
+			
+			IF ~~ THEN REPLY @330 /* ~What will happen to them if their families cannot be found?~*/
+			GOTO XA_KidsFreed2
+		END
+		
+		IF ~~ THEN BEGIN XA_KidsFreed2
+			SAY @332 /* ~Worry not. The matriarch of one of the more respected families heard of their plight and has expressed a willingness to adopt them. They will be spared the foster system and be well taken care of.~*/
+			
+			IF ~~ THEN
+			GOTO XA_KidsFreed_END
+		END
+		
+		IF ~~ THEN BEGIN XA_KidsFreed_END
+			SAY @333  /* ~Thank you for your service, citizen.~*/
+			
+			IF ~~ THEN
+			DO ~
+				AddexperienceParty(20000)
+				ReputationInc(1)
+			~
+			EXIT
+		END
+	END
+	
+	//}
+	
 	//{ PPGUY01
 	EXTEND_BOTTOM PPGUY01 0
 		IF ~
