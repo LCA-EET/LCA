@@ -3220,36 +3220,25 @@ END
 //{ MADAM
 ADD_TRANS_TRIGGER MADAM 0
 ~
-	//!IsGabber("XACORWIN")
-	!IsGabber("XACORWIN")
+	!IsGabber("XACORWIN")	
 ~
 DO 1 4
 
 ADD_TRANS_TRIGGER MADAM 7
 ~
-	//!IsGabber("XACORWIN")
 	!IsGabber("XACORWIN")
 ~
 DO 3 4
 
-APPEND MADAM
-	IF ~  
-		IsGabber(Player1)
-		Global("XA_CorwinRomanceActive","GLOBAL",2)
-		Global("MadamUpset","GLOBAL",0)
-	~ THEN BEGIN XA_CorwinMadam // from:
-		SAY #39394 /* ~Greetings, my <LADYLORD>. I am Madame Nin, and I am here to ensure you are pleasantly accompanied. Are you interested in companionship, my <LADYLORD>?~ */
-		IF ~  
-			IsValidForPartyDialogue("XACORWIN")
-		~ THEN 
-		EXTERN XACORWIJ XA_CorwinMadam2
-		
-		IF ~  
-			!IsValidForPartyDialogue("XACORWIN")
-		~ THEN 
-		GOTO 7
-	END
-	
+EXTEND_BOTTOM MADAM 12	
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN
+	EXTERN XACORWIJ XA_CorwinMadam2
+END
+
+APPEND MADAM	
 	IF ~~ THEN BEGIN XA_CorwinMadam3 // from:
 		SAY #39396 /* ~I see. Perhaps you should reconsider where you are then... and remember not to bother other customers with your puerile attitude.~ */
 		

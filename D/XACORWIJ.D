@@ -6600,8 +6600,8 @@ IF ~~ THEN BEGIN XA_P1_25B
 END
 
 IF ~~ THEN BEGIN XAA27A
-	SAY @421 /* ~~Don't look so disappointed, love. We'll have plenty of time for those... activities (she smiles)... once we're back home.~ */
-	= @1463 /* ~(She leans in for a kiss.)~*/
+	SAY @53 /*  ~Don't look so disappointed, love. There'll be plenty of time for those... activities... once we get back to Baldur's Gate.~ */
+
 	IF ~~ THEN REPLY @58 /* ~(Kiss her) I look forward to that day.~ */
 	GOTO XAA28 //OK
 END
@@ -6609,7 +6609,7 @@ END
 IF ~~ THEN BEGIN XAA27
 	SAY @52 /*  ~(She laughs) */
 	
-	= @53 /* Don't look so disappointed, love. When we return to Baldur's Gate I'll be sure to give you the... (she glances down, then back up again) attention... you so clearly need.~ */
+	= @53 /* ~Don't look so disappointed, love. There'll be plenty of time for those... activities... once we get back to Baldur's Gate.~ */
 	
 	IF ~~ THEN REPLY @58 /* ~(Kiss her) I look forward to that day.~ */
 	GOTO XAA28 //OK
