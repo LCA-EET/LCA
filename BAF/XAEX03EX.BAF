@@ -1,0 +1,12 @@
+IF
+	True() 
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		SetGlobal("XA_CorwinSex_3", "GLOBAL", 7)
+		IncrementGlobal("XA_TimesHadSex", "GLOBAL", 1)
+		AddJournalEntry(@0, INFO)
+		AddXPObject(Player1, 150000)
+		AddXPObject("XACORWIN", 150000)
+		StartCutscene("XAEXPLEX")
+END
