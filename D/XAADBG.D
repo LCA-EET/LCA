@@ -4011,6 +4011,15 @@ END
 IF ~~ THEN BEGIN XA_Menu_StartCutscene
 	SAY @15 /*  ~Of course. Which cutscene do you want to start?~ */
 	
+	IF ~~ THEN REPLY @628
+	DO ~
+		SetGlobal("XA_CorwinSex_3", "GLOBAL", 1)
+		SetGlobal("XA_CorwinNeomaRelationship", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutScene("XAEXPL03")
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @627
 	DO ~
 		SetGlobal("XA_CorwinSex_3", "GLOBAL", 1)
