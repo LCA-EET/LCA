@@ -57,7 +57,6 @@ IF
 		Global("XA_CorwinSex_1", "GLOBAL", 1)
 		Global("XA_CorwinSex_2", "GLOBAL", 1)
 	OR(13)
-		
 		AreaCheck("AR0313") //Sea Bounty 1FL
 		AreaCheck("AR0314") //Sea Bounty 2FL
 		AreaCheck("AR0509") //Five Flagons, 1FL
