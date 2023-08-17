@@ -22,7 +22,7 @@ Copy-Item -Path "LICENSE.md" -Destination "LoveConquersAll_EET/LCA"
 Copy-Item -Path "weidu.exe" -Destination "LoveConquersAll_EET/setup-LCA.exe"
 Copy-Item -Path "User Guide.pdf" -Destination "LoveConquersAll_EET/User Guide.pdf"
 
-$7zipPath = "F:/Program Files/7-Zip/7z.exe"
+$7zipPath = "$env:ProgramFiles/7-Zip/7z.exe"
 
 if (-not (Test-Path -Path $7zipPath -PathType Leaf)) {
     throw "7 zip file '$7zipPath' not found"
@@ -30,8 +30,8 @@ if (-not (Test-Path -Path $7zipPath -PathType Leaf)) {
 
 Set-Alias Start-SevenZip $7zipPath
 
-$Source = "F:/BGModding - LCA/Game/00783/LCA/LoveConquersAll_EET/*"
-$Target = "F:/BGModding - LCA/Game/00783/LCA/LoveConquersAll_EET.zip"
+$Source = "./LoveConquersAll_EET/*"
+$Target = "./LoveConquersAll_EET.zip"
 
 Start-SevenZip a -mx=9 $Target $Source
 
