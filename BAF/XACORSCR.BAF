@@ -1584,6 +1584,54 @@ END
 	END
 	//}
 
+	//{ Entered De'Arnise Keep
+	IF
+		ActionListEmpty()
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_AR1300TimerSet", "LOCALS", 1)
+		OR(8)
+			AreaCheck("AR1300")
+			AreaCheck("AR1301")
+			AreaCheck("AR1302")
+			AreaCheck("AR1303")
+			AreaCheck("AR1304")
+			AreaCheck("AR1305")
+			AreaCheck("AR1306")
+			AreaCheck("AR1307")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_AR1300TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_AR1300Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		ActionListEmpty()
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_AR1300Timer", "LOCALS")
+		GlobalLT("XA_AR1300_Talk", "LOCALS", 1)
+		OR(8)
+			AreaCheck("AR1300")
+			AreaCheck("AR1301")
+			AreaCheck("AR1302")
+			AreaCheck("AR1303")
+			AreaCheck("AR1304")
+			AreaCheck("AR1305")
+			AreaCheck("AR1306")
+			AreaCheck("AR1307")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @21)	
+			SetGlobal("XA_AR1300_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+	
+
 	//{ Entered Troll Hill
 	IF
 		ActionListEmpty()
