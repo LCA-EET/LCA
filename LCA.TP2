@@ -150,6 +150,7 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	COPY ~LCA/WAV/XA100102.WAV~ ~override~
 	COPY ~LCA/WAV/XA100103.WAV~ ~override~
 	COPY ~LCA/WAV/XA100104.WAV~ ~override~
+	COPY ~LCA/WAV/XA100105.WAV~ ~override~
 //}
 
 //{ Text Screens

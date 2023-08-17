@@ -9004,6 +9004,7 @@ IF ~~ THEN BEGIN XA_CorwinDelcia_End
 	~ THEN
 	DO ~
 		SetGlobal("XA_SlappedDelcia", "GLOBAL", 1)
+		SetGlobal("DelciaLeave","GLOBAL",2)
 	~
 	EXTERN DELCIA XA_CorwinLeave
 	
@@ -9013,6 +9014,7 @@ IF ~~ THEN BEGIN XA_CorwinDelcia_End
 	DO ~
 		SetGlobal("XA_SlappedDelcia", "GLOBAL", 1)
 		SetGlobal("XA_DelciaEnd", "GLOBAL", 1)
+		SetGlobal("DelciaLeave","GLOBAL",2)
 		StartDialog("XACORWIJ", Player1)
 	~
 	EXIT
@@ -9265,11 +9267,11 @@ CHAIN
 		@1296 /* Forgive me, Nalia.~ */
 		= 
 		@504 /* ~(Captain Corwin walks up to Lady Delcia and delivers a powerful, open-handed slap to her face that sends her crashing to the floor. Delcia looks up at Corwin, and is left quivering and speechless.)~ */
-		==NALIAJ
+		== NALIAJ
 		IF ~
 			IsValidForPartyDialogue("Nalia")
 		~
-		@508 /* ~(She stands in shock.)~ */
+		@509 /* ~H-how... how DARE you? That's my aunt you just struck!~*/
 END XACORWIJ XA_CorwinDelcia_End
 		
 CHAIN 
