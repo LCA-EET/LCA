@@ -1857,13 +1857,7 @@ END
 
 
 //NALIAJ
-APPEND NALIAJ
-	IF ~~ THEN BEGIN XA_RefuseMeatballs
-		SAY @176 /* ~I'll not take part in such decadance while there are poor people starving not 50 paces from this estate.~ */
-		
-		IF ~~ THEN EXTERN XACOOK XA_NaliaRefused
-	END
-END
+
 
 //{ HOUSG3
 ADD_STATE_TRIGGER HOUSG3 0
@@ -3590,7 +3584,84 @@ END
 //}
 
 //{ NALIAJ
+EXTEND_BOTTOM NALIAJ 70
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		IsValidForPartyDialogue("XACORWIN")
+		GlobalLT("XA_NaliaShamMarriage", "GLOBAL", 1)
+	~ THEN REPLY @334 /*~Schael? What do you think?~ */
+	DO ~
+		SetGlobal("XA_NaliaShamMarriage", "GLOBAL", 1)
+	~
+	EXTERN XACORWIJ XA_NaliaShamMarriage_70 
+END
+
+EXTEND_BOTTOM NALIAJ 71
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		IsValidForPartyDialogue("XACORWIN")
+		GlobalLT("XA_NaliaShamMarriage", "GLOBAL", 1)
+	~ THEN REPLY @334 /*~Schael? What do you think?~ */
+	DO ~
+		SetGlobal("XA_NaliaShamMarriage", "GLOBAL", 1)
+	~
+	EXTERN XACORWIJ XA_NaliaShamMarriage_71 
+END
+
+EXTEND_BOTTOM NALIAJ 72
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		IsValidForPartyDialogue("XACORWIN")
+		GlobalLT("XA_NaliaShamMarriage", "GLOBAL", 1)
+	~ THEN REPLY @334 /*~Schael? What do you think?~ */
+	DO ~
+		SetGlobal("XA_NaliaShamMarriage", "GLOBAL", 1)
+	~
+	EXTERN XACORWIJ XA_NaliaShamMarriage_72 
+END
+
+EXTEND_BOTTOM NALIAJ 73
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		IsValidForPartyDialogue("XACORWIN")
+		GlobalLT("XA_NaliaShamMarriage", "GLOBAL", 1)
+	~ THEN REPLY @334 /*~Schael? What do you think?~ */
+	DO ~
+		SetGlobal("XA_NaliaShamMarriage", "GLOBAL", 1)
+	~
+	EXTERN XACORWIJ XA_NaliaShamMarriage_73 
+END
+
 APPEND NALIAJ
+	IF ~~ THEN BEGIN XA_NaliaShamMarriage_70
+		SAY @335 /*~She brings up a fair point, but I assure you that I'll shield you from as much of that nonsense as possible.~*/
+		
+		COPY_TRANS NALIAJ 70
+	END
+	
+	IF ~~ THEN BEGIN XA_NaliaShamMarriage_71
+		SAY @335 /*~She brings up a fair point, but I assure you that I'll shield you from as much of that nonsense as possible.~*/
+		
+		COPY_TRANS NALIAJ 71
+	END
+	
+	IF ~~ THEN BEGIN XA_NaliaShamMarriage_72
+		SAY @335 /*~She brings up a fair point, but I assure you that I'll shield you from as much of that nonsense as possible.~*/
+		
+		COPY_TRANS NALIAJ 72
+	END
+	
+	IF ~~ THEN BEGIN XA_NaliaShamMarriage_73
+		SAY @335 /*~She brings up a fair point, but I assure you that I'll shield you from as much of that nonsense as possible.~*/
+		
+		COPY_TRANS NALIAJ 73
+	END
+	IF ~~ THEN BEGIN XA_RefuseMeatballs
+		SAY @176 /* ~I'll not take part in such decadance while there are poor people starving not 50 paces from this estate.~ */
+		
+		IF ~~ THEN EXTERN XACOOK XA_NaliaRefused
+	END
+	
 	IF ~~ THEN BEGIN XA_CorwinStruckDelcia
 		SAY @20 /* ~(She finally regains her composure)~ */
 

@@ -2,6 +2,21 @@
 
 //Interjects associated with the LCA Mod
 
+//{ DELCIA
+	INTERJECT_COPY_TRANS DELCIA 43 XA_DELCIA_43
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@165  /*~I don't know who you think you are, but you're speaking to the hero of Baldur's Gate! Show a little respect!~ [BD37508]*/
+		== DELCIA
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@166  /*~Is that so? I thought I smelled the filth of that miserable backwater on you.~ */
+	END
+//}
+
 //{ JAHERIAJ
 	INTERJECT_COPY_TRANS JAHEIRAJ 351 XA_JAHEIRAJ_351
 		== XACORWIB

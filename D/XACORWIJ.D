@@ -9112,6 +9112,34 @@ IF ~~ THEN BEGIN XA_AlythReport
 	EXTERN XAALYTH XA_ReportToFF
 END
 
+IF ~~ THEN BEGIN XA_NaliaShamMarriage_70 
+	SAY @333 /* ~I know it'd be a sham marriage and that you don't love her, but I still think it's a mistake. You have enough on your plate to deal with. No need to get wrapped up with nobility, or their power and political games.~*/
+	
+	IF ~~ THEN 
+	EXTERN NALIAJ XA_NaliaShamMarriage_70
+END
+
+IF ~~ THEN BEGIN XA_NaliaShamMarriage_71 
+	SAY @333 /* ~I know it'd be a sham marriage and that you don't love her, but I still think it's a mistake. You have enough on your plate to deal with. No need to get wrapped up with nobility, or their power and political games.~*/
+	
+	IF ~~ THEN 
+	EXTERN NALIAJ XA_NaliaShamMarriage_71
+END
+
+IF ~~ THEN BEGIN XA_NaliaShamMarriage_72 
+	SAY @333 /* ~I know it'd be a sham marriage and that you don't love her, but I still think it's a mistake. You have enough on your plate to deal with. No need to get wrapped up with nobility, or their power and political games.~*/
+	
+	IF ~~ THEN 
+	EXTERN NALIAJ XA_NaliaShamMarriage_72
+END
+
+IF ~~ THEN BEGIN XA_NaliaShamMarriage_73 
+	SAY @333 /* ~I know it'd be a sham marriage and that you don't love her, but I still think it's a mistake. You have enough on your plate to deal with. No need to get wrapped up with nobility, or their power and political games.~*/
+	
+	IF ~~ THEN 
+	EXTERN NALIAJ XA_NaliaShamMarriage_73
+END
+
 //{ Wraith Interaction
 IF ~~ THEN BEGIN XA_Corwin_Wraith
 	SAY @1605 /* ~Love must dare to risk. Otherwise, it isn't love at all.~ */
