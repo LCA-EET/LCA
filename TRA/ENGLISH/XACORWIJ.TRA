@@ -503,7 +503,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @500 = ~It's good to see you again, Captain, but I'm surprised that you're here.~
 @501 = ~Skie, is she ...~
 @502 = ~Good. Right, let's get moving.~
-@503 = ~Are you deaf? I said get up, gods damn it!~
+@503 = ~Now get up, and get the hells out of here!~
 @504 = ~(Captain Corwin walks up to Lady Delcia and delivers a powerful, open-handed slap to her face that sends her crashing to the floor. Delcia looks up at Corwin, and is left quivering and speechless.)~
 @505 = ~Now listen to me! I didn't leave my family and travel all this way only to be spoken down to by a pretentious, insufferable bitch. We aren't your servants, and you're no better than the dirt on my heel. Get up.~ 
 @506 = ~Now get the hells out of here!~
@@ -521,12 +521,12 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @518 = ~She definitely deserved it. Well done, Captain.~
 @519 = ~Well said — let's get moving.~
 @520 = ~~
-@521 = ~I've just been so stressed lately... I wouldn't normally do something like that.~
+@521 = ~I've just been so stressed lately...~
 @522 = ~I know it's tough being away from your family. I'm glad you're here though. ~
 @523 = ~You and I both... my love, I know of a couple of activities that can help us to relieve some of that stress...~
-@524 = ~I think I know what you have in mind. Let's finish up here. Afterward, I want you to find a nice place for the two of us to ... relieve some of our stress.~  
+@524 = ~Let's finish up here, then. Afterward, I want you to find a nice place for the two of us to ... relieve some of that stress.~  
 @525 = ~~
-@526 = ~I know just the place. (You resolve to pay for a room at one of the nearby inns.)~
+@526 = ~I know just the place.~
 @527 = ~What do you suggest?~
 @528 = ~Good.~
 @529 = ~I've been watching you, love, and of late I don't like what I see.~ [XA100049]
@@ -1131,7 +1131,8 @@ Do not keep us waiting for long."~
 @1123 = ~Rohma!~
 @1124 = ~What've you done to my daughter!?~
 @1125 = ~Beno, how could you! I'm going to —~
-@1126 = ~~
+@1126 = ~Love Conquers All
+Schael has asked that I get us a room at one of the inns in Amn. I can hardly contain my excitement!~
 @1127 = ~~
 @1128 = ~~
 @1129 = ~~
@@ -1303,7 +1304,7 @@ Corwin has arrested Beno Famari for kidnapping and attempted murder. Hopefully, 
 @1292 = ~And I need you. I'd drive myself crazy if I had to stay here while the <PRO_MANWOMAN> I love was out risking <PRO_HISHER> life in some faraway land.~
 @1293 = ~And all of us here rely on you. I'd drive myself crazy if I had to stay here while the hero of Baldur's Gate was in some faraway land, risking <PRO_HIMHER>self to protect us.~  
 @1294 = ~And for that thing that ah.. we won't talk about.~
-@1295 = ~Better do what she says, lady.~    
+@1295 = ~Better do what she says, lady. Trust me.~    
 @1296 = ~Forgive me, Nalia.~
 @1297 = ~<CHARNAME>?~
 @1298 = ~We could use their help.~
@@ -1336,7 +1337,7 @@ Schael and I shared a tender moment; it seems that we are still dealing with the
 @1321 = ~I look forward to it.~
 @1322 = ~Really, it's nothing. Let's get moving.~
 @1323 = ~It's as much yours, Schael, as it is mine. You could've killed me during my escape. Instead, you showed mercy.~
-@1324 = ~~
+@1324 = ~Agreed.~
 @1325 = ~~
 @1326 = ~~
 @1327 = ~~

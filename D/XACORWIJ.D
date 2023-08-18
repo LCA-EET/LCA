@@ -6691,8 +6691,7 @@ IF ~~ THEN BEGIN XAA31C
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_CorwinSex_1", "GLOBAL", 1)
-		SetGlobal("XA_GetRoom", "GLOBAL", 1)
-		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+		AddJournalEntry(@1126, INFO)
 	~
 	EXIT
 END
@@ -8029,19 +8028,19 @@ END
 IF ~~ THEN BEGIN XA_DelciaLeft2
 	SAY @514 /* ~It was for her own good. Anyone who runs their mouth like that to the wrong person risks an untimely death. Hopefully she learned her lesson.~ */
 	
-	
-	IF ~~ THEN REPLY @519 /* ~Well said - let's get moving.~ */
-	EXTERN KELDORJ XA_CorwinStruckDelcia
+	IF ~
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @519 /* ~Well said - let's get moving.~ */
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~
-	THEN GOTO XA_DelciaLeft3
+	THEN REPLY @1324 /*~Agreed.~*/
+	GOTO XA_DelciaLeft3
 END
 
 IF ~~ THEN BEGIN XA_DelciaLeft3
-	SAY @521 /* ~I've just been so stressed lately... I wouldn't normally do something like that.~ */
-	
+	SAY @521 /* ~I've just been so stressed lately...~ */
 	
 	IF ~~ THEN REPLY @522 /* ~I know it's tough being away from your family. I'm glad you're here though. */
 	GOTO XA_GladHere
@@ -8054,7 +8053,7 @@ IF ~~ THEN BEGIN XA_DelciaLeft3
 END
 
 IF ~~ THEN BEGIN XA_GladHereExit
-	SAY @1452 /* ~Right.~ */
+	SAY @1452 /* ~Right... We have work to do. Let's go.~ [XA100105] */
 	
 	IF ~~ THEN
 	EXIT
@@ -8101,9 +8100,8 @@ IF ~~ THEN BEGIN XA_GladHere_WantSex
 	
 	IF ~~ THEN REPLY @1457 /* ~Yes, ma'am!~ */
 	DO ~
+		AddJournalEntry(@1126, INFO)
 		SetGlobal("XA_CorwinSex_1", "GLOBAL", 1)
-		SetGlobal("XA_GetRoom", "GLOBAL", 1)
-		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 	~
 	EXIT
 END
@@ -8131,7 +8129,7 @@ END
 
 
 IF ~~ THEN BEGIN XA_DelciaLeft4
-	SAY @524 /* ~I think I know what you have in mind. (She walks up to you, leans in and whispers.) It's on my mind, all the time.~   */
+	SAY @524 /* ~Let's finish up here. Afterward, I want you to find a nice place for the two of us to ... relieve some of that stress.~   */
 	
 	IF ~~ THEN REPLY @527 /* ~What do you suggest?~ */
 	GOTO XA_DelciaLeft5
@@ -8152,6 +8150,7 @@ IF ~~ THEN BEGIN XA_DelciaLeft6
 	= @1752 /* ~Let's go.~ */
 	IF ~~ THEN
 	DO ~
+		AddJournalEntry(@1126, INFO)
 		SetGlobal("XA_CorwinSex_1", "GLOBAL", 1)
 	~
 	EXIT
@@ -9028,12 +9027,20 @@ IF ~~ THEN BEGIN XA_CorwinDelcia_End
 		SetGlobal("XA_DelciaEnd", "GLOBAL", 1)
 		SetGlobal("DelciaLeave","GLOBAL",2)
 	~
-	EXTERN 
-	EXIT
+	GOTO XA_CorwinDelcia_End2
 END
 
 IF ~~ THEN BEGIN XA_CorwinDelcia_End2
+	SAY @503 /*~Now get up, and get the hells out of here!~*/
 	
+	IF ~~ THEN REPLY @511 /* ~(Remain silent.)~ */
+	EXTERN DELCIA XA_CorwinLeave
+	
+	IF ~~ THEN REPLY @512 /* ~Are you deaf, woman? Get out!~ */
+	EXTERN DELCIA XA_CorwinLeave
+	
+	IF ~~ THEN REPLY @1295 /* ~Better do what she says, lady.~    */
+	EXTERN DELCIA XA_CorwinLeave
 END
 
 IF ~~ THEN BEGIN XA_CorwinDrizz_End
@@ -9067,22 +9074,7 @@ IF ~
 END
 //}
 
-//{ Dialog J-65
-IF ~
-	Global("XA_SlappedDelcia", "GLOBAL", 1)
-	Global("XA_DelciaEnd", "GLOBAL", 1)
-~ THEN BEGIN XA_CorwinDelcia_Transition
-	SAY @506 /* ~Now get the hells out of here!~ */
-	IF ~~ THEN REPLY @511 /* ~(Remain silent.)~ */
-	EXTERN DELCIA XA_CorwinLeave
-	
-	IF ~~ THEN REPLY @512 /* ~Are you deaf, woman? Get out!~ */
-	EXTERN DELCIA XA_CorwinLeave
-	
-	IF ~~ THEN REPLY @1295 /* ~Better do what she says, lady.~    */
-	EXTERN DELCIA XA_CorwinLeave
-END
-//}
+
 
 IF ~~ THEN BEGIN XA_HOW_WhyNot
 	SAY @1377 /* ~Excuse us, ma'am.~ */

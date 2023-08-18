@@ -1593,10 +1593,8 @@ END
 		!See("Delcia")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_SlapTalk", "LOCALS", 1)
 			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
 	END
 	//}
 

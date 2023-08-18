@@ -545,18 +545,6 @@ APPEND ~PLAYER1~
 	END
 	
 	IF ~
-		Global("XA_GetRoom", "GLOBAL", 1)
-	~ THEN BEGIN XA_GetRoom
-		SAY @140 /* ~(You resolve to pay for a room at one of the nearby inns.)~*/
-		
-		IF ~~ THEN 
-		DO ~
-			SetGlobal("XA_GetRoom", "GLOBAL", 0)
-		~
-		EXIT
-	END
-	
-	IF ~
 		Global("XA_CorwinDiedFromBite", "GLOBAL", 1)
 	~ THEN BEGIN XA_CorwinDiedFromBite
 		SAY @138 /* ~(You are nearly overcome by grief and anger — not just toward Bodhi and Irenicus, but also yourself, for your failure to save the woman you love.)~ */
