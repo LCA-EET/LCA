@@ -8031,6 +8031,7 @@ IF ~~ THEN BEGIN XA_DelciaLeft2
 	IF ~
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @519 /* ~Well said - let's get moving.~ */
+	EXIT
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)

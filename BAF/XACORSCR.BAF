@@ -1579,8 +1579,10 @@ END
 			Range("statue06", 10)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("XA_CorwinStatueTalk", "GLOBAL", 1)
 			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -1589,12 +1591,14 @@ END
 		ActionListEmpty()
 		GlobalGT("XA_SlappedDelcia", "GLOBAL", 0)
 		GlobalLT("XA_SlapTalk", "LOCALS", 1)
-		Global("XA_CanTalkToPlayer", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		!See("Delcia")
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("XA_SlapTalk", "LOCALS", 1)
 			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
