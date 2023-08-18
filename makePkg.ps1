@@ -25,7 +25,7 @@ Copy-Item -Path "User Guide.pdf" -Destination "LoveConquersAll_EET/User Guide.pd
 $7zipPath = "$env:ProgramFiles/7-Zip/7z.exe"
 
 if (-not (Test-Path -Path $7zipPath -PathType Leaf)) {
-    throw "7 zip file '$7zipPath' not found"
+	$7zipPath = "F:/Program Files/7-Zip/7z.exe"
 }
 
 Set-Alias Start-SevenZip $7zipPath
