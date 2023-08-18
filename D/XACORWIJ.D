@@ -7976,40 +7976,52 @@ IF ~~ THEN BEGIN XA_EdwinFF2
 	EXTERN EDWINJ XA_EdwinFF3
 END
 
-IF ~~ THEN BEGIN XA_DelciaLeft
+IF ~
+	Global("XA_SlapTalk", "LOCALS", 1)
+~ THEN BEGIN XA_DelciaLeft
 	SAY @513 /* ~Gods. I think she needed that as much as I did.~ */
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN REPLY @515 /* ~I can't believe you did that, love.~ */
+	DO ~
+		SetGlobal("XA_SlapTalk", "LOCALS", 2)
+	~
 	GOTO XA_DelciaLeft2
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN REPLY @517 /*  ~She definitely deserved it. Well done, love.~ */
+	DO ~
+		SetGlobal("XA_SlapTalk", "LOCALS", 2)
+	~
 	GOTO XA_DelciaLeft2
 	
 	IF ~
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN REPLY @516 /* ~I can't believe you did that, Corwin.~ */
+	DO ~
+		SetGlobal("XA_SlapTalk", "LOCALS", 2)
+	~
 	GOTO XA_DelciaLeft2
 	
 	IF ~
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN REPLY @518 /* ~She definitely deserved it. Well done, Captain.~ */
+	DO ~
+		SetGlobal("XA_SlapTalk", "LOCALS", 2)
+	~
 	GOTO XA_DelciaLeft2
 		
 	IF ~
 		IsValidForPartyDialogue("Keldorn")
-	~
-	EXTERN KELDORJ XA_CorwinStruckDelcia
-	
-	IF ~
-		IsValidForPartyDialogue("Nalia")
+	~ THEN
+	DO ~
+		SetGlobal("XA_SlapTalk", "LOCALS", 2)
 	~
 	EXTERN KELDORJ XA_CorwinStruckDelcia
 END
@@ -9015,9 +9027,13 @@ IF ~~ THEN BEGIN XA_CorwinDelcia_End
 		SetGlobal("XA_SlappedDelcia", "GLOBAL", 1)
 		SetGlobal("XA_DelciaEnd", "GLOBAL", 1)
 		SetGlobal("DelciaLeave","GLOBAL",2)
-		StartDialog("XACORWIJ", Player1)
 	~
+	EXTERN 
 	EXIT
+END
+
+IF ~~ THEN BEGIN XA_CorwinDelcia_End2
+	
 END
 
 IF ~~ THEN BEGIN XA_CorwinDrizz_End

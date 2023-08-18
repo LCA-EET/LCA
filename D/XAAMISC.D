@@ -3662,35 +3662,6 @@ APPEND NALIAJ
 		IF ~~ THEN EXTERN XACOOK XA_NaliaRefused
 	END
 	
-	IF ~~ THEN BEGIN XA_CorwinStruckDelcia
-		SAY @20 /* ~(She finally regains her composure)~ */
-
-		= @231 /* How DARE you! That's my aunt you just struck!~ */
-		
-		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-		~
-		THEN REPLY @17 /* ~I can't believe you did that, love.~ */
-		EXTERN XACORWIJ XA_DelciaLeft2
-		
-		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-		~
-		THEN REPLY @19 /*  ~She definitely deserved it. Well done, love.~ */
-		EXTERN XACORWIJ XA_DelciaLeft2
-		
-		IF ~
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-		~
-		THEN REPLY @13 /* ~I can't believe you did that, Corwin.~ */
-		EXTERN XACORWIJ XA_DelciaLeft2
-		
-		IF ~
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-		~
-		THEN REPLY @18 /* ~She definitely deserved it. Well done, Captain.~ */
-		EXTERN XACORWIJ XA_DelciaLeft2
-	END
 END
 //}
 
@@ -3802,11 +3773,10 @@ APPEND DELCIA
 			SetGlobal("XA_DelciaEnd", "GLOBAL", 2)
 			SetGlobal("DelceaMove","GLOBAL",1)
 			ActionOverride("kpsold01",EscapeArea())
-			SetGlobal("DelciaLeave","GLOBAL",1)
+			SetGlobal("DelciaLeave","GLOBAL",2)
 			EscapeAreaMove("AR1300",768,3310,N)
-			Wait(3)
 		~
-		EXTERN XACORWIJ XA_DelciaLeft
+		EXIT
 	END
 END
 //}
