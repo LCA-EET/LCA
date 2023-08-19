@@ -2,6 +2,43 @@
 
 //Interjects associated with the LCA Mod
 
+//{ CLMOM
+	INTERJECT_COPY_TRANS CLMOM 5 XA_CLMOM_5
+		== XACORWIB 
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@170 /*~Have you tried, I don't know, finding an honest job?~*/
+		== CLMOM
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@173 /*~Hah! You expect me to what, wait tables for a few coppers an hour? While filthy slobs place their hands on my bottom and my bosom? No thanks — I make much more doing this.~*/
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@174 /*~You're setting a terrible example for your daughter!~*/
+		== CLKID
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@171 /*~Mommy? What does she mean?~*/
+		== CLMOM
+		IF ~
+			See("Lanie")
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@172 /*~Pay her no mind, sweetheart. As for you, don't you have more important things to do than harass a woman trying to feed her child? Begone!~ */
+		== CLMOM
+		IF ~
+			!See("Lanie")
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@175 /*~Don't you have more important things to do than harass a woman trying to feed her child? Begone!~  */
+	END
+//}
+
 //{ DELCIA
 	INTERJECT_COPY_TRANS DELCIA 43 XA_DELCIA_43
 		== XACORWIB
