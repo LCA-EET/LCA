@@ -3224,7 +3224,6 @@ END
 		Global("XA_CanTalkToAerie", "LOCALS", 1)
 		GlobalTimerExpired("XA_AerieBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Aerie", "LOCALS", 1)
 	THEN
@@ -3353,7 +3352,6 @@ END
 		Global("XA_CanTalkToAnomen", "LOCALS", 1)
 		GlobalTimerExpired("XA_AnomenBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Anomen", "LOCALS", 1)
 	THEN
@@ -3480,7 +3478,6 @@ END
 		Global("XA_CanTalkToDorn", "LOCALS", 1)
 		GlobalTimerExpired("XA_DornBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Dorn", "LOCALS", 1)
 	THEN
@@ -3606,7 +3603,6 @@ END
 		Global("XA_CanTalkToEdwin", "LOCALS", 1)
 		GlobalTimerExpired("XA_EdwinBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Edwin", "LOCALS", 1)
 	THEN
@@ -3733,7 +3729,6 @@ END
 		Global("XA_CanTalkToImoen2", "LOCALS", 1)
 		GlobalTimerExpired("XA_ImoenBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Imoen", "LOCALS", 1)
 	THEN
@@ -3860,7 +3855,6 @@ END
 		Global("XA_CanTalkToHexxat", "LOCALS", 1)
 		GlobalTimerExpired("XA_HexxatBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Hexxat", "LOCALS", 1)
 	THEN
@@ -3987,7 +3981,6 @@ END
 		Global("XA_CanTalkToJaheira", "LOCALS", 1)
 		GlobalTimerExpired("XA_JaheiraBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Jaheira", "LOCALS", 1)
 	THEN
@@ -4114,7 +4107,6 @@ END
 		Global("XA_CanTalkToJan", "LOCALS", 1)
 		GlobalTimerExpired("XA_JanBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Jan", "LOCALS", 1)
 	THEN
@@ -4241,7 +4233,6 @@ END
 		Global("XA_CanTalkToKeldorn", "LOCALS", 1)
 		GlobalTimerExpired("XA_KeldornBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Keldorn", "LOCALS", 1)
 	THEN
@@ -4368,7 +4359,6 @@ END
 		Global("XA_CanTalkToKorgan", "LOCALS", 1)
 		GlobalTimerExpired("XA_KorganBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Korgan", "LOCALS", 1)
 	THEN
@@ -4495,7 +4485,6 @@ END
 		Global("XA_CanTalkToNeera", "LOCALS", 1)
 		GlobalTimerExpired("XA_NeeraBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Neera", "LOCALS", 1)
 	THEN
@@ -4622,7 +4611,6 @@ END
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		GlobalTimerExpired("XA_PlayerBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Player", "LOCALS", 1)
 	THEN
@@ -4749,7 +4737,6 @@ END
 		Global("XA_CanTalkToViconia", "LOCALS", 1)
 		GlobalTimerExpired("XA_ViconiaBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Viconia", "LOCALS", 1)
 	THEN
@@ -4876,7 +4863,6 @@ END
 		Global("XA_CanTalkToValygar", "LOCALS", 1)
 		GlobalTimerExpired("XA_ValygarBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Valygar", "LOCALS", 1)
 	THEN
@@ -5003,7 +4989,6 @@ END
 		Global("XA_CanTalkToCernd", "LOCALS", 1)
 		GlobalTimerExpired("XA_CerndBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Cernd", "LOCALS", 1)
 	THEN
@@ -5130,7 +5115,6 @@ END
 		Global("XA_CanTalkToYoshimo", "LOCALS", 1)
 		GlobalTimerExpired("XA_YoshimoBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Yoshimo", "LOCALS", 1)
 	THEN
@@ -5257,7 +5241,6 @@ END
 		Global("XA_CanTalkToRasaad", "LOCALS", 1)
 		GlobalTimerExpired("XA_RasaadBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Rasaad", "LOCALS", 1)
 	THEN
@@ -5384,7 +5367,6 @@ END
 		Global("XA_CanTalkToMinsc", "LOCALS", 1)
 		GlobalTimerExpired("XA_MinscBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Minsc", "LOCALS", 1)
 	THEN
@@ -5511,7 +5493,6 @@ END
 		Global("XA_CanTalkToHaerDalis", "LOCALS", 1)
 		GlobalTimerExpired("XA_HaerDalisBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_HaerDalis", "LOCALS", 1)
 	THEN
@@ -5638,7 +5619,6 @@ END
 		Global("XA_CanTalkToNalia", "LOCALS", 1)
 		GlobalTimerExpired("XA_NaliaBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Nalia", "LOCALS", 1)
 	THEN
@@ -5765,7 +5745,6 @@ END
 		Global("XA_CanTalkToMazzy", "LOCALS", 1)
 		GlobalTimerExpired("XA_MazzyBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Mazzy", "LOCALS", 1)
 	THEN
@@ -5892,7 +5871,6 @@ END
 		Global("XA_CanTalkToSarevok", "LOCALS", 1)
 		GlobalTimerExpired("XA_SarevokBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Sarevok", "LOCALS", 1)
 	THEN
@@ -6020,7 +5998,6 @@ END
 		Global("XA_CanTalkToCaelar", "LOCALS", 1)
 		GlobalTimerExpired("XA_CaelarBanterTimer", "LOCALS")
 		GlobalTimerExpired("XA_BanterTimer", "LOCALS")
-		!Global("XA_ResetBanterTimer", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 0)
 		GlobalLT("XA_BanterEnd_Caelar", "LOCALS", 1)
 	THEN
