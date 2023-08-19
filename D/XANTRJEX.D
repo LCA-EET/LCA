@@ -335,6 +335,27 @@
 		~
 		@27 /* ~These guilds are all the same, in every city. I feel dirty just by speaking to them, let alone working for them. Still, they are a necessary means to an end if we're to rescue Imoen.~*/
 	END
+	
+	INTERJECT_COPY_TRANS ARAN 0 XA_ARAN_0
+		== ARAN
+		IF ~
+			See("XACORWIN")
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@167 /* ~And you... you must be Captain Corwin of the Baldur's Gate Flaming Fist. Alatos sends his regards, my dear.~ */
+		== XACORWIB
+		IF ~
+			See("ARAN")
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@168 /* ~Hmph.~ */
+		== ARAN
+		IF ~
+			See("XACORWIN")
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@169 /* ~Hmph.~ */
+	END
 //}
 
 //{ KORGANJ
