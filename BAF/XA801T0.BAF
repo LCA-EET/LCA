@@ -1,0 +1,7 @@
+IF
+	IsOverMe("XACORWIN")
+	GlobalLT("XA_CorwinSeesBlood", "AR0801", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CorwinSeesBlood", "AR0801", 1)
+END
