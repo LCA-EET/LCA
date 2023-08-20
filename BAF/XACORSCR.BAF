@@ -1559,6 +1559,22 @@ END
 
 //{ 18: Event Checks
 	
+	//{ Helped Ginia
+	IF
+		ActionListEmpty()
+		Global("HelpGinia","GLOBAL",3)
+		GlobalLT("XA_CorwinGinia", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			SetGlobal("XA_CorwinGinia", "GLOBAL", 1)
+			DisplayStringHead(Myself, @22)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+	
 	//{ See Statue
 	IF
 		GlobalLT("XA_CorwinStatueTalk", "GLOBAL", 1)

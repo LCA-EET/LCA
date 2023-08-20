@@ -268,7 +268,19 @@
 	
 	
 //}	
-
+	//{ CALAHA
+	EXTEND_BOTTOM CALAHA 15
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		THEN 
+		DO ~
+			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		~
+		EXTERN XACORWIJ XA_CALAHA_15
+	END
+	//}
+	
 	//{ HABREGA
 	APPEND HABREGA
 		IF ~

@@ -9075,7 +9075,14 @@ IF ~
 END
 //}
 
+//{ CALAHA
+IF ~~ THEN BEGIN XA_CALAHA_15
+	SAY @1756 /* ~Good. Let's deal with Chremy, then get those two kids out of here.~*/
+	
+	COPY_TRANS CALAHA 15
+END
 
+//}
 
 IF ~~ THEN BEGIN XA_HOW_WhyNot
 	SAY @1377 /* ~Excuse us, ma'am.~ */
