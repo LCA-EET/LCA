@@ -414,29 +414,67 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	
 	COPY_EXISTING ~AR0801.ARE~ ~override~
 	LPF fj_are_structure
-	
-	END
-
-	COPY_EXISTING ~BG1316.ARE~ ~override~
-	LPF fj_are_structure
 		INT_VAR
 		fj_type 		= 0
 		fj_box_left		= 2230
-		fj_box_top		= 610
-		fj_box_right	= 2300
-		fj_box_bottom	= 720
+		fj_box_top		= 550
+		fj_box_right	= 2400
+		fj_box_bottom	= 750
 		fj_cursor_idx	= 0
+		fj_alt_x		= 0
+		fj_alt_y		= 0
+		fj_flags		= 0
+		fj_vertex_0     = 2230 + (550 << 16)
+		fj_vertex_1     = 2400 + (550 << 16)
+		fj_vertex_2     = 2400 + (750 << 16)
+		fj_vertex_3     = 2230 + (750 << 16)
+		STR_VAR
+		fj_structure_type = region
+		fj_name = ~Corwin Trigger~
+		fj_reg_script = ~XA801T0~
+	END
+
+	LPF fj_are_structure
+		INT_VAR
+		fj_type 		= 0
+		fj_box_left		= 575
+		fj_box_top		= 740
+		fj_box_right	= 710
+		fj_box_bottom	= 790
+		fj_cursor_idx	= 0
+		fj_alt_x		= 0
+		fj_alt_y		= 0
+		fj_flags		= 0
+		fj_vertex_0     = 575 + (740 << 16)
+		fj_vertex_1     = 710 + (740 << 16)
+		fj_vertex_2     = 710 + (790 << 16)
+		fj_vertex_3     = 575 + (790 << 16)
+		STR_VAR
+		fj_structure_type = region
+		fj_name = ~Corwin Trigger2~
+		fj_reg_script = ~XA801T0~
+	END
+	
+	COPY_EXISTING ~BG1316.ARE~ ~override~
+	LPF fj_are_structure
+		INT_VAR
+		fj_type 		= 2
+		fj_box_left		= 533
+		fj_box_top		= 108
+		fj_box_right	= 580
+		fj_box_bottom	= 205
+		fj_cursor_idx	= 22
 		fj_alt_x		= 550
 		fj_alt_y		= 150
 		fj_flags		= 1024
-		fj_vertex_0     = 2230 + (610 << 16)
-		fj_vertex_1     = 2300 + (610 << 16)
-		fj_vertex_2     = 2300 + (720<< 16)
-		fj_vertex_3     = 2230 + (720 << 16)
+		fj_vertex_0     = 533 + (156 << 16)
+		fj_vertex_1     = 580 + (205 << 16)
+		fj_vertex_2     = 580 + (158 << 16)
+		fj_vertex_3     = 533 + (108 << 16)
 		STR_VAR
 		fj_structure_type = region
-		fj_name = ~XA801T0~
-		fj_reg_script = ~XA801T0~
+		fj_name = ~XA1316FP~
+		fj_reg_script = ~XA1316FP~
 	END
 
 	COPY_EXISTING ~BG0706.ARE~ ~override~

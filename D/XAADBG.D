@@ -259,6 +259,17 @@ END
 IF ~~ THEN BEGIN XA_AreaTest
 	SAY @585
 	
+	IF ~~ THEN REPLY @629
+	DO ~
+		ActionOverride(Player1,LeaveAreaLUA("AR0801","",[1347.867],NE))
+		ActionOverride(Player2,LeaveAreaLUA("AR0801","",[1347.867],NE))
+		ActionOverride(Player3,LeaveAreaLUA("AR0801","",[1347.867],NE))
+		ActionOverride(Player4,LeaveAreaLUA("AR0801","",[1347.867],NE))
+		ActionOverride(Player5,LeaveAreaLUA("AR0801","",[1347.867],NE))
+		ActionOverride(Player6,LeaveAreaLUA("AR0801","",[1347.867],NE))
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @588 /* ~XA4700~*/
 	DO ~
 		ActionOverride(Player1,AddSpecialAbility("SPIN649")) 
