@@ -915,6 +915,7 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 //}
 
 //{ New Creatures
+	COPY ~LCA/CRE/XAGOLSTO.CRE~ ~override~
 	COPY ~LCA/CRE/XABENCE2.CRE~ ~override~
 	COPY ~LCA/CRE/XAAUN.CRE~ ~override~
 	COPY ~LCA/CRE/XAAVC1.CRE~ ~override~
