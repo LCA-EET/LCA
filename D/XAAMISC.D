@@ -1518,12 +1518,52 @@ APPEND BART8
 	END
 END
 
-EXTEND_BOTTOM PPIRENI2 3 /* OK */
+//{ PPIRENI1
+	EXTEND_BOTTOM PPIRENI1 31
+		IF ~
+			IsValidForPartyDialog("XACORWIN")
+		~ THEN 
+		DO ~
+			SetGlobal("AsylumPlot","GLOBAL",20)
+			DisplayString(Myself,50707)
+			Spell(Myself,DO_NOTHING)
+			StartCutSceneMode()
+			StartCutSceneEx("XACUT41G",FALSE)
+		~
+		EXIT
+	END
+//}
+
+//{ PPIRENI2
+EXTEND_BOTTOM PPIRENI2 3
 	IF ~
-		IsValidForPartyDialog("XACORWIN")
-	~ THEN GOTO XA_PPIRENI2_3_CHAIN
+		IsValidForPartyDialogue("XACORWIN")
+	~ THEN
+	EXTERN XACORWIJ XA_CorwinIrenicusStart
 END
 
+APPEND PPIRENI2
+	IF ~
+		Global("XA_CorwinIrenicus", "GLOBAL", 1)
+	~ THEN BEGIN XA_CorwinIrenicus
+		SAY @336 /*~And you, young lady.~ */
+		
+		= @337 /* ~I trust, by the insignia on your armor, that you are here to affect some appropriate punishment for what I did to Skie Silvershield?~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_CorwinIrenicus", "GLOBAL", 2)
+		~
+		EXTERN XACORWIJ XA_CorwinIrenicusChain
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinIrenicus_Sleep2
+		SAY @338 /*~Worry not. Unlike the rest of your companions, she will live beyond these next few minutes. Once I am done with you and Imoen, she'll be returned home, where she will assassinate the Council of Four on my behalf.~*/
+		
+		COPY_TRANS PPIRENI2 3
+	END
+END
+//}
 
 EXTEND_BOTTOM BDIMOEN 89 /* OK */
 	

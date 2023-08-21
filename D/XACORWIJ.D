@@ -1765,6 +1765,17 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_GoodNews
 	GOTO XA_CorwinPregnant2_GoHome
 END
 
+IF ~~ THEN BEGIN XA_CorwinIrenicusStart
+	SAY @1774
+	
+	IF ~~ THEN
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("XA41CS01")
+	~
+	EXIT
+END
+
 IF ~~ THEN BEGIN XA_CorwinPregnant2_GoHome
 	SAY @1527 /* ~No, I won't leave your side. At least not yet. The timing is terrible of course, but I can still do everything that I need to, on or off the battlefield. Once I start showing, that might change ...~*/
 	
@@ -8157,6 +8168,30 @@ IF ~~ THEN BEGIN XA_DelciaLeft6
 	EXIT
 END
 
+IF ~~ THEN BEGIN XA_CorwinIrenicusChain_END
+	SAY @1767 /* ~..... gods.... can't... breathe...~*/
+	
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1768 /* ~Schael! Let her go gods damn it, I'm the one you want!~*/
+	GOTO XA_CorwinIrenicus_Sleep
+	
+	IF ~
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1772 /* ~Corwin! Let her go gods damn it, I'm the one you want!~*/
+	GOTO XA_CorwinIrenicus_Sleep
+END
+
+IF ~~ THEN BEGIN XA_CorwinIrenicus_Sleep
+	SAY @1773 /* ~... No .... Rohma...~ [BD68274]*/
+	= @1769 /* ~(Her head droops forward as her struggles subside and then cease entirely.)~*/
+	= @1771 /* ~.....~*/
+	
+	IF ~~ THEN REPLY @1770 /* ~Schael! No!~*/ 
+	EXTERN PPIRENI2 XA_CorwinIrenicus_Sleep2
+END
+
+
 IF ~~ THEN BEGIN XA_GORODR1_17_18
 	SAY @604 /*  ~What manner of creature is imprisoned here?~   */
 	IF ~~ THEN
@@ -10403,3 +10438,12 @@ CHAIN XACORWIJ XA_GoodbyeChain
 	@1720 /* ~That's very kind of you. Thank you.~*/
 	//}
 END XACORWIJ XA_GoodbyeChainEnd
+
+CHAIN XACORWIJ XA_CorwinIrenicusChain
+	@545 /* ~(She struggles mightily, but is unable to break free of the golem's grip.)~ */
+	== PPIRENI2
+	@539 /* ~Enjoy your last moments of autonomy, child.~ */
+	== XAGOLSTO
+	@1766 /*~(The golem slowly increases the pressure around her midsection as she continues her futile efforts to break free.)~*/
+END XACORWIJ XA_CorwinIrenicusChain_END
+
