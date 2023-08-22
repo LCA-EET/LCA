@@ -8184,11 +8184,18 @@ END
 
 IF ~~ THEN BEGIN XA_CorwinIrenicus_Sleep
 	SAY @1773 /* ~... No .... Rohma...~ [BD68274]*/
-	= @1769 /* ~(Her head droops forward as her struggles subside and then cease entirely.)~*/
-	= @1771 /* ~.....~*/
-	
-	IF ~~ THEN REPLY @1770 /* ~Schael! No!~*/ 
-	EXTERN PPIRENI2 XA_CorwinIrenicus_Sleep2
+	= @1769 /*~(Her head droops forward as her struggles subside and then cease entirely.)~*/
+	= @1771 /*~.....~*/
+	IF ~~ THEN
+	DO ~
+		ChangeAIScript("XACORIRE", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
+		SetLeavePartyDialogFile()
+		LeaveParty()
+		StartCutSceneMode()
+		StartCutScene("XA41CS02")
+	~
+	EXIT
 END
 
 

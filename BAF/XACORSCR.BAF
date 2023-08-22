@@ -1558,7 +1558,10 @@ END
 //} End Underdark Check
 
 //{ 18: Event Checks
+
 	
+	
+	//}
 	//{ Helped Ginia
 	IF
 		ActionListEmpty()

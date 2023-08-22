@@ -1,0 +1,13 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ActionOverride("XACORWIN", SetSequence(SEQ_DIE))
+		Wait(1)
+		DisplayStringHead(Myself, @0)
+		Wait(2)
+		ActionOverride("ppireni2", FaceObject(Player1))
+		Wait(1)
+		ActionOverride("ppireni2", StartDialogNoSet(Player1))
+END

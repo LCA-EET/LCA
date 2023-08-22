@@ -131,6 +131,13 @@
 		AddJournalEntry(@322, INFO)
 	~
 	
+	ADD_TRANS_ACTION PPIRENI2
+	BEGIN 36 END
+	BEGIN 0 END
+	~
+		SetGlobal("XA_RescueCorwin1516", "GLOBAL", 1)
+	~
+	
 	ADD_STATE_TRIGGER BDIMOEN 129
 	~
 		Global("bd_player_exiled","global",0)
@@ -1542,6 +1549,34 @@ EXTEND_BOTTOM PPIRENI2 3
 	EXTERN XACORWIJ XA_CorwinIrenicusStart
 END
 
+EXTEND_BOTTOM PPIRENI2 27
+	IF ~
+		Global("XA_CorwinIrenicus", "GLOBAL", 3)
+	~ THEN
+	DO ~
+		EraseJournalEntry(7252)
+		EraseJournalEntry(7253)
+		EraseJournalEntry(22952)
+		EraseJournalEntry(23306)
+		SetGlobal("AsylumPlot","GLOBAL",40)
+		StartCutSceneMode()
+		StartCutSceneEx("XACUT41J",FALSE)
+	~
+	SOLVED_JOURNAL @345  /* ~The transformation and the dream
+
+While Irenicus cast his spell on me to steal my divinity... my soul... I was mired in a dream in which I fought against the personification of my instinct and prevailed. I awoke. My victory in my dream, however, did not mean victory in reality. Irenicus had successfully taken my soul and stated that now both he and Bodhi were free of the curse which they had been subjected to... and that Imoen and I would both die a slow and withering death. As for Schael, she's alive, though he plans to use her in some plot to assassinate the leaders of Baldur's Gate.
+
+What he plans to do next he would not say, but he left it to Bodhi to finish me off once and for all.~ */
+	EXIT
+END
+
+EXTEND_BOTTOM PPIRENI2 31
+	IF ~
+		Global("XA_CorwinIrenicus", "GLOBAL", 4)
+	~ THEN REPLY @346  /* ~Release Schael and return what you stole from us, or I swear that I'll bury you where you stand!~*/
+	GOTO 33
+END
+
 APPEND PPIRENI2
 	IF ~
 		Global("XA_CorwinIrenicus", "GLOBAL", 1)
@@ -1557,8 +1592,21 @@ APPEND PPIRENI2
 		EXTERN XACORWIJ XA_CorwinIrenicusChain
 	END
 	
-	IF ~~ THEN BEGIN XA_CorwinIrenicus_Sleep2
-		SAY @338 /*~Worry not. Unlike the rest of your companions, she will live beyond these next few minutes. Once I am done with you and Imoen, she'll be returned home, where she will assassinate the Council of Four on my behalf.~*/
+	IF ~
+		Global("XA_CorwinIrenicus", "GLOBAL", 2)
+	~ THEN BEGIN XA_CorwinIrenicus_Sleep2
+		SAY @338 /*~Worry not.*/
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_CorwinIrenicus", "GLOBAL", 3)
+		~
+		GOTO XA_CorwinIrenicus_Sleep2A
+		
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinIrenicus_Sleep2A
+		SAY @339 /*~Unlike you and the rest of your companions, she will live beyond these next few minutes. Once I am done with you, a geas will be placed on her. She'll then be returned to Baldur's Gate, where she will assassinate the Council of Four on my behalf.~ */
 		
 		COPY_TRANS PPIRENI2 3
 	END
@@ -2760,6 +2808,7 @@ APPEND JAHEIRAJ
 	//}
 END
 
+//{ IMOEN2J
 APPEND IMOEN2J
 	IF ~~ THEN BEGIN XA_BenoBoom
 		SAY @295 /* ~I'm covered in it, ugh. Don't laugh! You are too!~ */
@@ -2860,7 +2909,46 @@ APPEND IMOEN2J
 		IF ~~ THEN EXIT
 	END
 	//}
+	
+	IF ~~ THEN BEGIN XA_ImoenSchaelSpellhold
+		SAY @341  /* ~Captain Corwin? What's she doing here?~*/
+		
+		IF ~~ THEN REPLY @342  /* ~Join me, Imoen. I'll explain on the way.~ */
+		GOTO 21
+		
+		IF ~~ THEN REPLY @343  /* ~It's a long story, and we don't have the time. Can you make it out of here on your own?~*/
+		GOTO 22
+	END
 END
+//}
+
+//{ IMOEN2
+APPEND IMOEN2
+	IF ~~ THEN BEGIN XA_ImoenSchaelSpellhold
+		SAY @341  /* ~Captain Corwin? What's she doing here?~*/
+		
+		IF ~~ THEN REPLY @342  /* ~Join me, Imoen. I'll explain on the way.~ */
+		GOTO 21
+		
+		IF ~~ THEN REPLY @343  /* ~It's a long story, and we don't have the time. Can you make it out of here on your own?~*/
+		GOTO 22
+	END
+END
+
+EXTEND_BOTTOM IMOEN2 19
+	IF ~
+		Global("XA_CorwinIrenicus", "GLOBAL", 4)
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @340  /* ~Schael, too. He's planning to use her to assassinate the Dukes. I have to save her!~*/
+	GOTO XA_ImoenSchaelSpellhold
+	
+	IF ~
+		Global("XA_CorwinIrenicus", "GLOBAL", 4)
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @344  /* ~Schael, too. He's planning to use her to assassinate the Dukes. I have to stop him!~*/
+	GOTO XA_ImoenSchaelSpellhold
+END
+//}
 
 //{ KENT
 ADD_STATE_TRIGGER KENT 0

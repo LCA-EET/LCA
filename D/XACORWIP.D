@@ -10,6 +10,35 @@
 
 BEGIN ~XACORWIP~
 
+IF ~
+	Global("XA_CorwinIrenicus", "GLOBAL", 4)
+~ THEN BEGIN XA_CorwinIrenicusRejoin
+	SAY @75  /* ~Get me out of here!~ */
+	
+	IF ~
+		NumInPartyLT(6)
+	~ THEN REPLY @76 /* ~(Break the glass.)~*/
+	DO ~
+		JumpToPoint([810.945])
+		ChangeAIScript("XACORSCR", OVERRIDE)
+		SetGlobal("XA_CorwinIrenicus", "GLOBAL", 5)
+		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+	~
+	EXIT
+	
+	IF ~
+		NumInPartyGT(5)
+	~ THEN REPLY @76 /* ~(Break the glass.)~*/
+	DO ~
+		JumpToPoint([810.945])
+		ChangeAIScript("XACORSCR", OVERRIDE)
+		SetGlobal("XA_CorwinIrenicus", "GLOBAL", 5)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @77  /* ~(Leave her inside.)~*/
+	EXIT
+END
 //{ Dialog P-7
 IF ~
 	Global("XA_CorwinSpawnPlane", "GLOBAL", 1)
