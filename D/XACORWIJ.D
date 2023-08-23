@@ -4537,7 +4537,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region Corwin Player Soul Talk - Dialog J-26
+//{ #region Corwin Player Soul Talk - Dialog J-26A
 IF ~
 	Global("XA_PlayerSoulTalk", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinSoulTalk
@@ -4561,29 +4561,107 @@ IF ~~ THEN BEGIN XA_CorwinSoulTalk2
 	SAY @435 /* ~Whatever he did, we'll find a way to restore you and your sister.~ */
 	
 	IF ~~ THEN REPLY @436 /* ~Right. Let's go.~ */
-	EXIT
-
-	IF ~~ THEN REPLY @437 /* ~Right - and you? Are you alright Schael?~ */
-	GOTO XA_CorwinSoulTalk3
-END
-
-IF ~~ THEN BEGIN XA_CorwinSoulTalk3
-	SAY @438 /* ~Yes, I - I'm fine... I'm just disappointed that he escaped.~ */
-	
-	IF ~~ THEN REPLY @439 /* ~You look concerned. What he said about using you to assassinate the Grand Dukes - it will never happen.~ */
-	GOTO XA_CorwinSoulTalk4
-END
-
-IF ~~ THEN BEGIN XA_CorwinSoulTalk4
-	SAY @440 /* ~That's for damn sure. Come on - let's go.~ */
-	IF ~~ THEN
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	EXIT
-END 
 
-//} #endregion
+
+END
+//}
+
+//{ #region Corwin Player Rescue Talk - Dialog J-26B
+IF ~
+	Global("XA_PlayerRescueTalk", "LOCALS", 1)
+~ THEN BEGIN XA_CorwinRescueTalk
+	SAY @1240 /* ~Thanks for the help back there.~ */
+	
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1241 /* ~Are you sure you're alright, love?~ */
+	DO ~
+		SetGlobal("XA_CorwinIrenicusTalk", "LOCALS", 2)
+		SetGlobal("XA_PlayerRescueTalk", "LOCALS", 2)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
+	~
+	GOTO XA_CorwinRescueTalk2
+	
+	IF ~
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1242 /* ~Are you sure you're alright, Captain?~ */
+	DO ~
+		SetGlobal("XA_CorwinIrenicusTalk", "LOCALS", 2)
+		SetGlobal("XA_PlayerRescueTalk", "LOCALS", 2)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
+	~
+	GOTO XA_CorwinRescueTalk2
+	
+	IF ~~ THEN REPLY @1245  /* ~That golem sure gave you a good squeeze.~*/
+	DO ~
+		SetGlobal("XA_CorwinIrenicusTalk", "LOCALS", 2)
+		SetGlobal("XA_PlayerRescueTalk", "LOCALS", 2)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
+	~
+	GOTO XA_CorwinRescueTalk2
+END
+
+IF ~~ THEN BEGIN XA_CorwinRescueTalk2
+	SAY @1243 /* ~Yeah... nothing a nice, hot bath won't fix. How about you? What happened while I was out?~ */
+	
+	IF ~~ THEN REPLY @1233  /* ~I'll fill you in on the way. We need to get moving.~*/
+
+	GOTO XA_CorwinRescueTalk4
+
+	IF ~~ THEN REPLY @1246  /* ~Nothing. Just the small matter of having my soul ripped out from me. Imoen too.~*/
+	GOTO XA_CorwinRescueTalk3
+END
+
+IF ~~ THEN BEGIN XA_CorwinRescueTalk3
+	SAY @1247  /* ~What!?~ */
+	
+	IF ~~ THEN REPLY @1233 /* ~I'll fill you in on the way. We need to get moving.~*/
+	GOTO XA_CorwinRescueTalk4
+END
+
+IF ~~ THEN BEGIN XA_CorwinRescueTalk4
+	SAY @1232  /* ~Right...~*/
+	
+	IF ~~ THEN
+	EXIT
+	
+	IF ~
+		Global("XA_CorwinToldAboutSoul", "LOCALS", 1)
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN
+	GOTO XA_CorwinRescueTalk5A
+	
+	IF ~
+		!Global("XA_CorwinToldAboutSoul", "LOCALS", 1)
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN
+	GOTO XA_CorwinRescueTalk5B
+END
+
+IF ~~ THEN BEGIN XA_CorwinRescueTalk5A
+	SAY @1231  /* ~Come here.~*/
+	
+	= @1230 /*  ~(You share a warm embrace.)~*/
+	
+	= @1227 /* ~Whatever he did, we'll find a way to restore you and your sister. Let's go.~*/
+	
+	IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN XA_CorwinRescueTalk5B
+	SAY @1231  /* ~Come here.~*/
+	
+	= @1230 /*  ~(You share a warm embrace.)~*/
+	
+	= @430 /* ~Let's go.~*/
+	
+	IF ~~ THEN EXIT
+END
+//}
 
 //{ #region Corwin Rep Warning - Dialog J-27
 IF ~

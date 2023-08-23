@@ -21,7 +21,7 @@ IF ~
 	DO ~
 		JumpToPoint([810.945])
 		ChangeAIScript("XACORSCR", OVERRIDE)
-		SetGlobal("XA_CorwinIrenicus", "GLOBAL", 5)
+		SetGlobal("XA_CorwinIrenicus", "GLOBAL", 6)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
@@ -33,10 +33,124 @@ IF ~
 		JumpToPoint([810.945])
 		ChangeAIScript("XACORSCR", OVERRIDE)
 		SetGlobal("XA_CorwinIrenicus", "GLOBAL", 5)
+		SetGlobalTimer("XA_CorwinRejoinTimer", "LOCALS", ONE_ROUND)
+		Ally()
 	~
 	EXIT
 	
 	IF ~~ THEN REPLY @77  /* ~(Leave her inside.)~*/
+	EXIT
+END
+
+IF ~
+	Global("XA_CorwinIrenicusTalk", "LOCALS", 1)
+~ THEN BEGIN XA_CorwinIrenicusTalk
+	SAY @78  /* ~Thanks for the help back there.~ */
+	
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @79 /* ~Are you sure you're alright, love?~ */
+	DO ~
+		SetGlobal("XA_CorwinIrenicusTalk", "LOCALS", 2)
+		SetGlobal("XA_PlayerRescueTalk", "LOCALS", 2)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+	~
+	GOTO XA_CorwinRescueTalk2
+	
+	IF ~
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @80 /* ~Are you sure you're alright, Captain?~ */
+	DO ~
+		SetGlobal("XA_CorwinIrenicusTalk", "LOCALS", 2)
+		SetGlobal("XA_PlayerRescueTalk", "LOCALS", 2)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+	~
+	GOTO XA_CorwinRescueTalk2
+	
+	IF ~~ THEN REPLY @81  /* ~That golem sure gave you a good squeeze.~*/
+	DO ~
+		SetGlobal("XA_CorwinIrenicusTalk", "LOCALS", 2)
+		SetGlobal("XA_PlayerRescueTalk", "LOCALS", 2)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+	~
+	GOTO XA_CorwinRescueTalk2
+END
+
+IF ~~ THEN BEGIN XA_CorwinRescueTalk2
+	SAY @82 /* ~Yeah... nothing a nice, hot bath won't fix. How about you? What happened while I was out?~ */
+	
+	IF ~~ THEN REPLY @91  /* ~I don't have time to explain. Meet me back in Athkatla.~*/
+	GOTO XA_AreYouSure
+	
+	IF ~~ THEN REPLY @83  /* ~I'll fill you in on the way. We need to get moving.~*/
+	GOTO XA_CorwinRescueTalk4
+
+	IF ~~ THEN REPLY @84  /* ~Nothing. Just the small matter of having my soul ripped out from me. Imoen too.~*/
+	DO ~
+		SetGlobal("XA_CorwinToldAboutSoul", "LOCALS", 1)
+	~
+	GOTO XA_CorwinRescueTalk3
+END
+
+IF ~~ THEN BEGIN XA_CorwinRescueTalk3
+	SAY @85  /* ~What!?~ */
+	
+	IF ~~ THEN REPLY @91  /* ~I don't have time to explain. Meet me back in Athkatla.~*/
+	GOTO XA_AreYouSure
+	
+	IF ~~ THEN REPLY @86 /* ~I'll fill you in on the way. We need to get moving.~*/
+	GOTO XA_CorwinRescueTalk4
+END
+
+IF ~~ THEN BEGIN XA_CorwinRescueTalk4
+	SAY @87  /* ~Right...~*/
+	
+	IF ~~ THEN
+	DO ~
+		ChangeAIScript("XACORSCR", OVERRIDE)
+		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+	~
+	EXIT
+	
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_CorwinToldAboutSoul", "LOCALS", 1)
+	~ THEN
+	GOTO XA_CorwinRescueTalk5A
+	
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_CorwinToldAboutSoul", "LOCALS", 1)
+	~ THEN
+	GOTO XA_CorwinRescueTalk5B
+END
+
+IF ~~ THEN BEGIN XA_CorwinRescueTalk5A
+	SAY @88  /* ~Come here.~*/
+	
+	= @89 /*  ~(You share a warm embrace.)~*/
+	
+	= @90 /* ~Whatever he did, we'll find a way to restore you and your sister. Let's go.~*/
+	
+	IF ~~ THEN
+	DO ~
+		ChangeAIScript("XACORSCR", OVERRIDE)
+		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_CorwinRescueTalk5B
+	SAY @88  /* ~Come here.~*/
+	
+	= @89 /*  ~(You share a warm embrace.)~*/
+
+	= @92  /* ~Let's go.~*/
+	IF ~~ THEN
+	DO ~
+		ChangeAIScript("XACORSCR", OVERRIDE)
+		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+	~
 	EXIT
 END
 //{ Dialog P-7

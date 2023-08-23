@@ -29,3 +29,4 @@ THEN
 		SetGlobal("XA_CheckWithBrega", "GLOBAL", 1)
 		ActionOverride(Player1,StartDialog("player1",Player1))
 END
+

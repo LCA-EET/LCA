@@ -1,25 +1,32 @@
 IF 
 	Global("XA_CorwinIrenicus", "GLOBAL", 4)
-	GlobalTimerExpired("XA_GetMeOutTimer", "LOCALS", ONE_ROUND)
+	GlobalTimerExpired("XA_GetMeOutTimer", "LOCALS")
 THEN
-	RESPONSE #33
+	RESPONSE #25
 		SetInterrupt(FALSE)
 		FaceObject(Player1)
 		DisplayStringHead(Myself, @1)
 		SetGlobalTimer("XA_GetMeOutTimer", "LOCALS", ONE_ROUND)
 		SetInterrupt(TRUE)
-	RESPONSE #33
+	RESPONSE #25
 		SetInterrupt(FALSE)
 		FaceObject(Player1)
 		DisplayStringHead(Myself, @2)
 		SetGlobalTimer("XA_GetMeOutTimer", "LOCALS", ONE_ROUND)
 		SetInterrupt(TRUE)
-	RESPONSE #33
+	RESPONSE #25
 		SetInterrupt(FALSE)
 		FaceObject(Player1)
 		DisplayStringHead(Myself, @3)
 		SetGlobalTimer("XA_GetMeOutTimer", "LOCALS", ONE_ROUND)
 		SetInterrupt(TRUE)
+	RESPONSE #25
+		SetInterrupt(FALSE)
+		FaceObject(Player1)
+		DisplayStringHead(Myself, @4)
+		SetGlobalTimer("XA_GetMeOutTimer", "LOCALS", ONE_ROUND)
+		SetInterrupt(TRUE)
+	
 END
 
 //{ See Charname while trapped

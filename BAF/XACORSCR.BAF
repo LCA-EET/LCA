@@ -228,10 +228,11 @@ END
 	IF 
 		ActionListEmpty()
 		Global("XA_CanTalk", "LOCALS", 1)
-		OR(3)
+		OR(4)
 			!IsValidForPartyDialogue(Myself)
 			ActuallyInCombat()
 			GlobalGT("XA_ArrivedInUndercity", "GLOBAL", 0)
+			!InParty(Myself)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -243,6 +244,7 @@ END
 
 	IF
 		ActionListEmpty()
+		InParty(Myself)
 		!Global("XA_CanTalk", "LOCALS", 1)
 		IsValidForPartyDialogue(Myself)
 		!ActuallyInCombat()
@@ -1565,6 +1567,7 @@ END
 	//{ Helped Ginia
 	IF
 		ActionListEmpty()
+		Global("XA_CanTalk", "LOCALS", 1)
 		Global("HelpGinia","GLOBAL",3)
 		GlobalLT("XA_CorwinGinia", "GLOBAL", 1)
 	THEN
@@ -1664,7 +1667,6 @@ END
 	END
 	//}
 	
-
 	//{ Entered Troll Hill
 	IF
 		ActionListEmpty()
@@ -2271,19 +2273,75 @@ END
 
 	//{ Player's Soul Stolen
 	IF 
+		ActionListEmpty()
 		Global("OpenJonBedroom","GLOBAL",1)
-		!Global("XA_PlayerSoulStolen", "GLOBAL", 1)
+		GlobalLT("XA_PlayerSoulStolen", "GLOBAL", 1)
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+		GlobalLT("XA_CorwinIrenicus", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_PlayerSoulStolen", "GLOBAL", 1)
+			SetGlobalTimer("XA_OBJTimer1", "LOCALS", TWO_ROUNDS)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalTimerExpired("XA_OBJTimer1", "LOCALS")
+		GlobalLT("XA_PlayerSoulTalk", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("XA_PlayerSoulTalk", "GLOBAL", 1)
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)
 	END
 	//}
-
+	
+	//{ Player Rescued Corwin in Spellhold
+	IF
+		ActionListEmpty()
+		Global("OpenJonBedroom","GLOBAL",1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+		GlobalGT("XA_CorwinIrenicus", "GLOBAL", 1)
+		GlobalLT("XA_OBJTimer2Set", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_OBJTimer2Set", "LOCALS", 1)
+			SetGlobalTimer("XA_OBJTimer2", "LOCALS", TWO_ROUNDS)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalTimerExpired("XA_OBJTimer2", "LOCALS")
+		GlobalLT("XA_PlayerRescueTalk", "LOCALS", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_PlayerRescueTalk", "LOCALS", 1)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	
+	IF 
+		GlobalTimerExpired("XA_CorwinRejoinTimer", "LOCALS")
+		GlobalLT("XA_CorwinIrenicusTalk", "LOCALS", 1)
+		IsValidForPartyDialogue(Player1)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_CorwinIrenicusTalk", "LOCALS", 1)
+			StartDialog("XACORWIP", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
 	//{ Bodhi Killed
 	/* Checks if Corwin was in the party when Bodhi was killed */
 	IF 
@@ -8747,7 +8805,7 @@ END
 
 	//{ Corwin Sees Player for the First Time Since SoD
 	IF
-		!Global("XA_CorwinReunited", "GLOBAL", 1)
+		GlobalLT("XA_CorwinReunited", "GLOBAL", 1)
 		!Range(Player1, 6)
 		ActionListEmpty()
 	THEN
@@ -8757,7 +8815,7 @@ END
 	END
 	
 	IF
-		!Global("XA_CorwinReunited", "GLOBAL", 1)
+		GlobalLT("XA_CorwinReunited", "GLOBAL", 1)
 		See(Player1)
 		!ActuallyInCombat()
 	THEN

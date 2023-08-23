@@ -20,9 +20,10 @@ END
 IF 
 	Global("XA_CanTalk", "LOCALS", 1)
 	ActionListEmpty()
-	OR(2)
+	OR(3)
 		!IsValidForPartyDialogue(Myself)
 		ActuallyInCombat()
+		!InParty(Myself)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CanTalk", "LOCALS", 0)
@@ -33,6 +34,7 @@ IF
 	!Global("XA_CanTalk", "LOCALS", 1)
 	ActionListEmpty()
 	IsValidForPartyDialogue(Myself)
+	InParty(Myself)
 	!ActuallyInCombat()
 THEN
 	RESPONSE #100

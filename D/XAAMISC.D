@@ -165,29 +165,9 @@
 		EXTERN XACORWIJ XA_UDPHAE01_88
 	END
 
-	EXTEND_BOTTOM IMOEN2J 23
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ THEN 
-		DO ~
-			SetGlobal("SolaufeinJob","GLOBAL",8)
-			SetGlobalTimer("udPhaTimer","GLOBAL",THREE_DAYS)
-			SetGlobal("udPhaTimerOn","GLOBAL",1)
-		~ 
-		EXTERN XACORWIJ XA_UDPHAE01_IJ_88
-	END
 	
-	EXTEND_BOTTOM JAHEIRAJ 472
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ THEN 
-		DO ~
-			SetGlobal("SolaufeinJob","GLOBAL",8)
-			SetGlobalTimer("udPhaTimer","GLOBAL",THREE_DAYS)
-			SetGlobal("udPhaTimerOn","GLOBAL",1)
-		~ 
-		EXTERN XACORWIJ XA_UDPHAE01_IJ_88
-	END
+	
+	
 	
 	//{ BDBELT
 	ADD_TRANS_ACTION BDBELT
@@ -1452,11 +1432,14 @@ APPEND CONNOL
 END
 //}
 
+//{ MCOOK4
 ADD_STATE_TRIGGER MCOOK4 1
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
+//}
 
+//{ SUTHIE
 ADD_STATE_TRIGGER SUTHIE 0
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
@@ -1481,7 +1464,9 @@ APPEND SUTHIE
 		IF ~~ THEN EXIT
 	END
 END
+//}
 
+//{ BART8
 EXTEND_BOTTOM BART8 0 /* OK */
 	IF ~
 		GlobalGT("XA_BrevlikSpawn", "GLOBAL", 0)
@@ -1524,6 +1509,7 @@ APPEND BART8
 		EXIT
 	END
 END
+//}
 
 //{ PPIRENI1
 	EXTEND_BOTTOM PPIRENI1 31
@@ -1574,10 +1560,18 @@ EXTEND_BOTTOM PPIRENI2 31
 	IF ~
 		Global("XA_CorwinIrenicus", "GLOBAL", 4)
 	~ THEN REPLY @346  /* ~Release Schael and return what you stole from us, or I swear that I'll bury you where you stand!~*/
-	GOTO 33
+	GOTO XA_Geas
 END
 
 APPEND PPIRENI2
+	
+	IF ~~ THEN BEGIN XA_Geas
+		SAY @347  /* ~Fool! Do you not see that you're being here serves my will? Your companion has, to this point, resisted the geas. The sight of you and your army of madness falling by my hand is certain to break her spirit once and for all.~ */
+		
+		IF ~~ THEN
+		GOTO 34
+	END
+	
 	IF ~
 		Global("XA_CorwinIrenicus", "GLOBAL", 1)
 	~ THEN BEGIN XA_CorwinIrenicus
@@ -1613,6 +1607,7 @@ APPEND PPIRENI2
 END
 //}
 
+//{ BDIMOEN
 EXTEND_BOTTOM BDIMOEN 89 /* OK */
 	
 	IF ~
@@ -1720,7 +1715,9 @@ APPEND BDIMOEN
 		~ GOTO 91
 	END
 END
+//}
 
+//{ BDCORWIJ
 EXTEND_BOTTOM BDCORWIJ 318  /* OK */
 	IF ~~ THEN REPLY @202 /* ~Corwin, these are beautiful. This Neoma... you must be very special to her.~ */
 	GOTO XA_Neoma
@@ -1778,7 +1775,9 @@ APPEND BDCORWIJ
 		EXTERN ~BDVOGHIJ~ 170
 	END
 END
+//}
 
+//{ BAERIE
 EXTEND_BOTTOM BAERIE 112
 	IF ~
 		GlobalGT("bd_asha_duel", "global", 0)
@@ -1809,6 +1808,9 @@ APPEND BAERIE
 	END
 END
 
+//}
+
+//{ SAREV25A
 EXTEND_BOTTOM SAREV25A 10 /* OK*/
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
@@ -1827,7 +1829,9 @@ EXTEND_BOTTOM SAREV25A 48
 	REPLY @183 /* ~I was already on my way to Saradush before I was dragged here.~ */
 	FLAGS 128 GOTO 49
 END
+//}
 
+//{ MAZZYJ
 APPEND MAZZYJ
 	IF ~~ THEN BEGIN BCorwinMazzy2_BREAK
 		SAY @226 /* ~It's alright. I know you didn't mean anything by it. Besides, I'm quite happy with the crossbow.~*/
@@ -1865,7 +1869,9 @@ APPEND MAZZYJ
 		EXTERN XACORWIB XA_CorwinWonCompetition
 	END
 END
-//RBALDU
+//}
+
+//{ RBALDU
 
 ADD_STATE_TRIGGER RBALDU 5
 ~
@@ -1877,41 +1883,6 @@ ADD_STATE_TRIGGER RBALDU 14
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-APPEND DORNJ
-	IF ~~ THEN BEGIN XA_CorwinDornConflict2
-		SAY @229 /* ~It is not your concern.~ */
-		
-		IF ~~ THEN 
-		EXTERN XACORWIB XA_CorwinDornConflict3
-	END
-	
-	IF ~~ THEN BEGIN XA_CorwinDornConflict4
-		SAY @193 /* ~Laughable, woman. Stand in my way, and your neck will snap as easily as a tree in the midst of a hurricane.~ */
-		
-		IF ~~ THEN REPLY @194 /* ~That's enough. Dorn, I don't know what you think exists between us, but I love Schael and nothing is going to change that.~  */
-		DO ~
-			SetGlobal("XA_CorwinDornConflict", "GLOBAL", 2)
-		~
-		GOTO XA_ChooseCorwin
-		
-		IF ~~ THEN REPLY @195 /* ~Stop it, Dorn. You know my affections lie with you.~ */
-		DO ~
-			SetGlobal("XA_CorwinDornConflict", "GLOBAL", 2)
-		~
-		EXTERN XACORWIB XA_ChooseDorn
-	END
-	
-	IF ~~ THEN BEGIN XA_ChooseCorwin
-		SAY @230 /* ~Bah! To hell with the lot of you!~ */
-		
-		IF ~~ THEN
-		DO ~
-			SetGlobal("OHD_corwinconflict","GLOBAL",4)
-			SetGlobal("DornRomanceActive", "GLOBAL", 3)
-		~
-		EXIT
-	END
-END
 
 APPEND RBALDU
 	IF ~
@@ -1954,10 +1925,45 @@ APPEND RBALDU
 		IF ~~ THEN EXIT
 	END
 END
+//}
 
-
-//NALIAJ
-
+//{ DORNJ
+APPEND DORNJ
+	IF ~~ THEN BEGIN XA_CorwinDornConflict2
+		SAY @229 /* ~It is not your concern.~ */
+		
+		IF ~~ THEN 
+		EXTERN XACORWIB XA_CorwinDornConflict3
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinDornConflict4
+		SAY @193 /* ~Laughable, woman. Stand in my way, and your neck will snap as easily as a tree in the midst of a hurricane.~ */
+		
+		IF ~~ THEN REPLY @194 /* ~That's enough. Dorn, I don't know what you think exists between us, but I love Schael and nothing is going to change that.~  */
+		DO ~
+			SetGlobal("XA_CorwinDornConflict", "GLOBAL", 2)
+		~
+		GOTO XA_ChooseCorwin
+		
+		IF ~~ THEN REPLY @195 /* ~Stop it, Dorn. You know my affections lie with you.~ */
+		DO ~
+			SetGlobal("XA_CorwinDornConflict", "GLOBAL", 2)
+		~
+		EXTERN XACORWIB XA_ChooseDorn
+	END
+	
+	IF ~~ THEN BEGIN XA_ChooseCorwin
+		SAY @230 /* ~Bah! To hell with the lot of you!~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("OHD_corwinconflict","GLOBAL",4)
+			SetGlobal("DornRomanceActive", "GLOBAL", 3)
+		~
+		EXIT
+	END
+END
+//}
 
 //{ HOUSG3
 ADD_STATE_TRIGGER HOUSG3 0
@@ -2215,7 +2221,6 @@ APPEND LOBAR
 	END
 END
 //}
-
 
 //{ NOBW9
 ADD_STATE_TRIGGER NOBW9 6
@@ -2603,6 +2608,7 @@ APPEND BRIELB
 END
 //}
 
+//{ VICONIJ
 APPEND VICONIJ
 	IF ~~ THEN BEGIN XA_AskDiviner
 		SAY @120 /* ~No. I already know what is in store for me, and there is nothing I can do to escape it.~*/
@@ -2614,7 +2620,9 @@ APPEND VICONIJ
 		EXTERN XADIVINE XA_AskAway
 	END
 END
+//}
 
+//{ ANOMENJ
 APPEND ANOMENJ
 	IF ~~ THEN BEGIN XA_AskDiviner
 		SAY @115 /* ~No. Let us not waste any of our time and money on this charlatan.~ */
@@ -2675,6 +2683,20 @@ APPEND ANOMENJ
 		EXTERN XACORWIB BCorwinAnomen1B
 		
 	END
+END
+//}
+
+//{ JAHEIRAJ
+EXTEND_BOTTOM JAHEIRAJ 472
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+	~ THEN 
+	DO ~
+		SetGlobal("SolaufeinJob","GLOBAL",8)
+		SetGlobalTimer("udPhaTimer","GLOBAL",THREE_DAYS)
+		SetGlobal("udPhaTimerOn","GLOBAL",1)
+	~ 
+	EXTERN XACORWIJ XA_UDPHAE01_IJ_88
 END
 
 APPEND JAHEIRAJ
@@ -2807,8 +2829,21 @@ APPEND JAHEIRAJ
 	END
 	//}
 END
+//}
 
 //{ IMOEN2J
+EXTEND_BOTTOM IMOEN2J 23
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ THEN 
+		DO ~
+			SetGlobal("SolaufeinJob","GLOBAL",8)
+			SetGlobalTimer("udPhaTimer","GLOBAL",THREE_DAYS)
+			SetGlobal("udPhaTimerOn","GLOBAL",1)
+		~ 
+		EXTERN XACORWIJ XA_UDPHAE01_IJ_88
+	END
+
 APPEND IMOEN2J
 	IF ~~ THEN BEGIN XA_BenoBoom
 		SAY @295 /* ~I'm covered in it, ugh. Don't laugh! You are too!~ */

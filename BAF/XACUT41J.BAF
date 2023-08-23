@@ -31,7 +31,7 @@ THEN
 		ActionOverride(Player4,LeaveAreaLUA("AR1512","",[1782.1409],NW))  // Bodhi's Hunt Level 1
 		ActionOverride(Player5,LeaveAreaLUA("AR1512","",[1742.1424],NW))  // Bodhi's Hunt Level 1
 		ActionOverride(Player6,LeaveAreaLUA("AR1512","",[1676.1437],NW))  // Bodhi's Hunt Level 1
-		ActionOverride("XACORWIN", LeaveAreaLUA("AR1512","",[875.2200]))
+		ActionOverride("XACORWIN", LeaveAreaLUA("AR1512","",[875.2200], NW))
 		SetGlobal("XA_CorwinIrenicus", "GLOBAL", 4)
 		MultiPlayerSync()
 		Wait(1)

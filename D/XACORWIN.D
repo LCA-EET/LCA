@@ -23,7 +23,7 @@ END
 //{ Dialog I-1
 IF ~
 	Global("XA_CorwinContinue", "GLOBAL", 2) 
-	!Global("XA_CorwinReunited", "GLOBAL", 1)
+	GlobalLT("XA_CorwinReunited", "GLOBAL", 1)
 ~ THEN BEGIN XAA0
 	SAY @7 /* ~<CHARNAME>! There you are... thank the gods.~ [XA100085] */
 	=@8 /* ~I've missed you...~ */
@@ -47,7 +47,7 @@ END
 //{ Dialog I-2
 IF ~
 	Global("XA_CorwinContinue", "GLOBAL", 1) // Friend
-	!Global("XA_CorwinReunited", "GLOBAL", 1)
+	GlobalLT("XA_CorwinReunited", "GLOBAL", 1)
 ~ THEN BEGIN XAA1
 	SAY @7 /* ~<CHARNAME>! Thank Tymora...~ */
 	IF ~~ THEN REPLY @30 /* ~Schael! What are you doing here?~ */ 
