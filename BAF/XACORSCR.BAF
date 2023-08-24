@@ -10361,6 +10361,24 @@ END
 
 //{ Exp Boosts on Join
 
+//{ Exp Boost after Re-Join in Spellhold
+IF
+	InParty(Myself)
+	ActionListEmpty()
+	!ActuallyInCombat()
+	GlobalGT("XA_CorwinIrenicus", "GLOBAL", 4)
+	GlobalLT("XA_CIExpBoost", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_CIExpBoost", "LOCALS", 1)
+		ChangeStat(Myself,XP,35000,ADD)
+		AddJournalEntry(@25, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
 IF
   Global("BD_JOINXP","LOCALS",0)
   InParty(Myself)

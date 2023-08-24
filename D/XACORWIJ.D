@@ -4613,6 +4613,9 @@ IF ~~ THEN BEGIN XA_CorwinRescueTalk2
 	GOTO XA_CorwinRescueTalk4
 
 	IF ~~ THEN REPLY @1246  /* ~Nothing. Just the small matter of having my soul ripped out from me. Imoen too.~*/
+	DO ~
+		SetGlobal("XA_CorwinToldAboutSoul", "LOCALS", 1)
+	~
 	GOTO XA_CorwinRescueTalk3
 END
 
