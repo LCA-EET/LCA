@@ -1207,14 +1207,6 @@ END
 
 //} BGMiniQuest Interaction End
 
-
-
-
-
-
-
-
-
 //{ 12: Reputation Handling
 IF 
 	Global("XA_CanTalkToPlayer", "LOCALS", 1)
@@ -7471,12 +7463,13 @@ END
 		GlobalTimerExpired("XA_CorwinScoldKeldornTimer", "GLOBAL")
 		Global("XA_InUnderdark", "GLOBAL", 1)
 		See("Keldorn")
-		Global("XA_CorwinAngryAtKeldorn", "GLOBAL", 1)
+		Global("XA_CorwinCoverUD", "GLOBAL", 1)
+		!Global("DrowCityHostile","GLOBAL",1)
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_CorwinAngryAtKeldorn", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 2)
 			//Dialog B-61
 			Interact("Keldorn")
 			SetInterrupt(TRUE)

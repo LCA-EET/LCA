@@ -2330,12 +2330,12 @@ END
 	//{ Dialog B-61
 	CHAIN 
 		IF ~
-			Global("XA_CorwinAngryAtKeldorn", "GLOBAL", 2)
+			Global("XA_CorwinCoverUD", "GLOBAL", 2)
 			IsValidForPartyDialogue("Keldorn")
 		~ THEN XACORWIB BCorwinScoldKeldorn
 			@609 /* ~Keldorn - what happened back there?~ */
 			DO ~
-				SetGlobal("XA_CorwinAngryAtKeldorn", "GLOBAL", 3)
+				SetGlobal("XA_CorwinCoverUD", "GLOBAL", 3)
 			~
 			== KELDORJ
 			@610 /* ~Captain?~ */

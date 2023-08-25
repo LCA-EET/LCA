@@ -1778,7 +1778,7 @@ IF ~~ THEN BEGIN XA_DialogTest
 
 	IF ~~ THEN REPLY @397 /* ~Dialog B-61~ */
 	DO ~
-		SetGlobal("XA_CorwinAngryAtKeldorn", "GLOBAL", 1)
+		SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		Wait(1)
 		ActionOverride("XACORWIN", Interact("Keldorn"))
 	~

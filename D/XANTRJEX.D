@@ -671,7 +671,43 @@
 	END
 //}
 
+//{ UDPHAE01
+	ADD_TRANS_TRIGGER UDPHAE01 61
+	~
+		GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+	~
+	DO 1 2 3 4
+//}
 
+//{ DADROW3
+	ADD_TRANS_TRIGGER DADROW3 0
+	~
+		GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+	~
+	DO 6
+	
+	ADD_TRANS_TRIGGER DADROW3 0
+	~
+		!Gabber("XACORWIN")
+		GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+	~
+	DO 4
+//}
+
+//{ DADROW3
+	ADD_TRANS_TRIGGER DADROW03 0
+	~
+		GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+	~
+	DO 6
+	
+	ADD_TRANS_TRIGGER DADROW03 0
+	~
+		!Gabber("XACORWIN")
+		GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+	~
+	DO 4
+//}
 
 //{ HAERDAJ
 	INTERJECT_COPY_TRANS HAERDAJ 114 XA_HAERDAJ_114 //OK
@@ -751,11 +787,11 @@
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinAngryAtKeldorn", "GLOBAL", 1)
+			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
 		~
 		@89 /*  ~(She gives Keldorn a sharp stare.)~ */
 		DO ~
-			SetGlobal("XA_CorwinAngryAtKeldorn", "GLOBAL", 1)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 			SetGlobalTimer("XA_CorwinScoldKeldornTimer", "GLOBAL", ONE_ROUND)
 		~
 	END
@@ -764,11 +800,11 @@
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinAngryAtKeldorn", "GLOBAL", 1)
+			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
 		~
 		@89 /*  ~(She gives Keldorn a sharp stare.)~ */
 		DO ~
-			SetGlobal("XA_CorwinAngryAtKeldorn", "GLOBAL", 1)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 			SetGlobalTimer("XA_CorwinScoldKeldornTimer", "GLOBAL", ONE_ROUND)
 		~
 	END
