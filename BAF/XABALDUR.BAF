@@ -30,3 +30,112 @@ THEN
 		ActionOverride(Player1,StartDialog("player1",Player1))
 END
 
+IF
+	ActionListEmpty()
+	!InParty("XACORWIN")
+	Global("OHD_WEDDING_HOSTILE","OH5000",3)
+	GlobalLT("XA_WeddingHostile", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_WeddingHostile", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!InParty("XACORWIN")
+	Global("OpenJonBedroom","GLOBAL",1)
+	GlobalLT("XA_PlayerSoulStolen", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_PlayerSoulStolen", "GLOBAL", 1)
+		Continue()
+END
+
+IF	
+	ActionListEmpty()
+	!InParty("XACORWIN")
+	Global("OHD_sexreactions","GLOBAL",1)
+	GlobalLT("XA_DornSex", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_DornSex", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!InParty("XACORWIN")
+	Global("BodhiDead","GLOBAL",1)
+	GlobalLT("XA_BodhiDead", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BodhiDead", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!InParty("XACORWIN")
+	Global("LadyMaria","GLOBAL",5) /* Keldorn reconciled with his wife */
+	GlobalLT("XA_KeldornMaria", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_KeldornMaria", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!InParty("XACORWIN")
+	GlobalGT("PhaereInnuendo","GLOBAL",1)
+	GlobalLT("XA_AloneWithPhaere", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_AloneWithPhaere", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!InParty("XACORWIN")
+	Global("BodhiJob","GLOBAL",2)
+	GlobalLT("XA_BodhiDeal2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BodhiDeal2", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!InParty("XACORWIN")
+	Global("BodhiJob","GLOBAL",3)
+	GlobalLT("XA_BodhiDeal3", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BodhiDeal3", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!InParty("XACORWIN")
+	Global("BodhiJob","GLOBAL",4)
+	GlobalLT("XA_BodhiDeal4", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BodhiDeal4", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!InParty("XACORWIN")
+	Global("FirkraagDeal","GLOBAL",1)
+	GlobalLT("XA_FirkraagDeal", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_FirkraagDeal", "GLOBAL", 1)
+		Continue()
+END

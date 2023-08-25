@@ -213,7 +213,6 @@ THEN
 		SetGlobal("XA_CorwinJoined","LOCALS",1)
 		SetGlobal("XA_AskedToRejoin", "LOCALS", 0)
 		SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
-		SetGlobal("XA_ResetJoinChecks", "GLOBAL", 1)
 		SetGlobal("XA_CorwinRepWarning", "GLOBAL", 0)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 2)
 		//DisplayStringHead(Myself, ~DEBUG: 07-00~)
@@ -1208,109 +1207,13 @@ END
 
 //} BGMiniQuest Interaction End
 
-//{ 11: Event Checks on Join
-/* If certain events occurred while Corwin was not in the party, remove the ability to enter states associated with those events (eg. events which will cause her to leave). */
 
-IF
-	Global("XA_ResetJoinChecks", "GLOBAL", 1)
-	Global("OpenJonBedroom","GLOBAL",1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_PlayerSoulStolen", "GLOBAL", 1)
-		Continue()
-END
 
-IF 
-	Global("XA_ResetJoinChecks", "GLOBAL", 1)
-	Global("OHD_WEDDING_HOSTILE","OH5000",3)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_WeddingHostile", "GLOBAL", 1)
-		Continue()
-END
 
-IF 
-	Global("XA_ResetJoinChecks", "GLOBAL", 1)
-	Global("OHD_sexreactions","GLOBAL",1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_DornSex", "GLOBAL", 1)
-		Continue()
-END
 
-IF
-	Global("XA_ResetJoinChecks", "GLOBAL", 1)
-	Global("BodhiDead","GLOBAL",1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_BodhiDead", "GLOBAL", 1)
-		Continue()
-END
 
-IF
-	Global("XA_ResetJoinChecks", "GLOBAL", 1)
-	Global("LadyMaria","GLOBAL",5) /* Keldorn reconciled with his wife */
-THEN
-	RESPONSE #100
-		SetGlobal("XA_KeldornMaria", "GLOBAL", 1)
-		Continue()
-END
 
-IF
-	Global("XA_ResetJoinChecks", "GLOBAL", 1)
-	GlobalGT("PhaereInnuendo","GLOBAL",1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_AloneWithPhaere", "GLOBAL", 1)
-		Continue()
-END
 
-IF
-	Global("XA_ResetJoinChecks", "GLOBAL", 1)
-	Global("BodhiJob","GLOBAL",2)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_BodhiDeal2", "GLOBAL", 1)
-		Continue()
-END
-
-IF
-	Global("XA_ResetJoinChecks", "GLOBAL", 1)
-	Global("BodhiJob","GLOBAL",3)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_BodhiDeal3", "GLOBAL", 1)
-		Continue()
-END
-
-IF
-	Global("XA_ResetJoinChecks", "GLOBAL", 1)
-	Global("BodhiJob","GLOBAL",4)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_BodhiDeal4", "GLOBAL", 1)
-		Continue()
-END
-
-IF
-	Global("XA_ResetJoinChecks", "GLOBAL", 1)
-	Global("FirkraagDeal","GLOBAL",1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_FirkraagDeal", "GLOBAL", 1)
-		Continue()
-END
-
-/* Any join checks should be completed by this point. Set the XA_ResetJoinChecks to two to stop the checks from occurring in the future (unless she exits and rejoins the party). */
-// Reset Join Checks is set back to 1 when Corwin rejoins the party.
-IF
-	Global("XA_ResetJoinChecks", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_ResetJoinChecks", "GLOBAL", 2)
-		Continue()
-END
-//}
 
 //{ 12: Reputation Handling
 IF 
@@ -2033,7 +1936,7 @@ END
 	IF 
 		ActionListEmpty()
 		Global("OHD_WEDDING_HOSTILE","OH5000",3)
-		!Global("XA_WeddingHostile", "GLOBAL", 1)
+		GlobalLT("XA_WeddingHostile", "GLOBAL", 1)
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100

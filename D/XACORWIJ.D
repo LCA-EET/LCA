@@ -4902,7 +4902,6 @@ IF ~~ THEN BEGIN XA_CorwinBitWokeUp3
 		SetGlobal("XA_CorwinJoined","LOCALS",1)
 		SetGlobal("XA_AskedToRejoin", "LOCALS", 0)
 		SetGlobal("XA_ResetBanterTimer", "GLOBAL", 1)
-		SetGlobal("XA_ResetJoinChecks", "GLOBAL", 1)
 		ChangeStat(Myself,CON,-1,ADD)
 		ChangeStat(Myself,DEX,-1,ADD)
 		ChangeStat(Myself,STR,-1,ADD)

@@ -8,7 +8,6 @@ THEN
 		SetGlobal("XA_CaelarJoined","LOCALS",1)
 		SetGlobal("XA_AskedToRejoin", "LOCALS", 0)
 		SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
-		SetGlobal("XA_ResetJoinChecks", "GLOBAL", 1)
 		SetGlobal("XA_CaelarRepWarning", "GLOBAL", 0)
 		SetGlobal("XA_CaelarRejoinProcessed", "GLOBAL", 2)
 		SetInterrupt(TRUE)
