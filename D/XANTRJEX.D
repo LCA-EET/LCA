@@ -688,7 +688,7 @@
 	
 	ADD_TRANS_TRIGGER DADROW3 0
 	~
-		!Gabber("XACORWIN")
+		!IsGabber("XACORWIN")
 		GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
 	~
 	DO 4
@@ -703,7 +703,7 @@
 	
 	ADD_TRANS_TRIGGER DADROW03 0
 	~
-		!Gabber("XACORWIN")
+		!IsGabber("XACORWIN")
 		GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
 	~
 	DO 4
