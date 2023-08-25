@@ -688,10 +688,45 @@
 	
 	ADD_TRANS_TRIGGER DADROW3 0
 	~
+		OR(2)
+			!IsGabber(Player1)
+			!IsValidForPartyDialogue("XACORWIN")
 		!IsGabber("XACORWIN")
 		GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
 	~
 	DO 4
+	
+	EXTEND_BOTTOM DADROW3 0
+		IF ~
+			IsGabber(Player1)
+			IsValidForPartyDialogue("XACORWIN")
+			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+			OR(2)
+				!IsValidForPartyDialogue("Keldorn")
+				!Global("KeldornOutrage","GLOBAL",0)
+		~ THEN REPLY @177 /*~There are slaves here?! This is an outrage!~*/
+		EXTERN XACORWIJ XA_PlayerSlaveComplain_3
+	END
+	
+	EXTEND_BOTTOM DADROW3 0
+		IF ~
+			!IsGabber(Player1)
+			IsValidForPartyDialogue("XACORWIN")
+			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+			OR(2)
+				!IsValidForPartyDialogue("Keldorn")
+				!Global("KeldornOutrage","GLOBAL",0)
+		~ THEN REPLY @177 /*~There are slaves here?! This is an outrage!~*/
+		EXTERN XACORWIJ XA_PlayerSlaveComplain_3A
+	END
+	
+	INTERJECT_COPY_TRANS DADROW3 10 
+		==XACORWIB
+		@178 /*~(She gives <GABBER> a sharp stare.)~*/
+		DO ~
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~
+	END
 //}
 
 //{ DADROW3
@@ -703,10 +738,38 @@
 	
 	ADD_TRANS_TRIGGER DADROW03 0
 	~
+		OR(2)
+			!IsGabber(Player1)
+			!IsValidForPartyDialogue("XACORWIN")
 		!IsGabber("XACORWIN")
 		GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
 	~
 	DO 4
+	
+	EXTEND_BOTTOM DADROW03 0
+		IF ~
+			IsGabber(Player1)
+			IsValidForPartyDialogue("XACORWIN")
+			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+			OR(2)
+				!IsValidForPartyDialogue("Keldorn")
+				!Global("KeldornOutrage","GLOBAL",0)
+		~ THEN REPLY @177 /*~There are slaves here?! This is an outrage!~*/
+		EXTERN XACORWIJ XA_PlayerSlaveComplain_03
+	END
+	
+	EXTEND_BOTTOM DADROW03 0
+		IF ~
+			!IsGabber(Player1)
+			IsValidForPartyDialogue("XACORWIN")
+			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+			OR(2)
+				!IsValidForPartyDialogue("Keldorn")
+				!Global("KeldornOutrage","GLOBAL",0)
+		~ THEN REPLY @177 /*~There are slaves here?! This is an outrage!~*/
+		EXTERN XACORWIJ XA_PlayerSlaveComplain_03A
+	END
+	
 //}
 
 //{ HAERDAJ

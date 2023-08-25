@@ -593,10 +593,10 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @590 = ~You have a problem with that?~
 @591 = ~You decided to send her to prison, instead of letting her go. Interesting. I'll need to let the Dukes know about this.~
 @592 = ~I... I'm sworn to uphold the law, and Caelar deserves to be punished for what she did. In spite of that, I would've let her go. Whatever she endured in Avernus was greater than any punishment the Fist can dole out. I just hope that it's the last we've seen and heard of her. Let's go.~
-@593 = ~~
-@594 = ~~
-@595 = ~~
-@596 = ~~
+@593 = ~(She gives you a sharp stare.)~
+@594 = ~<CHARNAME> — what happened back there? You nearly blew our cover!~
+@595 = ~I'm sorry. The sight of enslaved children sickens me.~
+@596 = ~You're right... I shouldn't have lost my cool.~
 @597 = ~Oh, right, can't forget the Eye Tyrants. But, as I was saying, if all of those beasties couldn't keep us apart, what would cause you think that the promise of godhood would? I love you Schael. All I want is a life together with you.~
 @598 = ~Let's see... Kobolds. Crusaders. Also, Beholders, *sob* Mind Flayers, Basilisks... and who can forget the Bhaalspawn...~
 @599 = ~(She laughs, as her eyes fill with tears of joy.)~
@@ -969,7 +969,7 @@ I received the shipping manifests from the harbor master, but they are encoded a
 @963 = ~(As she turns to you, her face is illuminated by the soft, pale moonlight. She has never looked more strikingly beautiful to you, and you're momentarily taken aback.)~ [XA100067]
 @964 = ~W-what are you.. oh.. my..~
 @965 = ~Schael, my love. Will you marry me?~ 
-@966 = ~~
+@966 = ~This is tough for all of us, but we need to remember what's at stake. Let's go.~
 @967 = ~Do you like it?~
 @968 = ~I love it... it's perfect. And I love you. More than you'll ever know.~
 @969 = ~Yes! Yes of course I will!~
@@ -1009,9 +1009,9 @@ Do not keep us waiting for long."~
 @1002 = ~"<CHARNAME>, daughter of Bhaal. Illasera of the Five requests your presence in the Undercity, in the temple of the father. You and Major Corwin are to come, alone. If anyone else follows you, the child will die. 
 Do not keep us waiting for long."~
 @1003 = ~The Five... I've heard rumors of a such a group causing havoc in the vicinity of Saradush.~
-@1004 = ~~
-@1005 = ~~
-@1006 = ~~
+@1004 = ~(She gives <GABBER> a sharp stare.)~
+@1005 = ~We nearly blew our cover back there.~
+@1006 = ~Rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544]  
 @1007 = ~Yes. He's Rohma's father, as distasteful as it sounds.~
 @1008 = ~~
 @1009 = ~You'll almost certainly be walking into a trap. It'd be better to send some additional support, perhaps a platoon of Valiants —~

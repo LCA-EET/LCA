@@ -9,6 +9,55 @@
 */ 
 BEGIN ~XACORWIJ~
 
+//{ Scold Player party
+	IF ~
+		Global("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+	~ THEN BEGIN XA_CorwinScoldPlayer
+		SAY @1005 /* ~We nearly blew our cover back there.~*/
+		
+		
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldPlayer2
+		SAY @73 /* ~Rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544]  */
+		
+		= @966
+		
+		IF ~~ THEN
+		EXIT
+	END
+//}
+
+//{ Scold Player UD
+	IF ~
+		Global("XA_CorwinCoverUD_Player", "GLOBAL", 1)
+	~ THEN BEGIN XA_CorwinScoldPlayer
+		SAY @594 /* ~<CHARNAME> — what happened back there? You nearly blew our cover!~*/
+		
+		IF ~~ THEN REPLY @596 /*~You're right... I shouldn't have lost my cool.~*/
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Player", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~
+		GOTO XA_CorwinScoldPlayer2
+		
+		IF ~~ THEN REPLY @595 /*~I'm sorry. The sight of enslaved children sickens me.~*/
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Player", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~
+		GOTO XA_CorwinScoldPlayer2
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldPlayer2
+		SAY @73 /* ~Rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544]  */
+		
+		= @966
+		
+		IF ~~ THEN
+		EXIT
+	END
+//}
 //{ Player Statue Talk
 	IF ~
 		Global("XA_CorwinStatueTalk", "GLOBAL", 1)
@@ -1660,6 +1709,50 @@ IF ~
 		SetGlobal("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinPregnant2_1
+END
+
+IF ~~ THEN BEGIN XA_PlayerSlaveComplain_03
+	SAY @593 /*  ~(She gives you a sharp stare.)~ */
+	
+	IF ~~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinCoverUD_Player", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPlayerTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW03 10
+END
+
+IF ~~ THEN BEGIN XA_PlayerSlaveComplain_03A
+	SAY @1004 /*  ~(She gives <GABBER> a sharp stare.)~*/
+	
+	IF ~~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPlayerTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW03 10
+END
+
+IF ~~ THEN BEGIN XA_PlayerSlaveComplain_3
+	SAY @593 /*  ~(She gives you a sharp stare.)~ */
+	
+	IF ~~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinCoverUD_Player", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPlayerTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+END
+
+IF ~~ THEN BEGIN XA_PlayerSlaveComplain_3A
+	SAY @1004 /*  ~(She gives <GABBER> a sharp stare.)~ */
+	
+	IF ~~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPlayerTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
 END
 
 IF ~~ THEN BEGIN XA_CorwinPregnant2_1

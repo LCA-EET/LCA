@@ -7464,7 +7464,7 @@ END
 		Global("XA_InUnderdark", "GLOBAL", 1)
 		See("Keldorn")
 		Global("XA_CorwinCoverUD", "GLOBAL", 1)
-		!Global("DrowCityHostile","GLOBAL",1)
+		GlobalLT("DrowCityHostile","GLOBAL",1)
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
@@ -8721,6 +8721,40 @@ END
 			PlaySong(146)
 			// Dialog I-1
 			StartDialog("XACORWIN", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Scold Player UD - Party
+	IF
+		ActionListEmpty()
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+		GlobalTimerExpired("XA_CorwinScoldPlayerTimer", "LOCALS")
+		Global("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		GlobalLT("DrowCityHostile","GLOBAL",1)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Scold Player UD
+	IF
+		ActionListEmpty()
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+		GlobalTimerExpired("XA_CorwinScoldPlayerTimer", "LOCALS")
+		Global("XA_CorwinCoverUD_Player", "GLOBAL", 1)
+		GlobalLT("DrowCityHostile","GLOBAL",1)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_CorwinCoverUD_Player", "GLOBAL", 2)
+			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)
 	END
 	//}
