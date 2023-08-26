@@ -719,14 +719,6 @@
 		~ THEN REPLY @177 /*~There are slaves here?! This is an outrage!~*/
 		EXTERN XACORWIJ XA_PlayerSlaveComplain_3A
 	END
-	
-	INTERJECT_COPY_TRANS DADROW3 10 
-		==XACORWIB
-		@178 /*~(She gives <GABBER> a sharp stare.)~*/
-		DO ~
-			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
-		~
-	END
 //}
 
 //{ HAERDAJ
@@ -825,7 +817,7 @@
 		@89 /*  ~(She gives Keldorn a sharp stare.)~ */
 		DO ~
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
-			SetGlobalTimer("XA_CorwinScoldKeldornTimer", "GLOBAL", ONE_ROUND)
+			SetGlobalTimer("XA_CorwinScoldKeldornTimer", "LOCALS", ONE_ROUND)
 		~
 	END
 //}

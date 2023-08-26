@@ -7457,8 +7457,7 @@ END
 	//{ Corwin Mad at Keldorn - Underdark
 	IF
 		Global("XA_CanTalkToKeldorn", "LOCALS", 1)
-		GlobalTimerExpired("XA_CorwinScoldKeldornTimer", "GLOBAL")
-		Global("XA_InUnderdark", "GLOBAL", 1)
+		GlobalTimerExpired("XA_CorwinScoldKeldornTimer", "LOCALS")
 		See("Keldorn")
 		Global("XA_CorwinCoverUD", "GLOBAL", 1)
 		GlobalLT("DrowCityHostile","GLOBAL",1)
