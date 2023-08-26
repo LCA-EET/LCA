@@ -1652,6 +1652,37 @@ END
 	END
 	//}
 
+	//{ Entered Illithid Lair
+	IF
+		ActionListEmpty()
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_AR2400TimerSet", "LOCALS", 1)
+		AreaCheck("AR2400")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_AR2400TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_AR2400Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		ActionListEmpty()
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_AR2400Timer", "LOCALS")
+		GlobalLT("XA_AR2400_Talk", "LOCALS", 1)
+		AreaCheck("AR2400")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @20)	
+			SetGlobal("XA_AR2400_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
 	//{ Entered Beholder's Lair
 	IF
 		ActionListEmpty()

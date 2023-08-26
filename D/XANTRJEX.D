@@ -671,51 +671,29 @@
 	END
 //}
 
-//{ UDPHAE01
-	ADD_TRANS_TRIGGER UDPHAE01 61
-	~
-		GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
-	~
-	DO 1 2 3 4
-//}
-
-//{ DADROW3
-	ADD_TRANS_TRIGGER DADROW3 0
-	~
-		GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
-	~
-	DO 6
+//{ UDLESA
+	INTERJECT_COPY_TRANS UDLESA 1 XA_UDLESA_1
+		== XACORWIB
+		@179 /*~We aren't here to pick fights with braggarts.~ [XA100110]*/
+	END
 	
-	ADD_TRANS_TRIGGER DADROW3 0
-	~
-		!IsValidForPartyDialogue("XACORWIN")
-		!IsGabber("XACORWIN")
-		GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
-	~
-	DO 4
+	INTERJECT_COPY_TRANS UDLESA 2 XA_UDLESA_2
+		== XACORWIB
+		@179 /*~We aren't here to pick fights with braggarts.~ [XA100110]*/
+	END
 	
-	EXTEND_BOTTOM DADROW3 0
-		IF ~
-			IsGabber(Player1)
-			IsValidForPartyDialogue("XACORWIN")
-			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
-			OR(2)
-				!IsValidForPartyDialogue("Keldorn")
-				!Global("KeldornOutrage","GLOBAL",0)
-		~ THEN REPLY @177 /*~There are slaves here?! This is an outrage!~*/
-		EXTERN XACORWIJ XA_PlayerSlaveComplain_3
-		
-		IF ~
-			!IsGabber(Player1)
-			IsValidForPartyDialogue("XACORWIN")
-			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
-			OR(2)
-				!IsValidForPartyDialogue("Keldorn")
-				!Global("KeldornOutrage","GLOBAL",0)
-		~ THEN REPLY @177 /*~There are slaves here?! This is an outrage!~*/
-		EXTERN XACORWIJ XA_PlayerSlaveComplain_3A
+	INTERJECT_COPY_TRANS UDLESA 3 XA_UDLESA_3
+		== XACORWIB
+		@179 /*~We aren't here to pick fights with braggarts.~ [XA100110]*/
+	END
+	
+	INTERJECT_COPY_TRANS UDLESA 4 XA_UDLESA_4
+		== XACORWIB
+		@179 /*~We aren't here to pick fights with braggarts.~ [XA100110]*/
 	END
 //}
+
+
 
 //{ HAERDAJ
 	INTERJECT_COPY_TRANS HAERDAJ 114 XA_HAERDAJ_114 //OK

@@ -3370,6 +3370,44 @@ EXTEND_BOTTOM UDSVIR03 25 /* OK */
 END
 //}
 
+//{ DADROW3
+	ADD_TRANS_TRIGGER DADROW3 0
+	~
+		GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+	~
+	DO 6
+	
+	ADD_TRANS_TRIGGER DADROW3 0
+	~
+		!IsValidForPartyDialogue("XACORWIN")
+		!IsGabber("XACORWIN")
+		GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+	~
+	DO 4
+	
+	EXTEND_BOTTOM DADROW3 0
+		IF ~
+			IsGabber(Player1)
+			IsValidForPartyDialogue("XACORWIN")
+			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+			OR(2)
+				!IsValidForPartyDialogue("Keldorn")
+				!Global("KeldornOutrage","GLOBAL",0)
+		~ THEN REPLY @348 /*~There are slaves here?! This is an outrage!~*/
+		EXTERN XACORWIJ XA_PlayerSlaveComplain_3
+		
+		IF ~
+			!IsGabber(Player1)
+			IsValidForPartyDialogue("XACORWIN")
+			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+			OR(2)
+				!IsValidForPartyDialogue("Keldorn")
+				!Global("KeldornOutrage","GLOBAL",0)
+		~ THEN REPLY @348 /*~There are slaves here?! This is an outrage!~*/
+		EXTERN XACORWIJ XA_PlayerSlaveComplain_3A
+	END
+//}
+
 //{ UDPHAE01
 EXTEND_TOP ~UDPHAE01~ 106
 	IF ~
@@ -3383,6 +3421,12 @@ ADD_TRANS_TRIGGER ~UDPHAE01~ 136
 ~
 	!IsValidForPartyDialogue("XACORWIN")
 ~
+
+ADD_TRANS_TRIGGER UDPHAE01 61
+~
+	GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+~
+DO 1 2 3 4
 
 EXTEND_BOTTOM ~UDPHAE01~ 136
 	IF ~
