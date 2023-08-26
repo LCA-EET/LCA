@@ -17,7 +17,7 @@ BEGIN ~XACORWIJ~
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~
 		GOTO XA_CorwinScoldPlayer2
@@ -27,7 +27,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldMazzy", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~
 		GOTO XA_CorwinScoldMazzy
@@ -37,7 +37,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldNalia", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~
 		GOTO XA_CorwinScoldNalia
@@ -47,7 +47,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldHaerDalis", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~
 		GOTO XA_CorwinScoldHaerDalis
@@ -57,7 +57,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldMinsc", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~
 		GOTO XA_CorwinScoldMinsc
@@ -67,7 +67,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldRasaad", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~
 		GOTO XA_CorwinScoldRasaad
@@ -77,7 +77,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldYoshimo", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~
 		GOTO XA_CorwinScoldYoshimo
@@ -87,7 +87,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldCernd", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~
 		GOTO XA_CorwinScoldCernd
@@ -97,7 +97,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldValygar", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~ GOTO XA_CorwinScoldValygar
 		
@@ -106,7 +106,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldHexxat", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~ GOTO XA_CorwinScoldHexxat
 		
@@ -115,7 +115,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldJaheira", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~ GOTO XA_CorwinScoldJaheira
 		
@@ -124,7 +124,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldNeera", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~ GOTO XA_CorwinScoldNeera
 		
@@ -133,7 +133,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldDorn", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~ GOTO XA_CorwinScoldDorn
 		
@@ -142,7 +142,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldKeldorn", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~ GOTO XA_CorwinScoldKeldorn
 		
@@ -151,7 +151,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldKorgan", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~ GOTO XA_CorwinScoldKorgan
 		
@@ -160,7 +160,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldJan", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~ GOTO XA_CorwinScoldJan
 		
@@ -169,7 +169,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldEdwin", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~ GOTO XA_CorwinScoldEdwin
 		
@@ -178,7 +178,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldAerie", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~ GOTO XA_CorwinScoldAerie
 		
@@ -187,7 +187,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldAnomen", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~ GOTO XA_CorwinScoldAnomen
 		
@@ -196,7 +196,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldViconia", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~ GOTO XA_CorwinScoldViconia
 		
@@ -205,7 +205,7 @@ BEGIN ~XACORWIJ~
 			Global("XA_CorwinScoldImoen", "LOCALS", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL",3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~ GOTO XA_CorwinScoldImoen
 
