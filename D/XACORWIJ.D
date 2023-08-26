@@ -393,7 +393,7 @@ BEGIN ~XACORWIJ~
 	END
 	
 	IF ~~ THEN BEGIN XA_CorwinScoldPlayer2
-		SAY @73 /* ~Rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544]  */
+		SAY @1006 /* ~Rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544]  */
 		
 		= @966 /* ~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~ */
 		

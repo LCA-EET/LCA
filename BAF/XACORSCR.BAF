@@ -2254,9 +2254,10 @@ END
 	/* Checks if Corwin was in the party when the Player was alone with Phaere. */
 	IF 
 		GlobalGT("PhaereInnuendo","GLOBAL",1)
-		!Global("XA_AloneWithPhaere", "GLOBAL", 1)
+		GlobalLT("XA_AloneWithPhaere", "GLOBAL", 1)
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!InMyArea("Phaere")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)

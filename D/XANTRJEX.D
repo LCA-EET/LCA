@@ -688,9 +688,7 @@
 	
 	ADD_TRANS_TRIGGER DADROW3 0
 	~
-		OR(2)
-			!IsGabber(Player1)
-			!IsValidForPartyDialogue("XACORWIN")
+		!IsValidForPartyDialogue("XACORWIN")
 		!IsGabber("XACORWIN")
 		GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
 	~
@@ -706,9 +704,7 @@
 				!Global("KeldornOutrage","GLOBAL",0)
 		~ THEN REPLY @177 /*~There are slaves here?! This is an outrage!~*/
 		EXTERN XACORWIJ XA_PlayerSlaveComplain_3
-	END
-	
-	EXTEND_BOTTOM DADROW3 0
+		
 		IF ~
 			!IsGabber(Player1)
 			IsValidForPartyDialogue("XACORWIN")
