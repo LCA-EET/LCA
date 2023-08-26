@@ -1456,9 +1456,6 @@ END
 
 //{ 18: Event Checks
 
-	
-	
-	//}
 	//{ Helped Ginia
 	IF
 		ActionListEmpty()
@@ -8729,7 +8726,7 @@ END
 	IF
 		ActionListEmpty()
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
-		GlobalTimerExpired("XA_CorwinScoldPlayerTimer", "LOCALS")
+		GlobalTimerExpired("XA_CorwinScoldPartyTimer", "LOCALS")
 		Global("XA_CorwinCoverUD_Party", "GLOBAL", 1)
 		GlobalLT("DrowCityHostile","GLOBAL",1)
 		!ActuallyInCombat()

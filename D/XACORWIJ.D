@@ -11,39 +11,382 @@ BEGIN ~XACORWIJ~
 
 //{ Scold Player party
 	IF ~
-		Global("XA_CorwinCoverUD_Party", "GLOBAL", 1)
-	~ THEN BEGIN XA_CorwinScoldPlayer
+		Global("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+	~ THEN BEGIN XA_CorwinScoldParty
 		SAY @1005 /* ~We nearly blew our cover back there.~*/
 		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~
+		GOTO XA_CorwinScoldPlayer2
 		
+		IF ~
+			IsValidForPartyDialogue("Mazzy")
+			Global("XA_CorwinScoldMazzy", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~
+		GOTO XA_CorwinScoldMazzy
+		
+		IF ~
+			IsValidForPartyDialogue("Nalia")
+			Global("XA_CorwinScoldNalia", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~
+		GOTO XA_CorwinScoldNalia
+		
+		IF ~
+			IsValidForPartyDialogue("HaerDalis")
+			Global("XA_CorwinScoldHaerDalis", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~
+		GOTO XA_CorwinScoldHaerDalis
+		
+		IF ~
+			IsValidForPartyDialogue("Minsc")
+			Global("XA_CorwinScoldMinsc", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~
+		GOTO XA_CorwinScoldMinsc
+		
+		IF ~
+			IsValidForPartyDialogue("Rasaad")
+			Global("XA_CorwinScoldRasaad", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~
+		GOTO XA_CorwinScoldRasaad
+		
+		IF ~
+			IsValidForPartyDialogue("Yoshimo")
+			Global("XA_CorwinScoldYoshimo", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~
+		GOTO XA_CorwinScoldYoshimo
+		
+		IF ~
+			IsValidForPartyDialogue("Cernd")
+			Global("XA_CorwinScoldCernd", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~
+		GOTO XA_CorwinScoldCernd
+		
+		IF ~
+			IsValidForPartyDialogue("Valygar")
+			Global("XA_CorwinScoldValygar", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~ GOTO XA_CorwinScoldValygar
+		
+		IF ~
+			IsValidForPartyDialogue("Hexxat")
+			Global("XA_CorwinScoldHexxat", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~ GOTO XA_CorwinScoldHexxat
+		
+		IF ~
+			IsValidForPartyDialogue("Jaheira")
+			Global("XA_CorwinScoldJaheira", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~ GOTO XA_CorwinScoldJaheira
+		
+		IF ~
+			IsValidForPartyDialogue("Neera")
+			Global("XA_CorwinScoldNeera", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~ GOTO XA_CorwinScoldNeera
+		
+		IF ~
+			IsValidForPartyDialogue("Dorn")
+			Global("XA_CorwinScoldDorn", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~ GOTO XA_CorwinScoldDorn
+		
+		IF ~
+			IsValidForPartyDialogue("Keldorn")
+			Global("XA_CorwinScoldKeldorn", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~ GOTO XA_CorwinScoldKeldorn
+		
+		IF ~
+			IsValidForPartyDialogue("Korgan")
+			Global("XA_CorwinScoldKorgan", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~ GOTO XA_CorwinScoldKorgan
+		
+		IF ~
+			IsValidForPartyDialogue("Jan")
+			Global("XA_CorwinScoldJan", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~ GOTO XA_CorwinScoldJan
+		
+		IF ~
+			IsValidForPartyDialogue("Edwin")
+			Global("XA_CorwinScoldEdwin", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~ GOTO XA_CorwinScoldEdwin
+		
+		IF ~
+			IsValidForPartyDialogue("Aerie")
+			Global("XA_CorwinScoldAerie", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~ GOTO XA_CorwinScoldAerie
+		
+		IF ~
+			IsValidForPartyDialogue("Anomen")
+			Global("XA_CorwinScoldAnomen", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~ GOTO XA_CorwinScoldAnomen
+		
+		IF ~
+			IsValidForPartyDialogue("Viconia")
+			Global("XA_CorwinScoldViconia", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~ GOTO XA_CorwinScoldViconia
+		
+		IF ~
+			IsValidForPartyDialogue("Imoen2")
+			Global("XA_CorwinScoldImoen", "LOCALS", 1)
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+		~ GOTO XA_CorwinScoldImoen
+
 	END
 	
-	IF ~~ THEN BEGIN XA_CorwinScoldPlayer2
-		SAY @73 /* ~Rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544]  */
+	IF ~~ THEN BEGIN XA_CorwinScoldMazzy
+		SAY @1776 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
 		
-		= @966
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
 		
-		IF ~~ THEN
-		EXIT
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldNalia
+		SAY @1777 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
+		
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
+		
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldHaerDalis
+		SAY @1778 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
+		
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
+		
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldMinsc
+		SAY @1779 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
+		
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
+		
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldRasaad
+		SAY @1780 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
+		
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
+		
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldYoshimo
+		SAY @1781 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
+		
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
+		
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldCernd
+		SAY @1782 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
+		
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
+		
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldValygar
+		SAY @1783 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
+		
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
+		
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldHexxat
+		SAY @1784 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
+		
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
+		
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldJaheira
+		SAY @1785 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
+		
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
+		
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldNeera
+		SAY @1786 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
+		
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
+		
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldDorn
+		SAY @1787 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
+		
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
+		
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldKeldorn
+		SAY @1788 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
+		
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldKorgan
+		SAY @1789 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
+		
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
+		
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldJan
+		SAY @1790 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
+		
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
+		
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldEdwin
+		SAY @1791 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
+		
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
+		
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldAerie
+		SAY @1792 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
+		
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
+		
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldAnomen
+		SAY @1793 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
+		
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
+		
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldViconia
+		SAY @1794 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
+		
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
+		
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinScoldImoen
+		SAY @1795 /* ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] */
+		
+		= @966 /*~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~*/
+		
+		IF ~~ THEN EXIT
 	END
 //}
 
 //{ Scold Player UD
 	IF ~
-		Global("XA_CorwinCoverUD_Player", "GLOBAL", 1)
+		Global("XA_CorwinCoverUD_Player", "GLOBAL", 2)
 	~ THEN BEGIN XA_CorwinScoldPlayer
 		SAY @594 /* ~<CHARNAME> — what happened back there? You nearly blew our cover!~*/
 		
 		IF ~~ THEN REPLY @596 /*~You're right... I shouldn't have lost my cool.~*/
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Player", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Player", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~
 		GOTO XA_CorwinScoldPlayer2
 		
 		IF ~~ THEN REPLY @595 /*~I'm sorry. The sight of enslaved children sickens me.~*/
 		DO ~
-			SetGlobal("XA_CorwinCoverUD_Player", "GLOBAL", 2)
+			SetGlobal("XA_CorwinCoverUD_Player", "GLOBAL", 3)
 			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
 		~
 		GOTO XA_CorwinScoldPlayer2
@@ -52,7 +395,7 @@ BEGIN ~XACORWIJ~
 	IF ~~ THEN BEGIN XA_CorwinScoldPlayer2
 		SAY @73 /* ~Rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544]  */
 		
-		= @966
+		= @966 /* ~This is tough for all of us, but we mustn't lose focus given what's at stake. Let's go.~ */
 		
 		IF ~~ THEN
 		EXIT
@@ -1711,27 +2054,6 @@ IF ~
 	GOTO XA_CorwinPregnant2_1
 END
 
-IF ~~ THEN BEGIN XA_PlayerSlaveComplain_03
-	SAY @593 /*  ~(She gives you a sharp stare.)~ */
-	
-	IF ~~ THEN 
-	DO ~
-		SetGlobal("XA_CorwinCoverUD_Player", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinScoldPlayerTimer", "LOCALS", ONE_ROUND)
-	~
-	EXTERN DADROW03 10
-END
-
-IF ~~ THEN BEGIN XA_PlayerSlaveComplain_03A
-	SAY @1004 /*  ~(She gives <GABBER> a sharp stare.)~*/
-	
-	IF ~~ THEN 
-	DO ~
-		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinScoldPlayerTimer", "LOCALS", ONE_ROUND)
-	~
-	EXTERN DADROW03 10
-END
 
 IF ~~ THEN BEGIN XA_PlayerSlaveComplain_3
 	SAY @593 /*  ~(She gives you a sharp stare.)~ */
@@ -1750,9 +2072,210 @@ IF ~~ THEN BEGIN XA_PlayerSlaveComplain_3A
 	IF ~~ THEN 
 	DO ~
 		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinScoldPlayerTimer", "LOCALS", ONE_ROUND)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
 	~
 	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("Mazzy")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldMazzy", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("Nalia")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldNalia", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("HaerDalis")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldHaerDalis", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("Minsc")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldMinsc", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("Rasaad")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldRasaad", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("Yoshimo")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldYoshimo", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("Cernd")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldCernd", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("Valygar")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldValygar", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("Hexxat")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldHexxat", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("Jaheira")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldJaheira", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("Neera")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldNeera", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("Dorn")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldDorn", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("Keldorn")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldKeldorn", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("Korgan")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldKorgan", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("Jan")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldJan", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("Edwin")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldEdwin", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("Aerie")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldAerie", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("Anomen")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldAnomen", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("Viconia")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldViconia", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+	
+	IF ~
+		IsGabber("Imoen2")
+	~ THEN 
+	DO ~
+		SetGlobal("XA_CorwinScoldImoen", "LOCALS", 1)
+		SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+	~
+	EXTERN DADROW3 10
+
 END
 
 IF ~~ THEN BEGIN XA_CorwinPregnant2_1

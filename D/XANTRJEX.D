@@ -729,49 +729,6 @@
 	END
 //}
 
-//{ DADROW3
-	ADD_TRANS_TRIGGER DADROW03 0
-	~
-		GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
-	~
-	DO 6
-	
-	ADD_TRANS_TRIGGER DADROW03 0
-	~
-		OR(2)
-			!IsGabber(Player1)
-			!IsValidForPartyDialogue("XACORWIN")
-		!IsGabber("XACORWIN")
-		GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
-	~
-	DO 4
-	
-	EXTEND_BOTTOM DADROW03 0
-		IF ~
-			IsGabber(Player1)
-			IsValidForPartyDialogue("XACORWIN")
-			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
-			OR(2)
-				!IsValidForPartyDialogue("Keldorn")
-				!Global("KeldornOutrage","GLOBAL",0)
-		~ THEN REPLY @177 /*~There are slaves here?! This is an outrage!~*/
-		EXTERN XACORWIJ XA_PlayerSlaveComplain_03
-	END
-	
-	EXTEND_BOTTOM DADROW03 0
-		IF ~
-			!IsGabber(Player1)
-			IsValidForPartyDialogue("XACORWIN")
-			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
-			OR(2)
-				!IsValidForPartyDialogue("Keldorn")
-				!Global("KeldornOutrage","GLOBAL",0)
-		~ THEN REPLY @177 /*~There are slaves here?! This is an outrage!~*/
-		EXTERN XACORWIJ XA_PlayerSlaveComplain_03A
-	END
-	
-//}
-
 //{ HAERDAJ
 	INTERJECT_COPY_TRANS HAERDAJ 114 XA_HAERDAJ_114 //OK
 		== XACORWIB 
