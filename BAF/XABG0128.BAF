@@ -38,10 +38,3 @@ THEN
 		Continue()
 END
 
-
-IF
-	Global("XA_ReturnToBG", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		NoAction()
-END
