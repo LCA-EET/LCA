@@ -2627,13 +2627,13 @@ IF ~~ THEN BEGIN XA_Menu_ChapterMovie
 	
 	IF ~~ THEN REPLY @154 /* ~Return to BG (Corwin Romance).~ */
 	DO ~
-		TextScreen("CHBGROM")
+		TextScreen("XABGROM")
 	~
 	EXIT
 	
 	IF ~~ THEN REPLY @155 /* ~Return to BG.~ */
 	DO ~
-		TextScreen("CHBG")
+		TextScreen("XABG")
 	~
 	EXIT
 	

@@ -4,6 +4,7 @@ THEN
   RESPONSE #100
     CutSceneId(Player1)  // 
     Wait(2)
+	SetSequence(SEQ_AWAKE)
     Face(N)
     ActionOverride(Player2,Face(N))
     ActionOverride(Player3,Face(NNE))

@@ -607,8 +607,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @604 = ~What manner of creature is imprisoned here?~  
 @605 = ~Bastard! You lied to us! You knew it was Demogorgon that was imprisoned the entire time!~
 @606 = ~Justice has finally come for you, wizard. Prepare to die!~ 
-@607 = ~<CHARNAME>! Oh, thank goodness... 
-(You notice tears forming in her eyes.)~
+@607 = ~<CHARNAME>! Oh, thank goodness...~ 
 @608 = ~S-Schael...? How long was I...?~ 
 @609 = ~Two days... *sob* ... h-how are you feeling?~
 @610 = ~Good, just ... tired. A-are you crying? What happened?~
@@ -673,7 +672,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @669 = ~~
 @670 = ~The elves were also gracious enough to provide us a caravan for the trip back. Are you ready to leave, love?~
 @671 = ~The elves were also gracious enough to provide us a caravan for the trip back. Are you ready to leave?~
-@672 = ~Take a few minutes to gather your belongings. When you are ready to leave, come and talk to me.~
+@672 = ~<CHARNAME> — Take a few minutes to gather your belongings. Come and talk to me when you're ready to leave.~
 @673 = ~~
 @674 = ~Thank you, sir.~
 @675 = ~Yes, sir.~
@@ -706,7 +705,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @702 = ~~
 @703 = ~The individual responsible has been arrested.~
 @704 = ~~
-@705 = ~~
+@705 = ~I wish you two the best. As for me, I must return to Trademeet. It was an honor to fight at your side, and I hope that our paths may cross again.~
 @706 = ~~
 @707 = ~~
 @708 = ~~
@@ -922,7 +921,7 @@ I received the shipping manifests from the harbor master, but they are encoded a
 @916 = ~It's a nice night. Let's take a walk.~
 @917 = ~At this hour? What do you have in mind?~
 @918 = ~You'll see. Afterwards, I'll walk you home. Let's go, love.~
-@919 = ~~
+@919 = ~(You notice tears forming in her eyes.)~
 @920 = ~Mm. That was delicious.~ 
 @921 = ~It was. You ready for another drink?~
 @922 = ~No, thanks. Two was enough. Work in the morning, you know?~

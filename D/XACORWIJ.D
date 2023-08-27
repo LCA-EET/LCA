@@ -4922,7 +4922,6 @@ END
 //{ #region Corwin End BG2 (Romance) - Dialog J-23
 IF ~
 	Global("XA_BackToBG", "GLOBAL", 1)
-	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 ~ THEN BEGIN XA_BackToBG_Romance
 	SAY @619 /* ~That was some celebration.~ */
 	
@@ -8921,7 +8920,9 @@ IF ~~ THEN BEGIN XA_SUELLE2_0
 END
 
 IF ~~ THEN BEGIN XA_SUELLE2_0_A
-	SAY @609 /* ~Two days... *sob* ... h-how are you feeling?~ */
+	SAY @919  /* ~(You notice tears forming in her eyes.)~*/ 
+	
+	= @609 /* ~Two days... *sob* ... h-how are you feeling?~ */
 	
 	IF ~~ THEN REPLY @610 /* ~Good, just ... tired. A-are you crying?~  */
 	GOTO XA_SUELLE2_0_B
@@ -10113,373 +10114,464 @@ CHAIN
 			ActionOverride("Hexxat", ChangeAIScript("", DEFAULT))
 		~
 		
-		== IMOEN2J
-		IF ~
-			IsValidForPartyDialogue("Imoen2")
-		~
-		@636 /* ~You can count me in. Oh, I can't wait to see Liia again! There are so many stories I'll share with her.~ */
-		DO ~
-			SetGlobal("XA_BackToBG_Imoen", "GLOBAL", 1)
-		~
+		//{ Mazzy
+			== MAZZYJ
+			IF ~
+				IsValidForPartyDialogue("Mazzy")
+			~
+			@705 /* ~I wish you two the best. As for me, I must return to Trademeet. It was an honor to fight at your side, and I hope that our paths may cross again.~*/
+			DO ~
+				ActionOverride("Mazzy", ChangeAIScript("",DEFAULT))
+				ActionOverride("Mazzy", SetLeavePartyDialogFile())
+				ActionOverride("Mazzy", LeaveParty())
+				ActionOverride("Mazzy", EscapeAreaObject("ExitNull"))
+			~
+		//}
 		
-		== JAHEIRAJ 
-		IF ~
-			IsValidForPartyDialogue("Jaheira")
-			GlobalGT("JaheiraRomanceActive", "GLOBAL",0)
-			GlobalLT("JaheiraRomanceActive", "GLOBAL",3)
-		~
-		@639 /* ~I will be joining you, my dear.~ */
-		DO ~
-			SetGlobal("XA_BackToBG_Jaheira", "GLOBAL", 1)
-		~
+		//{ Imoen
+			== IMOEN2J
+			IF ~
+				IsValidForPartyDialogue("Imoen2")
+			~
+			@636 /* ~You can count me in. Oh, I can't wait to see Liia again! There are so many stories I'll share with her.~ */
+			DO ~
+				SetGlobal("XA_BackToBG_Imoen", "GLOBAL", 1)
+			~
+		//}
 		
-		== JAHEIRAJ
-		IF ~
-			IsValidForPartyDialogue("Jaheira")
-			ReputationGT(Player1,9)
-			OR(2)
-				Global("JaheiraRomanceActive", "GLOBAL",0)
-				Global("JaheiraRomanceActive", "GLOBAL",3)
-		~
-		@637 /* ~This is where we part ways, at least for now, <CHARNAME>. Gorion would be proud of the <PRO_MANWOMAN> you've become. I will remain here to help undo the damage that Irenicus inflicted on the Tree of Life.~ */
-		= @638 /* ~(You share a warm embrace.)~ */
-		DO ~
-			ActionOverride("Jaheira", SetLeavePartyDialogFile())
-			ActionOverride("Jaheira", ChangeAIScript("", DEFAULT))
-		~
-		== JAHEIRAJ
-		IF ~
-			IsValidForPartyDialogue("Jaheira")
-			ReputationLT(Player1,10)
-			OR(2)
-				Global("JaheiraRomanceActive", "GLOBAL",0)
-				Global("JaheiraRomanceActive", "GLOBAL",3)
-		~
-		@640 /* ~This is where we part ways, at least for now, <CHARNAME>. I urge you to become the type of <PRO_MANWOMAN> that Gorion would be proud of. I will remain here to help undo the damage that Irenicus inflicted on the Tree of Life.~ */
-		DO ~
-			ActionOverride("Jaheira", SetLeavePartyDialogFile())
-			ActionOverride("Jaheira", ChangeAIScript("", DEFAULT))
-		~
-		== VICONIJ 
-		IF ~
-			IsValidForPartyDialogue("Viconia")
-		~
-		@641 /* ~I will join you. The sooner we can leave, the better - the surface elves are looking for an excuse to murder me, I know it.~ */
-		DO ~
-			SetGlobal("XA_BackToBG_Viconia", "GLOBAL", 1)
-		~
+		//{ Jaheira
+			== JAHEIRAJ 
+			IF ~
+				IsValidForPartyDialogue("Jaheira")
+				GlobalGT("JaheiraRomanceActive", "GLOBAL",0)
+				GlobalLT("JaheiraRomanceActive", "GLOBAL",3)
+			~
+			@639 /* ~I will be joining you, my dear.~ */
+			DO ~
+				SetGlobal("XA_BackToBG_Jaheira", "GLOBAL", 1)
+			~
+			
+			== JAHEIRAJ
+			IF ~
+				IsValidForPartyDialogue("Jaheira")
+				ReputationGT(Player1,9)
+				OR(2)
+					Global("JaheiraRomanceActive", "GLOBAL",0)
+					Global("JaheiraRomanceActive", "GLOBAL",3)
+			~
+			@637 /* ~This is where we part ways, at least for now, <CHARNAME>. Gorion would be proud of the <PRO_MANWOMAN> you've become. I will remain here to help undo the damage that Irenicus inflicted on the Tree of Life.~ */
+			= @638 /* ~(You share a warm embrace.)~ */
+			DO ~
+				ActionOverride("Jaheira", ChangeAIScript("",DEFAULT))
+				ActionOverride("Jaheira", SetLeavePartyDialogFile())
+				ActionOverride("Jaheira", LeaveParty())
+				ActionOverride("Jaheira", EscapeAreaObject("ExitNull"))
+			~
+			== JAHEIRAJ
+			IF ~
+				IsValidForPartyDialogue("Jaheira")
+				ReputationLT(Player1,10)
+				OR(2)
+					Global("JaheiraRomanceActive", "GLOBAL",0)
+					Global("JaheiraRomanceActive", "GLOBAL",3)
+			~
+			@640 /* ~This is where we part ways, at least for now, <CHARNAME>. I urge you to become the type of <PRO_MANWOMAN> that Gorion would be proud of. I will remain here to help undo the damage that Irenicus inflicted on the Tree of Life.~ */
+			DO ~
+				ActionOverride("Jaheira", ChangeAIScript("",DEFAULT))
+				ActionOverride("Jaheira", SetLeavePartyDialogFile())
+				ActionOverride("Jaheira", LeaveParty())
+				ActionOverride("Jaheira", EscapeAreaObject("ExitNull"))
+			~
+		//}
+
+		//{ Viconia
+			== VICONIJ 
+			IF ~
+				IsValidForPartyDialogue("Viconia")
+			~
+			@641 /* ~I will join you. The sooner we can leave, the better - the surface elves are looking for an excuse to murder me, I know it.~ */
+			DO ~
+				SetGlobal("XA_BackToBG_Viconia", "GLOBAL", 1)
+			~
+		//}
 		
-		== JANJ
-		IF ~
-			IsValidForPartyDialogue("Jan")
-			Global("XA_BackToBG_Jan", "GLOBAL", 1)
-		~
-		@642 /* ~Oh, yes, this is a wonderful opportunity to expand my turnip business! I will go with you.~ */
+		//{ Jan
+			== JANJ
+			IF ~
+				IsValidForPartyDialogue("Jan")
+				Global("XA_BackToBG_Jan", "GLOBAL", 1)
+			~
+			@642 /* ~Oh, yes, this is a wonderful opportunity to expand my turnip business! I will go with you.~ */
+			
+			== JANJ
+			IF ~
+				IsValidForPartyDialogue("Jan")
+				!Global("XA_BackToBG_Jan", "GLOBAL", 1)
+			~
+			@643 /* ~Back to Athkatla for me, I'm afraid. The turnips need tending to. Safe travels, my friends.~ */
+			DO ~
+				ActionOverride("Jan", ChangeAIScript("",DEFAULT))
+				ActionOverride("Jan", SetLeavePartyDialogFile())
+				ActionOverride("Jan", LeaveParty())
+				ActionOverride("Jan", EscapeAreaObject("ExitNull"))
+			~
+		//}
 		
-		== JANJ
-		IF ~
-			IsValidForPartyDialogue("Jan")
-			!Global("XA_BackToBG_Jan", "GLOBAL", 1)
-		~
-		@643 /* ~Back to Athkatla for me, I'm afraid. The turnips need tending to. Safe travels, my friends.~ */
-		DO ~
-			ActionOverride("Jan", SetLeavePartyDialogFile())
-			ActionOverride("Jan", ChangeAIScript("", DEFAULT))
-		~
-		== EDWINJ 
-		IF ~
-			IsValidForPartyDialogue("Edwin")
-		~
-		@644 /* ~We are in a city of magical knowledge that few humans have set foot in, and you want me to go back to that diseased backwater of a city? Bah! I will remain here and learn the secrets of the elves. (That is, until they throw me out.)~ */
-		DO ~
-			ActionOverride("Edwin", SetLeavePartyDialogFile())
-			ActionOverride("Edwin", ChangeAIScript("", DEFAULT))
-		~
-		== MINSCJ 
-		IF ~
-			IsValidForPartyDialogue("Minsc")
-		~
-		@645 /* ~I would go with you, but Boo has become intensely infatuated with a squirrel that he saw on the Tree of Life. I must find this squirrel and determine if she is a worthy mate for Boo.~ */
-		DO ~
-			ActionOverride("Minsc", SetLeavePartyDialogFile())
-			ActionOverride("Minsc", ChangeAIScript("", DEFAULT))
-		~
-		== AERIEJ
-		IF ~
-			IsValidForPartyDialogue("Aerie")
-			GlobalGT("AerieRomanceActive", "GLOBAL",0)
-			GlobalLT("AerieRomanceActive", "GLOBAL",3)
-		~
-		@647 /* ~Oh, of course I will go with you! M-maybe we can also see Candlekeep? It will be fun to see where you g-grew up.~ */
-		DO ~
-			SetGlobal("XA_BackToBG_Aerie", "GLOBAL", 1)
-		~
+		//{ Edwin
+			== EDWINJ 
+			IF ~
+				IsValidForPartyDialogue("Edwin")
+			~
+			@644 /* ~We are in a city of magical knowledge that few humans have set foot in, and you want me to go back to that diseased backwater of a city? Bah! I will remain here and learn the secrets of the elves. (That is, until they throw me out.)~ */
+			DO ~
+				ActionOverride("Edwin", ChangeAIScript("", DEFAULT))
+				ActionOverride("Edwin", SetLeavePartyDialogFile())
+				ActionOverride("Edwin", LeaveParty())
+				ActionOverride("Edwin", EscapeAreaObject("ExitNull"))
+			~
+		//}
 		
-		== AERIEJ
-		IF ~
-			IsValidForPartyDialogue("Aerie")
-			ReputationGT(Player1,9)
-			OR(2)
-				Global("AerieRomanceActive", "GLOBAL",0)
-				Global("AerieRomanceActive", "GLOBAL",3)
-		~
-		@648 /* ~O-oh, I think it will be better for me to stay here. There are still many injured, and the elves can use my help. */
-		= @649 /* ~T-thank you, <CHARNAME> for everything. For freeing me from the circus, and for taking me on this grand adventure. I've learned so much about the world, and.. and about m-myself. I h-hope to see you again soon.~ */
-		= @650 /* ~(You share a warm embrace.)~ */
-		DO ~
-			ActionOverride("Aerie", SetLeavePartyDialogFile())
-			ActionOverride("Aerie", ChangeAIScript("", DEFAULT))
-		~
-		== AERIEJ
-		IF ~
-			IsValidForPartyDialogue("Aerie")
-			ReputationLT(Player1,10)
-			OR(2)
-				Global("AerieRomanceActive", "GLOBAL",0)
-				Global("AerieRomanceActive", "GLOBAL",3)
-		~
-		@648 /* ~O-oh, I think it will be better for me to stay here. There are still many injured, and the elves can use my help.~ */
-		DO ~
-			ActionOverride("Aerie", SetLeavePartyDialogFile())
-			ActionOverride("Aerie", ChangeAIScript("", DEFAULT))
-		~
-		== NALIAJ
-		IF ~
-			IsValidForPartyDialogue("Nalia")
-		~
-		@651 /* ~This is an opportunity to understand the plight of the poor from a broader perspective. I will go with you. ~ */
-		DO ~
-			SetGlobal("XA_BackToBG_Nalia", "GLOBAL", 1)
-		~
+		//{ Minsc
+			== MINSCJ 
+			IF ~
+				IsValidForPartyDialogue("Minsc")
+			~
+			@645 /* ~I would go with you, but Boo has become intensely infatuated with a squirrel that he saw on the Tree of Life. I must find this squirrel and determine if she is a worthy mate for Boo.~ */
+			DO ~
+				ActionOverride("Minsc", SetLeavePartyDialogFile())
+				ActionOverride("Minsc", ChangeAIScript("", DEFAULT))
+				ActionOverride("Minsc", LeaveParty())
+				ActionOverride("Minsc", EscapeAreaObject("ExitNull"))
+			~
+		//}
 		
-		== HAERDAJ
-		IF ~
-			IsValidForPartyDialogue("HaerDalis")
-		~
-		@652 /* ~I will remain here for a time, my sparrow. I wish to see this place restored to its former beauty. May our paths cross again in the near future.~ */
-		DO ~
-			ActionOverride("HaerDalis", SetLeavePartyDialogFile())
-			ActionOverride("HaerDalis", ChangeAIScript("", DEFAULT))
-		~
-		== KORGANJ
-		IF ~
-			IsValidForPartyDialogue("Korgan")
-		~
-		@653 /* ~Aye, I'll go with ye. It hath been many a year since I travelled the Sword Coast, plus I be sick of these queers already. I'll stop at Beregost on the way and pay an old friend of mine a visit.~ */
-		DO ~
-			SetGlobal("XA_BackToBG_Korgan", "GLOBAL", 1)
-		~
+		//{ Aerie
+			== AERIEJ
+			IF ~
+				IsValidForPartyDialogue("Aerie")
+				GlobalGT("AerieRomanceActive", "GLOBAL",0)
+				GlobalLT("AerieRomanceActive", "GLOBAL",3)
+			~
+			@647 /* ~Oh, of course I will go with you! M-maybe we can also see Candlekeep? It will be fun to see where you g-grew up.~ */
+			DO ~
+				SetGlobal("XA_BackToBG_Aerie", "GLOBAL", 1)
+			~
+			
+			== AERIEJ
+			IF ~
+				IsValidForPartyDialogue("Aerie")
+				ReputationGT(Player1,9)
+				OR(2)
+					Global("AerieRomanceActive", "GLOBAL",0)
+					Global("AerieRomanceActive", "GLOBAL",3)
+			~
+			@648 /* ~O-oh, I think it will be better for me to stay here. There are still many injured, and the elves can use my help. */
+			= @649 /* ~T-thank you, <CHARNAME> for everything. For freeing me from the circus, and for taking me on this grand adventure. I've learned so much about the world, and.. and about m-myself. I h-hope to see you again soon.~ */
+			= @650 /* ~(You share a warm embrace.)~ */
+			DO ~
+				ActionOverride("Aerie", SetLeavePartyDialogFile())
+				ActionOverride("Aerie", ChangeAIScript("", DEFAULT))
+				ActionOverride("Aerie", LeaveParty())
+				ActionOverride("Aerie", EscapeAreaObject("ExitNull"))
+			~
+			== AERIEJ
+			IF ~
+				IsValidForPartyDialogue("Aerie")
+				ReputationLT(Player1,10)
+				OR(2)
+					Global("AerieRomanceActive", "GLOBAL",0)
+					Global("AerieRomanceActive", "GLOBAL",3)
+			~
+			@648 /* ~O-oh, I think it will be better for me to stay here. There are still many injured, and the elves can use my help.~ */
+			DO ~
+				ActionOverride("Aerie", SetLeavePartyDialogFile())
+				ActionOverride("Aerie", ChangeAIScript("", DEFAULT))
+				ActionOverride("Aerie", LeaveParty())
+				ActionOverride("Aerie", EscapeAreaObject("ExitNull"))
+			~
+		//}
 		
-		== KELDORJ
-		IF ~
-			IsValidForPartyDialogue("Keldorn")
-			Global("LadyMaria","GLOBAL",5)
-		~
-		@654 /* ~I promised my wife that I would return home after putting an end to Irenicus, and I will do so. Good-bye, my friend. May Torm guide your path.~*/
-		DO ~
-			ActionOverride("Keldorn", SetLeavePartyDialogFile())
-			ActionOverride("Keldorn", ChangeAIScript("", DEFAULT))
-		~
-		== KELDORJ
-		IF ~
-			IsValidForPartyDialogue("Keldorn")
-			!Global("LadyMaria","GLOBAL",5)
-		~
-		@655 /* ~Now that Irenicus has been dealt with, I must return to my order and my duty. Good-bye, my friend. May Torm guide your path.~ */
-		DO ~
-			ActionOverride("Keldorn", SetLeavePartyDialogFile())
-			ActionOverride("Keldorn", ChangeAIScript("", DEFAULT))
-		~
-		== ANOMENJ
-		IF ~
-			Alignment("Anomen",LAWFUL_GOOD)
-			IsValidForPartyDialogue("Keldorn")
-			!Global("LadyMaria","GLOBAL",5)
-			IsValidForPartyDialogue("Anomen")
-			OR(2)
-				Global("AnomenRomanceActive", "GLOBAL",0)
-				Global("AnomenRomanceActive", "GLOBAL",3)
-		~
-		@662 /* ~I'm afraid I too must return to my order. Safe travels <CHARNAME>, and you as well Captain.~ */
-		DO ~
-			ActionOverride("Anomen", SetLeavePartyDialogFile())
-			ActionOverride("Anomen", ChangeAIScript("", DEFAULT))
-		~
-		== ANOMENJ
-		IF ~
-			Alignment("Anomen",LAWFUL_GOOD)
-			IsValidForPartyDialogue("Keldorn")
-			Global("LadyMaria","GLOBAL",5)
-			IsValidForPartyDialogue("Anomen")
-			OR(2)
-				Global("AnomenRomanceActive", "GLOBAL",0)
-				Global("AnomenRomanceActive", "GLOBAL",3)
-		~
-		@663 /* ~I'm afraid I must decline, and return to my order. Safe travels <CHARNAME>, and you as well Captain.~ */
-		DO ~
-			ActionOverride("Anomen", SetLeavePartyDialogFile())
-			ActionOverride("Anomen", ChangeAIScript("", DEFAULT))
-		~
-		== ANOMENJ
-		IF ~
-			Alignment("Anomen",LAWFUL_GOOD)
-			!IsValidForPartyDialogue("Keldorn")
-			IsValidForPartyDialogue("Anomen")
-			OR(2)
-				Global("AnomenRomanceActive", "GLOBAL",0)
-				Global("AnomenRomanceActive", "GLOBAL",3)
-		~
-		@663 /* ~I'm afraid I must decline, and return to my order. Safe travels <CHARNAME>, and you as well Captain.~ */
-		DO ~
-			ActionOverride("Anomen", SetLeavePartyDialogFile())
-			ActionOverride("Anomen", ChangeAIScript("", DEFAULT))
-		~
-		== ANOMENJ
-		IF ~
-			IsValidForPartyDialogue("Anomen")
-			!Alignment("Anomen",LAWFUL_GOOD)
-			OR(2)
-				Global("AnomenRomanceActive", "GLOBAL",0)
-				Global("AnomenRomanceActive", "GLOBAL",3)
-		~
-		@664 /* ~I will join you. There is little left for me in Amn, and I am eager for a fresh start.~ */
-		DO ~
-			SetGlobal("XA_BackToBG_Anomen", "GLOBAL", 1)
-		~
+		//{ Nalia
+			== NALIAJ
+			IF ~
+				IsValidForPartyDialogue("Nalia")
+			~
+			@651 /* ~This is an opportunity to understand the plight of the poor from a broader perspective. I will go with you. ~ */
+			DO ~
+				SetGlobal("XA_BackToBG_Nalia", "GLOBAL", 1)
+			~
+		//}
 		
-		== ANOMENJ
-		IF ~
-			IsValidForPartyDialogue("Anomen")
-			OR(2)
-				Global("AnomenRomanceActive", "GLOBAL",1)
-				Global("AnomenRomanceActive", "GLOBAL",2)
-		~
-		@665 /* ~I will remain by your side my love, now and always.~ */
-		DO ~
-			SetGlobal("XA_BackToBG_Anomen", "GLOBAL", 1)
-		~
+		//{ HaerDalis
+			== HAERDAJ
+			IF ~
+				IsValidForPartyDialogue("HaerDalis")
+			~
+			@652 /* ~I will remain here for a time, my sparrow. I wish to see this place restored to its former beauty. May our paths cross again in the near future.~ */
+			DO ~
+				ActionOverride("HaerDalis", SetLeavePartyDialogFile())
+				ActionOverride("HaerDalis", ChangeAIScript("", DEFAULT))
+				ActionOverride("HaerDalis", LeaveParty())
+				ActionOverride("HaerDalis", EscapeAreaObject("ExitNull"))
+			~
+		//}
+
+		//{ Korgan
+			== KORGANJ
+			IF ~
+				IsValidForPartyDialogue("Korgan")
+			~
+			@653 /* ~Aye, I'll go with ye. It hath been many a year since I travelled the Sword Coast, plus I be sick of these queers already. I'll stop at Beregost on the way and pay an old friend of mine a visit.~ */
+			DO ~
+				SetGlobal("XA_BackToBG_Korgan", "GLOBAL", 1)
+			~
+		//}
 		
-		== DORNJ
-		IF ~
-			IsValidForPartyDialogue("Dorn")
-			OR(2)
-				!Dead("ohdazoth")  // Azothet
-				!Dead("ohdugoth")  // Ur-Gothoz
-		~
-		@656 /* ~I sense that my patron wishes for us to part ways, at least for now. I have a feeling that our paths will cross again, and soon. Until then, <CHARNAME>.~ */
-		DO ~
-			ActionOverride("Dorn", SetLeavePartyDialogFile())
-			ActionOverride("Dorn", ChangeAIScript("", DEFAULT))
-		~
-		== DORNJ
-		IF ~
-			IsValidForPartyDialogue("Dorn")
-			Dead("ohdazoth")  // Azothet
-			Dead("ohdugoth")  // Ur-Gothoz
-		~
-		@657 /* ~Yes, I will go with you. Anywhere, even Baldur's Gate, would be better than staying here.~ */
-		DO ~
-			SetGlobal("XA_BackToBG_Dorn", "GLOBAL", 1)
-		~
+		//{ Keldorn
+			== KELDORJ
+			IF ~
+				IsValidForPartyDialogue("Keldorn")
+				Global("LadyMaria","GLOBAL",5)
+			~
+			@654 /* ~I promised my wife that I would return home after putting an end to Irenicus, and I will do so. Good-bye, my friend. May Torm guide your path.~*/
+			DO ~
+				ActionOverride("Keldorn", SetLeavePartyDialogFile())
+				ActionOverride("Keldorn", ChangeAIScript("", DEFAULT))
+				ActionOverride("Keldorn", LeaveParty())
+				ActionOverride("Keldorn", EscapeAreaObject("ExitNull"))
+			~
+			== KELDORJ
+			IF ~
+				IsValidForPartyDialogue("Keldorn")
+				!Global("LadyMaria","GLOBAL",5)
+			~
+			@655 /* ~Now that Irenicus has been dealt with, I must return to my order and my duty. Good-bye, my friend. May Torm guide your path.~ */
+			DO ~
+				ActionOverride("Keldorn", SetLeavePartyDialogFile())
+				ActionOverride("Keldorn", ChangeAIScript("", DEFAULT))
+				ActionOverride("Keldorn", LeaveParty())
+				ActionOverride("Keldorn", EscapeAreaObject("ExitNull"))
+			~
+		//}
 		
-		== VALYGARJ
-		IF ~
-			IsValidForPartyDialogue("Valygar")
-			GlobalLT("XA_CorwinValygarLavok", "GLOBAL", 1)
-		~
-		@660 /* ~No, I won't be joining you. I'm going back to my cabin in the woods. I'll use the time and seclusion to decide what to do with my life.~ */
-		DO ~
-			ActionOverride("Valygar", SetLeavePartyDialogFile())
-			ActionOverride("Valygar", ChangeAIScript("", DEFAULT))
-		~
-		== VALYGARJ
-		IF ~
-			IsValidForPartyDialogue("Valygar")
-			GlobalGT("XA_CorwinValygarLavok", "GLOBAL", 0)
-			GlobalLT("XA_CorwinValygarBG", "GLOBAL", 1)
-		~
-		@658 /* ~There is nothing left for me in Amn. Captain, I'd like to take you up on your offer and join the Flaming Fist, at least on an interim basis.~ */
-		DO ~
-			SetGlobal("XA_BackToBG_Valygar", "GLOBAL", 1)
-		~
+		//{ Anomen
+			== ANOMENJ
+			IF ~
+				Alignment("Anomen",LAWFUL_GOOD)
+				IsValidForPartyDialogue("Keldorn")
+				!Global("LadyMaria","GLOBAL",5)
+				IsValidForPartyDialogue("Anomen")
+				OR(2)
+					Global("AnomenRomanceActive", "GLOBAL",0)
+					Global("AnomenRomanceActive", "GLOBAL",3)
+			~
+			@662 /* ~I'm afraid I too must return to my order. Safe travels <CHARNAME>, and you as well Captain.~ */
+			DO ~
+				ActionOverride("Anomen", SetLeavePartyDialogFile())
+				ActionOverride("Anomen", ChangeAIScript("", DEFAULT))
+				ActionOverride("Anomen", LeaveParty())
+				ActionOverride("Anomen", EscapeAreaObject("ExitNull"))
+			~
+			== ANOMENJ
+			IF ~
+				Alignment("Anomen",LAWFUL_GOOD)
+				IsValidForPartyDialogue("Keldorn")
+				Global("LadyMaria","GLOBAL",5)
+				IsValidForPartyDialogue("Anomen")
+				OR(2)
+					Global("AnomenRomanceActive", "GLOBAL",0)
+					Global("AnomenRomanceActive", "GLOBAL",3)
+			~
+			@663 /* ~I'm afraid I must decline, and return to my order. Safe travels <CHARNAME>, and you as well Captain.~ */
+			DO ~
+				ActionOverride("Anomen", SetLeavePartyDialogFile())
+				ActionOverride("Anomen", ChangeAIScript("", DEFAULT))
+				ActionOverride("Anomen", LeaveParty())
+				ActionOverride("Anomen", EscapeAreaObject("ExitNull"))
+			~
+			== ANOMENJ
+			IF ~
+				Alignment("Anomen",LAWFUL_GOOD)
+				!IsValidForPartyDialogue("Keldorn")
+				IsValidForPartyDialogue("Anomen")
+				OR(2)
+					Global("AnomenRomanceActive", "GLOBAL",0)
+					Global("AnomenRomanceActive", "GLOBAL",3)
+			~
+			@663 /* ~I'm afraid I must decline, and return to my order. Safe travels <CHARNAME>, and you as well Captain.~ */
+			DO ~
+				ActionOverride("Anomen", SetLeavePartyDialogFile())
+				ActionOverride("Anomen", ChangeAIScript("", DEFAULT))
+				ActionOverride("Anomen", LeaveParty())
+				ActionOverride("Anomen", EscapeAreaObject("ExitNull"))
+			~
+			== ANOMENJ
+			IF ~
+				IsValidForPartyDialogue("Anomen")
+				!Alignment("Anomen",LAWFUL_GOOD)
+				OR(2)
+					Global("AnomenRomanceActive", "GLOBAL",0)
+					Global("AnomenRomanceActive", "GLOBAL",3)
+			~
+			@664 /* ~I will join you. There is little left for me in Amn, and I am eager for a fresh start.~ */
+			DO ~
+				SetGlobal("XA_BackToBG_Anomen", "GLOBAL", 1)
+			~
+			
+			== ANOMENJ
+			IF ~
+				IsValidForPartyDialogue("Anomen")
+				OR(2)
+					Global("AnomenRomanceActive", "GLOBAL",1)
+					Global("AnomenRomanceActive", "GLOBAL",2)
+			~
+			@665 /* ~I will remain by your side my love, now and always.~ */
+			DO ~
+				SetGlobal("XA_BackToBG_Anomen", "GLOBAL", 1)
+			~
+		//}
 		
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("Valygar")
-			GlobalGT("XA_CorwinValygarLavok", "GLOBAL", 0)
-			GlobalLT("XA_CorwinValygarBG", "GLOBAL", 1)
-		~
-		@1471 /* ~Excellent! You won't regret it. When we arrive, I'll introduce you to my commanding officer, Marshal Kirill Nederlok.~ */
-		== VALYGARJ
-		IF ~
-			IsValidForPartyDialogue("Valygar")
-			GlobalGT("XA_CorwinValygarLavok", "GLOBAL", 0)
-			GlobalGT("XA_CorwinValygarBG", "GLOBAL", 0)
-		~
-		@1470 /* ~Captain as we discussed, I will return with you to Baldur's Gate to join the Flaming Fist.~*/
-		DO ~
-			SetGlobal("XA_BackToBG_Valygar", "GLOBAL", 1)
-		~
+		//{ Dorn
+			== DORNJ
+			IF ~
+				IsValidForPartyDialogue("Dorn")
+				OR(2)
+					!Dead("ohdazoth")  // Azothet
+					!Dead("ohdugoth")  // Ur-Gothoz
+			~
+			@656 /* ~I sense that my patron wishes for us to part ways, at least for now. I have a feeling that our paths will cross again, and soon. Until then, <CHARNAME>.~ */
+			DO ~
+				ActionOverride("Dorn", SetLeavePartyDialogFile())
+				ActionOverride("Dorn", ChangeAIScript("", DEFAULT))
+				ActionOverride("Dorn", LeaveParty())
+				ActionOverride("Dorn", EscapeAreaObject("ExitNull"))
+			~
+			== DORNJ
+			IF ~
+				IsValidForPartyDialogue("Dorn")
+				Dead("ohdazoth")  // Azothet
+				Dead("ohdugoth")  // Ur-Gothoz
+			~
+			@657 /* ~Yes, I will go with you. Anywhere, even Baldur's Gate, would be better than staying here.~ */
+			DO ~
+				SetGlobal("XA_BackToBG_Dorn", "GLOBAL", 1)
+			~
+		//}
 		
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("Valygar")
-			GlobalGT("XA_CorwinValygarLavok", "GLOBAL", 0)
-			GlobalGT("XA_CorwinValygarBG", "GLOBAL", 0)
-		~
-		@659 /* ~Excellent - you'll make a fine addition to the team.~ */
-		== NEERAJ
-		IF ~
-			IsValidForPartyDialogue("Neera")
-		~
-		@661 /* ~Of course I'll join you silly! It'll be nice to see the Sword Coast again!~ */
-		DO ~
-			SetGlobal("XA_BackToBG_Neera", "GLOBAL", 1)
-		~
+		//{ Valygar
+			== VALYGARJ
+			IF ~
+				IsValidForPartyDialogue("Valygar")
+				GlobalLT("XA_CorwinValygarLavok", "GLOBAL", 1)
+			~
+			@660 /* ~No, I won't be joining you. I'm going back to my cabin in the woods. I'll use the time and seclusion to decide what to do with my life.~ */
+			DO ~
+				ActionOverride("Valygar", SetLeavePartyDialogFile())
+				ActionOverride("Valygar", ChangeAIScript("", DEFAULT))
+				ActionOverride("Valygar", LeaveParty())
+				ActionOverride("Valygar", EscapeAreaObject("ExitNull"))
+			~
+			== VALYGARJ
+			IF ~
+				IsValidForPartyDialogue("Valygar")
+				GlobalGT("XA_CorwinValygarLavok", "GLOBAL", 0)
+				GlobalLT("XA_CorwinValygarBG", "GLOBAL", 1)
+			~
+			@658 /* ~There is nothing left for me in Amn. Captain, I'd like to take you up on your offer and join the Flaming Fist, at least on an interim basis.~ */
+			DO ~
+				SetGlobal("XA_BackToBG_Valygar", "GLOBAL", 1)
+			~
+			
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("Valygar")
+				GlobalGT("XA_CorwinValygarLavok", "GLOBAL", 0)
+				GlobalLT("XA_CorwinValygarBG", "GLOBAL", 1)
+			~
+			@1471 /* ~Excellent! You won't regret it. When we arrive, I'll introduce you to my commanding officer, Marshal Kirill Nederlok.~ */
+			== VALYGARJ
+			IF ~
+				IsValidForPartyDialogue("Valygar")
+				GlobalGT("XA_CorwinValygarLavok", "GLOBAL", 0)
+				GlobalGT("XA_CorwinValygarBG", "GLOBAL", 0)
+			~
+			@1470 /* ~Captain as we discussed, I will return with you to Baldur's Gate to join the Flaming Fist.~*/
+			DO ~
+				SetGlobal("XA_BackToBG_Valygar", "GLOBAL", 1)
+			~		
 		
-		== CERNDJ
-		IF ~
-			IsValidForPartyDialogue("Cernd")
-			Global("CerndBaby","GLOBAL",1)
-		~
-		@667 /* ~I will remain here for a time and help the elves repair the damage to the Tree of Life, then, I will return home to raise my son. Good-bye and safe travels, friends.~ */
-		DO ~
-			ActionOverride("Cernd", SetLeavePartyDialogFile())
-			ActionOverride("Cernd", ChangeAIScript("", DEFAULT))
-		~
-		== CERNDJ
-		IF ~
-			IsValidForPartyDialogue("Cernd")
-			!Global("CerndBaby","GLOBAL",1)
-		~
-		@666 /* ~I will remain here for a time and help the elves repair the damage to the Tree of Life. Good-bye and safe travels, friends.~ */
-		DO ~
-			ActionOverride("Cernd", SetLeavePartyDialogFile())
-			ActionOverride("Cernd", ChangeAIScript("", DEFAULT))
-		~
-		== RASAADJ
-		IF ~
-			IsValidForPartyDialogue("Rasaad")
-			OR(2)
-				Global("RasaadRomanceActive", "GLOBAL",0)
-				Global("RasaadRomanceActive", "GLOBAL",3)
-		~
-		@668 /* ~Yes my friend, I will return with you. I am interested to see what progress has been made in dealing with the refugee crisis. My help may still be needed.~ */
-		DO ~
-			SetGlobal("XA_BackToBG_Rasaad", "GLOBAL", 1)
-		~
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("Valygar")
+				GlobalGT("XA_CorwinValygarLavok", "GLOBAL", 0)
+				GlobalGT("XA_CorwinValygarBG", "GLOBAL", 0)
+			~
+			@659 /* ~Excellent - you'll make a fine addition to the team.~ */
+		//}
 		
-		== RASAADJ
-		IF ~
-			IsValidForPartyDialogue("Rasaad")
-			OR(2)
-				Global("RasaadRomanceActive", "GLOBAL",1)
-				Global("RasaadRomanceActive", "GLOBAL",2)
-		~
-		@665 /* ~I will remain by your side my love, now and always.~ */
-		DO ~
-			SetGlobal("XA_BackToBG_Rasaad", "GLOBAL", 1)
-		~
+		//{ Neera
+			== NEERAJ
+			IF ~
+				IsValidForPartyDialogue("Neera")
+			~
+			@661 /* ~Of course I'll join you silly! It'll be nice to see the Sword Coast again!~ */
+			DO ~
+				SetGlobal("XA_BackToBG_Neera", "GLOBAL", 1)
+			~
+		//}
+		
+		//{ Cernd
+			== CERNDJ
+			IF ~
+				IsValidForPartyDialogue("Cernd")
+				Global("CerndBaby","GLOBAL",1)
+			~
+			@667 /* ~I will remain here for a time and help the elves repair the damage to the Tree of Life, then, I will return home to raise my son. Good-bye and safe travels, friends.~ */
+			DO ~
+				ActionOverride("Cernd", SetLeavePartyDialogFile())
+				ActionOverride("Cernd", ChangeAIScript("", DEFAULT))
+				ActionOverride("Cernd", LeaveParty())
+				ActionOverride("Cernd", EscapeAreaObject("ExitNull"))
+			~
+			== CERNDJ
+			IF ~
+				IsValidForPartyDialogue("Cernd")
+				!Global("CerndBaby","GLOBAL",1)
+			~
+			@666 /* ~I will remain here for a time and help the elves repair the damage to the Tree of Life. Good-bye and safe travels, friends.~ */
+			DO ~
+				ActionOverride("Cernd", SetLeavePartyDialogFile())
+				ActionOverride("Cernd", ChangeAIScript("", DEFAULT))
+				ActionOverride("Cernd", LeaveParty())
+				ActionOverride("Cernd", EscapeAreaObject("ExitNull"))
+			~
+		//}
+		
+		//{ Rasaad
+			== RASAADJ
+			IF ~
+				IsValidForPartyDialogue("Rasaad")
+				OR(2)
+					Global("RasaadRomanceActive", "GLOBAL",0)
+					Global("RasaadRomanceActive", "GLOBAL",3)
+			~
+			@668 /* ~Yes my friend, I will return with you. I am interested to see what progress has been made in dealing with the refugee crisis. My help may still be needed.~ */
+			DO ~
+				SetGlobal("XA_BackToBG_Rasaad", "GLOBAL", 1)
+			~
+			
+			== RASAADJ
+			IF ~
+				IsValidForPartyDialogue("Rasaad")
+				OR(2)
+					Global("RasaadRomanceActive", "GLOBAL",1)
+					Global("RasaadRomanceActive", "GLOBAL",2)
+			~
+			@665 /* ~I will remain by your side my love, now and always.~ */
+			DO ~
+				SetGlobal("XA_BackToBG_Rasaad", "GLOBAL", 1)
+			~
+		//}
 		
 		== XACORWIJ
 		@672 /* ~Take a few minutes to gather your belongings. When you are ready to leave, come and talk to me.~*/

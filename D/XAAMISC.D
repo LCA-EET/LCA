@@ -3228,12 +3228,36 @@ END
 EXTEND_BOTTOM SUELLE2 5 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN
+	DO ~
+		SetGlobal("XA_59AOverride","GLOBAL",1)
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutSceneEx("XA59ATOB",FALSE)
+	~
+	EXIT
+
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	EXTERN XACORWIJ XA_SUELLE2_5
 END
 
 EXTEND_BOTTOM SUELLE2 8 /* OK */
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN
+	DO ~
+		SetGlobal("XA_59AOverride","GLOBAL",1)
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutSceneEx("XA59ATOB",FALSE)
+	~
+	EXIT
+	
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
