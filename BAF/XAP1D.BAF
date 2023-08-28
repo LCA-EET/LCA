@@ -1,3 +1,19 @@
+//{ Advance RBG Timers
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_Advance7", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_Advance7", "GLOBAL", 1)
+		SetGlobalTimer("XA_Advance7Timer", "GLOBAL", SEVEN_HOURS)
+		IncrementGlobal("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 7) 
+		IncrementGlobal("XA_CorwinFamilyTimer_Hours", "GLOBAL", 7)
+		IncrementGlobal("XA_DukeDebriefTimer_Hours", "GLOBAL", 7)
+		RestParty()
+		SetInterrupt(TRUE)
+END
+//}
 //{ Caelar Aerie Scar Banter
 IF
 	IsValidForPartyDialogue("XACAELAR")
