@@ -23,6 +23,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_XACS15Cutscene", "GLOBAL", 3)
 		ActionOverride("XACORWIN", FaceObject("XANEOMA"))
+		SmallWait(5)
 		ActionOverride("XACORWIN", StartDialog("XACORWIJ", "XANEOMA"))
 		SetInterrupt(TRUE)
 END

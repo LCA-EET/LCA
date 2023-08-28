@@ -1,6 +1,34 @@
 
 
 //{ Return to Baldur's Gate Timers
+
+	IF
+		OR(6)
+			AreaCheck("XAPAINT1")
+			AreaCheck("XAG1")
+			AreaCheck("XAG2A")
+			AreaCheck("XAG3")
+			AreaCheck("XADEMSAN")
+			AreaCheck("XACSHOW")
+		GlobalLT("XA_HaltRBGTimers", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_HaltRBGTimers", "GLOBAL", 1)
+	END
+	
+	IF
+		!AreaCheck("XAPAINT1")
+		!AreaCheck("XAG1")
+		!AreaCheck("XAG2A")
+		!AreaCheck("XAG3")
+		!AreaCheck("XADEMSAN")
+		!AreaCheck("XACSHOW")
+		Global("XA_HaltRBGTimers", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_HaltRBGTimers", "GLOBAL", 0)
+	END
+	
 	IF 
 		GlobalTimerExpired("XA_Advance7Timer", "GLOBAL")
 		Global("XA_Advance7", "GLOBAL", 1)
@@ -32,6 +60,7 @@
 			GlobalLT("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
 			GlobalLT("XA_CorwinMetFamily", "GLOBAL", 2)
 			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+			Global("XA_HaltRBGTimers", "GLOBAL", 0)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
@@ -49,6 +78,7 @@
 			GlobalGT("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 3)
 			GlobalLT("XA_CorwinMetFamily", "GLOBAL", 2)
 			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+			Global("XA_HaltRBGTimers", "GLOBAL", 0)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
@@ -66,6 +96,7 @@
 			GlobalLT("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 4)
 			GlobalLT("XA_CorwinMetFamily", "GLOBAL", 2)
 			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+			Global("XA_HaltRBGTimers", "GLOBAL", 0)
 			//If the timer has ticked, but has not reached the maximum alloted time, reset the timer.
 		THEN
 			RESPONSE #100
@@ -102,6 +133,7 @@
 			GlobalLT("XA_CorwinFamilyTimerTicked", "GLOBAL", 1)
 			GlobalLT("XA_CorwinMetFamily", "GLOBAL", 1)
 			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+			Global("XA_HaltRBGTimers", "GLOBAL", 0)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
@@ -119,6 +151,7 @@
 			GlobalLT("XA_CorwinMetFamily", "GLOBAL", 1)
 			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
 			GlobalLT("XA_CorwinNeedSeeFamily", "GLOBAL", 1)
+			Global("XA_HaltRBGTimers", "GLOBAL", 0)
 		THEN
 			RESPONSE #100
 				SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 1)
@@ -132,6 +165,7 @@
 			Global("XA_CorwinNeedSeeFamily", "GLOBAL", 0)
 			GlobalLT("XA_CorwinMetFamily", "GLOBAL", 1)
 			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+			Global("XA_HaltRBGTimers", "GLOBAL", 0)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
@@ -167,6 +201,7 @@
 			GlobalTimerExpired("XA_DukeDebriefTimer", "GLOBAL")
 			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
 			GlobalLT("XA_CorwinNeedSeeFamily", "GLOBAL", 1)
+			Global("XA_HaltRBGTimers", "GLOBAL", 0)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
@@ -184,6 +219,7 @@
 			GlobalGT("XA_DukeDebriefTimer_Hours", "GLOBAL", 23)
 			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
 			GlobalLT("XA_CorwinNeedSeeFamily", "GLOBAL", 1)
+			Global("XA_HaltRBGTimers", "GLOBAL", 0)
 		THEN
 			RESPONSE #100
 				SetGlobal("XA_DukeDebriefTimerTick", "GLOBAL", 2)
@@ -200,6 +236,7 @@
 			GlobalLT("XA_DukeDebriefTimer_Hours", "GLOBAL", 24)
 			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
 			GlobalLT("XA_CorwinNeedSeeFamily", "GLOBAL", 1)
+			Global("XA_HaltRBGTimers", "GLOBAL", 0)
 		THEN
 			RESPONSE #100
 				SetGlobalTimer("XA_DukeDebriefTimer", "GLOBAL", ONE_HOUR)

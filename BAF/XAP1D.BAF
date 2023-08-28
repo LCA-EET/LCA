@@ -2,6 +2,8 @@
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
 	GlobalLT("XA_Advance7", "GLOBAL", 1)
+	GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+	Global("XA_HaltRBGTimers", "GLOBAL", 0)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)

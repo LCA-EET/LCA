@@ -14,7 +14,7 @@
 
 //{ Block all BG1 area scripting
 	IF
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_HaltBG1Script", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			NoAction()

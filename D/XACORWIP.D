@@ -11,6 +11,19 @@
 BEGIN ~XACORWIP~
 
 IF ~
+	AreaCheck("XACS13")
+~ THEN BEGIN XA_SoAEnd
+	SAY @93  /* ~Talk to me when you're ready to leave.~ */
+	
+	IF ~~ THEN REPLY @95  /* ~Will do.~*/
+	DO ~
+		ChangeAIScript("XACORSCR", OVERRIDE)
+		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~
 	Global("XA_CorwinIrenicus", "GLOBAL", 4)
 ~ THEN BEGIN XA_CorwinIrenicusRejoin
 	SAY @75  /* ~Get me out of here!~ */

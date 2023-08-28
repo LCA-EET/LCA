@@ -1,5 +1,14 @@
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("ELMIN5")
+THEN
+	RESPONSE #100
+		ActionOverride("ELMIN5", DestroySelf())
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
 	!Global("XA_CreateElfsong", "GLOBAL", 1)
 	!Dead("alyth")
 	!Global("XA_SavedElfsong", "GLOBAL", 1)

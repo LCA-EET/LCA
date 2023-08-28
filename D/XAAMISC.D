@@ -166,7 +166,58 @@
 	END
 
 	
+	//{ FLAMGG
+	ADD_STATE_TRIGGER FLAMGG 0
+	~
+		GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	~
 	
+	ADD_STATE_TRIGGER FLAMGG 3
+	~
+		GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	~
+	
+	APPEND FLAMGG
+		IF ~
+			Global("XA_ReturnToBG", "GLOBAL", 1)
+			GlobalLT("XA_TollPaid", "LOCALS", 1)
+		~ THEN BEGIN XA_RBG
+			SAY @349  /* ~Your entrance tax has been paid for by Duke Entar. Welcome back, <CHARNAME>.~*/
+			
+			IF ~~ THEN REPLY @350  /* ~Thank you.~*/
+			DO ~
+				SetGlobal("XA_TollPaid", "LOCALS", 1)
+			~
+			EXIT
+			
+			IF ~~ THEN REPLY @351  /* ~All six gold? How generous of him.~ */
+			DO ~
+				SetGlobal("XA_TollPaid", "LOCALS", 1)
+			~
+			EXIT
+			
+		END
+		
+		IF ~
+			Global("XA_ReturnToBG", "GLOBAL", 1)
+			Global("XA_TollPaid", "LOCALS", 1)
+			TimeOfDay(NIGHT)
+		~ THEN BEGIN XA_RBG_Paid
+			SAY @352  /* ~Good evening.~*/
+			
+			IF ~~ THEN EXIT
+		END
+		IF ~
+			Global("XA_ReturnToBG", "GLOBAL", 1)
+			Global("XA_TollPaid", "LOCALS", 1)
+			!TimeOfDay(NIGHT)
+		~ THEN BEGIN XA_RBG_Paid
+			SAY @353  /* ~Good day.~*/
+			
+			IF ~~ THEN EXIT
+		END
+	END
+	//}
 	
 	
 	//{ BDBELT

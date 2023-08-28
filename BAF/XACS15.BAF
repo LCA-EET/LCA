@@ -12,13 +12,11 @@ THEN
 		DisplayStringHead("XANEOMA", @1)
 		Wait(1)
 		ActionOverride("XANEOMA", MoveToObject("XACORWIN"))
+		Wait(1)
 		ActionOverride("XACORWIN", FaceObject("XANEOMA"))
 		Wait(1)
 		DisplayStringHead("XACORWIN", @0)
-		Wait(1)
 		
-		//Wait(1)
-		ActionOverride("XACORWIN", MoveToObject("XANEOMA"))
 		Wait(1)
 		EndCutSceneMode()
 END
