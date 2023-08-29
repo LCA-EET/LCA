@@ -20,3 +20,13 @@ THEN
 		ActionOverride("DENKOD", DestroySelf()
 		Continue()
 END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_MazeDoorDeactivated", "BG0153", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_MazeDoorDeactivated", "BG0153", 1)
+		TriggerActivation("Door0146", FALSE)
+		Continue()
+END

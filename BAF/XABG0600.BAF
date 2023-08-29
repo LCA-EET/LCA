@@ -20,7 +20,7 @@ END
 
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_NPCDestroy_0600", "BG0600", 1)
+	GlobalLT("XA_NPCDestroy_0600", "BG0600", 1)
 THEN
 	RESPONSE #100
 		ActionOverride("DUN", DestroySelf())

@@ -15,3 +15,12 @@ THEN
 		ActionOverride("SORREL", DestroySelf())
 		Continue()
 END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("RAMAZITH")
+THEN
+	RESPONSE #100
+		ActionOverride("RAMAZITH", DestroySelf())
+		Continue()
+END
