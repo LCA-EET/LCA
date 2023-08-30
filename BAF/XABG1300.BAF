@@ -1,4 +1,13 @@
 IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("NIKOLAI")
+THEN
+	RESPONSE #100
+		ActionOverride("NIKOLAI", DestroySelf())
+		Continue()
+END
+
+IF
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 	!Global("XA_1300_DeactivateCH", "BG1300", 1)
 THEN

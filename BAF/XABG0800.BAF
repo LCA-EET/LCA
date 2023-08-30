@@ -9,9 +9,9 @@ END
 
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_CreateElfsong", "GLOBAL", 1)
+	GlobalLT("XA_CreateElfsong", "GLOBAL", 1)
 	!Dead("alyth")
-	!Global("XA_SavedElfsong", "GLOBAL", 1)
+	GlobalLT("XA_SavedElfsong", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CreateElfsong", "GLOBAL", 1)
@@ -29,8 +29,8 @@ IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
 	InMyArea("XA800M")
 	InMyArea("XA800W")
-	!Global("XA_ElfsongTimerSet", "BG0800", 1)
-	!Global("XA_SavedElfsong", "GLOBAL", 1)
+	GlobalLT("XA_ElfsongTimerSet", "BG0800", 1)
+	GlobalLT("XA_SavedElfsong", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_ElfsongTimerSet", "BG0800", 1)
@@ -42,7 +42,7 @@ IF
 	InMyArea("XA800M")
 	InMyArea("XA800W")
 	GlobalTimerExpired("XA_ElfsongTimer", "GLOBAL")
-	!Global("XA_SavedElfsong", "GLOBAL", 1)	
+	GlobalLT("XA_SavedElfsong", "GLOBAL", 1)	
 	!Global("XA_800MW", "GLOBAL", 1)
 THEN
 	RESPONSE #50
@@ -58,29 +58,29 @@ END
 
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_NPCDestroy", "GLOBAL", 1)
+	Global("XA_NPCDestroy", "BG0800", 1)
 THEN
 	RESPONSE #100
 		ActionOverride("NIKLOS", DestroySelf())
 		ActionOverride("ELMIN5", DestroySelf())
-		SetGlobal("XA_NPCDestroy", "GLOBAL", 1)
+		SetGlobal("XA_NPCDestroy", "BG0800", 1)
 		Continue()
 END
 
 IF 
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_CreateMickNPC", "GLOBAL", 1)
+	GlobalLT("XA_CreateMickNPC", "BG0800", 1)
 	!InMyArea("MICK")
 THEN
 	RESPONSE #100
 		CreateCreature("MICK", [510.2938], N)
-		SetGlobal("XA_CreateMickNPC", "GLOBAL", 1)
+		SetGlobal("XA_CreateMickNPC", "BG0800", 1)
 		Continue()
 END
 
 IF 
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_CreateNeomaNPC", "GLOBAL", 1)
+	GlobalLT("XA_CreateNeomaNPC", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		CreateCreature("XANEOMA", [3075.1390], N)

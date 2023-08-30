@@ -1,6 +1,6 @@
 IF 
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_WV_TriggerDeactivation", "GLOBAL", 1)
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_WV_TriggerDeactivation", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_WV_TriggerDeactivation", "GLOBAL", 1)
@@ -11,7 +11,7 @@ END
 
 IF 
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_IT_TriggerDeactivation", "GLOBAL", 1)
+	GlobalLT("XA_IT_TriggerDeactivation", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_IT_TriggerDeactivation", "GLOBAL", 1)
@@ -34,7 +34,8 @@ END
 
 IF 
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_KerracSwap", "GLOBAL", 1)
+	GlobalLT("XA_KerracSwap", "GLOBAL", 1)
+	InMyArea("KERRACHUS")
 THEN
 	RESPONSE #100
 		SetGlobal("XA_KerracSwap", "GLOBAL", 1)
@@ -44,16 +45,18 @@ END
 
 IF 
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	OR(4)
+	OR(5)
 		InMyArea("JONAVI")
 		InMyArea("KOLVAR")
 		InMyArea("BRENNA")
 		InMyArea("CAEDMO")
+		InMyArea("ENTILLIS")
 THEN
 	RESPONSE #100
 		ActionOverride("JONAVI", DestroySelf())
 		ActionOverride("KOLVAR", DestroySelf())
 		ActionOverride("BRENNA", DestroySelf())
 		ActionOverride("CAEDMO", DestroySelf())
+		ActionOverride("ENTILLIS", DestroySelf())
 		Continue()
 END
