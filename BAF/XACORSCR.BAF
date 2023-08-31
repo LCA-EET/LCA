@@ -2135,11 +2135,12 @@ END
 	//{ Met with Drizzt - Corwin vouched
 	IF 
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
-		GlobalTimerExpired("XA_CorwinVouchedDrizzTimer", "GLOBAL")
+		Global("XA_CorwinVouchedDrizz", "GLOBAL", 1)
+		!InMyArea("C6DRIZZ")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 1)
+			SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 2)
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)
 	END

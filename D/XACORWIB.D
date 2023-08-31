@@ -2038,14 +2038,15 @@ END
 			=
 			@457 /* ~I ask because I love <PRO_HIMHER> dearly, and in some ways, I feel that I don't know <PRO_HIMHER> as well as I should.~ */
 			== IMOEN2J
-			@454 /* ~Oh, I've got lots of stories... I think you'll like the one about the time <PRO_HESHE> first tried to ... (they have a long and animated discussion, though you can't quite make out what they are saying)~ */
+			@454 /* ~Oh, I've got lots of stories... I think you'll like the one about the time <PRO_HESHE> first tried to ... */
+			= @734 /* ~(They have a long and animated discussion, though you can't quite make out what they are saying.)~ */
 			== XACORWIB
 			@480 /*~Heh. Most just call that the "hard way."[XA100077]*/
 			== IMOEN2J
 			@481 /*~Then there was the time <PRO_HESHE> thought <PRO_HESHE> could get away with taking Jessup's...~*/
 			= @482 /*~(Again, you can't make out what's being said.)~*/
 			== XACORWIB
-			@455 /* ~(She bursts into laughter) Really? (She looks at you) I would never have guessed!~ */
+			@455 /* ~(She bursts into laughter) */
 			=
 			@456 /* ~Hahah... thank you Imoen. It sounds like the two of you had some fun times together.~ */
 			== IMOEN2J

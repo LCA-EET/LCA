@@ -5013,7 +5013,7 @@ END
 
 //{ #region Corwin Post Drizzt - Dialog J-24
 IF ~
-	Global("XA_CorwinVouchedDrizz", "GLOBAL", 1)
+	Global("XA_CorwinVouchedDrizz", "GLOBAL", 2)
 ~ THEN BEGIN XA_CorwinPlayerDrizz
 	SAY @488 /* ~That adventurer we encountered, Drizzt, was adamant that you had assaulted him. Was he speaking the truth?~ */
 	
@@ -5058,7 +5058,7 @@ IF ~~ THEN BEGIN XA_CorwinPlayerDrizz1A
 	SAY @1445 /* ~And I'd rather you be open with me. Fine. Let's go.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 2)
+		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -1)
 	~
 	EXIT
@@ -5068,7 +5068,7 @@ IF ~~ THEN BEGIN XA_CorwinPlayerDrizz1
 	SAY @493 /* ~I see. Let's go.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 2)
+		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -1)
 	~
 	EXIT
@@ -5078,7 +5078,7 @@ IF ~~ THEN BEGIN XA_CorwinPlayerDrizz2A
 	SAY @496 /* ~Sometimes I feel like I don't know you at all. I'd rather you'd have done it and been honest with me than to lie about it. Let's go.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 2)
+		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -4)
 	~
 	EXIT
@@ -5088,7 +5088,7 @@ IF ~~ THEN BEGIN XA_CorwinPlayerDrizz2B
 	SAY @496 /* ~Sometimes I feel like I don't know you at all. I'd rather you'd have done it and been honest with me than to lie about it. Let's go.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 2)
+		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -2)
 	~
 	EXIT
@@ -5098,7 +5098,7 @@ IF ~~ THEN BEGIN XA_CorwinPlayerDrizz3A
 	SAY @495 /* ~I appreciate your honesty. We've all made bad decisions - it's good though that you've learned from yours. Let's go, love.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 2)
+		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
 	~
 	EXIT
@@ -5108,7 +5108,7 @@ IF ~~ THEN BEGIN XA_CorwinPlayerDrizz3B
 	SAY @494 /* ~I appreciate your honesty. We've all made bad decisions - it's good though that you've learned from yours. Let's go.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 2)
+		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
 	~
 	EXIT
@@ -5118,7 +5118,7 @@ IF ~~ THEN BEGIN XA_CorwinPlayerDrizz4A
 	SAY @499 /* ~I appreciate your honesty. Let's go, love.~*/
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 2)
+		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	EXIT
@@ -5128,7 +5128,7 @@ IF ~~ THEN BEGIN XA_CorwinPlayerDrizz4B
 	SAY @498 /* ~I appreciate your honesty. Let's go.~*/
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 2)
+		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	EXIT
@@ -10051,7 +10051,7 @@ CHAIN
 	IF ~~ THEN XACORWIJ XA_CorwinDrizz
 		@479 /* ~Hold your tongue, drow. I've never known <CHARNAME> to resort to banditry. I suggest that you and your companions move along - now.~*/
 		DO ~
-			SetGlobalTimer("XA_CorwinVouchedDrizzTimer", "GLOBAL", THREE_ROUNDS)
+			SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 1)
 		~ 
 		== C6WULF1
 		@480 /* ~Eh? Is she threatening us? Do you think she's serious?~ */

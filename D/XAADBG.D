@@ -3339,6 +3339,12 @@ END
 IF ~~ THEN BEGIN XA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
 	
+	IF ~~ THEN REPLY @635
+	DO ~
+		SetGlobal("XA_AttackedDrizztBG1", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
 	IF ~~ THEN REPLY @626
 	DO ~
 		SetGlobal("XA_ExplicitModOverride", "GLOBAL", 1)

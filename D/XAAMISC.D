@@ -306,6 +306,8 @@
 	
 	
 //}	
+	
+
 	//{ CALAHA
 	EXTEND_BOTTOM CALAHA 15
 		IF ~
@@ -3503,12 +3505,7 @@ ADD_TRANS_TRIGGER UDPHAE01 61
 ~
 DO 1 2 3 4
 
-EXTEND_BOTTOM ~UDPHAE01~ 136
-	IF ~
-		IsValidForPartyDialogue("XACORWIN")
-	~
-	THEN EXTERN ~XACORWIJ~ XAA68
-END
+
 //}
 
 //{ BODHIAMB
@@ -4076,6 +4073,16 @@ END
 //}
 
 //{ C6DRIZZ1
+ADD_STATE_TRIGGER C6DRIZZ1 0
+~
+	!Global("XA_AttackedDrizztBG1", "GLOBAL", 1)
+~
+
+ADD_STATE_TRIGGER C6DRIZZ1 39
+~
+	!Global("XA_AttackedDrizztBG1", "GLOBAL", 1)
+~
+
 EXTEND_BOTTOM C6DRIZZ1 1  //OK
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
@@ -4084,6 +4091,14 @@ EXTEND_BOTTOM C6DRIZZ1 1  //OK
 END
 
 APPEND C6DRIZZ1
+	IF ~
+		Global("XA_AttackedDrizztBG1", "GLOBAL", 1)
+	~ THEN BEGIN XA_DrizzMad
+		SAY #53289 /* ~You there! I recognize you! You are the scoundrel that attacked me for no good reason near Baldur's Gate and made off with my equipment!~ [DRIZZT02] */
+		
+		IF ~~ THEN GOTO 1
+	END
+	
 	IF ~~ THEN BEGIN XA_CorwinDrizz2
 		SAY @14 /* ~A proposal? I will hear you out, <PRO_RACE>, but I will be wary. Speak, if you wish.~ */
 		
@@ -4097,7 +4112,7 @@ APPEND C6DRIZZ1
 		~ THEN REPLY @15 /* ~We seek to defeat a vampire in Athkatla too powerful to face alone. Will you help?~ */
 		GOTO 33
 		
-		IF ~~ THEN REPLY @17 /* ~Never mind. We will be on my way.~ */ 
+		IF ~~ THEN REPLY @354 /* ~Never mind. We will be on my way.~ */ 
 		GOTO 34
 	END
 END
