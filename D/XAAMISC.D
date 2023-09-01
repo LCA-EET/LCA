@@ -3548,7 +3548,7 @@ APPEND BODHIAMB
 		DO ~
 			ClearAllActions()
 			StartCutSceneMode()
-			StartCutSceneEx("XAcs07",FALSE)
+			StartCutSceneEx("XAACS07B",FALSE)
 		~
 		EXIT
 	END

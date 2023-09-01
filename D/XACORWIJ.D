@@ -401,6 +401,104 @@ BEGIN ~XACORWIJ~
 		EXIT
 	END
 //}
+
+//{ Corwin Saved XAACS09B
+	IF ~
+		Global("XA_CorwinSaved9", "GLOBAL", 1)
+	~ THEN BEGIN XA_CorwinSaved9_1
+		SAY @336  /* ~<CHARNAME>... what happened?~ */
+		
+		= @337  /* ~(You notice that her skin and eye color have returned to normal.)~ */
+		
+		IF ~~ THEN REPLY @338  /* ~You collapsed as we ran the stake through Bodhi's heart. How are you feeling?~*/
+		DO ~
+			SetGlobal("XA_CorwinCleansed", "GLOBAL", 2)
+			SetGlobal("XA_CorwinBit", "GLOBAL", 0)
+			SetGlobal("XA_CorwinSaved9", "GLOBAL", 2)
+			SetPlayerSound(Myself,268296,MORALE)
+			SetPlayerSound(Myself,268292,HAPPY)
+			SetPlayerSound(Myself,268293,UNHAPPY_ANNOYED)
+			SetPlayerSound(Myself,268294,UNHAPPY_SERIOUS)
+			SetPlayerSound(Myself,268295,UNHAPPY_BREAKING_POINT)
+			SetPlayerSound(Myself,268256,LEADER)
+			SetPlayerSound(Myself,268257,TIRED)
+			SetPlayerSound(Myself,268258,BORED)
+			SetPlayerSound(Myself,268251,BATTLE_CRY1)
+			SetPlayerSound(Myself,268252,BATTLE_CRY2)
+			SetPlayerSound(Myself,268253,BATTLE_CRY3)
+			SetPlayerSound(Myself,268254,BATTLE_CRY4)
+			SetPlayerSound(Myself,268255,BATTLE_CRY5)
+			SetPlayerSound(Myself,268273,DAMAGE)
+			SetPlayerSound(Myself,268274,DYING)
+			SetPlayerSound(Myself,268259,HURT)
+			SetPlayerSound(Myself,268275,AREA_FOREST)
+			SetPlayerSound(Myself,268276,AREA_CITY)
+			SetPlayerSound(Myself,268277,AREA_DUNGEON)
+			SetPlayerSound(Myself,268278,AREA_DAY)
+			SetPlayerSound(Myself,268279,AREA_NIGHT)
+			SetPlayerSound(Myself,268260,SELECT_COMMON1)
+			SetPlayerSound(Myself,268261,SELECT_COMMON2)
+			SetPlayerSound(Myself,268262,SELECT_COMMON3)
+			SetPlayerSound(Myself,268263,SELECT_COMMON4)
+			SetPlayerSound(Myself,268264,SELECT_COMMON5)
+			SetPlayerSound(Myself,268265,SELECT_COMMON6)
+			SetPlayerSound(Myself,268266,SELECT_ACTION1)
+			SetPlayerSound(Myself,268267,SELECT_ACTION2)
+			SetPlayerSound(Myself,268268,SELECT_ACTION3)
+			SetPlayerSound(Myself,268280,SELECT_ACTION4)
+			SetPlayerSound(Myself,268281,SELECT_ACTION5)
+			SetPlayerSound(Myself,268282,SELECT_ACTION6) 
+			SetPlayerSound(Myself,268283,SELECT_ACTION7)
+			SetPlayerSound(Myself,268297,REACT_TO_DIE_GENERAL)
+			SetPlayerSound(Myself,268298,REACT_TO_DIE_SPECIFIC)
+			SetPlayerSound(Myself,268280,SELECT_RARE1)
+			SetPlayerSound(Myself,268281,SELECT_RARE2)
+			SetPlayerSound(Myself,268284,CRITICAL_HIT)
+			SetPlayerSound(Myself,268285,CRITICAL_MISS)
+			SetPlayerSound(Myself,268286,TARGET_IMMUNE)
+			SetPlayerSound(Myself,268287,INVENTORY_FULL)
+			SetPlayerSound(Myself,268288,PICKED_POCKET)
+			SetPlayerSound(Myself,268289,HIDDEN_IN_SHADOWS)
+			SetPlayerSound(Myself,268290,SPELL_DISRUPTED)
+			SetPlayerSound(Myself,268291,SET_A_TRAP)
+		~
+		GOTO XA_CorwinSaved9_2
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinSaved9_2
+		SAY @339  /*~Ugh... help me up, will you?~*/
+		
+		IF ~~ THEN 
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XAACS09C")
+		~
+		EXIT
+	END
+	
+	IF ~
+		Global("XA_CorwinSaved9", "GLOBAL", 2)
+	~ THEN BEGIN XA_CorwinSaved9_3
+		SAY @344  /* ~Yes... I'm feeling much better. Thank you, love.~ */
+		
+		IF ~~ THEN REPLY @340  /* ~Thank goodness. I was afraid I'd lost you.~ */
+		DO ~
+			SetGlobal("XA_CorwinSaved9", "GLOBAL", 3)
+		~
+		GOTO XA_CorwinSaved9_4
+	END
+	
+	IF ~~ THEN BEGIN XA_CorwinSaved9_4
+		SAY @341  /* ~Not if I can help it... come here.~ */
+		
+		= @342  /* ~(You share a passionate embrace and kiss.)~*/
+		
+		= @343  /* ~With the Lanthorn, we can finally take the fight to Irenicus. I have a feeling that one way or the other, this will all be over, and soon. Let's go.~*/
+		
+		IF ~~ THEN
+		EXIT
+	END
+//}
 //{ Player Statue Talk
 	IF ~
 		Global("XA_CorwinStatueTalk", "GLOBAL", 1)
@@ -5552,6 +5650,9 @@ IF ~~ THEN BEGIN XAA86
 	SAY @261 /* ~I can't *wheeze* ... I can't seem ... to catch my breath.~ */
 	IF ~
 		!IsValidForPartyDialogue("KORGAN")
+		!IsValidForPartyDialogue("AERIE")
+		!IsValidForPartyDialogue("IMOEN2")
+		!IsValidForPartyDialogue("JAHEIRA")
 	~ THEN REPLY @262 /* ~Come here, love. Put your arm around my shoulder. Take as much time as you need.~ */
 	GOTO XAA87
 	

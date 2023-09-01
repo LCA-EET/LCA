@@ -3,31 +3,13 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId("XACORWIN")  // Corwin
+		ActionOverride(Player1, JumpToObject("XACORWIN"))	
+		ActionOverride(Player1, FaceObject("XACORWIN"))
 		FadeFromColor([30.0],0)
 		Wait(1)
 		DisplayStringHead(Myself, @0) /*~(She slowly opens her eyes.)~ */
-		Wait(3)
-		DisplayStringHead(Myself, @1) /* ~<CHARNAME>... what happened?~*/
-		Wait(3)
-		DisplayStringHead(Player1, @8) /* ~(You notice that her skin and eye color have returned to normal.)~ */
-		Wait(3)
-		DisplayStringHead(Player1, @2) /* ~You collapsed as we ran the stake through Bodhi's heart. How are you feeling?~*/
-		Wait(5)
-		DisplayStringHead(Myself, @3) /* ~I-I think ... yes, much better. Help me up, will you?~*/
-		Wait(3)
-		SetSequence(SEQ_AWAKE)
+		Wait(2)
+		SetGlobal("XA_CorwinSaved9", "GLOBAL", 1)
 		Wait(1)
-		FaceObject(Player1)
-		DisplayStringHead(Player1, @4) /* ~Thank goodness. I was afraid I'd lost you.~*/
-		Wait(3)
-		DisplayStringHead(Myself, @5) /* ~Not if I can help it... come here.~*/
-		Wait(3)
-		DisplayStringHead(Myself, @7) /* ~(You share a passionate embrace and kiss)~ */
-		Wait(3)
-		DisplayStringHead(Myself, @6) /* ~With the Lanthorn, we can finally take the fight to Irenicus. I have a feeling that one way or the other, this will all be over, and soon. Let's go.~*/
-		Wait(5)
-		SetGlobal("XA_CorwinCleansed", "GLOBAL", 2)
-		SetGlobal("XA_CorwinBit", "GLOBAL", 0)
-		FadeToColor([30.0],0)
-		StartCutScene("XAAcs08x")
+		StartDialog("XACORWIJ", Player1)
 END

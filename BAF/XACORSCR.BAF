@@ -2137,6 +2137,7 @@ END
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_CorwinVouchedDrizz", "GLOBAL", 1)
 		!InMyArea("C6DRIZZ")
+		!Dead("C6DRIZZ")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -2823,7 +2824,7 @@ END
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		GlobalGT("XA_CorwinBit", "GLOBAL", 0)
 		GlobalTimerExpired("XA_CorwinSickPartyTimer", "GLOBAL")
-		!Global("XA_CorwinPartySick", "GLOBAL", 1)
+		GlobalLT("XA_CorwinPartySick", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_CorwinPartySick", "GLOBAL", 1)
@@ -3115,7 +3116,21 @@ THEN
 		SetGlobalTimer("XA_BanterTimer", "LOCALS", TEN_MINUTES)
 		//DisplayStringHead(Myself, ~DEBUG: 22-13A~)
 		SetInterrupt(TRUE)
-		Continue()
+END
+//}
+
+//{ Postpone Banter by One Hour - Bit
+IF
+	ActionListEmpty()
+	InParty(Myself)
+	GlobalTimerExpired("XA_BanterTimer", "LOCALS")
+	GlobalGT("XA_CorwinBit", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_HOUR)
+		//DisplayStringHead(Myself, ~DEBUG: 22-13A~)
+		SetInterrupt(TRUE)
 END
 //}
 
