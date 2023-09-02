@@ -2758,7 +2758,11 @@ END
 	THEN
 		RESPONSE #100
 			//Dialog P-6
+			SetInterrupt(FALSE)
+			PlaySong(146)
+			Wait(1)
 			StartDialogNoSet(Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -2784,7 +2788,7 @@ END
 	IF 
 		ActionListEmpty()
 		Global("XA_CorwinCleansed", "GLOBAL", 2)
-		!Global("XA_CorwinCured", "GLOBAL", 1)
+		GlobalLT("XA_CorwinCured", "GLOBAL", 1)
 	THEN 
 		RESPONSE #100
 			//ForceSpell("XACORWIN",CLERIC_CURE_DISEASE)
@@ -2794,6 +2798,7 @@ END
 			ChangeStat(Myself,DEX,1,ADD)
 			ChangeStat(Myself,STR,1,ADD)
 			ChangeStat(Myself,CHR,1,ADD)
+			ReallyForceSpell(Myself,CLERIC_CURE_DISEASE)
 			SetGlobal("XA_CorwinCured", "GLOBAL", 1)
 			SetInterrupt(TRUE)
 			Continue()

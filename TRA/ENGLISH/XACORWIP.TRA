@@ -13,13 +13,13 @@
 @12 = ~A *very* bad time. Now, are you going tell me what's going on, or do I need to beat it out of you?~
 @13 = ~I need to speak to <CHARNAME>.~
 @14 = ~I was wrong. I'm sorry, love.~
-@15 = ~<CHARNAME>? I'm alive... but, how? ~ [XACORP01]
-@16 = ~Schael! Oh, thank goodness, I thought I'd lost you. (You share a long embrace)~
+@15 = ~<CHARNAME>? I'm alive... but, how? ~ [XA100067]
+@16 = ~Schael! Oh, thank goodness, I thought I'd lost you.~
 @17 = ~I remember... dying, in your arms. Wh...what happened?~
 @18 = ~You died, just as you'd transformed into a vampire. We resurrected you using Bodhi's heart and the magic of this temple.~
 @19 = ~Bodhi's heart — she's dead, then? You recovered the Lanthorn?~
-@20 = ~Yes, love. Bodhi is dead, Imoen's soul was restored, and we are together again. Now, and forever.~
-@21 = ~Thank you, <CHARNAME>, for saving me. I knew you'd find a way to save me, love. (You share a passionate kiss.)~ 
+@20 = ~Yes. Bodhi is dead, Imoen's soul was restored, and we are together again. Now, and forever.~
+@21 = ~Thank you for saving me. I love you... my hero.~ 
 @22 = ~Let's get going. You can fill me in on what I've missed along the way.~
 @23 = ~Gladly, my love.~
 @24 = ~We'll get going soon — wait here a moment.~
@@ -54,7 +54,7 @@
 @53 = ~It's alright, sir. <CHARNAME> brought us here to discuss what <PRO_HESHE> believes is a significant threat to the Baldur's Gate, and the Sword Coast.~
 @54 = ~(Explain the circumstances of the pocket dimension, and the threat posed by the Five.)~
 @55 = ~Hm. We've been hearing rumors of chaos in the vicinity of Saradush... fire giants, sieges, and large armies preparing for war.~
-@56 = ~~
+@56 = ~I love you too, dear.~
 @57 = ~The Dukes have been trying to keep it under wraps, with the hope of preventing a panic. If what you're telling me is true, <CHARNAME>, it seems that we may have underestimated the threat.~
 @58 = ~Major, I leave it up to you as to whether you'll part in this assignment. Under normal circumstances, I wouldn't hesitate to order you to. But these are far from normal circumstances... just look at this place.~
 @59 = ~I understand, sir.~
@@ -95,3 +95,5 @@ Major Corwin refused to join me in my hunt for the Five. She believes that I'm j
 @93 = ~Talk to me when you're ready to leave.~
 @94 = ~I'm ready. Let's go.~
 @95 = ~Will do.~
+@96 = ~(You share a long and emotional embrace.)~
+@97 = ~(You share a passionate kiss.)~

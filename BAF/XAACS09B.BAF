@@ -11,5 +11,6 @@ THEN
 		Wait(2)
 		SetGlobal("XA_CorwinSaved9", "GLOBAL", 1)
 		Wait(1)
+		PlaySong(146)
 		StartDialog("XACORWIJ", Player1)
 END

@@ -42,6 +42,7 @@ THEN
 		MoveGlobal("AR1401","XACORWIN",[2565.1677])
 		ApplySpell("XACORWIN", CLERIC_CURE_DISEASE)
 		ActionOverride(Player1, FaceObject("XACORWIN"))
+		PlaySong(146)
 		Wait(1)
 		ActionOverride("XACORWIN", FaceObject(Player1))
 		SmallWait(1)
