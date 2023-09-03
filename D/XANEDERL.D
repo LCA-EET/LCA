@@ -828,6 +828,41 @@ IF ~~ THEN BEGIN XA_WYRM_8
 		SetGlobal("XA_BenceWyrm", "GLOBAL", 1)
 	~
 	EXIT
+	
+	IF ~
+		GlobalGT("XA_NebDead", "GLOBAL", 0)
+	~ THEN
+	DO ~
+		SetGlobal("XA_BenceWyrm", "GLOBAL", 1)
+	~
+	EXTERN XACORWIJ XA_NebNederlok 
+END
+
+IF ~~ THEN BEGIN XA_NebNederlok2
+	SAY @120 /*~Yes, Captain?~*/
+	
+	IF ~~ THEN
+	EXTERN XACORWIJ XA_NebNederlok3
+
+END
+
+IF ~~ THEN BEGIN XA_NebNederlok4
+	SAY @121 /*~Excellent! I look forward to reading your report.~*/
+	
+	IF ~~ THEN
+	EXTERN XACORWIJ XA_NebNederlok5
+
+END
+
+IF ~~ THEN BEGIN XA_NebNederlok6
+	SAY @122 /*~It can wait. Take some time for yourself, Captain. I know you must be eager to see your family. Now, if there's nothing else, I'll see you both in the morning.~*/
+	
+	IF ~~ THEN
+	DO ~
+		AddExperienceParty(100000)
+		AddJournalEntry(@123, INFO)
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN XA_NEDERL_SlaverPlot2
@@ -868,6 +903,14 @@ IF ~~ THEN BEGIN XA_NEDERL_SlaverPlot4
 	
 	IF ~~ THEN
 	EXTERN XACORWIJ XA_WYRM_NEDERL_END
+	
+	IF ~
+		GlobalGT("XA_NebDead", "GLOBAL", 0)
+	~ THEN
+	DO ~
+		SetGlobal("XA_ToldNederlokNeb", "LOCALS", 1)
+	~
+	EXTERN XACORWIJ XA_NebNederlok3A
 END
 
 CHAIN XAVIRGIL XA_NederlokVirgiXAhain

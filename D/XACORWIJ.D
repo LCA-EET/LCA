@@ -9164,6 +9164,34 @@ IF ~~ THEN BEGIN XA_NEDERL_SlaverPlot3
 	EXTERN XANEDERL XA_NEDERL_SlaverPlot4
 END
 
+IF ~~ THEN BEGIN XA_NebNederlok
+	SAY @1397 /*~Sir, before you depart —~*/
+	
+	IF ~~ THEN 
+	EXTERN XANEDERL XA_NebNederlok2
+END
+
+IF ~~ THEN BEGIN XA_NebNederlok3
+	SAY @1403 /*~While in Athkatla, we located the fugitive, Neb. I'm pleased to inform you that he's been brought to justice.~*/
+	
+	IF ~~ THEN 
+	EXTERN XANEDERL XA_NebNederlok4
+END
+
+IF ~~ THEN BEGIN XA_NebNederlok3A
+	SAY @1399 /* ~Of course, sir. Also, while in Athkatla, we encountered the fugitive Neb. I'm pleased to inform you that he's been brought to justice.~*/
+	
+	IF ~~ THEN 
+	EXTERN XANEDERL XA_NebNederlok4
+END
+
+IF ~~ THEN BEGIN XA_NebNederlok5
+	SAY @1400 /*~It'll be ready in the morning, sir.~*/
+	
+	IF ~~ THEN 
+	EXTERN XANEDERL XA_NebNederlok6
+END
+
 IF ~~ THEN BEGIN XA_WYRM_NEDERL_END
 	SAY @675 /* Yes, sir. */
 	
