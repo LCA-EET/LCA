@@ -11,6 +11,7 @@ IF ~
 	~ THEN REPLY @1 /* ~You must be Illasera.~ */
 	DO ~
 		SetGlobal("XA_MeetIllasera", "GLOBAL", 1)
+		SetGlobal("XA_RohmaKidnapped", "GLOBAL", 0)
 	~
 	GOTO XA_MeetIllasera2M
 	
@@ -20,6 +21,7 @@ IF ~
 	~ THEN REPLY @1 /* ~You must be Illasera.~ */
 	DO ~
 		SetGlobal("XA_MeetIllasera", "GLOBAL", 1)
+		SetGlobal("XA_RohmaKidnapped", "GLOBAL", 0)
 	~
 	GOTO XA_MeetIllasera2F
 	
@@ -28,6 +30,7 @@ IF ~
 	~ THEN 
 	DO ~
 		SetGlobal("XA_MeetIllasera", "GLOBAL", 1)
+		SetGlobal("XA_RohmaKidnapped", "GLOBAL", 0)
 	~
 	EXTERN XACORWIJ XA_MeetIllasera
 	

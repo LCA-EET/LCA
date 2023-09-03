@@ -5639,7 +5639,7 @@ IF ~
 	~
 	GOTO XAA86
 	
-	IF ~~ THEN REPLY @257 /* ~Are you alright?~ */
+	IF ~~ THEN REPLY @345 /* ~Are you alright?~ */
 	DO ~
 		SetGlobal("XA_CorwinBit", "GLOBAL", 5)
 		SetGlobalTimer("XA_CorwinBitTimer", "GLOBAL", SIX_HOURS)

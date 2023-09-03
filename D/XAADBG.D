@@ -2973,6 +2973,13 @@ END
 IF ~~ THEN BEGIN XA_Menu_CreateItem
 	SAY @35 /* ~What item do you want me to create for you?~ */
 	
+	IF ~~ THEN REPLY @637
+	DO ~
+		GiveItemCreate("C6LANTHO", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("C6LANTHO", IDENTIFIED,TRUE))
+	~
+	GOTO XA_MainMenu
+	
 	IF ~~ THEN REPLY @625
 	DO ~
 		GiveItemCreate("RING30", LastTalkedToBy(Myself),1,0,0)
@@ -3338,6 +3345,12 @@ END
 
 IF ~~ THEN BEGIN XA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
+	
+	IF ~~ THEN REPLY @636
+	DO ~
+		SetGlobal("XA_TimesHadSex", "GLOBAL", 0)
+	~
+	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @635
 	DO ~

@@ -2391,11 +2391,11 @@ END
 	IF
 		ActionListEmpty()
 		!Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
-		!GlobalGT("XA_CorwinBit", "GLOBAL", 0)
+		GlobalLT("XA_CorwinBit", "GLOBAL", 1)
 		Gender(Player1, MALE)
 		!HPPercentLT(Myself, 50)
 		!HPPercentLT(Player1, 50)
-		!Global("XA_RohmaKidnapped", "GLOBAL", 3)
+		Global("XA_RohmaKidnapped", "GLOBAL", 0)
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		GlobalLT("XA_CorwinPregnant", "GLOBAL", 2)
 	THEN
