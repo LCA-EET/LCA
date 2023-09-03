@@ -3,6 +3,11 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId("bodhiamb")
+		CreateCreatureObject("VAMPIM01",Myself,0,0,0)
+		CreateCreatureObject("VAMPIM01",Myself,0,0,0)
+		CreateCreatureObject("VAMPIM01",Myself,0,0,0)
+		CreateCreatureObject("VAMPIM01",Myself,0,0,0)
+		SmallWait(5)
 		CreateVisualEffectObject("SPDISPMA",Myself)
 		JumpToObject("XACORWIN")
 		FaceObject("XACORWIN")
@@ -17,16 +22,4 @@ THEN
 		SetGlobal("XA_CorwinBit","GLOBAL",1)
 		DestroySelf()
 		EndCutSceneMode()
-END
-
-IF
-	True()
-THEN
-	RESPONSE #100
-		CutSceneId("bodhiamb")  // Bodhi
-		DialogInterrupt(FALSE)
-		CreateCreatureObject("VAMPIM01",Myself,0,0,0)  // Vampire
-		CreateCreatureObject("VAMPIM01",Myself,0,0,0)  // Vampire
-		CreateCreatureObject("VAMPIM01",Myself,0,0,0)  // Vampire
-		CreateCreatureObject("VAMPIM01",Myself,0,0,0)  // Vampire
 END

@@ -435,7 +435,7 @@ IF ~
 THEN BEGIN XA_CorwinCleansed
 	SAY @15 /*~<CHARNAME>? I'm alive... but, how? ~*/
 	
-	IF ~~ THEN REPLY @16 /* ~Schael! Oh, thank goodness, I thought I had lost you. (You share a long embrace)~ */
+	IF ~~ THEN REPLY @16 /* ~Schael! Oh, thank goodness, I thought I had lost you.~ */
 	DO ~
 		SetGlobal("XA_CorwinCleansed", "GLOBAL", 2)
 		SetGlobal("XA_CorwinBit", "GLOBAL", 0)
@@ -575,7 +575,9 @@ IF ~~ THEN BEGIN XAA3
 END
 
 IF ~~ THEN BEGIN XAA4
-	SAY @17 /* ~I remember... dying, in your arms. W-what happened?~ */
+	SAY @96 /*  ~(You share a long and emotional embrace.)~ */
+	
+	= @17 /* ~I remember... dying, in your arms. Wh...what happened?~ */
 	
 	IF ~~ THEN REPLY @18 /* ~You died, just as you had transformed into a vampire. We resurrected you using Bodhi's heart and the magic of this temple.~ */
 	GOTO XAA5
@@ -589,7 +591,15 @@ IF ~~ THEN BEGIN XAA5
 END
 
 IF ~~ THEN BEGIN XAA6
-	SAY @21 /* ~Thank you for saving me. I love you, <CHARNAME>. (You share a passionate kiss.)~ */
+	SAY @21 /* ~Thank you for saving me. I love you, <CHARNAME>.~ */
+	
+	IF ~~ THEN REPLY @56
+	GOTO XAA6A
+END
+
+IF ~~ THEN BEGIN XAA6A
+	SAY @97 /*~(You share a passionate kiss.)~*/
+	
 	= @22 /* ~Let's get going. You can fill me in on what I've missed along the way.~ */
 	
 	IF ~~ THEN REPLY @23 /* ~Gladly, my love.~ */
@@ -601,7 +611,6 @@ IF ~~ THEN BEGIN XAA6
 	IF ~~ THEN REPLY @25 /* ~I nearly lost you once already, and I don't want to risk your life again so soon.~ */
 	GOTO XAA7
 END
-
 IF ~~ THEN BEGIN XAA7
 	SAY @0 /* ~<CHARNAME>? Are you sure you don't want me with you?~  */
 	
