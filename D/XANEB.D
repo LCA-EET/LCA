@@ -21,17 +21,6 @@ IF ~
 	EXTERN XACORWIJ XA_XANEB_1
 END
 
-IF ~
-	Global("XA_MeetNebSewer", "LOCALS", 1)
-~ THEN BEGIN XA_AlreadyMetAngry
-	SAY @8 /*~Still you persist? You've no cause to be here unless you were sent by the law! Do vengeful families cry out for my capture?~ */
-	IF ~~ THEN
-	DO ~
-		SetGlobal("XA_MeetNebSewer", "LOCALS", 2)
-	~
-	GOTO XA_MeetNebSewer3B
-END
-
 IF ~~ THEN BEGIN XA_MeetNebSewer2
 	SAY @3 /* ~Have you reason to be here? I do not recall summoning such as you. Do I... know you? I do not think it is so.~  */
 	
