@@ -4,6 +4,11 @@ THEN
 	RESPONSE #100
 		CutSceneId(Player1)
 		FadeToColor([20.0],0)
+		Wait(2)
+		SetGlobal("XA_CorwinIrenicus", "GLOBAL", 4)
+		ActionOverride("XACORWIN", FaceObject("ppireni2"))
+		ActionOverride("XAGOLSTO", FaceObject("XACORWIN"))
+		ActionOverride("XACORWIN", LeaveAreaLUA("AR1512","",[875.2200], NW))
 		Wait(1)
 		ActionOverride("Yoshimo",ChangeAIScript("yoshimox",OVERRIDE))
 		ActionOverride("Yoshimo",JumpToPoint([1275.652]))
@@ -20,10 +25,6 @@ THEN
 		ActionOverride(Player5,MakeUnselectable(1))
 		ActionOverride(Player6,MakeUnselectable(1))
 		Wait(1)
-		//ActionOverride("XACORWIN", LeaveAreaLUA("AR1516","",[762.889]))
-		ActionOverride("XACORWIN", FaceObject("ppireni2"))
-		ActionOverride("XAGOLSTO", FaceObject("XACORWIN"))
-		Wait(1)
 		LeaveAreaLUAPanic("AR1512","",[1669.1382],NW)  // Bodhi's Hunt Level 1
 		LeaveAreaLUA("AR1512","",[1669.1382],NW)  // Bodhi's Hunt Level 1
 		ActionOverride(Player2,LeaveAreaLUA("AR1512","",[1680.1373],NW))  // Bodhi's Hunt Level 1
@@ -31,8 +32,8 @@ THEN
 		ActionOverride(Player4,LeaveAreaLUA("AR1512","",[1782.1409],NW))  // Bodhi's Hunt Level 1
 		ActionOverride(Player5,LeaveAreaLUA("AR1512","",[1742.1424],NW))  // Bodhi's Hunt Level 1
 		ActionOverride(Player6,LeaveAreaLUA("AR1512","",[1676.1437],NW))  // Bodhi's Hunt Level 1
-		ActionOverride("XACORWIN", LeaveAreaLUA("AR1512","",[875.2200], NW))
-		SetGlobal("XA_CorwinIrenicus", "GLOBAL", 4)
+		
+		
 		MultiPlayerSync()
 		Wait(1)
 		FadeFromColor([20.0],0)

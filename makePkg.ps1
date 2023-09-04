@@ -21,6 +21,7 @@ Copy-Item -Path "LICENSE.md" -Destination "LoveConquersAll_EET/LCA"
 
 Copy-Item -Path "weidu.exe" -Destination "LoveConquersAll_EET/setup-LCA.exe"
 Copy-Item -Path "User Guide.pdf" -Destination "LoveConquersAll_EET/User Guide.pdf"
+Copy-Item -Path "Release Notes.md" -Destination "LoveConquersAll_EET/Release Notes.md"
 
 $7zipPath = "$env:ProgramFiles/7-Zip/7z.exe"
 
@@ -35,4 +36,5 @@ $Target = "./LoveConquersAll_EET.zip"
 
 Start-SevenZip a -mx=9 $Target $Source
 
+Remove-Item -LiteralPath "LoveConquersAll_EET" -Force -Recurse
 Get-FileHash LoveConquersAll_EET.zip -Algorithm SHA256 > SHA256.txt

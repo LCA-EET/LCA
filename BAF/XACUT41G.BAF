@@ -59,7 +59,7 @@ THEN
 		CreateCreature("ppbodhi4",[849.1020],W)  // Bodhi
 		CreateCreature("ppimoen",[991.1009],W)  // Imoen
 		CreateCreature("XAGOLSTO", [850.1080],E) // Stone Golem
-		ActionOverride("XACORWIN",ReallyForceSpell("XACORWIN",NOHOLD_PARTY))  // Yoshimo
+		Wait(1)
 		ActionOverride("Yoshimo",ReallyForceSpell("Yoshimo",NOHOLD_PARTY))  // Yoshimo
 		ActionOverride("Yoshimo",MakeUnselectable(1))
 		ActionOverride("Yoshimo",JumpToPoint([748.1064]))

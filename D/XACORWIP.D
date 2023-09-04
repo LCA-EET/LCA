@@ -17,8 +17,10 @@ IF ~
 	
 	IF ~~ THEN REPLY @95  /* ~Will do.~*/
 	DO ~
+		SetInterrupt(FALSE)
 		ChangeAIScript("XACORSCR", OVERRIDE)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+		SetInterrupt(TRUE)
 	~
 	EXIT
 END
@@ -32,10 +34,12 @@ IF ~
 		NumInPartyLT(6)
 	~ THEN REPLY @76 /* ~(Break the glass.)~*/
 	DO ~
-		JumpToPoint([810.945])
-		ChangeAIScript("XACORSCR", OVERRIDE)
+		SetInterrupt(FALSE)
 		SetGlobal("XA_CorwinIrenicus", "GLOBAL", 6)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+		//DisplayStringHead(Myself, @98)
+		JumpToPoint([810.945])
+		SetInterrupt(TRUE)
 	~
 	EXIT
 	
@@ -43,11 +47,13 @@ IF ~
 		NumInPartyGT(5)
 	~ THEN REPLY @76 /* ~(Break the glass.)~*/
 	DO ~
-		JumpToPoint([810.945])
-		ChangeAIScript("XACORSCR", OVERRIDE)
+		SetInterrupt(FALSE)
 		SetGlobal("XA_CorwinIrenicus", "GLOBAL", 5)
 		SetGlobalTimer("XA_CorwinRejoinTimer", "LOCALS", ONE_ROUND)
+		//DisplayStringHead(Myself, @99)
+		JumpToPoint([810.945])
 		Ally()
+		SetInterrupt(TRUE)
 	~
 	EXIT
 	
@@ -120,8 +126,10 @@ IF ~~ THEN BEGIN XA_CorwinRescueTalk4
 	
 	IF ~~ THEN
 	DO ~
-		ChangeAIScript("XACORSCR", OVERRIDE)
+		SetInterrupt(FALSE)
+		//ChangeAIScript("XACORSCR", OVERRIDE)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+		SetInterrupt(TRUE)
 	~
 	EXIT
 	
@@ -147,8 +155,10 @@ IF ~~ THEN BEGIN XA_CorwinRescueTalk5A
 	
 	IF ~~ THEN
 	DO ~
-		ChangeAIScript("XACORSCR", OVERRIDE)
+		SetInterrupt(FALSE)
+		//ChangeAIScript("XACORSCR", OVERRIDE)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+		SetInterrupt(TRUE)
 	~
 	EXIT
 END
@@ -161,8 +171,10 @@ IF ~~ THEN BEGIN XA_CorwinRescueTalk5B
 	= @92  /* ~Let's go.~*/
 	IF ~~ THEN
 	DO ~
-		ChangeAIScript("XACORSCR", OVERRIDE)
+		SetInterrupt(FALSE)
+		//ChangeAIScript("XACORSCR", OVERRIDE)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+		SetInterrupt(TRUE)
 	~
 	EXIT
 END

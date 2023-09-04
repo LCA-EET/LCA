@@ -259,6 +259,8 @@ END
 IF ~~ THEN BEGIN XA_AreaTest
 	SAY @585
 	
+	
+	
 	IF ~~ THEN REPLY @633
 	DO ~
 		ActionOverride(Player1,LeaveAreaLUA("AR1508","",[600.400],NE))
@@ -4064,6 +4066,14 @@ END
 
 IF ~~ THEN BEGIN XA_Menu_StartCutscene
 	SAY @15 /*  ~Of course. Which cutscene do you want to start?~ */
+	
+	IF ~~ THEN REPLY @639
+	DO ~
+		SetGlobal("AsylumPlot","GLOBAL",54)
+		StartCutSceneMode()
+		StartCutSceneEx("Cut41l",FALSE)
+	~
+	EXIT
 	
 	IF ~~ THEN REPLY @632
 	DO ~

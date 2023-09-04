@@ -1,17 +1,15 @@
 //Note: Variable Key Max Length Appears to be 32.
-/*
-//{ 00: New Script Iteration
+
+//{ 00: Blocking Actions
 	IF
-		InParty(Myself)
+		Global("XA_CorwinIrenicus", "GLOBAL", 4)
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
-			//DisplayStringHead(Myself, ~DEBUG: 00-00~)
-			SetInterrupt(TRUE)
-			Continue()
+			//DisplayStringHead(Myself, ~CI4 Script Blocking~)
+			NoAction()
 	END
 //}
-*/
+
 //{ 01: Amulet / Letter on Party Join
 	//{ Include the letter sent by the Player
 	IF
@@ -102,7 +100,7 @@ END
 //{ 03: Mark as In-Party in BG2 (For later summoning via the fate-spirit)
 IF
 	InParty(Myself)
-	!Global("XA_CorwinInPartyBG2", "GLOBAL", 1)
+	GlobalLT("XA_CorwinInPartyBG2", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CorwinInPartyBG2", "GLOBAL", 1)
@@ -205,7 +203,7 @@ END
 
 //{	07: Rejoin processing - triggered in XACORWIN.D and XACORWIP.D
 IF 
-	!InParty(Myself)
+	//!InParty(Myself)
 	Global("XA_CorwinRejoinProcessed", "GLOBAL", 1)
 THEN 
 	RESPONSE #100
@@ -216,8 +214,9 @@ THEN
 		SetGlobal("XA_CorwinRepWarning", "GLOBAL", 0)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 2)
 		//DisplayStringHead(Myself, ~DEBUG: 07-00~)
-		SetInterrupt(TRUE)
 		JoinParty()
+		SetInterrupt(TRUE)
+		
 END
 //}
 

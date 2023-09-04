@@ -9006,10 +9006,6 @@ IF ~~ THEN BEGIN XA_CorwinIrenicus_Sleep
 	= @1771 /*~.....~*/
 	IF ~~ THEN
 	DO ~
-		ChangeAIScript("XACORIRE", OVERRIDE)
-		ChangeAIScript("", DEFAULT)
-		SetLeavePartyDialogFile()
-		LeaveParty()
 		StartCutSceneMode()
 		StartCutScene("XA41CS02")
 	~

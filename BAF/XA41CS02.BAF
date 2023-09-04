@@ -3,6 +3,8 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
+		ActionOverride("XACORWIN", SetLeavePartyDialogFile())
+		ActionOverride("XACORWIN", LeaveParty())
 		ActionOverride("XACORWIN", SetSequence(SEQ_DIE))
 		Wait(1)
 		DisplayStringHead(Myself, @0)
