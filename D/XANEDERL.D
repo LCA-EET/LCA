@@ -241,8 +241,15 @@ IF ~
 	Global("XA_NederlokCorwin", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinGreeting2
 	SAY @73 /* ~Captain Corwin - I'll see you at the debriefing.~ */
-	IF ~~ THEN 
-	EXIT
+	
+	IF ~
+		GlobalGT("XA_NebDead", "GLOBAL", 0)
+		GlobalLT("XA_ToldNederlokNeb", "GLOBAL", 1)
+	~ THEN 
+	DO ~
+		SetGlobal("XA_ToldNederlokNeb", "GLOBAL", 1)
+	~
+	EXTERN XACORWIJ XA_NebNederlokSewers
 END
 
 IF ~
@@ -283,6 +290,17 @@ IF ~
 	~ THEN REPLY @24 /* ~Nothing at the moment.~ */
 	GOTO XA_EndChat
 	
+	IF ~
+		See("XACORWIN")
+		IsValidForPartyDialogue("XACORWIN")
+		GlobalGT("XA_NebDead", "GLOBAL", 0)
+		GlobalLT("XA_ToldNederlokNeb", "GLOBAL", 1)
+	~ THEN 
+	DO ~
+		SetGlobal("XA_ToldNederlokNeb", "GLOBAL", 1)
+	~
+	EXTERN XACORWIJ XA_NebNederlokSewers
+	
 END
 
 IF ~~ THEN BEGIN XA_GiveHint
@@ -313,6 +331,34 @@ IF ~~ THEN BEGIN XA_GiveHint
 		Global("XA_DecodedManifest", "GLOBAL", 1)
 	~ THEN 
 	GOTO XA_GiveHint_LookForWitness
+END
+
+IF ~~ THEN BEGIN XA_NebNederlokSewers2
+	SAY @125 /*~The sewers, you say? That would explain the smell...~*/
+	
+	IF ~~ THEN
+	EXTERN XACORWIJ XA_NebNederlokSewers3
+END
+
+IF ~~ THEN BEGIN XA_NebNederlokSewers4
+	SAY @126 /*~It's nothing. I'm surprised the gnome had the audacity to risk returning to the city. The world is a safer place without him. Excellent work, Captain.~*/
+	
+	IF ~~ THEN
+	EXTERN XACORWIJ XA_NebNederlokSewers5
+END
+
+IF ~~ THEN BEGIN XA_NebNederlokSewers6
+	SAY @127 /*~And Captain.~*/
+	
+	IF ~~ THEN
+	EXTERN XACORWIJ XA_NebNederlokSewers7
+END
+
+IF ~~ THEN BEGIN XA_NebNederlokSewers8
+	SAY @128 /*~You know that I appreciate your willingness to get your hands dirty... but get yourself cleaned up. I can't have one of the Fist's finest officers smelling like a latrine.~*/
+	
+	IF ~~ THEN
+	EXTERN XACORWIJ XA_NebNederlokSewers9
 END
 
 IF ~~ THEN BEGIN XA_GiveHint_LookForWitness
@@ -833,6 +879,7 @@ IF ~~ THEN BEGIN XA_WYRM_8
 		GlobalGT("XA_NebDead", "GLOBAL", 0)
 	~ THEN
 	DO ~
+		SetGlobal("XA_ToldNederlokNeb", "GLOBAL", 1)
 		SetGlobal("XA_BenceWyrm", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_NebNederlok 
@@ -908,7 +955,7 @@ IF ~~ THEN BEGIN XA_NEDERL_SlaverPlot4
 		GlobalGT("XA_NebDead", "GLOBAL", 0)
 	~ THEN
 	DO ~
-		SetGlobal("XA_ToldNederlokNeb", "LOCALS", 1)
+		SetGlobal("XA_ToldNederlokNeb", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_NebNederlok3A
 END

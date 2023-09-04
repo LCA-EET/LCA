@@ -831,7 +831,7 @@ I received the shipping manifests from the harbor master, but they are encoded a
 @827 = ~Most've been accepting, even welcoming. There were just a few loudmouths, but they've been straightened out.~
 @828 = ~That's good to hear. Before I forget — Duke Eltan's tied up with some unrelated business, but he wanted me to tell you that he's glad that you and <CHARNAME> are back, and that he'll see you at the debriefing.~
 @829 = ~Thank you sir. I'll leave you to your work.~ 
-@830 = ~~
+@830 = ~ I'll be fine. People like him are reminder to us that there's true, irredeemable evil in the world.~
 @831 = ~Most've welcomed our hero with open arms. (She smiles at you.)~
 @832 = ~Very good, Captain. I'll see you at the debriefing.~
 @833 = ~Let's pay this Winston Ventures company a visit. We might be able to find a way to decode the manifests.~
@@ -1587,14 +1587,14 @@ You and Schael shared a tender moment; it seems that the two of you are still de
 @1570 = ~She did. She was bouncing with energy, so naturally I asked her what was going on ... It didn't take long for her to spill the beans.~
 @1571 = ~Thanks, Schael.~
 @1572 = ~The two of you will do great as parents. Care for a bit of advice?~
-@1573 = ~~
+@1573 = ~Sir, pardon the interruption, but we discovered the fugitive Neb hiding in the sewers beneath the city. I'm pleased to inform you that he's been brought to justice.~
 @1574 = ~Certainly.~
 @1575 = ~Not right now — we need to get moving. I'll pick your brain over the coming days and weeks, I'm sure.~
 @1576 = ~Sounds good.~ 
 @1577 = ~~
 @1578 = ~Hah, I'm not surprised.~
 @1579 = ~Somehow, I don't think she'd last long in a Flaming Fist interrogation.~
-@1580 = ~~
+@1580 = ~Sir?~
 @1581 = ~The first few months with a newborn are always rough. It's easier to take care of your baby and to be a loving parent when you are in a good place, mentally, physically and emotionally. You and Aerie will need to work together to share the load.~
 @1582 = ~So, we need to practice good self-care, in other words.~
 @1583 = ~Right. Also, you'll need to spend a lot of time cuddling and holding your baby. It helps a lot to read to your baby, too. Cuddling will make them feel loved and secure, and reading to them will help them to understand language.~
@@ -1606,7 +1606,7 @@ You and Schael shared a tender moment; it seems that the two of you are still de
 Major Corwin offered me some valuable parenting advice, which I gladly accepted.~ 
 @1589 = ~Two letters. One to the Dukes, and one to my father. I need to let my family know that we're fine.~
 @1590 = ~I need an additional letter delivered ... My family needs to know that we're fine.~
-@1591 = ~~
+@1591 = ~Thank you, sir.~
 @1592 = ~Of course.~
 @1593 = ~What do you suggest we do?~
 @1594 = ~This town might have a message courier we can use. Let's have a look around.~
@@ -1627,7 +1627,7 @@ Schael needs to send a message to the Dukes to inform them of our progress thus 
 @1607 = ~Mommy, why didn't you come home? Why weren't you there to protect us?~
 @1608 = ~What ... what do you mean? What happened!~
 @1609 = ~They came... they killed grandpa and then they killed me, mommy... You killed me!~
-@1610 = ~~
+@1610 = ~Um... yes sir. Sorry, sir.~
 @1611 = ~Schael, calm yourself! Rohma is safe with your father at the Ducal palace. Whatever this thing is, it isn't your daughter.~
 @1612 = ~You wanted us to die, so that you could start a new family with <CHARNAME>! You never loved me!~
 @1613 = ~N-no, Rohma! I love you more than anything! Oh, gods, no...~
@@ -1639,15 +1639,15 @@ Schael needs to send a message to the Dukes to inform them of our progress thus 
 @1619 = ~Unbelievable, <CHARNAME>! If you really can't keep it in your pants during a time like this, then fine! Enjoy your whore — we're through.~
 @1620 = ~You know that I love your playfulness and sense of humor, but this really isn't the time. Let's give the girl a bit of money so that she doesn't need to work the streets, then get on with our mission.~
 @1621 = ~(She reaches up and touches the scar left behind from Bodhi's bite.)~
-@1622 = ~~
+@1622 = ~Thank you, sir.~
 @1623 = ~Are you alright?~
 @1624 = ~I don't approve of this, but I think there's more to this woman than meets the eye. Go with her, and watch your back.~  
 @1625 = ~You know I don't approve of this... but there's something about her. She may have some important information that she'll only disclose in private. Go with her, but watch your back.~
 @1626 = ~Illasera's dead. <CHARNAME> and I saw to that after she kidnapped my daughter.~
 @1627 = ~Something's not right here.~ [BD62258]
 @1628 = ~She is... and neither I, nor the Dukes, nor the Flaming Fist will allow the Five to threaten Baldur's Gate or its citizens again.~
-@1629 = ~~
-@1630 = ~~
+@1629 = ~We better let Marshal Nederlok know what happened here. He'll be in his office back at headquarters. Let's go, love.~
+@1630 = ~We better let Marshal Nederlok know what happened here. He'll be in his office back at headquarters. Let's go.~
 @1631 = ~I won't be party to this madness any longer. If you ever clean up your act, you can find me in the Athkatla magistrate.~
 @1632 = ~She's right. If we can find a way to turn him, he may prove a valuable ally.~
 @1633 = ~<CHARNAME> — we may be able to use this situation to our advantage. If we can turn Solaufein instead of killing him, he could prove a valuable ally.~
@@ -1813,4 +1813,6 @@ I proposed to Schael, and she accepted! We're to be married!~
 @1792 = ~Aerie — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] 
 @1793 = ~Anomen — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] 
 @1794 = ~Viconia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] 
-@1795 = ~Imoen — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] 
+@1795 = ~Imoen — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544]
+@1796 = ~Long Arm of the Law
+Marshal Nederlok of the Baldur's Gate Flaming Fist was pleased to hear of Neb's demise in the sewers beneath the city.~

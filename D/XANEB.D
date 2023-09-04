@@ -39,6 +39,15 @@ IF ~~ THEN BEGIN XA_MeetNebSewer3A
 		Enemy()
 	~ 
 	EXIT
+	
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+	~ THEN
+	DO ~
+		SetGlobal("XA_NebFight", "GLOBAL", 1)
+		Enemy()
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN XA_MeetNebSewer3B
@@ -51,6 +60,15 @@ IF ~~ THEN BEGIN XA_MeetNebSewer3B
 		Enemy()
 	~ 
 	EXIT
+	
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+	~ THEN
+	DO ~
+		SetGlobal("XA_NebFight", "GLOBAL", 1)
+		Enemy()
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN XA_XANEB_2
@@ -60,6 +78,7 @@ IF ~~ THEN BEGIN XA_XANEB_2
 	
 	IF ~~ THEN
 	DO ~
+		SetGlobal("XA_NebRohma", "GLOBAL", 1)
 		SetGlobal("XA_NebFight", "GLOBAL", 1)
 		Enemy()
 	~
@@ -67,5 +86,9 @@ IF ~~ THEN BEGIN XA_XANEB_2
 	
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-	~ THEN EXTERN XACORWIJ XA_XANebFight
+	~ THEN 
+	DO ~
+		SetGlobal("XA_NebRohma", "GLOBAL", 1)
+	~
+	EXTERN XACORWIJ XA_XANebFight
 END

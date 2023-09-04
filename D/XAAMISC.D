@@ -3723,6 +3723,7 @@ APPEND NEB
 		= @51 /*   ~I don't know how you found me, but I promise that when I'm done with you, I'll be sure to pay her a visit!~*/
 		IF ~~ THEN
 		DO ~
+			SetGlobal("XA_NebRohma", "GLOBAL", 1)
 			SetGlobal("XA_NebFight", "GLOBAL", 1)
 			Enemy()
 		~

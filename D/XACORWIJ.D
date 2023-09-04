@@ -6340,15 +6340,59 @@ IF ~
 	=@211 /*~What kind of monster could murder one child, let alone dozens?~*/
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_NebRohma", "GLOBAL", 1)
 	~ 
 	THEN REPLY @203 /* ~The worst kind. (You hold her hands in yours) Are you alright, love?~ */
 	GOTO XAA60
 	
 	IF ~
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_NebRohma", "GLOBAL", 1)
 	~ 
 	THEN REPLY @204 /* ~The worst kind. Are you alright, Schael?~ */
 	GOTO XAA60
+	
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_NebRohma", "GLOBAL", 1)
+	~ 
+	THEN REPLY @203 /* ~The worst kind. (You hold her hands in yours) Are you alright, love?~ */
+	GOTO XAA60A
+	
+	IF ~
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_NebRohma", "GLOBAL", 1)
+	~ 
+	THEN REPLY @204 /* ~The worst kind. Are you alright, Schael?~ */
+	GOTO XAA60A
+END
+
+IF ~~ THEN BEGIN XAA60A
+	SAY @830 /* ~People like him serve as a reminder that there's true, irredeemable evil in the world. I'll be fine.~*/
+	
+	IF ~
+		!Global("XA_ReturnToBG", "GLOBAL", 1)
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN
+	GOTO XAA62A
+	
+	IF ~
+		!Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN
+	GOTO XAA61A
+	
+	IF ~
+		Global("XA_ReturnToBG", "GLOBAL", 1)
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN
+	GOTO XAA62B
+	
+	IF ~
+		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN
+	GOTO XAA61B
 END
 
 IF ~~ THEN BEGIN XAA60
@@ -6383,8 +6427,18 @@ IF ~~ THEN BEGIN XAA61
 	SAY @208 /* ~You're right...*/
 	
 	= @212 /* ~(She calms down.)~ */
+		
+	IF ~~ THEN 
+	GOTO XAA61A
 	
-	= @213 /* ~Let's get going, love.~ */
+	IF ~
+		Global("XA_ReturnToBG", "GLOBAL", 1)
+	~ 
+	GOTO XAA61B
+END
+
+IF ~~ THEN BEGIN XAA61A
+	SAY @213 /*~Let's go, love.~*/
 	
 	IF ~~ THEN
 	DO ~
@@ -6394,12 +6448,43 @@ IF ~~ THEN BEGIN XAA61
 	EXIT
 END
 
+IF ~~ THEN BEGIN XAA61B
+	SAY @1629 /*~We better let Marshal Nederlok know what happened here. Let's go, love.~*/
+	
+	IF ~~ THEN
+	DO ~
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_NebDead", "GLOBAL", 2)
+	~
+	EXIT
+END
 IF ~~ THEN BEGIN XAA62
 	SAY @208 /* ~You're right...*/
 	
 	= @212 /* ~(She calms down.)~ */
 	
-	= @209 /* ~Let's get going.~ */
+	IF ~~ THEN 
+	GOTO XAA62A
+	
+	IF ~
+		Global("XA_ReturnToBG", "GLOBAL", 1)
+	~ 
+	GOTO XAA62B
+END
+
+IF ~~ THEN BEGIN XAA62A
+	SAY @209 /* ~Let's get going.~ */
+	
+	IF ~~ THEN
+	DO ~
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_NebDead", "GLOBAL", 2)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XAA62B
+	SAY @1630 /*  ~We better let Marshal Nederlok know what happened here. He'll be in his office back at headquarters. Let's go.~ */
 	
 	IF ~~ THEN
 	DO ~
@@ -8475,6 +8560,7 @@ IF ~~ THEN BEGIN XA_NebFight
 	
 	IF ~~ THEN
 	DO ~
+		SetGlobal("XA_NebRohma", "GLOBAL", 1)
 		SetGlobal("XA_NebFight", "GLOBAL", 1)
 		ActionOverride("neb", Enemy())
 	~
@@ -8487,6 +8573,7 @@ IF ~~ THEN BEGIN XA_XANebFight
 	
 	IF ~~ THEN
 	DO ~
+		SetGlobal("XA_NebRohma", "GLOBAL", 1)
 		SetGlobal("XA_NebFight", "GLOBAL", 1)
 		ActionOverride("XANEB", Enemy())
 	~
@@ -9179,6 +9266,45 @@ IF ~~ THEN BEGIN XA_NEDERL_SlaverPlot3
 	
 	IF ~~ THEN
 	EXTERN XANEDERL XA_NEDERL_SlaverPlot4
+END
+
+IF ~~ THEN BEGIN XA_NebNederlokSewers
+	SAY @1573 /*~Sir, pardon the interruption, but we discovered the fugitive Neb hiding in the sewers beneath the city. I'm pleased to inform you that he's been brought to justice.~*/
+
+	IF ~~ THEN
+	EXTERN XANEDERL XA_NebNederlokSewers2
+END
+
+IF ~~ THEN BEGIN XA_NebNederlokSewers3
+	SAY @1580 /*Sir?*/
+	
+	IF ~~ THEN
+	EXTERN XANEDERL XA_NebNederlokSewers4
+END
+
+IF ~~ THEN BEGIN XA_NebNederlokSewers5
+	SAY @1622 /*~Thank you, sir.~*/
+	
+	IF ~~ THEN
+	EXTERN XANEDERL XA_NebNederlokSewers6
+END
+
+IF ~~ THEN BEGIN XA_NebNederlokSewers7
+	SAY @1580 /*~Sir?~*/
+	
+	IF ~~ THEN
+	EXTERN XANEDERL XA_NebNederlokSewers8
+END
+
+IF ~~ THEN BEGIN XA_NebNederlokSewers9
+	SAY @1610 /*~Um... yes sir. Sorry, sir.~*/
+	
+	IF ~~ THEN
+	DO ~
+		AddJournalEntry(@1796, INFO)
+		AddExperienceParty(100000)
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN XA_NebNederlok
