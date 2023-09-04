@@ -654,7 +654,8 @@
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
 		~
-		@57 /* ~You mean to tell me you set them loose? Did you stop for one second to think of what they might do in revenge? Your shortsightedness led to the murder of the daughter of one of the Grand Dukes, with <CHARNAME> framed for the crime! <PRO_HESHE> was nearly executed!~*/
+		@57 /* ~Wait — You mean to tell me that after all of that, you set them loose?~*/
+		= @181 /* ~Did you stop for one second to think of what they might do in revenge? Your shortsightedness led to the murder of the daughter of one of the Grand Dukes, with an innocent <PRO_MANWOMAN> framed for the crime! <CHARNAME> was nearly executed!~*/
 		== SUDEMIN
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")

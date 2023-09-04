@@ -1840,9 +1840,13 @@ END
 	//{ Neb Killed While Corwin in Party 
 	IF
 		ActionListEmpty()
+		!ActuallyInCombat()
 		Global("XA_NebFight", "GLOBAL", 1)
-		Dead("Neb")
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+		GlobalLT("XA_NebDead", "GLOBAL", 1)
+		OR(2)
+			Dead("Neb")
+			Dead("XANEB")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)

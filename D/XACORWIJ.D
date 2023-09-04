@@ -6388,6 +6388,7 @@ IF ~~ THEN BEGIN XAA61
 	
 	IF ~~ THEN
 	DO ~
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		SetGlobal("XA_NebDead", "GLOBAL", 2)
 	~
 	EXIT
@@ -6402,6 +6403,7 @@ IF ~~ THEN BEGIN XAA62
 	
 	IF ~~ THEN
 	DO ~
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		SetGlobal("XA_NebDead", "GLOBAL", 2)
 	~
 	EXIT
@@ -7377,8 +7379,6 @@ END
 
 IF ~~ THEN BEGIN XAA21
 	SAY @42 /* ~Irenicus needs to be stopped. While he is alive no one is safe, and that includes Rohma. Being at your side, love, is the best way I can protect her, and Baldur's Gate.~ */
-	
-	= @1462 /* ~(You share a warm embrace, and steel yourself for the battle ahead.)~ */
 	
 	IF ~~ THEN REPLY @43 /* ~Thank you, my love.*/
 	GOTO XA_P33Transitions

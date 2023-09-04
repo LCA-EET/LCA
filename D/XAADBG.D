@@ -259,7 +259,17 @@ END
 IF ~~ THEN BEGIN XA_AreaTest
 	SAY @585
 	
-	
+	IF ~~ THEN REPLY @641
+	DO ~
+		SetGlobal("XA_ReturnToBG", "GLOBAL", 1)
+		ActionOverride(Player1,LeaveAreaLUA("BG0225","",[2090.1560],NE))
+		ActionOverride(Player2,LeaveAreaLUA("BG0225","",[2090.1560],NE))
+		ActionOverride(Player3,LeaveAreaLUA("BG0225","",[2090.1560],NE))
+		ActionOverride(Player4,LeaveAreaLUA("BG0225","",[2090.1560],NE))
+		ActionOverride(Player5,LeaveAreaLUA("BG0225","",[2090.1560],NE))
+		ActionOverride(Player6,LeaveAreaLUA("BG0225","",[2090.1560],NE))
+	~
+	EXIT
 	
 	IF ~~ THEN REPLY @633
 	DO ~
