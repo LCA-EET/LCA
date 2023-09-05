@@ -24,3 +24,12 @@ THEN
 		ActionOverride("RAMAZITH", DestroySelf())
 		Continue()
 END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("TARTUSSE")
+THEN
+	RESPONSE #100
+		ActionOverride("TARTUSSE", DestroySelf())
+		Continue()
+END

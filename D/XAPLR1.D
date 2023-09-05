@@ -81,6 +81,20 @@ APPEND ~PLAYER1~
 	IF ~~ THEN BEGIN XA_AdvanceTime
 		SAY @177
 		
+		IF ~~ THEN REPLY @184
+		DO ~
+			//ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
+			AdvanceTime(ONE_HOUR)
+		~
+		GOTO XA_ChangeDone
+		
+		IF ~~ THEN REPLY @185
+		DO ~
+			//ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
+			AdvanceTime(TWO_HOURS)
+		~
+		GOTO XA_ChangeDone
+		
 		IF ~~ THEN REPLY @172
 		DO ~
 			//ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
@@ -136,8 +150,8 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN REPLY @170 /*~I understand the risks. Proceed.~*/
 		DO ~
-			ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
-			SetGlobal("XAAssist","GLOBAL",0)
+			//ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
+			SetGlobal("XAAssist", "GLOBAL", 2)
 			CreateCreature("XAADBG", [-1.-1], N)
 			SetGlobal("XA_DebugInit","GLOBAL",1)
 		~
@@ -164,8 +178,8 @@ APPEND ~PLAYER1~
 		SAY @165 /* ~Thanks for playing!~ */
 		IF ~~ THEN 
 		DO ~
-			ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
-			SetGlobal("XAAssist","GLOBAL",0)
+			//ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
+			SetGlobal("XAAssist", "GLOBAL", 2)
 		~
 		EXIT
 	END
@@ -457,6 +471,40 @@ APPEND ~PLAYER1~
 	END
 	
 	IF ~
+		Global("XA_SleepBG", "GLOBAL", 1)
+	~ THEN BEGIN XA_ExplicitModCheck_RBG
+		SAY @186  /* ~(You make your way to your room and get comfortable while you wait for Schael to arrive...)~ */
+		
+		IF ~
+			Global("XA_CorwinSex_3", "GLOBAL", 1)
+		~
+		THEN
+		DO ~
+			SetGlobal("XA_SleepBG", "GLOBAL", 0)
+			StartCutSceneMode()
+			StartCutScene("XAEX03EX")
+		~
+		EXIT
+		
+		IF ~
+			Global("XA_CorwinSex_3", "GLOBAL", 1)
+			Gender(Player1, MALE)
+		~
+		THEN
+		DO ~
+			SetGlobal("XA_SleepBG", "GLOBAL", 0)
+			StartCutSceneMode()
+			StartCutScene("XAEXPL03")
+		~
+		EXIT
+		
+		IF ~
+			GlobalLT("XA_ExplicitModActive", "GLOBAL", 1)
+		~ THEN
+		GOTO XA_NeedExplicitMod
+	END
+	
+	IF ~
 		OR(2)
 			Global("XA_SleepInn", "GLOBAL", 1)
 			Global("XA_SexDebug", "GLOBAL", 1)
@@ -474,7 +522,7 @@ APPEND ~PLAYER1~
 		~ THEN
 		DO ~
 			StartCutSceneMode()
-			StartCutScene("XACS1EX")
+			StartCutScene("XAEX01EX")
 		~
 		EXIT
 		
@@ -484,7 +532,7 @@ APPEND ~PLAYER1~
 		THEN
 		DO ~
 			StartCutSceneMode()
-			StartCutScene("XACS2EX")
+			StartCutScene("XAEX02EX")
 		~
 		EXIT
 		
@@ -520,6 +568,7 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN
 		DO ~
+			SetGlobal("XA_SleepBG", "GLOBAL", 0)
 			SetGlobal("XA_SleepInn", "GLOBAL", 0)
 		~
 		EXIT
@@ -540,6 +589,16 @@ APPEND ~PLAYER1~
 		DO ~
 			StartCutSceneMode()
 			StartCutScene("XAEX02EX")
+		~
+		EXIT
+		
+		IF ~
+			Global("XA_CorwinSex_3", "GLOBAL", 1)
+		~
+		THEN
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XAEX03EX")
 		~
 		EXIT
 	END

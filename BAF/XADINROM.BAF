@@ -6,5 +6,5 @@ THEN
 		FadeToColor([30.0],0)
 		Wait(3)
 		TextScreen("XADINROM")
-		StartCutscene("XADINNER")
+		StartCutscene("XADINN00")
 END

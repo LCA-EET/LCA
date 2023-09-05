@@ -370,8 +370,21 @@ IF ~
 	Global("XA_CorwinWithFamily", "GLOBAL", 1)
 	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	IsGabber(Player1)
+	GlobalLT("XA_CorwinSex_3", "GLOBAL", 7)
 ~ THEN BEGIN XA_SeeYouLater
 	SAY @38 /* ~(She whispers in your ear.) I'll come see you in your room tonight, lover.~ */
+	
+	IF ~~ THEN EXIT
+END
+
+IF ~
+	AreaCheck("XAHOME")
+	Global("XA_CorwinWithFamily", "GLOBAL", 1)
+	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	IsGabber(Player1)
+	Global("XA_CorwinSex_3", "GLOBAL", 7)
+~ THEN BEGIN XA_SeeYouLater2
+	SAY @100 /* ~I'll see you at the debriefing, love.~ */
 	
 	IF ~~ THEN EXIT
 END

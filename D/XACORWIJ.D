@@ -4823,7 +4823,7 @@ IF ~
 	
 	IF ~~ THEN REPLY @1637 /* ~Lead the way.~ */
 	DO ~
-		SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 0)
+		SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 2)
 		StartCutSceneMode()
 		StartCutscene("XAGOHOME")
 	~
@@ -4836,7 +4836,7 @@ IF ~~ THEN BEGIN XA_SeeFamilyNow
 	IF ~~ THEN REPLY @1639 /* ~See you tomorrow, then.~ */
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -1)
-		SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 0)
+		SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 2)
 		SetGlobal("XA_CorwinWithFamily", "GLOBAL", 1)
 		SetGlobal("XA_CorwinMetFamily", "GLOBAL", 2)
 		SetLeavePartyDialogFile()
@@ -4849,7 +4849,7 @@ IF ~~ THEN BEGIN XA_SeeFamilyNow
 	
 	IF ~~ THEN REPLY @1637 /* ~Lead the way.~ */
 	DO ~
-		SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 0)
+		SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 2)
 		StartCutSceneMode()
 		StartCutscene("XAGOHOME")
 	~

@@ -4,6 +4,7 @@ THEN
 	RESPONSE #100
 		CutSceneId(Player1)
 		SetGlobal("XA_CorwinSex_3", "GLOBAL", 7)
+		SetGlobal("XA_SleepBG", "GLOBAL", 0)
 		IncrementGlobal("XA_TimesHadSex", "GLOBAL", 1)
 		AddJournalEntry(@0, INFO)
 		AddXPObject(Player1, 150000)
