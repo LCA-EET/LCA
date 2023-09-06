@@ -640,3 +640,15 @@
 @639 = ~Cut41L~
 @640 = ~Change Corwin script to XACORIRE.~
 @641 = ~BG0225 (Return to BG)~
+@642 = ~Global("XA_BackToBG_Imoen", "GLOBAL", 1)~
+@643 = ~Global("XA_BackToBG_Jaheira", "GLOBAL", 1)~
+@644 = ~Global("XA_BackToBG_Viconia", "GLOBAL", 1)~
+@645 = ~Global("XA_BackToBG_Jan", "GLOBAL", 1)~
+@646 = ~Global("XA_BackToBG_Aerie", "GLOBAL", 1)~
+@647 = ~Global("XA_BackToBG_Nalia", "GLOBAL", 1)~
+@648 = ~Global("XA_BackToBG_Korgan", "GLOBAL", 1)~
+@649 = ~Global("XA_BackToBG_Anomen", "GLOBAL", 1)~
+@650 = ~Global("XA_BackToBG_Dorn", "GLOBAL", 1)~
+@651 = ~Global("XA_BackToBG_Valygar", "GLOBAL", 1)~
+@652 = ~Global("XA_BackToBG_Neera", "GLOBAL", 1)~
+@653 = ~Global("XA_BackToBG_Valygar", "GLOBAL", 1)~

@@ -21,6 +21,7 @@ END
 
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
+	Dead("BART9")
 	Global("XA_NPCSpawnBT0116", "BG0116", 0)
 THEN 
 	RESPONSE #100
@@ -31,11 +32,32 @@ END
 
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Dead("BART9")
+	Global("XA_NPCSpawnBT0116", "BG0116", 0)
+THEN 
+	RESPONSE #100
+		SetGlobal("XA_NPCSpawnBT0116", "BG0116", 1)
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	Dead("WAITER")
 	Global("XA_NPCSpawnW0116", "BG0116", 0)
 THEN 
 	RESPONSE #100
 		SetGlobal("XA_NPCSpawnW0116", "BG0116", 1)
 		CreateCreature("WAITER", [616.981], N)
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Dead("WAITER")
+	Global("XA_NPCSpawnW0116", "BG0116", 0)
+THEN 
+	RESPONSE #100
+		SetGlobal("XA_NPCSpawnW0116", "BG0116", 1)
 		Continue()
 END
 

@@ -3358,6 +3358,78 @@ END
 IF ~~ THEN BEGIN XA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
 	
+	IF ~~ THEN REPLY @642
+	DO ~
+		SetGlobal("XA_BackToBG_Imoen", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @643
+	DO ~
+		SetGlobal("XA_BackToBG_Jaheira", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @644
+	DO ~
+		SetGlobal("XA_BackToBG_Viconia", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @645
+	DO ~
+		SetGlobal("XA_BackToBG_Jan", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @646
+	DO ~
+		SetGlobal("XA_BackToBG_Aerie", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @647
+	DO ~
+		SetGlobal("XA_BackToBG_Nalia", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @648
+	DO ~
+		SetGlobal("XA_BackToBG_Korgan", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @649
+	DO ~
+		SetGlobal("XA_BackToBG_Anomen", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @650
+	DO ~
+		SetGlobal("XA_BackToBG_Dorn", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @651
+	DO ~
+		SetGlobal("XA_BackToBG_Valygar", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @652
+	DO ~
+		SetGlobal("XA_BackToBG_Neera", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @653
+	DO ~
+		SetGlobal("XA_BackToBG_Valygar", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
 	IF ~~ THEN REPLY @636
 	DO ~
 		SetGlobal("XA_TimesHadSex", "GLOBAL", 0)

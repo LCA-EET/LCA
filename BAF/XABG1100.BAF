@@ -7,6 +7,7 @@ THEN
 		Continue()
 END
 
+/*
 IF 
 	Global("XA_ReturnToBG", "GLOBAL", 1)
 	!Global("XA_Door0601Deactivated", "GLOBAL", 1) //Door to Seven Suns
@@ -26,3 +27,4 @@ THEN
 		SetGlobal("XA_Door1113Deactivated", "GLOBAL", 1)
 		Continue()
 END
+*/

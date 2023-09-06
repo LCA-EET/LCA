@@ -2090,7 +2090,7 @@ END
 		ActionListEmpty()
 		InParty("Sarevok")
 		InParty(Myself)
-		GlobalLT("XA_CorwinComplainSarevok", "GLOBAL", 0)
+		GlobalLT("XA_CorwinComplainSarevok", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)

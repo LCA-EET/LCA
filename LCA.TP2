@@ -365,63 +365,12 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 //}
 
 //{ Modifications to Existing Areas
+
+	//{ Trademeet
 	COPY_EXISTING ~AR2000.ARE~ ~override~
-	/*
-	LPF ALTER_AREA_REGION
-		INT_VAR
-		type			= 2
-		info_point		= 0
-		STR_VAR
-		region_name		= ~StatueInfo~
-		region_script	= ~XASTAT01~
-	END
+	//}
 	
-	LPF ALTER_AREA_REGION
-		INT_VAR
-		type			= 2
-		info_point		= 0
-		STR_VAR
-		region_name		= ~StatueInfo2~
-		region_script	= ~XASTAT02~
-	END
-
-	LPF ALTER_AREA_REGION
-		INT_VAR
-		type			= 2
-		info_point		= 0
-		STR_VAR
-		region_name		= ~StatueInfo3~
-		region_script	= ~XASTAT03~
-	END
-
-	LPF ALTER_AREA_REGION
-		INT_VAR
-		type			= 2
-		info_point		= 0
-		STR_VAR
-		region_name		= ~StatueInfo4~
-		region_script	= ~XASTAT04~
-	END
-	
-	LPF ALTER_AREA_REGION
-		INT_VAR
-		type			= 2
-		info_point		= 0
-		STR_VAR
-		region_name		= ~StatueInfo5~
-		region_script	= ~XASTAT05~
-	END
-
-	LPF ALTER_AREA_REGION
-		INT_VAR
-		type			= 2
-		info_point		= 0
-		STR_VAR
-		region_name		= ~StatueInfo6~
-		region_script	= ~XASTAT06~
-	END
-	*/
-	
+	//{ Bodhi's Hideout
 	COPY_EXISTING ~AR0801.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
@@ -464,7 +413,9 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 		fj_name = ~Corwin Trigger2~
 		fj_reg_script = ~XA801T0~
 	END
+	//}
 	
+	//{ Corwin's House (SE Baldur's Gate)
 	COPY_EXISTING ~BG1316.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
@@ -486,7 +437,9 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 		fj_name = ~XA1316FP~
 		fj_reg_script = ~XA1316FP~
 	END
-
+	//}
+	
+	//{ Elfsong Level 2
 	COPY_EXISTING ~BG0706.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
@@ -508,7 +461,9 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 		fj_name = ~XAP0706~
 		fj_reg_script = ~XAP0706~
 	END
-
+	//}
+	
+	//{ Baldur's Gate Docks
 	COPY_EXISTING ~BG1200.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
@@ -545,7 +500,9 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 		fj_structure_type = region
 		fj_name = ~XA0616B~
 	END
-
+	//}
+	
+	//{ SE Baldur's Gate
 	COPY_EXISTING ~BG1300.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
@@ -567,6 +524,7 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 		fj_destination_area = XAHOME
 		fj_destination_name = EXIT1300
 	END
+	//}
 	
 	/* Allows the Player to return to Wyrms Crossing from NE Baldur's Gate */
 	COPY_EXISTING ~BG0300.ARE~ ~override~
@@ -1264,6 +1222,12 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	COPY_EXISTING ~BRATHL.CRE~ ~override~
 	WRITE_ASCII 0x280 ~BRATHL~ #8 //assign script name to CRE that didn't originally have it
 	WRITE_ASCII 0x260 ~XABRATHL~ #8
+
+	COPY_EXISTING ~BART9.CRE~ ~override~
+	WRITE_ASCII 0x280 ~BART9~ #20
+	
+	COPY_EXISTING ~WAITER.CRE~ ~override~
+	WRITE_ASCII 0x280 ~WAITER~ #20
 
 	COPY_EXISTING ~BELAND.CRE~ ~override~
 	WRITE_ASCII 0x280 ~BELAND~ #20
