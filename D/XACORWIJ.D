@@ -3305,7 +3305,7 @@ IF ~
 	SAY @1184 /* ~Any last words?~ */
 	
 	IF ~
-		GlobalLT("XA_CorwinOpinionOfPlayer", "GLOBAL", 100)
+		GlobalLT("XA_CorwinOpinionOfPlayer", "GLOBAL", 110)
 	~ THEN 
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
@@ -3314,7 +3314,7 @@ IF ~
 	EXTERN XABENO2 XA_CorwinKillBenoChain
 	
 	IF ~
-		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 99)
+		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 109)
 	~ THEN 
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
@@ -11058,7 +11058,7 @@ CHAIN XABENO2 XA_CorwinMercyBenoChain
 	== XACORWIJ
 	@1199 /* ~What?~ */
 	== XABENO2
-	@1193 /* ~For everything... not just for today, but... for everything...~ */
+	@1176 /* ~For everything... not just for today, but... for everything...~ */
 	== XACORWIJ
 	@1201 /* ~(Sigh.)~*/
 	=@1202 /* ~No. This is wrong. Killing you, again, isn't going to solve anything. I've at least learned that much.~*/

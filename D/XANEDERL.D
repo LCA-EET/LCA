@@ -207,7 +207,8 @@ IF ~~ THEN BEGIN XA_VirgilWinston
 	
 	IF ~
 		!Global("XA_NederlokMedal", "GLOBAL", 1)
-	~ THEN REPLY @102 /* ~I see. I'll leave you to your work, then.~  */GOTO XA_GiveMedal
+	~ THEN REPLY @102 /* ~I see. I'll leave you to your work, then.~  */
+	GOTO XA_GiveMedal
 	
 	IF ~
 		!Global("XA_Ask_Refugees", "LOCALS", 1)
@@ -269,6 +270,7 @@ IF ~
 	SAY @23 /* ~<CHARNAME> - what can I do for you?~ */
 	
 	IF ~
+		GlobalGT("XA_CorwinSlaverPlot", "GLOBAL", 0)
 		!Global("XA_RefugeeQuestComplete", "GLOBAL", 1)
 	~ THEN REPLY @38 /* ~I'd like to go over our progress in the investigation into slaver activity in Baldur's Gate.~ */
 	GOTO XA_InvestigationProgress

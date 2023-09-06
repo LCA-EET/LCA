@@ -1040,7 +1040,7 @@ END
 	//{ Rohma Kidnapped
 	IF 
 		Global("XA_RohmaKidnapped", "GLOBAL", 2)
-		See(Player1)
+		//See(Player1)
 	THEN
 		RESPONSE #100
 			//Dialog J-68

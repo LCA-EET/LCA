@@ -1,3 +1,157 @@
+//{ Party Members that went back to BG will rejoin at this point.
+
+//{ Imoen
+IF
+	GlobalLT("XA_MovedParty", "GLOBAL", 1)
+	Global("XA_BackToBG_Imoen", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		MoveGlobal("XA4000", "Imoen2", [1300.1840])
+		ActionOverride("Imoen2", JoinParty())
+		Continue()
+END
+//}
+
+//{ Jaheira
+IF
+	GlobalLT("XA_MovedParty", "GLOBAL", 1)
+	Global("XA_BackToBG_Jaheira", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		MoveGlobal("XA4000", "Jaheira", [1300.1840])
+		ActionOverride("Jaheira", JoinParty())
+		Continue()
+END
+//}
+
+//{ Viconia
+IF
+	GlobalLT("XA_MovedParty", "GLOBAL", 1)
+	Global("XA_BackToBG_Viconia", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		MoveGlobal("XA4000", "Viconia", [1300.1840])
+		ActionOverride("Viconia", JoinParty())
+		Continue()
+END
+//}
+
+//{ Jan
+IF
+	GlobalLT("XA_MovedParty", "GLOBAL", 1)
+	Global("XA_BackToBG_Jan", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		MoveGlobal("XA4000", "Jan", [1300.1840])
+		ActionOverride("Jan", JoinParty())
+		Continue()
+END
+//}
+
+//{ Aerie
+IF
+	GlobalLT("XA_MovedParty", "GLOBAL", 1)
+	Global("XA_BackToBG_Aerie", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		MoveGlobal("XA4000", "Aerie", [1300.1840])
+		ActionOverride("Aerie", JoinParty())
+		Continue()
+END
+//}
+
+//{ Nalia
+IF
+	GlobalLT("XA_MovedParty", "GLOBAL", 1)
+	Global("XA_BackToBG_Nalia", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		MoveGlobal("XA4000", "Nalia", [1300.1840])
+		ActionOverride("Nalia", JoinParty())
+		Continue()
+END
+//}
+
+//{ Korgan
+IF
+	GlobalLT("XA_MovedParty", "GLOBAL", 1)
+	Global("XA_BackToBG_Korgan", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		MoveGlobal("XA4000", "Korgan", [1300.1840])
+		ActionOverride("Korgan", JoinParty())
+		Continue()
+END
+//}
+
+//{ Anomen
+IF
+	GlobalLT("XA_MovedParty", "GLOBAL", 1)
+	Global("XA_BackToBG_Anomen", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		MoveGlobal("XA4000", "Anomen", [1300.1840])
+		ActionOverride("Anomen", JoinParty())
+		Continue()
+END
+//}
+
+//{ Dorn
+IF
+	GlobalLT("XA_MovedParty", "GLOBAL", 1)
+	Global("XA_BackToBG_Dorn", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		MoveGlobal("XA4000", "Dorn", [1300.1840])
+		ActionOverride("Dorn", JoinParty())
+		Continue()
+END
+//}
+
+//{ Valygar
+IF
+	GlobalLT("XA_MovedParty", "GLOBAL", 1)
+	Global("XA_BackToBG_Valygar", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		MoveGlobal("XA4000", "Valygar", [1300.1840])
+		ActionOverride("Valygar", JoinParty())
+		Continue()
+END
+//}
+
+//{ Neera
+IF
+	GlobalLT("XA_MovedParty", "GLOBAL", 1)
+	Global("XA_BackToBG_Neera", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		MoveGlobal("XA4000", "Neera", [1300.1840])
+		ActionOverride("Neera", JoinParty())
+		Continue()
+END
+//}
+
+//{ Rasaad
+IF
+	GlobalLT("XA_MovedParty", "GLOBAL", 1)
+	Global("XA_BackToBG_Rasaad", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		MoveGlobal("XA4000", "Rasaad", [1300.1840])
+		ActionOverride("Rasaad", JoinParty())
+		Continue()
+END
+//}
+
+IF
+	GlobalLT("XA_MovedParty", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_MovedParty", "GLOBAL", 1)
+		Continue()
+END
+
 IF
 	Global("TurnDay","XA4000",0)  // Spirit Heads
 THEN
