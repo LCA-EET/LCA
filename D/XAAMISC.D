@@ -304,7 +304,503 @@
 	END
 	//}
 	
-	
+	//{ Gorge Tree Dialog Modifications
+		//{ HEXXATJ
+			ALTER_TRANS HEXXATJ
+			BEGIN 2 END
+			BEGIN 0 END
+			BEGIN
+				"TRIGGER"
+				~IsValidForPartyDialogue("XACORWIN")~
+				"EPILOGUE"
+				~EXTERN XACORWIJ XA_GorgeClimb~
+				"ACTION"
+				~~
+			END
+			
+			EXTEND_TOP HEXXATJ 2
+				IF ~~ THEN
+				DO ~
+					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
+				~
+				EXIT
+			END
+		//}
+		
+		//{ NEERAJ
+			ALTER_TRANS NEERAJ
+			BEGIN 15 END
+			BEGIN 0 END
+			BEGIN
+				"TRIGGER"
+				~IsValidForPartyDialogue("XACORWIN")~
+				"EPILOGUE"
+				~EXTERN XACORWIJ XA_GorgeClimb~
+				"ACTION"
+				~~
+			END
+			
+			EXTEND_TOP NEERAJ 15
+				IF ~~ THEN
+				DO ~
+					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
+				~
+				EXIT
+			END
+		//}
+		
+		//{ DORNJ
+			ALTER_TRANS DORNJ
+			BEGIN 503 END
+			BEGIN 0 END
+			BEGIN
+				"TRIGGER"
+				~IsValidForPartyDialogue("XACORWIN")~
+				"EPILOGUE"
+				~EXTERN XACORWIJ XA_GorgeClimb~
+				"ACTION"
+				~~
+			END
+			
+			EXTEND_TOP DORNJ 503
+				IF ~~ THEN
+				DO ~
+					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
+				~
+				EXIT
+			END
+		//}
+		
+		//{ VICONIJ
+			ALTER_TRANS VICONIJ
+			BEGIN 410 END
+			BEGIN 0 END
+			BEGIN
+				"TRIGGER"
+				~
+					!IsValidForPartyDialogue("dorn")
+					!IsValidForPartyDialogue("neera")
+					!IsValidForPartyDialogue("hexxat")
+					IsValidForPartyDialogue("XACORWIN")
+				~
+				"EPILOGUE"
+				~EXTERN XACORWIJ XA_GorgeClimb~
+				"ACTION"
+				~~
+			END
+			
+			EXTEND_TOP VICONIJ 410
+				IF ~
+					!IsValidForPartyDialogue("dorn")
+					!IsValidForPartyDialogue("neera")
+					!IsValidForPartyDialogue("hexxat")
+					!IsValidForPartyDialogue("XACORWIN")
+				~ THEN REPLY #75734 /* ~I'm having trouble remembering myself, */ 
+				DO ~
+					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
+				~
+				EXIT
+			END
+		//}
+		
+		//{ VALYGARJ
+			ALTER_TRANS VALYGARJ
+			BEGIN 128 END
+			BEGIN 0 END
+			BEGIN
+				"TRIGGER"
+				~
+					!IsValidForPartyDialogue("viconia")
+					!IsValidForPartyDialogue("dorn")
+					!IsValidForPartyDialogue("neera")
+					!IsValidForPartyDialogue("hexxat")
+					IsValidForPartyDialogue("XACORWIN")
+				~
+				"EPILOGUE"
+				~EXTERN XACORWIJ XA_GorgeClimb~
+				"ACTION"
+				~~
+			END
+			
+			EXTEND_TOP VALYGARJ 128
+				IF ~
+					!IsValidForPartyDialogue("viconia")
+					!IsValidForPartyDialogue("dorn")
+					!IsValidForPartyDialogue("neera")
+					!IsValidForPartyDialogue("hexxat")
+					!IsValidForPartyDialogue("XACORWIN")
+				~ THEN REPLY #75732 /* ~As long as it takes to achieve our goals, Valygar. Either that or fall to our deaths.~ */ 
+				DO ~
+					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
+				~
+				EXIT
+			END
+		//}
+		
+		//{ MINSCJ
+			ALTER_TRANS MINSCJ
+			BEGIN 254 END
+			BEGIN 0 END
+			BEGIN
+				"TRIGGER"
+				~IsValidForPartyDialogue("XACORWIN")~
+				"EPILOGUE"
+				~EXTERN XACORWIJ XA_GorgeClimb~
+				"ACTION"
+				~~
+			END
+			
+			EXTEND_TOP MINSCJ 254
+				IF ~~ THEN
+				DO ~
+					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
+				~
+				EXIT
+			END
+		//}
+		
+		//{ MAZZYJ
+			ALTER_TRANS MAZZYJ
+			BEGIN 208 END
+			BEGIN 0 END
+			BEGIN
+				"TRIGGER"
+				~
+					!IsValidForPartyDialogue("minsc")
+					!IsValidForPartyDialogue("valygar")
+					!IsValidForPartyDialogue("viconia")
+					!IsValidForPartyDialogue("dorn")
+					!IsValidForPartyDialogue("neera")
+					!IsValidForPartyDialogue("hexxat")
+					IsValidForPartyDialogue("XACORWIN")
+				~
+				"EPILOGUE"
+				~EXTERN XACORWIJ XA_GorgeClimb~
+				"ACTION"
+				~~
+			END
+			
+			EXTEND_TOP MAZZYJ 208
+				IF ~
+					!IsValidForPartyDialogue("minsc")
+					!IsValidForPartyDialogue("valygar")
+					!IsValidForPartyDialogue("viconia")
+					!IsValidForPartyDialogue("dorn")
+					!IsValidForPartyDialogue("neera")
+					!IsValidForPartyDialogue("hexxat")
+					!IsValidForPartyDialogue("XACORWIN")
+				~ THEN REPLY #75727 /* ~Be careful, Mazzy. You could find yourself on the ground sooner than you think.~ */ 
+				DO ~
+					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
+				~
+				EXIT
+			END
+		//}
+		
+		//{ KORGANJ
+			ALTER_TRANS KORGANJ
+			BEGIN 235 END
+			BEGIN 0 END
+			BEGIN
+				"TRIGGER"
+				~
+					!IsValidForPartyDialogue("mazzy")
+					!IsValidForPartyDialogue("minsc")
+					!IsValidForPartyDialogue("valygar")
+					!IsValidForPartyDialogue("viconia")
+					!IsValidForPartyDialogue("dorn")
+					!IsValidForPartyDialogue("neera")
+					!IsValidForPartyDialogue("hexxat")
+					IsValidForPartyDialogue("XACORWIN")
+				~
+				"EPILOGUE"
+				~EXTERN XACORWIJ XA_GorgeClimb~
+				"ACTION"
+				~~
+			END
+			
+			EXTEND_TOP KORGANJ 235
+				IF ~
+					!IsValidForPartyDialogue("mazzy")
+					!IsValidForPartyDialogue("minsc")
+					!IsValidForPartyDialogue("valygar")
+					!IsValidForPartyDialogue("viconia")
+					!IsValidForPartyDialogue("dorn")
+					!IsValidForPartyDialogue("neera")
+					!IsValidForPartyDialogue("hexxat")
+					!IsValidForPartyDialogue("XACORWIN")
+				~ THEN REPLY #75725 /* ~That's the spirit.~ */
+				DO ~
+					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
+				~
+				EXIT
+			END
+		//}
+		
+		//{ KELDORJ
+			ALTER_TRANS KELDORJ
+			BEGIN 265 END
+			BEGIN 0 END
+			BEGIN
+				"TRIGGER"
+				~
+					!IsValidForPartyDialogue("korgan")
+					!IsValidForPartyDialogue("mazzy")
+					!IsValidForPartyDialogue("minsc")
+					!IsValidForPartyDialogue("valygar")
+					!IsValidForPartyDialogue("viconia")
+					!IsValidForPartyDialogue("dorn")
+					!IsValidForPartyDialogue("neera")
+					!IsValidForPartyDialogue("hexxat")
+					IsValidForPartyDialogue("XACORWIN")
+				~
+				"EPILOGUE"
+				~EXTERN XACORWIJ XA_GorgeClimb~
+				"ACTION"
+				~~
+			END
+			
+			EXTEND_TOP KELDORJ 265
+				IF ~
+					!IsValidForPartyDialogue("korgan")
+					!IsValidForPartyDialogue("mazzy")
+					!IsValidForPartyDialogue("minsc")
+					!IsValidForPartyDialogue("valygar")
+					!IsValidForPartyDialogue("viconia")
+					!IsValidForPartyDialogue("dorn")
+					!IsValidForPartyDialogue("neera")
+					!IsValidForPartyDialogue("hexxat")
+					!IsValidForPartyDialogue("XACORWIN")
+				~ THEN REPLY #75721 /* ~Better to climb than fall from them, Keldorn.~ */ 
+				DO ~
+					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
+				~
+				EXIT
+			END
+		//}
+		
+		//{ JANJ
+			ALTER_TRANS JANJ
+			BEGIN 192 END
+			BEGIN 0 END
+			BEGIN
+				"TRIGGER"
+				~
+					!IsValidForPartyDialogue("keldorn")
+					!IsValidForPartyDialogue("korgan")
+					!IsValidForPartyDialogue("mazzy")
+					!IsValidForPartyDialogue("minsc")
+					!IsValidForPartyDialogue("valygar")
+					!IsValidForPartyDialogue("viconia")
+					!IsValidForPartyDialogue("dorn")
+					!IsValidForPartyDialogue("neera")
+					!IsValidForPartyDialogue("hexxat")
+					IsValidForPartyDialogue("XACORWIN")
+				~
+				"EPILOGUE"
+				~EXTERN XACORWIJ XA_GorgeClimb~
+				"ACTION"
+				~~
+			END
+			
+			EXTEND_TOP JANJ 192
+				IF ~
+					!IsValidForPartyDialogue("keldorn")
+					!IsValidForPartyDialogue("korgan")
+					!IsValidForPartyDialogue("mazzy")
+					!IsValidForPartyDialogue("minsc")
+					!IsValidForPartyDialogue("valygar")
+					!IsValidForPartyDialogue("viconia")
+					!IsValidForPartyDialogue("dorn")
+					!IsValidForPartyDialogue("neera")
+					!IsValidForPartyDialogue("hexxat")
+					!IsValidForPartyDialogue("XACORWIN")
+				~ THEN REPLY #75716 /* ~Can this wait, Jan? I'm trying not to plummet to my death here.~ */ 
+				DO ~
+					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
+				~
+				EXIT
+			END
+		//}
+		
+		//{ JAHEIRAJ
+			ALTER_TRANS JAHEIRAJ
+			BEGIN 539 END
+			BEGIN 0 END
+			BEGIN
+				"TRIGGER"
+				~
+					!IsValidForPartyDialogue("jan")
+					!IsValidForPartyDialogue("keldorn")
+					!IsValidForPartyDialogue("korgan")
+					!IsValidForPartyDialogue("mazzy")
+					!IsValidForPartyDialogue("minsc")
+					!IsValidForPartyDialogue("valygar")
+					!IsValidForPartyDialogue("viconia")
+					!IsValidForPartyDialogue("dorn")
+					!IsValidForPartyDialogue("neera")
+					!IsValidForPartyDialogue("hexxat")
+					IsValidForPartyDialogue("XACORWIN")
+				~
+				"EPILOGUE"
+				~EXTERN XACORWIJ XA_GorgeClimb~
+				"ACTION"
+				~~
+			END
+			
+			EXTEND_TOP JAHEIRAJ 539
+				IF ~
+					!IsValidForPartyDialogue("jan")
+					!IsValidForPartyDialogue("keldorn")
+					!IsValidForPartyDialogue("korgan")
+					!IsValidForPartyDialogue("mazzy")
+					!IsValidForPartyDialogue("minsc")
+					!IsValidForPartyDialogue("valygar")
+					!IsValidForPartyDialogue("viconia")
+					!IsValidForPartyDialogue("dorn")
+					!IsValidForPartyDialogue("neera")
+					!IsValidForPartyDialogue("hexxat")
+					!IsValidForPartyDialogue("XACORWIN")
+				~ THEN REPLY #75713 /* ~I can take care of myself, Jaheira. Take care that you do the same.~ */ 
+				DO ~
+					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
+				~
+				EXIT
+			END
+		//}
+		
+		//{ IMOEN2J
+			ALTER_TRANS IMOEN2J
+			BEGIN 55 END
+			BEGIN 0 END
+			BEGIN
+				"TRIGGER"
+				~IsValidForPartyDialogue("XACORWIN")~
+				"EPILOGUE"
+				~EXTERN XACORWIJ XA_GorgeClimb~
+				"ACTION"
+				~~
+			END
+			
+			EXTEND_TOP IMOEN2J 55
+				IF ~~ THEN
+				DO ~
+					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
+				~
+				EXIT
+			END
+		//}
+		
+		//{ HAERDAJ
+			ALTER_TRANS HAERDAJ
+			BEGIN 161 END
+			BEGIN 0 END
+			BEGIN
+				"TRIGGER"
+				~IsValidForPartyDialogue("XACORWIN")~
+				"EPILOGUE"
+				~EXTERN XACORWIJ XA_GorgeClimb~
+				"ACTION"
+				~~
+			END
+			
+			EXTEND_TOP HAERDAJ 161
+				IF ~~ THEN
+				DO ~
+					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
+				~
+				EXIT
+			END
+		//}
+		
+		//{ EDWINJ
+			ALTER_TRANS EDWINJ
+			BEGIN 195 END
+			BEGIN 0 END
+			BEGIN
+				"TRIGGER"
+				~IsValidForPartyDialogue("XACORWIN")~
+				"EPILOGUE"
+				~EXTERN XACORWIJ XA_GorgeClimb~
+				"ACTION"
+				~~
+			END
+			
+			EXTEND_TOP EDWINJ 195
+				IF ~~ THEN
+				DO ~
+					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
+				~
+				EXIT
+			END
+		//}
+		
+		//{ CERNDJ
+			ALTER_TRANS CERNDJ
+			BEGIN 142 END
+			BEGIN 0 END
+			BEGIN
+				"TRIGGER"
+				~IsValidForPartyDialogue("XACORWIN")~
+				"EPILOGUE"
+				~EXTERN XACORWIJ XA_GorgeClimb~
+				"ACTION"
+				~~
+			END
+			
+			EXTEND_TOP CERNDJ 142
+				IF ~~ THEN
+				DO ~
+					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
+				~
+				EXIT
+			END
+		//}
+		
+		//{ ANOMENJ
+			ALTER_TRANS ANOMENJ
+			BEGIN 323 END
+			BEGIN 0 END
+			BEGIN
+				"TRIGGER"
+				~IsValidForPartyDialogue("XACORWIN")~
+				"EPILOGUE"
+				~EXTERN XACORWIJ XA_GorgeClimb~
+				"ACTION"
+				~~
+			END
+			
+			EXTEND_TOP ANOMENJ 323
+				IF ~~ THEN
+				DO ~
+					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
+				~
+				EXIT
+			END
+		//}
+		
+		//{ AERIEJ
+			ALTER_TRANS AERIEJ
+			BEGIN 225 END
+			BEGIN 0 END
+			BEGIN
+				"TRIGGER"
+				~IsValidForPartyDialogue("XACORWIN")~
+				"EPILOGUE"
+				~EXTERN XACORWIJ XA_GorgeClimb~
+				"ACTION"
+				~~
+			END
+			
+			EXTEND_TOP AERIEJ 225
+				IF ~~ THEN
+				DO ~
+					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
+				~
+				EXIT
+			END
+		//}
+	//}
 //}	
 	
 

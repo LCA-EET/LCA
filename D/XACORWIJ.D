@@ -5479,35 +5479,24 @@ END
 
 //{ #region Gorge Interject - Dialog J-30
 IF ~
-	OR(2)
-		Global("OHD_GORGE_NTRJEX","OH5100",1)
-		Global("OHD_GORGE_NTRJEX","GLOBAL",1)
+	Global("OHD_GORGE_NTRJEX","OH5100",1)
 ~ THEN BEGIN XA_GorgeClimb
 	SAY @395 /* ~Let's take this nice and slow. Remember - maintain three points of contact at all times.~ */
 	
 	IF ~
 		Global("XA_CorwinRomanceActive","GLOBAL",2)
 	~ THEN REPLY @397 /* ~Good advice. Climb many trees in your youth, love?~ */
-	DO ~
-		SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
-	~
 	GOTO XA_GorgeClimb1
 	
 	IF ~
 		!Global("XA_CorwinRomanceActive","GLOBAL",2)
 	~ THEN REPLY @396 /* ~Good advice. Climb many trees in your youth, Corwin?~ */
-	DO ~
-		SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
-	~
 	GOTO XA_GorgeClimb1
 	
 	IF ~
 		GlobalGT("XA_TimesHadSex", "GLOBAL", 0)
 		Gender(Player1, MALE)
 	~ THEN REPLY @399 /*  ~Good advice. Climb many trees, love? Besides mine, I mean.~ */
-	DO ~
-		SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
-	~
 	GOTO XA_GorgeClimb1A
 END
 
@@ -5519,45 +5508,25 @@ END
 
 IF ~~ THEN BEGIN XA_GorgeClimb1
 	SAY @398 /* ~No, not really. We practice scaling walls during our training exercises. The principle is the same.~ */
-	IF ~~ THEN
+	
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1797
+	DO ~
+		SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
+		SetGlobal("XA_CorwinOH5100", "GLOBAL", 1)
+	~
 	EXIT
 	
-	IF ~  
-		IsValidForPartyDialogue("hexxat")
-	~ 
-	THEN EXTERN ~HEXXATJ~ 2
-	IF ~  
-		IsValidForPartyDialogue("neera")
-	~ 
-	THEN EXTERN ~NEERAJ~ 15
-	IF ~  
-		IsValidForPartyDialogue("dorn")
-	~ 
-	THEN EXTERN ~DORNJ~ 502
-	IF ~  
-		IsValidForPartyDialogue("viconia")
-	~ 
-	THEN EXTERN ~VICONIJ~ 410
-	IF ~  
-		IsValidForPartyDialogue("valygar")
-	~ 
-	THEN EXTERN ~VALYGARJ~ 128
-	IF ~  
-		IsValidForPartyDialogue("minsc")
-	~ 
-	THEN EXTERN ~MINSCJ~ 252
-	IF ~  
-		IsValidForPartyDialogue("mazzy")
-	~ 
-	THEN EXTERN ~MAZZYJ~ 208
-	IF ~  
-		IsValidForPartyDialogue("korgan")
-	~ 
-	THEN EXTERN ~KORGANJ~ 234
-	IF ~  
-		IsValidForPartyDialogue("keldorn")
-	~ 
-	THEN EXTERN ~KELDORJ~ 265
+	IF ~
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1798
+	DO ~
+		SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
+		SetGlobal("XA_CorwinOH5100", "GLOBAL", 1)
+	~
+	EXIT
+	
 	
 END
 //} #endregion

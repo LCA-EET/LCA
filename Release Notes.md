@@ -3,6 +3,11 @@
 # Report any bugs to LCAMod@danielvalle.net, or the Gibberlings 3 Forum Post 
 * Link to forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v0.2.10-beta 2023-09-06
+* Modified scripting so that the player is prevented from entering the Twisted Rune area (Cowled Menace) in Baldur's Gate East while the Return to Baldur's Gate mini-quest is active. Upon completion of the mini-quest (or before its initiation), the Twisted Rune area triggers will be active, if the Cowled Menace mod is installed.
+* Added scripting to the sewer entrances in Baldur's Gate to help prompt the player to investigate. The scripting is only active if Neb is not dead, and the player is in the Return to Baldur's Gate mini-quest.
+* Modified the gorge tree-climbing dialogues to improve compatibility with other NPC mods.
+
 # v0.2.9-beta 2023-09-05
 * You will not be able to discuss the slaver plot with Marshal Nederlok, if you did not rescue the child from the slaver stockade in Athkatla while Corwin was in the party.
 * Fixed the transition to Saradush at the conclusion of the Return to Baldur's Gate quest.

@@ -1,6 +1,7 @@
 IF
 	IfValidForPartyDialog("XACORWIN")  
 	!ActuallyInCombat()
+	AreaCheck("OH5100")
 	Global("OHD_GORGE_NTRJEX","OH5100",1)  // Dorn - Resurrection Gorge
 THEN
 	RESPONSE #100

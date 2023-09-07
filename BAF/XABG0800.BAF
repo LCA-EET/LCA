@@ -1,5 +1,27 @@
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CMDeactivate", "BG0800", 1)
+THEN
+	RESPONSE #100
+		TriggerActivation("d#tet1", FALSE)
+		TriggerActivation("d#tw1", FALSE)
+		SetGlobal("XA_CMDeactivate", "BG0800", 1)
+		Continue()
+END
+
+IF 
+	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_CMDeactivate", "BG0800", 1)
+THEN
+	RESPONSE #100
+		TriggerActivation("d#tet1", TRUE)
+		TriggerActivation("d#tw1", TRUE)
+		SetGlobal("XA_CMDeactivate", "BG0800", 0)
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
 	InMyArea("ELMIN5")
 THEN
 	RESPONSE #100

@@ -1,0 +1,32 @@
+IF
+	GlobalLT("XA_NebSewerSpeak", "GLOBAL", 1)
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_NebSewerSpeak", "GLOBAL", 1)
+		SetGlobalTimer("XA_NebSewerSpeakTimer", "GLOBAL", THREE_ROUNDS)
+END
+
+IF
+	!Dead("Neb")
+	!Dead("XANEB")
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalTimerExpired("XA_NebSewerSpeakTimer", "GLOBAL")
+	OR(6)
+		See(Player1)
+		See(Player2)
+		See(Player3)
+		See(Player4)
+		See(Player5)
+		See(Player6)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("XA_NebSewerSpeakTimer", "GLOBAL", THREE_ROUNDS)
+		DisplayStringHead(Myself, @0)
+	RESPONSE #100
+		SetGlobalTimer("XA_NebSewerSpeakTimer", "GLOBAL", THREE_ROUNDS)
+		DisplayStringHead(Myself, @1)
+	RESPONSE #100
+		SetGlobalTimer("XA_NebSewerSpeakTimer", "GLOBAL", THREE_ROUNDS)
+		DisplayStringHead(Myself, @2)
+END

@@ -502,6 +502,78 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	END
 	//}
 	
+	//{ NW Baldur's Gate
+	COPY_EXISTING ~BG0100.ARE~ ~override~
+	LPF ALTER_AREA_REGION
+		STR_VAR
+		region_name 	= ~Door0224~
+		region_script	= ~XANEBSEW~
+	END
+	//}
+	
+	//{ N Baldur's Gate
+	COPY_EXISTING ~BG0200.ARE~ ~override~
+	LPF ALTER_AREA_REGION
+		STR_VAR
+		region_name 	= ~Door0225~
+		region_script	= ~XANEBSEW~
+	END
+	//}
+	
+	//{ NE Baldur's Gate
+	COPY_EXISTING ~BG0300.ARE~ ~override~
+	LPF ALTER_AREA_REGION
+		STR_VAR
+		region_name 	= ~Door0226~
+		region_script	= ~XANEBSEW~
+	END
+	//}
+	
+	//{ Central Baldur's Gate
+	COPY_EXISTING ~BG0700.ARE~ ~override~
+	LPF ALTER_AREA_REGION
+		STR_VAR
+		region_name 	= ~Door0225~
+		region_script	= ~XANEBSEW~
+	END
+	//}
+	
+	//{ East Baldur's Gate
+	COPY_EXISTING ~BG0800.ARE~ ~override~
+	LPF ALTER_AREA_REGION
+		STR_VAR
+		region_name 	= ~Door0226~
+		region_script	= ~XANEBSEW~
+	END
+	//}
+	
+	//{ East Baldur's Gate
+	COPY_EXISTING ~BG1100.ARE~ ~override~
+	LPF ALTER_AREA_REGION
+		STR_VAR
+		region_name 	= ~Door0224~
+		region_script	= ~XANEBSEW~
+	END
+	//}
+	
+	//{ Baldur's Gate Docks
+	COPY_EXISTING ~BG1200.ARE~ ~override~
+	LPF ALTER_AREA_REGION
+		STR_VAR
+		region_name 	= ~Door0225~
+		region_script	= ~XANEBSEW~
+	END
+	//}
+	
+	//{ N Baldur's Gate
+	COPY_EXISTING ~BG0226.ARE~ ~override~
+	LPF ALTER_AREA_REGION
+		STR_VAR
+		region_name 	= ~Door0225~
+		region_script	= ~XANEBSEW~
+	END
+	//}
+	
 	//{ SE Baldur's Gate
 	COPY_EXISTING ~BG1300.ARE~ ~override~
 	LPF fj_are_structure
@@ -525,6 +597,7 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 		fj_destination_name = EXIT1300
 	END
 	//}
+
 	
 	/* Allows the Player to return to Wyrms Crossing from NE Baldur's Gate */
 	COPY_EXISTING ~BG0300.ARE~ ~override~
@@ -831,7 +904,7 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	EXTEND_TOP ~MAZZY.BCS~ ~LCA/BAF/XASVIR.BAF~
 	EXTEND_TOP ~AERIE.BCS~ ~LCA/BAF/XASVIR.BAF~
 	EXTEND_TOP ~KELDORN.BCS~ ~LCA/BAF/XASVIR.BAF~
-	EXTEND_TOP ~OHDGORGE.BCS~ ~LCA/BAF/XAGORGE.BAF~
+	EXTEND_BOTTOM ~OHDGORGE.BCS~ ~LCA/BAF/XAGORGE.BAF~
 	EXTEND_TOP ~BDCORWIN.BCS~ ~LCA/BAF/XABDCORW.BAF~
 	EXTEND_TOP ~CLEANSE.BCS~ ~LCA/BAF/XACLEAN.BAF~
 	EXTEND_TOP ~BCOFFIN.BCS~ ~LCA/BAF/XACOFFIN.BAF~
