@@ -23,6 +23,9 @@ IF ~
 	~
 	EXIT
 	
+	IF ~~ THEN REPLY @654
+	GOTO XA_ChangeReputation
+
 	IF ~~ THEN REPLY @614
 	GOTO XA_Assistant
 	
@@ -166,6 +169,130 @@ IF ~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @12 /* ~I do not need assistance at this time.~ */
+	EXIT
+END
+
+IF ~~ THEN XA_ChangeReputation
+	SAY @654
+	
+	IF ~~ THEN REPLY @655
+	DO ~
+		ReputationSet(1)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @656
+	DO ~
+		ReputationSet(2)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @657
+	DO ~
+		ReputationSet(3)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @658
+	DO ~
+		ReputationSet(4)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @659
+	DO ~
+		ReputationSet(5)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @660
+	DO ~
+		ReputationSet(6)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @661
+	DO ~
+		ReputationSet(7)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @662
+	DO ~
+		ReputationSet(8)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @663
+	DO ~
+		ReputationSet(9)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @664
+	DO ~
+		ReputationSet(10)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @665
+	DO ~
+		ReputationSet(11)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @666
+	DO ~
+		ReputationSet(12)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @667
+	DO ~
+		ReputationSet(13)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @668
+	DO ~
+		ReputationSet(14)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @669
+	DO ~
+		ReputationSet(15)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @670
+	DO ~
+		ReputationSet(16)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @671
+	DO ~
+		ReputationSet(17)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @672
+	DO ~
+		ReputationSet(18)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @673
+	DO ~
+		ReputationSet(19)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @674
+	DO ~
+		ReputationSet(20)
+	~
 	EXIT
 END
 

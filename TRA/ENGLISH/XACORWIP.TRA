@@ -1,6 +1,6 @@
 @0 = ~<CHARNAME>? You sure you don't want me with you?~ [XA100101] 
 @1 = ~I need you by my side, as always my dear. Join me.~
-@2 = ~I do, but not at the moment. Wait here, I will come for you later.~
+@2 = ~Wait here, I'll come for you later.~
 @3 = ~That's all I needed to hear. Let's go.~ [BD54525]
 @4 = ~Gladly, my friend.~ [BDCORP4]
 @5 = ~Very well. Don't take too long.~ [BDCORP5]
@@ -61,7 +61,7 @@
 @60 = ~So, Capt — excuse me, Major. What is your decision?~
 @61 = ~So, Schael. What is your decision?~
 @62 = ~Sir, I'll accompany <CHARNAME>. We'll put an end to the Five. Please inform the Dukes... and please... let my family know that I'll be home as soon as I can.~
-@63 = ~<CHARNAME>. What do you need?~ [XA100032]
+@63 = ~<CHARNAME>. What do you need?~ [BD56086]
 @64 = ~...~
 @65 = ~I'm thinking.~
 @66 = ~Well?~
@@ -100,3 +100,6 @@ Major Corwin refused to join me in my hunt for the Five. She believes that I'm j
 @98 = ~A~
 @99 = ~B~
 @100 = ~I'll see you at the debriefing, love.~
+@101 = ~<CHARNAME>, good. Are you ready to leave?~
+@102 = ~Your reputation precedes you, 'hero'. Come and see me when you've cleaned up your act.~ 
+@103 = ~Your reputation precedes you, 'hero'. Come and see me at the Athkatla magistrate once you've cleaned up your act.~ 

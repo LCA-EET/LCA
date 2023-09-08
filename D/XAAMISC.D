@@ -303,7 +303,7 @@
 		~EXIT~
 	END
 	//}
-	
+	/*
 	//{ Gorge Tree Dialog Modifications
 		//{ HEXXATJ
 			ALTER_TRANS HEXXATJ
@@ -395,7 +395,7 @@
 					!IsValidForPartyDialogue("neera")
 					!IsValidForPartyDialogue("hexxat")
 					!IsValidForPartyDialogue("XACORWIN")
-				~ THEN REPLY #75734 /* ~I'm having trouble remembering myself, */ 
+				~ THEN REPLY #75734 
 				DO ~
 					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
 				~
@@ -429,7 +429,7 @@
 					!IsValidForPartyDialogue("neera")
 					!IsValidForPartyDialogue("hexxat")
 					!IsValidForPartyDialogue("XACORWIN")
-				~ THEN REPLY #75732 /* ~As long as it takes to achieve our goals, Valygar. Either that or fall to our deaths.~ */ 
+				~ THEN REPLY #75732 
 				DO ~
 					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
 				~
@@ -489,7 +489,7 @@
 					!IsValidForPartyDialogue("neera")
 					!IsValidForPartyDialogue("hexxat")
 					!IsValidForPartyDialogue("XACORWIN")
-				~ THEN REPLY #75727 /* ~Be careful, Mazzy. You could find yourself on the ground sooner than you think.~ */ 
+				~ THEN REPLY #75727  
 				DO ~
 					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
 				~
@@ -529,7 +529,7 @@
 					!IsValidForPartyDialogue("neera")
 					!IsValidForPartyDialogue("hexxat")
 					!IsValidForPartyDialogue("XACORWIN")
-				~ THEN REPLY #75725 /* ~That's the spirit.~ */
+				~ THEN REPLY #75725 
 				DO ~
 					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
 				~
@@ -571,7 +571,7 @@
 					!IsValidForPartyDialogue("neera")
 					!IsValidForPartyDialogue("hexxat")
 					!IsValidForPartyDialogue("XACORWIN")
-				~ THEN REPLY #75721 /* ~Better to climb than fall from them, Keldorn.~ */ 
+				~ THEN REPLY #75721 
 				DO ~
 					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
 				~
@@ -615,7 +615,7 @@
 					!IsValidForPartyDialogue("neera")
 					!IsValidForPartyDialogue("hexxat")
 					!IsValidForPartyDialogue("XACORWIN")
-				~ THEN REPLY #75716 /* ~Can this wait, Jan? I'm trying not to plummet to my death here.~ */ 
+				~ THEN REPLY #75716 
 				DO ~
 					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
 				~
@@ -661,7 +661,7 @@
 					!IsValidForPartyDialogue("neera")
 					!IsValidForPartyDialogue("hexxat")
 					!IsValidForPartyDialogue("XACORWIN")
-				~ THEN REPLY #75713 /* ~I can take care of myself, Jaheira. Take care that you do the same.~ */ 
+				~ THEN REPLY #75713 
 				DO ~
 					SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
 				~
@@ -801,6 +801,7 @@
 			END
 		//}
 	//}
+	*/
 //}	
 	
 

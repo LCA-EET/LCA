@@ -1480,6 +1480,7 @@ IF ~
 		LeaveParty()
 		EscapeAreaMove("AR1002",1033,563, SW)
 		SetGlobal("XA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
+		SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
 		SetGlobal("XA_CorwinLeaveWedding", "GLOBAL", 2)
 	~
 	EXIT
@@ -5406,12 +5407,14 @@ END
 IF ~
 	Global("XA_CorwinLeftPoorRep", "GLOBAL", 1)
 	GlobalLT("chapter", "GLOBAL", 20)
+	!AreaCheck("AR1002")
 ~ THEN BEGIN XA_LeftPoorRep_LT20
 	SAY @420 /* ~I'm sorry. I can't be a part of this any longer. When you clean up your act, you can find me in the Athkatla magistrate.~ */
 	
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_CorwinLeftPoorRep", "GLOBAL", 0)
+		SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
 		SetLeavePartyDialogFile()
 		ChangeAIScript("", OVERRIDE)
 		ChangeAIScript("", DEFAULT)
@@ -5421,6 +5424,27 @@ IF ~
 	EXIT
 END  
 //} #endregion
+
+//{ #region Corwin Left - Bad Reputation - Dialog J-28C
+IF ~
+	Global("XA_CorwinLeftPoorRep", "GLOBAL", 1)
+	GlobalLT("chapter", "GLOBAL", 20)
+	AreaCheck("AR1002")
+~ THEN BEGIN XA_LeftPoorRep_LT20
+	SAY @1446 /* ~I'm sorry. I can't be a part of this any longer. If you ever clean up your act, come and see me.~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_CorwinLeftPoorRep", "GLOBAL", 0)
+		SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+		SetLeavePartyDialogFile()
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
+		LeaveParty()
+	~
+	EXIT
+END  
+//}
 
 //{ #region Corwin Left - Bad Reputation - Dialog J-28B
 IF ~
@@ -5432,11 +5456,13 @@ IF ~
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_CorwinLeftPoorRep", "GLOBAL", 0)
+		SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+		
 		SetLeavePartyDialogFile()
 		ChangeAIScript("", OVERRIDE)
 		ChangeAIScript("", DEFAULT)
 		LeaveParty()
-		EscapeArea()
+		//EscapeArea()
 	~
 	EXIT
 END  
@@ -5479,7 +5505,9 @@ END
 
 //{ #region Gorge Interject - Dialog J-30
 IF ~
-	Global("OHD_GORGE_NTRJEX","OH5100",1)
+	OR(2)
+		Global("OHD_GORGE_NTRJEX","OH5100",1)
+		Global("XA_ForceTreeTalk", "GLOBAL", 1)
 ~ THEN BEGIN XA_GorgeClimb
 	SAY @395 /* ~Let's take this nice and slow. Remember - maintain three points of contact at all times.~ */
 	
@@ -5515,6 +5543,7 @@ IF ~~ THEN BEGIN XA_GorgeClimb1
 	DO ~
 		SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
 		SetGlobal("XA_CorwinOH5100", "GLOBAL", 1)
+		SetGlobal("XA_ForceTreeTalk", "GLOBAL", 2)
 	~
 	EXIT
 	
@@ -5524,6 +5553,7 @@ IF ~~ THEN BEGIN XA_GorgeClimb1
 	DO ~
 		SetGlobal("OHD_GORGE_NTRJEX","OH5100",2)
 		SetGlobal("XA_CorwinOH5100", "GLOBAL", 1)
+		SetGlobal("XA_ForceTreeTalk", "GLOBAL", 2)
 	~
 	EXIT
 	
@@ -5582,9 +5612,6 @@ IF ~~ THEN BEGIN XA_CorwinBitWokeUp3
 	= @306 /* ~(She's up and about, but still unsteady - you become concerned that her condition may deteriorate over time).~ */
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_CorwinJoined","LOCALS",1)
-		SetGlobal("XA_AskedToRejoin", "LOCALS", 0)
-		SetGlobal("XA_ResetBanterTimer", "GLOBAL", 1)
 		ChangeStat(Myself,CON,-1,ADD)
 		ChangeStat(Myself,DEX,-1,ADD)
 		ChangeStat(Myself,STR,-1,ADD)

@@ -209,7 +209,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_CorwinJoined","LOCALS",1)
-		SetGlobal("XA_AskedToRejoin", "LOCALS", 0)
+		SetGlobal("XA_CorwinKickedOut", "LOCALS", 0)
 		SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 		SetGlobal("XA_CorwinRepWarning", "GLOBAL", 0)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 2)
@@ -1227,7 +1227,7 @@ IF
 THEN 
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobalTimer("XA_CorwinRepWarningTimer", "GLOBAL", ONE_HOUR)
+		SetGlobalTimer("XA_CorwinRepWarningTimer", "GLOBAL", ONE_ROUND)
 		SetGlobal("XA_CorwinRepWarning", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 		Continue()
@@ -1454,6 +1454,20 @@ END
 //} End Underdark Check
 
 //{ 18: Event Checks
+
+	//{ Gorge Tree Climb
+	IF
+		Global("OHD_GORGE_NTRJEX","OH5100",2)
+		GlobalLT("XA_CorwinOH5100", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_ForceTreeTalk", "GLOBAL", 1)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
 
 	//{ Helped Ginia
 	IF

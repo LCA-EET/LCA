@@ -10,6 +10,7 @@
 
 BEGIN ~XACORWIP~
 
+//{ Rilifane
 IF ~
 	AreaCheck("XACS13")
 ~ THEN BEGIN XA_SoAEnd
@@ -24,7 +25,9 @@ IF ~
 	~
 	EXIT
 END
+//}
 
+//{ Spellhold
 IF ~
 	Global("XA_CorwinIrenicus", "GLOBAL", 4)
 ~ THEN BEGIN XA_CorwinIrenicusRejoin
@@ -178,7 +181,9 @@ IF ~~ THEN BEGIN XA_CorwinRescueTalk5B
 	~
 	EXIT
 END
-//{ Dialog P-7
+//}
+
+//{ Pocket Plane - Dialog P-7
 IF ~
 	Global("XA_CorwinSpawnPlane", "GLOBAL", 1)
 	GlobalLT("XA_CorwinSpawnComplain", "GLOBAL", 1)
@@ -363,8 +368,7 @@ END
 
 //}
 
-
-//{ Dialog P-1
+//{ Return to Baldur's Gate Dialog P-1
 IF ~
 	AreaCheck("XAHOME")
 	Global("XA_CorwinWithFamily", "GLOBAL", 1)
@@ -390,7 +394,7 @@ IF ~
 END
 //}
 
-//{ Dialog P-2
+//{ Return to Baldur's Gate Dialog P-2
 IF ~
 	AreaCheck("XAHOME")
 	Global("XA_CorwinWithFamily", "GLOBAL", 1)
@@ -401,7 +405,7 @@ IF ~
 END
 //}
 
-//{ Dialog P-3
+//{ Corwin Can't Leave - See XACORSCR for Conditions. Dialog P-3
 IF ~
 	!Global("XA_CanLeaveParty", "GLOBAL", 1)
 ~
@@ -418,7 +422,7 @@ THEN BEGIN XA_CantLeave
 END
 //}
 
-//{ Dialog P-4
+//{ Return to Baldur's Gate - Can't Leave. Dialog P-4
 IF ~
 	Global("XA_ReturnToBG", "GLOBAL", 1)
 	GlobalLT("XA_CorwinWithFamily", "GLOBAL", 1)
@@ -435,7 +439,7 @@ IF ~
 END
 //}
 
-//{ Dialog P-5
+//{ Bit By Bodhi - Can't Leave. Dialog P-5
 IF ~
 	GlobalGT("XA_CorwinBit", "GLOBAL", 0)
 	GlobalLT("XA_CorwinCleansed", "GLOBAL", 1)
@@ -452,7 +456,7 @@ THEN BEGIN XA_CorwinSick
 END
 //}
 
-//{ Dialog P-6
+//{ Rejoin after resurrection from Bodhi episode. Dialog P-6
 IF ~
 	GlobalGT("XA_CorwinBit", "GLOBAL", 0)
 	Global("XA_CorwinCleansed", "GLOBAL", 1)
@@ -470,28 +474,23 @@ THEN BEGIN XA_CorwinCleansed
 END
 //}
 
-IF ~
-	!IsGabber(Player1)
-~ THEN BEGIN XA_PC
-	SAY @13 /* ~I need to speak to <CHARNAME>.~ */
-	IF ~~ THEN
-	EXIT
-END
-
+//{ Ask to Rejoin
 IF ~
 	Global("XA_CorwinJoined", "LOCALS", 1)
-	!Global("XA_AskedToRejoin", "LOCALS", 1)
-	!ReputationLT(Player1,7)
+	GlobalLT("XA_CorwinKickedOut", "LOCALS", 1)
+	ReputationGT(Player1,6)
 ~ THEN BEGIN XA_AreYouSure
 	SAY @0 /* ~<CHARNAME>? Are you sure you don't want me with you?~ [BDCORP6] */
 	
 	IF ~
 		!Global("XA_CorwinPromoted", "GLOBAL", 1)
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @6 /* ~Your assistance would be welcome Captain. Join me.~ */
 	GOTO XAA1
 	
 	IF ~
 		Global("XA_CorwinPromoted", "GLOBAL", 1)
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @41 /* ~Your assistance would be welcome Major. Join me.~ */
 	GOTO XAA1
 	
@@ -502,8 +501,8 @@ IF ~
 		
 	IF ~~ THEN REPLY @2 /* ~I do, but not at the moment. Wait here, I will come for you later.~ */
 	DO ~
-		SetGlobal("XA_AskedToRejoin", "LOCALS", 1)
 		SetGlobal("XA_CorwinJoined", "LOCALS", 0)
+		SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
 	~
 	GOTO XAA3
 	
@@ -513,15 +512,18 @@ IF ~
 	~ THEN REPLY @73  /* ~Go. I'll meet you back at the Athkatla magistrate.~*/
 	GOTO XA_MeetAth
 END
+//}
 
+//{ Kicked from Party - Don't Ask to Rejoin
 IF ~
 	Global("XA_CorwinJoined", "LOCALS", 1)
-	!Global("XA_AskedToRejoin", "LOCALS", 1)
+	GlobalLT("XA_CorwinKickedOut", "LOCALS", 1)
 	ReputationLT(Player1,7)
 ~ THEN BEGIN XA_AreYouSure_RepLT7
 	SAY @32 /* ~You want me out of here? Fine. If you ever clean up your act, you can find me in the Athkatla magistrate.~ */
 	IF ~~ THEN
 	DO ~
+		SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
 		SetGlobal("XA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
 		ChangeAIScript("", OVERRIDE)
 		ChangeAIScript("", DEFAULT)
@@ -529,42 +531,138 @@ IF ~
 	~
 	EXIT
 END
+//}
 
+//{ Only speak to player
 IF ~
-	Global("XA_AskedToRejoin", "LOCALS", 1)
-~ THEN BEGIN XA_MadeDecision
-	SAY @63  /*~<CHARNAME>. What do you need?~ [XA100032] */
-	
-	IF ~~ THEN REPLY @72  /* ~Nothing at the moment.~*/
+	!IsGabber(Player1)
+~ THEN BEGIN XA_PC
+	SAY @13 /* ~I need to speak to <CHARNAME>.~ */
+	IF ~~ THEN
 	EXIT
-	
-	IF ~
-		!Global("XA_CorwinPromoted", "GLOBAL", 1)
-	~ THEN REPLY @6 /* ~Your assistance would be welcome Captain. Join me.~ */
-	GOTO XAA1
-	
-	IF ~
-		Global("XA_CorwinPromoted", "GLOBAL", 1)
-	~ THEN REPLY @41 /* ~Your assistance would be welcome Major. Join me.~ */
-	GOTO XAA1
-	
-	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @1 /* ~I need you at my side, now more than ever. Join me.~ */
-	GOTO XAA2
-	
-	IF ~
-		!AreaCheck("AR1002")
-		GlobalLT("Chapter", "GLOBAL", 20)
-	~ THEN REPLY @73  /* ~Go. I'll meet you back at the Athkatla magistrate.~*/
-	GOTO XA_MeetAth
 END
+//}
+
+//{ Rejoin After Kicked Out Dialogs
+	//{ Athkatla Magistrate - Rep OK
+	IF ~
+		Global("XA_CorwinKickedOut", "LOCALS", 1)
+		AreaCheck("AR1002")
+		ReputationGT(Player1,6)
+	~ THEN BEGIN XA_BackAtAthkatlaCouncil
+		SAY @63  /*~<CHARNAME>. What do you need?~ [XA100032] */
+		
+		IF ~
+			!Global("XA_CorwinPromoted", "GLOBAL", 1)
+			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @6 /* ~Your assistance would be welcome Captain. Join me.~ */
+		GOTO XAA1
+		
+		IF ~
+			Global("XA_CorwinPromoted", "GLOBAL", 1)
+			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @41 /* ~Your assistance would be welcome Major. Join me.~ */
+		GOTO XAA1
+		
+		IF ~
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @1 /* ~I need you at my side, now more than ever. Join me.~ */
+		GOTO XAA2
+			
+		IF ~~ THEN REPLY @2 /* ~I do, but not at the moment. Wait here, I will come for you later.~ */
+		DO ~
+			SetGlobal("XA_CorwinJoined", "LOCALS", 0)
+			SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+		~
+		GOTO XAA3
+	END
+	//}
+
+	IF ~
+		Global("XA_CorwinKickedOut", "LOCALS", 1)
+		!AreaCheck("AR1002")
+		ReputationGT(Player1,6)
+	~ THEN BEGIN XA_OutsideAthkatlaCouncil
+		SAY @63  /*~<CHARNAME>. What do you need?~ [XA100032] */
+		
+		IF ~
+			!Global("XA_CorwinPromoted", "GLOBAL", 1)
+			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @6 /* ~Your assistance would be welcome Captain. Join me.~ */
+		GOTO XAA1
+		
+		IF ~
+			Global("XA_CorwinPromoted", "GLOBAL", 1)
+			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @41 /* ~Your assistance would be welcome Major. Join me.~ */
+		GOTO XAA1
+		
+		IF ~
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @1 /* ~I need you at my side, now more than ever. Join me.~ */
+		GOTO XAA2
+			
+		IF ~~ THEN REPLY @2 /* ~I do, but not at the moment. Wait here, I will come for you later.~ */
+		DO ~
+			SetGlobal("XA_CorwinJoined", "LOCALS", 0)
+			SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+		~
+		GOTO XAA3
+		
+		IF ~
+			!AreaCheck("AR1002")
+			GlobalLT("Chapter", "GLOBAL", 20)
+		~ THEN REPLY @73  /* ~Go. I'll meet you back at the Athkatla magistrate.~*/
+		GOTO XA_MeetAth
+	END
+	//}
+
+	//{ Athkatla Magistrate - Rep Bad
+	IF ~
+		Global("XA_CorwinKickedOut", "LOCALS", 1)
+		ReputationLT(Player1,7)
+		OR(2)
+			AreaCheck("AR1002")
+			GlobalGT("Chapter", "GLOBAL", 19)
+	~ THEN BEGIN XA_BackAtAthkatlaCouncil_BadRep
+		SAY @102 /* ~Your reputation precedes you, 'hero'. Come and see me when you've cleaned up your act.~  */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+		~
+		EXIT
+	END 
+	//}
+	
+	//{ Athkatla Magistrate - Rep Bad
+	IF ~
+		Global("XA_CorwinKickedOut", "LOCALS", 1)
+		!AreaCheck("AR1002")
+		ReputationLT(Player1,7)
+		GlobalLT("Chapter", "GLOBAL", 20)
+	~ THEN BEGIN XA_OutsideAthkatlaCouncil_BadRep
+		SAY @103 /* ~Your reputation precedes you, 'hero'. Come and see me at the Athkatla magistrate once you've cleaned up your act.~  */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+			SetGlobal("XA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
+			ChangeAIScript("", OVERRIDE)
+			ChangeAIScript("", DEFAULT)
+			EscapeArea()
+		~
+		EXIT
+	END 
+	//}
+//}
 
 IF ~~ THEN BEGIN XA_MeetAth
 	SAY @74  /*  ~Very well. Don't take too long.~*/
 	
 	IF ~~ THEN
 	DO ~
+		SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
 		SetGlobal("XA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
 		ChangeAIScript("", OVERRIDE)
 		ChangeAIScript("", DEFAULT)
@@ -596,6 +694,9 @@ END
 IF ~~ THEN BEGIN XAA3
 	SAY @5 /* ~Very well. Don't take too long.~ [BDCORP5]*/ 
 	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+	~
 	EXIT
 END
 
