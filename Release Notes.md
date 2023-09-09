@@ -7,6 +7,8 @@
 * Updated Corwin's character portrait. This change applies only to XACORWIN, not CORWIN7.
 * Updated the user's guide.
 * Made some changes to Corwin's Amulet. It can now be dropped. The user guide includes an explanation of what it does.
+* Extensive changes to support compatibility with CorwinEET and Cost of One Girl's Soul. LCA should be installed after those mods. Refer to the user's guide.
+* Added Glint as a non-playable character in the Return to Baldur's Gate.
 
 # v0.2.11-beta 2023-09-08
 * Improved post-dialog (XACORWIP) logic.
