@@ -3,6 +3,9 @@
 # Report any bugs to LCAMod@danielvalle.net, or the Gibberlings 3 Forum Post 
 * Link to forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v0.3.1-beta 2023-09-09
+* Cleaned up some inconsistencies in the Duke Debriefing cutscene, when the Skie mod is active.
+
 # v0.3.0-beta 2023-09-08
 * Updated Corwin's character portrait. This change applies only to XACORWIN, not CORWIN7.
 * Updated the user's guide.

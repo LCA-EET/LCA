@@ -1495,16 +1495,30 @@ CHAIN IF ~
 	== XACORWIJ
 	@62 /* ~Thank you, sir!~ */
 	== XABELT
+	IF ~
+		!Global("XA_SkieModActive", "GLOBAL", 1)
+	~
 	@63 /* ~Being that there is no other business to discuss, this meeting is adjourned.~ */
 	DO ~
 		SetGlobal("XA_DukesDebriefed", "GLOBAL", 4)
 		StartCutSceneMode()
 		StartCutScene("XADEBR03")
 	~
+	== XABELT
+	IF ~
+		Global("XA_SkieModActive", "GLOBAL", 1)
+	~
+	@63 /* ~Being that there is no other business to discuss, this meeting is adjourned.~ */
+	DO ~
+		SetGlobal("XA_DukesDebriefed", "GLOBAL", 4)
+		StartCutSceneMode()
+		StartCutScene("XADEBR04")
+	~
 EXIT
 
 CHAIN IF ~
 	Global("XA_DukesDebriefed", "GLOBAL", 1)
+	!Global("XA_SkieModActive", "GLOBAL", 1)
 ~ THEN PLAYER1 XA_DebriefChain
 	 /* */
 	@15 /* ~(Unsure of what to expect, you enter the Ducal Palace for the debriefing. Captain Corwin is already there, and you can tell that she's eager to begin. Several minutes pass before you and the Captain are escorted into the meeting chamber on the second floor. The Council is seated behind a long, mahogany table, as are their adjutants.)~*/
@@ -1536,6 +1550,44 @@ CHAIN IF ~
 	== XALIIA
 	@28 /* ~Sufficeth to say, we are all glad that she was successful.~ */
 	= @29 /* ~Captain, it was at this time that you joined <CHARNAME> in <PRO_HISHER> hunt for the wizard, yes?~*/
+	== XACORWIJ
+	@30 /* Yes ma'am, that is correct.*/
+	= @31 /* ~(Captain Corwin goes on to explain in painstaking detail the events that transpired after she arrived in Athkatla. The Council was equal parts stunned and amazed to hear of the rescue of Imoen from Spellhold, your transformation after your soul was stolen from you, and your epic battles with the drow on your way back to the surface.)~*/
+	= @32 /* ~(Throughout her telling of what transpired, she spoke highly of you, and your companions. She concludes by telling the Council of how Irenicus was made to pay for his crimes with his life, and how your soul was restored.)~*/
+	== XAELTAN
+	@33 /* ~Remarkable. Simply, remarkable.~ */
+	=@34  /* ~(The other Council members nod in agreement.)~ */
+	== XABELT
+	@35 /* ~Forgive me, but I must ask. You, <CHARNAME>... you are in control of this transformative power you possess? This 'Slayer' that the Captain had referred to?~ */
+	=@36 /* ~(You notice how the expression on the faces of the Dukes has changed from one of admiration, to one of concern - and fear.)~ */
+	== PLAYER1
+	@37 /* ~I assure you that I'm in complete control, Duke Belt.~*/
+	=@38 /* ~(An awkward silence ensues.)~ */
+	== XALIIA
+	@40 /* ~Captain, do you agree? Has <CHARNAME> been able to maintain <PRO_HISHER> control over this new power?~*/
+	== XACORWIJ
+	@41 /* ~Yes, ma'am. I'd trust <PRO_HIMHER> with my life, any day.~*/
+	== XAELTAN
+	@39 /* ~Good. We need a few moments to discuss in private the information that you and <CHARNAME> have provided us. We won't take long.~*/
+	=@42 /* ~Corporal Duncan, please escort <CHARNAME> and Captain Corwin to the study.~*/
+END XABENCE XA_StartDebrief01
+
+CHAIN IF ~
+	Global("XA_DukesDebriefed", "GLOBAL", 1)
+	Global("XA_SkieModActive", "GLOBAL", 1)
+~ THEN PLAYER1 XA_DebriefChainSkieMod
+	 /* */
+	@15 /* ~(Unsure of what to expect, you enter the Ducal Palace for the debriefing. Captain Corwin is already there, and you can tell that she's eager to begin. Several minutes pass before you and the Captain are escorted into the meeting chamber on the second floor. The Council is seated behind a long, mahogany table, as are their adjutants.)~*/
+	
+	=@188 /* ~(Skie Silvershield is also present, and greets you and the Captain with a warm embrace. After exchanging some pleasantries with the Council, you and the Captain take a seat at the table. Duke Eltan begins the debriefing by asking you to explain the series of events that followed your exile from the city.)~*/
+	
+	=@189 /* ~(You tell how you and your companions were captured by the mad wizard Irenicus, and how you ended up in Athkatla. Their faces remain stoic as you recall finding the bodies of Khalid and Dynaheir. What piques their interest is your explanation of how you came to be in the possession of the Soultaker dagger, and the steps you took to release Skie's soul.)~	*/
+		
+	== XAENTAR
+	@190 /* ~Skie, once resurrected, was able to corroborate your story... I feel I must apologize once again to you, <CHARNAME>. You were very nearly executed at my behest. If it weren't for the Captain convincing the others on the Council to spare you —~*/
+	== XALIIA
+	@28 /* ~Sufficeth to say, we are all glad that she was successful.~ */
+	= @191 /* ~Captain, it was shortly after these events that you joined <CHARNAME> in <PRO_HISHER> hunt for the wizard, yes?~*/
 	== XACORWIJ
 	@30 /* Yes ma'am, that is correct.*/
 	= @31 /* ~(Captain Corwin goes on to explain in painstaking detail the events that transpired after she arrived in Athkatla. The Council was equal parts stunned and amazed to hear of the rescue of Imoen from Spellhold, your transformation after your soul was stolen from you, and your epic battles with the drow on your way back to the surface.)~*/

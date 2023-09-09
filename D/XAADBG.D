@@ -3485,6 +3485,18 @@ END
 IF ~~ THEN BEGIN XA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
 	
+	IF ~~ THEN REPLY @677
+	DO ~
+		SetGlobal("XA_SkieModActive", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @678
+	DO ~
+		SetGlobal("XA_SkieModActive", "GLOBAL", 0)
+	~
+	GOTO XA_MainMenu
+	
 	IF ~~ THEN REPLY @642
 	DO ~
 		SetGlobal("XA_BackToBG_Imoen", "GLOBAL", 1)

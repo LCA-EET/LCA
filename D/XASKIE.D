@@ -19,7 +19,7 @@ END
 IF ~
 	Global("XA_ArrivedInUndercity", "GLOBAL", 3)
 ~ THEN BEGIN XA_SkieUC
-	SAY @48
+	SAY @48 /* Psst. */
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_ArrivedInUndercity", "GLOBAL", 4)

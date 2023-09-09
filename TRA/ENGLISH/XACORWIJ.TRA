@@ -980,12 +980,12 @@ I received the shipping manifests from the harbor master, but they are encoded a
 @975 = ~Father!~ [XA100051]
 @976 = ~...uhnnn... S-Schael...~
 @977 = ~What happened! Where's Rohma!?~ [XA100052]
-@978 = ~They t-took her... said they w-would trade her for.. ...~
-@979 = ~For what? Who took her?~
+@978 = ~They broke in.... t-took her...~
+@979 = ~Who took her!?~
 @980 = ~For ... <CHARNAME> ... it was B-Beno and.. a woman..~
 @981 = ~Avernus. What in Tymora's name were we thinking, coming back here? We must have a death wish.~
 @982 = ~We'll be out of here as soon as we find Caelar. Stay alert.~
-@983 = ~~
+@983 = ~It was B-Beno... and a... a woman... trade Rohma... for <CHARNAME>...~
 @984 = ~Oh, Gods! <CHARNAME>, I can't pull the spike or he'll bleed out!~
 @985 = ~Huh? The front door is open.~ 
 @986 = ~Were you expecting guests?~
@@ -1023,7 +1023,7 @@ Do not keep us waiting for long."~
 @1016 = ~Schael, I want you by my side, but not if you're emotionally compromised. The risk to Rohma would be too great.~
 @1017 = ~Schael, if you're to come with me, I need you calm, cool and collected — for Rohma's sake. Can I count on you?~
 @1018 = ~What?! No.. you're right... I'm letting my feelings get the better of me. I need to focus. For Rohma.~
-@1019 = ~~
+@1019 = ~Damn it!~ [XA100112]
 @1020 = ~I'm ready, <CHARNAME>. You can count on me, I promise you.~
 @1021 = ~Good. Let's go get Rohma.~
 @1022 = ~<CHARNAME>... this ring...~
@@ -1099,7 +1099,7 @@ Do not keep us waiting for long."~
 @1092 = ~Yes, well... honestly...~
 @1093 = ~If I'd told them, it'd only be a matter of time before my father, and Rohma, would hear about it. I'd rather not trouble them with the knowledge of how close I was to turning into a monster.~ 
 @1094 = ~But... I haven't forgotten how you saved me, <CHARNAME>. And I never will.~
-@1095 = ~And I'll never forget what you did for me, Schael. My corpse would still be hanging from the Entar's gallows were it not for you.~
+@1095 = ~And I'll never forget what you did for me, Schael. My corpse would still be hanging from Entar's gallows were it not for you.~
 @1096 = ~(You share a warm embrace.)~ 
 @1097 = ~There was one other thing...~ 
 @1098 = ~Hm. I wonder what they're discussing...~
@@ -1132,7 +1132,7 @@ Do not keep us waiting for long."~
 @1125 = ~Beno, how could you! I'm going to —~
 @1126 = ~Love Conquers All
 Schael has asked that I get us a room at one of the inns in Amn. I can hardly contain my excitement!~
-@1127 = ~~
+@1127 = ~<CHARNAME>, you must be thrilled!~
 @1128 = ~~
 @1129 = ~~
 @1130 = ~That won't be necessary. We only need the one.~
@@ -1225,7 +1225,7 @@ Corwin has arrested Beno Famari for kidnapping and attempted murder. Hopefully, 
 @1214 = ~Yes, honey?~ 
 @1215 = ~Oh, where are my manners. Thank you for looking after her, Skie.~      
 @1216 = ~Oh, where are my manners. Thank you for looking after her, Duchess Jannath.~    
-@1217 = ~Of course, Major.~
+@1217 = ~Of course, Major. She's such a delightful child!~
 @1218 = ~Hmph. Just try and stay out of trouble.~
 @1219 = ~The man with the scar is Beno. The woman has got to be Illasera.~
 @1220 = ~Are you sure? You're going to need my help...~

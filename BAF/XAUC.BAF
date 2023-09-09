@@ -1,5 +1,6 @@
 IF
 	Global("XA_ArrivedInUndercity", "GLOBAL", 2)
+	!Global("XA_SkieModActive", "GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_ArrivedInUndercity", "GLOBAL", 3)

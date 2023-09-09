@@ -3393,12 +3393,12 @@ IF ~
 	SAY @1142 /* ~That was the last of them...~ */
 	
 	IF ~
-		Global("XA_SkieModActive", "GLOBAL",1)
+		!Global("XA_SkieModActive", "GLOBAL",1)
 	~ THEN 
 	GOTO XA_IllaseraDeadSkie
 	
 	IF ~
-		!Global("XA_SkieModActive", "GLOBAL",1)
+		Global("XA_SkieModActive", "GLOBAL",1)
 	~ THEN 
 	GOTO XA_IllaseraDeadGlint
 END
@@ -3708,12 +3708,11 @@ IF ~~ THEN BEGIN XA_DukeDebrief02_A1
 	GOTO XA_DukeDebrief_WaitForDukes
 	
 	IF ~
-		OR(5)
+		OR(4)
 			GlobalGT("XA_TimesHadSex", "GLOBAL", 0)
-			Global("XA_SlappedDelcia", "GLOBAL", 1)
-			Global("XA_CorwinWonTM", "GLOBAL", 1)
-			Global("XA_CorwinCleansed", "GLOBAL", 1)
-			Global("XA_CorwinCleansed", "GLOBAL", 2)
+			GlobalGT("XA_SlappedDelcia", "GLOBAL", 0)
+			GlobalGT("XA_CorwinWonTM", "GLOBAL", 0)
+			GlobalGT("XA_CorwinCleansed", "GLOBAL", 0)
 	~ THEN REPLY @1074 /* ~Although... I noticed you did leave *some* things out.~ */
 	GOTO XA_DukeDebrief02_A2
 END
@@ -8227,358 +8226,385 @@ IF ~~ THEN BEGIN XAA56
 	EXIT
 END
 
-IF ~~ THEN BEGIN XA_Congratulations1
-	SAY @1103 /* ~Thank you, Skie! <CHARNAME>, you must be thrilled!~ */
-	
-	IF ~~ THEN REPLY @1104 /* ~I'm still at a loss for words.~ */
-	GOTO XA_Congratulations2
-	
-	IF ~~ THEN REPLY @1105 /* ~This turned out far better than I could have dreamed..~ */
-	GOTO XA_Congratulations2
-END
+//{ Duke Debriefing Conclusion
 
-IF ~~ THEN BEGIN XA_Congratulations2
-	SAY @1106 /* ~I can hardly believe it myself.~ */
-	
+	//{ End of Duke Debriefing - Skie Mod Active
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN GOTO XA_Congratulations2A
-	
-	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN GOTO XA_Congratulations2B
-END
+		Global("XA_DukesDebriefed", "GLOBAL", 4)
+		Global("XA_SkieModActive", "GLOBAL", 1)
+	~ THEN BEGIN XA_Congratulations
+		SAY @1127 /* ~<CHARNAME>, you must be thrilled!~ */
+		
+		IF ~~ THEN REPLY @1104 /* ~I'm still at a loss for words.~ */
+		DO ~
+			SetGlobal("XA_DukesDebriefed", "GLOBAL", 5)
+			SetGlobal("XA_DukesFullyDebriefed", "GLOBAL", 1)
+		~
+		GOTO XA_Congratulations2
+		
+		IF ~~ THEN REPLY @1105 /* ~This turned out far better than I could have dreamed..~ */
+		DO ~
+			SetGlobal("XA_DukesDebriefed", "GLOBAL", 5)
+			SetGlobal("XA_DukesFullyDebriefed", "GLOBAL", 1)
+		~
+		GOTO XA_Congratulations2
+	END
 
-IF ~~ THEN BEGIN XA_Congratulations2A
-	SAY @1111 /* ~Defender of Baldur's Gate. Well done, my love.~ */
-	= @1108 /* ~(You kiss and embrace.)~ */
-	= @1107 /* ~Come on love! Let's go and celebrate!~ */
-	
-	IF ~~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XADINROM")
-	~
-	EXIT 
-	
-	IF ~
-		Global("XA_RingEnchanted", "GLOBAL", 2)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
-	DO ~
-		ChangeStat(Player1, MAXHITPOINTS, -4, ADD)
-		StartCutSceneMode()
-		StartCutScene("XADINROM")
-	~
-	EXIT
-	
-	IF ~
-		CheckStatGT(Player1, 49, MAXHITPOINTS)
-		Global("XA_RingEnchanted", "GLOBAL", 2)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
-	DO ~
-		ChangeStat(Player1, MAXHITPOINTS, -5, ADD)
-		StartCutSceneMode()
-		StartCutScene("XADINROM")
-	~
-	EXIT
-	
-	IF ~
-		CheckStatGT(Player1, 59, MAXHITPOINTS)
-		Global("XA_RingEnchanted", "GLOBAL", 2)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
-	DO ~
-		ChangeStat(Player1, MAXHITPOINTS, -6, ADD)
-		StartCutSceneMode()
-		StartCutScene("XADINROM")
-	~
-	EXIT
-	
-	IF ~
-		CheckStatGT(Player1, 69, MAXHITPOINTS)
-		Global("XA_RingEnchanted", "GLOBAL", 2)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
-	DO ~
-		ChangeStat(Player1, MAXHITPOINTS, -7, ADD)
-		StartCutSceneMode()
-		StartCutScene("XADINROM")
-	~
-	EXIT
-	
-	IF ~
-		CheckStatGT(Player1, 79, MAXHITPOINTS)
-		Global("XA_RingEnchanted", "GLOBAL", 2)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
-	DO ~
-		ChangeStat(Player1, MAXHITPOINTS, -8, ADD)
-		StartCutSceneMode()
-		StartCutScene("XADINROM")
-	~
-	EXIT
-	
-	IF ~
-		CheckStatGT(Player1, 89, MAXHITPOINTS)
-		Global("XA_RingEnchanted", "GLOBAL", 2)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
-	DO ~
-		ChangeStat(Player1, MAXHITPOINTS, -9, ADD)
-		StartCutSceneMode()
-		StartCutScene("XADINROM")
-	~
-	EXIT
-	
-	IF ~
-		CheckStatGT(Player1, 99, MAXHITPOINTS)
-		Global("XA_RingEnchanted", "GLOBAL", 2)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
-	DO ~
-		ChangeStat(Player1, MAXHITPOINTS, -10, ADD)
-		StartCutSceneMode()
-		StartCutScene("XADINROM")
-	~
-	EXIT
-	
-	IF ~
-		CheckStatGT(Player1, 109, MAXHITPOINTS)
-		Global("XA_RingEnchanted", "GLOBAL", 2)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
-	DO ~
-		ChangeStat(Player1, MAXHITPOINTS, -11, ADD)
-		StartCutSceneMode()
-		StartCutScene("XADINROM")
-	~
-	EXIT
-	
-	IF ~
-		CheckStatGT(Player1, 119, MAXHITPOINTS)
-		Global("XA_RingEnchanted", "GLOBAL", 2)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
-	DO ~
-		ChangeStat(Player1, MAXHITPOINTS, -12, ADD)
-		StartCutSceneMode()
-		StartCutScene("XADINROM")
-	~
-	EXIT
-	
-	
-	IF ~
-		CheckStatGT(Player1, 129, MAXHITPOINTS)
-		Global("XA_RingEnchanted", "GLOBAL", 2)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
-	DO ~
-		ChangeStat(Player1, MAXHITPOINTS, -13, ADD)
-		StartCutSceneMode()
-		StartCutScene("XADINROM")
-	~
-	EXIT
-	
-	IF ~
-		CheckStatGT(Player1, 139, MAXHITPOINTS)
-		Global("XA_RingEnchanted", "GLOBAL", 2)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
-	DO ~
-		ChangeStat(Player1, MAXHITPOINTS, -14, ADD)
-		StartCutSceneMode()
-		StartCutScene("XADINROM")
-	~
-	EXIT
-	
-	IF ~
-		CheckStatGT(Player1, 149, MAXHITPOINTS)
-		Global("XA_RingEnchanted", "GLOBAL", 2)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
-	DO ~
-		ChangeStat(Player1, MAXHITPOINTS, -15, ADD)
-		StartCutSceneMode()
-		StartCutScene("XADINROM")
-	~
-	EXIT
-END
+	//}
 
-IF ~~ THEN BEGIN XA_Congratulations2B
-	SAY @1110 /* ~Defender of Baldur's Gate. Well done, my friend.~ */
-	
-	IF ~~ THEN 
-	GOTO XA_Congratulations3
-	
-	IF ~
-		Global("AerieRomanceActive", "GLOBAL", 2)
-	~ THEN GOTO XA_Congratulations3_Aerie
-	
-	IF ~
-		Global("JaheiraRomanceActive", "GLOBAL", 2)
-	~ THEN GOTO XA_Congratulations3_Jaheira
-	
-	IF ~
-		Global("NeeraRomanceActive", "GLOBAL", 2)
-	~ THEN GOTO XA_Congratulations3_Neera
-	
-	IF ~
-		Global("ValygarRomanceActive", "GLOBAL", 2)
-	~ THEN GOTO XA_Congratulations3_Valygar
-	
-	IF ~
-		Global("AnomenRomanceActive", "GLOBAL", 2)
-	~ THEN GOTO XA_Congratulations3_Anomen
-	
-	IF ~
-		Global("RasaadRomanceActive", "GLOBAL", 2)
-	~ THEN GOTO XA_Congratulations3_Rasaad
-END
+	IF ~~ THEN BEGIN XA_Congratulations1
+		SAY @1103 /* ~Thank you, Skie! <CHARNAME>, you must be thrilled!~ */
+		
+		IF ~~ THEN REPLY @1104 /* ~I'm still at a loss for words.~ */
+		GOTO XA_Congratulations2
+		
+		IF ~~ THEN REPLY @1105 /* ~This turned out far better than I could have dreamed..~ */
+		GOTO XA_Congratulations2
+	END
+
+	IF ~~ THEN BEGIN XA_Congratulations2
+		SAY @1106 /* ~I can hardly believe it myself.~ */
+		
+		IF ~
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN GOTO XA_Congratulations2A
+		
+		IF ~
+			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN GOTO XA_Congratulations2B
+	END
+
+	IF ~~ THEN BEGIN XA_Congratulations2A
+		SAY @1111 /* ~Defender of Baldur's Gate. Well done, my love.~ */
+		= @1108 /* ~(You kiss and embrace.)~ */
+		= @1107 /* ~Come on love! Let's go and celebrate!~ */
+		
+		IF ~~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XADINROM")
+		~
+		EXIT 
+		
+		IF ~
+			Global("XA_RingEnchanted", "GLOBAL", 2)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+		DO ~
+			ChangeStat(Player1, MAXHITPOINTS, -4, ADD)
+			StartCutSceneMode()
+			StartCutScene("XADINROM")
+		~
+		EXIT
+		
+		IF ~
+			CheckStatGT(Player1, 49, MAXHITPOINTS)
+			Global("XA_RingEnchanted", "GLOBAL", 2)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+		DO ~
+			ChangeStat(Player1, MAXHITPOINTS, -5, ADD)
+			StartCutSceneMode()
+			StartCutScene("XADINROM")
+		~
+		EXIT
+		
+		IF ~
+			CheckStatGT(Player1, 59, MAXHITPOINTS)
+			Global("XA_RingEnchanted", "GLOBAL", 2)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+		DO ~
+			ChangeStat(Player1, MAXHITPOINTS, -6, ADD)
+			StartCutSceneMode()
+			StartCutScene("XADINROM")
+		~
+		EXIT
+		
+		IF ~
+			CheckStatGT(Player1, 69, MAXHITPOINTS)
+			Global("XA_RingEnchanted", "GLOBAL", 2)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+		DO ~
+			ChangeStat(Player1, MAXHITPOINTS, -7, ADD)
+			StartCutSceneMode()
+			StartCutScene("XADINROM")
+		~
+		EXIT
+		
+		IF ~
+			CheckStatGT(Player1, 79, MAXHITPOINTS)
+			Global("XA_RingEnchanted", "GLOBAL", 2)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+		DO ~
+			ChangeStat(Player1, MAXHITPOINTS, -8, ADD)
+			StartCutSceneMode()
+			StartCutScene("XADINROM")
+		~
+		EXIT
+		
+		IF ~
+			CheckStatGT(Player1, 89, MAXHITPOINTS)
+			Global("XA_RingEnchanted", "GLOBAL", 2)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+		DO ~
+			ChangeStat(Player1, MAXHITPOINTS, -9, ADD)
+			StartCutSceneMode()
+			StartCutScene("XADINROM")
+		~
+		EXIT
+		
+		IF ~
+			CheckStatGT(Player1, 99, MAXHITPOINTS)
+			Global("XA_RingEnchanted", "GLOBAL", 2)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+		DO ~
+			ChangeStat(Player1, MAXHITPOINTS, -10, ADD)
+			StartCutSceneMode()
+			StartCutScene("XADINROM")
+		~
+		EXIT
+		
+		IF ~
+			CheckStatGT(Player1, 109, MAXHITPOINTS)
+			Global("XA_RingEnchanted", "GLOBAL", 2)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+		DO ~
+			ChangeStat(Player1, MAXHITPOINTS, -11, ADD)
+			StartCutSceneMode()
+			StartCutScene("XADINROM")
+		~
+		EXIT
+		
+		IF ~
+			CheckStatGT(Player1, 119, MAXHITPOINTS)
+			Global("XA_RingEnchanted", "GLOBAL", 2)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+		DO ~
+			ChangeStat(Player1, MAXHITPOINTS, -12, ADD)
+			StartCutSceneMode()
+			StartCutScene("XADINROM")
+		~
+		EXIT
+		
+		
+		IF ~
+			CheckStatGT(Player1, 129, MAXHITPOINTS)
+			Global("XA_RingEnchanted", "GLOBAL", 2)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+		DO ~
+			ChangeStat(Player1, MAXHITPOINTS, -13, ADD)
+			StartCutSceneMode()
+			StartCutScene("XADINROM")
+		~
+		EXIT
+		
+		IF ~
+			CheckStatGT(Player1, 139, MAXHITPOINTS)
+			Global("XA_RingEnchanted", "GLOBAL", 2)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+		DO ~
+			ChangeStat(Player1, MAXHITPOINTS, -14, ADD)
+			StartCutSceneMode()
+			StartCutScene("XADINROM")
+		~
+		EXIT
+		
+		IF ~
+			CheckStatGT(Player1, 149, MAXHITPOINTS)
+			Global("XA_RingEnchanted", "GLOBAL", 2)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
+		DO ~
+			ChangeStat(Player1, MAXHITPOINTS, -15, ADD)
+			StartCutSceneMode()
+			StartCutScene("XADINROM")
+		~
+		EXIT
+	END
+
+	IF ~~ THEN BEGIN XA_Congratulations2B
+		SAY @1110 /* ~Defender of Baldur's Gate. Well done, my friend.~ */
+		
+		IF ~~ THEN 
+		GOTO XA_Congratulations3
+		
+		IF ~
+			Global("AerieRomanceActive", "GLOBAL", 2)
+		~ THEN GOTO XA_Congratulations3_Aerie
+		
+		IF ~
+			Global("JaheiraRomanceActive", "GLOBAL", 2)
+		~ THEN GOTO XA_Congratulations3_Jaheira
+		
+		IF ~
+			Global("NeeraRomanceActive", "GLOBAL", 2)
+		~ THEN GOTO XA_Congratulations3_Neera
+		
+		IF ~
+			Global("ValygarRomanceActive", "GLOBAL", 2)
+		~ THEN GOTO XA_Congratulations3_Valygar
+		
+		IF ~
+			Global("AnomenRomanceActive", "GLOBAL", 2)
+		~ THEN GOTO XA_Congratulations3_Anomen
+		
+		IF ~
+			Global("RasaadRomanceActive", "GLOBAL", 2)
+		~ THEN GOTO XA_Congratulations3_Rasaad
+	END
 
 
-IF ~~ THEN BEGIN XA_Congratulations3
-	SAY @1117 /* ~Come on! Let's go and celebrate!~ */
-	
-	IF ~
-		Global("XA_WonLottery", "GLOBAL", 1)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XADINLOT")
-	~
-	EXIT
-	
-	IF ~
-		!Global("XA_WonLottery", "GLOBAL", 1)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XADINNER")
-	~
-	EXIT
-END
+	IF ~~ THEN BEGIN XA_Congratulations3
+		SAY @1117 /* ~Come on! Let's go and celebrate!~ */
+		
+		IF ~
+			Global("XA_WonLottery", "GLOBAL", 1)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XADINLOT")
+		~
+		EXIT
+		
+		IF ~
+			!Global("XA_WonLottery", "GLOBAL", 1)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XADINNER")
+		~
+		EXIT
+	END
 
-IF ~~ THEN BEGIN XA_Congratulations3_Rasaad
-	SAY @1764 /* ~Come on! Let's go get Rasaad and celebrate!~ */
-	
-	IF ~
-		Global("XA_WonLottery", "GLOBAL", 1)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XADINLOT")
-	~
-	EXIT
-	
-	IF ~
-		!Global("XA_WonLottery", "GLOBAL", 1)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XADINNER")
-	~
-	EXIT
-END
+	IF ~~ THEN BEGIN XA_Congratulations3_Rasaad
+		SAY @1764 /* ~Come on! Let's go get Rasaad and celebrate!~ */
+		
+		IF ~
+			Global("XA_WonLottery", "GLOBAL", 1)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XADINLOT")
+		~
+		EXIT
+		
+		IF ~
+			!Global("XA_WonLottery", "GLOBAL", 1)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XADINNER")
+		~
+		EXIT
+	END
 
-IF ~~ THEN BEGIN XA_Congratulations3_Aerie
-	SAY @1112 /* ~Come on! Let's go and celebrate!~ */
-	
-	IF ~
-		Global("XA_WonLottery", "GLOBAL", 1)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XADINLOT")
-	~
-	EXIT
-	
-	IF ~
-		!Global("XA_WonLottery", "GLOBAL", 1)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XADINNER")
-	~
-	EXIT
-END
+	IF ~~ THEN BEGIN XA_Congratulations3_Aerie
+		SAY @1112 /* ~Come on! Let's go and celebrate!~ */
+		
+		IF ~
+			Global("XA_WonLottery", "GLOBAL", 1)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XADINLOT")
+		~
+		EXIT
+		
+		IF ~
+			!Global("XA_WonLottery", "GLOBAL", 1)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XADINNER")
+		~
+		EXIT
+	END
 
-IF ~~ THEN BEGIN XA_Congratulations3_Jaheira
-	SAY @1113 /* ~Come on! Let's go and celebrate!~ */
-	
-	IF ~
-		Global("XA_WonLottery", "GLOBAL", 1)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XADINLOT")
-	~
-	EXIT
-	
-	IF ~
-		!Global("XA_WonLottery", "GLOBAL", 1)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XADINNER")
-	~
-	EXIT
-END
+	IF ~~ THEN BEGIN XA_Congratulations3_Jaheira
+		SAY @1113 /* ~Come on! Let's go and celebrate!~ */
+		
+		IF ~
+			Global("XA_WonLottery", "GLOBAL", 1)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XADINLOT")
+		~
+		EXIT
+		
+		IF ~
+			!Global("XA_WonLottery", "GLOBAL", 1)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XADINNER")
+		~
+		EXIT
+	END
 
-IF ~~ THEN BEGIN XA_Congratulations3_Neera
-	SAY @1114 /* ~Come on! Let's go and celebrate!~ */
-	
-	IF ~
-		Global("XA_WonLottery", "GLOBAL", 1)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XADINLOT")
-	~
-	EXIT
-	
-	IF ~
-		!Global("XA_WonLottery", "GLOBAL", 1)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XADINNER")
-	~
-	EXIT
-END
+	IF ~~ THEN BEGIN XA_Congratulations3_Neera
+		SAY @1114 /* ~Come on! Let's go and celebrate!~ */
+		
+		IF ~
+			Global("XA_WonLottery", "GLOBAL", 1)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XADINLOT")
+		~
+		EXIT
+		
+		IF ~
+			!Global("XA_WonLottery", "GLOBAL", 1)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XADINNER")
+		~
+		EXIT
+	END
 
-IF ~~ THEN BEGIN XA_Congratulations3_Valygar
-	SAY @1115 /* ~Come on! Let's go and celebrate!~ */
-	
-	IF ~
-		Global("XA_WonLottery", "GLOBAL", 1)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XADINLOT")
-	~
-	EXIT
-	
-	IF ~
-		!Global("XA_WonLottery", "GLOBAL", 1)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XADINNER")
-	~
-	EXIT
-END
+	IF ~~ THEN BEGIN XA_Congratulations3_Valygar
+		SAY @1115 /* ~Come on! Let's go and celebrate!~ */
+		
+		IF ~
+			Global("XA_WonLottery", "GLOBAL", 1)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XADINLOT")
+		~
+		EXIT
+		
+		IF ~
+			!Global("XA_WonLottery", "GLOBAL", 1)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XADINNER")
+		~
+		EXIT
+	END
 
-IF ~~ THEN BEGIN XA_Congratulations3_Anomen
-	SAY @1116 /* ~Come on! Let's go and celebrate!~ */
-	
-	IF ~
-		Global("XA_WonLottery", "GLOBAL", 1)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XADINLOT")
-	~
-	EXIT
-	
-	IF ~
-		!Global("XA_WonLottery", "GLOBAL", 1)
-	~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XADINNER")
-	~
-	EXIT
-END
+	IF ~~ THEN BEGIN XA_Congratulations3_Anomen
+		SAY @1116 /* ~Come on! Let's go and celebrate!~ */
+		
+		IF ~
+			Global("XA_WonLottery", "GLOBAL", 1)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XADINLOT")
+		~
+		EXIT
+		
+		IF ~
+			!Global("XA_WonLottery", "GLOBAL", 1)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~*/
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XADINNER")
+		~
+		EXIT
+	END
+//}
 
 IF ~~ THEN BEGIN XAA57
 	SAY @173 /* ~I do, too. It's only natural, I suppose. It was a traumatic experience for all of us.~ */
@@ -10966,11 +10992,12 @@ CHAIN XAAUDAM XA_AudamarRohmaKidnapChain
 	== XACORWIJ
 	@977 /* ~Oh, thank Tymora you're alive! What happened! Where's Rohma!?~ */
 	== XAAUDAM
-	@978 /* ~They t-took her... said they w-would trade her for.. ...~ */
+	@978 /* ~They broke in.... t-took her...~ */
 	== XACORWIJ
-	@979 /* ~For what? Who took her?~ */
+	@1019 /* ~Damn it!~ [XA100112] */
+	= @979 /* ~Who took her!?~ */
 	== XAAUDAM
-	@980 /* ~For ... <CHARNAME> ... it was B-Beno and.. a woman..~ */
+	@983 /*~It was B-Beno... and a... a woman... trade Rohma... for <CHARNAME>...~*/
 	DO ~
 		SetGlobal("XA_RohmaKidnapped", "GLOBAL", 2)
 	~
@@ -11105,7 +11132,7 @@ CHAIN XACORWIJ XA_CorwinRohmaReuniteChainA
 	== XACORWIJ
 	@1216 /* ~Oh, where are my manners. Thank you for looking after her, Duchess Jannath.~  */
 	== XALIIA
-	@1217 /* ~Of course, Major.~*/
+	@1217 /* ~Of course, Major. She's such a delightful child!~*/
 	== XAROHMA
 	@1238 /* ~Mommy?~  */
 	== XACORWIJ

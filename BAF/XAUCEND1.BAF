@@ -15,7 +15,9 @@ THEN
 		//ActionOverride("JON1",LeaveAreaLUA("XADUC3","",[540.250],SW)) 
 		LeaveAreaLUA("XADUC3","",[580.210],SW) 
 		SetGlobal("XA_RohmaSaved", "GLOBAL", 1)
-		FadeFromColor([30.0],0)
 		Wait(2)
-		StartCutscene("XABGEND1")
+		FadeFromColor([30.0],0)
+		SetGlobal("XA_PrepareCSBGEND1", "GLOBAL", 1)
+		EndCutSceneMode()
+		//StartCutscene("XABGEND1")
 END

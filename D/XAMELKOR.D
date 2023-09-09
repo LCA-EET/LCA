@@ -30,7 +30,7 @@ IF ~
 	EXIT
 	
 	IF ~
-		GlobalLT("L#2SkieDagger","GLOBAL",31)
+		!Global("XA_SkieModActive", "GLOBAL", 1)
 		!Global("XA_MelkorDagger", "GLOBAL", 1)
 	~ THEN GOTO XA_HandOverDagger
 END

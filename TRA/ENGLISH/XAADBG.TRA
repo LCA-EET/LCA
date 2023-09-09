@@ -675,3 +675,5 @@
 @674 = ~ReputationSet(20)~
 @675 = ~Eddard (L#2EDDRD.CRE)~
 @676 = ~Skie (L#2SDSKI.CRE)~
+@677 = ~SetGlobal("XA_SkieModActive", "GLOBAL", 1)~
+@678 = ~SetGlobal("XA_SkieModActive", "GLOBAL", 0)~

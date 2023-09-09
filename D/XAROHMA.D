@@ -135,7 +135,6 @@ IF ~~ THEN BEGIN XA_CorwinRohmaReuniteChainEnd
 		StartCutScene("XABGEND2")
 	~
 	EXIT
-	//EXTERN XALIIA XA_DiscussionCutscene
 END
 
 IF ~~ THEN BEGIN XA_CorwinRohmaReuniteChainEndA
@@ -144,10 +143,9 @@ IF ~~ THEN BEGIN XA_CorwinRohmaReuniteChainEndA
 	IF ~~ THEN REPLY @38 /* ~What matters is that he'll never hurt you, or anyone else, ever again.~ */
 	DO ~
 		StartCutSceneMode()
-		StartCutScene("XABGEND2")
+		StartCutScene("XABGEND5")
 	~
 	EXIT
-	//EXTERN XALIIA XA_DiscussionCutscene
 END
 
 IF ~~ THEN BEGIN XA_CorwinFamilyReunite3A1
