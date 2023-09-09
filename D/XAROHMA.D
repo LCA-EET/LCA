@@ -138,6 +138,18 @@ IF ~~ THEN BEGIN XA_CorwinRohmaReuniteChainEnd
 	//EXTERN XALIIA XA_DiscussionCutscene
 END
 
+IF ~~ THEN BEGIN XA_CorwinRohmaReuniteChainEndA
+	SAY @37 /* ~Who was the man that took me? The one that hurt grandpa.~ */
+	
+	IF ~~ THEN REPLY @38 /* ~What matters is that he'll never hurt you, or anyone else, ever again.~ */
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("XABGEND2")
+	~
+	EXIT
+	//EXTERN XALIIA XA_DiscussionCutscene
+END
+
 IF ~~ THEN BEGIN XA_CorwinFamilyReunite3A1
 	SAY @11 /*  ~Who're you?~*/
 	
@@ -328,13 +340,27 @@ IF ~~ THEN BEGIN XA_ByeRohmaChain1End
 	
 	IF ~
 		Global("XA_DidRequestCorwin", "GLOBAL", 1)
+		!Global("XA_SkieModActive", "GLOBAL",1)
 	~ THEN REPLY @50 /* ~No, sweetie. You and your grandpa are going to stay here, until your mom and I return from our trip. There's a guest room for you downstairs.~ */
 	GOTO XA_ByeRohmaChain2
 	
 	IF ~
 		!Global("XA_DidRequestCorwin", "GLOBAL", 1)
+		!Global("XA_SkieModActive", "GLOBAL",1)
 	~ THEN REPLY @68 /* ~You, mommy and grandpa are going to stay here until I return from my trip. There's a guest room for you downstairs.~ */
 	GOTO XA_ByeRohmaChain2
+	
+	IF ~
+		Global("XA_DidRequestCorwin", "GLOBAL", 1)
+		Global("XA_SkieModActive", "GLOBAL",1)
+	~ THEN REPLY @50 /* ~No, sweetie. You and your grandpa are going to stay here, until your mom and I return from our trip. There's a guest room for you downstairs.~ */
+	GOTO XA_ByeRohmaChain2A
+	
+	IF ~
+		!Global("XA_DidRequestCorwin", "GLOBAL", 1)
+		Global("XA_SkieModActive", "GLOBAL",1)
+	~ THEN REPLY @68 /* ~You, mommy and grandpa are going to stay here until I return from my trip. There's a guest room for you downstairs.~ */
+	GOTO XA_ByeRohmaChain2A
 END
 
 IF ~~ THEN BEGIN XA_ByeRohmaChain2End
@@ -437,6 +463,27 @@ CHAIN XAROHMA XA_ByeRohmaChain2
 	== XAROHMA
 	@74 /* ~A games room! Wow, thanks Auntie!~ */
 	=@52 /* ~But, mommy...~ */
+	== XACORWIJ
+	@53 /* ~What's wrong, dear?~ */
+	== XAROHMA
+	@54 /* ~All of my things are at home.~ */
+	== XACORWIJ
+	@55 /* ~Don't worry. <CHARNAME> and I are going to head over there and gather some things for you and grandpa.~  */
+	== XAROHMA
+	IF ~
+		Global("XA_GaveDoll", "GLOBAL", 1)
+	~
+	@56 /* ~Remember to bring my dolly.~ */
+	== XACORWIJ
+	@57 /* ~Come and say goodnight to <CHARNAME>.~ */
+END XAROHMA XA_ByeRohmaChain2End
+
+CHAIN XAROHMA XA_ByeRohmaChain2A
+	@51 /*~ Oh, wow, a sleepover! And I get my own room?~ */
+	== XACORWIJ
+	@72 /* ~That's right honey.~ */
+	== XAROHMA
+	@52 /* ~But, mommy...~ */
 	== XACORWIJ
 	@53 /* ~What's wrong, dear?~ */
 	== XAROHMA

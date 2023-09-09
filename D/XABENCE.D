@@ -26,7 +26,17 @@ END
 IF ~~ THEN BEGIN XA_BenceWyrm_1
 	SAY @3 /* ~If you're looking for an apology, you won't get one. We were only following the evidence. I'm glad however that your innocence was established.~ */
 	
-	IF ~~ THEN 
+	IF ~
+		Global("XA_SkieModActive", "GLOBAL",1)
+	~ THEN 
+	DO ~
+		SetGlobalTimer("XA_DukeDebriefTimer","GLOBAL", ONE_HOUR)
+	~
+	GOTO XA_DebriefTomorrow
+	
+	IF ~
+		!Global("XA_SkieModActive", "GLOBAL",1)
+	~ THEN 
 	DO ~
 		SetGlobalTimer("XA_DukeDebriefTimer","GLOBAL", ONE_HOUR)
 	~

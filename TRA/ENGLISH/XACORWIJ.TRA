@@ -44,7 +44,7 @@
 @43 = ~Thank you, my love.~
 @44 = ~Schael, you're the strongest, most determined woman I've ever known. You'll be fine.~
 @45 = ~It's going to hurt, for a while. The pain of not having you near me, of not waking up in your arms... it might never go away. Rohma will be heartbroken too. But you're right... we'll learn to live with it, and we'll be stronger for it.~
-@46 = ~~
+@46 = ~Got everything you need?~ [BD54931]
 @47 = ~No, <CHARNAME>. I'm coming with you. Irenicus needs to be stopped. While he's alive no one is safe, and that includes Rohma. Being at your side is the best way I can protect her, and Baldur's Gate.~
 @48 = ~Thank you Schael... for everything.~
 @49 = ~And you shall have it, my friend. Irenicus must be stopped, before he can destroy any more innocent lives.~
@@ -309,7 +309,7 @@ Schael died in my arms, mere hours after being bit by Bodhi. I believe that the 
 @307 = ~Bodhi's Ambush
 Bodhi appeared in an ambush shortly before I reached her haven, warning me that she was aware of my pursuit and wounding the one person that is dearest to my heart: Schael. Before she vanished and unleashed more of her undead creations upon me, Bodhi warned me that if I continue, I will lose even more than I thought possible. In spite of her threats, I must continue my pursuit of Bodhi and the Rhynn Lanthorn, though I am concerned that Schael's condition will worsen over time.~ 
 @308 = ~Gladly, dear.~
-@309 = ~~
+@309 = ~And you?~
 @310 = ~~
 @311 = ~~
 @312 = ~What is it, Major?~
@@ -1145,19 +1145,19 @@ Schael has asked that I get us a room at one of the inns in Amn. I can hardly co
 @1137 = ~Skie, whatever you do, don't put it on. You'll be teleported. You MUST place it on Rohma's finger.~
 @1138 = ~We won't tell. Just be careful.~
 @1139 = ~Skie, do you think you can get to Rohma without being seen?~
-@1140 = ~~
+@1140 = ~Glint, do you think you can get to Rohma without being seen?~
 @1141 = ~You wouldn't need to move her... One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~
 @1142 = ~That's the last of them...~ 
 @1143 = ~Rohma... thank Tymora that Skie got her out in time.~
-@1144 = ~~
-@1145 = ~~
+@1144 = ~(Glint takes the ring from Schael.)~
+@1145 = ~Glint, whatever you do, don't put it on. You'll be teleported. You MUST place it on Rohma's finger.~
 @1146 = ~Not for long.~ 
 @1147 = ~What is killing him again going to solve?~
 @1148 = ~Wait!~
 @1149 = ~Do your worst.~
 @1150 = ~What is it?~ [XA100030]
 @1151 = ~Never mind — do your worst.~
-@1152 = ~~
+@1152 = ~Rohma... thank Tymora that Glint got her out in time.~
 @1153 = ~~
 @1154 = ~I have the Soultaker dagger. I'll do the deed. It's the only way you'll be free of him for good.~
 @1155 = ~~
@@ -1224,10 +1224,10 @@ Corwin has arrested Beno Famari for kidnapping and attempted murder. Hopefully, 
 @1213 = ~~
 @1214 = ~Yes, honey?~ 
 @1215 = ~Oh, where are my manners. Thank you for looking after her, Skie.~      
-@1216 = ~~
-@1217 = ~~
-@1218 = ~~
-@1219 = ~~
+@1216 = ~Oh, where are my manners. Thank you for looking after her, Duchess Jannath.~    
+@1217 = ~Of course, Major.~
+@1218 = ~Hmph. Just try and stay out of trouble.~
+@1219 = ~The man with the scar is Beno. The woman has got to be Illasera.~
 @1220 = ~Are you sure? You're going to need my help...~
 @1221 = ~I'm sure, my love. I can't risk losing you.~
 @1222 = ~I'm sure. The city can't risk losing the both of us.~
@@ -1271,7 +1271,7 @@ Corwin has arrested Beno Famari for kidnapping and attempted murder. Hopefully, 
 @1260 = ~Yes, sir.~
 @1261 = ~And Major — don't worry about your family while you're gone. We'll make sure they are well-protected here in the palace, just in case the Five try anything again. Good hunting.~ [XA100053]
 @1262 = ~Thank you, sir.~ [XA100054]
-@1263 = ~~
+@1263 = ~Glint, do you think you can sneak Rohma out of there?~
 @1264 = ~~
 @1265 = ~Schael — I really appreciate you doing this. I know it's not easy for you to be away from your family.~
 @1266 = ~It never is, but... you heard Nederlok, and the Dukes. The success of this mission is essential to the safety of this city. And that includes Rohma, and my father.~
@@ -1818,3 +1818,5 @@ I proposed to Schael, and she accepted! We're to be married!~
 Marshal Nederlok of the Baldur's Gate Flaming Fist was pleased to hear of Neb's demise in the sewers beneath the city.~
 @1797 = ~I see. After you, my dear.~
 @1798 = ~I see. After you, Captain.~
+@1799 = ~I think I'll stay here for a while longer. Say hi to my mom and dad for me!~
+@1800 = ~I want to learn more about these people, and the stories they have to tell. I'll remain here for the time being and help with the wounded.~

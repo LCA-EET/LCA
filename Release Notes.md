@@ -3,6 +3,11 @@
 # Report any bugs to LCAMod@danielvalle.net, or the Gibberlings 3 Forum Post 
 * Link to forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v0.3.0-beta 2023-09-08
+* Updated Corwin's character portrait. This change applies only to XACORWIN, not CORWIN7.
+* Updated the user's guide.
+* Made some changes to Corwin's Amulet. It can now be dropped. The user guide includes an explanation of what it does.
+
 # v0.2.11-beta 2023-09-08
 * Improved post-dialog (XACORWIP) logic.
 * Further improvements were made to the gorge tree-climbing dialogue. Corwin's is now treated separate from the rest of the party, to ensure compatibility with other mods that look to include similar dialogues for their NPCs.

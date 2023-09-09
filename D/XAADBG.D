@@ -4982,7 +4982,21 @@ IF ~~ THEN BEGIN XA_Menu_AddCharacter
 	~
 	GOTO XA_MainMenu
 	
+	IF ~~ THEN REPLY @675
+	DO ~
+		SetGlobal("XA_SkieModActive", "GLOBAL", 1)
+		CreateCreature("L#2EDDRD", [-1.-1], S)
+		ActionOverride("L#2EDDRD", JoinParty())
+	~
+	GOTO XA_MainMenu
 	
+	IF ~~ THEN REPLY @676 
+	DO ~
+		SetGlobal("XA_SkieModActive", "GLOBAL", 1)
+		CreateCreature("L#2SDSKI", [-1.-1], S)
+		ActionOverride("L#2SDSKIE", JoinParty())
+	~
+	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @26
 	GOTO XA_MainMenu

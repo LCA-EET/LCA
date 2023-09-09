@@ -8,6 +8,18 @@
 */
 APPEND ~PLAYER1~
 	IF ~
+		Global("XA_PromptToSendLetter", "GLOBAL", 1)
+	~ THEN BEGIN XA_PromptCGS
+		SAY @141  /* ~(Now that Skie's soul has been freed, it may be worthwhile to send a letter to Baldur's Gate. The Dukes or the Flaming Fist may be able to assist you in your hunt for Irenicus. Perhaps someone in the Athkatla magistrate can help.)~*/
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_PromptToSendLetter", "GLOBAL", 2)
+		~
+		EXIT
+	END
+
+	IF ~
 		Global("XA_CheckWithBrega", "GLOBAL", 1)
 	~ THEN BEGIN XA_Reminder
 		SAY @178  /*~(It's been a few days since you sent the letter and dagger to Baldur's Gate. Perhaps it's worthwhile to visit Brega and see if there is any news concerning Skie.)~ */
@@ -15,6 +27,18 @@ APPEND ~PLAYER1~
 		IF ~~ THEN
 		DO ~
 			SetGlobal("XA_CheckWithBrega", "GLOBAL", 2)
+		~
+		EXIT
+	END
+	
+	IF ~
+		Global("XA_CheckWithBrega2", "GLOBAL", 1)
+	~ THEN BEGIN XA_Reminder
+		SAY @187 /*~(It's been a few days since you sent the letter and dagger to Baldur's Gate. Perhaps it's worthwhile to visit Brega and see if there is any news concerning Skie.)~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_CheckWithBrega2", "GLOBAL", 2)
 		~
 		EXIT
 	END

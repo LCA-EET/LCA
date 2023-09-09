@@ -359,13 +359,46 @@ END
 /////////////////////////
 
 
+//{ Skie
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	InPartyAllowDead("L#2SDSKIE")
+	!Global("XA_BackToBG_Skie", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//ActionOverride("Rasaad",SetGlobal("KickedOut","LOCALS",1))
+		ActionOverride("L#2SDSKIE", ChangeAIScript("",DEFAULT))
+		ActionOverride("L#2SDSKIE", SetLeavePartyDialogFile())
+		ActionOverride("L#2SDSKIE", LeaveParty())
+		ActionOverride("L#2SDSKIE", EscapeAreaObject("ExitNull"))
+		Continue()
+END
+//}
+
+
+//{ Eddard
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	InPartyAllowDead("L#2EDDRD")
+	!Global("XA_BackToBG_Eddard", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//ActionOverride("Rasaad",SetGlobal("KickedOut","LOCALS",1))
+		ActionOverride("L#2EDDRD", ChangeAIScript("",DEFAULT))
+		ActionOverride("L#2EDDRD", SetLeavePartyDialogFile())
+		ActionOverride("L#2EDDRD", LeaveParty())
+		ActionOverride("L#2EDDRD", EscapeAreaObject("ExitNull"))
+		Continue()
+END
+//}
 
 IF
 	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_PartyRemovalProcessing", "GLOBAL", 2)
-		Continue()
 END
 
 IF 

@@ -7,25 +7,68 @@ IF ~
 	SAY @175 /* ~Oh it's you! You're <CHARNAME>, the <PRO_MANWOMAN> who saved my precious Skie!~*/
 	= @176 /* ~(She gives you a hug.)~*/
 	= @177 /* ~Thank you!~ */
-	
-	/* */
-	IF ~~ THEN REPLY @178 /* ~You're welcome. I'm glad Skie is alright.~*/
+
+	IF ~
+		!Global("XA_SkieModActive", "GLOBAL",1)
+	~ THEN REPLY @178 /* ~You're welcome. I'm glad Skie is alright.~*/
 	DO ~
 		SetGlobal("XA_TalkedToBrilla", "GLOBAL", 1)
 	~
 	GOTO XA_GreetPlayer2
 	
-	IF ~~ THEN REPLY @179 /* ~I did it as much for her as for me. Your husband eventually would have hunted me down had I not saved your daughter.~ */
+	IF ~
+		!Global("XA_SkieModActive", "GLOBAL",1)
+	 ~ THEN REPLY @179 /* ~I did it as much for her as for me. Your husband eventually would have hunted me down had I not saved your daughter.~ */
 	DO ~
 		SetGlobal("XA_TalkedToBrilla", "GLOBAL", 1)
 	~
 	GOTO XA_GreetPlayer2
 	
-	IF ~~ THEN REPLY @180 /* ~I told her that accompanying the coalition was a mistake. It nearly got her killed. You and your husband should have told her the same.~ */
+	IF ~
+		!Global("XA_SkieModActive", "GLOBAL",1)
+	~ THEN REPLY @180 /* ~I told her that accompanying the coalition was a mistake. It nearly got her killed. You and your husband should have told her the same.~ */
 	DO ~
 		SetGlobal("XA_TalkedToBrilla", "GLOBAL", 1)
 	~
 	GOTO XA_GreetPlayer2
+	
+	IF ~
+		Global("XA_SkieModActive", "GLOBAL",1)
+	~ THEN REPLY @178 /* ~You're welcome. I'm glad Skie is alright.~*/
+	DO ~
+		SetGlobal("XA_TalkedToBrilla", "GLOBAL", 1)
+	~
+	GOTO XA_DefaultGreeting
+	
+	IF ~
+		Global("XA_SkieModActive", "GLOBAL",1)
+	 ~ THEN REPLY @179 /* ~I did it as much for her as for me. Your husband eventually would have hunted me down had I not saved your daughter.~ */
+	DO ~
+		SetGlobal("XA_TalkedToBrilla", "GLOBAL", 1)
+	~
+	GOTO XA_GreetPlayer2A
+	
+	IF ~
+		Global("XA_SkieModActive", "GLOBAL",1)
+	~ THEN REPLY @180 /* ~I told her that accompanying the coalition was a mistake. It nearly got her killed. You and your husband should have told her the same.~ */
+	DO ~
+		SetGlobal("XA_TalkedToBrilla", "GLOBAL", 1)
+	~
+	GOTO XA_GreetPlayer2B
+END
+
+IF ~~ THEN BEGIN XA_GreetPlayer2A
+	SAY @207  /*~Yes... it was awful how he treated you. If he could take what he said and did back, he would.~  */
+	= @208 /* ~He'll see you at the debriefing tomorrow. I expect he will want to apologize in person.~*/
+	
+	IF ~~ THEN
+	GOTO XA_DefaultGreeting
+END
+
+IF ~~ THEN BEGIN XA_GreetPlayer2B
+	SAY @209  /*~Skie has always been impulsive. Telling her 'no' would've made no difference, I'm afraid.~  */
+	IF ~~ THEN
+	GOTO XA_DefaultGreeting
 END
 
 IF ~~ THEN BEGIN XA_WillTalkToSkieAndMelkor

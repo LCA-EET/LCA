@@ -28,3 +28,25 @@ THEN
 		CreateCreature("XACORWIN", [1033.563], SW)
 		Continue()
 END
+
+IF 
+	GlobalTimerExpired("XA_Ath2", "GLOBAL")
+	OR(2)
+		Global("XA_LetterSent", "GLOBAL", 2)
+		Global("XA_LetterSent", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_SkieSaved", "GLOBAL", 3) // mark complete
+		CreateCreature("XACORWIN", [1033.563], SW)
+		Continue()
+END
+
+IF 
+	GlobalTimerExpired("XA_Ath2", "GLOBAL")
+	Global("XA_LetterSent", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_SkieSaved", "GLOBAL", 3) // mark complete
+		CreateCreature("XAFFOFCR", [1033.563], SW)
+		Continue()
+END

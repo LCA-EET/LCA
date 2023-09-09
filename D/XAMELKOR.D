@@ -30,6 +30,7 @@ IF ~
 	EXIT
 	
 	IF ~
+		GlobalLT("L#2SkieDagger","GLOBAL",31)
 		!Global("XA_MelkorDagger", "GLOBAL", 1)
 	~ THEN GOTO XA_HandOverDagger
 END
@@ -68,17 +69,33 @@ IF ~
 ~ THEN BEGIN XA_MeetMelkor
 	SAY @0 /* ~Ah. <CHARNAME>. How can I help you?~ */
 	
-	IF ~~ THEN REPLY @1 /* ~You are one of the wizards assisting Skie in her recovery?~ */
+	IF ~
+		!Global("XA_SkieModActive", "GLOBAL",1)
+	~ THEN REPLY @1 /* ~You are one of the wizards assisting Skie in her recovery?~ */
 	DO ~
 		SetGlobal("XA_TalkedToMelkor", "GLOBAL", 1)
 	~
 	GOTO XA_MeetMelkor2A
 	
-	IF ~~ THEN REPLY @11 /* ~Have we met?~ */
+	IF ~
+		!Global("XA_SkieModActive", "GLOBAL",1)
+	~ THEN REPLY @11 /* ~Have we met?~ */
 	DO ~
 		SetGlobal("XA_TalkedToMelkor", "GLOBAL", 1)
 	~
 	GOTO XA_MeetMelkor2B
+	
+	IF ~
+		GlobalLT("XA_MelkorTalk", "LOCALS", 1)
+		Global("XA_SkieModActive", "GLOBAL",1)
+	~ THEN REPLY @11 /* ~Have we met?~ */
+	DO ~
+		SetGlobal("XA_TalkedToMelkor", "GLOBAL", 1)
+	~
+	GOTO XA_MeetMelkor2BA
+	
+	IF ~~ THEN REPLY @81 /* ~I don't need anything at the moment.~*/
+	EXIT 
 END
 
 IF ~
@@ -138,6 +155,26 @@ IF ~
 	SAY @58 /* ~Please, my work requires my full attention. Leave me be.~ */
 	
 	IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN XA_MeetMelkor2BA
+	SAY @12 /* ~The power you exude... I felt it once before, at your trial. I sense that it has grown significantly since then.~*/
+	
+	IF ~~ THEN REPLY @84  /* ~That's not creepy at all. */
+	GOTO XA_MeetMelkorSMA
+	
+	IF ~~ THEN REPLY @82  /* ~Another wizard interested in my power. Pray that you don't end up like the last one who tried to take what's mine!~*/
+	GOTO XA_MeetMelkorSMA
+END
+
+IF ~~ THEN BEGIN XA_MeetMelkorSMA
+	SAY @83  /* ~Don't worry, I've no designs on you or the power you possess. I'm merely pleased to meet you. Now, if you'll excuse me, I must return to my work.~*/
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_MelkorTalk", "LOCALS", 1)
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN XA_MeetMelkor2B

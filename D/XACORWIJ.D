@@ -1423,6 +1423,20 @@ IF ~~ THEN BEGIN XA_RomanceConflict_EndCR_Bad2
 	EXIT
 END
 
+IF ~~ THEN BEGIN XA_BackToBG_ChainEnd
+	SAY @672 /* ~Take a few minutes to gather your belongings. When you are ready to leave, come and talk to me.~*/
+	
+	IF ~~ THEN
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_BackToBG_ChainEnd_AndYou
+	SAY @309 /* ~And you?~*/
+	
+	IF ~~ THEN
+	EXIT
+END
+
 IF ~~ THEN BEGIN XA_RomanceConflict_Continue
 	SAY @1738 /* ~That's all I needed to hear. Let's go.~ [BD54525] */
 	
@@ -3243,11 +3257,21 @@ IF ~
 ~ THEN BEGIN XA_CorwinRohmaReunite
 	SAY @1210 /* ~(They share a warm embrace.)~ */
 	
-	IF ~~ THEN
+	IF ~
+		!Global("XA_SkieModActive", "GLOBAL",1)
+	~ THEN
 	DO ~
 		SetGlobal("XA_RohmaSaved", "GLOBAL", 2)
 	~
 	GOTO XA_CorwinRohmaReuniteChain
+	
+	IF ~
+		Global("XA_SkieModActive", "GLOBAL",1)
+	~ THEN
+	DO ~
+		SetGlobal("XA_RohmaSaved", "GLOBAL", 2)
+	~
+	GOTO XA_CorwinRohmaReuniteChainA
 END
 //} #endregion
 
@@ -3367,16 +3391,31 @@ IF ~
 	Global("XA_IllaseraDead", "GLOBAL", 1)
 ~ THEN BEGIN XA_IllaseraDead
 	SAY @1142 /* ~That was the last of them...~ */
-	= @1143 /* ~Rohma... thank Tymora that Skie got her out in time.~ */
 	
-	IF ~~ THEN 
-	DO ~
-		SetGlobal("XA_IllaseraDead", "GLOBAL", 2)
-	~
-	EXTERN XABENO2 XA_IllaseraDead2 //OK
+	IF ~
+		Global("XA_SkieModActive", "GLOBAL",1)
+	~ THEN 
+	GOTO XA_IllaseraDeadSkie
 	
+	IF ~
+		!Global("XA_SkieModActive", "GLOBAL",1)
+	~ THEN 
+	GOTO XA_IllaseraDeadGlint
 END
 
+IF ~~ THEN XA_IllaseraDeadSkie
+	SAY @1143  /*~Rohma... thank Tymora that Skie got her out in time.~  */
+	
+	IF ~~ THEN
+	EXTERN XABENO2 XA_IllaseraDead2 //OK
+END
+
+IF ~~ THEN XA_IllaseraDeadGlint
+	SAY @1152  /*~Rohma... thank Tymora that Glint got her out in time.~  */
+	
+	IF ~~ THEN
+	EXTERN XABENO2 XA_IllaseraDead2 //OK
+END
 
 IF ~~ THEN BEGIN XA_IllaseraDead3
 	SAY @1146 /* ~Not for long.~ */
@@ -3571,6 +3610,12 @@ IF ~~ THEN BEGIN XA_SkieTakesRing
 	=@1137 /* ~Skie, whatever you do, don't put it on. You'll be teleported. You MUST place it on Rohma's finger.~*/
 	IF ~~ THEN EXTERN XASKIE XA_SkieTakesRing
 END
+
+IF ~~ THEN BEGIN XA_GlintTakesRing
+	SAY @1144 /* ~(SGlint takes the ring from Schael.)~ */
+	=@1145 /* ~Glint, whatever you do, don't put it on. You'll be teleported. You MUST place it on Rohma's finger.~*/
+	IF ~~ THEN EXTERN XAGLINT XA_GlintTakesRing
+END
 IF ~~ THEN BEGIN XA_Thanks3
 	SAY @1138 /* ~We won't tell. Just be careful.~*/
 	
@@ -3580,6 +3625,12 @@ IF ~~ THEN BEGIN XA_GiveSkieRing
 	SAY @1135 /*~One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~*/
 	
 	IF ~~ THEN EXTERN XASKIE XA_GiveRing
+END
+
+IF ~~ THEN BEGIN XA_GiveGlintRing
+	SAY @1135 /*~One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~*/
+	
+	IF ~~ THEN EXTERN XAGLINT XA_GiveRing
 END
 
 IF ~~ THEN BEGIN XA_GiveSkieRing2
@@ -3594,6 +3645,18 @@ IF ~~ THEN BEGIN XA_GiveSkieRing4
 	IF ~~ THEN EXTERN XASKIE XA_GiveRing
 END
 
+IF ~~ THEN BEGIN XA_GiveGlintRing2
+	SAY @1140 /*~Glint, do you think you can get to Rohma without being seen?~*/
+	
+	IF ~~ THEN EXTERN XAGLINT XA_GiveGlintRing3
+END
+
+IF ~~ THEN BEGIN XA_GiveGlintRing4
+	SAY @1141 /*~You wouldn't need to... One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~*/
+	
+	IF ~~ THEN EXTERN XAGLINT XA_GiveRing
+END
+
 IF ~~ THEN BEGIN XA_SkieUCChainEnd
 	SAY @1132 /* ~The man with the scar is Beno.~*/
 	
@@ -3602,6 +3665,18 @@ IF ~~ THEN BEGIN XA_SkieUCChainEnd
 	
 	IF ~~ THEN REPLY @1134 /* ~How did you get in there without them detecting you?~ */
 	EXTERN XASKIE XA_NonDetection
+	
+	
+END
+
+IF ~~ THEN BEGIN XA_GlintUCChainEnd
+	SAY @1219 /* ~The man with the scar is Beno. The woman has got to be Illasera.~~*/
+	
+	IF ~~ THEN REPLY @1263 /*~Glint, do you think you can sneak Rohma out of there?~ */
+	EXTERN XAGLINT XA_CanGetRohma
+	
+	IF ~~ THEN REPLY @1134 /* ~How did you get in there without them detecting you?~ */
+	EXTERN XAGLINT XA_NonDetection
 	
 	
 END
@@ -4990,7 +5065,7 @@ IF ~
 	Global("XA_BackToBG", "GLOBAL", 2)
 	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 ~ THEN BEGIN XA_BackToBG_RTL_Romance
-	SAY @630 /* ~My love - are you ready to head back to Baldur's Gate?~ */
+	SAY @46 /* ~Got everything you need?~ [BD54931] */
 	
 	IF ~~ THEN REPLY @632 /* ~Let's go.~ */
 	GOTO XA_BackToBG_RTL_Leave
@@ -5005,8 +5080,8 @@ END
 IF ~
 	Global("XA_BackToBG", "GLOBAL", 2)
 	!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-~ THEN BEGIN XA_BackToBG_RTL_Romance
-	SAY @631 /* ~Are you ready to head back to Baldur's Gate?~ */
+~ THEN BEGIN XA_BackToBG_RTL_NonRomance
+	SAY @46 /* ~Got everything you need?~ [BD54931] */
 	
 	IF ~~ THEN REPLY @632 /* ~Let's go.~ */
 	GOTO XA_BackToBG_RTL_Leave
@@ -9708,6 +9783,13 @@ IF ~~ THEN BEGIN XA_CorwinMadXANOBLW4
 	EXTERN XANOBLW XA_CorwinMadXANOBLW2
 END
 
+IF ~~ THEN BEGIN XA_MeetGlint
+	SAY @1218  /* ~Hmph. Just try and stay out of trouble.~*/
+	
+	IF ~~ THEN
+	EXTERN XAGLINT XA_Bye
+END
+
 IF ~~ THEN BEGIN XA_CorwinMadXANOBLM1
 	SAY @819 /* ~I see. Come with me to the Flaming Fist headquarters. I'm sure Duke Eltan would appreciate hearing how much of a fool he is for allowing <CHARNAME> back into the city.~ */
 	
@@ -10372,16 +10454,14 @@ CHAIN
 	IF ~~ THEN XACORWIJ XA_BackToBG_Chain
 		@629 /* ~Before we go, let's check with the rest of the team to see if they want to come with us. I imagine some will want to stay here and help the elves with their wounded.~*/
 		
+		//{ Hexxat
 		== XACORWIJ 
 		IF ~
 			IsValidForPartyDialogue("Hexxat")
 		~
 		@646 /* ~(She points at Hexxat.)~*/
 		= @1761 /* ~She won't be joining us. I'll not allow the monster to feed on the citizens I'm sworn to protect.~ */
-		DO ~
-			ActionOverride("Hexxat", SetLeavePartyDialogFile())
-			ActionOverride("Hexxat", ChangeAIScript("", DEFAULT))
-		~
+		//}
 		
 		//{ Mazzy
 			== MAZZYJ
@@ -10389,12 +10469,6 @@ CHAIN
 				IsValidForPartyDialogue("Mazzy")
 			~
 			@705 /* ~I wish you two the best. As for me, I must return to Trademeet. It was an honor to fight at your side, and I hope that our paths may cross again.~*/
-			DO ~
-				ActionOverride("Mazzy", ChangeAIScript("",DEFAULT))
-				ActionOverride("Mazzy", SetLeavePartyDialogFile())
-				ActionOverride("Mazzy", LeaveParty())
-				ActionOverride("Mazzy", EscapeAreaObject("ExitNull"))
-			~
 		//}
 		
 		//{ Imoen
@@ -10430,12 +10504,7 @@ CHAIN
 			~
 			@637 /* ~This is where we part ways, at least for now, <CHARNAME>. Gorion would be proud of the <PRO_MANWOMAN> you've become. I will remain here to help undo the damage that Irenicus inflicted on the Tree of Life.~ */
 			= @638 /* ~(You share a warm embrace.)~ */
-			DO ~
-				ActionOverride("Jaheira", ChangeAIScript("",DEFAULT))
-				ActionOverride("Jaheira", SetLeavePartyDialogFile())
-				ActionOverride("Jaheira", LeaveParty())
-				ActionOverride("Jaheira", EscapeAreaObject("ExitNull"))
-			~
+
 			== JAHEIRAJ
 			IF ~
 				IsValidForPartyDialogue("Jaheira")
@@ -10445,12 +10514,7 @@ CHAIN
 					Global("JaheiraRomanceActive", "GLOBAL",3)
 			~
 			@640 /* ~This is where we part ways, at least for now, <CHARNAME>. I urge you to become the type of <PRO_MANWOMAN> that Gorion would be proud of. I will remain here to help undo the damage that Irenicus inflicted on the Tree of Life.~ */
-			DO ~
-				ActionOverride("Jaheira", ChangeAIScript("",DEFAULT))
-				ActionOverride("Jaheira", SetLeavePartyDialogFile())
-				ActionOverride("Jaheira", LeaveParty())
-				ActionOverride("Jaheira", EscapeAreaObject("ExitNull"))
-			~
+
 		//}
 
 		//{ Viconia
@@ -10478,12 +10542,6 @@ CHAIN
 				!Global("XA_BackToBG_Jan", "GLOBAL", 1)
 			~
 			@643 /* ~Back to Athkatla for me, I'm afraid. The turnips need tending to. Safe travels, my friends.~ */
-			DO ~
-				ActionOverride("Jan", ChangeAIScript("",DEFAULT))
-				ActionOverride("Jan", SetLeavePartyDialogFile())
-				ActionOverride("Jan", LeaveParty())
-				ActionOverride("Jan", EscapeAreaObject("ExitNull"))
-			~
 		//}
 		
 		//{ Edwin
@@ -10492,12 +10550,6 @@ CHAIN
 				IsValidForPartyDialogue("Edwin")
 			~
 			@644 /* ~We are in a city of magical knowledge that few humans have set foot in, and you want me to go back to that diseased backwater of a city? Bah! I will remain here and learn the secrets of the elves. (That is, until they throw me out.)~ */
-			DO ~
-				ActionOverride("Edwin", ChangeAIScript("", DEFAULT))
-				ActionOverride("Edwin", SetLeavePartyDialogFile())
-				ActionOverride("Edwin", LeaveParty())
-				ActionOverride("Edwin", EscapeAreaObject("ExitNull"))
-			~
 		//}
 		
 		//{ Minsc
@@ -10506,12 +10558,6 @@ CHAIN
 				IsValidForPartyDialogue("Minsc")
 			~
 			@645 /* ~I would go with you, but Boo has become intensely infatuated with a squirrel that he saw on the Tree of Life. I must find this squirrel and determine if she is a worthy mate for Boo.~ */
-			DO ~
-				ActionOverride("Minsc", SetLeavePartyDialogFile())
-				ActionOverride("Minsc", ChangeAIScript("", DEFAULT))
-				ActionOverride("Minsc", LeaveParty())
-				ActionOverride("Minsc", EscapeAreaObject("ExitNull"))
-			~
 		//}
 		
 		//{ Aerie
@@ -10537,12 +10583,7 @@ CHAIN
 			@648 /* ~O-oh, I think it will be better for me to stay here. There are still many injured, and the elves can use my help. */
 			= @649 /* ~T-thank you, <CHARNAME> for everything. For freeing me from the circus, and for taking me on this grand adventure. I've learned so much about the world, and.. and about m-myself. I h-hope to see you again soon.~ */
 			= @650 /* ~(You share a warm embrace.)~ */
-			DO ~
-				ActionOverride("Aerie", SetLeavePartyDialogFile())
-				ActionOverride("Aerie", ChangeAIScript("", DEFAULT))
-				ActionOverride("Aerie", LeaveParty())
-				ActionOverride("Aerie", EscapeAreaObject("ExitNull"))
-			~
+
 			== AERIEJ
 			IF ~
 				IsValidForPartyDialogue("Aerie")
@@ -10552,12 +10593,6 @@ CHAIN
 					Global("AerieRomanceActive", "GLOBAL",3)
 			~
 			@648 /* ~O-oh, I think it will be better for me to stay here. There are still many injured, and the elves can use my help.~ */
-			DO ~
-				ActionOverride("Aerie", SetLeavePartyDialogFile())
-				ActionOverride("Aerie", ChangeAIScript("", DEFAULT))
-				ActionOverride("Aerie", LeaveParty())
-				ActionOverride("Aerie", EscapeAreaObject("ExitNull"))
-			~
 		//}
 		
 		//{ Nalia
@@ -10577,12 +10612,7 @@ CHAIN
 				IsValidForPartyDialogue("HaerDalis")
 			~
 			@652 /* ~I will remain here for a time, my sparrow. I wish to see this place restored to its former beauty. May our paths cross again in the near future.~ */
-			DO ~
-				ActionOverride("HaerDalis", SetLeavePartyDialogFile())
-				ActionOverride("HaerDalis", ChangeAIScript("", DEFAULT))
-				ActionOverride("HaerDalis", LeaveParty())
-				ActionOverride("HaerDalis", EscapeAreaObject("ExitNull"))
-			~
+
 		//}
 
 		//{ Korgan
@@ -10603,24 +10633,13 @@ CHAIN
 				Global("LadyMaria","GLOBAL",5)
 			~
 			@654 /* ~I promised my wife that I would return home after putting an end to Irenicus, and I will do so. Good-bye, my friend. May Torm guide your path.~*/
-			DO ~
-				ActionOverride("Keldorn", SetLeavePartyDialogFile())
-				ActionOverride("Keldorn", ChangeAIScript("", DEFAULT))
-				ActionOverride("Keldorn", LeaveParty())
-				ActionOverride("Keldorn", EscapeAreaObject("ExitNull"))
-			~
+
 			== KELDORJ
 			IF ~
 				IsValidForPartyDialogue("Keldorn")
 				!Global("LadyMaria","GLOBAL",5)
 			~
 			@655 /* ~Now that Irenicus has been dealt with, I must return to my order and my duty. Good-bye, my friend. May Torm guide your path.~ */
-			DO ~
-				ActionOverride("Keldorn", SetLeavePartyDialogFile())
-				ActionOverride("Keldorn", ChangeAIScript("", DEFAULT))
-				ActionOverride("Keldorn", LeaveParty())
-				ActionOverride("Keldorn", EscapeAreaObject("ExitNull"))
-			~
 		//}
 		
 		//{ Anomen
@@ -10635,12 +10654,7 @@ CHAIN
 					Global("AnomenRomanceActive", "GLOBAL",3)
 			~
 			@662 /* ~I'm afraid I too must return to my order. Safe travels <CHARNAME>, and you as well Captain.~ */
-			DO ~
-				ActionOverride("Anomen", SetLeavePartyDialogFile())
-				ActionOverride("Anomen", ChangeAIScript("", DEFAULT))
-				ActionOverride("Anomen", LeaveParty())
-				ActionOverride("Anomen", EscapeAreaObject("ExitNull"))
-			~
+
 			== ANOMENJ
 			IF ~
 				Alignment("Anomen",LAWFUL_GOOD)
@@ -10652,12 +10666,7 @@ CHAIN
 					Global("AnomenRomanceActive", "GLOBAL",3)
 			~
 			@663 /* ~I'm afraid I must decline, and return to my order. Safe travels <CHARNAME>, and you as well Captain.~ */
-			DO ~
-				ActionOverride("Anomen", SetLeavePartyDialogFile())
-				ActionOverride("Anomen", ChangeAIScript("", DEFAULT))
-				ActionOverride("Anomen", LeaveParty())
-				ActionOverride("Anomen", EscapeAreaObject("ExitNull"))
-			~
+
 			== ANOMENJ
 			IF ~
 				Alignment("Anomen",LAWFUL_GOOD)
@@ -10668,12 +10677,7 @@ CHAIN
 					Global("AnomenRomanceActive", "GLOBAL",3)
 			~
 			@663 /* ~I'm afraid I must decline, and return to my order. Safe travels <CHARNAME>, and you as well Captain.~ */
-			DO ~
-				ActionOverride("Anomen", SetLeavePartyDialogFile())
-				ActionOverride("Anomen", ChangeAIScript("", DEFAULT))
-				ActionOverride("Anomen", LeaveParty())
-				ActionOverride("Anomen", EscapeAreaObject("ExitNull"))
-			~
+
 			== ANOMENJ
 			IF ~
 				IsValidForPartyDialogue("Anomen")
@@ -10709,12 +10713,6 @@ CHAIN
 					!Dead("ohdugoth")  // Ur-Gothoz
 			~
 			@656 /* ~I sense that my patron wishes for us to part ways, at least for now. I have a feeling that our paths will cross again, and soon. Until then, <CHARNAME>.~ */
-			DO ~
-				ActionOverride("Dorn", SetLeavePartyDialogFile())
-				ActionOverride("Dorn", ChangeAIScript("", DEFAULT))
-				ActionOverride("Dorn", LeaveParty())
-				ActionOverride("Dorn", EscapeAreaObject("ExitNull"))
-			~
 			== DORNJ
 			IF ~
 				IsValidForPartyDialogue("Dorn")
@@ -10734,12 +10732,6 @@ CHAIN
 				GlobalLT("XA_CorwinValygarLavok", "GLOBAL", 1)
 			~
 			@660 /* ~No, I won't be joining you. I'm going back to my cabin in the woods. I'll use the time and seclusion to decide what to do with my life.~ */
-			DO ~
-				ActionOverride("Valygar", SetLeavePartyDialogFile())
-				ActionOverride("Valygar", ChangeAIScript("", DEFAULT))
-				ActionOverride("Valygar", LeaveParty())
-				ActionOverride("Valygar", EscapeAreaObject("ExitNull"))
-			~
 			== VALYGARJ
 			IF ~
 				IsValidForPartyDialogue("Valygar")
@@ -10796,24 +10788,12 @@ CHAIN
 				Global("CerndBaby","GLOBAL",1)
 			~
 			@667 /* ~I will remain here for a time and help the elves repair the damage to the Tree of Life, then, I will return home to raise my son. Good-bye and safe travels, friends.~ */
-			DO ~
-				ActionOverride("Cernd", SetLeavePartyDialogFile())
-				ActionOverride("Cernd", ChangeAIScript("", DEFAULT))
-				ActionOverride("Cernd", LeaveParty())
-				ActionOverride("Cernd", EscapeAreaObject("ExitNull"))
-			~
 			== CERNDJ
 			IF ~
 				IsValidForPartyDialogue("Cernd")
 				!Global("CerndBaby","GLOBAL",1)
 			~
 			@666 /* ~I will remain here for a time and help the elves repair the damage to the Tree of Life. Good-bye and safe travels, friends.~ */
-			DO ~
-				ActionOverride("Cernd", SetLeavePartyDialogFile())
-				ActionOverride("Cernd", ChangeAIScript("", DEFAULT))
-				ActionOverride("Cernd", LeaveParty())
-				ActionOverride("Cernd", EscapeAreaObject("ExitNull"))
-			~
 		//}
 		
 		//{ Rasaad
@@ -10841,10 +10821,17 @@ CHAIN
 				SetGlobal("XA_BackToBG_Rasaad", "GLOBAL", 1)
 			~
 		//}
-		
-		== XACORWIJ
-		@672 /* ~Take a few minutes to gather your belongings. When you are ready to leave, come and talk to me.~*/
-EXIT
+END
+IF ~~ THEN GOTO XA_BackToBG_ChainEnd 
+IF
+	~	
+		OR(2)
+		IsValidForPartyDialogue("L#2EDDRD")
+		IsValidForPartyDialogue("L#2SDSKI")
+	~
+THEN GOTO XA_BackToBG_ChainEnd_AndYou
+
+
 
 CHAIN
 	IF ~~ THEN XACORWIJ XA_HarborCorwin
@@ -11096,6 +11083,34 @@ CHAIN XACORWIJ XA_CorwinRohmaReuniteChain
 	== XACORWIJ
 	@1214 /* ~Yes, honey?~  */
 END XAROHMA XA_CorwinRohmaReuniteChainEnd
+
+CHAIN XACORWIJ XA_CorwinRohmaReuniteChainA
+	@1211 /* ~Are you alright?~ */
+	== XAROHMA
+	@1237 /* ~Yes mommy.~*/
+	== XACORWIJ
+	@1254 /* ~What did they do to you? Did they hurt you?~*/
+	== XALIIA
+	@1255 /* ~The healers said that she was put into a deep sleep, but that she wasn't harmed.~ */
+	=@1256 /* ~Once they woke her up, she went to see her grandpa right away.~*/
+	== XACORWIJ
+	@1212 /* ~How's grandpa doing?~ */
+	== XAROHMA
+	@1257 /* ~Good, he's taking a nap. Why does he snore so loud?~*/
+	== XALIIA
+	@1250 /* ~He's going to be fine - the healers said that he'll be up and about in the morning.~*/
+	= @1251 /* ~Rohma's been doing a great job looking after him, haven't you, dear?~ */
+	== XAROHMA
+	@1253 /* ~Yep!~ */
+	== XACORWIJ
+	@1216 /* ~Oh, where are my manners. Thank you for looking after her, Duchess Jannath.~  */
+	== XALIIA
+	@1217 /* ~Of course, Major.~*/
+	== XAROHMA
+	@1238 /* ~Mommy?~  */
+	== XACORWIJ
+	@1214 /* ~Yes, honey?~  */
+END XAROHMA XA_CorwinRohmaReuniteChainEndA
 
 CHAIN XACORWIJ XA_BGEND3_CorwinSaradushChain
 	@1228 /* ~Marshal Nederlok, sir.~ */

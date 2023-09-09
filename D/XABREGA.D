@@ -12,6 +12,9 @@ ADD_STATE_TRIGGER HABREGA 0
 	!PartyHasItem("XAORW1")
 	!PartyHasItem("XAORW2")
 	!PartyHasItem("XALDUNC")
+	!PartyHasItem("XAORW1A")
+	!PartyHasItem("XAORW2A")
+	!PartyHasItem("XALDUNCA")
 ~
 
 APPEND_EARLY HABREGA
@@ -19,9 +22,9 @@ APPEND_EARLY HABREGA
 		GlobalLT("XA_LetterSent", "GLOBAL",1)
 		!PartyHasItem("XASTDAG")
 		OR(3)
-		PartyHasItem("XAORW1")
-		PartyHasItem("XAORW2")
-		PartyHasItem("XALDUNC")
+			PartyHasItem("XAORW1")
+			PartyHasItem("XAORW2")
+			PartyHasItem("XALDUNC")
 	~
 	THEN BEGIN M42
 		SAY @28 /* ~Ah, you've finished your letter. You said you wanted me to send a dagger as well - where is it? ~ */
@@ -35,7 +38,7 @@ APPEND_EARLY HABREGA
 		PartyHasItem("XAORW1")
 	~
 	THEN BEGIN M39
-		SAY @26 /* ~Ah, you've finished your letter. You want to send the letter and dagger to Schael Corwin, Captain of the Flaming Fist, correct?~ */
+		SAY @26  /* ~Ah, you've finished your letter. You want to send the letter and dagger to Schael Corwin, Captain of the Flaming Fist, correct?~*/
 		IF ~~ THEN REPLY @13 /* ~Yes, that is correct.~ */
 		/*@14  = ~Restoring Skie Silvershield
 
@@ -49,6 +52,160 @@ APPEND_EARLY HABREGA
 		IF ~~ THEN REPLY @15 /* ~No, I need some more time to think about it.~ */ 
 		GOTO M35
 	END
+	
+	//{ CoOGS Compatibility
+	IF ~~ THEN BEGIN M31A
+		SAY @24 /* ~Here's a pen and paper. Speak to me again when you are ready to send the letter.~ */
+		IF ~~ THEN
+		DO ~
+			GiveItemCreate("XAORW1A",LastTalkedToBy(Myself),1,0,0)
+		~
+		EXIT
+	END
+	
+	
+	IF ~~ THEN BEGIN M32A
+		SAY @24 /* ~Here's a pen and paper. Speak to me again when you are ready to send the letter.~*/
+		IF ~~ THEN
+		DO ~ 
+			GiveItemCreate("XAORW2A",LastTalkedToBy(Myself),1,0,0) 
+		~
+		EXIT
+	END
+	
+	IF ~~ THEN BEGIN M33A
+		SAY @24 /* ~Here's a pen and paper. Speak to me again when you are ready to send the letter.~*/
+		IF ~~ THEN
+		DO ~ 
+			GiveItemCreate("XALDUNCA",LastTalkedToBy(Myself),1,0,0)
+		~
+		EXIT
+	END
+	
+	IF ~
+		GlobalLT("XA_LetterSent", "GLOBAL",1)
+		PartyHasItem("XAORW1A")
+	~
+	THEN BEGIN M39A
+		SAY @46  /* ~Ah, you've finished your letter. You want to send it to Schael Corwin, Captain of the Flaming Fist, correct?~*/
+		IF ~~ THEN REPLY @13 /* ~Yes, that is correct.~ */
+
+		DO ~
+			AddJournalEntry(@45, INFO) 
+			SetGlobal("XA_LetterSent", "GLOBAL",1)
+		~
+		GOTO M34A
+		
+		IF ~~ THEN REPLY @15 /* ~No, I need some more time to think about it.~ */ 
+		GOTO M35
+	END
+	
+	IF ~
+		GlobalLT("XA_LetterSent", "GLOBAL",1)
+		PartyHasItem("XAORW2A")
+	~
+	THEN BEGIN M40A
+		SAY @46 /* ~Ah, you've finished your letter. You want to send it to Schael Corwin, Captain of the Flaming Fist, correct?~*/
+		IF ~~ THEN REPLY @13 /* ~Yes, that is correct.~ */
+
+		DO ~
+			AddJournalEntry(@49, INFO)
+			SetGlobal("XA_LetterSent", "GLOBAL", 2)
+		~
+		GOTO M34A
+		
+		IF ~~ THEN REPLY @15 /* ~No, I need some more time to think about it.~ */ 
+		GOTO M35
+	END
+	
+	IF ~
+		GlobalLT("XA_LetterSent", "GLOBAL",1)
+		PartyHasItem("XALDUNCA")
+	~
+	THEN BEGIN M41A
+		SAY @50 /* ~Ah, you've finished your letter. You want to send the letter and dagger to Corporal Bence Duncan of the Flaming Fist, correct?~ */
+		IF ~~ THEN REPLY @13 /* ~Yes, that is correct.~ */
+		DO ~
+			AddJournalEntry(@51, INFO)
+			SetGlobal("XA_LetterSent", "GLOBAL", 3)
+		~
+		GOTO M34A
+		
+		IF ~~ THEN REPLY @15 /* ~No, I need some more time to think about it.~ */ 
+		GOTO M35
+	END
+	
+	IF ~~ THEN BEGIN XA_SendCGS
+		SAY @37  /* ~Baldur's Gate, you say? That will be 100 gold.~*/
+		
+		IF ~
+			PartyGoldGT(99)
+		~ THEN REPLY @41  /*~Here/ (Pay 100 gold.)~ */
+		DO ~
+			SetGlobal("XA_PaidForLetter", "GLOBAL", 1)
+			TakePartyGold(100)
+		~ GOTO XA_WhoToSendTo
+		
+		IF ~
+			PartyGoldLT(100)
+		~ THEN
+		GOTO XA_TooPoor
+		
+	END
+	
+	IF ~~ THEN BEGIN XA_SendCGS_Free
+		SAY @38  /* ~Baldur's Gate, you say? Since you helped solved our case, I'll send it free of charge.~*/
+		
+		IF ~~ THEN 
+		GOTO XA_WhoToSendTo
+	END
+	
+	IF ~~ THEN BEGIN XA_TooPoor
+		SAY @39  /* ~Come back when you do. I'll be here.~*/
+		
+		IF ~~ THEN 
+		EXIT
+	END
+	
+	IF ~~ THEN XA_WhoToSendTo
+		SAY @40  /* ~Who do you want it sent to?~ */
+		
+		IF ~
+			Global("XA_CorwinContinue", "GLOBAL", 2) // continues romance
+			!Alignment(Player1,MASK_EVIL)
+		~
+		THEN REPLY @42 /* ~One moment... (Write a romantic letter to Captain Schael Corwin of the Flaming Fist).~ */
+		GOTO M31A
+		
+		IF ~
+			Global("XA_CorwinContinue", "GLOBAL", 1) // friendship
+			!Alignment(Player1,MASK_EVIL)
+		~
+		THEN REPLY @43 /* ~One moment... (Write a letter to Captain Schael Corwin of the Flaming Fist).~ */
+		GOTO M32A
+		
+		IF ~~ THEN REPLY @44 /* ~One moment... (Write a letter to Corporal Bence Duncan of the Flaming Fist).~ */ 
+		GOTO M33A
+	END
+	
+	IF ~~ THEN BEGIN M34A
+		SAY @47  /* ~(You hand over the dagger and the letter to Brega)~ */
+		= @48 /*  ~I'll have my courier pick these up first thing in the morning. It will take a few days for it to reach Baldur's Gate. Thank you again for your service, citizen.~	 */
+		IF ~~ THEN
+		DO ~
+			TakePartyItem("XAORW1A")
+			TakePartyItem("XAORW2A")
+			TakePartyItem("XALDUNCA")
+			DestroyItem("XAORW1A")
+			DestroyItem("XAORW2A")
+			DestroyItem("XALDUNCA")
+			SetGlobalTimer("XA_Ath2","GLOBAL", FIVE_DAYS)
+			AddexperienceParty(35000)
+		~
+		EXIT
+	END
+	//}
+	
 	
 	IF ~
 		GlobalLT("XA_LetterSent", "GLOBAL",1)
@@ -71,6 +228,8 @@ APPEND_EARLY HABREGA
 		GOTO M35
 	END
 	
+	
+	
 	IF ~
 		GlobalLT("XA_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
@@ -92,9 +251,29 @@ APPEND_EARLY HABREGA
 		IF ~~ THEN REPLY @15 /* ~No, I need some more time to think about it.~ */ 
 		GOTO M35
 	END
+	
+	
+	
+	
 END
 
 EXTEND_BOTTOM HABREGA 0
+	
+	IF ~
+		GlobalLT("XA_LetterSent", "GLOBAL",1)
+		Global("XA_PromptToSendLetter", "GLOBAL", 2)
+		Global("XA_HelpBrega", "GLOBAL", 1)
+	~
+	THEN REPLY @36  /* ~I need to send a letter to Baldur's Gate.~ */
+	GOTO XA_SendCGS_Free
+	
+	IF ~
+		GlobalLT("XA_LetterSent", "GLOBAL",1)
+		Global("XA_PromptToSendLetter", "GLOBAL", 2)
+		!Global("XA_HelpBrega", "GLOBAL", 1)
+	~
+	THEN REPLY @36  /* ~I need to send a letter to Baldur's Gate.~ */
+	GOTO XA_SendCGS
 	
 	IF ~
 		GlobalLT("XA_LetterSent", "GLOBAL",1)
@@ -228,6 +407,8 @@ APPEND HABREGA
 		~
 		EXIT
 	END
+	
+	
 
 	IF ~~ THEN BEGIN M32
 		SAY @24 /* ~Here's a pen and paper. Speak to me again when you are ready to send the letter.~*/
@@ -237,6 +418,7 @@ APPEND HABREGA
 		~
 		EXIT
 	END
+	
 
 	IF ~~ THEN BEGIN M33
 		SAY @24 /* ~Here's a pen and paper. Speak to me again when you are ready to send the letter.~*/
@@ -246,6 +428,8 @@ APPEND HABREGA
 		~
 		EXIT
 	END
+	
+	
 	
 	IF ~~ THEN BEGIN M34
 		SAY @9  /* ~(You hand over the dagger and the letter to Brega)~ */
@@ -265,6 +449,8 @@ APPEND HABREGA
 		~
 		EXIT
 	END
+	
+	
 	
 	IF ~~ THEN BEGIN M35 // from: 25.0
 		SAY @11  /* ~~Take your time. You know where to find me.~.~ */

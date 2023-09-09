@@ -144,12 +144,32 @@ END
 IF ~~ THEN BEGIN XAA3
 	SAY @12 /* ~The Council has asked that I assist you in your hunt for Irenicus. They want him killed or captured for what he did to Skie.~ [BDCOR2] */
 
-	IF ~~ THEN REPLY @31 /* ~Were the mages able to restore her?~ */
+	IF ~
+		GlobalLT("L#2SkieDagger","GLOBAL",31)
+	~ THEN REPLY @31 /* ~Were the mages able to restore her?~ */
 	GOTO XAA4
+	
+	IF ~
+		GlobalGT("L#2SkieDagger","GLOBAL",30)
+	~ THEN REPLY @61  /* ~I see...~*/ 
+	GOTO XAA4_CGS
+END
+
+IF ~~ THEN BEGIN XAA4_CGS
+	SAY @62  /* ~Duke Entar has provided this gold as a reward, with the hope that it'll help you in the hunt for the wizard.~  */
+	
+	=@43 /* ~(She hands you a small sack full of gold)~ */
+	IF ~~ THEN
+	DO ~
+		GivePartyGold(10000)
+		AddExperienceParty(35000)
+	~
+	GOTO XAA4A
 END
 
 IF ~~ THEN BEGIN XAA4
 	SAY @13 /* ~Yes hero, all thanks to you. As a reward, and to help you in the hunt for the wizard, the Dukes have asked me to give you this gold. ~ [BDCOR3] */
+	
 	=@43 /* ~(She hands you a small sack full of gold)~ */
 	IF ~~ THEN
 	DO ~

@@ -1,4 +1,15 @@
-
+IF
+	GlobalGT("L#2SkieDagger","GLOBAL",30)
+	GlobalLT("XA_PromptToSendLetter", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_SkieModActive", "GLOBAL",1)
+		SetGlobal("XA_PromptToSendLetter", "GLOBAL", 1)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+		SetInterrupt(TRUE)
+		Continue()
+END
 
 IF
 	Global("XAAssist","GLOBAL",2)
@@ -362,6 +373,15 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CheckWithBrega", "GLOBAL", 1)
+		ActionOverride(Player1,StartDialog("player1",Player1))
+END
+
+IF 
+	GlobalTimerExpired("XA_Ath2","GLOBAL")
+	GlobalLT("XA_CheckWithBrega2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CheckWithBrega2", "GLOBAL", 1)
 		ActionOverride(Player1,StartDialog("player1",Player1))
 END
 //}

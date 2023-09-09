@@ -16,8 +16,6 @@ THEN
 		Wait(5)
 		DisplayStringHead("XACORWIN", @3)
 		Wait(3)
-		DisplayStringHead("XASKIE", @4)
-		Wait(2)
 		ActionOverride("XAROHMA", MoveToPoint([370.370]))
 		Wait(2)
 		ActionOverride("XALIIA", MoveToPoint([625.640]))
