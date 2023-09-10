@@ -1,0 +1,34 @@
+IF
+	InMyArea("XABENCE")
+	Global("XA_DukesFullyDebriefed", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("XABENCE", DestroySelf())
+		Continue()
+END
+
+
+IF
+	!InMyArea("XABENCE")
+	Global("XA_DukeDebrief_BenceSpawn", "GLOBAL", 1)
+	!Global("XA_BenceLocalSpawn", "MYAREA", 1)
+	Global("XA_CorwinMetFamily", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BenceLocalSpawn", "MYAREA", 1)
+		CreateCreature("XABENCE",[-1.-1], N)
+		ActionOverride("XABENCE", JumpToObject(Player1))
+		Continue()
+END
+
+IF
+	AreaCheck("BG0607")
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_DukesFullyDebriefed", "GLOBAL", 1)
+	!Global("XA_BenceLocalSpawn", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BenceLocalSpawn", "MYAREA", 1)
+		CreateCreature("XABENCE",[935.810], NW)
+		Continue()
+END

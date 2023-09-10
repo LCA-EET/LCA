@@ -1,0 +1,7 @@
+IF
+	Global("XA_AbilityAdded", "MYAREA", 0)
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
+		SetGlobal("XA_AbilityAdded", "MYAREA", 1)
+END

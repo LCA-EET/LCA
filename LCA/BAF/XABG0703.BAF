@@ -1,0 +1,23 @@
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Dead("halbaz")
+	!Global("XA_DialogSwap_0703", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_DialogSwap_0703", "GLOBAL", 1)
+		ActionOverride("halbaz", SetDialog("XAHALBAZ"))
+		ActionOverride("halbaz", SetNumTimesTalkedTo(0))
+		ActionOverride("halbaz", ChangeAIScript("INITDLG",CLASS))
+		Continue()
+END
+
+IF 
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("halbaz")
+	Global("XA_DialogSwap_0703", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_DialogSwap_0703", "GLOBAL", 0)
+		ActionOverride("halbaz", SetDialog("HALBAZ"))
+		Continue()
+END

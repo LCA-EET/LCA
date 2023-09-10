@@ -1,0 +1,14 @@
+IF 
+	GlobalLT("XA_CorwinArrest", "GLOBAL", 1)
+	See("XACORWIN")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CorwinArrest", "GLOBAL", 1)
+END
+
+IF
+	GlobalGT("XA_CorwinArrest", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END

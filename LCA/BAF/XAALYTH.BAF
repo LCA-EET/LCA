@@ -1,0 +1,21 @@
+IF
+	See(Player1)
+	GlobalLT("XA_SavedElfsong", "GLOBAL", 1)
+	OR(2)
+		GlobalGT("XA_SavedLyriel", "GLOBAL", 0)
+		Global("XA_ExitPrison", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		StartDialog("XAALYTH", Player1)
+END
+
+IF
+	See(Player1)
+	!Global("XA_AlythInit", "LOCALS", 1)
+	GlobalLT("XA_SavedElfsong", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_AlythInit", "LOCALS", 1)
+		StartDialog("XAALYTH", Player1)
+END
+

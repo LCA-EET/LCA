@@ -1,0 +1,39 @@
+//{ Amulet
+IF
+	GlobalLT("XA_CorwinAmulet", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		GiveItemCreate("XAAMUL1", Myself, 0,0,0)
+		XEquipItem("XAAMUL1","Corwin",SLOT_AMULET,EQUIP)
+		SetGlobal("XA_CorwinAmulet", "LOCALS", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Corwin Opinion Baseline
+IF
+	GlobalLT("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 100)
+		SetGlobal("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Post Ashatiel Duel
+IF
+	Dead("bdashati")
+	Global("bd_asha_duel", "GLOBAL", 3)
+	IsValidForPartyDialog(Player1)
+	Global("XA_CorwinWitnessedDuel", "GLOBAL", 1)
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+		StartDialog("BDCORWIJ", Player1)
+END
+//}

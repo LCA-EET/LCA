@@ -1,0 +1,20 @@
+IF
+	AreaCheck("BG1300")
+	See(Player1)
+	!Range(Player1, 8)
+	ActionListEmpty()
+	GlobalLT("XA_TalkedToGlint", "Global", 1)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+END
+
+IF
+	AreaCheck("BG1300")
+	See(Player1)
+	Range(Player1, 8)
+	GlobalLT("XA_TalkedToGlint", "Global", 1)
+THEN
+	RESPONSE #100
+		StartDialog("XAGLINT", Player1)
+END

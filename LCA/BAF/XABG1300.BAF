@@ -1,0 +1,102 @@
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_GlintSpawn", "BG1300", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_GlintSpawn", "BG1300", 1)
+		CreateCreature("XAGLINT", [1900.1240], NW)
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("NIKOLAI")
+THEN
+	RESPONSE #100
+		ActionOverride("NIKOLAI", DestroySelf())
+		Continue()
+END
+
+IF
+	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_1300_DeactivateCH", "BG1300", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_1300_DeactivateCH", "BG1300", 1)
+		TriggerActivation("XAHOMETR", FALSE)
+		Continue()
+END
+
+IF
+	!Global("XA_CorwinEET", "GLOBAL", 1)
+	!Global("XA_CHLock", "BG1300", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CHLock", "BG1300", 1)
+		Lock("Door1316")
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_CHUnlock", "BG1300", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CHUnlock", "BG1300", 1)
+		Unlock("Door1316")
+		TriggerActivation("XAHOMETR", TRUE)
+		TriggerActivation("Door1316", FALSE)
+		Continue()
+END
+
+IF
+	InMyArea("Alan")
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("Alan", DestroySelf())
+		Continue()
+END
+
+IF
+	Global("XA_AddCorwinMapNote", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_AddCorwinMapNote", "GLOBAL", 2)
+		AddMapNote([1732.1126],@0)
+		Continue()
+END
+
+IF 
+	!InMyArea("XABRIELB")
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_BrielWasIn103", "GLOBAL", 1)
+	Global("HelpBrielbara","GLOBAL",1)
+	!Global("XA_Briel1300", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("XABRIELB", [1660.1360], NE)
+		SetGlobal("XA_Briel1300", "GLOBAL", 1)
+		Continue()
+END
+
+//{ Clean-up
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_GlintSpawn", "BG1300", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_GlintSpawn", "BG1300", 0)
+		ActionOverride("XAGLINT", DestroySelf())
+		Continue()
+END
+
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_Briel1300", "GLOBAL", 1)
+	InMyArea("XABRIELB")
+THEN
+	RESPONSE #100
+		ActionOverride("XABRIELB", DestroySelf())
+END
+//}

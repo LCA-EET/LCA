@@ -1,0 +1,21 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeToColor([30.0],0)
+		ActionOverride("ppguy01", DestroySelf())
+		Wait(1)
+		LeaveAreaLUAPanic("XA5300","",[825.550],S)
+		LeaveAreaLUA("XA5300","",[825.550],S)
+		ActionOverride(Player2,LeaveAreaLUA("XA5300","",[710.555],S))
+		ActionOverride(Player3,LeaveAreaLUA("XA5300","",[732.526],S))
+		ActionOverride(Player4,LeaveAreaLUA("XA5300","",[800.516],S))
+		ActionOverride(Player5,LeaveAreaLUA("XA5300","",[826.542],S))
+		ActionOverride(Player6,LeaveAreaLUA("XA5300","",[865.568],S))
+		Wait(2)
+		Explore()
+		FadeFromColor([30.0],0)
+		EndCutSceneMode()
+END
+

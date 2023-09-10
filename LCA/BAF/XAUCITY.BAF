@@ -1,0 +1,25 @@
+IF 
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ClearAllActions()
+		FadeToColor([30.0],0)
+		Wait(1)
+		SetGlobal("XA_ArrivedInUndercity", "GLOBAL", 1)
+		
+		LeaveAreaLUA("XAUC","",[4800.925],W)
+		ActionOverride("XACORWIN",LeaveAreaLUA("XAUC","",[4800.900],W))  
+		
+		FadeFromColor([30.0],0)
+		Wait(1)
+		
+		ActionOverride(Player1,Rest())
+		ActionOverride(Player2,Rest())
+		ActionOverride(Player3,Rest())
+		ActionOverride(Player4,Rest())
+		ActionOverride(Player5,Rest())
+		ActionOverride(Player6,Rest())
+		
+		ActionOverride("XACORWIN",StartDialog("XACORWIJ", Player1)) 
+END

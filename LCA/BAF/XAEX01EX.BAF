@@ -1,0 +1,25 @@
+IF
+	True() 
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		SetGlobalTimer("XA_CorwinSexTimer", "GLOBAL", THREE_DAYS)
+		
+		ChangeStat(Player1,CON,1,ADD)
+		AddXPObject(Player1, 100000)
+		ChangeStat(Myself,CON,1,ADD)
+		AddXPObject("XACORWIN", 100000)
+		AddJournalEntry(@0, INFO) /* Schael and I made love for the first time. I feel revitalized — it was an amazing, extremely passionate experience that the two of us will remember for as long as we live.~ */
+		SetGlobal("XA_CorwinSex_1", "GLOBAL", 4)
+		SetGlobal("XA_SleepInn", "GLOBAL", 0)
+		IncrementGlobal("XA_TimesHadSex", "GLOBAL", 1)
+		RestPartyEx(0,0,FALSE)
+		ChangeStat(Player1, FATIGUE, 7, SET)
+		ChangeStat(Player2, FATIGUE, 7, SET)
+		ChangeStat(Player3, FATIGUE, 7, SET)
+		ChangeStat(Player4, FATIGUE, 7, SET)
+		ChangeStat(Player5, FATIGUE, 7, SET)
+		ChangeStat(Player6, FATIGUE, 7, SET)
+		
+		StartCutScene("XAEXPLEX")
+END

@@ -1,0 +1,21 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeToColor([30.0],0)
+		SetGlobal("XA_ReturnToAvernus", "GLOBAL", 1)
+		ActionOverride("ppguy01", DestroySelf())
+		Wait(1)
+		LeaveAreaLUAPanic("XA4500","",[475.1550],NE)
+		LeaveAreaLUA("XA4500","",[475.1550],NE)
+		ActionOverride(Player2,LeaveAreaLUA("XA4500","",[400.1555],NE))
+		ActionOverride(Player3,LeaveAreaLUA("XA4500","",[500.1620],NE))
+		ActionOverride(Player4,LeaveAreaLUA("XA4500","",[300.1665],NE))
+		ActionOverride(Player5,LeaveAreaLUA("XA4500","",[330.1730],NE))
+		ActionOverride(Player6,LeaveAreaLUA("XA4500","",[400.1775],NE))
+		Wait(1)
+		Explore()
+		FadeFromColor([30.0],0)
+		EndCutSceneMode()
+END

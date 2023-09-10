@@ -1,0 +1,25 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeToColor([30.0], 0)
+		Wait(2)
+		JumpToPoint([1960.1115])
+		ActionOverride(Player2, JumpToPoint([1910.1200]))
+		ActionOverride(Player3, JumpToPoint([1950.1210]))
+		ActionOverride(Player4, JumpToPoint([1990.1210]))
+		ActionOverride(Player5, JumpToPoint([2030.1210]))
+		ActionOverride(Player6, JumpToPoint([2070.1200]))
+		ActionOverride("XACAELAR", JumpToPoint([2020.1115])
+		Face(N)
+		ActionOverride(Player2, Face(N))
+		ActionOverride(Player3, Face(N))
+		ActionOverride(Player4, Face(N))
+		ActionOverride(Player5, Face(N))
+		ActionOverride(Player6, Face(N))
+		CreateCreature("XAAUN", [1990.1065], S)
+		FadeFromColor([30.0], 0)
+		Wait(1)
+		ActionOverride("XAAUN", StartDialog("XAAUN", Player1))
+END

@@ -1,0 +1,21 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		CreateVisualEffect("SPPORTAL",[640.1020])
+		CreateVisualEffect("SPPORTAL",[720.1030])
+		CreateVisualEffect("SPPORTAL",[670.1060])
+		Wait(2)
+		CreateCreature("XAELF01", [640.1020], S)
+		CreateCreature("XAELF02", [720.1030], S)
+		CreateCreature("XAELF03", [670.1060], S)
+		SmallWait(5)
+		DisplayStringHead("XAELF01", @1)
+		ActionOverride("XALODOB", Face(NE))
+		Wait(2)
+		DisplayStringHead("XALODOB", @0)
+		Wait(3)
+		ActionOverride("XALODOB", Enemy())
+		EndCutSceneMode()
+END

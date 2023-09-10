@@ -1,0 +1,280 @@
+
+
+//{ Sex 3 CS
+
+	//{ Three Old Kegs
+	IF
+		Global("XA_StayingAtThreeOldKegs", "GLOBAL", 1)
+		Global("XA_CorwinSex_3", "GLOBAL", 1)
+		Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
+		OR(3)
+			AreaCheck("BG0119") // ToK L1
+			AreaCheck("BG0120") // ToK L2
+			AreaCheck("BG0121") // ToK L3
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_SleepBG", "GLOBAL", 1)
+			ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+	END
+	//}
+	
+	//{ Blade and Stars
+	IF
+		Global("XA_StayingAtBladeAndStars", "GLOBAL", 1)
+		Global("XA_CorwinSex_3", "GLOBAL", 1)
+		Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
+		OR(3)
+			AreaCheck("BG0105") // B&S L1
+			AreaCheck("BG0106") // B&S L2
+			AreaCheck("BG0107") // B&S L3
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_SleepBG", "GLOBAL", 1)
+			ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+	END
+	//}
+	
+	//{ Elfsong
+	IF
+		Global("XA_StayingAtElfsongTavern", "GLOBAL", 1)
+		Global("XA_CorwinSex_3", "GLOBAL", 1)
+		Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
+		OR(2)
+			AreaCheck("BG0705") // Elfsong L1
+			AreaCheck("BG0706") // Elfsong L2
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_SleepBG", "GLOBAL", 1)
+			ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+	END
+	//}
+	
+	//{ Blushing Mermaid
+	IF
+		Global("XA_StayingAtBlushingMermaid", "GLOBAL", 1)
+		Global("XA_CorwinSex_3", "GLOBAL", 1)
+		Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
+		OR(2)
+			AreaCheck("BG0114") // Blushing Mermaid L1
+			AreaCheck("BG0115") // Blushing Mermaid L2
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_SleepBG", "GLOBAL", 1)
+			ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+	END
+	//}
+//}
+
+//{ Advance RBG Timers
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_Advance7", "GLOBAL", 1)
+	GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+	Global("XA_HaltRBGTimers", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_Advance7", "GLOBAL", 1)
+		SetGlobalTimer("XA_Advance7Timer", "GLOBAL", SEVEN_HOURS)
+		IncrementGlobal("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 7) 
+		IncrementGlobal("XA_CorwinFamilyTimer_Hours", "GLOBAL", 7)
+		IncrementGlobal("XA_DukeDebriefTimer_Hours", "GLOBAL", 7)
+		RestParty()
+		SetInterrupt(TRUE)
+END
+//}
+
+//{ Caelar Aerie Scar Banter
+IF
+	IsValidForPartyDialogue("XACAELAR")
+	IsValidForPartyDialogue("Aerie")
+	GlobalLT("XA_CaelarAerieScars", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 1~)
+		SetGlobal("XA_CaelarAerieScars", "GLOBAL", 1)
+		ActionOverride("XACAELAR", Interact("Aerie"))
+END
+//}
+
+//{ Caelar Rescue Quest Timer Init
+IF
+	GlobalLT("XA_KanaDreamTimerSet", "GLOBAL",1)
+	Global("XA_ClearedKanaglym", "GLOBAL",1)
+	Global("XA_EnteredSaradush", "GLOBAL", 1)
+	OR(2)
+		Global("XA_IncubusDefeated", "GLOBAL", 1)
+		GlobalGT("DemoGorgonIsDead","GLOBAL",0)
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 2~)
+		SetGlobal("XA_KanaDreamTimerSet", "GLOBAL",1)
+		SetGlobalTimer("XA_KanaDreamTimer", "GLOBAL", ONE_DAY)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END
+
+IF
+	GlobalTimerExpired("XA_KanaDreamTimer", "GLOBAL")
+	GlobalLT("XA_KanaDream", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 3~)
+		SetGlobal("XA_KanaDream", "GLOBAL", 1)
+		SetGlobalTimer("XA_KanaDreamTimer", "GLOBAL", EIGHT_HOURS)
+		StartCutSceneMode()
+		StartCutScene("XADREAM")
+END
+
+IF
+	GlobalTimerExpired("XA_KanaDreamTimer", "GLOBAL")
+	Global("XA_KanaDream", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 4~)
+		SetGlobal("XA_KanaDream", "GLOBAL", 2)
+		StartCutSceneMode()
+		StartCutScene("XADREAM")
+END
+//}
+
+IF
+	Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
+	OR(2)
+		Global("XA_CorwinSex_1", "GLOBAL", 1)
+		Global("XA_CorwinSex_2", "GLOBAL", 1)
+	OR(13)
+		AreaCheck("AR0313") //Sea Bounty 1FL
+		AreaCheck("AR0314") //Sea Bounty 2FL
+		AreaCheck("AR0509") //Five Flagons, 1FL
+		AreaCheck("AR0511") //Five Flagons, 2FL
+		AreaCheck("AR0513") //Inn at Bridge District, 1FL
+		AreaCheck("AR0514") //Inn at Bridge District, 2FL
+		AreaCheck("AR0515") //Inn at Bridge District, 3FL
+		AreaCheck("AR0704") //Mithrest Inn
+		AreaCheck("AR0709") //Den of the Seven Vales
+		AreaCheck("AR0712") //Den of the Seven Vales, 2FL
+		AreaCheck("AR1105") //Imnesvale Inn
+		AreaCheck("AR1602") //Brynnlaw's Inn
+		AreaCheck("AR2010") //Trademeet's Inn
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 5~)
+		SetGlobal("XA_SleepInn", "GLOBAL", 1)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END
+
+IF
+	!Dead("Corwin")
+	InMyArea("Corwin")
+	AreaCheck("BD3000") //Allied Siege Camp
+	GlobalLT("XA_TentCS", "GLOBAL", 1)	
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 7~)
+		SetGlobal("XA_TentCS", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutSceneEx("XATNTCS",FALSE)
+END
+
+IF
+	!Dead("Corwin")
+	InMyArea("Corwin")
+	AreaCheck("BD1000") // Coast Way Crossing
+	See("BDTHAIRD")
+	GlobalLT("XA_TentCS", "GLOBAL", 1)	
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 8~)
+		SetGlobal("XA_TentCS", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutSceneEx("XATNTCS",FALSE)
+END
+
+IF
+	GlobalTimerExpired("XA_STtoBG","GLOBAL") // see MBREGA.d state M34
+	!Global("XA_CS03_Done", "GLOBAL", 1)
+	OR(2)
+		Global("XA_LetterSent", "GLOBAL", 1) // Corwin Love
+		Global("XA_LetterSent", "GLOBAL", 2) // Corwin 
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 9~)
+		SetGlobal("XA_CS03_Done", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutSceneEx("XAAcs03a",FALSE)
+END
+
+IF
+	GlobalTimerExpired("XA_STtoBG","GLOBAL") // see MBREGA.d state M34
+	Global("XA_LetterSent", "GLOBAL", 3) // Duncan
+	!Global("XA_CS02_Done", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 10~)
+		SetGlobal("XA_CS02_Done", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutSceneEx("XAAcs02a",FALSE)
+END
+
+IF
+	GlobalTimerExpired("XA_CS04","GLOBAL")
+	!Global("XA_CS04_Done", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 11~)
+		SetGlobal("XA_CS04_Done", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutSceneEx("XAAcs04a",FALSE)
+END
+
+IF
+	GlobalTimerExpired("XA_CS05","GLOBAL")
+	!Global("XA_CS05_Done", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 12~)
+		SetGlobal("XA_CS05_Done", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutSceneEx("XAAcs05a",FALSE)
+END
+
+IF
+	GlobalTimerExpired("XA_CS01","GLOBAL")
+	!Global("XA_CS01_Done", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 13~)
+		SetGlobal("XA_CS01_Done", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutSceneEx("XAAcs01a",FALSE)
+END
+
+IF 
+	OR(2)
+		Global("XA_CorwinSex_1", "GLOBAL", 1)
+		Global("XA_CorwinSex_2", "GLOBAL", 1)
+	Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
+	OR(3)
+		AreaCheck("AR0406") // Copper Coronet
+		AreaCheck("AR0021") // Crooked Crane 1FL
+		AreaCheck("AR0022") // Crooked Crane 2FL
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 14~)
+		SetGlobal("XA_CorwinComplainSex", "GLOBAL", 1)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+END
+
+IF 
+	GlobalLT("XA_OnlySleep", "GLOBAL", 1)
+	!Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
+	OR(3)
+		Global("XA_CorwinSex_1", "GLOBAL", 1)
+		Global("XA_CorwinSex_2", "GLOBAL", 1)
+		Global("XA_CorwinSex_3", "GLOBAL", 1)
+THEN 
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 15~)
+		SetGlobal("XA_TryToSleep", "GLOBAL", 1)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+END

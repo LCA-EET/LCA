@@ -1,0 +1,17 @@
+IF
+	Global("XA_ApproachBeno", "GLOBAL", 1)
+	Range(Player1,5)
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, FaceObject("XABENO2")
+		Wait(1)
+		StartDialog("XABENO2", Player1)
+END
+
+IF 
+	Global("XA_ApproachBeno", "GLOBAL", 1)
+	!Range(Player1,5)
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, MoveToObject("XATRBENO"))
+END

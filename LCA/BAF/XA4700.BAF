@@ -1,0 +1,127 @@
+IF
+	Global("XA_Return5300", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Return5300", "MYAREA", 2)
+		ActionOverride(Player1,AddSpecialAbility("SPIN649"))
+		CopyGroundPilesTo("AR4500", [1985.1250])
+		StartCutSceneMode()
+		StartCutScene("XAGO5300")
+END
+
+IF
+	GlobalLT("XA_RemovePocketPlane", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_RemovePocketPlane", "MYAREA", 1)
+		ActionOverride(Player1, RemoveSpellRES("SPIN649"))
+END
+
+IF
+	Global("XA_AVBossFled", "GLOBAL", 1)
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+		SetGlobal("XA_AVBossFled", "GLOBAL", 2)
+		OpenDoor("Door03")
+		Wait(1)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+		
+END
+
+IF
+	Global("XA_Hostile4700", "GLOBAL", 1)
+	GlobalLT("XA_AVBossFled", "GLOBAL", 1)
+	GlobalLT("XA_4700_Adds", "MYAREA", 4)
+THEN
+	RESPONSE #100
+		CreateVisualEffect("SPFLESHS",[1050.1075])	/* SW */
+		IncrementGlobal("XA_4700_Adds", "MYAREA", 1)
+		//Wait(2)
+		CreateCreature("XAAVC1",[1050.1075],NE)  
+		Continue()
+	RESPONSE #100
+		CreateVisualEffect("SPFLESHS",[1530.1090]) 	/* SE */
+		IncrementGlobal("XA_4700_Adds", "MYAREA", 1)
+		//Wait(2)
+		CreateCreature("XAAVC2",[1530.1090],NW) 
+		Continue()
+	RESPONSE #100
+		CreateVisualEffect("SPFLESHS",[1040.740])	/* NW */
+		IncrementGlobal("XA_4700_Adds", "MYAREA", 1)
+		//Wait(2)
+		CreateCreature("XAAVC3",[1040.740],SE) 
+		Continue()
+	RESPONSE #100
+		CreateVisualEffect("SPFLESHS",[1500.730]) 	/* NE */
+		IncrementGlobal("XA_4700_Adds", "MYAREA", 1)
+		//Wait(2)
+		CreateCreature("XAAVC4",[1500.730],SW) 
+		Continue()
+	RESPONSE #100
+		CreateVisualEffect("SPFLESHS",[1050.1075])	/* SW */
+		IncrementGlobal("XA_4700_Adds", "MYAREA", 1)
+		//Wait(2)
+		CreateCreature("XAAVC5",[1050.1075],NE)  
+		Continue()
+	RESPONSE #100
+		CreateVisualEffect("SPFLESHS",[1530.1090]) 	/* SE */
+		IncrementGlobal("XA_4700_Adds", "MYAREA", 1)
+		//Wait(2)
+		CreateCreature("XAAVC6",[1530.1090],NW) 
+		Continue()
+	RESPONSE #100
+		CreateVisualEffect("SPFLESHS",[1040.740])	/* NW */
+		IncrementGlobal("XA_4700_Adds", "MYAREA", 1)
+		//Wait(2)
+		CreateCreature("XAAVC7",[1040.740],SE) 
+		Continue()
+	RESPONSE #100
+		CreateVisualEffect("SPFLESHS",[1500.730]) 	/* NE */
+		IncrementGlobal("XA_4700_Adds", "MYAREA", 1)
+		//Wait(2)
+		CreateCreature("XAAVC8",[1500.730],SW) 
+		Continue()
+	RESPONSE #100
+		CreateVisualEffect("SPFLESHS",[1050.1075])	/* SW */
+		IncrementGlobal("XA_4700_Adds", "MYAREA", 1)
+		//Wait(2)
+		CreateCreature("XAAVC9",[1050.1075],NE)  
+		Continue()
+	RESPONSE #100
+		CreateVisualEffect("SPFLESHS",[1530.1090]) 	/* SE */
+		IncrementGlobal("XA_4700_Adds", "MYAREA", 1)
+		//Wait(2)
+		CreateCreature("XAAVC10",[1530.1090],NW) 
+		Continue()
+	RESPONSE #100
+		CreateVisualEffect("SPFLESHS",[1040.740])	/* NW */
+		IncrementGlobal("XA_4700_Adds", "MYAREA", 1)
+		//Wait(2)
+		CreateCreature("XAAVC11",[1040.740],SE) 
+		Continue()
+	RESPONSE #100
+		CreateVisualEffect("SPFLESHS",[1500.730]) 	/* NE */
+		IncrementGlobal("XA_4700_Adds", "MYAREA", 1)
+		//Wait(2)
+		CreateCreature("XAAVC12",[1500.730],SW) 
+		Continue()
+	RESPONSE #100
+		CreateVisualEffect("SPFLESHS",[1050.1075])	/* SW */
+		IncrementGlobal("XA_4700_Adds", "MYAREA", 1)
+		//Wait(2)
+		CreateCreature("XAAVC13",[1050.1075],NE)  
+		Continue()
+	RESPONSE #100
+		CreateVisualEffect("SPFLESHS",[1530.1090]) 	/* SE */
+		IncrementGlobal("XA_4700_Adds", "MYAREA", 1)
+		//Wait(2)
+		CreateCreature("XAAVC14",[1530.1090],NW) 
+		Continue()
+	RESPONSE #100
+		CreateVisualEffect("SPFLESHS",[1040.740])	/* NW */
+		IncrementGlobal("XA_4700_Adds", "MYAREA", 1)
+		//Wait(2)
+		CreateCreature("XAAVC15",[1040.740],SE) 
+		Continue()
+END

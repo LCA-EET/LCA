@@ -1,0 +1,7 @@
+IF
+	AreaCheck("XAG1")
+THEN
+	RESPONSE #100
+		ChangeAIScript("",OVERRIDE)
+		ChangeAIScript("XACRTYRD",CLASS)
+END

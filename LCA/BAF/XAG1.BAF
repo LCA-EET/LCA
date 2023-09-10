@@ -1,0 +1,149 @@
+IF 
+	Global("XA_BeginSpawning", "GLOBAL", 1)
+	OR(2)
+		Dead("XACAELA1")
+		Dead("XACAELA2")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BeginSpawning", "GLOBAL", 2)
+END
+
+IF
+	Global("XA_BypassG1", "GLOBAL", 1)
+	!Global("XA_CompletedG1", "GLOBAL", 1)
+	IsValidForPartyDialogue(Player1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_CompletedG1", "GLOBAL", 1)
+		DisplayStringHead(Player1, @0)
+		Wait(3)
+		SetGlobal("XA_DemonSpeak", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		StartCutSceneMode()
+		StartCutScene("XASENT")
+END
+
+IF
+	OR(2)
+		Dead("XACAELA1")
+		Dead("XACAELA2")
+	Dead("XAASHATI")
+	Dead("XABARGHE")
+	Dead("XAHEPHER")
+	!Global("XA_DemonSpeak", "GLOBAL", 1)
+	!Global("XA_CompletedG1", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_CompletedG1", "GLOBAL", 1)
+		DisplayStringHead(Myself, @1)
+		Wait(3)
+		SetGlobal("XA_DemonSpeak", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		StartCutSceneMode()
+		StartCutScene("XASENT")
+END
+
+IF 
+	GlobalLT("XA_G1_Intro", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		Wait(1)
+		SetGlobal("XA_G1_Intro", "GLOBAL", 1)
+		SetGlobal("XA_BeginSpawning", "GLOBAL", 1)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END
+
+IF
+	GlobalLT("XA_CoalitionAlive", "GLOBAL", 5)
+	Global("XA_BeginSpawning", "GLOBAL", 1)
+THEN
+	RESPONSE #10
+		//DisplayStringHead(Player1, ~Coalition - No action.~)
+		Continue()
+	RESPONSE #10
+		//DisplayStringHead(Player1, ~Coalition - Spawn x3.~)
+		CreateCreature("XACOAL01", [20.3300], NE)
+		IncrementGlobal("XA_CoalitionAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("XACOAL02", [50.3390], NE)
+		IncrementGlobal("XA_CoalitionAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("XACOAL03", [100.3400], NE)
+		IncrementGlobal("XA_CoalitionAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("XACOAL04", [20.3300], NE)
+		IncrementGlobal("XA_CoalitionAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("XACOAL05", [50.3390], NE)
+		IncrementGlobal("XA_CoalitionAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("XACOAL06", [100.3400], NE)
+		IncrementGlobal("XA_CoalitionAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("XACOAL07", [20.3300], NE)
+		IncrementGlobal("XA_CoalitionAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("XACOAL08", [50.3390], NE)
+		IncrementGlobal("XA_CoalitionAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("XACOAL09", [100.3400], NE)
+		IncrementGlobal("XA_CoalitionAlive", "GLOBAL", 1)
+		Continue()
+END
+
+
+IF
+	GlobalLT("XA_CrusadersAlive", "GLOBAL", 5)
+	Global("XA_BeginSpawning", "GLOBAL", 1)
+THEN
+	RESPONSE #10
+		//DisplayStringHead(Player1, ~Crusader - No action.~)
+		Continue()
+	RESPONSE #10
+		CreateCreature("XACRUS01", [2690.1870], SW)
+		IncrementGlobal("XA_CrusadersAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("XACRUS02", [2660.1820], SW)
+		IncrementGlobal("XA_CrusadersAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("XACRUS03", [2750.1910], SW)
+		IncrementGlobal("XA_CrusadersAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("XACRUS04", [1370.1460], SW)
+		IncrementGlobal("XA_CrusadersAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("XACRUS05", [1690.1570], SW)
+		IncrementGlobal("XA_CrusadersAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("XACRUS06", [1960.1600], SW)
+		IncrementGlobal("XA_CrusadersAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("XACRUS07", [970.2300], SE)
+		IncrementGlobal("XA_CrusadersAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("XACRUS08", [970.1586], E)
+		IncrementGlobal("XA_CrusadersAlive", "GLOBAL", 1)
+		Continue()
+	RESPONSE #10
+		CreateCreature("XACRUS09", [2650.1880], SW)
+		IncrementGlobal("XA_CrusadersAlive", "GLOBAL", 1)
+		Continue()
+		//1600.900
+END

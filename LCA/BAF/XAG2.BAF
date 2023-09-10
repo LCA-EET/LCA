@@ -1,0 +1,81 @@
+IF 
+	Global("XA_G2_Intro", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_G2_Intro", "GLOBAL", 2)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END
+
+IF
+	Global("XA_EndG2", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_EndG2", "GLOBAL", 4)
+		SetGlobal("XA_CompletedG2", "GLOBAL", 1)
+		DisplayStringHead(Player1, @0)
+		Wait(3)
+		SetGlobal("XA_DemonSpeak", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		StartCutSceneMode()
+		StartCutScene("XASENT")
+END
+
+IF
+	Dead("XASAREVO")
+	Dead("XASEMAJ")
+	Dead("XAANGELO")
+	Dead("XAZHALIM")
+	Dead("XAGARDUS")
+	Dead("XAAASIM")
+	Dead("XADIYAB")
+	GlobalLT("XA_EndG2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_EndG2", "GLOBAL", 1)
+		//DisplayStringHead(Myself, ~XA_EndG2 is 1~)
+		Continue()
+END
+
+IF
+	Dead("XASAREVO")
+	!Global("XA_G2TimerSet", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_G2TimerSet", "LOCALS", 1)
+		SetGlobalTimer("XA_SarevokG2", "GLOBAL", THREE_ROUNDS)
+END
+
+IF 
+	GlobalTimerExpired("XA_SarevokG2", "GLOBAL")
+	GlobalLT("XA_EndG2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_EndG2", "GLOBAL", 1)
+END
+
+IF
+	Global("XA_EndG2", "GLOBAL", 1)
+	Dead("XACC3")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_EndG2", "GLOBAL", 2)
+		SetGlobal("XA_CompletedG2", "GLOBAL", 1)
+		DisplayStringHead(Player1, @0)
+		Wait(3)
+		SetGlobal("XA_DemonSpeak", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		StartCutSceneMode()
+		StartCutScene("XASENT")
+END
+
+IF
+	Global("XA_G2_Intro", "GLOBAL", 3)
+	InMyArea(Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_G2_Intro", "GLOBAL", 4)
+		StartCutSceneMode()
+		StartCutScene("XACSG2A")
+END

@@ -1,0 +1,113 @@
+IF
+	!Detect("hexxat")  // Hexxat
+	Global("XA_CorwinHexxatFight","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ChangeAIScript("",GENERAL)
+		SetGlobal("XA_CorwinHexxatFight","GLOBAL",2)
+		ChangeAIScript("",SPECIFICS)
+		JoinParty()
+END
+
+IF
+  See("Hexxat")  // Hexxat
+  !StateCheck(Myself,STATE_HASTED)
+  HaveSpell(MAZZY_HASTE)
+THEN
+  RESPONSE #100
+    Spell(Myself,MAZZY_HASTE)
+END
+
+IF
+  See("Hexxat")  // Hexxat
+  CheckStatLT(Myself,18,STR)
+  HaveSpell(MAZZY_STRENGTH)
+THEN
+  RESPONSE #100
+    Spell(Myself,MAZZY_STRENGTH)
+END
+
+IF
+  See("Hexxat")  // Hexxat
+  HPPercentLT(Myself,40)
+  HaveSpell(MAZZY_LAY)
+THEN
+  RESPONSE #100
+    Spell(Myself,MAZZY_LAY)
+END
+
+IF
+  OR(4)
+    StateCheck(Myself,STATE_PANIC)
+    SpellCast([ANYONE],WIZARD_HORROR)
+    SpellCast([ANYONE],WIZARD_SPOOK)
+    SpellCastPriest([ANYONE],CLERIC_CLOAK_OF_FEAR)
+  HaveSpell(INVOKE_COURAGE)
+  See("Hexxat")  // Hexxat
+THEN
+  RESPONSE #100
+    Spell(Myself,INVOKE_COURAGE)
+END
+
+IF
+  HasItem("POTN08",Myself)  // ~Potion of Healing~
+  HPPercentLT(Myself,60)
+THEN
+  RESPONSE #100
+    UseItem("POTN08",Myself)  // ~Potion of Healing~
+END
+
+IF
+  HasItem("POTN52",Myself)  // ~Potion of Extra Healing~
+  HPPercentLT(Myself,30)
+THEN
+  RESPONSE #100
+    UseItem("POTN52",Myself)  // ~Potion of Extra Healing~
+END
+
+IF
+  AttackedBy([ANYONE],DEFAULT)
+  Range(LastAttackerOf(Myself),4)
+THEN
+  RESPONSE #100
+    EquipMostDamagingMelee()
+    AttackReevaluate(LastAttackerOf(Myself),30)
+END
+
+IF
+  See("Hexxat")  // Hexxat
+  !Range("Hexxat",4)  // Hexxat
+  Range("Hexxat",10)  // Hexxat
+THEN
+  RESPONSE #100
+    RunAwayFrom("Hexxat",10)
+END
+
+IF
+  See("Hexxat")  // Hexxat
+  !Range("Hexxat",10)  // Hexxat
+THEN
+  RESPONSE #100
+    EquipRanged()
+    AttackReevaluate("Hexxat",30)
+END
+
+IF
+  See("Hexxat")  // Hexxat
+  Range("Hexxat",4)  // Hexxat
+THEN
+  RESPONSE #100
+    EquipMostDamagingMelee()
+    AttackReevaluate("Hexxat",30)
+END
+
+IF
+  See("Hexxat")  // Hexxat
+  !Range("Hexxat",4)  // Hexxat
+THEN
+  RESPONSE #100
+    EquipRanged()
+    EquipMostDamagingMelee()
+    AttackReevaluate("Hexxat",30)
+END
+

@@ -1,0 +1,28 @@
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,13)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,238224)  // You are too far away to use that.
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+	OR(3)
+		PartyHasItem("XASTDAG")
+		PartyHasItem("XASTDAGB")
+		PartyHasItem("XASTDAGD")
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		StartCutScene("XADAG1")
+END
+
+IF
+	Clicked([ANYONE])
+THEN
+	RESPONSE #100
+		SetGlobal("bd_fugue_portal_ot","bd5300",1)  // Kanaglym
+		DisplayStringHead(Myself,270257)  // The walls of this chasm sink down not into darkness, but a portal to the desolate gray of the Fugue Plane. Anything dropped from here into that dreary realm will surely be lost to it forever.
+END

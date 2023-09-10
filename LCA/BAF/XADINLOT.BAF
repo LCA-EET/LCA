@@ -1,0 +1,12 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeToColor([30.0],0)
+		GiveGoldForce(5000)
+		AddJournalEntry(@0, INFO)
+		Wait(3)
+		TextScreen("XADINNER")
+		StartCutscene("XADINNER")
+END

@@ -1,0 +1,101 @@
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!InMyArea("BRILLA")
+	!Dead("BRILLA")
+	!Global("XA_BG0102_BrillaSpawn", "BG0102", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BG0102_BrillaSpawn", "BG0102", 1)
+		CreateCreature("BRILLA", [1643.299], SW)
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CreateNPC_BG0102", "BG0102", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CreateNPC_BG0102", "BG0102", 1)
+		ApplySpellRES("ohdestbg","mcook3")
+		CreateCreature("XACOOK", [353.969], NE)
+		CreateCreature("XAMELKOR", [677.770], S)
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_SkieModActive", "GLOBAL",1)
+	GlobalLT("XA_CreateNPC_BG0102", "BG0102", 2)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CreateNPC_BG0102", "BG0102", 2)
+		CreateCreature("XASKIE", [710.1265], SW)
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("SKIE")
+THEN
+	RESPONSE #100
+		ApplySpellRES("ohdestbg","SKIE")
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_BG0102_SwapBrilla", "BG0102", 1)
+	!Dead("BRILLA")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BG0102_SwapBrilla", "BG0102", 1)
+		ActionOverride("BRILLA", SetDialog("XABRILLA"))
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("Entar")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_DeletedEntar", "BG0102", 1)
+		ApplySpellRES("ohdestbg","Entar")
+		Continue()
+END
+
+//{ Clean-up
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_DeletedEntar", "BG0102", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("ENTAR", [677.770], S)
+		SetGlobal("XA_DeletedEntar", "BG0102", 0)
+		Continue()
+END
+
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	OR(3)
+		InMyArea("XACOOK")
+		InMyArea("XAMELKOR")
+		InMyArea("XASKIE")
+THEN
+	RESPONSE #100
+		ActionOverride("XACOOK", DestroySelf())
+		ActionOverride("XAMELKOR", DestroySelf())
+		ActionOverride("XASKIE", DestroySelf())
+		Continue()
+END
+
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_BG0102_SwapBrilla", "BG0102", 1)
+	InMyArea("BRILLA")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BG0102_SwapBrilla", "BG0102", 0)
+		ActionOverride("BRILLA", SetDialog("BRILLA"))
+		Continue()
+END
+//}

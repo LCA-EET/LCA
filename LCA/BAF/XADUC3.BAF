@@ -1,0 +1,19 @@
+
+IF
+	Global("XA_SkieModActive", "GLOBAL", 1)
+	InMyArea("XASKIE")
+THEN
+	RESPONSE #100
+		ActionOverride("XASKIE", DestroySelf())
+		Continue()
+END
+
+IF
+	GlobalLT("XA_RohmaCorwinCS", "XADUC3", 1)
+	Global("XA_PrepareCSBGEND1", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_RohmaCorwinCS", "XADUC3", 1)
+		StartCutSceneMode()
+		StartCutScene("XABGEND1")
+END

@@ -1,0 +1,22 @@
+IF
+	!Global("XA_TimerInit", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_TimerInit", "LOCALS", 1)
+		SetGlobalTimer("XA_CluckTimer", "LOCALS", ONE_ROUND)
+END
+IF
+	GlobalTimerExpired("XA_CluckTimer", "LOCALS")
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself, @0)
+		SetGlobalTimer("XA_CluckTimer", "LOCALS", ONE_ROUND)
+	RESPONSE #100
+		DisplayStringHead(Myself, @2)
+		SetGlobalTimer("XA_CluckTimer", "LOCALS", ONE_ROUND)
+	RESPONSE #100
+		DisplayStringHead(Myself, @6)
+		SetGlobalTimer("XA_CluckTimer", "LOCALS", ONE_ROUND)
+	RESPONSE #100
+		SetGlobalTimer("XA_CluckTimer", "LOCALS", ONE_ROUND)
+END

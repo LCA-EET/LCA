@@ -1,0 +1,8 @@
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("kaella")
+THEN
+	RESPONSE #100
+		ActionOverride("kaella", DestroySelf())
+		Continue()
+END

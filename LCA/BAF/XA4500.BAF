@@ -1,0 +1,57 @@
+IF
+	Dead("XATHRIX")
+	GlobalLT("XA_TowerUnlock", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_TowerUnlock", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	GlobalLT("XA_4500Journal", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_4500Journal", "MYAREA", 1)
+		AddJournalEntry(@0, INFO)
+		Continue()
+END
+
+IF
+	IsValidForPartyDialogue("Sarevok")
+	GlobalLT("XA_AvernusChat", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_AvernusChat", "GLOBAL", 1)
+		Wait(3)
+		ActionOverride("Sarevok", StartDialog("SAREV25J", Player1))
+END
+
+IF
+	IsValidForPartyDialogue("Aerie")
+	GlobalLT("XA_AvernusChat", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_AvernusChat", "GLOBAL", 1)
+		Wait(3)
+		ActionOverride("Aerie", StartDialog("AERIEJ", Player1))
+END
+
+IF
+	IsValidForPartyDialogue("Keldorn")
+	GlobalLT("XA_AvernusChat", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_AvernusChat", "GLOBAL", 1)
+		Wait(3)
+		ActionOverride("Keldorn", StartDialog("KELDORJ", Player1))
+END
+
+IF
+	IsValidForPartyDialogue("XACORWIN")
+	GlobalLT("XA_AvernusChat", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_AvernusChat", "GLOBAL", 1)
+		Wait(3)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+END

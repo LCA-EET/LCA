@@ -1,0 +1,26 @@
+
+IF
+	See("XACORWIN")
+	InParty("XACORWIN")
+	ActionListEmpty()
+	GlobalLT("XA_MagdaTalk", "GLOBAL", 1)
+	OR(2)
+		!InMyArea("BELAND")
+		Global("BelandEntranceFee","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_MagdaTalk", "GLOBAL", 1)
+		MoveToObject("XACORWIN")
+		Continue()
+END
+
+IF
+	Global("XA_MagdaTalk", "GLOBAL", 1)
+	Range("XACORWIN", 8)
+THEN
+	RESPONSE #100
+		FaceObject("XACORWIN")
+		SmallWait(5)
+		StartDialogNoSet(Player1)
+END
+

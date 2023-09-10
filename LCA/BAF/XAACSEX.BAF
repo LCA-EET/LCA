@@ -1,0 +1,17 @@
+IF
+	True() //cutscene conditions always evaluate as true
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ZoomLock(FALSE)
+		RestorePartyLocations()
+		ApplySpellRES("bdunhide", Player1)
+		ApplySpellRES("bdunhide", Player2)
+		ApplySpellRES("bdunhide", Player3)
+		ApplySpellRES("bdunhide", Player4)
+		ApplySpellRES("bdunhide", Player5)
+		ApplySpellRES("bdunhide", Player6)		
+		FadeFromColor([30.0],0)
+		UnhideGUI()
+		EndCutSceneMode()
+END
