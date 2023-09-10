@@ -1,6 +1,6 @@
 IF
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_LantanaraProphecy", "GLOBAL", 1)
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LantanaraProphecy", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LantanaraProphecy", "GLOBAL", 1)
@@ -9,8 +9,8 @@ END
 
 IF 
 	InMyArea("Brielbara")
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_BrielWasIn103", "GLOBAL", 1)
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_BrielWasIn103", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_BrielWasIn103", "GLOBAL", 1)

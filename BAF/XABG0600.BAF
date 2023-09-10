@@ -28,3 +28,15 @@ THEN
 		SetGlobal("XA_NPCDestroy_0600", "BG0600", 1)
 		Continue()
 END
+
+//{ Clean-up
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_CreateHOWSpy_0600", "BG0600", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CreateHOWSpy_0600", "BG0600", 0)
+		ActionOverride("XAHOWSPY", DestroySelf())
+		Continue()
+END
+//}

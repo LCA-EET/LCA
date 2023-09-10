@@ -1,7 +1,6 @@
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
 	GlobalLT("XA_GlintSpawn", "BG1300", 1)
-	Dead("GLINT")
 THEN
 	RESPONSE #100
 		SetGlobal("XA_GlintSpawn", "BG1300", 1)
@@ -80,3 +79,24 @@ THEN
 		SetGlobal("XA_Briel1300", "GLOBAL", 1)
 		Continue()
 END
+
+//{ Clean-up
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_GlintSpawn", "BG1300", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_GlintSpawn", "BG1300", 0)
+		ActionOverride("XAGLINT", DestroySelf())
+		Continue()
+END
+
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_Briel1300", "GLOBAL", 1)
+	InMyArea("XABRIELB")
+THEN
+	RESPONSE #100
+		ActionOverride("XABRIELB", DestroySelf())
+END
+//}

@@ -10,3 +10,14 @@ THEN
 		ActionOverride("halbaz", ChangeAIScript("INITDLG",CLASS))
 		Continue()
 END
+
+IF 
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("halbaz")
+	Global("XA_DialogSwap_0703", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_DialogSwap_0703", "GLOBAL", 0)
+		ActionOverride("halbaz", SetDialog("HALBAZ"))
+		Continue()
+END

@@ -1,6 +1,6 @@
 IF
 	GlobalTimerExpired("XA_LyrielSingTimer", "GLOBAL")
-	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 0)
 THEN
 	RESPONSE #100
 		SetGlobalTimer("XA_LyrielSingTimer", "GLOBAL", TEN_MINUTES)
@@ -79,17 +79,11 @@ THEN
 		Continue()
 END
 
-IF 
-	Global("XA_ExitPrison", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		NoAction()
-END
-
 IF
-	!Global("XA_AmuletTimer1Started", "GLOBAL", 1)
+	GlobalLT("XA_AmuletTimer1Started", "GLOBAL", 1)
 	PartyHasItem("AMUL27")
 	InMyArea(Player1)
+	GlobalLT("XA_ExitPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_AmuletTimer1Started", "GLOBAL", 1)
@@ -102,6 +96,7 @@ IF
 	GlobalLT("XA_AmuletPainting", "GLOBAL", 1)
 	PartyHasItem("AMUL27")
 	InMyArea(Player1)
+	GlobalLT("XA_ExitPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_AmuletPainting", "GLOBAL", 1)
@@ -109,10 +104,11 @@ THEN
 END
 
 IF 
-	!Global("XA_AmuletTimer2Started", "GLOBAL", 1)
+	GlobalLT("XA_AmuletTimer2Started", "GLOBAL", 1)
 	PartyHasItem("AMUL27")
 	Global("XA_AmuletPainting", "GLOBAL", 2)
 	InMyArea(Player1)
+	GlobalLT("XA_ExitPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_AmuletTimer2Started", "GLOBAL", 1)
@@ -125,6 +121,7 @@ IF
 	GlobalLT("XA_AmuletPainting", "GLOBAL", 3)
 	PartyHasItem("AMUL27")
 	InMyArea(Player1)
+	GlobalLT("XA_ExitPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_AmuletPainting", "GLOBAL", 3)
@@ -132,10 +129,11 @@ THEN
 END
 
 IF 
-	!Global("XA_AmuletTimer3Started", "GLOBAL", 1)
+	GlobalLT("XA_AmuletTimer3Started", "GLOBAL", 1)
 	PartyHasItem("AMUL27")
 	Global("XA_AmuletPainting", "GLOBAL", 4)
 	InMyArea(Player1)
+	GlobalLT("XA_ExitPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_AmuletTimer3Started", "GLOBAL", 1)
@@ -148,9 +146,20 @@ IF
 	PartyHasItem("AMUL27")
 	InMyArea(Player1)
 	!Global("XA_PaintSpySpawn", "GLOBAL", 1)
+	GlobalLT("XA_ExitPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_PaintSpySpawn", "GLOBAL", 1)
 		CreateCreature("XAPAINT", [250.560], NE)
 		Continue()
 END
+
+//{ Clean-up
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("XAPAINT")
+THEN
+	RESPONSE #100
+		ActionOverride("XAPAINT", DestroySelf())
+END
+//}

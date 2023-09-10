@@ -1,4 +1,5 @@
 IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
 	GlobalLT("XA_RemoveBorin", "MYAREA", 1)
 THEN
 	RESPONSE #100

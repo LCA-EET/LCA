@@ -1,5 +1,5 @@
 IF
-	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 0)
 	GlobalTimerExpired("XA_LyrielSingTimer", "GLOBAL")
 THEN
 	RESPONSE #100
@@ -13,7 +13,7 @@ END
 
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_Alyth0705", "BG0705", 1)
+	GlobalLT("XA_Alyth0705", "BG0705", 1)
 	!Dead("alyth")
 THEN
 	RESPONSE #100
@@ -24,7 +24,7 @@ END
 
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_DestroyNPCs_0705", "GLOBAL", 1)
+	GlobalLT("XA_DestroyNPCs_0705", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		ActionOverride("Brevlik", DestroySelf())

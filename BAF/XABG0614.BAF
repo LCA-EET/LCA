@@ -32,3 +32,11 @@ THEN
 		ActionOverride("WIRTHING", DestroySelf())
 		Continue()
 END
+
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("XAVIRGIL")
+THEN
+	RESPONSE #100
+		ActionOverride("XAVIRGIL", DestroySelf())
+END

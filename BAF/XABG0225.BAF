@@ -59,3 +59,12 @@ THEN
 		SetInterrupt(TRUE)
 		Continue()
 END
+
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("XANEB")
+THEN
+	RESPONSE #100
+		ActionOverride("XANEB", DestroySelf())
+		Continue()
+END

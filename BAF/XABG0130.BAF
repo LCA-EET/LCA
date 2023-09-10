@@ -41,3 +41,13 @@ THEN
 		Continue()
 END
 
+
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_CuratorSpawned", "GLOBAL", 1)
+	InMyArea("XACURATO")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CuratorSpawned", "GLOBAL", 0)
+		ActionOverride("XACURATO", DestroySelf())
+END

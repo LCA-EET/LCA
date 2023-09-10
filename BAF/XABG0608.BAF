@@ -10,11 +10,9 @@ THEN
 		Continue()
 END
 
-
-
 IF 
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_CreateNPCS_0608_Kent", "BG0608", 1)
+	GlobalLT("XA_CreateNPCS_0608_Kent", "BG0608", 1)
 	!Dead("KENT")
 THEN 
 	RESPONSE #100
@@ -25,7 +23,7 @@ END
 
 IF 
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_CreateNPCS_0608_Nederlok", "BG0608", 1)
+	GlobalLT("XA_CreateNPCS_0608_Nederlok", "BG0608", 1)
 THEN 
 	RESPONSE #100
 		SetGlobal("XA_CreateNPCS_0608_Nederlok", "BG0608", 1)
@@ -39,3 +37,16 @@ THEN
 	RESPONSE #100
 		NoAction()
 END
+
+//{ Clean-up
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	OR(2)
+		InMyArea("XANEDERL")
+		InMyArea("KENT")
+THEN
+	RESPONSE #100
+		ActionOverride("XANEDERL", DestroySelf())
+		ActionOverride("KENT", DestroySelf())
+END
+//}

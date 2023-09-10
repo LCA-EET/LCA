@@ -8,8 +8,8 @@ THEN
 END
 
 IF
-	!Global("XA_CellSpyCreated", "BG0607", 1)
-	Global("XA_ReturnToBG", "GLOBAL", 1)	
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CellSpyCreated", "BG0607", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CellSpyCreated", "BG0607", 1)
@@ -19,7 +19,7 @@ END
 
 IF 
 	Global("XA_VirgilInCustody", "GLOBAL", 1)
-	!Global("XA_VirgiXAreated_0607", "BG0607", 1)
+	GlobalLT("XA_VirgiXAreated_0607", "BG0607", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_VirgiXAreated_0607", "BG0607", 1)
@@ -45,3 +45,12 @@ THEN
 		Continue()
 END
 
+//{ Clean-up
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("XACELL")
+THEN
+	RESPONSE #100
+		ActionOverride("XACELL", DestroySelf())
+END
+//}

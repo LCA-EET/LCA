@@ -1,7 +1,7 @@
 @0 = ~<CHARNAME>? Are you sure that you don't need my help?~
 @1 = ~That... That's it? That's all you wanted to say?~ [XA100001]
 @2 = ~You sure you don't want me with you?~ [XA100101]
-@3 = ~Hm... Do I really look like that?~
+@3 = ~~
 @4 = ~They, ah... seem to have exaggerated some of your... attributes.~
 @5 = ~Yes. It's a beautiful statue.~
 @6 = ~It doesn't do you justice, I'm afraid.~
@@ -244,7 +244,7 @@
 @243 = ~(You examine the trophy — it's a figurine of an archer cast in gold, with a plaque beneath that states 'Schael Corwin - Winner - Trademeet Archery Competition'.)~ 
 @244 = ~Well, that was an entertaining distraction, but it WAS a distraction. We have work to do. Let's go, love.~ [BD47449]
 @245 = ~You... you monster! What you did to Skie, to Imoen, to <CHARNAME>, and the others... it can never be forgiven. You nearly destroyed my hope of a future with the <PRO_MANWOMAN> I love. Prepare to meet your end, Irenicus!~ 
-@246 = ~Come on. Let's have a look at the others!~
+@246 = ~~
 @247 = ~Irenicus already tried to force us apart and failed. You'll do no better.~
 @248 = ~My love, we... died? I felt you, pulling me with you to this place. Very well — we were together in life and will remain so, in death.~
 @249 = ~Thanks, but...~
@@ -255,7 +255,7 @@
 @254 = ~That's enough, all of you. You there!~
 @255 = ~No need to apologize. It must be difficult for you to be away from your family.~
 @256 = ~(He points at Corwin.)~
-@257 = ~You alright?~ [BD64597]
+@257 = ~~
 @258 = ~Who are you, and what is your business here?~ 
 @259 = ~*Cough* Hey, can we... can we s-stop, for just a minute.~ [XA100048]
 @260 = ~Schael? What's wrong?~
@@ -270,7 +270,7 @@
 @269 = ~(She stumbles and falls to her hands and knees.)~
 @270 = ~(You run over to her and she collapses into your arms.)~
 @271 = ~What the hells is this now?~ [BD50195]
-@272 = ~We can have them ~
+@272 = ~~
 @273 = ~Right *cough* *wheeze* *cough*... just before we *cough*.. left for Dragonspear...~
 @274 = ~The Three Old Kegs, love. You had the Berduskan dark wine, your favorite.~
 @275 = ~One day, we'll look back on this and laugh *cough* over a couple of drinks at... at... where was it...~
@@ -279,7 +279,7 @@
 @278 = ~Thanks *cough* come on... we'd better find Bodhi and the Lanthorn soon... before I..~
 @279 = ~It breaks my heart to see you like this, love.~
 @280 = ~(It's clear to you that Schael does not have much time left. You need to find and kill Bodhi, and soon, or you will lose the woman you love.)~ 
-@281 = ~Let's take a look at the others.~
+@281 = ~~
 @282 = ~Hah, I look that bad, eh? You should see *cough* yourself *cough* *cough*.~ 
 @283 = ~Hang in there, Schael. We're going to find Bodhi and cure you of this cursed affliction. Can you walk?~
 @284 = ~Y-yes... come on, love.. let's go.~
@@ -325,17 +325,17 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @322 = ~You've given me a lot to think about. If I do accept this power, I promise you that at the very least, I will keep you, Rohma, and our child safe from any who would seek to do you harm.~
 @323 = ~You've given me a lot to think about. If I do accept this power, I promise you that at the very least, I will keep you and Rohma safe from any who would seek to do you harm.~
 @324 = ~You've given me a lot to think about. If I do accept this power, I promise you that at the very least, I will keep you, Rohma, and our children safe from any who would seek to do you harm.~
-@325 = ~Is my forehead really that big!?~
+@325 = ~~
 @326 = ~This statue makes me look like a damned troll! Look, the arms are nearly as long as the legs! And gods, that nose!~
 @327 = ~Do you think this looks like me?~
 @328 = ~Take it as a compliment.~ [BD39876]
 @329 = ~Not at all...~
-@330 = ~Ugh...~
+@330 = ~~
 @331 = ~This must be a tough time for you, then.~ [BD35157]
 @332 = ~(She tries, and fails, to stifle a laugh.)~
 @333 = ~You have enough on your plate to deal with. No need to get wrapped up with nobility, or their power and political games.~
-@334 = ~Schael? What do you think?~
-@335 = ~Release her, or I swear I'll kill you where you stand!~
+@334 = ~~
+@335 = ~~
 @336 = ~<CHARNAME>... what happened?~ [XA100067]
 @337 = ~(You notice that her skin and eye color have returned to normal.)~ 
 @338 = ~You collapsed as we ran the stake through Bodhi's heart. How are you feeling?~
@@ -421,7 +421,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @418 = ~I don't like the way things are going. I didn't come all this way to watch you terrorize innocents. If things get any worse, you'll find yourself on your own. Let's go.~
 @419 = ~What's on your mind?~
 @420 = ~I'm sorry. I won't be party to this any longer. When you clean up your act, you can find me in the Athkatla magistrate.~ 
-@421 = ~Don't look so disappointed, love. We'll have plenty of time for those... activities... once we're back home.~
+@421 = ~~
 @422 = ~Hahah, wait... you *are* joking, right?~
 @423 = ~~
 @424 = ~I'm here on duty, not to pick up men... and certainly not to spend my evening with a drunkard.~
@@ -437,10 +437,10 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @434 = ~I'm not sure. It's hard for me to explain.... I feel... hollow?~
 @435 = ~Whatever he did, we'll find a way to restore you and your sister.~
 @436 = ~Right. Let's go.~
-@437 = ~Right — and you? Are you alright Schael?~
-@438 = ~Yes, I - I'm fine... I'm just disappointed that he escaped.~
-@439 = ~You look concerned. What he said about using you to assassinate the Grand Dukes — it'll never happen.~
-@440 = ~That's for damn sure. Come on — let's go.~
+@437 = ~~
+@438 = ~~
+@439 = ~~
+@440 = ~~
 @441 = ~It's very simple. You're trading slaves, and we're here to shut you down. Do me a favor and resist. Please.~
 @442 = ~To think I even considered the possibility of you and I being together. Madness. Be with Dorn, then. I want nothing more to do with you.~ [BD54533] 
 @443 = ~H-huh? No, I'm not interested.~
@@ -506,9 +506,9 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @503 = ~Now get the hells out of here!~
 @504 = ~(Captain Corwin walks up to Lady Delcia and delivers a powerful, open-handed slap to her face that sends her crashing to the floor. Delcia looks up at Corwin, and is left quivering and speechless.)~
 @505 = ~Now listen to me! I didn't leave my family and travel all this way only to be spoken down to by a pretentious, insufferable bitch. We aren't your servants, and you're no better than the dirt on my heel. Get up.~ 
-@506 = ~Now get the hells out of here!~
+@506 = ~~
 @507 = ~I've heard enough.~
-@508 = ~(She stands in shock.)~
+@508 = ~~
 @509 = ~H-how... how DARE you! That's my aunt you just struck!~
 @510 = ~~
 @511 = ~(Remain silent.)~
@@ -630,8 +630,8 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @627 = ~Don't you remember? I told you once long ago that some stories have happy endings. I'd like for our story to be one of them, Schael.~
 @628 = ~(She covers her mouth, as her eyes fill with tears of joy. After a moment, she regains her composure.)~
 @629 = ~Before we go, let's check with the rest of the team to see if they want to come with us. I imagine some'll want to stay here and help the elves with their wounded.~
-@630 = ~My love — are you ready to head back to Baldur's Gate?~ 
-@631 = ~Are you ready to head back to Baldur's Gate?~ 
+@630 = ~~
+@631 = ~~
 @632 = ~Let's go.~
 @633 = ~Not yet.~
 @634 = ~Take your time. Come and see me when you're ready.~
@@ -768,7 +768,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @765 = ~Right.~
 @766 = ~Hopefully they're still alive.~
 @767 = ~And so am I. Thank you, both.~
-@768 = ~We've already freed them. Is there anyone else?~
+@768 = ~~
 @769 = ~(She turns to you.)~
 @770 = ~<CHARNAME>, I'm going to spend the rest of the day with my family. Take some time for yourself — I'm sure you have a lot of faces that you want to see. I'll see you tomorrow morning at the debriefing.~
 @771 = ~That, and we're not making love in a gods damn stable. Let's go.~
@@ -982,7 +982,7 @@ I received the shipping manifests from the harbor master, but they are encoded a
 @977 = ~What happened! Where's Rohma!?~ [XA100052]
 @978 = ~They broke in.... t-took her...~
 @979 = ~Who took her!?~
-@980 = ~For ... <CHARNAME> ... it was B-Beno and.. a woman..~
+@980 = ~~
 @981 = ~Avernus. What in Tymora's name were we thinking, coming back here? We must have a death wish.~
 @982 = ~We'll be out of here as soon as we find Caelar. Stay alert.~
 @983 = ~It was B-Beno... and a... a woman... trade Rohma... for <CHARNAME>...~
@@ -1193,13 +1193,13 @@ Schael has asked that I get us a room at one of the inns in Amn. I can hardly co
 @1185 = ~To hells with you, and your father!~ 
 @1186 = ~(She plunges the dagger into his heart. His mouth opens as if to cry in pain, but strangely, no sound is heard. A gray mist rises out of the gaping wound in his chest, and coalesces into the form of a man; it's Beno, you're sure of it.)~
 @1187 = ~(For a brief moment, the spirit gazes down at its physical body, with a look of wonder and confusion. That confusion turns to terror as the spirit is slowly drawn into the blade of the dagger. The spirit turns as if to flee, but it is no use. You hear a piercing scream in your mind as the last remnants of the spirit are swallowed up by the dagger.)~   
-@1188 = ~It's over... I hope we've done the right thing.~
+@1188 = ~~
 @1189 = ~It was the only way. He'll never trouble us again. Come — I'm sure Rohma is eager to see you, my love.~
 @1190 = ~It was the only way. He'll never trouble you or your family again. Come — I'm sure Rohma is eager to see you.~
 @1191 = ~Right. Let's go.~ [BD58846]
 @1192 = ~(She picks up Beno's rusted scimitar, and, after a moment of hesitation, brings it down sharply upon his neck. The first blow did not fully sever the head from the body, and you hear a grotesque gurgling sound as Beno struggles to breathe. The second blow mercifully finishes the job. Beno's head hits the ground with a satisfying thud, then rolls a couple of feet away from his body.)~
 @1193 = ~(Schael walks over to the now detached head, picks it up, and places it into her pack.)~
-@1194 = ~It's over...~
+@1194 = ~~
 @1195 = ~Are you alright? That couldn't have been easy for you, love.~
 @1196 = ~I'll be fine once I see Rohma. Let's go.~ 
 @1197 = ~Are you alright? That couldn't have been easy for you.~
@@ -1228,7 +1228,7 @@ Corwin has arrested Beno Famari for kidnapping and attempted murder. Hopefully, 
 @1217 = ~Of course, Major. She's such a delightful child!~
 @1218 = ~Hmph. Just try and stay out of trouble.~
 @1219 = ~The man with the scar is Beno. The woman has got to be Illasera.~
-@1220 = ~Are you sure? You're going to need my help...~
+@1220 = ~~
 @1221 = ~I'm sure, my love. I can't risk losing you.~
 @1222 = ~I'm sure. The city can't risk losing the both of us.~
 @1223 = ~I'm going with you. Don't try and talk me out of it.~ [XA100099]
@@ -1242,7 +1242,7 @@ Corwin has arrested Beno Famari for kidnapping and attempted murder. Hopefully, 
 @1231 = ~Come here.~
 @1232 = ~Right...~
 @1233 = ~I'll fill you in on the way. We need to get moving.~
-@1234 = ~I'll tell you on the way. We need to get out of here and find Irenicus.~
+@1234 = ~~
 @1235 = ~Fine... Just be careful out there, please.~
 @1236 = ~Fine... Just be careful out there, please. I can't bear to lose you.~
 @1237 = ~Yes mommy.~
@@ -1252,7 +1252,7 @@ Corwin has arrested Beno Famari for kidnapping and attempted murder. Hopefully, 
 @1241 = ~Are you sure you're alright, love?~
 @1242 = ~Are you sure you're alright, Captain?~
 @1243 = ~A few cracked ribs, but it's nothing that a healer and a nice, hot bath can't fix... what happened while I was out?~
-@1244 = ~Of course.~
+@1244 = ~~
 @1245 = ~That golem sure gave you a good squeeze.~
 @1246 = ~Nothing. Just the small matter of having my soul ripped out from me. Imoen too.~
 @1247 = ~What!?~
@@ -1397,7 +1397,7 @@ Captain Corwin shared the story of how she was arrested in the Hall of Wonders. 
 @1381 = ~If it's just a few words, then fine.~
 @1382 = ~That's better. Lead the way, Curator Magda.~
 @1383 = ~... ... so you see, even the smallest act of kindness can have a profound impact.~
-@1384 = ~Sir, before you depart, I must inform you that while in Athkatla, we encountered the fugitive, Neb. ~
+@1384 = ~~
 @1385 = ~~
 @1386 = ~~
 @1387 = ~<CHARNAME> has horns, you dummy.~
@@ -1476,13 +1476,13 @@ You and Schael shared a tender moment; it seems that the two of you are still de
 @1459 = ~Judging by how ... long ... and firmly ... you stood at attention the last time we were together... yes.~
 @1460 = ~But enough distractions, lover — we've work to do. Let's get to it.~
 @1461 = ~Well you did ... ahh ... gush with exuberance the last time we were together. Multiple times, if I remember correctly.~
-@1462 = ~(You share a warm embrace, and steel yourself for the battle ahead.)~
-@1463 = ~(She leans in for a kiss.)~
+@1462 = ~~
+@1463 = ~~
 @1464 = ~(Examine the trophy.)~
 @1465 = ~Very nice. Your father will be proud.~
 @1466 = ~The figurine doesn't quite do you justice, dear.~
 @1467 = ~(She lets out a hearty laugh.)~
-@1468 = ~Rohma will still appreciate it, I'm sure. Gods, I can't wait to see them again... Come, love. Duty calls.~
+@1468 = ~~
 @1469 = ~(She punches you in the shoulder.)~ 
 @1470 = ~Captain as we discussed, I will return with you to Baldur's Gate to join the Flaming Fist.~
 @1471 = ~Excellent! You won't regret it. When we arrive, I'll introduce you to my commanding officer, Marshal Kirill Nederlok.~
@@ -1498,12 +1498,12 @@ You and Schael shared a tender moment; it seems that the two of you are still de
 @1481 = ~Everyone deserves a second chance. Even Sarevok.~
 @1482 = ~I'll keep him on a short leash, don't worry.~
 @1483 = ~That's why I need you to keep an eye on him. If there's any indication of betrayal, you need to let me know immediately. He's died by my hand once, and he shall do so again if the need arises.~
-@1484 = ~Right. You can count on me.~
+@1484 = ~~
 @1485 = ~~
 @1486 = ~We need to keep our eyes on him at all times. If I get any sense that he's going to break his word, I swear I'll —~
 @1487 = ~~
-@1488 = ~I know I can. Let's go, love.~
-@1489 = ~I know I can. Let's go, my friend.~ 
+@1488 = ~~
+@1489 = ~~
 @1490 = ~I appreciate your vigilance.~
 @1491 = ~Not if I kill him first.~
 @1492 = ~Right. Let's go.~ [BD58846]
@@ -1606,7 +1606,7 @@ You and Schael shared a tender moment; it seems that the two of you are still de
 Major Corwin offered me some valuable parenting advice, which I gladly accepted.~ 
 @1589 = ~Two letters. One to the Dukes, and one to my father. I need to let my family know that we're fine.~
 @1590 = ~I need an additional letter delivered ... My family needs to know that we're fine.~
-@1591 = ~Thank you, sir.~
+@1591 = ~~
 @1592 = ~Of course.~
 @1593 = ~What do you suggest we do?~
 @1594 = ~This town might have a message courier we can use. Let's have a look around.~
@@ -1788,12 +1788,12 @@ I proposed to Schael, and she accepted! We're to be married!~
 @1767 = ~..... gods.... can't... breathe...~
 @1768 = ~Schael! Let her go gods damn it, I'm the one you want!~
 @1769 = ~(Her head droops forward as her struggles subside and then cease entirely.)~
-@1770 = ~Schael! No!~
+@1770 = ~~
 @1771 = ~.....~
 @1772 = ~Corwin! Let her go gods damn it, I'm the one you want!~
 @1773 = ~... No .... Rohma...~ [BD68274]
 @1774 = ~Ugh... you won't get away with this, wizard!~
-@1775 = ~(The golem releases its grip, and she collapses to the floor.)~
+@1775 = ~~
 @1776 = ~Mazzy — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544]  
 @1777 = ~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544] 
 @1778 = ~HaerDalis — rein it in. If you can't control yourself, you're a danger to us all.~ [BD67544]
@@ -1818,5 +1818,3 @@ I proposed to Schael, and she accepted! We're to be married!~
 Marshal Nederlok of the Baldur's Gate Flaming Fist was pleased to hear of Neb's demise in the sewers beneath the city.~
 @1797 = ~I see. After you, my dear.~
 @1798 = ~I see. After you, Captain.~
-@1799 = ~I think I'll stay here for a while longer. Say hi to my mom and dad for me!~
-@1800 = ~I want to learn more about these people, and the stories they have to tell. I'll remain here for the time being and help with the wounded.~

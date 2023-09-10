@@ -10,7 +10,7 @@ THEN
 END
 
 IF 
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
 	Global("XA_CMDeactivate", "BG0800", 1)
 THEN
 	RESPONSE #100
@@ -109,3 +109,13 @@ THEN
 		SetGlobal("XA_CreateNeomaNPC", "GLOBAL", 1)
 		ActionOverride("XANEOMA", RandomWalkContinuous())
 END
+
+//{ Clean-up
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("XANEOMA")
+THEN
+	RESPONSE #100
+		ActionOverride("XANEOMA", DestroySelf())
+END
+//}

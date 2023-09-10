@@ -1,6 +1,6 @@
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_DestroyNPCs_0616", "GLOBAL", 1)
+	GlobalLT("XA_DestroyNPCs_0616", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_DestroyNPCs_0616", "GLOBAL", 1)
@@ -13,7 +13,7 @@ END
 
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_CreateNPCs_0616", "GLOBAL", 1)
+	GlobalLT("XA_CreateNPCs_0616", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CreateNPCs_0616", "GLOBAL", 1)

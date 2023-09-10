@@ -1,13 +1,3 @@
-IF 
-	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_Door0101Deactivated", "BG0100", 1) //Door to Silvershield Estate
-THEN
-	RESPONSE #100
-		//TriggerActivation("Door0101",FALSE)
-		SetGlobal("XA_Door0101Deactivated", "BG0100", 1)
-		Continue()
-END
-
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
 	InMyArea("OCELLI")

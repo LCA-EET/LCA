@@ -13,7 +13,7 @@ END
 IF 
 	Global("XA_ReturnToBG", "GLOBAL", 1)
 	Global("XA_HelpAldeth", "GLOBAL", 2)
-	!Global("XA_CreateNPCs0128_Aldeth", "BG0128", 1)
+	GlobalLT("XA_CreateNPCs0128_Aldeth", "BG0128", 1)
 	!Dead("Aldeth")
 THEN
 	RESPONSE #100
@@ -37,4 +37,16 @@ THEN
 		ActionOverride("BRANDI", SetDialog("XABRANDI"))
 		Continue()
 END
+
+//{ Clean-up
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_CreateNPCs0128_Aldeth", "BG0128", 1)
+	InMyArea("Aldeth")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CreateNPCs0128_Aldeth", "BG0128", 0)
+		ActionOverride("Aldeth", SetDialog("ALDETH"))
+END
+//}
 
