@@ -38,7 +38,6 @@
 @37 = ~We will be, my love. I swear to you.~
 @38 = ~I hope so, Schael. Gods willing, I hope so.~
 @39 = ~Schael Corwin
-
 Words cannot describe the pain and anger that I feel. Schael and I can never be together so long as the city holds me responsible for Skie's death. I must be freed from this cell so that I can find something or someone that can exonerate me, otherwise, I fear I may never see Schael again. My love for her will give me the hope and strength that I'll need to prove my innocence.~
 @40 = ~I need to go now, <CHARNAME>. I know this is as hard for you as it is for me... Farewell.~
 @41 = ~I do love you, and I want you to know that Imoen and I won't stop advocating your innocence.~
@@ -50,11 +49,10 @@ Words cannot describe the pain and anger that I feel. Schael and I can never be 
 @47 = ~You heartless... I can't believe I didn't see it before.~
 @48 = ~Farewell, <CHARNAME>. I hope you're able to find some peace before the end.~
 @49 = ~<CHARNAME>, listen to me. I need you to know that Imoen and I haven't stopped advocating your innocence. There are others, too, who feel that execution is not the right answer — not after all you've done for the city.~ [BDSCH2]
-@50 = ~Don't lose hope.~
+@50 = ~~
 @51 = ~So long as I have friends like you, Schael, I have hope.~
 @52 = ~You're right... I appreciate all that you and Imoen have done. Thank you.~
 @53 = ~Captain Corwin
-
 Captain Corwin visited my cell this morning. She told me that there are those in the city that believe in my innocence, and that she and others are pleading with the Dukes on my behalf. If they're successful, my life may be spared, though I'll be forced into exile. Exile, however, would afford me the time that I need to find Skie's murderer and prove my innocence. So long as I have friends like Schael, there is hope.~
 @54 = ~Forgive the sarcasm. In all seriousness, I didn't kill Skie. You can't believe I'd ever do something like that. I don't belong in this cell!~
 @55 = ~And do I deserve to be locked in this cage like some animal, for a crime that I didn't commit? Captain, you have to get me out of here!~
@@ -72,11 +70,11 @@ Captain Corwin visited my cell this morning. She told me that there are those in
 @67 = ~We had everything. And whoever stole it from us will pay a terrible price.~
 @68 = ~If you fooled yourself, I did the same.~
 @69 = ~You tell me. What you do for me here and now—or don't do for me—will let us both know how deep and true your feelings are. Open the door, Schael. Let me out.~
-@70 = ~Defiant until the end. But you must know this is the end. I'd give anything for that not to be the case, but it is. Accept it, as I have. Find some peace while you're still able.~ [BD54657]
+@70 = ~~
 @71 = ~We *have* something. Don't give up on us, Schael. I haven't.~
 @72 =  ~Defiant until the end. But you must know this is the end. I'd give anything for that not to be the case, but it is. Accept it, as I have. Find some peace while you're still able.~ [BD54657]
 @73 = ~I—I can't do this. I've got to get out of here, out of this place... Forgive me.~ [BD54658]
-@74 = ~You could have worse. Eltan and Belt moved mountains to keep you alive and out of Entar's hands.~ [BD54614] 
+@74 = ~~
 @75 = ~I can't do it. I'm sorry, <CHARNAME>. There's only one way you're leaving here.~ [BD54626] 
 @76 = ~I don't know what to believe anymore.~ [BD54631] 
 @77 = ~I... believe you. And I love you, too. I hope you'll find some comfort in that. We're just two people. Our feelings mean little beyond these walls.~ 
@@ -96,17 +94,17 @@ Captain Corwin visited my cell this morning. She told me that there are those in
 @91 = ~And yet here you are. Why? Not to free me, I know. You'd never defy your beloved Flaming Fist.~
 @92 = ~And what, you came here seeking solace? I've none to give. I wouldn't offer it to you even if I did. Get out. Your face sickens me. The wretched platitudes you spout make my gut churn. Go!~
 @93 = ~I would have, you know. If you'd asked me, I would have followed you anywhere, happily. It wasn't so long ago.~ [BD54625]
-@94 = ~Hands in the air. Get away from the opening.~ [BD39613]
-@95 = ~I don't want to fight you, Corwin. I'm INNOCENT. You have to believe me!~
-@96 = ~Schael, please, I beg you, don't do this. I love you.~
-@97 = ~You would prevent my escape? I thought we had something, you and I.~
-@98 = ~After all we've been through, this is what it comes to. I should have known you'd betray me in the end.~
-@99 = ~Don't try to stop me, Corwin. I need to get out of here if I'm to have any chance of proving my innocence.~
-@100 = ~And if I don't, what will you do? Cut me down? Is that any worse than what I can expect from Entar Silvershield?~ 
-@101 = ~You think I want to do this? You think this isn't killing me? We should be together in my bedchamber or a meadow under a cloudless blue sky—ANYWHERE but here!~ [BD39620]
-@102 = ~I know what I saw. You were standing over the body of Skie Silvershield. Duke Entar's daughter. His DAUGHTER.~ [BD39634]
-@103 = ~Ah. I understand now. This is about Rohma.~ 
-@104 = ~Do you truly believe me so mad that I would, that I could even be capable of doing this thing I'm accused of? Do you truly think so little of me?~
+@94 = ~~
+@95 = ~~
+@96 = ~~
+@97 = ~~
+@98 = ~~
+@99 = ~~
+@100 = ~~
+@101 = ~~
+@102 = ~~
+@103 = ~~
+@104 = ~~
 @105 = ~Do you seriously think so little of me? That I'd stoop to killing in cold blood? I admitted to you that I was a child of Bhaal — I could've lied to you about my heritage, but I didn't. Sarevok would lie to you. I won't.~
 @106 = ~It has to stop. It HAS to. And that won't happen until you answer for Skie. Now get on your knees, hands behind your head. Do it.~ [BD39669]
 @107 = ~No! The Hooded Man is the killer — he came to gloat shortly after you visited me in my cell.~
@@ -121,12 +119,10 @@ Captain Corwin visited my cell this morning. She told me that there are those in
 @116 = ~No... I... I don't know what to do...~
 @117 = ~No! Gods damn it Duncan!~
 @118 = ~Corwin, if you shoot me, you'll become a murderer yourself!~
-@119 = ~Your own diviners said powerful magics were used to obscure what had happened. Are they liars as well?~
+@119 = ~~
 @120 = ~My love, I'll prove my innocence to you, and to the city — I swear it. I just need you to give me a chance.~
 @121 = ~Please, Schael!~
 @122 = ~It Wasn't Me
-
 I have one chance to escape—by going over the waterfall.
-
 The Flaming Fist cornered me. Although I was able to convince Corwin of my innocence, Bence and the others want me dead. My only chance is to run.~
 @123 = ~<CHARNAME>, run! The cavern beyond the opening will get you out of the city! Go!~

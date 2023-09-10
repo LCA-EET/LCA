@@ -20,7 +20,7 @@ Daleson mentioned that Lord de'Arnise may still be alive, possibly in a dungeon 
 @17 = ~I can't believe you did that, love.~
 @18 = ~She definitely deserved it. Well done, Captain.~
 @19 = ~She definitely deserved it. Well done, love.~
-@20 = ~(She finally regains her composure)~ 
+@20 = ~~
 @21 = ~If I should happen across this "Edwin," I'll be sure to seek you out and let you know where he is.~
 @22 = ~What say you, my loyal comrades? They wronged you as much as I. Should they be allowed to live, or must the treacherous cowards taste steel?~
 @23 = ~(Odren and his companions look at your party with hope in their eyes.)~
@@ -212,7 +212,7 @@ Captain Corwin was kind enough to give up her beautiful silver earrings to help 
 @208 = ~It was nothing. I'm sure Voghiln will appreciate your kindness.~
 @209 = ~Oh! Before I forget — Captain Corwin came to see me. She asked that I give you this letter.~
 @210 = ~Thank you, Imoen. (Read the letter now).~
-@211 = ~Thank you, Imoen. (Read the letter later).~
+@211 = ~~
 @212 = ~She said that she's sorry she couldn't see you, but that you'd understand once you've read the letter.~
 @213 = ~I'm looking for a gnome named Brevlik. Have you seen him recently?~
 @214 = ~Does that little runt owe ya money too? He hasn't been allowed here in months, and it'll stay that way so long as his tab is unpaid!~
@@ -225,16 +225,16 @@ The bartender at the Elfsong Tavern hasn't seen Brevlik in months. Apparently, h
 @220 = ~Soultaker Dagger
 Cespenar told me that in order to free the souls trapped within the Soultaker Dagger, that I'd need to take it to the Fugue Plane. If I remember right, there was a rift to the Fugue Plane in Kanaglym beneath Dragonspear castle. Perhaps I can use the planar gate to go there.~
 @221 = ~Go ahead.~
-@222 = ~No, thanks.~
+@222 = ~~
 @223 = ~Go to Fugue Plane! Souls will break free of dagger there. But how to go to Fugue Plane if not dead? Thinking make Cespenar's head ache... oh, well. Would you like me to make you shiny ones? I look though items, yes?~
-@224 = ~I want to release the souls trapped inside.~
+@224 = ~~
 @225 = ~Aye, remember <CHARNAME>, the so-called hero of Baldur's Gate? The one who was arrested for killing the Duke's daughter? Well, the Dukes are now tellin' everyone now that <PRO_HESHE> was innocent the whole time! What's more, Skie Silvershield is up and about, healthy and lively as ever. Could you believe it? Word on the street is that <PRO_HESHE>'s on <PRO_HISHER> way back to the city as we speak. Good on <PRO_HIMHER>, I s'pose.~
 @226 = ~It's alright. I know you didn't mean anything by it. Besides, I'm quite happy with the crossbow.~
 @227 = ~Looks like the others are ready... let's get moving.~
 @228 = ~You know little of what you speak. Schael is a fine mother.~
 @229 = ~It is not your concern.~
 @230 = ~Bah! To hell with the lot of you!~
-@231 = ~How DARE you! That's my aunt you just struck!~
+@231 = ~~
 @232 = ~I realize now that I was wrong. Your skill in battle is considerable, as is your ability to lead others.~
 @233 = ~The city's been completely destroyed... all those people...~
 @234 = ~The city's been completely d-destroyed... all those people...~
@@ -308,12 +308,12 @@ Cespenar told me that in order to free the souls trapped within the Soultaker Da
 @301 = ~You mean to attempt a resurrection, after the body has been dead for this long? Nothing good can come from this.~
 @302 = ~Hmph. I wasn't expecting to be back in the Hells so soon. I'd almost begun to miss the tortured screams of the damned.~ 
 @303 = ~We'll be out of here as soon as we find Caelar. Stay alert.~
-@304 = ~I can't believe we're back here.~
+@304 = ~~
 @305 = ~Ohh... *cough* it's so h-hot down here! These poor souls!~
 @306 = ~In Torm's name... the Hells are far worse than I could've imagined!~ 
-@307 = ~This is pitiful... Have some respect for yourself, Caelar!~
-@308 = ~You've proved your point, demon. Stop this humiliation.~ 
-@309 = ~Enough. Caelar, don't listen to him.~
+@307 = ~~
+@308 = ~~
+@309 = ~~
 @310 = ~Take a look at this broken sword and armor. Can they be repaired?~
 @311 = ~Ooo let's me see... yuck! These stink like righteousness! Cespenar can fix, yes, but I needs lots and lots of gold... 15,000 gold!~
 @312 = ~The broken armor and sword we discussed. Here's the gold you need to fix it. (Pay 15,000 gold.)~
@@ -326,8 +326,7 @@ Cespenar told me that in order to free the souls trapped within the Soultaker Da
 @319 = ~She can explain.~
 @320 = ~Surely, there must be some way for these priests to find redemption. Life, I say.~
 @321 = ~I'll not have their blood on my hands, for I'd need to wash them before picking my turnips. Let them live, <CHARNAME>.~
-@322 = ~A Strange Dagger
-The djinn that I freed from my captor's stronghold gave me this strange dagger, which he described as a prison of souls. Could this be the dagger that was used to murder Skie Silvershield? If so, I need to find a way to get it back to the city as soon as possible — Skie may yet be saved, and moreover, she can confirm my innocence!~
+@322 = ~~
 @323 = ~I'm pretty sure that Entar's men aren't on our trail. Can we take a break, just for a minute?~
 @324 = ~About the dagger — you said you'd send it to Baldur's Gate if I helped solve your case.~
 @325 = ~I need to send this dagger to Baldur's Gate. I believe it is the weapon used to murder the daughter of one of the Grand Dukes.~ 
@@ -351,9 +350,7 @@ The djinn that I freed from my captor's stronghold gave me this strange dagger, 
 @343 = ~It's a long story, and we don't have the time. Can you make it out of here on your own?~
 @344 = ~Schael, too. He's planning to use her to assassinate the Dukes. I have to stop him!~
 @345 = ~The transformation and the dream
-
 While Irenicus cast his spell on me to steal my divinity... my soul... I was mired in a dream in which I fought against the personification of my instinct and prevailed. I awoke. My victory in my dream, however, did not mean victory in reality. Irenicus had successfully taken my soul and stated that now both he and Bodhi were free of the curse which they had been subjected to... and that Imoen and I would both die a slow and withering death. As for Schael, she's alive, though he plans to use her in some plot to assassinate the leaders of Baldur's Gate.
-
 What he plans to do afterward he would not say, but he left it to Bodhi to finish me off once and for all.~ 
 @346 = ~Release Schael and return what you stole from us, or I swear that I'll bury you where you stand!~
 @347 = ~Fool! Do you not see that you're being here serves my will? Your companion has, to this point, resisted the geas. The sight of you and your army of madness falling by my hand is certain to break her spirit once and for all.~ 
