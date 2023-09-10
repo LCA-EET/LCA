@@ -1,9 +1,0 @@
-IF
-	IfValidForPartyDialog("XACORWIN")  
-	!ActuallyInCombat()
-	Global("OHD_GORGE_NTRJEX","OH5100",1)  // Dorn - Resurrection Gorge
-THEN
-	RESPONSE #100
-		TriggerActivation("GorgeInterjects",FALSE)
-		ActionOverride("XACORWIN",StartDialog("XACORWIJ", Player1))
-END

@@ -1,6 +1,0 @@
-IF
-	Dead("XANEB")
-THEN
-	RESPONSE #100
-		DestroySelf()
-END
