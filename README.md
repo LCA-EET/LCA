@@ -9,4 +9,7 @@ If you have any questions, or would like to provide feedback, please contact me 
 </p>
 
 ### Useful Links
-<a href="https://github.com/LCA-EET/LCA/blob/main">Github Repository</a>
+<ul>
+	<li><a href="https://github.com/LCA-EET/LCA/blob/main">Github Repository</a></li>
+	<li><a href="https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet">Gibberlings3 Forum Post</a></li>
+	
