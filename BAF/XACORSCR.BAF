@@ -7526,6 +7526,33 @@ END
 
 //{ Keldorn Interactions 
 
+	//{ Keldorn Audamar
+	IF
+		Global("XA_CanTalkToKeldorn", "LOCALS", 1)
+		GlobalLT("XA_KeldornAudamarTimerSet", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_KeldornAudamarTimerSet", "GLOBAL", 1)
+			SetGlobalTimer("XA_KeldornAudamarTimer", "GLOBAL", SIX_HOURS)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		Range("Keldorn", 8)
+		Global("XA_CanTalkToKeldorn", "LOCALS", 1)
+		GlobalTimerExpired("XA_KeldornAudamarTimer", "GLOBAL")
+		GlobalLT("XA_Banter_CorwinKeldornInitial", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_Banter_CorwinKeldornInitial", "GLOBAL", 1)
+			ActionOverride("Keldorn", StartDialog("KELDORJ", "XACORWIN"))
+			SetInterrupt(TRUE)
+	END
+	//}
+
 	//{ Corwin Mad at Keldorn - Underdark
 	IF
 		Global("XA_CanTalkToKeldorn", "LOCALS", 1)

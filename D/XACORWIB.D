@@ -2388,6 +2388,9 @@ END
 			Global("XA_Banter_CorwinKeldornInitial", "GLOBAL", 1)
 		~ THEN KELDORJ BCorwinKeldornInitial
 			@624  /*~Captain, if I may... I once knew an officer with the surname Corwin. Tell me, are you related to a man named Audamar?~ */
+			DO ~
+				SetGlobal("XA_Banter_CorwinKeldornInitial", "GLOBAL", 2)
+			~
 			== XACORWIB
 			@625  /* ~Yes, that's my father.~*/
 			== KELDORJ
@@ -2403,8 +2406,16 @@ END
 			@633  /* ~I see... it must have been difficult, then, for the two of you.~ */
 			== XACORWIB
 			@634  /* ~More-so for my father than for me. I didn't make things easy for him, that's for sure.~*/
+			== KELDORJ
+			@635 /*~How so?~*/
+			== XACORWIB
+			@640 /*~When I was younger, I ran a bit wild. It took a lot of strength and patience on my father's part to set me on the right path. Things would have been much different for me if he were a lesser man.~ [BD35094]*/
+			== KELDORJ
+			@636 /*~Be that as it may, I'm sure he's proud of the fine young officer you've become.~*/
 			== XACORWIB
 			@638  /* ~Spoken like someone who barely knows me, but I'll take what compliments I can get and do what I can not to change your mind.~ [BD34332] */
+			== KELDORJ
+			@641 /*~Aye. Come, Captain. Duty calls.~*/
 		END
 	//}
 	//{ Dialog B-63
@@ -2438,11 +2449,11 @@ END
 			=
 			@63 /* ~I ask because I have a daughter, and I feel like I am struggling to find the right balance.~ */
 			== KELDORJ
-			@64 /* ~That's something I've struggled with as well. There is no right answer. What is most important is that your daughter understands that you love her, and that at times it is necessary for you to be apart from her to perform your duties to the .. Flaming Fist, is it?~ */
+			@64 /* ~That's something I've struggled with as well. There is no right answer. What is most important is that your daughter understands that you love her, and that at times it is necessary for you to be apart from her to perform your duties toward the Flaming Fist.~*/
 			=
 			@65 /* ~Who is helping to raise your child while you are on this assignment?~ */
 			== XACORWIB
-			@66 /*  ~My father, thankfully. He's a retired Fist, so I know that she is safe with him.~ */
+			@66 /*  ~My father, thankfully... I know that she's safe with him.~ */
 			== KELDORJ
 			@200 /* ~That is good... I am pleased that you involve the child's grandfather in her life.~ */
 	EXIT
