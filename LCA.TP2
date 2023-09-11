@@ -989,6 +989,7 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	//{ Corwin
 	COPY ~LCA/CRE/XACORWIN.CRE~ ~override~
 	COPY ~LCA/BMP/XACORWIL.BMP~ ~override~
+	COPY ~LCA/BMP/XACORWIM.BMP~ ~override~
 	COPY ~LCA/BMP/XACORWIS.BMP~ ~override~
 	//}
 	
@@ -1893,6 +1894,13 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 //}
 
 //{ Spells
+	//{ Corwin Portrait Change (LCA Portrait)
+	COPY ~LCA/SPL/XACHNG01.SPL~ ~override~
+	//}
+	
+	//{ Corwin Portrait Change (SoD Portrait)
+	COPY ~LCA/SPL/XACHNG02.SPL~ ~override~
+	//}
 	
 	//{ LCA Configuration Assistant
 	COPY ~LCA/SPL/XAASSIS1.SPL~ ~override~

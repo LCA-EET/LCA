@@ -1206,6 +1206,32 @@ END
 
 //} BGMiniQuest Interaction End
 
+//{ 11: Portrait Change
+IF
+	Global("XA_PortraitChange_LCA", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ReallyForceSpellRES("XACHNG01", Myself)
+		SetGlobal("XA_PortraitChange_LCA", "GLOBAL", 0)
+		//DisplayStringHead(Myself, ~LCA~)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_PortraitChange_SoD", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ReallyForceSpellRES("XACHNG02", Myself)
+		SetGlobal("XA_PortraitChange_SoD", "GLOBAL", 0)
+		//DisplayStringHead(Myself, ~SoD~)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
 //{ 12: Reputation Handling
 IF 
 	Global("XA_CanTalkToPlayer", "LOCALS", 1)
