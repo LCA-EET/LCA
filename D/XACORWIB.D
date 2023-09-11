@@ -2382,6 +2382,31 @@ END
 	EXIT
 	//}
 
+	//{ Dialog B-XX
+	CHAIN
+		IF ~
+			Global("XA_Banter_CorwinKeldornInitial", "GLOBAL", 1)
+		~ THEN KELDORJ BCorwinKeldornInitial
+			@624  /*~Captain, if I may... I once knew an officer with the surname Corwin. Tell me, are you related to a man named Audamar?~ */
+			== XACORWIB
+			@625  /* ~Yes, that's my father.~*/
+			== KELDORJ
+			@626  /* ~I thought so. Some 25 or so years past I had ventured west to the vicinity of Baldur's Gate, to evaluate locations for a new chapter of our order. It was then that I met your father, and your mother, presumably.~ */
+			= @629  /* ~From what I remember of him, your father was a good man, and a fine officer.~ */
+			== XACORWIB
+			@630  /* ~He still is. He's retired now, though. ~*/
+			== KELDORJ
+			@631  /* ~Then he's still alive? That's good to hear... and what of your mother? I cannot recall her name, though I vaguely remember she was pregnant at the time.~*/
+			== XACORWIB
+			@632  /* ~My mother died when I was very young. Her name was Ilara.~*/
+			== KELDORJ
+			@633  /* ~I see... it must have been difficult, then, for the two of you.~ */
+			== XACORWIB
+			@634  /* ~More-so for my father than for me. I didn't make things easy for him, that's for sure.~*/
+			== XACORWIB
+			@638  /* ~Spoken like someone who barely knows me, but I'll take what compliments I can get and do what I can not to change your mind.~ [BD34332] */
+		END
+	//}
 	//{ Dialog B-63
 	CHAIN
 		IF ~

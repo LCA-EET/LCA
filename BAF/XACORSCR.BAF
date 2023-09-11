@@ -111,7 +111,7 @@ END
 //{ 04: Copy items from SoD Corwin
 IF
 	//InParty(Myself)
-	!Global("XA_CopyCorwinItems", "GLOBAL", 1)
+	GlobalLT("XA_CopyCorwinItems", "GLOBAL", 1)
 	//Global("XA_CopyItemTest", "GLOBAL", 1)
 THEN
 	RESPONSE #100
@@ -1206,31 +1206,7 @@ END
 
 //} BGMiniQuest Interaction End
 
-//{ 11: Portrait Change
-IF
-	Global("XA_PortraitChange_LCA", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		ReallyForceSpellRES("XACHNG01", Myself)
-		SetGlobal("XA_PortraitChange_LCA", "GLOBAL", 0)
-		//DisplayStringHead(Myself, ~LCA~)
-		SetInterrupt(TRUE)
-		Continue()
-END
 
-IF
-	Global("XA_PortraitChange_SoD", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		ReallyForceSpellRES("XACHNG02", Myself)
-		SetGlobal("XA_PortraitChange_SoD", "GLOBAL", 0)
-		//DisplayStringHead(Myself, ~SoD~)
-		SetInterrupt(TRUE)
-		Continue()
-END
-//}
 
 //{ 12: Reputation Handling
 IF 
@@ -1352,7 +1328,7 @@ END
 IF 
 	ActionListEmpty()
 	InParty(Myself)
-	!Global("XA_PlanarSphere", "GLOBAL", 1)
+	GlobalLT("XA_PlanarSphere", "GLOBAL", 1)
 	OR(6)
 		AreaCheck("AR0410")
 		AreaCheck("AR0411")
@@ -1387,7 +1363,7 @@ END
 IF 
 	ActionListEmpty()
 	InParty(Myself)
-	!Global("XA_PlanarPrison", "GLOBAL", 1)
+	GlobalLT("XA_PlanarPrison", "GLOBAL", 1)
 	OR(6)
 		AreaCheck("AR0516")
 		AreaCheck("AR0517")
@@ -1422,7 +1398,7 @@ END
 IF
 	ActionListEmpty()
 	InParty(Myself)
-	!Global("XA_InUnderdark", "GLOBAL", 1)
+	GlobalLT("XA_InUnderdark", "GLOBAL", 1)
 	OR(18)
 		AreaCheck("AR2100") // Underdark
 		AreaCheck("AR2101") // Beholder Cave in Underdark
@@ -9487,7 +9463,7 @@ END
 IF 
 	InParty(Myself)
 	OR(2)
-		!Global("XA_SoDItemCheckTimerSet", "GLOBAL", 1)
+		GlobalLT("XA_SoDItemCheckTimerSet", "GLOBAL", 1)
 		GlobalTimerExpired("XA_SoDItemCheckTimer", "GLOBAL")
 	OR(2)
 		PartyHasItem("BDBOW06") // Corwin's Bow (SoD)
@@ -10489,10 +10465,58 @@ IF
   Global("BD_JOINXP","LOCALS",0)
   InParty(Myself)
   XPGT(Player1,1999999)
-  XPLT(Myself,2000000)
+  XPLT(Player1,2250000)
+  XPLT(Myself,2250000)
 THEN
   RESPONSE #100
     ChangeStat(Myself,XP,2000000,SET)
+	Continue()
+END
+
+IF
+  Global("BD_JOINXP","LOCALS",0)
+  InParty(Myself)
+  XPGT(Player1,2249999)
+  XPLT(Player1,2500000)
+  XPLT(Myself,2500000)
+THEN
+  RESPONSE #100
+    ChangeStat(Myself,XP,2250000,SET)
+	Continue()
+END
+
+IF
+  Global("BD_JOINXP","LOCALS",0)
+  InParty(Myself)
+  XPGT(Player1,2499999)
+  XPLT(Player1,2750000)
+  XPLT(Myself,2750000)
+THEN
+  RESPONSE #100
+    ChangeStat(Myself,XP,2500000,SET)
+	Continue()
+END
+
+IF
+  Global("BD_JOINXP","LOCALS",0)
+  InParty(Myself)
+  XPGT(Player1,2749999)
+  XPLT(Player1,3000000)
+  XPLT(Myself,3000000)
+THEN
+  RESPONSE #100
+    ChangeStat(Myself,XP,2750000,SET)
+	Continue()
+END
+
+IF
+  Global("BD_JOINXP","LOCALS",0)
+  InParty(Myself)
+  XPGT(Player1,2999999)
+  XPLT(Myself,3000000)
+THEN
+  RESPONSE #100
+    ChangeStat(Myself,XP,3000000,SET)
 	Continue()
 END
 
