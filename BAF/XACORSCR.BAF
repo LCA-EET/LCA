@@ -852,6 +852,7 @@ THEN
 		SetPlayerSound(Myself,@9,SELECT_ACTION6) 
 		SetGlobal("XA_LCASoundSwap", "LOCALS", 1)
 		SetInterrupt(TRUE)
+		Continue()
 END
 
 IF
@@ -863,6 +864,7 @@ THEN
 		SetPlayerSound(Myself,#268282,SELECT_ACTION6) 
 		SetGlobal("XA_LCASoundSwap", "LOCALS", 0)
 		SetInterrupt(TRUE)
+		Continue()
 END
 
 //{ Reset Sounds to Original
