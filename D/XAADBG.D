@@ -2240,6 +2240,13 @@ IF ~~ THEN BEGIN XA_DialogTest
 	~
 	EXIT
 	
+	IF ~~ THEN REPLY @679 /*~Dialog B-102~*/
+	DO ~
+		SetGlobal("XA_Banter_CorwinKeldornInitial", "GLOBAL", 1)
+		ActionOverride("Keldorn", StartDialog("KELDORJ", "XACORWIN"))
+	~
+	EXIT
+	
 	
 	IF ~~ THEN REPLY @26
 	GOTO XA_MainMenu

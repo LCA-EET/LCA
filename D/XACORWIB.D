@@ -2051,7 +2051,7 @@ END
 			@479 /* ~I know, right! I wonder what <PRO_HESHE> was thinking!~ */
 			== XACORWIB
 			@545 /*~I'd like to know that myself.~ [XA100008]*/
-			@456 /* ~Thank you Imoen. Heh, it sounds like the two of you had some fun times together.~*/
+			= @456 /* ~Thank you Imoen. Heh, it sounds like the two of you had some fun times together.~*/
 			== IMOEN2J
 			@458 /* ~Definitely.~  */
 	EXIT
@@ -2419,7 +2419,7 @@ END
 			@638  /* ~Spoken like someone who barely knows me, but I'll take what compliments I can get and do what I can not to change your mind.~ [BD34332] */
 			== KELDORJ
 			@641 /*~Aye. Come, Captain. Duty calls.~*/
-		END
+	EXIT
 	//}
 	//{ Dialog B-63
 	CHAIN
