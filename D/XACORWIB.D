@@ -2047,8 +2047,11 @@ END
 			= @482 /*~(Again, you can't make out what's being said.)~*/
 			== XACORWIB
 			@455 /* ~(She bursts into laughter) */
-			=
-			@456 /* ~Hahah... thank you Imoen. It sounds like the two of you had some fun times together.~ */
+			== IMOEN2J
+			@479 /* ~I know, right! I wonder what <PRO_HESHE> was thinking!~ */
+			== XACORWIB
+			@545 /*~I'd like to know that myself.~ [XA100008]*/
+			@456 /* ~Thank you Imoen. Heh, it sounds like the two of you had some fun times together.~*/
 			== IMOEN2J
 			@458 /* ~Definitely.~  */
 	EXIT
