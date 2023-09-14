@@ -3,6 +3,10 @@
 # Report any bugs to LCAMod@danielvalle.net, or the Gibberlings 3 Forum Post 
 * Link to forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v0.3.4-beta 2023-09-13
+* New soundwork.
+* Miscellaneous improvements.
+
 # v0.3.3-beta 2023-09-11
 * Added a new banter between Corwin and Keldorn.
 * Updated Corwin's portrait.
