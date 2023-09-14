@@ -1533,6 +1533,68 @@ END
 	END
 	//}
 
+	//{ Entered Fire Temple 5204
+	IF
+		ActionListEmpty()
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_AR5204TimerSet", "LOCALS", 1)
+		AreaCheck("AR5204")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_AR5204TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_AR5204Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		ActionListEmpty()
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_AR5204Timer", "LOCALS")
+		GlobalLT("XA_AR5204_Talk", "LOCALS", 1)
+		AreaCheck("AR5204")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @27)	
+			SetGlobal("XA_AR5204_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Entered Sendai's Lair
+	IF
+		ActionListEmpty()
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_AR6101TimerSet", "LOCALS", 1)
+		AreaCheck("AR6101")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_AR6101TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_AR6101Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		ActionListEmpty()
+		Global("XA_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_AR6101Timer", "LOCALS")
+		GlobalLT("XA_AR6101_Talk", "LOCALS", 1)
+		AreaCheck("AR6101")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @26)	
+			SetGlobal("XA_AR6101_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
 	//{ Entered De'Arnise Keep
 	IF
 		ActionListEmpty()

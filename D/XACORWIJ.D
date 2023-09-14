@@ -4992,7 +4992,9 @@ IF ~
 	
 END
 IF ~~ THEN BEGIN XA_WantToSpendWithSchael
-	SAY @785 /* ~And I want you to, but first, Rohma's going to need some time to adjust to us being together.~*/
+	SAY @731 /*~And I want you to, but now's not the right time...~*/
+	= @730 /*~Having a famous hero around is handy, but it also seems to attract trouble.~ [XA100118]*/
+	= @785 /* ~Besides, Rohma's going to need some time to adjust to us being together.~*/
 	
 	IF ~~ THEN REPLY @793 /* ~I understand.~ */
 	GOTO XA_DecideWhereSleeping

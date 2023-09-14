@@ -2,6 +2,26 @@
 
 //Interjects associated with the LCA Mod
 
+//{ C6SAFA
+	INTERJECT_COPY_TRANS2 C6SAFA 0 XA_C6SAFA_0
+		== XACORWIB 
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@176 /*~Safana! You're in league with Irenicus!?~*/
+	END
+//}
+
+//{ BMINSC7
+	INTERJECT_COPY_TRANS BMINSC 7 XA_BMINSC_7
+		== XACORWIB 
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		#259425 /*Does anyone know what the hells these two are talking about?~*/
+	END
+//}
+
 //{ CLMOM
 	INTERJECT_COPY_TRANS CLMOM 5 XA_CLMOM_5
 		== XACORWIB 

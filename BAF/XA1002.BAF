@@ -20,8 +20,10 @@ THEN
 END
 
 IF
-	GlobalTimerExpired("XA_Ath", "GLOBAL")
 	Global("XA_SkieSaved", "GLOBAL", 1) // Corwin
+	OR(2)
+		GlobalTimerExpired("XA_Ath", "GLOBAL")
+		Global("XA_CorwinDebug1002", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_SkieSaved", "GLOBAL", 3) // mark complete

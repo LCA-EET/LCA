@@ -2637,7 +2637,11 @@ END
 				ClearActions(Myself)
 				ClearActions("Jaheira")
 			~
-			=@1 /* ~I'm very sorry about Khalid. Your husband was good man, and a great warrior. Those who survived the siege on Bridgefort owe him their lives.~ */
+			== JAHEIRAJ
+			@6 /*Yes?*/
+			== XACORWIB
+			#258901 /* I'm sorry for your loss.*/
+			=@1 /* ~Your husband was good man, and a fine warrior. Those who survived the siege on Bridgefort owe him their lives.~*/
 			== JAHEIRAJ
 			IF ~
 				!Global("XA_CorwinPromoted", "GLOBAL", 1)
@@ -3392,6 +3396,10 @@ END
 				SetGlobal("XA_Banter_CorwinSarevok", "GLOBAL", 3)
 			~
 			== XACORWIB
+			#258881 /* What's the draw */
+			== SAREV25J
+			@8/* ~Even though I no longer stand to benefit from it, I want to see Aluando's prophecy fulfilled. It's all I have left.~*/
+			== XACORWIB
 			@114 /*~Never forget that I'm watching you.~ [BD67545]*/
 			=
 			@810 /*~<CHARNAME> may be able to look past your crimes, but I'm not. If I even suspect that you're —~ */
@@ -3422,8 +3430,10 @@ END
 				SetGlobal("XA_Banter_CorwinSarevok", "GLOBAL", 3)
 			~
 			== XACORWIB
-			@114 /*~Never forget that I'm watching you.~ [BD67545]*/
-			=
+			#258881 /* What's the draw */
+			== SAREV25J
+			@8/* ~Even though I no longer stand to benefit from it, I want to see Aluando's prophecy fulfilled. It's all I have left.~*/
+			== XACORWIB
 			@810 /*~<CHARNAME> may be able to look past your crimes, but I'm not. If I even suspect that you're —~ */
 			== SAREV25J
 			@869 /*  ~Enough. I know that I must atone for my sins. I've no wish to add to that burden by betraying <CHARNAME>, or any of you, for that matter.~  */
@@ -3457,7 +3467,7 @@ END
 			= @833 /* ~I suppose then that your orders were to take control of the city, in the event that I, or someone else associated with the Iron Throne, were to overtly usurp control.~ */
 			= @835 /* ~Would you have been successful, I wonder? I doubt you'd have had the numbers, or the strength, to wrest control away from us.~*/
 			== XACORWIB
-			@407 /* ~Next time you open your mouth, close it quickly—before that sort of idiocy spills off your tongue.~ [BD67544] */
+			#267555 /* ~I disagree strenuously... Keep talking and I may disagree violently*/
 			== SAREV25J
 			@837 /* Hmph. */
 	EXIT

@@ -86,6 +86,14 @@ IF ~
 	IF ~~ THEN REPLY @327
 	GOTO XA_ChangeChapter
 	
+	IF ~~ THEN REPLY @680
+	DO ~
+		SetGlobal("XA_CorwinDebug1002", "GLOBAL", 1)
+		SetGlobal("XA_SkieSaved", "GLOBAL", 1)
+		SetGlobal("XA_CorwinContinue", "GLOBAL", 2)
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @216 /* ~Open Store.~ */
 	GOTO XA_Menu_StartStore
 	
