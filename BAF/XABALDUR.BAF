@@ -6,7 +6,21 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_SkieModActive", "GLOBAL",1)
 		SetGlobal("XA_PromptToSendLetter", "GLOBAL", 1)
+		////DisplayStringHead(Player1, @1)
 		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XAAssist","GLOBAL",2)
+	!TriggerOverride(Player1,HaveSpellRES("XAASSIS1")) 
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
+		SetGlobal("XAAssist","GLOBAL",0)
+		////DisplayStringHead(Player1, @2)
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -16,8 +30,8 @@ IF
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
 		SetGlobal("XAAssist","GLOBAL",0)
+		//DisplayStringHead(Player1, @3)
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -25,6 +39,7 @@ END
 //{ Return to Baldur's Gate Timers
 
 	IF
+		Global("XA_ReturnToBG", "GLOBAL", 1)
 		OR(6)
 			AreaCheck("XAPAINT1")
 			AreaCheck("XAG1")
@@ -36,9 +51,11 @@ END
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_HaltRBGTimers", "GLOBAL", 1)
+			//DisplayStringHead(Player1, @4)
 	END
 	
 	IF
+		Global("XA_ReturnToBG", "GLOBAL", 1)
 		!AreaCheck("XAPAINT1")
 		!AreaCheck("XAG1")
 		!AreaCheck("XAG2A")
@@ -49,14 +66,17 @@ END
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_HaltRBGTimers", "GLOBAL", 0)
+			//DisplayStringHead(Player1, @5)
 	END
 	
 	IF 
+		Global("XA_ReturnToBG", "GLOBAL", 1)
 		GlobalTimerExpired("XA_Advance7Timer", "GLOBAL")
 		Global("XA_Advance7", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_Advance7", "GLOBAL", 0)
+			//DisplayStringHead(Player1, @6)
 			Continue()
 	END
 	//{ Leave for Family Timer
@@ -71,6 +91,7 @@ END
 				SetInterrupt(FALSE)
 				SetGlobalTimer("XA_CorwinLeaveForFamilyTimer", "GLOBAL", ONE_HOUR)
 				SetGlobal("XA_CorwinLeaveForFamilyTimerSet", "GLOBAL", 1)
+				//DisplayStringHead(Player1, @7)
 				SetInterrupt(TRUE)
 				Continue()
 		END
@@ -91,6 +112,7 @@ END
 				SetGlobal("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
 				SetInterrupt(TRUE)
 				// Don't continue on the tick.
+				//DisplayStringHead(Player1, @8)
 		END
 		//}
 		
@@ -107,6 +129,7 @@ END
 				SetInterrupt(FALSE)
 				SetGlobal("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 2)
 				SetGlobal("XA_CorwinLeaveForFamily", "GLOBAL", 1)
+				//DisplayStringHead(Player1, @9)
 				SetInterrupt(TRUE)
 				Continue()
 		END
@@ -126,6 +149,7 @@ END
 				SetInterrupt(FALSE)
 				SetGlobal("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 0)
 				SetGlobalTimer("XA_CorwinLeaveForFamilyTimer", "GLOBAL", ONE_HOUR)
+				//DisplayStringHead(Player1, @10)
 				SetInterrupt(TRUE)
 				Continue()
 		END
@@ -144,6 +168,7 @@ END
 				SetInterrupt(FALSE)
 				SetGlobalTimer("XA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
 				SetGlobal("XA_CorwinFamilyTimerSet", "GLOBAL", 1)
+				//DisplayStringHead(Player1, @11)
 				SetInterrupt(TRUE)
 				Continue()
 		END
@@ -164,6 +189,7 @@ END
 				IncrementGlobal("XA_CorwinFamilyTimer_Hours", "GLOBAL", 1)
 				SetInterrupt(TRUE)
 				//Don't continue on the tick
+				//DisplayStringHead(Player1, @12)
 		END
 		//}
 		
@@ -179,6 +205,7 @@ END
 			RESPONSE #100
 				SetGlobal("XA_CorwinFamilyTimerTicked", "GLOBAL", 0)
 				SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 1)
+				//DisplayStringHead(Player1, @13)
 		END
 		//}
 
@@ -194,6 +221,7 @@ END
 				SetInterrupt(FALSE)
 				SetGlobal("XA_DukeDebriefTimerSet", "GLOBAL", 1)
 				SetGlobalTimer("XA_DukeDebriefTimer", "GLOBAL", ONE_HOUR)
+				//DisplayStringHead(Player1, @14)
 				SetInterrupt(TRUE)
 				Continue()
 		END
@@ -213,6 +241,7 @@ END
 				SetGlobal("XA_Advance7", "GLOBAL", 0)
 				SetGlobal("XA_DukeDebriefTimerTick", "GLOBAL", 1)
 				SetInterrupt(TRUE)
+				//DisplayStringHead(Player1, @15)
 		END
 		//}
 	
@@ -229,6 +258,7 @@ END
 				SetGlobal("XA_DukeDebriefTimerTick", "GLOBAL", 2)
 				SetGlobal("XA_DukeDebrief_BenceSpawn", "GLOBAL", 1)
 				SetGlobal("XA_DukeDebrief_TimerElapsed", "GLOBAL", 1)
+				//DisplayStringHead(Player1, @16)
 				Continue()
 		END
 		//}
@@ -244,6 +274,7 @@ END
 			RESPONSE #100
 				SetGlobalTimer("XA_DukeDebriefTimer", "GLOBAL", ONE_HOUR)
 				SetGlobal("XA_DukeDebriefTimerTick", "GLOBAL", 0)
+				//DisplayStringHead(Player1, @17)
 				Continue()
 		END
 		//}
@@ -258,6 +289,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_GoldenHenTimerSet", "GLOBAL", 1)
 		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+		//DisplayStringHead(Player1, @18)
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -271,6 +303,7 @@ THEN
 		GiveItemCreate("XAEGG", Player1, 0,0,0)
 		DisplayString(Myself, @0)
 		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+		DisplayStringHead(Player1, @0)
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -282,7 +315,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		GiveItemCreate("XAEGG", Player2, 0,0,0)
-		DisplayString(Myself,  @0)
+		DisplayStringHead(Player2, @0)
 		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
 		SetInterrupt(TRUE)
 		Continue()
@@ -295,7 +328,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		GiveItemCreate("XAEGG", Player3, 0,0,0)
-		DisplayString(Myself,  @0)
+		DisplayStringHead(Player3, @0)
 		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
 		SetInterrupt(TRUE)
 		Continue()
@@ -308,7 +341,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		GiveItemCreate("XAEGG", Player4, 0,0,0)
-		DisplayString(Myself,  @0)
+		DisplayString(Player4, @0)
 		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
 		SetInterrupt(TRUE)
 		Continue()
@@ -321,7 +354,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		GiveItemCreate("XAEGG", Player5, 0,0,0)
-		DisplayString(Myself,  @0)
+		DisplayString(Player5,  @0)
 		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
 		SetInterrupt(TRUE)
 		Continue()
@@ -334,7 +367,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		GiveItemCreate("XAEGG", Player6, 0,0,0)
-		DisplayString(Myself,  @0)
+		DisplayString(Player6,  @0)
 		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
 		SetInterrupt(TRUE)
 		Continue()
@@ -353,6 +386,7 @@ THEN
 		SetGlobal("XA_ExplicitModActive", "GLOBAL", 0)
 		SetGlobal("XA_ExplicitModCheckTimerSet", "GLOBAL", 0)
 		SetInterrupt(TRUE)
+		//DisplayStringHead(Player1, @19)
 END
 
 //}
@@ -511,3 +545,20 @@ THEN
 		Continue()
 END
 //}
+
+IF
+	Dead("gromnir")  // Gromnir Il-Khan
+	Global("DeathOfGromnir","GLOBAL",0)
+	CombatCounter(0)
+	!AreaCheck("AR4500")  // Pocket Plane
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		SetGlobal("DeathOfGromnir","GLOBAL",1)
+		CreateCreatureObjectEffect("MEL01","SPFLESHS",Player1)  // Melissan
+		Wait(1)
+		PlaySong(79)
+		ActionOverride("mel01",StartDialogueNoSet(Player1))
+		EndCutSceneMode()
+END

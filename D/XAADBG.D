@@ -23,6 +23,12 @@ IF ~
 	~
 	EXIT
 	
+	IF ~~ THEN REPLY @681
+	DO ~
+		MoveToCampaign("ToB")
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @654
 	GOTO XA_ChangeReputation
 
@@ -4302,6 +4308,13 @@ END
 
 IF ~~ THEN BEGIN XA_Menu_StartCutscene
 	SAY @15 /*  ~Of course. Which cutscene do you want to start?~ */
+	
+	IF ~~ THEN REPLY @682
+	DO ~
+		StartCutSceneMode()
+		StartCutSceneEx("XASARA",FALSE)
+	~
+	EXIT
 	
 	IF ~~ THEN REPLY @639
 	DO ~

@@ -1,5 +1,11 @@
 //{ Party Members that went back to BG will rejoin at this point.
-
+IF
+	Global("XA_Entered4000", "XA4000", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Entered4000", "XA4000", 1)
+		FadeFromColor([30.0],0)
+END
 //{ Corwin
 IF
 	GlobalLT("XA_MovedParty", "GLOBAL", 1)
@@ -247,7 +253,7 @@ END
 
 IF
 	Global("HeadsSave","XA4000",2) 
-	!Global("XA_GiantsSpawned", "GLOBAL", 1)
+	GlobalLT("XA_GiantsSpawned", "GLOBAL", 1)
 	GlobalTimerExpired("XA_GiantSpawnTimer", "GLOBAL")
 THEN
 	RESPONSE #100
@@ -281,7 +287,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_SolarTimer", "GLOBAL", 1)
-		SetGlobalTimer("DreamSolarTimer", "GLOBAL", THREE_MINUTES)
+		SetGlobalTimer("DreamSolarTimer", "GLOBAL", ONE_MINUTE)
 END
 
 
