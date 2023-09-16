@@ -679,3 +679,5 @@
 @678 = ~SetGlobal("XA_SkieModActive", "GLOBAL", 0)~
 @679 = ~Dialog B-102.~
 @680 = ~Spawn Corwin Athkatla (AR1002), Romance.~
+@681 = ~MoveToCampaign("ToB").~
+@682 = ~XASARA~

@@ -1,4 +1,12 @@
 IF
+	Global("soa_complete", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("soa_complete", "GLOBAL", 1)
+		Continue()
+END
+
+IF
 	!Dead("XAESMITH")
 	PartyHasItem("XACORCHN")
 THEN

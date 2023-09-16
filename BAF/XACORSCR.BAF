@@ -1459,6 +1459,22 @@ END
 
 //{ 18: Event Checks
 
+	//{ Saved Father in Saradush
+	IF
+		AreaCheck("AR5000")
+		Global("FatherKilled","AR5000",2)
+		GlobalLT("XA_CommentOnFather", "LOCALS", 1)
+		!InMyArea("orphan2")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_CommentOnFather", "LOCALS", 1)
+			DisplayStringHead(Myself, @22)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
 	//{ Gorge Tree Climb
 	IF
 		Global("OHD_GORGE_NTRJEX","OH5100",2)
