@@ -1214,7 +1214,7 @@ END
 IF 
 	Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	ReputationLT(Player1,7)
-	Global("XA_CanLeaveParty", "GLOBAL", 1)
+	Global("XA_CanLeaveParty", "LOCALS", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -1266,21 +1266,21 @@ END
 IF 
 	ActionListEmpty()
 	InParty(Myself)
-	!Global("XA_CanLeaveParty", "GLOBAL", 1)
+	!Global("XA_CanLeaveParty", "LOCALS", 1)
 	!Global("XA_PlanarSphere", "GLOBAL", 1)
 	!Global("XA_PlanarPrison", "GLOBAL", 1)
 	!Global("XA_InUnderdark", "GLOBAL", 1)
 	!Global("XA_TrappedInDemonPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CanLeaveParty", "GLOBAL", 1)
+		SetGlobal("XA_CanLeaveParty", "LOCALS", 1)
 		Continue()
 END
 
 IF 
 	ActionListEmpty()
 	InParty(Myself)
-	Global("XA_CanLeaveParty", "GLOBAL", 1)
+	Global("XA_CanLeaveParty", "LOCALS", 1)
 	OR(4)
 		Global("XA_PlanarSphere", "GLOBAL", 1)
 		Global("XA_PlanarPrison", "GLOBAL", 1)
@@ -1288,7 +1288,7 @@ IF
 		Global("XA_TrappedInDemonPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CanLeaveParty", "GLOBAL", 0)
+		SetGlobal("XA_CanLeaveParty", "LOCALS", 0)
 		Continue()
 END
 //}
@@ -2134,7 +2134,7 @@ END
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_CorwinPregnant", "GLOBAL", 1)
-			SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", THIRTY_DAYS)
+			SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", TEN_DAYS)
 			SetGlobal("XA_CheckInRomanceLeftBG", "GLOBAL", 2)
 			SetInterrupt(TRUE)
 			Continue()
@@ -2172,8 +2172,9 @@ END
 		AreaCheck("AR5203")
 		Gender(Player1, MALE)
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalGT("XA_CheckInRomanceLeftBG", "GLOBAL", 1)
+		GlobalGT("XA_CorwinPregnant", "GLOBAL", 0)
 		GlobalLT("XA_PregnantOverride", "GLOBAL", 1)
-		Global("XA_CheckInRomanceLeftBG", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_PregnantOverride", "GLOBAL", 1)
@@ -9176,7 +9177,18 @@ END
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_PregnantOverride", "GLOBAL", 2)
+			SetGlobalTimer("XA_OneRoundTimer", "LOCALS", ONE_ROUND)
 			SetGlobal("XA_CorwinPregnant", "GLOBAL", 2)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		GlobalTimerExpired("XA_OneRoundTimer", "LOCALS")
+		Global("XA_CorwinPregnant", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
 			PlaySong(142)
 			//Dialog J-71
 			StartDialog("XACORWIJ", Player1)

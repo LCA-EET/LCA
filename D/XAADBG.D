@@ -5,6 +5,9 @@ IF ~
 ~ THEN BEGIN XA_MainMenu
 	SAY @0 /* ~How can I help you?~ */
 	
+	IF ~~ THEN REPLY @683
+	GOTO XA_StatusReport
+	
 	IF ~~ THEN REPLY @624
 	DO ~
 		CreateCreatureObjectCopy("statue01",Player1Fill,0,0,0)  // Magical Sword
@@ -186,7 +189,87 @@ IF ~
 	EXIT
 END
 
-IF ~~ THEN XA_ChangeReputation
+IF ~~ THEN BEGIN XA_StatusReport
+	SAY @683
+	
+	IF ~
+		GlobalGT("XA_CorwinPregnant", "GLOBAL", 0)
+	~ THEN REPLY @684
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalGT("XA_CorwinPregnant", "GLOBAL", 0)
+	~ THEN REPLY @685
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_PregnantOverride", "GLOBAL", 2)
+	~ THEN REPLY @700
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_PregnantOverride", "GLOBAL", 1)
+	~ THEN REPLY @692
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_PregnantOverride", "GLOBAL", 0)
+	~ THEN REPLY @693
+	GOTO XA_MainMenu
+	
+	IF ~
+		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 99)
+	~ THEN REPLY @686
+	GOTO XA_MainMenu
+	
+	IF ~
+		GlobalLT("XA_CorwinOpinionOfPlayer", "GLOBAL", 100)
+	~ THEN REPLY @687
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @690
+	GOTO XA_MainMenu
+	
+	IF ~
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @691
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_ReturnToBG", "GLOBAL", 0)
+	~ THEN REPLY @694
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_ReturnToBG", "GLOBAL", 1)
+	~ THEN REPLY @695
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_ReturnToBG", "GLOBAL", 2)
+	~ THEN REPLY @696
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_CheckInRomanceLeftBG", "GLOBAL", 0)
+	~ THEN REPLY @697
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_CheckInRomanceLeftBG", "GLOBAL", 1)
+	~ THEN REPLY @698
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_CheckInRomanceLeftBG", "GLOBAL", 2)
+	~ THEN REPLY @699
+	GOTO XA_MainMenu
+
+END
+
+IF ~~ THEN BEGIN XA_ChangeReputation
 	SAY @654
 	
 	IF ~~ THEN REPLY @655

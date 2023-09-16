@@ -407,7 +407,7 @@ END
 
 //{ Corwin Can't Leave - See XACORSCR for Conditions. Dialog P-3
 IF ~
-	!Global("XA_CanLeaveParty", "GLOBAL", 1)
+	!Global("XA_CanLeaveParty", "LOCALS", 1)
 ~
 THEN BEGIN XA_CantLeave
 	SAY @33 /* ~No - we need to stick together if we're to find out way out of here. We can discuss this later.~ */
