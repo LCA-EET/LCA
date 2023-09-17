@@ -8713,6 +8713,7 @@ END
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
+			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_CorwinSarevok", "GLOBAL", 2)
 			Wait(3)
 			SetInterrupt(TRUE)
@@ -8755,6 +8756,7 @@ END
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
+			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_CorwinSarevok", "GLOBAL", 4)
 			Wait(3)
 			SetInterrupt(TRUE)
@@ -8794,6 +8796,7 @@ END
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
+			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_CorwinSarevok", "GLOBAL", 6)
 			Wait(3)
 			SetInterrupt(TRUE)
@@ -8838,6 +8841,7 @@ END
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
+			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_Banter_CorwinCaelar", "GLOBAL", 2)
 			Wait(3)
 			SetInterrupt(TRUE)
