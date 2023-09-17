@@ -3769,6 +3769,7 @@ END
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CaelarSarevok", "GLOBAL", 2)
 				Wait(3)
 				SetInterrupt(TRUE)
@@ -3814,6 +3815,7 @@ END
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CaelarKeldorn", "GLOBAL", 2)
 				Wait(3)
 				SetInterrupt(TRUE)
@@ -3858,6 +3860,7 @@ END
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CaelarRasaad", "GLOBAL", 2)
 				Wait(3)
 				SetInterrupt(TRUE)
@@ -3902,6 +3905,7 @@ END
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CaelarJaheira", "GLOBAL", 2)
 				Wait(3)
 				SetInterrupt(TRUE)
@@ -3945,6 +3949,7 @@ END
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CaelarMazzy", "GLOBAL", 2)
 				Wait(3)
 				SetInterrupt(TRUE)
@@ -3988,6 +3993,7 @@ END
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CaelarDorn", "GLOBAL", 2)
 				Wait(3)
 				SetInterrupt(TRUE)
@@ -4031,6 +4037,7 @@ END
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CaelarNeera", "GLOBAL", 2)
 				Wait(3)
 				SetInterrupt(TRUE)
@@ -4073,6 +4080,7 @@ END
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CaelarPlayer", "GLOBAL", 2)
 				Wait(3)
 				SetInterrupt(TRUE)
