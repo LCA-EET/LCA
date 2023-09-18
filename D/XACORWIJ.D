@@ -371,6 +371,15 @@ BEGIN ~XACORWIJ~
 	END
 //}
 
+//{ Killed Wraith
+	IF ~
+		Global("XA_RohmaWraith", "GLOBAL", 3)
+	~ THEN BEGIN XA_KilledWraith
+	
+	END
+	
+//}
+
 //{ Scold Player UD
 	IF ~
 		Global("XA_CorwinCoverUD_Player", "GLOBAL", 2)
@@ -10282,6 +10291,13 @@ IF ~~ THEN BEGIN XA_Corwin_Wraith
 	
 	IF ~~ THEN
 	EXTERN HGWRA01 24
+END
+
+IF ~~ THEN BEGIN XA_Corwin_Wraith2
+	SAY @1325 /*~Have I killed before? Yes — but never in cold blood. Never without cause.~ */
+	
+	IF ~~ THEN 
+	EXTERN HGWRA01 XA_Corwin_Wraith3
 END
 
 IF ~~ THEN BEGIN XA_RohmaWraithChain_END

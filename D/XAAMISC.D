@@ -1050,12 +1050,7 @@ EXTEND_BOTTOM HGWRA01 24 /* OK */
 		Global("XA_CorwinRomanceActive","GLOBAL",2)
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN
-	DO ~
-		ClearAllActions()
-		StartCutSceneMode()
-		StartCutSceneEx("XACSWRA1",FALSE)
-	~
-	EXIT
+	EXTERN XACORWIJ XA_Corwin_Wraith2
 END
 
 APPEND HGWRA01
@@ -1065,6 +1060,18 @@ APPEND HGWRA01
 			
 		~ THEN
 		EXTERN XACORWIJ XA_Corwin_Wraith
+	END
+	
+	IF ~~ THEN BEGIN XA_Corwin_Wraith3
+		SAY @20 /*~Foolish woman. Behold, and learn how you have murdered she who is dearest to you.~*/
+				
+		IF ~~ THEN
+		DO ~
+			ClearAllActions()
+			StartCutSceneMode()
+			StartCutSceneEx("XACSWRA1",FALSE)
+		~
+		EXIT
 	END
 END
 //}
