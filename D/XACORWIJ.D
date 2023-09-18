@@ -375,7 +375,28 @@ BEGIN ~XACORWIJ~
 	IF ~
 		Global("XA_RohmaWraith", "GLOBAL", 3)
 	~ THEN BEGIN XA_KilledWraith
+		SAY @1326 /*~Rohma...~ [XA100122]*/
+		
+		IF ~~ THEN REPLY @1328 /*~Rohma's safe and sound, love. That wraith was trying to rattle your cage, that's all.~*/
+		DO ~
+			SetGlobal("XA_RohmaWraith", "GLOBAL", 4)
+		~
+		GOTO XA_KilledWraith2
+		
+		IF ~~ THEN REPLY @1327 /*~Whatever that thing was, it wasn't your daughter.~*/
+		DO ~
+			SetGlobal("XA_RohmaWraith", "GLOBAL", 4)
+		~
+		GOTO XA_KilledWraith2
+	END
 	
+	IF ~~ THEN BEGIN XA_KilledWraith2
+		SAY @1329 /*~You're right, I know... it was hard though to see that kind of burning hatred in her eyes. I... wasn't prepared for that.~*/
+		
+		= @1330 /*~These monsters can somehow sense our worst fears, and use them against us. Stay on your guard. Let's move.~*/
+
+		IF ~~ THEN
+		EXIT
 	END
 	
 //}

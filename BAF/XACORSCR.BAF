@@ -2182,8 +2182,9 @@ END
 	
 	//{ Entered Yaga-Shura Camp
 	IF
+		GlobalGT("YagaShuraHeart", "GLOBAL", 0)
 		ActionListEmpty()
-		!Global("XA_YagaTimerSet", "GLOBAL", 1)
+		GlobalLT("XA_YagaTimerSet", "GLOBAL", 1)
 		AreaCheck("AR5203")
 	THEN
 		RESPONSE #100

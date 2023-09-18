@@ -1056,9 +1056,7 @@ END
 APPEND HGWRA01
 	IF ~~ THEN BEGIN XA_Corwin
 		SAY @287 /* ~What of the inevitable pain you must give to the one you love? The woman you call "Schael."~ */
-		IF ~
-			
-		~ THEN
+		IF ~~ THEN
 		EXTERN XACORWIJ XA_Corwin_Wraith
 	END
 	
