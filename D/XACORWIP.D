@@ -511,6 +511,36 @@ IF ~
 		GlobalLT("Chapter", "GLOBAL", 20)
 	~ THEN REPLY @73  /* ~Go. I'll meet you back at the Athkatla magistrate.~*/
 	GOTO XA_MeetAth
+	
+	IF ~
+		!AreaCheck("AR4500")
+		!AreaCheck("AR6200")
+		Global("XA_BeenToPocketPlane", "GLOBAL", 1)
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY #65302 /* ~I'll send you back to the pocket plane. Wait for me there.~ */ 
+	DO ~
+		SetGlobal("XA_CorwinJoined", "LOCALS", 0)
+		SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+		CreateVisualEffectObject("SPDIMNDR",Myself)
+		Wait(2)
+		MoveBetweenAreas("AR4500",[1800.1465],S)
+	~
+	EXIT
+	
+	IF ~
+		!AreaCheck("AR4500")
+		!AreaCheck("AR6200")
+		Global("XA_BeenToPocketPlane", "GLOBAL", 1)
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @101 /* ~I'll send you back to the pocket plane. Wait for me there, dear.~ */ 
+	DO ~
+		SetGlobal("XA_CorwinJoined", "LOCALS", 0)
+		SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+		CreateVisualEffectObject("SPDIMNDR",Myself)
+		Wait(2)
+		MoveBetweenAreas("AR4500",[1800.1465],S)
+	~
+	EXIT
 END
 //}
 
@@ -575,6 +605,36 @@ END
 			SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
 		~
 		GOTO XAA3
+		
+		IF ~
+			!AreaCheck("AR4500")
+			!AreaCheck("AR6200")
+			Global("XA_BeenToPocketPlane", "GLOBAL", 1)
+			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY #65302 /* ~I'll send you back to the pocket plane. Wait for me there.~ */ 
+		DO ~
+			SetGlobal("XA_CorwinJoined", "LOCALS", 0)
+			SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+			CreateVisualEffectObject("SPDIMNDR",Myself)
+			Wait(2)
+			MoveBetweenAreas("AR4500",[1800.1465],S)
+		~
+		EXIT
+		
+		IF ~
+			!AreaCheck("AR4500")
+			!AreaCheck("AR6200")
+			Global("XA_BeenToPocketPlane", "GLOBAL", 1)
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @101 /* ~I'll send you back to the pocket plane. Wait for me there, dear.~ */ 
+		DO ~
+			SetGlobal("XA_CorwinJoined", "LOCALS", 0)
+			SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+			CreateVisualEffectObject("SPDIMNDR",Myself)
+			Wait(2)
+			MoveBetweenAreas("AR4500",[1800.1465],S)
+		~
+		EXIT
 	END
 	//}
 
@@ -608,6 +668,36 @@ END
 			SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
 		~
 		GOTO XAA3
+		
+		IF ~
+			!AreaCheck("AR4500")
+			!AreaCheck("AR6200")
+			Global("XA_BeenToPocketPlane", "GLOBAL", 1)
+			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY #65302 /* ~I'll send you back to the pocket plane. Wait for me there.~ */ 
+		DO ~
+			SetGlobal("XA_CorwinJoined", "LOCALS", 0)
+			SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+			CreateVisualEffectObject("SPDIMNDR",Myself)
+			Wait(2)
+			MoveBetweenAreas("AR4500",[1800.1465],S)
+		~
+		EXIT
+		
+		IF ~
+			!AreaCheck("AR4500")
+			!AreaCheck("AR6200")
+			Global("XA_BeenToPocketPlane", "GLOBAL", 1)
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @101 /* ~I'll send you back to the pocket plane. Wait for me there, dear.~ */ 
+		DO ~
+			SetGlobal("XA_CorwinJoined", "LOCALS", 0)
+			SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+			CreateVisualEffectObject("SPDIMNDR",Myself)
+			Wait(2)
+			MoveBetweenAreas("AR4500",[1800.1465],S)
+		~
+		EXIT
 		
 		IF ~
 			!AreaCheck("AR1002")

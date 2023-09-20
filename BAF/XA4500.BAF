@@ -1,4 +1,12 @@
 IF
+	GlobalLT("XA_BackToHell", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BackToHell", "GLOBAL", 1)
+		Continue()
+END
+
+IF
 	Dead("XATHRIX")
 	GlobalLT("XA_TowerUnlock", "GLOBAL", 1)
 THEN

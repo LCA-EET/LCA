@@ -30,6 +30,7 @@ IF ~
 	SAY @541 /* ~You've been glaring at me for the last hour Anomen. What is it?~ [XACORB20] */
 	IF ~~ THEN
 	DO ~
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 		SetGlobal("XA_Banter_CorwinAnomen", "GLOBAL", 3)
 		ClearActions(Myself)
 		ClearActions("Anomen")
@@ -62,6 +63,9 @@ IF ~
 	SAY @549 /* ~Mazzy, congratulations on your victory. That was quite the performance.~ */
 	
 	IF ~~ THEN 
+	DO ~
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
+	~
 	EXTERN MAZZYJ XA_MazzyWonCompetition
 END
 //}
@@ -75,6 +79,7 @@ IF ~
 	
 	IF ~~ THEN 
 	DO ~
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 		SetGlobal("XA_Banter_CorwinMazzy", "GLOBAL", 5)
 		SetGlobal("XA_TM_ArcheryChallenge", "GLOBAL", 1)
 	~
@@ -352,8 +357,6 @@ END
 			@375 /* ~Nalia — you seem agitated. What's bothering you?~ [XA100040] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinNalia", "GLOBAL", 3)
-				ClearActions(Myself)
-				ClearActions("Nalia")
 			~
 			== NALIAJ
 			@784 /* ~It seems that everywhere we go, we're confronted with maddening wealth disparities. I used to think that it was unique to Amn, but clearly I was mistaken.~ */
@@ -373,8 +376,6 @@ END
 			@375 /* ~~Nalia — you seem agitated. What's bothering you?~ [XA100040] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinNalia", "GLOBAL", 3)
-				ClearActions(Myself)
-				ClearActions("Nalia")
 			~
 			== NALIAJ
 			@381 /* ~The wealth disparity throughout Amn is maddening. Gilded cities full of slaves, and people who can't afford even a decent meal.~ */
@@ -404,19 +405,51 @@ END
 	EXIT
 	//}
 	
-	//{ Dialog B-13
+	//{ Dialog B-13A
 	CHAIN 
 		IF ~
 			Global("XA_Banter_CorwinNalia", "GLOBAL", 4)
 			IsValidForPartyDialogue("Nalia")
+			GlobalLT("XA_CorwinPromoted", "GLOBAL", 1)
 		~
-		THEN XACORWIB BCorwinNalia2
-			@384 /* ~Sure, Nalia. What's on your mind?~ [XA100026] */
+		THEN NALIAJ BCorwinNalia2
+			@16 /* ~Captain, do you have a moment?~*/
 			DO ~
 				SetGlobal("XA_Banter_CorwinNalia", "GLOBAL", 5)
-				ClearActions(Myself)
-				ClearActions("Nalia")
 			~
+			== XACORWIB
+			@384 /* ~Sure, Nalia. What's on your mind?~ [XA100026] */
+			== NALIAJ
+			@385 /* ~I was thinking about our earlier discussion. You mentioned how people are afraid to stand against the status quo. I think you're correct.~ */
+			=
+			@386 /* ~But isn't that because there are those that will fight to protect the status quo?~*/
+			=
+			@387 /* ~... Like yourself and the Flaming Fist, I'm afraid.~ */
+			== XACORWIB
+			@388 /*  ~Our society has it's flaws to be sure, but people need order and safety as much as they do food and shelter. The way of things must be preserved. The alternative is chaos.~ [XA100042] */
+			== NALIAJ
+			@389 /* ~There has to be a better way.~ */
+			== XACORWIB 
+			@390 /*  ~Maybe there is, and I hope you're able to find it and make it a reality.~*/
+			=
+			@391 /* ~In the meantime, the Flaming Fist and like-minded organizations will continue to fight to preserve the current order. And so will I. ~  */
+	EXIT
+	//}
+	
+	//{ Dialog B-13B
+	CHAIN 
+		IF ~
+			Global("XA_Banter_CorwinNalia", "GLOBAL", 4)
+			IsValidForPartyDialogue("Nalia")
+			GlobalGT("XA_CorwinPromoted", "GLOBAL", 0)
+		~
+		THEN NALIAJ BCorwinNalia2
+			@74 /* ~Captain, do you have a moment?~*/
+			DO ~
+				SetGlobal("XA_Banter_CorwinNalia", "GLOBAL", 5)
+			~
+			== XACORWIB
+			@384 /* ~Sure, Nalia. What's on your mind?~ [XA100026] */
 			== NALIAJ
 			@385 /* ~I was thinking about our earlier discussion. You mentioned how people are afraid to stand against the status quo. I think you're correct.~ */
 			=
@@ -445,8 +478,6 @@ END
 			@560 /* ~Nalia? You alright?~ [BD64597]*/
 			DO ~
 				SetGlobal("XA_Banter_CorwinNalia", "GLOBAL", 7)
-				ClearActions(Myself)
-				ClearActions("Nalia")
 			~
 			== NALIAJ
 			@459 /*  ~Not really.. I just have a lot on my mind. I've been hearing rumors that Amnish leaders are planning to criminalize vagrancy. Those that can't afford to pay the fines will be imprisoned~ */
@@ -480,8 +511,6 @@ END
 			@560 /* ~Nalia? You alright?~ [BD64597]*/
 			DO ~
 				SetGlobal("XA_Banter_CorwinNalia", "GLOBAL", 7)
-				ClearActions(Myself)
-				ClearActions("Nalia")
 			~
 			== NALIAJ
 			@459 /*  ~Not really.. I just have a lot on my mind. I've been hearing rumors that Amnish leaders are planning to criminalize vagrancy. Those that can't afford to pay the fines will be imprisoned~ */
@@ -541,8 +570,6 @@ END
 		@363 /* ~Sure. What do you need?~ [BD56086]*/
 		DO ~
 			SetGlobal("XA_Banter_CorwinHaerDalis", "GLOBAL", 3)
-			ClearActions(Myself)
-			ClearActions("XACORWIN")
 		~		
 		== HAERDAJ
 		@364 /* ~Did you know, my raven, that your arrows sing to me as they fly?~ */
@@ -581,8 +608,6 @@ END
 			@366 /* ~Haer'Dalis? What is it?~ [XA100039] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinHaerDalis", "GLOBAL", 5)
-				ClearActions(Myself)
-				ClearActions("HaerDalis")
 			~
 			== HAERDAJ
 			@367 /*~Have you given any thought to what we discussed earlier? What you will do once this adventure is over, my raven?~ */
@@ -613,8 +638,6 @@ END
 			@366 /* ~Haer'Dalis? What is it?~ [XACORB56]*/
 			DO ~
 				SetGlobal("XA_Banter_CorwinHaerDalis", "GLOBAL", 5)
-				ClearActions(Myself)
-				ClearActions("HaerDalis")
 			~
 			== HAERDAJ
 			@367 /*~Have you given any thought to what we discussed earlier? What you will do once this adventure is over, my raven?~ */
@@ -644,8 +667,6 @@ END
 			@366 /* ~Haer'Dalis? What is it?~ [XACORB56] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinHaerDalis", "GLOBAL", 5)
-				ClearActions(Myself)
-				ClearActions("HaerDalis")
 			~
 			== HAERDAJ
 			@367 /*~Have you given any thought to what we discussed earlier? What you will do once this adventure is over, my raven?~ */
@@ -676,8 +697,6 @@ END
 			@366 /* ~Haer'Dalis? What is it?~ [XACORB56] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinHaerDalis", "GLOBAL", 5)
-				ClearActions(Myself)
-				ClearActions("Minsc")
 			~
 			== HAERDAJ
 			@367 /*~Have you given any thought to what we discussed earlier? What you will do once this adventure is over, my raven?~ */
@@ -708,8 +727,6 @@ END
 			@343 /* ~Minsc, I'm sorry about Dynaheir. I know that you two were very close.~ [XACORB45] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinMinsc", "GLOBAL", 3)
-				ClearActions(Myself)
-				ClearActions("Minsc")
 			~
 			== MINSCJ
 			@792 /* ~Thank you, dear Major soldier lady. Boo is glad that skull crushing justice was exacted upon the wizard that murdered her.~ */
@@ -745,8 +762,6 @@ END
 			@343 /* ~Minsc, I'm sorry about Dynaheir. I know that you two were very close.~ [XACORB45] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinMinsc", "GLOBAL", 3)
-				ClearActions(Myself)
-				ClearActions("Minsc")
 			~
 			== MINSCJ
 			@353 /* ~Thank you, dear Captain soldier lady. Justice demands that I crush the skull of the wizard that killed her. I am glad that you are here to help inflict the most painful goodness on the forces of evil.~ */
@@ -777,13 +792,13 @@ END
 			Global("XA_Banter_CorwinMinsc", "GLOBAL", 4)
 			IsValidForPartyDialogue("Minsc")
 		~
-		THEN XACORWIB BCorwinMinsc2_M
-			@325 /* ~Oh let's not, please.~ [BD63913] */
+		THEN MINSCJ BCorwinMinsc2_M
+			@399  /*~Soldier lady, Boo has a question for you.~ */
 			DO ~
 				SetGlobal("XA_Banter_CorwinMinsc", "GLOBAL", 5)
-				ClearActions(Myself)
-				ClearActions("Minsc")
 			~
+			== XACORWIB
+			@325 /* ~Oh let's not, please.~ [BD63913] */
 			== MINSCJ
 			IF ~
 				Global("XA_CorwinPromoted", "GLOBAL", 1)
@@ -817,6 +832,7 @@ END
 		THEN XACORWIB BCorwinMinsc3
 			@333 /* ~I have a question for you.~ [XACORB44] */
 			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CorwinMinsc", "GLOBAL", 7)
 				ClearActions("Minsc")
 				ClearActions(Myself)
@@ -862,13 +878,12 @@ END
 		~
 		THEN RASAADJ BCorwinRasaad1_C
 			@795 /* Captain, you seem troubled.~*/
-			DO ~
-				SetGlobal("XA_Banter_CorwinRasaad", "GLOBAL", 3)
-				ClearActions(Myself)
-				ClearActions("XACORWIN")
-			~
 			== XACORWIB
 			@283 /* ~Rasaad.. it's nothing, I...~ [XACORB28] */
+			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
+				SetGlobal("XA_Banter_CorwinRasaad", "GLOBAL", 3)
+			~
 			== RASAADJ
 			@284 /* ~Yes?~ */
 			== XACORWIB
@@ -897,13 +912,12 @@ END
 		~
 		THEN RASAADJ BCorwinRasaad1_M
 			@794 /* ~Major, you seem troubled.~*/
-			DO ~
-				SetGlobal("XA_Banter_CorwinRasaad", "GLOBAL", 3)
-				ClearActions(Myself)
-				ClearActions("XACORWIN")
-			~
 			== XACORWIB
 			@283 /* ~Rasaad.. it's nothing, I...~ [XACORB28] */
+			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
+				SetGlobal("XA_Banter_CorwinRasaad", "GLOBAL", 3)
+			~
 			== RASAADJ
 			@284 /* ~Yes?~ */
 			== XACORWIB
@@ -934,8 +948,6 @@ END
 			DO ~
 				SetGlobal("XA_Banter_CorwinRasaad", "GLOBAL", 5)
 				SetGlobal("XA_BreathingExercise", "GLOBAL", 1)
-				ClearActions(Myself)
-				ClearActions("Rasaad")
 			~
 			== RASAADJ
 			IF ~
@@ -983,8 +995,6 @@ END
 			@304 /* ~Rasaad - I wanted to thank you. [XACORB29] ~ */
 			DO ~
 				SetGlobal("XA_Banter_CorwinRasaad", "GLOBAL", 7)
-				ClearActions(Myself)
-				ClearActions("Rasaad")
 			~
 			== RASAADJ
 			IF ~
@@ -1038,8 +1048,6 @@ END
 			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XA100067] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinRasaad", "GLOBAL", 9)
-				ClearActions(Myself)
-				ClearActions("Rasaad")
 			~
 			== RASAADJ
 			@484 /*  ~Yes Schael, now is a good time.~*/
@@ -1075,8 +1083,6 @@ END
 			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XA100067] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinRasaad", "GLOBAL", 9)
-				ClearActions(Myself)
-				ClearActions("Rasaad")
 			~
 			== RASAADJ
 			@484 /*  ~Yes Schael, now is a good time.~*/
@@ -1120,8 +1126,6 @@ END
 			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XA100067] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinRasaad", "GLOBAL", 9)
-				ClearActions(Myself)
-				ClearActions("Rasaad")
 			~
 			== RASAADJ
 			@484 /*  ~Yes Schael, now is a good time.~*/
@@ -1165,8 +1169,6 @@ END
 			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XA100067] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinRasaad", "GLOBAL", 9)
-				ClearActions(Myself)
-				ClearActions("Rasaad")
 			~
 			== RASAADJ
 			@484 /*  ~Yes Schael, now is a good time.~*/
@@ -1217,8 +1219,6 @@ END
 			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XA100067] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinRasaad", "GLOBAL", 9)
-				ClearActions(Myself)
-				ClearActions("Rasaad")
 			~
 			== RASAADJ
 			@484 /*  ~Yes Schael, now is a good time.~*/
@@ -1263,8 +1263,6 @@ END
 			@269 /* ~Yoshimo - what is it?~ [XACORB30] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinYoshimo", "GLOBAL", 3)
-				ClearActions(Myself)
-				ClearActions("Yoshimo")
 			~
 			== YOSHJ
 			IF ~
@@ -1318,8 +1316,6 @@ END
 			@258 /* ~Cernd, you have a beautiful child.~ [XACORB33] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinCernd", "GLOBAL", 3)
-				ClearActions(Myself)
-				ClearActions("Cernd")
 			~
 			== CERNDJ
 			IF ~
@@ -1360,8 +1356,6 @@ END
 			@258 /* ~Cernd, you have a beautiful child.~ [XACORB33] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinCernd", "GLOBAL", 3)
-				ClearActions(Myself)
-				ClearActions("Cernd")
 			~
 			== CERNDJ
 			IF ~
@@ -1406,8 +1400,6 @@ END
 			@245 /* ~Valygar. It's good to have another Ranger on the team.~ [XA100033] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinValygar", "GLOBAL", 3)
-				ClearActions(Myself)
-				ClearActions("Valygar")
 			~ 
 			== VALYGARJ
 			IF ~
@@ -1444,8 +1436,6 @@ END
 			@245 /* ~Valygar. It's good to have another Ranger on the team.~ [XA100033]*/
 			DO ~
 				SetGlobal("XA_Banter_CorwinValygar", "GLOBAL", 3)
-				ClearActions(Myself)
-				ClearActions("Valygar")
 			~ 
 			= @246 /* ~Well */
 			= @886 /*~(She looks at Minsc, and shakes her head.)~*/
@@ -1481,7 +1471,6 @@ END
 			@573 /* ~So, Valygar.~*/
 			DO ~
 				SetGlobal("XA_CorwinValygarLavok", "GLOBAL", 2)
-				SetGlobal("XA_Banter_CorwinValygar", "GLOBAL", 3)
 				SetGlobalTimer("XA_CorwinValygarTimer", "GLOBAL", THREE_DAYS)
 			~
 			== VALYGARJ
@@ -1557,6 +1546,7 @@ END
 		~ THEN XACORWIB BCorwinNeera1
 			@215 /* ~Neera, how are you?~ [XACORB36] */
 			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CorwinNeera", "GLOBAL", 3)
 				ClearActions(Myself)
 				ClearActions("Neera")
@@ -1587,15 +1577,11 @@ END
 	//{ Dialog B-41
 	CHAIN
 		IF ~
-			IsValidForPartyDialogue("Neera")
-			IsValidForPartyDialogue("Imoen2")
 			Global("XA_Banter_CorwinNeera", "GLOBAL", 4)
 		~ THEN XACORWIB BCorwinNeera1
 			@502 /* ~You know, Neera, Imoen here studied under one of the finest mages in Baldur's Gate.~ [XA100067] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinNeera", "GLOBAL", 5)
-				ClearActions(Myself)
-				ClearActions("Neera")
 			~ 
 			== NEERAJ
 			@503 /* ~Really? Who?~ */
@@ -1623,14 +1609,12 @@ END
 	//{ Dialog B-42
 	CHAIN
 		IF ~
-			Global("XA_Banter_CorwinHexxat", "GLOBAL", 4)
-			IsValidForPartyDialogue("Hexxat")
+			Global("XA_CorwinHexxat", "GLOBAL", 3)
 		~ THEN XACORWIB BCorwinHexxat1
 			@204 /* ~Hexxat.~ [XA100031]*/
 			DO ~
-				SetGlobal("XA_Banter_CorwinHexxat", "GLOBAL", 5)
-				ClearActions(Myself)
-				ClearActions("Hexxat")
+				SetGlobal("XA_CorwinHexxat", "GLOBAL", 4)
+				SetGlobalTimer("XA_CorwinHexxatTimer", "LOCALS", ONE_DAY)
 			~ 
 			== HEXXATJ
 			IF ~
@@ -1670,6 +1654,7 @@ END
 		~ THEN XACORWIB BCorwinKorgan1
 			@138 /* ~Get your filthy hands off me!~ [XACORB05] */
 			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CorwinKorgan", "GLOBAL", 3)
 				ClearActions(Myself)
 				ClearActions("Korgan")
@@ -1707,6 +1692,7 @@ END
 		~ THEN XACORWIB BCorwinKorgan1
 			@194 /*  ~What is it Korgan?~ [XACORB42] */
 			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CorwinKorgan", "GLOBAL", 5)
 				ClearActions(Myself)
 				ClearActions("Korgan")
@@ -1741,6 +1727,7 @@ END
 		~ THEN XACORWIB BCorwinViconia1A
 			@114 /*  ~Never forget that I'm watching you.~ [BD67545] */
 			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CorwinViconia", "GLOBAL", 3)
 				ClearActions(Myself)
 				ClearActions("Viconia")
@@ -1788,6 +1775,7 @@ END
 		~ THEN XACORWIB BCorwinViconia1B
 			@114 /* ~Never forget that I'm watching you.~ [BD67545] */
 			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CorwinViconia", "GLOBAL", 3)
 				ClearActions(Myself)
 				ClearActions("Viconia")
@@ -1833,6 +1821,7 @@ END
 		~ THEN XACORWIB BCorwinViconia2
 			@416 /* ~Light and warmth... I'm glad for both.~ [BD68278] */
 			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CorwinViconia", "GLOBAL", 5)
 				ClearActions(Myself)
 				ClearActions("Viconia")
@@ -1866,16 +1855,14 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinViconia", "GLOBAL", 6)
-			IsValidForPartyDialogue("Viconia")
 		~ THEN VICONIJ BCorwinViconia3
 			@559 /* ~These human cities make me want to scream.~ [XACORB64] */
-			DO ~
-				SetGlobal("XA_Banter_CorwinViconia", "GLOBAL", 7)
-				ClearActions(Myself)
-				ClearActions("Viconia")
-			~ 
 			== XACORWIB
 			@424 /* ~What was that?~ */
+			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
+				SetGlobal("XA_Banter_CorwinViconia", "GLOBAL", 7)
+			~ 
 			== VICONIJ
 			@425 /* ~The filth, the stench, the rabble - how can you stand it!?~ */
 			== XACORWIB
@@ -1915,13 +1902,10 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinImoen", "GLOBAL", 2)
-			IsValidForPartyDialogue("Imoen2")
 		~ THEN XACORWIB BCorwinImoen1
 			@226 /* ~Imoen - what do you need?~ [XACORB58] */ 
 			DO ~
 				SetGlobal("XA_Banter_CorwinImoen", "GLOBAL", 3)
-				ClearActions(Myself)
-				ClearActions("Imoen")
 			~ 
 			== IMOEN2J
 			IF ~
@@ -1973,7 +1957,6 @@ END
 		IF ~
 			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 			Global("XA_CorwinImoenSoulTalk", "GLOBAL", 1)
-			IsValidForPartyDialogue("Imoen2")
 		~ THEN XACORWIB BCorwinImoenSoulA
 			@565 /*  ~Imoen, I can't tell you how relieved I am that you're better.~  */
 			DO ~
@@ -1997,7 +1980,6 @@ END
 		IF ~
 			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 			Global("XA_CorwinImoenSoulTalk", "GLOBAL", 1)
-			IsValidForPartyDialogue("Imoen2")
 		~ THEN XACORWIB BCorwinImoenSoulB
 			@565 /*  ~Imoen, I can't tell you how relieved I am that you're better.~ [XA100067] */
 			DO ~
@@ -2019,13 +2001,10 @@ END
 		IF ~
 			Global("XA_Banter_CorwinImoen", "GLOBAL", 4)
 			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-			IsValidForPartyDialogue("Imoen2")
 		~ THEN XACORWIB BCorwinImoen2A
 			@448 /* ~Imoen, could I ask you something?~ [XACORB57] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinImoen", "GLOBAL", 5)
-				ClearActions(Myself)
-				ClearActions("Imoen")
 			~ 
 			== IMOEN2J
 			@449 /* ~Sure, Schael. What's on your mind?~*/
@@ -2067,8 +2046,6 @@ END
 			@448 /* ~Imoen, could I ask you something?~ [XA100067] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinImoen", "GLOBAL", 5)
-				ClearActions(Myself)
-				ClearActions("Imoen")
 			~ 
 			== IMOEN2J
 			@449 /* ~Sure, Schael. What's on your mind?~*/
@@ -2130,13 +2107,13 @@ END
 	//{ Dialog B-55
 	CHAIN
 		IF ~
-			Global("XA_EdwinWasMale", "GLOBAL", 1)
-			Global("XA_CorwinEdwinFemale", "GLOBAL", 1)
+			Global("XA_EdwinWasMale", "LOCALS", 1)
+			Global("XA_CorwinEdwinFemale", "LOCALS", 1)
 			IsValidForPartyDialogue("Edwin")
 		~ THEN XACORWIB BCorwinEdwin2
 			@178 /*  ~Well, what have we here?~ [XACORB38] */
 			DO ~
-				SetGlobal("XA_CorwinEdwinFemale", "GLOBAL", 2)
+				SetGlobal("XA_CorwinEdwinFemale", "LOCALS", 2)
 			~
 			=
 			@179 /* ~I can hear the catcalls from the sailors at the Blushing Mermaid already.~ */
@@ -2157,8 +2134,6 @@ END
 			@106 /* ~Edwin, a word, please.~ [XACORB06]*/
 			DO ~
 				SetGlobal("XA_Banter_CorwinEdwin", "GLOBAL", 3)
-				ClearActions(Myself)
-				ClearActions("Edwin")
 			~ 
 			== EDWINJ
 			@107 /* ~Yes? What is it that you want? (Can't this cretin see that I am busy?)~ */
@@ -2188,6 +2163,7 @@ END
 		~ THEN XACORWIB BCorwinEdwin2
 			@392 /*  ~What is it, Edwin?~ [XACORB42]*/
 			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CorwinEdwin", "GLOBAL", 5)
 				ClearActions(Myself)
 				ClearActions("Edwin")
@@ -2223,6 +2199,7 @@ END
 		~ THEN XACORWIB BCorwinEdwin3
 			@404 /*  ~Edwin? What is it?~ [XACORB42] */
 			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CorwinEdwin", "GLOBAL", 7)
 				ClearActions(Myself)
 				ClearActions("Edwin")
@@ -2264,6 +2241,7 @@ END
 		~ THEN XACORWIB BCorwinJan1
 			@440 /* ~Uh, what are you doing?~ [BD40510]*/
 			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CorwinJan", "GLOBAL", 3)
 				ClearActions(Myself)
 				ClearActions("Jan")
@@ -2307,6 +2285,7 @@ END
 		~ THEN XACORWIB BCorwinJan2
 			@514 /* ~Jan? About the turnip stew recipe - ~ [XA100067] */
 			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_BackToBG_Jan", "GLOBAL", 1)
 				SetGlobal("XA_Banter_CorwinJan", "GLOBAL", 5)
 				ClearActions(Myself)
@@ -2359,14 +2338,11 @@ END
 	//{ Dialog B-62
 	CHAIN
 		IF ~
-			Global("XA_Banter_CorwinKeldornOpt1", "GLOBAL", 2)
-			IsValidForPartyDialogue("Keldorn")
+			Global("XA_Banter_CorwinKeldornOpt1", "GLOBAL", 3)
 		~ THEN XACORWIB BCorwinKeldorn1
 			@473 /* ~Yes, Keldorn?~ [XA100067]*/
 			DO ~
-				SetGlobal("XA_Banter_CorwinKeldornOpt1", "GLOBAL", 3)
-				ClearActions(Myself)
-				ClearActions("Keldorn")
+				SetGlobal("XA_Banter_CorwinKeldornOpt1", "GLOBAL", 4)
 			~ 
 			== KELDORJ
 			@474 /* ~Captain, I want to thank you, and <CHARNAME>, for the advice you gave me during the situation with my wife and Sir William.~ */
@@ -2425,13 +2401,10 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinKeldorn", "GLOBAL", 2)
-			IsValidForPartyDialogue("Keldorn")
 		~ THEN XACORWIB BCorwinKeldorn1
 			@60 /* ~Keldorn, a moment of your time?~ [XACORB12] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinKeldorn", "GLOBAL", 3)
-				ClearActions(Myself)
-				ClearActions("Keldorn")
 			~ 
 			== KELDORJ
 			IF ~
@@ -2467,13 +2440,10 @@ END
 		IF ~
 			Global("XA_Banter_CorwinKeldorn", "GLOBAL", 4)
 			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-			IsValidForPartyDialogue("Keldorn")
 		~ THEN XACORWIB BCorwinKeldorn1
 			@201 /* ~Yes, Keldorn?~ [BD68260]*/
 			DO ~
 				SetGlobal("XA_Banter_CorwinKeldorn", "GLOBAL", 5)
-				ClearActions(Myself)
-				ClearActions("Keldorn")
 			~ 
 			== KELDORJ
 			IF ~
@@ -2522,6 +2492,7 @@ END
 		~ THEN XACORWIB BCorwinKeldorn1
 			@201 /* ~Yes, Keldorn?~ [BD68260] */
 			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CorwinKeldorn", "GLOBAL", 5)
 				ClearActions(Myself)
 				ClearActions("Keldorn")
@@ -2569,6 +2540,7 @@ END
 		~ THEN XACORWIB BCorwinAnomen2
 			@174 /* ~Anomen. What is it?~ [XACORB02] */
 			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CorwinAnomen", "GLOBAL", 5)
 				ClearActions(Myself)
 				ClearActions("Anomen")
@@ -2634,8 +2606,6 @@ END
 			@0 /* ~Jaheira.~ [XACORB16] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinJaheira", "GLOBAL", 3)
-				ClearActions(Myself)
-				ClearActions("Jaheira")
 			~
 			== JAHEIRAJ
 			@6 /*Yes?*/
@@ -2666,6 +2636,7 @@ END
 		~ THEN XACORWIB jahRemorseChain2
 			@0 /* ~Jaheira.~ [XACORB16] */
 			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CorwinJaheira", "GLOBAL", 3)
 				ClearActions(Myself)
 				ClearActions("Jaheira")
@@ -2692,14 +2663,11 @@ END
 	//{ Dialog B-70
 	CHAIN
 		IF ~
-			Global("XA_Banter_CorwinJaheira", "GLOBAL", 5)
-			IsValidForPartyDialogue("Jaheira")
+			Global("XA_Banter_CorwinJaheira", "GLOBAL", 4)
 		~ THEN XACORWIB BCorwinJaheira1
 			@30 /* ~(She adjusts the string on her bow)~ [XA100067]   */
 			DO ~
-				SetGlobal("XA_Banter_CorwinJaheira", "GLOBAL", 6)
-				ClearActions(Myself)
-				ClearActions("Jaheira")
+				SetGlobal("XA_Banter_CorwinJaheira", "GLOBAL", 5)
 			~ 
 			== JAHEIRAJ
 			IF ~
@@ -2734,14 +2702,11 @@ END
 	//{ Dialog B-71
 	CHAIN
 		IF ~
-			Global("XA_Banter_CorwinJaheira", "GLOBAL", 7)
-			IsValidForPartyDialogue("Jaheira")
+			Global("XA_Banter_CorwinJaheira", "GLOBAL", 6)
 		~ THEN XACORWIB BCorwinJaheira2
 			@0 /* ~~Jaheira.~ [XA100055]~*/
 			DO ~
-				SetGlobal("XA_Banter_CorwinJaheira", "GLOBAL", 8)
-				ClearActions(Myself)
-				ClearActions("Jaheira")
+				SetGlobal("XA_Banter_CorwinJaheira", "GLOBAL", 7)
 			~ 
 			== JAHEIRAJ
 			IF ~
@@ -2795,14 +2760,11 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinAerie", "GLOBAL", 2)
-			IsValidForPartyDialogue("Aerie")
 		~ THEN XACORWIB BCorwinAerie1
 			@39 /* ~Aerie, what's wrong? You seem worried... more than usual, anyway.~ [XACORB13] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinAerie", "GLOBAL", 3)
 				SetGlobal("XA_CorwinAerieScars", "GLOBAL", 1)
-				ClearActions(Myself)
-				ClearActions("Aerie")
 			~  
 			== AERIEJ
 			IF ~
@@ -2840,14 +2802,11 @@ END
 	//{ Dialog B-74
 	CHAIN
 		IF ~
-			Global("XA_Banter_CorwinAerie", "GLOBAL", 5)
-			IsValidForPartyDialogue("Aerie")
+			Global("XA_Banter_CorwinAerie", "GLOBAL", 4)
 		~ THEN XACORWIB BCorwinAerie2
 			@124 /*  ~Damn it!~ [XA100035]  */
 			DO ~
-				SetGlobal("XA_Banter_CorwinAerie", "GLOBAL", 6)
-				ClearActions(Myself)
-				ClearActions("Aerie")
+				SetGlobal("XA_Banter_CorwinAerie", "GLOBAL", 5)
 			~  
 			== AERIEJ
 			@125 /* ~Schael? What's wrong?~ */
@@ -2903,15 +2862,12 @@ END
 	//{ Dialog B-75
 	CHAIN
 		IF ~
-			Global("XA_Banter_CorwinAerie", "GLOBAL", 7)
+			Global("XA_Banter_CorwinAerie", "GLOBAL", 6)
 			Global("bd_asha_duel","global",3) //CHARNAME dueled Ashatiel honorably
-			IsValidForPartyDialogue("Aerie")
 		~ THEN XACORWIB BCorwinAerie3A
 			@132 /* ~Aerie, you wanted to learn more about Ashatiel.. do you have some time now?~ [XACORB08]*/
 			DO ~
-				SetGlobal("XA_Banter_CorwinAerie", "GLOBAL", 8)
-				ClearActions(Myself)
-				ClearActions("Aerie")
+				SetGlobal("XA_Banter_CorwinAerie", "GLOBAL", 7)
 			~  
 			== AERIEJ
 			@133 /* ~Yes, Schael. Please continue with your story.~ */
@@ -2945,20 +2901,18 @@ END
 	//{ Dialog B-76
 	CHAIN
 		IF ~
-			Global("XA_Banter_CorwinAerie", "GLOBAL", 9)
+			Global("XA_Banter_CorwinAerie", "GLOBAL", 8)
 			Global("bd_asha_duel","global",3) //CHARNAME dueled Ashatiel honorably
-			IsValidForPartyDialogue("Aerie")
 		~ THEN AERIEJ BCorwinAerie4A
 			@441 /* ~Schael? Do you have time now to finish the story a-about Ashatiel?~ [XA100067] */
-			DO ~
-				SetGlobal("XA_Banter_CorwinAerie", "GLOBAL", 10)
-				ClearActions(Myself)
-				ClearActions("XACORWIN")
-			~  
+			
 			== XACORWIB
 			@446 /* ~Ah, sure Aerie. We left off at the duel, between Ashatiel and <CHARNAME>.~*/
 			=
 			@95 /* ~Ashatiel fought bravely, but she was killed by <CHARNAME> after a long battle. In her last moments, she cried out for Caelar to save her, but no help came - I think she realized at that point that her faith in Caelar was misplaced.~   */
+			DO ~
+				SetGlobal("XA_Banter_CorwinAerie", "GLOBAL", 9)
+			~  
 			== AERIEJ
 			@96 /* ~But that's - that's cruel! How could <PRO_HESHE> have killed her? Wasn't there another way?~*/
 			== XACORWIB
@@ -2983,15 +2937,12 @@ END
 	//{ Dialog B-77
 	CHAIN
 		IF ~
-			Global("XA_Banter_CorwinAerie", "GLOBAL", 7)
+			Global("XA_Banter_CorwinAerie", "GLOBAL", 6)
 			!Global("bd_asha_duel","global",3) //CHARNAME refused to duel Ashatiel, or cheated
-			IsValidForPartyDialogue("Aerie")
 		~ THEN XACORWIB BCorwinAerie3B
 			@132 /* ~Aerie, you wanted to learn more about Ashatiel.. do you have some time now?~ [XACORB08]*/
 			DO ~
-				SetGlobal("XA_Banter_CorwinAerie", "GLOBAL", 8)
-				ClearActions(Myself)
-				ClearActions("Aerie")
+				SetGlobal("XA_Banter_CorwinAerie", "GLOBAL", 7)
 			~ 
 			== AERIEJ
 			@133 /* ~Yes, Schael. Please continue with your story.~ */
@@ -3023,20 +2974,17 @@ END
 	//{ Dialog B-78
 	CHAIN
 		IF ~
-			Global("XA_Banter_CorwinAerie", "GLOBAL", 9)
+			Global("XA_Banter_CorwinAerie", "GLOBAL", 8)
 			!Global("bd_asha_duel","global",3) //CHARNAME refused to duel Ashatiel, or cheated
-			IsValidForPartyDialogue("Aerie")
 		~ THEN AERIEJ BCorwinAerie4B
 			@441 /* ~Schael? Do you have time now to finish the story a-about Ashatiel?~ [XA100067] */
-			DO ~
-				SetGlobal("XA_Banter_CorwinAerie", "GLOBAL", 10)
-				ClearActions(Myself)
-				ClearActions("XACORWIN")
-			~ 
 			== XACORWIB
 			@442 /* ~Ah, sure Aerie. Right, Ashatiel left the keep to lead the crusaders' counterattack.~ */
 			=
 			@150 /* ~She, and the other crusaders that took part in the counterattack fought bravely. <CHARNAME> rallied the coalition and defeated the crusaders, and Ashatiel was killed. We were victorious, but many lives on both sides were lost.~*/
+			DO ~
+				SetGlobal("XA_Banter_CorwinAerie", "GLOBAL", 9)
+			~
 			== AERIEJ
 			@151 /* ~But that's - that's terrible! Wasn't there another way Schael, b-besides bloodshed?~*/
 			== XACORWIB
@@ -3069,6 +3017,7 @@ END
 		~ THEN XACORWIB BCorwinDorn1
 			@32 /* ~Dorn - I thought you'd have learned by now that you can't serve two masters.~ [XACORB22] */
 			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CorwinDorn", "GLOBAL", 3)
 				ClearActions(Myself)
 				ClearActions("Dorn")
@@ -3109,13 +3058,10 @@ END
 		IF ~
 			Global("XA_Banter_CorwinDorn", "GLOBAL", 4)
 			!Global("XA_DornPatronsDead", "GLOBAL", 1)
-			IsValidForPartyDialogue("Dorn")
 		~ THEN XACORWIB BCorwinDorn2
 			@156 /* ~Dorn, I give orders to those under my command either verbally, or in writing. How do you receive orders from your patron?~ [XACORB04] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinDorn", "GLOBAL", 5)
-				ClearActions(Myself)
-				ClearActions("Dorn")
 			~ 
 			== DORNJ
 			@157 /* ~What concern of it is yours?~*/
@@ -3139,6 +3085,43 @@ END
 			@162 /* = ~If that voice tells you to harm <CHARNAME>, or anyone else that I care about, then your patron will need to find themselves a new slave. I trust I've made myself clear.~ */
 			== DORNJ
 			@163 /* = ~You are a truly pathetic woman. Even still, such insults and threats are beneath you. I've no intention of betraying <CHARNAME>, certainly not while my patron benefits from our arrangement.~ */
+			== XACORWIB
+			@182 /*~Next time, keep that thrice-damned pit of hell you call a mouth shut or I'll shut it for you.~ [XA100081]*/
+	EXIT
+	//}
+
+	//{ Dialog B-81A
+	CHAIN
+		IF ~
+			Global("XA_Banter_CorwinDorn", "GLOBAL", 4)
+			Global("XA_DornPatronsDead", "GLOBAL", 1)
+		~ THEN XACORWIB BCorwinDorn2
+			@586 /* ~Dorn, I'm curious.~ */
+			DO ~
+				SetGlobal("XA_Banter_CorwinDorn", "GLOBAL", 5)
+			~ 
+			== DORNJ
+			@587 /* ~And? Out with it.~*/
+			== XACORWIB
+			@588 /* = ~I give orders to those under my command either verbally, or in writing. How did you receive orders from your patron?~*/
+			== DORNJ
+			IF ~
+				!Global("XA_CorwinPromoted", "GLOBAL", 1)
+			~
+			@589 /* = ~They communicated their thoughts to my mind. I could... hear them, as clearly as your mewling voice, Captain.~ */
+			== DORNJ
+			IF ~
+				Global("XA_CorwinPromoted", "GLOBAL", 1)
+			~
+			@590 /* ~They communicated their thoughts to my mind. I could... hear them, as clearly as your mewling voice, Major.~*/
+			== XACORWIB
+			@591 /* ~And now that your patron is gone, you're no longer hearing the voices that tell you to murder things. Is that right?~*/
+			== DORNJ
+			@161 /* = ~Get to your point.~ */
+			== XACORWIB
+			@592 /* ~If you harm <CHARNAME>, or anyone else that I care about, then —~*/
+			== DORNJ
+			@585 /*~Pathetic, woman. Save your empty threats for someone who cares. I've no intention of betraying <CHARNAME>, certainly not while I benefit from our arrangement.~ */
 			== XACORWIB
 			@182 /*~Next time, keep that thrice-damned pit of hell you call a mouth shut or I'll shut it for you.~ [XA100081]*/
 	EXIT
@@ -3315,7 +3298,7 @@ END
 	CHAIN
 		IF ~
 			GlobalLT("ImoenGiveSoul","GLOBAL",2)
-			Global("XA_SarevokSoul", "GLOBAL", 2)
+			Global("XA_SarevokSoul", "GLOBAL", 1)
 			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 			IsValidForPartyDialogue("Sarevok")
 			OR(2)
@@ -3326,7 +3309,7 @@ END
 			== SAREV25J
 			@879 /* ~Pardon?~ */
 			DO ~
-				SetGlobal("XA_SarevokSoul", "GLOBAL", 3)
+				SetGlobal("XA_SarevokSoul", "GLOBAL", 2)
 			~
 			== XACORWIB
 			@871 /* ~You're carrying part of <CHARNAME>'s soul. Maybe having <PRO_HIMHER> inside of you will make you a better person. But I expect that it won't.~ */
@@ -3351,7 +3334,7 @@ END
 	CHAIN
 		IF ~
 			GlobalLT("ImoenGiveSoul","GLOBAL",2)
-			Global("XA_SarevokSoul", "GLOBAL", 2)
+			Global("XA_SarevokSoul", "GLOBAL", 1)
 			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 			IsValidForPartyDialogue("Sarevok")
 			OR(2)
@@ -3362,7 +3345,7 @@ END
 			== SAREV25J
 			@879 /* ~Pardon?~ */
 			DO ~
-				SetGlobal("XA_SarevokSoul", "GLOBAL", 3)
+				SetGlobal("XA_SarevokSoul", "GLOBAL", 2)
 			~
 			== XACORWIB
 			@871 /* ~You're carrying part of <CHARNAME>'s soul. Maybe having <PRO_HIMHER> inside of you will make you a better person. But I expect that it won't.~ */
@@ -3390,11 +3373,12 @@ END
 			IsValidForPartyDialogue("Sarevok")
 		~ THEN XACORWIB XA_SarevokBanter1
 			@815 /* ~Sarevok.~ */
-			== SAREV25J
-			@816 /* ~Ah, Captain — excuse me, *Major* Corwin, to what do I owe the pleasure?~ */
 			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CorwinSarevok", "GLOBAL", 3)
 			~
+			== SAREV25J
+			@816 /* ~Ah, Captain — excuse me, *Major* Corwin, to what do I owe the pleasure?~ */
 			== XACORWIB
 			#258881 /* What's the draw */
 			== SAREV25J
@@ -3424,11 +3408,12 @@ END
 			IsValidForPartyDialogue("Sarevok")
 		~ THEN XACORWIB XA_SarevokBanter1
 			@815 /* ~Sarevok.~ */
-			== SAREV25J
-			@816 /* ~Ah, Captain — excuse me, *Major* Corwin, to what do I owe the pleasure?~ */
 			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CorwinSarevok", "GLOBAL", 3)
 			~
+			== SAREV25J
+			@816 /* ~Ah, Captain — excuse me, *Major* Corwin, to what do I owe the pleasure?~ */
 			== XACORWIB
 			#258881 /* What's the draw */
 			== SAREV25J
@@ -3447,9 +3432,11 @@ END
 			IsValidForPartyDialogue("Sarevok")
 		~ THEN SAREV25J XA_SarevokBanter2
 			@825 /* ~Major, a word please.~ */
+			
 			== XACORWIB
 			@826 /* ~What is it?~ */
 			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CorwinSarevok", "GLOBAL", 5)
 			~
 			== SAREV25J
@@ -3480,11 +3467,12 @@ END
 			IsValidForPartyDialogue("Sarevok")
 		~ THEN XACORWIB XA_SarevokBanter3
 			@838 /* ~What are you staring at?~ */
-			== SAREV25J
-			@840 /*~You.~*/
 			DO ~
+				SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 				SetGlobal("XA_Banter_CorwinSarevok", "GLOBAL", 7)
 			~
+			== SAREV25J
+			@840 /*~You.~*/
 			== XACORWIB
 			@841 /* ~Huh?~ */
 			== SAREV25J
@@ -3533,13 +3521,14 @@ END
 			IsValidForPartyDialogue("XACORWIN")
 		~ THEN XACAELAB XA_CaelarCorwinBanter1Chain
 		@858 /*~I can feel you staring at me. Is something on your mind, Major?~*/
-		DO ~
-			SetGlobal("XA_Banter_CorwinCaelar", "GLOBAL", 3)
-		~
 		== XACORWIB
 		@544 /*~Scores, if not hundreds, of innocent people have been slain by those in your service.~ [BD56584]*/
 		=
 		@859 /* ~The Fist lost a lot of good people fighting against your crusade. Mothers, fathers, sons and daughters, many of whom I considered friends.~*/
+		DO ~
+			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
+			SetGlobal("XA_Banter_CorwinCaelar", "GLOBAL", 3)
+		~
 		== XACAELAB
 		@860 /* ~I understand, and I'm sorry. There's nothing I can do, however.~*/
 		== XACORWIB

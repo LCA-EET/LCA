@@ -725,6 +725,7 @@ THEN
 END
 
 IF 
+	ActionListEmpty()
 	InParty(Myself)
 	Global("XA_ResetBanterTimer", "LOCALS", 1)
 THEN
@@ -733,7 +734,6 @@ THEN
 		SetGlobal("XA_ResetBanterTimer", "LOCALS", 2)
 		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0) 
 		SetInterrupt(TRUE)
-		Continue()
 END
 
 IF 

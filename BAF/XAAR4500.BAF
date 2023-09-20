@@ -1,4 +1,11 @@
 IF
+	GlobalLT("XA_BeenToPocketPlane", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BeenToPocketPlane", "GLOBAL", 1)
+		Continue()
+END
+IF
 	Global("XA_SummonAun", "GLOBAL", 1)
 THEN
 	RESPONSE #100

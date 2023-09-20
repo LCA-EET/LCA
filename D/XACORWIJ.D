@@ -2587,7 +2587,7 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_Questions
 		OR(2)
 			GlobalGT("XA_CorwinPregnantAerie", "GLOBAL", 0)
 			GlobalGT("XA_CorwinPregnantJaheira", "GLOBAL", 0)
-	~ THEN REPLY @1562 /* ~Did she give you a due date?~ */
+	~ THEN REPLY @1554 /* ~Did she give you a due date?~ */
 	DO ~
 		SetGlobal("XA_Pregnant_DueDate", "LOCALS", 1)
 	~
@@ -2720,7 +2720,7 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_BabyGender
 		OR(2)
 			GlobalGT("XA_CorwinPregnantAerie", "GLOBAL", 0)
 			GlobalGT("XA_CorwinPregnantJaheira", "GLOBAL", 0)
-	~ THEN REPLY @1562 /* ~Did she give you a due date?~ */
+	~ THEN REPLY @1554 /* ~Did she give you a due date?~ */
 	DO ~
 		SetGlobal("XA_Pregnant_DueDate", "LOCALS", 1)
 	~
@@ -6148,7 +6148,6 @@ END
 
 /* Optional Interaction - Met Rohma */
 IF ~
-	InParty(Myself)
 	Global("XA_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
 	!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 ~
@@ -6300,7 +6299,6 @@ END
 
 //{ #region Met Corwin Interaction BG2 (Romance) - Dialog J-41
 IF ~
-	InParty(Myself)
 	Global("XA_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
 	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	//play romance song
@@ -7142,7 +7140,7 @@ END
 //{ Dialog J-57
 IF ~
 	InParty(Myself)
-	Global("XA_Banter_CorwinHexxat", "GLOBAL", 6)
+	Global("XA_CorwinHexxat", "GLOBAL", 5)
 	IsValidForPartyDialogue("Hexxat")
 	OR(4)
 		IsValidForPartyDialogue("Mazzy")
@@ -7154,7 +7152,7 @@ IF ~
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_Banter_CorwinHexxat", "GLOBAL", 7)
+		SetGlobal("XA_CorwinHexxat", "GLOBAL", 6)
 		SetGlobal("XA_CorwinHexxatFight", "GLOBAL", 1)
 	~
 	EXIT
@@ -7164,7 +7162,7 @@ END
 //{ Dialog J-58
 IF ~
 	InParty(Myself)
-	Global("XA_Banter_CorwinHexxat", "GLOBAL", 6)
+	Global("XA_CorwinHexxat", "GLOBAL", 5)
 	IsValidForPartyDialogue("Hexxat")
 	!IsValidForPartyDialogue("Mazzy")
 	!IsValidForPartyDialogue("Anomen")
@@ -7175,7 +7173,7 @@ IF ~
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_Banter_CorwinHexxat", "GLOBAL", 7)
+		SetGlobal("XA_CorwinHexxat", "GLOBAL", 6)
 		SetGlobal("XA_CorwinHexxatFight", "GLOBAL", 1)
 	~
 	EXIT
@@ -7184,26 +7182,55 @@ END
 
 //{ Dialog J-59
 IF ~
-	Global("XA_Banter_CorwinHexxat", "GLOBAL", 2)
+	Global("XA_CorwinHexxat", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinHexxat1
 	SAY @130 /* ~<CHARNAME>. We need to talk.~ */
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @132 /* ~Of course love, what's on your mind? */
+	DO ~
+		SetGlobal("XA_CorwinHexxat", "GLOBAL", 2)
+		SetGlobalTimer("XA_CorwinHexxatTimer", "LOCALS", ONE_DAY)
+	~
 	GOTO XAA38
 	
 	IF ~
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("XA_CorwinPromoted", "GLOBAL", 1)
 	~ THEN REPLY @131 /*  ~What is it, Captain?~*/
+	DO ~
+		SetGlobal("XA_CorwinHexxat", "GLOBAL", 2)
+		SetGlobalTimer("XA_CorwinHexxatTimer", "LOCALS", ONE_DAY)
+	~
 	GOTO XAA38
 	
 	IF ~
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_CorwinPromoted", "GLOBAL", 1)
 	~ THEN REPLY @312 /*  What is it, Major?~*/
+	DO ~
+		SetGlobal("XA_CorwinHexxat", "GLOBAL", 2)
+		SetGlobalTimer("XA_CorwinHexxatTimer", "LOCALS", ONE_DAY)
+	~
 	GOTO XAA38
+END
+
+IF ~~ THEN BEGIN XAA38
+	SAY @133 /* ~The vampire. Hexxat. You allow this beast to travel with us?~ */
+	
+	IF ~~ THEN REPLY @134 /* ~We need her, Schael.~ */
+	GOTO XAA39
+	
+	IF ~~ THEN REPLY @135 /* ~And what of it?~ */
+	GOTO XAA39	
+END
+
+IF ~~ THEN BEGIN XAA39
+	SAY @136 /* ~You're going to have to make a decision, and soon, or I will make it for you. I trust that I've made myself clear.~ */
+	
+	IF ~~ THEN
+	EXIT
 END
 
 //}
@@ -7800,32 +7827,14 @@ IF ~~ THEN BEGIN XAA37
 	EXIT
 END
 
-IF ~~ THEN BEGIN XAA38
-	SAY @133 /* ~The vampire. Hexxat. You allow this beast to travel with us?~ */
-	
-	IF ~~ THEN REPLY @134 /* ~We need her, Schael.~ */
-	GOTO XAA39
-	
-	IF ~~ THEN REPLY @135 /* ~And what of it?~ */
-	GOTO XAA39
-	
-END
-
-IF ~~ THEN BEGIN XAA39
-	SAY @136 /* ~You're going to have to make a decision, and soon, or I will make it for you. I trust that I've made myself clear.~ */
-	
-	IF ~~ THEN
-	DO ~
-		SetGlobal("XA_Banter_CorwinHexxat", "GLOBAL", 3)
-	~
-	EXIT
-END
 
 
 IF ~~ THEN BEGIN XAA48
 	SAY @189 /* ~What's on your mind?~ */
 	
-	IF ~~ THEN REPLY @164 /* ~Before I was exiled, I remember the city was still struggling with the refugee crisis. Have the Dukes had any success in resettling the refugees?~ */
+	IF ~
+		GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	~ THEN REPLY @164 /* ~Before I was exiled, I remember the city was still struggling with the refugee crisis. Have the Dukes had any success in resettling the refugees?~ */
 	DO ~
 		SetGlobal("XA_AskedAboutRefugees", "LOCALS", 1)
 	~
@@ -7837,7 +7846,9 @@ IF ~~ THEN BEGIN XAA48
 	~
 	GOTO XAA50
 	
-	IF ~~ THEN REPLY @172 /* ~I've thought from time to time about the terror of what we experienced in Avernus. Do you think about that place?~ */
+	IF ~
+		GlobalLT("XA_BackToHell", "GLOBAL", 1)
+	~ THEN REPLY @172 /* ~I've thought from time to time about the terror of what we experienced in Avernus. Do you think about that place?~ */
 	DO ~
 		SetGlobal("XA_AskedAboutAvernus", "LOCALS", 1)
 	~
@@ -7888,6 +7899,7 @@ IF ~~ THEN BEGIN XAA48A
 	SAY @190 /* ~Anything else you'd like to discuss?~ */
 	
 	IF ~
+		GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 		!Global("XA_AskedAboutRefugees", "LOCALS", 1)
 	~ THEN REPLY @164 /* ~Before I was exiled, I remember the city was still struggling with the refugee crisis. Have the 
 	Dukes had any success in resettling the refugees?~ */
@@ -7907,6 +7919,7 @@ IF ~~ THEN BEGIN XAA48A
 	IF ~
 		!Global("XA_AskedAboutAvernus", "LOCALS", 1)
 		!Global("BD_Sacrifice_Corwin","bd4500",3)
+		GlobalLT("XA_BackToHell", "GLOBAL", 1)
 	~ THEN REPLY @172 /* ~I've thought from time to time about the terror of what we experienced in Avernus. Do you think about that place?~ */
 	DO ~
 		SetGlobal("XA_AskedAboutAvernus", "LOCALS", 1)
@@ -7916,6 +7929,7 @@ IF ~~ THEN BEGIN XAA48A
 	IF ~
 		!Global("XA_AskedAboutAvernus", "LOCALS", 1)
 		Global("BD_Sacrifice_Corwin","bd4500",3)
+		GlobalLT("XA_BackToHell", "GLOBAL", 1)
 	~ THEN REPLY @172 /* ~I've thought from time to time about the terror of what we experienced in Avernus. Do you think about that place?~ */
 	DO ~
 		SetGlobal("XA_AskedAboutAvernus", "LOCALS", 1)

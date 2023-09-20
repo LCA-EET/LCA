@@ -167,8 +167,11 @@ IF ~
 	IF ~~ THEN REPLY @334 /* ~Dialog Test.~*/
 	GOTO XA_DialogTest
 	
-	IF ~~ THEN REPLY @74 /* Increment Banter Counter. */
-	GOTO XA_Menu_IncrementBanter
+	IF ~~ THEN REPLY @703 /* Reset Corwin's Banters. */
+	DO ~
+		SetGlobal("XA_ResetCorwinBanters", "GLOBAL", 1)
+	~
+	EXIT
 	
 	IF ~~ THEN REPLY @152 /* Play Chapter Movie. */
 	GOTO XA_Menu_ChapterMovie
