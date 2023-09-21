@@ -3087,28 +3087,28 @@ THEN
 		SetGlobal("XA_Banter_CorwinCaelar", "GLOBAL", 1)
 		
 		//{ Define Banter End States
-			SetGlobal("XA_Banter_CorwinMazzyEnd", "GLOBAL", 7)
-			SetGlobal("XA_Banter_CorwinNaliaEnd", "GLOBAL", 7)
-			SetGlobal("XA_Banter_CorwinHaerDalisEnd", "GLOBAL", 5)
-			SetGlobal("XA_Banter_CorwinMinscEnd", "GLOBAL", 7)
-			SetGlobal("XA_Banter_CorwinRasaadEnd", "GLOBAL", 9)
-			SetGlobal("XA_Banter_CorwinYoshimoEnd", "GLOBAL", 3)
-			SetGlobal("XA_Banter_CorwinCerndEnd", "GLOBAL", 3)
-			SetGlobal("XA_Banter_CorwinValygarEnd", "GLOBAL", 3)
-			SetGlobal("XA_Banter_CorwinJaheiraEnd", "GLOBAL", 7)
-			SetGlobal("XA_Banter_CorwinNeeraEnd", "GLOBAL", 3)
-			SetGlobal("XA_Banter_CorwinDornEnd", "GLOBAL", 5)
-			SetGlobal("XA_Banter_CorwinKeldornEnd", "GLOBAL", 5)
-			SetGlobal("XA_Banter_CorwinKorganEnd", "GLOBAL", 5)
-			SetGlobal("XA_Banter_CorwinJanEnd", "GLOBAL", 5)
-			SetGlobal("XA_Banter_CorwinEdwinEnd", "GLOBAL", 7)
-			SetGlobal("XA_Banter_CorwinAerieEnd", "GLOBAL", 9)
-			SetGlobal("XA_Banter_CorwinAnomenEnd", "GLOBAL", 5)
-			SetGlobal("XA_Banter_CorwinViconiaEnd", "GLOBAL", 7)
-			SetGlobal("XA_Banter_CorwinImoenEnd", "GLOBAL", 5)
-			SetGlobal("XA_Banter_CorwinSarevokEnd", "GLOBAL", 7)
-			SetGlobal("XA_Banter_CorwinCaelarEnd", "GLOBAL", 3)
-			SetGlobal("XA_Banter_CorwinPlayerEnd", "GLOBAL", 5)
+			SetGlobal("XA_Banter_CorwinMazzyEnd", "GLOBAL", 5) 		//OK
+			SetGlobal("XA_Banter_CorwinNaliaEnd", "GLOBAL", 7) 		//OK
+			SetGlobal("XA_Banter_CorwinHaerDalisEnd", "GLOBAL", 5) 	//OK
+			SetGlobal("XA_Banter_CorwinMinscEnd", "GLOBAL", 7) 		//OK
+			SetGlobal("XA_Banter_CorwinRasaadEnd", "GLOBAL", 9)		//OK
+			SetGlobal("XA_Banter_CorwinYoshimoEnd", "GLOBAL", 3)	//OK
+			SetGlobal("XA_Banter_CorwinCerndEnd", "GLOBAL", 3)		//OK
+			SetGlobal("XA_Banter_CorwinValygarEnd", "GLOBAL", 3)	//OK
+			SetGlobal("XA_Banter_CorwinJaheiraEnd", "GLOBAL", 7)	//OK
+			SetGlobal("XA_Banter_CorwinNeeraEnd", "GLOBAL", 3)		//OK
+			SetGlobal("XA_Banter_CorwinDornEnd", "GLOBAL", 5)		//OK
+			SetGlobal("XA_Banter_CorwinKeldornEnd", "GLOBAL", 5)	//OK
+			SetGlobal("XA_Banter_CorwinKorganEnd", "GLOBAL", 5)		//OK
+			SetGlobal("XA_Banter_CorwinJanEnd", "GLOBAL", 5)		//OK
+			SetGlobal("XA_Banter_CorwinEdwinEnd", "GLOBAL", 7)		//OK
+			SetGlobal("XA_Banter_CorwinAerieEnd", "GLOBAL", 9)		//OK
+			SetGlobal("XA_Banter_CorwinAnomenEnd", "GLOBAL", 5)		//OK
+			SetGlobal("XA_Banter_CorwinViconiaEnd", "GLOBAL", 7)	//OK
+			SetGlobal("XA_Banter_CorwinImoenEnd", "GLOBAL", 5)		//OK
+			SetGlobal("XA_Banter_CorwinSarevokEnd", "GLOBAL", 7)	//OK
+			SetGlobal("XA_Banter_CorwinCaelarEnd", "GLOBAL", 3)		//OK
+			SetGlobal("XA_Banter_CorwinPlayerEnd", "GLOBAL", 5)		//OK
 		//}
 		
 		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
@@ -3120,32 +3120,6 @@ THEN
 END
 
 //{ Banter Interval
-
-//{ If a banter has been pending for more than an hour, reset.
-IF
-	ActionListEmpty()
-	Global("XA_Banter_Pending", "LOCALS", 1)
-	GlobalLT("XA_BanterPendingTimerSet", "LOCALS", 1) 
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_BanterPendingTimerSet", "LOCALS", 1)
-		SetGlobalTimer("XA_BanterPendingTimer", "LOCALS", ONE_HOUR)
-		SetInterrupt(TRUE)
-END
-
-IF
-	ActionListEmpty()
-	Global("XA_Banter_Pending", "LOCALS", 1)
-	GlobalTimerExpired("XA_BanterPendingTimer", "LOCALS")
-	Global("XA_BanterPendingTimerSet", "LOCALS", 1) 
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
-		SetInterrupt(TRUE)
-END
-//}
 
 IF 
 	ActionListEmpty()
@@ -3197,6 +3171,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
 		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
 		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_HOUR)
 		//DisplayStringHead(Myself, ~DEBUG: 22-04~)	
 		SetInterrupt(TRUE)
@@ -3211,6 +3186,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
 		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
 		SetGlobalTimer("XA_BanterTimer", "LOCALS", TWO_HOURS)
 		//DisplayStringHead(Myself, ~DEBUG: 22-05~)	
 		SetInterrupt(TRUE)
@@ -3225,6 +3201,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
 		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
 		SetGlobalTimer("XA_BanterTimer", "LOCALS", FOUR_HOURS)
 		//DisplayStringHead(Myself, ~DEBUG: 22-06~)
 		SetInterrupt(TRUE)
@@ -3239,6 +3216,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
 		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
 		SetGlobalTimer("XA_BanterTimer", "LOCALS", EIGHT_HOURS)
 		//DisplayStringHead(Myself, ~DEBUG: 22-07~)
 		SetInterrupt(TRUE)
@@ -3253,6 +3231,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
 		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
 		SetGlobalTimer("XA_BanterTimer", "LOCALS", TWELVE_HOURS)
 		//DisplayStringHead(Myself, ~DEBUG: 22-08~)
 		SetInterrupt(TRUE)
@@ -3267,6 +3246,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
 		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
 		SetGlobalTimer("XA_BanterTimer", "LOCALS", SIXTEEN_HOURS)
 		//DisplayStringHead(Myself, ~DEBUG: 22-09~)
 		SetInterrupt(TRUE)
@@ -3281,6 +3261,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
 		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
 		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_DAY)
 		//DisplayStringHead(Myself, ~DEBUG: 22-10~)
 		SetInterrupt(TRUE)
@@ -3295,6 +3276,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
 		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
 		SetGlobalTimer("XA_BanterTimer", "LOCALS", TWO_DAYS)
 		//DisplayStringHead(Myself, ~DEBUG: 22-11~)
 		SetInterrupt(TRUE)
@@ -3309,6 +3291,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
 		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
 		SetGlobalTimer("XA_BanterTimer", "LOCALS", THREE_DAYS)
 		//DisplayStringHead(Myself, ~DEBUG: 22-12~)
 		SetInterrupt(TRUE)
@@ -3871,7 +3854,7 @@ END
 	END
 	//}
 
-	//{ Minsc Banters
+	//{ Rasaad Banters
 	IF
 		ActionListEmpty()
 		Global("XA_Banter_Pending", "LOCALS", 17)
@@ -4149,10 +4132,9 @@ END
 	//{ Neera - Corwin Second Interaction 
 	IF
 		ActionListEmpty()
-		//GlobalTimerExpired("XA_PauseBeforeBanterTimer", "LOCALS")
 		Global("XA_CanTalkToNeera", "LOCALS", 1)
 		Global("XA_CanTalkToImoen2", "LOCALS", 1)
-		Global("XA_Banter_CorwinNeera", "GLOBAL", 3)
+		GlobalGT("XA_Banter_CorwinNeera", "GLOBAL", 2)
 		GlobalLT("XA_NeeraBanterBump", "LOCALS", 1)
 	THEN
 		RESPONSE #100
@@ -4167,11 +4149,10 @@ END
 		GlobalTimerExpired("XA_CorwinNeeraImoenTimer", "LOCALS")
 		Global("XA_CanTalkToNeera", "LOCALS", 1)
 		Global("XA_CanTalkToImoen2", "LOCALS", 1)
-		Global("XA_Banter_CorwinNeera", "GLOBAL", 3)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_Banter_CorwinNeera", "GLOBAL", 4)
+			SetGlobal("XA_CorwinNeeraImoen", "GLOBAL", 1)
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			Interact("Neera")
 			SetInterrupt(TRUE)
@@ -4285,6 +4266,7 @@ END
 	//}
 	
 //} End Dorn Interactions
+//}
 
 //{ Keldorn Interactions 
 
@@ -4339,13 +4321,11 @@ END
 	IF
 		ActionListEmpty()
 		Global("XA_CanTalkToKeldorn", "LOCALS", 1)
-		Global("XA_Banter_NextInteraction", "LOCALS", 9)
 		Global("XA_Banter_CorwinKeldornOpt1", "GLOBAL", 1)
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_Banter_Pending", "LOCALS", 1)
 			SetGlobal("XA_Banter_CorwinKeldornOpt1", "GLOBAL", 2)
 			SetGlobalTimer("XA_Banter_CorwinKeldornOpt1", "LOCALS", ONE_HOUR)
 			SetInterrupt(TRUE)
@@ -4355,7 +4335,6 @@ END
 	IF
 		ActionListEmpty()
 		Global("XA_CanTalkToKeldorn", "LOCALS", 1)
-		Global("XA_Banter_NextInteraction", "LOCALS", 9)
 		Global("XA_Banter_CorwinKeldornOpt1", "GLOBAL", 2)
 		GlobalTimerExpired("XA_Banter_CorwinKeldornOpt1", "LOCALS")
 		!ActuallyInCombat()
@@ -4407,7 +4386,7 @@ END
 	//{ Banter Primer
 	IF 
 		ActionListEmpty()
-		Global("XA_CanTalkToKeldorn", "LOCALS", 1)
+		Global("XA_CanTalkToKorgan", "LOCALS", 1)
 		Global("XA_Banter_NextInteraction", "LOCALS", 10) /* Korgan */
 		!Global("XA_Banter_Pending", "LOCALS", 10)
 		GlobalsGT("XA_Banter_CorwinKorganEnd", "XA_Banter_CorwinKorgan")
@@ -4989,7 +4968,6 @@ END
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobalTimer("XA_PlayerOpt1BanterTimer", "LOCALS", THREE_DAYS)
-			SetGlobal("XA_Banter_Pending", "LOCALS", 1)
 			SetGlobal("XA_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
 			SetInterrupt(TRUE)
 	END
