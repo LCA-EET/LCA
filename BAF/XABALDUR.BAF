@@ -420,6 +420,18 @@ THEN
 END
 //}
 
+//{ Cernd Baby
+IF
+	ActionListEmpty()
+	Global("CerndBaby","GLOBAL",1)
+	!InParty("XACORWIN")
+	GlobalLT("XA_CorwinCerndBaby", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CorwinCerndBaby", "GLOBAL", 1)
+		Continue()
+END
+//}
 //{ Wedding Hostilities
 IF
 	ActionListEmpty()

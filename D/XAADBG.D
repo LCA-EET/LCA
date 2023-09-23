@@ -196,6 +196,16 @@ IF ~~ THEN BEGIN XA_StatusReport
 	SAY @683
 	
 	IF ~
+		!GlobalsGT("XA_Banter_CorwinAerieEnd", "XA_Banter_CorwinAerie")
+	~ THEN REPLY @704
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinViconiaEnd", "XA_Banter_CorwinViconia")
+	~ THEN REPLY @705
+	GOTO XA_MainMenu
+	
+	IF ~
 		GlobalGT("XA_CorwinPregnant", "GLOBAL", 0)
 	~ THEN REPLY @684
 	GOTO XA_MainMenu
@@ -3591,6 +3601,12 @@ END
 
 IF ~~ THEN BEGIN XA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
+	
+	IF ~~ THEN REPLY @706
+	DO ~
+		SetGlobal("CerndBaby","GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @677
 	DO ~

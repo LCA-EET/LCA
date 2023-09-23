@@ -15,6 +15,29 @@ IF ~
 END
 //}
 
+//{ Dialog B-1
+	IF ~
+		Global("XA_CorwinAnomenTalk", "LOCALS", 1)
+	~ THEN BEGIN BCorwinAnomen1A
+		SAY @541 /* ~You've been glaring at me for the last hour Anomen. What is it?~ [XACORB20] */
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_CorwinAnomenTalk", "LOCALS", 2)
+			SetGlobal("XA_Banter_CorwinAnomenEnd", "GLOBAL", 3)	
+		~ 
+		EXIT
+		
+		IF ~
+			IsValidForPartyDialogue("Anomen")
+		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinAnomenTalk", "LOCALS", 2)
+			SetGlobal("XA_Banter_CorwinAnomenEnd", "GLOBAL", 3)	
+		~ 
+		EXTERN ANOMENJ BCorwinAnomen1A
+	END
+//}
+
 IF ~~ THEN BEGIN XA_CorwinDornConflict3
 	SAY @660 /* ~But it is. If you even think to stand in the way of our relationship, I promise that you'll regret it.~ */
 	
@@ -22,20 +45,7 @@ IF ~~ THEN BEGIN XA_CorwinDornConflict3
 	EXTERN DORNJ XA_CorwinDornConflict4
 END
 
-//{ Dialog B-1
-IF ~
-	Global("XA_Banter_CorwinAnomen", "GLOBAL", 2)
-~ THEN BEGIN BCorwinAnomen1A
-	SAY @541 /* ~You've been glaring at me for the last hour Anomen. What is it?~ [XACORB20] */
-	IF ~~ THEN
-	DO ~
-		SetGlobal("XA_Banter_CorwinAnomen", "GLOBAL", 3)
-		SetGlobal("XA_BCorwinAnomen1A", "GLOBAL", 1)
-		ActionOverride("Anomen", StartDialog("ANOMENJ", Player1))
-	~ 
-	EXIT
-END
-//}
+
 
 IF ~~ THEN BEGIN XA_ChooseDorn
 	SAY @470 /* ~To think I even considered the possibility of you and I being together. Madness. Be with Dorn, then. I want nothing more to do with you.~ [BD54533] */
@@ -1268,13 +1278,13 @@ END
 	//{ Dialog B-35
 	CHAIN
 		IF ~
-			Global("XA_Banter_CorwinCernd", "GLOBAL", 2)
+			Global("XA_CorwinCerndBaby", "GLOBAL", 2)
 			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		THEN XACORWIB BCorwinCernd1A
 			@258 /* ~Cernd, you have a beautiful child.~ [XACORB33] */
 			DO ~
-				SetGlobal("XA_Banter_CorwinCernd", "GLOBAL", 3)
+				SetGlobal("XA_CorwinCerndBaby", "GLOBAL", 3)
 			~
 			== CERNDJ
 			IF ~
@@ -1307,13 +1317,13 @@ END
 	//{ Dialog B-36
 	CHAIN
 		IF ~
-			Global("XA_Banter_CorwinCernd", "GLOBAL", 2)
+			Global("XA_CorwinCerndBaby", "GLOBAL", 2)
 			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		THEN XACORWIB BCorwinCernd1B
 			@258 /* ~Cernd, you have a beautiful child.~ [XACORB33] */
 			DO ~
-				SetGlobal("XA_Banter_CorwinCernd", "GLOBAL", 3)
+				SetGlobal("XA_CorwinCerndBaby", "GLOBAL", 3)
 			~
 			== CERNDJ
 			IF ~
@@ -1646,7 +1656,7 @@ END
 			== KORGANJ
 			@197 /* ~Aye, as is your skill with the bow. Nae hath I seen so many foes fall before I can even reach em. ~ */
 			== XACORWIB
-			@616 /*Spoken like someone who barely knows me, but I'll take what compliments I can get and do what I can not to change your mind.~ [BD34332]*/
+			@572 /*~You noticed. Good eye.~ [BD39880]*/
 			== KORGANJ
 			@198 /* ~Don't you worry my beauty. Ole Korgan will stay at the front and keep ye safe. Just leave a few for me, will ye? Me axe doth get thirsty from time to time.~ */
 			== XACORWIB
@@ -1669,6 +1679,7 @@ END
 			@114 /*  ~Never forget that I'm watching you.~ [BD67545] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinViconia", "GLOBAL", 3)
+				SetGlobalTimer("XA_ViconiaBanter2Timer", "LOCALS", ONE_DAY)
 			~ 
 			== VICONIJ
 			IF ~
@@ -1713,6 +1724,7 @@ END
 			@114 /* ~Never forget that I'm watching you.~ [BD67545] */
 			DO ~
 				SetGlobal("XA_Banter_CorwinViconia", "GLOBAL", 3)
+				SetGlobalTimer("XA_ViconiaBanter2Timer", "LOCALS", ONE_DAY)
 			~ 
 			== VICONIJ
 			IF ~
@@ -1750,11 +1762,11 @@ END
 	//{ Dialog B-47
 	CHAIN
 		IF ~
-			Global("XA_Banter_CorwinViconia", "GLOBAL", 4)
+			Global("XA_Banter_CorwinViconiaDay", "LOCALS", 1)
 		~ THEN XACORWIB BCorwinViconia2
 			@416 /* ~Light and warmth... I'm glad for both.~ [BD68278] */
 			DO ~
-				SetGlobal("XA_Banter_CorwinViconia", "GLOBAL", 5)
+				SetGlobal("XA_Banter_CorwinViconiaDay", "LOCALS", 2)
 			~ 
 			== VICONIJ
 			@417 /* ~I'm glad someone is. The warmth I don't mind, but I'll never understand how you surfacers can enjoy being bathed in this blinding light.~ */
@@ -1784,13 +1796,13 @@ END
 	//{ Dialog B-48
 	CHAIN
 		IF ~
-			Global("XA_Banter_CorwinViconia", "GLOBAL", 6)
+			Global("XA_Banter_CorwinViconiaCity", "GLOBAL", 1)
 		~ THEN VICONIJ BCorwinViconia3
 			@559 /* ~These human cities make me want to scream.~ [XACORB64] */
 			== XACORWIB
 			@424 /* ~What was that?~ */
 			DO ~
-				SetGlobal("XA_Banter_CorwinViconia", "GLOBAL", 7)
+				SetGlobal("XA_Banter_CorwinViconiaCity", "GLOBAL", 2)
 			~ 
 			== VICONIJ
 			@425 /* ~The filth, the stench, the rabble - how can you stand it!?~ */
@@ -2438,15 +2450,31 @@ END
 
 //{ Anomen Banters
 	
+	//{ Continuation of B-1
+	CHAIN
+	IF ~~ THEN XACORWIB BCorwinAnomen1B
+		@54 /* ~You think I don't want to be home with my daughter and father? ~ [XACORB60]*/
+		= @55 /* ~I'm here to fulfil my duties to <CHARNAME>, the Grand Dukes, and the Flaming Fist. If you knew anything about duty or responsibility, you would understand.~ */
+		== ANOMENJ
+		@547 /* ~Why even join the Flaming Fist? You willingly put your daughter at risk of becoming an orphan!~ */
+		== XACORWIB
+		@56 /* ~We don't all grow up in wealthy households. Some of us have to work to support their family, instead of playing dress up as a knight in shining armor.~ */
+		== ANOMENJ
+		@548 /* ~I beg your pardon?~  */
+		== XACORWIB
+		@57 /* ~I think you heard me quite clearly. Let's move out.~ [XACORB21] */
+	EXIT
+	//}
+	
 	//{ Dialog B-67
 	CHAIN
 		IF ~
-			Global("XA_Banter_CorwinAnomen", "GLOBAL", 4)
+			Global("XA_Banter_CorwinAnomen", "GLOBAL", 2)
 			!Global("XA_CorwinHatesAnomen", "GLOBAL", 1)
 		~ THEN XACORWIB BCorwinAnomen2
 			@174 /* ~Anomen. What is it?~ [XACORB02] */
 			DO ~
-				SetGlobal("XA_Banter_CorwinAnomen", "GLOBAL", 5)
+				SetGlobal("XA_Banter_CorwinAnomen", "GLOBAL", 3)
 			~ 
 			== ANOMENJ
 			IF ~
@@ -2465,8 +2493,6 @@ END
 			== ANOMENJ
 			@167 /* ~They are fortunate to have you among their ranks. Your skill in battle is among the best I have seen, as is your ability to lead.~*/
 			== XACORWIB
-			@193 /* ~You noticed. Good eye.~ [BD39880] */
-			=
 			@170 /* = ~I too must aplogize. My family isn't wealthy. As much as I want to be home with my father and daughter, I need to work to support them.~ */
 			=
 			@171 /* = ~I have certain... pre-conceptions about people who come from wealth. It was unfair of me to apply them to you.~ */
@@ -2479,22 +2505,7 @@ END
 	EXIT
 	//}
 
-	//{ Continuation Chains
-	CHAIN
-	IF ~~ THEN XACORWIB BCorwinAnomen1B
-		@54 /* ~You think I don't want to be home with my daughter and father? ~ [XACORB60]*/
-		= @55 /* ~I'm here to fulfil my duties to <CHARNAME>, the Grand Dukes, and the Flaming Fist. If you knew anything about duty or responsibility, you would understand.~ */
-		== ANOMENJ
-		@547 /* ~Why even join the Flaming Fist? You willingly put your daughter at risk of becoming an orphan!~ */
-		== XACORWIB
-		@56 /* ~We don't all grow up in wealthy households. Some of us have to work to support their family, instead of playing dress up as a knight in shining armor.~ */
-		== ANOMENJ
-		@548 /* ~I beg your pardon?~  */
-		== XACORWIB
-		@57 /* ~I think you heard me quite clearly. Let's move out.~ [XACORB21] */
-	EXIT
-	//}
-	
+
 //}
 
 //{ Jaheira Banters

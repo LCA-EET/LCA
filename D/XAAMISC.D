@@ -2683,23 +2683,15 @@ APPEND ANOMENJ
 		EXTERN XADIVINE XA_AskAway
 	END
 	
-	IF ~
-		Global("XA_BCorwinAnomen1A", "GLOBAL", 1)
-	~ THEN BEGIN BCorwinAnomen1A
+	IF ~~ THEN BEGIN BCorwinAnomen1A
 		SAY @187 /* ~A mother's place is at home with her child, not on the battlefield.~ */
 	
 		= @188 /* ~You're a poor example of a parent.~ */
 		
 		IF ~~ THEN REPLY @189 /* ~You're out of line Anomen. Knock it off.~ */
-		DO ~
-			SetGlobal("XA_BCorwinAnomen1A", "GLOBAL", 2)
-		~
 		EXTERN XACORWIB BCorwinAnomen1B
 		
 		IF ~~ THEN REPLY @190 /* ~(Remain silent)~ */
-		DO ~
-			SetGlobal("XA_BCorwinAnomen1A", "GLOBAL", 2)
-		~
 		EXTERN XACORWIB BCorwinAnomen1B
 		
 		IF ~
@@ -2707,7 +2699,6 @@ APPEND ANOMENJ
 			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @191 /* ~You know little of what you speak. Captain Corwin is a fine mother.~ */
 		DO ~
-			SetGlobal("XA_BCorwinAnomen1A", "GLOBAL", 2)
 			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		EXTERN XACORWIB BCorwinAnomen1B
@@ -2717,7 +2708,6 @@ APPEND ANOMENJ
 			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @192 /* ~You know little of what you speak. Major Corwin is a fine mother.~ */
 		DO ~
-			SetGlobal("XA_BCorwinAnomen1A", "GLOBAL", 2)
 			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		EXTERN XACORWIB BCorwinAnomen1B
@@ -2726,7 +2716,6 @@ APPEND ANOMENJ
 			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @228 /* ~You know little of what you speak. Schael is a fine mother.~ */
 		DO ~
-			SetGlobal("XA_BCorwinAnomen1A", "GLOBAL", 2)
 			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		EXTERN XACORWIB BCorwinAnomen1B
