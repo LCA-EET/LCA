@@ -40,7 +40,6 @@ END
 //{ Dialog B-101
 IF ~
 	Global("XA_Banter_CaelarPlayer", "GLOBAL", 2)
-	Global("XA_CaelarBanterDelay", "GLOBAL", 2)
 ~ THEN BEGIN XA_CaelarPlayerBanter1Chain
 	SAY @120 /* ~<CHARNAME>, a moment if I may. What happened after I stayed behind in Avernus? To you, I mean. Your power has grown significantly since I first saw you at the Coast Way Crossing.~*/
 	
@@ -49,7 +48,6 @@ IF ~
 	~ THEN REPLY @89 /* ~That's going to take a while... (Explain what happened after the events of Dragonspear.)~ */
 	DO ~
 		SetGlobal("XA_Banter_CaelarPlayer", "GLOBAL", 3)
-		SetGlobal("XA_CaelarBanterDelay", "GLOBAL", 3)
 	~
 	GOTO XA_ExplainTrial_NR
 	
@@ -58,63 +56,16 @@ IF ~
 	~ THEN REPLY @89 /* ~That's going to take a while... (Explain what happened after the events of Dragonspear.)~ */
 	DO ~
 		SetGlobal("XA_Banter_CaelarPlayer", "GLOBAL", 3)
-		SetGlobal("XA_CaelarBanterDelay", "GLOBAL", 3)
 	~
 	GOTO XA_ExplainTrial_R
 	
 	IF ~~ THEN REPLY @102 /*~I'd rather not discuss it.~*/
 	DO ~
 		SetGlobal("XA_Banter_CaelarPlayer", "GLOBAL", 3)
-		SetGlobal("XA_CaelarBanterDelay", "GLOBAL", 3)
 	~
 	GOTO XA_NoDiscuss
 END
 //}
-
-//{ Dialog B-100
-IF ~
-	Global("XA_Banter_CaelarPlayer", "GLOBAL", 2)
-	GlobalLT("XA_CaelarBanterDelay", "GLOBAL", 1)
-~ THEN BEGIN XA_CaelarPlayerBanter1Chain
-	SAY @84 /*~<CHARNAME> — Do you have a few minutes? I've been meaning to talk to you about something.~*/
-	
-	IF ~~ THEN REPLY @85 /*~What's on your mind?~*/
-	DO ~
-		SetGlobal("XA_Banter_CaelarPlayer", "GLOBAL", 3)
-	~
-	GOTO XA_CaelarPlayerBanter1_2
-	
-	IF ~~ THEN REPLY @86 /*~Not now.~*/
-	GOTO XA_CaelarPlayerBanter1_Delay
-END
-
-IF ~~ THEN BEGIN XA_CaelarPlayerBanter1_Delay
-	SAY @87 /* ~I see. Later, then. Let's get moving.~ */
-	
-	IF ~~ THEN 
-	DO ~
-		SetGlobal("XA_CaelarBanterDelay", "GLOBAL", 1)
-		SetGlobalTimer("XA_BanterDelayTimer", "GLOBAL", ONE_DAY)
-	~
-	EXIT
-END
-
-IF ~~ THEN BEGIN XA_CaelarPlayerBanter1_2
-	SAY @88 /* ~What happened after I stayed behind in Avernus? To you, I mean. Your power has grown significantly since I first saw you at the Coast Way Crossing.~*/
-	
-	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @89 /* ~That's going to take a while... (Explain what happened after the events of Dragonspear.)~ */
-	GOTO XA_ExplainTrial_NR
-	
-	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @89 /* ~That's going to take a while... (Explain what happened after the events of Dragonspear.)~ */
-	GOTO XA_ExplainTrial_R
-	
-	IF ~~ THEN REPLY @102 /*~I'd rather not discuss it.~*/
-	GOTO XA_NoDiscuss
-END
 
 IF ~~ THEN BEGIN XA_ExplainTrial_R
 	SAY @94 /*~(You tell her how you were framed for the murder of Skie, your trial, and how you and Schael were forced apart because of your exile.)~*/
@@ -389,11 +340,11 @@ EXIT
 
 //{ Dialog B-96
 CHAIN IF ~
-	Global("XA_Banter_CaelarDorn", "GLOBAL", 2)
+	Global("XA_DornProposal", "GLOBAL", 1)
 ~ THEN DORNJ XA_CaelarDornBanter1Chain
 	@56 /*~Caelar...~*/
 	DO ~
-		SetGlobal("XA_Banter_CaelarDorn", "GLOBAL", 3)
+		SetGlobal("XA_DornProposal", "GLOBAL", 2)
 	~
 	== XACAELAB
 	@46 /*~Out with it, blackguard.~*/

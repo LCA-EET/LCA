@@ -173,6 +173,12 @@ IF ~
 	~
 	EXIT
 	
+	IF ~~ THEN REPLY @708 /* Reset Caelar's Banters. */
+	DO ~
+		SetGlobal("XA_ResetCaelarBanters", "GLOBAL", 1)
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @152 /* Play Chapter Movie. */
 	GOTO XA_Menu_ChapterMovie
 	
@@ -4972,6 +4978,13 @@ IF ~~ THEN BEGIN XA_Menu_AddCharacter
 	DO ~
 		CreateCreature("ANOMEN9", [-1.-1], S)
 		ActionOverride("Anomen", JoinParty()) 
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @707 /* ~Caelar (XACAELAR.CRE)~ */
+	DO ~
+		CreateCreature("XACAELAR", [-1.-1], S)
+		SetGlobal("XA_CaelarRejoinProcessed", "GLOBAL", 1)
 	~
 	GOTO XA_MainMenu
 	
