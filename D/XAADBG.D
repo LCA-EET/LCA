@@ -8,6 +8,12 @@ IF ~
 	IF ~~ THEN REPLY @683
 	GOTO XA_StatusReport
 	
+	IF ~~ THEN REPLY @709
+	DO ~
+		SetGlobal("XA_CorwinHexxatFight", "GLOBAL", 1)
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @624
 	DO ~
 		CreateCreatureObjectCopy("statue01",Player1Fill,0,0,0)  // Magical Sword

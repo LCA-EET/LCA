@@ -1503,30 +1503,6 @@ END
 
 //{ 18: Event Checks
 
-	//{ Hexxat Corwin Fight
-	IF 
-		Global("XA_CanTalkToHexxat", "LOCALS", 1)
-		Global("XA_CorwinHexxatFight", "GLOBAL", 1)
-	THEN
-		RESPONSE #100
-			////DisplayStringHead(Myself, ~DEBUG_135~)
-			SetInterrupt(FALSE)
-			LeaveParty()
-			SetLeavePartyDialogFile()
-			ChangeAIScript("",DEFAULT)
-			ChangeAIScript("",OVERRIDE)
-			ChangeAIScript("XACORHEX",SPECIFICS)
-			
-			ActionOverride("Hexxat", LeaveParty())
-			ActionOverride("Hexxat", SetLeavePartyDialogFile())
-			ActionOverride("Hexxat", ChangeAIScript("",DEFAULT))
-			ActionOverride("Hexxat", ChangeAIScript("useitem",GENERAL))
-			ActionOverride("Hexxat", ChangeAIScript("XAHEXCOR",SPECIFICS))
-			
-			SetInterrupt(TRUE)
-	END
-	//}
-
 	//{ Killed Wraith
 	IF
 		Global("XA_RohmaWraith", "GLOBAL", 1)
@@ -5444,6 +5420,7 @@ END
 		GlobalTimerExpired("XA_CorwinNeeraImoenTimer", "LOCALS")
 		Global("XA_CanTalkToNeera", "LOCALS", 1)
 		Global("XA_CanTalkToImoen2", "LOCALS", 1)
+		GlobalLT("XA_CorwinNeeraImoen", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)

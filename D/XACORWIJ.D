@@ -7142,11 +7142,13 @@ IF ~
 	InParty(Myself)
 	Global("XA_CorwinHexxat", "GLOBAL", 5)
 	IsValidForPartyDialogue("Hexxat")
-	OR(4)
+	OR(6)
 		IsValidForPartyDialogue("Mazzy")
 		IsValidForPartyDialogue("Anomen")
 		IsValidForPartyDialogue("Aerie")
 		IsValidForPartyDialogue("Keldorn")
+		IsValidForPartyDialogue("XACAELAR")
+		IsValidForPartyDialogue("Jaheira")
 ~ THEN BEGIN XA_CorwinHexxat3
 	SAY @137 /* ~Your time has come, vampire. Allies, to me! Let's rid ourselves of this beast once and for all! ~ */
 	
@@ -7168,6 +7170,7 @@ IF ~
 	!IsValidForPartyDialogue("Anomen")
 	!IsValidForPartyDialogue("Aerie")
 	!IsValidForPartyDialogue("Keldorn")
+	!IsValidForPartyDialogue("XACAELAR")
 ~ THEN BEGIN XA_CorwinHexxat3
 	SAY @138 /* ~Your time has come, vampire. Draw steel! ~ */
 	

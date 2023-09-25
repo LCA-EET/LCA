@@ -573,29 +573,32 @@ THEN
 END
 
 IF
-	!Detect("hexxat")  // Hexxat
+	Global("XA_HexxatLostFight", "GLOBAL", 1)
 	Name("XACORWIN", Myself)
-	Global("XA_CorwinHexxatFight", "GLOBAL", 1)
+	Global("XA_CorwinHexxatFight", "GLOBAL", 2)
 	!ActuallyInCombat()
 THEN
 	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_CorwinHexxatFight", "GLOBAL", 3)
+		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
 		ChangeAIScript("XACORSCR",OVERRIDE)
 		ChangeAIScript("BDFIGH01",GENERAL)
 		ChangeAIScript("",SPECIFICS)
-		SetGlobal("XA_CorwinHexxatFight", "GLOBAL", 2)
-		DestroyItem("ohhbag") 
-		JoinParty()
+		SetInterrupt(TRUE)
 END
 
 IF
-	!Detect("hexxat")  // Hexxat
+	Global("XA_HexxatLostFight", "GLOBAL", 1)
 	Global("XA_HostileHexxat", "LOCALS", 2)
 	!ActuallyInCombat()
 THEN
 	RESPONSE #100
-		ChangeAIScript("",GENERAL)
-		ChangeAIScript("",SPECIFICS)
+		SetInterrupt(FALSE)
 		SetGlobal("XA_HostileHexxat", "LOCALS", 3)
 		JoinParty()
+		ChangeAIScript("",GENERAL)
+		ChangeAIScript("",SPECIFICS)
+		SetInterrupt(TRUE)
 END
 

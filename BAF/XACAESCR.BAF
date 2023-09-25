@@ -15,6 +15,25 @@ THEN
 END
 //}
 
+//{ Hexxat Fight
+IF 
+	HPGT(Myself, 0)
+	InParty(Myself)
+	GlobalLT("XA_HostileHexxat", "LOCALS", 1)
+	Global("XA_CorwinHexxatFight", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_HostileHexxat", "LOCALS", 1)
+		LeaveParty()
+		SetLeavePartyDialogFile()
+		ChangeAIScript("",DEFAULT)
+		ChangeAIScript("useitem",GENERAL)
+		ChangeAIScript("XACORHEX",SPECIFICS)
+		SetInterrupt(TRUE)
+END
+//}
+
 //{ Can Talk Check
 IF 
 	Global("XA_CanTalk", "LOCALS", 1)

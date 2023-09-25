@@ -1,3 +1,162 @@
+//{ Hexxat Fight - LCA
+
+	//{ Corwin / Hexxat Leave
+	IF 
+		Global("XA_CorwinHexxatFight", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			////DisplayStringHead(Myself, ~DEBUG_135~)
+			SetInterrupt(FALSE)
+			SetGlobal("XA_CorwinHexxatFight", "GLOBAL", 2)
+			ActionOverride("XACORWIN", LeaveParty())
+			ActionOverride("XACORWIN", SetLeavePartyDialogFile())
+			ActionOverride("XACORWIN", ChangeAIScript("",DEFAULT))
+			ActionOverride("XACORWIN", ChangeAIScript("",OVERRIDE))
+			ActionOverride("XACORWIN", Attack("Hexxat"))
+			
+			ActionOverride("Hexxat", LeaveParty())
+			ActionOverride("Hexxat", SetLeavePartyDialogFile())
+			ActionOverride("Hexxat", ChangeAIScript("",DEFAULT))
+			ActionOverride("Hexxat", ChangeAIScript("useitem",GENERAL))
+			ActionOverride("Hexxat", Attack("XACORWIN"))
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		Global("XA_CorwinHexxatFight", "GLOBAL", 1)
+		InParty("Aerie")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_AerieFightHexxat", "GLOBAL", 1)
+			ActionOverride("Aerie", LeaveParty())
+			ActionOverride("Aerie", SetLeavePartyDialogFile())
+			ActionOverride("Aerie", ChangeAIScript("",DEFAULT))
+			ActionOverride("Aerie", ChangeAIScript("",OVERRIDE))
+			ActionOverride("Aerie", Attack("Hexxat"))
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		Global("XA_CorwinHexxatFight", "GLOBAL", 1)
+		InParty("Keldorn")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_KeldornFightHexxat", "GLOBAL", 1)
+			ActionOverride("Keldorn", LeaveParty())
+			ActionOverride("Keldorn", SetLeavePartyDialogFile())
+			ActionOverride("Keldorn", ChangeAIScript("",DEFAULT))
+			ActionOverride("Keldorn", ChangeAIScript("",OVERRIDE))
+			ActionOverride("Keldorn", Attack("Hexxat"))
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		Global("XA_CorwinHexxatFight", "GLOBAL", 1)
+		InParty("Mazzy")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_MazzyFightHexxat", "GLOBAL", 1)
+			ActionOverride("Mazzy", LeaveParty())
+			ActionOverride("Mazzy", SetLeavePartyDialogFile())
+			ActionOverride("Mazzy", ChangeAIScript("",DEFAULT))
+			ActionOverride("Mazzy", ChangeAIScript("",OVERRIDE))
+			ActionOverride("Mazzy", Attack("Hexxat"))
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		Global("XA_CorwinHexxatFight", "GLOBAL", 1)
+		InParty("Jaheira")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_JaheiraFightHexxat", "GLOBAL", 1)
+			ActionOverride("Jaheira", LeaveParty())
+			ActionOverride("Jaheira", SetLeavePartyDialogFile())
+			ActionOverride("Jaheira", ChangeAIScript("",DEFAULT))
+			ActionOverride("Jaheira", ChangeAIScript("",OVERRIDE))
+			ActionOverride("Jaheira", Attack("Hexxat"))
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		Global("XA_CorwinHexxatFight", "GLOBAL", 1)
+		InParty("XACAELAR")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_CaelarFightHexxat", "GLOBAL", 1)
+			ActionOverride("XACAELAR", LeaveParty())
+			ActionOverride("XACAELAR", SetLeavePartyDialogFile())
+			ActionOverride("XACAELAR", ChangeAIScript("",DEFAULT))
+			ActionOverride("XACAELAR", ChangeAIScript("",OVERRIDE))
+			ActionOverride("XACAELAR", Attack("Hexxat"))
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		Global("XA_CorwinHexxatFight", "GLOBAL", 1)
+		InParty("Anomen")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_AnomenFightHexxat", "GLOBAL", 1)
+			ActionOverride("Anomen", LeaveParty())
+			ActionOverride("Anomen", SetLeavePartyDialogFile())
+			ActionOverride("Anomen", ChangeAIScript("",DEFAULT))
+			ActionOverride("Anomen", ChangeAIScript("",OVERRIDE))
+			ActionOverride("Anomen", Attack("Hexxat"))
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	
+	//}
+
+IF
+	HPPercentLT("hexxat",5)
+	Global("XA_CorwinHexxatFight", "GLOBAL", 2)
+	GlobalLT("XA_HexxatLostFight", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_HexxatLostFight", "GLOBAL", 1)
+		SetGlobal("OHH_hexxatfightdead","GLOBAL",1)
+		SetGlobal("XA_CorwinHexxatFight", "GLOBAL", 3)
+		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+		ActionOverride(Player1,DestroyItem("ohhbag"))  // Dragomir's Respite
+		ActionOverride(Player2,DestroyItem("ohhbag"))  // Dragomir's Respite
+		ActionOverride(Player3,DestroyItem("ohhbag"))  // Dragomir's Respite
+		ActionOverride(Player4,DestroyItem("ohhbag"))  // Dragomir's Respite
+		ActionOverride(Player5,DestroyItem("ohhbag"))  // Dragomir's Respite
+		ActionOverride(Player6,DestroyItem("ohhbag"))  // Dragomir's Respite
+		ActionOverride("hexxat", DestroySelf())
+		SetInterrupt(TRUE)
+END
+
+IF
+	Dead("XACORWIN")
+	Global("XA_CorwinHexxatFight", "GLOBAL", 2)
+	GlobalLT("XA_CorwinLostFight", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_CorwinLostFight", "GLOBAL", 1)
+		SetGlobal("XA_CorwinHexxatFight", "GLOBAL", 3)
+		ActionOverride("hexxat", JoinParty())
+		SetInterrupt(TRUE)
+END
+//}
+
 IF
 	GlobalGT("L#2SkieDagger","GLOBAL",30)
 	GlobalLT("XA_PromptToSendLetter", "GLOBAL", 1)
