@@ -118,43 +118,124 @@
 			SetInterrupt(TRUE)
 			Continue()
 	END
-	
-	
 	//}
 
-IF
-	HPPercentLT("hexxat",5)
-	Global("XA_CorwinHexxatFight", "GLOBAL", 2)
-	GlobalLT("XA_HexxatLostFight", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_HexxatLostFight", "GLOBAL", 1)
-		SetGlobal("OHH_hexxatfightdead","GLOBAL",1)
-		SetGlobal("XA_CorwinHexxatFight", "GLOBAL", 3)
-		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
-		ActionOverride(Player1,DestroyItem("ohhbag"))  // Dragomir's Respite
-		ActionOverride(Player2,DestroyItem("ohhbag"))  // Dragomir's Respite
-		ActionOverride(Player3,DestroyItem("ohhbag"))  // Dragomir's Respite
-		ActionOverride(Player4,DestroyItem("ohhbag"))  // Dragomir's Respite
-		ActionOverride(Player5,DestroyItem("ohhbag"))  // Dragomir's Respite
-		ActionOverride(Player6,DestroyItem("ohhbag"))  // Dragomir's Respite
-		ActionOverride("hexxat", DestroySelf())
-		SetInterrupt(TRUE)
-END
+	//{ Corwin / Hexxat Re-join After Battle
+	IF
+		HPPercentLT("hexxat",5)
+		Global("XA_CorwinHexxatFight", "GLOBAL", 2)
+		GlobalLT("XA_HexxatLostFight", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_HexxatLostFight", "GLOBAL", 1)
+			SetGlobal("OHH_hexxatfightdead","GLOBAL",1)
+			SetGlobal("XA_CorwinHexxatFight", "GLOBAL", 3)
+			SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+			ActionOverride(Player1,DestroyItem("ohhbag"))  // Dragomir's Respite
+			ActionOverride(Player2,DestroyItem("ohhbag"))  // Dragomir's Respite
+			ActionOverride(Player3,DestroyItem("ohhbag"))  // Dragomir's Respite
+			ActionOverride(Player4,DestroyItem("ohhbag"))  // Dragomir's Respite
+			ActionOverride(Player5,DestroyItem("ohhbag"))  // Dragomir's Respite
+			ActionOverride(Player6,DestroyItem("ohhbag"))  // Dragomir's Respite
+			ActionOverride("hexxat", DestroySelf())
+			SetInterrupt(TRUE)
+	END
 
-IF
-	Dead("XACORWIN")
-	Global("XA_CorwinHexxatFight", "GLOBAL", 2)
-	GlobalLT("XA_CorwinLostFight", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_CorwinLostFight", "GLOBAL", 1)
-		SetGlobal("XA_CorwinHexxatFight", "GLOBAL", 3)
-		ActionOverride("hexxat", JoinParty())
-		SetInterrupt(TRUE)
-END
+	IF
+		Dead("XACORWIN")
+		Global("XA_CorwinHexxatFight", "GLOBAL", 2)
+		GlobalLT("XA_CorwinLostFight", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_CorwinLostFight", "GLOBAL", 1)
+			SetGlobal("XA_CorwinHexxatFight", "GLOBAL", 3)
+			ActionOverride("hexxat", JoinParty())
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Party Members Re-join After Battle
+	IF
+		Global("XA_CorwinHexxatFight", "GLOBAL", 3)
+		Global("XA_AerieFightHexxat", "GLOBAL", 1)
+		InMyArea("Aerie")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_AerieFightHexxat", "GLOBAL", 2)
+			ActionOverride("Aerie", JoinParty())
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		Global("XA_CorwinHexxatFight", "GLOBAL", 3)
+		Global("XA_AnomenFightHexxat", "GLOBAL", 1)
+		InMyArea("Anomen")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_AnomenFightHexxat", "GLOBAL", 2)
+			ActionOverride("Anomen", JoinParty())
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		Global("XA_CorwinHexxatFight", "GLOBAL", 3)
+		Global("XA_KeldornFightHexxat", "GLOBAL", 1)
+		InMyArea("Keldorn")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_KeldornFightHexxat", "GLOBAL", 2)
+			ActionOverride("Keldorn", JoinParty())
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		Global("XA_CorwinHexxatFight", "GLOBAL", 3)
+		Global("XA_JaheiraFightHexxat", "GLOBAL", 1)
+		InMyArea("Jaheira")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_JaheiraFightHexxat", "GLOBAL", 2)
+			ActionOverride("Jaheira", JoinParty())
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		Global("XA_CorwinHexxatFight", "GLOBAL", 3)
+		Global("XA_MazzyFightHexxat", "GLOBAL", 1)
+		InMyArea("Mazzy")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_MazzyFightHexxat", "GLOBAL", 2)
+			ActionOverride("Mazzy", JoinParty())
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		Global("XA_CorwinHexxatFight", "GLOBAL", 3)
+		Global("XA_CaelarFightHexxat", "GLOBAL", 1)
+		InMyArea("XACAELAR")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_CaelarFightHexxat", "GLOBAL", 2)
+			ActionOverride("XACAELAR", JoinParty())
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	//}
 //}
 
 IF

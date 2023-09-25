@@ -1,7 +1,0 @@
-IF
-	True()
-THEN
-	RESPONSE #100
-		DisplayStringHead(Player1, ~BDBALDUR~)
-		Continue()
-END
