@@ -1503,6 +1503,21 @@ END
 
 //{ 18: Event Checks
 
+	//{ Killed General
+	IF
+		Dead("amtgen01")
+		GlobalLT("XA_GeneralDeadTalk", "LOCALS", 1)
+		!ActuallyInCombat()
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_GeneralDeadTalk", "LOCALS", 1)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
 	//{ Killed Wraith
 	IF
 		Global("XA_RohmaWraith", "GLOBAL", 1)

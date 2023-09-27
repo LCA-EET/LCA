@@ -1,4 +1,5 @@
 IF
+	GlobalGT("METBAL","GLOBAL",0)
 	GlobalLT("XA_LathanderEncounterTimerSet", "GLOBAL", 1)
 	OR(2)
 		PartyHasItem("XABENOHD")
@@ -15,11 +16,20 @@ IF
 	GlobalLT("XA_LathSpawn", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		CreateCreature("XALATH01", [3700.2470], NW)
-		CreateCreature("XALATH02", [3640.2640], NW)
-		CreateCreature("XALATH03", [3660.2570], NW)
+
 		SetGlobal("XA_LathSpawn", "GLOBAL", 1)
 		Continue()
+END
+
+IF
+	Global("XA_LathSpawn", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("XALATH01", [2665.1445], NW)
+		CreateCreature("XALATH02", [2705.1455], NW)
+		CreateCreature("XALATH03", [2545.1412], E)
+		//DisplayStringHead("XACORWIN", ~Spawned~)
+		SetGlobal("XA_LathSpawn", "GLOBAL", 2)
 END
 
 IF 
@@ -33,4 +43,5 @@ THEN
 		ActionOverride("XALATH01", DestroySelf())
 		ActionOverride("XALATH02", DestroySelf())
 		ActionOverride("XALATH03", DestroySelf())
+		//DisplayStringHead("XACORWIN", ~Destroyed~)
 END

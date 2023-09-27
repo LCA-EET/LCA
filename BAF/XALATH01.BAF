@@ -1,11 +1,4 @@
-IF
-	ActionListEmpty()
-	GlobalLT("XA_LathMetPlayer", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		MoveToPoint([2000.1280])
-		Continue()
-END
+
 
 IF 
 	See(Player1)

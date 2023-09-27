@@ -1887,7 +1887,7 @@ END
 IF ~
 	Global("XA_MessageToBG", "GLOBAL", 1)
 	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-	GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
+	GlobalGT("XA_CorwinPregnant", "GLOBAL", 4)
 ~ THEN BEGIN XA_AmkethranCourier_Pregnant
 	SAY @1596 /* ~Listen — we need to provide a status update to the Dukes. They'll want to know that the fire giants have been dealt with, and they'll need my assessment of the threat posed by the remaining members of the Five. I also need to let my family know that we're fine ... and that I'm with child.~*/
 	
@@ -1922,7 +1922,7 @@ END
 IF ~
 	Global("XA_MessageToBG", "GLOBAL", 1)
 	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-	GlobalLT("XA_CorwinPregnant", "GLOBAL", 3)
+	GlobalLT("XA_CorwinPregnant", "GLOBAL", 5)
 ~ THEN BEGIN XA_AmkethranCourier_Romance
 	SAY @1595 /* ~Listen — we need to provide a status update to the Dukes. They'll want to know that the fire giants have been dealt with, and they'll need an assessment of the threat posed by the remaining members of the Five. I also need to let my family know that we're fine ...~ */
 	
@@ -3359,6 +3359,10 @@ IF ~
 ~ THEN BEGIN XA_CorwinKillBenoLastWords
 	SAY @1184 /* ~Any last words?~ */
 	
+	
+	IF ~~ THEN
+	EXTERN XABENO2 XA_CorwinKillBenoChain
+	/*
 	IF ~
 		GlobalLT("XA_CorwinOpinionOfPlayer", "GLOBAL", 110)
 	~ THEN 
@@ -3376,6 +3380,7 @@ IF ~
 		SetGlobal("XA_CorwinKillBeno", "GLOBAL", 2)
 	~
 	EXTERN XABENO2 XA_CorwinMercyBenoChain
+	*/
 END
 
 IF ~~ THEN XA_CorwinKillBenoChainEnd
@@ -10352,7 +10357,40 @@ IF ~~ THEN BEGIN XA_RohmaWraithChain_END
 END
 //}
 
+IF ~~ THEN BEGIN XA_GeneralTalk_ChainEnd
+	SAY @1803 /*~I hoped to talk you out of this madness, but I see words alone won't get this job done. All right then. Let's go.~ [BD39627]*/
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("TethyrBattleStart","GLOBAL",1)
+		ActionOverride("amtgen01", Enemy())
+		ActionOverride("amtgen01", Shout(ALERT))
+	~
+	EXIT
+END
 
+IF ~
+	Global("XA_GeneralDeadTalk", "LOCALS", 1)
+~ THEN BEGIN XA_GeneralDeadTalk
+	SAY @1804 /*~This is bad. We better get out of here before the Tethyrian reinforcements arrive. Let's go.~*/
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_GeneralDeadTalk", "LOCALS", 2)
+	~
+	EXIT
+END
+
+CHAIN
+	IF ~~ THEN XACORWIJ XA_GeneralTalk_Chain
+		@1799 /* ~Peace, General. I'm Major Schael Corwin of the Baldur's Gate Flaming Fist, assisting <CHARNAME> on a special assignment. The Grand Dukes have ordered —~*/
+		== AMTGEN01
+		@1800 /* ~The Flaming Fist and the Grand Dukes, in league with a Bhaalspawn? Did I hear you correctly?~*/
+		== XACORWIJ
+		@1801 /* ~We are hunting the members of an organization known as The Five. I can assure you that <CHARNAME> is innocent of the crimes you describe.~*/
+		== AMTGEN01
+		@1802 /* ~It matters not, I'm afraid. My orders were clear. <CHARNAME>, and any who travel with <PRO_HIMHER>, are to be put to be executed. May the gods have mercy on your soul.~*/
+END XACORWIJ XA_GeneralTalk_ChainEnd
 
 CHAIN 
 	IF ~~ THEN XACORWIJ XA_CorwinTiannaGoodbyeChain

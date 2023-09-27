@@ -1610,8 +1610,8 @@ Major Corwin offered me some valuable parenting advice, which I gladly accepted.
 @1592 = ~Of course.~
 @1593 = ~What do you suggest we do?~
 @1594 = ~This town might have a message courier we can use. Let's have a look around.~
-@1595 = ~Listen — we need to provide a status update to the Dukes. They'll want to know that the fire giants have been dealt with, and they'll need my report on what we've learned concerning the Five. I also need to let my family know that we're fine...~
-@1596 = ~Listen — we need to provide a status update to the Dukes. They'll want to know that the fire giants have been dealt with, and they'll need my report on what we've learned concerning the Five. I also need to let my family know that we're fine... and that I'm with child.~
+@1595 = ~Listen — we need to provide an update to the Dukes. They'll want to know that the fire giants have been dealt with, and they'll need my report on what we've learned concerning the Five. They also need to know about what transpired in the oasis... hopefully, things can be smoothed over with the Tethyrian royals. I also need to let my family know that we're fine...~
+@1596 = ~Listen — we need to provide an update to the Dukes. They'll want to know that the fire giants have been dealt with, and they'll need my report on what we've learned concerning the Five. They also need to know about what transpired in the oasis... hopefully, things can be smoothed over with the Tethyrian royals. I also need to let my family know that we're fine... and that I'm with child.~
 @1597 = ~Of course, love.~
 @1598 = ~How do you think your father will take the news? And Rohma?~
 @1599 = ~Rohma will be thrilled, and I know she'll be a wonderful big sister to our baby. As for my father ... he'll be happy to have another grandchild, certainly, but he's going to have some stern words for me when I get back.~ 
@@ -1818,3 +1818,9 @@ I proposed to Schael, and she accepted! We're to be married!~
 Marshal Nederlok of the Baldur's Gate Flaming Fist was pleased to hear of Neb's demise in the sewers beneath the city.~
 @1797 = ~I see. After you, my dear.~
 @1798 = ~I see. After you, Captain.~
+@1799 = ~Peace, General. I'm Major Schael Corwin of the Baldur's Gate Flaming Fist, assisting <CHARNAME> on a special assignment. The Grand Dukes have ordered —~
+@1800 = ~The Flaming Fist and the Grand Dukes, in league with a Bhaalspawn? Did I hear you correctly?~
+@1801 = ~Yes sir. We are hunting the members of an organization known as The Five. I can assure you that <CHARNAME> is innocent of the crimes you describe.~
+@1802 = ~My orders are clear. <CHARNAME>, and any who travel with <PRO_HIMHER>, are to be executed on sight. May the gods have mercy on your soul.~
+@1803 = ~I hoped to talk you out of this madness, but I see words alone won't get this job done. All right then. Let's go.~ [BD39627]
+@1804 = ~This is bad. We better get out of here before the Tethyrian reinforcements arrive. Let's go.~

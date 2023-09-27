@@ -208,6 +208,16 @@ IF ~~ THEN BEGIN XA_StatusReport
 	SAY @683
 	
 	IF ~
+		Global("XA_BenoBoom", "GLOBAL", 0)
+	~ THEN REPLY @713
+	GOTO XA_MainMenu
+	
+	IF ~
+		GlobalGT("XA_BenoBoom", "GLOBAL", 0)
+	~ THEN REPLY @712
+	GOTO XA_MainMenu
+	
+	IF ~
 		!GlobalsGT("XA_Banter_CorwinAerieEnd", "XA_Banter_CorwinAerie")
 	~ THEN REPLY @704
 	GOTO XA_MainMenu
@@ -3241,6 +3251,21 @@ END
 IF ~~ THEN BEGIN XA_Menu_CreateItem
 	SAY @35 /* ~What item do you want me to create for you?~ */
 	
+	IF ~~ THEN REPLY @710
+	DO ~
+		GiveItemCreate("XABENOHD", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XABENOHD", IDENTIFIED,TRUE))
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @711
+	DO ~
+		GiveItemCreate("XASTDAGB", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XASTDAGB", IDENTIFIED,TRUE))
+	~
+	GOTO XA_MainMenu
+	
+	
 	IF ~~ THEN REPLY @637
 	DO ~
 		GiveItemCreate("C6LANTHO", LastTalkedToBy(Myself),1,0,0)
@@ -3613,6 +3638,12 @@ END
 
 IF ~~ THEN BEGIN XA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
+	
+	IF ~~ THEN REPLY @714
+	DO ~
+		SetGlobal("XA_LathSpawn", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @706
 	DO ~

@@ -156,7 +156,47 @@
 		UNSOLVED_JOURNAL #23485
 		EXTERN XACORWIJ XA_UDPHAE01_88
 	END
-
+	
+	//{ AMBAR01
+	EXTEND_TOP AMBAR01 3
+		IF ~
+			GlobalLT("XA_AskCourier", "LOCALS", 1)
+			See("XAHAMZA")
+		~ THEN REPLY @355
+		DO ~
+			SetGlobal("XA_AskCourier", "LOCALS", 1)
+		~
+		GOTO XA_AMBAR01_Hamza
+	END
+	
+	EXTEND_TOP AMBAR01 21
+		IF ~
+			GlobalLT("XA_AskCourier", "LOCALS", 1)
+			See("XAHAMZA")
+		~ THEN REPLY @355
+		DO ~
+			SetGlobal("XA_AskCourier", "LOCALS", 1)
+		~
+		GOTO XA_AMBAR01_Hamza
+	END
+	
+	APPEND AMBAR01
+		IF ~~ THEN BEGIN XA_AMBAR01_Hamza
+			SAY @356
+			
+			IF ~~ THEN
+			GOTO 21
+		END
+	END
+	//}
+	
+	//{ AMTGEN01
+	EXTEND_BOTTOM AMTGEN01 0
+		IF ~
+			IsValidForPartyDialog("XACORWIN")
+		~ THEN EXTERN XACORWIJ XA_GeneralTalk_Chain
+	END
+	//}
 	
 	//{ FLAMGG
 	ADD_STATE_TRIGGER FLAMGG 0
