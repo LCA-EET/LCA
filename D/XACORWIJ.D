@@ -1965,7 +1965,7 @@ IF ~~ THEN BEGIN XA_AmkethranCourier_END
 	SAY @1594 /* ~This town might have a message courier we can use. Let's have a look around.~*/
 	
 	IF ~
-		GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
+		GlobalGT("XA_CorwinPregnant", "GLOBAL", 4)
 	~ THEN REPLY @403 /* Right */
 	DO ~
 		AddJournalEntry(@1602, INFO)
@@ -1973,7 +1973,7 @@ IF ~~ THEN BEGIN XA_AmkethranCourier_END
 	EXIT
 	
 	IF ~
-		!GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
+		GlobalLT("XA_CorwinPregnant", "GLOBAL", 5)
 	~ THEN REPLY @403 /* Right */
 	DO ~
 		AddJournalEntry(@1601, INFO)
@@ -1981,9 +1981,8 @@ IF ~~ THEN BEGIN XA_AmkethranCourier_END
 	EXIT
 	
 	IF ~
-		GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
-		IsValidForPartyDialogue("Rasaad")
-		See("Rasaad")
+		GlobalGT("XA_CorwinPregnant", "GLOBAL", 4)
+		Global("XA_CanTalkToRasaad", "LOCALS", 1)
 	~ THEN
 	DO ~
 		AddJournalEntry(@1602, INFO)
@@ -1991,9 +1990,8 @@ IF ~~ THEN BEGIN XA_AmkethranCourier_END
 	EXTERN RASAADJ XA_AmkethranCourier_END
 	
 	IF ~
-		!GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
-		IsValidForPartyDialogue("Rasaad")
-		See("Rasaad")
+		GlobalLT("XA_CorwinPregnant", "GLOBAL", 5)
+		Global("XA_CanTalkToRasaad", "LOCALS", 1)
 	~ THEN
 	DO ~
 		AddJournalEntry(@1601, INFO)
