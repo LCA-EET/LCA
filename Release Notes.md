@@ -3,6 +3,11 @@
 # Report any bugs to LCAMod@danielvalle.net, or the Gibberlings 3 Forum Post 
 * Link to forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# RC2, 2023-09-28
+* Re-incorporated some music that was inadvertently removed during the LC to XA prefix conversion.
+* Updated the soundwork in the Corwin marriage proposal cutscene.
+* Miscellaneous improvements.
+
 # RC1, 2023-09-25
 * Fixed bugs relating to the fight between Corwin and Hexxat.
 * Overhauled banter scripting.
