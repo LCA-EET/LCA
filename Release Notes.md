@@ -7,6 +7,7 @@
 * Re-incorporated some music that was inadvertently removed during the LC to XA prefix conversion.
 * Updated the soundwork in the Corwin marriage proposal cutscene.
 * Miscellaneous improvements.
+* You can now buy the doll for Rohma from Lucky Aello's shop, in addition to the two General Stores located in the city.
 
 # RC1, 2023-09-25
 * Fixed bugs relating to the fight between Corwin and Hexxat.
