@@ -173,7 +173,7 @@ IF
 	InParty(Myself)
 	Global("XA_MetRohmaCheck", "GLOBAL", 0)
 	OR(2)
-		Global("bd_rohma_banter","bd0101",7)
+		GlobalGT("bd_rohma_banter","bd0101",6)
 		GlobalGT("EEMetRohma", "GLOBAL", 0)
 THEN
 	RESPONSE #100
@@ -189,8 +189,8 @@ END
 IF 
 	InParty(Myself)
 	Global("XA_MetRohmaCheck", "GLOBAL", 0)
-	!Global("bd_rohma_banter","bd0101",7) //Met Rohma in SoD
-	!GlobalGT("EEMetRohma", "GLOBAL", 0) //Met Rohma in CorwinEET
+	GlobalLT("bd_rohma_banter","bd0101",7) //Met Rohma in SoD
+	Global("EEMetRohma", "GLOBAL", 0) //Met Rohma in CorwinEET
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)

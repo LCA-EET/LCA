@@ -1,5 +1,25 @@
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CloseDoors", "BG0100", 1)
+THEN
+	RESPONSE #100
+		CloseDoor("Door0101")
+		CloseDoor("Door0155")
+		CloseDoor("Door0156")
+		CloseDoor("Door0157")
+		CloseDoor("Door0159")
+		CloseDoor("Door0161")
+		CloseDoor("Door0162")
+		CloseDoor("Door0163")
+		CloseDoor("Door0165")
+		CloseDoor("Door0167")
+		CloseDoor("Door0169")
+		SetGlobal("XA_CloseDoors", "BG0100", 1)
+		Continue()
+END	
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
 	InMyArea("OCELLI")
 	!Global("XA_DestroyNPCs_0100", "BG0100", 1)
 THEN

@@ -157,6 +157,181 @@
 		EXTERN XACORWIJ XA_UDPHAE01_88
 	END
 	
+	//{ SHOP06_
+	EXTEND_BOTTOM SHOP06_ 0
+		IF ~
+			GlobalLT("XA_BoughtRohmaDoll", "GLOBAL", 1)
+			Global("XA_WantToGetDoll", "GLOBAL", 1)
+			InPartySlot(LastTalkedToBy, 0)
+		~ 
+		THEN REPLY @357 /* ~I'm looking for a gift for a young child, perhaps a doll of some sort. Do you have anything like that in your store?~ */
+		GOTO M0
+	END
+	
+	APPEND SHOP06_
+		IF ~~ THEN BEGIN M0
+			SAY @358 /* ~As a matter of fact, I do. Are you interested in this doll? I'll sell it to you for three gold.~ */
+			IF ~
+				PartyGoldGT(2)
+			~
+			THEN REPLY @359 /* ~Yes, that is perfect, thank you. (Pay three gold for the doll). ~ */
+			DO ~
+				TakePartyGold(3)
+				SetGlobal("XA_BoughtRohmaDoll", "GLOBAL", 1)
+			~
+			GOTO M1
+			
+			IF ~
+				PartyGoldLT(3)
+			~
+			THEN REPLY @360 /* ~Yes, that is perfect. I'm a bit short on funds at the moment, however. I will return later to buy the doll.~ */
+			GOTO M2
+			
+			IF ~~ THEN REPLY @361 /* ~No thanks. Another time, perhaps.~ */
+			GOTO M3
+		END
+	
+		IF ~~ THEN BEGIN M1
+			SAY @362 /* ~A pleasure doing business with you.~ */
+			IF ~~ THEN
+			DO ~
+				GiveItemCreate("XARDOLL", LastTalkedToBy(Myself),1,0,0)
+				AddJournalEntry(@365, INFO)
+			~
+			EXIT
+		END
+		
+		IF ~~ THEN BEGIN M2
+			SAY @363 /* ~No worries. I'll hold on to the doll until you come up with the money.~ */
+			IF ~~ THEN
+			EXIT
+		END
+		
+		IF ~~ THEN BEGIN M3
+			SAY @361 /* ~No thanks. Another time, perhaps.~ */
+			IF ~~ THEN
+			EXIT
+		END
+	END
+	//}
+
+	//{ SHOP08_
+	EXTEND_BOTTOM SHOP08_ 0
+		IF ~
+			GlobalLT("XA_BoughtRohmaDoll", "GLOBAL", 1)
+			Global("XA_WantToGetDoll", "GLOBAL", 1)
+			InPartySlot(LastTalkedToBy, 0)
+		~ 
+		THEN REPLY @357 /* ~I'm looking for a gift for a young child, perhaps a doll of some sort. Do you have anything like that in your store?~ */
+		GOTO M0
+	END
+	
+	APPEND SHOP08_
+		IF ~~ THEN BEGIN M0
+			SAY @358 /* ~As a matter of fact, I do. Are you interested in this doll? I'll sell it to you for three gold.~ */
+			IF ~
+				PartyGoldGT(2)
+			~
+			THEN REPLY @359 /* ~Yes, that is perfect, thank you. (Pay three gold for the doll). ~ */
+			DO ~
+				TakePartyGold(3)
+				SetGlobal("XA_BoughtRohmaDoll", "GLOBAL", 1)
+			~
+			GOTO M1
+			
+			IF ~
+				PartyGoldLT(3)
+			~
+			THEN REPLY @360 /* ~Yes, that is perfect. I'm a bit short on funds at the moment, however. I will return later to buy the doll.~ */
+			GOTO M2
+			
+			IF ~~ THEN REPLY @361 /* ~No thanks. Another time, perhaps.~ */
+			GOTO M3
+		END
+	
+		IF ~~ THEN BEGIN M1
+			SAY @362 /* ~A pleasure doing business with you.~ */
+			IF ~~ THEN
+			DO ~
+				GiveItemCreate("XARDOLL", LastTalkedToBy(Myself),1,0,0)
+				AddJournalEntry(@365, INFO)
+			~
+			EXIT
+		END
+		
+		IF ~~ THEN BEGIN M2
+			SAY @363 /* ~No worries. I'll hold on to the doll until you come up with the money.~ */
+			IF ~~ THEN
+			EXIT
+		END
+		
+		IF ~~ THEN BEGIN M3
+			SAY @361 /* ~No thanks. Another time, perhaps.~ */
+			IF ~~ THEN
+			EXIT
+		END
+	END
+	//}
+	
+	//{ LUCKY
+	EXTEND_BOTTOM LUCKY 0
+		IF ~
+			GlobalLT("XA_BoughtRohmaDoll", "GLOBAL", 1)
+			Global("XA_WantToGetDoll", "GLOBAL", 1)
+			InPartySlot(LastTalkedToBy, 0)
+		~ 
+		THEN REPLY @357 /* ~I'm looking for a gift for a young child, perhaps a doll of some sort. Do you have anything like that in your store?~ */
+		GOTO M0
+	END
+	
+	APPEND LUCKY
+		IF ~~ THEN BEGIN M0
+			SAY @358 /* ~As a matter of fact, I do. Are you interested in this doll? I'll sell it to you for three gold.~ */
+			IF ~
+				PartyGoldGT(2)
+			~
+			THEN REPLY @359 /* ~Yes, that is perfect, thank you. (Pay three gold for the doll). ~ */
+			DO ~
+				TakePartyGold(3)
+				SetGlobal("XA_BoughtRohmaDoll", "GLOBAL", 1)
+			~
+			GOTO M1
+			
+			IF ~
+				PartyGoldLT(3)
+			~
+			THEN REPLY @360 /* ~Yes, that is perfect. I'm a bit short on funds at the moment, however. I will return later to buy the doll.~ */
+			GOTO M2
+			
+			IF ~~ THEN REPLY @361 /* ~No thanks. Another time, perhaps.~ */
+			GOTO M3
+		END
+	
+		IF ~~ THEN BEGIN M1
+			SAY @362 /* ~A pleasure doing business with you.~ */
+			IF ~~ THEN
+			DO ~
+				GiveItemCreate("XARDOLL", LastTalkedToBy(Myself),1,0,0)
+				AddJournalEntry(@365, INFO)
+			~
+			EXIT
+		END
+		
+		IF ~~ THEN BEGIN M2
+			SAY @363 /* ~No worries. I'll hold on to the doll until you come up with the money.~ */
+			IF ~~ THEN
+			EXIT
+		END
+		
+		IF ~~ THEN BEGIN M3
+			SAY @361 /* ~No thanks. Another time, perhaps.~ */
+			IF ~~ THEN
+			EXIT
+		END
+	END
+	//}
+	
+	
 	//{ AMBAR01
 	EXTEND_TOP AMBAR01 3
 		IF ~

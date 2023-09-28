@@ -1,5 +1,17 @@
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CloseDoors", "BG0600", 1)
+THEN
+	RESPONSE #100
+		CloseDoor("Door01")
+		CloseDoor("Door0126")
+		CloseDoor("Door0617")
+		CloseDoor("Door0619")
+		SetGlobal("XA_CloseDoors", "BG0600", 1)
+		Continue()
+END	
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
 	!Global("XA_CreateHOWSpy_0600", "BG0600", 1)
 THEN
 	RESPONSE #100

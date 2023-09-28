@@ -1,5 +1,26 @@
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CloseDoors", "BG0700", 1)
+THEN
+	RESPONSE #100
+		CloseDoor("Door0143")
+		CloseDoor("Door0707")
+		CloseDoor("Door0709")
+		CloseDoor("Door0711")
+		CloseDoor("Door0713")
+		CloseDoor("Door0715")
+		CloseDoor("Door0719")
+		CloseDoor("Door0719b")
+		CloseDoor("Door0720")
+		CloseDoor("Door0720b")
+		CloseDoor("Door0721")
+		CloseDoor("Door0722")
+		SetGlobal("XA_CloseDoors", "BG0700", 1)
+		Continue()
+END	
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
 	InMyArea("addy")
 THEN
 	RESPONSE #100

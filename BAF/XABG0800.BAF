@@ -1,11 +1,49 @@
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CloseDoors", "BG0800", 1)
+THEN
+	RESPONSE #100
+		CloseDoor("Door0148")
+		CloseDoor("Door0150")
+		CloseDoor("Door0151")
+		CloseDoor("Door0152")
+		CloseDoor("Door0307")
+		CloseDoor("Door0705")
+		CloseDoor("Door0801")
+		CloseDoor("Door0803")
+		CloseDoor("Door0805")
+		CloseDoor("Door0810")
+		CloseDoor("Door0811")
+		SetGlobal("XA_CloseDoors", "BG0800", 1)
+		Continue()
+END	
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
 	GlobalLT("XA_CMDeactivate", "BG0800", 1)
 THEN
 	RESPONSE #100
 		TriggerActivation("d#tet1", FALSE)
 		TriggerActivation("d#tw1", FALSE)
 		SetGlobal("XA_CMDeactivate", "BG0800", 1)
+		Continue()
+END
+
+IF
+	InMyArea("Delthyr")
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("Delthyr", DestroySelf())
+		Continue()
+END
+
+IF
+	InMyArea("Tamoko")
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("Tamoko", DestroySelf())
 		Continue()
 END
 

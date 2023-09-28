@@ -182,7 +182,7 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite3A4A2
 		AddExperienceParty(5000)
 		SetGlobal("XA_GaveDoll", "Global", 1)
 		AddJournalEntry(@23, INFO)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 5)
 	~
 	EXTERN XACORWIJ XA_CorwinFamilyReunite3A4A3
 END

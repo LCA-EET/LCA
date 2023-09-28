@@ -8333,7 +8333,9 @@ END
 		= @1108 /* ~(You kiss and embrace.)~ */
 		= @1107 /* ~Come on love! Let's go and celebrate!~ */
 		
-		IF ~~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */
+		IF ~
+			GlobalLT("XA_RingEnchanted", "GLOBAL", 2)
+		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */
 		DO ~
 			StartCutSceneMode()
 			StartCutScene("XADINROM")
@@ -8341,6 +8343,7 @@ END
 		EXIT 
 		
 		IF ~
+			CheckStatLT(Player1, 50, MAXHITPOINTS)
 			Global("XA_RingEnchanted", "GLOBAL", 2)
 		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
 		DO ~
@@ -8352,6 +8355,7 @@ END
 		
 		IF ~
 			CheckStatGT(Player1, 49, MAXHITPOINTS)
+			CheckStatLT(Player1, 60, MAXHITPOINTS)
 			Global("XA_RingEnchanted", "GLOBAL", 2)
 		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
 		DO ~
@@ -8363,6 +8367,7 @@ END
 		
 		IF ~
 			CheckStatGT(Player1, 59, MAXHITPOINTS)
+			CheckStatLT(Player1, 70, MAXHITPOINTS)
 			Global("XA_RingEnchanted", "GLOBAL", 2)
 		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
 		DO ~
@@ -8374,6 +8379,7 @@ END
 		
 		IF ~
 			CheckStatGT(Player1, 69, MAXHITPOINTS)
+			CheckStatLT(Player1, 80, MAXHITPOINTS)
 			Global("XA_RingEnchanted", "GLOBAL", 2)
 		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
 		DO ~
@@ -8385,6 +8391,7 @@ END
 		
 		IF ~
 			CheckStatGT(Player1, 79, MAXHITPOINTS)
+			CheckStatLT(Player1, 90, MAXHITPOINTS)
 			Global("XA_RingEnchanted", "GLOBAL", 2)
 		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
 		DO ~
@@ -8396,6 +8403,7 @@ END
 		
 		IF ~
 			CheckStatGT(Player1, 89, MAXHITPOINTS)
+			CheckStatLT(Player1, 100, MAXHITPOINTS)
 			Global("XA_RingEnchanted", "GLOBAL", 2)
 		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
 		DO ~
@@ -8407,6 +8415,7 @@ END
 		
 		IF ~
 			CheckStatGT(Player1, 99, MAXHITPOINTS)
+			CheckStatLT(Player1, 110, MAXHITPOINTS)
 			Global("XA_RingEnchanted", "GLOBAL", 2)
 		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
 		DO ~
@@ -8418,6 +8427,7 @@ END
 		
 		IF ~
 			CheckStatGT(Player1, 109, MAXHITPOINTS)
+			CheckStatLT(Player1, 120, MAXHITPOINTS)
 			Global("XA_RingEnchanted", "GLOBAL", 2)
 		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
 		DO ~
@@ -8429,6 +8439,7 @@ END
 		
 		IF ~
 			CheckStatGT(Player1, 119, MAXHITPOINTS)
+			CheckStatLT(Player1, 130, MAXHITPOINTS)
 			Global("XA_RingEnchanted", "GLOBAL", 2)
 		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
 		DO ~
@@ -8441,6 +8452,7 @@ END
 		
 		IF ~
 			CheckStatGT(Player1, 129, MAXHITPOINTS)
+			CheckStatLT(Player1, 140, MAXHITPOINTS)
 			Global("XA_RingEnchanted", "GLOBAL", 2)
 		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
 		DO ~
@@ -8452,6 +8464,7 @@ END
 		
 		IF ~
 			CheckStatGT(Player1, 139, MAXHITPOINTS)
+			CheckStatLT(Player1, 150, MAXHITPOINTS)
 			Global("XA_RingEnchanted", "GLOBAL", 2)
 		~ THEN REPLY @1109 /* ~Drinks are on me, Capt - I mean, Major!~ */ 
 		DO ~
@@ -9524,8 +9537,7 @@ IF ~~ THEN BEGIN XA_BenceWyrm_6
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-		!Global("XA_GaveDoll", "GLOBAL", 2)
-		!Global("XA_GaveDoll", "GLOBAL", 1)
+		GlobalLT("XA_GaveDoll", "GLOBAL", 1)
 	~
 	THEN 
 	DO ~
@@ -9555,6 +9567,7 @@ IF ~~ THEN BEGIN XA_GetRohmaGift
 		SetGlobalTimer("XA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
 		SetGlobal("XA_BenceWyrm", "GLOBAL", 2)
 		SetGlobal("XA_ReturnToBG", "GLOBAL", 1)
+		SetGlobal("XA_WantToGetDoll", "GLOBAL", 1)
 		EndCutSceneMode()
 	~
 	EXIT
@@ -9569,6 +9582,7 @@ IF ~~ THEN BEGIN XA_FirstMeetingRohma
 		SetGlobalTimer("XA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
 		SetGlobal("XA_BenceWyrm", "GLOBAL", 2)
 		SetGlobal("XA_ReturnToBG", "GLOBAL", 1)
+		SetGlobal("XA_WantToGetDoll", "GLOBAL", 1)
 		EndCutSceneMode()
 	~
 	EXIT

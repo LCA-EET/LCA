@@ -206,6 +206,8 @@ IF ~~ THEN BEGIN XA_GiveRing3
 	IF ~~ THEN REPLY @23 /* ~Thank you, Jhasso. I appreciate it.~*/
 	DO ~
 		SetGlobal("XA_RingGiftJhasso", "GLOBAL", 1)
+		//GiveItemCreate("XARINGJ", LastTalkedToBy(Myself),1,0,0)
+		//ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XARINGJ", IDENTIFIED,TRUE))
 	~
 	GOTO XA_GiveRing4
 	
@@ -219,6 +221,8 @@ IF ~~ THEN BEGIN XA_WontFit
 	IF ~~ THEN REPLY @23 /* ~Thank you, Jhasso. I appreciate it.~*/
 	DO ~
 		SetGlobal("XA_RingGiftJhasso", "GLOBAL", 1)
+		//GiveItemCreate("XARINGJ", LastTalkedToBy(Myself),1,0,0)
+		//ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XARINGJ", IDENTIFIED,TRUE))
 	~
 	GOTO XA_GiveRing4
 END

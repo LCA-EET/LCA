@@ -139,6 +139,8 @@ IF ~~ THEN BEGIN XA_CorwinRomance3
 	IF ~~ THEN REPLY @15 /* ~This is beautiful. It must've cost a fortune - I can't accept this!~ */
 	DO ~
 		SetGlobal("XA_RingGiftAldeth", "GLOBAL", 1)
+		//GiveItemCreate("XARINGA", LastTalkedToBy(Myself),1,0,0)
+		//ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XARINGA", IDENTIFIED,TRUE))
 	~
 	GOTO XA_CorwinRomance4 //OK
 END
