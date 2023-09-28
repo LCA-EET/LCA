@@ -87,6 +87,7 @@ IF ~
 	DO ~
 		FadeToColor([30.0],0)
 		SetGlobal("XA_ReturnToBG", "GLOBAL", 0)
+		SetGlobal("XA_HaltBG1Script", "GLOBAL", 1)
 		SetGlobal("XA_PartyRemovalProcessing", "GLOBAL", 2)
 		ActionOverride(Player1,LeaveAreaLUA("BG0900","",[1628.1456],NW))
 		ActionOverride(Player2,LeaveAreaLUA("BG0900","",[1664.1531],NW))
