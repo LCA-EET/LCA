@@ -99,17 +99,9 @@ END
 
 //{ Caelar Rescue Quest Timer Init
 IF
-	GlobalLT("XA_KanaDreamTimerSet", "GLOBAL",1)
-	Global("XA_ClearedKanaglym", "GLOBAL",1)
-	Global("XA_EnteredSaradush", "GLOBAL", 1)
-	OR(2)
-		Global("XA_IncubusDefeated", "GLOBAL", 1)
-		GlobalGT("DemoGorgonIsDead","GLOBAL",0)
+	Global("XA_KanaDreamTimerSet", "GLOBAL",1)
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself,~Debug Player1D - 2~)
-		SetGlobal("XA_KanaDreamTimerSet", "GLOBAL",1)
-		SetGlobalTimer("XA_KanaDreamTimer", "GLOBAL", ONE_DAY)
 		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 END
 
@@ -127,11 +119,11 @@ END
 
 IF
 	GlobalTimerExpired("XA_KanaDreamTimer", "GLOBAL")
-	Global("XA_KanaDream", "GLOBAL", 1)
+	Global("XA_KanaDream", "GLOBAL", 2)
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself,~Debug Player1D - 4~)
-		SetGlobal("XA_KanaDream", "GLOBAL", 2)
+		SetGlobal("XA_KanaDream", "GLOBAL", 3)
 		StartCutSceneMode()
 		StartCutScene("XADREAM")
 END

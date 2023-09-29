@@ -149,13 +149,20 @@ END
 IF ~
 	GlobalGT("XA_AVBossFled", "GLOBAL", 1)
 	!AreaCheck("XA5300")
+	GlobalLT("XA_CaelarAVTalk", "GLOBAL",2)
 ~ THEN BEGIN XA_WonBattle
 	SAY @16 /* ~You defeated him? Praise be ... I can't believe it.~*/
 	
 	IF ~~ THEN REPLY @15  /* ~Caelar... your ordeal is over. Come with me. (Take her hand.)~*/
+	DO ~
+		SetGlobal("XA_CaelarAVTalk", "GLOBAL", 2)
+	~
 	GOTO XA_WonBattle2
 	
 	IF ~~ THEN REPLY @57  /* ~Of course I did. Now, back in your cage.~ */
+	DO ~
+		SetGlobal("XA_CaelarAVTalk", "GLOBAL", 2)
+	~
 	GOTO XA_LeaveInCage
 END
 

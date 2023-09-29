@@ -7,6 +7,18 @@
 
 */
 APPEND ~PLAYER1~
+
+	IF ~
+		Global("XA_OdrenDebug", "GLOBAL", 1)
+	~ THEN BEGIN XA_OdrenDebug
+		SAY @194
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_OdrenDebug", "GLOBAL", 0)
+		~
+		EXTERN GORODR1 35
+	END
 	IF ~
 		Global("XA_PromptToSendLetter", "GLOBAL", 1)
 	~ THEN BEGIN XA_PromptCGS
@@ -414,6 +426,7 @@ APPEND ~PLAYER1~
 		IF ~~ THEN
 		DO ~
 			SetGlobal("XA_KanaDreamTimerSet", "GLOBAL",2)
+			SetGlobalTimer("XA_KanaDreamTimer", "GLOBAL", ONE_DAY)
 			RestParty()
 		~
 		EXIT

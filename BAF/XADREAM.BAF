@@ -11,5 +11,6 @@ THEN
 		Wait(1)
 		FadeFromColor([30.0],0)
 		Wait(1)
+		EndCutSceneMode()
 		ActionOverride("XAKANA1", StartDialog("XAKANA1", Player1))
 END

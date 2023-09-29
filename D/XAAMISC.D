@@ -579,9 +579,15 @@
 	//}
 	
 	//{ PPGUY01
+	ADD_TRANS_TRIGGER PPGUY01 0
+	~
+		!Global("SaradushSacked","GLOBAL",1)
+	~
+	DO 4
+	
 	EXTEND_BOTTOM PPGUY01 0
 		IF ~
-			!Global("XA_KanaDream", "GLOBAL", 3)
+			!Global("XA_KanaDream", "GLOBAL", 4)
 			OR(2)
 				Global("XA_ST_Kanaglym", "GLOBAL", 1)
 				Global("XA_AskCespenarDagger", "GLOBAL", 2)
@@ -589,17 +595,60 @@
 				PartyHasItem("XASTDAG")
 				PartyHasItem("XASTDAGB")
 				PartyHasItem("XASTDAGD")
-		~ THEN REPLY @92
+		~ THEN REPLY @92  /* ~I want to go to Kanaglym, in the caverns beneath Dragonspear.~ */
 		GOTO XA_Kanaglym
 		
 		IF ~
-			Global("XA_KanaDream", "GLOBAL", 3)
-		~ THEN REPLY @92
+			Global("XA_KanaDream", "GLOBAL", 4)
+		~ THEN REPLY @92  /* ~I want to go to Kanaglym, in the caverns beneath Dragonspear.~ */
 		GOTO XA_Kanaglym
 		
 		IF ~
 			Global("XA_ReturnToAvernus", "GLOBAL", 1)
-		~ THEN REPLY @93
+		~ THEN REPLY @93  /*~Send me to Caelar Argent, in Avernus.~ */
+		GOTO XA_Avernus_KnowRisk
+		
+		IF ~
+			GlobalGT("XA_AshatielSpirit", "GLOBAL", 1)
+			GlobalLT("XA_ReturnToAvernus", "GLOBAL", 1)
+		~ THEN REPLY @93 /* ~Send me to Caelar Argent, in Avernus.~ */
+		DO ~
+			SetGlobal("XA_BringCaelar", "LOCALS", 1)
+		~
+		GOTO XA_Avernus
+		
+		IF ~
+			GlobalGT("XA_AshatielSpirit", "GLOBAL", 1)
+			GlobalLT("XA_BringCaelar", "LOCALS", 1)
+			GlobalLT("XA_ReturnToAvernus", "GLOBAL", 1)
+		~ THEN REPLY @100 /* ~~Bring me Caelar Argent.~ */
+		DO ~
+			SetGlobal("XA_BringCaelar", "LOCALS", 1)
+		~
+		GOTO XA_BringCaelar
+	END
+	
+	EXTEND_BOTTOM PPGUY01 4
+		IF ~
+			!Global("XA_KanaDream", "GLOBAL", 4)
+			OR(2)
+				Global("XA_ST_Kanaglym", "GLOBAL", 1)
+				Global("XA_AskCespenarDagger", "GLOBAL", 2)
+			OR(3)
+				PartyHasItem("XASTDAG")
+				PartyHasItem("XASTDAGB")
+				PartyHasItem("XASTDAGD")
+		~ THEN REPLY @92  /* ~I want to go to Kanaglym, in the caverns beneath Dragonspear.~ */
+		GOTO XA_Kanaglym
+		
+		IF ~
+			Global("XA_KanaDream", "GLOBAL", 4)
+		~ THEN REPLY @92  /* ~I want to go to Kanaglym, in the caverns beneath Dragonspear.~ */
+		GOTO XA_Kanaglym
+		
+		IF ~
+			Global("XA_ReturnToAvernus", "GLOBAL", 1)
+		~ THEN REPLY @93  /*~Send me to Caelar Argent, in Avernus.~ */
 		GOTO XA_Avernus_KnowRisk
 		
 		IF ~
@@ -3969,10 +4018,10 @@ EXTEND_BOTTOM GORODR1 34 //OK
 	THEN EXTERN XACORWIJ XA_GORODR1_34_44
 END
 
-EXTEND_BOTTOM GORODR1 39 //OK	
+EXTEND_TOP GORODR1 39 //OK	
 	IF ~
 		//GlobalLT("Chapter","GLOBAL",20)
-		OR(18)
+		OR(20)
 			IsValidForPartyDialogue("XACORWIN")
 			IsValidForPartyDialogue("XACAELAR")
 			IsValidForPartyDialogue("Aerie")
@@ -3991,6 +4040,8 @@ EXTEND_BOTTOM GORODR1 39 //OK
 			IsValidForPartyDialogue("Edwin")
 			IsValidForPartyDialogue("Sarevok")
 			IsValidForPartyDialogue("Jan")
+			IsValidForPartyDialogue("Rasaad")
+			IsValidForPartyDialogue("Neera")
 	~
 	THEN REPLY @22 /* ~What say you, my loyal comrades? They wronged you as much as I. Should they be allowed to live, or must the treacherous cowards taste steel?~ */
 	DO ~
@@ -4007,10 +4058,11 @@ EXTEND_BOTTOM GORODR1 44 //OK
 	THEN EXTERN XACORWIJ XA_GORODR1_34_44
 END
 
+
 APPEND GORODR1
 	IF ~~ THEN BEGIN XA_OdrenDecision 
 		SAY @42 /* ~Please, I ask you once again to forgive us, <CHARNAME>.~ */
-		
+		= @33  /* ~What is your decision?~ */
 		IF ~
 			GlobalGT("XA_OdrenShouldDie", "GLOBAL", 100)
 		~ THEN REPLY @43 /* ~Prepare to die, you treacherous cowards!~  */
@@ -4571,6 +4623,15 @@ CHAIN
 			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
 		~
 		
+		== RASAADJ
+		IF ~
+			IsValidForPartyDialogue("RASAAD")
+		~
+		@211  /* ~The willpower of even the most resolute can falter from time to time. Let us not be so quick to judge, lest we be judged ourselves. Let them live, <CHARNAME>.~*/
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+		~
+		
 		== XACAELAJ
 		IF ~
 			IsValidForPartyDialogue("XACAELAR")
@@ -4639,6 +4700,16 @@ CHAIN
 			IsValidForPartyDialogue("Imoen2")
 		~
 		@32 /* ~We've experienced enough bloodshed for one lifetime. Let them go, <CHARNAME>.~*/
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+		~
+		
+		== NEERAJ
+		IF ~
+			IsValidForPartyDialog("Neera")
+		~
+		@231  /* ~You're really gonna make me choose? Well... let's see...~*/
+		= @224 /* ~They did lie to us, and they knowingly sent us to our doom. On the other hand, I'm REALLY hungry. Let's just make our way to the nearest taven and leave them be.~ */
 		DO ~
 			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
 		~

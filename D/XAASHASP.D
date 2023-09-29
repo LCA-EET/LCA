@@ -151,7 +151,7 @@ IF ~~ THEN BEGIN XA_Ashatiel
 	GOTO XA_CantDie
 	
 	IF ~
-		Global("XA_KanaDream", "GLOBAL", 3)
+		Global("XA_KanaDream", "GLOBAL", 4)
 	~ THEN REPLY @29 /* ~What do you mean? Wasn't it you who told me to come here, in my dream?~*/
 	GOTO XA_Dream
 END
@@ -159,8 +159,9 @@ END
 IF ~~ THEN BEGIN XA_Dream
 	SAY @30 /* ~It most assuredly was not. Interesting...~*/
 	
-	IF ~~ THEN 
-	GOTO XA_Dream
+	IF ~~ THEN REPLY @62 /* ~Why haven't you moved on, spirit? The entrance to the Fugue Plane is but a few paces away.~*/
+	GOTO XA_Oath
+	
 END
 
 IF ~~ THEN BEGIN XA_CantDie
@@ -200,7 +201,7 @@ IF ~~ THEN BEGIN XA_CaelarAlive2
 	GOTO XA_HowMany
 	
 	IF ~
-		Global("XA_KanaDream", "GLOBAL", 3)
+		Global("XA_KanaDream", "GLOBAL", 4)
 	~ THEN REPLY @31 /*  ~The voice in the dream... it must have been Caelar's! She told me that she needed my help against some powerful force.~*/
 	GOTO XA_Dream_Help
 END
@@ -219,7 +220,7 @@ IF ~~ THEN BEGIN XA_HowMany
 	GOTO XA_HelpCaelar
 	
 	IF ~
-		Global("XA_KanaDream", "GLOBAL", 3)
+		Global("XA_KanaDream", "GLOBAL", 4)
 	~ THEN REPLY @31 /*  ~The voice in the dream... it must have been Caelar's! She told me that she needed my help against some powerful force.~*/
 	GOTO XA_Dream_Help
 END
@@ -357,4 +358,4 @@ CHAIN AERIEJ XA_AerieAshatielChain
 	= @51 /* ~T-thank you for sharing your experience with me, Ashatiel. I hope that you and your comrades are able to find r-release.~*/
 	== XAASHASP
 	@52 /* ~Thank you, Aerie. And I hope that you will one day be reunited with your mother.~ */
-END
+EXIT

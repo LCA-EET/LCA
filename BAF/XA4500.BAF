@@ -1,4 +1,15 @@
 IF
+	Global("XA_ThrixLeave","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_ThrixLeave","GLOBAL",1)
+		ForceSpellRES("BDTELAW","XATHRIX")  // Teleport Without Error
+		SetInterrupt(TRUE)
+END
+
+
+IF
 	GlobalLT("XA_BackToHell", "GLOBAL", 1)
 THEN
 	RESPONSE #100

@@ -9,4 +9,5 @@ THEN
 		Wait(1)
 		RestPartyEx(0,0,FALSE)
 		FadeFromColor([30.0],0)
+		EndCutSceneMode()
 END

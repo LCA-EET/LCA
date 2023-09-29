@@ -33,7 +33,7 @@ Daleson mentioned that Lord de'Arnise may still be alive, possibly in a dungeon 
 @30 = ~I ... I know what they did was wrong... maybe they can learn from this and do some good? They can at least tell o-others not to judge you just because you are a Bhaalspawn. I think we should let them live.~
 @31 = ~They must be punished! (Yes, severely!) Die, die, die, die, DIE!~
 @32 = ~We've experienced enough bloodshed for one lifetime. Let them go, <CHARNAME>.~
-@33 = ~~
+@33 = ~What is your decision?~
 @34 = ~Life, I say. Think of the songs that will be sung! <CHARNAME>, the mighty! <CHARNAME>, the merciful!~ 
 @35 = ~They have betrayed us, their god, and everything they believed in. Let us end their misery and put them to the sword.~ 
 @36 = ~We must choose life. Yes, they've wronged us, but what's done is done. What will killing these priests accomplish?~ 
@@ -92,7 +92,7 @@ Daleson mentioned that Lord de'Arnise may still be alive, possibly in a dungeon 
 @89 = ~Understood.~
 @90 = ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. The pair have achieved feats that no one could have imagined, and her devotion to <CHARNAME>'s cause has only grown since <PRO_HESHE> saved the life of Skie Silvershield, the daughter of one of the Grand Dukes. Though no one can say what the future has in store for this duo, one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~
 @91 = ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. <CHARNAME> was smitten by her beauty, and their relationship gradually evolved from friendship into something far more profound. Their fierce devotion toward one another was only strengthened after <CHARNAME> saved the life of Skie Silvershield, the daughter of one of the Grand Dukes. Their love, to this point, has endured against all odds. Whether it will continue to do so, no one can say, though one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~
-@92 = ~I want to go to Kanaglym, and release the souls contained in the Soultaker.~
+@92 = ~I want to go to Kanaglym, in the caverns beneath Dragonspear.~
 @93 = ~Send me to Caelar Argent, in Avernus.~
 @94 = ~Though her precise location cannot be ascertained, she is likely being held in what was once Belhifet's tower. The tower is protected by a magical barrier that is fueled by the life force of an exceptionally powerful demonic presence. It is for this reason that you cannot be sent directly to her, nor can she be brought here. Be warned, child of Bhaal. Once you enter the tower, the barrier may interfere with your ability to teleport back to this Pocket Plane.~
 @95 = ~I understand the risk. Send me to Avernus.~
@@ -212,7 +212,7 @@ Captain Corwin was kind enough to give up her beautiful silver earrings to help 
 @208 = ~It was nothing. I'm sure Voghiln will appreciate your kindness.~
 @209 = ~Oh! Before I forget — Captain Corwin came to see me. She asked that I give you this letter.~
 @210 = ~Thank you, Imoen. (Read the letter now).~
-@211 = ~~
+@211 = ~The willpower of even the most resolute can falter from time to time. Let us not be so quick to judge, lest we be judged ourselves. Let them live, <CHARNAME>.~
 @212 = ~She said that she's sorry she couldn't see you, but that you'd understand once you've read the letter.~
 @213 = ~I'm looking for a gnome named Brevlik. Have you seen him recently?~
 @214 = ~Does that little runt owe ya money too? He hasn't been allowed here in months, and it'll stay that way so long as his tab is unpaid!~
@@ -227,14 +227,14 @@ Cespenar told me that in order to free the souls trapped within the Soultaker Da
 @221 = ~Go ahead.~
 @222 = ~~
 @223 = ~Go to Fugue Plane! Souls will break free of dagger there. But how to go to Fugue Plane if not dead? Thinking make Cespenar's head ache... oh, well. Would you like me to make you shiny ones? I look though items, yes?~
-@224 = ~~
+@224 = ~They did lie to us, and they knowingly sent us to our doom. On the other hand, I'm REALLY hungry. Let's just make our way to the nearest tavern and leave them be.~
 @225 = ~Aye, remember <CHARNAME>, the so-called hero of Baldur's Gate? The one who was arrested for killing the Duke's daughter? Well, the Dukes are now tellin' everyone now that <PRO_HESHE> was innocent the whole time! What's more, Skie Silvershield is up and about, healthy and lively as ever. Could you believe it? Word on the street is that <PRO_HESHE>'s on <PRO_HISHER> way back to the city as we speak. Good on <PRO_HIMHER>, I s'pose.~
 @226 = ~It's alright. I know you didn't mean anything by it. Besides, I'm quite happy with the crossbow.~
 @227 = ~Looks like the others are ready... let's get moving.~
 @228 = ~You know little of what you speak. Schael is a fine mother.~
 @229 = ~It is not your concern.~
 @230 = ~Bah! To hell with the lot of you!~
-@231 = ~~
+@231 = ~You're really gonna make me choose? Well... let's see...~
 @232 = ~I realize now that I was wrong. Your skill in battle is considerable, as is your ability to lead others.~
 @233 = ~The city's been completely destroyed... all those people...~
 @234 = ~The city's been completely d-destroyed... all those people...~

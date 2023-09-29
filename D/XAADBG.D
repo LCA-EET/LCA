@@ -8,6 +8,31 @@ IF ~
 	IF ~~ THEN REPLY @683
 	GOTO XA_StatusReport
 	
+	IF ~~ THEN REPLY @715
+	DO ~
+		SetGlobal("XA_ClearedKanaglym", "GLOBAL",1)
+		SetGlobal("XA_EnteredSaradush", "GLOBAL", 1)
+		SetGlobal("XA_IncubusDefeated", "GLOBAL", 1)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @716
+	DO ~
+		SetGlobal("XA_ClearedKanaglym", "GLOBAL",1)
+		SetGlobal("XA_EnteredSaradush", "GLOBAL", 1)
+		SetGlobal("XA_IncubusDefeated", "GLOBAL", 1)
+		SetGlobal("DemoGorgonIsDead","GLOBAL",1)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @717
+	DO ~
+		SetGlobal("XA_OdrenDebug", "GLOBAL", 1)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+	~
+	EXIT
+	
+	
 	IF ~~ THEN REPLY @709
 	DO ~
 		SetGlobal("XA_CorwinHexxatFight", "GLOBAL", 1)

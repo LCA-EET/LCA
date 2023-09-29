@@ -66,7 +66,7 @@ IF ~~ THEN BEGIN XA_EnterTower
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_TowerUnlock", "GLOBAL", 1)
-		SetGlobal("BD_Thrix_Leaves","LOCALS",1)
+		SetGlobal("XA_ThrixLeave","GLOBAL",1)
 	~
 	EXIT
 END
@@ -77,7 +77,7 @@ IF ~~ THEN BEGIN XA_NewMaster
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_TowerUnlock", "GLOBAL", 1)
-		SetGlobal("BD_Thrix_Leaves","LOCALS",1)
+		SetGlobal("XA_ThrixLeave","GLOBAL",1)
 	~
 	EXIT
 END

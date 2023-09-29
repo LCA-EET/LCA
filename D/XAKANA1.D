@@ -67,19 +67,19 @@ IF ~~ THEN BEGIN XA_KanaDream_1_3
 END
 
 IF ~
-	Global("XA_KanaDream", "GLOBAL", 2)
+	Global("XA_KanaDream", "GLOBAL", 3)
 ~ THEN BEGIN XA_KanaDream_2_Intro
 	SAY @6 /* ~You must stop him, <CHARNAME>. I tried... but he was too powerful.~ */ 
 	
 	IF ~~ THEN REPLY @7 /* ~You again?~ */
 	DO ~
-		SetGlobal("XA_KanaDream", "GLOBAL", 3)
+		SetGlobal("XA_KanaDream", "GLOBAL", 4)
 	~
 	GOTO XA_KanaDream_2_2
 	
 	IF ~~ THEN REPLY @8 /* ~Who is too strong? Who — where are you?~*/
 	DO ~
-		SetGlobal("XA_KanaDream", "GLOBAL", 3)
+		SetGlobal("XA_KanaDream", "GLOBAL", 4)
 	~
 	GOTO XA_KanaDream_2_2
 END

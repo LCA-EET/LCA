@@ -239,13 +239,3 @@ THEN
 		SetInterrupt(TRUE)
 END
 
-IF
-	Global("BD_Thrix_Leaves","LOCALS",1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("BD_Thrix_Leaves","LOCALS",2)
-		ForceSpellRES("BDTELAW",Myself)  // Teleport Without Error
-		SetInterrupt(TRUE)
-END
-

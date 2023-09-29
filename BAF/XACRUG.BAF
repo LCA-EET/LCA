@@ -24,10 +24,15 @@ IF
 	Name("XAASHASP", Myself)
 	Global("XA_Hidden", "LOCALS", 1)
 	Global("XA_CaelarStayedInAvernus","GLOBAL",1)
+	See(Player1)
 THEN
 	RESPONSE #100
+		SetInterrupt(FALSE)
 		ApplySpellRES("bdunhide", Myself)
 		SetGlobal("XA_Hidden", "LOCALS", 2)
+		SetGlobal("XA_AshatielSpirit", "GLOBAL", 1)
+		Wait(1)
+		StartDialog("XAASHASP", Player1)
 		Continue()
 END
 
