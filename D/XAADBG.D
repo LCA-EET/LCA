@@ -3668,6 +3668,7 @@ IF ~~ THEN BEGIN XA_Menu_AdjustVariables
 	IF ~~ THEN REPLY @714
 	DO ~
 		SetGlobal("XA_LathSpawn", "GLOBAL", 1)
+		SetGlobal("XA_BenoBoom", "GLOBAL", 0)
 	~
 	GOTO XA_MainMenu
 	

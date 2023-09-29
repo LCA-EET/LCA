@@ -604,11 +604,6 @@
 		GOTO XA_Kanaglym
 		
 		IF ~
-			Global("XA_ReturnToAvernus", "GLOBAL", 1)
-		~ THEN REPLY @93  /*~Send me to Caelar Argent, in Avernus.~ */
-		GOTO XA_Avernus_KnowRisk
-		
-		IF ~
 			GlobalGT("XA_AshatielSpirit", "GLOBAL", 1)
 			GlobalLT("XA_ReturnToAvernus", "GLOBAL", 1)
 		~ THEN REPLY @93 /* ~Send me to Caelar Argent, in Avernus.~ */
@@ -645,11 +640,6 @@
 			Global("XA_KanaDream", "GLOBAL", 4)
 		~ THEN REPLY @92  /* ~I want to go to Kanaglym, in the caverns beneath Dragonspear.~ */
 		GOTO XA_Kanaglym
-		
-		IF ~
-			Global("XA_ReturnToAvernus", "GLOBAL", 1)
-		~ THEN REPLY @93  /*~Send me to Caelar Argent, in Avernus.~ */
-		GOTO XA_Avernus_KnowRisk
 		
 		IF ~
 			GlobalGT("XA_AshatielSpirit", "GLOBAL", 1)
