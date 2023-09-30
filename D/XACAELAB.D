@@ -125,12 +125,15 @@ IF ~~ THEN BEGIN XA_GivenUp
 	SAY @100 /*~You make it sound like I hadn't given up, but if I'm being honest... I did. Y-you know what he did to me.~*/
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		OR(2)
+			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_CorwinLoveBG2", "GLOBAL", 1)
 	~ THEN REPLY @106 /*~Your will may have faltered, but you hadn't given up. I was in that same, dark place too you know. I nearly gave up when I was locked in that cell. If it weren't for Imoen...~*/
 	GOTO XA_HadSomeone
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_CorwinLoveBG2", "GLOBAL", 1)
 	~ THEN REPLY @101 /*~Your will may have faltered, but you hadn't given up. I was in that same, dark place too you know. I nearly gave up when I was locked in that cell. If it weren't for Schael...~*/
 	GOTO XA_HadSomeone
 	

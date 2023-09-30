@@ -146,7 +146,7 @@
 @145 = ~About your daughter and father. I understand.~
 @146 = ~Yes... You know, Rohma asks about you.~
 @147 = ~Really? I didn't think I'd made much of an impression on her.~
-@148 = ~She loves the teddy you bought for her. It's her favorite toy.~
+@148 = ~She loves the doll you bought for her. It's her favorite toy.~
 @149 = ~Rohma and your father. I understand.~
 @150 = ~Oh yes, I remember! I bought it at the general store, not long after I met her for the first time.~
 @151 = ~It was a simple gesture.. I didn't think it would mean that much to her.~
@@ -192,7 +192,7 @@
 @191 = ~It's good that at least some progress was made.~
 @192 = ~Indeed. I too am grateful.~
 @193 = ~I was thinking about the first time we met. Do you remember?~
-@194 = ~~
+@194 = ~Maj — Schael, wait. There's something I need to tell you.~
 @195 = ~(You share a warm embrace.)~
 @196 = ~You nearly sacrificed my soul to that damned demon.. what was its name? Thrax?~
 @197 = ~Thrix the Profane, if I remember correctly. Your soul was never in danger — I'd never let a demon like that outsmart me.~
@@ -1371,8 +1371,8 @@ Schael and I shared a tender moment; it seems that we are still dealing with the
 @1356 = ~Hm?~ [BD68262]
 @1357 = ~(A look of disappointment flashes across her face.)~
 @1358 = ~Fine. Let's go.~
-@1359 = ~~
-@1360 = ~~
+@1359 = ~Major? Are you alright?~
+@1360 = ~(You notice Major Corwin staring into the distance, with sadness in her eyes.)~
 @1361 = ~What is it? You can tell me.~
 @1362 = ~The kindness that you showed her is more than her father ever did... thank you, <CHARNAME>.~
 @1363 = ~Hall of Wonders
@@ -1397,7 +1397,7 @@ Captain Corwin shared the story of how she was arrested in the Hall of Wonders. 
 @1381 = ~If it's just a few words, then fine.~
 @1382 = ~That's better. Lead the way, Curator Magda.~
 @1383 = ~... ... so you see, even the smallest act of kindness can have a profound impact.~
-@1384 = ~~
+@1384 = ~(You notice Schael staring into the distance, with sadness in her eyes.)~
 @1385 = ~~
 @1386 = ~~
 @1387 = ~<CHARNAME> has horns, you dummy.~
@@ -1417,7 +1417,7 @@ Captain Corwin shared the story of how she was arrested in the Hall of Wonders. 
 @1401 = ~~
 @1402 = ~<CHARNAME>, Captain, I'm so sorry about thi—~
 @1403 = ~While in Athkatla, we located the fugitive, Neb. I'm pleased to inform you that he's been brought to justice.~
-@1404 = ~~
+@1404 = ~Love? Are you alright?~
 @1405 = ~~
 @1406 = ~That was wonderful, Captain. Thank you for sharing your experience with us today.~
 @1407 = ~Children? Do you have any questions for Captain Corwin?~
@@ -1450,14 +1450,14 @@ Captain Corwin shared the story of how she was arrested in the Hall of Wonders. 
 @1434 = ~Dark Circumstances
 You and Schael shared a tender moment; it seems that the two of you are still dealing with the trauma of your imprisonment and exile from the city. Together, with Rohma, you and Schael hope to make new memories to silence the dark echoes of your past.~
 @1435 = ~What's wrong, dear?~
-@1436 = ~I think of the kindness that you showed Rohma, and how good you've been with me... ~
+@1436 = ~I think of the kindness that you've shown to Rohma, and how good you've been with me... ~
 @1437 = ~And then I think of Beno, and how stupid I was to be with scum like that... you must think I'm a fool.~
 @1438 = ~Schael, stop it. You're more than any <PRO_MANWOMAN> can hope for in this life, and you've been a great mother to Rohma.~
 @1439 = ~Schael, I've never met anyone like you. I hope you understand how special you are. I do, and I know Rohma does.~
 @1440 = ~Nonsense. Let go of the past, love. Focus on our future together — you, me, and Rohma.~ 
 @1441 = ~The care and interest you've shown for her is more than Beno ever did.~
-@1442 = ~~
-@1443 = ~~
+@1442 = ~Yes... You know, Rohma asks about you all the time.~
+@1443 = ~Of course she does. I am the *ahem* hero and defender of Baldur's Gate, after all.~
 @1444 = ~~
 @1445 = ~And I'd rather you be open with me. Fine. Let's go.~
 @1446 = ~I'm sorry. I can't be a part of this any longer. If you ever clean up your act, come and see me.~
@@ -1498,7 +1498,7 @@ You and Schael shared a tender moment; it seems that the two of you are still de
 @1481 = ~Everyone deserves a second chance. Even Sarevok.~
 @1482 = ~I'll keep him on a short leash, don't worry.~
 @1483 = ~That's why I need you to keep an eye on him. If there's any indication of betrayal, you need to let me know immediately. He's died by my hand once, and he shall do so again if the need arises.~
-@1484 = ~~
+@1484 = ~Schael... I... I didn't realize how much I needed you near me, until you were gone. Your being here, now, fills a void in my heart that I didn't know was there. I'd like for us to move past friendship, into a more serious relationship. I... I'm in love with you, Schael.~ 
 @1485 = ~~
 @1486 = ~We need to keep our eyes on him at all times. If I get any sense that he's going to break his word, I swear I'll —~
 @1487 = ~~
@@ -1745,8 +1745,8 @@ Schael needs to send a message to the Dukes to inform them of our progress thus 
 @1725 = ~What's on your mind, love?~
 @1726 = ~Sure — what is it?~
 @1727 = ~You made it clear to me, I thought, that you wanted us to be together.~
-@1728 = ~~
-@1729 = ~~
+@1728 = ~...~
+@1729 = ~I, um... I don't know anything about that.~
 @1730 = ~~
 @1731 = ~Why, then, is Aerie spending so much time with you? Do you have feelings for her? She's a sweet girl, and you shouldn't lead her on.~
 @1732 = ~Why, then, is Neera spending so much time with you? Do you have feelings for her? She's a sweet girl, and you shouldn't lead her on.~ 

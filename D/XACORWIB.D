@@ -3258,10 +3258,24 @@ END
 			== XACORWIB
 			@882 /* ~Wait — you have <PRO_HISHER>'s memories?~ */
 			== SAREV25J
+			IF ~
+				Global("XA_CorwinLoveBG2", "GLOBAL", 1)
+			~
 			@874 /* ~I do. I can even feel the knives of Irenicus, slicing into my skin, torturing me. I can feel his hands and his breath... and... I can feel the unbridled joy of seeing you again, in Athkatla. I recall the fear of losing you to Bodhi, and Rohma to Illasera.~ */
+			== SAREV25J
+			IF ~
+				GlobalLT("XA_CorwinLoveBG2", "GLOBAL", 1)
+			~
+			@154  /* ~I do.~ */
 			== XACORWIB
+			IF ~
+				Global("XA_CorwinLoveBG2", "GLOBAL", 1)
+			~
 			@876 /* ~That's enough.~ */
 			== SAREV25J
+			IF ~
+				Global("XA_CorwinLoveBG2", "GLOBAL", 1)
+			~
 			@877 /* ~And Schael... I remember us sharing some *very* intimate—~ */
 			== XACORWIB
 			@875 /*~I'm going to stop talking to you now. And I'm especially going to stop listening.~ [BD58915]*/

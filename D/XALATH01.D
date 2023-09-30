@@ -384,6 +384,33 @@ IF ~~ THEN BEGIN XA_BroughtBody_Head2
 		See("XALATH03")
 	~ THEN 
 	GOTO XA_AskSutures
+	
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+		See("XACORWIN")
+	~
+	GOTO XA_TargetPractice
+END
+
+IF ~~ THEN BEGIN XA_TargetPractice
+	SAY @79  /*~What are these holes? It's as if someone used this head for target practice.~ */
+	
+	IF ~~ THEN
+	EXTERN XACORWIJ XA_TargetPractice2
+END
+
+IF ~~ THEN BEGIN XA_TargetPractice3
+	SAY @80  /* ~Hm... no matter. I've seen worse.~*/
+	
+	IF ~
+		See("XALATH02")
+	~ THEN 
+	GOTO XA_AskSutures
+	
+	IF ~
+		See("XALATH03")
+	~ THEN 
+	GOTO XA_AskSutures
 END
 
 IF ~~ THEN BEGIN XA_AskSutures

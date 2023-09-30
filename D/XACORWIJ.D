@@ -6250,7 +6250,21 @@ IF ~~ THEN BEGIN XA_OPT1END
 		!Global("JaheiraRomanceActive","GLOBAL",2)
 		!Global("HexxatRomanceActive","GLOBAL",2)
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_CorwinPromoted", "GLOBAL", 1)
 	~ THEN REPLY @1354 /* ~Capt — Schael, wait. There's something I need to tell you.~ */
+	GOTO XA_OPT1END_InitRomance //OK
+	
+	IF ~
+		!Global("AerieRomanceActive","GLOBAL",2)
+		!Global("ViconiaRomanceActive","GLOBAL",2)
+		!Global("DornRomanceActive","GLOBAL",2)
+		!Global("NeeraRomanceActive","GLOBAL",2)
+		!Global("AnomenRomanceActive","GLOBAL",2)
+		!Global("JaheiraRomanceActive","GLOBAL",2)
+		!Global("HexxatRomanceActive","GLOBAL",2)
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_CorwinPromoted", "GLOBAL", 1)
+	~ THEN REPLY @194 /* ~Maj — Schael, wait. There's something I need to tell you.~ */
 	GOTO XA_OPT1END_InitRomance //OK
 END
 
@@ -6282,7 +6296,6 @@ IF ~~ THEN BEGIN XA_OPT1END_InitRomance2
 	
 	IF ~~ THEN REPLY @94 /* ~Schael... I... I didn't realize how much I needed you near me, until you were gone. Your being here, now, fills a void in my heart that I didn't know was there. I'd like for us to move past friendship, into a more serious relationship. I... I'm in love with you, Schael.~ */
 	DO ~
-		SetGlobal("XA_CorwinLoveBG2", "GLOBAL", 1)
 		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	GOTO XAA35
@@ -6332,11 +6345,25 @@ IF ~~ THEN BEGIN XA_OPT1Romance_2
 
 	=@1352 /*	~Yes, sorry. I was thinking about home. I just miss them, that's all.~*/
 	
-	IF ~~ THEN REPLY @149 /* ~Rohma and your father. I understand.~ */
+	IF ~
+		GlobalLT("XA_CorwinPromoted", "GLOBAL", 1)
+	~ THEN REPLY @149 /* ~Rohma and your father. I understand.~ */
 	GOTO XA_OPT1Romance_3 //OK
 	
-	IF ~~ THEN REPLY @255 /* ~No need to apologize. It must be difficult for you to be away from your family.~*/
+	IF ~
+		GlobalLT("XA_CorwinPromoted", "GLOBAL", 1)
+	~ THEN REPLY @255 /* ~No need to apologize. It must be difficult for you to be away from your family.~*/
 	GOTO XA_OPT1Romance_3 //OK
+	
+	IF ~
+		GlobalLT("XA_CorwinPromoted", "GLOBAL", 1)
+	~ THEN REPLY @149 /* ~Rohma and your father. I understand.~ */
+	GOTO XA_OPT1ARomance_3 //OK
+	
+	IF ~
+		GlobalLT("XA_CorwinPromoted", "GLOBAL", 1)
+	~ THEN REPLY @255 /* ~No need to apologize. It must be difficult for you to be away from your family.~*/
+	GOTO XA_OPT1ARomance_3 //OK
 END
 
 IF ~~ THEN BEGIN XA_OPT1Romance_3
@@ -7811,7 +7838,20 @@ END
 
 IF ~~ THEN BEGIN XAAKiss
 	SAY @73 /* Come here, hero -~ */
-	IF ~~ THEN
+	IF ~
+		Global("XA_CorwinPromoted", "GLOBAL", 1)
+	~ THEN
+	DO ~
+		SetGlobal("XA_CorwinLoveTOB", "GLOBAL", 1)
+	~
+	GOTO XAAKissChain
+	
+	IF ~
+		GlobalLT("XA_CorwinPromoted", "GLOBAL", 1)
+	~ THEN
+	DO ~
+		SetGlobal("XA_CorwinLoveBG2", "GLOBAL", 1)
+	~
 	GOTO XAAKissChain
 END
 
@@ -10393,6 +10433,148 @@ IF ~
 	EXIT
 END
 
+IF ~~ THEN BEGIN XA_TargetPractice2
+	SAY @1728 /*~...~ */
+	
+	=@1729 /*~I, um... I don't know anything about that.~ */
+	
+	IF ~~ THEN
+	EXTERN XALATH01 XA_TargetPractice3
+END
+
+//{ Optional Banter 1A
+IF ~
+	Global("XA_Banter_CorwinPlayerOpt1A", "GLOBAL", 1)
+	!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+~
+THEN BEGIN XA_OPT1AFriend
+	SAY @1360 /* ~(You notice Major Corwin staring into the distance, with sadness in her eyes.)~ */
+	
+	IF ~~ THEN REPLY @1359 /* ~Major? Are you alright?~ */
+	DO ~
+		SetGlobal("XA_Banter_CorwinPlayerOpt1A", "GLOBAL", 2)
+	~
+	GOTO XA_OPT1Friend2 
+	
+	IF ~~ THEN REPLY @1428 /* ~(Leave her be.)~ */
+	DO ~
+		SetGlobal("XA_Banter_CorwinPlayerOpt1A", "GLOBAL", 2)
+	~
+	EXIT
+END
+
+IF ~
+	Global("XA_Banter_CorwinPlayerOpt1A", "GLOBAL", 1)
+	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+~
+THEN BEGIN XA_OPT1ARomance
+	SAY @1384 /* ~(You notice Schael staring into the distance, with sadness in her eyes.)~ */
+	
+	IF ~~ THEN REPLY @1404 /* ~Love? Are you alright?~ */
+	DO ~
+		SetGlobal("XA_Banter_CorwinPlayerOpt1A", "GLOBAL", 2)
+	~
+	GOTO XA_OPT1Romance_2 //OK
+	
+	IF ~~ THEN REPLY @1428 /* ~(Leave her be.)~ */
+	DO ~
+		SetGlobal("XA_Banter_CorwinPlayerOpt1A", "GLOBAL", 2)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_OPT1ARomance_3
+	SAY @1442 /* ~Yes... You know, Rohma asks about you.~ */
+	
+	IF ~
+		Global("XA_GaveDoll", "GLOBAL", 1)
+	~ THEN REPLY @147 /* ~Really? I didn't think I'd made much of an impression on her.~ */
+	GOTO XA_OPT1ARomance4_GaveDoll //OK
+	
+	IF ~
+		!Global("XA_GaveDoll", "GLOBAL", 1)
+	~ THEN REPLY @147 /* ~Really? I didn't think I'd made much of an impression on her.~ */
+	GOTO XA_OPT1ARomance4_NoDoll //OK
+	
+	IF ~~ THEN REPLY @1443 /* ~Of course she does. I am the *ahem* hero of Baldur's Gate, after all.~ */
+	GOTO XA_OPT1ARomance_4 //OK
+END
+
+IF ~~ THEN BEGIN XA_OPT1ARomance_4
+	SAY @160 /*  ~(She rolls her eyes)  */
+	= @1350 /* ~A little humility from time to time wouldn't hurt, you know. But yes, you did leave quite the impression on her.~ */
+	
+	IF ~
+		Global("XA_GaveDoll", "GLOBAL", 1)
+	~ THEN
+	GOTO XA_OPT1ARomance4_GaveDoll //OK
+	
+	IF ~
+		!Global("XA_GaveDoll", "GLOBAL", 1)
+	~ THEN
+	GOTO XA_OPT1ARomance4_NoDoll //OK
+END
+
+IF ~~ THEN BEGIN XA_OPT1ARomance4_NoDoll
+	SAY @1436 /* ~I think of the kindness that you showed Rohma, and how good you've been with me... ~ */
+
+	= @1437 /* And then I think of Beno, and how stupid I was to be with scum like that... you must think I'm a fool. */
+	
+	IF ~~ THEN REPLY @1438 /* ~Schael, stop it. You're more than any <PRO_MANWOMAN> can hope for in this life, and a great mother to Rohma.~ */
+	GOTO XA_OPT1ARomance4_NoDoll2 //OK
+	
+	IF ~~ THEN REPLY @1439 /* ~Schael, I've never met anyone like you. I hope you understand how special you are. I do, and I know Rohma does.~ */
+	GOTO XA_OPT1ARomance4_NoDoll2 //OK
+	
+	IF ~~ THEN REPLY @1440 /*  ~Nonsense. Let go of the past, love. Focus on our future together — you, me, and Rohma.~  */
+	GOTO XA_OPT1ARomance4_NoDoll2 //OK
+	
+END
+
+IF ~~ THEN BEGIN XA_OPT1ARomance4_NoDoll2
+	SAY @1441 /* ~The care and interest you've shown for her is more than Beno ever did.~ */
+	
+	IF ~~ THEN 
+	GOTO XA_OPT1ARomance4_NoDoll3 //OK
+END
+
+IF ~~ THEN BEGIN XA_OPT1ARomance4_GaveDoll
+	SAY @148 /* ~She loves the teddy you bought for her. It's her favorite toy.~ */
+	
+	IF ~~ THEN REPLY @150 /* ~Oh yes, I remember! I bought it at the general store, not long after I met her for the first time.~ */
+	GOTO XA_OPT1ARomance4_GaveDoll2 //OK
+	
+	IF ~~ THEN REPLY @151 /* ~It was a simple gesture.. I didn't think it would mean that much to her.~ */
+	GOTO XA_OPT1ARomance4_GaveDoll2 //OK
+	
+END
+
+IF ~~ THEN BEGIN XA_OPT1ARomance4_GaveDoll2
+	SAY @152 /*~That one small act of kindness was more than her father ever did for her.~*/
+	
+	IF ~~ THEN 
+	GOTO XA_OPT1ARomance4_NoDoll3
+END
+
+IF ~~ THEN BEGIN XA_OPT1ARomance4_NoDoll3
+	SAY @153 /* ~She deserves better.~ */
+	
+	IF ~~ THEN REPLY @154 /* ~She does. Listen, Schael - I don't know if I'd be a good step parent for Rohma. What I do know is that I'll do my best.~ */
+	GOTO XA_OPT1ARomanceEnd //OK
+	
+	IF ~~ THEN REPLY @155 /* ~She does. Listen, Schael - I'm fully aware of the responsibilities and challenges of being a step parent, and I want you to know that I will welcome them.~ */
+	GOTO XA_OPT1ARomanceEnd  //OK
+END
+
+IF ~~ THEN BEGIN XA_OPT1ARomanceEnd 
+	SAY @156 /*  ~I know you will. You step up to challenges instead of running from them. That's one of the reasons that I love you, <CHARNAME>. ~ */
+	= @158 /* ~Let's get moving.~ */
+	IF ~~ THEN
+	EXIT
+END
+
+//}
+
 CHAIN
 	IF ~~ THEN XACORWIJ XA_GeneralTalk_Chain
 		@1799 /* ~Peace, General. I'm Major Schael Corwin of the Baldur's Gate Flaming Fist, assisting <CHARNAME> on a special assignment. The Grand Dukes have ordered —~*/
@@ -11378,6 +11560,8 @@ CHAIN
 		
 		== AERIEJ
 		IF ~
+			!Global("AerieRomanceActive", "GLOBAL", 1)
+			!Global("AerieRomanceActive", "GLOBAL", 2)
 			IsValidForPartyDialogue("Aerie")
 		~
 		@75 /* ~Oh my... that's s-so romantic!~ */

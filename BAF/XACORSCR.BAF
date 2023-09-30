@@ -4342,7 +4342,6 @@ THEN
 		SetGlobal("XA_Banter_CorwinHaerDalis", "GLOBAL", 1)
 		SetGlobal("XA_Banter_CorwinNalia", "GLOBAL", 1)
 		SetGlobal("XA_Banter_CorwinMazzy", "GLOBAL", 1)
-		SetGlobal("XA_Banter_CorwinBanter", "GLOBAL", 1)
 		SetGlobal("XA_Banter_CorwinSarevok", "GLOBAL", 1)
 		SetGlobal("XA_Banter_CorwinCaelar", "GLOBAL", 1)
 		
@@ -6317,6 +6316,34 @@ END
 			SetInterrupt(FALSE)
 			SetGlobal("XA_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+	
+	//{ Optional Banter 1A
+	IF
+		ActionListEmpty()
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+		GlobalLT("XA_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
+		Global("XA_ReturnToBG", "GLOBAL", 2)
+		GlobalGT("GavePocketPlane","GLOBAL",0)
+		
+	THEN
+		RESPONSE #100
+			SetGlobalTimer("XA_PlayerOpt1ABanterTimer", "LOCALS", THREE_DAYS)
+			Continue()
+	END
+	
+	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_PlayerOpt1ABanterTimer", "LOCALS")
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+		GlobalLT("XA_Banter_CorwinPlayerOpt1A", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_Banter_CorwinPlayerOpt1A", "GLOBAL", 1)
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)
 	END

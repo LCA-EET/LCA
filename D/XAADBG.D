@@ -245,13 +245,109 @@ IF ~~ THEN BEGIN XA_StatusReport
 	
 	IF ~
 		!GlobalsGT("XA_Banter_CorwinAerieEnd", "XA_Banter_CorwinAerie")
-	~ THEN REPLY @704
+	~ THEN REPLY @718
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinAnomenEnd", "XA_Banter_CorwinAnomen")
+	~ THEN REPLY @719
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinDornEnd", "XA_Banter_CorwinDorn")
+	~ THEN REPLY @720
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinEdwinEnd", "XA_Banter_CorwinEdwin")
+	~ THEN REPLY @721
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinImoenEnd", "XA_Banter_CorwinImoen")
+	~ THEN REPLY @722
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinJaheiraEnd", "XA_Banter_CorwinJaheira")
+	~ THEN REPLY @723
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinJanEnd", "XA_Banter_CorwinJan")
+	~ THEN REPLY @724
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinKeldornEnd", "XA_Banter_CorwinKeldorn")
+	~ THEN REPLY @725
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinKorganEnd", "XA_Banter_CorwinKorgan")
+	~ THEN REPLY @726
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinNeeraEnd", "XA_Banter_CorwinNeera")
+	~ THEN REPLY @727
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinPlayerEnd", "XA_Banter_CorwinPlayer")
+	~ THEN REPLY @728
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinRasaadEnd", "XA_Banter_CorwinRasaad")
+	~ THEN REPLY @729
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinValygarEnd", "XA_Banter_CorwinValygar")
+	~ THEN REPLY @730
 	GOTO XA_MainMenu
 	
 	IF ~
 		!GlobalsGT("XA_Banter_CorwinViconiaEnd", "XA_Banter_CorwinViconia")
-	~ THEN REPLY @705
+	~ THEN REPLY @731
 	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinYoshimoEnd", "XA_Banter_CorwinYoshimo")
+	~ THEN REPLY @732
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinMinscEnd", "XA_Banter_CorwinMinsc")
+	~ THEN REPLY @733
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinHaerDalisEnd", "XA_Banter_CorwinHaerDalis")
+	~ THEN REPLY @734
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinNaliaEnd", "XA_Banter_CorwinNalia")
+	~ THEN REPLY @735
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinMazzyEnd", "XA_Banter_CorwinMazzy")
+	~ THEN REPLY @736
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinSarevokEnd", "XA_Banter_CorwinSarevok")
+	~ THEN REPLY @737
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalsGT("XA_Banter_CorwinCaelarEnd", "XA_Banter_CorwinCaelar")
+	~ THEN REPLY @738
+	GOTO XA_MainMenu
+	
 	
 	IF ~
 		GlobalGT("XA_CorwinPregnant", "GLOBAL", 0)
@@ -3669,6 +3765,7 @@ IF ~~ THEN BEGIN XA_Menu_AdjustVariables
 	DO ~
 		SetGlobal("XA_LathSpawn", "GLOBAL", 1)
 		SetGlobal("XA_BenoBoom", "GLOBAL", 0)
+		SetGlobal("XA_LathMetPlayer", "GLOBAL", 0)
 	~
 	GOTO XA_MainMenu
 	
