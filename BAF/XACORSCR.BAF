@@ -2098,6 +2098,7 @@ END
 		InParty(Myself)
 		GlobalTimerExpired("XA_CorwinBenoSoul", "GLOBAL")
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+		GlobalLT("XA_CorwinBenoSoulTalk", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
