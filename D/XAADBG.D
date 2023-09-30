@@ -8,6 +8,46 @@ IF ~
 	IF ~~ THEN REPLY @683
 	GOTO XA_StatusReport
 	
+	IF ~~ THEN REPLY @753
+	DO ~
+		SetGlobal("BeginChallenge1", "GLOBAL", 1)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @754
+	DO ~
+		SetGlobal("BeginChallenge2", "GLOBAL", 1)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @755
+	DO ~
+		SetGlobal("BeginChallenge3", "GLOBAL", 1)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @756
+	DO ~
+		SetGlobal("BeginChallenge4", "GLOBAL", 1)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @757
+	DO ~
+		SetGlobal("BeginChallenge5", "GLOBAL", 1)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @765
+	DO ~
+		SetGlobal("bd_Imoen_farewell","bd0120",2)
+		AddJournalEntry(269028,QUEST_DONE)
+		SetCutSceneLite(TRUE)
+		StartCutSceneEx("bdcut00z",FALSE)
+	~ 
+	EXIT
+	
+	
 	IF ~~ THEN REPLY @715
 	DO ~
 		SetGlobal("XA_ClearedKanaglym", "GLOBAL",1)
@@ -232,6 +272,31 @@ END
 
 IF ~~ THEN BEGIN XA_StatusReport
 	SAY @683
+	
+	IF ~
+		Global("BeginChallenge1","GLOBAL",12)
+	~ THEN REPLY @743
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("BeginChallenge2","GLOBAL",3)
+	~ THEN REPLY @744
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("BeginChallenge3","GLOBAL",3)
+	~ THEN REPLY @745
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("BeginChallenge4","GLOBAL",6)
+	~ THEN REPLY @746
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("BeginChallenge5","GLOBAL",4)
+	~ THEN REPLY @747
+	GOTO XA_MainMenu
 	
 	IF ~
 		Global("XA_BenoBoom", "GLOBAL", 0)
@@ -621,15 +686,51 @@ IF ~~ THEN BEGIN XA_EpilogueTest
 	~	
 	EXIT
 	
+	IF ~~ THEN REPLY @611 /* ~XACORND6 (Corwin, Non-Romance (Godhood))~*/
+	DO ~
+		TextScreen("XACORND6")
+	~	
+	EXIT
+	
 	IF ~~ THEN REPLY @610 /* ~XACAEEND (Caelar)~*/
 	DO ~
 		TextScreen("XACAEEND")
 	~
 	EXIT
 	
-	IF ~~ THEN REPLY @611 /* ~XACORND6 (Corwin, Non-Romance (Godhood))~*/
+	IF ~~ THEN REPLY @758  /* ~XACORND1 (Coriwn, Romance, Male)~*/
 	DO ~
-		TextScreen("XACORND6")
+		TextScreen("XALCAND1")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @759 /* ~XACORND2 (Coriwn, Romance, Female)~*/
+	DO ~
+		TextScreen("XALCAND2")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @760 /* ~XACORND3 (Coriwn, Romance, Male (Godhood))~*/
+	DO ~
+		TextScreen("XALCAND3")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @761 /* ~XACORND4 (Coriwn, Romance, Female (Godhood))~*/
+	DO ~
+		TextScreen("XALCAND4")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @762 /* ~XACORND5 (Corwin, Non-Romance)~*/
+	DO ~
+		TextScreen("XALCAND5")
+	~	
+	EXIT
+	
+	IF ~~ THEN REPLY @763 /* ~XACORND6 (Corwin, Non-Romance (Godhood))~*/
+	DO ~
+		TextScreen("XALCAND6")
 	~	
 	EXIT
 	
@@ -2821,6 +2922,12 @@ IF ~~ THEN BEGIN XA_Menu_AdvanceTime
 	~
 	GOTO XA_MainMenu
 	
+	IF ~~ THEN REPLY @764
+	DO ~
+		AdvanceTime(ONE_MONTH)
+	~
+	GOTO XA_MainMenu
+	
 	IF ~~ THEN REPLY @26 /* ~Go back to the prior menu.~ */
 	GOTO XA_MainMenu
 END
@@ -3797,6 +3904,36 @@ END
 
 IF ~~ THEN BEGIN XA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
+	
+	IF ~~ THEN REPLY @748
+	DO ~
+		SetGlobal("BeginChallenge1","GLOBAL",12)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @749
+	DO ~
+		SetGlobal("BeginChallenge2","GLOBAL",3)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @750
+	DO ~
+		SetGlobal("BeginChallenge3","GLOBAL",3)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @751
+	DO ~
+		SetGlobal("BeginChallenge4","GLOBAL",6)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @752
+	DO ~
+		SetGlobal("BeginChallenge5","GLOBAL",4)
+	~
+	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @714
 	DO ~

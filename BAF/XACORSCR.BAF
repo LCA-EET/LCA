@@ -1252,8 +1252,6 @@ END
 
 //} BGMiniQuest Interaction End
 
-
-
 //{ 12: Reputation Handling
 IF 
 	Global("XA_CanTalkToPlayer", "LOCALS", 1)
@@ -1502,6 +1500,23 @@ END
 //} End Underdark Check
 
 //{ 18: Event Checks
+
+	//{ Completed Challenge 3
+	IF
+		InParty(Myself)
+		Global("BeginChallenge3", "GLOBAL", 3)
+		GlobalLT("XA_C3TimerSet", "LOCALS", 1)
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_C3TimerSet", "LOCALS", 1)
+			SetGlobalTimer("XA_C3Timer", "LOCALS", ONE_HOUR)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
 
 	//{ Killed General
 	IF
@@ -3230,10 +3245,6 @@ END
 		//}
 		
 	//}
-
-//}
-
-//{ Event-Driven Interactions
 
 //}
 
@@ -6504,26 +6515,19 @@ END
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_CorwinPregnant", "GLOBAL", 5)
-		GlobalTimerExpired("XA_CorwinPregnantTimer", "GLOBAL")
+		OR(2)
+			GlobalTimerExpired("XA_CorwinPregnantTimer", "GLOBAL")
+			GlobalTimerExpired("XA_C3Timer", "LOCALS")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_CorwinPregnant", "GLOBAL", 6)
-			SetInterrupt(TRUE)
-			Continue()
-	END
-	
-	IF
-		Global("XA_CorwinPregnant", "GLOBAL", 6)
-		See(Player1)
-		!ActuallyInCombat()
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
 			PlaySong(142)
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)
 	END
+	
+
 	//}
 	
 	//{ Fourth Interaction
@@ -6535,24 +6539,15 @@ END
 		GlobalTimerExpired("XA_CorwinPregnantTimer", "GLOBAL")
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_CorwinPregnant", "GLOBAL", 8)
-			Continue()
-	END
-	
-	IF
-		Global("XA_CorwinPregnant", "GLOBAL", 8)
-		See(Player1)
-		!ActuallyInCombat()
-	THEN
-		RESPONSE #100
 			SetInterrupt(FALSE)
+			SetGlobal("XA_CorwinPregnant", "GLOBAL", 8)
 			PlaySong(142)
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)
 	END
 	//}
 	
-	//{ Final Interaction
+	//{ Final Interaction - Corwin Leaves
 	IF
 		ActionListEmpty()
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -6569,7 +6564,6 @@ END
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_CorwinPregnant", "GLOBAL", 10)
 		AreaCheck("AR4500")
-		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)

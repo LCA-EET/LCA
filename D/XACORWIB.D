@@ -2563,7 +2563,7 @@ END
 			IF ~
 				Global("XA_CorwinPromoted", "GLOBAL", 1)
 			~
-			@771 /* ~Thank you, Major. The pain of his loss weighs heavily. In time I will learn to cope with this, but for now I only wish to see Irenicus dead... and I am glad you are here to help in the hunt for that monster.~ */
+			@771 /* ~Thank you, Major. The pain of his loss weighs heavily. In time I will learn to cope with this, but for now I only wish to see the Five stopped... and I am glad you are here to help in that regard.~  */
 			== XACORWIB
 			@3 /* ~As am I.~ */
 	EXIT

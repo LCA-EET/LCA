@@ -1,3 +1,5 @@
+
+
 //{ Remove Pocket Plane Ability - Avernus Tower
 	IF
 		GlobalLT("XA_AVBossFled", "GLOBAL", 1)
@@ -284,26 +286,9 @@ END
 
 IF
 	Global("XAAssist","GLOBAL",2)
-	!TriggerOverride(Player1,HaveSpellRES("XAASSIS1")) 
 THEN
 	RESPONSE #100
-		SetInterrupt(FALSE)
-		ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
 		SetGlobal("XAAssist","GLOBAL",0)
-		////DisplayStringHead(Player1, @2)
-		SetInterrupt(TRUE)
-		Continue()
-END
-
-IF
-	Global("XAAssist","GLOBAL",2)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XAAssist","GLOBAL",0)
-		//DisplayStringHead(Player1, @3)
-		SetInterrupt(TRUE)
-		Continue()
 END
 
 //{ Return to Baldur's Gate Timers
@@ -646,6 +631,7 @@ END
 
 //{ Explicit Mod Check
 IF 
+	ActionListEmpty()
 	GlobalTimerExpired("XA_ExplicitModCheckTimer", "GLOBAL")
 	Global("XA_ExplicitModCheckTimerSet", "GLOBAL", 1)
 	Global("XA_ExplicitModActive","GLOBAL",1)
@@ -828,19 +814,14 @@ THEN
 END
 //}
 
-IF
-	Dead("gromnir")  // Gromnir Il-Khan
-	Global("DeathOfGromnir","GLOBAL",0)
-	CombatCounter(0)
-	!AreaCheck("AR4500")  // Pocket Plane
-THEN
-	RESPONSE #100
-		ClearAllActions()
-		StartCutSceneMode()
-		SetGlobal("DeathOfGromnir","GLOBAL",1)
-		CreateCreatureObjectEffect("MEL01","SPFLESHS",Player1)  // Melissan
-		Wait(1)
-		PlaySong(79)
-		ActionOverride("mel01",StartDialogueNoSet(Player1))
-		EndCutSceneMode()
-END
+//{ Add LCA Assistant
+	IF
+		//Global("XAAssist","GLOBAL",0)
+		!TriggerOverride(Player1,HaveSpellRES("XAASSIS1")) 
+	THEN
+		RESPONSE #100
+			Wait(3)
+			ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
+			Continue()
+	END
+//}

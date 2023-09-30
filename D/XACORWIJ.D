@@ -1680,6 +1680,9 @@ IF ~
 	SAY @1667 /* ~<CHARNAME>... It's time. I need to go home. Have the gateway send me back to Baldur's Gate.~*/
 	
 	IF ~~ THEN REPLY @1676 /* ~Can't you stay with me for a while longer? I need you.~*/
+	DO ~
+		SetGlobal("XA_CorwinPregnant", "GLOBAL", 11)
+	~
 	GOTO XA_CorwinPregnant_Final_2
 END
 
@@ -11678,7 +11681,7 @@ CHAIN XACORWIJ XA_GoodbyeChain
 	IF ~
 		IsValidForPartyDialogue("Korgan")
 	~
-	@1692 /* ~Thank you, Korgan.~*/
+	@1692 /* ~I appreciate that. Thank you, Korgan.~*/
 	//}
 	
 	//{ Imoen Goodbye
@@ -11693,6 +11696,12 @@ CHAIN XACORWIJ XA_GoodbyeChain
 		IsValidForPartyDialogue("Imoen2")
 	~
 	@1694 /* ~I will Imoen... and I'll miss you too. Take good care of your <PRO_BROTHERSISTER> for me.~*/
+	
+	== IMOEN2J
+	IF ~
+		IsValidForPartyDialogue("Imoen2")
+	~
+	@1719 /* ~Don't worry, I'll keep <PRO_HIMHER> out of trouble.~*/
 	//}
 	
 	//{ Neera Goodbye
@@ -11754,7 +11763,7 @@ CHAIN XACORWIJ XA_GoodbyeChain
 	IF ~
 		IsValidForPartyDialogue("Jaheira")
 	~
-	@1703 /* ~Though it must hurt to leave <PRO_HISHER>, in time you'll realize that you've made the right decision, Schael. The battlefield is no place for an expecting mother.~ */
+	@1703 /* ~Though it must hurt to leave <PRO_HIMHER>, in time you'll realize that you've made the right decision, Schael. The battlefield is no place for an expecting mother.~ */
 	
 	== XACORWIJ
 	IF ~
@@ -11790,6 +11799,20 @@ CHAIN XACORWIJ XA_GoodbyeChain
 	~
 	@1708 /* ~And I'm fortunate to be able to call you a friend, Mazzy. Be well.~*/
 	//}
+	
+	//{ Caelar Goodbye
+	== XACAELAJ
+	IF ~
+		IsValidForPartyDialogue("XACAELAR")
+	~
+	@346 /* ~Major, you've represented your city and your family with distinction. It has been an honor to stand at your side. Walk in the light, always.~*/
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("XACAELAR")
+	~
+	@347  /*~Thank you, Caelar. When the time comes, I'll vouch for your actions. Take care.~ */
+	
+	//}
 
 	//{ HaerDalis Goodbye
 	== HAERDAJ
@@ -11798,7 +11821,7 @@ CHAIN XACORWIJ XA_GoodbyeChain
 	~
 	@1717/*  ~Alas, it is time for my raven to take flight and return to her nest.~ */
 	
-	== HAERDAJ
+	== XACORWIJ
 	IF ~
 		IsValidForPartyDialogue("HaerDalis")
 	~

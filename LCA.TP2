@@ -176,6 +176,7 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	COPY ~LCA/WAV/XA100122.WAV~ ~override~
 	COPY ~LCA/WAV/XA100123.WAV~ ~override~
 	COPY ~LCA/WAV/XA100124.WAV~ ~override~
+	COPY ~LCA/WAV/XA100125.WAV~ ~override~
 //}
 
 //{ Text Screens
@@ -250,29 +251,57 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 		COPY ~LCA/2DA/XACAEEND.2DA~ ~override~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@167)
 	
-		//Corwin Romance, Male
-		COPY ~LCA/2DA/XACORND1.2DA~ ~override~
-		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@168)
+		//{ Corwin Epilogues, SoD Portrait
+			//Corwin Romance, Male
+			COPY ~LCA/2DA/XACORND1.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@168)
+			
+			//Corwin Romance, Female
+			COPY ~LCA/2DA/XACORND2.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@169)
+			
+			//Corwin Romance, Male (Chose Godhood)
+			COPY ~LCA/2DA/XACORND3.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@170)
+			
+			//Corwin Romance, Female (Chose Godhood)
+			COPY ~LCA/2DA/XACORND4.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@171)
+			
+			//Corwin Non-Romance
+			COPY ~LCA/2DA/XACORND5.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@172)
+			
+			//Corwin Non-Romance (Chose Godhood)
+			COPY ~LCA/2DA/XACORND6.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@173)
+		//}
 		
-		//Corwin Romance, Female
-		COPY ~LCA/2DA/XACORND2.2DA~ ~override~
-		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@169)
-		
-		//Corwin Romance, Male (Chose Godhood)
-		COPY ~LCA/2DA/XACORND3.2DA~ ~override~
-		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@170)
-		
-		//Corwin Romance, Female (Chose Godhood)
-		COPY ~LCA/2DA/XACORND4.2DA~ ~override~
-		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@171)
-		
-		//Corwin Non-Romance
-		COPY ~LCA/2DA/XACORND5.2DA~ ~override~
-		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@172)
-		
-		//Corwin Non-Romance (Chose Godhood)
-		COPY ~LCA/2DA/XACORND6.2DA~ ~override~
-		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@173)
+		//{ Corwin Epilogues, LCA Portrait
+			//Corwin Romance, Male
+			COPY ~LCA/2DA/XALCAND1.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@168)
+			
+			//Corwin Romance, Female
+			COPY ~LCA/2DA/XALCAND2.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@169)
+			
+			//Corwin Romance, Male (Chose Godhood)
+			COPY ~LCA/2DA/XALCAND3.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@170)
+			
+			//Corwin Romance, Female (Chose Godhood)
+			COPY ~LCA/2DA/XALCAND4.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@171)
+			
+			//Corwin Non-Romance
+			COPY ~LCA/2DA/XALCAND5.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@172)
+			
+			//Corwin Non-Romance (Chose Godhood)
+			COPY ~LCA/2DA/XALCAND6.2DA~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@173)
+		//}
 	//}
 //}
 
@@ -929,7 +958,6 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	EXTEND_TOP ~BG1300.BCS~ ~LCA/BAF/XABG1300.BAF~ //SE
 	EXTEND_TOP ~BG4200.BCS~ ~LCA/BAF/XABG4200.BAF~ 
 	EXTEND_TOP ~FFHUNT.BCS~ ~LCA/BAF/XAFFHUNT.BAF~
-	EXTEND_TOP ~BG2600.BCS~ ~LCA/BAF/XABG2600.BAF~ //Candlekeep
 	EXTEND_TOP ~BD4400.BCS~ ~LCA/BAF/XABD4400.BAF~
 	EXTEND_TOP ~VALYGAR.BCS~ ~LCA/BAF/XASVIR.BAF~
 	EXTEND_TOP ~JAHEIRA.BCS~ ~LCA/BAF/XASVIR.BAF~

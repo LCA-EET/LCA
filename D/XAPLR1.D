@@ -87,7 +87,7 @@ APPEND ~PLAYER1~
 		DO ~
 			ReallyForceSpellRES("XACHNG01", "XACORWIN")
 			ReallyForceSpellRES("XACHNG01", "Corwin")
-			//SetGlobal("XA_PortraitChange_LCA", "GLOBAL", 1)
+			SetGlobal("XA_PortraitChange_SoD", "GLOBAL", 0)
 		~
 		GOTO XA_ChangeDone
 		
@@ -95,6 +95,7 @@ APPEND ~PLAYER1~
 		DO ~
 			ReallyForceSpellRES("XACHNG02", "XACORWIN")
 			ReallyForceSpellRES("XACHNG02", "Corwin")
+			SetGlobal("XA_PortraitChange_SoD", "GLOBAL", 1)
 			//SetGlobal("XA_PortraitChange_SoD", "GLOBAL", 1)
 		~
 		GOTO XA_ChangeDone
