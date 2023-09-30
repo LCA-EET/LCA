@@ -1638,6 +1638,43 @@ END
 IF ~~ THEN BEGIN XA_DialogTest
 	SAY @334
 	
+	IF ~~ THEN REPLY @739
+	DO ~
+		SetGlobal("XA_Banter_CorwinPlayerOpt1A", "GLOBAL", 1)
+		SetGlobal("XA_GaveDoll", "GLOBAL", 0)
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @740
+	DO ~
+		SetGlobal("XA_Banter_CorwinPlayerOpt1A", "GLOBAL", 1)
+		SetGlobal("XA_GaveDoll", "GLOBAL", 0)
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 0)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @741
+	DO ~
+		SetGlobal("XA_Banter_CorwinPlayerOpt1A", "GLOBAL", 1)
+		SetGlobal("XA_GaveDoll", "GLOBAL", 1)
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @742
+	DO ~
+		SetGlobal("XA_Banter_CorwinPlayerOpt1A", "GLOBAL", 1)
+		SetGlobal("XA_GaveDoll", "GLOBAL", 1)
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 0)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	~
+	EXIT
+	
+	
 	IF ~~ THEN REPLY @336 /* ~Dialog B-0~ */
 	DO ~
 		SetGlobal("OHD_corwinconflict","GLOBAL",2)

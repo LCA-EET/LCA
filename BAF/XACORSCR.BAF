@@ -6328,10 +6328,13 @@ END
 		GlobalLT("XA_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
 		Global("XA_ReturnToBG", "GLOBAL", 2)
 		GlobalGT("GavePocketPlane","GLOBAL",0)
-		
+		GlobalLT("XA_1ATimerSet", "LOCALS", 1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_1ATimerSet", "LOCALS", 1)
 			SetGlobalTimer("XA_PlayerOpt1ABanterTimer", "LOCALS", THREE_DAYS)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 	

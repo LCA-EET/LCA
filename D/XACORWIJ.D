@@ -6356,12 +6356,12 @@ IF ~~ THEN BEGIN XA_OPT1Romance_2
 	GOTO XA_OPT1Romance_3 //OK
 	
 	IF ~
-		GlobalLT("XA_CorwinPromoted", "GLOBAL", 1)
+		Global("XA_CorwinPromoted", "GLOBAL", 1)
 	~ THEN REPLY @149 /* ~Rohma and your father. I understand.~ */
 	GOTO XA_OPT1ARomance_3 //OK
 	
 	IF ~
-		GlobalLT("XA_CorwinPromoted", "GLOBAL", 1)
+		Global("XA_CorwinPromoted", "GLOBAL", 1)
 	~ THEN REPLY @255 /* ~No need to apologize. It must be difficult for you to be away from your family.~*/
 	GOTO XA_OPT1ARomance_3 //OK
 END
@@ -10488,12 +10488,12 @@ IF ~~ THEN BEGIN XA_OPT1ARomance_3
 	
 	IF ~
 		Global("XA_GaveDoll", "GLOBAL", 1)
-	~ THEN REPLY @147 /* ~Really? I didn't think I'd made much of an impression on her.~ */
+	~ THEN REPLY @1462 /* ~Really? I didn't think I'd made much of an impression on her.~ */
 	GOTO XA_OPT1ARomance4_GaveDoll //OK
 	
 	IF ~
 		!Global("XA_GaveDoll", "GLOBAL", 1)
-	~ THEN REPLY @147 /* ~Really? I didn't think I'd made much of an impression on her.~ */
+	~ THEN REPLY @1462 /* ~Really? I didn't think I'd made much of an impression on her.~ */
 	GOTO XA_OPT1ARomance4_NoDoll //OK
 	
 	IF ~~ THEN REPLY @1443 /* ~Of course she does. I am the *ahem* hero of Baldur's Gate, after all.~ */
@@ -10502,7 +10502,7 @@ END
 
 IF ~~ THEN BEGIN XA_OPT1ARomance_4
 	SAY @160 /*  ~(She rolls her eyes)  */
-	= @1350 /* ~A little humility from time to time wouldn't hurt, you know. But yes, you did leave quite the impression on her.~ */
+	= @1463 /* ~A little humility from time to time wouldn't hurt, you know.~*/
 	
 	IF ~
 		Global("XA_GaveDoll", "GLOBAL", 1)
@@ -10540,9 +10540,6 @@ END
 
 IF ~~ THEN BEGIN XA_OPT1ARomance4_GaveDoll
 	SAY @148 /* ~She loves the teddy you bought for her. It's her favorite toy.~ */
-	
-	IF ~~ THEN REPLY @150 /* ~Oh yes, I remember! I bought it at the general store, not long after I met her for the first time.~ */
-	GOTO XA_OPT1ARomance4_GaveDoll2 //OK
 	
 	IF ~~ THEN REPLY @151 /* ~It was a simple gesture.. I didn't think it would mean that much to her.~ */
 	GOTO XA_OPT1ARomance4_GaveDoll2 //OK
