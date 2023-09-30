@@ -7,6 +7,9 @@ THEN
 END
 IF
 	Global("XA_SummonAun", "GLOBAL", 1)
+	IsValidForPartyDialogue("XACAELAR")
+	InParty("XACAELAR")
+	InMyArea("XACAELAR")
 THEN
 	RESPONSE #100
 		SetGlobal("XA_SummonAun", "GLOBAL", 2)
