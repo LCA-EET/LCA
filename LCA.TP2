@@ -499,6 +499,20 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	END
 	//}
 	
+	//{ Corwin's House (SE Baldur's Gate), Second Floor
+	COPY_EXISTING ~BG1317.ARE~ ~override~
+	LPF ALTER_AREA_ACTOR
+		STR_VAR
+		actor_name = ~Sleeping Man~
+		script_override = ~XA1317DS~
+	END
+	LPF ALTER_AREA_ACTOR
+		STR_VAR
+		actor_name = ~Sleeping Woman~
+		script_override = ~XA1317DS~
+	END
+	//}
+	
 	//{ Elfsong Level 2
 	COPY_EXISTING ~BG0706.ARE~ ~override~
 	LPF fj_are_structure
@@ -876,6 +890,7 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	EXTEND_TOP ~BDBALDUR.BCS~ ~LCA/BAF/XABALDUR.BAF~
 	EXTEND_TOP ~BALDUR25.BCS~ ~LCA/BAF/XABALDUR.BAF~
 	EXTEND_TOP ~BALDUR.BCS~ ~LCA/BAF/XABALDUR.BAF~
+	EXTEND_TOP ~BG1317.BCS~ ~LCA/BAF/XABG1317.BAF~
 	EXTEND_TOP ~ITPPLANE.BCS~ ~LCA/BAF/XAPORTAL.BAF~
 	EXTEND_TOP ~AR4000.BCS~ ~LCA/BAF/XAAR4000.BAF~
 	EXTEND_TOP ~AR1512.BCS~ ~LCA/BAF/XAAR1512.BAF~
@@ -1354,6 +1369,9 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 //}
 
 //{ Modifications to Existing Creatures
+	COPY_EXISTING ~GIRBA3.CRE~ ~override~
+	WRITE_ASCII 0x260 ~XAGIRBA3~ #8
+
 	COPY_EXISTING ~BRATHL.CRE~ ~override~
 	WRITE_ASCII 0x280 ~BRATHL~ #8 //assign script name to CRE that didn't originally have it
 	WRITE_ASCII 0x260 ~XABRATHL~ #8
@@ -1438,6 +1456,14 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 //}
 
 //{ New Items
+	
+	//{ Flaming Fist Manual
+	COPY ~LCA/ITM/XAFFBOOK.ITM~ ~override~
+	SAY NAME1 @185
+	SAY NAME2 @185
+	SAY UNIDENTIFIED_DESC @186
+	SAY DESC @186
+	//}
 	
 	//{ Corwin's Body
 	COPY ~LCA/BAM/XACORBOD.BAM~ ~override~
