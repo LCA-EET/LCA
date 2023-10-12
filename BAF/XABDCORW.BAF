@@ -37,3 +37,39 @@ THEN
 		StartDialog("BDCORWIJ", Player1)
 END
 //}
+
+
+//{ Longbow Training
+
+IF
+	InParty(Myself)
+	GlobalLT("XA_LCA_ProficiencyTimerSet", "GLOBAL", 1)
+	GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 102)
+	OR(2)
+		Proficiency(Player1, PROFICIENCYLONGBOW, 1)
+		Proficiency(Player1, PROFICIENCYLONGBOW, 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_LCA_ProficiencyTimer", "GLOBAL", EIGHTEEN_HOURS)
+		SetGlobal("XA_LCA_ProficiencyTimerSet", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	See(Player1)
+	IsValidForPartyDialog(Myself)
+	IsValidForPartyDialog(Player1)
+	GlobalTimerExpired("XA_LCA_ProficiencyTimer", "GLOBAL")
+	Proficiency(Player1, PROFICIENCYLONGBOW, 1)
+	Proficiency(Player1, PROFICIENCYLONGBOW, 2)
+	OR(2)
+		AreaCheck("BD3000") //Allied Siege Camp
+		AreaCheck("BD1000") //Coast Way Crossing
+THEN
+	RESPONSE #100
+		
+END
+//}

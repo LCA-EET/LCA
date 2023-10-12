@@ -351,6 +351,7 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 //}
 
 //{ New Areas
+	COPY ~LCA/ARE/XACLRNG.ARE~ ~override~ //Forest Clearing
 	COPY ~LCA/ARE/XAAR1516.ARE~ ~override~
 	COPY ~LCA/ARE/XA4700.ARE~ ~override~
 	COPY ~LCA/ARE/XA5300.ARE~ ~override~
