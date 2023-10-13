@@ -39,6 +39,73 @@ END
 //}
 
 
+//{ Opinion Boosts
+IF
+	Dead("BDLON")
+	GlobalLT("XA_LCA_BDLON", "GLOBAL", 1)
+	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LCA_BDLON", "GLOBAL", 1)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("BD_Refugees","GLOBAL",2)
+	GlobalLT("XA_LCA_GARACH", "GLOBAL", 1)
+	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LCA_GARACH", "GLOBAL", 1)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("BD_TO_THE_BANK","GLOBAL",2)
+	GlobalLT("XA_LCA_TEERA", "GLOBAL", 1)
+	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LCA_TEERA", "GLOBAL", 1)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("bd_alerted_corwin", "GLOBAL", 2)
+	GlobalLT("XA_LCA_PLOT", "GLOBAL", 1)
+	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LCA_PLOT", "GLOBAL", 1)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("BD_Rousers_Reinforcements","GLOBAL",1)
+	GlobalLT("XA_LCA_VIDA", "GLOBAL", 1)
+	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LCA_VIDA", "GLOBAL", 1)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
 //{ Longbow Training
 
 IF
@@ -58,6 +125,7 @@ THEN
 END
 
 IF
+	!HasItemCategory(Player1, BOW, FALSE)
 	InParty(Myself)
 	See(Player1)
 	IsValidForPartyDialog(Myself)
@@ -65,11 +133,17 @@ IF
 	GlobalTimerExpired("XA_LCA_ProficiencyTimer", "GLOBAL")
 	Proficiency(Player1, PROFICIENCYLONGBOW, 1)
 	Proficiency(Player1, PROFICIENCYLONGBOW, 2)
+	TimeOfDay(DAY)
+	!ActuallyInCombat()
+	GlobalLT("XA_LCA_ProficiencyTalk", "GLOBAL", 1)
 	OR(2)
 		AreaCheck("BD3000") //Allied Siege Camp
 		AreaCheck("BD1000") //Coast Way Crossing
 THEN
 	RESPONSE #100
-		
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LCA_ProficiencyTalk", "GLOBAL", 1)
+		StartDialog("BDCORWIJ", Player1)
+		SetInterrupt(TRUE)
 END
 //}

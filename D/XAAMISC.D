@@ -2027,6 +2027,78 @@ EXTEND_BOTTOM BDCORWIJ 318  /* OK */
 END
 
 APPEND BDCORWIJ
+	IF ~
+		Global("XA_LCA_ProficiencyTalk", "GLOBAL", 1)
+	~ THEN BEGIN XA_ProficiencyTalk
+		SAY @366 /* ~<CHARNAME>. A word?~ */
+		
+		IF ~~ THEN REPLY @367 /*~Of course. What can I do for you, Captain?~*/
+		DO ~
+			SetGlobal("XA_LCA_ProficiencyTalk", "GLOBAL", 2)
+		~
+		GOTO XA_ProficiencyTalk2
+		
+		IF ~~ THEN REPLY @368 /*~What is it?~*/
+		DO ~
+			SetGlobal("XA_LCA_ProficiencyTalk", "GLOBAL", 2)
+		~
+		GOTO XA_ProficiencyTalk2
+		
+		IF ~~ THEN REPLY @369 /*~Another one? Can't you see that I'm busy?~*/
+		DO ~
+			SetGlobal("XA_LCA_ProficiencyTalk", "GLOBAL", 2)
+		~
+		GOTO XA_ProficiencyTalkEnd
+	END
+	
+	IF ~~ THEN BEGIN XA_ProficiencyTalk2
+		SAY @371 /*~I noticed you have a bit of skill with the longbow. How long have you been practicing?~*/
+		
+		IF ~~ THEN REPLY @373 /*~Not too long, why do you ask?~ */
+		GOTO XA_ProficiencyTalk3
+		
+		IF ~~ THEN REPLY @374 /*~I've dabbled in archery since I was a child, but I didn't treat it as anything other than a hobby... that is, until my foster father was killed.~*/
+		GOTO XA_ProficiencyTalk3
+	END
+	
+	IF ~~ THEN BEGIN XA_ProficiencyTalk3
+		SAY @375 /*~I figured as much. Your draw and footwork look good, but your bow grip could use a little work. Mind if I give you a couple of pointers?~*/
+		
+		IF ~~ THEN REPLY @376 /*~Not at all.~*/
+		GOTO XA_ProficiencyTalkCSStart
+		
+		IF ~~ THEN REPLY @377 /*~A free lesson from one as talented as yourself? How could I refuse?~*/
+		GOTO XA_ProficiencyTalkCSStart
+		
+		IF ~~ THEN REPLY @378 /*~Somehow, I don't think you'd do this for just anyone. Why me?~*/
+		GOTO XA_ProficiencyTalkWhy
+	END
+	
+	IF ~~ THEN BEGIN XA_ProficiencyTalkWhy
+		SAY @372 /*~Consider it a thank you for the care and concern you showed back in the Gate. The refugee crisis has been a strain on everyone, and every bit of help makes a difference. Besides, anything that can increase our chances of success is a worthwhile investment.~*/
+		
+		IF ~~ THEN REPLY @379 /*~Agreed. Let's get started.~*/
+		GOTO XA_ProficiencyTalkCSStart
+	END
+	
+	IF ~~ THEN BEGIN XA_ProficiencyTalkCSStart
+		SAY @380 /*~Excellent. I spotted a clearing a few hundred meters south of the camp. It's perfect for what I had in mind. Let's go.~*/
+		
+		IF ~~ THEN
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XALBPROF")
+		~
+		EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_ProficiencyTalkEnd
+		SAY @370 /*~Fair enough. I'll leave you to it, then.~*/
+		
+		IF ~~ THEN
+		EXIT
+	END
+
 	IF ~~ THEN XA_Neoma
 		SAY @203 /*  ~We're good friends. Sometimes, a little more than that...~ */
 	
