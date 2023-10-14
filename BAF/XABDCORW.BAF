@@ -137,6 +137,9 @@ IF
 	!ActuallyInCombat()
 	GlobalLT("XA_LCA_ProficiencyTalk", "GLOBAL", 1)
 	OR(2)
+		IsWeaponRanged(Player1)
+		CanEquipRanged(Player1)
+	OR(2)
 		AreaCheck("BD3000") //Allied Siege Camp
 		AreaCheck("BD1000") //Coast Way Crossing
 THEN

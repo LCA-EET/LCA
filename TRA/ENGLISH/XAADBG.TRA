@@ -702,8 +702,8 @@
 @701 = ~Corwin can leave the party.~
 @702 = ~Corwin cannot leave the party.~
 @703 = ~Reset Corwin's Banters.~
-@704 = ~~
-@705 = ~~
+@704 = ~XACLRNG~
+@705 = ~SetGlobal("XA_LCA_ProficiencyTalk", "GLOBAL", 1)~
 @706 = ~Set CerndBaby to 1.~
 @707 = ~Caelar (XACAELAR)~
 @708 = ~Reset Caelar's Banters.~

@@ -1,0 +1,17 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		StorePartyLocations()
+		FadeToColor([30.0],0)
+		Wait(2)
+		LeaveAreaLUAPanic("XACLRNG","",[460.430],NE)
+		LeaveAreaLUA("XACLRNG","",[460.430],NE)
+		ActionOverride("Corwin", LeaveAreaLUA("XACLRNG","",[550.385], SW))
+		FadeFromColor([30.0],0)
+		Wait(2)
+		SetGlobal("XA_ProficiencyTalk", "GLOBAL", 2)
+		EquipRanged()
+		EndCutSceneMode()
+END

@@ -2028,6 +2028,96 @@ END
 
 APPEND BDCORWIJ
 	IF ~
+		Global("XA_ProficiencyTalk", "GLOBAL", 4)
+	~ THEN BEGIN XA_ProficiencyTalk6
+		SAY @386 /*~You're a quick learner, <CHARNAME>.~*/
+		
+		IF ~~ THEN REPLY @387 /* ~Well, it helps that you're an excellent instructor. The Fist is fortunate to have you.~ */
+		DO ~
+			SetGlobal("XA_ProficiencyTalk", "GLOBAL", 5)
+		~
+		GOTO XA_ProficiencyTalk7
+		
+		IF ~~ THEN REPLY @388 /* ~I appreciate the help, Captain.~ */
+		DO ~
+			SetGlobal("XA_ProficiencyTalk", "GLOBAL", 5)
+		~
+		GOTO XA_ProficiencyTalk7
+	END
+
+	IF ~~ THEN BEGIN XA_ProficiencyTalk7
+		SAY @389  /* ~Come on. We better head back to camp.~ */
+		
+		IF ~~ THEN REPLY @390  /* ~Right. Let's go.~ */
+		DO ~
+			ChangeStat(Player1, XP, 5000, ADD)
+			ChangeStat(Player1, PROFICIENCYLONGBOW, 1, ADD)
+			AddJournalEntry(@394, INFO)
+			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		~
+		EXIT
+		
+		IF ~
+			TimeOfDay(DAY)
+		~ THEN REPLY @391  /* ~It's a beautiful day... must we head back so soon?~ */
+		GOTO XA_ProficiencyTalk8
+		
+		IF ~
+			!TimeOfDay(DAY)
+		~ THEN REPLY @393  /* ~It's a beautiful evening... must we head back so soon?~*/
+		GOTO XA_ProficiencyTalk8
+	END
+	
+	IF ~~ THEN BEGIN XA_ProficiencyTalk8
+		SAY @392  /*~It is... but as much as I enjoy your company, duty calls. Time to go.~*/
+		
+		IF ~~ THEN
+		DO ~
+			ChangeStat(Player1, XP, 5000, ADD)
+			ChangeStat(Player1, PROFICIENCYLONGBOW, 1, ADD)
+			AddJournalEntry(@394, INFO)
+			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		~
+		EXIT
+	END
+
+	IF ~
+		Global("XA_ProficiencyTalk", "GLOBAL", 3)
+	~ THEN BEGIN XA_ProficiencyTalk4
+		SAY @381 /*~(She takes hold of your hand and traces your palm line with her finger.)~*/
+		
+		= @382 /*~See this crease in your palm? You need to grip the bow so that all of the pressure is on the thumb side this line. Also, be sure that your palm is facing the target. Never grip the bow with your hand outstretched, otherwise your wrist will move when you pull the string.~*/
+		
+		= @395  /* ~Now, to grip the bow properly, open the palm of your hand and stretch your arm out in front of you. The thumb should be stretched away from the index, parallel to the ground, to form an L shape.~*/ 
+		
+		IF ~~ THEN REPLY @396 /* ~Like this?~ */
+		GOTO XA_ProficiencyTalk4A
+		
+		
+		
+	END
+	
+	IF ~~ THEN BEGIN XA_ProficiencyTalk4A
+		SAY @397  /* ~Yes. Now, rotate your hand 45 degrees so that the L turns into a V shape. Yes, just like that. Take hold of the bow. Remember, keep all of the pressure between your thumb pad and your lifeline. Good.~  */
+		
+		= @383 /*~Lastly, your bow and draw arm should be level. If you need to adjust your aim upward or downward, do so by pivoting about your waist. Same thing if you wanted to aim a little to the left, or to the right. Turn your hips while keeping your arms steady. Just like that.~*/
+		
+		IF ~~ THEN REPLY @384 /*~I understand.~*/
+		GOTO XA_ProficiencyTalk5
+	END
+
+	IF ~~ THEN BEGIN XA_ProficiencyTalk5
+		SAY @385 /*~Good. Now try again.~*/
+		
+		IF ~~ THEN DO ~
+			SetGlobal("XA_ProficiencyTalk", "GLOBAL", 4)
+			StartCutSceneMode()
+			StartCutScene("XALBPRO2")
+		~
+		EXIT
+	END
+
+	IF ~
 		Global("XA_LCA_ProficiencyTalk", "GLOBAL", 1)
 	~ THEN BEGIN XA_ProficiencyTalk
 		SAY @366 /* ~<CHARNAME>. A word?~ */

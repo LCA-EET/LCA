@@ -3905,6 +3905,13 @@ END
 IF ~~ THEN BEGIN XA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
 	
+	IF ~~ THEN REPLY @705
+	DO ~
+		SetGlobal("XA_LCA_ProficiencyTalk", "GLOBAL", 1)
+		ActionOverride("Corwin", StartDialog("BDCORWIJ", Player1))
+	~
+	GOTO XA_MainMenu
+	
 	IF ~~ THEN REPLY @748
 	DO ~
 		SetGlobal("BeginChallenge1","GLOBAL",12)
