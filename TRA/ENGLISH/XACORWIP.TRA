@@ -92,7 +92,6 @@ Major Corwin refused to join me in my hunt for the Five. She believes that I'm j
 @90 = ~Whatever he did, we'll find a way to restore you and your sister. Let's go.~
 @91 = ~I don't have time to explain. Meet me back in Athkatla.~
 @92 = ~Let's go.~
-@93 = ~Talk to me when you're ready to leave.~
 @94 = ~~
 @95 = ~Will do.~
 @96 = ~(You share a long and emotional embrace.)~
@@ -103,3 +102,6 @@ Major Corwin refused to join me in my hunt for the Five. She believes that I'm j
 @101 = ~I'll send you back to the pocket plane. Wait for me there, dear.~ 
 @102 = ~Your reputation precedes you, 'hero'. Come and see me when you've cleaned up your act.~ 
 @103 = ~Your reputation precedes you, 'hero'. Come and see me at the Athkatla magistrate once you've cleaned up your act.~ 
+
+/* Changed 2023-10-15 */
+@93 = ~I'll await you here until you're ready to go.~ [BD34427]

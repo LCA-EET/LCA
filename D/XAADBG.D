@@ -11,6 +11,9 @@ IF ~
 	IF ~~ THEN REPLY @766
 	GOTO XA_ProfAdjust
 	
+	IF ~~ THEN REPLY @786
+	GOTO XA_ProficiencyConditionCheck
+	
 	IF ~~ THEN REPLY @753
 	DO ~
 		SetGlobal("BeginChallenge1", "GLOBAL", 1)
@@ -271,6 +274,40 @@ IF ~
 	
 	IF ~~ THEN REPLY @12 /* ~I do not need assistance at this time.~ */
 	EXIT
+END
+
+IF ~~ THEN BEGIN XA_ProficiencyConditionCheck
+	SAY @786
+	
+	IF ~
+		!HasItemCategory(Player1, BOW, FALSE)
+	~ THEN REPLY @787
+	GOTO XA_MainMenu
+	
+	IF ~
+		TriggerOverride("Corwin", See(Player1))
+	~ THEN REPLY @788
+	GOTO XA_MainMenu
+	
+	IF ~
+		IsValidForPartyDialog("Corwin")
+	~ THEN REPLY @789
+	GOTO XA_MainMenu
+	
+	IF ~
+		IsValidForPartyDialog(Player1)
+	~ THEN REPLY @790
+	GOTO XA_MainMenu
+	
+	IF ~
+		GlobalTimerExpired("XA_LCA_ProficiencyTimer", "GLOBAL")
+	~ THEN REPLY @791
+	GOTO XA_MainMenu
+	
+	IF ~
+		TriggerOverride("Corwin", Range("PlayerChest00", 50))
+	~ THEN REPLY @792
+	GOTO XA_MainMenu
 END
 
 IF ~~ THEN BEGIN XA_ProfAdjust
@@ -545,6 +582,60 @@ IF ~~ THEN BEGIN XA_StatusReport
 	~ THEN REPLY @699
 	GOTO XA_MainMenu
 
+	IF ~
+		Global("XA_CorwinOpinionOfPlayer", "GLOBAL", 100)
+	~ THEN REPLY @775
+	GOTO XA_MainMenu
+
+	IF ~
+		Global("XA_CorwinOpinionOfPlayer", "GLOBAL", 101)
+	~ THEN REPLY @776
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_CorwinOpinionOfPlayer", "GLOBAL", 102)
+	~ THEN REPLY @777
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_CorwinOpinionOfPlayer", "GLOBAL", 103)
+	~ THEN REPLY @778
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_CorwinOpinionOfPlayer", "GLOBAL", 104)
+	~ THEN REPLY @779
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_CorwinOpinionOfPlayer", "GLOBAL", 105)
+	~ THEN REPLY @780
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_CorwinOpinionOfPlayer", "GLOBAL", 106)
+	~ THEN REPLY @781
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_CorwinOpinionOfPlayer", "GLOBAL", 107)
+	~ THEN REPLY @782
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_CorwinOpinionOfPlayer", "GLOBAL", 108)
+	~ THEN REPLY @783
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_CorwinOpinionOfPlayer", "GLOBAL", 109)
+	~ THEN REPLY @784
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_CorwinOpinionOfPlayer", "GLOBAL", 110)
+	~ THEN REPLY @785
+	GOTO XA_MainMenu
 END
 
 IF ~~ THEN BEGIN XA_ChangeReputation

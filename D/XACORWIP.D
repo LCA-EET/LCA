@@ -16,7 +16,7 @@ IF ~
 ~ THEN BEGIN XA_SoAEnd
 	SAY @93  /* ~Talk to me when you're ready to leave.~ */
 	
-	IF ~~ THEN REPLY @95  /* ~Will do.~*/
+	IF ~~ THEN
 	DO ~
 		SetInterrupt(FALSE)
 		ChangeAIScript("XACORSCR", OVERRIDE)

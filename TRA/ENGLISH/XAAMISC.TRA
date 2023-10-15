@@ -376,13 +376,13 @@ What he plans to do afterward he would not say, but he left it to Bodhi to finis
 I bought a doll for Captain Corwin's daughter, Rohma. I'll give it to her when I see her. ~
 
 /* Added 2023-10-12 */
-@366 = ~<CHARNAME>. A word?~
+@366 = ~<CHARNAME>. A word?~ [XA100127]
 @367 = ~Of course. What can I do for you, Captain?~
 @368 = ~What is it?~
 @369 = ~Another one? Can't you see that I'm busy?~
 @370 = ~Fair enough. I'll leave you to it, then.~
 @371 = ~I noticed you have a bit of skill with the bow. How long have you been practicing?~
-@372 = ~Consider it a thank you for the care and concern you showed back in the Gate. The refugee crisis has been a strain on everyone, and every bit of help makes a difference. Besides, anything that can increase our chances of success is a worthwhile investment.~
+@372 = ~Consider it a thank you for the care and concern you showed back in the Gate. The refugee crisis has been a strain on everyone, and every bit of help makes a difference.~ 
 @373 = ~Not too long, why do you ask?~ 
 @374 = ~I've dabbled in archery since I was a child, but I didn't treat it as anything other than a hobby... that is, until my foster father was killed.~
 @375 = ~I figured as much. Your draw and footwork look good, but your bow grip could use some work. Mind if I give you a couple of pointers?~
@@ -391,20 +391,21 @@ I bought a doll for Captain Corwin's daughter, Rohma. I'll give it to her when I
 @378 = ~Somehow, I don't think you'd do this for just anyone. Why me?~
 @379 = ~Agreed. Let's get started.~
 @380 = ~Excellent. I spotted a clearing a few hundred meters south of the camp. It's perfect for what I had in mind. Let's go.~
-@381 = ~(She takes hold of your hand and traces your palm line with her finger.)~
+@381 = ~(She takes hold of your hand and traces your palm line with her finger.)~ [XA100067]
 @382 = ~See this crease in your palm? It's called your life line. You need to grip the bow so that the pressure is on the thumb side of this line. The area on the bow handle where you should be exerting the most pressure is the pressure point. Here it is. What you're doing instead is exerting pressure on the pivot point, here, the deepest point on the bow handle where your hand meets the bow.~
 @383 = ~Lastly, your bow and draw arm should be level. If you need to adjust your aim upward or downward, do so by pivoting about your waist. Same thing if you wanted to aim a little to the left, or to the right. Turn your hips while keeping your arms steady. Just like that.~
 @384 = ~Understood.~
 @385 = ~Good. Now try again.~
-@386 = ~You're a quick learner, <CHARNAME>.~
+@386 = ~Not bad... You're a quick learner, <CHARNAME>.~ [XA100129]
 @387 = ~It helps that you're an excellent instructor. The Fist is fortunate to have you, Corwin.~
 @388 = ~I appreciate the help, Captain.~
 @389 = ~Come on. We better head back to camp.~
 @390 = ~Right. Let's go.~
 @391 = ~It's a beautiful day... must we head back so soon?~
-@392 = ~It is... but as much as I enjoy your company, duty calls. Time to go.~
+@392 = ~It is... but as much as I enjoy your company, duty calls. Let's go.~ [XA100128]
 @393 = ~It's a beautiful evening... must we head back so soon?~
 @394 = ~~
 @395 = ~Now, to grip the bow properly, open the palm of your hand and stretch your arm out in front of you. The thumb should be stretched away from the index, parallel to the ground, to form an L shape.~
 @396 = ~Like this?~
 @397 = ~Yes. Now, rotate your hand 45 degrees so that the L turns into a V shape. Right, just like that. Take hold of the bow. Remember, keep all of the pressure between your thumb pad and your lifeline. Good.~ 
+@398 = ~Besides, anything that can increase our chances of success is a worthwhile investment.~ [XA100130]

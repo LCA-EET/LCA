@@ -773,3 +773,21 @@
 @772 = ~Longbow 5~
 @773 = ~Missile Adjust~
 @774 = ~XALCARCH~
+@775 = ~Opinion = 100~
+@776 = ~Opinion = 101~
+@777 = ~Opinion = 102~
+@778 = ~Opinion = 103~
+@779 = ~Opinion = 104~
+@780 = ~Opinion = 105~
+@781 = ~Opinion = 106~
+@782 = ~Opinion = 107~
+@783 = ~Opinion = 108~
+@784 = ~Opinion = 109~
+@785 = ~Opinion = 110~
+@786 = ~Proficiency Talk Condition Check~
+@787 = ~!HasItemCategory(Player1, BOW, FALSE)~
+@788 = ~See(Player1)~
+@789 = ~IsValidForPartyDialog("Corwin")~
+@790 = ~IsValidForPartyDialog(Player1)~
+@791 = ~GlobalTimerExpired("XA_LCA_ProficiencyTimer", "GLOBAL")~
+@792 = ~Range("PlayerChest00", 50)~

@@ -2165,8 +2165,9 @@ APPEND BDCORWIJ
 	END
 	
 	IF ~~ THEN BEGIN XA_ProficiencyTalkWhy
-		SAY @372 /*~Consider it a thank you for the care and concern you showed back in the Gate. The refugee crisis has been a strain on everyone, and every bit of help makes a difference. Besides, anything that can increase our chances of success is a worthwhile investment.~*/
+		SAY @372 /*~Consider it a thank you for the care and concern you showed back in the Gate. The refugee crisis has been a strain on everyone, and every bit of help makes a difference.~*/
 		
+		= @398  /*~Besides, anything that can increase our chances of success is a worthwhile investment.~ [XA100130] */
 		IF ~~ THEN REPLY @379 /*~Agreed. Let's get started.~*/
 		GOTO XA_ProficiencyTalkCSStart
 	END

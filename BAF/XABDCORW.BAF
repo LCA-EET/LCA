@@ -41,6 +41,25 @@ END
 
 //{ Opinion Boosts
 IF
+	ActionListEmpty()
+	OR(4)
+		Dead("BDGOLT")
+		Dead("BDDIRLA")
+		Dead("BDLLUIS")
+		Dead("BDASERY")
+	GlobalLT("XA_LCA_THIEVES", "GLOBAL", 1)
+	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LCA_THIEVES", "GLOBAL", 1)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
 	Dead("BDLON")
 	GlobalLT("XA_LCA_BDLON", "GLOBAL", 1)
 	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
@@ -54,6 +73,7 @@ THEN
 END
 
 IF
+	ActionListEmpty()
 	Global("BD_Refugees","GLOBAL",2)
 	GlobalLT("XA_LCA_GARACH", "GLOBAL", 1)
 	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
@@ -67,6 +87,7 @@ THEN
 END
 
 IF
+	ActionListEmpty()
 	Global("BD_TO_THE_BANK","GLOBAL",2)
 	GlobalLT("XA_LCA_TEERA", "GLOBAL", 1)
 	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
@@ -80,6 +101,7 @@ THEN
 END
 
 IF
+	ActionListEmpty()
 	Global("bd_alerted_corwin", "GLOBAL", 2)
 	GlobalLT("XA_LCA_PLOT", "GLOBAL", 1)
 	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
@@ -93,6 +115,7 @@ THEN
 END
 
 IF
+	ActionListEmpty()
 	Global("BD_Rousers_Reinforcements","GLOBAL",1)
 	GlobalLT("XA_LCA_VIDA", "GLOBAL", 1)
 	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
@@ -127,7 +150,6 @@ END
 IF
 	ActionListEmpty()
 	!ActuallyInCombat()
-	!HasItemCategory(Player1, BOW, FALSE)
 	InParty(Myself)
 	See(Player1)
 	IsValidForPartyDialog(Myself)
