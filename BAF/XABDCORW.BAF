@@ -113,8 +113,8 @@ IF
 	GlobalLT("XA_LCA_ProficiencyTimerSet", "GLOBAL", 1)
 	GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 102)
 	OR(2)
-		Proficiency(Player1, PROFICIENCYLONGBOW, 1)
-		Proficiency(Player1, PROFICIENCYLONGBOW, 2)
+		CheckStatGT(Player1, 0, PROFICIENCYLONGBOW)
+		CheckStatGT(Player1, 0, PROFICIENCYSHORTBOW)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -131,14 +131,12 @@ IF
 	IsValidForPartyDialog(Myself)
 	IsValidForPartyDialog(Player1)
 	GlobalTimerExpired("XA_LCA_ProficiencyTimer", "GLOBAL")
-	Proficiency(Player1, PROFICIENCYLONGBOW, 1)
-	Proficiency(Player1, PROFICIENCYLONGBOW, 2)
 	TimeOfDay(DAY)
 	!ActuallyInCombat()
 	GlobalLT("XA_LCA_ProficiencyTalk", "GLOBAL", 1)
 	OR(2)
 		IsWeaponRanged(Player1)
-		CanEquipRanged(Player1)
+		TriggerOverride(Player1, CanEquipRanged())
 	OR(2)
 		AreaCheck("BD3000") //Allied Siege Camp
 		AreaCheck("BD1000") //Coast Way Crossing

@@ -2051,8 +2051,8 @@ APPEND BDCORWIJ
 		IF ~~ THEN REPLY @390  /* ~Right. Let's go.~ */
 		DO ~
 			ChangeStat(Player1, XP, 5000, ADD)
-			ChangeStat(Player1, PROFICIENCYLONGBOW, 1, ADD)
-			AddJournalEntry(@394, INFO)
+			//ChangeStat(Player1, PROFICIENCYLONGBOW, 1, ADD)
+			//AddJournalEntry(@394, INFO)
 			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		EXIT
@@ -2074,8 +2074,8 @@ APPEND BDCORWIJ
 		IF ~~ THEN
 		DO ~
 			ChangeStat(Player1, XP, 5000, ADD)
-			ChangeStat(Player1, PROFICIENCYLONGBOW, 1, ADD)
-			AddJournalEntry(@394, INFO)
+			//ChangeStat(Player1, PROFICIENCYLONGBOW, 1, ADD)
+			//AddJournalEntry(@394, INFO)
 			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		EXIT

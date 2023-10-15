@@ -8,6 +8,9 @@ IF ~
 	IF ~~ THEN REPLY @683
 	GOTO XA_StatusReport
 	
+	IF ~~ THEN REPLY @766
+	GOTO XA_ProfAdjust
+	
 	IF ~~ THEN REPLY @753
 	DO ~
 		SetGlobal("BeginChallenge1", "GLOBAL", 1)
@@ -267,6 +270,59 @@ IF ~
 	GOTO XA_MainMenu
 	
 	IF ~~ THEN REPLY @12 /* ~I do not need assistance at this time.~ */
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_ProfAdjust
+	SAY @766
+	
+	IF ~~ THEN REPLY @767
+	DO ~
+		ActionOverride(Player1, ChangeStat(Myself, PROFICIENCYLONGBOW, 0, SET))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @768
+	DO ~
+		ChangeStat(Player1, PROFICIENCYLONGBOW, 1, SET)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @769
+	DO ~
+		ChangeStat(Player1, PROFICIENCYLONGBOW, 2, SET)
+	~	
+	EXIT
+	
+	IF ~~ THEN REPLY @770
+	DO ~
+		ChangeStat(Player1, PROFICIENCYLONGBOW, 3, SET)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @771
+	DO ~
+		ChangeStat(Player1, PROFICIENCYLONGBOW, 4, SET)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @772
+	DO ~
+		ActionOverride(Player1, ChangeStat(Myself, PROFICIENCYLONGBOW, 5, SET))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @773
+	DO ~
+		ChangeStat(Player1, MISSILETHAC0BONUS, 1, ADD)
+		ChangeStat(Player1, MISSILE_DAMAGE_BONUS, 1, ADD)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @773
+	DO ~
+		ActionOverride(Player1, ReallyForceSpellRES("XALCARCH", Myself))
+	~
 	EXIT
 END
 

@@ -8,5 +8,6 @@ THEN
 		RestorePartyLocations()
 		FadeFromColor([30.0],0)
 		Wait(2)
+		SetGlobal("XA_ProficiencyTalk", "GLOBAL", 6)
 		EndCutSceneMode()
 END

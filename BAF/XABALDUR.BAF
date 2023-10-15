@@ -1,4 +1,16 @@
-
+//{
+	IF
+		Global("XA_ProficiencyTalk", "GLOBAL", 6)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_ProficiencyTalk", "GLOBAL", 7)
+			ActionOverride(Player1, ReallyForceSpellRES("XALCARCH", Myself))
+			AddJournalEntry(@31, INFO)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+//}
 
 //{ Remove Pocket Plane Ability - Avernus Tower
 	IF

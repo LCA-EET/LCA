@@ -13,5 +13,7 @@ THEN
 		Wait(2)
 		SetGlobal("XA_ProficiencyTalk", "GLOBAL", 2)
 		EquipRanged()
+		SmallWait(5)
+		ActionOverride("Corwin", EquipRanged())
 		EndCutSceneMode()
 END

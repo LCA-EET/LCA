@@ -1956,6 +1956,13 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 //}
 
 //{ Spells
+	//{ Corwin Archery Boost
+	COPY ~LCA/SPL/XALCARCH.SPL~ ~override~
+	SAY NAME1 @187
+	SAY UNIDENTIFIED_DESC @187
+	SAY DESC @187
+	//}
+	
 	//{ Corwin Portrait Change (LCA Portrait)
 	COPY ~LCA/SPL/XACHNG01.SPL~ ~override~
 	//}
