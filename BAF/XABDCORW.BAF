@@ -125,6 +125,8 @@ THEN
 END
 
 IF
+	ActionListEmpty()
+	!ActuallyInCombat()
 	!HasItemCategory(Player1, BOW, FALSE)
 	InParty(Myself)
 	See(Player1)
@@ -132,8 +134,8 @@ IF
 	IsValidForPartyDialog(Player1)
 	GlobalTimerExpired("XA_LCA_ProficiencyTimer", "GLOBAL")
 	TimeOfDay(DAY)
-	!ActuallyInCombat()
 	GlobalLT("XA_LCA_ProficiencyTalk", "GLOBAL", 1)
+	Range("PlayerChest00", 50)
 	OR(2)
 		IsWeaponRanged(Player1)
 		TriggerOverride(Player1, CanEquipRanged())
