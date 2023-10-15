@@ -4,6 +4,9 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v1.0.2, 2023-10-14
+* Added an archery lesson cutscene to SoD. Refer to the User's Guide for the specific conditions that will trigger the cutscene. When complete, the lesson will give the player a permanent +1 bonus to Missile Damage and THAC0 with Missile Weapons.
+
 # v1.0.1, 2023-10-07
 * Corrected portrait icons associated with the various engagement rings.
 * Miscellaneous minor changes to BG1 areas to better support the storyline developed in LCA. 
