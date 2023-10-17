@@ -2526,7 +2526,7 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_GoodNews
 END
 
 IF ~~ THEN BEGIN XA_CorwinIrenicusStart
-	SAY @1774
+	SAY @1774 /*~Ugh... you won't get away with this, wizard!~*/
 	
 	IF ~~ THEN
 	DO ~

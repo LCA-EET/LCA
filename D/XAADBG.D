@@ -4936,6 +4936,13 @@ IF ~~ THEN BEGIN XA_Menu_StartCutscene
 	~
 	EXIT
 	
+	IF ~~ THEN REPLY @793
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("CUT41G")
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @628
 	DO ~
 		SetGlobal("XA_CorwinSex_3", "GLOBAL", 1)

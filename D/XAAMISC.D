@@ -1817,9 +1817,10 @@ END
 //{ PPIRENI1
 	EXTEND_BOTTOM PPIRENI1 34
 		IF ~
-			IsValidForPartyDialog("XACORWIN")
+			InParty("XACORWIN")
 		~ THEN 
 		DO ~
+			SetGlobal("XA_LCA_41G", "GLOBAL", 1)
 			SetGlobal("AsylumPlot","GLOBAL",20)
 			DisplayString(Myself,50707)
 			Spell(Myself,DO_NOTHING)
@@ -1834,6 +1835,7 @@ END
 EXTEND_BOTTOM PPIRENI2 3
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
+		Global("XA_LCA_41G", "GLOBAL", 1)
 	~ THEN
 	EXTERN XACORWIJ XA_CorwinIrenicusStart
 END

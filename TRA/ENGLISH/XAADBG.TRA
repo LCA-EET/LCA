@@ -791,3 +791,4 @@
 @790 = ~IsValidForPartyDialog(Player1)~
 @791 = ~GlobalTimerExpired("XA_LCA_ProficiencyTimer", "GLOBAL")~
 @792 = ~Range("PlayerChest00", 50)~
+@793 = ~CUT41G~
