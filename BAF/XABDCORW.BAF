@@ -102,6 +102,20 @@ END
 
 IF
 	ActionListEmpty()
+	Global("XA_LCA_StoppedNobles", "GLOBAL", 1)
+	GlobalLT("XA_LCA_PLOT", "GLOBAL", 1)
+	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LCA_PLOT", "GLOBAL", 1)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
 	Global("bd_alerted_corwin", "GLOBAL", 2)
 	GlobalLT("XA_LCA_PLOT", "GLOBAL", 1)
 	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
