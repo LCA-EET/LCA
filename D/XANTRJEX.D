@@ -21,7 +21,15 @@
 		#259425 /*Does anyone know what the hells these two are talking about?~*/
 	END
 //}
-
+//{ YOSHJ
+	INTERJECT_COPY_TRANS2 YOSHJ 113 XA_YOSHJ_113
+	== XACORWIB
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+	~
+	@182 /*~Damn it! I knew it was a mistake to trust you. When this is over, I'll put you UNDER the prison!~ */
+	END
+//}
 //{ CLMOM
 	INTERJECT_COPY_TRANS CLMOM 5 XA_CLMOM_5
 		== XACORWIB 

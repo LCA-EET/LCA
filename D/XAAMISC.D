@@ -1824,8 +1824,7 @@ END
 //{ PPIRENI1
 	EXTEND_BOTTOM PPIRENI1 34
 		IF ~
-			!Dead("XACORWIN")
-			InParty("XACORWIN")
+			IsValidForPartyDialog("XACORWIN")
 		~ THEN 
 		DO ~
 			SetGlobal("XA_LCA_41G", "GLOBAL", 1)
@@ -1874,6 +1873,21 @@ EXTEND_BOTTOM PPIRENI2 31
 		Global("XA_CorwinIrenicus", "GLOBAL", 4)
 	~ THEN REPLY @346  /* ~Release Schael and return what you stole from us, or I swear that I'll bury you where you stand!~*/
 	GOTO XA_Geas
+END
+
+EXTEND_BOTTOM PPIRENI2 47
+	IF ~
+		IsValidForPartyDialog("XACORWIN")
+	~ THEN
+	DO ~
+		SetGlobal("XA_LCA_41G","GLOBAL",1)
+		SetGlobal("AsylumPlot","GLOBAL",20)
+		DisplayString(Myself,50707)
+		Spell(Myself,DO_NOTHING)
+		StartCutSceneMode()
+		StartCutSceneEx("XACUT41G",FALSE)
+	~
+	EXIT
 END
 
 APPEND PPIRENI2
