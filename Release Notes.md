@@ -4,7 +4,7 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
-# v1.0.2a, 2023-10-17
+# v1.0.2b, 2023-10-17
 * Fixed an intermittent issue concerning the progression of the Spellhold capture cutscene.
 * Added a new condition that can help trigger the archery lesson cutscene in SoD.
 
