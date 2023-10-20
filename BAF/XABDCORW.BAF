@@ -175,9 +175,10 @@ IF
 	OR(2)
 		IsWeaponRanged(Player1)
 		TriggerOverride(Player1, CanEquipRanged())
-	OR(2)
+	OR(3)
 		AreaCheck("BD3000") //Allied Siege Camp
 		AreaCheck("BD1000") //Coast Way Crossing
+		AreaCheck("BD7100") //Troll Forest
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
