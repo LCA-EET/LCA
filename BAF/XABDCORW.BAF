@@ -32,6 +32,8 @@ IF
 	IsValidForPartyDialog(Player1)
 	Global("XA_CorwinWitnessedDuel", "GLOBAL", 1)
 	!ActuallyInCombat()
+	Range(Player1, 8)
+	See(Player1)
 THEN
 	RESPONSE #100
 		StartDialog("BDCORWIJ", Player1)
