@@ -4520,7 +4520,9 @@ IF ~~ THEN BEGIN XA_CorwinDinner_NonRomance7
 END
 
 IF ~~ THEN BEGIN XA_CorwinDinner_WalkHome_Male
-	SAY @941 /* ~(She smiles.) What a gentleman. Let's go.~ */
+	SAY @951 /* ~(She smiles.)  */
+	
+	= @941 /*~A hero, and a gentleman. Let's go.~*/
 	
 	IF ~~ THEN
 	DO ~
@@ -4531,7 +4533,9 @@ IF ~~ THEN BEGIN XA_CorwinDinner_WalkHome_Male
 END
 
 IF ~~ THEN BEGIN XA_CorwinDinner_WalkHome_Female
-	SAY @942 /* ~(She smiles.) Let's go.~ */
+	SAY @951 /* ~(She smiles.) */
+	
+	= @942 /* ~Let's go.~ */
 	
 	IF ~~ THEN
 	DO ~

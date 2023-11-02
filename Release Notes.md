@@ -7,6 +7,7 @@
 # v1.0.3, 2023-11-01
 * Added narration to eight of the eleven LCA text screens.
 * Miscellaneous improvements to LCA content within the SoD campaign.
+* Fixed an item stacking issue for several items, most notably Corwin's amulet.
 
 # v1.0.2b, 2023-10-17
 * Fixed an intermittent issue concerning the progression of the Spellhold capture cutscene.
