@@ -3279,6 +3279,17 @@ IF ~~ THEN BEGIN XA_Menu_ChapterMovie
 	~
 	EXIT
 	
+	IF ~~ THEN REPLY @794 /* ~XASARA1~ */
+	DO ~
+		TextScreen("XABG")
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @795 /* ~XASARA1~ */
+	DO ~
+		TextScreen("XABGROM")
+	~
+	EXIT
 	
 	IF ~~ THEN REPLY @240 /* ~XASARA1~ */
 	DO ~
