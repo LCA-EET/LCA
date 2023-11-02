@@ -8,6 +8,7 @@
 * Added narration to eight of the eleven LCA text screens.
 * Miscellaneous improvements to LCA content within the SoD campaign.
 * Fixed an item stacking issue for several items, most notably Corwin's amulet.
+* Corwin will retain her SoD portrait by default. The portrait can be changed through the use of the LCA Assistant.
 
 # v1.0.2b, 2023-10-17
 * Fixed an intermittent issue concerning the progression of the Spellhold capture cutscene.
