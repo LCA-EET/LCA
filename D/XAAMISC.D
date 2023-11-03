@@ -233,6 +233,8 @@
 		GOTO M0
 	END
 	
+	
+	
 	APPEND SHOP08_
 		IF ~~ THEN BEGIN M0
 			SAY @358 /* ~As a matter of fact, I do. Are you interested in this doll? I'll sell it to you for three gold.~ */
@@ -433,6 +435,14 @@
 	END
 	//}
 	
+	//{ IDJINNI
+	ADD_TRANS_ACTION IDJINNI 
+	BEGIN 12 END
+	BEGIN 0 END
+	~
+		GiveItemCreate("xastdag", LastTalkedToBy, 1,0,0)
+	~
+	//}
 	
 	//{ BDBELT
 	ADD_TRANS_ACTION BDBELT
