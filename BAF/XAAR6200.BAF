@@ -75,7 +75,7 @@ END
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		Gender(Player1, FEMALE)
 		Global("PlayerChoseEssence","GLOBAL",1)
-		Global("XA_PortraitChange_SoD", "GLOBAL", 1)
+		Global("XA_PortraitChange_LCA", "GLOBAL", 0)
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_CorwinBio", "GLOBAL", 1)
