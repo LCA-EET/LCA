@@ -83,20 +83,19 @@ APPEND ~PLAYER1~
 		IF ~~ THEN REPLY @177
 		GOTO XA_AdvanceTime
 		
-		IF ~~ THEN REPLY @192
+		IF ~~ THEN REPLY @192 /* ~Change Corwin's Portrait (LCA)~ */
 		DO ~
 			ReallyForceSpellRES("XACHNG01", "XACORWIN")
 			ReallyForceSpellRES("XACHNG01", "Corwin")
-			SetGlobal("XA_PortraitChange_SoD", "GLOBAL", 0)
+			SetGlobal("XA_PortraitChange_LCA", "GLOBAL", 1)
 		~
 		GOTO XA_ChangeDone
 		
-		IF ~~ THEN REPLY @193
+		IF ~~ THEN REPLY @193 /* ~Change Corwin's Portrait (SoD)~ */
 		DO ~
 			ReallyForceSpellRES("XACHNG02", "XACORWIN")
 			ReallyForceSpellRES("XACHNG02", "Corwin")
-			SetGlobal("XA_PortraitChange_SoD", "GLOBAL", 1)
-			//SetGlobal("XA_PortraitChange_SoD", "GLOBAL", 1)
+			SetGlobal("XA_PortraitChange_LCA", "GLOBAL", 0)
 		~
 		GOTO XA_ChangeDone
 		
