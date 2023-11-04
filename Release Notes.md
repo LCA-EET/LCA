@@ -4,6 +4,9 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v1.0.3b, 2023-11-03
+* Fixed a bug that caused Corwin and Caelar to fail to receive the experience boost upon joining the party.
+
 # v1.0.3a, 2023-11-02
 * Fixed a bug that could cause Corwin's SoD and LCA portraits to be swapped in the epilogue screens.
 

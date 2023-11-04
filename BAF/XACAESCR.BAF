@@ -1,3 +1,7 @@
+
+//{ Exp Boosts on Join
+
+
 //{	Rejoin processing 
 IF 
 	!InParty(Myself)
@@ -863,6 +867,7 @@ END
 
 IF 
 	Global("BD_JOINXP","LOCALS",0)
+	InParty(Myself)
 THEN
 	RESPONSE #100
 		SetGlobal("BD_JOINXP","LOCALS",1)
