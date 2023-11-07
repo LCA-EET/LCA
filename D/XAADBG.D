@@ -78,6 +78,23 @@ IF ~
 	~
 	EXIT
 	
+	IF ~~ THEN REPLY @796
+	DO ~
+		ActionOverride(Player1, FillSlot(SLOT_MISC0))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @797
+	DO ~
+		ActionOverride(Player1, FillSlot(SLOT_MISC1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @798
+	DO ~
+		ActionOverride(Player1, FillSlot(SLOT_MISC2))
+	~
+	EXIT
 	
 	IF ~~ THEN REPLY @709
 	DO ~
@@ -108,6 +125,8 @@ IF ~
 		MoveToCampaign("ToB")
 	~
 	EXIT
+	
+
 	
 	IF ~~ THEN REPLY @654
 	GOTO XA_ChangeReputation

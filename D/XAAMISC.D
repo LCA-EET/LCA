@@ -4699,7 +4699,7 @@ EXTEND_BOTTOM HAEGAN 5
 	EXTERN XACORWIJ XA_HAEGAN_0_5
 END
 
-// DHARLOT2
+//{ DHARLOT2
 
 ADD_TRANS_TRIGGER DHARLOT2 0
 ~
@@ -4719,6 +4719,34 @@ EXTEND_BOTTOM DHARLOT2 0
 	~
 	THEN EXTERN XACORWIJ XA_DHARLOT2B
 END
+//}
+
+//{ MAEVAR
+EXTEND_BOTTOM MAEVAR 0
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+		See("XACORWIN")
+	~
+	GOTO XA_LC_MaevarCorwin
+
+END
+
+APPEND MAEVAR
+	IF ~~ THEN BEGIN XA_LC_MaevarCorwin
+		SAY @399  /* ~More importantly, why have you brought an officer of Flaming Fist here? If I didn't know better, I'd think this was some sort of sting operation.~*/
+		
+		IF ~~ THEN
+		EXTERN XACORWIJ XA_LC_MaevarCorwin2
+	END
+	
+	IF ~~ THEN BEGIN XA_LC_MaevarCorwin3
+		SAY @400  /* ~Is that so? And why should I trust you? Perhaps it's time to give Lin a break and strap you to the rack instead?~*/
+		
+		IF ~~ THEN
+		GOTO 6
+	END
+END
+//}
 
 // FFCUST04
 

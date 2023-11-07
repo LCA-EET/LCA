@@ -238,7 +238,7 @@ APPEND ~PLAYER1~
 	END
 	
 	IF ~~ THEN BEGIN XA_AdjustCorwinBanterTimer
-		SAY @149 /* ~Select the new interval between banters. The default is sixteen hours.~*/
+		SAY @149 /* ~Select the new interval between banters. The default is thirty-six hours.~*/
 		
 		IF ~~ THEN REPLY @150 /*~One hour.~ */
 		DO ~
@@ -282,24 +282,45 @@ APPEND ~PLAYER1~
 		~
 		GOTO XA_ChangeDone
 		
-		IF ~~ THEN REPLY @155 /*~One day.~ */
+		IF ~~ THEN REPLY @195 /*~Twenty Hours.~ */
 		DO ~
 			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
 			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 7) 
 		~
 		GOTO XA_ChangeDone
 		
-		IF ~~ THEN REPLY @156 /*~Two days.~ */
+		IF ~~ THEN REPLY @155 /* ~Twenty-four hours.~*/
 		DO ~
 			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
 			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 8) 
 		~
 		GOTO XA_ChangeDone
 		
-		IF ~~ THEN REPLY @162 /*~Three days.~ */
+		IF ~~ THEN REPLY @196 /* ~Thirty-six hours.~ */
 		DO ~
 			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
 			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 9) 
+		~
+		GOTO XA_ChangeDone
+		
+		IF ~~ THEN REPLY @156 /* ~Forty-eight hours.~ */
+		DO ~
+			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 10) 
+		~
+		GOTO XA_ChangeDone
+		
+		IF ~~ THEN REPLY @197 /* ~Sixty hours.~ */
+		DO ~
+			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 11) 
+		~
+		GOTO XA_ChangeDone
+		
+		IF ~~ THEN REPLY @162 /* ~Seventy-two hours.~*/
+		DO ~
+			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 12) 
 		~
 		GOTO XA_ChangeDone
 		
@@ -336,33 +357,62 @@ APPEND ~PLAYER1~
 		~
 		GOTO XA_ChangeDone
 		
-		IF ~~ THEN REPLY @154 /*~Sixteen hour.~ */
+		IF ~~ THEN REPLY @106 /*~Twelve Hours.~ */
 		DO ~
 			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
 			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 5) 
 		~
 		GOTO XA_ChangeDone
 		
-		IF ~~ THEN REPLY @155 /*~One day.~ */
+		IF ~~ THEN REPLY @154 /*~Sixteen hour.~ */
 		DO ~
 			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
 			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 6) 
 		~
 		GOTO XA_ChangeDone
 		
-		IF ~~ THEN REPLY @156 /*~Two days.~ */
+		IF ~~ THEN REPLY @195 /*~Twenty Hours.~ */
 		DO ~
 			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
 			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 7) 
 		~
 		GOTO XA_ChangeDone
 		
-		IF ~~ THEN REPLY @162 /*~Three days.~ */
+		IF ~~ THEN REPLY @155 /* ~Twenty-four hours.~*/
 		DO ~
 			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
 			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 8) 
 		~
 		GOTO XA_ChangeDone
+		
+		IF ~~ THEN REPLY @196 /* ~Thirty-six hours.~ */
+		DO ~
+			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 9) 
+		~
+		GOTO XA_ChangeDone
+		
+		IF ~~ THEN REPLY @156 /* ~Forty-eight hours.~ */
+		DO ~
+			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 10) 
+		~
+		GOTO XA_ChangeDone
+		
+		IF ~~ THEN REPLY @197 /* ~Sixty hours.~ */
+		DO ~
+			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 11) 
+		~
+		GOTO XA_ChangeDone
+		
+		IF ~~ THEN REPLY @162 /* ~Seventy-two hours.~*/
+		DO ~
+			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 12) 
+		~
+		GOTO XA_ChangeDone
+
 		
 	END
 	

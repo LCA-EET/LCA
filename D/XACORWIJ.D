@@ -10579,6 +10579,80 @@ END
 
 //}
 
+IF ~
+	Global("XA_LC_CorwinLarcenyTalk", "LOCALS", 2)
+~ THEN BEGIN XA_CorwinLarcenyTalk_Statue
+	SAY @1812  /*~Come on. We need to get that statue.~ */
+	
+	IF ~~ THEN REPLY @1806  /*~Right. Let's go.~ */
+	DO ~
+		SetGlobal("XA_LC_CorwinLarcenyTalk", "LOCALS", 3)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @1807  /* ~Are you sure you're okay with this?~*/
+	DO ~
+		SetGlobal("XA_LC_CorwinLarcenyTalk", "LOCALS", 3)
+	~
+	GOTO XA_CorwinLarcenyTalk_2
+	
+	IF ~~ THEN REPLY @1808  /*~Captain Corwin endorsing larceny? I'd not have thought it possible.~ */
+	DO ~
+		SetGlobal("XA_LC_CorwinLarcenyTalk", "LOCALS", 3)
+	~
+	GOTO XA_CorwinLarcenyTalk_2
+END
+
+IF ~
+	Global("XA_LC_CorwinLarcenyTalk", "LOCALS", 1)
+~ THEN BEGIN XA_CorwinLarcenyTalk_Amulet
+	SAY @1815  /*~Come on. We need to get that amulet.~ */
+	
+	IF ~~ THEN REPLY @1806  /*~Right. Let's go.~ */
+	DO ~
+		SetGlobal("XA_LC_CorwinLarcenyTalk", "LOCALS", 3)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @1807  /* ~Are you sure you're okay with this?~*/
+	DO ~
+		SetGlobal("XA_LC_CorwinLarcenyTalk", "LOCALS", 3)
+	~
+	GOTO XA_CorwinLarcenyTalk_2
+	
+	IF ~~ THEN REPLY @1808  /*~Captain Corwin endorsing larceny? I'd not have thought it possible.~ */
+	DO ~
+		SetGlobal("XA_LC_CorwinLarcenyTalk", "LOCALS", 3)
+	~
+	GOTO XA_CorwinLarcenyTalk_2
+END
+
+IF ~~ THEN BEGIN XA_CorwinLarcenyTalk_2
+	SAY @1809  /* ~I'm not comfortable with it, but we need to find Imoen and Irenicus. Unless you have other ideas, this looks to be the only path forward.~ */
+	
+	IF ~~ THEN REPLY @1810  /* ~Agreed. Let's go.~*/
+	EXIT
+	
+	IF ~~ THEN REPLY @1811  /* ~We might be asked to do things far worse than theft. Will I be able to count on you?~*/
+	GOTO XA_CorwinLarcenyTalk_3
+END
+
+IF ~~ THEN BEGIN XA_CorwinLarcenyTalk_3
+	SAY @1813  /* ~If it helps to advance our mission, then yes. I have my limits though, and I won't stand for gratuitous crime. I trust I've made myself clear? Good. Now let's go.~ */
+	IF ~~ THEN
+	DO ~
+		AddJournalEntry(@1814, INFO)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_LC_MaevarCorwin2
+	SAY @1815  /* ~I'm on a special assignment from the Grand Dukes, and it doesn't involve shutting down whatever operation you and your boss have set up here. That's all you need to know.~*/
+	
+	IF ~~ THEN 
+	EXTERN MAEVAR XA_LC_MaevarCorwin3
+END
+
 CHAIN
 	IF ~~ THEN XACORWIJ XA_GeneralTalk_Chain
 		@1799 /* ~Peace, General. I'm Major Schael Corwin of the Baldur's Gate Flaming Fist, assisting <CHARNAME> on a special assignment. The Grand Dukes have ordered —~*/

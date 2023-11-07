@@ -1,7 +1,7 @@
 
 //{ Exp Boosts on Join
 
-
+//}
 //{	Rejoin processing 
 IF 
 	!InParty(Myself)
@@ -981,14 +981,9 @@ IF
 	Global("XA_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
-		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
-		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
-		SetGlobalTimer("XA_BanterTimer", "LOCALS", TWELVE_HOURS)
-		////DisplayStringHead(Myself, ~DEBUG: 22-03~)	
-		SetInterrupt(TRUE)
+		SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 9)
 END
+
 
 IF 
 	ActionListEmpty()
@@ -1090,6 +1085,21 @@ THEN
 		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
 		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
 		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", TWENTY_HOURS)
+		////DisplayStringHead(Myself, ~DEBUG: 22-12~)
+		SetInterrupt(TRUE)
+END
+
+IF 
+	ActionListEmpty()
+	Global("XA_CaelarBanterInterval", "GLOBAL", 8) 
+	Global("XA_ResetBanterTimer", "LOCALS", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
+		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
 		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_DAY)
 		////DisplayStringHead(Myself, ~DEBUG: 22-10~)
 		SetInterrupt(TRUE)
@@ -1097,7 +1107,22 @@ END
 
 IF 
 	ActionListEmpty()
-	Global("XA_CaelarBanterInterval", "GLOBAL", 8) 
+	Global("XA_CaelarBanterInterval", "GLOBAL", 9) 
+	Global("XA_ResetBanterTimer", "LOCALS", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
+		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", 10800)
+		////DisplayStringHead(Myself, ~DEBUG: 22-10~)
+		SetInterrupt(TRUE)
+END
+
+IF 
+	ActionListEmpty()
+	Global("XA_CaelarBanterInterval", "GLOBAL", 10) 
 	Global("XA_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
@@ -1112,7 +1137,22 @@ END
 
 IF 
 	ActionListEmpty()
-	Global("XA_CaelarBanterInterval", "GLOBAL", 9) 
+	Global("XA_CaelarBanterInterval", "GLOBAL", 11) 
+	Global("XA_ResetBanterTimer", "LOCALS", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
+		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", 18000)
+		////DisplayStringHead(Myself, ~DEBUG: 22-12~)
+		SetInterrupt(TRUE)
+END
+
+IF 
+	ActionListEmpty()
+	Global("XA_CaelarBanterInterval", "GLOBAL", 12) 
 	Global("XA_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
@@ -1124,6 +1164,7 @@ THEN
 		////DisplayStringHead(Myself, ~DEBUG: 22-12~)
 		SetInterrupt(TRUE)
 END
+
 //}
 
 //{ Postpone Banter by 10 minutes - in combat.

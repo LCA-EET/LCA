@@ -413,13 +413,13 @@
 			See("ARAN")
 			IsValidForPartyDialogue("XACORWIN")
 		~
-		@168 /* ~Hmph.~ */
+		@168 /* ~Hmph. You know why we're here.~ */
 		== ARAN
 		IF ~
 			See("XACORWIN")
 			IsValidForPartyDialogue("XACORWIN")
 		~
-		@169 /* ~Hmph.~ */
+		@169 /* ~Indeed.~ */
 	END
 //}
 

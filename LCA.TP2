@@ -1052,6 +1052,7 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 //{ New Creatures
 	//{ Corwin
 	COPY ~LCA/CRE/XACORWIN.CRE~ ~override~
+	COPY ~LCA/CRE/XACORINV.CRE~ ~override~
 	COPY ~LCA/BMP/XACORWIL.BMP~ ~override~
 	COPY ~LCA/BMP/XACORWIM.BMP~ ~override~
 	COPY ~LCA/BMP/XACORWIS.BMP~ ~override~

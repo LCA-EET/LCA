@@ -476,6 +476,7 @@ END
 		END
 		//}
 
+	//}
 	//{ Duke Debriefed Timer
 	
 		//{ Set the Timer
@@ -545,6 +546,8 @@ END
 				Continue()
 		END
 		//}
+//}
+
 //}
 
 //{ Golden Egg
@@ -688,132 +691,162 @@ THEN
 END
 //}
 
-//{ Cernd Baby
-IF
-	ActionListEmpty()
-	Global("CerndBaby","GLOBAL",1)
-	!InParty("XACORWIN")
-	GlobalLT("XA_CorwinCerndBaby", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_CorwinCerndBaby", "GLOBAL", 1)
-		Continue()
-END
-//}
-//{ Wedding Hostilities
-IF
-	ActionListEmpty()
-	!InParty("XACORWIN")
-	Global("OHD_WEDDING_HOSTILE","OH5000",3)
-	GlobalLT("XA_WeddingHostile", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_WeddingHostile", "GLOBAL", 1)
-		Continue()
-END
-//}
+//{ Events
 
-//{ Defeated Irenicus in Spellhold
-IF
-	ActionListEmpty()
-	!InParty("XACORWIN")
-	Global("OpenJonBedroom","GLOBAL",1)
-	GlobalLT("XA_PlayerSoulStolen", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_PlayerSoulStolen", "GLOBAL", 1)
-		Continue()
-END
-//}
+	//{ Kalah Killed
+	IF
+		ActionListEmpty()
+		Dead("Kalah")
+		!InParty("XACORWIN")
+		GlobalLT("XA_LC_CorwinKalah", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CorwinKalah", "GLOBAL", 1)
+			Continue()
+	END
+	//}
+	
+	//{ Cernd Baby
+	IF
+		ActionListEmpty()
+		Global("CerndBaby","GLOBAL",1)
+		!InParty("XACORWIN")
+		GlobalLT("XA_CorwinCerndBaby", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_CorwinCerndBaby", "GLOBAL", 1)
+			Continue()
+	END
+	//}
 
-//{ Dorn Sex
-IF	
-	ActionListEmpty()
-	!InParty("XACORWIN")
-	Global("OHD_sexreactions","GLOBAL",1)
-	GlobalLT("XA_DornSex", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_DornSex", "GLOBAL", 1)
-		Continue()
-END
-//}
+	//{ Wedding Hostilities
+	IF
+		ActionListEmpty()
+		!InParty("XACORWIN")
+		Global("OHD_WEDDING_HOSTILE","OH5000",3)
+		GlobalLT("XA_WeddingHostile", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_WeddingHostile", "GLOBAL", 1)
+			Continue()
+	END
+	//}
 
-//{ Bodhi was killed
-IF
-	ActionListEmpty()
-	!InParty("XACORWIN")
-	Global("BodhiDead","GLOBAL",1)
-	GlobalLT("XA_BodhiDead", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_BodhiDead", "GLOBAL", 1)
-		Continue()
-END
-//}
+	//{ Larceny Talk
+	IF
+		ActionListEmpty()
+		!InParty("XACORWIN")
+		GlobalGT("MaeVarWork", "GLOBAL", 0)
+		GlobalLT("XA_LC_CorwinLarceny", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CorwinLarceny", "GLOBAL", 1)
+			Continue()
+	END
+	//}
 
-//{ Keldorn Reconciled with Maria
-IF
-	ActionListEmpty()
-	!InParty("XACORWIN")
-	Global("LadyMaria","GLOBAL",5) /* Keldorn reconciled with his wife */
-	GlobalLT("XA_KeldornMaria", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_KeldornMaria", "GLOBAL", 1)
-		Continue()
-END
-//}
 
-//{ Phaere was alone with the player
-IF
-	ActionListEmpty()
-	!InParty("XACORWIN")
-	GlobalGT("PhaereInnuendo","GLOBAL",1)
-	GlobalLT("XA_AloneWithPhaere", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_AloneWithPhaere", "GLOBAL", 1)
-		Continue()
-END
-//}
+	//{ Defeated Irenicus in Spellhold
+	IF
+		ActionListEmpty()
+		!InParty("XACORWIN")
+		Global("OpenJonBedroom","GLOBAL",1)
+		GlobalLT("XA_PlayerSoulStolen", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_PlayerSoulStolen", "GLOBAL", 1)
+			Continue()
+	END
+	//}
 
-//{ Agreed to work for Bodhi
-IF
-	ActionListEmpty()
-	!InParty("XACORWIN")
-	Global("BodhiJob","GLOBAL",2)
-	GlobalLT("XA_BodhiDeal2", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_BodhiDeal2", "GLOBAL", 1)
-		Continue()
-END
+	//{ Dorn Sex
+	IF	
+		ActionListEmpty()
+		!InParty("XACORWIN")
+		Global("OHD_sexreactions","GLOBAL",1)
+		GlobalLT("XA_DornSex", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_DornSex", "GLOBAL", 1)
+			Continue()
+	END
+	//}
 
-IF
-	ActionListEmpty()
-	!InParty("XACORWIN")
-	Global("BodhiJob","GLOBAL",3)
-	GlobalLT("XA_BodhiDeal3", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_BodhiDeal3", "GLOBAL", 1)
-		Continue()
-END
+	//{ Bodhi was killed
+	IF
+		ActionListEmpty()
+		!InParty("XACORWIN")
+		Global("BodhiDead","GLOBAL",1)
+		GlobalLT("XA_BodhiDead", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_BodhiDead", "GLOBAL", 1)
+			Continue()
+	END
+	//}
 
-IF
-	ActionListEmpty()
-	!InParty("XACORWIN")
-	Global("BodhiJob","GLOBAL",4)
-	GlobalLT("XA_BodhiDeal4", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_BodhiDeal4", "GLOBAL", 1)
-		Continue()
-END
-//}
+	//{ Keldorn Reconciled with Maria
+	IF
+		ActionListEmpty()
+		!InParty("XACORWIN")
+		Global("LadyMaria","GLOBAL",5) /* Keldorn reconciled with his wife */
+		GlobalLT("XA_KeldornMaria", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_KeldornMaria", "GLOBAL", 1)
+			Continue()
+	END
+	//}
 
-//{ Agreed to Firkraag's Deal
+	//{ Phaere was alone with the player
+	IF
+		ActionListEmpty()
+		!InParty("XACORWIN")
+		GlobalGT("PhaereInnuendo","GLOBAL",1)
+		GlobalLT("XA_AloneWithPhaere", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_AloneWithPhaere", "GLOBAL", 1)
+			Continue()
+	END
+	//}
+
+	//{ Agreed to work for Bodhi
+	IF
+		ActionListEmpty()
+		!InParty("XACORWIN")
+		Global("BodhiJob","GLOBAL",2)
+		GlobalLT("XA_BodhiDeal2", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_BodhiDeal2", "GLOBAL", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		!InParty("XACORWIN")
+		Global("BodhiJob","GLOBAL",3)
+		GlobalLT("XA_BodhiDeal3", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_BodhiDeal3", "GLOBAL", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		!InParty("XACORWIN")
+		Global("BodhiJob","GLOBAL",4)
+		GlobalLT("XA_BodhiDeal4", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_BodhiDeal4", "GLOBAL", 1)
+			Continue()
+	END
+	//}
+
+	//{ Agreed to Firkraag's Deal
 IF
 	ActionListEmpty()
 	!InParty("XACORWIN")
@@ -824,6 +857,8 @@ THEN
 		SetGlobal("XA_FirkraagDeal", "GLOBAL", 1)
 		Continue()
 END
+//}
+
 //}
 
 //{ Add LCA Assistant

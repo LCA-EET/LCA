@@ -26,8 +26,10 @@ IF
 		Global("XA_CorwinDebug1002", "GLOBAL", 1)
 THEN
 	RESPONSE #100
+		CreateCreature("XACORINV", [1125.400], N)
 		SetGlobal("XA_SkieSaved", "GLOBAL", 3) // mark complete
 		CreateCreature("XACORWIN", [1033.563], SW)
+		//ActionOverride("XACORWIN", PolymorphCopy("Corwin"))
 		Continue()
 END
 
@@ -38,8 +40,10 @@ IF
 		Global("XA_LetterSent", "GLOBAL", 1)
 THEN
 	RESPONSE #100
+		CreateCreature("XACORINV", [1125.400], N)
 		SetGlobal("XA_SkieSaved", "GLOBAL", 3) // mark complete
 		CreateCreature("XACORWIN", [1033.563], SW)
+		//ActionOverride("XACORWIN", PolymorphCopy("Corwin"))
 		Continue()
 END
 

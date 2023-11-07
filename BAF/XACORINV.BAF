@@ -1,0 +1,62 @@
+/*
+IF
+	GlobalLT("XA_LC_IC", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself, ~Created~)
+		Continue()
+END
+*/
+//{ 04: Copy items from SoD Corwin
+IF
+	GlobalLT("XA_LC_TakeCorwinBP", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		TakeCreatureItems("Corwin", BACKPACK)
+		SetGlobal("XA_LC_TakeCorwinBP", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("XA_LC_TakeCorwinBP", "GLOBAL", 1)
+	HasItem("BDCHAN05", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		DestroyItem("BDCHAN05")
+		GiveItemCreate("XACORCHN", Myself, 0,0,0)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_TakeCorwinBP", "GLOBAL", 1)
+	HasItem("BDBOW06", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		DestroyItem("BDBOW06")
+		GiveItemCreate("XACORBOW", Myself, 0,0,0)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_TakeCorwinBP", "GLOBAL", 1)
+	HasItem("XAAMUL1", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		DestroyItem("XAAMUL1")
+		GiveItemCreate("XAAMUL2", Myself, 0,0,0)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_EquipCorwinEquip", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END

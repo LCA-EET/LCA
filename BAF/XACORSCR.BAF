@@ -12,14 +12,8 @@
 
 
 //{ 01: Amulet / Letter on Party Join
-	//{ Include the letter sent by the Player
-	IF
-		HasItem("XAAMUL", Myself)
-	THEN
-		RESPONSE #100
-			DestroyItem("XAAMUL")
-	END
 	
+	//{ Include the letter sent by the Player
 	IF
 		InParty(Myself)
 		Global("XA_LetterSent", "GLOBAL", 1)
@@ -29,7 +23,6 @@
 			SetInterrupt(FALSE)
 			CreateItem("XAORW1",0,0,0)
 			SetGlobal("XA_CreatedLetterInventory", "LOCALS", 1)
-			////DisplayStringHead(Myself, ~DEBUG: 01-00~)
 			SetInterrupt(TRUE)
 			Continue()
 	END
@@ -43,7 +36,6 @@
 			SetInterrupt(FALSE)
 			CreateItem("XAORW2",0,0,0)
 			SetGlobal("XA_CreatedLetterInventory", "LOCALS", 1)
-			////DisplayStringHead(Myself, ~DEBUG: 01-01~)
 			SetInterrupt(TRUE)
 			Continue()
 	END
@@ -57,8 +49,6 @@
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			DestroyItem("XAAMULET")
-			GiveItemCreate("XAAMUL2", Myself, 0,0,0)
-			XEquipItem("XAAMUL2","XACORWIN",SLOT_AMULET,EQUIP)
 			ActionOverride(Player1, DestroyItem("XAAMULET"))
 			ActionOverride(Player2, DestroyItem("XAAMULET"))
 			ActionOverride(Player3, DestroyItem("XAAMULET"))
@@ -70,27 +60,6 @@
 	END
 	//}
 
-	//{ Corwin Amulet 
-IF
-	InParty(Myself)
-	PartyHasItem("XAAMUL1")
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		DestroyItem("XAAMUL1")
-		GiveItemCreate("XAAMUL2", Myself, 0,0,0)
-		XEquipItem("XAAMUL2","XACORWIN",SLOT_AMULET,EQUIP)
-		ActionOverride(Player1, DestroyItem("XAAMUL1"))
-		ActionOverride(Player2, DestroyItem("XAAMUL1"))
-		ActionOverride(Player3, DestroyItem("XAAMUL1"))
-		ActionOverride(Player4, DestroyItem("XAAMUL1"))
-		ActionOverride(Player5, DestroyItem("XAAMUL1"))
-		ActionOverride(Player6, DestroyItem("XAAMUL1"))
-		////DisplayStringHead(Myself, ~DEBUG: 01-03~)
-		SetInterrupt(TRUE)
-		Continue()
-END
-//}
 //}
 
 //{ 02: Corwin Opinion Baseline
@@ -119,9 +88,8 @@ END
 
 //{ 04: Copy items from SoD Corwin
 IF
-	//InParty(Myself)
-	GlobalLT("XA_CopyCorwinItems", "GLOBAL", 1)
-	//Global("XA_CopyItemTest", "GLOBAL", 1)
+	Global("XA_LC_TakeCorwinBP", "GLOBAL", 1)
+	GlobalLT("XA_LC_TakeCorwinEquip", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -143,9 +111,73 @@ THEN
 		XEquipItem("", "Corwin", SLOT_WEAPON1,EQUIP)   
 		XEquipItem("", "Corwin", SLOT_WEAPON2,EQUIP)   
 		XEquipItem("", "Corwin", SLOT_WEAPON3,EQUIP) 
-
 		TakeCreatureItems("Corwin", BACKPACK)
-		SetGlobal("XA_CopyCorwinItems", "GLOBAL", 1)
+		SetGlobal("XA_LC_TakeCorwinEquip", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("XA_LC_TakeCorwinEquip", "GLOBAL", 1)
+	HasItem("BDCHAN05", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		DestroyItem("BDCHAN05")
+		GiveItemCreate("XACORCHN", Myself, 0,0,0)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_TakeCorwinEquip", "GLOBAL", 1)
+	HasItem("BDBOW06", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		DestroyItem("BDBOW06")
+		GiveItemCreate("XACORBOW", Myself, 0,0,0)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_TakeCorwinEquip", "GLOBAL", 1)
+	HasItem("XAAMUL1", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		DestroyItem("XAAMUL1")
+		GiveItemCreate("XAAMUL2", Myself, 0,0,0)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_TakeCorwinEquip", "GLOBAL", 1)
+	GlobalLT("XA_LC_EquipCorwinEquip", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		FillSlot(SLOT_AMULET) 
+		FillSlot(SLOT_ARMOR)
+		FillSlot(SLOT_BELT)
+		FillSlot(SLOT_BOOTS)
+		FillSlot(SLOT_CLOAK)     
+		FillSlot(SLOT_GAUNTLETS) 
+		FillSlot(SLOT_HELMET)    
+		FillSlot(SLOT_RING_LEFT) 
+		FillSlot(SLOT_RING_RIGHT)
+		FillSlot(SLOT_SHIELD)
+		FillSlot(SLOT_AMMO0)     
+		FillSlot(SLOT_AMMO1)     
+		FillSlot(SLOT_AMMO2)     
+		FillSlot(SLOT_AMMO3)   
+		FillSlot(SLOT_WEAPON0)   
+		FillSlot(SLOT_WEAPON1)   
+		FillSlot(SLOT_WEAPON2)   
+		FillSlot(SLOT_WEAPON3) 
+		TakeCreatureItems("XACORINV", BACKPACK)
+		SetGlobal("XA_LC_EquipCorwinEquip", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -1509,6 +1541,82 @@ END
 //} End Underdark Check
 
 //{ 18: Event Checks
+
+	//{ Kalah Killed
+	IF
+		AreaCheck("AR0607")
+		ActionListEmpty()
+		Dead("Kalah")
+		InParty(Myself)
+		GlobalLT("XA_LC_CorwinKalah", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_LC_CorwinKalahTimer", "LOCALS", ONE_ROUND)
+			SetGlobal("XA_LC_CorwinKalah", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalTimerExpired("XA_LC_CorwinKalahTimer", "LOCALS")
+		GlobalLT("XA_LC_CorwinKalahRemark", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinKalahRemark", "LOCALS", 1)
+			DisplayStringHead( Myself, @27)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Corwin Larceny Talk
+	IF
+		ActionListEmpty()
+		InParty(Myself)
+		GlobalGT("MaeVarWork", "GLOBAL", 0)
+		GlobalLT("XA_LC_CorwinLarceny", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_LC_CorwinLarcenyTimer", "LOCALS", ONE_ROUND)
+			//DisplayStringHead(Myself, ~Timer started~)
+			SetGlobal("XA_LC_CorwinLarceny", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalTimerExpired("XA_LC_CorwinLarcenyTimer", "LOCALS")
+		GlobalLT("XA_LC_CorwinLarcenyTalk", "LOCALS", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+		ReputationGT(Player1,9) //Amulet
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinLarcenyTalk", "LOCALS", 1)
+			//DisplayStringHead(Myself, ~Start Dialog~)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalTimerExpired("XA_LC_CorwinLarcenyTimer", "LOCALS")
+		GlobalLT("XA_LC_CorwinLarcenyTalk", "LOCALS", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+		ReputationLT(Player1,10) //Statue
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinLarcenyTalk", "LOCALS", 2)
+			//DisplayStringHead(Myself, ~Start Dialog~)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
 
 	//{ Completed Challenge 3
 	IF
@@ -4433,13 +4541,7 @@ IF
 	Global("XA_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
-		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
-		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
-		SetGlobalTimer("XA_BanterTimer", "LOCALS", TWELVE_HOURS)
-		////DisplayStringHead(Myself, ~DEBUG: 22-03~)	
-		SetInterrupt(TRUE)
+		SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 9)
 END
 
 IF 
@@ -4542,6 +4644,21 @@ THEN
 		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
 		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
 		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", TWENTY_HOURS)
+		////DisplayStringHead(Myself, ~DEBUG: 22-12~)
+		SetInterrupt(TRUE)
+END
+
+IF 
+	ActionListEmpty()
+	Global("XA_CorwinBanterInterval", "GLOBAL", 8) 
+	Global("XA_ResetBanterTimer", "LOCALS", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
+		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
 		SetGlobalTimer("XA_BanterTimer", "LOCALS", ONE_DAY)
 		////DisplayStringHead(Myself, ~DEBUG: 22-10~)
 		SetInterrupt(TRUE)
@@ -4549,7 +4666,22 @@ END
 
 IF 
 	ActionListEmpty()
-	Global("XA_CorwinBanterInterval", "GLOBAL", 8) 
+	Global("XA_CorwinBanterInterval", "GLOBAL", 9) 
+	Global("XA_ResetBanterTimer", "LOCALS", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
+		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", 10800)
+		////DisplayStringHead(Myself, ~DEBUG: 22-10~)
+		SetInterrupt(TRUE)
+END
+
+IF 
+	ActionListEmpty()
+	Global("XA_CorwinBanterInterval", "GLOBAL", 10) 
 	Global("XA_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
@@ -4564,7 +4696,22 @@ END
 
 IF 
 	ActionListEmpty()
-	Global("XA_CorwinBanterInterval", "GLOBAL", 9) 
+	Global("XA_CorwinBanterInterval", "GLOBAL", 11) 
+	Global("XA_ResetBanterTimer", "LOCALS", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_ResetBanterTimer", "LOCALS", 0)
+		SetGlobal("XA_Banter_Pending", "LOCALS", 0)
+		SetGlobal("XA_Banter_NextInteraction", "LOCALS", 0)
+		SetGlobalTimer("XA_BanterTimer", "LOCALS", 18000)
+		////DisplayStringHead(Myself, ~DEBUG: 22-12~)
+		SetInterrupt(TRUE)
+END
+
+IF 
+	ActionListEmpty()
+	Global("XA_CorwinBanterInterval", "GLOBAL", 12) 
 	Global("XA_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
@@ -4576,6 +4723,7 @@ THEN
 		////DisplayStringHead(Myself, ~DEBUG: 22-12~)
 		SetInterrupt(TRUE)
 END
+
 
 //}
 
