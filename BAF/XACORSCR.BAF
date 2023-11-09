@@ -86,103 +86,6 @@ THEN
 END
 //}
 
-//{ 04: Copy items from SoD Corwin
-IF
-	Global("XA_LC_TakeCorwinBP", "GLOBAL", 1)
-	GlobalLT("XA_LC_TakeCorwinEquip", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		XEquipItem("", "Corwin", SLOT_AMULET,EQUIP) 
-		XEquipItem("", "Corwin", SLOT_ARMOR,EQUIP)
-		XEquipItem("", "Corwin", SLOT_BELT,EQUIP)
-		XEquipItem("", "Corwin", SLOT_BOOTS,EQUIP)
-		XEquipItem("", "Corwin", SLOT_CLOAK,EQUIP)     
-		XEquipItem("", "Corwin", SLOT_GAUNTLETS,EQUIP) 
-		XEquipItem("", "Corwin", SLOT_HELMET,EQUIP)    
-		XEquipItem("", "Corwin", SLOT_RING_LEFT,EQUIP) 
-		XEquipItem("", "Corwin", SLOT_RING_RIGHT,EQUIP)
-		XEquipItem("", "Corwin", SLOT_SHIELD,EQUIP)
-		XEquipItem("", "Corwin", SLOT_AMMO0,EQUIP)     
-		XEquipItem("", "Corwin", SLOT_AMMO1,EQUIP)     
-		XEquipItem("", "Corwin", SLOT_AMMO2,EQUIP)     
-		XEquipItem("", "Corwin", SLOT_AMMO3,EQUIP)   
-		XEquipItem("", "Corwin", SLOT_WEAPON0,EQUIP)   
-		XEquipItem("", "Corwin", SLOT_WEAPON1,EQUIP)   
-		XEquipItem("", "Corwin", SLOT_WEAPON2,EQUIP)   
-		XEquipItem("", "Corwin", SLOT_WEAPON3,EQUIP) 
-		TakeCreatureItems("Corwin", BACKPACK)
-		SetGlobal("XA_LC_TakeCorwinEquip", "GLOBAL", 1)
-		SetInterrupt(TRUE)
-END
-
-IF
-	Global("XA_LC_TakeCorwinEquip", "GLOBAL", 1)
-	HasItem("BDCHAN05", Myself)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		DestroyItem("BDCHAN05")
-		GiveItemCreate("XACORCHN", Myself, 0,0,0)
-		SetInterrupt(TRUE)
-		Continue()
-END
-
-IF
-	Global("XA_LC_TakeCorwinEquip", "GLOBAL", 1)
-	HasItem("BDBOW06", Myself)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		DestroyItem("BDBOW06")
-		GiveItemCreate("XACORBOW", Myself, 0,0,0)
-		SetInterrupt(TRUE)
-		Continue()
-END
-
-IF
-	Global("XA_LC_TakeCorwinEquip", "GLOBAL", 1)
-	HasItem("XAAMUL1", Myself)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		DestroyItem("XAAMUL1")
-		GiveItemCreate("XAAMUL2", Myself, 0,0,0)
-		SetInterrupt(TRUE)
-		Continue()
-END
-
-IF
-	Global("XA_LC_TakeCorwinEquip", "GLOBAL", 1)
-	GlobalLT("XA_LC_EquipCorwinEquip", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		FillSlot(SLOT_AMULET) 
-		FillSlot(SLOT_ARMOR)
-		FillSlot(SLOT_BELT)
-		FillSlot(SLOT_BOOTS)
-		FillSlot(SLOT_CLOAK)     
-		FillSlot(SLOT_GAUNTLETS) 
-		FillSlot(SLOT_HELMET)    
-		FillSlot(SLOT_RING_LEFT) 
-		FillSlot(SLOT_RING_RIGHT)
-		FillSlot(SLOT_SHIELD)
-		FillSlot(SLOT_AMMO0)     
-		FillSlot(SLOT_AMMO1)     
-		FillSlot(SLOT_AMMO2)     
-		FillSlot(SLOT_AMMO3)   
-		FillSlot(SLOT_WEAPON0)   
-		FillSlot(SLOT_WEAPON1)   
-		FillSlot(SLOT_WEAPON2)   
-		FillSlot(SLOT_WEAPON3) 
-		TakeCreatureItems("XACORINV", BACKPACK)
-		SetGlobal("XA_LC_EquipCorwinEquip", "GLOBAL", 1)
-		SetInterrupt(TRUE)
-		Continue()
-END
-//}
-
 //{ 05: Determines if CorwinEET is Installed
 IF 
 	InParty(Myself)
@@ -245,19 +148,19 @@ END
 //{	07: Rejoin processing - triggered in XACORWIN.D and XACORWIP.D
 IF 
 	//!InParty(Myself)
+	ActionListEmpty()
 	Global("XA_CorwinRejoinProcessed", "GLOBAL", 1)
 THEN 
 	RESPONSE #100
 		SetInterrupt(FALSE)
+		JoinParty()
 		SetGlobal("XA_CorwinJoined","LOCALS",1)
 		SetGlobal("XA_CorwinKickedOut", "LOCALS", 0)
 		SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 		SetGlobal("XA_CorwinRepWarning", "GLOBAL", 0)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 2)
 		////DisplayStringHead(Myself, ~DEBUG: 07-00~)
-		JoinParty()
 		SetInterrupt(TRUE)
-		
 END
 //}
 

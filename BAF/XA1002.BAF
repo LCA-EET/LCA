@@ -1,3 +1,114 @@
+//{ Corwin Inventory Handling
+IF
+	InMyArea("XACORWIN")
+	InMyArea("XACORINV")
+	GlobalLT("XA_LC_TakeCorwinGear", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ActionOverride("XACORINV", TakeCreatureItems("Corwin", BACKPACK))
+		SetGlobal("XA_LC_TakeCorwinGear", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("XA_LC_TakeCorwinGear", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		XEquipItem("", "Corwin", SLOT_AMULET,EQUIP) 
+		XEquipItem("", "Corwin", SLOT_ARMOR,EQUIP)
+		XEquipItem("", "Corwin", SLOT_BELT,EQUIP)
+		XEquipItem("", "Corwin", SLOT_BOOTS,EQUIP)
+		XEquipItem("", "Corwin", SLOT_CLOAK,EQUIP)     
+		XEquipItem("", "Corwin", SLOT_GAUNTLETS,EQUIP) 
+		XEquipItem("", "Corwin", SLOT_HELMET,EQUIP)    
+		XEquipItem("", "Corwin", SLOT_RING_LEFT,EQUIP) 
+		XEquipItem("", "Corwin", SLOT_RING_RIGHT,EQUIP)
+		XEquipItem("", "Corwin", SLOT_SHIELD,EQUIP)
+		XEquipItem("", "Corwin", SLOT_AMMO0,EQUIP)     
+		XEquipItem("", "Corwin", SLOT_AMMO1,EQUIP)     
+		XEquipItem("", "Corwin", SLOT_AMMO2,EQUIP)     
+		XEquipItem("", "Corwin", SLOT_AMMO3,EQUIP)   
+		XEquipItem("", "Corwin", SLOT_WEAPON0,EQUIP)   
+		XEquipItem("", "Corwin", SLOT_WEAPON1,EQUIP)   
+		XEquipItem("", "Corwin", SLOT_WEAPON2,EQUIP)   
+		XEquipItem("", "Corwin", SLOT_WEAPON3,EQUIP)
+		ActionOverride("XACORWIN", TakeCreatureItems("Corwin", BACKPACK))
+		SetGlobal("XA_LC_TakeCorwinGear", "GLOBAL", 2)
+		SetInterrupt(TRUE)
+END
+
+IF
+	TriggerOverride("XACORWIN", HasItem("BDCHAN05", Myself))
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ActionOverride("XACORWIN", DestroyItem("BDCHAN05"))
+		GiveItemCreate("XACORCHN", "XACORWIN", 0,0,0)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	TriggerOverride("XACORWIN", HasItem("BDBOW06", Myself))
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ActionOverride("XACORWIN", DestroyItem("BDBOW06"))
+		GiveItemCreate("XACORBOW", "XACORWIN", 0,0,0)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	TriggerOverride("XACORWIN", HasItem("XAAMUL1", Myself))
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ActionOverride("XACORWIN", DestroyItem("XAAMUL1"))
+		GiveItemCreate("XAAMUL2", "XACORWIN", 0,0,0)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_TakeCorwinGear", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ActionOverride("XACORWIN", FillSlot(SLOT_AMULET)) 
+		ActionOverride("XACORWIN", FillSlot(SLOT_ARMOR))
+		ActionOverride("XACORWIN", FillSlot(SLOT_BELT))
+		ActionOverride("XACORWIN", FillSlot(SLOT_BOOTS))
+		ActionOverride("XACORWIN", FillSlot(SLOT_CLOAK))     
+		ActionOverride("XACORWIN", FillSlot(SLOT_GAUNTLETS)) 
+		ActionOverride("XACORWIN", FillSlot(SLOT_HELMET)    
+		ActionOverride("XACORWIN", FillSlot(SLOT_RING_LEFT) 
+		ActionOverride("XACORWIN", FillSlot(SLOT_RING_RIGHT)
+		ActionOverride("XACORWIN", FillSlot(SLOT_SHIELD))
+		ActionOverride("XACORWIN", FillSlot(SLOT_AMMO0))     
+		ActionOverride("XACORWIN", FillSlot(SLOT_AMMO1))     
+		ActionOverride("XACORWIN", FillSlot(SLOT_AMMO2))     
+		ActionOverride("XACORWIN", FillSlot(SLOT_AMMO3))   
+		ActionOverride("XACORWIN", FillSlot(SLOT_WEAPON0))   
+		ActionOverride("XACORWIN", FillSlot(SLOT_WEAPON1))   
+		ActionOverride("XACORWIN", FillSlot(SLOT_WEAPON2))   
+		ActionOverride("XACORWIN", FillSlot(SLOT_WEAPON3)) 
+		SetGlobal("XA_LC_TakeCorwinGear", "GLOBAL", 3)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("XA_LC_TakeCorwinGear", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		ActionOverride("XACORWIN", TakeCreatureItems("XACORINV", BACKPACK))
+		SetGlobal("XA_LC_TakeCorwinGear", "GLOBAL", 4)
+END
+//}
+
+
 IF
 	Global("XA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
 THEN
@@ -35,24 +146,27 @@ END
 
 IF 
 	GlobalTimerExpired("XA_Ath2", "GLOBAL")
+	GlobalLT("XA_LC_Spawn2", "AR1002", 1)
 	OR(2)
 		Global("XA_LetterSent", "GLOBAL", 2)
 		Global("XA_LetterSent", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		CreateCreature("XACORINV", [1125.400], N)
-		SetGlobal("XA_SkieSaved", "GLOBAL", 3) // mark complete
 		CreateCreature("XACORWIN", [1033.563], SW)
-		//ActionOverride("XACORWIN", PolymorphCopy("Corwin"))
+		SetGlobal("XA_LC_Spawn2", "AR1002", 1)
+		SetGlobal("XA_SkieSaved", "GLOBAL", 3) // mark complete
 		Continue()
 END
 
 IF 
 	GlobalTimerExpired("XA_Ath2", "GLOBAL")
 	Global("XA_LetterSent", "GLOBAL", 3)
+	GlobalLT("XA_LC_Spawn2", "AR1002", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_SkieSaved", "GLOBAL", 3) // mark complete
 		CreateCreature("XAFFOFCR", [1033.563], SW)
+		SetGlobal("XA_SkieSaved", "GLOBAL", 3) // mark complete
+		SetGlobal("XA_LC_Spawn2", "AR1002", 1)
 		Continue()
 END

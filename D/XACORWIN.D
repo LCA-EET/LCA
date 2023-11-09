@@ -161,7 +161,7 @@ IF ~~ THEN BEGIN XAA4_CGS
 	=@43 /* ~(She hands you a small sack full of gold)~ */
 	IF ~~ THEN
 	DO ~
-		GivePartyGold(10000)
+		GiveGoldForce(10000)
 		AddExperienceParty(35000)
 	~
 	GOTO XAA4A
@@ -173,7 +173,7 @@ IF ~~ THEN BEGIN XAA4
 	=@43 /* ~(She hands you a small sack full of gold)~ */
 	IF ~~ THEN
 	DO ~
-		GivePartyGold(10000)
+		GiveGoldForce(10000)
 		AddExperienceParty(35000)
 	~
 	GOTO XAA4A
