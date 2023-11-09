@@ -10606,7 +10606,7 @@ END
 IF ~
 	Global("XA_LC_CorwinLarcenyTalk", "LOCALS", 1)
 ~ THEN BEGIN XA_CorwinLarcenyTalk_Amulet
-	SAY @1815  /*~Come on. We need to get that amulet.~ */
+	SAY @1805  /*~Come on. We need to get that amulet.~ */
 	
 	IF ~~ THEN REPLY @1806  /*~Right. Let's go.~ */
 	DO ~

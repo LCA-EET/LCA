@@ -4,6 +4,10 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v1.0.4, 2023-11-XX
+* Added some new dialog between Corwin and MaeVar.
+* Improved the inventory transfer scripting between Corwin (SoD) and Corwin (LCA).
+
 # v1.0.3b, 2023-11-03
 * Fixed a bug that caused Corwin and Caelar to fail to receive the experience boost upon joining the party.
 
