@@ -10653,6 +10653,92 @@ IF ~~ THEN BEGIN XA_LC_MaevarCorwin2
 	EXTERN MAEVAR XA_LC_MaevarCorwin3
 END
 
+IF ~~ THEN BEGIN XA_CorwinArtifacts_ChainEnd
+	SAY @1827 /*~Sure you do. And I'm the queen of Tethyr.~*/
+	
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1829 /* ~Schael? Is there a problem?~ */
+	GOTO XA_CorwinArtifacts_Stolen
+	
+	IF ~
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1828 /* ~Captain? Is there a problem?~*/
+	GOTO XA_CorwinArtifacts_Stolen
+	
+	IF ~~ THEN REPLY @1830 /* ~*Ahem* What is it, your highness?~ */
+	GOTO XA_CorwinArtifacts_Stolen
+END
+
+IF ~~ THEN BEGIN XA_CorwinArtifacts_Stolen
+	SAY @1820 /* ~Some of these items once belonged to Balduran, the founder of Baldur's Gate. They were stolen years ago from the Hall of Wonders. I'm sure the Dukes and the city historians would greatly appreciate it if we could bring them back to the Gate.~ */
+	
+	IF ~~ THEN REPLY @1821 /*~I'm sure they would, but they must cost a fortune!~*/
+	DO ~
+		AddJournalEntry(@1826, INFO)
+	~
+	GOTO XA_CorwinArtifacts_Stolen_2
+	
+	IF ~
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1824 /*~Agreed. Let's bring these historical artifacts home, where they belong.~*/
+	DO ~
+		AddJournalEntry(@1826, INFO)
+	~
+	GOTO XA_CorwinArtifacts_Stolen_End
+	
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1824 /*~Agreed. Let's bring these historical artifacts home, where they belong.~*/
+	DO ~
+		AddJournalEntry(@1826, INFO)
+	~
+	GOTO XA_CorwinArtifacts_Stolen_End_R
+	
+END
+
+IF ~~ THEN BEGIN XA_CorwinArtifacts_Stolen_2
+	SAY @1822 /*~I'm aware. If we could bring even one of these items back though...~*/
+	
+	IF ~
+		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1823 /* ~It's clear that this is important to you. Let's do what we can.~ */
+	GOTO XA_CorwinArtifacts_Stolen_End
+	
+	IF ~
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1823 /* ~It's clear that this is important to you. Let's do what we can.~ */
+	GOTO XA_CorwinArtifacts_Stolen_End_R
+	
+	IF ~~ THEN REPLY @1831 /*~No. There are better ways to spend the money. Some other time, perhaps.~ */ 
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_CorwinArtifacts_Stolen_End
+	SAY @1825 /*~Thank you, <CHARNAME>.~ */
+	
+	IF ~~ THEN
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_CorwinArtifacts_Stolen_End_R
+	SAY @1832 /*~Thank you, love.~ */
+	
+	IF ~~ THEN
+	EXIT
+END
+
+CHAIN
+	IF ~~ THEN XACORWIJ XA_CorwinArtifacts_Chain
+		@1816 /*~Let me have a look at that.~*/
+		== WMART2
+		@1817 /*~Of course. It's yours, if you have the coin.~*/
+		== XACORWIJ
+		@1818 /*~As I suspected. These artifacts were reported stolen years ago. How did you acquire these?~*/
+		== WMART2
+		@1819 /*~I can assure you that I only procure from the most reputable vendors.~*/
+END XACORWIJ XA_CorwinArtifacts_ChainEnd
+
 CHAIN
 	IF ~~ THEN XACORWIJ XA_GeneralTalk_Chain
 		@1799 /* ~Peace, General. I'm Major Schael Corwin of the Baldur's Gate Flaming Fist, assisting <CHARNAME> on a special assignment. The Grand Dukes have ordered —~*/

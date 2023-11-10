@@ -164,6 +164,21 @@
 		EXTERN XACORWIJ XA_UDPHAE01_88
 	END
 	
+	//{ WMART2
+	EXTEND_BOTTOM WMART2 1
+		IF ~
+			IsGabber(Player1)
+			IsValidForPartyDialog("XACORWIN")
+			InMyArea("XACORWIN")
+			GlobalLT("XA_LC_CorwinArtifacts", "LOCALS", 1)
+		~ THEN
+		DO ~
+			SetGlobal("XA_LC_CorwinArtifacts", "LOCALS", 1)
+		~
+		EXTERN XACORWIJ XA_CorwinArtifacts_Chain
+	END
+	//}
+	
 	//{ SHOP06_
 	EXTEND_BOTTOM SHOP06_ 0
 		IF ~

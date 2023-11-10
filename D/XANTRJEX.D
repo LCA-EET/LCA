@@ -2,6 +2,16 @@
 
 //Interjects associated with the LCA Mod
 
+//{ Edwin
+	INTERJECT_COPY_TRANS2 EDWIN 8 XA_EDWIN_8
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@183 /*~Killing one of the city wizards will likely lead us into more trouble than we can handle. If there's an alternative, we should explore it.~*/
+	END
+//}
+
 //{ C6SAFA
 	INTERJECT_COPY_TRANS2 C6SAFA 0 XA_C6SAFA_0
 		== XACORWIB 
