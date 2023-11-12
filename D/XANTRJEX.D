@@ -23,7 +23,7 @@
 //}
 
 //{ BMINSC7
-	INTERJECT_COPY_TRANS BMINSC 7 XA_BMINSC_7
+	INTERJECT_COPY_TRANS2 BMINSC 7 XA_BMINSC_7
 		== XACORWIB 
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -41,7 +41,7 @@
 	END
 //}
 //{ CLMOM
-	INTERJECT_COPY_TRANS CLMOM 5 XA_CLMOM_5
+	INTERJECT_COPY_TRANS2 CLMOM 5 XA_CLMOM_5
 		== XACORWIB 
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -78,7 +78,7 @@
 //}
 
 //{ DELCIA
-	INTERJECT_COPY_TRANS DELCIA 43 XA_DELCIA_43
+	INTERJECT_COPY_TRANS2 DELCIA 43 XA_DELCIA_43
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -93,7 +93,7 @@
 //}
 
 //{ JAHERIAJ
-	INTERJECT_COPY_TRANS JAHEIRAJ 351 XA_JAHEIRAJ_351
+	INTERJECT_COPY_TRANS2 JAHEIRAJ 351 XA_JAHEIRAJ_351
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -103,7 +103,7 @@
 //}
 
 //{ FIRKRA02
-	INTERJECT_COPY_TRANS FIRKRA02 4 XA_FIRKRA02_4
+	INTERJECT_COPY_TRANS2 FIRKRA02 4 XA_FIRKRA02_4
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -113,7 +113,7 @@
 //}
 
 //{ SCDUR
-	INTERJECT_COPY_TRANS SCDUR 25 XA_SCDUR_25
+	INTERJECT_COPY_TRANS2 SCDUR 25 XA_SCDUR_25
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -147,7 +147,7 @@
 //}
 
 //{ XA_OHNTELAN_14
-	INTERJECT_COPY_TRANS JAHEIRAJ 550 XA_OHNTELAN_14
+	INTERJECT_COPY_TRANS2 JAHEIRAJ 550 XA_OHNTELAN_14
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -155,7 +155,7 @@
 		@6 /* ~The wizards have had time to prepare. They'll be ready for us.~ */
 	END
 
-	INTERJECT_COPY_TRANS KELDORJ 287 XA_OHNTELAN_14
+	INTERJECT_COPY_TRANS2 KELDORJ 287 XA_OHNTELAN_14
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -163,7 +163,7 @@
 		@6 /* ~The wizards have had time to prepare. They'll be ready for us.~ */
 	END
 
-	INTERJECT_COPY_TRANS MAZZYJ 210 XA_OHNTELAN_14
+	INTERJECT_COPY_TRANS2 MAZZYJ 210 XA_OHNTELAN_14
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -171,7 +171,7 @@
 		@6 /* ~The wizards have had time to prepare. They'll be ready for us.~ */
 	END
 
-	INTERJECT_COPY_TRANS VALYGARJ 132 XA_OHNTELAN_14
+	INTERJECT_COPY_TRANS2 VALYGARJ 132 XA_OHNTELAN_14
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -179,7 +179,7 @@
 		@6 /* ~The wizards have had time to prepare. They'll be ready for us.~ */
 	END
 
-	INTERJECT_COPY_TRANS NEERAJ 39 XA_OHNTELAN_14
+	INTERJECT_COPY_TRANS2 NEERAJ 39 XA_OHNTELAN_14
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -191,7 +191,7 @@
 
 
 //{ XA_GORMAD1_2
-	INTERJECT_COPY_TRANS GORMAD1 2 XA_GORMAD1_2
+	INTERJECT_COPY_TRANS2 GORMAD1 2 XA_GORMAD1_2
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -215,7 +215,7 @@
 //}
 
 //{ SAREV25A
-	INTERJECT_COPY_TRANS SAREV25A 52 XA_SAREV25A_52
+	INTERJECT_COPY_TRANS2 SAREV25A 52 XA_SAREV25A_52
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -223,7 +223,7 @@
 		@10 /* ~You can't be serious. <CHARNAME>, he'll turn on us at the first opportunity.~ */
 	END
 
-	INTERJECT_COPY_TRANS SAREV25A 53 XA_SAREV25A_53
+	INTERJECT_COPY_TRANS2 SAREV25A 53 XA_SAREV25A_53
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -233,7 +233,7 @@
 //}
 
 //{ BSAREV25
-	INTERJECT_COPY_TRANS BSAREV25 37 XA_BSAREV25_37
+	INTERJECT_COPY_TRANS2 BSAREV25 37 XA_BSAREV25_37
 		==XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -249,7 +249,7 @@
 //}
 
 //{ XA_PPIRENI1_22
-	INTERJECT_COPY_TRANS PPIRENI1 22 XA_PPIRENI1_22
+	INTERJECT_COPY_TRANS2 PPIRENI1 22 XA_PPIRENI1_22
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -277,7 +277,7 @@
 //}
 
 //{ XA_GORDOR1_19
-	INTERJECT_COPY_TRANS GORODR1 19 XA_GORODR1_19 //OK
+	INTERJECT_COPY_TRANS2 GORODR1 19 XA_GORODR1_19 //OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -294,7 +294,7 @@
 //}
 
 //{ UDSILVER
-	INTERJECT_COPY_TRANS UDSILVER 17 XA_UDSILVER_17 //OK
+	INTERJECT_COPY_TRANS2 UDSILVER 17 XA_UDSILVER_17 //OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -314,7 +314,7 @@
 //}
 
 //{ IMOEN2
-	INTERJECT_COPY_TRANS IMOEN2 22 XA_IMOEN2_22 //OK
+	INTERJECT_COPY_TRANS2 IMOEN2 22 XA_IMOEN2_22 //OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -327,7 +327,7 @@
 //}
 
 //{ PPSAEM
-	INTERJECT_COPY_TRANS PPSAEM 14 XA_PPSAEM_14
+	INTERJECT_COPY_TRANS2 PPSAEM 14 XA_PPSAEM_14
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -335,7 +335,7 @@
 		@20 /* ~Finally! Any longer and I might have hurled.~*/
 	END
 
-	INTERJECT_COPY_TRANS PPSAEM 53 XA_PPSAEM_53
+	INTERJECT_COPY_TRANS2 PPSAEM 53 XA_PPSAEM_53
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -365,7 +365,7 @@
 //}
 
 //{ DELTOW01
-	INTERJECT_COPY_TRANS DELTOW01 9 XA_DELTOW01_9
+	INTERJECT_COPY_TRANS2 DELTOW01 9 XA_DELTOW01_9
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -375,7 +375,7 @@
 //}
 
 //{ GORAPP1
-	INTERJECT_COPY_TRANS GORAPP1 17 XA_GORAPP1_17
+	INTERJECT_COPY_TRANS2 GORAPP1 17 XA_GORAPP1_17
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -393,7 +393,7 @@
 //}
 
 //{ TOLGER
-	INTERJECT_COPY_TRANS TOLGER 18 XA_TOLGER_18
+	INTERJECT_COPY_TRANS2 TOLGER 18 XA_TOLGER_18
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -403,7 +403,7 @@
 //}
 
 //{ ARAN
-	INTERJECT_COPY_TRANS ARAN 4 XA_ARAN_4
+	INTERJECT_COPY_TRANS2 ARAN 4 XA_ARAN_4
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -411,7 +411,7 @@
 		@27 /* ~These guilds are all the same, in every city. I feel dirty just by speaking to them, let alone working for them. Still, they are a necessary means to an end if we're to rescue Imoen.~*/
 	END
 	
-	INTERJECT_COPY_TRANS ARAN 0 XA_ARAN_0
+	INTERJECT_COPY_TRANS2 ARAN 0 XA_ARAN_0
 		== ARAN
 		IF ~
 			See("XACORWIN")
@@ -434,7 +434,7 @@
 //}
 
 //{ KORGANJ
-	INTERJECT_COPY_TRANS KORGANJ 107 XA_KORGANJ_107 // OK
+	INTERJECT_COPY_TRANS2 KORGANJ 107 XA_KORGANJ_107 // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -442,7 +442,7 @@
 		@28 /* ~(She tries, unsucessfully, to stifle a laugh.)~ */
 	END
 	
-	INTERJECT_COPY_TRANS KORGANJ 15 XA_KORGANJ_15 //OK
+	INTERJECT_COPY_TRANS2 KORGANJ 15 XA_KORGANJ_15 //OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -455,7 +455,7 @@
 		@30 /* ~Har! Har! Har! Yer lucky I fancy you, longlimbs, else I be burying me axe, and maybe something more, in yer cute little backside, hah hah.~ */
 	END
 
-	INTERJECT_COPY_TRANS KORGANJ 22 XA_KORGANJ_22 //OK
+	INTERJECT_COPY_TRANS2 KORGANJ 22 XA_KORGANJ_22 //OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -466,17 +466,17 @@
 //}
 
 //{ MAZZY
-	INTERJECT_COPY_TRANS BMAZZY 77 XA_BMAZZY_77
+	INTERJECT_COPY_TRANS2 BMAZZY 77 XA_BMAZZY_77
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
 		~
-		@156
+		@156 /*~You'll get used to it.~*/
 	END
 //}
 
 //{ VICG1
-	INTERJECT_COPY_TRANS VICG1 2 XA_VICG1_2
+	INTERJECT_COPY_TRANS2 VICG1 2 XA_VICG1_2
 		== XACORWIB
 		IF ~ 
 			IsValidForPartyDialogue("XACORWIN")
@@ -486,7 +486,7 @@
 //}
 
 //{ EMBARL
-	INTERJECT_COPY_TRANS EMBARL 6 XA_EMBARL_6
+	INTERJECT_COPY_TRANS2 EMBARL 6 XA_EMBARL_6
 		== XACORWIB
 		IF ~ 
 			IsValidForPartyDialogue("XACORWIN")
@@ -510,7 +510,7 @@
 //}
 
 //{ RUFFIAN
-	INTERJECT_COPY_TRANS RUFFIAN 0 XA_RUFFIAN_0
+	INTERJECT_COPY_TRANS2 RUFFIAN 0 XA_RUFFIAN_0
 		== XACORWIB
 		IF ~ 
 			IsValidForPartyDialogue("XACORWIN")
@@ -532,7 +532,7 @@
 //}
 
 //{ DELON
-	INTERJECT_COPY_TRANS DELON 15 XA_DELON_15
+	INTERJECT_COPY_TRANS2 DELON 15 XA_DELON_15
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -545,7 +545,7 @@
 		~
 	END
 
-	INTERJECT_COPY_TRANS DELON 16 XA_DELON_16
+	INTERJECT_COPY_TRANS2 DELON 16 XA_DELON_16
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -585,7 +585,7 @@
 //}
 
 //{ MARIA
-	INTERJECT_COPY_TRANS MARIA 5 XA_MARIA_5
+	INTERJECT_COPY_TRANS2 MARIA 5 XA_MARIA_5
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -595,7 +595,7 @@
 //}
 
 //{ GORDEMO
-	INTERJECT_COPY_TRANS GORDEMO 1 XA_GORDEMO_1
+	INTERJECT_COPY_TRANS2 GORDEMO 1 XA_GORDEMO_1
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -628,7 +628,7 @@
 //}
 
 //{ UHMAY01
-	INTERJECT_COPY_TRANS UHMAY01 138 XA_UHMAY01_138
+	INTERJECT_COPY_TRANS2 UHMAY01 138 XA_UHMAY01_138
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -687,7 +687,7 @@
 //}
 
 //{ SUDEMIN
-	INTERJECT_COPY_TRANS SUDEMIN 22 XA_SUDEMIN_22
+	INTERJECT_COPY_TRANS2 SUDEMIN 22 XA_SUDEMIN_22
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -701,7 +701,7 @@
 		@58 /* ~No one imagined that they would cause so much havoc. We are truly sorry.~ */
 	END
 
-	INTERJECT_COPY_TRANS SUDEMIN 35 XA_SUDEMIN_35
+	INTERJECT_COPY_TRANS2 SUDEMIN 35 XA_SUDEMIN_35
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -711,36 +711,36 @@
 //}
 
 //{ UDLESA
-	INTERJECT_COPY_TRANS UDLESA 1 XA_UDLESA_1
+	INTERJECT_COPY_TRANS2 UDLESA 1 XA_UDLESA_1
 		== XACORWIB
 		@179 /*~We aren't here to pick fights with braggarts.~ [XA100110]*/
 	END
 	
-	INTERJECT_COPY_TRANS UDLESA 2 XA_UDLESA_2
+	INTERJECT_COPY_TRANS2 UDLESA 2 XA_UDLESA_2
 		== XACORWIB
 		@179 /*~We aren't here to pick fights with braggarts.~ [XA100110]*/
 	END
 	
-	INTERJECT_COPY_TRANS UDLESA 3 XA_UDLESA_3
+	INTERJECT_COPY_TRANS2 UDLESA 3 XA_UDLESA_3
 		== XACORWIB
 		@179 /*~We aren't here to pick fights with braggarts.~ [XA100110]*/
 	END
 	
-	INTERJECT_COPY_TRANS UDLESA 4 XA_UDLESA_4
+	INTERJECT_COPY_TRANS2 UDLESA 4 XA_UDLESA_4
 		== XACORWIB
 		@179 /*~We aren't here to pick fights with braggarts.~ [XA100110]*/
 	END
 //}
 
 //{ UDSIMYAZ
-	INTERJECT_COPY_TRANS UDSIMYAZ 16 XA_UDSIMYAZ_16
+	INTERJECT_COPY_TRANS2 UDSIMYAZ 16 XA_UDSIMYAZ_16
 		== XACORWIB
 		@180 /*~Hear him out. This might be our only option.~ */
 	END
 //}
 
 //{ HAERDAJ
-	INTERJECT_COPY_TRANS HAERDAJ 114 XA_HAERDAJ_114 //OK
+	INTERJECT_COPY_TRANS2 HAERDAJ 114 XA_HAERDAJ_114 //OK
 		== XACORWIB 
 		IF ~ 
 			IsValidForPartyDialogue("XACORWIN")
@@ -748,7 +748,7 @@
 		@78 /* ~That goes for all of us. We need to act the part to maintain our cover.~  */
 	END
 
-	INTERJECT_COPY_TRANS HAERDAJ 90 XA_HAERDAJ_90 //OK
+	INTERJECT_COPY_TRANS2 HAERDAJ 90 XA_HAERDAJ_90 //OK
 		== XACORWIB 
 		IF ~ 
 			IsValidForPartyDialogue("XACORWIN")
@@ -758,7 +758,7 @@
 //}
 
 //{ KELDORJ
-	INTERJECT_COPY_TRANS KELDORJ 23 XA_KELDORJ_23 //OK
+	INTERJECT_COPY_TRANS2 KELDORJ 23 XA_KELDORJ_23 //OK
 		== XACORWIB 
 		IF ~ 
 			IsValidForPartyDialogue("XACORWIN")
@@ -779,7 +779,7 @@
 		@83 /*~<CHARNAME> - we need to keep a close eye on Keldorn. I'm afraid that this meeting with Sir William may quickly spiral out of control.~*/
 	END
 
-	INTERJECT_COPY_TRANS KELDORJ 103 XA_KELDORJ_103 //OK
+	INTERJECT_COPY_TRANS2 KELDORJ 103 XA_KELDORJ_103 //OK
 		== XACORWIB 
 		IF ~ 
 			IsValidForPartyDialogue("XACORWIN")
@@ -787,7 +787,7 @@
 		@84 /* ~Ajantis... yes. I remember meeting him during a patrol southeast of Wyrm's Crossing. We were investigating reports of bandit activity in the area. What a shame.~ */
 	END
 
-	INTERJECT_COPY_TRANS KELDORJ 145 XA_KELDORJ_145 // OK
+	INTERJECT_COPY_TRANS2 KELDORJ 145 XA_KELDORJ_145 // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -805,7 +805,7 @@
 		@87 /* ~Yes. I'm not proud of it, but he has proven his worth to <CHARNAME> and myself on many occasions.~ */
 	END
 
-	INTERJECT_COPY_TRANS KELDORJ 181 XA_KELDORJ_181 // OK
+	INTERJECT_COPY_TRANS2 KELDORJ 181 XA_KELDORJ_181 // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -813,7 +813,7 @@
 		@88 /* ~I'm not sure I trust her either, but... she did prove her worth in supporting the coalition against Caelar's crusade. We should give her a chance.~ */
 	END
 
-	INTERJECT_COPY_TRANS KELDORJ 182 XA_KELDORJ_182 // OK
+	INTERJECT_COPY_TRANS2 KELDORJ 182 XA_KELDORJ_182 // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -826,7 +826,7 @@
 		~
 	END
 
-	INTERJECT_COPY_TRANS KELDORJ 236 XA_KELDORJ_236 // OK
+	INTERJECT_COPY_TRANS2 KELDORJ 236 XA_KELDORJ_236 // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -841,7 +841,7 @@
 //}
 
 //{ HENDAK
-	INTERJECT_COPY_TRANS HENDAK 4 XA_HENDAK_4
+	INTERJECT_COPY_TRANS2 HENDAK 4 XA_HENDAK_4
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -849,7 +849,7 @@
 		@163 /*~<CHARNAME> — Let's get them out of there.~ [BD40129] */
 	END
 	
-	INTERJECT_COPY_TRANS HENDAK 19 XA_HENDAK_19
+	INTERJECT_COPY_TRANS2 HENDAK 19 XA_HENDAK_19
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -859,7 +859,7 @@
 //}
 
 //{ LEHTIN
-	INTERJECT_COPY_TRANS LEHTIN 15 XA_LEHTIN_15
+	INTERJECT_COPY_TRANS2 LEHTIN 15 XA_LEHTIN_15
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -869,7 +869,7 @@
 //}
 
 //{ BODHI
-	INTERJECT_COPY_TRANS BODHI 1 XA_BODHI_1 // OK
+	INTERJECT_COPY_TRANS2 BODHI 1 XA_BODHI_1 // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -877,7 +877,7 @@
 		@91 /* ~<CHARNAME> - something's wrong here. I don't trust her.~ */
 	END
 
-	INTERJECT_COPY_TRANS BODHI 18 XA_BODHI_18 // OK
+	INTERJECT_COPY_TRANS2 BODHI 18 XA_BODHI_18 // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -914,7 +914,7 @@
 		@95 /*  ~Let's get out of here, while we still can. We would do well to avoid the wrath of this beast.~ */
 	END 
 
-	INTERJECT_COPY_TRANS FIRKRA02 23 XA_FIRKRA02_23 // OK
+	INTERJECT_COPY_TRANS2 FIRKRA02 23 XA_FIRKRA02_23 // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -922,7 +922,7 @@
 		@96 /*  ~<CHARNAME>! Let's just rescue the child and get out of here! Leave the dragon be.~ */
 	END 
 
-	INTERJECT_COPY_TRANS FIRKRA02 29 XA_FIRKRA02_29 // OK
+	INTERJECT_COPY_TRANS2 FIRKRA02 29 XA_FIRKRA02_29 // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -935,7 +935,7 @@
 //} 
 
 //{ VALYGAR
-	INTERJECT_COPY_TRANS VALYGAR 18 XA_VALYGAR_18 //OK
+	INTERJECT_COPY_TRANS2 VALYGAR 18 XA_VALYGAR_18 //OK
 		== XACORWIB 
 		IF ~ 
 			IsValidForPartyDialogue("XACORWIN")
@@ -945,7 +945,7 @@
 //}
 
 //{ VALYGARJ
-	INTERJECT_COPY_TRANS VALYGARJ 58 XA_VALYGARJ_58 // OK
+	INTERJECT_COPY_TRANS2 VALYGARJ 58 XA_VALYGARJ_58 // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -963,7 +963,7 @@
 		@100 /* ~Yes. I'm not proud of it, but he has proven his worth to <CHARNAME> and myself on many occasions.~ */
 	END
 
-	INTERJECT_COPY_TRANS VALYGARJ 50 XA_VALYGAR_50 // OK
+	INTERJECT_COPY_TRANS2 VALYGARJ 50 XA_VALYGAR_50 // OK
 		== VICONIJ
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1037,7 +1037,7 @@
 		@113 /* ~That's enough from the both of you! Infighting isn't going to help any of us to achieve our goals. Let's move out.~ */
 	END
 
-	INTERJECT_COPY_TRANS VALYGARJ 117 XA_VALYGARJ_117 // OK
+	INTERJECT_COPY_TRANS2 VALYGARJ 117 XA_VALYGARJ_117 // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1045,7 +1045,7 @@
 		@114 /* ~Tell me you aren't seriously considering giving him to this wizard.~ */
 	END
 
-	INTERJECT_COPY_TRANS VALYGARJ 119 XA_VALYGARJ_119 // OK
+	INTERJECT_COPY_TRANS2 VALYGARJ 119 XA_VALYGARJ_119 // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1055,7 +1055,7 @@
 //}
 
 //{ HEXXAT
-	INTERJECT_COPY_TRANS HEXXAT 65 XA_HEXXAT_65 // OK
+	INTERJECT_COPY_TRANS2 HEXXAT 65 XA_HEXXAT_65 // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1067,7 +1067,7 @@
 		~
 	END
 
-	INTERJECT_COPY_TRANS HEXXAT 40 XA_HEXXAT_GiveCloak // OK
+	INTERJECT_COPY_TRANS2 HEXXAT 40 XA_HEXXAT_GiveCloak // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1076,7 +1076,7 @@
 
 	END
 
-	INTERJECT_COPY_TRANS HEXXAT 45 XA_HEXXAT_GiveCloak // OK
+	INTERJECT_COPY_TRANS2 HEXXAT 45 XA_HEXXAT_GiveCloak // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1085,7 +1085,7 @@
 
 	END
 
-	INTERJECT_COPY_TRANS HEXXAT 46 XA_HEXXAT_GiveCloak // OK
+	INTERJECT_COPY_TRANS2 HEXXAT 46 XA_HEXXAT_GiveCloak // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1094,7 +1094,7 @@
 
 	END
 
-	INTERJECT_COPY_TRANS HEXXAT 60 XA_HEXXAT_GiveCloak // OK
+	INTERJECT_COPY_TRANS2 HEXXAT 60 XA_HEXXAT_GiveCloak // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1103,7 +1103,7 @@
 
 	END
 
-	INTERJECT_COPY_TRANS HEXXAT 81 XA_HEXXAT_GiveCloak // OK
+	INTERJECT_COPY_TRANS2 HEXXAT 81 XA_HEXXAT_GiveCloak // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1112,7 +1112,7 @@
 
 	END
 
-	INTERJECT_COPY_TRANS HEXXAT 86 XA_HEXXAT_GiveCloak // OK
+	INTERJECT_COPY_TRANS2 HEXXAT 86 XA_HEXXAT_GiveCloak // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1121,7 +1121,7 @@
 
 	END
 
-	INTERJECT_COPY_TRANS HEXXAT 87 XA_HEXXAT_GiveCloak // OK
+	INTERJECT_COPY_TRANS2 HEXXAT 87 XA_HEXXAT_GiveCloak // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1130,7 +1130,7 @@
 
 	END
 
-	INTERJECT_COPY_TRANS HEXXAT 89 XA_HEXXAT_GiveCloak // OK
+	INTERJECT_COPY_TRANS2 HEXXAT 89 XA_HEXXAT_GiveCloak // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1139,7 +1139,7 @@
 
 	END
 
-	INTERJECT_COPY_TRANS HEXXAT 92 XA_HEXXAT_GiveCloak // OK
+	INTERJECT_COPY_TRANS2 HEXXAT 92 XA_HEXXAT_GiveCloak // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1148,7 +1148,7 @@
 
 	END
 
-	INTERJECT_COPY_TRANS HEXXAT 102 XA_HEXXAT_GiveCloak // OK
+	INTERJECT_COPY_TRANS2 HEXXAT 102 XA_HEXXAT_GiveCloak // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1157,7 +1157,7 @@
 
 	END
 
-	INTERJECT_COPY_TRANS HEXXAT 105 XA_HEXXAT_GiveCloak // OK
+	INTERJECT_COPY_TRANS2 HEXXAT 105 XA_HEXXAT_GiveCloak // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1166,7 +1166,7 @@
 
 	END
 
-	INTERJECT_COPY_TRANS HEXXAT 109 XA_HEXXAT_GiveCloak // OK
+	INTERJECT_COPY_TRANS2 HEXXAT 109 XA_HEXXAT_GiveCloak // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1175,7 +1175,7 @@
 
 	END
 
-	INTERJECT_COPY_TRANS HEXXAT 110 XA_HEXXAT_GiveCloak // OK
+	INTERJECT_COPY_TRANS2 HEXXAT 110 XA_HEXXAT_GiveCloak // OK
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1187,7 +1187,7 @@
 
 //{ Anomen
 	//{ BANOMEN
-	INTERJECT_COPY_TRANS BANOMEN 10 XA_BANOMEN_10
+	INTERJECT_COPY_TRANS2 BANOMEN 10 XA_BANOMEN_10
 		==XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1195,7 +1195,7 @@
 		@146 /* ~Hah!~ */
 	END
 
-	INTERJECT_COPY_TRANS BANOMEN 14 XA_BANOMEN_14
+	INTERJECT_COPY_TRANS2 BANOMEN 14 XA_BANOMEN_14
 		==XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1209,7 +1209,7 @@
 		@148 /* ~I couldn't disagree more.~  */
 	END
 	
-	INTERJECT_COPY_TRANS BANOMEN 16 XA_BANOMEN_16
+	INTERJECT_COPY_TRANS2 BANOMEN 16 XA_BANOMEN_16
 		==XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1223,7 +1223,7 @@
 		@148 /* ~I couldn't disagree more.~  */
 	END
 	
-	INTERJECT_COPY_TRANS BANOMEN 42 XA_BANOMEN_42
+	INTERJECT_COPY_TRANS2 BANOMEN 42 XA_BANOMEN_42
 		==XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1231,7 +1231,7 @@
 		@149 /* ~Anomen! That's enough!~ */
 	END
 	
-	INTERJECT_COPY_TRANS BANOMEN 50 XA_BANOMEN_50
+	INTERJECT_COPY_TRANS2 BANOMEN 50 XA_BANOMEN_50
 		==XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1265,7 +1265,7 @@
 	//}
 
 	//{ DORNJ	
-		INTERJECT_COPY_TRANS DORNJ 769 XA_DORNJ_769 // OK
+		INTERJECT_COPY_TRANS2 DORNJ 769 XA_DORNJ_769 // OK
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1275,7 +1275,7 @@
 	//}
 
 	//{ BDORN
-		INTERJECT_COPY_TRANS BDORN 51 XA_BDORN_51 // OK
+		INTERJECT_COPY_TRANS2 BDORN 51 XA_BDORN_51 // OK
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1288,7 +1288,7 @@
 			@119 /* ~Mine was a choice between life and death, woman. I chose life. You would have done the same.~ */
 		END
 		
-		INTERJECT_COPY_TRANS BDORN 2 XA_BDORN_2 
+		INTERJECT_COPY_TRANS2 BDORN 2 XA_BDORN_2 
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1296,7 +1296,7 @@
 			@136 /*~Ignore him, Rasaad.~*/
 		END
 		
-		INTERJECT_COPY_TRANS BDORN 16 XA_BDORN_16 
+		INTERJECT_COPY_TRANS2 BDORN 16 XA_BDORN_16 
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1304,7 +1304,7 @@
 			@137 /*~Dorn! That's enough.~*/
 		END
 		
-		INTERJECT_COPY_TRANS BDORN 23 XA_BDORN_23
+		INTERJECT_COPY_TRANS2 BDORN 23 XA_BDORN_23
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1336,7 +1336,7 @@
 			@142 /* ~You're disgusting.~*/
 		END
 		
-		INTERJECT_COPY_TRANS BDORN 36 XA_BDORN_36
+		INTERJECT_COPY_TRANS2 BDORN 36 XA_BDORN_36
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1356,7 +1356,7 @@
 //{ Jan
 
 	//{ JANJ
-		INTERJECT_COPY_TRANS JANJ 197 XA_JANJ_197 //OK
+		INTERJECT_COPY_TRANS2 JANJ 197 XA_JANJ_197 //OK
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1364,7 +1364,7 @@
 			@60 /* ~Some would say you never left it.~*/
 		END
 
-		INTERJECT_COPY_TRANS JANJ 195 XA_JANJ_195 //OK
+		INTERJECT_COPY_TRANS2 JANJ 195 XA_JANJ_195 //OK
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1384,7 +1384,7 @@
 			@63 /* ~Oh, is that the sweet sound of laughter I hear? From our ever-stoic Major Corwin? Look, she has a lovely smile too! I'm afraid no one would believe me if I told them it happened.~ */
 		END
 
-		INTERJECT_COPY_TRANS JANJ 189 XA_JANJ_189 //OK
+		INTERJECT_COPY_TRANS2 JANJ 189 XA_JANJ_189 //OK
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1392,7 +1392,7 @@
 			@64 /* ~What... the... hells?~*/
 		END
 
-		INTERJECT_COPY_TRANS JANJ 175 XA_JANJ_175 //OK
+		INTERJECT_COPY_TRANS2 JANJ 175 XA_JANJ_175 //OK
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1400,7 +1400,7 @@
 			@65 /*  ~Agreed - we need to pick up the pace. Imoen needs us.~ */
 		END
 
-		INTERJECT_COPY_TRANS JANJ 142 XA_JANJ_142 //OK
+		INTERJECT_COPY_TRANS2 JANJ 142 XA_JANJ_142 //OK
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1408,7 +1408,7 @@
 			@66 /* ~Jan, this - really - isn't the time!~ */
 		END 
 
-		INTERJECT_COPY_TRANS JANJ 136 XA_JANJ_136 //OK
+		INTERJECT_COPY_TRANS2 JANJ 136 XA_JANJ_136 //OK
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1456,7 +1456,7 @@
 			@74 /* ~Erm... perhaps. But I'm not keen on it. I'll be quiet.~ */
 		END
 
-		INTERJECT_COPY_TRANS JANJ 113 XA_JANJ_113 //OK
+		INTERJECT_COPY_TRANS2 JANJ 113 XA_JANJ_113 //OK
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1464,7 +1464,7 @@
 			@75 /* ~We should heed his warning. Let's prepare before we head in.~*/
 		END
 
-		INTERJECT_COPY_TRANS JANJ 89 XA_JANJ_89 //OK
+		INTERJECT_COPY_TRANS2 JANJ 89 XA_JANJ_89 //OK
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1482,7 +1482,7 @@
 	//}
 
 	//{ BJAN25
-		INTERJECT_COPY_TRANS BJAN25 10 XA_BJAN25_10
+		INTERJECT_COPY_TRANS2 BJAN25 10 XA_BJAN25_10
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1496,7 +1496,7 @@
 //{ HaerDalis
 
 	//{ BHAERDA
-	INTERJECT_COPY_TRANS BHAERDA 142 XA_BHAERDA_142
+	INTERJECT_COPY_TRANS2 BHAERDA 142 XA_BHAERDA_142
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
@@ -1511,7 +1511,7 @@
 //{ Aerie
 
 	//{ AERIEJ
-		INTERJECT_COPY_TRANS AERIEJ 136 XA_AERIEJ_136 // OK
+		INTERJECT_COPY_TRANS2 AERIEJ 136 XA_AERIEJ_136 // OK
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1540,7 +1540,7 @@
 			@36 /* ~I-if you say so, Schael... I'll do my best...~ */
 		END
 
-		INTERJECT_COPY_TRANS AERIEJ 114 XA_AERIEJ_114 // OK
+		INTERJECT_COPY_TRANS2 AERIEJ 114 XA_AERIEJ_114 // OK
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1550,35 +1550,35 @@
 	//}
 
 	//{ BAERIE
-		INTERJECT_COPY_TRANS BAERIE 186 XA_BAERIE_186 // OK
+		INTERJECT_COPY_TRANS2 BAERIE 186 XA_BAERIE_186 // OK
 			== XACORWIB 
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
 			~ THEN @127 /* ~Aerie, a mother would never stop looking for their child. Don't give up on the hope of seeing her again.~ */
 		END 
 
-		INTERJECT_COPY_TRANS BAERIE 234 XA_BARIE_234
+		INTERJECT_COPY_TRANS2 BAERIE 234 XA_BARIE_234
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
 			~ THEN @129 /* ~The circus? Don't be ridiculous, Aerie. You're a valuable part of this team.~ */
 		END
 
-		INTERJECT_COPY_TRANS BAERIE 255 XA_BAERIE_255
+		INTERJECT_COPY_TRANS2 BAERIE 255 XA_BAERIE_255
 			== XACORWIB 
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
 			~ THEN @130 /*  ~Wow... Aerie, that was a lot better.~ */
 		END
 
-		INTERJECT_COPY_TRANS BAERIE 430 XA_BAERIE_430 // OK
+		INTERJECT_COPY_TRANS2 BAERIE 430 XA_BAERIE_430 // OK
 			== XACORWIB 
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
 			~ THEN @128 /* ~Aerie! That's enough.~ */
 		END 
 		
-		INTERJECT_COPY_TRANS BAERIE 433 XA_BAERIE_433 // OK
+		INTERJECT_COPY_TRANS2 BAERIE 433 XA_BAERIE_433 // OK
 			== XACORWIB 
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1589,7 +1589,7 @@
 	
 //{ Minsc
 	//{ BMINSC25
-		INTERJECT_COPY_TRANS BMINSC25 37 XA_BMINSC25_37
+		INTERJECT_COPY_TRANS2 BMINSC25 37 XA_BMINSC25_37
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1601,7 +1601,7 @@
 
 //{ Neera
 	//{ BNEERA25
-		INTERJECT_COPY_TRANS BNEERA25 14 XA_BNEERA_14
+		INTERJECT_COPY_TRANS2 BNEERA25 14 XA_BNEERA_14
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1613,7 +1613,7 @@
 
 //{ Nalia
 	//{ BNALIA
-		INTERJECT_COPY_TRANS BNALIA 3 XA_BNALIA_3 // OK
+		INTERJECT_COPY_TRANS2 BNALIA 3 XA_BNALIA_3 // OK
 			== XACORWIB 
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1621,7 +1621,7 @@
 			@120 /* ~Don't be so sure. In my experience, wealth, or the lack thereof, has no impact on one's capability for compassion or cruelty.~ */
 		END 
 
-		INTERJECT_COPY_TRANS BNALIA 4 XA_BNALIA_4 // OK
+		INTERJECT_COPY_TRANS2 BNALIA 4 XA_BNALIA_4 // OK
 			== XACORWIB 
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1651,7 +1651,7 @@
 			@124 /* ~Perhaps, Captain, but you can't deny the negative effects these establishments have on the less fortunate among us.~ */
 		END 
 
-		INTERJECT_COPY_TRANS BNALIA 53 XA_BNALIA_53 // OK
+		INTERJECT_COPY_TRANS2 BNALIA 53 XA_BNALIA_53 // OK
 			== XACORWIB 
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
@@ -1665,7 +1665,7 @@
 			@126 /* ~Certainly, and I did not mean to imply that the lives of the higher born have no meaning. It's just that it is easier, in a sense, for a poorer person to find meaning than a wealthy one.~ */
 		END
 
-		INTERJECT_COPY_TRANS BNALIA 72 XA_BNALIA_72
+		INTERJECT_COPY_TRANS2 BNALIA 72 XA_BNALIA_72
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")

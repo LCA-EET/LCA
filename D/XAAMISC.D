@@ -167,7 +167,9 @@
 	//{ WMART2
 	EXTEND_BOTTOM WMART2 1
 		IF ~
-			IsGabber(Player1)
+			OR(2)
+				IsGabber(Player1)
+				IsGabber("XACORWIN")
 			IsValidForPartyDialog("XACORWIN")
 			InMyArea("XACORWIN")
 			GlobalLT("XA_LC_CorwinArtifacts", "LOCALS", 1)
