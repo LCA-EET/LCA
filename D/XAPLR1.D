@@ -67,8 +67,14 @@ APPEND ~PLAYER1~
 		IF ~~ THEN REPLY @148 /* ~Adjust Caelar banter timers.~*/
 		GOTO XA_AdjustCaelarBanterTimer
 		
-		IF ~~ THEN REPLY @182
+		IF ~~ THEN REPLY @182 /*~Version Check.~*/
 		GOTO XA_VersionCheck
+		
+		IF ~~ THEN REPLY @198 /* ~Re-apply Corwin sound swap (See note in User Guide).~*/
+		DO ~
+			SetGlobal("XA_LC_ReapplySoundSwap", "GLOBAL", 1)
+		~
+		GOTO XA_ChangeDone
 		
 		IF ~
 			Global("XA_ExplicitModActive", "GLOBAL", 1)
@@ -98,7 +104,6 @@ APPEND ~PLAYER1~
 			SetGlobal("XA_PortraitChange_LCA", "GLOBAL", 0)
 		~
 		GOTO XA_ChangeDone
-		
 		
 		IF ~~ THEN REPLY @166 /* ~Report a bug.~ */
 		GOTO XA_ReportBug

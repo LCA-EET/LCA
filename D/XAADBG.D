@@ -5,6 +5,8 @@ IF ~
 ~ THEN BEGIN XA_MainMenu
 	SAY @0 /* ~How can I help you?~ */
 	
+	
+	
 	IF ~~ THEN REPLY @683
 	GOTO XA_StatusReport
 	

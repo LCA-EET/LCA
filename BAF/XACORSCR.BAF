@@ -831,6 +831,21 @@ END
 //}
 
 //{ 09: Sound Swap
+
+/* If another mod is uninstalled, and LCA re-installed after Corwin has already joined, the sound swap may need to be performed again. This variable is accessible from the Debug Assistant. */
+
+IF
+	Global("XA_LC_ReapplySoundSwap", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_ReapplySoundSwap", "GLOBAL", 0)
+		SetGlobal("XA_LCASoundSwap", "LOCALS", 0)
+		SetGlobal("XA_BiteSoundSet", "LOCALS", 0)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
 IF
 	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	GlobalLT("XA_LCASoundSwap", "LOCALS", 1)
@@ -2396,7 +2411,7 @@ END
 		OR(2)
 			Dead("ohdvern")  // Vernus
 			!Exists("ohdvern")  // Vernus
-		Range("RituaXAircle",20)
+		Range("RitualCircle",20)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6186,7 +6201,7 @@ END
 			SetInterrupt(FALSE)
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			IncrementGlobal("XA_Banter_CorwinCaelar", "GLOBAL", 1)
-			Interact("Caelar")
+			Interact("XACAELAR")
 			ActionOverride("XACAELAR", Interact("XACORWIN"))
 			SetInterrupt(TRUE)
 	END
