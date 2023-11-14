@@ -38,3 +38,5 @@ Start-SevenZip a -mx=9 $Target $Source
 
 Remove-Item -LiteralPath "LoveConquersAll_EET" -Force -Recurse
 Get-FileHash LoveConquersAll_EET.zip -Algorithm SHA256 > SHA256.txt
+
+Copy-Item -Path "LoveConquersAll_EET.zip" -Destination "\\192.168.1.88\smbuser\Home\Installers\LoveConquersAll_EET.zip"

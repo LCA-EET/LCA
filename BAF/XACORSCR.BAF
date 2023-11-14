@@ -6241,6 +6241,9 @@ END
 	END
 	
 	IF
+		ActionListEmpty()
+		InParty(Myself)
+		InPartyAllowDead("Hexxat")
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		GlobalTimerExpired("XA_CorwinHexxatTimer", "LOCALS")
 		GlobalLT("XA_CorwinHexxat", "GLOBAL", 1)
