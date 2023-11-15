@@ -4146,6 +4146,22 @@ EXTEND_BOTTOM HELLJON 10 /* OK */
 END
 
 //{ NEB
+EXTEND_BOTTOM NEB 1
+	IF ~
+		InMyArea("XACORWIN")
+		IsValidForPartyDialogue("XACORWIN")
+		!Global("XA_CorwinNebAthkatla", "GLOBAL", 1)
+	~
+	THEN EXTERN ~XACORWIJ~ XA_NEB_2
+	
+	IF ~
+		InMyArea("XACORWIN")
+		IsValidForPartyDialogue("XACORWIN")
+		Global("XA_CorwinNebAthkatla", "GLOBAL", 1)
+	~
+	THEN EXTERN ~XACORWIJ~ XA_NEB_2A
+END
+
 ADD_TRANS_TRIGGER NEB 2
 ~
 	OR(2)

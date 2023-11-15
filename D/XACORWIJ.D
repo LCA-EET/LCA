@@ -11309,8 +11309,6 @@ IF
 	~
 THEN GOTO XA_BackToBG_ChainEnd_AndYou
 
-
-
 CHAIN
 	IF ~~ THEN XACORWIJ XA_HarborCorwin
 		@800 /* ~It has. Listen, this is not a social visit. We're investigating reports of slaver activity in these docks, specifically, allegations that refugees are being shipped from here and sold into slavery. What do you know about these activities?~ */

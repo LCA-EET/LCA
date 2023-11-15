@@ -57,6 +57,69 @@ IF ~~ THEN BEGIN XA_GoodBye
 		EscapeArea()
 	~
 	EXIT
+	
+	IF ~ //One
+		OR(3)
+			PartyHasItem("WA2S1H")
+			PartyHasItem("WA2PLAT")
+			PartyHasItem("WA2SHIEL")
+	~ THEN
+	DO ~
+		ChangeStat("XACORWIN",XP,25000,ADD)
+		ChangeStat(Player1,XP,25000,ADD)
+		SetGlobal("XA_LeaveArea", "LOCALS", 1)
+		SetGlobal("XA_LC_ArtifactsReturned", "LOCALS", 1)
+	~
+	EXTERN XACORWIJ XA_OneArtifactRecovered
+	
+	IF ~ //Two, Combination A
+		PartyHasItem("WA2S1H")
+		PartyHasItem("WA2PLAT")
+	~ THEN
+	DO ~
+		ChangeStat("XACORWIN",XP,25000,ADD)
+		ChangeStat(Player1,XP,25000,ADD)
+		SetGlobal("XA_LeaveArea", "LOCALS", 1)
+		SetGlobal("XA_LC_ArtifactsReturned", "LOCALS", 2)
+	~
+	EXTERN XACORWIJ XA_TwoArtifactsRecovered
+	
+	IF ~ //Two, Combination B
+		PartyHasItem("WA2S1H")
+		PartyHasItem("WA2SHIEL")
+	~ THEN
+	DO ~
+		ChangeStat("XACORWIN",XP,25000,ADD)
+		ChangeStat(Player1,XP,25000,ADD)
+		SetGlobal("XA_LeaveArea", "LOCALS", 1)
+		SetGlobal("XA_LC_ArtifactsReturned", "LOCALS", 2)
+	~
+	EXTERN XACORWIJ XA_TwoArtifactsRecovered
+	
+	IF ~ //Two, Combination C
+		PartyHasItem("WA2PLAT")
+		PartyHasItem("WA2SHIEL")
+	~ THEN
+	DO ~
+		ChangeStat("XACORWIN",XP,25000,ADD)
+		ChangeStat(Player1,XP,25000,ADD)
+		SetGlobal("XA_LeaveArea", "LOCALS", 1)
+		SetGlobal("XA_LC_ArtifactsReturned", "LOCALS", 2)
+	~
+	EXTERN XACORWIJ XA_TwoArtifactsRecovered
+	
+	IF ~ //All Three
+		PartyHasItem("WA2S1H")
+		PartyHasItem("WA2PLAT")
+		PartyHasItem("WA2SHIEL")
+	~ THEN
+	DO ~
+		ChangeStat("XACORWIN",XP,25000,ADD)
+		ChangeStat(Player1,XP,25000,ADD)
+		SetGlobal("XA_LeaveArea", "LOCALS", 1)
+		SetGlobal("XA_LC_ArtifactsReturned", "LOCALS", 3)
+	~
+	EXTERN XACORWIJ XA_AllArtifactsRecovered
 END
 IF ~
 	Global("XA_MagdaTalk", "GLOBAL", 1)
@@ -130,3 +193,132 @@ IF ~
 	EXIT
 END
 
+IF ~~ THEN BEGIN XA_ArtifactChain_End
+	SAY @27 /*~On behalf of the museum and the city, thank you. The preservation of such historical artifacts will inspire generations to come.~*/
+	
+	IF ~
+		Global("XA_LC_ArtifactsReturned", "LOCALS", 1)
+	~ THEN REPLY @28  /* ~You're welcome.~*/
+	DO ~
+		AddExperienceParty(100000)
+		ReputationInc(1)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+	~
+	GOTO XA_LeaveArea2
+	
+	IF ~
+		Global("XA_LC_ArtifactsReturned", "LOCALS", 2)
+	~ THEN REPLY @28  /* ~You're welcome.~*/
+	DO ~
+		AddExperienceParty(250000)
+		ReputationInc(2)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
+	~
+	GOTO XA_LeaveArea2
+	
+	IF ~
+		Global("XA_LC_ArtifactsReturned", "LOCALS", 3)
+	~ THEN REPLY @28  /* ~You're welcome.~*/
+	DO ~
+		AddExperienceParty(500000)
+		ReputationInc(3)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 3)
+	~
+	GOTO XA_LeaveArea2
+	
+	IF ~~ THEN REPLY @29  /* ~I paid a fortune for the acquisition. Is there anything you can offer besides gratitude?~ */
+	GOTO XA_WantMore
+END
+
+IF ~~ THEN BEGIN XA_WantMore
+	SAY @30  /*~(Sigh.)~ */
+	=@31 /* ~I'm afraid not. The museum's budget is tightened every year. Give me some time and I'll see what I can do.~*/
+	
+	IF ~
+		Global("XA_LC_ArtifactsReturned", "LOCALS", 1)
+	~ THEN REPLY @33  /* ~I'll not take money from the city's coffers if it cannot afford it. Your gratitude is sufficient, Curator Magda.~*/
+	DO ~
+		AddExperienceParty(100000)
+		ReputationInc(1)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+	~
+	GOTO XA_LeaveArea2
+	
+	IF ~
+		Global("XA_LC_ArtifactsReturned", "LOCALS", 2)
+	~ THEN REPLY @33  /* ~I'll not take money from the city's coffers if it cannot afford it. Your gratitude is sufficient, Curator Magda.~*/
+	DO ~
+		AddExperienceParty(250000)
+		ReputationInc(2)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
+	~
+	GOTO XA_LeaveArea2
+	
+	IF ~
+		Global("XA_LC_ArtifactsReturned", "LOCALS", 3)
+	~ THEN REPLY @33  /* ~I'll not take money from the city's coffers if it cannot afford it. Your gratitude is sufficient, Curator Magda.~*/
+	DO ~
+		AddExperienceParty(500000)
+		ReputationInc(3)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 3)
+	~
+	GOTO XA_LeaveArea2
+	
+	IF ~
+		Global("XA_LC_ArtifactsReturned", "LOCALS", 1)
+	~ THEN REPLY @32 /* ~Thank you.~*/
+	DO ~
+		AddExperienceParty(50000)
+		SetGlobal("XA_LC_MoneyForArtifacts", "GLOBAL", 1)
+	~
+	GOTO XA_LeaveArea2
+	
+	IF ~
+		Global("XA_LC_ArtifactsReturned", "LOCALS", 2)
+	~ THEN REPLY @32 /* ~Thank you.~*/
+	DO ~
+		AddExperienceParty(125000)
+		SetGlobal("XA_LC_MoneyForArtifacts", "GLOBAL", 1)
+	~
+	GOTO XA_LeaveArea2
+	
+	IF ~
+		Global("XA_LC_ArtifactsReturned", "LOCALS", 3)
+	~ THEN REPLY @32 /* ~Thank you.~*/
+	DO ~
+		AddExperienceParty(250000)
+		SetGlobal("XA_LC_MoneyForArtifacts", "GLOBAL", 1)
+	~
+	GOTO XA_LeaveArea2
+END
+
+IF ~~ THEN BEGIN XA_LeaveArea2
+	SAY @34  /* ~If there's nothing else, I must resume my duties. Good day to you.~*/
+	
+	IF ~~ THEN
+	EXIT
+END
+
+CHAIN IF ~~ THEN XACORWIJ XA_OneArtifactRecovered
+	@20 /*~Before you go, ma'am — while in Amn, we recovered this artifact that once belonged to Balduran. It was reported stolen years ago.~*/
+END XACURATO XA_ArtifactChain
+
+CHAIN IF ~~ THEN XACORWIJ XA_TwoArtifactsRecovered
+	@21 /*~Before you go, ma'am — while in Amn, we recovered these artifacts that once belonged to Balduran. They were reported stolen years ago.~*/
+END XACURATO XA_ArtifactChain
+
+CHAIN IF ~~ THEN XACORWIJ XA_AllArtifactsRecovered
+	@22 /*~Before you go, ma'am — while in Amn, we recovered this set of priceless artifacts that once belonged to Balduran. They were reported stolen years ago.~*/
+END XACURATO XA_ArtifactChain
+
+CHAIN IF ~~ THEN XACURATO XA_ArtifactChain
+	@23 /*~Is that so? Let me see...~*/
+	= @24 /* */
+	== XACORWIJ
+	@25 /* ~I won't bore you with the details. I'll provide a full report to Marshal Nederlok and the Dukes once I get settled.~*/
+	== XACURATO
+	@26 /* ~I see. It will take some time to set up and secure an appropriate display here in the Hall of Wonders. Until it's ready, please look after what you've returned to us.~ */
+	DO ~
+		AddJournalEntry(@35, INFO)
+	~
+END XACURATO XA_ArtifactChain_End

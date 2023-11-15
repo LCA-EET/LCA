@@ -1356,6 +1356,14 @@
 //{ Jan
 
 	//{ JANJ
+		INTERJECT_COPY_TRANS2 JANJ 133 XA_JANJ_133
+			== XACORWIB
+			IF ~
+				IsValidForPartyDialogue("XACORWIN")
+			~
+			@177 /*~Can you try to be serious just for one gods damned minute?~ [BD54483]*/
+		END
+	
 		INTERJECT_COPY_TRANS2 JANJ 197 XA_JANJ_197 //OK
 			== XACORWIB
 			IF ~
