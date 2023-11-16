@@ -4,6 +4,12 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v1.0.5, 2023-11-14
+* Fixed a compatibility issue with Cost of One Girl's Soul.
+* Added a new quest, "Returning the Stolen Artifacts". CHARNAME can start it by speaking to Deidre in the Adventurers Mart when Corwin is present.
+* Improvements to the Neb encounter in Athkatla when Corwin is present.
+* Added some new interjections.
+
 # v1.0.4, 2023-11-08
 * Added some new dialog between Corwin and MaeVar.
 * Improved the inventory transfer scripting between Corwin (SoD) and Corwin (LCA).

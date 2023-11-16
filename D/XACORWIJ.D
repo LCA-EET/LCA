@@ -1465,6 +1465,7 @@ IF ~~ THEN BEGIN XA_BackToBG_ChainEnd_AndYou
 	
 	IF ~~ THEN
 	EXIT
+	
 END
 
 IF ~~ THEN BEGIN XA_RomanceConflict_Continue

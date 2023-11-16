@@ -16,6 +16,7 @@ Copy-Item -Path "TIS" -Destination "LoveConquersAll_EET/LCA/TIS" -Recurse
 Copy-Item -Path "TRA" -Destination "LoveConquersAll_EET/LCA/TRA" -Recurse
 Copy-Item -Path "WAV" -Destination "LoveConquersAll_EET/LCA/WAV" -Recurse
 Copy-Item -Path "SPL" -Destination "LoveConquersAll_EET/LCA/SPL" -Recurse
+Copy-Item -Path "COMPAT" -Destination "LoveConquersAll_EET/LCA/COMPAT" -Recurse
 Copy-Item -Path "LCA.TP2" -Destination "LoveConquersAll_EET/LCA"
 Copy-Item -Path "LICENSE.md" -Destination "LoveConquersAll_EET/LCA"
 
