@@ -5,7 +5,7 @@ THEN
 		ActionOverride("Container 2", DestroyItem("STAF01"))
 		ActionOverride("Container 2", DestroyItem("AX1H04"))
 		ActionOverride("Container 2", CreateItem("XAFFBOOK",1,0,0))
-		ActionOverride("Container 2", CreateItem("BAG05",1986,0,0))
+		ActionOverride("Container 2", CreateItem("XAAMBELT",1986,0,0))
 		ActionOverride("Container 2", SetItemFlags("XAFFBOOK", IDENTIFIED,TRUE))
 		SetGlobal("XA_BBCreate", "BG1317", 1)
 		Continue()

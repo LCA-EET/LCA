@@ -1472,6 +1472,9 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 //}
 
 //{ New Items
+	//{ Ammo Belt, BG1 
+	COPY ~LCA/ITM/XAAMBELT.ITM~ ~override~
+	//}
 	
 	//{ Flaming Fist Manual
 	COPY ~LCA/ITM/XAFFBOOK.ITM~ ~override~
