@@ -159,7 +159,10 @@ IF
 	!Dead("Corwin")
 	InMyArea("Corwin")
 	AreaCheck("BD3000") //Allied Siege Camp
-	GlobalLT("XA_TentCS", "GLOBAL", 1)	
+	See("BDTHAIRD")
+	OR(2)
+		Global("XA_TNTCSDebug", "GLOBAL", 1)
+		GlobalLT("XA_TentCS", "GLOBAL", 1)	
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself,~Debug Player1D - 7~)
@@ -173,7 +176,9 @@ IF
 	InMyArea("Corwin")
 	AreaCheck("BD1000") // Coast Way Crossing
 	See("BDTHAIRD")
-	GlobalLT("XA_TentCS", "GLOBAL", 1)	
+	OR(2)
+		Global("XA_TNTCSDebug", "GLOBAL", 1)
+		GlobalLT("XA_TentCS", "GLOBAL", 1)	
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself,~Debug Player1D - 8~)

@@ -19,6 +19,12 @@ IF ~~ THEN BEGIN XA_TentCS_DutyRoster
 	
 	IF ~~ THEN REPLY @4 /* ~Heh. Mind if I take a look?~ */
 	GOTO XA_TentCS_DutyRoster2
+	
+	IF ~~ THEN REPLY @35  /*~I'll pass. Back to bed for me. See you tomorrow, Captain.~ */
+	DO ~
+		SetGlobal("XA_TentCS", "GLOBAL", 3)
+	~
+	GOTO XA_Skipped
 END
 
 IF ~~ THEN BEGIN XA_TentCS_DutyRoster2
@@ -143,6 +149,13 @@ IF ~~ THEN BEGIN XA_Flattering
 		ChangeStat("Corwin", XP, 10000, ADD)
 		ChangeStat(Player1, XP, 10000, ADD)
 	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_Skipped
+	SAY @24 /* ~Get some rest, hero. I'll see you tomorrow.~*/
+	
+	IF ~~ THEN
 	EXIT
 END
 

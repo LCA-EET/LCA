@@ -3696,6 +3696,13 @@ END
 IF ~~ THEN BEGIN XA_Menu_CreateItem
 	SAY @35 /* ~What item do you want me to create for you?~ */
 	
+	IF ~~ THEN REPLY @799
+	DO ~
+		GiveItemCreate("BAG05", LastTalkedToBy(Myself),1,0,0)
+		GiveItemCreate("XAAMBELT", LastTalkedToBy(Myself),1,0,0)
+	~
+	GOTO XA_MainMenu
+	
 	IF ~~ THEN REPLY @710
 	DO ~
 		GiveItemCreate("XABENOHD", LastTalkedToBy(Myself),1,0,0)

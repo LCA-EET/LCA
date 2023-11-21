@@ -1960,6 +1960,8 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 //}
 
 //{ Stores (New and Modified)
+	COPY ~LCA/STO/XAAMBELT.STO~ ~override~
+
 	COPY ~LCA/STO/XAWVBAR.STO~ ~override~
 
 	COPY ~LCA/STO/XAMELKOR.STO~ ~override~
