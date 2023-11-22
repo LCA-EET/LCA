@@ -76,16 +76,6 @@ APPEND ~PLAYER1~
 		~
 		GOTO XA_ChangeDone
 		
-		IF ~
-			Global("XA_ExplicitModActive", "GLOBAL", 1)
-		~ THEN REPLY @43  /* ~Check if the LCA_Explicit mod is active.~ */
-		GOTO XA_ExplicitActive
-		
-		IF ~
-			!Global("XA_ExplicitModActive", "GLOBAL", 1)
-		~ THEN REPLY @43  /* ~Check if the LCA_Explicit mod is active.~ */
-		GOTO XA_ExplicitInactive
-		
 		IF ~~ THEN REPLY @177
 		GOTO XA_AdvanceTime
 		
@@ -488,18 +478,6 @@ APPEND ~PLAYER1~
 	END
 	
 	IF ~
-		Global("XA_AVBossFled", "GLOBAL", 2)
-	~ THEN BEGIN XA_DemonFled
-		SAY @105 /*~(The demon has fled to another part of Avernus. You feel that the barrier surrounding the tower has weakened; you resolve to free Caelar and get out of here before the demon can return with reinforcements.)~*/
-		
-		IF ~~ THEN
-		DO ~
-			SetGlobal("XA_AVBossFled", "GLOBAL", 3)
-		~
-		EXIT
-	END
-
-	IF ~
 		Global("XA_TowerUnlock", "GLOBAL", 1)
 	~ THEN BEGIN XA_TowerUnlocked
 		SAY @144 /* ~(An opening appears in the barrier. You'll be able to enter the tower through the iron doors. While inside, you won't be able to teleport back to your Pocket Plane. Enter?)~*/
@@ -575,139 +553,6 @@ APPEND ~PLAYER1~
 			SetGlobal("XA_BenoSpirit", "GLOBAL", 1)
 			StartCutSceneMode()
 			StartCutScene("XADAG2B")
-		~
-		EXIT
-	END
-	
-	IF ~
-		Global("XA_SleepBG", "GLOBAL", 1)
-	~ THEN BEGIN XA_ExplicitModCheck_RBG
-		SAY @186  /* ~(You make your way to your room and get comfortable while you wait for Schael to arrive...)~ */
-		
-		IF ~
-			Global("XA_CorwinSex_3", "GLOBAL", 1)
-		~
-		THEN
-		DO ~
-			SetGlobal("XA_SleepBG", "GLOBAL", 0)
-			StartCutSceneMode()
-			StartCutScene("XAEX03EX")
-		~
-		EXIT
-		
-		IF ~
-			Global("XA_CorwinSex_3", "GLOBAL", 1)
-			Gender(Player1, MALE)
-		~
-		THEN
-		DO ~
-			SetGlobal("XA_SleepBG", "GLOBAL", 0)
-			StartCutSceneMode()
-			StartCutScene("XAEXPL03")
-		~
-		EXIT
-		
-		IF ~
-			GlobalLT("XA_ExplicitModActive", "GLOBAL", 1)
-		~ THEN
-		GOTO XA_NeedExplicitMod
-	END
-	
-	IF ~
-		OR(2)
-			Global("XA_SleepInn", "GLOBAL", 1)
-			Global("XA_SexDebug", "GLOBAL", 1)
-	~ THEN BEGIN XA_ExplicitModCheck
-		SAY @142 /* ~(You and Schael eagerly step into the room, and make your way to the bed...)~ */
-		
-		IF ~~ THEN
-		DO ~
-			SetGlobal("XA_SleepInn", "GLOBAL", 0)
-		~
-		EXIT
-		
-		IF ~
-			Global("XA_CorwinSex_1", "GLOBAL", 1)
-		~ THEN
-		DO ~
-			StartCutSceneMode()
-			StartCutScene("XAEX01EX")
-		~
-		EXIT
-		
-		IF ~
-			Global("XA_CorwinSex_2", "GLOBAL", 1)
-		~
-		THEN
-		DO ~
-			StartCutSceneMode()
-			StartCutScene("XAEX02EX")
-		~
-		EXIT
-		
-		IF ~
-			Global("XA_CorwinSex_1", "GLOBAL", 1)
-			Gender(Player1, MALE)
-		~ THEN
-		DO ~
-			StartCutSceneMode()
-			StartCutScene("XAEXPL01")
-		~
-		EXIT
-		
-		IF ~
-			Global("XA_CorwinSex_2", "GLOBAL", 1)
-			Gender(Player1, MALE)
-		~
-		THEN
-		DO ~
-			StartCutSceneMode()
-			StartCutScene("XAEXPL02")
-		~
-		EXIT
-		
-		IF ~
-			GlobalLT("XA_ExplicitModActive", "GLOBAL", 1)
-		~ THEN
-		GOTO XA_NeedExplicitMod
-	END
-	
-	IF ~~ THEN BEGIN XA_NeedExplicitMod
-		SAY @143 /* ~(Install the LCA_Explicit mod to experience this content.)~*/
-		
-		IF ~~ THEN
-		DO ~
-			SetGlobal("XA_SleepBG", "GLOBAL", 0)
-			SetGlobal("XA_SleepInn", "GLOBAL", 0)
-		~
-		EXIT
-		
-		IF ~
-			Global("XA_CorwinSex_1", "GLOBAL", 1)
-		~ THEN
-		DO ~
-			StartCutSceneMode()
-			StartCutScene("XAEX01EX")
-		~
-		EXIT
-		
-		IF ~
-			Global("XA_CorwinSex_2", "GLOBAL", 1)
-		~
-		THEN
-		DO ~
-			StartCutSceneMode()
-			StartCutScene("XAEX02EX")
-		~
-		EXIT
-		
-		IF ~
-			Global("XA_CorwinSex_3", "GLOBAL", 1)
-		~
-		THEN
-		DO ~
-			StartCutSceneMode()
-			StartCutScene("XAEX03EX")
 		~
 		EXIT
 	END
@@ -1109,22 +954,6 @@ APPEND ~PLAYER1~
 		~ THEN 
 		GOTO XA_DarkMemories_Escape
 		
-	END
-	
-	IF ~~ THEN BEGIN XA_CORWIN_PPIRENI2_3
-		SAY @96 /* ~(You begin to feel fear, not for yourself, but for the woman you love. If you had sent her away instead of accepting her aid, she wouldn't be facing this dire situation.)~ */
-		
-		IF ~~ THEN
-		EXTERN PPIRENI2 XA_PPIRENI2_3_CHAIN_2
-		
-		IF ~
-			Global("XA_ExplicitModActive", "GLOBAL", 1)
-		~ THEN
-		DO ~
-			SetGlobal("XA_Explicit_0002", "GLOBAL", 1)
-			StartDialog("PLAYER1", Player1)
-		~
-		EXIT
 	END
 	
 	IF ~~ THEN BEGIN XA_ReadLetter_Romantic

@@ -1,6 +1,16 @@
 
-
 //{ Sex 3 CS
+
+	IF
+		Global("XA_LC_Sex3Debug", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_CorwinSex_3", "GLOBAL", 1)
+			SetGlobal("XA_LC_Sex3Debug", "GLOBAL", 0)
+			SetGlobal("XA_SleepBG", "GLOBAL", 1)
+			CreateCreature("XALCHOOK", [-1.-1], N)
+	END
+
 
 	//{ Three Old Kegs
 	IF
@@ -14,7 +24,7 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_SleepBG", "GLOBAL", 1)
-			ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+			CreateCreature("XALCHOOK", [-1.-1], N)
 	END
 	//}
 	
@@ -30,7 +40,7 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_SleepBG", "GLOBAL", 1)
-			ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+			CreateCreature("XALCHOOK", [-1.-1], N)
 	END
 	//}
 	
@@ -45,7 +55,7 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_SleepBG", "GLOBAL", 1)
-			ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+			CreateCreature("XALCHOOK", [-1.-1], N)
 	END
 	//}
 	
@@ -60,7 +70,7 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_SleepBG", "GLOBAL", 1)
-			ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+			CreateCreature("XALCHOOK", [-1.-1], N)
 	END
 	//}
 //}
@@ -129,6 +139,28 @@ THEN
 END
 //}
 
+//{ Sex 1 & 2
+
+IF
+	Global("XA_LC_Sex1Debug", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_Sex1Debug", "GLOBAL", 0)
+		SetGlobal("XA_CorwinSex_1", "GLOBAL", 1)
+		SetGlobal("XA_SleepInn", "GLOBAL", 1)
+		CreateCreature("XALCHOOK", [-1.-1], N)
+END
+
+IF
+	Global("XA_LC_Sex2Debug", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_Sex2Debug", "GLOBAL", 0)
+		SetGlobal("XA_CorwinSex_2", "GLOBAL", 1)
+		SetGlobal("XA_SleepInn", "GLOBAL", 1)
+		CreateCreature("XALCHOOK", [-1.-1], N)
+END
+
 IF
 	Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
 	OR(2)
@@ -150,10 +182,10 @@ IF
 		AreaCheck("AR2010") //Trademeet's Inn
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself,~Debug Player1D - 5~)
 		SetGlobal("XA_SleepInn", "GLOBAL", 1)
-		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+		CreateCreature("XALCHOOK", [-1.-1], N)
 END
+//}
 
 IF
 	!Dead("Corwin")

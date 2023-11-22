@@ -4,6 +4,9 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v1.0.6a 2023-11-22
+* Refactored integration with the LCA Explicit mod - no new content.
+
 # v1.0.6, 2023-11-21
 * The ammo belt in Corwin's Home in BG1 is now distinct from the one you receive in SoD / BG2.
 * Fixed an intermittent issue that caused Corwin to remain hidden after the conclusion of the SoD tent cutscene.

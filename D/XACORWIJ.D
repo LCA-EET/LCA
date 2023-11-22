@@ -10232,10 +10232,6 @@ IF ~~ THEN BEGIN XA_PPIRENI2_3_CHAIN_END
 	
 	IF ~~ THEN
 	EXTERN PPIRENI2 XA_PPIRENI2_3_CHAIN_2
-	
-	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN EXTERN PLAYER1 XA_CORWIN_PPIRENI2_3
 END
 
 IF ~~ THEN BEGIN XA_CorwinDelcia_End
@@ -10728,6 +10724,10 @@ IF ~~ THEN BEGIN XA_CorwinArtifacts_Stolen_End_R
 	IF ~~ THEN
 	EXIT
 END
+
+
+
+
 
 CHAIN
 	IF ~~ THEN XACORWIJ XA_CorwinArtifacts_Chain

@@ -1,3 +1,46 @@
+//{ Journal Entries
+
+	//{ Sex 1
+	IF 
+		Global("XA_LC_Journal_Sex1", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Sex1", "GLOBAL", 0)
+			AddJournalEntry(@32, INFO)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+	
+	//{ Sex 2
+	IF 
+		Global("XA_LC_Journal_Sex2", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Sex2", "GLOBAL", 0)
+			AddJournalEntry(@33, INFO)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+	
+	//{ Sex 3
+	IF 
+		Global("XA_LC_Journal_Sex3", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Sex3", "GLOBAL", 0)
+			AddJournalEntry(@34, INFO)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+//}
+
 //{
 	IF
 		Global("XA_ProficiencyTalk", "GLOBAL", 6)
@@ -642,24 +685,6 @@ THEN
 		SetInterrupt(TRUE)
 		Continue()
 END
-//}
-
-//{ Explicit Mod Check
-IF 
-	ActionListEmpty()
-	GlobalTimerExpired("XA_ExplicitModCheckTimer", "GLOBAL")
-	Global("XA_ExplicitModCheckTimerSet", "GLOBAL", 1)
-	Global("XA_ExplicitModActive","GLOBAL",1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("XA_ExplicitModCheckTimer", "GLOBAL", ONE_HOUR)
-		SetGlobal("XA_ExplicitModActive", "GLOBAL", 0)
-		SetGlobal("XA_ExplicitModCheckTimerSet", "GLOBAL", 0)
-		SetInterrupt(TRUE)
-		//DisplayStringHead(Player1, @19)
-END
-
 //}
 
 //{ Launch LCA Assistant

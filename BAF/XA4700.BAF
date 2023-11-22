@@ -17,8 +17,9 @@ THEN
 	RESPONSE #100
 		SetGlobal("XA_AVBossFled", "GLOBAL", 2)
 		OpenDoor("Door03")
-		Wait(1)
-		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+		DisplayStringHead(Player1, @0)
+		//Wait(1)
+		//ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 		
 END
 

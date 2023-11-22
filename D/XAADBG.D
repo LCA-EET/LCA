@@ -5,7 +5,8 @@ IF ~
 ~ THEN BEGIN XA_MainMenu
 	SAY @0 /* ~How can I help you?~ */
 	
-	
+	IF ~~ THEN REPLY @800
+	GOTO XA_SlayerChangeInformation
 	
 	IF ~~ THEN REPLY @683
 	GOTO XA_StatusReport
@@ -55,6 +56,8 @@ IF ~
 	~ 
 	EXIT
 	
+	IF ~~ THEN REPLY @808
+	GOTO XA_SexDebug
 	
 	IF ~~ THEN REPLY @715
 	DO ~
@@ -295,6 +298,57 @@ IF ~
 	
 	IF ~~ THEN REPLY @12 /* ~I do not need assistance at this time.~ */
 	EXIT
+END
+
+IF ~~ THEN BEGIN XA_SexDebug
+	SAY @808
+	
+	
+	IF ~~ THEN REPLY @805
+	DO ~
+		SetGlobal("XA_LC_Sex1Debug", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @806
+	DO ~
+		SetGlobal("XA_LC_Sex2Debug", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @807
+	DO ~
+		SetGlobal("XA_LC_Sex3Debug", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	
+END
+
+IF ~~ THEN BEGIN XA_SlayerChangeInformation
+	SAY @800
+	
+	IF ~
+		Global("GivePowerSlayer", "GLOBAL", 0)
+	~ THEN REPLY @801
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("GivePowerSlayer", "GLOBAL", 1)
+	~ THEN REPLY @802
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("GivePowerSlayer", "GLOBAL", 2)
+	~ THEN REPLY @803
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @804
+	DO ~
+		SetGlobal("GivePowerSlayer", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
 END
 
 IF ~~ THEN BEGIN XA_ProficiencyConditionCheck
@@ -4235,12 +4289,6 @@ IF ~~ THEN BEGIN XA_Menu_AdjustVariables
 	IF ~~ THEN REPLY @635
 	DO ~
 		SetGlobal("XA_AttackedDrizztBG1", "GLOBAL", 1)
-	~
-	GOTO XA_MainMenu
-	
-	IF ~~ THEN REPLY @626
-	DO ~
-		SetGlobal("XA_ExplicitModOverride", "GLOBAL", 1)
 	~
 	GOTO XA_MainMenu
 	

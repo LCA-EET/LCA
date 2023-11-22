@@ -1058,6 +1058,10 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	COPY ~LCA/BMP/XACORWIS.BMP~ ~override~
 	//}
 	
+	//{ Hook for Explicit Mod Cutscenes
+	COPY ~LCA/CRE/XALCHOOK.CRE~ ~override~
+	//}
+	
 	COPY ~LCA/CRE/XAGLINT.CRE~ ~override~
 	COPY ~LCA/CRE/XAGLINT2.CRE~ ~override~
 	//COPY ~LCA/CRE/XAALORA.CRE~ ~override~
