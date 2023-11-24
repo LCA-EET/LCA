@@ -1516,9 +1516,77 @@
 
 //}
 
+//{ Kill Gnomes
+	INTERJECT_COPY_TRANS2 AERIEJ 123 XA_AERIEJ_123
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+			GlobalLT("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		~
+		@184  /* ~(She gives Aerie a sharp stare.)~*/
+		DO ~
+			SetGlobal("XA_CorwinScoldAerie", "LOCALS", 1)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+			SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+		~
+	END
+	
+	INTERJECT_COPY_TRANS2 MAZZYJ 162 XA_MAZZYJ_162
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+			GlobalLT("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		~
+		@185  /* ~(She gives Mazzy a sharp stare.)~*/
+		DO ~
+			SetGlobal("XA_CorwinScoldMazzy", "LOCALS", 1)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+			SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+		~
+	END
+	
+	INTERJECT_COPY_TRANS2 KELDORJ 182 XA_KELDORJ_182
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+			GlobalLT("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		~
+		@186  /* ~(She gives Keldorn a sharp stare.)~*/
+		DO ~
+			SetGlobal("XA_CorwinScoldKeldorn", "LOCALS", 1)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+			SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+		~
+	END
+	
+	INTERJECT_COPY_TRANS2 JANJ 144 XA_JANJ_144
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+			GlobalLT("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+		~
+		@187  /* ~(She gives Jan a sharp stare.)~*/
+		DO ~
+			SetGlobal("XA_CorwinScoldJan", "LOCALS", 1)
+			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
+			SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+		~
+	END
+//}
+
 //{ Aerie
 
 	//{ AERIEJ
+		
+		
 		INTERJECT_COPY_TRANS2 AERIEJ 136 XA_AERIEJ_136 // OK
 			== XACORWIB
 			IF ~

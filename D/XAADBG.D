@@ -2888,6 +2888,14 @@ END
 IF ~~ THEN BEGIN XA_TestInteraction
 	SAY @280
 	
+	IF ~~ THEN REPLY @809
+	DO ~
+		SetGlobal("PhaereJob","GLOBAL",5)
+		SetGlobal("SolaufeinJob","GLOBAL",5)
+		CreateCreature("UDPHAE01", [-1.-1], N)
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @634
 	DO ~
 		CreateCreature("DADROW3", [-1.-1],N)

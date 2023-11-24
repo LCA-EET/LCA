@@ -6290,6 +6290,7 @@ END
 		GlobalTimerExpired("XA_CorwinScoldPartyTimer", "LOCALS")
 		Global("XA_CorwinCoverUD_Party", "GLOBAL", 1)
 		GlobalLT("DrowCityHostile","GLOBAL",1)
+		!InMyArea("Phaere")
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
@@ -6307,6 +6308,7 @@ END
 		GlobalTimerExpired("XA_CorwinScoldPlayerTimer", "LOCALS")
 		Global("XA_CorwinCoverUD_Player", "GLOBAL", 1)
 		GlobalLT("DrowCityHostile","GLOBAL",1)
+		!InMyArea("Phaere")
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
