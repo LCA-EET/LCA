@@ -7,6 +7,7 @@ THEN
 END
 
 IF
+	InMyArea(Player1)
 	GlobalTimerExpired("XA_LyrielSingTimer", "GLOBAL")
 	GlobalGT("XA_ReturnToBG", "GLOBAL", 0)
 THEN
@@ -20,6 +21,7 @@ THEN
 END
 
 IF
+	InMyArea(Player1)
 	PartyHasItem("XAQUIVER")
 	!Global("XA_IncubusQuiver", "GLOBAL", 1)
 THEN
@@ -33,6 +35,7 @@ THEN
 END
 
 IF
+	InMyArea(Player1)
 	PartyHasItem("XAMSRING")
 	!Global("XA_IncubusRing", "GLOBAL", 1)
 THEN
@@ -46,6 +49,7 @@ THEN
 END
 
 IF
+	InMyArea(Player1)
 	PartyHasItem("XASWORD")
 	!Global("XA_IncubusSword", "GLOBAL", 1)
 THEN
