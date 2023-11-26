@@ -6,8 +6,6 @@ THEN
 	RESPONSE #100
 		SetGlobal("XA_DialogSwap_0703", "GLOBAL", 1)
 		ActionOverride("halbaz", SetDialog("XAHALBAZ"))
-		ActionOverride("halbaz", SetNumTimesTalkedTo(0))
-		ActionOverride("halbaz", ChangeAIScript("INITDLG",CLASS))
 		Continue()
 END
 

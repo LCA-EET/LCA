@@ -5,7 +5,7 @@ IF ~
 ~ THEN BEGIN XA_TiannaGoodBye
 	SAY @53 /* ~Thank you, <CHARNAME>.~ */
 	
-	IF ~~ THEN REPLY @57 
+	IF ~~ THEN REPLY @57  /* ~Good-bye...~*/
 	DO ~
 		ReputationInc(1)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
@@ -245,28 +245,18 @@ IF ~~ THEN BEGIN XA_CorwinTiannaChainEnd
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		InMyArea("XACORWIN")
 	~ THEN REPLY @24 /* ~Schael, what do you think? Do you believe her story?~*/
-	GOTO XA_SchaelBelievesTianna //OK
+	EXTERN XACORWIJ XA_SchaelBelievesTianna //OK
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		InMyArea("XACORWIN")
 	~ THEN REPLY @25 /* ~My love, what do you think? Do you believe her story?~ */
-	GOTO XA_SchaelBelievesTianna //OK
+	EXTERN XACORWIJ XA_SchaelBelievesTianna //OK
 	
 	IF ~
 		!InMyArea(Player1)
 	~ THEN EXTERN XACORWIJ XA_CorwinWillHelpTianna
 
-END
-
-IF ~~ THEN BEGIN XA_SchaelBelievesTianna
-	SAY @27 /* ~She's lied to me before, but this time I think she's telling truth. I'd like for us to help her, but it's your decision.~ */
-	
-	IF ~~ THEN REPLY @28 /* ~Very well. Tianna - tell me, where is this Jasper fellow? Perhaps I can talk him into forgiving your debt.~ */
-	GOTO XA_HelpTianna
-	
-	IF ~~ THEN REPLY @23 /* ~I'm afraid it's not my problem.~*/
-	GOTO XA_WontHelp
 END
 
 IF ~~ THEN BEGIN XA_WontHelp

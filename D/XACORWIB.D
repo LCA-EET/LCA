@@ -104,6 +104,67 @@ IF ~~ THEN BEGIN BCorwinMazzy2_End
 	EXTERN MAZZYJ XA_TMSignup
 END
 
+IF ~~ THEN BEGIN XA_LC_Chain_DingsCorwin2_END
+	SAY @893 /* ~Oh, you're so precious!~*/
+	
+	IF ~~ THEN REPLY @894  /*  ~The cat seems to have grown on you.~*/
+	GOTO XA_LC_DingsCorwin3
+	
+	IF ~~ THEN REPLY @895  /* ~I didn't know you liked animals, Captain.~*/
+	GOTO XA_LC_DingsCorwin3
+	
+	IF ~~ THEN REPLY @896 /* ~Somehow, I didn't think you a cat person.*/
+	GOTO XA_LC_DingsCorwin3
+END
+
+IF ~~ THEN BEGIN XA_LC_DingsCorwin3
+	SAY @897 /* ~I love animals. When I was a kid, I had a hamster, then a dog. But never a cat. I want to — ah, nevermind.~ */
+	
+	IF ~~ THEN REPLY @898  /* ~What is it?~*/
+	GOTO XA_LC_DingsCorwin4
+		
+	IF ~~ THEN REPLY @899  /* ~We better get going. Dings, back in the bag.~ */
+	EXTERN XADINGS XA_LC_DingsCorwinEnd
+END
+
+IF ~~ THEN BEGIN XA_LC_DingsCorwin4
+	SAY @900  /* ~I want to get a pet for Rohma. They're great for teaching responsibility. Dings would be perfect, and I know she'd love him.~*/
+	
+	IF ~~ THEN REPLY @901 /* ~Take him, then. I'm sure he'd be right at home with you and Rohma.~*/
+	DO ~
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC_DingsRohma", "GLOBAL", 1)
+	~
+	GOTO XA_LC_DingsCorwinEnd_A
+	
+	IF ~~ THEN REPLY @902 /* ~Sorry, but I plan to keep him.~ */
+	GOTO XA_LC_DingsCorwinEnd_B
+END
+
+IF ~~ THEN BEGIN XA_LC_DingsCorwinEnd_A
+	SAY @904  /*~Thank you, <CHARNAME>. I really appreciate it.~ */
+	
+	= @905  /*~Dings, sweetie! Back in the bag, it's time to go.~ */
+	
+	IF ~~ THEN
+	DO ~
+		ActionOverride(Player1, DestroyItem("OHNDINGS"))
+		ActionOverride(Player2, DestroyItem("OHNDINGS"))
+		ActionOverride(Player3, DestroyItem("OHNDINGS"))
+		ActionOverride(Player4, DestroyItem("OHNDINGS"))
+		ActionOverride(Player5, DestroyItem("OHNDINGS"))
+		ActionOverride(Player6, DestroyItem("OHNDINGS"))
+		SetGlobal("XA_LC_Journal_Dings", "GLOBAL", 1)
+	~
+	EXTERN XADINGS XA_LC_DingsCorwinEnd
+END
+
+IF ~~ THEN BEGIN XA_LC_DingsCorwinEnd_B
+	SAY @903  /* ~Fair enough. Let's get going.~*/
+	
+	IF ~~ THEN REPLY @899  /* ~Right. Dings, back in the bag.~*/
+	EXTERN XADINGS XA_LC_DingsCorwinEnd
+END
 //{ Corwin Sick Dialogs
 
 	//{ Dialog B-5

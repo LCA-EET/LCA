@@ -169,6 +169,7 @@ IF
 	Global("XA_BenceWyrm", "GLOBAL", 1)
 THEN
 	RESPONSE #100
+		SetGlobal("XA_BenceWyrm", "GLOBAL", 2)
 		ActionOverride("BDNOBF7", MoveToPoint([3.827])
 		ActionOverride("BDNOBF7", EscapeArea())
 		SmallWait(2)
@@ -183,10 +184,34 @@ THEN
 		SmallWait(2)
 		ActionOverride("XANEDERL", MoveToPoint([3.827])
 		ActionOverride("XANEDERL", EscapeArea())
-		SmallWait(2)
 		Wait(3)
+END
+
+IF 
+	Global("XA_BenceWyrm", "GLOBAL", 2)
+THEN
+	RESPONSE #100
 		ActionOverride("XABENCE", StartDialog("XABENCE", Player1))
 		Continue()
+END
+
+IF
+	Global("XA_BenceWyrm", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BenceWyrm", "GLOBAL", 4)
+		ActionOverride("XABENCE", MoveToPoint([3.827])
+		
+		//ActionOverride("XABENCE", EscapeArea())
+END
+
+IF
+	Global("XA_BenceWyrm", "GLOBAL", 4)
+	!TriggerOverride(Player1, See("XABENCE"))
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BenceWyrm", "GLOBAL", 5)
+		ActionOverride("XABENCE", DestroySelf()) 
 END
 
 IF

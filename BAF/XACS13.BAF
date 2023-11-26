@@ -1,8 +1,10 @@
+
 IF
 	Global("soa_complete", "GLOBAL", 0)
 THEN
 	RESPONSE #100
 		SetGlobal("soa_complete", "GLOBAL", 1)
+		SaveGame(0)
 		Continue()
 END
 

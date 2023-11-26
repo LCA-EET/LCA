@@ -4,6 +4,11 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v1.0.8 2023-11-25
+* Added a new mini-quest, A Pet for Rohma.
+* Updated the conclusion of the Irenicus battle to point to the modified cutscene script.
+* Fixed a bug that could cause the dialog with Nederlok on Wyrm's Crossing to end early.
+
 # v1.0.7 2023-11-22
 * Added some new Underdark interjects.
 

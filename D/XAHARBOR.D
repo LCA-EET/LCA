@@ -138,6 +138,11 @@ IF ~~ THEN BEGIN XA_HarborGreeting2
 		Global("XA_BGSlaverPlot", "GLOBAL", 1)
 	~ THEN REPLY @3 /* ~While in Athkatla, we learned that a number of children were being sold as slaves.~ */
 	GOTO XA_RefugeeSlavery
+	
+	IF ~
+		IsValidForPartyDialog("XACORWIN")
+	~ THEN
+	EXTERN XACORWIJ XA_HarborCorwin
 END
 
 IF ~~ THEN BEGIN XA_RefugeeSlavery

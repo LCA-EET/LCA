@@ -82,11 +82,11 @@ THEN
 END
 
 IF
-	Global("XA_AddCorwinMapNote", "GLOBAL", 1)
+	Global("XA_ReturnToBG", "GLOBAL", 1)
 	GlobalLT("XA_CorwinMapNoteAdded", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_AddCorwinMapNote", "GLOBAL", 2)
+		SetGlobal("XA_CorwinMapNoteAdded", "GLOBAL", 1)
 		AddMapNote([1732.1126],@0)
 		Continue()
 END

@@ -9572,11 +9572,7 @@ IF ~~ THEN BEGIN XA_BenceWyrm_6
 	IF ~~ THEN
 	DO ~
 		SetGlobalTimer("XA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
-		SetGlobal("XA_BenceWyrm", "GLOBAL", 2)
 		SetGlobal("XA_ReturnToBG", "GLOBAL", 1)
-		SetGlobal("XA_AddCorwinMapNote", "GLOBAL", 1)
-		ActionOverride("XABENCE", MoveToPoint([3.827])
-		ActionOverride("XABENCE", EscapeArea())
 		EndCutSceneMode()
 	~
 	EXIT
@@ -9585,23 +9581,13 @@ IF ~~ THEN BEGIN XA_BenceWyrm_6
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		GlobalLT("XA_GaveDoll", "GLOBAL", 1)
 	~
-	THEN 
-	DO ~
-		ActionOverride("XABENCE", MoveToPoint([3.827])
-		ActionOverride("XABENCE", EscapeArea())
-	~
-	GOTO XA_GetRohmaGift
+	THEN GOTO XA_GetRohmaGift
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("XA_MetRohma", "GLOBAL", 1)
 	~ 
-	THEN 
-	DO ~
-		ActionOverride("XABENCE", MoveToPoint([3.827])
-		ActionOverride("XABENCE", EscapeArea())
-	~
-	GOTO XA_FirstMeetingRohma
+	THEN GOTO XA_FirstMeetingRohma
 END
 
 IF ~~ THEN BEGIN XA_GetRohmaGift
@@ -9611,8 +9597,6 @@ IF ~~ THEN BEGIN XA_GetRohmaGift
 	DO ~
 		AddJournalEntry(@1303, QUEST)
 		SetGlobalTimer("XA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
-		SetGlobal("XA_BenceWyrm", "GLOBAL", 2)
-		SetGlobal("XA_ReturnToBG", "GLOBAL", 1)
 		SetGlobal("XA_WantToGetDoll", "GLOBAL", 1)
 		EndCutSceneMode()
 	~
@@ -9626,8 +9610,6 @@ IF ~~ THEN BEGIN XA_FirstMeetingRohma
 	DO ~
 		AddJournalEntry(@1304, QUEST)
 		SetGlobalTimer("XA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
-		SetGlobal("XA_BenceWyrm", "GLOBAL", 2)
-		SetGlobal("XA_ReturnToBG", "GLOBAL", 1)
 		SetGlobal("XA_WantToGetDoll", "GLOBAL", 1)
 		EndCutSceneMode()
 	~
@@ -9662,9 +9644,25 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite4
 	GOTO XA_CorwinFamilyReuniteSwitch
 	
 	IF ~
+		Global("XA_LC_DingsRohma", "GLOBAL", 1)
+	~ THEN
+	GOTO XA_DingsRohma
+	
+	IF ~
 		Global("XA_CorwinWonTM", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinFamilyReuniteTM
+END
+
+IF ~~ THEN BEGIN XA_DingsRohma
+	SAY @1833  /* ~Rohma, look what <CHARNAME> brought for you!~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_DingsRohma", "GLOBAL", 2)
+		CreateCreature("XADINGS", [-1.-1], N)
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN XA_WYRM_VALYGAR
@@ -9709,8 +9707,7 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReuniteSwitch
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN GOTO XA_Depart_Romance
-
+	~ THEN GOTO XA_Depart_Romance	
 END
 
 IF ~~ THEN BEGIN XA_Depart_NonRomance
@@ -10725,7 +10722,15 @@ IF ~~ THEN BEGIN XA_CorwinArtifacts_Stolen_End_R
 	EXIT
 END
 
-
+IF ~~ THEN BEGIN XA_SchaelBelievesTianna
+	SAY @1834 /* ~She's lied to me before, but this time I think she's telling truth. I'd like for us to help her, but it's your decision.~ */
+	
+	IF ~~ THEN REPLY @1835 /* ~Very well. Tianna - tell me, where is this Jasper fellow? Perhaps I can talk him into forgiving your debt.~ */
+	EXTERN XATIANNA XA_HelpTianna
+	
+	IF ~~ THEN REPLY @1836 /* ~I'm afraid it's not my problem.~*/
+	EXTERN XATIANNA XA_WontHelp
+END
 
 
 
@@ -10840,7 +10845,13 @@ CHAIN
 		@700 /* ~Annual... trade..meet... ar..chery.. c-com-comp...~*/
 		== XACORWIJ
 		@701 /* ~Competition. Good job honey. Your reading has improved quite a bit.~ */	
-END XACORWIJ XA_CorwinFamilyReuniteSwitch
+END 
+IF ~~ THEN GOTO XA_CorwinFamilyReuniteSwitch
+IF
+	~	
+		Global("XA_LC_DingsRohma", "GLOBAL", 1)
+	~
+THEN GOTO XA_DingsRohma
 
 CHAIN 
 	IF ~~ THEN XACORWIJ XA_CorwinDelcia

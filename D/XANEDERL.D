@@ -243,6 +243,9 @@ IF ~
 ~ THEN BEGIN XA_CorwinGreeting2
 	SAY @73 /* ~Captain Corwin - I'll see you at the debriefing.~ */
 	
+	IF ~~ THEN
+	EXIT
+	
 	IF ~
 		GlobalGT("XA_NebDead", "GLOBAL", 0)
 		GlobalLT("XA_ToldNederlokNeb", "GLOBAL", 1)
@@ -766,6 +769,7 @@ IF ~
 	DO ~
 		SetGlobal("XA_PartyRemovalProcessing", "GLOBAL", 3)
 		SetGlobal("XA_NederlokGreeting", "GLOBAL", 1)
+		SetGlobal("XA_BenceWyrm", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_WYRM_1 //OK
 END
@@ -872,9 +876,6 @@ IF ~~ THEN BEGIN XA_WYRM_8
 	SAY @12 /* ~Very good. I must now return to my duties. I'll see you at the debriefing.~ */
 	
 	IF ~~ THEN
-	DO ~
-		SetGlobal("XA_BenceWyrm", "GLOBAL", 1)
-	~
 	EXIT
 	
 	IF ~
@@ -882,7 +883,6 @@ IF ~~ THEN BEGIN XA_WYRM_8
 	~ THEN
 	DO ~
 		SetGlobal("XA_ToldNederlokNeb", "GLOBAL", 1)
-		SetGlobal("XA_BenceWyrm", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_NebNederlok 
 END

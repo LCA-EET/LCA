@@ -1,45 +1,4 @@
-//{ Journal Entries
 
-	//{ Sex 1
-	IF 
-		Global("XA_LC_Journal_Sex1", "GLOBAL", 1)
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_LC_Journal_Sex1", "GLOBAL", 0)
-			AddJournalEntry(@32, INFO)
-			SetInterrupt(TRUE)
-			Continue()
-	END
-	//}
-	
-	//{ Sex 2
-	IF 
-		Global("XA_LC_Journal_Sex2", "GLOBAL", 1)
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_LC_Journal_Sex2", "GLOBAL", 0)
-			AddJournalEntry(@33, INFO)
-			SetInterrupt(TRUE)
-			Continue()
-	END
-	//}
-	
-	//{ Sex 3
-	IF 
-		Global("XA_LC_Journal_Sex3", "GLOBAL", 1)
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_LC_Journal_Sex3", "GLOBAL", 0)
-			AddJournalEntry(@34, INFO)
-			SetInterrupt(TRUE)
-			Continue()
-	END
-	//}
-
-//}
 
 //{
 	IF
@@ -48,8 +7,8 @@
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_ProficiencyTalk", "GLOBAL", 7)
+			SetGlobal("XA_LC_Journal_ArcheryLesson", "GLOBAL", 1)
 			ActionOverride(Player1, ReallyForceSpellRES("XALCARCH", Myself))
-			AddJournalEntry(@31, INFO)
 			SetInterrupt(TRUE)
 			Continue()
 	END

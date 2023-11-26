@@ -170,11 +170,12 @@ END
 	IF 
 		ActionListEmpty()
 		Global("XA_CanTalk", "LOCALS", 1)
-		OR(4)
+		OR(5)
 			!IsValidForPartyDialogue(Myself)
 			ActuallyInCombat()
 			GlobalGT("XA_ArrivedInUndercity", "GLOBAL", 0)
 			!InParty(Myself)
+			AreaCheck("XACS13")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1459,6 +1460,42 @@ END
 //} End Underdark Check
 
 //{ 18: Event Checks
+
+	//{ Dings Joined
+	IF
+		GlobalLT("XA_LC_DingsCorwin", "GLOBAL", 1)
+		InParty(Myself)
+		PartyHasItem("OHNDINGS")
+		GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_LC_DingsCorwinTimer", "GLOBAL", THREE_DAYS)
+			SetGlobal("XA_LC_DingsCorwin", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+	
+	//{ Dings Interaction 1
+	IF
+		InParty(Myself)
+		PartyHasItem("OHNDINGS")
+		GlobalLT("XA_LC_DingsCorwin", "GLOBAL", 2)
+		!AreaType(DUNGEON)
+		OR(2)
+			GlobalTimerExpired("XA_DingsCorwinTimer", "GLOBAL")
+			Global("XA_LC_DingsDebug", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_DingsDebug", "GLOBAL", 0)
+			SetGlobal("XA_LC_DingsCorwin", "GLOBAL", 2)
+			CreateCreature("XADINGS", [-1.-1], N)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
 
 	//{ Kalah Killed
 	IF
@@ -4459,7 +4496,7 @@ IF
 	Global("XA_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 9)
+		SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 10)
 END
 
 IF 

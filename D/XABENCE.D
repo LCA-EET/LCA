@@ -12,14 +12,22 @@ IF ~~ THEN BEGIN XA_StartDebrief01
 	EXIT
 END
 IF ~
-	Global("XA_BenceWyrm", "GLOBAL", 1)
+	Global("XA_BenceWyrm", "GLOBAL", 2)
 ~ THEN BEGIN XA_BenceWyrm_0
 	SAY @0 /* ~It is good to see the both of you. As Marshal Nederlok said, I will come and get you when it is time to see the Dukes.~*/
 	
 	IF ~~ THEN REPLY @1 /* ~Bence... I wish I could say that I'm glad to see you, but I'm not.~ */
+	DO ~
+		SetGlobal("XA_BenceWyrm", "GLOBAL", 3)
+		SetGlobal("XA_ReturnToBG", "GLOBAL", 1)
+	~
 	GOTO XA_BenceWyrm_1
 	
 	IF ~~ THEN REPLY @2 /* ~Last I recall, you wanted me dead, Bence. I trust this is no longer the case?~ */
+	DO ~
+		SetGlobal("XA_BenceWyrm", "GLOBAL", 3)
+		SetGlobal("XA_ReturnToBG", "GLOBAL", 1)
+	~
 	GOTO XA_BenceWyrm_1
 END
 

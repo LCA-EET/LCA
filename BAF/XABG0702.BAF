@@ -19,3 +19,10 @@ THEN
 		ActionOverride("HARBOR", SetDialog("HARBOR"))
 		Continue()
 END
+
+IF
+	InMyArea("Eltan2")
+THEN
+	RESPONSE #100
+		ActionOverride("Eltan2", DestroySelf())
+END

@@ -27,10 +27,9 @@ THEN
 		ApplySpell("helljon2",WIZARD_HOLD_PERSON)  // Jon Irenicus
 		ForceSpell(Myself,DO_SOME_EFFECTS)  // SPIN657.SPL ()
 END
+
 IF
 	True()
-	InPartyAllowDead("XACORWIN")
-	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 THEN
 	RESPONSE #100
 		CutSceneId("hellspy")  // No such index
@@ -82,63 +81,6 @@ THEN
 		PlaySound("EFF_M21")
 		Wait(1)
 		StartCutScene("XAAcs59a")
-END
-IF
-	True()
-	OR(2)
-		!InPartyAllowDead("XACORWIN")
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-THEN
-	RESPONSE #100
-		CutSceneId("hellspy")  // No such index
-		Wait(7)
-		PlaySound("EFF_M23C")
-		CreateVisualEffectObject("SPROTECT",Myself)
-		Wait(1)
-		SmallWait(7)
-		PlaySound("EFF_M23C")
-		CreateVisualEffectObject("SPROTECT",Myself)
-		Wait(1)
-		CreateVisualEffect("SPFEARE2",[1850.1320])
-		SmallWait(7)
-		ScreenShake([25.25],20)
-		CreateVisualEffect("SPFIREPI",[1970.1213])
-		PlaySound("EFF_M21")
-		SmallWait(5)
-		ActionOverride("helljon2",ReallyForceSpell(Player1,BEHOLDER_BLAST_VISUAL))  // SPIN777.SPL (No such index)
-		SmallWait(5)
-		CreateVisualEffect("SPFEARE2",[1800.1350])
-		SmallWait(5)
-		CreateVisualEffect("SPFIREPI",[2027.1365])
-		PlaySound("EFF_M21")
-		SmallWait(5)
-		ActionOverride("helljon2",ReallyForceSpell(Player1,BEHOLDER_BLAST_VISUAL))  // SPIN777.SPL (No such index)
-		SmallWait(5)
-		CreateVisualEffect("SPFIREPI",[2014.1432])
-		PlaySound("EFF_M21")
-		SmallWait(5)
-		ActionOverride("helljon2",ReallyForceSpell(Player1,BEHOLDER_BLAST_VISUAL))  // SPIN777.SPL (No such index)
-		SmallWait(5)
-		CreateVisualEffectObject("ICRMPARI",Myself)
-		SmallWait(3)
-		ActionOverride("helljon2",ReallyForceSpell(Player1,BEHOLDER_BLAST_VISUAL))  // SPIN777.SPL (No such index)
-		SmallWait(3)
-		CreateVisualEffect("SPFIREPI",[2078.1313])
-		PlaySound("EFF_M21")
-		SmallWait(7)
-		CreateVisualEffect("SPFIREPI",[2097.1400])
-		PlaySound("EFF_M21")
-		SmallWait(7)
-		ReallyForceSpell("helljon2",HOLY_LIGHT_FROM_ABOVE)  // Jon Irenicus
-		ReallyForceSpell(Player1,HOLY_LIGHT_FROM_ABOVE)  // SPIN690.SPL (No such index)
-		Wait(1)
-		ActionOverride("helljon2",DisplayStringHead(Myself,324))  // No! NO! 
-		ActionOverride("helljon2",CreateVisualEffectObject("SPFLSRIN",Myself))
-		Wait(1)
-		ActionOverride("helljon2",CreateVisualEffectObject("SPSTRENH",Myself))
-		PlaySound("EFF_M21")
-		Wait(1)
-		StartCutScene("cut59a")
 END
 
 IF

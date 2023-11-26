@@ -981,7 +981,7 @@ IF
 	Global("XA_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 9)
+		SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 10)
 END
 
 

@@ -31,7 +31,7 @@ IF ~~ THEN BEGIN XA_BadBehavior
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@19, INFO)
+		SetGlobal("XA_LC_Journal_HOW", "GLOBAL", 1)
 	~
 	GOTO XA_GoodBye
 END
@@ -41,7 +41,7 @@ IF ~~ THEN BEGIN XA_NotHappy
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@18, INFO)
+		SetGlobal("XA_LC_Journal_HOW", "GLOBAL", 2)
 	~
 	GOTO XA_GoodBye
 END
@@ -51,8 +51,6 @@ IF ~~ THEN BEGIN XA_GoodBye
 	
 	IF ~~ THEN
 	DO ~
-		ChangeStat("XACORWIN",XP,25000,ADD)
-		ChangeStat(Player1,XP,25000,ADD)
 		SetGlobal("XA_LeaveArea", "LOCALS", 1)
 		EscapeArea()
 	~
@@ -65,10 +63,8 @@ IF ~~ THEN BEGIN XA_GoodBye
 			PartyHasItem("WA2SHIEL")
 	~ THEN
 	DO ~
-		ChangeStat("XACORWIN",XP,25000,ADD)
-		ChangeStat(Player1,XP,25000,ADD)
 		SetGlobal("XA_LeaveArea", "LOCALS", 1)
-		SetGlobal("XA_LC_ArtifactsReturned", "LOCALS", 1)
+		SetGlobal("XA_LC_ArtifactsReturned", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_OneArtifactRecovered
 	
@@ -77,10 +73,8 @@ IF ~~ THEN BEGIN XA_GoodBye
 		PartyHasItem("WA2PLAT")
 	~ THEN
 	DO ~
-		ChangeStat("XACORWIN",XP,25000,ADD)
-		ChangeStat(Player1,XP,25000,ADD)
 		SetGlobal("XA_LeaveArea", "LOCALS", 1)
-		SetGlobal("XA_LC_ArtifactsReturned", "LOCALS", 2)
+		SetGlobal("XA_LC_ArtifactsReturned", "GLOBAL", 2)
 	~
 	EXTERN XACORWIJ XA_TwoArtifactsRecovered
 	
@@ -89,10 +83,8 @@ IF ~~ THEN BEGIN XA_GoodBye
 		PartyHasItem("WA2SHIEL")
 	~ THEN
 	DO ~
-		ChangeStat("XACORWIN",XP,25000,ADD)
-		ChangeStat(Player1,XP,25000,ADD)
 		SetGlobal("XA_LeaveArea", "LOCALS", 1)
-		SetGlobal("XA_LC_ArtifactsReturned", "LOCALS", 2)
+		SetGlobal("XA_LC_ArtifactsReturned", "GLOBAL", 2)
 	~
 	EXTERN XACORWIJ XA_TwoArtifactsRecovered
 	
@@ -101,10 +93,8 @@ IF ~~ THEN BEGIN XA_GoodBye
 		PartyHasItem("WA2SHIEL")
 	~ THEN
 	DO ~
-		ChangeStat("XACORWIN",XP,25000,ADD)
-		ChangeStat(Player1,XP,25000,ADD)
 		SetGlobal("XA_LeaveArea", "LOCALS", 1)
-		SetGlobal("XA_LC_ArtifactsReturned", "LOCALS", 2)
+		SetGlobal("XA_LC_ArtifactsReturned", "GLOBAL", 2)
 	~
 	EXTERN XACORWIJ XA_TwoArtifactsRecovered
 	
@@ -114,10 +104,8 @@ IF ~~ THEN BEGIN XA_GoodBye
 		PartyHasItem("WA2SHIEL")
 	~ THEN
 	DO ~
-		ChangeStat("XACORWIN",XP,25000,ADD)
-		ChangeStat(Player1,XP,25000,ADD)
 		SetGlobal("XA_LeaveArea", "LOCALS", 1)
-		SetGlobal("XA_LC_ArtifactsReturned", "LOCALS", 3)
+		SetGlobal("XA_LC_ArtifactsReturned", "GLOBAL", 3)
 	~
 	EXTERN XACORWIJ XA_AllArtifactsRecovered
 END
@@ -196,37 +184,16 @@ END
 IF ~~ THEN BEGIN XA_ArtifactChain_End
 	SAY @27 /*~On behalf of the museum and the city, thank you. The preservation of such historical artifacts will inspire generations to come.~*/
 	
-	IF ~
-		Global("XA_LC_ArtifactsReturned", "LOCALS", 1)
-	~ THEN REPLY @28  /* ~You're welcome.~*/
+	IF ~~ THEN REPLY @28  /* ~You're welcome.~*/
 	DO ~
-		AddExperienceParty(100000)
-		ReputationInc(1)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-	~
-	GOTO XA_LeaveArea2
-	
-	IF ~
-		Global("XA_LC_ArtifactsReturned", "LOCALS", 2)
-	~ THEN REPLY @28  /* ~You're welcome.~*/
-	DO ~
-		AddExperienceParty(250000)
-		ReputationInc(2)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
-	~
-	GOTO XA_LeaveArea2
-	
-	IF ~
-		Global("XA_LC_ArtifactsReturned", "LOCALS", 3)
-	~ THEN REPLY @28  /* ~You're welcome.~*/
-	DO ~
-		AddExperienceParty(500000)
-		ReputationInc(3)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 3)
+		SetGlobal("XA_LC_Journal_Artifacts", "GLOBAL", 1)
 	~
 	GOTO XA_LeaveArea2
 	
 	IF ~~ THEN REPLY @29  /* ~I paid a fortune for the acquisition. Is there anything you can offer besides gratitude?~ */
+	DO ~
+		SetGlobal("XA_LC_Journal_Artifacts", "GLOBAL", 1)
+	~
 	GOTO XA_WantMore
 END
 
@@ -234,61 +201,10 @@ IF ~~ THEN BEGIN XA_WantMore
 	SAY @30  /*~(Sigh.)~ */
 	=@31 /* ~I'm afraid not. The museum's budget is tightened every year. Give me some time and I'll see what I can do.~*/
 	
-	IF ~
-		Global("XA_LC_ArtifactsReturned", "LOCALS", 1)
-	~ THEN REPLY @33  /* ~I'll not take money from the city's coffers if it cannot afford it. Your gratitude is sufficient, Curator Magda.~*/
-	DO ~
-		AddExperienceParty(100000)
-		ReputationInc(1)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-	~
+	IF ~~ THEN REPLY @33  /* ~I'll not take money from the city's coffers if it cannot afford it. Your gratitude is sufficient, Curator Magda.~*/
 	GOTO XA_LeaveArea2
-	
-	IF ~
-		Global("XA_LC_ArtifactsReturned", "LOCALS", 2)
-	~ THEN REPLY @33  /* ~I'll not take money from the city's coffers if it cannot afford it. Your gratitude is sufficient, Curator Magda.~*/
-	DO ~
-		AddExperienceParty(250000)
-		ReputationInc(2)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
-	~
-	GOTO XA_LeaveArea2
-	
-	IF ~
-		Global("XA_LC_ArtifactsReturned", "LOCALS", 3)
-	~ THEN REPLY @33  /* ~I'll not take money from the city's coffers if it cannot afford it. Your gratitude is sufficient, Curator Magda.~*/
-	DO ~
-		AddExperienceParty(500000)
-		ReputationInc(3)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 3)
-	~
-	GOTO XA_LeaveArea2
-	
-	IF ~
-		Global("XA_LC_ArtifactsReturned", "LOCALS", 1)
-	~ THEN REPLY @32 /* ~Thank you.~*/
-	DO ~
-		AddExperienceParty(50000)
-		SetGlobal("XA_LC_MoneyForArtifacts", "GLOBAL", 1)
-	~
-	GOTO XA_LeaveArea2
-	
-	IF ~
-		Global("XA_LC_ArtifactsReturned", "LOCALS", 2)
-	~ THEN REPLY @32 /* ~Thank you.~*/
-	DO ~
-		AddExperienceParty(125000)
-		SetGlobal("XA_LC_MoneyForArtifacts", "GLOBAL", 1)
-	~
-	GOTO XA_LeaveArea2
-	
-	IF ~
-		Global("XA_LC_ArtifactsReturned", "LOCALS", 3)
-	~ THEN REPLY @32 /* ~Thank you.~*/
-	DO ~
-		AddExperienceParty(250000)
-		SetGlobal("XA_LC_MoneyForArtifacts", "GLOBAL", 1)
-	~
+
+	IF ~~ THEN REPLY @32 /* ~Thank you.~*/
 	GOTO XA_LeaveArea2
 END
 

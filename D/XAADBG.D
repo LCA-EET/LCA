@@ -194,6 +194,59 @@ IF ~
 	~
 	EXIT
 	
+	IF ~~ THEN REPLY @810 /* ~Return to BG Mini Quest - Slavers.~ */
+	DO ~
+		FadeToColor([30.0],0)
+		SetGlobal("XA_ReturnToBG", "GLOBAL", 0)
+		SetGlobal("XA_HaltBG1Script", "GLOBAL", 1)
+		SetGlobal("XA_CorwinSlaverPlot", "GLOBAL", 1)
+		SetGlobal("XA_PartyRemovalProcessing", "GLOBAL", 2)
+
+		ActionOverride(Player1,LeaveAreaLUA("BG0900","",[1628.1456],NW))
+		ActionOverride(Player2,LeaveAreaLUA("BG0900","",[1664.1531],NW))
+		ActionOverride(Player3,LeaveAreaLUA("BG0900","",[1797.1452],NW))
+		ActionOverride(Player4,LeaveAreaLUA("BG0900","",[1719.1544],NW))
+		ActionOverride(Player5,LeaveAreaLUA("BG0900","",[1777.1510],NW))
+		ActionOverride(Player6,LeaveAreaLUA("BG0900","",[1770.1517],NW))
+		ActionOverride("XACORWIN",LeaveAreaLUA("BG0900","",[1694.1423],NW)) 
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @811 /* ~Return to BG Mini Quest - Neb.~ */
+	DO ~
+		FadeToColor([30.0],0)
+		SetGlobal("XA_ReturnToBG", "GLOBAL", 0)
+		SetGlobal("XA_HaltBG1Script", "GLOBAL", 1)
+		SetGlobal("XA_NebDead", "GLOBAL", 1)
+		SetGlobal("XA_PartyRemovalProcessing", "GLOBAL", 2)
+		ActionOverride(Player1,LeaveAreaLUA("BG0900","",[1628.1456],NW))
+		ActionOverride(Player2,LeaveAreaLUA("BG0900","",[1664.1531],NW))
+		ActionOverride(Player3,LeaveAreaLUA("BG0900","",[1797.1452],NW))
+		ActionOverride(Player4,LeaveAreaLUA("BG0900","",[1719.1544],NW))
+		ActionOverride(Player5,LeaveAreaLUA("BG0900","",[1777.1510],NW))
+		ActionOverride(Player6,LeaveAreaLUA("BG0900","",[1770.1517],NW))
+		ActionOverride("XACORWIN",LeaveAreaLUA("BG0900","",[1694.1423],NW)) 
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @811 /* ~Return to BG Mini Quest - Neb & Slavers.~ */
+	DO ~
+		FadeToColor([30.0],0)
+		SetGlobal("XA_ReturnToBG", "GLOBAL", 0)
+		SetGlobal("XA_HaltBG1Script", "GLOBAL", 1)
+		SetGlobal("XA_NebDead", "GLOBAL", 1)
+		SetGlobal("XA_CorwinSlaverPlot", "GLOBAL", 1)
+		SetGlobal("XA_PartyRemovalProcessing", "GLOBAL", 2)
+		ActionOverride(Player1,LeaveAreaLUA("BG0900","",[1628.1456],NW))
+		ActionOverride(Player2,LeaveAreaLUA("BG0900","",[1664.1531],NW))
+		ActionOverride(Player3,LeaveAreaLUA("BG0900","",[1797.1452],NW))
+		ActionOverride(Player4,LeaveAreaLUA("BG0900","",[1719.1544],NW))
+		ActionOverride(Player5,LeaveAreaLUA("BG0900","",[1777.1510],NW))
+		ActionOverride(Player6,LeaveAreaLUA("BG0900","",[1770.1517],NW))
+		ActionOverride("XACORWIN",LeaveAreaLUA("BG0900","",[1694.1423],NW)) 
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @327
 	GOTO XA_ChangeChapter
 	
@@ -4153,6 +4206,12 @@ END
 IF ~~ THEN BEGIN XA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
 	
+	IF ~~ THEN REPLY @813
+	DO ~
+		SetGlobal("XA_LC_DingsDebug", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
 	IF ~~ THEN REPLY @705
 	DO ~
 		SetGlobal("XA_LCA_ProficiencyTalk", "GLOBAL", 1)
@@ -4743,6 +4802,12 @@ IF ~~ THEN BEGIN XA_Menu_AdjustVariables
 	IF ~~ THEN REPLY @158
 	DO ~
 		SetGlobal("EEMetRohma", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @814
+	DO ~
+		SetGlobal("XA_MetRohma", "GLOBAL", 1)
 	~
 	GOTO XA_MainMenu
 	

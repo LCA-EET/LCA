@@ -1,0 +1,169 @@
+
+
+//{ Dings
+IF
+	Global("XA_LC_Journal_Dings", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Dings", "GLOBAL", 0)
+		AddJournalEntry(@0, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Dings2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Dings2", "GLOBAL", 0)
+		AddJournalEntry(@1, INFO)
+		AddXPObject("XACORWIN",25000)
+		AddXPObject(Player1,25000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Sex 1
+IF 
+	Global("XA_LC_Journal_Sex1", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Sex1", "GLOBAL", 0)
+		AddJournalEntry(@2, INFO)
+		AddXPObject("XACORWIN",25000)
+		AddXPObject(Player1,25000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Sex 2
+IF 
+	Global("XA_LC_Journal_Sex2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Sex2", "GLOBAL", 0)
+		AddJournalEntry(@3, INFO)
+		AddXPObject("XACORWIN",50000)
+		AddXPObject(Player1,50000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Sex 3
+IF 
+	Global("XA_LC_Journal_Sex3", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Sex3", "GLOBAL", 0)
+		AddJournalEntry(@4, INFO)
+		AddXPObject("XACORWIN",100000)
+		AddXPObject(Player1,100000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Archery Lesson
+IF 
+	Global("XA_LC_Journal_ArcheryLesson", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_ArcheryLesson", "GLOBAL", 0)
+		AddJournalEntry(@5, INFO)
+		AddXPObject(Player1,10000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Hall of Wonders Orphans
+IF
+	Global("XA_LC_Journal_HOW", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_HOW", "GLOBAL", 0)
+		AddJournalEntry(@6, INFO)
+		AddXPObject("XACORWIN",25000)
+		AddXPObject(Player1,25000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Hall of Wonders Orphans
+IF
+	Global("XA_LC_Journal_HOW", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_HOW", "GLOBAL", 0)
+		AddJournalEntry(@7, INFO)
+		AddXPObject("XACORWIN",25000)
+		AddXPObject(Player1,25000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Returned the Artifacts at HOW
+IF
+	Global("XA_LC_ArtifactsReturned", "GLOBAL", 1)
+	Global("XA_LC_Journal_Artifacts", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Artifacts", "GLOBAL", 0)
+		AddJournalEntry(@8, INFO)
+		AddXPObject("XACORWIN",25000)
+		AddXPObject(Player1,25000)
+		ReputationInc(1)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+
+IF
+	Global("XA_LC_ArtifactsReturned", "GLOBAL", 2)
+	Global("XA_LC_Journal_Artifacts", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Artifacts", "GLOBAL", 0)
+		AddJournalEntry(@8, INFO)
+		AddXPObject("XACORWIN",50000)
+		AddXPObject(Player1,50000)
+		ReputationInc(2)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+
+
+IF
+	Global("XA_LC_ArtifactsReturned", "GLOBAL", 3)
+	Global("XA_LC_Journal_Artifacts", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Artifacts", "GLOBAL", 0)
+		AddJournalEntry(@8, INFO)
+		AddXPObject("XACORWIN",100000)
+		AddXPObject(Player1,100000)
+		ReputationInc(3)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 3)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
