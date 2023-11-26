@@ -42,6 +42,7 @@ THEN
 		CreateItem("XAQUIVER",0,0,0)
 		DropItem("XAQUIVER",[-1.-1])
 		SetGlobal("XA_IncubusDefeated", "GLOBAL", 1)
+		SetGlobal("XA_IncubusQuiver", "GLOBAL", 1)
 		Kill(Myself)		
 		SetInterrupt(TRUE)
 	RESPONSE #33
@@ -50,6 +51,7 @@ THEN
 		CreateItem("XASWORD",0,0,0)
 		DropItem("XASWORD",[-1.-1])
 		SetGlobal("XA_IncubusDefeated", "GLOBAL", 1)
+		SetGlobal("XA_IncubusSword", "GLOBAL", 1)
 		Kill(Myself)		
 		SetInterrupt(TRUE)
 	RESPONSE #33
@@ -58,6 +60,7 @@ THEN
 		CreateItem("XAMSRING",0,0,0)
 		DropItem("XAMSRING",[-1.-1])
 		SetGlobal("XA_IncubusDefeated", "GLOBAL", 1)
+		SetGlobal("XA_IncubusRing", "GLOBAL", 1)
 		Kill(Myself)		
 		SetInterrupt(TRUE)
 END

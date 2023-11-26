@@ -390,7 +390,7 @@ CHAIN
 		== XACORWIJ
 		@15 /* ~Interesting... how many other people or organizations use such devices?~*/
 		== XAALATOS
-		@9 /* ~Many. They're more common than you may think. Not long ago, we sold a batch of older models to that new outfit based out of the old Iron Throne building.~*/
+		@16 /* ~Many. They're more common than you may think. Not long ago, we sold a batch of older models to that new outfit based out of the old Iron Throne building.~*/
 		== XACORWIJ
 		@17 /* ~So, we need to find the cipher key and the machine to decode the message?~*/
 		

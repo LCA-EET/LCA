@@ -11,3 +11,35 @@ THEN
 	RESPONSE #100
 		StartDialog("XADINGS", Player1)
 END
+
+IF
+	GlobalLT("XA_LC_MeowTimerDingsSet", "LOCALS", 1)
+THEN
+	RESPONSE #50
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_LC_MeowTimerDings", "GLOBAL", THREE_ROUNDS)
+		DisplayStringHead(Myself, @0)
+		SetGlobal("XA_LC_MeowTimerDingsSet", "LOCALS", 1)
+		SetInterrupt(TRUE)
+	RESPONSE #50
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_LC_MeowTimerDings", "GLOBAL", THREE_ROUNDS)
+		DisplayStringHead(Myself, @5)
+		SetGlobal("XA_LC_MeowTimerDingsSet", "LOCALS", 1)
+		SetInterrupt(TRUE)
+END
+
+IF 
+	GlobalTimerExpired("XA_LC_MeowTimerDings", "GLOBAL")
+THEN
+	RESPONSE #50
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_LC_MeowTimerDings", "GLOBAL", THREE_ROUNDS)
+		DisplayStringHead(Myself, @0)
+		SetInterrupt(TRUE)
+	RESPONSE #50
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_LC_MeowTimerDings", "GLOBAL", THREE_ROUNDS)
+		DisplayStringHead(Myself, @5)
+		SetInterrupt(TRUE)
+END

@@ -176,6 +176,20 @@ IF ~~ THEN BEGIN XA_RingEnchant3__A
 	GOTO XA_RingEnchantmentDescriptions //OK
 END
 
+IF ~~ THEN BEGIN XA_Note1
+	SAY @55 /* ~Noted.~*/
+	
+	IF ~~ THEN 
+	GOTO XA_RingSecondEnchant
+END
+
+IF ~~ THEN BEGIN XA_Note2
+	SAY @56 /* ~Very good.~*/
+	
+	IF ~~ THEN 
+	GOTO XA_RingThirdEnchant
+END
+
 IF ~~ THEN BEGIN XA_RingEnchantmentDescriptions
 	SAY @27 /* 1. An enchantment to enhance the wearer's movement and attack speed;
 	2. An enchantment to improve the wearer's resistance to magical attacks; 
@@ -191,7 +205,7 @@ IF ~~ THEN BEGIN XA_RingEnchantmentDescriptions
 	DO ~
 		SetGlobal("XA_RingEnchantment1", "GLOBAL", 1)
 	~
-	GOTO XA_RingSecondEnchant
+	GOTO XA_Note1
 	
 	IF ~
 		!Global("XA_RingEnchantment2", "GLOBAL", 1)
@@ -199,7 +213,7 @@ IF ~~ THEN BEGIN XA_RingEnchantmentDescriptions
 	DO ~
 		SetGlobal("XA_RingEnchantment2", "GLOBAL", 1)
 	~
-	GOTO XA_RingSecondEnchant
+	GOTO XA_Note1
 	
 	IF ~
 		!Global("XA_RingEnchantment3", "GLOBAL", 1)
@@ -207,7 +221,7 @@ IF ~~ THEN BEGIN XA_RingEnchantmentDescriptions
 	DO ~
 		SetGlobal("XA_RingEnchantment3", "GLOBAL", 1)
 	~
-	GOTO XA_RingSecondEnchant
+	GOTO XA_Note1
 	
 	IF ~
 		!Global("XA_RingEnchantment4", "GLOBAL", 1)
@@ -215,7 +229,7 @@ IF ~~ THEN BEGIN XA_RingEnchantmentDescriptions
 	DO ~
 		SetGlobal("XA_RingEnchantment4", "GLOBAL", 1)
 	~
-	GOTO XA_RingSecondEnchant
+	GOTO XA_Note1
 	
 	IF ~
 		!Global("XA_RingEnchantment5", "GLOBAL", 1)
@@ -223,7 +237,7 @@ IF ~~ THEN BEGIN XA_RingEnchantmentDescriptions
 	DO ~
 		SetGlobal("XA_RingEnchantment5", "GLOBAL", 1)
 	~
-	GOTO XA_RingSecondEnchant
+	GOTO XA_Note1
 	
 END
 
@@ -236,7 +250,7 @@ IF ~~ THEN BEGIN XA_RingSecondEnchant
 	DO ~
 		SetGlobal("XA_RingEnchantment1", "GLOBAL", 1)
 	~
-	GOTO XA_RingThirdEnchant
+	GOTO XA_Note2
 	
 	IF ~
 		!Global("XA_RingEnchantment2", "GLOBAL", 1)
@@ -244,7 +258,7 @@ IF ~~ THEN BEGIN XA_RingSecondEnchant
 	DO ~
 		SetGlobal("XA_RingEnchantment2", "GLOBAL", 1)
 	~
-	GOTO XA_RingThirdEnchant
+	GOTO XA_Note2
 	
 	IF ~
 		!Global("XA_RingEnchantment3", "GLOBAL", 1)
@@ -252,7 +266,7 @@ IF ~~ THEN BEGIN XA_RingSecondEnchant
 	DO ~
 		SetGlobal("XA_RingEnchantment3", "GLOBAL", 1)
 	~
-	GOTO XA_RingThirdEnchant
+	GOTO XA_Note2
 	
 	IF ~
 		!Global("XA_RingEnchantment4", "GLOBAL", 1)
@@ -260,7 +274,7 @@ IF ~~ THEN BEGIN XA_RingSecondEnchant
 	DO ~
 		SetGlobal("XA_RingEnchantment4", "GLOBAL", 1)
 	~
-	GOTO XA_RingThirdEnchant
+	GOTO XA_Note2
 	
 	IF ~
 		!Global("XA_RingEnchantment5", "GLOBAL", 1)
@@ -268,7 +282,7 @@ IF ~~ THEN BEGIN XA_RingSecondEnchant
 	DO ~
 		SetGlobal("XA_RingEnchantment5", "GLOBAL", 1)
 	~
-	GOTO XA_RingThirdEnchant
+	GOTO XA_Note2
 END
 
 IF ~~ THEN XA_RingThirdEnchant

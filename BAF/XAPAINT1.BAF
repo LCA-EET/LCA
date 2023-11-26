@@ -1,4 +1,44 @@
 IF
+	InMyArea(Player1)
+	OR(4)
+		PartyHasItem("XASWORD")
+		PartyHasItem("XACHICK")
+		PartyHasItem("XAMSRING")
+		PartyHasItem("XAQUIVER")
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, DestroyItem("XASWORD"))
+		ActionOverride(Player1, DestroyItem("XACHICK"))
+		ActionOverride(Player1, DestroyItem("XAMSRING"))
+		ActionOverride(Player1, DestroyItem("XAQUIVER"))
+		
+		ActionOverride(Player2, DestroyItem("XASWORD"))
+		ActionOverride(Player2, DestroyItem("XACHICK"))
+		ActionOverride(Player2, DestroyItem("XAMSRING"))
+		ActionOverride(Player2, DestroyItem("XAQUIVER"))
+		
+		ActionOverride(Player3, DestroyItem("XASWORD"))
+		ActionOverride(Player3, DestroyItem("XACHICK"))
+		ActionOverride(Player3, DestroyItem("XAMSRING"))
+		ActionOverride(Player3, DestroyItem("XAQUIVER"))
+		
+		ActionOverride(Player4, DestroyItem("XASWORD"))
+		ActionOverride(Player4, DestroyItem("XACHICK"))
+		ActionOverride(Player4, DestroyItem("XAMSRING"))
+		ActionOverride(Player4, DestroyItem("XAQUIVER"))
+		
+		ActionOverride(Player5, DestroyItem("XASWORD"))
+		ActionOverride(Player5, DestroyItem("XACHICK"))
+		ActionOverride(Player5, DestroyItem("XAMSRING"))
+		ActionOverride(Player5, DestroyItem("XAQUIVER"))
+		
+		ActionOverride(Player6, DestroyItem("XASWORD"))
+		ActionOverride(Player6, DestroyItem("XACHICK"))
+		ActionOverride(Player6, DestroyItem("XAMSRING"))
+		ActionOverride(Player6, DestroyItem("XAQUIVER"))
+END
+
+IF
 	Global("XA_LyrielRez", "GLOBAL", 1)
 THEN
 	RESPONSE #100

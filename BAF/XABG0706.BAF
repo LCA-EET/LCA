@@ -1,4 +1,12 @@
 IF
+	InMyArea("banditcy")
+THEN
+	RESPONSE #100
+		ActionOverride("banditcy", DestroySelf())
+		Continue()
+END
+
+IF
 	GlobalTimerExpired("XA_LyrielSingTimer", "GLOBAL")
 	GlobalGT("XA_ReturnToBG", "GLOBAL", 0)
 THEN
@@ -11,6 +19,46 @@ THEN
 		Continue()
 END
 
+IF
+	PartyHasItem("XAQUIVER")
+	!Global("XA_IncubusQuiver", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, DestroyItem("XAQUIVER"))
+		ActionOverride(Player2, DestroyItem("XAQUIVER"))
+		ActionOverride(Player3, DestroyItem("XAQUIVER"))
+		ActionOverride(Player4, DestroyItem("XAQUIVER"))
+		ActionOverride(Player5, DestroyItem("XAQUIVER"))
+		ActionOverride(Player6, DestroyItem("XAQUIVER"))
+END
+
+IF
+	PartyHasItem("XAMSRING")
+	!Global("XA_IncubusRing", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, DestroyItem("XAMSRING"))
+		ActionOverride(Player2, DestroyItem("XAMSRING"))
+		ActionOverride(Player3, DestroyItem("XAMSRING"))
+		ActionOverride(Player4, DestroyItem("XAMSRING"))
+		ActionOverride(Player5, DestroyItem("XAMSRING"))
+		ActionOverride(Player6, DestroyItem("XAMSRING"))
+END
+
+IF
+	PartyHasItem("XASWORD")
+	!Global("XA_IncubusSword", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, DestroyItem("XASWORD"))
+		ActionOverride(Player2, DestroyItem("XASWORD"))
+		ActionOverride(Player3, DestroyItem("XASWORD"))
+		ActionOverride(Player4, DestroyItem("XASWORD"))
+		ActionOverride(Player5, DestroyItem("XASWORD"))
+		ActionOverride(Player6, DestroyItem("XASWORD"))
+END
+
+/*
 IF
 	Global("XA_IncubusQuiver", "GLOBAL", 1)
 THEN
@@ -34,17 +82,6 @@ THEN
 END
 
 IF
-	Global("XA_IncubusGoose", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_IncubusGoose", "GLOBAL", 2)
-		GiveItemCreate("XACHICK", Player1,1,0,0)
-		ActionOverride(Player1, SetItemFlags("XACHICK", IDENTIFIED,TRUE))
-		AddJournalEntry(@4, INFO)
-		Continue()
-END
-
-IF
 	Global("XA_IncubusRing", "GLOBAL", 1)
 THEN
 	RESPONSE #100
@@ -54,6 +91,19 @@ THEN
 		AddJournalEntry(@3, INFO)
 		Continue()
 END
+
+IF
+	Global("XA_IncubusGoose", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_IncubusGoose", "GLOBAL", 2)
+		GiveItemCreate("XACHICK", Player1,1,0,0)
+		ActionOverride(Player1, SetItemFlags("XACHICK", IDENTIFIED,TRUE))
+		AddJournalEntry(@4, INFO)
+		Continue()
+END
+*/
+
 
 IF
 	AreaCheck("BG0706")

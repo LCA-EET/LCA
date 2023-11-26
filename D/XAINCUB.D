@@ -102,10 +102,6 @@ IF ~
 	~ THEN 
 	DO ~
 		SetGlobal("XA_ParleyAttack", "GLOBAL", 0)
-		ActionOverride(Player1, DestroyItem("XASWORD"))
-		ActionOverride(Player1, DestroyItem("XACHICK"))
-		ActionOverride(Player1, DestroyItem("XAMSRING"))
-		ActionOverride(Player1, DestroyItem("XAQUIVER"))
 		StartCutSceneMode()
 		StartCutScene("XAPENT")
 		DestroySelf()
@@ -125,10 +121,6 @@ IF ~
 	~ THEN REPLY @55 /*~The amulet, and our freedom, in exchange for the sword.~*/
 	DO ~
 		SetGlobal("XA_IncubusSword", "GLOBAL", 1)
-		ActionOverride(Player1, DestroyItem("XASWORD"))
-		ActionOverride(Player1, DestroyItem("XACHICK"))
-		ActionOverride(Player1, DestroyItem("XAMSRING"))
-		ActionOverride(Player1, DestroyItem("XAQUIVER"))
 	~
 	GOTO XA_GiveAmuletToDemon_M
 	
@@ -138,10 +130,6 @@ IF ~
 	~ THEN REPLY @55 /* ~The amulet, and our freedom, in exchange for the sword.~*/
 	DO ~
 		SetGlobal("XA_IncubusSword", "GLOBAL", 1)
-		ActionOverride(Player1, DestroyItem("XASWORD"))
-		ActionOverride(Player1, DestroyItem("XACHICK"))
-		ActionOverride(Player1, DestroyItem("XAMSRING"))
-		ActionOverride(Player1, DestroyItem("XAQUIVER"))
 	~
 	GOTO XA_GiveAmuletToDemon_F
 	
@@ -151,10 +139,6 @@ IF ~
 	~ THEN REPLY @89 /*~The amulet, and our freedom, in exchange for the quiver.~*/
 	DO ~
 		SetGlobal("XA_IncubusQuiver", "GLOBAL", 1)
-		ActionOverride(Player1, DestroyItem("XASWORD"))
-		ActionOverride(Player1, DestroyItem("XACHICK"))
-		ActionOverride(Player1, DestroyItem("XAMSRING"))
-		ActionOverride(Player1, DestroyItem("XAQUIVER"))
 	~
 	GOTO XA_GiveAmuletToDemon_M
 	
@@ -164,10 +148,6 @@ IF ~
 	~ THEN REPLY @89 /*~The amulet, and our freedom, in exchange for the quiver.~*/
 	DO ~
 		SetGlobal("XA_IncubusQuiver", "GLOBAL", 1)
-		ActionOverride(Player1, DestroyItem("XASWORD"))
-		ActionOverride(Player1, DestroyItem("XACHICK"))
-		ActionOverride(Player1, DestroyItem("XAMSRING"))
-		ActionOverride(Player1, DestroyItem("XAQUIVER"))
 	~
 	GOTO XA_GiveAmuletToDemon_F
 	
@@ -177,10 +157,6 @@ IF ~
 	~ THEN REPLY @56 /* ~The amulet, and our freedom, in exchange for the hen.~*/
 	DO ~
 		SetGlobal("XA_IncubusGoose", "GLOBAL", 1)
-		ActionOverride(Player1, DestroyItem("XASWORD"))
-		ActionOverride(Player1, DestroyItem("XACHICK"))
-		ActionOverride(Player1, DestroyItem("XAMSRING"))
-		ActionOverride(Player1, DestroyItem("XAQUIVER"))
 	~
 	GOTO XA_GiveAmuletToDemon_M
 	
@@ -190,10 +166,6 @@ IF ~
 	~ THEN REPLY @56 /* ~The amulet, and our freedom, in exchange for the ring.~ */
 	DO ~
 		SetGlobal("XA_IncubusGoose", "GLOBAL", 1)
-		ActionOverride(Player1, DestroyItem("XASWORD"))
-		ActionOverride(Player1, DestroyItem("XACHICK"))
-		ActionOverride(Player1, DestroyItem("XAMSRING"))
-		ActionOverride(Player1, DestroyItem("XAQUIVER"))
 	~
 	GOTO XA_GiveAmuletToDemon_F
 	
@@ -203,10 +175,6 @@ IF ~
 	~ THEN REPLY @57 /* ~The amulet, and our freedom, in exchange for the ring.~ */
 	DO ~
 		SetGlobal("XA_IncubusRing", "GLOBAL", 1)
-		ActionOverride(Player1, DestroyItem("XASWORD"))
-		ActionOverride(Player1, DestroyItem("XACHICK"))
-		ActionOverride(Player1, DestroyItem("XAMSRING"))
-		ActionOverride(Player1, DestroyItem("XAQUIVER"))
 	~
 	GOTO XA_GiveAmuletToDemon_M
 	
@@ -216,10 +184,6 @@ IF ~
 	~ THEN REPLY @57 /* ~The amulet, and our freedom, in exchange for the ring.~ */
 	DO ~
 		SetGlobal("XA_IncubusRing", "GLOBAL", 1)
-		ActionOverride(Player1, DestroyItem("XASWORD"))
-		ActionOverride(Player1, DestroyItem("XACHICK"))
-		ActionOverride(Player1, DestroyItem("XAMSRING"))
-		ActionOverride(Player1, DestroyItem("XAQUIVER"))
 	~
 	GOTO XA_GiveAmuletToDemon_F
 	
@@ -838,21 +802,12 @@ IF ~~ THEN BEGIN XA_DontWantTreasure
 	SAY @59 /*~You are a fool! Begone!~ */
 	
 	IF ~~ THEN
-	DO ~
-		ActionOverride(Player1, DestroyItem("XASWORD"))
-		ActionOverride(Player1, DestroyItem("XACHICK"))
-		ActionOverride(Player1, DestroyItem("XAMSRING"))
-		ActionOverride(Player1, DestroyItem("XAQUIVER"))
-	~
 	EXIT
 	
 	IF ~
 		!Global("XA_DemonDebug", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		ActionOverride(Player1, DestroyItem("XASWORD"))
-		ActionOverride(Player1, DestroyItem("XACHICK"))
-		ActionOverride(Player1, DestroyItem("XAQUIVER"))
 		StartCutSceneMode()
 		StartCutScene("XAPENT")
 	~

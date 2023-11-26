@@ -98,6 +98,7 @@ THEN
 END
 
 IF 
+	InMyArea(Player1)
 	Global("XA_ReturnToBG", "GLOBAL", 1)
 	InMyArea("XA800M")
 	InMyArea("XA800W")
