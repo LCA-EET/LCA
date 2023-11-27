@@ -567,9 +567,9 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 		fj_vertex_1     = 312 + (717 << 16)
 		fj_vertex_2     = 311 + (672 << 16)
 		fj_vertex_3     = 269 + (677 << 16)
-		fj_info_point_strref = RESOLVE_STR_REF(@67)
 		STR_VAR
 		fj_structure_type = region
+		fj_reg_script = ~XA616~
 		fj_name = ~XA0616~
 	END
 
@@ -585,9 +585,9 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 		fj_vertex_1     = 566 + (672 << 16)
 		fj_vertex_2     = 566 + (628 << 16)
 		fj_vertex_3     = 523 + (634 << 16)
-		fj_info_point_strref = RESOLVE_STR_REF(@67)
 		STR_VAR
 		fj_structure_type = region
+		fj_reg_script = ~XA616~
 		fj_name = ~XA0616B~
 	END
 	//}

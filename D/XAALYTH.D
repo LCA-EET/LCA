@@ -83,6 +83,7 @@ IF ~~ THEN BEGIN XA_End3
 	IF ~~ THEN REPLY @35 /* ~Thank you.~ */
 	DO ~
 		SetGlobal("XA_SavedElfsong", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Elfsong3", "GLOBAL", 1)
 		ReputationInc(1)
 	~
 	EXIT
@@ -97,6 +98,7 @@ IF ~~ THEN BEGIN XA_End1
 	DO ~
 		GiveItemCreate("BDBELT13", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("BDBELT13", IDENTIFIED,TRUE))
+		SetGlobal("XA_LC_Journal_Elfsong2", "GLOBAL", 1)
 		ReputationInc(2)
 	~
 	GOTO XA_ThankYou
@@ -233,6 +235,7 @@ IF ~~ THEN BEGIN XA_AgreeToInvestigate
 	IF ~~ THEN 
 	DO ~
 		SetGlobal("XA_HelpAlyth", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Elfsong1", "GLOBAL", 1)
 	~
 	EXIT
 END

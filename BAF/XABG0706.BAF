@@ -1,8 +1,18 @@
 IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
 	InMyArea("banditcy")
 THEN
 	RESPONSE #100
 		ActionOverride("banditcy", DestroySelf())
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("Merchant")
+THEN
+	RESPONSE #100
+		ActionOverride("Merchant", DestroySelf())
 		Continue()
 END
 

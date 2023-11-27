@@ -4,11 +4,13 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
-# v1.0.9 2023-11-XX
+# v1.0.9 2023-11-26
 * Changed Gift of the Demon from a +5 Longsword to a +5 Bastard Sword.
 * Improved handling of the Incubus' gifts after the encounter at Elfsong.
 * Small improvements to Halbazzer's ring enchantment dialog.
 * Changed the description of the Golden Hen to more accurately capture how it works.
+* Completing the Trouble at the Elfsong quest now gives an appropriate amount of experience.
+* The map note for Corwin's Home is now active during the Return to Baldur's Gate mini-quest.
 
 # v1.0.8 2023-11-25
 * Added a new mini-quest, A Pet for Rohma.

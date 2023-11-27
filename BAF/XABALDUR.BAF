@@ -309,7 +309,8 @@ END
 
 	IF
 		Global("XA_ReturnToBG", "GLOBAL", 1)
-		OR(6)
+		OR(7)
+			AreaCheck("BG0706") // Elfsong L2
 			AreaCheck("XAPAINT1")
 			AreaCheck("XAG1")
 			AreaCheck("XAG2A")
@@ -331,6 +332,7 @@ END
 		!AreaCheck("XAG3")
 		!AreaCheck("XADEMSAN")
 		!AreaCheck("XACSHOW")
+		!AreaCheck("BG0706")
 		Global("XA_HaltRBGTimers", "GLOBAL", 1)
 	THEN
 		RESPONSE #100

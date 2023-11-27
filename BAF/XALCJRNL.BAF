@@ -167,3 +167,56 @@ THEN
 		Continue()
 END
 //}
+
+//{ Elfsong 1
+IF 
+	Global("XA_LC_Journal_Elfsong1", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Elfsong1", "GLOBAL", 0)
+		AddJournalEntry(@11, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Elfsong 2
+IF 
+	Global("XA_LC_Journal_Elfsong2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Elfsong2", "GLOBAL", 0)
+		EraseJournalEntry(@11)
+		AddJournalEntry(@12, QUEST_DONE)
+		AddXPObject(Player1,50000)
+		AddXPObject(Player2,50000)
+		AddXPObject(Player3,50000)
+		AddXPObject(Player4,50000)
+		AddXPObject(Player5,50000)
+		AddXPObject(Player6,50000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Elfsong 3
+IF 
+	Global("XA_LC_Journal_Elfsong3", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Elfsong3", "GLOBAL", 0)
+		EraseJournalEntry(@11)
+		AddJournalEntry(@13, QUEST_DONE)
+		AddXPObject(Player1,10000)
+		AddXPObject(Player2,10000)
+		AddXPObject(Player3,10000)
+		AddXPObject(Player4,10000)
+		AddXPObject(Player5,10000)
+		AddXPObject(Player6,10000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
