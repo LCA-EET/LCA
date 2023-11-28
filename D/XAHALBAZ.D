@@ -366,7 +366,7 @@ IF ~~ THEN BEGIN XA_RingEnchantEnd_NoImbue
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@42, INFO)
+		SetGlobal("XA_LC_Journal_HalbazzerRing", "GLOBAL", 1)
 		SetGlobal("XA_RingEnchanted", "GLOBAL", 1)
 	~
 	EXIT
@@ -378,7 +378,7 @@ IF ~~ THEN BEGIN XA_RingEnchantEnd_Imbue
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@42, INFO)
+		SetGlobal("XA_LC_Journal_HalbazzerRing", "GLOBAL", 1)
 		SetGlobal("XA_RingEnchanted", "GLOBAL", 2)
 	~
 	EXIT

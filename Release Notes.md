@@ -4,7 +4,7 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
-# v1.0.9 2023-11-26
+# v1.0.9 2023-11-27
 * Changed Gift of the Demon from a +5 Longsword to a +5 Bastard Sword.
 * Improved handling of the Incubus' gifts after the encounter at Elfsong.
 * Small improvements to Halbazzer's ring enchantment dialog.

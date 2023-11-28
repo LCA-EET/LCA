@@ -1,11 +1,10 @@
 BEGIN ~XABRILLA~
 
 IF ~
-	IsGabber(Player1)
 	!Global("XA_TalkedToBrilla", "GLOBAL", 1)
 ~ THEN BEGIN XA_GreetPlayer
 	SAY @175 /* ~Oh it's you! You're <CHARNAME>, the <PRO_MANWOMAN> who saved my precious Skie!~*/
-	= @176 /* ~(She gives you a hug.)~*/
+
 	= @177 /* ~Thank you!~ */
 
 	IF ~
@@ -96,7 +95,7 @@ IF ~~ THEN BEGIN XA_GreetPlayer2
 	
 	IF ~
 		!Global("XA_TalkedToMelkor", "GLOBAL", 1)
-	~ THEN REPLY @193 /* ~I'll talk to him and see what can be done for Skie.~ */
+	~ THEN REPLY @192 /* ~I'll talk to him and see what can be done for Skie.~ */
 	GOTO XA_WillTalkToMelkor
 	
 	IF ~

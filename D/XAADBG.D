@@ -4206,6 +4206,12 @@ END
 IF ~~ THEN BEGIN XA_Menu_AdjustVariables 
 	SAY @28 /* ~What adjustment would you like me to make?~ */
 	
+	IF ~~ THEN REPLY @815
+	DO ~
+		SetGlobal("XA_HelpAldeth", "GLOBAL", 2)
+	~
+	GOTO XA_MainMenu
+	
 	IF ~~ THEN REPLY @813
 	DO ~
 		SetGlobal("XA_LC_DingsDebug", "GLOBAL", 1)

@@ -25,20 +25,22 @@
 @24 = ~I don't understand - what does he think I can do for him?~
 @25 = ~Isn't it obvious? You're the hero of Baldur's Gate! Not just Baldur's Gate, but the entire Sword Coast! Now that you've been exonerated, he and others must expect that you will one day earn a seat on the Council. Having a friend in the Council can do wonders for someone looking to expand their businesses.~ 
 @26 = ~Now, back to this ring...~
-@27 = ~1. An enchantment to enhance the wearer's movement and attack speed;
-2. An enchantment to improve the wearer's resistance to magical attacks; 
-3. An enchantment to improve the wearer's resilience against physical attacks; 
-4. An enchantment to increase the vitality of the wearer; and 
-5. An enchantment to make the wearer immune to mental effects, such as charm, confusion and the like.
+@27 = ~I can add a total of three of the following enchantments to the ring: 
+An increase to the wearer's movement and attack speed;
+Improvements to the wearer's defense against magical attacks;
+Raising the wearer's resilience against physical attacks;
+Boosts to the wearer's health and vitality; 
+And finally, a boon to the wearer's resilience to mental effects, such as charm, confusion, and the like; 
 
-I can apply three enchantments to the ring. What is the first enchantment you'd like to add?~
+What is the first enchantment you'd like to add?~
+
 @28 = ~What is the second enchantment you'd like to add?~
 @29 = ~And the last enchantment?~
-@30 = ~Enchantment 1, please.~
-@31 = ~Enchantment 2, please.~
-@32 = ~Enchantment 3, please.~
-@33 = ~Enchantment 4, please.~
-@34 = ~Enchantment 5, please.~
+@30 = ~The movement and attack speed enchantment.~
+@31 = ~The magical defense enchantment.~
+@32 = ~The physical resilience enchantment.~
+@33 = ~The life and vitality enchantment.~
+@34 = ~The mental barrier enchantment.~
 @35 = ~Very well. Return to me in one week. The enchantments will be applied by then.~
 @36 = ~I see. Tell me, what enchantments can you apply to the ring?~
 @37 = ~Listen... keep this quiet. I was told by Jhasso that you could enchant a ring for me.~
@@ -48,7 +50,7 @@ I can apply three enchantments to the ring. What is the first enchantment you'd 
 @41 = ~What've you got?~
 @42 = ~The Engagement Ring
 Halbazzer, the proprietor of Sorcerous Sundries, agreed to enchant the engagement ring that I plan to give to Schael. It will take him about a week to apply the enchantments. She will love the ring - I know it.~
-@43 = ~Very good. There's just one more matter to discuss.~
+@43 = ~Excellent. There's just one more matter to discuss.~
 @44 = ~What is it?~
 @45 = ~As the child of a deity, you are a being of immense power... if you so choose, you can use a portion of your divine life force to boost the power of the enchantments to *truly* extraordinary levels.~
 @46 = ~Why am I not surprised.~

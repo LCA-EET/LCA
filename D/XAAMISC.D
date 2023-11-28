@@ -517,6 +517,13 @@
 	~
 		SetGlobal("XA_AldethFF","GLOBAL",1)
 	~
+	
+	ADD_TRANS_ACTION ALDETH
+	BEGIN 27 END
+	BEGIN 0 END
+	~
+		SetGlobal("XA_HelpAldeth","GLOBAL",2)
+	~
 	//}
 	
 	
@@ -3054,6 +3061,7 @@ APPEND MERLEA
 	IF ~
 		Global("XA_ReturnToBG", "GLOBAL", 1)
 		RandomNum(6,2)
+		Global("XA_HelpAldeth","GLOBAL",2)
 		!AreaCheck("BG0128")
 		!Dead("Aldeth")
 	~ THEN BEGIN XAA1

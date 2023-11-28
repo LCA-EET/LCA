@@ -220,3 +220,17 @@ THEN
 		Continue()
 END
 //}
+
+//{ Halbazzer's Ring Enchantment
+IF
+	Global("XA_LC_Journal_HalbazzerRing", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_HalbazzerRing", "GLOBAL", 0)
+		AddJournalEntry(@14, QUEST_DONE)
+		AddXPObject(Player1, 15000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
