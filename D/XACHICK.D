@@ -33,6 +33,7 @@ IF ~~ THEN BEGIN XA_TakeChicken
 	IF ~~ THEN REPLY @4 /*~Yes.~*/
 	DO ~
 		GiveItemCreate("XACHICK", LastTalkedToBy(Myself),1,0,0)
+		SetGlobal("XA_PickUpGoose", "GLOBAL", 1)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XACHICK", IDENTIFIED,TRUE))
 		DestroySelf()
 	~
