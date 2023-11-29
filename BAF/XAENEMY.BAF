@@ -1,7 +1,10 @@
 IF
-	!Global("XA_SetAllegiance", "LOCALS", 1)
+	GlobalLT("XA_SetAllegiance", "LOCALS", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_SetAllegiance", "LOCALS", 1)
+		SetInterrupt(FALSE)
 		Enemy()
+		SetGlobal("XA_SetAllegiance", "LOCALS", 1)
+		SetInterrupt(TRUE)
+		Continue()
 END
