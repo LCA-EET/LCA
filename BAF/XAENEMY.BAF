@@ -1,10 +1,7 @@
-IF
-	GlobalLT("XA_SetAllegiance", "LOCALS", 1)
+IF 
+	!Allegiance(Myself, ENEMY)
 THEN
 	RESPONSE #100
-		SetInterrupt(FALSE)
 		Enemy()
-		SetGlobal("XA_SetAllegiance", "LOCALS", 1)
-		SetInterrupt(TRUE)
 		Continue()
 END
