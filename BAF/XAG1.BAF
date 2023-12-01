@@ -37,7 +37,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_CompletedG1", "GLOBAL", 1)
-		DisplayStringHead(Myself, @1)
+		DisplayStringHead(Player1, @1)
 		Wait(3)
 		SetGlobal("XA_DemonSpeak", "GLOBAL", 1)
 		SetInterrupt(TRUE)

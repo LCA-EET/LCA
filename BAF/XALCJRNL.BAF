@@ -234,3 +234,51 @@ THEN
 		Continue()
 END
 //}
+
+
+//{ Completed Painting 1
+IF
+	Global("XA_CompletedG1", "GLOBAL", 1)
+	GlobalLT("XA_LC_RewardG1", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_RewardG1", "GLOBAL", 1)
+		AddXPObject(Player1, 5000)
+		AddXPObject(Player2, 5000)
+		AddXPObject(Player3, 5000)
+		AddXPObject(Player4, 5000)
+		AddXPObject(Player5, 5000)
+		AddXPObject(Player6, 5000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Completed Painting 2
+IF
+	Global("XA_CompletedG2", "GLOBAL", 1)
+	GlobalLT("XA_LC_RewardG2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_RewardG2", "GLOBAL", 1)
+		AddXPObject(Player1, 5000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Completed Painting 3
+IF
+	Global("XA_CompletedG3", "GLOBAL", 1)
+	GlobalLT("XA_LC_RewardG3", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_RewardG3", "GLOBAL", 1)
+		AddXPObject(Player1, 5000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
