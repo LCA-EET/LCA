@@ -5,7 +5,7 @@
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
 # v1.0.9b 2023-11-30
-* Modified Corwin's script to block banter initiation during the conclusion of the Return to Baldur's Gate quest. Banters are re-enabled once the quest is completed.~
+* Modified Corwin's script to block banter initiation during the conclusion of the Return to Baldur's Gate quest. Banters are re-enabled once the quest is completed.
 * Fixed a bug in the Dragonspear painting that caused Caelar's second form to refrain from attacking the player, even though she was hostile.
 * Fixed the spelling of 'Doppelganger', and other minor improvements.
 
