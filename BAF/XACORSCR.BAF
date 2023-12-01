@@ -8,6 +8,27 @@
 			////DisplayStringHead(Myself, ~CI4 Script Blocking~)
 			NoAction()
 	END
+	
+	IF
+		Global("XA_ReturnToBG", "GLOBAL", 1)
+		GlobalLT("XA_LC_BanterBlock_RBG", "LOCALS", 1)
+		OR(4)
+			AreaCheck("XAKIDNAP")
+			AreaCheck("XADUCAL")
+			AreaCheck("XADUCAL2")
+			AreaCheck("XADUC3")
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_BanterBlock_RBG", "LOCALS", 1)
+	END
+	
+	IF
+		Global("XA_ReturnToBG", "GLOBAL", 2)
+		Global("XA_LC_BanterBlock_RBG", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_BanterBlock_RBG", "LOCALS", 0)
+	END
 //}
 
 
@@ -4715,6 +4736,7 @@ END
 //{ NBI Select
 IF
 	ActionListEmpty()
+	GlobalLT("XA_LC_BanterBlock_RBG", "LOCALS", 0)
 	Global("XA_CanTalk", "LOCALS", 1)
 	GlobalTimerExpired("XA_BanterTimer", "LOCALS")
 	Global("XA_Banter_NextInteraction", "LOCALS", 0)
