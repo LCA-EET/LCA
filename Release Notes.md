@@ -4,6 +4,10 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v1.0.9a 2023-11-29
+* Fixed a typo in one of the Return to Baldur's Gate dialogs.
+* Fixed an issue where two of the crusaders in the Dragonspear painting were not hostile toward the player's party.
+
 # v1.0.9 2023-11-27
 * Changed Gift of the Demon from a +5 Longsword to a +5 Bastard Sword.
 * Improved handling of the Incubus' gifts after the encounter at Elfsong.
