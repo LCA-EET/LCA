@@ -5065,6 +5065,12 @@ IF ~~ THEN BEGIN XA_Menu_AdjustVariables
 	~
 	GOTO XA_MainMenu
 	
+	IF ~~ THEN REPLY @816 /*XA_LC_StartedInBG2 to 1*/
+	DO ~
+		SetGlobal("XA_LC_StartedInBG2", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
 	IF ~~ THEN REPLY @26 /* ~Go back to the prior menu.~ */
 	GOTO XA_MainMenu
 END
