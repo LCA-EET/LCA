@@ -188,6 +188,14 @@ APPEND ~PLAYER1~
 		IF ~~ THEN REPLY @168 /*  ~Open Debugger.~ */
 		GOTO XA_Debug
 		
+		IF ~
+			Global("XA_LC_StartedInBG2", "GLOBAL", 1)
+		~ THEN REPLY @211  /* ~Access BG2 Initial Configuration Menu.~ */
+		DO ~
+			SetGlobal("XAAssist", "GLOBAL", 2)
+		~
+		GOTO XA_InitialConfig
+		
 		IF ~~ THEN REPLY @160 /* ~Exit.~ */
 		GOTO XA_Exit
 	END

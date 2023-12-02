@@ -1,5 +1,6 @@
 //{ Item Creation, when starting in BG2
 IF
+	InMyArea("XACORWIN")
 	Global("XA_LC_StartedInBG2", "GLOBAL", 1)
 	GlobalLT("XA_LC_ItemCreate", "GLOBAL", 1)
 THEN
@@ -13,15 +14,12 @@ THEN
 		GiveItemCreate("AROW02", "XACORWIN", 80, 0, 0)
 		GiveItemCreate("AROW08", "XACORWIN", 40, 0, 0)
 		GiveItemCreate("AROW11", "XACORWIN", 40, 0, 0)
-		GiveItemCreate("POTN52", "XACORWIN", 3, 0, 0)
-		GiveItemCreate("POTN08", "XACORWIN", 5, 0, 0)
-		GiveItemCreate("POTN37", "XACORWIN", 2, 0, 0)
-		GiveItemCreate("POTN14", "XACORWIN", 1, 0, 0)
 		SetGlobal("XA_LC_ItemCreate", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 END
 
 IF
+	InMyArea("XACORWIN")
 	Global("XA_LC_ItemCreate", "GLOBAL", 1)
 THEN
 	RESPONSE #100
@@ -34,6 +32,10 @@ THEN
 		XEquipItem("AROW02", "XACORWIN", SLOT_AMMO0, EQUIP)
 		XEquipItem("AROW08", "XACORWIN", SLOT_AMMO1, EQUIP)
 		XEquipItem("AROW11", "XACORWIN", SLOT_AMMO2, EQUIP)
+		ActionOverride("XACORWIN", SetItemFlags("AROW02", IDENTIFIED, TRUE))
+		ActionOverride("XACORWIN", SetItemFlags("AROW08", IDENTIFIED, TRUE))
+		ActionOverride("XACORWIN", SetItemFlags("AROW11", IDENTIFIED, TRUE))
+		ActionOverride("XACORWIN", SetItemFlags("HALB02", IDENTIFIED, TRUE))
 		SetGlobal("XA_LC_ItemCreate", "GLOBAL", 2)
 		SetInterrupt(TRUE)
 END

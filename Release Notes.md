@@ -4,6 +4,9 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v1.0.10 2023-12-02
+* Added an initial configuration menu for players that are starting their game in BG2. The menu will automatically appear a few moments after beginning the game in Irenicus' stronghold. The menu can be re-accessed, if necessary, through the LCA Assistant. The menu won't appear if the player began their game in BG1 or SoD.
+
 # v1.0.9b 2023-11-30
 * Modified Corwin's script to block banter initiation during the conclusion of the Return to Baldur's Gate quest. Banters are re-enabled once the quest is completed.
 * Fixed a bug in the Dragonspear painting that caused Caelar's second form to refrain from attacking the player, even though she was hostile.
