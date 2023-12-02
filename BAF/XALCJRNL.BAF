@@ -1,4 +1,67 @@
+//{ Tianna
 
+
+IF
+	Global("XA_LC_Journal_Tianna1", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Tianna1", "GLOBAL", 0)
+		AddJournalEntry(@15, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Tianna2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Tianna2", "GLOBAL", 0)
+		AddJournalEntry(@16, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Tianna3", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Tianna3", "GLOBAL", 0)
+		EraseJournalEntry(@15)
+		EraseJournalEntry(@16)
+		AddJournalEntry(@17, QUEST_DONE)
+		AddXPObject(Player1,10000)
+		AddXPObject(Player2,10000)
+		AddXPObject(Player3,10000)
+		AddXPObject(Player4,10000)
+		AddXPObject(Player5,10000)
+		AddXPObject(Player6,10000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Tianna4", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Tianna4", "GLOBAL", 0)
+		EraseJournalEntry(@15)
+		EraseJournalEntry(@16)
+		AddJournalEntry(@18, QUEST_DONE)
+		AddXPObject(Player1,5000)
+		AddXPObject(Player2,5000)
+		AddXPObject(Player3,5000)
+		AddXPObject(Player4,5000)
+		AddXPObject(Player5,5000)
+		AddXPObject(Player6,5000)
+		SetInterrupt(TRUE)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
 
 //{ Dings
 IF

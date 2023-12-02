@@ -9,10 +9,7 @@ IF ~
 	DO ~
 		ReputationInc(1)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		EraseJournalEntry(@45)
-		EraseJournalEntry(@46)
-		EraseJournalEntry(@70)
-		AddexperienceParty(100000)
+		SetGlobal("XA_LC_Journal_Tianna3", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT
@@ -159,11 +156,7 @@ IF ~~ THEN BEGIN XA_TiannaLeave
 	IF ~~ THEN REPLY @63 /* ~I will. Good-bye, Tianna.~*/
 	DO ~
 		ReputationInc(1)
-		EraseJournalEntry(@45)
-		EraseJournalEntry(@46)
-		EraseJournalEntry(@70)
-		AddJournalEntry(@80, QUEST_DONE)
-		AddexperienceParty(100000)
+		SetGlobal("XA_LC_Journal_Tianna3", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT
@@ -173,11 +166,7 @@ IF ~~ THEN BEGIN XA_KilledJasper
 	SAY @41 /* ~You WHAT? Oh - oh n-no. I need to get out of the city. His associates will think that I had him killed.. oh... my..~ */
 	IF ~~ THEN
 	DO ~
-		EraseJournalEntry(@45)
-		EraseJournalEntry(@46)
-		EraseJournalEntry(@70)
-		AddJournalEntry(@82, QUEST_DONE)
-		AddexperienceParty(25000)
+		SetGlobal("XA_LC_Journal_Tianna4", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT
@@ -190,11 +179,7 @@ IF ~~ THEN BEGIN XA_GoodBye
 	DO ~
 		ReputationInc(1)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		EraseJournalEntry(@45)
-		EraseJournalEntry(@46)
-		EraseJournalEntry(@70)
-		AddJournalEntry(@81, QUEST_DONE)
-		AddexperienceParty(100000)
+		SetGlobal("XA_LC_Journal_Tianna3", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT
@@ -213,11 +198,7 @@ IF ~~ THEN BEGIN XA_GoodByeRomance
 	DO ~
 		ReputationInc(1)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		EraseJournalEntry(@45)
-		EraseJournalEntry(@46)
-		EraseJournalEntry(@70)
-		AddJournalEntry(@80, QUEST_DONE)
-		AddexperienceParty(100000)
+		SetGlobal("XA_LC_Journal_Tianna3", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT
@@ -273,9 +254,6 @@ IF ~~ THEN BEGIN XA_StillWontHelp
 	SAY @32 /* ~I *sob* u-understand. Please, if you reconsider, come and *sob* see me.~ */
 	
 	IF ~~ THEN 
-	DO ~
-		AddJournalEntry(@79, QUEST)
-	~
 	EXIT
 END
 
@@ -285,7 +263,7 @@ IF ~~ THEN BEGIN XA_HelpTianna
 	IF ~~ THEN 
 	DO ~
 		SetGlobal("XA_HelpTianna", "GLOBAL", 1)
-		AddJournalEntry(@45,QUEST)
+		SetGlobal("XA_LC_Journal_Tianna1", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -296,7 +274,7 @@ IF ~~ THEN BEGIN XA_CorwinHelpTianna
 	IF ~~ THEN 
 	DO ~
 		SetGlobal("XA_HelpTianna", "GLOBAL", 1)
-		AddJournalEntry(@70,QUEST)
+		SetGlobal("XA_LC_Journal_Tianna2", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -325,10 +303,7 @@ IF ~~ THEN BEGIN XA_HugSchael
 	DO ~
 		ReputationInc(1)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		EraseJournalEntry(@45)
-		EraseJournalEntry(@46)
-		EraseJournalEntry(@70)
-		AddexperienceParty(100000)
+		SetGlobal("XA_LC_Journal_Tianna3", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT

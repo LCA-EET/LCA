@@ -234,7 +234,7 @@ IF ~~ THEN BEGIN XA_AskedAboutDemon
 	IF ~
 		!Global("XA_AskedAboutPatrons", "GLOBAL", 1)
 		Global("XA_AlythIntro", "GLOBAL", 1)
-	~ THEN REPLY @92 /* ~When I spoke with Alyth, proprietor of the Elfsong, she told me that three of her regulars had gone missing. Do you know anything about what happened to them?~*/
+	~ THEN REPLY @91 /* ~When I spoke with Alyth, proprietor of the Elfsong, she told me that three of her regulars had gone missing. Do you know anything about what happened to them?~*/
 	DO ~
 		AddJournalEntry(@93, INFO)
 	~
@@ -265,7 +265,7 @@ IF ~~ THEN BEGIN XA_AskedAboutGuardians
 	IF ~
 		!Global("XA_AskedAboutPatrons", "GLOBAL", 1)
 		Global("XA_AlythIntro", "GLOBAL", 1)
-	~ THEN REPLY @92 /* ~When I spoke with Alyth, proprietor of the Elfsong, she told me that three of her regulars had gone missing. Do you know anything about what happened to them?~*/
+	~ THEN REPLY @91 /* ~When I spoke with Alyth, proprietor of the Elfsong, she told me that three of her regulars had gone missing. Do you know anything about what happened to them?~*/
 	DO ~
 		AddJournalEntry(@93, INFO)
 	~

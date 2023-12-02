@@ -2665,6 +2665,18 @@ EXTEND_BOTTOM LOBAR 0
 	EXTERN XACORWIJ XA_CorwinLobar
 END
 
+EXTEND_BOTTOM LOBAR 8
+	IF ~
+		IsValidForPartyDialog("XACORWIN")
+		!Global("XA_CorwinLobarTianna", "GLOBAL", 1)
+		!Global("XA_TalkedToTianna", "GLOBAL", 1)
+	~ THEN
+	DO ~
+		SetGlobal("XA_CorwinLobarTianna", "GLOBAL", 1)
+	~
+	EXTERN XACORWIJ XA_CorwinLobar
+END
+
 APPEND LOBAR
 	IF ~
 		IsGabber("XACORWIN")
