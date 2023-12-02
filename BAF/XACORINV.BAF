@@ -1,3 +1,9 @@
+IF
+	Global("XA_LC_StartedInBG2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
 
 IF
 	Global("XA_LC_TakeCorwinGear", "GLOBAL", 4)

@@ -9,6 +9,93 @@
 APPEND ~PLAYER1~
 
 	IF ~
+		Global("XA_LC_InitialConfig", "GLOBAL", 1)
+	~ THEN BEGIN XA_InitialConfig
+		SAY @199 /*~Hello, and thank you for installing the LCA mod. Because you are starting this game from Baldur's Gate 2, and not from BG1 or SoD, there are a couple of configuration concerns that need to be resolved. It will only take a moment.~*/
+		
+		IF ~~ THEN REPLY @200 /*Continue.*/
+		DO ~
+			SetGlobal("XA_LC_InitialConfig", "GLOBAL", 2)
+		~
+		GOTO XA_InitialConfig2
+	END
+	
+	IF ~~ THEN BEGIN XA_InitialConfig2
+		SAY @201 /*~Great, let's begin. Would you like to proceed as though <CHARNAME> was in a romance with Corwin at the end of SoD?~*/
+		
+		IF ~~ THEN REPLY @206 /* Yes */
+		DO ~
+			SetGlobal("XA_CorwinContinue", "GLOBAL", 2)
+		~
+		GOTO XA_InitialConfig3
+		
+		IF ~~ THEN REPLY @207 /* No. */
+		DO ~
+			SetGlobal("XA_CorwinContinue", "GLOBAL", 1)
+		~
+		GOTO XA_InitialConfig3
+	END
+	
+	IF ~~ THEN BEGIN XA_InitialConfig3
+		SAY @202 /*~Next question. Would you like to proceed as though Corwin was with the party in Avernus?~*/
+		
+		IF ~~ THEN REPLY @206 /* Yes */
+		DO ~
+			SetGlobal("XA_CorwinWentToAvernus", "GLOBAL", 1)
+		~
+		GOTO XA_InitialConfig4
+		
+		IF ~~ THEN REPLY @207 /* No. */
+		GOTO XA_InitialConfig4
+	END
+	
+	IF ~~ THEN BEGIN XA_InitialConfig4
+		SAY @203 /*~Almost done. Will you proceed as though Corwin witnessed an honourable duel between the player and Ashatiel?~*/
+		
+		IF ~~ THEN REPLY @206 /* Yes */
+		DO ~
+			SetGlobal("XA_CorwinWitnessedDuel", "GLOBAL", 1)
+		~
+		GOTO XA_InitialConfig5
+		
+		IF ~~ THEN REPLY @207 /* No. */
+		GOTO XA_InitialConfig5
+	END
+
+	IF ~~ THEN BEGIN XA_InitialConfig5
+		SAY @208 /*~Concerning Caelar Argent, do you want to proceed as though she was left alive in Avernus?~*/
+		
+		IF ~~ THEN REPLY @206 /* Yes */
+		DO ~
+			SetGlobal("XA_CaelarStayedInAvernus","GLOBAL",1)
+		~
+		GOTO XA_InitialConfig6
+		
+		IF ~~ THEN REPLY @207 /* No. */
+		GOTO XA_InitialConfig6
+	END
+	
+	IF ~~ THEN BEGIN XA_InitialConfig6
+		SAY @204 /* ~Last question. At the conclusion of SoD, did <CHARNAME> leave Baldur's Gate peacefully, or did <PRO_HESHE> fight <PRO_HISHER> way through the sewers?~  */
+		
+		IF ~~ THEN REPLY @209 /* ~<CHARNAME> was exiled.~ */
+		DO ~
+			SetGlobal("bd_player_exiled", "GLOBAL", 1)
+		~
+		GOTO XA_InitialConfig_End
+		
+		IF ~~ THEN REPLY @210 /* ~<CHARNAME> fought the Flaming Fist and escaped through the tunnels.~ */
+		GOTO XA_InitialConfig_End
+	END
+	
+	IF ~~ THEN BEGIN XA_InitialConfig_End
+		SAY @205 /* ~That's all! Thanks for your patience, and enjoy!~ */
+		
+		IF ~~ THEN
+		EXIT
+	END
+	
+	IF ~
 		Global("XA_OdrenDebug", "GLOBAL", 1)
 	~ THEN BEGIN XA_OdrenDebug
 		SAY @194
