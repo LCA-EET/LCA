@@ -1,4 +1,44 @@
-
+//{ Determine which game the player started in
+	IF
+		GlobalLT("XA_LC_StartedInBG1", "GLOBAL", 1)
+		AreaCheck("BG2600")
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_StartedInBG1", "GLOBAL", 1)
+			Continue()
+	END
+	
+	IF
+		GlobalLT("XA_LC_StartedInBG1", "GLOBAL", 1)
+		GlobalLT("XA_LC_StartedInSoD", "GLOBAL", 1)
+		AreaCheck("BG0100")
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_StartedInSoD", "GLOBAL", 1)
+			Continue()
+	END
+	
+	IF
+		GlobalLT("XA_LC_StartedInBG1", "GLOBAL", 1)
+		GlobalLT("XA_LC_StartedInSoD", "GLOBAL", 1)
+		GlobalLT("XA_LC_StartedInBG2", "GLOBAL", 1)
+		AreaCheck("AR0602")
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_StartedInBG2", "GLOBAL", 1)
+			SetGlobalTimer("XA_LC_InitialConfigTimer", "GLOBAL", THREE_ROUNDS)
+			Continue()
+	END
+	
+	IF
+		GlobalLT("XA_LC_InitialConfig", "GLOBAL", 1)
+		GlobalTimerExpired("XA_LC_InitialConfigTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_InitialConfig", "GLOBAL", 1)
+			ActionOverride(Player1, StartDialog
+	END
+//}
 
 //{
 	IF
