@@ -18,20 +18,9 @@ THEN
 		ActionOverride("Container 3", DestroyItem("SCRL1K"))
 		ActionOverride("Container 3", DestroyItem("SCRL3A"))
 		ActionOverride("Container 3", DestroyItem("SCRL3C"))
-		ActionOverride("Container 3", CreateItem("XALEDGER",1,0,0))
-		ActionOverride("Container 3", CreateItem("MISC07",1986,0,0))
-		ActionOverride("Container 3", SetItemFlags("XALEDGER", IDENTIFIED,TRUE))
 		CreateCreature("XAWVMER3", [600.440], N)
 		CreateCreature("XAWVMER1", [500.760], E)
 		CreateCreature("XAWVGRD2", [770.415], W)
 		Continue()
 END
 
-IF
-	Global("XA_ReturnToBG", "GLOBAL", 1)
-	GlobalLT("XA_LC_Container3Lock", "BG0615", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_LC_Container3Lock", "BG0615", 1)
-		ActionOverride("Container 3", DestroySelf())
-END

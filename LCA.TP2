@@ -553,6 +553,30 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	END
 	//}
 	
+	//{ 
+	COPY_EXISTING ~BG0615.ARE~ ~override~
+	LPF fj_are_structure
+		INT_VAR
+		fj_type 		= 2
+		fj_box_left		= 724
+		fj_box_top		= 779
+		fj_box_right	= 791
+		fj_box_bottom	= 861
+		fj_cursor_idx	= 22
+		fj_alt_x		= 760
+		fj_alt_y		= 822
+		fj_flags		= 1024
+		fj_vertex_0     = 724 + (807 << 16)
+		fj_vertex_1     = 791 + (779 << 16)
+		fj_vertex_2     = 791 + (834 << 16)
+		fj_vertex_3     = 724 + (861 << 16)
+		STR_VAR
+		fj_structure_type = region
+		fj_name = ~XAP0614~
+		fj_reg_script = ~XAP0614~
+	END
+	//}
+	
 	//{ Baldur's Gate Docks
 	COPY_EXISTING ~BG1200.ARE~ ~override~
 	LPF fj_are_structure
