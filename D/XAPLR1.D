@@ -94,6 +94,35 @@ APPEND ~PLAYER1~
 		IF ~~ THEN
 		EXIT
 	END
+
+	//{ Ledger, BG0614 / XAP0614
+	IF ~
+		Global("XA_LC_StoleLedger", "GLOBAL", 1)
+	~ THEN BEGIN XA_LC_Alcove
+		SAY @212  /* ~(The painting depicts a fire-breathing dragon. Strange... it is slightly askew, and you can make out what appears to be a small alcove behind the lower left corner of the painting. Investigate?)~*/
+		
+		IF ~~ THEN REPLY @206  /* ~Yes.~*/
+		GOTO XA_LC_TakeLedger
+		
+		IF ~~ THEN REPLY @207  /* ~No.~*/
+		DO ~
+			SetGlobal("XA_LC_StoleLedger", "GLOBAL", 0)
+		~
+		EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_LC_TakeLedger
+		SAY @213  /* ~(Carefully, you tilt the painting further, so that you can more easily access the alcove. Within the alcove you find a book, which you place into your pack. Before leaving, you gently slide the painting back down so that the alcove is completely concealed.)~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_LC_StoleLedger", "GLOBAL", 2)
+			GiveItemCreate("XALEDGER", Player1, 0,0,0)
+			SetItemFlags("XALEDGER", IDENTIFIED,TRUE)
+		~
+		EXIT
+	END
+	//}
 	
 	IF ~
 		Global("XA_OdrenDebug", "GLOBAL", 1)
