@@ -5,6 +5,9 @@ IF~
 ~ THEN BEGIN XA_Greet2 
 	SAY @7 /* ~Please enter, and enjoy the works within.~ */
 	
+	IF ~~ THEN
+	EXIT
+	
 	IF ~
 		PartyHasItem("XAFARSEE")
 		!Global("XA_GaveFarseer", "GLOBAL", 1)

@@ -203,7 +203,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_Journal_Artifacts", "GLOBAL", 0)
-		AddJournalEntry(@8, INFO)
+		AddJournalEntry(@9, INFO)
 		AddXPObject("XACORWIN",50000)
 		AddXPObject(Player1,50000)
 		ReputationInc(2)
@@ -221,7 +221,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_Journal_Artifacts", "GLOBAL", 0)
-		AddJournalEntry(@8, INFO)
+		AddJournalEntry(@10, INFO)
 		AddXPObject("XACORWIN",100000)
 		AddXPObject(Player1,100000)
 		ReputationInc(3)
