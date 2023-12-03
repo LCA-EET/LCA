@@ -12,6 +12,7 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
+		ClearAllActions()
 		StorePartyLocations()
 		ZoomLock(TRUE)
 		FadeToColor([30.0],0)
