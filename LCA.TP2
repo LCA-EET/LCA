@@ -554,7 +554,7 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	//}
 	
 	//{ 
-	COPY_EXISTING ~BG0614.ARE~ ~override~
+	COPY_EXISTING ~BG0615.ARE~ ~override~
 	LPF fj_are_structure
 		INT_VAR
 		fj_type 		= 2
