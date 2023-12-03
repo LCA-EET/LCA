@@ -186,7 +186,11 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_Journal_Artifacts", "GLOBAL", 0)
-		AddJournalEntry(@8, INFO)
+		EraseJournalEntry(@21)
+		EraseJournalEntry(@22)
+		EraseJournalEntry(@23)
+		EraseJournalEntry(@24)
+		AddJournalEntry(@8, QUEST_DONE)
 		AddXPObject("XACORWIN",25000)
 		AddXPObject(Player1,25000)
 		ReputationInc(1)
@@ -203,7 +207,11 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_Journal_Artifacts", "GLOBAL", 0)
-		AddJournalEntry(@9, INFO)
+		EraseJournalEntry(@21)
+		EraseJournalEntry(@22)
+		EraseJournalEntry(@23)
+		EraseJournalEntry(@24)
+		AddJournalEntry(@9, QUEST_DONE)
 		AddXPObject("XACORWIN",50000)
 		AddXPObject(Player1,50000)
 		ReputationInc(2)
@@ -221,7 +229,11 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_Journal_Artifacts", "GLOBAL", 0)
-		AddJournalEntry(@10, INFO)
+		EraseJournalEntry(@21)
+		EraseJournalEntry(@22)
+		EraseJournalEntry(@23)
+		EraseJournalEntry(@24)
+		AddJournalEntry(@10, QUEST_DONE)
 		AddXPObject("XACORWIN",100000)
 		AddXPObject(Player1,100000)
 		ReputationInc(3)
@@ -298,7 +310,6 @@ THEN
 END
 //}
 
-
 //{ Completed Painting 1
 IF
 	Global("XA_CompletedG1", "GLOBAL", 1)
@@ -367,6 +378,61 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_Journal_DarkCircumstances", "GLOBAL", 0)
 		AddJournalEntry(@20, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Returning the Stolen Artifacts
+IF
+	Global("XA_LC_Journal_ArtifactsQuest", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_ArtifactsQuest", "GLOBAL", 0)
+		AddJournalEntry(@21, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Returning the Stolen Artifacts - 1
+IF
+	Global("XA_LC_Journal_Artifacts_Sword", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Artifacts_Sword", "GLOBAL", 2)
+		AddXPObject(Player1, 5000)
+		AddJournalEntry(@22, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Returning the Stolen Artifacts - 2
+IF
+	Global("XA_LC_Journal_Artifacts_Plate", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Artifacts_Plate", "GLOBAL", 2)
+		AddXPObject(Player1, 5000)
+		AddJournalEntry(@23, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Returning the Stolen Artifacts - 3
+IF
+	Global("XA_LC_Journal_Artifacts_Shield", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Artifacts_Shield", "GLOBAL", 2)
+		AddXPObject(Player1, 5000)
+		AddJournalEntry(@24, QUEST)
 		SetInterrupt(TRUE)
 		Continue()
 END

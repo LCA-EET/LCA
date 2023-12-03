@@ -10676,17 +10676,11 @@ IF ~~ THEN BEGIN XA_CorwinArtifacts_Stolen
 	IF ~
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @1824 /*~Agreed. Let's bring these historical artifacts home, where they belong.~*/
-	DO ~
-		AddJournalEntry(@1826, INFO)
-	~
 	GOTO XA_CorwinArtifacts_Stolen_End
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @1824 /*~Agreed. Let's bring these historical artifacts home, where they belong.~*/
-	DO ~
-		AddJournalEntry(@1826, INFO)
-	~
 	GOTO XA_CorwinArtifacts_Stolen_End_R
 	
 END
@@ -10712,6 +10706,9 @@ IF ~~ THEN BEGIN XA_CorwinArtifacts_Stolen_End
 	SAY @1825 /*~Thank you, <CHARNAME>.~ */
 	
 	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_Journal_ArtifactsQuest", "GLOBAL", 1)
+	~
 	EXIT
 END
 
@@ -10719,6 +10716,9 @@ IF ~~ THEN BEGIN XA_CorwinArtifacts_Stolen_End_R
 	SAY @1832 /*~Thank you, love.~ */
 	
 	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_Journal_ArtifactsQuest", "GLOBAL", 1)
+	~
 	EXIT
 END
 

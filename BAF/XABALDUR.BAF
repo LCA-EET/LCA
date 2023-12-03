@@ -40,7 +40,7 @@
 	END
 //}
 
-//{
+//{ Proficiency Talk
 	IF
 		Global("XA_ProficiencyTalk", "GLOBAL", 6)
 	THEN
@@ -70,6 +70,7 @@
 //}
 
 //{ Kanaglym Dream
+
 	IF
 		GlobalLT("XA_KanaDreamTimerSet", "GLOBAL",1)
 		Global("XA_ClearedKanaglym", "GLOBAL",1)
@@ -83,6 +84,7 @@
 			Continue()
 	END
 //}
+
 //{ Hexxat Fight - LCA
 
 	//{ Corwin / Hexxat Leave
@@ -719,6 +721,39 @@ END
 
 //{ Events
 
+	//{ Recovered Sword of Balduran
+	IF
+		PartyHasItem("WA2S1H")
+		GlobalLT("XA_LC_Journal_Artifacts_Sword", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_Journal_Artifacts_Sword", "GLOBAL", 1)
+			Continue()
+	END
+	//}
+	
+	//{ Recovered Shield of Balduran
+	IF
+		PartyHasItem("WA2SHIEL")
+		GlobalLT("XA_LC_Journal_Artifacts_Shield", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_Journal_Artifacts_Shield", "GLOBAL", 1)
+			Continue()
+	END
+	//}
+	
+	//{ Recovered Plate of Balduran
+	IF
+		PartyHasItem("WA2PLAT")
+		GlobalLT("XA_LC_Journal_Artifacts_Plate", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_Journal_Artifacts_Plate", "GLOBAL", 1)
+			Continue()
+	END
+	//}
+	
 	//{ Kalah Killed
 	IF
 		ActionListEmpty()
