@@ -33,5 +33,5 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_Container3Lock", "BG0615", 1)
-		Lock("Container 3")
+		ActionOverride("Container 3", DestroySelf())
 END
