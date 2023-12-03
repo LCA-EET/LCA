@@ -125,6 +125,9 @@ IF ~~ THEN BEGIN XA_NederlokSlaverPlotEnd1
 		SetGlobal("XA_NederlokVirgil", "GLOBAL", 3)
 	~
 	GOTO XA_NederlokSlaverPlotEnd2
+	
+	IF ~~ THEN REPLY @129 /*~Not as of yet, no.~*/
+	GOTO XA_JobOffer
 END
 
 IF ~~ THEN BEGIN XA_JobOffer
@@ -134,6 +137,9 @@ IF ~~ THEN BEGIN XA_JobOffer
 	GOTO XA_JobOffer2
 	
 	IF ~~ THEN REPLY @100 /* ~Thanks, but I'm not interested.~ */
+	GOTO XA_JobOffer2
+	
+	IF ~~ THEN REPLY @130 /*~I'm not exactly what you'd consider law enforcement material.~*/
 	GOTO XA_JobOffer2
 END
 
@@ -160,27 +166,15 @@ END
 IF ~~ THEN BEGIN XA_NederlokSlaverPlotEnd2
 	SAY @89 /* ~The two of you have been back for less than a day and have already made a difference. You make a great team.~*/
 	
-	IF ~
-		!Global("XA_Ask_VirgilWinston", "LOCALS", 1)
-	~ THEN REPLY @90 /* ~What's going to happen to Virgil and Lord Winston?~*/
-	DO ~
-		SetGlobal("XA_Ask_VirgilWinston", "LOCALS", 1)
-	~
-	GOTO XA_VirgilWinston
-	
-	IF ~
-		!Global("XA_Ask_Refugees", "LOCALS", 1)
-	~ THEN REPLY @94 /* ~What about the refugees that were sold into slavery?~ */
-	DO ~
-		SetGlobal("XA_Ask_Refugees", "LOCALS", 1)
-	~
-	GOTO XA_Refugees
+	COPY_TRANS XANEDERL XA_JobOffer2
 END
 
 IF ~~ THEN BEGIN XA_Refugees
 	SAY @95 /* ~Well, now that we can decode the manifests, we'll work with the appropriate authorities in Athkatla, Calimshan, and other cities to repatriate the refugees, and arrest the slavers who purchased them.~ */
 	
-	IF ~~ THEN REPLY @102 /* ~I see. I'll leave you to your work, then.~  */
+	IF ~
+		Global("XA_NederlokMedal", "GLOBAL", 1)
+	~ THEN REPLY @102 /* ~I see. I'll leave you to your work, then.~  */
 	GOTO XA_NederlokSlaverPlotEnd3
 	
 	IF ~
@@ -202,7 +196,9 @@ IF ~~ THEN BEGIN XA_VirgilWinston
 	
 	= @92 /* ~As for Winston, he has many friends and connections within the city. He will certainly be punished, though I suspect not as severely as his crimes warrant.~ */
 	
-	IF ~~ THEN REPLY @102 /* ~I see. I'll leave you to your work, then.~  */
+	IF ~
+		Global("XA_NederlokMedal", "GLOBAL", 1)
+	~ THEN REPLY @102 /* ~I see. I'll leave you to your work, then.~  */
 	GOTO XA_NederlokSlaverPlotEnd3
 	
 	IF ~
