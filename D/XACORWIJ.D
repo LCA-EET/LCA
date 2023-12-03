@@ -6139,7 +6139,7 @@ IF ~~ THEN BEGIN XA_SoDAnxiety6
 		Global("bd_player_exiled","global",0)
 	~ THEN REPLY @1321 /* ~I look forward to it.~ */
 	DO ~
-		AddJournalEntry(@1320, INFO)
+		SetGlobal("XA_LC_Journal_DarkCircumstances", "GLOBAL", 2)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	EXIT
@@ -6148,7 +6148,7 @@ IF ~~ THEN BEGIN XA_SoDAnxiety6
 		Global("bd_player_exiled","global",1)
 	~ THEN REPLY @1321 /* ~I look forward to it.~ */
 	DO ~
-		AddJournalEntry(@1434, INFO)
+		SetGlobal("XA_LC_Journal_DarkCircumstances", "GLOBAL", 1)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	EXIT

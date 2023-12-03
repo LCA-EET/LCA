@@ -345,3 +345,29 @@ THEN
 		Continue()
 END
 //}
+
+//{ Dark Circumstances - Exile
+IF
+	Global("XA_LC_Journal_DarkCircumstances", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_DarkCircumstances", "GLOBAL", 0)
+		AddJournalEntry(@19, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Dark Circumstances - Escape
+IF
+	Global("XA_LC_Journal_DarkCircumstances", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_DarkCircumstances", "GLOBAL", 0)
+		AddJournalEntry(@20, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
