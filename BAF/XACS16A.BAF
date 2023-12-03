@@ -4,6 +4,7 @@ THEN
 	RESPONSE #100
 		StartCutSceneMode()
 		CutSceneId(Player1)
+		ClearAllActions()
 		FadeToColor([30.0],0)
 		Wait(3)
 		//[200.375]

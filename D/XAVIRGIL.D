@@ -255,7 +255,7 @@ CHAIN XACORWIJ XA_TakeIntoCustodyChain2
 	== XAVIRGIL
 	@32 /* ~W-where did you find that! You aren't supposed to - ~*/
 	== XACORWIJ
-	@23 /* ~Shut it! Lying to an officer during the course of an investigation is a serious crime. Lie to me again and I promise you'll spend the rest of your days eating food from a straw! Am I clear?!~*/
+	@22 /* ~Shut it! Lying to an officer during the course of an investigation is a serious crime. Lie to me again and I promise you'll spend the rest of your days eating food from a straw! Am I clear?!~*/
 	== XAVIRGIL
 	@34 /* ~Y-yes officer...~*/
 	== XACORWIJ

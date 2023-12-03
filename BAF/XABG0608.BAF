@@ -18,6 +18,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("XA_CreateNPCS_0608_Kent", "BG0608", 1)
 		CreateCreature("KENT", [380.309], W)
+		ActionOverride("KENT", ChangeAIScript("", CLASS))
 		Continue()
 END
 
