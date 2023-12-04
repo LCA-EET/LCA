@@ -4,13 +4,13 @@ IF ~
 	AreaCheck("BG0607")
 	Global("XA_VirgilInCustody", "GLOBAL", 1)
 	InPartySlot(LastTalkedToBy, 0)
-	!Global("XA_VirgilJailTalk", "GLOBAL", 1)
+	Global("XA_VirgilCellTalk", "GLOBAL", 1)
 ~ THEN BEGIN XA_InJail2
 	SAY @52 /* ~Oh, it's you. The 'hero'. I bet you're glad to see me in here.~ */
 	
 	IF ~~ THEN REPLY @53 /* ~I'm not. The overwhelming hopelessness that you're feeling now... I wouldn't wish it on anyone.~*/
 	DO ~
-		SetGlobal("XA_VirgilJailTalk", "GLOBAL", 1)
+		SetGlobal("XA_VirgilCellTalk", "GLOBAL", 2)
 	~
 	GOTO XA_Hopelessness
 	
@@ -18,7 +18,7 @@ IF ~
 		Gender(Player1, MALE)
 	~ THEN REPLY @54 /*  ~It's what you deserve. Don't do the crime if you can't do the time.~ */
 	DO ~
-		SetGlobal("XA_VirgilJailTalk", "GLOBAL", 1)
+		SetGlobal("XA_VirgilCellTalk", "GLOBAL", 2)
 	~
 	GOTO XA_GoToHell_M
 	
@@ -26,7 +26,7 @@ IF ~
 		!Gender(Player1, MALE)
 	~ THEN REPLY @54 /*  ~It's what you deserve. Don't do the crime if you can't do the time.~ */
 	DO ~
-		SetGlobal("XA_VirgilJailTalk", "GLOBAL", 1)
+		SetGlobal("XA_VirgilCellTalk", "GLOBAL", 2)
 	~
 	GOTO XA_GoToHell_F
 END
