@@ -292,11 +292,4 @@ CHAIN XACORWIJ XA_TakeIntoCustodyChain
 	=@24 /* ~The Flaming Fist, the Council, shopkeepers, temples, everyone looked the other way! They were thrilled that the refugees were gone - no one even cared enough to ask what we did with them until you showed up! They had to have known... they had to.~*/
 	== XACORWIJ
 	@25 /* ~Come with us to the Flaming Fist headquarters. We need you to sign a sworn statement. Once that's over with, you'll be taken into custody.~*/
-	== XAVIRGIL 
-	@26 /* ~(Sigh.) Fine... but.. I'll only sign if I'm promised immunity from prosecution.~*/
-	== XACORWIJ
-	@27 /* ~That's up to Marshal Nederlok to decide. Come with us - now.~*/
-	DO ~
-		StartCutscene("XACS16a")
-	~
-EXIT
+END XAVIRGIL XA_ConfrontVirgil4

@@ -103,6 +103,7 @@ IF ~
 	DO ~
 		SetGlobal("XA_LC_Journal_SlaverEnd", "GLOBAL", 1)
 		SetGlobal("XA_RefugeeQuestComplete", "GLOBAL", 1)
+		SetGlobal("XA_NederlokVirgil", "GLOBAL", 3)
 		ReputationInc(1)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
