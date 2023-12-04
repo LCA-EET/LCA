@@ -45,6 +45,9 @@ IF ~
 		Global("XA_BGSlaverPlot", "GLOBAL", 1)
 		!Global("XA_AskedAlatosAboutSlavers", "GLOBAL", 1)
 	~ THEN
+	DO ~
+		SetGlobal("XA_AskedAlatosAboutSlavers", "GLOBAL", 1)
+	~
 	EXTERN XACORWIJ XA_CorwinAlatosChainSlavers	
 END
 	
@@ -99,6 +102,9 @@ IF ~
 		Global("XA_AskedAlatosAboutManifests", "GLOBAL", 1)
 		!Global("XA_AskedAlatosAboutLedger", "GLOBAL", 1)
 	~ THEN REPLY @26 /* ~We recovered a ledger from Winston Ventures' headquarters. It seems to contain the cipher key needed to decode the shipping manifest that we found earlier. Can you help?~ */
+	DO ~
+		SetGlobal("XA_AskedAlatosAboutLedger", "GLOBAL", 1)
+	~
 	GOTO XA_AskAboutLedger
 	
 	IF ~
@@ -107,12 +113,18 @@ IF ~
 		Global("XA_AskedAlatosAboutSlavers", "GLOBAL", 1)
 		!Global("XA_AskedAlatosAboutManifests", "GLOBAL", 1)
 	~ THEN REPLY @4 /* ~The harbor master handed over some shipping manifests. I need your help to decipher them.~ */
+	DO ~
+		SetGlobal("XA_AskedAlatosAboutManifests", "GLOBAL", 1)
+	~
 	GOTO XA_AskAboutManifest
 	
 	IF ~
 		Global("XA_BGSlaverPlot", "GLOBAL", 1)
 		!Global("XA_AskedAlatosAboutSlavers", "GLOBAL", 1)
 	~ THEN REPLY @5 /*~During our time in Athkatla, we learned that some of the refugees from Caelar's crusade were sold as slaves from Baldur's Gate. Do you know anything about this?~*/
+	DO ~
+		SetGlobal("XA_AskedAlatosAboutSlavers", "GLOBAL", 1)
+	~
 	GOTO XA_AskAboutSlavery
 END
 

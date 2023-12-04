@@ -584,21 +584,7 @@ END
 IF ~~ THEN BEGIN XA_AdditionalEvidence
 	SAY @45 /* ~Do you have any additional evidence?~ */
 
-	IF ~
-		Global("XA_Investigation_ChildTestimony", "GLOBAL", 1)
-		OR(2)
-			Global("XA_Investigation_EncodedManifests", "GLOBAL", 1)
-			!Global("XA_HandedOverManifests", "GLOBAL", 1)
-		OR(2)
-			Global("XA_Investigation_AlatosCipher", "GLOBAL", 1)
-			!Global("XA_AskedAlatosAboutManifests", "GLOBAL", 1)
-		OR(2)
-			Global("XA_Investigation_DecodedManifest", "GLOBAL", 1)
-			!Global("XA_DecodedManifest", "GLOBAL", 1)
-		OR(2)
-			Global("XA_Investigation_AskedDiviner", "GLOBAL", 1)
-			!Global("XA_AskedDivinerAboutSlaves", "GLOBAL", 1)
-	~ THEN REPLY @60 /* ~We haven't uncovered anything else.~ */
+	IF ~~ THEN REPLY @60 /* ~We haven't uncovered anything else.~*/
 	EXIT
 	
 	IF ~
@@ -619,7 +605,7 @@ IF ~~ THEN BEGIN XA_AdditionalEvidence
 	GOTO XA_GiveHint
 	
 	IF ~
-		!Global("XA_Invesigation_ChildTestimony", "GLOBAL", 1)
+		!Global("XA_Investigation_ChildTestimony", "GLOBAL", 1)
 		Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~ THEN REPLY @56 /* We freed a slave in Athkatla, a child named Tina Bennett, and she told us that she was part of a group of refugees that fled to Baldur's Gate. They were told that they would be taken to a new home, and boarded a ship to Athkatla. When they arrived, the children were forcibly separated from their parents and sold to slavers.~ */
 	DO ~
@@ -708,7 +694,7 @@ IF ~~ THEN BEGIN XA_GiveMedal
 	
 	IF ~~ THEN
 	DO ~
-		GiveItemCreate("XAMEDAL", LastTalkedToBy(Myself),1,0,0)
+		GiveItemCreate("XAMEDAL", LastTalkedToBy(Myself),0,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XAMEDAL", IDENTIFIED,TRUE))
 	~
 	GOTO XA_GiveMedal_
