@@ -188,7 +188,7 @@ IF ~~ THEN BEGIN XA_CorwinRomance5
 	SAY @23 /* ~It will. It was crafted specifically for her.~*/
 	IF ~~ THEN REPLY @17 /* ~Thank you, Aldeth.~ */
 	DO ~
-		AddJournalEntry(@29, INFO)
+		SetGlobal("XA_LC_Journal_AldethRing", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinRomance6 //OK
 END

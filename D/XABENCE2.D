@@ -17,7 +17,7 @@ IF ~~ THEN BEGIN XA_OffToJail2
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@9, INFO)
+		SetGlobal("XA_LC_Journal_CaelarJail", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XACAEBYE")
 	~
@@ -27,7 +27,7 @@ IF ~~ THEN BEGIN XA_OffToJail2
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN
 	DO ~
-		AddJournalEntry(@9, INFO)
+		SetGlobal("XA_LC_Journal_CaelarJail", "GLOBAL", 1)
 		SetGlobal("XA_CorwinCaelarJail", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XACAEBYE")

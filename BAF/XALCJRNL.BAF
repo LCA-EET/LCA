@@ -529,3 +529,47 @@ THEN
 END
 //}
 
+//{ Ring - Aldeth
+IF
+	Global("XA_LC_Journal_AldethRing", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_AldethRing", "GLOBAL", 0)
+		AddJournalEntry(@31, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Caelar - Jail
+IF
+	Global("XA_LC_Journal_CaelarJail", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_CaelarJail", "GLOBAL", 0)
+		AddJournalEntry(@32, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Beno Kanaglym
+IF
+	Global("XA_LC_Journal_BenoKana", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_BenoKana", "GLOBAL", 0)
+		AddJournalEntry(@33, INFO)
+		AddXPObject(Player1, 25000)
+		AddXPObject(Player2, 25000)
+		AddXPObject(Player3, 25000)
+		AddXPObject(Player4, 25000)
+		AddXPObject(Player5, 25000)
+		AddXPObject(Player6, 25000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}

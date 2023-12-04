@@ -47,7 +47,6 @@ CHAIN XACORWIJ XA_GoodbyeBenoChain
 	== XABENOSP
 	@15 /* ~Farewell...~*/
 	DO ~
-		AddJournalEntry(@17, INFO)
-		AddexperienceParty(50000)
+		SetGlobal("XA_LC_Journal_BenoKana", "GLOBAL", 1)
 	~
 EXIT
