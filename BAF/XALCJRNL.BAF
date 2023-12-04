@@ -1,6 +1,4 @@
 //{ Tianna
-
-
 IF
 	Global("XA_LC_Journal_Tianna1", "GLOBAL", 1)
 THEN
@@ -433,6 +431,57 @@ THEN
 		SetGlobal("XA_LC_Journal_Artifacts_Shield", "GLOBAL", 2)
 		AddXPObject(Player1, 5000)
 		AddJournalEntry(@24, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Slaver Conspiracy
+
+IF
+	Global("XA_LC_Journal_SlaveGirl", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_SlaveGirl", "GLOBAL", 0)
+		AddJournalEntry(@27, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_SlaverEnd", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_SlaverEnd", "GLOBAL", 0)
+		EraseJournalEntry(@27)
+		AddJournalEntry(@25, QUEST_DONE)
+		AddXPObject(Player1, 35000)
+		AddXPObject(Player2, 35000)
+		AddXPObject(Player3, 35000)
+		AddXPObject(Player4, 35000)
+		AddXPObject(Player5, 35000)
+		AddXPObject(Player6, 35000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Neb Killed
+IF
+	Global("XA_LC_Journal_NebNederlok", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_NebNederlok", "GLOBAL", 0)
+		AddJournalEntry(@26, QUEST_DONE)
+		AddXPObject(Player1, 10000)
+		AddXPObject(Player2, 10000)
+		AddXPObject(Player3, 10000)
+		AddXPObject(Player4, 10000)
+		AddXPObject(Player5, 10000)
+		AddXPObject(Player6, 10000)
 		SetInterrupt(TRUE)
 		Continue()
 END

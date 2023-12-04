@@ -101,9 +101,8 @@ IF ~
 	
 	IF ~~ THEN 
 	DO ~
-		AddJournalEntry(@119, QUEST_DONE)
+		SetGlobal("XA_LC_Journal_SlaverEnd", "GLOBAL", 1)
 		SetGlobal("XA_RefugeeQuestComplete", "GLOBAL", 1)
-		AddexperienceParty(200000)
 		ReputationInc(1)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
@@ -904,8 +903,7 @@ IF ~~ THEN BEGIN XA_NebNederlok6
 	
 	IF ~~ THEN
 	DO ~
-		AddExperienceParty(100000)
-		AddJournalEntry(@123, INFO)
+		SetGlobal("XA_LC_Journal_NebNederlok", "GLOBAL", 1)
 	~
 	EXIT
 END

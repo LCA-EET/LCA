@@ -7,6 +7,7 @@
 # v1.0.11 2023-12-03
 * Added new journal entries for the Returning the Stolen Artifacts quest.
 * Minor improvements to the Slaver Conspiracy quest.
+* Adjusted the Dragonspear medallion so that it can be worn by all classes.
 
 # v1.0.10 2023-12-02
 * Added an initial configuration menu for players that are starting their game in BG2. The menu will automatically appear a few moments after beginning the game in Irenicus' stronghold. The menu can be re-accessed, if necessary, through the LCA Assistant. The menu won't appear if the player began their game in BG1 or SoD.

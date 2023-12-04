@@ -16,7 +16,7 @@ IF ~~ THEN BEGIN 1 // from: 0.0
 	IF ~~ THEN REPLY @17 /* ~Why did the slavers have so many children here?~ */ 
 	DO ~
 		SetGlobal("XA_BGSlaverPlot", "GLOBAL", 1)
-		AddJournalEntry(@14, INFO)
+		SetGlobal("XA_LC_Journal_SlaveGirl", "GLOBAL", 1)
 	~
 	GOTO 2
   
@@ -25,7 +25,7 @@ IF ~~ THEN BEGIN 1 // from: 0.0
 	~ THEN REPLY @4 /* ~Here, child. Here is 100 gold pieces... see if that can't get you and some of these other children back to safety.~ */ 
 	DO ~
 		SetGlobal("XA_BGSlaverPlot", "GLOBAL", 1)
-		AddJournalEntry(@14, INFO)
+		SetGlobal("XA_LC_Journal_SlaveGirl", "GLOBAL", 1)
 		TakePartyGold(100)
 	~ 
 	GOTO 3
@@ -33,7 +33,7 @@ IF ~~ THEN BEGIN 1 // from: 0.0
 	IF ~~ THEN REPLY @5 /* ~Never mind that, child, just run!~ */ 
 	DO ~
 		SetGlobal("XA_BGSlaverPlot", "GLOBAL", 1)
-		AddJournalEntry(@14, INFO)
+		SetGlobal("XA_LC_Journal_SlaveGirl", "GLOBAL", 1)
 	~
 	GOTO 4
   
@@ -43,7 +43,7 @@ IF ~~ THEN BEGIN 1 // from: 0.0
 	THEN 
 	DO ~
 		SetGlobal("XA_BGSlaverPlot", "GLOBAL", 1)
-		AddJournalEntry(@14, INFO)
+		SetGlobal("XA_LC_Journal_SlaveGirl", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_SlaveGirl
 END
