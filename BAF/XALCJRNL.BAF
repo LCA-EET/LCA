@@ -241,58 +241,76 @@ THEN
 END
 //}
 
-//{ Elfsong 1
-IF 
-	Global("XA_LC_Journal_Elfsong1", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_Journal_Elfsong1", "GLOBAL", 0)
-		AddJournalEntry(@11, QUEST)
-		SetInterrupt(TRUE)
-		Continue()
-END
-//}
+//{ Trouble at Elfsong
 
-//{ Elfsong 2
-IF 
-	Global("XA_LC_Journal_Elfsong2", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_Journal_Elfsong2", "GLOBAL", 0)
-		EraseJournalEntry(@11)
-		AddJournalEntry(@12, QUEST_DONE)
-		AddXPObject(Player1,50000)
-		AddXPObject(Player2,50000)
-		AddXPObject(Player3,50000)
-		AddXPObject(Player4,50000)
-		AddXPObject(Player5,50000)
-		AddXPObject(Player6,50000)
-		SetInterrupt(TRUE)
-		Continue()
-END
-//}
+	//{ Elfsong 1
+	IF 
+		Global("XA_LC_Journal_Elfsong1", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Elfsong1", "GLOBAL", 0)
+			AddJournalEntry(@11, QUEST)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
 
-//{ Elfsong 3
-IF 
-	Global("XA_LC_Journal_Elfsong3", "GLOBAL", 1)
-THEN
-	RESPONSE #100
+	//{ Elfsong 2
+	IF 
+		Global("XA_LC_Journal_Elfsong2", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Elfsong2", "GLOBAL", 0)
+			EraseJournalEntry(@11)
+			EraseJournalEntry(@30)
+			AddJournalEntry(@12, QUEST_DONE)
+			AddXPObject(Player1,50000)
+			AddXPObject(Player2,50000)
+			AddXPObject(Player3,50000)
+			AddXPObject(Player4,50000)
+			AddXPObject(Player5,50000)
+			AddXPObject(Player6,50000)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Elfsong 3
+	IF 
+		Global("XA_LC_Journal_Elfsong3", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Elfsong3", "GLOBAL", 0)
+			EraseJournalEntry(@11)
+			EraseJournalEntry(@30)
+			AddJournalEntry(@13, QUEST_DONE)
+			AddXPObject(Player1,10000)
+			AddXPObject(Player2,10000)
+			AddXPObject(Player3,10000)
+			AddXPObject(Player4,10000)
+			AddXPObject(Player5,10000)
+			AddXPObject(Player6,10000)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Townsfolk
+	IF
+		Global("XA_LC_Journal_ElfsongGossip", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_Journal_Elfsong3", "GLOBAL", 0)
-		EraseJournalEntry(@11)
-		AddJournalEntry(@13, QUEST_DONE)
-		AddXPObject(Player1,10000)
-		AddXPObject(Player2,10000)
-		AddXPObject(Player3,10000)
-		AddXPObject(Player4,10000)
-		AddXPObject(Player5,10000)
-		AddXPObject(Player6,10000)
+		SetGlobal("XA_LC_Journal_ElfsongGossip", "GLOBAL", 0)
+		AddJournalEntry(@30, INFO)
 		SetInterrupt(TRUE)
 		Continue()
-END
-//}
+	END
+	//}
+//} 
 
 //{ Halbazzer's Ring Enchantment
 IF
@@ -450,12 +468,36 @@ THEN
 END
 
 IF
+	Global("XA_LC_Journal_SlaveAlatos", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_SlaveAlatos", "GLOBAL", 0)
+		AddJournalEntry(@28, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_SlaveAlatos2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_SlaveAlatos2", "GLOBAL", 0)
+		AddJournalEntry(@29, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
 	Global("XA_LC_Journal_SlaverEnd", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_Journal_SlaverEnd", "GLOBAL", 0)
 		EraseJournalEntry(@27)
+		EraseJournalEntry(@28)
+		EraseJournalEntry(@29)
 		AddJournalEntry(@25, QUEST_DONE)
 		AddXPObject(Player1, 35000)
 		AddXPObject(Player2, 35000)
@@ -486,3 +528,4 @@ THEN
 		Continue()
 END
 //}
+

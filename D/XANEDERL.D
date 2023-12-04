@@ -425,50 +425,28 @@ IF ~~ THEN BEGIN XA_InvestigationProgress
 	
 	IF ~
 		!Global("XA_NederlokMedal", "GLOBAL", 1)
-		Global("XA_Investigation_ChildTestimony", "GLOBAL", 1)
-		OR(2)
-			Global("XA_Investigation_EncodedManifests", "GLOBAL", 1)
-			!Global("XA_HandedOverManifests", "GLOBAL", 1)
-		OR(2)
-			Global("XA_Investigation_AlatosCipher", "GLOBAL", 1)
-			!Global("XA_AskedAlatosAboutManifests", "GLOBAL", 1)
-		OR(2)
-			Global("XA_Investigation_DecodedManifest", "GLOBAL", 1)
-			!Global("XA_DecodedManifest", "GLOBAL", 1)
 	~ THEN REPLY @60 /* ~We haven't uncovered anything else.~ */
 	GOTO XA_GiveMedal
 	
 	IF ~
 		Global("XA_NederlokMedal", "GLOBAL", 1)
-		Global("XA_Investigation_ChildTestimony", "GLOBAL", 1)
-		OR(2)
-			Global("XA_Investigation_EncodedManifests", "GLOBAL", 1)
-			!Global("XA_HandedOverManifests", "GLOBAL", 1)
-		OR(2)
-			Global("XA_Investigation_AlatosCipher", "GLOBAL", 1)
-			!Global("XA_AskedAlatosAboutManifests", "GLOBAL", 1)
-		OR(2)
-			Global("XA_Investigation_DecodedManifest", "GLOBAL", 1)
-			!Global("XA_DecodedManifest", "GLOBAL", 1)
 	~ THEN REPLY @60 /* ~We haven't uncovered anything else.~ */
 	EXIT
 	
-	IF ~
-		Global("XA_Investigation_ChildTestimony", "GLOBAL", 1)
-		OR(2)
-			Global("XA_Investigation_EncodedManifests", "GLOBAL", 1)
-			!Global("XA_HandedOverManifests", "GLOBAL", 1)
-		OR(2)
-			Global("XA_Investigation_AlatosCipher", "GLOBAL", 1)
-			!Global("XA_AskedAlatosAboutManifests", "GLOBAL", 1)
-		OR(2)
-			Global("XA_Investigation_DecodedManifest", "GLOBAL", 1)
-			!Global("XA_DecodedManifest", "GLOBAL", 1)
-	~ THEN REPLY @61 /* ~Nothing additional. How do you suggest we proceed?~ */
+	IF ~~ THEN REPLY @61 /* ~Nothing additional. How do you suggest we proceed?~ */
 	GOTO XA_GiveHint
 	
 	IF ~
-		!Global("XA_Investigation_ChildTestimony", "GLOBAL", 1)
+		GlobalLT("XA_Investigation_AskedDiviner", "GLOBAL", 1)
+		Global("XA_AskedDivinerAboutSlaves", "GLOBAL", 1)
+	~ THEN REPLY @68 /* ~I spoke to Haspur, the diviner. I asked him who was responsible for the recent slaver activity in the city. He told me that Lord Winston and his company were behind everything. Arrest him!~ */
+	DO ~
+		SetGlobal("XA_Investigation_AskedDiviner", "GLOBAL", 1)
+	~
+	GOTO XA_AskedDiviner
+	
+	IF ~
+		GlobalLT("XA_Investigation_ChildTestimony", "GLOBAL", 1)
 		Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~ THEN REPLY @56 /* We freed a slave in Athkatla, a child named Tina Bennett, and she told us that she was part of a group of refugees that fled to Baldur's Gate. They were told that they would be taken to a new home, and boarded a ship to Athkatla. When they arrived, the children were forcibly separated from their parents and sold to slavers.~ */
 	DO ~
@@ -477,8 +455,8 @@ IF ~~ THEN BEGIN XA_InvestigationProgress
 	GOTO XA_ChildTestimony
 	
 	IF ~
-		!Global("XA_Investigation_ChildTestimony", "GLOBAL", 1)
-		!Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
+		GlobalLT("XA_Investigation_ChildTestimony", "GLOBAL", 1)
+		GlobalLT("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~ THEN REPLY @43 /* ~We freed a slave in Athkatla, a child, and she told us that she was part of a group of refugees that fled to Baldur's Gate. They were told that they would be taken to a new home, and boarded a ship to Athkatla. When they arrived, the children were forcibly separated from their parents and sold to slavers.~ */
 	DO ~
 		SetGlobal("XA_Investigation_ChildTestimony", "GLOBAL", 1)
@@ -486,16 +464,16 @@ IF ~~ THEN BEGIN XA_InvestigationProgress
 	GOTO XA_ChildTestimony
 	
 	IF ~
-		!Global("XA_Investigation_EncodedManifests", "GLOBAL", 1)
+		GlobalLT("XA_Investigation_EncodedManifest", "GLOBAL", 1)
 		Global("XA_HandedOverManifests", "GLOBAL", 1)
 	~ THEN REPLY @40 /* ~We spoke to the harbor master. He provided us shipping manifests belonging to the company that just moved into the Iron Throne headquarters. They are encoded, and we can't decipher them. Why would a legitimate company want to obfuscate their shipping manifests?~ */
 	DO ~
-		SetGlobal("XA_Investigation_EncodedManifests", "GLOBAL", 1)
+		SetGlobal("XA_Investigation_EncodedManifest", "GLOBAL", 1)
 	~
 	GOTO XA_FoundManifests
 	
 	IF ~
-		!Global("XA_Investigation_AlatosCipher", "GLOBAL", 1)
+		GlobalLT("XA_Investigation_AlatosCipher", "GLOBAL", 1)
 		Global("XA_AskedAlatosAboutManifests", "GLOBAL", 1)
 	~ THEN REPLY @46 /* ~We spoke to a contact in the Thieves' Guild, who said that they had sold a cryptographic encoder to the same company that had the encoded shipping manifests.~ */
 	DO ~
@@ -504,9 +482,9 @@ IF ~~ THEN BEGIN XA_InvestigationProgress
 	GOTO XA_AlatosCipher
 	
 	IF ~
-		!Global("XA_Investigation_DecodedManifest", "GLOBAL", 1)
+		GlobalLT("XA_Investigation_DecodedManifest", "GLOBAL", 1)
 		Global("XA_DecodedManifest", "GLOBAL", 1)
-		!Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
+		GlobalLT("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
 		PartyHasItem("XAMANFS2")
 	~ THEN REPLY @57 /* ~With the help of the Thieves' Guild, we were able to decode the shipping manifest using the cipher key we found in the Winston Ventures building. Look at the decoded manifest - it's a list of names! They were transporting people as cargo, undoubtedly to sell them as slaves!~ */
 	DO ~
@@ -516,7 +494,7 @@ IF ~~ THEN BEGIN XA_InvestigationProgress
 	GOTO XA_DecodedManifestB
 
 	IF ~
-		!Global("XA_Investigation_DecodedManifest", "GLOBAL", 1)
+		GlobalLT("XA_Investigation_DecodedManifest", "GLOBAL", 1)
 		Global("XA_DecodedManifest", "GLOBAL", 1)
 		Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
 		PartyHasItem("XAMANFS3")
@@ -583,95 +561,8 @@ END
 
 IF ~~ THEN BEGIN XA_AdditionalEvidence
 	SAY @45 /* ~Do you have any additional evidence?~ */
-
-	IF ~~ THEN REPLY @60 /* ~We haven't uncovered anything else.~*/
-	EXIT
 	
-	IF ~
-		Global("XA_Investigation_ChildTestimony", "GLOBAL", 1)
-		OR(2)
-			Global("XA_Investigation_EncodedManifests", "GLOBAL", 1)
-			!Global("XA_HandedOverManifests", "GLOBAL", 1)
-		OR(2)
-			Global("XA_Investigation_AlatosCipher", "GLOBAL", 1)
-			!Global("XA_AskedAlatosAboutManifests", "GLOBAL", 1)
-		OR(2)
-			Global("XA_Investigation_DecodedManifest", "GLOBAL", 1)
-			!Global("XA_DecodedManifest", "GLOBAL", 1)
-		OR(2)
-			Global("XA_Investigation_AskedDiviner", "GLOBAL", 1)
-			!Global("XA_AskedDivinerAboutSlaves", "GLOBAL", 1)
-	~ THEN REPLY @61 /* ~Nothing additional. How do you suggest we proceed?~ */
-	GOTO XA_GiveHint
-	
-	IF ~
-		!Global("XA_Investigation_ChildTestimony", "GLOBAL", 1)
-		Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
-	~ THEN REPLY @56 /* We freed a slave in Athkatla, a child named Tina Bennett, and she told us that she was part of a group of refugees that fled to Baldur's Gate. They were told that they would be taken to a new home, and boarded a ship to Athkatla. When they arrived, the children were forcibly separated from their parents and sold to slavers.~ */
-	DO ~
-		SetGlobal("XA_Investigation_ChildTestimony", "GLOBAL", 1)
-	~
-	GOTO XA_ChildTestimony
-	
-	IF ~
-		!Global("XA_Investigation_ChildTestimony", "GLOBAL", 1)
-		!Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
-	~ THEN REPLY @43 /* ~We freed a slave in Athkatla, a child, and she told us that she was part of a group of refugees that fled to Baldur's Gate. They were told that they would be taken to a new home, and boarded a ship to Athkatla. When they arrived, the children were forcibly separated from their parents and sold to slavers.~ */
-	DO ~
-		SetGlobal("XA_Investigation_ChildTestimony", "GLOBAL", 1)
-	~
-	GOTO XA_ChildTestimony
-	
-	IF ~
-		!Global("XA_Investigation_EncodedManifests", "GLOBAL", 1)
-		Global("XA_HandedOverManifests", "GLOBAL", 1)
-	~ THEN REPLY @40 /* ~We spoke to the harbor master. He provided us shipping manifests belonging to the company that just moved into the Iron Throne headquarters. They are encoded, and we can't decipher them. Why would a legitimate company want to obfuscate their shipping manifests?~ */
-	DO ~
-		SetGlobal("XA_Investigation_EncodedManifests", "GLOBAL", 1)
-	~
-	GOTO XA_FoundManifests
-	
-	IF ~
-		!Global("XA_Investigation_AlatosCipher", "GLOBAL", 1)
-		Global("XA_AskedAlatosAboutManifests", "GLOBAL", 1)
-	~ THEN REPLY @46 /* ~We spoke to a contact in the Thieves' Guild, who said that they had sold a cryptographic encoder to the same company that had the encoded shipping manifests.~ */
-	DO ~
-		SetGlobal("XA_Investigation_AlatosCipher", "GLOBAL", 1)
-	~
-	GOTO XA_AlatosCipher
-	
-	IF ~
-		!Global("XA_Investigation_DecodedManifest", "GLOBAL", 1)
-		Global("XA_DecodedManifest", "GLOBAL", 1)
-		!Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
-		PartyHasItem("XAMANFS2")
-	~ THEN REPLY @57 /* ~With the help of the Thieves' Guild, we were able to decode the shipping manifest using the cipher key we found in the Winston Ventures building. Look at the decoded manifest - it's a list of names! They were transporting people as cargo, undoubtedly to sell them as slaves!~ */
-	DO ~
-		SetGlobal("XA_Investigation_DecodedManifest", "GLOBAL", 1)
-		TakePartyItem("XAMANFS2")
-	~
-	GOTO XA_DecodedManifestB
-
-	IF ~
-		!Global("XA_Investigation_DecodedManifest", "GLOBAL", 1)
-		Global("XA_DecodedManifest", "GLOBAL", 1)
-		Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
-		PartyHasItem("XAMANFS2")
-	~ THEN REPLY @48 /* ~With the help of the Thieves' Guild, we were able to decode the shipping manifest using the cipher key we found in the old Iron Throne building. Look at the decoded manifest - it's a list of names, and here is the name of the girl that we freed in Athkatla!~ */
-	DO ~
-		SetGlobal("XA_Investigation_DecodedManifest", "GLOBAL", 1)
-		TakePartyItem("XAMANFS2")
-	~
-	GOTO XA_DecodedManifestA
-	
-	IF ~
-		!Global("XA_Investigation_AskedDiviner", "GLOBAL", 1)
-		Global("XA_AskedDivinerAboutSlaves", "GLOBAL", 1)
-	~ THEN REPLY @68 /* ~I spoke to Haspur, the diviner. I asked him who was responsible for the recent slaver activity in the city. He told me that Lord Winston and his company were behind everything. Arrest him!~ */
-	DO ~
-		SetGlobal("XA_Investigation_AskedDiviner", "GLOBAL", 1)
-	~
-	GOTO XA_AskedDiviner
+	COPY_TRANS XANEDERL XA_InvestigationProgress
 END
 
 IF ~~ THEN BEGIN XA_AskedDiviner

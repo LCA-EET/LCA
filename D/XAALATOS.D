@@ -145,9 +145,6 @@ IF ~~ THEN BEGIN XA_AskAboutLedger2
 	IF ~~ THEN
 	DO ~
 		TakePartyItem("XAMANFST")
-		FadeToColor([30.0],0)
-		Wait(3)
-		FadeFromColor([30.0],0)
 	~
 	GOTO XA_AskAboutLedger3
 END
@@ -159,7 +156,7 @@ IF ~~ THEN BEGIN XA_AskAboutLedger3
 		!Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		GiveItemCreate("XAMANFS2", Player1, 1,0,0)
+		GiveItemCreate("XAMANFS2", Player1, 0,0,0)
 	~
 	GOTO XA_AskAboutLedger4
 	
@@ -167,7 +164,7 @@ IF ~~ THEN BEGIN XA_AskAboutLedger3
 		Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		GiveItemCreate("XAMANFS3", Player1, 1,0,0)
+		GiveItemCreate("XAMANFS3", Player1, 0,0,0)
 	~
 	GOTO XA_AskAboutLedger4
 END
@@ -177,7 +174,7 @@ IF ~~ THEN BEGIN XA_AskAboutLedger4
 	
 	IF ~~ THEN REPLY @30 /* ~Thanks for the help.~*/
 	DO ~
-		AddJournalEntry(@37, QUEST)
+		SetGlobal("XA_LC_Journal_SlaveAlatos2", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -237,9 +234,6 @@ IF ~~ THEN BEGIN XA_AskAboutManifest
 	= @14 /* ~The good news is I recognize the type of device used to generate the encoding. The bad news is that without the cipher key, you won't be able to decode the manifests.~ */
 	
 	IF ~~ THEN REPLY @15 /* ~Interesting... how many other people or organizations use such devices?~ */
-	DO ~
-		AddJournalEntry(@38, QUEST)
-	~	
 	GOTO XA_AskAboutManifest2
 END
 
@@ -282,7 +276,7 @@ IF ~~ THEN BEGIN XA_CorwinAlatosChainManifestsEnd
 		!Dead("Aran")
 	~ THEN 
 	DO ~
-		AddJournalEntry(@38, QUEST)
+		SetGlobal("XA_LC_Journal_SlaveAlatos", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinAlatosChainManifestsEnd2A
 	
@@ -290,7 +284,7 @@ IF ~~ THEN BEGIN XA_CorwinAlatosChainManifestsEnd
 		Dead("Aran")
 	~ THEN 
 	DO ~
-		AddJournalEntry(@38, QUEST)
+		SetGlobal("XA_LC_Journal_SlaveAlatos", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinAlatosChainManifestsEnd2B
 END
@@ -367,7 +361,7 @@ IF ~~ THEN BEGIN XA_CorwinAlatosChainLedgerEnd
 		!Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		GiveItemCreate("XAMANFS2", "XACORWIN", 1,0,0)
+		GiveItemCreate("XAMANFS2", "XACORWIN", 0,0,0)
 	~
 	GOTO XA_CorwinAlatosChainLedgerEnd2
 	
@@ -375,7 +369,7 @@ IF ~~ THEN BEGIN XA_CorwinAlatosChainLedgerEnd
 		Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		GiveItemCreate("XAMANFS3", "XACORWIN", 1,0,0)
+		GiveItemCreate("XAMANFS3", "XACORWIN", 0,0,0)
 	~
 	GOTO XA_CorwinAlatosChainLedgerEnd2
 END
@@ -385,7 +379,7 @@ IF ~~ THEN BEGIN XA_CorwinAlatosChainLedgerEnd2
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@37, QUEST)
+		SetGlobal("XA_LC_Journal_SlaveAlatos2", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_ThankAlatos3
 END
@@ -434,8 +428,5 @@ CHAIN
 		= @28 /* ~Yes, I think we'll be able to decode the manifest using the key provided. Give us a few minutes...~ */
 		DO ~
 			TakePartyItem("XAMANFST")
-			FadeToColor([30.0],0)
-			Wait(3)
-			FadeFromColor([30.0],0)
 		~
 END XAALATOS XA_CorwinAlatosChainLedgerEnd

@@ -30,7 +30,7 @@ IF ~~ THEN BEGIN XA_End
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@2, INFO)
+		SetGlobal("XA_LC_Journal_ElfsongGossip", "GLOBAL", 1)
 		EscapeArea()
 		ActionOverride("XA800W", EscapeArea())
 	~
