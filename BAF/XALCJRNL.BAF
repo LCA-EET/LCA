@@ -498,6 +498,7 @@ THEN
 		EraseJournalEntry(@27)
 		EraseJournalEntry(@28)
 		EraseJournalEntry(@29)
+		EraseJournalEntry(@39)
 		AddJournalEntry(@25, QUEST_DONE)
 		AddXPObject(Player1, 35000)
 		AddXPObject(Player2, 35000)
@@ -569,6 +570,80 @@ THEN
 		AddXPObject(Player4, 25000)
 		AddXPObject(Player5, 25000)
 		AddXPObject(Player6, 25000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Haspur
+IF
+	Global("XA_LC_Journal_Haspur_Caelar", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Haspur_Caelar", "GLOBAL", 0)
+		AddXPObject(Player1, 2000)
+		AddJournalEntry(@38, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Haspur_Lotto", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Haspur_Lotto", "GLOBAL", 0)
+		AddXPObject(Player1, 2000)
+		AddJournalEntry(@34, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Haspur_Decide", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Haspur_Decide", "GLOBAL", 0)
+		AddXPObject(Player1, 2000)
+		AddJournalEntry(@37, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Haspur_Irenicus", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Haspur_Irenicus", "GLOBAL", 0)
+		AddXPObject(Player1, 2000)
+		AddJournalEntry(@35, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Haspur_Bhaal", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Haspur_Bhaal", "GLOBAL", 0)
+		AddXPObject(Player1, 2000)
+		AddJournalEntry(@36, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Haspur_Slaves", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Haspur_Slaves", "GLOBAL", 0)
+		AddXPObject(Player1, 2000)
+		AddJournalEntry(@39, QUEST)
 		SetInterrupt(TRUE)
 		Continue()
 END

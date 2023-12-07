@@ -109,6 +109,7 @@ IF ~~ THEN BEGIN XA_PlayerQuestion
 	
 	IF ~ 
 		Global("XA_BGSlaverPlot", "GLOBAL", 1)
+		GlobalLT("XA_VirgilInCustody", "GLOBAL", 1)
 	~ THEN REPLY @36 /* ~Who is responsible for the slaver activity in Baldur's Gate?~*/
 	GOTO XA_Slavers
 	
@@ -121,7 +122,7 @@ IF ~~ THEN BEGIN XA_PlayerQuestion
 	IF ~~ THEN REPLY @52 /* ~Irenicus - is he gone, for good?~ */
 	GOTO XA_IrenicusGone
 	
-	IF ~~ THEN REPLY @61 /* ~What are next week's winning lottery numbers?~ */
+	IF ~~ THEN REPLY @60 /* ~What are next week's winning lottery numbers?~ */
 	DO ~
 		SetGlobal("XA_WonLottery", "GLOBAL", 1)
 	~
@@ -173,7 +174,7 @@ IF ~~ THEN BEGIN XA_Caelar
 	
 	IF ~~ THEN 
 	DO ~
-		AddJournalEntry(@66, INFO)
+		SetGlobal("XA_LC_Journal_Haspur_Caelar", "GLOBAL", 1)
 	~
 	GOTO XA_AlreadyAsked
 END
@@ -182,7 +183,7 @@ IF ~~ THEN BEGIN XA_LottoNumbers
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@62, INFO)
+		SetGlobal("XA_LC_Journal_Haspur_Lotto", "GLOBAL", 1)
 	~
 	GOTO XA_AlreadyAsked
 END
@@ -206,7 +207,7 @@ IF ~~ THEN XA_BigDecision2
 	
 	IF ~~ THEN 
 	DO ~
-		AddJournalEntry(@65, INFO)
+		SetGlobal("XA_LC_Journal_Haspur_Decide", "GLOBAL", 1)
 	~
 	GOTO XA_AlreadyAsked
 END
@@ -215,7 +216,7 @@ IF ~~ THEN BEGIN XA_IrenicusGone
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@63, INFO)
+		SetGlobal("XA_LC_Journal_Haspur_Irenicus", "GLOBAL", 1)
 	~
 	GOTO XA_AlreadyAsked	
 END
@@ -226,7 +227,7 @@ IF ~~ THEN BEGIN XA_WillBhaalReturn
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@64, INFO)
+		SetGlobal("XA_LC_Journal_Haspur_Bhaal", "GLOBAL", 1)
 	~
 	GOTO XA_AlreadyAsked
 END
@@ -235,7 +236,7 @@ IF ~~ THEN BEGIN XA_Slavers
 	SAY @37 /* ~Lord Winston and his company are responsible. They have been selling refugees as slaves, under the guise of moving them to new homes in other cities.~ */
 	IF ~~ THEN REPLY @38 /* ~I see.~ */
 	DO ~
-		AddJournalEntry(@39, QUEST)
+		SetGlobal("XA_LC_Journal_Haspur_Slaves", "GLOBAL", 1)
 		SetGlobal("XA_AskedDivinerAboutSlaves", "GLOBAL", 1)
 	~
 	GOTO XA_AlreadyAsked
