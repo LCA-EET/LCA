@@ -351,6 +351,12 @@ IF ~
 	
 	IF ~~ THEN REPLY @12 /* ~I do not need assistance at this time.~ */
 	EXIT
+	
+	IF ~~ THEN REPLY @818 /*~Dismiss Debugger.~*/
+	DO ~
+		DestroySelf()
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN XA_SexDebug
