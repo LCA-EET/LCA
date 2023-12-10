@@ -1,8 +1,10 @@
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
 	InMyArea("LANTANARA")
+	GlobalLT("XA_0119_LantSpawn", "BG0119", 1)
 THEN
 	RESPONSE #100
+		SetGlobal("XA_0119_LantSpawn", "BG0119", 1)
 		ActionOverride("LANTANARA", DestroySelf())
 		SetGlobal("XA_LantanaraProphecy", "GLOBAL", 2)
 		CreateCreature("XALANTAN", [466.630], NE)
