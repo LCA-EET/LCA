@@ -2273,7 +2273,7 @@ END
 		~ THEN XACORWIB BCorwinJan2
 			@514 /* ~Jan? About the turnip stew recipe - ~ [XA100067] */
 			DO ~
-				SetGlobal("XA_BackToBG_Jan", "GLOBAL", 1)
+				SetGlobal("XA_JanWantsToSeeBG", "GLOBAL", 1)
 				SetGlobal("XA_Banter_CorwinJan", "GLOBAL", 5)
 			~ 
 			== JANJ

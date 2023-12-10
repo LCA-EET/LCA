@@ -11022,14 +11022,17 @@ CHAIN
 			== JANJ
 			IF ~
 				IsValidForPartyDialogue("Jan")
-				Global("XA_BackToBG_Jan", "GLOBAL", 1)
+				Global("XA_JanWantsToSeeBG", "GLOBAL", 1)
 			~
 			@642 /* ~Oh, yes, this is a wonderful opportunity to expand my turnip business! I will go with you.~ */
+			DO ~
+				SetGlobal("XA_BackToBG_Jan", "GLOBAL", 1)
+			~
 			
 			== JANJ
 			IF ~
 				IsValidForPartyDialogue("Jan")
-				!Global("XA_BackToBG_Jan", "GLOBAL", 1)
+				!Global("XA_JanWantsToSeeBG", "GLOBAL", 1)
 			~
 			@643 /* ~Back to Athkatla for me, I'm afraid. The turnips need tending to. Safe travels, my friends.~ */
 		//}
