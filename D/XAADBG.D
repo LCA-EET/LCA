@@ -5071,6 +5071,12 @@ IF ~~ THEN BEGIN XA_Menu_AdjustVariables
 	~
 	GOTO XA_MainMenu
 	
+	IF ~~ THEN REPLY @817
+	DO ~
+		SetGlobal("XA_CorwinLoveBG2", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
 	IF ~~ THEN REPLY @26 /* ~Go back to the prior menu.~ */
 	GOTO XA_MainMenu
 END

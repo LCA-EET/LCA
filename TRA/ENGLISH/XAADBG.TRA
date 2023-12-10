@@ -815,3 +815,4 @@
 @814 = ~XA_MetRohma to 1.~
 @815 = ~XA_HelpAldeth to 2.~
 @816 = ~XA_LC_StartedInBG2 to 1.~
+@817 = ~SetGlobal("XA_CorwinLoveBG2", "GLOBAL", 1)~

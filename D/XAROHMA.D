@@ -367,6 +367,9 @@ IF ~~ THEN BEGIN XA_ByeRohmaChain2End
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @59 /* ~Goodnight Rohma.~ */
+	DO ~
+		SetGlobal("XA_CorwinLoveBG2", "GLOBAL", 1)
+	~	
 	GOTO XA_ByeRohmaEnd_Romance
 	
 	IF ~

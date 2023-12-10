@@ -2100,7 +2100,7 @@ IF ~
 	
 	IF ~
 		IsValidForPartyDialogue("Jaheira")
-		See("Jaheira")
+		//See("Jaheira")
 	~ THEN
 	DO ~
 		SetGlobal("XA_CorwinPregnant", "GLOBAL", 3)
@@ -2110,7 +2110,7 @@ IF ~
 		
 	IF ~
 		IsValidForPartyDialogue("Aerie")
-		See("Aerie")
+		//See("Aerie")
 	~ THEN
 	DO ~
 		SetGlobal("XA_CorwinPregnant", "GLOBAL", 3)
