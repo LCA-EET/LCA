@@ -379,7 +379,47 @@ IF ~~ THEN BEGIN XA_ByeRohmaEnd_Romance
 	SAY @60 /* ~(She gives you a hug and a kiss.)~ */
 	
 	= @61 /* ~I love you.~ */
-	IF ~~ THEN REPLY @62 /* ~I love you too, honey. Sleep well - I'll see you in the morning.~ */
+	
+	IF ~
+		Gender(Player1, MALE)
+		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 97)
+	~ THEN REPLY @62 /* ~I love you too, honey. Sleep well - I'll see you in the morning.~ */
+	DO ~
+		SetGlobal("XA_CorwinPregnant", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", SIXTEEN_DAYS)
+	~
+	EXTERN XACORWIJ XA_BedtimeRohmaChain
+	
+	IF ~
+		Gender(Player1, MALE)
+		!GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 97)
+	~ THEN REPLY @62 /* ~I love you too, honey. Sleep well - I'll see you in the morning.~ */
+	EXTERN XACORWIJ XA_BedtimeRohmaChain
+	
+	IF ~
+		Gender(Player1, MALE)
+		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 97)
+	~ THEN REPLY @59 /* ~Goodnight Rohma.~ */
+	DO ~
+		SetGlobal("XA_CorwinPregnant", "GLOBAL", 1)
+		SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", SIXTEEN_DAYS)
+	~
+	EXTERN XACORWIJ XA_BedtimeRohmaChain
+	
+	IF ~
+		Gender(Player1, MALE)
+		!GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 97)
+	~ THEN REPLY @59 /* ~Goodnight Rohma.~ */
+	EXTERN XACORWIJ XA_BedtimeRohmaChain
+	
+	IF ~
+		!Gender(Player1, MALE)
+	~ THEN REPLY @62 /* ~I love you too, honey. Sleep well - I'll see you in the morning.~ */
+	EXTERN XACORWIJ XA_BedtimeRohmaChain
+	
+	IF ~
+		!Gender(Player1, MALE)
+	~ THEN REPLY @59 /* ~Goodnight Rohma.~ */
 	EXTERN XACORWIJ XA_BedtimeRohmaChain
 END
 

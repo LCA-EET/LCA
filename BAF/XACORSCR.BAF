@@ -2307,46 +2307,6 @@ END
 	END	
 	//}
 	
-	//{ Left BG Romance Check
-	IF
-		ActionListEmpty()
-		Global("XA_ReturnToBG", "GLOBAL", 2)
-		GlobalLT("XA_CheckInRomanceLeftBG", "GLOBAL", 1)
-		Gender(Player1, MALE)
-	THEN
-		RESPONSE #100
-			SetGlobal("XA_CheckInRomanceLeftBG", "GLOBAL", 1)
-			Continue()
-	END
-	
-	IF
-		ActionListEmpty()
-		Global("XA_CheckInRomanceLeftBG", "GLOBAL", 1)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 97)
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_CorwinPregnant", "GLOBAL", 1)
-			SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", TEN_DAYS)
-			SetGlobal("XA_CheckInRomanceLeftBG", "GLOBAL", 2)
-			SetInterrupt(TRUE)
-			Continue()
-	END
-	
-	IF
-		ActionListEmpty()
-		Global("XA_CheckInRomanceLeftBG", "GLOBAL", 1)
-		OR(2)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-			GlobalLT("XA_CorwinOpinionOfPlayer", "GLOBAL", 98)
-	THEN
-		RESPONSE #100
-			SetGlobal("XA_CheckInRomanceLeftBG", "GLOBAL", 2)
-			Continue()
-	END
-	//}
-	
 	//{ Entered Yaga-Shura Camp
 	IF
 		GlobalGT("YagaShuraHeart", "GLOBAL", 0)
@@ -2367,7 +2327,6 @@ END
 		AreaCheck("AR5203")
 		Gender(Player1, MALE)
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-		GlobalGT("XA_CheckInRomanceLeftBG", "GLOBAL", 1)
 		GlobalGT("XA_CorwinPregnant", "GLOBAL", 0)
 		GlobalLT("XA_PregnantOverride", "GLOBAL", 1)
 	THEN
