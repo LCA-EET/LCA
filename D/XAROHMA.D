@@ -470,8 +470,21 @@ CHAIN XAROHMA XA_ByeRohmaChain2
 	== XAROHMA
 	IF ~
 		Global("XA_GaveDoll", "GLOBAL", 1)
+		GlobalLT("XA_LC_DingsRohma", "GLOBAL", 1)
 	~
 	@56 /* ~Remember to bring my dolly.~ */
+	== XAROHMA
+	IF ~
+		Global("XA_GaveDoll", "GLOBAL", 1)
+		GlobalGT("XA_LC_DingsRohma", "GLOBAL", 0)
+	~
+	@79 /* ~Remember to bring Dings, and my dolly too.~ */
+	== XAROHMA
+	IF ~
+		!Global("XA_GaveDoll", "GLOBAL", 1)
+		GlobalGT("XA_LC_DingsRohma", "GLOBAL", 0)
+	~
+	@80 /* ~Remember to bring Dings.~ */
 	== XACORWIJ
 	@57 /* ~Come and say goodnight to <CHARNAME>.~ */
 END XAROHMA XA_ByeRohmaChain2End
