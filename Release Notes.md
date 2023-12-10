@@ -4,7 +4,7 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
-# v1.0.12a 2023-12-06
+# v1.0.12a 2023-12-10
 * Fixed a bug that could cause Lantanara to spawn repeatedly after giving the player her prophecy.
 * Fixed a bug that could cause Jan to rejoin the party in Saradush, even if he was not in the party at the conclusion of the Return to Baldur's Gate portion of the mod.
 * Fixed a script blocking issue that could cause party members to fail to join after the conclusion of the Return to Baldur's Gate portion of the mod.

@@ -399,7 +399,7 @@ IF ~~ THEN BEGIN XA_ByeRohmaEnd_Romance
 	IF ~
 		Gender(Player1, MALE)
 		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 97)
-	~ THEN REPLY @59 /* ~Goodnight Rohma.~ */
+	~ THEN REPLY @81 /* ~See you tomorrow.~ */
 	DO ~
 		SetGlobal("XA_CorwinPregnant", "GLOBAL", 1)
 		SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", SIXTEEN_DAYS)
@@ -409,7 +409,7 @@ IF ~~ THEN BEGIN XA_ByeRohmaEnd_Romance
 	IF ~
 		Gender(Player1, MALE)
 		!GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 97)
-	~ THEN REPLY @59 /* ~Goodnight Rohma.~ */
+	~ THEN REPLY @81 /* ~See you tomorrow.~ */
 	EXTERN XACORWIJ XA_BedtimeRohmaChain
 	
 	IF ~
@@ -419,7 +419,7 @@ IF ~~ THEN BEGIN XA_ByeRohmaEnd_Romance
 	
 	IF ~
 		!Gender(Player1, MALE)
-	~ THEN REPLY @59 /* ~Goodnight Rohma.~ */
+	~ THEN REPLY @81 /* ~See you tomorrow.~*/
 	EXTERN XACORWIJ XA_BedtimeRohmaChain
 END
 
