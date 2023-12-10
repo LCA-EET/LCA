@@ -4,6 +4,9 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v1.0.12a 2023-12-06
+* Fixed a bug that could cause lantanara to spawn repeatedly after giving the player her prophecy.
+
 # v1.0.12 2023-12-06
 * Improvements to journaling related to Haspur the Diviner, during the Return to Baldur's Gate.
 
