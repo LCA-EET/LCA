@@ -1380,55 +1380,35 @@ END
 EXTEND_TOP SARVOLO 9 /* OK */
 	IF ~
 		InParty("XACAELAR")
-		GlobalLT("XA_AskAboutCaelar", "LOCALS", 1)
 	~ THEN REPLY @315 /*~Tell me about Caelar.~*/
-	DO ~
-		SetGlobal("XA_AskAboutCaelar", "LOCALS", 1)
-	~
 	GOTO XA_Caelar
 
 	IF ~
 		InParty("XACORWIN")
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_MeetIllasera", "GLOBAL", 1)
-		GlobalLT("XA_AskAboutCorwin", "LOCALS", 1)
 	~ THEN REPLY @279 /* ~Tell me about Schael.~*/
-	DO ~
-		SetGlobal("XA_AskAboutCorwin", "LOCALS", 1)
-	~
 	GOTO XA_Schael_Illasera
 	
 	IF ~
 		InParty("XACORWIN")
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_MeetIllasera", "GLOBAL", 1)
-		GlobalLT("XA_AskAboutCorwin", "LOCALS", 1)
 	~ THEN REPLY @280 /* ~Tell me about Corwin.~*/
-	DO ~
-		SetGlobal("XA_AskAboutCorwin", "LOCALS", 1)
-	~
 	GOTO XA_Corwin_Illasera
 	
 	IF ~
 		InParty("XACORWIN")
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("XA_MeetIllasera", "GLOBAL", 1)
-		GlobalLT("XA_AskAboutCorwin", "LOCALS", 1)
 	~ THEN REPLY @279 /* ~Tell me about Schael.~*/
-	DO ~
-		SetGlobal("XA_AskAboutCorwin", "LOCALS", 1)
-	~
 	GOTO XA_Schael
 	
 	IF ~
 		InParty("XACORWIN")
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("XA_MeetIllasera", "GLOBAL", 1)
-		GlobalLT("XA_AskAboutCorwin", "LOCALS", 1)
 	~ THEN REPLY @280 /* ~Tell me about Corwin.~*/
-	DO ~
-		SetGlobal("XA_AskAboutCorwin", "LOCALS", 1)
-	~
 	GOTO XA_Corwin
 END
 
@@ -1454,50 +1434,70 @@ APPEND SARVOLO
 	END
 
 	IF ~~ THEN BEGIN XA_Corwin_Illasera
-		SAY @281 /* ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. The pair have achieved feats that no one could have imagined, and her devotion to <CHARNAME>'s cause has only grown since <PRO_HESHE> helped rescue her daughter from Illasera the Quick. Though no one can say what the future has in store for this duo, one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~ */
+		SAY @281 /* ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. */
 		
+		=@401 /* The pair have achieved feats that no one could have imagined, and her devotion to <CHARNAME>'s cause has only grown since <PRO_HESHE> helped rescue her daughter from Illasera the Quick. Though no one can say what the future has in store for this duo, one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~  */
 		IF ~~ THEN
 		GOTO 9
 		
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
+			GlobalLT("XA_CorwinVolo", "LOCALS", 1)
 		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinVolo", "LOCALS", 1)
+		~
 		EXTERN XACORWIJ XA_Corwin_Sarvolo
 	END
 	
 	IF ~~ THEN BEGIN XA_Schael_Illasera
-		SAY @282 /* ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. <CHARNAME> was smitten by her beauty, and their relationship gradually evolved from friendship into something far more profound. Their fierce devotion toward one another was only strengthened after <CHARNAME> helped rescue her daughter from Illasera the Quick. Their love, to this point, has endured against all odds. Whether it will continue to do so, no one can say, though one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~ */
+		SAY @282 /* ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together.  */
 		
+		= @402 /*~<CHARNAME> was smitten by her beauty, and their relationship gradually evolved from friendship into something far more profound. Their fierce devotion toward one another was only strengthened after <CHARNAME> helped rescue her daughter from Illasera the Quick. Their love, to this point, has endured against all odds. Whether it will continue to do so, no one can say, though one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~*/
 		IF ~~ THEN
 		GOTO 9
 		
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
+			GlobalLT("XA_CorwinVolo", "LOCALS", 1)
 		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinVolo", "LOCALS", 1)
+		~
 		EXTERN XACORWIJ XA_Schael_Sarvolo		
 	END
 	
 	IF ~~ THEN BEGIN XA_Corwin
-		SAY @90 /* ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. The pair have achieved feats that no one could have imagined, and her devotion to <CHARNAME>'s cause has only grown since <PRO_HESHE> saved the life of Skie Silvershield, the daughter of one of the Grand Dukes. Though no one can say what the future has in store for this duo, one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~ */
+		SAY @90 /* ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. */
 		
+		=@404 /*~The pair have achieved feats that no one could have imagined, and her devotion to <CHARNAME>'s cause has only grown since <PRO_HESHE> saved the life of Skie Silvershield, the daughter of one of the Grand Dukes. Though no one can say what the future has in store for this duo, one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~*/
 		IF ~~ THEN
 		GOTO 9
 		
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
+			GlobalLT("XA_CorwinVolo", "LOCALS", 1)
 		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinVolo", "LOCALS", 1)
+		~
 		EXTERN XACORWIJ XA_Corwin_Sarvolo
 	END
 	
 	IF ~~ THEN BEGIN XA_Schael
-		SAY @91 /* ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. <CHARNAME> was smitten by her beauty, and their relationship gradually evolved from friendship into something far more profound. Their fierce devotion toward one another was only strengthened after <CHARNAME> saved the life of Skie Silvershield, the daughter of one of the Grand Dukes. Their love, to this point, has endured against all odds. Whether it will continue to do so, no one can say, though one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~ */
+		SAY @91 /* ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together. */
 		
+		= @403 /*~<CHARNAME> was smitten by her beauty, and their relationship gradually evolved from friendship into something far more profound. Their fierce devotion toward one another was only strengthened after <CHARNAME> saved the life of Skie Silvershield, the daughter of one of the Grand Dukes. Their love, to this point, has endured against all odds. Whether it will continue to do so, no one can say, though one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~*/
 		IF ~~ THEN
 		GOTO 9
 		
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
+			GlobalLT("XA_CorwinVolo", "LOCALS", 1)
 		~ THEN 
+		DO ~
+			SetGlobal("XA_CorwinVolo", "LOCALS", 1)
+		~
 		EXTERN XACORWIJ XA_Schael_Sarvolo		
 	END
 	
