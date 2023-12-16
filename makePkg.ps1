@@ -1,28 +1,40 @@
-Remove-Item -LiteralPath "LoveConquersAll_EET/LCA" -Force -Recurse
-Remove-Item "LoveConquersAll_EET.zip" -Force
-Remove-Item "setup-LCA.exe" -Force
+$basePath = "LoveConquersAll_EET"
+$tp2Name = "LCA"
+$modPath = $basePath + "/" + $tp2Name 
+$archive = $basePath + ".zip"
+$exePath = "setup-" + $tp2Name + ".exe"
 
-Copy-Item -Path "2DA" -Destination "LoveConquersAll_EET/LCA/2DA" -Recurse
-Copy-Item -Path "ARE" -Destination "LoveConquersAll_EET/LCA/ARE" -Recurse
-Copy-Item -Path "BAF" -Destination "LoveConquersAll_EET/LCA/BAF" -Recurse
-Copy-Item -Path "BAM" -Destination "LoveConquersAll_EET/LCA/BAM" -Recurse
-Copy-Item -Path "BMP" -Destination "LoveConquersAll_EET/LCA/BMP" -Recurse
-Copy-Item -Path "CRE" -Destination "LoveConquersAll_EET/LCA/CRE" -Recurse
-Copy-Item -Path "D" -Destination "LoveConquersAll_EET/LCA/D" -Recurse
-Copy-Item -Path "ITM" -Destination "LoveConquersAll_EET/LCA/ITM" -Recurse
-Copy-Item -Path "MOS" -Destination "LoveConquersAll_EET/LCA/MOS" -Recurse
-Copy-Item -Path "STO" -Destination "LoveConquersAll_EET/LCA/STO" -Recurse
-Copy-Item -Path "TIS" -Destination "LoveConquersAll_EET/LCA/TIS" -Recurse
-Copy-Item -Path "TRA" -Destination "LoveConquersAll_EET/LCA/TRA" -Recurse
-Copy-Item -Path "WAV" -Destination "LoveConquersAll_EET/LCA/WAV" -Recurse
-Copy-Item -Path "SPL" -Destination "LoveConquersAll_EET/LCA/SPL" -Recurse
-Copy-Item -Path "COMPAT" -Destination "LoveConquersAll_EET/LCA/COMPAT" -Recurse
-Copy-Item -Path "LCA.TP2" -Destination "LoveConquersAll_EET/LCA"
-Copy-Item -Path "LICENSE.md" -Destination "LoveConquersAll_EET/LCA"
+Remove-Item -LiteralPath $modPath -Force -Recurse
+Remove-Item $archive -Force
+Remove-Item $exePath -Force
 
-Copy-Item -Path "weidu.exe" -Destination "LoveConquersAll_EET/setup-LCA.exe"
-Copy-Item -Path "User Guide.pdf" -Destination "LoveConquersAll_EET/User Guide.pdf"
-Copy-Item -Path "Release Notes.md" -Destination "LoveConquersAll_EET/Release Notes.md"
+$folders = @(
+'2DA',
+'ARE',
+'BAF',
+'BAM',
+'BMP',
+'CRE',
+'COMPAT',
+'D',
+'ITM',
+'MOS',
+'STO',
+'SPL',
+'TIS',
+'TRA',
+'WAV'
+)
+
+foreach($folder in $folders){
+	Copy-Item -Path $folder -Destination ($modPath + "/" + $folder) -Recurse
+}
+
+Copy-Item -Path ($tp2Name + ".tp2") -Destination $modPath 
+Copy-Item -Path "LICENSE.md" -Destination $modPath
+
+Copy-Item -Path "weidu.exe" -Destination ($basePath + "/" + $exePath)
+Copy-Item -Path "Release Notes.md" -Destination ($basePath + "/Release Notes.md")
 
 $7zipPath = "$env:ProgramFiles/7-Zip/7z.exe"
 
@@ -32,12 +44,12 @@ if (-not (Test-Path -Path $7zipPath -PathType Leaf)) {
 
 Set-Alias Start-SevenZip $7zipPath
 
-$Source = "./LoveConquersAll_EET/*"
-$Target = "./LoveConquersAll_EET.zip"
+$Source = "./" + $basePath + "/*"
+$Target = "./" + $archive
 
 Start-SevenZip a -mx=9 $Target $Source
 
-Remove-Item -LiteralPath "LoveConquersAll_EET" -Force -Recurse
-Get-FileHash LoveConquersAll_EET.zip -Algorithm SHA256 > SHA256.txt
+Remove-Item -LiteralPath $basePath -Force -Recurse
+Get-FileHash $archive -Algorithm SHA256 > SHA256.txt
 
-Copy-Item -Path "LoveConquersAll_EET.zip" -Destination "\\192.168.1.88\smbuser\Home\Installers\LoveConquersAll_EET.zip"
+Copy-Item -Path $archive -Destination "\\192.168.1.88\smbuser\Home\Installers\" + $archive
