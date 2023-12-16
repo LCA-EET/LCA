@@ -1422,7 +1422,11 @@ APPEND SARVOLO
 		IF ~
 			IsValidForPartyDialogue("XACAELAR")
 			See("XACAELAR")
+			GlobalLT("XA_CaelarVolo", "LOCALS", 1)
 		~ THEN REPLY @319 /* ~She can explain.~ */
+		DO ~
+			SetGlobal("XA_CaelarVolo", "LOCALS", 1)
+		~
 		EXTERN XACAELAJ XA_CaelarSarvolo
 	END
 
