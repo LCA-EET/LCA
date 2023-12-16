@@ -4,6 +4,10 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v1.0.12b 2023-12-16
+* Minor improvements to the integration with the fourth intimate encounter in the LCA_Explicit mod.
+* Updated Volo's dialog to include mention of <CHARNAME>'s accomplishments during the Dragonspear campaign.  
+
 # v1.0.12a 2023-12-10
 * Fixed a bug that could cause Lantanara to spawn repeatedly after giving the player her prophecy.
 * Fixed a bug that could cause Jan to rejoin the party in Saradush, even if he was not in the party at the conclusion of the Return to Baldur's Gate portion of the mod.

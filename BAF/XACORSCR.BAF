@@ -190,17 +190,17 @@ END
 	IF 
 		ActionListEmpty()
 		Global("XA_CanTalk", "LOCALS", 1)
-		OR(5)
+		OR(6)
 			!IsValidForPartyDialogue(Myself)
 			ActuallyInCombat()
 			GlobalGT("XA_ArrivedInUndercity", "GLOBAL", 0)
 			!InParty(Myself)
 			AreaCheck("XACS13")
+			Global("XA_LCE_EXTalk", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_CanTalk", "LOCALS", 0)
-			////DisplayStringHead(Myself, ~DEBUG: 08-00~)
 			SetInterrupt(TRUE)
 			Continue()
 	END
@@ -211,11 +211,11 @@ END
 		!Global("XA_CanTalk", "LOCALS", 1)
 		IsValidForPartyDialogue(Myself)
 		!ActuallyInCombat()
+		GlobalLT("XA_LCE_EXTalk", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_CanTalk", "LOCALS", 1)
-			////DisplayStringHead(Myself, ~DEBUG: 08-01~)
 			SetInterrupt(TRUE)
 			Continue()
 	END

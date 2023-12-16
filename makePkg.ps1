@@ -35,6 +35,7 @@ Copy-Item -Path "LICENSE.md" -Destination $modPath
 
 Copy-Item -Path "weidu.exe" -Destination ($basePath + "/" + $exePath)
 Copy-Item -Path "Release Notes.md" -Destination ($basePath + "/Release Notes.md")
+Copy-Item -Path "User Guide.pdf" -Destination ($basePath + "/User Guide.pdf")
 
 $7zipPath = "$env:ProgramFiles/7-Zip/7z.exe"
 
@@ -52,4 +53,4 @@ Start-SevenZip a -mx=9 $Target $Source
 Remove-Item -LiteralPath $basePath -Force -Recurse
 Get-FileHash $archive -Algorithm SHA256 > SHA256.txt
 
-Copy-Item -Path $archive -Destination "\\192.168.1.88\smbuser\Home\Installers\" + $archive
+Copy-Item -Path $archive -Destination ("\\192.168.1.88\smbuser\Home\Installers\" + $archive)
