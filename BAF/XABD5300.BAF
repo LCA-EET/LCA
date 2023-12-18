@@ -8,7 +8,7 @@ THEN
 END
 
 IF 
-	!Global("XA_CorwinInKanaglym", "GLOBAL",1)
+	GlobalLT("XA_CorwinInKanaglym", "GLOBAL",1)
 	IsValidForPartyDialogue("Corwin")
 	Dead("bdkherr")
 THEN
@@ -18,7 +18,7 @@ THEN
 END
 
 IF 
-	!Global("XA_ViconiaInKanaglym", "GLOBAL",1)
+	GlobalLT("XA_ViconiaInKanaglym", "GLOBAL",1)
 	IsValidForPartyDialogue("Viconia")
 	Dead("bdkherr")
 THEN
@@ -28,7 +28,7 @@ THEN
 END
 
 IF 
-	!Global("XA_JaheiraInKanaglym", "GLOBAL",1)
+	GlobalLT("XA_JaheiraInKanaglym", "GLOBAL",1)
 	IsValidForPartyDialogue("Jaheira")
 	Dead("bdkherr")
 THEN
@@ -38,7 +38,7 @@ THEN
 END
 
 IF 
-	!Global("XA_DornInKanaglym", "GLOBAL",1)
+	GlobalLT("XA_DornInKanaglym", "GLOBAL",1)
 	IsValidForPartyDialogue("Dorn")
 	Dead("bdkherr")
 THEN
