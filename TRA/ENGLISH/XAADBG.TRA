@@ -817,3 +817,13 @@
 @816 = ~XA_LC_StartedInBG2 to 1.~
 @817 = ~SetGlobal("XA_CorwinLoveBG2", "GLOBAL", 1)~
 @818 = ~Dismiss Debugger.~
+@819 = ~Check Conditions - Kanaglym Dream~
+@820 = ~Incubus Defeated.~
+@821 = ~Incubus NOT Defeated.~
+@822 = ~Demogorgon Defeated.~
+@823 = ~Demogorgon NOT Defeated.~
+@824 = ~Player Has Entered Saradush.~
+@825 = ~Player Has NOT Entered Saradush.~
+@826 = ~Kanaglym Cleared.~
+@827 = ~Kanaglym NOT Cleared.~
+@828 = ~Set XA_ClearedKanaglym to 1.~

@@ -343,6 +343,9 @@ IF ~
 	~
 	GOTO XA_MainMenu
 	
+	IF ~~ THEN REPLY @819
+	GOTO XA_KanaConditionCheck
+	
 	IF ~~ THEN REPLY @248
 	DO ~
 		SetGlobalTimer("XA_DukeDebriefTimer", "GLOBAL",EIGHT_HOURS)
@@ -357,6 +360,50 @@ IF ~
 		DestroySelf()
 	~
 	EXIT
+END
+
+IF ~~ THEN BEGIN XA_KanaConditionCheck
+	SAY @819 /* */
+	
+	IF ~
+		Global("XA_IncubusDefeated", "GLOBAL", 1)
+	~ THEN REPLY @820 /*~Incubus Defeated.~*/
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_IncubusDefeated", "GLOBAL", 0)
+	~ THEN REPLY @821 /* ~Incubus NOT Defeated.~ */
+	GOTO XA_MainMenu
+	
+	IF ~
+		GlobalGT("DemoGorgonIsDead","GLOBAL",0)
+	~ THEN REPLY @822 /*~Incubus Defeated.~*/
+	GOTO XA_MainMenu
+	
+	IF ~
+		!GlobalGT("DemoGorgonIsDead","GLOBAL",0)
+	~ THEN REPLY @823 /* ~Incubus NOT Defeated.~ */
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_ClearedKanaglym", "GLOBAL", 1)
+	~ THEN REPLY @826 /*~Incubus Defeated.~*/
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_ClearedKanaglym", "GLOBAL", 0)
+	~ THEN REPLY @827 /* ~Incubus NOT Defeated.~ */
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_EnteredSaradush", "GLOBAL", 1)
+	~ THEN REPLY @824 /*~Incubus Defeated.~*/
+	GOTO XA_MainMenu
+	
+	IF ~
+		Global("XA_EnteredSaradush", "GLOBAL", 0)
+	~ THEN REPLY @825 /* ~Incubus NOT Defeated.~ */
+	GOTO XA_MainMenu
 END
 
 IF ~~ THEN BEGIN XA_SexDebug
@@ -5080,6 +5127,12 @@ IF ~~ THEN BEGIN XA_Menu_AdjustVariables
 	IF ~~ THEN REPLY @817
 	DO ~
 		SetGlobal("XA_CorwinLoveBG2", "GLOBAL", 1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @828
+	DO ~
+		SetGlobal("XA_ClearedKanaglym", "GLOBAL",1)
 	~
 	GOTO XA_MainMenu
 	
