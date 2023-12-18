@@ -5,13 +5,15 @@
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
 # v1.0.12c 2023-12-17
+* Golden Eggs can now be placed in Jewellery Bags.
 * Fixed a bug that prevented the "XA_ClearedKanaglym" variable from being set correctly. This variable is important, because it it one of the triggers used to start the Kanaglym dream sequence in ToB. Players can manually set this variable after the fact by opening the LCA Assistant, and choosing the following options:
 - 9. Open debugger.
 - 1. Proceed.
 - 43. Adjust Variables.
 - 138. Set XA_ClearedKanaglym to 1.
 - 58. Dismiss Debugger.
-
+* For players starting their game from BG2, an initial configuration option concerning Kanaglym has been added.
+ 
 # v1.0.12b 2023-12-16
 * Minor improvements to the integration with the fourth intimate encounter in the LCA_Explicit mod.
 * Updated Volo's dialog to include mention of <CHARNAME>'s accomplishments during the Dragonspear campaign.  

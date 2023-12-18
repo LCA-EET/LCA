@@ -70,6 +70,15 @@
 //}
 
 //{ Kanaglym Dream
+	IF
+		GlobalLT("XA_ClearedKanaglym", "GLOBAL", 1)
+		Dead("bdkherr")
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_ClearedKanaglym", "GLOBAL", 1)
+			Continue()
+	END
+
 
 	IF
 		GlobalLT("XA_KanaDreamTimerSet", "GLOBAL",1)

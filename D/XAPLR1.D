@@ -43,6 +43,19 @@ APPEND ~PLAYER1~
 		DO ~
 			SetGlobal("XA_CorwinWentToAvernus", "GLOBAL", 1)
 		~
+		GOTO XA_InitialConfig3A
+		
+		IF ~~ THEN REPLY @207 /* No. */
+		GOTO XA_InitialConfig3A
+	END
+	
+	IF ~~ THEN BEGIN XA_InitialConfig3A
+		SAY @214 /*~Treat Kanaglym as having been cleared, in SoD?~*/
+		
+		IF ~~ THEN REPLY @206 /* Yes */
+		DO ~
+			SetGlobal("XA_ClearedKanaglym", "GLOBAL",1)
+		~
 		GOTO XA_InitialConfig4
 		
 		IF ~~ THEN REPLY @207 /* No. */
