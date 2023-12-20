@@ -858,10 +858,106 @@ IF
 	Global("BD_JOINXP","LOCALS",0)
 	InParty(Myself)
 	XPGT(Player1,2999999)
-	XPLT(Myself,3000000)
+	XPLT(Player1,3250000)
+	XPLT(Myself,3250000)
 THEN
 	RESPONSE #100
 		ChangeStat(Myself,XP,3000000,SET)
+		Continue()
+END
+
+IF
+	Global("BD_JOINXP","LOCALS",0)
+	InParty(Myself)
+	XPGT(Player1,3249999)
+	XPLT(Player1,3500000)
+	XPLT(Myself,3500000)
+THEN
+	RESPONSE #100
+		ChangeStat(Myself,XP,3250000,SET)
+		Continue()
+END
+
+IF
+	Global("BD_JOINXP","LOCALS",0)
+	InParty(Myself)
+	XPGT(Player1,3499999)
+	XPLT(Player1,3750000)
+	XPLT(Myself,3750000)
+THEN
+	RESPONSE #100
+		ChangeStat(Myself,XP,3500000,SET)
+		Continue()
+END
+
+IF
+	Global("BD_JOINXP","LOCALS",0)
+	InParty(Myself)
+	XPGT(Player1,3749999)
+	XPLT(Player1,4000000)
+	XPLT(Myself,4000000)
+THEN
+	RESPONSE #100
+		ChangeStat(Myself,XP,3750000,SET)
+		Continue()
+END
+
+IF
+	Global("BD_JOINXP","LOCALS",0)
+	InParty(Myself)
+	XPGT(Player1,3999999)
+	XPLT(Player1,4250000)
+	XPLT(Myself,4250000)
+THEN
+	RESPONSE #100
+		ChangeStat(Myself,XP,4000000,SET)
+		Continue()
+END
+
+IF
+	Global("BD_JOINXP","LOCALS",0)
+	InParty(Myself)
+	XPGT(Player1,4249999)
+	XPLT(Player1,4500000)
+	XPLT(Myself,4500000)
+THEN
+	RESPONSE #100
+		ChangeStat(Myself,XP,4250000,SET)
+		Continue()
+END
+
+IF
+	Global("BD_JOINXP","LOCALS",0)
+	InParty(Myself)
+	XPGT(Player1,4499999)
+	XPLT(Player1,4750000)
+	XPLT(Myself,4750000)
+THEN
+	RESPONSE #100
+		ChangeStat(Myself,XP,4500000,SET)
+		Continue()
+END
+
+IF
+	Global("BD_JOINXP","LOCALS",0)
+	InParty(Myself)
+	XPGT(Player1,4749999)
+	XPLT(Player1,5000000)
+	XPLT(Myself,5000000)
+THEN
+	RESPONSE #100
+		ChangeStat(Myself,XP,4750000,SET)
+		Continue()
+END
+
+IF
+	Global("BD_JOINXP","LOCALS",0)
+	InParty(Myself)
+	XPGT(Player1,4999999)
+	XPLT(Myself,5000000)
+THEN
+	RESPONSE #100
+		ChangeStat(Myself,XP,5000000,SET)
 		Continue()
 END
 
