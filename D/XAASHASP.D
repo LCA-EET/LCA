@@ -24,6 +24,7 @@ IF ~~ THEN BEGIN XA_CaelarSuicide_2A
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_OathRelease", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Ashatiel", "GLOBAL", 2)
 	~
 	EXIT
 END
@@ -34,6 +35,7 @@ IF ~~ THEN BEGIN XA_CaelarSuicide_2B
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_OathRelease", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Ashatiel", "GLOBAL", 3)
 	~
 	EXIT
 END
@@ -241,7 +243,7 @@ IF ~~ THEN BEGIN XA_HelpCaelar2
 	IF ~~ THEN REPLY @18 /* ~Since we last met, I've gained access to a planar gate. Perhaps I can use it to reach Avernus.~ */
 	DO ~
 		SetGlobal("XA_HelpAshatiel", "GLOBAL", 1)
-		AddJournalEntry(@55, INFO)
+		SetGlobal("XA_LC_Journal_Ashatiel", "GLOBAL", 1)
 	~
 	GOTO XA_DecideToHelp
 	
@@ -280,7 +282,7 @@ IF ~~ THEN BEGIN XA_WhyLoyal2
 	IF ~~ THEN REPLY @18 /* ~Since we last met, I've gained access to a planar gate. Perhaps I can use it to reach Avernus.~ */
 	DO ~
 		SetGlobal("XA_HelpAshatiel", "GLOBAL", 1)
-		AddJournalEntry(@55, INFO)
+		SetGlobal("XA_LC_Journal_Ashatiel", "GLOBAL", 1)
 	~
 	GOTO XA_DecideToHelp
 	
@@ -321,7 +323,7 @@ IF ~
 	IF ~~ THEN REPLY @18 /* ~Since we last met, I've gained access to a planar gate. Perhaps I can use it to reach Avernus.~ */
 	DO ~
 		SetGlobal("XA_HelpAshatiel", "GLOBAL", 1)
-		AddJournalEntry(@55, INFO)
+		SetGlobal("XA_LC_Journal_Ashatiel", "GLOBAL", 1)
 	~
 	GOTO XA_DecideToHelp
 	

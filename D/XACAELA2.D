@@ -67,7 +67,7 @@ IF ~~ THEN BEGIN XA_Join2
 	IF ~~ THEN
 	DO ~
 		DestroyItem("MINHP1")
-		AddJournalEntry(@55, INFO)
+		SetGlobal("XA_LC_Journal_CaelarJoin", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XACAJOIN")
 	~

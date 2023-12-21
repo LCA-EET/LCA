@@ -648,3 +648,153 @@ THEN
 		Continue()
 END
 //}
+
+//{ Lodob
+IF
+	Global("XA_LC_Journal_Lodob", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Lodob", "GLOBAL", 0)
+		AddJournalEntry(@40, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Ashatiel
+IF
+	Global("XA_LC_Journal_Ashatiel", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Ashatiel", "GLOBAL", 0)
+		AddJournalEntry(@41, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Ashatiel", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Ashatiel", "GLOBAL", 0)
+		AddJournalEntry(@43, QUEST_DONE)
+		AddXPObject(Player1, 10000)
+		AddXPObject(Player2, 10000)
+		AddXPObject(Player3, 10000)
+		AddXPObject(Player4, 10000)
+		AddXPObject(Player5, 10000)
+		AddXPObject(Player6, 10000)
+		EraseJournalEntry(@41)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Ashatiel", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Ashatiel", "GLOBAL", 0)
+		AddJournalEntry(@43, QUEST_DONE)  /*~Rest In Peace
+With the death of Caelar Argent, the spirits of her dead crusaders have finally moved on to the afterlife.~ */
+		AddXPObject(Player1, 10000)
+		AddXPObject(Player2, 10000)
+		AddXPObject(Player3, 10000)
+		AddXPObject(Player4, 10000)
+		AddXPObject(Player5, 10000)
+		AddXPObject(Player6, 10000)
+		EraseJournalEntry(@41) /* ~Rest In Peace
+I've decided to help the spirits of the crusaders who are unable to pass on. Using the gate in my pocket plane, I may be able to locate and rescue Caelar Argent from Avernus, so that I can bring her to Kanaglym. Once there, she can release her crusaders from their sworn oath to her, so that they can move on to whatever awaits them in the afterlife.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Aun / Caelar
+IF
+	Global("XA_LC_Journal_CaelarHome", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_CaelarHome", "GLOBAL", 0)
+		AddXPObject(Player1, 10000)
+		AddJournalEntry(@42, QUEST_DONE) /* ~Caelar Argent
+Caelar Argent has been sent home with Aun, her uncle. In the end, I did not have the heart to send her to prison. She has suffered enough already. Hopefully, they can help each other heal from the horrors that they experienced in Avernus.~*/
+		EraseJournalEntry(@41) /* ~Rest In Peace
+I've decided to help the spirits of the crusaders who are unable to pass on. Using the gate in my pocket plane, I may be able to locate and rescue Caelar Argent from Avernus, so that I can bring her to Kanaglym. Once there, she can release her crusaders from their sworn oath to her, so that they can move on to whatever awaits them in the afterlife.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Caelar Joined
+IF
+	Global("XA_LC_Journal_CaelarJoin", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_CaelarJoin", "GLOBAL", 0)
+		AddXPObject(Player1, 10000)
+		AddJournalEntry(@44, QUEST_DONE) /*~Caelar Argent
+Caelar Argent, the aasimar whose bloody crusade wreaked havoc across the Sword Coast, has agreed to fight for my cause. She will prove a valuable ally, in spite of the physical and psychological trauma that has been inflicted upon her.~ */
+		EraseJournalEntry(@41) /* ~Rest In Peace
+I've decided to help the spirits of the crusaders who are unable to pass on. Using the gate in my pocket plane, I may be able to locate and rescue Caelar Argent from Avernus, so that I can bring her to Kanaglym. Once there, she can release her crusaders from their sworn oath to her, so that they can move on to whatever awaits them in the afterlife.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ TM Archery Sign-up
+IF
+	Global("XA_LC_Journal_TMSignup", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_TMSignup", "GLOBAL", 0)
+		AddJournalEntry(@45, QUEST) /*~Trademeet Archery Competition
+Mazzy and Schael have expressed interest in taking part in this year's Trademeet Archery Competition. There's a sign-up desk in Trademeet, in the southeast of the city. We should check it out the next time we are in the area. ~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ TM - Mazzy Won
+IF
+	Global("XA_LC_Journal_TMMazzy", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_TMMazzy", "GLOBAL", 0)
+		AddXPObject("Mazzy", 25000)
+		AddXPObject("XACORWIN", 10000)
+		GiveGoldForce(2500)
+		AddJournalEntry(@46, QUEST_DONE) /* ~Trademeet Archery Competition
+Mazzy, Corwin, and a host of other contestants competed in the annual Trademeet Archery Competition, and Mazzy emerged victorious! Corwin earned second place. I'm fortunate to have such skilled companions at my side.~*/
+		EraseJournalEntry(@45)  /* ~Trademeet Archery Competition
+Mazzy and Schael have expressed interest in taking part in this year's Trademeet Archery Competition. There's a sign-up desk in Trademeet, in the southeast of the city. We should check it out the next time we are in the area.~ */
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ TM - Corwin Won
+IF
+	Global("XA_LC_Journal_TMCorwin", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_TMCorwin", "GLOBAL", 0)
+		AddXPObject("XACORWIN", 25000)
+		AddXPObject("Mazzy", 10000)
+		GiveGoldForce(2500)
+		AddJournalEntry(@47, QUEST_DONE) /* ~Trademeet Archery Competition
+Schael, Mazzy, and a host of other contestants competed in the annual Trademeet Archery Competition, and Schael emerged victorious! Mazzy performed admirably as well — I'm fortunate to have such skilled companions at my side.~*/
+		EraseJournalEntry(@45)  /* ~Trademeet Archery Competition
+Mazzy and Schael have expressed interest in taking part in this year's Trademeet Archery Competition. There's a sign-up desk in Trademeet, in the southeast of the city. We should check it out the next time we are in the area.~ */
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}

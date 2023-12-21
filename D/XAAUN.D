@@ -84,7 +84,7 @@ CHAIN XAAUN XA_AunCaelarFarewell
 	== XACAELA2
 	@11 /*~Goodbye... and thank you.~  */
 	DO ~
-		AddJournalEntry(@13, INFO)
+		SetGlobal("XA_LC_Journal_CaelarHome", "GLOBAL", 1)
 		SetGlobal("XA_CaelarHome", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XACAEBYE")

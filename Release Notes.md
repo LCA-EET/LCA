@@ -4,6 +4,11 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v1.0.13 2023-12-20
+* Increased the experience awarded to Caelar upon her joining the party from a maximum of three million to a maximum of five million.
+* Minor improvements to various dialogs and journaling.
+* Fixed a bug that caused the Black Abishai to attack other demons (as opposed to the player's party) during the battle to rescue Caelar.
+
 # v1.0.12c 2023-12-17
 * Golden Eggs can now be placed in Jewellery Bags.
 * Fixed a bug that prevented the "XA_ClearedKanaglym" variable from being set correctly. This variable is important, because it it one of the triggers used to start the Kanaglym dream sequence in ToB. Players can manually set this variable after the fact by opening the LCA Assistant, and choosing the following options:

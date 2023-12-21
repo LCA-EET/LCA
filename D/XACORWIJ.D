@@ -8854,8 +8854,7 @@ IF ~~ THEN BEGIN XAA80C
 	
 	IF ~~ THEN 
 	DO ~
-		GiveGoldForce(2500)
-		AddExperienceParty(35000)
+		SetGlobal("XA_LC_Journal_TMCorwin", "GLOBAL", 1)
 		SetGlobal("XA_TM_ArcheryChallenge", "GLOBAL", 3)
 	~
 	EXIT

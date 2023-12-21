@@ -379,7 +379,7 @@ END
 		IF ~~ THEN MAZZYJ XA_TMSignup
 			@539 /* ~Yes, that's right. The signup table is in the southeast of the city, if I remember correctly. Next time we are in the area, we can signup.~*/
 			DO ~
-				AddJournalEntry(@540, INFO)
+				SetGlobal("XA_LC_Journal_TMSignup", "GLOBAL", 1)
 			~
 			== XACORWIB
 			@538 /* ~Now that's a plan. Let's go.~ [BD50018]*/
@@ -389,8 +389,7 @@ END
 		IF ~~ THEN MAZZYJ XA_MazzyWonCompetition2
 			@552 /* ~And I am glad to have you at my side, <CHARNAME>.~ */
 			DO ~
-				GiveGoldForce(2500)
-				AddExperienceParty(35000)
+				SetGlobal("XA_LC_Journal_TMMazzy", "GLOBAL", 1)
 				SetGlobal("XA_TM_ArcheryChallenge", "GLOBAL", 3)
 			~
 			== XACORWIB
