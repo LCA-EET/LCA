@@ -1,3 +1,54 @@
+//{ Gift for Rohma
+
+IF
+	Global("XA_LC_Journal_RohmaGift_0", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_RohmaGift_0", "GLOBAL", 0)
+		AddJournalEntry(@49, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_RohmaGift_0A", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_RohmaGift_0A", "GLOBAL", 0)
+		AddJournalEntry(@50, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_RohmaGift_1", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_RohmaGift_1", "GLOBAL", 0)
+		AddJournalEntry(@48, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_RohmaGift_2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_RohmaGift_2", "GLOBAL", 0)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 4)
+		AddXPObject(Player1,10000)
+		AddJournalEntry(@51, QUEST_DONE)
+		EraseJournalEntry(@48)
+		EraseJournalEntry(@49)
+		EraseJournalEntry(@50)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
 //{ Tianna
 IF
 	Global("XA_LC_Journal_Tianna1", "GLOBAL", 1)

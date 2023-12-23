@@ -227,7 +227,7 @@
 			IF ~~ THEN
 			DO ~
 				GiveItemCreate("XARDOLL", LastTalkedToBy(Myself),1,0,0)
-				AddJournalEntry(@365, INFO)
+				SetGlobal("XA_LC_Journal_RohmaGift_1", "GLOBAL", 1)
 			~
 			EXIT
 		END
@@ -287,7 +287,7 @@
 			IF ~~ THEN
 			DO ~
 				GiveItemCreate("XARDOLL", LastTalkedToBy(Myself),1,0,0)
-				AddJournalEntry(@365, INFO)
+				SetGlobal("XA_LC_Journal_RohmaGift_1", "GLOBAL", 1)
 			~
 			EXIT
 		END
@@ -345,7 +345,7 @@
 			IF ~~ THEN
 			DO ~
 				GiveItemCreate("XARDOLL", LastTalkedToBy(Myself),1,0,0)
-				AddJournalEntry(@365, INFO)
+				SetGlobal("XA_LC_Journal_RohmaGift_1", "GLOBAL", 1)
 			~
 			EXIT
 		END

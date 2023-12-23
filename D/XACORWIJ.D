@@ -9594,7 +9594,7 @@ IF ~~ THEN BEGIN XA_GetRohmaGift
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@1303, QUEST)
+		SetGlobal("XA_LC_Journal_RohmaGift_0", "GLOBAL", 1)
 		SetGlobalTimer("XA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
 		SetGlobal("XA_WantToGetDoll", "GLOBAL", 1)
 		EndCutSceneMode()
@@ -9607,7 +9607,7 @@ IF ~~ THEN BEGIN XA_FirstMeetingRohma
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@1304, QUEST)
+		SetGlobal("XA_LC_Journal_RohmaGift_0A", "GLOBAL", 1)
 		SetGlobalTimer("XA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
 		SetGlobal("XA_WantToGetDoll", "GLOBAL", 1)
 		EndCutSceneMode()

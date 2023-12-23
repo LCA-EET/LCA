@@ -167,7 +167,7 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite3A4A1
 	
 	IF ~~ THEN REPLY @20 /* ~Your mommy was right. Rohma, here. I want you to have this. (Hand over the doll.)~ */
 	DO ~
-		AddJournalEntry(@77, QUEST_DONE)
+		SetGlobal("XA_LC_Journal_RohmaGift_2", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinFamilyReunite3A4A2
 END
@@ -179,10 +179,7 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite3A4A2
 	DO ~
 		TakePartyItem("XARDOLL")
 		DestroyItem("XARDOLL")
-		AddExperienceParty(5000)
 		SetGlobal("XA_GaveDoll", "Global", 1)
-		AddJournalEntry(@23, INFO)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 5)
 	~
 	EXTERN XACORWIJ XA_CorwinFamilyReunite3A4A3
 END
