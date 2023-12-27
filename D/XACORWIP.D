@@ -187,6 +187,7 @@ END
 IF ~
 	Global("XA_CorwinSpawnPlane", "GLOBAL", 1)
 	GlobalLT("XA_CorwinSpawnComplain", "GLOBAL", 1)
+	!Race(Player1, LICH)
 ~ THEN BEGIN XA_JoinToB
 	SAY @7 /* ~Wh... where... what the hells is this place? <CHARNAME>!? There better be a DAMN good explanation for this!~*/
 	
@@ -479,6 +480,7 @@ IF ~
 	Global("XA_CorwinJoined", "LOCALS", 1)
 	GlobalLT("XA_CorwinKickedOut", "LOCALS", 1)
 	ReputationGT(Player1,6)
+	!Race(Player1, LICH)
 ~ THEN BEGIN XA_AreYouSure
 	SAY @0 /* ~<CHARNAME>? Are you sure you don't want me with you?~ [BDCORP6] */
 	
@@ -549,6 +551,7 @@ IF ~
 	Global("XA_CorwinJoined", "LOCALS", 1)
 	GlobalLT("XA_CorwinKickedOut", "LOCALS", 1)
 	ReputationLT(Player1,7)
+	!Race(Player1, LICH)
 ~ THEN BEGIN XA_AreYouSure_RepLT7
 	SAY @32 /* ~You want me out of here? Fine. If you ever clean up your act, you can find me in the Athkatla magistrate.~ */
 	IF ~~ THEN
@@ -579,6 +582,7 @@ END
 		Global("XA_CorwinKickedOut", "LOCALS", 1)
 		AreaCheck("AR1002")
 		ReputationGT(Player1,6)
+		!Race(Player1, LICH)
 	~ THEN BEGIN XA_BackAtAthkatlaCouncil
 		SAY @63  /*~<CHARNAME>. What do you need?~ [XA100032] */
 		
@@ -642,6 +646,7 @@ END
 		Global("XA_CorwinKickedOut", "LOCALS", 1)
 		!AreaCheck("AR1002")
 		ReputationGT(Player1,6)
+		!Race(Player1, LICH)
 	~ THEN BEGIN XA_OutsideAthkatlaCouncil
 		SAY @63  /*~<CHARNAME>. What do you need?~ [XA100032] */
 		
@@ -710,6 +715,7 @@ END
 	//{ Athkatla Magistrate - Rep Bad
 	IF ~
 		Global("XA_CorwinKickedOut", "LOCALS", 1)
+		!Race(Player1, LICH)
 		ReputationLT(Player1,7)
 		OR(2)
 			AreaCheck("AR1002")
@@ -728,6 +734,7 @@ END
 	//{ Athkatla Magistrate - Rep Bad
 	IF ~
 		Global("XA_CorwinKickedOut", "LOCALS", 1)
+		!Race(Player1, LICH)
 		!AreaCheck("AR1002")
 		ReputationLT(Player1,7)
 		GlobalLT("Chapter", "GLOBAL", 20)
@@ -852,4 +859,14 @@ IF ~~ THEN BEGIN XAA8
 	EXIT
 END
 
-
+IF ~
+	Race(Player1, LICH)
+~ THEN BEGIN XA_CorwinLeaveLich
+	SAY @104 /*~I can't bear to fight at your side any longer. Listen, lich — set foot in Baldur's Gate again and I'll crush your bones to dust. Goodbye.~*/
+	
+	IF ~~ THEN
+	DO ~
+		EscapeArea()
+	~
+	EXIT
+END

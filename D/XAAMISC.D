@@ -3853,10 +3853,11 @@ EXTEND_BOTTOM SUELLE2 18 /* OK */
 		IsValidForPartyDialogue("XACORWIN")
 		ReputationLT(Player1,10)
 		Global("XA_LeaveAfterSoA", "GLOBAL", 1)
-		OR(3)
+		OR(4)
 			Global("DornRomanceActive","GLOBAL",2)
 			Global("HexxatRomanceActive","GLOBAL",2)
 			Global("ViconiaRomanceActive","GLOBAL",2)
+			Race(Player1, LICH)
 	~
 	THEN
 	DO ~
@@ -3870,10 +3871,11 @@ EXTEND_BOTTOM SUELLE2 18 /* OK */
 		IsValidForPartyDialogue("XACORWIN")
 		ReputationGT(Player1,9)
 		Global("XA_LeaveAfterSoA", "GLOBAL", 1)
-		OR(3)
+		OR(4)
 			Global("DornRomanceActive","GLOBAL",2)
 			Global("HexxatRomanceActive","GLOBAL",2)
 			Global("ViconiaRomanceActive","GLOBAL",2)
+			Race(Player1, LICH)
 	~
 	THEN 
 	DO ~

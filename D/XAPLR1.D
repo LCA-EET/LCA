@@ -227,6 +227,9 @@ APPEND ~PLAYER1~
 		IF ~~ THEN REPLY @166 /* ~Report a bug.~ */
 		GOTO XA_ReportBug
 		
+		IF ~~ THEN REPLY @215 /*~Support the creator of the LCA mod.~*/
+		GOTO XA_LC_Support
+		
 		IF ~~ THEN REPLY @168 /*  ~Open Debugger.~ */
 		GOTO XA_Debug
 		
@@ -239,6 +242,16 @@ APPEND ~PLAYER1~
 		GOTO XA_InitialConfig
 		
 		IF ~~ THEN REPLY @160 /* ~Exit.~ */
+		GOTO XA_Exit
+	END
+	
+	IF ~~ THEN BEGIN XA_LC_Support
+		SAY @216 /* ~Please visit www.patreon.com/EETMods. There, you can make either a one-time or a recurring contribution. Thank you for your generosity.~ */
+		
+		IF ~~ THEN REPLY @171 /*~Return to the main menu.~*/
+		GOTO XA_Assistant
+		
+		IF ~~ THEN REPLY @160 /*~Exit.~ */
 		GOTO XA_Exit
 	END
 

@@ -24,6 +24,7 @@ END
 IF ~
 	Global("XA_CorwinContinue", "GLOBAL", 2) 
 	GlobalLT("XA_CorwinReunited", "GLOBAL", 1)
+	!Race(Player1, LICH)
 ~ THEN BEGIN XAA0
 	SAY @7 /* ~<CHARNAME>! There you are... thank the gods.~ [XA100085] */
 	=@8 /* ~I've missed you...~ */
@@ -48,6 +49,7 @@ END
 IF ~
 	Global("XA_CorwinContinue", "GLOBAL", 1) // Friend
 	GlobalLT("XA_CorwinReunited", "GLOBAL", 1)
+	!Race(Player1, LICH)
 ~ THEN BEGIN XAA1
 	SAY @7 /* ~<CHARNAME>! Thank Tymora...~ */
 	IF ~~ THEN REPLY @30 /* ~Schael! What are you doing here?~ */ 
@@ -328,6 +330,28 @@ IF ~~ THEN BEGIN XAAKissEnd
 	DO ~
 		ChangeAIScript("XACORSCR", OVERRIDE)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~
+	Race(Player1, LICH)
+	GlobalLT("XA_LC_CorwinLeaveLich", "GLOBAL", 1)
+~ THEN BEGIN XA_LC_PlayerIsLich
+	SAY @63 /* ~<CHARNAME>! What the — your skin looks like it's hanging off your bones!~ */
+	
+	IF ~~ THEN REPLY @64 /*~Yes! I -became- a lich! Isn't it wonderful?~*/
+	GOTO XA_LC_PlayerIsLich2
+END
+
+IF ~~ THEN BEGIN XA_LC_PlayerIsLich2
+	SAY @65 /* ~A lich!? Gods, have you lost your mind?~ */ 
+	
+	= @66 /* ~Get out of my sight!~ */
+	
+	IF ~~ THEN
+	DO ~
+		EscapeArea()
 	~
 	EXIT
 END

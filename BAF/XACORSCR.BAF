@@ -1481,6 +1481,34 @@ END
 
 //{ 18: Event Checks
 
+	//{ Player became a Lich
+	IF
+		Race(Player1, LICH)
+		InParty(Myself)
+		GlobalLT("XA_LC_CorwinLeaveLich", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_LC_CorwinLichTimer", "GLOBAL", THREE_DAYS)
+			SetGlobal("XA_LC_CorwinLeaveLich", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalTimerExpired("XA_LC_CorwinLichTimer", "GLOBAL")
+		Global("XA_LC_CorwinLeaveLich", "GLOBAL", 1)
+		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinLeaveLich", "GLOBAL", 2)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
 	//{ Dings Joined
 	IF
 		GlobalLT("XA_LC_DingsCorwin", "GLOBAL", 1)

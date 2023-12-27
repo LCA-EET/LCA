@@ -1149,6 +1149,12 @@ IF ~~ THEN BEGIN XA_LeaveAfterSoA_100_2
 		Global("XA_CorwinDepart", "GLOBAL", 1)
 	~ THEN
 	GOTO XA_LeaveAfterSoA_100_Viconia
+	
+	IF ~
+		Race(Player1, LICH)
+	~ THEN
+	GOTO XA_LeaveAfterSoA_100_Lich
+	
 END
 
 IF ~~ THEN BEGIN XA_LeaveAfterSoA_100_3
@@ -10731,7 +10737,40 @@ IF ~~ THEN BEGIN XA_SchaelBelievesTianna
 	EXTERN XATIANNA XA_WontHelp
 END
 
+IF ~~ THEN BEGIN XA_LeaveAfterSoA_100_Lich
+	SAY @1837 /*~I'd stay and celebrate, but I can't stomach being at the side of a lich any longer. Farewell.~*/
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_CorwinDepart", "GLOBAL", 3)
+		ActionOverride(Player1, TakeCreatureItems("XACORWIN", BACKPACK))
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
+		LeaveParty()
+		StartCutSceneMode()
+		StartCutScene("XA100EX")
+	~
+	EXIT
+END
 
+IF ~
+	Global("XA_LC_CorwinLeaveLich", "GLOBAL", 2)
+~ THEN BEGIN XA_CorwinLeaveLich
+	SAY @1838 /*~I can't bear to fight at your side any longer. A word of warning, lich — set foot in Baldur's Gate again and I'll crush your bones to dust. Goodbye.~*/
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_CorwinDepart", "GLOBAL", 3)
+		SetGlobal("XA_LC_CorwinLeaveLich", "GLOBAL", 3)
+		ActionOverride(Player1, TakeCreatureItems("XACORWIN", BACKPACK))
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
+		LeaveParty()
+		StartCutSceneMode()
+		StartCutScene("XA100EX")
+	~
+	EXIT
+END
 
 CHAIN
 	IF ~~ THEN XACORWIJ XA_CorwinArtifacts_Chain
