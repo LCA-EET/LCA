@@ -960,3 +960,15 @@ END
 	END
 	
 //}
+
+//{ v1.0.14a Fix - Mark Beno as Killed
+IF
+	Global("XA_CorwinKillBeno", "GLOBAL", 1)
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CorwinKillBeno", "GLOBAL", 2)
+		Continue()
+END
+
+//}

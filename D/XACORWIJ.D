@@ -3369,6 +3369,9 @@ IF ~
 	
 	
 	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_CorwinKillBeno", "GLOBAL", 2)
+	~
 	EXTERN XABENO2 XA_CorwinKillBenoChain
 	/*
 	IF ~

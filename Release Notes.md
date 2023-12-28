@@ -4,6 +4,12 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v1.0.14a 2023-12-28
+* Corrected a failure to properly set a variable after Corwin kills Beno. The failure to set the variable could potentially lead to the wrong dialog being initiated during the course of ToB. The fix is applied automatically; there is no need to backtrack.
+
+# v1.0.14 2023-12-27
+* Added integration with the Lichdom_EET mod.
+
 # v1.0.13 2023-12-20
 * Increased the experience awarded to Caelar upon her joining the party from a maximum of three million to a maximum of five million.
 * Minor improvements to various dialogs and journaling.
