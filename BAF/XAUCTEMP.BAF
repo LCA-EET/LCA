@@ -1,5 +1,5 @@
 IF
-	!Global("XA_IllaseraDead", "GLOBAL", 2)
+	GlobalLT("XA_IllaseraDead", "GLOBAL", 1)
 	Dead("illasera")
 	OR(2)
 		Dead("ZILFGT01")
@@ -24,7 +24,7 @@ THEN
 END
 
 IF
-	!Global("XA_IllaseraDead", "GLOBAL", 2)
+	GlobalLT("XA_IllaseraDead", "GLOBAL", 1)
 	Dead("illasera")
 	OR(2)
 		Dead("ZILFGT01")

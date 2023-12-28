@@ -3441,11 +3441,17 @@ IF ~
 	IF ~
 		!Global("XA_SkieModActive", "GLOBAL",1)
 	~ THEN 
+	DO ~
+		SetGlobal("XA_IllaseraDead", "GLOBAL", 2)
+	~
 	GOTO XA_IllaseraDeadSkie
 	
 	IF ~
 		Global("XA_SkieModActive", "GLOBAL",1)
 	~ THEN 
+	DO ~
+		SetGlobal("XA_IllaseraDead", "GLOBAL", 2)
+	~
 	GOTO XA_IllaseraDeadGlint
 END
 
@@ -4011,6 +4017,7 @@ IF ~
 	
 	IF ~~ THEN REPLY @961 /* ~(Get down on one knee, and present her with the engagement ring.)~ */
 	DO ~
+		SetGlobal("XA_CorwinProposaXAS", "GLOBAL", 3)
 		SetGlobal("XA_MarriageProposal", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinProposal3B

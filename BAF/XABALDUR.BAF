@@ -970,5 +970,26 @@ THEN
 		SetGlobal("XA_CorwinKillBeno", "GLOBAL", 2)
 		Continue()
 END
+//}
 
+//{ v1.0.14a Fix - Mark Illasera as Killed
+IF
+	Global("XA_IllaseraDead", "GLOBAL", 1)
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_IllaseraDead", "GLOBAL", 2)
+		Continue()
+END
+//}
+
+//{ v1.0.14a Fix - Marriage Proposal Fix
+IF
+	Global("XA_CorwinProposaXAS", "GLOBAL", 2)
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CorwinProposaXAS", "GLOBAL", 3)
+		Continue()
+END
 //}
