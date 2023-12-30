@@ -64,8 +64,7 @@ IF ~~ THEN BEGIN XA_LodobDead4A
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@17, INFO)
-		AddExperienceParty(50000)
+		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 5)
 	~
 	EXIT
 END
@@ -99,8 +98,7 @@ IF ~~ THEN BEGIN XA_LodobDead6
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@17, INFO)
-		AddExperienceParty(50000)
+		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 5)
 	~
 	EXIT
 END

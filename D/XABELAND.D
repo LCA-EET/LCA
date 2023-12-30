@@ -52,8 +52,7 @@ IF ~~ THEN BEGIN XA_TakeFarseer2
 	
 	IF ~~ THEN
 	DO ~
-		AddExperienceParty(25000)
-		AddJournalEntry(@32, QUEST_DONE)
+		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 4)
 	~
 	EXIT
 END
@@ -206,7 +205,7 @@ IF ~~ THEN BEGIN XA_HelpFindFarseer
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@26, QUEST)
+		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 1)
 		SetGlobal("XA_SpawnBrevlik", "GLOBAL", 1)
 		SetGlobal("BelandEntranceFee","GLOBAL",2)
 	~
@@ -218,7 +217,7 @@ IF ~~ THEN BEGIN XA_HelpFindFarseer_Stolen
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@26, QUEST)
+		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 1)
 		SetGlobal("XA_SpawnBrevlik", "GLOBAL", 1)
 		SetGlobal("BelandEntranceFee","GLOBAL",2)
 	~
@@ -230,7 +229,7 @@ IF ~~ THEN BEGIN XA_MakeAmends
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@27, QUEST)
+		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 2)
 		SetGlobal("XA_SpawnBrevlik", "GLOBAL", 1)
 		SetGlobal("BelandEntranceFee","GLOBAL",2)
 	~

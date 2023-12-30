@@ -67,6 +67,26 @@ IF ~
 		SetGlobal("XA_HamzaIntro", "LOCALS", 1)
 	~
 	GOTO XA_HamzaRasaadChain
+	
+	IF ~
+		GlobalGT("XA_MessageToBG", "GLOBAL", 0)
+		!GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN
+	DO ~
+		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 4)
+	~
+	EXTERN RASAADJ XA_HamzaRasaadChain
+	
+	IF ~
+		GlobalGT("XA_MessageToBG", "GLOBAL", 0)
+		GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN
+	DO ~
+		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 3)
+	~
+	EXTERN RASAADJ XA_HamzaRasaadChain
 END
 //}
 
@@ -82,6 +102,29 @@ IF ~
 	IF ~
 		GlobalGT("XA_MessageToBG", "GLOBAL", 0)
 	~ THEN
+	DO ~
+		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 5)
+	~
+	EXTERN RASAADJ XA_HamzaRasaadChain3
+	
+	IF ~
+		GlobalGT("XA_MessageToBG", "GLOBAL", 0)
+		!GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN
+	DO ~
+		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 4)
+	~
+	EXTERN RASAADJ XA_HamzaRasaadChain3
+	
+	IF ~
+		GlobalGT("XA_MessageToBG", "GLOBAL", 0)
+		GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
+		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN
+	DO ~
+		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 3)
+	~
 	EXTERN RASAADJ XA_HamzaRasaadChain3
 END
 //}
@@ -467,9 +510,8 @@ IF ~~ THEN BEGIN XA_ThankYou_Additional
 	~ THEN
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		AddJournalEntry(@57, INFO)
+		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 3)
 		SetGlobalTimer("XA_HamzaLeaveTimer", "GLOBAL", ONE_DAY)
-		AddExperienceParty(25000)
 		StartCutSceneMode()
 		StartCutScene("XACSHAM1")
 	~
@@ -480,9 +522,8 @@ IF ~~ THEN BEGIN XA_ThankYou_Additional
 	~ THEN
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		AddJournalEntry(@58, INFO)
+		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 4)
 		SetGlobalTimer("XA_HamzaLeaveTimer", "GLOBAL", ONE_DAY)
-		AddExperienceParty(25000)
 		StartCutSceneMode()
 		StartCutScene("XACSHAM1")
 	~
@@ -495,9 +536,8 @@ IF ~~ THEN BEGIN XA_ThankYou_One
 	IF ~~ THEN
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		AddJournalEntry(@59, INFO)
+		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 5)
 		SetGlobalTimer("XA_HamzaLeaveTimer", "GLOBAL", ONE_DAY)
-		AddExperienceParty(25000)
 		StartCutSceneMode()
 		StartCutScene("XACSHAM1")
 	~
@@ -512,9 +552,8 @@ IF ~~ THEN BEGIN XA_ThankYou_Two
 	~ THEN
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
-		AddJournalEntry(@57, INFO)
+		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 3)
 		SetGlobalTimer("XA_HamzaLeaveTimer", "GLOBAL", ONE_DAY)
-		AddExperienceParty(50000)
 		StartCutSceneMode()
 		StartCutScene("XACSHAM2")
 	~
@@ -525,9 +564,8 @@ IF ~~ THEN BEGIN XA_ThankYou_Two
 	~ THEN
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
-		AddJournalEntry(@58, INFO)
+		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 4)
 		SetGlobalTimer("XA_HamzaLeaveTimer", "GLOBAL", ONE_DAY)
-		AddExperienceParty(50000)
 		StartCutSceneMode()
 		StartCutScene("XACSHAM2")
 	~
@@ -633,7 +671,6 @@ CHAIN XAHAMZA XA_HamzaRasaadChain
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
 		SetGlobalTimer("XA_HamzaLeaveTimer", "GLOBAL", ONE_DAY)
 		SetGlobal("XA_PaidToDeliver", "GLOBAL", 2)
-		AddExperienceParty(50000)
 		StartCutSceneMode()
 		StartCutScene("XACSHAM2")
 	~
@@ -657,7 +694,6 @@ CHAIN RASAADJ XA_HamzaRasaadChain3
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
 		SetGlobalTimer("XA_HamzaLeaveTimer", "GLOBAL", ONE_DAY)
 		SetGlobal("XA_PaidToDeliver", "GLOBAL", 2)
-		AddExperienceParty(50000)
 		StartCutSceneMode()
 		StartCutScene("XACSHAM2")
 	~

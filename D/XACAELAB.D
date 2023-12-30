@@ -30,7 +30,8 @@ IF ~~ THEN BEGIN XA_CaelarThanks2
 	
 	IF ~~ THEN
 	DO ~
-		ChangeStat(Myself, XP, 50000, ADD)
+		AddXPObject(Myself, 25000)
+		AddXPObject(Player1, 25000)
 		AddJournalEntry(@125, INFO)
 	~
 	EXIT

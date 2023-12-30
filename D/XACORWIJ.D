@@ -1978,7 +1978,7 @@ IF ~~ THEN BEGIN XA_AmkethranCourier_END
 		GlobalGT("XA_CorwinPregnant", "GLOBAL", 4)
 	~ THEN REPLY @403 /* Right */
 	DO ~
-		AddJournalEntry(@1602, INFO)
+		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 2)
 	~
 	EXIT
 	
@@ -1986,7 +1986,7 @@ IF ~~ THEN BEGIN XA_AmkethranCourier_END
 		GlobalLT("XA_CorwinPregnant", "GLOBAL", 5)
 	~ THEN REPLY @403 /* Right */
 	DO ~
-		AddJournalEntry(@1601, INFO)
+		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 1)
 	~
 	EXIT
 	
@@ -1995,7 +1995,7 @@ IF ~~ THEN BEGIN XA_AmkethranCourier_END
 		Global("XA_CanTalkToRasaad", "LOCALS", 1)
 	~ THEN
 	DO ~
-		AddJournalEntry(@1602, INFO)
+		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 2)
 	~
 	EXTERN RASAADJ XA_AmkethranCourier_END
 	
@@ -2004,7 +2004,7 @@ IF ~~ THEN BEGIN XA_AmkethranCourier_END
 		Global("XA_CanTalkToRasaad", "LOCALS", 1)
 	~ THEN
 	DO ~
-		AddJournalEntry(@1601, INFO)
+		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 1)
 	~
 	EXTERN RASAADJ XA_AmkethranCourier_END
 	
@@ -11401,7 +11401,7 @@ CHAIN
 		DO ~
 			SetGlobal("XA_HandedOverManifests", "GLOBAL", 1)
 			GiveItemCreate("XAMANFST",LastTalkedToBy(Myself),1,0,0)
-			AddJournalEntry(@1305, QUEST)
+			SetGlobal("XA_LC_Journal_SlaveHarbor", "GLOBAL", 1)
 		~
 		== XACORWIJ
 		@811 /* ~Thank you for your cooperation.~ */

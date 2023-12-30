@@ -265,7 +265,7 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite3B2B
 	IF ~~ THEN REPLY @20 /* ~Your mommy was right. Rohma, here. I want you to have this. (Hand her the doll.)~ */
 	DO ~
 		SetGlobal("XA_JustBoughtDoll", "GLOBAL", 1)
-		AddJournalEntry(@76, QUEST_DONE)
+		SetGlobal("XA_LC_Journal_RohmaGift_2", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinFamilyReunite3A4A2
 	

@@ -63,7 +63,7 @@ IF ~~ THEN BEGIN XA_Farseer
 	DO ~
 		TakePartyGold(100)
 		GiveItemCreate("XAFARSEE",LastTalkedToBy,0,0,0)
-		AddJournalEntry(@29, QUEST)
+		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 3)
 	~
 	GOTO XA_BoughtFarseer //OK
 	
@@ -85,7 +85,7 @@ IF ~~ THEN BEGIN XA_GiveItToMe
 	~ THEN
 	DO ~
 		GiveItemCreate("XAFARSEE",LastTalkedToBy,0,0,0)
-		AddJournalEntry(@29, QUEST)
+		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 3)
 	~
 	GOTO XA_Farseer2A //OK
 	
@@ -96,7 +96,7 @@ IF ~~ THEN BEGIN XA_GiveItToMe
 	~ THEN
 	DO ~
 		GiveItemCreate("XAFARSEE",LastTalkedToBy,0,0,0)
-		AddJournalEntry(@29, QUEST)
+		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 3)
 	~
 	GOTO XA_Farseer2B //OK
 END

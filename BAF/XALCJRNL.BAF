@@ -41,13 +41,15 @@ THEN
 		SetGlobal("XA_LC_Journal_RohmaGift_2", "GLOBAL", 0)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 4)
 		AddXPObject(Player1,10000)
-		AddJournalEntry(@51, QUEST_DONE)
+		AddJournalEntry(@51, QUEST_DONE) /*~A Gift for Rohma
+I gave Rohma the doll that I bought for her. She and her mother were delighted by the small but meaningful act of kindness and generosity.~  */
 		EraseJournalEntry(@48)
 		EraseJournalEntry(@49)
 		EraseJournalEntry(@50)
 		SetInterrupt(TRUE)
 		Continue()
 END
+//}
 
 //{ Tianna
 IF
@@ -513,7 +515,32 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_Journal_SlaveGirl", "GLOBAL", 0)
-		AddJournalEntry(@27, QUEST)
+		AddJournalEntry(@27, QUEST) /* ~Slaver Conspiracy
+While in Athkatla, I learned that some of the refugees of Caelar's crusade are being sold as slaves, apparently from Baldur's Gate. I may investigate the matter further upon my eventual return to the city.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_SlaveHarbor", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_SlaveHarbor", "GLOBAL", 0)
+		AddJournalEntry(@64, QUEST) /* ~Slaver Conspiracy
+The harbor master provided me with the shipping manifests for a new company called Winston Ventures. Unfortunately, the manifests are encrypted. I'll have to find some way to decode them.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_SlaveHarbor", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_SlaveHarbor", "GLOBAL", 0)
+		AddJournalEntry(@65, QUEST) /* ~Slaver Conspiracy
+I received the shipping manifests from the harbor master, but they are encoded and I cannot decipher them. The harbor master recommended asking the Thieves' Guild for help.~*/
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -524,7 +551,8 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_Journal_SlaveAlatos", "GLOBAL", 0)
-		AddJournalEntry(@28, QUEST)
+		AddJournalEntry(@28, QUEST) /* ~Slaver Conspiracy
+Alatos, leader of the Baldur's Gate Thieves' Guild, has offered to decrypt Winston Ventures' shipping manifests. I need only provide him with the necessary cipher to do so.~*/
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -535,7 +563,8 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_Journal_SlaveAlatos2", "GLOBAL", 0)
-		AddJournalEntry(@29, QUEST)
+		AddJournalEntry(@29, QUEST) /* ~Slaver Conspiracy
+The Thieves' Guild has decrypted the Winston Ventures shipping manifests. This may be the evidence I need to solve the case. I should review the decrypted manifest with Marshal Nederlok of the Flaming Fist. He should be the headquarters in the southwest of the city.~*/
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -550,6 +579,8 @@ THEN
 		EraseJournalEntry(@28)
 		EraseJournalEntry(@29)
 		EraseJournalEntry(@39)
+		EraseJournalEntry(@64)
+		EraseJournalEntry(@65)
 		AddJournalEntry(@25, QUEST_DONE)
 		AddXPObject(Player1, 35000)
 		AddXPObject(Player2, 35000)
@@ -845,6 +876,202 @@ THEN
 Schael, Mazzy, and a host of other contestants competed in the annual Trademeet Archery Competition, and Schael emerged victorious! Mazzy performed admirably as well — I'm fortunate to have such skilled companions at my side.~*/
 		EraseJournalEntry(@45)  /* ~Trademeet Archery Competition
 Mazzy and Schael have expressed interest in taking part in this year's Trademeet Archery Competition. There's a sign-up desk in Trademeet, in the southeast of the city. We should check it out the next time we are in the area.~ */
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Locating the Farseer
+IF
+	Global("XA_LC_Journal_Farseer", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 0)
+		AddJournalEntry(@52, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Farseer", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 0)
+		AddJournalEntry(@53, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Farseer", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 0)
+		AddJournalEntry(@54, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Farseer", "GLOBAL", 4)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 0)
+		EraseJournalEntry(@52)
+		EraseJournalEntry(@53)
+		EraseJournalEntry(@54)
+		AddJournalEntry(@55, QUEST_DONE)
+		AddExperienceParty(35000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Progress Thus Far
+IF
+	Global("XA_LC_Journal_Progress", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 0)
+		AddJournalEntry(@56, QUEST) /* ~Progress Thus Far
+Schael needs to send a message to the Dukes to inform them of our progress thus far. She also needs to let her family know that she is alive and well. This town may have a courier service we can use to send the message.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Progress", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 0)
+		AddJournalEntry(@57, QUEST) /* ~Progress Thus Far
+Schael needs to send a message to the Dukes to inform them of our progress thus far. She also needs to let her family know that she is alive and well, and that she is pregnant with our child. This town may have a courier service we can use to send the message.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Progress", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 0)
+		EraseJournalEntry(@56)
+		EraseJournalEntry(@57)
+		AddXPObject(Player1, 25000)
+		AddXPObject("XACORWIN", 25000)
+		AddJournalEntry(@58, QUEST_DONE) /* ~Progress Thus Far
+Hamza, a mail courier based out of Amkethran, has agreed to deliver two letters back to Baldur's Gate on our behalf. One is addressed to the Dukes, and it includes Schael's report on the events that have transpired since we left the city. The second is addressed to her father, to let him and Rohma know that we're alive and well, and that she is with child.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Progress", "GLOBAL", 4)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 0)
+		EraseJournalEntry(@56)
+		EraseJournalEntry(@57)
+		AddXPObject(Player1, 25000)
+		AddXPObject("XACORWIN", 25000)
+		AddJournalEntry(@59, QUEST_DONE) /* ~Progress Thus Far
+Hamza, a mail courier based out of Amkethran, has agreed to deliver two letters back to Baldur's Gate on our behalf. One is addressed to the Dukes, and it includes Schael's report on the events that have transpired since we left the city. The second is addressed to her father, to let him and Rohma know that we're alive and well.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Progress", "GLOBAL", 5)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 0)
+		EraseJournalEntry(@56)
+		EraseJournalEntry(@57)
+		AddXPObject(Player1, 25000)
+		AddXPObject("XACORWIN", 25000)
+		AddJournalEntry(@60, QUEST_DONE) /* ~Progress Thus Far
+Hamza, a mail courier based out of Amkethran, has agreed to deliver a letter back to Baldur's Gate on our behalf. It is addressed to the Dukes, and it includes Schael's report on the events that have transpired since we left the city.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ The Soultaker Dagger
+IF
+	Global("XA_LC_Journal_Soultaker", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 0)
+		AddJournalEntry(@61, QUEST) /* ~The Soultaker Dagger
+Melkor, who is studying the Soultaker dagger, believes that the souls trapped within could be freed if the dagger is brought to a place where the barrier between the material plane and the Fugue plane is weak. I've been to one such place in the past - Kanaglym, in the caves beneath Dragonspear castle.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Soultaker", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 0)
+		AddJournalEntry(@62, QUEST) /* ~The Soultaker Dagger
+Melkor, who is studying the Soultaker dagger, believes that the souls trapped within could be freed if the dagger is brought to a place where the barrier between the material plane and the Fugue plane is weak.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Soultaker", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 0)
+		AddJournalEntry(@63, QUEST) /* ~The Soultaker Dagger
+The wizard Melkor will not part with the Soultaker dagger unless ordered to do so by the Dukes. He recommended that I petition the Council during the debriefing tomorrow to have him release the dagger to me.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Soultaker", "GLOBAL", 4)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 0)
+		AddJournalEntry(@67, QUEST) /* ~The Soultaker Dagger
+The wizard Melkor has handed me the Soultaker Dagger. Apparently, Duke Silvershield decided that it would be best for me to take ownership of the weapon, perhaps in the belief that keeping it away from her caretakers will help her progress further in her recovery. I know from my prior discussions on the matter that there are souls still trapped within; the wizard informed me that Skie would appreciate it if I could find some way to free them.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Soultaker", "GLOBAL", 5)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 0)
+		AddJournalEntry(@66, QUEST_DONE) /* ~The Soultaker Dagger
+The Soultaker Dagger has been destroyed, and the souls of those that had been trapped within have finally been released. I'm relieved, not just for them, but also to finally be rid of that loathsome dagger.~*/
+		EraseJournalEntry(@61)
+		EraseJournalEntry(@62)
+		EraseJournalEntry(@63)
+		EraseJournalEntry(@67)
+		AddXPObject(Player1, 35000)
+		AddXPObject(Player2, 35000)
+		AddXPObject(Player3, 35000)
+		AddXPObject(Player4, 35000)
+		AddXPObject(Player5, 35000)
+		AddXPObject(Player6, 35000)
 		SetInterrupt(TRUE)
 		Continue()
 END

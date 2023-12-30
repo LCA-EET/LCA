@@ -234,7 +234,4 @@ CHAIN IF ~~ THEN XACURATO XA_ArtifactChain
 	@25 /* ~I won't bore you with the details. I'll provide a full report to Marshal Nederlok and the Dukes once I get settled.~*/
 	== XACURATO
 	@26 /* ~I see. It will take some time to set up and secure an appropriate display here in the Hall of Wonders. Until it's ready, please look after what you've returned to us.~ */
-	DO ~
-		AddJournalEntry(@35, INFO)
-	~
 END XACURATO XA_ArtifactChain_End

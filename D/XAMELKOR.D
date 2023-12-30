@@ -43,6 +43,7 @@ IF ~~ THEN BEGIN XA_HandOverDagger
 		SetGlobal("XA_MelkorDagger", "GLOBAL", 1)
 		GiveItemCreate("XASTDAG", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XASTDAG", IDENTIFIED,TRUE))
+		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 4)
 	~
 	GOTO XA_HandOverDagger2
 END
@@ -353,7 +354,7 @@ IF ~~ THEN BEGIN XA_MeetMelkor5B7
 	~ THEN REPLY @34  /*  ~Give me the dagger, then. I'll take it to Dragonspear and release the souls within.~ */
 	DO ~
 		SetGlobal("XA_ST_Kanaglym", "GLOBAL", 1)
-		AddJournalEntry(@53, INFO)
+		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 1)
 	~
 	GOTO XA_MeetMelkor5B8
 	
@@ -362,7 +363,7 @@ IF ~~ THEN BEGIN XA_MeetMelkor5B7
 	~ THEN REPLY @68 /* ~Give me the dagger then. If I learn of such a place in my travels, I'll bring the dagger there and release the souls trapped inside.~*/
 	DO ~
 		SetGlobal("XA_ST_Kanaglym", "GLOBAL", 1)
-		AddJournalEntry(@67, INFO)
+		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 2)
 	~
 	GOTO XA_MeetMelkor5B8
 END
@@ -379,11 +380,10 @@ IF ~~ THEN BEGIN XA_MeetMelkor5B9
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@55, INFO)
+		SetGlobal("XA_ST_Kanaglym", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 3)
 	~
 	GOTO XA_MeetMelkor5B10
-	
-	
 END
 
 IF ~~ THEN BEGIN XA_MeetMelkor5B10
