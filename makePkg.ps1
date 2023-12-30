@@ -17,6 +17,7 @@ $folders = @(
 'CRE',
 'COMPAT',
 'D',
+'EFF',
 'ITM',
 'MOS',
 'STO',

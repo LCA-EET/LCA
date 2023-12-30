@@ -1552,6 +1552,14 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	COPY ~LCA/ITM/XAHELMCA.ITM~ ~override~
 	//}
 	
+	//{ Aster's Edge + 5
+	COPY ~LCA/EFF/XASW1HC5.EFF~ ~override~
+	COPY ~LCA/BAM/XASW1HC5.BAM~ ~override~
+	COPY ~LCA/ITM/XASW1HC5.ITM~ ~override~
+	SAY NAME2 @190
+	SAY DESC @191
+	//}
+	
 	//{ Broken Gear
 	COPY ~LCA/ITM/XABROKEN.ITM~ ~override~
 	SAY NAME1 @162

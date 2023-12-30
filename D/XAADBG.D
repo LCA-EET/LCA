@@ -4252,6 +4252,18 @@ IF ~~ THEN BEGIN XA_Menu_CreateItem
 	~
 	GOTO XA_MainMenu
 	
+	IF ~~ THEN REPLY @829 /* Aster's Edge +5*/
+	DO ~
+		GiveItemCreate("XASW1HC5",LastTalkedToBy(Myself),0,0,0)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @830 /* Eye of Tyr*/
+	DO ~
+		GiveItemCreate("COMPON02",LastTalkedToBy(Myself),0,0,0)
+	~
+	GOTO XA_MainMenu
+	
 	IF ~~ THEN REPLY @26 /* ~Go back to the prior menu.~ */
 	GOTO XA_MainMenu
 END

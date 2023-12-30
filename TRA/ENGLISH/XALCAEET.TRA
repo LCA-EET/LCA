@@ -849,3 +849,25 @@ Regards,
 @187 = ~Corwin's Tutelage~
 @188 = ~Dings~
 @189 = ~Saving the city of Baldur's Gate, ending Caelar Argent's crusade, and bravely venturing to certain death in the first of the Nine Hells, only to return alive, covered in the ichor of the mighty devil Belhifet! What should have been your ultimate triumph was turned into a nightmare, when you were falsely accused of the heinous murder of Skie Silvershield... yet you persevered where others would have faltered, and brought the culprit, the mad mage Jon Irenicus to justice while preserving the Tree of Life. Such heroic accomplishments are mere footnotes in the epic tale of <CHARNAME>, greatest of the children of Bhaal!~ 
+
+/* 1.0.15 */
+@190 = ~Aster's Edge +5~
+@191 = ~Legend tells that a powerful angelic being gifted this blade to a member of the Order of the Aster long ago. Details of the legend have been lost over time, but many believe the sword was a reward for slaying a monstrous fiend, perhaps even a balor. Delicate etchings of asters decorate the blade.
+
+With the Eye of Tyr affixed to the pommel, the power of this magnificent weapon now matches its beauty. When drawn, the augmented blade pulses with an other-worldly glow, signifying its holy power.  
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +35%
+
+THAC0: +5
+Damage: 1d8+5, +4 extra vs. fiends
+Damage type: Slashing
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 2~

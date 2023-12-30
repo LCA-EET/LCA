@@ -1026,7 +1026,23 @@
 		!PartyHasItem("XACORBO3")
 	~
 	DO 0
-
+	
+	EXTEND_BOTTOM BOTSMITH 22  /* Has Eye and Purifier*/
+		IF ~
+			PartyHasItem("XASW1HCA")
+		~
+		THEN REPLY @405  /* ~Could the jewel instead be used to improve Caelar's long sword, Aster's Edge?~ */
+		GOTO XA_LC_AstersEdge1
+	END
+	
+	EXTEND_BOTTOM BOTSMITH 30  /* Has Eye and Avenger*/
+		IF ~
+			PartyHasItem("XASW1HCA")
+		~
+		THEN REPLY @405  /* ~Could the jewel instead be used to improve Caelar's long sword, Aster's Edge?~ */
+		GOTO XA_LC_AstersEdge2
+	END
+	
 	EXTEND_BOTTOM BOTSMITH 78  /* Don't have Darkfire or Taralash */
 		IF ~
 			OR(2)
@@ -1119,6 +1135,15 @@
 			DestroyItem("XABROKEN")
 		~
 		GOTO 11
+	END
+	
+	EXTEND_BOTTOM BOTSMITH 4
+		IF ~
+			PartyHasItem("compon02")
+			!PartyHasItem("sw1h64")
+			!PartyHasItem("sw2h10")
+		~
+		GOTO XA_LC_Eye
 	END
 	
 	APPEND BOTSMITH
@@ -1245,6 +1270,104 @@
 			
 			IF ~~ THEN REPLY #66787 /* ~No. What else?~ */ 
 			GOTO 82
+		END
+		
+		IF ~~ THEN BEGIN XA_LC_AstersEdge1
+			SAY @406  /*~Eh? Yuck, it still stinks like righteousness! I nots have a recipe for it. Maybe jewel will make it better and less stinky, maybe not. Give me 5,000 gold and you finds out!~ */
+			
+			IF ~
+				PartyGoldGT(4999)
+			~ THEN REPLY @407  /* ~Do it. (Pay 5,000 gold.)~*/
+			DO ~
+				SetGlobal("XA_ItemMaker", "GLOBAL", 4)
+				TakePartyGold(5000)
+				TakePartyItemNum("XASW1HCA",1)
+				DestroyItem("XASW1HCA")
+				TakePartyItemNum("compon02",1)
+				DestroyItem("compon02")
+				DestroyGold(5000)
+			~
+			GOTO 11
+			
+			IF ~
+				PartyGoldLT(5000)
+			~ THEN REPLY #66606 /* ~I don't have that much gold.~ */
+			GOTO 10
+			
+			IF ~~ THEN REPLY #66787 /* ~No. What else?~ */ 
+			GOTO 23
+		END
+		
+		IF ~~ THEN BEGIN XA_LC_AstersEdge2
+			SAY @406  /*~Eh? Yuck, it still stinks like righteousness! I nots have a recipe for it. Maybe jewel will make it better and less stinky, maybe not. Give me 5,000 gold and you finds out!~ */
+			
+			IF ~
+				PartyGoldGT(4999)
+			~ THEN REPLY @407  /* ~Do it. (Pay 5,000 gold.)~*/
+			DO ~
+				SetGlobal("XA_ItemMaker", "GLOBAL", 4)
+				TakePartyGold(5000)
+				TakePartyItemNum("XASW1HCA",1)
+				DestroyItem("XASW1HCA")
+				TakePartyItemNum("compon02",1)
+				DestroyItem("compon02")
+				DestroyGold(5000)
+			~
+			GOTO 11
+			
+			IF ~
+				PartyGoldLT(5000)
+			~ THEN REPLY #66606 /* ~I don't have that much gold.~ */
+			GOTO 10
+			
+			IF ~~ THEN REPLY #66787 /* ~No. What else?~ */ 
+			GOTO 31
+		END
+		
+		IF ~~ THEN BEGIN XA_LC_AstersEdge3
+			SAY @406  /*~Eh? Yuck, it still stinks like righteousness! I nots have a recipe for it. Maybe jewel will make it better and less stinky, maybe not. Give me 5,000 gold and you finds out!~ */
+			
+			IF ~
+				PartyGoldGT(4999)
+			~ THEN REPLY @407  /* ~Do it. (Pay 5,000 gold.)~*/
+			DO ~
+				SetGlobal("XA_ItemMaker", "GLOBAL", 4)
+				TakePartyGold(5000)
+				TakePartyItemNum("XASW1HCA",1)
+				DestroyItem("XASW1HCA")
+				TakePartyItemNum("compon02",1)
+				DestroyItem("compon02")
+				DestroyGold(5000)
+			~
+			GOTO 11
+			
+			IF ~
+				PartyGoldLT(5000)
+			~ THEN REPLY #66606 /* ~I don't have that much gold.~ */
+			GOTO 10
+			
+			IF ~~ THEN REPLY #66787 /* ~No. What else?~ */ 
+			GOTO XA_LC_KeepLooking
+		END
+		
+		IF ~~ THEN BEGIN XA_LC_Eye
+			SAY @408 /* ~You have Eye of Tyr. Very shiny... Cespenar has recipe to make better Purifier or Holy Avenger with shiny pommel. If you finds them, bring and I makes sword better.~*/
+			
+			IF ~
+				!PartyHasItem("XASW1HCA")
+			~
+			GOTO XA_LC_KeepLooking
+			
+			IF ~
+				PartyHasItem("XASW1HCA")
+			~ THEN REPLY @405  /* ~Could the jewel instead be used to improve Caelar's long sword, Aster's Edge?~ */
+			GOTO XA_LC_AstersEdge3
+		END 
+		
+		IF ~~ THEN BEGIN XA_LC_KeepLooking
+			SAY @409  /*~I keeps looking... let's me see...~ */
+			
+			COPY_TRANS BOTSMITH 4
 		END
 	END
 //}

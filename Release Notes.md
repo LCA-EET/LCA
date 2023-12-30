@@ -4,6 +4,10 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v1.0.15 2023-12-29
+* Added Aster's Edge +5, which can be crafted by Cespenar using Aster's Edge +3 and the Eye of Tyr.
+* Improvements to Caelar visual effects / representation.
+
 # v1.0.14a 2023-12-28
 * Corrected a failure to properly set a variable after Corwin kills Beno. The failure to set the variable could potentially lead to the wrong dialog being initiated during the course of ToB. The fix is applied automatically; there is no need to backtrack.
 
