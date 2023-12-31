@@ -75,6 +75,17 @@ THEN
 END
 
 IF
+	Global("XA_LC_Journal_Jasper", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Jasper", "GLOBAL", 0)
+		AddJournalEntry(@68, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END	
+
+IF
 	Global("XA_LC_Journal_Tianna3", "GLOBAL", 1)
 THEN
 	RESPONSE #100
@@ -82,6 +93,7 @@ THEN
 		SetGlobal("XA_LC_Journal_Tianna3", "GLOBAL", 0)
 		EraseJournalEntry(@15)
 		EraseJournalEntry(@16)
+		EraseJournalEntry(@68)
 		AddJournalEntry(@17, QUEST_DONE)
 		AddXPObject(Player1,10000)
 		AddXPObject(Player2,10000)
@@ -101,6 +113,7 @@ THEN
 		SetGlobal("XA_LC_Journal_Tianna4", "GLOBAL", 0)
 		EraseJournalEntry(@15)
 		EraseJournalEntry(@16)
+		EraseJournalEntry(@68)
 		AddJournalEntry(@18, QUEST_DONE)
 		AddXPObject(Player1,5000)
 		AddXPObject(Player2,5000)
@@ -206,22 +219,22 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_Journal_HOW", "GLOBAL", 0)
-		AddJournalEntry(@6, INFO)
+		AddJournalEntry(@6, INFO)  /* ~Role Models?
+Captain Corwin and I spoke to some troubled youths from the local orphanage. After we scared some sense into them, Curator Magda is sure that they will be on their best behavior from now on.~*/
 		AddXPObject("XACORWIN",25000)
 		AddXPObject(Player1,25000)
 		SetInterrupt(TRUE)
 		Continue()
 END
-//}
 
-//{ Hall of Wonders Orphans
 IF
 	Global("XA_LC_Journal_HOW", "GLOBAL", 2)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_Journal_HOW", "GLOBAL", 0)
-		AddJournalEntry(@7, INFO)
+		AddJournalEntry(@7, INFO)  /* ~Role Models
+Captain Corwin and I spoke to some troubled youths from the local orphanage. Curator Magda is pleased that they have role models like the Captain and I to look up to.~*/
 		AddXPObject("XACORWIN",25000)
 		AddXPObject(Player1,25000)
 		SetInterrupt(TRUE)
@@ -296,6 +309,95 @@ END
 
 //{ Trouble at Elfsong
 
+	
+	//{ Lyriel Entries
+	IF
+		Global("XA_LC_Journal_Lyriel", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 0)
+			AddJournalEntry(@69, QUEST) /*~Trouble at the Elfsong
+Lyriel, the spirit haunting the Elfsong tavern, blessed my Amulet of the Seldarine as an act of gratitude for freeing her from the demon's prison.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END	
+	
+	IF
+		Global("XA_LC_Journal_Lyriel", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 0)
+			AddJournalEntry(@70, QUEST) /*~Trouble at the Elfsong
+We've defeated the demon trapped within the painting and have escaped. Lyriel, the spirit we freed from the painting, will remain in the Elfsong to continue mourning her lost love. I should speak to Lady Alyth, the proprietor of the Elfsong, to inform her of what has transpired.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END	
+	
+	IF
+		Global("XA_LC_Journal_Lyriel", "GLOBAL", 3)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 0)
+			AddJournalEntry(@71, QUEST) /*~Trouble at the Elfsong
+Lyriel told me what she knew of our mutual captor. He is an incubus, a type of demon that invades the dreams of women. The demon himself was imprisoned after harming someone important to a powerful wizard.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END	
+	
+	IF
+		Global("XA_LC_Journal_Lyriel", "GLOBAL", 4)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 0)
+			AddJournalEntry(@72, QUEST) /*~Trouble at the Elfsong
+Lyriel told me what she knew of the Elfsong patrons that had gone missing. Through some foul sorcery, the demon imprisoned in this place transformed them into doppelgangers... likely the very same doppelgangers that I destroyed when first investigating the painting.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_Journal_Lyriel", "GLOBAL", 5)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 0)
+			AddJournalEntry(@73, QUEST) /*~Trouble at the Elfsong
+Lyriel told me what she knew of the guardians inside of the paintings. She said that the demon has the capability of peering into my memories and dreams, so the guardians may take the form of past opponents, or even people that I loved and respected. I should be prepared for anything.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_Journal_Lyriel", "GLOBAL", 6)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 0)
+			AddJournalEntry(@74, QUEST) /*~Trouble at the Elfsong
+I've been lured into what apparently is a magical prison created to confine a powerful demon. While here I met Lyriel, the ghost of a long dead elvish woman who took her own life in the Elfsong tavern. She told me that in order to escape, I must confront and defeat three guardians. Once they have been dispatched, I must venture to the demon's inner sanctum and destroy him. Lyriel believes that destroying the demon will also destroy the prison, but she cannot be certain.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END		
+	//}
+
+	//{ Incubus Entries
+	IF
+		Global("XA_LC_Journal_Incubus", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Incubus", "GLOBAL", 0)
+			AddJournalEntry(@75, QUEST) /*~Trouble at the Elfsong
+I agreed to give up the Amulet of the Seldarine, and the demon in the painting kept his word by freeing me. What a bizarre experience... I should inform Lady Alyth, proprietor of the Elfsong, of what has transpired.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END		
+	//}
+
 	//{ Elfsong 1
 	IF 
 		Global("XA_LC_Journal_Elfsong1", "GLOBAL", 1)
@@ -318,6 +420,13 @@ END
 			SetGlobal("XA_LC_Journal_Elfsong2", "GLOBAL", 0)
 			EraseJournalEntry(@11)
 			EraseJournalEntry(@30)
+			EraseJournalEntry(@69)
+			EraseJournalEntry(@70)
+			EraseJournalEntry(@71)
+			EraseJournalEntry(@72)
+			EraseJournalEntry(@73)
+			EraseJournalEntry(@74)
+			EraseJournalEntry(@75)
 			AddJournalEntry(@12, QUEST_DONE)
 			AddXPObject(Player1,50000)
 			AddXPObject(Player2,50000)
@@ -339,6 +448,13 @@ END
 			SetGlobal("XA_LC_Journal_Elfsong3", "GLOBAL", 0)
 			EraseJournalEntry(@11)
 			EraseJournalEntry(@30)
+			EraseJournalEntry(@69)
+			EraseJournalEntry(@70)
+			EraseJournalEntry(@71)
+			EraseJournalEntry(@72)
+			EraseJournalEntry(@73)
+			EraseJournalEntry(@74)
+			EraseJournalEntry(@75)
 			AddJournalEntry(@13, QUEST_DONE)
 			AddXPObject(Player1,10000)
 			AddXPObject(Player2,10000)
@@ -350,6 +466,7 @@ END
 			Continue()
 	END
 	//}
+	
 
 	//{ Townsfolk
 	IF
@@ -358,21 +475,50 @@ END
 		RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_Journal_ElfsongGossip", "GLOBAL", 0)
-		AddJournalEntry(@30, INFO)
+		AddJournalEntry(@30, QUEST)
 		SetInterrupt(TRUE)
 		Continue()
 	END
 	//}
 //} 
 
-//{ Halbazzer's Ring Enchantment
+//{ Engagement Ring
+IF
+	Global("XA_LC_Journal_RingJhasso", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_RingJhasso", "GLOBAL", 0)
+		AddJournalEntry(@76, QUEST) /*~Engagement Ring
+As a gesture of appreciation for saving his life, and his business, Jhasso has given me a beautiful engagement ring to give to Schael. He recommended bringing the ring to Halbazzer, owner of Sorcerous Sundries, to have it enchanted.~  */
+		AddXPObject(Player1, 5000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_RingAldeth", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_RingAldeth", "GLOBAL", 0)
+		AddJournalEntry(@77, QUEST) /* ~Engagement Ring
+As a gesture of appreciation for saving his life, and his business, Aldeth has given me a beautiful engagement ring to give to Schael. He recommended bringing the ring to Halbazzer, owner of Sorcerous Sundries, to have it enchanted.~  */
+		AddXPObject(Player1, 5000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
 IF
 	Global("XA_LC_Journal_HalbazzerRing", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_Journal_HalbazzerRing", "GLOBAL", 0)
-		AddJournalEntry(@14, QUEST_DONE)
+		EraseJournalEntry(@76)
+		EraseJournalEntry(@77)
+		AddJournalEntry(@14, QUEST_DONE) /* ~Engagement Ring
+Halbazzer, the proprietor of Sorcerous Sundries, agreed to enchant the engagement ring that I plan to give to Schael. It will take him about a week to apply the enchantments. She will love the ring — I know it.~*/
 		AddXPObject(Player1, 15000)
 		SetInterrupt(TRUE)
 		Continue()
@@ -612,32 +758,6 @@ THEN
 END
 //}
 
-//{ Ring - Aldeth
-IF
-	Global("XA_LC_Journal_AldethRing", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_Journal_AldethRing", "GLOBAL", 0)
-		AddJournalEntry(@31, INFO)
-		SetInterrupt(TRUE)
-		Continue()
-END
-//}
-
-//{ Caelar - Jail
-IF
-	Global("XA_LC_Journal_CaelarJail", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_Journal_CaelarJail", "GLOBAL", 0)
-		AddJournalEntry(@32, INFO)
-		SetInterrupt(TRUE)
-		Continue()
-END
-//}
-
 //{ Beno Kanaglym
 IF
 	Global("XA_LC_Journal_BenoKana", "GLOBAL", 1)
@@ -795,38 +915,55 @@ I've decided to help the spirits of the crusaders who are unable to pass on. Usi
 END
 //}
 
-//{ Aun / Caelar
-IF
-	Global("XA_LC_Journal_CaelarHome", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_Journal_CaelarHome", "GLOBAL", 0)
-		AddXPObject(Player1, 10000)
-		AddJournalEntry(@42, QUEST_DONE) /* ~Caelar Argent
-Caelar Argent has been sent home with Aun, her uncle. In the end, I did not have the heart to send her to prison. She has suffered enough already. Hopefully, they can help each other heal from the horrors that they experienced in Avernus.~*/
-		EraseJournalEntry(@41) /* ~Rest In Peace
-I've decided to help the spirits of the crusaders who are unable to pass on. Using the gate in my pocket plane, I may be able to locate and rescue Caelar Argent from Avernus, so that I can bring her to Kanaglym. Once there, she can release her crusaders from their sworn oath to her, so that they can move on to whatever awaits them in the afterlife.~*/
-		SetInterrupt(TRUE)
-		Continue()
-END
-//}
+//{ Caelar Disposition
 
-//{ Caelar Joined
-IF
-	Global("XA_LC_Journal_CaelarJoin", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_Journal_CaelarJoin", "GLOBAL", 0)
-		AddXPObject(Player1, 10000)
-		AddJournalEntry(@44, QUEST_DONE) /*~Caelar Argent
-Caelar Argent, the aasimar whose bloody crusade wreaked havoc across the Sword Coast, has agreed to fight for my cause. She will prove a valuable ally, in spite of the physical and psychological trauma that has been inflicted upon her.~ */
-		EraseJournalEntry(@41) /* ~Rest In Peace
-I've decided to help the spirits of the crusaders who are unable to pass on. Using the gate in my pocket plane, I may be able to locate and rescue Caelar Argent from Avernus, so that I can bring her to Kanaglym. Once there, she can release her crusaders from their sworn oath to her, so that they can move on to whatever awaits them in the afterlife.~*/
-		SetInterrupt(TRUE)
-		Continue()
-END
+	//{ Caelar - Jail
+	IF
+		Global("XA_LC_Journal_CaelarJail", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_CaelarJail", "GLOBAL", 0)
+			AddJournalEntry(@32, INFO)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Aun / Caelar
+	IF
+		Global("XA_LC_Journal_CaelarHome", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_CaelarHome", "GLOBAL", 0)
+			AddXPObject(Player1, 10000)
+			AddJournalEntry(@42, QUEST_DONE) /* ~Caelar Argent
+	Caelar Argent has been sent home with Aun, her uncle. In the end, I did not have the heart to send her to prison. She has suffered enough already. Hopefully, they can help each other heal from the horrors that they experienced in Avernus.~*/
+			EraseJournalEntry(@41) /* ~Rest In Peace
+	I've decided to help the spirits of the crusaders who are unable to pass on. Using the gate in my pocket plane, I may be able to locate and rescue Caelar Argent from Avernus, so that I can bring her to Kanaglym. Once there, she can release her crusaders from their sworn oath to her, so that they can move on to whatever awaits them in the afterlife.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Caelar Joined
+	IF
+		Global("XA_LC_Journal_CaelarJoin", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_CaelarJoin", "GLOBAL", 0)
+			AddXPObject(Player1, 10000)
+			AddJournalEntry(@44, QUEST_DONE) /*~Caelar Argent
+	Caelar Argent, the aasimar whose bloody crusade wreaked havoc across the Sword Coast, has agreed to fight for my cause. She will prove a valuable ally, in spite of the physical and psychological trauma that has been inflicted upon her.~ */
+			EraseJournalEntry(@41) /* ~Rest In Peace
+	I've decided to help the spirits of the crusaders who are unable to pass on. Using the gate in my pocket plane, I may be able to locate and rescue Caelar Argent from Avernus, so that I can bring her to Kanaglym. Once there, she can release her crusaders from their sworn oath to her, so that they can move on to whatever awaits them in the afterlife.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
 //}
 
 //{ TM Archery Sign-up
@@ -1072,6 +1209,20 @@ The Soultaker Dagger has been destroyed, and the souls of those that had been tr
 		AddXPObject(Player4, 35000)
 		AddXPObject(Player5, 35000)
 		AddXPObject(Player6, 35000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Corwin Died from Bite
+IF
+	Global("XA_LC_Journal_LoveLost", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_LoveLost", "GLOBAL", 0)
+		AddJournalEntry(@78, INFO) /* ~Loved and Lost
+Schael died in my arms, mere hours after being bit by Bodhi. I can barely contain my rage — not just toward her murderer, but for my own failure to save her. I believe that the bite was intended to turn Schael into a vampire, but she died before the transition could complete. There may still be a way to revive her. I will find Bodhi and make her pay for the loss of my love, with her life.~*/
 		SetInterrupt(TRUE)
 		Continue()
 END

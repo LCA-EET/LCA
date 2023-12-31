@@ -9,7 +9,7 @@
 */ 
 BEGIN ~XACORWIJ~
 
-//{ Scold Player party
+//{ Scold Player party - CC OK
 	IF ~
 		Global("XA_CorwinCoverUD_Party", "GLOBAL", 2)
 	~ THEN BEGIN XA_CorwinScoldParty
@@ -371,7 +371,7 @@ BEGIN ~XACORWIJ~
 	END
 //}
 
-//{ Killed Wraith
+//{ Killed Wraith - CC OK
 	IF ~
 		Global("XA_RohmaWraith", "GLOBAL", 3)
 	~ THEN BEGIN XA_KilledWraith
@@ -401,7 +401,7 @@ BEGIN ~XACORWIJ~
 	
 //}
 
-//{ Scold Player UD
+//{ Scold Player UD - CC OK
 	IF ~
 		Global("XA_CorwinCoverUD_Player", "GLOBAL", 2)
 	~ THEN BEGIN XA_CorwinScoldPlayer
@@ -432,7 +432,7 @@ BEGIN ~XACORWIJ~
 	END
 //}
 
-//{ Corwin Saved XAACS09B
+//{ Corwin Saved XAACS09B - CC OK
 	IF ~
 		Global("XA_CorwinSaved9", "GLOBAL", 1)
 	~ THEN BEGIN XA_CorwinSaved9_1
@@ -529,7 +529,8 @@ BEGIN ~XACORWIJ~
 		EXIT
 	END
 //}
-//{ Player Statue Talk
+
+//{ Player Statue Talk - CC OK
 	IF ~
 		Global("XA_CorwinStatueTalk", "GLOBAL", 1)
 		GlobalGT("XA_CorwinStatue", "GLOBAL", 0)
@@ -580,7 +581,7 @@ BEGIN ~XACORWIJ~
 	
 //}
 
-//{ Corwin Statue Talk
+//{ Corwin Statue Talk - CC OK
 	IF ~
 		Global("XA_CorwinStatueTalk", "GLOBAL", 1)
 	~ THEN BEGIN XA_PlayerStatueTalk
@@ -625,7 +626,7 @@ BEGIN ~XACORWIJ~
 	END
 //}
 
-//{ Caelar Sent to prison
+//{ Caelar Sent to prison - CC OK
 	IF ~
 		Global("XA_CorwinCaelarJailTalk", "GLOBAL", 1)
 	~ THEN BEGIN XA_CaelarSentJail
@@ -661,7 +662,7 @@ BEGIN ~XACORWIJ~
 	END
 //}
 
-//{ Caelar Sent Home Instead of Jail
+//{ Caelar Sent Home Instead of Jail - CC OK
 	IF ~
 		Global("XA_CorwinCaelarHomeTalk", "GLOBAL", 1)
 	~ THEN BEGIN XA_CaelarSentHome
@@ -697,7 +698,7 @@ BEGIN ~XACORWIJ~
 	END
 //}
 
-//{ Corwin Avernus Return
+//{ Corwin Avernus Return - CC OK
 	IF ~
 		Global("XA_AvernusChat", "GLOBAL", 1)
 	~ THEN BEGIN XA_AvernusEntry
@@ -711,7 +712,7 @@ BEGIN ~XACORWIJ~
 	END
 //}
 
-//{ Corwin Beno Soul Talk Dialog J-85
+//{ Corwin Beno Soul Talk Dialog J-85 - CC OK
 	IF ~
 		Global("XA_CorwinBenoSoulTalk", "GLOBAL", 1)
 	~ THEN BEGIN XA_CorwinBenoSoulTalk
@@ -816,11 +817,11 @@ BEGIN ~XACORWIJ~
 	END
 //}
 
-//{ FINSOL01 Debug
+//{ FINSOL01 Debug - CC OK
 	IF ~
 		Global("XA_FINSOL01_Debug", "GLOBAL", 1)
 	~ THEN BEGIN XA_FINSOL01_Debug
-		SAY @482
+		SAY @482 /* ~FINSOL01 Debug.~*/
 		
 		IF ~
 			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -1110,7 +1111,7 @@ BEGIN ~XACORWIJ~
 	
 //}
 
-//{ Dialog J-84 - Leave after SoA
+//{ Dialog J-84 - Leave after SoA - CC OK
 IF ~
 	OR(2)
 		Global("XA_CorwinDepart", "GLOBAL", 1)
@@ -1119,9 +1120,15 @@ IF ~
 	SAY @313 /* ~Finally, it's over. Congratulations on your victory, <CHARNAME>.~  */
 	
 	IF ~~ THEN REPLY @315 /* ~What will you do now?~ */
+	DO ~
+		SetGlobal("XA_CorwinDepart", "GLOBAL", 3)
+	~
 	GOTO XA_LeaveAfterSoA_100_2
 	
 	IF ~~ THEN REPLY @316 /* ~Thank you, Captain.~*/
+	DO ~
+		SetGlobal("XA_CorwinDepart", "GLOBAL", 3)
+	~
 	GOTO XA_LeaveAfterSoA_100_2
 END
 
@@ -1162,7 +1169,6 @@ IF ~~ THEN BEGIN XA_LeaveAfterSoA_100_3
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinDepart", "GLOBAL", 3)
 		ActionOverride(Player1, TakeCreatureItems("XACORWIN", BACKPACK))
 		ChangeAIScript("", OVERRIDE)
 		ChangeAIScript("", DEFAULT)
@@ -1178,7 +1184,6 @@ IF ~~ THEN BEGIN XA_LeaveAfterSoA_100_Dorn
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinDepart", "GLOBAL", 3)
 		ActionOverride(Player1, TakeCreatureItems("XACORWIN", BACKPACK))
 		ChangeAIScript("", OVERRIDE)
 		ChangeAIScript("", DEFAULT)
@@ -1194,7 +1199,6 @@ IF ~~ THEN BEGIN XA_LeaveAfterSoA_100_Hexxat
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinDepart", "GLOBAL", 3)
 		ActionOverride(Player1, TakeCreatureItems("XACORWIN", BACKPACK))
 		ChangeAIScript("", OVERRIDE)
 		ChangeAIScript("", DEFAULT)
@@ -1210,7 +1214,6 @@ IF ~~ THEN BEGIN XA_LeaveAfterSoA_100_Viconia
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinDepart", "GLOBAL", 3)
 		ActionOverride(Player1, TakeCreatureItems("XACORWIN", BACKPACK))
 		ChangeAIScript("", OVERRIDE)
 		ChangeAIScript("", DEFAULT)
@@ -1222,7 +1225,7 @@ IF ~~ THEN BEGIN XA_LeaveAfterSoA_100_Viconia
 END
 //}
 
-//{ Dialog J-83 - Romance Conflict
+//{ Dialog J-83 - Romance Conflict - CC OK
 
 IF ~
 	Global("XA_RomanceConflictTalk", "GLOBAL", 1)
@@ -1495,7 +1498,7 @@ END
 
 //}
 
-// XA_JARLAXLE_0
+//{ XA_JARLAXLE_0
 IF ~~ THEN BEGIN XA_JARLAXLE_0
 	SAY @1634 /* ~Nice trick. You must be Jarlaxle.~*/
 	
@@ -1517,7 +1520,8 @@ IF ~~ THEN BEGIN XA_UDPHAE01_88
 	IF ~~ THEN EXIT
 END
 //}
-//{ Wedding Hostility
+
+//{ Wedding Hostility - CC OK
 IF ~
 	Global("XA_CorwinLeaveWedding", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinLeaveWedding
@@ -1618,6 +1622,7 @@ IF ~~ THEN BEGIN XA_SARMEL01_68_3
 	EXTERN SARMEL01 XA_SARMEL01_68_4
 END
 //}
+
 //{ SARPRO01
 IF ~~ THEN BEGIN XA_SARPRO01_11
 	SAY @1616 /* ~We don't have time for games. Let's go.~ */
@@ -1680,7 +1685,7 @@ IF ~~ THEN BEGIN XA_SARPROVF_0_BodhiBite2
 END
 //}
 
-//{ Dialog J-82
+//{ Dialog J-82 - CC OK
 IF ~
 	Global("XA_CorwinPregnant", "GLOBAL", 10)
 ~ THEN BEGIN XA_CorwinPregnant_Final
@@ -1779,7 +1784,7 @@ IF ~~ THEN BEGIN XA_GoodbyeChainEnd2
 END
 //}
 
-//{ Dialog J-81
+//{ Dialog J-81 - CC OK
 IF ~
 	Global("XA_CorwinPregnant", "GLOBAL", 8)
 ~ THEN BEGIN XA_CorwinPregnant_Fourth
@@ -1810,7 +1815,7 @@ IF ~~ THEN BEGIN XA_CorwinPregnant_Fourth_3
 END
 //}
 
-//{ Dialog J-80
+//{ Dialog J-80 - CC OK
 IF ~
 	Global("XA_CorwinPregnant", "GLOBAL", 6)
 ~ THEN BEGIN XA_CorwinPregnant_Third
@@ -1893,7 +1898,7 @@ IF ~~ THEN BEGIN XA_CorwinPregnant_Third_6
 END
 //}
 
-//{ Dialog J-79
+//{ Dialog J-79 - CC OK
 IF ~
 	Global("XA_MessageToBG", "GLOBAL", 1)
 	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -1928,7 +1933,7 @@ IF ~~ THEN BEGIN XA_AudamarCorwinPregnant
 END
 //}
 
-//{ Dialog J-78
+//{ Dialog J-78 - CC OK
 IF ~
 	Global("XA_MessageToBG", "GLOBAL", 1)
 	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -1950,7 +1955,7 @@ IF ~
 END
 //}
 
-//{ Dialog J-77
+//{ Dialog J-77 - CC OK
 IF ~
 	Global("XA_MessageToBG", "GLOBAL", 1)
 ~ THEN BEGIN XA_AmkethranCourier
@@ -2011,7 +2016,7 @@ IF ~~ THEN BEGIN XA_AmkethranCourier_END
 END
 //}
 
-//{ Dialog J-76
+//{ Dialog J-76 - CC OK
 IF ~
 	Global("XA_CorwinParentAdvice", "GLOBAL", 2)
 ~ THEN BEGIN XA_ParentAdvice
@@ -2090,7 +2095,7 @@ IF ~~ THEN BEGIN XA_ParentAdvice_NotRightNow
 END
 //}
 
-//{ Dialog J-71
+//{ Dialog J-71 - CC OK
 IF ~
 	Global("XA_CorwinPregnant", "GLOBAL", 2)
 ~ THEN BEGIN XA_CorwinPregnantInitial
@@ -2156,7 +2161,7 @@ IF ~~ THEN BEGIN XA_CorwinPregnantInitial_END
 END
 //}
 
-
+//{ Amkethran Letter
 IF ~~ THEN BEGIN XA_DeliverTwoLetters
 	SAY @1589 /* ~Two letters. One to the Dukes, and one to my father. I need to let my family know that we're fine.~*/
 	
@@ -2190,8 +2195,9 @@ IF ~~ THEN BEGIN XA_DeliverAdditional
 	~ THEN
 	EXTERN XAHAMZA XA_DeliverAdditional_Charmed
 END
+//}
 
-//{ Dialog J-72
+//{ Dialog J-72 - CC OK
 IF ~
 	Global("XA_CorwinPregnant", "GLOBAL", 4)
 ~ THEN BEGIN XA_CorwinPregnant2
@@ -2846,7 +2852,7 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_End
 END
  //}
 
-//{ Dialog J-70
+//{ Dialog J-70 - CC OK
 IF ~
 	Global("XA_SaradushDestroyed", "GLOBAL", 1)
 ~ THEN BEGIN XA_SaradushDestroyed
@@ -2908,7 +2914,7 @@ IF ~~ THEN BEGIN XA_TimeToGrieveLater
 END
 //}
 
-//{ #region Hall of Wonders Cutscene - Dialog J-0
+//{ #region Hall of Wonders Cutscene - Dialog J-0 - CC OK
 IF ~
 	Global("XA_CSHOW_TALK", "GLOBAL", 1)
 ~ THEN BEGIN XA_CSHOW_TALK
@@ -2943,7 +2949,7 @@ IF ~~ THEN BEGIN XA_WantToTransform
 END
 //} #endregion
 
-//{ #region Corwin Not Chosen for Saradush - Dialog J-1
+//{ #region Corwin Not Chosen for Saradush - Dialog J-1 - CC OK
 IF ~
 	Global("XA_BGEND3", "GLOBAL", 1)
 	Global("XA_DidNotRequestCorwin", "GLOBAL", 1)
@@ -3018,7 +3024,7 @@ END
 
 //} #endregion
 
-//{ Dialog J-69
+//{ Dialog J-69 - CC OK
 IF ~
 	Global("XA_CorwinComplainSarevok", "GLOBAL", 2)
 ~ THEN BEGIN XA_CorwinComplainSarevokInit
@@ -3147,7 +3153,7 @@ END
 
 //}
 
-//{ #region Corwin Chosen for Saradush - Dialog J-2
+//{ #region Corwin Chosen for Saradush - Dialog J-2 - CC OK
 IF ~
 	Global("XA_BGEND4", "GLOBAL", 1)
 	Global("XA_DidRequestCorwin", "GLOBAL", 1)
@@ -3289,7 +3295,7 @@ END
 
 //} #endregion
 
-//{ #region Rohma Rescued - Dialog J-3
+//{ #region Rohma Rescued - Dialog J-3 - CC OK
 IF ~
 	Global("XA_RohmaSaved", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinRohmaReunite
@@ -3313,7 +3319,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region Beno Last Words (Soultaker) - Dialog J-4
+//{ #region Beno Last Words (Soultaker) - Dialog J-4 - CC OK
 IF ~
 	Global("XA_CorwinBenoST", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinBenoST
@@ -3361,7 +3367,7 @@ IF ~~ THEN XA_CorwinBenoSTChainEndCS
 END
 //} #endregion
 
-//{ #region Beno Last Words (Killed) - Dialog J-5
+//{ #region Beno Last Words (Killed) - Dialog J-5 - CC OK
 IF ~
 	Global("XA_CorwinKillBeno", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinKillBenoLastWords
@@ -3432,7 +3438,7 @@ END
 
 //} #endregion
 
-//{ #region Illasera Killed - Dialog J-6
+//{ #region Illasera Killed - Dialog J-6 - CC OK
 IF ~
 	Global("XA_IllaseraDead", "GLOBAL", 1)
 ~ THEN BEGIN XA_IllaseraDead
@@ -3626,7 +3632,7 @@ IF ~~ THEN BEGIN XA_IllaseraDead_Mercy
 END
 //} #endregion
 
-//{ #region Arrival in Undercity - Dialog J-7 - Tested
+//{ #region Arrival in Undercity - Dialog J-7 - Tested - CC OK
 IF ~
 	Global("XA_ArrivedInUndercity", "GLOBAL", 1)
 ~ THEN BEGIN XA_ArrivedInUndercity
@@ -3734,16 +3740,22 @@ IF ~~ THEN BEGIN XA_GlintUCChainEnd
 END
 //} #endregion
 
-//{ #region Duke Debrief Break - Dialog J-8
+//{ #region Duke Debrief Break - Dialog J-8 - CC OK
 IF ~
 	Global("XA_DukesDebriefed", "GLOBAL", 2)
 ~ THEN BEGIN XA_DukeDebrief02
 	SAY @1066 /* ~I thought that went well. What do you think?~ */
 	
 	IF ~~ THEN REPLY @1067 /* ~Me too. You did a great job recounting the events.~ */
+	DO ~
+		SetGlobal("XA_DukesDebriefed", "GLOBAL", 3)
+	~
 	GOTO XA_DukeDebrief02_A1
 	
 	IF ~~ THEN REPLY @1068 /* ~I don't know... they seemed fearful of 'The Slayer'.~ */
+	DO ~
+		SetGlobal("XA_DukesDebriefed", "GLOBAL", 3)
+	~
 	GOTO XA_DukeDebrief02_B1
 END
 
@@ -3852,7 +3864,6 @@ IF ~~ THEN BEGIN XA_DukeDebrief_WaitForDukes
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_DukesDebriefed", "GLOBAL", 3)
 		StartCutSceneMode()
 		StartCutScene("XADEBR02")
 	~
@@ -3902,7 +3913,7 @@ IF ~~ THEN BEGIN XA_DukeDebrief02_B2
 END
 //} #endregion
 
-//{ #region Corwin Walk Home - Dialog J-9
+//{ #region Corwin Walk Home - Dialog J-9 - CC OK
 IF ~
 	Global("XA_CorwinWalkHome", "GLOBAL", 1)
 ~ THEN BEGIN XA_WalkHome
@@ -3931,18 +3942,21 @@ IF ~~ THEN BEGIN XA_WalkHome3
 END
 //} #endregion
 
-//{ #region Rohma Kidnapped 1316_1 - Dialog J-10
+//{ #region Rohma Kidnapped 1316_1 - Dialog J-10 - CC OK
 IF ~
 	Global("XA_RohmaKidnapped", "GLOBAL", 1)
 ~ THEN BEGIN XA_RohmaKidnapped
 	SAY @975 /* ~Father!~ */
 	
 	IF ~~ THEN 
+	DO ~
+		SetGlobal("XA_RohmaKidnapped", "GLOBAL", 2)
+	~
 	EXTERN XAAUDAM XA_AudamarRohmaKidnapChain
 END
 //} #endregion 
 
-//{ Dialog J-68
+//{ Dialog J-68 - CC OK
 IF ~
 	Global("XA_RohmaKidnapped", "GLOBAL", 2)
 ~ THEN BEGIN XA_RohmaKidnapped2
@@ -3958,18 +3972,21 @@ IF ~
 END
 //}
 
-
-//{ #region Rohma Kidnaped - Ducal Palace - Dialog J-11
+//{ #region Rohma Kidnaped - Ducal Palace - Dialog J-11 - CC OK
 IF ~
 	Global("XA_RohmaKidnapped", "GLOBAL", 4)
 ~ THEN BEGIN XA_NeedToGetRohma
 	SAY @1055 /* ~What did the healers say? Is my father going to make it?~ */
 	
-	IF ~~ THEN EXTERN XALIIA XA_NeedToGetRohmaChain
+	IF ~~ THEN 
+	DO ~
+		SetGlobal("XA_RohmaKidnapped", "GLOBAL", 5)
+	~
+	EXTERN XALIIA XA_NeedToGetRohmaChain
 END
 //} #endregion
 
-//{ #region Corwin Proposal - Dialog J-12
+//{ #region Corwin Proposal - Dialog J-12 - CC OK
 IF ~
 	Global("XA_CorwinProposaXAS", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinProposal
@@ -4296,7 +4313,7 @@ IF ~~ THEN XA_CorwinProposal7
 END
 //} #endregion
 
-//{ #region Dinner with Corwin (Romance) - Dialog J-14 - Tested
+//{ #region Dinner with Corwin (Romance) - Dialog J-14 - Tested - CC OK
 IF ~
 	Global("XA_CorwinDinner", "GLOBAL", 1)
 	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -4405,7 +4422,7 @@ IF ~~ THEN BEGIN XA_CorwinDinner_Romance8
 END
 //} #endregion
 
-//{ #region Dinner with Corwin (Non-Romance) - Dialog J-15 - Tested
+//{ #region Dinner with Corwin (Non-Romance) - Dialog J-15 - Tested - CC OK
 IF ~
 	Global("XA_CorwinDinner", "GLOBAL", 1)
 	!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -4625,7 +4642,7 @@ IF ~~ THEN BEGIN XA_CorwinDinner_WorkEnd
 END
 //} #endregion
 
-//{ #region Corwin / Tianna Dialog J-15
+//{ #region Corwin / Tianna Dialog J-15 - CC OK
 IF ~
 	Global("XA_ReturnToBG", "GLOBAL", 1)
 	Global("XA_AskCorwinAboutTianna", "GLOBAL", 1)
@@ -4747,7 +4764,7 @@ IF ~~ THEN BEGIN XA_NotYetTianna
 END
 //} #endregion
 
-//{ #region Corwin Slaver Girl Rescue - Dialog J-16
+//{ #region Corwin Slaver Girl Rescue - Dialog J-16 - CC OK
 IF ~
 	Global("XA_CorwinSlaverPlot", "GLOBAL", 1)
 	Global("XA_SlaveKidsFreed", "GLOBAL", 3)
@@ -4796,7 +4813,7 @@ IF ~~ THEN BEGIN XA_CorwinBGSlaverDiscuss2
 END
 //} #endregion
 
-//{ #region Corwin Post Neoma Meeting - Dialog J-17
+//{ #region Corwin Post Neoma Meeting - Dialog J-17 - CC OK
 IF ~
 	Global("XA_XACS15Cutscene", "GLOBAL", 6)
 	//play romance song
@@ -4914,7 +4931,7 @@ IF ~~ THEN XA_CorwinNeoma6
 END
 //} #endregion
 
-//{ #region Corwin Family Timer - Dialog J-18
+//{ #region Corwin Family Timer - Dialog J-18 - CC OK
 IF ~
 	Global("XA_CorwinNeedSeeFamily", "GLOBAL", 1)
 	GlobalLT("XA_CorwinMetFamily", "GLOBAL", 1)
@@ -4989,7 +5006,7 @@ IF ~~ THEN BEGIN XA_SeeFamilyNow
 END
 //} #endregion
 
-//{ #region Corwin Family Timer Expired (Non-Romance) - Dialog J-19
+//{ #region Corwin Family Timer Expired (Non-Romance) - Dialog J-19 - CC OK
 IF ~
 	Global("XA_CorwinLeaveForFamily", "GLOBAL", 1)
 	!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -5011,7 +5028,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region Corwin Family Timer Expired (Romance) - Dialog J-20
+//{ #region Corwin Family Timer Expired (Romance) - Dialog J-20 - CC OK
 IF ~
 	Global("XA_CorwinLeaveForFamily", "GLOBAL", 1)
 	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -5021,12 +5038,14 @@ IF ~
 	IF ~~ THEN REPLY @786 /* ~I'll stay at the Three Old Kegs tonight.~ */
 	DO ~
 		SetGlobal("XA_StayingAtThreeOldKegs", "GLOBAL", 1)
+		SetGlobal("XA_CorwinLeaveForFamily", "GLOBAL", 2)
 	~
 	GOTO XA_SleepAtHotel
 	
 	IF ~~ THEN REPLY @789 /* ~I'll stay at the Blade and Stars tonight.~*/
 	DO ~
 		SetGlobal("XA_StayingAtBladeAndStars", "GLOBAL", 1)
+		SetGlobal("XA_CorwinLeaveForFamily", "GLOBAL", 2)
 	~
 	GOTO XA_SleepAtHotel
 	
@@ -5035,16 +5054,21 @@ IF ~
 	~ THEN REPLY @790 /* ~I'll stay at the Elfsong Tavern tonight.~*/
 	DO ~
 		SetGlobal("XA_StayingAtElfsongTavern", "GLOBAL", 1)
+		SetGlobal("XA_CorwinLeaveForFamily", "GLOBAL", 2)
 	~
 	GOTO XA_SleepAtHotel
 	
 	IF ~~ THEN REPLY @791 /* ~I'll stay at the Blushing Mermaid tonight.~*/
 	DO ~
 		SetGlobal("XA_StayingAtBlushingMermaid", "GLOBAL", 1)
+		SetGlobal("XA_CorwinLeaveForFamily", "GLOBAL", 2)
 	~
 	GOTO XA_SleepAtHotel
 	
 	IF ~~ THEN REPLY @905 /* ~I was hoping to spend the night at your place.~*/
+	DO ~
+		SetGlobal("XA_CorwinLeaveForFamily", "GLOBAL", 2)
+	~
 	GOTO XA_WantToSpendWithSchael
 	
 END
@@ -5093,9 +5117,6 @@ IF ~~ THEN BEGIN XA_SleepAtHotel
 	= @799 /* ~(She whispers in your ear.) I'll come see you in your room tonight, lover.~ */
 	
 	IF ~~ THEN REPLY @907 /* ~You'll do more than just see me, I hope.~ */
-	DO ~
-		SetGlobal("XA_CorwinLeaveForFamily", "GLOBAL", 2)
-	~
 	GOTO XA_SexTonight
 END
 
@@ -5133,7 +5154,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region Go Back to BG (Non-Romance) - Dialog J-22
+//{ #region Go Back to BG (Non-Romance) - Dialog J-22 - CC OK
 
 IF ~
 	Global("XA_BackToBG", "GLOBAL", 2)
@@ -5151,7 +5172,7 @@ END
 
 //} #endregion
 
-//{ #region Corwin End BG2 (Romance) - Dialog J-23
+//{ #region Corwin End BG2 (Romance) - Dialog J-23 - CC OK
 IF ~
 	Global("XA_BackToBG", "GLOBAL", 1)
 ~ THEN BEGIN XA_BackToBG_Romance
@@ -5243,46 +5264,70 @@ IF ~~ THEN BEGIN XA_BackToBG_RTL_NotYet
 END
 //} #endregion
 
-//{ #region Corwin Post Drizzt - Dialog J-24
+//{ #region Corwin Post Drizzt - Dialog J-24 - CC OK
 IF ~
 	Global("XA_CorwinVouchedDrizz", "GLOBAL", 2)
 ~ THEN BEGIN XA_CorwinPlayerDrizz
 	SAY @488 /* ~That adventurer we encountered, Drizzt, was adamant that you had assaulted him. Was he speaking the truth?~ */
 	
 	IF ~~ THEN REPLY @489 /* ~I'd rather not talk about it.~ */
+	DO ~
+		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
+	~
 	GOTO XA_CorwinPlayerDrizz1A //OK
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @490 /* ~No, you know me, I would never do such a thing.~ */
+	DO ~
+		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
+	~
 	GOTO XA_CorwinPlayerDrizz2A //OK
 	
 	IF ~
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @490 /* ~No, you know me, I would never do such a thing.~ */
+	DO ~
+		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
+	~
 	GOTO XA_CorwinPlayerDrizz2B //OK
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @491 /* ~Yes, I did. I'm not proud of it, but I promise you that I'm not the same person that I was.~ */
+	DO ~
+		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
+	~
 	GOTO XA_CorwinPlayerDrizz3A //OK
 	
 	IF ~
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @491 /* ~Yes, I did. I'm not proud of it, but I promise you that I'm not the same person that I was.~ */
+	DO ~
+		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
+	~
 	GOTO XA_CorwinPlayerDrizz3B //OK 
 	
 	IF ~
 		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @497 /* ~Yes, I did. I saw he was a drow, and everything I'd heard about his kind convinced me that he'd harm me after killing the gnolls.~*/
+	DO ~
+		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
+	~
 	GOTO XA_CorwinPlayerDrizz4A //OK
 	
 	IF ~
 		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @497 /* ~Yes, I did. I saw he was a drow, and everything I'd heard about his kind convinced me that he'd harm me after killing the gnolls.~*/
+	DO ~
+		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
+	~
 	GOTO XA_CorwinPlayerDrizz4B //OK 
 		
 	IF ~~ THEN REPLY @492 /* ~Yes, I did, and I'd do it again. I was struggling to survive and needed his equipment.~ */
+	DO ~
+		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
+	~
 	GOTO XA_CorwinPlayerDrizz1 //OK
 END
 
@@ -5290,7 +5335,6 @@ IF ~~ THEN BEGIN XA_CorwinPlayerDrizz1A
 	SAY @1445 /* ~And I'd rather you be open with me. Fine. Let's go.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -1)
 	~
 	EXIT
@@ -5300,7 +5344,6 @@ IF ~~ THEN BEGIN XA_CorwinPlayerDrizz1
 	SAY @493 /* ~I see. Let's go.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -1)
 	~
 	EXIT
@@ -5310,7 +5353,6 @@ IF ~~ THEN BEGIN XA_CorwinPlayerDrizz2A
 	SAY @496 /* ~Sometimes I feel like I don't know you at all. I'd rather you'd have done it and been honest with me than to lie about it. Let's go.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -4)
 	~
 	EXIT
@@ -5320,7 +5362,6 @@ IF ~~ THEN BEGIN XA_CorwinPlayerDrizz2B
 	SAY @496 /* ~Sometimes I feel like I don't know you at all. I'd rather you'd have done it and been honest with me than to lie about it. Let's go.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -2)
 	~
 	EXIT
@@ -5330,7 +5371,6 @@ IF ~~ THEN BEGIN XA_CorwinPlayerDrizz3A
 	SAY @495 /* ~I appreciate your honesty. We've all made bad decisions - it's good though that you've learned from yours. Let's go, love.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
 	~
 	EXIT
@@ -5340,7 +5380,6 @@ IF ~~ THEN BEGIN XA_CorwinPlayerDrizz3B
 	SAY @494 /* ~I appreciate your honesty. We've all made bad decisions - it's good though that you've learned from yours. Let's go.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
 	~
 	EXIT
@@ -5350,7 +5389,6 @@ IF ~~ THEN BEGIN XA_CorwinPlayerDrizz4A
 	SAY @499 /* ~I appreciate your honesty. Let's go, love.~*/
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	EXIT
@@ -5360,16 +5398,13 @@ IF ~~ THEN BEGIN XA_CorwinPlayerDrizz4B
 	SAY @498 /* ~I appreciate your honesty. Let's go.~*/
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinVouchedDrizz", "GLOBAL", 3)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	EXIT
 END
 //} #endregion
 
-
-
-//{ #region Corwin Dorn Post Sex - Dialog J-25
+//{ #region Corwin Dorn Post Sex - Dialog J-25 - CC OK
 IF ~
 	Global("XA_ComplainDornSex", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinSexDorn
@@ -5385,7 +5420,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region Corwin Player Soul Talk - Dialog J-26A
+//{ #region Corwin Player Soul Talk - Dialog J-26A - CC OK
 IF ~
 	Global("XA_PlayerSoulTalk", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinSoulTalk
@@ -5418,7 +5453,7 @@ IF ~~ THEN BEGIN XA_CorwinSoulTalk2
 END
 //}
 
-//{ #region Corwin Player Rescue Talk - Dialog J-26B
+//{ #region Corwin Player Rescue Talk - Dialog J-26B - CC OK
 IF ~
 	Global("XA_PlayerRescueTalk", "LOCALS", 1)
 ~ THEN BEGIN XA_CorwinRescueTalk
@@ -5514,29 +5549,32 @@ IF ~~ THEN BEGIN XA_CorwinRescueTalk5B
 END
 //}
 
-//{ #region Corwin Rep Warning - Dialog J-27
+//{ #region Corwin Rep Warning - Dialog J-27 - CC OK
 IF ~
 	Global("XA_CorwinRepWarning", "GLOBAL", 2)
 ~ THEN BEGIN XA_RepComplain
 	SAY @417 /* ~We need to talk.~ */
 	IF ~~ THEN REPLY @419 /* ~What's on your mind?~ */
+	DO ~
+		SetGlobal("XA_CorwinRepWarning", "GLOBAL", 3)
+	~
 	GOTO XA_RepComplain2
 	
-	IF ~~ THEN REPLY @107
+	IF ~~ THEN REPLY @107 /* Not now. */
+	DO ~
+		SetGlobal("XA_CorwinRepWarning", "GLOBAL", 3)
+	~
 	GOTO XA_RepComplain2
 END
 
 IF ~~ THEN BEGIN XA_RepComplain2
 	SAY @418 /* ~I don't like the way things are going. I didn't come all this way to help you in committing acts of evil. If things get much worse, you'll find yourself on your own. Let's go.~ */
 	IF ~~ THEN
-	DO ~
-		SetGlobal("XA_CorwinRepWarning", "GLOBAL", 3)
-	~
 	EXIT
 END
 //} #endregion
 
-//{ #region Corwin Left - Bad Reputation - Dialog J-28A
+//{ #region Corwin Left - Bad Reputation - Dialog J-28A - CC OK
 IF ~
 	Global("XA_CorwinLeftPoorRep", "GLOBAL", 1)
 	GlobalLT("chapter", "GLOBAL", 20)
@@ -5558,7 +5596,7 @@ IF ~
 END  
 //} #endregion
 
-//{ #region Corwin Left - Bad Reputation - Dialog J-28C
+//{ #region Corwin Left - Bad Reputation - Dialog J-28C - CC OK
 IF ~
 	Global("XA_CorwinLeftPoorRep", "GLOBAL", 1)
 	GlobalLT("chapter", "GLOBAL", 20)
@@ -5579,7 +5617,7 @@ IF ~
 END  
 //}
 
-//{ #region Corwin Left - Bad Reputation - Dialog J-28B
+//{ #region Corwin Left - Bad Reputation - Dialog J-28B - CC OK
 IF ~
 	Global("XA_CorwinLeftPoorRep", "GLOBAL", 1)
 	GlobalGT("chapter", "GLOBAL", 19)
@@ -5601,7 +5639,7 @@ IF ~
 END  
 //} #endregion
 
-//{ #region Dorn Ritual Interject - Dialog J-29
+//{ #region Dorn Ritual Interject - Dialog J-29 - CC OK
 
 IF ~
 	Global("OHD_ritual_interjects","GLOBAL",1)
@@ -5636,7 +5674,7 @@ IF ~~ THEN BEGIN XA_RitualInterject2
 END
 //} #endregion
 
-//{ #region Gorge Interject - Dialog J-30
+//{ #region Gorge Interject - Dialog J-30 - CC OK
 IF ~
 	OR(2)
 		Global("OHD_GORGE_NTRJEX","OH5100",1)
@@ -5694,7 +5732,7 @@ IF ~~ THEN BEGIN XA_GorgeClimb1
 END
 //} #endregion
 
-//{ #region Corwin Bit - First - Dialog J-31
+//{ #region Corwin Bit - First - Dialog J-31 - CC OK
 IF ~
 	Global("XA_CorwinBit", "GLOBAL", 2)
 ~
@@ -5756,7 +5794,7 @@ IF ~~ THEN BEGIN XA_CorwinBitWokeUp3
 END
 //} #endregion
 
-//{ #region Corwin Bit - Second - Dialog J-32
+//{ #region Corwin Bit - Second - Dialog J-32 - CC OK
 IF ~
 	Global("XA_CorwinBit", "GLOBAL", 4)
 ~ THEN BEGIN XA_CorwinBitByBodhi2
@@ -5810,7 +5848,7 @@ IF ~~ THEN BEGIN XAA87
 END
 //} #endregion
 
-//{ #region Corwin Bit - Third - Dialog J-33
+//{ #region Corwin Bit - Third - Dialog J-33 - CC OK
 IF ~
 	Global("XA_CorwinBit", "GLOBAL", 6)
 ~ THEN BEGIN XA_CorwinBitByBodhi3
@@ -5868,7 +5906,7 @@ IF ~~ THEN BEGIN XAA98
 END
 //} #endregion
 
-//{ #region Corwin Bit - Death - Dialog J-34
+//{ #region Corwin Bit - Death - Dialog J-34 - CC OK
 IF ~
 	Global("XA_CorwinBit", "GLOBAL", 8)
 ~ THEN BEGIN XA_CorwinBitByBodhi3
@@ -5878,6 +5916,7 @@ IF ~
 	
 	IF ~~ THEN REPLY @266 /* ~Schael!~*/
 	DO ~
+		SetGlobal("XA_CorwinBit", "GLOBAL", 9)
 		SetGlobal("XA_CorwinDiedFromBite", "GLOBAL", 1)
 		ChangeAIScript("", OVERRIDE)
 		ClearAllActions()	
@@ -5893,26 +5932,24 @@ IF ~~ THEN BEGIN XA_CorwinCollapse
 		GlobalGT("bd_drinks_corwin", "GLOBAL", 0)
 	~ THEN
 	DO ~
-		//SetGlobal("XA_CS08A", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_LoveLost", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XAAcs08a")
 	~
-	UNSOLVED_JOURNAL @285 /* ~Schael died in my arms, mere hours after being bit by Bodhi. I believe that the bite was intended to turn Schael into a vampire, but she died before the transition could complete. There may still be a way to revive her. I will find Bodhi and make her pay for the loss of my love, with her life.~*/
 	EXIT
 	
 	IF ~
 		Global("bd_drinks_corwin", "GLOBAL", 0)
 	~ THEN 
 	DO ~
-		//SetGlobal("XA_CS08A", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_LoveLost", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XAAcs08c")
 	~
-	UNSOLVED_JOURNAL @285 /* ~Schael died in my arms, mere hours after being bit by Bodhi. I believe that the bite was intended to turn Schael into a vampire, but she died before the transition could complete. There may still be a way to revive her. I will find Bodhi and make her pay for the loss of my love, with her life.~ */
 	EXIT
 END
 
-//{ #region Corwin Firkraag Deal - Dialog J-35
+//{ #region Corwin Firkraag Deal - Dialog J-35 - CC OK
 IF ~
 	InParty(Myself)
 	Global("XA_CorwinFirkraagDeal", "GLOBAL", 1)
@@ -5932,7 +5969,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region Corwin Phaere Sex - Dialog J-36
+//{ #region Corwin Phaere Sex - Dialog J-36 - CC OK
 IF ~
 	InParty(Myself)
 	Global("XA_PhaereTalk", "GLOBAL", 1)
@@ -6020,7 +6057,7 @@ IF ~~ THEN BEGIN XAA99
 END
 //} #endregion
 
-//{ #region Corwin Phaere No Sex - Dialog J-37
+//{ #region Corwin Phaere No Sex - Dialog J-37 - CC OK
 IF ~
 	InParty(Myself)
 	Global("XA_PhaereTalk", "GLOBAL", 1)
@@ -6067,7 +6104,7 @@ IF ~~ THEN BEGIN XAA74
 END
 //} #endregion
 
-//{ #region Corwin Bodhi Deal - Dialog J-38
+//{ #region Corwin Bodhi Deal - Dialog J-38 - CC OK
 IF ~
 	InParty(Myself)
 	Global("XA_CorwinBodhiDeal", "GLOBAL", 1)
@@ -6087,7 +6124,7 @@ IF ~
 END
 //} #endregion
 
-//{ #region SoD Anxiety - Dialog J-39
+//{ #region SoD Anxiety - Dialog J-39 - CC OK
 
 IF ~
 	Global("XA_SoDAnxiety", "GLOBAL", 2)
@@ -6171,7 +6208,7 @@ IF ~~ THEN BEGIN XA_SoDAnxiety6
 END
 //} #endregion
 
-//{ #region Met Rohma Interaction BG2 (Non-Romance) - Dialog J-40
+//{ #region Met Rohma Interaction BG2 (Non-Romance) - Dialog J-40 - CC OK
 
 /* Optional Interaction - Met Rohma */
 IF ~
@@ -6337,7 +6374,7 @@ IF ~~ THEN BEGIN XA_OPT1END_InitRomance_End
 END
 //} #endregion
 
-//{ #region Met Corwin Interaction BG2 (Romance) - Dialog J-41
+//{ #region Met Corwin Interaction BG2 (Romance) - Dialog J-41 - CC OK
 IF ~
 	Global("XA_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
 	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -6484,7 +6521,7 @@ IF ~~ THEN BEGIN XA_OPT1RomanceEnd
 END
 //} #endregion
 
-//{ #region Neb Dead - Dialog J-42
+//{ #region Neb Dead - Dialog J-42 - CC OK
 IF ~
 	InParty(Myself)
 	Global("XA_NebDead", "GLOBAL", 1)
@@ -6497,6 +6534,9 @@ IF ~
 		Global("XA_NebRohma", "GLOBAL", 1)
 	~ 
 	THEN REPLY @203 /* ~The worst kind. (You hold her hands in yours) Are you alright, love?~ */
+	DO ~
+		SetGlobal("XA_NebDead", "GLOBAL", 2)
+	~
 	GOTO XAA60
 	
 	IF ~
@@ -6504,6 +6544,9 @@ IF ~
 		Global("XA_NebRohma", "GLOBAL", 1)
 	~ 
 	THEN REPLY @204 /* ~The worst kind. Are you alright, Schael?~ */
+	DO ~
+		SetGlobal("XA_NebDead", "GLOBAL", 2)
+	~
 	GOTO XAA60
 	
 	IF ~
@@ -6511,6 +6554,9 @@ IF ~
 		!Global("XA_NebRohma", "GLOBAL", 1)
 	~ 
 	THEN REPLY @203 /* ~The worst kind. (You hold her hands in yours) Are you alright, love?~ */
+	DO ~
+		SetGlobal("XA_NebDead", "GLOBAL", 2)
+	~
 	GOTO XAA60A
 	
 	IF ~
@@ -6518,6 +6564,9 @@ IF ~
 		!Global("XA_NebRohma", "GLOBAL", 1)
 	~ 
 	THEN REPLY @204 /* ~The worst kind. Are you alright, Schael?~ */
+	DO ~
+		SetGlobal("XA_NebDead", "GLOBAL", 2)
+	~
 	GOTO XAA60A
 END
 
@@ -6597,7 +6646,6 @@ IF ~~ THEN BEGIN XAA61A
 	IF ~~ THEN
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("XA_NebDead", "GLOBAL", 2)
 	~
 	EXIT
 END
@@ -6608,7 +6656,6 @@ IF ~~ THEN BEGIN XAA61B
 	IF ~~ THEN
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("XA_NebDead", "GLOBAL", 2)
 	~
 	EXIT
 END
@@ -6632,7 +6679,6 @@ IF ~~ THEN BEGIN XAA62A
 	IF ~~ THEN
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("XA_NebDead", "GLOBAL", 2)
 	~
 	EXIT
 END
@@ -6643,21 +6689,12 @@ IF ~~ THEN BEGIN XAA62B
 	IF ~~ THEN
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("XA_NebDead", "GLOBAL", 2)
 	~
 	EXIT
 END
 //} #endregion
 
-//{region: Dialog J-44
-
-//} endregion
-
-//{region: Dialog J-45
-
-//} #endregion
-
-//{ #region Corwin Sex 2 Timer Initial - Dialog J-46 - Tested 2023-04-17
+//{ #region Corwin Sex 2 Timer Initial - Dialog J-46 - Tested 2023-04-17 - CC OK
 IF ~
 	Global("XA_CorwinSex2_Init", "GLOBAL", 1)
 	//play romance song
@@ -6696,7 +6733,7 @@ IF ~~ THEN BEGIN XA_CorwinSexSecond3B
 END
 //} #endregion
 
-//{ #region Corwin Arrest - Dialog J-50 - Tested 2023-04-18
+//{ #region Corwin Arrest - Dialog J-50 - Tested 2023-04-18 - CC OK
 IF ~
 	Global("XA_CorwinArrest", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinArrest1
@@ -6834,8 +6871,7 @@ IF ~~ THEN BEGIN XA_CorwinArrest7
 END
 //} #endregion
 
-
-//{ #region Corwin Intimate Bodhi - Dialog J-51
+//{ #region Corwin Intimate Bodhi - Dialog J-51 - CC OK
 IF ~
 	Global("XA_CorwinSexAfterBodhi", "GLOBAL", 1)
 	//play romance song
@@ -6944,7 +6980,7 @@ IF ~~ THEN XA_CorwinWantsSex5A
 END
 //} #endregion
 
-//{ #region Corwin Cheap Date - Dialog J-52
+//{ #region Corwin Cheap Date - Dialog J-52 - CC OK
 
 IF ~
 	Global("XA_CorwinComplainSex", "GLOBAL", 1)
@@ -6994,7 +7030,7 @@ IF ~~ THEN BEGIN XA_CorwinSexCC2
 END
 //}
 
-//{ Dialog J-53A
+//{ Dialog J-53A - CC OK
 IF ~
 	Global("XA_CorwinComplainSex", "GLOBAL", 1)
 	Global("XA_CorwinComplainSexCount", "GLOBAL", 1)
@@ -7012,7 +7048,7 @@ IF ~
 END
 //}
 
-//{ Dialog J-53B
+//{ Dialog J-53B - CC OK
 IF ~
 	Global("XA_CorwinComplainSex", "GLOBAL", 1)
 	Global("XA_CorwinComplainSexCount", "GLOBAL", 1)
@@ -7047,10 +7083,10 @@ IF ~~ THEN BEGIN XA_MeetIllasera4
 END
 //} #endregion
 
-//{ #region Brevlik Arrested - Dialog J-54
+//{ #region Brevlik Arrested - Dialog J-54 - CC OK
 IF ~
 	Global("XA_BrevlikArrested", "GLOBAL", 1)
-	!Global("XA_GoBackHOW", "LOCALS", 1)
+	GlobalLT("XA_GoBackHOW", "LOCALS", 1)
 ~ THEN BEGIN XA_BrevlikArrested
 	SAY @538 /* ~Brevlik, your advocate will be with your shortly. <CHARNAME> — we better head back to the Hall of Wonders.~ */
 	
@@ -7061,7 +7097,6 @@ IF ~
 	EXIT
 END
 //} #endregion
-
 
 //{ #region Entered G1 - Dialog J-55
 IF ~~ THEN BEGIN XA_TrappedG1
@@ -7113,7 +7148,7 @@ IF ~~ THEN XA_MeetSkie3A
 	EXTERN XASKIE XA_MeetSkie4
 END
 
-//{ Dialog J-56
+//{ Dialog J-56 - CC OK
 IF ~
 	!Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
 	Global("XA_TryToSleep", "GLOBAL", 1)
@@ -7191,7 +7226,7 @@ END
 
 //}
 
-//{ Dialog J-57
+//{ Dialog J-57 - CC OK
 IF ~
 	InParty(Myself)
 	Global("XA_CorwinHexxat", "GLOBAL", 5)
@@ -7215,7 +7250,7 @@ IF ~
 END
 //}
 
-//{ Dialog J-58
+//{ Dialog J-58 - CC OK
 IF ~
 	InParty(Myself)
 	Global("XA_CorwinHexxat", "GLOBAL", 5)
@@ -7237,7 +7272,7 @@ IF ~
 END
 //}
 
-//{ Dialog J-59
+//{ Dialog J-59 - CC OK
 IF ~
 	Global("XA_CorwinHexxat", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinHexxat1
@@ -7292,7 +7327,7 @@ END
 
 //}
 
-//{ Dialog J-60
+//{ Dialog J-60 - CC OK
 IF ~
 	Global("XA_Banter_CorwinPlayer", "GLOBAL", 4)
 	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -7316,7 +7351,7 @@ END
 
 //}
 
-//{ Dialog J-61
+//{ Dialog J-61 - CC OK
 IF ~
 	Global("XA_Banter_CorwinPlayer", "GLOBAL", 4)
 	!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
@@ -7338,7 +7373,7 @@ THEN BEGIN XA_CorwinPlayerBant2B
 END
 //}
 
-//{ Dialog J-62
+//{ Dialog J-62 - CC OK
 IF ~
 	Global("XA_Banter_CorwinPlayer", "GLOBAL", 2)
 	Global("XA_CorwinContinue", "GLOBAL", 1) //Friend
@@ -7380,7 +7415,7 @@ IF ~~ THEN BEGIN XAA31B
 	EXIT
 END
 
-//{ Dialog J-63
+//{ Dialog J-63 - CC OK
 IF ~
 	Global("XA_Banter_CorwinPlayer", "GLOBAL", 2)
 	Global("XA_CorwinContinue", "GLOBAL", 2) //Romance
@@ -8344,7 +8379,7 @@ END
 
 //{ Duke Debriefing Conclusion
 
-	//{ End of Duke Debriefing - Skie Mod Active
+	//{ End of Duke Debriefing - Skie Mod Active - CC OK
 	IF ~
 		Global("XA_DukesDebriefed", "GLOBAL", 4)
 		Global("XA_SkieModActive", "GLOBAL", 1)
@@ -9116,7 +9151,7 @@ IF ~~ THEN BEGIN XA_EdwinFF2
 	EXTERN EDWINJ XA_EdwinFF3
 END
 
-IF ~
+IF ~ //CC OK
 	Global("XA_SlapTalk", "LOCALS", 1)
 ~ THEN BEGIN XA_DelciaLeft
 	SAY @513 /* ~Gods. I think she needed that as much as I did.~ */
@@ -10233,9 +10268,6 @@ IF ~~ THEN BEGIN XA_ReadyToGetRohma
 	SAY @1020 /* ~I'm ready, <CHARNAME>. You can count on me, I promise you.~ */
 	
 	IF ~~ THEN REPLY @1021 /* ~Good. Let's go get Rohma.~ */
-	DO ~
-		SetGlobal("XA_RohmaKidnapped", "GLOBAL", 5)
-	~
 	EXTERN XANEDERL XA_ReadyToGetRohmaEnd
 END
 
@@ -11511,9 +11543,7 @@ CHAIN XAAUDAM XA_AudamarRohmaKidnapChain
 	= @979 /* ~Who took her!?~ */
 	== XAAUDAM
 	@983 /*~It was B-Beno... and a... a woman... trade Rohma... for <CHARNAME>...~*/
-	DO ~
-		SetGlobal("XA_RohmaKidnapped", "GLOBAL", 2)
-	~
+	
 EXIT
 
 CHAIN XALIIA XA_NeedToGetRohmaChain

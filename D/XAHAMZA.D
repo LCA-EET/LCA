@@ -76,7 +76,7 @@ IF ~
 	DO ~
 		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 4)
 	~
-	EXTERN RASAADJ XA_HamzaRasaadChain
+	GOTO XA_HamzaRasaadChain
 	
 	IF ~
 		GlobalGT("XA_MessageToBG", "GLOBAL", 0)
@@ -86,7 +86,7 @@ IF ~
 	DO ~
 		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 3)
 	~
-	EXTERN RASAADJ XA_HamzaRasaadChain
+	GOTO XA_HamzaRasaadChain
 END
 //}
 

@@ -232,7 +232,7 @@ IF ~~ THEN BEGIN XA_GiveRing4
 	
 	IF ~~ THEN REPLY @27 /* ~What is it?~*/
 	DO ~
-		AddJournalEntry(@33, INFO)
+		SetGlobal("XA_LC_Journal_RingJhasso", "GLOBAL", 1)
 	~
 	GOTO XA_GiveRing5
 END

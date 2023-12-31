@@ -177,7 +177,7 @@ IF ~~ THEN BEGIN XA_PayFullAmount
 	IF ~~ THEN 
 	DO ~
 		SetGlobal("XA_TiannaDebtResolved", "GLOBAL", 1)
-		AddJournalEntry(@35, QUEST)
+		SetGlobal("XA_LC_Journal_Jasper", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -237,7 +237,7 @@ IF ~~ THEN XA_ThreatenJasper3A
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@35, QUEST)
+		SetGlobal("XA_LC_Journal_Jasper", "GLOBAL", 1)
 		GivePartyGold(1000)
 		SetGlobal("XA_ScaredJasperAway", "GLOBAL", 1)
 		EscapeArea()
@@ -250,7 +250,7 @@ IF ~~ THEN XA_ThreatenJasper3B
 	
 	IF ~~ THEN
 	DO ~
-		AddJournalEntry(@35, QUEST)
+		SetGlobal("XA_LC_Journal_Jasper", "GLOBAL", 1)
 		SetGlobal("XA_ScaredJasperAway", "GLOBAL", 1)
 		EscapeArea()
 	~

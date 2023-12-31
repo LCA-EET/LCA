@@ -1441,9 +1441,10 @@ END
 			== XACORWIB
 			@803 /* ~Of course. What's on your mind?~ */
 			== VALYGARJ
-			@248 /* ~I'm interested in hearing why you chose to specialize in archery. I've always felt that a Ranger's strength lies in their versatility.~ */
+			@248 /* ~I've always felt that a Ranger's strength lies in their versatility. I'm interested in hearing why you chose to specialize in archery.~ */
 			== XACORWIB
-			@249 /* ~Well, unlike most Rangers, I'm not typically sent out on my own. The need for that versatility is reduced.~ */
+			@864 /* ~There's a reason for that...~ [XA100142]*/
+			=@249 /* ~Well, unlike most Rangers, I'm not typically sent out on my own. The need for that versatility is reduced.~ */
 			= @250 /* ~I tend to work as part of a team, and having a specialization can contribute more to the team's success.~ */
 			== VALYGARJ
 			@251 /* ~An interesting perspective. I think we will enjoy working together.~ */

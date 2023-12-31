@@ -246,8 +246,8 @@
 @245 =  ~Valygar. It's good to have another Ranger on the team.~ [XA100033]
 @246 =  ~Well...~
 @247 =  ~Yes, thank you Captain. I've been meaning to talk to you about something... do you have a moment?~
-@248 =  ~I'm interested in hearing why you chose to specialize in archery. I've always felt that a Ranger's strength lies in their versatility.~
-@249 =  ~Well, unlike most Rangers, I'm not typically sent out on my own.  The need for that versatility is reduced.~
+@248 =  ~I've always felt that a Ranger's strength lies in their versatility. I'm interested in hearing why you chose to specialize in archery.~
+@249 =  ~You see, unlike most Rangers, I'm not typically sent out on my own. The need for that versatility is reduced.~
 @250 =  ~I tend to work as part of a larger contingent, and having a specialization can contribute more to the team's success.~  
 @251 =  ~An interesting perspective. I think we'll enjoy working together.~
 @252 =  ~So do I.~
@@ -863,7 +863,7 @@ Mazzy and Schael have expressed interest in taking part in this year's Trademeet
 @861 = ~I thought I'd hate you, but... I don't. The fact that you're here, helping <CHARNAME> and I with our mission is the reason why.~
 @862 = ~If we succeed, we'll vouch for your actions after your release from Avernus. The Dukes might be open to sparing your life, especially when they learn of what you've already suffered. You'd still have to worry about the Waterdhavian and Daggerford authorities, however.~
 @863 = ~I appreciate that Major, and I want to assure you that when the time comes, I'll accept whatever justice awaits me. Let's move out.~
-@864 = ~~
+@864 = ~There's a reason for that...~ [XA100142]
 @865 = ~~
 @866 = ~~
 @867 = ~~

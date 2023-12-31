@@ -27,7 +27,7 @@ IF ~~ THEN BEGIN XA_EnchantAmulet
 		ActionOverride(Player4,TransformItem("AMUL27","XALYAMUL"))
 		ActionOverride(Player5,TransformItem("AMUL27","XALYAMUL"))
 		ActionOverride(Player6,TransformItem("AMUL27","XALYAMUL"))
-		AddJournalEntry(@90, INFO)
+		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 1)
 	~
 	GOTO XA_EnchantAmulet2
 END
@@ -55,7 +55,7 @@ IF ~~ THEN BEGIN XA_GoodBye
 	DO ~
 		AddExperienceParty(100000)
 		SetGlobalTimer("XA_LyrielSingTimer", "GLOBAL", TEN_MINUTES)
-		AddJournalEntry(@89, QUEST_DONE)
+		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 2)
 		DestroySelf()
 	~
 	EXIT
@@ -159,7 +159,7 @@ IF ~
 	~ THEN REPLY @50 /* ~Tell me more about the demon trapped with us.~*/
 	DO ~
 		SetGlobal("XA_AskedAboutDemon", "LOCALS",1)
-		AddJournalEntry(@61, INFO)
+		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 3)
 	~
 	GOTO XA_AskedAboutDemon
 	
@@ -168,8 +168,8 @@ IF ~
 		Global("XA_AlythIntro", "GLOBAL", 1)
 	~ THEN REPLY @91 /* ~When I spoke with Alyth, proprietor of the Elfsong, she told me that three of her regulars had gone missing. Do you know anything about what happened to them?~*/
 	DO ~
-		AddJournalEntry(@93, INFO)
 		SetGlobal("XA_AskedAboutPatrons", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 4)
 	~
 	GOTO XA_AskedAboutPatrons
 	
@@ -178,7 +178,7 @@ IF ~
 	~ THEN REPLY @54 /* ~Tell me about the guardians.~ */
 	DO ~
 		SetGlobal("XA_AskedAboutGuardians", "LOCALS",1)
-		AddJournalEntry(@62, INFO)
+		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 5)
 	~
 	GOTO XA_AskedAboutGuardians
 	
@@ -197,7 +197,7 @@ IF ~~ THEN BEGIN XA_AskedAboutPatrons
 	~ THEN REPLY @54 /* ~Tell me about the guardians.~ */
 	DO ~
 		SetGlobal("XA_AskedAboutGuardians", "LOCALS",1)
-		AddJournalEntry(@62, INFO)
+		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 5)
 	~
 	GOTO XA_AskedAboutGuardians
 	
@@ -206,7 +206,7 @@ IF ~~ THEN BEGIN XA_AskedAboutPatrons
 	~ THEN REPLY @50 /* ~Tell me more about the demon trapped with us.~*/
 	DO ~
 		SetGlobal("XA_AskedAboutDemon", "LOCALS",1)
-		AddJournalEntry(@61, INFO)
+		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 3)
 	~
 	GOTO XA_AskedAboutDemon
 	
@@ -227,7 +227,7 @@ IF ~~ THEN BEGIN XA_AskedAboutDemon
 	~ THEN REPLY @54 /* ~Tell me about the guardians.~ */
 	DO ~
 		SetGlobal("XA_AskedAboutGuardians", "LOCALS",1)
-		AddJournalEntry(@62, INFO)
+		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 5)
 	~
 	GOTO XA_AskedAboutGuardians
 	
@@ -236,7 +236,7 @@ IF ~~ THEN BEGIN XA_AskedAboutDemon
 		Global("XA_AlythIntro", "GLOBAL", 1)
 	~ THEN REPLY @91 /* ~When I spoke with Alyth, proprietor of the Elfsong, she told me that three of her regulars had gone missing. Do you know anything about what happened to them?~*/
 	DO ~
-		AddJournalEntry(@93, INFO)
+		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 4)
 	~
 	GOTO XA_AskedAboutPatrons
 	
@@ -258,7 +258,7 @@ IF ~~ THEN BEGIN XA_AskedAboutGuardians
 	~ THEN REPLY @50 /* ~Tell me more about the demon trapped with us.~*/
 	DO ~
 		SetGlobal("XA_AskedAboutDemon", "LOCALS",1)
-		AddJournalEntry(@61, INFO)
+		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 3)
 	~
 	GOTO XA_AskedAboutDemon
 	
@@ -267,7 +267,7 @@ IF ~~ THEN BEGIN XA_AskedAboutGuardians
 		Global("XA_AlythIntro", "GLOBAL", 1)
 	~ THEN REPLY @91 /* ~When I spoke with Alyth, proprietor of the Elfsong, she told me that three of her regulars had gone missing. Do you know anything about what happened to them?~*/
 	DO ~
-		AddJournalEntry(@93, INFO)
+		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 4)
 	~
 	GOTO XA_AskedAboutPatrons
 	
@@ -444,7 +444,7 @@ IF ~~ THEN BEGIN XA_HowToEscape
 	
 	IF ~~ THEN REPLY @41 /* ~Where is the demon?~ */
 	DO ~
-		AddJournalEntry(@60, QUEST)
+		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 6)
 	~
 	GOTO XA_HowToEscape2 //OK
 END
