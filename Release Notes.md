@@ -4,6 +4,10 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v1.0.15a 2023-12-31
+* Minor grammatical improvements (its <--> it's, etc.).
+* Journaling improvements.
+
 # v1.0.15 2023-12-29
 * Added Aster's Edge +5, which can be crafted by Cespenar using Aster's Edge +3 and the Eye of Tyr.
 * Improvements to Caelar visual effects / representation.
