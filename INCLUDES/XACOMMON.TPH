@@ -526,6 +526,7 @@
 	COPY ~LCA/CRE/XABRIELB.CRE~ ~override~
 	COPY ~LCA/CRE/XALANTAN.CRE~ ~override~
 	COPY ~LCA/CRE/XACOOK.CRE~ ~override~
+	COPY ~LCA/CRE/XADUMMY.CRE~ ~override~
 	
 	COPY ~LCA/CRE/XACAELAR.CRE~ ~override~
 	SAY BIO @164
@@ -1166,14 +1167,20 @@
 	SAY DESC @149
 	//}
 	
+	//{ Gesen Projectile
+	ADD_PROJECTILE ~LCA/PRO/XALARROW.PRO~
+	//}
+	
 	//{ Corwin's Bow + 3 (Gesen) 
 	COPY ~LCA/ITM/XACORBG3.ITM~ ~override~
+	WRITE_SHORT 0x09c ~%XALARROW%~
 	SAY NAME2 @192
 	SAY DESC @193
 	//}
 	
 	//{ Corwin's Bow + 4 (Gesen)
 	COPY ~LCA/ITM/XACORBG4.ITM~ ~override~
+	WRITE_SHORT 0x09c ~%XALARROW%~
 	SAY NAME2 @194
 	SAY DESC @195
 	//}

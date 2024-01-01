@@ -187,6 +187,7 @@
 		EXTERN XACORWIJ XA_CorwinArtifacts_Chain
 	END
 	//}
+
 	
 	//{ SHOP06_
 	EXTEND_BOTTOM SHOP06_ 0
@@ -843,6 +844,94 @@
 	
 
 //}
+
+	
+	//{ WSMITH01
+	ADD_TRANS_TRIGGER WSMITH01 36
+	~
+		!PartyHasItem("XACORBOW")
+	~
+	DO 0
+	
+	ADD_TRANS_TRIGGER WSMITH01 37
+	~
+		!PartyHasItem("XACORBOW")
+	~
+	DO 0
+	
+	EXTEND_BOTTOM WSMITH01 36
+		IF ~
+			PartyHasItem("XACORBOW")
+			IsGabber("XACORWIN")
+		~ THEN REPLY @410  /* ~What about my bow? Can you replace the existing string with Gesen's?~*/
+		GOTO XA_LC_CorwinBowGesen
+		
+		IF ~
+			PartyHasItem("XACORBOW")
+			!IsGabber("XACORWIN")
+		~ THEN REPLY @411  /* ~What about Corwin's bow? Can you replace the existing string with Gesen's?*/
+		GOTO XA_LC_CorwinBowGesen
+	END
+	
+	EXTEND_BOTTOM WSMITH01 37
+		IF ~
+			PartyHasItem("XACORBOW")
+			IsGabber("XACORWIN")
+		~ THEN REPLY @410  /* ~What about my bow? Can you replace the existing string with Gesen's?~*/
+		GOTO XA_LC_CorwinBowGesen
+		
+		IF ~
+			PartyHasItem("XACORBOW")
+			!IsGabber("XACORWIN")
+		~ THEN REPLY @411  /* ~What about Corwin's bow? Can you replace the existing string with Gesen's?*/
+		GOTO XA_LC_CorwinBowGesen
+	END
+	
+	APPEND WSMITH01
+		IF ~~ THEN BEGIN XA_LC_CorwinBowGesen
+			SAY @412 /* ~Aye, let me have a look at that...~*/
+			
+			= @413 /* ~Hmm... 'tis a finely crafted weapon to be sure, but Gesen's string was meant for a short bow, not a long bow. I can replace the string, yes, but the weapon would lose some of it's range.~*/
+			
+			IF ~~ THEN REPLY @416  /* ~I'm interested — what would be involved in the replacement?~ */
+			GOTO XA_LC_CorwinBowGesen_Replace
+			
+			IF ~~ THEN REPLY @414 /*~How much of it's range would be lost, do you think?~ */
+			GOTO XA_LC_CorwinBowGesen_RangeLoss
+			
+			IF ~~ THEN REPLY #59755 /* ~No, I'm not interested. Anything else of use?~ */ 
+			GOTO 38
+		END
+		
+		IF ~~ THEN BEGIN XA_LC_CorwinBowGesen_RangeLoss
+			SAY @415  /* ~A third, or thereabouts. A worthwhile trade-off, methinks.~ */
+			
+			IF ~~ THEN REPLY @416  /* ~I'm interested — what would be involved in the replacement?~ */
+			GOTO XA_LC_CorwinBowGesen_Replace
+			
+			IF ~~ THEN REPLY #59755 /* ~No, I'm not interested. Anything else of use?~ */ 
+			GOTO 38
+		END
+		
+		IF ~~ THEN BEGIN XA_LC_CorwinBowGesen_Replace
+			SAY #59784 /* ~Two things, me friend. It will cost ye 7,500 gp for the work, no less, and without an apprentice, ye'll have to stay here a full day and help me run the forge.~ */
+			IF ~  
+				PartyGoldGT(7499)
+			~ THEN REPLY #59785 /* ~That sounds fine. Let's do it.~ */ 
+			DO ~
+				TakePartyGold(7500)
+				DestroyGold(7500)
+				SetGlobal("XA_Cromwell_CorwinBow", "GLOBAL", 1)
+			~
+			GOTO 56
+			
+			IF ~~ THEN REPLY #59787 /* ~No, I don't think so. Do I have anything else useful?~ */ 
+			GOTO 38
+		END
+	END
+	//}
+	
+	
 
 //{ FINSOL01
 	EXTEND_BOTTOM FINSOL01 5

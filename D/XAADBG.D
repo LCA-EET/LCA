@@ -4264,6 +4264,18 @@ IF ~~ THEN BEGIN XA_Menu_CreateItem
 	~
 	GOTO XA_MainMenu
 	
+	IF ~~ THEN REPLY @831 /* ~Corwin's Bow +3 (Gesen)~*/
+	DO ~
+		GiveItemCreate("XACORBG3",LastTalkedToBy(Myself),0,0,0)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @832 /* ~Corwin's Bow +4 (Gesen)~*/
+	DO ~
+		GiveItemCreate("XACORBG4",LastTalkedToBy(Myself),0,0,0)
+	~
+	GOTO XA_MainMenu
+	
 	IF ~~ THEN REPLY @26 /* ~Go back to the prior menu.~ */
 	GOTO XA_MainMenu
 END

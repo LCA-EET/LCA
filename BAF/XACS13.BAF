@@ -36,6 +36,20 @@ THEN
 		Continue()
 END
 
+IF
+	!Dead("XABOWYER")
+	PartyHasItem("XACORBG3")
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, TransformItem("XACORBG3", "XACORBG4"))
+		ActionOverride(Player2, TransformItem("XACORBG3", "XACORBG4"))
+		ActionOverride(Player3, TransformItem("XACORBG3", "XACORBG4"))
+		ActionOverride(Player4, TransformItem("XACORBG3", "XACORBG4"))
+		ActionOverride(Player5, TransformItem("XACORBG3", "XACORBG4"))
+		ActionOverride(Player6, TransformItem("XACORBG3", "XACORBG4"))
+		Continue()
+END
+
 IF 
 	GlobalLT("XA_BackToBG", "GLOBAL", 1)
 THEN

@@ -7,6 +7,26 @@ This mod allows Corwin to be added to the party in Shadows of Amn, and Caelar to
 <p>
 If you have any questions, or would like to provide feedback, please contact me at <a href="mailto:LCAMod@danielvalle.net">LCAMod@danielvalle.net</a>. Alternatively, you can post any concerns to the <a href="https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet" target="_blank">Gibberlings3 forum post</a>.  
 </p>
+<p>
+<u>
+New Quests
+</u>
+<ul>
+<li>A Gift for Rohma</li>
+<li>A Pet for Rohma</li>
+<li>Engagement Ring</li>
+<li>Locating the Farseer</li>
+<li>Recovering the Baldurian Artifacts</li>
+<li>Rescue Caelar Argent</li>
+<li>Rest In Peace</li>
+<li>Slaver Conspiracy</li>
+<li>The Soultaker Dagger</li>
+<li>Tianna's Problem</li>
+<li>Trouble at the Elfsong</li>
+</ul>
+
+</p>
+
 
 ### Useful Links
 <ul>
