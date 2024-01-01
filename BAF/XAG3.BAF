@@ -31,11 +31,25 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_EndG3", "GLOBAL", 2)
 		SetGlobal("XA_CompletedG3", "GLOBAL", 1)
-		DisplayStringHead(Player1, @0)
-		Wait(3)
 		SetGlobal("XA_DemonSpeak", "GLOBAL", 1)
+		DisplayStringHead(Player1, @0)
 		SetInterrupt(TRUE)
+END
+
+IF
+	Global("XA_CompletedG3", "GLOBAL", 1)
+	OR(6)
+		InMyArea(Player1)
+		InMyArea(Player2)
+		InMyArea(Player3)
+		InMyArea(Player4)
+		InMyArea(Player5)
+		InMyArea(Player6)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
 		StartCutSceneMode()
 		StartCutScene("XASENT")
+		SetInterrupt(TRUE)
 END
 
