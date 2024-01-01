@@ -12,13 +12,28 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_EndG2", "GLOBAL", 4)
+		SetGlobal("XA_DemonSpeak", "GLOBAL", 1)
 		SetGlobal("XA_CompletedG2", "GLOBAL", 1)
 		DisplayStringHead(Player1, @0)
-		Wait(3)
-		SetGlobal("XA_DemonSpeak", "GLOBAL", 1)
 		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_CompletedG2", "GLOBAL", 1)
+	OR(6)
+		InMyArea(Player1)
+		InMyArea(Player2)
+		InMyArea(Player3)
+		InMyArea(Player4)
+		InMyArea(Player5)
+		InMyArea(Player6)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
 		StartCutSceneMode()
 		StartCutScene("XASENT")
+		SetInterrupt(TRUE)
 END
 
 IF
@@ -39,11 +54,11 @@ END
 
 IF
 	Dead("XASAREVO")
-	!Global("XA_G2TimerSet", "LOCALS", 1)
+	GlobalLT("XA_G2TimerSet", "LOCALS", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_G2TimerSet", "LOCALS", 1)
-		SetGlobalTimer("XA_SarevokG2", "GLOBAL", THREE_ROUNDS)
+		SetGlobalTimer("XA_SarevokG2", "GLOBAL", TWO_ROUNDS)
 END
 
 IF 
@@ -62,12 +77,8 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_EndG2", "GLOBAL", 2)
 		SetGlobal("XA_CompletedG2", "GLOBAL", 1)
-		DisplayStringHead(Player1, @0)
-		Wait(3)
 		SetGlobal("XA_DemonSpeak", "GLOBAL", 1)
 		SetInterrupt(TRUE)
-		StartCutSceneMode()
-		StartCutScene("XASENT")
 END
 
 IF
