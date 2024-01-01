@@ -254,7 +254,7 @@ THEN
 		EraseJournalEntry(@22)
 		EraseJournalEntry(@23)
 		EraseJournalEntry(@24)
-		AddJournalEntry(@8, QUEST_DONE)
+		AddJournalEntry(@8, QUEST_DONE) /* */
 		AddXPObject("XACORWIN",25000)
 		AddXPObject(Player1,25000)
 		ReputationInc(1)
@@ -275,7 +275,7 @@ THEN
 		EraseJournalEntry(@22)
 		EraseJournalEntry(@23)
 		EraseJournalEntry(@24)
-		AddJournalEntry(@9, QUEST_DONE)
+		AddJournalEntry(@9, QUEST_DONE) /* */
 		AddXPObject("XACORWIN",50000)
 		AddXPObject(Player1,50000)
 		ReputationInc(2)
