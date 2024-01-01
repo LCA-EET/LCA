@@ -5,7 +5,7 @@
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
 # v1.0.16 2024-01-01
-* Added two new upgraded versions of Corwin's Bow.
+* Added two new upgraded versions of Corwin's Bow:
 * Corwin's Bow +3 (Gesen): Bring Corwin's Bow +2 and Gesen's bowstring to Cromwell in Athkatla, and pay the 7,500 gold.
 * Corwin's Bow +4 (Gesen): Rescue the master bowyer of Suldaneselaar while possessing Corwin's Bow +3. Corwin's Bow +4 will be made available to you after Irenicus is defeated. 
 * Miscellaneous scripting improvements.
