@@ -10,18 +10,16 @@ END
 
 IF
 	Global("XA_BypassG1", "GLOBAL", 1)
-	!Global("XA_CompletedG1", "GLOBAL", 1)
+	GlobalLT("XA_CompletedG1", "GLOBAL", 1)
 	IsValidForPartyDialogue(Player1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_CompletedG1", "GLOBAL", 1)
-		DisplayStringHead(Player1, @0)
-		Wait(3)
 		SetGlobal("XA_DemonSpeak", "GLOBAL", 1)
+		SetGlobal("XA_CompletedG1", "GLOBAL", 1)
+		DisplayStringHead(Player1, @0) /* ~(The world swirls, and your vision darkens...)~*/
 		SetInterrupt(TRUE)
-		StartCutSceneMode()
-		StartCutScene("XASENT")
+		Continue()
 END
 
 IF
@@ -36,14 +34,29 @@ IF
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_CompletedG1", "GLOBAL", 1)
-		DisplayStringHead(Player1, @1)
-		Wait(3)
 		SetGlobal("XA_DemonSpeak", "GLOBAL", 1)
+		SetGlobal("XA_CompletedG1", "GLOBAL", 1)
+		DisplayStringHead(Player1, @0) /* ~(The world swirls, and your vision darkens...)~*/
 		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_CompletedG1", "GLOBAL", 1)
+	OR(6)
+		InMyArea(Player1)
+		InMyArea(Player2)
+		InMyArea(Player3)
+		InMyArea(Player4)
+		InMyArea(Player5)
+		InMyArea(Player6)
+THEN
+	RESPONSE #100
 		StartCutSceneMode()
 		StartCutScene("XASENT")
 END
+
+
 
 IF 
 	GlobalLT("XA_G1_Intro", "GLOBAL", 1)
