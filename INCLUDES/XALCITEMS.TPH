@@ -1,0 +1,7 @@
+//{ Flaming Fist Manual
+	COPY ~LCA/ITM/XAFFBOOK.ITM~ ~override~
+	SAY NAME1 @0
+	SAY NAME2 @0
+	SAY UNIDENTIFIED_DESC @1
+	SAY DESC @1
+//}
