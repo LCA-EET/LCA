@@ -263,15 +263,6 @@ IF ~~ THEN BEGIN XA_CaelarRescue3
 		StartCutScene("XA470001")
 	~
 	EXIT
-	
-	IF ~
-		GlobalGT("DemoGorgonIsDead","GLOBAL",0)
-	~ THEN
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XA470002")
-	~
-	EXIT
 END
 
 IF ~~ THEN BEGIN XA_OffToJail

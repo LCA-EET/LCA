@@ -82,9 +82,7 @@
 		GlobalLT("XA_KanaDreamTimerSet", "GLOBAL",1)
 		Global("XA_ClearedKanaglym", "GLOBAL",1)
 		Global("XA_EnteredSaradush", "GLOBAL", 1)
-		OR(2)
-			Global("XA_IncubusDefeated", "GLOBAL", 1)
-			GlobalGT("DemoGorgonIsDead","GLOBAL",0)
+		Global("XA_IncubusDefeated", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_KanaDreamTimerSet", "GLOBAL",1)

@@ -4,7 +4,7 @@ THEN
 	RESPONSE #100
 		StartCutSceneMode()
 		CutSceneID(Player1)
-		DisplayStringHead("XAINCUB", @0)
+		DisplayStringHead("XANARZU", @0)
 		CreateVisualEffect("SPPORTAL",[200.225])
 		CreateVisualEffect("SPPORTAL",[430.235])
 		CreateVisualEffect("SPPORTAL",[185.400])
@@ -14,7 +14,7 @@ THEN
 		CreateCreature("XADEM02",[430.235],SW)  
 		CreateCreature("XADEM03",[185.400],NE)
 		CreateCreature("XADEM04",[445.400],NW)
-		ActionOverride("XAINCUB", Enemy())
+		ActionOverride("XANARZU", Enemy())
 		SetGlobal("XA_DemonSpawn", "GLOBAL", 2)
 		EndCutSceneMode()
 END

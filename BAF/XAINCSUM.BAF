@@ -1,5 +1,5 @@
 IF
-	Dead("XAINCUB")
+	Dead("XANARZU")
 THEN
 	RESPONSE #100
 		Kill(Myself)

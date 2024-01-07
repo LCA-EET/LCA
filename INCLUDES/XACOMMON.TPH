@@ -573,15 +573,15 @@
 	SAY NAME1 @097
 	SAY NAME2 @097
 		
-	COPY ~LCA/CRE/XAINCUB.CRE~ ~override~
+	COPY ~LCA/CRE/XANARZU.CRE~ ~override~
 	SAY NAME1 @096
 	SAY NAME2 @096
-	COPY ~LCA/BMP/XAINCUBS.BMP~ ~override~
+	COPY ~LCA/BMP/XANARZUS.BMP~ ~override~
 	
-	COPY ~LCA/CRE/XAINCUB2.CRE~ ~override~
+	COPY ~LCA/CRE/XANARZU2.CRE~ ~override~
 	SAY NAME1 @096
 	SAY NAME2 @096
-	COPY ~LCA/BMP/XAINCUBS.BMP~ ~override~
+	COPY ~LCA/BMP/XANARZUS.BMP~ ~override~
 	
 	COPY ~LCA/CRE/XACHICK.CRE~ ~override~
 	SAY NAME1 @110
@@ -945,7 +945,7 @@
 	//}	
 	
 	//{ Incubus' Zweihander
-	COPY ~LCA/ITM/XAINCUBW.ITM~ ~override~
+	//COPY ~LCA/ITM/XAINCUBW.ITM~ ~override~
 	//}
 	
 	//{ Aureate Egg

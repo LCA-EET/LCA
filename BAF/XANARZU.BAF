@@ -73,7 +73,7 @@ IF
 	InMyArea(Player1)
 THEN
 	RESPONSE #100
-		StartDialog("XAINCUB", Player1)
+		StartDialog("XANARZU", Player1)
 END
 
 IF 
@@ -86,7 +86,7 @@ THEN
 		SetGlobal("XA_DemonSpeak", "GLOBAL", 0)
 		SetGlobal("XA_SanctumCS_End", "GLOBAL", 0)
 		IncrementGlobal("XA_MetIncubus", "GLOBAL", 1)
-		StartDialog("XAINCUB", Player1)
+		StartDialog("XANARZU", Player1)
 		SetInterrupt(TRUE)
 END
 
@@ -100,7 +100,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_ParleyAttack", "GLOBAL", 1)
 		SetGlobal("XA_HealDemon", "GLOBAL", 1)
-		StartDialog("XAINCUB", Player1)
+		StartDialog("XANARZU", Player1)
 		SetInterrupt(TRUE)
 END
 

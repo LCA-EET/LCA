@@ -1,4 +1,4 @@
-BEGIN ~XAINCUB~
+BEGIN ~XANARZU~
 
 IF ~
 	Global("XA_ConfrontDemon", "GLOBAL", 1)

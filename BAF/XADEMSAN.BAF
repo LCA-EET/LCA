@@ -26,7 +26,7 @@ END
 
 
 IF
-	Dead("XAINCUB")
+	Dead("XANARZU")
 	GlobalLT("XA_DemonDead", "GLOBAL", 1)
 THEN
 	RESPONSE #100
@@ -42,9 +42,9 @@ THEN
 END
 
 IF
-	HPPercentLT("XAINCUB", 100)
+	HPPercentLT("XANARZU", 100)
 	GlobalLT("XA_ConfrontDemon", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		ApplySpell("XAINCUB", CLERIC_HEAL)
+		ApplySpell("XANARZU", CLERIC_HEAL)
 END

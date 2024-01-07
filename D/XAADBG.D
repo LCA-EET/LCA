@@ -3173,9 +3173,9 @@ IF ~~ THEN BEGIN XA_TestInteraction
 	~
 	EXIT
 	
-	IF ~~ THEN REPLY @294 /*XAINCUB*/
+	IF ~~ THEN REPLY @294 /*XANARZU*/
 	DO ~
-		CreateCreature("XAINCUB", [-1.-1], N)
+		CreateCreature("XANARZU", [-1.-1], N)
 		Wait(1)
 	~
 	EXIT
