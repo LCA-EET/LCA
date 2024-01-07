@@ -10,6 +10,27 @@
 		~
 		@183 /*~Killing one of the city wizards will likely lead us into more trouble than we can handle. If there's an alternative, we should explore it.~*/
 	END
+	
+	INTERJECT_COPY_TRANS2 EDWINJ 170 XA_EDWINJ_170
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@188 /*~What have we here?~ [BD60998] */
+	END
+	
+	INTERJECT_COPY_TRANS2 EDWINJ 171 XA_EDWINJ_171
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@189 /*~~I can hear the catcalls from the sailors at the Blushing Mermaid already... can't say I'd blame them, either.~  */
+		== EDWINJ
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@190 /*~Quiet, you flirtatious wench! Those who would dare catcall the great Odesseiron shall suffer his - erm.. her wrath!~*/
+	END
 //}
 
 //{ C6SAFA
@@ -1256,6 +1277,14 @@
 
 	//{ DORN
 	INTERJECT DORN 16 XA_DORN_16
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@7 /* ~Beast! You boast of murdering children!? There's only one punishment befitting your crimes!~*/
+	EXTERN DORN 9
+	
+	INTERJECT DORN 23 XA_DORN_23
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")

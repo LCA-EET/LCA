@@ -5,7 +5,6 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_StartedInBG1", "GLOBAL", 1)
-			Continue()
 	END
 	
 	IF
@@ -15,7 +14,6 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_StartedInSoD", "GLOBAL", 1)
-			Continue()
 	END
 	
 	IF
@@ -605,6 +603,22 @@ END
 
 //}
 
+//{ Seldarine / Lyriel Amulet conflict
+IF
+	PartyHasItem("XALYAMUL")
+	PartyHasItem("XAAMUL27")
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, DestroyItem("XAAMUL27"))
+		ActionOverride(Player2, DestroyItem("XAAMUL27"))
+		ActionOverride(Player3, DestroyItem("XAAMUL27"))
+		ActionOverride(Player4, DestroyItem("XAAMUL27"))
+		ActionOverride(Player5, DestroyItem("XAAMUL27"))
+		ActionOverride(Player6, DestroyItem("XAAMUL27"))
+		Continue()
+END
+//}
+
 //{ Golden Egg
 IF
 	PartyHasItem("XACHICK")
@@ -929,6 +943,153 @@ THEN
 END
 //}
 
+	//{ After Sex Party Banter
+	IF
+		ActionListEmpty()
+		Global("XA_CorwinSex_1", "GLOBAL", 4)
+		GlobalLT("XA_CorwinSexNoSleepTimerSet", "GLOBAL", 1)
+	THEN
+		RESPONSE #100	
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_CorwinSexNoSleepTimer", "GLOBAL", ONE_ROUND)
+			SetGlobal("XA_CorwinSexNoSleepTimerSet", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_CorwinSexNoSleepTimer", "GLOBAL")
+		GlobalLT("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		OR(6)
+			IsValidForPartyDialogue("Aerie")
+			IsValidForPartyDialogue("Neera")
+			IsValidForPartyDialogue("Nalia")
+			IsValidForPartyDialogue("Imoen2")
+			IsValidForPartyDialogue("Jaheira")
+			IsValidForPartyDialogue("Viconia")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+			////DisplayStringHead(Myself, ~DEBUG: CSNC A~)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_CorwinSexNoSleepTimer", "GLOBAL")
+		GlobalLT("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		!IsValidForPartyDialogue("Aerie")
+		!IsValidForPartyDialogue("Neera")
+		!IsValidForPartyDialogue("Nalia")
+		!IsValidForPartyDialogue("Imoen2")
+		!IsValidForPartyDialogue("Jaheira")
+		!IsValidForPartyDialogue("Viconia")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
+			////DisplayStringHead(Myself, ~DEBUG: CSNC B~)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		TriggerOverride("XACORWIN", Global("XA_CanTalkToPlayer", "LOCALS", 1))
+		IsValidForPartyDialog("Aerie")
+		!AreaCheck("AR0011")
+		!AreaCheck("AR0012")
+		!AreaCheck("AR0013")
+		!AreaCheck("AR0014")
+		!AreaCheck("AR0028")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			ActionOverride("Aerie", StartDialog("AERIEJ", Player1))
+			SetInterrupt(TRUE)
+	END
+	
+	IF
+		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		TriggerOverride("XACORWIN", Global("XA_CanTalkToPlayer", "LOCALS", 1))
+		IsValidForPartyDialog("Imoen2")
+		!AreaCheck("AR0011")
+		!AreaCheck("AR0012")
+		!AreaCheck("AR0013")
+		!AreaCheck("AR0014")
+		!AreaCheck("AR0028")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			ActionOverride("Imoen2", StartDialog("IMOEN2J", Player1))
+			SetInterrupt(TRUE)
+	END
+	
+	IF
+		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		TriggerOverride("XACORWIN", Global("XA_CanTalkToPlayer", "LOCALS", 1))
+		IsValidForPartyDialog("Nalia")
+		!AreaCheck("AR0011")
+		!AreaCheck("AR0012")
+		!AreaCheck("AR0013")
+		!AreaCheck("AR0014")
+		!AreaCheck("AR0028")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			ActionOverride("Nalia", StartDialog("NALIAJ", Player1))
+			SetInterrupt(TRUE)
+	END
+	
+	IF
+		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		TriggerOverride("XACORWIN", Global("XA_CanTalkToPlayer", "LOCALS", 1))
+		IsValidForPartyDialog("Neera")
+		!AreaCheck("AR0011")
+		!AreaCheck("AR0012")
+		!AreaCheck("AR0013")
+		!AreaCheck("AR0014")
+		!AreaCheck("AR0028")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			ActionOverride("Neera", StartDialog("NEERAJ", Player1))
+			SetInterrupt(TRUE)
+	END
+	
+	IF
+		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		TriggerOverride("XACORWIN", Global("XA_CanTalkToPlayer", "LOCALS", 1))
+		IsValidForPartyDialog("Jaheira")
+		!AreaCheck("AR0011")
+		!AreaCheck("AR0012")
+		!AreaCheck("AR0013")
+		!AreaCheck("AR0014")
+		!AreaCheck("AR0028")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			ActionOverride("Jaheira", StartDialog("JAHEIRAJ", Player1))
+			SetInterrupt(TRUE)
+	END
+	
+	IF 
+		ActionListEmpty()
+		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		!AreaCheck("AR0011")
+		!AreaCheck("AR0012")
+		!AreaCheck("AR0013")
+		!AreaCheck("AR0014")
+		!AreaCheck("AR0028")
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
+			Continue()
+	END
+	//}
 //}
 
 //{ Add LCA Assistant

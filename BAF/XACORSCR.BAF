@@ -190,7 +190,7 @@ END
 	IF 
 		ActionListEmpty()
 		Global("XA_CanTalk", "LOCALS", 1)
-		OR(7)
+		OR(12)
 			!IsValidForPartyDialogue(Myself)
 			ActuallyInCombat()
 			GlobalGT("XA_ArrivedInUndercity", "GLOBAL", 0)
@@ -198,6 +198,11 @@ END
 			AreaCheck("XACS13")
 			Global("XA_LCE_EXTalk", "GLOBAL", 1)
 			AreaCheck("AR6200")
+			AreaCheck("AR0011")
+			AreaCheck("AR0012")
+			AreaCheck("AR0013")
+			AreaCheck("AR0014")
+			AreaCheck("AR0028")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -214,6 +219,11 @@ END
 		!ActuallyInCombat()
 		GlobalLT("XA_LCE_EXTalk", "GLOBAL", 1)
 		!AreaCheck("AR6200")
+		!AreaCheck("AR0011")
+		!AreaCheck("AR0012")
+		!AreaCheck("AR0013")
+		!AreaCheck("AR0014")
+		!AreaCheck("AR0028")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -2777,125 +2787,7 @@ END
 			SetInterrupt(TRUE)
 	END
 	//}
-
-	//{ After Sex Party Banter
-	IF
-		ActionListEmpty()
-		Global("XA_CorwinSex_1", "GLOBAL", 4)
-		GlobalLT("XA_CorwinSexNoSleepTimerSet", "GLOBAL", 1)
-	THEN
-		RESPONSE #100	
-			SetInterrupt(FALSE)
-			SetGlobalTimer("XA_CorwinSexNoSleepTimer", "GLOBAL", ONE_ROUND)
-			SetGlobal("XA_CorwinSexNoSleepTimerSet", "GLOBAL", 1)
-			SetInterrupt(TRUE)
-			Continue()
-	END
 	
-	IF 
-		ActionListEmpty()
-		GlobalTimerExpired("XA_CorwinSexNoSleepTimer", "GLOBAL")
-		GlobalLT("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		OR(6)
-			IsValidForPartyDialogue("Aerie")
-			IsValidForPartyDialogue("Neera")
-			IsValidForPartyDialogue("Nalia")
-			IsValidForPartyDialogue("Imoen2")
-			IsValidForPartyDialogue("Jaheira")
-			IsValidForPartyDialogue("Viconia")
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-			////DisplayStringHead(Myself, ~DEBUG: CSNC A~)
-			SetInterrupt(TRUE)
-			Continue()
-	END
-	
-	IF 
-		ActionListEmpty()
-		GlobalTimerExpired("XA_CorwinSexNoSleepTimer", "GLOBAL")
-		GlobalLT("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		!IsValidForPartyDialogue("Aerie")
-		!IsValidForPartyDialogue("Neera")
-		!IsValidForPartyDialogue("Nalia")
-		!IsValidForPartyDialogue("Imoen2")
-		!IsValidForPartyDialogue("Jaheira")
-		!IsValidForPartyDialogue("Viconia")
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
-			////DisplayStringHead(Myself, ~DEBUG: CSNC B~)
-			SetInterrupt(TRUE)
-			Continue()
-	END
-
-	IF
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		Global("XA_CanTalkToPlayer", "LOCALS", 1)
-		IsValidForPartyDialog("Aerie")
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			ActionOverride("Aerie", StartDialog("AERIEJ", Player1))
-			SetInterrupt(TRUE)
-	END
-	
-	IF
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		Global("XA_CanTalkToPlayer", "LOCALS", 1)
-		IsValidForPartyDialog("Imoen2")
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			ActionOverride("Imoen2", StartDialog("IMOEN2J", Player1))
-			SetInterrupt(TRUE)
-	END
-	
-	IF
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		Global("XA_CanTalkToPlayer", "LOCALS", 1)
-		IsValidForPartyDialog("Nalia")
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			ActionOverride("Nalia", StartDialog("NALIAJ", Player1))
-			SetInterrupt(TRUE)
-	END
-	
-	IF
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		Global("XA_CanTalkToPlayer", "LOCALS", 1)
-		IsValidForPartyDialog("Neera")
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			ActionOverride("Neera", StartDialog("NEERAJ", Player1))
-			SetInterrupt(TRUE)
-	END
-	
-	IF
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		Global("XA_CanTalkToPlayer", "LOCALS", 1)
-		IsValidForPartyDialog("Jaheira")
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			ActionOverride("Jaheira", StartDialog("JAHEIRAJ", Player1))
-			SetInterrupt(TRUE)
-	END
-	
-	IF 
-		ActionListEmpty()
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-	THEN
-		RESPONSE #100
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
-			Continue()
-	END
-	//}
-
 	//{ After Sex HP Boost
 	IF 
 		ActionListEmpty()
@@ -5871,36 +5763,6 @@ END
 //} End Jan Interactions
 
 //{ Edwin Interactions
-
-	//{ Edwin - Corwin Change to Female Interaction */
-
-	IF
-		ActionListEmpty()
-		InParty(Myself)
-		InParty("Edwin")
-		GlobalLT("XA_EdwinWasMale", "LOCALS", 1)
-		Gender("Edwin",MALE)
-	THEN
-		RESPONSE #100
-			SetGlobal("XA_EdwinWasMale", "LOCALS", 1)
-			Continue()
-	END
-
-	IF 
-		Global("XA_CanTalkToEdwin", "LOCALS", 1)
-		Gender("Edwin",FEMALE)
-		Global("XA_EdwinWasMale", "LOCALS", 1)
-		GlobalLT("XA_CorwinEdwinFemale", "LOCALS", 1)
-		!ActuallyInCombat()
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_CorwinEdwinFemale", "LOCALS", 1)
-			//Dialog B-55
-			Interact("Edwin")
-			SetInterrupt(TRUE)
-	END
-	//}
 
 	//{ Banter Primer
 	IF 

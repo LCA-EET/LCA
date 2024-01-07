@@ -2107,25 +2107,6 @@ END
 	EXIT
 	//}
 
-	//{ Dialog B-55
-	CHAIN
-		IF ~
-			Global("XA_EdwinWasMale", "LOCALS", 1)
-			Global("XA_CorwinEdwinFemale", "LOCALS", 1)
-		~ THEN XACORWIB BCorwinEdwin2
-			@178 /*  ~Well, what have we here?~ [XACORB38] */
-			DO ~
-				SetGlobal("XA_CorwinEdwinFemale", "LOCALS", 2)
-			~
-			=
-			@179 /* ~I can hear the catcalls from the sailors at the Blushing Mermaid already.~ */
-			=
-			@180 /* ~...Can't say I'd blame them, either.~ */
-			== EDWINJ
-			@181 /*~Quiet, you flirtatious wench! Those who would dare catcall the great Odesseiron shall suffer his -  erm.. her wrath!~ */
-	EXIT
-	//}
-
 	//{ Dialog B-56
 	CHAIN
 		IF ~
