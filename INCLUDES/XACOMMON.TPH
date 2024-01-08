@@ -387,10 +387,6 @@
 	COPY ~LCA/CRE/XAAVC10.CRE~ ~override~
 	COPY ~LCA/CRE/XAAVC11.CRE~ ~override~
 	COPY ~LCA/CRE/XAAVC12.CRE~ ~override~
-	COPY ~LCA/CRE/XAAVC13.CRE~ ~override~
-	COPY ~LCA/CRE/XAAVC14.CRE~ ~override~
-	COPY ~LCA/CRE/XAAVC15.CRE~ ~override~
-	COPY ~LCA/CRE/XAAVC16.CRE~ ~override~
 	COPY ~LCA/CRE/XADEMGOR.CRE~ ~override~
 	COPY ~LCA/CRE/XACAELA2.CRE~ ~override~
 	COPY ~LCA/CRE/XATHRIX.CRE~ ~override~
