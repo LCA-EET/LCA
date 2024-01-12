@@ -831,3 +831,6 @@
 @830 = ~Eye of Tyr.~
 @831 = ~Corwin's Bow +3 (Gesen)~
 @832 = ~Corwin's Bow +4 (Gesen)~
+@833 = ~Change Edwin to Female.~
+@834 = ~Set post-sex banter conditions back to zero.~
+@835 = ~SetGlobal("XA_CloseDoorTest0800", "GLOBAL", 1)~

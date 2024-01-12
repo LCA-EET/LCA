@@ -352,6 +352,23 @@ IF ~
 	~
 	GOTO XA_MainMenu
 	
+	IF ~~ THEN REPLY @833
+	DO ~
+		ChangeGender("Edwin",FEMALE)
+		ActionOverride("Edwin", SetGlobal("EdwinWoman","LOCALS",0))
+		ActionOverride("Edwin", StartDialog("EDWINJ", Player1))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @834
+	DO ~
+		SetGlobal("XA_CorwinSex_1", "GLOBAL", 0)
+		SetGlobal("XA_CorwinSexNoSleepTimerSet", "GLOBAL", 0)
+		SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 0)
+	~
+	EXIT
+	
+	
 	IF ~~ THEN REPLY @12 /* ~I do not need assistance at this time.~ */
 	EXIT
 	
@@ -5157,6 +5174,12 @@ IF ~~ THEN BEGIN XA_Menu_AdjustVariables
 	IF ~~ THEN REPLY @828
 	DO ~
 		SetGlobal("XA_ClearedKanaglym", "GLOBAL",1)
+	~
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @835
+	DO ~
+		SetGlobal("XA_CloseDoorTest0800", "GLOBAL", 1)
 	~
 	GOTO XA_MainMenu
 	

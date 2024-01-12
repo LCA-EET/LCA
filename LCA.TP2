@@ -108,6 +108,71 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 
 //{ Modifications to Existing Areas
 
+	//{ Closed Door Scripts
+	
+		/* The CloseDoor() function doesn't work when run from an Area script when the Door's name is used by another object in the same Area. In BG1, many Doors share the same name as the Transition associated with the Door. To ensure Doors that were open at the conclusion of BG1 are closed when the player returns to BG, I needed to add a script to every Door object. This is far from an ideal solution, but it's the only one I can think of at this time. */
+	
+		//{ BG0800 Doors
+			COPY_EXISTING ~BG0800.ARE~ ~override~
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0148~
+				door_script = ~XACL0800~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0150~
+				door_script = ~XACL0800~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0151~
+				door_script = ~XACL0800~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0152~
+				door_script = ~XACL0800~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0307~
+				door_script = ~XACL0800~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0705~
+				door_script = ~XACL0800~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0801~
+				door_script = ~XACL0800~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0803~
+				door_script = ~XACL0800~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0805~
+				door_script = ~XACL0800~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0810~
+				door_script = ~XACL0800~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0811~
+				door_script = ~XACL0800~
+			END
+		//}
+	
+	//}
+	
 	//{ Trademeet
 	COPY_EXISTING ~AR2000.ARE~ ~override~
 	//}

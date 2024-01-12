@@ -1,0 +1,131 @@
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CloseDoor_0148", "MYAREA", 1)
+	Name("Door0148", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CloseDoor(Myself)
+		SetGlobal("XA_CloseDoor_0148", "MYAREA", 1)
+		SetInterrupt(TRUE)
+END
+	
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CloseDoor_0150", "MYAREA", 1)
+	Name("Door0150", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CloseDoor(Myself)
+		SetGlobal("XA_CloseDoor_0150", "MYAREA", 1)
+		SetInterrupt(TRUE)
+END
+	
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CloseDoor_0151", "MYAREA", 1)
+	Name("Door0151", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CloseDoor(Myself)
+		SetGlobal("XA_CloseDoor_0151", "MYAREA", 1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CloseDoor_0152", "MYAREA", 1)
+	Name("Door0152", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CloseDoor(Myself)
+		SetGlobal("XA_CloseDoor_0152", "MYAREA", 1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CloseDoor_0307", "MYAREA", 1)
+	Name("Door0307", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CloseDoor(Myself)
+		SetGlobal("XA_CloseDoor_0307", "MYAREA", 1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CloseDoor_0705", "MYAREA", 1)
+	Name("Door0705", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CloseDoor(Myself)
+		SetGlobal("XA_CloseDoor_0705", "MYAREA", 1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CloseDoor_0801", "MYAREA", 1)
+	Name("Door0801", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CloseDoor(Myself)
+		SetGlobal("XA_CloseDoor_0801", "MYAREA", 1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CloseDoor_0803", "MYAREA", 1)
+	Name("Door0803", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CloseDoor(Myself)
+		SetGlobal("XA_CloseDoor_0803", "MYAREA", 1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CloseDoor_0805", "MYAREA", 1)
+	Name("Door0805", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CloseDoor(Myself)
+		SetGlobal("XA_CloseDoor_0805", "MYAREA", 1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CloseDoor_0810", "MYAREA", 1)
+	Name("Door0810", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CloseDoor(Myself)
+		SetGlobal("XA_CloseDoor_0810", "MYAREA", 1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CloseDoor_0811", "MYAREA", 1)
+	Name("Door0811", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CloseDoor(Myself)
+		SetGlobal("XA_CloseDoor_0811", "MYAREA", 1)
+		SetInterrupt(TRUE)
+END
