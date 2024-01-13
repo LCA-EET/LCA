@@ -4,9 +4,11 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
-# v1.1 2024-01-07
-* Various dialog and lore consistency improvements based on feedback received.
+# v1.1 2024-01-13
+* Various dialog and lore consistency improvements based on feedback received from T. Mounier. Thank you!
 * Players can now disable and remove the LCA Assistant ability using the debugger.
+* Fixed a bug concerning the doors in Baldur's Gate areas. Exterior doors that were left open at the end of BG1 are now closed once the player returns to the city, during the Return to Baldur's Gate portion of the mod. The fix affects new playthroughs only.
+* Fixed a bug that could cause the initial configuration dialog to appear even when players started the game from SoD. The dialog is meant only for individuals that are starting the game from BG2.
 
 # v1.0.16 2024-01-01
 * Added two new upgraded versions of Corwin's Bow:
