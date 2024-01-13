@@ -1,28 +1,5 @@
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	GlobalLT("XA_CloseDoors1300", "BG1300", 1)
-THEN
-	RESPONSE #100
-		CloseDoor("Door0105")
-		CloseDoor("Door0314")
-		CloseDoor("Door0316")
-		CloseDoor("Door0805")
-		CloseDoor("Door0813")
-		CloseDoor("Door1301")
-		CloseDoor("Door1302")
-		CloseDoor("Door1302b")
-		CloseDoor("Door1304")
-		CloseDoor("Door1306")
-		CloseDoor("Door1308")
-		CloseDoor("Door1310")
-		CloseDoor("Door1312")
-		CloseDoor("Door1320")
-		SetGlobal("XA_CloseDoors1300", "BG1300", 1)
-		Continue()
-END	
-
-IF
-	Global("XA_ReturnToBG", "GLOBAL", 1)
 	GlobalLT("XA_GlintSpawn", "BG1300", 1)
 THEN
 	RESPONSE #100

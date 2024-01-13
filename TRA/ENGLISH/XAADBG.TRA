@@ -834,3 +834,9 @@
 @833 = ~Change Edwin to Female.~
 @834 = ~Set post-sex banter conditions back to zero.~
 @835 = ~SetGlobal("XA_CloseDoorTest0800", "GLOBAL", 1)~
+@836 = ~Disable and remove the LCA Assistant ability.~
+@837 = ~Re-enable the LCA Assistant ability.~
+@838 = ~The change has been processed.~
+@839 = ~Return to Main Menu.~
+@840 = ~Close Debugger.~
+@841 = ~Close and Dismiss the Debugger.~

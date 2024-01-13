@@ -4,8 +4,9 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
-# v1.0.16 2024-01-07
-* Various dialog improvements based on feedback received.
+# v1.1 2024-01-07
+* Various dialog and lore consistency improvements based on feedback received.
+* Players can now disable and remove the LCA Assistant ability using the debugger.
 
 # v1.0.16 2024-01-01
 * Added two new upgraded versions of Corwin's Bow:

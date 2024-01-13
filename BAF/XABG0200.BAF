@@ -1,25 +1,5 @@
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	GlobalLT("XA_CloseDoors", "BG0200", 1)
-THEN
-	RESPONSE #100
-		CloseDoor("Door0002")
-		CloseDoor("Door0004")
-		CloseDoor("Door0006")
-		CloseDoor("Door0008")
-		CloseDoor("Door0010")
-		CloseDoor("Door0012")
-		CloseDoor("Door0018")
-		CloseDoor("Door0020")
-		CloseDoor("Door0108")
-		CloseDoor("Door0137")
-		CloseDoor("Door0143")
-		SetGlobal("XA_CloseDoors", "BG0200", 1)
-		Continue()
-END	
-
-IF
-	Global("XA_ReturnToBG", "GLOBAL", 1)
 	InMyArea("NEMEKLIN")
 THEN
 	RESPONSE #100

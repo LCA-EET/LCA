@@ -368,6 +368,23 @@ IF ~
 	~
 	EXIT
 	
+	IF ~
+		Global("XA_LC_DisableAssistant", "GLOBAL", 0)
+	~ 
+	THEN REPLY @836 /* ~Disable and remove the LCA Assistant ability.~*/
+	DO ~
+		SetGlobal("XA_LC_DisableAssistant", "GLOBAL", 1)
+	~
+	GOTO XA_Menu_ChangeProcessed
+	
+	IF ~
+		Global("XA_LC_DisableAssistant", "GLOBAL", 1)
+	~ 
+	THEN REPLY @837 /* ~Re-enable the LCA Assistant ability.~*/
+	DO ~
+		SetGlobal("XA_LC_DisableAssistant", "GLOBAL", 0)
+	~
+	GOTO XA_Menu_ChangeProcessed
 	
 	IF ~~ THEN REPLY @12 /* ~I do not need assistance at this time.~ */
 	EXIT
@@ -5744,6 +5761,21 @@ IF ~~ THEN BEGIN XA_Menu_StartCutscene
 	GOTO XA_MainMenu
 END
 
+IF ~~ THEN BEGIN XA_Menu_ChangeProcessed
+	SAY @838  /* ~The change has been processed.~*/
+	
+	IF ~~ THEN REPLY @839 /* ~Return to Main Menu.~*/
+	GOTO XA_MainMenu
+	
+	IF ~~ THEN REPLY @840 /* ~Close Debugger.~*/
+	EXIT
+	
+	IF ~~ THEN REPLY @841 /* ~Close and Dismiss the Debugger.~*/
+	DO ~
+		DestroySelf()
+	~
+	EXIT	
+END
 IF ~~ THEN BEGIN XA_Menu_AddCharacter
 	SAY @3 /* ~Of course. Who would you like to add to your party?~ */
 	

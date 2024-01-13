@@ -112,69 +112,462 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	
 		/* The CloseDoor() function doesn't work when run from an Area script when the Door's name is used by another object in the same Area. In BG1, many Doors share the same name as the Transition associated with the Door. To ensure Doors that were open at the conclusion of BG1 are closed when the player returns to BG, I needed to add a script to every Door object. This is far from an ideal solution, but it's the only one I can think of at this time. */
 	
+		//{ BG0100 Doors
+			COPY_EXISTING ~BG0100.ARE~ ~override~
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0101~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0155~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0156~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0157~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0159~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0161~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0162~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0163~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0165~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0167~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0169~
+				door_script = ~XACLDOOR~
+			END
+		//}
+	
+		//{ BG0200 Doors
+			COPY_EXISTING ~BG0200.ARE~ ~override~
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0002~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0004~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0006~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0008~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0010~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0012~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0018~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0020~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0108~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0137~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0143~
+				door_script = ~XACLDOOR~
+			END
+		//}
+	
+		//{ BG0300 Doors
+			COPY_EXISTING ~BG0300.ARE~ ~override~
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0114~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0302~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0304~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0305~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0307~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Dr0114b~
+				door_script = ~XACLDOOR~
+			END
+		//}
+	
+		//{ BG0600 Doors
+			COPY_EXISTING ~BG0600.ARE~ ~override~
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door01~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0126~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0617~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0619~
+				door_script = ~XACLDOOR~
+			END
+		//}
+	
+		//{ BG0600 Doors
+			COPY_EXISTING ~BG0600.ARE~ ~override~
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door01~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0126~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0617~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0619~
+				door_script = ~XACLDOOR~
+			END
+		//}
+	
+		//{ BG0700 Doors
+			COPY_EXISTING ~BG0700.ARE~ ~override~
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0143~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0707~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0709~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0711~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0713~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0715~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0719~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0719b~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0720~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0720b~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0721~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0722~
+				door_script = ~XACLDOOR~
+			END
+		//}
+	
 		//{ BG0800 Doors
 			COPY_EXISTING ~BG0800.ARE~ ~override~
 			LPF ALTER_AREA_DOOR
 				STR_VAR
 				door_name = ~Door0148~
-				door_script = ~XACL0800~
+				door_script = ~XACLDOOR~
 			END
 			LPF ALTER_AREA_DOOR
 				STR_VAR
 				door_name = ~Door0150~
-				door_script = ~XACL0800~
+				door_script = ~XACLDOOR~
 			END
 			LPF ALTER_AREA_DOOR
 				STR_VAR
 				door_name = ~Door0151~
-				door_script = ~XACL0800~
+				door_script = ~XACLDOOR~
 			END
 			LPF ALTER_AREA_DOOR
 				STR_VAR
 				door_name = ~Door0152~
-				door_script = ~XACL0800~
+				door_script = ~XACLDOOR~
 			END
 			LPF ALTER_AREA_DOOR
 				STR_VAR
 				door_name = ~Door0307~
-				door_script = ~XACL0800~
+				door_script = ~XACLDOOR~
 			END
 			LPF ALTER_AREA_DOOR
 				STR_VAR
 				door_name = ~Door0705~
-				door_script = ~XACL0800~
+				door_script = ~XACLDOOR~
 			END
 			LPF ALTER_AREA_DOOR
 				STR_VAR
 				door_name = ~Door0801~
-				door_script = ~XACL0800~
+				door_script = ~XACLDOOR~
 			END
 			LPF ALTER_AREA_DOOR
 				STR_VAR
 				door_name = ~Door0803~
-				door_script = ~XACL0800~
+				door_script = ~XACLDOOR~
 			END
 			LPF ALTER_AREA_DOOR
 				STR_VAR
 				door_name = ~Door0805~
-				door_script = ~XACL0800~
+				door_script = ~XACLDOOR~
 			END
 			LPF ALTER_AREA_DOOR
 				STR_VAR
 				door_name = ~Door0810~
-				door_script = ~XACL0800~
+				door_script = ~XACLDOOR~
 			END
 			LPF ALTER_AREA_DOOR
 				STR_VAR
 				door_name = ~Door0811~
-				door_script = ~XACL0800~
+				door_script = ~XACLDOOR~
 			END
 		//}
 	
-	//}
+		//{ BG1200 Doors
+			COPY_EXISTING ~BG1200.ARE~ ~override~
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door01~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0616~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door1201~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door1203~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door1205~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door1207~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door1208~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door1209~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door1211~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door1213~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door1215~
+				door_script = ~XACLDOOR~
+			END
+		//}
 	
-	//{ Trademeet
-	COPY_EXISTING ~AR2000.ARE~ ~override~
+		//{ BG1300 Doors
+			COPY_EXISTING ~BG1300.ARE~ ~override~
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0105~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0314~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0316~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0805~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door0813~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door1301~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door1302~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door1302b~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door1304~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door1306~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door1308~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door1310~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door1312~
+				door_script = ~XACLDOOR~
+			END
+			LPF ALTER_AREA_DOOR
+				STR_VAR
+				door_name = ~Door1320~
+				door_script = ~XACLDOOR~
+			END
+		//}
+	
 	//}
 	
 	//{ Bodhi's Hideout
