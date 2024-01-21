@@ -5323,7 +5323,9 @@ IF ~~ THEN BEGIN XA_Menu_StartCutscene
 	
 	IF ~~ THEN REPLY @533
 	DO ~
-		SetGlobal("XA_TNTCSDebug", "GLOBAL", 1)
+		SetGlobal("XA_TentCS", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutSceneEx("XATNTCS",FALSE)
 	~
 	EXIT
 	
