@@ -1,5 +1,4 @@
 IF
-	Global("chapter","global",13)
 	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
 	Global("bd_jail_visitors","bd0104",1)  // Flaming Fist HQ
 	!Dead("CORWIN")  // Corwin

@@ -198,20 +198,6 @@ THEN
 END
 //}
 
-//{ Archery Lesson
-IF 
-	Global("XA_LC_Journal_ArcheryLesson", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_Journal_ArcheryLesson", "GLOBAL", 0)
-		AddJournalEntry(@5, INFO)
-		AddXPObject(Player1,10000)
-		SetInterrupt(TRUE)
-		Continue()
-END
-//}
-
 //{ Hall of Wonders Orphans
 IF
 	Global("XA_LC_Journal_HOW", "GLOBAL", 1)
