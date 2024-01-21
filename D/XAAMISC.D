@@ -73,19 +73,7 @@
 		GOTO M30
 	END
 	
-	ADD_TRANS_ACTION BDROHMA
-	BEGIN 0 END
-	BEGIN 0 1 2 3 END
-	~
-		SetGlobal("XA_MetRohma", "GLOBAL", 1)
-	~
-
-	ADD_TRANS_ACTION BDSCHAEL
-	BEGIN 184 186 187 END
-	BEGIN 0 END
-	~
-		SetGlobal("XA_LCA_StoppedNobles", "GLOBAL", 1)
-	~
+	
 	
 	ADD_TRANS_ACTION BOY3 
 	BEGIN 0 END
@@ -101,19 +89,7 @@
 		IncrementGlobal("XA_SlaveKidsFreed", "GLOBAL", 1)
 	~
 
-	ADD_TRANS_ACTION BDCAELAR
-	BEGIN 87 END
-	BEGIN 0 END
-	~
-		SetGlobal("XA_CaelarStayedInAvernus","GLOBAL",1)
-	~
-
-	ADD_TRANS_ACTION BDCORWIJ
-	BEGIN 280 END
-	BEGIN 0 END
-	~
-		SetGlobal("XA_HappyEnding","GLOBAL",1)
-	~
+	
 	
 	ADD_TRANS_ACTION KERRAC
 	BEGIN 3 4 5 6 END
@@ -121,14 +97,7 @@
 	~
 		SetGlobal("XA_MetKerrac","GLOBAL",1)
 	~
-	
-	ADD_TRANS_ACTION BDCORWIJ
-	BEGIN 319 320 END
-	BEGIN 0 END
-	~
-		SetGlobal("XA_CorwinGaveEarrings", "GLOBAL", 1)
-		AddJournalEntry(@207, INFO)
-	~
+
 	
 	ADD_TRANS_ACTION FORTHE
 	BEGIN 9 11 END
@@ -144,10 +113,7 @@
 		SetGlobal("XA_RescueCorwin1516", "GLOBAL", 1)
 	~
 	
-	ADD_STATE_TRIGGER BDIMOEN 129
-	~
-		Global("bd_player_exiled","global",0)
-	~
+	
 	
 	EXTEND_BOTTOM JARLAXLE 0
 		IF ~
@@ -469,39 +435,8 @@
 	~
 	//}
 	
-	//{ BDBELT
-	ADD_TRANS_ACTION BDBELT
-	BEGIN 0 1 END
-	BEGIN 0 END
-	~
-		SetGlobal("XA_Trial","GLOBAL",1)
-	~
-	//}
+	
 
-	//{ BDCORWIJ
-	ADD_TRANS_ACTION BDCORWIJ 
-	BEGIN 235 END
-	BEGIN 0 1 3 END
-	~
-		SetGlobal("XA_ToldTruthBhaal", "GLOBAL", 1)
-	~
-	
-	ADD_TRANS_ACTION BDCORWIJ  
-	BEGIN 245 END
-	BEGIN 0 1 END
-	~
-		SetGlobal("XA_ToldTruthBhaal", "GLOBAL", 1)
-	~
-	
-	ALTER_TRANS BDCORWIJ
-	BEGIN 297 END
-	BEGIN 0 1 END
-	BEGIN
-		"EPILOGUE"
-		~GOTO XA_Kiss~
-	END
-	//}
-	
 	//{ LARZE
 	ADD_TRANS_ACTION LARZE
 	BEGIN 3 END
@@ -537,29 +472,6 @@
 	~
 	//}
 
-	//{ BDBENCE
-	ALTER_TRANS BDBENCE
-	BEGIN 85 END
-	BEGIN 0 END
-	BEGIN
-		"ACTION"
-		~
-			SetGlobal("bd_plot","global",650)
-			ActionOverride("bdschae2", SetDialog("XABDSCH2"))
-			SetDialog("XABDBENC")
-			ActionOverride("bdschae2", StartDialog("XABDSCH2", Player1))
-		~
-	END
-
-	ALTER_TRANS BDBENCE
-	BEGIN 85 END
-	BEGIN 0 END
-	BEGIN
-		"EPILOGUE"
-		~EXIT~
-	END
-	//}
-	
 //}	
 	
 
@@ -2187,335 +2099,6 @@ APPEND PPIRENI2
 		SAY @339 /*~Unlike you and the rest of your companions, she will live beyond these next few minutes. Once I am done with you, a geas will be placed on her. She'll then be returned to Baldur's Gate, where she will assassinate the Council of Four on my behalf.~ */
 		
 		COPY_TRANS PPIRENI2 3
-	END
-END
-//}
-
-//{ BDIMOEN
-EXTEND_BOTTOM BDIMOEN 89 /* OK */
-	
-	IF ~
-		Global("bd_player_exiled","global",1)
-		GlobalGT("XA_CorwinContinue", "GLOBAL", 0)
-	~ GOTO XA_CorwinLetter
-	
-	
-END
-
-APPEND BDIMOEN
-	
-	IF ~  
-		AreaCheck("bd6100")
-		GlobalLT("bd_plot","global",675)
-		Global("bd_player_exiled","global",1)
-	~ THEN BEGIN XA_EntarTrail // from:
-		SAY @323 /* ~I'm pretty sure that Entar's men aren't on our trail. Can we take a break, just for a minute?~ */
-		
-		COPY_TRANS BDIMOEN 129
-	END
-
-	IF ~~ THEN BEGIN XA_CorwinLetter
-		SAY @209 /* ~Oh! Before I forget — Captain Corwin came to see me. She asked that I give you this letter.~ */
-		
-		IF ~
-			Global("XA_CorwinContinue", "GLOBAL", 2)
-		~ THEN 
-		DO ~
-			GiveItemCreate("XALTRSCH", LastTalkedToBy(Myself),0,0,0)
-			GiveItemCreate("XAAMULET", LastTalkedToBy(Myself),0,0,0)
-			SetGlobal("XA_GaveCorwinLetter", "GLOBAL", 2)
-		~
-		GOTO XA_GiveLetter_Schael
-		
-		IF ~
-			Global("XA_CorwinContinue", "GLOBAL", 1)
-		~ THEN 
-		DO ~
-			GiveItemCreate("XALTRCOR", LastTalkedToBy(Myself),0,0,0)
-			SetGlobal("XA_GaveCorwinLetter", "GLOBAL", 1)
-		~
-		GOTO XA_GiveLetter_Corwin
-	END
-	
-	IF ~~ THEN BEGIN XA_GiveLetter_Schael
-		SAY @212 /* She said that she's sorry she couldn't see you, but that you'd understand once you've read the letter. */
-		
-		IF ~~ THEN REPLY @210 /* ~Thank you, Imoen. (Read the letter now).~ */
-		DO ~
-			SetGlobal("XA_ReadCorwinLetter", "GLOBAL", 1)
-			ActionOverride(Player1, StartDialog("PLAYER1", Player1))
-		~
-		EXIT
-		
-		IF ~  
-			Global("bd_player_exiled","global",1)
-		~ THEN REPLY #269868 /* ~Imoen! How did you know where to find me?~ */ 
-		DO ~
-			SetGlobal("bd_plot","global",665)
-		~ 
-		GOTO 91
-		
-		IF ~~ THEN REPLY #239701 /* ~You should never have doubted I would find a way to freedom. I never did.~ */ 
-		DO ~
-			SetGlobal("bd_plot","global",665)
-		~ GOTO 92
-  
-		IF ~  
-			Global("bd_player_exiled","global",1)
-		~ THEN REPLY #269869 /* ~I thought I was leaving the city in secret.~ */ 
-		DO ~
-			SetGlobal("bd_plot","global",665)
-		~ GOTO 91
-	END
-	
-	IF ~~ THEN BEGIN XA_GiveLetter_Corwin
-		SAY @212 /* She said that she's sorry she couldn't see you, but that you'd understand once you've read the letter. */
-		
-		IF ~~ THEN REPLY @210 /* ~Thank you, Imoen. (Read the letter now).~ */
-		DO ~
-			SetGlobal("XA_ReadCorwinLetter", "GLOBAL", 1)
-			ActionOverride(Player1, StartDialog("PLAYER1", Player1))
-		~
-		EXIT
-		
-		IF ~  
-			Global("bd_player_exiled","global",1)
-		~ THEN REPLY #269868 /* ~Imoen! How did you know where to find me?~ */ 
-		DO ~
-			SetGlobal("bd_plot","global",665)
-		~ 
-		GOTO 91
-		
-		IF ~~ THEN REPLY #239701 /* ~You should never have doubted I would find a way to freedom. I never did.~ */ 
-		DO ~
-			SetGlobal("bd_plot","global",665)
-		~ GOTO 92
-  
-		IF ~  
-			Global("bd_player_exiled","global",1)
-		~ THEN REPLY #269869 /* ~I thought I was leaving the city in secret.~ */ 
-		DO ~
-			SetGlobal("bd_plot","global",665)
-		~ GOTO 91
-	END
-END
-//}
-
-//{ BDCORWIJ
-EXTEND_BOTTOM BDCORWIJ 318  /* OK */
-	IF ~~ THEN REPLY @202 /* ~Corwin, these are beautiful. This Neoma... you must be very special to her.~ */
-	GOTO XA_Neoma
-END
-
-APPEND BDCORWIJ
-	IF ~
-		Global("XA_ProficiencyTalk", "GLOBAL", 4)
-	~ THEN BEGIN XA_ProficiencyTalk6
-		SAY @386 /*~You're a quick learner, <CHARNAME>.~*/
-		
-		IF ~~ THEN REPLY @387 /* ~Well, it helps that you're an excellent instructor. The Fist is fortunate to have you.~ */
-		DO ~
-			SetGlobal("XA_ProficiencyTalk", "GLOBAL", 5)
-		~
-		GOTO XA_ProficiencyTalk7
-		
-		IF ~~ THEN REPLY @388 /* ~I appreciate the help, Captain.~ */
-		DO ~
-			SetGlobal("XA_ProficiencyTalk", "GLOBAL", 5)
-		~
-		GOTO XA_ProficiencyTalk7
-	END
-
-	IF ~~ THEN BEGIN XA_ProficiencyTalk7
-		SAY @389  /* ~Come on. We better head back to camp.~ */
-		
-		IF ~~ THEN REPLY @390  /* ~Right. Let's go.~ */
-		DO ~
-			ChangeStat(Player1, XP, 5000, ADD)
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		~
-		EXIT
-		
-		IF ~
-			TimeOfDay(DAY)
-		~ THEN REPLY @391  /* ~It's a beautiful day... must we head back so soon?~ */
-		GOTO XA_ProficiencyTalk8
-		
-		IF ~
-			!TimeOfDay(DAY)
-		~ THEN REPLY @393  /* ~It's a beautiful evening... must we head back so soon?~*/
-		GOTO XA_ProficiencyTalk8
-	END
-	
-	IF ~~ THEN BEGIN XA_ProficiencyTalk8
-		SAY @392  /*~It is... but as much as I enjoy your company, duty calls. Time to go.~*/
-		
-		IF ~~ THEN
-		DO ~
-			ChangeStat(Player1, XP, 5000, ADD)
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		~
-		EXIT
-	END
-
-	IF ~
-		Global("XA_ProficiencyTalk", "GLOBAL", 3)
-	~ THEN BEGIN XA_ProficiencyTalk4
-		SAY @381 /*~(She takes hold of your hand and traces your palm line with her finger.)~*/
-		
-		= @382 /*~See this crease in your palm? You need to grip the bow so that all of the pressure is on the thumb side this line. Also, be sure that your palm is facing the target. Never grip the bow with your hand outstretched, otherwise your wrist will move when you pull the string.~*/
-		
-		= @395  /* ~Now, to grip the bow properly, open the palm of your hand and stretch your arm out in front of you. The thumb should be stretched away from the index, parallel to the ground, to form an L shape.~*/ 
-		
-		IF ~~ THEN REPLY @396 /* ~Like this?~ */
-		GOTO XA_ProficiencyTalk4A
-		
-		
-		
-	END
-	
-	IF ~~ THEN BEGIN XA_ProficiencyTalk4A
-		SAY @397  /* ~Yes. Now, rotate your hand 45 degrees so that the L turns into a V shape. Yes, just like that. Take hold of the bow. Remember, keep all of the pressure between your thumb pad and your lifeline. Good.~  */
-		
-		= @383 /*~Lastly, your bow and draw arm should be level. If you need to adjust your aim upward or downward, do so by pivoting about your waist. Same thing if you wanted to aim a little to the left, or to the right. Turn your hips while keeping your arms steady. Just like that.~*/
-		
-		IF ~~ THEN REPLY @384 /*~I understand.~*/
-		GOTO XA_ProficiencyTalk5
-	END
-
-	IF ~~ THEN BEGIN XA_ProficiencyTalk5
-		SAY @385 /*~Good. Now try again.~*/
-		
-		IF ~~ THEN DO ~
-			SetGlobal("XA_ProficiencyTalk", "GLOBAL", 4)
-			StartCutSceneMode()
-			StartCutScene("XALBPRO2")
-		~
-		EXIT
-	END
-
-	IF ~
-		Global("XA_LCA_ProficiencyTalk", "GLOBAL", 1)
-	~ THEN BEGIN XA_ProficiencyTalk
-		SAY @366 /* ~<CHARNAME>. A word?~ */
-		
-		IF ~~ THEN REPLY @367 /*~Of course. What can I do for you, Captain?~*/
-		DO ~
-			SetGlobal("XA_LCA_ProficiencyTalk", "GLOBAL", 2)
-		~
-		GOTO XA_ProficiencyTalk2
-		
-		IF ~~ THEN REPLY @368 /*~What is it?~*/
-		DO ~
-			SetGlobal("XA_LCA_ProficiencyTalk", "GLOBAL", 2)
-		~
-		GOTO XA_ProficiencyTalk2
-		
-		IF ~~ THEN REPLY @369 /*~Another one? Can't you see that I'm busy?~*/
-		DO ~
-			SetGlobal("XA_LCA_ProficiencyTalk", "GLOBAL", 2)
-		~
-		GOTO XA_ProficiencyTalkEnd
-	END
-	
-	IF ~~ THEN BEGIN XA_ProficiencyTalk2
-		SAY @371 /*~I noticed you have a bit of skill with the longbow. How long have you been practicing?~*/
-		
-		IF ~~ THEN REPLY @373 /*~Not too long, why do you ask?~ */
-		GOTO XA_ProficiencyTalk3
-		
-		IF ~~ THEN REPLY @374 /*~I've dabbled in archery since I was a child, but I didn't treat it as anything other than a hobby... that is, until my foster father was killed.~*/
-		GOTO XA_ProficiencyTalk3
-	END
-	
-	IF ~~ THEN BEGIN XA_ProficiencyTalk3
-		SAY @375 /*~I figured as much. Your draw and footwork look good, but your bow grip could use a little work. Mind if I give you a couple of pointers?~*/
-		
-		IF ~~ THEN REPLY @376 /*~Not at all.~*/
-		GOTO XA_ProficiencyTalkCSStart
-		
-		IF ~~ THEN REPLY @377 /*~A free lesson from one as talented as yourself? How could I refuse?~*/
-		GOTO XA_ProficiencyTalkCSStart
-		
-		IF ~~ THEN REPLY @378 /*~Somehow, I don't think you'd do this for just anyone. Why me?~*/
-		GOTO XA_ProficiencyTalkWhy
-	END
-	
-	IF ~~ THEN BEGIN XA_ProficiencyTalkWhy
-		SAY @372 /*~Consider it a thank you for the care and concern you showed back in the Gate. The refugee crisis has been a strain on everyone, and every bit of help makes a difference.~*/
-		
-		= @398  /*~Besides, anything that can increase our chances of success is a worthwhile investment.~ [XA100130] */
-		IF ~~ THEN REPLY @379 /*~Agreed. Let's get started.~*/
-		GOTO XA_ProficiencyTalkCSStart
-	END
-	
-	IF ~~ THEN BEGIN XA_ProficiencyTalkCSStart
-		SAY @380 /*~Excellent. I spotted a clearing a few hundred meters south of the camp. It's perfect for what I had in mind. Let's go.~*/
-		
-		IF ~~ THEN
-		DO ~
-			StartCutSceneMode()
-			StartCutScene("XALBPROF")
-		~
-		EXIT
-	END
-	
-	IF ~~ THEN BEGIN XA_ProficiencyTalkEnd
-		SAY @370 /*~Fair enough. I'll leave you to it, then.~*/
-		
-		IF ~~ THEN
-		EXIT
-	END
-
-	IF ~~ THEN XA_Neoma
-		SAY @203 /*  ~We're good friends. Sometimes, a little more than that...~ */
-	
-		IF ~  
-			!IsValidForPartyDialogue("voghiln")
-		~ THEN REPLY @204 /* ~I see. I'm sure Voghiln will appreciate the thought.~*/ 
-		GOTO 319
-		
-		IF ~  
-			IsValidForPartyDialogue("voghiln")
-		~ THEN REPLY @204 /* ~I'm certain Voghiln will appreciate the thought.~ */ 
-		EXTERN ~BDVOGHIJ~ 170
-  
-		IF ~  
-			!IsValidForPartyDialogue("voghiln")
-		~ THEN REPLY #252321 /* ~I'd try to talk you out of giving up such a sentimental item, but I can see it would do no good.~ */ 
-		GOTO 319
-		
-		IF ~  
-			IsValidForPartyDialogue("voghiln")
-		~ THEN REPLY #252321 /* ~I'd try to talk you out of giving up such a sentimental item, but I can see it would do no good.~ */ 
-		EXTERN ~BDVOGHIJ~ 170
-		
-		IF ~~ THEN REPLY @205 /* ~Lucky her.~ */
-		GOTO XA_Neoma2
-	END
-	
-	IF ~~ THEN XA_Neoma2
-		SAY @206 /* ~Sorry? I didn't catch that.~ */
-		
-		IF ~  
-			!IsValidForPartyDialogue("voghiln")
-		~ THEN REPLY @208 /* ~It was nothing. I'm sure Voghiln will appreciate your kindness.~*/ 
-		GOTO 319
-		
-		IF ~  
-			IsValidForPartyDialogue("voghiln")
-		~ THEN REPLY @208 /* ~It was nothing. I'm sure Voghiln will appreciate your kindness.~ */ 
-		EXTERN ~BDVOGHIJ~ 170
-  
-		IF ~  
-			!IsValidForPartyDialogue("voghiln")
-		~ THEN REPLY #252321 /* ~I'd try to talk you out of giving up such a sentimental item, but I can see it would do no good.~ */ 
-		GOTO 319
-		
-		IF ~  
-			IsValidForPartyDialogue("voghiln")
-		~ THEN REPLY #252321 /* ~I'd try to talk you out of giving up such a sentimental item, but I can see it would do no good.~ */ 
-		EXTERN ~BDVOGHIJ~ 170
 	END
 END
 //}
