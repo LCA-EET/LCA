@@ -272,7 +272,24 @@
 
 
 //{ New Areas
-	COPY ~LCA/ARE/XACLRNG.ARE~ ~override~ //Forest Clearing
+	//{ Archery Lesson Forest Clearing
+		COPY ~LCA/ARE/XACLRG.ARE~ ~override~ 
+		COPY ~LCA/WED/XACLRG.WED~ ~override~
+		COPY ~LCA/TIS/XACLRG.TIS~ ~override~
+		COPY ~LCA/BMP/XACLRGHT.BMP~ ~override~
+		COPY ~LCA/BMP/XACLRGLM.BMP~ ~override~
+		COPY ~LCA/BMP/XACLRGSR.BMP~ ~override~
+	//}
+	
+	//{ SoD Tent Cutscene Area
+		COPY ~LCA/ARE/XATENT.ARE~ ~override~
+		COPY ~LCA/WED/XATENT.WED~ ~override~
+		COPY ~LCA/TIS/XATENT.TIS~ ~override~
+		COPY ~LCA/BMP/XATENTHT.BMP~ ~override~
+		COPY ~LCA/BMP/XATENTLM.BMP~ ~override~
+		COPY ~LCA/BMP/XATENTSR.BMP~ ~override~
+	//}
+	
 	COPY ~LCA/ARE/XAAR1516.ARE~ ~override~
 	COPY ~LCA/ARE/XA4700.ARE~ ~override~
 	COPY ~LCA/ARE/XA5300.ARE~ ~override~
@@ -286,12 +303,7 @@
 	COPY ~LCA/ARE/XACS13.ARE~ ~override~
 	COPY ~LCA/ARE/XA4000.ARE~ ~override~
 	
-	COPY ~LCA/ARE/XATENT.ARE~ ~override~
-	COPY ~LCA/WED/XATENT.WED~ ~override~
-	COPY ~LCA/TIS/XATENT.TIS~ ~override~
-	COPY ~LCA/BMP/XATENTHT.BMP~ ~override~
-	COPY ~LCA/BMP/XATENTLM.BMP~ ~override~
-	COPY ~LCA/BMP/XATENTSR.BMP~ ~override~
+	
 	
 	COPY ~LCA/ARE/XATOK.ARE~ ~override~
 	COPY ~LCA/ARE/XADUCAL.ARE~ ~override~
