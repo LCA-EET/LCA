@@ -182,7 +182,7 @@ BEGIN 319 320 END
 BEGIN 0 END
 ~
 	SetGlobal("XA_CorwinGaveEarrings", "GLOBAL", 1)
-	AddJournalEntry(@207, INFO)
+	AddJournalEntry(@45, INFO)
 ~
 
 ADD_TRANS_ACTION BDCORWIJ 
@@ -376,39 +376,24 @@ APPEND BDCORWIJ
 		IF ~  
 			!IsValidForPartyDialogue("voghiln")
 		~ THEN REPLY @41 /* ~I see. I'm sure Voghiln will appreciate the thought.~*/ 
-		DO ~
-			AddJournalEntry(@45, INFO)
-		~
 		GOTO 319
 		
 		IF ~  
 			IsValidForPartyDialogue("voghiln")
 		~ THEN REPLY @41 /* ~I'm certain Voghiln will appreciate the thought.~ */  
-		DO ~
-			AddJournalEntry(@45, INFO)
-		~
 		EXTERN ~BDVOGHIJ~ 170
   
 		IF ~  
 			!IsValidForPartyDialogue("voghiln")
 		~ THEN REPLY @42 /* ~I'd try to talk you out of giving up such a sentimental item, but I can see it would do no good.~ */  
-		DO ~
-			AddJournalEntry(@45, INFO)
-		~
 		GOTO 319
 		
 		IF ~  
 			IsValidForPartyDialogue("voghiln")
 		~ THEN REPLY @42/* ~I'd try to talk you out of giving up such a sentimental item, but I can see it would do no good.~ */  
-		DO ~
-			AddJournalEntry(@45, INFO)
-		~
 		EXTERN ~BDVOGHIJ~ 170
 		
 		IF ~~ THEN REPLY @43 /* ~Lucky her.~ */ 
-		DO ~
-			AddJournalEntry(@45, INFO)
-		~
 		GOTO XA_Neoma2
 	END
 	
