@@ -285,7 +285,14 @@
 	COPY ~LCA/ARE/XABYE.ARE~ ~override~
 	COPY ~LCA/ARE/XACS13.ARE~ ~override~
 	COPY ~LCA/ARE/XA4000.ARE~ ~override~
+	
 	COPY ~LCA/ARE/XATENT.ARE~ ~override~
+	COPY ~LCA/WED/XATENT.WED~ ~override~
+	COPY ~LCA/TIS/XATENT.TIS~ ~override~
+	COPY ~LCA/BMP/XATENTHT.BMP~ ~override~
+	COPY ~LCA/BMP/XATENTLM.BMP~ ~override~
+	COPY ~LCA/BMP/XATENTSR.BMP~ ~override~
+	
 	COPY ~LCA/ARE/XATOK.ARE~ ~override~
 	COPY ~LCA/ARE/XADUCAL.ARE~ ~override~
 	COPY ~LCA/ARE/XADUCAL2.ARE~ ~override~

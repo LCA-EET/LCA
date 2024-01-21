@@ -436,20 +436,20 @@ IF ~
 	!Global("bd_corwin_romanceactive","global",2)
 	Global("bd_player_exiled","global",0)
 ~ THEN BEGIN XA_0104_Greeting_C // Non-Romance, Execution
-	SAY #239419 /* ~Good morning, <CHARNAME>.~ [BD39419] */
-	IF ~~ THEN REPLY #239420 /* ~Is it morning? It's hard to tell in here.~ */ 
+	SAY @94 /* ~Good morning, <CHARNAME>.~ [BD39419] */
+	IF ~~ THEN REPLY @95 /* ~Is it morning? It's hard to tell in here.~ */ 
 	DO ~
 		SetGlobal("bd_jail_visitors","bd0104",3)
 		SetGlobal("bd_visit_player","locals",1)
 	~ GOTO 30
 	
-	IF ~~ THEN REPLY #239421 /* ~You're half right. Why have you come here?~ */ 
+	IF ~~ THEN REPLY @96 /* ~You're half right. Why have you come here?~ */ 
 	DO ~
 		SetGlobal("bd_jail_visitors","bd0104",3)
 		SetGlobal("bd_visit_player","locals",1)
 	~ GOTO 31
   
-	IF ~~ THEN REPLY #239422 /* ~What do you want, traitor?~ */ 
+	IF ~~ THEN REPLY @97 /* ~What do you want, traitor?~ */ 
 	DO ~
 		SetGlobal("bd_jail_visitors","bd0104",3)
 		SetGlobal("bd_visit_player","locals",1)
@@ -458,116 +458,116 @@ END
 
 
 IF ~~ THEN BEGIN 26 // from: 25.2
-	SAY #239423 /* ~You call me a traitor? That's rich. ~ */
+	SAY @98 /* ~You call me a traitor? That's rich. ~ */
 	
-	IF ~~ THEN REPLY #239424 /* ~I am accused of a senseless murder and none defend me. I am betrayed by all I once cared for.~ */ 
+	IF ~~ THEN REPLY @99 /* ~I am accused of a senseless murder and none defend me. I am betrayed by all I once cared for.~ */ 
 	GOTO 27
 	
-	IF ~~ THEN REPLY #239425 /* ~Why are you here?~ */ 
+	IF ~~ THEN REPLY @100 /* ~Why are you here?~ */ 
 	GOTO 31
 	
-	IF ~~ THEN REPLY #239426 /* ~After everything we've endured, everything I've done for this damned city, you believe I murdered Skie Silvershield. I called you traitor, but treachery I might forgive. Stupidity is another matter.~ */ 
+	IF ~~ THEN REPLY @101 /* ~After everything we've endured, everything I've done for this damned city, you believe I murdered Skie Silvershield. I called you traitor, but treachery I might forgive. Stupidity is another matter.~ */ 
 	GOTO 35
 END
 
 IF ~~ THEN BEGIN 27 // from: 26.0
-	SAY #239428 /* ~Not true. Your friend Imoen has been hounding the Grand Dukes relentlessly, begging them to pardon you.~ */
+	SAY @102 /* ~Not true. Your friend Imoen has been hounding the Grand Dukes relentlessly, begging them to pardon you.~ */
 	
-	IF ~~ THEN REPLY #239429 /* ~Thank the gods, someone believes me.~ */ 
+	IF ~~ THEN REPLY @103 /* ~Thank the gods, someone believes me.~ */ 
 	GOTO 37
 	
-	IF ~~ THEN REPLY #239430 /* ~Imoen! Damn me, in all the uproar, I hadn't given her a moment's consideration. How is she?~ */ 
+	IF ~~ THEN REPLY @104 /* ~Imoen! Damn me, in all the uproar, I hadn't given her a moment's consideration. How is she?~ */ 
 	GOTO 28
 	
-	IF ~~ THEN REPLY #239431 /* ~An innocent <PRO_MANWOMAN> should need no pardon.~ */ 
+	IF ~~ THEN REPLY @124 /* ~An innocent <PRO_MANWOMAN> should need no pardon.~ */ 
 	GOTO 35
 END
 
 IF ~~ THEN BEGIN 28 // from: 27.1
-	SAY #239432 /* ~Fully recovered from the wounds she took at the crusade's hands. Your circumstances cut her deeper than that, though.~ */
+	SAY @125 /* ~Fully recovered from the wounds she took at the crusade's hands. Your circumstances cut her deeper than that, though.~ */
 	
-	IF ~~ THEN REPLY #239433 /* ~I must see her.~ */ 
+	IF ~~ THEN REPLY @126 /* ~I must see her.~ */ 
 	GOTO 29
 	
-	IF ~~ THEN REPLY #239434 /* ~Damn it. She probably blames herself for all this... Can I talk to her?~ */ 
+	IF ~~ THEN REPLY @127 /* ~Damn it. She probably blames herself for all this... Can I talk to her?~ */ 
 	GOTO 29
 	
-	IF ~~ THEN REPLY #239435 /* ~She'll survive.~ */ 
+	IF ~~ THEN REPLY @128 /* ~She'll survive.~ */ 
 	GOTO 36
 END
 
 IF ~~ THEN BEGIN 29 // from: 28.1 28.0
-	SAY #239436 /* ~Duke Belt doesn't believe she'd willingly leave here without you. He can't allow that, no matter how much he might wish otherwise. For her sake, she must stay away.~ */
+	SAY @129 /* ~Duke Belt doesn't believe she'd willingly leave here without you. He can't allow that, no matter how much he might wish otherwise. For her sake, she must stay away.~ */
 	
 	IF ~~ THEN 
 	GOTO 36
 END
 
 IF ~~ THEN BEGIN 30 // from: 25.0
-	SAY #239437 /* ~I'm not here to discuss the time. I'm here to ask you to end this madness. The city's endured much of late—the iron crisis, Sarevok, the crusade... Now this.~ */
+	SAY @130 /* ~I'm not here to discuss the time. I'm here to ask you to end this madness. The city's endured much of late—the iron crisis, Sarevok, the crusade... Now this.~ */
 	
 	IF ~~ THEN 
 	GOTO 32
 END
 
 IF ~~ THEN BEGIN 31 // from: 26.1 25.1
-	SAY #239438 /* ~I'm here to ask you to end this madness. The city's endured much of late—the iron crisis, Sarevok, the crusade... Now this.~ */
+	SAY @131 /* ~I'm here to ask you to end this madness. The city's endured much of late—the iron crisis, Sarevok, the crusade... Now this.~ */
 	IF ~~ THEN 
 	GOTO 32
 END
 
 IF ~~ THEN BEGIN 32 // from: 36.0 35.0 31.0 30.0
-	SAY #239439 /* ~The dark days must end. And they won't, not with you languishing here claiming innocence. If you care for Baldur's Gate, even a little... admit your crime. Accept the punishment given you.~ */
+	SAY @132 /* ~The dark days must end. And they won't, not with you languishing here claiming innocence. If you care for Baldur's Gate, even a little... admit your crime. Accept the punishment given you.~ */
 	
-	IF ~~ THEN REPLY #239440 /* ~I've fought and bled for Baldur's Gate. I've nearly died for it more times than I can count. I care about the city—but I also care about justice.~ */ 
+	IF ~~ THEN REPLY @133 /* ~I've fought and bled for Baldur's Gate. I've nearly died for it more times than I can count. I care about the city—but I also care about justice.~ */ 
 	GOTO 33
   
-	IF ~~ THEN REPLY #239441 /* ~I'd be more than happy to declare my innocence while languishing somewhere else.~ */ 
+	IF ~~ THEN REPLY @134 /* ~I'd be more than happy to declare my innocence while languishing somewhere else.~ */ 
 	GOTO 33
   
-	IF ~~ THEN REPLY #239442 /* ~You'd have me throw myself on the sword for what? The benefit of those who betrayed me?~ */ 
+	IF ~~ THEN REPLY @135 /* ~You'd have me throw myself on the sword for what? The benefit of those who betrayed me?~ */ 
 	GOTO 38
 END
 
 IF ~~ THEN BEGIN 33 // from: 32.1 32.0
-	SAY #239443 /* ~Maybe you are innocent. Maybe the eyes of all those who saw you standing over Skie's corpse deceived them. It doesn't matter. The city is all that matters now. My father taught me that a hero—a real hero—is prepared to sacrifice <PRO_HIMHER>self for the greater good. They called you the hero of Baldur's Gate. Now you have the chance to earn the name.~ */
+	SAY @136 /* ~Maybe you are innocent. Maybe the eyes of all those who saw you standing over Skie's corpse deceived them. It doesn't matter. The city is all that matters now. My father taught me that a hero—a real hero—is prepared to sacrifice <PRO_HIMHER>self for the greater good. They called you the hero of Baldur's Gate. Now you have the chance to earn the name.~ */
   
 	IF ~~ THEN 
 	GOTO 34
 END
 
 IF ~~ THEN BEGIN 34 // from: 38.0 33.0
-	SAY #259733 /* ~Goodbye, <CHARNAME>.~ */
+	SAY @137 /* ~Goodbye, <CHARNAME>.~ */
 	IF ~~ THEN 
 	DO ~
-		AddJournalEntry(259858,INFO)
+		AddJournalEntry(@138,INFO)
 		EscapeArea()
 	~ 
 	EXIT
 END
 
 IF ~~ THEN BEGIN 35 // from: 27.2 26.2
-	SAY #239445 /* ~You don't get it, do you? You can't see beyond yourself to understand what's truly at stake here. This isn't about you. It's about Baldur's Gate. The city's been through so much of late—the iron crisis, Sarevok, the crusade... and now this.~ */
+	SAY @139 /* ~You don't get it, do you? You can't see beyond yourself to understand what's truly at stake here. This isn't about you. It's about Baldur's Gate. The city's been through so much of late—the iron crisis, Sarevok, the crusade... and now this.~ */
 	
 	IF ~~ THEN 
 	GOTO 32
 END
 
 IF ~~ THEN BEGIN 36 // from: 37.0 29.0 28.2
-	SAY #239446 /* ~I'm not here to talk about Imoen. I came to ask you to end this madness. The city's endured much of late—the iron crisis, Sarevok, the crusade... Now this.~ */
+	SAY @140 /* ~I'm not here to talk about Imoen. I came to ask you to end this madness. The city's endured much of late—the iron crisis, Sarevok, the crusade... Now this.~ */
   
 	IF ~~ THEN 
 	GOTO 32
 END
 
 IF ~~ THEN BEGIN 37 // from: 27.0
-	SAY #239447 /* ~She has the luxury of doubt. She wasn't there. She didn't see you standing over the body, a bloody dagger in hand...~ */
+	SAY @141 /* ~She has the luxury of doubt. She wasn't there. She didn't see you standing over the body, a bloody dagger in hand...~ */
 	IF ~~ THEN 
 	GOTO 36
 END
 
 IF ~~ THEN BEGIN 38 // from: 32.2
-	SAY #239448 /* ~For the benefit of those who still believe in you. They called you the hero of Baldur's Gate. A true hero will sacrifice <PRO_HIMHER>self for the greater good. Give the city a chance to heal. Please.~ */
+	SAY @142 /* ~For the benefit of those who still believe in you. They called you the hero of Baldur's Gate. A true hero will sacrifice <PRO_HIMHER>self for the greater good. Give the city a chance to heal. Please.~ */
 	
 	IF ~~ THEN 
 	GOTO 34
@@ -785,158 +785,158 @@ END
 IF ~
 	True()
 ~ THEN BEGIN XA_SewerEscape // from:
-	SAY #239613 /* ~Hands in the air. Get away from the opening.~ [BD39613] */
+	SAY @143 /* ~Hands in the air. Get away from the opening.~ [BD39613] */
 	
-	IF ~~ THEN REPLY #239614 /* ~I don't want to fight you, Corwin. I'm INNOCENT. You have to believe me!~ */ 
+	IF ~~ THEN REPLY @144 /* ~I don't want to fight you, Corwin. I'm INNOCENT. You have to believe me!~ */ 
 	EXTERN ~XABDBENC~ 86
   
 	IF ~  
 		Global("bd_corwin_romanceactive","global",2)
 		Alignment(Player1,MASK_GOOD)
-	~ THEN REPLY #239615 /* ~Schael, please, I beg you, don't do this. I love you.~ */ 
+	~ THEN REPLY @145 /* ~Schael, please, I beg you, don't do this. I love you.~ */ 
 	GOTO 40 //OK
 	
 	IF ~  
 		Global("bd_corwin_romanceactive","global",2)
 		!Alignment(Player1,MASK_GOOD)
 		!Alignment(Player1,MASK_EVIL)
-	~ THEN REPLY #239616 /* ~You would prevent my escape? I thought we had something, you and I.~ */ 
+	~ THEN REPLY @146 /* ~You would prevent my escape? I thought we had something, you and I.~ */ 
 	GOTO 40 //OK
   
 	IF ~  
 		Global("bd_corwin_romanceactive","global",2)
 		Alignment(Player1,MASK_EVIL)
-	~ THEN REPLY #239617 /* ~After all we've been through, this is what it comes to. I should have known you'd betray me in the end.~ */ 
+	~ THEN REPLY @147 /* ~After all we've been through, this is what it comes to. I should have known you'd betray me in the end.~ */ 
 	GOTO 46 //OK
   
 	IF ~  
 		!Global("bd_corwin_romanceactive","global",2)
-	~ THEN REPLY #239618 /* ~Don't try to stop me, Corwin. I need to get out of here if I'm to have any chance of proving my innocence.~ */ 
+	~ THEN REPLY @148 /* ~Don't try to stop me, Corwin. I need to get out of here if I'm to have any chance of proving my innocence.~ */ 
 	EXTERN ~XABDBENC~ 86
   
-	IF ~~ THEN REPLY #239619 /* ~And if I don't, what will you do? Cut me down? Is that any worse than what I can expect from Entar Silvershield?~ */ 
+	IF ~~ THEN REPLY @149 /* ~And if I don't, what will you do? Cut me down? Is that any worse than what I can expect from Entar Silvershield?~ */ 
 	EXTERN ~XABDBENC~ 87
 END
 
 IF ~~ THEN BEGIN 40 // from: 39.2 39.1
-	SAY #239620 /* ~You think I want to do this? You think this isn't killing me? We should be together in my bedchamber or a meadow under a cloudless blue sky—ANYWHERE but here!~ [BD39620] */
+	SAY @150 /* ~You think I want to do this? You think this isn't killing me? We should be together in my bedchamber or a meadow under a cloudless blue sky—ANYWHERE but here!~ [BD39620] */
 	
 	IF ~~ THEN 
 	GOTO 41 //OK
 END
 
 IF ~~ THEN BEGIN 41 // from: 40.0
-	SAY #239621 /* ~But here we are. I have a job to do. You know me. You know I can't let you go.~ [BD39621] */
+	SAY @151 /* ~But here we are. I have a job to do. You know me. You know I can't let you go.~ [BD39621] */
 	
 	IF ~  
 		CheckStatGT(Player1,15,CHR)
-	~ THEN REPLY #239623 /* ~I know who murdered Skie. Come with me. Help me find him.~ */ 
+	~ THEN REPLY @152 /* ~I know who murdered Skie. Come with me. Help me find him.~ */ 
 	GOTO 42 //OK
 	
 	IF ~  
 		CheckStatLT(Player1,16,CHR)
-	~ THEN REPLY #239623 /* ~I know who murdered Skie. Come with me. Help me find him.~ */ 
+	~ THEN REPLY @152 /* ~I know who murdered Skie. Come with me. Help me find him.~ */ 
 	GOTO 59
   
-	IF ~~ THEN REPLY #239624 /* ~You know what I'm capable of, Corwin. Please, don't try to stop me.~ */ GOTO 49
+	IF ~~ THEN REPLY @154 /* ~You know what I'm capable of, Corwin. Please, don't try to stop me.~ */ GOTO 49
 	
-	IF ~~ THEN REPLY #239625 /* ~Rohma's already lost a father. Don't make her lose a mother too.~ */ 
+	IF ~~ THEN REPLY @155 /* ~Rohma's already lost a father. Don't make her lose a mother too.~ */ 
 	GOTO 53
 END
 
 IF ~~ THEN BEGIN 42 // from: 41.0
-	SAY #239626 /* ~You'd have me turn my back on the Fist? On my family?~ [BD39626] */
+	SAY @156 /* ~You'd have me turn my back on the Fist? On my family?~ [BD39626] */
   
-	IF ~~ THEN REPLY #265152 /* ~Would that I could, for your presence is all I that desire in this world. But no. I never knew my mother. I'll not deprive Rohma of hers.~ */ 
+	IF ~~ THEN REPLY @157 /* ~Would that I could, for your presence is all I that desire in this world. But no. I never knew my mother. I'll not deprive Rohma of hers.~ */ 
 	GOTO 60
 	
 	IF ~  
 		CheckStatGT(Player1,16,CHR)
-	~ THEN REPLY #265153 /* ~I'd have you come with me. What do you say?~ */ 
+	~ THEN REPLY @158 /* ~I'd have you come with me. What do you say?~ */ 
 	GOTO 45
 	
 	IF ~  
 		CheckStatLT(Player1,17,CHR)
-	~ THEN REPLY #265153 /* ~I'd have you come with me. What do you say?~ */ 
+	~ THEN REPLY @158 /* ~I'd have you come with me. What do you say?~ */ 
 	GOTO 58
   
-	IF ~~ THEN REPLY #265154 /* ~These things do nothing but drag you down. Think of all you could accomplish at my side.~ */ 
+	IF ~~ THEN REPLY @159 /* ~These things do nothing but drag you down. Think of all you could accomplish at my side.~ */ 
 	GOTO 43
 END
 
 IF ~~ THEN BEGIN 43 // from: 42.3
-	SAY #265155 /* ~You don't know me at all, do you? On your knees, hands behind your head. Let's go.~ [BD65155] */
+	SAY @160 /* ~You don't know me at all, do you? On your knees, hands behind your head. Let's go.~ [BD65155] */
 	
 	IF ~~ THEN 
 	EXTERN ~XABDBENC~ 90
 END
 
 IF ~~ THEN BEGIN 44 // from: 54.1 49.1 47.2 47.1 46.4
-	SAY #239627 /* ~I hoped to talk you out of this madness, but I see words alone won't get this job done. All right then. Let's go.~ [BD39627] */
+	SAY @161 /* ~I hoped to talk you out of this madness, but I see words alone won't get this job done. All right then. Let's go.~ [BD39627] */
 	
 	IF ~~ THEN 
 	EXTERN ~XABDBENC~ 90
 END
 
 IF ~~ THEN BEGIN 45 // from: 42.1
-	SAY #265159 /* ~This is bigger than us, <CHARNAME>. Bigger than the Flaming Fist, or even my family. You don't know what's happening up above... Skie's murder—at the hand of Sarevok Anchev's sibling, no less—has thrown Baldur's Gate into turmoil.~ [BD65159] */
+	SAY @162 /* ~This is bigger than us, <CHARNAME>. Bigger than the Flaming Fist, or even my family. You don't know what's happening up above... Skie's murder—at the hand of Sarevok Anchev's sibling, no less—has thrown Baldur's Gate into turmoil.~ [BD65159] */
 	IF ~~ THEN 
 	GOTO 51
 END
 
 IF ~~ THEN BEGIN 46 // from: 51.1 39.3
-	SAY #239634 /* ~I know what I saw. You were standing over the body of Skie Silvershield. Duke Entar's daughter. His DAUGHTER.~ [BD39634] */
+	SAY @163 /* ~I know what I saw. You were standing over the body of Skie Silvershield. Duke Entar's daughter. His DAUGHTER.~ [BD39634] */
 	
-	IF ~~ THEN REPLY #239635 /* ~Ah. I understand now. This is about Rohma.~ */ 
+	IF ~~ THEN REPLY @164 /* ~Ah. I understand now. This is about Rohma.~ */ 
 	GOTO 48
   
 	IF ~  
 		!Alignment(Player1,MASK_EVIL)
-	~ THEN REPLY #239636 /* ~Do you truly believe me so mad that I would, that I could even be capable of doing this thing I'm accused of? Do you truly think so little of me?~ */ 
+	~ THEN REPLY @165 /* ~Do you truly believe me so mad that I would, that I could even be capable of doing this thing I'm accused of? Do you truly think so little of me?~ */ 
 	GOTO 50
 	
 	IF ~  
 		Alignment(Player1,MASK_EVIL)
-	~ THEN REPLY #239636 /* ~Do you truly believe me so mad that I would, that I could even be capable of doing this thing I'm accused of? Do you truly think so little of me?~ */ 
+	~ THEN REPLY @165 /* ~Do you truly believe me so mad that I would, that I could even be capable of doing this thing I'm accused of? Do you truly think so little of me?~ */ 
 	GOTO 49
 	
-	IF ~~ THEN REPLY #239637 /* ~And how many people have you slain, Corwin? Everyone is someone's child.~ */ GOTO 47
+	IF ~~ THEN REPLY @166 /* ~And how many people have you slain, Corwin? Everyone is someone's child.~ */ GOTO 47
 	
-	IF ~~ THEN REPLY #239638 /* ~I'm not going to argue with you, Captain. I will, however, kill you, if you don't get out of my way.~ */ 
+	IF ~~ THEN REPLY @167 /* ~I'm not going to argue with you, Captain. I will, however, kill you, if you don't get out of my way.~ */ 
 	GOTO 44
 END
 
 IF ~~ THEN BEGIN 47 // from: 46.3
-	SAY #239639 /* ~Have I killed before? Yes—but never a defenseless girl. Never in cold blood. Never without cause. Don't give me cause now. Surrender.~ [BD39639] */
+	SAY @168 /* ~Have I killed before? Yes—but never a defenseless girl. Never in cold blood. Never without cause. Don't give me cause now. Surrender.~ [BD39639] */
 	
-	IF ~~ THEN REPLY #239645 /* ~I've done things I regret in my life, Schael. Making an orphan of Rohma won't be one of them. I surrender.~ */ 
+	IF ~~ THEN REPLY @169 /* ~I've done things I regret in my life, Schael. Making an orphan of Rohma won't be one of them. I surrender.~ */ 
 	GOTO 60
 	
-	IF ~~ THEN REPLY #239642 /* ~I don't WANT to fight you, but I will, if you make me.~ */ 
+	IF ~~ THEN REPLY @170 /* ~I don't WANT to fight you, but I will, if you make me.~ */ 
 	GOTO 44
 	
-	IF ~~ THEN REPLY #239643 /* ~Never. Not while this body still draws breath.~ */ 
+	IF ~~ THEN REPLY @171 /* ~Never. Not while this body still draws breath.~ */ 
 	GOTO 44
 END
 
 IF ~~ THEN BEGIN 48 // from: 46.0
-	SAY #239644 /* ~Don't bring her into this. You won't like where that ends.~ [BD39644] */
+	SAY @172 /* ~Don't bring her into this. You won't like where that ends.~ [BD39644] */
 	
-	IF ~~ THEN REPLY #239645 /* ~I've done things I regret in my life, Schael. Making an orphan of Rohma won't be one of them. I surrender.~ */ 
+	IF ~~ THEN REPLY @173 /* ~I've done things I regret in my life, Schael. Making an orphan of Rohma won't be one of them. I surrender.~ */ 
 	GOTO 60
   
 	IF ~ 
 		!Global("XA_ToldTruthBhaal", "GLOBAL", 1)
 		!Alignment(Player1,MASK_EVIL)
-	~ THEN REPLY #239646 /* ~Listen, just listen to me, please. Do you truly believe me so mad that I would, that I could even be capable of doing this thing I'm accused of? Do you truly think so little of me?~ */ 
+	~ THEN REPLY @174/* ~Listen, just listen to me, please. Do you truly believe me so mad that I would, that I could even be capable of doing this thing I'm accused of? Do you truly think so little of me?~ */ 
 	GOTO 54
 	
 	IF ~  
 		Alignment(Player1,MASK_EVIL)
-	~ THEN REPLY #239646 /* ~Listen, just listen to me, please. Do you truly believe me so mad that I would, that I could even be capable of doing this thing I'm accused of? Do you truly think so little of me?~ */ 
+	~ THEN REPLY @174 /* ~Listen, just listen to me, please. Do you truly believe me so mad that I would, that I could even be capable of doing this thing I'm accused of? Do you truly think so little of me?~ */ 
 	GOTO 49
   
-	IF ~~ THEN REPLY #239647 /* ~Rohma's already lost one parent, Captain Corwin. Don't let your pride cost her another.~ */ 
+	IF ~~ THEN REPLY @175 /* ~Rohma's already lost one parent, Captain Corwin. Don't let your pride cost her another.~ */ 
 	GOTO 53
 	
 	IF ~
@@ -947,64 +947,64 @@ IF ~~ THEN BEGIN 48 // from: 46.0
 END
 
 IF ~~ THEN BEGIN 49 // from: 48.2 46.2 41.2
-	SAY #239649 /* ~I know EXACTLY what you're capable of. I've seen it. Now put your hands behind your head and get on your knees or by the gods I swear I will put you down.~ [BD39649] */
+	SAY @176 /* ~I know EXACTLY what you're capable of. I've seen it. Now put your hands behind your head and get on your knees or by the gods I swear I will put you down.~ [BD39649] */
 	
-	IF ~~ THEN REPLY #239650 /* ~If that's the only way to end this... Very well. I didn't kill Skie Silvershield. I'll not have your death on my conscience.~ */ 
+	IF ~~ THEN REPLY @177 /* ~If that's the only way to end this... Very well. I didn't kill Skie Silvershield. I'll not have your death on my conscience.~ */ 
 	GOTO 60
 	
-	IF ~~ THEN REPLY #239651 /* ~I don't WANT to fight you, Corwin. But I will, if you make me. If you make me, I will kill you.~ */ 
+	IF ~~ THEN REPLY @178 /* ~I don't WANT to fight you, Corwin. But I will, if you make me. If you make me, I will kill you.~ */ 
 	GOTO 44
 	
-	IF ~~ THEN REPLY #239662 /* ~Rohma's already lost a father, Captain Corwin. Would you have her lose a mother too?~ */ 
+	IF ~~ THEN REPLY @179 /* ~Rohma's already lost a father, Captain Corwin. Would you have her lose a mother too?~ */ 
 	GOTO 53
 END
 
 IF ~~ THEN BEGIN 50 // from: 46.1
-	SAY #265160 /* ~What I believe doesn't matter. All that matters is Baldur's Gate. What's happening can't be allowed to go on.~ [BD65160] */
+	SAY @180 /* ~What I believe doesn't matter. All that matters is Baldur's Gate. What's happening can't be allowed to go on.~ [BD65160] */
 	
 	IF ~~ THEN 
 	GOTO 54
 END
 
 IF ~~ THEN BEGIN 51 // from: 45.0
-	SAY #239658 /* ~The city's tearing itself apart. It has to stop. It HAS to. And it won't until someone pays for what happened at Dragonspear. If you know anything about me, anything at all, you know I can't let you go.~ [BD39658] */
+	SAY @181 /* ~The city's tearing itself apart. It has to stop. It HAS to. And it won't until someone pays for what happened at Dragonspear. If you know anything about me, anything at all, you know I can't let you go.~ [BD39658] */
   
-	IF ~~ THEN REPLY #239659 /* ~Very well. For the sake of the city that once called me hero, I surrender.~ */ 
+	IF ~~ THEN REPLY @182 /* ~Very well. For the sake of the city that once called me hero, I surrender.~ */ 
 	GOTO 60
   
 	IF ~  
 		!Global("bd_corwin_romanceactive","global",2)
 		CheckStatGT(Player1,15,CHR)
-	~ THEN REPLY #239660 /* ~This is madness. I tell you I'm INNOCENT. You have to believe me!~ */ 
+	~ THEN REPLY @183 /* ~This is madness. I tell you I'm INNOCENT. You have to believe me!~ */ 
 	GOTO 46
   
 	IF ~  
 		!Global("bd_corwin_romanceactive","global",2)
 		CheckStatLT(Player1,16,CHR)
-	~ THEN REPLY #239660 /* ~This is madness. I tell you I'm INNOCENT. You have to believe me!~ */ 
+	~ THEN REPLY @183 /* ~This is madness. I tell you I'm INNOCENT. You have to believe me!~ */ 
 	GOTO 59
 	
 	IF ~  
 		Global("bd_corwin_romanceactive","global",2)
 		CheckStatGT(Player1,17,CHR)
-	~ THEN REPLY #265161 /* ~Please, Schael. If you ever felt anything for me, you can't—you CAN'T believe I did these things.~ */ 
+	~ THEN REPLY @184 /* ~Please, Schael. If you ever felt anything for me, you can't—you CAN'T believe I did these things.~ */ 
 	GOTO 55
 	
 	IF ~  
 		Global("bd_corwin_romanceactive","global",2)
 		CheckStatLT(Player1,18,CHR)
-	~ THEN REPLY #265161 /* ~Please, Schael. If you ever felt anything for me, you can't—you CAN'T believe I did these things.~ */ 
+	~ THEN REPLY @184 /* ~Please, Schael. If you ever felt anything for me, you can't—you CAN'T believe I did these things.~ */ 
 	GOTO 59
 	
-	IF ~~ THEN REPLY #239662 /* ~Rohma's already lost a father, Captain Corwin. Would you have her lose a mother too?~ */ 
+	IF ~~ THEN REPLY @185 /* ~Rohma's already lost a father, Captain Corwin. Would you have her lose a mother too?~ */ 
 	GOTO 53
 END
 
 IF ~~ THEN BEGIN 52 // from:
-	SAY #239667 /* ~Damn you, <CHARNAME>...! All right, then. Let's go.~ [BD39667] */
+	SAY @186 /* ~Damn you, <CHARNAME>...! All right, then. Let's go.~ [BD39667] */
 	IF ~~ THEN 
 	DO ~
-		AddJournalEntry(259863,QUEST)
+		AddJournalEntry(@204,QUEST)
 		ActionOverride("bdschae2",Enemy())
 		ChangeSpecifics("bdschae2",CRUSADERS)
 	~ 
@@ -1012,61 +1012,61 @@ IF ~~ THEN BEGIN 52 // from:
 END
 
 IF ~~ THEN BEGIN 53 // from: 54.2 51.5 49.2 48.3 41.3
-	SAY #239668 /* ~You threaten my daughter, <CHARNAME>? You just made your last mistake. Take <PRO_HIMHER>!~ [BD39668] */
+	SAY @187 /* ~You threaten my daughter, <CHARNAME>? You just made your last mistake. Take <PRO_HIMHER>!~ [BD39668] */
 	
 	IF ~~ THEN 
 	EXTERN ~XABDBENC~ 90
 END
 
 IF ~~ THEN BEGIN 54 // from: 58.0 50.0 48.1
-	SAY #239669 /* ~It has to stop. It HAS to. And that won't happen until you answer for Skie. Now get on your knees, hands behind your head. Do it.~ [BD39669] */
+	SAY @188 /* ~It has to stop. It HAS to. And that won't happen until you answer for Skie. Now get on your knees, hands behind your head. Do it.~ [BD39669] */
 	
-	IF ~~ THEN REPLY #239670 /* ~If that's the only way to end this... Very well. I surrender. I didn't kill Skie Silvershield. I'll not kill you.~ */ 
+	IF ~~ THEN REPLY @189 /* ~If that's the only way to end this... Very well. I surrender. I didn't kill Skie Silvershield. I'll not kill you.~ */ 
 	GOTO 60
 	
-	IF ~~ THEN REPLY #239671 /* ~I don't WANT to fight you, but I will, if you make me. Don't do this. ~ */ 
+	IF ~~ THEN REPLY @190 /* ~I don't WANT to fight you, but I will, if you make me. Don't do this. ~ */ 
 	GOTO 44
 	
-	IF ~~ THEN REPLY #239672 /* ~Think about your family, Captain. Think of Rohma. Walk away from this; leave me to deal with these others. No one ever has to know.~ */ 
+	IF ~~ THEN REPLY @191 /* ~Think about your family, Captain. Think of Rohma. Walk away from this; leave me to deal with these others. No one ever has to know.~ */ 
 	GOTO 53
 END
 
 IF ~~ THEN BEGIN 55 // from: 51.3
-	SAY #265162 /* ~Damn it, <CHARNAME>. Damn it!~ [BD65162] */
+	SAY @192 /* ~Damn it, <CHARNAME>. Damn it!~ [BD65162] */
 	
 	IF ~~ THEN 
 	GOTO 56
 END
 
 IF ~~ THEN BEGIN 56 // from: 55.0
-	SAY #265163 /* ~...Run.~ [BD65163] */
+	SAY @193 /* ~...Run.~ [BD65163] */
 	
 	IF ~~ THEN 
 	EXTERN ~XABDBENC~ 88
 END
 
 IF ~~ THEN BEGIN 57 // from:
-	SAY #265165 /* ~Get out of here, <CHARNAME>! The cavern beyond the falls will get you out of the city—I'll hold them off!~ [BD65165] */
+	SAY @194 /* ~Get out of here, <CHARNAME>! The cavern beyond the falls will get you out of the city—I'll hold them off!~ [BD65165] */
 	
 	IF ~~ THEN 
 	EXTERN ~XABDBENC~ 89
 END
 
 IF ~~ THEN BEGIN 58 // from: 42.2
-	SAY #262567 /* ~I believe you. I wish that mattered. But all that matters is Baldur's Gate. You have no idea of the chaos Skie's murder unleashed. The people loved you, and now they learn their hero is a child of Bhaal like Sarevok? The city is tearing itself apart because of you.~ [BD62567] */
+	SAY @195 /* ~I believe you. I wish that mattered. But all that matters is Baldur's Gate. You have no idea of the chaos Skie's murder unleashed. The people loved you, and now they learn their hero is a child of Bhaal like Sarevok? The city is tearing itself apart because of you.~ [BD62567] */
 	IF ~~ THEN 
 	GOTO 54
 END
 
 IF ~~ THEN BEGIN 59 // from: 51.4 51.2 41.1
-	SAY #239673 /* ~What I believe doesn't matter anymore. You tried to escape. And now we have to do what we must. Let's go.~ [BD39673] */
+	SAY @196 /* ~What I believe doesn't matter anymore. You tried to escape. And now we have to do what we must. Let's go.~ [BD39673] */
   
 	IF ~~ THEN 
 	EXTERN ~XABDBENC~ 90
 END
 
 IF ~~ THEN BEGIN 60 // from: 54.0 51.0 49.0 48.0 47.0 42.0
-	SAY #239674 /* ~Thank the gods... On your knees, hands behind your head.~ [BD39674] */
+	SAY @197 /* ~Thank the gods... On your knees, hands behind your head.~ [BD39674] */
   
 	IF ~  
 		Gender(Player1,FEMALE)
@@ -1085,10 +1085,10 @@ IF ~~ THEN BEGIN XA_SG12_1
 	IF ~~ THEN REPLY @107 /* ~No! The Hooded Man is the killer — he came to gloat shortly after you visited me in my cell.~*/
 	EXTERN XABDBENC XA_SG12_2
 	
-	IF ~~ THEN REPLY #239650 /* ~If that's the only way to end this... Very well. I didn't kill Skie Silvershield. I'll not have your death on my conscience.~ */ 
+	IF ~~ THEN REPLY @198 /* ~If that's the only way to end this... Very well. I didn't kill Skie Silvershield. I'll not have your death on my conscience.~ */ 
 	GOTO 60
 	
-	IF ~~ THEN REPLY #239672 /* ~Think about your family, Captain. Think of Rohma. Walk away from this; leave me to deal with these others. No one ever has to know.~ */ 
+	IF ~~ THEN REPLY @199 /* ~Think about your family, Captain. Think of Rohma. Walk away from this; leave me to deal with these others. No one ever has to know.~ */ 
 	GOTO 53
 END
 
@@ -1098,10 +1098,10 @@ IF ~~ THEN BEGIN XA_SG12_3
 	IF ~~ THEN REPLY @118 /* ~Corwin, if you shoot me, you'll become a murderer yourself!~ */
 	GOTO XA_SG12_4
 	
-	IF ~~ THEN REPLY #239670 /* ~If that's the only way to end this... Very well. I surrender. I didn't kill Skie Silvershield. I'll not kill you.~ */ 
+	IF ~~ THEN REPLY @200 /* ~If that's the only way to end this... Very well. I surrender. I didn't kill Skie Silvershield. I'll not kill you.~ */ 
 	GOTO 60
 	
-	IF ~~ THEN REPLY #239671 /* ~I don't WANT to fight you, but I will, if you make me. Don't do this. ~ */ 
+	IF ~~ THEN REPLY @201 /* ~I don't WANT to fight you, but I will, if you make me. Don't do this. ~ */ 
 	GOTO 44
 END
 
@@ -1171,7 +1171,7 @@ IF ~~ THEN BEGIN XA_SG12_10
 END
 
 IF ~~ THEN BEGIN 61 // from:
-	SAY #239676 /* ~Damn it, Duncan! Run, <CHARNAME>! The cavern beyond the opening will get you out of the city! Go!~ */
+	SAY @202 /* ~Damn it, Duncan! Run, <CHARNAME>! The cavern beyond the opening will get you out of the city! Go!~ */
 	IF ~~ THEN 
 	DO ~
 		AddJournalEntry(@122,QUEST)
@@ -1186,7 +1186,7 @@ IF ~
 	AreaCheck("bd6000")
 	Global("bd_plot","global",650)
 ~ THEN BEGIN 62 // from:
-	SAY #265168 /* ~Run, <CHARNAME>! The cavern beyond the falls will get you out of the city. Jump!~ [BD65168] */
+	SAY @203 /* ~Run, <CHARNAME>! The cavern beyond the falls will get you out of the city. Jump!~ [BD65168] */
 	
 	IF ~~ THEN EXIT
 END

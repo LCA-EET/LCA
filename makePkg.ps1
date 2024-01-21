@@ -26,7 +26,8 @@ $folders = @(
 'SPL',
 'TIS',
 'TRA',
-'WAV'
+'WAV',
+'WED'
 )
 
 foreach($folder in $folders){
