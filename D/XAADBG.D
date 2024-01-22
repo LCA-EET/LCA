@@ -1163,6 +1163,12 @@ IF ~~ THEN BEGIN XA_AreaTestBG2
 	~
 	EXIT
 	
+	IF ~~ THEN REPLY @851 /* ~XAWYRM (Wyrm's Crossing)~*/
+	DO ~
+		ActionOverride(Player1, LeaveAreaLUA("XAWYRM", "", [1550.707], N))
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @839
 	GOTO XA_MainMenu
 END

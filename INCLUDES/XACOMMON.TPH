@@ -361,13 +361,15 @@
 	//}
 	
 	//{ XAWYRM
-	COPY ~LCA/ARE/XAWYRM.ARE~ ~override~
-	COPY ~LCA/ARE/XAWYRM.WED~ ~override~
-	COPY ~LCA/ARE/XAWYRMN.WED~ ~override~
-	COPY ~LCA/ARE/XAWYRMHT.BMP~ ~override~
-	COPY ~LCA/ARE/XAWYRMLM.BMP~ ~override~
-	COPY ~LCA/ARE/XAWYRMLN.BMP~ ~override~
-	COPY ~LCA/ARE/XAWYRMSR.BMP~ ~override~
+		COPY ~LCA/ARE/XAWYRM.ARE~ ~override~
+		COPY ~LCA/WED/XAWYRM.WED~ ~override~
+		COPY ~LCA/WED/XAWYRMN.WED~ ~override~
+		COPY ~LCA/BMP/XAWYRMHT.BMP~ ~override~
+		COPY ~LCA/BMP/XAWYRMLM.BMP~ ~override~
+		COPY ~LCA/BMP/XAWYRMLN.BMP~ ~override~
+		COPY ~LCA/BMP/XAWYRMSR.BMP~ ~override~
+		COPY ~LCA/TIS/XAWYRM.TIS~ ~override~
+		COPY ~LCA/TIS/XAWYRMN.TIS~ ~override~
 	//}
 	
 	//{ XADUC3
