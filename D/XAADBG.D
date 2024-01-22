@@ -1150,6 +1150,7 @@ IF ~~ THEN BEGIN XA_AreaTestBG2
 	DO ~
 		ActionOverride(Player1, LeaveAreaLUA("XACS12", "", [420.520], N))
 	~
+	EXIT
 	
 	IF ~~ THEN REPLY @849 /* ~XA4500 (Avernus Bridge)~*/
 	DO ~
