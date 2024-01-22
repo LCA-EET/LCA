@@ -392,6 +392,9 @@ IF ~
 	IF ~~ THEN REPLY @843 /*~Area Test (LCA - SoD)~*/
 	GOTO XA_AreaTestSOD
 	
+	IF ~~ THEN REPLY @844 /*~Area Test (LCA - BG2)~*/
+	GOTO XA_AreaTestBG2
+	
 	IF ~~ THEN REPLY @12 /* ~I do not need assistance at this time.~ */
 	EXIT
 	
@@ -1135,6 +1138,30 @@ IF ~~ THEN BEGIN XA_AreaTestSOD
 	~
 	EXIT
 	
+	
+	IF ~~ THEN REPLY @839
+	GOTO XA_MainMenu
+END
+
+IF ~~ THEN BEGIN XA_AreaTestBG2
+	SAY @844 /* ~Area Test (LCA - BG2)~*/
+	
+	IF ~~ THEN REPLY @848 /* ~XACS12 (Rilifane)~ */
+	DO ~
+		ActionOverride(Player1, LeaveAreaLUA("XACS12", "", [420.520], N))
+	~
+	
+	IF ~~ THEN REPLY @849 /* ~XA4500 (Avernus Bridge)~*/
+	DO ~
+		ActionOverride(Player1, LeaveAreaLUA("XA4500", "", [455.1580], N))
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @850 /* ~XA4700 (Avernus Roof)~*/
+	DO ~
+		ActionOverride(Player1, LeaveAreaLUA("XA4700", "", [1550.707], N))
+	~
+	EXIT
 	
 	IF ~~ THEN REPLY @839
 	GOTO XA_MainMenu

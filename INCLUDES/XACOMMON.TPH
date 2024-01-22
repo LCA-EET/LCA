@@ -352,11 +352,12 @@
 	//}
 	
 	//{ XACS12
-	COPY ~LCA/ARE/XACS12.ARE~ ~override~
-	COPY ~LCA/ARE/XACS12.WED~ ~override~
-	COPY ~LCA/ARE/XACS12LM.BMP~ ~override~
-	COPY ~LCA/ARE/XACS12HT.BMP~ ~override~
-	COPY ~LCA/ARE/XACS12SR.BMP~ ~override~
+		COPY ~LCA/ARE/XACS12.ARE~ ~override~
+		COPY ~LCA/BMP/XACS12HT.BMP~ ~override~
+		COPY ~LCA/BMP/XACS12LM.BMP~ ~override~
+		COPY ~LCA/BMP/XACS12SR.BMP~ ~override~
+		COPY ~LCA/WED/XACS12.WED~ ~override~
+		COPY ~LCA/TIS/XACS12.TIS~ ~override~
 	//}
 	
 	//{ XAWYRM
