@@ -1163,6 +1163,12 @@ IF ~~ THEN BEGIN XA_AreaTestBG2
 	~
 	EXIT
 	
+	IF ~~ THEN REPLY @852 /* ~XADUC3 (Ducal Palace)~*/
+	DO ~
+		ActionOverride(Player1, LeaveAreaLUA("XADUC3", "", [620.650], N))
+	~
+	EXIT
+	
 	IF ~~ THEN REPLY @851 /* ~XAWYRM (Wyrm's Crossing)~*/
 	DO ~
 		ActionOverride(Player1, LeaveAreaLUA("XAWYRM", "", [1550.707], N))

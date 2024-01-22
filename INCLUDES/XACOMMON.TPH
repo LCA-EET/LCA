@@ -373,11 +373,12 @@
 	//}
 	
 	//{ XADUC3
-	COPY ~LCA/ARE/XADUC3.ARE~ ~override~
-	COPY ~LCA/ARE/XADUC3.WED~ ~override~
-	COPY ~LCA/ARE/XADUC3LM.BMP~ ~override~
-	COPY ~LCA/ARE/XADUC3HT.BMP~ ~override~
-	COPY ~LCA/ARE/XADUC3SR.BMP~ ~override~
+		COPY ~LCA/ARE/XADUC3.ARE~ ~override~
+		COPY ~LCA/WED/XADUC3.WED~ ~override~
+		COPY ~LCA/BMP/XADUC3LM.BMP~ ~override~
+		COPY ~LCA/BMP/XADUC3HT.BMP~ ~override~
+		COPY ~LCA/BMP/XADUC3SR.BMP~ ~override~
+		COPY ~LCA/TIS/XADUC3.TIS~ ~override~
 	//}
 	
 	//{ XABLCK
