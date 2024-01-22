@@ -1,4 +1,12 @@
-
+//{ Animations
+	COPY ~LCA/WBM/XA4700L1.WBM~ ~override~
+	COPY ~LCA/WBM/XA4700L2.WBM~ ~override~
+	COPY ~LCA/WBM/XA4700L3.WBM~ ~override~
+	COPY ~LCA/WBM/XA4700L4.WBM~ ~override~
+	COPY ~LCA/BAM/XAFLAM02.BAM~ ~override~
+	COPY ~LCA/BAM/XAFLAM03.BAM~ ~override~
+	COPY ~LCA/BAM/XAFLAM04.BAM~ ~override~
+//}
 //{ New Sounds
 	COPY ~LCA/WAV/XA100000.WAV~ ~override~
 	COPY ~LCA/WAV/XA100001.WAV~ ~override~
@@ -142,6 +150,9 @@
 	COPY ~LCA/WAV/XA100140.WAV~ ~override~
 	COPY ~LCA/WAV/XA100141.WAV~ ~override~
 	COPY ~LCA/WAV/XA100142.WAV~ ~override~
+	
+	COPY ~LCA/WAV/XABD4400.WAV~ ~override~
+	COPY ~LCA/WAV/XABDLVA1.WAV~ ~override~
 //}
 
 //{ Text Screens
@@ -291,7 +302,7 @@
 	//}
 	
 	COPY ~LCA/ARE/XAAR1516.ARE~ ~override~
-	COPY ~LCA/ARE/XA4700.ARE~ ~override~
+	
 	COPY ~LCA/ARE/XA5300.ARE~ ~override~
 	COPY ~LCA/ARE/XA5501.ARE~ ~override~
 	COPY ~LCA/ARE/XAPEN.ARE~ ~override~
@@ -322,11 +333,22 @@
 	COPY ~LCA/ARE/XAHOMEL2.ARE~ ~override~ 	// Corwin's Home L2
 	
 	//{ XA4500
-	COPY ~LCA/ARE/XA4500.ARE~ ~override~
-	COPY ~LCA/ARE/XA4500.WED~ ~override~
-	COPY ~LCA/ARE/XA4500HT.BMP~ ~override~
-	COPY ~LCA/ARE/XA4500LM.BMP~ ~override~
-	COPY ~LCA/ARE/XA4500SR.BMP~ ~override~
+		COPY ~LCA/ARE/XA4500.ARE~ ~override~
+		COPY ~LCA/BMP/XA4500HT.BMP~ ~override~
+		COPY ~LCA/BMP/XA4500LM.BMP~ ~override~
+		COPY ~LCA/BMP/XA4500SR.BMP~ ~override~
+		COPY ~LCA/WED/XA4500.WED~ ~override~
+		COPY ~LCA/TIS/XA4500.TIS~ ~override~
+	//}
+	
+	//{ XA4700
+		COPY ~LCA/ARE/XA4700.ARE~ ~override~
+		COPY ~LCA/BMP/XA4700HT.BMP~ ~override~
+		COPY ~LCA/BMP/XA4700LM.BMP~ ~override~
+		COPY ~LCA/BMP/XA4700SR.BMP~ ~override~
+		COPY ~LCA/WED/XA4700.WED~ ~override~
+		COPY ~LCA/TIS/XA4700.TIS~ ~override~
+
 	//}
 	
 	//{ XACS12

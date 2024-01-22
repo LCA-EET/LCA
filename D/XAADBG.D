@@ -386,6 +386,12 @@ IF ~
 	~
 	GOTO XA_Menu_ChangeProcessed
 	
+	IF ~~ THEN REPLY @842 /*~Area Test (LCA - BG1)~*/
+	GOTO XA_AreaTestBG1
+	
+	IF ~~ THEN REPLY @843 /*~Area Test (LCA - SoD)~*/
+	GOTO XA_AreaTestSOD
+	
 	IF ~~ THEN REPLY @12 /* ~I do not need assistance at this time.~ */
 	EXIT
 	
@@ -1098,6 +1104,40 @@ IF ~~ THEN BEGIN XA_EpilogueTest
 	
 	IF ~~ THEN REPLY @12 /* ~I do not need assistance at this time.~ */
 	EXIT
+END
+
+IF ~~ THEN BEGIN XA_AreaTestBG1
+	SAY @842 /* ~Area Test (LCA - BG1)~*/
+	
+	IF ~~ THEN REPLY @845 /* ~AR1316 (Corwin's Home, L1)~ */
+	DO ~
+		ActionOverride(Player1, LeaveAreaLUA("AR1316", "", [385.300], N))
+	~
+	EXIT
+	IF ~~ THEN REPLY @839
+	GOTO XA_MainMenu
+END
+
+IF ~~ THEN BEGIN XA_AreaTestSOD
+	SAY @843 /* ~Area Test (LCA - SoD)~*/
+	
+	IF ~~ THEN REPLY @847 /* ~Camp Tent (XATENT) Cutscene~ */
+	DO ~
+		StartCutSceneMode()
+		StartCutSceneEx("XATNTCS", FALSE)
+	~
+	EXIT
+	
+	IF ~~ THEN REPLY @846 /* ~Archery Lesson (XACLRG) Cutscene~ */
+	DO ~
+		StartCutSceneMode()
+		StartCutSceneEx("XALBPROF", FALSE)
+	~
+	EXIT
+	
+	
+	IF ~~ THEN REPLY @839
+	GOTO XA_MainMenu
 END
 
 IF ~~ THEN BEGIN XA_AreaTest

@@ -27,6 +27,7 @@ $folders = @(
 'TIS',
 'TRA',
 'WAV',
+'WBM',
 'WED'
 )
 
