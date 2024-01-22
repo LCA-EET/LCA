@@ -380,10 +380,10 @@
 	//{ XABLCK
 	COPY ~LCA/ARE/XABLCK.ARE~ ~override~
 	COPY ~LCA/TIS/XABLCK.TIS~ ~override~
-	COPY ~LCA/ARE/XABLCK.WED~ ~override~
-	COPY ~LCA/ARE/XABLCKLM.BMP~ ~override~
-	COPY ~LCA/ARE/XABLCKHT.BMP~ ~override~
-	COPY ~LCA/ARE/XABLCKSR.BMP~ ~override~
+	COPY ~LCA/WED/XABLCK.WED~ ~override~
+	COPY ~LCA/BMP/XABLCKLM.BMP~ ~override~
+	COPY ~LCA/BMP/XABLCKHT.BMP~ ~override~
+	COPY ~LCA/BMP/XABLCKSR.BMP~ ~override~
 	//}
 //}
 
