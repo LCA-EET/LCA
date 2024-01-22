@@ -286,10 +286,10 @@
 	//{ Archery Lesson Forest Clearing
 		COPY ~LCA/ARE/XACLRG.ARE~ ~override~ 
 		COPY ~LCA/WED/XACLRG.WED~ ~override~
-		COPY ~LCA/TIS/XACLRG.TIS~ ~override~
 		COPY ~LCA/BMP/XACLRGHT.BMP~ ~override~
 		COPY ~LCA/BMP/XACLRGLM.BMP~ ~override~
 		COPY ~LCA/BMP/XACLRGSR.BMP~ ~override~
+		COPY ~LCA/TIS/XACLRG.TIS~ ~override~
 	//}
 	
 	//{ SoD Tent Cutscene Area
