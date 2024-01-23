@@ -1,0 +1,25 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeToColor([30.0],0)
+		Wait(2)
+		
+		ActionOverride(Player2,SetSequence(SEQ_AWAKE))  
+		ActionOverride(Player3,SetSequence(SEQ_AWAKE))  
+		ActionOverride(Player4,SetSequence(SEQ_AWAKE))  
+		ActionOverride(Player5,SetSequence(SEQ_AWAKE))  
+		ActionOverride(Player6,SetSequence(SEQ_AWAKE))  	
+		Wait(1)
+		RestorePartyLocations()
+		Wait(1)
+		RestPartyEx(0,10,TRUE)
+		Wait(1)
+		ApplySpellRES("bdunhide","Corwin")  // No such index
+		SmallWait(5)
+		UnhideGUI()
+		FadeFromColor([30.0],0)
+		EndCutSceneMode()
+		
+END

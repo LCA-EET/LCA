@@ -1,0 +1,39 @@
+PRINT @3000  /* ~Processing BG1 changes...~ */
+
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf~
+
+//{ bam
+	 COPY ~lca/bg2/bam/xaflam02.bam~ ~override~
+	 COPY ~lca/bg2/bam/xaflam03.bam~ ~override~
+	 COPY ~lca/bg2/bam/xaflam04.bam~ ~override~
+	 COPY ~lca/bg2/bam/xafug01.bam~ ~override~
+	 COPY ~lca/bg2/bam/xafug02.bam~ ~override~
+	 COPY ~lca/bg2/bam/xafug03.bam~ ~override~
+	 COPY ~lca/bg2/bam/xafug04.bam~ ~override~
+//}
+
+//{ wav
+	 COPY ~lca/bg2/wav/xabd4400.wav~ ~override~
+	 COPY ~lca/bg2/wav/xabd5300.wav~ ~override~
+	 COPY ~lca/bg2/wav/xabd5301.wav~ ~override~
+	 COPY ~lca/bg2/wav/xabd5305.wav~ ~override~
+	 COPY ~lca/bg2/wav/xabd5306.wav~ ~override~
+	 COPY ~lca/bg2/wav/xabd5307.wav~ ~override~
+	 COPY ~lca/bg2/wav/xabd5308.wav~ ~override~
+	 COPY ~lca/bg2/wav/xabd5309.wav~ ~override~
+	 COPY ~lca/bg2/wav/xabdcwnd.wav~ ~override~
+	 COPY ~lca/bg2/wav/xabddwnd.wav~ ~override~
+	 COPY ~lca/bg2/wav/xabdlva1.wav~ ~override~
+	 COPY ~lca/bg2/wav/xabdmtl1.wav~ ~override~
+	 COPY ~lca/bg2/wav/xabdmtl2.wav~ ~override~
+	 COPY ~lca/bg2/wav/xabdmtl3.wav~ ~override~
+	 COPY ~lca/bg2/wav/xabdmtl4.wav~ ~override~
+	 COPY ~lca/bg2/wav/xabdmtl5.wav~ ~override~
+//}
+//{ wed
+	 COPY ~lca/bg2/wed/xa5300.wed~ ~override~
+	 COPY ~lca/bg2/wed/xacs12.wed~ ~override~
+	 COPY ~lca/bg2/wed/xaduc3.wed~ ~override~
+	 COPY ~lca/bg2/wed/xawyrm.wed~ ~override~
+	 COPY ~lca/bg2/wed/xawyrmn.wed~ ~override~
+

@@ -1,8 +1,0 @@
-IF
-	GlobalLT("XA_EnteredSaradush", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_EnteredSaradush", "GLOBAL", 1)
-		Continue()
-END
-

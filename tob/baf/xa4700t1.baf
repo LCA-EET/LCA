@@ -1,0 +1,12 @@
+IF
+	Entered("XACAELA2")
+	GlobalLT("XA_CaelarLocked", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_CaelarLocked", "MYAREA", 1)
+		ActionOverride("XACAELA2", FaceObject(Player1))
+		CloseDoor("Door03")
+		Lock("Door03")
+		SetInterrupt(TRUE)
+END

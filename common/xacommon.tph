@@ -1,0 +1,238 @@
+PRINT @900  /* ~Processing common components...~ */
+
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/common/baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/common/d~
+
+COPY ~%MOD_FOLDER%/common/bam/xaassist.bam~ 	~override~
+COPY ~%MOD_FOLDER%/common/bam/xaamulet.bam~ 	~override~
+
+
+COPY ~%MOD_FOLDER%/common/cre/xaadbg.cre~ 		~override~
+COPY ~%MOD_FOLDER%/common/d/xaadbg.d~ 			~override~
+
+//{ LCA Corwin Portrait
+	COPY ~%MOD_FOLDER%/common/bmp/xacorwil.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/common/bmp/xacorwim.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/common/bmp/xacorwis.bmp~ ~override~
+//}
+
+//{ Corwin's Tutelage
+	COPY ~%MOD_FOLDER%/common/spl/xalcarch.spl~ ~override~
+	SAY NAME1 @904				 /* ~Corwin's Tutelage~*/
+	SAY UNIDENTIFIED_DESC @904	 /* ~Corwin's Tutelage~*/
+	SAY DESC @904 				 /* ~Corwin's Tutelage~*/
+//}
+
+//{ LCA Assistant
+	COPY ~%MOD_FOLDER%/common/spl/xaassis1.spl~ ~override~
+	SAY NAME1 @901				 /* ~LCA Assistant~*/
+	SAY UNIDENTIFIED_DESC @901	 /* ~LCA Assistant~*/
+	SAY DESC @901 				 /* ~LCA Assistant~*/
+//}
+
+//{ Corwin Portrait Change (LCA)
+	COPY ~%MOD_FOLDER%/common/spl/xachng01.spl~ ~override~
+	SAY NAME1 @903				 /* ~Corwin Portrait Change (LCA)~*/
+	SAY UNIDENTIFIED_DESC @903	 /* ~Corwin Portrait Change (LCA)~*/
+	SAY DESC @903 				 /* ~Corwin Portrait Change (LCA)~*/
+//}
+
+//{ Corwin Portrait Change (SoD)
+	COPY ~%MOD_FOLDER%/common/spl/xachng02.spl~ ~override~
+	SAY NAME1 @902				 /* ~Corwin Portrait Change (SoD)~*/
+	SAY UNIDENTIFIED_DESC @902	 /* ~Corwin Portrait Change (SoD)~*/
+	SAY DESC @902 				 /* ~Corwin Portrait Change (SoD)~*/
+//}
+
+//{ New Items - Items that need to be able to be carried over in a non-EET context must be included in this section. Items that are specific to a particular game, that do not need to be carried over, can be included in the include file specific to that game.
+	//{ Letter from Corwin - Exile (Romantic)
+		COPY ~%MOD_FOLDER%/common/itm/xaltrsch.itm~ 	~override~
+		SAY NAME1 @905
+		SAY NAME2 @905
+		SAY UNIDENTIFIED_DESC @908
+		SAY DESC @908
+	//}
+
+	//{ Letter from Corwin - Exile (Non-Romantic)
+		COPY ~%MOD_FOLDER%/common/itm/xaltrcor.itm~ 	~override~
+		SAY NAME1 @906
+		SAY NAME2 @906
+		SAY UNIDENTIFIED_DESC @909
+		SAY DESC @909
+	//}
+	
+	//{ Corwin's Amulet  (Player)
+		COPY ~%MOD_FOLDER%/common/bam/xaamulet.bam~ 	~override~
+		COPY ~%MOD_FOLDER%/common/itm/xaamulet.itm~ 	~override~
+		SAY NAME1 @907
+		SAY NAME2 @907
+		SAY UNIDENTIFIED_DESC @910
+		SAY DESC @6
+	//}
+	
+	//{ Corwin's Bow + 2
+		COPY ~%MOD_FOLDER%/common/ITM/XACORBOW.ITM~ ~override~
+		SAY NAME2 @911
+		SAY DESC @912
+		
+		COPY ~%MOD_FOLDER%/common/spl/xacorbow.spl~ 	~override~
+		COPY ~%MOD_FOLDER%/common/bam/xacorbow.bam~ 	~override~
+		COPY ~%MOD_FOLDER%/common/bam/xaicorbo.bam~ 	~override~
+	//}
+	
+	//{ Corwin's Armor + 3
+		COPY ~%MOD_FOLDER%/common/ITM/XACORCHN.ITM~ ~override~
+		SAY NAME1 @913
+		SAY NAME2 @913
+		SAY UNIDENTIFIED_DESC @914
+		SAY DESC @914
+		
+		COPY ~%MOD_FOLDER%/common/bam/xacorchn.bam~ 	~override~
+		COPY ~%MOD_FOLDER%/common/bam/xaicorch.bam~ 	~override~
+	//}
+//}
+
+//{ New Sounds
+	COPY ~%MOD_FOLDER%/common/wav/xa100000.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100001.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100002.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100003.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100004.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100005.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100006.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100007.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100008.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100009.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100010.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100011.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100012.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100013.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100014.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100015.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100016.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100017.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100018.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100019.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100020.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100021.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100023.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100024.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100025.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100026.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100027.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100028.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100029.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100030.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100031.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100032.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100033.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100034.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100035.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100036.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100037.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100038.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100039.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100040.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100041.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100042.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100043.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100044.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100045.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100046.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100047.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100048.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100049.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100050.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100051.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100052.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100053.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100054.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100055.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100056.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100057.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100058.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100059.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100060.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100061.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100062.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100063.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100064.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100065.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100066.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100067.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100068.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100069.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100070.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100071.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100072.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100073.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100074.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100075.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100076.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100077.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100078.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100079.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100080.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100081.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100082.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100083.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100084.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100085.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100086.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100087.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100088.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100089.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100090.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100091.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100092.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100093.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100094.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100095.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100096.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100097.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100098.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100099.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100100.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100101.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100102.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100103.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100104.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100105.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100106.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100107.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100108.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100109.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100110.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100111.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100112.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100113.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100114.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100115.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100116.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100117.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100118.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100119.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100120.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100121.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100122.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100123.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100124.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100125.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100126.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100127.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100128.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100129.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100130.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100131.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100132.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100133.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100134.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100135.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100136.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100137.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100138.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100139.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100140.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100141.wav~ ~override~
+	COPY ~%MOD_FOLDER%/common/wav/xa100142.wav~ ~override~
+//}
