@@ -332,7 +332,6 @@
 		COPY ~LCA/BMP/XA5300SR.BMP~ ~override~
 	//}
 	
-	COPY ~LCA/ARE/XAAR1516.ARE~ ~override~
 	
 	COPY ~LCA/ARE/XA5300.ARE~ ~override~
 	COPY ~LCA/ARE/XA5501.ARE~ ~override~
