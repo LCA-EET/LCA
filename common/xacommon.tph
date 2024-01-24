@@ -131,7 +131,19 @@ COPY ~%MOD_FOLDER%/common/d/xaadbg.d~ 			~override~
 	SAY DESC @923
 	
 	COPY ~%MOD_FOLDER%/common/itm/xachick.itm~ ~override~
+	
 	COPY ~%MOD_FOLDER%/common/itm/xacorbg3.itm~ ~override~
+	WRITE_SHORT 0x09c ~%XALARROW%~
+	SAY NAME1 @960
+	SAY NAME2 @960
+	SAY DESC @961
+	
+	COPY ~%MOD_FOLDER%/common/itm/xacorbg4.itm~ ~override~
+	WRITE_SHORT 0x09c ~%XALARROW%~
+	SAY NAME1 @962
+	SAY NAME2 @962
+	SAY DESC @963
+	
 	COPY ~%MOD_FOLDER%/common/itm/xacorbo3.itm~ ~override~
 	COPY ~%MOD_FOLDER%/common/itm/xacorbo4.itm~ ~override~
 	
@@ -164,35 +176,171 @@ COPY ~%MOD_FOLDER%/common/d/xaadbg.d~ 			~override~
 	SAY DESC @908
 	
 	COPY ~%MOD_FOLDER%/common/itm/xalyamul.itm~ ~override~
+	SAY NAME2 @924
+	SAY DESC @925
+	
 	COPY ~%MOD_FOLDER%/common/itm/xamedal.itm~ ~override~
+	SAY NAME1 @926
+	SAY NAME2 @926
+	SAY UNIDENTIFIED_DESC @927
+	SAY DESC @927
+	
 	COPY ~%MOD_FOLDER%/common/itm/xamsring.itm~ ~override~
+	SAY NAME1 @928
+	SAY NAME2 @928
+	SAY UNIDENTIFIED_DESC @929
+	SAY DESC @929
+	
 	COPY ~%MOD_FOLDER%/common/itm/xaquiver.itm~ ~override~
+	SAY NAME1 @930
+	SAY NAME2 @930
+	SAY UNIDENTIFIED_DESC @931
+	SAY DESC @931
+	
 	COPY ~%MOD_FOLDER%/common/itm/xaring07.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @933
+	SAY DESC @933
+	
 	COPY ~%MOD_FOLDER%/common/itm/xaring11.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @934
+	SAY DESC @934
+	
 	COPY ~%MOD_FOLDER%/common/itm/xaring13.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @935
+	SAY DESC @935
+	
 	COPY ~%MOD_FOLDER%/common/itm/xaring14.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @936
+	SAY DESC @936
+	
 	COPY ~%MOD_FOLDER%/common/itm/xaring19.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @937
+	SAY DESC @937
+	
 	COPY ~%MOD_FOLDER%/common/itm/xaring21.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @938
+	SAY DESC @938
+	
 	COPY ~%MOD_FOLDER%/common/itm/xaring22.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @939
+	SAY DESC @939
+	
 	COPY ~%MOD_FOLDER%/common/itm/xaring25.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @940
+	SAY DESC @940
+	
 	COPY ~%MOD_FOLDER%/common/itm/xaring26.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @941
+	SAY DESC @941
+	
 	COPY ~%MOD_FOLDER%/common/itm/xaring28.itm~ ~override~
-	COPY ~%MOD_FOLDER%/common/itm/xaring99.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @942
+	SAY DESC @942
+	
 	COPY ~%MOD_FOLDER%/common/itm/xarng07a.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @945
+	SAY DESC @945
+	
 	COPY ~%MOD_FOLDER%/common/itm/xarng11a.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @946
+	SAY DESC @946
+	
 	COPY ~%MOD_FOLDER%/common/itm/xarng13a.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @947
+	SAY DESC @947
+	
 	COPY ~%MOD_FOLDER%/common/itm/xarng14a.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @948
+	SAY DESC @948
+	
 	COPY ~%MOD_FOLDER%/common/itm/xarng19a.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @949
+	SAY DESC @949
+	
 	COPY ~%MOD_FOLDER%/common/itm/xarng21a.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @950
+	SAY DESC @950
+	
 	COPY ~%MOD_FOLDER%/common/itm/xarng22a.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @951
+	SAY DESC @951
+	
 	COPY ~%MOD_FOLDER%/common/itm/xarng25a.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @952
+	SAY DESC @952
+	
 	COPY ~%MOD_FOLDER%/common/itm/xarng26a.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @953
+	SAY DESC @953
+	
 	COPY ~%MOD_FOLDER%/common/itm/xarng28a.itm~ ~override~
-	COPY ~%MOD_FOLDER%/common/itm/xarng99a.itm~ ~override~
+	SAY NAME1 @932
+	SAY NAME2 @932
+	SAY UNIDENTIFIED_DESC @954
+	SAY DESC @954
+	
 	COPY ~%MOD_FOLDER%/common/itm/xastdag.itm~ ~override~
+	SAY NAME1 @943 							
+	SAY NAME2 @944							
+	SAY UNIDENTIFIED_DESC @955				
+	SAY DESC @956							
+	
 	COPY ~%MOD_FOLDER%/common/itm/xastdagb.itm~ ~override~
+	SAY NAME1 @943 							
+	SAY NAME2 @944							
+	SAY UNIDENTIFIED_DESC @957				
+	SAY DESC @957
+	
 	COPY ~%MOD_FOLDER%/common/itm/xastdagd.itm~ ~override~
+	SAY NAME1 @943 							
+	SAY NAME2 @944
+	SAY UNIDENTIFIED_DESC @958
+	SAY DESC @958
+	
 	COPY ~%MOD_FOLDER%/common/itm/xastdagf.itm~ ~override~
+	SAY NAME1 @943
+	SAY NAME2 @944
+	SAY UNIDENTIFIED_DESC @959
+	SAY DESC @959
+	
 	COPY ~%MOD_FOLDER%/common/itm/xasword.itm~ ~override~
 	COPY ~%MOD_FOLDER%/common/itm/xasword2.itm~ ~override~
 //}
