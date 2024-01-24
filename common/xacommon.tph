@@ -3,11 +3,72 @@ PRINT @900  /* ~Processing common components...~ */
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/common/baf~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/common/d~
 
-COPY ~%MOD_FOLDER%/common/bam/xaassist.bam~ 	~override~
-COPY ~%MOD_FOLDER%/common/bam/xaamulet.bam~ 	~override~
+//{ bam
+	COPY ~%MOD_FOLDER%/common/bam/xaamulet.bam~ ~override~
+	COPY ~%MOD_FOLDER%/common/bam/xaassist.bam~ ~override~
+	COPY ~%MOD_FOLDER%/common/bam/xacorbow.bam~ ~override~
+	COPY ~%MOD_FOLDER%/common/bam/xacorchn.bam~ ~override~
+	COPY ~%MOD_FOLDER%/common/bam/xaegg.bam~ ~override~
+	COPY ~%MOD_FOLDER%/common/bam/xaicorbo.bam~ ~override~
+	COPY ~%MOD_FOLDER%/common/bam/xaicorch.bam~ ~override~
+	COPY ~%MOD_FOLDER%/common/bam/xaiegg.bam~ ~override~
+	COPY ~%MOD_FOLDER%/common/bam/xaimsrin.bam~ ~override~
+	COPY ~%MOD_FOLDER%/common/bam/xairing.bam~ ~override~
+	COPY ~%MOD_FOLDER%/common/bam/xamedal.bam~ ~override~
+	COPY ~%MOD_FOLDER%/common/bam/xamsring.bam~ ~override~
+	COPY ~%MOD_FOLDER%/common/bam/xaring.bam~ ~override~
+//}
 
+//{ cre
+	COPY ~%MOD_FOLDER%/common/cre/xaadbg.cre~ ~override~
+	SAY NAME1 @919
+	SAY NAME2 @919
+	
+	COPY ~%MOD_FOLDER%/common/cre/xadummy.cre~ ~override~
+	SAY NAME1 @918
+	SAY NAME2 @918
+	
+	COPY ~%MOD_FOLDER%/common/cre/xavoidf.cre~ ~override~
+	SAY NAME1 @916
+	SAY NAME2 @916
+	
+	COPY ~%MOD_FOLDER%/common/cre/xavoidfa.cre~ ~override~
+	SAY NAME1 @916
+	SAY NAME2 @916
+	
+	COPY ~%MOD_FOLDER%/common/cre/xavoidfe.cre~ ~override~
+	SAY NAME1 @916
+	SAY NAME2 @916
+	
+	COPY ~%MOD_FOLDER%/common/cre/xavoidl.cre~ ~override~
+	SAY NAME1 @917
+	SAY NAME2 @917
+	
+	COPY ~%MOD_FOLDER%/common/cre/xavoidla.cre~ ~override~
+	SAY NAME1 @917
+	SAY NAME2 @917
+	
+	COPY ~%MOD_FOLDER%/common/cre/xavoidle.cre~ ~override~
+	SAY NAME1 @917
+	SAY NAME2 @917
+	
+	COPY ~%MOD_FOLDER%/common/cre/xavoidw.cre~ ~override~
+	SAY NAME1 @915
+	SAY NAME2 @915
+	
+	COPY ~%MOD_FOLDER%/common/cre/xavoidwa.cre~ ~override~
+	SAY NAME1 @915
+	SAY NAME2 @915
+	
+	COPY ~%MOD_FOLDER%/common/cre/xavoidwe.cre~ ~override~
+	SAY NAME1 @915
+	SAY NAME2 @915
+//}
 
-COPY ~%MOD_FOLDER%/common/cre/xaadbg.cre~ 		~override~
+//{ d
+	COPY ~%MOD_FOLDER%/common/d/xaadbg.d~ ~override~
+//}
+
 COPY ~%MOD_FOLDER%/common/d/xaadbg.d~ 			~override~
 
 //{ LCA Corwin Portrait
@@ -44,52 +105,96 @@ COPY ~%MOD_FOLDER%/common/d/xaadbg.d~ 			~override~
 	SAY DESC @902 				 /* ~Corwin Portrait Change (SoD)~*/
 //}
 
-//{ New Items - Items that need to be able to be carried over in a non-EET context must be included in this section. Items that are specific to a particular game, that do not need to be carried over, can be included in the include file specific to that game.
-	//{ Letter from Corwin - Exile (Romantic)
-		COPY ~%MOD_FOLDER%/common/itm/xaltrsch.itm~ 	~override~
-		SAY NAME1 @905
-		SAY NAME2 @905
-		SAY UNIDENTIFIED_DESC @908
-		SAY DESC @908
-	//}
-
-	//{ Letter from Corwin - Exile (Non-Romantic)
-		COPY ~%MOD_FOLDER%/common/itm/xaltrcor.itm~ 	~override~
-		SAY NAME1 @906
-		SAY NAME2 @906
-		SAY UNIDENTIFIED_DESC @909
-		SAY DESC @909
-	//}
+//{ itm
+	COPY ~%MOD_FOLDER%/common/itm/xaamul1.itm~ ~override~
+	SAY NAME1 @920
+	SAY NAME2 @920
+	SAY UNIDENTIFIED_DESC @921
+	SAY DESC @921
 	
-	//{ Corwin's Amulet  (Player)
-		COPY ~%MOD_FOLDER%/common/bam/xaamulet.bam~ 	~override~
-		COPY ~%MOD_FOLDER%/common/itm/xaamulet.itm~ 	~override~
-		SAY NAME1 @907
-		SAY NAME2 @907
-		SAY UNIDENTIFIED_DESC @910
-		SAY DESC @6
-	//}
+	COPY ~%MOD_FOLDER%/common/itm/xaamul2.itm~ ~override~
+	SAY NAME1 @920
+	SAY NAME2 @920
+	SAY UNIDENTIFIED_DESC @921
+	SAY DESC @921
 	
-	//{ Corwin's Bow + 2
-		COPY ~%MOD_FOLDER%/common/ITM/XACORBOW.ITM~ ~override~
-		SAY NAME2 @911
-		SAY DESC @912
-		
-		COPY ~%MOD_FOLDER%/common/spl/xacorbow.spl~ 	~override~
-		COPY ~%MOD_FOLDER%/common/bam/xacorbow.bam~ 	~override~
-		COPY ~%MOD_FOLDER%/common/bam/xaicorbo.bam~ 	~override~
-	//}
+	COPY ~%MOD_FOLDER%/common/itm/xaamulet.itm~ ~override~
+	SAY NAME1 @907
+	SAY NAME2 @907
+	SAY UNIDENTIFIED_DESC @910
+	SAY DESC @910
 	
-	//{ Corwin's Armor + 3
-		COPY ~%MOD_FOLDER%/common/ITM/XACORCHN.ITM~ ~override~
-		SAY NAME1 @913
-		SAY NAME2 @913
-		SAY UNIDENTIFIED_DESC @914
-		SAY DESC @914
-		
-		COPY ~%MOD_FOLDER%/common/bam/xacorchn.bam~ 	~override~
-		COPY ~%MOD_FOLDER%/common/bam/xaicorch.bam~ 	~override~
-	//}
+	COPY ~%MOD_FOLDER%/common/itm/xabenohd.itm~ ~override~
+	SAY NAME1 @922
+	SAY NAME2 @922
+	SAY UNIDENTIFIED_DESC @923
+	SAY DESC @923
+	
+	COPY ~%MOD_FOLDER%/common/itm/xachick.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xacorbg3.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xacorbo3.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xacorbo4.itm~ ~override~
+	
+	COPY ~%MOD_FOLDER%/common/itm/xacorbow.itm~ ~override~
+	SAY NAME1 @911
+	SAY NAME2 @911
+	SAY UNIDENTIFIED_DESC @912
+	SAY DESC @912
+	
+	COPY ~%MOD_FOLDER%/common/itm/xacorch4.itm~ ~override~
+	
+	COPY ~%MOD_FOLDER%/common/itm/xacorchn.itm~ ~override~
+	SAY NAME1 @913
+	SAY NAME2 @913
+	SAY UNIDENTIFIED_DESC @914
+	SAY DESC @914
+	
+	COPY ~%MOD_FOLDER%/common/itm/xaegg.itm~ ~override~
+	
+	COPY ~%MOD_FOLDER%/common/itm/xaltrcor.itm~ ~override~
+	SAY NAME1 @906
+	SAY NAME2 @906
+	SAY UNIDENTIFIED_DESC @909
+	SAY DESC @909
+	
+	COPY ~%MOD_FOLDER%/common/itm/xaltrsch.itm~ ~override~
+	SAY NAME1 @905
+	SAY NAME2 @905
+	SAY UNIDENTIFIED_DESC @908
+	SAY DESC @908
+	
+	COPY ~%MOD_FOLDER%/common/itm/xalyamul.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xamedal.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xamsring.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xaquiver.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xaring07.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xaring11.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xaring13.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xaring14.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xaring19.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xaring21.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xaring22.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xaring25.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xaring26.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xaring28.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xaring99.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xarng07a.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xarng11a.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xarng13a.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xarng14a.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xarng19a.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xarng21a.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xarng22a.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xarng25a.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xarng26a.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xarng28a.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xarng99a.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xastdag.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xastdagb.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xastdagd.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xastdagf.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xasword.itm~ ~override~
+	COPY ~%MOD_FOLDER%/common/itm/xasword2.itm~ ~override~
 //}
 
 //{ New Sounds

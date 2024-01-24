@@ -1012,8 +1012,211 @@ Requires:
 
 Weight: 7
 ~
+@915 = ~Void Wisp~
+@916 = ~Void Fiend~
+@917 = ~Void Lord~
+@918 = ~Target Dummy~
+@919 = ~LCA Debugger~
+@920 = ~Corwin's Amulet~
+@921 = ~This amulet belongs to Schael Corwin of the Flaming Fist. It is a half-cut emerald inset into a silver backplate. The backplate has a clasp that includes a small portrait of her daughter, Rohma.~
+@922 = ~Beno's Head~
+@923 = ~This is the severed head of Schael Corwin's ex-lover, Beno Famari. He was killed after he tried to use his own daughter, Rohma, as bait in an attempt to lure you and Major Corwin to your deaths. Although he's been resurrected several times in the past, you surmise that it will be difficult for his benefactors to do so again, now that his head has been separated from his body.
+
+Alas, poor Beno! You knew him well...
+
+Well, not really.~
+
 @1000 = ~Processing BG1 changes...~
 
 @2000 = ~Processing SoD changes...~
 
-@3000 = ~Processing BG2 and ToB changes...~
+@3000 = ~Processing BG2 changes...~
+@3001 = ~Your party boards the caravan for the long trek to Saradush. During the journey, your thoughts wander to Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, the two of them are safe within the Ducal Palace, under the watchful eye of the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger.
+
+Though your wagon is comfortable and well-provisioned, a good night's rest continues to elude you. When you're able to sleep, you suffer some truly disturbing nightmares, and tonight's no exception. You awaken startled and in a cold sweat, and your restlessness has woken up Schael. Concerned, she gently caresses your chest, and tries to settle you down.
+
+"More nightmares?"
+
+You explain how they've been plaguing you these past nights. Though you can't recall the details, you know that in each one, you're forced to make an extremely difficult and painful decision. 
+ 
+"Whatever happens, we'll face it together."
+
+She lays her head down on your chest, and you begin to slowly run your fingers through her soft, dark hair. After a time you're able to calm down, and the two of you fall asleep in a tender, loving embrace.
+
+It's the next morning, and the caravan has come to a halt. You and Schael get dressed and exit your wagon. The driver says that you've reached your destination, on the outskirts of the forest northwest of Saradush. The remainder of your journey will be on foot. As the party moves toward the forest, your nostrils are assailed by the acrid smoke. With your eyes watering, you look up and see that the sky is covered in a thick, gray haze. The fire giants have been busy.
+
+The forest, and the besieged city beyond it, await.~ [XA100133]
+@3002 = ~The Journey to Saradush~
+@3003 = ~Your party boards the caravan for the long trek to Saradush. During the journey, your thoughts wander to Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, Schael's family is safe within the Ducal Palace, under the watchful eye of the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger.
+
+Though your wagon is comfortable and well-provisioned, a good night's rest continues to elude you. When you're able to sleep, you suffer some truly disturbing nightmares, and tonight's no exception. You wake startled and in a cold sweat. Since the caravan has stopped for the night, you step outside of your wagon for some fresh air. While outside, you see Schael sitting next to a pond. She stands as you approach, and gestures to you.
+
+"Couldn't sleep either, eh?"
+
+You tell her of the nightmares that've been plaguing you of late. Though you can't recall the details, you know that in each one, you're forced to make an extremely difficult and painful decision. She places her hand on your shoulder to reassure you. 
+
+"Whatever happens, we'll face it together."
+
+After some idle chatter, you return to your wagons to get some sleep.
+
+It's the next morning, and the caravan has reached its destination on the outskirts of the forest northwest of Saradush. The remainder of your journey will be on foot. As the party moves toward the forest, your nostrils are assailed by the acrid smoke. With your eyes watering, you look up and see that the sky is covered in a thick, gray haze. The fire giants have been busy.
+
+The forest, and the besieged city beyond it, await.~ [XA100134]
+@3004 = ~Your party boards the caravan for the long trek east to Saradush. During the journey, your thoughts wander to Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, the two of them are safe within the walls of the Ducal Palace, under the watchful eye of the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger. 
+
+Your mind drifts to Schael. You fondly remember your last romantic evening with her, and you're eager to return to her warm, tender embrace. Though it pains you greatly to be apart from her, you're sure that you made the right decision in leaving her behind to protect the city, and her family. Furthermore, you've made good use of the time alone to steel yourself for what will likely be your most difficult challenge yet.
+
+Though your wagon is comfortable and well-provisioned, a good night's rest continues to elude you. When you are able to sleep, you experience some truly disturbing nightmares, and tonight is no exception. Startled and in a cold sweat, you wake up from your latest terror. Strangely, though you cannot recall any details, you know that in each nightmare you're forced to make an extremely difficult and painful decision.
+
+It's the next morning, and the caravan has reached its destination on the outskirts of the forest northwest of Saradush. The remainder of your journey will be on foot. As the party moves toward the forest, your nostrils are assailed by the acrid smoke. With your eyes watering, you look up and see that the sky is covered in a thick, gray haze. The fire giants have been busy.
+
+The forest, and the besieged city beyond it, await.~ [XA100132]
+@3005 = ~Your party boards the caravan and begins the long trek east to Saradush. During the journey, your thoughts wander to Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, the two of them are safe within the walls of the Ducal Palace, under the watchful eye of Marshal Nederlok and the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger. 
+
+Your mind drifts to Major Corwin. Though her skill, counsel and friendship have proven invaluable to you, you're sure that you made the right decision in leaving her behind to protect the city, and her family. Furthermore, you've made good use of the time alone to steel yourself for what will likely be your most difficult challenge yet.
+
+Though your wagon is comfortable and well-provisioned, a good night's rest continues to elude you. When you are able to sleep, you experience some truly disturbing nightmares, and tonight is no exception. Startled and in a cold sweat, you wake up from your latest terror. Strangely, though you cannot recall any details, you know that in each nightmare you're forced to make an extremely difficult and painful decision.
+
+It's the next morning, and the caravan has reached its destination on the outskirts of the forest northwest of Saradush. The remainder of your journey will be on foot. As the party moves toward the forest, your nostrils are assailed by the acrid smoke. With your eyes watering, you look up and see that the sky is covered in a thick, gray haze. The fire giants have been busy.
+
+The forest, and the besieged city beyond it, await.~ [XA100131]
+@3006 = ~The Return to Baldur's Gate~
+@3007 = ~At last!
+
+You, Captain Corwin and the rest of your companions board the elvish caravan and begin the journey back to Baldur's Gate. The long trek affords you much time for some well-deserved rest and relaxation, which you are more than eager to take advantage of. Moreover, you finally have a chance to reflect on all that's happened since you left for Dragonspear many months ago... all of the twists and turns, your triumphs and defeats... perhaps now, things will settle down, and you'll be free to live your life on your terms. 
+
+During one of the caravan's many stops, you visit Captain Corwin's wagon. Unsurprisingly, she is quite energetic and eager to see her family again. In contrast, your initial excitement at the thought of returning to the city has turned into apprehension. The last time you were in Baldur's Gate, you were nearly executed for a crime you did not commit. Seeing your growing unease, the Captain tries to reassure you:
+
+"The city and the Council will welcome you, I'm sure of it. You've nothing to worry about."
+
+You spend much of the remainder of the journey pondering her words. They were meant to comfort you, but they did not. If nothing else, your experiences over these past months have taught you to hope for the best, but to expect the worst. With that thought in mind, the caravan driver makes the announcement:
+
+"We have reached Wyrm's Crossing."  
+
+You take a deep breath and step out of the wagon. A group of Flaming Fist officers and city officials approach as you stand on the bridge.~  [XA100135]
+@3008 = ~At last!
+
+You, Captain Corwin and the rest of your companions board the elvish caravan and begin the journey back to Baldur's Gate. The long trek affords you much time for some well-deserved rest and relaxation, which you are more than eager to take advantage of. Moreover, you finally have a chance to reflect on all that's happened since you left for Dragonspear many months ago... all of the twists and turns, your triumphs and defeats... perhaps now, things will settle down, and you'll be free to live your life on your terms. 
+
+During one of the caravan's many stops, you visit Captain Corwin's wagon. Unsurprisingly, she is quite energetic and eager to see her family again. In contrast, your initial excitement at the thought of returning to the city has turned into apprehension. The last time you were in Baldur's Gate, you were nearly executed for a crime you did not commit. Seeing your growing unease, the Captain tries to reassure you:
+
+"The city and the Council will welcome you, I'm sure of it. You've nothing to worry about."
+
+You spend much of the remainder of the journey pondering her words. They were meant to comfort you, but they did not. If nothing else, your experiences over these past months have taught you to hope for the best, but to expect the worst. With that thought in mind, the caravan driver makes the announcement:
+
+"We have reached Wyrm's Crossing."  
+
+You take a deep breath and step out of the wagon. A group of Flaming Fist officers and city officials approach as you stand on the bridge.~  [XA100135] 
+@3009 = ~The week long festival thrown by the Dukes in your honor was a spectacle that you'll never forget. Food, drink, song and dance were shared by all, rich and poor alike, and you experienced the wholehearted adoration of the city. In the weeks that followed, you slowly began to embrace your new role as the city's protector — the Defender of Baldur's Gate. Though you miss your days of adventuring, you cannot deny that for the first time in your adult life, you feel a true sense of belonging, as though this city is where you are meant to be...
+
+You recall the trepidation that you felt when you stepped out of the caravan onto Wyrm's Crossing. You were certain at the time that, somehow, fate would intervene for the worse, as it did so many times before. It seems now that you've been able to escape your father's shadow, and that you're finally free to live your life on your terms...
+
+To that end, you continue your friendship with Major Corwin. Though you don't see each other as often as you once did, your bond remains strong. Tonight, you've invited her to dinner at The Three Old Kegs, the very same tavern where the two of you shared a drink before embarking on the Dragonspear campaign...~ [XA100138]
+@3010 = ~The Defender of Baldur's Gate~ 
+@3011 = ~The week long festival thrown by the Dukes in your honor was a spectacle that you'll never forget. Food, drink, song and dance were shared by all, rich and poor alike, and you experienced the wholehearted adoration of the city. In the weeks that followed, you slowly began to embrace your new role as the city's protector — the Defender of Baldur's Gate. Though you miss your days of adventuring, you cannot deny that for the first time in your adult life, you feel a true sense of belonging, as though this city is where you are meant to be...
+
+You recall the trepidation that you felt when you stepped out of the caravan onto Wyrm's Crossing. You were certain at the time that, somehow, fate would intervene for the worse, as it did so many times before. It seems now that you've been able to escape your father's shadow, and that you're finally free to live your life on your terms...
+
+To that end, you continue your courtship of Schael Corwin. The love you share for one another has continued to grow. Over these past weeks, you've begun to build a good relationship with her young daughter, Rohma, and you sense that her father is finally warming up to you. It is your intention for them to move in with you to the Ducal Palace, but Schael has expressed some reservations. 
+
+"You've been great with Rohma, but she needs a little more time."
+
+Although you're not living together, the two of you spend a great deal of your free time with one another. Tonight is a date night, and you've decided to take Schael to dinner at The Three Old Kegs, the very same tavern where the two of you shared a drink before embarking on the Dragonspear campaign...~ [XA100137]
+@3012 = ~A Nightmare Made Manifest~
+@3013 = ~The battle is over. Rohma was saved, but at the cost of the woman you love. You have no hope of bringing her back. Overcome by grief, you fall to your hands and knees, and scream in agony. Hearing a low moan, you turn and see Beno stirring. It seems that, somehow, he is still alive. The sight of his sniveling face is enough to send you past the point of no return. You give into your dark nature, and transform into the Slayer. His pleas for mercy fall on deaf ears, and you rip his heart from his chest. You throw his lifeless body across the room, and begin to eat his still-beating heart.
+
+The taste and gore does little to satiate your bloodlust. You want more. You need more! This is who you are, you think to yourself. Why did you ever resist this kind of power? It's your birthright! 
+
+You make your way out of the Undercity, and into the Thieves' Maze. With ease, you tear through wall after wall, and make it into the Guild. Their feeble attempts to stop you prove fruitless, and you gleefully rip them limb from limb. The screams are heard throughout the city as you continue to decimate the Thieves' Guild. You make your way out into the street and head toward the Ducal Palace. Those foolish enough to remain in your path are easily swept aside.
+
+Upon entering the palace, you are quickly set upon by the Flaming Fist. Even their specially-trained Valiants and Wizards are not enough to stop you. You find the chamber where the Dukes are cowering, and you hear a scream — not from the Dukes, but from someone far more important to you... Rohma. The sight of Schael's daughter crying in terror is enough to snap you out of your murderous reverie. The transformation is undone, and the Dukes look at you, speechless and in horror. You tell Rohma that you are sorry; sorry for not protecting her mother, and sorry for what you have done. 
+
+Rohma and the Dukes are rushed out of the room. You beg one of the surviving Valiants to end your life, and they are happy to oblige. Your life flashes before your eyes as you feel the blade of the mighty halberd slice through your neck. Candlekeep. Imoen and Gorion. The mines of Nashkel. Sarevok. The first time you and Schael met. Rohma. The Siege of Dragonspear. Irenicus. All of your triumphs, and all of your defeats. Your last memory is of Schael, and how happy you were when she agreed to marry you.
+
+Your head hits the floor with a dull thud. The nightmare is over, both for you, and for the city of Baldur's Gate.~ [XA100124]
+@3014 = ~The battle is over. Rohma was saved, but at the cost of the woman you love. You have no hope of bringing her back. Overcome by grief, you fall to your hands and knees, and scream in agony. Hearing a low moan, you turn and see Beno stirring. It seems that, somehow, he is still alive. The sight of his sniveling face is enough to send you past the point of no return. You give into your dark nature, and transform into the Slayer. His pleas for mercy fall on deaf ears, and you rip his heart from his chest. You throw his lifeless body across the room, and begin to eat his still-beating heart.
+
+The taste and gore does little to satiate your bloodlust. You want more. You need more! This is who you are, you think to yourself. Why did you ever resist this kind of power? It's your birthright! 
+
+You make your way out of the Undercity, and into the Thieves' Maze. With ease, you tear through wall after wall, and make it into the Guild. Their feeble attempts to stop you prove fruitless, and you gleefully rip them limb from limb. The screams are heard throughout the city as you continue to decimate the Thieves' Guild. You make your way out into the street and head toward the Ducal Palace. Those foolish enough to remain in your path are easily swept aside.
+
+Upon entering the palace, you are quickly set upon by the Flaming Fist. Even their specially-trained Valiants and Wizards are not enough to stop you. You find the chamber where the Dukes are cowering, and you hear a scream — not from the Dukes, but from someone far more important to you... Rohma. The sight of Schael's daughter crying in terror is enough to snap you out of your murderous reverie. The transformation is undone, and the Dukes look at you, speechless and in horror. You tell Rohma that you are sorry; sorry for not protecting her mother, and sorry for what you have done. 
+
+Rohma and the Dukes are rushed out of the room. You beg one of the surviving Valiants to end your life, and they are happy to oblige. Your life flashes before your eyes as you feel the blade of the mighty halberd slice through your neck. Candlekeep. Imoen and Gorion. The mines of Nashkel. Sarevok. The first time you and Schael met. Rohma. The Siege of Dragonspear. Irenicus. All of your triumphs, and all of your defeats. Your last memory is of Schael, and how happy you were when the two of you were reunited in Athkatla.
+
+Your head hits the floor with a dull thud. The nightmare is over, both for you, and for the city of Baldur's Gate.~ [XA100124]
+@3015 = ~The battle is over. Rohma was saved, but at the cost of your dear friend, Schael. You have no hope of bringing her back. Rohma will grow up to be an orphan, and it's because of who, and what you are. Overcome by grief, you fall to your hands and knees, and scream in rage. Hearing a low moan, you turn and see Beno stirring. It seems that, somehow, he is still alive. The sight of his sniveling face is enough to send you past the point of no return. You give into your dark nature, and transform into the Slayer. His pleas for mercy fall on deaf ears, and you rip his heart from his chest. You throw his lifeless body across the room, and begin to eat his still-beating heart.
+
+The taste and gore does little to satiate your bloodlust. You want more. You need more! This is who you are, you think to yourself. Why did you ever resist this kind of power? It's your birthright! 
+
+You make your way out of the Undercity, and into the Thieves' Maze. With ease, you tear through wall after wall, and make it into the Guild. Their feeble attempts to stop you prove fruitless, and you gleefully rip them limb from limb. The screams are heard throughout the city as you continue to decimate the Thieves' Guild. You make your way out into the street and head toward the Ducal Palace. Those foolish enough to remain in your path are easily swept aside.
+
+Upon entering the palace, you are quickly set upon by the Flaming Fist. Even their specially-trained Valiants and Wizards are not enough to stop you. You find the chamber where the Dukes are cowering, and you hear a scream — not from the Dukes, but from someone far more important to you... Rohma. The sight of Schael's daughter crying in terror is enough to snap you out of your murderous reverie. The transformation is undone, and the Dukes look at you, speechless and in horror. You tell Rohma that you are sorry; sorry for not protecting her mother, and sorry for what you have done. 
+
+Rohma and the Dukes are rushed out of the room. You beg one of the surviving Valiants to end your life, and they are happy to oblige. Your life flashes before your eyes as you feel the blade of the mighty halberd slice through your neck. Candlekeep. Imoen and Gorion. The mines of Nashkel. Sarevok. The first time you and Schael met. Rohma. The Siege of Dragonspear. Irenicus. All of your triumphs, and all of your defeats. Your last memories are of the celebration that the Dukes held in your honor, and the love and friendship that you shared with your comrades.
+
+Your head hits the floor with a dull thud. The nightmare is over, both for you, and for the city of Baldur's Gate.~ [XA100124]
+@3016 = ~Dings~
+@3017 = ~Neoma~
+@3018 = ~Melkor~
+@3019 = ~Curator Magda~
+@3020 = ~Lyriel~
+@3021 = ~Narzugon~
+@3022 = ~Hen~
+@3033 = ~Greater Doppelganger~
+@3034 = ~Duke Eltan~
+@3035 = ~Duke Entar~
+@3036 = ~Master Smith~
+@3037 = ~Ferrus~
+@3038 = ~Diyab~
+@3039 = ~Priestess Demin~
+@3040 = ~Crusader Spirit~
+@3041 = ~Crusader~
+@3042 = ~Coalition Soldier~
+@3043 = ~Corwin~
+@3044 = ~Commoner~
+@3045 = ~Cook~
+@3046 = ~Peasant~
+@3047 = ~Aasim~
+@3048 = ~Beno Famari~
+@3049 = ~Corporal Duncan~
+@3050 = ~Duke Belt~
+@3051 = ~Audamar~
+@3052 = ~Angelo Dosan~
+@3053 = ~Alibakkar Guard~
+@3054 = ~"Lady" Alyth Elendara~
+@3055 = ~Master Bowyer~
+@3056 = ~Brevlik~
+@3057 = ~Brielbara~
+@3058 = ~Flaming Fist Officer~
+@3059 = ~Flaming Fist Executioner~
+@3060 = ~Flaming Fist Valiant~
+@3061 = ~Glint~
+@3062 = ~Stone Golem~
+@3063 = ~Gorion~
+@3064 = ~Duke Jannath~
+@3065 = ~Mutant Ankheg~
+@3066 = ~Tianna~
+@3067 = ~Rohma~
+@3068 = ~Duke Anchev~
+@3069 = ~Semaj~
+@3070 = ~Skie~
+@3071 = ~Target Golem~
+@3072 = ~Tournament Organizer~
+@3073 = ~Virgil~
+@3074 = ~Merchant~
+@3075 = ~Guard~
+@3076 = ~Zhalimar~
+@3077 = ~Bartender~
+@3078 = ~Nobleman~
+@3079 = ~Flaming Fist Wizard~
+@3080 = ~Spectator~
+@3081 = ~Gardus~
+@3082 = ~Harbor Master~
+@3083 = ~Illasera~
+@3084 = ~Jasper~
+@3085 = ~Kent~
+@3086 = ~Lantanara~
+@3087 = ~Lurraxol Guard~
+@3088 = ~Neb~
+@3089 = ~Marshal Nederlok~

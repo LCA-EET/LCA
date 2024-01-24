@@ -1,4 +1,4 @@
-$basePath = "%MOD_FOLDER%/bg2/"
+$basePath = "%MOD_FOLDER%/common/"
 $outPath = "copyCommands.txt"
 
 $scriptPath = split-path -parent $MyInvocation.MyCommand.Definition
