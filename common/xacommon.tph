@@ -3,12 +3,18 @@ PRINT @900  /* ~Processing common components...~ */
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/common/baf~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/common/d~
 
+//{ Gesen Projectile
+	ADD_PROJECTILE ~~%MOD_FOLDER%/common/pro/xalarrow.pro~
+//}
+
 //{ bam
 	COPY ~%MOD_FOLDER%/common/bam/xaamulet.bam~ ~override~
 	COPY ~%MOD_FOLDER%/common/bam/xaassist.bam~ ~override~
+	COPY ~%MOD_FOLDER%/common/bam/xabenohd.bam~ ~override~
 	COPY ~%MOD_FOLDER%/common/bam/xacorbow.bam~ ~override~
 	COPY ~%MOD_FOLDER%/common/bam/xacorchn.bam~ ~override~
 	COPY ~%MOD_FOLDER%/common/bam/xaegg.bam~ ~override~
+	COPY ~%MOD_FOLDER%/common/bam/xaibenoh.bam~ ~override~
 	COPY ~%MOD_FOLDER%/common/bam/xaicorbo.bam~ ~override~
 	COPY ~%MOD_FOLDER%/common/bam/xaicorch.bam~ ~override~
 	COPY ~%MOD_FOLDER%/common/bam/xaiegg.bam~ ~override~
@@ -68,8 +74,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/common/d~
 //{ d
 	COPY ~%MOD_FOLDER%/common/d/xaadbg.d~ ~override~
 //}
-
-COPY ~%MOD_FOLDER%/common/d/xaadbg.d~ 			~override~
 
 //{ LCA Corwin Portrait
 	COPY ~%MOD_FOLDER%/common/bmp/xacorwil.bmp~ ~override~
@@ -131,6 +135,10 @@ COPY ~%MOD_FOLDER%/common/d/xaadbg.d~ 			~override~
 	SAY DESC @923
 	
 	COPY ~%MOD_FOLDER%/common/itm/xachick.itm~ ~override~
+	SAY NAME1 @974
+	SAY NAME2 @974
+	SAY UNIDENTIFIED_DESC @975
+	SAY DESC @975
 	
 	COPY ~%MOD_FOLDER%/common/itm/xacorbg3.itm~ ~override~
 	WRITE_SHORT 0x09c ~%XALARROW%~
@@ -145,7 +153,16 @@ COPY ~%MOD_FOLDER%/common/d/xaadbg.d~ 			~override~
 	SAY DESC @963
 	
 	COPY ~%MOD_FOLDER%/common/itm/xacorbo3.itm~ ~override~
+	SAY NAME1 @970
+	SAY NAME2 @970
+	SAY UNIDENTIFIED_DESC @971
+	SAY DESC @971
+	
 	COPY ~%MOD_FOLDER%/common/itm/xacorbo4.itm~ ~override~
+	SAY NAME1 @972
+	SAY NAME2 @972
+	SAY UNIDENTIFIED_DESC @973
+	SAY DESC @973
 	
 	COPY ~%MOD_FOLDER%/common/itm/xacorbow.itm~ ~override~
 	SAY NAME1 @911
@@ -154,6 +171,10 @@ COPY ~%MOD_FOLDER%/common/d/xaadbg.d~ 			~override~
 	SAY DESC @912
 	
 	COPY ~%MOD_FOLDER%/common/itm/xacorch4.itm~ ~override~
+	SAY NAME1 @968
+	SAY NAME2 @968
+	SAY UNIDENTIFIED_DESC @969
+	SAY DESC @969
 	
 	COPY ~%MOD_FOLDER%/common/itm/xacorchn.itm~ ~override~
 	SAY NAME1 @913
@@ -162,6 +183,10 @@ COPY ~%MOD_FOLDER%/common/d/xaadbg.d~ 			~override~
 	SAY DESC @914
 	
 	COPY ~%MOD_FOLDER%/common/itm/xaegg.itm~ ~override~
+	SAY NAME1 @966
+	SAY NAME2 @966
+	SAY UNIDENTIFIED_DESC @967
+	SAY DESC @967
 	
 	COPY ~%MOD_FOLDER%/common/itm/xaltrcor.itm~ ~override~
 	SAY NAME1 @906
@@ -342,6 +367,11 @@ COPY ~%MOD_FOLDER%/common/d/xaadbg.d~ 			~override~
 	SAY DESC @959
 	
 	COPY ~%MOD_FOLDER%/common/itm/xasword.itm~ ~override~
+	SAY NAME1 @964
+	SAY NAME2 @964
+	SAY UNIDENTIFIED_DESC @965
+	SAY DESC @965
+	
 	COPY ~%MOD_FOLDER%/common/itm/xasword2.itm~ ~override~
 //}
 

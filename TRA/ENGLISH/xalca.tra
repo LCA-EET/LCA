@@ -1016,7 +1016,7 @@ Weight: 7
 @916 = ~Void Fiend~
 @917 = ~Void Lord~
 @918 = ~Target Dummy~
-@919 = ~LCA Debugger~
+@919 = ~LCA Assistant~
 @920 = ~Corwin's Amulet~
 @921 = ~This amulet belongs to Schael Corwin of the Flaming Fist. It is a half-cut emerald inset into a silver backplate. The backplate has a clasp that includes a small portrait of her daughter, Rohma.~
 @922 = ~Beno's Head~
@@ -1317,6 +1317,115 @@ Requires:
 
 Weight: 9
 ~
+@964 = ~Void Blade +5~
+@965 = ~This is the blade that the Narzugon offered to you in exchange for Lyriel's amulet. The hilt is made of carved bone, and the jet black blade, if one can call it that, reflects no light. Looking at the blade for any length of time gives you the unnerving impression that some malevolent force is watching you from within the void.
+
+STATISTICS:
+
+THAC0: +5
+Damage: 2d4+5
+Damage type: Slashing
+Speed Factor: 4
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 3~ 
+@966 = ~Golden Egg~ 
+@967 = ~This heavy, aureate egg is surely worth its weight in gold.
+@968 = ~Corwin's Armor +4~
+@969 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
+
+The armor was further enhanced by Flaming Fist mages to help Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. Additional enchantments were placed on the armor by the master smith of Suldanessellar, as a token of gratitude for saving the elven city.
+
+STATISTICS:
+
+Equipped abilities:
+– Movement Speed: +1
+– Magic Resistance: +15%
+– Saving Throws: +1
+
+Armor Class: 1 (-1 vs. slashing, 3 vs. crushing)
+Requires: 
+ 5 Strength
+
+Weight: 7
+~
+@970= ~Corwin's Bow +3~
+@971 = ~This enchanted bow boosts the wielder's dexterity, allowing them to fire more accurately. The bow was further enhanced by Flaming Fist mages to help then Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. 
+
+With the addition of Gesen's bowstring, this weapon can draw energy from another plane, firing spears of lightning instead of arrows. In the hands of an archer as talented as Corwin, it is capable of dealing death as effectively as anything you've ever seen. 
+
+Equipped abilities: 
+– Dexterity: +1
+– Electrical Resistance: +20%
+
+Combat abilities: 
+– When no arrows are equipped, the bow fires missiles that are treated as +3 for the purposes of determining what enemies they can damage. The missiles receive +3 to hit including the bonus listed below, and deal a total of 2 piercing and 1d8 electrical damage.
+
+STATISTICS:
+
+THAC0: +4
+Damage: +5
+Speed Factor: 4
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 9
+~
+@972= ~Corwin's Bow +4~
+@973 = ~This enchanted bow boosts the wielder's dexterity, allowing them to fire more accurately. The bow was further enhanced by Flaming Fist mages to help then Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. Additional enchantments to reduce the draw weight were placed on the weapon by the master bowyer of Suldanessellar, as a token of gratitude for saving the elven city. The reduced draw weight makes the weapon less physically taxing to use, resulting in improved power and accuracy.
+
+With the addition of Gesen's bowstring, this weapon can draw energy from another plane, firing spears of lightning instead of arrows. In the hands of an archer as talented as Corwin, it is capable of dealing death as effectively as anything you've ever seen. 
+
+Equipped abilities: 
+– Dexterity: +1
+– Electrical Resistance: +20%
+
+Combat abilities: 
+– When no arrows are equipped, the bow fires missiles that are treated as +4 for the purposes of determining what enemies they can damage. The missiles receive +4 to hit including the bonus listed below, and deal a total of 2 piercing and 1d8 electrical damage.
+
+STATISTICS:
+
+THAC0: +5
+Damage: +6
+Speed Factor: 4
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 9
+~
+@974 = ~The Hen that Laid the Golden Egg~
+@975 = ~Legend tells of a couple that was renowned throughout the town for their insatiable greed. One day, a playful goblin who was passing through overheard the townsfolk speak of just how greedy this husband and wife were. Wanting to learn if the rumors of their greed were true, the goblin decided to pay them a visit. 
+
+The goblin appeared to the husband from within a tree trunk, and asked him why he looked so troubled. "Are you ill? Are you hungry? Tired?"
+
+Though frightened by the presence of the goblin, the husband explained that he wasn't sick, tired or hungry. Instead, he told the goblin that he and his wife were poor, and that could not afford all of the fancy clothes, baubles, and other items that they wanted.
+
+"If you are not hungry, cold, or ill, then rejoice because you are not poor!", said the goblin. 
+
+"But I am poor! A man with little or no gold is poor!", explained the husband.
+
+Upon hearing this, the goblin erupted into laughter. He then produced a hen, and explained to the husband that this hen was magical. Every morning, it would produce a golden egg. The goblin offered the hen to the husband, but warned that it would not provide the happiness and contentment that he sought.
+
+The husband quickly took the hen from the goblin and ran home to his wife. Though she didn't believe that the hen was magical, she could at least use the eggs to make a nice omelet, she thought to herself. 
+
+Early the next morning the hen began to cluck, and shortly after, a huge, bright golden egg appeared beneath it! The couple was ecstatic as they held the egg in their hands, but their mood quickly turned sour.
+
+"Well... it seems we'll have to wait until tomorrow for another egg. It will take many weeks before we have enough eggs to be the richest in town. That must be why the goblin laughed when he gave me the hen.", the husband said.
+
+The wife replied, "I've always heard that hens already have all the eggs they will lay inside of them... if this is true, why do we not kill the hen and take all of the eggs at once!" The husband agreed, and without hesitation, the couple killed the poor hen, and opened up her body. To their dismay, they saw that the there were no eggs inside. They then began to weep, for they realized that through their own greed and stupidity, they had lost forever the hen that laid the golden eggs.
+
+Abilities:
+- While held in the party's inventory, this hen will produce one golden egg per day.
+
+Weight: 1~ 
+Weight: 2~
 @005=~Letter to Corwin~
 @006=~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
 @1000 = ~Processing BG1 changes...~

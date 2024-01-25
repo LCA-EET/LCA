@@ -41,18 +41,13 @@
 	
 //}
 
-IF
-	Global("XAAssist","GLOBAL",2)
-THEN
-	RESPONSE #100
-		SetGlobal("XAAssist","GLOBAL",0)
-END
-
 //{ Launch LCA Assistant
 IF
 	Global("XAAssist", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		ActionOverride(Player1,StartDialog("player1",Player1))
+		SetGlobal("XAAssist","GLOBAL",0)
+		ActionOverride(Player1, CreateCreature("XAADBG", [-1.-1], N))
+		ActionOverride("XAADBG", StartDialog("XAADBG",Player1))
 END
 //}
