@@ -4,9 +4,9 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/common/baf~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/common/d~
 
 //{ Gesen Projectile
-	ADD_PROJECTILE ~~%MOD_FOLDER%/common/pro/xalarrow.pro~
+	ADD_PROJECTILE ~%MOD_FOLDER%/common/pro/xalarrow.pro~
 //}
-
+	
 //{ bam
 	COPY ~%MOD_FOLDER%/common/bam/xaamulet.bam~ ~override~
 	COPY ~%MOD_FOLDER%/common/bam/xaassist.bam~ ~override~
@@ -138,16 +138,16 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/common/d~
 	SAY NAME1 @974
 	SAY NAME2 @974
 	SAY UNIDENTIFIED_DESC @975
-	SAY DESC @975
-	
+	SAY DESC @975	
+
 	COPY ~%MOD_FOLDER%/common/itm/xacorbg3.itm~ ~override~
-	WRITE_SHORT 0x09c ~%XALARROW%~
+	WRITE_SHORT 0x09c ~%xalarrow%~
 	SAY NAME1 @960
 	SAY NAME2 @960
 	SAY DESC @961
 	
 	COPY ~%MOD_FOLDER%/common/itm/xacorbg4.itm~ ~override~
-	WRITE_SHORT 0x09c ~%XALARROW%~
+	WRITE_SHORT 0x09c ~%xalarrow%~
 	SAY NAME1 @962
 	SAY NAME2 @962
 	SAY DESC @963

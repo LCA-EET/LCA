@@ -1333,7 +1333,7 @@ Requires:
 
 Weight: 3~ 
 @966 = ~Golden Egg~ 
-@967 = ~This heavy, aureate egg is surely worth its weight in gold.
+@967 = ~This heavy, aureate egg is surely worth its weight in gold.~
 @968 = ~Corwin's Armor +4~
 @969 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
 
@@ -1423,11 +1423,10 @@ The wife replied, "I've always heard that hens already have all the eggs they wi
 
 Abilities:
 - While held in the party's inventory, this hen will produce one golden egg per day.
-
-Weight: 1~ 
+ 
 Weight: 2~
 @005=~Letter to Corwin~
-@006=~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
+@006=~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.~
 @1000 = ~Processing BG1 changes...~
 
 @2000 = ~Processing SoD changes...~

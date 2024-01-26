@@ -367,7 +367,7 @@ BEGIN ~XAADBG~
 		IF ~~ THEN REPLY @14 /*~Exit.~ */
 		GOTO XA_Exit
 	END
-END
+
 	//}
 
 
@@ -504,9 +504,6 @@ IF ~~ THEN BEGIN XA_MainMenu
 	
 	IF ~~ THEN REPLY @654
 	GOTO XA_ChangeReputation
-
-	IF ~~ THEN REPLY @614
-	GOTO XA_Assistant
 	
 	IF ~~ THEN REPLY @604
 	GOTO XA_EpilogueTest
@@ -1391,16 +1388,6 @@ IF ~~ THEN BEGIN XA_ChangeReputation
 	IF ~~ THEN REPLY @674
 	DO ~
 		ReputationSet(20)
-	~
-	EXIT
-END
-
-IF ~~ THEN XA_Assistant
-	SAY @614
-	
-	IF ~~ THEN 
-	DO ~
-		ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
 	~
 	EXIT
 END
@@ -6460,9 +6447,3 @@ IF ~~ THEN BEGIN XA_Menu_AddCharacter
 	GOTO XA_MainMenu
 END
 
-IF ~~ THEN BEGIN XA_Exit
-	SAY @14 /* ~Very well. Thanks for playing!~ */
-
-	IF ~~ THEN
-	EXIT
-END
