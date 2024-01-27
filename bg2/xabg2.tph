@@ -1,6 +1,13 @@
 PRINT @3000  /* ~Processing BG1 changes...~ */
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
+
+//{ Script Extensions
+	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/common/baf/xabalbg2.baf~
+	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/common/baf/xachfight.baf~
+	EXTEND_TOP ~baldur.bcs~		~%MOD_FOLDER%/bg2/baf/xajrnbg2.baf~
+//}
 
 //{ 2da
 	COPY ~%MOD_FOLDER%/bg2/2da/xabad1.2da~ ~override~
@@ -87,274 +94,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf~
 	COPY ~%MOD_FOLDER%/bg2/are/xawlkhom.are~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/are/xawyrm.are~ ~override~
 //}
-//{ baf
-	COPY ~%MOD_FOLDER%/bg2/baf/xa1002.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xa100a.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xa100b.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xa100c.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xa100d.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xa100ex.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xa204a.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xa204g.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xa218g.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xa41cs01.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xa41cs02.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xa59atob.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xa616.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xa801t0.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs02a.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs02b.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs03a.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs03b.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs04a.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs04b.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs04c.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs05a.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs05b.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs05c.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs06a.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs06b.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs06c.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs06d.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs07a.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs07b.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs08a.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs08b.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs08c.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs08d.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs08x.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs09a.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs09b.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs09c.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs10b.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs11b.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs59a.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs59b.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacs60a.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaacsex.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaalyth.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaar0334.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaar0602.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaar1512.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaar1516.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaar2000.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaar2802.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaar2900.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaarrest.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaaudam.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabaldur.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabdads.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabeland.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabence.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabeno2.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabenof.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0100.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0102.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0103.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0109.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0112.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0114.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0116.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0119.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0127.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0128.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0130.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0131.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0134.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0153.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0165.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0166.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0200.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0225.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0300.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0600.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0601.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0602.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0603.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0607.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0608.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0611.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0612.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0613.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0614.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0615.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0616.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0700.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0702.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0703.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0704.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0705.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0706.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0726.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0800.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg0900.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg1100.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg1200.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg1300.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg4200.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabg7245.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabgend1.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabgend2.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabgend3.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabgend4.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabgend5.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xablkbg1.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabodamb.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabrathl.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabrevlk.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabrvspw.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xabspawn.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacaelac.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacaelag.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacc3.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacell.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xachick.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xachmpov.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacldoor.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaclean.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacoffin.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacorex.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacorinv.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacorscr.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacrtyrd.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacrug.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacrussp.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacs13.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacs14.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacs14a.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacs15.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacs16a.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacs16b.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacsg2a.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacsg2b.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacshow.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacshow2.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacshow3.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacshowx.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacurato.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacut41g.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacut41j.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xacut59b.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xadebr01.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xadebr02.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xadebr03.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xadebr04.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xadebref.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xadebrst.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xadelrbg.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xadem1.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xadem23.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xadem4.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xademded.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xademsan.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xadesrbg.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xadings.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xadinlot.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xadinn00.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xadinn01.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xadinner.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xadinrom.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xadopp.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaduc3.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaducal.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaenemy.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaentrg1.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaentrg2.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaentrg3.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaex01ex.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaex02ex.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaex03ex.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaexplex.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xafergus.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaffhunt.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaffofcr.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xag1.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xag1ent.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xag2.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xag2ent.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xag3.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xag3ent.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xagirba3.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xagirlov.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaglint.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xagohome.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xagorge.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xagorion.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xagorp.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xagotobg.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaguard.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xahome.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xahowspy.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xailbeno.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaillase.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xainitp1.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xakidn01.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xakidn02.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xakidnap.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xakillp1.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xalarze.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xalcasst.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xalchook.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xalcjrnl.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xalyriel.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xamelkor.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xamerchg.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xanarzu.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaneb.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaneb1.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xanebsew.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaneoma.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xanevsum.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xanobmov.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xanobwov.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xap0614.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xap0706.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xap1d.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xap1dsex.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xapaint.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xapaint1.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xapent.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xapexit.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xapexit2.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xapropo1.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xapropos.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaratchl.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xarohma1.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xartbg.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xarun.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xasara.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xasara1.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xasara2.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xasara3.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xasara4.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xasarevo.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xasemaj.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xasent.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xasent1.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaskie.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xasujon.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xasvir.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xatianna.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xatmarsu.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xatrigg1.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xatrigg2.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xatrigg3.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xatrigs.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xatwnfov.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xatwnmov.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xatwohom.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xauc.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaucend1.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaucend2.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaucend3.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xaucity.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xauctemp.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xavirgil.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xawlkh01.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xawlkh02.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xawlkhom.baf~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/baf/xawvgrd2.baf~ ~override~
-//}
+
 //{ bam
 	COPY ~%MOD_FOLDER%/bg2/bam/xacorbod.bam~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/bam/xaflam02.bam~ ~override~
@@ -925,97 +665,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf~
 	SAY NAME1 @3076
 	SAY NAME2 @3076
 //}
-//{ d
-	COPY ~%MOD_FOLDER%/bg2/d/xa800m.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xa800w.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaalatos.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaaldeth.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaalyth.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaamisc.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaaudam.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xabeland.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xabelt.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xabence.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xabence2.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xabeno.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xabeno2.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xabenoam.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xabite.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xabrega.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xabrevlk.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xabrielb.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xabrilla.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xacc3.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xachick.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xachimp5.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xacomm.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xacomw.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xacook.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xacorwib.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xacorwij.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xacorwin.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xacorwip.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xacsreax.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xacurato.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xadings.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xadivine.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaeltan.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaentar.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xafergus.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaffexec.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaffofcr.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaffvali.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaforthe.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xagames2.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xagirl.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xagirl2.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaglint.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xagolsto.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xagorion.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xahalbaz.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaharbor.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaillase.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xajasper.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xajhasso.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xakent.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xakerrac.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xalantan.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xalarze.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xalcasst.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xalchook.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaliia.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xalyriel.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xamelkor.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xamerch.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xamerchg.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xamerlea.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xanarzu.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaneb.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xanederl.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaneoma.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xanoblm.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xanoblw.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xantrjex.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaorph01.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaorph02.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaorph03.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaorph04.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaorph05.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaorph06.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaplr1.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xarohma.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xasarevo.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xaskie.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xatianna.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xatmarsd.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xatownf.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xatownm.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xavirgil.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xawvbart.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xawvgrd1.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xawvgrd2.d~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/d/xawvmer.d~ ~override~
-//}
+
 //{ itm
 	COPY ~%MOD_FOLDER%/bg2/itm/xacorbod.itm~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/itm/xafarsee.itm~ ~override~
@@ -1033,22 +683,26 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf~
 	COPY ~%MOD_FOLDER%/bg2/itm/xaringa.itm~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/itm/xaringj.itm~ ~override~
 //}
+
 //{ mos
 	COPY ~%MOD_FOLDER%/bg2/mos/xabadend.mos~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/mos/xabg.mos~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/mos/xadinner.mos~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/mos/xaptsara.mos~ ~override~
 //}
+
 //{ sto
 	COPY ~%MOD_FOLDER%/bg2/sto/xamelkor.sto~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/sto/xawvbar.sto~ ~override~
 //}
+
 //{ tis
 	COPY ~%MOD_FOLDER%/bg2/tis/xacs12.tis~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/tis/xaduc3.tis~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/tis/xawyrm.tis~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/tis/xawyrmn.tis~ ~override~
 //}
+
 //{ wav
 	COPY ~%MOD_FOLDER%/bg2/wav/xabd4400.wav~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/wav/xabd5300.wav~ ~override~
@@ -1073,4 +727,4 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf~
 	COPY ~%MOD_FOLDER%/bg2/wed/xaduc3.wed~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/wed/xawyrm.wed~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/wed/xawyrmn.wed~ ~override~
-
+//}

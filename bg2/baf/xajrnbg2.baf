@@ -744,25 +744,6 @@ THEN
 END
 //}
 
-//{ Beno Kanaglym
-IF
-	Global("XA_LC_Journal_BenoKana", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_Journal_BenoKana", "GLOBAL", 0)
-		AddJournalEntry(@33, INFO)
-		AddXPObject(Player1, 25000)
-		AddXPObject(Player2, 25000)
-		AddXPObject(Player3, 25000)
-		AddXPObject(Player4, 25000)
-		AddXPObject(Player5, 25000)
-		AddXPObject(Player6, 25000)
-		SetInterrupt(TRUE)
-		Continue()
-END
-//}
-
 //{ Haspur
 IF
 	Global("XA_LC_Journal_Haspur_Caelar", "GLOBAL", 1)
@@ -835,121 +816,6 @@ THEN
 		SetInterrupt(TRUE)
 		Continue()
 END
-//}
-
-//{ Lodob
-IF
-	Global("XA_LC_Journal_Lodob", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_Journal_Lodob", "GLOBAL", 0)
-		AddJournalEntry(@40, INFO)
-		SetInterrupt(TRUE)
-		Continue()
-END
-//}
-
-//{ Ashatiel
-IF
-	Global("XA_LC_Journal_Ashatiel", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_Journal_Ashatiel", "GLOBAL", 0)
-		AddJournalEntry(@41, QUEST)
-		SetInterrupt(TRUE)
-		Continue()
-END
-
-IF
-	Global("XA_LC_Journal_Ashatiel", "GLOBAL", 2)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_Journal_Ashatiel", "GLOBAL", 0)
-		AddJournalEntry(@43, QUEST_DONE)
-		AddXPObject(Player1, 10000)
-		AddXPObject(Player2, 10000)
-		AddXPObject(Player3, 10000)
-		AddXPObject(Player4, 10000)
-		AddXPObject(Player5, 10000)
-		AddXPObject(Player6, 10000)
-		EraseJournalEntry(@41)
-		SetInterrupt(TRUE)
-		Continue()
-END
-
-IF
-	Global("XA_LC_Journal_Ashatiel", "GLOBAL", 3)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_Journal_Ashatiel", "GLOBAL", 0)
-		AddJournalEntry(@43, QUEST_DONE)  /*~Rest In Peace
-With the death of Caelar Argent, the spirits of her dead crusaders have finally moved on to the afterlife.~ */
-		AddXPObject(Player1, 10000)
-		AddXPObject(Player2, 10000)
-		AddXPObject(Player3, 10000)
-		AddXPObject(Player4, 10000)
-		AddXPObject(Player5, 10000)
-		AddXPObject(Player6, 10000)
-		EraseJournalEntry(@41) /* ~Rest In Peace
-I've decided to help the spirits of the crusaders who are unable to pass on. Using the gate in my pocket plane, I may be able to locate and rescue Caelar Argent from Avernus, so that I can bring her to Kanaglym. Once there, she can release her crusaders from their sworn oath to her, so that they can move on to whatever awaits them in the afterlife.~*/
-		SetInterrupt(TRUE)
-		Continue()
-END
-//}
-
-//{ Caelar Disposition
-
-	//{ Caelar - Jail
-	IF
-		Global("XA_LC_Journal_CaelarJail", "GLOBAL", 1)
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_LC_Journal_CaelarJail", "GLOBAL", 0)
-			AddJournalEntry(@32, INFO)
-			SetInterrupt(TRUE)
-			Continue()
-	END
-	//}
-
-	//{ Aun / Caelar
-	IF
-		Global("XA_LC_Journal_CaelarHome", "GLOBAL", 1)
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_LC_Journal_CaelarHome", "GLOBAL", 0)
-			AddXPObject(Player1, 10000)
-			AddJournalEntry(@42, QUEST_DONE) /* ~Caelar Argent
-	Caelar Argent has been sent home with Aun, her uncle. In the end, I did not have the heart to send her to prison. She has suffered enough already. Hopefully, they can help each other heal from the horrors that they experienced in Avernus.~*/
-			EraseJournalEntry(@41) /* ~Rest In Peace
-	I've decided to help the spirits of the crusaders who are unable to pass on. Using the gate in my pocket plane, I may be able to locate and rescue Caelar Argent from Avernus, so that I can bring her to Kanaglym. Once there, she can release her crusaders from their sworn oath to her, so that they can move on to whatever awaits them in the afterlife.~*/
-			SetInterrupt(TRUE)
-			Continue()
-	END
-	//}
-
-	//{ Caelar Joined
-	IF
-		Global("XA_LC_Journal_CaelarJoin", "GLOBAL", 1)
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_LC_Journal_CaelarJoin", "GLOBAL", 0)
-			AddXPObject(Player1, 10000)
-			AddJournalEntry(@44, QUEST_DONE) /*~Caelar Argent
-	Caelar Argent, the aasimar whose bloody crusade wreaked havoc across the Sword Coast, has agreed to fight for my cause. She will prove a valuable ally, in spite of the physical and psychological trauma that has been inflicted upon her.~ */
-			EraseJournalEntry(@41) /* ~Rest In Peace
-	I've decided to help the spirits of the crusaders who are unable to pass on. Using the gate in my pocket plane, I may be able to locate and rescue Caelar Argent from Avernus, so that I can bring her to Kanaglym. Once there, she can release her crusaders from their sworn oath to her, so that they can move on to whatever awaits them in the afterlife.~*/
-			SetInterrupt(TRUE)
-			Continue()
-	END
-	//}
-
 //}
 
 //{ TM Archery Sign-up
@@ -1054,80 +920,6 @@ THEN
 END
 //}
 
-//{ Progress Thus Far
-IF
-	Global("XA_LC_Journal_Progress", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 0)
-		AddJournalEntry(@56, QUEST) /* ~Progress Thus Far
-Schael needs to send a message to the Dukes to inform them of our progress thus far. She also needs to let her family know that she is alive and well. This town may have a courier service we can use to send the message.~*/
-		SetInterrupt(TRUE)
-		Continue()
-END
-
-IF
-	Global("XA_LC_Journal_Progress", "GLOBAL", 2)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 0)
-		AddJournalEntry(@57, QUEST) /* ~Progress Thus Far
-Schael needs to send a message to the Dukes to inform them of our progress thus far. She also needs to let her family know that she is alive and well, and that she is pregnant with our child. This town may have a courier service we can use to send the message.~*/
-		SetInterrupt(TRUE)
-		Continue()
-END
-
-IF
-	Global("XA_LC_Journal_Progress", "GLOBAL", 3)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 0)
-		EraseJournalEntry(@56)
-		EraseJournalEntry(@57)
-		AddXPObject(Player1, 25000)
-		AddXPObject("XACORWIN", 25000)
-		AddJournalEntry(@58, QUEST_DONE) /* ~Progress Thus Far
-Hamza, a mail courier based out of Amkethran, has agreed to deliver two letters back to Baldur's Gate on our behalf. One is addressed to the Dukes, and it includes Schael's report on the events that have transpired since we left the city. The second is addressed to her father, to let him and Rohma know that we're alive and well, and that she is with child.~*/
-		SetInterrupt(TRUE)
-		Continue()
-END
-
-IF
-	Global("XA_LC_Journal_Progress", "GLOBAL", 4)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 0)
-		EraseJournalEntry(@56)
-		EraseJournalEntry(@57)
-		AddXPObject(Player1, 25000)
-		AddXPObject("XACORWIN", 25000)
-		AddJournalEntry(@59, QUEST_DONE) /* ~Progress Thus Far
-Hamza, a mail courier based out of Amkethran, has agreed to deliver two letters back to Baldur's Gate on our behalf. One is addressed to the Dukes, and it includes Schael's report on the events that have transpired since we left the city. The second is addressed to her father, to let him and Rohma know that we're alive and well.~*/
-		SetInterrupt(TRUE)
-		Continue()
-END
-
-IF
-	Global("XA_LC_Journal_Progress", "GLOBAL", 5)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 0)
-		EraseJournalEntry(@56)
-		EraseJournalEntry(@57)
-		AddXPObject(Player1, 25000)
-		AddXPObject("XACORWIN", 25000)
-		AddJournalEntry(@60, QUEST_DONE) /* ~Progress Thus Far
-Hamza, a mail courier based out of Amkethran, has agreed to deliver a letter back to Baldur's Gate on our behalf. It is addressed to the Dukes, and it includes Schael's report on the events that have transpired since we left the city.~*/
-		SetInterrupt(TRUE)
-		Continue()
-END
-//}
-
 //{ The Soultaker Dagger
 IF
 	Global("XA_LC_Journal_Soultaker", "GLOBAL", 1)
@@ -1173,28 +965,6 @@ THEN
 		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 0)
 		AddJournalEntry(@67, QUEST) /* ~The Soultaker Dagger
 The wizard Melkor has handed me the Soultaker Dagger. Apparently, Duke Silvershield decided that it would be best for me to take ownership of the weapon, perhaps in the belief that keeping it away from her caretakers will help her progress further in her recovery. I know from my prior discussions on the matter that there are souls still trapped within; the wizard informed me that Skie would appreciate it if I could find some way to free them.~*/
-		SetInterrupt(TRUE)
-		Continue()
-END
-
-IF
-	Global("XA_LC_Journal_Soultaker", "GLOBAL", 5)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 0)
-		AddJournalEntry(@66, QUEST_DONE) /* ~The Soultaker Dagger
-The Soultaker Dagger has been destroyed, and the souls of those that had been trapped within have finally been released. I'm relieved, not just for them, but also to finally be rid of that loathsome dagger.~*/
-		EraseJournalEntry(@61)
-		EraseJournalEntry(@62)
-		EraseJournalEntry(@63)
-		EraseJournalEntry(@67)
-		AddXPObject(Player1, 35000)
-		AddXPObject(Player2, 35000)
-		AddXPObject(Player3, 35000)
-		AddXPObject(Player4, 35000)
-		AddXPObject(Player5, 35000)
-		AddXPObject(Player6, 35000)
 		SetInterrupt(TRUE)
 		Continue()
 END

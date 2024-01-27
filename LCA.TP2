@@ -61,6 +61,7 @@ ACTION_IF (GAME_IS ~eet~) THEN BEGIN
 	PRINT @801  // ~Enhanced Edition Trilogy (EET) mod has been detected.~ 
 	INCLUDE ~%MOD_FOLDER%/bg1/xabg1.tph~
 	INCLUDE ~%MOD_FOLDER%/sod/xasod.tph~
+	INCLUDE ~%MOD_FOLDER%/bg2/xabg2.tph~
 END ELSE BEGIN
 	OUTER_SET isEET = 0
 	PRINT @802  // ~Enhanced Edition Trilogy (EET) mod has NOT been detected.~ 
@@ -71,6 +72,10 @@ END ELSE BEGIN
 	ACTION_IF(GAME_INCLUDES ~sod~) THEN BEGIN
 		PRINT @804  // ~Siege of Dragonspear detected.~ 
 		INCLUDE ~%MOD_FOLDER%/sod/xasod.tph~
+	END
+	ACTION_IF(GAME_IS ~bg2ee~) THEN BEGIN
+		PRINT @805  // ~Baldur's Gate II Enhanced Edition detected.~ 
+		INCLUDE ~%MOD_FOLDER%/bg2/xabg2.tph~
 	END
 END
 

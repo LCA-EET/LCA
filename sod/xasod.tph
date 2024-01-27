@@ -9,8 +9,8 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 	EXTEND_TOP ~bd4400.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd4400.baf~
 	EXTEND_TOP ~bd5300.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd5300.baf~
 	EXTEND_TOP ~bd6000.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd6000.baf~
-	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xasdbald.baf~
-	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xasdjrnl.baf~
+	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xabalsod.baf~
+	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xajrnsod.baf~
 //}
 
 //{ New Areas
