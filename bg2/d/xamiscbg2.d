@@ -144,6 +144,50 @@
 
 //}	
 	
+//{ ANOMENJ
+APPEND ~ANOMENJ~
+
+IF ~~ THEN BEGIN BCorwinAnomen1A
+		SAY @187 /* ~A mother's place is at home with her child, not on the battlefield.~ */
+	
+		= @188 /* ~You're a poor example of a parent.~ */
+		
+		IF ~~ THEN REPLY @189 /* ~You're out of line Anomen. Knock it off.~ */
+		EXTERN XACORWIB BCorwinAnomen1B
+		
+		IF ~~ THEN REPLY @190 /* ~(Remain silent)~ */
+		EXTERN XACORWIB BCorwinAnomen1B
+		
+		IF ~
+			!Global("XA_CorwinPromoted", "GLOBAL", 1)
+			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @191 /* ~You know little of what you speak. Captain Corwin is a fine mother.~ */
+		DO ~
+			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		~
+		EXTERN XACORWIB BCorwinAnomen1B
+		
+		IF ~
+			Global("XA_CorwinPromoted", "GLOBAL", 1)
+			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @192 /* ~You know little of what you speak. Major Corwin is a fine mother.~ */
+		DO ~
+			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		~
+		EXTERN XACORWIB BCorwinAnomen1B
+		
+		IF ~
+			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @228 /* ~You know little of what you speak. Schael is a fine mother.~ */
+		DO ~
+			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		~
+		EXTERN XACORWIB BCorwinAnomen1B
+		
+	END
+END
+//}
+	
 //{ HABREGA
 	APPEND HABREGA
 		IF ~
@@ -508,73 +552,6 @@ APPEND DORNJ
 END
 //}
 
-//{ VICONIJ
-APPEND VICONIJ
-	IF ~~ THEN BEGIN XA_AskDiviner
-		SAY @120 /* ~No. I already know what is in store for me, and there is nothing I can do to escape it.~*/
-		
-		IF ~~ THEN
-		DO ~
-			SetGlobal("XA_ViconiaAskedDiviner", "GLOBAL", 1)
-		~
-		EXTERN XADIVINE XA_AskAway
-	END
-END
-//}
-
-//{ ANOMENJ
-APPEND ANOMENJ
-	IF ~~ THEN BEGIN XA_AskDiviner
-		SAY @115 /* ~No. Let us not waste any of our time and money on this charlatan.~ */
-		
-		IF ~~ THEN
-		DO ~
-			SetGlobal("XA_AnomenAskedDiviner", "GLOBAL", 1)
-		~
-		EXTERN XADIVINE XA_AskAway
-	END
-	
-	IF ~~ THEN BEGIN BCorwinAnomen1A
-		SAY @187 /* ~A mother's place is at home with her child, not on the battlefield.~ */
-	
-		= @188 /* ~You're a poor example of a parent.~ */
-		
-		IF ~~ THEN REPLY @189 /* ~You're out of line Anomen. Knock it off.~ */
-		EXTERN XACORWIB BCorwinAnomen1B
-		
-		IF ~~ THEN REPLY @190 /* ~(Remain silent)~ */
-		EXTERN XACORWIB BCorwinAnomen1B
-		
-		IF ~
-			!Global("XA_CorwinPromoted", "GLOBAL", 1)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-		~ THEN REPLY @191 /* ~You know little of what you speak. Captain Corwin is a fine mother.~ */
-		DO ~
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		~
-		EXTERN XACORWIB BCorwinAnomen1B
-		
-		IF ~
-			Global("XA_CorwinPromoted", "GLOBAL", 1)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-		~ THEN REPLY @192 /* ~You know little of what you speak. Major Corwin is a fine mother.~ */
-		DO ~
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		~
-		EXTERN XACORWIB BCorwinAnomen1B
-		
-		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-		~ THEN REPLY @228 /* ~You know little of what you speak. Schael is a fine mother.~ */
-		DO ~
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		~
-		EXTERN XACORWIB BCorwinAnomen1B
-		
-	END
-END
-//}
-
 //{ JAHEIRAJ
 EXTEND_BOTTOM JAHEIRAJ 472
 	IF ~
@@ -588,17 +565,7 @@ EXTEND_BOTTOM JAHEIRAJ 472
 	EXTERN XACORWIJ XA_UDPHAE01_IJ_88
 END
 
-APPEND JAHEIRAJ
-	IF ~~ THEN BEGIN XA_AskDiviner
-		SAY @114 /* ~No. To know the future is unnatural and risks upsetting the balance.~ */
-		
-		IF ~~ THEN
-		DO ~
-			SetGlobal("XA_JaheiraAskedDiviner", "GLOBAL", 1)
-		~
-		EXTERN XADIVINE XA_AskAway
-	END
-END
+
 //}
 
 //{ IMOEN2J
@@ -614,17 +581,7 @@ EXTEND_BOTTOM IMOEN2J 23
 		EXTERN XACORWIJ XA_UDPHAE01_IJ_88
 	END
 
-APPEND IMOEN2J
-	IF ~~ THEN BEGIN XA_AskDiviner
-		SAY @104 /* ~Thanks, but no. Knowing my future won't change it, and it will take away all of the surprise.~ */
-		
-		IF ~~ THEN
-		DO ~
-			SetGlobal("XA_ImoenAskedDiviner", "GLOBAL", 1)
-		~
-		EXTERN XADIVINE XA_AskAway
-	END
-END
+
 //}
 
 //{ IMOEN2
@@ -1335,7 +1292,7 @@ EXTEND_BOTTOM NALIAJ 73
 	EXTERN XACORWIJ XA_NaliaShamMarriage_73 
 END
 
-APPEND NALIAJ
+APPEND ~NALIAJ~
 	IF ~~ THEN BEGIN XA_NaliaShamMarriage_70
 		SAY @335 /*~She brings up a fair point, but I assure you that I'll shield you from as much of that nonsense as possible.~*/
 		
@@ -1359,37 +1316,13 @@ APPEND NALIAJ
 		
 		COPY_TRANS NALIAJ 73
 	END
-	IF ~~ THEN BEGIN XA_RefuseMeatballs
-		SAY @176 /* ~I'll not take part in such decadance while there are poor people starving not 50 paces from this estate.~ */
-		
-		IF ~~ THEN EXTERN XACOOK XA_NaliaRefused
-	END
-	
 END
 //}
 
 //{ KELDORJ
 
 APPEND KELDORJ
-	IF ~
-		Global("XA_AvernusChat", "GLOBAL", 1)
-	~ THEN BEGIN XA_AvernusEntry
-		SAY @306 /*~In Torm's name... the Hells are far worse than I could've imagined!~ */
-		
-		IF ~~ THEN REPLY @303 /* ~We'll be out of here as soon as we find Caelar. Stay alert.~ */
-		DO ~
-			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
-		~
-		EXIT
-		
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~ THEN
-		DO ~
-			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
-		~
-		EXTERN XACORWIJ XA_AvernusEntry
-	END
+	
 
 	IF ~~ THEN BEGIN XA_CorwinStruckDelcia
 		SAY @12 /* ~That's... not how I would have handled the matter, Captain, but at least the Lady is out of harm's way.~ */
@@ -1818,16 +1751,7 @@ CHAIN
 		DO ~
 			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
 		~
-		
-		== XACAELAJ
-		IF ~
-			IsValidForPartyDialogue("XACAELAR")
-		~
-		@320 /* ~Surely, there must be some way for these priests to find redemption. Life, I say.~*/
-		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
-		~
-		
+				
 		== JANJ
 		IF ~
 			IsValidForPartyDialogue("Jan")
@@ -1836,16 +1760,7 @@ CHAIN
 		DO ~
 			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
 		~
-		
-		== SAREV25J
-		IF ~
-			IsValidForPartyDialogue("SAREVOK")
-		~
-		@292  /* ~Must you even ask? Death. The more excruciating, the better.~ */
-		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
-		~
-		
+	
 		== MINSCJ
 		IF ~
 			IsValidForPartyDialogue("MINSC")
@@ -1993,54 +1908,6 @@ CHAIN
 END
 ++@41 GOTO XA_OdrenDecision 
 
-CHAIN
-	IF ~~ THEN VALYGARJ XA_AskDiviner
-		@108 /* ~Yes. If I had children, would my family's curse be passed to them?~ */
-		
-		== XADIVINE
-		@105 /* ~You are not cursed. If you are referring to your blood's affinity for the magical arts, then yes, your children will possess the gift. That gift, that talent, can be nurtured or stifled. Support it and watch it blossom, or repress it and watch it wither and die.~ */
-		
-		== VALYGARJ
-		@106 /* ~So, what you are saying is that it's my choice.~*/
-		
-		== XADIVINE
-		@107 /* ~Yes.~*/
-END XADIVINE XA_AlreadyAsked
-
-CHAIN
-	IF ~~ THEN XACORWIJ XA_AskDiviner
-		@109 /* ~Yes. Will my daugher understand why I need to be away from home so much?~ */
-		
-		== XADIVINE
-		@110 /* ~Your daughter already understands the reasons for your sacrifice. She is wiser than you give her credit for. She is as proud of you as you are of her.~ */
-END XADIVINE XA_AlreadyAsked
-
-CHAIN
-	IF ~~ THEN AERIEJ XA_AskDiviner
-		@111 /* ~Yes - Is my m-mother still alive?~ */
-		
-		== XADIVINE
-		@112 /* ~Yes, and you will see her again.~ */
-		
-		== AERIEJ
-		@113 /* ~Oh, I hope so... thank you.~ */
-END XADIVINE XA_AlreadyAsked
-
-CHAIN
-	IF ~~ THEN NALIAJ XA_AskDiviner
-		@116 /* ~To this fraudster? No. How many poor people has this soothsayer swindled with his lies?~ */
-		DO ~
-			SetGlobal("XA_NaliaAskedDiviner", "GLOBAL", 1)
-		~
-		== XADIVINE
-		@117 /* ~The only fraudster here is you, young lady.~ */
-		
-		== NALIAJ
-		@118 /* ~I beg your pardon?~ */
-		
-		== XADIVINE
-		@119 /* ~Continue with your virtue signaling if it makes you feel better. Just know that it does nothing to improve the situation of those you claim to care about.~ */
-END XADIVINE XA_AlreadyAsked
 
 
 

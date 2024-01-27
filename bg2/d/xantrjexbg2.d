@@ -49,7 +49,7 @@
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
 		~
-		#259425 /*Does anyone know what the hells these two are talking about?~*/
+		@191 /*Does anyone know what the hells these two are talking about?~*/
 	END
 //}
 //{ YOSHJ
@@ -221,53 +221,7 @@
 	END
 //}
 
-//{ Saradush
-	INTERJECT_COPY_TRANS2 SARBUL05 2 XA_SARBUL05_2
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@9 /* ~No. I won't be a party to the murder of defenseless refugees. Goodbye, <CHARNAME>.~*/
-		DO ~
-			LeaveParty()
-			EscapeArea()
-		~
-	END
-//}
 
-//{ SAREV25A
-	INTERJECT_COPY_TRANS2 SAREV25A 52 XA_SAREV25A_52
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@10 /* ~You can't be serious. <CHARNAME>, he'll turn on us at the first opportunity.~ */
-	END
-
-	INTERJECT_COPY_TRANS2 SAREV25A 53 XA_SAREV25A_53
-		== XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@10 /* ~You can't be serious. <CHARNAME>, he'll turn on us at the first opportunity.~ */
-	END
-//}
-
-//{ BSAREV25
-	INTERJECT_COPY_TRANS2 BSAREV25 37 XA_BSAREV25_37
-		==XACORWIB
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@157 /* ~You chose poorly in your first life, then. Dopplegangers? Scum like Angelo, Zhalimar and the others? For all our sakes, let's hope that you choices were better this time around.~ */
-		
-		==BSAREV25
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-		~
-		@158 /* ~Those choices you so readily mock nearly led me to godhood.~ */
-	END
-//}
 
 //{ XA_PPIRENI1_22
 	INTERJECT_COPY_TRANS2 PPIRENI1 22 XA_PPIRENI1_22
@@ -305,7 +259,7 @@
 		~
 		@15 /* ~I don't like the sound of this, <CHARNAME>. We're being asked to venture into an old prison to restore the seals of, what, exactly? We have no idea what we're up against.~*/
 		
-		== XACORWIB
+		== KELDORJ
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
 			IsValidForPartyDialogue("KELDORN")
@@ -1518,15 +1472,7 @@
 		END
 	//}
 
-	//{ BJAN25
-		INTERJECT_COPY_TRANS2 BJAN25 10 XA_BJAN25_10
-			== XACORWIB
-			IF ~
-				IsValidForPartyDialogue("XACORWIN")
-			~
-			@161 /* ~Grow up, Jan. This isn't the time... it's never the time for your nonsense, infact!~ */
-		END
-	//}
+	
 
 //}
 
@@ -1692,29 +1638,9 @@
 	//}
 //}
 	
-//{ Minsc
-	//{ BMINSC25
-		INTERJECT_COPY_TRANS2 BMINSC25 37 XA_BMINSC25_37
-			== XACORWIB
-			IF ~
-				IsValidForPartyDialogue("XACORWIN")
-			~
-			@159 /* ~... More importantly, two cards short of a full deck...~ */
-		END
-	//}
-//}
 
-//{ Neera
-	//{ BNEERA25
-		INTERJECT_COPY_TRANS2 BNEERA25 14 XA_BNEERA_14
-			== XACORWIB
-			IF ~
-				IsValidForPartyDialogue("XACORWIN")
-			~
-			@160 /* ~I couldn't agree more. Let's get moving.~ */
-		END
-	//}
-//}
+
+
 
 //{ Nalia
 	//{ BNALIA

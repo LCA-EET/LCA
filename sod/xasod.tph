@@ -11,6 +11,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 	EXTEND_TOP ~bd6000.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd6000.baf~
 	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xabalsod.baf~
 	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xajrnsod.baf~
+	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/sod/baf/xap1d.baf~
 //}
 
 //{ New Areas

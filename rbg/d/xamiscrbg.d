@@ -1291,3 +1291,125 @@ APPEND OGRELEAD
 END
 //}
 
+
+//{ VICONIJ
+APPEND VICONIJ
+	IF ~~ THEN BEGIN XA_AskDiviner
+		SAY @120 /* ~No. I already know what is in store for me, and there is nothing I can do to escape it.~*/
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_ViconiaAskedDiviner", "GLOBAL", 1)
+		~
+		EXTERN XADIVINE XA_AskAway
+	END
+END
+//}
+
+//{ ANOMENJ
+APPEND ANOMENJ
+	IF ~~ THEN BEGIN XA_AskDiviner
+		SAY @115 /* ~No. Let us not waste any of our time and money on this charlatan.~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_AnomenAskedDiviner", "GLOBAL", 1)
+		~
+		EXTERN XADIVINE XA_AskAway
+	END
+	
+	
+END
+//}
+
+//{ JAHEIRA
+APPEND JAHEIRAJ
+	IF ~~ THEN BEGIN XA_AskDiviner
+		SAY @114 /* ~No. To know the future is unnatural and risks upsetting the balance.~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_JaheiraAskedDiviner", "GLOBAL", 1)
+		~
+		EXTERN XADIVINE XA_AskAway
+	END
+END
+//}
+
+//{ IMOEN2J
+APPEND IMOEN2J
+	IF ~~ THEN BEGIN XA_AskDiviner
+		SAY @104 /* ~Thanks, but no. Knowing my future won't change it, and it will take away all of the surprise.~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_ImoenAskedDiviner", "GLOBAL", 1)
+		~
+		EXTERN XADIVINE XA_AskAway
+	END
+END
+//}
+
+//{ NALIAJ
+
+APPEND NALIAJ
+	
+	IF ~~ THEN BEGIN XA_RefuseMeatballs
+		SAY @176 /* ~I'll not take part in such decadance while there are poor people starving not 50 paces from this estate.~ */
+		
+		IF ~~ THEN EXTERN XACOOK XA_NaliaRefused
+	END
+	
+END
+//}
+
+//{ Chains
+CHAIN
+	IF ~~ THEN VALYGARJ XA_AskDiviner
+		@108 /* ~Yes. If I had children, would my family's curse be passed to them?~ */
+		
+		== XADIVINE
+		@105 /* ~You are not cursed. If you are referring to your blood's affinity for the magical arts, then yes, your children will possess the gift. That gift, that talent, can be nurtured or stifled. Support it and watch it blossom, or repress it and watch it wither and die.~ */
+		
+		== VALYGARJ
+		@106 /* ~So, what you are saying is that it's my choice.~*/
+		
+		== XADIVINE
+		@107 /* ~Yes.~*/
+END XADIVINE XA_AlreadyAsked
+
+CHAIN
+	IF ~~ THEN XACORWIJ XA_AskDiviner
+		@109 /* ~Yes. Will my daugher understand why I need to be away from home so much?~ */
+		
+		== XADIVINE
+		@110 /* ~Your daughter already understands the reasons for your sacrifice. She is wiser than you give her credit for. She is as proud of you as you are of her.~ */
+END XADIVINE XA_AlreadyAsked
+
+CHAIN
+	IF ~~ THEN AERIEJ XA_AskDiviner
+		@111 /* ~Yes - Is my m-mother still alive?~ */
+		
+		== XADIVINE
+		@112 /* ~Yes, and you will see her again.~ */
+		
+		== AERIEJ
+		@113 /* ~Oh, I hope so... thank you.~ */
+END XADIVINE XA_AlreadyAsked
+
+CHAIN
+	IF ~~ THEN NALIAJ XA_AskDiviner
+		@116 /* ~To this fraudster? No. How many poor people has this soothsayer swindled with his lies?~ */
+		DO ~
+			SetGlobal("XA_NaliaAskedDiviner", "GLOBAL", 1)
+		~
+		== XADIVINE
+		@117 /* ~The only fraudster here is you, young lady.~ */
+		
+		== NALIAJ
+		@118 /* ~I beg your pardon?~ */
+		
+		== XADIVINE
+		@119 /* ~Continue with your virtue signaling if it makes you feel better. Just know that it does nothing to improve the situation of those you claim to care about.~ */
+END XADIVINE XA_AlreadyAsked
+//}

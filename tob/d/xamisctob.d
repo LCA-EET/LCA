@@ -1524,3 +1524,333 @@ EXTEND_BOTTOM SAREV25A 48
 	FLAGS 128 GOTO 49
 END
 //}
+
+//{ KELDORJ
+IF ~
+		Global("XA_AvernusChat", "GLOBAL", 1)
+	~ THEN BEGIN XA_AvernusEntry
+		SAY @306 /*~In Torm's name... the Hells are far worse than I could've imagined!~ */
+		
+		IF ~~ THEN REPLY @303 /* ~We'll be out of here as soon as we find Caelar. Stay alert.~ */
+		DO ~
+			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
+		~
+		EXIT
+		
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~ THEN
+		DO ~
+			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
+		~
+		EXTERN XACORWIJ XA_AvernusEntry
+	END
+//}
+//{ GORODR1
+EXTEND_BOTTOM GORODR1 17 //OK
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+	~
+	THEN EXTERN XACORWIJ XA_GORODR1_17_18
+END
+
+EXTEND_BOTTOM GORODR1 18 //OK
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+	~
+	THEN EXTERN XACORWIJ XA_GORODR1_17_18
+END
+
+EXTEND_BOTTOM GORODR1 34 //OK
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+	~
+	THEN EXTERN XACORWIJ XA_GORODR1_34_44
+END
+
+EXTEND_TOP GORODR1 39 //OK	
+	IF ~
+		//GlobalLT("Chapter","GLOBAL",20)
+		OR(20)
+			IsValidForPartyDialogue("XACORWIN")
+			IsValidForPartyDialogue("XACAELAR")
+			IsValidForPartyDialogue("Aerie")
+			IsValidForPartyDialogue("Anomen")
+			IsValidForPartyDialogue("Imoen2")
+			IsValidForPartyDialogue("Korgan")
+			IsValidForPartyDialogue("Keldorn")
+			IsValidForPartyDialogue("Nalia")
+			IsValidForPartyDialogue("Minsc")
+			IsValidForPartyDialogue("Jaheira")
+			IsValidForPartyDialogue("Valygar")
+			IsValidForPartyDialogue("Mazzy")
+			IsValidForPartyDialogue("Viconia")
+			IsValidForPartyDialogue("Dorn")
+			IsValidForPartyDialogue("Cernd")
+			IsValidForPartyDialogue("Edwin")
+			IsValidForPartyDialogue("Sarevok")
+			IsValidForPartyDialogue("Jan")
+			IsValidForPartyDialogue("Rasaad")
+			IsValidForPartyDialogue("Neera")
+	~
+	THEN REPLY @22 /* ~What say you, my loyal comrades? They wronged you as much as I. Should they be allowed to live, or must the treacherous cowards taste steel?~ */
+	DO ~
+		SetGlobal("XA_OdrenShouldDie", "GLOBAL", 100)
+	~
+	
+	EXTERN GORODR1 XA_OdrenJudgeSOA
+END
+
+EXTEND_BOTTOM GORODR1 44 //OK
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+	~
+	THEN EXTERN XACORWIJ XA_GORODR1_34_44
+END
+
+
+APPEND GORODR1
+	IF ~~ THEN BEGIN XA_OdrenDecision 
+		SAY @159 /* ~Please, I ask you once again to forgive us, <CHARNAME>.~ */
+		= @160  /* ~What is your decision?~ */
+		IF ~
+			GlobalGT("XA_OdrenShouldDie", "GLOBAL", 100)
+		~ THEN REPLY @161 /* ~Prepare to die, you treacherous cowards!~  */
+		GOTO 45
+		
+		IF ~
+			GlobalLT("XA_OdrenShouldDie", "GLOBAL", 100)
+		~ THEN REPLY @162 /* ~We've decided that you and your treacherous comrades will live. Get out of my sight!~  */
+		GOTO 55
+		
+		IF ~
+			GlobalLT("XA_OdrenShouldDie", "GLOBAL", 100)
+		~ THEN REPLY @163 /* ~We've decided that you and your treacherous comrades will live. Give us our reward, and get out of my sight!~  */
+		DO ~
+			GiveGoldForce(10000)
+			AddXP2DA("PLOT01C")
+		~ 
+		GOTO 57
+		
+		IF ~
+			Global("XA_OdrenShouldDie", "GLOBAL", 100)
+		~
+		THEN GOTO XA_OdrenDecisionDecidingVote
+	END
+	
+	IF ~~ THEN BEGIN XA_OdrenDecisionDecidingVote
+		SAY @164 /* (Your group is evenly split - half believe the priests should be executed, and the other half want to show them mercy. You must cast the deciding vote.)~ */
+		
+		IF ~~ THEN REPLY @165 /* We've decided that you and your treacherous comrades will live. Get out of my sight!~  */
+		GOTO 55
+		
+		IF ~~ THEN REPLY @166 /* We've decided that you and your treacherous comrades will live. Give us our reward, and get out of my sight!*/
+		DO ~
+			GiveGoldForce(10000)
+			AddXP2DA("PLOT01C")
+		~ 
+		GOTO 57
+		
+		IF ~~ THEN REPLY @161 /* ~Prepare to die, you treacherous cowards!~ */
+		GOTO 45
+		
+	END
+END
+//}
+
+
+CHAIN 
+	IF ~~ THEN GORODR1 XA_OdrenJudgeSOA
+		@135 /* ~(Odren and his companions look at your party with hope in their eyes.)~ */
+		
+		== XACOR25J
+		IF ~ 
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@136 /* ~They deserve to die. Not just for their treachery, but also for their cowardice. There's been so much death already, though... If you decide to spare them, I will understand.~ */
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
+		~
+		
+		== RASAA25J
+		IF ~
+			IsValidForPartyDialogue("RASAAD")
+		~
+		@137  /* ~The willpower of even the most resolute can falter from time to time. Let us not be so quick to judge, lest we be judged ourselves. Let them live, <CHARNAME>.~*/
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+		~
+		
+		== XACAELAJ
+		IF ~
+			IsValidForPartyDialogue("XACAELAR")
+		~
+		@138 /* ~Surely, there must be some way for these priests to find redemption. Life, I say.~*/
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+		~
+		
+		== JAN25J
+		IF ~
+			IsValidForPartyDialogue("Jan")
+		~
+		@139 /* ~I'll not have their blood on my hands; I'd need to wash them before picking my turnips. Let them live, <CHARNAME>.*/
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+		~
+		
+		== SAREV25J
+		IF ~
+			IsValidForPartyDialogue("SAREVOK")
+		~
+		@140  /* ~Must you even ask? Death. The more excruciating, the better.~ */
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
+		~
+		
+		== MINSC25J
+		IF ~
+			IsValidForPartyDialogue("MINSC")
+		~
+		@141 /* ~(Minsc is engaged in an animated discussion with Boo about the circumstances of Odren's betrayal. You decide to treat this as a vote for life, not just because you don't have the time for this nonsense, but because Minsc is completely insane. It would be wrong, after all, to have a person's life be decided by an abject fool.)~ */
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+		~
+		
+		== KORGA25J
+		IF ~
+			IsValidForPartyDialogue("KORGAN")
+		~
+		@142 /* ~Death, I say. Me axe be waitin' to taste their squirrely innards.~ */
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
+		~
+		
+		== AERIE25J
+		IF ~
+			IsValidForPartyDialogue("Aerie")
+		~
+		@143 /* ~I ... I know what they did was wrong... maybe they can learn from this and do some good? They can at least tell o-others not to judge you just because you are a Bhaalspawn. I think we should let them live.~ */
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+		~
+		
+		== JAHEI25J
+		IF ~
+			IsValidForPartyDialogue("Jaheira")
+		~
+		@144 /* ~A great evil has been purged from this world. To restore balance, these warriors must be purged as well.~ */
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
+		~
+		
+		== IMOEN25J
+		IF ~
+			IsValidForPartyDialogue("Imoen2")
+		~
+		@145 /* ~We've experienced enough bloodshed for one lifetime. Let them go, <CHARNAME>.~*/
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+		~
+		
+		== NEERA25J
+		IF ~
+			IsValidForPartyDialog("Neera")
+		~
+		@147  /* ~You're really gonna make me choose? Well... let's see...~*/
+		= @146 /* ~They did lie to us, and they knowingly sent us to our doom. On the other hand, I'm REALLY hungry. Let's just make our way to the nearest taven and leave them be.~ */
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+		~
+		
+		== VALYG25J
+		IF ~
+			IsValidForPartyDialogue("Valygar")
+		~
+		@148 /* ~These treacherous dogs deserve death. They've shown me nothing to indicate otherwise.~ */
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
+		~
+		
+		== HAERD25J
+		IF ~
+			IsValidForPartyDialogue("HaerDalis")
+		~
+		@149 /* ~Life, I say. Think of the songs the bards will sing! <CHARNAME>, the mighty! <CHARNAME>, the merciful!~   */
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+		~
+		
+		== DORN25J
+		IF ~
+			IsValidForPartyDialogue("Dorn")
+		~
+		@150 /* ~Few things please me more than to shed the blood of sanctimonious hypocrites. Death to them all!~ */
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
+		~
+			
+		== ANOME25J
+		IF ~
+			IsValidForPartyDialogue("Anomen")
+		~
+		@151 /* ~They have betrayed not only us, but their god, and everything they believed in. Let us end their misery and put them to the sword.~ */
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
+		~
+		
+		== MAZZY25J
+		IF ~
+			IsValidForPartyDialogue("Mazzy")
+		~
+		@152 /* ~We must choose life. Yes, they've wronged us, but what's done is done. What will killing these priests accomplish?~  */
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+		~
+		
+		== VICON25J
+		IF ~
+			IsValidForPartyDialogue("Viconia")
+		~
+		@153 /* ~Helmites hunt my kind for sport on the surface. I welcome the opportunity to help even the score.~  */
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+		~
+		
+		== NALIA25J
+		IF ~
+			IsValidForPartyDialogue("Nalia")
+		~
+		@154 /* ~We must choose life. Yes, they've wronged us, but what's done is done. What will killing these priests accomplish?~  */
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+		~
+		
+		== CERND25J
+		IF ~
+			IsValidForPartyDialogue("CERND")
+		~
+		@155 /* ~Their foolishness could have easily led to the world being utterly ravaged at the hands of Demogorgon. As much as it pains me to say it, death is the only fitting punishment for these scoundrels.~  */
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
+		~
+		
+		== KELDO25J
+		IF ~
+			IsValidForPartyDialogue("Keldorn")
+		~
+		@156 /* ~These false priests deserve death, yet... part of me wishes that they are one day able to redeem themselves in the eyes of Helm, and they cannot do that if they are dead. I will support whatever you decide.~ */
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+		~
+		
+		== EDWIN25J
+		IF ~
+			IsValidForPartyDialogue("Edwin")
+		~
+		@157 /* ~They must be punished! (Yes, severely!) Die, die, die, die, DIE!~ */
+		DO ~
+			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
+		~
+END
+++@158 GOTO XA_OdrenDecision 

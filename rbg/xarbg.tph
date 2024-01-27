@@ -1,0 +1,172 @@
+PRINT @3000  /* ~Processing BG1 changes...~ */
+
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/d~
+
+//{ Script Extensions
+	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~
+//}
+
+COPY ~%MOD_FOLDER%/bg2/cre/xacrug01.cre~ ~override~
+	SAY NAME1 @3040
+	SAY NAME2 @3040
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacrug02.cre~ ~override~
+	SAY NAME1 @3040
+	SAY NAME2 @3040
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacrug03.cre~ ~override~
+	SAY NAME1 @3040
+	SAY NAME2 @3040
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacrug04.cre~ ~override~
+	SAY NAME1 @3040
+	SAY NAME2 @3040
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacrug05.cre~ ~override~
+	SAY NAME1 @3040
+	SAY NAME2 @3040
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacrug06.cre~ ~override~
+	SAY NAME1 @3040
+	SAY NAME2 @3040
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacrug07.cre~ ~override~
+	SAY NAME1 @3040
+	SAY NAME2 @3040
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacrug08.cre~ ~override~
+	SAY NAME1 @3040
+	SAY NAME2 @3040
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacrug09.cre~ ~override~
+	SAY NAME1 @3040
+	SAY NAME2 @3040
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacrus01.cre~ ~override~
+	SAY NAME1 @3041
+	SAY NAME2 @3041
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacrus02.cre~ ~override~
+	SAY NAME1 @3041
+	SAY NAME2 @3041
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacrus03.cre~ ~override~
+	SAY NAME1 @3041
+	SAY NAME2 @3041
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacrus04.cre~ ~override~
+	SAY NAME1 @3041
+	SAY NAME2 @3041
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacrus05.cre~ ~override~
+	SAY NAME1 @3041
+	SAY NAME2 @3041
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacrus06.cre~ ~override~
+	SAY NAME1 @3041
+	SAY NAME2 @3041
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacrus07.cre~ ~override~
+	SAY NAME1 @3041
+	SAY NAME2 @3041
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacrus08.cre~ ~override~
+	SAY NAME1 @3041
+	SAY NAME2 @3041
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacrus09.cre~ ~override~
+	SAY NAME1 @3041
+	SAY NAME2 @3041
+		
+	COPY ~%MOD_FOLDER%/bg2/cre/xacurato.cre~ ~override~
+	SAY NAME1 @3019
+	SAY NAME2 @3019
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacoal01.cre~ ~override~
+	SAY NAME1 @3042
+	SAY NAME2 @3042
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacoal02.cre~ ~override~
+	SAY NAME1 @3042
+	SAY NAME2 @3042
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacoal03.cre~ ~override~
+	SAY NAME1 @3042
+	SAY NAME2 @3042
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacoal04.cre~ ~override~
+	SAY NAME1 @3042
+	SAY NAME2 @3042
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacoal05.cre~ ~override~
+	SAY NAME1 @3042
+	SAY NAME2 @3042
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacoal06.cre~ ~override~
+	SAY NAME1 @3042
+	SAY NAME2 @3042
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacoal07.cre~ ~override~
+	SAY NAME1 @3042
+	SAY NAME2 @3042
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacoal08.cre~ ~override~
+	SAY NAME1 @3042
+	SAY NAME2 @3042
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacoal09.cre~ ~override~
+	SAY NAME1 @3042
+	SAY NAME2 @3042
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacomm.cre~ ~override~
+	SAY NAME1 @3044
+	SAY NAME2 @3044
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacomm1.cre~ ~override~
+	SAY NAME1 @3044
+	SAY NAME2 @3044
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacomw.cre~ ~override~
+	SAY NAME1 @3044
+	SAY NAME2 @3044
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacomw1.cre~ ~override~
+	SAY NAME1 @3044
+	SAY NAME2 @3044
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacook.cre~ ~override~
+	SAY NAME1 @3045
+	SAY NAME2 @3045
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xacell.cre~ ~override~
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xachick.cre~ ~override~
+	SAY NAME1 @3022
+	SAY NAME2 @3022
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xachwrai.cre~ ~override~
+	SAY NAME1 @3067
+	SAY NAME2 @3067
+	
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xaffval2.cre~ ~override~
+	SAY NAME1 @3058
+	SAY NAME2 @3058
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xaffval3.cre~ ~override~
+	SAY NAME1 @3058
+	SAY NAME2 @3058
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xaffvali.cre~ ~override~
+	SAY NAME1 @3058
+	SAY NAME2 @3058
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xaglint.cre~ ~override~
+	SAY NAME1 @3061
+	SAY NAME2 @3061
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xaglint2.cre~ ~override~
+	SAY NAME1 @3061
+	SAY NAME2 @3061
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xahowspy.cre~ ~override~

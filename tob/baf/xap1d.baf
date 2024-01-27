@@ -1,0 +1,44 @@
+//{ Caelar Aerie Scar Banter
+IF
+	IsValidForPartyDialogue("XACAELAR")
+	IsValidForPartyDialogue("Aerie")
+	GlobalLT("XA_CaelarAerieScars", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 1~)
+		SetGlobal("XA_CaelarAerieScars", "GLOBAL", 1)
+		ActionOverride("XACAELAR", Interact("Aerie"))
+END
+//}
+
+//{ Caelar Rescue Quest Timer Init
+IF
+	Global("XA_KanaDreamTimerSet", "GLOBAL",1)
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END
+
+IF
+	GlobalTimerExpired("XA_KanaDreamTimer", "GLOBAL")
+	GlobalLT("XA_KanaDream", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 3~)
+		SetGlobal("XA_KanaDream", "GLOBAL", 1)
+		SetGlobalTimer("XA_KanaDreamTimer", "GLOBAL", EIGHT_HOURS)
+		StartCutSceneMode()
+		StartCutScene("XADREAM")
+END
+
+IF
+	GlobalTimerExpired("XA_KanaDreamTimer", "GLOBAL")
+	Global("XA_KanaDream", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 4~)
+		SetGlobal("XA_KanaDream", "GLOBAL", 3)
+		StartCutSceneMode()
+		StartCutScene("XADREAM")
+END
+//}
