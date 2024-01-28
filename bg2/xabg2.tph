@@ -10,69 +10,21 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/bg2/baf/xap1d.baf~
 //}
 
-//{ 2da
-	COPY ~%MOD_FOLDER%/bg2/2da/xabad1.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3013)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3012)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3012)
-	
-	COPY ~%MOD_FOLDER%/bg2/2da/xabad2.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3014)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3012)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3012)
-	
-	COPY ~%MOD_FOLDER%/bg2/2da/xabad3.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3015)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3012)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3012)
-	
-	COPY ~%MOD_FOLDER%/bg2/2da/xabg.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3008)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3006)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3006)
-	
-	COPY ~%MOD_FOLDER%/bg2/2da/xabgrom.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3007)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3006)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3006)
-	
-	COPY ~%MOD_FOLDER%/bg2/2da/xadinner.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3009)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3010)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3010)
-	
-	COPY ~%MOD_FOLDER%/bg2/2da/xadinrom.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3011)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3010)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3010)
-	
-	COPY ~%MOD_FOLDER%/bg2/2da/xasara1.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3001)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3002)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3002)
-	
-	COPY ~%MOD_FOLDER%/bg2/2da/xasara2.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3003)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3002)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3002)
-	
-	COPY ~%MOD_FOLDER%/bg2/2da/xasara3.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3004)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3002)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3002)
-	
-	COPY ~%MOD_FOLDER%/bg2/2da/xasara4.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3005)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3002)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3002)
-//}
 //{ are
-	COPY ~%MOD_FOLDER%/bg2/are/xaacs02.are~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/are/xaacs04.are~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/are/xaacs05b.are~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/are/xacs01.are~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/are/xacs03.are~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/tis/xacs03.tis~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wed/xacs03.wed~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xacs03ht.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xacs03lm.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xacs03sr.bmp~ ~override~
+	
 	COPY ~%MOD_FOLDER%/bg2/are/xacs05.are~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/tis/xacs05.tis~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wed/xacs05.wed~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xacs05ht.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xacs05lm.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xacs05sr.bmp~ ~override~
+	
 	COPY ~%MOD_FOLDER%/bg2/are/xacs06.are~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/are/xacs12.are~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/are/xacs13.are~ ~override~
@@ -253,10 +205,3 @@ You sense there is little Schael Corwin would not do for her family or for the F
 //}
 
 
-//{ tis
-	COPY ~%MOD_FOLDER%/bg2/tis/xacs12.tis~ ~override~
-//}
-
-//{ wed
-	COPY ~%MOD_FOLDER%/bg2/wed/xacs12.wed~ ~override~
-//}
