@@ -75,10 +75,18 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/common/d~
 	COPY ~%MOD_FOLDER%/common/d/xaadbg.d~ ~override~
 //}
 
-//{ LCA Corwin Portrait
+//{ Corwin Portrait
 	COPY ~%MOD_FOLDER%/common/bmp/xacorwil.bmp~ ~override~
 	COPY ~%MOD_FOLDER%/common/bmp/xacorwim.bmp~ ~override~
 	COPY ~%MOD_FOLDER%/common/bmp/xacorwis.bmp~ ~override~
+	
+	COPY ~%MOD_FOLDER%/common/bmp/xaschael.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/common/bmp/xaschaem.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/common/bmp/xaschaes.bmp~ ~override~
+//}
+
+//{ Narzugon
+	COPY ~%MOD_FOLDER%/common/bmp/xanarzus.bmp~ ~override~
 //}
 
 //{ Corwin's Tutelage
