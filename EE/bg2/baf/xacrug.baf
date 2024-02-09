@@ -1,0 +1,224 @@
+IF
+	GlobalLT("XA_Hidden", "LOCALS", 1)
+	GlobalLT("XA_CaelarRescue", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ApplySpellRES("bdhide", Myself)
+		SetGlobal("XA_Hidden", "LOCALS", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	Global("XA_Hidden", "LOCALS", 1)
+	Global("XA_CaelarRescue", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ApplySpellRES("bdunhide", Myself)
+		SetGlobal("XA_Hidden", "LOCALS", 2)
+		Continue()
+END
+
+IF
+	Name("XAASHASP", Myself)
+	Global("XA_Hidden", "LOCALS", 1)
+	Global("XA_CaelarStayedInAvernus","GLOBAL",1)
+	See(Player1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ApplySpellRES("bdunhide", Myself)
+		SetGlobal("XA_Hidden", "LOCALS", 2)
+		SetGlobal("XA_AshatielSpirit", "GLOBAL", 1)
+		Wait(1)
+		StartDialog("XAASHASP", Player1)
+		Continue()
+END
+
+IF
+	Name("XAASHASP", Myself)
+	Global("XA_OathRelease", "GLOBAL", 1)
+	GlobalLT("XA_CaelarSuicide", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_DestroySelf", "LOCALS", 2)
+		Wait(10)
+		DisplayStringHead(Myself,@11)
+		Wait(3)
+		AddexperienceParty(15000)
+		SetGlobal("XA_CrusadersGone", "GLOBAL", 1)
+		DestroySelf()
+		SetInterrupt(TRUE)
+END
+
+IF
+	Name("XAASHASP", Myself)
+	Global("XA_OathRelease", "GLOBAL", 1)
+	GlobalGT("XA_CaelarSuicide", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_DestroySelf", "LOCALS", 2)
+		Wait(10)
+		DisplayStringHead(Myself,@12)
+		Wait(3)
+		AddexperienceParty(15000)
+		SetGlobal("XA_CrusadersGone", "GLOBAL", 1)
+		DestroySelf()
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("XA_OathRelease", "GLOBAL", 1)
+	GlobalLT("XA_DestroySelf", "LOCALS", 1)
+	!Name("XAASHASP", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		Wait(1)
+		SetGlobal("XA_DestroySelf", "LOCALS", 1)
+		SetInterrupt(TRUE)
+		Continue()
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		Wait(2)
+		SetGlobal("XA_DestroySelf", "LOCALS", 1)
+		SetInterrupt(TRUE)
+		Continue()
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		Wait(3)
+		SetGlobal("XA_DestroySelf", "LOCALS", 1)
+		SetInterrupt(TRUE)
+		Continue()
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		Wait(4)
+		SetGlobal("XA_DestroySelf", "LOCALS", 1)
+		SetInterrupt(TRUE)
+		Continue()
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		Wait(5)
+		SetGlobal("XA_DestroySelf", "LOCALS", 1)
+		SetInterrupt(TRUE)
+		Continue()
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		Wait(6)
+		SetGlobal("XA_DestroySelf", "LOCALS", 1)
+		SetInterrupt(TRUE)
+		Continue()
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		Wait(7)
+		SetGlobal("XA_DestroySelf", "LOCALS", 1)
+		SetInterrupt(TRUE)
+		Continue()
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		Wait(8)
+		SetGlobal("XA_DestroySelf", "LOCALS", 1)
+		SetInterrupt(TRUE)
+		Continue()
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		Wait(9)
+		SetGlobal("XA_DestroySelf", "LOCALS", 1)
+		SetInterrupt(TRUE)
+		Continue()
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		Wait(10)
+		SetGlobal("XA_DestroySelf", "LOCALS", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	Global("XA_DestroySelf", "LOCALS", 1)
+	!Name("XAASHASP", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ForceSpell(Myself, FLASHY_2)
+		DisplayStringHead(Myself,@0)
+		Wait(1)
+		AddexperienceParty(1500)
+		DestroySelf()
+		SetInterrupt(TRUE)
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ForceSpell(Myself, FLASHY_2)
+		DisplayStringHead(Myself,@1)
+		Wait(1)
+		AddexperienceParty(1500)
+		DestroySelf()
+		SetInterrupt(TRUE)
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ForceSpell(Myself, FLASHY_2)
+		DisplayStringHead(Myself,@2)
+		Wait(1)
+		AddexperienceParty(1500)
+		DestroySelf()
+		SetInterrupt(TRUE)
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ForceSpell(Myself, FLASHY_2)
+		DisplayStringHead(Myself,@3)
+		Wait(1)
+		AddexperienceParty(1500)
+		DestroySelf()
+		SetInterrupt(TRUE)
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ForceSpell(Myself, FLASHY_2)
+		DisplayStringHead(Myself,@4)
+		Wait(1)
+		AddexperienceParty(1500)
+		DestroySelf()
+		SetInterrupt(TRUE)
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ForceSpell(Myself, FLASHY_2)
+		DisplayStringHead(Myself,@5)
+		Wait(1)
+		AddexperienceParty(1500)
+		DestroySelf()
+		SetInterrupt(TRUE)
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ForceSpell(Myself, FLASHY_2)
+		DisplayStringHead(Myself,@6)
+		Wait(1)
+		AddexperienceParty(1500)
+		DestroySelf()
+		SetInterrupt(TRUE)
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ForceSpell(Myself, FLASHY_2)
+		DisplayStringHead(Myself,@7)
+		Wait(1)
+		AddexperienceParty(1500)
+		DestroySelf()
+		SetInterrupt(TRUE)
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ForceSpell(Myself, FLASHY_2)
+		DisplayStringHead(Myself,@8)
+		Wait(1)
+		AddexperienceParty(1500)
+		DestroySelf()
+		SetInterrupt(TRUE)
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ForceSpell(Myself, FLASHY_2)
+		DisplayStringHead(Myself,@9)
+		Wait(1)
+		AddexperienceParty(1500)
+		DestroySelf()
+		SetInterrupt(TRUE)
+END

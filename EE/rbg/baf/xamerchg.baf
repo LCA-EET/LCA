@@ -1,0 +1,8 @@
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_DialogSwap", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_DialogSwap", "LOCALS", 1)
+		SetDialog("XAMERCHG")
+END

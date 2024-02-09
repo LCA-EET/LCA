@@ -1,0 +1,14 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		//Dismember
+		CutSceneId(Player1)
+		DisplayStringHead("XABENO2",@0)
+		Wait(2)
+		SetSequence(SEQ_ATTACK)
+		GiveItemCreate("XABENOHD", Player1,0,0,0)
+		DisplayStringHead(Myself, @1)
+		Wait(5)
+		StartCutscene("XAUCEND1")
+END

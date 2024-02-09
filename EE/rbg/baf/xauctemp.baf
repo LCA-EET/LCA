@@ -1,0 +1,49 @@
+IF
+	GlobalLT("XA_IllaseraDead", "GLOBAL", 1)
+	Dead("illasera")
+	OR(2)
+		Dead("ZILFGT01")
+		!InMyArea("ZILFGT01")
+	OR(2)
+		Dead("ZILMAG01")
+		!InMyArea("ZILMAG01")
+	OR(2)
+		Dead("ZILFGT02")
+		!InMyArea("ZILFGT02")
+	OR(2)
+		Dead("ZILARC01")
+		!InMyArea("ZILARC01")
+	IsValidForPartyDialogue("XACORWIN")
+	IsValidForPartyDialogue(Player1)
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+		CreateCreature("XABENO2", [760.630], SE)
+		SetGlobal("XA_IllaseraDead", "GLOBAL", 1)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+END
+
+IF
+	GlobalLT("XA_IllaseraDead", "GLOBAL", 1)
+	Dead("illasera")
+	OR(2)
+		Dead("ZILFGT01")
+		!InMyArea("ZILFGT01")
+	OR(2)
+		Dead("ZILMAG01")
+		!InMyArea("ZILMAG01")
+	OR(2)
+		Dead("ZILFGT02")
+		!InMyArea("ZILFGT02")
+	OR(2)
+		Dead("ZILARC01")
+		!InMyArea("ZILARC01")
+	Dead("XACORWIN")
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+		CreateCreature("XABENO2", [760.630], SE)
+		SetGlobal("XA_IllaseraDead", "GLOBAL", 1)
+		ActionOverride(Player1, StartDialog("Player1", Player1))
+END
+

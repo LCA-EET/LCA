@@ -1,0 +1,70 @@
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_NebSpawn225", "MYAREA", 1)
+	OR(2)
+		!Dead("Neb")
+		Global("XA_BG0225Test", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_NebSpawn225", "MYAREA", 1)
+		CreateCreature("XANEB", [2300.2085], N)
+		Continue()
+END
+
+IF
+	Global("ChildrenCalled","MYAREA",1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CreateCreature("XACHWRAI",[2220.1870],S)
+		CreateCreature("XACHWRAI",[2215.1865],S)
+		CreateCreature("XACHWRAI",[2225.1865],S)
+		CreateCreature("XACHWRAI",[2210.1860],S)
+		CreateCreature("XACHWRAI",[2230.1860],S)
+
+		CreateCreature("XACHWRAI",[2110.1950],SE)
+		CreateCreature("XACHWRAI",[2105.1945],SE)
+		CreateCreature("XACHWRAI",[2115.1945],SE)
+		CreateCreature("XACHWRAI",[2100.1940],SE)
+		CreateCreature("XACHWRAI",[2120.1940],SE)
+		
+		CreateCreature("XACHWRAI",[2360.1895],SW)
+		CreateCreature("XACHWRAI",[2365.1890],SW)
+		CreateCreature("XACHWRAI",[2355.1890],SW)
+		CreateCreature("XACHWRAI",[2350.1885],SW)
+		CreateCreature("XACHWRAI",[2370.1885],SW)
+		
+		CreateCreature("XACHWRAI",[2515.1955],W)
+		CreateCreature("XACHWRAI",[2510.1950],W)
+		CreateCreature("XACHWRAI",[2520.1950],W)
+		CreateCreature("XACHWRAI",[2525.1945],W)
+		CreateCreature("XACHWRAI",[2505.1945],W)
+		
+		CreateCreature("XACHWRAI",[2115.2080],E)
+		CreateCreature("XACHWRAI",[2110.2075],E)
+		CreateCreature("XACHWRAI",[2120.2075],E)
+		CreateCreature("XACHWRAI",[2105.2070],E)
+		CreateCreature("XACHWRAI",[2125.2070],E)
+		
+		CreateCreature("XACHWRAI",[2120.2150],NE)
+		CreateCreature("XACHWRAI",[2115.2145],NE)
+		CreateCreature("XACHWRAI",[2125.2145],NE)
+		CreateCreature("XACHWRAI",[2110.2140],NE)
+		
+		CreateCreature("XACHWRAI",[2540.2045],NW)
+		CreateCreature("XACHWRAI",[2535.2040],NW)
+		CreateCreature("XACHWRAI",[2545.2040],NW)
+		CreateCreature("XACHWRAI",[2530.2035],NW)
+		SetGlobal("ChildrenCalled","MYAREA",2)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("XANEB")
+THEN
+	RESPONSE #100
+		ActionOverride("XANEB", DestroySelf())
+		Continue()
+END

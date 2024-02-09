@@ -1,0 +1,7 @@
+IF 
+	AreaCheck("XAHOME")
+	Global("XA_CorwinFamilyTalk", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		RandomWalk()
+END

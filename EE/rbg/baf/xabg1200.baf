@@ -1,0 +1,86 @@
+IF 
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_WV_TriggerDeactivation", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_WV_TriggerDeactivation", "GLOBAL", 1)
+		TriggerActivation("XA0616",FALSE)
+		TriggerActivation("XA0616b",FALSE)
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_IT_TriggerDeactivation", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_IT_TriggerDeactivation", "GLOBAL", 1)
+		TriggerActivation("Info0616",FALSE)
+		TriggerActivation("Info0616b",FALSE)
+		TriggerActivation("XA0616",TRUE)
+		TriggerActivation("XA0616b",TRUE)
+		Continue()
+END
+
+IF 
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_IT_TriggerDeactivation", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_IT_TriggerDeactivation", "GLOBAL", 0)
+		TriggerActivation("Info0616",TRUE)
+		TriggerActivation("Info0616b",TRUE)
+		TriggerActivation("XA0616",FALSE)
+		TriggerActivation("XA0616b",FALSE)
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!InMyArea("KERRACHUS")
+	!Dead("KERRACHUS")
+THEN 
+	RESPONSE #100
+		CreateCreature("KERRAC", [1651.1192], S)
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_KerracSwap", "GLOBAL", 1)
+	InMyArea("KERRACHUS")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_KerracSwap", "GLOBAL", 1)
+		ActionOverride("KERRACHUS", SetDialog("XAKERRAC"))
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	OR(5)
+		InMyArea("JONAVI")
+		InMyArea("KOLVAR")
+		InMyArea("BRENNA")
+		InMyArea("CAEDMO")
+		InMyArea("ENTILLIS")
+THEN
+	RESPONSE #100
+		ActionOverride("JONAVI", DestroySelf())
+		ActionOverride("KOLVAR", DestroySelf())
+		ActionOverride("BRENNA", DestroySelf())
+		ActionOverride("CAEDMO", DestroySelf())
+		ActionOverride("ENTILLIS", DestroySelf())
+		Continue()
+END
+
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_KerracSwap", "GLOBAL", 1)
+	InMyArea("KERRACHUS")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_KerracSwap", "GLOBAL", 0)
+		ActionOverride("KERRACHUS", SetDialog("KERRAC"))
+		Continue()
+END

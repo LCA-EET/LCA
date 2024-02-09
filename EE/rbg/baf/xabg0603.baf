@@ -1,0 +1,10 @@
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_DestroyNPCS_0603", "BG0603", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_DestroyNPCS_0603", "BG0603", 1)
+		ActionOverride("SSDopple", DestroySelf())
+		ActionOverride("Jhasso", DestroySelf())
+		Continue()
+END

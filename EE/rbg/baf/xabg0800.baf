@@ -1,0 +1,141 @@
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CMDeactivate", "BG0800", 1)
+THEN
+	RESPONSE #100
+		TriggerActivation("d#tet1", FALSE)
+		TriggerActivation("d#tw1", FALSE)
+		SetGlobal("XA_CMDeactivate", "BG0800", 1)
+		Continue()
+END
+
+IF
+	InMyArea("Delthyr")
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("Delthyr", DestroySelf())
+		Continue()
+END
+
+IF
+	InMyArea("Tamoko")
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("Tamoko", DestroySelf())
+		Continue()
+END
+
+IF 
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_CMDeactivate", "BG0800", 1)
+THEN
+	RESPONSE #100
+		TriggerActivation("d#tet1", TRUE)
+		TriggerActivation("d#tw1", TRUE)
+		SetGlobal("XA_CMDeactivate", "BG0800", 0)
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("ELMIN5")
+THEN
+	RESPONSE #100
+		ActionOverride("ELMIN5", DestroySelf())
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CreateElfsong", "GLOBAL", 1)
+	!Dead("alyth")
+	GlobalLT("XA_SavedElfsong", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CreateElfsong", "GLOBAL", 1)
+		CreateCreature("XA800M", [3150.1260], S)
+		CreateCreature("XA800W", [3100.1260], S)
+		SetInterrupt(FALSE)
+		DisplayStringHead("XA800W", @0)
+		Wait(3)
+		DisplayStringHead("XA800M", @1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("XA800M")
+	InMyArea("XA800W")
+	GlobalLT("XA_ElfsongTimerSet", "BG0800", 1)
+	GlobalLT("XA_SavedElfsong", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_ElfsongTimerSet", "BG0800", 1)
+		SetGlobalTimer("XA_ElfsongTimer", "GLOBAL", TWO_MINUTES) 
+END
+
+IF 
+	InMyArea(Player1)
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("XA800M")
+	InMyArea("XA800W")
+	GlobalTimerExpired("XA_ElfsongTimer", "GLOBAL")
+	GlobalLT("XA_SavedElfsong", "GLOBAL", 1)	
+	!Global("XA_800MW", "GLOBAL", 1)
+THEN
+	RESPONSE #50
+		SetGlobalTimer("XA_ElfsongTimer", "GLOBAL", TWO_MINUTES) 
+	RESPONSE #50
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_ElfsongTimer", "GLOBAL", TWO_MINUTES) 
+		DisplayStringHead("XA800W", @0)
+		Wait(3)
+		DisplayStringHead("XA800M", @1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_NPCDestroy", "BG0800", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("NIKLOS", DestroySelf())
+		ActionOverride("ELMIN5", DestroySelf())
+		SetGlobal("XA_NPCDestroy", "BG0800", 1)
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CreateMickNPC", "BG0800", 1)
+	!InMyArea("MICK")
+THEN
+	RESPONSE #100
+		CreateCreature("MICK", [510.2938], N)
+		SetGlobal("XA_CreateMickNPC", "BG0800", 1)
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CreateNeomaNPC", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("XANEOMA", [3075.1390], N)
+		SetGlobal("XA_CreateNeomaNPC", "GLOBAL", 1)
+		ActionOverride("XANEOMA", RandomWalkContinuous())
+END
+
+//{ Clean-up
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("XANEOMA")
+THEN
+	RESPONSE #100
+		ActionOverride("XANEOMA", DestroySelf())
+END
+//}

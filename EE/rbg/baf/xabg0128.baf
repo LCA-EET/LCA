@@ -1,0 +1,52 @@
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_DestroyNPCs_0128", "BG0128", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("Zorl", DestroySelf())
+		ActionOverride("Aldeth", DestroySelf())
+		ActionOverride("Brandi", DestroySelf())
+		SetGlobal("XA_DestroyNPCs_0128", "BG0128", 1)
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_HelpAldeth", "GLOBAL", 2)
+	GlobalLT("XA_CreateNPCs0128_Aldeth", "BG0128", 1)
+	!Dead("Aldeth")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CreateNPCs0128_Aldeth", "BG0128", 1)
+		CreateCreature("ALDETH", [600.400], SW) 
+		ActionOverride("Aldeth", SetDialog("XAALDETH"))
+		ActionOverride("Aldeth", SetNumTimesTalkedTo(0))
+		ActionOverride("Aldeth", ChangeAIScript("XAINITP1",CLASS))
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_HelpAldeth", "GLOBAL", 2)
+	!Global("XA_CreateNPCs0128_Brandi", "BG0128", 1)
+	!Dead("Brandi")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CreateNPCs0128_Brandi", "BG0128", 1)
+		CreateCreature("BRANDI", [645.435], NW) 
+		ActionOverride("BRANDI", SetDialog("XABRANDI"))
+		Continue()
+END
+
+//{ Clean-up
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_CreateNPCs0128_Aldeth", "BG0128", 1)
+	InMyArea("Aldeth")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CreateNPCs0128_Aldeth", "BG0128", 0)
+		ActionOverride("Aldeth", SetDialog("ALDETH"))
+END
+//}
+

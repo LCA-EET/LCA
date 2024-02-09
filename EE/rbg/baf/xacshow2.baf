@@ -1,0 +1,19 @@
+
+IF 
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ZoomLock(TRUE)
+		CreateCreature("XAORPH01", [718.858], NE)
+		CreateCreature("XAORPH02", [748.858], NE)
+		CreateCreature("XAORPH03", [727.892], NE)
+		CreateCreature("XAORPH04", [781.921], NE)
+		CreateCreature("XAORPH05", [832.927], NE)
+		CreateCreature("XAORPH06", [812.945], NE)
+		CreateCreature("XACURATO", [700.820], SE)
+		FadeFromColor([30.0],0)
+		Wait(2)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+		EndCutSceneMode()
+END

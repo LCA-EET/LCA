@@ -1,0 +1,23 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		
+		FadeToColor([30.0],0)
+		Wait(1)
+		LeaveAreaLUAPanic("XABYE","",[1990.1230],N) 
+		LeaveAreaLUA("XABYE","",[1990.1230],N)
+		ActionOverride(Player2,LeaveAreaLUA("XABYE","",[1910.1290], N))  
+		ActionOverride(Player3,LeaveAreaLUA("XABYE","",[1950.1290], N))  
+		ActionOverride(Player4,LeaveAreaLUA("XABYE","",[2030.1290], N))  
+		ActionOverride(Player5,LeaveAreaLUA("XABYE","",[2070.1290], N))  
+		ActionOverride(Player6,LeaveAreaLUA("XABYE","",[1990.1290], N))
+		
+		ActionOverride("XACORWIN",LeaveAreaLUA("XABYE","",[1990.1180], N))
+		ActionOverride("XACORWIN", FaceObject(Player1))
+		Explore()
+		FadeFromColor([30.0],0)
+		Wait(1)
+		StartCutScene("XABYE2")
+END

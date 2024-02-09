@@ -1,18 +1,4 @@
-//{ Effects 
 
-//{ Animations
-	COPY ~LCA/WBM/XA4700L1.WBM~ ~override~
-	COPY ~LCA/WBM/XA4700L2.WBM~ ~override~
-	COPY ~LCA/WBM/XA4700L3.WBM~ ~override~
-	COPY ~LCA/WBM/XA4700L4.WBM~ ~override~
-	COPY ~LCA/BAM/FX_BAM_BG2/XAFLAM02.BAM~ ~override~
-	COPY ~LCA/BAM/FX_BAM_BG2/XAFLAM03.BAM~ ~override~
-	COPY ~LCA/BAM/FX_BAM_BG2/XAFLAM04.BAM~ ~override~
-	COPY ~LCA/BAM/FX_BAM_BG2/XAFUG01.BAM~ ~override~
-	COPY ~LCA/BAM/FX_BAM_BG2/XAFUG02.BAM~ ~override~
-	COPY ~LCA/BAM/FX_BAM_BG2/XAFUG03.BAM~ ~override~
-	COPY ~LCA/BAM/FX_BAM_BG2/XAFUG04.BAM~ ~override~
-//}
 //{ New Sounds
 	COPY ~LCA/WAV/XA100000.WAV~ ~override~
 	COPY ~LCA/WAV/XA100001.WAV~ ~override~
@@ -156,25 +142,6 @@
 	COPY ~LCA/WAV/XA100140.WAV~ ~override~
 	COPY ~LCA/WAV/XA100141.WAV~ ~override~
 	COPY ~LCA/WAV/XA100142.WAV~ ~override~
-	
-	//{ Effects Copied from SoD for Use in SoD Area Re-visits, during BG2
-		COPY ~LCA/WAV/FX_BG2/XABD4400.WAV~ ~override~
-		COPY ~LCA/WAV/FX_BG2/XABD5300.WAV~ ~override~
-		COPY ~LCA/WAV/FX_BG2/XABD5301.WAV~ ~override~
-		COPY ~LCA/WAV/FX_BG2/XABD5305.WAV~ ~override~
-		COPY ~LCA/WAV/FX_BG2/XABD5306.WAV~ ~override~
-		COPY ~LCA/WAV/FX_BG2/XABD5307.WAV~ ~override~
-		COPY ~LCA/WAV/FX_BG2/XABD5308.WAV~ ~override~
-		COPY ~LCA/WAV/FX_BG2/XABD5309.WAV~ ~override~
-		COPY ~LCA/WAV/FX_BG2/XABDCWND.WAV~ ~override~
-		COPY ~LCA/WAV/FX_BG2/XABDDWND.WAV~ ~override~
-		COPY ~LCA/WAV/FX_BG2/XABDLVA1.WAV~ ~override~
-		COPY ~LCA/WAV/FX_BG2/XABDMTL1.WAV~ ~override~
-		COPY ~LCA/WAV/FX_BG2/XABDMTL2.WAV~ ~override~
-		COPY ~LCA/WAV/FX_BG2/XABDMTL3.WAV~ ~override~
-		COPY ~LCA/WAV/FX_BG2/XABDMTL4.WAV~ ~override~
-		COPY ~LCA/WAV/FX_BG2/XABDMTL5.WAV~ ~override~
-	//}
 //}
 
 //{ Text Screens
@@ -305,34 +272,9 @@
 
 
 //{ New Areas
-	//{ Archery Lesson Forest Clearing
-		COPY ~LCA/ARE/XACLRG.ARE~ ~override~ 
-		COPY ~LCA/WED/XACLRG.WED~ ~override~
-		COPY ~LCA/BMP/XACLRGHT.BMP~ ~override~
-		COPY ~LCA/BMP/XACLRGLM.BMP~ ~override~
-		COPY ~LCA/BMP/XACLRGSR.BMP~ ~override~
-		COPY ~LCA/TIS/XACLRG.TIS~ ~override~
-	//}
-	
-	//{ SoD Tent Cutscene Area
-		COPY ~LCA/ARE/XATENT.ARE~ ~override~
-		COPY ~LCA/WED/XATENT.WED~ ~override~
-		COPY ~LCA/TIS/XATENT.TIS~ ~override~
-		COPY ~LCA/BMP/XATENTHT.BMP~ ~override~
-		COPY ~LCA/BMP/XATENTLM.BMP~ ~override~
-		COPY ~LCA/BMP/XATENTSR.BMP~ ~override~
-	//}
-	
-	//{ Kanaglym
-		COPY ~LCA/ARE/XA5300.ARE~ ~override~
-		COPY ~LCA/WED/XA5300.WED~ ~override~
-		COPY ~LCA/TIS/XA5300.TIS~ ~override~
-		COPY ~LCA/BMP/XA5300HT.BMP~ ~override~
-		COPY ~LCA/BMP/XA5300LM.BMP~ ~override~
-		COPY ~LCA/BMP/XA5300SR.BMP~ ~override~
-	//}
-	
-	
+	COPY ~LCA/ARE/XACLRNG.ARE~ ~override~ //Forest Clearing
+	COPY ~LCA/ARE/XAAR1516.ARE~ ~override~
+	COPY ~LCA/ARE/XA4700.ARE~ ~override~
 	COPY ~LCA/ARE/XA5300.ARE~ ~override~
 	COPY ~LCA/ARE/XA5501.ARE~ ~override~
 	COPY ~LCA/ARE/XAPEN.ARE~ ~override~
@@ -343,9 +285,7 @@
 	COPY ~LCA/ARE/XABYE.ARE~ ~override~
 	COPY ~LCA/ARE/XACS13.ARE~ ~override~
 	COPY ~LCA/ARE/XA4000.ARE~ ~override~
-	
-	
-	
+	COPY ~LCA/ARE/XATENT.ARE~ ~override~
 	COPY ~LCA/ARE/XATOK.ARE~ ~override~
 	COPY ~LCA/ARE/XADUCAL.ARE~ ~override~
 	COPY ~LCA/ARE/XADUCAL2.ARE~ ~override~
@@ -363,61 +303,46 @@
 	COPY ~LCA/ARE/XAHOMEL2.ARE~ ~override~ 	// Corwin's Home L2
 	
 	//{ XA4500
-		COPY ~LCA/ARE/XA4500.ARE~ ~override~
-		COPY ~LCA/BMP/XA4500HT.BMP~ ~override~
-		COPY ~LCA/BMP/XA4500LM.BMP~ ~override~
-		COPY ~LCA/BMP/XA4500SR.BMP~ ~override~
-		COPY ~LCA/WED/XA4500.WED~ ~override~
-		COPY ~LCA/TIS/XA4500.TIS~ ~override~
-	//}
-	
-	//{ XA4700
-		COPY ~LCA/ARE/XA4700.ARE~ ~override~
-		COPY ~LCA/BMP/XA4700HT.BMP~ ~override~
-		COPY ~LCA/BMP/XA4700LM.BMP~ ~override~
-		COPY ~LCA/BMP/XA4700SR.BMP~ ~override~
-		COPY ~LCA/WED/XA4700.WED~ ~override~
-		COPY ~LCA/TIS/XA4700.TIS~ ~override~
-
+	COPY ~LCA/ARE/XA4500.ARE~ ~override~
+	COPY ~LCA/ARE/XA4500.WED~ ~override~
+	COPY ~LCA/ARE/XA4500HT.BMP~ ~override~
+	COPY ~LCA/ARE/XA4500LM.BMP~ ~override~
+	COPY ~LCA/ARE/XA4500SR.BMP~ ~override~
 	//}
 	
 	//{ XACS12
-		COPY ~LCA/ARE/XACS12.ARE~ ~override~
-		COPY ~LCA/BMP/XACS12HT.BMP~ ~override~
-		COPY ~LCA/BMP/XACS12LM.BMP~ ~override~
-		COPY ~LCA/BMP/XACS12SR.BMP~ ~override~
-		COPY ~LCA/WED/XACS12.WED~ ~override~
-		COPY ~LCA/TIS/XACS12.TIS~ ~override~
+	COPY ~LCA/ARE/XACS12.ARE~ ~override~
+	COPY ~LCA/ARE/XACS12.WED~ ~override~
+	COPY ~LCA/ARE/XACS12LM.BMP~ ~override~
+	COPY ~LCA/ARE/XACS12HT.BMP~ ~override~
+	COPY ~LCA/ARE/XACS12SR.BMP~ ~override~
 	//}
 	
 	//{ XAWYRM
-		COPY ~LCA/ARE/XAWYRM.ARE~ ~override~
-		COPY ~LCA/WED/XAWYRM.WED~ ~override~
-		COPY ~LCA/WED/XAWYRMN.WED~ ~override~
-		COPY ~LCA/BMP/XAWYRMHT.BMP~ ~override~
-		COPY ~LCA/BMP/XAWYRMLM.BMP~ ~override~
-		COPY ~LCA/BMP/XAWYRMLN.BMP~ ~override~
-		COPY ~LCA/BMP/XAWYRMSR.BMP~ ~override~
-		COPY ~LCA/TIS/XAWYRM.TIS~ ~override~
-		COPY ~LCA/TIS/XAWYRMN.TIS~ ~override~
+	COPY ~LCA/ARE/XAWYRM.ARE~ ~override~
+	COPY ~LCA/ARE/XAWYRM.WED~ ~override~
+	COPY ~LCA/ARE/XAWYRMN.WED~ ~override~
+	COPY ~LCA/ARE/XAWYRMHT.BMP~ ~override~
+	COPY ~LCA/ARE/XAWYRMLM.BMP~ ~override~
+	COPY ~LCA/ARE/XAWYRMLN.BMP~ ~override~
+	COPY ~LCA/ARE/XAWYRMSR.BMP~ ~override~
 	//}
 	
 	//{ XADUC3
-		COPY ~LCA/ARE/XADUC3.ARE~ ~override~
-		COPY ~LCA/WED/XADUC3.WED~ ~override~
-		COPY ~LCA/BMP/XADUC3LM.BMP~ ~override~
-		COPY ~LCA/BMP/XADUC3HT.BMP~ ~override~
-		COPY ~LCA/BMP/XADUC3SR.BMP~ ~override~
-		COPY ~LCA/TIS/XADUC3.TIS~ ~override~
+	COPY ~LCA/ARE/XADUC3.ARE~ ~override~
+	COPY ~LCA/ARE/XADUC3.WED~ ~override~
+	COPY ~LCA/ARE/XADUC3LM.BMP~ ~override~
+	COPY ~LCA/ARE/XADUC3HT.BMP~ ~override~
+	COPY ~LCA/ARE/XADUC3SR.BMP~ ~override~
 	//}
 	
 	//{ XABLCK
 	COPY ~LCA/ARE/XABLCK.ARE~ ~override~
 	COPY ~LCA/TIS/XABLCK.TIS~ ~override~
-	COPY ~LCA/WED/XABLCK.WED~ ~override~
-	COPY ~LCA/BMP/XABLCKLM.BMP~ ~override~
-	COPY ~LCA/BMP/XABLCKHT.BMP~ ~override~
-	COPY ~LCA/BMP/XABLCKSR.BMP~ ~override~
+	COPY ~LCA/ARE/XABLCK.WED~ ~override~
+	COPY ~LCA/ARE/XABLCKLM.BMP~ ~override~
+	COPY ~LCA/ARE/XABLCKHT.BMP~ ~override~
+	COPY ~LCA/ARE/XABLCKSR.BMP~ ~override~
 	//}
 //}
 
@@ -444,6 +369,7 @@
 	
 	COPY ~LCA/CRE/XAGLINT.CRE~ ~override~
 	COPY ~LCA/CRE/XAGLINT2.CRE~ ~override~
+	//COPY ~LCA/CRE/XAALORA.CRE~ ~override~
 	COPY ~LCA/CRE/XANEB.CRE~ ~override~
 	COPY ~LCA/CRE/XACHWRAI.CRE~ ~override~
 	COPY ~LCA/CRE/XAGOLSTO.CRE~ ~override~

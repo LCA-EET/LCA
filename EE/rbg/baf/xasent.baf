@@ -1,0 +1,22 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneID(Player1)
+		FadeToColor([30.0],0)
+		Wait(2)
+		CopyGroundPilesTo("XAPAINT1", [350.300])
+		Wait(1)
+		LeaveAreaLUAPanic("XADEMSAN", "", [320.320], N)
+		LeaveAreaLUA("XADEMSAN", "", [320.320], N)
+		ActionOverride(Player2, LeaveAreaLUA("XADEMSAN", "", [320.320], N))
+		ActionOverride(Player3, LeaveAreaLUA("XADEMSAN", "", [320.320], N))
+		ActionOverride(Player4, LeaveAreaLUA("XADEMSAN", "", [320.320], N))
+		ActionOverride(Player5, LeaveAreaLUA("XADEMSAN", "", [320.320], N))
+		ActionOverride(Player6, LeaveAreaLUA("XADEMSAN", "", [320.320], N))
+		FadeFromColor([30.0],0)
+		Wait(1)
+		SetGlobal("XA_SanctumCS_End", "GLOBAL", 1)
+		EndCutSceneMode()
+		
+END

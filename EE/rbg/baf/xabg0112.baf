@@ -1,0 +1,11 @@
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_NPCs_0112", "BG0112", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_NPCs_0112", "BG0112", 1)
+		ActionOverride("SLYTHE", DestroySelf())
+		ActionOverride("KRYSTIN", DestroySelf())
+		CreateCreature("XAJASPER", [420.1542], SSE)
+		Continue()
+END

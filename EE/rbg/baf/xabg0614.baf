@@ -1,0 +1,42 @@
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!InMyArea("XAVIRGIL")
+	!Global("XA_0614_VirgilSpawn", "BG0614", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("XAVIRGIL", [850.500], S)
+		CreateCreature("XAWVMER1", [281.407], N)
+		CreateCreature("XAWVMER2", [543.457], N)
+		CreateCreature("XAWVMER3", [784.914], S)
+		CreateCreature("XAWVGRD2", [1040.485], W)
+		CreateCreature("XAWVBART", [458.321], S)
+		SetGlobal("XA_0614_VirgilSpawn", "BG0614", 1)
+		Continue()
+END
+
+IF 
+	Global("XA_VirgilInCustody", "GLOBAL", 1)
+	InMyArea("XAVIRGIL")
+THEN
+	RESPONSE #100
+		ActionOverride("XAVIRGIL", DestroySelf())
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_DestroyNPCs_0614", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_DestroyNPCs_0614", "GLOBAL", 1)
+		ActionOverride("WIRTHING", DestroySelf())
+		Continue()
+END
+
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("XAVIRGIL")
+THEN
+	RESPONSE #100
+		ActionOverride("XAVIRGIL", DestroySelf())
+END

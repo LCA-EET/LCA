@@ -1,0 +1,152 @@
+
+IF
+	HPPercentLT(Myself, 21)
+	GlobalLT("XA_AVBossFled", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		DisplayStringHead(Myself, @27) /*~Impressive. But this is not the end, <CHARNAME>. I'll find a way back to the Prime Material Plane, and when I do...~ */
+		AddexperienceParty(75000)
+		Wait(3)
+		ForceSpellRES("BDTELAW",Myself)  // Teleport Without Error
+		SetGlobal("XA_AVBossFled", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("XA_Hostile4700", "GLOBAL", 1)
+	!Global("XA_IncubusBuff", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_IncubusBuff", "LOCALS", 1)
+		ClearActions(Myself)
+		ReallyForceSpell(Myself, WIZARD_GLOBE_OF_INVULNERABILITY)
+		ReallyForceSpell(Myself, WIZARD_MIRROR_IMAGE)
+		ReallyForceSpell(Myself, WIZARD_STONE_SKIN)
+		ReallyForceSpell(Myself, WIZARD_SHIELD)
+		
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+//fight AI
+
+IF
+	See(NearestEnemyOfType([0.0.0.0.0.SUMMONED]))
+	Range(LastSeenBy(Myself),15)
+	LevelLT(LastSeenBy(Myself),10)
+	!GlobalTimerNotExpired("XA_IncubusDeath","LOCALS")
+	RandomNum(2,1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_IncubusDeath","LOCALS",TWO_ROUNDS)
+		ForceSpell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)  // SPWI605.SPL (Death Spell)
+		SetInterrupt(TRUE)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),10)
+	CheckStat(Myself,0,STONESKINS)
+	!GlobalTimerNotExpired("XA_IncubusStone","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_IncubusStone","LOCALS",TWO_MINUTES)
+		ForceSpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+		SetInterrupt(TRUE)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	RandomNum(2,1)
+	!StateCheck(NearestEnemyOf(Myself),STATE_CHARMED)
+	!StateCheck(NearestEnemyOf(Myself),STATE_CONFUSED)
+	!GlobalTimerNotExpired("XA_Gaze","LOCALS")
+THEN
+	RESPONSE #50
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_Gaze","LOCALS",TWO_ROUNDS)
+		FaceObject(NearestEnemyOf(Myself))
+		ReallyForceSpellRES("beguile",NearestEnemyOf(Myself))
+		SetInterrupt(TRUE)
+	RESPONSE #50
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_Gaze","LOCALS",TWO_ROUNDS)
+		FaceObject(NearestEnemyOf(Myself))
+		ReallyForceSpellRES("insanity",NearestEnemyOf(Myself))
+		SetInterrupt(TRUE)		
+		
+END
+
+IF
+	!GlobalTimerNotExpired("XA_Finger","LOCALS")
+	RandomNum(3,1)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_Finger","LOCALS",THREE_MINUTES)
+		ForceSpell(NearestEnemyOf(Myself),CLERIC_FINGER_OF_DEATH)
+		SetInterrupt(TRUE)	
+END
+
+IF
+	!GlobalTimerNotExpired("XA_Unholy","LOCALS")
+	RandomNum(2,1)
+	See(NearestEnemyOf(Myself))
+	!Alignment(NearestEnemyOf(Myself),MASK_EVIL)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_Unholy","LOCALS",FIVE_ROUNDS)
+		ForceSpell(Myself,CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("XA_Quake","LOCALS")
+	RandomNum(3,1)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_Quake","LOCALS",TEN_ROUNDS)
+		ForceSpell(Myself,CLERIC_EARTHQUAKE)  // SPPR720.SPL (Earthquake)
+		SetInterrupt(TRUE)
+END
+
+IF
+	GlobalTimerNotExpired("XA_Harm","LOCALS")
+	RandomNum(3,1)
+	OR(2)
+		See(NearestEnemyOf(Myself))
+		See(LeastDamagedOf(Myself))
+	Range(LastSeenBy(Myself),10)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_Harm","LOCALS",FOUR_MINUTES)
+		ForceSpell(LastSeenBy(Myself),ENEMY_CLERIC_HARM)
+		SetInterrupt(TRUE)		
+END
+
+IF
+	Range(NearestEnemyOf(Myself),4)
+THEN
+	RESPONSE #100
+		RunAwayFrom(NearestEnemyOf(Myself),30)
+	RESPONSE #50
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	Detect(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+

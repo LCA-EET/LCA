@@ -1,0 +1,10 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		CreateVisualEffect("SPFLESHS",[1454.1398])
+		Wait(1)
+		CreateCreature("XAROHMA4",[1454.1398],SE)  // Fayanna
+		ActionOverride("XAROHMA4",StartDialogueNoSet(Player1))
+END

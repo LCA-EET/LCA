@@ -1,0 +1,12 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneID("XAHAMZA")
+		FadeToColor([30.0],0)
+		Wait(3)
+		FadeFromColor([30.0],0)
+		DisplayStringHead(Myself, @0)
+		Wait(3)
+		EndCutSceneMode()
+END

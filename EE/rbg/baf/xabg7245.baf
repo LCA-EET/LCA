@@ -1,0 +1,19 @@
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_DialogSwap_7245", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_DialogSwap_7245", "GLOBAL", 1)
+		ActionOverride("GAMES2", SetDialog("XAGAMES2"))
+		Continue()
+END
+
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_DialogSwap_7245", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_DialogSwap_7245", "GLOBAL", 0)
+		ActionOverride("GAMES2", SetDialog("GAMES2"))
+		Continue()
+END

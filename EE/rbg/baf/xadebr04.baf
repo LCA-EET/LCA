@@ -1,0 +1,33 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ActionOverride("XAKENT", EscapeAreaObject("TrigExit"))
+		Wait(1)
+		ActionOverride("XANEDERL", EscapeAreaObject("TrigExit"))
+		Wait(1)
+		ActionOverride("XAFFVAL1", EscapeAreaObject("TrigExit"))
+		Wait(1)
+		ActionOverride("XAFFVAL2", EscapeAreaObject("TrigExit"))
+		Wait(1)
+		ActionOverride("XABENCE", EscapeAreaObject("TrigExit"))
+		Wait(1)
+		ActionOverride("XAELTAN", EscapeAreaObject("TrigExit"))
+		SmallWait(5)
+		ActionOverride("XALIIA", EscapeAreaObject("TrigExit"))
+		SmallWait(5)
+		ActionOverride("XABELT", EscapeAreaObject("TrigExit"))
+		SmallWait(5)
+		ActionOverride("XAENTAR", EscapeAreaObject("TrigExit"))
+		SmallWait(5)
+		ActionOverride("XAFFVAL3", EscapeAreaObject("TrigExit"))
+		SmallWait(5)
+		ActionOverride("XACORWIN", FaceObject(Player1))
+		SmallWait(5)
+		FaceObject("XACORWIN")
+		//FadeToColor([30.0],0)
+		Wait(2)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+		
+END

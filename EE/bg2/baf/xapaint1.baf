@@ -1,0 +1,103 @@
+IF
+	InMyArea(Player1)
+	OR(4)
+		PartyHasItem("XASWORD")
+		PartyHasItem("XACHICK")
+		PartyHasItem("XAMSRING")
+		PartyHasItem("XAQUIVER")
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, DestroyItem("XASWORD"))
+		ActionOverride(Player1, DestroyItem("XACHICK"))
+		ActionOverride(Player1, DestroyItem("XAMSRING"))
+		ActionOverride(Player1, DestroyItem("XAQUIVER"))
+		
+		ActionOverride(Player2, DestroyItem("XASWORD"))
+		ActionOverride(Player2, DestroyItem("XACHICK"))
+		ActionOverride(Player2, DestroyItem("XAMSRING"))
+		ActionOverride(Player2, DestroyItem("XAQUIVER"))
+		
+		ActionOverride(Player3, DestroyItem("XASWORD"))
+		ActionOverride(Player3, DestroyItem("XACHICK"))
+		ActionOverride(Player3, DestroyItem("XAMSRING"))
+		ActionOverride(Player3, DestroyItem("XAQUIVER"))
+		
+		ActionOverride(Player4, DestroyItem("XASWORD"))
+		ActionOverride(Player4, DestroyItem("XACHICK"))
+		ActionOverride(Player4, DestroyItem("XAMSRING"))
+		ActionOverride(Player4, DestroyItem("XAQUIVER"))
+		
+		ActionOverride(Player5, DestroyItem("XASWORD"))
+		ActionOverride(Player5, DestroyItem("XACHICK"))
+		ActionOverride(Player5, DestroyItem("XAMSRING"))
+		ActionOverride(Player5, DestroyItem("XAQUIVER"))
+		
+		ActionOverride(Player6, DestroyItem("XASWORD"))
+		ActionOverride(Player6, DestroyItem("XACHICK"))
+		ActionOverride(Player6, DestroyItem("XAMSRING"))
+		ActionOverride(Player6, DestroyItem("XAQUIVER"))
+END
+
+IF
+	Global("XA_LyrielRez", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("XALYRIEL", SetSequence(SEQ_CAST))
+		Wait(2)
+		ApplySpell(Player1, CLERIC_RESURRECTION)
+		ApplySpell(Player2, CLERIC_RESURRECTION)
+		ApplySpell(Player3, CLERIC_RESURRECTION)
+		ApplySpell(Player4, CLERIC_RESURRECTION)
+		ApplySpell(Player5, CLERIC_RESURRECTION)
+		ApplySpell(Player6, CLERIC_RESURRECTION)
+		ActionOverride("XALYRIEL", SetSequence(SEQ_READY))
+		SetGlobal("XA_LyrielRez", "GLOBAL", 0)
+		SetGlobal("XA_LyrielHeal", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	Global("XA_LyrielHeal", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("XALYRIEL", SetSequence(SEQ_CAST))
+		Wait(2)
+		ApplySpell(Player1, CLERIC_CURE_CRITICAL_WOUNDS)
+		ApplySpell(Player2, CLERIC_CURE_CRITICAL_WOUNDS)
+		ApplySpell(Player3, CLERIC_CURE_CRITICAL_WOUNDS)
+		ApplySpell(Player4, CLERIC_CURE_CRITICAL_WOUNDS)
+		ApplySpell(Player5, CLERIC_CURE_CRITICAL_WOUNDS)
+		ApplySpell(Player6, CLERIC_CURE_CRITICAL_WOUNDS)
+		ActionOverride("XALYRIEL", SetSequence(SEQ_READY))
+		SetGlobal("XA_LyrielHeal", "GLOBAL", 0)
+END
+
+IF
+	InMyArea(Player1)
+	Global("XA_MetIncubus", "GLOBAL", 1)
+	Global("XA_PrisonKnowledge", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_PrisonKnowledge", "GLOBAL", 1)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END
+
+IF
+	InMyArea(Player1)
+	Global("XA_MetIncubus", "GLOBAL", 2)
+	Global("XA_PrisonKnowledge", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_PrisonKnowledge", "GLOBAL", 3)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END
+
+IF
+	InMyArea(Player1)
+	Global("XA_MetIncubus", "GLOBAL", 3)
+	Global("XA_PrisonKnowledge", "GLOBAL", 4)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_PrisonKnowledge", "GLOBAL", 5)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END

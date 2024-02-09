@@ -1,0 +1,12 @@
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_DestroyNPCs_0704", "BG0704", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("NIEMAIN", DestroySelf())
+		ActionOverride("OULAM", DestroySelf())
+		ActionOverride("WHEBER", DestroySelf())
+		ActionOverride("WILLIAM", DestroySelf())
+		SetGlobal("XA_DestroyNPCs_0704", "BG0704", 1)
+		Continue()
+END

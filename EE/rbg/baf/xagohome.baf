@@ -1,0 +1,21 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		SetGlobal("XA_GoHome", "XAHOME", 1)
+		ClearAllActions()
+		FadeToColor([30.0],0)
+		Wait(3)
+		ZoomLock(TRUE)
+		LeaveAreaLUAPanic("XAHOME","",[380.340],N) 
+		LeaveAreaLUA("XAHOME","",[380.340],N)
+		ActionOverride(Player2,LeaveAreaLUA("XAHOME","",[400.335],N))  
+		ActionOverride(Player3,LeaveAreaLUA("XAHOME","",[430.320],N))  
+		ActionOverride(Player4,LeaveAreaLUA("XAHOME","",[445.335],N))  
+		ActionOverride(Player5,LeaveAreaLUA("XAHOME","",[460.310],N))  
+		ActionOverride(Player6,LeaveAreaLUA("XAHOME","",[440.300],N))
+		ActionOverride("XACORWIN",JumpToPoint([380.290]))
+		FadeFromColor([30.0],0)
+		EndCutSceneMode()
+END

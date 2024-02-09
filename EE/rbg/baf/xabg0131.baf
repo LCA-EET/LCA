@@ -1,0 +1,10 @@
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("FORTHEL")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_DestroyForthel", "BG0131", 1)
+		ActionOverride("FORTHEL", DestroySelf())
+		Continue()
+END
+

@@ -1,0 +1,29 @@
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)  // 
+    DisplayStringWait("suelle2",55257)  // ~As for you, I imagine you are eager to resume your travels once again. We wish you well... know we look forward to your return in the future, should you desire to.~ [ELLESI31]
+    FadeToColor([30.0],0)
+    Wait(2)
+	LeaveAreaLUAPanic("XACS13","",[467.264],N)
+	LeaveAreaLUA("XACS13","",[467.264],N)
+	
+	ActionOverride(Player2,LeaveAreaLUA("XACS13","",[519.262],S))
+	ActionOverride(Player3,LeaveAreaLUA("XACS13","",[420.274],SSW))
+	ActionOverride(Player4,LeaveAreaLUA("XACS13","",[569.275],S))
+	ActionOverride(Player5,LeaveAreaLUA("XACS13","",[365.290],SSW))
+	ActionOverride(Player6,LeaveAreaLUA("XACS13","",[616.295],S))
+	Face(N)
+	ActionOverride(Player2,FaceObject(Player1))
+	ActionOverride(Player3,FaceObject(Player1))
+	ActionOverride(Player4,FaceObject(Player1))
+	ActionOverride(Player5,FaceObject(Player1))
+	ActionOverride(Player6,FaceObject(Player1))
+	Wait(1)
+    StartMovie("END15FPS")
+	SetGlobal("XA_IrenicusDead", "GLOBAL", 1)
+	FadeFromColor([30.0],0)
+    EndCutSceneMode()
+END
+

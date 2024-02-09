@@ -1,0 +1,21 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		CreateVisualEffect("SPPORTAL",[1465.765])
+		Wait(2)
+		CreateCreature("XADEMGOR", [1465.765], NE)
+		SetGlobal("XA_4700_Demogorgon", "GLOBAL",1)
+		Wait(1)
+		FaceObject("XAAVBOSS")
+		ActionOverride(Player2, FaceObject("XAAVBOSS"))
+		ActionOverride(Player3, FaceObject("XAAVBOSS"))
+		ActionOverride(Player4, FaceObject("XAAVBOSS"))
+		ActionOverride(Player5, FaceObject("XAAVBOSS"))
+		ActionOverride(Player6, FaceObject("XAAVBOSS"))
+		Wait(1)
+		ActionOverride("XAAVBOSS", StartDialog("XAAVBOSS", Player1))
+		
+		EndCutSceneMode()
+END

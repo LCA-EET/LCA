@@ -1,0 +1,10 @@
+IF
+	IsOverMe("XACORWIN")
+	GlobalLT("XA_CorwinBlood801", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		DisplayStringHead("XACORWIN", @0)
+		SetGlobal("XA_CorwinBlood801", "MYAREA", 1)
+		SetInterrupt(TRUE)
+END

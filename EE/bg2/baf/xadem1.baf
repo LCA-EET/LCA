@@ -1,0 +1,10 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		CutSceneId(Player1)
+		ActionOverride("XANARZU", Enemy())
+		SetGlobal("XA_DemonSpawn", "GLOBAL", 2)
+		EndCutSceneMode()
+END

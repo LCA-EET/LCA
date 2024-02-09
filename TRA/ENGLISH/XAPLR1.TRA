@@ -69,7 +69,7 @@ Do not keep us waiting for long."~
 @66 = ~(You were victorious — Rohma is safe, though Schael requires immediate medical attention.)~
 @67 = ~(It seems Beno Famari is still alive.)~
 @68 = ~(You were victorious, but at great cost. Schael sacrificed herself to save Rohma. Sadly, there is no hope of bringing her back.)~
-
+@69 = ~The LCA_Explicit mod is active.~
 @70 = ~(Filled with rage, you turn to him. The sight of his sniveling face is enough to send you past the point of no return. You give into your dark nature, and transform into the Slayer. His pleas for mercy fall on deaf ears, and you rip his heart from his chest. You throw his lifeless body across the room, and begin to eat his still-beating heart.)~
 @71 = ~(The taste and gore does little to satiate your bloodlust. You want more. You need more! This is who you are, you think to yourself. Why did you ever resist this kind of power? It's your birthright!)~
 @72 = ~(You make your way out of the Undercity, and into the Thieves' Maze. You break through wall after wall with ease, and make it into the Guild. Their feeble attempts to stop you prove fruitless, and you gleefully rip them limb from limb.)~
@@ -86,7 +86,7 @@ Do not keep us waiting for long."~
 @83 = ~(You lift Schael and carry her over your shoulder, and make your way back to the surface.)~
 @84 = ~Yes.~
 @85 = ~No.~
-
+@86 = ~The LCA_Explicit mod is NOT active.~
 @87 = ~Schael? Schael! No...~
 @88 = ~(Upon seeing the cell in which you were once imprisoned, you recall the dark circumstances that forced your departure from the city...)~
 @89 = ~(Skie's blood on your hands. The looks of disgust and abject horror on the faces of your coalition comrades. The trial, and the pain you felt upon hearing the citizens call for your execution. Irenicus' gloating. Your desperate escape through the sewers...)~
@@ -164,25 +164,59 @@ Schael"~
 @143 = ~(Install the LCA_Explicit mod to experience this content.)~
 @144 = ~(An opening appears in the barrier. You'll be able to enter the tower through the iron doors. While inside, you won't be able to teleport back to your Pocket Plane. Enter?)~
 @145 = ~(It's been a long journey... sleep will come soon to you, you think to yourself. Just before you drift away, you hear a familiar voice call your name. Though you can't quite place it, you know that it's a voice you've heard before. Thinking it may have been one of your comrades, you get up to look around and find them fast asleep. Odd. You tell yourself that it must have been your imagination, as you lay back down to rest.)~
-
-
+@146 = ~Welcome to the LCA Configuration Assistant. Select one of the options below.~
+@147 = ~Adjust Corwin banter timers.~
+@148 = ~Adjust Caelar banter timers.~
+@149 = ~Select the new interval between banters. The default is forty-eight hours.~
+@150 = ~One hour.~
+@151 = ~Two hours.~
+@152 = ~Four hours.~
+@153 = ~Eight hours.~
+@154 = ~Sixteen hours.~
+@155 = ~Twenty-four hours.~
+@156 = ~Forty-eight hours.~
+@157 = ~Disable Corwin Banter Timer.~
+@158 = ~Disable Caelar Banter Timer.~
+@159 = ~Return to main menu.~
+@160 = ~Exit.~
+@161 = ~The change you requested has been processed.~
+@162 = ~Seventy-two hours.~
+@163 = ~Allow Corwin / Caelar banters while in a dungeon.~
+@164 = ~Disallow Corwin / Caelar banters while in a dungeon. (Default)~ 
+@165 = ~Thanks for playing!~
+@166 = ~Report a bug.~
+@167 = ~You can report a bug by e-mailing LCAMod@danielvalle.net. It is recommended (but not required) that you include your save game with the bug report.~
+@168 = ~Open Debugger.~
+@169 = ~WARNING: The debugger is meant to be used for testing purposes only. Improper alterations to the game state can crash the game, or make it so that you cannot complete the game.~
+@170 = ~I understand the risks. Proceed.~
+@171 = ~Return to the main menu.~
+@172 = ~Four Hours~
+@173 = ~Eight Hours~
+@174 = ~One Day~
+@175 = ~Two Days~
+@176 = ~Three Days~
+@177 = ~Advance the time.~
 @178 = ~(It's been a few days since you sent the letter and dagger to Baldur's Gate. Perhaps it's worthwhile to visit Brega and see if there is any news concerning Skie.)~
-
+@179 = ~Twelve Hours~
 @180 = ~(You peek over the edge of the tower... through the smoke and haze, you see Caelar's body. Her elbow is bent backwards, and her head is split open, its contents splayed across a rocky outcropping at the base of the tower. It would seem that her life, and her suffering, has truly come to an end.)~
 @181 = ~(The Narzugon will be back soon, you think to yourself. It's time to leave.)~
-
-
+@182 = ~Version Check.~
+@183 = ~LCA v1.1, 2024-01-13~
+@184 = ~One hour.~
+@185 = ~Two hours.~
 @186 = ~(You make your way to your room and get comfortable while you wait for Schael to arrive...)~
 @187 = ~(It's been a few days since you sent the letter to Baldur's Gate. Perhaps it's worthwhile to visit Brega and see if there is any news.)~
 @188 = ~(After exchanging some pleasantries with the Council, you and the Captain take a seat at the table. Duke Eltan begins the debriefing by asking you to explain the series of events that followed your exile from the city.)~
 @189 = ~(You tell how you and your companions were captured by the mad wizard Irenicus, and how you ended up in Athkatla. Their faces remain stoic as you recall finding the bodies of Khalid and Dynaheir. What piques their interest is your explanation of how you came to be in the possession of the Soultaker dagger, and the steps you took to release Skie's soul.)~
 @190 = ~Skie, once resurrected, was able to corroborate your story... I feel I must apologize once again to you, <CHARNAME>. You were very nearly executed at my behest. If it weren't for the Captain convincing the others on the Council to spare you —~
 @191 = ~Captain, it was shortly after these events that you joined <CHARNAME> in <PRO_HISHER> hunt for the wizard, yes?~
-
+@192 = ~Change Corwin's Portrait (LCA)~
+@193 = ~Change Corwin's Portrait (SoD)~
 @194 = ~Odren Debug.~
-
-
-
+@195 = ~Twenty Hours.~
+@196 = ~Thirty-six hours.~
+@197 = ~Sixty hours.~
+@198 = ~Re-apply Corwin sound swap (See note in User Guide).~
 @199 = ~Hello, and thank you for installing the LCA mod. Because you are starting this game from Baldur's Gate 2, and not from BG1 or SoD, there are some configuration concerns that need to be resolved. It will only take a moment.~
 @200 = ~Continue.~
 @201 = ~Great, let's begin. Would you like to proceed as though <CHARNAME> was in a romantic relationship with Corwin, as of the end of SoD?~
@@ -195,9 +229,10 @@ Schael"~
 @208 = ~Concerning Caelar Argent, do you want to proceed as though she was left alive in Avernus?~
 @209 = ~<CHARNAME> was exiled.~
 @210 = ~<CHARNAME> fought the Flaming Fist and escaped through the tunnels.~
-
+@211 = ~Access BG2 Initial Configuration Menu.~
 @212 = ~(The painting depicts a fire-breathing dragon. Strange... it is slightly askew, and you can make out what appears to be a small alcove behind the lower left corner of the painting. Investigate?)~
 @213 = ~(Carefully, you tilt the painting further, so that you can more easily access the alcove. Within the alcove you find a book, which you place into your pack. Before leaving, you gently slide the painting back down so that the alcove is completely concealed.)~ 
 @214 = ~Treat Kanaglym as having been cleared, in SoD?~
-
+@215 = ~Support the creator of the LCA mod.~
+@216 = ~Please visit www.patreon.com/EETMods. There, you can make either a one-time or a recurring contribution. Thank you for your generosity.~
 

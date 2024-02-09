@@ -1,0 +1,16 @@
+IF 
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		StorePartyLocations()
+		FadeToColor([30.0],0)
+		Wait(1)
+		LeaveAreaLUA("XABLCK","",[420.300],S)
+		LeaveAreaLUAPanic("XABLCK","",[420.300],S)
+		Wait(1)
+		FadeFromColor([30.0],0)
+		Wait(1)
+		EndCutSceneMode()
+		ActionOverride("XAKANA1", StartDialog("XAKANA1", Player1))
+END

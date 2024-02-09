@@ -1,0 +1,33 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ClearAllActions()
+		Wait(1)
+		
+		DisplayStringHead("XASAREVO", @0)
+		Wait(4)
+		DisplayStringHead("XASAREVO", @1)
+		Wait(3)
+		DisplayStringHead("XACOMM", @2)
+		SmallWait(1)
+		DisplayStringHead("XACOMW", @3)
+		Wait(3)
+		DisplayStringHead("XASAREVO", @4)
+		Wait(4)
+		ActionOverride("XASAREVO", FaceObject(Player1))
+		SmallWait(1)
+		DisplayStringHead("XASAREVO", @5)
+		Wait(1)
+		FaceObject("XASAREVO")
+		Wait(4)
+		DisplayStringHead("XASAREVO", @6)
+		Wait(1)
+		DisplayStringHead("XACOMM1", @7)
+		SmallWait(1)
+		DisplayStringHead("XACOMW1", @8)
+		Wait(3)
+		ActionOverride("XASAREVO", StartDialog("XASAREVO", Player1))
+		
+END

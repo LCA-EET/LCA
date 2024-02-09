@@ -1,0 +1,22 @@
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_ChangeDialog_0726", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_ChangeDialog_0726", "GLOBAL", 1)
+		ActionOverride("DIVINE", SetDialog("XADIVINE"))
+		Continue()
+END
+
+//{ Clean-up
+IF
+	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	Global("XA_ChangeDialog_0726", "GLOBAL", 1)
+	InMyArea("DIVINE")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_ChangeDialog_0726", "GLOBAL", 0)
+		ActionOverride("DIVINE", SetDialog("DIVINE"))
+		Continue()
+END
+//}

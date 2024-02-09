@@ -1,0 +1,250 @@
+// Wyrm's Crossing - Return to Baldur's Gate
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_HideMapAreas", "BG0900", 1)
+THEN
+	RESPONSE #100
+		RemoveWorldmapAreaFlag("AR0020", VISIBLE)
+		RemoveWorldmapAreaFlag("AR0300", VISIBLE)
+		RemoveWorldmapAreaFlag("AR0400", VISIBLE)
+		RemoveWorldmapAreaFlag("AR0500", VISIBLE)
+		RemoveWorldmapAreaFlag("AR0700", VISIBLE)
+		RemoveWorldmapAreaFlag("AR0800", VISIBLE)
+		RemoveWorldmapAreaFlag("AR0900", VISIBLE)
+		RemoveWorldmapAreaFlag("AR1000", VISIBLE)
+		RemoveWorldmapAreaFlag("AR1100", VISIBLE)
+		RemoveWorldmapAreaFlag("AR1200", VISIBLE)
+		RemoveWorldmapAreaFlag("AR1300", VISIBLE)
+		RemoveWorldmapAreaFlag("AR1400", VISIBLE)
+		RemoveWorldmapAreaFlag("AR1500", VISIBLE)
+		RemoveWorldmapAreaFlag("AR1600", VISIBLE)
+		RemoveWorldmapAreaFlag("AR1700", VISIBLE)
+		RemoveWorldmapAreaFlag("AR1800", VISIBLE)
+		RemoveWorldmapAreaFlag("AR1900", VISIBLE)
+		RemoveWorldmapAreaFlag("AR2000", VISIBLE)
+		RemoveWorldmapAreaFlag("AR2100", VISIBLE)
+		RemoveWorldmapAreaFlag("AR2200", VISIBLE)
+		RemoveWorldmapAreaFlag("AR2600", VISIBLE)
+		RemoveWorldmapAreaFlag("AR2800", VISIBLE)
+		RemoveWorldmapAreaFlag("AR3000", VISIBLE)
+		
+		RemoveWorldmapAreaFlag("BD1000", VISIBLE)
+		RemoveWorldmapAreaFlag("BD2000", VISIBLE)
+		RemoveWorldmapAreaFlag("BD3000", VISIBLE)
+		RemoveWorldmapAreaFlag("BD4000", VISIBLE)
+		RemoveWorldmapAreaFlag("BD5000", VISIBLE)
+		RemoveWorldmapAreaFlag("BD7000", VISIBLE)
+		RemoveWorldmapAreaFlag("BD7100", VISIBLE)
+		RemoveWorldmapAreaFlag("BD7200", VISIBLE)
+		RemoveWorldmapAreaFlag("BD7300", VISIBLE)
+		RemoveWorldmapAreaFlag("BD7400", VISIBLE)
+		
+		RemoveWorldmapAreaFlag("BG0500", VISIBLE)
+		RemoveWorldmapAreaFlag("BG1000", VISIBLE)
+		RemoveWorldmapAreaFlag("BG1008", VISIBLE)
+		RemoveWorldmapAreaFlag("BG1400", VISIBLE)
+		RemoveWorldmapAreaFlag("BG1500", VISIBLE)
+		RemoveWorldmapAreaFlag("BG1700", VISIBLE)
+		RemoveWorldmapAreaFlag("BG1800", VISIBLE)
+		RemoveWorldmapAreaFlag("BG1900", VISIBLE)
+		RemoveWorldmapAreaFlag("BG2000", VISIBLE)
+		RemoveWorldmapAreaFlag("BG2100", VISIBLE)
+		RemoveWorldmapAreaFlag("BG2200", VISIBLE)
+		RemoveWorldmapAreaFlag("BG2300", VISIBLE)
+		RemoveWorldmapAreaFlag("BG2400", VISIBLE)
+		RemoveWorldmapAreaFlag("BG2600", VISIBLE)
+		RemoveWorldmapAreaFlag("BG2700", VISIBLE)
+		RemoveWorldmapAreaFlag("BG2800", VISIBLE)
+		RemoveWorldmapAreaFlag("BG2900", VISIBLE)
+		RemoveWorldmapAreaFlag("BG3000", VISIBLE)
+		RemoveWorldmapAreaFlag("BG3100", VISIBLE)
+		RemoveWorldmapAreaFlag("BG3200", VISIBLE)
+		RemoveWorldmapAreaFlag("BG3300", VISIBLE)
+		RemoveWorldmapAreaFlag("BG3400", VISIBLE)
+		RemoveWorldmapAreaFlag("BG3500", VISIBLE)
+		RemoveWorldmapAreaFlag("BG3600", VISIBLE)
+		RemoveWorldmapAreaFlag("BG3700", VISIBLE)
+		RemoveWorldmapAreaFlag("BG3800", VISIBLE)
+		RemoveWorldmapAreaFlag("BG3900", VISIBLE)
+		RemoveWorldmapAreaFlag("BG4000", VISIBLE)
+		RemoveWorldmapAreaFlag("BG4100", VISIBLE)
+		RemoveWorldmapAreaFlag("BG4200", VISIBLE)
+		RemoveWorldmapAreaFlag("BG4300", VISIBLE)
+		RemoveWorldmapAreaFlag("BG4400", VISIBLE)
+		RemoveWorldmapAreaFlag("BG4500", VISIBLE)
+		RemoveWorldmapAreaFlag("BG4600", VISIBLE)
+		RemoveWorldmapAreaFlag("BG4700", VISIBLE)
+		RemoveWorldmapAreaFlag("BG4800", VISIBLE)
+		RemoveWorldmapAreaFlag("BG4900", VISIBLE)
+		RemoveWorldmapAreaFlag("BG5000", VISIBLE)
+		RemoveWorldmapAreaFlag("BG5100", VISIBLE)
+		RemoveWorldmapAreaFlag("BG5200", VISIBLE)
+		RemoveWorldmapAreaFlag("BG5300", VISIBLE)
+		RemoveWorldmapAreaFlag("BG5400", VISIBLE)
+		RemoveWorldmapAreaFlag("BG5500", VISIBLE)
+		
+		RemoveWorldmapAreaFlag("OH4000", VISIBLE)
+		RemoveWorldmapAreaFlag("OH5100", VISIBLE)
+		RemoveWorldmapAreaFlag("OH6000", VISIBLE)
+		
+		SetGlobal("XA_HideMapAreas", "BG0900", 1)
+		Continue()
+END
+
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("Aerie")
+	!Global("XA_AerieInBG", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_AerieInBG", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("Smuggler")
+THEN
+	RESPONSE #100
+		ActionOverride("Smuggler", DestroySelf())
+		Continue()
+END
+
+//Spawn Creatures
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 2)
+	!Global("XA_WyrmNPCsCreated", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("Scar",DestroySelf())
+		ActionOverride("flamgg",DestroySelf())
+		ActionOverride("Quayle",DestroySelf())
+		
+		EraseJournalEntry(97346)  // Rillifane's avatar has appeared and cleared a path forward. I must go to the Tree of Life and confront Irenicus once and for all.
+		EraseJournalEntry(4352)  // Finding Irenicus in Hell Irenicus's death did not have the same effect as Bodhi's did, and my soul has not returned to me. Perhaps it was because of the power he gathered from the Tree of Life, or because Bodhi was undead. Regardless, Irenicus has fallen, dragging both my soul and myself inexorably behind. I am now alone in what must be the Nine Hells, but I am certain Irenicus is here somewhere... and somehow, in this, I must find the mage and battle him once and for all to get my soul back.
+		
+		AdvanceTime(FOURTEEN_DAYS)
+		ActionOverride(Player1,Rest())
+		ActionOverride(Player2,Rest())
+		ActionOverride(Player3,Rest())
+		ActionOverride(Player4,Rest())
+		ActionOverride(Player5,Rest())
+		ActionOverride(Player6,Rest())
+		
+		//HideAreaOnMap(
+		
+		CreateCreature("XANEDERL", [1553.1370], SE) // Nederlok
+		CreateCreature("XABENCE", [1500.1396], SE) // Bence
+		CreateCreature("BDNOBF7", [1400.1300], SE) // City Official
+		CreateCreature("BDNOBM2", [1466.1263], SE) // City Official
+		CreateCreature("XAFF1248", [1415.1385], SE) // FF Officer
+		CreateCreature("XAFF1271", [1566.1288], SE) // FF Officer
+		
+		CreateCreature("BDFF1709", [4038.3160], SE) // Bridge Guard
+		CreateCreature("BDFF1002", [3916.3244], SE) // Bridge Guard
+		CreateCreature("BDFF1002", [2634.2404], SE) // Bridge Guard
+		CreateCreature("BDFF1709", [2891.2217], SE) // Bridge Guard
+		SetGlobal("XA_WyrmNPCsCreated", "GLOBAL", 1)
+		SetGlobal("Chapter","GLOBAL",19)
+		SetGlobal("ThiefSecretQuestion","GLOBAL",0)
+		FadeFromColor([20.0],0)
+		Continue()
+END
+
+IF 
+	Global("XA_PartyRemovalProcessing", "GLOBAL", 2)
+	Global("XA_WyrmNPCsCreated", "GLOBAL", 1)
+THEN 
+	RESPONSE #100
+		Wait(1)
+		StartCutSceneMode()
+		SetCutSceneLite(TRUE)
+		ActionOverride("XANEDERL", StartDialog("XANEDERL", Player1))
+		Continue()
+END
+
+IF 
+	Global("XA_BenceWyrm", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BenceWyrm", "GLOBAL", 2)
+		ActionOverride("BDNOBF7", MoveToPoint([3.827])
+		ActionOverride("BDNOBF7", EscapeArea())
+		SmallWait(2)
+		ActionOverride("BDNOBM2", MoveToPoint([3.827])
+		ActionOverride("BDNOBM2", EscapeArea())
+		SmallWait(2)
+		ActionOverride("XAFF1271", MoveToPoint([3.827])
+		ActionOverride("XAFF1271", EscapeArea())
+		SmallWait(2)
+		ActionOverride("XAFF1248", MoveToPoint([3.827])
+		ActionOverride("XAFF1248", EscapeArea())
+		SmallWait(2)
+		ActionOverride("XANEDERL", MoveToPoint([3.827])
+		ActionOverride("XANEDERL", EscapeArea())
+		Wait(3)
+END
+
+IF 
+	Global("XA_BenceWyrm", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		ActionOverride("XABENCE", StartDialog("XABENCE", Player1))
+		Continue()
+END
+
+IF
+	Global("XA_BenceWyrm", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BenceWyrm", "GLOBAL", 4)
+		ActionOverride("XABENCE", MoveToPoint([3.827])
+		
+		//ActionOverride("XABENCE", EscapeArea())
+END
+
+IF
+	Global("XA_BenceWyrm", "GLOBAL", 4)
+	!TriggerOverride(Player1, See("XABENCE"))
+THEN
+	RESPONSE #100
+		SetGlobal("XA_BenceWyrm", "GLOBAL", 5)
+		ActionOverride("XABENCE", DestroySelf()) 
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_DrawBridgeDown","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_DrawBridgeDown","GLOBAL",1)
+		CloseDoor("DoorDraw")
+		Continue()
+END
+
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 2)
+	Global("XA_DrawBridgeDown","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_DrawBridgeDown","GLOBAL",0)
+		OpenDoor("DoorDraw")
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_NPCsDestroyed","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_NPCsDestroyed","GLOBAL",1)
+		
+		ActionOverride("XANEDERL", DestroySelf()) // Nederlok
+		ActionOverride("BDNOBF7", DestroySelf()) // City Official
+		ActionOverride("BDNOBM2", DestroySelf()) // City Official
+		ActionOverride("XAFF1248", DestroySelf()) // FF Officer
+		ActionOverride("XAFF1271", DestroySelf()) // FF Officer
+		
+END
