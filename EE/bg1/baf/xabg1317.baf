@@ -1,5 +1,5 @@
 IF
-	GlobalLT("XA_BBCreate", "BG1317", 1)
+	GlobalLT("XA_BBCreate", "MYAREA", 1)
 THEN
 	RESPONSE #100
 		ActionOverride("Container 2", DestroyItem("STAF01"))
@@ -7,7 +7,7 @@ THEN
 		ActionOverride("Container 2", CreateItem("XAFFBOOK",1,0,0))
 		ActionOverride("Container 2", CreateItem("XAAMBELT",1986,0,0))
 		ActionOverride("Container 2", SetItemFlags("XAFFBOOK", IDENTIFIED,TRUE))
-		SetGlobal("XA_BBCreate", "BG1317", 1)
+		SetGlobal("XA_BBCreate", "MYAREA", 1)
 		Continue()
 END
 

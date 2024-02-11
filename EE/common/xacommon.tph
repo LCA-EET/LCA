@@ -3,6 +3,11 @@ PRINT @900  /* ~Processing common components...~ */
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/common/baf~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/common/d~
 
+
+ACTION_IF (isEET = 1) THEN BEGIN
+	EXTEND_BOTTOM ~BALDUR.BCS~ ~%MOD_FOLDER%/common/baf/xalcasst.baf~
+END
+
 //{ Gesen Projectile
 	ADD_PROJECTILE ~%MOD_FOLDER%/common/pro/xalarrow.pro~
 //}
@@ -26,7 +31,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/common/d~
 //}
 
 //{ cre
-	COPY ~%MOD_FOLDER%/common/cre/xaadbg.cre~ ~override~
+	COPY ~%MOD_FOLDER%/common/cre/xalcdbg.cre~ ~override~
 	SAY NAME1 @919
 	SAY NAME2 @919
 	
@@ -69,10 +74,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/common/d~
 	COPY ~%MOD_FOLDER%/common/cre/xavoidwe.cre~ ~override~
 	SAY NAME1 @915
 	SAY NAME2 @915
-//}
-
-//{ d
-	COPY ~%MOD_FOLDER%/common/d/xaadbg.d~ ~override~
 //}
 
 //{ Corwin Portrait
@@ -123,18 +124,21 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/common/d~
 	SAY NAME2 @920
 	SAY UNIDENTIFIED_DESC @921
 	SAY DESC @921
+	WRITE_LONG 0x9e RESOLVE_STR_REF(@976)
 	
 	COPY ~%MOD_FOLDER%/common/itm/xaamul2.itm~ ~override~
 	SAY NAME1 @920
 	SAY NAME2 @920
 	SAY UNIDENTIFIED_DESC @921
 	SAY DESC @921
+	WRITE_LONG 0x9e RESOLVE_STR_REF(@976)
 	
 	COPY ~%MOD_FOLDER%/common/itm/xaamulet.itm~ ~override~
 	SAY NAME1 @907
 	SAY NAME2 @907
 	SAY UNIDENTIFIED_DESC @910
 	SAY DESC @910
+	WRITE_LONG 0x9e RESOLVE_STR_REF(@977)
 	
 	COPY ~%MOD_FOLDER%/common/itm/xabenohd.itm~ ~override~
 	SAY NAME1 @922

@@ -8,6 +8,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/common/baf/xachfight.baf~
 	EXTEND_TOP ~baldur.bcs~		~%MOD_FOLDER%/bg2/baf/xajrnbg2.baf~
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/bg2/baf/xap1d.baf~
+	EXTEND_TOP ~ppjon.bcs~ 		~%MOD_FOLDER%/bg2/baf/xappjon.baf~
 //}
 
 //{ are

@@ -53,19 +53,22 @@ LANGUAGE ~English~ ~english~ ~%MOD_FOLDER%/tra/english/xalca.tra~
 BEGIN
 @800 /* ~Love Conquers All (LCA)~ */
 
-INCLUDE ~%MOD_FOLDER%/common/xacommon.tph~
-
-
 ACTION_IF (GAME_IS ~eet~) THEN BEGIN
 	OUTER_SET isEET = 1
 	PRINT @801  // ~Enhanced Edition Trilogy (EET) mod has been detected.~ 
+END ELSE BEGIN
+	OUTER_SET isEET = 0
+	PRINT @802  // ~Enhanced Edition Trilogy (EET) mod has NOT been detected.~ 
+END
+
+INCLUDE ~%MOD_FOLDER%/common/xacommon.tph~
+
+ACTION_IF (isEET = 1) THEN BEGIN
 	INCLUDE ~%MOD_FOLDER%/bg1/xabg1.tph~
 	INCLUDE ~%MOD_FOLDER%/sod/xasod.tph~
 	INCLUDE ~%MOD_FOLDER%/bg2/xabg2.tph~
 	//INCLUDE ~%MOD_FOLDER%/rbg/xarbg.tph~
 END ELSE BEGIN
-	OUTER_SET isEET = 0
-	PRINT @802  // ~Enhanced Edition Trilogy (EET) mod has NOT been detected.~ 
 	ACTION_IF(GAME_IS ~bgee~) THEN BEGIN
 		PRINT @803  // ~Baldur's Gate Enhanced Edition detected.~ 
 		INCLUDE ~%MOD_FOLDER%/bg1/xabg1.tph~
@@ -77,7 +80,7 @@ END ELSE BEGIN
 	ACTION_IF(GAME_IS ~bg2ee~) THEN BEGIN
 		PRINT @805  // ~Baldur's Gate II Enhanced Edition detected.~ 
 		INCLUDE ~%MOD_FOLDER%/bg2/xabg2.tph~
-		//INCLUDE ~%MOD_FOLDER%/rbg/xarbg.tph~
+		INCLUDE ~%MOD_FOLDER%/rbg/xarbg.tph~
 	END
 END
 

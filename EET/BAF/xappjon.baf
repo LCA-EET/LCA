@@ -1,0 +1,9 @@
+IF
+	Global("AsylumPlot","GLOBAL",20)
+	InParty("XACORWIN")
+THEN
+	RESPONSE #0
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("XACUT41G")
+END

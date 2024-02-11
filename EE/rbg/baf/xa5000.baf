@@ -1,0 +1,10 @@
+IF
+	GlobalGT("Chapter","GLOBAL",2)
+	Global("oh_dialog_set_1","locals",0)
+THEN
+	RESPONSE #100
+		SetGlobal("oh_dialog_set_1","locals",1)
+		SetDialog("mtowbez")
+		ChangeAIScript("",CLASS)
+END
+

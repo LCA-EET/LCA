@@ -1,0 +1,57 @@
+IF
+	See([PC])
+	Global("HelpRamazith","GLOBAL",0)
+	Global("ShoutdlRamazith","GLOBAL",0)
+	OR(2)
+		Dead("Abela")  // Abela the Nymph
+		Global("AbelaNotExists","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ShoutdlRamazith","GLOBAL",1)
+		StartDialogueNoSet([PC])
+END
+
+IF
+	GlobalTimerExpired("Ramazith","GLOBAL")
+	GlobalLT("RamazithMove","GLOBAL",2)
+	!GlobalTimerExpired("AbelaTenDaysMove","GLOBAL")
+THEN
+	RESPONSE #100
+		Dialogue([PC])
+END
+
+IF
+	Global("HelpRamazith","GLOBAL",0)
+	OR(2)
+		Dead("Abela")  // Abela the Nymph
+		Global("AbelaNotExists","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetNumTimesTalkedTo(1)
+		EscapeAreaMove("AR0137",328,234,S)  // Ramazith's Tower, ground floor
+END
+
+IF
+	Global("RamazithDoNotLoop","GLOBAL",0)
+	GlobalTimerExpired("AbelaTenDaysMove","GLOBAL")
+THEN
+	RESPONSE #100
+		Kill("Abela")  // Abela the Nymph
+		SetGlobal("HelpRamazith","GLOBAL",6)
+		SetGlobal("RamazithDoNotLoop","GLOBAL",1)
+END
+
+IF
+	Global("ramami_move_indoors","AR0200",1)  // N Baldur's Gate (Ramazith's Tower, Duchal Palace)
+	AreaCheck("AR0200")  // N Baldur's Gate (Ramazith's Tower, Duchal Palace)
+THEN
+	RESPONSE #100
+		DialogInterrupt(FALSE)
+		MoveToPoint([3579.1462])
+		Unlock("DOOR0137")
+		OpenDoor("DOOR0137")
+		DialogInterrupt(TRUE)
+		SetGlobal("CloseDoor0137","GLOBAL",1)
+		EscapeAreaMove("AR0137",328,234,S)  // Ramazith's Tower, ground floor
+END
+

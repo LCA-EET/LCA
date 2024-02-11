@@ -711,3 +711,14 @@ THEN
 		Continue()
 END
 //}
+
+//{ v1.1.1 - Mod Conflict in Spellhold. Ensures that the dialog progresses as designed
+IF
+	Global("XA_CorwinIrenicus", "GLOBAL", 2)
+	//GlobalTimerExpired("XA_CorwinIrenicusForceTimer", "GLOBAL", ONE_ROUND)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		StartCutScene("XA41CS02")
+END
+//}

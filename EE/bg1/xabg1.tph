@@ -1,6 +1,7 @@
 PRINT @1000  /* ~Processing BG1 changes...~ */
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/d~
 
 //{ String Sets
 	ACTION_IF (isEET = 1) THEN BEGIN
@@ -8,12 +9,12 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/baf~
 		STRING_SET 202517 @1002 //BELAND State 1 /* */
 		ACTION_IF !(MOD_IS_INSTALLED "Setup-CorwinEET.tp2" "0") THEN BEGIN
 			PRINT @1010  /* ~CorwinEET is not installed. Strings will be patched accordingly.~ */
-			STRING_SET 216992 @117 //DELTAN2 State 1
-			STRING_SET 216991 @118 //DELTAN2 State 4
-			STRING_SET 202152 @119 //NEB_ State 3
-			STRING_SET 209737 @120 //ALANBL State 5
-			STRING_SET 209701 @121 //SORREL State 2
-			STRING_SET 219473 @122 //VAI State 6
+			STRING_SET 216992 @1003 //DELTAN2 State 1
+			STRING_SET 216991 @1004 //DELTAN2 State 4
+			STRING_SET 202152 @1005 //NEB_ State 3
+			STRING_SET 209737 @1006 //ALANBL State 5
+			STRING_SET 209701 @1007 //SORREL State 2
+			STRING_SET 219473 @1010 //VAI State 6
 		END ELSE BEGIN
 			PRINT @1009  /* ~CorwinEET is installed. String sets skipped!~*/
 		END
@@ -32,7 +33,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/baf~
 
 
 //{ Modifications to Existing Areas
-
 	
 	//{ Corwin's House (SE Baldur's Gate)
 		ACTION_IF (isEET = 1) THEN BEGIN
@@ -90,6 +90,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/baf~
 		EXTEND_TOP ~BG1317.BCS~ ~%MOD_FOLDER%/bg1/baf/xabg1317.baf~
 	END ELSE BEGIN
 		EXTEND_TOP ~AR1317.BCS~ ~%MOD_FOLDER%/bg1/baf/xabg1317.baf~
+		EXTEND_TOP ~BALDUR.BCS~ ~%MOD_FOLDER%/common/baf/xalcasst.baf~
 	END
 	
 //}
@@ -97,25 +98,30 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/baf~
 //{ New Items
 	//{ Ammo Belt
 		COPY ~%MOD_FOLDER%/bg1/itm/xaambelt.itm~ ~override~
-		SAY NAME1 @10 /* ~Ammo Belt~*/
-		SAY NAME2 @10 /* */
-		SAY UNIDENTIFIED_DESC @11 /* */
-		SAY DESC @11 /* */
+		SAY NAME1 @1015 /* ~Ammo Belt~*/
+		SAY NAME2 @1015 /* ~Ammo Belt~*/
+		SAY UNIDENTIFIED_DESC @1016 /* */
+		SAY DESC @1016 /* */
 	//}
 	
 	//{ Flaming Fist Manual
 		COPY ~%MOD_FOLDER%/bg1/itm/xaffbook.itm~ ~override~
-		SAY NAME1 @12 /* ~Officers' Training Manual~*/
-		SAY NAME2 @12 /* */
-		SAY UNIDENTIFIED_DESC @13
-		SAY DESC @13
+		SAY NAME1 @1011 /* ~Officers' Training Manual~*/
+		SAY NAME2 @1011 /* ~Officers Training Manual~ */
+		SAY UNIDENTIFIED_DESC @1012 /* ~This appears to be a Flaming Fist officers' training manual. It includes policies and procedures covering incident investigations, suspect apprehension techniques, proper etiquette when dealing with city officials, and much more. The initials "S.C." are written on the inside cover. It's clear that "S.C", whoever they are, has spent a great many hours studying the manual intently; it is well-worn, and some of the pages are coming loose from the binding.~   */
+		SAY DESC @1012 /* ~This appears to be a Flaming Fist officers' training manual. It includes policies and procedures covering incident investigations, suspect apprehension techniques, proper etiquette when dealing with city officials, and much more. The initials "S.C." are written on the inside cover. It's clear that "S.C", whoever they are, has spent a great many hours intently studying the manual; it is well-worn, and some of the pages are coming loose from the binding.~  */
 	//}
 	
 	//{ Burned Letter
 		COPY ~%MOD_FOLDER%/bg1/itm/xaltrbrn.itm~ ~override~
-		SAY NAME1 @16 /* ~Burned Document~ */
-		SAY NAME2 @16 /* */
-		SAY UNIDENTIFIED_DESC @17
-		SAY DESC @17
+		SAY NAME1 @1013 /* ~Burned Document~ */
+		SAY NAME2 @1013 /* ~Burned Document~  */
+		SAY UNIDENTIFIED_DESC @1014 /*~This document has been burned, but parts of it are still legible. From what you can make out, the recipient was ordered to head to a staging area north of the city, due to a spate of assassinations. They were to wait there and prepare to retake... something. You can't make it out. Who it was addressed to you cannot say, though you see what you think is a Flaming Fist insignia on the lower right corner of the page. Interesting.~ */
+		SAY DESC @1014 /* ~This document has been burned, but parts of it are still legible. From what you can make out, the recipient was ordered to head to a staging area north of the city, due to a spate of assassinations. They were to wait there and prepare to retake... something. You can't make it out. Who it was addressed to you cannot say, though you see what you think is a Flaming Fist insignia on the lower right corner of the page. Interesting.~*/
 	//}
+//}
+
+//{ Ammo Belt "Store"
+	COPY ~%MOD_FOLDER%/bg1/sto/xaambelt.sto~ ~override~
+	WRITE_LONG 0x0C RESOLVE_STR_REF(@1015)
 //}

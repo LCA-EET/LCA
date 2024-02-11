@@ -42,12 +42,14 @@
 //}
 
 //{ Launch LCA Assistant
-IF
-	Global("XAAssist", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XAAssist","GLOBAL",0)
-		ActionOverride(Player1, CreateCreature("XAADBG", [-1.-1], N))
-		ActionOverride("XAADBG", StartDialog("XAADBG",Player1))
-END
+	IF
+		Global("XAAssist", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XAAssist","GLOBAL",0)
+			SetGlobal("XA_DebugInit", "GLOBAL", 1)
+			ActionOverride(Player1, CreateCreature("XALCDBG", [-1.-1], N))
+			SetInterrupt(TRUE)
+	END
 //}
