@@ -149,6 +149,24 @@ APPEND XALCDBG
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @4018/* ~Trial Cutscene (Ashatiel honorable duel.)~*/
+		DO ~
+			SetGlobal("bd_asha_duel", "GLOBAL", 3)
+			SetGlobal("XA_CorwinWitnessedDuel", "GLOBAL", 2)
+			StartCutsceneMode()
+			StartCutscene("bdcut61t")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @4019/* ~Trial Cutscene.~*/
+		DO ~
+			SetGlobal("bd_asha_duel", "GLOBAL", 1)
+			StartCutsceneMode()
+			StartCutscene("bdcut61t")
+		~
+		EXIT
+		
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_SoD_Debug
 		
