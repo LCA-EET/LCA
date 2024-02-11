@@ -1,0 +1,27 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ActionOverride("Corwin", FaceObject("XATREE"))
+		SmallWait(5)
+		FaceObject("XATREE")
+		SmallWait(5)
+		SetSequence(SEQ_SHOOT)
+		SmallWait(5)
+		DisplayStringHead("XATREE", @0)
+		Wait(1)
+		DisplayStringHead("Corwin", @1)
+		Wait(4)
+		SetSequence(SEQ_SHOOT)
+		SmallWait(5)
+		DisplayStringHead("XATREE", @0)
+		Wait(1)
+		DisplayStringHead("Corwin", @2)
+		Wait(1)
+		FaceObject("Corwin")
+		ActionOverride("Corwin", FaceObject(Player1))
+		Wait(1)
+		EndCutSceneMode()
+		ActionOverride("Corwin", StartDialog("BDCORWIJ", Player1))
+END

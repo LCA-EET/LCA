@@ -5,8 +5,8 @@ $archive = $basePath + ".zip"
 $exePath = "setup-" + $tp2Name + ".exe"
 $testDir = "F:\Baldur's Gate EET\00766\"
 $folders = @(
+'assistant',
 'bg1',
-'common',
 'tra'
 )
 
@@ -17,5 +17,7 @@ foreach($folder in $folders){
 }
 
 Copy-Item -Path ($tp2Name + ".tp2") -Destination $modPath 
+
+Remove-Item -LiteralPath ($testDir + $tp2Name) -Force -Recurse
 
 Copy-Item -Path $modPath -Destination $testDir -Recurse
