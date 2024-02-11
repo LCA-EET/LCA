@@ -6,6 +6,7 @@ $exePath = "setup-" + $tp2Name + ".exe"
 $testDir = "F:\Baldur's Gate EET\00806\"
 $folders = @(
 'assistant',
+'bg1',
 'sod',
 'tra'
 )

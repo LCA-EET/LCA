@@ -1,0 +1,31 @@
+OUTER_SET sod_carryover = 1
+
+//{ Archery Boost
+	COPY ~%MOD_FOLDER%/sod/spl/xalcarch.spl~ ~override~
+	SAY NAME1 @2002				 /* ~Corwin's Tutelage~*/
+	SAY UNIDENTIFIED_DESC @2002	 /* ~Corwin's Tutelage~*/
+	SAY DESC @2002 				 /* ~Corwin's Tutelage~*/
+//}
+
+//{ New Items
+	COPY ~%MOD_FOLDER%/sod/itm/xaltrcor.itm~ ~override~
+	SAY NAME1 @2001
+	SAY NAME2 @2001
+	SAY UNIDENTIFIED_DESC @2007
+	SAY DESC @2007
+	
+	COPY ~%MOD_FOLDER%/sod/itm/xaltrsch.itm~ ~override~
+	SAY NAME1 @2003
+	SAY NAME2 @2003
+	SAY UNIDENTIFIED_DESC @2006
+	SAY DESC @2006
+	
+	COPY ~%MOD_FOLDER%/sod/bam/xaamulet.bam~ ~override~
+	COPY ~%MOD_FOLDER%/sod/itm/xaamulet.itm~ ~override~
+	SAY NAME1 @2005
+	SAY NAME2 @2005
+	SAY UNIDENTIFIED_DESC @2008
+	SAY DESC @2008
+	WRITE_LONG 0x9e RESOLVE_STR_REF(@2009)
+//}
+

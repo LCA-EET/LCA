@@ -1,7 +1,7 @@
 //{ Add LCA Assistant
 	IF
 		ActionListEmpty()
-		!TriggerOverride(Player1,HaveSpellRES("XAASSIS1"))
+		!TriggerOverride(Player1,HaveSpellRES("XALCASST"))
 		Global("XA_LC_DisableAssistant", "GLOBAL", 0) 
 		GlobalLT("XA_AddLCAAssistantTimerSet", "GLOBAL", 1)
 	THEN
@@ -21,7 +21,7 @@
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			ActionOverride(Player1, AddSpecialAbility("XAASSIS1"))
+			ActionOverride(Player1, AddSpecialAbility("XALCASST"))
 			SetGlobal("XA_AddLCAAssistantTimerSet", "GLOBAL", 0)
 			SetInterrupt(TRUE)
 			Continue()
@@ -29,12 +29,12 @@
 	
 	IF
 		ActionListEmpty()
-		TriggerOverride(Player1,HaveSpellRES("XAASSIS1"))
+		TriggerOverride(Player1,HaveSpellRES("XALCASST"))
 		Global("XA_LC_DisableAssistant", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			ActionOverride(Player1, RemoveSpellRES("XAASSIS1"))
+			ActionOverride(Player1, RemoveSpellRES("XALCASST"))
 			SetInterrupt(TRUE)
 			Continue()
 	END
@@ -43,11 +43,11 @@
 
 //{ Launch LCA Assistant
 	IF
-		Global("XAAssist", "GLOBAL", 1)
+		Global("XALCASST", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XAAssist","GLOBAL",0)
+			SetGlobal("XALCASST","GLOBAL",0)
 			SetGlobal("XA_DebugInit", "GLOBAL", 1)
 			ActionOverride(Player1, CreateCreature("XALCDBG", [-1.-1], N))
 			SetInterrupt(TRUE)

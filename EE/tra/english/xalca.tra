@@ -880,44 +880,17 @@ You sense there is little Schael Corwin would not do for her family or for the F
 
 @850 = ~Processing LCA Assistant...~
 @851 = ~LCA Assistant~
+@852 = ~Added LCA Assistant to Baldur.bcs~
+@853 = ~Added LCA Assistant to BDBaldur.bcs~
+@854 = ~Added LCA Assistant to Baldur25.bcs~
+
 
 @900 = ~Processing common components...~
 @901 = ~LCA Assistant~
 @902 = ~Corwin Portrait Change (SoD)~
 @903 = ~Corwin Portrait Change (LCA)~
-@904 = ~Corwin's Tutelage~
-@905 = ~Schael's Letter~
-@906 = ~Corwin's Letter~
-@907 = ~Corwin's Amulet~
-@908 = ~<CHARNAME>,
 
-By the time you read this, you'll have departed the city. I'm sorry that I wasn't able to see you one last time before you left. When Belt, Eltan and Jannath made the decision to exile you, the Fist was put on high alert to prevent Entar and his associates from trying to take matters into their own hands. 
 
-You now have the time you need to find some way to prove your innocence. If you're able to recover the Soultaker dagger, you must send it to me. The wizards believe they can restore Skie, but only if the dagger is in their possession. Once restored, she can corroborate your account of what happened on that night in Dragonspear. With your innocence established, love, we'll be together once again.    
-
-I've enclosed my amulet with this letter. Wear it and know that I love you, always. 
-
-Yours, 
-
-Schael~
-@909 = ~<CHARNAME>,
-
-By the time you read this, you'll have departed the city. I'm sorry that I wasn't able to see you one last time before you left. When Belt, Eltan and Jannath made the decision to exile you, the Fist was put on high alert to prevent Entar and his associates from trying to take matters into their own hands. 
-
-You now have the time you need to find some way to prove your innocence. If you're able to recover the Soultaker dagger, you must send it to me. The wizards believe they can restore Skie, but only if the dagger is in their possession. Once restored, she can corroborate your account of what happened on that night in Dragonspear. You'll be able to return to the city once your innocence is established.   
-
-Good luck to you, my friend. 
-
-Regards, 
-
-Captain Corwin~
-@910 = ~This amulet was given to you by Schael Corwin, as a token of her love for you. It contains a small portrait of her daughter, Rohma. Though the amulet isn't magical, when you wear it you are filled with hope and a renewed sense of purpose. You resolve to overcome whatever ordeals lie ahead, so that you can return to the arms of your love.
-
-Equipped abilities:
-– Charisma: +1
-– Saving Throws: +3
-– Magic Resistance: +5%
-~
 @911 = ~Corwin's Bow +2~
 @912 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
 
@@ -1372,7 +1345,7 @@ Abilities:
  
 Weight: 2~
 @976 = ~Corwin~
-@977 = ~<CHARNAME>~
+
 @005=~Letter to Corwin~
 @006=~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.~
 
@@ -1400,7 +1373,44 @@ STATISTICS:
 Weight: 2~
 // SoD
 @2000 = ~Processing SoD changes...~
+@2001 = ~Corwin's Letter~
+@2002 = ~Corwin's Tutelage~
+@2003 = ~Schael's Letter~
+@2004 = ~Corwin's Letter~
+@2005 = ~Corwin's Amulet~
+@2006 = ~<CHARNAME>,
 
+By the time you read this, you'll have departed the city. I'm sorry that I wasn't able to see you one last time before you left. When Belt, Eltan and Jannath made the decision to exile you, the Fist was put on high alert to prevent Entar and his associates from trying to take matters into their own hands. 
+
+You now have the time you need to find some way to prove your innocence. If you're able to recover the Soultaker dagger, you must send it to me. The wizards believe they can restore Skie, but only if the dagger is in their possession. Once restored, she can corroborate your account of what happened on that night in Dragonspear. With your innocence established, love, we'll be together once again.    
+
+I've enclosed my amulet with this letter. Wear it and know that I love you, always. 
+
+Yours, 
+
+Schael~
+@2007 = ~<CHARNAME>,
+
+By the time you read this, you'll have departed the city. I'm sorry that I wasn't able to see you one last time before you left. When Belt, Eltan and Jannath made the decision to exile you, the Fist was put on high alert to prevent Entar and his associates from trying to take matters into their own hands. 
+
+You now have the time you need to find some way to prove your innocence. If you're able to recover the Soultaker dagger, you must send it to me. The wizards believe they can restore Skie, but only if the dagger is in their possession. Once restored, she can corroborate your account of what happened on that night in Dragonspear. You'll be able to return to the city once your innocence is established.   
+
+Good luck to you, my friend. 
+
+Regards, 
+
+Captain Schael Corwin~
+@2008 = ~This amulet was given to you by Schael Corwin, as a token of her love for you. It contains a small portrait of her daughter, Rohma. Though the amulet isn't magical, when you wear it you are filled with hope and a renewed sense of purpose. You resolve to overcome whatever ordeals lie ahead, so that you can return to the arms of your love.
+
+Equipped abilities:
+– Charisma: +1
+– Saving Throws: +3
+– Magic Resistance: +5%
+~
+@2009 = ~<CHARNAME>~
+@2010 = ~Corwin~
+@2011 = ~Waterdhavian Guard~
+@2012 = ~Flaming Fist Mercenary~
 @3000 = ~Processing BG2 changes...~
 @3001 = ~Your party boards the caravan for the long trek to Saradush. During the journey, your thoughts wander to Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, the two of them are safe within the Ducal Palace, under the watchful eye of the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger.
 

@@ -53,6 +53,9 @@ LANGUAGE ~English~ ~english~ ~%MOD_FOLDER%/tra/english/xalca.tra~
 BEGIN
 @800 /* ~Love Conquers All (LCA)~ */
 
+OUTER_SET bg1_carryover = 0
+OUTER_SET sod_carryover = 0
+
 ACTION_IF (GAME_IS ~eet~) THEN BEGIN
 	OUTER_SET isEET = 1
 	PRINT @801  // ~Enhanced Edition Trilogy (EET) mod has been detected.~ 

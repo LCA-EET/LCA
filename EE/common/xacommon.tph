@@ -90,12 +90,6 @@ END
 	COPY ~%MOD_FOLDER%/common/bmp/xanarzus.bmp~ ~override~
 //}
 
-//{ Corwin's Tutelage
-	COPY ~%MOD_FOLDER%/common/spl/xalcarch.spl~ ~override~
-	SAY NAME1 @904				 /* ~Corwin's Tutelage~*/
-	SAY UNIDENTIFIED_DESC @904	 /* ~Corwin's Tutelage~*/
-	SAY DESC @904 				 /* ~Corwin's Tutelage~*/
-//}
 
 //{ LCA Assistant
 	COPY ~%MOD_FOLDER%/common/spl/xaassis1.spl~ ~override~
@@ -133,12 +127,7 @@ END
 	SAY DESC @921
 	WRITE_LONG 0x9e RESOLVE_STR_REF(@976)
 	
-	COPY ~%MOD_FOLDER%/common/itm/xaamulet.itm~ ~override~
-	SAY NAME1 @907
-	SAY NAME2 @907
-	SAY UNIDENTIFIED_DESC @910
-	SAY DESC @910
-	WRITE_LONG 0x9e RESOLVE_STR_REF(@977)
+	
 	
 	COPY ~%MOD_FOLDER%/common/itm/xabenohd.itm~ ~override~
 	SAY NAME1 @922
@@ -200,17 +189,7 @@ END
 	SAY UNIDENTIFIED_DESC @967
 	SAY DESC @967
 	
-	COPY ~%MOD_FOLDER%/common/itm/xaltrcor.itm~ ~override~
-	SAY NAME1 @906
-	SAY NAME2 @906
-	SAY UNIDENTIFIED_DESC @909
-	SAY DESC @909
 	
-	COPY ~%MOD_FOLDER%/common/itm/xaltrsch.itm~ ~override~
-	SAY NAME1 @905
-	SAY NAME2 @905
-	SAY UNIDENTIFIED_DESC @908
-	SAY DESC @908
 	
 	COPY ~%MOD_FOLDER%/common/itm/xalyamul.itm~ ~override~
 	SAY NAME2 @924

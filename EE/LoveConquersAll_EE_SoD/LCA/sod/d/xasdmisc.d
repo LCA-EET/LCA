@@ -71,6 +71,17 @@ EXTEND_BOTTOM BDIMOEN 89 /* OK */
 END
 
 APPEND BDIMOEN
+	IF ~
+		Global("XA_LC_SoDLetterDebug", "GLOBAL", 1)
+	~ THEN BEGIN XA_LC_LetterDebug
+		SAY @47 /* ~Letter Debug.~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_LC_SoDLetterDebug", "GLOBAL", 0)
+		~
+		GOTO XA_CorwinLetter 
+	END
 	IF ~  
 		AreaCheck("bd6100")
 		GlobalLT("bd_plot","global",675)
@@ -92,7 +103,7 @@ APPEND BDIMOEN
 			GiveItemCreate("XAAMULET", LastTalkedToBy(Myself),0,0,0)
 			SetGlobal("XA_GaveCorwinLetter", "GLOBAL", 2)
 		~
-		GOTO XA_GiveLetter_Schael
+		GOTO XA_GiveLetter
 		
 		IF ~
 			Global("XA_CorwinContinue", "GLOBAL", 1)
@@ -101,47 +112,16 @@ APPEND BDIMOEN
 			GiveItemCreate("XALTRCOR", LastTalkedToBy(Myself),0,0,0)
 			SetGlobal("XA_GaveCorwinLetter", "GLOBAL", 1)
 		~
-		GOTO XA_GiveLetter_Corwin
+		GOTO XA_GiveLetter
 	END
 	
-	IF ~~ THEN BEGIN XA_GiveLetter_Schael
+	IF ~~ THEN BEGIN XA_GiveLetter
 		SAY @2 /* She said that she's sorry she couldn't see you, but that you'd understand once you've read the letter. */
 		
 		IF ~~ THEN REPLY @3 /* ~Thank you, Imoen. (Read the letter now).~ */
 		DO ~
 			SetGlobal("XA_ReadCorwinLetter", "GLOBAL", 1)
-			ActionOverride(Player1, StartDialog("PLAYER1", Player1))
-		~
-		EXIT
-		
-		IF ~  
-			Global("bd_player_exiled","global",1)
-		~ THEN REPLY @4 /* ~Imoen! How did you know where to find me?~ */ 
-		DO ~
-			SetGlobal("bd_plot","global",665)
-		~ 
-		GOTO 91
-		
-		IF ~~ THEN REPLY @5 /* ~You should never have doubted I would find a way to freedom. I never did.~ */ 
-		DO ~
-			SetGlobal("bd_plot","global",665)
-		~ GOTO 92
-  
-		IF ~  
-			Global("bd_player_exiled","global",1)
-		~ THEN REPLY @6 /* ~I thought I was leaving the city in secret.~ */ 
-		DO ~
-			SetGlobal("bd_plot","global",665)
-		~ GOTO 91
-	END
-	
-	IF ~~ THEN BEGIN XA_GiveLetter_Corwin
-		SAY @2 /* She said that she's sorry she couldn't see you, but that you'd understand once you've read the letter. */
-		
-		IF ~~ THEN REPLY @3 /* ~Thank you, Imoen. (Read the letter now).~ */
-		DO ~
-			SetGlobal("XA_ReadCorwinLetter", "GLOBAL", 1)
-			ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+			ActionOverride(Player1, CreateCreature("XACORLTR", [-1.-1], S))
 		~
 		EXIT
 		

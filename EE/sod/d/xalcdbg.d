@@ -14,14 +14,59 @@ APPEND XALCDBG
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @3001
+		GOTO XA_SoD_ItemTest
+		
 		IF ~~ THEN REPLY @4005/* ~Adjust variables.~*/
 		GOTO XA_SoD_AdjustVariables
 		
 		IF ~~ THEN REPLY @4001/* ~Cutscene Test~*/
 		GOTO XA_SoD_CutsceneTest
 		
+		IF ~~ THEN REPLY @4012 /* ~Corwin Letter Interaction (Romantic)~ */
+		DO ~
+			CreateCreature("BDIMOEN", [-1.-1], S)
+			SetGlobal("XA_LC_SoDLetterDebug", "GLOBAL", 1)
+			SetGlobal("XA_CorwinContinue", "GLOBAL", 2)
+			ActionOverride("IMOEN", StartDialog("BDIMOEN", Player1)) 
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @4013 /* ~Corwin Letter Interaction (Romantic)~ */
+		DO ~
+			CreateCreature("BDIMOEN", [-1.-1], S)
+			SetGlobal("XA_LC_SoDLetterDebug", "GLOBAL", 1)
+			SetGlobal("XA_CorwinContinue", "GLOBAL", 1)
+			ActionOverride("IMOEN", StartDialog("BDIMOEN", Player1)) 
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 10
+		
+		IF ~~ THEN REPLY @3012 /*~Exit.~ */
+		GOTO 6
+		
+		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
+		DO ~
+			DestroySelf()
+		~
+		EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_SoD_ItemTest
+		SAY @3001 /* ~Item Test~*/
+		
+		IF ~~ THEN REPLY @4017 /*All SoD Items~ */
+		DO ~
+			GiveItemCreate("xaltrsch", Player1, 0,0,0)
+			GiveItemCreate("xaltrcor", Player1, 0,0,0)
+			GiveItemCreate("xaamulet", Player1, 0,0,0)
+		~
+		GOTO XA_SoD_ItemTest
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_SoD_Debug
 		
 		IF ~~ THEN REPLY @3012 /*~Exit.~ */
 		GOTO 6
@@ -90,6 +135,7 @@ APPEND XALCDBG
 		
 		IF ~~ THEN REPLY @4002/*  ~Tent Cutscene (XATNTCS)~*/
 		DO ~
+			StorePartyLocations()
 			StartCutsceneMode()
 			StartCutscene("XATNTCS")
 		~
@@ -97,6 +143,7 @@ APPEND XALCDBG
 		
 		IF ~~ THEN REPLY @4003/*~Archery Lesson (XALBPROF)~ */
 		DO ~
+			StorePartyLocations()
 			StartCutsceneMode()
 			StartCutscene("XALBPROF")
 		~

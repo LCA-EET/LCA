@@ -123,6 +123,7 @@
 @3012 = ~Exit.~
 @3013 = ~Dismiss Debugger.~
 
+
 @4000 = ~SoD Debug~
 @4001 = ~Cutscene Test~
 @4002 = ~Tent Cutscene (XATNTCS)~
@@ -135,3 +136,9 @@
 @4009 = ~SetGlobal("bd_corwin_romanceactive","global",3)~
 @4010 = ~SetGlobal("bd_player_exiled","global",0)~
 @4011 = ~SetGlobal("bd_player_exiled","global",1)~
+@4012 = ~Corwin Letter Interaction (Romantic)~
+@4013 = ~Corwin Letter Interaction (Non-Romantic)~
+@4014 = ~xaltrcor~
+@4015 = ~xaltrsch~
+@4016 = ~xaamulet~
+@4017 = ~All SoD Items~
