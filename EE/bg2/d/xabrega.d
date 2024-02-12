@@ -9,8 +9,8 @@
 
 ADD_STATE_TRIGGER HABREGA 0
 ~
-	!PartyHasItem("XAORW1")
-	!PartyHasItem("XAORW2")
+	!PartyHasItem("XALCORW1")
+	!PartyHasItem("XALCORW2")
 	!PartyHasItem("XALDUNC")
 	!PartyHasItem("XAORW1A")
 	!PartyHasItem("XAORW2A")
@@ -22,8 +22,8 @@ APPEND_EARLY HABREGA
 		GlobalLT("XA_LetterSent", "GLOBAL",1)
 		!PartyHasItem("XASTDAG")
 		OR(3)
-			PartyHasItem("XAORW1")
-			PartyHasItem("XAORW2")
+			PartyHasItem("XALCORW1")
+			PartyHasItem("XALCORW2")
 			PartyHasItem("XALDUNC")
 	~
 	THEN BEGIN M42
@@ -35,7 +35,7 @@ APPEND_EARLY HABREGA
 	IF ~
 		GlobalLT("XA_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
-		PartyHasItem("XAORW1")
+		PartyHasItem("XALCORW1")
 	~
 	THEN BEGIN M39
 		SAY @26  /* ~Ah, you've finished your letter. You want to send the letter and dagger to Schael Corwin, Captain of the Flaming Fist, correct?~*/
@@ -210,7 +210,7 @@ APPEND_EARLY HABREGA
 	IF ~
 		GlobalLT("XA_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
-		PartyHasItem("XAORW2")
+		PartyHasItem("XALCORW2")
 	~
 	THEN BEGIN M40
 		SAY @26 /* ~Ah, you've finished your letter. You want to send the letter and dagger to Schael Corwin, Captain of the Flaming Fist, correct?~ */
@@ -297,8 +297,8 @@ EXTEND_BOTTOM HABREGA 0
 		PartyHasItem("XASTDAG")
 		Global("MurdersSolved","GLOBAL",1)
 		Global("XA_HelpBrega", "GLOBAL", 1)
-		!PartyHasItem("XAORW1")
-		!PartyHasItem("XAORW2")
+		!PartyHasItem("XALCORW1")
+		!PartyHasItem("XALCORW2")
 		!PartyHasItem("XALDUNC")
 	~ 
 	THEN REPLY @23 /* ~About the dagger - you said you'd send it to Baldur's Gate if I helped solve your case.~ */ 
@@ -309,8 +309,8 @@ EXTEND_BOTTOM HABREGA 0
 		PartyHasItem("XASTDAG")
 		Global("MurdersSolved","GLOBAL",1)
 		!Global("XA_HelpBrega", "GLOBAL", 1)
-		!PartyHasItem("XAORW1")
-		!PartyHasItem("XAORW2")
+		!PartyHasItem("XALCORW1")
+		!PartyHasItem("XALCORW2")
 		!PartyHasItem("XALDUNC")
 	~ 
 	THEN REPLY @0 /* ~I need to send this dagger to Baldur's Gate. I believe it is the weapon used to murder the daughter of one of the Grand Dukes.~ */
@@ -320,7 +320,7 @@ EXTEND_BOTTOM HABREGA 0
 		GlobalLT("XA_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
 		Global("MurdersSolved","GLOBAL",1)
-		PartyHasItem("XAORW1")
+		PartyHasItem("XALCORW1")
 	~ 
 	THEN REPLY @23 /* ~About the dagger - you said you'd send it to Baldur's Gate if I helped solve your case.~ */ 
 	GOTO M36a 
@@ -329,7 +329,7 @@ EXTEND_BOTTOM HABREGA 0
 		GlobalLT("XA_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
 		Global("MurdersSolved","GLOBAL",1)
-		PartyHasItem("XAORW2")
+		PartyHasItem("XALCORW2")
 	~ 
 	THEN REPLY @23 /* ~About the dagger - you said you'd send it to Baldur's Gate if I helped solve your case.~ */ 
 	GOTO M36b 
@@ -403,7 +403,7 @@ APPEND HABREGA
 		SAY @24 /* ~Here's a pen and paper. Speak to me again when you are ready to send the letter.~ */
 		IF ~~ THEN
 		DO ~
-			GiveItemCreate("XAORW1",LastTalkedToBy(Myself),1,0,0)
+			GiveItemCreate("XALCORW1",LastTalkedToBy(Myself),1,0,0)
 		~
 		EXIT
 	END
@@ -414,7 +414,7 @@ APPEND HABREGA
 		SAY @24 /* ~Here's a pen and paper. Speak to me again when you are ready to send the letter.~*/
 		IF ~~ THEN
 		DO ~ 
-			GiveItemCreate("XAORW2",LastTalkedToBy(Myself),1,0,0) 
+			GiveItemCreate("XALCORW2",LastTalkedToBy(Myself),1,0,0) 
 		~
 		EXIT
 	END
@@ -437,12 +437,12 @@ APPEND HABREGA
 		IF ~~ THEN
 		DO ~
 			TakePartyItem("XASTDAG")
-			TakePartyItem("XAORW1")
-			TakePartyItem("XAORW2")
+			TakePartyItem("XALCORW1")
+			TakePartyItem("XALCORW2")
 			TakePartyItem("XALDUNC")
 			DestroyItem("XASTDAG")
-			DestroyItem("XAORW1")
-			DestroyItem("XAORW2")
+			DestroyItem("XALCORW1")
+			DestroyItem("XALCORW2")
 			DestroyItem("XALDUNC")
 			SetGlobalTimer("XA_STtoBG","GLOBAL",TWO_DAYS)
 			AddexperienceParty(35000)

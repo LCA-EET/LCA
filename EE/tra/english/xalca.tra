@@ -3,46 +3,7 @@
 @002=~Soultaker Dagger~
 @003=~You found this dagger in Irenicus' stronghold. Could this be the dagger used to murder Skie Silvershield?~
 @004=~Merely having this weapon on your person makes you fills you with a sense of dread. Holding it in your hand, you can almost hear the whispers of the souls trapped within. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illuminations and still be so deathly black at its core, you do not know.~
-@005=~Letter to Corwin~
-@006=~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
 
-My love,
-
-I pray this letter finds you, Rohma and your father well. There is much that I need to tell you. After being forced to depart Baldur’s Gate, our party was set upon by thieves who quickly incapacitated us. We were delivered to Athkatla and held captive in the stronghold of a mad wizard named Irenicus – the very same “Hooded Man” that we encountered during the Dragonspear campaign. My recollection of events from that point is hazy… I do know that we were tortured and experimented upon for purposes that are unclear to me. We were not all fortunate to escape the wizard’s enclave with our lives. The bastard murdered Khalid and Dynaheir. By the time we found their corpses, nothing could be done to resurrect them.
-
-While fleeing the stronghold, I came upon the dagger that is enclosed with this letter. I believe that this is the very same Soultaker Dagger that was used to murder Skie; if I am correct, the city priests can use it to restore Skie’s soul to her body and perform the resurrection. Please take the dagger to the city priests as soon as you are able. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. 
-
-After our escape, Imoen and Irenicus were abducted by the Cowled Wizards for unsanctioned use of magical power within the city. They were taken to a prison for magic practitioners called Spellhold. I must venture forth to Spellhold, rescue Imoen, and exact my revenge on Irenicus. The mage will pay for what he did to Khalid and Dynaheir, for framing me for Skie’s murder, for my exile from the city, and for keeping us apart. I will see you again, my love, once my innocence is established and this matter with Irenicus is resolved.
-
-Yours always,
-	
-<CHARNAME>~ 
-@007=~Letter to Corwin~
-@008=~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
-
-Schael,
-
-I hope this letter finds you, Rohma and your father well. There is much that I need to tell you. After being forced to depart Baldur’s Gate, our party was set upon by thieves who quickly incapacitated us. We were delivered to Athkatla and held captive in the stronghold of a mad wizard named Irenicus – the very same “Hooded Man” that we encountered during the Dragonspear campaign. My recollection of events from that point is hazy… I do know that we were tortured and experimented upon for purposes that are unclear to me. We were not all fortunate to escape the wizard’s enclave with our lives. The bastard murdered Khalid and Dynaheir. By the time we found their corpses, nothing could be done to resurrect them.
-
-While fleeing the stronghold, I came upon the dagger that is enclosed with this letter. I believe that this is the very same Soultaker Dagger that was used to murder Skie; if I am correct, the city priests can use it to restore Skie’s soul to her body and perform the resurrection. Please take the dagger to the city priests as soon as you are able. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. 
-
-After our escape, Imoen and Irenicus were abducted by the Cowled Wizards for unsanctioned use of magical power within the city. They were taken to a prison for magic practitioners called Spellhold. I must venture forth to Spellhold, rescue Imoen, and exact my revenge on Irenicus. The mage will pay for what he did to Khalid and Dynaheir, for framing me for Skie’s murder, and for my exile from the city. I hope to see you again once my innocence is established and this matter with Irenicus is resolved.
-
-Regards,
-
-<CHARNAME>~ 
-@009=~Letter to Duncan~
-@010=~This is the letter you plan to send to Corporal Duncan in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
-
-Corporal,
-
-I have reason to believe that the dagger included with this letter is the very same Soultaker Dagger that was used to murder Skie Silvershield. If I am correct, the city priests can use it to restore Skie’s soul to her body and perform the resurrection. Please take the dagger to the city priests as soon as you are able. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. The dagger belongs to a mad wizard named Irenicus. He is the “Hooded Man” that murdered Skie and framed me for the act. Rest assured, he will pay a heavy price for his transgressions against Skie, the city of Baldur’s Gate, my companions, and myself.
-  
-Please give my regards to Captain Corwin and her father. 
-
-Regards,
-
-<CHARNAME>~ 
 
 @011=~Love Conquers All (LCA)~
 @012=~This mod requires the EET (Gibberlings 3) mod.~
@@ -81,12 +42,8 @@ Weight: 7
 @024 = ~Archery Competition Signup~
 @025 = ~Debug Assistant~
 @026 = ~This mod is exclusive to EET.~
-@027 = ~Corwin's Body~
-@028 = ~Schael was infected with vampirism by Bodhi, and died just as the transformation had completed. There may be some way to revive her, though you don't know what it would be.
 
-STATISTICS:
 
-Weight: 125~
 
 
 @030 = ~At last!
@@ -695,45 +652,8 @@ This assistant allows you to configure certain characteristics of the Love Conqu
 @177 = ~Burned Document~ 
 @178 = ~This amulet belongs to Schael Corwin of the Flaming Fist. It is a half-cut emerald inset into a silver backplate. The backplate has a clasp that includes a small portrait of her daughter, Rohma.~
 @179 = ~XANEBSEW~
-@180=~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
 
-My love,
 
-I pray this letter finds you, Rohma and your father well. There is much that I need to tell you. After being forced to depart Baldur’s Gate, our party was set upon by thieves who quickly incapacitated us. We were delivered to Athkatla and held captive in the stronghold of a mad wizard named Irenicus – the very same “Hooded Man” that we encountered during the Dragonspear campaign. My recollection of events from that point is hazy… I do know that we were tortured and experimented upon for purposes that are unclear to me. We were not all fortunate to escape the wizard’s enclave with our lives. The bastard murdered Khalid and Dynaheir. By the time we found their corpses, nothing could be done to resurrect them.
-
-While fleeing the stronghold, I came upon the Soultaker dagger. To put a long story short, I released Skie's soul, and I believe that the city priests can restore it to her body and perform the resurrection. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. 
-
-After our escape, Imoen and Irenicus were abducted by the Cowled Wizards for unsanctioned use of magical power within the city. They were taken to a prison for magic practitioners called Spellhold. I must venture forth to Spellhold, rescue Imoen, and exact my revenge on Irenicus. The mage will pay for what he did to Khalid and Dynaheir, for framing me for Skie’s murder, for my exile from the city, and for keeping us apart. I will see you again, my love, once my innocence is established and this matter with Irenicus is resolved.
-
-Yours always,
-	
-<CHARNAME>~ 
-@181=~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
-
-Schael,
-
-I hope this letter finds you, Rohma and your father well. There is much that I need to tell you. After being forced to depart Baldur’s Gate, our party was set upon by thieves who quickly incapacitated us. We were delivered to Athkatla and held captive in the stronghold of a mad wizard named Irenicus – the very same “Hooded Man” that we encountered during the Dragonspear campaign. My recollection of events from that point is hazy… I do know that we were tortured and experimented upon for purposes that are unclear to me. We were not all fortunate to escape the wizard’s enclave with our lives. The bastard murdered Khalid and Dynaheir. By the time we found their corpses, nothing could be done to resurrect them.
-
-While fleeing the stronghold, I came upon the Soultaker dagger. To put a long story short, I released Skie's soul, and I believe that the city priests can restore it to her body and perform the resurrection. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. 
-
-After our escape, Imoen and Irenicus were abducted by the Cowled Wizards for unsanctioned use of magical power within the city. They were taken to a prison for magic practitioners called Spellhold. I must venture forth to Spellhold, rescue Imoen, and exact my revenge on Irenicus. The mage will pay for what he did to Khalid and Dynaheir, for framing me for Skie’s murder, and for my exile from the city. I hope to see you again once my innocence is established and this matter with Irenicus is resolved.
-
-Regards,
-
-<CHARNAME>~ 
-@182=~This is the letter you plan to send to Corporal Duncan in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
-
-Corporal,
-
-I'm writing to inform you that I recovered the Soultaker dagger, and that I have performed the necessary steps to release Skie's soul. I believe that the city priests can restore it to her body and perform the resurrection. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. The dagger belonged to a mad wizard named Irenicus. He is the “Hooded Man” that murdered Skie and framed me for the act. Rest assured, he will pay a heavy price for his transgressions against Skie, the city of Baldur’s Gate, my companions, and myself.
-  
-Please give my regards to Captain Corwin and her father. 
-
-Regards,
-
-<CHARNAME>~ 
-@183 = ~Portrait Change - Corwin - LCA~
-@184 = ~Portrait Change - Corwin - SoD~
 @185 = ~Officers Training Manual~
 @186 = ~This appears to be a Flaming Fist officers' training manual. It includes policies and procedures covering incident investigations, suspect apprehension techniques, proper etiquette when dealing with city officials, and much more. The initials "S.C." are written on the inside cover. It's clear that "S.C", whoever they are, has spent a great many hours studying the manual intently; it is well-worn, and some of the pages are coming loose from the binding.~  
 
@@ -819,57 +739,8 @@ Weight: 9
 @200 = ~This door's dwarven craftspeople made certain none but the one who held its key would ever be able to open it. Peering through a crack, the light that leaks inward reveals nothing of interest or value.~
 @201 = ~An unearthly light glows from deep within the chasm. Voices echo throughout the gaping crevasse, pressing against the walls, seeking escape.~
 
-@400 = ~When asked about her past, Schael Corwin reluctantly admits she ran wild as a child on the streets of Baldur's Gate. Her rebelliousness soon got her into trouble with the Flaming Fist. 
 
-Left alone in a cell with nothing but her thoughts for company, she began to reflect on the decisions she'd made in the past and see where they would inevitably take her. When she was eventually freed, she decided to change the direction of her life. She enlisted in the Flaming Fist and rose quickly through the ranks.
 
-You sense there is little Schael Corwin would not do for her family or for the Flaming Fist.~
-
-@500 = ~Rohma needs a mother!~ [XA100150] 
-@501 = ~A team like this can't be beat.~ [XA100151]
-@502 = ~This isn't working. We need to do better.~ [XA100152]
-@503 = ~Watch it. You're straying farther off the path than I'm ready to go.~ [XA100153]
-@504 = ~I can't support this effort, not anymore. Farewell.~ [XA100154]
-@505 = ~I'm used to being in charge. I'll lead us to victory.~ [XA100155]
-@506 = ~An army can't march forever. We've got to rest.~ [XA100156]
-@507 = ~We've work to do. Let's get moving.~ [XA100157]
-@508 = ~To battle!~ [XA100158]
-@509 = ~Let's see how long you last against me.~ [XA100159]
-@510 = ~Fight if you must, but you're not winning this.~ [XA100160]
-@511 = ~I'm looking forward to this.~ [XA100161]
-@512 = ~Time to end you!~ [XA100162]
-@513 = ~Ow!~ [XA100163]
-@514 = ~No... Rohma...~ [XA100164]
-@515 = ~Medic!~ [XA100165]
-@516 = ~The forest is so serene. I always catch myself watching for bandits, though.~ [XA100166]
-@517 = ~Ah, noise and crowds. Feels like home.~ [XA100167]
-@518 = ~Watch your step. Nothing good comes out of a place like this.~ [XA100168]
-@519 = ~In the city, you rarely see the stars. They're beautiful tonight.~ [XA100169]
-@520 = ~Yes?~ [XA100170]
-@521 = ~Your orders?~ [XA100171]
-@522 = ~Hm?~ [XA100172]
-@523 = ~What?~ [XA100173]
-@524 = ~Go ahead.~ [XA100174]
-@525 = ~I'm listening.~ [XA100175]
-@526 = ~Right.~ [XA100176]
-@527 = ~I understand.~ [XA100177]
-@528 = ~Yes.~ [XA100178]
-@529 = ~What are your orders, hero?~ [XA100179]
-@530 = ~I'm a ranger. I want to RANGE.~ [XA100180]
-@531 = ~Do you think love can bloom even on a battlefield?~ [XA100181]
-@532 = ~Sometimes I dream I'm a chaotic good elf.~ [XA100182]
-@533 = ~I won't forget you. Your sacrifice won't have been in vain.~ [XA100183]
-@534 = ~We're better off without him.~ [XA100184]
-@535 = ~I'm a ranger. I want to RANGE.~ [XA100185]
-@536 = ~Hah! My aim is true.~ [XA100186]
-@537 = ~I'll recover.~ [XA100187]
-@538 = ~This isn't working! We have to try something else.~ [XA100188]
-@539 = ~I can't carry that too. I dropped it.~ [XA100189]
-@540 = ~I'll just take that...~ [XA100190]
-@541 = ~Shhh. I'm hidden.~ [XA100191]
-@542 = ~My spell! I lost it.~ [XA100192]
-@543 = ~Careful—I've put a trap down.~ [XA100193]
-@544 = ~Light and warmth. I'm glad for both.~ [XAA100194]
 
 @800 = ~Love Conquers All (LCA)~
 @801 = ~Enhanced Edition Trilogy (EET) mod has been detected.~
@@ -1601,7 +1472,142 @@ Your head hits the floor with a dull thud. The nightmare is over, both for you, 
 @3087 = ~Lurraxol Guard~
 @3088 = ~Neb~
 @3089 = ~Marshal Nederlok~
+@3090 = ~When asked about her past, Schael Corwin reluctantly admits she ran wild as a child on the streets of Baldur's Gate. Her rebelliousness soon got her into trouble with the Flaming Fist. 
 
+Left alone in a cell with nothing but her thoughts for company, she began to reflect on the decisions she'd made in the past and see where they would inevitably take her. When she was eventually freed, she decided to change the direction of her life. She enlisted in the Flaming Fist and rose quickly through the ranks.
+
+You sense there is little Schael Corwin would not do for her family or for the Flaming Fist.~
+@3091 = ~Rohma needs a mother!~ [XA100150] 
+@3092 = ~A team like this can't be beat.~ [XA100151]
+@3093 = ~This isn't working. We need to do better.~ [XA100152]
+@3094 = ~Watch it. You're straying farther off the path than I'm ready to go.~ [XA100153]
+@3095 = ~I can't support this effort, not anymore. Farewell.~ [XA100154]
+@3096 = ~I'm used to being in charge. I'll lead us to victory.~ [XA100155]
+@3097 = ~An army can't march forever. We've got to rest.~ [XA100156]
+@3098 = ~We've work to do. Let's get moving.~ [XA100157]
+@3099 = ~To battle!~ [XA100158]
+@3100 = ~Let's see how long you last against me.~ [XA100159]
+@3101 = ~Fight if you must, but you're not winning this.~ [XA100160]
+@3102 = ~I'm looking forward to this.~ [XA100161]
+@3103 = ~Time to end you!~ [XA100162]
+@3104 = ~Ow!~ [XA100163]
+@3105 = ~No... Rohma...~ [XA100164]
+@3106 = ~Medic!~ [XA100165]
+@3107 = ~The forest is so serene. I always catch myself watching for bandits, though.~ [XA100166]
+@3108 = ~Ah, noise and crowds. Feels like home.~ [XA100167]
+@3109 = ~Watch your step. Nothing good comes out of a place like this.~ [XA100168]
+@3110 = ~Light and warmth. I'm glad for both.~ [XAA100194]
+@3111 = ~In the city, you rarely see the stars. They're beautiful tonight.~ [XA100169]
+@3112 = ~Yes?~ [XA100170]
+@3113 = ~Your orders?~ [XA100171]
+@3114 = ~Hm?~ [XA100172]
+@3115 = ~What?~ [XA100173]
+@3116 = ~Go ahead.~ [XA100174]
+@3117 = ~I'm listening.~ [XA100175]
+@3118 = ~Right.~ [XA100176]
+@3119 = ~I understand.~ [XA100177]
+@3120 = ~Yes.~ [XA100178]
+@3121 = ~What are your orders, hero?~ [XA100179]
+@3122 = ~I'm a ranger. I want to RANGE.~ [XA100180]
+@3123 = ~Do you think love can bloom even on a battlefield?~ [XA100181]
+@3124 = ~Sometimes I dream I'm a chaotic good elf.~ [XA100182]
+@3125 = ~I won't forget you. Your sacrifice won't have been in vain.~ [XA100183]
+@3126 = ~We're better off without him.~ [XA100184]
+@3127 = ~I'm a ranger. I want to RANGE.~ [XA100185]
+@3128 = ~Hah! My aim is true.~ [XA100186]
+@3129 = ~I'll recover.~ [XA100187]
+@3130 = ~This isn't working! We have to try something else.~ [XA100188]
+@3131 = ~I can't carry that too. I dropped it.~ [XA100189]
+@3132 = ~I'll just take that...~ [XA100190]
+@3133 = ~Shhh. I'm hidden.~ [XA100191]
+@3134 = ~My spell! I lost it.~ [XA100192]
+@3135 = ~Careful—I've put a trap down.~ [XA100193]
+@3136 = ~Portrait Change - Corwin - LCA~
+@3137 = ~Portrait Change - Corwin - SoD~
+@3138 = ~Corwin's Body~
+@3139 = ~Schael was infected with vampirism by Bodhi, and died just as the transformation had completed. There may be some way to revive her, though you don't know what it would be.
+
+STATISTICS:
+
+Weight: 125~
+@3140 = ~Letter to Duncan~
+@3141 = ~Letter to Corwin~
+@3142 = ~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
+
+My love,
+
+I pray this letter finds you, Rohma and your father well. There is much that I need to tell you. After being forced to depart Baldur’s Gate, our party was set upon by thieves who quickly incapacitated us. We were delivered to Athkatla and held captive in the stronghold of a mad wizard named Irenicus – the very same “Hooded Man” that we encountered during the Dragonspear campaign. My recollection of events from that point is hazy… I do know that we were tortured and experimented upon for purposes that are unclear to me. We were not all fortunate to escape the wizard’s enclave with our lives. The bastard murdered Khalid and Dynaheir. By the time we found their corpses, nothing could be done to resurrect them.
+
+While fleeing the stronghold, I came upon the dagger that is enclosed with this letter. I believe that this is the very same Soultaker Dagger that was used to murder Skie; if I am correct, the city priests can use it to restore Skie’s soul to her body and perform the resurrection. Please take the dagger to the city priests as soon as you are able. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. 
+
+After our escape, Imoen and Irenicus were abducted by the Cowled Wizards for unsanctioned use of magical power within the city. They were taken to a prison for magic practitioners called Spellhold. I must venture forth to Spellhold, rescue Imoen, and exact my revenge on Irenicus. The mage will pay for what he did to Khalid and Dynaheir, for framing me for Skie’s murder, for my exile from the city, and for keeping us apart. I will see you again, my love, once my innocence is established and this matter with Irenicus is resolved.
+
+Yours always,
+	
+<CHARNAME>~ 
+
+@3143 = ~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
+
+Schael,
+
+I hope this letter finds you, Rohma and your father well. There is much that I need to tell you. After being forced to depart Baldur’s Gate, our party was set upon by thieves who quickly incapacitated us. We were delivered to Athkatla and held captive in the stronghold of a mad wizard named Irenicus – the very same “Hooded Man” that we encountered during the Dragonspear campaign. My recollection of events from that point is hazy… I do know that we were tortured and experimented upon for purposes that are unclear to me. We were not all fortunate to escape the wizard’s enclave with our lives. The bastard murdered Khalid and Dynaheir. By the time we found their corpses, nothing could be done to resurrect them.
+
+While fleeing the stronghold, I came upon the dagger that is enclosed with this letter. I believe that this is the very same Soultaker Dagger that was used to murder Skie; if I am correct, the city priests can use it to restore Skie’s soul to her body and perform the resurrection. Please take the dagger to the city priests as soon as you are able. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. 
+
+After our escape, Imoen and Irenicus were abducted by the Cowled Wizards for unsanctioned use of magical power within the city. They were taken to a prison for magic practitioners called Spellhold. I must venture forth to Spellhold, rescue Imoen, and exact my revenge on Irenicus. The mage will pay for what he did to Khalid and Dynaheir, for framing me for Skie’s murder, and for my exile from the city. I hope to see you again once my innocence is established and this matter with Irenicus is resolved.
+
+Regards,
+
+<CHARNAME>~ 
+
+@3144 = ~This is the letter you plan to send to Corporal Duncan in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
+
+Corporal,
+
+I have reason to believe that the dagger included with this letter is the very same Soultaker Dagger that was used to murder Skie Silvershield. If I am correct, the city priests can use it to restore Skie’s soul to her body and perform the resurrection. Please take the dagger to the city priests as soon as you are able. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. The dagger belongs to a mad wizard named Irenicus. He is the “Hooded Man” that murdered Skie and framed me for the act. Rest assured, he will pay a heavy price for his transgressions against Skie, the city of Baldur’s Gate, my companions, and myself.
+  
+Please give my regards to Captain Corwin and her father. 
+
+Regards,
+
+<CHARNAME>~ 
+@3145 = ~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
+
+My love,
+
+I pray this letter finds you, Rohma and your father well. There is much that I need to tell you. After being forced to depart Baldur’s Gate, our party was set upon by thieves who quickly incapacitated us. We were delivered to Athkatla and held captive in the stronghold of a mad wizard named Irenicus – the very same “Hooded Man” that we encountered during the Dragonspear campaign. My recollection of events from that point is hazy… I do know that we were tortured and experimented upon for purposes that are unclear to me. We were not all fortunate to escape the wizard’s enclave with our lives. The bastard murdered Khalid and Dynaheir. By the time we found their corpses, nothing could be done to resurrect them.
+
+While fleeing the stronghold, I came upon the Soultaker dagger. To put a long story short, I released Skie's soul, and I believe that the city priests can restore it to her body and perform the resurrection. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. 
+
+After our escape, Imoen and Irenicus were abducted by the Cowled Wizards for unsanctioned use of magical power within the city. They were taken to a prison for magic practitioners called Spellhold. I must venture forth to Spellhold, rescue Imoen, and exact my revenge on Irenicus. The mage will pay for what he did to Khalid and Dynaheir, for framing me for Skie’s murder, for my exile from the city, and for keeping us apart. I will see you again, my love, once my innocence is established and this matter with Irenicus is resolved.
+
+Yours always,
+	
+<CHARNAME>~ 
+@3146 = ~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
+
+Schael,
+
+I hope this letter finds you, Rohma and your father well. There is much that I need to tell you. After being forced to depart Baldur’s Gate, our party was set upon by thieves who quickly incapacitated us. We were delivered to Athkatla and held captive in the stronghold of a mad wizard named Irenicus – the very same “Hooded Man” that we encountered during the Dragonspear campaign. My recollection of events from that point is hazy… I do know that we were tortured and experimented upon for purposes that are unclear to me. We were not all fortunate to escape the wizard’s enclave with our lives. The bastard murdered Khalid and Dynaheir. By the time we found their corpses, nothing could be done to resurrect them.
+
+While fleeing the stronghold, I came upon the Soultaker dagger. To put a long story short, I released Skie's soul, and I believe that the city priests can restore it to her body and perform the resurrection. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. 
+
+After our escape, Imoen and Irenicus were abducted by the Cowled Wizards for unsanctioned use of magical power within the city. They were taken to a prison for magic practitioners called Spellhold. I must venture forth to Spellhold, rescue Imoen, and exact my revenge on Irenicus. The mage will pay for what he did to Khalid and Dynaheir, for framing me for Skie’s murder, and for my exile from the city. I hope to see you again once my innocence is established and this matter with Irenicus is resolved.
+
+Regards,
+
+<CHARNAME>~ 
+@3147 = ~This is the letter you plan to send to Corporal Duncan in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
+
+Corporal,
+
+I'm writing to inform you that I recovered the Soultaker dagger, and that I have performed the necessary steps to release Skie's soul. I believe that the city priests can restore it to her body and perform the resurrection. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. The dagger belonged to a mad wizard named Irenicus. He is the “Hooded Man” that murdered Skie and framed me for the act. Rest assured, he will pay a heavy price for his transgressions against Skie, the city of Baldur’s Gate, my companions, and myself.
+  
+Please give my regards to Captain Corwin and her father. 
+
+Regards,
+
+<CHARNAME>~ 
 @10000 =  ~Wyrm's Crossing~
 @10001 =  ~Wyrm's Crossing~
 @10002 =  ~Elfsong~

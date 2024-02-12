@@ -1,0 +1,193 @@
+OUTER_SET bg2_carryover = 1
+
+//{ Narzugon Portrait
+	COPY ~%MOD_FOLDER%/bg2/bmp/xanarzus.cre~ ~override~
+//}
+
+//{ Corwin (XACORWIN)
+	//{ Portrait LCA
+		COPY ~%MOD_FOLDER%/bg2/bmp/xacorwil.cre~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/bmp/xacorwim.cre~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/bmp/xacorwis.cre~ ~override~
+	//}
+
+	//{ Portrait SoD
+		COPY ~%MOD_FOLDER%/bg2/bmp/xaschael.cre~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/bmp/xaschaem.cre~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/bmp/xaschaes.cre~ ~override~
+	//}
+
+	COPY ~%MOD_FOLDER%/bg2/cre/xacorwin.cre~ ~override~
+	SAY NAME1 					@3043 /*~Corwin~*/
+	SAY NAME2 					@3043 /*~Corwin~*/
+	SAY BIO						@3090 /* ~When asked about her past, Schael Corwin reluctantly admits she ran wild as a child on the streets of Baldur's Gate. Her rebelliousness soon got her into trouble with the Flaming Fist. 
+
+Left alone in a cell with nothing but her thoughts for company, she began to reflect on the decisions she'd made in the past and see where they would inevitably take her. When she was eventually freed, she decided to change the direction of her life. She enlisted in the Flaming Fist and rose quickly through the ranks.
+
+You sense there is little Schael Corwin would not do for her family or for the Flaming Fist.~*/
+
+	SAY MORALE 					@3091 /* ~Rohma needs a mother!~ [XA100150]  */
+	SAY HAPPY 					@3092 /*= ~A team like this can't be beat.~ [XA100151]*/
+	SAY UNHAPPY_ANNOYED 		@3093 /* ~This isn't working. We need to do better.~ [XA100152] */
+	SAY UNHAPPY_SERIOUS 		@3094 /* ~Watch it. You're straying farther off the path than I'm ready to go.~ [XA100153] */
+	
+	SAY UNHAPPY_BREAKING_POINT 	@3095 /* ~I can't support this effort, not anymore. Farewell.~ [XA100154] */
+	
+	SAY LEADER 					@3096 /* ~I'm used to being in charge. I'll lead us to victory.~ [XA100155] */
+	
+	SAY TIRED 					@3097 /* ~An army can't march forever. We've got to rest.~ [XA100156] */
+	
+	SAY BORED 					@3098 /* ~We've work to do. Let's get moving.~ [XA100157] */
+	SAY BATTLE_CRY1 			@3099 /* ~To battle!~ [XA100158] */
+	SAY BATTLE_CRY2 			@3100 /* ~Let's see how long you last against me.~ [XA100159] */
+	SAY BATTLE_CRY3 			@3101 /* ~Fight if you must, but you're not winning this.~ [XA100160] */
+	
+	SAY BATTLE_CRY4 			@3102 /* ~I'm looking forward to this.~ [XA100161] */
+	SAY BATTLE_CRY5 			@3103 /* ~Time to end you!~ [XA100162] */
+	SAY DAMAGE 					@3104 /*  ~Ow!~ [XA100163]*/
+	SAY DYING 					@3105 /* ~No... Rohma...~ [XA100164] */
+	SAY HURT 					@3106 /* ~Medic!~ [XA100165] */
+	SAY AREA_FOREST				@3107 /* ~The forest is so serene. I always catch myself watching for bandits, though.~ [XA100166]*/
+	
+	SAY AREA_CITY 				@3108 /* ~Ah, noise and crowds. Feels like home.~ [XA100167]*/
+	
+	SAY AREA_DUNGEON 			@3109 /*~Watch your step. Nothing good comes out of a place like this.~ [XA100168]*/
+	SAY AREA_DAY 				@3110 /*~Light and warmth. I'm glad for both.~ [XAA100194]*/
+	
+	SAY AREA_NIGHT 				@3111 /*~In the city, you rarely see the stars. They're beautiful tonight.~ [XA100169]*/
+	
+	SAY SELECT_COMMON1 			@3112 /* ~Yes?~ [XA100170] */
+	SAY SELECT_COMMON2 			@3113 /* ~Your orders?~ [XA100171] */
+	SAY SELECT_COMMON3 			@3114 /* ~Hm?~ [XA100172] */
+	SAY SELECT_COMMON4 			@3115 /* ~What?~ [XA100173] */
+	SAY SELECT_COMMON5 			@3116 /* ~Go ahead.~ [XA100174] */
+	SAY SELECT_COMMON6 			@3117 /* ~I'm listening.~ [XA100175] */
+	SAY SELECT_ACTION1 			@3118 /* ~Right.~ [XA100176]*/
+	SAY SELECT_ACTION2 			@3119 /* ~I understand.~ [XA100177] */
+	SAY SELECT_ACTION3 			@3120 /* ~Yes.~ [XA100178] */
+	SAY SELECT_ACTION4 			@3121 /* ~What are your orders, hero?~ [XA100179]*/
+	SAY SELECT_ACTION5 			@3122 /* ~I'm a ranger. I want to RANGE.~ [XA100180] */
+	
+	SAY SELECT_ACTION6 			@3123 /* ~Do you think love can bloom even on a battlefield?~ [XA100181] */
+	
+	SAY SELECT_ACTION7 			@3124 /* ~Sometimes I dream I'm a chaotic good elf.~ [XA100182] */
+	
+	SAY REACT_TO_DIE_GENERAL 	@3125 /*~I won't forget you. Your sacrifice won't have been in vain.~ [XA100183]*/
+	
+	SAY REACT_TO_DIE_SPECIFIC 	@3126 /*~We're better off without him.~ [XA100184]*/
+	SAY SELECT_RARE1 			@3121 /*~What are your orders, hero?~ [XA100179]*/
+	SAY SELECT_RARE2			@3127 /*~I'm a ranger. I want to RANGE.~ [XA100185]*/
+	SAY CRITICAL_HIT 			@3128 /* ~Hah! My aim is true.~ [XA100186] */
+	SAY CRITICAL_MISS			@3129 /*~I'll recover.~ [XA100187]*/
+	SAY TARGET_IMMUNE 			@3130 /* ~This isn't working! We have to try something else.~ [XA100188]*/
+	
+	SAY INVENTORY_FULL 			@3131 /* ~I can't carry that too. I dropped it.~ [XA100189] */
+	
+	SAY PICKED_POCKET 			@3132 /* ~I'll just take that...~ [XA100190] */
+	SAY HIDDEN_IN_SHADOWS 		@3133 /* ~Shhh. I'm hidden.~ [XA100191] */
+	SAY SPELL_DISRUPTED 		@3134 /* ~My spell! I lost it.~ [XA100192] */
+	SAY SET_A_TRAP 				@3135 /* ~Careful—I've put a trap down.~ [XA100193] */
+//}
+
+//{ New Items
+	//{ Corwin's Body
+		COPY ~%MOD_FOLDER%/bg2/itm/xacorbod.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@3138)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@3138)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@3139)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@3139)
+		
+		COPY ~%MOD_FOLDER%/bg2/bam/xacorbod.bam~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/bam/xagcorbd.bam~ ~override~
+	//}
+	
+	//{ Letter to Duncan
+		COPY ~%MOD_FOLDER%/bg2/itm/xaldunc.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@3140)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@3140)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@3144)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@3144)
+	//}
+	
+	//{ Letter to Duncan (Cost)
+		COPY ~%MOD_FOLDER%/bg2/itm/xaldunca.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@3140)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@3140)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@3147)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@3147)
+	//}
+	
+	
+	//{ Letter to Corwin, Romantic
+		COPY ~%MOD_FOLDER%/bg2/itm/xalcorw1.itm~ ~override~
+	//}
+	
+	//{ Letter to Corwin, Friend
+		COPY ~%MOD_FOLDER%/bg2/itm/xalcorw2.itm~ ~override~
+	//}
+	
+	//{ Letter to Corwin, Romantic (Cost)
+		COPY ~%MOD_FOLDER%/bg2/itm/xalcor1a.itm~ ~override~
+	//}
+	
+	//{ Letter to Corwin, Friend (Cost)
+		COPY ~%MOD_FOLDER%/bg2/itm/xalcor2a.itm~ ~override~
+	//}
+	
+//}
+
+//{ New Spells
+	COPY ~%MOD_FOLDER%/bg2/spl/xachng01.wav~ ~override~
+	WRITE_LONG 0x08 RESOLVE_STR_REF(@3136)
+	
+	COPY ~%MOD_FOLDER%/bg2/spl/xachng02.wav~ ~override~
+	WRITE_LONG 0x08 RESOLVE_STR_REF(@3137)
+//}
+
+//{ New Sounds
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100150.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100151.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100152.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100153.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100154.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100155.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100156.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100157.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100158.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100159.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100160.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100161.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100162.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100163.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100164.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100165.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100166.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100167.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100168.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100169.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100170.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100171.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100172.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100173.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100174.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100175.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100176.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100177.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100178.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100179.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100180.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100181.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100182.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100183.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100184.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100185.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100186.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100187.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100188.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100189.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100190.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100191.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100192.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100193.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xa100194.wav~ ~override~
+//}
