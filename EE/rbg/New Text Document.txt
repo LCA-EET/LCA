@@ -1,0 +1,12 @@
+
+//{ New Items
+	
+	//{ Hen that Laid the Golden Egg
+		COPY ~%MOD_FOLDER%/rbg/itm/xachick.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@3148)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@3148)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@3149)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@3149)
+	//}
+	
+//}

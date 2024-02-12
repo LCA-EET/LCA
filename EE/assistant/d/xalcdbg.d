@@ -374,6 +374,12 @@ BEGIN ~XALCDBG~
 	IF ~~ THEN BEGIN XA_MainMenu //10
 		SAY @2057 /* ~How can I help you?~ */
 				
+		IF ~~ THEN REPLY @2061 /* ~Spawn Target Dummy~*/
+		DO ~
+			CreateCreature("xadummy", [-1.-1], S)
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @2058 /* ~I do not need assistance at this time.~ */
 		EXIT
 		

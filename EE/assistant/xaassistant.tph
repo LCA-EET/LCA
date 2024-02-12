@@ -26,6 +26,10 @@ END
 	COPY ~%MOD_FOLDER%/assistant/cre/xalcdbg.cre~ ~override~
 	SAY NAME1 @851/* ~LCA Assistant~ */
 	SAY NAME2 @851/* ~LCA Assistant~*/
+	
+	COPY ~%MOD_FOLDER%/assistant/cre/xadummy.cre~ ~override~
+	SAY NAME1 @855/* ~Target Dummy~ */
+	SAY NAME2 @855/* ~Target Dummy~*/
 //}
 
 //{ spl

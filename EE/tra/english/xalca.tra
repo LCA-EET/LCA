@@ -22,23 +22,7 @@ Equipped abilities:
 @019 = ~Corwin's Amulet~
 @020 = ~~
 @021 = ~~
-@022 = ~Corwin's Armor +3~
-@023 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
 
-The armor was further enhanced by Flaming Fist mages to help Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus.
-
-STATISTICS:
-
-Equipped abilities:
-– Movement Speed: +1
-– Magic Resistance: +15%
-
-Armor Class: 2 (0 vs. slashing, 4 vs. crushing)
-Requires: 
- 5 Strength
-
-Weight: 7
-~
 @024 = ~Archery Competition Signup~
 @025 = ~Debug Assistant~
 @026 = ~This mod is exclusive to EET.~
@@ -213,12 +197,7 @@ You recall the trepidation that you felt when you stepped out of the caravan ont
 
 To that end, you continue your friendship with Major Corwin. Though you don't see each other as often as you once did, your bond remains strong. Tonight, you've invited her to dinner at The Three Old Kegs, the very same tavern where the two of you shared a drink before embarking on the Dragonspear campaign...~ [XA100138]
 @072 = ~The Defender of Baldur's Gate~
-@073 = ~Beno's Head~
-@074 = ~This is the severed head of Schael Corwin's ex-lover, Beno Famari. He was killed after he tried to use his own daughter, Rohma, as bait in an attempt to lure you and Major Corwin to your deaths. Although he's been resurrected several times in the past, you surmise that it will be difficult for his benefactors to do so again, now that his head has been separated from his body.
 
-Alas, poor Beno! You knew him well...
-
-Well, not really.~
 //Corwin Romance, In Party 
 @75 = ~Your party boards the caravan for the long trek to Saradush. During the journey, your thoughts wander to Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, the two of them are safe within the Ducal Palace, under the watchful eye of the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger.
 
@@ -274,15 +253,7 @@ It's the next morning, and the caravan has reached its destination on the outski
 The forest, and the besieged city beyond it, await.~ [XA100131]
 @79 = ~The Journey to Saradush~
 @80 = ~Fire Giant Scout~
-@081 = ~Dragonspear Medal~
-@082 = ~The emblem of Dragonspear castle is depicted on this heavy, golden medallion. The inscription on the back of the medal reads as follows:
 
-'Awarded to <CHARNAME>, champion of the Sword Coast, for displaying exceptional courage and gallantry during the Dragonspear campaign.'
-
-The medallion is enchanted to increase the wearer's resilience against magical attacks.
-
-Saving Throws: +1 (All)
-Magic Resistance: +5%~
 
 //BADEND1
 @083 = ~The battle is over. Rohma was saved, but at the cost of the woman you love. You have no hope of bringing her back. Overcome by grief, you fall to your hands and knees, and scream in agony. Hearing a low moan, you turn and see Beno stirring. It seems that, somehow, he is still alive. The sight of his sniveling face is enough to send you past the point of no return. You give into your dark nature, and transform into the Slayer. His pleas for mercy fall on deaf ears, and you rip his heart from his chest. You throw his lifeless body across the room, and begin to eat his still-beating heart.
@@ -373,48 +344,14 @@ Abilities:
 - While held in the party's inventory, this hen will produce one golden egg per day.
 
 Weight: 1~ 
-@101 = ~This heavy, aureate egg is surely worth its weight in gold.
 
-Weight: 2~
-@102 = ~Golden Egg~ 
-@103 = ~Void Blade +5~
-@104 = ~This is the blade that the Narzugon offered to you in exchange for Lyriel's amulet. The hilt is made of carved bone, and the jet black blade, if one can call it that, reflects no light. Looking at the blade for any length of time gives you the unnerving impression that some malevolent force is watching you from within the void.
 
-STATISTICS:
-
-THAC0: +5
-Damage: 2d4+5
-Damage type: Slashing
-Speed Factor: 4
-Proficiency Type: Bastard Sword
-Type: One-handed
-Requires:
- 6 Strength
-
-Weight: 3~ 
 @105 = ~Void Wisp~
 @106 = ~Void Fiend~
 @107 = ~Void Lord~
-@108 = ~Ring of Mind Shielding~
-@109 = ~This powerful ring affords its wearer complete protection against mind altering effects. It is rumored that dying while wearing such a ring will transfer one's soul into it. You aren't eager to find out if the rumors are in fact true.
 
-Abilities
-- Immunity to fear, confusion, feeblemind, charm and domination.~
 @110 = ~Hen~
-@111 = ~Lyriel's Gratitude~
-@112 = ~A reward from the elven queen Ellesime for saving the Tree of Life, this amulet protects the wearer against all forms of enchantments and spells. The amulet was further enchanted by Lyriel, the spirit you encountered in the Elfsong tavern, after you freed her from the baatezu's prison.
- 
-STATISTICS:
 
-Equipped abilities:
-– Saving Throws: +1
-– Magic Resistance: +10%
-
-Charge abilities:
-– Casts Resurrection once per day.
-– Casts Cure Critical Wounds once per day.
-
-Weight: 1~
 @113 = ~Duke Sarevok Anchev~
 @114 = ~Flaming Fist Executioner~
 @115 = ~Hamza~
@@ -444,38 +381,8 @@ I freed the genie Malaaq by retrieving a flask from three dryads and giving it t
 @137 = ~You are welcome to try. While I am bound, neither myself nor the flask can be damaged. While I am bound, I cannot give you the master's dagger, or your weapon.~
 @138 = ~~
 @139 = ~~
-@140 = ~Quiver of Plenty + 4~
-@141 = ~How the Narzugon came to be in possession of this quiver, you'll never know. What is certain, however, is the devastating impact that these powerfully enchanted arrows will have on your enemies.
 
-STATISTICS:
 
-Equipped abilities:
-– Unlimited +4 arrows
-
-Weight: 0~
-@142 = ~Corwin's Bow +2~
-@143 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
-
-The bow was further enhanced by Flaming Fist mages to help Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus.
-
-Equipped abilities: 
-– Dexterity: +1
-
-Combat abilities: 
-– 15% chance per hit of entangling the target for 3 rounds (Save vs. Breath negates)
-
-STATISTICS:
-
-THAC0: +3
-Damage: +4
-Speed Factor: 5
-Proficiency Type: Longbow
-Type: Two-handed
-Requires:
- 18 Strength
-
-Weight: 9
-~
 @144 = ~Corwin's Bow +3~
 @145 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
 
@@ -754,7 +661,7 @@ Weight: 9
 @852 = ~Added LCA Assistant to Baldur.bcs~
 @853 = ~Added LCA Assistant to BDBaldur.bcs~
 @854 = ~Added LCA Assistant to Baldur25.bcs~
-
+@855 = ~Target Dummy~
 
 @900 = ~Processing common components...~
 @901 = ~LCA Assistant~
@@ -805,10 +712,9 @@ Weight: 7
 @915 = ~Void Wisp~
 @916 = ~Void Fiend~
 @917 = ~Void Lord~
-@918 = ~Target Dummy~
+
 @919 = ~LCA Assistant~
-@920 = ~Corwin's Amulet~
-@921 = ~This amulet belongs to Schael Corwin of the Flaming Fist. It is a half-cut emerald inset into a silver backplate. The backplate has a clasp that includes a small portrait of her daughter, Rohma.~
+
 @922 = ~Beno's Head~
 @923 = ~This is the severed head of Schael Corwin's ex-lover, Beno Famari. He was killed after he tried to use his own daughter, Rohma, as bait in an attempt to lure you and Major Corwin to your deaths. Although he's been resurrected several times in the past, you surmise that it will be difficult for his benefactors to do so again, now that his head has been separated from his body.
 
@@ -852,261 +758,16 @@ Equipped abilities:
 – Unlimited +4 arrows
 
 Weight: 0~
-@932 = ~Love Conquers All~
-@933 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's resistance to magic, resilience against physical attacks, and defense against mental effects. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
 
-Equipped abilities:
-- Magic and Elemental Damage Resistance: +20% (All)
-- Saving Throws: +2 (All)
-- Physical Damage Resistance: +20%
-- Armor Class: +2
-- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~
-@934 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's speed, resilience against physical attacks, and defense against mental effects. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
 
-Equipped abilities:
-- Movement Speed: +2
-- Attacks Per Round: +1
-- Physical Damage Resistance: +20%
-- Armor Class: +2
-- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //01011, 11
 
-@935 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's speed, resistance to magic, and defense against mental effects. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
 
-Equipped abilities:
-- Movement Speed: +2
-- Attacks Per Round: +1
-- Magic and Elemental Damage Resistance: +20% (All)
-- Saving Throws: +2 (All)
-- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //01101, 13
-@936 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's speed, resistance to magic, and resilience against physical attacks. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
-
-Equipped abilities:
-- Movement Speed: +2
-- Attacks Per Round: +1
-- Magic and Elemental Damage Resistance: +20% (All)
-- Saving Throws: +2 (All)
-- Physical Damage Resistance: +20%
-- Armor Class: +2~ //01110, 14
-
-@937 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, resilience against physical attacks, and defense against mental effects. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
-
-Equipped abilities:
-- Maximum Hit Points: +15
-- Regeneration
-- Immunity to Poison, Disease and Permanent Death
-- Physical Damage Resistance: +20%
-- Armor Class: +2
-- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //10011, 19
-
-@938 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, resistance to magic, and defense against mental effects. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
-
-Equipped abilities:
-- Maximum Hit Points: +15
-- Regeneration
-- Immunity to Poison, Disease and Permanent Death
-- Magic and Elemental Damage Resistance: +20% (All)
-- Saving Throws: +2 (All)
-- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //10101, 21
-
-@939 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, resistance to magic, and resilience against physical attacks. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
-
-Equipped abilities:
-- Maximum Hit Points: +15
-- Regeneration
-- Immunity to Poison, Disease and Permanent Death
-- Magic and Elemental Damage Resistance: +20% (All)
-- Saving Throws: +2 (All)
-- Physical Damage Resistance: +20%
-- Armor Class: +2~ //10110, 22
-
-@940 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, speed, and defense against mental effects. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
-
-Equipped abilities:
-- Maximum Hit Points: +15
-- Regeneration
-- Immunity to Poison, Disease and Permanent Death
-- Movement Speed: +2
-- Attacks Per Round: +1
-- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //11001, 25 OK
-
-@941 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, speed, and resilience against physical attacks. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
-
-Equipped abilities:
-- Maximum Hit Points: +15
-- Regeneration
-- Immunity to Poison, Disease and Permanent Death
-- Movement Speed: +2
-- Attacks Per Round: +1
-- Physical Damage Resistance: +20%
-- Armor Class: +2~ //11010, 26 OK
-
-@942 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, speed, and resistance to magic. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
-
-Equipped abilities:
-- Maximum Hit Points: +15
-- Regeneration
-- Immunity to Poison, Disease and Permanent Death
-- Movement Speed: +2
-- Attacks Per Round: +1
-- Magic and Elemental Damage Resistance: +20% (All)
-- Saving Throws: +2 (All)~ //11100, 28 OK
-@943 = ~Dagger~
-@944 = ~Soultaker Dagger~
-@945 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's resistance to magic, resilience against physical attacks, and defense against mental effects.
-
-Equipped abilities:
-- Magic and Elemental Damage Resistance: +10% (All)
-- Saving Throws: +1 (All)
-- Physical Damage Resistance: +10%
-- Armor Class: +1
-- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //00111, 07
-
-@946 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's speed, resilience against physical attacks, and defense against mental effects.
-
-Equipped abilities:
-- Movement Speed: +1
-- Attacks Per Round: + (1/2)
-- Physical Damage Resistance: +10%
-- Armor Class: +1
-- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //01011, 11
-
-@947 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's speed, resistance to magic, and defense against mental effects.
-
-Equipped abilities:
-- Movement Speed: +1
-- Attacks Per Round: + (1/2)
-- Magic and Elemental Damage Resistance: +10% (All)
-- Saving Throws: +1 (All)
-- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //01101, 13
-@948 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's speed, resistance to magic, and resilience against physical attacks.
-
-Equipped abilities:
-- Movement Speed: +1
-- Attacks Per Round: + (1/2)
-- Magic and Elemental Damage Resistance: +10% (All)
-- Saving Throws: +1 (All)
-- Physical Damage Resistance: +10%
-- Armor Class: +1~ //01110, 14
-
-@949 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, resilience against physical attacks, and defense against mental effects.
-
-Equipped abilities:
-- Maximum Hit Points: +5
-- Regeneration
-- Immunity to Poison, Disease and Permanent Death
-- Physical Damage Resistance: +10%
-- Armor Class: +1
-- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //10011, 19
-
-@950 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, resistance to magic, and defense against mental effects.
-
-Equipped abilities:
-- Maximum Hit Points: +5
-- Regeneration
-- Immunity to Poison, Disease and Permanent Death
-- Magic and Elemental Damage Resistance: +10% (All)
-- Saving Throws: +1 (All)
-- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //10101, 21
-
-@951 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, resistance to magic, and resilience against physical attacks.
-
-Equipped abilities:
-- Maximum Hit Points: +5
-- Regeneration
-- Immunity to Poison, Disease and Permanent Death
-- Magic and Elemental Damage Resistance: +10% (All)
-- Saving Throws: +1 (All)
-- Physical Damage Resistance: +10%
-- Armor Class: +1~ //10110, 22
-
-@952 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, speed, and defense against mental effects.
-
-Equipped abilities:
-- Maximum Hit Points: +5
-- Regeneration
-- Immunity to Poison, Disease and Permanent Death
-- Movement Speed: +1
-- Attacks Per Round: + (1/2)
-- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //11001, 25 OK
-
-@953 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, speed, and resilience against physical attacks.
-
-Equipped abilities:
-- Maximum Hit Points: +5
-- Regeneration
-- Immunity to Poison, Disease and Permanent Death
-- Movement Speed: +1
-- Attacks Per Round: + (1/2)
-- Physical Damage Resistance: +10%
-- Armor Class: +1~ //11010, 26 OK
-
-@954 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, speed, and resistance to magic.
-
-Equipped abilities:
-- Maximum Hit Points: +5
-- Regeneration
-- Immunity to Poison, Disease and Permanent Death
-- Movement Speed: +1
-- Attacks Per Round: + (1/2)
-- Magic and Elemental Damage Resistance: +10% (All)
-- Saving Throws: +1 (All)~ //11100, 28 OK
-@955 = ~You found this dagger in Irenicus' stronghold. Could this be the dagger used to murder Skie Silvershield?~
-@956 = ~Merely having this weapon on your person makes you fills you with a sense of dread. Holding it in your hand, you can almost hear the whispers of the souls trapped within. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illuminations and still be so deathly black at its core, you do not know.~
-@957 = ~Merely having this weapon on your person makes you fills you with a sense of dread. Holding it in your hand, you can almost hear the whispers of the souls trapped within. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illuminations and still be so deathly black at its core, you do not know.
-
-The dagger contains, among others, the soul of Major Corwin's former lover, Beno Famari.~
 @958 = ~Merely having this weapon on your person makes you fills you with a sense of dread. Holding it in your hand, you can almost hear the whispers of the souls trapped within. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illuminations and still be so deathly black at its core, you do not know.
 
 The dagger contains, among others, the soul of Major Corwin's former lover, Beno Famari. A group of Lathanderian clergymen attempted to restore his soul to his body, but were unsuccessful. Their plan — and Beno's body — quite literally blew up in their face, after they'd reanimated the corpse with the soul of a demon that'd been trapped in the dagger.~
-@959 = ~Though this appears to be the Soultaker dagger, it is different somehow. It doesn't feel as heavy as it did, and you don't feel that palpable sense of dread that you did when you found it in Amn. The gem in the hilt is dark and lifeless. Odd.~
-@960= ~Corwin's Bow +3~
-@961 = ~This enchanted bow boosts the wielder's dexterity, allowing them to fire more accurately. The bow was further enhanced by Flaming Fist mages to help then Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. 
 
-With the addition of Gesen's bowstring, this weapon can draw energy from another plane, firing spears of lightning instead of arrows. In the hands of an archer as talented as Corwin, it is capable of dealing death as effectively as anything you've ever seen. 
 
-Equipped abilities: 
-– Dexterity: +1
-– Electrical Resistance: +20%
 
-Combat abilities: 
-– When no arrows are equipped, the bow fires missiles that are treated as +3 for the purposes of determining what enemies they can damage. The missiles receive +3 to hit including the bonus listed below, and deal a total of 2 piercing and 1d8 electrical damage.
-
-STATISTICS:
-
-THAC0: +4
-Damage: +5
-Speed Factor: 4
-Proficiency Type: Longbow
-Type: Two-handed
-Requires:
- 18 Strength
-
-Weight: 9
-~
-@962 = ~Corwin's Bow +4~
-@963 = ~This enchanted bow boosts the wielder's dexterity, allowing them to fire more accurately. The bow was further enhanced by Flaming Fist mages to help then Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. Additional enchantments to reduce the draw weight were placed on the weapon by the master bowyer of Suldanessellar, as a token of gratitude for saving the elven city. The reduced draw weight makes the weapon less physically taxing to use, resulting in improved power and accuracy.
-
-With the addition of Gesen's bowstring, this weapon can draw energy from another plane, firing spears of lightning instead of arrows. In the hands of an archer as talented as Corwin, it is capable of dealing death as effectively as anything you've ever seen. 
-
-Equipped abilities: 
-– Dexterity: +1
-– Electrical Resistance: +20%
-
-Combat abilities: 
-– When no arrows are equipped, the bow fires missiles that are treated as +4 for the purposes of determining what enemies they can damage. The missiles receive +4 to hit including the bonus listed below, and deal a total of 2 piercing and 1d8 electrical damage.
-
-STATISTICS:
-
-THAC0: +5
-Damage: +6
-Speed Factor: 4
-Proficiency Type: Longbow
-Type: Two-handed
-Requires:
- 18 Strength
-
-Weight: 9
-~
 @964 = ~Void Blade +5~
 @965 = ~This is the blade that the Narzugon offered to you in exchange for Lyriel's amulet. The hilt is made of carved bone, and the jet black blade, if one can call it that, reflects no light. Looking at the blade for any length of time gives you the unnerving impression that some malevolent force is watching you from within the void.
 
@@ -1124,24 +785,7 @@ Requires:
 Weight: 3~ 
 @966 = ~Golden Egg~ 
 @967 = ~This heavy, aureate egg is surely worth its weight in gold.~
-@968 = ~Corwin's Armor +4~
-@969 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
 
-The armor was further enhanced by Flaming Fist mages to help Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. Additional enchantments were placed on the armor by the master smith of Suldanessellar, as a token of gratitude for saving the elven city.
-
-STATISTICS:
-
-Equipped abilities:
-– Movement Speed: +1
-– Magic Resistance: +15%
-– Saving Throws: +1
-
-Armor Class: 1 (-1 vs. slashing, 3 vs. crushing)
-Requires: 
- 5 Strength
-
-Weight: 7
-~
 @970= ~Corwin's Bow +3~
 @971 = ~This enchanted bow boosts the wielder's dexterity, allowing them to fire more accurately. The bow was further enhanced by Flaming Fist mages to help then Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. 
 
@@ -1190,32 +834,8 @@ Requires:
 
 Weight: 9
 ~
-@974 = ~The Hen that Laid the Golden Egg~
-@975 = ~Legend tells of a couple that was renowned throughout the town for their insatiable greed. One day, a playful goblin who was passing through overheard the townsfolk speak of just how greedy this husband and wife were. Wanting to learn if the rumors of their greed were true, the goblin decided to pay them a visit. 
 
-The goblin appeared to the husband from within a tree trunk, and asked him why he looked so troubled. "Are you ill? Are you hungry? Tired?"
 
-Though frightened by the presence of the goblin, the husband explained that he wasn't sick, tired or hungry. Instead, he told the goblin that he and his wife were poor, and that could not afford all of the fancy clothes, baubles, and other items that they wanted.
-
-"If you are not hungry, cold, or ill, then rejoice because you are not poor!", said the goblin. 
-
-"But I am poor! A man with little or no gold is poor!", explained the husband.
-
-Upon hearing this, the goblin erupted into laughter. He then produced a hen, and explained to the husband that this hen was magical. Every morning, it would produce a golden egg. The goblin offered the hen to the husband, but warned that it would not provide the happiness and contentment that he sought.
-
-The husband quickly took the hen from the goblin and ran home to his wife. Though she didn't believe that the hen was magical, she could at least use the eggs to make a nice omelet, she thought to herself. 
-
-Early the next morning the hen began to cluck, and shortly after, a huge, bright golden egg appeared beneath it! The couple was ecstatic as they held the egg in their hands, but their mood quickly turned sour.
-
-"Well... it seems we'll have to wait until tomorrow for another egg. It will take many weeks before we have enough eggs to be the richest in town. That must be why the goblin laughed when he gave me the hen.", the husband said.
-
-The wife replied, "I've always heard that hens already have all the eggs they will lay inside of them... if this is true, why do we not kill the hen and take all of the eggs at once!" The husband agreed, and without hesitation, the couple killed the poor hen, and opened up her body. To their dismay, they saw that the there were no eggs inside. They then began to weep, for they realized that through their own greed and stupidity, they had lost forever the hen that laid the golden eggs.
-
-Abilities:
-- While held in the party's inventory, this hen will produce one golden egg per day.
- 
-Weight: 2~
-@976 = ~Corwin~
 
 @005=~Letter to Corwin~
 @006=~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.~
@@ -1282,6 +902,17 @@ Equipped abilities:
 @2010 = ~Corwin~
 @2011 = ~Waterdhavian Guard~
 @2012 = ~Flaming Fist Mercenary~
+@2013 = ~Corwin's Amulet~
+@2014 = ~This amulet belongs to Schael Corwin of the Flaming Fist. It is a half-cut emerald inset into a silver backplate. The backplate has a clasp that includes a small portrait of her daughter, Rohma.~
+
+
+
+
+
+
+
+
+
 @3000 = ~Processing BG2 changes...~
 @3001 = ~Your party boards the caravan for the long trek to Saradush. During the journey, your thoughts wander to Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, the two of them are safe within the Ducal Palace, under the watchful eye of the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger.
 
@@ -1607,7 +1238,439 @@ Please give my regards to Captain Corwin and her father.
 
 Regards,
 
-<CHARNAME>~ 
+<CHARNAME>~
+@3148 = ~~
+@3149 = ~~
+@3150 = ~Corwin's Amulet~
+@3151 = ~This amulet belongs to Schael Corwin of the Flaming Fist. It is a half-cut emerald inset into a silver backplate. The backplate has a clasp that includes a small portrait of her daughter, Rohma.~
+@3152 = ~Corwin~
+@3153 = ~Corwin's Bow +2~
+@3154 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+
+The bow was further enhanced by Flaming Fist mages to help Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus.
+
+Equipped abilities: 
+– Dexterity: +1
+
+Combat abilities: 
+– 15% chance per hit of entangling the target for 3 rounds (Save vs. Breath negates)
+
+STATISTICS:
+
+THAC0: +3
+Damage: +4
+Speed Factor: 5
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 9
+~
+@3155 = ~Corwin's Armor +3~
+@3156 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
+
+The armor was further enhanced by Flaming Fist mages to help Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus.
+
+STATISTICS:
+
+Equipped abilities:
+– Movement Speed: +1
+– Magic Resistance: +15%
+
+Armor Class: 2 (0 vs. slashing, 4 vs. crushing)
+Requires: 
+ 5 Strength
+
+Weight: 7
+~
+@3157 = ~Dagger~
+@3158 = ~Soultaker Dagger~
+@3159 = ~You found this dagger in Irenicus' stronghold. Could this be the dagger used to murder Skie Silvershield?~
+@3160 = ~Merely having this weapon on your person makes you fills you with a sense of dread. Holding it in your hand, you can almost hear the whispers of the souls trapped within. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illuminations and still be so deathly black at its core, you do not know.~
+@3161 = ~Corwin's Armor +4~
+@3162 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
+
+The armor was further enhanced by Flaming Fist mages to help Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. Additional enchantments were placed on the armor by the master smith of Suldanessellar, as a token of gratitude for saving the elven city.
+
+STATISTICS:
+
+Equipped abilities:
+– Movement Speed: +1
+– Magic Resistance: +15%
+– Saving Throws: +1
+
+Armor Class: 1 (-1 vs. slashing, 3 vs. crushing)
+Requires: 
+ 5 Strength
+
+Weight: 7
+~
+@3163 = ~Corwin's Bow +3~
+@3164 = ~This enchanted bow boosts the wielder's dexterity, allowing them to fire more accurately. The bow was further enhanced by Flaming Fist mages to help then Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. 
+
+With the addition of Gesen's bowstring, this weapon can draw energy from another plane, firing spears of lightning instead of arrows. In the hands of an archer as talented as Corwin, it is capable of dealing death as effectively as anything you've ever seen. 
+
+Equipped abilities: 
+– Dexterity: +1
+– Electrical Resistance: +20%
+
+Combat abilities: 
+– When no arrows are equipped, the bow fires missiles that are treated as +3 for the purposes of determining what enemies they can damage. The missiles receive +3 to hit including the bonus listed below, and deal a total of 2 piercing and 1d8 electrical damage.
+
+STATISTICS:
+
+THAC0: +4
+Damage: +5
+Speed Factor: 4
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 9
+~
+@3165 = ~Corwin's Bow +3~
+@3166 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+
+The bow was further enhanced by Flaming Fist mages to help Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. Additional enchantments to reduce the draw weight were placed on the weapon by the master bowyer of Suldanessellar, as a token of gratitude for saving the elven city. The reduced draw weight makes the weapon less physically taxing to use, resulting in improved power and accuracy.
+
+Equipped abilities: 
+– Dexterity: +1
+
+Combat abilities: 
+– 19% chance per hit of entangling the target for 3 rounds (Save vs. Breath negates)
+
+STATISTICS:
+
+THAC0: +4
+Damage: +5
+Speed Factor: 4
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 9
+~
+@3167 = ~Corwin's Bow +4~
+@3168 = ~This enchanted bow boosts the wielder's dexterity, allowing them to fire more accurately. The bow was further enhanced by Flaming Fist mages to help then Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. Additional enchantments to reduce the draw weight were placed on the weapon by the master bowyer of Suldanessellar, as a token of gratitude for saving the elven city. The reduced draw weight makes the weapon less physically taxing to use, resulting in improved power and accuracy.
+
+With the addition of Gesen's bowstring, this weapon can draw energy from another plane, firing spears of lightning instead of arrows. In the hands of an archer as talented as Corwin, it is capable of dealing death as effectively as anything you've ever seen. 
+
+Equipped abilities: 
+– Dexterity: +1
+– Electrical Resistance: +20%
+
+Combat abilities: 
+– When no arrows are equipped, the bow fires missiles that are treated as +4 for the purposes of determining what enemies they can damage. The missiles receive +4 to hit including the bonus listed below, and deal a total of 2 piercing and 1d8 electrical damage.
+
+STATISTICS:
+
+THAC0: +5
+Damage: +6
+Speed Factor: 4
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 9
+~
+
+@4000 = ~Processing Return to Baldur's Gate Changes...~
+@4001 = ~The Hen that Laid the Golden Egg~
+@4002 = ~Legend tells of a couple that was renowned throughout the town for their insatiable greed. One day, a playful goblin who was passing through overheard the townsfolk speak of just how greedy this husband and wife were. Wanting to learn if the rumors of their greed were true, the goblin decided to pay them a visit. 
+
+The goblin appeared to the husband from within a tree trunk, and asked him why he looked so troubled. "Are you ill? Are you hungry? Tired?"
+
+Though frightened by the presence of the goblin, the husband explained that he wasn't sick, tired or hungry. Instead, he told the goblin that he and his wife were poor, and that could not afford all of the fancy clothes, baubles, and other items that they wanted.
+
+"If you are not hungry, cold, or ill, then rejoice because you are not poor!", said the goblin. 
+
+"But I am poor! A man with little or no gold is poor!", explained the husband.
+
+Upon hearing this, the goblin erupted into laughter. He then produced a hen, and explained to the husband that this hen was magical. Every morning, it would produce a golden egg. The goblin offered the hen to the husband, but warned that it would not provide the happiness and contentment that he sought.
+
+The husband quickly took the hen from the goblin and ran home to his wife. Though she didn't believe that the hen was magical, she could at least use the eggs to make a nice omelet, she thought to herself. 
+
+Early the next morning the hen began to cluck, and shortly after, a huge, bright golden egg appeared beneath it! The couple was ecstatic as they held the egg in their hands, but their mood quickly turned sour.
+
+"Well... it seems we'll have to wait until tomorrow for another egg. It will take many weeks before we have enough eggs to be the richest in town. That must be why the goblin laughed when he gave me the hen.", the husband said.
+
+The wife replied, "I've always heard that hens already have all the eggs they will lay inside of them... if this is true, why do we not kill the hen and take all of the eggs at once!" The husband agreed, and without hesitation, the couple killed the poor hen, and opened up her body. To their dismay, they saw that the there were no eggs inside. They then began to weep, for they realized that through their own greed and stupidity, they had lost forever the hen that laid the golden eggs.
+
+Abilities:
+- While held in the party's inventory, this hen will produce one golden egg per day.
+ 
+Weight: 2~
+@4003 = ~Lyriel's Gratitude~
+@4004 = ~A reward from the elven queen Ellesime for saving the Tree of Life, this amulet protects the wearer against all forms of enchantments and spells. The amulet was further enchanted by Lyriel, the spirit you encountered in the Elfsong tavern, after you freed her from the baatezu's prison.
+ 
+STATISTICS:
+
+Equipped abilities:
+– Saving Throws: +1
+– Magic Resistance: +10%
+
+Charge abilities:
+– Casts Resurrection once per day.
+– Casts Cure Critical Wounds once per day.
+
+Weight: 1~
+@4005 = ~Dragonspear Medal~
+@4006 = ~The emblem of Dragonspear castle is depicted on this heavy, golden medallion. The inscription on the back of the medal reads as follows:
+
+'Awarded to <CHARNAME>, champion of the Sword Coast, for displaying exceptional courage and gallantry during the Dragonspear campaign.'
+
+The medallion is enchanted to increase the wearer's resilience against magical attacks.
+
+Saving Throws: +1 (All)
+Magic Resistance: +5%~
+@4007 = ~Golden Egg~
+@4008 = ~This heavy, aureate egg is surely worth its weight in gold.
+
+Weight: 2~
+@4009 = ~Quiver of Plenty + 4~
+@4010 = ~How the Narzugon came to be in possession of this quiver, you'll never know. What is certain, however, is the devastating impact that these powerfully enchanted arrows will have on your enemies.
+
+STATISTICS:
+
+Equipped abilities:
+– Unlimited +4 arrows
+
+Weight: 0~ 
+@4011 = ~Ring of Mind Shielding~
+@4012 = ~This powerful ring affords its wearer complete protection against mind altering effects. It is rumored that dying while wearing such a ring will transfer one's soul into it. You aren't eager to find out if the rumors are in fact true.
+
+Abilities
+- Immunity to fear, confusion, feeblemind, charm and domination.~
+@4013 = ~Beno's Head~
+@4014 = ~This is the severed head of Schael Corwin's ex-lover, Beno Famari. He was killed after he tried to use his own daughter, Rohma, as bait in an attempt to lure you and Major Corwin to your deaths. Although he's been resurrected several times in the past, you surmise that it will be difficult for his benefactors to do so again, now that his head has been separated from his body.
+
+Alas, poor Beno! You knew him well...
+
+Well, not really.~
+@4015 = ~Merely having this weapon on your person makes you fills you with a sense of dread. Holding it in your hand, you can almost hear the whispers of the souls trapped within. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illuminations and still be so deathly black at its core, you do not know.
+
+The dagger contains, among others, the soul of Major Corwin's former lover, Beno Famari.~
+@4016 = ~Though this appears to be the Soultaker dagger, it is different somehow. It doesn't feel as heavy as it did, and you don't feel that palpable sense of dread that you did when you found it in Amn. The gem in the hilt is dark and lifeless. Odd.~
+@4017 = ~Love Conquers All~
+@4018 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's resistance to magic, resilience against physical attacks, and defense against mental effects. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Magic and Elemental Damage Resistance: +20% (All)
+- Saving Throws: +2 (All)
+- Physical Damage Resistance: +20%
+- Armor Class: +2
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~
+@4019 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's speed, resilience against physical attacks, and defense against mental effects. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Movement Speed: +2
+- Attacks Per Round: +1
+- Physical Damage Resistance: +20%
+- Armor Class: +2
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //01011, 11
+
+@4020 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's speed, resistance to magic, and defense against mental effects. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Movement Speed: +2
+- Attacks Per Round: +1
+- Magic and Elemental Damage Resistance: +20% (All)
+- Saving Throws: +2 (All)
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //01101, 13
+@4021 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's speed, resistance to magic, and resilience against physical attacks. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Movement Speed: +2
+- Attacks Per Round: +1
+- Magic and Elemental Damage Resistance: +20% (All)
+- Saving Throws: +2 (All)
+- Physical Damage Resistance: +20%
+- Armor Class: +2~ //01110, 14
+
+@4022 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, resilience against physical attacks, and defense against mental effects. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Maximum Hit Points: +15
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Physical Damage Resistance: +20%
+- Armor Class: +2
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //10011, 19
+
+@4023 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, resistance to magic, and defense against mental effects. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Maximum Hit Points: +15
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Magic and Elemental Damage Resistance: +20% (All)
+- Saving Throws: +2 (All)
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //10101, 21
+
+@4024 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, resistance to magic, and resilience against physical attacks. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Maximum Hit Points: +15
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Magic and Elemental Damage Resistance: +20% (All)
+- Saving Throws: +2 (All)
+- Physical Damage Resistance: +20%
+- Armor Class: +2~ //10110, 22
+
+@4025 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, speed, and defense against mental effects. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Maximum Hit Points: +15
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Movement Speed: +2
+- Attacks Per Round: +1
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //11001, 25 OK
+
+@4026 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, speed, and resilience against physical attacks. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Maximum Hit Points: +15
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Movement Speed: +2
+- Attacks Per Round: +1
+- Physical Damage Resistance: +20%
+- Armor Class: +2~ //11010, 26 OK
+
+@4027 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, speed, and resistance to magic. You gave freely of your own divine life force to further increase the power of the enchantments on the ring.
+
+Equipped abilities:
+- Maximum Hit Points: +15
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Movement Speed: +2
+- Attacks Per Round: +1
+- Magic and Elemental Damage Resistance: +20% (All)
+- Saving Throws: +2 (All)~ //11100, 28 OK
+
+@4028 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's resistance to magic, resilience against physical attacks, and defense against mental effects.
+
+Equipped abilities:
+- Magic and Elemental Damage Resistance: +10% (All)
+- Saving Throws: +1 (All)
+- Physical Damage Resistance: +10%
+- Armor Class: +1
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //00111, 07
+
+@4029 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's speed, resilience against physical attacks, and defense against mental effects.
+
+Equipped abilities:
+- Movement Speed: +1
+- Attacks Per Round: + (1/2)
+- Physical Damage Resistance: +10%
+- Armor Class: +1
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //01011, 11
+
+@4030 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's speed, resistance to magic, and defense against mental effects.
+
+Equipped abilities:
+- Movement Speed: +1
+- Attacks Per Round: + (1/2)
+- Magic and Elemental Damage Resistance: +10% (All)
+- Saving Throws: +1 (All)
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //01101, 13
+@4031 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's speed, resistance to magic, and resilience against physical attacks.
+
+Equipped abilities:
+- Movement Speed: +1
+- Attacks Per Round: + (1/2)
+- Magic and Elemental Damage Resistance: +10% (All)
+- Saving Throws: +1 (All)
+- Physical Damage Resistance: +10%
+- Armor Class: +1~ //01110, 14
+
+@4032 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, resilience against physical attacks, and defense against mental effects.
+
+Equipped abilities:
+- Maximum Hit Points: +5
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Physical Damage Resistance: +10%
+- Armor Class: +1
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //10011, 19
+
+@4033 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, resistance to magic, and defense against mental effects.
+
+Equipped abilities:
+- Maximum Hit Points: +5
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Magic and Elemental Damage Resistance: +10% (All)
+- Saving Throws: +1 (All)
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //10101, 21
+
+@4034 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, resistance to magic, and resilience against physical attacks.
+
+Equipped abilities:
+- Maximum Hit Points: +5
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Magic and Elemental Damage Resistance: +10% (All)
+- Saving Throws: +1 (All)
+- Physical Damage Resistance: +10%
+- Armor Class: +1~ //10110, 22
+
+@4035 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, speed, and defense against mental effects.
+
+Equipped abilities:
+- Maximum Hit Points: +5
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Movement Speed: +1
+- Attacks Per Round: + (1/2)
+- Immunity to Charm, Confusion, Berserk, Feeblemind and Fear~ //11001, 25 OK
+
+@4036 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, speed, and resilience against physical attacks.
+
+Equipped abilities:
+- Maximum Hit Points: +5
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Movement Speed: +1
+- Attacks Per Round: + (1/2)
+- Physical Damage Resistance: +10%
+- Armor Class: +1~ //11010, 26 OK
+
+@4037 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It is a symbol of the love that you and Schael share for one another, as well as the unbreakable bond that has formed between the two of you. The ring is laden with powerful enchantments to boost the wearer's vitality, speed, and resistance to magic.
+
+Equipped abilities:
+- Maximum Hit Points: +5
+- Regeneration
+- Immunity to Poison, Disease and Permanent Death
+- Movement Speed: +1
+- Attacks Per Round: + (1/2)
+- Magic and Elemental Damage Resistance: +10% (All)
+- Saving Throws: +1 (All)~ //11100, 28 OK
+@4038 = ~Gift of the Baatezu +5~
+@4039 = ~Void Blade +5~
+@4040 = ~This is the blade that the Narzugon offered to you in exchange for Lyriel's amulet. The hilt is made of carved bone, and the jet black blade, if one can call it that, reflects no light. Looking at the blade for any length of time gives you the unnerving impression that some malevolent force is watching you from within the void.
+
+STATISTICS:
+
+THAC0: +5
+Damage: 2d4+5
+Damage type: Slashing
+Speed Factor: 4
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Special: ???
+
+Weight: 3~ 
+
 @10000 =  ~Wyrm's Crossing~
 @10001 =  ~Wyrm's Crossing~
 @10002 =  ~Elfsong~

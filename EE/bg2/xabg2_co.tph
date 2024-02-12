@@ -18,6 +18,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 
 	COPY ~%MOD_FOLDER%/bg2/cre/xacorwin.cre~ ~override~
+
 	SAY NAME1 					@3043 /*~Corwin~*/
 	SAY NAME2 					@3043 /*~Corwin~*/
 	SAY BIO						@3090 /* ~When asked about her past, Schael Corwin reluctantly admits she ran wild as a child on the streets of Baldur's Gate. Her rebelliousness soon got her into trouble with the Flaming Fist. 
@@ -89,7 +90,12 @@ You sense there is little Schael Corwin would not do for her family or for the F
 	SAY SET_A_TRAP 				@3135 /* ~Careful—I've put a trap down.~ [XA100193] */
 //}
 
+//{ Gesen Projectile
+	ADD_PROJECTILE ~%MOD_FOLDER%/bg2/pro/xalarrow.pro~
+//}
+
 //{ New Items
+
 	//{ Corwin's Body
 		COPY ~%MOD_FOLDER%/bg2/itm/xacorbod.itm~ ~override~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3138)
@@ -117,31 +123,130 @@ You sense there is little Schael Corwin would not do for her family or for the F
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3147)
 	//}
 	
-	
 	//{ Letter to Corwin, Romantic
 		COPY ~%MOD_FOLDER%/bg2/itm/xalcorw1.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@3142)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@3142)
 	//}
 	
 	//{ Letter to Corwin, Friend
 		COPY ~%MOD_FOLDER%/bg2/itm/xalcorw2.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@3143)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@3143)
 	//}
 	
 	//{ Letter to Corwin, Romantic (Cost)
 		COPY ~%MOD_FOLDER%/bg2/itm/xalcor1a.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@3145)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@3145)
 	//}
 	
 	//{ Letter to Corwin, Friend (Cost)
 		COPY ~%MOD_FOLDER%/bg2/itm/xalcor2a.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@3146)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@3146)
+	//}
+		
+	//{ Corwin's Amulet (SoA)
+		COPY ~%MOD_FOLDER%/bg2/itm/xaamul2.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@3150)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@3150)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@3151)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@3151)
+		WRITE_LONG 0x9E RESOLVE_STR_REF(@3152)
 	//}
 	
+	//{ Corwin's Bow + 2
+		COPY ~%MOD_FOLDER%/bg2/itm/xacorbow.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@3153)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@3153)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@3154)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@3154)
+		WRITE_LONG 0x9E RESOLVE_STR_REF(@3152)
+	
+		COPY ~%MOD_FOLDER%/bg2/bam/xaicorbo.bam~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/bam/xacorbow.bam~ ~override~
+	//}
+	
+	//{ Corwin's Bow + 3 
+		COPY ~%MOD_FOLDER%/bg2/itm/xacorbo3.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@3165)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@3165)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@3166)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@3166)
+		WRITE_LONG 0x9E RESOLVE_STR_REF(@3152)
+	//}
+	
+	
+	
+	//{ Corwin's Bow + 3 (Gesen)
+		COPY ~%MOD_FOLDER%/bg2/itm/xacorbg3.itm~ ~override~
+		WRITE_SHORT 0x09c ~%xalarrow%~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@3163)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@3163)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@3164)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@3164)
+		WRITE_LONG 0x9E RESOLVE_STR_REF(@3152)
+	//}
+	
+	//{ Corwin's Bow + 4 (Gesen)
+		COPY ~%MOD_FOLDER%/bg2/itm/xacorbg4.itm~ ~override~
+		WRITE_SHORT 0x09c ~%xalarrow%~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@3167)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@3167)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@3168)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@3168)
+		WRITE_LONG 0x9E RESOLVE_STR_REF(@3152)
+	//}
+	
+	//{ Corwin's Armor + 3
+		COPY ~%MOD_FOLDER%/bg2/itm/xacorchn.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@3155)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@3155)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@3156)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@3156)
+		WRITE_LONG 0x9E RESOLVE_STR_REF(@3152)
+		
+		COPY ~%MOD_FOLDER%/bg2/bam/xacorchn.bam~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/bam/xaicorch.bam~ ~override~
+	//}
+	
+	//{ Corwin's Armor + 4
+		COPY ~%MOD_FOLDER%/bg2/itm/xacorch4.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@3161)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@3161)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@3162)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@3162)
+		WRITE_LONG 0x9E RESOLVE_STR_REF(@3152)
+	//}
+	
+	//{ Soultaker Dagger
+		COPY ~%MOD_FOLDER%/bg2/itm/xastdag.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@3157)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@3158)						
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@3159)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@3160)
+	//}
+
 //}
 
 //{ New Spells
-	COPY ~%MOD_FOLDER%/bg2/spl/xachng01.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/spl/xachng01.spl~ ~override~
 	WRITE_LONG 0x08 RESOLVE_STR_REF(@3136)
 	
-	COPY ~%MOD_FOLDER%/bg2/spl/xachng02.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/spl/xachng02.spl~ ~override~
 	WRITE_LONG 0x08 RESOLVE_STR_REF(@3137)
+	
+	COPY ~%MOD_FOLDER%/bg2/spl/xacorbow.spl~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/spl/xacorbo3.spl~ ~override~
 //}
 
 //{ New Sounds

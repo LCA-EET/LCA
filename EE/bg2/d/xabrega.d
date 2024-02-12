@@ -12,8 +12,8 @@ ADD_STATE_TRIGGER HABREGA 0
 	!PartyHasItem("XALCORW1")
 	!PartyHasItem("XALCORW2")
 	!PartyHasItem("XALDUNC")
-	!PartyHasItem("XAORW1A")
-	!PartyHasItem("XAORW2A")
+	!PartyHasItem("XALCOR1A")
+	!PartyHasItem("XALCOR2A")
 	!PartyHasItem("XALDUNCA")
 ~
 
@@ -58,7 +58,7 @@ APPEND_EARLY HABREGA
 		SAY @24 /* ~Here's a pen and paper. Speak to me again when you are ready to send the letter.~ */
 		IF ~~ THEN
 		DO ~
-			GiveItemCreate("XAORW1A",LastTalkedToBy(Myself),1,0,0)
+			GiveItemCreate("XALCOR1A",LastTalkedToBy(Myself),1,0,0)
 		~
 		EXIT
 	END
@@ -68,7 +68,7 @@ APPEND_EARLY HABREGA
 		SAY @24 /* ~Here's a pen and paper. Speak to me again when you are ready to send the letter.~*/
 		IF ~~ THEN
 		DO ~ 
-			GiveItemCreate("XAORW2A",LastTalkedToBy(Myself),1,0,0) 
+			GiveItemCreate("XALCOR2A",LastTalkedToBy(Myself),1,0,0) 
 		~
 		EXIT
 	END
@@ -84,7 +84,7 @@ APPEND_EARLY HABREGA
 	
 	IF ~
 		GlobalLT("XA_LetterSent", "GLOBAL",1)
-		PartyHasItem("XAORW1A")
+		PartyHasItem("XALCOR1A")
 	~
 	THEN BEGIN M39A
 		SAY @46  /* ~Ah, you've finished your letter. You want to send it to Schael Corwin, Captain of the Flaming Fist, correct?~*/
@@ -102,7 +102,7 @@ APPEND_EARLY HABREGA
 	
 	IF ~
 		GlobalLT("XA_LetterSent", "GLOBAL",1)
-		PartyHasItem("XAORW2A")
+		PartyHasItem("XALCOR2A")
 	~
 	THEN BEGIN M40A
 		SAY @46 /* ~Ah, you've finished your letter. You want to send it to Schael Corwin, Captain of the Flaming Fist, correct?~*/
@@ -193,11 +193,11 @@ APPEND_EARLY HABREGA
 		= @48 /*  ~I'll have my courier pick these up first thing in the morning. It will take a few days for it to reach Baldur's Gate. Thank you again for your service, citizen.~	 */
 		IF ~~ THEN
 		DO ~
-			TakePartyItem("XAORW1A")
-			TakePartyItem("XAORW2A")
+			TakePartyItem("XALCOR1A")
+			TakePartyItem("XALCOR2A")
 			TakePartyItem("XALDUNCA")
-			DestroyItem("XAORW1A")
-			DestroyItem("XAORW2A")
+			DestroyItem("XALCOR1A")
+			DestroyItem("XALCOR2A")
 			DestroyItem("XALDUNCA")
 			SetGlobalTimer("XA_Ath2","GLOBAL", FIVE_DAYS)
 			AddexperienceParty(35000)
