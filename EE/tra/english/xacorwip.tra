@@ -1,7 +1,7 @@
-@0 = ~<CHARNAME>? You sure you don't want me with you?~ [XA100101] 
+@0 = ~<CHARNAME>? You sure you don't want me with you?~ [xalc1160] 
 @1 = ~I need you by my side, as always my dear. Join me.~
 @2 = ~Wait here, I'll come for you later.~
-@3 = ~That's all I needed to hear. Let's go.~ [BD54525]
+@3 = ~That's all I needed to hear. Let's go.~ [xalc1153]
 @4 = ~Gladly, my friend.~ [BDCORP4]
 @5 = ~Very well. Don't take too long.~ [BDCORP5]
 @6 = ~Your assistance would be welcome Captain. Join me.~
@@ -13,7 +13,7 @@
 @12 = ~A *very* bad time. Now, are you going tell me what's going on, or do I need to beat it out of you?~
 @13 = ~I need to speak to <CHARNAME>.~
 @14 = ~I was wrong. I'm sorry, love.~
-@15 = ~<CHARNAME>? I'm alive... but, how? ~ [XA100067]
+@15 = ~<CHARNAME>? I'm alive... but, how? ~ [xalc1159]
 @16 = ~Schael! Oh, thank goodness, I thought I'd lost you.~
 @17 = ~I remember... dying, in your arms. Wh...what happened?~
 @18 = ~You died, just as you'd transformed into a vampire. We resurrected you using Bodhi's heart and the magic of this temple.~
@@ -61,7 +61,7 @@
 @60 = ~So, Capt — excuse me, Major. What is your decision?~
 @61 = ~So, Schael. What is your decision?~
 @62 = ~Sir, I'll accompany <CHARNAME>. We'll put an end to the Five. Please inform the Dukes... and please... let my family know that I'll be home as soon as I can.~
-@63 = ~<CHARNAME>. What do you need?~ [BD56086]
+@63 = ~<CHARNAME>. What do you need?~ [xalc1124]
 @64 = ~...~
 @65 = ~I'm thinking.~
 @66 = ~Well?~
@@ -104,6 +104,6 @@ Major Corwin refused to join me in my hunt for the Five. She believes that I'm j
 @103 = ~Your reputation precedes you, 'hero'. Come and see me at the Athkatla magistrate once you've cleaned up your act.~ 
 
 /* Changed 2023-10-15 */
-@93 = ~I'll await you here until you're ready to go.~ [BD34427]
+@93 = ~I'll await you here until you're ready to go.~ [xalc1161]
 
 @104 = ~I can't bear to fight at your side any longer. Listen, lich — set foot in Baldur's Gate again and I'll crush your bones to dust. Goodbye.~
