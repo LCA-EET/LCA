@@ -1,0 +1,46 @@
+IF
+	Global("XA_LC_StartedInBG2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Global("XA_LC_TakeCorwinGear", "GLOBAL", 4)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	HasItem("BDCHAN05", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		DestroyItem("BDCHAN05")
+		GiveItemCreate("XACORCHN", Myself, 0,0,0)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	HasItem("BDBOW06", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		DestroyItem("BDBOW06")
+		GiveItemCreate("XACORBOW", Myself, 0,0,0)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	HasItem("XAAMUL1", Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		DestroyItem("XAAMUL1")
+		GiveItemCreate("XAAMUL2", Myself, 0,0,0)
+		SetInterrupt(TRUE)
+		Continue()
+END

@@ -1,0 +1,158 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		MoveViewPoint([3533.2316], BD_NORMAL)
+		MoveViewObject(Myself, INSTANT)
+		CreateCreature("cutspy",[3533.2316],S) 
+		Explore()
+		FadeFromColor([30.0],0)
+		ZoomLock(TRUE)
+		Wait(3)
+		DisplayStringHead("celogan", @42) /* ~....in this final round, the contestant that deals the most damage to the golem will be declared the winner of the contest.~ */
+		Wait(6)
+		DisplayStringHead("celogan", @46) /* ~Good luck, contestants!~ */
+		Wait(1)
+		
+		DisplayStringHead("Crowd1", @51) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd2", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd3", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd4", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd5", @1) /* ~*Cheering and Applause*~ */
+		
+		Wait(2)
+		// Final Round
+		
+		DisplayStringHead("celogan", @16) /* ~Mazzy, you may fire when ready.~  */
+		Wait(1)
+		ActionOverride("Mazzy", MoveToPoint([3546.2373]))
+		ActionOverride("Mazzy", FaceObject("TargetGolem"))
+		Wait(2)
+		ActionOverride("Mazzy", SetSequence(SEQ_ATTACK))
+		DisplayStringHead("Mazzy", @54)		
+		Wait(1)
+		DisplayStringHead("TargetGolem", @14) /* ~High damage - Three points awarded. ~ */
+		Wait(1)
+		DisplayStringHead("Crowd1", @52) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd2", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd3", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd4", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd5", @1) /* ~*Cheering and Applause*~ */
+		ActionOverride("Mazzy", MoveToPoint([3303.2353]))
+		ActionOverride("Mazzy", Face(NE))
+		Wait(2)
+		
+		DisplayStringHead("celogan", @17) /* ~Captain Corwin, you may fire when ready.~ */
+		Wait(1)
+		DisplayStringHead(Player1, @43) /* Go for it, Schael! */
+		ActionOverride("Corwin", MoveToPoint([3546.2373]))
+		ActionOverride("Corwin", FaceObject("TargetGolem"))
+		Wait(2)
+		ActionOverride("Corwin", SetSequence(SEQ_ATTACK))
+		DisplayStringHead("Corwin", @54)
+		Wait(1)
+		DisplayStringHead("TargetGolem", @15) /* ~Critical damage - Four points awarded. ~ */
+		SmallWait(1)
+		DisplayStringHead(Player1, @44) /* Great shot! */
+		Wait(1)
+		DisplayStringHead("Crowd1", @52) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd2", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd3", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd4", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd5", @1) /* ~*Cheering and Applause*~ */
+		ActionOverride("Corwin", MoveToPoint([3378.2397]))
+		ActionOverride("Corwin", Face(NE))
+		Wait(2)
+		
+		DisplayStringHead("celogan", @18) /* ~Corporal Strannex, you may fire when ready.~ */
+		Wait(1)
+		ActionOverride("trgrd03", MoveToPoint([3546.2373]))
+		ActionOverride("trgrd03", FaceObject("TargetGolem"))
+		Wait(2)
+		ActionOverride("trgrd03", SetSequence(SEQ_ATTACK))
+		DisplayStringHead("trgrd03", @54)
+		Wait(1)
+		DisplayStringHead("TargetGolem", @12) /* ~Low damage - One point awarded.~ */
+		Wait(1)
+		DisplayStringHead("Crowd1", @52) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd2", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd3", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd4", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd5", @1) /* ~*Cheering and Applause*~ */
+		ActionOverride("trgrd03", MoveToPoint([3453.2441]))
+		ActionOverride("trgrd03", Face(NE))
+		Wait(2)
+		
+		DisplayStringHead("celogan", @27) /* ~And we have a winner! Captain Corwin of the Baldur's Gate Flaming Fist! Congratulations!~ */
+		Wait(1)
+		ActionOverride("Corwin", MoveToPoint([3546.2373]))
+		ActionOverride("Corwin", Face(NW))
+		DisplayStringHead("Crowd1", @50) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd2", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd3", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd4", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd5", @1) /* ~*Cheering and Applause*~ */
+		
+		DisplayStringHead("Crowd1", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd2", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd3", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd4", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd5", @1) /* ~*Cheering and Applause*~ */
+		
+		DisplayStringHead("Crowd1", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd2", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd3", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd4", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd5", @1) /* ~*Cheering and Applause*~ */
+		
+		SetGlobal("XA_TM_ArcheryChallenge", "GLOBAL", 2)
+		
+		ActionOverride("trhmer01", MoveToPoint([3496.2317]))
+		Wait(3)
+		DisplayStringHead("trhmer01", @28) /* ~Allow me to present to you this commemorative trophy, and an award of 2,500 gold.~ */
+		Wait(3)
+		DisplayStringHead("Corwin", @29) /* ~Thank you!~ */
+		Wait(2)
+		DisplayStringHead("Crowd1", @49) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd2", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd3", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd4", @1) /* ~*Cheering and Applause*~ */
+		SmallWait(1)
+		DisplayStringHead("Crowd5", @1) /* ~*Cheering and Applause*~ */
+		FadeToColor([30.0],0)
+		Wait(3)
+		SetGlobal("XA_CorwinWonTM", "GLOBAL", 1)
+		StartCutScene("XAAcsEx")
+END

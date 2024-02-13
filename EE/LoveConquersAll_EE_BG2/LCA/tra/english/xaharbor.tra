@@ -1,0 +1,45 @@
+@0 = ~<CHARNAME>, Captain, good to see you again!~
+@1 = ~What can I do for ya?~
+@2 = ~We're sorry to have bothered you.~
+@3 = ~While in Athkatla, we learned that a number of children were being sold as slaves.~
+@4 = ~Aye, the slave trade is a terrible thing.~
+@5 = ~It is. What's even more concerning is that these children were refugees of Caelar's crusade. They claimed to have been shipped from here. Do you know anything about that?~
+@6 = ~Shipped from Baldur's Gate, you say? No, I don't know anything about it. We do periodic inspections of cargo on behalf of the city authorities, but we haven't come across any children.~
+@7 = ~Now, wait a minute... A couple months back, there was a program started by some upstart noble to resettle refugees. He claimed to have connections in other cities that he used to find families willing to host them.~
+@8 = ~He chartered a number of ships from this dock to places like Athkatla, Calimport, Waterdeep, and others.~
+@9 = ~What is his name? Where is he now?~
+@10 = ~I don't remember his name, but I know he and his company have set up shop in the old Iron Throne headquarters.~
+@11 = ~Do you have any shipping manifests you can share?~ 
+@12 = ~Is there anything else you can tell me?~
+@13 = ~No, there's nothing else.~
+@14 = ~Thanks for your help. I'll come back in an hour to pick up those manifests.~
+@15 = ~Good to see you again.~
+@16 = ~Yes, but I'll need some time to locate them. Give me an hour, I should have them ready for you by then.~
+@17 = ~I need some more time for those manifests. Give me an hour, I should have them ready for you by then.~
+@18 = ~Ah good. Here are the manifests you requested.~
+@19 = ~Thank you for your help.~
+@20 = ~Hello again - were you able to figure out sold those kids to the slavers?~
+@21 = ~No, not yet.~
+@22 = ~Yes. The man responsible has been arrested and is awaiting trial.~
+@23 = ~Good to hear. Take care now.~
+@24 = ~What is this? These manifests are gibberish!~
+@25 = ~Aye, they may look like gibberish, but it's because they're encoded.~
+@26 = ~Encoded? How do I decode them?~
+@27 = ~I haven't the slightest idea. Maybe someone in the Thieves' Guild will know?~
+@28 = ~Perhaps. Thanks for your help.~
+@29 = ~I received the shipping manifests from the harbor master, but they are encoded and I cannot decipher them. The harbor master recommended asking the Thieves' Guild for help.~
+@30 = ~Good to see you again!~
+@31 = ~Captain! Good to see you again. It's been a while.~
+@32 = ~I hope you're able to do some good with them.~
+@33 = ~We did. Lord Winston and his company were responsible. He'll be arrested as soon as he returns to the city.~
+@34 = ~I see... good on ye then. Slavery is a filthy business and those that take part should be punished, I say.~
+@35 = ~Nothing right now.~
+@36 = ~Slaver Conspiracy
+
+The harbor master provided you with the shipping manifests for a new company called Winston Ventures. Unfortunately, the manifests are encrypted. You'll have to find some way to decode them.~
+@37 = ~Slaver Conspiracy
+
+Alatos, master of the Baldur's Gate Thieves Guild, has successfully decoded the shipping manifests recovered from the Harbor Master. I should take it to Marshall Nederlok right away.~
+@38 = ~Slaver Conspiracy
+
+We met with Alatos to discuss the shipping manifests recovered from the Harbor Master. He told us that without the cipher key, it would be near impossible to decode the manifests. Perhaps Marshall Nederlok will know how to proceed.~

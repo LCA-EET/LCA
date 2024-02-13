@@ -1,0 +1,985 @@
+//{ Gift for Rohma
+
+IF
+	Global("XA_LC_Journal_RohmaGift_0", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_RohmaGift_0", "GLOBAL", 0)
+		AddJournalEntry(@49, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_RohmaGift_0A", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_RohmaGift_0A", "GLOBAL", 0)
+		AddJournalEntry(@50, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_RohmaGift_1", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_RohmaGift_1", "GLOBAL", 0)
+		AddJournalEntry(@48, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_RohmaGift_2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_RohmaGift_2", "GLOBAL", 0)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 4)
+		AddXPObject(Player1,10000)
+		AddJournalEntry(@51, QUEST_DONE) /*~A Gift for Rohma
+I gave Rohma the doll that I bought for her. She and her mother were delighted by the small but meaningful act of kindness and generosity.~  */
+		EraseJournalEntry(@48)
+		EraseJournalEntry(@49)
+		EraseJournalEntry(@50)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Tianna
+IF
+	Global("XA_LC_Journal_Tianna1", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Tianna1", "GLOBAL", 0)
+		AddJournalEntry(@15, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Tianna2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Tianna2", "GLOBAL", 0)
+		AddJournalEntry(@16, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Jasper", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Jasper", "GLOBAL", 0)
+		AddJournalEntry(@68, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END	
+
+IF
+	Global("XA_LC_Journal_Tianna3", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Tianna3", "GLOBAL", 0)
+		EraseJournalEntry(@15)
+		EraseJournalEntry(@16)
+		EraseJournalEntry(@68)
+		AddJournalEntry(@17, QUEST_DONE)
+		AddXPObject(Player1,10000)
+		AddXPObject(Player2,10000)
+		AddXPObject(Player3,10000)
+		AddXPObject(Player4,10000)
+		AddXPObject(Player5,10000)
+		AddXPObject(Player6,10000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Tianna4", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Tianna4", "GLOBAL", 0)
+		EraseJournalEntry(@15)
+		EraseJournalEntry(@16)
+		EraseJournalEntry(@68)
+		AddJournalEntry(@18, QUEST_DONE)
+		AddXPObject(Player1,5000)
+		AddXPObject(Player2,5000)
+		AddXPObject(Player3,5000)
+		AddXPObject(Player4,5000)
+		AddXPObject(Player5,5000)
+		AddXPObject(Player6,5000)
+		SetInterrupt(TRUE)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Dings
+IF
+	Global("XA_LC_Journal_Dings", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Dings", "GLOBAL", 0)
+		AddJournalEntry(@0, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Dings2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Dings2", "GLOBAL", 0)
+		AddJournalEntry(@1, INFO)
+		AddXPObject("XACORWIN",25000)
+		AddXPObject(Player1,25000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Sex 1
+IF 
+	Global("XA_LC_Journal_Sex1", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Sex1", "GLOBAL", 0)
+		AddJournalEntry(@2, INFO)
+		AddXPObject("XACORWIN",25000)
+		AddXPObject(Player1,25000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Sex 2
+IF 
+	Global("XA_LC_Journal_Sex2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Sex2", "GLOBAL", 0)
+		AddJournalEntry(@3, INFO)
+		AddXPObject("XACORWIN",50000)
+		AddXPObject(Player1,50000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Sex 3
+IF 
+	Global("XA_LC_Journal_Sex3", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Sex3", "GLOBAL", 0)
+		AddJournalEntry(@4, INFO)
+		AddXPObject("XACORWIN",100000)
+		AddXPObject(Player1,100000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Hall of Wonders Orphans
+IF
+	Global("XA_LC_Journal_HOW", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_HOW", "GLOBAL", 0)
+		AddJournalEntry(@6, INFO)  /* ~Role Models?
+Captain Corwin and I spoke to some troubled youths from the local orphanage. After we scared some sense into them, Curator Magda is sure that they will be on their best behavior from now on.~*/
+		AddXPObject("XACORWIN",25000)
+		AddXPObject(Player1,25000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_HOW", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_HOW", "GLOBAL", 0)
+		AddJournalEntry(@7, INFO)  /* ~Role Models
+Captain Corwin and I spoke to some troubled youths from the local orphanage. Curator Magda is pleased that they have role models like the Captain and I to look up to.~*/
+		AddXPObject("XACORWIN",25000)
+		AddXPObject(Player1,25000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Returned the Artifacts at HOW
+IF
+	Global("XA_LC_ArtifactsReturned", "GLOBAL", 1)
+	Global("XA_LC_Journal_Artifacts", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Artifacts", "GLOBAL", 0)
+		EraseJournalEntry(@21)
+		EraseJournalEntry(@22)
+		EraseJournalEntry(@23)
+		EraseJournalEntry(@24)
+		AddJournalEntry(@8, QUEST_DONE) /* */
+		AddXPObject("XACORWIN",25000)
+		AddXPObject(Player1,25000)
+		ReputationInc(1)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+
+IF
+	Global("XA_LC_ArtifactsReturned", "GLOBAL", 2)
+	Global("XA_LC_Journal_Artifacts", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Artifacts", "GLOBAL", 0)
+		EraseJournalEntry(@21)
+		EraseJournalEntry(@22)
+		EraseJournalEntry(@23)
+		EraseJournalEntry(@24)
+		AddJournalEntry(@9, QUEST_DONE) /* */
+		AddXPObject("XACORWIN",50000)
+		AddXPObject(Player1,50000)
+		ReputationInc(2)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+
+
+IF
+	Global("XA_LC_ArtifactsReturned", "GLOBAL", 3)
+	Global("XA_LC_Journal_Artifacts", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Artifacts", "GLOBAL", 0)
+		EraseJournalEntry(@21)
+		EraseJournalEntry(@22)
+		EraseJournalEntry(@23)
+		EraseJournalEntry(@24)
+		AddJournalEntry(@10, QUEST_DONE)
+		AddXPObject("XACORWIN",100000)
+		AddXPObject(Player1,100000)
+		ReputationInc(3)
+		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 3)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Trouble at Elfsong
+
+	
+	//{ Lyriel Entries
+	IF
+		Global("XA_LC_Journal_Lyriel", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 0)
+			AddJournalEntry(@69, QUEST) /*~Trouble at the Elfsong
+Lyriel, the spirit haunting the Elfsong tavern, blessed my Amulet of the Seldarine as an act of gratitude for freeing her from the demon's prison.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END	
+	
+	IF
+		Global("XA_LC_Journal_Lyriel", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 0)
+			AddJournalEntry(@70, QUEST) /*~Trouble at the Elfsong
+We've defeated the demon trapped within the painting and have escaped. Lyriel, the spirit we freed from the painting, will remain in the Elfsong to continue mourning her lost love. I should speak to Lady Alyth, the proprietor of the Elfsong, to inform her of what has transpired.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END	
+	
+	IF
+		Global("XA_LC_Journal_Lyriel", "GLOBAL", 3)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 0)
+			AddJournalEntry(@71, QUEST) /*~Trouble at the Elfsong
+Lyriel told me what she knew of our mutual captor. He is an incubus, a type of demon that invades the dreams of women. The demon himself was imprisoned after harming someone important to a powerful wizard.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END	
+	
+	IF
+		Global("XA_LC_Journal_Lyriel", "GLOBAL", 4)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 0)
+			AddJournalEntry(@72, QUEST) /*~Trouble at the Elfsong
+Lyriel told me what she knew of the Elfsong patrons that had gone missing. Through some foul sorcery, the demon imprisoned in this place transformed them into doppelgangers... likely the very same doppelgangers that I destroyed when first investigating the painting.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_Journal_Lyriel", "GLOBAL", 5)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 0)
+			AddJournalEntry(@73, QUEST) /*~Trouble at the Elfsong
+Lyriel told me what she knew of the guardians inside of the paintings. She said that the demon has the capability of peering into my memories and dreams, so the guardians may take the form of past opponents, or even people that I loved and respected. I should be prepared for anything.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_Journal_Lyriel", "GLOBAL", 6)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 0)
+			AddJournalEntry(@74, QUEST) /*~Trouble at the Elfsong
+I've been lured into what apparently is a magical prison created to confine a powerful demon. While here I met Lyriel, the ghost of a long dead elvish woman who took her own life in the Elfsong tavern. She told me that in order to escape, I must confront and defeat three guardians. Once they have been dispatched, I must venture to the demon's inner sanctum and destroy him. Lyriel believes that destroying the demon will also destroy the prison, but she cannot be certain.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END		
+	//}
+
+	//{ Incubus Entries
+	IF
+		Global("XA_LC_Journal_Incubus", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Incubus", "GLOBAL", 0)
+			AddJournalEntry(@75, QUEST) /*~Trouble at the Elfsong
+I agreed to give up the Amulet of the Seldarine, and the demon in the painting kept his word by freeing me. What a bizarre experience... I should inform Lady Alyth, proprietor of the Elfsong, of what has transpired.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END		
+	//}
+
+	//{ Elfsong 1
+	IF 
+		Global("XA_LC_Journal_Elfsong1", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Elfsong1", "GLOBAL", 0)
+			AddJournalEntry(@11, QUEST)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Elfsong 2
+	IF 
+		Global("XA_LC_Journal_Elfsong2", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Elfsong2", "GLOBAL", 0)
+			EraseJournalEntry(@11)
+			EraseJournalEntry(@30)
+			EraseJournalEntry(@69)
+			EraseJournalEntry(@70)
+			EraseJournalEntry(@71)
+			EraseJournalEntry(@72)
+			EraseJournalEntry(@73)
+			EraseJournalEntry(@74)
+			EraseJournalEntry(@75)
+			AddJournalEntry(@12, QUEST_DONE)
+			AddXPObject(Player1,50000)
+			AddXPObject(Player2,50000)
+			AddXPObject(Player3,50000)
+			AddXPObject(Player4,50000)
+			AddXPObject(Player5,50000)
+			AddXPObject(Player6,50000)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Elfsong 3
+	IF 
+		Global("XA_LC_Journal_Elfsong3", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Elfsong3", "GLOBAL", 0)
+			EraseJournalEntry(@11)
+			EraseJournalEntry(@30)
+			EraseJournalEntry(@69)
+			EraseJournalEntry(@70)
+			EraseJournalEntry(@71)
+			EraseJournalEntry(@72)
+			EraseJournalEntry(@73)
+			EraseJournalEntry(@74)
+			EraseJournalEntry(@75)
+			AddJournalEntry(@13, QUEST_DONE)
+			AddXPObject(Player1,10000)
+			AddXPObject(Player2,10000)
+			AddXPObject(Player3,10000)
+			AddXPObject(Player4,10000)
+			AddXPObject(Player5,10000)
+			AddXPObject(Player6,10000)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+	
+
+	//{ Townsfolk
+	IF
+		Global("XA_LC_Journal_ElfsongGossip", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_ElfsongGossip", "GLOBAL", 0)
+		AddJournalEntry(@30, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+	END
+	//}
+//} 
+
+//{ Engagement Ring
+IF
+	Global("XA_LC_Journal_RingJhasso", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_RingJhasso", "GLOBAL", 0)
+		AddJournalEntry(@76, QUEST) /*~Engagement Ring
+As a gesture of appreciation for saving his life, and his business, Jhasso has given me a beautiful engagement ring to give to Schael. He recommended bringing the ring to Halbazzer, owner of Sorcerous Sundries, to have it enchanted.~  */
+		AddXPObject(Player1, 5000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_RingAldeth", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_RingAldeth", "GLOBAL", 0)
+		AddJournalEntry(@77, QUEST) /* ~Engagement Ring
+As a gesture of appreciation for saving his life, and his business, Aldeth has given me a beautiful engagement ring to give to Schael. He recommended bringing the ring to Halbazzer, owner of Sorcerous Sundries, to have it enchanted.~  */
+		AddXPObject(Player1, 5000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_HalbazzerRing", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_HalbazzerRing", "GLOBAL", 0)
+		EraseJournalEntry(@76)
+		EraseJournalEntry(@77)
+		AddJournalEntry(@14, QUEST_DONE) /* ~Engagement Ring
+Halbazzer, the proprietor of Sorcerous Sundries, agreed to enchant the engagement ring that I plan to give to Schael. It will take him about a week to apply the enchantments. She will love the ring — I know it.~*/
+		AddXPObject(Player1, 15000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Completed Painting 1
+IF
+	Global("XA_CompletedG1", "GLOBAL", 1)
+	GlobalLT("XA_LC_RewardG1", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_RewardG1", "GLOBAL", 1)
+		AddXPObject(Player1, 5000)
+		AddXPObject(Player2, 5000)
+		AddXPObject(Player3, 5000)
+		AddXPObject(Player4, 5000)
+		AddXPObject(Player5, 5000)
+		AddXPObject(Player6, 5000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Completed Painting 2
+IF
+	Global("XA_CompletedG2", "GLOBAL", 1)
+	GlobalLT("XA_LC_RewardG2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_RewardG2", "GLOBAL", 1)
+		AddXPObject(Player1, 5000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Completed Painting 3
+IF
+	Global("XA_CompletedG3", "GLOBAL", 1)
+	GlobalLT("XA_LC_RewardG3", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_RewardG3", "GLOBAL", 1)
+		AddXPObject(Player1, 5000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Dark Circumstances - Exile
+IF
+	Global("XA_LC_Journal_DarkCircumstances", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_DarkCircumstances", "GLOBAL", 0)
+		AddJournalEntry(@19, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Dark Circumstances - Escape
+IF
+	Global("XA_LC_Journal_DarkCircumstances", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_DarkCircumstances", "GLOBAL", 0)
+		AddJournalEntry(@20, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Returning the Stolen Artifacts
+IF
+	Global("XA_LC_Journal_ArtifactsQuest", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_ArtifactsQuest", "GLOBAL", 0)
+		AddJournalEntry(@21, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Returning the Stolen Artifacts - 1
+IF
+	Global("XA_LC_Journal_Artifacts_Sword", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Artifacts_Sword", "GLOBAL", 2)
+		AddXPObject(Player1, 5000)
+		AddJournalEntry(@22, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Returning the Stolen Artifacts - 2
+IF
+	Global("XA_LC_Journal_Artifacts_Plate", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Artifacts_Plate", "GLOBAL", 2)
+		AddXPObject(Player1, 5000)
+		AddJournalEntry(@23, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Returning the Stolen Artifacts - 3
+IF
+	Global("XA_LC_Journal_Artifacts_Shield", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Artifacts_Shield", "GLOBAL", 2)
+		AddXPObject(Player1, 5000)
+		AddJournalEntry(@24, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Slaver Conspiracy
+
+IF
+	Global("XA_LC_Journal_SlaveGirl", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_SlaveGirl", "GLOBAL", 0)
+		AddJournalEntry(@27, QUEST) /* ~Slaver Conspiracy
+While in Athkatla, I learned that some of the refugees of Caelar's crusade are being sold as slaves, apparently from Baldur's Gate. I may investigate the matter further upon my eventual return to the city.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_SlaveHarbor", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_SlaveHarbor", "GLOBAL", 0)
+		AddJournalEntry(@64, QUEST) /* ~Slaver Conspiracy
+The harbor master provided me with the shipping manifests for a new company called Winston Ventures. Unfortunately, the manifests are encrypted. I'll have to find some way to decode them.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_SlaveHarbor", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_SlaveHarbor", "GLOBAL", 0)
+		AddJournalEntry(@65, QUEST) /* ~Slaver Conspiracy
+I received the shipping manifests from the harbor master, but they are encoded and I cannot decipher them. The harbor master recommended asking the Thieves' Guild for help.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_SlaveAlatos", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_SlaveAlatos", "GLOBAL", 0)
+		AddJournalEntry(@28, QUEST) /* ~Slaver Conspiracy
+Alatos, leader of the Baldur's Gate Thieves' Guild, has offered to decrypt Winston Ventures' shipping manifests. I need only provide him with the necessary cipher to do so.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_SlaveAlatos2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_SlaveAlatos2", "GLOBAL", 0)
+		AddJournalEntry(@29, QUEST) /* ~Slaver Conspiracy
+The Thieves' Guild has decrypted the Winston Ventures shipping manifests. This may be the evidence I need to solve the case. I should review the decrypted manifest with Marshal Nederlok of the Flaming Fist. He should be the headquarters in the southwest of the city.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_SlaverEnd", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_SlaverEnd", "GLOBAL", 0)
+		EraseJournalEntry(@27)
+		EraseJournalEntry(@28)
+		EraseJournalEntry(@29)
+		EraseJournalEntry(@39)
+		EraseJournalEntry(@64)
+		EraseJournalEntry(@65)
+		AddJournalEntry(@25, QUEST_DONE)
+		AddXPObject(Player1, 35000)
+		AddXPObject(Player2, 35000)
+		AddXPObject(Player3, 35000)
+		AddXPObject(Player4, 35000)
+		AddXPObject(Player5, 35000)
+		AddXPObject(Player6, 35000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Neb Killed
+IF
+	Global("XA_LC_Journal_NebNederlok", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_NebNederlok", "GLOBAL", 0)
+		AddJournalEntry(@26, QUEST_DONE)
+		AddXPObject(Player1, 10000)
+		AddXPObject(Player2, 10000)
+		AddXPObject(Player3, 10000)
+		AddXPObject(Player4, 10000)
+		AddXPObject(Player5, 10000)
+		AddXPObject(Player6, 10000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Haspur
+IF
+	Global("XA_LC_Journal_Haspur_Caelar", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Haspur_Caelar", "GLOBAL", 0)
+		AddXPObject(Player1, 2000)
+		AddJournalEntry(@38, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Haspur_Lotto", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Haspur_Lotto", "GLOBAL", 0)
+		AddXPObject(Player1, 2000)
+		AddJournalEntry(@34, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Haspur_Decide", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Haspur_Decide", "GLOBAL", 0)
+		AddXPObject(Player1, 2000)
+		AddJournalEntry(@37, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Haspur_Irenicus", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Haspur_Irenicus", "GLOBAL", 0)
+		AddXPObject(Player1, 2000)
+		AddJournalEntry(@35, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Haspur_Bhaal", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Haspur_Bhaal", "GLOBAL", 0)
+		AddXPObject(Player1, 2000)
+		AddJournalEntry(@36, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Haspur_Slaves", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Haspur_Slaves", "GLOBAL", 0)
+		AddXPObject(Player1, 2000)
+		AddJournalEntry(@39, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ TM Archery Sign-up
+IF
+	Global("XA_LC_Journal_TMSignup", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_TMSignup", "GLOBAL", 0)
+		AddJournalEntry(@45, QUEST) /*~Trademeet Archery Competition
+Mazzy and Schael have expressed interest in taking part in this year's Trademeet Archery Competition. There's a sign-up desk in Trademeet, in the southeast of the city. We should check it out the next time we are in the area. ~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ TM - Mazzy Won
+IF
+	Global("XA_LC_Journal_TMMazzy", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_TMMazzy", "GLOBAL", 0)
+		AddXPObject("Mazzy", 25000)
+		AddXPObject("XACORWIN", 10000)
+		GiveGoldForce(2500)
+		AddJournalEntry(@46, QUEST_DONE) /* ~Trademeet Archery Competition
+Mazzy, Corwin, and a host of other contestants competed in the annual Trademeet Archery Competition, and Mazzy emerged victorious! Corwin earned second place. I'm fortunate to have such skilled companions at my side.~*/
+		EraseJournalEntry(@45)  /* ~Trademeet Archery Competition
+Mazzy and Schael have expressed interest in taking part in this year's Trademeet Archery Competition. There's a sign-up desk in Trademeet, in the southeast of the city. We should check it out the next time we are in the area.~ */
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ TM - Corwin Won
+IF
+	Global("XA_LC_Journal_TMCorwin", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_TMCorwin", "GLOBAL", 0)
+		AddXPObject("XACORWIN", 25000)
+		AddXPObject("Mazzy", 10000)
+		GiveGoldForce(2500)
+		AddJournalEntry(@47, QUEST_DONE) /* ~Trademeet Archery Competition
+Schael, Mazzy, and a host of other contestants competed in the annual Trademeet Archery Competition, and Schael emerged victorious! Mazzy performed admirably as well — I'm fortunate to have such skilled companions at my side.~*/
+		EraseJournalEntry(@45)  /* ~Trademeet Archery Competition
+Mazzy and Schael have expressed interest in taking part in this year's Trademeet Archery Competition. There's a sign-up desk in Trademeet, in the southeast of the city. We should check it out the next time we are in the area.~ */
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Locating the Farseer
+IF
+	Global("XA_LC_Journal_Farseer", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 0)
+		AddJournalEntry(@52, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Farseer", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 0)
+		AddJournalEntry(@53, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Farseer", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 0)
+		AddJournalEntry(@54, QUEST)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Farseer", "GLOBAL", 4)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 0)
+		EraseJournalEntry(@52)
+		EraseJournalEntry(@53)
+		EraseJournalEntry(@54)
+		AddJournalEntry(@55, QUEST_DONE)
+		AddExperienceParty(35000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ The Soultaker Dagger
+IF
+	Global("XA_LC_Journal_Soultaker", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 0)
+		AddJournalEntry(@61, QUEST) /* ~The Soultaker Dagger
+Melkor, who is studying the Soultaker dagger, believes that the souls trapped within could be freed if the dagger is brought to a place where the barrier between the material plane and the Fugue plane is weak. I've been to one such place in the past - Kanaglym, in the caves beneath Dragonspear castle.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Soultaker", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 0)
+		AddJournalEntry(@62, QUEST) /* ~The Soultaker Dagger
+Melkor, who is studying the Soultaker dagger, believes that the souls trapped within could be freed if the dagger is brought to a place where the barrier between the material plane and the Fugue plane is weak.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Soultaker", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 0)
+		AddJournalEntry(@63, QUEST) /* ~The Soultaker Dagger
+The wizard Melkor will not part with the Soultaker dagger unless ordered to do so by the Dukes. He recommended that I petition the Council during the debriefing tomorrow to have him release the dagger to me.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Soultaker", "GLOBAL", 4)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 0)
+		AddJournalEntry(@67, QUEST) /* ~The Soultaker Dagger
+The wizard Melkor has handed me the Soultaker Dagger. Apparently, Duke Silvershield decided that it would be best for me to take ownership of the weapon, perhaps in the belief that keeping it away from her caretakers will help her progress further in her recovery. I know from my prior discussions on the matter that there are souls still trapped within; the wizard informed me that Skie would appreciate it if I could find some way to free them.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Corwin Died from Bite
+IF
+	Global("XA_LC_Journal_LoveLost", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_LoveLost", "GLOBAL", 0)
+		AddJournalEntry(@78, INFO) /* ~Loved and Lost
+Schael died in my arms, mere hours after being bit by Bodhi. I can barely contain my rage — not just toward her murderer, but for my own failure to save her. I believe that the bite was intended to turn Schael into a vampire, but she died before the transition could complete. There may still be a way to revive her. I will find Bodhi and make her pay for the loss of my love, with her life.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}

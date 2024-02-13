@@ -1,0 +1,13 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		SetGlobal("XA_LC_SpawnHook", "GLOBAL", 2)
+		FadeToColor([30.0],0)
+		Wait(2)
+		RestorePartyLocations()
+		Wait(2)
+		FadeFromColor([30.0],0)
+		EndCutSceneMode()
+END
