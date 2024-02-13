@@ -1,20 +1,17 @@
 OUTER_SET bg2_carryover = 1
 
-//{ Narzugon Portrait
-	COPY ~%MOD_FOLDER%/bg2/bmp/xanarzus.cre~ ~override~
-//}
 
 //{ Corwin (XACORWIN)
 	//{ Portrait LCA
-		COPY ~%MOD_FOLDER%/bg2/bmp/xacorwil.cre~ ~override~
-		COPY ~%MOD_FOLDER%/bg2/bmp/xacorwim.cre~ ~override~
-		COPY ~%MOD_FOLDER%/bg2/bmp/xacorwis.cre~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/bmp/xacorwil.bmp~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/bmp/xacorwim.bmp~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/bmp/xacorwis.bmp~ ~override~
 	//}
 
 	//{ Portrait SoD
-		COPY ~%MOD_FOLDER%/bg2/bmp/xaschael.cre~ ~override~
-		COPY ~%MOD_FOLDER%/bg2/bmp/xaschaem.cre~ ~override~
-		COPY ~%MOD_FOLDER%/bg2/bmp/xaschaes.cre~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/bmp/xaschael.bmp~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/bmp/xaschaem.bmp~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/bmp/xaschaes.bmp~ ~override~
 	//}
 
 	COPY ~%MOD_FOLDER%/bg2/cre/xacorwin.cre~ ~override~
@@ -88,6 +85,203 @@ You sense there is little Schael Corwin would not do for her family or for the F
 	SAY HIDDEN_IN_SHADOWS 		@3133 /* ~Shhh. I'm hidden.~ [XA100191] */
 	SAY SPELL_DISRUPTED 		@3134 /* ~My spell! I lost it.~ [XA100192] */
 	SAY SET_A_TRAP 				@3135 /* ~Careful—I've put a trap down.~ [XA100193] */
+	
+	//{ Corwin's Lines
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1000.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1001.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1002.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1003.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1004.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1005.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1006.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1007.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1008.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1009.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1010.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1011.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1012.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1013.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1014.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1015.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1016.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1017.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1018.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1019.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1020.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1021.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1022.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1023.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1024.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1025.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1026.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1027.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1028.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1029.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1030.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1031.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1032.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1033.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1034.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1035.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1036.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1037.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1038.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1039.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1040.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1041.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1042.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1043.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1044.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1045.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1046.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1047.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1048.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1049.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1050.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1051.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1052.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1053.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1054.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1055.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1056.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1057.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1058.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1059.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1060.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1061.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1062.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1063.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1064.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1065.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1066.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1067.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1068.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1069.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1070.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1071.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1072.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1073.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1074.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1075.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1076.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1077.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1078.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1079.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1080.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1081.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1082.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1083.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1084.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1085.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1086.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1087.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1088.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1089.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1090.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1091.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1092.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1093.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1094.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1095.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1096.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1097.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1098.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1099.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1100.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1101.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1102.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1103.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1104.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1105.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1106.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1107.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1108.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1109.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1110.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1111.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1112.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1113.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1114.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1115.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1116.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1117.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1118.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1119.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1120.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1121.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1122.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1123.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1124.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1125.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1126.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1127.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1128.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1129.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1130.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1131.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1132.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1133.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1134.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1135.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1136.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1137.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1138.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1139.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1140.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1141.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1142.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1143.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1144.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1145.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1146.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1147.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1148.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1149.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1150.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1151.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1152.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1153.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1154.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1155.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1156.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1157.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1158.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1159.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1160.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1161.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1162.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1163.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1164.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1165.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1166.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1167.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1168.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1169.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1170.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1171.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1172.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1173.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1174.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1175.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1176.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1177.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1178.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1179.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1180.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1181.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1182.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1183.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1184.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1185.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1186.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1187.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1188.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1189.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1190.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1191.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1192.wav~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc1193.wav~ ~override~
+	//}
 //}
 
 //{ Gesen Projectile
@@ -185,8 +379,6 @@ You sense there is little Schael Corwin would not do for her family or for the F
 		WRITE_LONG 0x9E RESOLVE_STR_REF(@3152)
 	//}
 	
-	
-	
 	//{ Corwin's Bow + 3 (Gesen)
 		COPY ~%MOD_FOLDER%/bg2/itm/xacorbg3.itm~ ~override~
 		WRITE_SHORT 0x09c ~%xalarrow%~
@@ -249,50 +441,3 @@ You sense there is little Schael Corwin would not do for her family or for the F
 	COPY ~%MOD_FOLDER%/bg2/spl/xacorbo3.spl~ ~override~
 //}
 
-//{ New Sounds
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100150.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100151.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100152.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100153.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100154.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100155.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100156.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100157.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100158.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100159.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100160.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100161.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100162.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100163.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100164.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100165.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100166.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100167.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100168.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100169.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100170.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100171.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100172.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100173.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100174.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100175.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100176.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100177.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100178.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100179.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100180.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100181.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100182.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100183.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100184.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100185.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100186.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100187.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100188.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100189.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100190.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100191.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100192.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100193.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xa100194.wav~ ~override~
-//}

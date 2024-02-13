@@ -63,8 +63,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 
 	COPY ~%MOD_FOLDER%/bg2/cre/xacorinv.cre~ ~override~
 	
-	
-		
 	COPY ~%MOD_FOLDER%/bg2/cre/xadings.cre~ ~override~
 	SAY NAME1 @3016
 	SAY NAME2 @3016
@@ -120,6 +118,15 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 	COPY ~%MOD_FOLDER%/bg2/cre/xatmarsu.cre~ ~override~
 	SAY NAME1 @3072
 	SAY NAME2 @3072
+//}
+
+//{ wav
+	COPY ~%MOD_FOLDER%/bg2/wav/xalcsa00.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xalcsa01.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xalcsa02.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xalcsa03.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xalcsa04.wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/xalcsa05.wav~ ~override~
 //}
 
 ACTION_IF (bg1_carryover = 0) THEN BEGIN
