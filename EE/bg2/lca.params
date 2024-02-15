@@ -1,0 +1,53 @@
+/*
+	LCA Params, for non-EET playthroughs. These parameters do not affect EET playthroughs, unless the player is beginning their playthrough in Shadows of Amn. For EET playthroughs beginning in BG1 or Siege of Dragonspear, your choices are automatically carried forward from one game into the next.
+	
+	Enjoy!
+*/
+
+/* 
+	Parameter: player_exiled 
+	Set to 1 if the player was exiled from Baldur's Gate at the end of Siege of Dragonspear (as opposed to escaping through the sewers). 
+*/
+OUTER_SET player_exiled = 1
+
+/*
+	Parameter: corwin_romance
+	Set to 1 if you would like to continue the romance that began in SoD.
+*/
+OUTER_SET corwin_romance = 1
+
+/*
+	Parameter: caelar_alive
+	Set to 1 to proceed as though Caelar was left alive in Avernus.
+*/
+OUTER_SET caelar_alive = 1
+
+/*
+	Parameter: drinks_with_corwin
+	Set to 1 if the player had a drink with Corwin at the Three Old Kegs, before departing on the Dragonspear campaign.
+*/
+OUTER_SET drinks_with_corwin = 1
+
+/*
+	Parameter: ashatiel_duel
+	Set to 1 if the player dueled Ashatiel honorably during the assault on Dragonspear.
+*/
+OUTER_SET ashatiel_duel = 1
+
+/*
+	Parameter: saved_jhasso
+	Set to 1 to proceed as though the player saved Jhasso in Baldur's Gate 1.
+*/
+OUTER_SET saved_jhasso = 1
+
+/*
+	Parameter: saved_aldeth
+	Set to 1 to proceed as though the player saved Aldeth in Baldur's Gate 1.
+*/
+OUTER_SET saved_aldeth = 1
+
+/*
+	Parameter: aldeth_ff
+	Set to 1 to proceed as though Aldeth turned the party in to the Flaming Fist, during the events of Baldur's Gate 1.
+*/
+OUTER_SET aldeth_ff = 0

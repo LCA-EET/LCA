@@ -16,6 +16,20 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @5025
 		GOTO XA_BG2_CutsceneTest
 		
+		IF ~~ THEN REPLY @5032
+		DO ~
+			SetGlobal("XA_CorwinDebug1002", "GLOBAL", 1)
+			SetGlobal("XA_SkieSaved", "GLOBAL", 1)
+			SetGlobal("XA_CorwinContinue", "GLOBAL", 2)
+		~
+		GOTO XA_BG2_Debug
+		
+		IF ~~ THEN REPLY @5033 /* Reset Corwin's Banters. */
+		DO ~
+			SetGlobal("XA_ResetCorwinBanters", "GLOBAL", 1)
+		~
+		GOTO XA_BG2_Debug
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 10
 		
@@ -235,6 +249,34 @@ APPEND ~XALCDBG~
 		DO ~
 			StartCutSceneMode()
 			StartCutScene("xacs05a")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @5030
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("xacs06a")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @5031
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("xacs07a")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @5031
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("xacs08a")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @5031
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("xacs09a")
 		~
 		EXIT
 		
