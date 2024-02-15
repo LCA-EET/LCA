@@ -51,3 +51,9 @@ OUTER_SET saved_aldeth = 1
 	Set to 1 to proceed as though Aldeth turned the party in to the Flaming Fist, during the events of Baldur's Gate 1.
 */
 OUTER_SET aldeth_ff = 0
+
+/*
+	Parameter: corwin_str
+	The value of Corwin's strength attribute when she joins the party in Athkatla.
+*/
+OUTER_SET corwin_str = 18
