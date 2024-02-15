@@ -17,5 +17,5 @@ THEN
 		CreateVisualEffectObject("SPDISPMA",Myself)
 		Wait(2)
 		StartCutSceneMode()
-		StartCutScene("xaacs60a")
+		StartCutScene("xacs60a")
 END

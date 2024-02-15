@@ -4,7 +4,7 @@ IF
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		ApplySpellRES("bdhide", Myself)
+		ApplySpellRES("xahide", Myself)
 		SetGlobal("XA_Hidden", "LOCALS", 1)
 		SetInterrupt(TRUE)
 		Continue()
@@ -15,7 +15,7 @@ IF
 	Global("XA_CaelarRescue", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		ApplySpellRES("bdunhide", Myself)
+		ApplySpellRES("xaunhide", Myself)
 		SetGlobal("XA_Hidden", "LOCALS", 2)
 		Continue()
 END
@@ -28,7 +28,7 @@ IF
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		ApplySpellRES("bdunhide", Myself)
+		ApplySpellRES("xaunhide", Myself)
 		SetGlobal("XA_Hidden", "LOCALS", 2)
 		SetGlobal("XA_AshatielSpirit", "GLOBAL", 1)
 		Wait(1)

@@ -166,7 +166,7 @@ APPEND ~PLAYER1~
 		DO ~
 			SetGlobal("XA_CorwinDiedFromBite", "GLOBAL", 2)
 			StartCutSceneMode()
-			StartCutScene("XAAcs08x")
+			StartCutScene("xacs08x")
 		~
 		EXIT
 	END

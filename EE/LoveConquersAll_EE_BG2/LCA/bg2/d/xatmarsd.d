@@ -104,7 +104,7 @@ IF ~~ THEN BEGIN XAA4
 	~ THEN 
 	DO ~
 		StartCutSceneMode()
-		StartCutScene("XAAcs06a")
+		StartCutScene("xacs06a")
 	~
 	EXIT
 	
@@ -113,7 +113,7 @@ IF ~~ THEN BEGIN XAA4
 	~ THEN 
 	DO ~
 		StartCutSceneMode()
-		StartCutScene("XAAcs06c")
+		StartCutScene("xacs06c")
 	~
 	EXIT
 END

@@ -20,6 +20,6 @@ foreach($folder in $folders){
 
 Copy-Item -Path ($tp2Name + ".tp2") -Destination $modPath 
 
-Remove-Item -LiteralPath ($testDir + $tp2Name) -Force -Recurse
+#Remove-Item -LiteralPath ($testDir + $tp2Name) -Force -Recurse
 
 Copy-Item -Path $modPath -Destination $testDir -Recurse

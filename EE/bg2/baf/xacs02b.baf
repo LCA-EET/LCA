@@ -1,0 +1,35 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("xa1001")
+		MoveViewPoint([1044.688], BD_NORMAL)
+		MoveViewObject(Myself, INSTANT)
+		CreateCreature("cutspy",[1044.688],S) 
+		Explore()
+		CreateCreature("xa1000",[1244.975],NW)
+		FadeFromColor([30.0],0)
+		ActionOverride("xa1000", MoveToPoint([1084.728]))
+		ActionOverride("xa1000", FaceObject("xa1001"))
+		DisplayStringHead("xa1000",@0)
+		FaceObject("xa1000")
+		Wait(3)
+		DisplayStringHead("xa1001",@1)
+		Wait(3)
+		DisplayStringHead("xa1000",@2)
+		Wait(5)
+		DisplayStringHead("xa1001",@3)
+		Wait(3)
+		DisplayStringHead("xa1001",@4)
+		Wait(5)
+		DisplayStringHead("xa1001",@5)
+		Wait(5)
+		DisplayStringHead("xa1001",@6)
+		Wait(5)
+		SetGlobalTimer("XA_CS04","GLOBAL",FOUR_HOURS)
+		FadeToColor([30.0],0)
+		Wait(3)
+		StartCutScene("xacsexit")
+END
+
+

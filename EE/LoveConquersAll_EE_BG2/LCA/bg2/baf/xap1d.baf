@@ -59,7 +59,7 @@ THEN
 		//DisplayStringHead(Myself,~Debug Player1D - 9~)
 		SetGlobal("XA_CS03_Done", "GLOBAL", 1)
 		StartCutSceneMode()
-		StartCutSceneEx("XAAcs03a",FALSE)
+		StartCutSceneEx("XAcs03a",FALSE)
 END
 
 IF
@@ -71,7 +71,7 @@ THEN
 		//DisplayStringHead(Myself,~Debug Player1D - 10~)
 		SetGlobal("XA_CS02_Done", "GLOBAL", 1)
 		StartCutSceneMode()
-		StartCutSceneEx("XAAcs02a",FALSE)
+		StartCutSceneEx("XAcs02a",FALSE)
 END
 
 IF
@@ -82,7 +82,7 @@ THEN
 		//DisplayStringHead(Myself,~Debug Player1D - 11~)
 		SetGlobal("XA_CS04_Done", "GLOBAL", 1)
 		StartCutSceneMode()
-		StartCutSceneEx("XAAcs04a",FALSE)
+		StartCutSceneEx("XAcs04a",FALSE)
 END
 
 IF
@@ -93,7 +93,7 @@ THEN
 		//DisplayStringHead(Myself,~Debug Player1D - 12~)
 		SetGlobal("XA_CS05_Done", "GLOBAL", 1)
 		StartCutSceneMode()
-		StartCutSceneEx("XAAcs05a",FALSE)
+		StartCutSceneEx("XAcs05a",FALSE)
 END
 
 IF
@@ -104,7 +104,7 @@ THEN
 		//DisplayStringHead(Myself,~Debug Player1D - 13~)
 		SetGlobal("XA_CS01_Done", "GLOBAL", 1)
 		StartCutSceneMode()
-		StartCutSceneEx("XAAcs01a",FALSE)
+		StartCutSceneEx("XAcs01a",FALSE)
 END
 
 

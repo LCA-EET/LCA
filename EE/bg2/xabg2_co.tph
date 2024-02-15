@@ -1,5 +1,16 @@
 OUTER_SET bg2_carryover = 1
 
+PRINT ~Processing BG2 carry-over elements...~
+
+//{ Flaming Fist 
+	COPY ~%MOD_FOLDER%/bg2/cre/xaffvali.cre~ ~override~
+	SAY NAME1 					@3169 /*~Flaming Fist Valiant~*/
+	SAY NAME2 					@3169 /*~Flaming Fist Valiant~*/
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xaffval2.cre~ ~override~
+	SAY NAME1 					@3169 /*~Flaming Fist Valiant~*/
+	SAY NAME2 					@3169 /*~Flaming Fist Valiant~*/
+//}
 
 //{ Corwin (XACORWIN)
 	//{ Portrait LCA
@@ -364,7 +375,7 @@ You sense there is little Schael Corwin would not do for her family or for the F
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3153)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3154)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3154)
-		WRITE_LONG 0x9E RESOLVE_STR_REF(@3152)
+		WRITE_LONG 0x1C6 RESOLVE_STR_REF(@3152)
 	
 		COPY ~%MOD_FOLDER%/bg2/bam/xaicorbo.bam~ ~override~
 		COPY ~%MOD_FOLDER%/bg2/bam/xacorbow.bam~ ~override~
@@ -376,7 +387,7 @@ You sense there is little Schael Corwin would not do for her family or for the F
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3165)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3166)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3166)
-		WRITE_LONG 0x9E RESOLVE_STR_REF(@3152)
+		WRITE_LONG 0x1C6 RESOLVE_STR_REF(@3152)
 	//}
 	
 	//{ Corwin's Bow + 3 (Gesen)
@@ -386,7 +397,7 @@ You sense there is little Schael Corwin would not do for her family or for the F
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3163)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3164)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3164)
-		WRITE_LONG 0x9E RESOLVE_STR_REF(@3152)
+		WRITE_LONG 0x25E RESOLVE_STR_REF(@3152)
 	//}
 	
 	//{ Corwin's Bow + 4 (Gesen)
@@ -396,7 +407,7 @@ You sense there is little Schael Corwin would not do for her family or for the F
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3167)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3168)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3168)
-		WRITE_LONG 0x9E RESOLVE_STR_REF(@3152)
+		WRITE_LONG 0x25E RESOLVE_STR_REF(@3152)
 	//}
 	
 	//{ Corwin's Armor + 3
@@ -405,7 +416,7 @@ You sense there is little Schael Corwin would not do for her family or for the F
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3155)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3156)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3156)
-		WRITE_LONG 0x9E RESOLVE_STR_REF(@3152)
+		WRITE_LONG 0x2AE RESOLVE_STR_REF(@3152)
 		
 		COPY ~%MOD_FOLDER%/bg2/bam/xacorchn.bam~ ~override~
 		COPY ~%MOD_FOLDER%/bg2/bam/xaicorch.bam~ ~override~
@@ -417,7 +428,7 @@ You sense there is little Schael Corwin would not do for her family or for the F
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3161)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3162)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3162)
-		WRITE_LONG 0x9E RESOLVE_STR_REF(@3152)
+		WRITE_LONG 0x2DE RESOLVE_STR_REF(@3152)
 	//}
 	
 	//{ Soultaker Dagger
@@ -439,5 +450,7 @@ You sense there is little Schael Corwin would not do for her family or for the F
 	
 	COPY ~%MOD_FOLDER%/bg2/spl/xacorbow.spl~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/spl/xacorbo3.spl~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/spl/xahide.spl~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/spl/xaunhide.spl~ ~override~
 //}
 

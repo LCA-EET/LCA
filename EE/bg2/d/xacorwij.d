@@ -624,7 +624,7 @@ IF ~~ THEN BEGIN XA_PlayerSlaveComplain_3A
 END
 //}
 
-//{ Corwin Saved XAACS09B - CC OK
+//{ Corwin Saved xacs09B - CC OK
 	IF ~
 		Global("XA_CorwinSaved9", "GLOBAL", 1)
 	~ THEN BEGIN XA_CorwinSaved9_1
@@ -693,7 +693,7 @@ END
 		IF ~~ THEN 
 		DO ~
 			StartCutSceneMode()
-			StartCutScene("XAACS09C")
+			StartCutScene("xacs09C")
 		~
 		EXIT
 	END
@@ -2102,7 +2102,7 @@ IF ~~ THEN BEGIN XA_CorwinCollapse
 	DO ~
 		SetGlobal("XA_LC_Journal_LoveLost", "GLOBAL", 1)
 		StartCutSceneMode()
-		StartCutScene("XAAcs08a")
+		StartCutScene("xacs08a")
 	~
 	EXIT
 	
@@ -2112,7 +2112,7 @@ IF ~~ THEN BEGIN XA_CorwinCollapse
 	DO ~
 		SetGlobal("XA_LC_Journal_LoveLost", "GLOBAL", 1)
 		StartCutSceneMode()
-		StartCutScene("XAAcs08c")
+		StartCutScene("xacs08c")
 	~
 	EXIT
 END

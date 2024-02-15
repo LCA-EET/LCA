@@ -1,0 +1,112 @@
+IF
+	True() 
+THEN
+	RESPONSE #100
+		CutSceneId("xa1008")
+		
+		
+		CreateCreature("xa1006",[730.474],SW)
+		CreateCreature("xa1007",[755.489],SW)
+		CreateCreature("xa1004",[643.670],N)
+		CreateCreature("xa1002",[639.701],NW)
+		CreateCreature("xa1005",[555.613],S)
+		CreateCreature("xa1003",[826.546],SW)
+		CreateCreature("XAFFVALI", [982.448], SW)
+		CreateCreature("XAFFVAL2", [899.384], SW)
+		
+		Explore()
+		ActionOverride("xa1002", FaceObject("xaskcut2"))
+		ActionOverride("xa1006", FaceObject("xaskcut2"))
+		ActionOverride("xa1007", FaceObject("xaskcut2"))
+		ActionOverride("xa1004", FaceObject("xaskcut2"))
+		ActionOverride("xa1003", FaceObject("xaskcut2"))
+		Wait(3)
+		CreateCreature("cutspy",[826.546],S)
+		MoveViewPoint([826.546], BD_NORMAL)
+		MoveViewObject(Myself, INSTANT)
+		FadeFromColor([30.0],0)
+		
+		DisplayStringHead("xa1005",@0)/*~Good. The body, having been magically preserved in stone, remains in excellent condition.~ */
+		Wait(5)
+		DisplayStringHead("xa1005",@1)/* ~Bring me the dagger.~*/
+		Wait(3)
+		ActionOverride("xa1004", FaceObject("xa1008"))
+		ActionOverride("xa1004", MoveToPoint([704.662]))
+		ActionOverride("xa1004", FaceObject("xa1008"))
+		Wait(1)
+		DisplayStringHead("xa1004",@2)/* ~The dagger please, Captain.~*/
+		Wait(3)
+		MoveToPoint([741.644])
+		FaceObject("xa1004")
+		Wait(1)
+		Face(NE)
+		MoveToPoint([809.594])
+		//Wait(1)
+		FaceObject("xaskcut2")
+		ActionOverride("xa1004", FaceObject("xa1005"))
+		ActionOverride("xa1004", MoveToPoint([585.613]))
+		ActionOverride("xa1004", FaceObject("xaskcut2"))
+		Wait(3)
+		
+		
+		
+		DisplayStringHead("xa1002",@3)/* ~Well? Is this going to work?~*/
+		Wait(3)
+		DisplayStringHead("xa1005",@4)/* ~Yes, I believe so. Interesting...~*/
+		Wait(3)
+		DisplayStringHead("xa1005",@5)/* ~I can feel the presence of multiple souls within the dagger.~*/
+		Wait(5)
+		DisplayStringHead("xa1005",@6)/* ~The soul of your daughter is among them, Duke Entar. We are ready to begin.~*/
+		Wait(5)
+		CreateVisualEffectObject("SPROTECT","xaskcut2")  
+		PlaySound("EFF_M23C")
+		Wait(1)
+		
+		DisplayStringHead("xa1005",@7)/* ~Good, her soul is responding to the presence of her physical self... ~*/
+		Wait(4)
+		DisplayStringHead("xa1004",@8)/* ~Now we will re-associate the soul to the body.~*/
+		Wait(4)
+		CreateVisualEffectObject("SPHEALIN","xaskcut2")
+		
+		Wait(2)
+		DisplayStringHead("xa1005",@9)/* ~Almost there... just the simple matter of reanimating the body...~*/
+		Wait(2)
+		ActionOverride("xa1005", ForceSpell("xaskcut2", WIZARD_STONE_TO_FLESH))
+		Wait(5)
+		DisplayStringHead("xa1005",@10)/* ~There! It is done.~*/
+		Wait(2)
+		DisplayStringHead("xaskcut2",@11)/* ~What...where am I?~*/
+		Wait(2)
+		DisplayStringHead("xa1002",@12)/*~Skie! Skie you are alive! My daughter is alive!~ */
+		ActionOverride("xaskcut2", FaceObject("xa1002"))
+		ActionOverride("xa1002", MoveToPoint([603.678]))
+		Wait(5)
+		DisplayStringHead("xa1002",@13)/* ~Oh Skie... I've missed you so much.~*/
+		Wait(3)
+		DisplayStringHead("xaskcut2",@14)/* ~Father...~*/
+		Wait(2)
+		DisplayStringHead("xa1005",@15)/* ~Duke Entar, your daughter needs to rest.~*/
+		Wait(4)
+		DisplayStringHead("xaskcut2",@16)/* ~Wait.. the one that imprisoned me in the dagger... I know who it was.~*/
+		Wait(4)
+		DisplayStringHead("xa1002",@17)/* ~Yes, it was <CHARNAME>. We had <PRO_HIMHER> arrested —~*/
+		Wait(4)
+		DisplayStringHead("xaskcut2",@18)/*  ~<CHARNAME>? Why did you have <PRO_HIMHER> arrested? A wizard called Irenicus was the one responsible.~*/
+		Wait(5)
+		MoveToPoint([738.641])
+		DisplayStringHead("xa1008",@19)/*~Irenicus! That's the same wizard that <CHARNAME> mentioned in his letter.~ */
+		Wait(4)
+		DisplayStringHead("xaskcut2",@20)/* ~Yes, the other souls trapped within the dagger told me much of him... He's a monster whose power is matched only by his madness and desire for vengeance.~*/
+		Wait(5)
+		DisplayStringHead("xaskcut2",@21)/* ~I... I'm sorry father, I need to lay down.~*/
+		Wait(3)
+		DisplayStringHead("xa1005",@22)/*~This way, child. You can rest as long as you need. The healers will monitor your recuperation.~ */
+		Wait(5)
+		ActionOverride("xa1005", EscapeArea())
+		ActionOverride("xaskcut2", EscapeArea())
+		ActionOverride("xa1004", EscapeArea())
+		Wait(3)
+		StartCutScene("XAcs05c")
+END
+
+

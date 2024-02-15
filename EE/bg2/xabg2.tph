@@ -13,13 +13,10 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 //}
 
 //{ are
-	COPY ~%MOD_FOLDER%/bg2/are/xacs03.are~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/tis/xacs03.tis~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wed/xacs03.wed~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacs03ht.bmp~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacs03lm.bmp~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacs03sr.bmp~ ~override~
-	
+	//{ Overrides to generated areas - the converter won't copy over it since it exists.
+		COPY ~%MOD_FOLDER%/bg2/are/xa1000.are~ ~override~
+	//}
+
 	COPY ~%MOD_FOLDER%/bg2/are/xacs05.are~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/tis/xacs05.tis~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/wed/xacs05.wed~ ~override~
@@ -28,16 +25,39 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 	COPY ~%MOD_FOLDER%/bg2/bmp/xacs05sr.bmp~ ~override~
 	
 	COPY ~%MOD_FOLDER%/bg2/are/xacs06.are~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/tis/xacs06.tis~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wed/xacs06.wed~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/mos/xacs06.mos~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xacs06ht.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xacs06lm.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xacs06sr.bmp~ ~override~
+	
 	COPY ~%MOD_FOLDER%/bg2/are/xacs12.are~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/tis/xacs12.tis~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wed/xacs12.wed~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xacs12ht.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xacs12lm.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xacs12sr.bmp~ ~override~
+	
 	COPY ~%MOD_FOLDER%/bg2/are/xacs13.are~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/tis/xacs13.tis~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wed/xacs13.wed~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/mos/xacs13.mos~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xacs13ht.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xacs13lm.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xacs13sr.bmp~ ~override~
+	
 	COPY ~%MOD_FOLDER%/bg2/are/xapen.are~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/tis/xapen.tis~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wed/xapen.wed~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xapenht.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xapenlm.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xapensr.bmp~ ~override~
 //}
 
 
 //{ bmp
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacs12ht.bmp~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacs12lm.bmp~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacs12sr.bmp~ ~override~
+	
 	COPY ~%MOD_FOLDER%/bg2/bmp/xadingss.bmp~ ~override~
 //}
 
@@ -140,5 +160,7 @@ END
 
 INCLUDE ~%MOD_FOLDER%/bg2/xabg2_co.tph~
 
+
+INCLUDE ~%MOD_FOLDER%/bg2/generated/generated.tph~
 
 
