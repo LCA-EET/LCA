@@ -1,6 +1,7 @@
 PRINT @3000  /* ~Processing BG2 changes...~ */
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf/params~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 
 //{ Script Extensions
@@ -10,6 +11,10 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/bg2/baf/xap1d.baf~
 	EXTEND_TOP ~ppjon.bcs~ 		~%MOD_FOLDER%/bg2/baf/xappjon.baf~
 	EXTEND_TOP ~xacorscr.bcs~	~%MOD_FOLDER%/bg2/baf/xacorsnd.baf~
+	
+	ACTION_IF (isEET = 1) THEN BEGIN
+		EXTEND_TOP ~AR0602.bcs~		~%MOD_FOLDER%/bg2/baf/xalcaeet.baf~
+	END
 //}
 
 //{ are
@@ -163,4 +168,58 @@ INCLUDE ~%MOD_FOLDER%/bg2/xabg2_co.tph~
 
 INCLUDE ~%MOD_FOLDER%/bg2/generated/generated.tph~
 
+/* 
+	Set Default Parameters
+*/
 
+OUTER_SET player_exiled = 1
+OUTER_SET corwin_romance = 1
+OUTER_SET caelar_alive = 1
+OUTER_SET drinks_with_corwin = 1
+OUTER_SET ashatiel_duel = 1
+OUTER_SET saved_jhasso = 1
+OUTER_SET saved_aldeth = 1
+OUTER_SET aldeth_ff = 0
+
+/*
+	If a parameter file exists, overwrite the default parameter with the contents of the parameter file.
+*/
+ACTION_IF (FILE_EXISTS ~%MOD_FOLDER%/bg2/lca_bg2_params.txt~) THEN BEGIN
+	INCLUDE ~%MOD_FOLDER%/bg2/lca_bg2_params.txt~
+END
+
+ACTION_IF (player_exiled = 1) THEN BEGIN
+	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa00.baf~
+END
+
+ACTION_IF (corwin_romance = 1) THEN BEGIN
+	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa01.baf~
+ELSE BEGIN
+	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa02.baf~
+END
+
+ACTION_IF (caelar_alive = 1) THEN BEGIN
+	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa03.baf~
+END
+
+ACTION_IF (drinks_with_corwin = 1) THEN BEGIN
+	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa04.baf~
+END
+
+ACTION_IF (ashatiel_duel = 1) THEN BEGIN
+	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa05.baf~
+END
+
+ACTION_IF (saved_jhasso = 1) THEN BEGIN
+	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa06.baf~
+END
+
+ACTION_IF (saved_aldeth = 1) THEN BEGIN
+	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa07.baf~
+END
+
+ACTION_IF (aldeth_ff = 1) THEN BEGIN
+	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa08.baf~
+END
+
+EXTEND_BOTTOM ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpaEE.baf~

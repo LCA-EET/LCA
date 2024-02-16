@@ -52,8 +52,3 @@ OUTER_SET saved_aldeth = 1
 */
 OUTER_SET aldeth_ff = 0
 
-/*
-	Parameter: corwin_str
-	The value of Corwin's strength attribute when she joins the party in Athkatla.
-*/
-OUTER_SET corwin_str = 18

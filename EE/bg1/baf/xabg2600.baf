@@ -1,0 +1,8 @@
+IF
+	GlobalLT("XA_LC_StartedInBG1", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_StartedInBG1", "GLOBAL", 1)
+		SetGlobal("XA_EEParamsSet", "GLOBAL", 1)
+		Continue()
+END

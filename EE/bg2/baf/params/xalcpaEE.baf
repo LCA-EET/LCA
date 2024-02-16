@@ -1,0 +1,16 @@
+IF
+	GlobalLT("XA_LC_EEParamsSet", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_SetParams", "GLOBAL", 1)
+		SetGlobal("XA_EEParamsSet", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	Global("XA_LC_SetParams", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_SetParams", "GLOBAL", 0)
+		Continue()
+END
