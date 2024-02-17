@@ -324,7 +324,7 @@ IF ~
 	
 	IF ~
 		!AreaCheck("AR1002")
-		GlobalLT("Chapter", "GLOBAL", 20)
+		GlobalLT("XA_BeenToPocketPlane", "GLOBAL", 1)
 	~ THEN REPLY @73  /* ~Go. I'll meet you back at the Athkatla magistrate.~*/
 	GOTO XA_MeetAth
 	
@@ -520,7 +520,7 @@ END
 		
 		IF ~
 			!AreaCheck("AR1002")
-			GlobalLT("Chapter", "GLOBAL", 20)
+			GlobalLT("XA_BeenToPocketPlane", "GLOBAL", 1)
 		~ THEN REPLY @73  /* ~Go. I'll meet you back at the Athkatla magistrate.~*/
 		GOTO XA_MeetAth
 	END
@@ -533,7 +533,7 @@ END
 		ReputationLT(Player1,7)
 		OR(2)
 			AreaCheck("AR1002")
-			GlobalGT("Chapter", "GLOBAL", 19)
+			Global("XA_BeenToPocketPlane", "GLOBAL", 1)
 	~ THEN BEGIN XA_BackAtAthkatlaCouncil_BadRep
 		SAY @102 /* ~Your reputation precedes you, 'hero'. Come and see me when you've cleaned up your act.~  */
 		
@@ -551,7 +551,7 @@ END
 		!Race(Player1, LICH)
 		!AreaCheck("AR1002")
 		ReputationLT(Player1,7)
-		GlobalLT("Chapter", "GLOBAL", 20)
+		GlobalLT("XA_BeenToPocketPlane", "GLOBAL", 1)
 	~ THEN BEGIN XA_OutsideAthkatlaCouncil_BadRep
 		SAY @103 /* ~Your reputation precedes you, 'hero'. Come and see me at the Athkatla magistrate once you've cleaned up your act.~  */
 		

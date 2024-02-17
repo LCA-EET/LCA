@@ -1745,7 +1745,7 @@ END
 //{ #region Corwin Left - Bad Reputation - Dialog J-28A - CC OK
 IF ~
 	Global("XA_CorwinLeftPoorRep", "GLOBAL", 1)
-	GlobalLT("chapter", "GLOBAL", 20)
+	GlobalLT("XA_BeenToPocketPlane", "GLOBAL", 1)
 	!AreaCheck("AR1002")
 ~ THEN BEGIN XA_LeftPoorRep_LT20
 	SAY @420 /* ~I'm sorry. I can't be a part of this any longer. When you clean up your act, you can find me in the Athkatla magistrate.~ */
@@ -1767,7 +1767,7 @@ END
 //{ #region Corwin Left - Bad Reputation - Dialog J-28C - CC OK
 IF ~
 	Global("XA_CorwinLeftPoorRep", "GLOBAL", 1)
-	GlobalLT("chapter", "GLOBAL", 20)
+	GlobalLT("XA_BeenToPocketPlane", "GLOBAL", 1)
 	AreaCheck("AR1002")
 ~ THEN BEGIN XA_LeftPoorRep_LT20
 	SAY @1446 /* ~I'm sorry. I can't be a part of this any longer. If you ever clean up your act, come and see me.~ */
@@ -1787,7 +1787,7 @@ END
 
 //{ #region Corwin Left - Bad Reputation - Dialog J-28B - CC OK
 IF ~
-	Global("XA_CorwinLeftPoorRep", "GLOBAL", 1)
+	Global("XA_BeenToPocketPlane", "GLOBAL", 1)
 	GlobalGT("chapter", "GLOBAL", 19)
 ~ THEN BEGIN XA_LeftPoorRep_GT19
 	SAY @1446 /* ~I'm sorry. I can't be a part of this any longer. If you ever clean up your act, come and see me.~ */

@@ -113,15 +113,15 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite3
 	SAY @10 /* ~(She turns to look at you.)~ */
 	
 	IF ~
-		!Global("XA_MetRohma","Global",1)
+		!Global("XA_LC_MetRohma","Global",1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_MetRohma","Global",1)
+		SetGlobal("XA_LC_MetRohma","Global",1)
 	~
 	GOTO XA_CorwinFamilyReunite3A1
 	
 	IF ~
-		Global("XA_MetRohma","Global",1)
+		Global("XA_LC_MetRohma","Global",1)
 	~ THEN
 	GOTO XA_CorwinFamilyReunite3B1
 END

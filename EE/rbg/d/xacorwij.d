@@ -3169,7 +3169,7 @@ APPEND XACORWIJ
 		
 		IF ~
 			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-			!Global("XA_MetRohma", "GLOBAL", 1)
+			!Global("XA_LC_MetRohma", "GLOBAL", 1)
 		~ 
 		THEN GOTO XA_FirstMeetingRohma
 	END

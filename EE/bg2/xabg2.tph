@@ -340,3 +340,26 @@ ACTION_IF (met_kerrachus = 1) THEN BEGIN
 END
 
 EXTEND_BOTTOM ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpaEE.baf~
+
+//{ Place Corwin's Amulet and Letter in Irenicus' stronghold, if the player has it at the end of SoD. Otherwise, they will be copied by the overriden AR0602 script, but only if the player started their game in BG2 (pursuant to the provided parameters).
+	
+	COPY_EXISTING ~IMPORT01.2DA~ ~override~
+	COUNT_2DA_ROWS 2 import1rows
+	INSERT_2DA_ROW (import1rows) 2 ~%import1rows% XALTRCOR~
+	
+	COPY_EXISTING ~IMPORT02.2DA~ ~override~
+	COUNT_2DA_ROWS 2 import2rows
+	INSERT_2DA_ROW (import2rows) 2 ~%import2rows% XALTRSCH~
+	
+	COPY_EXISTING ~IMPORT03.2DA~ ~override~
+	COUNT_2DA_ROWS 2 import3rows
+	INSERT_2DA_ROW (import3rows) 2 ~%import3rows% XAAMULET~
+//}
+
+//{ Music
+	//{ Ducal Palace
+		COPY_EXISTING 		~%MOD_FOLDER%/bg2/mus/xamu00a.acm~
+		ADD_MUSIC ducal00 	~%MOD_FOLDER%/bg2/mus/xamu00.mus~
+	//}
+	
+//}
