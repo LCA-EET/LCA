@@ -70,7 +70,7 @@ IF ~
 	SAY @78  /* ~Thanks for the help back there.~ */
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @79 /* ~Are you sure you're alright, love?~ */
 	DO ~
 		SetGlobal("XA_CorwinIrenicusTalk", "LOCALS", 2)
@@ -80,7 +80,7 @@ IF ~
 	GOTO XA_CorwinRescueTalk2
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @80 /* ~Are you sure you're alright, Captain?~ */
 	DO ~
 		SetGlobal("XA_CorwinIrenicusTalk", "LOCALS", 2)
@@ -137,13 +137,13 @@ IF ~~ THEN BEGIN XA_CorwinRescueTalk4
 	EXIT
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_CorwinToldAboutSoul", "LOCALS", 1)
 	~ THEN
 	GOTO XA_CorwinRescueTalk5A
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("XA_CorwinToldAboutSoul", "LOCALS", 1)
 	~ THEN
 	GOTO XA_CorwinRescueTalk5B
@@ -187,7 +187,7 @@ END
 IF ~
 	AreaCheck("XAHOME")
 	Global("XA_CorwinWithFamily", "GLOBAL", 1)
-	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	IsGabber(Player1)
 	GlobalLT("XA_CorwinSex_3", "GLOBAL", 7)
 ~ THEN BEGIN XA_SeeYouLater
@@ -199,7 +199,7 @@ END
 IF ~
 	AreaCheck("XAHOME")
 	Global("XA_CorwinWithFamily", "GLOBAL", 1)
-	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	IsGabber(Player1)
 	Global("XA_CorwinSex_3", "GLOBAL", 7)
 ~ THEN BEGIN XA_SeeYouLater2
@@ -300,18 +300,18 @@ IF ~
 	
 	IF ~
 		!Global("XA_CorwinPromoted", "GLOBAL", 1)
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @6 /* ~Your assistance would be welcome Captain. Join me.~ */
 	GOTO XAA1
 	
 	IF ~
 		Global("XA_CorwinPromoted", "GLOBAL", 1)
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @41 /* ~Your assistance would be welcome Major. Join me.~ */
 	GOTO XAA1
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @1 /* ~I need you at my side, now more than ever. Join me.~ */
 	GOTO XAA2
 		
@@ -332,7 +332,7 @@ IF ~
 		!AreaCheck("AR4500")
 		!AreaCheck("AR6200")
 		Global("XA_BeenToPocketPlane", "GLOBAL", 1)
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY #65302 /* ~I'll send you back to the pocket plane. Wait for me there.~ */ 
 	DO ~
 		SetGlobal("XA_CorwinJoined", "LOCALS", 0)
@@ -347,7 +347,7 @@ IF ~
 		!AreaCheck("AR4500")
 		!AreaCheck("AR6200")
 		Global("XA_BeenToPocketPlane", "GLOBAL", 1)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @101 /* ~I'll send you back to the pocket plane. Wait for me there, dear.~ */ 
 	DO ~
 		SetGlobal("XA_CorwinJoined", "LOCALS", 0)
@@ -402,18 +402,18 @@ END
 		
 		IF ~
 			!Global("XA_CorwinPromoted", "GLOBAL", 1)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @6 /* ~Your assistance would be welcome Captain. Join me.~ */
 		GOTO XAA1
 		
 		IF ~
 			Global("XA_CorwinPromoted", "GLOBAL", 1)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @41 /* ~Your assistance would be welcome Major. Join me.~ */
 		GOTO XAA1
 		
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1 /* ~I need you at my side, now more than ever. Join me.~ */
 		GOTO XAA2
 			
@@ -428,7 +428,7 @@ END
 			!AreaCheck("AR4500")
 			!AreaCheck("AR6200")
 			Global("XA_BeenToPocketPlane", "GLOBAL", 1)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY #65302 /* ~I'll send you back to the pocket plane. Wait for me there.~ */ 
 		DO ~
 			SetGlobal("XA_CorwinJoined", "LOCALS", 0)
@@ -443,7 +443,7 @@ END
 			!AreaCheck("AR4500")
 			!AreaCheck("AR6200")
 			Global("XA_BeenToPocketPlane", "GLOBAL", 1)
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @101 /* ~I'll send you back to the pocket plane. Wait for me there, dear.~ */ 
 		DO ~
 			SetGlobal("XA_CorwinJoined", "LOCALS", 0)
@@ -466,18 +466,18 @@ END
 		
 		IF ~
 			!Global("XA_CorwinPromoted", "GLOBAL", 1)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @6 /* ~Your assistance would be welcome Captain. Join me.~ */
 		GOTO XAA1
 		
 		IF ~
 			Global("XA_CorwinPromoted", "GLOBAL", 1)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @41 /* ~Your assistance would be welcome Major. Join me.~ */
 		GOTO XAA1
 		
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1 /* ~I need you at my side, now more than ever. Join me.~ */
 		GOTO XAA2
 			
@@ -492,7 +492,7 @@ END
 			!AreaCheck("AR4500")
 			!AreaCheck("AR6200")
 			Global("XA_BeenToPocketPlane", "GLOBAL", 1)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY #65302 /* ~I'll send you back to the pocket plane. Wait for me there.~ */ 
 		DO ~
 			SetGlobal("XA_CorwinJoined", "LOCALS", 0)
@@ -507,7 +507,7 @@ END
 			!AreaCheck("AR4500")
 			!AreaCheck("AR6200")
 			Global("XA_BeenToPocketPlane", "GLOBAL", 1)
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @101 /* ~I'll send you back to the pocket plane. Wait for me there, dear.~ */ 
 		DO ~
 			SetGlobal("XA_CorwinJoined", "LOCALS", 0)

@@ -252,7 +252,7 @@
 		GOTO XA_HappyEnd
 		
 		IF ~
-			Global("XA_HappyEnding","GLOBAL",1)
+			Global("XA_LC_HappyEnding","GLOBAL",1)
 		~ THEN REPLY @627 /* ~Don't you remember? I told you once long ago that some stories have happy endings. I'd like for our story to be one of them, Schael.~ */
 		GOTO XA_HappyEnd2
 		

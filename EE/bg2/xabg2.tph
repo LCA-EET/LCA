@@ -2,6 +2,7 @@ PRINT @3000  /* ~Processing BG2 changes...~ */
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf/params~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf/cutscenes~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 
 //{ Script Extensions
@@ -11,10 +12,17 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/bg2/baf/xap1d.baf~
 	EXTEND_TOP ~ppjon.bcs~ 		~%MOD_FOLDER%/bg2/baf/xappjon.baf~
 	EXTEND_TOP ~xacorscr.bcs~	~%MOD_FOLDER%/bg2/baf/xacorsnd.baf~
+	EXTEND_TOP ~bodhiamb.bcs~ 	~%MOD_FOLDER%/bg2/baf/xabodamb.baf~
+	EXTEND_TOP ~cleanse.bcs~	~%MOD_FOLDER%/bg2/baf/xaclean.baf~
+	EXTEND_TOP ~bcoffin.bcs~ 	~%MOD_FOLDER%/bg2/baf/xacoffin.baf~
+	EXTEND_TOP ~ccgirl2.bcs~ 	~%MOD_FOLDER%/bg2/baf/xagirlov.baf~
+	EXTEND_TOP ~valygar.bcs~ 	~%MOD_FOLDER%/bg2/baf/xasvir.baf~
+	EXTEND_TOP ~jaheira.bcs~ 	~%MOD_FOLDER%/bg2/baf/xasvir.baf~
+	EXTEND_TOP ~minsc.bcs~ 		~%MOD_FOLDER%/bg2/baf/xasvir.baf~
+	EXTEND_TOP ~mazzy.bcs~ 		~%MOD_FOLDER%/bg2/baf/xasvir.baf~
+	EXTEND_TOP ~aerie.bcs~ 		~%MOD_FOLDER%/bg2/baf/xasvir.baf~
+	EXTEND_TOP ~keldorn.bcs~ 	~%MOD_FOLDER%/bg2/baf/xasvir.baf~
 	
-	ACTION_IF (isEET = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~		~%MOD_FOLDER%/bg2/baf/xalcaeet.baf~
-	END
 //}
 
 //{ are
@@ -60,7 +68,81 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 	COPY ~%MOD_FOLDER%/bg2/bmp/xapensr.bmp~ ~override~
 //}
 
+//{ 2DA Modifications
+	//{ XACORWIN
+		COPY_EXISTING ~pdialog.2da~ ~override~
+		INSERT_2DA_ROW 0 8 ~XACORWIN XACORWIP XACORWIJ XACORWID XACORWIP XACORWIJ XACORWID XACORWIN~
 
+		COPY_EXISTING ~interdia.2da~ ~override~
+		INSERT_2DA_ROW 0 3 ~XACORWIN XACORWIB XACORWIB~
+	//}
+//}
+
+//{ Modifications to already-existing areas
+	//{ Area script extensions
+		EXTEND_TOP ~ar0334.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar0334.baf~
+		EXTEND_TOP ~ar0602.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar0602.baf~
+		EXTEND_TOP ~ar1002.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar1002.baf~
+		EXTEND_TOP ~ar1512.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar1512.baf~
+		EXTEND_TOP ~ar1516.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar1516.baf~
+		EXTEND_TOP ~ar2000.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar2000.baf~
+		EXTEND_TOP ~ar2802.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar2802.baf~
+		EXTEND_TOP ~ar2900.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar2900.baf~
+		EXTEND_BOTTOM ~ohgorge.bcs~	~%MOD_FOLDER%/bg2/baf/xagorge.baf~
+		
+	//}
+	
+	//{ If the playthrough is started in BG2, apply the default or overriden parameters (even for EET games).
+		ACTION_IF (isEET = 1) THEN BEGIN
+			EXTEND_TOP ~ar0602.bcs~		~%MOD_FOLDER%/bg2/baf/xalcaeet.baf~
+		END
+	//}
+	
+	//{ Bodhi's Hideout
+		COPY_EXISTING ~AR0801.ARE~ ~override~
+		LPF fj_are_structure
+			INT_VAR
+			fj_type 		= 0
+			fj_box_left		= 2230
+			fj_box_top		= 550
+			fj_box_right	= 2400
+			fj_box_bottom	= 750
+			fj_cursor_idx	= 0
+			fj_alt_x		= 0
+			fj_alt_y		= 0
+			fj_flags		= 0
+			fj_vertex_0     = 2230 + (550 << 16)
+			fj_vertex_1     = 2400 + (550 << 16)
+			fj_vertex_2     = 2400 + (750 << 16)
+			fj_vertex_3     = 2230 + (750 << 16)
+			STR_VAR
+			fj_structure_type = region
+			fj_name = ~Corwin Trigger~
+			fj_reg_script = ~XA801T0~
+		END
+
+		LPF fj_are_structure
+			INT_VAR
+			fj_type 		= 0
+			fj_box_left		= 575
+			fj_box_top		= 740
+			fj_box_right	= 710
+			fj_box_bottom	= 790
+			fj_cursor_idx	= 0
+			fj_alt_x		= 0
+			fj_alt_y		= 0
+			fj_flags		= 0
+			fj_vertex_0     = 575 + (740 << 16)
+			fj_vertex_1     = 710 + (740 << 16)
+			fj_vertex_2     = 710 + (790 << 16)
+			fj_vertex_3     = 575 + (790 << 16)
+			STR_VAR
+			fj_structure_type = region
+			fj_name = ~Corwin Trigger2~
+			fj_reg_script = ~XA801T0~
+		END
+	//}
+//}
 //{ bmp
 	
 	COPY ~%MOD_FOLDER%/bg2/bmp/xadingss.bmp~ ~override~
@@ -180,6 +262,13 @@ OUTER_SET ashatiel_duel = 1
 OUTER_SET saved_jhasso = 1
 OUTER_SET saved_aldeth = 1
 OUTER_SET aldeth_ff = 0
+OUTER_SET met_rohma = 1
+OUTER_SET sacrifice_corwin = 0
+OUTER_SET neoma_earrings = 1
+OUTER_SET happy_ending = 1
+OUTER_SET tricked_larze = 1
+OUTER_SET helped_forthel = 1
+OUTER_SET met_kerrachus = 1
 
 /*
 	If a parameter file exists, overwrite the default parameter with the contents of the parameter file.
@@ -194,7 +283,7 @@ END
 
 ACTION_IF (corwin_romance = 1) THEN BEGIN
 	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa01.baf~
-ELSE BEGIN
+END ELSE BEGIN
 	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa02.baf~
 END
 
@@ -220,6 +309,34 @@ END
 
 ACTION_IF (aldeth_ff = 1) THEN BEGIN
 	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa08.baf~
+END
+
+ACTION_IF (met_rohma = 1) THEN BEGIN
+	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa09.baf~
+END
+
+ACTION_IF (sacrifice_corwin = 1) THEN BEGIN
+	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa10.baf~
+END
+
+ACTION_IF (neoma_earrings = 1) THEN BEGIN
+	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa11.baf~
+END
+
+ACTION_IF (happy_ending = 1) THEN BEGIN
+	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa12.baf~
+END
+
+ACTION_IF (tricked_larze = 1) THEN BEGIN
+	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa13.baf~
+END
+
+ACTION_IF (helped_forthel = 1) THEN BEGIN
+	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa14.baf~
+END
+
+ACTION_IF (met_kerrachus = 1) THEN BEGIN
+	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa15.baf~
 END
 
 EXTEND_BOTTOM ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpaEE.baf~

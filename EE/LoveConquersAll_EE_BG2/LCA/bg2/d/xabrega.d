@@ -171,14 +171,14 @@ APPEND_EARLY HABREGA
 		SAY @40  /* ~Who do you want it sent to?~ */
 		
 		IF ~
-			Global("XA_CorwinContinue", "GLOBAL", 2) // continues romance
+			Global("XA_LC_CorwinContinue", "GLOBAL", 2) // continues romance
 			!Alignment(Player1,MASK_EVIL)
 		~
 		THEN REPLY @42 /* ~One moment... (Write a romantic letter to Captain Schael Corwin of the Flaming Fist).~ */
 		GOTO M31A
 		
 		IF ~
-			Global("XA_CorwinContinue", "GLOBAL", 1) // friendship
+			Global("XA_LC_CorwinContinue", "GLOBAL", 1) // friendship
 			!Alignment(Player1,MASK_EVIL)
 		~
 		THEN REPLY @43 /* ~One moment... (Write a letter to Captain Schael Corwin of the Flaming Fist).~ */
@@ -379,14 +379,14 @@ APPEND HABREGA
 	IF ~~ THEN BEGIN M30
 		SAY @19 /* ~Yes, of course. Do you have a letter you'd like to include as well?~ */
 		IF ~
-			Global("XA_CorwinContinue", "GLOBAL", 2) // continues romance
+			Global("XA_LC_CorwinContinue", "GLOBAL", 2) // continues romance
 			!Alignment(Player1,MASK_EVIL)
 		~
 		THEN REPLY @20 /* ~Yes, give me a moment. (Write a romantic letter to Captain Schael Corwin of the Flaming Fist).~ */
 		GOTO M31
 		
 		IF ~
-			Global("XA_CorwinContinue", "GLOBAL", 1) // friendship
+			Global("XA_LC_CorwinContinue", "GLOBAL", 1) // friendship
 			!Alignment(Player1,MASK_EVIL)
 		~
 		THEN REPLY @20 /* ~Yes, give me a moment. (Write a letter to Captain Schael Corwin of the Flaming Fist).~ */

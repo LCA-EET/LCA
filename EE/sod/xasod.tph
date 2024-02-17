@@ -67,6 +67,20 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 	WRITE_LONG 0x0C RESOLVE_STR_REF(@2001)
 //}
 
+//{ Creature modifications
+	COPY_EXISTING ~BDFAMARI.CRE~ ~override~
+	READ_LONG 0x10 benoflags
+	WRITE_LONG 0x10 (benoflags + 1048576) /* Set Flag 20 to True(No exploding on death). 1048576 = 2^20*/
+
+	COPY_EXISTING ~BDFAMAR1.CRE~ ~override~
+	READ_LONG 0x10 benoflags
+	WRITE_LONG 0x10 (benoflags + 1048576) /* Set Flag 20 to True(No exploding on death). 1048576 = 2^20*/
+
+	COPY_EXISTING ~BDFAMAR2.CRE~ ~override~
+	READ_LONG 0x10 benoflags
+	WRITE_LONG 0x10 (benoflags + 1048576) /* Set Flag 20 to True(No exploding on death). 1048576 = 2^20*/
+//}
+
 ACTION_IF (bg1_carryover = 0) THEN BEGIN
 	INCLUDE ~%MOD_FOLDER%/bg1/xabg1_co.tph~
 END

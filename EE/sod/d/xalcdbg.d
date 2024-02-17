@@ -27,7 +27,7 @@ APPEND XALCDBG
 		DO ~
 			CreateCreature("BDIMOEN", [-1.-1], S)
 			SetGlobal("XA_LC_SoDLetterDebug", "GLOBAL", 1)
-			SetGlobal("XA_CorwinContinue", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinContinue", "GLOBAL", 2)
 			ActionOverride("IMOEN", StartDialog("BDIMOEN", Player1)) 
 		~
 		EXIT
@@ -36,7 +36,7 @@ APPEND XALCDBG
 		DO ~
 			CreateCreature("BDIMOEN", [-1.-1], S)
 			SetGlobal("XA_LC_SoDLetterDebug", "GLOBAL", 1)
-			SetGlobal("XA_CorwinContinue", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinContinue", "GLOBAL", 1)
 			ActionOverride("IMOEN", StartDialog("BDIMOEN", Player1)) 
 		~
 		EXIT

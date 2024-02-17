@@ -22,7 +22,7 @@ END
 
 //{ Dialog I-1
 IF ~
-	Global("XA_CorwinContinue", "GLOBAL", 2) 
+	Global("XA_LC_CorwinContinue", "GLOBAL", 2) 
 	GlobalLT("XA_CorwinReunited", "GLOBAL", 1)
 	!Race(Player1, LICH)
 ~ THEN BEGIN XAA0
@@ -32,14 +32,14 @@ IF ~
 	IF ~~ THEN REPLY @30 /* ~Schael! What're you doing here?~ */ 
 	DO ~
 		SetGlobal("XA_CorwinReunited", "GLOBAL", 1)
-		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	GOTO XAA3
 	  
 	IF ~~ THEN REPLY @9 /* ~You're not here to have me arrested again, I hope?~ */ 
 	DO ~
 		SetGlobal("XA_CorwinReunited", "GLOBAL", 1)
-		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	GOTO XAA2
 END
@@ -47,7 +47,7 @@ END
 
 //{ Dialog I-2
 IF ~
-	Global("XA_CorwinContinue", "GLOBAL", 1) // Friend
+	Global("XA_LC_CorwinContinue", "GLOBAL", 1) // Friend
 	GlobalLT("XA_CorwinReunited", "GLOBAL", 1)
 	!Race(Player1, LICH)
 ~ THEN BEGIN XAA1
@@ -55,14 +55,14 @@ IF ~
 	IF ~~ THEN REPLY @30 /* ~Schael! What are you doing here?~ */ 
 	DO ~
 		SetGlobal("XA_CorwinReunited", "GLOBAL", 1)
-		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 1)
 	~
 	GOTO XAA3
 	  
 	IF ~~ THEN REPLY @9 /* ~You're not here to have me arrested again, I hope?~ */ 
 	DO ~
 		SetGlobal("XA_CorwinReunited", "GLOBAL", 1)
-		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 1)
 	~
 	GOTO XAA2
 END
@@ -75,27 +75,27 @@ IF ~
 THEN BEGIN XAAJoinAsk
 	SAY @35	/* ~<CHARNAME> - what do you need?~ */
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!ReputationLT(Player1,8)
 	~
 	THEN REPLY @36 /* ~I need you by my side, as always my love. Join me~ */
 	GOTO XAAJoinLove
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!ReputationLT(Player1,8)
 	~ THEN REPLY @21 /* ~Your assistance, as always, is welcome Captain. Join me.~ */
 	GOTO XAAJoinFriend
 
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		ReputationLT(Player1,8)
 	~
 	THEN REPLY @36 /* ~I need you by my side, as always my love. Join me~ */
 	GOTO XAAJoin_RepLT7
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		ReputationLT(Player1,8)
 	~ THEN REPLY @21 /* ~Your assistance, as always, is welcome Captain. Join me.~ */
 	GOTO XAAJoin_RepLT7
@@ -184,22 +184,22 @@ END
 IF ~~ THEN BEGIN XAA4A
 	SAY @44 // ~I'm ready to leave when you are.~
 	IF ~
-		Global("XA_CorwinContinue", "GLOBAL", 2) /* Romance */
+		Global("XA_LC_CorwinContinue", "GLOBAL", 2) /* Romance */
 	~ THEN REPLY @32 /* ~Thank you, Schael. Irenicus is a powerful foe. I will need all of the help I can get. But what of Rohma?~ */
 	GOTO XAA5
 	
 	IF ~
-		Global("XA_CorwinContinue", "GLOBAL", 2) /* Romance */
+		Global("XA_LC_CorwinContinue", "GLOBAL", 2) /* Romance */
 	~ THEN REPLY @23 /* ~No, it's too dangerous. I appreciate your willingness to help my love, but I can't risk losing you. Return to Baldur's Gate, and tell the Dukes that vengeance against Irenicus will be mine and mine alone.~ */
 	GOTO XAA8
 	
 	IF ~
-		Global("XA_CorwinContinue", "GLOBAL", 1) /* Non-Romance */
+		Global("XA_LC_CorwinContinue", "GLOBAL", 1) /* Non-Romance */
 	~ THEN REPLY @33 /* ~Thank you, Captain. Irenicus is a powerful foe. I will need all of the help I can get. But what of Rohma?~ */
 	GOTO XAA5A
 	
 	IF ~
-		Global("XA_CorwinContinue", "GLOBAL", 1) /* Non-Romance */
+		Global("XA_LC_CorwinContinue", "GLOBAL", 1) /* Non-Romance */
 	~ THEN REPLY @15 /* ~I'll gladly take the gold, but I don't need your assistance at this time, Captain.~ */
 	GOTO XAA8
 END
@@ -225,12 +225,12 @@ IF ~~ THEN BEGIN XAA6
 	SAY @20 /* ~So, what's your decision?~ */
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2) /* Non-Romance */
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2) /* Non-Romance */
 	~ THEN REPLY @21 /* ~Your assistance, as always, is welcome Captain. Join me.~ */
 	GOTO XAAJoinFriend
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2) /* Romance */
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2) /* Romance */
 	~
 	THEN REPLY @22 /* ~My love, with you at my side, nothing can stand against us.~ */
 	GOTO XAAKiss
@@ -249,13 +249,13 @@ IF ~~ THEN BEGIN XAA8
 	SAY @45 /* ~<CHARNAME>, I can take care of myself. I thought that you would have recognized that by now. Are you sure that you don't want me to join you?~ */
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2) /* Romance */
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2) /* Romance */
 	~ 
 	THEN REPLY @24 /* ~Yes, I'm sure. Return to Baldur's Gate. When this is over, we will be together my love, I swear it.~ */
 	GOTO XAA9
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2) /* Non-Romance */
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2) /* Non-Romance */
 	~
 	THEN REPLY @25 /* ~Yes, I'm sure my friend. Return to Baldur's Gate.~ */
 	GOTO XAA10
@@ -268,12 +268,12 @@ IF ~~ THEN BEGIN XAA9
 	SAY @40 /* ~Having to leave your side again.. it hurts. But I understand. ~ */
 	
 	IF ~
-		!Global("XA_GaveCorwinLetter", "GLOBAL", 2)
+		!Global("XA_LC_GaveCorwinLetter", "GLOBAL", 2)
 	~ THEN 
 	GOTO XAA9A
 	
 	IF ~
-		Global("XA_GaveCorwinLetter", "GLOBAL", 2)
+		Global("XA_LC_GaveCorwinLetter", "GLOBAL", 2)
 	~ THEN 
 	GOTO XAA9B
 END

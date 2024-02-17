@@ -114,7 +114,7 @@ IF
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_CorwinEET", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinEET", "GLOBAL", 1)
 		SetGlobal("XA_CorwinEETCheck", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 		Continue()
@@ -127,7 +127,7 @@ IF
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_CorwinEET", "GLOBAL", 0)
+		SetGlobal("XA_LC_CorwinEET", "GLOBAL", 0)
 		SetGlobal("XA_CorwinEETCheck", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 		Continue()
@@ -984,7 +984,7 @@ END
 	IF 
 		Global("XA_ReturnToBG", "GLOBAL", 1)
 		Global("XA_XACS15Cutscene", "GLOBAL", 5)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!See("XANEOMA")
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	THEN
@@ -1003,7 +1003,7 @@ END
 		Global("XA_BGEND3", "GLOBAL", 1)
 		Global("XA_DidNotRequestCorwin", "GLOBAL", 1)
 		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 99)
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1017,7 +1017,7 @@ END
 		Global("XA_BGEND3", "GLOBAL", 1)
 		Global("XA_DidNotRequestCorwin", "GLOBAL", 1)
 		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 99)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1031,7 +1031,7 @@ END
 	IF
 		Global("XA_BGEND4", "GLOBAL", 1)
 		Global("XA_DidRequestCorwin", "GLOBAL", 1)
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1044,7 +1044,7 @@ END
 	IF
 		Global("XA_BGEND4", "GLOBAL", 1)
 		Global("XA_DidRequestCorwin", "GLOBAL", 1)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1480,7 +1480,7 @@ END
 		InParty(Myself)
 		Global("BeginChallenge3", "GLOBAL", 3)
 		GlobalLT("XA_C3TimerSet", "LOCALS", 1)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
@@ -2115,7 +2115,7 @@ END
 		ActionListEmpty()
 		GlobalGT("SarevokAlive", "GLOBAL", 0)
 		GlobalLT("ImoenGiveSoul","GLOBAL",2)
-		Global("XA_CorwinRomanceActive","GLOBAL",2)
+		Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 		!Global("XA_SarevokSoulTimerSet", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -2208,7 +2208,7 @@ END
 		ActionListEmpty()
 		AreaCheck("AR5203")
 		Gender(Player1, MALE)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		GlobalGT("XA_CorwinPregnant", "GLOBAL", 0)
 		GlobalLT("XA_PregnantOverride", "GLOBAL", 1)
 	THEN
@@ -2425,7 +2425,7 @@ END
 		GlobalGT("PhaereInnuendo","GLOBAL",1)
 		GlobalLT("XA_AloneWithPhaere", "GLOBAL", 1)
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!InMyArea("Phaere")
 	THEN
 		RESPONSE #100
@@ -2920,7 +2920,7 @@ END
 	IF
 		ActionListEmpty()
 		GlobalLT("XA_RomanceConflictTimerSet", "GLOBAL", 1)
-		Global("XA_CorwinRomanceActive","GLOBAL",2)
+		Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 		OR(8)
 			Global("AerieRomanceActive","GLOBAL",2)
 			Global("ViconiaRomanceActive","GLOBAL",2)
@@ -2959,7 +2959,7 @@ END
 		IF
 			ActionListEmpty()
 			InParty(Myself)
-			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 			GlobalLT("AerieRomanceActive", "GLOBAL", 2)
 		THEN
 			RESPONSE #100
@@ -2972,7 +2972,7 @@ END
 		IF
 			ActionListEmpty()
 			InParty(Myself)
-			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 			GlobalLT("ViconiaRomanceActive","GLOBAL",2)
 		THEN
 			RESPONSE #100
@@ -2985,7 +2985,7 @@ END
 		IF
 			ActionListEmpty()
 			InParty(Myself)
-			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 			GlobalLT("DornRomanceActive","GLOBAL",2)
 		THEN
 			RESPONSE #100
@@ -2998,7 +2998,7 @@ END
 		IF
 			ActionListEmpty()
 			InParty(Myself)
-			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 			GlobalLT("NeeraRomanceActive","GLOBAL",2)
 		THEN
 			RESPONSE #100
@@ -3011,7 +3011,7 @@ END
 		IF
 			ActionListEmpty()
 			InParty(Myself)
-			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 			GlobalLT("AnomenRomanceActive","GLOBAL",2)
 		THEN
 			RESPONSE #100
@@ -3024,7 +3024,7 @@ END
 		IF
 			ActionListEmpty()
 			InParty(Myself)
-			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 			GlobalLT("JaheiraRomanceActive","GLOBAL",2)
 		THEN
 			RESPONSE #100
@@ -3037,7 +3037,7 @@ END
 		IF
 			ActionListEmpty()
 			InParty(Myself)
-			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 			GlobalLT("HexxatRomanceActive","GLOBAL",2)
 		THEN
 			RESPONSE #100
@@ -3050,7 +3050,7 @@ END
 		IF
 			ActionListEmpty()
 			InParty(Myself)
-			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 			GlobalLT("RasaadRomanceActive","GLOBAL",2)
 		THEN
 			RESPONSE #100
@@ -4865,7 +4865,7 @@ END
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_CanTalkToMazzy", "LOCALS", 1)
 		Global("XA_TM_ArcheryChallenge", "GLOBAL", 2)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
@@ -4881,7 +4881,7 @@ END
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_CanTalkToMazzy", "LOCALS", 1)
 		Global("XA_TM_ArcheryChallenge", "GLOBAL", 2)
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
@@ -5327,8 +5327,8 @@ END
 			Global("DornRomanceActive","GLOBAL",2)
 		GlobalGT("DornLovetalks","GLOBAL",9)
 		OR(2)
-			Global("XA_CorwinRomanceActive","GLOBAL",1)
-			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",1)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 		Global("OHD_corwinconflict","GLOBAL",0)
 	THEN
 		RESPONSE #100
@@ -5346,8 +5346,8 @@ END
 			Global("DornRomanceActive","GLOBAL",1)
 			Global("DornRomanceActive","GLOBAL",2)
 		OR(2)
-			Global("XA_CorwinRomanceActive","GLOBAL",1)
-			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",1)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 		Global("OHD_corwinconflict","GLOBAL",1)
 		RealGlobalTimerExpired("OHD_corwinconflict_timer","GLOBAL")
 	THEN
@@ -5375,8 +5375,8 @@ END
 		!Global("XA_DornSex", "GLOBAL", 1)
 		!ActuallyInCombat()
 		OR(2)
-			Global("XA_CorwinRomanceActive","GLOBAL",1)
-			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",1)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -5884,7 +5884,7 @@ END
 		Global("XA_CanTalkToSarevok", "LOCALS", 1)
 		GlobalTimerExpired("XA_SarevokSoulTimer", "GLOBAL")
 		GlobalLT("XA_SarevokSoul", "GLOBAL", 1)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -6088,7 +6088,7 @@ END
 		ActionListEmpty()
 		Global("XA_Banter_Pending", "LOCALS", 12)
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
@@ -6106,7 +6106,7 @@ END
 		ActionListEmpty()
 		Global("XA_Banter_Pending", "LOCALS", 12)
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
@@ -6137,7 +6137,7 @@ END
 		ActionListEmpty()
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		GlobalTimerExpired("XA_PlayerOpt1BanterTimer", "LOCALS")
 	THEN
 		RESPONSE #100
@@ -6153,7 +6153,7 @@ END
 		ActionListEmpty()
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		GlobalTimerExpired("XA_PlayerOpt1BanterTimer", "LOCALS")
 	THEN
 		RESPONSE #100
@@ -6345,7 +6345,7 @@ END
 	IF
 		ActionListEmpty()
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_CorwinPregnant", "GLOBAL", 5)
 		OR(2)
 			GlobalTimerExpired("XA_CorwinPregnantTimer", "GLOBAL")
@@ -6366,7 +6366,7 @@ END
 	IF
 		ActionListEmpty()
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_CorwinPregnant", "GLOBAL", 7)
 		GlobalTimerExpired("XA_CorwinPregnantTimer", "GLOBAL")
 	THEN
@@ -6382,7 +6382,7 @@ END
 	//{ Final Interaction - Corwin Leaves
 	IF
 		ActionListEmpty()
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_CorwinPregnant", "GLOBAL", 9)
 		GlobalTimerExpired("XA_CorwinPregnantTimer", "GLOBAL")
 	THEN
@@ -6393,7 +6393,7 @@ END
 	
 	IF
 		Global("XA_CanTalkToPlayer", "LOCALS", 1)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_CorwinPregnant", "GLOBAL", 10)
 		AreaCheck("AR4500")
 	THEN

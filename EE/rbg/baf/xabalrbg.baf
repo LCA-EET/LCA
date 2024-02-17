@@ -1,0 +1,432 @@
+//{ Remove Pocket Plane Ability - Avernus Tower
+	IF
+		GlobalLT("XA_AVBossFled", "GLOBAL", 1)
+		AreaCheck("XA4700")
+		TriggerOverride(Player1,HaveSpellRES("SPIN649")) 
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("GavePocketPlane","GLOBAL",0)
+			ActionOverride(Player1, RemoveSpellRES("SPIN649"))
+			SetInterrupt(TRUE)
+			Continue()
+	END
+//}
+
+//{ Seldarine / Lyriel Amulet conflict
+IF
+	PartyHasItem("XALYAMUL")
+	PartyHasItem("XAAMUL27")
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, DestroyItem("XAAMUL27"))
+		ActionOverride(Player2, DestroyItem("XAAMUL27"))
+		ActionOverride(Player3, DestroyItem("XAAMUL27"))
+		ActionOverride(Player4, DestroyItem("XAAMUL27"))
+		ActionOverride(Player5, DestroyItem("XAAMUL27"))
+		ActionOverride(Player6, DestroyItem("XAAMUL27"))
+		Continue()
+END
+//}
+
+//{ Golden Egg
+IF
+	PartyHasItem("XACHICK")
+	GlobalLT("XA_GoldenHenTimerSet", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_GoldenHenTimerSet", "GLOBAL", 1)
+		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+		//DisplayStringHead(Player1, @18)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	HasItem("XACHICK", Player1)
+	GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		GiveItemCreate("XAEGG", Player1, 0,0,0)
+		DisplayString(Myself, @0)
+		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+		DisplayStringHead(Player1, @0)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	HasItem("XACHICK", Player2)
+	GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		GiveItemCreate("XAEGG", Player2, 0,0,0)
+		DisplayStringHead(Player2, @0)
+		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	HasItem("XACHICK", Player3)
+	GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		GiveItemCreate("XAEGG", Player3, 0,0,0)
+		DisplayStringHead(Player3, @0)
+		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	HasItem("XACHICK", Player4)
+	GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		GiveItemCreate("XAEGG", Player4, 0,0,0)
+		DisplayString(Player4, @0)
+		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	HasItem("XACHICK", Player5)
+	GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		GiveItemCreate("XAEGG", Player5, 0,0,0)
+		DisplayString(Player5,  @0)
+		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	HasItem("XACHICK", Player6)
+	GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		GiveItemCreate("XAEGG", Player6, 0,0,0)
+		DisplayString(Player6,  @0)
+		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Kanaglym Dream
+	IF
+		GlobalLT("XA_ClearedKanaglym", "GLOBAL", 1)
+		Dead("bdkherr")
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_ClearedKanaglym", "GLOBAL", 1)
+			Continue()
+	END
+
+
+	IF
+		GlobalLT("XA_KanaDreamTimerSet", "GLOBAL",1)
+		Global("XA_ClearedKanaglym", "GLOBAL",1)
+		Global("XA_EnteredSaradush", "GLOBAL", 1)
+		Global("XA_IncubusDefeated", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_KanaDreamTimerSet", "GLOBAL",1)
+			Continue()
+	END
+//}
+
+//{ Return to Baldur's Gate Timers
+
+	IF
+		Global("XA_ReturnToBG", "GLOBAL", 1)
+		OR(7)
+			AreaCheck("BG0706") // Elfsong L2
+			AreaCheck("XAPAINT1")
+			AreaCheck("XAG1")
+			AreaCheck("XAG2A")
+			AreaCheck("XAG3")
+			AreaCheck("XADEMSAN")
+			AreaCheck("XACSHOW")
+		GlobalLT("XA_HaltRBGTimers", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_HaltRBGTimers", "GLOBAL", 1)
+			//DisplayStringHead(Player1, @4)
+	END
+	
+	IF
+		Global("XA_ReturnToBG", "GLOBAL", 1)
+		!AreaCheck("XAPAINT1")
+		!AreaCheck("XAG1")
+		!AreaCheck("XAG2A")
+		!AreaCheck("XAG3")
+		!AreaCheck("XADEMSAN")
+		!AreaCheck("XACSHOW")
+		!AreaCheck("BG0706")
+		Global("XA_HaltRBGTimers", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_HaltRBGTimers", "GLOBAL", 0)
+			//DisplayStringHead(Player1, @5)
+	END
+	
+	IF 
+		Global("XA_ReturnToBG", "GLOBAL", 1)
+		GlobalTimerExpired("XA_Advance7Timer", "GLOBAL")
+		Global("XA_Advance7", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_Advance7", "GLOBAL", 0)
+			//DisplayStringHead(Player1, @6)
+			Continue()
+	END
+
+
+	//{ Leave for Family Timer
+	
+		//{ Set the Timer
+		IF
+			Global("XA_ReturnToBG", "GLOBAL", 1)
+			GlobalLT("XA_CorwinLeaveForFamilyTimerSet", "GLOBAL", 1)
+			Global("XA_CorwinMetFamily", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobalTimer("XA_CorwinLeaveForFamilyTimer", "GLOBAL", ONE_HOUR)
+				SetGlobal("XA_CorwinLeaveForFamilyTimerSet", "GLOBAL", 1)
+				//DisplayStringHead(Player1, @7)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+		//}
+	
+		//{ Advance the Timer by One Hour
+		IF
+			Global("XA_ReturnToBG", "GLOBAL", 1)
+			GlobalTimerExpired("XA_CorwinLeaveForFamilyTimer", "GLOBAL")
+			GlobalLT("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
+			GlobalLT("XA_CorwinMetFamily", "GLOBAL", 2)
+			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+			Global("XA_HaltRBGTimers", "GLOBAL", 0)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				IncrementGlobal("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 1) // TICK
+				SetGlobal("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
+				SetInterrupt(TRUE)
+				// Don't continue on the tick.
+				//DisplayStringHead(Player1, @8)
+		END
+		//}
+		
+		//{ Have at least Four Hours Elapsed?
+		IF
+			Global("XA_ReturnToBG", "GLOBAL", 1)
+			Global("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
+			GlobalGT("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 3)
+			GlobalLT("XA_CorwinMetFamily", "GLOBAL", 2)
+			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+			Global("XA_HaltRBGTimers", "GLOBAL", 0)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 2)
+				SetGlobal("XA_CorwinLeaveForFamily", "GLOBAL", 1)
+				//DisplayStringHead(Player1, @9)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+		//}
+	
+		//{ If not, then reset the timer.
+		IF
+			Global("XA_ReturnToBG", "GLOBAL", 1)
+			Global("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
+			GlobalLT("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 4)
+			GlobalLT("XA_CorwinMetFamily", "GLOBAL", 2)
+			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+			Global("XA_HaltRBGTimers", "GLOBAL", 0)
+			//If the timer has ticked, but has not reached the maximum alloted time, reset the timer.
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 0)
+				SetGlobalTimer("XA_CorwinLeaveForFamilyTimer", "GLOBAL", ONE_HOUR)
+				//DisplayStringHead(Player1, @10)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+		//}
+	
+	//}	
+	
+	//{ See Family Timer
+	
+		//{ Set the Timer
+		IF
+			Global("XA_ReturnToBG", "GLOBAL", 1)
+			GlobalLT("XA_CorwinFamilyTimerSet", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobalTimer("XA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
+				SetGlobal("XA_CorwinFamilyTimerSet", "GLOBAL", 1)
+				//DisplayStringHead(Player1, @11)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+		//}
+		
+		//{ Advance the Timer by One Hour
+		IF
+			Global("XA_ReturnToBG", "GLOBAL", 1)
+			GlobalTimerExpired("XA_CorwinFamilyTimer", "GLOBAL")
+			GlobalLT("XA_CorwinFamilyTimerTicked", "GLOBAL", 1)
+			GlobalLT("XA_CorwinMetFamily", "GLOBAL", 1)
+			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+			Global("XA_HaltRBGTimers", "GLOBAL", 0)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_CorwinFamilyTimerTicked", "GLOBAL", 1)
+				IncrementGlobal("XA_CorwinFamilyTimer_Hours", "GLOBAL", 1)
+				SetInterrupt(TRUE)
+				//Don't continue on the tick
+				//DisplayStringHead(Player1, @12)
+		END
+		//}
+		
+		//{ Corwin Complain about not seeing family.
+		IF
+			Global("XA_ReturnToBG", "GLOBAL", 1)
+			Global("XA_CorwinFamilyTimerTicked", "GLOBAL", 1)
+			GlobalLT("XA_CorwinMetFamily", "GLOBAL", 1)
+			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+			GlobalLT("XA_CorwinNeedSeeFamily", "GLOBAL", 1)
+			Global("XA_HaltRBGTimers", "GLOBAL", 0)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_CorwinFamilyTimerTicked", "GLOBAL", 0)
+				SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 1)
+				//DisplayStringHead(Player1, @13)
+		END
+		//}
+	//}
+	
+	//{ Duke Debriefed Timer
+	
+		//{ Set the Timer
+		IF
+			Global("XA_ReturnToBG", "GLOBAL", 1)
+			GlobalLT("XA_DukeDebriefTimerSet", "GLOBAL", 1)
+			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_DukeDebriefTimerSet", "GLOBAL", 1)
+				SetGlobalTimer("XA_DukeDebriefTimer", "GLOBAL", ONE_HOUR)
+				//DisplayStringHead(Player1, @14)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+		//}
+		
+		//{ Advance the timer by One Hour
+		IF
+			Global("XA_ReturnToBG", "GLOBAL", 1)
+			GlobalLT("XA_DukeDebriefTimerTick", "GLOBAL", 1)
+			GlobalTimerExpired("XA_DukeDebriefTimer", "GLOBAL")
+			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+			Global("XA_HaltRBGTimers", "GLOBAL", 0)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				IncrementGlobal("XA_DukeDebriefTimer_Hours", "GLOBAL", 1) // TICK
+				SetGlobal("XA_Advance7", "GLOBAL", 0)
+				SetGlobal("XA_DukeDebriefTimerTick", "GLOBAL", 1)
+				SetInterrupt(TRUE)
+				//DisplayStringHead(Player1, @15)
+		END
+		//}
+	
+		//{ Have 24 Hours Elapsed?
+		IF
+			Global("XA_ReturnToBG", "GLOBAL", 1)
+			Global("XA_DukeDebriefTimerTick", "GLOBAL", 1)
+			GlobalGT("XA_DukeDebriefTimer_Hours", "GLOBAL", 23)
+			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+			Global("XA_CorwinMetFamily", "GLOBAL", 2)
+			Global("XA_HaltRBGTimers", "GLOBAL", 0)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_DukeDebriefTimerTick", "GLOBAL", 2)
+				SetGlobal("XA_DukeDebrief_BenceSpawn", "GLOBAL", 1)
+				SetGlobal("XA_DukeDebrief_TimerElapsed", "GLOBAL", 1)
+				//DisplayStringHead(Player1, @16)
+				Continue()
+		END
+		//}
+	
+		//{ Less than 24 Hours Has Elapsed
+		IF
+			Global("XA_ReturnToBG", "GLOBAL", 1)
+			Global("XA_DukeDebriefTimerTick", "GLOBAL", 1)
+			GlobalLT("XA_DukeDebriefTimer_Hours", "GLOBAL", 24)
+			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
+			Global("XA_HaltRBGTimers", "GLOBAL", 0)
+		THEN
+			RESPONSE #100
+				SetGlobalTimer("XA_DukeDebriefTimer", "GLOBAL", ONE_HOUR)
+				SetGlobal("XA_DukeDebriefTimerTick", "GLOBAL", 0)
+				//DisplayStringHead(Player1, @17)
+				Continue()
+		END
+		//}
+	//}
+//}
+
+//{ v1.0.14a Fix - Mark Beno as Killed
+	IF
+		Global("XA_CorwinKillBeno", "GLOBAL", 1)
+		GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_CorwinKillBeno", "GLOBAL", 2)
+			Continue()
+	END
+//}
+
+//{ v1.0.14a Fix - Mark Illasera as Killed
+	IF
+		Global("XA_IllaseraDead", "GLOBAL", 1)
+		GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_IllaseraDead", "GLOBAL", 2)
+			Continue()
+	END
+//}
+
+//{ v1.0.14a Fix - Marriage Proposal Fix
+	IF
+		Global("XA_CorwinProposaXAS", "GLOBAL", 2)
+		GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_CorwinProposaXAS", "GLOBAL", 3)
+			Continue()
+	END
+//}
+
+

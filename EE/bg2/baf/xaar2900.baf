@@ -1,7 +1,7 @@
 IF
 	Global("DefeatedJon", "GLOBAL", 1)
 	InPartyAllowDead("XACORWIN")
-	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 THEN
 	RESPONSE #100
 		ClearAllActions()

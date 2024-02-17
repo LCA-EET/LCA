@@ -354,14 +354,14 @@
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@24 /* ~I'm not exactly eager to go up against the prince of demons. Whatever you decide, I'll have your back.~ */
 		
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@25 /* ~I'm not exactly eager to go up against the prince of demons. Whatever you decide, love, I'll have your back.~ */
 	END
@@ -465,7 +465,7 @@
 		== XACORWIB
 		IF ~ 
 			IsValidForPartyDialogue("XACORWIN")
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@39 /* ~Strong, and compassionate. Just two of the many traits I love about you.~ */
 		DO ~
@@ -475,7 +475,7 @@
 		== XACORWIB
 		IF ~ 
 			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@40 /*  ~Strong, and compassionate. Just two of the many traits I admire about you.~ */
 		DO ~
@@ -607,7 +607,7 @@
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			PartyGoldGT(1000)
 		~
 		@52 /* ~They need our help more than we need their money, love.~*/
@@ -618,7 +618,7 @@
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			PartyGoldGT(1000)
 		~
 		@53 /*  ~They need our help more than we need their money, <CHARNAME>.~*/
@@ -629,7 +629,7 @@
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			!PartyGoldGT(1000)
 		~
 		@54 /* ~They need our help, love.~ */
@@ -640,7 +640,7 @@
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			!PartyGoldGT(1000)
 		~
 		@55 /*  ~They need our help, <CHARNAME>.~ */
@@ -954,13 +954,13 @@
 		== VALYGARJ
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@103 /* ~Your 'insights' aside, she's romantically involved.~   */
 		== VALYGARJ
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@104 /* ~I would not have her, or her daughter, share in my family's curse.~ */
 		== VICONIJ
@@ -971,20 +971,20 @@
 		== XACORWIJ
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@106 /* ~Valygar, that reasoning will prevent you from forming any kind of lasting relationship. You need to let go of your past.~ */
 		== VALYGARJ
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			!Global("XA_CorwinPromoted", "GLOBAL", 1)
 		~
 		@107 /* ~I.. I appreciate the advice, Captain. ~*/
 		== VALYGARJ
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			Global("XA_CorwinPromoted", "GLOBAL", 1)
 		~
 		@108 /* ~I.. I appreciate the advice, Major. ~*/

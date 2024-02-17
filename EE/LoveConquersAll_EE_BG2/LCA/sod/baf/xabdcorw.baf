@@ -104,7 +104,7 @@ END
 
 IF
 	ActionListEmpty()
-	Global("XA_LCA_StoppedNobles", "GLOBAL", 1)
+	Global("XA_LC_StoppedNobles", "GLOBAL", 1)
 	GlobalLT("XA_LCA_PLOT", "GLOBAL", 1)
 	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
 THEN

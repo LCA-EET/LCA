@@ -100,7 +100,7 @@ IF ~~ THEN BEGIN XAA4
 	SAY @6 /* @6 = ~Excellent! The competition is about to begin. Please make your way to the staging area.~ */
 	
 	IF ~
-		Global("XA_CorwinRomanceActive","GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive","GLOBAL", 2)
 	~ THEN 
 	DO ~
 		StartCutSceneMode()
@@ -109,7 +109,7 @@ IF ~~ THEN BEGIN XAA4
 	EXIT
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive","GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive","GLOBAL", 2)
 	~ THEN 
 	DO ~
 		StartCutSceneMode()

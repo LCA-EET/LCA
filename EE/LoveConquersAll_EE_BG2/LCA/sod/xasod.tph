@@ -12,6 +12,10 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xabalsod.baf~
 	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xajrnsod.baf~
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/sod/baf/xap1d.baf~
+	
+	ACTION_IF (isEET = 1) THEN BEGIN
+		EXTEND_TOP ~bd0100.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd0100.baf~
+	END
 //}
 
 //{ New Areas

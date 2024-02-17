@@ -207,7 +207,7 @@ IF ~~ THEN BEGIN XA_A_13
 
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_CorwinContinue","GLOBAL",2) /* continue romance into BG2 */
+		SetGlobal("XA_LC_CorwinContinue","GLOBAL",2) /* continue romance into BG2 */
 		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2) /* continue romance into BG2 */
 		AddJournalEntry(@39,INFO)
 		EscapeArea()
@@ -375,7 +375,7 @@ IF ~~ THEN BEGIN XA_B_13
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_CorwinContinue","GLOBAL",1) /* continue friendship into BG2 */
+		SetGlobal("XA_LC_CorwinContinue","GLOBAL",1) /* continue friendship into BG2 */
 		AddJournalEntry(@53,INFO)
 		EscapeArea()
 	~ 
@@ -1155,7 +1155,7 @@ IF ~~ THEN BEGIN XA_SG12_10
 		Global("bd_corwin_romanceactive","global",2)
 	~ THEN 
 	DO ~
-		SetGlobal("XA_CorwinContinue", "GLOBAL", 2) // continue romance
+		SetGlobal("XA_LC_CorwinContinue", "GLOBAL", 2) // continue romance
 		ChangeSpecifics("bdschae2",NEUTRALS)
 	~
 	EXIT
@@ -1164,7 +1164,7 @@ IF ~~ THEN BEGIN XA_SG12_10
 		!Global("bd_corwin_romanceactive","global",2)
 	~ THEN 
 	DO ~
-		SetGlobal("XA_CorwinContinue", "GLOBAL", 1) // continue friendship
+		SetGlobal("XA_LC_CorwinContinue", "GLOBAL", 1) // continue friendship
 		ChangeSpecifics("bdschae2",NEUTRALS)
 	~
 	EXIT

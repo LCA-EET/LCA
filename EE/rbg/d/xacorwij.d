@@ -2475,7 +2475,7 @@ APPEND XACORWIJ
 		SAY @726 /* ~Oh, Neoma...~ */
 		
 		IF ~
-			Global("XA_CorwinGaveEarrings", "GLOBAL", 1)
+			Global("XA_LC_GaveEarrings", "GLOBAL", 1)
 		~ THEN REPLY @1337 /* ~Her name sounds familiar... oh, right — the earrings for Voghiln!~ */
 		DO ~
 			SetGlobal("XA_XACS15Cutscene", "GLOBAL", 7)

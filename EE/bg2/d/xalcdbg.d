@@ -20,7 +20,7 @@ APPEND ~XALCDBG~
 		DO ~
 			SetGlobal("XA_CorwinDebug1002", "GLOBAL", 1)
 			SetGlobal("XA_SkieSaved", "GLOBAL", 1)
-			SetGlobal("XA_CorwinContinue", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinContinue", "GLOBAL", 2)
 		~
 		GOTO XA_BG2_Debug
 		
@@ -30,6 +30,64 @@ APPEND ~XALCDBG~
 		~
 		GOTO XA_BG2_Debug
 		
+		IF ~~ THEN REPLY @5034 /* ~Parameter Check.~ */
+		GOTO XA_BG2_ParameterCheck
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO 10
+		
+		IF ~~ THEN REPLY @3012 /*~Exit.~ */
+		GOTO 6
+		
+		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
+		DO ~
+			DestroySelf()
+		~
+		EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_BG2_ParameterCheck
+		SAY @5034 /* ~Parameter Check.~ */
+		
+		IF ~ Global("XA_LC_PlayerExiled", "GLOBAL", 0)~THEN REPLY @5035 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_PlayerExiled", "GLOBAL", 1)~THEN REPLY @5036 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_CorwinContinue", "GLOBAL", 0)~THEN REPLY @5037 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_CorwinContinue", "GLOBAL", 1)~THEN REPLY @5038 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_CorwinContinue", "GLOBAL", 2)~THEN REPLY @5039 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_CaelarAliveInAvernus", "GLOBAL", 0)~THEN REPLY @5040 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_CaelarAliveInAvernus", "GLOBAL", 1)~THEN REPLY @5041 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_DrinksWithCorwin", "GLOBAL", 0)~THEN REPLY @5042 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_DrinksWithCorwin", "GLOBAL", 1)~THEN REPLY @5043 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_HonorableDuel", "GLOBAL", 0)~THEN REPLY @5044 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_HonorableDuel", "GLOBAL", 1)~THEN REPLY @5045 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_SavedJhasso", "GLOBAL", 0)~THEN REPLY @5046 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_SavedJhasso", "GLOBAL", 1)~THEN REPLY @5047 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_SavedAldeth", "GLOBAL", 0)~THEN REPLY @5048 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_SavedAldeth", "GLOBAL", 1)~THEN REPLY @5049 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_AldethFF", "GLOBAL", 0)~THEN REPLY @5050 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_AldethFF", "GLOBAL", 1)~THEN REPLY @5051 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_MetRohma", "GLOBAL", 0)~THEN REPLY @5052 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_MetRohma", "GLOBAL", 1)~THEN REPLY @5053 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_SacrificeCorwin", "GLOBAL", 0)~THEN REPLY @5054 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_SacrificeCorwin", "GLOBAL", 1)~THEN REPLY @5055 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_GaveEarrings", "GLOBAL", 0)~THEN REPLY @5056 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_GaveEarrings", "GLOBAL", 1)~THEN REPLY @5057 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_HappyEnding", "GLOBAL", 0)~THEN REPLY @5058 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_HappyEnding", "GLOBAL", 1)~THEN REPLY @5059 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_TrickedLarze", "GLOBAL", 0)~THEN REPLY @5060 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_TrickedLarze", "GLOBAL", 1)~THEN REPLY @5061 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_HelpedForthel", "GLOBAL", 0)~THEN REPLY @5062 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_HelpedForthel", "GLOBAL", 1)~THEN REPLY @5063 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_MetKerrachus", "GLOBAL", 0)~THEN REPLY @5064 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_MetKerrachus", "GLOBAL", 1)~THEN REPLY @5065 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_StartedInBG1", "GLOBAL", 0)~THEN REPLY @5066 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_StartedInBG1", "GLOBAL", 1)~THEN REPLY @5067 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_StartedInSoD", "GLOBAL", 0)~THEN REPLY @5068 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_StartedInSoD", "GLOBAL", 1)~THEN REPLY @5069 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_StartedInBG2", "GLOBAL", 0)~THEN REPLY @5070 GOTO XA_BG2_Debug
+		IF ~ Global("XA_LC_StartedInBG2", "GLOBAL", 1)~THEN REPLY @5071 GOTO XA_BG2_Debug
+
+
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 10
 		
@@ -45,6 +103,12 @@ APPEND ~XALCDBG~
 	
 	IF ~~ THEN BEGIN XA_BG2_AreaTest
 		SAY @5001
+		
+		IF ~~ THEN REPLY @5072
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("AR1002", "", [0.0], S))
+		~
+		EXIT
 		
 		IF ~~ THEN REPLY @5002
 		DO ~
@@ -81,6 +145,8 @@ APPEND ~XALCDBG~
 			ActionOverride(Player1, LeaveAreaLUA("xapen", "", [0.0], S))
 		~
 		EXIT
+		
+		
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug

@@ -52,7 +52,7 @@ IF ~~ THEN BEGIN XA_ChooseDorn
 	IF ~~ THEN
 	DO ~
 		SetGlobal("OHD_corwinconflict","GLOBAL",4)
-		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 3)
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 3)
 		SetPlayerSound(Myself,@865,SELECT_ACTION6)
 	~
 	EXIT
@@ -63,7 +63,7 @@ END
 //{ region: Dialog B-3A
 IF ~
 	Global("XA_TM_ArcheryChallenge", "GLOBAL", 2)
-	!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 ~ THEN BEGIN XA_Trademeet_Competition_MazzyWon
 	SAY @549 /* ~Mazzy, congratulations on your victory. That was quite the performance.~ */
 	
@@ -240,7 +240,7 @@ END
 			~
 			== KORGANJ
 			IF ~
-				Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+				Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			~
 			@693 /* ~It be not my place to tell ye what to do, but if ye cares about yer woman, you'd do well to find that neck-biting bitch and ram a stake through her heart, ye hear?~ */
 			
@@ -279,7 +279,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinMazzy", "GLOBAL", 2)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		THEN XACORWIB BCorwinMazzy1A
 			@526 /* ~Mazzy? What do you need?~ [BD56086]*/
@@ -317,7 +317,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinMazzy", "GLOBAL", 2)
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		THEN XACORWIB BCorwinMazzy1B
 			@526 /* ~Mazzy? What do you need?~ [BD56086]*/
@@ -646,7 +646,7 @@ END
 	CHAIN 
 		IF ~
 			Global("XA_Banter_CorwinHaerDalis", "GLOBAL", 4)
-			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 			OR(2)
 				Global("HaerDalisRomanceActive","GLOBAL",2)
 				Global("HaerDalisRomanceActive","GLOBAL",1)
@@ -676,7 +676,7 @@ END
 	CHAIN 
 		IF ~
 			Global("XA_Banter_CorwinHaerDalis", "GLOBAL", 4)
-			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 			!Global("HaerDalisRomanceActive","GLOBAL",2)
 			!Global("HaerDalisRomanceActive","GLOBAL",1)
 		~
@@ -703,7 +703,7 @@ END
 	CHAIN 
 		IF ~
 			Global("XA_Banter_CorwinHaerDalis", "GLOBAL", 4)
-			!Global("XA_CorwinRomanceActive","GLOBAL",2)
+			!Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 			OR(2)
 				Global("HaerDalisRomanceActive","GLOBAL",2)
 				Global("HaerDalisRomanceActive","GLOBAL",1)
@@ -735,7 +735,7 @@ END
 			Global("XA_Banter_CorwinHaerDalis", "GLOBAL", 4)
 			!Global("HaerDalisRomanceActive","GLOBAL",2)
 			!Global("HaerDalisRomanceActive","GLOBAL",1)
-			!Global("XA_CorwinRomanceActive","GLOBAL",2)
+			!Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 		~
 		THEN XACORWIB BCorwinHaerDalis2
 			@366 /* ~Haer'Dalis? What is it?~ [XACORB56] */
@@ -1339,7 +1339,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_CorwinCerndBaby", "GLOBAL", 2)
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		THEN XACORWIB BCorwinCernd1A
 			@258 /* ~Cernd, you have a beautiful child.~ [XACORB33] */
@@ -1378,7 +1378,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_CorwinCerndBaby", "GLOBAL", 2)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		THEN XACORWIB BCorwinCernd1B
 			@258 /* ~Cernd, you have a beautiful child.~ [XACORB33] */
@@ -1734,7 +1734,7 @@ END
 		IF ~
 			Global("XA_Banter_CorwinViconia", "GLOBAL", 2)
 			OR(2)
-				!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+				!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 				Gender(Player1, FEMALE)
 		~ THEN XACORWIB BCorwinViconia1A
 			@114 /*  ~Never forget that I'm watching you.~ [BD67545] */
@@ -1779,7 +1779,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinViconia", "GLOBAL", 2)
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			Gender(Player1, MALE)
 		~ THEN XACORWIB BCorwinViconia1B
 			@114 /* ~Never forget that I'm watching you.~ [BD67545] */
@@ -1957,7 +1957,7 @@ END
 	//{ Dialog B-50
 	CHAIN 
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			Global("XA_CorwinImoenSoulTalk", "GLOBAL", 1)
 		~ THEN XACORWIB BCorwinImoenSoulA
 			@565 /*  ~Imoen, I can't tell you how relieved I am that you're better.~  */
@@ -1980,7 +1980,7 @@ END
 	//{ Dialog B-51
 	CHAIN 
 		IF ~
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			Global("XA_CorwinImoenSoulTalk", "GLOBAL", 1)
 		~ THEN XACORWIB BCorwinImoenSoulB
 			@565 /*  ~Imoen, I can't tell you how relieved I am that you're better.~ [XA100067] */
@@ -2002,7 +2002,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinImoen", "GLOBAL", 4)
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN XACORWIB BCorwinImoen2A
 			@448 /* ~Imoen, could I ask you something?~ [XACORB57] */
 			DO ~
@@ -2042,7 +2042,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinImoen", "GLOBAL", 4)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN XACORWIB BCorwinImoen2A
 			@448 /* ~Imoen, could I ask you something?~ [XA100067] */
 			DO ~
@@ -2404,7 +2404,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinKeldorn", "GLOBAL", 4)
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN XACORWIB BCorwinKeldorn1
 			@201 /* ~Yes, Keldorn?~ [BD68260]*/
 			DO ~
@@ -2452,7 +2452,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinKeldorn", "GLOBAL", 4)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN XACORWIB BCorwinKeldorn1
 			@201 /* ~Yes, Keldorn?~ [BD68260] */
 			DO ~
@@ -2814,7 +2814,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinAerie", "GLOBAL", 6)
-			Global("bd_asha_duel","global",3) //CHARNAME dueled Ashatiel honorably
+			Global("XA_LC_HonorableDuel", "GLOBAL", 1) //CHARNAME dueled Ashatiel honorably
 		~ THEN XACORWIB BCorwinAerie3A
 			@132 /* ~Aerie, you wanted to learn more about Ashatiel.. do you have some time now?~ [XACORB08]*/
 			DO ~
@@ -2853,7 +2853,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinAerie", "GLOBAL", 8)
-			Global("bd_asha_duel","global",3) //CHARNAME dueled Ashatiel honorably
+			Global("XA_LC_HonorableDuel", "GLOBAL", 1) //CHARNAME dueled Ashatiel honorably
 		~ THEN AERIEJ BCorwinAerie4A
 			@441 /* ~Schael? Do you have time now to finish the story a-about Ashatiel?~ [XA100067] */
 			
@@ -2889,7 +2889,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinAerie", "GLOBAL", 6)
-			!Global("bd_asha_duel","global",3) //CHARNAME refused to duel Ashatiel, or cheated
+			!Global("XA_LC_HonorableDuel", "GLOBAL", 1) //CHARNAME refused to duel Ashatiel, or cheated
 		~ THEN XACORWIB BCorwinAerie3B
 			@132 /* ~Aerie, you wanted to learn more about Ashatiel.. do you have some time now?~ [XACORB08]*/
 			DO ~
@@ -2926,7 +2926,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinAerie", "GLOBAL", 8)
-			!Global("bd_asha_duel","global",3) //CHARNAME refused to duel Ashatiel, or cheated
+			!Global("XA_LC_HonorableDuel", "GLOBAL", 1)//CHARNAME refused to duel Ashatiel, or cheated
 		~ THEN AERIEJ BCorwinAerie4B
 			@441 /* ~Schael? Do you have time now to finish the story a-about Ashatiel?~ [XA100067] */
 			== XACORWIB

@@ -8,7 +8,7 @@ THEN
 END
 
 IF
-	Global("XA_HelpedForthel_BG1", "GLOBAL", 1)
+	Global("XA_LC_HelpedForthel", "GLOBAL", 1)
 	Global("XA_ReturnToBG", "GLOBAL", 1)
 	Global("XA_FortheSpawn", "BG0116", 0)
 THEN
@@ -62,7 +62,7 @@ THEN
 END
 
 IF
-	Global("XA_TrickedLarze", "GLOBAL", 1)
+	Global("XA_LC_TrickedLarze", "GLOBAL", 1)
 	Global("XA_ReturnToBG", "GLOBAL", 1)
 	!Dead("LARZE")
 	!Global("XA_LarzeSpawn", "GLOBAL", 1)

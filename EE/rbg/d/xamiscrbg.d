@@ -989,7 +989,7 @@ APPEND MERLEA
 	IF ~
 		Global("XA_ReturnToBG", "GLOBAL", 1)
 		RandomNum(6,2)
-		Global("XA_HelpAldeth","GLOBAL",2)
+		Global("XA_LC_SavedAldeth","GLOBAL",1)
 		!AreaCheck("BG0128")
 		!Dead("Aldeth")
 	~ THEN BEGIN XAA1

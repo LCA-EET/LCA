@@ -1,6 +1,6 @@
 IF
 	See([PC])
-	!Global("TalkedToOfficer", "LOCALS", 1)
+	GlobalLT("TalkedToOfficer", "LOCALS", 1)
 THEN
 	RESPONSE #100
 		MoveToObject(Player1)

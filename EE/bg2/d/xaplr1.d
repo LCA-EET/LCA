@@ -25,13 +25,13 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN REPLY @206 /* Yes */
 		DO ~
-			SetGlobal("XA_CorwinContinue", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinContinue", "GLOBAL", 2)
 		~
 		GOTO XA_InitialConfig3
 		
 		IF ~~ THEN REPLY @207 /* No. */
 		DO ~
-			SetGlobal("XA_CorwinContinue", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinContinue", "GLOBAL", 1)
 		~
 		GOTO XA_InitialConfig3
 	END
@@ -80,7 +80,7 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN REPLY @206 /* Yes */
 		DO ~
-			SetGlobal("XA_CaelarStayedInAvernus","GLOBAL",1)
+			SetGlobal("XA_LC_CaelarAliveInAvernus","GLOBAL",1)
 		~
 		GOTO XA_InitialConfig6
 		
@@ -204,7 +204,7 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			SetGlobal("ViconiaRomanceActive", "GLOBAL", 3)
 			SetGlobal("AerieRomanceActive", "GLOBAL", 3)
 			SetGlobal("JaheiraRomanceActive", "GLOBAL", 3)
@@ -251,12 +251,12 @@ END
 
 EXTEND_BOTTOM ~PLAYER1~ 7 //OK
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN GOTO 54
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN 
 	EXTERN ~XACORWIJ~ XAA12
@@ -310,7 +310,7 @@ EXTEND_BOTTOM ~PLAYER1~ 25
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 		!Global("XA_CorwinHell", "GLOBAL", 1)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN
 	DO ~
@@ -321,7 +321,7 @@ EXTEND_BOTTOM ~PLAYER1~ 25
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 		!Global("XA_CorwinHell", "GLOBAL", 1) 
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN
 	DO ~
@@ -333,19 +333,19 @@ END
 EXTEND_BOTTOM PLAYER1 33
 	IF ~  
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_CorwinRomanceActive","GLOBAL",2)
+		Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 		!Global("XA_CorwinLoveBG2", "GLOBAL", 1)
 	~ THEN GOTO XAA0 //OK
 	
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_CorwinRomanceActive","GLOBAL",2)
+		Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 		Global("XA_CorwinLoveBG2", "GLOBAL", 1)
 	~ THEN GOTO XAA0A //OK 
 	
 	IF ~  
 		IsValidForPartyDialogue("XACORWIN")
-		!Global("XA_CorwinRomanceActive","GLOBAL",2)
+		!Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 	~ THEN GOTO XAA1 //OK
 END
 

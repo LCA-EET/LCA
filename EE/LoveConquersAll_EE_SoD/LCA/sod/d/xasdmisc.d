@@ -3,7 +3,7 @@
 	BEGIN 87 END
 	BEGIN 0 END
 	~
-		SetGlobal("XA_CaelarStayedInAvernus","GLOBAL",1)
+		SetGlobal("XA_LC_CaelarAliveInAvernus","GLOBAL",1)
 	~
 //}
 
@@ -21,7 +21,7 @@
 	BEGIN 184 186 187 END
 	BEGIN 0 END
 	~
-		SetGlobal("XA_LCA_StoppedNobles", "GLOBAL", 1)
+		SetGlobal("XA_LC_StoppedNobles", "GLOBAL", 1)
 	~
 //}
 
@@ -66,7 +66,7 @@ ADD_STATE_TRIGGER BDIMOEN 129
 EXTEND_BOTTOM BDIMOEN 89 /* OK */
 	IF ~
 		Global("bd_player_exiled","global",1)
-		GlobalGT("XA_CorwinContinue", "GLOBAL", 0)
+		GlobalGT("XA_LC_CorwinContinue", "GLOBAL", 0)
 	~ GOTO XA_CorwinLetter
 END
 
@@ -96,21 +96,21 @@ APPEND BDIMOEN
 		SAY @1 /* ~Oh! Before I forget — Captain Corwin came to see me. She asked that I give you this letter.~ */
 		
 		IF ~
-			Global("XA_CorwinContinue", "GLOBAL", 2)
+			Global("XA_LC_CorwinContinue", "GLOBAL", 2)
 		~ THEN 
 		DO ~
 			GiveItemCreate("XALTRSCH", LastTalkedToBy(Myself),0,0,0)
 			GiveItemCreate("XAAMULET", LastTalkedToBy(Myself),0,0,0)
-			SetGlobal("XA_GaveCorwinLetter", "GLOBAL", 2)
+			SetGlobal("XA_LC_GaveCorwinLetter", "GLOBAL", 2)
 		~
 		GOTO XA_GiveLetter
 		
 		IF ~
-			Global("XA_CorwinContinue", "GLOBAL", 1)
+			Global("XA_LC_CorwinContinue", "GLOBAL", 1)
 		~ THEN 
 		DO ~
 			GiveItemCreate("XALTRCOR", LastTalkedToBy(Myself),0,0,0)
-			SetGlobal("XA_GaveCorwinLetter", "GLOBAL", 1)
+			SetGlobal("XA_LC_GaveCorwinLetter", "GLOBAL", 1)
 		~
 		GOTO XA_GiveLetter
 	END
@@ -154,14 +154,14 @@ ADD_TRANS_ACTION BDCORWIJ
 BEGIN 280 END
 BEGIN 0 END
 ~
-	SetGlobal("XA_HappyEnding","GLOBAL",1)
+	SetGlobal("XA_LC_HappyEnding","GLOBAL",1)
 ~
 
 ADD_TRANS_ACTION BDCORWIJ
 BEGIN 319 320 END
 BEGIN 0 END
 ~
-	SetGlobal("XA_CorwinGaveEarrings", "GLOBAL", 1)
+	SetGlobal("XA_LC_GaveEarrings", "GLOBAL", 1)
 	AddJournalEntry(@45, INFO)
 ~
 

@@ -52,3 +52,38 @@ OUTER_SET saved_aldeth = 1
 */
 OUTER_SET aldeth_ff = 0
 
+/*
+	Parameter: met_rohma
+	Set to 1 to proceed as though the player met Rohma, either during SoD, or during BG1 (CorwinEET mod).
+*/
+OUTER_SET met_rohma = 1
+
+/*
+	Parameter: sacrifice_corwin
+	Set to 1 to proceed as though the player offered to sacrifice Corwin to Thrix, in Avernus.
+*/
+OUTER_SET sacrifice_corwin = 0
+
+/*
+	Parameter: neoma_earrings
+	Set to 1 to proceed as though Corwin gave the earrings that she received from Neoma to Voghiln, during the events of SoD.
+*/
+OUTER_SET neoma_earrings = 0
+
+/*
+	Parameter: happy_ending
+	Set to 1 to proceed as though the player told Corwin that some stories have happy endings, during the events of SoD.
+*/
+OUTER_SET happy_ending = 1
+
+/*
+	Parameter: tricked_larze
+	Set to 1 to proceed as though the player tricked Larze the ogre, during the events of BG1.
+*/
+OUTER_SET tricked_larze = 1
+
+/*
+	Parameter: helped_forthel
+	Set to 1 to proceed as though the player helped Forthel the bard with his stories, during the events of BG1.
+*/
+OUTER_SET helped_forthel = 1

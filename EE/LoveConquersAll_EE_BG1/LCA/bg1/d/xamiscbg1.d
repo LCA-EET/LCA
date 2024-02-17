@@ -3,7 +3,7 @@
 	BEGIN 9 11 END
 	BEGIN 0 END
 	~
-		SetGlobal("XA_HelpedForthel_BG1", "GLOBAL", 1)
+		SetGlobal("XA_LC_HelpedForthel", "GLOBAL", 1)
 	~
 //}
 
@@ -12,7 +12,7 @@
 	BEGIN 3 4 5 6 END
 	BEGIN 0 END
 	~
-		SetGlobal("XA_MetKerrac","GLOBAL",1)
+		SetGlobal("XA_LC_MetKerrachus","GLOBAL",1)
 	~
 //}
 
@@ -21,7 +21,7 @@
 	BEGIN 3 END
 	BEGIN 1 END
 	~
-		SetGlobal("XA_TrickedLarze","GLOBAL",1)
+		SetGlobal("XA_LC_TrickedLarze","GLOBAL",1)
 	~
 //}
 	
@@ -30,14 +30,14 @@
 	BEGIN 23 END
 	BEGIN 1 END
 	~
-		SetGlobal("XA_AldethFF","GLOBAL",1)
+		SetGlobal("XA_LC_AldethFF","GLOBAL",1)
 	~
 	
 	ADD_TRANS_ACTION ALDETH
 	BEGIN 27 END
 	BEGIN 0 END
 	~
-		SetGlobal("XA_HelpAldeth","GLOBAL",2)
+		SetGlobal("XA_LC_SavedAldeth","GLOBAL",1)
 	~
 //}
 

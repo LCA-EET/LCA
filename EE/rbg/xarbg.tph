@@ -4,6 +4,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/d~
 
 //{ Script Extensions
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~
+	EXTEND_BOTTOM ~xadings.bcs~	~%MOD_FOLDER%/rbg/baf/xadings.baf~
 //}
 
 

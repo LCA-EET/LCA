@@ -12,7 +12,7 @@ END
 
 IF 
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	Global("XA_HelpAldeth", "GLOBAL", 2)
+	Global("XA_LC_SavedAldeth", "GLOBAL", 1)
 	GlobalLT("XA_CreateNPCs0128_Aldeth", "BG0128", 1)
 	!Dead("Aldeth")
 THEN
@@ -27,7 +27,7 @@ END
 
 IF 
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	Global("XA_HelpAldeth", "GLOBAL", 2)
+	Global("XA_LC_SavedAldeth", "GLOBAL", 1)
 	!Global("XA_CreateNPCs0128_Brandi", "BG0128", 1)
 	!Dead("Brandi")
 THEN

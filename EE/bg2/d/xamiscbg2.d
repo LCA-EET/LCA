@@ -160,7 +160,7 @@ IF ~~ THEN BEGIN BCorwinAnomen1A
 		
 		IF ~
 			!Global("XA_CorwinPromoted", "GLOBAL", 1)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @191 /* ~You know little of what you speak. Captain Corwin is a fine mother.~ */
 		DO ~
 			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
@@ -169,7 +169,7 @@ IF ~~ THEN BEGIN BCorwinAnomen1A
 		
 		IF ~
 			Global("XA_CorwinPromoted", "GLOBAL", 1)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @192 /* ~You know little of what you speak. Major Corwin is a fine mother.~ */
 		DO ~
 			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
@@ -177,7 +177,7 @@ IF ~~ THEN BEGIN BCorwinAnomen1A
 		EXTERN XACORWIB BCorwinAnomen1B
 		
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @228 /* ~You know little of what you speak. Schael is a fine mother.~ */
 		DO ~
 			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
@@ -428,7 +428,6 @@ END
 //{ BAERIE
 EXTEND_BOTTOM BAERIE 112
 	IF ~
-		GlobalGT("bd_asha_duel", "global", 0)
 		!GlobalGT("XA_Banter_CorwinAerie", "GLOBAL", 5)
 	~ THEN REPLY @196 /* ~I've met one of your kind before.~ */
 	GOTO XA_Ashatiel
@@ -489,7 +488,7 @@ APPEND MAZZYJ
 	
 	IF ~
 		Global("XA_TM_ArcheryChallenge", "GLOBAL", 2)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN BEGIN XA_Trademeet_Competition_SchaelWon
 		SAY @186 /* ~Schael, congratulations on your victory. That was quite the performance.~ */
 	
@@ -585,13 +584,13 @@ END
 EXTEND_BOTTOM IMOEN2 19
 	IF ~
 		Global("XA_CorwinIrenicus", "GLOBAL", 4)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @340  /* ~Schael, too. He's planning to use her to assassinate the Dukes. I have to save her!~*/
 	GOTO XA_ImoenSchaelSpellhold
 	
 	IF ~
 		Global("XA_CorwinIrenicus", "GLOBAL", 4)
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @344  /* ~Schael, too. He's planning to use her to assassinate the Dukes. I have to stop him!~*/
 	GOTO XA_ImoenSchaelSpellhold
 END
@@ -610,7 +609,7 @@ ADD_STATE_TRIGGER SUELLE2 0
 EXTEND_BOTTOM SUELLE2 0 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	EXTERN XACORWIJ XA_SUELLE2_0
 END
@@ -618,7 +617,7 @@ END
 EXTEND_BOTTOM SUELLE2 5 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN
 	DO ~
 		SetGlobal("XA_59AOverride","GLOBAL",1)
@@ -630,7 +629,7 @@ EXTEND_BOTTOM SUELLE2 5 /* OK */
 
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	EXTERN XACORWIJ XA_SUELLE2_5
 END
@@ -638,7 +637,7 @@ END
 EXTEND_BOTTOM SUELLE2 8 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN
 	DO ~
 		SetGlobal("XA_59AOverride","GLOBAL",1)
@@ -650,7 +649,7 @@ EXTEND_BOTTOM SUELLE2 8 /* OK */
 	
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	EXTERN XACORWIJ XA_SUELLE2_8
 END
@@ -827,7 +826,7 @@ END
 //{ UDPHAE01
 EXTEND_TOP ~UDPHAE01~ 106
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN REPLY @57 /*  ~My companion, Schael.~ */
 	GOTO 110
@@ -845,7 +844,7 @@ DO 1 2 3 4
 //{ BODHIAMB
 EXTEND_BOTTOM BODHIAMB 5
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		InParty("XACORWIN")
 	~ 
 	THEN GOTO XAA0
@@ -855,7 +854,7 @@ ADD_TRANS_TRIGGER BODHIAMB 5
 ~
 OR(2)
 	!InParty("XACORWIN")
-	!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 ~ 
 DO 0
 
@@ -929,7 +928,7 @@ DO 3 4
 EXTEND_BOTTOM MADAM 12	
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN
 	EXTERN XACORWIJ XA_CorwinMadam2
 END
@@ -973,13 +972,13 @@ EXTEND_BOTTOM HELLJON 7 /* OK */
 
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN EXTERN ~XACORWIJ~ XA_HELLJON_7A
 	
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN EXTERN ~XACORWIJ~ XA_HELLJON_7B
 END
@@ -987,13 +986,13 @@ END
 EXTEND_BOTTOM HELLJON 8 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN EXTERN ~XACORWIJ~ XA_HELLJON_8A
 	
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN EXTERN ~XACORWIJ~ XA_HELLJON_8B
 END
@@ -1001,13 +1000,13 @@ END
 EXTEND_BOTTOM HELLJON 9 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN EXTERN ~XACORWIJ~ XA_HELLJON_9A
 	
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN EXTERN ~XACORWIJ~ XA_HELLJON_9B
 END
@@ -1015,13 +1014,13 @@ END
 EXTEND_BOTTOM HELLJON 10 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN EXTERN ~XACORWIJ~ XA_HELLJON_10A
 	
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN EXTERN ~XACORWIJ~ XA_HELLJON_10B
 END
@@ -1231,7 +1230,7 @@ END
 //{ NALIAJ
 EXTEND_BOTTOM NALIAJ 70
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		IsValidForPartyDialogue("XACORWIN")
 		GlobalLT("XA_NaliaShamMarriage", "GLOBAL", 1)
 	~ THEN REPLY @334 /*~Schael? What do you think?~ */
@@ -1243,7 +1242,7 @@ END
 
 EXTEND_BOTTOM NALIAJ 71
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		IsValidForPartyDialogue("XACORWIN")
 		GlobalLT("XA_NaliaShamMarriage", "GLOBAL", 1)
 	~ THEN REPLY @334 /*~Schael? What do you think?~ */
@@ -1255,7 +1254,7 @@ END
 
 EXTEND_BOTTOM NALIAJ 72
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		IsValidForPartyDialogue("XACORWIN")
 		GlobalLT("XA_NaliaShamMarriage", "GLOBAL", 1)
 	~ THEN REPLY @334 /*~Schael? What do you think?~ */
@@ -1267,7 +1266,7 @@ END
 
 EXTEND_BOTTOM NALIAJ 73
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		IsValidForPartyDialogue("XACORWIN")
 		GlobalLT("XA_NaliaShamMarriage", "GLOBAL", 1)
 	~ THEN REPLY @334 /*~Schael? What do you think?~ */
@@ -1313,25 +1312,25 @@ APPEND KELDORJ
 		SAY @12 /* ~That's... not how I would have handled the matter, Captain, but at least the Lady is out of harm's way.~ */
 		
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		THEN REPLY @17 /* ~I can't believe you did that, love.~ */
 		EXTERN XACORWIJ XA_DelciaLeft2
 		
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		THEN REPLY @19 /*  ~She definitely deserved it. Well done, love.~ */
 		EXTERN XACORWIJ XA_DelciaLeft2
 		
 		IF ~
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		THEN REPLY @13 /* ~I can't believe you did that, Corwin.~ */
 		EXTERN XACORWIJ XA_DelciaLeft2
 		
 		IF ~
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		THEN REPLY @18 /* ~She definitely deserved it. Well done, Captain.~ */
 		EXTERN XACORWIJ XA_DelciaLeft2
@@ -1599,13 +1598,13 @@ ADD_TRANS_TRIGGER DHARLOT2 0
 EXTEND_BOTTOM DHARLOT2 0
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN EXTERN XACORWIJ XA_DHARLOT2A
 
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN EXTERN XACORWIJ XA_DHARLOT2B
 END
@@ -1648,7 +1647,7 @@ APPEND FFCUST04
 	~ THEN BEGIN 8 // from:
 		SAY @3 /* ~Wow... a beauty like you, in a place like this? Are ye lookin for someone? Perhaps a nice, strong man to keep you warm at night, eh?~  */
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN 
 		DO ~
 			SetGlobal("IKFFCustomer4Corwin","GLOBAL",1)
@@ -1656,7 +1655,7 @@ APPEND FFCUST04
 		EXTERN ~XACORWIJ~ XA_FFCUST04A
 		
 		IF ~
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN 
 		DO ~
 			SetGlobal("IKFFCustomer4Corwin","GLOBAL",1)

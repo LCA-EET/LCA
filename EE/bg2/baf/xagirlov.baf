@@ -1,7 +1,9 @@
 IF
-	!Global("XA_GIRL2_Override", "LOCALS", 1)
+	GlobalLT("XA_GIRL2_Override", "LOCALS", 1)
 THEN
 	RESPONSE #100
+		SetInterrupt(FALSE)
 		SetGlobal("XA_GIRL2_Override", "LOCALS", 1)
 		SetDialog("XAGIRL2")
+		SetInterrupt(TRUE)
 END

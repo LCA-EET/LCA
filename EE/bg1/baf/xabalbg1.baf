@@ -1,0 +1,19 @@
+//{ Corwin EET Compatibility Support
+	IF
+		GlobalGT("EEMetRohma", "GLOBAL", 0) 
+		GlobalLT("XA_LC_MetRohma", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_MetRohma", "GLOBAL", 1)
+			Continue()
+	END
+
+	IF
+		GlobalGT("EECorwinBG1", "GLOBAL", 0)
+		GlobalLT("XA_LC_CorwinEET", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CorwinEET", "GLOBAL", 1)
+			Continue()
+	END
+//}

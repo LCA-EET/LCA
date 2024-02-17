@@ -152,7 +152,7 @@ IF ~~ THEN BEGIN XA_CorwinRomance4
 	GOTO XA_CorwinRomance4_END
 	
 	IF ~
-		Global("XA_AldethFF", "GLOBAL", 1)
+		Global("XA_LC_AldethFF", "GLOBAL", 1)
 	~ THEN
 	GOTO XA_CorwinRomance4A
 END

@@ -120,7 +120,7 @@
 
 //{ Romance - Change Select Sound
 	IF
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		GlobalLT("XA_LCASoundSwap", "LOCALS", 1)
 	THEN
 		RESPONSE #100
@@ -132,7 +132,7 @@
 	END
 
 	IF
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_LCASoundSwap", "LOCALS", 1)
 	THEN
 		RESPONSE #100

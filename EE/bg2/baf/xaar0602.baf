@@ -1,5 +1,5 @@
 IF
-	Global("XA_GaveCorwinLetter", "GLOBAL", 1)
+	Global("XA_LC_GaveCorwinLetter", "GLOBAL", 1)
 	GlobalLT("XA_0602Items", "MYAREA", 1)
 THEN
 	RESPONSE #100
@@ -9,7 +9,7 @@ THEN
 END
 
 IF
-	Global("XA_GaveCorwinLetter", "GLOBAL", 2)
+	Global("XA_LC_GaveCorwinLetter", "GLOBAL", 2)
 	GlobalLT("XA_0602Items", "MYAREA", 1)
 THEN
 	RESPONSE #100
