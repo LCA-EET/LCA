@@ -33,8 +33,34 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @5034 /* ~Parameter Check.~ */
 		GOTO XA_BG2_ParameterCheck
 		
+		IF ~~ THEN REPLY @5075
+		GOTO XA_BG2_InteractionTest
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 10
+		
+		IF ~~ THEN REPLY @3012 /*~Exit.~ */
+		GOTO 6
+		
+		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
+		DO ~
+			DestroySelf()
+		~
+		EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_BG2_InteractionTest
+		SAY @5075
+		
+		IF ~~ THEN REPLY @5076 /* ~Corwin Death from Bite.~*/
+		DO ~
+			SetGlobal("XA_CorwinBit", "GLOBAL", 8)
+			ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_BG2_Debug
 		
 		IF ~~ THEN REPLY @3012 /*~Exit.~ */
 		GOTO 6
@@ -89,7 +115,7 @@ APPEND ~XALCDBG~
 
 
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
-		GOTO 10
+		GOTO XA_BG2_Debug
 		
 		IF ~~ THEN REPLY @3012 /*~Exit.~ */
 		GOTO 6
@@ -332,14 +358,14 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
-		IF ~~ THEN REPLY @5031
+		IF ~~ THEN REPLY @5073
 		DO ~
 			StartCutSceneMode()
 			StartCutScene("xacs08a")
 		~
 		EXIT
 		
-		IF ~~ THEN REPLY @5031
+		IF ~~ THEN REPLY @5074
 		DO ~
 			StartCutSceneMode()
 			StartCutScene("xacs09a")

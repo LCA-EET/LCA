@@ -224,6 +224,8 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 	COPY ~%MOD_FOLDER%/bg2/cre/xatmarsu.cre~ ~override~
 	SAY NAME1 @3072
 	SAY NAME2 @3072
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xademin.cre~ ~override~
 //}
 
 //{ wav

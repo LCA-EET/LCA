@@ -3,7 +3,6 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId("XACORWIN")  // Corwin
-		//ActionOverride(Player1, FaceObject("XACORWIN"))
 		LeaveParty()
 		SetLeavePartyDialogFile()
 		FadeFromColor([30.0],0)

@@ -7,7 +7,7 @@ THEN
 		FadeToColor([30.0],0)
 		DropInventory()
 		GiveItemCreate("XACORBOD", Player1, 0,0,0)
-		MoveGlobal("BG2627","XACORWIN",[2565.1677])
+		MoveGlobal("xapen","XACORWIN",[2565.1677])
 		
 		ZoomLock(FALSE)
 		FadeFromColor([30.0],0)
