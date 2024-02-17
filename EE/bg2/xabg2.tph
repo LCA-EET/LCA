@@ -93,9 +93,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 	//}
 	
 	//{ If the playthrough is started in BG2, apply the default or overriden parameters (even for EET games).
-		ACTION_IF (isEET = 1) THEN BEGIN
-			EXTEND_TOP ~ar0602.bcs~		~%MOD_FOLDER%/bg2/baf/xalcaeet.baf~
-		END
+		EXTEND_TOP ~ar0602.bcs~		~%MOD_FOLDER%/bg2/baf/xalcaeet.baf~
 	//}
 	
 	//{ Bodhi's Hideout

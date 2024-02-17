@@ -301,6 +301,14 @@ You sense there is little Schael Corwin would not do for her family or for the F
 
 //{ New Items
 
+	//{ Corwin's Default Helmet
+		COPY ~%MOD_FOLDER%/bg2/itm/xahelm.itm~ ~override~
+		
+		COPY ~%MOD_FOLDER%/bg2/bam/xaihelm.bam~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/bam/xaghelm.bam~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/bam/xadhelm.bam~ ~override~
+	//}
+	
 	//{ Corwin's Body
 		COPY ~%MOD_FOLDER%/bg2/itm/xacorbod.itm~ ~override~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3138)
