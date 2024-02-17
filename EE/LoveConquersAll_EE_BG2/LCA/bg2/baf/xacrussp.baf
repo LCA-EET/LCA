@@ -1,6 +1,0 @@
-IF
-	Die()
-THEN
-	RESPONSE #100
-		IncrementGlobal("XA_CrusadersAlive", "GLOBAL", -1)
-END

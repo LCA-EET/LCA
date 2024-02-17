@@ -1,8 +1,0 @@
-IF
-	InMyArea("XACORWIN")
-THEN
-	RESPONSE #100
-		ActionOverride("XACORWIN", SetSequence(SEQ_AWAKE))
-		Wait(1)
-		ActionOverride("XACORWIN", LeaveAreaLUA("AR1516","",[762.889], SE))
-END
