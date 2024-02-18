@@ -47,7 +47,7 @@ THEN
 		ActionOverride("XAGOLSTO", Enemy())
 		ApplySpell("XACORWIN",NOHOLD_PARTY)
 		ActionOverride("XACORWIN", MakeUnselectable(1))
-		ActionOverride("XACORWIN", ChangeAIScript("XACORSCR", OVERRIDE))
+		ActionOverride("XACORWIN", ChangeAIScript("XACORWIN", OVERRIDE))
 		DisplayStringHead("XACORWIN", @0)
 		SetInterrupt(TRUE)
 		Continue()

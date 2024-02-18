@@ -40,7 +40,7 @@ CHAIN XABENCE2 XA_CaelarArrestChain
 	= @3 /*~Caelar Argent! You are under arrest for the crimes of insurrection, murder, and the incitement of violence against the Grand Dukes. Do you understand the charges levied against you?~*/
 	== XACAELA2
 	@4 /*~I do.~*/
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 	~

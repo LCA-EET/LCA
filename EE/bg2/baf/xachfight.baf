@@ -132,7 +132,7 @@
 			SetGlobal("OHH_hexxatfightdead","GLOBAL",1)
 			SetGlobal("XA_CorwinHexxatFight", "GLOBAL", 3)
 			SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
-			ActionOverride("XACORWIN", ChangeAIScript("XACORSCR",OVERRIDE))
+			ActionOverride("XACORWIN", ChangeAIScript("XACORWIN",OVERRIDE))
 			ActionOverride(Player1,DestroyItem("ohhbag"))  // Dragomir's Respite
 			ActionOverride(Player2,DestroyItem("ohhbag"))  // Dragomir's Respite
 			ActionOverride(Player3,DestroyItem("ohhbag"))  // Dragomir's Respite

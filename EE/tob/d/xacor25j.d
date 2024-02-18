@@ -1,3 +1,4 @@
+BEGIN ~XACOR25J~
 //{ Killed Wraith - CC OK
 	IF ~
 		Global("XA_RohmaWraith", "GLOBAL", 3)
@@ -145,7 +146,7 @@
 		= @291 /*~Plus, with his body destroyed, he can never harm Rohma or my father ever again. If there's a way we can release his soul...~*/
 		
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @292 /* ~I understand. Perhaps Cespenar knows something that can help us.~ */
 		DO ~
 			SetGlobal("XA_AskCespenarDagger", "GLOBAL", 1)
@@ -154,12 +155,12 @@
 		
 		IF ~
 			Global("XA_ST_Kanaglym", "GLOBAL", 1)
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @296 /* ~I remember the wizard Melkor had mentioned something about the Fugue Plane... If we can bring the dagger to Kanaglym, he thought that it would release the souls trapped within.~ */
 		GOTO XA_CorwinBenoSoulTalk3_Romance
 		
 		IF ~
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @292 /* ~I understand. Perhaps Cespenar knows something that can help us.~ */
 		DO ~
 			SetGlobal("XA_AskCespenarDagger", "GLOBAL", 1)
@@ -168,7 +169,7 @@
 		
 		IF ~
 			Global("XA_ST_Kanaglym", "GLOBAL", 1)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @296 /* ~I remember the wizard Melkor had mentioned something about the Fugue Plane... If we can bring the dagger to Kanaglym, he thought that it would release the souls trapped within.~ */
 		GOTO XA_CorwinBenoSoulTalk3
 	END
@@ -226,7 +227,7 @@
 		SAY @482 /* ~FINSOL01 Debug.~*/
 		
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_FINSOL01_Debug", "GLOBAL", 0)
@@ -234,7 +235,7 @@
 		GOTO XA_Choice
 		
 		IF ~
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_FINSOL01_Debug", "GLOBAL", 0)
@@ -545,7 +546,7 @@ IF ~~ THEN BEGIN XA_SARPRO01_EndRomance
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_CorwinRomanceActive","GLOBAL",3)
+		SetGlobal("XA_LC_CorwinRomanceActive","GLOBAL",3)
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -2)
 	~ 
 	EXTERN ~SARPRO01~ 12
@@ -656,7 +657,7 @@ IF ~~ THEN BEGIN XA_CorwinPregnant_Final_5A
 			IsValidForPartyDialogue("Jaheira")
 			IsValidForPartyDialogue("Jan")
 			IsValidForPartyDialogue("Keldorn")
-			IsValidForPartyDialogue("Korgan")
+			IsValidForPartyDialogue("KORGA25J")
 			IsValidForPartyDialogue("Mazzy")
 			IsValidForPartyDialogue("Minsc")
 			IsValidForPartyDialogue("Nalia")
@@ -807,7 +808,7 @@ END
 //{ Dialog J-79 - CC OK
 IF ~
 	Global("XA_MessageToBG", "GLOBAL", 1)
-	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	GlobalGT("XA_CorwinPregnant", "GLOBAL", 4)
 ~ THEN BEGIN XA_AmkethranCourier_Pregnant
 	SAY @1596 /* ~Listen — we need to provide a status update to the Dukes. They'll want to know that the fire giants have been dealt with, and they'll need my assessment of the threat posed by the remaining members of the Five. I also need to let my family know that we're fine ... and that I'm with child.~*/
@@ -842,7 +843,7 @@ END
 //{ Dialog J-78 - CC OK
 IF ~
 	Global("XA_MessageToBG", "GLOBAL", 1)
-	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	GlobalLT("XA_CorwinPregnant", "GLOBAL", 5)
 ~ THEN BEGIN XA_AmkethranCourier_Romance
 	SAY @1595 /* ~Listen — we need to provide a status update to the Dukes. They'll want to know that the fire giants have been dealt with, and they'll need an assessment of the threat posed by the remaining members of the Five. I also need to let my family know that we're fine ...~ */
@@ -908,7 +909,7 @@ IF ~~ THEN BEGIN XA_AmkethranCourier_END
 	DO ~
 		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 2)
 	~
-	EXTERN RASAADJ XA_AmkethranCourier_END
+	EXTERN RASAA25J XA_AmkethranCourier_END
 	
 	IF ~
 		GlobalLT("XA_CorwinPregnant", "GLOBAL", 5)
@@ -917,7 +918,7 @@ IF ~~ THEN BEGIN XA_AmkethranCourier_END
 	DO ~
 		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 1)
 	~
-	EXTERN RASAADJ XA_AmkethranCourier_END
+	EXTERN RASAA25J XA_AmkethranCourier_END
 	
 END
 //}
@@ -1040,14 +1041,14 @@ IF ~~ THEN BEGIN XA_CorwinPregnantInitial_Aerie
 	SAY @1515 /* ~Aerie, do you have a minute? I need to talk to you about something, in private.~ */
 	
 	IF ~~ THEN
-	EXTERN AERIEJ XA_CorwinPregnantInitial_Aerie
+	EXTERN AERIE25J XA_CorwinPregnantInitial_Aerie
 END
 
 IF ~~ THEN BEGIN XA_CorwinPregnantInitial_Jaheira
 	SAY @1516 /* ~Jaheira, do you have a minute? I need to talk to you about something, in private.~ */
 	
 	IF ~~ THEN
-	EXTERN JAHEIRAJ XA_CorwinPregnantInitial_Jaheira
+	EXTERN JAHEI25J XA_CorwinPregnantInitial_Jaheira
 END
 
 IF ~~ THEN BEGIN XA_CorwinPregnantInitial_Shh
@@ -1550,7 +1551,7 @@ IF ~
 	DO ~
 		SetGlobal("XA_SaradushDestroyed", "GLOBAL", 2)
 	~
-	EXTERN JAHEIRAJ XA_SaradushDestroyed 
+	EXTERN JAHEI25J XA_SaradushDestroyed 
 	
 	IF ~
 		IsValidForPartyDialogue("Imoen2")
@@ -1558,7 +1559,7 @@ IF ~
 	DO ~
 		SetGlobal("XA_SaradushDestroyed", "GLOBAL", 2)
 	~
-	EXTERN IMOEN2J XA_SaradushDestroyed
+	EXTERN IMOEN25J XA_SaradushDestroyed
 	
 	IF ~
 		IsValidForPartyDialogue("Neera")
@@ -1566,7 +1567,7 @@ IF ~
 	DO ~
 		SetGlobal("XA_SaradushDestroyed", "GLOBAL", 2)
 	~
-	EXTERN NEERAJ XA_SaradushDestroyed
+	EXTERN NEERA25J XA_SaradushDestroyed
 	
 	IF ~
 		IsValidForPartyDialogue("Aerie")
@@ -1574,7 +1575,7 @@ IF ~
 	DO ~
 		SetGlobal("XA_SaradushDestroyed", "GLOBAL", 2)
 	~
-	EXTERN AERIEJ XA_SaradushDestroyed
+	EXTERN AERIE25J XA_SaradushDestroyed
 END
 
 IF ~~ THEN BEGIN XA_TimeToGrieveLater
@@ -1611,7 +1612,7 @@ IF ~
 	SAY @1472 /* ~We need to talk.~ [BD54471]*/
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @1473 /* ~What's on your mind, love.~ */
 	DO ~
 		SetGlobal("XA_CorwinComplainSarevok", "GLOBAL", 3)
@@ -1619,7 +1620,7 @@ IF ~
 	GOTO XA_CorwinComplainSarevok
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @1474 /* ~What's on your mind, Major?~ */
 	DO ~
 		SetGlobal("XA_CorwinComplainSarevok", "GLOBAL", 3)
@@ -1662,12 +1663,12 @@ IF ~~ THEN BEGIN XA_CorwinComplainSarevok2B
 	GOTO XA_CorwinComplainSarevok_2B2_END
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @1493 /* ~Major, I have to believe that people can change, that they can forge a new destiny. If not, I'm doomed to follow in my father's footsteps.~ */
 	GOTO XA_ChangeDestiny_NR
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @1494 /* ~Schael, I have to believe that people can change, that they can forge a new destiny. If not, I'm doomed to follow in my father's footsteps.~*/
 	GOTO XA_ChangeDestiny_R
 END
@@ -1823,7 +1824,7 @@ IF ~
 	SAY @130 /* ~<CHARNAME>. We need to talk.~ */
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @132 /* ~Of course love, what's on your mind? */
 	DO ~
 		SetGlobal("XA_CorwinHexxat", "GLOBAL", 2)
@@ -1832,7 +1833,7 @@ IF ~
 	GOTO XAA38
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("XA_CorwinPromoted", "GLOBAL", 1)
 	~ THEN REPLY @131 /*  ~What is it, Captain?~*/
 	DO ~
@@ -1842,7 +1843,7 @@ IF ~
 	GOTO XAA38
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_CorwinPromoted", "GLOBAL", 1)
 	~ THEN REPLY @312 /*  What is it, Major?~*/
 	DO ~
@@ -1928,23 +1929,23 @@ IF ~~ THEN BEGIN XA_TargetPractice2
 END
 //}
 CHAIN
-	IF ~~ THEN XACORWIJ XA_GeneralTalk_Chain
+	IF ~~ THEN XACOR25J XA_GeneralTalk_Chain
 		@1799 /* ~Peace, General. I'm Major Schael Corwin of the Baldur's Gate Flaming Fist, assisting <CHARNAME> on a special assignment. The Grand Dukes have ordered —~*/
 		== AMTGEN01
 		@1800 /* ~The Flaming Fist and the Grand Dukes, in league with a Bhaalspawn? Did I hear you correctly?~*/
-		== XACORWIJ
+		== XACOR25J
 		@1801 /* ~We are hunting the members of an organization known as The Five. I can assure you that <CHARNAME> is innocent of the crimes you describe.~*/
 		== AMTGEN01
 		@1802 /* ~It matters not, I'm afraid. My orders were clear. <CHARNAME>, and any who travel with <PRO_HIMHER>, are to be put to be executed. May the gods have mercy on your soul.~*/
-END XACORWIJ XA_GeneralTalk_ChainEnd
+END XACOR25J XA_GeneralTalk_ChainEnd
 
-CHAIN XACORWIJ XA_RohmaWraithChain
+CHAIN XACOR25J XA_RohmaWraithChain
 	@1606 /*~R-Rohma!? Honey, what are you doing here?~*/
 	
 	== XAROHMA4
 	@1607 /*~Mommy, why didn't you come home? Why weren't you there to protect us?~*/
 	
-	== XACORWIJ
+	== XACOR25J
 	@1608 /*~What ... what do you mean? What happened!~*/
 	
 	== XAROHMA4
@@ -1952,19 +1953,19 @@ CHAIN XACORWIJ XA_RohmaWraithChain
 	
 	= @1612 /* ~You wanted us to die, so that you could start a new family with <CHARNAME>! You never loved me!~*/
 	
-END XACORWIJ XA_RohmaWraithChain_END
+END XACOR25J XA_RohmaWraithChain_END
 
-CHAIN XACORWIJ XA_GoodbyeChain
+CHAIN XACOR25J XA_GoodbyeChain
 	@1716 /* ~(She turns to your comrades.)~ */
 	
 	//{ Aerie Goodbye
-	== AERIEJ
+	== AERIE25J
 	IF ~
 		IsValidForPartyDialogue("Aerie")
 	~
 	@1687 /* ~Oh Schael *sob*, I — I'll miss you!~*/
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("Aerie")
 	~
@@ -1972,13 +1973,13 @@ CHAIN XACORWIJ XA_GoodbyeChain
 	//}
 	
 	//{ Keldorn Goodbye
-	== KELDORJ
+	== KELDO25J
 	IF ~
 		IsValidForPartyDialogue("Keldorn")
 	~
 	@1689 /* ~It's been an honor to fight at your side, Major.~*/
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("Keldorn")
 	~
@@ -1986,77 +1987,77 @@ CHAIN XACORWIJ XA_GoodbyeChain
 	//}
 	
 	//{ Minsc Goodbye
-	== MINSCJ
+	== MINSC25J
 	IF ~
 		IsValidForPartyDialogue("Minsc")
 	~
 	@1709 /*~Major soldier lady, Boo wishes you well, and asks if you would be so kind as to kiss him.~ */
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("Minsc")
 	~
 	@1710 /*~No. I'm not kissing anyone's rode—, excuse me, 'space-hamster'.~  */
 	
-	== MINSCJ
+	== MINSC25J
 	IF ~
 		IsValidForPartyDialogue("Minsc")
 	~
 	@1711 /*  ~In that case, can Boo give you a kiss? Just a peck on the cheek?~*/
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("Minsc")
 	~
 	@1712 /*~(Sigh.)~ */
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("Minsc")
 	~
 	@1713 /*~Sure, Minsc.~ */
 	
-	== MINSCJ
+	== MINSC25J
 	IF ~
 		IsValidForPartyDialogue("Minsc")
 	~
 	@1714 /* ~(She leans in, and Boo head-bumps her on her cheek.)~*/
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("Minsc")
 	~
 	@1715 /* ~Ugh...~ */
 	//}
 	
-	//{ Korgan Goodbye
-	== KORGANJ
+	//{ KORGA25J Goodbye
+	== KORGA25J
 	IF ~
-		IsValidForPartyDialogue("Korgan")
+		IsValidForPartyDialogue("KORGA25J")
 	~
-	@1691 /* ~Aye girlie, don't ye worry yer sweet little behind. Ole Korgan'll make sure yer <PRO_MANWOMAN> comes home in one piece.~*/
+	@1691 /* ~Aye girlie, don't ye worry yer sweet little behind. Ole KORGA25J'll make sure yer <PRO_MANWOMAN> comes home in one piece.~*/
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
-		IsValidForPartyDialogue("Korgan")
+		IsValidForPartyDialogue("KORGA25J")
 	~
-	@1692 /* ~I appreciate that. Thank you, Korgan.~*/
+	@1692 /* ~I appreciate that. Thank you, KORGA25J.~*/
 	//}
 	
 	//{ Imoen Goodbye
-	== IMOEN2J
+	== IMOEN25J
 	IF ~
 		IsValidForPartyDialogue("Imoen2")
 	~
 	@1693 /* ~Schael! I'll miss you! Please, give Liia my regards.~*/
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("Imoen2")
 	~
 	@1694 /* ~I will Imoen... and I'll miss you too. Take good care of your <PRO_BROTHERSISTER> for me.~*/
 	
-	== IMOEN2J
+	== IMOEN25J
 	IF ~
 		IsValidForPartyDialogue("Imoen2")
 	~
@@ -2064,25 +2065,25 @@ CHAIN XACORWIJ XA_GoodbyeChain
 	//}
 	
 	//{ Neera Goodbye
-	== NEERAJ
+	== NEERA25J
 	IF ~
 		IsValidForPartyDialogue("Neera")
 	~
 	@1695 /* ~Good luck with the babies! (Hee-hee)~*/
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("Neera")
 	~
 	@1696 /* ~Sorry, what was that?~*/
 	
-	== NEERAJ
+	== NEERA25J
 	IF ~
 		IsValidForPartyDialogue("Neera")
 	~
 	@1697 /* ~I said, good luck with the baby!~*/
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("Neera")
 	~
@@ -2090,13 +2091,13 @@ CHAIN XACORWIJ XA_GoodbyeChain
 	//}
 
 	//{ Valygar Goodbye
-	== VALYGARJ
+	== VALYG25J
 	IF ~
 		IsValidForPartyDialogue("Valygar")
 	~
 	@1699 /* ~Take care of yourself, Major.~*/
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("Valygar")
 	~
@@ -2104,13 +2105,13 @@ CHAIN XACORWIJ XA_GoodbyeChain
 	//}
 
 	//{ Rasaad Goodbye
-	== RASAADJ
+	== RASAA25J
 	IF ~
 		IsValidForPartyDialogue("Rasaad")
 	~
 	@1701 /* ~Schael — I shall miss you, my friend.~ */
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("Rasaad")
 	~
@@ -2118,13 +2119,13 @@ CHAIN XACORWIJ XA_GoodbyeChain
 	//}
 	
 	//{ Jaheira Goodbye
-	== JAHEIRAJ
+	== JAHEI25J
 	IF ~
 		IsValidForPartyDialogue("Jaheira")
 	~
 	@1703 /* ~Though it must hurt to leave <PRO_HIMHER>, in time you'll realize that you've made the right decision, Schael. The battlefield is no place for an expecting mother.~ */
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("Jaheira")
 	~
@@ -2132,13 +2133,13 @@ CHAIN XACORWIJ XA_GoodbyeChain
 	//}
 	
 	//{ Nalia Goodbye
-	== NALIAJ
+	== NALIA25J
 	IF ~
 		IsValidForPartyDialogue("Nalia")
 	~
 	@1705 /* ~I'll miss our little discussions on the plight of the poor, and how best to tackle the inequality that plagues our cities.~ */
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("Nalia")
 	~
@@ -2146,13 +2147,13 @@ CHAIN XACORWIJ XA_GoodbyeChain
 	//}
 	
 	//{ Mazzy Goodbye
-	== MAZZYJ
+	== MAZZY25J
 	IF ~
 		IsValidForPartyDialogue("Mazzy")
 	~
 	@1707 /* ~Schael, I'm fortunate to have been able to fight alongside you these past months. You will be missed, by all of us.~ */
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("Mazzy")
 	~
@@ -2165,7 +2166,7 @@ CHAIN XACORWIJ XA_GoodbyeChain
 		IsValidForPartyDialogue("XACAELAR")
 	~
 	@346 /* ~Major, you've represented your city and your family with distinction. It has been an honor to stand at your side. Walk in the light, always.~*/
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("XACAELAR")
 	~
@@ -2174,13 +2175,13 @@ CHAIN XACORWIJ XA_GoodbyeChain
 	//}
 
 	//{ HaerDalis Goodbye
-	== HAERDAJ
+	== HAERD25J
 	IF ~
 		IsValidForPartyDialogue("HaerDalis")
 	~
 	@1717/*  ~Alas, it is time for my raven to take flight and return to her nest.~ */
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("HaerDalis")
 	~
@@ -2188,28 +2189,28 @@ CHAIN XACORWIJ XA_GoodbyeChain
 	//}
 	
 	//{ Jan Goodbye
-	== JANJ
+	== JAN25J
 	IF ~
 		IsValidForPartyDialogue("Jan")
 	~
 	@1721 /* ~This reminds me of the time when —~*/
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("Jan")
 	~
 	@1722 /* ~Jan. I'll miss you, too.~*/
 	
-	== JANJ
+	== JAN25J
 	IF ~
 		IsValidForPartyDialogue("Jan")
 	~
 	@1723 /* ~Aye. Before you go Schael, take this recipe. It's for a buttered turnip puree. My children loved it when they were wee small.~*/
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("Jan")
 	~
 	@1720 /* ~That's very kind of you. Thank you.~*/
 	//}
-END XACORWIJ XA_GoodbyeChainEnd
+END XACOR25J XA_GoodbyeChainEnd

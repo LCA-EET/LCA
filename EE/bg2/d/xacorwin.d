@@ -115,7 +115,7 @@ IF ~~ THEN BEGIN XAAJoinLove
 	SAY @38 /* ~That's all I needed to hear. Let's go.~ [BD54525]*/
 	IF ~~ THEN
 	DO ~
-		ChangeAIScript("XACORSCR", OVERRIDE)
+		ChangeAIScript("XACORWIN", OVERRIDE)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
@@ -125,7 +125,7 @@ IF ~~ THEN BEGIN XAAJoinFriend
 	SAY @39 /* ~Gladly, my friend.~ [BDCORP4] */
 	IF ~~ THEN
 	DO ~
-		ChangeAIScript("XACORSCR", OVERRIDE)
+		ChangeAIScript("XACORWIN", OVERRIDE)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
@@ -328,7 +328,7 @@ IF ~~ THEN BEGIN XAAKissEnd
 	
 	IF ~~ THEN REPLY @53  /* ~Gladly, dear.~*/
 	DO ~
-		ChangeAIScript("XACORSCR", OVERRIDE)
+		ChangeAIScript("XACORWIN", OVERRIDE)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT

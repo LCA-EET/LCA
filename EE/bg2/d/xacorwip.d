@@ -19,7 +19,7 @@ IF ~
 	IF ~~ THEN
 	DO ~
 		SetInterrupt(FALSE)
-		ChangeAIScript("XACORSCR", OVERRIDE)
+		ChangeAIScript("XACORWIN", OVERRIDE)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 	~
@@ -230,7 +230,7 @@ THEN BEGIN XA_CantLeave
 	IF ~~ THEN REPLY @34 /* ~Yes, you're right. Let's stay together, at least for the time being.~ */
 	
 	DO ~
-		ChangeAIScript("XACORSCR", OVERRIDE)
+		ChangeAIScript("XACORWIN", OVERRIDE)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
@@ -247,7 +247,7 @@ IF ~
 	IF ~~ THEN REPLY @34 /* ~Yes, you're right. Let's stay together, at least for the time being.~ */
 	
 	DO ~
-		ChangeAIScript("XACORSCR", OVERRIDE)
+		ChangeAIScript("XACORWIN", OVERRIDE)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
@@ -264,7 +264,7 @@ THEN BEGIN XA_CorwinSick
 	
 	IF ~~ THEN REPLY @31 /* ~You're right, my dear. Stay with me. I'll look after you as best I can.~ */
 	DO ~
-		ChangeAIScript("XACORSCR", OVERRIDE)
+		ChangeAIScript("XACORWIN", OVERRIDE)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
@@ -586,7 +586,7 @@ IF ~~ THEN BEGIN XAA1
 	SAY @4 /* ~Gladly, my friend.~ */
 	IF ~~ THEN
 	DO ~
-		ChangeAIScript("XACORSCR", OVERRIDE)
+		ChangeAIScript("XACORWIN", OVERRIDE)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
@@ -596,7 +596,7 @@ IF ~~ THEN BEGIN XAA2
 	SAY @3 /* ~That's all I needed to hear. Let's go.~ [BD54525] */
 	IF ~~ THEN
 	DO ~
-		ChangeAIScript("XACORSCR", OVERRIDE)
+		ChangeAIScript("XACORWIN", OVERRIDE)
 		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT

@@ -1,3 +1,5 @@
+BEGIN ~XACOR25P~
+
 IF ~
 	Race(Player1, LICH)
 ~ THEN BEGIN XA_CorwinLeaveLich
@@ -19,7 +21,7 @@ IF ~
 	SAY @7 /* ~Wh... where... what the hells is this place? <CHARNAME>!? There better be a DAMN good explanation for this!~*/
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @8 /* ~Did I catch you at a bad time?~ */
 	DO ~
 		SetGlobal("XA_CorwinPromoted", "GLOBAL", 1)
@@ -28,7 +30,7 @@ IF ~
 	GOTO XA_JoinToB_BadTime_NR
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @8 /* ~Did I catch you at a bad time?~ */
 	DO ~
 		SetGlobal("XA_CorwinPromoted", "GLOBAL", 1)
@@ -37,7 +39,7 @@ IF ~
 	GOTO XA_JoinToB_BadTime_R
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @9 /* ~Hi, Captain.~ */
 	DO ~
 		SetGlobal("XA_CorwinPromoted", "GLOBAL", 1)
@@ -46,7 +48,7 @@ IF ~
 	GOTO XA_JoinToB_Promoted
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @10 /* Hi, Schael.*/
 	DO ~
 		SetGlobal("XA_CorwinPromoted", "GLOBAL", 1)
@@ -142,12 +144,12 @@ IF ~~ THEN BEGIN XA_Threat2
 	SAY @59 /*~I understand, sir.~*/
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @60 /* ~So, Capt — excuse me, Major. What is your decision?~ */
 	GOTO XA_Threat3
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @61 /* ~So, Schael. What is your decision?~ */
 	GOTO XA_Threat3
 END

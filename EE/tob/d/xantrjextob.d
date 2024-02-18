@@ -69,14 +69,14 @@
 		== XACOR25B
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@6 /* ~I'm not exactly eager to go up against the prince of demons. Whatever you decide, I'll have your back.~ */
 		
 		== XACOR25B
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@7 /* ~I'm not exactly eager to go up against the prince of demons. Whatever you decide, love, I'll have your back.~ */
 	END

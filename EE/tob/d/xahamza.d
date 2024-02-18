@@ -23,7 +23,7 @@ IF ~
 		!IsGabber("XACORWIN")
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN 
-	EXTERN XACORWIJ XA_DeliverAdditional
+	EXTERN XACOR25J XA_DeliverAdditional
 
 	IF ~
 		Global("XA_NeedLettersDelivered", "GLOBAL", 1)
@@ -71,7 +71,7 @@ IF ~
 	IF ~
 		GlobalGT("XA_MessageToBG", "GLOBAL", 0)
 		!GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN
 	DO ~
 		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 4)
@@ -81,7 +81,7 @@ IF ~
 	IF ~
 		GlobalGT("XA_MessageToBG", "GLOBAL", 0)
 		GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN
 	DO ~
 		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 3)
@@ -105,27 +105,27 @@ IF ~
 	DO ~
 		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 5)
 	~
-	EXTERN RASAADJ XA_HamzaRasaadChain3
+	EXTERN RASAA25J XA_HamzaRasaadChain3
 	
 	IF ~
 		GlobalGT("XA_MessageToBG", "GLOBAL", 0)
 		!GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN
 	DO ~
 		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 4)
 	~
-	EXTERN RASAADJ XA_HamzaRasaadChain3
+	EXTERN RASAA25J XA_HamzaRasaadChain3
 	
 	IF ~
 		GlobalGT("XA_MessageToBG", "GLOBAL", 0)
 		GlobalGT("XA_CorwinPregnant", "GLOBAL", 2)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN
 	DO ~
 		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 3)
 	~
-	EXTERN RASAADJ XA_HamzaRasaadChain3
+	EXTERN RASAA25J XA_HamzaRasaadChain3
 END
 //}
 
@@ -148,7 +148,7 @@ IF ~
 		IsValidForPartyDialogue("XACORWIN")
 		Global("XA_NeedLettersDelivered", "GLOBAL", 1)
 	~ THEN REPLY @31 /* ~I need a letter delivered.~ */
-	EXTERN XACORWIJ XA_DeliverTwoLetters2
+	EXTERN XACOR25J XA_DeliverTwoLetters2
 	
 	IF ~
 		//IsGabber("XACORWIN")
@@ -173,7 +173,7 @@ IF ~
 		GlobalLT("XA_NeedLettersDelivered", "GLOBAL", 1)
 		GlobalGT("XA_MessageToBG", "GLOBAL", 0)
 	~ THEN REPLY @9 /* ~I need to deliver a letter to Baldur's Gate.~ */
-	EXTERN XACORWIJ XA_DeliverTwoLetters
+	EXTERN XACOR25J XA_DeliverTwoLetters
 	
 	IF ~
 		IsGabber("XACORWIN")
@@ -302,7 +302,7 @@ IF ~~ THEN BEGIN XA_WhoAreYou
 		!IsGabber("XACORWIN")
 		GlobalGT("XA_MessageToBG", "GLOBAL", 0)
 	~ THEN REPLY @12 /* ~I'm <IsGabber> ... you offer courier services, yes? We need to have a letter delivered to Baldur's Gate.~ */
-	EXTERN XACORWIJ XA_DeliverTwoLetters
+	EXTERN XACOR25J XA_DeliverTwoLetters
 	
 	IF ~
 		!Global("XA_CourierDangerous", "LOCALS", 1)
@@ -346,7 +346,7 @@ IF ~~ THEN BEGIN XA_HeardAboutCourier
 		IsValidForPartyDialogue("XACORWIN")
 		GlobalGT("XA_MessageToBG", "GLOBAL", 0)
 	~ THEN REPLY @9 /* ~I need to deliver a letter to Baldur's Gate.~ */
-	EXTERN XACORWIJ XA_DeliverTwoLetters
+	EXTERN XACOR25J XA_DeliverTwoLetters
 	
 	IF ~
 		IsGabber("XACORWIN")
@@ -634,35 +634,35 @@ END
 CHAIN XAHAMZA XA_HamzaRasaadChain2
 	@39 /* ~How long has it been?~ */
 	
-	== RASAADJ
+	== RASAA25J
 	@45 /* ~Too long, old friend. How fares your courier business? And your wife?~*/
 	
 	== XAHAMZA
 	@46 /* ~They are well, thankfully. And you? What brings you to Amkethran?~*/
 	
-	== RASAADJ
+	== RASAA25J
 	@47 /* ~We are in pursuit of an organization known as the Five. They've been wreaking havoc on the countryside — one of their number was even responsible for the destruction of Saradush, but he has since been eliminated.~*/
 	
 	== XAHAMZA
 	@48 /* ~I see... I wish I could be of some assistance. If you ever need a message delivered, come and see me, my friend.~*/
 	
-	== RASAADJ
+	== RASAA25J
 	@49 /* ~Thank you, Hamza.~*/
 EXIT
 
 CHAIN XAHAMZA XA_HamzaRasaadChain
 	@39 /* ~How long has it been?~ */
 
-	== RASAADJ
+	== RASAA25J
 	@40 /* ~Too long, Hamza. Listen — my friends and I are in need of your services. We urgently need to send a letter to Baldur's Gate.~ */
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 	~
 	@44 /* ~Two letters. One to the Dukes, and one to my father. I need to let my family know that we're fine.~ */
 	
-	== RASAADJ
+	== RASAA25J
 	@42 /* ~Can you help us?~*/
 	
 	== XAHAMZA
@@ -676,16 +676,16 @@ CHAIN XAHAMZA XA_HamzaRasaadChain
 	~
 EXIT
 
-CHAIN RASAADJ XA_HamzaRasaadChain3
+CHAIN RASAA25J XA_HamzaRasaadChain3
 	@51 /* ~Listen, Hamza — my friends and I are in need of your services. We urgently need to send a letter to Baldur's Gate.~ */
 	
-	== XACORWIJ
+	== XACOR25J
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 	~
 	@44 /* ~Two letters. One to the Dukes, and one to my father. I need to let my family know that we're fine.~ */
 	
-	== RASAADJ
+	== RASAA25J
 	@42 /* ~Can you help us?~*/
 	
 	== XAHAMZA

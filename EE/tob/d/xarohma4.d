@@ -9,5 +9,5 @@ IF ~
 	DO ~
 		SetGlobal("XA_RohmaWraith", "GLOBAL", 1)
 	~
-	EXTERN XACORWIJ XA_RohmaWraithChain
+	EXTERN XACOR25J XA_RohmaWraithChain
 END

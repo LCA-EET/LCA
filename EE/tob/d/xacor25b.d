@@ -42,7 +42,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinMazzy", "GLOBAL", 2)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		THEN XACOR25B BCorwinMazzy1A
 			@526 /* ~Mazzy? What do you need?~ [BD56086]*/
@@ -80,7 +80,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinMazzy", "GLOBAL", 2)
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		THEN XACOR25B BCorwinMazzy1B
 			@526 /* ~Mazzy? What do you need?~ [BD56086]*/
@@ -366,7 +366,7 @@ END
 	CHAIN 
 		IF ~
 			Global("XA_Banter_CorwinHaerDalis", "GLOBAL", 4)
-			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 			OR(2)
 				Global("HaerDalisRomanceActive","GLOBAL",2)
 				Global("HaerDalisRomanceActive","GLOBAL",1)
@@ -396,7 +396,7 @@ END
 	CHAIN 
 		IF ~
 			Global("XA_Banter_CorwinHaerDalis", "GLOBAL", 4)
-			Global("XA_CorwinRomanceActive","GLOBAL",2)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 			!Global("HaerDalisRomanceActive","GLOBAL",2)
 			!Global("HaerDalisRomanceActive","GLOBAL",1)
 		~
@@ -423,7 +423,7 @@ END
 	CHAIN 
 		IF ~
 			Global("XA_Banter_CorwinHaerDalis", "GLOBAL", 4)
-			!Global("XA_CorwinRomanceActive","GLOBAL",2)
+			!Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 			OR(2)
 				Global("HaerDalisRomanceActive","GLOBAL",2)
 				Global("HaerDalisRomanceActive","GLOBAL",1)
@@ -455,7 +455,7 @@ END
 			Global("XA_Banter_CorwinHaerDalis", "GLOBAL", 4)
 			!Global("HaerDalisRomanceActive","GLOBAL",2)
 			!Global("HaerDalisRomanceActive","GLOBAL",1)
-			!Global("XA_CorwinRomanceActive","GLOBAL",2)
+			!Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 		~
 		THEN XACOR25B BCorwinHaerDalis2
 			@366 /* ~Haer'Dalis? What is it?~ [XACORB56] */
@@ -788,7 +788,7 @@ END
 	CHAIN 
 		IF ~
 			Global("XA_Banter_CorwinRasaad", "GLOBAL", 8)
-			!IsValidForPartyDialogue("Korgan")
+			!IsValidForPartyDialogue("KORGA25J")
 			!IsValidForPartyDialogue("Yoshimo")
 			IsValidForPartyDialogue("Rasaad")
 			OR(2)
@@ -823,7 +823,7 @@ END
 	CHAIN 
 		IF ~
 			Global("XA_Banter_CorwinRasaad", "GLOBAL", 8)
-			IsValidForPartyDialogue("Korgan")
+			IsValidForPartyDialogue("KORGA25J")
 			IsValidForPartyDialogue("Rasaad")
 			OR(2)
 				!IsValidForPartyDialogue("Viconia")
@@ -845,7 +845,7 @@ END
 			== KORGA25J
 			@492 /* ~Ah... ~*/
 			== XACOR25B
-			@563 /* Korgan? What is it?*/
+			@563 /* KORGA25J? What is it?*/
 			== KORGA25J
 			@494 /*  ~Oh, don't mind me, lass. I'm just admiring the view, heh.~ */
 			== XACOR25B
@@ -865,7 +865,7 @@ END
 	CHAIN 
 		IF ~
 			Global("XA_Banter_CorwinRasaad", "GLOBAL", 8)
-			!IsValidForPartyDialogue("Korgan")
+			!IsValidForPartyDialogue("KORGA25J")
 			IsValidForPartyDialogue("Rasaad")
 			OR(2)
 				!IsValidForPartyDialogue("Viconia")
@@ -898,7 +898,7 @@ END
 	CHAIN 
 		IF ~
 			Global("XA_Banter_CorwinRasaad", "GLOBAL", 8)
-			!IsValidForPartyDialogue("Korgan")
+			!IsValidForPartyDialogue("KORGA25J")
 			IsValidForPartyDialogue("Viconia")
 			IsValidForPartyDialogue("Valygar")
 			IsValidForPartyDialogue("Rasaad")
@@ -945,7 +945,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_CorwinCerndBaby", "GLOBAL", 2)
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		THEN XACOR25B BCorwinCernd1A
 			@258 /* ~Cernd, you have a beautiful child.~ [XACORB33] */
@@ -984,7 +984,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_CorwinCerndBaby", "GLOBAL", 2)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		THEN XACOR25B BCorwinCernd1B
 			@258 /* ~Cernd, you have a beautiful child.~ [XACORB33] */
@@ -1271,16 +1271,16 @@ END
 
 //}
 
-//{ Korgan Banters
+//{ KORGA25J Banters
 
 	//{ region Dialog B-43
 	CHAIN
 		IF ~
-			Global("XA_Banter_CorwinKorgan", "GLOBAL", 2)
-		~ THEN XACOR25B BCorwinKorgan1
+			Global("XA_Banter_CorwinKORGA25J", "GLOBAL", 2)
+		~ THEN XACOR25B BCorwinKORGA25J1
 			@138 /* ~Get your filthy hands off me!~ [XACORB05] */
 			DO ~
-				SetGlobal("XA_Banter_CorwinKorgan", "GLOBAL", 3)
+				SetGlobal("XA_Banter_CorwinKORGA25J", "GLOBAL", 3)
 			~ 
 			== KORGA25J
 			IF ~
@@ -1293,7 +1293,7 @@ END
 			~
 			@758 /* ~But Major, ye be the rarest of sights! A strong beauty, in uniform no less! ~ */
 			== KORGA25J
-			@139 /*  ~Ole Korgan nae hath seen one such as yerself. I simply needed a hand on yer wondrous bottom to see if ye be an illusion.~*/
+			@139 /*  ~Ole KORGA25J nae hath seen one such as yerself. I simply needed a hand on yer wondrous bottom to see if ye be an illusion.~*/
 			== XACOR25B
 			@140 /* ~Well, I hope you got all you needed. Touch me like that again, dwarf, and you'll regret it.~ */
 			== KORGA25J
@@ -1301,7 +1301,7 @@ END
 			== XACOR25B
 			@142 /* ~Hah, don't make me laugh. No one in their right mind would share their bed with you.~ */
 			== KORGA25J
-			@143 /*   ~Bed, floor, or field doth make no difference to I, longlimbs. You are nae ready now, but when ye are, come and see Korgan for a night you shan't forget. ~ */
+			@143 /*   ~Bed, floor, or field doth make no difference to I, longlimbs. You are nae ready now, but when ye are, come and see KORGA25J for a night you shan't forget. ~ */
 			== XACOR25B
 			@238/* ~Next time you open your mouth, close it quickly—before that sort of idiocy spills off your tongue.~ [BD67544] */
 	EXIT
@@ -1310,11 +1310,11 @@ END
 	//{ region Dialog B-44
 	CHAIN
 		IF ~
-			Global("XA_Banter_CorwinKorgan", "GLOBAL", 4)
-		~ THEN XACOR25B BCorwinKorgan1
-			@194 /*  ~What is it Korgan?~ [XACORB42] */
+			Global("XA_Banter_CorwinKORGA25J", "GLOBAL", 4)
+		~ THEN XACOR25B BCorwinKORGA25J1
+			@194 /*  ~What is it KORGA25J?~ [XACORB42] */
 			DO ~
-				SetGlobal("XA_Banter_CorwinKorgan", "GLOBAL", 5)
+				SetGlobal("XA_Banter_CorwinKORGA25J", "GLOBAL", 5)
 			~ 
 			== KORGA25J
 			@195 /* ~Aye, girlie. I feel yer eyes on me rear in battle. Doth ye like what ye see?~ */
@@ -1325,7 +1325,7 @@ END
 			== XACOR25B
 			@572 /*~You noticed. Good eye.~ [BD39880]*/
 			== KORGA25J
-			@198 /* ~Don't you worry my beauty. Ole Korgan will stay at the front and keep ye safe. Just leave a few for me, will ye? Me axe doth get thirsty from time to time.~ */
+			@198 /* ~Don't you worry my beauty. Ole KORGA25J will stay at the front and keep ye safe. Just leave a few for me, will ye? Me axe doth get thirsty from time to time.~ */
 			== XACOR25B
 			@199 /* ~Duly noted. ~ */
 	EXIT
@@ -1340,7 +1340,7 @@ END
 		IF ~
 			Global("XA_Banter_CorwinViconia", "GLOBAL", 2)
 			OR(2)
-				!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+				!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 				Gender(Player1, FEMALE)
 		~ THEN XACOR25B BCorwinViconia1A
 			@114 /*  ~Never forget that I'm watching you.~ [BD67545] */
@@ -1385,7 +1385,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinViconia", "GLOBAL", 2)
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			Gender(Player1, MALE)
 		~ THEN XACOR25B BCorwinViconia1B
 			@114 /* ~Never forget that I'm watching you.~ [BD67545] */
@@ -1563,7 +1563,7 @@ END
 	//{ Dialog B-50
 	CHAIN 
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			Global("XA_CorwinImoenSoulTalk", "GLOBAL", 1)
 		~ THEN XACOR25B BCorwinImoenSoulA
 			@565 /*  ~Imoen, I can't tell you how relieved I am that you're better.~  */
@@ -1586,7 +1586,7 @@ END
 	//{ Dialog B-51
 	CHAIN 
 		IF ~
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			Global("XA_CorwinImoenSoulTalk", "GLOBAL", 1)
 		~ THEN XACOR25B BCorwinImoenSoulB
 			@565 /*  ~Imoen, I can't tell you how relieved I am that you're better.~ [XA100067] */
@@ -1608,7 +1608,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinImoen", "GLOBAL", 4)
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN XACOR25B BCorwinImoen2A
 			@448 /* ~Imoen, could I ask you something?~ [XACORB57] */
 			DO ~
@@ -1648,7 +1648,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinImoen", "GLOBAL", 4)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN XACOR25B BCorwinImoen2A
 			@448 /* ~Imoen, could I ask you something?~ [XA100067] */
 			DO ~
@@ -2010,7 +2010,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinKeldorn", "GLOBAL", 4)
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN XACOR25B BCorwinKeldorn1
 			@201 /* ~Yes, Keldorn?~ [BD68260]*/
 			DO ~
@@ -2058,7 +2058,7 @@ END
 	CHAIN
 		IF ~
 			Global("XA_Banter_CorwinKeldorn", "GLOBAL", 4)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN XACOR25B BCorwinKeldorn1
 			@201 /* ~Yes, Keldorn?~ [BD68260] */
 			DO ~
@@ -2714,7 +2714,7 @@ END
 		IF ~
 			GlobalLT("ImoenGiveSoul","GLOBAL",2)
 			Global("XA_SarevokSoul", "GLOBAL", 1)
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			OR(2)
 				Alignment("Sarevok",CHAOTIC_GOOD)
 				Global("XA_89BDebug", "GLOBAL", 1)
@@ -2749,7 +2749,7 @@ END
 		IF ~
 			GlobalLT("ImoenGiveSoul","GLOBAL",2)
 			Global("XA_SarevokSoul", "GLOBAL", 1)
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			OR(2)
 				!Alignment("Sarevok",CHAOTIC_GOOD)
 				Global("XA_89ADebug", "GLOBAL", 1)

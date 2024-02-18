@@ -60,11 +60,11 @@ IF ~~ THEN BEGIN XA_Choice
 	
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-	~ EXTERN XACORWIJ XA_Choice_NonRomance
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	~ EXTERN XACOR25J XA_Choice_NonRomance
 	
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-	~ EXTERN XACORWIJ XA_Choice
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	~ EXTERN XACOR25J XA_Choice
 END

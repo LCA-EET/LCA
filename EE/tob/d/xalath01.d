@@ -86,27 +86,27 @@ IF ~~ THEN BEGIN XA_BenoBoom_GoHome
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN REPLY @53 /* ~Schael... you have some ... ahhh... Beno on you. On your shoulder.~*/
-	EXTERN XACORWIJ XA_BenoBoom
+	EXTERN XACOR25J XA_BenoBoom
 	
 	IF ~
 		IsValidForPartyDialogue("Aerie")
 	~ THEN REPLY @54  /* ~Aerie... you got some, ahh, Beno in your hair.~ */
-	EXTERN AERIEJ XA_BenoBoom
+	EXTERN AERIE25J XA_BenoBoom
 	
 	IF ~
 		IsValidForPartyDialogue("Jaheira")
 	~ THEN REPLY @55  /* ~Jaheira there's, ahh, some Beno on you. On your backside, dear.~*/
-	EXTERN JAHEIRAJ XA_BenoBoom
+	EXTERN JAHEI25J XA_BenoBoom
 	
 	IF ~
 		IsValidForPartyDialogue("Imoen2")
 	~ THEN REPLY @76  /*  ~Imoen you've got some... erm, you've got some Beno on your back.~ */
-	EXTERN IMOEN2J XA_BenoBoom
+	EXTERN IMOEN25J XA_BenoBoom
 	
 	IF ~
 		IsValidForPartyDialogue("Neera")
 	~ THEN REPLY @75  /* ~Neera, oh dear, you have some Beno on your shoes.~ */
-	EXTERN NEERAJ XA_BenoBoom
+	EXTERN NEERA25J XA_BenoBoom
 END
 //}
 
@@ -164,7 +164,7 @@ IF ~~ THEN BEGIN XA_MissingHead
 		See("XACORWIN")
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN REPLY @9 /* ~Schael, do you want to handle this, or should I?~ */
-	EXTERN XACORWIJ XA_LathBeno_Head
+	EXTERN XACOR25J XA_LathBeno_Head
 	
 	IF ~~ THEN REPLY @10  /* ~I have his head. I'll not give it to you, nor anyone else.~ */
 	GOTO XA_ToldALie2
@@ -193,7 +193,7 @@ IF ~~ THEN BEGIN XA_MissingSoul
 		See("XACORWIN")
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN REPLY @9 /* ~Schael, do you want to handle this, or should I?~ */
-	EXTERN XACORWIJ XA_LathBeno_Soul
+	EXTERN XACOR25J XA_LathBeno_Soul
 	
 	IF ~~ THEN REPLY @11  /* ~His soul is trapped in the Soultaker Dagger, which is in my possesion.~ */
 	GOTO XA_ToldALie2
@@ -214,7 +214,7 @@ IF ~~ THEN BEGIN XA_ToldALie2
 	
 	IF ~
 		PartyHasItem("XABENOHD")
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @13 /* ~He kidnapped the daughter of the woman I love. Death was an appropriate punishment.~ */
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
@@ -223,7 +223,7 @@ IF ~~ THEN BEGIN XA_ToldALie2
 	
 	IF ~
 		PartyHasItem("XASTDAGB")
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @15 /* ~He kidnapped the daughter of the woman I love. His imprisonment ensures that he'll never hurt her, or anyone else ever again.~ */
 	DO ~
 		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
@@ -232,13 +232,13 @@ IF ~~ THEN BEGIN XA_ToldALie2
 	
 	IF ~
 		PartyHasItem("XABENOHD")
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @14 /* ~He kidnapped the daughter of one of my closest friends. Death was an appropriate punishment.~*/
 	GOTO XA_KidnappedRohma
 	
 	IF ~
 		PartyHasItem("XASTDAGB")
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @16 /* ~He kidnapped the daughter of one of my closest friends. His imprisonment ensures that he'll never hurt her, or anyone else ever again.~ */
 	GOTO XA_KidnappedRohma
 END
@@ -396,7 +396,7 @@ IF ~~ THEN BEGIN XA_TargetPractice
 	SAY @79  /*~What are these holes? It's as if someone used this head for target practice.~ */
 	
 	IF ~~ THEN
-	EXTERN XACORWIJ XA_TargetPractice2
+	EXTERN XACOR25J XA_TargetPractice2
 END
 
 IF ~~ THEN BEGIN XA_TargetPractice3

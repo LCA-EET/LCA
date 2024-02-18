@@ -16,12 +16,12 @@ IF ~~ THEN BEGIN XA_HowMany
 	IF ~
 		IsValidForPartyDialogue("Aerie")
 	~ THEN
-	EXTERN AERIEJ XA_HowMany
+	EXTERN AERIE25J XA_HowMany
 	
 	IF ~
 		IsValidForPartyDialogue("Jaheira")
 	~ THEN
-	EXTERN JAHEIRAJ XA_HowMany
+	EXTERN JAHEI25J XA_HowMany
 	
 	IF ~
 		IsValidForPartyDialogue("XACAELAR")

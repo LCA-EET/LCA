@@ -84,7 +84,7 @@
 	EXTEND_BOTTOM AMTGEN01 0
 		IF ~
 			IsValidForPartyDialog("XACORWIN")
-		~ THEN EXTERN XACORWIJ XA_GeneralTalk_Chain
+		~ THEN EXTERN XACOR25J XA_GeneralTalk_Chain
 	END
 //}
 
@@ -268,13 +268,13 @@
 	EXTEND_BOTTOM FINSOL01 27  /* Player must make a choice */
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-		~ EXTERN XACORWIJ XA_Choice_NonRomance
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		~ EXTERN XACOR25J XA_Choice_NonRomance
 	
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
-		~ EXTERN XACORWIJ XA_Choice
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		~ EXTERN XACOR25J XA_Choice
 		
 		IF ~
 			IsValidForPartyDialogue("XACAELAR")
@@ -284,111 +284,111 @@
 	EXTEND_BOTTOM FINSOL01 29 /* Player chose godhood - evil */
 		
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			!Global("XA_CorwinPCGod", "GLOBAL", 1)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_CorwinPCGod", "GLOBAL", 1)
 		~
-		EXTERN XACORWIJ XA_ChoiceThankYou
+		EXTERN XACOR25J XA_ChoiceThankYou
 		
 		
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			Global("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
 			!Global("XA_CorwinPCGod", "GLOBAL", 1)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_CorwinPCGod", "GLOBAL", 1)
 		~ 
-		EXTERN XACORWIJ XA_ChoiceThankYouChild
+		EXTERN XACOR25J XA_ChoiceThankYouChild
 		
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			Global("XA_CorwinTwins", "GLOBAL", 1)
 			!Global("XA_CorwinPCGod", "GLOBAL", 1)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_CorwinPCGod", "GLOBAL", 1)
 		~ 
-		EXTERN XACORWIJ XA_ChoiceThankYouTwins
+		EXTERN XACOR25J XA_ChoiceThankYouTwins
 	END
 	
 	EXTEND_BOTTOM FINSOL01 30 /* Player chose godhood - neutral */
 		
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			!Global("XA_CorwinPCGod", "GLOBAL", 1)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_CorwinPCGod", "GLOBAL", 1)
 		~
-		EXTERN XACORWIJ XA_ChoiceThankYou
+		EXTERN XACOR25J XA_ChoiceThankYou
 		
 		
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			Global("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
 			!Global("XA_CorwinPCGod", "GLOBAL", 1)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_CorwinPCGod", "GLOBAL", 1)
 		~ 
-		EXTERN XACORWIJ XA_ChoiceThankYouChild
+		EXTERN XACOR25J XA_ChoiceThankYouChild
 		
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			Global("XA_CorwinTwins", "GLOBAL", 1)
 			!Global("XA_CorwinPCGod", "GLOBAL", 1)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_CorwinPCGod", "GLOBAL", 1)
 		~ 
-		EXTERN XACORWIJ XA_ChoiceThankYouTwins
+		EXTERN XACOR25J XA_ChoiceThankYouTwins
 	END
 	
 	EXTEND_BOTTOM FINSOL01 31 /* Player chose godhood - good */
 		
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			!Global("XA_CorwinPCGod", "GLOBAL", 1)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_CorwinPCGod", "GLOBAL", 1)
 		~
-		EXTERN XACORWIJ XA_ChoiceThankYou
+		EXTERN XACOR25J XA_ChoiceThankYou
 		
 		
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			Global("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
 			!Global("XA_CorwinPCGod", "GLOBAL", 1)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_CorwinPCGod", "GLOBAL", 1)
 		~ 
-		EXTERN XACORWIJ XA_ChoiceThankYouChild
+		EXTERN XACOR25J XA_ChoiceThankYouChild
 		
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			Global("XA_CorwinTwins", "GLOBAL", 1)
 			!Global("XA_CorwinPCGod", "GLOBAL", 1)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_CorwinPCGod", "GLOBAL", 1)
 		~ 
-		EXTERN XACORWIJ XA_ChoiceThankYouTwins
+		EXTERN XACOR25J XA_ChoiceThankYouTwins
 	END
 	
 	EXTEND_BOTTOM FINSOL01 32 /* Player chose to remain mortal */
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			!Global("XA_CorwinPCNotGod", "GLOBAL", 1)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_CorwinPCNotGod", "GLOBAL", 1)
 		~
-		EXTERN XACORWIJ XA_StayMortal
+		EXTERN XACOR25J XA_StayMortal
 	END
 	
 	APPEND FINSOL01
@@ -401,7 +401,7 @@
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
 			~ THEN
-			EXTERN XACORWIJ XA_Twins2
+			EXTERN XACOR25J XA_Twins2
 		END
 		
 		IF ~~ THEN BEGIN XA_Twins3 
@@ -411,7 +411,7 @@
 			DO ~
 				SetGlobal("XA_CorwinTwins", "GLOBAL", 1)
 			~
-			EXTERN XACORWIJ XA_Twins4
+			EXTERN XACOR25J XA_Twins4
 		END
 		
 		IF ~~ THEN BEGIN XA_Twins3A
@@ -790,7 +790,7 @@
 			IsValidForPartyDialogue("XACORWIN")
 			Global("XA_MeetIllasera", "GLOBAL", 1)
 		~ THEN
-		EXTERN XACORWIJ XA_SARMEL01_68
+		EXTERN XACOR25J XA_SARMEL01_68
 	END
 
 	APPEND SARMEL01
@@ -798,7 +798,7 @@
 			SAY @48 /* ~Oh, dear! I trust your daughter is alright?~ */
 			
 			IF ~~ THEN
-			EXTERN XACORWIJ XA_SARMEL01_68_3
+			EXTERN XACOR25J XA_SARMEL01_68_3
 		END
 		
 		IF ~~ THEN BEGIN XA_SARMEL01_68_4
@@ -815,7 +815,7 @@ EXTEND_BOTTOM SARPROVF 0 /* OK */
 
 	IF ~  
 		PartyGoldGT(49)
-		Global("XA_CorwinRomanceActive","GLOBAL",2)
+		Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 		IsValidForPartyDialogue("XACORWIN")
 		!Global("ToldVampires","GLOBAL",1)
 		!GlobalGT("XA_CorwinCleansed", "GLOBAL", 0)
@@ -823,11 +823,11 @@ EXTEND_BOTTOM SARPROVF 0 /* OK */
 	DO ~
 		TakePartyGold(50)
 	~ 
-	EXTERN ~XACORWIJ~ XA_SARPROVF_0
+	EXTERN ~XACOR25J~ XA_SARPROVF_0
 	
 	IF ~  
 		PartyGoldGT(49)
-		Global("XA_CorwinRomanceActive","GLOBAL",2)
+		Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 		IsValidForPartyDialogue("XACORWIN")
 		!Global("ToldVampires","GLOBAL",1)
 		GlobalGT("XA_CorwinCleansed", "GLOBAL", 0)
@@ -835,65 +835,65 @@ EXTEND_BOTTOM SARPROVF 0 /* OK */
 	DO ~
 		TakePartyGold(50)
 	~ 
-	EXTERN ~XACORWIJ~ XA_SARPROVF_0_BodhiBite
+	EXTERN ~XACOR25J~ XA_SARPROVF_0_BodhiBite
 END
 
 ADD_TRANS_TRIGGER SARPROVF 5
 ~
 	OR(2)
 		!IsValidForPartyDialogue("XACORWIN")
-		!Global("XA_CorwinRomanceActive","GLOBAL",2)
+		!Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 ~
 DO 0
 
 EXTEND_BOTTOM SARPROVF 5 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_CorwinRomanceActive","GLOBAL",2)
+		Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 		GlobalGT("XA_CorwinCleansed", "GLOBAL", 0)
 	~ THEN
-	EXTERN ~XACORWIJ~ XA_SARPROVF_0_BodhiBite
+	EXTERN ~XACOR25J~ XA_SARPROVF_0_BodhiBite
 	
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_CorwinRomanceActive","GLOBAL",2)
+		Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 		!GlobalGT("XA_CorwinCleansed", "GLOBAL", 0)
 	~ THEN
-	EXTERN ~XACORWIJ~ XA_SARPROVF_0
+	EXTERN ~XACOR25J~ XA_SARPROVF_0
 END
 //}
 
 //{ SARPRO01.D
 EXTEND_BOTTOM SARPRO01 11 /* OK */
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN REPLY @52  /* ~That sounds reasonable. You've got a deal.~*/
-	EXTERN XACORWIJ XA_SARPRO01_11
+	EXTERN XACOR25J XA_SARPRO01_11
 END
 //}
 
 //{ HGWRA01.D
 EXTEND_BOTTOM HGWRA01 18 /* OK */
 	IF ~
-		Global("XA_CorwinRomanceActive","GLOBAL",2)
+		Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN GOTO XA_Corwin
 END
 
 EXTEND_BOTTOM HGWRA01 24 /* OK */
 	IF ~
-		Global("XA_CorwinRomanceActive","GLOBAL",2)
+		Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN
-	EXTERN XACORWIJ XA_Corwin_Wraith2
+	EXTERN XACOR25J XA_Corwin_Wraith2
 END
 
 APPEND HGWRA01
 	IF ~~ THEN BEGIN XA_Corwin
 		SAY @53 /* ~What of the inevitable pain you must give to the one you love? The woman you call "Schael."~ */
 		IF ~~ THEN
-		EXTERN XACORWIJ XA_Corwin_Wraith
+		EXTERN XACOR25J XA_Corwin_Wraith
 	END
 	
 	IF ~~ THEN BEGIN XA_Corwin_Wraith3
@@ -919,28 +919,28 @@ EXTEND_TOP SARVOLO 9 /* OK */
 
 	IF ~
 		InParty("XACORWIN")
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_MeetIllasera", "GLOBAL", 1)
 	~ THEN REPLY @56 /* ~Tell me about Schael.~*/
 	GOTO XA_Schael_Illasera
 	
 	IF ~
 		InParty("XACORWIN")
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_MeetIllasera", "GLOBAL", 1)
 	~ THEN REPLY @57 /* ~Tell me about Corwin.~*/
 	GOTO XA_Corwin_Illasera
 	
 	IF ~
 		InParty("XACORWIN")
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("XA_MeetIllasera", "GLOBAL", 1)
 	~ THEN REPLY @56 /* ~Tell me about Schael.~*/
 	GOTO XA_Schael
 	
 	IF ~
 		InParty("XACORWIN")
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("XA_MeetIllasera", "GLOBAL", 1)
 	~ THEN REPLY @57 /* ~Tell me about Corwin.~*/
 	GOTO XA_Corwin
@@ -985,7 +985,7 @@ APPEND SARVOLO
 		DO ~
 			SetGlobal("XA_CorwinVolo", "LOCALS", 1)
 		~
-		EXTERN XACORWIJ XA_Corwin_Sarvolo
+		EXTERN XACOR25J XA_Corwin_Sarvolo
 	END
 	
 	IF ~~ THEN BEGIN XA_Schael_Illasera
@@ -1002,7 +1002,7 @@ APPEND SARVOLO
 		DO ~
 			SetGlobal("XA_CorwinVolo", "LOCALS", 1)
 		~
-		EXTERN XACORWIJ XA_Schael_Sarvolo		
+		EXTERN XACOR25J XA_Schael_Sarvolo		
 	END
 	
 	IF ~~ THEN BEGIN XA_Corwin
@@ -1019,7 +1019,7 @@ APPEND SARVOLO
 		DO ~
 			SetGlobal("XA_CorwinVolo", "LOCALS", 1)
 		~
-		EXTERN XACORWIJ XA_Corwin_Sarvolo
+		EXTERN XACOR25J XA_Corwin_Sarvolo
 	END
 	
 	IF ~~ THEN BEGIN XA_Schael
@@ -1036,7 +1036,7 @@ APPEND SARVOLO
 		DO ~
 			SetGlobal("XA_CorwinVolo", "LOCALS", 1)
 		~
-		EXTERN XACORWIJ XA_Schael_Sarvolo		
+		EXTERN XACOR25J XA_Schael_Sarvolo		
 	END
 	
 	IF ~~ THEN BEGIN XA_Corwin_Sarvolo_END
@@ -1065,8 +1065,8 @@ APPEND SARVOLO
 END
 //}
 
-//{ RASAADJ
-APPEND RASAADJ
+//{ RASAA25J
+APPEND RASAA25J
 	IF ~~ THEN BEGIN XA_AmkethranCourier_END
 		SAY @74 /* ~Major, <CHARNAME> — long ago I rescued a courier based out of this village. He had been beset by brigands on the roads northwest of here. His name was Hamza. If he is here, he will surely help us.~ */
 		
@@ -1076,8 +1076,8 @@ APPEND RASAADJ
 END
 //}
 
-//{ NEERAJ
-APPEND NEERAJ
+//{ NEERA25J
+APPEND NEERA25J
 	IF ~~ THEN BEGIN XA_BenoBoom
 		SAY @75 /* ~Eek! Oh, ewwww! Get it off me! Aah! You're covered in it worse than me!~ */
 		
@@ -1095,13 +1095,13 @@ APPEND NEERAJ
 		SAY @233
 		
 		IF ~~ THEN
-		EXTERN XACORWIJ XA_TimeToGrieveLater
+		EXTERN XACOR25J XA_TimeToGrieveLater
 	END
 END
 //}
 
-//{ AERIEJ
-APPEND AERIEJ
+//{ AERIE25J
+APPEND AERIE25J
 	IF ~
 		Global("XA_AvernusChat", "GLOBAL", 1)
 	~ THEN BEGIN XA_AvernusEntry
@@ -1119,7 +1119,7 @@ APPEND AERIEJ
 		DO ~
 			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
 		~
-		EXTERN XACORWIJ XA_AvernusEntry
+		EXTERN XACOR25J XA_AvernusEntry
 		
 		IF ~
 			IsValidForPartyDialogue("Keldorn")
@@ -1127,7 +1127,7 @@ APPEND AERIEJ
 		DO ~
 			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
 		~
-		EXTERN KELDORJ XA_AvernusEntry
+		EXTERN KELDO25J XA_AvernusEntry
 	END
 
 	IF ~~ THEN BEGIN XA_BenoBoom
@@ -1154,7 +1154,7 @@ APPEND AERIEJ
 		SAY @82 /* ~The city's been completely d-destroyed... all those people...~ */
 		
 		IF ~~ THEN
-		EXTERN XACORWIJ XA_TimeToGrieveLater
+		EXTERN XACOR25J XA_TimeToGrieveLater
 	END
 	
 	IF ~~ THEN BEGIN XA_CorwinPregnantInitial_Aerie
@@ -1168,7 +1168,7 @@ APPEND AERIEJ
 		DO ~
 			SetGlobal("XA_CorwinPregnantAerie", "GLOBAL", 1)
 		~
-		EXTERN XACORWIJ XA_CorwinPregnantInitial_Shh
+		EXTERN XACOR25J XA_CorwinPregnantInitial_Shh
 	END
 	
 	//{ Dialog J-74
@@ -1253,7 +1253,7 @@ APPEND SAREV25J
 		DO ~
 			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
 		~
-		EXTERN XACORWIJ XA_AvernusEntry
+		EXTERN XACOR25J XA_AvernusEntry
 		
 		IF ~
 			IsValidForPartyDialogue("Keldorn")
@@ -1261,7 +1261,7 @@ APPEND SAREV25J
 		DO ~
 			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
 		~
-		EXTERN KELDORJ XA_AvernusEntry
+		EXTERN KELDO25J XA_AvernusEntry
 		
 		IF ~
 			IsValidForPartyDialogue("Aerie")
@@ -1269,7 +1269,7 @@ APPEND SAREV25J
 		DO ~
 			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
 		~
-		EXTERN AERIEJ XA_AvernusEntry
+		EXTERN AERIE25J XA_AvernusEntry
 	
 	END
 
@@ -1277,25 +1277,25 @@ APPEND SAREV25J
 		SAY @99 /* ~I realize now that I was wrong. Your skill in battle is considerable, as is your ability to lead others.~ */
 		
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN 
 		GOTO XA_SarevokBanter3_Romance_Chain
 		
 		IF ~
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN 
 		GOTO XA_SarevokBanter3_NonRomance_Chain
 	END
 END
 //}
 
-//{ IMOEN2J
-APPEND IMOEN2J
+//{ IMOEN25J
+APPEND IMOEN25J
 	IF ~~ THEN BEGIN XA_SaradushDestroyed
 		SAY @101  /* ~The city's been completely destroyed... all those people...~*/
 		
 		IF ~~ THEN
-		EXTERN XACORWIJ XA_TimeToGrieveLater
+		EXTERN XACOR25J XA_TimeToGrieveLater
 	END
 	
 	//{ Dialog J-73
@@ -1384,7 +1384,7 @@ APPEND IMOEN2J
 END
 //}
 
-//{ JAHEIRAJ
+//{ JAHEI25J
 	IF ~~ THEN BEGIN XA_BenoBoom
 		SAY @114 /* ~You're covered as well! No, don't put your hands on me, they're filthy!~ */
 		
@@ -1409,7 +1409,7 @@ END
 		SAY @101  /* ~The city's been completely destroyed... all those people...~*/
 		
 		IF ~~ THEN
-		EXTERN XACORWIJ XA_TimeToGrieveLater
+		EXTERN XACOR25J XA_TimeToGrieveLater
 	END
 	
 	IF ~~ THEN BEGIN XA_CorwinPregnantInitial_Jaheira
@@ -1423,7 +1423,7 @@ END
 		DO ~
 			SetGlobal("XA_CorwinPregnantJaheira", "GLOBAL", 1)
 		~
-		EXTERN XACORWIJ XA_CorwinPregnantInitial_Shh
+		EXTERN XACOR25J XA_CorwinPregnantInitial_Shh
 	END
 	
 	//{ Dialog J-75
@@ -1509,7 +1509,7 @@ EXTEND_BOTTOM SAREV25A 10 /* OK*/
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN 
-	EXTERN XACORWIJ XA_SAREV_10
+	EXTERN XACOR25J XA_SAREV_10
 END
 
 ADD_TRANS_TRIGGER SAREV25A 48
@@ -1525,7 +1525,7 @@ EXTEND_BOTTOM SAREV25A 48
 END
 //}
 
-//{ KELDORJ
+//{ KELDO25J
 IF ~
 		Global("XA_AvernusChat", "GLOBAL", 1)
 	~ THEN BEGIN XA_AvernusEntry
@@ -1543,7 +1543,7 @@ IF ~
 		DO ~
 			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
 		~
-		EXTERN XACORWIJ XA_AvernusEntry
+		EXTERN XACOR25J XA_AvernusEntry
 	END
 //}
 //{ GORODR1
@@ -1551,21 +1551,21 @@ EXTEND_BOTTOM GORODR1 17 //OK
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 	~
-	THEN EXTERN XACORWIJ XA_GORODR1_17_18
+	THEN EXTERN XACOR25J XA_GORODR1_17_18
 END
 
 EXTEND_BOTTOM GORODR1 18 //OK
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 	~
-	THEN EXTERN XACORWIJ XA_GORODR1_17_18
+	THEN EXTERN XACOR25J XA_GORODR1_17_18
 END
 
 EXTEND_BOTTOM GORODR1 34 //OK
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 	~
-	THEN EXTERN XACORWIJ XA_GORODR1_34_44
+	THEN EXTERN XACOR25J XA_GORODR1_34_44
 END
 
 EXTEND_TOP GORODR1 39 //OK	
@@ -1577,7 +1577,7 @@ EXTEND_TOP GORODR1 39 //OK
 			IsValidForPartyDialogue("Aerie")
 			IsValidForPartyDialogue("Anomen")
 			IsValidForPartyDialogue("Imoen2")
-			IsValidForPartyDialogue("Korgan")
+			IsValidForPartyDialogue("KORGA25J")
 			IsValidForPartyDialogue("Keldorn")
 			IsValidForPartyDialogue("Nalia")
 			IsValidForPartyDialogue("Minsc")
@@ -1605,7 +1605,7 @@ EXTEND_BOTTOM GORODR1 44 //OK
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 	~
-	THEN EXTERN XACORWIJ XA_GORODR1_34_44
+	THEN EXTERN XACOR25J XA_GORODR1_34_44
 END
 
 
@@ -1719,7 +1719,7 @@ CHAIN
 		
 		== KORGA25J
 		IF ~
-			IsValidForPartyDialogue("KORGAN")
+			IsValidForPartyDialogue("KORGA25J")
 		~
 		@142 /* ~Death, I say. Me axe be waitin' to taste their squirrely innards.~ */
 		DO ~

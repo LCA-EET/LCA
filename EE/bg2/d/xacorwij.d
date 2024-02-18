@@ -3705,7 +3705,7 @@ END
 IF ~~ THEN BEGIN XAAKiss
 	SAY @73 /* Come here, hero -~ */
 	IF ~
-		Global("XA_CorwinPromoted", "GLOBAL", 1)
+		Global("XA_BeenToPocketPlane", "GLOBAL", 1)
 	~ THEN
 	DO ~
 		SetGlobal("XA_CorwinLoveTOB", "GLOBAL", 1)
@@ -3713,7 +3713,7 @@ IF ~~ THEN BEGIN XAAKiss
 	GOTO XAAKissChain
 	
 	IF ~
-		GlobalLT("XA_CorwinPromoted", "GLOBAL", 1)
+		GlobalLT("XA_BeenToPocketPlane", "GLOBAL", 1)
 	~ THEN
 	DO ~
 		SetGlobal("XA_CorwinLoveBG2", "GLOBAL", 1)

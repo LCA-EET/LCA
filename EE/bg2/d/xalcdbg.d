@@ -33,10 +33,16 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @5034 /* ~Parameter Check.~ */
 		GOTO XA_BG2_ParameterCheck
 		
-		IF ~~ THEN REPLY @5075
+		IF ~~ THEN REPLY @5075 /* ~Interaction Test~*/
 		GOTO XA_BG2_InteractionTest
 		
-		IF ~~ THEN REPLY @5077
+		IF ~~ THEN REPLY @5082 /* ~Perform BG2 Final Save.~*/
+		DO ~
+			FinalSave()
+		~
+		GOTO XA_BG2_Debug
+		
+		IF ~~ THEN REPLY @5077 /* ~Music Test~*/
 		GOTO XA_BG2_MusicTest
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
@@ -57,25 +63,25 @@ APPEND ~XALCDBG~
 		
 		IF ~~ THEN REPLY @5078/* ~Ducal Palace (xamu00)~ */
 		DO ~
-			PlaySong(000000)
+			PlaySong(1000)
 		~
 		GOTO XA_BG2_MusicTest
 		
 		IF ~~ THEN REPLY @5079/* ~SoD Track 1 (xamu01)~*/
 		DO ~
-			PlaySong(000001)
+			PlaySong(1001)
 		~
 		GOTO XA_BG2_MusicTest
 		
 		IF ~~ THEN REPLY @5080/* ~Corwin Romance A (xamu02)~*/
 		DO ~
-			PlaySong(000002)
+			PlaySong(1002)
 		~
 		GOTO XA_BG2_MusicTest
 		
 		IF ~~ THEN REPLY @5081/*~Corwin Romance B (xamu03)~ */
 		DO ~
-			PlaySong(000003)
+			PlaySong(1003)
 		~
 		GOTO XA_BG2_MusicTest
 	

@@ -70,7 +70,7 @@ IF ~
 	DO ~
 		SetGlobal("XA_AerieAshatiel", "GLOBAL", 1)
 	~
-	EXTERN AERIEJ XA_AerieAshatielChain
+	EXTERN AERIE25J XA_AerieAshatielChain
 END
 
 IF ~
@@ -339,23 +339,23 @@ IF ~
 	GOTO XA_WhyLoyal
 END
 
-CHAIN AERIEJ XA_AerieAshatielChain
+CHAIN AERIE25J XA_AerieAshatielChain
 	@43 /* ~In life, you were one of the avariel, were you not? You must have been so beautiful...~*/ 
 	== XAASHASP
 	@44 /* ~I was... I see you bear the markings of our kind as well, but where are your wings?~*/
-	== AERIEJ
+	== AERIE25J
 	@45 /* ~I was c-captured and imprisoned... They became infected and they needed to be cut off...~*/
 	== XAASHASP
 	@46 /* ~Oh, dear. I'm sorry that you had to endure such suffering. What is your name?~*/
-	== AERIEJ
+	== AERIE25J
 	@47  /* ~Thank you... my name is Aerie. I used to be so bitter about what happened.~*/
 	== XAASHASP
 	@48 /*~Used to? What changed?~*/
-	== AERIEJ
+	== AERIE25J
 	@49 /* ~Well... if I hadn't been captured, I'd never have met <CHARNAME> and <PRO_HISHER> friends. I would've never seen the world in the way I do now, or have had the opportunity to help so many people...~ */
 	== XAASHASP
 	@50 /*~That's almost exactly how I felt when I met Caelar. You see, my husband was killed by the Bhaalspawn Sarevok. I was so full of hatred and bitterness. Caelar helped me to find a new purpose in life. Even though things ended poorly for us... I'm still grateful for the hope that she gave me.~*/
-	== AERIEJ
+	== AERIE25J
 	@53 /* ~Oh... the pain of losing a loved one... my poor mother. I wonder if she is still out there, looking for me....~*/
 	= @51 /* ~T-thank you for sharing your experience with me, Ashatiel. I hope that you and your comrades are able to find r-release.~*/
 	== XAASHASP

@@ -1759,7 +1759,7 @@ END
 			SetInterrupt(FALSE)
 			SetGlobal("XA_AloneWithPhaere", "GLOBAL", 1)
 			SetGlobal("XA_PhaereTalk", "GLOBAL", 1)
-			PlaySong(142)
+			PlaySong(1001)
 			StartDialogue("XACORWIJ", PLAYER1)
 			SetInterrupt(TRUE)
 	END
@@ -1936,7 +1936,7 @@ END
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			PlaySong(146)
+			PlaySong(1003)
 			//Dialog J-51
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)
@@ -2000,7 +2000,7 @@ END
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_CorwinSex2_Init", "GLOBAL", 1)
-			PlaySong(146)
+			PlaySong(1003)
 			//Dialog J-46
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)
@@ -2102,7 +2102,7 @@ END
 		RESPONSE #100
 			//Dialog P-6
 			SetInterrupt(FALSE)
-			PlaySong(146)
+			PlaySong(1002)
 			Wait(1)
 			StartDialogNoSet(Player1)
 			SetInterrupt(TRUE)
@@ -4403,7 +4403,7 @@ END
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			ActionOverride(Player1, FaceObject("XACORWIN"))
-			PlaySong(146)
+			PlaySong(1002)
 			// Dialog I-1
 			StartDialog("XACORWIN", Player1)
 			SetInterrupt(TRUE)
@@ -4471,7 +4471,7 @@ END
 			SetInterrupt(FALSE)
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
 			IncrementGlobal("XA_Banter_CorwinPlayer", "GLOBAL", 1)
-			PlaySong(146)
+			PlaySong(1003)
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)
 	END
@@ -4520,7 +4520,7 @@ END
 			SetInterrupt(FALSE)
 			SetGlobal("XA_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
 			SetGlobal("XA_ResetBanterTimer", "LOCALS", 1)
-			PlaySong(146)
+			PlaySong(1003)
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)
 	END
