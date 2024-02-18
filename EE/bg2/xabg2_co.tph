@@ -467,3 +467,15 @@ You sense there is little Schael Corwin would not do for her family or for the F
 		EXTEND_TOP ~xacorscr.bcs~ 	~%MOD_FOLDER%/bg2/baf/xastats.baf~
 	END
 //}
+
+//{ Music
+	//{ SoD Track 1
+		ADD_MUSIC xamu01	~%MOD_FOLDER%/bg2/mus/xamu01.mus~
+		COPY ~%MOD_FOLDER%/bg2/mus/xamu01a.acm~ ~MUSIC/xamu01/xamu01a.acm~
+	//}
+	
+	//{ SoD Track 2 (Corwin Romance, A)
+		ADD_MUSIC xamu02	~%MOD_FOLDER%/bg2/mus/xamu02.mus~
+		COPY ~%MOD_FOLDER%/bg2/mus/xamu02a.acm~ ~MUSIC/xamu01/xamu02a.acm~
+	//}
+//}

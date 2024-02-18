@@ -361,5 +361,4 @@ EXTEND_BOTTOM ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpaEE.baf~
 		ADD_MUSIC xamu00	~%MOD_FOLDER%/bg2/mus/xamu00.mus~
 		COPY ~%MOD_FOLDER%/bg2/mus/xamu00a.acm~ ~MUSIC/xamu00/xamu00a.acm~
 	//}
-	
 //}
