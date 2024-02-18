@@ -36,8 +36,51 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @5075
 		GOTO XA_BG2_InteractionTest
 		
+		IF ~~ THEN REPLY @5077
+		GOTO XA_BG2_MusicTest
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 10
+		
+		IF ~~ THEN REPLY @3012 /*~Exit.~ */
+		GOTO 6
+		
+		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
+		DO ~
+			DestroySelf()
+		~
+		EXIT
+	END
+
+	IF ~~ THEN BEGIN XA_BG2_MusicTest
+		SAY @5077 /* Music Test~*/
+		
+		IF ~~ THEN REPLY @5078/* ~Ducal Palace (xamu00)~ */
+		DO ~
+			PlaySong(000000)
+		~
+		GOTO XA_BG2_MusicTest
+		
+		IF ~~ THEN REPLY @5079/* ~SoD Track 1 (xamu01)~*/
+		DO ~
+			PlaySong(000001)
+		~
+		GOTO XA_BG2_MusicTest
+		
+		IF ~~ THEN REPLY @5080/* ~Corwin Romance A (xamu02)~*/
+		DO ~
+			PlaySong(000002)
+		~
+		GOTO XA_BG2_MusicTest
+		
+		IF ~~ THEN REPLY @5081/*~Corwin Romance B (xamu03)~ */
+		DO ~
+			PlaySong(000003)
+		~
+		GOTO XA_BG2_MusicTest
+	
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_BG2_Debug
 		
 		IF ~~ THEN REPLY @3012 /*~Exit.~ */
 		GOTO 6
