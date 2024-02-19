@@ -1,3 +1,4 @@
+APPEND ~XACOR25B~
 //{ Dialog B-1
 	IF ~
 		Global("XA_CorwinAnomenTalk", "LOCALS", 1)
@@ -2960,3 +2961,5 @@ END
 	
 	//}
 //}
+
+END

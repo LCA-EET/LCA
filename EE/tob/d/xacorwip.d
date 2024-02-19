@@ -1,4 +1,4 @@
-BEGIN ~XACOR25P~
+APPEND ~XACOR25P~
 
 IF ~
 	Race(Player1, LICH)
@@ -197,3 +197,4 @@ IF ~~ THEN BEGIN XA_Threat4_NoJoin
 END
 
 //}
+END

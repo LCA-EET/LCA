@@ -1,4 +1,4 @@
-BEGIN ~XACOR25J~
+APPEND ~XACOR25J~
 //{ Killed Wraith - CC OK
 	IF ~
 		Global("XA_RohmaWraith", "GLOBAL", 3)
@@ -2214,3 +2214,5 @@ CHAIN XACOR25J XA_GoodbyeChain
 	@1720 /* ~That's very kind of you. Thank you.~*/
 	//}
 END XACOR25J XA_GoodbyeChainEnd
+
+END
