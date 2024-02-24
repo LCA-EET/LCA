@@ -134,7 +134,7 @@ IF ~~ THEN BEGIN XA_PlayerQuestion
 	GOTO XA_Caelar
 
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @18 /* ~Do Schael and I have a future together?~ */
 	GOTO XA_FutureRomance
 	

@@ -62,7 +62,7 @@ IF ~~ THEN BEGIN XA_Greeting3
 	GOTO XA_JhassoEnd
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN GOTO XA_JhassoPlayerRomance
 	
 	IF ~
@@ -73,7 +73,7 @@ IF ~~ THEN BEGIN XA_Greeting3
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 		Global("XA_JhassoCorwinGreeting", "LOCALS", 1)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN GOTO XA_JhassoCorwinRomance
 END
 
@@ -147,11 +147,11 @@ IF ~~ THEN BEGIN XA_JhassoCorwinFamilyEnd
 	SAY @31 /* ~I'm glad to hear it.~ */
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN GOTO XA_JhassoEnd
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN GOTO XA_JhassoCorwinRomance
 END
 

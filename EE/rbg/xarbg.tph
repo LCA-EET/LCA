@@ -1,6 +1,8 @@
 PRINT @3000  /* ~Processing BG1 changes...~ */
 
+/*
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/d~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 
 //{ Script Extensions
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~
@@ -10,222 +12,316 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/d~
 
 //{ 2da
 	COPY ~%MOD_FOLDER%/rbg/2da/xabad1.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3013)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3012)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3012)
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4098)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@4097)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@4097)
 	
 	COPY ~%MOD_FOLDER%/rbg/2da/xabad2.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3014)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3012)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3012)
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4099)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@4097)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@4097)
 	
 	COPY ~%MOD_FOLDER%/rbg/2da/xabad3.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3015)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3012)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3012)
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4100)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@4097)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@4097)
 	
 	COPY ~%MOD_FOLDER%/rbg/2da/xabg.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3008)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3006)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3006)
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4103)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@4101)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@4101)
 	
 	COPY ~%MOD_FOLDER%/rbg/2da/xabgrom.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3007)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3006)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3006)
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4102)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@4101)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@4101)
 	
 	COPY ~%MOD_FOLDER%/rbg/2da/xadinner.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3009)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3010)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3010)
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4104)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@4105)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@4105)
 	
 	COPY ~%MOD_FOLDER%/rbg/2da/xadinrom.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3011)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3010)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3010)
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4106)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@4105)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@4105)
 	
 	COPY ~%MOD_FOLDER%/rbg/2da/xasara1.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3001)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3002)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3002)
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4108)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@4107)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@4107)
 	
 	COPY ~%MOD_FOLDER%/rbg/2da/xasara2.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3003)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3002)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3002)
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4109)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@4107)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@4107)
 	
 	COPY ~%MOD_FOLDER%/rbg/2da/xasara3.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3004)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3002)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3002)
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4110)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@4107)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@4107)
 	
 	COPY ~%MOD_FOLDER%/rbg/2da/xasara4.2da~ ~override~
-	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@3005)
-	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@3002)
-	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@3002)
+	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4111)
+	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@4107)
+	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@4107)
 //}
 
-	COPY ~%MOD_FOLDER%/bg2/cre/xacrug01.cre~ ~override~
-	SAY NAME1 @3040
-	SAY NAME2 @3040
+	COPY ~%MOD_FOLDER%/rbg/cre/xa800m.cre~ ~override~
+	SAY NAME1 @4062
+	SAY NAME2 @4062
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacrug02.cre~ ~override~
-	SAY NAME1 @3040
-	SAY NAME2 @3040
+	COPY ~%MOD_FOLDER%/rbg/cre/xa800w.cre~ ~override~
+	SAY NAME1 @4060
+	SAY NAME2 @4060
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacrug03.cre~ ~override~
-	SAY NAME1 @3040
-	SAY NAME2 @3040
+	COPY ~%MOD_FOLDER%/rbg/cre/xaaasim.cre~ ~override~
+	SAY NAME1 @4063
+	SAY NAME2 @4063
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacrug04.cre~ ~override~
-	SAY NAME1 @3040
-	SAY NAME2 @3040
+	COPY ~%MOD_FOLDER%/rbg/cre/xacrowd.cre~ ~override~
+	SAY NAME1 @4088
+	SAY NAME2 @4088
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacrug05.cre~ ~override~
-	SAY NAME1 @3040
-	SAY NAME2 @3040
+	COPY ~%MOD_FOLDER%/rbg/cre/xaacrw1.cre~ ~override~
+	SAY NAME1 @4088
+	SAY NAME2 @4088
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacrug06.cre~ ~override~
-	SAY NAME1 @3040
-	SAY NAME2 @3040
+	COPY ~%MOD_FOLDER%/rbg/cre/xaacrw2.cre~ ~override~
+	SAY NAME1 @4088
+	SAY NAME2 @4088
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacrug07.cre~ ~override~
-	SAY NAME1 @3040
-	SAY NAME2 @3040
+	COPY ~%MOD_FOLDER%/rbg/cre/xaacrw3.cre~ ~override~
+	SAY NAME1 @4088
+	SAY NAME2 @4088
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacrug08.cre~ ~override~
-	SAY NAME1 @3040
-	SAY NAME2 @3040
+	COPY ~%MOD_FOLDER%/rbg/cre/xaacrw4.cre~ ~override~
+	SAY NAME1 @4088
+	SAY NAME2 @4088
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacrug09.cre~ ~override~
-	SAY NAME1 @3040
-	SAY NAME2 @3040
+	COPY ~%MOD_FOLDER%/rbg/cre/xaacrw5.cre~ ~override~
+	SAY NAME1 @4088
+	SAY NAME2 @4088
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacrus01.cre~ ~override~
-	SAY NAME1 @3041
-	SAY NAME2 @3041
+	COPY ~%MOD_FOLDER%/rbg/cre/xaalyth.cre~ ~override~
+	SAY NAME1 @4069
+	SAY NAME2 @4069
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacrus02.cre~ ~override~
-	SAY NAME1 @3041
-	SAY NAME2 @3041
+	COPY ~%MOD_FOLDER%/rbg/cre/xaangelo.cre~ ~override~
+	SAY NAME1 @4068
+	SAY NAME2 @4068
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacrus03.cre~ ~override~
-	SAY NAME1 @3041
-	SAY NAME2 @3041
+	COPY ~%MOD_FOLDER%/rbg/cre/xaaudam.cre~ ~override~
+	SAY NAME1 @4067
+	SAY NAME2 @4067
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacrus04.cre~ ~override~
-	SAY NAME1 @3041
-	SAY NAME2 @3041
+	COPY ~%MOD_FOLDER%/rbg/cre/xaaudam2.cre~ ~override~
+	SAY NAME1 @4067
+	SAY NAME2 @4067
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacrus05.cre~ ~override~
-	SAY NAME1 @3041
-	SAY NAME2 @3041
+	COPY ~%MOD_FOLDER%/rbg/cre/xaaudam3.cre~ ~override~
+	SAY NAME1 @4067
+	SAY NAME2 @4067
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacrus06.cre~ ~override~
-	SAY NAME1 @3041
-	SAY NAME2 @3041
+	COPY ~%MOD_FOLDER%/rbg/cre/xabelt.cre~ ~override~
+	SAY NAME1 @4066
+	SAY NAME2 @4066
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacrus07.cre~ ~override~
-	SAY NAME1 @3041
-	SAY NAME2 @3041
+	COPY ~%MOD_FOLDER%/rbg/cre/xabence.cre~ ~override~
+	SAY NAME1 @4065
+	SAY NAME2 @4065
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacrus08.cre~ ~override~
-	SAY NAME1 @3041
-	SAY NAME2 @3041
+	COPY ~%MOD_FOLDER%/rbg/cre/xabeno.cre~ ~override~
+	SAY NAME1 @4064
+	SAY NAME2 @4064
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacrus09.cre~ ~override~
-	SAY NAME1 @3041
-	SAY NAME2 @3041
+	COPY ~%MOD_FOLDER%/rbg/cre/xabeno2.cre~ ~override~
+	SAY NAME1 @4064
+	SAY NAME2 @4064
+	
+	COPY ~%MOD_FOLDER%/rbg/cre/xabrevlk.cre~ ~override~
+	SAY NAME1 @4070
+	SAY NAME2 @4070
+	
+	COPY ~%MOD_FOLDER%/rbg/cre/xabrielb.cre~ ~override~
+	SAY NAME1 @4071
+	SAY NAME2 @4071
+	
+	COPY ~%MOD_FOLDER%/rbg/cre/xacc3.cre~ ~override~
+	SAY NAME1 @2010
+	SAY NAME2 @2010
+	
+	COPY ~%MOD_FOLDER%/rbg/cre/xacell.cre~ ~override~
+	
+	COPY ~%MOD_FOLDER%/rbg/cre/xachick.cre~ ~override~
+	SAY NAME1 @4051
+	SAY NAME2 @4051
+	
+	
+	
+	COPY ~%MOD_FOLDER%/rbg/cre/xacomm.cre~ ~override~
+	SAY NAME1 @4060
+	SAY NAME2 @4060
+	
+	COPY ~%MOD_FOLDER%/rbg/cre/xacomm1.cre~ ~override~
+	SAY NAME1 @4060
+	SAY NAME2 @4060
+	
+	COPY ~%MOD_FOLDER%/rbg/cre/xacomw.cre~ ~override~
+	SAY NAME1 @4060
+	SAY NAME2 @4060
+	
+	COPY ~%MOD_FOLDER%/rbg/cre/xacomw1.cre~ ~override~
+	SAY NAME1 @4060
+	SAY NAME2 @4060
+	
+	COPY ~%MOD_FOLDER%/rbg/cre/xacook.cre~ ~override~
+	SAY NAME1 @4061
+	SAY NAME2 @4061
+
+	
 		
-	COPY ~%MOD_FOLDER%/bg2/cre/xacurato.cre~ ~override~
-	SAY NAME1 @3019
-	SAY NAME2 @3019
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacoal01.cre~ ~override~
-	SAY NAME1 @3042
-	SAY NAME2 @3042
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacoal02.cre~ ~override~
-	SAY NAME1 @3042
-	SAY NAME2 @3042
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacoal03.cre~ ~override~
-	SAY NAME1 @3042
-	SAY NAME2 @3042
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacoal04.cre~ ~override~
-	SAY NAME1 @3042
-	SAY NAME2 @3042
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacoal05.cre~ ~override~
-	SAY NAME1 @3042
-	SAY NAME2 @3042
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacoal06.cre~ ~override~
-	SAY NAME1 @3042
-	SAY NAME2 @3042
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacoal07.cre~ ~override~
-	SAY NAME1 @3042
-	SAY NAME2 @3042
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacoal08.cre~ ~override~
-	SAY NAME1 @3042
-	SAY NAME2 @3042
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacoal09.cre~ ~override~
-	SAY NAME1 @3042
-	SAY NAME2 @3042
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacomm.cre~ ~override~
-	SAY NAME1 @3044
-	SAY NAME2 @3044
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacomm1.cre~ ~override~
-	SAY NAME1 @3044
-	SAY NAME2 @3044
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacomw.cre~ ~override~
-	SAY NAME1 @3044
-	SAY NAME2 @3044
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacomw1.cre~ ~override~
-	SAY NAME1 @3044
-	SAY NAME2 @3044
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacook.cre~ ~override~
-	SAY NAME1 @3045
-	SAY NAME2 @3045
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xacell.cre~ ~override~
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xachick.cre~ ~override~
-	SAY NAME1 @3022
-	SAY NAME2 @3022
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xachwrai.cre~ ~override~
-	SAY NAME1 @3067
-	SAY NAME2 @3067
+	COPY ~%MOD_FOLDER%/rbg/cre/xacurato.cre~ ~override~
+	SAY NAME1 @4048
+	SAY NAME2 @4048
 	
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xaffval2.cre~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/cre/xadopp01.cre~ ~override~
+	SAY NAME1 @4052
+	SAY NAME2 @4052
+
+	COPY ~%MOD_FOLDER%/rbg/cre/xadopp02.cre~ ~override~
+	SAY NAME1 @4052
+	SAY NAME2 @4052
+	
+	COPY ~%MOD_FOLDER%/rbg/cre/xadopp03.cre~ ~override~
+	SAY NAME1 @4052
+	SAY NAME2 @4052
+
+	COPY ~%MOD_FOLDER%/rbg/cre/xaeltan.cre~ ~override~
+	SAY NAME1 @4053
+	SAY NAME2 @4053
+
+	COPY ~%MOD_FOLDER%/rbg/cre/xaeltar.cre~ ~override~
+	SAY NAME1 @4054
+	SAY NAME2 @4054
+
+	
+	COPY ~%MOD_FOLDER%/rbg/cre/xaff1248.cre~ ~override~
 	SAY NAME1 @3058
 	SAY NAME2 @3058
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xaffval3.cre~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/cre/xaff1271.cre~ ~override~
 	SAY NAME1 @3058
 	SAY NAME2 @3058
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xaffvali.cre~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/cre/xaff1272.cre~ ~override~
 	SAY NAME1 @3058
 	SAY NAME2 @3058
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xaglint.cre~ ~override~
-	SAY NAME1 @3061
-	SAY NAME2 @3061
+	COPY ~%MOD_FOLDER%/rbg/cre/xaffexec.cre~ ~override~
+	SAY NAME1 @4072
+	SAY NAME2 @4072
+
+	COPY ~%MOD_FOLDER%/rbg/cre/xaffval3.cre~ ~override~
+	SAY NAME1 @4073
+	SAY NAME2 @4073
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xaglint2.cre~ ~override~
-	SAY NAME1 @3061
-	SAY NAME2 @3061
+	COPY ~%MOD_FOLDER%/rbg/cre/xaglint.cre~ ~override~
+	SAY NAME1 @4074
+	SAY NAME2 @4074
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xahowspy.cre~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/cre/xaglint2.cre~ ~override~
+	SAY NAME1 @4074
+	SAY NAME2 @4074
+	
+	COPY ~%MOD_FOLDER%/rbg/cre/xahowspy.cre~ ~override~
+	
+	//{ Ogre Mage Ambush
+		COPY ~%MOD_FOLDER%/rbg/cre/xaogreld.cre~ ~override~
+		SAY NAME1 @4045
+		SAY NAME2 @4045
+		
+		COPY ~%MOD_FOLDER%/rbg/cre/xaogrem0.cre~ ~override~
+		SAY NAME1 @4045
+		SAY NAME2 @4045
+		
+		COPY ~%MOD_FOLDER%/rbg/cre/xaogrem1.cre~ ~override~
+		SAY NAME1 @4045
+		SAY NAME2 @4045
+		
+		COPY ~%MOD_FOLDER%/rbg/cre/xaogrem2.cre~ ~override~
+		SAY NAME1 @4045
+		SAY NAME2 @4045
+		
+		COPY ~%MOD_FOLDER%/rbg/cre/xaogrem3.cre~ ~override~
+		SAY NAME1 @4045
+		SAY NAME2 @4045
+	//}
+*/
+
+ACTION_IF (isEET = 0) THEN BEGIN
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~HOSTILES4~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~23 HOSTILES4~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~HOSTILES3~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~22 HOSTILES3~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~HOSTILES2~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~21 HOSTILES2~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~CRUSADERS~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~20 CRUSADERS~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~ALLIES_NEUTRAL2~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~16 ALLIES_NEUTRAL2~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~ALLIES_NEUTRAL~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~15 ALLIES_NEUTRAL~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~ALLIES3~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~12 ALLIES3~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~ALLIES2~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~11 ALLIES2~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~ALLIES~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~10 ALLIES~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~THIEF~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~9 THIEF~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~NEUTRALS~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~19 NEUTRALS~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~ORC~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~18 ORC~
+	END
+END
+
+INCLUDE ~%MOD_FOLDER%/rbg/xarbg_co.tph~
+INCLUDE ~%MOD_FOLDER%/rbg/generated/a/generated.tph~
+INCLUDE ~%MOD_FOLDER%/rbg/generated/b/generated.tph~

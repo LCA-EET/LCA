@@ -46,7 +46,7 @@ IF ~~ THEN BEGIN XA_TellStory
 	SAY @11 /* ~Indeed.~ */
 	
 	IF ~
-		Global("bd_asha_duel","global",3)
+		Global("XA_LC_HonorableDuel", "GLOBAL", 1)
 	~ THEN REPLY @12 /* ~(Tell him of your duel with Ashatiel during the siege of Dragonspear.)~ */
 	GOTO XA_Ashatiel //OK
 	
@@ -60,7 +60,7 @@ IF ~~ THEN BEGIN XA_TellStory
 	GOTO XA_Irenicus //OK
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @16 /* ~~(Tell him of how you and Schael were finally reunited in Athkatla.)~ */
 	GOTO XA_Schael
 	

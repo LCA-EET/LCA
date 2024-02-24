@@ -1,3 +1,36 @@
+//{ Fergus
+	ADD_TRANS_ACTION Fergus
+	BEGIN 3 END
+	BEGIN 0 END
+	~
+		SetGlobal("XA_LC_FergusRing", "GLOBAL", 1)
+	~
+//}
+//{ Brielbara
+	ADD_TRANS_ACTION BRIELB
+	BEGIN 1 END
+	BEGIN 0 END
+	~
+		SetGlobal("XA_LC_BrielbaraCoran", "GLOBAL", 1)
+	~
+	
+	ADD_TRANS_ACTION BRIELB
+	BEGIN 8 END
+	BEGIN 1 END
+	~
+		SetGlobal("XA_LC_HelpedBrielbara", "GLOBAL", 1)
+	~
+//}
+
+//{ Brevlik Farseer Quest
+	ADD_TRANS_ACTION BREVLI
+	BEGIN 18 END
+	BEGIN 0 END
+	~
+		SetGlobal("XA_LC_StoleFarseer", "GLOBAL", 1)
+	~
+//}
+
 //{ FORTHE
 	ADD_TRANS_ACTION FORTHE
 	BEGIN 9 11 END

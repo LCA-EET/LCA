@@ -21,12 +21,12 @@ IF ~~ THEN BEGIN XA_HaveWeMet
 	SAY @9 /* ~That's right... have we met before?~ */
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @14 /* ~We have. We've accomplished much together, my friend.~ */
 	GOTO XA_DontUnderstand
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @15 /* ~We have, love. And I'm going to punish the beast responsible for our imprisonment here.~~ */
 	GOTO XA_DontUnderstand
 END
@@ -35,12 +35,12 @@ IF ~~ THEN BEGIN XA_HaveWeMet2
 	SAY @18 /* ~You know my name? Have we met before?~ */
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @14 /* ~We have. We've accomplished much together, my friend.~ */
 	GOTO XA_DontUnderstand
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @15 /* ~We have, love. And I'm going to punish the beast responsible for our imprisonment here.~~ */
 	GOTO XA_DontUnderstand
 END

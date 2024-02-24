@@ -34,7 +34,7 @@ END
 IF ~
 	IsGabber("XACORWIN")
 	Gender(Player1, MALE)
-	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	!Global("XA_RohmaPlayerDaddy", "LOCALS", 1)
 ~ THEN BEGIN XA_PlayerNewDad
 	SAY @36 /* ~Mommy, is <CHARNAME> going to be my daddy now?~*/
@@ -312,7 +312,7 @@ IF ~~ THEN BEGIN XA_SayBye
 	SAY @32 /* ~Bye <CHARNAME>!~ */
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @33 /* ~Bye Rohma! Take good care of your mommy for me. I'll see the two of you tomorrow.~ */
 	DO ~
 		SetGlobal("XA_CorwinWithFamily", "GLOBAL", 1)
@@ -321,7 +321,7 @@ IF ~~ THEN BEGIN XA_SayBye
 	EXIT
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @34 /* ~Bye Rohma! It was nice to see you again. See you tomorrow, Schael.~*/
 	DO ~
 		SetGlobal("XA_CorwinWithFamily", "GLOBAL", 1)
@@ -362,7 +362,7 @@ IF ~~ THEN BEGIN XA_ByeRohmaChain2End
 	SAY @58 /* ~Goodnight, <CHARNAME>!~ */
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @59 /* ~Goodnight Rohma.~ */
 	DO ~
 		SetGlobal("XA_CorwinLoveBG2", "GLOBAL", 1)
@@ -370,7 +370,7 @@ IF ~~ THEN BEGIN XA_ByeRohmaChain2End
 	GOTO XA_ByeRohmaEnd_Romance
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @59 /* ~Goodnight Rohma.~ */
 	EXTERN XACORWIJ XA_BedtimeRohmaChain
 END
@@ -427,7 +427,7 @@ IF ~~ THEN XA_BedtimeRohmaChainEnd
 	SAY @65 /* ~Yes mommy.~ */
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_DidRequestCorwin", "GLOBAL", 1)
 	~ THEN
 	DO ~
@@ -437,7 +437,7 @@ IF ~~ THEN XA_BedtimeRohmaChainEnd
 	EXIT
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("XA_DidRequestCorwin", "GLOBAL", 1)
 	~ THEN
 	DO ~
@@ -447,7 +447,7 @@ IF ~~ THEN XA_BedtimeRohmaChainEnd
 	EXIT
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_DidRequestCorwin", "GLOBAL", 1)
 	~ THEN
 	DO ~
@@ -457,7 +457,7 @@ IF ~~ THEN XA_BedtimeRohmaChainEnd
 	EXIT
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("XA_DidRequestCorwin", "GLOBAL", 1)
 	~ THEN
 	DO ~

@@ -406,7 +406,7 @@ IF ~~ THEN BEGIN XA_StartStore
 	SAY @0 /* ~Premium items for a premium price.~ */
 	IF ~~ THEN 
 	DO ~
-		StartStore("bdsorcsc",LastTalkedToBy(Myself))
+		StartStore("xa2014",LastTalkedToBy(Myself))
 	~ 
 	EXIT
 END

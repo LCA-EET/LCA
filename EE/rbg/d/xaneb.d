@@ -23,7 +23,7 @@ END
 IF ~~ THEN BEGIN XA_MeetNebSewer2
 	SAY @3 /* ~Have you reason to be here? I do not recall summoning such as you. Do I... know you? I do not think it is so.~  */
 	
-	IF ~~ THEN REPLY #48208 /* ~I'll be going then. Sorry to have bothered you.~ */ 
+	IF ~~ THEN REPLY @9 /* ~I'll be going then. Sorry to have bothered you.~ */ 
 	GOTO XA_MeetNebSewer3A
 	
 	IF ~~ THEN REPLY @4 /* ~You seem familiar... who are you?~ */ 

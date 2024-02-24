@@ -1,7 +1,7 @@
 BEGIN ~XABELAND~
 
 IF~
-	Global("BelandEntranceFee","GLOBAL",2)
+	Global("XA_BelandEntranceFee","LOCALS",2)
 ~ THEN BEGIN XA_Greet2 
 	SAY @7 /* ~Please enter, and enjoy the works within.~ */
 	
@@ -20,7 +20,7 @@ IF~
 END
 
 IF ~ 
-	Global("BelandEntranceFee","GLOBAL",1)
+	!Global("XA_BelandEntranceFee","LOCALS",2)
 ~ THEN BEGIN 0 // from:
 	SAY @0 /* ~Welcome, all, to the Hall of Wonders.~*/
 	
@@ -28,7 +28,7 @@ IF ~
 	GOTO XA_OneGold
 	
 	IF ~
-		GlobalGT("HelpBrevlik","GLOBAL",0)
+		Global("XA_LC_StoleFarseer", "GLOBAL", 1)
 	~ THEN 
 	GOTO XA_ThreeGold
 END
@@ -115,7 +115,7 @@ IF ~~ THEN BEGIN XA_ThreeGold
 	GOTO XA_WontPay_3
 	
 	IF ~
-		GlobalGT("HelpBrevlik", "GLOBAL", 0)
+		Global("XA_LC_StoleFarseer", "GLOBAL", 1)
 		IsValidForPartyDialog(Player1)
 	~ THEN REPLY @1 /*~Three gold, you say? The last time I was here, the entrance fee was a single gold piece.~*/
 	DO ~
@@ -149,19 +149,19 @@ IF ~~ THEN BEGIN XA_CostIncrease
 	GOTO XA_WontPay_3
 	
 	IF ~
-		Global("HelpBrevlik", "GLOBAL", 2)
+		Global("XA_LC_StoleFarseer", "GLOBAL", 1)
 		IsGabber(Player1)
 	~ THEN REPLY @13 /* ~About that... (confess to your crime.)~ */
 	GOTO XA_Confess
 	
 	IF ~
-		Global("HelpBrevlik", "GLOBAL", 2)
+		Global("XA_LC_StoleFarseer", "GLOBAL", 1)
 		IsGabber(Player1)
 	~ THEN REPLY @24 /*~Perhaps I can help locate the Farseer.~*/
 	GOTO XA_HelpFindFarseer_Stolen
 	
 	IF ~
-		!Global("HelpBrevlik", "GLOBAL", 2)
+		GlobalLT("XA_LC_StoleFarseer", "GLOBAL", 1)
 	~ THEN REPLY @24 /*~Perhaps I can help locate the Farseer.~*/
 	GOTO XA_HelpFindFarseer
 	
@@ -207,7 +207,7 @@ IF ~~ THEN BEGIN XA_HelpFindFarseer
 	DO ~
 		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 1)
 		SetGlobal("XA_SpawnBrevlik", "GLOBAL", 1)
-		SetGlobal("BelandEntranceFee","GLOBAL",2)
+		SetGlobal("XA_BelandEntranceFee","LOCALS",2)
 	~
 	EXIT
 END
@@ -219,7 +219,7 @@ IF ~~ THEN BEGIN XA_HelpFindFarseer_Stolen
 	DO ~
 		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 1)
 		SetGlobal("XA_SpawnBrevlik", "GLOBAL", 1)
-		SetGlobal("BelandEntranceFee","GLOBAL",2)
+		SetGlobal("XA_BelandEntranceFee","LOCALS",2)
 	~
 	EXIT
 END
@@ -231,7 +231,7 @@ IF ~~ THEN BEGIN XA_MakeAmends
 	DO ~
 		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 2)
 		SetGlobal("XA_SpawnBrevlik", "GLOBAL", 1)
-		SetGlobal("BelandEntranceFee","GLOBAL",2)
+		SetGlobal("XA_BelandEntranceFee","LOCALS",2)
 	~
 	EXIT
 	
@@ -249,7 +249,7 @@ IF ~~ THEN BEGIN XA_PleaseEnter
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("BelandEntranceFee","GLOBAL",2)
+		SetGlobal("XA_BelandEntranceFee","LOCALS",2)
 	~
 	EXIT
 END

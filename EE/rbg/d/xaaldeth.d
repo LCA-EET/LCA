@@ -81,7 +81,7 @@ IF ~~ THEN BEGIN XA_1
 	GOTO XA_END //OK
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("XA_RingGiftAldeth", "GLOBAL", 1)
 		!Global("XA_RingGiftJhasso", "GLOBAL", 1)
 		!Dead("halbaz")
@@ -89,7 +89,7 @@ IF ~~ THEN BEGIN XA_1
 	~ THEN GOTO XA_CorwinRomance //OK
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("XA_RingGiftAldeth", "GLOBAL", 1)
 		!Global("XA_RingGiftJhasso", "GLOBAL", 1)
 		!Dead("halbaz")

@@ -47,14 +47,12 @@ APPEND BDCORWIJ
 		IF ~~ THEN REPLY @6 /* ~Schael? Were you worried about me?~ */
 		DO ~
 			SetGlobal("XA_CorwinWitnessedDuel", "GLOBAL", 2)
-			SetGlobal("XA_LC_HonorableDuel", "GLOBAL", 1)
 		~
 		GOTO XA_AshatielDuel_3 
 		
 		IF ~~ THEN REPLY @15 /* ~Is that it, then? I need only risk my life in a duel to the death to get you to show me some affection?~*/
 		DO ~
 			SetGlobal("XA_CorwinWitnessedDuel", "GLOBAL", 2)
-			SetGlobal("XA_LC_HonorableDuel", "GLOBAL", 1)
 		~
 		GOTO XA_AshatielDuel_3A
 	END
@@ -69,7 +67,6 @@ APPEND BDCORWIJ
 		IF ~~ THEN REPLY @4 /* ~Captain? Were you worried about me?~ */
 		DO ~
 			SetGlobal("XA_CorwinWitnessedDuel", "GLOBAL", 2)
-			SetGlobal("XA_LC_HonorableDuel", "GLOBAL", 1)
 		~
 		GOTO XA_AshatielDuel_3 
 	END

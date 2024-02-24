@@ -29,7 +29,7 @@ END
 
 IF ~
 	IsGabber(Player1)
-	GlobalGT("HelpBrevlik", "GLOBAL", 0)
+	Global("XA_LC_StoleFarseer", "GLOBAL", 1)
 	!Global("XA_BrevIntro", "LOCALS", 1)
 ~ THEN BEGIN XA_Greeting
 	SAY @0 /*~Didn't think I'd see you again.~*/
@@ -80,7 +80,7 @@ IF ~~ THEN BEGIN XA_GiveItToMe
 	SAY @23 /* ~You know what? Fine. Take the damned thing!~ */
 	
 	IF ~
-		Global("HelpBrevlik", "GLOBAL", 2)
+		Global("XA_LC_StoleFarseer", "GLOBAL", 1)
 		IsGabber(Player1)
 	~ THEN
 	DO ~
@@ -91,7 +91,7 @@ IF ~~ THEN BEGIN XA_GiveItToMe
 	
 	IF ~
 		OR(2)
-			!Global("HelpBrevlik", "GLOBAL", 2)
+			!Global("XA_LC_StoleFarseer", "GLOBAL", 1)
 			!IsGabber(Player1)
 	~ THEN
 	DO ~

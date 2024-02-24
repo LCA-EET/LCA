@@ -40,7 +40,7 @@ IF ~~ THEN BEGIN 2
 	GOTO XA_END //OK
 	
 	IF ~
-		Global("bd_briel_coran","GLOBAL",1)
+		Global("XA_LC_BrielbaraCoran", "GLOBAL", 1)
 	~ THEN GOTO 3 //OK
 END
 

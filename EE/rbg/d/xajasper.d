@@ -161,12 +161,12 @@ IF ~~ THEN BEGIN XA_WontPayDebt
 	SAY @33 /* ~Why in the hells should I do that? She owes me 1,500 gold!~*/
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @24 /* ~Listen to me very carefully. I've just returned from a long and arduous journey, after being exiled from the city, and separated from the woman I love, for a crime I didn't commit. I've fought to hell and back - on more than one occasion, mind you. I've travelled to different planes, and defeated all manner of bandits, wizards, hellspawn, monsters, dragons, and undead. I've been tortured, watched friends die, and even had my immortal soul ripped from my body. I can show you the scars. In all my travels and tribulations, there is one thing that I haven't experienced. Do you know what that is?~ */
 	GOTO XA_ThreatenJasper
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @27 /* ~Listen to me very carefully. I've just returned from a long and arduous journey, after being exiled from the city for a crime I didn't commit. I've fought to hell and back - on more than one occasion, mind you. I've travelled to different planes, and defeated all manner of bandits, wizards, hellspawn, monsters, dragons, and undead. I've been tortured, watched close friends die, and even had my immortal soul ripped from my body. I can show you the scars.~*/
 	GOTO XA_ThreatenJasper
 END
@@ -196,12 +196,12 @@ IF ~~ THEN BEGIN XA_PayPartialAmount
 	
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @24 /* ~Listen to me very carefully. I've just returned from a long and arduous journey, after being exiled from the city, and separated from the woman I love, for a crime I didn't commit. I've fought to hell and back - on more than one occasion, mind you. I've travelled to different planes, and defeated all manner of bandits, wizards, hellspawn, monsters, dragons, and undead. I've been tortured, watched friends die, and even had my immortal soul ripped from my body. I can show you the scars. ~*/
 	GOTO XA_ThreatenJasper
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @27 /* ~Listen to me very carefully. I've just returned from a long and arduous journey, after being exiled from the city for a crime I didn't commit. I've fought to hell and back - on more than one occasion, mind you. I've travelled to different planes, and defeated all manner of bandits, wizards, hellspawn, monsters, dragons, and undead. I've been tortured, watched close friends die, and even had my immortal soul ripped from my body. I can show you the scars.~*/
 	GOTO XA_ThreatenJasper
 END

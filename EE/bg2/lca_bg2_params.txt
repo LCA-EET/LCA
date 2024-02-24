@@ -87,3 +87,33 @@ OUTER_SET tricked_larze = 1
 	Set to 1 to proceed as though the player helped Forthel the bard with his stories, during the events of BG1.
 */
 OUTER_SET helped_forthel = 1
+
+/*
+	Parameter: stole_farseer
+	Set to 1 to proceed as though the player stole the Farseer on Brevlik's behalf, during the events of Baldur's Gate 1.
+*/
+OUTER_SET stole_farseer = 1
+
+/*
+	Parameter: helped_brielbara
+	Set to 1 to proceed as though the player saved Brielbara and Coran's daughter during the events of Baldur's Gate 1.
+*/
+OUTER_SET helped_brielbara = 1
+
+/*
+	Parameter: brielbara_coran
+	Set to 1 to proceed as though Brielbara and Coran met during the events of Baldur's Gate 1.
+*/
+OUTER_SET brielbara_coran = 1
+
+/*
+	Parameter: fergus_ring
+	Set to 1 to proceed as though the player gave Fergus the Angelskin ring during the events of Baldur's Gate 1.
+*/
+OUTER_SET fergus_ring = 1
+
+/*
+	Parameter: cleared_kanaglym
+	Set to 1 to proceed as though the player cleared Kanaglym during the events of Siege of Dragonspear.
+*/
+OUTER_SET cleared_kanaglym = 1

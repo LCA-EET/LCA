@@ -25,7 +25,7 @@ END
 IF ~
 	IsGabber("XACORWIN")
 	Gender(Player1, MALE)
-	Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	!Global("XA_AudamCorwinPlayer", "LOCALS", 1)
 	Global("XA_CorwinFamilyTalk", "GLOBAL", 3)
 ~ THEN BEGIN XA_PlayerNewDad

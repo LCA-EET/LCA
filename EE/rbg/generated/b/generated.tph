@@ -1,0 +1,1857 @@
+PRINT ~Processing AssetConverter generated elements...~
+//{ MUSIC
+ADD_MUSIC xab0 ~%MOD_FOLDER%\rbg\generated\b\mus\xab0.mus~
+ADD_MUSIC xab1 ~%MOD_FOLDER%\rbg\generated\b\mus\xab1.mus~
+ADD_MUSIC xab2 ~%MOD_FOLDER%\rbg\generated\b\mus\xab2.mus~
+ADD_MUSIC xab3 ~%MOD_FOLDER%\rbg\generated\b\mus\xab3.mus~
+ADD_MUSIC xab4 ~%MOD_FOLDER%\rbg\generated\b\mus\xab4.mus~
+ADD_MUSIC xab5 ~%MOD_FOLDER%\rbg\generated\b\mus\xab5.mus~
+ADD_MUSIC xab6 ~%MOD_FOLDER%\rbg\generated\b\mus\xab6.mus~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0a.acm~ ~MUSIC\xab0\xab0a.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0aa.acm~ ~MUSIC\xab0\xab0aa.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0ab.acm~ ~MUSIC\xab0\xab0ab.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0ac.acm~ ~MUSIC\xab0\xab0ac.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0ad.acm~ ~MUSIC\xab0\xab0ad.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0ae.acm~ ~MUSIC\xab0\xab0ae.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0af.acm~ ~MUSIC\xab0\xab0af.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0ag.acm~ ~MUSIC\xab0\xab0ag.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0ah.acm~ ~MUSIC\xab0\xab0ah.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0ai.acm~ ~MUSIC\xab0\xab0ai.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0b.acm~ ~MUSIC\xab0\xab0b.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0c.acm~ ~MUSIC\xab0\xab0c.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0d.acm~ ~MUSIC\xab0\xab0d.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0e.acm~ ~MUSIC\xab0\xab0e.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0f.acm~ ~MUSIC\xab0\xab0f.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0g.acm~ ~MUSIC\xab0\xab0g.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0h.acm~ ~MUSIC\xab0\xab0h.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0i.acm~ ~MUSIC\xab0\xab0i.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0j.acm~ ~MUSIC\xab0\xab0j.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0k.acm~ ~MUSIC\xab0\xab0k.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0l.acm~ ~MUSIC\xab0\xab0l.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0m.acm~ ~MUSIC\xab0\xab0m.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0n.acm~ ~MUSIC\xab0\xab0n.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0o.acm~ ~MUSIC\xab0\xab0o.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0p.acm~ ~MUSIC\xab0\xab0p.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0q.acm~ ~MUSIC\xab0\xab0q.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0r.acm~ ~MUSIC\xab0\xab0r.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0s.acm~ ~MUSIC\xab0\xab0s.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0t.acm~ ~MUSIC\xab0\xab0t.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0u.acm~ ~MUSIC\xab0\xab0u.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0v.acm~ ~MUSIC\xab0\xab0v.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0w.acm~ ~MUSIC\xab0\xab0w.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0x.acm~ ~MUSIC\xab0\xab0x.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0y.acm~ ~MUSIC\xab0\xab0y.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0z.acm~ ~MUSIC\xab0\xab0z.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0za.acm~ ~MUSIC\xab0\xab0za.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zab.acm~ ~MUSIC\xab0\xab0zab.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zac.acm~ ~MUSIC\xab0\xab0zac.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zae.acm~ ~MUSIC\xab0\xab0zae.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zai.acm~ ~MUSIC\xab0\xab0zai.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zb.acm~ ~MUSIC\xab0\xab0zb.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zd.acm~ ~MUSIC\xab0\xab0zd.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0ze.acm~ ~MUSIC\xab0\xab0ze.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zf.acm~ ~MUSIC\xab0\xab0zf.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zh.acm~ ~MUSIC\xab0\xab0zh.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zi.acm~ ~MUSIC\xab0\xab0zi.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zj.acm~ ~MUSIC\xab0\xab0zj.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zk.acm~ ~MUSIC\xab0\xab0zk.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zl.acm~ ~MUSIC\xab0\xab0zl.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zm.acm~ ~MUSIC\xab0\xab0zm.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zn.acm~ ~MUSIC\xab0\xab0zn.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zo.acm~ ~MUSIC\xab0\xab0zo.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zp.acm~ ~MUSIC\xab0\xab0zp.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zq.acm~ ~MUSIC\xab0\xab0zq.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zv.acm~ ~MUSIC\xab0\xab0zv.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zw.acm~ ~MUSIC\xab0\xab0zw.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zx.acm~ ~MUSIC\xab0\xab0zx.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab0\xab0zz.acm~ ~MUSIC\xab0\xab0zz.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab1\xab1a.acm~ ~MUSIC\xab1\xab1a.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab2\xab2a.acm~ ~MUSIC\xab2\xab2a.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab3\xab3a.acm~ ~MUSIC\xab3\xab3a.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4a1.acm~ ~MUSIC\xab4\xab4a1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4a2.acm~ ~MUSIC\xab4\xab4a2.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4a3.acm~ ~MUSIC\xab4\xab4a3.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4b1.acm~ ~MUSIC\xab4\xab4b1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4b2.acm~ ~MUSIC\xab4\xab4b2.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4c1.acm~ ~MUSIC\xab4\xab4c1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4c2.acm~ ~MUSIC\xab4\xab4c2.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4d1.acm~ ~MUSIC\xab4\xab4d1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4d2.acm~ ~MUSIC\xab4\xab4d2.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4e1.acm~ ~MUSIC\xab4\xab4e1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4e2.acm~ ~MUSIC\xab4\xab4e2.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4enda.acm~ ~MUSIC\xab4\xab4enda.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4endb.acm~ ~MUSIC\xab4\xab4endb.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4endc.acm~ ~MUSIC\xab4\xab4endc.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4f1.acm~ ~MUSIC\xab4\xab4f1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4f2.acm~ ~MUSIC\xab4\xab4f2.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4g1.acm~ ~MUSIC\xab4\xab4g1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4g2.acm~ ~MUSIC\xab4\xab4g2.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4g3.acm~ ~MUSIC\xab4\xab4g3.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4h1.acm~ ~MUSIC\xab4\xab4h1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4h2.acm~ ~MUSIC\xab4\xab4h2.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4h3.acm~ ~MUSIC\xab4\xab4h3.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4h4.acm~ ~MUSIC\xab4\xab4h4.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4i1.acm~ ~MUSIC\xab4\xab4i1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4i2.acm~ ~MUSIC\xab4\xab4i2.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4i3.acm~ ~MUSIC\xab4\xab4i3.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4i4.acm~ ~MUSIC\xab4\xab4i4.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4j1.acm~ ~MUSIC\xab4\xab4j1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4j2.acm~ ~MUSIC\xab4\xab4j2.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4j3.acm~ ~MUSIC\xab4\xab4j3.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4j4.acm~ ~MUSIC\xab4\xab4j4.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4k1.acm~ ~MUSIC\xab4\xab4k1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4k2.acm~ ~MUSIC\xab4\xab4k2.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4k3.acm~ ~MUSIC\xab4\xab4k3.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab4\xab4xa1.acm~ ~MUSIC\xab4\xab4xa1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab5\xab5a.acm~ ~MUSIC\xab5\xab5a.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6a1.acm~ ~MUSIC\xab6\xab6a1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6a2.acm~ ~MUSIC\xab6\xab6a2.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6b1.acm~ ~MUSIC\xab6\xab6b1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6b2.acm~ ~MUSIC\xab6\xab6b2.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6b3.acm~ ~MUSIC\xab6\xab6b3.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6b4.acm~ ~MUSIC\xab6\xab6b4.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6c1.acm~ ~MUSIC\xab6\xab6c1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6c2.acm~ ~MUSIC\xab6\xab6c2.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6d1.acm~ ~MUSIC\xab6\xab6d1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6d2.acm~ ~MUSIC\xab6\xab6d2.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6d3.acm~ ~MUSIC\xab6\xab6d3.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6e1.acm~ ~MUSIC\xab6\xab6e1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6e2.acm~ ~MUSIC\xab6\xab6e2.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6e3.acm~ ~MUSIC\xab6\xab6e3.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6e4.acm~ ~MUSIC\xab6\xab6e4.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6enda.acm~ ~MUSIC\xab6\xab6enda.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6endb.acm~ ~MUSIC\xab6\xab6endb.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6endc.acm~ ~MUSIC\xab6\xab6endc.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6f1.acm~ ~MUSIC\xab6\xab6f1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6f2.acm~ ~MUSIC\xab6\xab6f2.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6f3.acm~ ~MUSIC\xab6\xab6f3.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6g1.acm~ ~MUSIC\xab6\xab6g1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6g2.acm~ ~MUSIC\xab6\xab6g2.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6g3a.acm~ ~MUSIC\xab6\xab6g3a.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6g4a.acm~ ~MUSIC\xab6\xab6g4a.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6h1.acm~ ~MUSIC\xab6\xab6h1.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6h2.acm~ ~MUSIC\xab6\xab6h2.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6h3.acm~ ~MUSIC\xab6\xab6h3.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6i12.acm~ ~MUSIC\xab6\xab6i12.acm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\mus\xab6\xab6xa1.acm~ ~MUSIC\xab6\xab6xa1.acm~
+//}
+//are files
+//===================
+PRINT ~Processing are files...~
+PRINT ~Processing xab100.are~
+ACTION_IF (FILE_EXISTS_IN_GAME ~xab100.are~) BEGIN
+	PRINT ~Area already exists: xab100. Skipping...~
+END ELSE BEGIN
+	COPY ~%MOD_FOLDER%\rbg\generated\b\are\xab100.are~ ~override~
+	WRITE_LONG 23668 %xab0%
+	WRITE_LONG 23676 %xab1%
+END
+PRINT ~Processing xab101.are~
+ACTION_IF (FILE_EXISTS_IN_GAME ~xab101.are~) BEGIN
+	PRINT ~Area already exists: xab101. Skipping...~
+END ELSE BEGIN
+	COPY ~%MOD_FOLDER%\rbg\generated\b\are\xab101.are~ ~override~
+	WRITE_LONG 25352 %xab2%
+	WRITE_LONG 25356 %xab3%
+	WRITE_LONG 25364 %xab4%
+END
+PRINT ~Processing xab102.are~
+ACTION_IF (FILE_EXISTS_IN_GAME ~xab102.are~) BEGIN
+	PRINT ~Area already exists: xab102. Skipping...~
+END ELSE BEGIN
+	COPY ~%MOD_FOLDER%\rbg\generated\b\are\xab102.are~ ~override~
+	WRITE_LONG 556 %xab5%
+	WRITE_LONG 560 %xab5%
+	WRITE_LONG 568 %xab6%
+END
+
+//cre files
+//===================
+PRINT ~Processing cre files...~
+PRINT ~Processing xab100.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab100.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50000) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50001) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50002) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50003) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50004) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab101.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab101.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50005) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50006) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50007) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50008) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50009) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab102.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab102.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50010) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50011) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50012) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50013) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50014) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50015) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50016) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab103.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab103.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50017) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50018) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50019) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50020) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50021) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab104.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab104.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50022) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50023) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50024) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50025) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50026) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50027) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50028) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50029) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab105.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab105.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50030) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50031) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50032) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50033) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50034) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab106.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab106.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50035) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50036) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50037) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50038) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50039) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab107.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab107.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50040) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50041) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50042) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50043) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50044) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50045) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50046) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50047) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab108.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab108.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50048) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50049) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50050) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50051) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50052) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50053) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50054) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50055) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab109.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab109.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50056) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50057) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50058) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50059) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50060) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab110.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab110.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50061) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50062) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50063) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50064) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50065) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab111.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab111.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50066) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50067) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50068) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50069) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50070) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50071) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50072) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab112.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab112.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50073) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50074) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50075) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50076) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50077) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50078) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50079) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab113.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab113.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50080) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50081) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50082) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50083) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50084) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50085) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50086) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50087) /*AssetConverter.TRARef*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@50088) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab114.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab114.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50089) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50090) /*AssetConverter.TRARef*/
+	WRITE_LONG 168 RESOLVE_STR_REF(@50091) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50092) /*AssetConverter.TRARef*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@50093) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50094) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50095) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50096) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50097) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50098) /*AssetConverter.TRARef*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@50099) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab115.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab115.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50100) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50101) /*AssetConverter.TRARef*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@50102) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50103) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50104) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50105) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50106) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50107) /*AssetConverter.TRARef*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@50108) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab116.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab116.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50109) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50110) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50111) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50112) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50113) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab117.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab117.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50114) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50115) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50116) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50117) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50118) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50119) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50120) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab118.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab118.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50121) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50122) /*AssetConverter.TRARef*/
+	WRITE_LONG 168 RESOLVE_STR_REF(@50123) /*AssetConverter.TRARef*/
+	WRITE_LONG 172 RESOLVE_STR_REF(@50124) /*AssetConverter.TRARef*/
+	WRITE_LONG 176 RESOLVE_STR_REF(@50125) /*AssetConverter.TRARef*/
+	WRITE_LONG 180 RESOLVE_STR_REF(@50126) /*AssetConverter.TRARef*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@50127) /*AssetConverter.TRARef*/
+	WRITE_LONG 188 RESOLVE_STR_REF(@50128) /*AssetConverter.TRARef*/
+	WRITE_LONG 192 RESOLVE_STR_REF(@50129) /*AssetConverter.TRARef*/
+	WRITE_LONG 196 RESOLVE_STR_REF(@50130) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50131) /*AssetConverter.TRARef*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@50132) /*AssetConverter.TRARef*/
+	WRITE_LONG 208 RESOLVE_STR_REF(@50133) /*AssetConverter.TRARef*/
+	WRITE_LONG 212 RESOLVE_STR_REF(@50134) /*AssetConverter.TRARef*/
+	WRITE_LONG 216 RESOLVE_STR_REF(@50135) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50136) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50137) /*AssetConverter.TRARef*/
+	WRITE_LONG 244 RESOLVE_STR_REF(@50138) /*AssetConverter.TRARef*/
+	WRITE_LONG 248 RESOLVE_STR_REF(@50139) /*AssetConverter.TRARef*/
+	WRITE_LONG 252 RESOLVE_STR_REF(@50140) /*AssetConverter.TRARef*/
+	WRITE_LONG 256 RESOLVE_STR_REF(@50141) /*AssetConverter.TRARef*/
+	WRITE_LONG 260 RESOLVE_STR_REF(@50142) /*AssetConverter.TRARef*/
+	WRITE_LONG 264 RESOLVE_STR_REF(@50143) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50144) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50145) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50146) /*AssetConverter.TRARef*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@50147) /*AssetConverter.TRARef*/
+	WRITE_LONG 284 RESOLVE_STR_REF(@50148) /*AssetConverter.TRARef*/
+	WRITE_LONG 288 RESOLVE_STR_REF(@50149) /*AssetConverter.TRARef*/
+	WRITE_LONG 292 RESOLVE_STR_REF(@50150) /*AssetConverter.TRARef*/
+	WRITE_LONG 296 RESOLVE_STR_REF(@50151) /*AssetConverter.TRARef*/
+	WRITE_LONG 300 RESOLVE_STR_REF(@50152) /*AssetConverter.TRARef*/
+	WRITE_LONG 304 RESOLVE_STR_REF(@50153) /*AssetConverter.TRARef*/
+	WRITE_LONG 308 RESOLVE_STR_REF(@50154) /*AssetConverter.TRARef*/
+	WRITE_LONG 312 RESOLVE_STR_REF(@50155) /*AssetConverter.TRARef*/
+	WRITE_LONG 316 RESOLVE_STR_REF(@50156) /*AssetConverter.TRARef*/
+	WRITE_LONG 376 RESOLVE_STR_REF(@50157) /*AssetConverter.TRARef*/
+	WRITE_LONG 380 RESOLVE_STR_REF(@50158) /*AssetConverter.TRARef*/
+	WRITE_LONG 416 RESOLVE_STR_REF(@50159) /*AssetConverter.TRARef*/
+	WRITE_LONG 420 RESOLVE_STR_REF(@50160) /*AssetConverter.TRARef*/
+	WRITE_LONG 424 RESOLVE_STR_REF(@50161) /*AssetConverter.TRARef*/
+	WRITE_LONG 428 RESOLVE_STR_REF(@50162) /*AssetConverter.TRARef*/
+	WRITE_LONG 432 RESOLVE_STR_REF(@50163) /*AssetConverter.TRARef*/
+	WRITE_LONG 436 RESOLVE_STR_REF(@50164) /*AssetConverter.TRARef*/
+	WRITE_LONG 440 RESOLVE_STR_REF(@50165) /*AssetConverter.TRARef*/
+	WRITE_LONG 444 RESOLVE_STR_REF(@50166) /*AssetConverter.TRARef*/
+	WRITE_LONG 448 RESOLVE_STR_REF(@50167) /*AssetConverter.TRARef*/
+	WRITE_LONG 452 RESOLVE_STR_REF(@50168) /*AssetConverter.TRARef*/
+	WRITE_LONG 460 RESOLVE_STR_REF(@50169) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab119.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab119.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50170) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50171) /*AssetConverter.TRARef*/
+	WRITE_LONG 168 RESOLVE_STR_REF(@50172) /*AssetConverter.TRARef*/
+	WRITE_LONG 192 RESOLVE_STR_REF(@50173) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50174) /*AssetConverter.TRARef*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@50175) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50176) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50177) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50178) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50179) /*AssetConverter.TRARef*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@50180) /*AssetConverter.TRARef*/
+	WRITE_LONG 284 RESOLVE_STR_REF(@50181) /*AssetConverter.TRARef*/
+	WRITE_LONG 288 RESOLVE_STR_REF(@50182) /*AssetConverter.TRARef*/
+	WRITE_LONG 292 RESOLVE_STR_REF(@50183) /*AssetConverter.TRARef*/
+	WRITE_LONG 296 RESOLVE_STR_REF(@50184) /*AssetConverter.TRARef*/
+	WRITE_LONG 300 RESOLVE_STR_REF(@50185) /*AssetConverter.TRARef*/
+	WRITE_LONG 304 RESOLVE_STR_REF(@50186) /*AssetConverter.TRARef*/
+	WRITE_LONG 420 RESOLVE_STR_REF(@50187) /*AssetConverter.TRARef*/
+	WRITE_LONG 424 RESOLVE_STR_REF(@50188) /*AssetConverter.TRARef*/
+	WRITE_LONG 428 RESOLVE_STR_REF(@50189) /*AssetConverter.TRARef*/
+	WRITE_LONG 432 RESOLVE_STR_REF(@50190) /*AssetConverter.TRARef*/
+	WRITE_LONG 448 RESOLVE_STR_REF(@50191) /*AssetConverter.TRARef*/
+	WRITE_LONG 460 RESOLVE_STR_REF(@50192) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab120.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab120.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50193) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50194) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50195) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50196) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab121.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab121.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50197) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50198) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50199) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50200) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50201) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab122.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab122.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50202) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50203) /*AssetConverter.TRARef*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@50204) /*AssetConverter.TRARef*/
+	WRITE_LONG 168 RESOLVE_STR_REF(@50205) /*AssetConverter.TRARef*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@50206) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50207) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50208) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50209) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50210) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50211) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50212) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab123.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab123.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50213) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50214) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50215) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50216) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab124.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab124.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50217) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50218) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab125.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab125.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50219) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50220) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50221) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50222) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50223) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab126.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab126.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50224) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50225) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50226) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50227) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50228) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab127.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab127.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50229) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50230) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab128.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab128.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50231) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50232) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab139.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab139.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50233) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50234) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50235) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50236) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50237) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50238) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50239) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab140.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab140.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50240) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50241) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50242) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50243) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50244) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab141.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab141.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50245) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50246) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50247) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50248) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50249) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50250) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50251) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50252) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab142.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab142.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50253) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50254) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50255) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50256) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50257) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50258) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50259) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50260) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab143.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab143.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50261) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50262) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50263) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50264) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50265) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab144.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab144.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50266) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50267) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50268) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50269) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50270) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab145.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab145.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50271) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50272) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50273) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50274) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50275) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab146.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab146.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50276) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50277) /*AssetConverter.TRARef*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@50278) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50279) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50280) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50281) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50282) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50283) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50284) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab147.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab147.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50285) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50286) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50287) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50288) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50289) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50290) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab148.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab148.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50291) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50292) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50293) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50294) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50295) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab149.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab149.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50296) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50297) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50298) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50299) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50300) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab150.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab150.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50301) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50302) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50303) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50304) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50305) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50306) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50307) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab151.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab151.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50308) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50309) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50310) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50311) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50312) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50313) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50314) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50315) /*AssetConverter.TRARef*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@50316) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab152.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab152.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50317) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50318) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50319) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50320) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab153.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab153.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50321) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50322) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50323) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50324) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50325) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50326) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50327) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab154.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab154.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50328) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50329) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50330) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50331) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50332) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab155.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab155.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50333) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50334) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50335) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50336) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50337) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50338) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50339) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50340) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab156.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab156.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50341) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50342) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50343) /*AssetConverter.TRARef*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@50344) /*AssetConverter.TRARef*/
+	WRITE_LONG 220 RESOLVE_STR_REF(@50345) /*AssetConverter.TRARef*/
+	WRITE_LONG 224 RESOLVE_STR_REF(@50346) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50347) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50348) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50349) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50350) /*AssetConverter.TRARef*/
+	WRITE_LONG 440 RESOLVE_STR_REF(@50351) /*AssetConverter.TRARef*/
+	WRITE_LONG 444 RESOLVE_STR_REF(@50352) /*AssetConverter.TRARef*/
+	WRITE_LONG 448 RESOLVE_STR_REF(@50353) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab160.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab160.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50354) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50355) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50356) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50357) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50358) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab161.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab161.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50359) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50360) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50361) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50362) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50363) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab162.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab162.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50364) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50365) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50366) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50367) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab163.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab163.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50368) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50369) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50370) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50371) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50372) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab164.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab164.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50373) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50374) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50375) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50376) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50377) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50378) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50379) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50380) /*AssetConverter.TRARef*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@50381) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab165.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab165.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50382) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50383) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50384) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50385) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab167.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab167.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50386) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50387) /*AssetConverter.TRARef*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@50388) /*AssetConverter.TRARef*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@50389) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50390) /*AssetConverter.TRARef*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@50391) /*AssetConverter.TRARef*/
+	WRITE_LONG 208 RESOLVE_STR_REF(@50392) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50393) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50394) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50395) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50396) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50397) /*AssetConverter.TRARef*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@50398) /*AssetConverter.TRARef*/
+	WRITE_LONG 420 RESOLVE_STR_REF(@50399) /*AssetConverter.TRARef*/
+	WRITE_LONG 440 RESOLVE_STR_REF(@50400) /*AssetConverter.TRARef*/
+	WRITE_LONG 444 RESOLVE_STR_REF(@50401) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab168.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab168.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50402) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50403) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50404) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50405) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50406) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab169.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab169.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50407) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50408) /*AssetConverter.TRARef*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@50409) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50410) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50411) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50412) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50413) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab170.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab170.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50414) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50415) /*AssetConverter.TRARef*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@50416) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50417) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50418) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50419) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50420) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab171.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab171.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50421) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50422) /*AssetConverter.TRARef*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@50423) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50424) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50425) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50426) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab172.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab172.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50427) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50428) /*AssetConverter.TRARef*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@50429) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50430) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50431) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50432) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab173.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab173.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50433) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50434) /*AssetConverter.TRARef*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@50435) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50436) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50437) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50438) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab174.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab174.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50439) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50440) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50441) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50442) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50443) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab175.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab175.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50444) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50445) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50446) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50447) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50448) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab176.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab176.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50449) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50450) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50451) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50452) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50453) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab177.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab177.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50454) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50455) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50456) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50457) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50458) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab178.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab178.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50459) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50460) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50461) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50462) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50463) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab179.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab179.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50464) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50465) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50466) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50467) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50468) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab180.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab180.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50469) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50470) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50471) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50472) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50473) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab181.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab181.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50474) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50475) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50476) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50477) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50478) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab182.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab182.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50479) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50480) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50481) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50482) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50483) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab183.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab183.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50484) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50485) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50486) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50487) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50488) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab184.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab184.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50489) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50490) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50491) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50492) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50493) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab185.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab185.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50494) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50495) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50496) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50497) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50498) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab187.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab187.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50499) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50500) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50501) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50502) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50503) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab189.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab189.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50504) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50505) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50506) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50507) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50508) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab190.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab190.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50509) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50510) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50511) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50512) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50513) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab192.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab192.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50514) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50515) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50516) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50517) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50518) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab195.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab195.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50519) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50520) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50521) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50522) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50523) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab196.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab196.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50524) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50525) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50526) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50527) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50528) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab199.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab199.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50529) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50530) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50531) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50532) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50533) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab201.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab201.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50534) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50535) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50536) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50537) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50538) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab202.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab202.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50539) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50540) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50541) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50542) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50543) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab203.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab203.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50544) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50545) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50546) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50547) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50548) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab214.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab214.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50549) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50550) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50551) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50552) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50553) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab217.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab217.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50554) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50555) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50556) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50557) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50558) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab218.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab218.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50559) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50560) /*AssetConverter.TRARef*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@50561) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50562) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50563) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50564) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab219.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab219.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50565) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50566) /*AssetConverter.TRARef*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@50567) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50568) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50569) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50570) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50571) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50572) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab221.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab221.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50573) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50574) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50575) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50576) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50577) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab225.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab225.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50578) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50579) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50580) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50581) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50582) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab226.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab226.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50583) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50584) /*AssetConverter.TRARef*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@50585) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50586) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50587) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50588) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab237.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab237.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50589) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50590) /*AssetConverter.TRARef*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@50591) /*AssetConverter.TRARef*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@50592) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50593) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50594) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50595) /*AssetConverter.TRARef*/
+
+PRINT ~Processing xab238.cre~
+COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab238.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50596) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50597) /*AssetConverter.TRARef*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@50598) /*AssetConverter.TRARef*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@50599) /*AssetConverter.TRARef*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@50600) /*AssetConverter.TRARef*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@50601) /*AssetConverter.TRARef*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@50602) /*AssetConverter.TRARef*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@50603) /*AssetConverter.TRARef*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@50604) /*AssetConverter.TRARef*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@50605) /*AssetConverter.TRARef*/
+	WRITE_LONG 412 RESOLVE_STR_REF(@50606) /*AssetConverter.TRARef*/
+
+
+//baf files
+//===================
+PRINT ~Compiling scripts...~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\generated\b\baf~
+PRINT ~Processing baf files...~
+PRINT ~Processing xab100.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab100.baf~ ~override~
+PRINT ~Processing xab109.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab109.baf~ ~override~
+PRINT ~Processing xab110.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab110.baf~ ~override~
+PRINT ~Processing xab100.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab100.baf~ ~override~
+PRINT ~Processing xab111.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab111.baf~ ~override~
+PRINT ~Processing xab101.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab101.baf~ ~override~
+PRINT ~Processing xab102.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab102.baf~ ~override~
+PRINT ~Processing xab173.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab173.baf~ ~override~
+PRINT ~Processing xab175.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab175.baf~ ~override~
+PRINT ~Processing xab176.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab176.baf~ ~override~
+PRINT ~Processing xab180.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab180.baf~ ~override~
+PRINT ~Processing xab185.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab185.baf~ ~override~
+PRINT ~Processing xab186.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab186.baf~ ~override~
+PRINT ~Processing xab189.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab189.baf~ ~override~
+PRINT ~Processing xab209.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab209.baf~ ~override~
+PRINT ~Processing xab216.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab216.baf~ ~override~
+PRINT ~Processing xab245.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab245.baf~ ~override~
+PRINT ~Processing xab250.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab250.baf~ ~override~
+PRINT ~Processing xab252.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab252.baf~ ~override~
+PRINT ~Processing xab254.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab254.baf~ ~override~
+PRINT ~Processing xab256.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab256.baf~ ~override~
+PRINT ~Processing xab258.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab258.baf~ ~override~
+PRINT ~Processing xab263.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab263.baf~ ~override~
+PRINT ~Processing xab264.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab264.baf~ ~override~
+PRINT ~Processing xab318.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab318.baf~ ~override~
+PRINT ~Processing xab314.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab314.baf~ ~override~
+PRINT ~Processing xab311.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab311.baf~ ~override~
+PRINT ~Processing xab306.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab306.baf~ ~override~
+PRINT ~Processing xab302.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab302.baf~ ~override~
+PRINT ~Processing xab298.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab298.baf~ ~override~
+PRINT ~Processing xab283.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab283.baf~ ~override~
+PRINT ~Processing xab337.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab337.baf~ ~override~
+PRINT ~Processing xab340.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab340.baf~ ~override~
+PRINT ~Processing xab350.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab350.baf~ ~override~
+PRINT ~Processing xab351.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab351.baf~ ~override~
+PRINT ~Processing xab354.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab354.baf~ ~override~
+PRINT ~Processing xab355.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab355.baf~ ~override~
+PRINT ~Processing xab358.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab358.baf~ ~override~
+PRINT ~Processing xab373.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab373.baf~ ~override~
+PRINT ~Processing xab386.baf~
+COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab386.baf~ ~override~
+
+//wav files
+//===================
+PRINT ~Processing wav files...~
+PRINT ~Processing xab10000.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10000.wav~ ~override~
+PRINT ~Processing xab10001.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10001.wav~ ~override~
+PRINT ~Processing xab10002.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10002.wav~ ~override~
+PRINT ~Processing xab10003.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10003.wav~ ~override~
+PRINT ~Processing xab10004.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10004.wav~ ~override~
+PRINT ~Processing xab10005.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10005.wav~ ~override~
+PRINT ~Processing xab10006.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10006.wav~ ~override~
+PRINT ~Processing xab10007.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10007.wav~ ~override~
+PRINT ~Processing xab10008.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10008.wav~ ~override~
+PRINT ~Processing xab10009.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10009.wav~ ~override~
+PRINT ~Processing xab10010.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10010.wav~ ~override~
+PRINT ~Processing xab10011.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10011.wav~ ~override~
+PRINT ~Processing xab10012.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10012.wav~ ~override~
+PRINT ~Processing xab10013.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10013.wav~ ~override~
+PRINT ~Processing xab10014.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10014.wav~ ~override~
+PRINT ~Processing xab10015.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10015.wav~ ~override~
+PRINT ~Processing xab10016.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10016.wav~ ~override~
+PRINT ~Processing xab10017.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10017.wav~ ~override~
+PRINT ~Processing xab10018.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10018.wav~ ~override~
+PRINT ~Processing xab10019.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10019.wav~ ~override~
+PRINT ~Processing xab10020.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10020.wav~ ~override~
+PRINT ~Processing xab10021.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10021.wav~ ~override~
+PRINT ~Processing xab10022.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10022.wav~ ~override~
+PRINT ~Processing xab10023.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10023.wav~ ~override~
+PRINT ~Processing xab10024.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10024.wav~ ~override~
+PRINT ~Processing xab10025.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10025.wav~ ~override~
+PRINT ~Processing xab10026.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10026.wav~ ~override~
+PRINT ~Processing xab10027.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10027.wav~ ~override~
+PRINT ~Processing xab10028.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10028.wav~ ~override~
+PRINT ~Processing xab10029.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10029.wav~ ~override~
+PRINT ~Processing xab10030.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10030.wav~ ~override~
+PRINT ~Processing xab10031.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10031.wav~ ~override~
+PRINT ~Processing xab10032.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10032.wav~ ~override~
+PRINT ~Processing xab10033.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10033.wav~ ~override~
+PRINT ~Processing xab10034.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10034.wav~ ~override~
+PRINT ~Processing xab10035.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10035.wav~ ~override~
+PRINT ~Processing xab10036.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10036.wav~ ~override~
+PRINT ~Processing xab10037.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10037.wav~ ~override~
+PRINT ~Processing xab10038.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10038.wav~ ~override~
+PRINT ~Processing xab10039.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10039.wav~ ~override~
+PRINT ~Processing xab10040.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10040.wav~ ~override~
+PRINT ~Processing xab10041.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10041.wav~ ~override~
+PRINT ~Processing xab10042.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10042.wav~ ~override~
+PRINT ~Processing xab10043.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10043.wav~ ~override~
+PRINT ~Processing xab10044.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10044.wav~ ~override~
+PRINT ~Processing xab10045.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10045.wav~ ~override~
+PRINT ~Processing xab10046.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10046.wav~ ~override~
+PRINT ~Processing xab10047.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10047.wav~ ~override~
+PRINT ~Processing xab10048.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10048.wav~ ~override~
+PRINT ~Processing xab10049.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10049.wav~ ~override~
+PRINT ~Processing xab10050.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10050.wav~ ~override~
+PRINT ~Processing xab10051.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10051.wav~ ~override~
+PRINT ~Processing xab10052.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10052.wav~ ~override~
+PRINT ~Processing xab10053.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10053.wav~ ~override~
+PRINT ~Processing xab10054.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10054.wav~ ~override~
+PRINT ~Processing xab10055.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10055.wav~ ~override~
+PRINT ~Processing xab10056.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10056.wav~ ~override~
+PRINT ~Processing xab10057.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10057.wav~ ~override~
+PRINT ~Processing xab10058.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10058.wav~ ~override~
+PRINT ~Processing xab10059.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10059.wav~ ~override~
+PRINT ~Processing xab10060.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10060.wav~ ~override~
+PRINT ~Processing xab10064.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10064.wav~ ~override~
+PRINT ~Processing xab10065.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10065.wav~ ~override~
+PRINT ~Processing xab10066.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10066.wav~ ~override~
+PRINT ~Processing xab10067.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10067.wav~ ~override~
+PRINT ~Processing xab10068.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10068.wav~ ~override~
+PRINT ~Processing xab10069.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10069.wav~ ~override~
+PRINT ~Processing xab10070.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10070.wav~ ~override~
+PRINT ~Processing xab10071.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10071.wav~ ~override~
+PRINT ~Processing xab10072.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10072.wav~ ~override~
+PRINT ~Processing xab10088.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10088.wav~ ~override~
+PRINT ~Processing xab10089.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10089.wav~ ~override~
+PRINT ~Processing xab10090.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10090.wav~ ~override~
+PRINT ~Processing xab10104.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10104.wav~ ~override~
+PRINT ~Processing xab10105.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10105.wav~ ~override~
+PRINT ~Processing xab10106.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10106.wav~ ~override~
+PRINT ~Processing xab10107.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10107.wav~ ~override~
+PRINT ~Processing xab10108.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10108.wav~ ~override~
+PRINT ~Processing xab10109.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10109.wav~ ~override~
+PRINT ~Processing xab10110.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10110.wav~ ~override~
+PRINT ~Processing xab10111.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10111.wav~ ~override~
+PRINT ~Processing xab10112.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10112.wav~ ~override~
+PRINT ~Processing xab10113.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10113.wav~ ~override~
+PRINT ~Processing xab10114.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10114.wav~ ~override~
+PRINT ~Processing xab10115.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10115.wav~ ~override~
+PRINT ~Processing xab10116.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10116.wav~ ~override~
+PRINT ~Processing xab10117.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10117.wav~ ~override~
+PRINT ~Processing xab10118.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10118.wav~ ~override~
+PRINT ~Processing xab10119.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10119.wav~ ~override~
+PRINT ~Processing xab10120.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10120.wav~ ~override~
+PRINT ~Processing xab10121.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10121.wav~ ~override~
+PRINT ~Processing xab10122.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10122.wav~ ~override~
+PRINT ~Processing xab10123.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10123.wav~ ~override~
+PRINT ~Processing xab10125.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10125.wav~ ~override~
+PRINT ~Processing xab10126.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10126.wav~ ~override~
+PRINT ~Processing xab10127.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10127.wav~ ~override~
+PRINT ~Processing xab10128.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10128.wav~ ~override~
+PRINT ~Processing xab10129.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10129.wav~ ~override~
+PRINT ~Processing xab10130.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10130.wav~ ~override~
+PRINT ~Processing xab10131.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10131.wav~ ~override~
+PRINT ~Processing xab10132.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10132.wav~ ~override~
+PRINT ~Processing xab10133.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10133.wav~ ~override~
+PRINT ~Processing xab10134.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10134.wav~ ~override~
+PRINT ~Processing xab10135.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10135.wav~ ~override~
+PRINT ~Processing xab10136.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10136.wav~ ~override~
+PRINT ~Processing xab10137.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10137.wav~ ~override~
+PRINT ~Processing xab10138.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10138.wav~ ~override~
+PRINT ~Processing xab10139.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10139.wav~ ~override~
+PRINT ~Processing xab10140.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10140.wav~ ~override~
+PRINT ~Processing xab10141.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10141.wav~ ~override~
+PRINT ~Processing xab10142.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10142.wav~ ~override~
+PRINT ~Processing xab10143.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10143.wav~ ~override~
+PRINT ~Processing xab10144.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10144.wav~ ~override~
+PRINT ~Processing xab10145.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10145.wav~ ~override~
+PRINT ~Processing xab10146.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10146.wav~ ~override~
+PRINT ~Processing xab10147.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10147.wav~ ~override~
+PRINT ~Processing xab10148.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10148.wav~ ~override~
+PRINT ~Processing xab10149.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10149.wav~ ~override~
+PRINT ~Processing xab10150.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10150.wav~ ~override~
+PRINT ~Processing xab10151.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10151.wav~ ~override~
+PRINT ~Processing xab10152.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10152.wav~ ~override~
+PRINT ~Processing xab10153.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10153.wav~ ~override~
+PRINT ~Processing xab10154.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10154.wav~ ~override~
+PRINT ~Processing xab10155.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10155.wav~ ~override~
+PRINT ~Processing xab10156.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10156.wav~ ~override~
+PRINT ~Processing xab10157.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10157.wav~ ~override~
+PRINT ~Processing xab10158.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10158.wav~ ~override~
+PRINT ~Processing xab10159.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10159.wav~ ~override~
+PRINT ~Processing xab10160.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10160.wav~ ~override~
+PRINT ~Processing xab10161.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10161.wav~ ~override~
+PRINT ~Processing xab10162.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10162.wav~ ~override~
+PRINT ~Processing xab10163.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10163.wav~ ~override~
+PRINT ~Processing xab10164.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10164.wav~ ~override~
+PRINT ~Processing xab10165.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10165.wav~ ~override~
+PRINT ~Processing xab10166.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10166.wav~ ~override~
+PRINT ~Processing xab10167.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10167.wav~ ~override~
+PRINT ~Processing xab10168.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10168.wav~ ~override~
+PRINT ~Processing xab10169.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10169.wav~ ~override~
+PRINT ~Processing xab10170.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10170.wav~ ~override~
+PRINT ~Processing xab10173.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10173.wav~ ~override~
+PRINT ~Processing xab10174.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10174.wav~ ~override~
+PRINT ~Processing xab10175.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10175.wav~ ~override~
+PRINT ~Processing xab10176.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10176.wav~ ~override~
+PRINT ~Processing xab10177.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10177.wav~ ~override~
+PRINT ~Processing xab10178.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10178.wav~ ~override~
+PRINT ~Processing xab10179.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10179.wav~ ~override~
+PRINT ~Processing xab10180.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10180.wav~ ~override~
+PRINT ~Processing xab10192.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10192.wav~ ~override~
+PRINT ~Processing xab10194.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10194.wav~ ~override~
+PRINT ~Processing xab10195.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10195.wav~ ~override~
+PRINT ~Processing xab10201.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10201.wav~ ~override~
+PRINT ~Processing xab10202.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10202.wav~ ~override~
+PRINT ~Processing xab10203.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10203.wav~ ~override~
+PRINT ~Processing xab10204.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10204.wav~ ~override~
+PRINT ~Processing xab10205.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10205.wav~ ~override~
+PRINT ~Processing xab10206.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10206.wav~ ~override~
+PRINT ~Processing xab10207.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10207.wav~ ~override~
+PRINT ~Processing xab10209.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10209.wav~ ~override~
+PRINT ~Processing xab10210.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10210.wav~ ~override~
+PRINT ~Processing xab10211.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10211.wav~ ~override~
+PRINT ~Processing xab10212.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10212.wav~ ~override~
+PRINT ~Processing xab10213.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10213.wav~ ~override~
+PRINT ~Processing xab10214.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10214.wav~ ~override~
+PRINT ~Processing xab10295.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10295.wav~ ~override~
+PRINT ~Processing xab10294.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10294.wav~ ~override~
+PRINT ~Processing xab10293.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10293.wav~ ~override~
+PRINT ~Processing xab10292.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10292.wav~ ~override~
+PRINT ~Processing xab10291.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10291.wav~ ~override~
+PRINT ~Processing xab10290.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10290.wav~ ~override~
+PRINT ~Processing xab10289.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10289.wav~ ~override~
+PRINT ~Processing xab10274.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10274.wav~ ~override~
+PRINT ~Processing xab10273.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10273.wav~ ~override~
+PRINT ~Processing xab10260.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10260.wav~ ~override~
+PRINT ~Processing xab10259.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10259.wav~ ~override~
+PRINT ~Processing xab10258.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10258.wav~ ~override~
+PRINT ~Processing xab10254.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10254.wav~ ~override~
+PRINT ~Processing xab10253.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10253.wav~ ~override~
+PRINT ~Processing xab10252.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10252.wav~ ~override~
+PRINT ~Processing xab10251.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10251.wav~ ~override~
+PRINT ~Processing xab10250.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10250.wav~ ~override~
+PRINT ~Processing xab10249.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10249.wav~ ~override~
+PRINT ~Processing xab10248.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10248.wav~ ~override~
+PRINT ~Processing xab10247.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10247.wav~ ~override~
+PRINT ~Processing xab10246.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10246.wav~ ~override~
+PRINT ~Processing xab10245.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10245.wav~ ~override~
+PRINT ~Processing xab10244.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10244.wav~ ~override~
+PRINT ~Processing xab10296.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10296.wav~ ~override~
+PRINT ~Processing xab10297.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10297.wav~ ~override~
+PRINT ~Processing xab10298.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10298.wav~ ~override~
+PRINT ~Processing xab10299.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10299.wav~ ~override~
+PRINT ~Processing xab10306.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10306.wav~ ~override~
+PRINT ~Processing xab10307.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10307.wav~ ~override~
+PRINT ~Processing xab10318.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10318.wav~ ~override~
+PRINT ~Processing xab10319.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10319.wav~ ~override~
+PRINT ~Processing xab10320.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10320.wav~ ~override~
+PRINT ~Processing xab10321.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10321.wav~ ~override~
+PRINT ~Processing xab10323.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10323.wav~ ~override~
+PRINT ~Processing xab10324.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10324.wav~ ~override~
+PRINT ~Processing xab10325.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10325.wav~ ~override~
+PRINT ~Processing xab10326.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10326.wav~ ~override~
+PRINT ~Processing xab10327.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10327.wav~ ~override~
+PRINT ~Processing xab10328.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10328.wav~ ~override~
+PRINT ~Processing xab10331.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10331.wav~ ~override~
+PRINT ~Processing xab10337.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10337.wav~ ~override~
+PRINT ~Processing xab10339.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10339.wav~ ~override~
+PRINT ~Processing xab10340.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10340.wav~ ~override~
+PRINT ~Processing xab10342.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10342.wav~ ~override~
+PRINT ~Processing xab10344.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10344.wav~ ~override~
+PRINT ~Processing xab10345.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10345.wav~ ~override~
+PRINT ~Processing xab10347.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10347.wav~ ~override~
+PRINT ~Processing xab10351.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10351.wav~ ~override~
+PRINT ~Processing xab10352.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10352.wav~ ~override~
+PRINT ~Processing xab10353.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10353.wav~ ~override~
+PRINT ~Processing xab10355.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10355.wav~ ~override~
+PRINT ~Processing xab10356.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10356.wav~ ~override~
+PRINT ~Processing xab10357.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10357.wav~ ~override~
+PRINT ~Processing xab10359.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10359.wav~ ~override~
+PRINT ~Processing xab10360.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10360.wav~ ~override~
+PRINT ~Processing xab10361.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10361.wav~ ~override~
+PRINT ~Processing xab10371.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10371.wav~ ~override~
+PRINT ~Processing xab10372.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10372.wav~ ~override~
+PRINT ~Processing xab10373.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10373.wav~ ~override~
+PRINT ~Processing xab10383.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10383.wav~ ~override~
+PRINT ~Processing xab10384.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10384.wav~ ~override~
+PRINT ~Processing xab10385.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10385.wav~ ~override~
+PRINT ~Processing xab10386.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10386.wav~ ~override~
+PRINT ~Processing xab10387.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10387.wav~ ~override~
+PRINT ~Processing xab10388.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10388.wav~ ~override~
+PRINT ~Processing xab10431.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10431.wav~ ~override~
+PRINT ~Processing xab10432.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10432.wav~ ~override~
+PRINT ~Processing xab10433.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10433.wav~ ~override~
+PRINT ~Processing xab10434.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10434.wav~ ~override~
+PRINT ~Processing xab10435.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10435.wav~ ~override~
+PRINT ~Processing xab10436.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10436.wav~ ~override~
+PRINT ~Processing xab10437.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10437.wav~ ~override~
+PRINT ~Processing xab10438.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10438.wav~ ~override~
+PRINT ~Processing xab10439.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10439.wav~ ~override~
+PRINT ~Processing xab10440.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10440.wav~ ~override~
+PRINT ~Processing xab10444.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10444.wav~ ~override~
+PRINT ~Processing xab10445.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10445.wav~ ~override~
+PRINT ~Processing xab10446.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10446.wav~ ~override~
+PRINT ~Processing xab10447.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10447.wav~ ~override~
+PRINT ~Processing xab10448.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10448.wav~ ~override~
+PRINT ~Processing xab10449.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10449.wav~ ~override~
+PRINT ~Processing xab10451.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10451.wav~ ~override~
+PRINT ~Processing xab10453.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10453.wav~ ~override~
+PRINT ~Processing xab10454.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10454.wav~ ~override~
+PRINT ~Processing xab10456.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10456.wav~ ~override~
+PRINT ~Processing xab10457.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10457.wav~ ~override~
+PRINT ~Processing xab10458.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10458.wav~ ~override~
+PRINT ~Processing xab10459.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10459.wav~ ~override~
+PRINT ~Processing xab10460.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10460.wav~ ~override~
+PRINT ~Processing xab10461.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10461.wav~ ~override~
+PRINT ~Processing xab10462.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10462.wav~ ~override~
+PRINT ~Processing xab10463.wav~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wav\xab10463.wav~ ~override~
+
+//itm files
+//===================
+PRINT ~Processing itm files...~
+PRINT ~Processing xab100.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab100.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50607) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50608) /*AssetConverter.TRARef*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@50609) /*AssetConverter.TRARef*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@50610) /*AssetConverter.TRARef*/
+PRINT ~Processing xab121.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab121.itm~ ~override~
+PRINT ~Processing xab122.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab122.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50611) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50612) /*AssetConverter.TRARef*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@50613) /*AssetConverter.TRARef*/
+PRINT ~Processing xab123.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab123.itm~ ~override~
+PRINT ~Processing xab124.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab124.itm~ ~override~
+PRINT ~Processing xab133.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab133.itm~ ~override~
+PRINT ~Processing xab137.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab137.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50614) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50615) /*AssetConverter.TRARef*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@50616) /*AssetConverter.TRARef*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@50617) /*AssetConverter.TRARef*/
+PRINT ~Processing xab140.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab140.itm~ ~override~
+PRINT ~Processing xab142.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab142.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50618) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50619) /*AssetConverter.TRARef*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@50620) /*AssetConverter.TRARef*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@50621) /*AssetConverter.TRARef*/
+PRINT ~Processing xab143.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab143.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50622) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50623) /*AssetConverter.TRARef*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@50624) /*AssetConverter.TRARef*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@50625) /*AssetConverter.TRARef*/
+PRINT ~Processing xab144.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab144.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50626) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50627) /*AssetConverter.TRARef*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@50628) /*AssetConverter.TRARef*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@50629) /*AssetConverter.TRARef*/
+PRINT ~Processing xab145.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab145.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50630) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50631) /*AssetConverter.TRARef*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@50632) /*AssetConverter.TRARef*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@50633) /*AssetConverter.TRARef*/
+PRINT ~Processing xab146.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab146.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50634) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50635) /*AssetConverter.TRARef*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@50636) /*AssetConverter.TRARef*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@50637) /*AssetConverter.TRARef*/
+PRINT ~Processing xab147.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab147.itm~ ~override~
+PRINT ~Processing xab153.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab153.itm~ ~override~
+PRINT ~Processing xab154.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab154.itm~ ~override~
+PRINT ~Processing xab156.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab156.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50638) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50639) /*AssetConverter.TRARef*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@50640) /*AssetConverter.TRARef*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@50641) /*AssetConverter.TRARef*/
+PRINT ~Processing xab157.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab157.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50642) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50643) /*AssetConverter.TRARef*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@50644) /*AssetConverter.TRARef*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@50645) /*AssetConverter.TRARef*/
+PRINT ~Processing xab160.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab160.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50646) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50647) /*AssetConverter.TRARef*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@50648) /*AssetConverter.TRARef*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@50649) /*AssetConverter.TRARef*/
+PRINT ~Processing xab161.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab161.itm~ ~override~
+PRINT ~Processing xab163.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab163.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50650) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50651) /*AssetConverter.TRARef*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@50652) /*AssetConverter.TRARef*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@50653) /*AssetConverter.TRARef*/
+PRINT ~Processing xab164.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab164.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50654) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50655) /*AssetConverter.TRARef*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@50656) /*AssetConverter.TRARef*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@50657) /*AssetConverter.TRARef*/
+PRINT ~Processing xab165.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab165.itm~ ~override~
+PRINT ~Processing xab166.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab166.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50658) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50659) /*AssetConverter.TRARef*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@50660) /*AssetConverter.TRARef*/
+PRINT ~Processing xab168.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab168.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50661) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50662) /*AssetConverter.TRARef*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@50663) /*AssetConverter.TRARef*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@50664) /*AssetConverter.TRARef*/
+PRINT ~Processing xab169.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab169.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50665) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50666) /*AssetConverter.TRARef*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@50667) /*AssetConverter.TRARef*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@50668) /*AssetConverter.TRARef*/
+PRINT ~Processing xab170.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab170.itm~ ~override~
+PRINT ~Processing xab172.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab172.itm~ ~override~
+PRINT ~Processing xab184.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab184.itm~ ~override~
+PRINT ~Processing xab199.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab199.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50669) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50670) /*AssetConverter.TRARef*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@50671) /*AssetConverter.TRARef*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@50672) /*AssetConverter.TRARef*/
+PRINT ~Processing xab200.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab200.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50673) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50674) /*AssetConverter.TRARef*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@50675) /*AssetConverter.TRARef*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@50676) /*AssetConverter.TRARef*/
+PRINT ~Processing xab202.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab202.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50677) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50678) /*AssetConverter.TRARef*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@50679) /*AssetConverter.TRARef*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@50680) /*AssetConverter.TRARef*/
+PRINT ~Processing xab207.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab207.itm~ ~override~
+PRINT ~Processing xab209.itm~
+COPY ~%MOD_FOLDER%\rbg\generated\b\itm\xab209.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@50681) /*AssetConverter.TRARef*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@50682) /*AssetConverter.TRARef*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@50683) /*AssetConverter.TRARef*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@50684) /*AssetConverter.TRARef*/
+
+//wed files
+//===================
+PRINT ~Processing wed files...~
+PRINT ~Processing xab100.wed~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wed\xab100.wed~ ~override~
+PRINT ~Processing xab101.wed~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wed\xab101.wed~ ~override~
+PRINT ~Processing xab102.wed~
+COPY ~%MOD_FOLDER%\rbg\generated\b\wed\xab102.wed~ ~override~
+
+//bam files
+//===================
+PRINT ~Processing bam files...~
+PRINT ~Processing xab135.bam~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bam\xab135.bam~ ~override~
+PRINT ~Processing xab136.bam~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bam\xab136.bam~ ~override~
+PRINT ~Processing xab137.bam~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bam\xab137.bam~ ~override~
+PRINT ~Processing xab138.bam~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bam\xab138.bam~ ~override~
+PRINT ~Processing xab139.bam~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bam\xab139.bam~ ~override~
+PRINT ~Processing xab140.bam~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bam\xab140.bam~ ~override~
+PRINT ~Processing xab141.bam~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bam\xab141.bam~ ~override~
+PRINT ~Processing xab142.bam~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bam\xab142.bam~ ~override~
+PRINT ~Processing xab143.bam~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bam\xab143.bam~ ~override~
+PRINT ~Processing xab155.bam~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bam\xab155.bam~ ~override~
+PRINT ~Processing xab151.bam~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bam\xab151.bam~ ~override~
+PRINT ~Processing xab150.bam~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bam\xab150.bam~ ~override~
+
+PRINT ~Compiling dialogs...~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\generated\b\d~
+//dlg files
+//===================
+PRINT ~Processing dlg files...~
+
+//tis files
+//===================
+PRINT ~Processing tis files...~
+PRINT ~Processing xab100.tis~
+COPY ~%MOD_FOLDER%\rbg\generated\b\tis\xab100.tis~ ~override~
+PRINT ~Processing xab101.tis~
+COPY ~%MOD_FOLDER%\rbg\generated\b\tis\xab101.tis~ ~override~
+PRINT ~Processing xab102.tis~
+COPY ~%MOD_FOLDER%\rbg\generated\b\tis\xab102.tis~ ~override~
+
+PRINT ~Copying MOS...~
+PRINT ~Copying BMP...~

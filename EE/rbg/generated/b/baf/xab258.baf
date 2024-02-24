@@ -1,0 +1,1697 @@
+IF
+	Detect(Myself)
+	Global("bd_no_combat","locals",2)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("bd_no_retreat","locals",0)
+	Global("bd_retreat","locals",1)
+	Global("bd_no_combat","locals",1)
+	Global("bd_combat","locals",0)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("bd_prebuff","locals",0)
+	Detect(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
+THEN
+	RESPONSE #100
+		RemoveSpell(CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
+		ReallyForceSpell(Myself,CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
+		Continue()
+END
+
+IF
+	Global("bd_prebuff","locals",0)
+	Detect(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_PROTECT_FROM_EVIL)  // SPPR107.SPL (Protection From Evil)
+THEN
+	RESPONSE #100
+		RemoveSpell(CLERIC_PROTECT_FROM_EVIL)  // SPPR107.SPL (Protection From Evil)
+		ReallyForceSpell(Myself,CLERIC_PROTECT_FROM_EVIL)  // SPPR107.SPL (Protection From Evil)
+		Continue()
+END
+
+IF
+	Global("bd_prebuff","locals",0)
+	Detect(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_AID)  // SPPR201.SPL (Aid)
+THEN
+	RESPONSE #100
+		RemoveSpell(CLERIC_AID)  // SPPR201.SPL (Aid)
+		ReallyForceSpell(Myself,CLERIC_AID)  // SPPR201.SPL (Aid)
+		Continue()
+END
+
+IF
+	Global("bd_prebuff","locals",0)
+	Detect(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_SPIRITUAL_HAMMER)  // SPPR213.SPL (Spiritual Hammer)
+THEN
+	RESPONSE #100
+		RemoveSpell(CLERIC_SPIRITUAL_HAMMER)  // SPPR213.SPL (Spiritual Hammer)
+		ReallyForceSpell(Myself,CLERIC_SPIRITUAL_HAMMER)  // SPPR213.SPL (Spiritual Hammer)
+		Continue()
+END
+
+IF
+	Global("bd_prebuff","locals",0)
+	Detect(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
+THEN
+	RESPONSE #100
+		RemoveSpell(CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
+		ReallyForceSpell(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
+		Continue()
+END
+
+IF
+	Global("bd_prebuff","locals",0)
+	Detect(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
+THEN
+	RESPONSE #100
+		RemoveSpell(CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
+		ReallyForceSpell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
+		Continue()
+END
+
+IF
+	Global("bd_prebuff","locals",0)
+	Detect(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_RIGHTEOUS_MAGIC)  // SPPR513.SPL (Righteous Magic)
+THEN
+	RESPONSE #100
+		RemoveSpell(CLERIC_RIGHTEOUS_MAGIC)  // SPPR513.SPL (Righteous Magic)
+		ReallyForceSpell(Myself,CLERIC_RIGHTEOUS_MAGIC)  // SPPR513.SPL (Righteous Magic)
+		Continue()
+END
+
+IF
+	Global("bd_prebuff","locals",0)
+	Detect(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(NPC_BLADE_BARRIER)  // SPPR698.SPL (Blade Barrier)
+THEN
+	RESPONSE #100
+		RemoveSpell(NPC_BLADE_BARRIER)  // SPPR698.SPL (Blade Barrier)
+		ReallyForceSpell(Myself,NPC_BLADE_BARRIER)  // SPPR698.SPL (Blade Barrier)
+		Continue()
+END
+
+IF
+	Global("bd_prebuff","locals",0)
+	Detect(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_RESIST_FIRE)  // SPPR210.SPL (Resist Fire and Cold)
+THEN
+	RESPONSE #100
+		RemoveSpell(CLERIC_RESIST_FIRE)  // SPPR210.SPL (Resist Fire and Cold)
+		ReallyForceSpell(Myself,CLERIC_RESIST_FIRE)  // SPPR210.SPL (Resist Fire and Cold)
+		Continue()
+END
+
+IF
+	Global("bd_prebuff","locals",0)
+	Detect(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Physical Mirror)
+	OR(3)
+		RandomNum(2,1)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+THEN
+	RESPONSE #100
+		RemoveSpell(CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Physical Mirror)
+		ReallyForceSpell(Myself,CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Physical Mirror)
+		Continue()
+END
+
+IF
+	Global("bd_prebuff","locals",0)
+	Detect(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
+	!HaveSpell(WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)  // SPWI406.SPL (Minor Globe of Invulnerability)
+	!HaveSpell(WIZARD_GLOBE_OF_INVULNERABILITY)  // SPWI602.SPL (Globe of Invulnerability)
+	OR(3)
+		RandomNumGT(4,2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+THEN
+	RESPONSE #100
+		RemoveSpell(CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
+		ReallyForceSpell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
+		Continue()
+END
+
+IF
+	Global("bd_prebuff","locals",0)
+	Detect(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_MAGIC_RESISTANCE)  // SPPR509.SPL (Magic Resistance)
+	OR(3)
+		RandomNumLT(6,4)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+THEN
+	RESPONSE #100
+		RemoveSpell(CLERIC_MAGIC_RESISTANCE)  // SPPR509.SPL (Magic Resistance)
+		ReallyForceSpell(Myself,CLERIC_MAGIC_RESISTANCE)  // SPPR509.SPL (Magic Resistance)
+		Continue()
+END
+
+IF
+	Global("bd_prebuff","locals",0)
+	Detect(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_FREE_ACTION)  // SPPR403.SPL (Free Action)
+	OR(3)
+		RandomNumGT(6,3)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+THEN
+	RESPONSE #100
+		RemoveSpell(CLERIC_FREE_ACTION)  // SPPR403.SPL (Free Action)
+		ReallyForceSpell(Myself,CLERIC_FREE_ACTION)  // SPPR403.SPL (Free Action)
+		Continue()
+END
+
+IF
+	Global("bd_prebuff","locals",0)
+	Detect(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("bd_prebuff","locals",1)
+		SetGlobalTimer("bd_defence_timer","locals",4)
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	CheckStat(Myself,0,SANCTUARY)
+	See(NearestEnemyOf(Myself))
+	OR(5)
+		HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)  // SPPR502.SPL (Cure Critical Wounds)
+		HaveSpell(CLERIC_CURE_SERIOUS_WOUNDS)  // SPPR401.SPL (Cure Serious Wounds)
+		HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)  // SPPR315.SPL (Cure Medium Wounds)
+		HasItem("potn52",Myself)  // Potion of Extra Healing
+		HasItem("potn08",Myself)  // Potion of Healing
+	OR(2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_SANCTUARY)  // SPPR109.SPL (Sanctuary)
+	!StateCheck(Myself,STATE_SILENCED)
+	HPPercentLT(Myself,65)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		RemoveSpell(CLERIC_SANCTUARY)  // SPPR109.SPL (Sanctuary)
+		ForceSpell(Myself,CLERIC_SANCTUARY)  // SPPR109.SPL (Sanctuary)
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	StateCheck(Myself,STATE_POISONED)
+	HaveSpell(CLERIC_NEUTRALIZE_POISON)  // SPPR404.SPL (Neutralize Poison)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		RemoveSpell(CLERIC_NEUTRALIZE_POISON)  // SPPR404.SPL (Neutralize Poison)
+		ForceSpell(Myself,CLERIC_NEUTRALIZE_POISON)  // SPPR404.SPL (Neutralize Poison)
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	StateCheck(Myself,STATE_POISONED)
+	HaveSpell(CLERIC_SLOW_POISON)  // SPPR212.SPL (Slow Poison)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		RemoveSpell(CLERIC_SLOW_POISON)  // SPPR212.SPL (Slow Poison)
+		ForceSpell(Myself,CLERIC_SLOW_POISON)  // SPPR212.SPL (Slow Poison)
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	StateCheck(Myself,STATE_POISONED)
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HasItem("potn17",Myself)  // Elixir of Health
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		UseItem("potn17",Myself)  // Elixir of Health
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	StateCheck(Myself,STATE_POISONED)
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HasItem("potn20",Myself)  // Antidote
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		UseItem("potn20",Myself)  // Antidote
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Range(NearestEnemyOf(Myself),30)
+	HaveSpell(CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
+	OR(4)
+		HPPercentLT(NearestAllyOf(Myself),65)
+		HPPercentLT(SecondNearestAllyOf(Myself),65)
+		HPPercentLT(ThirdNearestAllyOf(Myself),65)
+		HPPercentLT(FourthNearestAllyOf(Myself),65)
+	OR(4)
+		HPPercentLT(Myself,80)
+		Range(EighthNearestAllyOf(Myself),20)
+		HPPercentLT(FifthNearestAllyOf(Myself),65)
+		HPPercentLT(SixthNearestAllyOf(Myself),65)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	OR(3)
+		!See(NearestEnemyOf(Myself))
+		StateCheck(Myself,STATE_NOT_TARGETABLE)
+		CheckStat(Myself,1,SANCTUARY)
+	HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)  // SPPR502.SPL (Cure Critical Wounds)
+	HPPercentLT(Myself,80)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_CURE_CRITICAL_WOUNDS)  // SPPR502.SPL (Cure Critical Wounds)
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	OR(3)
+		!See(NearestEnemyOf(Myself))
+		StateCheck(Myself,STATE_NOT_TARGETABLE)
+		CheckStat(Myself,1,SANCTUARY)
+	HaveSpell(CLERIC_CURE_SERIOUS_WOUNDS)  // SPPR401.SPL (Cure Serious Wounds)
+	HPPercentLT(Myself,80)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_CURE_SERIOUS_WOUNDS)  // SPPR401.SPL (Cure Serious Wounds)
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	OR(3)
+		!See(NearestEnemyOf(Myself))
+		StateCheck(Myself,STATE_NOT_TARGETABLE)
+		CheckStat(Myself,1,SANCTUARY)
+	HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)  // SPPR315.SPL (Cure Medium Wounds)
+	HPPercentLT(Myself,80)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_CURE_MEDIUM_WOUNDS)  // SPPR315.SPL (Cure Medium Wounds)
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	OR(3)
+		!See(NearestEnemyOf(Myself))
+		StateCheck(Myself,STATE_NOT_TARGETABLE)
+		CheckStat(Myself,1,SANCTUARY)
+	HaveSpell(CLERIC_CURE_LIGHT_WOUNDS)  // SPPR103.SPL (Cure Light Wounds)
+	HPPercentLT(Myself,80)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_CURE_LIGHT_WOUNDS)  // SPPR103.SPL (Cure Light Wounds)
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HasItem("potn52",Myself)  // Potion of Extra Healing
+	HPPercentLT(Myself,75)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		UseItem("potn52",Myself)  // Potion of Extra Healing
+		SetInterrupt(TRUE)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HasItem("potn08",Myself)  // Potion of Healing
+	HPPercentLT(Myself,80)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		UseItem("potn08",Myself)  // Potion of Healing
+		SetInterrupt(TRUE)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	CheckStat(Myself,1,SANCTUARY)
+	HPPercentLT(Myself,80)
+	OR(6)
+		HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)  // SPPR502.SPL (Cure Critical Wounds)
+		HaveSpell(CLERIC_CURE_SERIOUS_WOUNDS)  // SPPR401.SPL (Cure Serious Wounds)
+		HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)  // SPPR315.SPL (Cure Medium Wounds)
+		HaveSpell(CLERIC_CURE_LIGHT_WOUNDS)  // SPPR103.SPL (Cure Light Wounds)
+		HasItem("potn52",Myself)  // Potion of Extra Healing
+		HasItem("potn08",Myself)  // Potion of Healing
+	See(NearestEnemyOf(Myself))
+	DifficultyGT(EASIEST)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Global("bd_no_innates","locals",0)
+	!GlobalTimerNotExpired("bd_defence_timer","locals")
+	See(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HasItem("potn35",Myself)  // Potion of Magic Shielding
+	CheckStatGT(Myself,-5,SAVEVSSPELL)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		UseItem("potn35",Myself)  // Potion of Magic Shielding
+		SetInterrupt(TRUE)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Global("bd_no_innates","locals",0)
+	!GlobalTimerNotExpired("bd_defence_timer","locals")
+	See(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HasItem("potn34",Myself)  // Potion of Magic Protection
+	CheckStatLT(Myself,20,RESISTMAGIC)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		UseItem("potn34",Myself)  // Potion of Magic Protection
+		SetInterrupt(TRUE)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Global("bd_no_innates","locals",0)
+	!GlobalTimerNotExpired("bd_defence_timer","locals")
+	See(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HasItem("potn21",Myself)  // Potion of Clarity
+	CheckStat(Myself,0,CLERIC_CHAOTIC_COMMANDS)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		UseItem("potn21",Myself)  // Potion of Clarity
+		SetInterrupt(TRUE)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Global("bd_no_innates","locals",0)
+	!GlobalTimerNotExpired("bd_defence_timer","locals")
+	See(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HasItem("potn45",Myself)  // Potion of Freedom
+	CheckStat(Myself,0,CLERIC_FREE_ACTION)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		UseItem("potn45",Myself)  // Potion of Freedom
+		SetInterrupt(TRUE)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Global("bd_no_innates","locals",0)
+	!GlobalTimerNotExpired("bd_defence_timer","locals")
+	See(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HasItem("potn24",Myself)  // Potion of Defense
+	CheckStatGT(Myself,0,ARMORCLASS)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		UseItem("potn24",Myself)  // Potion of Defense
+		SetInterrupt(TRUE)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Global("bd_no_innates","locals",0)
+	!GlobalTimerNotExpired("bd_defence_timer","locals")
+	See(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HasItem("potn19",Myself)  // Potion of Agility
+	CheckStatLT(Myself,18,DEX)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		UseItem("potn19",Myself)  // Potion of Agility
+		SetInterrupt(TRUE)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Global("bd_no_innates","locals",0)
+	!GlobalTimerNotExpired("bd_defence_timer","locals")
+	See(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HasItem("potn37",Myself)  // Potion of Mind Focusing
+	CheckStatLT(Myself,19,DEX)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		UseItem("potn37",Myself)  // Potion of Mind Focusing
+		SetInterrupt(TRUE)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Global("bd_no_innates","locals",0)
+	!GlobalTimerNotExpired("bd_defence_timer","locals")
+	See(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HasItem("potn28",Myself)  // Potion of Fortitude
+	CheckStatLT(Myself,18,CON)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		UseItem("potn28",Myself)  // Potion of Fortitude
+		SetInterrupt(TRUE)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Global("bd_no_innates","locals",0)
+	See(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+	HasItem("potn14",Myself)  // Oil of Speed
+	!StateCheck(Myself,STATE_HASTED)
+	CheckStat(Myself,0,IMPROVEDHASTE)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		UseItem("potn14",Myself)  // Oil of Speed
+		SetInterrupt(TRUE)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Global("bd_no_defense","locals",0)
+	!GlobalTimerNotExpired("bd_defence_timer","locals")
+	!CheckSpellState(Myself,BUFF_PRO_WEAPONS)
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Physical Mirror)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_defence_timer","locals",THREE_MINUTES)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Physical Mirror)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Global("bd_no_defense","locals",0)
+	!GlobalTimerNotExpired("bd_defence_timer","locals")
+	!CheckSpellState(Myself,BUFF_PRO_SPELLS)
+	HaveSpell(CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
+	OR(4)
+		See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+		See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+		See(NearestEnemyOfType([0.0.0.BARD_ALL]))
+		See(NearestEnemyOfType([0.0.0.DRUID_ALL]))
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_defence_timer","locals",THREE_MINUTES)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Detect(Myself)
+	HaveSpell(CLERIC_HOLY_SMITE)  // SPPR313.SPL (Holy Smite)
+	OR(2)
+		!See(NearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]))
+		TriggerOverride(NearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),Range(NearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),22))
+	OR(2)
+		!See(SecondNearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]))
+		TriggerOverride(SecondNearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),Range(NearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),22))
+	OR(2)
+		!See(ThirdNearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]))
+		TriggerOverride(ThirdNearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),Range(NearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),22))
+	OR(2)
+		!See(FourthNearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]))
+		TriggerOverride(FourthNearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),Range(NearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),22))
+	OR(2)
+		!See(FifthNearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]))
+		TriggerOverride(FifthNearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),Range(NearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),22))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HaveSpell(CLERIC_HOLY_SMITE)  // SPPR313.SPL (Holy Smite)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	!TriggerOverride(LastSeenBy,Range(NearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),22))
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,CLERIC_HOLY_SMITE)  // SPPR313.SPL (Holy Smite)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Detect(Myself)
+	HaveSpell(CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unholy Blight)
+	OR(2)
+		!See(NearestEnemyOfType([0.0.0.0.0.0.MASK_GOOD]))
+		TriggerOverride(NearestEnemyOfType([0.0.0.0.0.0.MASK_GOOD]),Range(NearestEnemyOfType([0.0.0.0.0.0.MASK_GOOD]),22))
+	OR(2)
+		!See(SecondNearestEnemyOfType([0.0.0.0.0.0.MASK_GOOD]))
+		TriggerOverride(SecondNearestEnemyOfType([0.0.0.0.0.0.MASK_GOOD]),Range(NearestEnemyOfType([0.0.0.0.0.0.MASK_GOOD]),22))
+	OR(2)
+		!See(ThirdNearestEnemyOfType([0.0.0.0.0.0.MASK_GOOD]))
+		TriggerOverride(ThirdNearestEnemyOfType([0.0.0.0.0.0.MASK_GOOD]),Range(NearestEnemyOfType([0.0.0.0.0.0.MASK_GOOD]),22))
+	OR(2)
+		!See(FourthNearestEnemyOfType([0.0.0.0.0.0.MASK_GOOD]))
+		TriggerOverride(FourthNearestEnemyOfType([0.0.0.0.0.0.MASK_GOOD]),Range(NearestEnemyOfType([0.0.0.0.0.0.MASK_GOOD]),22))
+	OR(2)
+		!See(FifthNearestEnemyOfType([0.0.0.0.0.0.MASK_GOOD]))
+		TriggerOverride(FifthNearestEnemyOfType([0.0.0.0.0.0.MASK_GOOD]),Range(NearestEnemyOfType([0.0.0.0.0.0.MASK_GOOD]),22))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HaveSpell(CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unholy Blight)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	!TriggerOverride(LastSeenBy,Range(NearestEnemyOfType([0.0.0.0.0.0.MASK_GOOD]),22))
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unholy Blight)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Detect(Myself)
+	DifficultyGT(EASY)
+	OR(2)
+		HaveSpell(CLERIC_GLYPH_OF_WARDING)  // SPPR304.SPL (Glyph of Warding)
+		HasItem("potn26",Myself)  // Potion of Explosions
+	OR(3)
+		!See(FarthestEnemyOf(Myself))
+		!TriggerOverride(FarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
+		TriggerOverride(FarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
+	OR(3)
+		!See(SecondFarthestEnemyOf(Myself))
+		!TriggerOverride(SecondFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
+		TriggerOverride(SecondFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
+	OR(3)
+		!See(ThirdFarthestEnemyOf(Myself))
+		!TriggerOverride(ThirdFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
+		TriggerOverride(ThirdFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
+	OR(3)
+		!See(FourthFarthestEnemyOf(Myself))
+		!TriggerOverride(FourthFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
+		TriggerOverride(FourthFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
+	OR(3)
+		!See(FifthFarthestEnemyOf(Myself))
+		!TriggerOverride(FifthFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
+		TriggerOverride(FifthFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
+	OR(3)
+		!See(SixthFarthestEnemyOf(Myself))
+		!TriggerOverride(SixthFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
+		TriggerOverride(SixthFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
+	OR(3)
+		!See(SeventhFarthestEnemyOf(Myself))
+		!TriggerOverride(SeventhFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
+		TriggerOverride(SeventhFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
+	OR(3)
+		!See(EighthFarthestEnemyOf(Myself))
+		!TriggerOverride(EighthFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
+		TriggerOverride(EighthFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
+	OR(3)
+		!See(NinthFarthestEnemyOf(Myself))
+		!TriggerOverride(NinthFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
+		TriggerOverride(NinthFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
+	OR(3)
+		!See(TenthFarthestEnemyOf(Myself))
+		!TriggerOverride(TenthFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
+		TriggerOverride(TenthFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	DifficultyGT(EASY)
+	HaveSpell(CLERIC_GLYPH_OF_WARDING)  // SPPR304.SPL (Glyph of Warding)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	TriggerOverride(LastSeenBy,Range(NearestAllyOf(Myself),15))
+	!TriggerOverride(LastSeenBy,Range(NearestEnemyOf(Myself),22))
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,CLERIC_GLYPH_OF_WARDING)  // SPPR304.SPL (Glyph of Warding)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	DifficultyGT(EASY)
+	HasItem("potn26",Myself)  // Potion of Explosions
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	TriggerOverride(LastSeenBy,Range(NearestAllyOf(Myself),15))
+	!TriggerOverride(LastSeenBy,Range(NearestEnemyOf(Myself),22))
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		UseItem("potn26",LastSeenBy)  // Potion of Explosions
+		SetInterrupt(TRUE)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Detect(Myself)
+	CheckStat(Myself,0,TRUE_SIGHT)
+	HaveSpell(CLERIC_TRUE_SIGHT)  // SPPR505.SPL (True Seeing)
+	OR(2)
+		!Detect(NearestEnemyOf(Myself))
+		!StateCheck(NearestEnemyOf(Myself),STATE_ILLUSIONS)
+	OR(2)
+		!Detect(SecondNearestEnemyOf(Myself))
+		!StateCheck(SecondNearestEnemyOf(Myself),STATE_ILLUSIONS)
+	OR(2)
+		!Detect(ThirdNearestEnemyOf(Myself))
+		!StateCheck(ThirdNearestEnemyOf(Myself),STATE_ILLUSIONS)
+	OR(2)
+		!Detect(FourthNearestEnemyOf(Myself))
+		!StateCheck(FourthNearestEnemyOf(Myself),STATE_ILLUSIONS)
+	OR(2)
+		!Detect(FifthNearestEnemyOf(Myself))
+		!StateCheck(FifthNearestEnemyOf(Myself),STATE_ILLUSIONS)
+	OR(2)
+		!Detect(SixthNearestEnemyOf(Myself))
+		!StateCheck(SixthNearestEnemyOf(Myself),STATE_ILLUSIONS)
+	OR(2)
+		!Detect(SeventhNearestEnemyOf(Myself))
+		!StateCheck(SeventhNearestEnemyOf(Myself),STATE_ILLUSIONS)
+	OR(2)
+		!Detect(EighthNearestEnemyOf(Myself))
+		!StateCheck(EighthNearestEnemyOf(Myself),STATE_ILLUSIONS)
+	OR(2)
+		!Detect(NinthNearestEnemyOf(Myself))
+		!StateCheck(NinthNearestEnemyOf(Myself),STATE_ILLUSIONS)
+	OR(2)
+		!Detect(TenthNearestEnemyOf(Myself))
+		!StateCheck(TenthNearestEnemyOf(Myself),STATE_ILLUSIONS)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	CheckStat(Myself,0,TRUE_SIGHT)
+	HaveSpell(CLERIC_TRUE_SIGHT)  // SPPR505.SPL (True Seeing)
+	Detect(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	StateCheck(LastSeenBy,STATE_ILLUSIONS)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_TRUE_SIGHT)  // SPPR505.SPL (True Seeing)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	CheckStat(Myself,0,TRUE_SIGHT)
+	Allegiance(Myself,EVILCUTOFF)
+	Detect([GOODCUTOFF])
+	!See(LastSeenBy(Myself))
+	HaveSpell(CLERIC_INVISIBILITY_PURGE)  // SPPR309.SPL (Invisibility Purge)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_INVISIBILITY_PURGE)  // SPPR309.SPL (Invisibility Purge)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	CheckStat(Myself,0,TRUE_SIGHT)
+	Allegiance(Myself,EVILCUTOFF)
+	Detect([GOODCUTOFF])
+	!See(LastSeenBy(Myself))
+	HaveSpell(CLERIC_TRUE_SIGHT)  // SPPR505.SPL (True Seeing)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_TRUE_SIGHT)  // SPPR505.SPL (True Seeing)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	CheckStat(Myself,0,TRUE_SIGHT)
+	Allegiance(Myself,GOODCUTOFF)
+	Detect([EVILCUTOFF])
+	!See(LastSeenBy(Myself))
+	HaveSpell(CLERIC_INVISIBILITY_PURGE)  // SPPR309.SPL (Invisibility Purge)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_INVISIBILITY_PURGE)  // SPPR309.SPL (Invisibility Purge)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	CheckStat(Myself,0,TRUE_SIGHT)
+	Allegiance(Myself,GOODCUTOFF)
+	Detect([EVILCUTOFF])
+	!See(LastSeenBy(Myself))
+	HaveSpell(CLERIC_TRUE_SIGHT)  // SPPR505.SPL (True Seeing)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_TRUE_SIGHT)  // SPPR505.SPL (True Seeing)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Range(NearestEnemyOf(Myself),30)
+	HaveSpell(CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
+	Range(FourthNearestAllyOf(Myself),20)
+	OR(2)
+		CheckStat(NearestAllyOf(Myself),0,CLERIC_DEFENSIVE_HARMONY)
+		CheckStat(SecondNearestAllyOf(Myself),0,CLERIC_DEFENSIVE_HARMONY)
+	OR(2)
+		CheckStat(ThirdNearestAllyOf(Myself),0,CLERIC_DEFENSIVE_HARMONY)
+		CheckStat(FourthNearestAllyOf(Myself),0,CLERIC_DEFENSIVE_HARMONY)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Range(NearestEnemyOf(Myself),30)
+	HaveSpell(CLERIC_STRENGTH_OF_ONE)  // SPPR312.SPL (Strength of One)
+	Range(FourthNearestAllyOf(Myself),20)
+	OR(2)
+		CheckStatLT(NearestAllyOf(Myself),18,STR)
+		CheckStatLT(SecondNearestAllyOf(Myself),18,STR)
+	OR(2)
+		CheckStatLT(ThirdNearestAllyOf(Myself),18,STR)
+		CheckStatLT(FourthNearestAllyOf(Myself),18,STR)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_STRENGTH_OF_ONE)  // SPPR312.SPL (Strength of One)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Range(NearestEnemyOf(Myself),30)
+	HaveSpell(CLERIC_CHANT)  // SPPR203.SPL (Chant)
+	Range(FourthNearestAllyOf(Myself),20)
+	OR(2)
+		!StateCheck(NearestAllyOf(Myself),STATE_CHANT)
+		!StateCheck(SecondNearestAllyOf(Myself),STATE_CHANT)
+	OR(2)
+		!StateCheck(ThirdNearestAllyOf(Myself),STATE_CHANT)
+		!StateCheck(FourthNearestAllyOf(Myself),STATE_CHANT)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_CHANT)  // SPPR203.SPL (Chant)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Range(NearestEnemyOf(Myself),30)
+	HaveSpell(CLERIC_BLESS)  // SPPR101.SPL (Bless)
+	Range(FourthNearestAllyOf(Myself),20)
+	OR(2)
+		!StateCheck(NearestAllyOf(Myself),STATE_BLESS)
+		!StateCheck(SecondNearestAllyOf(Myself),STATE_BLESS)
+	OR(2)
+		!StateCheck(ThirdNearestAllyOf(Myself),STATE_BLESS)
+		!StateCheck(FourthNearestAllyOf(Myself),STATE_BLESS)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_BLESS)  // SPPR101.SPL (Bless)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Detect(NearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]))
+	HaveSpell(CLERIC_PROTECTION_FROM_EVIL_10_FOOT)  // SPPR408.SPL (Protection From Evil, 10' Radius)
+	Range(FourthNearestAllyOf(Myself),20)
+	OR(2)
+		CheckStat(NearestAllyOf(Myself),0,PROTECTION_FROM_EVIL)
+		CheckStat(SecondNearestAllyOf(Myself),0,PROTECTION_FROM_EVIL)
+	OR(2)
+		CheckStat(ThirdNearestAllyOf(Myself),0,PROTECTION_FROM_EVIL)
+		CheckStat(FourthNearestAllyOf(Myself),0,PROTECTION_FROM_EVIL)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_PROTECTION_FROM_EVIL_10_FOOT)  // SPPR408.SPL (Protection From Evil, 10' Radius)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Detect(Myself)
+	HaveSpell(CLERIC_REMOVE_PARALYSIS)  // SPPR308.SPL (Remove Paralysis)
+	OR(2)
+		!See(NearestAllyOf(Myself))
+		!StateCheck(NearestAllyOf(Myself),STATE_STUNNED | STATE_HELPLESS)
+	OR(2)
+		!See(SecondNearestAllyOf(Myself))
+		!StateCheck(SecondNearestAllyOf(Myself),STATE_STUNNED | STATE_HELPLESS)
+	OR(2)
+		!See(ThirdNearestAllyOf(Myself))
+		!StateCheck(ThirdNearestAllyOf(Myself),STATE_STUNNED | STATE_HELPLESS)
+	OR(2)
+		!See(FourthNearestAllyOf(Myself))
+		!StateCheck(FourthNearestAllyOf(Myself),STATE_STUNNED | STATE_HELPLESS)
+	OR(2)
+		!See(FifthNearestAllyOf(Myself))
+		!StateCheck(FifthNearestAllyOf(Myself),STATE_STUNNED | STATE_HELPLESS)
+	OR(2)
+		!See(SixthNearestAllyOf(Myself))
+		!StateCheck(SixthNearestAllyOf(Myself),STATE_STUNNED | STATE_HELPLESS)
+	OR(2)
+		!See(SeventhNearestAllyOf(Myself))
+		!StateCheck(SeventhNearestAllyOf(Myself),STATE_STUNNED | STATE_HELPLESS)
+	OR(2)
+		!See(EighthNearestAllyOf(Myself))
+		!StateCheck(EighthNearestAllyOf(Myself),STATE_STUNNED | STATE_HELPLESS)
+	OR(2)
+		!See(NinthNearestAllyOf(Myself))
+		!StateCheck(NinthNearestAllyOf(Myself),STATE_STUNNED | STATE_HELPLESS)
+	OR(2)
+		!See(TenthNearestAllyOf(Myself))
+		!StateCheck(TenthNearestAllyOf(Myself),STATE_STUNNED | STATE_HELPLESS)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HaveSpell(CLERIC_REMOVE_PARALYSIS)  // SPPR308.SPL (Remove Paralysis)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	StateCheck(LastSeenBy,STATE_STUNNED | STATE_HELPLESS)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,CLERIC_REMOVE_PARALYSIS)  // SPPR308.SPL (Remove Paralysis)
+	RESPONSE #25
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Detect(Myself)
+	HaveSpell(CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
+	OR(2)
+		!See(NearestAllyOf(Myself))
+		!StateCheck(NearestAllyOf(Myself),STATE_PANIC)
+	OR(2)
+		!See(SecondNearestAllyOf(Myself))
+		!StateCheck(SecondNearestAllyOf(Myself),STATE_PANIC)
+	OR(2)
+		!See(ThirdNearestAllyOf(Myself))
+		!StateCheck(ThirdNearestAllyOf(Myself),STATE_PANIC)
+	OR(2)
+		!See(FourthNearestAllyOf(Myself))
+		!StateCheck(FourthNearestAllyOf(Myself),STATE_PANIC)
+	OR(2)
+		!See(FifthNearestAllyOf(Myself))
+		!StateCheck(FifthNearestAllyOf(Myself),STATE_PANIC)
+	OR(2)
+		!See(SixthNearestAllyOf(Myself))
+		!StateCheck(SixthNearestAllyOf(Myself),STATE_PANIC)
+	OR(2)
+		!See(SeventhNearestAllyOf(Myself))
+		!StateCheck(SeventhNearestAllyOf(Myself),STATE_PANIC)
+	OR(2)
+		!See(EighthNearestAllyOf(Myself))
+		!StateCheck(EighthNearestAllyOf(Myself),STATE_PANIC)
+	OR(2)
+		!See(NinthNearestAllyOf(Myself))
+		!StateCheck(NinthNearestAllyOf(Myself),STATE_PANIC)
+	OR(2)
+		!See(TenthNearestAllyOf(Myself))
+		!StateCheck(TenthNearestAllyOf(Myself),STATE_PANIC)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HaveSpell(CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	StateCheck(LastSeenBy,STATE_PANIC)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
+	RESPONSE #25
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	!Allegiance(Myself,GOODBUTBLUE)
+	Range(NearestEnemyOf(Myself),30)
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_AERIAL_SERVANT)  // SPPR601.SPL (Aerial Servant)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_AERIAL_SERVANT)  // SPPR601.SPL (Aerial Servant)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	!Allegiance(Myself,GOODBUTBLUE)
+	Range(NearestEnemyOf(Myself),30)
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_CONJURE_ANIMALS)  // SPPR604.SPL (Conjure Animals)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_CONJURE_ANIMALS)  // SPPR604.SPL (Conjure Animals)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	!Allegiance(Myself,GOODBUTBLUE)
+	Range(NearestEnemyOf(Myself),30)
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_ANIMAL_SUMMONING_3)  // SPPR602.SPL (Animal Summoning III)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_ANIMAL_SUMMONING_3)  // SPPR602.SPL (Animal Summoning III)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	!Allegiance(Myself,GOODBUTBLUE)
+	Range(NearestEnemyOf(Myself),30)
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_ANIMAL_SUMMONING_2)  // SPPR501.SPL (Animal Summoning II)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_ANIMAL_SUMMONING_2)  // SPPR501.SPL (Animal Summoning II)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	!Allegiance(Myself,GOODBUTBLUE)
+	Range(NearestEnemyOf(Myself),30)
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_ANIMATE_DEAD)  // SPPR301.SPL (Animate Dead)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,CLERIC_ANIMATE_DEAD)  // SPPR301.SPL (Animate Dead)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Detect(Myself)
+	OR(2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_GREATER_COMMAND)  // SPPR512.SPL (Greater Command)
+	OR(2)
+		!See(NearestEnemyOf(Myself))
+		StateCheck(NearestEnemyOf(Myself),STATE_DEBUFF)
+	OR(2)
+		!See(SecondNearestEnemyOf(Myself))
+		StateCheck(SecondNearestEnemyOf(Myself),STATE_DEBUFF)
+	OR(2)
+		!See(ThirdNearestEnemyOf(Myself))
+		StateCheck(ThirdNearestEnemyOf(Myself),STATE_DEBUFF)
+	OR(2)
+		!See(FourthNearestEnemyOf(Myself))
+		StateCheck(FourthNearestEnemyOf(Myself),STATE_DEBUFF)
+	OR(2)
+		!See(FifthNearestEnemyOf(Myself))
+		StateCheck(FifthNearestEnemyOf(Myself),STATE_DEBUFF)
+	OR(2)
+		!See(SixthNearestEnemyOf(Myself))
+		StateCheck(SixthNearestEnemyOf(Myself),STATE_DEBUFF)
+	OR(2)
+		!See(SeventhNearestEnemyOf(Myself))
+		StateCheck(SeventhNearestEnemyOf(Myself),STATE_DEBUFF)
+	OR(2)
+		!See(EighthNearestEnemyOf(Myself))
+		StateCheck(EighthNearestEnemyOf(Myself),STATE_DEBUFF)
+	OR(2)
+		!See(NinthNearestEnemyOf(Myself))
+		StateCheck(NinthNearestEnemyOf(Myself),STATE_DEBUFF)
+	OR(2)
+		!See(TenthNearestEnemyOf(Myself))
+		StateCheck(TenthNearestEnemyOf(Myself),STATE_DEBUFF)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	OR(2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(CLERIC_GREATER_COMMAND)  // SPPR512.SPL (Greater Command)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy,STATE_DEBUFF)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,CLERIC_GREATER_COMMAND)  // SPPR512.SPL (Greater Command)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Detect(Myself)
+	DifficultyGT(EASIEST)
+	HaveSpell(CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Silence, 15' Radius)
+	OR(5)
+		!See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+		TriggerOverride(NearestEnemyOfType([0.0.0.MAGE_ALL]),Range(NearestEnemyOfType([0.0.0.MAGE_ALL]),15))
+		TriggerOverride(NearestEnemyOfType([0.0.0.MAGE_ALL]),Range(NearestEnemyOfType([0.0.0.CLERIC_ALL]),15))
+		StateCheck(NearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_DISABLED_CASTING)
+		!CheckStat(NearestEnemyOfType([0.0.0.MAGE_ALL]),0,WIZARD_SPELL_TURNING)
+	OR(5)
+		!See(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]))
+		TriggerOverride(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]),Range(NearestEnemyOfType([0.0.0.MAGE_ALL]),15))
+		TriggerOverride(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]),Range(NearestEnemyOfType([0.0.0.CLERIC_ALL]),15))
+		StateCheck(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_DISABLED_CASTING)
+		!CheckStat(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]),0,WIZARD_SPELL_TURNING)
+	OR(5)
+		!See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+		TriggerOverride(NearestEnemyOfType([0.0.0.CLERIC_ALL]),Range(NearestEnemyOfType([0.0.0.MAGE_ALL]),15))
+		TriggerOverride(NearestEnemyOfType([0.0.0.CLERIC_ALL]),Range(NearestEnemyOfType([0.0.0.CLERIC_ALL]),15))
+		StateCheck(NearestEnemyOfType([0.0.0.CLERIC_ALL]),STATE_DISABLED_CASTING)
+		!CheckStat(NearestEnemyOfType([0.0.0.CLERIC_ALL]),0,WIZARD_SPELL_TURNING)
+	OR(5)
+		!See(SecondNearestEnemyOfType([0.0.0.CLERIC_ALL]))
+		TriggerOverride(SecondNearestEnemyOfType([0.0.0.CLERIC_ALL]),Range(NearestEnemyOfType([0.0.0.MAGE_ALL]),15))
+		TriggerOverride(SecondNearestEnemyOfType([0.0.0.CLERIC_ALL]),Range(NearestEnemyOfType([0.0.0.CLERIC_ALL]),15))
+		StateCheck(SecondNearestEnemyOfType([0.0.0.CLERIC_ALL]),STATE_DISABLED_CASTING)
+		!CheckStat(SecondNearestEnemyOfType([0.0.0.CLERIC_ALL]),0,WIZARD_SPELL_TURNING)
+	OR(5)
+		!See(NearestEnemyOfType([0.0.0.BARD_ALL]))
+		TriggerOverride(NearestEnemyOfType([0.0.0.BARD_ALL]),Range(NearestEnemyOfType([0.0.0.MAGE_ALL]),15))
+		TriggerOverride(NearestEnemyOfType([0.0.0.BARD_ALL]),Range(NearestEnemyOfType([0.0.0.CLERIC_ALL]),15))
+		StateCheck(NearestEnemyOfType([0.0.0.BARD_ALL]),STATE_DISABLED_CASTING)
+		!CheckStat(NearestEnemyOfType([0.0.0.BARD_ALL]),0,WIZARD_SPELL_TURNING)
+	OR(5)
+		!See(SecondNearestEnemyOfType([0.0.0.BARD_ALL]))
+		TriggerOverride(SecondNearestEnemyOfType([0.0.0.BARD_ALL]),Range(NearestEnemyOfType([0.0.0.MAGE_ALL]),15))
+		TriggerOverride(SecondNearestEnemyOfType([0.0.0.BARD_ALL]),Range(NearestEnemyOfType([0.0.0.CLERIC_ALL]),15))
+		StateCheck(SecondNearestEnemyOfType([0.0.0.BARD_ALL]),STATE_DISABLED_CASTING)
+		!CheckStat(SecondNearestEnemyOfType([0.0.0.BARD_ALL]),0,WIZARD_SPELL_TURNING)
+	OR(5)
+		!See(NearestEnemyOfType([0.0.0.DRUID_ALL]))
+		TriggerOverride(NearestEnemyOfType([0.0.0.DRUID_ALL]),Range(NearestEnemyOfType([0.0.0.MAGE_ALL]),15))
+		TriggerOverride(NearestEnemyOfType([0.0.0.DRUID_ALL]),Range(NearestEnemyOfType([0.0.0.CLERIC_ALL]),15))
+		StateCheck(NearestEnemyOfType([0.0.0.DRUID_ALL]),STATE_DISABLED_CASTING)
+		!CheckStat(NearestEnemyOfType([0.0.0.DRUID_ALL]),0,WIZARD_SPELL_TURNING)
+	OR(5)
+		!See(SecondNearestEnemyOfType([0.0.0.DRUID_ALL]))
+		TriggerOverride(SecondNearestEnemyOfType([0.0.0.DRUID_ALL]),Range(NearestEnemyOfType([0.0.0.MAGE_ALL]),15))
+		TriggerOverride(SecondNearestEnemyOfType([0.0.0.DRUID_ALL]),Range(NearestEnemyOfType([0.0.0.CLERIC_ALL]),15))
+		StateCheck(SecondNearestEnemyOfType([0.0.0.DRUID_ALL]),STATE_DISABLED_CASTING)
+		!CheckStat(SecondNearestEnemyOfType([0.0.0.DRUID_ALL]),0,WIZARD_SPELL_TURNING)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	DifficultyGT(EASIEST)
+	HaveSpell(CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Silence, 15' Radius)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	!TriggerOverride(LastSeenBy,Range(NearestEnemyOfType([0.0.0.MAGE_ALL]),15))
+	!TriggerOverride(LastSeenBy,Range(NearestEnemyOfType([0.0.0.CLERIC_ALL]),15))
+	!StateCheck(LastSeenBy,STATE_DISABLED_CASTING)
+	CheckStat(LastSeenBy,0,WIZARD_SPELL_TURNING)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Silence, 15' Radius)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Detect(Myself)
+	HaveSpell(CLERIC_MISCAST_MAGIC)  // SPPR310.SPL (Miscast Magic)
+	OR(4)
+		!See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+		StateCheck(NearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_DISABLED_CASTING)
+		!CheckStatLT(NearestEnemyOfType([0.0.0.MAGE_ALL]),50,SPELLFAILUREMAGE)
+		!CheckStat(NearestEnemyOfType([0.0.0.MAGE_ALL]),0,WIZARD_SPELL_TURNING)
+	OR(4)
+		!See(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]))
+		StateCheck(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_DISABLED_CASTING)
+		!CheckStatLT(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]),50,SPELLFAILUREMAGE)
+		!CheckStat(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]),0,WIZARD_SPELL_TURNING)
+	OR(4)
+		!See(ThirdNearestEnemyOfType([0.0.0.MAGE_ALL]))
+		StateCheck(ThirdNearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_DISABLED_CASTING)
+		!CheckStatLT(ThirdNearestEnemyOfType([0.0.0.MAGE_ALL]),50,SPELLFAILUREMAGE)
+		!CheckStat(ThirdNearestEnemyOfType([0.0.0.MAGE_ALL]),0,WIZARD_SPELL_TURNING)
+	OR(4)
+		!See(NearestEnemyOfType([0.0.0.BARD_ALL]))
+		StateCheck(NearestEnemyOfType([0.0.0.BARD_ALL]),STATE_DISABLED_CASTING)
+		!CheckStatLT(NearestEnemyOfType([0.0.0.BARD_ALL]),50,SPELLFAILUREMAGE)
+		!CheckStat(NearestEnemyOfType([0.0.0.BARD_ALL]),0,WIZARD_SPELL_TURNING)
+	OR(4)
+		!See(SecondNearestEnemyOfType([0.0.0.BARD_ALL]))
+		StateCheck(SecondNearestEnemyOfType([0.0.0.BARD_ALL]),STATE_DISABLED_CASTING)
+		!CheckStatLT(SecondNearestEnemyOfType([0.0.0.BARD_ALL]),50,SPELLFAILUREMAGE)
+		!CheckStat(SecondNearestEnemyOfType([0.0.0.BARD_ALL]),0,WIZARD_SPELL_TURNING)
+	OR(4)
+		!See(ThirdNearestEnemyOfType([0.0.0.BARD_ALL]))
+		StateCheck(ThirdNearestEnemyOfType([0.0.0.BARD_ALL]),STATE_DISABLED_CASTING)
+		!CheckStatLT(ThirdNearestEnemyOfType([0.0.0.BARD_ALL]),50,SPELLFAILUREMAGE)
+		!CheckStat(ThirdNearestEnemyOfType([0.0.0.BARD_ALL]),0,WIZARD_SPELL_TURNING)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HaveSpell(CLERIC_MISCAST_MAGIC)  // SPPR310.SPL (Miscast Magic)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy,STATE_DISABLED_CASTING)
+	CheckStatLT(LastSeenBy,50,SPELLFAILUREMAGE)
+	CheckStat(LastSeenBy,0,WIZARD_SPELL_TURNING)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,CLERIC_MISCAST_MAGIC)  // SPPR310.SPL (Miscast Magic)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Detect(Myself)
+	HaveSpell(CLERIC_MISCAST_MAGIC)  // SPPR310.SPL (Miscast Magic)
+	OR(3)
+		!See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+		StateCheck(NearestEnemyOfType([0.0.0.CLERIC_ALL]),STATE_DISABLED_CASTING)
+		!CheckStatLT(NearestEnemyOfType([0.0.0.CLERIC_ALL]),50,SPELLFAILUREPRIEST)
+	OR(3)
+		!See(SecondNearestEnemyOfType([0.0.0.CLERIC_ALL]))
+		StateCheck(SecondNearestEnemyOfType([0.0.0.CLERIC_ALL]),STATE_DISABLED_CASTING)
+		!CheckStatLT(SecondNearestEnemyOfType([0.0.0.CLERIC_ALL]),50,SPELLFAILUREPRIEST)
+	OR(3)
+		!See(ThirdNearestEnemyOfType([0.0.0.CLERIC_ALL]))
+		StateCheck(ThirdNearestEnemyOfType([0.0.0.CLERIC_ALL]),STATE_DISABLED_CASTING)
+		!CheckStatLT(ThirdNearestEnemyOfType([0.0.0.CLERIC_ALL]),50,SPELLFAILUREPRIEST)
+	OR(3)
+		!See(NearestEnemyOfType([0.0.0.DRUID_ALL]))
+		StateCheck(NearestEnemyOfType([0.0.0.DRUID_ALL]),STATE_DISABLED_CASTING)
+		!CheckStatLT(NearestEnemyOfType([0.0.0.DRUID_ALL]),50,SPELLFAILUREPRIEST)
+	OR(3)
+		!See(SecondNearestEnemyOfType([0.0.0.DRUID_ALL]))
+		StateCheck(SecondNearestEnemyOfType([0.0.0.DRUID_ALL]),STATE_DISABLED_CASTING)
+		!CheckStatLT(SecondNearestEnemyOfType([0.0.0.DRUID_ALL]),50,SPELLFAILUREPRIEST)
+	OR(3)
+		!See(ThirdNearestEnemyOfType([0.0.0.DRUID_ALL]))
+		StateCheck(ThirdNearestEnemyOfType([0.0.0.DRUID_ALL]),STATE_DISABLED_CASTING)
+		!CheckStatLT(ThirdNearestEnemyOfType([0.0.0.DRUID_ALL]),50,SPELLFAILUREPRIEST)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HaveSpell(CLERIC_MISCAST_MAGIC)  // SPPR310.SPL (Miscast Magic)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy,STATE_DISABLED_CASTING)
+	CheckStatLT(LastSeenBy,50,SPELLFAILUREPRIEST)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,CLERIC_MISCAST_MAGIC)  // SPPR310.SPL (Miscast Magic)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Detect(Myself)
+	HaveSpell(CLERIC_DOOM)  // SPPR113.SPL (Doom)
+	OR(2)
+		!See(NearestEnemyOf(Myself))
+		CheckSpellState(NearestEnemyOf(Myself),MALISON)
+	OR(2)
+		!See(SecondNearestEnemyOf(Myself))
+		CheckSpellState(SecondNearestEnemyOf(Myself),MALISON)
+	OR(2)
+		!See(ThirdNearestEnemyOf(Myself))
+		CheckSpellState(ThirdNearestEnemyOf(Myself),MALISON)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HaveSpell(CLERIC_DOOM)  // SPPR113.SPL (Doom)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	!CheckSpellState(LastSeenBy,MALISON)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,CLERIC_DOOM)  // SPPR113.SPL (Doom)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Detect(Myself)
+	OR(4)
+		HaveSpell(LATHANDER_HOLD_UNDEAD)  // SPCL742.SPL (Hold Undead)
+		HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Hold Person)
+		HaveSpell(CLERIC_RIGID_THINKING)  // SPPR311.SPL (Rigid Thinking)
+		HaveSpell(CLERIC_COMMAND)  // SPPR102.SPL (Command)
+	OR(3)
+		!See(NearestEnemyOf(Myself))
+		RandomNumGT(8,4)
+		StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+	OR(3)
+		!See(SecondNearestEnemyOf(Myself))
+		RandomNumGT(8,6)
+		StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+	OR(3)
+		!See(ThirdNearestEnemyOf(Myself))
+		RandomNumGT(8,7)
+		StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
+	OR(2)
+		!See(FourthNearestEnemyOf(Myself))
+		StateCheck(FourthNearestEnemyOf(Myself),STATE_DISABLED)
+	OR(2)
+		!See(FifthNearestEnemyOf(Myself))
+		StateCheck(FifthNearestEnemyOf(Myself),STATE_DISABLED)
+	OR(2)
+		!See(SixthNearestEnemyOf(Myself))
+		StateCheck(SixthNearestEnemyOf(Myself),STATE_DISABLED)
+	OR(2)
+		!See(SeventhNearestEnemyOf(Myself))
+		StateCheck(SeventhNearestEnemyOf(Myself),STATE_DISABLED)
+	OR(2)
+		!See(EighthNearestEnemyOf(Myself))
+		StateCheck(EighthNearestEnemyOf(Myself),STATE_DISABLED)
+	OR(2)
+		!See(NinthNearestEnemyOf(Myself))
+		StateCheck(NinthNearestEnemyOf(Myself),STATE_DISABLED)
+	OR(2)
+		!See(TenthNearestEnemyOf(Myself))
+		StateCheck(TenthNearestEnemyOf(Myself),STATE_DISABLED)
+	OR(2)
+		!See(NearestEnemyOf(Myself))
+		StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+	OR(2)
+		!See(SecondNearestEnemyOf(Myself))
+		StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+	OR(2)
+		!See(ThirdNearestEnemyOf(Myself))
+		StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HaveSpell(LATHANDER_HOLD_UNDEAD)  // SPCL742.SPL (Hold Undead)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	General(LastSeenBy,UNDEAD)
+	!StateCheck(LastSeenBy,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,LATHANDER_HOLD_UNDEAD)  // SPCL742.SPL (Hold Undead)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Hold Person)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	General(LastSeenBy,HUMANOID)
+	!StateCheck(LastSeenBy,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,CLERIC_HOLD_PERSON)  // SPPR208.SPL (Hold Person)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HaveSpell(CLERIC_RIGID_THINKING)  // SPPR311.SPL (Rigid Thinking)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,CLERIC_RIGID_THINKING)  // SPPR311.SPL (Rigid Thinking)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HaveSpell(CLERIC_COMMAND)  // SPPR102.SPL (Command)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,CLERIC_COMMAND)  // SPPR102.SPL (Command)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Detect(Myself)
+	OR(3)
+		HaveSpell(CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flame Strike)
+		HaveSpell(CLERIC_POISON)  // SPPR411.SPL (Poison)
+		HasItem("wand11",Myself)  // Wand of the Heavens
+	OR(2)
+		!See(NearestEnemyOf(Myself))
+		RandomNumGT(4,2)
+	OR(2)
+		!See(SecondNearestEnemyOf(Myself))
+		RandomNumGT(4,3)
+	!See(ThirdNearestEnemyOf(Myself))
+	!See(NearestEnemyOf(Myself))
+	!See(SecondNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HaveSpell(CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flame Strike)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flame Strike)
+	RESPONSE #25
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HaveSpell(CLERIC_POISON)  // SPPR411.SPL (Poison)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,CLERIC_POISON)  // SPPR411.SPL (Poison)
+	RESPONSE #25
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HasItem("wand11",Myself)  // Wand of the Heavens
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		UseItem("wand11",LastSeenBy)  // Wand of the Heavens
+		SetInterrupt(TRUE)
+	RESPONSE #25
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),5)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+

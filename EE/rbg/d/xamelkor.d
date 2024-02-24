@@ -313,11 +313,11 @@ IF ~~ THEN BEGIN XA_MeetMelkor5B5
 	SAY @31 /* ~If the dagger were brought to a location where the barrier between the material plane and the Fugue plane were weakest, the spirits within may be drawn out of the dagger. Once freed, they would enter the Fugue plane.~ */
 	
 	IF ~
-		!Dead("bdkherr")
+		!Global("XA_LC_ClearedKanaglym", "GLOBAL", 1)
 	~ THEN GOTO XA_MeetMelkor5B7
 	
 	IF ~
-		Dead("bdkherr")
+		Global("XA_LC_ClearedKanaglym", "GLOBAL", 1)
 	~ THEN REPLY @32 /* ~I know of one such place - Kanaglym, in the caves beneath Dragonspear. There was a rift that opened into the Fugue plane. */
 	GOTO XA_MeetMelkor5B7
 	
@@ -350,7 +350,7 @@ IF ~~ THEN BEGIN XA_MeetMelkor5B7
 	SAY @33 /* ~If you could bring the dagger to a place like that, we suspect that the souls trapped within could be freed.~ */
 	
 	IF ~
-		Dead("bdkherr")
+		Global("XA_LC_ClearedKanaglym", "GLOBAL", 1)
 	~ THEN REPLY @34  /*  ~Give me the dagger, then. I'll take it to Dragonspear and release the souls within.~ */
 	DO ~
 		SetGlobal("XA_ST_Kanaglym", "GLOBAL", 1)
@@ -359,7 +359,7 @@ IF ~~ THEN BEGIN XA_MeetMelkor5B7
 	GOTO XA_MeetMelkor5B8
 	
 	IF ~
-		!Dead("bdkherr")
+		!Global("XA_LC_ClearedKanaglym", "GLOBAL", 1)
 	~ THEN REPLY @68 /* ~Give me the dagger then. If I learn of such a place in my travels, I'll bring the dagger there and release the souls trapped inside.~*/
 	DO ~
 		SetGlobal("XA_ST_Kanaglym", "GLOBAL", 1)

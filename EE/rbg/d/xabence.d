@@ -101,7 +101,7 @@ END
 IF ~
 	Global("XA_ExtensionNeeded", "GLOBAL", 1)
 	!Global("XA_DukesDebriefed", "GLOBAL", 1)
-	!AreaCheck("BG0900")
+	!AreaCheck("XA2000")
 ~ THEN BEGIN XA_BenceWyrm
 	SAY @7 /* ~Are you ready to begin the debriefing?~ */
 

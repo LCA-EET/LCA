@@ -1,0 +1,169 @@
+IF
+	OR(3)
+		StateCheck(Myself,STATE_REALLY_DEAD)
+		HitBy([GOODCUTOFF],CRUSHING)
+		AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(LastAttackerOf(Myself),PC)
+	Allegiance(Myself,NEUTRAL)
+	Global("bd_city_hostile","myarea",0)
+	!AreaCheck("BD0021")
+THEN
+	RESPONSE #100
+		SetGlobal("bd_city_hostile","global",1)
+		SetGlobal("bd_city_hostile","myarea",1)
+END
+
+IF
+	See([PC])
+	Global("BD_STOP","LOCALS",0)
+	AreaCheck("BD0101")  // Ducal Palace  Leaving BG
+THEN
+	RESPONSE #100
+		SetGlobal("BD_STOP","LOCALS",1)
+		FaceObject(Player1)
+END
+
+IF
+	AreaCheck("BD0021")
+	OR(2)
+		Delay(3)
+		Global("turn_pc","LOCALS",0)
+THEN
+	RESPONSE #3
+		SetGlobal("turn_pc","LOCALS",1)
+		FaceObject(Player1)
+		Continue()
+END
+
+IF
+	Global("bd_plot","global",57)
+	!GlobalTimerNotExpired("BD_CROWD_CHEERS","LOCALS")
+	See([PC])
+	CombatCounter(0)
+THEN
+	RESPONSE #10
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(4)
+		DisplayStringHeadNoLog(Myself,231479)  // Farewell.
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",TWO_MINUTES)
+		Continue()
+	RESPONSE #10
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(4)
+		DisplayStringHeadNoLog(Myself,210525)  // Thank you so much! Fare thee well!
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",THREE_MINUTES)
+		Continue()
+	RESPONSE #10
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(4)
+		DisplayStringHeadNoLog(Myself,217423)  // Good Luck
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",FOUR_MINUTES)
+		Continue()
+	RESPONSE #10
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(4)
+		DisplayStringHeadNoLog(Myself,208507)  // Thank you! Good fortune smile on ye.
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",FIVE_ROUNDS)
+		Continue()
+	RESPONSE #60
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",FOUR_MINUTES)
+		Continue()
+END
+
+IF
+	Global("bd_plot","global",60)
+	Global("bd_farewell_reset","locals",0)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_farewell_reset","locals",1)
+		SetGlobal("BD_CROWD_CHEERS","LOCALS",0)
+END
+
+IF
+	Delay(3)
+	Global("bd_plot","global",60)
+	!GlobalTimerNotExpired("BD_CROWD_CHEERS","LOCALS")
+	See([PC])
+THEN
+	RESPONSE #5
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(4)
+		DisplayStringHeadNoLog(Myself,235553)  // Yay! Give 'em hells, <CHARNAME>! 
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",3)
+	RESPONSE #5
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(4)
+		DisplayStringHeadNoLog(Myself,235554)  // Show Caelar what we do with her kind in the Gate! 
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",ONE_MINUTE)
+	RESPONSE #5
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(4)
+		DisplayStringHeadNoLog(Myself,235555)  // We're with you, <CHARNAME>! 
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",4)
+	RESPONSE #85
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",3)
+END
+
+IF
+	Global("bd_plot","global",61)
+	!GlobalTimerNotExpired("BD_CROWD_CHEERS","LOCALS")
+	See([PC])
+THEN
+	RESPONSE #10
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(4)
+		DisplayStringHeadNoLog(Myself,235553)  // Yay! Give 'em hells, <CHARNAME>! 
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",3)
+	RESPONSE #10
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(4)
+		DisplayStringHeadNoLog(Myself,235554)  // Show Caelar what we do with her kind in the Gate! 
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",ONE_MINUTE)
+	RESPONSE #10
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(4)
+		DisplayStringHeadNoLog(Myself,235555)  // We're with you, <CHARNAME>! 
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",4)
+	RESPONSE #10
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(4)
+		DisplayStringHeadNoLog(Myself,235566)  // Yeah! 
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",3)
+	RESPONSE #10
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(4)
+		DisplayStringHeadNoLog(Myself,235567)  // <CHARNAME>!
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",3)
+	RESPONSE #50
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",3)
+END
+
+IF
+	Global("bd_plot","global",63)
+	!GlobalTimerNotExpired("BD_CROWD_CHEERS","LOCALS")
+	See([PC])
+THEN
+	RESPONSE #10
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(4)
+		DisplayStringHeadNoLog(Myself,235569)  // Child of Bhaal! The hero's no different than Sarevok! 
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",ONE_MINUTE)
+	RESPONSE #10
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(4)
+		DisplayStringHeadNoLog(Myself,235570)  // Get out of our city! And don't ever come back!
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",4)
+	RESPONSE #10
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(4)
+		DisplayStringHeadNoLog(Myself,252706)  // Boo! Booooo!
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",3)
+	RESPONSE #10
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(4)
+		DisplayStringHeadNoLog(Myself,235579)  // Boo! Boooo! 
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",3)
+	RESPONSE #60
+		SetGlobalTimer("BD_CROWD_CHEERS","LOCALS",3)
+END
+

@@ -59,18 +59,18 @@ IF ~~ THEN BEGIN XA_DealWithBeno
 	SAY @9 /* ~Kill me and (cough).. they'll resurrect me.. you can count on it.. hah hah..~ */
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @10 /* ~Not likely. I'm going to dismember you, slowly, and scatter your remains across the four corners of Toril. I might keep your head as a souvenir. How does that sound?~ */
 	GOTO XA_KillBeno_Dismember
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		GlobalGT("XA_MarriageProposal", "GLOBAL", 0)
 	~ THEN REPLY @25 /* ~Not likely. I'm going to dismember you, slowly, and scatter your remains across the four corners of Toril. I might keep your head as a wedding gift for Schael. What, you didn't hear the news? She and I are to be married!~*/
 	GOTO XA_KillBeno_Dismember
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		GlobalLT("XA_MarriageProposal", "GLOBAL", 1)
 	~ THEN REPLY @35 /* ~Not likely. I'm going to dismember you, slowly, and scatter your remains across the four corners of Toril. I might keep your head as a gift for Schael. She can use it for target practice.~*/
 	GOTO XA_KillBeno_Dismember
@@ -109,7 +109,7 @@ IF ~~ THEN BEGIN XA_KillBeno_Dismember
 	SAY @14 /* ~Y-you.. you're insane..~ */
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @15 /* ~I'm just doing what's necessary to protect my friend. For now, I'll just take your head. I'll come back for the rest of your body after Schael's been fixed up.~ */
 	DO ~
 		AddJournalEntry(@32, INFO)
@@ -119,7 +119,7 @@ IF ~~ THEN BEGIN XA_KillBeno_Dismember
 	EXIT
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @16 /* ~I'm just doing what's necessary to protect those I love. For now, I'll just take your head. I'll come back for the rest of your body after Schael's been fixed up.~ */
 	DO ~
 		AddJournalEntry(@32, INFO)
@@ -164,7 +164,7 @@ IF ~~ THEN BEGIN XA_JailBeno3
 	SAY @14 /* ~Y-you.. you're insane..~ */
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @22 /* ~I'm just doing what's necessary to protect my friend. The Flaming Fist will be here shortly to take you to prison.~ */
 	DO ~
 		AddJournalEntry(@34, INFO)
@@ -174,7 +174,7 @@ IF ~~ THEN BEGIN XA_JailBeno3
 	EXIT
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @23 /* ~I'm just doing what's necessary to protect those I love. The Flaming Fist will be here shortly to take you to prison.~ */
 	DO ~
 		AddJournalEntry(@34, INFO)

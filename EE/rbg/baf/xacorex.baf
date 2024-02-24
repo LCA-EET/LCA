@@ -5,7 +5,7 @@ THEN
 		CutSceneId(Player1)		
 		FadeToColor([30.0],0)
 		Wait(1)
-		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 3)
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 3)
 		MoveGlobal("XAHOME","XACORWIN",[370.300])
 		Wait(2)
 		FadeFromColor([30.0],0)

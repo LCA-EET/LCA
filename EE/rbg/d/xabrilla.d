@@ -106,12 +106,12 @@ IF ~~ THEN BEGIN XA_GreetPlayer2
 	GOTO XA_TalkedToMelkor
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @188 /* ~Look - I just got back from an arduous and exhausting journey. More than anything, I want to settle down and relax with the woman I love.~*/
 	GOTO XA_WantVacation
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @187 /* ~Look - I just got back from an arduous and exhausting journey. More than anything, I need a nice, long rest.~*/
 	GOTO XA_WantVacation
 END

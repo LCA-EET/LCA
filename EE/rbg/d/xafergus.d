@@ -26,7 +26,7 @@ END
 
 IF ~
 	!Global("XA_FergusMarried", "GLOBAL", 1)
-	Global("FERGUS1","GLOBAL",2)
+	Global("XA_LC_BrielbaraCoran", "GLOBAL", 1)
 	!IsGabber(Player1)
 ~ THEN BEGIN XA_FergusCharname
 	SAY @10 /* ~Is <CHARNAME> with you? I'd like to speak with <PRO_HIMHER>, if <PRO_HESHE>'s available.~ */
@@ -34,7 +34,7 @@ IF ~
 END
 
 IF ~
-	Global("FERGUS1","GLOBAL",2)
+	Global("XA_LC_BrielbaraCoran", "GLOBAL", 1)
 	IsGabber(Player1)
 	!Global("XA_FergusMarried", "GLOBAL", 1)
 ~ THEN BEGIN XA_FergusMarried

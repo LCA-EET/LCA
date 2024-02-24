@@ -45,38 +45,38 @@ APPEND ~PLAYER1~
 		Global("XA_IllaseraDead", "GLOBAL", 1)
 		Dead("XACORWIN")
 		!InPartyAllowDead("XACORWIN")
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN BEGIN XA_IllaseraDead2
 		SAY @87 /* ~Schael? Schael! No...~*/
 		
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			Global("XA_MarriageProposal", "GLOBAL", 1)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_IllaseraDead", "GLOBAL", 2)
-			TextScreen("BADEND1")
+			TextScreen("xabad1")
 			ActionOverride(Player1, Kill(Myself))
 		~
 		EXIT
 		
 		IF ~
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			!Global("XA_MarriageProposal", "GLOBAL", 1)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_IllaseraDead", "GLOBAL", 2)
-			TextScreen("BADEND2")
+			TextScreen("xabad2")
 			ActionOverride(Player1, Kill(Myself))
 		~
 		EXIT
 		
 		IF ~
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_IllaseraDead", "GLOBAL", 2)
-			TextScreen("BADEND3")
+			TextScreen("xabad3")
 			ActionOverride(Player1, Kill(Myself))
 		~
 		EXIT
@@ -101,7 +101,7 @@ APPEND ~PLAYER1~
 		Global("XA_IllaseraDead", "GLOBAL", 1)
 		Dead("XACORWIN")
 		!InParty("XACORWIN")
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN BEGIN XA_IllaseraDead3
 		SAY @68 /* ~(You were victorious, but at great cost. Schael sacrificed herself to save Rohma. Sadly, there is no hope of bringing her back.)~ */
 		
@@ -517,7 +517,7 @@ APPEND ~PLAYER1~
 		
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN 
 		DO ~
 			SetGlobalTimer("XA_SoDAnxietyTimer", "GLOBAL", ONE_ROUND)

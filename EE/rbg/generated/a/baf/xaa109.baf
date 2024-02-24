@@ -1,0 +1,13 @@
+IF
+	Global("NiklosLeaves","GLOBAL",0)
+	AreaCheck("AR0800")  // E Baldur's Gate (Sorcerous Sundries, Elfsong Tavern)
+	OR(3)
+		Global("ThiefSecretQuestion","GLOBAL",1)
+		Global("TalkedToAlatos","GLOBAL",1)
+		Global("Chapter","GLOBAL",7)
+THEN
+	RESPONSE #100
+		SetGlobal("NiklosLeaves","GLOBAL",1)
+		DestroySelf()
+END
+

@@ -37,9 +37,9 @@ APPEND ~XALCDBG~
 		GOTO XA_BG2_InteractionTest
 		
 		IF ~~ THEN REPLY @5082 /* ~Perform BG2 Final Save.~*/
-		DO ~
-			FinalSave()
-		~
+		//DO ~
+		//	FinalSave()
+		//~
 		GOTO XA_BG2_Debug
 		
 		IF ~~ THEN REPLY @5077 /* ~Music Test~*/

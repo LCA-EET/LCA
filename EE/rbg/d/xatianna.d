@@ -15,7 +15,7 @@ IF ~
 	EXIT
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	GOTO XA_GoodByeRomance
 END
@@ -185,7 +185,7 @@ IF ~~ THEN BEGIN XA_GoodBye
 	EXIT
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	GOTO XA_GoodByeRomance
 END
@@ -223,13 +223,13 @@ IF ~~ THEN BEGIN XA_CorwinTiannaChainEnd
 	GOTO XA_WontHelp //OK
 	
 	IF ~
-		!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		InMyArea("XACORWIN")
 	~ THEN REPLY @24 /* ~Schael, what do you think? Do you believe her story?~*/
 	EXTERN XACORWIJ XA_SchaelBelievesTianna //OK
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		InMyArea("XACORWIN")
 	~ THEN REPLY @25 /* ~My love, what do you think? Do you believe her story?~ */
 	EXTERN XACORWIJ XA_SchaelBelievesTianna //OK
@@ -289,7 +289,7 @@ IF ~
 	
 	IF ~~ THEN REPLY @67 /* ~Sure - what do you have?~ */
 	DO ~
-		StartStore("tav0133", LastTalkedToBy(Myself))
+		StartStore("xa2023", LastTalkedToBy(Myself))
 	~
 	EXIT
 
@@ -380,13 +380,13 @@ CHAIN
 		== XACORWIJ
 		IF ~
 			InMyArea(Player1)
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@11 /* ~Tianna, this is <CHARNAME>, the hero of Baldur's Gate and the Sword Coast and... the <PRO_MANWOMAN> that I love.~ */
 		== XACORWIJ
 		IF ~
 			InMyArea(Player1)
-			!Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@12 /* ~Tianna, this is <CHARNAME>, the hero of Baldur's Gate and the Sword Coast.~ */
 		== XATIANNA
@@ -397,7 +397,7 @@ CHAIN
 		== XATIANNA
 		IF ~
 			InMyArea(Player1)
-			Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@13 /* ~So you and Schael are... t-that's great. I'm happy for you.~ */
 		== XATIANNA

@@ -1,0 +1,39 @@
+IF
+	AreaCheck("XAG1")
+THEN
+	RESPONSE #100
+		ChangeAIScript("",OVERRIDE)
+		ChangeAIScript("XACRTYRD",CLASS)
+END
+
+IF
+	Global("bd_lanewalk","locals",0)
+	Global("bd_outer_gate_explosion","bd4000",1)  // Dragonspear Castle  Exterior
+	GlobalTimerExpired("bd_wave2_timer","bd4000")  // Dragonspear Castle  Exterior
+THEN
+	RESPONSE #100
+		SetGlobal("bd_lanewalk","locals",1)
+		SetGlobal("bd_no_retreat","locals",1)
+		SetGlobal("bd_no_search","locals",1)
+		SaveObjectLocation("LOCALS","bd_walk_point1","dsc_gate_outer")
+		SaveObjectLocation("LOCALS","bd_walk_point2","camp_arrival1")
+		SaveObjectLocation("LOCALS","bd_default_loc","camp_arrival1")
+		ChangeEnemyAlly(Myself,GOODBUTBLUE)
+	RESPONSE #100
+		SetGlobal("bd_lanewalk","locals",1)
+		SetGlobal("bd_no_retreat","locals",1)
+		SetGlobal("bd_no_search","locals",1)
+		SaveObjectLocation("LOCALS","bd_walk_point1","dsc_gate_outer")
+		SaveObjectLocation("LOCALS","bd_walk_point2","camp_arrival2")
+		SaveObjectLocation("LOCALS","bd_default_loc","camp_arrival2")
+		ChangeEnemyAlly(Myself,GOODBUTBLUE)
+	RESPONSE #100
+		SetGlobal("bd_lanewalk","locals",1)
+		SetGlobal("bd_no_retreat","locals",1)
+		SetGlobal("bd_no_search","locals",1)
+		SaveObjectLocation("LOCALS","bd_walk_point1","dsc_gate_outer")
+		SaveObjectLocation("LOCALS","bd_walk_point2","courtyard")
+		SaveObjectLocation("LOCALS","bd_default_loc","courtyard")
+		ChangeEnemyAlly(Myself,GOODBUTBLUE)
+END
+

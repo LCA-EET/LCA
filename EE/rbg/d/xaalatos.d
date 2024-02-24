@@ -198,7 +198,7 @@ IF ~~ THEN BEGIN XA_AskAboutSlavery2
 	
 	IF ~
 		Global("XA_SoDAnxiety", "GLOBAL", 0)
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN 
 	DO ~
@@ -328,7 +328,7 @@ IF ~~ THEN BEGIN XA_CorwinAlatosChainSlaversEnd
 	GOTO XA_CorwinAlatosChainSlaversEnd2
 	
 	IF ~
-		Global("XA_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_SoDAnxiety", "GLOBAL", 0)
 	~ THEN 
 	DO ~
