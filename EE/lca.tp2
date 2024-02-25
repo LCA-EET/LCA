@@ -53,6 +53,8 @@ LANGUAGE ~English~ ~english~ ~%MOD_FOLDER%/tra/english/xalca.tra~
 BEGIN
 @800 /* ~Love Conquers All (LCA)~ */
 
+OUTER_SET rbg_carryover = 0
+OUTER_SET bg2_carryover = 0
 OUTER_SET bg1_carryover = 0
 OUTER_SET sod_carryover = 0
 

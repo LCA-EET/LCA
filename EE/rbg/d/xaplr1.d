@@ -526,28 +526,6 @@ APPEND ~PLAYER1~
 		EXIT
 	END
 	
-	IF ~~ THEN BEGIN XA_LetterSwitch_M
-		SAY @10 /* ~"<CHARNAME>, son of Bhaal. Illasera of the Five requests your presence in the Undercity, in the temple of the father. You and Captain Corwin are to come, alone. If anyone else follows you, the child will die. 
-
-		Do not keep us waiting for long."~  */
-		
-		IF ~~ THEN GOTO XA_LetterSwitchEnd
-	END
-	
-	IF ~~ THEN BEGIN XA_LetterSwitch_F
-		SAY @14 /* ~"<CHARNAME>, daughter of Bhaal. Illasera of the Five requests your presence in the Undercity, in the temple of the father. You and Captain Corwin are to come, alone. If anyone else follows you, the child will die. 
-
-		Do not keep us waiting for long."~  */
-		
-		IF ~~ THEN GOTO XA_LetterSwitchEnd
-	END
-	
-	IF ~~ THEN BEGIN XA_LetterSwitchEnd
-		SAY @11 /* ~(The temple in the Undercity... it's where you fought and defeated your brother, Sarevok. Why would this Illasera want to meet you there, of all places? You ask Schael what she makes of the letter.)~  */
-		
-		IF ~~ THEN
-		EXTERN XACORWIJ XA_ReadLetter
-	END
 	
 	IF ~~ THEN BEGIN XA_EpilogueSlayer
 		SAY @67 /* ~(It seems Beno Famari is still alive.)~ */

@@ -1,8 +1,82 @@
-PRINT @3000  /* ~Processing BG1 changes...~ */
+PRINT @4000  /* ~Processing Return to Baldur's Gate Changes...~ */
 
-/*
+ACTION_IF(rbg_carryover = 0) THEN BEGIN
+	OUTER_SET rbg_carryover = 1
+	INCLUDE ~%MOD_FOLDER%/rbg/xarbg_co.tph~
+END
+
+
+ACTION_IF (isEET = 0) THEN BEGIN
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~HOSTILES4~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~23 HOSTILES4~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~HOSTILES3~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~22 HOSTILES3~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~HOSTILES2~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~21 HOSTILES2~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~CRUSADERS~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~20 CRUSADERS~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~ALLIES_NEUTRAL2~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~16 ALLIES_NEUTRAL2~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~ALLIES_NEUTRAL~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~15 ALLIES_NEUTRAL~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~ALLIES3~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~12 ALLIES3~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~ALLIES2~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~11 ALLIES2~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~ALLIES~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~10 ALLIES~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~THIEF~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~9 THIEF~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~NEUTRALS~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~19 NEUTRALS~
+	END
+	
+	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~ORC~)
+	ACTION_IF(specRef < 0) THEN BEGIN
+		APPEND ~specific.ids~ ~18 ORC~
+	END
+END
+
+INCLUDE ~%MOD_FOLDER%/rbg/generated/a/generated.tph~
+INCLUDE ~%MOD_FOLDER%/rbg/generated/b/generated.tph~
+
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/d~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
+
+/*
+
+
 
 //{ Script Extensions
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~
@@ -262,68 +336,4 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@4107)
 //}
 
-ACTION_IF (isEET = 0) THEN BEGIN
-	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~HOSTILES4~)
-	ACTION_IF(specRef < 0) THEN BEGIN
-		APPEND ~specific.ids~ ~23 HOSTILES4~
-	END
-	
-	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~HOSTILES3~)
-	ACTION_IF(specRef < 0) THEN BEGIN
-		APPEND ~specific.ids~ ~22 HOSTILES3~
-	END
-	
-	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~HOSTILES2~)
-	ACTION_IF(specRef < 0) THEN BEGIN
-		APPEND ~specific.ids~ ~21 HOSTILES2~
-	END
-	
-	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~CRUSADERS~)
-	ACTION_IF(specRef < 0) THEN BEGIN
-		APPEND ~specific.ids~ ~20 CRUSADERS~
-	END
-	
-	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~ALLIES_NEUTRAL2~)
-	ACTION_IF(specRef < 0) THEN BEGIN
-		APPEND ~specific.ids~ ~16 ALLIES_NEUTRAL2~
-	END
-	
-	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~ALLIES_NEUTRAL~)
-	ACTION_IF(specRef < 0) THEN BEGIN
-		APPEND ~specific.ids~ ~15 ALLIES_NEUTRAL~
-	END
-	
-	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~ALLIES3~)
-	ACTION_IF(specRef < 0) THEN BEGIN
-		APPEND ~specific.ids~ ~12 ALLIES3~
-	END
-	
-	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~ALLIES2~)
-	ACTION_IF(specRef < 0) THEN BEGIN
-		APPEND ~specific.ids~ ~11 ALLIES2~
-	END
-	
-	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~ALLIES~)
-	ACTION_IF(specRef < 0) THEN BEGIN
-		APPEND ~specific.ids~ ~10 ALLIES~
-	END
-	
-	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~THIEF~)
-	ACTION_IF(specRef < 0) THEN BEGIN
-		APPEND ~specific.ids~ ~9 THIEF~
-	END
-	
-	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~NEUTRALS~)
-	ACTION_IF(specRef < 0) THEN BEGIN
-		APPEND ~specific.ids~ ~19 NEUTRALS~
-	END
-	
-	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~ORC~)
-	ACTION_IF(specRef < 0) THEN BEGIN
-		APPEND ~specific.ids~ ~18 ORC~
-	END
-END
 
-INCLUDE ~%MOD_FOLDER%/rbg/xarbg_co.tph~
-INCLUDE ~%MOD_FOLDER%/rbg/generated/a/generated.tph~
-INCLUDE ~%MOD_FOLDER%/rbg/generated/b/generated.tph~

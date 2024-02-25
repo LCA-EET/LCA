@@ -869,7 +869,7 @@ THEN
 		Continue()
 END
 
-/*IF
+IF
 	!GlobalTimerNotExpired("bd_cast","locals")
 	CheckStat(Myself,0,TRUE_SIGHT)
 	Allegiance(Myself,EVILCUTOFF)
@@ -884,7 +884,7 @@ THEN
 		Continue()
 END
 
-/*IF
+IF
 	!GlobalTimerNotExpired("bd_cast","locals")
 	CheckStat(Myself,0,TRUE_SIGHT)
 	Allegiance(Myself,EVILCUTOFF)
@@ -899,7 +899,7 @@ THEN
 		Continue()
 END
 
-/*IF
+IF
 	!GlobalTimerNotExpired("bd_cast","locals")
 	CheckStat(Myself,0,TRUE_SIGHT)
 	Allegiance(Myself,GOODCUTOFF)
@@ -914,7 +914,7 @@ THEN
 		Continue()
 END
 
-/*IF
+IF
 	!GlobalTimerNotExpired("bd_cast","locals")
 	CheckStat(Myself,0,TRUE_SIGHT)
 	Allegiance(Myself,GOODCUTOFF)
@@ -929,7 +929,7 @@ THEN
 		Continue()
 END
 
-/*IF
+IF
 	!GlobalTimerNotExpired("bd_cast","locals")
 	Range(NearestEnemyOf(Myself),30)
 	HaveSpell(CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
@@ -948,7 +948,7 @@ THEN
 		Continue()
 END
 
-/*IF
+IF
 	!GlobalTimerNotExpired("bd_cast","locals")
 	Range(NearestEnemyOf(Myself),30)
 	HaveSpell(CLERIC_STRENGTH_OF_ONE)  // SPPR312.SPL (Strength of One)
@@ -967,7 +967,7 @@ THEN
 		Continue()
 END
 
-/*IF
+IF
 	!GlobalTimerNotExpired("bd_cast","locals")
 	Range(NearestEnemyOf(Myself),30)
 	HaveSpell(CLERIC_CHANT)  // SPPR203.SPL (Chant)
@@ -986,7 +986,7 @@ THEN
 		Continue()
 END
 
-/*IF
+IF
 	!GlobalTimerNotExpired("bd_cast","locals")
 	Range(NearestEnemyOf(Myself),30)
 	HaveSpell(CLERIC_BLESS)  // SPPR101.SPL (Bless)
@@ -1005,7 +1005,7 @@ THEN
 		Continue()
 END
 
-/*IF
+IF
 	!GlobalTimerNotExpired("bd_cast","locals")
 	Detect(NearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]))
 	HaveSpell(CLERIC_PROTECTION_FROM_EVIL_10_FOOT)  // SPPR408.SPL (Protection From Evil, 10' Radius)
@@ -1117,7 +1117,7 @@ IF
 THEN
 	RESPONSE #100
 		NoAction()
-END*/
+END
 
 IF
 	!GlobalTimerNotExpired("bd_cast","locals")
@@ -1132,7 +1132,7 @@ THEN
 		Spell(LastSeenBy,CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
 	RESPONSE #25
 		Continue()
-END*/
+END
 
 IF
 	!GlobalTimerNotExpired("bd_cast","locals")
@@ -1148,7 +1148,7 @@ THEN
 		Spell(Myself,CLERIC_AERIAL_SERVANT)  // SPPR601.SPL (Aerial Servant)
 	RESPONSE #50
 		Continue()
-END*/
+END
 
 IF
 	!GlobalTimerNotExpired("bd_cast","locals")
@@ -1164,7 +1164,7 @@ THEN
 		Spell(Myself,CLERIC_CONJURE_ANIMALS)  // SPPR604.SPL (Conjure Animals)
 	RESPONSE #50
 		Continue()
-END*/
+END
 
 IF
 	!GlobalTimerNotExpired("bd_cast","locals")
@@ -1180,7 +1180,7 @@ THEN
 		Spell(Myself,CLERIC_ANIMAL_SUMMONING_3)  // SPPR602.SPL (Animal Summoning III)
 	RESPONSE #50
 		Continue()
-END*/
+END
 
 IF
 	!GlobalTimerNotExpired("bd_cast","locals")
@@ -1196,7 +1196,7 @@ THEN
 		Spell(Myself,CLERIC_ANIMAL_SUMMONING_2)  // SPPR501.SPL (Animal Summoning II)
 	RESPONSE #50
 		Continue()
-END*/
+END
 
 IF
 	!GlobalTimerNotExpired("bd_cast","locals")
@@ -1212,7 +1212,7 @@ THEN
 		Spell(Myself,CLERIC_ANIMATE_DEAD)  // SPPR301.SPL (Animate Dead)
 	RESPONSE #50
 		Continue()
-END*/
+END
 
 IF
 	!GlobalTimerNotExpired("bd_cast","locals")
@@ -1255,7 +1255,7 @@ IF
 THEN
 	RESPONSE #100
 		NoAction()
-END*/
+END
 
 IF
 	!GlobalTimerNotExpired("bd_cast","locals")
@@ -1273,7 +1273,7 @@ THEN
 		Spell(LastSeenBy,CLERIC_GREATER_COMMAND)  // SPPR512.SPL (Greater Command)
 	RESPONSE #50
 		Continue()
-END*/
+END
 
 IF
 	!GlobalTimerNotExpired("bd_cast","locals")

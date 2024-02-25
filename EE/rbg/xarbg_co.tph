@@ -2,6 +2,22 @@
 	COPY ~%MOD_FOLDER%/rbg/bmp/xanarzus.bmp~ ~override~
 //}
 
+//{ BAM
+	COPY ~%MOD_FOLDER%/rbg/bam/xabenohd.bam~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/bam/xaegg.bam~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/bam/xaibenoh.bam~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/bam/xaiegg.bam~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/bam/xaimsrin.bam~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/bam/xairing.bam~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/bam/xamedal.bam~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/bam/xamsring.bam~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/bam/xaring.bam~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/bam/xaswordd.bam~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/bam/xaswordi.bam~ ~override~
+
+	
+//}
+
 //{ New Items
 	
 	//{ Girdle of Bluntness
@@ -93,6 +109,14 @@
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3158)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4016)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4016)
+	//}
+	
+	//{ Rohma's Doll
+		COPY ~%MOD_FOLDER%/rbg/itm/xardoll.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@4115)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@4115)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@4116)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4116)
 	//}
 	
 	//{ Engagement Rings
@@ -215,6 +239,18 @@
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4017)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4037)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4037)
+		
+		COPY ~%MOD_FOLDER%/rbg/itm/xaringa.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@4112)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@4112)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@4114)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4114)
+		
+		COPY ~%MOD_FOLDER%/rbg/itm/xaringj.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@4112)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@4112)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@4113)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4113)
 	
 	//}
 

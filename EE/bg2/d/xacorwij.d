@@ -4205,15 +4205,6 @@ IF ~~ THEN BEGIN XAA58
 	GOTO XAA53 //OK
 END
 
-IF ~~ THEN BEGIN XA_XANEB_1
-	SAY @1553 /* ~I don't believe it! <CHARNAME>, this is Neb! He's wanted for the murder of more than two dozen children!~ */
-	
-	= @9 /* ~Neb! By order of the Flaming Fist you are under arrest!~ [XA100089] */
-	
-	IF ~~ THEN 
-	EXTERN XANEB XA_XANEB_2
-END
-
 IF ~~ THEN BEGIN XA_NEB_2
 	SAY @201 /* ~I don't believe it! <CHARNAME>, this is Neb, the fugitive who murdered more than two dozen children in Baldur's Gate!~ */
 	
@@ -4241,18 +4232,7 @@ IF ~~ THEN BEGIN XA_NebFight
 
 END
 
-IF ~~ THEN BEGIN XA_XANebFight
-	SAY @487  /* ~You threaten my daughter? You just made your last mistake!~ [BD39668] */
-	
-	IF ~~ THEN
-	DO ~
-		SetGlobal("XA_NebRohma", "GLOBAL", 1)
-		SetGlobal("XA_NebFight", "GLOBAL", 1)
-		ActionOverride("XANEB", Enemy())
-	~
-	EXIT
 
-END
 
 IF ~~ THEN BEGIN XAA67
 	SAY @214 /* ~Thank you.~*/

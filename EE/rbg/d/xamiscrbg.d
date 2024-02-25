@@ -1,28 +1,28 @@
 
-//{ xa2278
-ADD_STATE_TRIGGER xa2278 1
+//{ MCOOK4
+ADD_STATE_TRIGGER xaa384 1
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 //}
 
-//{ xa2003
-ADD_STATE_TRIGGER xa2003 0
+//{ SUTHIE
+ADD_STATE_TRIGGER xaa137 0
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-ADD_STATE_TRIGGER xa2003 7
+ADD_STATE_TRIGGER xaa137 7
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-ADD_STATE_TRIGGER xa2003 9
+ADD_STATE_TRIGGER xaa137 9
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-APPEND xa2003
+APPEND xaa137
 	IF ~
 		Global("XA_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XA_Intro
@@ -33,8 +33,8 @@ APPEND xa2003
 END
 //}
 
-//{ xa2076
-EXTEND_BOTTOM xa2076 0 /* OK */
+//{ BART8
+EXTEND_BOTTOM xaa183 0 /* OK */
 	IF ~
 		GlobalGT("XA_BrevlikSpawn", "GLOBAL", 0)
 		!Global("XA_FoundBrevlik", "GLOBAL", 1)
@@ -46,7 +46,7 @@ EXTEND_BOTTOM xa2076 0 /* OK */
 	GOTO XA_Brevlik
 END
 
-EXTEND_BOTTOM xa2076 1 /* OK */
+EXTEND_BOTTOM xaa183 1 /* OK */
 	IF ~
 		GlobalGT("XA_BrevlikSpawn", "GLOBAL", 0)
 		!Global("XA_FoundBrevlik", "GLOBAL", 1)
@@ -58,7 +58,7 @@ EXTEND_BOTTOM xa2076 1 /* OK */
 	GOTO XA_Brevlik
 END
 
-APPEND xa2076
+APPEND xaa183
 	IF ~~ THEN BEGIN XA_Brevlik
 		SAY @17 /* ~Does that little runt owe you money too? He hasn't been allowed here in months, and it'll stay that way so long as he doesn't pay his tab.~*/
 		
@@ -81,13 +81,13 @@ APPEND xa2076
 END
 //}
 
-//{ xa2285
-ADD_TRANS_TRIGGER xa2285 0
+//{ NOBL11
+ADD_TRANS_TRIGGER xaa246 0
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-EXTEND_BOTTOM xa2285 0 /* OK */
+EXTEND_BOTTOM xaa246 0 /* OK */
 	IF ~
 		Global("XA_ReturnToBG", "GLOBAL", 1)
 	~ THEN REPLY @12 /* ~Tell me what the common folk are talking about these days.~ */ 
@@ -99,7 +99,7 @@ EXTEND_BOTTOM xa2285 0 /* OK */
 	GOTO XAA1
 END
 
-APPEND xa2285 
+APPEND xaa246 
 	IF ~~ THEN BEGIN XAA1
 		SAY @14 /* ~Aye, remember <CHARNAME>, the so-called hero of Baldur's Gate? The one who was arrested for killing the Duke's daughter? Well, the Dukes are now tellin' everyone now that <PRO_HESHE> was innocent the whole time! What's more, Skie Silvershield is up and about, healthy and lively as ever. Could you believe it? Word on the street is that <PRO_HESHE>'s on <PRO_HISHER> way back to the city as we speak. Good on <PRO_HIMHER>, I s'pose.~ */
 		
@@ -112,8 +112,8 @@ APPEND xa2285
 END
 //}
 
-//{ xa2267
-EXTEND_BOTTOM xa2267 0
+//{ SHOP06
+EXTEND_BOTTOM xaa349 0
 	IF ~
 		GlobalLT("XA_BoughtRohmaDoll", "GLOBAL", 1)
 		Global("XA_WantToGetDoll", "GLOBAL", 1)
@@ -123,7 +123,7 @@ EXTEND_BOTTOM xa2267 0
 	GOTO M0
 END
 
-APPEND xa2267
+APPEND xaa349
 	IF ~~ THEN BEGIN M0
 		SAY @1 /* ~As a matter of fact, I do. Are you interested in this doll? I'll sell it to you for three gold.~ */
 		IF ~
@@ -170,8 +170,8 @@ APPEND xa2267
 END
 //}
 
-//{ xa2269
-EXTEND_BOTTOM xa2269 0
+//{ SHOP08
+EXTEND_BOTTOM xaa351 0
 	IF ~
 		GlobalLT("XA_BoughtRohmaDoll", "GLOBAL", 1)
 		Global("XA_WantToGetDoll", "GLOBAL", 1)
@@ -183,7 +183,7 @@ END
 
 
 
-APPEND xa2269
+APPEND xaa351
 	IF ~~ THEN BEGIN M0
 		SAY @1 /* ~As a matter of fact, I do. Are you interested in this doll? I'll sell it to you for three gold.~ */
 		IF ~
@@ -230,8 +230,8 @@ APPEND xa2269
 END
 //}
 
-//{ xa2102
-EXTEND_BOTTOM xa2102 0
+//{ PROST6
+EXTEND_BOTTOM xaa186 0
 	IF ~
 		GlobalLT("XA_BoughtRohmaDoll", "GLOBAL", 1)
 		Global("XA_WantToGetDoll", "GLOBAL", 1)
@@ -241,7 +241,7 @@ EXTEND_BOTTOM xa2102 0
 	GOTO M0
 END
 
-APPEND xa2102
+APPEND xaa186
 	IF ~~ THEN BEGIN M0
 		SAY @1 /* ~As a matter of fact, I do. Are you interested in this doll? I'll sell it to you for three gold.~ */
 		IF ~
@@ -288,18 +288,18 @@ APPEND xa2102
 END
 //}
 		
-//{ xa2000
-ADD_STATE_TRIGGER xa2000 0
+//{ FLAMGG
+ADD_STATE_TRIGGER xaa100 0
 ~
 	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-ADD_STATE_TRIGGER xa2000 3
+ADD_STATE_TRIGGER xaa100 3
 ~
 	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-APPEND xa2000
+APPEND xaa100
 	IF ~
 		Global("XA_ReturnToBG", "GLOBAL", 1)
 		GlobalLT("XA_TollPaid", "LOCALS", 1)
@@ -341,20 +341,20 @@ APPEND xa2000
 END
 //}
 
-//{ xa2333
+//{ RBALDU
 
-ADD_STATE_TRIGGER xa2333 5
+ADD_STATE_TRIGGER xaa433 5
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-ADD_STATE_TRIGGER xa2333 14
+ADD_STATE_TRIGGER xaa433 14
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
 
-APPEND xa2333
+APPEND xaa433
 	IF ~
 		Global("XA_ReturnToBG", "GLOBAL", 1)
 		!AreaCheck("BG0614")
@@ -398,18 +398,18 @@ END
 //}
 
 
-//{ xa3142
-ADD_STATE_TRIGGER xa3142 0
+//{ HOUSG3
+ADD_STATE_TRIGGER xaa389 0
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-ADD_STATE_TRIGGER xa3142 1
+ADD_STATE_TRIGGER xaa389 1
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-APPEND xa3142
+APPEND xaa389
 	IF ~
 		//IsGabber(Player1)
 		IsGabber(Player1)
@@ -455,18 +455,18 @@ END
 //}
 
 
-//{ xa3140
-ADD_STATE_TRIGGER xa3140 0
+//{ SERVA3
+ADD_STATE_TRIGGER xaa390 0
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-ADD_STATE_TRIGGER xa3140 11
+ADD_STATE_TRIGGER xaa390 11
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-APPEND xa3140
+APPEND xaa390
 	IF ~
 		//IsGabber(Player1)
 		IsGabber(Player1)
@@ -540,23 +540,23 @@ APPEND xa3140
 END
 //}
 
-//{ xa2183
-ADD_STATE_TRIGGER xa2183 7
+//{ LOBAR
+ADD_STATE_TRIGGER xaa248 7
 ~
 	!IsGabber("XACORWIN")
 ~
 
-ADD_STATE_TRIGGER xa2183 0
+ADD_STATE_TRIGGER xaa248 0
 ~
 	!IsGabber("XACORWIN")
 ~
 
-ADD_STATE_TRIGGER xa2183 8
+ADD_STATE_TRIGGER xaa248 8
 ~
 	!IsGabber("XACORWIN")
 ~
 
-EXTEND_BOTTOM xa2183 0
+EXTEND_BOTTOM xaa248 0
 	IF ~
 		IsValidForPartyDialog("XACORWIN")
 		!Global("XA_CorwinLobarTianna", "GLOBAL", 1)
@@ -568,7 +568,7 @@ EXTEND_BOTTOM xa2183 0
 	EXTERN XACORWIJ XA_CorwinLobar
 END
 
-EXTEND_BOTTOM xa2183 8
+EXTEND_BOTTOM xaa248 8
 	IF ~
 		IsValidForPartyDialog("XACORWIN")
 		!Global("XA_CorwinLobarTianna", "GLOBAL", 1)
@@ -580,7 +580,7 @@ EXTEND_BOTTOM xa2183 8
 	EXTERN XACORWIJ XA_CorwinLobar
 END
 
-APPEND xa2183
+APPEND xaa248
 	IF ~
 		IsGabber("XACORWIN")
 		Global("XA_CorwinLobar", "GLOBAL", 1)
@@ -668,26 +668,26 @@ APPEND xa2183
 END
 //}
 
-//{ xa2186
-ADD_STATE_TRIGGER xa2186 6
+//{ NOBW9
+ADD_STATE_TRIGGER xaa245 6
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-ADD_TRANS_TRIGGER xa2186 0
+ADD_TRANS_TRIGGER xaa245 0
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 DO 3
 
-EXTEND_BOTTOM xa2186 0
+EXTEND_BOTTOM xaa245 0
 	IF ~
 		Global("XA_ReturnToBG", "GLOBAL", 1)
 	~ THEN REPLY @43 /* ~We've just returned after a long adventure in Amn.~*/
 	GOTO XAA1
 END
 
-APPEND xa2186
+APPEND xaa245
 	IF ~
 		StateCheck(Myself,STATE_CHARMED)
 		Global("XA_ReturnToBG", "GLOBAL", 1)
@@ -705,13 +705,13 @@ APPEND xa2186
 END
 //}
 
-//{ xa2181
-ADD_STATE_TRIGGER xa2181 0
+//{ BART0133
+ADD_STATE_TRIGGER xaa250 0
 ~
 	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-APPEND xa2181
+APPEND xaa250
 	IF ~
 		Global("XA_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XAA0
@@ -728,13 +728,13 @@ APPEND xa2181
 END
 //}
 
-//{ xa3072
-ADD_STATE_TRIGGER xa3072 2
+//{ PROST3
+ADD_STATE_TRIGGER xaa377 2
 ~
 	InMyArea("YAGO")
 ~
 
-APPEND xa3072
+APPEND xaa377
 	IF ~
 		!Dead("YAGO")
 		!InMyArea("YAGO")
@@ -757,13 +757,13 @@ APPEND xa3072
 END
 //}
 
-//{ xa2315
-ADD_STATE_TRIGGER xa2315 7
+//{ IRONM4
+ADD_STATE_TRIGGER xaa415 7
 ~
 	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-EXTEND_BOTTOM xa2315 0
+EXTEND_BOTTOM xaa415 0
 	IF ~
 		Global("XA_HelpTianna", "GLOBAL", 1)
 		!Global("XA_AskedAboutJasper", "LOCALS", 1)
@@ -773,7 +773,7 @@ EXTEND_BOTTOM xa2315 0
 	GOTO XA_Jasper
 END
 
-APPEND xa2315
+APPEND xaa415
 	IF ~  
 		StateCheck(Myself,STATE_CHARMED)
 		Global("XA_ReturnToBG", "GLOBAL", 1)
@@ -804,13 +804,13 @@ APPEND xa2315
 END
 //}
 
-//{ xa2097
-ADD_STATE_TRIGGER xa2097 3
+//{ PROST8
+ADD_STATE_TRIGGER xaa295 3
 ~
 	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-APPEND xa2097
+APPEND xaa295
 	IF ~  
 		StateCheck(Myself,STATE_CHARMED)
 		Global("XA_ReturnToBG", "GLOBAL", 1)
@@ -821,13 +821,13 @@ APPEND xa2097
 END
 //}
 
-//{ xa2099
-ADD_STATE_TRIGGER xa2099 6
+//{ PROST7
+ADD_STATE_TRIGGER xaa293 6
 ~
 	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-APPEND xa2099
+APPEND xaa293
 	IF ~  
 		StateCheck(Myself,STATE_CHARMED)
 		Global("XA_ReturnToBG", "GLOBAL", 1)
@@ -838,13 +838,13 @@ APPEND xa2099
 END
 //}
 
-//{ xa2102
-ADD_STATE_TRIGGER xa2102 2
+//{ PROST6
+ADD_STATE_TRIGGER xaa290 2
 ~
 	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-APPEND xa2102
+APPEND xaa290
 	IF ~  
 		StateCheck(Myself,STATE_CHARMED)
 		Global("XA_ReturnToBG", "GLOBAL", 1)
@@ -855,13 +855,13 @@ APPEND xa2102
 END
 //}
 
-//{ xa2103
-ADD_STATE_TRIGGER xa2103 4
+//{ PROST5
+ADD_STATE_TRIGGER xaa289 4
 ~
 	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-APPEND xa2103
+APPEND xaa289
 	IF ~  
 		StateCheck(Myself,STATE_CHARMED)
 		Global("XA_ReturnToBG", "GLOBAL", 1)
@@ -872,18 +872,18 @@ APPEND xa2103
 END
 //}
 
-//{ xa2043
-ADD_TRANS_TRIGGER xa2043 2
+//{ KESHEE
+ADD_TRANS_TRIGGER xaa153 2
 ~
 	!Dead("HAISH2")
 ~
 
-EXTEND_BOTTOM xa2043 2
+EXTEND_BOTTOM xaa153 2
 	IF ~~ THEN REPLY @56 /* ~I found out what happened to Balduran... or his ship and crew, anyway.~*/
 	GOTO XAA0
 END
 
-APPEND xa2043
+APPEND xaa153
 	IF ~~ THEN BEGIN XAA0
 		SAY @57 /* ~Oh, is that so?~*/
 		
@@ -939,13 +939,13 @@ APPEND xa2043
 END
 //}
 
-//{ xa2082
-ADD_STATE_TRIGGER xa2082 3
+//{ THIEFM
+ADD_STATE_TRIGGER xaa185 3
 ~
 	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-APPEND xa2082
+APPEND xaa185
 	IF ~
 		Global("XA_ReturnToBG", "GLOBAL", 1)
 		RandomNum(5,3)
@@ -956,14 +956,14 @@ APPEND xa2082
 END
 //}
 
-//{ xa2216
-ADD_STATE_TRIGGER xa2216 0
+//{ MERLEA
+ADD_STATE_TRIGGER xaa315 0
 ~
 	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 4 5 6
 
-APPEND xa2216
+APPEND xaa315
 	IF ~
 		Global("XA_ReturnToBG", "GLOBAL", 1)
 		RandomNum(6,1)
@@ -1034,13 +1034,13 @@ APPEND xa2216
 END
 //}
 
-//{ xa2038
-ADD_STATE_TRIGGER xa2038 3
+//{ BRIELB
+ADD_STATE_TRIGGER xaa147 3
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-APPEND xa2038
+APPEND xaa147
 	IF WEIGHT #2 /* Triggers after states #: 15 even though they appear after this state */
 	~  !InParty("Coran")
 		NumTimesTalkedTo(0)
@@ -1055,14 +1055,14 @@ APPEND xa2038
 END
 //}
 
-//{ xa2208
-ADD_STATE_TRIGGER xa2208 0
+//{ FLAMBG
+ADD_STATE_TRIGGER xaa326 0
 ~
 	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 5 6
 
-APPEND xa2208
+APPEND xaa326
 	IF ~
 		Global("XA_ReturnToBG", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
@@ -1096,14 +1096,14 @@ APPEND VALYGARJ
 END
 //}
 
-//{ xa2067
-ADD_TRANS_TRIGGER xa2067 0
+//{ THIEFG
+ADD_TRANS_TRIGGER xaa169 0
 ~
 	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 DO 1
 
-EXTEND_BOTTOM xa2067 0 /* OK */
+EXTEND_BOTTOM xaa169 0 /* OK */
 	
 	IF ~
 		Global("XA_ReturnToBG", "GLOBAL", 1)
@@ -1122,7 +1122,7 @@ EXTEND_BOTTOM xa2067 0 /* OK */
 	~ THEN GOTO XA_MoveAlong
 END
 
-APPEND xa2067
+APPEND xaa169
 	IF ~~ THEN BEGIN XAA0 // from: 0.1
 		SAY @85 /* ~Well, if you know the password, then spill it.~ */
 		IF ~~ THEN REPLY @86 /* ~Darkwell.~ */ GOTO XAA1
@@ -1187,13 +1187,13 @@ APPEND xa2067
 END
 //}
 
-//{ xa2008
-ADD_STATE_TRIGGER xa2008 4
+//{ FATMBA
+ADD_STATE_TRIGGER xaa132 4
 ~
 	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-APPEND xa2008
+APPEND xaa132
 	IF ~  
 		RandomNum(4,4)
 	~ THEN BEGIN XAA0 // from:
@@ -1204,13 +1204,13 @@ APPEND xa2008
 END
 //}
 
-//{ xa2006
-ADD_STATE_TRIGGER xa2006 0
+//{ MICK
+ADD_STATE_TRIGGER xaa134 0
 ~
 	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-APPEND xa2006
+APPEND xaa134
 	IF ~
 		Global("XA_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XAA0
