@@ -2923,7 +2923,7 @@ APPEND XACORWIJ
 
 	IF ~~ THEN BEGIN XA_ThiefGuildEntry
 		SAY @835 /* ~We're here on Flaming Fist business. Let us through.~ */
-		IF ~~ THEN EXTERN THIEFG XAA2B
+		IF ~~ THEN EXTERN xaa169 XAA2B
 	END
 
 	IF ~~ THEN BEGIN XA_KerracQuestioning
@@ -2963,7 +2963,7 @@ APPEND XACORWIJ
 	IF ~~ THEN BEGIN XA_CorwinLobar
 		SAY @859 /* ~Is Tianna working?~  */
 		
-		IF ~~ THEN EXTERN LOBAR XA_LobarTianna
+		IF ~~ THEN EXTERN xaa248 XA_LobarTianna
 	END
 
 	IF ~~ THEN BEGIN XA_GreetMommyA2
@@ -3638,29 +3638,31 @@ APPEND XACORWIJ
 		IF ~~ THEN
 		EXTERN XAALYTH XA_ReportToFF
 	END
+	
+	IF ~~ THEN BEGIN XA_XANEB_1
+		SAY @1553 /* ~I don't believe it! <CHARNAME>, this is Neb! He's wanted for the murder of more than two dozen children!~ */
+		
+		= @9 /* ~Neb! By order of the Flaming Fist you are under arrest!~ [XA100089] */
+		
+		IF ~~ THEN 
+		EXTERN XANEB XA_XANEB_2
+	END
+
+	IF ~~ THEN BEGIN XA_XANebFight
+		SAY @487  /* ~You threaten my daughter? You just made your last mistake!~ [BD39668] */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_NebRohma", "GLOBAL", 1)
+			SetGlobal("XA_NebFight", "GLOBAL", 1)
+			ActionOverride("XANEB", Enemy())
+		~
+		EXIT
+
+	END
 END
 
-IF ~~ THEN BEGIN XA_XANEB_1
-	SAY @1553 /* ~I don't believe it! <CHARNAME>, this is Neb! He's wanted for the murder of more than two dozen children!~ */
-	
-	= @9 /* ~Neb! By order of the Flaming Fist you are under arrest!~ [XA100089] */
-	
-	IF ~~ THEN 
-	EXTERN XANEB XA_XANEB_2
-END
 
-IF ~~ THEN BEGIN XA_XANebFight
-	SAY @487  /* ~You threaten my daughter? You just made your last mistake!~ [BD39668] */
-	
-	IF ~~ THEN
-	DO ~
-		SetGlobal("XA_NebRohma", "GLOBAL", 1)
-		SetGlobal("XA_NebFight", "GLOBAL", 1)
-		ActionOverride("XANEB", Enemy())
-	~
-	EXIT
-
-END
 
 //{ Chains
 CHAIN XACORWIJ XA_MagdaChain
