@@ -16,7 +16,7 @@ THEN
 		NoAction()
 END
 
-IF
+/*IF
 	Global("bd_hide_in_ambush","locals",0)
 	OR(4)
 		Specifics(Myself,CRUSADERS)
@@ -24,13 +24,13 @@ IF
 		Specifics(Myself,HOSTILES3)
 		Allegiance(Myself,ENEMY)
 	!Detect(NearestEnemyOf(Myself))
-	!StateCheck(Myself,STATE_INVISIBLE | STATE_CHARMED | STATE_BLIND)
+	!StateCheck(Myself,STATE_INVISIBLE :: STATE_CHARMED :: STATE_BLIND)
 	!CheckStatLT(Myself,150,HIDEINSHADOWS)
 THEN
 	RESPONSE #100
 		SetGlobal("bd_hide_in_ambush","locals",1)
 		ApplySpellRES("bdinvis",Myself)  // No such index
-END
+END*/
 
 IF
 	!StateCheck(Myself,STATE_INVISIBLE)

@@ -77,7 +77,7 @@ THEN
 		Continue()
 END
 
-IF
+/*IF
 	OR(2)
 		Allegiance(Myself,GOODBUTBLUE)
 		Allegiance(Myself,NEUTRAL)
@@ -87,9 +87,7 @@ IF
 		Specifics(Myself,ALLIES_NEUTRAL)
 	AttackedBy([GOODCUTOFF],DEFAULT)
 	!InMyGroup(LastAttackerOf(Myself))
-	!StateCheck(LastAttackerOf(Myself),STATE_BERSERK)
-	!StateCheck(LastAttackerOf(Myself),STATE_CHARMED)
-	!StateCheck(LastAttackerOf(Myself),STATE_CONFUSED)
+	!StateCheck(LastAttackerOf(Myself),STATE_BERSERK :: STATE_CHARMED :: STATE_CONFUSED)
 THEN
 	RESPONSE #100
 		Enemy()
@@ -99,7 +97,7 @@ THEN
 		SetGlobalTimerRandom("bd_shout_timer","locals",9,THREE_MINUTES)
 		SetGlobalTimer("bd_combat_timer","locals",TWO_ROUNDS)
 		Continue()
-END
+END*/
 
 IF
 	OR(2)
@@ -148,7 +146,7 @@ THEN
 		Continue()
 END
 
-IF
+/*IF
 	Allegiance(Myself,NEUTRAL)
 	OR(3)
 		Specifics(Myself,NEUTRALS)
@@ -156,7 +154,7 @@ IF
 		Specifics(Myself,ALLIES_NEUTRAL)
 	AttackedBy([ENEMY],DEFAULT)
 	!InMyGroup(LastAttackerOf(Myself))
-	!StateCheck(LastAttackerOf(Myself),STATE_BERSERK | STATE_CHARMED | STATE_CONFUSED)
+	!StateCheck(LastAttackerOf(Myself),STATE_BERSERK :: STATE_CHARMED :: STATE_CONFUSED)
 THEN
 	RESPONSE #100
 		ChangeEnemyAlly(Myself,GOODBUTBLUE)
@@ -166,7 +164,7 @@ THEN
 		SetGlobalTimerRandom("bd_shout_timer","locals",9,THREE_MINUTES)
 		SetGlobalTimer("bd_combat_timer","locals",TWO_ROUNDS)
 		Continue()
-END
+END*/
 
 IF
 	Allegiance(Myself,NEUTRAL)
@@ -209,14 +207,14 @@ THEN
 		Continue()
 END
 
-IF
+/*IF
 	Allegiance(Myself,NEUTRAL)
 	AttackedBy([GOODCUTOFF],DEFAULT)
 	OR(3)
 		!InMyGroup(LastAttackerOf(Myself))
 		Allegiance(LastAttackerOf,PC)
 		Allegiance(LastAttackerOf,CONTROLLED)
-	!StateCheck(LastAttackerOf(Myself),STATE_BERSERK | STATE_CHARMED | STATE_CONFUSED)
+	!StateCheck(LastAttackerOf(Myself),STATE_BERSERK :: STATE_CHARMED :: STATE_CONFUSED)
 	!Specifics(Myself,ALLIES)
 	!Specifics(Myself,ALLIES2)
 	!Specifics(Myself,ALLIES3)
@@ -237,7 +235,7 @@ THEN
 		SetGlobalTimerRandom("bd_shout_timer","locals",9,THREE_MINUTES)
 		SetGlobalTimer("bd_combat_timer","locals",TWO_ROUNDS)
 		Continue()
-END
+END*/
 
 IF
 	Allegiance(Myself,NEUTRAL)
