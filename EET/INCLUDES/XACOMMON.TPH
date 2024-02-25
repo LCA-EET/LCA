@@ -291,6 +291,10 @@
 	COPY ~LCA/ARE/XADUCAL2.ARE~ ~override~
 	COPY ~LCA/ARE/XAPAINT1.ARE~ ~override~ 	// Demon Prison
 	COPY ~LCA/ARE/XAG1.ARE~ ~override~ 		// Demon World 1
+	COPY ~LCA/BMP/XAG1HT.BMP~ ~override~ 
+	COPY ~LCA/BMP/XAG1LM.BMP~ ~override~ 
+	COPY ~LCA/BMP/XAG1SR.BMP~ ~override~ 
+	
 	COPY ~LCA/ARE/XAG2A.ARE~ ~override~ 	// Demon World 2
 	COPY ~LCA/ARE/XAG3.ARE~ ~override~		// Demon World 3
 	COPY ~LCA/ARE/XADEMSAN.ARE~ ~override~	// Demon Sanctum

@@ -4,6 +4,9 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v1.1b 2024-02-24
+* Fixed an error in the installer when the Cost of One Girl's Soul mod is installed. Specifically, the installer will no longer assume that the Eddard component was installed, and instead will patch dialogs based on the presence of certain files within the game. 
+
 # v1.1a 2024-02-09
 * Fixed a mod conflict in one of the Spellhold cutscenes that could cause a failure of a key cutscene to progress as designed.
 
