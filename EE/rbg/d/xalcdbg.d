@@ -8,8 +8,20 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_RBG_Debug
 		SAY @6000 /* ~Return to Baldur's Gate Debug~*/
 	
+		IF ~~ THEN REPLY @6020 /*~Area Test~ */
+		GOTO XA_RBG_AreaTest
+	
 		IF ~~ THEN REPLY @6001 /* ~Item Test~*/
 		GOTO XA_RBG_ItemTest
+		
+		IF ~~ THEN REPLY @6016 /* ~Adjust Variables~*/
+		GOTO XA_RBG_AdjustVariables
+		
+		IF ~~ THEN REPLY @6023 /* ~Change Worldmap (xamaprbg).~*/
+		DO ~
+			SetWorldmap("xamaprbg")
+		~
+		GOTO XA_RBG_Debug
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 10
@@ -22,6 +34,66 @@ APPEND ~XALCDBG~
 			DestroySelf()
 		~
 		EXIT	
+	END
+	
+	IF ~~ THEN BEGIN XA_RBG_AreaTest
+		SAY @6020 /* ~Area Test~*/
+		
+		IF ~~ THEN REPLY @6021
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XAA100", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAA100", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAA100", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAA100", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAA100", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAA100", "", [0.0], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6022
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XAWYRM", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAWYRM", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAWYRM", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAWYRM", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAWYRM", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAWYRM", "", [0.0], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_RBG_Debug
+		
+		IF ~~ THEN REPLY @3012 /*~Exit.~ */
+		GOTO 6
+		
+		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
+		DO ~
+			DestroySelf()
+		~
+		EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_RBG_AdjustVariables
+		SAY @6016 /* ~Adjust Variables~*/
+		
+		IF ~~ THEN REPLY @6019
+		DO ~
+			SetGlobal("XA_ReturnToBG", "GLOBAL", 1)
+		~
+		GOTO XA_RBG_AdjustVariables
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_RBG_Debug
+		
+		IF ~~ THEN REPLY @3012 /*~Exit.~ */
+		GOTO 6
+		
+		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
+		DO ~
+			DestroySelf()
+		~
+		EXIT
 	END
 	
 	IF ~~ THEN BEGIN XA_RBG_ItemTest
@@ -100,6 +172,30 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @6011/* ~Shipping Manifest~*/
 		DO ~
 			GiveItemCreate("xamanfst", Player1, 0,0,0)
+		~
+		GOTO XA_RBG_ItemTest
+		
+		IF ~~ THEN REPLY @6014/* ~Shipping Manifest~*/
+		DO ~
+			GiveItemCreate("xamanfs2", Player1, 0,0,0)
+		~
+		GOTO XA_RBG_ItemTest
+		
+		IF ~~ THEN REPLY @6015/* ~Shipping Manifest~*/
+		DO ~
+			GiveItemCreate("xamanfs3", Player1, 0,0,0)
+		~
+		GOTO XA_RBG_ItemTest
+		
+		IF ~~ THEN REPLY @6018/* ~Soultaker (Beno)~*/
+		DO ~
+			GiveItemCreate("xastdagb", Player1, 0,0,0)
+		~
+		GOTO XA_RBG_ItemTest
+		
+		IF ~~ THEN REPLY @6017/*  ~Soultaker (Fake)~*/
+		DO ~
+			GiveItemCreate("xastdagf", Player1, 0,0,0)
 		~
 		GOTO XA_RBG_ItemTest
 		

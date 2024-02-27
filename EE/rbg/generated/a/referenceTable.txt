@@ -660,7 +660,6 @@ amb_m21d.wav::xaa10091.wav
 amb_m22a.wav::xaa10092.wav
 amb_m22b.wav::xaa10093.wav
 amb_m22c.wav::xaa10094.wav
-festh02.wav::xaa10157.wav
 festh06.wav::xaa10154.wav
 festh05.wav::xaa10153.wav
 festh03.wav::xaa10152.wav
@@ -688,6 +687,7 @@ manlc02.wav::xaa10100.wav
 manlc04.wav::xaa10098.wav
 manlc03.wav::xaa10097.wav
 manlc01.wav::xaa10096.wav
+festh02.wav::xaa10157.wav
 festh04.wav::xaa10161.wav
 womco03.wav::xaa10165.wav
 womco04.wav::xaa10166.wav
@@ -868,8 +868,6 @@ amb_e45b.wav::xaa10813.wav
 amb_m20e.wav::xaa10821.wav
 amb_m20d.wav::xaa10822.wav
 amb_m20f.wav::xaa10825.wav
-manco04.wav::xaa11165.wav
-manco03.wav::xaa11164.wav
 husam04.wav::xaa11141.wav
 halfl02.wav::xaa11126.wav
 halfl06.wav::xaa11125.wav
@@ -909,6 +907,8 @@ store02.wav::xaa10877.wav
 tranz04.wav::xaa10872.wav
 tranz03.wav::xaa10871.wav
 genmt02.wav::xaa10869.wav
+manco03.wav::xaa11164.wav
+manco04.wav::xaa11165.wav
 gbasi03.wav::xaa11168.wav
 gbasi04.wav::xaa11169.wav
 gbasi05.wav::xaa11170.wav
@@ -1415,6 +1415,15 @@ ar0615.wed::xaa669.wed
 ar0621.wed::xaa673.wed
 ar0142.wed::xaa675.wed
 ar0138.wed::xaa677.wed
+ar900wd1.bam::xaa100.bam
+ar900wd2.bam::xaa101.bam
+ar900wd3.bam::xaa102.bam
+ar900wn3.bam::xaa103.bam
+ar900wn1.bam::xaa104.bam
+ar900wn4.bam::xaa105.bam
+ar900wn2.bam::xaa106.bam
+ar1200td.bam::xaa107.bam
+ar1200tn.bam::xaa108.bam
 uniflam.itm::xaa100.itm
 ohamul13.itm::xaa215.itm
 ring19ma.itm::xaa226.itm

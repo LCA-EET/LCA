@@ -56,12 +56,7 @@ You spend much of the remainder of the journey pondering her words. They were me
 "We have reached Wyrm's Crossing."  
 
 You take a deep breath and step out of the wagon. A group of Flaming Fist officers and city officials approach as you stand on the bridge.~  [xalcrb01]     
-@033 = ~Shipping Manifests (Encoded)~
-@034 = ~These are the shipping manifests you received from the harbor master while investigating slaver activity in Baldur's Gate. The manifests are encoded and you have no way to decipher them. Perhaps the Thieves' Guild can help you to decode the manifests.~
-@035 = ~Shipping Manifests (Decoded)~
-@036 = ~These are the shipping manifests you decoded with the help of the Thieves' Guild. It's a list of names, ages, and physical characteristics. With these manifests, you can prove that Winston Ventures was transporting people as cargo.~
-@037 = ~Shipping Manifests (Decoded)~
-@038 = ~These are the shipping manifests you decoded with the help of the Thieves' Guild. It's a list of names, ages, and physical characteristics. You notice a familiar name — Mera Verthan. She is the girl that you had freed from the slavers in Athkatla. With these manifests, you can prove that Winston Ventures was transporting people as cargo, and that at least some of those people were sold into slavery.~
+
 @039 = ~The old Iron Throne sign is defaced. Beneath it is a plaque that reads "Winston Ventures"~
 @040 = ~Winston Ventures~
 @041 = ~Tianna~
@@ -175,8 +170,7 @@ Equipped abilities:
 @061=~Though this appears to be the Soultaker dagger, it is different somehow. It doesn't feel as heavy as it did, and you don't feel that palpable sense of dread that you did when you found it in Amn. The gem in the hilt is dark and lifeless. Odd.~
 @062 = ~Melkor~
 @063 = ~Virgil~
-@064 = ~Winston's Ledger~
-@065 = ~This meticulously detailed ledger lists Winston Ventures' shipping manifest numbers, dates shipped, and the keys necessary to decode the manifests. The records start at around the time of the refugee crisis, and end only a few weeks ago.~
+
 @066 = ~Emergency Provisions~
 @067 = ~Winston Ventures~
 @068 = ~Winston Ventures Headquarters~
@@ -310,11 +304,6 @@ Captain Corwin~
 @092 = ~Schael's Letter~
 @093 = ~Corwin's Letter~
 @094 = ~Curator Magda~
-@095 = ~While the physics behind a telescope have been well known for some time, the glass-grinding skills required to actually construct one are still quite specialized. The outer lens of this telescope is cracked, however, and the collapsible tubing is dented such that the scope cannot fully extend.
-
-STATISTICS:
-
-Weight: 1~
 @096 = ~Narzugon~
 @097 = ~Lyriel~
 @098 = ~Mutated Ankheg~
@@ -1743,7 +1732,16 @@ The forest, and the besieged city beyond it, await.~ [xalcrb05]
 @4114 = ~This dazzling, diamond-studded engagement ring is made of yellow, white and pink gold woven together. It was commissioned by Aldeth after he learned that you and Schael were romantically involved. Aldeth recommended bringing the ring to Halbazzer, the proprietor of Sorcerous Sundries, to have it enchanted prior to giving it to your love.~ 
 @4115=~Toy Doll~
 @4116=~A toy doll. A young child would enjoy playing with this.~
-
+@4117 = ~While the physics behind a telescope have been well known for some time, the glass-grinding skills required to actually construct one are still quite specialized. The outer lens of this telescope is cracked, however, and the collapsible tubing is dented such that the scope cannot fully extend.~
+@4118 = ~Telescope~
+@4119 = ~Winston's Ledger~
+@4120 = ~This meticulously detailed ledger lists Winston Ventures' shipping manifest numbers, dates shipped, and the keys necessary to decode the manifests. The records start at around the time of the refugee crisis, and end only a few weeks ago.~
+@4121 = ~Shipping Manifests (Encoded)~
+@4122 = ~These are the shipping manifests you received from the harbor master while investigating slaver activity in Baldur's Gate. The manifests are encoded and you have no way to decipher them. Perhaps the Thieves' Guild can help you to decode the manifests.~
+@4123 = ~Shipping Manifests (Decoded)~
+@4124 = ~These are the shipping manifests you decoded with the help of the Thieves' Guild. It's a list of names, ages, and physical characteristics. With these manifests, you can prove that Winston Ventures was transporting people as cargo.~
+@4125 = ~Shipping Manifests (Decoded)~
+@4126 = ~These are the shipping manifests you decoded with the help of the Thieves' Guild. It's a list of names, ages, and physical characteristics. You notice a familiar name — Mera Verthan. She is the girl that you had freed from the slavers in Athkatla. With these manifests, you can prove that Winston Ventures was transporting people as cargo, and that at least some of those people were sold into slavery.~
 
 @5000 = ~Processing ToB changes...~
 

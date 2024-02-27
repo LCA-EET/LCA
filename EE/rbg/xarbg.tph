@@ -5,6 +5,11 @@ ACTION_IF(rbg_carryover = 0) THEN BEGIN
 	INCLUDE ~%MOD_FOLDER%/rbg/xarbg_co.tph~
 END
 
+//{ Worldmap
+	COPY ~%MOD_FOLDER%/rbg/mos/xamaprbg.mos~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/wmp/xamaprbg.wmp~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/bam/xamapico.bam~ ~override~
+//}
 
 ACTION_IF (isEET = 0) THEN BEGIN
 	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~HOSTILES4~)
@@ -74,16 +79,12 @@ INCLUDE ~%MOD_FOLDER%/rbg/generated/b/generated.tph~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/d~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 
-/*
-
-
-
 //{ Script Extensions
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~
 	EXTEND_BOTTOM ~xadings.bcs~	~%MOD_FOLDER%/rbg/baf/xadings.baf~
 //}
 
-
+/*
 
 	COPY ~%MOD_FOLDER%/rbg/cre/xa800m.cre~ ~override~
 	SAY NAME1 @4062
@@ -337,3 +338,50 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 //}
 
 
+//{ New Items
+
+	//{ Farseer
+		COPY ~%MOD_FOLDER%/rbg/itm/xafarsee.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@4118)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@4118)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@4117)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4117)
+	//}
+
+	//{ Ledger
+		COPY ~%MOD_FOLDER%/rbg/itm/xaledger.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@4119)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@4119)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@4120)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4120)
+	//}
+	
+	//{ Manifest 1
+		COPY ~%MOD_FOLDER%/rbg/itm/xamanfst.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@4121)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@4121)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@4122)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4122)
+	//}
+	
+	//{ Manifest 2
+		COPY ~%MOD_FOLDER%/rbg/itm/xamanfs2.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@4123)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@4123)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@4124)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4124)
+	//}
+	
+	//{ Manifest 3
+		COPY ~%MOD_FOLDER%/rbg/itm/xamanfs3.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@4125)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@4125)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@4126)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4126)
+	//}
+//}
+
+//{ New Areas
+
+
+//}
