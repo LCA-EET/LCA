@@ -6,9 +6,39 @@ ACTION_IF(rbg_carryover = 0) THEN BEGIN
 END
 
 //{ Worldmap
+	COPY ~%MOD_FOLDER%/rbg/pvrz/xamap01.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/pvrz/xamap02.pvrz~ ~override~
+	
 	COPY ~%MOD_FOLDER%/rbg/mos/xamaprbg.mos~ ~override~
+	/*
+	LPF UPDATE_PVRZ_INDICES
+		RET
+			obi = original_base_index
+			nbi = new_base_index			
+	END
+	
+	LAUNCH_ACTION_FUNCTION INSTALL_PVRZ
+		STR_VAR
+			source_file	= ~%MOD_FOLDER%/rbg/pvrz/xamap01.pvrz~
+			target_folder = ~override~
+		INT_VAR
+			original_base_index	= obi
+			new_base_index = nbi
+	END
+	
+	LAUNCH_ACTION_FUNCTION INSTALL_PVRZ
+		STR_VAR
+			source_file	= ~%MOD_FOLDER%/rbg/pvrz/xamap02.pvrz~
+			target_folder = ~override~
+		INT_VAR
+			original_base_index	= (obi + 1)
+			new_base_index = (nbi + 1)
+	END
+	*/
 	COPY ~%MOD_FOLDER%/rbg/wmp/xamaprbg.wmp~ ~override~
 	COPY ~%MOD_FOLDER%/rbg/bam/xamapico.bam~ ~override~
+	
+	
 //}
 
 ACTION_IF (isEET = 0) THEN BEGIN
@@ -82,7 +112,10 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 //{ Script Extensions
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~
 	EXTEND_BOTTOM ~xadings.bcs~	~%MOD_FOLDER%/rbg/baf/xadings.baf~
+	
+
 //}
+
 
 /*
 

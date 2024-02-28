@@ -1,9 +1,0 @@
-IF
-	ActionListEmpty()
-	!See(NearestEnemyOf(Myself))
-	!ActuallyInCombat()
-THEN
-	RESPONSE #100
-		MoveToObject("CYARD")
-END
-
