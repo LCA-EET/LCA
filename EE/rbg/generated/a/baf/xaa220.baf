@@ -1,0 +1,25 @@
+IF
+	PickPocketFailed("SKIE")  // Skie
+	Global("EntarCalled","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Recoil()
+END
+
+IF
+	OR(3)
+		See([ENEMY])
+		Heard([ANYONE],99)
+		AttackedBy([GOODCUTOFF],DEFAULT)
+	Global("EntarCalled","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("EntarCalled","GLOBAL",1)
+		SaveObjectLocation("GLOBAL","DefaultLocation",Myself)
+		DisplayStringHead(Myself,8258)  // Guards! Miscreants!
+		CreateCreature("GUARD",[1805.519],SW)  // Guard
+		CreateCreature("GUARD",[1431.246],SW)  // Guard
+		CreateCreature("GUARD",[1402.221],SW)  // Guard
+		EscapeArea()
+END
+

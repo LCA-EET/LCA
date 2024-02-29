@@ -10,35 +10,27 @@ END
 	COPY ~%MOD_FOLDER%/rbg/pvrz/xamap02.pvrz~ ~override~
 	
 	COPY ~%MOD_FOLDER%/rbg/mos/xamaprbg.mos~ ~override~
-	/*
-	LPF UPDATE_PVRZ_INDICES
-		RET
-			obi = original_base_index
-			nbi = new_base_index			
-	END
-	
-	LAUNCH_ACTION_FUNCTION INSTALL_PVRZ
-		STR_VAR
-			source_file	= ~%MOD_FOLDER%/rbg/pvrz/xamap01.pvrz~
-			target_folder = ~override~
-		INT_VAR
-			original_base_index	= obi
-			new_base_index = nbi
-	END
-	
-	LAUNCH_ACTION_FUNCTION INSTALL_PVRZ
-		STR_VAR
-			source_file	= ~%MOD_FOLDER%/rbg/pvrz/xamap02.pvrz~
-			target_folder = ~override~
-		INT_VAR
-			original_base_index	= (obi + 1)
-			new_base_index = (nbi + 1)
-	END
-	*/
 	COPY ~%MOD_FOLDER%/rbg/wmp/xamaprbg.wmp~ ~override~
+	WRITE_LONG 0x108 RESOLVE_STR_REF(@4127)
+	WRITE_LONG 0x10C RESOLVE_STR_REF(@4127)
+	WRITE_LONG 0x1F8 RESOLVE_STR_REF(@4128)
+	WRITE_LONG 0x1FC RESOLVE_STR_REF(@4128)
+	WRITE_LONG 0x2E8 RESOLVE_STR_REF(@4129)
+	WRITE_LONG 0x2EC RESOLVE_STR_REF(@4129)
+	WRITE_LONG 0x3D8 RESOLVE_STR_REF(@4130)
+	WRITE_LONG 0x3DC RESOLVE_STR_REF(@4130)
+	WRITE_LONG 0x4C8 RESOLVE_STR_REF(@4131)
+	WRITE_LONG 0x4CC RESOLVE_STR_REF(@4131)
+	WRITE_LONG 0x5B8 RESOLVE_STR_REF(@4132)
+	WRITE_LONG 0x5BC RESOLVE_STR_REF(@4132)
+	WRITE_LONG 0x6A8 RESOLVE_STR_REF(@4133)
+	WRITE_LONG 0x6AC RESOLVE_STR_REF(@4133)
+	WRITE_LONG 0x798 RESOLVE_STR_REF(@4134)
+	WRITE_LONG 0x79C RESOLVE_STR_REF(@4134)
+	WRITE_LONG 0x888 RESOLVE_STR_REF(@4135)
+	WRITE_LONG 0x88C RESOLVE_STR_REF(@4135)
+	WRITE_LONG 0x24 RESOLVE_STR_REF(@4136)
 	COPY ~%MOD_FOLDER%/rbg/bam/xamapico.bam~ ~override~
-	
-	
 //}
 
 ACTION_IF (isEET = 0) THEN BEGIN
@@ -112,7 +104,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 //{ Script Extensions
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~
 	EXTEND_BOTTOM ~xadings.bcs~	~%MOD_FOLDER%/rbg/baf/xadings.baf~
-	
+	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalrbg.baf~
 
 //}
 

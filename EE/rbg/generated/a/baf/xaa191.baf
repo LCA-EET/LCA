@@ -1,0 +1,27 @@
+IF
+	AreaCheck("ar0300")  // NE Baldur's Gate (Blushing Mermaid, Splurging Sturgeon, Counting House)
+	Global("NarlenMove","GLOBAL",2)
+THEN
+	RESPONSE #100
+		Deactivate(Myself)
+END
+
+IF
+	!Global("Chapter","GLOBAL",7)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SetGlobal("AttackedThieves","GLOBAL",1)
+		Enemy()
+END
+
+IF
+	!Global("Chapter","GLOBAL",7)
+	Global("AttackedThieves","GLOBAL",1)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+

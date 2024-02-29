@@ -1,0 +1,10 @@
+IF
+	See([PC])
+	Global("Chapter","GLOBAL",7)
+	Global("Flam12","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Flam12","GLOBAL",1)
+		Enemy()
+END
+
