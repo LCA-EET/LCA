@@ -1,9 +1,12 @@
 IF
-	Global("flamalenemy","GLOBAL",1)
-	Allegiance(Myself,NEUTRAL)
+	StealFailed([ANYONE])
 THEN
 	RESPONSE #100
-		Shout(99)
-		Enemy()
+		DialogInterrupt(FALSE)
+		Recoil()
+		SmallWait(6)
+		CreateCreature("FLAMEN",[558.462],NW)  // Flaming Fist Enforcer
+		CreateCreature("FLAMEN2",[558.462],NW)  // Flaming Fist Enforcer
+		CreateCreature("FLAMEN2",[558.462],NW)  // Flaming Fist Enforcer
 END
 

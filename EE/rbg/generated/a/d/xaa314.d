@@ -31,12 +31,12 @@ END
 
 IF ~~ THEN BEGIN 3 // from:
   SAY @7 /* ~Are you sure Aldeth, I was most certain that this was the day.~ #1293 */
-  IF ~~ THEN EXTERN ~XAA405~ 6
+  IF ~~ THEN EXTERN ~XAA409~ 6
 END
 
 IF ~~ THEN BEGIN 4 // from:
   SAY @8 /* ~Come now Zorl, we mustn't be so rude. These primates are about to take the final step, to become something much greater than what they were.~ #1294 */
-  IF ~~ THEN EXTERN ~XAA405~ 7
+  IF ~~ THEN EXTERN ~XAA409~ 7
 END
 
 IF ~  NumTimesTalkedTo(1)

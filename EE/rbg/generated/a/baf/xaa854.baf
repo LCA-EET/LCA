@@ -1,20 +1,39 @@
 IF
-	See([PC])
-	AttackedBy([GOODCUTOFF],DEFAULT)
-	Allegiance(Myself,NEUTRAL)
+	StateCheck(Myself,STATE_PANIC)
 THEN
 	RESPONSE #100
-		SmallWait(5)
-		Enemy()
+		RandomWalkContinuous()
 END
 
 IF
-	See([PC])
-	!Allegiance(Myself,ENEMY)
-	ReputationLT([PC],11)
-	NumberOfTimesTalkedTo(0)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(Myself,STATE_MIRRORIMAGE)
+	HaveSpell(WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Mirror Image)
 THEN
 	RESPONSE #100
-		Dialogue([PC])
+		Spell(Myself,WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Mirror Image)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_HORROR)  // SPWI205.SPL (Horror)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_HORROR)  // SPWI205.SPL (Horror)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Attack(NearestEnemyOf(Myself))
 END
 

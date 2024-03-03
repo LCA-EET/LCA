@@ -1,86 +1,70 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\SANADAL.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\DELORN.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\SANADAL.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\DELORN.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA380~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
 
-IF ~  NumTimesTalkedTo(0)
+IF WEIGHT #1 /* Triggers after states #: 6 even though they appear after this state */
+~  ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Leave me be, will you? I wish no company now.~ #11605 */
-  IF ~~ THEN REPLY @2 /* ~Why are you saddened, m'lady?~ #11606 */ GOTO 2
-  IF ~~ THEN REPLY @3 /* ~Save me your pitiful words, I care not for your wishes.~ #11607 */ GOTO 1
+  SAY @1 /* ~What is this violation?! Explain your presence here!~ #2863 */
+  IF ~  Global("ASSNUTS","GLOBAL",1)
+~ THEN REPLY @2 /* ~Give me your component to the skyship, or suffer the consequences!~ #2985 */ GOTO 1
+  IF ~~ THEN REPLY @3 /* ~My apologies, but I am new to the estate and have lost my way. I'll not disturb you again.~ #2986 */ GOTO 2
+  IF ~~ THEN REPLY @4 /* ~Stay your wrath! I know of your mission here, and would buy what you are guarding. Name your price.~ #2987 */ GOTO 4
 END
 
-IF ~~ THEN BEGIN 1 // from: 6.1 5.1 3.4 2.2 0.1
-  SAY @4 /* ~It is people like you that give people like you a bad name! Or... or something like that! Oh, I hear Shank's gentle wit in my words. Get out! Get out!~ #11608 */
+IF ~~ THEN BEGIN 1 // from: 4.1 3.1 0.0
+  SAY @5 /* ~I am a daughter of Shandalar, and no helpless maiden! If you wish what I guard, you'd best be strong enough to pull it from my grasp!~ #2988 */
+  IF ~~ THEN DO ~ActionOverride("ITHMEERA",Enemy())
+ActionOverride("HELSHARA",Enemy())
+Enemy()
+~ GOTO 5
+END
+
+IF ~~ THEN BEGIN 2 // from: 4.0 3.0 0.1
+  SAY @6 /* ~You are no servant! You're spies or worse. If you thought to take me by surprise you're sorely mistaken.~ #2989 */
+  IF ~~ THEN DO ~ActionOverride("ITHMEERA",Enemy())
+ActionOverride("HELSHARA",Enemy())
+Enemy()
+~ EXIT
+END
+
+IF WEIGHT #2 /* Triggers after states #: 6 even though they appear after this state */
+~  ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
+~ THEN BEGIN 3 // from:
+  SAY @7 /* ~No servile duty makes you skulk about my room! It is as father warned and worse. Thieves in the very house we sought seclusion! Leave, lest this daughter of Shandalar put you in your grave!~ #2990 */
+  IF ~~ THEN REPLY @8 /* ~This is me leaving! I'll not return to bother you!~ #2992 */ GOTO 2
+  IF ~~ THEN REPLY @9 /* ~Hollow words from a frightened lass! Hand over the skyship component!~ #2993 */ GOTO 1
+END
+
+IF ~~ THEN BEGIN 4 // from: 0.2
+  SAY @10 /* ~Your offer is more of an insult than your presence in my private room! Leave now, lest you not be able to!~ #2991 */
+  IF ~~ THEN REPLY @8 /* ~This is me leaving! I'll not return to bother you!~ #2995 */ GOTO 2
+  IF ~~ THEN REPLY @9 /* ~Hollow words from a frightened lass! Hand over the skyship component!~ #2996 */ GOTO 1
+END
+
+IF ~~ THEN BEGIN 5 // from: 1.0
+  SAY @11 /* ~You are foolish to attack the spider in its chosen den! We are here because it's guarded, so you'll not fight only I! Help to me! We are infiltrated!~ #2994 */
+  IF ~~ THEN DO ~ActionOverride("ITHMEERA",Enemy())
+ActionOverride("HELSHARA",Enemy())
+Enemy()
+~ EXIT
+END
+
+IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
+~ THEN BEGIN 6 // from:
+  SAY @12 /* ~I am Delorna, a daughter of the great mage Shandalar. My father has given me the duty of selling certain components to the Grand Dukes of Baldur's Gate. They are vital to the construction of a Halruaan flying ship. You could likely do it for me, though. Take my component, if you wish; it is in the desk.~ #7093 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 2 // from: 0.0
-  SAY @5 /* ~I fear the worst for my brother and cousin, they have been missing some months now, and I know of no one that can find them.~ #11609 */
-  IF ~~ THEN REPLY @6 /* ~Your brother and cousin? Perhaps if I knew their names I could help you.~ #11610 */ GOTO 3
-  IF ~~ THEN REPLY @7 /* ~Are you sure they are lost? Perhaps they simply went on a trip. Such things are common.~ #11611 */ GOTO 5
-  IF ~~ THEN REPLY @8 /* ~Your tears are wasted on me. People that cannot take charge of their own fates deserve whatever they get.~ #11612 */ GOTO 1
-END
-
-IF ~~ THEN BEGIN 3 // from: 5.0 2.0
-  SAY @9 /* ~I thank you. Whatever you can do, I would appreciate. Their names are Shank and Carbos. Not the brightest of boys, but pure of heart. They may have fallen in with a bad lot, but I know they would never do anything wrong.~ #11613 */
-  IF ~  Dead("Carbos")
-!Dead("Shank")
-~ THEN REPLY @10 /* ~Shank and... and Carbos? Um, perhaps there is not as much I could do as I thought.~ #11614 */ GOTO 4
-  IF ~  !Dead("Carbos")
-Dead("Shank")
-~ THEN REPLY @11 /* ~Carbos and... Shank? Um, perhaps there is not as much I could do as I thought.~ #11615 */ GOTO 4
-  IF ~  Dead("Carbos")
-Dead("Shank")
-~ THEN REPLY @12 /* ~Shank and... and Carbos? Um, Shank and Carbos. There is not as much I could do as I thought.~ #11616 */ GOTO 4
-  IF ~  !Dead("Carbos")
-!Dead("Shank")
-~ THEN REPLY @13 /* ~I can keep an eye out, though the Sword Coast is a large place.~ #11617 */ GOTO 6
-  IF ~~ THEN REPLY @14 /* ~They are probably dead and buried. Get over your grief and move on.~ #11619 */ GOTO 1
-END
-
-IF ~~ THEN BEGIN 4 // from: 3.2 3.1 3.0
-  SAY @15 /* ~What do you mean? Organize a search! Set out upon the land! Look high and low! Surely you can find my gentle family members?~ #11621 */
-  IF ~~ THEN REPLY @16 /* ~Eh, you may want to face the fact that they might not be coming back.~ #11629 */ GOTO 9
-  IF ~~ THEN REPLY @17 /* ~Gentle? They weren't so gentle when they tried to kill me in Candlekeep!~ #11630 */ GOTO 10
-END
-
-IF ~~ THEN BEGIN 5 // from: 2.1
-  SAY @18 /* ~A trip? In these times? I hardly think so. They were looking for work, but they wouldn't have gone too far. Can you help?~ #11622 */
-  IF ~~ THEN REPLY @19 /* ~What are their names? Tell me, and I will see.~ #11623 */ GOTO 3
-  IF ~~ THEN REPLY @20 /* ~I have no time for this.~ #11624 */ GOTO 1
-END
-
-IF ~~ THEN BEGIN 6 // from: 3.3
-  SAY @21 /* ~Large it is, but they are rather loud and do not hide easily. People are seeking the bandits left and right, so someone is sure to have seen them.~ #11625 */
-  IF ~~ THEN REPLY @22 /* ~Why would they have been seen with bandits? You said they were honest and good.~ #11626 */ GOTO 7
-  IF ~~ THEN REPLY @23 /* ~And killed them, most likely. Move on and forget it.~ #11627 */ GOTO 1
-END
-
-IF ~~ THEN BEGIN 7 // from: 6.0
-  SAY @24 /* ~They have criminal friends. They met up with the wrong sort of people. They... All right, ALL RIGHT! They are right bastards, and they owe me gold! If you see them, give 'em a smack for me!~ #11628 */
-  IF ~~ THEN DO ~EscapeArea()
-~ EXIT
-END
-
-IF ~  True()
-~ THEN BEGIN 8 // from:
-  SAY @25 /* ~Bugger off.~ #11631 */
+IF ~~ THEN BEGIN 7 // from:
+  SAY @13 /* ~What you've done is wrong! You'll pay!~ #9118 */
   IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN 9 // from: 4.0
-  SAY @26 /* ~Why? What do you—? You know of their fate, don't you? Blast it, they are dead or imprisoned, aren't they? Now I'll never get my gold... er... family back together. Such a tragedy that two saintly, young, pathetic souls should be treated in such a manner. I thank you for the news, and may the person that harmed them rot in the lower planes. Such a cruel beast, whoever they are. I bet it was a grand battle.~ #11632 */
-  IF ~~ THEN DO ~EscapeArea()
-~ EXIT
-END
-
-IF ~~ THEN BEGIN 10 // from: 4.1
-  SAY @27 /* ~What? They would never do such a— Oh, forget it. If they attacked you, then you know full well what morons they are. Did they have any gold on them? No, I doubt it. Spent it all on booze and fast times, most likely. Good on you if you knocked them around. I certainly will not mourn their loss. Carbos and Shank, what a couple of moronic goons.~ #11633 */
-  IF ~~ THEN DO ~EscapeArea()
-~ EXIT
 END

@@ -1,21 +1,18 @@
 IF
-	See([PC])
-	Global("AttackNEB","AR0607",0)  // Flaming Fist HQ, ground floor
-	AttackedBy([GOODCUTOFF],DEFAULT)
-	Allegiance(Myself,NEUTRAL)
+	Global("Chapter","GLOBAL",7)
 THEN
 	RESPONSE #100
-		SetGlobal("AttackNEB","AR0607",1)  // Flaming Fist HQ, ground floor
-		SmallWait(5)
-		StartDialogueNoSet([PC])
+		DestroySelf()
 END
 
 IF
 	See([PC])
-	!Allegiance(Myself,ENEMY)
-	Delay(20)
+	NumberOfTimesTalkedTo(0)
+	Global("GuardTalk","GLOBAL",1)
+	!Global("HelpEltan","GLOBAL",1)
 THEN
 	RESPONSE #100
-		Dialogue([PC])
+		StartDialog("chimp5",Player1)
+		SetGlobal("GuardTalk","GLOBAL",2)
 END
 

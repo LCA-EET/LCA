@@ -1,67 +1,33 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\GORPEL.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BART9.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\GORPEL.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BART9.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA399~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #1 /* Triggers after states #: 3 even though they appear after this state */
-~  NumTimesTalkedTo(0)
+IF ~  ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Ahoy, fellow adventurers! Come share a glass with Gorpel Hind and his Band of Merry Fools. Seated with me are Farluck the Fearless, Turpin the Roaring Ranger, and Nelik the Most Devious and Fiendish of Thieves! (We owe him money so he gets the good title...) But away with these meager introductions! Sidle up to the bar and tell us a tall tale of your latest adventures!~ #19535 */
-  IF ~~ THEN REPLY @2 /* ~Well, we've been through the Cloakwood and fought our way through every level of a guarded and secret iron mine at its heart! There were mages at every turn, casting lightning bolts and fireballs into the heart of our party before stepping through their dimension doors to renew their attacks from another flank! Aye, there was loss and carnage but I revel in the memory of it still!~ #19539 */ DO ~SetNumTimesTalkedTo(1)
-~ GOTO 1
-  IF ~~ THEN REPLY @3 /* ~Ho, tall tales shall tempt us not. Keep to yourself and we shall do the same. Goodnight and goodbye, Mr. Hind.~ #19543 */ DO ~SetNumTimesTalkedTo(1)
-~ GOTO 2
-END
-
-IF ~~ THEN BEGIN 1 // from: 0.0
-  SAY @4 /* ~Iron mines in the Cloakwood? Your tales are tall, indeed, and we are richer for the telling. Consider yourselves honorary members of the Merry Fools and may ale and friendship always flow within these hallowed halls! A toast, you drunkards, to <CHARNAME> and the winsome souls that surround us now!~ #19545 */
-  IF ~~ THEN DO ~CreateCreature("GRETEK",[743.1041],S)
-CreateCreature("PARGUS",[681.1029],S)
-CreateCreature("WILF",[775.1135],S)
-CreateCreature("NADER",[845.992],S)
-CreateCreature("ARLIN",[812.1057],S)
-CreateCreature("CATURA",[376.1045],S)
+  SAY @1 /* ~Good eve. The Helm and Cloak stands ready to serve thee in a swift and relaxing manner. I trust you are aware that our provender is a touch more pricey than some of the "lesser respected" inns about town? This is true, though I have always maintained that you get what you pay for. Is there anything I can do for you?~ #8380 */
+  IF ~~ THEN REPLY @2 /* ~Yes.~ #15076 */ DO ~StartStore("xaa151",LastTalkedToBy(Myself))
 ~ EXIT
+  IF ~~ THEN REPLY @3 /* ~No.~ #15077 */ EXIT
 END
 
-IF ~~ THEN BEGIN 2 // from: 0.1
-  SAY @5 /* ~Good night and goodbye to you, <CHARNAME>. It is late, and we were leaving, weren't we, my Merry Fools?~ #19554 */
-  IF ~~ THEN DO ~CreateCreature("GRETEK",[743.1041],S)
-CreateCreature("PARGUS",[681.1029],S)
-CreateCreature("WILF",[775.1135],S)
-CreateCreature("NADER",[845.992],S)
-CreateCreature("ARLIN",[812.1057],S)
-CreateCreature("CATURA",[376.1045],S)
-ActionOverride("FARLUCK",EscapeArea())
-ActionOverride("TURPIN",EscapeArea())
-ActionOverride("NELIK",EscapeArea())
-EscapeArea()
+IF ~  ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
+ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
+~ THEN BEGIN 1 // from:
+  SAY @4 /* ~Hmm? Hello there. Welcome to the Helm and Cloak. Whilst here you may expect superior service and excellent quality. Er, you can PAY can't you? As long as this is so we shall be on excellent terms. Please try not to make trouble while here. We are well protected and all a ruckus will serve to do is disturb the other guests. Is there anything I can do for you?~ #8381 */
+  IF ~~ THEN REPLY @2 /* ~Yes.~ #15078 */ DO ~StartStore("xaa151",LastTalkedToBy(Myself))
 ~ EXIT
+  IF ~~ THEN REPLY @3 /* ~No.~ #15079 */ EXIT
 END
 
-IF WEIGHT #0 ~  Dead("GRETEK")
-Dead("PARGUS")
-Dead("WILF")
-Dead("NADER")
-Dead("ARLIN")
-Dead("CATURAK")
-~ THEN BEGIN 3 // from:
-  SAY @6 /* ~We have been honored by your presence tonight and awed by your prowess. I beg your leave, however, for some of my men are wounded and must seek attention elsewhere. May the houses of <CHARNAME> and Gorpel Hind be ever graced with each other's friendship... Come, men, and carry your wounds bravely.~ #19610 */
-  IF ~~ THEN DO ~ActionOverride("FARLUCK",EscapeArea())
-ActionOverride("TURPIN",EscapeArea())
-ActionOverride("NELIK",EscapeArea())
-EscapeArea()
+IF ~  ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
+~ THEN BEGIN 2 // from:
+  SAY @5 /* ~Oh, no, no, no. I rather think someone of your standards will not be comfortable in the Helm and Cloak at all. We pride ourselves on our somewhat expensive but relaxed fare, whereas you seem to be the sort who should enjoy the atmosphere of, say, the Blushing Mermaid. I am sorry to say it, but I did not mean that as a compliment. Best that you go now, for surely it will only mean trouble if you stay. Is there anything I can do for you?~ #8382 */
+  IF ~~ THEN REPLY @2 /* ~Yes.~ #15080 */ DO ~StartStore("xaa151",LastTalkedToBy(Myself))
 ~ EXIT
-END
-
-IF ~~ THEN BEGIN 4 // from:
-  SAY @7 /* ~Fight on, brave souls! Gretek and his lackeys have had this coming for longer than you could know.~ #19611 */
-  IF ~~ THEN EXIT
+  IF ~~ THEN REPLY @3 /* ~No.~ #15081 */ EXIT
 END

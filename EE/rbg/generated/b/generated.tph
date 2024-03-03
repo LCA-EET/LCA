@@ -956,55 +956,6 @@ COPY ~%MOD_FOLDER%\rbg\generated\b\cre\xab238.cre~ ~override~
 //baf files
 //===================
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\generated\b\baf~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab100.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab109.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab110.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab100.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab111.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab101.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab102.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab173.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab175.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab176.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab180.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab185.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab186.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab189.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab209.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab216.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab245.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab250.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab252.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab254.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab256.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab258.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab263.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab264.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab265.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab269.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab321.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab317.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab314.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab309.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab305.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab301.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab286.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab334.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab341.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab344.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab354.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab355.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab356.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab357.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab360.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab361.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab363.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab371.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab373.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab376.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab391.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab405.baf~ ~override~
-COPY ~%MOD_FOLDER%\rbg\generated\b\baf\xab407.baf~ ~override~
 
 //wav files
 //===================

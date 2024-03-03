@@ -3,6 +3,6 @@ IF
 THEN
 	RESPONSE #100
 		DisplayString(LastTrigger,14381)  // Trap Sprung
-		ForceSpell(LastTrigger,TRAP_MAGIC_MISSILE)  // SPWI003.SPL (Magic Missile)
+		ForceSpell(LastTrigger,TRAP_LIGHTNING_BOLT)  // SPWI002.SPL (Lightning Bolt)
 END
 

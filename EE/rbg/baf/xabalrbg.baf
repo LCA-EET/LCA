@@ -1,126 +1,111 @@
-//{ Remove Pocket Plane Ability - Avernus Tower
+//{ Seldarine / Lyriel Amulet conflict
 	IF
-		GlobalLT("XA_AVBossFled", "GLOBAL", 1)
-		AreaCheck("XA4700")
-		TriggerOverride(Player1,HaveSpellRES("SPIN649")) 
+		PartyHasItem("XALYAMUL")
+		PartyHasItem("XAAMUL27")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("GavePocketPlane","GLOBAL",0)
-			ActionOverride(Player1, RemoveSpellRES("SPIN649"))
-			SetInterrupt(TRUE)
+			ActionOverride(Player1, DestroyItem("XAAMUL27"))
+			ActionOverride(Player2, DestroyItem("XAAMUL27"))
+			ActionOverride(Player3, DestroyItem("XAAMUL27"))
+			ActionOverride(Player4, DestroyItem("XAAMUL27"))
+			ActionOverride(Player5, DestroyItem("XAAMUL27"))
+			ActionOverride(Player6, DestroyItem("XAAMUL27"))
 			Continue()
 	END
 //}
 
-//{ Seldarine / Lyriel Amulet conflict
-IF
-	PartyHasItem("XALYAMUL")
-	PartyHasItem("XAAMUL27")
-THEN
-	RESPONSE #100
-		ActionOverride(Player1, DestroyItem("XAAMUL27"))
-		ActionOverride(Player2, DestroyItem("XAAMUL27"))
-		ActionOverride(Player3, DestroyItem("XAAMUL27"))
-		ActionOverride(Player4, DestroyItem("XAAMUL27"))
-		ActionOverride(Player5, DestroyItem("XAAMUL27"))
-		ActionOverride(Player6, DestroyItem("XAAMUL27"))
-		Continue()
-END
-//}
-
 //{ Golden Egg
-IF
-	PartyHasItem("XACHICK")
-	GlobalLT("XA_GoldenHenTimerSet", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_GoldenHenTimerSet", "GLOBAL", 1)
-		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
-		//DisplayStringHead(Player1, @18)
-		SetInterrupt(TRUE)
-		Continue()
-END
+	IF
+		PartyHasItem("XACHICK")
+		GlobalLT("XA_GoldenHenTimerSet", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_GoldenHenTimerSet", "GLOBAL", 1)
+			SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+			//DisplayStringHead(Player1, @18)
+			SetInterrupt(TRUE)
+			Continue()
+	END
 
-IF
-	HasItem("XACHICK", Player1)
-	GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		GiveItemCreate("XAEGG", Player1, 0,0,0)
-		DisplayString(Myself, @0)
-		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
-		DisplayStringHead(Player1, @0)
-		SetInterrupt(TRUE)
-		Continue()
-END
+	IF
+		HasItem("XACHICK", Player1)
+		GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			GiveItemCreate("XAEGG", Player1, 0,0,0)
+			DisplayString(Myself, @0)
+			SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+			DisplayStringHead(Player1, @0)
+			SetInterrupt(TRUE)
+			Continue()
+	END
 
-IF
-	HasItem("XACHICK", Player2)
-	GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		GiveItemCreate("XAEGG", Player2, 0,0,0)
-		DisplayStringHead(Player2, @0)
-		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
-		SetInterrupt(TRUE)
-		Continue()
-END
+	IF
+		HasItem("XACHICK", Player2)
+		GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			GiveItemCreate("XAEGG", Player2, 0,0,0)
+			DisplayStringHead(Player2, @0)
+			SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+			SetInterrupt(TRUE)
+			Continue()
+	END
 
-IF
-	HasItem("XACHICK", Player3)
-	GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		GiveItemCreate("XAEGG", Player3, 0,0,0)
-		DisplayStringHead(Player3, @0)
-		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
-		SetInterrupt(TRUE)
-		Continue()
-END
+	IF
+		HasItem("XACHICK", Player3)
+		GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			GiveItemCreate("XAEGG", Player3, 0,0,0)
+			DisplayStringHead(Player3, @0)
+			SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+			SetInterrupt(TRUE)
+			Continue()
+	END
 
-IF
-	HasItem("XACHICK", Player4)
-	GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		GiveItemCreate("XAEGG", Player4, 0,0,0)
-		DisplayString(Player4, @0)
-		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
-		SetInterrupt(TRUE)
-		Continue()
-END
+	IF
+		HasItem("XACHICK", Player4)
+		GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			GiveItemCreate("XAEGG", Player4, 0,0,0)
+			DisplayString(Player4, @0)
+			SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+			SetInterrupt(TRUE)
+			Continue()
+	END
 
-IF
-	HasItem("XACHICK", Player5)
-	GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		GiveItemCreate("XAEGG", Player5, 0,0,0)
-		DisplayString(Player5,  @0)
-		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
-		SetInterrupt(TRUE)
-		Continue()
-END
+	IF
+		HasItem("XACHICK", Player5)
+		GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			GiveItemCreate("XAEGG", Player5, 0,0,0)
+			DisplayString(Player5,  @0)
+			SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+			SetInterrupt(TRUE)
+			Continue()
+	END
 
-IF
-	HasItem("XACHICK", Player6)
-	GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		GiveItemCreate("XAEGG", Player6, 0,0,0)
-		DisplayString(Player6,  @0)
-		SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
-		SetInterrupt(TRUE)
-		Continue()
-END
+	IF
+		HasItem("XACHICK", Player6)
+		GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			GiveItemCreate("XAEGG", Player6, 0,0,0)
+			DisplayString(Player6,  @0)
+			SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+			SetInterrupt(TRUE)
+			Continue()
+	END
 //}
 
 //{ Kanaglym Dream
@@ -418,6 +403,7 @@ END
 	END
 //}
 
+
 //{ v1.0.14a Fix - Marriage Proposal Fix
 	IF
 		Global("XA_CorwinProposalCS", "GLOBAL", 2)
@@ -429,15 +415,3 @@ END
 	END
 //}
 
-//{ Map Change
-IF
-	Global("XA_ReturnToBG", "GLOBAL", 1)
-	GlobalLT("XA_LC_RBGWorldMap", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_LC_RBGWorldMap", "GLOBAL", 1)
-		SetWorldmap("XAMAPRBG")
-		DisplayStringHead(Myself, ~Map Changed~)
-		Wait(1)
-END
-//}

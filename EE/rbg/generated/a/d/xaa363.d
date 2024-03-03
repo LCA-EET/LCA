@@ -14,7 +14,7 @@ IF WEIGHT #1 /* Triggers after states #: 10 even though they appear after this s
 ~  Global("BelandEntranceFee","GLOBAL",0)
 ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Welcome all to the Hall of Wonders. A mere gold piece secures entry to the most curious collection priceless historical artifacts and machination inspirations on all Abeir-Toril. The craft displayed within is truly a sight to see, and the gold raised goes to needed supplies, that future wonders will be wrought.~ #2516 */
+  SAY @1 /* ~Welcome all to the Hall of Wonders. A mere gold piece secures entry to the most curious collection of machination inspirations on all Abeir-Toril. The craft displayed within is truly a sight to see, and the gold raised goes to needed supplies, that future wonders will be wrought.~ #2516 */
   IF ~~ THEN REPLY @2 /* ~I am afraid I cannot pay the suggested donation.~ #2524 */ GOTO 3
   IF ~~ THEN REPLY @3 /* ~I'll not pay to enter a building open to the public!~ #2525 */ GOTO 8
   IF ~  PartyGoldGT(0)
@@ -27,7 +27,7 @@ IF WEIGHT #2 /* Triggers after states #: 10 even though they appear after this s
 ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
 ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
 ~ THEN BEGIN 1 // from:
-  SAY @5 /* ~Good on you, friend. Come inside the Hall of Wonders, but please remember the 1 gold donation. It provides sponsorship for those that craft the curious wonders inspired by Gond, and for those that maintain and protect the priceless artifacts contained herein. This patronage supports the... not immediately salable works produced.~ #2517 */
+  SAY @5 /* ~Good on you, friend. Come inside the Hall of Wonders, but please remember the 1 gold donation. It provides sponsorship for those that craft the curious wonders inspired by Gond. This patronage supports the... not immediately salable works produced.~ #2517 */
   IF ~~ THEN REPLY @2 /* ~I am afraid I cannot pay the suggested donation.~ #2527 */ GOTO 8
   IF ~~ THEN REPLY @3 /* ~I'll not pay to enter a building open to the public!~ #2528 */ GOTO 5
   IF ~  PartyGoldGT(0)

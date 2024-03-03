@@ -3,7 +3,7 @@ $tp2Name = "LCA"
 $modPath = $basePath + "/" + $tp2Name 
 $archive = $basePath + ".zip"
 $exePath = "setup-" + $tp2Name + ".exe"
-$testDir = "F:\Baldur's Gate EET\00766\"
+$testDir = "F:\Baldur's Gate EE\00766\"
 $folders = @(
 'assistant',
 'bg1',

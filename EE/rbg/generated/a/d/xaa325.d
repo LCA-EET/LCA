@@ -31,7 +31,7 @@ IF ~~ THEN BEGIN 2 // from: 0.2
 END
 
 IF ~~ THEN BEGIN 3 // from: 2.1 0.1
-  SAY @9 /* ~Oh yeah, lots of stuff. You know about Duke Eltan, don't ya? He's been diseased. That's why Angelo's in charge now. It'd have been Scar, but he went out and got assassinated, and that Corwin bitch who arrested me's on some training exercise up north with Marshal Nederlok. Ya, the city's gone downhill over the last week. Too bad, heh heh.~ #2152 */
+  SAY @9 /* ~Oh yeah, lots of stuff. You know about Duke Eltan, don't ya? He's been diseased. That's why Angelo's in charge now. It would have been Scar, but he went out and got assassinated, heh heh. Ya, the city's gone downhill over the last week. Too bad, heh heh.~ #2152 */
   IF ~~ THEN UNSOLVED_JOURNAL @10 /* ~Afoul of the Law
 Once Angelo locked me up, I learned from a criminal called Neb that Duke Eltan is sick and Scar has died.~ #26846 */ EXIT
 END

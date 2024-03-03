@@ -1,0 +1,21 @@
+IF
+	See([PC])
+	Global("AttackNEB","AR0607",0)  // Flaming Fist HQ, ground floor
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SetGlobal("AttackNEB","AR0607",1)  // Flaming Fist HQ, ground floor
+		SmallWait(5)
+		StartDialogueNoSet([PC])
+END
+
+IF
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	Delay(20)
+THEN
+	RESPONSE #100
+		Dialogue([PC])
+END
+
