@@ -492,7 +492,7 @@ BEGIN
 	xaas130
 	xaas105
 	xaas164
-	xaas107
+	xaas107 //
 	xaas103
 	xaas142
 	xaas106
@@ -510,7 +510,6 @@ END
 	//WRITE_LONG 0x60A0 RESOLVE_STR_REF(@4138)
 	//WRITE_LONG 0x65FC RESOLVE_STR_REF(@4138)
 //}
-
 
 //{ Script Extensions
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~
