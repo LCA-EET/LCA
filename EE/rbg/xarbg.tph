@@ -497,7 +497,15 @@ END
 ACTION_PHP_EACH bgAreaScripts AS _ => bgArea
 BEGIN
 	EXTEND_TOP ~%bgArea%.bcs~ ~%MOD_FOLDER%/rbg/baf/xalcexpl.baf~
+	EXTEND_TOP ~%bgArea%.bcs~ ~%MOD_FOLDER%/rbg/baf/xalcbspw.baf~
 END
+
+//{ Generated Area Modifications
+	COPY_EXISTING ~xaa106.are~ ~override~
+	WRITE_LONG 0x60A0 RESOLVE_STR_REF(@4138)
+	WRITE_LONG 0x65FC RESOLVE_STR_REF(@4138)
+//}
+
 
 //{ Script Extensions
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~
