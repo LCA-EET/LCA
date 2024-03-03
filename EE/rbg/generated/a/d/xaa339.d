@@ -1,59 +1,53 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NANTRI.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BELLAM.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NANTRI.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BELLAM.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA339~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #1 /* Triggers after states #: 4 even though they appear after this state */
-~  Gender(LastTalkedToBy,FEMALE)
-ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+IF ~  NumTimesTalkedTo(0)
+ReputationLT(Player1,11)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Hello, milady. I trust you will find your stay at the Three Old Kegs to be as restful as anyplace ye have ever called home. Old Nantrin shall see to it. What do you need?~ #8397 */
-  IF ~~ THEN REPLY @2 /* ~What provender do you provide?~ #15311 */ DO ~StartStore("xaa142",LastTalkedToBy(Myself))
-~ EXIT
-  IF ~~ THEN REPLY @3 /* ~We need nothing at the moment.~ #15312 */ EXIT
+  SAY @1 /* ~I have been sent to warn you and your party of Phandalyn. He is a powerful paladin here in the city and he poses a grave danger to you. I would suggest that you avoid him altogether.~ #15247 */
+  IF ~~ THEN REPLY @2 /* ~Thanks for the warning but before I take it to heart, who are you?~ #15253 */ GOTO 2
+  IF ~~ THEN REPLY @3 /* ~Thanks for the warning but I can take care of myself.~ #15250 */ GOTO 3
+  IF ~~ THEN REPLY @4 /* ~Where is this Phandalyn you speak of?~ #15254 */ GOTO 4
 END
 
-IF WEIGHT #2 /* Triggers after states #: 4 even though they appear after this state */
-~  Gender(LastTalkedToBy,MALE)
-ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+IF ~  ReputationGT(Player1,10)
+NumTimesTalkedTo(0)
 ~ THEN BEGIN 1 // from:
-  SAY @4 /* ~Hello, milord. I trust you will find your stay at the Three Old Kegs to be as restful as anyplace you have ever called home. Old Nantrin shall see to it.~ #8398 */
-  IF ~~ THEN REPLY @2 /* ~What provender do you provide?~ #15315 */ DO ~StartStore("xaa142",LastTalkedToBy(Myself))
-~ EXIT
-  IF ~~ THEN REPLY @5 /* ~We need nothing right now.~ #15316 */ EXIT
-END
-
-IF WEIGHT #3 /* Triggers after states #: 4 even though they appear after this state */
-~  ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
-ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
-~ THEN BEGIN 2 // from:
-  SAY @6 /* ~You have the look of someone unaccustomed to the quiet life. Well, that is what we are all about here at the Three Old Kegs. If you are looking for otherwise you had best keep moving, because you won't find it here.~ #8399 */
-  IF ~~ THEN REPLY @7 /* ~Could you describe to us your provender?~ #15317 */ DO ~StartStore("xaa142",LastTalkedToBy(Myself))
-~ EXIT
-  IF ~~ THEN REPLY @8 /* ~We'll just be on our way.~ #15318 */ EXIT
-END
-
-IF WEIGHT #4 /* Triggers after states #: 4 even though they appear after this state */
-~  ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
-~ THEN BEGIN 3 // from:
-  SAY @9 /* ~I tell you straight and true right now so there is no mistaking. This is a QUIET place, and those that wish to make it otherwise shall find themselves "escorted" to the door. If lucky, you will be able to continue on by yourself after.~ #8400 */
+  SAY @5 /* ~Good day to ya.~ #15255 */
   IF ~~ THEN EXIT
 END
 
-IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
-~ THEN BEGIN 4 // from:
-  SAY @10 /* ~You are welcome to stay as long as you like, though please remember to keep it quiet. We like our rest here at the "Kegs."~ #9150 */
+IF ~~ THEN BEGIN 2 // from: 0.0
+  SAY @6 /* ~Just a friend.~ #15256 */
+  IF ~~ THEN REPLY @7 /* ~Well, thanks "friend," but I can take care of myself.~ #15258 */ GOTO 3
+  IF ~~ THEN REPLY @8 /* ~Well, where is this Phandalyn you speak of?~ #15257 */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 3 // from: 2.0 0.1
+  SAY @9 /* ~Suit yourself, but don't say I didn't warn you.~ #15261 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 5 // from:
-  SAY @11 /* ~You've outstayed your welcome! Out with you!~ #9151 */
+IF ~~ THEN BEGIN 4 // from: 2.1 0.2
+  SAY @10 /* ~You can usually find him in one of the taverns close to the docks, but I don't recommend you do. If you have business there, I suggest you do it after sundown.~ #15262 */
+  IF ~~ THEN JOURNAL @11 /* ~Phandalyn
+Bellamy, a decidedly mysterious halfling bard, has warned me to steer clear of a paladin lurking behind one of the dockside taverns here in Baldur's Gate. His name is Phandalyn, and, from the sound of it, my reputation has preceded me.~ #26870 */ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 5 // from:
+  SAY @12 /* ~Watch your back out there.~ #15263 */
+  IF ~~ THEN EXIT
+END
+
+IF ~  True()
+~ THEN BEGIN 6 // from:
+  SAY @13 /* ~Keep your head up out there.~ #15264 */
   IF ~~ THEN EXIT
 END

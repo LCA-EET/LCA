@@ -1,12 +1,15 @@
-// NANTRI translation file
-@1   = ~Hello, milady. I trust you will find your stay at the Three Old Kegs to be as restful as anyplace ye have ever called home. Old Nantrin shall see to it. What do you need?~
-@2   = ~What provender do you provide?~
-@3   = ~We need nothing at the moment.~
-@4   = ~Hello, milord. I trust you will find your stay at the Three Old Kegs to be as restful as anyplace you have ever called home. Old Nantrin shall see to it.~
-@5   = ~We need nothing right now.~
-@6   = ~You have the look of someone unaccustomed to the quiet life. Well, that is what we are all about here at the Three Old Kegs. If you are looking for otherwise you had best keep moving, because you won't find it here.~
-@7   = ~Could you describe to us your provender?~
-@8   = ~We'll just be on our way.~
-@9   = ~I tell you straight and true right now so there is no mistaking. This is a QUIET place, and those that wish to make it otherwise shall find themselves "escorted" to the door. If lucky, you will be able to continue on by yourself after.~
-@10  = ~You are welcome to stay as long as you like, though please remember to keep it quiet. We like our rest here at the "Kegs."~
-@11  = ~You've outstayed your welcome! Out with you!~
+// BELLAM translation file
+@1   = ~I have been sent to warn you and your party of Phandalyn. He is a powerful paladin here in the city and he poses a grave danger to you. I would suggest that you avoid him altogether.~
+@2   = ~Thanks for the warning but before I take it to heart, who are you?~
+@3   = ~Thanks for the warning but I can take care of myself.~
+@4   = ~Where is this Phandalyn you speak of?~
+@5   = ~Good day to ya.~
+@6   = ~Just a friend.~
+@7   = ~Well, thanks "friend," but I can take care of myself.~
+@8   = ~Well, where is this Phandalyn you speak of?~
+@9   = ~Suit yourself, but don't say I didn't warn you.~
+@10  = ~You can usually find him in one of the taverns close to the docks, but I don't recommend you do. If you have business there, I suggest you do it after sundown.~
+@11  = ~Phandalyn
+Bellamy, a decidedly mysterious halfling bard, has warned me to steer clear of a paladin lurking behind one of the dockside taverns here in Baldur's Gate. His name is Phandalyn, and, from the sound of it, my reputation has preceded me.~
+@12  = ~Watch your back out there.~
+@13  = ~Keep your head up out there.~

@@ -1,66 +1,78 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BHEREN.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\RINNIE.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BHEREN.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\RINNIE.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA341~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
 
-IF ~  NumTimesTalkedTo(0)
-ReputationGT(Player1,14)
+IF WEIGHT #0 ~  NumTimesTalkedTo(0)
+ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Damnable cat! I figured Petrine would take the beast with her, but life isn't that kind, is it?~ #15132 */
-  IF ~~ THEN UNSOLVED_JOURNAL @2 /* ~Petrine's Cat
-I visited Bheren of Baldur's Gate in his house today. A loitering cat was annoying him, and he mentioned someone named Petrine.~ #26879 */ EXIT
+  SAY @1 /* ~Please don't interrupt me. I'm waiting to be inspired.~ #15138 */
+  IF ~~ THEN EXIT
 END
 
-IF ~  NumTimesTalkedTo(0)
-ReputationLT(Player1,15)
+IF WEIGHT #1 ~  NumTimesTalkedTo(0)
+ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
 ~ THEN BEGIN 1 // from:
-  SAY @3 /* ~Damnable cat! I'll give you the cloak off my back if you can kill the pesky thing.~ #15133 */
-  IF ~~ THEN UNSOLVED_JOURNAL @4 /* ~Petrine's Cat
-I visited Bheren of Baldur's Gate in his house today. He has offered me the proverbial cloak off his back in exchange for the death of a rather bothersome cat...~ #26880 */ EXIT
+  SAY @2 /* ~I have been working on a ballad about the Unicorn Run in the High Forest. I'd like to use a more reliable source than simply hearsay and folklore, though. If you ever find an authoritative history of the run in your travels, I'd love to get my hands on it.~ #15139 */
+  IF ~~ THEN UNSOLVED_JOURNAL @3 /* ~A Bard's Request
+Rinnie, a bard and balladeer here in Baldur's Gate, has asked me to bring her a history of the Unicorn Run should I encounter one in my travels. Rinnie can be found in one of the houses located beside the palace.~ #27415 */ EXIT
 END
 
-IF ~  ReputationLT(Player1,8)
-Dead("PetrinesCat")
-Global("HelpBheren","GLOBAL",0)
+IF WEIGHT #5 /* Triggers after states #: 3 4 6 even though they appear after this state */
+~  Global("HelpRinnie","GLOBAL",0)
 ~ THEN BEGIN 2 // from:
-  SAY @5 /* ~I'm not usually a man who honors his words too much, but you wouldn't believe how glad I am to be rid of that crazy cat! Here, take my cloak and good riddance.~ #15134 */
-  IF ~~ THEN DO ~EraseJournalEntry(@7)
-EraseJournalEntry(@2)
-EraseJournalEntry(@4)
-SetGlobal("HelpBheren","GLOBAL",1)
-AddexperienceParty(400)
-GiveItem("CLCK01",LastTalkedToBy)
-~ SOLVED_JOURNAL @6 /* ~Petrine's Cat
-I showed Bheren that I definitely know one way to skin a cat. He's glad to be rid of that pesky Angel.~ #26882 */ EXIT
+  SAY @4 /* ~Hi there. Found anything substantial on the Unicorn Run yet?~ #15140 */
+  IF ~~ THEN EXIT
 END
 
-IF ~  ReputationGT(Player1,7)
-Dead("PetrinesCat")
-Global("HelpBheren","GLOBAL",0)
+IF WEIGHT #2 ~  PartyHasItem("BOOK55")
+ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+Global("HelpRinnie","GLOBAL",0)
 ~ THEN BEGIN 3 // from:
-  SAY @8 /* ~You didn't think I was serious, did you? Cripes, you go find my niece Petrine and tell her you killed her stinking cat, 'cause I'm sure not going to!~ #15135 */
-  IF ~~ THEN DO ~EraseJournalEntry(@7)
-EraseJournalEntry(@2)
-EraseJournalEntry(@4)
-SetGlobal("HelpBheren","GLOBAL",1)
-AddexperienceParty(400)
-ReputationInc(-1)
-~ SOLVED_JOURNAL @6 /* ~Petrine's Cat
-I showed Bheren that I definitely know one way to skin a cat. He's glad to be rid of that pesky Angel.~ #26882 */ EXIT
+  SAY @5 /* ~"History of the Unicorn Run..." How wonderfully ideal! You wouldn't believe how grateful I am to get my hands on this. Here, a friend of mine gave me this magical scroll and I have yet to make use of it.~ #15141 */
+  IF ~~ THEN DO ~EraseJournalEntry(@3)
+TakePartyItem("BOOK55")
+GiveItem("SCRL08",LastTalkedToBy)
+SetGlobal("HelpRinnie","GLOBAL",1)
+AddexperienceParty(900)
+~ SOLVED_JOURNAL @6 /* ~A Bard's Request
+I didn't need it myself, so I gave "The History of the Unicorn Run" to Rinnie.~ #27416 */ EXIT
 END
 
-IF ~  False()
+IF WEIGHT #3 ~  False()
 ~ THEN BEGIN 4 // from:
-  SAY @9 /* ~Between you and that cat, life has been sheer hell ever since Petrine ran away. Damn you!~ #15136 */
+  SAY @7 /* ~Must you pick on me when I'm trying to concentrate?~ #15142 */
+  IF ~~ THEN DO ~EscapeArea()
+~ EXIT
+END
+
+IF WEIGHT #6 /* Triggers after states #: 6 even though they appear after this state */
+~  True()
+~ THEN BEGIN 5 // from:
+  SAY @8 /* ~"Sweet waters of the forest
+flow through each den and glade,
+nourishing the unicorns
+who lie graceful in the shade..."~ #15143 */
   IF ~~ THEN EXIT
 END
 
-IF ~  Global("HelpBheren","GLOBAL",1)
-~ THEN BEGIN 5 // from:
-  SAY @10 /* ~Sure is quiet around here without that infernal cat. Almost miss her, I do...~ #15137 */
-  IF ~~ THEN EXIT
+IF WEIGHT #4 ~  PartyHasItem("BOOK55")
+ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
+Global("HelpRinnie","GLOBAL",0)
+~ THEN BEGIN 6 // from:
+  SAY @9 /* ~"History of the Unicorn Run..." Interesting... I'll give you 80 gold pieces for it.~ #15144 */
+  IF ~~ THEN DO ~EraseJournalEntry(@3)
+TakePartyItem("BOOK55")
+SetGlobal("HelpRinnie","GLOBAL",1)
+AddexperienceParty(900)
+GiveGoldForce(80)
+~ SOLVED_JOURNAL @6 /* ~A Bard's Request
+I didn't need it myself, so I gave "The History of the Unicorn Run" to Rinnie.~ #27416 */ EXIT
 END

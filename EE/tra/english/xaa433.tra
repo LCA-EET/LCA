@@ -1,57 +1,27 @@
-// RBALDU translation file
-@1   = ~I keep on hearing a lot about a military buildup. Angelo, the new commander of the Fist, has been sending a lot of the Fist down south to Beregost. I fear a war might be brewing.~
-@2   = ~Rising Tensions with Amn
-The new commander of the Flaming Fist has been sending many soldiers south to Beregost. People fear a war might be brewing.~
-@3   = ~In the coming election, I think that that Sarevok lad is gonna take it. He has a lot of support from the nobility, and they're the ones with the clout.~
-@4   = ~The Rise of Sarevok
-Sarevok is very popular with the nobility, and that may win him the ducal seat in Baldur's Gate.~
-@5   = ~Did you hear about the assassinations at Candlekeep? Seems that the leaders of the Iron Throne went and got themselves killed. Those same people who helped the folks down in Nashkel did the deed. They were Amnian agents, I hear. Anyhow, one of the dead guys' son is now the leader, Sarevok is his name I think.~
-@6   = ~Rising Tensions with Amn
+// RFRIEN translation file
+@1   = ~I heard there's some sort o' trouble in Nashkel. Somethin' sinister has been moving about in the Nashkel mines. Nobody seems to know for sure. Too busy coping with the bandit raids and such.~
+@2   = ~Troubles in the Region: Bandit Problems
+
+There are rumors of something disrupting operations in the Nashkel mines, contributing to the iron shortage.~
+@3   = ~Did you hear about the assassinations at Candlekeep? Seems that the leaders of the Iron Throne went and got themselves killed. Those same people who helped the folks down in Nashkel did the deed. They were Amnian agents, I hear. Anyhow, one of the dead guys' son is now the leader, Sarevok is his name I think.~
+@4   = ~Rising Tensions with Amn
 Sarevok has assumed command of the Iron Throne. I am still accused of the former leaders' murders, though it is thought I was an agent of Amn. Someone is intent upon pushing the region into war.~
-@7   = ~Ever since the Iron Throne moved into that mansion in the southwest, strange things have been afoot. I don't know what it is about that building, but it gives me the creeps.~
-@8   = ~Investigating the Iron Throne
-Some whisper that strange happenings abound in the new home of the Iron Throne in southwestern Baldur's Gate.~
-@9   = ~Everyone seems to be dropping dead these days. First Entar Silvershield, then Eltan gets sick, and now Scar's dead. Something's brewing, and it's nothin' good.~
-@10  = ~Duke Eltan's Illness
-Rumor has it that recent tragedies involving Entar Silvershield and Scar are connected to Duke Eltan's sudden illness.~
-@11  = ~Hear about the heroes of Nashkel? Some good folk—mercenaries, it's said—came down and solved all that town's problems.~
-@12  = ~Tales of my actions are spreading, though I'm not sure I like the term "mercenaries."~
-@13  = ~I hear some units of the Flaming Fist have been sent to Beregost. Seems like the Grand Dukes are getting real paranoid about Amn.~
-@14  = ~Rising Tensions with Amn
+@5   = ~Hear about the heroes of Nashkel? Some good folk—mercenaries, it's said—came down and solved all that town's problems. I hope they weren't helping just because of the money.~
+@6   = ~Tales of my actions are spreading, though I'm not sure I like the term "mercenaries."~
+@7   = ~I hear relations haven't been going too good 'tween the two powers in this region. The Grand Dukes supposedly accused Amn of all the raiding that's been happening along the roads. Not a good thing to go accusin' the most powerful country in the western world.~
+@8   = ~Rising Tensions with Amn
+Tension seems to be building between Baldur's Gate and Amn.~
+@9   = ~I hear some units of the Flaming Fist have been sent to Beregost. Seems like the Grand Dukes are getting real paranoid about Amn. Lots of people think that Amn might be behind the iron shortage. Could be a prelude to war.~
+@10  = ~Rising Tensions with Amn
 Tensions are growing in the region due to the supposed threat from Amn, though the evidence I've seen is somewhat confused.~
-@15  = ~I hear that Amn's behind all those bandits in the south. People 'round here have been talking about how Amn and the Zhents are in league together. It makes me worry about what kinda things they could be scheming.~
-@16  = ~Rising Tensions with Amn
-Rumors are spreading that Amn and the Zhentarim are in league. There exists only sketchy evidence to support this theory, however.~
-@17  = ~I hear there's rumors of Shadow Thieves here in Baldur's Gate. I dunno if it's true, but if it is, I betcha they're here to scout out for an Amnian invasion.~
-@18  = ~Rising Tensions with Amn
-People fear that the Shadow Thieves are scouting for an Amnian invasion, but such rumors are more prevalent than any evidence supporting them.~
-@19  = ~I heard that the Merchants' League Estate is having a lot of trouble. Seems that the three owners are squabbling about how to run the place. The Iron Throne's been taking advantage of that situation. If things continue as they are, the Throne soon won't have any competition. Kinda strange considering they only moved into the city a couple of years back.~
-@20  = ~Investigating the Iron Throne
-The Iron Throne is quite powerful in Baldur's Gate, even though they only arrived there recently. Something may be disrupting the Merchants' League, reducing its ability to compete.~
-@21  = ~I still can't believe that Entar Silvershield was killed. From what's been being said, all the evidence points to the Shadow Thieves, and thus to Amn itself. Tymora help us all.~
-@22  = ~Rising Tensions with Amn
-It is believed that Shadow Thieves from Amn killed Entar Silvershield. People fear this event is the prelude to an invasion.~
-@23  = ~Iron's so scarce these days, you'd think it was as valuable as gold. Not a good thing, not a good thing at all.~
-@24  = ~Troubles in the Region: Iron Crisis
+@11  = ~Iron's so scarce these days, you'd think it was as valuable as gold. Not a good thing, not a good thing at all. Ain't going to be long before no one can afford to be well equipped. What will the guards do then?~
+@12  = ~Troubles in the Region: Iron Crisis
 
 Iron continues to be scarce, driving prices of tools and weapons ever higher.~
-@25  = ~It's been really weird these past few months. Iron's been going bad, falling apart almost if it were rustin' for no particular reason. From what I hear, most o' this "bad iron" comes from the mines at Nashkel. Can't trust those Amnian miners, probably some scheme they've come up with.~
-@26  = ~Troubles in the Region: Iron Crisis
+@13  = ~It's been really weird these past few months. Iron's been going bad, falling apart almost if it were rustin' for no particular reason. From what I hear, most o' this "bad iron" comes from the mines at Nashkel. Can't trust those Amnian miners; probably some scheme they've come up with.~
+@14  = ~Troubles in the Region: Iron Crisis
 
 Iron from the Nashkel mines is nearly useless when smelted. People suspect that the denizens of Nashkel are doing it intentionally, as part of some grandiose plot in the service of Amn.~
-@27  = ~It's really sad about Eltan. I hope he recovers from his illness. He was the most beloved of the Grand Dukes.~
-@28  = ~Duke Eltan's Illness
-Duke Eltan is the most beloved and respected of the Grand Dukes of Baldur's Gate. His death would leave an immense hole in the leadership of the region.~
-@29  = ~Seems like the iron problem down in Nashkel's solved. A group of mercenaries went into the mines and cleared up what's been causin' all the trouble. Brave folk to go fightin' whatever was down there.~
-@30  = ~The Seven Suns has been acting very strange of late. The company seems to be intent on losing money. Even a simple bartender like myself can see the foolishness of some of their decisions. I doubt the Iron throne is crying about it though, they're making a lot of inroads because of the Suns mistakes.~
-@31  = ~The Seven Suns
-The Seven Suns has been making foolish business decisions of late, allowing the Iron Throne to increase their own power.~
-@32  = ~There's a big price on the heads of those folks who offed the Iron Throne's leaders. 5,000 gold or more I think.~
-@33  = ~I'm apparently worth 5,000 gold to any bounty hunter who brings me in for murder. I don't suppose any of them will believe me when I say I've been framed.~
-@34  = ~With Entar Silvershield dead, they're going to have to elect a new Grand Duke. Seems like a lot of people think it'll be the new leader of the Iron Throne, Sarevok.~
-@35  = ~The Rise of Sarevok
-With the leaders of the Iron Throne out of the way, Sarevok took control. Now he is stepping into the leadership gap left by the death of Entar Silvershield. People between him and power tend to die young.~
-@36  = ~With iron being so scarce, I don't see how the Flaming Fist is gonna continue to be an effective police force. No new weapons and no new armor, not a good thing.~
-@37  = ~Troubles in the Region: Iron Crisis
-
-The Flaming Fist is in danger of losing its ability to protect the region. The condition of their weapons and armor is suffering, just as it is for everyone else.~
+@15  = ~Lots of trouble down in Nashkel. Monsters or some such are said to be killing the workers at the Nashkel mines.~
+@16  = ~You hear of the Midsummer fair down in Nashkel? I hear it's actually doing quite well, despite all the trouble that town's had recently.~
+@17  = ~There is a festival east of Nashkel. Many people are gathering there.~

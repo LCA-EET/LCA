@@ -1,12 +1,11 @@
 IF
-	StealFailed([ANYONE])
+	AttackedBy([ANYONE],DEFAULT)
 THEN
-	RESPONSE #100
-		DialogInterrupt(FALSE)
-		Recoil()
-		SmallWait(6)
-		CreateCreature("FLAMEN",[694.372],NW)  // Flaming Fist Enforcer
-		CreateCreature("FLAMEN2",[694.372],NW)  // Flaming Fist Enforcer
-		CreateCreature("FLAMEN2",[694.372],NW)  // Flaming Fist Enforcer
+	RESPONSE #50
+		ForceSpellRES("SPWM188",[PC])  // Summon Cow
+		ApplySpell(Myself,POOF_GONE)  // SPIN660.SPL (Teleport)
+	RESPONSE #50
+		ForceSpell([PC],CHICKEN_CHANGE)  // SPIN884.SPL (Change Chicken)
+		ApplySpell(Myself,POOF_GONE)  // SPIN660.SPL (Teleport)
 END
 

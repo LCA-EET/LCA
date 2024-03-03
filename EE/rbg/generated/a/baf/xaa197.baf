@@ -1,35 +1,18 @@
 IF
-	StateCheck(Myself,STATE_REALLY_DEAD)
-	Global("CDDoppleOnce","LOCALS",0)
+	Global("DukeThanks","GLOBAL",1)
+	Global("oh_dialog_set_1","locals",0)
 THEN
 	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("CDDoppleOnce","LOCALS",1)
-		IncrementGlobal("AldethDopple","GLOBAL",1)
-		SetInterrupt(TRUE)
+		SetGlobal("oh_dialog_set_1","locals",1)
+		SetDialog("noblbas")
 END
 
 IF
-	AttackedBy([GOODCUTOFF],DEFAULT)
-	Allegiance(Myself,NEUTRAL)
+	Global("Chapter","GLOBAL",7)
+	Global("oh_dialog_set_2","locals",0)
 THEN
 	RESPONSE #100
-		SetGlobal("ZorlDopple","GLOBAL",1)
-END
-
-IF
-	Global("ZorlDopple","GLOBAL",1)
-	Allegiance(Myself,NEUTRAL)
-THEN
-	RESPONSE #100
-		CreateCreature("DOPZORL",[768.607],S)  // Doppelganger
-		CreateCreature("DOPZORL",[710.673],S)  // Doppelganger
-		CreateCreature("DOPZORL",[881.661],S)  // Doppelganger
-		CreateCreature("DOPZORL",[942.567],S)  // Doppelganger
-		SetGlobal("HelpBrandilar","GLOBAL",2)
-		SetGlobal("HelpAldeth","GLOBAL",1)
-		SetGlobal("ZorlIrelentHostile","GLOBAL",1)
-		ActionOverride("Brandi",SetNumTimesTalkedTo(1))
-		ForceSpell(Myself,DOPPLEGANGER_CHANGE2)  // SPWI992.SPL (No such index)
+		SetGlobal("oh_dialog_set_2","locals",1)
+		SetDialog("noblbaz")
 END
 

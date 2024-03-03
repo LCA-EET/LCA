@@ -1,0 +1,19 @@
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SetGlobal("AttackedThieves","GLOBAL",1)
+		EraseJournalEntry(26815)  // Alatos and the Thieves' Guild I have been hired by Alatos Thuibuld to do a bit of burglary. I am to sneak into Oberan's estate and there steal several magical components from the three daughters of Shandalar. The components in question are the necessary ingredients for creating a Halruaan flying ship, and the Halruaans want their secret preserved and the items stolen. Alatos suggested that I either "persuade" the daughters to release the items or spirit them out from under their noses. The items are as follows: a spellbook that outlines the rituals needed, a statuette of indeterminate origin, and a fragment of some powerful artifact. I am to return to the Thieves' Guild once the items are in my possession.
+		Enemy()
+END
+
+IF
+	Global("AttackedThieves","GLOBAL",1)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		EraseJournalEntry(26815)  // Alatos and the Thieves' Guild I have been hired by Alatos Thuibuld to do a bit of burglary. I am to sneak into Oberan's estate and there steal several magical components from the three daughters of Shandalar. The components in question are the necessary ingredients for creating a Halruaan flying ship, and the Halruaans want their secret preserved and the items stolen. Alatos suggested that I either "persuade" the daughters to release the items or spirit them out from under their noses. The items are as follows: a spellbook that outlines the rituals needed, a statuette of indeterminate origin, and a fragment of some powerful artifact. I am to return to the Thieves' Guild once the items are in my possession.
+		Enemy()
+END
+

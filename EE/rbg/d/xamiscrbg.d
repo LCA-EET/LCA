@@ -113,64 +113,6 @@ END
 //}
 
 //{ SHOP06
-EXTEND_BOTTOM xaa349 0
-	IF ~
-		GlobalLT("XA_BoughtRohmaDoll", "GLOBAL", 1)
-		Global("XA_WantToGetDoll", "GLOBAL", 1)
-		InPartySlot(LastTalkedToBy, 0)
-	~ 
-	THEN REPLY @0 /* ~I'm looking for a gift for a young child, perhaps a doll of some sort. Do you have anything like that in your store?~ */
-	GOTO M0
-END
-
-APPEND xaa349
-	IF ~~ THEN BEGIN M0
-		SAY @1 /* ~As a matter of fact, I do. Are you interested in this doll? I'll sell it to you for three gold.~ */
-		IF ~
-			PartyGoldGT(2)
-		~
-		THEN REPLY @2 /* ~Yes, that is perfect, thank you. (Pay three gold for the doll). ~ */
-		DO ~
-			TakePartyGold(3)
-			SetGlobal("XA_BoughtRohmaDoll", "GLOBAL", 1)
-		~
-		GOTO M1
-		
-		IF ~
-			PartyGoldLT(3)
-		~
-		THEN REPLY @3 /* ~Yes, that is perfect. I'm a bit short on funds at the moment, however. I will return later to buy the doll.~ */
-		GOTO M2
-		
-		IF ~~ THEN REPLY @4 /* ~No thanks. Another time, perhaps.~ */
-		GOTO M3
-	END
-
-	IF ~~ THEN BEGIN M1
-		SAY @5 /* ~A pleasure doing business with you.~ */
-		IF ~~ THEN
-		DO ~
-			GiveItemCreate("XARDOLL", LastTalkedToBy(Myself),1,0,0)
-			SetGlobal("XA_LC_Journal_RohmaGift_1", "GLOBAL", 1)
-		~
-		EXIT
-	END
-	
-	IF ~~ THEN BEGIN M2
-		SAY @6 /* ~No worries. I'll hold on to the doll until you come up with the money.~ */
-		IF ~~ THEN
-		EXIT
-	END
-	
-	IF ~~ THEN BEGIN M3
-		SAY @4 /* ~No thanks. Another time, perhaps.~ */
-		IF ~~ THEN
-		EXIT
-	END
-END
-//}
-
-//{ SHOP08
 EXTEND_BOTTOM xaa351 0
 	IF ~
 		GlobalLT("XA_BoughtRohmaDoll", "GLOBAL", 1)
@@ -180,8 +122,6 @@ EXTEND_BOTTOM xaa351 0
 	THEN REPLY @0 /* ~I'm looking for a gift for a young child, perhaps a doll of some sort. Do you have anything like that in your store?~ */
 	GOTO M0
 END
-
-
 
 APPEND xaa351
 	IF ~~ THEN BEGIN M0
@@ -230,8 +170,8 @@ APPEND xaa351
 END
 //}
 
-//{ PROST6
-EXTEND_BOTTOM xaa186 0
+//{ SHOP08
+EXTEND_BOTTOM xaa353 0
 	IF ~
 		GlobalLT("XA_BoughtRohmaDoll", "GLOBAL", 1)
 		Global("XA_WantToGetDoll", "GLOBAL", 1)
@@ -241,7 +181,67 @@ EXTEND_BOTTOM xaa186 0
 	GOTO M0
 END
 
-APPEND xaa186
+
+
+APPEND xaa353
+	IF ~~ THEN BEGIN M0
+		SAY @1 /* ~As a matter of fact, I do. Are you interested in this doll? I'll sell it to you for three gold.~ */
+		IF ~
+			PartyGoldGT(2)
+		~
+		THEN REPLY @2 /* ~Yes, that is perfect, thank you. (Pay three gold for the doll). ~ */
+		DO ~
+			TakePartyGold(3)
+			SetGlobal("XA_BoughtRohmaDoll", "GLOBAL", 1)
+		~
+		GOTO M1
+		
+		IF ~
+			PartyGoldLT(3)
+		~
+		THEN REPLY @3 /* ~Yes, that is perfect. I'm a bit short on funds at the moment, however. I will return later to buy the doll.~ */
+		GOTO M2
+		
+		IF ~~ THEN REPLY @4 /* ~No thanks. Another time, perhaps.~ */
+		GOTO M3
+	END
+
+	IF ~~ THEN BEGIN M1
+		SAY @5 /* ~A pleasure doing business with you.~ */
+		IF ~~ THEN
+		DO ~
+			GiveItemCreate("XARDOLL", LastTalkedToBy(Myself),1,0,0)
+			SetGlobal("XA_LC_Journal_RohmaGift_1", "GLOBAL", 1)
+		~
+		EXIT
+	END
+	
+	IF ~~ THEN BEGIN M2
+		SAY @6 /* ~No worries. I'll hold on to the doll until you come up with the money.~ */
+		IF ~~ THEN
+		EXIT
+	END
+	
+	IF ~~ THEN BEGIN M3
+		SAY @4 /* ~No thanks. Another time, perhaps.~ */
+		IF ~~ THEN
+		EXIT
+	END
+END
+//}
+
+//{ PROST6
+EXTEND_BOTTOM xaa290 0
+	IF ~
+		GlobalLT("XA_BoughtRohmaDoll", "GLOBAL", 1)
+		Global("XA_WantToGetDoll", "GLOBAL", 1)
+		InPartySlot(LastTalkedToBy, 0)
+	~ 
+	THEN REPLY @0 /* ~I'm looking for a gift for a young child, perhaps a doll of some sort. Do you have anything like that in your store?~ */
+	GOTO M0
+END
+
+APPEND xaa290
 	IF ~~ THEN BEGIN M0
 		SAY @1 /* ~As a matter of fact, I do. Are you interested in this doll? I'll sell it to you for three gold.~ */
 		IF ~
@@ -343,18 +343,18 @@ END
 
 //{ RBALDU
 
-ADD_STATE_TRIGGER xaa433 5
+ADD_STATE_TRIGGER xaa434 5
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
-ADD_STATE_TRIGGER xaa433 14
+ADD_STATE_TRIGGER xaa434 14
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
 
-APPEND xaa433
+APPEND xaa434
 	IF ~
 		Global("XA_ReturnToBG", "GLOBAL", 1)
 		!AreaCheck("BG0614")
@@ -455,7 +455,7 @@ END
 //}
 
 
-//{ SERVA3
+//{ SERVA2
 ADD_STATE_TRIGGER xaa390 0
 ~
 	!Global("XA_ReturnToBG", "GLOBAL", 1)

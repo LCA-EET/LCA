@@ -5,33 +5,7 @@ ACTION_IF(rbg_carryover = 0) THEN BEGIN
 	INCLUDE ~%MOD_FOLDER%/rbg/xarbg_co.tph~
 END
 
-//{ Worldmap
-	COPY ~%MOD_FOLDER%/rbg/pvrz/xamap01.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/rbg/pvrz/xamap02.pvrz~ ~override~
-	
-	COPY ~%MOD_FOLDER%/rbg/mos/xamaprbg.mos~ ~override~
-	COPY ~%MOD_FOLDER%/rbg/wmp/xamaprbg.wmp~ ~override~
-	WRITE_LONG 0x108 RESOLVE_STR_REF(@4127)
-	WRITE_LONG 0x10C RESOLVE_STR_REF(@4127)
-	WRITE_LONG 0x1F8 RESOLVE_STR_REF(@4128)
-	WRITE_LONG 0x1FC RESOLVE_STR_REF(@4128)
-	WRITE_LONG 0x2E8 RESOLVE_STR_REF(@4129)
-	WRITE_LONG 0x2EC RESOLVE_STR_REF(@4129)
-	WRITE_LONG 0x3D8 RESOLVE_STR_REF(@4130)
-	WRITE_LONG 0x3DC RESOLVE_STR_REF(@4130)
-	WRITE_LONG 0x4C8 RESOLVE_STR_REF(@4131)
-	WRITE_LONG 0x4CC RESOLVE_STR_REF(@4131)
-	WRITE_LONG 0x5B8 RESOLVE_STR_REF(@4132)
-	WRITE_LONG 0x5BC RESOLVE_STR_REF(@4132)
-	WRITE_LONG 0x6A8 RESOLVE_STR_REF(@4133)
-	WRITE_LONG 0x6AC RESOLVE_STR_REF(@4133)
-	WRITE_LONG 0x798 RESOLVE_STR_REF(@4134)
-	WRITE_LONG 0x79C RESOLVE_STR_REF(@4134)
-	WRITE_LONG 0x888 RESOLVE_STR_REF(@4135)
-	WRITE_LONG 0x88C RESOLVE_STR_REF(@4135)
-	WRITE_LONG 0x24 RESOLVE_STR_REF(@4136)
-	COPY ~%MOD_FOLDER%/rbg/bam/xamapico.bam~ ~override~
-//}
+
 
 ACTION_IF (isEET = 0) THEN BEGIN
 	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~HOSTILES4~)
@@ -98,8 +72,432 @@ END
 INCLUDE ~%MOD_FOLDER%/rbg/generated/a/generated.tph~
 INCLUDE ~%MOD_FOLDER%/rbg/generated/b/generated.tph~
 
+//{ Worldmap
+	LAF FIND_FREE_PVRZ_INDEX
+		INT_VAR
+			num_to_reserve = 2
+			start_index = 1000
+		RET
+			firstIndex = free_index
+	END
+	OUTER_SET secondIndex = (firstIndex + 1)
+	
+	COPY ~%MOD_FOLDER%/rbg/pvrz/mosmapA.pvrz~ ~override/mos%firstIndex%.pvrz~
+	COPY ~%MOD_FOLDER%/rbg/pvrz/mosmapB.pvrz~ ~override/mos%secondIndex%.pvrz~
+	
+	COPY ~%MOD_FOLDER%/rbg/mos/xamaprbg.mos~ ~override~
+	WRITE_LONG 0x34 firstIndex
+	WRITE_LONG 0x50 secondIndex
+	
+	COPY ~%MOD_FOLDER%/rbg/wmp/xamaprbg.wmp~ ~override~
+	WRITE_LONG 0x24 RESOLVE_STR_REF(@4136) // Map Name
+	WRITE_LONG 0x108 RESOLVE_STR_REF(@4127)
+	
+	/*
+	WRITE_LONG 0x10C RESOLVE_STR_REF(@4127)
+	WRITE_LONG 0x1FC RESOLVE_STR_REF(@4128)
+	WRITE_LONG 0x2EC RESOLVE_STR_REF(@4129)
+	WRITE_LONG 0x3DC RESOLVE_STR_REF(@4130)
+	WRITE_LONG 0x4CC RESOLVE_STR_REF(@4131)
+	WRITE_LONG 0x5BC RESOLVE_STR_REF(@4132)
+	WRITE_LONG 0x6AC RESOLVE_STR_REF(@4133)
+	WRITE_LONG 0x79C RESOLVE_STR_REF(@4134)
+	WRITE_LONG 0x88C RESOLVE_STR_REF(@4135)
+	WRITE_LONG 0x97C RESOLVE_STR_REF(@4137)
+	
+	WRITE_LONG 0x1F8 RESOLVE_STR_REF(@4128)
+	WRITE_LONG 0x2E8 RESOLVE_STR_REF(@4129)
+	WRITE_LONG 0x3D8 RESOLVE_STR_REF(@4130)
+	WRITE_LONG 0x4C8 RESOLVE_STR_REF(@4131)
+	WRITE_LONG 0x5B8 RESOLVE_STR_REF(@4132)
+	WRITE_LONG 0x6A8 RESOLVE_STR_REF(@4133)
+	WRITE_LONG 0x798 RESOLVE_STR_REF(@4134)
+	WRITE_LONG 0x888 RESOLVE_STR_REF(@4135)
+	*/
+	WRITE_LONG 0x978 RESOLVE_STR_REF(@4137)
+		
+	//{ Wyrm's Crossing to E Baldur's Gate
+		LPF ADD_WORLDMAP_LINKS
+			INT_VAR
+				distance_scale = 0
+				encounter_probability = 0
+			STR_VAR
+				entry = ~Ext0800e~
+				from_area = ~XAA100~
+				from_node = ~w~
+				to_area = ~XAA103~
+		END
+	//}
+	
+	//{ Northwest Baldur's Gate
+		//{ NW Baldur's Gate to N Baldur's Gate
+		LPF ADD_WORLDMAP_LINKS
+			INT_VAR
+				distance_scale = 0
+				encounter_probability = 0
+			STR_VAR
+				entry = ~Ext0200w~
+				from_area = ~XAA229~
+				from_node = ~n~
+				to_area = ~XAA130~
+		END
+		//}
+		
+		//{ NW Baldur's Gate to W Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext0200w~
+					from_area = ~XAA229~
+					from_node = ~n~
+					to_area = ~XAA164~
+			END
+		//}
+	//}
+	
+	//{ North Baldur's Gate
+		//{ N Baldur's Gate to NW Baldur's Gate
+		LPF ADD_WORLDMAP_LINKS
+			INT_VAR
+				distance_scale = 0
+				encounter_probability = 0
+			STR_VAR
+				entry = ~Ext0100e~
+				from_area = ~XAA130~
+				from_node = ~n~
+				to_area = ~XAA229~
+		END
+		//}
+		
+		//{ N Baldur's Gate to NE Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext0300w~
+					from_area = ~XAA130~
+					from_node = ~n~
+					to_area = ~XAA105~
+			END
+		//}
+		
+		//{ N Baldur's Gate to C Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext0700n~
+					from_area = ~XAA130~
+					from_node = ~n~
+					to_area = ~XAA107~
+			END
+		//}
+	//}
+	
+	//{ Northeast Baldur's Gate
+		//{ NE Baldur's Gate to N Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext0200e~
+					from_area = ~XAA105~
+					from_node = ~n~
+					to_area = ~XAA130~
+			END
+		//}
+		
+		//{ NE Baldur's Gate to E Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext0800n~
+					from_area = ~XAA105~
+					from_node = ~n~
+					to_area = ~XAA103~
+			END
+		//}
+	//}
+	
+	//{ West Baldur's Gate
+		//{ W Baldur's Gate to NW Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext0100s~
+					from_area = ~XAA164~
+					from_node = ~n~
+					to_area = ~XAA229~
+			END
+		//}
+		
+		//{ W Baldur's Gate to C Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext0700w~
+					from_area = ~XAA164~
+					from_node = ~n~
+					to_area = ~XAA107~
+			END
+		//}
+		
+		//{ W Baldur's Gate to SW Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext1100n~
+					from_area = ~XAA164~
+					from_node = ~n~
+					to_area = ~XAA142~
+			END
+		//}
+	//}
+	
+	//{ Central Baldur's Gate
+		//{ C Baldur's Gate to N Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext0200s~
+					from_area = ~XAA107~
+					from_node = ~n~
+					to_area = ~XAA130~
+			END
+		//}
+		
+		//{ C Baldur's Gate to W Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext0600e~
+					from_area = ~XAA107~
+					from_node = ~n~
+					to_area = ~XAA164~
+			END
+		//}
+		
+		//{ C Baldur's Gate to E Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext0800w~
+					from_area = ~XAA107~
+					from_node = ~n~
+					to_area = ~XAA103~
+			END
+		//}
+		
+		//{ C Baldur's Gate to S Baldur's Gate (Docks)
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext1200n~
+					from_area = ~XAA107~
+					from_node = ~n~
+					to_area = ~XAA106~
+			END
+		//}
+	//}
+	
+	//{ East Baldur's Gate
+		//{ E Baldur's Gate to NE Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext0300s~
+					from_area = ~XAA103~
+					from_node = ~n~
+					to_area = ~XAA105~
+			END
+		//}
+		
+		//{ E Baldur's Gate to C Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext0700e~
+					from_area = ~XAA103~
+					from_node = ~n~
+					to_area = ~XAA107~
+			END
+		//}
+		
+		//{ E Baldur's Gate to SE Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext1300n~
+					from_area = ~XAA103~
+					from_node = ~n~
+					to_area = ~XAA141~
+			END
+		//}
+		
+		//{ E Baldur's Gate to Wyrm's Crossing
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Exit0800~
+					from_area = ~XAA103~
+					from_node = ~n~
+					to_area = ~XAA100~
+			END
+		//}
+	//}
+	
+	//{ Southwest Baldur's Gate
+		//{ SW Baldur's Gate to W Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext0600s~
+					from_area = ~XAA142~
+					from_node = ~n~
+					to_area = ~XAA164~
+			END
+		//}
+		
+		//{ SW Baldur's Gate to S Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext1200w~
+					from_area = ~XAA142~
+					from_node = ~n~
+					to_area = ~XAA106~
+			END
+		//}
+	//}
+
+	
+	//{ South Baldur's Gate (Docks)
+		//{ S Baldur's Gate to C Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext0700s~
+					from_area = ~XAA106~
+					from_node = ~n~
+					to_area = ~XAA107~
+			END
+		//}
+		
+		//{ S Baldur's Gate to SE Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext1300w~
+					from_area = ~XAA106~
+					from_node = ~n~
+					to_area = ~XAA141~
+			END
+		//}
+		
+		//{ S Baldur's Gate to SW Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext1100e~
+					from_area = ~XAA106~
+					from_node = ~n~
+					to_area = ~XAA142~
+			END
+		//}
+	//}
+	
+	//{ Southeast Baldur's Gate
+		//{ SE Baldur's Gate to E Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext0800s~
+					from_area = ~XAA141~
+					from_node = ~n~
+					to_area = ~XAA103~
+			END
+		//}
+		
+		//{ SE Baldur's Gate to S Baldur's Gate
+			LPF ADD_WORLDMAP_LINKS
+				INT_VAR
+					distance_scale = 0
+					encounter_probability = 0
+				STR_VAR
+					entry = ~Ext1200e~
+					from_area = ~XAA141~
+					from_node = ~n~
+					to_area = ~XAA106~
+			END
+		//}
+		
+		
+	//}
+	COPY ~%MOD_FOLDER%/rbg/bam/xamapico.bam~ ~override~
+//}
+
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/d~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
+
+ACTION_DEFINE_ARRAY bgAreaScripts
+BEGIN
+	xaas100
+	xaas229
+	xaas130
+	xaas105
+	xaas164
+	xaas107
+	xaas103
+	xaas142
+	xaas106
+	xaas141
+END
+
+ACTION_PHP_EACH bgAreaScripts AS _ => bgArea
+BEGIN
+	EXTEND_TOP ~%bgArea%.bcs~ ~%MOD_FOLDER%/rbg/baf/xalcexpl.baf~
+END
 
 //{ Script Extensions
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~

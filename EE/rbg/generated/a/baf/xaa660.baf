@@ -1,0 +1,8 @@
+IF
+	Entered([ANYONE])
+THEN
+	RESPONSE #100
+		DisplayString(LastTrigger,14381)  // Trap Sprung
+		ForceSpell(LastTrigger,TRAP_MAGIC_MISSILE)  // SPWI003.SPL (Magic Missile)
+END
+

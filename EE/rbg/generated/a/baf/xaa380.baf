@@ -1,0 +1,61 @@
+IF
+	AreaCheck("AR0226")  // BG Sewers, eastern area (ogre mage for Scar)
+	Dead("SewerOgre")  // Ogre Mage
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	AreaCheck("AR0226")  // BG Sewers, eastern area (ogre mage for Scar)
+	See("SewerOgre")  // Ogre Mage
+	!Dead("SewerOgre")  // Ogre Mage
+	Allegiance("SewerOgre",NEUTRAL)  // Ogre Mage
+	!Detect([PC])
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		ChangeEnemyAlly(Myself,NEUTRAL)
+END
+
+IF
+	AreaCheck("AR0226")  // BG Sewers, eastern area (ogre mage for Scar)
+	See("SewerOgre")  // Ogre Mage
+	!Dead("SewerOgre")  // Ogre Mage
+	Allegiance("SewerOgre",ENEMY)  // Ogre Mage
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastAttackerOf(Myself),100)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!StateCheck(NearestEnemyOf(Myself),STATE_HELPLESS)
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),45)
+END
+
+IF
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),45)
+END
+
