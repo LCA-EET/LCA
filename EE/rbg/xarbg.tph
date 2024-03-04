@@ -492,7 +492,7 @@ BEGIN
 	xaas130
 	xaas105
 	xaas164
-	xaas107 //
+	xaas107 
 	xaas103
 	xaas142
 	xaas106
@@ -507,8 +507,8 @@ END
 
 //{ Generated Area Modifications
 	COPY_EXISTING ~xaa106.are~ ~override~
-	//WRITE_LONG 0x60A0 RESOLVE_STR_REF(@4138)
-	//WRITE_LONG 0x65FC RESOLVE_STR_REF(@4138)
+	WRITE_LONG 0x60A0 RESOLVE_STR_REF(@4138)
+	WRITE_LONG 0x65FC RESOLVE_STR_REF(@4138)
 //}
 
 //{ Script Extensions
@@ -518,9 +518,13 @@ END
 	EXTEND_TOP ~xaas100.bcs~	~%MOD_FOLDER%/rbg/baf/xamaprbg.baf~
 //}
 
+//{ BMP
+	COPY ~%MOD_FOLDER%/rbg/bmp/xanarzus.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/bmp/xaneomas.bmp~ ~override~
+	
+//}
 
-/*
-
+//{ CRE
 	COPY ~%MOD_FOLDER%/rbg/cre/xa800m.cre~ ~override~
 	SAY NAME1 @4062
 	SAY NAME2 @4062
@@ -528,6 +532,23 @@ END
 	COPY ~%MOD_FOLDER%/rbg/cre/xa800w.cre~ ~override~
 	SAY NAME1 @4060
 	SAY NAME2 @4060
+
+	COPY ~%MOD_FOLDER%/rbg/cre/xakent.cre~ ~override~
+	SAY NAME1 @4093
+	SAY NAME2 @4093
+	
+	COPY ~%MOD_FOLDER%/rbg/cre/xanederl.cre~ ~override~
+	SAY NAME1 @4096
+	SAY NAME2 @4096
+	
+	COPY ~%MOD_FOLDER%/rbg/cre/xaneoma.cre~ ~override~
+	SAY NAME1 @4046
+	SAY NAME2 @4046
+//}
+
+/*
+
+	
 	
 	COPY ~%MOD_FOLDER%/rbg/cre/xaaasim.cre~ ~override~
 	SAY NAME1 @4063

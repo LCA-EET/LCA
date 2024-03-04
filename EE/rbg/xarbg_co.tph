@@ -1,6 +1,4 @@
-//{ Narzugon Portrait
-	COPY ~%MOD_FOLDER%/rbg/bmp/xanarzus.bmp~ ~override~
-//}
+
 
 //{ BAM
 	COPY ~%MOD_FOLDER%/rbg/bam/xabenohd.bam~ ~override~
