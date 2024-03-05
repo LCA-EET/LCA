@@ -1419,7 +1419,6 @@ IF ~~ THEN BEGIN XA_BackToBG_RTL_Leave
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_BackToBG", "GLOBAL", 3)
-		SetGlobal("XA_HaltBG1Script", "GLOBAL", 1)
 		SetGlobal("XA_PartyRemovalProcessing", "GLOBAL", 1)
 	~
 	EXIT

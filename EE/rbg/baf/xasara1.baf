@@ -6,7 +6,6 @@ THEN
 		FadeToColor([30.0],0)
 		Wait(2)
 		SetGlobal("XA_StartTOB", "GLOBAL", 1)
-		SetGlobal("XA_HaltBG1Script", "GLOBAL", 0)
 		TextScreen("XASARA1")
 		EndCutSceneMode()
 		//StartCutscene("XASARA")

@@ -1,0 +1,57 @@
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CreateElfsong", "GLOBAL", 1)
+	GlobalLT("XA_SavedElfsong", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CreateElfsong", "GLOBAL", 1)
+		CreateCreature("XA800M", [3150.1260], S)
+		CreateCreature("XA800W", [3100.1260], S)
+		SetInterrupt(FALSE)
+		DisplayStringHead("XA800W", @0)
+		Wait(3)
+		DisplayStringHead("XA800M", @1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("XA800M")
+	InMyArea("XA800W")
+	GlobalLT("XA_ElfsongTimerSet", "MYAREA", 1)
+	GlobalLT("XA_SavedElfsong", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_ElfsongTimerSet", "MYAREA", 1)
+		SetGlobalTimer("XA_ElfsongTimer", "GLOBAL", TWO_MINUTES) 
+END
+
+IF 
+	InMyArea(Player1)
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	InMyArea("XA800M")
+	InMyArea("XA800W")
+	GlobalTimerExpired("XA_ElfsongTimer", "GLOBAL")
+	GlobalLT("XA_SavedElfsong", "GLOBAL", 1)	
+	!Global("XA_800MW", "GLOBAL", 1)
+THEN
+	RESPONSE #50
+		SetGlobalTimer("XA_ElfsongTimer", "GLOBAL", TWO_MINUTES) 
+	RESPONSE #50
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_ElfsongTimer", "GLOBAL", TWO_MINUTES) 
+		DisplayStringHead("XA800W", @0)
+		Wait(3)
+		DisplayStringHead("XA800M", @1)
+		SetInterrupt(TRUE)
+END
+
+IF 
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CreateNeomaNPC", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("XANEOMA", [3075.1390], E)
+		SetGlobal("XA_CreateNeomaNPC", "GLOBAL", 1)
+END

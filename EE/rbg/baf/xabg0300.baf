@@ -1,8 +1,0 @@
-IF
-	Global("XA_ReturnToBG", "GLOBAL", 1)
-	InMyArea("Marek")
-THEN
-	RESPONSE #100
-		ActionOverride("Marek", DestroySelf())
-		Continue()
-END

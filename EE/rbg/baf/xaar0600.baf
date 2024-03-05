@@ -1,0 +1,10 @@
+IF
+	Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_CreateHOWSpy_0600", "XAA164", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CreateHOWSpy_0600", "XAA164", 1)
+		CreateCreature("XAHOWSPY", [4254.909], NW)
+		CreateCreature("XAHOWSPY", [1580.2424], NW)
+		Continue()
+END
