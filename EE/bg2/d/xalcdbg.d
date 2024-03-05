@@ -7,6 +7,9 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_BG2_Debug
 		SAY @5000 
 		
+		IF ~~ THEN REPLY @5083
+		GOTO XA_BG2_AdjustVariables
+		
 		IF ~~ THEN REPLY @5001
 		GOTO XA_BG2_AreaTest
 		
@@ -47,6 +50,40 @@ APPEND ~XALCDBG~
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 10
+		
+		IF ~~ THEN REPLY @3012 /*~Exit.~ */
+		GOTO 6
+		
+		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
+		DO ~
+			DestroySelf()
+		~
+		EXIT
+	END
+
+	IF ~~ THEN BEGIN XA_BG2_AdjustVariables
+		SAY @5083
+		
+		IF ~~ THEN REPLY @5084 /**/
+		DO ~
+			SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		~
+		GOTO XA_BG2_AdjustVariables
+		
+		IF ~~ THEN REPLY @5085 /**/
+		DO ~
+			SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 1)
+		~
+		GOTO XA_BG2_AdjustVariables
+		
+		IF ~~ THEN REPLY @5086 /**/
+		DO ~
+			SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 0)
+		~
+		GOTO XA_BG2_AdjustVariables
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_BG2_Debug
 		
 		IF ~~ THEN REPLY @3012 /*~Exit.~ */
 		GOTO 6

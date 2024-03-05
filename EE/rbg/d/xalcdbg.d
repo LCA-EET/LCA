@@ -11,8 +11,14 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @6020 /*~Area Test~ */
 		GOTO XA_RBG_AreaTest
 	
+		IF ~~ THEN REPLY @6036
+		GOTO XA_RBG_CutsceneTest
+	
 		IF ~~ THEN REPLY @6001 /* ~Item Test~*/
 		GOTO XA_RBG_ItemTest
+		
+		IF ~~ THEN REPLY @6024 /* ~Text Screen Test~ */
+		GOTO XA_RBG_TextScreenTest
 		
 		IF ~~ THEN REPLY @6016 /* ~Adjust Variables~*/
 		GOTO XA_RBG_AdjustVariables
@@ -34,6 +40,111 @@ APPEND ~XALCDBG~
 			DestroySelf()
 		~
 		EXIT	
+	END
+	
+	IF ~~ THEN BEGIN XA_RBG_CutsceneTest
+		SAY @6036 /*~Cutscene Test~*/
+		
+		IF ~~ THEN REPLY @6037 /*~XACS13~*/
+		DO ~
+			StartCutSceneMode()
+			StartCutscene("XACS13")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_RBG_Debug
+		
+		IF ~~ THEN REPLY @3012 /*~Exit.~ */
+		GOTO 6
+		
+		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
+		DO ~
+			DestroySelf()
+		~
+		EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_RBG_TextScreenTest
+		SAY @6024
+		
+		IF ~~ THEN REPLY @6025 /* XABAD1 */
+		DO ~
+			TextScreen("XABAD1")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6026 /* XABAD2 */
+		DO ~
+			TextScreen("XABAD2")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6027 /* XABAD3 */
+		DO ~
+			TextScreen("XABAD3")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6028 /* XABG */
+		DO ~
+			TextScreen("XABG")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6029 /* XABGROM */
+		DO ~
+			TextScreen("XABGROM")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6030 /* XADINNER */
+		DO ~
+			TextScreen("XABG")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6031 /* XADINROM */
+		DO ~
+			TextScreen("XADINROM")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6032 /* XASARA1 */
+		DO ~
+			TextScreen("XASARA1")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6033 /* XASARA2 */
+		DO ~
+			TextScreen("XASARA2")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6034 /* XASARA3 */
+		DO ~
+			TextScreen("XASARA3")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6035 /* XASARA4 */
+		DO ~
+			TextScreen("XASARA4")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_RBG_Debug
+		
+		IF ~~ THEN REPLY @3012 /*~Exit.~ */
+		GOTO 6
+		
+		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
+		DO ~
+			DestroySelf()
+		~
+		EXIT
 	END
 	
 	IF ~~ THEN BEGIN XA_RBG_AreaTest

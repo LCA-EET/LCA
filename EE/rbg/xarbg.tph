@@ -500,6 +500,7 @@ END
 	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalrbg.baf~
 	
 	EXTEND_TOP ~xaas100.bcs~	~%MOD_FOLDER%/rbg/baf/xamaprbg.baf~
+	EXTEND_TOP ~xaas326.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0134.baf~
 	EXTEND_TOP ~xaas164.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0600.baf~
 	EXTEND_TOP ~xaas103.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0800.baf~
 	EXTEND_TOP ~xaas100.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0900.baf~
@@ -771,6 +772,12 @@ END
 	//}
 */
 
+//{ MOS, Text Screens
+	COPY ~%MOD_FOLDER%/rbg/mos/xabadend.mos~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/mos/xabg.mos~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/mos/xadinner.mos~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/mos/xaptsara.mos~ ~override~
+//}
 
 //{ 2da
 	COPY ~%MOD_FOLDER%/rbg/2da/xabad1.2da~ ~override~
