@@ -3,7 +3,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_GlintSpawn", "MYAREA", 1)
-		CreateCreature("XAGLINT", [1900.1240], NW)
+		CreateCreature("XAC100", [1900.1240], NW)
 		Continue()
 END
 

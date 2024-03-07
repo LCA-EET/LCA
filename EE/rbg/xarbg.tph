@@ -81,6 +81,7 @@ END
 
 INCLUDE ~%MOD_FOLDER%/rbg/generated/a/generated.tph~
 INCLUDE ~%MOD_FOLDER%/rbg/generated/b/generated.tph~
+INCLUDE ~%MOD_FOLDER%/rbg/generated/c/generated.tph~
 
 //{ Worldmap
 	LAF FIND_FREE_PVRZ_INDEX
@@ -510,7 +511,11 @@ END
 //{ BMP
 	COPY ~%MOD_FOLDER%/rbg/bmp/xanarzus.bmp~ ~override~
 	COPY ~%MOD_FOLDER%/rbg/bmp/xaneomas.bmp~ ~override~
-	
+//}
+
+//{ ARE
+	COPY ~%MOD_FOLDER%/rbg/are/xahome.are~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/are/xahom2.are~ ~override~
 //}
 
 //{ CRE
@@ -557,18 +562,10 @@ END
 	COPY ~%MOD_FOLDER%/rbg/cre/xabrielb.cre~ ~override~
 	SAY NAME1 @4143
 	SAY NAME2 @4143
-	
-	COPY ~%MOD_FOLDER%/rbg/cre/xaglint.cre~ ~override~
-	SAY NAME1 @4144
-	SAY NAME2 @4144
 
 	COPY ~%MOD_FOLDER%/rbg/cre/xakent.cre~ ~override~
 	SAY NAME1 @4093
 	SAY NAME2 @4093
-	
-	COPY ~%MOD_FOLDER%/rbg/cre/xanederl.cre~ ~override~
-	SAY NAME1 @4096
-	SAY NAME2 @4096
 	
 	COPY ~%MOD_FOLDER%/rbg/cre/xaneoma.cre~ ~override~
 	SAY NAME1 @4046

@@ -1646,3 +1646,17 @@ COPY ~%MOD_FOLDER%\rbg\generated\b\tis\xab100.tis~ ~override~
 COPY ~%MOD_FOLDER%\rbg\generated\b\tis\xab101.tis~ ~override~
 COPY ~%MOD_FOLDER%\rbg\generated\b\tis\xab102.tis~ ~override~
 
+
+//bmp files.
+//=========================
+COPY ~%MOD_FOLDER%\rbg\generated\b\bmp\xab100ht.bmp~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bmp\xab100lm.bmp~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bmp\xab100ln.bmp~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bmp\xab100sr.bmp~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bmp\xab101ht.bmp~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bmp\xab101lm.bmp~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bmp\xab101ln.bmp~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bmp\xab101sr.bmp~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bmp\xab102ht.bmp~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bmp\xab102lm.bmp~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\b\bmp\xab102sr.bmp~ ~override~

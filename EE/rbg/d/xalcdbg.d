@@ -161,6 +161,17 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @6038
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XAHOME", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAHOME", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAHOME", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAHOME", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAHOME", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAHOME", "", [0.0], S))
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @6022
 		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("XAWYRM", "", [0.0], S))
