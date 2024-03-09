@@ -222,6 +222,7 @@ END
 //{ Dialog B-91
 CHAIN IF ~
 	Global("XA_Banter_CaelarSarevok", "GLOBAL", 2)
+	IsValidForPartyDialogue("XACAELAR")
 ~ THEN SAREV25J XA_CaelarSarevokBanter1Chain
 	@0 /*~It's interesting isn't it?~*/
 	DO ~
@@ -246,6 +247,7 @@ EXIT
 //{ Dialog B-92
 CHAIN IF ~
 	Global("XA_Banter_CaelarKeldorn", "GLOBAL", 2)
+	IsValidForPartyDialogue("XACAELAR")
 ~ THEN KELDORJ XA_CaelarKeldornBanter1Chain
 	@8 /* ~Lady Argent, I never dreamed that I would one day fight alongside an aasimar. It's been quite an honor.~ */
 	DO ~
@@ -267,6 +269,7 @@ EXIT
 //{ Dialog B-93
 CHAIN IF ~
 	Global("XA_Banter_CaelarRasaad", "GLOBAL", 2)
+	IsValidForPartyDialogue("XACAELAR")
 ~ THEN RASAADJ XA_CaelarRasaadBanter1Chain
 	@21 /*~Caelar? Your hand is trembling — is something wrong?~*/
 	DO ~
@@ -291,6 +294,7 @@ EXIT
 //{ Dialog B-94
 CHAIN IF ~
 	Global("XA_Banter_CaelarJaheira", "GLOBAL", 2)
+	IsValidForPartyDialogue("Jaheira")
 ~ THEN XACAELAB XA_CaelarJaheiraBanter1Chain
 	@29 /*~Jaheria... a moment of your time?~*/
 	DO ~
@@ -316,6 +320,7 @@ EXIT
 //{ Dialog B-95
 CHAIN IF ~
 	Global("XA_Banter_CaelarMazzy", "GLOBAL", 2)
+	IsValidForPartyDialogue("XACAELAR")
 ~ THEN MAZZYJ XA_CaelarMazzyBanter1Chain
 	@55 /*~Lady Argent, do you have a moment?~*/
 	DO ~
@@ -345,6 +350,7 @@ EXIT
 //{ Dialog B-96
 CHAIN IF ~
 	Global("XA_DornProposal", "GLOBAL", 1)
+	IsValidForPartyDialogue("XACAELAR")
 ~ THEN DORNJ XA_CaelarDornBanter1Chain
 	@56 /*~Caelar...~*/
 	DO ~
@@ -376,6 +382,7 @@ CHAIN IF ~
 	Global("XA_CaelarAerieScars", "GLOBAL", 1)
 	Global("XA_CorwinAerieScars", "GLOBAL", 1)
 	InParty("XACORWIN")
+	IsValidForPartyDialogue("Aerie")
 ~ THEN XACAELAB XA_CaelarAerieScars
 	@59 /*~Good... we could all use some rest. Aerie — would you help me with my armor?~*/
 	DO ~
@@ -406,6 +413,7 @@ EXIT
 //{ Dialog B-98
 CHAIN IF ~
 	Global("XA_CaelarAerieScars", "GLOBAL", 1)
+	IsValidForPartyDialogue("Aerie")
 	OR(2)
 		!Global("XA_CorwinAerieScars", "GLOBAL", 1)
 		!InParty("XACORWIN")
@@ -439,6 +447,7 @@ EXIT
 //{ Dialog B-99
 CHAIN IF ~
 	Global("XA_Banter_CaelarNeera", "GLOBAL", 2)
+	IsValidForPartyDialogue("Neera")
 ~ THEN XACAELAB XA_CaelarNeeraBanter1Chain
 	@76 /*~Neera, a word please.~*/
 	DO ~
