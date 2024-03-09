@@ -2918,7 +2918,7 @@ END
 //{ NBI Select
 IF
 	ActionListEmpty()
-	GlobalLT("XA_LC_BanterBlock_RBG", "LOCALS", 0)
+	GlobalLT("XA_LC_BanterBlock_RBG", "LOCALS", 1)
 	Global("XA_CanTalk", "LOCALS", 1)
 	GlobalTimerExpired("XA_BanterTimer", "LOCALS")
 	Global("XA_Banter_NextInteraction", "LOCALS", 0)
