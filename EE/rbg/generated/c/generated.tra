@@ -69,14 +69,26 @@ Glint happily expounds on his many adventures since leaving home; it's difficult
 @45066 = ~Punish the lawbreakers!~[xac10055]
 @45067 = ~We're more than mercenaries.~[xac10056]
 @45068 = ~War is almost here.~[xac10057]
-@45069 = ~Belt~
-@45070 = ~Belt of the Cunning Rogue~
-@45071 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+@45069 = ~Aldeth Sashenstar~
+@45070 = ~Aldeth Sashenstar~
+@45071 = ~ You there! Identify yourselves!~[xac10058]
+@45072 = ~ Come now, old chaps, can't we be friends?~[xac10059]
+@45073 = ~ For Baldur's Gate!~[xac10060]
+@45074 = ~ ~[xac10061]
+@45075 = ~ ~[xac10062]
+@45076 = ~ Learn some manners, brute.~[xac10063]
+@45077 = ~ Nothing is more vulgar than bad manners.~[xac10064]
+@45078 = ~ Learn to bathe, lout.~[xac10065]
+@45079 = ~ Oh my goodness!~[xac10066]
+@45080 = ~ I don't think that I have anything to say to you! Why don't you leave me be?!~
+@45081 = ~Belt~
+@45082 = ~Belt of the Cunning Rogue~
+@45083 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
 
 STATISTICS:
 
 Weight: 2~
-@45072 = ~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
+@45084 = ~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
 
 The pouches attached to the belt contain a number of small tools, wires, picks, and blades that can be used to pick locks and disable traps. 
 
@@ -87,9 +99,9 @@ Equipped abilities:
 – Find Traps: +15%
 
 Weight: 2~
-@45073 = ~Bullet~
-@45074 = ~Bullet of Fire +1~
-@45075 = ~A bullet is simply a rounded, well-balanced stone.
+@45085 = ~Bullet~
+@45086 = ~Bullet of Fire +1~
+@45087 = ~A bullet is simply a rounded, well-balanced stone.
 
 STATISTICS:
 
@@ -97,7 +109,7 @@ Damage: 1d4+1 (missile)
 Launcher: Sling
 
 Weight: 0~
-@45076 = ~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
+@45088 = ~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
 
 STATISTICS:
 
@@ -106,14 +118,14 @@ Damage type: Missile
 Launcher: Sling
 
 Weight: 0~
-@45077 = ~Ring~
-@45078 = ~Ring of Protection +1~
-@45079 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+@45089 = ~Ring~
+@45090 = ~Ring of Protection +1~
+@45091 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~
-@45080 = ~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
+@45092 = ~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
 
 STATISTICS:
 

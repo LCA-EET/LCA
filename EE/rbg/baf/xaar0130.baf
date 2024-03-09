@@ -1,10 +1,9 @@
 IF
-	Global("XA_ReturnToBG", "GLOBAL", 1)
-	Global("HelpBrevlik", "GLOBAL", 1)
-	!Global("XA_DestroyScope", "BG0130", 1)
+	Global("XA_LC_StoleFarseer", "GLOBAL", 1)
+	GlobalLT("XA_DestroyScope", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_DestroyScope", "BG0130", 1)
+		SetGlobal("XA_DestroyScope", "MYAREA", 1)
 		ActionOverride("Container5", DestroyItem("MISC64")) 
 		Continue()
 END
@@ -32,8 +31,7 @@ END
 IF
 	InMyArea("XACORWIN")
 	InMyArea(Player1)
-	!Global("XA_CuratorSpawned", "GLOBAL", 1)
-	Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_CuratorSpawned", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CuratorSpawned", "GLOBAL", 1)
@@ -41,13 +39,3 @@ THEN
 		Continue()
 END
 
-
-IF
-	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
-	Global("XA_CuratorSpawned", "GLOBAL", 1)
-	InMyArea("XACURATO")
-THEN
-	RESPONSE #100
-		SetGlobal("XA_CuratorSpawned", "GLOBAL", 0)
-		ActionOverride("XACURATO", DestroySelf())
-END

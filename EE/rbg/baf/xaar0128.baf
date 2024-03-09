@@ -5,10 +5,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CreateNPCs0128_Aldeth", "MYAREA", 1)
-		CreateCreature("ALDETH", [600.400], SW) 
-		ActionOverride("Aldeth", SetDialog("XAALDETH"))
-		ActionOverride("Aldeth", SetNumTimesTalkedTo(0))
-		ActionOverride("Aldeth", ChangeAIScript("XAINITP1",CLASS))
+		CreateCreature("XAC105", [600.400], SW) 
 		Continue()
 END
 
