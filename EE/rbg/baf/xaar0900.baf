@@ -1,3 +1,4 @@
+
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
 	InMyArea("Aerie")
@@ -23,8 +24,8 @@ THEN
 		ActionOverride(Player5,Rest())
 		ActionOverride(Player6,Rest())
 		
-		CreateCreature("XANEDERL", [1553.1370], SE) // Nederlok
-		CreateCreature("XABENCE", [1500.1396], SE) // Bence
+		CreateCreature("XAC103", [1553.1370], SE) // Nederlok
+		CreateCreature("XAC104", [1500.1396], SE) // Bence
 		CreateCreature("XARBNB01", [1400.1300], SE) // City Official
 		CreateCreature("XARBNB02", [1466.1263], SE) // City Official
 		CreateCreature("XAB147B", [1415.1385], SE) // FF Officer
@@ -48,7 +49,7 @@ THEN
 		Wait(1)
 		StartCutSceneMode()
 		SetCutSceneLite(TRUE)
-		ActionOverride("XANEDERL", StartDialog("XANEDERL", Player1))
+		ActionOverride("XANEDERL", Dialogue(Player1)) //XANEDERL
 		Continue()
 END
 
@@ -78,7 +79,7 @@ IF
 	Global("XA_BenceWyrm", "GLOBAL", 2)
 THEN
 	RESPONSE #100
-		ActionOverride("XABENCE", StartDialog("XABENCE", Player1))
+		ActionOverride("XABENCE",  Dialogue(Player1))
 		Continue()
 END
 
@@ -94,7 +95,7 @@ END
 
 IF
 	Global("XA_BenceWyrm", "GLOBAL", 4)
-	!TriggerOverride(Player1, See("XABENCE"))
+	!TriggerOverride(Player1, See("XAC104"))
 THEN
 	RESPONSE #100
 		SetGlobal("XA_BenceWyrm", "GLOBAL", 5)

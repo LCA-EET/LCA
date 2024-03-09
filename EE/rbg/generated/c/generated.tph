@@ -77,6 +77,13 @@ COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac103.cre~ ~override~
 	WRITE_LONG 268 RESOLVE_STR_REF(@45062) /*~Courage will carry us through.~[xac10053]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@45063) /*~The Flaming Fist stands ready.~[xac10054]*/
 
+COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac104.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45064) /*~Bence Duncan~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45065) /*~Bence Duncan~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45066) /*~Punish the lawbreakers!~[xac10055]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45067) /*~We're more than mercenaries.~[xac10056]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45068) /*~War is almost here.~[xac10057]*/
+
 
 //wav files
 //===================
@@ -132,6 +139,9 @@ COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10051.wav~ ~override~
 COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10052.wav~ ~override~
 COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10053.wav~ ~override~
 COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10054.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10055.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10056.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10057.wav~ ~override~
 
 //baf files
 //===================
@@ -140,14 +150,14 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\generated\c\baf~
 //itm files
 //===================
 COPY ~%MOD_FOLDER%\rbg\generated\c\itm\xac100.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45064) /*~Belt~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45065) /*~Belt of the Cunning Rogue~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45066) /*~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+	WRITE_LONG 8 RESOLVE_STR_REF(@45069) /*~Belt~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45070) /*~Belt of the Cunning Rogue~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45071) /*~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
 
 STATISTICS:
 
 Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45067) /*~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45072) /*~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
 
 The pouches attached to the belt contain a number of small tools, wires, picks, and blades that can be used to pick locks and disable traps. 
 
@@ -159,9 +169,9 @@ Equipped abilities:
 
 Weight: 2~*/
 COPY ~%MOD_FOLDER%\rbg\generated\c\itm\xac101.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45068) /*~Bullet~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45069) /*~Bullet of Fire +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45070) /*~A bullet is simply a rounded, well-balanced stone.
+	WRITE_LONG 8 RESOLVE_STR_REF(@45073) /*~Bullet~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45074) /*~Bullet of Fire +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45075) /*~A bullet is simply a rounded, well-balanced stone.
 
 STATISTICS:
 
@@ -169,7 +179,7 @@ Damage: 1d4+1 (missile)
 Launcher: Sling
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45071) /*~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45076) /*~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
 
 STATISTICS:
 
@@ -179,14 +189,14 @@ Launcher: Sling
 
 Weight: 0~*/
 COPY ~%MOD_FOLDER%\rbg\generated\c\itm\xac102.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45072) /*~Ring~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45073) /*~Ring of Protection +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45074) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+	WRITE_LONG 8 RESOLVE_STR_REF(@45077) /*~Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45078) /*~Ring of Protection +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45079) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45075) /*~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45080) /*~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
 
 STATISTICS:
 

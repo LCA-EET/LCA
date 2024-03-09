@@ -2,6 +2,7 @@ glint7.cre::xac100.cre
 bdrohma.cre::xac101.cre
 bdaudam.cre::xac102.cre
 bdnederl.cre::xac103.cre
+bdbence.cre::xac104.cre
 bd68669.wav::xac10000.wav
 bd68665.wav::xac10001.wav
 bd68666.wav::xac10002.wav
@@ -54,6 +55,9 @@ fchil02.wav::xac10051.wav
 bd68901.wav::xac10052.wav
 bd68899.wav::xac10053.wav
 bd68900.wav::xac10054.wav
+bd68939.wav::xac10055.wav
+bd68937.wav::xac10056.wav
+bd68938.wav::xac10057.wav
 bdglint.baf::xac100.baf
 bdglintc.baf::xac101.baf
 bdfamily.baf::xac102.baf
@@ -61,6 +65,7 @@ bdshout.baf::xac104.baf
 bdfigh01.baf::xac105.baf
 bdnederl.baf::xac106.baf
 bdasc.baf::xac107.baf
+bdbence.baf::xac110.baf
 bdbelt03.itm::xac100.itm
 bull07.itm::xac101.itm
 bdring06.itm::xac102.itm
@@ -71,5 +76,6 @@ bdglint.dlg::xac100.dlg
 bdrohma.dlg::xac101.dlg
 bdaudam.dlg::xac102.dlg
 bdnederl.dlg::xac103.dlg
+bdbence.dlg::xac104.dlg
 ibull07.bam::xac101.bam
 ibdblt03.bam::xac100.bam

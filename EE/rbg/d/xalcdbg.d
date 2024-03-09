@@ -52,6 +52,13 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @6039 /*~XACSHOW~*/
+		DO ~
+			StartCutSceneMode()
+			StartCutscene("XACSHOW")
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
@@ -158,6 +165,83 @@ APPEND ~XALCDBG~
 			ActionOverride(Player4, LeaveAreaLUA("XAA100", "", [0.0], S))
 			ActionOverride(Player5, LeaveAreaLUA("XAA100", "", [0.0], S))
 			ActionOverride(Player6, LeaveAreaLUA("XAA100", "", [0.0], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6040
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XAA606", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAA606", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAA606", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAA606", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAA606", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAA606", "", [0.0], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6041
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XAA224", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAA224", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAA224", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAA224", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAA224", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAA224", "", [0.0], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6042
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XAA326", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAA326", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAA326", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAA326", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAA326", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAA326", "", [0.0], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6043
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XAA164", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAA164", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAA164", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAA164", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAA164", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAA164", "", [0.0], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6044
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XAA103", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAA103", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAA103", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAA103", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAA103", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAA103", "", [0.0], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6045
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XAA141", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAA141", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAA141", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAA141", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAA141", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAA141", "", [0.0], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6039
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XACSHOW", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XACSHOW", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XACSHOW", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XACSHOW", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XACSHOW", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XACSHOW", "", [0.0], S))
 		~
 		EXIT
 		

@@ -501,11 +501,14 @@ END
 	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalrbg.baf~
 	
 	EXTEND_TOP ~xaas100.bcs~	~%MOD_FOLDER%/rbg/baf/xamaprbg.baf~
+	EXTEND_TOP ~xaas606.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0102.baf~
+	EXTEND_TOP ~xaas224.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0112.baf~
 	EXTEND_TOP ~xaas326.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0134.baf~
 	EXTEND_TOP ~xaas164.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0600.baf~
 	EXTEND_TOP ~xaas103.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0800.baf~
 	EXTEND_TOP ~xaas100.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0900.baf~
 	EXTEND_TOP ~xaas141.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar1300.baf~
+	
 //}
 
 //{ BMP
@@ -514,11 +517,38 @@ END
 //}
 
 //{ ARE
+	COPY ~%MOD_FOLDER%/rbg/are/xacshow.are~ ~override~
 	COPY ~%MOD_FOLDER%/rbg/are/xahome.are~ ~override~
 	COPY ~%MOD_FOLDER%/rbg/are/xahom2.are~ ~override~
+	
 //}
 
 //{ CRE
+	COPY_EXISTING ~xac100.cre~ ~override~ // Glint
+	WRITE_ASCII 0x2CC ~xaglint~ #8
+	WRITE_ASCII 0x248 ~xainitp1~ #8
+	WRITE_ASCII 0x280 ~xaglint~ #20
+	
+	COPY_EXISTING ~xac101.cre~ ~override~ // Rohma
+	WRITE_ASCII 0x2CC ~xarohma~ #8
+	WRITE_ASCII 0x280 ~xarohma~ #20
+	
+	COPY_EXISTING ~xac102.cre~ ~override~ // Audamar
+	WRITE_ASCII 0x2CC ~xaaudam~ #8	
+	WRITE_ASCII 0x280 ~xaaudam~ #20
+	
+	COPY_EXISTING ~xac103.cre~ ~override~ // Nederlok
+	WRITE_ASCII 0x2CC ~xanederl~ #8
+	WRITE_ASCII 0x280 ~xanederl~ #20
+	
+	COPY_EXISTING ~xac104.cre~ ~override~ // Bence
+	WRITE_ASCII 0x2CC ~xabence~ #8
+	WRITE_ASCII 0x280 ~xabence~ #20
+	
+	COPY ~%MOD_FOLDER%/rbg/cre/xacurato.cre~ ~override~
+	SAY NAME1 @4048
+	SAY NAME2 @4048
+
 	COPY ~%MOD_FOLDER%/rbg/cre/xa800m.cre~ ~override~
 	SAY NAME1 @4062
 	SAY NAME2 @4062
