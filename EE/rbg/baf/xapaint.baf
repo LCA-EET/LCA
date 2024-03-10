@@ -6,32 +6,14 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_AmuletPainting", "GLOBAL", 5)
-		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 END
 
 IF
-	Global("XA_DoppleSpawn_0706", "GLOBAL", 1)
+	Global("XA_AmuletPainting", "GLOBAL", 5)
 THEN
 	RESPONSE #100
-		CreateCreature("XADOPP01", [433.466], SW)
-		CreateCreature("XADOPP02", [386.584], NW)
-		CreateCreature("XADOPP03", [303.607], NW)
-		SetGlobal("XA_DoppleSpawn_0706", "GLOBAL", 2)
+		DestroySelf()
 END
-
-IF
-	Global("XA_DoppleSpawn_0706", "GLOBAL", 2)
-	Dead("XADOPP01")
-	Dead("XADOPP02")
-	Dead("XADOPP03")
-THEN
-	RESPONSE #100
-		SetGlobal("XA_AmuletPainting", "GLOBAL", 7)
-		SetGlobal("XA_DoppleSpawn_0706", "GLOBAL", 3)
-		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
-END
-
-
 
 
 

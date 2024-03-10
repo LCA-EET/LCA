@@ -487,11 +487,17 @@ APPEND ~PLAYER1~
 		IF ~
 			Global("bd_player_exiled","global",1)
 		~ THEN 
+		DO ~
+			SetGlobal("XA_SoDAnxietyCell", "GLOBAL", 2)
+		~
 		GOTO XA_DarkMemories_Exile
 		
 		IF ~
 			Global("bd_player_exiled","global",0)
 		~ THEN 
+		DO ~
+			SetGlobal("XA_SoDAnxietyCell", "GLOBAL", 2)
+		~
 		GOTO XA_DarkMemories_Escape
 		
 	END

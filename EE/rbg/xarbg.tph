@@ -519,6 +519,8 @@ END
 	EXTEND_TOP ~xaas527.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0613.baf~
 	EXTEND_TOP ~xaas565.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0614.baf~
 	EXTEND_TOP ~xaas669.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0615.baf~
+	EXTEND_TOP ~xaas117.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0705.baf~
+	EXTEND_TOP ~xaas206.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0706.baf~
 	EXTEND_TOP ~xaas103.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0800.baf~
 	EXTEND_TOP ~xaas100.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0900.baf~
 	EXTEND_TOP ~xaas141.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar1300.baf~
@@ -539,6 +541,11 @@ END
 
 //{ CRE
 
+	COPY_EXISTING ~%MOD_FOLDER%/rbg/cre/xaa216.cre~ ~override~
+	WRITE_ASCII 0x2CC ~xabrielb~ #8
+	WRITE_ASCII 0x248 ~xainitp1~ #8
+	WRITE_ASCII 0x280 ~xabrielb~ #20
+
 	COPY_EXISTING ~xaa494.cre~ ~override~ // Larze
 	WRITE_ASCII 0x2CC ~xalarze~ #8
 	WRITE_ASCII 0x248 ~xainitp1~ #8
@@ -547,6 +554,11 @@ END
 	COPY_EXISTING ~xaa629.cre~ ~override~ // WV Guard 2
 	WRITE_ASCII 0x2CC ~xawvgrd2~ #8
 	WRITE_ASCII 0x280 ~xawvgrd2~ #20
+	
+	COPY_EXISTING ~xaa850.cre~ ~override~ // Alyth
+	WRITE_ASCII 0x2CC ~xaalyth~ #8
+	WRITE_ASCII 0x248 ~xainitp1~ #8
+	WRITE_ASCII 0x280 ~xaalyth~ #20
 	
 	COPY_EXISTING ~xaa1051.cre~ ~override/xawvmer1.cre~ // WV Merchant
 	WRITE_ASCII 0x2CC ~xawvmer~ #8
@@ -593,58 +605,26 @@ END
 	COPY ~%MOD_FOLDER%/rbg/cre/xacurato.cre~ ~override~
 	SAY NAME1 @4048
 	SAY NAME2 @4048
-
-	COPY ~%MOD_FOLDER%/rbg/cre/xa800m.cre~ ~override~
-	SAY NAME1 @4062
-	SAY NAME2 @4062
 	
-	COPY ~%MOD_FOLDER%/rbg/cre/xa800w.cre~ ~override~
-	SAY NAME1 @4060
-	SAY NAME2 @4060
+	COPY ~%MOD_FOLDER%/rbg/cre/xalcspy.cre~ ~override~
 	
-	COPY ~%MOD_FOLDER%/rbg/cre/xab144a.cre~ ~override~
-	SAY NAME1 @4139
-	SAY NAME2 @4139
-	
-	COPY ~%MOD_FOLDER%/rbg/cre/xab145a.cre~ ~override~
-	SAY NAME1 @4139
-	SAY NAME2 @4139
-	
-	COPY ~%MOD_FOLDER%/rbg/cre/xab147a.cre~ ~override~
-	SAY NAME1 @4139
-	SAY NAME2 @4139
-	
-	COPY ~%MOD_FOLDER%/rbg/cre/xab147b.cre~ ~override~
-	SAY NAME1 @4142
-	SAY NAME2 @4142
-	
-	COPY ~%MOD_FOLDER%/rbg/cre/xab149a.cre~ ~override~
-	SAY NAME1 @4139
-	SAY NAME2 @4139
-	
-	COPY ~%MOD_FOLDER%/rbg/cre/xab149b.cre~ ~override~
-	SAY NAME1 @4142
-	SAY NAME2 @4142
-	
-	COPY ~%MOD_FOLDER%/rbg/cre/xab149b.cre~ ~override~
-	SAY NAME1 @4139
-	SAY NAME2 @4139
-	
-	COPY ~%MOD_FOLDER%/rbg/cre/xabence.cre~ ~override~
-	SAY NAME1 @4141
-	SAY NAME2 @4141
-	
-	COPY ~%MOD_FOLDER%/rbg/cre/xabrielb.cre~ ~override~
-	SAY NAME1 @4143
-	SAY NAME2 @4143
-
-	COPY ~%MOD_FOLDER%/rbg/cre/xakent.cre~ ~override~
-	SAY NAME1 @4093
-	SAY NAME2 @4093
+	COPY ~%MOD_FOLDER%/rbg/cre/xalyriel.cre~ ~override~
+	SAY NAME1 @4049
+	SAY NAME2 @4049
 	
 	COPY ~%MOD_FOLDER%/rbg/cre/xaneoma.cre~ ~override~
 	SAY NAME1 @4046
 	SAY NAME2 @4046
+	
+
+
+
+
+
+
+
+
+	
 	
 	COPY ~%MOD_FOLDER%/rbg/cre/xarbnb01.cre~ ~override~
 	SAY NAME1 @4140
