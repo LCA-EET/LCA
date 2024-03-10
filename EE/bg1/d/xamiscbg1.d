@@ -74,6 +74,15 @@
 	~
 //}
 
+//{ JHASSO
+	ADD_TRANS_ACTION JHASSO 
+	BEGIN 0 END
+	BEGIN 0 2 END
+	~
+		SetGlobal("XA_LC_SavedJhasso", "GLOBAL", 1)
+	~
+//}
+
 //{ VAI
 	ADD_TRANS_ACTION VAI
 	BEGIN 6 END

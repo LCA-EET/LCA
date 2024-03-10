@@ -1,5 +1,4 @@
 IF
-	Global("XA_ReturnToBG", "GLOBAL", 1)
 	GlobalLT("XA_NebSpawn225", "MYAREA", 1)
 	OR(2)
 		!Dead("Neb")
@@ -57,14 +56,5 @@ THEN
 		CreateCreature("XACHWRAI",[2530.2035],NW)
 		SetGlobal("ChildrenCalled","MYAREA",2)
 		SetInterrupt(TRUE)
-		Continue()
-END
-
-IF
-	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
-	InMyArea("XANEB")
-THEN
-	RESPONSE #100
-		ActionOverride("XANEB", DestroySelf())
 		Continue()
 END

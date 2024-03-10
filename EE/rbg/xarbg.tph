@@ -508,7 +508,11 @@ END
 	EXTEND_TOP ~xaas677.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0128.baf~
 	EXTEND_TOP ~xaas359.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0130.baf~
 	EXTEND_TOP ~xaas326.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0134.baf~
+	EXTEND_TOP ~xaas455.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0165.baf~
+	EXTEND_TOP ~xaas156.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0225.baf~
 	EXTEND_TOP ~xaas164.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0600.baf~
+	EXTEND_TOP ~xaas286.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0601.baf~
+	EXTEND_TOP ~xaas487.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0602.baf~
 	EXTEND_TOP ~xaas103.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0800.baf~
 	EXTEND_TOP ~xaas100.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0900.baf~
 	EXTEND_TOP ~xaas141.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar1300.baf~
@@ -559,6 +563,9 @@ END
 	WRITE_ASCII 0x248 ~xainitp1~ #8
 	WRITE_ASCII 0x280 ~xaaldeth~ #20
 	
+	COPY ~%MOD_FOLDER%/rbg/cre/xachwrai.cre~ ~override~
+	SAY NAME1 @4145
+	SAY NAME2 @4145
 	
 	
 	
