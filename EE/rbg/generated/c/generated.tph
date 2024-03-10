@@ -98,6 +98,18 @@ COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac105.cre~ ~override~
 	WRITE_LONG 280 RESOLVE_STR_REF(@45079) /*~ Oh my goodness!~[xac10066]*/
 	WRITE_LONG 412 RESOLVE_STR_REF(@45080) /*~ I don't think that I have anything to say to you! Why don't you leave me be?!~*/
 
+COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac106.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45081) /*~Kent~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45082) /*~Kent~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@45083) /*~ Every crime must be punished!~[xac10067]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45084) /*~ I AM the law!~[xac10068]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45085) /*~~[xac10069]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45086) /*~~[xac10070]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45087) /*~ I serve the Flaming Fist!~[xac10071]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45088) /*~ Every crime must be punished!~[xac10067]*/
+	WRITE_LONG 304 RESOLVE_STR_REF(@45089) /*~ You there! Give me fifty pushups!~[xac10073]*/
+	WRITE_LONG 408 RESOLVE_STR_REF(@45090) /*~ You're not welcome here!~*/
+
 
 //wav files
 //===================
@@ -165,6 +177,12 @@ COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10063.wav~ ~override~
 COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10064.wav~ ~override~
 COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10065.wav~ ~override~
 COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10066.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10067.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10068.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10069.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10070.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10071.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10073.wav~ ~override~
 
 //baf files
 //===================
@@ -173,14 +191,14 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\generated\c\baf~
 //itm files
 //===================
 COPY ~%MOD_FOLDER%\rbg\generated\c\itm\xac100.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45081) /*~Belt~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45082) /*~Belt of the Cunning Rogue~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45083) /*~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+	WRITE_LONG 8 RESOLVE_STR_REF(@45091) /*~Belt~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45092) /*~Belt of the Cunning Rogue~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45093) /*~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
 
 STATISTICS:
 
 Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45084) /*~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45094) /*~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
 
 The pouches attached to the belt contain a number of small tools, wires, picks, and blades that can be used to pick locks and disable traps. 
 
@@ -192,9 +210,9 @@ Equipped abilities:
 
 Weight: 2~*/
 COPY ~%MOD_FOLDER%\rbg\generated\c\itm\xac101.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45085) /*~Bullet~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45086) /*~Bullet of Fire +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45087) /*~A bullet is simply a rounded, well-balanced stone.
+	WRITE_LONG 8 RESOLVE_STR_REF(@45095) /*~Bullet~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45096) /*~Bullet of Fire +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45097) /*~A bullet is simply a rounded, well-balanced stone.
 
 STATISTICS:
 
@@ -202,7 +220,7 @@ Damage: 1d4+1 (missile)
 Launcher: Sling
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45088) /*~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45098) /*~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
 
 STATISTICS:
 
@@ -212,14 +230,14 @@ Launcher: Sling
 
 Weight: 0~*/
 COPY ~%MOD_FOLDER%\rbg\generated\c\itm\xac102.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45089) /*~Ring~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45090) /*~Ring of Protection +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45091) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+	WRITE_LONG 8 RESOLVE_STR_REF(@45099) /*~Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45100) /*~Ring of Protection +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45101) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45092) /*~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45102) /*~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
 
 STATISTICS:
 

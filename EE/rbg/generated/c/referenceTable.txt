@@ -4,6 +4,7 @@ bdaudam.cre::xac102.cre
 bdnederl.cre::xac103.cre
 bdbence.cre::xac104.cre
 aldeth.cre::xac105.cre
+kent.cre::xac106.cre
 bd68669.wav::xac10000.wav
 bd68665.wav::xac10001.wav
 bd68666.wav::xac10002.wav
@@ -68,6 +69,12 @@ aldet04.wav::xac10063.wav
 aldet05.wav::xac10064.wav
 aldet06.wav::xac10065.wav
 aldet07.wav::xac10066.wav
+flamn03.wav::xac10067.wav
+flamn02.wav::xac10068.wav
+flamn05.wav::xac10069.wav
+flamn06.wav::xac10070.wav
+flamn01.wav::xac10071.wav
+flamn04.wav::xac10073.wav
 bdglint.baf::xac100.baf
 bdglintc.baf::xac101.baf
 bdfamily.baf::xac102.baf
@@ -79,6 +86,9 @@ bdbence.baf::xac110.baf
 shout.baf::xac113.baf
 aldethru.baf::xac114.baf
 wtasight.baf::xac115.baf
+initdlg.baf::xac117.baf
+seeenemy.baf::xac118.baf
+priest4.baf::xac119.baf
 bdbelt03.itm::xac100.itm
 bull07.itm::xac101.itm
 bdring06.itm::xac102.itm
@@ -91,5 +101,6 @@ bdaudam.dlg::xac102.dlg
 bdnederl.dlg::xac103.dlg
 bdbence.dlg::xac104.dlg
 aldeth.dlg::xac105.dlg
+kent.dlg::xac106.dlg
 ibull07.bam::xac101.bam
 ibdblt03.bam::xac100.bam

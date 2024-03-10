@@ -513,6 +513,12 @@ END
 	EXTEND_TOP ~xaas164.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0600.baf~
 	EXTEND_TOP ~xaas286.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0601.baf~
 	EXTEND_TOP ~xaas487.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0602.baf~
+	EXTEND_TOP ~xaas283.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0607.baf~
+	EXTEND_TOP ~xaas482.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0608.baf~
+	EXTEND_TOP ~xaas305.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0612.baf~
+	EXTEND_TOP ~xaas527.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0613.baf~
+	EXTEND_TOP ~xaas565.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0614.baf~
+	EXTEND_TOP ~xaas669.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0615.baf~
 	EXTEND_TOP ~xaas103.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0800.baf~
 	EXTEND_TOP ~xaas100.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0900.baf~
 	EXTEND_TOP ~xaas141.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar1300.baf~
@@ -532,10 +538,21 @@ END
 //}
 
 //{ CRE
+
 	COPY_EXISTING ~xaa494.cre~ ~override~ // Larze
 	WRITE_ASCII 0x2CC ~xalarze~ #8
 	WRITE_ASCII 0x248 ~xainitp1~ #8
 	WRITE_ASCII 0x280 ~xalarze~ #20
+	
+	COPY_EXISTING ~xaa629.cre~ ~override~ // WV Guard 2
+	WRITE_ASCII 0x2CC ~xawvgrd2~ #8
+	WRITE_ASCII 0x280 ~xawvgrd2~ #20
+	
+	COPY_EXISTING ~xaa1051.cre~ ~override/xawvmer1.cre~ // WV Merchant
+	WRITE_ASCII 0x2CC ~xawvmer~ #8
+	
+	COPY_EXISTING ~xaa1051.cre~ ~override/xawvmer2.cre~ // WV Merchant
+	WRITE_ASCII 0x2CC ~xawvmer~ #8
 
 	COPY_EXISTING ~xac100.cre~ ~override~ // Glint
 	WRITE_ASCII 0x2CC ~xaglint~ #8
@@ -562,6 +579,10 @@ END
 	WRITE_ASCII 0x2CC ~xaaldeth~ #8
 	WRITE_ASCII 0x248 ~xainitp1~ #8
 	WRITE_ASCII 0x280 ~xaaldeth~ #20
+	
+	COPY_EXISTING ~xac106.cre~ ~override~ // Kent
+	WRITE_ASCII 0x2CC ~xakent~ #8
+	WRITE_ASCII 0x280 ~xakent~ #20
 	
 	COPY ~%MOD_FOLDER%/rbg/cre/xachwrai.cre~ ~override~
 	SAY NAME1 @4145

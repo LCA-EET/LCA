@@ -1,0 +1,17 @@
+IF 
+	GlobalLT("XA_0614_VirgilSpawn", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("XAVIRGIL", [850.500], S)
+		SetGlobal("XA_0614_VirgilSpawn", "MYAREA", 1)
+		Continue()
+END
+
+IF 
+	Global("XA_VirgilInCustody", "GLOBAL", 1)
+	InMyArea("XAVIRGIL")
+THEN
+	RESPONSE #100
+		ActionOverride("XAVIRGIL", DestroySelf())
+		Continue()
+END

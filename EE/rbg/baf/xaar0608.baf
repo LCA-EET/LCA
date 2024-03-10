@@ -1,0 +1,17 @@
+IF 
+	GlobalLT("XA_CreateNPCS_0608_Kent", "MYAREA", 1)
+THEN 
+	RESPONSE #100
+		SetGlobal("XA_CreateNPCS_0608_Kent", "MYAREA", 1)
+		CreateCreature("XAC106", [380.309], W) // Kent
+		Continue()
+END
+
+IF 
+	GlobalLT("XA_CreateNPCS_0608_Nederlok", "MYAREA", 1)
+THEN 
+	RESPONSE #100
+		SetGlobal("XA_CreateNPCS_0608_Nederlok", "MYAREA", 1)
+		CreateCreature("XAC103", [233.399], NNE) // Nederlok
+		Continue()
+END
