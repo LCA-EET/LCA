@@ -3,12 +3,13 @@ $tp2Name = "LCA"
 $modPath = $basePath + "/" + $tp2Name 
 $archive = $basePath + ".zip"
 $exePath = "setup-" + $tp2Name + ".exe"
-$testDir = "F:\Baldur's Gate EET\00806\"
+$testDir = "F:\Baldur's Gate EE\00806\"
 $folders = @(
 'assistant',
 'bg1',
 'sod',
-'tra'
+'tra',
+'generated\e'
 )
 
 Remove-Item -LiteralPath $modPath -Force -Recurse

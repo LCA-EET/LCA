@@ -1,7 +1,11 @@
 PRINT @2000  /* ~Processing SoD changes...~ */
 
+INCLUDE ~%MOD_FOLDER%/generated/e/generated.tph~
+INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
+
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/baf~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
+
 
 //{ Scripting Modifications
 	EXTEND_TOP ~bd0104.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd0104.baf~
@@ -12,26 +16,14 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xabalsod.baf~
 	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xajrnsod.baf~
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/sod/baf/xap1d.baf~
-	
+	EXTEND_TOP ~xaes100.bcs~ ~%MOD_FOLDER%/sod/baf/xatntscr.baf~	// Tent Cutscene
+	EXTEND_TOP ~xaes101.bcs~ ~%MOD_FOLDER%/sod/baf/xaclrg.baf~ 		// Archery Cutscene
+	EXTEND_TOP ~bd4300.bcs~ ~%MOD_FOLDER%/sod/baf/xacheer.baf~ 	
+	EXTEND_TOP ~bdcut59b.bcs~ ~%MOD_FOLDER%/sod/baf/xacut59b.baf~ 
+
 	ACTION_IF (isEET = 1) THEN BEGIN
 		EXTEND_TOP ~bd0100.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd0100.baf~
 	END
-//}
-
-//{ New Areas
-	COPY ~%MOD_FOLDER%/sod/are/xatent.are~ 		~override~
-	COPY ~%MOD_FOLDER%/sod/wed/xatent.wed~ 		~override~
-	COPY ~%MOD_FOLDER%/sod/tis/xatent.tis~ 		~override~
-	COPY ~%MOD_FOLDER%/sod/bmp/xatentht.bmp~ 	~override~
-	COPY ~%MOD_FOLDER%/sod/bmp/xatentlm.bmp~ 	~override~
-	COPY ~%MOD_FOLDER%/sod/bmp/xatentsr.bmp~ 	~override~
-	
-	COPY ~%MOD_FOLDER%/sod/are/xaclrg.are~ 		~override~
-	COPY ~%MOD_FOLDER%/sod/wed/xaclrg.wed~ 		~override~
-	COPY ~%MOD_FOLDER%/sod/tis/xaclrg.tis~ 		~override~
-	COPY ~%MOD_FOLDER%/sod/bmp/xaclrght.bmp~ 	~override~
-	COPY ~%MOD_FOLDER%/sod/bmp/xaclrglm.bmp~ 	~override~
-	COPY ~%MOD_FOLDER%/sod/bmp/xaclrgsr.bmp~ 	~override~
 //}
 
 //{ New Sounds
@@ -53,18 +45,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 	COPY ~%MOD_FOLDER%/sod/cre/xacc4.cre~		~override~
 	WRITE_LONG 0x08 RESOLVE_STR_REF(@2010)
 	WRITE_LONG 0x08 RESOLVE_STR_REF(@2010)
-	
-	COPY ~%MOD_FOLDER%/sod/cre/xafistex.cre~	~override~
-	WRITE_LONG 0x08 RESOLVE_STR_REF(@2012)
-	WRITE_LONG 0x0C RESOLVE_STR_REF(@2012)
-	
-	COPY ~%MOD_FOLDER%/sod/cre/xawtrex.cre~		~override~
-	WRITE_LONG 0x08 RESOLVE_STR_REF(@2011)
-	WRITE_LONG 0x0C RESOLVE_STR_REF(@2011)
-	
-	COPY ~%MOD_FOLDER%/sod/cre/xacorltr.cre~	~override~
-	WRITE_LONG 0x08 RESOLVE_STR_REF(@2001)
-	WRITE_LONG 0x0C RESOLVE_STR_REF(@2001)
 //}
 
 //{ Creature modifications
@@ -85,4 +65,6 @@ ACTION_IF (bg1_carryover = 0) THEN BEGIN
 	INCLUDE ~%MOD_FOLDER%/bg1/xabg1_co.tph~
 END
 
-INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
+
+
+

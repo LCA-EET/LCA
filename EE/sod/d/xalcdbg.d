@@ -149,6 +149,14 @@ APPEND XALCDBG
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @4020/*~Escape from Avernus (BDCUT59A)~ */
+		DO ~
+			StorePartyLocations()
+			StartCutsceneMode()
+			StartCutscene("BDCUT59A")
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @4018/* ~Trial Cutscene (Ashatiel honorable duel.)~*/
 		DO ~
 			SetGlobal("bd_asha_duel", "GLOBAL", 3)
