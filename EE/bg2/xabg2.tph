@@ -181,10 +181,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 //}
 
 //{ cre
-	COPY ~%MOD_FOLDER%/bg2/cre/xaalig.cre~ ~override~
-	SAY NAME1 @3053
-	SAY NAME2 @3053
-	
 	COPY ~%MOD_FOLDER%/bg2/cre/xabltcut.cre~ ~override~
 	SAY NAME1 @3050
 	SAY NAME2 @3050
@@ -238,10 +234,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 	COPY ~%MOD_FOLDER%/bg2/cre/xaliacut.cre~ ~override~
 	SAY NAME1 @3064
 	SAY NAME2 @3064
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xaluxg.cre~ ~override~
-	SAY NAME1 @3087
-	SAY NAME2 @3087
 
 	COPY ~%MOD_FOLDER%/bg2/cre/xaskcut1.cre~ ~override~
 	SAY NAME1 @3070

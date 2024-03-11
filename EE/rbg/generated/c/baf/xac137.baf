@@ -1,0 +1,85 @@
+IF
+	Global("chapter","global",11)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Global("bd_plot","global",390)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	GlobalTimerExpired("bd_3000_delay","locals")
+THEN
+	RESPONSE #100
+		EscapeAreaDestroy(5)
+END
+
+IF
+	Global("bd_dsc_hostile","bd4000",0)  // Dragonspear Castle, Exterior
+	Global("bd_initial_cre","locals",0)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_initial_cre","locals",1)
+		SetGlobal("bd_no_assist","locals",1)
+END
+
+IF
+	Global("bd_dsc_hostile","bd4000",1)  // Dragonspear Castle, Exterior
+	OR(2)
+		Allegiance(Myself,GOODBUTBLUE)
+		Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+		ChangeSpecifics(Myself,CRUSADERS)
+END
+
+IF
+	Global("bd_dsc_hostile","bd4000",0)  // Dragonspear Castle, Exterior
+	Allegiance(Myself,ENEMY)
+	!Specifics(Myself,HOSTILES4)
+	GlobalTimerExpired("bd_sound_alarm_timer","locals")
+THEN
+	RESPONSE #100
+		SetGlobal("bd_dsc_hostile","bd4000",1)  // Dragonspear Castle, Exterior
+		ChangeSpecifics(Myself,CRUSADERS)
+END
+
+IF
+	Global("bd_dsc_hostile","bd4000",0)  // Dragonspear Castle, Exterior
+	Global("bd_sound_alarm_timer","locals",0)
+	Allegiance(Myself,ENEMY)
+	!Specifics(Myself,HOSTILES4)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_sound_alarm_timer","locals",NINE_MINUTES)
+END
+
+IF
+	Global("bd_dsc_hostile","bd4000",1)  // Dragonspear Castle, Exterior
+	Global("bd_initial_cre","locals",0)
+	!Range("courtyard",50)
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		MoveToObject("courtyard")
+		Continue()
+END
+
+IF
+	Global("bd_dsc_hostile","bd4000",1)  // Dragonspear Castle, Exterior
+	Global("bd_initial_cre","locals",0)
+	Range("courtyard",25)
+	!See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("bd_respond_timer","locals")
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+

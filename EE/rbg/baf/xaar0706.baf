@@ -23,17 +23,15 @@ IF
 	Global("XA_DoppleSpawn_0706", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		CreateCreature("XADOPP01", [433.466], SW)
-		CreateCreature("XADOPP02", [386.584], NW)
-		CreateCreature("XADOPP03", [303.607], NW)
+		CreateCreature("DOPGRE01", [433.466], SW)
+		CreateCreature("DOPGRE01", [386.584], NW)
+		CreateCreature("DOPGRE01", [303.607], NW)
 		SetGlobal("XA_DoppleSpawn_0706", "MYAREA", 2)
 END
 
 IF
 	Global("XA_DoppleSpawn_0706", "MYAREA", 2)
-	Dead("XADOPP01")
-	Dead("XADOPP02")
-	Dead("XADOPP03")
+	CombatCounter(0)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_AmuletPainting", "GLOBAL", 7)

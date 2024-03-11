@@ -110,6 +110,30 @@ COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac106.cre~ ~override~
 	WRITE_LONG 304 RESOLVE_STR_REF(@45089) /*~ You there! Give me fifty pushups!~[xac10073]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@45090) /*~ You're not welcome here!~*/
 
+COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac107.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45091) /*~Belt~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45092) /*~Belt~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45093) /*~ ~[xac10074]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45094) /*~ ~[xac10075]*/
+
+COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac108.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45095) /*~Duke Eltan~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45096) /*~Duke Eltan~*/
+
+COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac109.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45097) /*~Entar Silvershield~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45098) /*~Entar Silvershield~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45099) /*~ Mon Dieu!~[xac10076]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45100) /*~~[xac10077]*/
+
+COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac110.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45101) /*~Liia Jannath~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45102) /*~Liia Jannath~*/
+
+COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac111.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45103) /*~Beno Famari~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45104) /*~Beno Famari~*/
+
 
 //wav files
 //===================
@@ -183,6 +207,10 @@ COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10069.wav~ ~override~
 COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10070.wav~ ~override~
 COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10071.wav~ ~override~
 COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10073.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10074.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10075.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10076.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10077.wav~ ~override~
 
 //baf files
 //===================
@@ -191,14 +219,14 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\generated\c\baf~
 //itm files
 //===================
 COPY ~%MOD_FOLDER%\rbg\generated\c\itm\xac100.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45091) /*~Belt~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45092) /*~Belt of the Cunning Rogue~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45093) /*~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+	WRITE_LONG 8 RESOLVE_STR_REF(@45105) /*~Belt~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45106) /*~Belt of the Cunning Rogue~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45107) /*~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
 
 STATISTICS:
 
 Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45094) /*~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45108) /*~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
 
 The pouches attached to the belt contain a number of small tools, wires, picks, and blades that can be used to pick locks and disable traps. 
 
@@ -210,9 +238,9 @@ Equipped abilities:
 
 Weight: 2~*/
 COPY ~%MOD_FOLDER%\rbg\generated\c\itm\xac101.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45095) /*~Bullet~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45096) /*~Bullet of Fire +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45097) /*~A bullet is simply a rounded, well-balanced stone.
+	WRITE_LONG 8 RESOLVE_STR_REF(@45109) /*~Bullet~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45110) /*~Bullet of Fire +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45111) /*~A bullet is simply a rounded, well-balanced stone.
 
 STATISTICS:
 
@@ -220,7 +248,7 @@ Damage: 1d4+1 (missile)
 Launcher: Sling
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45098) /*~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45112) /*~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
 
 STATISTICS:
 
@@ -230,14 +258,14 @@ Launcher: Sling
 
 Weight: 0~*/
 COPY ~%MOD_FOLDER%\rbg\generated\c\itm\xac102.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45099) /*~Ring~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45100) /*~Ring of Protection +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45101) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+	WRITE_LONG 8 RESOLVE_STR_REF(@45113) /*~Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45114) /*~Ring of Protection +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45115) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45102) /*~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45116) /*~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
 
 STATISTICS:
 
@@ -247,6 +275,28 @@ Equipped abilities:
 
 Weight: 0~*/
 COPY ~%MOD_FOLDER%\rbg\generated\c\itm\xac103.itm~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\itm\xac107.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45117) /*~Plate Mail~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45118) /*~The Magma Bulwark +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45119) /*~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+
+STATISTICS:
+
+Armor Class: 3 (0 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 50~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@45120) /*~Forged by the fire giant Varboti as a gift for a Cormyrian general who made peace with his clan, this red-and-black armor lends its wearer a molten aspect while providing protection against all but the most powerful blows. Due to its incredibly strong but thin material, it also weighs far less than ordinary plate mail.
+
+STATISTICS:
+
+Armor Class: 1 (-2 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 20~*/
+COPY ~%MOD_FOLDER%\rbg\generated\c\itm\xac108.itm~ ~override~
 
 //bmp files
 //===================

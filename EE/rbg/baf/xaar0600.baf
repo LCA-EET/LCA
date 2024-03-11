@@ -4,7 +4,9 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CreateHOWSpy_0600", "XAA164", 1)
-		CreateCreature("XAHOWSPY", [4254.909], NW)
-		CreateCreature("XAHOWSPY", [1580.2424], NW)
+		CreateCreature("XALCSPY", [4254.909], NW)
+		ActionOverride("XALCSPY", ChangeAIScript("XAHOWSPY", OVERRIDE)) 
+		CreateCreature("XALCSPY", [1580.2424], NW)
+		ActionOverride("XALCSPY", ChangeAIScript("XAHOWSPY", OVERRIDE))
 		Continue()
 END

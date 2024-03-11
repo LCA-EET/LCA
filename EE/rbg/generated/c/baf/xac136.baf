@@ -1,0 +1,64 @@
+IF
+	Global("bd_famari_plot","bd4000",0)  // Dragonspear Castle, Exterior
+	Detect([PC])
+	Name("bdfamari",Myself)  // Beno Famari
+	Allegiance(Myself,NEUTRAL)
+	Global("bd_dsc_hostile","bd4000",0)  // Dragonspear Castle, Exterior
+THEN
+	RESPONSE #100
+		SetGlobal("bd_famari_plot","bd4000",1)  // Dragonspear Castle, Exterior
+		SetGlobalTimer("bd_famari_ot_timer","bd4000",4)  // Dragonspear Castle, Exterior
+		DisplayStringHead(Myself,52372)  // Just make sure to stay on Ashatiel's good side.
+END
+
+IF
+	Global("bd_famari_plot","bd4000",1)  // Dragonspear Castle, Exterior
+	GlobalTimerExpired("bd_famari_ot_timer","bd4000")  // Dragonspear Castle, Exterior
+	Name("bdfamar1",Myself)  // Mercenary
+	Allegiance(Myself,NEUTRAL)
+	Global("bd_dsc_hostile","bd4000",0)  // Dragonspear Castle, Exterior
+THEN
+	RESPONSE #100
+		SetGlobal("bd_famari_plot","bd4000",2)  // Dragonspear Castle, Exterior
+		SetGlobalTimer("bd_famari_ot_timer","bd4000",3)  // Dragonspear Castle, Exterior
+		DisplayStringHead(Myself,52373)  // That's easy for you to say, Beno.
+END
+
+IF
+	Global("bd_famari_plot","bd4000",2)  // Dragonspear Castle, Exterior
+	GlobalTimerExpired("bd_famari_ot_timer","bd4000")  // Dragonspear Castle, Exterior
+	Name("bdfamari",Myself)  // Beno Famari
+	Allegiance(Myself,NEUTRAL)
+	Global("bd_dsc_hostile","bd4000",0)  // Dragonspear Castle, Exterior
+THEN
+	RESPONSE #100
+		SetGlobal("bd_famari_plot","bd4000",3)  // Dragonspear Castle, Exterior
+		DisplayStringHead(Myself,52374)  // Watch your step, Zagan. You want to stay on my good side too.
+END
+
+IF
+	GlobalLT("bd_famari_plot","bd4000",5)  // Dragonspear Castle, Exterior
+	IfValidForPartyDialog("corwin")  // Corwin
+	See("corwin")  // Corwin
+	Range("corwin",15)  // Corwin
+	Name("bdfamari",Myself)  // Beno Famari
+	Allegiance(Myself,NEUTRAL)
+	Global("bd_dsc_hostile","bd4000",0)  // Dragonspear Castle, Exterior
+THEN
+	RESPONSE #100
+		FaceObject("corwin")  // Corwin
+		SmallWait(4)
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	GlobalGT("bd_famari_plot","bd4000",4)  // Dragonspear Castle, Exterior
+	Dead("bdfamari")  // Beno Famari
+	!Name("bdfamari",Myself)  // Beno Famari
+	Global("bd_dsc_hostile","bd4000",0)  // Dragonspear Castle, Exterior
+THEN
+	RESPONSE #100
+		ChangeEnemyAlly(Myself,NEUTRAL)
+		EscapeArea()
+END
+
