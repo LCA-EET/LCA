@@ -1,0 +1,319 @@
+PRINT ~Processing AssetConverter generated elements...~
+//{ MUSIC
+//}
+//cre files
+//===================
+COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac100.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45000) /*~Glint~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45001) /*~Glint~*/
+	WRITE_LONG 168 RESOLVE_STR_REF(@45002) /*~You can't see me! I'm hiding! I'm hiding!~[xac10000]*/
+	WRITE_LONG 172 RESOLVE_STR_REF(@45003) /*~I've traveled with a lot of great people in the past. More than you might believe. But this is the best team ever.~[xac10001]*/
+	WRITE_LONG 176 RESOLVE_STR_REF(@45004) /*~Seriously? Seriously. We're making some seriously bad calls.~[xac10002]*/
+	WRITE_LONG 180 RESOLVE_STR_REF(@45005) /*~I'm at the end of my rope here. There are ample opportunities elsewhere for a gnome of my caliber.~[xac10003]*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@45006) /*~That's it! I've had it with you and your poor leadership choices. I'm done. DONE!~[xac10004]*/
+	WRITE_LONG 188 RESOLVE_STR_REF(@45007) /*~Nobody panic! I'm in charge now. Well, perhaps you should panic after all. But don't!~[xac10005]*/
+	WRITE_LONG 192 RESOLVE_STR_REF(@45008) /*~My eyelids are as heavy as lead. Or steel. Or gold. Oooh, let's say gold! What I mean is, I'm tired.~[xac10006]*/
+	WRITE_LONG 196 RESOLVE_STR_REF(@45009) /*~If you don't give me something to do, I'll have to amuse myself, and NO ONE wants that.~[xac10007]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45010) /*~Come at me!~[xac10008]*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@45011) /*~For Cloakshadow!~[xac10009]*/
+	WRITE_LONG 208 RESOLVE_STR_REF(@45012) /*~Death comes for you on short legs!~[xac10010]*/
+	WRITE_LONG 212 RESOLVE_STR_REF(@45013) /*~I killed two ogres with a bent fork and some bootblack once!~[xac10011]*/
+	WRITE_LONG 216 RESOLVE_STR_REF(@45014) /*~Destruction! Ruin! Mayhem! Other synonyms for death!~[xac10012]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45015) /*~Owww!~[xac10013]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45016) /*~I regret nothing...~[xac10014]*/
+	WRITE_LONG 244 RESOLVE_STR_REF(@45017) /*~My insides are becoming my outsides!~[xac10015]*/
+	WRITE_LONG 248 RESOLVE_STR_REF(@45018) /*~Ah, fresh air and the beauty of nature! So... how long do we have to stay out here?~[xac10016]*/
+	WRITE_LONG 252 RESOLVE_STR_REF(@45019) /*~Look at all these marks—I, I mean, potential converts to the glory of Cloakshadow.~[xac10017]*/
+	WRITE_LONG 256 RESOLVE_STR_REF(@45020) /*~The Sly One protects us in the darkness. Good thing too, 'cause this place is nasty.~[xac10018]*/
+	WRITE_LONG 260 RESOLVE_STR_REF(@45021) /*~Without the sun, we'd have no shadows.~[xac10019]*/
+	WRITE_LONG 264 RESOLVE_STR_REF(@45022) /*~Night time is the right time for sneaking!~[xac10020]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45023) /*~You called?~[xac10021]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45024) /*~Yes, yes?~[xac10022]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45025) /*~Whaddaya need?~[xac10023]*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@45026) /*~Time to go?~[xac10024]*/
+	WRITE_LONG 284 RESOLVE_STR_REF(@45027) /*~Uh-huh?~[xac10025]*/
+	WRITE_LONG 288 RESOLVE_STR_REF(@45028) /*~Hey!~[xac10026]*/
+	WRITE_LONG 292 RESOLVE_STR_REF(@45029) /*~You bet!~[xac10027]*/
+	WRITE_LONG 296 RESOLVE_STR_REF(@45030) /*~With FLAIR!~[xac10028]*/
+	WRITE_LONG 300 RESOLVE_STR_REF(@45031) /*~Yep!~[xac10029]*/
+	WRITE_LONG 304 RESOLVE_STR_REF(@45032) /*~Trust no one.~[xac10030]*/
+	WRITE_LONG 308 RESOLVE_STR_REF(@45033) /*~I've done this a million times.~[xac10031]*/
+	WRITE_LONG 312 RESOLVE_STR_REF(@45034) /*~I've done this a million and ONE times.~[xac10032]*/
+	WRITE_LONG 316 RESOLVE_STR_REF(@45035) /*~Gnomes are the best! HUZZAH!~[xac10033]*/
+	WRITE_LONG 376 RESOLVE_STR_REF(@45036) /*~Oh dear. That's an unfortunate turn of events.~[xac10034]*/
+	WRITE_LONG 380 RESOLVE_STR_REF(@45037) /*~Neera! You can't die, not like this—there isn't nearly enough fire!~[xac10035]*/
+	WRITE_LONG 416 RESOLVE_STR_REF(@45038) /*~Trust no one.~[xac10030]*/
+	WRITE_LONG 420 RESOLVE_STR_REF(@45039) /*~I've done this a million times.~[xac10031]*/
+	WRITE_LONG 424 RESOLVE_STR_REF(@45040) /*~In Baravar's name!~[xac10038]*/
+	WRITE_LONG 428 RESOLVE_STR_REF(@45041) /*~No one saw that.~[xac10039]*/
+	WRITE_LONG 432 RESOLVE_STR_REF(@45042) /*~This isn't doing any good!~[xac10040]*/
+	WRITE_LONG 436 RESOLVE_STR_REF(@45043) /*~My pockets are a little full right now. Had to drop it.~[xac10041]*/
+	WRITE_LONG 440 RESOLVE_STR_REF(@45044) /*~Oooh, what have we here?~[xac10042]*/
+	WRITE_LONG 444 RESOLVE_STR_REF(@45045) /*~It's the amazing vanishing gnome!~[xac10043]*/
+	WRITE_LONG 448 RESOLVE_STR_REF(@45046) /*~Darn, lost the spell!~[xac10044]*/
+	WRITE_LONG 452 RESOLVE_STR_REF(@45047) /*~Trap's on the ground. Step carefully.~[xac10045]*/
+	WRITE_LONG 460 RESOLVE_STR_REF(@45048) /*~When asked about his past, GLINT GARDNERSONSON tends to use three words where one will do and constantly breaks off on tangents as he speaks. Eventually, you learn that he comes from a large family and has always been seen as something of a troublemaker. He gained his nickname, "Three-Eyes," when his exasperated mother exclaimed that she needed three eyes to keep watch on him. 
+
+Glint happily expounds on his many adventures since leaving home; it's difficult to tell where reality ends and exaggeration begins. Though Glint initially ventured from Baldur's Gate in search of several missing relatives, he seems to have been caught up in the mission of ending Caelar's crusade.~*/
+
+COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac101.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45049) /*~Rohma~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45050) /*~Rohma~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@45051) /*~ I want my mommy.~[xac10046]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45052) /*~~[xac10047]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45053) /*~~[xac10048]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45054) /*~ I want my mommy.~[xac10046]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45055) /*~ I lost my dolly.~[xac10050]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45056) /*~ *sob*~[xac10051]*/
+
+COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac102.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45057) /*~Audamar~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45058) /*~Audamar~*/
+
+COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac103.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45059) /*~Marshal Nederlok~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45060) /*~Marshal Nederlok~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45061) /*~It's too late to surrender.~[xac10052]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45062) /*~Courage will carry us through.~[xac10053]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45063) /*~The Flaming Fist stands ready.~[xac10054]*/
+
+COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac104.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45064) /*~Bence Duncan~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45065) /*~Bence Duncan~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45066) /*~Punish the lawbreakers!~[xac10055]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45067) /*~We're more than mercenaries.~[xac10056]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45068) /*~War is almost here.~[xac10057]*/
+
+COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac105.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45069) /*~Aldeth Sashenstar~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45070) /*~Aldeth Sashenstar~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@45071) /*~ You there! Identify yourselves!~[xac10058]*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@45072) /*~ Come now, old chaps, can't we be friends?~[xac10059]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45073) /*~ For Baldur's Gate!~[xac10060]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45074) /*~ ~[xac10061]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45075) /*~ ~[xac10062]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45076) /*~ Learn some manners, brute.~[xac10063]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45077) /*~ Nothing is more vulgar than bad manners.~[xac10064]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45078) /*~ Learn to bathe, lout.~[xac10065]*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@45079) /*~ Oh my goodness!~[xac10066]*/
+	WRITE_LONG 412 RESOLVE_STR_REF(@45080) /*~ I don't think that I have anything to say to you! Why don't you leave me be?!~*/
+
+COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac106.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45081) /*~Kent~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45082) /*~Kent~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@45083) /*~ Every crime must be punished!~[xac10067]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45084) /*~ I AM the law!~[xac10068]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45085) /*~~[xac10069]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45086) /*~~[xac10070]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45087) /*~ I serve the Flaming Fist!~[xac10071]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45088) /*~ Every crime must be punished!~[xac10067]*/
+	WRITE_LONG 304 RESOLVE_STR_REF(@45089) /*~ You there! Give me fifty pushups!~[xac10073]*/
+	WRITE_LONG 408 RESOLVE_STR_REF(@45090) /*~ You're not welcome here!~*/
+
+COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac107.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45091) /*~Belt~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45092) /*~Belt~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45093) /*~ ~[xac10074]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45094) /*~ ~[xac10075]*/
+
+COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac108.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45095) /*~Duke Eltan~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45096) /*~Duke Eltan~*/
+
+COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac109.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45097) /*~Entar Silvershield~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45098) /*~Entar Silvershield~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45099) /*~ Mon Dieu!~[xac10076]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45100) /*~~[xac10077]*/
+
+COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac110.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45101) /*~Liia Jannath~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45102) /*~Liia Jannath~*/
+
+COPY ~%MOD_FOLDER%\rbg\generated\c\cre\xac111.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45103) /*~Beno Famari~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45104) /*~Beno Famari~*/
+
+
+//wav files
+//===================
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10000.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10001.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10002.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10003.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10004.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10005.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10006.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10007.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10008.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10009.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10010.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10011.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10012.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10013.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10014.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10015.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10016.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10017.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10018.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10019.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10020.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10021.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10022.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10023.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10024.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10025.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10026.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10027.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10028.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10029.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10030.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10031.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10032.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10033.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10034.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10035.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10038.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10039.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10040.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10041.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10042.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10043.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10044.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10045.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10046.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10047.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10048.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10050.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10051.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10052.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10053.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10054.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10055.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10056.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10057.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10058.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10059.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10060.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10061.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10062.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10063.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10064.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10065.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10066.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10067.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10068.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10069.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10070.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10071.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10073.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10074.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10075.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10076.wav~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\wav\xac10077.wav~ ~override~
+
+//baf files
+//===================
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\generated\c\baf~
+
+//itm files
+//===================
+COPY ~%MOD_FOLDER%\rbg\generated\c\itm\xac100.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45105) /*~Belt~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45106) /*~Belt of the Cunning Rogue~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45107) /*~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+
+STATISTICS:
+
+Weight: 2~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@45108) /*~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
+
+The pouches attached to the belt contain a number of small tools, wires, picks, and blades that can be used to pick locks and disable traps. 
+
+STATISTICS:
+
+Equipped abilities:
+– Open Locks: +15%
+– Find Traps: +15%
+
+Weight: 2~*/
+COPY ~%MOD_FOLDER%\rbg\generated\c\itm\xac101.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45109) /*~Bullet~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45110) /*~Bullet of Fire +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45111) /*~A bullet is simply a rounded, well-balanced stone.
+
+STATISTICS:
+
+Damage: 1d4+1 (missile)
+Launcher: Sling
+
+Weight: 0~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@45112) /*~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
+
+STATISTICS:
+
+Damage: 1d4+1, +1d6 fire damage (Save vs. Spell for none)
+Damage type: Missile
+Launcher: Sling
+
+Weight: 0~*/
+COPY ~%MOD_FOLDER%\rbg\generated\c\itm\xac102.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45113) /*~Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45114) /*~Ring of Protection +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45115) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+
+STATISTICS:
+
+Weight: 0~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@45116) /*~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Saving Throws: +1
+
+Weight: 0~*/
+COPY ~%MOD_FOLDER%\rbg\generated\c\itm\xac103.itm~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\itm\xac107.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45117) /*~Plate Mail~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45118) /*~The Magma Bulwark +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45119) /*~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+
+STATISTICS:
+
+Armor Class: 3 (0 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 50~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@45120) /*~Forged by the fire giant Varboti as a gift for a Cormyrian general who made peace with his clan, this red-and-black armor lends its wearer a molten aspect while providing protection against all but the most powerful blows. Due to its incredibly strong but thin material, it also weighs far less than ordinary plate mail.
+
+STATISTICS:
+
+Armor Class: 1 (-2 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 20~*/
+COPY ~%MOD_FOLDER%\rbg\generated\c\itm\xac108.itm~ ~override~
+
+//bmp files
+//===================
+COPY ~%MOD_FOLDER%\rbg\generated\c\bmp\xac100.bmp~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\bmp\xac101.bmp~ ~override~
+
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\generated\c\d~
+//dlg files
+//===================
+
+//bam files
+//===================
+COPY ~%MOD_FOLDER%\rbg\generated\c\bam\xac101.bam~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\bam\xac100.bam~ ~override~
+
+
+//bmp files.
+//=========================
+COPY ~%MOD_FOLDER%\rbg\generated\c\bmp\xac100.bmp~ ~override~
+COPY ~%MOD_FOLDER%\rbg\generated\c\bmp\xac101.bmp~ ~override~

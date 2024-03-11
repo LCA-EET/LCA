@@ -1,0 +1,854 @@
+@40000 = ~Belt~
+@40001 = ~Belt~
+@40002 = ~ ~[xad10000]
+@40003 = ~ ~[xad10001]
+@40004 = ~Duke Eltan~
+@40005 = ~Duke Eltan~
+@40006 = ~Entar Silvershield~
+@40007 = ~Entar Silvershield~
+@40008 = ~ Mon Dieu!~[xad10002]
+@40009 = ~~[xad10003]
+@40010 = ~Liia Jannath~
+@40011 = ~Liia Jannath~
+@40012 = ~Imoen~
+@40013 = ~Imoen~
+@40014 = ~ Gettin' out alive, I am.~[xad10014]
+@40015 = ~ Good on you if you save the day.~[xad10015]
+@40016 = ~ Mutton-mongerin' riffraff.~[xad10016]
+@40017 = ~ I've done had enough of this.~[xad10017]
+@40018 = ~ 'Tis something most unnatural here, and I want no part of it.~[xad10018]
+@40019 = ~ Ye're all buffle-headed.~[xad10019]
+@40020 = ~ *yawn* I'm gettin' a little sleepy.~[xad10020]
+@40021 = ~ Booooorrrring.~[xad10021]
+@40022 = ~ My blade will cut you down to size!~[xad10022]
+@40023 = ~ ~[xad10023]
+@40024 = ~ ~[xad10024]
+@40025 = ~ I feel so cold.~[xad10025]
+@40026 = ~ 'Tis something most unnatural here, and I want no part of it.~[xad10018]
+@40027 = ~ I care not.~[xad10027]
+@40028 = ~ Yep?~[xad10028]
+@40029 = ~ Whatcha want?~[xad10029]
+@40030 = ~ Ha, ye're a queer fellow.~[xad10030]
+@40031 = ~ This way.~[xad10031]
+@40032 = ~ I've done had enough of this.~[xad10017]
+@40033 = ~ I am gone.~[xad10033]
+@40034 = ~ Do ya wanna tell me a story 'bout trollops an' plug tails? Please?~[xad10034]
+@40035 = ~ I know nothin' more, so leave me to go.~[xad10035]
+@40036 = ~ Good on you if you save the day.~[xad10015]
+@40037 = ~ Back home, Puffguts would always tell me a story.~[xad10037]
+@40038 = ~ Poor sod, takin' the dirt nap so soon.~[xad10038]
+@40039 = ~When asked about her past, IMOEN slaps your shoulder playfully. She says that you of all people should know, seeing as how you grew up together. 
+
+Indeed, some of your fondest memories are of meeting this sprightly young lass. She apparently came to Candlekeep much as you did, though ten years later in life, and she spent much more time with the gruff Winthrop than Gorion. "Puffguts," she would call him, much to the old innkeep's dismay. 
+
+She seems the eternal child, and is quite content to play the part of little sister, though you are both of comparable ages. You can tell by her hearty smile that she will always be willing to travel with you, no matter what path you take.~
+@40040 = ~Tiax~
+@40041 = ~Tiax~
+@40042 = ~ You! Tiax would speak at you, for 'tis destined to be so!~[xad10039]
+@40043 = ~ Tiax will rule... from a distance!~[xad10040]
+@40044 = ~ Tiax is impressed with this group! You will continue to serve him once he rules.~[xad10041]
+@40045 = ~ Tiax fails to see how this will aid in his ascension!~[xad10042]
+@40046 = ~ Continue with this unprofitable behavior, and Tiax will seek his destiny elsewhere!~[xad10043]
+@40047 = ~ You are unworthy to sit at the feet of Great Tiax! I shall find another for that exalted spot!~[xad10044]
+@40048 = ~ As it should be! Tiax was destined to lead!~[xad10045]
+@40049 = ~ Tiax needs rest if he is to rule!~[xad10046]
+@40050 = ~ We get no closer to world domination just standing about!~[xad10047]
+@40051 = ~ Tiax will smite thee!~[xad10048]
+@40052 = ~ Tiax WILL rule ALL!~[xad10049]
+@40053 = ~ ~[xad10050]
+@40054 = ~ ~[xad10051]
+@40055 = ~ Destiny had best hurry. Tiax does not feel well at all.~[xad10052]
+@40056 = ~ When Tiax rules, this forest will be lumber for but a leg of his throne!~[xad10053]
+@40057 = ~ When Tiax rules, the stones of this city shall build his castle!~[xad10054]
+@40058 = ~ Why must Tiax traverse this dank hole?! Cyric said nothing of soggy boots!~[xad10055]
+@40059 = ~ Tiax must squint in the sunlight! One day, revenge shall be his!~[xad10056]
+@40060 = ~ Night would DARE hamper the sight of Tiax?!~[xad10057]
+@40061 = ~ Who dares prod Tiax?!~[xad10058]
+@40062 = ~ Tiax hears ya.~[xad10059]
+@40063 = ~ Soon Tiax rules!~[xad10060]
+@40064 = ~ Tiax is as Tiax duz. Hm-hm.~[xad10061]
+@40065 = ~ Tiax WILL rule ALL!~[xad10049]
+@40066 = ~ Tiax moves. Make way!~[xad10063]
+@40067 = ~ Where will your learning get you when Tiax rules? Duke of manure at best!~[xad10064]
+@40068 = ~ Sure you be smart, but none are grander than Tiax!~[xad10065]
+@40069 = ~ Thou wouldst mock me? Ye stiff-rumped foole!~[xad10066]
+@40070 = ~ All the world will tremble beneath the feet of Tiax!~[xad10067]
+@40071 = ~ Tiax and his greatness shall squash you as a bug, you... you—you... insolent BUG!~[xad10068]
+@40072 = ~ Ah, your goals are petty in comparison to the wonder of Tiax!~[xad10069]
+@40073 = ~ Tiax and his greatness shall squash you as a bug, you... you—you... insolent BUG!~[xad10068]
+@40074 = ~ Ya little monkey-spanker.~[xad10071]
+@40075 = ~ Do as ye will, but 'tis for naught! Tiax must rule!~[xad10072]
+@40076 = ~ Has Tiax mentioned he's going to rule? 'Tis inevitable.~[xad10073]
+@40077 = ~ When Tiax rules, breeches shall not ride up so wedge-like!~[xad10074]
+@40078 = ~ Blast you! Escaping the inevitable rule of Tiax by dying? Coward!~[xad10075]
+@40079 = ~ Ha ha ha ha ha! Smart guy dies, and Tiax goes on to RULE!~[xad10076]
+@40080 = ~ Your insults carry little sting. Tiax knows he will rule in the end.~[xad10077]
+@40081 = ~ Ye cup-shot muttonhead! Tiax will slap ya silly... when he rules!~[xad10078]
+@40082 = ~ Give thy tongue a holiday! Tiax so commands!~[xad10079]
+@40083 = ~ Tiax does as ye will, but one day... BOOM! He rules!~[xad10080]
+@40084 = ~ The day comes when TIAX will point and click!~[xad10081]
+@40085 = ~Corwin~
+@40086 = ~Corwin~
+@40087 = ~Officer Fritz~
+@40088 = ~Officer Fritz~
+@40089 = ~I'll test your mettle with cold steel!~[xad10082]
+@40090 = ~~[xad10083]
+@40091 = ~~[xad10084]
+@40092 = ~Declare yourself!~[xad10085]
+@40093 = ~Do not disturb my duties.~[xad10086]
+@40094 = ~At ease, citizen.~[xad10087]
+@40095 = ~I trust you have no hostile intentions.~[xad10088]
+@40096 = ~Officer Jenks~
+@40097 = ~Officer Jenks~
+@40098 = ~Punish the lawbreakers!~[xad10089]
+@40099 = ~We're more than mercenaries.~[xad10090]
+@40100 = ~War is almost here.~[xad10091]
+@40101 = ~Flaming Fist Enforcer~
+@40102 = ~Flaming Fist Enforcer~
+@40103 = ~ I serve the Flaming Fist!~[xad10092]
+@40104 = ~ I AM the law!~[xad10093]
+@40105 = ~~[xad10094]
+@40106 = ~~[xad10095]
+@40107 = ~ I serve the Flaming Fist!~[xad10092]
+@40108 = ~ Every crime must be punished!~[xad10097]
+@40109 = ~ You there! Give me fifty pushups!~[xad10098]
+@40110 = ~Sleeping Man~
+@40111 = ~Sleeping Man~
+@40112 = ~ ZZZZzzzzzzz...~[xad10099]
+@40113 = ~ ZZZZzzzzz... *snort*~[xad10100]
+@40114 = ~Sleeping Woman~
+@40115 = ~Sleeping Woman~
+@40116 = ~ ZZZZzzzzzzz...~[xad10099]
+@40117 = ~ ZZZZzzzzz... *snort*~[xad10100]
+@40118 = ~Refugee~
+@40119 = ~Refugee~
+@40120 = ~Please, help us.~[xad10103]
+@40121 = ~We have nowhere else to go.~[xad10104]
+@40122 = ~A pox on the crusade!~[xad10105]
+@40123 = ~Refugee~
+@40124 = ~Refugee~
+@40125 = ~Please, help us.~[xad10103]
+@40126 = ~We have nowhere else to go.~[xad10104]
+@40127 = ~A pox on the crusade!~[xad10105]
+@40128 = ~Commoner~
+@40129 = ~Commoner~
+@40130 = ~Refugee~
+@40131 = ~Refugee~
+@40132 = ~I'm so tired.~[xad10109]
+@40133 = ~I've lost everything.~[xad10110]
+@40134 = ~Can the Grand Dukes help us?~[xad10111]
+@40135 = ~Flaming Fist Enforcer~
+@40136 = ~Flaming Fist Enforcer~
+@40137 = ~Show them our steel!~[xad10112]
+@40138 = ~Order is what matters.~[xad10113]
+@40139 = ~For Baldur's Gate.~[xad10114]
+@40140 = ~Flaming Fist Enforcer~
+@40141 = ~Flaming Fist Enforcer~
+@40142 = ~Punish the lawbreakers!~[xad10089]
+@40143 = ~We're more than mercenaries.~[xad10090]
+@40144 = ~War is almost here.~[xad10091]
+@40145 = ~Refugee~
+@40146 = ~Refugee~
+@40147 = ~I'm so tired.~[xad10109]
+@40148 = ~I've lost everything.~[xad10110]
+@40149 = ~Can the Grand Dukes help us?~[xad10111]
+@40150 = ~Sleeping Man~
+@40151 = ~Sleeping Man~
+@40152 = ~ ZZZZzzzzzzz...~[xad10099]
+@40153 = ~ ZZZZzzzzz... *snort*~[xad10100]
+@40154 = ~Refugee~
+@40155 = ~Refugee~
+@40156 = ~I'm so tired.~[xad10109]
+@40157 = ~I've lost everything.~[xad10110]
+@40158 = ~Can the Grand Dukes help us?~[xad10111]
+@40159 = ~Thug~
+@40160 = ~Thug~
+@40161 = ~I'll wipe your filthy lineage right out of the realms!~[xad10126]
+@40162 = ~You deserve no less than death... and no more.~[xad10127]
+@40163 = ~What can it be now?~[xad10128]
+@40164 = ~Let us speak and be done with this!~[xad10129]
+@40165 = ~Refugee~
+@40166 = ~Refugee~
+@40167 = ~I'm so tired.~[xad10109]
+@40168 = ~I've lost everything.~[xad10110]
+@40169 = ~Can the Grand Dukes help us?~[xad10111]
+@40170 = ~Refugee~
+@40171 = ~Refugee~
+@40172 = ~Please, help us.~[xad10103]
+@40173 = ~We have nowhere else to go.~[xad10104]
+@40174 = ~A pox on the crusade!~[xad10105]
+@40175 = ~Sailor~
+@40176 = ~Sailor~
+@40177 = ~~[xad10136]
+@40178 = ~~[xad10137]
+@40179 = ~The seas are sure rough this time o' year.~[xad10138]
+@40180 = ~Nothin' like some time ashore... all I needs is some grog an' a good lass on me lap.~[xad10139]
+@40181 = ~I best not be gone long... 'fore me captain has me hide.~[xad10140]
+@40182 = ~Sailor~
+@40183 = ~Sailor~
+@40184 = ~~[xad10136]
+@40185 = ~~[xad10137]
+@40186 = ~The seas are sure rough this time o' year.~[xad10138]
+@40187 = ~Nothin' like some time ashore... all I needs is some grog an' a good lass on me lap.~[xad10139]
+@40188 = ~I best not be gone long... 'fore me captain has me hide.~[xad10140]
+@40189 = ~Sleeping Man~
+@40190 = ~Sleeping Man~
+@40191 = ~~[xad10146]
+@40192 = ~~[xad10147]
+@40193 = ~ ZZZZzzzzz... *snort*~[xad10100]
+@40194 = ~ ZZZZzzzzzz...~[xad10099]
+@40195 = ~ ZZZZzzzzzzz...~[xad10099]
+@40196 = ~~[xad10100]
+@40197 = ~Rat~
+@40198 = ~Rat~
+@40199 = ~Imoen lies still on the bed. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~
+@40200 = ~Imoen lies still on the floor. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~
+@40201 = ~Below you, the streets of Baldur's Gate are so packed it's difficult to make out individual figures.~
+@40202 = ~Even with the window closed, the dull roar of the crowded street outside is hard to ignore.~
+@40203 = ~This comfortable bed offers luxury you never found in Candlekeep.~
+@40204 = ~<CHARNAME>'s Equipment~
+@40205 = ~<CHARNAME>'s chamber~
+@40206 = ~Imoen's Equipment~
+@40207 = ~The second floor is securely locked and guarded. No one is permitted upstairs. ~
+@40208 = ~There's no escape this way. The sewers are the only way out.~
+@40209 = ~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~
+@40210 = ~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~
+@40211 = ~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~
+@40212 = ~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~
+@40213 = ~Tiax's Cell~
+@40214 = ~Exit~
+@40215 = ~Chain Mail~
+@40216 = ~Chain Mail +1~
+@40217 = ~Chain mail is made of interlocking metal rings. It is always worn over a layer of padded fabric or soft leather to prevent chafing and lessen the impact of blows. 
+
+STATISTICS:
+
+Armor Class: 5 (3 vs. slashing, 7 vs. crushing)
+Requires:
+ 8 Strength
+
+Weight: 40~
+@40218 = ~Chain mail is made of interlocking metal rings. It is always worn over a layer of padded fabric or soft leather to prevent chafing and lessen the impact of blows. 
+
+STATISTICS:
+
+Armor Class: 4 (2 vs. slashing, 6 vs. crushing)
+Requires:
+ 8 Strength
+
+Weight: 20~
+@40219 = ~Medium Shield~
+@40220 = ~Medium Shield +1~
+@40221 = ~A medium shield is carried in the same manner as a small shield. Unlike the small shield, however, its weight prevents the character from using <PRO_HISHER> shield hand for anything other than carrying the medium shield. Medium shields are usually made of metal, range from three to four feet in diameter, and can be of any shape, from round to square to a dragon's spread wings. A typical medieval shield resembles a triangle with one point facing downward.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+
+Requires:
+ 12 Strength
+
+Weight: 8~
+@40222 = ~A medium shield is carried in the same manner as a small shield. Unlike the small shield, however, its weight prevents the character from using <PRO_HISHER> shield hand for anything other than carrying the medium shield. This penalty is offset by the fact that this shield is magical, granting an additional +1 protection to its wearer.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+
+Requires:
+ 12 Strength
+
+Weight: 6~
+@40223 = ~Bastard Sword~
+@40224 = ~Bastard Sword +1~
+@40225 = ~Also known as the hand-and-a-half sword, the bastard sword derives its name from the fact that it is halfway between the two-handed sword and the long sword. The bastard sword has a double-edged blade and a long grip, which can accommodate both hands if preferred. The overall length of the bastard sword ranges between four feet and four feet ten inches.
+
+STATISTICS:
+
+Damage: 2d4 (slashing)
+Speed Factor: 8
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 10~
+@40226 = ~Also known as the hand-and-a-half sword, the bastard sword derives its name from the fact that it is halfway between the two-handed sword and the long sword. This is a magical bastard sword.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 2d4+1 (slashing)
+Speed Factor: 7
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 9~
+@40227 = ~Ring~
+@40228 = ~Ruby Ring~
+@40229 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+
+STATISTICS:
+
+Weight: 0~
+@40230 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+
+STATISTICS:
+
+Weight: 0~
+@40231 = ~Girdle~
+@40232 = ~Girdle of Stone Giant Strength~
+@40233 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+
+STATISTICS:
+
+Weight: 2~
+@40234 = ~As a young boy, Stewart Elttil was kidnapped by raiding kobolds after his family was slain. However, en route to their den, the kobolds surprised a family of stone giants. These giants rescued Stewart and raised him as their own. It soon became apparent that the boy, no matter how hard he tried, could not compete in the family rock-throwing contests. The stone giant father bartered with a local wizard for this girdle, which made Stewart as strong as his brothers and sisters. When Stewart met an untimely end, the girdle was stolen away.
+
+STATISTICS:
+
+Equipped abilities:
+– Strength: 20
+
+Weight: 2~
+@40235 = ~Long Sword~
+@40236 = ~Long Sword +2~
+@40237 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+
+STATISTICS:
+
+Damage: 1d8 (slashing)
+Speed Factor: 5
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+@40238 = ~A sword of standardized enchantment, powerful though it is. The great southern nations are said to have once had legions of their soldiers armed in such a fashion, a force that must have appeared truly imposing on the battlefield. The days of such extravagance are long past though.
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d8+2 (slashing)
+Speed Factor: 3
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 3~
+@40239 = ~Amulet~
+@40240 = ~Greenstone Amulet~
+@40241 = ~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
+
+STATISTICS:
+
+Weight: 1~
+@40242 = ~The deep green stone at the center of the amulet seems to shimmer with an iridescent light almost as if it has a life of its own. Even without the powerful magics that are bestowed upon the amulet, it would be an extremely valuable addition to any collection.
+
+STATISTICS:
+
+Charge abilities:
+– This amulet confers the wearer protection against charm, confusion, fear, domination, ESP, Detect Alignment, hold, stun, psionics, sleep, and feeblemind, much like the 8th-level wizard spell Mind Blank. However, the protection effect uses one charge each time it is used and will only last for 1 turn.
+
+Weight: 1~
+@40243 = ~Plate Mail~
+@40244 = ~The Magma Bulwark +2~
+@40245 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+
+STATISTICS:
+
+Armor Class: 3 (0 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 50~
+@40246 = ~Forged by the fire giant Varboti as a gift for a Cormyrian general who made peace with his clan, this red-and-black armor lends its wearer a molten aspect while providing protection against all but the most powerful blows. Due to its incredibly strong but thin material, it also weighs far less than ordinary plate mail.
+
+STATISTICS:
+
+Armor Class: 1 (-2 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 20~
+@40247 = ~Full Plate Armor~
+@40248 = ~Full Plate Armor~
+@40249 = ~Full plate armor is the best armor a warrior can buy, both in appearance and protection. The perfectly fitted, interlocking plates are specially angled to deflect arrows and blows, and the entire suit is carefully adorned with rich engraving and embossed detail.
+
+STATISTICS:
+
+Armor Class: 1 (-3 vs. slashing, -2 vs. piercing and missile)
+Requires:
+ 15 Strength
+
+Weight: 70~
+@40250 = ~Medium Shield~
+@40251 = ~Medium Shield~
+@40252 = ~A medium shield is carried in the same manner as a small shield. Unlike the small shield, however, its weight prevents the character from using <PRO_HISHER> shield hand for anything other than carrying the medium shield. Medium shields are usually made of metal, range from three to four feet in diameter, and can be of any shape, from round to square to a dragon's spread wings. A typical medieval shield resembles a triangle with one point facing downward.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+
+Requires:
+ 12 Strength
+
+Weight: 8~
+@40253 = ~Long Sword~
+@40254 = ~Long Sword +1~
+@40255 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+
+STATISTICS:
+
+Damage: 1d8 (slashing)
+Speed Factor: 5
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+@40256 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1d8+1 (slashing)
+Speed Factor: 4
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+@40257 = ~Potion~
+@40258 = ~Potion of Storm Giant Strength~
+@40259 = ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
+
+STATISTICS:
+
+Weight: 1~
+@40260 = ~This potion can be used only by warriors. When a giant strength potion is consumed, the individual gains great strength and bonuses to hit and damage while using any hand-held or thrown weapon. The effect lasts for 2 hours. 
+
+STATISTICS:
+
+Strength: 24 (Storm Giant Strength)
+Duration: 2 hours
+
+Weight: 1~
+@40261 = ~Gem~
+@40262 = ~Diamond~
+@40263 = ~~
+@40264 = ~Diamond is a hard clear gem which can be clear blue-white, rich blue, yellow, or pink. The hardest of all the gemstones, and among the most valuable, diamonds are usually found in the northern mountains by underground races and then traded to the surface world.
+
+STATISTICS:
+
+Weight: 0~
+@40265 = ~Mage Robe~
+@40266 = ~Adventurer's Robe~
+@40267 = ~Since the age of Netheril, mages have learned to bestow a wide variety of magical properties upon the everyday objects that surround them. A favorite item of such enchantment is the common robe. It is lightweight, affordable, and holds its enchantment well, thereby making it ideal equipment for a mage. Due to their magical heritage, however, only single-, dual-, and multi-class Mages may wear these enchanted robes.
+
+STATISTICS:
+
+Weight: 3~
+@40268 = ~This robe has been specially enchanted to meet the eclectic needs of the adventuring mage. Aside from shielding the wearer from various forms of crushing damage, it also provides protection from the basilisk's petrifying gaze and polymorphing powers of rival mages. As with other such robes, the Adventurer's Robe can only be worn by those engaged in the wizardly profession.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1 vs. crushing attacks
+– Save vs. Petrification/Polymorph: +1
+
+Weight: 4~
+@40269 = ~Dagger~
+@40270 = ~Dagger~
+@40271 = ~The typical dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter.
+
+STATISTICS:
+
+Damage: 1d4 (piercing)
+Speed Factor: 2
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+@40272 = ~Book~
+@40273 = ~History of Amn~
+@40274 = ~History of Amn: 
+
+Amn has the good fortune to have abundant natural resources; some would say Amn is the richest land on the continent. This has worked in Amn's favor for generations, because even if they were conquered, the new masters would be gentle, looking to gain wealth from the land, rather than to put it to the torch. 
+
+Amn has been a center of trade and commerce for as long as anyone can remember. Oral traditions handed down from father to son tend to support the theory that Amn has been a trade center for at least 800 years. Unfortunately, written records are difficult to find and often incomplete. It would seem the typical Amnian citizen was too busy trying to fill their coffers to write down events of the day. 
+
+Amn has always been more interested in the present and the future than the past, and this makes an accurate history difficult. The best records, the business papers of the oldest trading companies, are jealously guarded. The fear of revealing "trade secrets" is stronger than the call of history, so the average citizen knows very little about Amn's past. 
+
+It appears that the Amn of 100 years ago was very much like the Calimshan of today. Each major city was basically an independent entity, banding together for defense when necessary, and fighting for control of territory and profitable trade routes the rest of the time. A particularly brutal trade war began 24 years ago, with each city exacting prohibitive tariffs on goods imported from the others. The trade war escalated, and city troops began to raid caravans sponsored by other cities. In a matter of months commerce was brought to a halt, a number of cities were under siege, and war threatened to engulf the entire region. 
+
+Into the breach stepped a young merchant named Thayze Selemchant. Thayze was smart, charismatic, and very well connected (the Selemchant trading house was one of the oldest and richest in Athkatla.) He secretly contacted representatives of the five other richest merchant houses in Amn, and started to plan. 
+
+The first part of the plan involved the careful sprinkling of rumors about outside threats. One involved a pirate invasion from the Nelanther, another was about a massing of orcs just on the other side of the Cloud Peaks. Thayze even started a rumor about an elf army in the Forest of Tethyr, ready to pounce on a divided Amn. None of the rumors were true, but they began to turn people's thoughts toward unity, not war. 
+
+Thayze knew that if he and the other members of his council were to take control of Amn, they would need broad-based popular support. Tensions between cities and merchant houses were still high, so to get that support, Selemchant and the others agreed to drop their family names and never use them again. 
+
+When news of a "Council of Six" spread throughout the land, many people accepted their rule. A group that would unite Amn under one rule, governing for the benefit of all instead of one city or trading company over another, was indeed a welcome change. The Council raised an army (at great personal expense) to quell the few pockets of resistance that remained, and have been in total control of Amn for the past 22 years. ~
+@40275 = ~Shortbow~
+@40276 = ~Shortbow~
+@40277 = ~Shortbows were the first bows to be developed, although they were not called such. This is more of a default term that refers to anything which is not a longbow. Shortbow staves are about five feet long on the average. As the years passed, attempts were made to increase bow ranges. Bows were either given longer staves or flexibility was increased with no change to the length. The former resulted in what is now called the longbow.
+
+STATISTICS:
+
+Speed Factor: 6
+Proficiency Type: Shortbow
+Type: Two-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+@40278 = ~Dagger~
+@40279 = ~Dagger +1~
+@40280 = ~The typical dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter.
+
+STATISTICS:
+
+Damage: 1d4 (piercing)
+Speed Factor: 2
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+@40281 = ~The typical dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter. This dagger is magical, improving speed, accuracy, and damage.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1d4+1 (piercing)
+Speed Factor: 1
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+@40282 = ~Arrow~
+@40283 = ~Arrow~
+@40284 = ~The flight arrow, as its name implies, is built for distance. These are lightweight arrows and are often used for hunting. Most of these arrows are made of ash or birch and are thirty to forty inches long.
+
+STATISTICS:
+
+Damage: 1d6 (missile)
+Launcher: Bow
+
+Weight: 0~
+@40285 = ~Potion~
+@40286 = ~Potion of Healing~
+@40287 = ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
+
+STATISTICS:
+
+Weight: 1~
+@40288 = ~When wholly consumed, this potion restores 9 Hit Points to the person. The effect is instantaneous and the potion is destroyed in the process.
+
+STATISTICS:
+
+Special: Restores 9 Hit Points.
+
+Weight: 1~
+@40289 = ~Oil~
+@40290 = ~Oil of Speed~
+@40291 = ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
+
+STATISTICS:
+
+Weight: 1~
+@40292 = ~This oil increases the movement and combat capabilities of the imbiber. The movement rate is doubled and the user gains one extra attack per round. Thus, a movement rate of 9 becomes 18, and a character normally able to attack once in a round attacks twice. This does not reduce spellcasting time, however. The duration of the effect is 1 hour.
+
+STATISTICS:
+
+Special: Doubles movement rate and grants 1 extra attack per round
+Duration: 1 hour
+
+Weight: 1~
+@40293 = ~Wand ~
+@40294 = ~Wand of Magic Missiles~
+@40295 = ~Wands are 1 1/4 ft. long and slender. They are made of ivory, bone, or wood and are usually tipped with something—metal, crystal, stone, and so on. They are fragile and tend to break easily. Because of this, they are often kept in cases. 
+
+Wands are powered by charges, each use costing one or more charges (depending on the item). When a wand runs out of charges, it is consumed and destroyed.
+
+STATISTICS:
+
+Weight: 1~
+@40296 = ~When activated, the wand will eject a missile of magical energy that darts forth and unerringly strikes its target. This includes enemy creatures in a melee. The target creature must be seen or otherwise detected to be hit, however, so near-total concealment, such as that offered by arrow slits, can render the spell ineffective. The missile will inflict 1d4+1 points of damage.
+
+STATISTICS:
+
+Charge abilities:
+– 1 magic missile will strike the target
+  Damage: 1d4+1 magic
+  Range: 100 ft.
+  Area of Effect: 1 creature
+
+Requires:
+ 9 Intelligence
+
+Weight: 1~
+@40297 = ~Bracers~
+@40298 = ~Bracers of Defense AC 8~
+@40299 = ~Bracers are thick bands of metal or leather that are strapped, belted, or tied to a character's forearm. Generally, the magic that is instilled in bracers is good only during combat, since most bracers help protect the wearer from injury or improve their chances to strike an opponent. Exceptions do exist, though such specialized items are rare at best.
+
+STATISTICS:
+
+Weight: 2~
+@40300 = ~Bracers are thick bands of metal or leather that are strapped, belted, or tied to a character's forearm. Generally, the magic that is instilled in bracers is good only during combat, since most bracers help protect the wearer from injury or improve their chances to strike an opponent. Exceptions do exist, though such specialized items are rare at best. 
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: 8
+
+Weight: 2~
+@40301 = ~Studded Leather Armor~
+@40302 = ~Studded Leather Armor~
+@40303 = ~Studded leather armor has little in common with normal leather armor. While leather armor is a hardened shell, studded leather armor is soft and supple with hundreds of metal rivets affixed. The rivets are so close together that they form a flexible coating of hard metal that turns aside slashing and cutting attacks. The soft leather backing is little more than a means of securing the rivets in place. 
+
+STATISTICS:
+
+Armor Class: 7 (5 vs. slashing, 6 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 25~
+@40304 = ~Helmet~
+@40305 = ~Helmet~
+@40306 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+
+Weight: 2~
+@40307 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+
+Weight: 2~
+@40308 = ~Corwin's Armor +2~
+@40309 = ~Corwin's Armor +2~
+@40310 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
+
+STATISTICS:
+
+Equipped abilities:
+– Movement Speed: +1
+– Magic Resistance: +10%
+
+Armor Class: 3 (1 vs. slashing, 5 vs. crushing)
+Requires: 
+ 5 Strength
+
+Weight: 7~
+@40311 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
+
+STATISTICS:
+
+Equipped abilities:
+– Movement Speed: +1
+– Magic Resistance: +10%
+
+Armor Class: 3 (1 vs. slashing, 5 vs. crushing)
+Requires: 
+ 5 Strength
+
+Weight: 7~
+@40312 = ~Long Sword~
+@40313 = ~Long Sword~
+@40314 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+
+STATISTICS:
+
+Damage: 1d8 (slashing)
+Speed Factor: 5
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+@40315 = ~Composite Longbow~
+@40316 = ~Corwin's Bow +1~
+@40317 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
+
+STATISTICS:
+
+THAC0: +1
+Damage: +2
+Speed Factor: 7
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 10~
+@40318 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+
+Equipped abilities: 
+– Dexterity: +1
+
+Combat abilities: 
+– 10% chance per hit of entangling the target for 3 rounds (Save vs. Breath negates)
+
+STATISTICS:
+
+THAC0: +2
+Damage: +3
+Speed Factor: 6
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 9~
+@40319 = ~Arrow~
+@40320 = ~Arrow +2~
+@40321 = ~The flight arrow, as its name implies, is built for distance. These are lightweight arrows and are often used for hunting. Most of these arrows are made of ash or birch and are thirty to forty inches long.
+
+STATISTICS:
+
+Damage: 1d6 (missile)
+Launcher: Bow
+
+Weight: 0~
+@40322 = ~These arrows were enhanced through magical means when they were created. They appear slightly straighter than the average arrow, almost alive as they effortlessly leave your bow and streak toward their target with deadly accuracy.
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d6+2 (missile)
+Launcher: Bow
+
+Weight: 0~
+@40323 = ~Potion~
+@40324 = ~Potion of Extra Healing~
+@40325 = ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
+
+STATISTICS:
+
+Weight: 1~
+@40326 = ~When wholly consumed, this potion restores 27 Hit Points to the person. The effect is instantaneous, and the potion is destroyed in the process.
+
+STATISTICS:
+
+Special: Restores 27 Hit Points
+
+Weight: 1~
+@40327 = ~Elixir~
+@40328 = ~Elixir of Health~
+@40329 = ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
+
+STATISTICS:
+
+Weight: 1~
+@40330 = ~The elixir of health is a powerful healing mixture designed to cleanse the body of all impurities. First, it cures all poisons and diseases; then, once the system has been purged, the imbibed is cured by 10 Hit Points to speed the recovery process.
+
+STATISTICS:
+
+Special: Cures poison and disease and heals 10 Hit Points
+
+Weight: 1~
+@40331 = ~Potion~
+@40332 = ~Potion of Heroism~
+@40333 = ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
+
+STATISTICS:
+
+Weight: 1~
+@40334 = ~This potion is imbued with a powerful enchantment that will simulate a temporary increase in level. The effect lasts for 2 hours, which makes this potion a powerful ally in a deadly combat. This potion may only be used by warriors.
+
+STATISTICS:
+
+Hit Points: +10% (base only)
+THAC0: Set to 90% of current base
+Duration: 2 hours
+
+Weight: 1~
+@40335 = ~Plate Mail~
+@40336 = ~Plate Mail~
+@40337 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+
+STATISTICS:
+
+Armor Class: 3 (0 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 50~
+@40338 = ~Small Shield~
+@40339 = ~Small Shield~
+@40340 = ~A small shield is usually round and is carried on the forearm, gripped with the shield hand. Its light weight as compared to a medium shield permits the user to carry other items in that hand, although <PRO_HESHE> cannot wield or carry another weapon. 
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– No protection against missile attacks
+
+Requires:
+ 4 Strength
+
+Weight: 3~
+@40341 = ~Large Shield~
+@40342 = ~Large Shield~
+@40343 = ~The body shield, also known as the kite or tower shield, is a massive metal or wooden shield reaching nearly from the chin to the toe of the user. It must be firmly fastened to the forearm, and the shield hand must firmly grip it at all times. Naturally, this precludes use of the shield hand for anything but holding the body shield in place.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1, an extra +1 vs. missile attacks
+
+Requires:
+ 15 Strength
+
+Weight: 15 ~
+@40344 = ~Helmet~
+@40345 = ~Helmet~
+@40346 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+
+Weight: 2~
+@40347 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+
+Weight: 2~
+@40348 = ~Leather Armor~
+@40349 = ~Leather Armor~
+@40350 = ~Leather armor, despite the popular misconception, is not soft and supple like the leather used to make a Ranger's boots or a Druid's robe. That kind of leather offers no better protection than common clothing.
+
+STATISTICS:
+
+Armor Class: 8 (10 vs. piercing and missile)
+Requires:
+ 4 Strength
+
+Weight: 15~

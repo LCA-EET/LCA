@@ -1,0 +1,334 @@
+IF
+	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
+	Global("bd_jail_visitors","bd0104",1)  // Flaming Fist HQ
+	!Dead("CORWIN")  // Corwin
+THEN
+	RESPONSE #100
+		SetGlobal("bd_jail_visitors","bd0104",2)  // Flaming Fist HQ
+		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)  // Flaming Fist HQ
+		CreateCreature("XABDSCH2",[720.620],NW)  // Corwin
+		ActionOverride("XABDSCH2",ChangeAIScript("bdvisit",OVERRIDE))
+END
+
+IF
+	GlobalLT("chapter","global",9)
+	OnCreation()
+THEN
+	RESPONSE #100
+		SetGlobal("BD_FRITZ_NO_TALK","BD0104",0)  // Flaming Fist HQ
+		Continue()
+END
+
+IF
+	GlobalLT("chapter","global",9)
+	Global("BD_VISITED_BD0104","GLOBAL",0)
+THEN
+	RESPONSE #100
+		ActionOverride("Prisoner 8",DialogInterrupt(FALSE))
+		ActionOverride("FF Guard 6",DialogInterrupt(FALSE))
+		ActionOverride("FF Girl 2",DialogInterrupt(FALSE))
+		SetGlobal("BD_VISITED_BD0104","GLOBAL",1)
+		Continue()
+END
+
+IF
+	GlobalLT("bd_visited_three_areas","global",3)
+	Global("bd_stop_increment","BD0104",0)  // Flaming Fist HQ
+THEN
+	RESPONSE #100
+		SetGlobal("bd_stop_increment","BD0104",1)  // Flaming Fist HQ
+		IncrementGlobal("bd_visited_three_areas","global",1)
+END
+
+IF
+	GlobalLT("chapter","global",9)
+	GlobalGT("BD_KICK_DAUSTON","GLOBAL",2)
+	!Exists("BDDAUSTO")  // Dauston
+	!Dead("BDDAUSTO")  // Dauston
+THEN
+	RESPONSE #100
+		CreateCreatureImpassable("BDDAUSTO",[1824.974],E)  // Dauston
+		ReallyForceSpellRES("bdgassa1","BDDAUSTO")  // No such index
+		SetGlobal("BD_REMOVEFROMBD0030","GLOBAL",1)
+END
+
+IF
+	GlobalLT("chapter","global",9)
+	AreaCheck("BD0104")  // Flaming Fist HQ
+	Exists("BDDAUSTO")  // Dauston
+	!Dead("BDDAUSTO")  // Dauston
+	Delay(35)
+	TriggerOverride("BDDAUSTO",Range([PC],75))
+THEN
+	RESPONSE #100
+		DisplayStringHead("BDDAUSTO",16197)  // [SLEEPING MAN 3] ZZZZzzzzzz...
+		Continue()
+END
+
+IF
+	GlobalLT("chapter","global",9)
+	Global("bd_invited_tiax","bd0104",1)  // Flaming Fist HQ
+THEN
+	RESPONSE #100
+		SetGlobal("bd_invited_tiax","bd0104",2)  // Flaming Fist HQ
+		AddexperienceParty(1000)
+END
+
+IF
+	GlobalLT("chapter","global",9)
+	Global("BD_AILEENS_HUSBAND","GLOBAL",4)
+	!Exists("BDAILEEN")  // Aileen
+	!Dead("BDAILEEN")  // Aileen
+THEN
+	RESPONSE #100
+		CreateCreature("BDAILEEN",[1200.1042],NEE)  // Aileen
+END
+
+IF
+	GlobalLT("chapter","global",9)
+	Global("BD_Refugees","GLOBAL",3)
+	!Exists("BDGARACH")  // Garachen
+	!Dead("BDGARACH")  // Garachen
+THEN
+	RESPONSE #100
+		CreateCreature("BDGARACH",[1256.342],SE)  // Garachen
+END
+
+IF
+	GlobalLT("bd_visited_three_npcs","global",3)
+	Global("bd_stop_npc_increment","MYAREA",0)
+	GlobalGT("bd_spoken_tiax","global",0)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_stop_npc_increment","MYAREA",1)
+		IncrementGlobal("bd_visited_three_npcs","global",1)
+END
+
+IF
+	GlobalLT("BD_Chapter_Save","GLOBAL",13)
+	Global("Chapter","GLOBAL",13)
+THEN
+	RESPONSE #100
+		SetGlobal("BD_Chapter_Save","GLOBAL",13)
+		SaveGame(25)
+END
+
+IF
+	Global("chapter","global",13)
+	!GlobalTimerNotExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
+	OR(4)
+		Global("bd_jail_visitors","bd0104",0)  // Flaming Fist HQ
+		Global("bd_jail_visitors","bd0104",3)  // Flaming Fist HQ
+		Global("bd_jail_visitors","bd0104",6)  // Flaming Fist HQ
+		Global("bd_jail_visitors","bd0104",12)  // Flaming Fist HQ
+	InMyArea(Player1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("bd_jail_visitors","bd0104",1)  // Flaming Fist HQ
+		SetGlobalTimer("bd_jail_visitors_timer","bd0104",ONE_ROUND)  // Flaming Fist HQ
+END
+
+IF
+	Global("chapter","global",13)
+	GlobalTimerExpired("bd_jail_visitors2_timer","bd0104")  // Flaming Fist HQ
+	OR(2)
+		Global("bd_jail_visitors","bd0104",2)  // Flaming Fist HQ
+		Global("bd_jail_visitors","bd0104",5)  // Flaming Fist HQ
+THEN
+	RESPONSE #100
+		IncrementGlobal("bd_jail_visitors","bd0104",1)  // Flaming Fist HQ
+END
+
+IF
+	Global("chapter","global",13)
+	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
+	Global("bd_jail_visitors","bd0104",1)  // Flaming Fist HQ
+	Dead("CORWIN")  // Corwin
+THEN
+	RESPONSE #100
+		SetGlobal("bd_jail_visitors","bd0104",3)  // Flaming Fist HQ
+END
+
+IF
+	Global("chapter","global",13)
+	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
+	Global("bd_jail_visitors","bd0104",1)  // Flaming Fist HQ
+	!Dead("CORWIN")  // Corwin
+THEN
+	RESPONSE #100
+		SetGlobal("bd_jail_visitors","bd0104",2)  // Flaming Fist HQ
+		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)  // Flaming Fist HQ
+		CreateCreature("bdschae2",[720.620],NW)  // Corwin
+		ActionOverride("bdschae2",ChangeAIScript("bdvisit",OVERRIDE))
+END
+
+IF
+	Global("chapter","global",13)
+	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
+	Global("bd_jail_visitors","bd0104",4)  // Flaming Fist HQ
+	Global("bd_neera_romanceactive","global",2)
+	!Dead("NEERA")  // Neera
+THEN
+	RESPONSE #100
+		SetGlobal("bd_jail_visitors","bd0104",5)  // Flaming Fist HQ
+		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)  // Flaming Fist HQ
+		MoveGlobal("bd0104","NEERA",[720.620])  // Neera
+		ActionOverride("NEERA",ChangeAIScript("bdvisit",OVERRIDE))
+END
+
+IF
+	Global("chapter","global",13)
+	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
+	Global("bd_jail_visitors","bd0104",4)  // Flaming Fist HQ
+	Global("bd_safana_romanceactive","global",2)
+	!Dead("SAFANA")  // Safana
+	OR(2)
+		Global("bd_SafanaRomance22","GLOBAL",0)
+		!Dead("voghiln")  // Voghiln
+THEN
+	RESPONSE #100
+		SetGlobal("bd_jail_visitors","bd0104",5)  // Flaming Fist HQ
+		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)  // Flaming Fist HQ
+		MoveGlobal("bd0104","SAFANA",[720.620])  // Safana
+		ActionOverride("SAFANA",ChangeAIScript("bdvisit",OVERRIDE))
+END
+
+IF
+	Global("chapter","global",13)
+	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
+	Global("bd_jail_visitors","bd0104",4)  // Flaming Fist HQ
+	Global("bd_viconia_romanceactive","global",2)
+	!Dead("VICONIA")  // Viconia
+THEN
+	RESPONSE #100
+		SetGlobal("bd_jail_visitors","bd0104",5)  // Flaming Fist HQ
+		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)  // Flaming Fist HQ
+		MoveGlobal("bd0104","VICONIA",[720.620])  // Viconia
+		ActionOverride("VICONIA",ChangeAIScript("bdvisit",OVERRIDE))
+END
+
+IF
+	Global("chapter","global",13)
+	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
+	Global("bd_jail_visitors","bd0104",4)  // Flaming Fist HQ
+	Global("bd_rasaad_romanceactive","global",2)
+	!Dead("RASAAD")  // Rasaad
+THEN
+	RESPONSE #100
+		SetGlobal("bd_jail_visitors","bd0104",5)  // Flaming Fist HQ
+		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)  // Flaming Fist HQ
+		MoveGlobal("bd0104","RASAAD",[720.620])  // Rasaad
+		ActionOverride("RASAAD",ChangeAIScript("bdvisit",OVERRIDE))
+END
+
+IF
+	Global("chapter","global",13)
+	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
+	Global("bd_jail_visitors","bd0104",4)  // Flaming Fist HQ
+	Global("bd_voghiln_romanceactive","global",2)
+	!Dead("VOGHILN")  // Voghiln
+THEN
+	RESPONSE #100
+		SetGlobal("bd_jail_visitors","bd0104",5)  // Flaming Fist HQ
+		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)  // Flaming Fist HQ
+		MoveGlobal("bd0104","VOGHILN",[720.620])  // Voghiln
+		ActionOverride("VOGHILN",ChangeAIScript("bdvisit",OVERRIDE))
+END
+
+IF
+	Global("chapter","global",13)
+	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
+	Global("bd_jail_visitors","bd0104",4)  // Flaming Fist HQ
+	Global("bd_dorn_romanceactive","global",2)
+	!Dead("DORN")  // Dorn
+THEN
+	RESPONSE #100
+		SetGlobal("bd_jail_visitors","bd0104",5)  // Flaming Fist HQ
+		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)  // Flaming Fist HQ
+		MoveGlobal("bd0104","DORN",[720.620])  // Dorn
+		ActionOverride("DORN",ChangeAIScript("bdvisit",OVERRIDE))
+END
+
+IF
+	Global("chapter","global",13)
+	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
+	Global("bd_jail_visitors","bd0104",4)  // Flaming Fist HQ
+	Global("bd_glint_romanceactive","global",2)
+	!Dead("GLINT")  // Glint
+THEN
+	RESPONSE #100
+		SetGlobal("bd_jail_visitors","bd0104",5)  // Flaming Fist HQ
+		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)  // Flaming Fist HQ
+		MoveGlobal("bd0104","GLINT",[720.620])  // Glint
+		ActionOverride("GLINT",ChangeAIScript("bdvisit",OVERRIDE))
+END
+
+IF
+	Global("chapter","global",13)
+	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
+	!Global("bd_jail_visitors","bd0104",2)  // Flaming Fist HQ
+	!Global("bd_jail_visitors","bd0104",5)  // Flaming Fist HQ
+	GlobalLT("bd_jail_visitors","bd0104",10)  // Flaming Fist HQ
+THEN
+	RESPONSE #100
+		SetGlobal("bd_jail_visitors","bd0104",10)  // Flaming Fist HQ
+		CreateCreature("bdireni",[720.620],NW)  // Hooded Man
+END
+
+IF
+	Global("chapter","global",13)
+	GlobalLT("bd_plot","global",615)
+	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
+	Global("bd_jail_visitors","bd0104",13)  // Flaming Fist HQ
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		SetGlobal("bd_plot","global",615)
+		ClearAllActions()
+		StartCutSceneEx("bdcut64",TRUE)
+END
+
+IF
+	Global("chapter","global",13)
+	Global("bd_player_exiled","global",0)
+	Global("bd_prisontalk","bd0104",0)  // Flaming Fist HQ
+	TriggerOverride("bdclara",See([PC]))
+THEN
+	RESPONSE #100
+		SetGlobal("bd_prisontalk","bd0104",1)  // Flaming Fist HQ
+		DisplayStringHead("bdclara",39559)  // Sure, good, that's just great—run away, leave the rest of us here to rot.
+END
+
+IF
+	Global("chapter","global",13)
+	Global("bd_player_exiled","global",0)
+	Global("bd_prisontalk1","bd0104",0)  // Flaming Fist HQ
+	TriggerOverride("bdrefuge",See([PC]))
+THEN
+	RESPONSE #100
+		SetGlobal("bd_prisontalk1","bd0104",1)  // Flaming Fist HQ
+		DisplayStringHead("bdrefuge",39556)  // Let me out! Please, I can help you!
+END
+
+IF
+	Global("chapter","global",13)
+	Global("bd_player_exiled","global",0)
+	Global("bd_prisontalk2","bd0104",0)  // Flaming Fist HQ
+	TriggerOverride("bdrefgm2",See([PC]))
+THEN
+	RESPONSE #100
+		SetGlobal("bd_prisontalk2","bd0104",1)  // Flaming Fist HQ
+		DisplayStringHead("bdrefgm2",39557)  // Guards! Guards! The slayer of Silvershield has escaped!
+END
+
+IF
+	Global("chapter","global",13)
+	Global("bd_player_exiled","global",0)
+	Global("bd_prisontalk3","bd0104",0)  // Flaming Fist HQ
+	TriggerOverride("bdrefgf1",See([PC]))
+THEN
+	RESPONSE #100
+		SetGlobal("bd_prisontalk3","bd0104",1)  // Flaming Fist HQ
+		DisplayStringHead("bdrefgf1",39558)  // I didn't do it either, hero! Don't leave me here! DON'T LEAVE ME HERE!
+END
+

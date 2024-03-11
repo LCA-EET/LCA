@@ -1,0 +1,20 @@
+IF
+	Detect([PC])
+	Global("BD_PRISONER12","BD0104",0)  // Flaming Fist HQ
+THEN
+	RESPONSE #100
+		Wait(2)
+		MoveToPoint([524.1165])
+		FaceObject("Prisoner 12")
+		SmallWait(5)
+		DisplayStringHead(Myself,4328)  // Just shut up. Please SHUT UP!
+		Wait(2)
+		ActionOverride("Prisoner 12",DisplayStringHead(Myself,7709))  // Shut up, guard!
+		Wait(1)
+		DisplayStringHead(Myself,31047)  // *sigh*
+		MoveToPoint([656.1030])
+		Face(SE)
+		DialogInterrupt(TRUE)
+		SetGlobal("BD_PRISONER12","BD0104",1)  // Flaming Fist HQ
+END
+

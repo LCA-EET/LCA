@@ -1,0 +1,102 @@
+PRINT ~Processing AssetConverter generated elements...~
+//{ MUSIC
+ADD_MUSIC xae0 ~%MOD_FOLDER%\generated\e\mus\xae0.mus~
+ADD_MUSIC xae1 ~%MOD_FOLDER%\generated\e\mus\xae1.mus~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae0\xae0a.acm~ ~MUSIC\xae0\xae0a.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1a1.acm~ ~MUSIC\xae1\xae1a1.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1a2.acm~ ~MUSIC\xae1\xae1a2.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1a3.acm~ ~MUSIC\xae1\xae1a3.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1a4.acm~ ~MUSIC\xae1\xae1a4.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1b1.acm~ ~MUSIC\xae1\xae1b1.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1b2.acm~ ~MUSIC\xae1\xae1b2.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1b3.acm~ ~MUSIC\xae1\xae1b3.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1b4.acm~ ~MUSIC\xae1\xae1b4.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1c1.acm~ ~MUSIC\xae1\xae1c1.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1c2.acm~ ~MUSIC\xae1\xae1c2.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1c3.acm~ ~MUSIC\xae1\xae1c3.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1c4.acm~ ~MUSIC\xae1\xae1c4.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1d1.acm~ ~MUSIC\xae1\xae1d1.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1d2.acm~ ~MUSIC\xae1\xae1d2.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1d3.acm~ ~MUSIC\xae1\xae1d3.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1d4.acm~ ~MUSIC\xae1\xae1d4.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1e1.acm~ ~MUSIC\xae1\xae1e1.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1e2.acm~ ~MUSIC\xae1\xae1e2.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1enda1.acm~ ~MUSIC\xae1\xae1enda1.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1enda2.acm~ ~MUSIC\xae1\xae1enda2.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1enda3.acm~ ~MUSIC\xae1\xae1enda3.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1enda4.acm~ ~MUSIC\xae1\xae1enda4.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1endc1.acm~ ~MUSIC\xae1\xae1endc1.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1endd1.acm~ ~MUSIC\xae1\xae1endd1.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1endd2.acm~ ~MUSIC\xae1\xae1endd2.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1endd4.acm~ ~MUSIC\xae1\xae1endd4.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1endf1.acm~ ~MUSIC\xae1\xae1endf1.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1endf2.acm~ ~MUSIC\xae1\xae1endf2.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1endf3.acm~ ~MUSIC\xae1\xae1endf3.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1endg3.acm~ ~MUSIC\xae1\xae1endg3.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1endg4.acm~ ~MUSIC\xae1\xae1endg4.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1endh4.acm~ ~MUSIC\xae1\xae1endh4.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1f1.acm~ ~MUSIC\xae1\xae1f1.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1f2.acm~ ~MUSIC\xae1\xae1f2.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1f3.acm~ ~MUSIC\xae1\xae1f3.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1f4.acm~ ~MUSIC\xae1\xae1f4.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1g1.acm~ ~MUSIC\xae1\xae1g1.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1g2.acm~ ~MUSIC\xae1\xae1g2.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1g3.acm~ ~MUSIC\xae1\xae1g3.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1g4.acm~ ~MUSIC\xae1\xae1g4.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1h1.acm~ ~MUSIC\xae1\xae1h1.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1h2.acm~ ~MUSIC\xae1\xae1h2.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1h3.acm~ ~MUSIC\xae1\xae1h3.acm~
+COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1h4.acm~ ~MUSIC\xae1\xae1h4.acm~
+//}
+//are files
+//===================
+ACTION_IF (FILE_EXISTS_IN_GAME ~xae100.are~) BEGIN
+	PRINT ~Area already exists: xae100. Skipping...~
+END ELSE BEGIN
+	COPY ~%MOD_FOLDER%\generated\e\are\xae100.are~ ~override~
+END
+ACTION_IF (FILE_EXISTS_IN_GAME ~xae101.are~) BEGIN
+	PRINT ~Area already exists: xae101. Skipping...~
+END ELSE BEGIN
+	COPY ~%MOD_FOLDER%\generated\e\are\xae101.are~ ~override~
+	WRITE_LONG 284 %xae0%
+	WRITE_LONG 288 %xae0%
+	WRITE_LONG 296 %xae1%
+END
+
+//itm files
+//===================
+COPY ~%MOD_FOLDER%\generated\e\itm\xae100.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@39000) /*~Gold~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@39001) /*~Gold~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@39002) /*~Gold is the standard of currency, commonly called Golden Lions throughout the realms, though only the Cormyrian coins carry the figure of the lion on the coin (Sembian gold coin designs vary from year to year but always retain a five-sided shape). The most common in the southern regions is the Amnian danter, though there are a number of other golder coins from Tethyr and Thay, as well as a number of private mints (including some adventuring parties).~*/
+
+//baf files
+//===================
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\generated\e\baf~
+
+//wed files
+//===================
+COPY ~%MOD_FOLDER%\generated\e\wed\xae100.wed~ ~override~
+COPY ~%MOD_FOLDER%\generated\e\wed\xae101.wed~ ~override~
+
+//bam files
+//===================
+COPY ~%MOD_FOLDER%\generated\e\bam\xae101.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\e\bam\xae100.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\e\bam\xae102.bam~ ~override~
+
+//tis files
+//===================
+COPY ~%MOD_FOLDER%\generated\e\tis\xae100.tis~ ~override~
+COPY ~%MOD_FOLDER%\generated\e\tis\xae101.tis~ ~override~
+
+
+//bmp files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\e\bmp\xae100ht.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\e\bmp\xae100lm.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\e\bmp\xae100sr.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\e\bmp\xae101ht.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\e\bmp\xae101lm.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\e\bmp\xae101sr.bmp~ ~override~

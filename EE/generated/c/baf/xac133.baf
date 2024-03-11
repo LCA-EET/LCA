@@ -1,0 +1,13 @@
+IF
+	NearLocation(Myself,787,567,2)
+	Global("bd_001_plot","bd0103",8)  // Ducal Palace, Third Floor
+	AreaCheck("bd0103")  // Ducal Palace, Third Floor
+	Detect([PC])
+	Range([PC],15)
+THEN
+	RESPONSE #100
+		FaceObject([PC])
+		SmallWait(2)
+		StartDialogueNoSet([PC])
+END
+

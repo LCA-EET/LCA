@@ -1,0 +1,20 @@
+IF
+	See([PC])
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SmallWait(5)
+		Enemy()
+END
+
+IF
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	ReputationLT([PC],11)
+	NumberOfTimesTalkedTo(0)
+THEN
+	RESPONSE #100
+		Dialogue([PC])
+END
+

@@ -1,0 +1,26 @@
+IF
+	See([ENEMY])
+	Gender(Myself,MALE)
+	General(Myself,HUMANOID)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #10
+		PlaySound("EDWIN43")
+		RunAwayFromNoLeaveArea(LastSeenBy(Myself),30)
+	RESPONSE #90
+		RunAwayFromNoLeaveArea(LastSeenBy(Myself),30)
+END
+
+IF
+	See([ENEMY])
+	Gender(Myself,FEMALE)
+	General(Myself,HUMANOID)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #10
+		PlaySound("FCHIL05")
+		RunAwayFromNoLeaveArea(LastSeenBy(Myself),30)
+	RESPONSE #90
+		RunAwayFromNoLeaveArea(LastSeenBy(Myself),30)
+END
+
