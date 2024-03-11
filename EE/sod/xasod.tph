@@ -16,10 +16,10 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xabalsod.baf~
 	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xajrnsod.baf~
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/sod/baf/xap1d.baf~
-	EXTEND_TOP ~xaes100.bcs~ ~%MOD_FOLDER%/sod/baf/xatntscr.baf~	// Tent Cutscene
-	EXTEND_TOP ~xaes101.bcs~ ~%MOD_FOLDER%/sod/baf/xaclrg.baf~ 		// Archery Cutscene
-	EXTEND_TOP ~bd4300.bcs~ ~%MOD_FOLDER%/sod/baf/xacheer.baf~ 	
-	EXTEND_TOP ~bdcut59b.bcs~ ~%MOD_FOLDER%/sod/baf/xacut59b.baf~ 
+	EXTEND_TOP ~xaes100.bcs~ 	~%MOD_FOLDER%/sod/baf/xatntscr.baf~	// Tent Cutscene
+	EXTEND_TOP ~xaes101.bcs~ 	~%MOD_FOLDER%/sod/baf/xaclrg.baf~ 		// Archery Cutscene
+	EXTEND_TOP ~bd4300.bcs~ 	~%MOD_FOLDER%/sod/baf/xacheer.baf~ 	
+	EXTEND_TOP ~bdcut59b.bcs~ 	~%MOD_FOLDER%/sod/baf/xacut59b.baf~ 
 
 	ACTION_IF (isEET = 1) THEN BEGIN
 		EXTEND_TOP ~bd0100.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd0100.baf~
