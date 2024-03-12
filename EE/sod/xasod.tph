@@ -9,10 +9,10 @@ LPF fj_are_structure
 		fj_structure_type = region
 		fj_name = ~XATREE~
 	INT_VAR
-		fj_box_left = 367
-		fj_box_top = 230
-		fj_box_right = 368
-		fj_box_bottom = 231
+		fj_box_left 	= 367
+		fj_box_top 		= 230
+		fj_box_right 	= 368
+		fj_box_bottom 	= 231
 		fj_vertex_0     = 367 + (230 << 16)
 		fj_vertex_1     = 367 + (231 << 16)
 		fj_vertex_2     = 368 + (231 << 16)
