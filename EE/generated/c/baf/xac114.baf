@@ -1,9 +1,17 @@
 IF
 	See([PC])
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SmallWait(5)
+		Enemy()
+END
+
+IF
+	See([PC])
 	!Allegiance(Myself,ENEMY)
-	GlobalGT("KilledDruids","GLOBAL",3)
-	GlobalLT("Chapter","GLOBAL",5)
-	CombatCounter(0)
+	NumberOfTimesTalkedTo(0)
 THEN
 	RESPONSE #100
 		Dialogue([PC])

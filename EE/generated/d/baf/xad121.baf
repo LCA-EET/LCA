@@ -1,45 +1,42 @@
 IF
-	StateCheck(Myself,STATE_PANIC)
+	Global("BD_plot","global",54)
+	AreaCheck("bd0103")  // Ducal Palace, Third Floor
+	Global("BD_MDD007","bd0103",1)  // Ducal Palace, Third Floor
+	Range(Player1,10)
+	Detect(Player1)
+	!See("bdireni")  // Hooded Man
 THEN
 	RESPONSE #100
-		RandomWalkContinuous()
+		FaceObject(Player1)
+		SmallWait(2)
+		StartDialogueNoSet(Player1)
 END
 
 IF
-	Heard([ANYONE],111)
+	Global("bd_plot","global",665)
+	AreaCheck("bd6200")  // Sewers Exit
+	Global("bd_immy_move","locals",0)
 THEN
 	RESPONSE #100
-		MoveToObject(NearestEnemyOf(Myself))
+		SetGlobal("bd_immy_move","locals",1)
+		MoveToPointNoInterrupt([1560.1085])
 END
 
 IF
-	AttackedBy([GOODCUTOFF],DEFAULT)
-	!Allegiance(Myself,ENEMY)
+	Global("bd_plot","global",665)
+	AreaCheck("bd6200")  // Sewers Exit
+	OR(4)
+		Range("MINSC",20)  // Minsc
+		Range("DYNAHEIR",20)  // Dynaheir
+		Range("KHALID",20)  // Khalid
+		Range("JAHEIRA",20)  // Jaheira
+	See(Player1)
+	Range(Player1,15)
 THEN
 	RESPONSE #100
-		Enemy()
-END
-
-IF
-	See(NearestEnemyOf(Myself))
-	InWeaponRange(LastSeenBy(Myself))
-THEN
-	RESPONSE #100
-		AttackReevaluate(NearestEnemyOf(Myself),30)
-END
-
-IF
-	AttackedBy([ANYONE],DEFAULT)
-	InWeaponRange(LastAttackerOf(Myself))
-THEN
-	RESPONSE #100
-		Attack(LastAttackerOf(Myself))
-END
-
-IF
-	See(NearestEnemyOf(Myself))
-THEN
-	RESPONSE #100
-		MoveToObject(LastSeenBy(Myself))
+		FaceObject(Player1)
+		ApplySpellRES("bdcutspy",Myself)  // No such index
+		SmallWait(2)
+		StartDialogueNoSet(Player1)
 END
 

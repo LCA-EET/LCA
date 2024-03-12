@@ -1,20 +1,145 @@
 IF
-	Detect([PC])
-	Global("BD_PRISONER12","BD0104",0)  // Flaming Fist HQ
+	Global("bd_ai_controls","locals",0)
+	OR(2)
+		AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+		AreaCheck("bd4300")  // Dragonspear Castle Basement
 THEN
 	RESPONSE #100
-		Wait(2)
-		MoveToPoint([524.1165])
-		FaceObject("Prisoner 12")
+		SetGlobal("bd_ai_controls","locals",1)
+		SetGlobal("bd_no_assist","locals",2)
+		SetGlobal("bd_no_combat","locals",1)
+		SetGlobal("bd_no_search","locals",1)
+END
+
+IF
+	Global("bd_plot","global",480)
+	AreaCheck("bd4300")  // Dragonspear Castle Basement
+	See([PC])
+	Range(LastSeenBy(Myself),20)
+THEN
+	RESPONSE #100
+		FaceObject(LastSeenBy)
 		SmallWait(5)
-		DisplayStringHead(Myself,4328)  // Just shut up. Please SHUT UP!
-		Wait(2)
-		ActionOverride("Prisoner 12",DisplayStringHead(Myself,7709))  // Shut up, guard!
-		Wait(1)
-		DisplayStringHead(Myself,31047)  // *sigh*
-		MoveToPoint([656.1030])
-		Face(SE)
-		DialogInterrupt(TRUE)
-		SetGlobal("BD_PRISONER12","BD0104",1)  // Flaming Fist HQ
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	Global("bd_plot","global",485)
+	AreaCheck("bd4300")  // Dragonspear Castle Basement
+	Global("bd_bence_attacked","locals",0)
+	OR(2)
+		HitBy([GOODCUTOFF],CRUSHING)
+		AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_bence_attacked","locals",1)
+END
+
+IF
+	Global("bd_plot","global",485)
+	AreaCheck("bd4300")  // Dragonspear Castle Basement
+	Global("bd_bence_attacked","locals",1)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	AreaCheck("bd1000")  // Coast Way Crossing
+	Global("bd_plot","global",170)
+	OR(2)
+		!TriggerOverride("ff_camp",IsOverMe("corwin"))  // Corwin
+		InParty("corwin")  // Corwin
+	See([PC])
+	Range(LastSeenBy(Myself),25)
+THEN
+	RESPONSE #100
+		FaceObject(LastSeenBy)
+		SmallWait(4)
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	Global("bd_plot","global",200)
+	GlobalTimerExpired("bd_bence_delay","bd7100")  // Troll Forest
+	See([PC])
+	Range(LastSeenBy(Myself),25)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	AreaCheck("bd7100")  // Troll Forest
+	GlobalGT("bd_bridgefort_plot","global",0)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+
+IF
+	AreaCheck("BD7100")  // Troll Forest
+	Global("bd_sddskie","BD7100",1)  // Troll Forest
+	NearSavedLocation(Myself,"LOCALSbd_default_loc",3)
+	Range([PC],25)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_sddskie","BD7100",2)  // Troll Forest
+		Face(NW)
+		SmallWait(5)
+		DisplayStringHead(Myself,69925)  // ...I'm your commanding officer, Fist Goldbuckler! Get out of that tent!
+END
+
+IF
+	AreaCheck("BD7100")  // Troll Forest
+	Global("bd_sddskie","BD7100",2)  // Troll Forest
+	Range([PC],10)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_sddskie","BD7100",3)  // Troll Forest
+END
+
+IF
+	Global("bd_plot","global",310)
+	Global("bd_skie_plot","global",0)
+	AreaCheck("bd3000")  // Allied Siege Camp
+	Detect([PC])
+	Range(LastSeenBy,20)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	OR(2)
+		Global("bd_plot","global",312)
+		Global("bd_plot","global",395)
+	AreaCheck("bd3000")  // Allied Siege Camp
+	See([PC])
+	Range(LastSeenBy(Myself),25)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	OR(2)
+		GlobalGT("bd_plot","global",350)
+		GlobalGT("bd_skie_plot","global",0)
+	AreaCheck("bd3000")  // Allied Siege Camp
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+
+IF
+	AreaCheck("bd6000")  // Abandoned Sewers & Caverns
+	Global("BD_DISCOVERED","BD6000",3)  // Abandoned Sewers & Caverns
+	GlobalLT("bd_plot","global",650)
+	See([PC])
+THEN
+	RESPONSE #100
+		ApplySpellRES("bdcutspy",Myself)  // No such index
+		StartDialogueNoSet(Player1)
 END
 

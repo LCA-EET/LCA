@@ -3,6 +3,22 @@ PRINT @2000  /* ~Processing SoD changes...~ */
 INCLUDE ~%MOD_FOLDER%/generated/e/generated.tph~
 INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
 
+COPY_EXISTING ~xae100.are~	~override~
+LPF fj_are_structure 
+	STR_VAR
+		fj_structure_type = region
+		fj_name = ~XATREE~
+	INT_VAR
+		fj_box_left = 367
+		fj_box_top = 230
+		fj_box_right = 368
+		fj_box_bottom = 231
+		fj_vertex_0     = 367 + (230 << 16)
+		fj_vertex_1     = 367 + (231 << 16)
+		fj_vertex_2     = 368 + (231 << 16)
+		fj_vertex_3     = 368 + (230 << 16)
+END
+
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/baf~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 

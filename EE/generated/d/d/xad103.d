@@ -43,7 +43,7 @@ IF ~~ THEN BEGIN 2 // from: 1.0 0.1
   SAY @7 /* ~The assassins' blades are coated with a mystic poison, but I believe I can save her...~ [BD64621] #64621 */
   IF ~~ THEN REPLY @8 /* ~What can I do to help?~ #64622 */ GOTO 6
   IF ~~ THEN REPLY @9 /* ~"Believe"? You can't manage something a little more encouraging than that?~ #64623 */ GOTO 7
-  IF ~~ THEN REPLY @10 /* ~Leave her. We've wasted enough time as it is.~ #64624 */ EXTERN ~XAD144~ 11
+  IF ~~ THEN REPLY @10 /* ~Leave her. We've wasted enough time as it is.~ #64624 */ EXTERN ~XAD145~ 11
 END
 
 IF ~~ THEN BEGIN 3 // from:
@@ -55,17 +55,17 @@ END
 
 IF ~~ THEN BEGIN 4 // from: 3.0
   SAY @12 /* ~Captain Corwin, would you be so good as to escort him downstairs?~ [BD64627] #64627 */
-  IF ~~ THEN EXTERN ~XAD144~ 12
+  IF ~~ THEN EXTERN ~XAD145~ 12
 END
 
 IF ~~ THEN BEGIN 5 // from: 3.1
   SAY @13 /* ~Captain Corwin, would you be so good as to escort her downstairs?~ [BD69643] #69643 */
-  IF ~~ THEN EXTERN ~XAD144~ 12
+  IF ~~ THEN EXTERN ~XAD145~ 12
 END
 
 IF ~~ THEN BEGIN 6 // from: 7.0 2.0
   SAY @14 /* ~The best thing you can do right now is accompany Captain Corwin downstairs and ensure the palace is secure.~ [BD64629] #64629 */
-  IF ~~ THEN EXTERN ~XAD144~ 12
+  IF ~~ THEN EXTERN ~XAD145~ 12
 END
 
 IF ~~ THEN BEGIN 7 // from: 2.1
@@ -239,25 +239,25 @@ END
 IF ~  AreaCheck("bd0118")
 ~ THEN BEGIN 34 // from:
   SAY @68 /* ~Concentrate, girl. Clear your mind of all thoughts.~ [BD63920] #63920 */
-  IF ~~ THEN EXTERN ~XAD142~ 135
+  IF ~~ THEN EXTERN ~XAD143~ 135
 END
 
 IF ~~ THEN BEGIN 35 // from:
   SAY @69 /* ~You are not without wit, Imoen—but that will only take you so far. What you need... and currently lack... is focus.~ [BD63922] #63922 */
-  IF ~~ THEN EXTERN ~XAD142~ 136
+  IF ~~ THEN EXTERN ~XAD143~ 136
 END
 
 IF ~~ THEN BEGIN 36 // from:
   SAY @70 /* ~If you were truly thinking about magic, you'd not be talking so much.~ [BD63924] #63924 */
-  IF ~~ THEN EXTERN ~XAD142~ 137
+  IF ~~ THEN EXTERN ~XAD143~ 137
 END
 
 IF ~~ THEN BEGIN 37 // from:
   SAY @71 /* ~In your current state, you'd be nothing but a burden. If you truly want to help your friend, you must focus your mind and your energies on your studies.~ [BD63926] #63926 */
-  IF ~~ THEN EXTERN ~XAD142~ 138
+  IF ~~ THEN EXTERN ~XAD143~ 138
 END
 
 IF ~~ THEN BEGIN 38 // from:
   SAY @72 /* ~Clear your mind...~ [BD63929] #63929 */
-  IF ~~ THEN EXTERN ~XAD142~ 140
+  IF ~~ THEN EXTERN ~XAD143~ 140
 END

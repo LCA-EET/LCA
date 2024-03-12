@@ -25,12 +25,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 	
 //}
 
-//{ Music
-	//{ Ducal Palace
-		ADD_MUSIC xamu00	~%MOD_FOLDER%/bg2/mus/xamu00.mus~
-		COPY ~%MOD_FOLDER%/bg2/mus/xamu00a.acm~ ~MUSIC/xamu00/xamu00a.acm~
-	//}
-	
+//{ Music	
 	//{ SoD Track
 		ADD_MUSIC xamu01	~%MOD_FOLDER%/bg2/mus/xamu01.mus~
 		COPY ~%MOD_FOLDER%/bg2/mus/xamu01a.acm~ ~MUSIC/xamu01/xamu01a.acm~
@@ -58,7 +53,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 	
 	COPY_EXISTING ~xalcdbg.dlg~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY ~PlaySong(1000)~ ~PlaySong(%xamu00%)~
 		REPLACE_TEXTUALLY ~PlaySong(1001)~ ~PlaySong(%xamu01%)~
 		REPLACE_TEXTUALLY ~PlaySong(1002)~ ~PlaySong(%xamu02%)~
 		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu03%)~
@@ -66,12 +60,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 //}
 
 //{ are
-	//{ Overrides to generated areas - the converter won't copy over it since it exists.
-		COPY ~%MOD_FOLDER%/bg2/are/xa1000.are~ ~override~
-		WRITE_LONG 0x641b %xamu00%
-		WRITE_LONG 0x641f %xamu00%
-	//}
-
 	COPY ~%MOD_FOLDER%/bg2/are/xacs05.are~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/tis/xacs05.tis~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/wed/xacs05.wed~ ~override~
@@ -202,14 +190,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 	COPY ~%MOD_FOLDER%/bg2/cre/xadings.cre~ ~override~
 	SAY NAME1 @3016
 	SAY NAME2 @3016
-		
-	COPY ~%MOD_FOLDER%/bg2/cre/xaeltcut.cre~ ~override~
-	SAY NAME1 @3034
-	SAY NAME1 @3034
-			
-	COPY ~%MOD_FOLDER%/bg2/cre/xaentcut.cre~ ~override~
-	SAY NAME1 @3035
-	SAY NAME1 @3035
 	
 	COPY ~%MOD_FOLDER%/bg2/cre/xaesmith.cre~ ~override~
 	SAY NAME1 @3036
@@ -230,10 +210,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 	COPY ~%MOD_FOLDER%/bg2/cre/xalchook.cre~ ~override~
 	SAY NAME1 @3043
 	SAY NAME2 @3043
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xaliacut.cre~ ~override~
-	SAY NAME1 @3064
-	SAY NAME2 @3064
 
 	COPY ~%MOD_FOLDER%/bg2/cre/xaskcut1.cre~ ~override~
 	SAY NAME1 @3070

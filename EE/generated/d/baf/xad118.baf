@@ -1,42 +1,20 @@
 IF
-	Global("BD_plot","global",54)
-	AreaCheck("bd0103")  // Ducal Palace, Third Floor
-	Global("BD_MDD007","bd0103",1)  // Ducal Palace, Third Floor
-	Range(Player1,10)
-	Detect(Player1)
-	!See("bdireni")  // Hooded Man
+	Detect([PC])
+	Global("BD_PRISONER12","BD0104",0)  // Flaming Fist HQ
 THEN
 	RESPONSE #100
-		FaceObject(Player1)
-		SmallWait(2)
-		StartDialogueNoSet(Player1)
-END
-
-IF
-	Global("bd_plot","global",665)
-	AreaCheck("bd6200")  // Sewers Exit
-	Global("bd_immy_move","locals",0)
-THEN
-	RESPONSE #100
-		SetGlobal("bd_immy_move","locals",1)
-		MoveToPointNoInterrupt([1560.1085])
-END
-
-IF
-	Global("bd_plot","global",665)
-	AreaCheck("bd6200")  // Sewers Exit
-	OR(4)
-		Range("MINSC",20)  // Minsc
-		Range("DYNAHEIR",20)  // Dynaheir
-		Range("KHALID",20)  // Khalid
-		Range("JAHEIRA",20)  // Jaheira
-	See(Player1)
-	Range(Player1,15)
-THEN
-	RESPONSE #100
-		FaceObject(Player1)
-		ApplySpellRES("bdcutspy",Myself)  // No such index
-		SmallWait(2)
-		StartDialogueNoSet(Player1)
+		Wait(2)
+		MoveToPoint([524.1165])
+		FaceObject("Prisoner 12")
+		SmallWait(5)
+		DisplayStringHead(Myself,4328)  // Just shut up. Please SHUT UP!
+		Wait(2)
+		ActionOverride("Prisoner 12",DisplayStringHead(Myself,7709))  // Shut up, guard!
+		Wait(1)
+		DisplayStringHead(Myself,31047)  // *sigh*
+		MoveToPoint([656.1030])
+		Face(SE)
+		DialogInterrupt(TRUE)
+		SetGlobal("BD_PRISONER12","BD0104",1)  // Flaming Fist HQ
 END
 

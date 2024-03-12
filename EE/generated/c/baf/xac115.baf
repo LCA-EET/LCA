@@ -1,45 +1,30 @@
 IF
-	StateCheck(Myself,STATE_PANIC)
+	!Range([ENEMY],5)
+	See([ENEMY])
+	!Allegiance(Myself,EVILCUTOFF)
+	!Class(LastSeenBy(Myself),INNOCENT)
+	!Class(LastSeenBy(Myself),FLAMING_FIST)
+	!Class(LastSeenBy(Myself),CANDLEKEEP_WATCHER)
+	!Class(LastSeenBy(Myself),AMNISH_SOLDIER)
+	!Class(LastSeenBy(Myself),TOWN_GUARD)
 THEN
 	RESPONSE #100
-		RandomWalkContinuous()
+		EquipRanged()
+		AttackReevaluate([ENEMY],30)
 END
 
 IF
-	Heard([ANYONE],111)
+	Range([ENEMY],5)
+	See([ENEMY])
+	!Allegiance(Myself,EVILCUTOFF)
+	!Class(LastSeenBy(Myself),INNOCENT)
+	!Class(LastSeenBy(Myself),FLAMING_FIST)
+	!Class(LastSeenBy(Myself),CANDLEKEEP_WATCHER)
+	!Class(LastSeenBy(Myself),AMNISH_SOLDIER)
+	!Class(LastSeenBy(Myself),TOWN_GUARD)
 THEN
 	RESPONSE #100
-		MoveToObject(NearestEnemyOf(Myself))
-END
-
-IF
-	AttackedBy([GOODCUTOFF],DEFAULT)
-	!Allegiance(Myself,ENEMY)
-THEN
-	RESPONSE #100
-		Enemy()
-END
-
-IF
-	See(NearestEnemyOf(Myself))
-	InWeaponRange(LastSeenBy(Myself))
-THEN
-	RESPONSE #100
-		AttackReevaluate(NearestEnemyOf(Myself),30)
-END
-
-IF
-	AttackedBy([ANYONE],DEFAULT)
-	InWeaponRange(LastAttackerOf(Myself))
-THEN
-	RESPONSE #100
-		Attack(LastAttackerOf(Myself))
-END
-
-IF
-	See(NearestEnemyOf(Myself))
-THEN
-	RESPONSE #100
-		MoveToObject(LastSeenBy(Myself))
+		EquipMostDamagingMelee()
+		AttackReevaluate([ENEMY],30)
 END
 

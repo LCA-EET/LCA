@@ -61,16 +61,16 @@ Global("bd_mdd1697_plot","global",5)
 ~ THEN BEGIN 2 // from:
   SAY @3 /* ~Corporal Bence Duncan bore witness to a disturbing incident involving the accused at Boareskyr Bridge. He is here to share his recollections.~ [BD69760] #69760 */
   IF ~~ THEN DO ~SetGlobal("bd_mdd1697_plot","global",10)
-~ EXTERN ~BDBENCE~ 4
+~ EXTERN ~XAD104~ 4
   IF ~  Gender(Player1,FEMALE)
 ~ THEN DO ~SetGlobal("bd_mdd1697_plot","global",10)
-~ EXTERN ~BDBENCE~ 5
+~ EXTERN ~XAD104~ 5
   IF ~  Global("bd_bridgefort_sabotaged","GLOBAL",1)
 ~ THEN DO ~SetGlobal("bd_mdd1697_plot","global",10)
-~ EXTERN ~BDBENCE~ 1
+~ EXTERN ~XAD104~ 1
   IF ~  Global("bd_bridgefort_saved","GLOBAL",1)
 ~ THEN DO ~SetGlobal("bd_mdd1697_plot","global",10)
-~ EXTERN ~BDBENCE~ 0
+~ EXTERN ~XAD104~ 0
 END
 
 IF ~~ THEN BEGIN 3 // from:
@@ -472,9 +472,9 @@ END
 
 IF ~~ THEN BEGIN 40 // from: 39.0
   SAY @72 /* ~I know the whereabouts of your old allies—some of them, anyway. The captain here can escort you to them.~ [BD34317] #34317 */
-  IF ~~ THEN REPLY @73 /* ~Captain Corwin? I can think of no better companion.~ #34318 */ EXTERN ~XAD144~ 22
-  IF ~~ THEN REPLY @74 /* ~So we're headed to the nearest tavern, I presume?~ #34319 */ EXTERN ~XAD144~ 20
-  IF ~~ THEN REPLY @75 /* ~As I've already had one attempt on my life this night, I will permit it.~ #57853 */ EXTERN ~XAD144~ 21
+  IF ~~ THEN REPLY @73 /* ~Captain Corwin? I can think of no better companion.~ #34318 */ EXTERN ~XAD145~ 22
+  IF ~~ THEN REPLY @74 /* ~So we're headed to the nearest tavern, I presume?~ #34319 */ EXTERN ~XAD145~ 20
+  IF ~~ THEN REPLY @75 /* ~As I've already had one attempt on my life this night, I will permit it.~ #57853 */ EXTERN ~XAD145~ 21
 END
 
 IF ~~ THEN BEGIN 41 // from:

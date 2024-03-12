@@ -8,13 +8,13 @@ THEN
 		FadeToColor([30.0],0)
 		Wait(3)
 		ZoomLock(TRUE)
-		LeaveAreaLUAPanic("xa1000","",[2762.898],SW)  // Flaming Fist HQ, Level 1
-		LeaveAreaLUA("xa1000","",[2762.898],SW)
-		ActionOverride(Player2,LeaveAreaLUA("xa1000","",[2802.919],SW))  
-		ActionOverride(Player3,LeaveAreaLUA("xa1000","",[2800.848],SW))  
-		ActionOverride(Player4,LeaveAreaLUA("xa1000","",[2839.875],SW))  
-		ActionOverride(Player5,LeaveAreaLUA("xa1000","",[2830.801],SW))  
-		ActionOverride(Player6,LeaveAreaLUA("xa1000","",[2871.833],SW))
+		LeaveAreaLUAPanic("xad101","",[2762.898],SW)  // Flaming Fist HQ, Level 1
+		LeaveAreaLUA("xad101","",[2762.898],SW)
+		ActionOverride(Player2,LeaveAreaLUA("xad101","",[2802.919],SW))  
+		ActionOverride(Player3,LeaveAreaLUA("xad101","",[2800.848],SW))  
+		ActionOverride(Player4,LeaveAreaLUA("xad101","",[2839.875],SW))  
+		ActionOverride(Player5,LeaveAreaLUA("xad101","",[2830.801],SW))  
+		ActionOverride(Player6,LeaveAreaLUA("xad101","",[2871.833],SW))
 		Wait(1)
 		ApplySpellRES("xahide", Player1)
 		ApplySpellRES("xahide", Player2)
@@ -22,7 +22,7 @@ THEN
 		ApplySpellRES("xahide", Player4)
 		ApplySpellRES("xahide", Player5)
 		ApplySpellRES("xahide", Player6)		
-		CreateCreature("xa1001",[1044.688],2)
+		CreateCreature("xad104",[1044.688],2) //BDBENCE
 		 
 		StartCutScene("XAcs02b")
 END
