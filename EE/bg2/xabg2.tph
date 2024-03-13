@@ -5,6 +5,8 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf/params~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf/cutscenes~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 
+INCLUDE ~%MOD_FOLDER%/generated/d/generated.tph~
+
 //{ Script Extensions
 	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/bg2/baf/xabalbg2.baf~
 	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/bg2/baf/xachfight.baf~
@@ -60,12 +62,8 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 //}
 
 //{ are
-	COPY ~%MOD_FOLDER%/bg2/are/xacs05.are~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/tis/xacs05.tis~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wed/xacs05.wed~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacs05ht.bmp~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacs05lm.bmp~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacs05sr.bmp~ ~override~
+	COPY_EXISTING ~xad100.are~ ~override~ // Ducal Palace 3 Fl
+	WRITE_LONG 0x154 0 // Set Imoen Expiry Time to 0.
 	
 	COPY ~%MOD_FOLDER%/bg2/are/xacs06.are~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/tis/xacs06.tis~ ~override~
@@ -228,6 +226,16 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 	SAY NAME2 @3072
 	
 	COPY ~%MOD_FOLDER%/bg2/cre/xademin.cre~ ~override~
+	
+	COPY ~%MOD_FOLDER%/bg2/cre/xamelkor.cre~ ~override~
+	SAY NAME1 @3149
+	SAY NAME2 @3149
+	
+	COPY_EXISTING ~AMMAG01.cre~ ~override/xawapren.cre~
+	SAY NAME1 @3150
+	SAY NAME2 @3150
+	WRITE_ASCII 0x280 ~xawapren~ #20
+	WRITE_ASCII 0x248 ~xalcnull~ #8
 //}
 
 //{ wav
@@ -758,7 +766,7 @@ You sense there is little Schael Corwin would not do for her family or for the F
 //}
 
 
-INCLUDE ~%MOD_FOLDER%/generated/d/generated.tph~
+
 
 //{ Parameters
 	/* 

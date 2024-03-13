@@ -2,7 +2,7 @@ IF
 	True()
 THEN
 	RESPONSE #100
-		CutSceneId("xad107")
+		CutSceneId("xad107") // BDSCHAEL
 		MoveViewPoint([1044.688], BD_NORMAL)
 		MoveViewObject(Myself, INSTANT)
 		CreateCreature("cutspy",[1044.688],S) 

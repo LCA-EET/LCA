@@ -50,7 +50,7 @@ IF
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		ActionOverride("XACORINV", TakeCreatureItems("xa1009", BACKPACK))
+		ActionOverride("XACORINV", TakeCreatureItems("xad107", BACKPACK))
 		SetGlobal("XA_LC_TakeCorwinGear", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 END
@@ -60,25 +60,25 @@ IF
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		XEquipItem("", "xa1009", SLOT_AMULET,EQUIP) 
-		XEquipItem("", "xa1009", SLOT_ARMOR,EQUIP)
-		XEquipItem("", "xa1009", SLOT_BELT,EQUIP)
-		XEquipItem("", "xa1009", SLOT_BOOTS,EQUIP)
-		XEquipItem("", "xa1009", SLOT_CLOAK,EQUIP)     
-		XEquipItem("", "xa1009", SLOT_GAUNTLETS,EQUIP) 
-		XEquipItem("", "xa1009", SLOT_HELMET,EQUIP)    
-		XEquipItem("", "xa1009", SLOT_RING_LEFT,EQUIP) 
-		XEquipItem("", "xa1009", SLOT_RING_RIGHT,EQUIP)
-		XEquipItem("", "xa1009", SLOT_SHIELD,EQUIP)
-		XEquipItem("", "xa1009", SLOT_AMMO0,EQUIP)     
-		XEquipItem("", "xa1009", SLOT_AMMO1,EQUIP)     
-		XEquipItem("", "xa1009", SLOT_AMMO2,EQUIP)     
-		XEquipItem("", "xa1009", SLOT_AMMO3,EQUIP)   
-		XEquipItem("", "xa1009", SLOT_WEAPON0,EQUIP)   
-		XEquipItem("", "xa1009", SLOT_WEAPON1,EQUIP)   
-		XEquipItem("", "xa1009", SLOT_WEAPON2,EQUIP)   
-		XEquipItem("", "xa1009", SLOT_WEAPON3,EQUIP)
-		ActionOverride("XACORWIN", TakeCreatureItems("xa1009", BACKPACK))
+		XEquipItem("", "xad107", SLOT_AMULET,EQUIP) 
+		XEquipItem("", "xad107", SLOT_ARMOR,EQUIP)
+		XEquipItem("", "xad107", SLOT_BELT,EQUIP)
+		XEquipItem("", "xad107", SLOT_BOOTS,EQUIP)
+		XEquipItem("", "xad107", SLOT_CLOAK,EQUIP)     
+		XEquipItem("", "xad107", SLOT_GAUNTLETS,EQUIP) 
+		XEquipItem("", "xad107", SLOT_HELMET,EQUIP)    
+		XEquipItem("", "xad107", SLOT_RING_LEFT,EQUIP) 
+		XEquipItem("", "xad107", SLOT_RING_RIGHT,EQUIP)
+		XEquipItem("", "xad107", SLOT_SHIELD,EQUIP)
+		XEquipItem("", "xad107", SLOT_AMMO0,EQUIP)     
+		XEquipItem("", "xad107", SLOT_AMMO1,EQUIP)     
+		XEquipItem("", "xad107", SLOT_AMMO2,EQUIP)     
+		XEquipItem("", "xad107", SLOT_AMMO3,EQUIP)   
+		XEquipItem("", "xad107", SLOT_WEAPON0,EQUIP)   
+		XEquipItem("", "xad107", SLOT_WEAPON1,EQUIP)   
+		XEquipItem("", "xad107", SLOT_WEAPON2,EQUIP)   
+		XEquipItem("", "xad107", SLOT_WEAPON3,EQUIP)
+		ActionOverride("XACORWIN", TakeCreatureItems("xad107", BACKPACK))
 		SetGlobal("XA_LC_TakeCorwinGear", "GLOBAL", 2)
 		SetInterrupt(TRUE)
 END
@@ -184,7 +184,7 @@ THEN
 		CreateCreature("XACORINV", [1125.400], N)
 		SetGlobal("XA_SkieSaved", "GLOBAL", 3) // mark complete
 		CreateCreature("XACORWIN", [1033.563], SW)
-		//ActionOverride("XACORWIN", PolymorphCopy("xa1009"))
+		//ActionOverride("XACORWIN", PolymorphCopy("xad107"))
 		Continue()
 END
 

@@ -4,38 +4,38 @@ THEN
 	RESPONSE #100
 		CutSceneId(Player1)
 		
-		DisplayStringHead("xa1003",@0) // ~It would seem we have much to discuss.~
-		ActionOverride("xa1002", FaceObject("xa1003"))
-		ActionOverride("xa1002", MoveToPoint([736.527]))
-		ActionOverride("xa1002", FaceObject("xa1003"))
-		ActionOverride("xa1003", FaceObject("xa1006"))
-		ActionOverride("xa1006", FaceObject("xa1003"))
-		ActionOverride("xa1007", FaceObject("xa1003"))
-		ActionOverride("xa1001", FaceObject("xa1003"))
-		ActionOverride("xa1001", MoveToPoint([776.578]))
-		ActionOverride("xa1001", FaceObject("xa1003"))
+		DisplayStringHead("xad101",@0) // ~It would seem we have much to discuss.~
+		ActionOverride("xad102", FaceObject("xad101"))
+		ActionOverride("xad102", MoveToPoint([736.527]))
+		ActionOverride("xad102", FaceObject("xad101"))
+		ActionOverride("xad101", FaceObject("xad103"))
+		ActionOverride("xad103", FaceObject("xad101"))
+		ActionOverride("xad100", FaceObject("xad101"))
+		ActionOverride("xad104", FaceObject("xad101"))
+		ActionOverride("xad104", MoveToPoint([776.578]))
+		ActionOverride("xad104", FaceObject("xad101"))
 		Wait(5)
-		DisplayStringHead("xa1002",@1) // ~There is nothing to discuss - send the Flaming Fist to apprehend the wizard! He must pay for what he did to Skie!~
+		DisplayStringHead("xad102",@1) // ~There is nothing to discuss - send the Flaming Fist to apprehend the wizard! He must pay for what he did to Skie!~
 		Wait(5)
-		DisplayStringHead("xa1003",@2) // ~That's a bad idea for several reasons.~
+		DisplayStringHead("xad101",@2) // ~That's a bad idea for several reasons.~
 		Wait(3)
-		DisplayStringHead("xa1003",@3) // ~Tensions with Amn are finally settling down after the Iron Crisis. Sending an armed force to Athkatla would serve to reignite them.~
+		DisplayStringHead("xad101",@3) // ~Tensions with Amn are finally settling down after the Iron Crisis. Sending an armed force to Athkatla would serve to reignite them.~
 		Wait(5)
-		DisplayStringHead("xa1006",@4) // ~Plus, we're still working through resettling the refugees from Caelar's foolish crusade.~
+		DisplayStringHead("xad103",@4) // ~Plus, we're still working through resettling the refugees from Caelar's foolish crusade.~
 		Wait(5)
-		DisplayStringHead("xa1007",@5) // ~Agreed - we cannot send the Flaming Fist to Amn to apprehend one man.~
+		DisplayStringHead("xad100",@5) // ~Agreed - we cannot send the Flaming Fist to Amn to apprehend one man.~
 		Wait(5)
-		DisplayStringHead("xa1007",@6) // ~That said, we do have an opportunity to assist <CHARNAME> in his hunt for the wizard, and I think we should take it...~
+		DisplayStringHead("xad100",@6) // ~That said, we do have an opportunity to assist <CHARNAME> in his hunt for the wizard, and I think we should take it...~
 		Wait(3)
 		SetGlobalTimer("XA_Ath","GLOBAL",TWO_DAYS)
 		SetGlobal("XA_SkieSaved", "GLOBAL", 2)
 		FadeToColor([30.0],0)
 		Wait(2)
-		ActionOverride("xa1001",DestroySelf())
-		ActionOverride("xa1003",DestroySelf())
-		ActionOverride("xa1002",DestroySelf())
-		ActionOverride("xa1006",DestroySelf())
-		ActionOverride("xa1007",DestroySelf())
+		ActionOverride("xad104",DestroySelf())
+		ActionOverride("xad101",DestroySelf())
+		ActionOverride("xad102",DestroySelf())
+		ActionOverride("xad103",DestroySelf())
+		ActionOverride("xad100",DestroySelf())
 		StartCutScene("xacsexit")
 END
 
