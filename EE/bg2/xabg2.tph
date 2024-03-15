@@ -81,12 +81,6 @@ INCLUDE ~%MOD_FOLDER%/generated/d/generated.tph~
 	COPY ~%MOD_FOLDER%/bg2/bmp/xacs12sr.bmp~ ~override~
 	
 	COPY ~%MOD_FOLDER%/bg2/are/xacs13.are~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/tis/xacs13.tis~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wed/xacs13.wed~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/mos/xacs13.mos~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacs13ht.bmp~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacs13lm.bmp~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacs13sr.bmp~ ~override~
 	
 	COPY ~%MOD_FOLDER%/bg2/are/xapen.are~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/tis/xapen.tis~ ~override~
@@ -167,6 +161,17 @@ INCLUDE ~%MOD_FOLDER%/generated/d/generated.tph~
 //}
 
 //{ cre
+	COPY_EXISTING ~golsto01.cre~ ~override/xagolsto.cre~
+	WRITE_ASCII 0x268 ~~ #8
+	WRITE_ASCII 0x268 ~xagolsto~ #20
+	WRITE_ASCII 0x2CC ~xagolsto~ #8
+	
+	COPY_EXISTING ~xad119.cre~ ~override/xaffofcr.cre~
+	WRITE_ASCII 0x280 ~xaffofcr~ #20
+	WRITE_ASCII 0x2CC ~xaffofcr~ #8
+	SAY NAME1 @3058
+	SAY NAME2 @3058
+	
 	COPY ~%MOD_FOLDER%/bg2/cre/xabltcut.cre~ ~override~
 	SAY NAME1 @3050
 	SAY NAME2 @3050
@@ -193,18 +198,6 @@ INCLUDE ~%MOD_FOLDER%/generated/d/generated.tph~
 	SAY NAME1 @3036
 	SAY NAME1 @3036
 		
-	COPY ~%MOD_FOLDER%/bg2/cre/xaffofcr.cre~ ~override~
-	SAY NAME1 @3058
-	SAY NAME2 @3058
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xaffwcut.cre~ ~override~
-	SAY NAME1 @3079
-	SAY NAME2 @3079
-	
-	COPY ~%MOD_FOLDER%/bg2/cre/xagolsto.cre~ ~override~
-	SAY NAME1 @3062
-	SAY NAME2 @3062
-	
 	COPY ~%MOD_FOLDER%/bg2/cre/xalchook.cre~ ~override~
 	SAY NAME1 @3043
 	SAY NAME2 @3043

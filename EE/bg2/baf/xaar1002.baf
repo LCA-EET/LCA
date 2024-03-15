@@ -167,7 +167,8 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_SkieSaved", "GLOBAL", 3) // mark complete
-		CreateCreature("XAFFOFCR", [1033.563], SW)
+		CreateCreature("xad119", [1033.563], SW)
+		ActionOverride("xad119", SetDialog("xaffofcr"))
 		Continue()
 		//CreateCreature("BDFFMERC", [1012.519], SW)
 		//CreateCreature("BDFF1000", [1094.583], SW)
