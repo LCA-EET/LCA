@@ -54,6 +54,11 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 //}
 
 //{ New Creatures
+	COPY_EXISTING ~bdschael.cre~ ~override/xabdsch2.cre~
+	WRITE_ASCII 0x248 ~bdvisit~ #8
+	WRITE_ASCII 0x2CC ~xabdsch2~ #8
+	WRITE_ASCII 0x280 ~XABDSCH2~ #20
+	
 	COPY ~%MOD_FOLDER%/sod/cre/xabdsch2.cre~	~override~
 	WRITE_LONG 0x08 RESOLVE_STR_REF(@2010)
 	WRITE_LONG 0x0C RESOLVE_STR_REF(@2010)
