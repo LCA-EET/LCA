@@ -788,6 +788,7 @@ OUTER_SET bg2_carryover = 1
 	OUTER_SET brielbara_coran = 1
 	OUTER_SET fergus_ring = 1
 	OUTER_SET cleared_kanaglym = 1
+	OUTER_SET corwin_avernus = 1
 
 	/*
 		If a parameter file exists, overwrite the default parameter with the contents of the parameter file.
@@ -876,6 +877,10 @@ OUTER_SET bg2_carryover = 1
 
 	ACTION_IF (cleared_kanaglym = 1) THEN BEGIN
 		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa20.baf~
+	END
+	
+	ACTION_IF (corwin_avernus = 1) THEN BEGIN
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa21.baf~
 	END
 
 	EXTEND_BOTTOM ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpaEE.baf~

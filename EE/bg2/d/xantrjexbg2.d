@@ -1572,21 +1572,21 @@
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
-				!Global("XA_CorwinWentToAvernus", "GLOBAL", 1)
+				!Global("XA_LC_CorwinAvernus", "GLOBAL", 1)
 			~
 			@34 /* ~Besides, <CHARNAME> ventured to one of the nine hells and came back alive. I'm sure that with <PRO_HISHER> help we'll be able to handle the Underdark.~ */
 			
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
-				!Global("XA_CorwinWentToAvernus", "GLOBAL", 1)
+				!Global("XA_LC_CorwinAvernus", "GLOBAL", 1)
 			~
 			@35 /* ~Besides, <CHARNAME> and I ventured to one of the nine hells and came back alive. I'm sure that together we can handle the Underdark.~*/
 			
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
-				!Global("XA_CorwinWentToAvernus", "GLOBAL", 1)
+				!Global("XA_LC_CorwinAvernus", "GLOBAL", 1)
 			~
 			@36 /* ~I-if you say so, Schael... I'll do my best...~ */
 		END

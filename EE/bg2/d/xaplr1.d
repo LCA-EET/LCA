@@ -41,7 +41,7 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN REPLY @206 /* Yes */
 		DO ~
-			SetGlobal("XA_CorwinWentToAvernus", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinAvernus", "GLOBAL", 1)
 		~
 		GOTO XA_InitialConfig3A
 		
