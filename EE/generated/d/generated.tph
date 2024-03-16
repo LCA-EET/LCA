@@ -88,243 +88,250 @@ COPY ~%MOD_FOLDER%\generated\d\cre\xad104.cre~ ~override~
 	WRITE_LONG 272 RESOLVE_STR_REF(@40016) /*~War is almost here.~[xad10006]*/
 
 COPY ~%MOD_FOLDER%\generated\d\cre\xad105.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40017) /*~Imoen~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40018) /*~Imoen~*/
-	WRITE_LONG 168 RESOLVE_STR_REF(@40019) /*~ Gettin' out alive, I am.~[xad10013]*/
-	WRITE_LONG 172 RESOLVE_STR_REF(@40020) /*~ Good on you if you save the day.~[xad10014]*/
-	WRITE_LONG 176 RESOLVE_STR_REF(@40021) /*~ Mutton-mongerin' riffraff.~[xad10015]*/
-	WRITE_LONG 180 RESOLVE_STR_REF(@40022) /*~ I've done had enough of this.~[xad10016]*/
-	WRITE_LONG 184 RESOLVE_STR_REF(@40023) /*~ 'Tis something most unnatural here, and I want no part of it.~[xad10017]*/
-	WRITE_LONG 188 RESOLVE_STR_REF(@40024) /*~ Ye're all buffle-headed.~[xad10018]*/
-	WRITE_LONG 192 RESOLVE_STR_REF(@40025) /*~ *yawn* I'm gettin' a little sleepy.~[xad10019]*/
-	WRITE_LONG 196 RESOLVE_STR_REF(@40026) /*~ Booooorrrring.~[xad10020]*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@40027) /*~ My blade will cut you down to size!~[xad10021]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@40028) /*~ ~[xad10022]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@40029) /*~ ~[xad10023]*/
-	WRITE_LONG 244 RESOLVE_STR_REF(@40030) /*~ I feel so cold.~[xad10024]*/
-	WRITE_LONG 256 RESOLVE_STR_REF(@40031) /*~ 'Tis something most unnatural here, and I want no part of it.~[xad10017]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40032) /*~ I care not.~[xad10026]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40033) /*~ Yep?~[xad10027]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@40034) /*~ Whatcha want?~[xad10028]*/
-	WRITE_LONG 280 RESOLVE_STR_REF(@40035) /*~ Ha, ye're a queer fellow.~[xad10029]*/
-	WRITE_LONG 292 RESOLVE_STR_REF(@40036) /*~ This way.~[xad10030]*/
-	WRITE_LONG 296 RESOLVE_STR_REF(@40037) /*~ I've done had enough of this.~[xad10016]*/
-	WRITE_LONG 300 RESOLVE_STR_REF(@40038) /*~ I am gone.~[xad10032]*/
-	WRITE_LONG 304 RESOLVE_STR_REF(@40039) /*~ Do ya wanna tell me a story 'bout trollops an' plug tails? Please?~[xad10033]*/
-	WRITE_LONG 308 RESOLVE_STR_REF(@40040) /*~ I know nothin' more, so leave me to go.~[xad10034]*/
-	WRITE_LONG 312 RESOLVE_STR_REF(@40041) /*~ Good on you if you save the day.~[xad10014]*/
-	WRITE_LONG 316 RESOLVE_STR_REF(@40042) /*~ Back home, Puffguts would always tell me a story.~[xad10036]*/
-	WRITE_LONG 376 RESOLVE_STR_REF(@40043) /*~ Poor sod, takin' the dirt nap so soon.~[xad10037]*/
-	WRITE_LONG 460 RESOLVE_STR_REF(@40044) /*~When asked about her past, IMOEN slaps your shoulder playfully. She says that you of all people should know, seeing as how you grew up together. 
+	WRITE_LONG 8 RESOLVE_STR_REF(@40017) /*~Flaming Fist Battle Wizard~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40018) /*~Flaming Fist Battle Wizard~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@40019) /*~Punish the lawbreakers!~[xad10004]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40020) /*~We're more than mercenaries.~[xad10005]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40021) /*~War is almost here.~[xad10006]*/
+
+COPY ~%MOD_FOLDER%\generated\d\cre\xad106.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@40022) /*~Imoen~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40023) /*~Imoen~*/
+	WRITE_LONG 168 RESOLVE_STR_REF(@40024) /*~ Gettin' out alive, I am.~[xad10016]*/
+	WRITE_LONG 172 RESOLVE_STR_REF(@40025) /*~ Good on you if you save the day.~[xad10017]*/
+	WRITE_LONG 176 RESOLVE_STR_REF(@40026) /*~ Mutton-mongerin' riffraff.~[xad10018]*/
+	WRITE_LONG 180 RESOLVE_STR_REF(@40027) /*~ I've done had enough of this.~[xad10019]*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@40028) /*~ 'Tis something most unnatural here, and I want no part of it.~[xad10020]*/
+	WRITE_LONG 188 RESOLVE_STR_REF(@40029) /*~ Ye're all buffle-headed.~[xad10021]*/
+	WRITE_LONG 192 RESOLVE_STR_REF(@40030) /*~ *yawn* I'm gettin' a little sleepy.~[xad10022]*/
+	WRITE_LONG 196 RESOLVE_STR_REF(@40031) /*~ Booooorrrring.~[xad10023]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@40032) /*~ My blade will cut you down to size!~[xad10024]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@40033) /*~ ~[xad10025]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@40034) /*~ ~[xad10026]*/
+	WRITE_LONG 244 RESOLVE_STR_REF(@40035) /*~ I feel so cold.~[xad10027]*/
+	WRITE_LONG 256 RESOLVE_STR_REF(@40036) /*~ 'Tis something most unnatural here, and I want no part of it.~[xad10020]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40037) /*~ I care not.~[xad10029]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40038) /*~ Yep?~[xad10030]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@40039) /*~ Whatcha want?~[xad10031]*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@40040) /*~ Ha, ye're a queer fellow.~[xad10032]*/
+	WRITE_LONG 292 RESOLVE_STR_REF(@40041) /*~ This way.~[xad10033]*/
+	WRITE_LONG 296 RESOLVE_STR_REF(@40042) /*~ I've done had enough of this.~[xad10019]*/
+	WRITE_LONG 300 RESOLVE_STR_REF(@40043) /*~ I am gone.~[xad10035]*/
+	WRITE_LONG 304 RESOLVE_STR_REF(@40044) /*~ Do ya wanna tell me a story 'bout trollops an' plug tails? Please?~[xad10036]*/
+	WRITE_LONG 308 RESOLVE_STR_REF(@40045) /*~ I know nothin' more, so leave me to go.~[xad10037]*/
+	WRITE_LONG 312 RESOLVE_STR_REF(@40046) /*~ Good on you if you save the day.~[xad10017]*/
+	WRITE_LONG 316 RESOLVE_STR_REF(@40047) /*~ Back home, Puffguts would always tell me a story.~[xad10039]*/
+	WRITE_LONG 376 RESOLVE_STR_REF(@40048) /*~ Poor sod, takin' the dirt nap so soon.~[xad10040]*/
+	WRITE_LONG 460 RESOLVE_STR_REF(@40049) /*~When asked about her past, IMOEN slaps your shoulder playfully. She says that you of all people should know, seeing as how you grew up together. 
 
 Indeed, some of your fondest memories are of meeting this sprightly young lass. She apparently came to Candlekeep much as you did, though ten years later in life, and she spent much more time with the gruff Winthrop than Gorion. "Puffguts," she would call him, much to the old innkeep's dismay. 
 
 She seems the eternal child, and is quite content to play the part of little sister, though you are both of comparable ages. You can tell by her hearty smile that she will always be willing to travel with you, no matter what path you take.~*/
 
-COPY ~%MOD_FOLDER%\generated\d\cre\xad106.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40045) /*~Tiax~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40046) /*~Tiax~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@40047) /*~ You! Tiax would speak at you, for 'tis destined to be so!~[xad10038]*/
-	WRITE_LONG 168 RESOLVE_STR_REF(@40048) /*~ Tiax will rule... from a distance!~[xad10039]*/
-	WRITE_LONG 172 RESOLVE_STR_REF(@40049) /*~ Tiax is impressed with this group! You will continue to serve him once he rules.~[xad10040]*/
-	WRITE_LONG 176 RESOLVE_STR_REF(@40050) /*~ Tiax fails to see how this will aid in his ascension!~[xad10041]*/
-	WRITE_LONG 180 RESOLVE_STR_REF(@40051) /*~ Continue with this unprofitable behavior, and Tiax will seek his destiny elsewhere!~[xad10042]*/
-	WRITE_LONG 184 RESOLVE_STR_REF(@40052) /*~ You are unworthy to sit at the feet of Great Tiax! I shall find another for that exalted spot!~[xad10043]*/
-	WRITE_LONG 188 RESOLVE_STR_REF(@40053) /*~ As it should be! Tiax was destined to lead!~[xad10044]*/
-	WRITE_LONG 192 RESOLVE_STR_REF(@40054) /*~ Tiax needs rest if he is to rule!~[xad10045]*/
-	WRITE_LONG 196 RESOLVE_STR_REF(@40055) /*~ We get no closer to world domination just standing about!~[xad10046]*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@40056) /*~ Tiax will smite thee!~[xad10047]*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@40057) /*~ Tiax WILL rule ALL!~[xad10048]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@40058) /*~ ~[xad10049]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@40059) /*~ ~[xad10050]*/
-	WRITE_LONG 244 RESOLVE_STR_REF(@40060) /*~ Destiny had best hurry. Tiax does not feel well at all.~[xad10051]*/
-	WRITE_LONG 248 RESOLVE_STR_REF(@40061) /*~ When Tiax rules, this forest will be lumber for but a leg of his throne!~[xad10052]*/
-	WRITE_LONG 252 RESOLVE_STR_REF(@40062) /*~ When Tiax rules, the stones of this city shall build his castle!~[xad10053]*/
-	WRITE_LONG 256 RESOLVE_STR_REF(@40063) /*~ Why must Tiax traverse this dank hole?! Cyric said nothing of soggy boots!~[xad10054]*/
-	WRITE_LONG 260 RESOLVE_STR_REF(@40064) /*~ Tiax must squint in the sunlight! One day, revenge shall be his!~[xad10055]*/
-	WRITE_LONG 264 RESOLVE_STR_REF(@40065) /*~ Night would DARE hamper the sight of Tiax?!~[xad10056]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40066) /*~ Who dares prod Tiax?!~[xad10057]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40067) /*~ Tiax hears ya.~[xad10058]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@40068) /*~ Soon Tiax rules!~[xad10059]*/
-	WRITE_LONG 292 RESOLVE_STR_REF(@40069) /*~ Tiax is as Tiax duz. Hm-hm.~[xad10060]*/
-	WRITE_LONG 296 RESOLVE_STR_REF(@40070) /*~ Tiax WILL rule ALL!~[xad10048]*/
-	WRITE_LONG 300 RESOLVE_STR_REF(@40071) /*~ Tiax moves. Make way!~[xad10062]*/
-	WRITE_LONG 320 RESOLVE_STR_REF(@40072) /*~ Where will your learning get you when Tiax rules? Duke of manure at best!~[xad10063]*/
-	WRITE_LONG 324 RESOLVE_STR_REF(@40073) /*~ Sure you be smart, but none are grander than Tiax!~[xad10064]*/
-	WRITE_LONG 328 RESOLVE_STR_REF(@40074) /*~ Thou wouldst mock me? Ye stiff-rumped foole!~[xad10065]*/
-	WRITE_LONG 332 RESOLVE_STR_REF(@40075) /*~ All the world will tremble beneath the feet of Tiax!~[xad10066]*/
-	WRITE_LONG 336 RESOLVE_STR_REF(@40076) /*~ Tiax and his greatness shall squash you as a bug, you... you—you... insolent BUG!~[xad10067]*/
-	WRITE_LONG 340 RESOLVE_STR_REF(@40077) /*~ Ah, your goals are petty in comparison to the wonder of Tiax!~[xad10068]*/
-	WRITE_LONG 344 RESOLVE_STR_REF(@40078) /*~ Tiax and his greatness shall squash you as a bug, you... you—you... insolent BUG!~[xad10067]*/
-	WRITE_LONG 348 RESOLVE_STR_REF(@40079) /*~ Ya little monkey-spanker.~[xad10070]*/
-	WRITE_LONG 364 RESOLVE_STR_REF(@40080) /*~ Do as ye will, but 'tis for naught! Tiax must rule!~[xad10071]*/
-	WRITE_LONG 368 RESOLVE_STR_REF(@40081) /*~ Has Tiax mentioned he's going to rule? 'Tis inevitable.~[xad10072]*/
-	WRITE_LONG 372 RESOLVE_STR_REF(@40082) /*~ When Tiax rules, breeches shall not ride up so wedge-like!~[xad10073]*/
-	WRITE_LONG 376 RESOLVE_STR_REF(@40083) /*~ Blast you! Escaping the inevitable rule of Tiax by dying? Coward!~[xad10074]*/
-	WRITE_LONG 380 RESOLVE_STR_REF(@40084) /*~ Ha ha ha ha ha! Smart guy dies, and Tiax goes on to RULE!~[xad10075]*/
-	WRITE_LONG 396 RESOLVE_STR_REF(@40085) /*~ Your insults carry little sting. Tiax knows he will rule in the end.~[xad10076]*/
-	WRITE_LONG 400 RESOLVE_STR_REF(@40086) /*~ Ye cup-shot muttonhead! Tiax will slap ya silly... when he rules!~[xad10077]*/
-	WRITE_LONG 404 RESOLVE_STR_REF(@40087) /*~ Give thy tongue a holiday! Tiax so commands!~[xad10078]*/
-	WRITE_LONG 416 RESOLVE_STR_REF(@40088) /*~ Tiax does as ye will, but one day... BOOM! He rules!~[xad10079]*/
-	WRITE_LONG 420 RESOLVE_STR_REF(@40089) /*~ The day comes when TIAX will point and click!~[xad10080]*/
-
 COPY ~%MOD_FOLDER%\generated\d\cre\xad107.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40090) /*~Corwin~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40091) /*~Corwin~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@40050) /*~Tiax~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40051) /*~Tiax~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@40052) /*~ You! Tiax would speak at you, for 'tis destined to be so!~[xad10041]*/
+	WRITE_LONG 168 RESOLVE_STR_REF(@40053) /*~ Tiax will rule... from a distance!~[xad10042]*/
+	WRITE_LONG 172 RESOLVE_STR_REF(@40054) /*~ Tiax is impressed with this group! You will continue to serve him once he rules.~[xad10043]*/
+	WRITE_LONG 176 RESOLVE_STR_REF(@40055) /*~ Tiax fails to see how this will aid in his ascension!~[xad10044]*/
+	WRITE_LONG 180 RESOLVE_STR_REF(@40056) /*~ Continue with this unprofitable behavior, and Tiax will seek his destiny elsewhere!~[xad10045]*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@40057) /*~ You are unworthy to sit at the feet of Great Tiax! I shall find another for that exalted spot!~[xad10046]*/
+	WRITE_LONG 188 RESOLVE_STR_REF(@40058) /*~ As it should be! Tiax was destined to lead!~[xad10047]*/
+	WRITE_LONG 192 RESOLVE_STR_REF(@40059) /*~ Tiax needs rest if he is to rule!~[xad10048]*/
+	WRITE_LONG 196 RESOLVE_STR_REF(@40060) /*~ We get no closer to world domination just standing about!~[xad10049]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@40061) /*~ Tiax will smite thee!~[xad10050]*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@40062) /*~ Tiax WILL rule ALL!~[xad10051]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@40063) /*~ ~[xad10052]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@40064) /*~ ~[xad10053]*/
+	WRITE_LONG 244 RESOLVE_STR_REF(@40065) /*~ Destiny had best hurry. Tiax does not feel well at all.~[xad10054]*/
+	WRITE_LONG 248 RESOLVE_STR_REF(@40066) /*~ When Tiax rules, this forest will be lumber for but a leg of his throne!~[xad10055]*/
+	WRITE_LONG 252 RESOLVE_STR_REF(@40067) /*~ When Tiax rules, the stones of this city shall build his castle!~[xad10056]*/
+	WRITE_LONG 256 RESOLVE_STR_REF(@40068) /*~ Why must Tiax traverse this dank hole?! Cyric said nothing of soggy boots!~[xad10057]*/
+	WRITE_LONG 260 RESOLVE_STR_REF(@40069) /*~ Tiax must squint in the sunlight! One day, revenge shall be his!~[xad10058]*/
+	WRITE_LONG 264 RESOLVE_STR_REF(@40070) /*~ Night would DARE hamper the sight of Tiax?!~[xad10059]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40071) /*~ Who dares prod Tiax?!~[xad10060]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40072) /*~ Tiax hears ya.~[xad10061]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@40073) /*~ Soon Tiax rules!~[xad10062]*/
+	WRITE_LONG 292 RESOLVE_STR_REF(@40074) /*~ Tiax is as Tiax duz. Hm-hm.~[xad10063]*/
+	WRITE_LONG 296 RESOLVE_STR_REF(@40075) /*~ Tiax WILL rule ALL!~[xad10051]*/
+	WRITE_LONG 300 RESOLVE_STR_REF(@40076) /*~ Tiax moves. Make way!~[xad10065]*/
+	WRITE_LONG 320 RESOLVE_STR_REF(@40077) /*~ Where will your learning get you when Tiax rules? Duke of manure at best!~[xad10066]*/
+	WRITE_LONG 324 RESOLVE_STR_REF(@40078) /*~ Sure you be smart, but none are grander than Tiax!~[xad10067]*/
+	WRITE_LONG 328 RESOLVE_STR_REF(@40079) /*~ Thou wouldst mock me? Ye stiff-rumped foole!~[xad10068]*/
+	WRITE_LONG 332 RESOLVE_STR_REF(@40080) /*~ All the world will tremble beneath the feet of Tiax!~[xad10069]*/
+	WRITE_LONG 336 RESOLVE_STR_REF(@40081) /*~ Tiax and his greatness shall squash you as a bug, you... you—you... insolent BUG!~[xad10070]*/
+	WRITE_LONG 340 RESOLVE_STR_REF(@40082) /*~ Ah, your goals are petty in comparison to the wonder of Tiax!~[xad10071]*/
+	WRITE_LONG 344 RESOLVE_STR_REF(@40083) /*~ Tiax and his greatness shall squash you as a bug, you... you—you... insolent BUG!~[xad10070]*/
+	WRITE_LONG 348 RESOLVE_STR_REF(@40084) /*~ Ya little monkey-spanker.~[xad10073]*/
+	WRITE_LONG 364 RESOLVE_STR_REF(@40085) /*~ Do as ye will, but 'tis for naught! Tiax must rule!~[xad10074]*/
+	WRITE_LONG 368 RESOLVE_STR_REF(@40086) /*~ Has Tiax mentioned he's going to rule? 'Tis inevitable.~[xad10075]*/
+	WRITE_LONG 372 RESOLVE_STR_REF(@40087) /*~ When Tiax rules, breeches shall not ride up so wedge-like!~[xad10076]*/
+	WRITE_LONG 376 RESOLVE_STR_REF(@40088) /*~ Blast you! Escaping the inevitable rule of Tiax by dying? Coward!~[xad10077]*/
+	WRITE_LONG 380 RESOLVE_STR_REF(@40089) /*~ Ha ha ha ha ha! Smart guy dies, and Tiax goes on to RULE!~[xad10078]*/
+	WRITE_LONG 396 RESOLVE_STR_REF(@40090) /*~ Your insults carry little sting. Tiax knows he will rule in the end.~[xad10079]*/
+	WRITE_LONG 400 RESOLVE_STR_REF(@40091) /*~ Ye cup-shot muttonhead! Tiax will slap ya silly... when he rules!~[xad10080]*/
+	WRITE_LONG 404 RESOLVE_STR_REF(@40092) /*~ Give thy tongue a holiday! Tiax so commands!~[xad10081]*/
+	WRITE_LONG 416 RESOLVE_STR_REF(@40093) /*~ Tiax does as ye will, but one day... BOOM! He rules!~[xad10082]*/
+	WRITE_LONG 420 RESOLVE_STR_REF(@40094) /*~ The day comes when TIAX will point and click!~[xad10083]*/
 
 COPY ~%MOD_FOLDER%\generated\d\cre\xad108.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40092) /*~Officer Fritz~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40093) /*~Officer Fritz~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@40094) /*~I'll test your mettle with cold steel!~[xad10081]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@40095) /*~~[xad10082]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@40096) /*~~[xad10083]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40097) /*~Declare yourself!~[xad10084]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40098) /*~Do not disturb my duties.~[xad10085]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@40099) /*~At ease, citizen.~[xad10086]*/
-	WRITE_LONG 280 RESOLVE_STR_REF(@40100) /*~I trust you have no hostile intentions.~[xad10087]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@40095) /*~Corwin~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40096) /*~Corwin~*/
 
 COPY ~%MOD_FOLDER%\generated\d\cre\xad109.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40101) /*~Officer Jenks~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40102) /*~Officer Jenks~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@40103) /*~Punish the lawbreakers!~[xad10004]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40104) /*~We're more than mercenaries.~[xad10005]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40105) /*~War is almost here.~[xad10006]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@40097) /*~Officer Fritz~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40098) /*~Officer Fritz~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@40099) /*~I'll test your mettle with cold steel!~[xad10084]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@40100) /*~~[xad10085]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@40101) /*~~[xad10086]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40102) /*~Declare yourself!~[xad10087]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40103) /*~Do not disturb my duties.~[xad10088]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@40104) /*~At ease, citizen.~[xad10089]*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@40105) /*~I trust you have no hostile intentions.~[xad10090]*/
 
 COPY ~%MOD_FOLDER%\generated\d\cre\xad110.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40106) /*~Flaming Fist Enforcer~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40107) /*~Flaming Fist Enforcer~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@40108) /*~ I serve the Flaming Fist!~[xad10091]*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@40109) /*~ I AM the law!~[xad10092]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@40110) /*~~[xad10093]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@40111) /*~~[xad10094]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40112) /*~ I serve the Flaming Fist!~[xad10091]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40113) /*~ Every crime must be punished!~[xad10096]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@40114) /*~ You there! Give me fifty pushups!~[xad10097]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@40106) /*~Officer Jenks~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40107) /*~Officer Jenks~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@40108) /*~Punish the lawbreakers!~[xad10004]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40109) /*~We're more than mercenaries.~[xad10005]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40110) /*~War is almost here.~[xad10006]*/
 
-COPY ~%MOD_FOLDER%\generated\d\cre\xad113.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40115) /*~Sleeping Man~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40116) /*~Sleeping Man~*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40117) /*~ ZZZZzzzzzzz...~[xad10098]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40118) /*~ ZZZZzzzzz... *snort*~[xad10099]*/
+COPY ~%MOD_FOLDER%\generated\d\cre\xad111.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@40111) /*~Flaming Fist Enforcer~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40112) /*~Flaming Fist Enforcer~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@40113) /*~ I serve the Flaming Fist!~[xad10094]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@40114) /*~ I AM the law!~[xad10095]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@40115) /*~~[xad10096]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@40116) /*~~[xad10097]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40117) /*~ I serve the Flaming Fist!~[xad10094]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40118) /*~ Every crime must be punished!~[xad10099]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@40119) /*~ You there! Give me fifty pushups!~[xad10100]*/
 
 COPY ~%MOD_FOLDER%\generated\d\cre\xad114.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40119) /*~Sleeping Woman~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40120) /*~Sleeping Woman~*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40121) /*~ ZZZZzzzzzzz...~[xad10098]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40122) /*~ ZZZZzzzzz... *snort*~[xad10099]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@40120) /*~Sleeping Man~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40121) /*~Sleeping Man~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40122) /*~ ZZZZzzzzzzz...~[xad10101]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40123) /*~ ZZZZzzzzz... *snort*~[xad10102]*/
 
 COPY ~%MOD_FOLDER%\generated\d\cre\xad115.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40123) /*~Refugee~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40124) /*~Refugee~*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40125) /*~Please, help us.~[xad10102]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40126) /*~We have nowhere else to go.~[xad10103]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@40127) /*~A pox on the crusade!~[xad10104]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@40124) /*~Sleeping Woman~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40125) /*~Sleeping Woman~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40126) /*~ ZZZZzzzzzzz...~[xad10101]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40127) /*~ ZZZZzzzzz... *snort*~[xad10102]*/
 
 COPY ~%MOD_FOLDER%\generated\d\cre\xad116.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@40128) /*~Refugee~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@40129) /*~Refugee~*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40130) /*~Please, help us.~[xad10102]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40131) /*~We have nowhere else to go.~[xad10103]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@40132) /*~A pox on the crusade!~[xad10104]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40130) /*~Please, help us.~[xad10105]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40131) /*~We have nowhere else to go.~[xad10106]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@40132) /*~A pox on the crusade!~[xad10107]*/
 
 COPY ~%MOD_FOLDER%\generated\d\cre\xad117.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40133) /*~Commoner~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40134) /*~Commoner~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@40133) /*~Refugee~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40134) /*~Refugee~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40135) /*~Please, help us.~[xad10105]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40136) /*~We have nowhere else to go.~[xad10106]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@40137) /*~A pox on the crusade!~[xad10107]*/
 
 COPY ~%MOD_FOLDER%\generated\d\cre\xad118.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40135) /*~Refugee~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40136) /*~Refugee~*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40137) /*~I'm so tired.~[xad10108]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40138) /*~I've lost everything.~[xad10109]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@40139) /*~Can the Grand Dukes help us?~[xad10110]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@40138) /*~Commoner~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40139) /*~Commoner~*/
 
 COPY ~%MOD_FOLDER%\generated\d\cre\xad119.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40140) /*~Flaming Fist Enforcer~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40141) /*~Flaming Fist Enforcer~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@40142) /*~Show them our steel!~[xad10111]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40143) /*~Order is what matters.~[xad10112]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40144) /*~For Baldur's Gate.~[xad10113]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@40140) /*~Refugee~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40141) /*~Refugee~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40142) /*~I'm so tired.~[xad10111]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40143) /*~I've lost everything.~[xad10112]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@40144) /*~Can the Grand Dukes help us?~[xad10113]*/
 
-COPY ~%MOD_FOLDER%\generated\d\cre\xad121.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\cre\xad120.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@40145) /*~Flaming Fist Enforcer~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@40146) /*~Flaming Fist Enforcer~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@40147) /*~Punish the lawbreakers!~[xad10004]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40148) /*~We're more than mercenaries.~[xad10005]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40149) /*~War is almost here.~[xad10006]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@40147) /*~Show them our steel!~[xad10114]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40148) /*~Order is what matters.~[xad10115]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40149) /*~For Baldur's Gate.~[xad10116]*/
 
-COPY ~%MOD_FOLDER%\generated\d\cre\xad126.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40150) /*~Refugee~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40151) /*~Refugee~*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40152) /*~I'm so tired.~[xad10108]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40153) /*~I've lost everything.~[xad10109]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@40154) /*~Can the Grand Dukes help us?~[xad10110]*/
+COPY ~%MOD_FOLDER%\generated\d\cre\xad122.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@40150) /*~Flaming Fist Enforcer~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40151) /*~Flaming Fist Enforcer~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@40152) /*~Punish the lawbreakers!~[xad10004]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40153) /*~We're more than mercenaries.~[xad10005]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40154) /*~War is almost here.~[xad10006]*/
 
-COPY ~%MOD_FOLDER%\generated\d\cre\xad129.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40155) /*~Sleeping Man~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40156) /*~Sleeping Man~*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40157) /*~ ZZZZzzzzzzz...~[xad10098]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40158) /*~ ZZZZzzzzz... *snort*~[xad10099]*/
+COPY ~%MOD_FOLDER%\generated\d\cre\xad127.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@40155) /*~Refugee~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40156) /*~Refugee~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40157) /*~I'm so tired.~[xad10111]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40158) /*~I've lost everything.~[xad10112]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@40159) /*~Can the Grand Dukes help us?~[xad10113]*/
 
-COPY ~%MOD_FOLDER%\generated\d\cre\xad133.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40159) /*~Refugee~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40160) /*~Refugee~*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40161) /*~I'm so tired.~[xad10108]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40162) /*~I've lost everything.~[xad10109]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@40163) /*~Can the Grand Dukes help us?~[xad10110]*/
+COPY ~%MOD_FOLDER%\generated\d\cre\xad130.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@40160) /*~Sleeping Man~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40161) /*~Sleeping Man~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40162) /*~ ZZZZzzzzzzz...~[xad10101]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40163) /*~ ZZZZzzzzz... *snort*~[xad10102]*/
 
 COPY ~%MOD_FOLDER%\generated\d\cre\xad134.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40164) /*~Thug~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40165) /*~Thug~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@40166) /*~I'll wipe your filthy lineage right out of the realms!~[xad10125]*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@40167) /*~You deserve no less than death... and no more.~[xad10126]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40168) /*~What can it be now?~[xad10127]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40169) /*~Let us speak and be done with this!~[xad10128]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@40164) /*~Refugee~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40165) /*~Refugee~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40166) /*~I'm so tired.~[xad10111]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40167) /*~I've lost everything.~[xad10112]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@40168) /*~Can the Grand Dukes help us?~[xad10113]*/
 
-COPY ~%MOD_FOLDER%\generated\d\cre\xad144.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40170) /*~Refugee~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40171) /*~Refugee~*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40172) /*~I'm so tired.~[xad10108]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40173) /*~I've lost everything.~[xad10109]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@40174) /*~Can the Grand Dukes help us?~[xad10110]*/
+COPY ~%MOD_FOLDER%\generated\d\cre\xad135.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@40169) /*~Thug~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40170) /*~Thug~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@40171) /*~I'll wipe your filthy lineage right out of the realms!~[xad10128]*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@40172) /*~You deserve no less than death... and no more.~[xad10129]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40173) /*~What can it be now?~[xad10130]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40174) /*~Let us speak and be done with this!~[xad10131]*/
 
-COPY ~%MOD_FOLDER%\generated\d\cre\xad147.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\cre\xad145.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@40175) /*~Refugee~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@40176) /*~Refugee~*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40177) /*~Please, help us.~[xad10102]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40178) /*~We have nowhere else to go.~[xad10103]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@40179) /*~A pox on the crusade!~[xad10104]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40177) /*~I'm so tired.~[xad10111]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40178) /*~I've lost everything.~[xad10112]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@40179) /*~Can the Grand Dukes help us?~[xad10113]*/
 
-COPY ~%MOD_FOLDER%\generated\d\cre\xad150.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40180) /*~Sailor~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40181) /*~Sailor~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@40182) /*~~[xad10135]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@40183) /*~~[xad10136]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40184) /*~The seas are sure rough this time o' year.~[xad10137]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40185) /*~Nothin' like some time ashore... all I needs is some grog an' a good lass on me lap.~[xad10138]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@40186) /*~I best not be gone long... 'fore me captain has me hide.~[xad10139]*/
+COPY ~%MOD_FOLDER%\generated\d\cre\xad148.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@40180) /*~Refugee~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40181) /*~Refugee~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40182) /*~Please, help us.~[xad10105]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40183) /*~We have nowhere else to go.~[xad10106]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@40184) /*~A pox on the crusade!~[xad10107]*/
 
 COPY ~%MOD_FOLDER%\generated\d\cre\xad151.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40187) /*~Sailor~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40188) /*~Sailor~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@40189) /*~~[xad10135]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@40190) /*~~[xad10136]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40191) /*~The seas are sure rough this time o' year.~[xad10137]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40192) /*~Nothin' like some time ashore... all I needs is some grog an' a good lass on me lap.~[xad10138]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@40193) /*~I best not be gone long... 'fore me captain has me hide.~[xad10139]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@40185) /*~Sailor~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40186) /*~Sailor~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@40187) /*~~[xad10138]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@40188) /*~~[xad10139]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40189) /*~The seas are sure rough this time o' year.~[xad10140]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40190) /*~Nothin' like some time ashore... all I needs is some grog an' a good lass on me lap.~[xad10141]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@40191) /*~I best not be gone long... 'fore me captain has me hide.~[xad10142]*/
 
-COPY ~%MOD_FOLDER%\generated\d\cre\xad153.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40194) /*~Sleeping Man~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40195) /*~Sleeping Man~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@40196) /*~~[xad10145]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@40197) /*~~[xad10146]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40198) /*~ ZZZZzzzzz... *snort*~[xad10099]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40199) /*~ ZZZZzzzzzz...~[xad10098]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@40200) /*~ ZZZZzzzzzzz...~[xad10098]*/
-	WRITE_LONG 440 RESOLVE_STR_REF(@40201) /*~~[xad10099]*/
+COPY ~%MOD_FOLDER%\generated\d\cre\xad152.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@40192) /*~Sailor~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40193) /*~Sailor~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@40194) /*~~[xad10138]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@40195) /*~~[xad10139]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40196) /*~The seas are sure rough this time o' year.~[xad10140]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40197) /*~Nothin' like some time ashore... all I needs is some grog an' a good lass on me lap.~[xad10141]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@40198) /*~I best not be gone long... 'fore me captain has me hide.~[xad10142]*/
 
 COPY ~%MOD_FOLDER%\generated\d\cre\xad154.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40202) /*~Rat~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40203) /*~Rat~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@40199) /*~Sleeping Man~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40200) /*~Sleeping Man~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@40201) /*~~[xad10148]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@40202) /*~~[xad10149]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@40203) /*~ ZZZZzzzzz... *snort*~[xad10102]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@40204) /*~ ZZZZzzzzzz...~[xad10101]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@40205) /*~ ZZZZzzzzzzz...~[xad10101]*/
+	WRITE_LONG 440 RESOLVE_STR_REF(@40206) /*~~[xad10102]*/
+
+COPY ~%MOD_FOLDER%\generated\d\cre\xad155.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@40207) /*~Rat~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40208) /*~Rat~*/
 
 
 //are files
@@ -333,14 +340,14 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~xad100.are~) BEGIN
 	PRINT ~Area already exists: xad100. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\d\are\xad100.are~ ~override~
-	WRITE_LONG 1048 RESOLVE_STR_REF(@40204) /*~Imoen lies still on the bed. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~*/
-	WRITE_LONG 1244 RESOLVE_STR_REF(@40205) /*~Imoen lies still on the floor. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~*/
-	WRITE_LONG 1440 RESOLVE_STR_REF(@40206) /*~Below you, the streets of Baldur's Gate are so packed it's difficult to make out individual figures.~*/
-	WRITE_LONG 1636 RESOLVE_STR_REF(@40207) /*~Even with the window closed, the dull roar of the crowded street outside is hard to ignore.~*/
-	WRITE_LONG 1832 RESOLVE_STR_REF(@40208) /*~This comfortable bed offers luxury you never found in Candlekeep.~*/
-	WRITE_LONG 4414 RESOLVE_STR_REF(@40209) /*~<CHARNAME>'s Equipment~*/
-	WRITE_LONG 4466 RESOLVE_STR_REF(@40210) /*~<CHARNAME>'s chamber~*/
-	WRITE_LONG 4518 RESOLVE_STR_REF(@40211) /*~Imoen's Equipment~*/
+	WRITE_LONG 1048 RESOLVE_STR_REF(@40209) /*~Imoen lies still on the bed. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~*/
+	WRITE_LONG 1244 RESOLVE_STR_REF(@40210) /*~Imoen lies still on the floor. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~*/
+	WRITE_LONG 1440 RESOLVE_STR_REF(@40211) /*~Below you, the streets of Baldur's Gate are so packed it's difficult to make out individual figures.~*/
+	WRITE_LONG 1636 RESOLVE_STR_REF(@40212) /*~Even with the window closed, the dull roar of the crowded street outside is hard to ignore.~*/
+	WRITE_LONG 1832 RESOLVE_STR_REF(@40213) /*~This comfortable bed offers luxury you never found in Candlekeep.~*/
+	WRITE_LONG 4414 RESOLVE_STR_REF(@40214) /*~<CHARNAME>'s Equipment~*/
+	WRITE_LONG 4466 RESOLVE_STR_REF(@40215) /*~<CHARNAME>'s chamber~*/
+	WRITE_LONG 4518 RESOLVE_STR_REF(@40216) /*~Imoen's Equipment~*/
 	WRITE_LONG 4038 %xad0%
 	WRITE_LONG 4042 %xad1%
 	WRITE_LONG 4050 %xad2%
@@ -349,18 +356,28 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~xad101.are~) BEGIN
 	PRINT ~Area already exists: xad101. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\d\are\xad101.are~ ~override~
-	WRITE_LONG 15812 RESOLVE_STR_REF(@40212) /*~The second floor is securely locked and guarded. No one is permitted upstairs. ~*/
-	WRITE_LONG 16204 RESOLVE_STR_REF(@40213) /*~There's no escape this way. The sewers are the only way out.~*/
-	WRITE_LONG 16400 RESOLVE_STR_REF(@40214) /*~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~*/
-	WRITE_LONG 16596 RESOLVE_STR_REF(@40215) /*~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~*/
-	WRITE_LONG 16792 RESOLVE_STR_REF(@40216) /*~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~*/
-	WRITE_LONG 16988 RESOLVE_STR_REF(@40217) /*~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~*/
-	WRITE_LONG 26275 RESOLVE_STR_REF(@40218) /*~Tiax's Cell~*/
-	WRITE_LONG 26327 RESOLVE_STR_REF(@40219) /*~Exit~*/
+	WRITE_LONG 15812 RESOLVE_STR_REF(@40217) /*~The second floor is securely locked and guarded. No one is permitted upstairs. ~*/
+	WRITE_LONG 16204 RESOLVE_STR_REF(@40218) /*~There's no escape this way. The sewers are the only way out.~*/
+	WRITE_LONG 16400 RESOLVE_STR_REF(@40219) /*~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~*/
+	WRITE_LONG 16596 RESOLVE_STR_REF(@40220) /*~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~*/
+	WRITE_LONG 16792 RESOLVE_STR_REF(@40221) /*~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~*/
+	WRITE_LONG 16988 RESOLVE_STR_REF(@40222) /*~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~*/
+	WRITE_LONG 26275 RESOLVE_STR_REF(@40223) /*~Tiax's Cell~*/
+	WRITE_LONG 26327 RESOLVE_STR_REF(@40224) /*~Exit~*/
 	WRITE_LONG 25907 %xad2%
 	WRITE_LONG 25911 %xad2%
 	WRITE_LONG 25915 %xad2%
 END
+
+//bmp files
+//===================
+COPY ~%MOD_FOLDER%\generated\d\bmp\xad100.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\bmp\xad111.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\bmp\xad112.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\bmp\xad113.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\bmp\xad114.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\bmp\xad115.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\bmp\xad116.bmp~ ~override~
 
 //wav files
 //===================
@@ -374,29 +391,26 @@ COPY ~%MOD_FOLDER%\generated\d\wav\xad10006.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10007.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10008.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10009.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10024.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10023.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10022.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10021.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10020.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10019.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10018.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10017.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10016.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10015.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10014.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10013.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10020.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10021.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10022.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10023.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10024.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10025.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10026.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10027.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10028.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10029.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10030.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10031.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10032.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10033.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10034.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10035.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10036.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10037.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10038.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10039.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10040.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10041.wav~ ~override~
@@ -419,16 +433,16 @@ COPY ~%MOD_FOLDER%\generated\d\wav\xad10057.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10058.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10059.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10060.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10061.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10062.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10063.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10064.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10065.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10066.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10067.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10068.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10069.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10070.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10071.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10072.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10073.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10074.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10075.wav~ ~override~
@@ -444,46 +458,40 @@ COPY ~%MOD_FOLDER%\generated\d\wav\xad10084.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10085.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10086.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10087.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10091.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10092.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10093.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10088.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10089.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10090.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10094.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10095.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10096.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10097.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10098.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10099.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10100.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10101.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10102.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10103.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10104.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10108.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10109.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10110.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10105.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10106.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10107.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10111.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10112.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10113.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10125.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10126.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10127.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10114.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10115.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10116.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10128.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10135.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10136.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10137.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10129.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10130.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10131.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10138.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10139.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10145.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10146.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10140.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10141.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10142.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10148.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10149.wav~ ~override~
 
 //baf files
 //===================
-
-//bmp files
-//===================
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad110.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad111.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad112.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad113.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad114.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad115.bmp~ ~override~
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\generated\d\d~
 //dlg files
@@ -492,9 +500,9 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\generated\d\d~
 //itm files
 //===================
 COPY ~%MOD_FOLDER%\generated\d\itm\xad100.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40220) /*~Plate Mail~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40221) /*~The Magma Bulwark +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@40222) /*~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+	WRITE_LONG 8 RESOLVE_STR_REF(@40225) /*~Plate Mail~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40226) /*~The Magma Bulwark +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@40227) /*~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
 
 STATISTICS:
 
@@ -503,7 +511,7 @@ Requires:
  12 Strength
 
 Weight: 50~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@40223) /*~Forged by the fire giant Varboti as a gift for a Cormyrian general who made peace with his clan, this red-and-black armor lends its wearer a molten aspect while providing protection against all but the most powerful blows. Due to its incredibly strong but thin material, it also weighs far less than ordinary plate mail.
+	WRITE_LONG 84 RESOLVE_STR_REF(@40228) /*~Forged by the fire giant Varboti as a gift for a Cormyrian general who made peace with his clan, this red-and-black armor lends its wearer a molten aspect while providing protection against all but the most powerful blows. Due to its incredibly strong but thin material, it also weighs far less than ordinary plate mail.
 
 STATISTICS:
 
@@ -513,14 +521,14 @@ Requires:
 
 Weight: 20~*/
 COPY ~%MOD_FOLDER%\generated\d\itm\xad101.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40224) /*~Ring~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40225) /*~Ring of Protection +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@40226) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+	WRITE_LONG 8 RESOLVE_STR_REF(@40229) /*~Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40230) /*~Ring of Protection +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@40231) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@40227) /*~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
+	WRITE_LONG 84 RESOLVE_STR_REF(@40232) /*~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
 
 STATISTICS:
 
@@ -531,9 +539,26 @@ Equipped abilities:
 Weight: 0~*/
 COPY ~%MOD_FOLDER%\generated\d\itm\xad102.itm~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\itm\xad104.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40228) /*~Corwin's Armor +2~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40229) /*~Corwin's Armor +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@40230) /*~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
+	WRITE_LONG 8 RESOLVE_STR_REF(@40233) /*~Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40234) /*~Ring of Protection +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@40235) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+
+STATISTICS:
+
+Weight: 0~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@40236) /*~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Saving Throws: +2
+
+Weight: 0~*/
+COPY ~%MOD_FOLDER%\generated\d\itm\xad106.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@40237) /*~Corwin's Armor +2~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40238) /*~Corwin's Armor +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@40239) /*~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
 
 STATISTICS:
 
@@ -546,7 +571,7 @@ Requires:
  5 Strength
 
 Weight: 7~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@40231) /*~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
+	WRITE_LONG 84 RESOLVE_STR_REF(@40240) /*~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
 
 STATISTICS:
 
@@ -559,10 +584,10 @@ Requires:
  5 Strength
 
 Weight: 7~*/
-COPY ~%MOD_FOLDER%\generated\d\itm\xad105.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40232) /*~Composite Longbow~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40233) /*~Corwin's Bow +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@40234) /*~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
+COPY ~%MOD_FOLDER%\generated\d\itm\xad107.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@40241) /*~Composite Longbow~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40242) /*~Corwin's Bow +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@40243) /*~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
 
 STATISTICS:
 
@@ -575,7 +600,7 @@ Requires:
  18 Strength
 
 Weight: 10~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@40235) /*~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+	WRITE_LONG 84 RESOLVE_STR_REF(@40244) /*~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
 
 Equipped abilities: 
 – Dexterity: +1
@@ -594,7 +619,7 @@ Requires:
  18 Strength
 
 Weight: 9~*/
-COPY ~%MOD_FOLDER%\generated\d\itm\xad109.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\itm\xad111.itm~ ~override~
 
 //wed files
 //===================
@@ -613,19 +638,27 @@ COPY ~%MOD_FOLDER%\generated\d\bam\xad102.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bam\xad101.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bam\xad100.bam~ ~override~
 
+//{ PVRZ
+	COPY ~%MOD_FOLDER%\generated\d\pvrz\xd10000.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\d\pvrz\xd10001.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\d\pvrz\xd10002.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\d\pvrz\xd10100.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\d\pvrz\xd10101.pvrz~ ~override~
+//}
 
 //bmp files.
 //=========================
+COPY ~%MOD_FOLDER%\generated\d\bmp\xad100.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad100ht.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad100lm.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad100sr.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad101ht.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad101lm.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad101sr.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad110.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad111.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad112.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad113.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad114.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad115.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\bmp\xad116.bmp~ ~override~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\generated\d\baf~

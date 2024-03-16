@@ -7,9 +7,12 @@ $testDir = "F:\Baldur's Gate EE\00783\"
 $folders = @(
 'assistant',
 'bg1',
-'sod',
 'bg2',
+'generated/a',
+'generated/c',
+'generated/d',
 'rbg',
+'sod',
 'tra'
 )
 

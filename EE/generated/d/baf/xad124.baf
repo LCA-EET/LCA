@@ -6,40 +6,241 @@ THEN
 END
 
 IF
-	Heard([ANYONE],111)
+	Detect(Myself)
+	OR(2)
+		HaveSpell(CLERIC_INSECT_PLAGUE)  // SPPR517.SPL (Insect Plague)
+		HaveSpell(CLERIC_CALL_LIGHTNING)  // SPPR302.SPL (Call Lightning)
+	!See(NearestEnemyOf(Myself))
+	False()
 THEN
 	RESPONSE #100
-		MoveToObject(NearestEnemyOf(Myself))
+		NoAction()
 END
 
 IF
-	AttackedBy([GOODCUTOFF],DEFAULT)
-	!Allegiance(Myself,ENEMY)
+	HaveSpell(CLERIC_INSECT_PLAGUE)  // SPPR517.SPL (Insect Plague)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
 THEN
 	RESPONSE #100
-		Enemy()
+		Spell(LastSeenBy,CLERIC_INSECT_PLAGUE)  // SPPR517.SPL (Insect Plague)
+END
+
+IF
+	HaveSpell(CLERIC_CALL_LIGHTNING)  // SPPR302.SPL (Call Lightning)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy,CLERIC_CALL_LIGHTNING)  // SPPR302.SPL (Call Lightning)
+END
+
+IF
+	Detect(Myself)
+	OR(2)
+		HaveSpell(CLERIC_GLYPH_OF_WARDING)  // SPPR304.SPL (Glyph of Warding)
+		HaveSpell(CLERIC_ENTANGLE)  // SPPR105.SPL (Entangle)
+	OR(3)
+		!See(FarthestEnemyOf(Myself))
+		!TriggerOverride(FarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
+		TriggerOverride(FarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),20))
+	OR(3)
+		!See(SecondFarthestEnemyOf(Myself))
+		!TriggerOverride(SecondFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
+		TriggerOverride(SecondFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),20))
+	OR(3)
+		!See(ThirdFarthestEnemyOf(Myself))
+		!TriggerOverride(ThirdFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
+		TriggerOverride(ThirdFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),20))
+	OR(3)
+		!See(FourthFarthestEnemyOf(Myself))
+		!TriggerOverride(FourthFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
+		TriggerOverride(FourthFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),20))
+	OR(3)
+		!See(FifthFarthestEnemyOf(Myself))
+		!TriggerOverride(FifthFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
+		TriggerOverride(FifthFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),20))
+	OR(3)
+		!See(SixthFarthestEnemyOf(Myself))
+		!TriggerOverride(SixthFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
+		TriggerOverride(SixthFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),20))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	HaveSpell(CLERIC_GLYPH_OF_WARDING)  // SPPR304.SPL (Glyph of Warding)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	TriggerOverride(LastSeenBy,Range(NearestAllyOf(Myself),15))
+	!TriggerOverride(LastSeenBy,Range(NearestEnemyOf(Myself),20))
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy,CLERIC_GLYPH_OF_WARDING)  // SPPR304.SPL (Glyph of Warding)
+END
+
+IF
+	HaveSpell(CLERIC_ENTANGLE)  // SPPR105.SPL (Entangle)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	TriggerOverride(LastSeenBy,Range(NearestAllyOf(Myself),15))
+	!TriggerOverride(LastSeenBy,Range(NearestEnemyOf(Myself),20))
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy,CLERIC_ENTANGLE)  // SPPR105.SPL (Entangle)
+	RESPONSE #50
+		Continue()
 END
 
 IF
 	See(NearestEnemyOf(Myself))
-	InWeaponRange(LastSeenBy(Myself))
+	HaveSpell(CLERIC_CALL_WOODLAND_BEINGS)  // SPPR410.SPL (Call Woodland Beings)
 THEN
 	RESPONSE #100
+		Spell(Myself,CLERIC_CALL_WOODLAND_BEINGS)  // SPPR410.SPL (Call Woodland Beings)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_ANIMAL_SUMMONING_2)  // SPPR501.SPL (Animal Summoning II)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_ANIMAL_SUMMONING_2)  // SPPR501.SPL (Animal Summoning II)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_ANIMAL_SUMMONING_1)  // SPPR402.SPL (Animal Summoning I)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_ANIMAL_SUMMONING_1)  // SPPR402.SPL (Animal Summoning I)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_ANIMATE_DEAD)  // SPPR301.SPL (Animate Dead)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_ANIMATE_DEAD)  // SPPR301.SPL (Animate Dead)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	Detect(Myself)
+	OR(4)
+		HaveSpell(CLERIC_RIGID_THINKING)  // SPPR311.SPL (Rigid Thinking)
+		HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Hold Person)
+		HaveSpell(CLERIC_CHARM_PERSON)  // SPPR204.SPL (Charm Person or Mammal)
+		HaveSpell(CLERIC_COMMAND)  // SPPR102.SPL (Command)
+	OR(2)
+		!See(NearestEnemyOf(Myself))
+		StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+	OR(2)
+		!See(SecondNearestEnemyOf(Myself))
+		StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+	OR(2)
+		!See(ThirdNearestEnemyOf(Myself))
+		StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	HaveSpell(CLERIC_RIGID_THINKING)  // SPPR311.SPL (Rigid Thinking)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy,CLERIC_RIGID_THINKING)  // SPPR311.SPL (Rigid Thinking)
+END
+
+IF
+	HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Hold Person)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy,CLERIC_HOLD_PERSON)  // SPPR208.SPL (Hold Person)
+END
+
+IF
+	HaveSpell(CLERIC_CHARM_PERSON)  // SPPR204.SPL (Charm Person or Mammal)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy,CLERIC_CHARM_PERSON)  // SPPR204.SPL (Charm Person or Mammal)
+END
+
+IF
+	HaveSpell(CLERIC_COMMAND)  // SPPR102.SPL (Command)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy,CLERIC_COMMAND)  // SPPR102.SPL (Command)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_BARKSKIN)  // SPPR202.SPL (Barkskin)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_BARKSKIN)  // SPPR202.SPL (Barkskin)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_SPIRITUAL_HAMMER)  // SPPR213.SPL (Spiritual Hammer)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_SPIRITUAL_HAMMER)  // SPPR213.SPL (Spiritual Hammer)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_FLAME_BLADE)  // SPPR206.SPL (Flame Blade)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_FLAME_BLADE)  // SPPR206.SPL (Flame Blade)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
 		AttackReevaluate(NearestEnemyOf(Myself),30)
-END
-
-IF
-	AttackedBy([ANYONE],DEFAULT)
-	InWeaponRange(LastAttackerOf(Myself))
-THEN
-	RESPONSE #100
-		Attack(LastAttackerOf(Myself))
-END
-
-IF
-	See(NearestEnemyOf(Myself))
-THEN
-	RESPONSE #100
-		MoveToObject(LastSeenBy(Myself))
 END
 

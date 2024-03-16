@@ -74,7 +74,7 @@ ACTION_IF (isEET = 1) THEN BEGIN
 	INCLUDE ~%MOD_FOLDER%/bg1/xabg1.tph~
 	INCLUDE ~%MOD_FOLDER%/sod/xasod.tph~
 	INCLUDE ~%MOD_FOLDER%/bg2/xabg2.tph~
-	INCLUDE ~%MOD_FOLDER%/rbg/xarbg.tph~
+	//INCLUDE ~%MOD_FOLDER%/rbg/xarbg.tph~
 END ELSE BEGIN
 	ACTION_IF(GAME_IS ~bg1~) THEN BEGIN
 		PRINT @803  // ~Baldur's Gate Enhanced Edition detected.~ 
@@ -87,7 +87,7 @@ END ELSE BEGIN
 	ACTION_IF(GAME_IS ~bg2ee~) THEN BEGIN
 		PRINT @805  // ~Baldur's Gate II Enhanced Edition detected.~ 
 		INCLUDE ~%MOD_FOLDER%/bg2/xabg2.tph~
-		INCLUDE ~%MOD_FOLDER%/rbg/xarbg.tph~
+		//INCLUDE ~%MOD_FOLDER%/rbg/xarbg.tph~
 	END
 END
 

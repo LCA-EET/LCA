@@ -1,310 +1,45 @@
 IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	Heard([ANYONE],111)
+THEN
+	RESPONSE #100
+		MoveToObject(NearestEnemyOf(Myself))
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
 	!Allegiance(Myself,ENEMY)
-	GlobalGT("bd_city_hostile","myarea",0)
-	Global("bd_city_hostile","GLOBAL",0)
 THEN
 	RESPONSE #100
 		Enemy()
-		Attack(Player1)
 END
 
 IF
-	!Allegiance(Myself,ENEMY)
-	Global("bd_city_hostile","GLOBAL",1)
-THEN
-	RESPONSE #100
-		Enemy()
-		Attack(Player1)
-END
-
-IF
-	!Allegiance(Myself,ENEMY)
-	Global("BD_CORWIN_ARRIVES","bd0103",0)  // Ducal Palace, Third Floor
-	AreaCheck("bd0103")  // Ducal Palace, Third Floor
-	See(Player1)
-	OR(3)
-		!Dead("bdgass1")  // Assassin
-		!Dead("bdgass2")  // Assassin
-		!Dead("bdgass3")  // Assassin
-THEN
-	RESPONSE #100
-		SetGlobal("BD_CORWIN_ARRIVES","bd0103",1)  // Ducal Palace, Third Floor
-		StartDialogueNoSet(Player1)
-END
-
-IF
-	!Allegiance(Myself,ENEMY)
-	!See(NearestEnemyOf(Myself))
-	AreaCheck("bd0103")  // Ducal Palace, Third Floor
-	!Range(Player1,15)
-	OR(3)
-		!Dead("bdgass1")  // Assassin
-		!Dead("bdgass2")  // Assassin
-		!Dead("bdgass3")  // Assassin
-THEN
-	RESPONSE #100
-		MoveToObject(Player1)
-END
-
-IF
-	!Allegiance(Myself,ENEMY)
 	See(NearestEnemyOf(Myself))
-	AreaCheck("bd0103")  // Ducal Palace, Third Floor
+	InWeaponRange(LastSeenBy(Myself))
 THEN
 	RESPONSE #100
-		EquipRanged()
-		AttackReevaluate(LastSeenBy(Myself),90)
+		AttackReevaluate(NearestEnemyOf(Myself),30)
 END
 
 IF
-	!Allegiance(Myself,ENEMY)
-	NearLocation(Myself,724,544,2)
-	Global("bd_001_plot","bd0103",6)  // Ducal Palace, Third Floor
-	AreaCheck("bd0103")  // Ducal Palace, Third Floor
-	Detect([PC])
-	Range([PC],15)
+	AttackedBy([ANYONE],DEFAULT)
+	InWeaponRange(LastAttackerOf(Myself))
 THEN
 	RESPONSE #100
-		FaceObject([PC])
-		SmallWait(2)
-		StartDialogueNoSet([PC])
+		Attack(LastAttackerOf(Myself))
 END
 
 IF
-	!Allegiance(Myself,ENEMY)
-	CombatCounter(0)
-	NumberOfTimesTalkedTo(0)
-	AreaCheck("bd0100")  // Ducal Palace, Second Floor
-	Dead("Assassin1")
-	Dead("Assassin2")
-	Dead("Assassin3")
-	See([PC])
+	See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		Dialogue([PC])
-END
-
-IF
-	!Allegiance(Myself,ENEMY)
-	NumberOfTimesTalkedTo(0)
-	OR(4)
-		AreaCheck("bd0020")  // Sorcerous/Elf Song City Exterior
-		AreaCheck("bd0030")  // Flaming Fist City Exterior
-		AreaCheck("bd0040")  // Three Kegs City Exterior
-		AreaCheck("bd0050")  // Iron Throne City Exterior
-	Detect([PC])
-	Range([PC],12)
-	Delay(6)
-THEN
-	RESPONSE #100
-		FaceObject([PC])
-		SmallWait(3)
-		StartDialogueNoSet([PC])
-END
-
-IF
-	!Allegiance(Myself,ENEMY)
-	NumberOfTimesTalkedTo(0)
-	Global("bd_kegs_entrance","bd0106",0)  // Three Old Kegs, First Floor
-	AreaCheck("bd0106")  // Three Old Kegs, First Floor
-THEN
-	RESPONSE #100
-		SmallWait(5)
-		FaceObject([PC])
-		SmallWait(2)
-		SetGlobal("bd_kegs_entrance","bd0106",1)  // Three Old Kegs, First Floor
-		StartDialogueNoSet(Player1)
-END
-
-IF
-	!Allegiance(Myself,ENEMY)
-	AreaCheck("bd0106")  // Three Old Kegs, First Floor
-	CombatCounter(0)
-	!NearLocation(Myself,448,627,2)
-THEN
-	RESPONSE #100
-		DialogInterrupt(TRUE)
-		MoveToPoint([448.627])
-		Face(NW)
-END
-
-IF
-	!Allegiance(Myself,ENEMY)
-	NumberOfTimesTalkedTo(0)
-	Global("bd_elfsong_entrance","bd0109",0)  // Elfsong Tavern, First Floor
-	AreaCheck("bd0109")  // Elfsong Tavern, First Floor
-THEN
-	RESPONSE #100
-		SmallWait(5)
-		FaceObject([PC])
-		SmallWait(2)
-		SetGlobal("bd_elfsong_entrance","bd0109",1)  // Elfsong Tavern, First Floor
-		StartDialogueNoSet(Player1)
-END
-
-IF
-	!Allegiance(Myself,ENEMY)
-	AreaCheck("BD0109")  // Elfsong Tavern, First Floor
-	CombatCounter(0)
-	!NearLocation(Myself,1018,690,2)
-THEN
-	RESPONSE #100
-		DialogInterrupt(TRUE)
-		MoveToPoint([1018.690])
-		Face(NW)
-END
-
-IF
-	!Allegiance(Myself,ENEMY)
-	NumberOfTimesTalkedTo(0)
-	Global("bd_dungeon_entrance","bd0104",0)  // Flaming Fist HQ
-	GlobalLT("bd_plot","global",100)
-	AreaCheck("bd0104")  // Flaming Fist HQ
-THEN
-	RESPONSE #100
-		SmallWait(5)
-		FaceObject([PC])
-		SmallWait(2)
-		SetGlobal("bd_dungeon_entrance","bd0104",1)  // Flaming Fist HQ
-		StartDialogueNoSet(Player1)
-END
-
-IF
-	!Allegiance(Myself,ENEMY)
-	NumberOfTimesTalkedTo(0)
-	Global("bd_throne_entrance","bd0111",0)  // Iron Throne Floor, First Floor
-	AreaCheck("bd0111")  // Iron Throne Floor, First Floor
-THEN
-	RESPONSE #100
-		SmallWait(5)
-		FaceObject([PC])
-		SmallWait(2)
-		SetGlobal("bd_throne_entrance","bd0111",1)  // Iron Throne Floor, First Floor
-		StartDialogueNoSet(Player1)
-END
-
-IF
-	!Allegiance(Myself,ENEMY)
-	AreaCheck("BD0111")  // Iron Throne Floor, First Floor
-	CombatCounter(0)
-	!NearLocation(Myself,1000,891,2)
-THEN
-	RESPONSE #100
-		DialogInterrupt(TRUE)
-		MoveToPoint([1000.891])
-		Face(NNW)
-END
-
-IF
-	!Allegiance(Myself,ENEMY)
-	NumberOfTimesTalkedTo(0)
-	Global("bd_sundries_entrance","bd0121",0)  // Sorcerous Sundries, First Floor
-	AreaCheck("bd0121")  // Sorcerous Sundries, First Floor
-THEN
-	RESPONSE #100
-		SmallWait(5)
-		FaceObject([PC])
-		SmallWait(2)
-		SetGlobal("bd_sundries_entrance","bd0121",1)  // Sorcerous Sundries, First Floor
-		StartDialogueNoSet(Player1)
-END
-
-IF
-	!Allegiance(Myself,ENEMY)
-	AreaCheck("BD0121")  // Sorcerous Sundries, First Floor
-	CombatCounter(0)
-	!NearLocation(Myself,681,787,2)
-THEN
-	RESPONSE #100
-		DialogInterrupt(TRUE)
-		MoveToPoint([681.787])
-		Face(N)
-END
-
-IF
-	!Allegiance(Myself,ENEMY)
-	AreaCheck("bd0101")  // Ducal Palace, Leaving BG
-	Global("bd_retreat","locals",1)
-	Global("bd_no_retreat","locals",0)
-THEN
-	RESPONSE #100
-		MoveToSavedLocationn("bd_default_loc","LOCALS")
-		SetGlobal("bd_retreat","locals",0)
-END
-
-IF
-	!Allegiance(Myself,ENEMY)
-	OR(4)
-		AreaCheck("BD0020")  // Sorcerous/Elf Song City Exterior
-		AreaCheck("BD0030")  // Flaming Fist City Exterior
-		AreaCheck("BD0040")  // Three Kegs City Exterior
-		AreaCheck("BD0050")  // Iron Throne City Exterior
-	Global("bd_visited_three_areas","GLOBAL",3)
-	GlobalLT("bd_visited_three_npcs","GLOBAL",3)
-	Range([PC],7)
-	See([PC])
-THEN
-	RESPONSE #100
-		SmallWait(4)
-		StartDialogueNoSet([PC])
-END
-
-IF
-	!Allegiance(Myself,ENEMY)
-	Global("bd_visited_three_npcs","global",3)
-	OR(4)
-		AreaCheck("BD0020")  // Sorcerous/Elf Song City Exterior
-		AreaCheck("BD0030")  // Flaming Fist City Exterior
-		AreaCheck("BD0040")  // Three Kegs City Exterior
-		AreaCheck("BD0050")  // Iron Throne City Exterior
-	Range([PC],7)
-	See([PC])
-THEN
-	RESPONSE #100
-		SmallWait(4)
-		StartDialogueNoSet([PC])
-END
-
-IF
-	Global("bd_ai_controls","locals",0)
-	!AreaCheck("bd6000")  // Abandoned Sewers & Caverns
-	!AreaCheck("bd0100")  // Ducal Palace, Second Floor
-	!AreaCheck("bd0103")  // Ducal Palace, Third Floor
-THEN
-	RESPONSE #100
-		SetGlobal("bd_ai_controls","locals",1)
-		SetGlobal("bd_no_assist","locals",2)
-		SetGlobal("bd_no_aggro","locals",2)
-		SetGlobal("bd_no_search","locals",1)
-		ChangeSpecifics(Myself,ALLIES)
-END
-
-IF
-	!Allegiance(Myself,ENEMY)
-	!AreaCheck("bd6000")  // Abandoned Sewers & Caverns
-	!AreaCheck("bd0100")  // Ducal Palace, Second Floor
-	!AreaCheck("bd0103")  // Ducal Palace, Third Floor
-	See([ENEMY])
-	InMyArea(Player1)
-THEN
-	RESPONSE #100
-		DialogInterrupt(FALSE)
-		AttackReevaluate(LastSeenBy(Myself),30)
-END
-
-IF
-	!Allegiance(Myself,ENEMY)
-	!Range(Player1,7)
-	InMyArea(Player1)
-	OR(5)
-		AreaCheck("BD0010")  // Ducal Palace City Exterior
-		AreaCheck("BD0020")  // Sorcerous/Elf Song City Exterior
-		AreaCheck("BD0030")  // Flaming Fist City Exterior
-		AreaCheck("BD0040")  // Three Kegs City Exterior
-		AreaCheck("BD0050")  // Iron Throne City Exterior
-THEN
-	RESPONSE #100
-		DialogInterrupt(TRUE)
-		FollowObjectFormation(Player1,2,6)
+		MoveToObject(LastSeenBy(Myself))
 END
 

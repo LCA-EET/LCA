@@ -7,9 +7,9 @@ $testDir = "F:\Baldur's Gate EE\00806\"
 $folders = @(
 'assistant',
 'bg1',
+'generated\e',
 'sod',
 'tra',
-'generated\e'
 )
 
 Remove-Item -LiteralPath $modPath -Force -Recurse

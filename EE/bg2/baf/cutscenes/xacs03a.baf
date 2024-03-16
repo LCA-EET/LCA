@@ -22,7 +22,7 @@ THEN
 		ApplySpellRES("xahide", Player4)
 		ApplySpellRES("xahide", Player5)
 		ApplySpellRES("xahide", Player6)
-		CreateCreature("xad107",[1044.688],2)
+		CreateCreature("xad108",[1044.688],2)
 		 
 		StartCutScene("XAcs03b")
 END

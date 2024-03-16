@@ -15,7 +15,7 @@ THEN
 		ActionOverride(Player4,LeaveAreaLUA("xad100","",[2839.875],SW))  
 		ActionOverride(Player5,LeaveAreaLUA("xad100","",[2830.801],SW))  
 		ActionOverride(Player6,LeaveAreaLUA("xad100","",[2871.833],SW))  
-		CreateCreature("xad107",[809.594],SW)
+		CreateCreature("xad108",[809.594],SW)
 		CreateCreature("xaskcut2",[571.668],W)
 		StartCutScene("XAcs05b")
 END

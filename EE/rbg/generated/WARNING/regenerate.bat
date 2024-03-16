@@ -1,2 +1,0 @@
-F:\repo\AssetConverter\AssetConverter\bin\Debug\net8.0\AssetConverter.exe "F:\BGModding - LCA\Game\00783\LCA\EE\rbg\generated\aparams.in"
-F:\repo\AssetConverter\AssetConverter\bin\Debug\net8.0\AssetConverter.exe "F:\BGModding - LCA\Game\00783\LCA\EE\rbg\generated\bparams.in"

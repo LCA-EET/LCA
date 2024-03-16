@@ -1,155 +1,42 @@
 IF
-	NumberOfTimesTalkedTo(0)
-	See([PC])
+	Global("BD_plot","global",54)
+	AreaCheck("bd0103")  // Ducal Palace, Third Floor
+	Global("BD_MDD007","bd0103",1)  // Ducal Palace, Third Floor
+	Range(Player1,10)
+	Detect(Player1)
+	!See("bdireni")  // Hooded Man
 THEN
 	RESPONSE #100
-		MoveToPoint([586.723])
-		Face(NE)
+		FaceObject(Player1)
 		SmallWait(2)
-		StartDialogueNoSet([PC])
+		StartDialogueNoSet(Player1)
 END
 
 IF
-	OpenState("DOOR03",TRUE)
-	OR(6)
-		NearLocation(Player1,498,530,40)
-		NearLocation(Player2,498,530,40)
-		NearLocation(Player3,498,530,40)
-		NearLocation(Player4,498,530,40)
-		NearLocation(Player5,498,530,40)
-		NearLocation(Player6,498,530,40)
-	Delay(5)
-	Global("BD_Tiax_OT","bd0104",0)  // Flaming Fist HQ
-	GlobalLT("BD_TIAX_FAIL","LOCALS",2)
+	Global("bd_plot","global",665)
+	AreaCheck("bd6200")  // Sewers Exit
+	Global("bd_immy_move","locals",0)
 THEN
-	RESPONSE #25
-		DisplayStringHead(Myself,39837)  // FIRST, Tiax will kill all those who dare look down upon him.
-		SetGlobal("BD_Tiax_OT","bd0104",1)  // Flaming Fist HQ
+	RESPONSE #100
+		SetGlobal("bd_immy_move","locals",1)
+		MoveToPointNoInterrupt([1560.1085])
 END
 
 IF
-	OpenState("DOOR03",TRUE)
-	OR(6)
-		NearLocation(Player1,498,530,40)
-		NearLocation(Player2,498,530,40)
-		NearLocation(Player3,498,530,40)
-		NearLocation(Player4,498,530,40)
-		NearLocation(Player5,498,530,40)
-		NearLocation(Player6,498,530,40)
-	Delay(5)
-	Global("BD_Tiax_OT","bd0104",1)  // Flaming Fist HQ
-	GlobalLT("BD_TIAX_FAIL","LOCALS",2)
+	Global("bd_plot","global",665)
+	AreaCheck("bd6200")  // Sewers Exit
+	OR(4)
+		Range("MINSC",20)  // Minsc
+		Range("DYNAHEIR",20)  // Dynaheir
+		Range("KHALID",20)  // Khalid
+		Range("JAHEIRA",20)  // Jaheira
+	See(Player1)
+	Range(Player1,15)
 THEN
-	RESPONSE #25
-		DisplayStringHead(Myself,39838)  // THEN he will have all who question slaughtering the tall put to the death.
-		SetGlobal("BD_Tiax_OT","bd0104",2)  // Flaming Fist HQ
-END
-
-IF
-	OpenState("DOOR03",TRUE)
-	OR(6)
-		NearLocation(Player1,498,530,40)
-		NearLocation(Player2,498,530,40)
-		NearLocation(Player3,498,530,40)
-		NearLocation(Player4,498,530,40)
-		NearLocation(Player5,498,530,40)
-		NearLocation(Player6,498,530,40)
-	Delay(5)
-	Global("BD_Tiax_OT","bd0104",2)  // Flaming Fist HQ
-	GlobalLT("BD_TIAX_FAIL","LOCALS",2)
-THEN
-	RESPONSE #25
-		DisplayStringHead(Myself,39839)  // The families of those who question him must also be taught a lesson. Their firstborns will be sacrificed to Cyric! 
-		SetGlobal("BD_Tiax_OT","bd0104",3)  // Flaming Fist HQ
-END
-
-IF
-	OpenState("DOOR03",TRUE)
-	OR(6)
-		NearLocation(Player1,498,530,40)
-		NearLocation(Player2,498,530,40)
-		NearLocation(Player3,498,530,40)
-		NearLocation(Player4,498,530,40)
-		NearLocation(Player5,498,530,40)
-		NearLocation(Player6,498,530,40)
-	Delay(5)
-	Global("BD_Tiax_OT","bd0104",3)  // Flaming Fist HQ
-	GlobalLT("BD_TIAX_FAIL","LOCALS",2)
-THEN
-	RESPONSE #25
-		DisplayStringHead(Myself,39840)  // Whoever's left will happily accept Tiax's rule! Or ELSE... 
-		SetGlobal("BD_Tiax_OT","bd0104",0)  // Flaming Fist HQ
-END
-
-IF
-	OpenState("DOOR03",FALSE)
-	OR(6)
-		NearLocation(Player1,498,530,20)
-		NearLocation(Player2,498,530,20)
-		NearLocation(Player3,498,530,20)
-		NearLocation(Player4,498,530,20)
-		NearLocation(Player5,498,530,20)
-		NearLocation(Player6,498,530,20)
-	Delay(5)
-	Global("BD_Tiax_OT","bd0104",0)  // Flaming Fist HQ
-	GlobalLT("BD_TIAX_FAIL","LOCALS",2)
-THEN
-	RESPONSE #25
-		DisplayStringHead(Myself,39837)  // FIRST, Tiax will kill all those who dare look down upon him.
-		SetGlobal("BD_Tiax_OT","bd0104",1)  // Flaming Fist HQ
-END
-
-IF
-	OpenState("DOOR03",FALSE)
-	OR(6)
-		NearLocation(Player1,498,530,20)
-		NearLocation(Player2,498,530,20)
-		NearLocation(Player3,498,530,20)
-		NearLocation(Player4,498,530,20)
-		NearLocation(Player5,498,530,20)
-		NearLocation(Player6,498,530,20)
-	Delay(5)
-	Global("BD_Tiax_OT","bd0104",1)  // Flaming Fist HQ
-	GlobalLT("BD_TIAX_FAIL","LOCALS",2)
-THEN
-	RESPONSE #25
-		DisplayStringHead(Myself,39838)  // THEN he will have all who question slaughtering the tall put to the death.
-		SetGlobal("BD_Tiax_OT","bd0104",2)  // Flaming Fist HQ
-END
-
-IF
-	OpenState("DOOR03",FALSE)
-	OR(6)
-		NearLocation(Player1,498,530,20)
-		NearLocation(Player2,498,530,20)
-		NearLocation(Player3,498,530,20)
-		NearLocation(Player4,498,530,20)
-		NearLocation(Player5,498,530,20)
-		NearLocation(Player6,498,530,20)
-	Delay(5)
-	Global("BD_Tiax_OT","bd0104",2)  // Flaming Fist HQ
-	GlobalLT("BD_TIAX_FAIL","LOCALS",2)
-THEN
-	RESPONSE #25
-		DisplayStringHead(Myself,39839)  // The families of those who question him must also be taught a lesson. Their firstborns will be sacrificed to Cyric! 
-		SetGlobal("BD_Tiax_OT","bd0104",3)  // Flaming Fist HQ
-END
-
-IF
-	OpenState("DOOR03",FALSE)
-	OR(6)
-		NearLocation(Player1,498,530,20)
-		NearLocation(Player2,498,530,20)
-		NearLocation(Player3,498,530,20)
-		NearLocation(Player4,498,530,20)
-		NearLocation(Player5,498,530,20)
-		NearLocation(Player6,498,530,20)
-	Delay(5)
-	Global("BD_Tiax_OT","bd0104",3)  // Flaming Fist HQ
-	GlobalLT("BD_TIAX_FAIL","LOCALS",2)
-THEN
-	RESPONSE #25
-		DisplayStringHead(Myself,39840)  // Whoever's left will happily accept Tiax's rule! Or ELSE... 
-		SetGlobal("BD_Tiax_OT","bd0104",0)  // Flaming Fist HQ
+	RESPONSE #100
+		FaceObject(Player1)
+		ApplySpellRES("bdcutspy",Myself)  // No such index
+		SmallWait(2)
+		StartDialogueNoSet(Player1)
 END
 
