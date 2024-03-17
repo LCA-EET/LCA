@@ -1,5 +1,4 @@
 IF
-	Global("XA_ReturnToBG", "GLOBAL", 1)
 	GlobalLT("XA_CreateElfsong", "GLOBAL", 1)
 	GlobalLT("XA_SavedElfsong", "GLOBAL", 1)
 THEN
@@ -16,7 +15,6 @@ THEN
 END
 
 IF 
-	Global("XA_ReturnToBG", "GLOBAL", 1)
 	InMyArea("XA800M")
 	InMyArea("XA800W")
 	GlobalLT("XA_ElfsongTimerSet", "MYAREA", 1)
@@ -29,7 +27,6 @@ END
 
 IF 
 	InMyArea(Player1)
-	Global("XA_ReturnToBG", "GLOBAL", 1)
 	InMyArea("XA800M")
 	InMyArea("XA800W")
 	GlobalTimerExpired("XA_ElfsongTimer", "GLOBAL")
@@ -48,7 +45,6 @@ THEN
 END
 
 IF 
-	Global("XA_ReturnToBG", "GLOBAL", 1)
 	GlobalLT("XA_CreateNeomaNPC", "GLOBAL", 1)
 THEN
 	RESPONSE #100

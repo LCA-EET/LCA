@@ -391,7 +391,6 @@ INCLUDE ~%MOD_FOLDER%/rbg/generated/c/generated.tph~
 			END
 		//}
 	//}
-
 	
 	//{ South Baldur's Gate (Docks)
 		//{ S Baldur's Gate to C Baldur's Gate
@@ -600,17 +599,69 @@ END
 	WRITE_ASCII 0x2CC ~xakent~ #8
 	WRITE_ASCII 0x280 ~xakent~ #20
 	
+	COPY_EXISTING ~xaa405.cre~ ~override/xa800m.cre~ // mtowba
+	WRITE_ASCII 0x250 ~xalcnull~ #8
+	WRITE_ASCII 0x258 ~xalcnull~ #8
+	WRITE_ASCII 0x260 ~xalcnull~ #8
+	WRITE_ASCII 0x2CC ~xa800m~ #8
+	WRITE_ASCII 0x280 ~xa800m~ #20
+	
+	COPY_EXISTING ~xaa502.cre~ ~override/xa800w.cre~ // ftowba
+	WRITE_ASCII 0x250 ~xalcnull~ #8
+	WRITE_ASCII 0x258 ~xalcnull~ #8
+	WRITE_ASCII 0x260 ~xalcnull~ #8
+	WRITE_ASCII 0x2CC ~xa800w~ #8
+	WRITE_ASCII 0x280 ~xa800w~ #20
+	
+	COPY_EXISTING ~xac106.cre~ ~override/xabeno.cre~ // bdfamari
+	WRITE_ASCII 0x260 ~xabenof~ #8
+	WRITE_ASCII 0x2CC ~xabeno~ #8
+	WRITE_ASCII 0x280 ~xabeno~ #20
+	
+	COPY_EXISTING ~xalcspy.cre~ ~override/xabeno2.cre~ // Beno invisible
+	WRITE_ASCII 0x248 ~xabeno2~ #8
+	WRITE_ASCII 0x2CC ~xabeno2~ #8
+	WRITE_ASCII 0x280 ~xabeno2~ #20
+	
+	COPY_EXISTING ~xalcspy.cre~ ~override/xaglint2.cre~ // Glint invisible
+	SAY NAME1 @4074 /* Glint */
+	SAY NAME2 @4074
+	WRITE_ASCII 0x34 ~xac100~ #8
+	WRITE_ASCII 0x248 ~xaglint~ #8
+	WRITE_ASCII 0x280 ~xaglint~ #20
+	
+	COPY_EXISTING ~xaa407.cre~ ~override/xabrevlk.cre~ // Brevlik
+	WRITE_ASCII 0x248 ~xabrevlk~ #8
+	WRITE_ASCII 0x2CC ~xabrevlk~ #8
+	WRITE_ASCII 0x280 ~xabrevlk~ #20
+	
+	COPY_EXISTING ~chicke.cre~ ~override/xachick.cre~ // Chicken
+	WRITE_ASCII 0x250 ~xachick~ #8
+	WRITE_ASCII 0x2CC ~xachick~ #8
+	
+	COPY_EXISTING ~xaa1384.cre~ ~override/xacurato.cre~ // Curator Magda
+	SAY NAME1 @4048 /* Curator Magda */
+	SAY NAME2 @4048
+	WRITE_ASCII 0x248 ~xacurato~ #8
+	WRITE_ASCII 0x280 ~xacurato~ #20
+	WRITE_ASCII 0x2CC ~xacurato~ #8
+	
+	COPY_EXISTING ~xaa672.cre~ ~override/xavirgil.cre~ // Virgil
+	SAY NAME1 @4082
+	SAY NAME2 @4082
+	WRITE_ASCII 0x268 ~xavirgil~ #8
+	WRITE_ASCII 0x280 ~xavirgil~ #20
+	WRITE_ASCII 0x2CC ~xavirgil~ #8
+	
+	COPY_EXISTING ~xaa1051.cre~ ~override/xamerlea.cre~ // Merchant's League Merchant
+	WRITE_ASCII 0x248 ~shout~ #8
+	WRITE_ASCII 0x250 ~runenemy~ #8
+	WRITE_ASCII 0x258 ~wtrunsgt~ #8
+	WRITE_ASCII 0x2CC ~xamerlea~ #8
+	
 	COPY ~%MOD_FOLDER%/rbg/cre/xachwrai.cre~ ~override~
 	SAY NAME1 @4145
 	SAY NAME2 @4145
-	
-	
-	
-	COPY ~%MOD_FOLDER%/rbg/cre/xacurato.cre~ ~override~
-	SAY NAME1 @4048
-	SAY NAME2 @4048
-	
-	COPY ~%MOD_FOLDER%/rbg/cre/xalcspy.cre~ ~override~
 	
 	COPY ~%MOD_FOLDER%/rbg/cre/xalyriel.cre~ ~override~
 	SAY NAME1 @4049
@@ -898,7 +949,7 @@ END
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4117)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4117)
 	//}
-
+	
 	//{ Ledger
 		COPY_EXISTING ~book71.itm~ ~override/xaledger.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4119)
@@ -930,6 +981,39 @@ END
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4126)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4126)
 	//}
+	
+	//{ Beno's Head
+		COPY_EXISTING ~misc9h.itm~ ~override/xabenohd.itm~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@4013)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@4013)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@4014)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4014)
+	//}
+	
+	//{ Soultaker Dagger (Beno)
+		COPY_EXISTING ~dagg10.itm~ ~override/xastdagb.itm~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@3158)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@3158)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@4015)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4015)
+	//}
+	
+	//{ Soultaker Dagger (Fake)
+		COPY_EXISTING ~dagg10.itm~ ~override/xastdagf.itm~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@3158)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@3158)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@4016)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4016)
+	//}
+	
+	//{ Rohma's Doll
+		COPY_EXISTING ~misc1g.itm~ ~override/xardoll.itm~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@4115)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@4115)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@4116)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4116)
+	//}
+	
 	
 	//{ Girdle of Bluntness
 		COPY ~%MOD_FOLDER%/rbg/itm/xabelt13.itm~ ~override~
@@ -998,41 +1082,11 @@ END
 		COPY ~%MOD_FOLDER%/rbg/bam/xaswordd.bam~ ~override~		
 	//}
 	
-	//{ Beno's Head
-		COPY_EXISTING ~misc9h.itm~ ~override/xabenohd.itm~
-		WRITE_LONG 0x08 RESOLVE_STR_REF(@4013)
-		WRITE_LONG 0x0C RESOLVE_STR_REF(@4013)
-		WRITE_LONG 0x50 RESOLVE_STR_REF(@4014)
-		WRITE_LONG 0x54 RESOLVE_STR_REF(@4014)
-	//}
 	
-	//{ Soultaker Dagger (Beno)
-		COPY_EXISTING ~dagg10.itm~ ~override/xastdagb.itm~
-		WRITE_LONG 0x08 RESOLVE_STR_REF(@3158)
-		WRITE_LONG 0x0C RESOLVE_STR_REF(@3158)
-		WRITE_LONG 0x50 RESOLVE_STR_REF(@4015)
-		WRITE_LONG 0x54 RESOLVE_STR_REF(@4015)
-	//}
 	
-	//{ Soultaker Dagger (Fake)
-		COPY_EXISTING ~dagg10.itm~ ~override/xastdagf.itm~
-		WRITE_LONG 0x08 RESOLVE_STR_REF(@3158)
-		WRITE_LONG 0x0C RESOLVE_STR_REF(@3158)
-		WRITE_LONG 0x50 RESOLVE_STR_REF(@4016)
-		WRITE_LONG 0x54 RESOLVE_STR_REF(@4016)
-	//}
-	
-	//{ Rohma's Doll
-		COPY ~%MOD_FOLDER%/rbg/itm/xardoll.itm~ ~override~
-		WRITE_LONG 0x08 RESOLVE_STR_REF(@4115)
-		WRITE_LONG 0x0C RESOLVE_STR_REF(@4115)
-		WRITE_LONG 0x50 RESOLVE_STR_REF(@4116)
-		WRITE_LONG 0x54 RESOLVE_STR_REF(@4116)
-	//}
 	
 	//{ Engagement Rings
 		//Refer to ringabilities.txt and ringbits.xlsx
-		
 		COPY ~%MOD_FOLDER%/rbg/itm/xaring99.itm~ ~override~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4017)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4017)
@@ -1361,9 +1415,7 @@ END
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4113)
 	//}
 	
-	//{ Narzugon's Blade
-		COPY ~%MOD_FOLDER%/rbg/itm/xasword2.itm~ ~override~
-	//}
+	
 
 //}
 
