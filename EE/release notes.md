@@ -37,11 +37,11 @@
 
 # v1.0.12c 2023-12-17
 * Golden Eggs can now be placed in Jewellery Bags.
-* Fixed a bug that prevented the "XA_ClearedKanaglym" variable from being set correctly. This variable is important, because it it one of the triggers used to start the Kanaglym dream sequence in ToB. Players can manually set this variable after the fact by opening the LCA Assistant, and choosing the following options:
+* Fixed a bug that prevented the "XA_LC_ClearedKanaglym" variable from being set correctly. This variable is important, because it it one of the triggers used to start the Kanaglym dream sequence in ToB. Players can manually set this variable after the fact by opening the LCA Assistant, and choosing the following options:
 - 9. Open debugger.
 - 1. Proceed.
 - 43. Adjust Variables.
-- 138. Set XA_ClearedKanaglym to 1.
+- 138. Set XA_LC_ClearedKanaglym to 1.
 - 58. Dismiss Debugger.
 * For players starting their game from BG2, an initial configuration option concerning Kanaglym has been added.
  

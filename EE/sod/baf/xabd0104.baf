@@ -1,4 +1,13 @@
 IF
+	Global("bd_player_exiled","global",1)
+	GlobalLT("XA_LC_PlayerExiled", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_PlayerExiled", "GLOBAL", 1)
+		Continue()
+END
+
+IF
 	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
 	Global("bd_jail_visitors","bd0104",1)  // Flaming Fist HQ
 	!Dead("CORWIN")  // Corwin

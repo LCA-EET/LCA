@@ -485,7 +485,7 @@ APPEND ~PLAYER1~
 		SAY @88 /* ~(Upon seeing the cell in which you were once imprisoned, you recall the dark circumstances that forced your departure from the city...)~ */
 
 		IF ~
-			Global("bd_player_exiled","global",1)
+			Global("XA_LC_PlayerExiled", "GLOBAL", 1)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_SoDAnxietyCell", "GLOBAL", 2)
@@ -493,7 +493,7 @@ APPEND ~PLAYER1~
 		GOTO XA_DarkMemories_Exile
 		
 		IF ~
-			Global("bd_player_exiled","global",0)
+			GlobalLT("XA_LC_PlayerExiled", "GLOBAL", 1)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_SoDAnxietyCell", "GLOBAL", 2)

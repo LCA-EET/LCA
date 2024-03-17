@@ -1,9 +1,9 @@
 IF
 	Dead("bdkherr")
-	GlobalLT("XA_ClearedKanaglym", "GLOBAL",1)
+	GlobalLT("XA_LC_ClearedKanaglym", "GLOBAL",1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_ClearedKanaglym", "GLOBAL",1)
+		SetGlobal("XA_LC_ClearedKanaglym", "GLOBAL",1)
 		Continue()
 END
 

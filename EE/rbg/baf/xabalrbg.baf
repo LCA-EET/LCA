@@ -111,7 +111,7 @@
 //{ Kanaglym Dream
 	IF
 		GlobalLT("XA_KanaDreamTimerSet", "GLOBAL",1)
-		Global("XA_ClearedKanaglym", "GLOBAL",1)
+		Global("XA_LC_ClearedKanaglym", "GLOBAL",1)
 		Global("XA_EnteredSaradush", "GLOBAL", 1)
 		Global("XA_IncubusDefeated", "GLOBAL", 1)
 	THEN
