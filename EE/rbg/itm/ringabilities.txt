@@ -1,0 +1,44 @@
+Disable Ring Abilities by Adjusting Probabilities to Zero
+
+Physical Resilience
+===========================
+WRITE_BYTE 0x84 0
+WRITE_BYTE 0xB4 0
+WRITE_BYTE 0xE4 0
+WRITE_BYTE 0x114 0
+WRITE_BYTE 0x144 0
+
+Vitality
+===========================
+WRITE_BYTE 0x444 0
+WRITE_BYTE 0x474 0
+WRITE_BYTE 0x4A4 0
+WRITE_BYTE 0x4D4 0
+WRITE_BYTE 0x504 0
+
+Mental Resistance
+===========================
+WRITE_BYTE 0x2C4 0
+WRITE_BYTE 0x2F4 0
+WRITE_BYTE 0x324 0
+WRITE_BYTE 0x354 0
+WRITE_BYTE 0x384 0
+WRITE_BYTE 0x3B4 0
+WRITE_BYTE 0x564 0
+
+Speed Bonus
+===========================
+WRITE_BYTE 0x3E4 0
+WRITE_BYTE 0x414 0
+
+Magic / Elemental Resistance
+===========================
+WRITE_BYTE 0x174 0
+WRITE_BYTE 0x1A4 0
+WRITE_BYTE 0x1D4 0
+WRITE_BYTE 0x204 0
+WRITE_BYTE 0x234 0
+WRITE_BYTE 0x264 0
+WRITE_BYTE 0x294 0
+WRITE_BYTE 0x594 0
+WRITE_BYTE 0x5C4 0
