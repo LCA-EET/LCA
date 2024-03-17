@@ -894,15 +894,13 @@ END
 //{ New Items
 
 	//{ Farseer
-		COPY ~%MOD_FOLDER%/rbg/itm/xafarsee.itm~ ~override~
-		WRITE_LONG 0x08 RESOLVE_STR_REF(@4118)
-		WRITE_LONG 0x0C RESOLVE_STR_REF(@4118)
+		COPY_EXISTING ~misc64.itm~ ~override/xafarsee.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4117)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4117)
 	//}
 
 	//{ Ledger
-		COPY ~%MOD_FOLDER%/rbg/itm/xaledger.itm~ ~override~
+		COPY_EXISTING ~book71.itm~ ~override/xaledger.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4119)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4119)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4120)
@@ -910,7 +908,7 @@ END
 	//}
 	
 	//{ Manifest 1
-		COPY ~%MOD_FOLDER%/rbg/itm/xamanfst.itm~ ~override~
+		COPY_EXISTING ~scrl3d.itm~ ~override/xamanfst.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4121)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4121)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4122)
@@ -918,7 +916,7 @@ END
 	//}
 	
 	//{ Manifest 2
-		COPY ~%MOD_FOLDER%/rbg/itm/xamanfs2.itm~ ~override~
+		COPY_EXISTING ~scrl3d.itm~ ~override/xamanfs2.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4123)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4123)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4124)
@@ -926,7 +924,7 @@ END
 	//}
 	
 	//{ Manifest 3
-		COPY ~%MOD_FOLDER%/rbg/itm/xamanfs3.itm~ ~override~
+		COPY_EXISTING ~scrl3d.itm~ ~override/xamanfs3.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4125)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4125)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4126)
@@ -1001,7 +999,7 @@ END
 	//}
 	
 	//{ Beno's Head
-		COPY ~%MOD_FOLDER%/rbg/itm/xabenohd.itm~ ~override~
+		COPY_EXISTING ~misc9h.itm~ ~override/xabenohd.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4013)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4013)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4014)
@@ -1009,7 +1007,7 @@ END
 	//}
 	
 	//{ Soultaker Dagger (Beno)
-		COPY ~%MOD_FOLDER%/rbg/itm/xastdagb.itm~ ~override~
+		COPY_EXISTING ~dagg10.itm~ ~override/xastdagb.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3158)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3158)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4015)
@@ -1017,7 +1015,7 @@ END
 	//}
 	
 	//{ Soultaker Dagger (Fake)
-		COPY ~%MOD_FOLDER%/rbg/itm/xastdagf.itm~ ~override~
+		COPY_EXISTING ~dagg10.itm~ ~override/xastdagf.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3158)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3158)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4016)
