@@ -813,7 +813,7 @@ END
 	WRITE_ASCII 0x258 ~~ #8		// Race Script
 	WRITE_ASCII 0x268 ~~ #8		// Default Script
 	
-	COPY_EXISTING ~xaffvali.cre~ ~override/xaffexec.cre~ // Flaming Fist Executioner
+	COPY_EXISTING ~xaffval1.cre~ ~override/xaffexec.cre~ // Flaming Fist Executioner
 	SAY NAME1 @4072
 	SAY NAME2 @4072
 	WRITE_ASCII 0x280 ~xaffexec~ #20  	// Script Name

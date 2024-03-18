@@ -490,17 +490,17 @@ END
 	SAY NAME1 @3058
 	SAY NAME2 @3058
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xaffvali.cre~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/cre/xaffval1.cre~ ~override~
 	SAY NAME1 					@3169 /*~Flaming Fist Valiant~*/
 	SAY NAME2 					@3169 /*~Flaming Fist Valiant~*/
 	WRITE_LONG 200 RESOLVE_STR_REF(@40152) /*~Punish the lawbreakers!~[xad10004]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@40153) /*~We're more than mercenaries.~[xad10005]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@40154) /*~War is almost here.~[xad10006]*/
 	
-	COPY_EXISTING ~xaffvali.cre~ ~override/xaffval2.cre~
+	COPY_EXISTING ~xaffval1.cre~ ~override/xaffval2.cre~
 	WRITE_ASCII 0x280 ~XAFFVAL2~ #20  	// Script Name
 	
-	COPY_EXISTING ~xaffvali.cre~ ~override/xaffval3.cre~
+	COPY_EXISTING ~xaffval1.cre~ ~override/xaffval3.cre~
 	WRITE_ASCII 0x280 ~XAFFVAL3~ #20  	// Script Name
 	
 	COPY_EXISTING ~golsto01.cre~ ~override/xagolsto.cre~
