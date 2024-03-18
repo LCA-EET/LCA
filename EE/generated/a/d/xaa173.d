@@ -1,7 +1,7 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\HALBAZ.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\ORDULI.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\HALBAZ.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\ORDULI.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
@@ -10,73 +10,65 @@ BEGIN ~XAA173~
 // WARNING: this file contains non-trivial WEIGHTs
 //////////////////////////////////////////////////
 
-IF WEIGHT #1 /* Triggers after states #: 1 even though they appear after this state */
-~  True()
-~ THEN BEGIN 0 // from: 1.3
-  SAY @1 /* ~And who might you be then? Hmmph? Come to check out the wares of ol' Halbazzer? Well, be quick about it! And mind you don't get fidgety when we talk payment. You knew when you came in the door that my wares were magical; premium items demand a premium price.~ #17387 */
-  IF ~~ THEN REPLY @2 /* ~Let's see what you have, then.~ #17516 */ DO ~StartStore("xaa101",LastTalkedToBy(Myself))
-~ EXIT
-  IF ~~ THEN REPLY @3 /* ~Perhaps another time.~ #17388 */ EXIT
+IF WEIGHT #0 ~  NumTimesTalkedTo(0)
+ReputationLT(Player1,8)
+~ THEN BEGIN 0 // from:
+  SAY @1 /* ~Ah, lowly adventurers. The roads of this fair city are lined with fools, are they not?~ #15036 */
+  IF ~~ THEN EXIT
 END
 
-IF WEIGHT #0 ~  PartyHasItem("MISC51")
+IF WEIGHT #1 ~  NumTimesTalkedTo(0)
+ReputationGT(Player1,7)
+ReputationLT(Player1,15)
 ~ THEN BEGIN 1 // from:
-  SAY @4 /* ~Well, well! If I'm not mistaken, that be a lock of nymph's hair. A luckier being there cannot be, than they who have gained the favor of such a creature. Would ye be willing to part with a small portion of that sample? I could pay... say... 500 gold for it.~ #10491 */
-  IF ~~ THEN REPLY @5 /* ~A generous offer, and I accept it.~ #10492 */ DO ~GiveGoldForce(500)
-TakePartyItem("MISC51")
-~ EXIT
-  IF ~~ THEN REPLY @6 /* ~Oh, I couldn't sell this. It was a gift. Not unless you offered me outrageous amounts of money.~ #10494 */ GOTO 3
-  IF ~~ THEN REPLY @7 /* ~You'll not touch a hair of it! It's mine and mine alone!~ #10495 */ GOTO 2
-  IF ~~ THEN REPLY @8 /* ~I'm not interested in selling it just now, though it would be to you if I do.~ #192 */ GOTO 0
+  SAY @2 /* ~Ah, weary adventurers. The roads of this fair city are lined with fools, are they not? And two of the greatest are Arkion and Nemphre, necromancers fighting over trinkets and baubles of little use or value. I assure you, they are more trouble than they are worth. You are better off steering clear of them.~ #15037 */
+  IF ~~ THEN JOURNAL @3 /* ~Arkion and Nemphre
+The priest Ordulinian has passed on a strange warning regarding two necromancers engaged in a longstanding but petty feud. Their names are Arkion and Nemphre, and I have been advised to steer clear of their meddling while in Baldur's Gate.~ #27320 */ EXIT
 END
 
-IF ~~ THEN BEGIN 2 // from: 9.2 8.1 3.1 1.2
-  SAY @9 /* ~There is simply no way someone with your manner could have come by that hair honorably! Get out of my sight. I'll not serve ye here!~ #10496 */
+IF WEIGHT #2 ~  NumTimesTalkedTo(0)
+ReputationGT(Player1,14)
+~ THEN BEGIN 2 // from:
+  SAY @4 /* ~Ah, fair adventurers. The roads of this fair city are lined with fools, are they not? Two of the greatest are Arkion and Nemphre, necromancers grown bitter over lost love. Alas, but they use petty trinkets as their excuse for enmity. Nemphre covets Arkion's bloodstone amulet and Arkion dreams of her onyx ring. Steal those trinkets and bring them to me and perhaps those two fools can at last find peace.~ #15038 */
+  IF ~~ THEN DO ~SetGlobal("HelpOrdulinian","GLOBAL",1)
+~ UNSOLVED_JOURNAL @5 /* ~Arkion and Nemphre
+Ordulinian has told me the tale of two of Baldur's Gate's greatest fools, necromancers, and ex-lovers, Nemphre and Arkion. He appears to have grown tired of their endless feuding, and has asked me to bring Arkion's bloodstone amulet and Nemphre's onyx ring to him so that their dispute might be settled once and for all. I can find Ordulinian at the Sorcerous Sundries.~ #27321 */ EXIT
+END
+
+IF WEIGHT #4 /* Triggers after states #: 4 even though they appear after this state */
+~  Global("HelpOrdulinian","GLOBAL",1)
+~ THEN BEGIN 3 // from:
+  SAY @6 /* ~So, how fare our dear Nemphre and Arkion?~ #15039 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 3 // from: 1.1
-  SAY @10 /* ~Suit yourself, though I can't say as I blame ya. Very useful stuff, that. Say, how about I have a seamstress weave it within a cloak for ye? It is said that the wearer of such an item is magically more beautiful. It would not cost much, perhaps 100 gold. Delicate stuff, it is.~ #10497 */
-  IF ~~ THEN REPLY @11 /* ~I'm content with it the way it is, thank you.~ #10498 */ GOTO 7
-  IF ~~ THEN REPLY @12 /* ~I'll not have strangers put a finger on it! It is mine to keep.~ #10499 */ GOTO 2
-  IF ~  PartyGoldGT(99)
-~ THEN REPLY @13 /* ~An excellent suggestion! You have a deal!~ #10500 */ DO ~TakePartyGold(100)
-~ GOTO 4
+IF WEIGHT #3 ~  Global("HelpOrdulinian","GLOBAL",1)
+PartyHasItem("OHAMUL13")
+PartyHasItem("OHRING12")
+~ THEN BEGIN 4 // from:
+  SAY @7 /* ~Ah, the bloodstone amulet of Arkion and Nemphre's onyx ring. I hope no blood was shed to get these for that may yet rest heavy on your conscience. Fools are to be suffered in this world, not slaughtered. Be what may, at least they may find some peace. As for these trinkets, you might as well sell them somewhere as they are of little use to anyone. For your troubles I will give you this cloak. It may be of some use to you in the future.~ #15040 */
+  IF ~~ THEN DO ~EraseJournalEntry(@9)
+EraseJournalEntry(@10)
+EraseJournalEntry(@5)
+TakePartyItem("OHAMUL13")
+TakePartyItem("OHRING12")
+GiveItemCreate("AMUL13",LastTalkedToBy,0,0,0)
+GiveItemCreate("RING12",LastTalkedToBy,0,0,0)
+GiveItemCreate("CLCK06",LastTalkedToBy,0,0,0)
+SetGlobal("HelpOrdulinian","GLOBAL",2)
+AddexperienceParty(3500)
+~ SOLVED_JOURNAL @8 /* ~Arkion and Nemphre
+For Nemphre's onyx ring and Arkion's bloodstone amulet, Ordulinian of Sorcerous Sundries traded me a nice magical cloak.~ #27343 */ EXIT
 END
 
-IF ~~ THEN BEGIN 4 // from: 9.0 8.2 3.2
-  SAY @14 /* ~You won't regret this! I already have one cloak made. I'll give it to ye, now that I can make several others. Here ye go.~ #10501 */
-  IF ~~ THEN DO ~TakePartyItem("MISC51")
-GiveItem("CLCK07",LastTalkedToBy)
-~ EXIT
-END
-
-IF ~~ THEN BEGIN 5 // from:
-  SAY @15 /* ~Welcome back, it's ready as I promised. Beautiful, is it not? You'll be the toast of the town in this.~ #10502 */
-  IF ~~ THEN DO ~GiveItem("CLCK07",LastTalkedToBy)
-~ EXIT
-END
-
-IF ~~ THEN BEGIN 6 // from:
-  SAY @16 /* ~I'm afraid your garment is not ready yet. Return when we agreed and you shall have it.~ #10503 */
+IF WEIGHT #5 ~  False()
+~ THEN BEGIN 5 // from:
+  SAY @11 /* ~Fools are to be suffered, not slaughtered. I have not taken your life and I suggest you learn from my example.~ #15041 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 7 // from: 9.1 8.0 3.0
-  SAY @17 /* ~As you will, but it does you little good in your pocket. The offer stands if you return here.~ #10504 */
+IF WEIGHT #6 ~  True()
+~ THEN BEGIN 6 // from:
+  SAY @12 /* ~Peace, my friends. Suffer it gladly.~ #15042 */
   IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN 8 // from:
-  SAY @18 /* ~Back again with that wondrous hair, I see. Have you reconsidered my offer?~ #10505 */
-  IF ~~ THEN REPLY @11 /* ~I'm content with it the way it is, thank you.~ #10506 */ GOTO 7
-  IF ~~ THEN REPLY @12 /* ~I'll not have strangers put a finger on it! It is mine to keep.~ #10507 */ GOTO 2
-  IF ~~ THEN REPLY @13 /* ~An excellent suggestion! You have a deal!~ #10508 */ GOTO 4
-END
-
-IF ~~ THEN BEGIN 9 // from:
-  SAY @19 /* ~Wonderful! The things that can be done with nymph hair are amazing! In fact, since you are so generous with it, why don't I weave what you have left within a tunic? It's said such a garment enhances the beauty of the wearer. No charge for you, friend.~ #10509 */
-  IF ~~ THEN REPLY @20 /* ~An offer I could not refuse!~ #10510 */ GOTO 4
-  IF ~~ THEN REPLY @21 /* ~I would just as soon keep it as it is. Thanks anyway.~ #10511 */ GOTO 7
-  IF ~~ THEN REPLY @22 /* ~You'll be keeping your hands off what I have left!~ #10513 */ GOTO 2
 END

@@ -1,0 +1,52 @@
+IF
+	Global("bd_ogres_plot","bd5200",0)  // The Warrens
+	Global("bd_ogres_chat","bd5200",1)  // The Warrens
+	GlobalTimerExpired("bd_ogres_timer","bd5200")  // The Warrens
+	Allegiance(Myself,NEUTRAL)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_ogres_timer","bd5200",ONE_MINUTE)  // The Warrens
+		IncrementGlobal("bd_ogres_chat","bd5200",1)  // The Warrens
+		DisplayStringHead(Myself,38551)  // How that possible? Rest more mean less time for work.
+END
+
+IF
+	Global("bd_ogres_plot","bd5200",0)  // The Warrens
+	Global("bd_ogres_chat","bd5200",3)  // The Warrens
+	GlobalTimerExpired("bd_ogres_timer","bd5200")  // The Warrens
+	Allegiance(Myself,NEUTRAL)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		IncrementGlobal("bd_ogres_chat","bd5200",1)  // The Warrens
+		SetGlobal("bd_belben_abuses_ogres","global",1)
+		DisplayStringHead(Myself,38553)  // Me happier not being beaten, so no more resting talk! Got it?
+END
+
+IF
+	Global("bd_ogres_hostile","bd5200",0)  // The Warrens
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_ogres_hostile","bd5200",1)  // The Warrens
+END
+
+IF
+	Global("bd_ogres_commotion","bd5200",0)  // The Warrens
+	GlobalGT("bd_plot","global",349)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_ogres_commotion","bd5200",1)  // The Warrens
+END
+
+IF
+	Global("bd_ogres_commotion","bd5200",1)  // The Warrens
+	Allegiance(Myself,NEUTRAL)
+	!ActuallyInCombat()
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+

@@ -1,21 +1,15 @@
 IF
-	See([PC])
-	Global("AttackNEB","AR0607",0)  // Flaming Fist HQ, ground floor
-	AttackedBy([GOODCUTOFF],DEFAULT)
-	Allegiance(Myself,NEUTRAL)
+	Die()
 THEN
 	RESPONSE #100
-		SetGlobal("AttackNEB","AR0607",1)  // Flaming Fist HQ, ground floor
-		SmallWait(5)
-		StartDialogueNoSet([PC])
+		EraseJournalEntry(27079)  // A Ring for a Lady If I find an angel skin ring, I could help Fergus, a Flaming Fist soldier, with his romantic problem.
+		Continue()
 END
 
 IF
-	See([PC])
-	!Allegiance(Myself,ENEMY)
-	Delay(20)
+	Global("Chapter","GLOBAL",7)
 THEN
 	RESPONSE #100
-		Dialogue([PC])
+		DestroySelf()
 END
 

@@ -1,26 +1,17 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\CHIMP5.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BARSLIM.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\CHIMP5.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BARSLIM.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA323~
 
-IF ~  OR(3)
-Global("ScarKilled","GLOBAL",1)
-Global("ScarKilled","GLOBAL",2)
-Global("OpenDialogue","GLOBAL",1)
+IF ~  True()
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Hey there, pal. If ye're here to see Duke Eltan, just go up the stairs beside me. He should be waiting in his office.~ #11340 */
-  IF ~~ THEN EXIT
-END
-
-IF ~  OR(3)
-!Global("ScarKilled","GLOBAL",1)
-!Global("ScarKilled","GLOBAL",2)
-!Global("OpenDialogue","GLOBAL",1)
-~ THEN BEGIN 1 // from:
-  SAY @2 /* ~Hey there, pal. If ye're looking for Duke Eltan, ye're outta luck. The duke is a busy man, so I suggest ye talk to Scar.~ #31079 */
-  IF ~~ THEN EXIT
+  SAY @1 /* ~Leave this place! Ungh! There be green slimes rising... rising from the cellars! Flee while you—*gasp*—still can.~ #19616 */
+  IF ~~ THEN DO ~ActionOverride("MTWSLIM",EscapeArea())
+ActionOverride("MTWSLIM2",EscapeArea())
+ActionOverride("MTWSLIM3",EscapeArea())
+~ EXIT
 END

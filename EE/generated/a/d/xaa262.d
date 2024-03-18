@@ -1,7 +1,7 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FAIZAH.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\CAILAN.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FAIZAH.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\CAILAN.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
@@ -10,24 +10,24 @@ BEGIN ~XAA262~
 IF ~  Global("Baldurian","GLOBAL",1)
 !Global("VailLeft","AR0719",1)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~My word! Such a backache I have! I feel as though I have been standing for ages! I thank you for releasing me, and now I await your price. I am well acquainted with mercenaries and the like, and know that one does not rescue such as I for the good of one's health. What do you want of me?~ #10533 */
-  IF ~~ THEN REPLY @2 /* ~My price shall be your death if I do not receive the Helm of Balduran!~ #10534 */ GOTO 1
-  IF ~~ THEN REPLY @3 /* ~My price? I seek but one item: the Helm of Balduran. Once I have that I shall be on my way.~ #10535 */ GOTO 2
+  SAY @1 /* ~Well, that was unpleasant. I thank you for my freedom. I take it that I was petrified by the basilisk? That mage was one wily customer. I hope the creature turned on him before he could dispel it. I am Cailan, and you are...?~ #10528 */
+  IF ~~ THEN REPLY @2 /* ~I am your savior and I demand the Helm of Balduran! That is my price for rescuing you!~ #10529 */ GOTO 1
+  IF ~~ THEN REPLY @3 /* ~I am <CHARNAME>, and I have a request for you. I seek the Helm of Balduran, and was told it was in your possession.~ #10530 */ GOTO 2
 END
 
 IF ~~ THEN BEGIN 1 // from: 0.0
-  SAY @4 /* ~Such manners! Your bluster is wasted; I do not have the item you seek. Perhaps one of my petrified fellows might, but that will be their business to take up with you. Please feel free to question them, as you will. I have shared much with them, but I care not for what baubles they have stashed in their packs.~ #10536 */
+  SAY @4 /* ~Indeed? Well, I cannot help you; I do not have that item. Perhaps one of my fellows carries such a thing, but I know not. If you rescue them as you did me I am sure you will find it, though I would soften your tone. Some of my companions take offense easily.~ #10531 */
   IF ~~ THEN EXIT
 END
 
 IF ~~ THEN BEGIN 2 // from: 0.1
-  SAY @5 /* ~If I had such a thing, I would not think your offer a worthwhile trade. My life for such a powerful item? You will not find many that peaceably accept such terms. Feel free to examine my fellows though. They might respond otherwise.~ #10537 */
+  SAY @5 /* ~Hmm, I do not have such a thing in my possession, though one of my companions may. I cannot say for certain though, as I have not known them for long. Not counting the time spent frozen with them, of course.~ #10532 */
   IF ~~ THEN EXIT
 END
 
 IF ~  True()
 ~ THEN BEGIN 3 // from:
-  SAY @6 /* ~My word! Such a backache I have! I feel as though I have been standing for ages! I thank you for releasing me, and now I await your price. I am well acquainted with mercenaries and the like, and know that one does not rescue such as I for the good of one's health. Though you wish much of me, there is nothing I can give. I will be off now, before you try to force something from me.~ #10595 */
+  SAY @6 /* ~Well, that was unpleasant. I thank you for my freedom. I take it that I was petrified by the basilisk? That mage was one wiley customer. I hope the creature turned on him before he could dispel it. I must be on my way now, as I have many things to do.~ #10594 */
   IF ~~ THEN DO ~EscapeArea()
 ~ EXIT
 END

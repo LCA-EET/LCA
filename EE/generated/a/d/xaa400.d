@@ -1,42 +1,33 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FOOLS.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BART9.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FOOLS.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BART9.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA400~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #2 /* Triggers after states #: 1 2 even though they appear after this state */
-~  True()
+IF ~  ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Aye, share a glass with Gorpel Hind and his Band of Merry Fools.~ #19560 */
-  IF ~~ THEN EXIT
+  SAY @1 /* ~Good eve. The Helm and Cloak stands ready to serve thee in a swift and relaxing manner. I trust you are aware that our provender is a touch more pricey than some of the "lesser respected" inns about town? This is true, though I have always maintained that you get what you pay for. Is there anything I can do for you?~ #8380 */
+  IF ~~ THEN REPLY @2 /* ~Yes.~ #15076 */ DO ~StartStore("xaa151",LastTalkedToBy(Myself))
+~ EXIT
+  IF ~~ THEN REPLY @3 /* ~No.~ #15077 */ EXIT
 END
 
-IF WEIGHT #0 ~  Dead("GORPEL")
+IF ~  ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
+ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
 ~ THEN BEGIN 1 // from:
-  SAY @2 /* ~We must go. For all its light, your friendship has brought darkness upon us. Gorpel Hind, our leader and soulmate, has fallen in this petty battle.~ #19612 */
-  IF ~~ THEN DO ~ActionOverride("FARLUCK",EscapeArea())
-ActionOverride("TURPIN",EscapeArea())
-ActionOverride("NELIK",EscapeArea())
+  SAY @4 /* ~Hmm? Hello there. Welcome to the Helm and Cloak. Whilst here you may expect superior service and excellent quality. Er, you can PAY can't you? As long as this is so we shall be on excellent terms. Please try not to make trouble while here. We are well protected and all a ruckus will serve to do is disturb the other guests. Is there anything I can do for you?~ #8381 */
+  IF ~~ THEN REPLY @2 /* ~Yes.~ #15078 */ DO ~StartStore("xaa151",LastTalkedToBy(Myself))
 ~ EXIT
+  IF ~~ THEN REPLY @3 /* ~No.~ #15079 */ EXIT
 END
 
-IF WEIGHT #1 ~  Dead("GRETEK")
-Dead("PARGUS")
-Dead("WILF")
-Dead("NADER")
-Dead("ARLIN")
-Dead("CATURAK")
+IF ~  ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
 ~ THEN BEGIN 2 // from:
-  SAY @3 /* ~A brave and hearty fight and it was good to share it with you. We must go, however, and tend to our wounds elsewhere. I do not think the bartender will tolerate our type of merriment for long. Well met, brave <CHARNAME>, and do not walk softly into that dark night.~ #19613 */
-  IF ~~ THEN DO ~ActionOverride("FARLUCK",EscapeArea())
-ActionOverride("TURPIN",EscapeArea())
-ActionOverride("NELIK",EscapeArea())
-ActionOverride("GORPEL",EscapeArea())
+  SAY @5 /* ~Oh, no, no, no. I rather think someone of your standards will not be comfortable in the Helm and Cloak at all. We pride ourselves on our somewhat expensive but relaxed fare, whereas you seem to be the sort who should enjoy the atmosphere of, say, the Blushing Mermaid. I am sorry to say it, but I did not mean that as a compliment. Best that you go now, for surely it will only mean trouble if you stay. Is there anything I can do for you?~ #8382 */
+  IF ~~ THEN REPLY @2 /* ~Yes.~ #15080 */ DO ~StartStore("xaa151",LastTalkedToBy(Myself))
 ~ EXIT
+  IF ~~ THEN REPLY @3 /* ~No.~ #15081 */ EXIT
 END

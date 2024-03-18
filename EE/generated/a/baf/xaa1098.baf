@@ -1,9 +1,10 @@
 IF
-	Global("Doppleganger","GLOBAL",0)
+	See([PC])
+	Global("Chapter","GLOBAL",7)
+	Global("Flam12","GLOBAL",0)
 THEN
 	RESPONSE #100
-		SetGlobal("Doppleganger","GLOBAL",1)
-		SetGlobal("Laola","GLOBAL",1)
-		SetGlobal("CheckedSevenSuns","GLOBAL",2)
+		SetGlobal("Flam12","GLOBAL",1)
+		Enemy()
 END
 

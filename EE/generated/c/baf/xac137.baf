@@ -1,0 +1,28 @@
+IF
+	Die()
+THEN
+	RESPONSE #100
+		IncrementGlobal("bd_crus_killed","bd5200",1)  // The Warrens
+		Continue()
+END
+
+IF
+	Global("bd_ai_controls","locals",0)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_ai_controls","locals",1)
+		SetGlobal("bd_no_assist","locals",1)
+		SetGlobal("bd_no_search","locals",1)
+		Continue()
+END
+
+IF
+	Global("bd_warrens_hostile","global",1)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+		SetGlobal("bd_no_assist","locals",0)
+		SetGlobal("bd_no_search","locals",0)
+END
+

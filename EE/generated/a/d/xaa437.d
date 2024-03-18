@@ -1,91 +1,65 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\RFRIEN.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\THALDO.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\RFRIEN.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\THALDO.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA437~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
 
-IF ~  !Dead("Mulahey")
+IF WEIGHT #1 /* Triggers after states #: 5 even though they appear after this state */
+~  NumTimesTalkedTo(0)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~I heard there's some sort o' trouble in Nashkel. Somethin' sinister has been moving about in the Nashkel mines. Nobody seems to know for sure. Too busy coping with the bandit raids and such.~ #14725 */
-  IF ~  GlobalLT("chapter","GLOBAL",3)
-~ THEN JOURNAL @2 /* ~Troubles in the Region: Bandit Problems
-
-There are rumors of something disrupting operations in the Nashkel mines, contributing to the iron shortage.~ #27401 */ EXIT
-  IF ~  GlobalGT("chapter","GLOBAL",2)
-~ THEN EXIT
+  SAY @1 /* ~What are you doing here?! Get out of this building before I call the guards.~ #1459 */
+  IF ~~ THEN REPLY @2 /* ~We can't do that until you answer some questions.~ #1477 */ GOTO 1
+  IF ~~ THEN REPLY @3 /* ~Sure, if you want us to leave, we'll leave.~ #1478 */ DO ~EscapeArea()
+~ EXIT
 END
 
-IF ~  GlobalGT("Chapter","GLOBAL",6)
-~ THEN BEGIN 1 // from:
-  SAY @3 /* ~Did you hear about the assassinations at Candlekeep? Seems that the leaders of the Iron Throne went and got themselves killed. Those same people who helped the folks down in Nashkel did the deed. They were Amnian agents, I hear. Anyhow, one of the dead guys' son is now the leader, Sarevok is his name I think.~ #14726 */
-  IF ~~ THEN JOURNAL @4 /* ~Rising Tensions with Amn
-Sarevok has assumed command of the Iron Throne. I am still accused of the former leaders' murders, though it is thought I was an agent of Amn. Someone is intent upon pushing the region into war.~ #27388 */ EXIT
+IF ~~ THEN BEGIN 1 // from: 0.0
+  SAY @4 /* ~You're here to kill me, aren't you? You can't kill me! Do you know who I am? I'm Thaldorn, one of the leaders of the Iron Throne.~ #1460 */
+  IF ~~ THEN REPLY @5 /* ~You're too much of a whiner, I think we're going to have to kill you.~ #1479 */ GOTO 3
+  IF ~~ THEN REPLY @7 /* ~Could you just tell us where the other leaders of the Iron Throne are located? If you do, we'll spare your miserable life.~ #1480 */ UNSOLVED_JOURNAL @6 /* ~Investigating the Iron Throne
+When we threatened Thaldorn, he told us that Rieltar and Brunos, his business partners, are at Candlekeep.~ #27479 */ GOTO 2
+  IF ~~ THEN REPLY @8 /* ~Where can we find documents that will implicate your organization for its involvement with the bandit raids and iron shortage? Tell us or die.~ #1481 */ GOTO 3
 END
 
-IF ~  Dead("Mulahey")
-~ THEN BEGIN 2 // from:
-  SAY @5 /* ~Hear about the heroes of Nashkel? Some good folk—mercenaries, it's said—came down and solved all that town's problems. I hope they weren't helping just because of the money.~ #14727 */
-  IF ~~ THEN JOURNAL @6 /* ~Tales of my actions are spreading, though I'm not sure I like the term "mercenaries."~ #16319 */ EXIT
+IF ~~ THEN BEGIN 2 // from: 3.0 1.1
+  SAY @9 /* ~The other leaders, Brunos and Rieltar, they're at Candlekeep, attending business with some benefactors from the south. Will you let me go now, please?~ #1461 */
+  IF ~~ THEN REPLY @10 /* ~First, tell us where we can find hard evidence that could implicate your business in all of the deviltry going on along the Coast Way.~ #1482 */ GOTO 3
+  IF ~~ THEN REPLY @11 /* ~You're free to go.~ #1483 */ DO ~EscapeArea()
+~ EXIT
+  IF ~~ THEN REPLY @12 /* ~Sorry, we can't let you live, you know too much.~ #1484 */ GOTO 4
 END
 
-IF ~  True()
-~ THEN BEGIN 3 // from:
-  SAY @7 /* ~I hear relations haven't been going too good 'tween the two powers in this region. The Grand Dukes supposedly accused Amn of all the raiding that's been happening along the roads. Not a good thing to go accusin' the most powerful country in the western world.~ #14728 */
-  IF ~  GlobalLT("chapter","GLOBAL",5)
-~ THEN JOURNAL @8 /* ~Rising Tensions with Amn
-Tension seems to be building between Baldur's Gate and Amn.~ #27092 */ EXIT
-  IF ~  GlobalGT("chapter","GLOBAL",4)
-~ THEN EXIT
+IF ~~ THEN BEGIN 3 // from: 2.0 1.2 1.0
+  SAY @13 /* ~Please don't hurt me! You can find everything you need with Rieltar, he's the true leader of the operation. He always carries everything on his person. Am I free to go?~ #1462 */
+  IF ~~ THEN REPLY @14 /* ~If you tell us where the leaders of the Iron Throne are located, we might let you go free.~ #1485 */ UNSOLVED_JOURNAL @6 /* ~Investigating the Iron Throne
+When we threatened Thaldorn, he told us that Rieltar and Brunos, his business partners, are at Candlekeep.~ #27479 */ GOTO 2
+  IF ~~ THEN REPLY @15 /* ~Get outta here.~ #1486 */ DO ~EscapeArea()
+~ EXIT
+  IF ~~ THEN REPLY @16 /* ~Sorry, but you're going to have to die.~ #1487 */ GOTO 4
 END
 
-IF ~  True()
-~ THEN BEGIN 4 // from:
-  SAY @9 /* ~I hear some units of the Flaming Fist have been sent to Beregost. Seems like the Grand Dukes are getting real paranoid about Amn. Lots of people think that Amn might be behind the iron shortage. Could be a prelude to war.~ #14729 */
-  IF ~  GlobalLT("chapter","GLOBAL",5)
-~ THEN JOURNAL @10 /* ~Rising Tensions with Amn
-Tensions are growing in the region due to the supposed threat from Amn, though the evidence I've seen is somewhat confused.~ #27390 */ EXIT
-  IF ~  GlobalGT("chapter","GLOBAL",4)
-~ THEN EXIT
+IF ~~ THEN BEGIN 4 // from: 3.2 2.2
+  SAY @17 /* ~NOOOOoooooo. Please, please let me live.~ #1463 */
+  IF ~~ THEN REPLY @18 /* ~Wow, I've never seen such a complete lack of dignity. For giving us such a good show, you're free to go.~ #1488 */ DO ~EscapeArea()
+~ EXIT
+  IF ~~ THEN REPLY @19 /* ~You're still a dead man, Thaldorn.~ #1489 */ DO ~Enemy()
+~ EXIT
 END
 
-IF ~  True()
+IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
 ~ THEN BEGIN 5 // from:
-  SAY @11 /* ~Iron's so scarce these days, you'd think it was as valuable as gold. Not a good thing, not a good thing at all. Ain't going to be long before no one can afford to be well equipped. What will the guards do then?~ #14731 */
-  IF ~  GlobalLT("chapter","GLOBAL",3)
-~ THEN JOURNAL @12 /* ~Troubles in the Region: Iron Crisis
-
-Iron continues to be scarce, driving prices of tools and weapons ever higher.~ #27395 */ EXIT
-  IF ~  GlobalGT("chapter","GLOBAL",2)
-~ THEN EXIT
+  SAY @20 /* ~I'm one of the western divisional leaders of the Iron Throne. The others are at Candlekeep negotiating with the Knights of the Shield. We have been creating a misinformation campaign to blame the Zhentarim for all the troubles in the region. We are trying to create tensions between the governments of Baldur's Gate and Amn. With iron being the most important resource in a war, the Baldurian government will have to go to us in order to get any. We have disrupted all iron trade through the region using the Blacktalon mercenaries and the Chill. The only known iron mine in the region is at Nashkel, and we have effectively crippled that mine. We have our own mine operating in Cloakwood. When the Baldurian government comes to us for iron, we will be able to make exorbitant trading demands, and thus become the preeminent trading power in this region.~ #6072 */
+  IF ~~ THEN JOURNAL @21 /* ~Investigating the Iron Throne
+I charmed Thaldorn, who revealed much about the Iron Throne. To become the dominant trading cartel on the Sword Coast, they have launched a misinformation campaign to raise tensions between Amn and Baldur's Gate. They were behind both the mine disruptions and the bandit attacks, ensuring that they controlled the only remaining source of iron. With war imminent, they can charge any price they like for their iron.~ #27480 */ EXIT
 END
 
-IF ~  True()
-~ THEN BEGIN 6 // from:
-  SAY @13 /* ~It's been really weird these past few months. Iron's been going bad, falling apart almost if it were rustin' for no particular reason. From what I hear, most o' this "bad iron" comes from the mines at Nashkel. Can't trust those Amnian miners; probably some scheme they've come up with.~ #14732 */
-  IF ~  GlobalLT("chapter","GLOBAL",3)
-~ THEN JOURNAL @14 /* ~Troubles in the Region: Iron Crisis
-
-Iron from the Nashkel mines is nearly useless when smelted. People suspect that the denizens of Nashkel are doing it intentionally, as part of some grandiose plot in the service of Amn.~ #27396 */ EXIT
-  IF ~  GlobalGT("chapter","GLOBAL",2)
-~ THEN EXIT
-END
-
-IF ~  !Dead("Mulahey")
-~ THEN BEGIN 7 // from:
-  SAY @15 /* ~Lots of trouble down in Nashkel. Monsters or some such are said to be killing the workers at the Nashkel mines.~ #14733 */
-  IF ~  GlobalLT("chapter","GLOBAL",3)
-~ THEN JOURNAL @2 /* ~Troubles in the Region: Bandit Problems
-
-There are rumors of something disrupting operations in the Nashkel mines, contributing to the iron shortage.~ #27401 */ EXIT
-  IF ~  GlobalGT("chapter","GLOBAL",2)
-~ THEN EXIT
-END
-
-IF ~  !Dead("Mulahey")
-~ THEN BEGIN 8 // from:
-  SAY @16 /* ~You hear of the Midsummer fair down in Nashkel? I hear it's actually doing quite well, despite all the trouble that town's had recently.~ #14734 */
-  IF ~~ THEN JOURNAL @17 /* ~There is a festival east of Nashkel. Many people are gathering there.~ #5815 */ EXIT
+IF ~~ THEN BEGIN 6 // from:
+  SAY @22 /* ~Leave me be or you'll regret it!~ #9073 */
+  IF ~~ THEN EXIT
 END

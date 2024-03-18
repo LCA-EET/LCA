@@ -47,6 +47,7 @@ bd68938.wav::xad10006.wav
 amb_e14a.wav::xad10007.wav
 ambd0104.wav::xad10008.wav
 amb_e29a.wav::xad10009.wav
+imoen12.wav::xad10025.wav
 imoen18.wav::xad10024.wav
 imoen05.wav::xad10023.wav
 imoen11.wav::xad10022.wav
@@ -56,7 +57,6 @@ imoen17.wav::xad10019.wav
 imoen10.wav::xad10018.wav
 imoen27.wav::xad10017.wav
 imoen25.wav::xad10016.wav
-imoen12.wav::xad10025.wav
 imoen13.wav::xad10026.wav
 imoen02.wav::xad10027.wav
 imoen26.wav::xad10029.wav
@@ -150,11 +150,9 @@ bdfigh01.baf::xad102.baf
 bdliia.baf::xad112.baf
 bdmage01.baf::xad114.baf
 bdbence.baf::xad115.baf
-bd0103.baf::xad100.baf
 bdpris12.baf::xad118.baf
 randwalk.baf::xad119.baf
 bdpris08.baf::xad120.baf
-bd0104.baf::xad101.baf
 bdangath.baf::xad121.baf
 bdimoen.baf::xad122.baf
 bdtiax.baf::xad123.baf

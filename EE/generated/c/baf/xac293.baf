@@ -1,0 +1,94 @@
+IF
+	GlobalGT("bd_plot","global",415)
+	GlobalLT("bd_plot","global",435)
+	Name("asha1",Myself)
+	Range([PC],22)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_plot","global",435)
+		SetGlobal("bd_asha_duel","global",2)
+		SetCursorState(TRUE)
+		ClearAllActions()
+		MoveViewPoint([1090.2270],BD_SWIFT)
+		SmallWait(6)
+		CreateVisualEffect("DDOORH",[1110.1930])
+		CreateVisualEffect("DDOORH",[1175.1940])
+		CreateVisualEffect("DDOORH",[1075.1985])
+		CreateVisualEffect("DDOORH",[1200.1995])
+		CreateVisualEffect("DDOORH",[1100.2035])
+		CreateVisualEffect("DDOORH",[1165.2030])
+		CreateVisualEffect("DDOORH",[1140.1985])
+		SmallWait(6)
+		CreateCreature("bdasha05",[1110.1930],S)  // Sarginson
+		CreateCreature("bdasha02",[1175.1940],S)  // Small Kimble
+		CreateCreature("bdasha04",[1075.1985],S)  // Zoe Kryn
+		CreateCreature("bdasha06",[1200.1995],S)  // Balvin Steadyhand
+		CreateCreature("bdasha01",[1100.2035],S)  // Wormgums
+		CreateCreature("bdasha03",[1165.2030],S)  // Marius of Tethyr
+		CreateCreature("bdashati",[1140.1985],S)  // Ashatiel
+		SmallWait(8)
+		DisplayStringHead("bdashati",38310)  // ENOUGH! CRUSADERS, STAND DOWN!
+		ActionOverride("bdashati",SaveLocation("LOCALS","bd_default_loc",[825.1280]))
+		ActionOverride("bdashati",SetGlobal("bd_no_combat","locals",1))
+		ActionOverride("bdashati",SetGlobal("bd_no_retreat","locals",1))
+		ActionOverride("bdashati",SetGlobal("bd_no_search","locals",1))
+		SmallWait(12)
+		ActionOverride(Player1,FaceObject("bdashati"))  // Ashatiel
+		ActionOverride(Player2,FaceObject("bdashati"))  // Ashatiel
+		ActionOverride(Player3,FaceObject("bdashati"))  // Ashatiel
+		ActionOverride(Player4,FaceObject("bdashati"))  // Ashatiel
+		ActionOverride(Player5,FaceObject("bdashati"))  // Ashatiel
+		ActionOverride(Player6,FaceObject("bdashati"))  // Ashatiel
+		SmallWait(35)
+		ActionOverride("bdashati",SetGlobal("bd_mdd1230","locals",1))
+		SetCursorState(FALSE)
+		SaveGame(2)
+END
+
+IF
+	GlobalGT("bd_plot","global",415)
+	GlobalLT("bd_plot","global",435)
+	Name("asha2",Myself)
+	Range([PC],22)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_plot","global",435)
+		SetGlobal("bd_asha_duel","global",2)
+		SetCursorState(TRUE)
+		ClearAllActions()
+		MoveViewPoint([1920.1675],BD_SWIFT)
+		SmallWait(6)
+		CreateVisualEffect("DDOORH",[1880.1590])
+		CreateVisualEffect("DDOORH",[1945.1580])
+		CreateVisualEffect("DDOORH",[1865.1640])
+		CreateVisualEffect("DDOORH",[1925.1625])
+		CreateVisualEffect("DDOORH",[1995.1615])
+		CreateVisualEffect("DDOORH",[1975.1665])
+		CreateVisualEffect("DDOORH",[1920.1675])
+		SmallWait(6)
+		CreateCreature("bdasha02",[1880.1590],S)  // Small Kimble
+		CreateCreature("bdasha05",[1945.1580],S)  // Sarginson
+		CreateCreature("bdasha01",[1865.1640],S)  // Wormgums
+		CreateCreature("bdasha06",[1925.1625],S)  // Balvin Steadyhand
+		CreateCreature("bdasha04",[1995.1615],S)  // Zoe Kryn
+		CreateCreature("bdasha03",[1975.1665],S)  // Marius of Tethyr
+		CreateCreature("bdashati",[1920.1675],S)  // Ashatiel
+		SmallWait(8)
+		DisplayStringHead("bdashati",38310)  // ENOUGH! CRUSADERS, STAND DOWN!
+		ActionOverride("bdashati",SaveLocation("LOCALS","bd_default_loc",[825.1280]))
+		ActionOverride("bdashati",SetGlobal("bd_no_combat","locals",1))
+		ActionOverride("bdashati",SetGlobal("bd_no_retreat","locals",1))
+		ActionOverride("bdashati",SetGlobal("bd_no_search","locals",1))
+		SmallWait(12)
+		ActionOverride(Player1,FaceObject("bdashati"))  // Ashatiel
+		ActionOverride(Player2,FaceObject("bdashati"))  // Ashatiel
+		ActionOverride(Player3,FaceObject("bdashati"))  // Ashatiel
+		ActionOverride(Player4,FaceObject("bdashati"))  // Ashatiel
+		ActionOverride(Player5,FaceObject("bdashati"))  // Ashatiel
+		ActionOverride(Player6,FaceObject("bdashati"))  // Ashatiel
+		SmallWait(35)
+		ActionOverride("bdashati",SetGlobal("bd_mdd1230","locals",1))
+		SetCursorState(FALSE)
+		SaveGame(2)
+END
+

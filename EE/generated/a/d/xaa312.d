@@ -1,29 +1,37 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\SUNIN.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\PHANDA.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\SUNIN.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\PHANDA.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA312~
 
-IF ~  True()
+IF ~  NumTimesTalkedTo(0)
+InParty([0.0.0.0.0.0.MASK_EVIL])
+See([PC.0.0.0.0.0.MASK_EVIL])
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Poor little thieves. You have chosen the wrong home to break into today. You do not rob from a simple merchant, but rather the master mage SUNIN! I will brook no excuses! Today is the day that you die, robbers!~ #18951 */
-  IF ~~ THEN REPLY @2 /* ~I know you said that you wouldn't tolerate excuses, but we have a real good one.~ #18952 */ GOTO 1
-  IF ~~ THEN REPLY @3 /* ~Die, mage!~ #18953 */ GOTO 2
-END
-
-IF ~~ THEN BEGIN 1 // from: 0.0
-  SAY @4 /* ~Of course, I'll not be killing you alone. I have my servants to aid in the killing. They are but a teleport spell away.~ #18954 */
-  IF ~~ THEN DO ~CreateCreature("JOULAR",[494.355],S)
-CreateCreature("MAKA",[773.386],S)
-Enemy()
-~ EXIT
-END
-
-IF ~~ THEN BEGIN 2 // from: 0.1
-  SAY @5 /* ~Such fury!~ #18955 */
+  SAY @1 /* ~I sense evil in your party, friend. I cannot allow you or your evil companions to threaten the good people of Baldur's Gate.~ #15209 */
   IF ~~ THEN DO ~Enemy()
+Attack([0.0.0.0.0.0.MASK_EVIL])
+~ JOURNAL @2 /* ~Phandalyn
+My party has been attacked by Phandalyn, an over-vigilant paladin loitering in one of Baldur's Gate's many seedy taverns. Mental note: when one depends on a party of evil, steer clear of muscle-bound paladins.~ #27359 */ EXIT
+END
+
+IF ~  NumTimesTalkedTo(0)
+~ THEN BEGIN 1 // from:
+  SAY @3 /* ~Your party is free of the taint of evil. Please pass unmolested.~ #15210 */
+  IF ~~ THEN DO ~EscapeArea()
 ~ EXIT
+END
+
+IF ~  False()
+~ THEN BEGIN 2 // from:
+  SAY @4 /* ~Death to all who seek to harbor the emissaries of darkness!~ #15212 */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from:
+  SAY @5 /* ~I trust your stay in the city has been uneventful.~ #15214 */
+  IF ~~ THEN EXIT
 END

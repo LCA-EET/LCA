@@ -1,72 +1,45 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\PETRIN.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\TICK.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\PETRIN.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\TICK.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA210~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #0 ~  NumTimesTalkedTo(0)
-ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
+IF ~  True()
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Hi, I'm Petrine.~ #15126 */
-  IF ~~ THEN EXIT
+  SAY @1 /* ~Hey, you look like sewer-running types if ever I saw any.~ #18864 */
+  IF ~~ THEN REPLY @2 /* ~Watch your mouth before I bust it on your pearly whites, buddy.~ #18865 */ GOTO 1
+  IF ~~ THEN REPLY @3 /* ~What do you mean?~ #18866 */ GOTO 4
 END
 
-IF WEIGHT #1 ~  NumTimesTalkedTo(0)
-ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
-~ THEN BEGIN 1 // from:
-  SAY @2 /* ~Hi, I'm Petrine and my folks aren't around no more and I ran away from my Uncle Bheren 'cause he's real mean. My cat's really an angel, though, and she protects me when bad things happen. Or at least she did. I can't find her now, though. I think she went back to my uncle's to get her ring. There's this ring that she loves to play with, but when I ran away I had to leave it at my nasty uncle's. If you could just get me the ring, I'm sure Angel would come back. Could you do it, oh please?~ #15127 */
-  IF ~~ THEN UNSOLVED_JOURNAL @3 /* ~Petrine's Cat
-Petrine, one of Baldur's Gate's many orphans, has lost Angel, her cat. I might find Angel at the house of Petrine's Uncle Bheren, where Petrine is reluctant to go. If I can bring her the ring that Angel uses as a toy, the cat may return to Petrine.~ #26881 */ EXIT
+IF ~~ THEN BEGIN 1 // from: 0.0
+  SAY @4 /* ~Hey, no offense, folks. Sewers are just the urban man's dungeon, you get it? And you folks don't look like you're here on no fancy-dancy shopping trip.~ #18867 */
+  IF ~~ THEN REPLY @5 /* ~Who do you think you're calling fancy-dancy?~ #18868 */ GOTO 2
+  IF ~~ THEN REPLY @6 /* ~Urban man's dungeon, eh? Why don't you show us the way in?~ #18869 */ GOTO 3
 END
 
-IF WEIGHT #4 /* Triggers after states #: 3 4 even though they appear after this state */
-~  Global("HelpPetrine","GLOBAL",0)
-~ THEN BEGIN 2 // from:
-  SAY @4 /* ~I miss Angel. I hope she comes back real soon.~ #15128 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 2 // from: 1.0
+  SAY @7 /* ~I didn't call no one fancy-dancy, man! It's just the way I talk! I mean you guys are so cool, you swish when you walk, man— Oh, no! I didn't call you no... errr... forget about it, please? I didn't mean no harm by it. Aw hell, I gotta get me one of them dictionaries and learn me some Common, man...~ #18870 */
+  IF ~~ THEN DO ~EscapeArea()
+~ EXIT
 END
 
-IF WEIGHT #2 ~  PartyHasItem("OHRING16")
-~ THEN BEGIN 3 // from:
-  SAY @5 /* ~You found the ring... now Angel will come back... and we can live together forever and ever. I wish I had something to give you for finding her ring but I really and truly don't. Maybe she'll give you some good luck, though.~ #15129 */
-  IF ~  !Dead("PetrinesCat")
-~ THEN REPLY @9 /* ~You be careful to stay out of trouble, kid.~ #20663 */ DO ~EraseJournalEntry(@3)
-EraseJournalEntry(@7)
-EraseJournalEntry(@8)
-SetGlobal("HelpPetrine","GLOBAL",2)
-TakePartyItem("OHRING16")
-AddexperienceParty(500)
-~ SOLVED_JOURNAL @6 /* ~Petrine's Cat
-Petrine brightened at the sight of Angel's ring. Her happiness was reward enough, I suppose.~ #27358 */ EXIT
-  IF ~  Dead("PetrinesCat")
-~ THEN REPLY @10 /* ~Actually, you little brat, we killed your cat Angel.~ #20664 */ GOTO 6
+IF ~~ THEN BEGIN 3 // from: 4.0 1.1
+  SAY @8 /* ~No sense in me showing you. There's entrances all over the place. Just look for the sewer gratings. Most of them pop right up and you can shimmy on down, man. As I said, urban man's dungeon.~ #18871 */
+  IF ~~ THEN DO ~EscapeArea()
+~ EXIT
 END
 
-IF WEIGHT #3 ~  False()
-~ THEN BEGIN 4 // from:
-  SAY @11 /* ~Angel! Help me, Angel!~ #15130 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 4 // from: 0.1
+  SAY @9 /* ~Sewer-running, kiddo. Takin' a crawl through the urban man's dungeon, all right?~ #18872 */
+  IF ~~ THEN REPLY @10 /* ~Urban man's dungeon, is it? Why don't you show us how to get in?~ #18873 */ GOTO 3
+  IF ~~ THEN REPLY @11 /* ~Who are you calling kiddo?~ #18874 */ GOTO 5
 END
 
-IF WEIGHT #5 ~  True()
-~ THEN BEGIN 5 // from:
-  SAY @12 /* ~Angel's out hunting but she says you're really kind.~ #15131 */
-  IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN 6 // from: 3.1
-  SAY @13 /* ~You... you killed Angel... Waaaaaaaaa...!~ #20665 */
-  IF ~~ THEN DO ~EraseJournalEntry(@3)
-EraseJournalEntry(@7)
-EraseJournalEntry(@8)
-SetGlobal("HelpPetrine","GLOBAL",99)
-ReputationInc(-1)
-EscapeArea()
+IF ~~ THEN BEGIN 5 // from: 4.1
+  SAY @12 /* ~I didn't call no one kiddo, man! It's just the way I talk! I mean you guys are so cool, you swish when you walk, man— Oh, no! I didn't call you no... uhhh... forget it. I didn't mean no harm by it. Aw hell, I gotta get me one of them dictionaries and learn me some Common, man...~ #18875 */
+  IF ~~ THEN DO ~EscapeArea()
 ~ EXIT
 END

@@ -1,66 +1,109 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\GAXIR.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\MRSHADE.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\GAXIR.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\MRSHADE.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA347~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #0 ~  Global("HelpGaxir","GLOBAL",0)
-CheckStatLT(LastTalkedToBy,4,LEVEL)
+IF ~  NumTimesTalkedTo(0)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~You... will meet your doom today, child...~ #15520 */
-  IF ~~ THEN EXIT
+  SAY @1 /* ~Do you have them?~ #11508 */
+  IF ~~ THEN REPLY @2 /* ~I beg your pardon? What do you mean?~ #11509 */ GOTO 2
+  IF ~~ THEN REPLY @3 /* ~Eh... of course. Do you have the trade?~ #11510 */ GOTO 1
+  IF ~~ THEN REPLY @4 /* ~Can I... trust you?~ #11513 */ GOTO 3
 END
 
-IF WEIGHT #1 ~  Global("HelpGaxir","GLOBAL",0)
-CheckStatLT(LastTalkedToBy,6,LEVEL)
-~ THEN BEGIN 1 // from:
-  SAY @2 /* ~Your future... is hemmed in darkness. Your lives... are in the balance. Act wisely, act judiciously... and bring me the sphene gem, should you find it...~ #15521 */
-  IF ~~ THEN DO ~SetGlobal("HelpGaxir","GLOBAL",1)
-~ UNSOLVED_JOURNAL @3 /* ~G'axir the Seer
-His sentences overwrought with emphatic hesitations, G'axir the Seer has informed me that my future is hemmed in darkness. His predictions are less than surprising... In any event, he has asked me to bring him a sphene gem. G'axir can be found at the Blade and Stars.~ #27121 */ EXIT
+IF ~~ THEN BEGIN 1 // from: 11.1 5.1 3.2 0.1
+  SAY @5 /* ~Aye, that and more. Best we say no more lest the night be blown.~ #11511 */
+  IF ~~ THEN REPLY @6 /* ~Agreed. One can never be too careful?~ #11514 */ GOTO 6
+  IF ~~ THEN REPLY @7 /* ~I'm sorry, but what are you referring to?~ #11515 */ GOTO 2
+  IF ~~ THEN REPLY @8 /* ~I suppose? To actions then?~ #11532 */ GOTO 4
 END
 
-IF WEIGHT #2 ~  Global("HelpGaxir","GLOBAL",0)
-~ THEN BEGIN 2 // from:
-  SAY @4 /* ~You... are a light entering darkness. You... are a seeker of truths. You... are more than you realize. The Seer has spoken it because the Seer knows the fear you harbor, the fear you shall yet become. In the lair of the basilisk, you will find a sphene gem... You would do well to bring it to me.~ #15522 */
-  IF ~~ THEN DO ~SetGlobal("HelpGaxir","GLOBAL",1)
-~ UNSOLVED_JOURNAL @3 /* ~G'axir the Seer
-His sentences overwrought with emphatic hesitations, G'axir the Seer has informed me that my future is hemmed in darkness. His predictions are less than surprising... In any event, he has asked me to bring him a sphene gem. G'axir can be found at the Blade and Stars.~ #27121 */ EXIT
+IF ~~ THEN BEGIN 2 // from: 8.0 7.1 6.1 5.2 4.0 3.1 1.1 0.0
+  SAY @9 /* ~Um... never mind. Wrong person.~ #11512 */
+  IF ~~ THEN DO ~EscapeArea()
+~ EXIT
 END
 
-IF WEIGHT #5 /* Triggers after states #: 4 5 even though they appear after this state */
-~  Global("HelpGaxir","GLOBAL",1)
-~ THEN BEGIN 3 // from:
-  SAY @5 /* ~Ah... it is sometimes better to abandon one's destiny for a time... It will find you again soon enough.~ #15523 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 3 // from: 0.2
+  SAY @10 /* ~Who else but me? And I you?~ #11516 */
+  IF ~~ THEN REPLY @11 /* ~Um... I see your point? Let's continue.~ #11517 */ GOTO 4
+  IF ~~ THEN REPLY @12 /* ~I'm not sure I understand what is going on here.~ #11518 */ GOTO 2
+  IF ~~ THEN REPLY @13 /* ~If all goes... well?~ #11527 */ GOTO 1
 END
 
-IF WEIGHT #3 ~  PartyHasItem("MISC37")
-Global("HelpGaxir","GLOBAL",1)
-~ THEN BEGIN 4 // from:
-  SAY @6 /* ~The sphene gem! Indeed, then... you are more than you appear. Someday, you must journey further through the muck and mire of this place for it will tell you as much or more than all of fabled Candlekeep... Like yourself, this city is more than it appears. There are cities below cities, dreams beneath dreams, the past laying buried beneath the crushing weight of the present... Go now, wanderer, for the time will come when you must walk through the darkness to find the light.~ #15524 */
-  IF ~~ THEN DO ~EraseJournalEntry(@3)
-SetGlobal("HelpGaxir","GLOBAL",2)
-AddexperienceParty(1000)
-TakePartyItem("MISC37")
-~ SOLVED_JOURNAL @7 /* ~G'axir the Seer
-I gave G'axir the Seer the sphene gem he wanted, and all he said was that my future lies beyond "the muck and mire" of Baldur's Gate.~ #27122 */ EXIT
+IF ~~ THEN BEGIN 4 // from: 3.0 1.2
+  SAY @14 /* ~As well we should. The place is ready?~ #11519 */
+  IF ~~ THEN REPLY @15 /* ~The place? Now you've lost me.~ #11520 */ GOTO 2
+  IF ~~ THEN REPLY @16 /* ~As ready as it could be.~ #11521 */ GOTO 6
+  IF ~~ THEN REPLY @17 /* ~Will it ever be ready?~ #11522 */ GOTO 5
 END
 
-IF WEIGHT #4 ~  False()
-~ THEN BEGIN 5 // from:
-  SAY @8 /* ~You are still young and rash and too much of this world... It will be your death all too soon.~ #15525 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 5 // from: 7.0 4.2
+  SAY @18 /* ~And I would know this? What of your job?~ #11523 */
+  IF ~~ THEN REPLY @19 /* ~It goes as planned.~ #11524 */ GOTO 8
+  IF ~~ THEN REPLY @20 /* ~My job is my business.~ #11525 */ GOTO 1
+  IF ~~ THEN REPLY @21 /* ~Sorry, but I think I'm not who you... er... think.~ #11526 */ GOTO 2
 END
 
-IF WEIGHT #6 ~  True()
-~ THEN BEGIN 6 // from:
-  SAY @9 /* ~To define your future, you must know your past, wanderer...~ #15526 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 6 // from: 12.2 8.2 7.2 4.1 1.0
+  SAY @22 /* ~Why would you say that?~ #11528 */
+  IF ~~ THEN REPLY @23 /* ~Eh... You know the drill.~ #11529 */ GOTO 8
+  IF ~~ THEN REPLY @24 /* ~I... I don't know. What is going on here?~ #11530 */ GOTO 2
+  IF ~~ THEN REPLY @25 /* ~And why wouldn't I?~ #11531 */ GOTO 7
+END
+
+IF ~~ THEN BEGIN 7 // from: 6.2
+  SAY @26 /* ~I thought as much. To business then?~ #11533 */
+  IF ~~ THEN REPLY @27 /* ~Agreed? What say you to this?~ #11534 */ GOTO 5
+  IF ~~ THEN REPLY @28 /* ~I'm... completely at a loss. What are you talking about?~ #11535 */ GOTO 2
+  IF ~~ THEN REPLY @29 /* ~I... don't think so?~ #11536 */ GOTO 6
+END
+
+IF ~~ THEN BEGIN 8 // from: 6.0 5.0
+  SAY @30 /* ~So it's agreed then?~ #11537 */
+  IF ~~ THEN REPLY @31 /* ~What? Sorry, but I've just been playing along.~ #11538 */ GOTO 2
+  IF ~~ THEN REPLY @32 /* ~Uh... sure!~ #11548 */ GOTO 9
+  IF ~~ THEN REPLY @33 /* ~I am not sure.~ #11549 */ GOTO 6
+END
+
+IF ~~ THEN BEGIN 9 // from: 8.1
+  SAY @34 /* ~All right then.~ #11550 */
+  IF ~~ THEN GOTO 10
+END
+
+IF ~~ THEN BEGIN 10 // from: 9.0
+  SAY @35 /* ~Um...~ #11551 */
+  IF ~~ THEN GOTO 11
+END
+
+IF ~~ THEN BEGIN 11 // from: 10.0
+  SAY @36 /* ~You have no idea what we were talking about, do you?~ #11552 */
+  IF ~~ THEN REPLY @37 /* ~Eh, no, I was just playing along.~ #11553 */ GOTO 12
+  IF ~~ THEN REPLY @38 /* ~Of course I do! It's, um, business as usual!~ #11554 */ GOTO 1
+END
+
+IF ~~ THEN BEGIN 12 // from: 11.0
+  SAY @39 /* ~I see... so you bluffed your way through this entire conversation without a clue what was going on?~ #11556 */
+  IF ~  PartyHasItem("MISC47")
+~ THEN REPLY @40 /* ~Yes, actually. Kept you going for quite some time, too. What was this all about?~ #11557 */ GOTO 14
+  IF ~  !PartyHasItem("MISC47")
+~ THEN REPLY @41 /* ~Um, yes. What was the point of all this?~ #11559 */ GOTO 13
+  IF ~~ THEN REPLY @42 /* ~Certainly not. Business as usual?~ #11560 */ GOTO 6
+END
+
+IF ~~ THEN BEGIN 13 // from: 12.1
+  SAY @43 /* ~I, uh... I forget. Um, goodbye.~ #11561 */
+  IF ~~ THEN DO ~EscapeArea()
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 14 // from: 12.0
+  SAY @44 /* ~I was to meet the owner of the pantaloons. That would be you, but it is not you. You are the wrong one, because your pantaloons are obviously STOLEN. A foolproof plan of recognition ruined, because you were daft enough to keep the pantaloons. I'll take those, and no reward for you. That'll teach you to abscond with a man's hard-earned trousers!~ #11565 */
+  IF ~~ THEN DO ~TakePartyItem("MISC47")
+EscapeArea()
+~ EXIT
 END

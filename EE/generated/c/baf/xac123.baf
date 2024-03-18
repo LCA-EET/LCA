@@ -1,0 +1,103 @@
+IF
+	InParty(Myself)
+	Global("bd_caelar_in_party","locals",0)
+	Global("bd_caelar_fate","global",2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("bd_caelar_in_party","locals",1)
+		ChangeAIScript("",DEFAULT)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!InParty(Myself)
+	Global("bd_caelar_in_party","locals",1)
+	Global("bd_caelar_fate","global",2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("bd_caelar_in_party","locals",0)
+		ChangeAIScript("BDCAELAC",GENERAL)
+		ChangeEnemyAlly(Myself,GOODBUTBLUE)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("bd_plot","global",570)
+	CombatCounter(0)
+	!Detect(NearestEnemyOf(Myself))
+	Range("bdaun",10)  // Aun Argent
+	OpenState("door01",TRUE)
+	Range([PC],10)
+THEN
+	RESPONSE #100
+		DialogInterrupt(TRUE)
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	Global("bd_plot","global",570)
+	CombatCounter(0)
+	!Detect(NearestEnemyOf(Myself))
+	Range("bdaun",10)  // Aun Argent
+	OpenState("door01",FALSE)
+THEN
+	RESPONSE #100
+		Unlock("door01")
+		OpenDoor("door01")
+END
+
+IF
+	Global("bd_plot","global",570)
+	CombatCounter(0)
+	!Detect(NearestEnemyOf(Myself))
+	!Range("bdaun",10)  // Aun Argent
+THEN
+	RESPONSE #100
+		DialogInterrupt(FALSE)
+		MoveToObject("bdaun")  // Aun Argent
+END
+
+IF
+	OR(2)
+		Global("bd_plot","global",575)
+		Global("bd_plot","global",576)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_plot","global",577)
+END
+
+IF
+	Global("bd_plot","global",577)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	AreaCheck("bd4400")  // Avernus
+	Global("bd_plot","global",580)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	GlobalLT("bd_plot","global",170)
+	AreaCheck("bd1000")  // Coast Way Crossing
+	See([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	!InParty(Myself)
+	CheckSpellState(Myself,STORY_MODE)
+THEN
+	RESPONSE #100
+		ReallyForceSpellDeadRES("OHSMODE3",Myself)  // No such index
+		Continue()
+END
+

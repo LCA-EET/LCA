@@ -1,121 +1,87 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BELAND.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FORTHE.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BELAND.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FORTHE.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA363~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #1 /* Triggers after states #: 10 even though they appear after this state */
-~  Global("BelandEntranceFee","GLOBAL",0)
-ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+IF ~  True()
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Welcome all to the Hall of Wonders. A mere gold piece secures entry to the most curious collection of machination inspirations on all Abeir-Toril. The craft displayed within is truly a sight to see, and the gold raised goes to needed supplies, that future wonders will be wrought.~ #2516 */
-  IF ~~ THEN REPLY @2 /* ~I am afraid I cannot pay the suggested donation.~ #2524 */ GOTO 3
-  IF ~~ THEN REPLY @3 /* ~I'll not pay to enter a building open to the public!~ #2525 */ GOTO 8
-  IF ~  PartyGoldGT(0)
-~ THEN REPLY @4 /* ~A mere pittance to pay for a day's entertainment.~ #2526 */ DO ~TakePartyGold(1)
-~ GOTO 7
+  SAY @1 /* ~Hail and well met, stranger. I take it you are an adventuring sort? I could tell the moment I saw you. You do not have the manicured hands of the fops we usually get through here. May I have a moment or two of your time?~ #19741 */
+  IF ~~ THEN REPLY @2 /* ~What do you want of me?~ #19742 */ GOTO 2
+  IF ~~ THEN REPLY @3 /* ~I'll listen... for the right price.~ #19743 */ GOTO 4
+  IF ~~ THEN REPLY @4 /* ~Go away son, you bother me.~ #19744 */ GOTO 1
 END
 
-IF WEIGHT #2 /* Triggers after states #: 10 even though they appear after this state */
-~  Global("BelandEntranceFee","GLOBAL",0)
-ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
-ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
-~ THEN BEGIN 1 // from:
-  SAY @5 /* ~Good on you, friend. Come inside the Hall of Wonders, but please remember the 1 gold donation. It provides sponsorship for those that craft the curious wonders inspired by Gond. This patronage supports the... not immediately salable works produced.~ #2517 */
-  IF ~~ THEN REPLY @2 /* ~I am afraid I cannot pay the suggested donation.~ #2527 */ GOTO 8
-  IF ~~ THEN REPLY @3 /* ~I'll not pay to enter a building open to the public!~ #2528 */ GOTO 5
-  IF ~  PartyGoldGT(0)
-~ THEN REPLY @4 /* ~A mere pittance to pay for a day's entertainment.~ #2529 */ DO ~TakePartyGold(1)
-~ GOTO 7
-END
-
-IF WEIGHT #3 /* Triggers after states #: 10 even though they appear after this state */
-~  Global("BelandEntranceFee","GLOBAL",0)
-ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
-~ THEN BEGIN 2 // from:
-  SAY @6 /* ~1 gold, no talking, and please wipe your feet. The Hall of Wonders is open to all, but touch nothing while herein. We wish to preserve the condition of our exhibits that we might have example for our craftsmen to copy. Duplicates of many items are available by long-term request, for more than you are likely to have in a lifetime.~ #2518 */
-  IF ~~ THEN REPLY @2 /* ~I am afraid I cannot pay the suggested donation.~ #2530 */ GOTO 5
-  IF ~~ THEN REPLY @3 /* ~I'll not pay to enter a building open to the public!~ #2531 */ GOTO 5
-  IF ~  PartyGoldGT(0)
-~ THEN REPLY @4 /* ~A mere pittance to pay for a day's entertainment.~ #2532 */ DO ~TakePartyGold(1)
-~ GOTO 7
-END
-
-IF ~~ THEN BEGIN 3 // from: 8.0 0.0
-  SAY @7 /* ~It's but a small matter to momentarily lapse the entry fee, though if ye can soon afford a coin or two in the future, we'd sorely appreciate it.~ #2519 */
-  IF ~~ THEN GOTO 7
-END
-
-IF ~~ THEN BEGIN 4 // from:
-  SAY @8 /* ~Oh, do reconsider! You'll not find these items anywhere else in Faerûn. It would be a shame to miss them, would it not?~ #2520 */
-  IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN 5 // from: 2.1 2.0 1.1
-  SAY @9 /* ~You are welcome to return when you have the coin, but I cannot permit your entry now. My apologies.~ #2521 */
-  IF ~~ THEN DO ~ActionOverride(Player1,LeaveAreaLUAPanic("AR0600","",[1306.2473],SW))
-ActionOverride(Player1,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player1,SetMasterArea("AR0130"))
-ActionOverride(Player2,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player3,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player4,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player5,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player6,LeaveAreaLUA("AR0600","",[1306.2473],SW))
+IF ~~ THEN BEGIN 1 // from: 0.2
+  SAY @5 /* ~If you wish, though you are foolish to rebuke me before you know my offer. I could have made your group the heroes of an ode, but now you shall be the ogrish louts of a dirty limerick or two. Something about being a dirty little nipper of a cabin <GIRLBOY>, I think.~ #19745 */
+  IF ~~ THEN DO ~EscapeArea()
 ~ EXIT
 END
 
-IF ~~ THEN BEGIN 6 // from:
-  SAY @10 /* ~You cannot enter without payment, so please don't make this difficult. I'd rather not call the hall guards, they've ever so much to attend to.~ #2522 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 2 // from: 0.0
+  SAY @6 /* ~Well, I'll tell you. I am a bard, and a soon-to-be-great bard, I might add. All I really need is some good material for a song or two, and I'll be playing the big rooms. Seeing as how the masses always like tales of derring-do, I need to purchase a few details off of you. I could always make something up, but such things never ring true. Are you interested?~ #19746 */
+  IF ~~ THEN REPLY @7 /* ~The lot of a bard is to travel and learn. Why don't you go out and find your own stories?~ #19749 */ GOTO 6
+  IF ~~ THEN REPLY @8 /* ~For the right price I might consider it.~ #19750 */ GOTO 5
+  IF ~~ THEN REPLY @9 /* ~No self-respecting bard would do such a thing, and I won't help you.~ #19751 */ GOTO 3
 END
 
-IF ~~ THEN BEGIN 7 // from: 8.2 3.0 2.2 1.2 0.2
-  SAY @11 /* ~Please enter, and enjoy the works within. Gondsman Brathlen will offer insights on a number of items, but his time is limited and the tour will not be extensive. Enjoy.~ #2523 */
-  IF ~~ THEN DO ~SetGlobal("BelandEntranceFee","GLOBAL",1)
+IF ~~ THEN BEGIN 3 // from: 6.0 5.0 4.0 2.2
+  SAY @10 /* ~My, aren't you the moral champion of the day? I fail to see why I should be chastised because I don't wish to risk my neck chasing down vermin or bandits. Leave me be then.~ #19747 */
+  IF ~~ THEN DO ~EscapeArea()
 ~ EXIT
 END
 
-IF ~~ THEN BEGIN 8 // from: 1.0 0.1
-  SAY @8 /* ~Oh, do reconsider! You'll not find these items anywhere else in Faerûn. It would be a shame to miss them, would it not?~ #2533 */
-  IF ~~ THEN REPLY @2 /* ~I am afraid I cannot pay the suggested donation.~ #2536 */ GOTO 3
-  IF ~~ THEN REPLY @3 /* ~I'll not pay to enter a building open to the public!~ #2537 */ GOTO 9
-  IF ~  PartyGoldGT(0)
-~ THEN REPLY @4 /* ~A mere pittance to pay for a day's entertainment.~ #2538 */ DO ~TakePartyGold(1)
-~ GOTO 7
+IF ~~ THEN BEGIN 4 // from: 0.1
+  SAY @11 /* ~Oh, that's fine, as I have more than enough money to spend. Basically I require a few stories from you, which I will alter slightly for dramatic effect and present as my own. I could just make something up, but such efforts never ring true. They must be believable if the masses are going to fall for them. So what do you say? Shall I pay you... oh... how about 200 gold a story?~ #19752 */
+  IF ~~ THEN REPLY @9 /* ~No self-respecting bard would do such a thing, and I won't help you.~ #19753 */ GOTO 3
+  IF ~~ THEN REPLY @7 /* ~The lot of a bard is to travel and learn. Why don't you go out and find your own stories?~ #19754 */ GOTO 6
 END
 
-IF ~~ THEN BEGIN 9 // from: 8.1
-  SAY @12 /* ~I'm sorry you feel that way.~ #6249 */
-  IF ~~ THEN DO ~ActionOverride(Player1,LeaveAreaLUAPanic("AR0600","",[1306.2473],SW))
-ActionOverride(Player1,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player1,SetMasterArea("AR0130"))
-ActionOverride(Player2,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player3,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player4,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player5,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player6,LeaveAreaLUA("AR0600","",[1306.2473],SW))
+IF ~~ THEN BEGIN 5 // from: 2.1
+  SAY @12 /* ~A reasonable request. What if I paid you 200 gold for each idea?~ #19755 */
+  IF ~~ THEN REPLY @9 /* ~No self-respecting bard would do such a thing, and I won't help you.~ #19756 */ GOTO 3
+  IF ~~ THEN REPLY @7 /* ~The lot of a bard is to travel and learn. Why don't you go out and find your own stories?~ #19757 */ GOTO 6
+END
+
+IF ~~ THEN BEGIN 6 // from: 5.1 4.1 2.0
+  SAY @13 /* ~Why? Because it's DANGEROUS out there. I became a bard for the easy work and prestige among certain female members of my social set, not because I wanted to chase vermin down dungeon holes. Do you wish to help or not?~ #19758 */
+  IF ~~ THEN REPLY @9 /* ~No self-respecting bard would do such a thing, and I won't help you.~ #19759 */ GOTO 3
+  IF ~~ THEN REPLY @14 /* ~Surely. What type of tales do you require?~ #19760 */ GOTO 7
+END
+
+IF ~~ THEN BEGIN 7 // from: 6.1
+  SAY @15 /* ~I don't know. Something dashing and dangerous that will make the ladies go "my hero"!~ #19761 */
+  IF ~~ THEN REPLY @16 /* ~I've a grand piece about the Iron Throne. It would seem that they are in the midst of a plot to weaken the entire region to increase their power base, and possibly to allow for invasion from Amn. They don't seem to be totally in control of the crisis at this point though, and this has allowed me to come close to destroying them once and for all.~ #19762 */ GOTO 8
+  IF ~~ THEN REPLY @17 /* ~I've faced all manner of beastie and bandit in my travels, and come near death more times than I can count. Would you like to hear of the feral viciousness of gibberlings, or perhaps of the cunning of the common kobold? I could tell of the strength of the gnoll, or the size of the ogre?~ #19764 */ GOTO 9
+  IF ~~ THEN REPLY @18 /* ~I could relate how I have seen good people struck down unjustly, or the strength of character of the common farmer. Perhaps an ode to the conviction of the adventuring cleric, or how good people fight for what is right in the face of incredible odds. What say you?~ #19766 */ GOTO 10
+  IF ~~ THEN REPLY @19 /* ~How about a tale of gold, and the frenzied lust it inspires in people? The treachery of a friend that stabs you in the back for the coins you just pulled out of the depths of a dungeon, or the foolishness of a man who dropped all his arrows to make room for more treasure and faces his enemies defenseless for it?~ #19768 */ GOTO 11
+END
+
+IF ~~ THEN BEGIN 8 // from: 7.0
+  SAY @20 /* ~That sounds like such a load of poppycock. The Iron Throne is a merchant consortium, and not likely to promote such a bloodbath as war with Amn would bring. Killing all the customers is generally bad for business and makes no sense. If you're not going to be serious with me, I'll take my leave.~ #19763 */
+  IF ~~ THEN DO ~EscapeArea()
 ~ EXIT
 END
 
-IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
-~ THEN BEGIN 10 // from:
-  SAY @13 /* ~Since all of you are friends, you can freely explore the museum! I hope you enjoy your stay.~ #6250 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 9 // from: 7.1
+  SAY @21 /* ~Well, that all just sounds rather brutish. I'm not sure what my muse is supposed to do with such tales. Perhaps, as they say, I just really had to be there. Take your money, and I shall slink away to write some songs about the high price of ale and how my silken sheets chafe. This bard business is going to be rather difficult if I am restricted to writing of things I know or understand.~ #19765 */
+  IF ~~ THEN DO ~GiveGoldForce(200)
+EscapeArea()
+~ EXIT
 END
 
-IF WEIGHT #4 ~  Global("BelandEntranceFee","GLOBAL",1)
-~ THEN BEGIN 11 // from:
-  SAY @14 /* ~Hello again. I hope you have been enjoying yourself.~ #6251 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 10 // from: 7.2
+  SAY @22 /* ~Hmm... tales of conviction and strength of spirit. I have no clue where to start telling a tale about that. If I were an introspective sort, I might conclude that I can't write about things I don't understand. As it is, I'm sure it's someone else's fault. I don't think you'll be much use to me after all.~ #19767 */
+  IF ~~ THEN DO ~EscapeArea()
+~ EXIT
 END
 
-IF ~~ THEN BEGIN 12 // from:
-  SAY @15 /* ~Get out or be thrown out!~ #9301 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 11 // from: 7.3
+  SAY @23 /* ~Good, good. I can understand the motivations of these people and tales. I'm sure I could write a fine ballad about these things, as I know their subjects well and true. Unfortunately, songs about such things are not likely to increase my tips or inspire my listeners to applause. If I were more philosophical I might realize this as a flaw within myself, but as it is I am sure it is someone else's fault. Take your money and leave me, I don't think I can use you after all.~ #19769 */
+  IF ~~ THEN DO ~GiveGoldForce(200)
+EscapeArea()
+~ EXIT
 END

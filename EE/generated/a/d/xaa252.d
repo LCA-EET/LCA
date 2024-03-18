@@ -1,73 +1,42 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\RATCHI.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\SEWERC.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\RATCHI.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\SEWERC.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA252~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
 
-IF ~  True()
+IF WEIGHT #1 /* Triggers after states #: 2 even though they appear after this state */
+~  NumTimesTalkedTo(0)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~I am Ratchild! I destroy all those who oppose my people. Feel the wrath of Ratchild: Feel my wrath and tremble!~ #19770 */
-  IF ~~ THEN REPLY @2 /* ~Feel your wrath? By all the gods, you're just a kobold. I think you might have a small mix up on who should be trembling. Draw steel my friends, and let's cut up these little dog-men!~ #19771 */ GOTO 1
-  IF ~~ THEN REPLY @3 /* ~Who exactly are your people?~ #19772 */ GOTO 3
-  IF ~~ THEN REPLY @4 /* ~Please don't hurt us, oh mighty Ratchild.~ #19773 */ GOTO 2
+  SAY @1 /* ~*sniff* Do shouddn't be down here. Not safe if youb don't know your wayb abound. Probabby can't stanb the smelb, either.~ #8526 */
+  IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 1 // from: 0.0
-  SAY @5 /* ~You underestimate Ratchild! You and friends will pay for underestimation. Yip yip yip!~ #19774 */
-  IF ~~ THEN DO ~CreateCreature("KOBCOMM",[2159.1673],S)
-CreateCreature("KOBCOMM",[2211.1848],S)
-CreateCreature("KOBCOMM",[2455.1828],S)
-CreateCreature("KOBCOMM",[2534.1769],S)
-CreateCreature("KOBCOMM",[2594.1739],S)
-CreateCreature("KOBCOMM",[2660.1972],S)
-CreateCreature("KOBCOMM",[2647.2091],S)
-CreateCreature("KOBCOMM",[2047.2233],S)
-CreateCreature("KOBCOMM",[1972.2088],S)
-CreateCreature("KOBCOMM",[1931.1913],S)
-CreateCreature("KOBCOMM",[2727.2113],S)
-Enemy()
-~ EXIT
+IF WEIGHT #2 /* Triggers after states #: 2 even though they appear after this state */
+~  True()
+~ THEN BEGIN 1 // from:
+  SAY @2 /* ~There are bany creaturbs down here, so be carebull. They don't bug me buch because I guess I smelb the samb as everything elb.~ #8527 */
+  IF ~~ THEN REPLY @3 /* ~Who are you, and why are you wandering about the sewers?~ #8529 */ GOTO 3
+  IF ~~ THEN REPLY @4 /* ~Bugger off!~ #8530 */ GOTO 4
 END
 
-IF ~~ THEN BEGIN 2 // from: 0.2
-  SAY @6 /* ~You mock Ratchild! No one mocks Ratchild and lives! Yip, yip yip!~ #19775 */
-  IF ~~ THEN DO ~CreateCreature("KOBCOMM",[2159.1673],S)
-CreateCreature("KOBCOMM",[2211.1848],S)
-CreateCreature("KOBCOMM",[2455.1828],S)
-CreateCreature("KOBCOMM",[2534.1769],S)
-CreateCreature("KOBCOMM",[2594.1739],S)
-CreateCreature("KOBCOMM",[2660.1972],S)
-CreateCreature("KOBCOMM",[2647.2091],S)
-CreateCreature("KOBCOMM",[2047.2233],S)
-CreateCreature("KOBCOMM",[1972.2088],S)
-CreateCreature("KOBCOMM",[1931.1913],S)
-CreateCreature("KOBCOMM",[2727.2113],S)
-Enemy()
-~ EXIT
+IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
+~ THEN BEGIN 2 // from:
+  SAY @5 /* ~If you're realby my frienb, then you'll clearb up my nose run wit' magic.~ #8528 */
+  IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 3 // from: 0.1
-  SAY @7 /* ~My people are rulers of the deeps. Where your peoples wastes are sent, that where we thrive. Ratchild's tribe is stronger than all others. Ratchild's tribe trained to beat anyone. ANYONE. No one can stand up to Ratchild and tribe!~ #19776 */
-  IF ~~ THEN REPLY @8 /* ~That's wonderful that you live down here where all of our waste is dumped. You should be real proud.~ #19777 */ GOTO 4
-  IF ~~ THEN REPLY @9 /* ~I'm pretty sure we can beat you, Ratchild.~ #19778 */ GOTO 4
+IF ~~ THEN BEGIN 3 // from: 1.0
+  SAY @6 /* ~I'm a sewerb cleaner. My job is to clearb up any blocks in the flow.~ #8531 */
+  IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 4 // from: 3.1 3.0
-  SAY @10 /* ~You underestimate Ratchild. Many have done so. Even Harpers have done so. All have felt Ratchild's wrath!~ #19779 */
-  IF ~~ THEN DO ~CreateCreature("KOBCOMM",[2159.1673],S)
-CreateCreature("KOBCOMM",[2211.1848],S)
-CreateCreature("KOBCOMM",[2455.1828],S)
-CreateCreature("KOBCOMM",[2534.1769],S)
-CreateCreature("KOBCOMM",[2594.1739],S)
-CreateCreature("KOBCOMM",[2660.1972],S)
-CreateCreature("KOBCOMM",[2647.2091],S)
-CreateCreature("KOBCOMM",[2047.2233],S)
-CreateCreature("KOBCOMM",[1972.2088],S)
-CreateCreature("KOBCOMM",[1931.1913],S)
-CreateCreature("KOBCOMM",[2727.2113],S)
-Enemy()
-~ EXIT
+IF ~~ THEN BEGIN 4 // from: 1.1
+  SAY @7 /* ~I hobe the monsterbs downd here get youb!~ #9084 */
+  IF ~~ THEN EXIT
 END

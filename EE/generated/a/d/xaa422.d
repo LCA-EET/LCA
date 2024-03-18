@@ -1,59 +1,49 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NOBW7.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BART6.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NOBW7.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BART6.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA422~
 
-IF ~~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Frightfully sorry, but you must have "mistakenly" entered the wrong room. Please make haste in your retreat, as I do not wish to make a fuss.~ #8392 */
-  IF ~~ THEN EXIT
-END
-
 IF ~  NumTimesTalkedTo(0)
-~ THEN BEGIN 1 // from:
-  SAY @2 /* ~The Helm and Cloak provides excellent service and quiet atmosphere. I do not wish to repay the house by getting blood on their carpets and disturbing the other guests. To this end, I wish you to retreat from my room before I call the house guards.~ #8393 */
-  IF ~~ THEN REPLY @3 /* ~Sorry, lady, but we're here for your money, or your life. It's your choice and you better make it quick.~ #11249 */ GOTO 7
-  IF ~~ THEN REPLY @4 /* ~We're sorry for bothering you. We'll be on our way out.~ #11250 */ GOTO 6
-  IF ~~ THEN REPLY @5 /* ~Who are you to be so, that you have guards posted at your door?~ #11251 */ GOTO 8
+~ THEN BEGIN 0 // from:
+  SAY @1 /* ~Hey there, mate. Don't recognize you, which is strange, considering I know everyone here at the Iron Throne. Why don't you tell me who you are?~ #7641 */
+  IF ~~ THEN REPLY @2 /* ~We're merchants just out of Sembia.~ #7648 */ GOTO 1
+  IF ~~ THEN REPLY @3 /* ~We're merchants just out of Cormyr.~ #7649 */ GOTO 2
+  IF ~~ THEN REPLY @4 /* ~We're new recruits. We haven't been given an assignment yet.~ #7650 */ GOTO 3
+  IF ~~ THEN REPLY @5 /* ~None of your business.~ #7651 */ GOTO 4
 END
 
-IF ~~ THEN BEGIN 2 // from:
-  SAY @6 /* ~By the planes, who the blazes are you! Get out of my room!~ #8394 */
+IF ~~ THEN BEGIN 1 // from: 0.0
+  SAY @6 /* ~Out of Sembia, eh? Well, if ye're looking for Rieltar or Brunos, you won't find them here. They're off to Candlekeep for some important business.~ #7642 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 3 // from:
-  SAY @7 /* ~I have no recourse! Guards!~ #8395 */
+IF ~~ THEN BEGIN 2 // from: 0.1
+  SAY @7 /* ~From Cormyr? That's strange; I didn't think that the Iron Throne had any business dealing in Cormyr. After King Azoun banned them from the country that is.~ #7643 */
+  IF ~~ THEN REPLY @8 /* ~So why did the Iron Throne get banned from Cormyr?~ #7652 */ GOTO 5
+  IF ~~ THEN REPLY @9 /* ~Yes, well the Iron Throne wants to renew some of its ties to Cormyr.~ #7653 */ GOTO 6
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.2
+  SAY @10 /* ~Oh, I see. Well, if ye're wondering where you'll be assigned, I'd bet it would be with the Blacktalons down in the Wood of Sharp Teeth. They've lost quite a few members lately and are in desperate need of new recruits.~ #7644 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 4 // from:
-  SAY @8 /* ~Even though it is not decent for me to mingle with those beneath my station, I find that you possess a certain irresistible charm. I am willing to tell whatever you wish to hear. Perhaps you'd like to know about the last ball I attended. It was wondrous; I was at the forefront of everyone's mind.~ #8396 */
-  IF ~~ THEN EXIT
-END
-
-IF ~  True()
-~ THEN BEGIN 5 // from:
-  SAY @9 /* ~I'll not have you near me!~ #9127 */
-  IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN 6 // from: 1.1
-  SAY @10 /* ~Good, and don't come back!~ #11252 */
-  IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN 7 // from: 1.0
-  SAY @11 /* ~You don't know what you do! I am from the great nation of Amn, and am a guest of this city. Take my money, but know that you won't get away with this for long.~ #11253 */
-  IF ~~ THEN DO ~GiveGoldForce(189)
-ReputationInc(-2)
+IF ~~ THEN BEGIN 4 // from: 0.3
+  SAY @11 /* ~It certainly is my business, and I don't think you belong here. INTRUDERS! We have intruders in the tower!~ #7645 */
+  IF ~~ THEN DO ~Enemy()
 ~ EXIT
 END
 
-IF ~~ THEN BEGIN 8 // from: 1.2
-  SAY @12 /* ~I am Sarah, an emissary from the nation of Amn. I have been sent to this barbaric city to help bridge the misunderstandings between our two peoples. Now that you know of my importance, get out of my room!~ #11254 */
+IF ~~ THEN BEGIN 5 // from: 2.0
+  SAY @12 /* ~The Throne was dealing in black lotus, slaves, prostitution—all the vices that King Azoun had a real dislike for. Since the king has the power to do whatever he wants, he banned the Throne from Cormyr. It was a good thing too, otherwise the Throne would have never given Rieltar the funds he needed to start up this operation on the Sword Coast.~ #7646 */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 2.1
+  SAY @13 /* ~Hmmm, I don't see what that has to do with Rieltar, but I'll take your word for it.~ #7647 */
   IF ~~ THEN EXIT
 END

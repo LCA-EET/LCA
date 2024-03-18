@@ -1,7 +1,7 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\SHOP08.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\SHOP06.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\SHOP08.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\SHOP06.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
@@ -9,8 +9,8 @@ BEGIN ~XAA353~
 
 IF ~  True()
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Hi, I'm Well-Adjusted Al, and my prices are sensible. I used to be called "Crazy Al," but therapy has convinced me that selling plate armor for 3 gold pieces and a small duck was no way to get ahead in business.~ #15392 */
-  IF ~~ THEN REPLY @2 /* ~Ooookay. Just show me what you have and I'll be on my way.~ #15393 */ DO ~StartStore("xaa137",LastTalkedToBy(Myself))
+  SAY @1 /* ~I'm afraid my stocks are not quite as full as they should be, but I do try to keep a good supply of the basics on hand.~ #15386 */
+  IF ~~ THEN REPLY @2 /* ~I'm sure that will suffice. Let's have a look, shall we?~ #15387 */ DO ~StartStore("xaa137",LastTalkedToBy(Myself))
 ~ EXIT
-  IF ~~ THEN REPLY @3 /* ~Thanks, but no thanks. Get your hand off my arm. I'll be going now. Goodbye.~ #15394 */ EXIT
+  IF ~~ THEN REPLY @3 /* ~Perhaps I shall return when your shelves are not so lean.~ #15388 */ EXIT
 END

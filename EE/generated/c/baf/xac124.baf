@@ -1,0 +1,1199 @@
+IF
+	Global("BD_Engaged","LOCALS",0)
+	OR(4)
+		!Allegiance(Myself,NEUTRAL)
+		See(NearestEnemyOf(Myself))
+		AttackedBy([ANYONE],DEFAULT)
+		TookDamage()
+THEN
+	RESPONSE #100
+		SetGlobal("BD_Engaged","LOCALS",1)
+		SetGlobalTimer("BD_Rest","LOCALS",EIGHT_HOURS)
+		Continue()
+END
+
+IF
+	OR(4)
+		Allegiance(Myself,NEUTRAL)
+		StateCheck(Myself,STATE_IMMOBILE)
+		StateCheck(Myself,STATE_REALLY_DEAD)
+		Global("BD_Engaged","LOCALS",0)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!InParty(Myself)
+	!InActiveArea(Myself)
+	!Range(NearestEnemyOf(Myself),30)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!InParty(Myself)
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	Global("BD_IHeal","LOCALS",1)
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	OR(2)
+		!HasItem("POTN52",Myself)  // Potion of Extra Healing
+		HPPercentGT(Myself,84)
+THEN
+	RESPONSE #100
+		SetGlobal("BD_IHeal","LOCALS",0)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!Dead("BDBELHIF")  // Belhifet
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HPPercentLT(Myself,76)
+	HasItem("POTN10",Myself)  // Potion of Invisibility
+	HasItem("POTN52",Myself)  // Potion of Extra Healing
+	Global("BD_IHeal","LOCALS",0)
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!CheckSpellState(Myself,CANNOT_TURN_INVISIBLE)
+	!CheckStatGT(NearestEnemyOf(Myself),0,TRUE_SIGHT)
+	!CheckStatGT(SecondNearestEnemyOf(Myself),0,TRUE_SIGHT)
+	!CheckStatGT(ThirdNearestEnemyOf(Myself),0,TRUE_SIGHT)
+	!CheckStatGT(FourthNearestEnemyOf(Myself),0,TRUE_SIGHT)
+	!CheckStatGT(FifthNearestEnemyOf(Myself),0,TRUE_SIGHT)
+	!CheckStatGT(SixthNearestEnemyOf(Myself),0,TRUE_SIGHT)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SetGlobal("BD_IHeal","LOCALS",1)
+		UseItem("POTN10",Myself)  // Potion of Invisibility
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	Dead("BDBELHIF")  // Belhifet
+	StateCheck(Myself,STATE_INVISIBLE)
+THEN
+	RESPONSE #100
+		ApplySpellRES("BDVISIBL",Myself)  // No such index
+END
+
+IF
+	OR(2)
+		!InParty(Myself)
+		ActionListEmpty()
+	HasItem("POTN52",Myself)  // Potion of Extra Healing
+	HPPercentLT(Myself,85)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	OR(2)
+		Allegiance(Myself,EVILCUTOFF)
+		ActuallyInCombat()
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN52",Myself)  // Potion of Extra Healing
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+		SetInterrupt(TRUE)
+END
+
+IF
+	!Allegiance(Myself,EVILCUTOFF)
+	OR(2)
+		!InParty(Myself)
+		ActionListEmpty()
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpellRES("BDCAELA3")  // Cure Critical Wounds
+	!HasItem("POTN52",Myself)  // Potion of Extra Healing
+	HPPercentLT(Myself,85)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	ActuallyInCombat()
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("BDCAELA3",Myself)  // Cure Critical Wounds
+		SetInterrupt(TRUE)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpell(CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
+	!CheckSpellState(Myself,ARMOR_OF_FAITH)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	ActuallyInCombat()
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
+END
+
+IF
+	OR(2)
+		!InParty(Myself)
+		ActionListEmpty()
+	HasItem("POTN34",Myself)  // Potion of Magic Protection
+	CheckStatLT(Myself,100,RESISTMAGIC)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN34",Myself)  // Potion of Magic Protection
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+		SetInterrupt(TRUE)
+END
+
+IF
+	OR(2)
+		!InParty(Myself)
+		ActionListEmpty()
+	HasItem("POTN28",Myself)  // Potion of Fortitude
+	CheckStatLT(Myself,18,CON)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN28",Myself)  // Potion of Fortitude
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+		SetInterrupt(TRUE)
+END
+
+IF
+	OR(2)
+		!InParty(Myself)
+		ActionListEmpty()
+	HasItem("POTN11",Myself)  // Potion of Invulnerability
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN11",Myself)  // Potion of Invulnerability
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpell(CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
+	!StateCheck(Myself,STATE_DRAWUPONHOLYMIGHT)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		RemoveSpell(CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
+		SpellRES("BDCAELA2",Myself)  // Draw Upon Unholy Might
+		SetInterrupt(TRUE)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpell(CLERIC_PROTECT_FROM_EVIL)  // SPPR107.SPL (Protection From Evil)
+	CheckStat(Myself,0,PROTECTION_FROM_EVIL)
+	OR(6)
+		Alignment([GOODCUTOFF],MASK_GOOD)
+		Alignment(SecondNearest([GOODCUTOFF]),MASK_GOOD)
+		Alignment(ThirdNearest([GOODCUTOFF]),MASK_GOOD)
+		Alignment(FourthNearest([GOODCUTOFF]),MASK_GOOD)
+		Alignment(FifthNearest([GOODCUTOFF]),MASK_GOOD)
+		Alignment(SixthNearest([GOODCUTOFF]),MASK_GOOD)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		RemoveSpell(CLERIC_PROTECT_FROM_EVIL)  // SPPR107.SPL (Protection From Evil)
+		SpellRES("BDCAELA1",Myself)  // Protection From Good
+		SetInterrupt(TRUE)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	StateCheck(Myself,STATE_INVISIBLE)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpell(ASSASSIN_POISON)  // SPCL423.SPL (Poison Weapon)
+	!CheckSpellState(Myself,POISON_WEAPON)
+	!General(NearestEnemyOf(Myself),UNDEAD)
+	!Race(NearestEnemyOf(Myself),GOLEM)
+	!Race(NearestEnemyOf(Myself),SWORD)
+	CheckStatLT(NearestEnemyOf(Myself),100,RESISTPOISON)
+	Range(NearestEnemyOf(Myself),6)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,ASSASSIN_POISON)  // SPCL423.SPL (Poison Weapon)
+END
+
+IF
+	Global("BD_IHeal","LOCALS",1)
+	StateCheck(Myself,STATE_INVISIBLE)
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	Range([GOODCUTOFF],15)
+THEN
+	RESPONSE #100
+		RandomWalk()
+END
+
+IF
+	Global("BD_IHeal","LOCALS",1)
+	StateCheck(Myself,STATE_INVISIBLE)
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!Allegiance(Myself,EVILCUTOFF)
+	OR(2)
+		!InParty(Myself)
+		ActionListEmpty()
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpellRES("BDCAELA3")  // Cure Critical Wounds
+	See(MostDamagedOf([PC]))
+	HPPercentLT(LastSeenBy(Myself),40)
+	InParty(LastSeenBy(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStat(LastSeenBy(Myself),2,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("BDCAELA3",LastSeenBy(Myself))  // Cure Critical Wounds
+		SetInterrupt(TRUE)
+END
+
+IF
+	!Allegiance(Myself,EVILCUTOFF)
+	OR(2)
+		!InParty(Myself)
+		ActionListEmpty()
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpellRES("BDCAELA4")  // Shining Bolt
+	See("BDBELHIF")  // Belhifet
+	CheckStatLT(LastSeenBy(Myself),51,MAGICDAMAGERESISTANCE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("BDCAELA4",LastSeenBy(Myself))  // Shining Bolt
+		SetInterrupt(TRUE)
+END
+
+IF
+	!Allegiance(Myself,EVILCUTOFF)
+	OR(2)
+		!InParty(Myself)
+		ActionListEmpty()
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpellRES("BDCAELA4")  // Shining Bolt
+	See([EVILCUTOFF.0.DEMONIC])
+	CheckStatLT(LastSeenBy(Myself),51,MAGICDAMAGERESISTANCE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("BDCAELA4",LastSeenBy(Myself))  // Shining Bolt
+		SetInterrupt(TRUE)
+END
+
+IF
+	!Allegiance(Myself,EVILCUTOFF)
+	OR(2)
+		!InParty(Myself)
+		ActionListEmpty()
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpellRES("BDCAELA4")  // Shining Bolt
+	See(SecondNearest([EVILCUTOFF.0.DEMONIC]))
+	CheckStatLT(LastSeenBy(Myself),51,MAGICDAMAGERESISTANCE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("BDCAELA4",LastSeenBy(Myself))  // Shining Bolt
+		SetInterrupt(TRUE)
+END
+
+IF
+	!Allegiance(Myself,EVILCUTOFF)
+	OR(2)
+		!InParty(Myself)
+		ActionListEmpty()
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpellRES("BDCAELA4")  // Shining Bolt
+	See(ThirdNearest([EVILCUTOFF.0.DEMONIC]))
+	CheckStatLT(LastSeenBy(Myself),51,MAGICDAMAGERESISTANCE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("BDCAELA4",LastSeenBy(Myself))  // Shining Bolt
+		SetInterrupt(TRUE)
+END
+
+IF
+	!Allegiance(Myself,EVILCUTOFF)
+	OR(2)
+		!InParty(Myself)
+		ActionListEmpty()
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpellRES("BDCAELA4")  // Shining Bolt
+	See([EVILCUTOFF.UNDEAD])
+	CheckStatLT(LastSeenBy(Myself),51,MAGICDAMAGERESISTANCE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("BDCAELA4",LastSeenBy(Myself))  // Shining Bolt
+		SetInterrupt(TRUE)
+END
+
+IF
+	!Allegiance(Myself,EVILCUTOFF)
+	OR(2)
+		!InParty(Myself)
+		ActionListEmpty()
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpellRES("BDCAELA4")  // Shining Bolt
+	See(SecondNearest([EVILCUTOFF.UNDEAD]))
+	CheckStatLT(LastSeenBy(Myself),51,MAGICDAMAGERESISTANCE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("BDCAELA4",LastSeenBy(Myself))  // Shining Bolt
+		SetInterrupt(TRUE)
+END
+
+IF
+	!Allegiance(Myself,EVILCUTOFF)
+	OR(2)
+		!InParty(Myself)
+		ActionListEmpty()
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	!GlobalTimerNotExpired("BD_Support","LOCALS")
+	HaveSpellRES("BDCAELA5")  // Bless
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	Range([GOODCUTOFF],15)
+	Range(SecondNearest([GOODCUTOFF]),15)
+	!StateCheck(Myself,STATE_BLESS)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("BD_Support","LOCALS",TWO_ROUNDS)
+		SpellRES("BDCAELA5",Myself)  // Bless
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	!GlobalTimerNotExpired("BD_BAura","LOCALS")
+	HaveSpell(AURA_OF_DESPAIR)  // SPCL103.SPL (Aura of Despair)
+	Range(NearestEnemyOf(Myself),15)
+	Range(SecondNearestEnemyOf(Myself),15)
+	Range(ThirdNearestEnemyOf(Myself),15)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("BD_BAura","LOCALS",TEN_ROUNDS)
+		Spell(Myself,AURA_OF_DESPAIR)  // SPCL103.SPL (Aura of Despair)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpell(CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unholy Blight)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	See([GOODCUTOFF.0.0.0.0.0.MASK_GOOD])
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(LastSeenBy(Myself),55,MAGICDAMAGERESISTANCE)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unholy Blight)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpell(CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unholy Blight)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	See(SecondNearest([GOODCUTOFF.0.0.0.0.0.MASK_GOOD]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(LastSeenBy(Myself),55,MAGICDAMAGERESISTANCE)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unholy Blight)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpell(CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unholy Blight)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	See(ThirdNearest([GOODCUTOFF.0.0.0.0.0.MASK_GOOD]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(LastSeenBy(Myself),55,MAGICDAMAGERESISTANCE)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unholy Blight)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpell(CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unholy Blight)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	See(FourthNearest([GOODCUTOFF.0.0.0.0.0.MASK_GOOD]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(LastSeenBy(Myself),55,MAGICDAMAGERESISTANCE)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unholy Blight)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpell(CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unholy Blight)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	See(FifthNearest([GOODCUTOFF.0.0.0.0.0.MASK_GOOD]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(LastSeenBy(Myself),55,MAGICDAMAGERESISTANCE)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unholy Blight)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpell(CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unholy Blight)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	See(SixthNearest([GOODCUTOFF.0.0.0.0.0.MASK_GOOD]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(LastSeenBy(Myself),55,MAGICDAMAGERESISTANCE)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unholy Blight)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HPPercentLT(Myself,76)
+	HaveSpell(BLACKGUARD_ABSORB_HEALTH)  // SPCL102.SPL (Absorb Health)
+	See(NearestEnemyOf(Myself))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!Race(LastSeenBy(Myself),ELEMENTAL)
+	!Race(LastSeenBy(Myself),SALAMANDER)
+	!Race(LastSeenBy(Myself),GOLEM)
+	!Race(LastSeenBy(Myself),SWORD)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)
+	CheckStatLT(LastSeenBy(Myself),75,MAGICDAMAGERESISTANCE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),BLACKGUARD_ABSORB_HEALTH)  // SPCL102.SPL (Absorb Health)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HPPercentLT(Myself,76)
+	HaveSpell(BLACKGUARD_ABSORB_HEALTH)  // SPCL102.SPL (Absorb Health)
+	See(SecondNearestEnemyOf(Myself))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!Race(LastSeenBy(Myself),ELEMENTAL)
+	!Race(LastSeenBy(Myself),SALAMANDER)
+	!Race(LastSeenBy(Myself),GOLEM)
+	!Race(LastSeenBy(Myself),SWORD)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)
+	CheckStatLT(LastSeenBy(Myself),75,MAGICDAMAGERESISTANCE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),BLACKGUARD_ABSORB_HEALTH)  // SPCL102.SPL (Absorb Health)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HPPercentLT(Myself,76)
+	HaveSpell(BLACKGUARD_ABSORB_HEALTH)  // SPCL102.SPL (Absorb Health)
+	See(ThirdNearestEnemyOf(Myself))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!Race(LastSeenBy(Myself),ELEMENTAL)
+	!Race(LastSeenBy(Myself),SALAMANDER)
+	!Race(LastSeenBy(Myself),GOLEM)
+	!Race(LastSeenBy(Myself),SWORD)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)
+	CheckStatLT(LastSeenBy(Myself),75,MAGICDAMAGERESISTANCE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),BLACKGUARD_ABSORB_HEALTH)  // SPCL102.SPL (Absorb Health)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HPPercentLT(Myself,76)
+	HaveSpell(BLACKGUARD_ABSORB_HEALTH)  // SPCL102.SPL (Absorb Health)
+	See(FourthNearestEnemyOf(Myself))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!Race(LastSeenBy(Myself),ELEMENTAL)
+	!Race(LastSeenBy(Myself),SALAMANDER)
+	!Race(LastSeenBy(Myself),GOLEM)
+	!Race(LastSeenBy(Myself),SWORD)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)
+	CheckStatLT(LastSeenBy(Myself),75,MAGICDAMAGERESISTANCE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),BLACKGUARD_ABSORB_HEALTH)  // SPCL102.SPL (Absorb Health)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HPPercentLT(Myself,76)
+	HaveSpell(BLACKGUARD_ABSORB_HEALTH)  // SPCL102.SPL (Absorb Health)
+	See(FifthNearestEnemyOf(Myself))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!Race(LastSeenBy(Myself),ELEMENTAL)
+	!Race(LastSeenBy(Myself),SALAMANDER)
+	!Race(LastSeenBy(Myself),GOLEM)
+	!Race(LastSeenBy(Myself),SWORD)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)
+	CheckStatLT(LastSeenBy(Myself),75,MAGICDAMAGERESISTANCE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),BLACKGUARD_ABSORB_HEALTH)  // SPCL102.SPL (Absorb Health)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HPPercentLT(Myself,76)
+	HaveSpell(BLACKGUARD_ABSORB_HEALTH)  // SPCL102.SPL (Absorb Health)
+	See(SixthNearestEnemyOf(Myself))
+	!General(LastSeenBy(Myself),UNDEAD)
+	!Race(LastSeenBy(Myself),DEMONIC)
+	!Race(LastSeenBy(Myself),ELEMENTAL)
+	!Race(LastSeenBy(Myself),SALAMANDER)
+	!Race(LastSeenBy(Myself),GOLEM)
+	!Race(LastSeenBy(Myself),SWORD)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStat(LastSeenBy(Myself),7,WIZARD_SPELL_IMMUNITY)
+	CheckStatLT(LastSeenBy(Myself),75,MAGICDAMAGERESISTANCE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		Spell(LastSeenBy(Myself),BLACKGUARD_ABSORB_HEALTH)  // SPCL102.SPL (Absorb Health)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpell(ASSASSIN_POISON)  // SPCL423.SPL (Poison Weapon)
+	!CheckSpellState(Myself,POISON_WEAPON)
+	!General(NearestEnemyOf(Myself),UNDEAD)
+	!Race(NearestEnemyOf(Myself),GOLEM)
+	!Race(NearestEnemyOf(Myself),SWORD)
+	CheckStatLT(NearestEnemyOf(Myself),100,RESISTPOISON)
+	Range(NearestEnemyOf(Myself),6)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		Spell(Myself,ASSASSIN_POISON)  // SPCL423.SPL (Poison Weapon)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpell(CLERIC_PROTECT_FROM_EVIL)  // SPPR107.SPL (Protection From Evil)
+	CheckStat(Myself,0,PROTECTION_FROM_EVIL)
+	OR(6)
+		Alignment([GOODCUTOFF],MASK_GOOD)
+		Alignment(SecondNearest([GOODCUTOFF]),MASK_GOOD)
+		Alignment(ThirdNearest([GOODCUTOFF]),MASK_GOOD)
+		Alignment(FourthNearest([GOODCUTOFF]),MASK_GOOD)
+		Alignment(FifthNearest([GOODCUTOFF]),MASK_GOOD)
+		Alignment(SixthNearest([GOODCUTOFF]),MASK_GOOD)
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		RemoveSpell(CLERIC_PROTECT_FROM_EVIL)  // SPPR107.SPL (Protection From Evil)
+		SpellRES("BDCAELA1",Myself)  // Protection From Good
+		SetInterrupt(TRUE)
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!Range(NearestEnemyOf(Myself),30)
+	InMyArea(Player1)
+	!Range(Player1,12)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+END
+
+IF
+	Allegiance(Myself,GOODCUTOFF)
+	!Range(NearestEnemyOf(Myself),30)
+	OR(2)
+		!InParty(Myself)
+		ActionListEmpty()
+	InMyArea("BDBELHIF")  // Belhifet
+	!Dead("BDBELHIF")  // Belhifet
+	!Range("BDBELHIF",12)  // Belhifet
+THEN
+	RESPONSE #100
+		MoveToObject("BDBELHIF")  // Belhifet
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	OR(6)
+		See(Player1)
+		See(Player2)
+		See(Player3)
+		See(Player4)
+		See(Player5)
+		See(Player6)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+	WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
+	See(NearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
+	WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
+	!StateCheck(SixthNearestEnemyOf(Myself),STATE_PANIC)
+	CheckStatLT(SixthNearestEnemyOf(Myself),1,STONESKINS)
+	!StateCheck(SixthNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+	See(SixthNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
+	WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
+	!StateCheck(FifthNearestEnemyOf(Myself),STATE_PANIC)
+	CheckStatLT(FifthNearestEnemyOf(Myself),1,STONESKINS)
+	!StateCheck(FifthNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+	See(FifthNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
+	WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
+	!StateCheck(FourthNearestEnemyOf(Myself),STATE_PANIC)
+	CheckStatLT(FourthNearestEnemyOf(Myself),1,STONESKINS)
+	!StateCheck(FourthNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+	See(FourthNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
+	WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
+	!StateCheck(ThirdNearestEnemyOf(Myself),STATE_PANIC)
+	CheckStatLT(ThirdNearestEnemyOf(Myself),1,STONESKINS)
+	!StateCheck(ThirdNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+	See(ThirdNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
+	WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
+	!StateCheck(SecondNearestEnemyOf(Myself),STATE_PANIC)
+	CheckStatLT(SecondNearestEnemyOf(Myself),1,STONESKINS)
+	!StateCheck(SecondNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+	See(SecondNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+	WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
+	!StateCheck(NearestEnemyOf(Myself),STATE_PANIC)
+	CheckStatLT(NearestEnemyOf(Myself),1,STONESKINS)
+	!StateCheck(NearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+	See(NearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+	WeaponEffectiveVs(LastAttackerOf(Myself),MAINHAND)
+	WeaponCanDamage(LastAttackerOf(Myself),MAINHAND)
+	!StateCheck(LastAttackerOf(Myself),STATE_PANIC)
+	!StateCheck(LastAttackerOf(Myself),STATE_MIRRORIMAGE)
+	CheckStatLT(LastAttackerOf(Myself),1,STONESKINS)
+	Range(LastAttackerOf(Myself),8)
+	RandomNum(3,1)
+	See(LastAttackerOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+	WeaponEffectiveVs(LastAttackerOf(Myself),MAINHAND)
+	WeaponCanDamage(LastAttackerOf(Myself),MAINHAND)
+	!StateCheck(LastAttackerOf(Myself),STATE_PANIC)
+	!StateCheck(LastAttackerOf(Myself),STATE_MIRRORIMAGE)
+	CheckStatLT(LastAttackerOf(Myself),1,STONESKINS)
+	Range(LastAttackerOf(Myself),4)
+	See(LastAttackerOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	DifficultyGT(EASY)
+	WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
+	WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
+	StateCheck(SixthNearestEnemyOf(Myself),STATE_IMMOBILE)
+	See(SixthNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	DifficultyGT(EASY)
+	WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
+	WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
+	StateCheck(FifthNearestEnemyOf(Myself),STATE_IMMOBILE)
+	See(FifthNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	DifficultyGT(EASY)
+	WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
+	WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
+	StateCheck(FourthNearestEnemyOf(Myself),STATE_IMMOBILE)
+	See(FourthNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	DifficultyGT(EASY)
+	WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
+	WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
+	StateCheck(ThirdNearestEnemyOf(Myself),STATE_IMMOBILE)
+	See(ThirdNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	DifficultyGT(EASY)
+	WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
+	WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
+	StateCheck(SecondNearestEnemyOf(Myself),STATE_IMMOBILE)
+	See(SecondNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	DifficultyGT(EASY)
+	WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+	WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
+	StateCheck(NearestEnemyOf(Myself),STATE_IMMOBILE)
+	See(NearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	DifficultyGT(EASY)
+	WeaponEffectiveVs(Player6,MAINHAND)
+	WeaponCanDamage(Player6,MAINHAND)
+	StateCheck(Player6,STATE_IMMOBILE)
+	See(Player6)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	DifficultyGT(EASY)
+	WeaponEffectiveVs(Player5,MAINHAND)
+	WeaponCanDamage(Player5,MAINHAND)
+	StateCheck(Player5,STATE_IMMOBILE)
+	See(Player5)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	DifficultyGT(EASY)
+	WeaponEffectiveVs(Player4,MAINHAND)
+	WeaponCanDamage(Player4,MAINHAND)
+	StateCheck(Player4,STATE_IMMOBILE)
+	See(Player4)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	DifficultyGT(EASY)
+	WeaponEffectiveVs(Player3,MAINHAND)
+	WeaponCanDamage(Player3,MAINHAND)
+	StateCheck(Player3,STATE_IMMOBILE)
+	See(Player3)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	DifficultyGT(EASY)
+	WeaponEffectiveVs(Player2,MAINHAND)
+	WeaponCanDamage(Player2,MAINHAND)
+	StateCheck(Player2,STATE_IMMOBILE)
+	See(Player2)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	DifficultyGT(EASY)
+	WeaponEffectiveVs(Player1,MAINHAND)
+	WeaponCanDamage(Player1,MAINHAND)
+	StateCheck(Player1,STATE_IMMOBILE)
+	See(Player1)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	!InParty(Myself)
+	!Global("BD_IHeal","LOCALS",1)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+	See(LastSeenBy(Myself))
+THEN
+	RESPONSE #100
+		AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+	Allegiance(Myself,GOODCUTOFF)
+	!InParty(Myself)
+	!Allegiance(LastSeenBy(Myself),GOODCUTOFF)
+	!InParty(LastSeenBy(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	See(LastSeenBy(Myself))
+THEN
+	RESPONSE #100
+		AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+	InParty(Myself)
+	ActionListEmpty()
+	!Allegiance(LastSeenBy(Myself),GOODCUTOFF)
+	!InParty(LastSeenBy(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	See(LastSeenBy(Myself))
+THEN
+	RESPONSE #100
+		AttackOneRound(LastSeenBy(Myself))
+END
+

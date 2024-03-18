@@ -1,0 +1,112 @@
+// BDSINDRE translation file
+@1   = ~Watch his claw! Do you want to be disemboweled?~ [BD49141]
+@2   = ~Are you a troll handler?~
+@3   = ~I have some questions for you.~
+@4   = ~You seem busy. I'll come back later.~
+@5   = ~Get out of here! I need to get this troll under control and you aren't helping!~
+@6   = ~Is that a drow by your side?~
+@7   = ~Who, Baeloth? He's a friend of mine.~
+@8   = ~You mean Viconia? Don't worry, she's trustworthy.~
+@9   = ~It is. You have a problem with that?~
+@10  = ~A drow! Where?~
+@11  = ~If you count a drow as a friend of yours, you are no friend of mine. The crusade accepts all who swear loyalty to Caelar. I do not. Luck to you—if you continue throwing your lot in with this scum, you'll surely need it.~
+@12  = ~Right there! Get it!~
+@13  = ~No, but I assist them. I can heal anyone who takes a claw to the face. Usually.~
+@14  = ~Is that why you joined the crusade? To heal people?~
+@15  = ~Looks like you're having some trouble. Can I be of assistance?~
+@16  = ~Seems like a dangerous job. I'll leave you to it.~
+@17  = ~Actually, yes. We can't find Gnarg, the regular troll keeper. He keeps troll shackles in a chest back in the camp. ...Go get them!~ [BD49158]
+@18  = ~Troll Breakout
+
+I need to find the troll shackles somewhere in camp.
+
+Sindret, a cleric and assistant troll-wrangler, has asked me to fetch special troll shackles. They're apparently in a chest somewhere in camp.~
+@19  = ~Yes, ma'am.~
+@20  = ~How will I recognize the chest?~
+@21  = ~I have more important things to do.~
+@22  = ~Watch those claws, soldiers!~
+@23  = ~It's next to one of the black and white tents.~
+@24  = ~Gnarg's Chest~
+@25  = ~I'll bring them right back.~
+@26  = ~Excuse me, RECRUIT, but I'm your superior and I'm giving you a direct order. Fetch those shackles or I'll see you wearing a pair of your own!~
+@27  = ~Well, I guess you did a good enough job. Of BOTCHING everything up COMPLETELY.~
+@28  = ~This monster isn't subduing itself, recruit! Do you have the shackles?~
+@29  = ~Yes, I have them right here.~
+@30  = ~You said they're in a chest. How am I supposed to recognize it?~
+@31  = ~I need a little more time.~
+@32  = ~Hurry up! We can't keep this troll at bay forever.~
+@33  = ~Good job—now get in there and slap those shackles on the beast!~
+@34  = ~I'm on it!~
+@35  = ~Uhhh... What?~
+@36  = ~The monster will submit—or die.~
+@37  = ~That's the spirit. We'll be right here if you need help!~
+@38  = ~Troll Breakout
+
+I should talk to the troll and convince it to let me shackle it.
+
+I've agreed to try to shackle the troll. Hopefully I can manage it without getting my head bitten off.~
+@39  = ~Show some backbone, <PRO_MANWOMAN>! Go in there and tame that monster!~
+@40  = ~I'll get right on that.~
+@41  = ~You want it tamed, go in there and do it yourself.~
+@42  = ~It will break, or die.~
+@43  = ~See this insignia? It means I outrank you—I give the orders here. Get in there, or by Shevarash, there will be consequences!~
+@44  = ~I may look like a simple recruit, but I'm actually on assignment from Caelar, canvassing the troops undercover, evaluating morale.~
+@45  = ~I'll give it a try.~
+@46  = ~Uh, have you actually seen that thing? I'm not going anywhere near it!~
+@47  = ~You're out of order, recruit! Insubordination must be dealt with firmly!~
+@48  = ~Troll Breakout
+
+I fought Sindret over who would shackle the troll.
+
+Sindret wanted me to shackle the troll, but I refused. She took offense, and a battle followed.~
+@49  = ~You're out of order, recruit. Lying and insubordination must be dealt with firmly!~
+@50  = ~You do look familiar. ~
+@51  = ~Take these shackles and put them on the troll. Now. That's an order.~
+@52  = ~I'll handle the troll, but you'd better be ready to back me up. And in future, mind your tone.~
+@53  = ~Yes, <PRO_SIRMAAM>.~
+@54  = ~As you order, <PRO_SIRMAAM>.~
+@55  = ~You're back. ~
+@56  = ~I've come to claim my reward.~
+@57  = ~You look none the worse for wear.~
+@58  = ~I have a few questions.~
+@59  = ~Sorry, I have to track down Gnarg and finish a hundred other tasks. We'll have to talk later.~
+@60  = ~You did a good job, recruit. Here, these potions should serve as a token of my gratitude. You'll need them when we challenge the enemies gathering beyond the gates. They do devils' work. We'll have to put them down.~
+@61  = ~Troll Breakout
+
+I've successfully wrangled the troll.
+
+Looks like I can add "troll wrangler" to my list of accomplishments. The crusade seems to be using the trolls as expendable muscle. I fear that will make the coming battle more difficult for the coalition.~
+@62  = ~Damn it! You were to shackle the troll, not kill it! The Shining Lady could have used its strength and you just wasted it! Go, get out of my sight before I throw you in the stocks!~
+@63  = ~Troll Breakout
+
+I slew the troll the crusaders were trying to shackle.
+
+Sindret wanted me to shackle the troll, but I killed it instead. The crusade seems to be using the trolls as expendable muscle—one fewer to deal with makes things easier for our side, even if Sindret's furious.~
+@64  = ~Yes, <PRO_SIRMAAM>, I was able to patch up the survivors. More or less. Now if you'll excuse me, I have work to do.~
+@65  = ~Troll Breakout
+
+Sindret took on the task of shackling the troll.
+
+I bluffed Sindret into attempting to shackle the troll herself. Things did not go well for the crusaders.~
+@66  = ~You could say that. Are you familiar with Shevarash?~ [BD49085]
+@67  = ~He's an elven god of revenge, is he not? His faithful often hunt drow.~
+@68  = ~I've heard the name. He's some sort of vengeance god...?~
+@69  = ~Of course. The Black Archer guides his faithful toward just vengeance.~
+@70  = ~No, I'm afraid I'm not.~
+@71  = ~Of course. Good ol' Shevarash. ~
+@72  = ~Why should I care about your faith?~
+@73  = ~Many servants of Shevarash focus on our enemy, the drow, but he is also the god of crusades. I thought by coming here I might learn tactics I could take back home, while doing some good.~ [BD49092]
+@74  = ~Instead, I gained a new appreciation of the power of faith. Caelar is so pure, so driven. She has accessed power that will protect us in the Nine Hells themselves.~ [BD49098]
+@75  = ~That's incredible.~
+@76  = ~Caelar's something, all right.~
+@77  = ~So she says. I have my doubts.~
+@78  = ~I hope I can achieve Caelar's level of devotion someday, and harness it as she has to protect my people from the Underdark.~ [BD49103]
+@79  = ~If Caelar truly can shield us from the Hells' fury, I'm sure you can manage the same against the Underdark.~
+@80  = ~Good luck with that.~
+@81  = ~A noble aim.~
+@82  = ~I need to get back to work now. Have a good day. ~
+@83  = ~Understanding the Crusade
+
+After I talk to a few people around camp regarding the crusade, I can return to Morale Officer Deneld.
+
+I spoke to a cleric of Shevarash named Sindret. A hunter of drow, as dictated by her deity, she originally joined the crusade to learn new tactics. Caelar's faith inspired her, though. Now she fights wholeheartedly for the Shining Lady's cause. It's interesting that people of such different faiths all take Caelar as a spiritual leader.~

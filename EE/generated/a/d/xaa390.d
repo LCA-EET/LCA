@@ -1,7 +1,7 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FLAM7.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FLAM9.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FLAM7.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FLAM9.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
@@ -9,44 +9,37 @@ BEGIN ~XAA390~
 
 IF ~  NumTimesTalkedTo(0)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Who are you?! You shouldn't be here; leave immediately.~ #7515 */
-  IF ~~ THEN REPLY @2 /* ~We're inspectors, sent to investigate the palace. We've heard that there are spies about.~ #7520 */ GOTO 1
-  IF ~~ THEN REPLY @3 /* ~We're relatives of the Grand Dukes, so let us pass.~ #7521 */ GOTO 2
-  IF ~~ THEN REPLY @4 /* ~We won't be going anywhere except through you!~ #7522 */ GOTO 3
+  SAY @1 /* ~Who the hell are you, and what are you doing in my office?!~ #7526 */
+  IF ~~ THEN REPLY @2 /* ~We're adventurers searching for treasure.~ #7530 */ DO ~Enemy()
+~ GOTO 1
+  IF ~~ THEN REPLY @3 /* ~We're inspectors, searching for suspected spies within the palace.~ #7531 */ DO ~Enemy()
+~ GOTO 2
+  IF ~~ THEN REPLY @4 /* ~We're relatives of the Grand Dukes.~ #7532 */ DO ~Enemy()
+~ GOTO 3
 END
 
 IF ~~ THEN BEGIN 1 // from: 0.0
-  SAY @5 /* ~Sorry, not even inspectors are allowed past us.~ #7516 */
+  SAY @5 /* ~That's the most idiotic thing I've heard all year. You've come to the wrong place, and it's going to cost you dearly.~ #7527 */
   IF ~~ THEN EXIT
 END
 
 IF ~~ THEN BEGIN 2 // from: 0.1
-  SAY @6 /* ~You lie! You must be robbers or worse!~ #7517 */
-  IF ~~ THEN DO ~SendTrigger("FlamingFist7",1)
-~ EXIT
+  SAY @6 /* ~Stop your lies! I would have been told about any "inspectors." I command all the Flaming Fist who guard the palace.~ #7528 */
+  IF ~~ THEN EXIT
 END
 
 IF ~~ THEN BEGIN 3 // from: 0.2
-  SAY @7 /* ~We'll see about that.~ #7518 */
-  IF ~~ THEN DO ~SendTrigger("FlamingFist7",1)
-~ EXIT
-END
-
-IF ~  RandomNum(2,1)
-StateCheck(Myself,STATE_CHARMED)
-~ THEN BEGIN 4 // from:
-  SAY @8 /* ~Gosh! I don't know why we were so obtuse. Obviously, you can pass.~ #7519 */
+  SAY @7 /* ~Ha ha! Sure you are.~ #7529 */
   IF ~~ THEN EXIT
 END
 
-IF ~  RandomNum(2,2)
-StateCheck(Myself,STATE_CHARMED)
+IF ~~ THEN BEGIN 4 // from:
+  SAY @8 /* ~You're not welcome here!~ #9014 */
+  IF ~~ THEN EXIT
+END
+
+IF ~  StateCheck(Myself,STATE_CHARMED)
 ~ THEN BEGIN 5 // from:
-  SAY @9 /* ~Sorry, I can't even let a good friend into the treasury.~ #7523 */
-  IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN 6 // from:
-  SAY @10 /* ~You're not welcome here!~ #9008 */
+  SAY @9 /* ~I am a proud member of the Flaming Fist. Our headquarters is in Baldur's Gate, though we also operate in Beregost and the Friendly Arm Inn. We are quite concerned about the sudden rarity of iron. Many think that the nation of Amn is gearing up for war against our great city. If this were the case, I don't know how well we would do, lacking a resource as important as iron.~ #9340 */
   IF ~~ THEN EXIT
 END

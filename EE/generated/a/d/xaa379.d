@@ -1,65 +1,72 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\HELSHA.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\ITHMEE.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\HELSHA.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\ITHMEE.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA379~
 
 IF ~~ THEN BEGIN 0 // from:
-  SAY @1 /* ~This week's end will not come soon enough! I tire of standing about, playing watchman. Many a magical study awaits while I waste time guarding a rock.~ #3016 */
-  IF ~~ THEN EXTERN ~XAA378~ 1
+  SAY @1 /* ~Try to be more amiable, Helshara.~ #3008 */
+  IF ~~ THEN EXTERN ~XAA380~ 0
 END
 
 IF ~~ THEN BEGIN 1 // from:
-  SAY @2 /* ~Fragment or no, here I sit guarding a pebble while the world goes on without me. I don't know how you and she stand it.~ #3017 */
-  IF ~~ THEN EXTERN ~XAA378~ 2
+  SAY @2 /* ~Helshara! Daddy would not trouble us with this were it not important! Your "rock" is an artifact fragment vital to constructing a skyship, no less so than my statuette and Delorna's spellbook.~ #3009 */
+  IF ~~ THEN EXTERN ~XAA380~ 1
 END
 
 IF ~~ THEN BEGIN 2 // from:
-  SAY @3 /* ~Ithmeera, you should know by now that father is a few sparks shy of a fireball. Skyship or rowboat, if he made it, I wouldn't trust it to hold air, let alone float on it.~ #3018 */
-  IF ~~ THEN EXTERN ~XAA378~ 3
+  SAY @3 /* ~Delorna is content to sit in contemplation, whether entrusted the book or not, and I simply know that our father would not have me here without reason.~ #3010 */
+  IF ~~ THEN EXTERN ~XAA380~ 2
 END
 
 IF ~~ THEN BEGIN 3 // from:
-  SAY @4 /* ~You know, sister, I think we have been duped. I do not believe I recognize this supposed servant. Sound a warning! It's as father predicted, a thief in our midst!~ #3019 */
-  IF ~~ THEN REPLY @5 /* ~Surrender the items you guard lest I take them from your corpses!~ #3020 */ GOTO 5
-  IF ~~ THEN REPLY @6 /* ~I am a servant here, just hired. I mean no harm. My apologies for disturbing you, I shall leave.~ #3021 */ GOTO 4
-  IF ~~ THEN REPLY @7 /* ~I am no thief! I offer good gold for the items you guard. Name a price!~ #3022 */ EXTERN ~XAA378~ 5
+  SAY @4 /* ~I did not offer to captain the final product, just to guard the components.~ #3011 */
+  IF ~~ THEN EXTERN ~XAA380~ 3
 END
 
-IF ~~ THEN BEGIN 4 // from: 3.1
-  SAY @8 /* ~You are no servant! You're either assassins or thieves! It matters not which as you will die nonetheless.~ #3023 */
-  IF ~~ THEN DO ~ActionOverride("ITHMEERA",Enemy())
+IF ~~ THEN BEGIN 4 // from:
+  SAY @5 /* ~We are invaded! Help!~ #3012 */
+  IF ~~ THEN DO ~CreateCreature("GUARD",[0.0],S)
+CreateCreature("GUARD",[0.0],S)
+CreateCreature("GUARD",[0.0],S)
+ActionOverride("HELSHARA",Enemy())
 ActionOverride("DELORNA",Enemy())
 Enemy()
 ~ EXIT
 END
 
-IF ~~ THEN BEGIN 5 // from: 3.0
-  SAY @9 /* ~It is a long, cold journey to MY corpse, fool!~ #3024 */
-  IF ~~ THEN DO ~ActionOverride("ITHMEERA",Enemy())
-ActionOverride("DELORNA",Enemy())
-Enemy()
-~ EXTERN ~XAA378~ 4
+IF ~~ THEN BEGIN 5 // from:
+  SAY @6 /* ~Certainly you do not know the daughters of Shandalar, to think that gold would change our alliance!~ #3013 */
+  IF ~~ THEN EXTERN ~XAA380~ 4
+END
+
+IF ~  Dead("Helshara")
+~ THEN BEGIN 6 // from:
+  SAY @7 /* ~No! Monster, take the blasted trinkets! Helshara...~ #3014 */
+  IF ~~ THEN DO ~GiveItem("MISC69",LastTalkedToBy)
+GiveItem("MISC70",LastTalkedToBy)
+GiveItem("MISC71",LastTalkedToBy)
+SetGlobal("HelpAlatos","GLOBAL",1)
+~ EXIT
 END
 
 IF ~  StateCheck(Myself,STATE_CHARMED)
-~ THEN BEGIN 6 // from:
-  SAY @10 /* ~I am Helshara, a daughter of the great mage Shandalar. My father has given me the duty of selling certain components to the Grand Dukes of Baldur's Gate. They are vital to the construction of a Halruaan flying ship. You could likely do it for me, though. Take my component, if you wish; it is in the desk.~ #7094 */
+~ THEN BEGIN 7 // from:
+  SAY @8 /* ~I am Ithmeera, a daughter of the great mage Shandalar. My father has given me the duty of selling certain components to the Grand Dukes of Baldur's Gate. They are vital to the construction of a Halruaan flying ship. You could likely do it for me, though. Take my component, if you wish; it is in the desk.~ #7095 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 7 // from:
-  SAY @11 /* ~What you've done is wrong! You'll pay!~ #9117 */
+IF ~~ THEN BEGIN 8 // from:
+  SAY @9 /* ~What you've done is wrong! You'll pay!~ #9116 */
   IF ~~ THEN EXIT
 END
 
 IF ~  NumTimesTalkedTo(0)
-!Dead("Ithmeera")
-~ THEN BEGIN 8 // from:
-  SAY @12 /* ~You've gone rather far afield, haven't you, servant? Well, no matter. Anyone to alleviate the boredom is appreciated, even if they are of the lower class.~ #2805 */
-  IF ~~ THEN DO ~ActionOverride("Ithmeera",SetNumTimesTalkedTo(1))
-~ EXTERN ~XAA378~ 0
+~ THEN BEGIN 9 // from:
+  SAY @10 /* ~Hello there.~ #2820 */
+  IF ~~ THEN DO ~ActionOverride("Helshara",SetNumTimesTalkedTo(1))
+~ EXTERN ~XAA380~ 8
 END

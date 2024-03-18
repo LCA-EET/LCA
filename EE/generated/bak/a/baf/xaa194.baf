@@ -1,0 +1,11 @@
+IF
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #50
+		ForceSpellRES("SPWM188",[PC])  // Summon Cow
+		ApplySpell(Myself,POOF_GONE)  // SPIN660.SPL (Teleport)
+	RESPONSE #50
+		ForceSpell([PC],CHICKEN_CHANGE)  // SPIN884.SPL (Change Chicken)
+		ApplySpell(Myself,POOF_GONE)  // SPIN660.SPL (Teleport)
+END
+

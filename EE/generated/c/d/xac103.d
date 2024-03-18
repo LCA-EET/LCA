@@ -372,7 +372,7 @@ END
 
 IF ~~ THEN BEGIN 41 // from:
   SAY @73 /* ~She wants you, <CHARNAME>. She says she'll disband her army and surrender if you go with her. Sounds too good to be true, doesn't it?~ [BD38650] #38650 */
-  IF ~~ THEN EXTERN ~BDCAELAR~ 39
+  IF ~~ THEN EXTERN ~XAC108~ 39
 END
 
 IF ~~ THEN BEGIN 42 // from:
@@ -387,7 +387,7 @@ END
 
 IF ~~ THEN BEGIN 44 // from:
   SAY @76 /* ~Use your brains, both of you. We can't agree to this. The reports from Baldur's Gate said someone paid for the hero's blood on a sword. Now Caelar wants the hero under her control. I don't like it.~ [BD65122] #65122 */
-  IF ~~ THEN EXTERN ~BDCAELAR~ 42
+  IF ~~ THEN EXTERN ~XAC108~ 42
   IF ~  IsValidForPartyDialogue("Dynaheir")
 Gender(Player1,FEMALE)
 ~ THEN EXTERN ~BDDYNAHJ~ 104

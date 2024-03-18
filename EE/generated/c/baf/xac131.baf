@@ -1,0 +1,56 @@
+IF
+	AreaCheck("bd4300")  // Dragonspear Castle Basement
+	GlobalLT("bd_plot","global",360)
+	Name("bdhepher",Myself)  // Hephernaan
+	Detect([PC])
+	Range(LastSeenBy(Myself),25)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		ApplySpellRES("bdcutspy",Myself)  // No such index
+		MoveViewObject(LastSeenBy(Myself),INSTANT)
+		SmallWait(2)
+		MoveViewObject(Myself,BD_FAST)
+		SmallWait(35)
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	AreaCheck("bd4300")  // Dragonspear Castle Basement
+	GlobalGT("bd_plot","global",359)
+	GlobalLT("bd_plot","global",365)
+	Name("bdhepher",Myself)  // Hephernaan
+	See([PC])
+THEN
+	RESPONSE #100
+		ApplySpellRES("bdcutspy",Myself)  // No such index
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	AreaCheck("bd4300")  // Dragonspear Castle Basement
+	GlobalGT("bd_plot","global",359)
+	GlobalLT("bd_plot","global",365)
+	OR(2)
+		Name("bdesseri",Myself)  // Esserin
+		Name("bdolvena",Myself)  // Olvenaun
+	See([PC])
+	Range([PC],25)
+THEN
+	RESPONSE #100
+		ApplySpellRES("bdcutspy",Myself)  // No such index
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	Global("BDFinHep","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("BDFinHep","GLOBAL",2)
+		ForceSpellRES("BDFINHEP",Myself)  // Shapeshift: Natural Form
+		ActionOverride("cutspy",DestroySelf())
+		SetInterrupt(TRUE)
+END
+

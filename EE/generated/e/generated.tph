@@ -80,6 +80,11 @@ COPY ~%MOD_FOLDER%\generated\e\wed\xae101.wed~ ~override~
 COPY ~%MOD_FOLDER%\generated\e\tis\xae101.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\e\tis\xae100.tis~ ~override~
 
+//{ PVRZ
+	COPY ~%MOD_FOLDER%\generated\e\pvrz\xe10100.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\e\pvrz\xe10101.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\e\pvrz\xe10000.pvrz~ ~override~
+//}
 
 //bmp files.
 //=========================

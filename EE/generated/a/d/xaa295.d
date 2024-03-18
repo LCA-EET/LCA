@@ -1,36 +1,41 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\PROST8.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NOBL14.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\PROST8.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NOBL14.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA295~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
 
-IF ~  NumTimesTalkedTo(0)
+IF WEIGHT #0 ~  NumTimesTalkedTo(0)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Sorry, sweetheart, I've no time for play right now. Must pay off the boss man or I lose room privileges. Ah well, it's better than having no roof at all. Although I DO like watching the stars while I work. Can't have everything, I guess.~ #8314 */
+  SAY @1 /* ~Dark, dank, and oh so squalid. Mother would absolutely erupt if she saw me here. Such filth and degradation... I love it!~ #8303 */
   IF ~~ THEN EXIT
 END
 
-IF ~  NumTimesTalkedTo(1)
+IF WEIGHT #1 ~  NumTimesTalkedTo(1)
 ~ THEN BEGIN 1 // from:
-  SAY @2 /* ~Off wit' you fruity fools, I've payments to make at Dillar's. Percentage of profits for use of the 'cellar, don't ye know.~ #8315 */
+  SAY @2 /* ~Dear and bother! I rather think my purse has been pinched. Not entirely unpleasant, but still...~ #8304 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 2 // from:
-  SAY @3 /* ~Why do I get the feeling that, where you're from, "bumping uglies" meant a head-butting contest? Out of my way, I've a money-grubbing manager to pay off.~ #8316 */
+IF WEIGHT #3 /* Triggers after states #: 3 even though they appear after this state */
+~  NumTimesTalkedToGT(1)
+~ THEN BEGIN 2 // from:
+  SAY @3 /* ~Ooo, you look to be an entire theme party all to yourselves. I'll have to come back when I can afford you all.~ #8305 */
   IF ~~ THEN EXIT
 END
 
-IF ~  StateCheck(Myself,STATE_CHARMED)
+IF WEIGHT #2 ~  StateCheck(Myself,STATE_CHARMED)
 ~ THEN BEGIN 3 // from:
-  SAY @4 /* ~All I can tell you, lover, is to watch for Slythe and Krystin. They're crazy.~ #8317 */
+  SAY @4 /* ~Good friend, we should go about this brothel and try out everything it has to offer.~ #8306 */
   IF ~~ THEN EXIT
 END
 
 IF ~~ THEN BEGIN 4 // from:
-  SAY @5 /* ~Get near me again and I'll have your nethers on a platter!~ #9098 */
+  SAY @5 /* ~Approach me not! I'll ruffle you up, I will!~ #9142 */
   IF ~~ THEN EXIT
 END

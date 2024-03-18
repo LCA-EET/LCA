@@ -379,6 +379,9 @@ COPY ~%MOD_FOLDER%\generated\d\bmp\xad114.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad115.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad116.bmp~ ~override~
 
+//spl files
+//===================
+
 //wav files
 //===================
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10000.wav~ ~override~
@@ -391,6 +394,7 @@ COPY ~%MOD_FOLDER%\generated\d\wav\xad10006.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10007.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10008.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10009.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\wav\xad10025.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10024.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10023.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10022.wav~ ~override~
@@ -400,7 +404,6 @@ COPY ~%MOD_FOLDER%\generated\d\wav\xad10019.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10018.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10017.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10016.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10025.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10026.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10027.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\wav\xad10029.wav~ ~override~

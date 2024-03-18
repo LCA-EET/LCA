@@ -1,0 +1,38 @@
+IF
+	Global("bd_map_fence","global",2)
+	Clicked([ANYONE])
+	!Range(LastTrigger,10)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("bd_map_fence","global",2)
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	!StateCheck(LastTrigger,STATE_NOT_TARGETABLE)
+	Range("bdmapgua",20)  // Crusader
+	!Dead("bdmapgua")  // Crusader
+THEN
+	RESPONSE #100
+		SetGlobal("bd_crusmap_fence","bd4000",1)  // Dragonspear Castle, Exterior
+		SmallWait(1)
+		ActionOverride("bdmapgua",StartDialogueNoSet(Player1))
+END
+
+IF
+	Global("bd_map_fence","global",2)
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	OR(3)
+		StateCheck(LastTrigger,STATE_NOT_TARGETABLE)
+		!Range("bdmapgua",20)  // Crusader
+		Dead("bdmapgua")  // Crusader
+THEN
+	RESPONSE #100
+		SetGlobal("bd_map_fence","global",3)
+		GiveItemCreate("bdmisc24",LastTrigger,1,0,0)  // Annotated Map
+		TriggerActivation("map_table",FALSE)
+END
+

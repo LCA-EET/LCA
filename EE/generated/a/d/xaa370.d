@@ -1,59 +1,68 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\OBERAN.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FENTEN.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\OBERAN.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FENTEN.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA370~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #1 /* Triggers after states #: 4 even though they appear after this state */
-~  NumTimesTalkedTo(0)
-ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+IF ~  NumTimesTalkedTo(0)
+ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~You must be the new servants and guards, well keep your place! It is an honor for you to be working here! Imagine, a Duchess overseeing such a transaction such as this in my own house. Surely this will turn my competitors absolutely green!~ #8209 */
-  IF ~~ THEN EXIT
+  SAY @1 /* ~Been a long day, hasn't it? I have to get back home, so I don't have time to talk.~ #15153 */
+  IF ~~ THEN DO ~EscapeArea()
+~ EXIT
 END
 
-IF WEIGHT #2 /* Triggers after states #: 4 even though they appear after this state */
-~  NumTimesTalkedTo(0)
+IF ~  NumTimesTalkedTo(0)
 ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
 ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
 ~ THEN BEGIN 1 // from:
-  SAY @2 /* ~I know not who you are, but because of my guests, I will refrain from having you outright killed. I advise you to leave quickly lest I change my mind. I'll not tolerate strangers loitering about my house on such an occasion as this!~ #8210 */
-  IF ~~ THEN EXIT
+  SAY @2 /* ~I'm sore right down to my very bones, I am. Been bashin' ankhegs across the river and to the south. They could use your help down there, I'm sure, what with them ankhegs going through one of their boom cycles and all. Find a woman by the name of Gerde and she'll fill you in on what to do.~ #15154 */
+  IF ~~ THEN UNSOLVED_JOURNAL @3 /* ~Ankheg Culling
+In west Baldur's Gate, a sturdy old dwarf by the name of Fenten informed me that there have been some troubles with ankhegs south of the city and across the river. I'm to find a woman named Gerde for further instructions.~ #27076 */ EXIT
+  IF ~  Global("HelpGerde","GLOBAL",2)
+~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 2 // from:
-  SAY @3 /* ~Guards! Murderers in my home! Kill them!~ #8211 */
-  IF ~~ THEN DO ~CreateCreature("GUARD",[0.0],S)
-CreateCreature("GUARD",[0.0],S)
-CreateCreature("GUARD",[0.0],S)
-CreateCreature("GUARD",[0.0],S)
-CreateCreature("GUARD",[0.0],S)
+IF ~  NumTimesTalkedTo(0)
+ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+~ THEN BEGIN 2 // from:
+  SAY @4 /* ~Just back from an ankheg frenzy across the river and a bit south. They're in one of their boom cycles, I guess. With iron all shot to hell, there's a good market for ankheg armor these days. Bring me back a good batch of scales and I'll pay you richly for them. Just go on down there and talk to Gerde. She'll fill you in on what to do.~ #15159 */
+  IF ~~ THEN UNSOLVED_JOURNAL @5 /* ~Ankheg Culling
+In west Baldur's Gate, a sturdy old dwarf by the name of Fenten has promised to buy some ankheg scales from me. Apparently there's a swarm of them to the south of the city, across the river. I'm to find a woman named Gerde for further instructions.~ #27077 */ EXIT
+  IF ~  Global("HelpGerde","GLOBAL",2)
+~ THEN EXIT
+END
+
+IF ~  PartyHasItem("MISC12")
+~ THEN BEGIN 3 // from:
+  SAY @6 /* ~Fine work. I'll pay you 250 gold pieces for all of your ankheg heads.~ #15160 */
+  IF ~~ THEN DO ~TakePartyItemAll("MISC12")
+GiveGoldForce(250)
+EraseJournalEntry(@8)
+EraseJournalEntry(@3)
+EraseJournalEntry(@5)
+~ SOLVED_JOURNAL @7 /* ~Ankheg Culling
+Fenten handed over the cash we agreed on for the ankheg scales I brought him.~ #27078 */ EXIT
+  IF ~  Global("HelpGerde","GLOBAL",2)
+~ THEN DO ~TakePartyItemAll("MISC12")
+GiveGoldForce(250)
+EraseJournalEntry(@8)
+EraseJournalEntry(@3)
+EraseJournalEntry(@5)
 ~ EXIT
 END
 
-IF ~~ THEN BEGIN 3 // from:
-  SAY @4 /* ~Guards! There are intruders in the mansion! To arms!~ #8212 */
-  IF ~~ THEN DO ~CreateCreature("GUARD",[0.0],S)
-CreateCreature("GUARD",[0.0],S)
-CreateCreature("GUARD",[0.0],S)
-CreateCreature("GUARD",[0.0],S)
-CreateCreature("GUARD",[0.0],S)
-~ EXIT
-END
-
-IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
+IF ~  False()
 ~ THEN BEGIN 4 // from:
-  SAY @5 /* ~It is a great honor for me to have such a transaction taking place in my home. Shandalar's daughters are here, and so is the Grand Duchess. It's a good thing I hired extra guards, though I have little to fear from you, my newfound friend.~ #9121 */
+  SAY @9 /* ~I'll squish you like I did those ankhegs.~ #15161 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 5 // from:
-  SAY @6 /* ~You're not welcome here! Get out or be thrown out!~ #9122 */
+IF ~  True()
+~ THEN BEGIN 5 // from:
+  SAY @10 /* ~I hear the ankheg boom is starting to taper off. It's a shame, isn't it?~ #15162 */
   IF ~~ THEN EXIT
 END

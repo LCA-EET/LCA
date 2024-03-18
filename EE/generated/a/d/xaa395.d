@@ -1,34 +1,107 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\CONNOL.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\SERVA2.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\CONNOL.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\SERVA2.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA395~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
 
-IF ~  True()
+IF WEIGHT #1 /* Triggers after states #: 11 even though they appear after this state */
+~  NumTimesTalkedTo(0)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Glad to make your acquaintance there, by golly. What might ye be needing from ol' Connoly Finn? A tale of treachery amidst the nobles, or a bit o' back-alley skullduggery? I hear many things while tipping a bit of ale.~ #19489 */
-  IF ~~ THEN REPLY @2 /* ~What do you know of the Iron Throne and their activities here in town?~ #19522 */ GOTO 1
-  IF ~~ THEN REPLY @3 /* ~Tell me what the common folk are talking about these days.~ #19533 */ GOTO 2
-  IF ~~ THEN REPLY @4 /* ~What have you heard bandied about the bar lately?~ #19619 */ GOTO 3
+  SAY @1 /* ~Excuse me, but I don't think I recognize you. Entar Silvershield didn't say anyone was going to be in today. Would it be rude of me to inquire what you're doing here?~ #7420 */
+  IF ~  ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
+~ THEN REPLY @2 /* ~We're here because we have dealings to discuss with Entar Silvershield. My associates and I have come all the way from Waterdeep. Perhaps you could leave us to our business now?~ #7431 */ GOTO 1
+  IF ~  ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
+~ THEN REPLY @2 /* ~We're here because we have dealings to discuss with Entar Silvershield. My associates and I have come all the way from Waterdeep. Perhaps you could leave us to our business now?~ #7432 */ GOTO 2
+  IF ~  ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
+~ THEN REPLY @3 /* ~We're members of the Flaming Fist. There has been some worry about the security of Entar's estate. We're here to ensure his safety.~ #7433 */ GOTO 3
+  IF ~  ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+~ THEN REPLY @3 /* ~We're members of the Flaming Fist. There has been some worry about the security of Entar's estate. We're here to ensure his safety.~ #7434 */ GOTO 4
+  IF ~  ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
+~ THEN REPLY @4 /* ~There's not much to tell, really. Now please get out of our way!~ #7435 */ GOTO 5
+  IF ~  ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+~ THEN REPLY @4 /* ~There's not much to tell, really. Now please get out of our way!~ #7436 */ GOTO 6
+  IF ~  ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
+~ THEN REPLY @5 /* ~I am an art collector. I am here to collect some marble statuettes that I purchased a week past. My companions are here to help me carry them out.~ #7437 */ GOTO 7
+  IF ~  ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
+~ THEN REPLY @5 /* ~I am an art collector. I am here to collect some marble statuettes that I purchased a week past. My companions are here to help me carry them out.~ #7438 */ GOTO 8
 END
 
 IF ~~ THEN BEGIN 1 // from: 0.0
-  SAY @5 /* ~The Iron wha...? I know little of merchants and business. Tales of stuffy old storekeeps don't make for good ale tales. Now, if you'd wanted a ribald story of a noble lass and the guttersnipe roustabout she was seeing on the sly, then I could have helped you. Nothing more than fluff to entertain for a moment or more.~ #19523 */
-  IF ~~ THEN REPLY @6 /* ~Then tell me what the common folk are talking about these days.~ #19832 */ GOTO 2
-  IF ~~ THEN REPLY @7 /* ~What bullish tales have been thrown about the bar lately?~ #19833 */ GOTO 3
+  SAY @6 /* ~Yes, of course. I'm sorry for bothering you.~ #7421 */
+  IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 2 // from: 1.0 0.1
-  SAY @8 /* ~The common folk? I don't know anyone that likes to be referred to in that way. I think most would tell you that the nobles are much less interesting than the "common folk." We are free to go where we wish and speak to whomever we please. Nobles must worry about being seen with the "wrong sort," or being caught in the "wrong place." Many a tale has been spilled about the hapless efforts of noble fools trying to cover their exploits. Many a tale in this here bar actually.~ #19534 */
-  IF ~~ THEN DO ~EscapeArea()
+IF ~~ THEN BEGIN 2 // from: 0.1
+  SAY @7 /* ~I don't believe you. I've never seen you before! GUARDS!~ #7422 */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.2
+  SAY @8 /* ~You don't look like members of the Flaming Fist. Oh! By the gods, you must be bandits. HELP!~ #7423 */
+  IF ~~ THEN DO ~GlobalShout(99)
+EscapeArea()
 ~ EXIT
 END
 
-IF ~~ THEN BEGIN 3 // from: 1.1 0.2
-  SAY @9 /* ~Oh, we've many a tale of the Undercellar and those that try to go there unseen. Oft was the time I bumped against a patron so as to "accidentally" drop the hood from their face. More disreputable folk than I have made quite a tidy living soliciting "donations" from those that wished to remain anonymous. I would advise against the practice, however. If they can afford to pay ye, they can also afford to have someone else remove ye.~ #19622 */
-  IF ~~ THEN DO ~EscapeArea()
+IF ~~ THEN BEGIN 4 // from: 0.3
+  SAY @9 /* ~If you say so, though you must be undercover or somethin', since you're not wearing any insignia.~ #7424 */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from: 0.4
+  SAY @10 /* ~I will not get out of your way! You must all be bandits! HELP!~ #7425 */
+  IF ~~ THEN DO ~GlobalShout(99)
+EscapeArea()
 ~ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 0.5
+  SAY @11 /* ~I'm sorry. Please forgive me.~ #7426 */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from: 0.6
+  SAY @12 /* ~Really! I've dusted my master's marble collection every day for three years. I don't know what it'll be like without them anymore.~ #7427 */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 8 // from: 0.7
+  SAY @13 /* ~If that's the case, then tell me what one of the statues looks like!~ #7428 */
+  IF ~~ THEN REPLY @14 /* ~There's one that looks like a horse.~ #7439 */ GOTO 9
+  IF ~~ THEN REPLY @15 /* ~There's one that looks like a cow.~ #7440 */ GOTO 9
+  IF ~~ THEN REPLY @16 /* ~There's one that looks like a pegasus.~ #7441 */ GOTO 9
+  IF ~~ THEN REPLY @17 /* ~There's one that looks like a warrior.~ #7442 */ GOTO 10
+  IF ~~ THEN REPLY @18 /* ~There's one that looks like a dragon.~ #7443 */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 9 // from: 8.4 8.2 8.1 8.0
+  SAY @19 /* ~There's no such statue! You lied! You must be bandits! HELP!~ #7429 */
+  IF ~~ THEN DO ~GlobalShout(99)
+EscapeArea()
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 10 // from: 8.3
+  SAY @20 /* ~Okay I believe you. I'm sorry for being so much trouble.~ #7430 */
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #0 ~  OR(3)
+StateCheck(Myself,STATE_CHARMED)
+IsValidForPartyDialogue("SKIE")
+IsGabber("SKIE")
+~ THEN BEGIN 11 // from:
+  SAY @21 /* ~I'm just a lowly servant who knows very little.~ #7444 */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 12 // from:
+  SAY @22 /* ~Not to be rude, but I'd rather you left immediately.~ #9087 */
+  IF ~~ THEN EXIT
 END

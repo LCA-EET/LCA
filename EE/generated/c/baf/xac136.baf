@@ -1,0 +1,33 @@
+IF
+	Global("bd_ogres_plot","bd5200",0)  // The Warrens
+	Global("bd_ogres_chat","bd5200",0)  // The Warrens
+	Allegiance(Myself,NEUTRAL)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_ogres_timer","bd5200",7)  // The Warrens
+		IncrementGlobal("bd_ogres_chat","bd5200",1)  // The Warrens
+		DisplayStringHead(Myself,38550)  // I say we rest more, then we work harder. Rest make better work.
+END
+
+IF
+	Global("bd_ogres_plot","bd5200",0)  // The Warrens
+	Global("bd_ogres_chat","bd5200",2)  // The Warrens
+	GlobalTimerExpired("bd_ogres_timer","bd5200")  // The Warrens
+	Allegiance(Myself,NEUTRAL)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_ogres_timer","bd5200",9)  // The Warrens
+		IncrementGlobal("bd_ogres_chat","bd5200",1)  // The Warrens
+		DisplayStringHead(Myself,38552)  // Happy worker is more produ... produck... happy worker is happier. Happier better, Betror.
+END
+
+IF
+	Global("bd_ogres_hostile","bd5200",0)  // The Warrens
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_ogres_hostile","bd5200",1)  // The Warrens
+END
+

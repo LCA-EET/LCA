@@ -1,43 +1,7 @@
 IF
-	Allegiance(Myself,NEUTRAL)
-	Global("DefaultLocation","LOCALS",0)
-	OR(2)
-		Global("SkieGone","GLOBAL",1)
-		GlobalGT("EstateAttacked","GLOBAL",0)
+	PickPocketFailed("SKIE")  // Skie
 THEN
 	RESPONSE #100
-		Enemy()
-		MoveToSavedLocationn("DefaultLocation","GLOBAL")
-		SetGlobal("DefaultLocation","LOCALS",1)
-END
-
-IF
-	See([PC])
-	AttackedBy([GOODCUTOFF],DEFAULT)
-	Allegiance(Myself,NEUTRAL)
-THEN
-	RESPONSE #100
-		SmallWait(5)
-		Shout(99)
-		Enemy()
-END
-
-IF
-	See([PC])
-	!InParty("Skie")  // Skie
-	Allegiance(Myself,NEUTRAL)
-	NumberOfTimesTalkedTo(0)
-THEN
-	RESPONSE #100
-		Dialogue([PC])
-END
-
-IF
-	See("HouseGuard3")  // Guard
-	Allegiance(LastSeenBy(Myself),ENEMY)
-	Allegiance(Myself,NEUTRAL)
-THEN
-	RESPONSE #100
-		Enemy()
+		Recoil()
 END
 

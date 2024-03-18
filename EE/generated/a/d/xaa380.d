@@ -1,70 +1,65 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\DELORN.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\HELSHA.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\DELORN.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\HELSHA.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA380~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #1 /* Triggers after states #: 6 even though they appear after this state */
-~  ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
-~ THEN BEGIN 0 // from:
-  SAY @1 /* ~What is this violation?! Explain your presence here!~ #2863 */
-  IF ~  Global("ASSNUTS","GLOBAL",1)
-~ THEN REPLY @2 /* ~Give me your component to the skyship, or suffer the consequences!~ #2985 */ GOTO 1
-  IF ~~ THEN REPLY @3 /* ~My apologies, but I am new to the estate and have lost my way. I'll not disturb you again.~ #2986 */ GOTO 2
-  IF ~~ THEN REPLY @4 /* ~Stay your wrath! I know of your mission here, and would buy what you are guarding. Name your price.~ #2987 */ GOTO 4
+IF ~~ THEN BEGIN 0 // from:
+  SAY @1 /* ~This week's end will not come soon enough! I tire of standing about, playing watchman. Many a magical study awaits while I waste time guarding a rock.~ #3016 */
+  IF ~~ THEN EXTERN ~XAA379~ 1
 END
 
-IF ~~ THEN BEGIN 1 // from: 4.1 3.1 0.0
-  SAY @5 /* ~I am a daughter of Shandalar, and no helpless maiden! If you wish what I guard, you'd best be strong enough to pull it from my grasp!~ #2988 */
+IF ~~ THEN BEGIN 1 // from:
+  SAY @2 /* ~Fragment or no, here I sit guarding a pebble while the world goes on without me. I don't know how you and she stand it.~ #3017 */
+  IF ~~ THEN EXTERN ~XAA379~ 2
+END
+
+IF ~~ THEN BEGIN 2 // from:
+  SAY @3 /* ~Ithmeera, you should know by now that father is a few sparks shy of a fireball. Skyship or rowboat, if he made it, I wouldn't trust it to hold air, let alone float on it.~ #3018 */
+  IF ~~ THEN EXTERN ~XAA379~ 3
+END
+
+IF ~~ THEN BEGIN 3 // from:
+  SAY @4 /* ~You know, sister, I think we have been duped. I do not believe I recognize this supposed servant. Sound a warning! It's as father predicted, a thief in our midst!~ #3019 */
+  IF ~~ THEN REPLY @5 /* ~Surrender the items you guard lest I take them from your corpses!~ #3020 */ GOTO 5
+  IF ~~ THEN REPLY @6 /* ~I am a servant here, just hired. I mean no harm. My apologies for disturbing you, I shall leave.~ #3021 */ GOTO 4
+  IF ~~ THEN REPLY @7 /* ~I am no thief! I offer good gold for the items you guard. Name a price!~ #3022 */ EXTERN ~XAA379~ 5
+END
+
+IF ~~ THEN BEGIN 4 // from: 3.1
+  SAY @8 /* ~You are no servant! You're either assassins or thieves! It matters not which as you will die nonetheless.~ #3023 */
   IF ~~ THEN DO ~ActionOverride("ITHMEERA",Enemy())
-ActionOverride("HELSHARA",Enemy())
-Enemy()
-~ GOTO 5
-END
-
-IF ~~ THEN BEGIN 2 // from: 4.0 3.0 0.1
-  SAY @6 /* ~You are no servant! You're spies or worse. If you thought to take me by surprise you're sorely mistaken.~ #2989 */
-  IF ~~ THEN DO ~ActionOverride("ITHMEERA",Enemy())
-ActionOverride("HELSHARA",Enemy())
-Enemy()
-~ EXIT
-END
-
-IF WEIGHT #2 /* Triggers after states #: 6 even though they appear after this state */
-~  ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
-~ THEN BEGIN 3 // from:
-  SAY @7 /* ~No servile duty makes you skulk about my room! It is as father warned and worse. Thieves in the very house we sought seclusion! Leave, lest this daughter of Shandalar put you in your grave!~ #2990 */
-  IF ~~ THEN REPLY @8 /* ~This is me leaving! I'll not return to bother you!~ #2992 */ GOTO 2
-  IF ~~ THEN REPLY @9 /* ~Hollow words from a frightened lass! Hand over the skyship component!~ #2993 */ GOTO 1
-END
-
-IF ~~ THEN BEGIN 4 // from: 0.2
-  SAY @10 /* ~Your offer is more of an insult than your presence in my private room! Leave now, lest you not be able to!~ #2991 */
-  IF ~~ THEN REPLY @8 /* ~This is me leaving! I'll not return to bother you!~ #2995 */ GOTO 2
-  IF ~~ THEN REPLY @9 /* ~Hollow words from a frightened lass! Hand over the skyship component!~ #2996 */ GOTO 1
-END
-
-IF ~~ THEN BEGIN 5 // from: 1.0
-  SAY @11 /* ~You are foolish to attack the spider in its chosen den! We are here because it's guarded, so you'll not fight only I! Help to me! We are infiltrated!~ #2994 */
-  IF ~~ THEN DO ~ActionOverride("ITHMEERA",Enemy())
-ActionOverride("HELSHARA",Enemy())
+ActionOverride("DELORNA",Enemy())
 Enemy()
 ~ EXIT
 END
 
-IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
+IF ~~ THEN BEGIN 5 // from: 3.0
+  SAY @9 /* ~It is a long, cold journey to MY corpse, fool!~ #3024 */
+  IF ~~ THEN DO ~ActionOverride("ITHMEERA",Enemy())
+ActionOverride("DELORNA",Enemy())
+Enemy()
+~ EXTERN ~XAA379~ 4
+END
+
+IF ~  StateCheck(Myself,STATE_CHARMED)
 ~ THEN BEGIN 6 // from:
-  SAY @12 /* ~I am Delorna, a daughter of the great mage Shandalar. My father has given me the duty of selling certain components to the Grand Dukes of Baldur's Gate. They are vital to the construction of a Halruaan flying ship. You could likely do it for me, though. Take my component, if you wish; it is in the desk.~ #7093 */
+  SAY @10 /* ~I am Helshara, a daughter of the great mage Shandalar. My father has given me the duty of selling certain components to the Grand Dukes of Baldur's Gate. They are vital to the construction of a Halruaan flying ship. You could likely do it for me, though. Take my component, if you wish; it is in the desk.~ #7094 */
   IF ~~ THEN EXIT
 END
 
 IF ~~ THEN BEGIN 7 // from:
-  SAY @13 /* ~What you've done is wrong! You'll pay!~ #9118 */
+  SAY @11 /* ~What you've done is wrong! You'll pay!~ #9117 */
   IF ~~ THEN EXIT
+END
+
+IF ~  NumTimesTalkedTo(0)
+!Dead("Ithmeera")
+~ THEN BEGIN 8 // from:
+  SAY @12 /* ~You've gone rather far afield, haven't you, servant? Well, no matter. Anyone to alleviate the boredom is appreciated, even if they are of the lower class.~ #2805 */
+  IF ~~ THEN DO ~ActionOverride("Ithmeera",SetNumTimesTalkedTo(1))
+~ EXTERN ~XAA379~ 0
 END

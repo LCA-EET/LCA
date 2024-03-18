@@ -1,58 +1,57 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NOBW9.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\GHORAK.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NOBW9.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\GHORAK.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA245~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
 
-IF ~  NumTimesTalkedTo(0)
+IF WEIGHT #3 /* Triggers after states #: 1 3 5 even though they appear after this state */
+~  Global("HelpGhorak","GLOBAL",1)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Greetings. I trust your stay here at the Low Lantern has been fun? You certainly don't look Baldurian; what exotic locales do you hail from?~ #7492 */
-  IF ~~ THEN REPLY @2 /* ~We're all from the Utter East. We've come to the Sword Coast in order to experience the wonders we've heard about at home.~ #7498 */ GOTO 1
-  IF ~~ THEN REPLY @3 /* ~We hail from Cormyr; we're just simple merchants.~ #7499 */ GOTO 2
-  IF ~~ THEN REPLY @4 /* ~We're adventurers out of Waterdeep. With all of the troubles in this region, we thought it would be the place to ply our trade.~ #7500 */ GOTO 3
-  IF ~~ THEN REPLY @5 /* ~We're a motley band, really. Most of us come from here or there. Right now we're investigating all of the troubles that have been plaguing this region of late.~ #7501 */ GOTO 4
-END
-
-IF ~~ THEN BEGIN 1 // from: 0.0
-  SAY @6 /* ~The Utter East! You must have traveled very far. Well, I hope you find our city to your liking, it would be terrible for you to be disappointed after coming so far.~ #7493 */
+  SAY @1 /* ~Diseased! Diseased! Stand well back... Diseased! Diseased!~ #15216 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 2 // from: 0.1
-  SAY @7 /* ~Merchants. Oh pooh, I thought you were exciting folk.~ #7494 */
+IF WEIGHT #0 ~  Global("HelpAgnasia","GLOBAL",0)
+~ THEN BEGIN 1 // from:
+  SAY @2 /* ~For your own health and that of your children, come no closer. I was cursed with this fell disease as punishment for my wickedness... Diseased! Diseased! Stand well back...~ #15217 */
+  IF ~~ THEN REPLY @3 /* ~Let us cure you of your affliction.~ #17177 */ GOTO 2
+  IF ~~ THEN REPLY @4 /* ~I'm sorry, but there is little that we can do to help you.~ #17178 */ DO ~EscapeArea()
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 1.0
+  SAY @5 /* ~No, your potions and magics are of little use. The only way to cure this sickness is to right the wrongs of the past. Behind a painting at the Three Old Kegs, you will find the skull of my brother, Kereph. Take it to Agnasia in The Lady's Hall. She will know what to do with it.~ #15221 */
+  IF ~~ THEN DO ~SetGlobal("HelpGhorak","GLOBAL",1)
+~ UNSOLVED_JOURNAL @6 /* ~Ghorak the Diseased
+When I offered to cure Ghorak the diseased, he asked me to fetch his brother's skull from its hiding place behind a painting in the Three Old Kegs. Then Ghorak wants me to present Kereph's skull to Agnasia in The Lady's Hall. I can't wait to hear what she has to say about that.~ #27128 */ EXIT
+END
+
+IF WEIGHT #1 ~  Global("HelpAgnasia","GLOBAL",1)
+~ THEN BEGIN 3 // from:
+  SAY @7 /* ~I— I am cured. After all these long years of rotting away, an end has come. Blessed be Tymora and may my brother at last have peace. You are kinder than you'll ever know.~ #15222 */
+  IF ~~ THEN DO ~EraseJournalEntry(@6)
+EraseJournalEntry(@9)
+Polymorph(FIGHTER_MALE_HUMAN)
+~ SOLVED_JOURNAL @8 /* ~Ghorak the Cured!
+As expected, returning Kereph's skull to a follower of Tymora lifted the wasting curse from Ghorak. At last, both brothers have found peace.~ #27130 */ EXIT
+END
+
+IF WEIGHT #4 /* Triggers after states #: 5 even though they appear after this state */
+~  True()
+~ THEN BEGIN 4 // from:
+  SAY @10 /* ~Not diseased! Not diseased! Come as close as you want... Not diseased! Not diseased!~ #15223 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 3 // from: 0.2
-  SAY @8 /* ~Adventurers! So you must be in the business of fighting dreadful beasts and such things. All of you must be so very brave to take up such a profession.~ #7495 */
-  IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN 4 // from: 0.3
-  SAY @9 /* ~Hmm. Very interesting. I wish you well in your investigations.~ #7496 */
-  IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN 5 // from:
-  SAY @10 /* ~Hello again.~ #7497 */
-  IF ~~ THEN EXIT
-END
-
-IF ~  StateCheck(Myself,STATE_CHARMED)
-~ THEN BEGIN 6 // from:
-  SAY @11 /* ~I've heard quite a bit about what's been going on around town. Most of the talk's about iron, and so quite boring really.~ #7502 */
-  IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN 7 // from:
-  SAY @12 /* ~I'll not have you near me!~ #9124 */
-  IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN 8 // from:
-  SAY @13 /* ~~ #9125 */
-  IF ~~ THEN EXIT
+IF WEIGHT #2 ~  False()
+~ THEN BEGIN 5 // from:
+  SAY @11 /* ~I have nothing but my past and, I assure you, you do not want it.~ #15224 */
+  IF ~~ THEN DO ~EscapeArea()
+~ EXIT
 END

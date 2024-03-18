@@ -1,0 +1,17 @@
+IF
+	Global("bd_skie_plot","global",5)
+	Global("bd_go_hostile","locals",0)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_go_hostile","locals",1)
+		SetGlobalTimer("bd_sound_alarm_timer","locals",ONE_HOUR)
+		Enemy()
+END
+
+IF
+	Global("bd_skie_plot","global",6)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+

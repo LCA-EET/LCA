@@ -1,7 +1,7 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\AMNIS.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\MINERN.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\AMNIS.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\MINERN.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
@@ -10,169 +10,95 @@ BEGIN ~XAA243~
 // WARNING: this file contains non-trivial WEIGHTs
 //////////////////////////////////////////////////
 
-IF WEIGHT #1 /* Triggers after states #: 12 even though they appear after this state */
-~  GlobalLT("OublekBounty1","GLOBAL",1)
-RandomNum(12,1)
+IF WEIGHT #9 /* Triggers after states #: 2 3 5 6 7 8 9 10 11 even though they appear after this state */
+~  Global("SpokenToEmerson","GLOBAL",0)
+NumTimesTalkedTo(0)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~The commander was friend to many before he found that sword. He's not the man he was, by Helm.~ #342 */
-  IF ~~ THEN UNSOLVED_JOURNAL @2 /* ~The Tale of Captain Brage
-Brage, the captain of the guard in Nashkel, apparently changed greatly after acquiring his new sword.~ #26830 */ EXIT
+  SAY @1 /* ~You there, you don't belong here! Go see the foreman, or I'll call the guard!~ #759 */
+  IF ~~ THEN EXIT
 END
 
-IF WEIGHT #2 /* Triggers after states #: 12 even though they appear after this state */
-~  GlobalLT("OublekBounty1","GLOBAL",1)
-RandomNum(12,2)
+IF WEIGHT #10 /* Triggers after states #: 2 3 5 6 7 8 9 10 11 even though they appear after this state */
+~  Global("SpokenToEmerson","GLOBAL",0)
+NumTimesTalkedTo(1)
 ~ THEN BEGIN 1 // from:
-  SAY @3 /* ~The reward for the commander's head is a king's ransom, but I'll not be lifting MY sword against a brother soldier.~ #343 */
-  IF ~~ THEN UNSOLVED_JOURNAL @4 /* ~The Tale of Captain Brage
-There is a large reward for the head of Brage! His former comrades seem unwilling to try to collect it, however.~ #26831 */ EXIT
+  SAY @2 /* ~If ye no get the okay to be here, dem guards come and cut yer head from yer neck!~ #760 */
+  IF ~~ THEN EXIT
 END
 
-IF WEIGHT #3 /* Triggers after states #: 12 even though they appear after this state */
-~  GlobalLT("OublekBounty1","GLOBAL",1)
-RandomNum(12,3)
+IF WEIGHT #0 ~  RandomNum(8,1)
 ~ THEN BEGIN 2 // from:
-  SAY @5 /* ~An entire unit went west after Brage to try to talk some sense to him. It's been a week, and none have returned.~ #344 */
-  IF ~~ THEN UNSOLVED_JOURNAL @6 /* ~The Tale of Captain Brage
-A large force of men from Nashkel went to reclaim Brage a week ago. None have returned.~ #26832 */ EXIT
+  SAY @3 /* ~Leave us be, there is much work to be done.~ #761 */
+  IF ~~ THEN EXIT
 END
 
-IF WEIGHT #4 /* Triggers after states #: 12 even though they appear after this state */
-~  GlobalLT("OublekBounty1","GLOBAL",1)
-RandomNum(12,4)
+IF WEIGHT #1 ~  StateCheck(Myself,STATE_CHARMED)
 ~ THEN BEGIN 3 // from:
-  SAY @7 /* ~I am sorry for my mood. All the guard are still grieving the loss of Commander Brage.~ #345 */
-  IF ~~ THEN UNSOLVED_JOURNAL @8 /* ~The Tale of Captain Brage
-The change in Captain Brage astonishes everyone. The people of Nashkel liked and respected him before his rampage.~ #26833 */ EXIT
+  SAY @4 /* ~I'm just a dumb miner. I dunno much, 'cept a little about those dog headed imps that 'ave been causin' all the trouble in the lower levels.~ #6307 */
+  IF ~~ THEN UNSOLVED_JOURNAL @5 /* ~Investigating the Nashkel Mines
+Some say that "dog-headed imps" roam the lower reaches of the Nashkel mines.~ #27271 */ EXIT
+  IF ~  GlobalGT("CHAPTER","GLOBAL",2)
+~ THEN EXIT
 END
 
-IF WEIGHT #5 /* Triggers after states #: 12 even though they appear after this state */
-~  GlobalLT("OublekBounty1","GLOBAL",1)
-RandomNum(12,5)
-~ THEN BEGIN 4 // from:
-  SAY @9 /* ~I'll not believe a man of Brage's rank could kill his own family. 'Twas evil magics of some sort.~ #346 */
-  IF ~~ THEN UNSOLVED_JOURNAL @10 /* ~The Tale of Captain Brage
-Some believe Brage to be under an evil enchantment. It's certainly possible.~ #26834 */ EXIT
+IF ~~ THEN BEGIN 4 // from:
+  SAY @6 /* ~Get away from me!~ #9155 */
+  IF ~~ THEN EXIT
 END
 
-IF WEIGHT #6 /* Triggers after states #: 12 even though they appear after this state */
-~  RandomNum(12,6)
+IF WEIGHT #2 ~  RandomNum(8,2)
 ~ THEN BEGIN 5 // from:
-  SAY @11 /* ~Why are you not at the fair, citizen? 'Tis but a moment's walk east of Nashkel.~ #347 */
-  IF ~~ THEN JOURNAL @12 /* ~There is a festival east of Nashkel. Many people are gathering there.~ #5815 */ EXIT
+  SAY @7 /* ~GAH! By the gods o' all the depths, you scared the livin' bejeezers outta me! Leave us to get back to work, will ya! We gotta meet our quota or they send us down to the lower levels. Last crew lost five men down there.~ #13923 */
+  IF ~~ THEN UNSOLVED_JOURNAL @8 /* ~Investigating the Nashkel Mines
+The mines are shipping barely any ore at all, what with the shortage of people.~ #26886 */ EXIT
+  IF ~  GlobalGT("CHAPTER","GLOBAL",2)
+~ THEN EXIT
 END
 
-IF WEIGHT #7 /* Triggers after states #: 12 even though they appear after this state */
-~  RandomNum(12,7)
+IF WEIGHT #3 ~  RandomNum(8,3)
 ~ THEN BEGIN 6 // from:
-  SAY @13 /* ~My sword is chipped and tarnished, but we'll not be given new until prices come down.~ #348 */
-  IF ~~ THEN JOURNAL @14 /* ~Troubles in the Region: Iron Crisis
-
-The soldiers are rapidly wearing out their old weapons and cannot re-equip themselves because of the scarcity and price of iron-forged tools and weapons.~ #26835 */ EXIT
-  IF ~  GlobalGT("chapter","GLOBAL",2)
-~ THEN EXIT
+  SAY @9 /* ~I'm here breakin' my back to feed my family. What's your excuse? Lookin' for "adventure"? You'll find it below if you're fool enough. The dead walk beneath the earth.~ #13924 */
+  IF ~~ THEN EXIT
 END
 
-IF WEIGHT #8 /* Triggers after states #: 12 even though they appear after this state */
-~  RandomNum(12,8)
+IF WEIGHT #4 ~  RandomNum(8,4)
 ~ THEN BEGIN 7 // from:
-  SAY @15 /* ~We don't have the manpower to patrol the mines, what with the problem of bandits up north.~ #349 */
-  IF ~~ THEN JOURNAL @16 /* ~Troubles in the Region: Bandit Problems
-
-The problem in the Nashkel mines goes unchecked because the guards are needed to combat a rash of banditry in the north.~ #26836 */ EXIT
-  IF ~  GlobalGT("chapter","GLOBAL",2)
+  SAY @10 /* ~Don't be bothering me! The sooner I get my job done, the sooner I get my sorry arse out of this deathtrap. It's safe up here, but down below... not even the ore stays pure down there. It ain't natural.~ #13925 */
+  IF ~~ THEN UNSOLVED_JOURNAL @11 /* ~Investigating the Nashkel Mines
+The ore in the lower levels of the Nashkel mines is tainted. People don't know what is causing it.~ #27272 */ EXIT
+  IF ~  GlobalGT("CHAPTER","GLOBAL",2)
 ~ THEN EXIT
 END
 
-IF WEIGHT #9 /* Triggers after states #: 12 even though they appear after this state */
-~  RandomNum(12,9)
+IF WEIGHT #5 ~  RandomNum(8,5)
 ~ THEN BEGIN 8 // from:
-  SAY @17 /* ~If ye be a bounty hunter, rewards can be collected with Oublek, just outside of the garrison.~ #350 */
-  IF ~~ THEN UNSOLVED_JOURNAL @18 /* ~Oublek the Bounty Officer
-Oublek offers bounties and rewards outside the Nashkel garrison.~ #26837 */ EXIT
+  SAY @12 /* ~I got no time for chatter. We're working double shifts, but we don't produce no more usable ore. Miners don't go below unless forced, and what we do bring up is... tainted.~ #13926 */
+  IF ~~ THEN UNSOLVED_JOURNAL @11 /* ~Investigating the Nashkel Mines
+The ore in the lower levels of the Nashkel mines is tainted. People don't know what is causing it.~ #27272 */ EXIT
+  IF ~  GlobalGT("CHAPTER","GLOBAL",2)
+~ THEN EXIT
 END
 
-IF WEIGHT #10 /* Triggers after states #: 12 even though they appear after this state */
-~  RandomNum(12,10)
+IF WEIGHT #6 ~  RandomNum(8,6)
 ~ THEN BEGIN 9 // from:
-  SAY @19 /* ~Travel lightly, wanderer. The woods harbor strange things.~ #351 */
-  IF ~~ THEN EXIT
+  SAY @13 /* ~Emerson say we gots a problem with mongrel dogs below, but I ain't never seen no dog with a sword! I swear it's true, but they keep me quiet.~ #13927 */
+  IF ~~ THEN UNSOLVED_JOURNAL @14 /* ~Investigating the Nashkel Mines
+There are apparently "dogs with swords" in the lower levels of the mines. They are starting to sound familiar.~ #27273 */ EXIT
+  IF ~  GlobalGT("CHAPTER","GLOBAL",2)
+~ THEN EXIT
 END
 
-IF WEIGHT #11 /* Triggers after states #: 12 even though they appear after this state */
-~  RandomNum(12,11)
+IF WEIGHT #7 ~  RandomNum(8,7)
 ~ THEN BEGIN 10 // from:
-  SAY @20 /* ~Move along, citizen.~ #352 */
+  SAY @15 /* ~You really want adventure, struggle, and treasures? Try earning an honest living for a change. My daughter shines brighter than any jewel you'll ever take from the beasties below. Some day you'll settle. Then you'll know.~ #13928 */
   IF ~~ THEN EXIT
 END
 
-IF WEIGHT #12 /* Triggers after states #: 12 even though they appear after this state */
-~  GlobalLT("OublekBounty1","GLOBAL",1)
-RandomNum(12,12)
+IF WEIGHT #8 ~  RandomNum(8,8)
 ~ THEN BEGIN 11 // from:
-  SAY @21 /* ~Even if we find the captain, a court would surely have his head for his crimes. Such a waste!~ #353 */
-  IF ~~ THEN UNSOLVED_JOURNAL @22 /* ~The Tale of Captain Brage
-Even if Captain Brage were to be captured alive, he would most assuredly be put to death for his crimes.~ #26838 */ EXIT
-END
-
-IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
-~ THEN BEGIN 12 // from:
-  SAY @23 /* ~I'm only a guard. All I know are the rumors flying about town.~ #5750 */
-  IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN 13 // from:
-  SAY @24 /* ~I'll box your ears if you step an inch closer!~ #8907 */
-  IF ~~ THEN EXIT
-END
-
-IF WEIGHT #13 ~  GlobalGT("OublekBounty1","GLOBAL",0)
-RandomNum(12,1)
-~ THEN BEGIN 14 // from:
-  SAY @11 /* ~Why are you not at the fair, citizen? 'Tis but a moment's walk east of Nashkel.~ #347 */
-  IF ~~ THEN JOURNAL @12 /* ~There is a festival east of Nashkel. Many people are gathering there.~ #5815 */ EXIT
-END
-
-IF WEIGHT #14 ~  GlobalGT("OublekBounty1","GLOBAL",0)
-RandomNum(12,2)
-~ THEN BEGIN 15 // from:
-  SAY @13 /* ~My sword is chipped and tarnished, but we'll not be given new until prices come down.~ #348 */
-  IF ~~ THEN JOURNAL @14 /* ~Troubles in the Region: Iron Crisis
-
-The soldiers are rapidly wearing out their old weapons and cannot re-equip themselves because of the scarcity and price of iron-forged tools and weapons.~ #26835 */ EXIT
-  IF ~  GlobalGT("chapter","GLOBAL",2)
+  SAY @16 /* ~I don't mind diggin' if there's a point to it, but all we bring up is plagued anyway. Found some tracks and a glass vial too, so it ain't no accident. Wish someone would stick a sword up the tenders of whoever's behind it.~ #13929 */
+  IF ~~ THEN UNSOLVED_JOURNAL @11 /* ~Investigating the Nashkel Mines
+The ore in the lower levels of the Nashkel mines is tainted. People don't know what is causing it.~ #27272 */ EXIT
+  IF ~  GlobalGT("CHAPTER","GLOBAL",2)
 ~ THEN EXIT
-END
-
-IF WEIGHT #15 ~  GlobalGT("OublekBounty1","GLOBAL",0)
-RandomNum(12,3)
-~ THEN BEGIN 16 // from:
-  SAY @15 /* ~We don't have the manpower to patrol the mines, what with the problem of bandits up north.~ #349 */
-  IF ~~ THEN JOURNAL @16 /* ~Troubles in the Region: Bandit Problems
-
-The problem in the Nashkel mines goes unchecked because the guards are needed to combat a rash of banditry in the north.~ #26836 */ EXIT
-  IF ~  GlobalGT("chapter","GLOBAL",2)
-~ THEN EXIT
-END
-
-IF WEIGHT #16 ~  GlobalGT("OublekBounty1","GLOBAL",0)
-RandomNum(12,4)
-~ THEN BEGIN 17 // from:
-  SAY @17 /* ~If ye be a bounty hunter, rewards can be collected with Oublek, just outside of the garrison.~ #350 */
-  IF ~~ THEN JOURNAL @18 /* ~Oublek the Bounty Officer
-Oublek offers bounties and rewards outside the Nashkel garrison.~ #26837 */ EXIT
-END
-
-IF WEIGHT #17 ~  GlobalGT("OublekBounty1","GLOBAL",0)
-RandomNum(12,5)
-~ THEN BEGIN 18 // from:
-  SAY @19 /* ~Travel lightly, wanderer. The woods harbor strange things.~ #351 */
-  IF ~~ THEN EXIT
-END
-
-IF WEIGHT #18 ~  GlobalGT("OublekBounty1","GLOBAL",0)
-RandomNum(12,12)
-~ THEN BEGIN 19 // from:
-  SAY @20 /* ~Move along, citizen.~ #352 */
-  IF ~~ THEN EXIT
 END

@@ -1,334 +1,511 @@
 IF
-	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
-	Global("bd_jail_visitors","bd0104",1)  // Flaming Fist HQ
-	!Dead("CORWIN")  // Corwin
+	Global("bd_default_loc","locals",0)
 THEN
 	RESPONSE #100
-		SetGlobal("bd_jail_visitors","bd0104",2)  // Flaming Fist HQ
-		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)  // Flaming Fist HQ
-		CreateCreature("XABDSCH2",[720.620],NW)  // Corwin
-		ActionOverride("XABDSCH2",ChangeAIScript("bdvisit",OVERRIDE))
-END
-
-IF
-	GlobalLT("chapter","global",9)
-	OnCreation()
-THEN
-	RESPONSE #100
-		SetGlobal("BD_FRITZ_NO_TALK","BD0104",0)  // Flaming Fist HQ
+		SaveObjectLocation("LOCALS","bd_default_loc",Myself)
+		SetSequence(SEQ_HEAD_TURN)
 		Continue()
 END
 
 IF
-	GlobalLT("chapter","global",9)
-	Global("BD_VISITED_BD0104","GLOBAL",0)
-THEN
-	RESPONSE #100
-		ActionOverride("Prisoner 8",DialogInterrupt(FALSE))
-		ActionOverride("FF Guard 6",DialogInterrupt(FALSE))
-		ActionOverride("FF Girl 2",DialogInterrupt(FALSE))
-		SetGlobal("BD_VISITED_BD0104","GLOBAL",1)
-		Continue()
-END
-
-IF
-	GlobalLT("bd_visited_three_areas","global",3)
-	Global("bd_stop_increment","BD0104",0)  // Flaming Fist HQ
-THEN
-	RESPONSE #100
-		SetGlobal("bd_stop_increment","BD0104",1)  // Flaming Fist HQ
-		IncrementGlobal("bd_visited_three_areas","global",1)
-END
-
-IF
-	GlobalLT("chapter","global",9)
-	GlobalGT("BD_KICK_DAUSTON","GLOBAL",2)
-	!Exists("BDDAUSTO")  // Dauston
-	!Dead("BDDAUSTO")  // Dauston
-THEN
-	RESPONSE #100
-		CreateCreatureImpassable("BDDAUSTO",[1824.974],E)  // Dauston
-		ReallyForceSpellRES("bdgassa1","BDDAUSTO")  // No such index
-		SetGlobal("BD_REMOVEFROMBD0030","GLOBAL",1)
-END
-
-IF
-	GlobalLT("chapter","global",9)
-	AreaCheck("BD0104")  // Flaming Fist HQ
-	Exists("BDDAUSTO")  // Dauston
-	!Dead("BDDAUSTO")  // Dauston
-	Delay(35)
-	TriggerOverride("BDDAUSTO",Range([PC],75))
-THEN
-	RESPONSE #100
-		DisplayStringHead("BDDAUSTO",16197)  // [SLEEPING MAN 3] ZZZZzzzzzz...
-		Continue()
-END
-
-IF
-	GlobalLT("chapter","global",9)
-	Global("bd_invited_tiax","bd0104",1)  // Flaming Fist HQ
-THEN
-	RESPONSE #100
-		SetGlobal("bd_invited_tiax","bd0104",2)  // Flaming Fist HQ
-		AddexperienceParty(1000)
-END
-
-IF
-	GlobalLT("chapter","global",9)
-	Global("BD_AILEENS_HUSBAND","GLOBAL",4)
-	!Exists("BDAILEEN")  // Aileen
-	!Dead("BDAILEEN")  // Aileen
-THEN
-	RESPONSE #100
-		CreateCreature("BDAILEEN",[1200.1042],NEE)  // Aileen
-END
-
-IF
-	GlobalLT("chapter","global",9)
-	Global("BD_Refugees","GLOBAL",3)
-	!Exists("BDGARACH")  // Garachen
-	!Dead("BDGARACH")  // Garachen
-THEN
-	RESPONSE #100
-		CreateCreature("BDGARACH",[1256.342],SE)  // Garachen
-END
-
-IF
-	GlobalLT("bd_visited_three_npcs","global",3)
-	Global("bd_stop_npc_increment","MYAREA",0)
-	GlobalGT("bd_spoken_tiax","global",0)
-THEN
-	RESPONSE #100
-		SetGlobal("bd_stop_npc_increment","MYAREA",1)
-		IncrementGlobal("bd_visited_three_npcs","global",1)
-END
-
-IF
-	GlobalLT("BD_Chapter_Save","GLOBAL",13)
-	Global("Chapter","GLOBAL",13)
-THEN
-	RESPONSE #100
-		SetGlobal("BD_Chapter_Save","GLOBAL",13)
-		SaveGame(25)
-END
-
-IF
-	Global("chapter","global",13)
-	!GlobalTimerNotExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
+	OR(2)
+		Allegiance(Myself,GOODBUTBLUE)
+		Allegiance(Myself,NEUTRAL)
 	OR(4)
-		Global("bd_jail_visitors","bd0104",0)  // Flaming Fist HQ
-		Global("bd_jail_visitors","bd0104",3)  // Flaming Fist HQ
-		Global("bd_jail_visitors","bd0104",6)  // Flaming Fist HQ
-		Global("bd_jail_visitors","bd0104",12)  // Flaming Fist HQ
-	InMyArea(Player1)
-THEN
-	RESPONSE #100
-		IncrementGlobal("bd_jail_visitors","bd0104",1)  // Flaming Fist HQ
-		SetGlobalTimer("bd_jail_visitors_timer","bd0104",ONE_ROUND)  // Flaming Fist HQ
-END
-
-IF
-	Global("chapter","global",13)
-	GlobalTimerExpired("bd_jail_visitors2_timer","bd0104")  // Flaming Fist HQ
+		Specifics(Myself,HOSTILES4)
+		Specifics(Myself,HOSTILES3)
+		Specifics(Myself,HOSTILES2)
+		Specifics(Myself,CRUSADERS)
 	OR(2)
-		Global("bd_jail_visitors","bd0104",2)  // Flaming Fist HQ
-		Global("bd_jail_visitors","bd0104",5)  // Flaming Fist HQ
+		HitBy([GOODCUTOFF],CRUSHING)
+		AttackedBy([GOODCUTOFF],DEFAULT)
 THEN
 	RESPONSE #100
-		IncrementGlobal("bd_jail_visitors","bd0104",1)  // Flaming Fist HQ
+		Enemy()
+		Shout(ASSIST)
+		SetGlobal("bd_combat","locals",1)
+		SetGlobal("bd_search","locals",0)
+		SetGlobalTimerRandom("bd_shout_timer","locals",9,THREE_MINUTES)
+		SetGlobalTimer("bd_combat_timer","locals",TWO_ROUNDS)
+		Continue()
 END
 
 IF
-	Global("chapter","global",13)
-	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
-	Global("bd_jail_visitors","bd0104",1)  // Flaming Fist HQ
-	Dead("CORWIN")  // Corwin
-THEN
-	RESPONSE #100
-		SetGlobal("bd_jail_visitors","bd0104",3)  // Flaming Fist HQ
-END
-
-IF
-	Global("chapter","global",13)
-	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
-	Global("bd_jail_visitors","bd0104",1)  // Flaming Fist HQ
-	!Dead("CORWIN")  // Corwin
-THEN
-	RESPONSE #100
-		SetGlobal("bd_jail_visitors","bd0104",2)  // Flaming Fist HQ
-		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)  // Flaming Fist HQ
-		CreateCreature("bdschae2",[720.620],NW)  // Corwin
-		ActionOverride("bdschae2",ChangeAIScript("bdvisit",OVERRIDE))
-END
-
-IF
-	Global("chapter","global",13)
-	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
-	Global("bd_jail_visitors","bd0104",4)  // Flaming Fist HQ
-	Global("bd_neera_romanceactive","global",2)
-	!Dead("NEERA")  // Neera
-THEN
-	RESPONSE #100
-		SetGlobal("bd_jail_visitors","bd0104",5)  // Flaming Fist HQ
-		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)  // Flaming Fist HQ
-		MoveGlobal("bd0104","NEERA",[720.620])  // Neera
-		ActionOverride("NEERA",ChangeAIScript("bdvisit",OVERRIDE))
-END
-
-IF
-	Global("chapter","global",13)
-	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
-	Global("bd_jail_visitors","bd0104",4)  // Flaming Fist HQ
-	Global("bd_safana_romanceactive","global",2)
-	!Dead("SAFANA")  // Safana
+	GlobalLT("bd_no_assist","locals",2)
 	OR(2)
-		Global("bd_SafanaRomance22","GLOBAL",0)
-		!Dead("voghiln")  // Voghiln
+		Allegiance(Myself,GOODBUTBLUE)
+		Allegiance(Myself,NEUTRAL)
+	OR(4)
+		Specifics(Myself,HOSTILES4)
+		Specifics(Myself,HOSTILES3)
+		Specifics(Myself,HOSTILES2)
+		Specifics(Myself,CRUSADERS)
+	OR(2)
+		Heard([ANYONE],ALERT)
+		Heard([ANYONE],ASSIST)
+	OR(3)
+		Heard([ANYONE],ALERT)
+		Global("bd_no_assist","locals",0)
+		Detect(LastHeardBy(Myself))
+	InMyGroup(LastHeardBy(Myself))
+	Allegiance(LastHeardBy(Myself),EVILCUTOFF)
 THEN
 	RESPONSE #100
-		SetGlobal("bd_jail_visitors","bd0104",5)  // Flaming Fist HQ
-		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)  // Flaming Fist HQ
-		MoveGlobal("bd0104","SAFANA",[720.620])  // Safana
-		ActionOverride("SAFANA",ChangeAIScript("bdvisit",OVERRIDE))
+		Enemy()
+		SetGlobal("bd_combat","locals",1)
+		Continue()
 END
 
 IF
-	Global("chapter","global",13)
-	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
-	Global("bd_jail_visitors","bd0104",4)  // Flaming Fist HQ
-	Global("bd_viconia_romanceactive","global",2)
-	!Dead("VICONIA")  // Viconia
+	Allegiance(Myself,NEUTRAL)
+	OR(5)
+		Specifics(Myself,ALLIES_NEUTRAL2)
+		Specifics(Myself,ALLIES_NEUTRAL)
+		Specifics(Myself,ALLIES3)
+		Specifics(Myself,ALLIES2)
+		Specifics(Myself,ALLIES)
+	Detect([ENEMY])
+	!Specifics(LastSeenBy(Myself),THIEF)
+	GlobalLT("bd_no_aggro","locals",2)
+	OR(2)
+		Detect([GOODCUTOFF])
+		Global("bd_no_aggro","locals",0)
 THEN
 	RESPONSE #100
-		SetGlobal("bd_jail_visitors","bd0104",5)  // Flaming Fist HQ
-		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)  // Flaming Fist HQ
-		MoveGlobal("bd0104","VICONIA",[720.620])  // Viconia
-		ActionOverride("VICONIA",ChangeAIScript("bdvisit",OVERRIDE))
+		ChangeEnemyAlly(Myself,GOODBUTBLUE)
+		SetGlobal("bd_combat","locals",1)
+		Continue()
+END
+
+/*IF
+	OR(2)
+		Allegiance(Myself,GOODBUTBLUE)
+		Allegiance(Myself,NEUTRAL)
+	OR(3)
+		Specifics(Myself,NEUTRALS)
+		Specifics(Myself,ALLIES_NEUTRAL2)
+		Specifics(Myself,ALLIES_NEUTRAL)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	!InMyGroup(LastAttackerOf(Myself))
+	!StateCheck(LastAttackerOf(Myself),STATE_BERSERK :: STATE_CHARMED :: STATE_CONFUSED)
+THEN
+	RESPONSE #100
+		Enemy()
+		Shout(ASSIST)
+		SetGlobal("bd_combat","locals",1)
+		SetGlobal("bd_search","locals",0)
+		SetGlobalTimerRandom("bd_shout_timer","locals",9,THREE_MINUTES)
+		SetGlobalTimer("bd_combat_timer","locals",TWO_ROUNDS)
+		Continue()
+END*/
+
+IF
+	OR(2)
+		Allegiance(Myself,GOODBUTBLUE)
+		Allegiance(Myself,NEUTRAL)
+	OR(3)
+		Specifics(Myself,NEUTRALS)
+		Specifics(Myself,ALLIES_NEUTRAL2)
+		Specifics(Myself,ALLIES_NEUTRAL)
+	HitBy([GOODCUTOFF],CRUSHING)
+	!InMyGroup(LastHitter(Myself))
+	!Range(LastHitter(Myself),0)
+THEN
+	RESPONSE #100
+		Enemy()
+		Shout(ASSIST)
+		SetGlobal("bd_combat","locals",1)
+		SetGlobal("bd_search","locals",0)
+		SetGlobalTimerRandom("bd_shout_timer","locals",9,THREE_MINUTES)
+		SetGlobalTimer("bd_combat_timer","locals",TWO_ROUNDS)
+		Continue()
 END
 
 IF
-	Global("chapter","global",13)
-	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
-	Global("bd_jail_visitors","bd0104",4)  // Flaming Fist HQ
-	Global("bd_rasaad_romanceactive","global",2)
-	!Dead("RASAAD")  // Rasaad
+	GlobalLT("bd_no_assist","locals",2)
+	OR(2)
+		Allegiance(Myself,GOODBUTBLUE)
+		Allegiance(Myself,NEUTRAL)
+	OR(3)
+		Specifics(Myself,NEUTRALS)
+		Specifics(Myself,ALLIES_NEUTRAL2)
+		Specifics(Myself,ALLIES_NEUTRAL)
+	OR(2)
+		Heard([ANYONE],ALERT)
+		Heard([ANYONE],ASSIST)
+	OR(3)
+		Heard([ANYONE],ALERT)
+		Global("bd_no_assist","locals",0)
+		Detect(LastHeardBy(Myself))
+	InMyGroup(LastHeardBy(Myself))
+	Allegiance(LastHeardBy(Myself),EVILCUTOFF)
 THEN
 	RESPONSE #100
-		SetGlobal("bd_jail_visitors","bd0104",5)  // Flaming Fist HQ
-		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)  // Flaming Fist HQ
-		MoveGlobal("bd0104","RASAAD",[720.620])  // Rasaad
-		ActionOverride("RASAAD",ChangeAIScript("bdvisit",OVERRIDE))
+		Enemy()
+		SetGlobal("bd_combat","locals",1)
+		Continue()
+END
+
+/*IF
+	Allegiance(Myself,NEUTRAL)
+	OR(3)
+		Specifics(Myself,NEUTRALS)
+		Specifics(Myself,ALLIES_NEUTRAL2)
+		Specifics(Myself,ALLIES_NEUTRAL)
+	AttackedBy([ENEMY],DEFAULT)
+	!InMyGroup(LastAttackerOf(Myself))
+	!StateCheck(LastAttackerOf(Myself),STATE_BERSERK :: STATE_CHARMED :: STATE_CONFUSED)
+THEN
+	RESPONSE #100
+		ChangeEnemyAlly(Myself,GOODBUTBLUE)
+		Shout(ASSIST)
+		SetGlobal("bd_combat","locals",1)
+		SetGlobal("bd_search","locals",0)
+		SetGlobalTimerRandom("bd_shout_timer","locals",9,THREE_MINUTES)
+		SetGlobalTimer("bd_combat_timer","locals",TWO_ROUNDS)
+		Continue()
+END*/
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	OR(2)
+		Specifics(Myself,ALLIES_NEUTRAL2)
+		Specifics(Myself,ALLIES_NEUTRAL)
+	HitBy([ENEMY],CRUSHING)
+	!InMyGroup(LastHitter(Myself))
+THEN
+	RESPONSE #100
+		ChangeEnemyAlly(Myself,GOODBUTBLUE)
+		Shout(ASSIST)
+		SetGlobal("bd_combat","locals",1)
+		SetGlobal("bd_search","locals",0)
+		SetGlobalTimerRandom("bd_shout_timer","locals",9,THREE_MINUTES)
+		SetGlobalTimer("bd_combat_timer","locals",TWO_ROUNDS)
+		Continue()
 END
 
 IF
-	Global("chapter","global",13)
-	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
-	Global("bd_jail_visitors","bd0104",4)  // Flaming Fist HQ
-	Global("bd_voghiln_romanceactive","global",2)
-	!Dead("VOGHILN")  // Voghiln
+	GlobalLT("bd_no_assist","locals",2)
+	Allegiance(Myself,NEUTRAL)
+	OR(3)
+		Specifics(Myself,NEUTRALS)
+		Specifics(Myself,ALLIES_NEUTRAL2)
+		Specifics(Myself,ALLIES_NEUTRAL)
+	OR(2)
+		Heard([ANYONE],ALERT)
+		Heard([ANYONE],ASSIST)
+	OR(3)
+		Heard([ANYONE],ALERT)
+		Global("bd_no_assist","locals",0)
+		Detect(LastHeardBy(Myself))
+	InMyGroup(LastHeardBy(Myself))
+	Allegiance(LastHeardBy(Myself),GOODCUTOFF)
 THEN
 	RESPONSE #100
-		SetGlobal("bd_jail_visitors","bd0104",5)  // Flaming Fist HQ
-		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)  // Flaming Fist HQ
-		MoveGlobal("bd0104","VOGHILN",[720.620])  // Voghiln
-		ActionOverride("VOGHILN",ChangeAIScript("bdvisit",OVERRIDE))
+		ChangeEnemyAlly(Myself,GOODBUTBLUE)
+		SetGlobal("bd_combat","locals",1)
+		Continue()
+END
+
+/*IF
+	Allegiance(Myself,NEUTRAL)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	OR(3)
+		!InMyGroup(LastAttackerOf(Myself))
+		Allegiance(LastAttackerOf,PC)
+		Allegiance(LastAttackerOf,CONTROLLED)
+	!StateCheck(LastAttackerOf(Myself),STATE_BERSERK :: STATE_CHARMED :: STATE_CONFUSED)
+	!Specifics(Myself,ALLIES)
+	!Specifics(Myself,ALLIES2)
+	!Specifics(Myself,ALLIES3)
+	!Specifics(Myself,ALLIES_NEUTRAL)
+	!Specifics(Myself,ALLIES_NEUTRAL2)
+	!Specifics(Myself,ORC)
+	!Specifics(Myself,NEUTRALS)
+	!Specifics(Myself,CRUSADERS)
+	!Specifics(Myself,HOSTILES2)
+	!Specifics(Myself,HOSTILES3)
+	!Specifics(Myself,HOSTILES4)
+THEN
+	RESPONSE #100
+		Enemy()
+		Shout(ASSIST)
+		SetGlobal("bd_combat","locals",1)
+		SetGlobal("bd_search","locals",0)
+		SetGlobalTimerRandom("bd_shout_timer","locals",9,THREE_MINUTES)
+		SetGlobalTimer("bd_combat_timer","locals",TWO_ROUNDS)
+		Continue()
+END*/
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	Heard([ANYONE],ASSIST)
+	OR(2)
+		Global("bd_no_assist","locals",0)
+		Detect(LastHeardBy(Myself))
+	InMyGroup(LastHeardBy(Myself))
+	Allegiance(LastHeardBy(Myself),ENEMY)
+	!Specifics(Myself,ALLIES)
+	!Specifics(Myself,ALLIES2)
+	!Specifics(Myself,ALLIES3)
+	!Specifics(Myself,ALLIES_NEUTRAL)
+	!Specifics(Myself,ALLIES_NEUTRAL2)
+	!Specifics(Myself,ORC)
+	!Specifics(Myself,NEUTRALS)
+	!Specifics(Myself,CRUSADERS)
+	!Specifics(Myself,HOSTILES2)
+	!Specifics(Myself,HOSTILES3)
+	!Specifics(Myself,HOSTILES4)
+THEN
+	RESPONSE #100
+		Enemy()
+		SetGlobal("bd_combat","locals",1)
+		Continue()
 END
 
 IF
-	Global("chapter","global",13)
-	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
-	Global("bd_jail_visitors","bd0104",4)  // Flaming Fist HQ
-	Global("bd_dorn_romanceactive","global",2)
-	!Dead("DORN")  // Dorn
+	GlobalLT("bd_no_combat","locals",2)
+	Global("bd_combat","locals",0)
+	OR(2)
+		Global("bd_retreat","locals",0)
+		Global("bd_no_combat","locals",0)
+	See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("bd_jail_visitors","bd0104",5)  // Flaming Fist HQ
-		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)  // Flaming Fist HQ
-		MoveGlobal("bd0104","DORN",[720.620])  // Dorn
-		ActionOverride("DORN",ChangeAIScript("bdvisit",OVERRIDE))
+		SetGlobal("bd_combat","locals",1)
+		Continue()
 END
 
 IF
-	Global("chapter","global",13)
-	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
-	Global("bd_jail_visitors","bd0104",4)  // Flaming Fist HQ
-	Global("bd_glint_romanceactive","global",2)
-	!Dead("GLINT")  // Glint
+	See(NearestEnemyOf(Myself))
+	OR(2)
+		Global("bd_search","locals",1)
+		GlobalTimerNotExpired("bd_respond_timer","locals")
 THEN
 	RESPONSE #100
-		SetGlobal("bd_jail_visitors","bd0104",5)  // Flaming Fist HQ
-		SetGlobalTimer("bd_jail_visitors2_timer","bd0104",TEN_ROUNDS)  // Flaming Fist HQ
-		MoveGlobal("bd0104","GLINT",[720.620])  // Glint
-		ActionOverride("GLINT",ChangeAIScript("bdvisit",OVERRIDE))
+		SetGlobal("bd_search","locals",0)
+		SetGlobal("bd_search_timer","locals",0)
+		SetGlobal("bd_respond_timer","locals",0)
+		Continue()
 END
 
 IF
-	Global("chapter","global",13)
-	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
-	!Global("bd_jail_visitors","bd0104",2)  // Flaming Fist HQ
-	!Global("bd_jail_visitors","bd0104",5)  // Flaming Fist HQ
-	GlobalLT("bd_jail_visitors","bd0104",10)  // Flaming Fist HQ
+	!GlobalTimerNotExpired("bd_combat_timer","locals")
+	OR(3)
+		AttackedBy([ANYONE],DEFAULT)
+		HitBy([ANYONE],CRUSHING)
+		Die()
+	!Allegiance(Myself,NEUTRAL)
+	!Range(LastAttackerOf(Myself),0)
+	!Allegiance(LastAttackerOf(Myself),NEUTRAL)
 THEN
 	RESPONSE #100
-		SetGlobal("bd_jail_visitors","bd0104",10)  // Flaming Fist HQ
-		CreateCreature("bdireni",[720.620],NW)  // Hooded Man
+		Shout(ASSIST)
+		SetGlobal("bd_combat","locals",1)
+		SetGlobal("bd_search","locals",0)
+		SetGlobalTimerRandom("bd_shout_timer","locals",9,THREE_MINUTES)
+		SetGlobalTimer("bd_combat_timer","locals",TWO_ROUNDS)
 END
 
 IF
-	Global("chapter","global",13)
-	GlobalLT("bd_plot","global",615)
-	GlobalTimerExpired("bd_jail_visitors_timer","bd0104")  // Flaming Fist HQ
-	Global("bd_jail_visitors","bd0104",13)  // Flaming Fist HQ
+	Global("bd_no_shout","locals",0)
+	See(NearestEnemyOf(Myself))
+	OR(2)
+		Global("bd_retreat","locals",0)
+		Global("bd_no_combat","locals",0)
+	!GlobalTimerNotExpired("bd_shout_timer","locals")
 THEN
 	RESPONSE #100
-		StartCutSceneMode()
-		SetGlobal("bd_plot","global",615)
-		ClearAllActions()
-		StartCutSceneEx("bdcut64",TRUE)
+		Shout(ASSIST)
+		SetGlobal("bd_combat","locals",1)
+		SetGlobalTimerRandom("bd_shout_timer","locals",9,THREE_MINUTES)
+		SetGlobal("bd_respond_timer","locals",0)
 END
 
 IF
-	Global("chapter","global",13)
-	Global("bd_player_exiled","global",0)
-	Global("bd_prisontalk","bd0104",0)  // Flaming Fist HQ
-	TriggerOverride("bdclara",See([PC]))
+	GlobalLT("bd_no_assist","locals",2)
+	GlobalLT("bd_no_combat","locals",2)
+	Heard([ANYONE],ALERT)
+	InMyGroup(LastHeardBy(Myself))
+	!See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("bd_respond_timer","locals")
 THEN
 	RESPONSE #100
-		SetGlobal("bd_prisontalk","bd0104",1)  // Flaming Fist HQ
-		DisplayStringHead("bdclara",39559)  // Sure, good, that's just great—run away, leave the rest of us here to rot.
+		SetGlobal("bd_combat","locals",1)
+		SetGlobalTimer("bd_respond_timer","locals",FOUR_ROUNDS)
+		MoveToObject(LastHeardBy(Myself))
 END
 
 IF
-	Global("chapter","global",13)
-	Global("bd_player_exiled","global",0)
-	Global("bd_prisontalk1","bd0104",0)  // Flaming Fist HQ
-	TriggerOverride("bdrefuge",See([PC]))
+	GlobalLT("bd_no_assist","locals",2)
+	OR(2)
+		Global("bd_retreat","locals",0)
+		Global("bd_no_combat","locals",0)
+	!Allegiance(Myself,NEUTRAL)
+	!See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("bd_respond_timer","locals")
+	Heard([ANYONE],ASSIST)
+	InMyGroup(LastHeardBy(Myself))
+	OR(2)
+		Global("bd_no_assist","locals",0)
+		Detect(LastHeardBy(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("bd_prisontalk1","bd0104",1)  // Flaming Fist HQ
-		DisplayStringHead("bdrefuge",39556)  // Let me out! Please, I can help you!
+		SetGlobal("bd_combat","locals",1)
+		SetGlobalTimer("bd_respond_timer","locals",FOUR_ROUNDS)
+		MoveToObject(LastHeardBy(Myself))
 END
 
 IF
-	Global("chapter","global",13)
-	Global("bd_player_exiled","global",0)
-	Global("bd_prisontalk2","bd0104",0)  // Flaming Fist HQ
-	TriggerOverride("bdrefgm2",See([PC]))
+	GlobalLT("bd_no_assist","locals",2)
+	Range(LastHeardBy(Myself),4)
+	GlobalTimerNotExpired("bd_respond_timer","locals")
 THEN
 	RESPONSE #100
-		SetGlobal("bd_prisontalk2","bd0104",1)  // Flaming Fist HQ
-		DisplayStringHead("bdrefgm2",39557)  // Guards! Guards! The slayer of Silvershield has escaped!
+		SetGlobal("bd_respond_timer","locals",0)
 END
 
 IF
-	Global("chapter","global",13)
-	Global("bd_player_exiled","global",0)
-	Global("bd_prisontalk3","bd0104",0)  // Flaming Fist HQ
-	TriggerOverride("bdrefgf1",See([PC]))
+	Global("bd_no_search","locals",0)
+	Global("bd_combat","locals",1)
+	Global("bd_search","locals",0)
+	Delay(4)
+	!See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("bd_respond_timer","locals")
 THEN
 	RESPONSE #100
-		SetGlobal("bd_prisontalk3","bd0104",1)  // Flaming Fist HQ
-		DisplayStringHead("bdrefgf1",39558)  // I didn't do it either, hero! Don't leave me here! DON'T LEAVE ME HERE!
+		SetGlobal("bd_search","locals",1)
+		SetGlobalTimerRandom("bd_search_timer","locals",THREE_MINUTES,FIVE_ROUNDS)
+END
+
+IF
+	Global("bd_combat","locals",1)
+	Global("bd_search","locals",1)
+	GlobalTimerExpired("bd_search_timer","locals")
+THEN
+	RESPONSE #100
+		SetGlobal("bd_search","locals",2)
+		Continue()
+END
+
+IF
+	Global("bd_no_search","locals",0)
+	Global("bd_retreat","locals",0)
+	Global("bd_search","locals",1)
+	GlobalTimerNotExpired("bd_search_timer","locals")
+	OR(2)
+		!GlobalTimerNotExpired("bd_respond_timer","locals")
+		Global("bd_no_assist","locals",2)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	Global("bd_retreat","locals",1)
+	Global("bd_combat","locals",1)
+	!GlobalTimerNotExpired("bd_respond_timer","locals")
+	!GlobalTimerNotExpired("bd_combat_timer","locals")
+	Global("bd_no_retreat","locals",0)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_combat","locals",0)
+END
+
+IF
+	Global("bd_retreat","locals",0)
+	Global("bd_combat","locals",1)
+	!See(NearestEnemyOf(Myself))
+	Delay(15)
+	!GlobalTimerNotExpired("bd_combat_timer","locals")
+	!GlobalTimerNotExpired("bd_search_timer","locals")
+	!GlobalTimerNotExpired("bd_respond_timer","locals")
+THEN
+	RESPONSE #100
+		SetGlobal("bd_retreat","locals",1)
+		SetGlobal("bd_search","locals",0)
+		SetGlobal("bd_combat","locals",0)
+END
+
+IF
+	Global("bd_retreat","locals",1)
+	Global("bd_combat","locals",0)
+	OR(2)
+		!See(NearestEnemyOf(Myself))
+		!Global("bd_no_combat","locals",0)
+	!NearSavedLocation(Myself,"LOCALSbd_default_loc",5)
+	!GlobalTimerNotExpired("bd_search_timer","locals")
+	!GlobalTimerNotExpired("bd_respond_timer","locals")
+	Switch("bd_no_retreat","locals")
+THEN
+	RESPONSE #0
+		MoveToSavedLocationn("bd_default_loc","LOCALS")
+	RESPONSE #1
+		SetGlobal("bd_retreat","locals",0)
+END
+
+IF
+	Global("bd_retreat","locals",1)
+	Global("bd_combat","locals",0)
+	NearSavedLocation(Myself,"LOCALSbd_default_loc",5)
+	Global("bd_no_retreat","locals",0)
+	Allegiance(Myself,ENEMY)
+	Switch("bd_retreat_escape","locals")
+THEN
+	RESPONSE #0
+		SetGlobal("bd_retreat","locals",0)
+		SetGlobalTimer("bd_rest_timer","locals",SIX_HOURS)
+		MoveToSavedLocationn("bd_default_loc","LOCALS")
+	RESPONSE #1
+		DestroySelf()
+END
+
+IF
+	Global("bd_retreat","locals",1)
+	Global("bd_combat","locals",0)
+	NearSavedLocation(Myself,"LOCALSbd_default_loc",5)
+	Global("bd_no_retreat","locals",0)
+	!Allegiance(Myself,ENEMY)
+	Switch("bd_retreat_escape","locals")
+THEN
+	RESPONSE #0
+		SetGlobal("bd_retreat","locals",0)
+		SetGlobalTimer("bd_rest_timer","locals",SIX_HOURS)
+		ChangeEnemyAlly(Myself,NEUTRAL)
+		MoveToSavedLocationn("bd_default_loc","LOCALS")
+	RESPONSE #1
+		DestroySelf()
+END
+
+IF
+	Global("bd_combat","locals",0)
+	Global("bd_retreat","locals",0)
+	GlobalTimerExpired("bd_rest_timer","locals")
+	!Detect(NearestEnemyOf(Myself))
+	CombatCounter(0)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_rest_timer","locals",TWELVE_HOURS)
+		SetGlobal("bd_prebuff","locals",0)
+		SetGlobal("bd_hide_in_ambush","locals",0)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)  // SPIN746.SPL (No such index)
+		Rest()
+END
+
+IF
+	OR(2)
+		Heard([ANYONE],ALERT)
+		Heard([ANYONE],ASSIST)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
 END
 

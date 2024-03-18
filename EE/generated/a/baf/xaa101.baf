@@ -1,75 +1,61 @@
 IF
-	OR(2)
-		StateCheck(Myself,STATE_STONE_DEATH)
-		StateCheck(Myself,STATE_FROZEN_DEATH)
+	AreaCheck("ar0125")  // Temple of Bhaal (game finale)
+	HasItem("monhp1",Myself)  // No such index
 THEN
 	RESPONSE #100
-		SmallWait(5)
+		DestroyItem("monhp1")  // No such index
 END
 
 IF
-	AttackedBy([GOODCUTOFF],DEFAULT)
-	!GlobalTimerNotExpired("shouted","LOCALS")
-THEN
-	RESPONSE #100
-		Shout(99)
-		SetGlobalTimer("shouted","LOCALS",ONE_ROUND)
-		SmallWait(5)
-		Enemy()
-END
-
-IF
-	HitBy([GOODCUTOFF],CRUSHING)
-	!GlobalTimerNotExpired("shouted","LOCALS")
-THEN
-	RESPONSE #100
-		Shout(99)
-		SetGlobalTimer("shouted","LOCALS",ONE_ROUND)
-		Continue()
-END
-
-IF
-	!Class(Myself,INNOCENT)
-	Heard([NOTEVIL],99)
-	OR(6)
-		Alignment(Myself,LAWFUL_GOOD)
-		Alignment(Myself,CHAOTIC_GOOD)
-		Alignment(Myself,NEUTRAL_GOOD)
-		Alignment(Myself,LAWFUL_NEUTRAL)
-		Alignment(Myself,CHAOTIC_NEUTRAL)
-		Alignment(Myself,NEUTRAL)
-THEN
-	RESPONSE #100
-		Enemy()
-		MoveToObject(LastHeardBy(Myself))
-END
-
-IF
-	!Class(Myself,INNOCENT)
-	Heard([NOTGOOD],99)
-	OR(3)
-		Alignment(Myself,CHAOTIC_EVIL)
-		Alignment(Myself,NEUTRAL_EVIL)
-		Alignment(Myself,LAWFUL_EVIL)
-THEN
-	RESPONSE #100
-		Enemy()
-		MoveToObject(LastHeardBy(Myself))
-END
-
-IF
-	Class(Myself,INNOCENT)
-	Heard([ANYONE],99)
-THEN
-	RESPONSE #100
-		RunAwayFromNoLeaveArea(LastHeardBy(Myself),180)
-END
-
-IF
-	Heard(NearestMyGroupOfType,99)
+	AreaCheck("ar0108")  // Duchal Palace, ground floor
 	Allegiance(Myself,NEUTRAL)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	!Global("SarevokBehavior","GLOBAL",3)
 THEN
 	RESPONSE #100
-		Enemy()
+		SetGlobal("SarevokBehavior","GLOBAL",3)
+END
+
+IF
+	See([PC])
+	Global("SarevokBehavior","GLOBAL",0)
+	Dead("Liia")  // Liia Jannath
+	Dead("Belt")  // Belt
+THEN
+	RESPONSE #100
+		StartDialog("sarevo",[PC])
+END
+
+IF
+	Detect([PC])
+	Range(LastSeenBy(Myself),25)
+	Global("SarevokBehavior","GLOBAL",2)
+THEN
+	RESPONSE #100
+		StartDialog("sarevo",LastSeenBy(Myself))
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(Player1,5)
+THEN
+	RESPONSE #10
+		AttackReevaluate(Player1,45)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(NearestEnemyOf(Myself),3)
+THEN
+	RESPONSE #10
+		AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+
+IF
+	AttackedBy([PC],DEFAULT)
+	!Range(NearestEnemyOf(Myself),7)
+THEN
+	RESPONSE #10
+		AttackReevaluate(LastAttackerOf(Myself),30)
 END
 

@@ -1,0 +1,856 @@
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	OR(4)
+		Name("Wall Guard 1",Myself)
+		Name("Wall Guard 2",Myself)
+		Name("Wall Guard 3",Myself)
+		Name("Wall Guard 4",Myself)
+	Global("bd_wall_guards","LOCALS",0)
+THEN
+	RESPONSE #100
+		ApplySpellRES("bdbump1",Myself)  // No such index
+		SetGlobal("bd_wall_guards","LOCALS",1)
+		SetName(0)  // <NO TEXT>
+		GiveItemCreate("nocircle",Myself,0,0,0)  // Ring
+		XEquipItem("nocircle",Myself,SLOT_RING_LEFT,EQUIP)  // Ring
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	OR(8)
+		Name("BF SOLDIER 14",Myself)
+		Name("BF SOLDIER 16",Myself)
+		Name("Front_attacker1",Myself)
+		Name("Front_attacker2",Myself)
+		Name("Front_attacker3",Myself)
+		Name("Front_attacker4",Myself)
+		Name("Front_attacker5",Myself)
+		Name("Front_attacker6",Myself)
+	Global("bd_wall_guards_bump1","LOCALS",0)
+THEN
+	RESPONSE #100
+		ApplySpellRES("bdbump1",Myself)  // No such index
+		SetGlobal("bd_wall_guards_bump1","LOCALS",1)
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	OR(8)
+		Name("BF SOLDIER 14",Myself)
+		Name("BF SOLDIER 16",Myself)
+		Name("Front_attacker1",Myself)
+		Name("Front_attacker2",Myself)
+		Name("Front_attacker3",Myself)
+		Name("Front_attacker4",Myself)
+		Name("Front_attacker5",Myself)
+		Name("Front_attacker6",Myself)
+	OR(3)
+		GlobalGT("bd_bridgefort_plot","global",8)
+		GlobalGT("BD_PLOT","global",239)
+		Allegiance(Myself,ENEMY)
+	Global("bd_wall_guards_bump2","LOCALS",0)
+THEN
+	RESPONSE #100
+		ApplySpellRES("bdbump2",Myself)  // No such index
+		SetGlobal("bd_wall_guards_bump2","LOCALS",1)
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("Front_Attacker1",Myself)
+	Allegiance(Myself,NEUTRAL)
+	OR(2)
+		GlobalLT("bd_bridgefort_plot","global",9)
+		GlobalLT("BD_PLOT","global",240)
+	!GlobalTimerNotExpired("BD_ARROW_ATTACKERS","LOCALS")
+THEN
+	RESPONSE #35
+		Face(NNE)
+		SetGlobal("bd_front_dummy1","BD2000",1)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+	RESPONSE #35
+		Face(NNE)
+		SetGlobal("bd_front_dummy1","BD2000",2)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+	RESPONSE #10
+		Face(N)
+		SetGlobal("bd_front_dummy1","BD2000",3)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+	RESPONSE #10
+		Face(NNE)
+		SetGlobal("bd_front_dummy1","BD2000",4)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+	RESPONSE #10
+		Face(NNE)
+		SetGlobal("bd_front_dummy1","BD2000",5)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("Front_dummy1",Myself)
+	Switch("bd_front_dummy1","BD2000")  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #1
+		SetGlobal("bd_front_dummy1","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow1",[3155.1095])  // No such index
+	RESPONSE #2
+		SetGlobal("bd_front_dummy1","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow2",[3155.1095])  // No such index
+	RESPONSE #3
+		SetGlobal("bd_front_dummy1","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow3",[2664.1384])  // No such index
+		SmallWait(25)
+		ActionOverride("WALL GUARD 4",SetGlobalTimer("BD_ARROW_DEFENDERS","LOCALS",ONE_MINUTE))
+		ActionOverride("WALL GUARD 4",PlayDead(25))
+		CreateCreatureImpassable("bdstonec",[2876.1297],S)  // <NO TEXT>
+		ApplySpellRES("bdstonec","bdstonec")  // No such index
+	RESPONSE #4
+		SetGlobal("bd_front_dummy1","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow3",[2868.1659])  // No such index
+		SmallWait(15)
+		SetGlobal("bd_knock_down_pc","BD2000",1)  // Boareskyr Bridge & Bridgefort
+		SmallWait(6)
+		ActionOverride("BF SOLDIER 14",SetGlobalTimer("BD_ARROW_DEFENDERS","LOCALS",ONE_MINUTE))
+		ActionOverride("BF SOLDIER 14",PlayDead(25))
+		CreateCreatureImpassable("bdstonec",[2977.1491],S)  // <NO TEXT>
+		ApplySpellRES("bdstonec","bdstonec")  // No such index
+	RESPONSE #5
+		SetGlobal("bd_front_dummy1","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow3",[2868.1659])  // No such index
+		SmallWait(15)
+		SetGlobal("bd_knock_down_pc","BD2000",1)  // Boareskyr Bridge & Bridgefort
+		SmallWait(6)
+		ActionOverride("BF SOLDIER 16",SetGlobalTimer("BD_ARROW_DEFENDERS","LOCALS",ONE_MINUTE))
+		ActionOverride("BF SOLDIER 16",PlayDead(25))
+		CreateCreatureImpassable("bdstonec",[2977.1491],S)  // <NO TEXT>
+		ApplySpellRES("bdstonec","bdstonec")  // No such index
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("knockdown",Myself)
+	Global("bd_knock_down_pc","BD2000",1)  // Boareskyr Bridge & Bridgefort
+	!IsOverMe([PC])
+	OR(2)
+		GlobalLT("bd_bridgefort_plot","global",9)
+		GlobalLT("BD_PLOT","global",240)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_knock_down_pc","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		Continue()
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("knockdown",Myself)
+	Global("bd_knock_down_pc","BD2000",1)  // Boareskyr Bridge & Bridgefort
+	IsOverMe(Player1)
+	OR(2)
+		GlobalLT("bd_bridgefort_plot","global",9)
+		GlobalLT("BD_PLOT","global",240)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_knock_down_pc","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ActionOverride(Player1,PlayDead(25))
+		Continue()
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("knockdown",Myself)
+	Global("bd_knock_down_pc","BD2000",1)  // Boareskyr Bridge & Bridgefort
+	IsOverMe(Player2)
+	OR(2)
+		GlobalLT("bd_bridgefort_plot","global",9)
+		GlobalLT("BD_PLOT","global",240)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_knock_down_pc","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ActionOverride(Player2,PlayDead(25))
+		Continue()
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("knockdown",Myself)
+	Global("bd_knock_down_pc","BD2000",1)  // Boareskyr Bridge & Bridgefort
+	IsOverMe(Player3)
+	OR(2)
+		GlobalLT("bd_bridgefort_plot","global",9)
+		GlobalLT("BD_PLOT","global",240)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_knock_down_pc","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ActionOverride(Player3,PlayDead(25))
+		Continue()
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("knockdown",Myself)
+	Global("bd_knock_down_pc","BD2000",1)  // Boareskyr Bridge & Bridgefort
+	IsOverMe(Player4)
+	OR(2)
+		GlobalLT("bd_bridgefort_plot","global",9)
+		GlobalLT("BD_PLOT","global",240)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_knock_down_pc","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ActionOverride(Player4,PlayDead(25))
+		Continue()
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("knockdown",Myself)
+	Global("bd_knock_down_pc","BD2000",1)  // Boareskyr Bridge & Bridgefort
+	IsOverMe(Player5)
+	OR(2)
+		GlobalLT("bd_bridgefort_plot","global",9)
+		GlobalLT("BD_PLOT","global",240)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_knock_down_pc","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ActionOverride(Player5,PlayDead(25))
+		Continue()
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("knockdown",Myself)
+	Global("bd_knock_down_pc","BD2000",1)  // Boareskyr Bridge & Bridgefort
+	IsOverMe(Player6)
+	OR(2)
+		GlobalLT("bd_bridgefort_plot","global",9)
+		GlobalLT("BD_PLOT","global",240)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_knock_down_pc","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ActionOverride(Player6,PlayDead(25))
+		Continue()
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("Front_Attacker2",Myself)
+	Allegiance(Myself,NEUTRAL)
+	OR(2)
+		GlobalLT("bd_bridgefort_plot","global",9)
+		GlobalLT("BD_PLOT","global",240)
+	!GlobalTimerNotExpired("BD_ARROW_ATTACKERS","LOCALS")
+THEN
+	RESPONSE #25
+		Face(NNE)
+		SetGlobal("bd_front_dummy2","BD2000",1)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+	RESPONSE #25
+		Face(NNE)
+		SetGlobal("bd_front_dummy2","BD2000",2)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+	RESPONSE #25
+		Face(NNE)
+		SetGlobal("bd_front_dummy2","BD2000",3)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+	RESPONSE #25
+		Face(NNE)
+		SetGlobal("bd_front_dummy2","BD2000",4)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("Front_dummy2",Myself)
+	Switch("bd_front_dummy2","BD2000")  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #1
+		SetGlobal("bd_front_dummy2","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow1",[3229.1090])  // No such index
+	RESPONSE #2
+		SetGlobal("bd_front_dummy2","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow2",[3155.1095])  // No such index
+	RESPONSE #3
+		SetGlobal("bd_front_dummy2","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellRES("bdarrow2","dummy3")  // No such index
+	RESPONSE #4
+		SetGlobal("bd_front_dummy2","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellRES("bdarrow2","dummy4")  // No such index
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("Front_Attacker3",Myself)
+	Allegiance(Myself,NEUTRAL)
+	OR(2)
+		GlobalLT("bd_bridgefort_plot","global",9)
+		GlobalLT("BD_PLOT","global",240)
+	!GlobalTimerNotExpired("BD_ARROW_ATTACKERS","LOCALS")
+THEN
+	RESPONSE #33
+		Face(NNE)
+		SetGlobal("bd_front_dummy3","BD2000",1)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+	RESPONSE #33
+		Face(NNE)
+		SetGlobal("bd_front_dummy3","BD2000",2)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+	RESPONSE #33
+		Face(NNE)
+		SetGlobal("bd_front_dummy3","BD2000",3)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("Front_dummy3",Myself)
+	Switch("bd_front_dummy3","BD2000")  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #1
+		SetGlobal("bd_front_dummy3","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow1",[3265.1215])  // No such index
+	RESPONSE #2
+		SetGlobal("bd_front_dummy3","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow2",[3265.1215])  // No such index
+	RESPONSE #3
+		SetGlobal("bd_front_dummy3","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellRES("bdarrow2","dummy1")  // No such index
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("Front_Attacker4",Myself)
+	Allegiance(Myself,NEUTRAL)
+	OR(2)
+		GlobalLT("bd_bridgefort_plot","global",9)
+		GlobalLT("BD_PLOT","global",240)
+	!GlobalTimerNotExpired("BD_ARROW_ATTACKERS","LOCALS")
+THEN
+	RESPONSE #40
+		Face(NNE)
+		SetGlobal("bd_front_dummy4","BD2000",1)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+	RESPONSE #40
+		Face(NNE)
+		SetGlobal("bd_front_dummy4","BD2000",2)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+	RESPONSE #20
+		Face(NNE)
+		SetGlobal("bd_front_dummy4","BD2000",3)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("Front_dummy4",Myself)
+	Switch("bd_front_dummy4","BD2000")  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #1
+		SetGlobal("bd_front_dummy4","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow1",[3359.1238])  // No such index
+	RESPONSE #2
+		SetGlobal("bd_front_dummy4","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow2",[3359.1238])  // No such index
+	RESPONSE #3
+		SetGlobal("bd_front_dummy4","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellRES("bdarrow1","WALL GUARD 2")  // No such index
+		SmallWait(20)
+		ApplyDamage("WALL GUARD 2",0,MISSILE)
+		ActionOverride("WALL GUARD 2",SetGlobalTimer("BD_ARROW_DEFENDERS","LOCALS",ONE_MINUTE))
+		ActionOverride("WALL GUARD 2",PlayDead(25))
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("Front_Attacker5",Myself)
+	Allegiance(Myself,NEUTRAL)
+	OR(2)
+		GlobalLT("bd_bridgefort_plot","global",9)
+		GlobalLT("BD_PLOT","global",240)
+	!GlobalTimerNotExpired("BD_ARROW_ATTACKERS","LOCALS")
+THEN
+	RESPONSE #33
+		Face(NNE)
+		SetGlobal("bd_front_dummy5","BD2000",1)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+	RESPONSE #33
+		Face(NNE)
+		SetGlobal("bd_front_dummy5","BD2000",2)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+	RESPONSE #33
+		Face(NNE)
+		SetGlobal("bd_front_dummy5","BD2000",3)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("Front_dummy5",Myself)
+	Switch("bd_front_dummy5","BD2000")  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #1
+		SetGlobal("bd_front_dummy5","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow1",[3447.1208])  // No such index
+	RESPONSE #2
+		SetGlobal("bd_front_dummy5","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow2",[3447.1208])  // No such index
+	RESPONSE #3
+		SetGlobal("bd_front_dummy5","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellRES("bdarrow2","dummy2")  // No such index
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("Front_Attacker6",Myself)
+	Allegiance(Myself,NEUTRAL)
+	OR(2)
+		GlobalLT("bd_bridgefort_plot","global",9)
+		GlobalLT("BD_PLOT","global",240)
+	!GlobalTimerNotExpired("BD_ARROW_ATTACKERS","LOCALS")
+THEN
+	RESPONSE #40
+		Face(NNE)
+		SetGlobal("bd_front_dummy6","BD2000",1)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+	RESPONSE #40
+		Face(NNE)
+		SetGlobal("bd_front_dummy6","BD2000",2)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+	RESPONSE #20
+		Face(NNE)
+		SetGlobal("bd_front_dummy6","BD2000",3)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_ATTACKERS","LOCALS",3,8)
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("Front_dummy6",Myself)
+	Switch("bd_front_dummy6","BD2000")  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #1
+		SetGlobal("bd_front_dummy6","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow1",[3524.1238])  // No such index
+	RESPONSE #2
+		SetGlobal("bd_front_dummy6","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow2",[3524.1238])  // No such index
+	RESPONSE #3
+		SetGlobal("bd_front_dummy6","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow3",[3329.1742])  // No such index
+		SmallWait(20)
+		CreateCreatureImpassable("bdstonec",[3369.1509],S)  // <NO TEXT>
+		ApplySpellRES("bdstonec","bdstonec")  // No such index
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("WALl GUARD 4",Myself)
+	!GlobalTimerNotExpired("BD_ARROW_DEFENDERS","LOCALS")
+	OR(2)
+		GlobalLT("bd_bridgefort_plot","global",9)
+		GlobalLT("BD_PLOT","global",240)
+	Global("bd_enemy_gone_hostile","bd2000",0)  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #20
+		Face(S)
+		SetGlobal("bd_wall_dummy4","BD2000",1)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #20
+		Face(S)
+		SetGlobal("bd_wall_dummy4","BD2000",2)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #20
+		Face(S)
+		SetGlobal("bd_wall_dummy4","BD2000",3)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #20
+		Face(S)
+		SetGlobal("bd_wall_dummy4","BD2000",4)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #5
+		Face(S)
+		SetGlobal("bd_wall_dummy4","BD2000",5)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #5
+		Face(S)
+		SetGlobal("bd_wall_dummy4","BD2000",6)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #5
+		Face(S)
+		SetGlobal("bd_wall_dummy4","BD2000",7)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #5
+		Face(S)
+		SetGlobal("bd_wall_dummy4","BD2000",8)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",ONE_MINUTE,TWO_MINUTES)
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("WALL DUMMY 4",Myself)
+	Switch("bd_wall_dummy4","BD2000")  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #1
+		SetGlobal("bd_wall_dummy4","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow1",[2620.2081])  // No such index
+	RESPONSE #2
+		SetGlobal("bd_wall_dummy4","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow2",[2620.2081])  // No such index
+	RESPONSE #3
+		SetGlobal("bd_wall_dummy4","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow1",[2690.2122])  // No such index
+	RESPONSE #4
+		SetGlobal("bd_wall_dummy4","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow2",[2690.2122])  // No such index
+	RESPONSE #5
+		SetGlobal("bd_wall_dummy4","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellRES("bdarrow1","Front_Attacker1")  // No such index
+		SmallWait(20)
+		ApplyDamage("Front_Attacker1",0,MISSILE)
+	RESPONSE #6
+		SetGlobal("bd_wall_dummy4","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellRES("bdarrow2","Front_Attacker1")  // No such index
+		SmallWait(20)
+		ApplyDamage("Front_Attacker1",0,MISSILE)
+	RESPONSE #7
+		SetGlobal("bd_wall_dummy4","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellRES("bdarrow1","Front_Attacker2")  // No such index
+		SmallWait(20)
+		ApplyDamage("Front_Attacker2",0,MISSILE)
+	RESPONSE #8
+		SetGlobal("bd_wall_dummy4","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellRES("bdarrow2","Front_Attacker2")  // No such index
+		SmallWait(20)
+		ApplyDamage("Front_Attacker2",0,MISSILE)
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("BF SOLDIER 16",Myself)
+	!GlobalTimerNotExpired("BD_ARROW_DEFENDERS","LOCALS")
+	OR(2)
+		GlobalLT("bd_bridgefort_plot","global",9)
+		GlobalLT("BD_PLOT","global",240)
+	Global("bd_enemy_gone_hostile","bd2000",0)  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #50
+		Face(S)
+		SetGlobal("bd_soldier_16","BD2000",1)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #40
+		Face(S)
+		SetGlobal("bd_soldier_16","BD2000",2)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #5
+		Face(S)
+		SetGlobal("bd_soldier_16","BD2000",3)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #5
+		Face(S)
+		SetGlobal("bd_soldier_16","BD2000",4)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("BF DUMMY 16",Myself)
+	Switch("bd_soldier_16","BD2000")  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #1
+		SetGlobal("bd_soldier_16","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow1",[2999.2190])  // No such index
+	RESPONSE #2
+		SetGlobal("bd_soldier_16","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow2",[2999.2190])  // No such index
+	RESPONSE #3
+		SetGlobal("bd_soldier_16","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellRES("bdarrow1","Front_Attacker5")  // No such index
+		SmallWait(25)
+		ApplyDamage("Front_Attacker5",0,MISSILE)
+	RESPONSE #4
+		SetGlobal("bd_soldier_16","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellRES("bdarrow2","Front_Attacker5")  // No such index
+		SmallWait(25)
+		ApplyDamage("Front_Attacker5",0,MISSILE)
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("BF SOLDIER 14",Myself)
+	!GlobalTimerNotExpired("BD_ARROW_DEFENDERS","LOCALS")
+	OR(2)
+		GlobalLT("bd_bridgefort_plot","global",9)
+		GlobalLT("BD_PLOT","global",240)
+	Global("bd_enemy_gone_hostile","bd2000",0)  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #50
+		Face(SSW)
+		SetGlobal("bd_soldier_14","BD2000",1)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #40
+		Face(SSW)
+		SetGlobal("bd_soldier_14","BD2000",2)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #5
+		Face(SSW)
+		SetGlobal("bd_soldier_14","BD2000",3)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #5
+		Face(SSW)
+		SetGlobal("bd_soldier_14","BD2000",4)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("BF DUMMY 14",Myself)
+	Switch("bd_soldier_14","BD2000")  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #1
+		SetGlobal("bd_soldier_14","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow1",[2792.2224])  // No such index
+	RESPONSE #2
+		SetGlobal("bd_soldier_14","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow2",[2792.2224])  // No such index
+	RESPONSE #3
+		SetGlobal("bd_soldier_14","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellRES("bdarrow1","Front_Attacker3")  // No such index
+		SmallWait(25)
+		ApplyDamage("Front_Attacker3",0,MISSILE)
+	RESPONSE #4
+		SetGlobal("bd_soldier_14","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellRES("bdarrow2","Front_Attacker3")  // No such index
+		SmallWait(25)
+		ApplyDamage("Front_Attacker3",0,MISSILE)
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("WALL GUARD 2",Myself)
+	!GlobalTimerNotExpired("BD_ARROW_DEFENDERS","LOCALS")
+	OR(2)
+		GlobalLT("bd_bridgefort_plot","global",9)
+		GlobalLT("BD_PLOT","global",240)
+	Global("bd_enemy_gone_hostile","bd2000",0)  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #40
+		Face(SSW)
+		SetGlobal("bd_wall_dummy2","BD2000",1)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #40
+		Face(SSW)
+		SetGlobal("bd_wall_dummy2","BD2000",2)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #10
+		Face(SSW)
+		SetGlobal("bd_wall_dummy2","BD2000",3)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #10
+		Face(SSW)
+		SetGlobal("bd_wall_dummy2","BD2000",4)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("WALL DUMMY 2",Myself)
+	Switch("bd_wall_dummy2","BD2000")  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #1
+		SetGlobal("bd_wall_dummy2","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow1",[2713.2230])  // No such index
+	RESPONSE #2
+		SetGlobal("bd_wall_dummy2","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow2",[2713.2230])  // No such index
+	RESPONSE #3
+		SetGlobal("bd_wall_dummy2","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellRES("bdarrow1","Front_Attacker4")  // No such index
+		SmallWait(20)
+		ApplyDamage("Front_Attacker4",0,MISSILE)
+	RESPONSE #4
+		SetGlobal("bd_wall_dummy2","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellRES("bdarrow2","Front_Attacker4")  // No such index
+		SmallWait(20)
+		ApplyDamage("Front_Attacker4",0,MISSILE)
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("WALL GUARD 3",Myself)
+	!GlobalTimerNotExpired("BD_ARROW_DEFENDERS","LOCALS")
+	OR(2)
+		GlobalLT("bd_bridgefort_plot","global",9)
+		GlobalLT("BD_PLOT","global",240)
+	Global("bd_enemy_gone_hostile","bd2000",0)  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #25
+		Face(SW)
+		SetGlobal("bd_wall_dummy3","BD2000",1)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #20
+		Face(SW)
+		SetGlobal("bd_wall_dummy3","BD2000",2)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #25
+		Face(SW)
+		SetGlobal("bd_wall_dummy3","BD2000",3)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #20
+		Face(SW)
+		SetGlobal("bd_wall_dummy3","BD2000",4)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #5
+		Face(SW)
+		SetGlobal("bd_wall_dummy3","BD2000",5)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+	RESPONSE #5
+		Face(SW)
+		SetGlobal("bd_wall_dummy3","BD2000",6)  // Boareskyr Bridge & Bridgefort
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_DEFENDERS","LOCALS",3,8)
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("WALL DUMMY 3",Myself)
+	Switch("bd_wall_dummy3","BD2000")  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #1
+		SetGlobal("bd_wall_dummy3","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow1",[3040.2250])  // No such index
+	RESPONSE #2
+		SetGlobal("bd_wall_dummy3","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow1",[2876.2187])  // No such index
+	RESPONSE #3
+		SetGlobal("bd_wall_dummy3","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow2",[3040.2250])  // No such index
+	RESPONSE #4
+		SetGlobal("bd_wall_dummy3","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellPointRES("bdarrow2",[2876.2187])  // No such index
+	RESPONSE #5
+		SetGlobal("bd_wall_dummy3","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellRES("bdarrow1","Front_Attacker6")  // No such index
+		SmallWait(20)
+		ApplyDamage("Front_Attacker6",0,MISSILE)
+	RESPONSE #6
+		SetGlobal("bd_wall_dummy3","BD2000",0)  // Boareskyr Bridge & Bridgefort
+		ForceSpellRES("bdarrow2","Front_Attacker6")  // No such index
+		SmallWait(20)
+		ApplyDamage("Front_Attacker6",0,MISSILE)
+END
+
+IF
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Name("Battlefield",Myself)
+	IsOverMe([PC])
+	!GlobalTimerNotExpired("BD_ARROW_PC","BD2000")  // Boareskyr Bridge & Bridgefort
+	OR(2)
+		GlobalLT("bd_bridgefort_plot","global",9)
+		GlobalLT("BD_PLOT","global",240)
+	Global("bd_enemy_gone_hostile","bd2000",0)  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #25
+		ForceSpell(LastTrigger,TRAP_ARROW)  // SPWI005.SPL (No such index)
+		SetGlobalTimerRandom("BD_ARROW_PC","BD2000",ONE_MINUTE,TWO_MINUTES)  // Boareskyr Bridge & Bridgefort
+	RESPONSE #25
+		ForceSpell(LastTrigger,TRAP_ARROW_FIRE)  // SPWI011.SPL (No such index)
+		SetGlobalTimerRandom("BD_ARROW_PC","BD2000",ONE_MINUTE,TWO_MINUTES)  // Boareskyr Bridge & Bridgefort
+	RESPONSE #50
+		SetGlobalTimerRandom("BD_ARROW_PC","BD2000",ONE_MINUTE,TWO_MINUTES)  // Boareskyr Bridge & Bridgefort
+END
+
+IF
+	AreaCheck("bd5000")  // Underground River Entrance
+	Name("crusader_bolt",Myself)
+	!GlobalTimerNotExpired("BD_ARROW_PRACTICE","LOCALS")
+	!Allegiance(Myself,ENEMY)
+	!Global("BD_GATE_ATTACK","BD5000",1)  // Underground River Entrance
+	Global("bd_arrow_dummy","BD5000",0)  // Underground River Entrance
+THEN
+	RESPONSE #100
+		Face(NNE)
+		SetGlobal("bd_arrow_dummy","BD5000",1)  // Underground River Entrance
+		SetSequence(SEQ_ATTACK)
+		SetGlobalTimerRandom("BD_ARROW_PRACTICE","LOCALS",7,13)
+END
+
+IF
+	AreaCheck("bd5000")  // Underground River Entrance
+	Name("bolt_dummy",Myself)
+	!Allegiance("crusader_bolt",ENEMY)
+	!Global("BD_GATE_ATTACK","BD5000",1)  // Underground River Entrance
+	Global("bd_arrow_dummy","BD5000",1)  // Underground River Entrance
+THEN
+	RESPONSE #100
+		SetGlobal("bd_arrow_dummy","BD5000",0)  // Underground River Entrance
+		ForceSpellPointRES("bdarrow1",[2583.923])  // No such index
+END
+
+IF
+	AreaCheck("bd5000")  // Underground River Entrance
+	Name("trigger_bolt",Myself)
+	!Allegiance("crusader_bolt",ENEMY)
+	!Global("BD_GATE_ATTACK","BD5000",1)  // Underground River Entrance
+	!Global("bd_arrow_dummy","BD5000",2)  // Underground River Entrance
+	IsOverMe([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("bd_arrow_dummy","BD5000",2)  // Underground River Entrance
+END
+
+IF
+	AreaCheck("bd5000")  // Underground River Entrance
+	Name("trigger_bolt",Myself)
+	!Allegiance("crusader_bolt",ENEMY)
+	!Global("BD_GATE_ATTACK","BD5000",1)  // Underground River Entrance
+	Global("bd_arrow_dummy","BD5000",2)  // Underground River Entrance
+	!IsOverMe([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("bd_arrow_dummy","BD5000",0)  // Underground River Entrance
+END
+

@@ -1,0 +1,167 @@
+IF
+	Name("TRAINING_DUMMY1",Myself)
+	!GlobalTimerNotExpired("BD_ARROW_TRAINING_TIMER","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_ARROW_TRAINING_TIMER","MYAREA",THREE_ROUNDS)
+		SetGlobal("BD_ARROW_TRAINING","LOCALS",1)
+		ActionOverride("TRAINING_DUMMY2",SetGlobal("BD_ARROW_TRAINING","LOCALS",1))
+		ActionOverride("TRAINING_DUMMY3",SetGlobal("BD_ARROW_TRAINING","LOCALS",1))
+		ActionOverride("TRAINING_DUMMY4",SetGlobal("BD_ARROW_TRAINING","LOCALS",1))
+END
+
+IF
+	Global("bd_training_gear","locals",0)
+	OR(2)
+		AreaCheck("bd4000")  // Dragonspear Castle, Exterior
+		AreaCheck("bd5200")  // The Warrens
+	OR(4)
+		Name("TRAINING_ARCHER1",Myself)
+		Name("TRAINING_ARCHER2",Myself)
+		Name("TRAINING_ARCHER3",Myself)
+		Name("TRAINING_ARCHER4",Myself)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_training_gear","locals",1)
+		DialogInterrupt(FALSE)
+		GiveItemCreate("bdtrain1",Myself,1,1,0)  // No such index
+		FillSlot(SLOT_AMMO3)
+END
+
+IF
+	Global("bd_warrens_hostile","global",1)
+	AreaCheck("bd5200")  // The Warrens
+	OR(4)
+		Name("TRAINING_DUMMY1",Myself)
+		Name("TRAINING_DUMMY2",Myself)
+		Name("TRAINING_DUMMY3",Myself)
+		Name("TRAINING_DUMMY4",Myself)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Global("BD_ARROW_TRAINING","LOCALS",1)
+	OR(2)
+		AreaCheck("bd4000")  // Dragonspear Castle, Exterior
+		AreaCheck("bd5200")  // The Warrens
+	Name("TRAINING_DUMMY1",Myself)
+	HasItem("bdtrain1","TRAINING_ARCHER1")  // No such index
+	Range("TRAINING_ARCHER1",7)
+	Allegiance("TRAINING_ARCHER1",NEUTRAL)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("BD_ARROW_TRAINING","LOCALS",0)
+		ActionOverride("TRAINING_ARCHER1",SelectWeaponAbility(SLOT_AMMO3,0))
+		ActionOverride("TRAINING_ARCHER1",AttackNoSound("TRAINING_TARGET1"))
+		SmallWait(10)
+		ActionOverride("TRAINING_ARCHER1",EquipRanged())
+	RESPONSE #100
+		SetGlobal("BD_ARROW_TRAINING","LOCALS",0)
+		ActionOverride("TRAINING_ARCHER1",SelectWeaponAbility(SLOT_AMMO3,0))
+		ActionOverride("TRAINING_ARCHER1",AttackNoSound("TRAINING_TARGET2"))
+		SmallWait(10)
+		ActionOverride("TRAINING_ARCHER1",EquipRanged())
+	RESPONSE #100
+		SetGlobal("BD_ARROW_TRAINING","LOCALS",0)
+		ActionOverride("TRAINING_ARCHER1",SelectWeaponAbility(SLOT_AMMO3,0))
+		ActionOverride("TRAINING_ARCHER1",AttackNoSound("TRAINING_TARGET3"))
+		SmallWait(10)
+		ActionOverride("TRAINING_ARCHER1",EquipRanged())
+END
+
+IF
+	Global("BD_ARROW_TRAINING","LOCALS",1)
+	OR(2)
+		AreaCheck("bd4000")  // Dragonspear Castle, Exterior
+		AreaCheck("bd5200")  // The Warrens
+	Name("TRAINING_DUMMY2",Myself)
+	HasItem("bdtrain1","TRAINING_ARCHER2")  // No such index
+	Range("TRAINING_ARCHER2",7)
+	Allegiance("TRAINING_ARCHER2",NEUTRAL)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("BD_ARROW_TRAINING","LOCALS",0)
+		ActionOverride("TRAINING_ARCHER2",SelectWeaponAbility(SLOT_AMMO3,0))
+		ActionOverride("TRAINING_ARCHER2",AttackNoSound("TRAINING_TARGET3"))
+		SmallWait(10)
+		ActionOverride("TRAINING_ARCHER2",EquipRanged())
+	RESPONSE #100
+		SetGlobal("BD_ARROW_TRAINING","LOCALS",0)
+		ActionOverride("TRAINING_ARCHER2",SelectWeaponAbility(SLOT_AMMO3,0))
+		ActionOverride("TRAINING_ARCHER2",AttackNoSound("TRAINING_TARGET4"))
+		SmallWait(10)
+		ActionOverride("TRAINING_ARCHER2",EquipRanged())
+	RESPONSE #100
+		SetGlobal("BD_ARROW_TRAINING","LOCALS",0)
+		ActionOverride("TRAINING_ARCHER2",SelectWeaponAbility(SLOT_AMMO3,0))
+		ActionOverride("TRAINING_ARCHER2",AttackNoSound("TRAINING_TARGET5"))
+		SmallWait(10)
+		ActionOverride("TRAINING_ARCHER2",EquipRanged())
+END
+
+IF
+	Global("BD_ARROW_TRAINING","LOCALS",1)
+	OR(2)
+		AreaCheck("bd4000")  // Dragonspear Castle, Exterior
+		AreaCheck("bd5200")  // The Warrens
+	Name("TRAINING_DUMMY3",Myself)
+	HasItem("bdtrain1","TRAINING_ARCHER3")  // No such index
+	Range("TRAINING_ARCHER3",7)
+	Allegiance("TRAINING_ARCHER3",NEUTRAL)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("BD_ARROW_TRAINING","LOCALS",0)
+		ActionOverride("TRAINING_ARCHER3",SelectWeaponAbility(SLOT_AMMO3,0))
+		ActionOverride("TRAINING_ARCHER3",AttackNoSound("TRAINING_TARGET4"))
+		SmallWait(10)
+		ActionOverride("TRAINING_ARCHER3",EquipRanged())
+	RESPONSE #100
+		SetGlobal("BD_ARROW_TRAINING","LOCALS",0)
+		ActionOverride("TRAINING_ARCHER3",SelectWeaponAbility(SLOT_AMMO3,0))
+		ActionOverride("TRAINING_ARCHER3",AttackNoSound("TRAINING_TARGET5"))
+		SmallWait(10)
+		ActionOverride("TRAINING_ARCHER3",EquipRanged())
+	RESPONSE #100
+		SetGlobal("BD_ARROW_TRAINING","LOCALS",0)
+		ActionOverride("TRAINING_ARCHER3",SelectWeaponAbility(SLOT_AMMO3,0))
+		ActionOverride("TRAINING_ARCHER3",AttackNoSound("TRAINING_TARGET6"))
+		SmallWait(10)
+		ActionOverride("TRAINING_ARCHER3",EquipRanged())
+END
+
+IF
+	Global("BD_ARROW_TRAINING","LOCALS",1)
+	OR(2)
+		AreaCheck("bd4000")  // Dragonspear Castle, Exterior
+		AreaCheck("bd5200")  // The Warrens
+	Name("TRAINING_DUMMY4",Myself)
+	HasItem("bdtrain1","TRAINING_ARCHER4")  // No such index
+	Range("TRAINING_ARCHER4",7)
+	Allegiance("TRAINING_ARCHER4",NEUTRAL)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("BD_ARROW_TRAINING","LOCALS",0)
+		ActionOverride("TRAINING_ARCHER4",SelectWeaponAbility(SLOT_AMMO3,0))
+		ActionOverride("TRAINING_ARCHER4",AttackNoSound("TRAINING_TARGET6"))
+		SmallWait(10)
+		ActionOverride("TRAINING_ARCHER4",EquipRanged())
+	RESPONSE #100
+		SetGlobal("BD_ARROW_TRAINING","LOCALS",0)
+		ActionOverride("TRAINING_ARCHER4",SelectWeaponAbility(SLOT_AMMO3,0))
+		ActionOverride("TRAINING_ARCHER4",AttackNoSound("TRAINING_TARGET7"))
+		SmallWait(10)
+		ActionOverride("TRAINING_ARCHER4",EquipRanged())
+	RESPONSE #100
+		SetGlobal("BD_ARROW_TRAINING","LOCALS",0)
+		ActionOverride("TRAINING_ARCHER4",SelectWeaponAbility(SLOT_AMMO3,0))
+		ActionOverride("TRAINING_ARCHER4",AttackNoSound("TRAINING_TARGET8"))
+		SmallWait(10)
+		ActionOverride("TRAINING_ARCHER4",EquipRanged())
+END
+

@@ -1,82 +1,56 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\ENTAR.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BORIN.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\ENTAR.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BORIN.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA425~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #2 /* Triggers after states #: 2 7 even though they appear after this state */
-~  IsGabber("Skie")
+IF ~  NumTimesTalkedTo(0)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Skie! Whom are you skulking around with?~ #32846 */
-  IF ~~ THEN EXTERN ~SKIEJ~ 9
+  SAY @1 /* ~Hail and well met, young 'un. Have you come to old Borinole for a tale or two of life in the realms, or are you just strolling about meeting the folks of Baldur's Gate?~ #11571 */
+  IF ~~ THEN REPLY @2 /* ~I've no interest in you or your stories.~ #11579 */ GOTO 1
+  IF ~~ THEN REPLY @3 /* ~Have you any interesting tales?~ #11581 */ GOTO 2
+  IF ~~ THEN REPLY @4 /* ~Indeed, there are many interesting folk about.~ #11582 */ GOTO 3
 END
 
-IF WEIGHT #3 /* Triggers after states #: 2 7 even though they appear after this state */
-~  True()
-~ THEN BEGIN 1 // from:
-  SAY @2 /* ~Who are you? What are you doing in my estate? Guards! We have intruders.~ #1517 */
-  IF ~~ THEN DO ~SetGlobal("EntarCalled","GLOBAL",1)
-SaveObjectLocation("GLOBAL","DefaultLocation",Myself)
-Shout(99)
-CreateCreature("GUARD",[188.1064],NE)
-CreateCreature("GUARD",[215.1080],NE)
-CreateCreature("GUARD",[251.1070],NE)
-EscapeArea()
-~ EXIT
-  IF ~  IsValidForPartyDialogue("Skie")
-~ THEN EXTERN ~SKIEJ~ 9
+IF ~~ THEN BEGIN 1 // from: 5.1 3.0 2.0 0.0
+  SAY @5 /* ~I see. Well, take your leave then, and don't come back this way any time soon.~ #11583 */
+  IF ~~ THEN EXIT
 END
 
-IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
-~ THEN BEGIN 2 // from:
-  SAY @3 /* ~I am Entar Silvershield, one of the Grand Dukes of Baldur's Gate! I can tell you many things, friend. Perhaps you'd care to hear about the Iron Throne. They're a new mercantile organization that have set up in Baldur's Gate. Most of us are rather concerned over some of the Iron Throne's actions, but they have promised to supply us with iron, a resource that has been very rare of late. We are suspicious of Amn, our neighbor to the south. We think that Amn has allied with the Zhentarim in an attempt to annex our glorious city. However, Scar feels that the evidence against Amn was too easy to come by, almost as if someone were trying to frame Amn to cause friction between our two nations. Since you are my best friend, I should tell you I have a very beautiful daughter. Her name is Skie, and she is now of marriageable age.~ #6136 */
-  IF ~~ THEN JOURNAL @4 /* ~When we charmed Entar Silvershield, he told us quite a bit. He said that the Iron Throne had recently set up in Baldur's Gate and was offering to sell iron to the city. The Grand Dukes are worried about an invasion from Amn and are thus taking the Iron Throne's offer seriously, despite some reservations about their intentions.~ #6598 */ EXIT
+IF ~~ THEN BEGIN 2 // from: 0.1
+  SAY @6 /* ~Oh, I have tales. Whether they are interesting or not is a matter of debate, I suppose. I could share one with you, though it likely has no bearing on anything of importance. Nothing at all to be gained from the telling, save a moment of time well spent.~ #11584 */
+  IF ~~ THEN REPLY @7 /* ~If it is of no importance, then I am not interested.~ #11588 */ GOTO 1
+  IF ~~ THEN REPLY @8 /* ~By all means, go right ahead.~ #11591 */ GOTO 5
 END
 
-IF ~~ THEN BEGIN 3 // from:
-  SAY @5 /* ~Friends? I should hope not. I see that boy you've been sneaking about with is in present company. Strange that he is back in Baldur's Gate.~ #32849 */
-  IF ~~ THEN GOTO 4
+IF ~~ THEN BEGIN 3 // from: 0.2
+  SAY @9 /* ~I should say so, though not as many as in the past. People are avoiding the roads because of the recent troubles, as I am sure you are aware. We keep up a strong front though, and I know we'll get through just fine. The people of "the Gate" have always been good at adapting. Why, in my day we could weather month-long storms with nothing but a log or two, the skins of a few unfortunate bears, and the warm company of those we held dear. Of course, in those days trees were bigger, you understand? A good stout log could fire the hearth for a tenday, though you'd have to empty out the stables for a place to keep them dry. Likewise the pelt of an adult grizzly could carpet your whole house. And company? Company was HUGE! I remember old skinny Morgan. Nigh unto a giant he was. Soft at heart though...~ #11592 */
+  IF ~~ THEN REPLY @10 /* ~Please, will you stop with the incessant chatter?! I can take no more!~ #11593 */ GOTO 1
+  IF ~~ THEN REPLY @11 /* ~Ah, we'll never see the like of those days again. I'd love to stay and chat, but I should be off.~ #11594 */ GOTO 4
 END
 
-IF ~~ THEN BEGIN 4 // from: 3.0
-  SAY @6 /* ~Don't think for a moment, dear Skie, that I do not know what you get up to - I will not have it! This commoner does not have a hint of breeding in him. Why do you insist on putting me through this unending hardship? Our lives are difficult enough without your indelicacies. Now, please, remove them from our home or I'll have the guards do it.~ #32850 */
-  IF ~~ THEN EXTERN ~SKIEJ~ 10
+IF ~~ THEN BEGIN 4 // from: 5.2 3.1
+  SAY @12 /* ~If you say so, young 'un. Good on you and those you travel with.~ #11595 */
+  IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 5 // from:
-  SAY @7 /* ~I'll NOT hear another word. I'll see you at supper, we have important guests coming. Now that you are of marriageable age, we need to find you an appropriate husband. Not that he'll know what he's in for, but there you have it. With that I will take my leave. Skie, I expect them gone.~ #32852 */
-  IF ~~ THEN DO ~EscapeArea()
-~ EXIT
+IF ~~ THEN BEGIN 5 // from: 2.1
+  SAY @13 /* ~I shall then. It was the dawning of a new year, and Chester Blackboot and I were off to rally our friends and storm the gates of the old Firewine ruins. Vella Stablehand was at the head; she was the eldest, you understand. We pretty much agreed that she would take point and absorb most of the initial damage were we attacked. Of course Vella had her father's axe too, and that made her an imposing sight at the forefront. She was tall as a pine and could deliver a backhand like you were so much silt on the breeze. I remember a time when she and Chester—this was Chester Allendale, no relation to the Blackboots (and a good thing too. Them Blackboots had not patience for Vella and her shenanigans)—well, Chester and Vella were spelunking in the Ulcaster (at least, that's what the kids called it in those days) and her father comes up and by golly, Vella up and belts Chester so hard he didn't hit the ground for a week. Vella's father sees this and laughs so hard he plumb forgets he's mad. He's like that though, and the day he passes up a good joke will be the day he passes on entirely. I remember a time...~ #11596 */
+  IF ~~ THEN REPLY @14 /* ~I don't mean to be critical but does this story have an end? Or a beginning, for that matter?~ #11597 */ GOTO 6
+  IF ~~ THEN REPLY @15 /* ~Shut up, shut up, shut up! I can't take another second of your rambling.~ #11598 */ GOTO 1
+  IF ~~ THEN REPLY @16 /* ~A rousing tale. I learned a lot. I'll be leaving now. Goodbye.~ #11599 */ GOTO 4
 END
 
-IF ~~ THEN BEGIN 6 // from:
-  SAY @8 /* ~Friends? I only see your brother's murderers. I put my trust in you, a mistake I shan't make twice. Why have you come here? To gloat? Do you seek forgiveness? You shall enjoy neither. Get you and your so-called friends gone, Skie, or I'll have them removed permanently.~ #32848 */
-  IF ~~ THEN DO ~EscapeArea()
-~ EXIT
+IF ~~ THEN BEGIN 6 // from: 5.0
+  SAY @17 /* ~Stories continue long after the exciting bits end, young 'un. You'll miss a lot of life if you don't pay attention to anything outside of swinging the axe and smacking the head. Ah, well. People had more patience in my time. Why, Buck Longbrow could stare at corn from seed to harvest, though he always was a bit shaky after the fall. Eh... leave me be.~ #11600 */
+  IF ~~ THEN EXIT
 END
 
-IF WEIGHT #1 ~  !IsValidForPartyDialogue("Skie")
-IsValidForPartyDialogue("Kagain")
+IF ~  True()
 ~ THEN BEGIN 7 // from:
-  SAY @9 /* ~Get out. Get out! Was letting my son die not enough? Guards!~ #32858 */
-  IF ~~ THEN DO ~SetGlobal("EntarCalled","GLOBAL",1)
-SaveObjectLocation("GLOBAL","DefaultLocation",Myself)
-Shout(99)
-CreateCreature("GUARD",[188.1064],NE)
-CreateCreature("GUARD",[215.1080],NE)
-CreateCreature("GUARD",[251.1070],NE)
-EscapeArea()
-~ EXIT
-END
-
-IF ~~ THEN BEGIN 8 // from:
-  SAY @10 /* ~I do not have the time for this. Now, please, remove them from our home or I’ll have the guards do it.~ #32859 */
-  IF ~~ THEN DO ~EscapeArea()
-~ EXIT
+  SAY @18 /* ~Those were the days, weren't they?~ #11601 */
+  IF ~~ THEN EXIT
 END

@@ -1,0 +1,18 @@
+IF
+	Global("DukeThanks","GLOBAL",1)
+	Global("oh_dialog_set_1","locals",0)
+THEN
+	RESPONSE #100
+		SetGlobal("oh_dialog_set_1","locals",1)
+		SetDialog("nobwbas")
+END
+
+IF
+	Global("Chapter","GLOBAL",7)
+	Global("oh_dialog_set_2","locals",0)
+THEN
+	RESPONSE #100
+		SetGlobal("oh_dialog_set_2","locals",1)
+		SetDialog("nobwbaz")
+END
+

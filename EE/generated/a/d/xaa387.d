@@ -1,77 +1,47 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NILA.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\MAPLE.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NILA.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\MAPLE.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA387~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #1 /* Triggers after states #: 9 even though they appear after this state */
-~  NumTimesTalkedTo(0)
-ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+IF ~  True()
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Hello there. Trying to escape the party too, hmm? I simply find these functions utterly boring, but mother would never let me miss one. I don't like that Sarevok either. There's something about him... not right. Sounds like quite the ruckus out there, but it's still all so boring.~ #8246 */
+  SAY @1 /* ~WHAT?! You were going to ask about my name, weren't you? Everyone wants to know about it, and you're probably no different! Well, fine! Maple Willow Aspen IS my name and YES my parents were VERY fond of TREES! I am VERY aware of it, and NO I don't want to hear ANY jokes about family trees and me being the SAP! Are you HAPPY NOW?!~ #11467 */
+  IF ~~ THEN REPLY @2 /* ~Actually, I was just interested in directions.~ #11468 */ GOTO 3
+  IF ~~ THEN REPLY @3 /* ~You have problems? How do you think I FEEL?! HUH? <CHARNAME>! What were they THINKING?! HUH? HA HUH?! WHAT?!~ #11469 */ GOTO 2
+  IF ~~ THEN REPLY @4 /* ~So, your parents were very fond of trees?~ #11470 */ GOTO 1
+END
+
+IF ~~ THEN BEGIN 1 // from: 4.1 3.2 3.0 0.2
+  SAY @5 /* ~Eeep.~ #11471 */
+  IF ~~ THEN DO ~ForceSpell(Myself,MUSHROOM_FIRE)
+Wait(1)
+DestroySelf()
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.1
+  SAY @6 /* ~Um... perhaps you should... relax a little? G'bye.~ #11472 */
   IF ~~ THEN EXIT
 END
 
-IF WEIGHT #2 /* Triggers after states #: 9 even though they appear after this state */
-~  NumTimesTalkedTo(0)
-ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
-~ THEN BEGIN 1 // from:
-  SAY @2 /* ~Oh! You startled me. Hiding from that boring party too, hmm? Me too. I barely even knew Duke Eltan, and there is just something not... right about that Sarevok. Wait— You don't look like the other guests. YOU SNUCK IN! HA! That is SO funny! Better go quick, though. The guard will have you quartered for being here.~ #8247 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 3 // from: 0.0
+  SAY @7 /* ~DIRECT... um... d-d-irections? You mean you don't... well then. *cough* What can I help you with?~ #11473 */
+  IF ~~ THEN REPLY @4 /* ~So, your parents were very fond of trees?~ #11474 */ GOTO 1
+  IF ~~ THEN REPLY @8 /* ~I'm just interested in Baldur's Gate. What are the interesting sights?~ #11475 */ GOTO 4
+  IF ~~ THEN REPLY @9 /* ~Um... with all the commotion I think I forgot. Perhaps I will come back later. What was your name again?~ #11476 */ GOTO 1
 END
 
-IF ~~ THEN BEGIN 2 // from:
-  SAY @3 /* ~Oh no, you're just asking for trouble now. Everything in here is trapped for sure. It might be funny if you got away with it, but if you don't you'll be hung out to dry like the servants do the laundry.~ #8248 */
-  IF ~~ THEN GOTO 3
-END
-
-IF ~~ THEN BEGIN 3 // from: 2.0
-  SAY @4 /* ~I DID warn you, didn't I? Better go quick now!~ #8249 */
-  IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN 4 // from:
-  SAY @5 /* ~What are you— What are you doing? OH! You're a THIEF, aren't you?! That is SO funny! Mother would have an absolute fit to know you were here. Here, let me get this.~ #8250 */
-  IF ~~ THEN GOTO 5
+IF ~~ THEN BEGIN 4 // from: 3.1
+  SAY @10 /* ~Well... um, I suppose the Hall of Wonders is nice i-if you like gadgetry. It's in the west-central section of the city. Sorcerous Sundries is nice too. That's in the east-central area. Other than that, I don't know. Can I do anything else for you?~ #11477 */
+  IF ~~ THEN REPLY @11 /* ~No, thank you.~ #11478 */ GOTO 5
+  IF ~~ THEN REPLY @12 /* ~You mentioned trees. Your parents were very fond of them?~ #11479 */ GOTO 1
 END
 
 IF ~~ THEN BEGIN 5 // from: 4.0
-  SAY @6 /* ~There. I TOLD them this lock was broken but they never listen to me. Go ahead and take it. This will probably cause quite the stir, but I really don't care. Anything to get talk off that awful Sarevok fellow. Better go now. Don't want them finding you here.~ #8251 */
-  IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN 6 // from:
-  SAY @7 /* ~Ah! Guards! Mother!~ #8252 */
-  IF ~~ THEN EXIT
-END
-
-IF WEIGHT #3 /* Triggers after states #: 9 even though they appear after this state */
-~  ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
-~ THEN BEGIN 7 // from:
-  SAY @8 /* ~You're still here? Fun's fun, but you should go quickly now.~ #8253 */
-  IF ~~ THEN EXIT
-END
-
-IF WEIGHT #4 /* Triggers after states #: 9 even though they appear after this state */
-~  ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
-~ THEN BEGIN 8 // from:
-  SAY @9 /* ~That party still going on? It's a wonder they haven't all fallen asleep where they stand.~ #8254 */
-  IF ~~ THEN EXIT
-END
-
-IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
-~ THEN BEGIN 9 // from:
-  SAY @10 /* ~I'd give you a tour of the place, friend, but I really would rather just stay here out of the way. The boring fops out there would snag me in a second, and I'd be forced to listen as they prattle on. You are welcome to stay though.~ #9148 */
-  IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN 10 // from:
-  SAY @11 /* ~I'll not speak a word after what you did!~ #9149 */
+  SAY @13 /* ~Until next time then.~ #11480 */
   IF ~~ THEN EXIT
 END
