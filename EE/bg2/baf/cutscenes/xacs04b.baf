@@ -12,7 +12,7 @@ THEN
 		CreateCreature("xamelkor",[555.613],S) // Melkor
 		CreateCreature("xad101",[826.546],SW)
 		CreateCreature("XAFFVALI", [982.448], SW)
-		CreateCreature("XAFFVAL2", [899.384], SW)
+		CreateCreature("XAFFVALI", [899.384], SW)
 		
 		Explore()
 		ActionOverride("xad102", FaceObject("xaskcut2"))

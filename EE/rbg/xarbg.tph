@@ -801,6 +801,23 @@ END
 	WRITE_ASCII 0x258 ~~ #8		// Race Script
 	WRITE_ASCII 0x268 ~~ #8		// Default Script
 	
+	COPY_EXISTING ~neb.cre~ ~override/xaneb.cre~ // Flaming Fist Enforcer
+	WRITE_LONG 0x14 7000	// XP Value
+	WRITE_SHORT 0x24 145	// Current HP
+	WRITE_SHORT 0x26 145	// Max HP
+	WRITE_ASCII 0x2CC ~xaneb~ #8 	// Dialogue
+	WRITE_ASCII 0x280 ~xaneb~ #20  	// Script Name
+	WRITE_ASCII 0x248 ~shoutdlg~ #8		// Override Script
+	WRITE_ASCII 0x250 ~xaneb~ #8		// Class Script
+	WRITE_ASCII 0x260 ~~ #8		// General Script
+	WRITE_ASCII 0x258 ~~ #8		// Race Script
+	WRITE_ASCII 0x268 ~~ #8		// Default Script
+	
+	COPY_EXISTING ~xaffvali.cre~ ~override/xaffexec.cre~ // Flaming Fist Executioner
+	SAY NAME1 @4072
+	SAY NAME2 @4072
+	WRITE_ASCII 0x280 ~xaffexec~ #20  	// Script Name
+	
 	COPY ~%MOD_FOLDER%/rbg/cre/xachwrai.cre~ ~override~
 	SAY NAME1 @4145
 	SAY NAME2 @4145
@@ -821,7 +838,17 @@ END
 	SAY NAME1 @4046
 	SAY NAME2 @4046
 	
-
+	COPY ~%MOD_FOLDER%/rbg/cre/xavoidwe.cre~ ~override~
+	SAY NAME1 @4146
+	SAY NAME2 @4146
+	
+	COPY ~%MOD_FOLDER%/rbg/cre/xavoidfe.cre~ ~override~
+	SAY NAME1 @4147
+	SAY NAME2 @4147
+	
+	COPY ~%MOD_FOLDER%/rbg/cre/xavoidle.cre~ ~override~
+	SAY NAME1 @4148
+	SAY NAME2 @4148
 
 
 
