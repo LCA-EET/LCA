@@ -813,6 +813,10 @@ END
 	SAY NAME1 @4092
 	SAY NAME2 @4092
 	
+	COPY ~%MOD_FOLDER%/rbg/cre/xanarzu.cre~ ~override~
+	SAY NAME1 @4050
+	SAY NAME2 @4050
+	
 	COPY ~%MOD_FOLDER%/rbg/cre/xaneoma.cre~ ~override~
 	SAY NAME1 @4046
 	SAY NAME2 @4046
