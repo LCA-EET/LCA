@@ -169,7 +169,7 @@ END
 	//}
 //}
 //{ bmp
-	
+	COPY ~%MOD_FOLDER%/bg2/bmp/xaskies.bmp~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/bmp/xadingss.bmp~ ~override~
 //}
 
