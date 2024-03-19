@@ -1395,7 +1395,154 @@ END
 
 //}
 
-//{ New Areas
-
-
+//{ Block A Area Modifications
+	//{ ar0100 xaa229
+		COPY_EXISTING ~xaa229.are~ ~override~
+		
+		// Disable rep traps
+		WRITE_LONG 0x3E7C 256
+		WRITE_LONG 0x3F40 256
+		WRITE_LONG 0x4004 256
+		WRITE_LONG 0x40C8 256
+		WRITE_LONG 0x418C 256
+		WRITE_LONG 0x4250 256
+		WRITE_LONG 0x4314 256
+		
+		// Remove Ocellis
+		WRITE_LONG 0x2BD4 0
+	//}
+	
+	//{ ar0200 xaa130
+		COPY_EXISTING ~xaa130.are~ ~override~
+		
+		// Disable rep traps
+		WRITE_LONG 0x4574 256
+		WRITE_LONG 0x4638 256
+		WRITE_LONG 0x46FC 256
+		WRITE_LONG 0x47C0 256
+		WRITE_LONG 0x4884 256
+		WRITE_LONG 0x4948 256
+		WRITE_LONG 0x4A0C 256
+		
+		// Disable NPCs
+		WRITE_LONG 0x3014 0 // Petrine
+		WRITE_LONG 0x2F04 0 // Ramazith
+		WRITE_LONG 0x3674 0 // Rodnim
+		WRITE_LONG 0x3564 0 // Tartusse
+		WRITE_LONG 0x3454 0 // Tick
+	//}
+	
+	//{ ar0300 xaa105
+		COPY_EXISTING ~xaa105.are~ ~override~
+		
+		// Disable rep traps
+		WRITE_LONG 0x2ECC 256
+		WRITE_LONG 0x2F90 256
+		WRITE_LONG 0x3054 256
+		WRITE_LONG 0x3118 256
+		
+		// Disable NPCs
+		WRITE_LONG 0x2244 0 // Brielbara 
+		WRITE_LONG 0x1E04 0 // Lothander
+		WRITE_LONG 0x1F14 0 // Marek
+	//}
+	
+	//{ ar0600 xaa164
+		COPY_EXISTING ~xaa164.are~ ~override~
+		
+		// Disable rep traps
+		WRITE_LONG 0x493C 256
+		WRITE_LONG 0x4A00 256
+		WRITE_LONG 0x4AC4 256
+		WRITE_LONG 0x4B88 256
+		WRITE_LONG 0x4C4C 256
+		
+		// Disable NPCs
+		WRITE_LONG 0x3AB4 0 // Dun 
+		WRITE_LONG 0x3BC4 0 // Varci 
+	//}
+	
+	//{ ar0700 xaa107
+		COPY_EXISTING ~xaa107.are~ ~override~
+		
+		// Disable rep traps
+		WRITE_LONG 0x7440 256
+		WRITE_LONG 0x7504 256
+		WRITE_LONG 0x75C8 256
+		
+		// Disable NPCs
+		WRITE_LONG 0x5FE4 0 // Lady Hannah
+		
+	//}
+	
+	//{ ar0800 xaa103
+		COPY_EXISTING ~xaa103.are~ ~override~
+		
+		// Disable rep traps
+		WRITE_LONG 0x6534 256
+		WRITE_LONG 0x65F8 256
+		WRITE_LONG 0x66BC 256
+		WRITE_LONG 0x6780 256
+		WRITE_LONG 0x6844 256
+		WRITE_LONG 0x6908 256
+		WRITE_LONG 0x69CC 256
+		WRITE_LONG 0x6A90 256
+		
+		// Disable NPCs
+		WRITE_LONG 0x4FF4 0 // Elminster
+		WRITE_LONG 0x4DD4 0 // Niklos
+	//}
+	
+	//{ ar0900 xaa100
+		COPY_EXISTING ~xaa100.are~ ~override~
+		WRITE_LONG 0x9B0 256 // Deactivate Trigger
+	//}
+	
+	//{ ar1100 xaa142
+		COPY_EXISTING ~xaa142.are~ ~override~
+		
+		// Disable rep traps
+		WRITE_LONG 0x5460 256
+		WRITE_LONG 0x5524 256
+		WRITE_LONG 0x55E8 256
+		WRITE_LONG 0x56AC 256
+		WRITE_LONG 0x5770 256
+		WRITE_LONG 0x5834 256
+		WRITE_LONG 0x58F8 256
+	//{
+	
+	//{ ar1200 xaa106
+		COPY_EXISTING ~xaa106.are~ ~override~
+		
+		// Disable rep traps
+		WRITE_LONG 0x6708 256
+		WRITE_LONG 0x67CC 256
+		WRITE_LONG 0x6890 256
+		WRITE_LONG 0x6954 256
+		WRITE_LONG 0x6A18 256
+		WRITE_LONG 0x6ADC 256
+		
+		// Disable NPCs
+		WRITE_LONG 0x5324 0 // Entillis Fulsom
+		
+		// Change Iron Throne to WV
+		WRITE_LONG 0x61B0 RESOLVE_STR_REF(@4138)
+		WRITE_LONG 0x6BA4 RESOLVE_STR_REF(@4138)
+	//}
+	
+	//{ ar1300 xaa141
+		COPY_EXISTING ~xaa141.are~ ~override~
+		
+		// Disable rep traps
+		WRITE_LONG 0x48A4 256
+		WRITE_LONG 0x4968 256
+		WRITE_LONG 0x4A2C 256
+		WRITE_LONG 0x4AF0 256
+		WRITE_LONG 0x4BB4 256
+		WRITE_LONG 0x4C78 256
+		WRITE_LONG 0x4D3C 256
+		
+		// Disable NPCs
+		WRITE_LONG 0x3674 0 // Nikolai
+	//}
 //}
