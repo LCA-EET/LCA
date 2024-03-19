@@ -1352,7 +1352,6 @@ END
 		WRITE_BYTE 0xE4 0
 		WRITE_BYTE 0x114 0
 		WRITE_BYTE 0x144 0
-
 		
 		COPY_EXISTING ~xarng99a.itm~ ~override/xarng26a.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4036)
@@ -1390,9 +1389,6 @@ END
 		WRITE_BYTE 0x3B4 0
 		WRITE_BYTE 0x564 0
 	//}
-	
-	
-
 //}
 
 //{ Block A Area Modifications
@@ -1495,7 +1491,9 @@ END
 	
 	//{ ar0900 xaa100
 		COPY_EXISTING ~xaa100.are~ ~override~
-		WRITE_LONG 0x9B0 256 // Deactivate Trigger
+		
+		// Disable rep traps
+		WRITE_LONG 0x9B0 256
 	//}
 	
 	//{ ar1100 xaa142
