@@ -78,7 +78,7 @@ IF ~~ THEN BEGIN XA_YoureWelcome
 	IF ~~ THEN 
 	DO ~
 		SetGlobal("XA_SembianMeatballs", "GLOBAL", 1)
-		ChangeStat(Myself, MAXHITPOINTS, 2, ADD)
+		ActionOverride(Player1, ChangeStat(Myself, MAXHITPOINTS, 2, ADD))
 	~
 	EXIT
 END

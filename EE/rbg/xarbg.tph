@@ -17,6 +17,7 @@ PRINT @4000  /* ~Processing Return to Baldur's Gate Changes...~ */
 INCLUDE ~%MOD_FOLDER%/generated/a/generated.tph~
 INCLUDE ~%MOD_FOLDER%/generated/c/generated.tph~
 
+
 //{ Worldmap
 	LAF FIND_FREE_PVRZ_INDEX
 		INT_VAR
@@ -402,6 +403,38 @@ INCLUDE ~%MOD_FOLDER%/generated/c/generated.tph~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/d~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 
+//{ Replace Rumors
+	COPY_EXISTING ~xaa100.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa101.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa102.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa103.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa105.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa112.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa113.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa116.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa119.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa122.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa123.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa124.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa125.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa128.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa130.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa131.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa132.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa135.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa136.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa137.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa138.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa142.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa145.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa146.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa147.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa148.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa149.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa150.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING ~xaa151.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+//}
+
 ACTION_DEFINE_ARRAY bgAreaScripts
 BEGIN
 	xaas100
@@ -434,11 +467,10 @@ END
 	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalrbg.baf~
 	
 	EXTEND_TOP ~xaas100.bcs~	~%MOD_FOLDER%/rbg/baf/xamaprbg.baf~
-	EXTEND_TOP ~xaas606.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0102.baf~
+	
 	EXTEND_TOP ~xaas134.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0103.baf~
 	EXTEND_TOP ~xaas224.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0112.baf~
 	EXTEND_TOP ~xaas459.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0116.baf~
-	EXTEND_TOP ~xaas677.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0128.baf~
 	EXTEND_TOP ~xaas359.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0130.baf~
 	EXTEND_TOP ~xaas326.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0134.baf~
 	EXTEND_TOP ~xaas455.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0165.baf~
@@ -475,12 +507,19 @@ END
 //{ CRE
 
 	//{ Block A Base
-		COPY_EXISTING ~xaa130.sto~ ~override/xabartml.sto~
+		COPY_EXISTING ~xaa1257.cre~ ~override~ // Silvershield Servant
+		WRITE_ASCII 0x2CC ~xaserva2~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa130.sto~ ~override/xabartml.sto~ // Merchants' League Bar
 		WRITE_LONG 0xC RESOLVE_STR_REF(@4149)
 	
 		COPY_EXISTING ~xaa1212.cre~ ~override~ // Merchant's League Bartender
 		WRITE_ASCII 0x258 ~xamerchg~ #8		// Race Script
 		WRITE_ASCII 0x2CC ~xabartml~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa1215.cre~ ~override~ // Brandilar
+		WRITE_ASCII 0x258 ~xamerchg~ #8		// Race Script
+		WRITE_ASCII 0x2CC ~xabrandi~ #8 	// Dialogue
 	
 		COPY_EXISTING ~xaa1050.cre~ ~override~ // Merchant's League Guard
 		WRITE_ASCII 0x2CC ~xamerchg~ #8 	// Dialogue
@@ -1428,6 +1467,34 @@ END
 		WRITE_LONG 0x2BD4 0
 	//}
 	
+	//{ ar0101 xaa451 Silvershield Estate L1
+		COPY_EXISTING ~xaa451.are~ ~override~
+		
+		// Disable rep traps
+		WRITE_LONG 0x990 256
+	//}
+	
+	//{ ar0102 xaa606 Silvershield Estate L2
+		EXTEND_TOP ~xaas606.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0102.baf~
+	
+		COPY_EXISTING ~xaa606.are~ ~override~
+
+		// Replace Dialogues
+		WRITE_ASCII 0x164 ~xabrilla~ #8 // Brilla
+		WRITE_ASCII 0x384 ~xacook~ #8 // Cook
+				
+		// Disable NPCs
+		WRITE_LONG 0x484 0 // Entar
+	//}
+	
+	//{ ar0126 xaa357 Ragefast's Home
+		COPY_EXISTING ~xaa357.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0 // Ragefast
+		WRITE_LONG 0x264 0 // Abela	
+	//}
+	
 	//{ ar0127 xaa287 Merchant's League L1
 		COPY_EXISTING ~xaa287.are~ ~override~
 		
@@ -1441,6 +1508,8 @@ END
 	//}
 	
 	//{ ar0128 xaa490 Merchant's League L2
+		EXTEND_TOP ~xaas490.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0128.baf~
+	
 		COPY_EXISTING ~xaa490.are~ ~override~
 		
 		// Adjust script for cook

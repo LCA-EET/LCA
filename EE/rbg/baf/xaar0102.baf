@@ -1,5 +1,6 @@
 IF 
 	GlobalLT("XA_CreateNPC_BG0102", "MYAREA", 1)
+	GlobalLT("XA_SkieModActive", "GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CreateNPC_BG0102", "MYAREA", 1)
@@ -9,10 +10,10 @@ END
 
 IF
 	GlobalLT("XA_SkieModActive", "GLOBAL",1)
-	GlobalLT("XA_CreateNPC_BG0102", "MYAREA", 2)
+	GlobalLT("XA_CreateSkie_BG0102", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CreateNPC_BG0102", "MYAREA", 2)
+		SetGlobal("XA_CreateSkie_BG0102", "MYAREA", 1)
 		CreateCreature("XASKIE", [710.1265], SW)
 		Continue()
 END

@@ -210,12 +210,12 @@ END
 //{ HOUSG3
 ADD_STATE_TRIGGER xaa394 0
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
 ADD_STATE_TRIGGER xaa394 1
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND xaa394
@@ -262,6 +262,7 @@ APPEND xaa394
 	
 END
 //}
+
 
 //{ IMOEN2J
 APPEND IMOEN2J
@@ -869,61 +870,6 @@ APPEND xaa296
 		Global("XA_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XAA0 // from:
 		SAY @55 /* ~Things have been much better since Slythe and Krystin were killed. Those two were crazy.~ */
-		IF ~~ THEN EXIT
-	END
-END
-//}
-
-//{ RBALDU
-
-ADD_STATE_TRIGGER xaa439 5
-~
-	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
-~
-
-ADD_STATE_TRIGGER xaa439 14
-~
-	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
-~
-
-APPEND xaa439
-	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
-		!AreaCheck("BG0614")
-		!AreaCheck("BG0134")
-	~ THEN BEGIN XAA0
-		SAY @22 /* ~The Duke's have proclaimed that <CHARNAME> was innocent after all. Word is <PRO_HESHE> may be coming back to the city. That would be something, wouldn't it?~*/
-		IF ~~ THEN EXIT
-	END
-	
-	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
-	~ THEN BEGIN XAA1
-		SAY @23 /* ~Been hearing that there's trouble brewing far to the southeast. Fire giants are said to be laying siege to a city... Saradush, I think it was.~*/
-		IF ~~ THEN EXIT
-	END
-	
-	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
-	~ THEN BEGIN XAA2
-		SAY @24 /* ~Lord Winston did a great job in clearing out the refugees from Caelar's crusade, don't you think?~*/
-		IF ~~ THEN EXIT
-	END
-	
-	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
-	~ THEN BEGIN XAA3
-		SAY @25 /* ~You didn't hear it from me, but there's word that Duke Silvershield's daughter hasn't fully recovered from her ordeal.~*/
-		IF ~~ THEN EXIT
-	END
-	
-	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		!AreaCheck("BG0614")
-		!AreaCheck("BG0134")
-	~ THEN BEGIN XAA4
-		SAY @26 /* ~Word is that <CHARNAME>, the hero of Baldur's Gate, is romantically involved with an officer of the Flaming Fist.~*/
 		IF ~~ THEN EXIT
 	END
 END
