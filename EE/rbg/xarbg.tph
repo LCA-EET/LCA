@@ -468,7 +468,7 @@ END
 	
 	EXTEND_TOP ~xaas100.bcs~	~%MOD_FOLDER%/rbg/baf/xamaprbg.baf~
 	
-	EXTEND_TOP ~xaas134.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0103.baf~
+	
 	EXTEND_TOP ~xaas224.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0112.baf~
 	EXTEND_TOP ~xaas459.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0116.baf~
 	EXTEND_TOP ~xaas359.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0130.baf~
@@ -507,24 +507,84 @@ END
 //{ CRE
 
 	//{ Block A Base
-		COPY_EXISTING ~xaa1257.cre~ ~override~ // Silvershield Servant
-		WRITE_ASCII 0x2CC ~xaserva2~ #8 	// Dialogue
+		COPY_EXISTING ~xaa108.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
 		
-		COPY_EXISTING ~xaa130.sto~ ~override/xabartml.sto~ // Merchants' League Bar
-		WRITE_LONG 0xC RESOLVE_STR_REF(@4149)
+		COPY_EXISTING ~xaa109.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
 	
-		COPY_EXISTING ~xaa1212.cre~ ~override~ // Merchant's League Bartender
-		WRITE_ASCII 0x258 ~xamerchg~ #8		// Race Script
-		WRITE_ASCII 0x2CC ~xabartml~ #8 	// Dialogue
+		COPY_EXISTING ~xaa111.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
 		
-		COPY_EXISTING ~xaa1215.cre~ ~override~ // Brandilar
-		WRITE_ASCII 0x258 ~xamerchg~ #8		// Race Script
-		WRITE_ASCII 0x2CC ~xabrandi~ #8 	// Dialogue
-	
-		COPY_EXISTING ~xaa1050.cre~ ~override~ // Merchant's League Guard
-		WRITE_ASCII 0x2CC ~xamerchg~ #8 	// Dialogue
-		WRITE_ASCII 0x258 ~xamerchg~ #8		// Race Script
-	
+		COPY_EXISTING ~xaa111.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa112.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa113.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa114.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa115.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa116.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa117.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa119.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa120.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa125.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa129.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa136.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa148.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa151.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa152.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa153.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa155.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa157.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa165.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa185.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa193.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa194.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa200.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
+		
 		COPY_EXISTING ~xaa217.cre~ ~override~ // Brielbara
 		WRITE_ASCII 0x2CC ~xabrielb~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xabrielb~ #20  	// Script Name
@@ -533,11 +593,92 @@ END
 		WRITE_ASCII 0x258 ~~ #8		// Race Script
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
-
+		
+		COPY_EXISTING ~xaa302.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa303.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xanoblf~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa304.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xanoblf~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa312.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xanoblf~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa313.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xanoblf~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa315.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa318.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa339.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa340.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xanoblf~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa345.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xanoblf~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa395.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa406.cre~ ~override~ // mtowba
+		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa406.cre~ ~override/xa800m.cre~ // mtowba
+		WRITE_ASCII 0x2CC ~xa800m~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xa800m~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~~ #8		// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		
+		COPY_EXISTING ~xaa408.cre~ ~override/xabrevlk.cre~ // Brevlik
+		WRITE_ASCII 0x2CC ~xabrevlk~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xabrevlk~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~xabrevlk~ #8		// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		
+		COPY_EXISTING ~xaa457.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xanoblf~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa464.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa467.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa475.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa475.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
+		
 		COPY_EXISTING ~xaa495.cre~ ~override~ // Larze
 		WRITE_ASCII 0x2CC ~xalarze~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xalarze~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~xainitp1~ #8		// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		
+		COPY_EXISTING ~xaa503.cre~ ~override~ // ftowba
+		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa503.cre~ ~override/xa800w.cre~ // ftowba
+		WRITE_ASCII 0x2CC ~xa800w~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xa800w~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~~ #8		// Override Script
 		WRITE_ASCII 0x250 ~~ #8		// Class Script
 		WRITE_ASCII 0x258 ~~ #8		// Race Script
 		WRITE_ASCII 0x260 ~~ #8		// General Script
@@ -552,6 +693,18 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
+		COPY_EXISTING ~xaa673.cre~ ~override/xavirgil.cre~ // Virgil
+		SAY NAME1 @4082
+		SAY NAME2 @4082
+		WRITE_ASCII 0x2CC ~xavirgil~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xavirgil~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~~ #8		// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~xavirgil~ #8		// Default Script
+		
+		
 		COPY_EXISTING ~xaa851.cre~ ~override~ // Alyth
 		WRITE_ASCII 0x2CC ~xaalyth~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xaalyth~ #20  	// Script Name
@@ -560,6 +713,19 @@ END
 		WRITE_ASCII 0x258 ~~ #8		// Race Script
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		
+		COPY_EXISTING ~xaa1048.cre~ ~override/xamerchj.cre~ // Seven Suns Merchant
+		WRITE_ASCII 0x2CC ~xamerch~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~xamerchj~ #8		// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		
+		COPY_EXISTING ~xaa1050.cre~ ~override~ // Merchant's League Guard
+		WRITE_ASCII 0x2CC ~xamerchg~ #8 	// Dialogue
+		WRITE_ASCII 0x258 ~xamerchg~ #8		// Race Script
 		
 		COPY_EXISTING ~xaa1052.cre~ ~override/xawvmer1.cre~ // WV Merchant
 		WRITE_ASCII 0x2CC ~xawvmer~ #8 	// Dialogue
@@ -579,32 +745,25 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xaa1048.cre~ ~override/xamerchj.cre~ // Seven Suns Merchant
-		WRITE_ASCII 0x2CC ~xamerch~ #8 	// Dialogue
+		COPY_EXISTING ~xaa1052.cre~ ~override/xamerlea.cre~ // Merchant's League Merchant
+		WRITE_ASCII 0x2CC ~xamerlea~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~xamerchj~ #8		// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x248 ~shout~ #8		// Override Script
+		WRITE_ASCII 0x250 ~runenemy~ #8		// Class Script
+		WRITE_ASCII 0x258 ~wtrunsgt~ #8		// Race Script
+		WRITE_ASCII 0x260 ~xamerlea~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xaa406.cre~ ~override/xa800m.cre~ // mtowba
-		WRITE_ASCII 0x2CC ~xa800m~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xa800m~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8		// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		COPY_EXISTING ~xaa1212.cre~ ~override~ // Merchant's League Bartender
+		WRITE_ASCII 0x258 ~xamerchg~ #8		// Race Script
+		WRITE_ASCII 0x2CC ~xabartml~ #8 	// Dialogue
 		
-		COPY_EXISTING ~xaa503.cre~ ~override/xa800w.cre~ // ftowba
-		WRITE_ASCII 0x2CC ~xa800w~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xa800w~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8		// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		COPY_EXISTING ~xaa1215.cre~ ~override~ // Brandilar
+		WRITE_ASCII 0x258 ~xamerchg~ #8		// Race Script
+		WRITE_ASCII 0x2CC ~xabrandi~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa1257.cre~ ~override~ // Silvershield Servant
+		WRITE_ASCII 0x2CC ~xaserva2~ #8 	// Dialogue
 		
 		COPY_EXISTING ~xaa1385.cre~ ~override/xacurato.cre~ // Curator Magda
 		SAY NAME1 @4048 /* Curator Magda */
@@ -616,35 +775,10 @@ END
 		WRITE_ASCII 0x258 ~~ #8		// Race Script
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
-		
-		COPY_EXISTING ~xaa673.cre~ ~override/xavirgil.cre~ // Virgil
-		SAY NAME1 @4082
-		SAY NAME2 @4082
-		WRITE_ASCII 0x2CC ~xavirgil~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xavirgil~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8		// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~xavirgil~ #8		// Default Script
-		
-		COPY_EXISTING ~xaa1052.cre~ ~override/xamerlea.cre~ // Merchant's League Merchant
-		WRITE_ASCII 0x2CC ~xamerlea~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~shout~ #8		// Override Script
-		WRITE_ASCII 0x250 ~runenemy~ #8		// Class Script
-		WRITE_ASCII 0x258 ~wtrunsgt~ #8		// Race Script
-		WRITE_ASCII 0x260 ~xamerlea~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
-		
-		COPY_EXISTING ~xaa408.cre~ ~override/xabrevlk.cre~ // Brevlik
-		WRITE_ASCII 0x2CC ~xabrevlk~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xabrevlk~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~xabrevlk~ #8		// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
+			
+		COPY_EXISTING ~xaa130.sto~ ~override/xabartml.sto~ // Merchants' League Bar
+		WRITE_LONG 0xC RESOLVE_STR_REF(@4149)
+	
 	//}
 	
 	//{ Block C Base
@@ -1451,7 +1585,7 @@ END
 //}
 
 //{ Block A Area Modifications
-	//{ ar0100 xaa229
+	//{ ar0100 xaa229 NW Baldur's Gate
 		COPY_EXISTING ~xaa229.are~ ~override~
 		
 		// Disable rep traps
@@ -1485,6 +1619,35 @@ END
 				
 		// Disable NPCs
 		WRITE_LONG 0x484 0 // Entar
+	//}
+	
+	//{ ar0103 xaa134 Splurging Sturgeon L1
+		EXTEND_TOP ~xaas134.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0103.baf~
+		
+		COPY_EXISTING ~xaa134.are~ ~override~
+		
+		// Disable rep traps
+		WRITE_LONG 0xDA4 256
+		
+		// Disable NPCs
+		WRITE_LONG 0x594 0 // Lusselyn
+		
+		// Replace Lantanara Dialogue
+		WRITE_ASCII 0x6B4 ~xalantan~ #8
+	//}
+	
+	//{ ar0104 xaa256 Splurging Sturgeon L2
+		COPY_EXISTING ~xaa256.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x264 0 // Mr. Shade
+	//}
+	
+	//{ ar0114 xaa133 
+		COPY_EXISTING ~xaa133.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x484 0 // Vivienne
 	//}
 	
 	//{ ar0126 xaa357 Ragefast's Home
@@ -1523,7 +1686,7 @@ END
 		WRITE_ASCII 0x4CC ~xamerlea~ #8
 	//}
 	
-	//{ ar0200 xaa130
+	//{ ar0200 xaa130 N Baldur's Gate
 		COPY_EXISTING ~xaa130.are~ ~override~
 		
 		// Disable rep traps

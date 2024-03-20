@@ -18,7 +18,7 @@ END
 
 
 IF ~
-	RandomNum(8,1)
+	RandomNum(9,1)
 ~ THEN BEGIN XA_1
 	SAY @0 /* ~Mite pretty town, ain't this? A word to the wise, though: She's all surface. Scratch her a bit, and that rot shines through, I tell ya.~   */ //OK
 	
@@ -26,7 +26,7 @@ IF ~
 END
 
 IF ~
-	RandomNum(8,2)
+	RandomNum(9,2)
 ~ THEN BEGIN XA_2
 	SAY @1 /* ~Damn it all! You go through a hard day's work, just so you can see some fancy pantsy adventurers strolling down the streets like they own the city. Why don't ya get a real job, ya flakes?~   *///OK
 	
@@ -34,7 +34,7 @@ IF ~
 END
 
 IF ~
-	RandomNum(8,3)
+	RandomNum(9,3)
 ~ THEN BEGIN XA_3
 	SAY @8 /* ~Gods, I could use a drink.~   */ //OK
 	
@@ -42,7 +42,7 @@ IF ~
 END
 
 IF ~
-	RandomNum(8,4)
+	RandomNum(9,4)
 	!Global("XA_TownspersonHatesHero", "LOCALS", 1)
 	!Global("XA_TownspersonSupportsHero", "LOCALS", 1)
 	IsGabber(Player1)
@@ -64,7 +64,7 @@ IF ~~ THEN BEGIN XA_4A
 END
 
 IF ~
-	RandomNum(8,5)
+	RandomNum(9,5)
 ~ THEN BEGIN XA_5
 	SAY @9 /* ~Aye, the Flaming Fist's been doing a fine job clearing out those refugees.~  */ //OK
 	
@@ -72,7 +72,7 @@ IF ~
 END
 
 IF ~
-	RandomNum(8,6)
+	RandomNum(9,6)
 	!Global("XA_TownspersonHatesHero", "LOCALS", 1)
 	!Global("XA_TownspersonSupportsHero", "LOCALS", 1)
 	IsGabber(Player1)
@@ -101,7 +101,7 @@ IF ~~ THEN BEGIN XA_6B
 END
 
 IF ~
-	RandomNum(8,7)
+	RandomNum(9,7)
 	!Global("XA_TownspersonHatesHero", "LOCALS", 1)
 	!Global("XA_TownspersonSupportsHero", "LOCALS", 1)
 	IsGabber(Player1)
@@ -123,7 +123,7 @@ IF ~~ THEN BEGIN XA_7A
 END
 
 IF ~
-	RandomNum(8,8)
+	RandomNum(9,8)
 	!Global("XA_TownspersonHatesHero", "LOCALS", 1)
 	!Global("XA_TownspersonSupportsHero", "LOCALS", 1)
 	IsGabber(Player1)
@@ -142,4 +142,12 @@ IF ~~ THEN BEGIN XA_8A
 		SetGlobal("XA_TownspersonSupportsHero", "LOCALS", 1)
 	~
 	EXIT
+END
+
+IF ~
+	RandomNum(9,9)
+~ THEN BEGIN XA_9
+	SAY @19 /* ~Things've been quiet 'round here lately now that those stinkin' refugees 're gon.~*/
+	
+	IF ~~ THEN EXIT
 END
