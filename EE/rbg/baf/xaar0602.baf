@@ -5,8 +5,8 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CreateNPCS_0602", "MYAREA", 1)
-		CreateCreature("XAA1216", [452.370], SE) // Jhasso
-		ActionOverride("XAA1216", SetDialog("XAJHASSO"))
-		ActionOverride("XAA1216", ChangeAIScript("XAINITP1",CLASS))
+		CreateCreature("XAA1217", [452.370], SE) // Jhasso
+		ActionOverride("XAA1217", SetDialog("XAJHASSO"))
+		ActionOverride("XAA1217", ChangeAIScript("XAINITP1",CLASS))
 		Continue()
 END
