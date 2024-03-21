@@ -594,6 +594,9 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
+		COPY_EXISTING ~xaa234.cre~ ~override~
+		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
+		
 		COPY_EXISTING ~xaa302.cre~ ~override~
 		WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
 		
@@ -1744,6 +1747,13 @@ END
 		WRITE_ASCII 0x3BC ~xamerchj~ #8
 	//}
 	
+	//{ ar0619 xaa360
+		COPY_EXISTING ~xaa286.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0 // Fenten 
+	//}
+	
 	//{ ar0602 xaa487 - Seven Suns L2
 		EXTEND_TOP ~xaas487.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0602.baf~
 		
@@ -1846,5 +1856,19 @@ END
 		
 		// Disable NPCs
 		WRITE_LONG 0x3674 0 // Nikolai
+	//}
+	
+	//{ ar1307 xaa404
+		COPY_EXISTING ~xaa404.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x6A4 0 // Sanadal
+	//}
+	
+	//{ ar1313 xaa413 Gantolandan's Home
+		COPY_EXISTING ~xaa413.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0 // Gantolandan
 	//}
 //}

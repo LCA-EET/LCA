@@ -26,9 +26,12 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 //{ Scripting Modifications
 	EXTEND_TOP ~bd0104.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd0104.baf~
 	EXTEND_TOP ~bdcorwin.bcs~ 	~%MOD_FOLDER%/sod/baf/xabdcorw.baf~
+	EXTEND_TOP ~bd1000.bcs~		~%MOD_FOLDER%/sod/baf/xaartrig.baf~
+	EXTEND_TOP ~bd3000.bcs~		~%MOD_FOLDER%/sod/baf/xaartrig.baf~
 	EXTEND_TOP ~bd4400.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd4400.baf~
 	EXTEND_TOP ~bd5300.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd5300.baf~
 	EXTEND_TOP ~bd6000.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd6000.baf~
+	EXTEND_TOP ~bd7100.bcs~		~%MOD_FOLDER%/sod/baf/xaartrig.baf~
 	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xabalsod.baf~
 	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xajrnsod.baf~
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/sod/baf/xap1d.baf~

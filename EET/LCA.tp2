@@ -1159,6 +1159,12 @@ COMPILE EVALUATE_BUFFER ~LCA/BAF~
 	EXTEND_TOP ~BDADS4.BCS~ ~LCA/BAF/XABDADS.BAF~
 	EXTEND_TOP ~RATCHILD.BCS~ ~LCA/BAF/XARATCHL.BAF~
 	
+	//{ Archery Lesson
+		EXTEND_TOP ~BD1000.bcs~ ~LCA/BAF/xaartrig.baf~
+		EXTEND_TOP ~BD3000.bcs~ ~LCA/BAF/xaartrig.baf~
+		EXTEND_TOP ~BD7100.bcs~ ~LCA/BAF/xaartrig.baf~
+	//}
+
 
 	//{ Places where Bence can spawn during the return to Baldur's Gate
 	EXTEND_TOP ~BG0100.BCS~ ~LCA/BAF/XABSPAWN.BAF~ //NW

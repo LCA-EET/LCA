@@ -146,7 +146,6 @@ END
 //}
 
 //{ Longbow Training
-
 IF
 	InParty(Myself)
 	GlobalLT("XA_LCA_ProficiencyTimerSet", "GLOBAL", 1)
@@ -164,28 +163,9 @@ THEN
 END
 
 IF
-	ActionListEmpty()
-	!ActuallyInCombat()
-	InParty(Myself)
-	See(Player1)
-	IsValidForPartyDialog(Myself)
-	IsValidForPartyDialog(Player1)
-	GlobalTimerExpired("XA_LCA_ProficiencyTimer", "GLOBAL")
-	TimeOfDay(DAY)
-	GlobalLT("XA_LCA_ProficiencyTalk", "GLOBAL", 1)
-	Range("PlayerChest00", 50)
-	OR(2)
-		IsWeaponRanged(Player1)
-		TriggerOverride(Player1, CanEquipRanged())
-	OR(3)
-		AreaCheck("BD3000") //Allied Siege Camp
-		AreaCheck("BD1000") //Coast Way Crossing
-		AreaCheck("BD7100") //Troll Forest
+	Global("XA_LCA_ProficiencyTalk", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LCA_ProficiencyTalk", "GLOBAL", 1)
 		StartDialog("BDCORWIJ", Player1)
-		SetInterrupt(TRUE)
 END
 //}
