@@ -1646,11 +1646,38 @@ END
 		WRITE_LONG 0x264 0 // Mr. Shade
 	//}
 	
+	//{ ar0112 xaa224 Undercellar
+		COPY_EXISTING ~xaa224.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x2024 0 // Quenash
+	//}
+	
 	//{ ar0114 xaa133 
 		COPY_EXISTING ~xaa133.are~ ~override~
 		
 		// Disable NPCs
+		WRITE_LONG 0x374 0 // Larze
 		WRITE_LONG 0x484 0 // Vivienne
+	//}
+	
+	//{ ar0116 xaa457 
+		COPY_EXISTING ~xaa457.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x374 0 // Farluck
+		WRITE_LONG 0x264 0
+		WRITE_LONG 0x594 0
+		WRITE_LONG 0x484 0
+	//}
+	
+	//{ ar0117 xaa594
+		COPY_EXISTING ~xaa594.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0 // Guard
+		WRITE_LONG 0x264 0 // Guard
+		WRITE_LONG 0x374 0 // Noblewoman
 	//}
 	
 	//{ ar0126 xaa357 Ragefast's Home
