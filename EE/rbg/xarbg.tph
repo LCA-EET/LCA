@@ -1680,6 +1680,30 @@ END
 		WRITE_LONG 0x374 0 // Noblewoman
 	//}
 	
+	//{ ar0119 xaa238
+		COPY_EXISTING ~xaa238.are~ ~override~
+		
+		// Disable rep traps
+		WRITE_LONG 0xDA4 256
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0 // Bellamy
+	//}
+	
+	//{ ar0120 xaa433
+		COPY_EXISTING ~xaa433.are~ ~override~
+		
+		// Replace Ithtyl Dialogue
+		WRITE_ASCII 0x164 ~xaithtyl~ #8
+	//}
+	
+	//{ ar0121 xaa619
+		COPY_EXISTING ~xaa619.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0 // Areana
+	//}
+	
 	//{ ar0126 xaa357 Ragefast's Home
 		COPY_EXISTING ~xaa357.are~ ~override~
 		
