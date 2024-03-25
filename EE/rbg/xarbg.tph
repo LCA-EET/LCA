@@ -717,6 +717,15 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
+		COPY_EXISTING ~xaa1033.cre~ ~override~ // Ye Olde Inn Bartender
+		WRITE_ASCII 0x2CC ~xabartyo~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~shout~ #8		// Override Script
+		WRITE_ASCII 0x250 ~runenemy~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		
 		COPY_EXISTING ~xaa1048.cre~ ~override/xamerchj.cre~ // Seven Suns Merchant
 		WRITE_ASCII 0x2CC ~xamerch~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~~ #20  	// Script Name
@@ -1740,6 +1749,73 @@ END
 		WRITE_ASCII 0x4CC ~xamerlea~ #8
 	//}
 	
+	//{ ar0130 xaa359 Hall of Wonders
+		COPY_EXISTING ~xaa359.are~ ~override~
+		
+		// Disable rep traps
+		WRITE_LONG 0xB84 256
+		WRITE_LONG 0xC48 256
+	//}
+	
+	//{ ar0134 xaa326 Low Lantern B1
+		COPY_EXISTING ~xaa326.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x374 0 // Desreta
+		WRITE_LONG 0x484 0 // Vay-ya
+		
+	//}
+	
+	//{ ar0135 xaa538 Low Lantern B2
+		COPY_EXISTING ~xaa538.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0 // Yago
+	//}
+	
+	//{ ar0139 xaa437 Ramazith L2
+		COPY_EXISTING ~xaa437.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0 // Mustard Jelly
+		WRITE_LONG 0x264 0 // Mustard Jelly
+	//}
+	
+	//{ ar0140 xaa617 Ramazith L3
+		COPY_EXISTING ~xaa617.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0 // Ghast
+		WRITE_LONG 0x264 0 // Ghast
+		WRITE_LONG 0x374 0 // Ghast
+		WRITE_LONG 0x484 0 // Ghast
+		WRITE_LONG 0x594 0 // Ghast
+	//}
+	
+	//{ ar0141 xaa651 Ramazith L4
+		COPY_EXISTING ~xaa617.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0 // Hobgoblin
+		WRITE_LONG 0x264 0 // Hobgoblin
+		WRITE_LONG 0x374 0 // Hobgoblin
+		WRITE_LONG 0x484 0 // Hobgoblin
+		WRITE_LONG 0x594 0 // Hobgoblin
+		WRITE_LONG 0x6A4 0 // Hobgoblin
+	//}
+	
+	//{ ar0142 xaa675 Ramazith L5
+		COPY_EXISTING ~xaa675.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0 // Kobold
+		WRITE_LONG 0x264 0 // Kobold
+		WRITE_LONG 0x374 0 // Kobold
+		WRITE_LONG 0x484 0 // Kobold
+		WRITE_LONG 0x594 0 // Kobold
+		WRITE_LONG 0x6A4 0 // Kobold
+	//}
+	
 	//{ ar0200 xaa130 N Baldur's Gate
 		COPY_EXISTING ~xaa130.are~ ~override~
 		
@@ -1834,6 +1910,18 @@ END
 		// Disable NPCs
 		WRITE_LONG 0x5FE4 0 // Lady Hannah
 		
+		// Lock Doors 
+		WRITE_LONG 0x6FA8 2050 // Oberan Estate
+		WRITE_LONG 0x9DDC 1090 // Force Locked Door to use Key
+		WRITE_ASCII 0x9E2C ~ACIDMIST~ #8 // Key
+		
+	//}
+	
+	//{ ar0726 xaa171 Diviner's Tent
+		COPY_EXISTING ~xaa171.are~ ~override~
+		
+		// Diviner Dialogue
+		WRITE_ASCII 0x164 ~xadivine~ #8
 	//}
 	
 	//{ ar0800 xaa103
@@ -1872,7 +1960,37 @@ END
 		WRITE_LONG 0x5770 256
 		WRITE_LONG 0x5834 256
 		WRITE_LONG 0x58F8 256
-	//{
+	//}
+	
+	//{ ar1111 xaa289 Sunin's Home
+		COPY_EXISTING ~xaa289.are~ ~override~
+		
+		// Change Actor to Nobleman
+		WRITE_ASCII 0x19C ~xaa698~ #8
+	//}
+	
+	//{ ar1113 xaa284 Slime Inn
+		COPY_EXISTING ~xaa132.sto~ ~override~
+		WRITE_LONG 0xC RESOLVE_STR_REF(@4150)
+	
+		COPY_EXISTING ~xaa284.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x6A4 0 // Slime
+		WRITE_LONG 0x7B4 0 // Slime
+		WRITE_LONG 0xAE4 0 // Slime
+		WRITE_LONG 0xBF4 0 // Slime
+		WRITE_LONG 0xD04 0 // Slime
+		
+		// Replace Dialogue
+		WRITE_ASCII 0x274 ~xatownm~ #8
+		WRITE_ASCII 0x384 ~xatownm~ #8
+		WRITE_ASCII 0x494 ~xatownm~ #8
+		WRITE_ASCII 0x5A4 ~xatownm~ #8
+		WRITE_ASCII 0x8D4 ~xatownm~ #8
+		WRITE_ASCII 0x9E4 ~xatownm~ #8
+		WRITE_ASCII 0xE24 ~xatownm~ #8
+	//}
 	
 	//{ ar1200 xaa106
 		COPY_EXISTING ~xaa106.are~ ~override~

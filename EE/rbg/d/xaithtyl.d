@@ -1,7 +1,7 @@
 BEGIN XAITHTYL
 
 IF ~
-	Gabber(Player1)
+	IsGabber(Player1)
 	GlobalLT("XA_IthtylIntro", "LOCALS", 1)
 ~ THEN BEGIN 0
 	SAY @0 /*~Ah... I'd heard rumors that our esteemed hero was to return to us. Welcome back, <CHARNAME>. After your long journey, I trust your stay will be a restful one.~*/

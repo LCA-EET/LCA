@@ -199,7 +199,7 @@ IF ~~ THEN BEGIN XA_MeetSkie6
 
 	IF ~~ THEN
 	DO ~
-		GiveItemCreate("XASTDAGF", LastTalkedToBy(Myself))
+		GiveItemCreate("XASTDAGF", LastTalkedToBy(Myself), 0,0,0)
 	~
 	GOTO XA_MeetSkie6A
 END

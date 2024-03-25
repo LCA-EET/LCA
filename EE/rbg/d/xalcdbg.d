@@ -225,6 +225,17 @@ APPEND ~XALCDBG~
 		
 		IF ~~ THEN REPLY @6046
 		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XAA284", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAA284", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAA284", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAA284", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAA284", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAA284", "", [0.0], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6046
+		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("XAA286", "", [0.0], S))
 			ActionOverride(Player2, LeaveAreaLUA("XAA286", "", [0.0], S))
 			ActionOverride(Player3, LeaveAreaLUA("XAA286", "", [0.0], S))
