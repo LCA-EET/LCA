@@ -16,6 +16,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_Alyth0705", "MYAREA", 1)
-		CreateCreature("XAA850", [870.640], SE) //Alyth
+		CreateCreature("xaalyth", [870.640], SE) //Alyth
 		Continue()
 END

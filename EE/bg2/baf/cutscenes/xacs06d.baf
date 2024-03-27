@@ -54,11 +54,11 @@ THEN
 		
 		DisplayStringHead("celogan", @17) /* ~Captain Corwin, you may fire when ready.~ */
 		Wait(1)
-		ActionOverride("xad108", MoveToPoint([3546.2373]))
-		ActionOverride("xad108", FaceObject("TargetGolem"))
+		ActionOverride("xaschael", MoveToPoint([3546.2373]))
+		ActionOverride("xaschael", FaceObject("TargetGolem"))
 		Wait(2)
-		ActionOverride("xad108", SetSequence(SEQ_ATTACK))
-		DisplayStringHead("xad108", @54)
+		ActionOverride("xaschael", SetSequence(SEQ_ATTACK))
+		DisplayStringHead("xaschael", @54)
 		Wait(1)
 		DisplayStringHead("TargetGolem", @14) /* ~High damage - Three points awarded. ~ */
 		Wait(1)
@@ -71,8 +71,8 @@ THEN
 		DisplayStringHead("Crowd4", @1) /* ~*Cheering and Applause*~ */
 		SmallWait(1)
 		DisplayStringHead("Crowd5", @1) /* ~*Cheering and Applause*~ */
-		ActionOverride("xad108", MoveToPoint([3378.2397]))
-		ActionOverride("xad108", Face(NE))
+		ActionOverride("xaschael", MoveToPoint([3378.2397]))
+		ActionOverride("xaschael", Face(NE))
 		Wait(2)
 		
 		DisplayStringHead("celogan", @18) /* ~Corporal Strannex, you may fire when ready.~ */

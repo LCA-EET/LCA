@@ -5,8 +5,8 @@ THEN
 		SetGlobal("XA_CreateNPCs_0612", "MYAREA", 1)
 		CreateCreature("XAWVMER1", [300.410], N)
 		CreateCreature("XAWVMER1", [960.517], E)
-		CreateCreature("XAA629", [330.590], N)
-		CreateCreature("XAA629", [890.400], N)
+		CreateCreature("XAA630", [330.590], N)
+		CreateCreature("XAA630", [890.400], N)
 		Continue()
 END
 

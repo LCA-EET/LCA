@@ -7,8 +7,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_PaintSpySpawn", "GLOBAL", 1)
-		CreateCreature("XALCSPY", [250.560], NE)
-		ActionOverride("XALCSPY", ChangeAIScript("XAPAINT", OVERRIDE))
+		CreateCreature("XAPSPY", [250.560], NE)
 		Continue()
 END
 

@@ -5,7 +5,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CreateNPCs0128_Aldeth", "MYAREA", 1)
-		CreateCreature("XAC105", [600.400], SW) 
+		CreateCreature("xaaldeth", [600.400], SW) 
 		Continue()
 END
 

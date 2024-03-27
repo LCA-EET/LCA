@@ -54,11 +54,11 @@ THEN
 		DisplayStringHead("celogan", @17) /* ~Captain Corwin, you may fire when ready.~ */
 		Wait(1)
 		DisplayStringHead(Player1, @43) /* Go for it, Schael! */
-		ActionOverride("xad108", MoveToPoint([3546.2373]))
-		ActionOverride("xad108", FaceObject("TargetGolem"))
+		ActionOverride("xaschael", MoveToPoint([3546.2373]))
+		ActionOverride("xaschael", FaceObject("TargetGolem"))
 		Wait(2)
-		ActionOverride("xad108", SetSequence(SEQ_ATTACK))
-		DisplayStringHead("xad108", @54)
+		ActionOverride("xaschael", SetSequence(SEQ_ATTACK))
+		DisplayStringHead("xaschael", @54)
 		Wait(1)
 		DisplayStringHead("TargetGolem", @15) /* ~Critical damage - Four points awarded. ~ */
 		SmallWait(1)
@@ -73,8 +73,8 @@ THEN
 		DisplayStringHead("Crowd4", @1) /* ~*Cheering and Applause*~ */
 		SmallWait(1)
 		DisplayStringHead("Crowd5", @1) /* ~*Cheering and Applause*~ */
-		ActionOverride("xad108", MoveToPoint([3378.2397]))
-		ActionOverride("xad108", Face(NE))
+		ActionOverride("xaschael", MoveToPoint([3378.2397]))
+		ActionOverride("xaschael", Face(NE))
 		Wait(2)
 		
 		DisplayStringHead("celogan", @18) /* ~Corporal Strannex, you may fire when ready.~ */
@@ -102,8 +102,8 @@ THEN
 		
 		DisplayStringHead("celogan", @27) /* ~And we have a winner! Captain Corwin of the Baldur's Gate Flaming Fist! Congratulations!~ */
 		Wait(1)
-		ActionOverride("xad108", MoveToPoint([3546.2373]))
-		ActionOverride("xad108", Face(NW))
+		ActionOverride("xaschael", MoveToPoint([3546.2373]))
+		ActionOverride("xaschael", Face(NW))
 		DisplayStringHead("Crowd1", @50) /* ~*Cheering and Applause*~ */
 		SmallWait(1)
 		DisplayStringHead("Crowd2", @1) /* ~*Cheering and Applause*~ */
@@ -140,7 +140,7 @@ THEN
 		Wait(3)
 		DisplayStringHead("trhmer01", @28) /* ~Allow me to present to you this commemorative trophy, and an award of 2,500 gold.~ */
 		Wait(3)
-		DisplayStringHead("xad108", @29) /* ~Thank you!~ */
+		DisplayStringHead("xaschael", @29) /* ~Thank you!~ */
 		Wait(2)
 		DisplayStringHead("Crowd1", @49) /* ~*Cheering and Applause*~ */
 		SmallWait(1)

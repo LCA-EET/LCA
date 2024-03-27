@@ -45,9 +45,9 @@ THEN
 END
 
 IF 
-	GlobalLT("XA_CreateNeomaNPC", "GLOBAL", 1)
+	GlobalLT("XA_CreateNeomaNPC", "MYAREA", 1)
 THEN
 	RESPONSE #100
 		CreateCreature("XANEOMA", [3075.1390], E)
-		SetGlobal("XA_CreateNeomaNPC", "GLOBAL", 1)
+		SetGlobal("XA_CreateNeomaNPC", "MYAREA", 1)
 END

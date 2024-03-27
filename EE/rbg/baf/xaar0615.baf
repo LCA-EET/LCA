@@ -9,7 +9,7 @@ THEN
 		ActionOverride("Container 3", DestroyItem("SCRL3C"))
 		CreateCreature("XAWVMER2", [600.440], N)
 		CreateCreature("XAWVMER1", [500.760], E)
-		CreateCreature("XAA629", [770.415], W)
+		CreateCreature("XAA630", [770.415], W)
 		Continue()
 END
 

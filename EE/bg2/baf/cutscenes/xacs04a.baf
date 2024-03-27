@@ -8,14 +8,14 @@ THEN
 		FadeToColor([30.0],0)
 		Wait(3)
 		ZoomLock(TRUE)
-		LeaveAreaLUAPanic("xad100","",[2762.898],SW)  // Ducal Palace, 3FL
-		LeaveAreaLUA("xad100","",[2762.898],SW)
-		ActionOverride(Player2,LeaveAreaLUA("xad100","",[2802.919],SW))  
-		ActionOverride(Player3,LeaveAreaLUA("xad100","",[2800.848],SW))  
-		ActionOverride(Player4,LeaveAreaLUA("xad100","",[2839.875],SW))  
-		ActionOverride(Player5,LeaveAreaLUA("xad100","",[2830.801],SW))  
-		ActionOverride(Player6,LeaveAreaLUA("xad100","",[2871.833],SW))  
-		CreateCreature("xad104",[809.594],SW) // BDBENCE
+		LeaveAreaLUAPanic("xabelt","",[2762.898],SW)  // Ducal Palace, 3FL
+		LeaveAreaLUA("xabelt","",[2762.898],SW)
+		ActionOverride(Player2,LeaveAreaLUA("xabelt","",[2802.919],SW))  
+		ActionOverride(Player3,LeaveAreaLUA("xabelt","",[2800.848],SW))  
+		ActionOverride(Player4,LeaveAreaLUA("xabelt","",[2839.875],SW))  
+		ActionOverride(Player5,LeaveAreaLUA("xabelt","",[2830.801],SW))  
+		ActionOverride(Player6,LeaveAreaLUA("xabelt","",[2871.833],SW))  
+		CreateCreature("xabence",[809.594],SW) // BDBENCE
 		CreateCreature("xaskcut2",[571.668],W)
 		StartCutScene("XAcs04b")
 END

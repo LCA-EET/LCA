@@ -4,8 +4,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CellSpyCreated", "MYAREA", 1)
-		CreateCreature("XALCSPY", [330.440], SEE)
-		ActionOverride("XALCSPY", ChangeAIScript("XACELL", OVERRIDE))
+		CreateCreature("XACELL", [330.440], SEE)
 		Continue()
 END
 

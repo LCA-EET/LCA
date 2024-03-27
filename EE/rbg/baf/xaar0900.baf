@@ -24,8 +24,8 @@ THEN
 		ActionOverride(Player5,Rest())
 		ActionOverride(Player6,Rest())
 		
-		CreateCreature("XAC103", [1553.1370], SE) // Nederlok
-		CreateCreature("XAC104", [1500.1396], SE) // Bence
+		CreateCreature("xanederl", [1553.1370], SE) // Nederlok
+		CreateCreature("xabence", [1500.1396], SE) // Bence
 		CreateCreature("XARBNB01", [1400.1300], SE) // City Official
 		CreateCreature("XARBNB02", [1466.1263], SE) // City Official
 		CreateCreature("XAB147B", [1415.1385], SE) // FF Officer

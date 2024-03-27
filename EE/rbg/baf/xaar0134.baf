@@ -3,8 +3,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_NPCs_0134", "MYAREA", 1)
-		ActionOverride("xaa1138", DestroySelf()) // Desret
-		ActionOverride("xaa1139", DestroySelf()) // Vaaya
 		CreateCreature("XATIANNA", [832.622],NW)
 		Continue()
 END

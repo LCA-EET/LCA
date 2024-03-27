@@ -464,32 +464,7 @@ END
 //{ Script Extensions
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~
 	EXTEND_BOTTOM ~xadings.bcs~	~%MOD_FOLDER%/rbg/baf/xadings.baf~
-	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalrbg.baf~
-	
-	EXTEND_TOP ~xaas100.bcs~	~%MOD_FOLDER%/rbg/baf/xamaprbg.baf~
-	
-	
-	EXTEND_TOP ~xaas224.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0112.baf~
-	EXTEND_TOP ~xaas459.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0116.baf~
-	EXTEND_TOP ~xaas359.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0130.baf~
-	EXTEND_TOP ~xaas326.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0134.baf~
-	EXTEND_TOP ~xaas455.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0165.baf~
-	EXTEND_TOP ~xaas156.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0225.baf~
-	EXTEND_TOP ~xaas164.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0600.baf~
-	//EXTEND_TOP ~xaas286.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0601.baf~
-	
-	EXTEND_TOP ~xaas283.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0607.baf~
-	EXTEND_TOP ~xaas482.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0608.baf~
-	EXTEND_TOP ~xaas305.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0612.baf~
-	EXTEND_TOP ~xaas527.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0613.baf~
-	EXTEND_TOP ~xaas565.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0614.baf~
-	EXTEND_TOP ~xaas669.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0615.baf~
-	EXTEND_TOP ~xaas117.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0705.baf~
-	EXTEND_TOP ~xaas206.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0706.baf~
-	EXTEND_TOP ~xaas103.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0800.baf~
-	EXTEND_TOP ~xaas100.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0900.baf~
-	EXTEND_TOP ~xaas141.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar1300.baf~
-	
+	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalrbg.baf~	
 //}
 
 //{ BMP
@@ -585,7 +560,7 @@ END
 		COPY_EXISTING ~xaa200.cre~ ~override~
 		WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
 		
-		COPY_EXISTING ~xaa217.cre~ ~override~ // Brielbara
+		COPY_EXISTING ~xaa217.cre~ ~override/xabrielb.cre~ // Brielbara
 		WRITE_ASCII 0x2CC ~xabrielb~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xabrielb~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~xainitp1~ #8		// Override Script
@@ -666,7 +641,7 @@ END
 		COPY_EXISTING ~xaa475.cre~ ~override~
 		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
 		
-		COPY_EXISTING ~xaa495.cre~ ~override~ // Larze
+		COPY_EXISTING ~xaa495.cre~ ~override/xalarze.cre~ // Larze
 		WRITE_ASCII 0x2CC ~xalarze~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xalarze~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~xainitp1~ #8		// Override Script
@@ -708,7 +683,7 @@ END
 		WRITE_ASCII 0x268 ~xavirgil~ #8		// Default Script
 		
 		
-		COPY_EXISTING ~xaa851.cre~ ~override~ // Alyth
+		COPY_EXISTING ~xaa851.cre~ ~override/xaalyth.cre~ // Alyth
 		WRITE_ASCII 0x2CC ~xaalyth~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xaalyth~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~xainitp1~ #8		// Override Script
@@ -770,9 +745,15 @@ END
 		WRITE_ASCII 0x258 ~xamerchg~ #8		// Race Script
 		WRITE_ASCII 0x2CC ~xabartml~ #8 	// Dialogue
 		
-		COPY_EXISTING ~xaa1215.cre~ ~override~ // Brandilar
+		COPY_EXISTING ~xaa1215.cre~ ~override/xabrandi.cre~ // Brandilar
+		WRITE_ASCII 0x280 ~xabrandi~ #20  	// Script Name
 		WRITE_ASCII 0x258 ~xamerchg~ #8		// Race Script
 		WRITE_ASCII 0x2CC ~xabrandi~ #8 	// Dialogue
+		
+		COPY_EXISTING ~xaa1217.cre~ ~override/xajhasso.cre~ // Jhasso
+		WRITE_ASCII 0x280 ~xajhasso~ #20  	// Script Name
+		WRITE_ASCII 0x2CC ~xajhasso~ #8 	// Dialogue
+		WRITE_ASCII 0x250 ~xainitp1~ #8		// Class Script
 		
 		COPY_EXISTING ~xaa1257.cre~ ~override~ // Silvershield Servant
 		WRITE_ASCII 0x2CC ~xaserva2~ #8 	// Dialogue
@@ -794,7 +775,7 @@ END
 	//}
 	
 	//{ Block C Base
-		COPY_EXISTING ~xac100.cre~ ~override~ // Glint
+		COPY_EXISTING ~xac100.cre~ ~override/xaglint.cre~ // Glint
 		WRITE_ASCII 0x2CC ~xaglint~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xaglint~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~xainitp1~ #8		// Override Script
@@ -803,7 +784,7 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xac101.cre~ ~override~ // Rohma
+		COPY_EXISTING ~xac101.cre~ ~override/xarohma.cre~ // Rohma
 		WRITE_ASCII 0x2CC ~xarohma~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xarohma~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~~ #8		// Override Script
@@ -812,7 +793,7 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xac102.cre~ ~override~ // Audamar
+		COPY_EXISTING ~xac102.cre~ ~override/xaaudam.cre~ // Audamar
 		WRITE_ASCII 0x2CC ~xaaudam~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xaaudam~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~~ #8		// Override Script
@@ -821,7 +802,7 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xac103.cre~ ~override~ // Nederlok
+		COPY_EXISTING ~xac103.cre~ ~override/xanederl.cre~ // Nederlok
 		WRITE_ASCII 0x2CC ~xanederl~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xanederl~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~~ #8		// Override Script
@@ -830,16 +811,7 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xac104.cre~ ~override~ // Bence
-		WRITE_ASCII 0x2CC ~xabence~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xabence~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8		// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
-		
-		COPY_EXISTING ~xac105.cre~ ~override~ // Aldeth
+		COPY_EXISTING ~xac105.cre~ ~override/xaaldeth.cre~ // Aldeth
 		WRITE_ASCII 0x2CC ~xaaldeth~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xaaldeth~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~xainitp1~ #8		// Override Script
@@ -848,7 +820,7 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xac106.cre~ ~override~ // Kent
+		COPY_EXISTING ~xac106.cre~ ~override/xakent.cre~ // Kent
 		WRITE_ASCII 0x2CC ~xakent~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xakent~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~~ #8		// Override Script
@@ -973,6 +945,12 @@ END
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 	//}
 	
+	COPY_EXISTING ~xalcspy.cre~ ~override/xahowspy.cre~ // Hall of Wonders Spy
+	WRITE_ASCII 0x248 ~xahowspy~ #8		// Override Script
+	
+	COPY_EXISTING ~xalcspy.cre~ ~override/xacell.cre~ // Cell Spy
+	WRITE_ASCII 0x248 ~xacell~ #8		// Override Script
+	
 	COPY_EXISTING ~xalcspy.cre~ ~override/xaskieiv.cre~ // Skie invisible
 	SAY NAME1 @3070 /* Skie */
 	SAY NAME2 @3070
@@ -980,10 +958,6 @@ END
 	WRITE_ASCII 0x2CC ~xaskie~ #8 	// Dialogue
 	WRITE_ASCII 0x280 ~xaskie~ #20  	// Script Name
 	WRITE_ASCII 0x248 ~xaskie~ #8		// Override Script
-	WRITE_ASCII 0x250 ~~ #8		// Class Script
-	WRITE_ASCII 0x258 ~~ #8		// Race Script
-	WRITE_ASCII 0x260 ~~ #8		// General Script
-	WRITE_ASCII 0x268 ~~ #8		// Default Script
 	
 	COPY_EXISTING ~xalcspy.cre~ ~override/xabeno2.cre~ // Beno invisible
 	SAY NAME1 @4064 /* Beno Famari */
@@ -991,33 +965,21 @@ END
 	WRITE_ASCII 0x2CC ~xabeno2~ #8 	// Dialogue
 	WRITE_ASCII 0x280 ~xabeno2~ #20  	// Script Name
 	WRITE_ASCII 0x248 ~xabeno2~ #8		// Override Script
-	WRITE_ASCII 0x250 ~~ #8		// Class Script
-	WRITE_ASCII 0x258 ~~ #8		// Race Script
-	WRITE_ASCII 0x260 ~~ #8		// General Script
-	WRITE_ASCII 0x268 ~~ #8		// Default Script
 	
 	COPY_EXISTING ~xalcspy.cre~ ~override/xaglint2.cre~ // Glint invisible
 	SAY NAME1 @4074 /* Glint */
 	SAY NAME2 @4074
 	WRITE_ASCII 0x34 ~xac100~ #8 // Portrait
-	WRITE_ASCII 0x2CC ~~ #8 	// Dialogue
 	WRITE_ASCII 0x280 ~xaglint~ #20  	// Script Name
 	WRITE_ASCII 0x248 ~xaglint~ #8		// Override Script
-	WRITE_ASCII 0x250 ~~ #8		// Class Script
-	WRITE_ASCII 0x258 ~~ #8		// Race Script
-	WRITE_ASCII 0x260 ~~ #8		// General Script
-	WRITE_ASCII 0x268 ~~ #8		// Default Script
 	
 	COPY_EXISTING ~xalcspy.cre~ ~override/xarohma3.cre~ // Rohma invisible
 	SAY NAME1 @4079 /* Rohma */
-	SAY NAME2 @4079
-	WRITE_ASCII 0x2CC ~~ #8 	// Dialogue
+	SAY NAME2 @4079 /* Rohma */
 	WRITE_ASCII 0x280 ~xarohma3~ #20  	// Script Name
-	WRITE_ASCII 0x248 ~~ #8		// Override Script
-	WRITE_ASCII 0x250 ~~ #8		// Class Script
-	WRITE_ASCII 0x258 ~~ #8		// Race Script
-	WRITE_ASCII 0x260 ~~ #8		// General Script
-	WRITE_ASCII 0x268 ~~ #8		// Default Script
+	
+	COPY_EXISTING ~xalcspy.cre~ ~override/xapspy.cre~ // Paint Spy
+	WRITE_ASCII 0x248 ~xapaint~ #8		// Override Script
 	
 	COPY_EXISTING ~xaffval1.cre~ ~override/xaffexec.cre~ // Flaming Fist Executioner
 	SAY NAME1 @4072
@@ -1656,6 +1618,8 @@ END
 	//}
 	
 	//{ ar0112 xaa224 Undercellar
+		EXTEND_TOP ~xaas224.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0112.baf~
+	
 		COPY_EXISTING ~xaa224.are~ ~override~
 		
 		// Disable NPCs
@@ -1750,6 +1714,8 @@ END
 	//}
 	
 	//{ ar0130 xaa359 Hall of Wonders
+		EXTEND_TOP ~xaas359.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0130.baf~
+		
 		COPY_EXISTING ~xaa359.are~ ~override~
 		
 		// Disable rep traps
@@ -1758,6 +1724,8 @@ END
 	//}
 	
 	//{ ar0134 xaa326 Low Lantern B1
+		EXTEND_TOP ~xaas326.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0134.baf~
+	
 		COPY_EXISTING ~xaa326.are~ ~override~
 		
 		// Disable NPCs
@@ -1815,6 +1783,64 @@ END
 		WRITE_LONG 0x594 0 // Kobold
 		WRITE_LONG 0x6A4 0 // Kobold
 	//}
+
+	//{ ar0153 xaa188 Thieves' Guild
+		COPY_EXISTING ~xaa188.are~ ~override~
+		
+		// Replace Dialog
+		WRITE_ASCII 0x484 ~xaalatos~ #8
+		
+		// Disable NPCs
+		WRITE_LONG 0x264 0 // Resar
+	//}
+
+	//{ ar0161 xaa458 Degrodel's Home
+		COPY_EXISTING ~xaa458.are~ ~override~
+		
+		// Change Creatures
+		WRITE_ASCII 0x154 ~xaa491~ #8
+		WRITE_ASCII 0x264 ~xaa136~ #8
+		
+		// Disable NPCs
+		WRITE_LONG 0x374 0 
+		WRITE_LONG 0x484 0 
+		WRITE_LONG 0x594 0
+		WRITE_LONG 0x6A4 0
+		WRITE_LONG 0x7B4 0
+	//}
+	
+	//{ ar0162 xaa454 Louise and Laerta's Home
+		COPY_EXISTING ~xaa454.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0 // Louise
+		WRITE_LONG 0x264 0 // Laerta
+	//}
+	
+	//{ ar0165 xaa453 Tavern
+		EXTEND_TOP ~xaas453.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0165.baf~
+
+		COPY_EXISTING ~xaa453.are~ ~override~
+		
+		// Replace Dialog
+		WRITE_ASCII 0x164 ~xaconnol~ #8
+	//}
+	
+	//{ ar0166 xaa603 Tavern
+		COPY_EXISTING ~xaa603.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x264 0 // Borinole
+	//}
+	
+	//{ ar0167 xaa459 Pheirkas Home
+		EXTEND_TOP ~xaas459.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0116.baf~
+		
+		COPY_EXISTING ~xaa459.are~ ~override~
+		
+		// Change Creatures
+		WRITE_ASCII 0x154 ~xaa491~ #8
+	//}
 	
 	//{ ar0200 xaa130 N Baldur's Gate
 		COPY_EXISTING ~xaa130.are~ ~override~
@@ -1836,6 +1862,36 @@ END
 		WRITE_LONG 0x3454 0 // Tick
 	//}
 	
+	//{ ar0224 xaa297 BG Sewers (Sewerfolk)
+		COPY_EXISTING ~xaa297.are~ ~override~
+		
+		// Change Creatures
+		WRITE_ASCII 0x3BC ~carrio~ #8
+		WRITE_ASCII 0x4CC ~carrio~ #8
+		WRITE_ASCII 0x5DC ~carrio~ #8
+		WRITE_ASCII 0x6EC ~carrio~ #8
+		WRITE_ASCII 0x7FC ~carrio~ #8
+		WRITE_ASCII 0x90C ~carrio~ #8
+		WRITE_ASCII 0x3BC ~carrio~ #8
+		WRITE_ASCII 0xA1C ~carrio~ #8
+	//}
+	
+	//{ ar0225 xaa156 BG Sewers (Ratchild)
+		EXTEND_TOP ~xaas156.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0225.baf~
+	
+		COPY_EXISTING ~xaa156.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x374 0 // Ratchild
+	//}
+	
+	//{ ar0226 xaa121 BG Sewers (Ogre Mage)
+		COPY_EXISTING ~xaa121.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x374 0 // Ogre Mage
+	//}
+	
 	//{ ar0300 xaa105
 		COPY_EXISTING ~xaa105.are~ ~override~
 		
@@ -1851,7 +1907,10 @@ END
 		WRITE_LONG 0x1F14 0 // Marek
 	//}
 	
+	
 	//{ ar0600 xaa164
+		EXTEND_TOP ~xaas164.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0600.baf~
+		
 		COPY_EXISTING ~xaa164.are~ ~override~
 		
 		// Disable rep traps
@@ -1874,13 +1933,6 @@ END
 		WRITE_ASCII 0x3BC ~xamerchj~ #8
 	//}
 	
-	//{ ar0619 xaa360
-		COPY_EXISTING ~xaa286.are~ ~override~
-		
-		// Disable NPCs
-		WRITE_LONG 0x154 0 // Fenten 
-	//}
-	
 	//{ ar0602 xaa487 - Seven Suns L2
 		EXTEND_TOP ~xaas487.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0602.baf~
 		
@@ -1897,6 +1949,37 @@ END
 		// Disable NPCs
 		WRITE_LONG 0x264 0	// Doppelganger
 		WRITE_LONG 0x154 0	// Jhasso		
+	//}
+	
+	//{ ar0607 xaa283
+		EXTEND_TOP ~xaas283.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0607.baf~
+	//}
+	
+	//{ ar0608 xaa482
+		EXTEND_TOP ~xaas482.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0608.baf~
+	//}
+	
+	//{ ar0612 xaa305
+		EXTEND_TOP ~xaas305.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0612.baf~
+	//}
+	
+	//{ ar0613 xaa527
+		EXTEND_TOP ~xaas527.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0613.baf~
+	//}
+	
+	//{ ar0614 xaa565
+		EXTEND_TOP ~xaas565.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0614.baf~
+	//}
+	
+	//{ ar0615 xaa669
+		EXTEND_TOP ~xaas669.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0615.baf~
+	//}
+	
+	//{ ar0619 xaa360
+		COPY_EXISTING ~xaa286.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0 // Fenten 
 	//}
 	
 	//{ ar0700 xaa107
@@ -1917,6 +2000,14 @@ END
 		
 	//}
 	
+	//{ ar0705 xaa117
+		EXTEND_TOP ~xaas117.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0705.baf~
+	//}
+	
+	//{ ar0706 xaa206
+		EXTEND_TOP ~xaas206.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0706.baf~
+	//}
+	
 	//{ ar0726 xaa171 Diviner's Tent
 		COPY_EXISTING ~xaa171.are~ ~override~
 		
@@ -1925,6 +2016,8 @@ END
 	//}
 	
 	//{ ar0800 xaa103
+		EXTEND_TOP ~xaas103.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0800.baf~
+	
 		COPY_EXISTING ~xaa103.are~ ~override~
 		
 		// Disable rep traps
@@ -1943,6 +2036,9 @@ END
 	//}
 	
 	//{ ar0900 xaa100
+		EXTEND_TOP ~xaas100.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0900.baf~
+		EXTEND_TOP ~xaas100.bcs~	~%MOD_FOLDER%/rbg/baf/xamaprbg.baf~
+		
 		COPY_EXISTING ~xaa100.are~ ~override~
 		
 		// Disable rep traps
@@ -2011,7 +2107,55 @@ END
 		WRITE_LONG 0x6BA4 RESOLVE_STR_REF(@4138)
 	//}
 	
+	//{ ar1207 xaa151
+		COPY_EXISTING ~xaa151.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0 // Basilisk
+	//}
+	
+	//{ ar1208 xaa152
+		COPY_EXISTING ~xaa152.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x6A4 0 // Noralee
+	//}
+	
+	//{ ar1209 xaa153
+		COPY_EXISTING ~xaa153.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0
+		WRITE_LONG 0x264 0
+		WRITE_LONG 0x374 0
+	//}
+	
+	//{ ar1210 xaa322
+		COPY_EXISTING ~xaa322.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0
+		WRITE_LONG 0x264 0
+	//}
+	
+	//{ ar1211 xaa154
+		COPY_EXISTING ~xaa154.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0
+	//}
+	
+	//{ ar1213 xaa150
+		COPY_EXISTING ~xaa150.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0
+	//}
+	
+	
 	//{ ar1300 xaa141
+		EXTEND_TOP ~xaas141.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar1300.baf~
+		
 		COPY_EXISTING ~xaa141.are~ ~override~
 		
 		// Disable rep traps

@@ -609,6 +609,27 @@ END
 	SAY NAME2 @3070
 //}
 
+//{ Block D Modifications
+	COPY_EXISTING ~xad100.cre~ ~override/xabelt.cre~
+	WRITE_ASCII 0x280 ~xabelt~ #20  	// Script Name
+	
+	COPY_EXISTING ~xad101.cre~ ~override/xaeltan.cre~
+	WRITE_ASCII 0x280 ~xaeltan~ #20  	// Script Name
+	
+	COPY_EXISTING ~xad102.cre~ ~override/xaentar.cre~
+	WRITE_ASCII 0x280 ~xaentar~ #20  	// Script Name
+	
+	COPY_EXISTING ~xad103.cre~ ~override/xaliia.cre~
+	WRITE_ASCII 0x280 ~xaliia~ #20  	// Script Name
+	
+	COPY_EXISTING ~xad104.cre~ ~override/xabence.cre~
+	WRITE_ASCII 0x2CC ~xabence~ #8 	// Dialogue
+	WRITE_ASCII 0x280 ~xabence~ #20  	// Script Name
+	
+	COPY_EXISTING ~xad108.cre~ ~override/xaschael.cre~
+	WRITE_ASCII 0x280 ~xaschael~ #20  	// Script Name
+//}
+
 //{ wav
 	COPY ~%MOD_FOLDER%/bg2/wav/xalcsa00.wav~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/wav/xalcsa01.wav~ ~override~

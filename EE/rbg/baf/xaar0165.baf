@@ -8,6 +8,6 @@ THEN
 	RESPONSE #100
 		SetGlobal("XA_LarzeSpawn", "GLOBAL", 1)
 		Wait(5)
-		CreateCreature("XAA494", [500.463], NW)
+		CreateCreature("xalarze", [500.463], NW)
 		Continue()
 END

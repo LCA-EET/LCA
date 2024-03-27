@@ -1,12 +1,10 @@
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_CreateHOWSpy_0600", "XAA164", 1)
+	!Global("XA_CreateHOWSpy_0600", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CreateHOWSpy_0600", "XAA164", 1)
-		CreateCreature("XALCSPY", [4254.909], NW)
-		ActionOverride("XALCSPY", ChangeAIScript("XAHOWSPY", OVERRIDE)) 
-		CreateCreature("XALCSPY", [1580.2424], NW)
-		ActionOverride("XALCSPY", ChangeAIScript("XAHOWSPY", OVERRIDE))
+		SetGlobal("XA_CreateHOWSpy_0600", "MYAREA", 1)
+		CreateCreature("xahowspy", [4254.909], NW)
+		CreateCreature("xahowspy", [1580.2424], NW)
 		Continue()
 END

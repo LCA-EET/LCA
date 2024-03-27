@@ -3,7 +3,7 @@ IF
 THEN 
 	RESPONSE #100
 		SetGlobal("XA_CreateNPCS_0608_Kent", "MYAREA", 1)
-		CreateCreature("XAC106", [380.309], W) // Kent
+		CreateCreature("XAKENT", [380.309], W) // Kent
 		Continue()
 END
 
@@ -12,6 +12,6 @@ IF
 THEN 
 	RESPONSE #100
 		SetGlobal("XA_CreateNPCS_0608_Nederlok", "MYAREA", 1)
-		CreateCreature("XAC103", [233.399], NNE) // Nederlok
+		CreateCreature("XANEDERL", [233.399], NNE) // Nederlok
 		Continue()
 END

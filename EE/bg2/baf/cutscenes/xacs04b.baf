@@ -2,24 +2,24 @@ IF
 	True() //430.390
 THEN
 	RESPONSE #100
-		CutSceneId("xad104")
+		CutSceneId("xabence")
 		
 		
-		CreateCreature("xad103",[730.474],SW)
-		CreateCreature("xad100",[755.489],SW)
+		CreateCreature("xaliia",[730.474],SW)
+		CreateCreature("xabelt",[755.489],SW)
 		CreateCreature("xawapren",[643.670],N) // Assistant
-		CreateCreature("xad102",[639.701],NW)
+		CreateCreature("xaentar",[639.701],NW)
 		CreateCreature("xamelkor",[555.613],S) // Melkor
-		CreateCreature("xad101",[826.546],SW)
+		CreateCreature("xaeltan",[826.546],SW)
 		CreateCreature("XAFFVAL1", [982.448], SW)
 		CreateCreature("XAFFVAL1", [899.384], SW)
 		
 		Explore()
-		ActionOverride("xad102", FaceObject("xaskcut2"))
-		ActionOverride("xad103", FaceObject("xaskcut2"))
-		ActionOverride("xad100", FaceObject("xaskcut2"))
+		ActionOverride("xaentar", FaceObject("xaskcut2"))
+		ActionOverride("xaliia", FaceObject("xaskcut2"))
+		ActionOverride("xabelt", FaceObject("xaskcut2"))
 		ActionOverride("xawapren", FaceObject("xaskcut2"))
-		ActionOverride("xad101", FaceObject("xaskcut2"))
+		ActionOverride("xaeltan", FaceObject("xaskcut2"))
 		Wait(3)
 		CreateCreature("cutspy",[826.546],S)
 		MoveViewPoint([826.546], BD_NORMAL)
@@ -30,9 +30,9 @@ THEN
 		Wait(5)
 		DisplayStringHead("xamelkor",@1)
 		Wait(3)
-		ActionOverride("xawapren", FaceObject("xad104"))
+		ActionOverride("xawapren", FaceObject("xabence"))
 		ActionOverride("xawapren", MoveToPoint([704.662]))
-		ActionOverride("xawapren", FaceObject("xad104"))
+		ActionOverride("xawapren", FaceObject("xabence"))
 		Wait(1)
 		DisplayStringHead("xawapren",@2)
 		Wait(3)
@@ -50,7 +50,7 @@ THEN
 		
 		
 		
-		DisplayStringHead("xad102",@3) //BDENTAR
+		DisplayStringHead("xaentar",@3) //BDENTAR
 		Wait(3)
 		DisplayStringHead("xamelkor",@4)
 		Wait(3)
@@ -77,11 +77,11 @@ THEN
 		Wait(2)
 		DisplayStringHead("xaskcut2",@11)
 		Wait(2)
-		DisplayStringHead("xad102",@12)
-		ActionOverride("xaskcut2", FaceObject("xad102"))
-		ActionOverride("xad102", MoveToPoint([603.678]))
+		DisplayStringHead("xaentar",@12)
+		ActionOverride("xaskcut2", FaceObject("xaentar"))
+		ActionOverride("xaentar", MoveToPoint([603.678]))
 		Wait(5)
-		DisplayStringHead("xad102",@13)
+		DisplayStringHead("xaentar",@13)
 		Wait(3)
 		DisplayStringHead("xaskcut2",@14)
 		Wait(2)
@@ -89,12 +89,12 @@ THEN
 		Wait(4)
 		DisplayStringHead("xaskcut2",@16)
 		Wait(4)
-		DisplayStringHead("xad102",@17)
+		DisplayStringHead("xaentar",@17)
 		Wait(4)
 		DisplayStringHead("xaskcut2",@18)
 		Wait(5)
 		MoveToPoint([738.641])
-		DisplayStringHead("xad104",@19) //BDBENCE
+		DisplayStringHead("xabence",@19) //BDBENCE
 		Wait(4)
 		DisplayStringHead("xaskcut2",@20)
 		Wait(5)
