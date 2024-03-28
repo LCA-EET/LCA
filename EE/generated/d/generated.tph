@@ -496,10 +496,6 @@ COPY ~%MOD_FOLDER%\generated\d\wav\xad10149.wav~ ~override~
 //baf files
 //===================
 
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\generated\d\d~
-//dlg files
-//===================
-
 //itm files
 //===================
 COPY ~%MOD_FOLDER%\generated\d\itm\xad100.itm~ ~override~

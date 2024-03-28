@@ -1,80 +1,50 @@
 IF
-	Global("bd_sentry_pass","bd4000",0)  // Dragonspear Castle, Exterior
-	Allegiance(Myself,NEUTRAL)
-	See([PC])
-	Range(LastSeenBy(Myself),15)
-	Name("bddssen",Myself)  // Crusader Officer
+	Die()
 THEN
 	RESPONSE #100
-		StartDialogueNoSet(Player1)
+		IncrementGlobal("bd_battle_extra_count","bd3000",-1)  // Allied Siege Camp
 END
 
 IF
-	Global("bd_bump","locals",0)
-	!Name("sentry spy",Myself)
-	Allegiance(Myself,NEUTRAL)
+	Global("bd_ai_controls","locals",0)
+	OR(2)
+		GlobalGT("bd_battle_failed","bd3000",0)  // Allied Siege Camp
+		Specifics(Myself,CRUSADERS)
 THEN
 	RESPONSE #100
-		SetGlobal("bd_bump","locals",1)
-		ApplySpellRES("bdbump1",Myself)  // No such index
-		ChangeSpecifics(Myself,CRUSADERS)
+		SetGlobal("bd_ai_controls","locals",1)
+		SaveObjectLocation("LOCALS","bd_default_loc",Myself)
+		SetGlobal("bd_no_retreat","locals",1)
 END
 
 IF
-	Global("bd_bump","locals",0)
-	Name("sentry spy",Myself)
-	Allegiance(Myself,NEUTRAL)
+	GlobalGT("bd_battle","global",44)
 THEN
 	RESPONSE #100
-		SetGlobal("bd_bump","locals",1)
-		ApplySpellRES("bdinvis",Myself)  // No such index
-		ApplySpellRES("bdspace0",Myself)  // No such index
-		ChangeSpecifics(Myself,CRUSADERS)
+		EscapeAreaObject("npc_exit")
 END
 
 IF
-	Global("bd_bump","locals",1)
-	!Name("stone golem",Myself)
-	GlobalGT("bd_sentry_pass","bd4000",2)  // Dragonspear Castle, Exterior
+	!See(NearestEnemyOf(Myself))
+	OR(2)
+		GlobalGT("bd_battle_failed","bd3000",0)  // Allied Siege Camp
+		Specifics(Myself,CRUSADERS)
+	!Range("allybase",25)
 THEN
 	RESPONSE #100
-		SetGlobal("bd_bump","locals",2)
-		ApplySpellRES("bdbump2",Myself)  // No such index
+		MoveToObject("allybase")
 END
 
 IF
-	Global("bd_myspace","locals",0)
-	Name("sentry spy",Myself)
-	Allegiance(Myself,NEUTRAL)
-	OR(4)
-		HitBy([GOODCUTOFF],CRUSHING)
-		AttackedBy([GOODCUTOFF],DEFAULT)
-		Heard([EVILCUTOFF.0.0.0.CRUSADERS],ASSIST)
-		Heard([NEUTRAL.0.0.0.CRUSADERS],ASSIST)
+	!See(NearestEnemyOf(Myself))
+	OR(2)
+		Global("bd_battle_failed","bd3000",0)  // Allied Siege Camp
+		Specifics(Myself,CRUSADERS)
+	Range("allybase",15)
 THEN
 	RESPONSE #100
-		SetGlobal("bd_myspace","locals",1)
-		ApplySpellRES("bdspace",Myself)  // No such index
-		Enemy()
-		Continue()
-END
-
-IF
-	GlobalGT("bd_sentry_pass","bd4000",2)  // Dragonspear Castle, Exterior
-	Global("bd_open_gate","locals",0)
-	Allegiance(Myself,NEUTRAL)
-	Name("bddssen",Myself)  // Crusader Officer
-THEN
-	RESPONSE #100
-		MoveToPointNoInterrupt([900.2945])
-		SetGlobal("bd_open_gate","locals",1)
-		Face(SW)
-END
-
-IF
-	Global("bd_MDD1102_setup","BD4000",1)  // Dragonspear Castle, Exterior
-THEN
-	RESPONSE #100
-		DestroySelf()
+		SetGlobal("bd_search","locals",1)
+		SetGlobal("bd_combat","locals",1)
+		SetGlobalTimer("bd_search_timer","locals",ONE_ROUND)
 END
 

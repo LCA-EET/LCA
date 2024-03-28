@@ -1,10 +1,136 @@
 IF
-	OR(2)
-		Entered([ANYONE])
-		Opened([ANYONE])
+	Global("bd_wall_explosion","bd4000",0)  // Dragonspear Castle, Exterior
+	Clicked([ANYONE])
+	!Range(LastTrigger,12)
 THEN
 	RESPONSE #100
-		DisplayString(LastTrigger,14381)  // Trap Sprung
-		ForceSpellRES("bdgspear",LastTrigger)  // No such index
+		DisplayString(Myself,38224)  // You are too far away to use that.
+END
+
+IF
+	Global("bd_wall_explosion","bd4000",0)  // Dragonspear Castle, Exterior
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("bd_wooden_wall_ot","bd4000",0)  // Dragonspear Castle, Exterior
+THEN
+	RESPONSE #100
+		SetGlobal("bd_wooden_wall_ot","bd4000",1)  // Dragonspear Castle, Exterior
+		DisplayString(Myself,40881)  // The breach in the wall has been recently patched up with wooden planks.
+END
+
+IF
+	Global("chapter","global",11)
+	Global("bd_wall_explosion","bd4000",0)  // Dragonspear Castle, Exterior
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	HasItem("bdbwoosh",LastTrigger)  // Barrel of Bwoosh!
+THEN
+	RESPONSE #100
+		SetGlobal("bd_wall_explosion","bd4000",1)  // Dragonspear Castle, Exterior
+		SetGlobalTimer("bd_wall_explosion_timer","bd4000",3)  // Dragonspear Castle, Exterior
+		SetGlobal("bd_phossey_plot","global",6)
+		ActionOverride(LastTrigger,DestroyItem("bdbwoosh"))  // Barrel of Bwoosh!
+END
+
+IF
+	GlobalLT("bd_phossey_plot","global",6)
+	Global("bd_wall_explosion","bd4000",0)  // Dragonspear Castle, Exterior
+	Range("bdphosse",10)  // Phossey Dugdeep
+	HasItem("bdbwoosh","bdphosse")  // Barrel of Bwoosh!
+THEN
+	RESPONSE #100
+		SetGlobal("bd_wall_explosion","bd4000",1)  // Dragonspear Castle, Exterior
+		SetGlobalTimer("bd_wall_explosion_timer","bd4000",9)  // Dragonspear Castle, Exterior
+		ActionOverride("bdphosse",DestroyItem("bdbwoosh"))  // Barrel of Bwoosh!
+		SmallWait(5)
+		ActionOverride("bdphosse",DisplayStringHead(Myself,38164))  // <CHARNAME>! If you like your face on the front of your head, you'll wanna stand back.
+		SmallWait(25)
+		SetGlobal("bd_phossey_plot","global",6)
+		ActionOverride("bdalmur",SaveLocation("LOCALS","bd_default_loc",[2655.3735]))
+		ActionOverride("bdalmur",SetGlobal("bd_retreat","locals",1))
+		ActionOverride("bdlugg",SaveLocation("LOCALS","bd_default_loc",[2720.3805]))
+		ActionOverride("bdlugg",SetGlobal("bd_retreat","locals",1))
+		ActionOverride("bdphosse",SaveLocation("LOCALS","bd_default_loc",[2740.3745]))
+		ActionOverride("bdphosse",SetGlobal("bd_retreat","locals",1))
+END
+
+IF
+	Global("bd_wall_explosion","bd4000",0)  // Dragonspear Castle, Exterior
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,40881)  // The breach in the wall has been recently patched up with wooden planks.
+END
+
+IF
+	GlobalLT("bd_phossey_plot","global",7)
+	GlobalLT("bd_wall_explosion","bd4000",2)  // Dragonspear Castle, Exterior
+	GlobalTimerExpired("bd_wall_explosion_timer","bd4000")  // Dragonspear Castle, Exterior
+THEN
+	RESPONSE #100
+		SetGlobal("bd_phossey_plot","global",7)
+		ActionOverride("bdalmur",FaceObject("wall_breach"))
+		ActionOverride("bdlugg",FaceObject("wall_breach"))
+		ActionOverride("bdphosse",FaceObject("wall_breach"))
+		SmallWait(5)
+		ActionOverride("bdphosse",DisplayStringHead(Myself,38165))  // Oh, magic time.
+		SmallWait(20)
+		SetGlobal("bd_wall_explosion","bd4000",2)  // Dragonspear Castle, Exterior
+END
+
+IF
+	Global("bd_wall_explosion","bd4000",2)  // Dragonspear Castle, Exterior
+THEN
+	RESPONSE #100
+		SetGlobal("bd_wall_explosion","bd4000",3)  // Dragonspear Castle, Exterior
+		SmallWait(5)
+		ScreenShake([100.100],10)
+		CreateVisualEffect("SPFLAST1",[3140.3385])
+		CreateVisualEffect("SPFLAMES",[3085.3430])
+		CreateVisualEffect("SPFLAST1",[3155.3470])
+		CreateVisualEffect("SPFLAMES",[3195.3425])
+		CreateVisualEffect("SPFIREPI",[3155.3430])
+		CreateVisualEffect("SPFLSRIN",[3155.3430])
+		PlaySound("EFF_M36B")
+		ReallyForceSpellPoint([3155.3430],WIZARD_FIREBALL)  // SPWI304.SPL (Fireball)
+		SmallWait(3)
+		ReallyForceSpellPoint([3155.3430],WIZARD_FIREBALL)  // SPWI304.SPL (Fireball)
+		SmallWait(2)
+		CreateVisualEffect("SPFLAMES",[3140.3385])
+		CreateVisualEffect("SPFLAST1",[3085.3430])
+		CreateVisualEffect("SPFLAMES",[3155.3470])
+		CreateVisualEffect("SPFLAST1",[3195.3425])
+		CreateVisualEffect("SPFIREPI",[3155.3430])
+		CreateVisualEffect("SPFLSRIN",[3155.3430])
+		CreateVisualEffect("SPFLAST2",[3155.3430])
+		PlaySound("EFF_M36B")
+		ReallyForceSpellPoint([3155.3430],WIZARD_FIREBALL)  // SPWI304.SPL (Fireball)
+		SmallWait(3)
+		ReallyForceSpellPoint([3155.3430],WIZARD_FIREBALL)  // SPWI304.SPL (Fireball)
+		SmallWait(2)
+		OpenDoor("door04")
+		ScreenShake([100.100],10)
+		CreateVisualEffect("SPFLAST1",[3140.3385])
+		CreateVisualEffect("SPFLAMES",[3085.3430])
+		CreateVisualEffect("SPFLAST1",[3155.3470])
+		CreateVisualEffect("SPFLAMES",[3195.3425])
+		CreateVisualEffect("SPFIREPI",[3155.3430])
+		PlaySound("EFF_M36B")
+		ReallyForceSpellPoint([3155.3430],WIZARD_FIREBALL)  // SPWI304.SPL (Fireball)
+		SmallWait(5)
+		CreateVisualEffect("SPFLAMES",[3140.3385])
+		CreateVisualEffect("SPFLAST1",[3085.3430])
+		CreateVisualEffect("SPFLAMES",[3155.3470])
+		CreateVisualEffect("SPFLAST1",[3195.3425])
+		CreateVisualEffect("SPFIREPI",[3155.3430])
+		SmallWait(5)
+		CreateVisualEffect("SPFLAST1",[3140.3385])
+		CreateVisualEffect("SPFLAMES",[3085.3430])
+		CreateVisualEffect("SPFLAST1",[3155.3470])
+		CreateVisualEffect("SPFLAMES",[3195.3425])
+		SmallWait(10)
+		SetGlobal("bd_phossey_plot","global",8)
+		TriggerActivation("wall_breach",FALSE)
 END
 

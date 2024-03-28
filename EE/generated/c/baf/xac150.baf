@@ -1,0 +1,9 @@
+IF
+	IsActive(Myself)
+	NumberOfTimesTalkedTo(0)
+	See([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet([PC])
+END
+
