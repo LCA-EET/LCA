@@ -1,0 +1,65 @@
+PRINT ~Processing AssetConverter generated elements...~
+//{ MUSIC
+ADD_MUSIC xaf0 ~%MOD_FOLDER%\generated\f\mus\xaf0.mus~
+ADD_MUSIC xaf1 ~%MOD_FOLDER%\generated\f\mus\xaf1.mus~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf0\xaf0a.acm~ ~MUSIC\xaf0\xaf0a.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1a1.acm~ ~MUSIC\xaf1\xaf1a1.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1a2.acm~ ~MUSIC\xaf1\xaf1a2.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1b1.acm~ ~MUSIC\xaf1\xaf1b1.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1b2.acm~ ~MUSIC\xaf1\xaf1b2.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1b3.acm~ ~MUSIC\xaf1\xaf1b3.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1b4.acm~ ~MUSIC\xaf1\xaf1b4.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1c1.acm~ ~MUSIC\xaf1\xaf1c1.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1c2.acm~ ~MUSIC\xaf1\xaf1c2.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1d1.acm~ ~MUSIC\xaf1\xaf1d1.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1d2.acm~ ~MUSIC\xaf1\xaf1d2.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1d3.acm~ ~MUSIC\xaf1\xaf1d3.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1e1.acm~ ~MUSIC\xaf1\xaf1e1.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1e2.acm~ ~MUSIC\xaf1\xaf1e2.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1e3.acm~ ~MUSIC\xaf1\xaf1e3.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1e4.acm~ ~MUSIC\xaf1\xaf1e4.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1enda.acm~ ~MUSIC\xaf1\xaf1enda.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1endb.acm~ ~MUSIC\xaf1\xaf1endb.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1endc.acm~ ~MUSIC\xaf1\xaf1endc.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1f1.acm~ ~MUSIC\xaf1\xaf1f1.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1f2.acm~ ~MUSIC\xaf1\xaf1f2.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1f3.acm~ ~MUSIC\xaf1\xaf1f3.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1g1.acm~ ~MUSIC\xaf1\xaf1g1.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1g2.acm~ ~MUSIC\xaf1\xaf1g2.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1g3a.acm~ ~MUSIC\xaf1\xaf1g3a.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1g4a.acm~ ~MUSIC\xaf1\xaf1g4a.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1h1.acm~ ~MUSIC\xaf1\xaf1h1.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1h2.acm~ ~MUSIC\xaf1\xaf1h2.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1h3.acm~ ~MUSIC\xaf1\xaf1h3.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1i12.acm~ ~MUSIC\xaf1\xaf1i12.acm~
+COPY ~%MOD_FOLDER%\generated\f\mus\xaf1\xaf1xa1.acm~ ~MUSIC\xaf1\xaf1xa1.acm~
+//}
+//are files
+//===================
+ACTION_IF (FILE_EXISTS_IN_GAME ~xaf100.are~) BEGIN
+	PRINT ~Area already exists: xaf100. Skipping...~
+END ELSE BEGIN
+	COPY ~%MOD_FOLDER%\generated\f\are\xaf100.are~ ~override~
+	WRITE_LONG 1584 %xaf0%
+	WRITE_LONG 1588 %xaf0%
+	WRITE_LONG 1596 %xaf1%
+END
+
+//wed files
+//===================
+COPY ~%MOD_FOLDER%\generated\f\wed\xaf100.wed~ ~override~
+
+//tis files
+//===================
+COPY ~%MOD_FOLDER%\generated\f\tis\xaf100.tis~ ~override~
+
+//{ PVRZ
+	COPY ~%MOD_FOLDER%\generated\f\pvrz\xf10000.pvrz~ ~override~
+//}
+
+//bmp files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\f\bmp\xaf100ht.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\f\bmp\xaf100lm.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\f\bmp\xaf100sr.bmp~ ~override~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\generated\f\baf~

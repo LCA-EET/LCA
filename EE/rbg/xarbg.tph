@@ -14,8 +14,40 @@ PRINT @4000  /* ~Processing Return to Baldur's Gate Changes...~ */
 	COPY ~%MOD_FOLDER%/rbg/bam/xaswordi.bam~ ~override~
 //}
 
+//{ Narzugon Animation
+	ACTION_IF (isEET = 0) THEN BEGIN
+		COPY ~%MOD_FOLDER%/rbg/anim/e279.INI~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnosa1.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnosa1e.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnosa2.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnosa2e.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnosca.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnoscae.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnosde.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnosdee.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnosgh.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnosghe.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnosgu.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnosgue.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnossc.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnossce.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnossd.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnossde.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnossl.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnossle.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnossp.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnosspe.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnostw.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnostwe.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnoswk.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mnoswke.BAM~ ~override~
+		APPEND ~animate.ids~ ~0xE279 OROG_SHAMAN~
+	END
+	
+//}
 INCLUDE ~%MOD_FOLDER%/generated/a/generated.tph~
 INCLUDE ~%MOD_FOLDER%/generated/c/generated.tph~
+INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 
 
 //{ Worldmap
@@ -451,15 +483,10 @@ END
 
 ACTION_PHP_EACH bgAreaScripts AS _ => bgArea
 BEGIN
+	// Apply Exploration Script & Bence Spawning Script
 	EXTEND_TOP ~%bgArea%.bcs~ ~%MOD_FOLDER%/rbg/baf/xalcexpl.baf~
 	EXTEND_TOP ~%bgArea%.bcs~ ~%MOD_FOLDER%/rbg/baf/xalcbspw.baf~
 END
-
-//{ Generated Area Modifications
-	//COPY_EXISTING ~xaa106.are~ ~override~
-	//WRITE_LONG 0x60A0 RESOLVE_STR_REF(@4138)
-	//WRITE_LONG 0x65FC RESOLVE_STR_REF(@4138)
-//}
 
 //{ Script Extensions
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~
@@ -472,12 +499,7 @@ END
 	COPY ~%MOD_FOLDER%/rbg/bmp/xaneomas.bmp~ ~override~
 //}
 
-//{ ARE
-	COPY ~%MOD_FOLDER%/rbg/are/xacshow.are~ ~override~
-	COPY ~%MOD_FOLDER%/rbg/are/xahome.are~ ~override~
-	COPY ~%MOD_FOLDER%/rbg/are/xahom2.are~ ~override~
-	
-//}
+
 
 //{ CRE
 
@@ -1004,6 +1026,7 @@ END
 		SAY NAME2 @4049
 			
 		COPY ~%MOD_FOLDER%/rbg/cre/xanarzu.cre~ ~override~
+		WRITE_LONG 0x28 0xE279 // expressed as a hexadecimal
 		SAY NAME1 @4050
 		SAY NAME2 @4050
 		
@@ -1557,6 +1580,19 @@ END
 		WRITE_BYTE 0x564 0
 	//}
 //}
+
+
+
+//{ Kidnap Music
+	ADD_MUSIC xamu04	~%MOD_FOLDER%/rbg/mus/xamu04.mus~
+	COPY ~%MOD_FOLDER%/rbg/mus/xamu04a.acm~ ~MUSIC/xamu04/xamu04a.acm~	
+//}
+
+//{ Sanctum Music
+	ADD_MUSIC xamu05	~%MOD_FOLDER%/rbg/mus/xamu05.mus~
+	COPY ~%MOD_FOLDER%/rbg/mus/xamu05a.acm~ ~MUSIC/xamu05/xamu05a.acm~	
+//}
+
 
 //{ Block A Area Modifications
 	//{ ar0100 xaa229 NW Baldur's Gate
@@ -2183,5 +2219,100 @@ END
 		
 		// Disable NPCs
 		WRITE_LONG 0x154 0 // Gantolandan
+	//}
+//}
+
+
+//{ New ARE
+	//{ Hall of Wonders Cutscene Area
+		COPY ~%MOD_FOLDER%/rbg/are/xacshow.are~ ~override~
+		WRITE_LONG 0x9F4 xaa12
+		WRITE_LONG 0x9F8 xaa12
+		WRITE_LONG 0xA00 0
+	//}
+	
+	//{ Ducal Palace 3FL
+		COPY ~%MOD_FOLDER%/rbg/bmp/xaa625lm.bmp~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/bmp/xaa625sr.bmp~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/bmp/xaa625ht.bmp~ ~override~
+		
+		COPY ~%MOD_FOLDER%/rbg/are/xaduc3.are~ ~override~
+		WRITE_LONG 0x1A2C xaa12
+		WRITE_LONG 0x1A30 xaa13
+	//}
+	
+	//{ Corwin's Home, L1 and L2
+		COPY ~%MOD_FOLDER%/rbg/are/xahome.are~ ~override~
+		WRITE_LONG 0x688 xamu02
+		WRITE_LONG 0x68C xamu02
+		
+		COPY ~%MOD_FOLDER%/rbg/are/xahom2.are~ ~override~
+		WRITE_LONG 0x784 xamu02
+		WRITE_LONG 0x788 xamu02
+	//}
+	
+	//{ Corwin's Home, Rohma Kidnapped
+		COPY ~%MOD_FOLDER%/rbg/are/xakidnap.are~ ~override~
+		WRITE_LONG 0x300 xamu04
+		WRITE_LONG 0x304 xamu04
+	//}
+	
+	
+	
+	//{ Demon's Sanctum
+		COPY_EXISTING ~xaf100.are~ ~override/xademsan.are~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0
+		WRITE_LONG 0x264 0
+		WRITE_LONG 0x374 0
+		WRITE_LONG 0x484 0
+
+		WRITE_LONG 0x5EC 1 // Disable Ambient
+
+		// Add Music
+		WRITE_LONG 0x630 xamu05
+		WRITE_LONG 0x634 xamu05
+		WRITE_LONG 0x63C xaa23
+
+		// Add Area Script
+		WRITE_ASCII 0x94 ~xademsan~ #8
+	//}
+	
+	//{ Lyriel Painting
+		COPY ~%MOD_FOLDER%/rbg/are/xapaint1.are~ ~override~
+	//}
+	
+	//{ Walk Home Cutscene Area
+		COPY ~%MOD_FOLDER%/rbg/are/xawlkhom.are~ ~override~
+		WRITE_LONG 0x5BDC xaa1
+		WRITE_LONG 0x5BE0 xaa1
+		WRITE_LONG 0x5BE8 0
+	//}
+	
+	//{ Dinner Cutscene - Three Old Kegs
+		COPY_EXISTING ~xaa238.are~ ~override/xatok.are~
+		
+		// Disable NPCs
+		WRITE_LONG 0xAE4 0
+		
+		// Deactivate Triggers
+		WRITE_LONG 0xCE0 256
+		WRITE_LONG 0xC1C 256
+	//}
+	
+	//{ Proposal Area
+		COPY_EXISTING ~xaa100.are~ ~override/xawyrm.are~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0
+		WRITE_LONG 0x264 0
+		WRITE_LONG 0x374 0
+		WRITE_LONG 0x484 0
+		WRITE_LONG 0x594 0
+		WRITE_LONG 0x6A4 0
+		WRITE_LONG 0x7B4 0
+		WRITE_LONG 0x30BC xamu03
+		WRITE_LONG 0x30C0 xamu03
 	//}
 //}

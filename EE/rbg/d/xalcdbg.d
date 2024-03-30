@@ -22,6 +22,9 @@ APPEND ~XALCDBG~
 		
 		IF ~~ THEN REPLY @6016 /* ~Adjust Variables~*/
 		GOTO XA_RBG_AdjustVariables
+				
+		IF ~~ THEN REPLY @6054 /* ~Interaction Test~*/
+		GOTO XA_RBG_InteractionTest
 		
 		IF ~~ THEN REPLY @6023 /* ~Change Worldmap (xamaprbg).~*/
 		DO ~
@@ -40,6 +43,28 @@ APPEND ~XALCDBG~
 			DestroySelf()
 		~
 		EXIT	
+	END
+	
+	IF ~~ THEN BEGIN XA_RBG_InteractionTest
+		SAY @6054
+		
+		IF ~~ THEN REPLY @6055
+		DO ~
+			CreateCreature("XANARZU", [-1.-1], N)
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_RBG_Debug
+		
+		IF ~~ THEN REPLY @3012 /*~Exit.~ */
+		GOTO 6
+		
+		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
+		DO ~
+			DestroySelf()
+		~
+		EXIT
 	END
 	
 	IF ~~ THEN BEGIN XA_RBG_CutsceneTest
@@ -303,6 +328,28 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @6053
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XADEMSAN", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XADEMSAN", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XADEMSAN", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XADEMSAN", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XADEMSAN", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XADEMSAN", "", [0.0], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6057
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XADUC3", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XADUC3", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XADUC3", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XADUC3", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XADUC3", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XADUC3", "", [0.0], S))
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @6038
 		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("XAHOME", "", [0.0], S))
@@ -311,6 +358,39 @@ APPEND ~XALCDBG~
 			ActionOverride(Player4, LeaveAreaLUA("XAHOME", "", [0.0], S))
 			ActionOverride(Player5, LeaveAreaLUA("XAHOME", "", [0.0], S))
 			ActionOverride(Player6, LeaveAreaLUA("XAHOME", "", [0.0], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6051
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XAKIDNAP", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAKIDNAP", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAKIDNAP", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAKIDNAP", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAKIDNAP", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAKIDNAP", "", [0.0], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6056
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XAPAINT1", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAPAINT1", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAPAINT1", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAPAINT1", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAPAINT1", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAPAINT1", "", [0.0], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6052
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XAWLHOM", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAWLHOM", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAWLHOM", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAWLHOM", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAWLHOM", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAWLHOM", "", [0.0], S))
 		~
 		EXIT
 		
@@ -324,6 +404,8 @@ APPEND ~XALCDBG~
 			ActionOverride(Player6, LeaveAreaLUA("XAWYRM", "", [0.0], S))
 		~
 		EXIT
+		
+		
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug

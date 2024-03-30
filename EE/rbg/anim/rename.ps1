@@ -1,0 +1,1 @@
+Get-ChildItem -Path "F:\BGModding - LCA\Game\00783\LCA\EE\rbg\anim\*.bam" -File | Rename-Item -NewName {$_.Name -replace "mnos", "xanz" }

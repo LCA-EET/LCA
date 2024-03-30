@@ -1,4 +1,13 @@
 IF
+	GlobalLT("XA_NarzuSpawn", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("XANARZU", [317.180], S)
+		SetGlobal("XA_NarzuSpawn", "MYAREA", 1)
+		Continue()
+END
+
+IF
 	Global("XA_DemonDead", "GLOBAL", 3)
 THEN
 	RESPONSE #100
