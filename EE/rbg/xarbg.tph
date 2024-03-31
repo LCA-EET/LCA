@@ -1713,6 +1713,27 @@ END
 		WRITE_LONG 0x154 0 // Areana
 	//}
 	
+	//{ ar0123 xaa561
+		EXTEND_TOP ~xaas561.bcs~ 	~%MOD_FOLDER%/rbg/baf/xauc.baf~
+	
+		COPY_EXISTING ~xaa561.are~ ~override~
+		
+		// Deactivate Exit Back to Maze
+		WRITE_LONG 0x1560 256
+		
+		// Replace Ambush Party with Shadows
+		WRITE_ASCII 0x2AC ~SHADFI01~ #8
+		WRITE_ASCII 0x3BC ~SHADOW01~ #8
+		WRITE_ASCII 0x4CC ~SHADFI01~ #8
+		WRITE_ASCII 0x5DC ~SHADOW01~ #8
+		WRITE_ASCII 0x6EC ~SHADFI01~ #8
+		WRITE_ASCII 0x7FC ~SHADOW01~ #8
+		
+		// Replace Magma Bulwark with Healing Potions
+		WRITE_ASCII 0x1FEC ~POTN55~ #8
+		WRITE_SHORT 0x1FF6 2
+	//}
+	
 	//{ ar0126 xaa357 Ragefast's Home
 		COPY_EXISTING ~xaa357.are~ ~override~
 		
