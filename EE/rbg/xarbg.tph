@@ -497,6 +497,7 @@ END
 //{ BMP
 	COPY ~%MOD_FOLDER%/rbg/bmp/xanarzus.bmp~ ~override~
 	COPY ~%MOD_FOLDER%/rbg/bmp/xaneomas.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/bmp/xaf100lm.bmp~ ~override~
 //}
 
 
@@ -504,6 +505,15 @@ END
 //{ CRE
 
 	//{ Block A Base
+		COPY_EXISTING ~xaa100.cre~ ~override/xasarevo.cre~
+		WRITE_ASCII 0x2CC ~xasarevo~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xasarevo~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~xasarevo~ #8		// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~wtasight~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~~ #8		// Default Script
+	
 		COPY_EXISTING ~xaa108.cre~ ~override~
 		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
 		
@@ -763,6 +773,7 @@ END
 		WRITE_ASCII 0x260 ~xamerlea~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
+		
 		COPY_EXISTING ~xaa1212.cre~ ~override~ // Merchant's League Bartender
 		WRITE_ASCII 0x258 ~xamerchg~ #8		// Race Script
 		WRITE_ASCII 0x2CC ~xabartml~ #8 	// Dialogue
@@ -780,6 +791,16 @@ END
 		COPY_EXISTING ~xaa1257.cre~ ~override~ // Silvershield Servant
 		WRITE_ASCII 0x2CC ~xaserva2~ #8 	// Dialogue
 		
+		COPY_EXISTING ~xaa1348.cre~ ~override/xasemaj.cre~ // Semaj
+		WRITE_ASCII 0x2CC ~~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xasemaj~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~shout~ #8		// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~xasemaj~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+		
+		
 		COPY_EXISTING ~xaa1385.cre~ ~override/xacurato.cre~ // Curator Magda
 		SAY NAME1 @4048 /* Curator Magda */
 		SAY NAME2 @4048
@@ -790,7 +811,46 @@ END
 		WRITE_ASCII 0x258 ~~ #8		// Race Script
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
-			
+		
+		COPY_EXISTING ~xaa1398.cre~ ~override/xazhalim.cre~ // Zhalimar
+		WRITE_ASCII 0x2CC ~~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xazhalim~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~shout~ #8		// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~wtarsgt~ #8		// Default Script
+		
+		COPY_EXISTING ~xaa1400.cre~ ~override/xaaasim.cre~ // Aasim
+		WRITE_ASCII 0x2CC ~~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xaaasim~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~shout~ #8		// Override Script
+		WRITE_ASCII 0x250 ~priest5~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+		
+		COPY_EXISTING ~xaa1401.cre~ ~override/xadiyab.cre~ // Diyab
+		WRITE_ASCII 0x2CC ~~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xadiyab~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~shout~ #8		// Override Script
+		WRITE_ASCII 0x250 ~priest5~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+		
+		COPY_EXISTING ~xaa1402.cre~ ~override/xagardus.cre~ // Gardus
+		WRITE_ASCII 0x2CC ~~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xagardus~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~shout~ #8		// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+		
+		
+		
+		
 		COPY_EXISTING ~xaa130.sto~ ~override/xabartml.sto~ // Merchants' League Bar
 		WRITE_LONG 0xC RESOLVE_STR_REF(@4149)
 	
@@ -842,7 +902,7 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xac106.cre~ ~override/xakent.cre~ // Kent
+		COPY_EXISTING ~xac105.cre~ ~override/xakent.cre~ // Kent
 		WRITE_ASCII 0x2CC ~xakent~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xakent~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~~ #8		// Override Script
@@ -852,6 +912,8 @@ END
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
 		COPY_EXISTING ~xac106.cre~ ~override/xabeno.cre~ // bdfamari
+		ADD_CRE_ITEM ~xbow04~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON2~
+		ADD_CRE_ITEM ~bolt01~ #20 #0 #0 ~IDENTIFIED~ ~QUIVER1~
 		WRITE_ASCII 0x2CC ~xabeno~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xabeno~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~~ #8		// Override Script
@@ -896,15 +958,21 @@ END
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 	//}
 	
+	//{ Block F Base
+		COPY_EXISTING ~xaf100.cre~ ~override/xaangelo.cre~ // Angelo
+		WRITE_ASCII 0x2CC ~~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xaangelo~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~shout~ #8		// Override Script
+		WRITE_ASCII 0x250 ~mage3~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+	//}
+	
 	//{ BG2 Base
 		COPY_EXISTING ~chicke.cre~ ~override/xachick.cre~ // Chicken
 		WRITE_ASCII 0x2CC ~xachick~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8		// Override Script
 		WRITE_ASCII 0x250 ~xachick~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
 		COPY_EXISTING ~neb.cre~ ~override/xaneb.cre~ // Flaming Fist Enforcer
 		WRITE_LONG 0x14 7000	// XP Value
@@ -912,11 +980,7 @@ END
 		WRITE_SHORT 0x26 145	// Max HP
 		WRITE_ASCII 0x2CC ~xaneb~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xaneb~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~shoutdlg~ #8		// Override Script
 		WRITE_ASCII 0x250 ~xaneb~ #8		// Class Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
 		COPY_EXISTING ~amcust02.cre~ ~override/xarbnb02.cre~
 		SAY NAME1 @4140
@@ -959,12 +1023,7 @@ END
 	//{ ToB Base
 		COPY_EXISTING ~illasera.cre~ ~override/xaillase.cre~ // Illasera
 		WRITE_ASCII 0x2CC ~xaillase~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8		// Override Script
 		WRITE_ASCII 0x250 ~xaillase~ #8	// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
 	//}
 	
 	COPY_EXISTING ~xalcspy.cre~ ~override/xahowspy.cre~ // Hall of Wonders Spy
@@ -1016,6 +1075,8 @@ END
 		COPY ~%MOD_FOLDER%/rbg/cre/xacc3.cre~ ~override~
 		SAY NAME1 @2010
 		SAY NAME2 @2010
+		
+		COPY ~%MOD_FOLDER%/rbg/cre/xagorion.cre~ ~override~
 		
 		COPY ~%MOD_FOLDER%/rbg/cre/xajasper.cre~ ~override~
 		SAY NAME1 @4092
@@ -1593,6 +1654,15 @@ END
 	COPY ~%MOD_FOLDER%/rbg/mus/xamu05a.acm~ ~MUSIC/xamu05/xamu05a.acm~	
 //}
 
+//{ Kidnap Quest End Music
+	ADD_MUSIC xamu06	~%MOD_FOLDER%/rbg/mus/xamu06.mus~
+	COPY ~%MOD_FOLDER%/rbg/mus/xamu06a.acm~ ~MUSIC/xamu06/xamu06a.acm~	
+//}
+
+//{ Preparations Music
+	ADD_MUSIC xamu07	~%MOD_FOLDER%/rbg/mus/xamu07.mus~
+	COPY ~%MOD_FOLDER%/rbg/mus/xamu07a.acm~ ~MUSIC/xamu07/xamu07a.acm~	
+//}
 
 //{ Block A Area Modifications
 	//{ ar0100 xaa229 NW Baldur's Gate
@@ -1732,6 +1802,10 @@ END
 		// Replace Magma Bulwark with Healing Potions
 		WRITE_ASCII 0x1FEC ~POTN55~ #8
 		WRITE_SHORT 0x1FF6 2
+		
+		// Replace Battle Song
+		WRITE_LONG 0x2438 xaf3
+		
 	//}
 	
 	//{ ar0126 xaa357 Ragefast's Home
@@ -2243,13 +2317,45 @@ END
 	//}
 //}
 
+//{ Block C Area Modifications
+	//{ ar2612 xac100 Candlekeep - Gorion's Quarters
+		COPY_EXISTING ~xac100.are~ ~override/xag3.are~
+		
+		// Change Area Script
+		WRITE_ASCII 0x94 ~xag3~ #8 
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0
+		WRITE_LONG 0x264 0
+		
+		// Disable Triggers
+		WRITE_LONG 0x460 256
+		WRITE_LONG 0x39C 256
+	//}
+//}
 
 //{ New ARE
+	
+
 	//{ Hall of Wonders Cutscene Area
 		COPY ~%MOD_FOLDER%/rbg/are/xacshow.are~ ~override~
+		
+		// Replace Music
 		WRITE_LONG 0x9F4 xaa12
 		WRITE_LONG 0x9F8 xaa12
 		WRITE_LONG 0xA00 0
+	//}
+	
+	//{ Ducal Palace 1FL (Kidnap)
+		COPY ~%MOD_FOLDER%/rbg/are/xaducal.are~ ~override~
+		WRITE_LONG 0x99C xamu07
+		WRITE_LONG 0x9A0 xamu07
+	//}
+	
+	//{ Ducal Palace 2FL (Debrief)
+		COPY ~%MOD_FOLDER%/rbg/are/xaducal2.are~ ~override~
+		WRITE_LONG 0x11B8 xaa12
+		WRITE_LONG 0x11BC xaa13
 	//}
 	
 	//{ Ducal Palace 3FL
@@ -2258,8 +2364,15 @@ END
 		COPY ~%MOD_FOLDER%/rbg/bmp/xaa625ht.bmp~ ~override~
 		
 		COPY ~%MOD_FOLDER%/rbg/are/xaduc3.are~ ~override~
-		WRITE_LONG 0x1A2C xaa12
-		WRITE_LONG 0x1A30 xaa13
+		WRITE_LONG 0x1A2C xamu06
+		WRITE_LONG 0x1A30 xamu06
+	//}
+	
+	//{ Painting Two
+		COPY ~%MOD_FOLDER%/rbg/are/xag2.are~ ~override~
+		WRITE_LONG 0x59B0 xad1
+		WRITE_LONG 0x59B4 xad2
+		WRITE_LONG 0x59BC xaa9
 	//}
 	
 	//{ Corwin's Home, L1 and L2
@@ -2306,9 +2419,18 @@ END
 	
 	//{ Walk Home Cutscene Area
 		COPY ~%MOD_FOLDER%/rbg/are/xawlkhom.are~ ~override~
+		
+		// Replace Music
 		WRITE_LONG 0x5BDC xaa1
 		WRITE_LONG 0x5BE0 xaa1
 		WRITE_LONG 0x5BE8 0
+	//}
+	
+	//{ Undercity Temple
+		COPY ~%MOD_FOLDER%/rbg/are/xauctemp.are~ ~override~
+		
+		// Battle Music
+		WRITE_LONG 0x1364 xaa22
 	//}
 	
 	//{ Dinner Cutscene - Three Old Kegs
@@ -2336,4 +2458,11 @@ END
 		WRITE_LONG 0x30BC xamu03
 		WRITE_LONG 0x30C0 xamu03
 	//}
+//}
+
+//{ Script & Dialogue Music
+	COPY_EXISTING ~xanarzu.dlg~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY ~PlaySong(1023)~ ~PlaySong(%xaa23%)~
+	END
 //}

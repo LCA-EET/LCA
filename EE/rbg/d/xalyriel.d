@@ -364,9 +364,6 @@ IF ~~ THEN BEGIN XA_WhyAmIHere2
 	
 	IF ~~ THEN REPLY @24 /* ~Yes. (Tell her the story of Irenicus and Ellesime.)~ */
 	GOTO XA_WhyAmIHere3A //OK
-	
-	IF ~~ THEN REPLY @25 /* ~She is.~ */
-	GOTO XA_WhyAmIHere3B //OK
 END
 
 IF ~~ THEN BEGIN XA_WhyAmIHere3A

@@ -12,8 +12,8 @@ THEN
 		ActionOverride(Player4, LeaveAreaLUA("XAPAINT1", "", [300.400], NE))
 		ActionOverride(Player5, LeaveAreaLUA("XAPAINT1", "", [300.400], NE))
 		ActionOverride(Player6, LeaveAreaLUA("XAPAINT1", "", [300.400], NE))
-		FadeFromColor([30.0],0)
-		Wait(1)
 		SetGlobal("XA_SanctumCS_End", "GLOBAL", 1)
+		SetGlobal("XA_EnterSanctum", "GLOBAL", 1)
+		
 		EndCutSceneMode()
 END

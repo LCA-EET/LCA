@@ -1,4 +1,11 @@
 IF
+	!HasItemEquipedReal("XBOW04", "XABENO")
+THEN
+	RESPONSE #100
+		ActionOverride("XABENO", EquipRanged())
+END
+
+IF
 	GlobalLT("XA_IllaseraDead", "GLOBAL", 1)
 	Dead("illasera")
 	OR(2)

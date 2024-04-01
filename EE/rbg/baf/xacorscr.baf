@@ -248,7 +248,7 @@ IF
 	OR(5)
 		AreaCheck("XADEMSAN")
 		AreaCheck("XAG1")
-		AreaCheck("XAG2A")
+		AreaCheck("XAG2")
 		AreaCheck("XAG3")
 		AreaCheck("XAPAINT1")
 THEN
@@ -263,7 +263,7 @@ IF
 	Global("XA_TrappedInDemonPrison", "GLOBAL", 1)
 	!AreaCheck("XADEMSAN")
 	!AreaCheck("XAG1")
-	!AreaCheck("XAG2A")
+	!AreaCheck("XAG2")
 	!AreaCheck("XAG3")
 	!AreaCheck("XAPAINT1")
 THEN

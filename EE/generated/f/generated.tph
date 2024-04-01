@@ -105,6 +105,18 @@ END ELSE BEGIN
 	WRITE_LONG 1036 %xaf3%
 END
 
+//cre files
+//===================
+COPY ~%MOD_FOLDER%\generated\f\cre\xaf100.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@25003) /*~Angelo~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@25004) /*~Angelo~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@25005) /*~ So, these are the infamous murderers, finally brought to justice.~[xaf10003]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@25006) /*~ Dreadfully sorry, but I'm afraid... I'm gonna have ta kill ya.~[xaf10004]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@25007) /*~~[xaf10005]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@25008) /*~~[xaf10006]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@25009) /*~ Justice may be blind, but I'm not.~[xaf10007]*/
+
+
 //wed files
 //===================
 COPY ~%MOD_FOLDER%\generated\f\wed\xaf100.wed~ ~override~
@@ -114,6 +126,11 @@ COPY ~%MOD_FOLDER%\generated\f\wed\xaf101.wed~ ~override~
 //===================
 COPY ~%MOD_FOLDER%\generated\f\wav\xaf10001.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\f\wav\xaf10002.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\f\wav\xaf10003.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\f\wav\xaf10004.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\f\wav\xaf10005.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\f\wav\xaf10006.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\f\wav\xaf10007.wav~ ~override~
 
 //baf files
 //===================

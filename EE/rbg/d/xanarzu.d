@@ -8,6 +8,7 @@ IF ~
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_ConfrontDemon", "GLOBAL", 2)
+		PlaySong(1023)
 	~
 	GOTO XA_ConfrontDemon2
 END

@@ -11615,14 +11615,16 @@ Weight: 1~
 
 
 //{ Block F Translations
-@25000 = ~Stone Golem~
-@25001 = ~Stone Golem~
-@25002 = ~Stone Golem~
-@25003 = ~Stone Golem~
-@25004 = ~Stone Golem~
-@25005 = ~Stone Golem~
-@25006 = ~Stone Golem~
-@25007 = ~Stone Golem~
+@25000 = ~Exit~
+@25001 = ~Exit~
+@25002 = ~Exit~
+@25003 = ~Angelo~
+@25004 = ~Angelo~
+@25005 = ~ So, these are the infamous murderers, finally brought to justice.~[xaf10003]
+@25006 = ~ Dreadfully sorry, but I'm afraid... I'm gonna have ta kill ya.~[xaf10004]
+@25007 = ~~[xaf10005]
+@25008 = ~~[xaf10006]
+@25009 = ~ Justice may be blind, but I'm not.~[xaf10007]
 //}
 
 //{ Block D Translations

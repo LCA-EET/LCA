@@ -84,6 +84,13 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @6061 
+		DO ~
+			StartCutSceneMode()
+			StartCutscene("XAG3ENT")
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
@@ -304,7 +311,16 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
-		
+		IF ~~ THEN REPLY @6059
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XAA561", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAA561", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAA561", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAA561", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAA561", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAA561", "", [0.0], S))
+		~
+		EXIT
 		
 		IF ~~ THEN REPLY @6042
 		DO ~
@@ -350,6 +366,28 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @6062
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XAG2", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAG2", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAG2", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAG2", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAG2", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAG2", "", [0.0], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6060
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XAG3", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAG3", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAG3", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAG3", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAG3", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAG3", "", [0.0], S))
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @6038
 		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("XAHOME", "", [0.0], S))
@@ -380,6 +418,19 @@ APPEND ~XALCDBG~
 			ActionOverride(Player4, LeaveAreaLUA("XAPAINT1", "", [0.0], S))
 			ActionOverride(Player5, LeaveAreaLUA("XAPAINT1", "", [0.0], S))
 			ActionOverride(Player6, LeaveAreaLUA("XAPAINT1", "", [0.0], S))
+		~
+		EXIT
+		
+		
+		
+		IF ~~ THEN REPLY @6058
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XAUCTEMP", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAUCTEMP", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAUCTEMP", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAUCTEMP", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAUCTEMP", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAUCTEMP", "", [0.0], S))
 		~
 		EXIT
 		

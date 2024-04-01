@@ -18,12 +18,9 @@ IF
 	See([PC])
 THEN
 	RESPONSE #100
-		DisplayString(Myself,224097)  // Contingency Released
 		ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
-		DisplayString(Myself,224097)  // Contingency Released
 		ReallyForceSpell([PC],WIZARD_GREATER_MALISON)  // SPWI412.SPL (Greater Malison)
 		Wait(1)
-		DisplayString(Myself,224098)  // Tattoo of Power Released
 		ReallyForceSpell([PC],0)
 		SetGlobal("SemajBehavior","GLOBAL",1)
 END
@@ -64,9 +61,7 @@ IF
 	See([PC])
 THEN
 	RESPONSE #100
-		DisplayString(Myself,224099)  // Magic Staff Released
 		ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Mirror Image)
-		DisplayString(Myself,224098)  // Tattoo of Power Released
 		ReallyForceSpell([PC],WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
 		Spell([PC],WIZARD_CLOUDKILL)  // SPWI502.SPL (Cloudkill)
 		SetGlobal("SemajBehavior","GLOBAL",4)
@@ -78,9 +73,7 @@ IF
 	See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		DisplayString(Myself,224099)  // Magic Staff Released
 		ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Mirror Image)
-		DisplayString(Myself,224098)  // Tattoo of Power Released
 		ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
 		Spell(NearestEnemyOf(Myself),WIZARD_CLOUDKILL)  // SPWI502.SPL (Cloudkill)
 		SetGlobal("SemajBehavior","GLOBAL",4)
@@ -112,7 +105,6 @@ IF
 	See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		DisplayString(Myself,224098)  // Tattoo of Power Released
 		ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Mirror Image)
 		Spell(NearestEnemyOf(Myself),WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Lightning Bolt)
 		SetGlobal("SemajBehavior","GLOBAL",7)
