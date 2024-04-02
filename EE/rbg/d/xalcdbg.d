@@ -84,6 +84,13 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @6063 
+		DO ~
+			StartCutSceneMode()
+			StartCutscene("XAG2ENT")
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @6061 
 		DO ~
 			StartCutSceneMode()

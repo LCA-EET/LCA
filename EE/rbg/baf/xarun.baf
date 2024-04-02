@@ -1,9 +1,11 @@
 IF 
-	!Global("XA_ChangeClass", "LOCALS", 1)
+	GlobalLT("XA_ChangeClass", "LOCALS", 1)
 THEN
 	RESPONSE #100
+		SetInterrupt(FALSE)
 		ChangeClass(Myself, 0)
 		SetGlobal("XA_ChangeClass", "LOCALS", 1)
+		SetInterrupt(TRUE)
 END
 
 IF

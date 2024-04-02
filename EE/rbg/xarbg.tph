@@ -1066,6 +1066,7 @@ END
 	SAY NAME1 @4072
 	SAY NAME2 @4072
 	WRITE_ASCII 0x280 ~xaffexec~ #20  	// Script Name
+	WRITE_ASCII 0x2CC ~xaffexec~ #8 	// Dialogue
 	
 	//{ New CRE
 		COPY ~%MOD_FOLDER%/rbg/cre/xaaudam2.cre~ ~override~
@@ -2370,9 +2371,9 @@ END
 	
 	//{ Painting Two
 		COPY ~%MOD_FOLDER%/rbg/are/xag2.are~ ~override~
-		WRITE_LONG 0x59B0 xad1
-		WRITE_LONG 0x59B4 xad2
-		WRITE_LONG 0x59BC xaa9
+		WRITE_LONG 0x59B0 xaa21
+		WRITE_LONG 0x59B4 xaa21
+		WRITE_LONG 0x59BC xaa22
 	//}
 	
 	//{ Corwin's Home, L1 and L2
