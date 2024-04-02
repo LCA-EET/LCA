@@ -1,0 +1,9 @@
+// Override Script
+IF
+	GlobalLT("XA_CrusaderEnemy", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		ChangeEnemyAlly(Myself, ENEMY)
+		SetGlobal("XA_CrusaderEnemy", "LOCALS", 1)
+		Continue()
+END

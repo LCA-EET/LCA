@@ -391,627 +391,886 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac119.cre~ ~override~
 	WRITE_LONG 12 RESOLVE_STR_REF(@45252) /*~Grimgor~*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac120.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45253) /*~Priest of Oghma~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45254) /*~Priest of Oghma~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@45255) /*~ These walls contain the world's knowledge.~[xac10218]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45256) /*~~[xac10219]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45257) /*~~[xac10220]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45258) /*~ Wisdom is only possessed by the learned.~[xac10221]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45259) /*~ These walls contain the world's knowledge.~[xac10218]*/
-	WRITE_LONG 304 RESOLVE_STR_REF(@45260) /*~ ~[xac10223]*/
-	WRITE_LONG 308 RESOLVE_STR_REF(@45261) /*~ ~[xac10224]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45253) /*~Ferrusk~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45254) /*~Ferrusk~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45255) /*~~[xac10218]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45256) /*~~[xac10219]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac121.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45262) /*~Piato~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45263) /*~Piato~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@45264) /*~ Our library is a man's harem of knowledge.~[xac10225]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45265) /*~~[xac10226]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45266) /*~~[xac10227]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45267) /*~ Our library is a man's harem of knowledge.~[xac10225]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45268) /*~ Oh—'scuse me, but I am late for my classes.~[xac10229]*/
-	WRITE_LONG 304 RESOLVE_STR_REF(@45269) /*~ Oh—'scuse me, but I am late for my classes.~[xac10229]*/
-	WRITE_LONG 308 RESOLVE_STR_REF(@45270) /*~ Oh—'scuse me, but I am late for my classes.~[xac10229]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45257) /*~Daggerford Militia~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45258) /*~Daggerford Militia~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45259) /*~ By Moradin's hammer.~[xac10220]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45260) /*~~[xac10221]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45261) /*~~[xac10222]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45262) /*~ I need a swig o' some strong dwarven ale.~[xac10223]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45263) /*~ Me temper's bad enough without ye botherin' me.~[xac10224]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45264) /*~ Your chatterin's startin' to wear on me nerves.~[xac10225]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac122.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45271) /*~Crusader Guard~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45272) /*~Crusader Guard~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45273) /*~For the Shining Lady!~[xac10232]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45274) /*~You need somethin'?~[xac10233]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45275) /*~We serve the light.~[xac10234]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45265) /*~Daggerford Militia~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45266) /*~Daggerford Militia~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45267) /*~Defend our allies!~[xac10226]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45268) /*~Yes?~[xac10227]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45269) /*~I'm here to fight.~[xac10228]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac123.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45276) /*~Crusader Officer~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45277) /*~Crusader Officer~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45278) /*~~[xac10235]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45279) /*~~[xac10236]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45280) /*~ The Fair Folk rarely have time for small talk.~[xac10237]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45281) /*~ Troubled times are upon us.~[xac10238]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45282) /*~ Soon, we shall all be together upon Evermeet.~[xac10239]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45270) /*~Daggerford Militia~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45271) /*~Daggerford Militia~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45272) /*~Kill 'em all!~[xac10229]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45273) /*~We're few but fierce!~[xac10230]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45274) /*~Soon we march.~[xac10231]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac124.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45283) /*~Mercenary~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45284) /*~Mercenary~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45275) /*~Daggerford Militia~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45276) /*~Daggerford Militia~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@45277) /*~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45278) /*~~[xac10233]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45279) /*~~[xac10234]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45280) /*~ Nasty times are comin', I reckon.~[xac10235]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45281) /*~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45282) /*~ Queer things have been afoot lately.~[xac10237]*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@45283) /*~ I wish I had my old tobacco pipe.~[xac10238]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac125.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45285) /*~Crusader Guard~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45286) /*~Crusader Guard~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45287) /*~Die in her name!~[xac10240]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45288) /*~Somethin' you need?~[xac10182]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45289) /*~As the light wills.~[xac10183]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45284) /*~Flaming Fist Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45285) /*~Flaming Fist Mercenary~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45286) /*~Punish the lawbreakers!~[xac10239]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45287) /*~We're more than mercenaries.~[xac10240]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45288) /*~War is almost here.~[xac10241]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac126.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45290) /*~Crusader Guard~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45291) /*~Crusader Guard~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45292) /*~I'll test your mettle with cold steel!~[xac10243]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45293) /*~~[xac10244]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45294) /*~~[xac10245]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45295) /*~Declare yourself!~[xac10246]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45296) /*~Do not disturb my duties.~[xac10247]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45297) /*~At ease, citizen.~[xac10248]*/
-	WRITE_LONG 280 RESOLVE_STR_REF(@45298) /*~I trust you have no hostile intentions.~[xac10249]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45289) /*~Flaming Fist Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45290) /*~Flaming Fist Mercenary~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45291) /*~Punish the lawbreakers!~[xac10239]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45292) /*~We're more than mercenaries.~[xac10240]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45293) /*~War is almost here.~[xac10241]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac127.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45299) /*~Crusader Guard~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45300) /*~Crusader Guard~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45301) /*~ ~[xac10196]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45302) /*~ ~[xac10197]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45303) /*~ Good day and hello to you.~[xac10198]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45304) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45305) /*~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45294) /*~Flaming Fist Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45295) /*~Flaming Fist Mercenary~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45296) /*~Show them our steel!~[xac10245]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45297) /*~Order is what matters.~[xac10246]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45298) /*~For Baldur's Gate.~[xac10247]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac128.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45306) /*~Mercenary~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45307) /*~Mercenary~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45308) /*~ Spare no one!~[xac10255]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45309) /*~ You be quiet!~[xac10256]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45310) /*~ Forward march!~[xac10257]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45299) /*~Flaming Fist Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45300) /*~Flaming Fist Mercenary~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45301) /*~Show them our steel!~[xac10245]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45302) /*~Order is what matters.~[xac10246]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45303) /*~For Baldur's Gate.~[xac10247]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac129.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45311) /*~Crusader Guard~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45312) /*~Crusader Guard~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45313) /*~ By Moradin's hammer.~[xac10258]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45314) /*~~[xac10259]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45315) /*~~[xac10260]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45316) /*~ I need a swig o' some strong dwarven ale.~[xac10261]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45317) /*~ Me temper's bad enough without ye botherin' me.~[xac10262]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45318) /*~ Your chatterin's startin' to wear on me nerves.~[xac10263]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45304) /*~Flaming Fist Watcher~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45305) /*~Flaming Fist Watcher~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45306) /*~ ~[xac10251]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45307) /*~ ~[xac10252]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45308) /*~ Helm sees all. Know that and be judged!~[xac10253]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45309) /*~ The Vigilant One knows of all your sins.~[xac10254]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac130.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45319) /*~Crusader Guard~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45320) /*~Crusader Guard~*/
-	WRITE_LONG 168 RESOLVE_STR_REF(@45321) /*~Nooooooo!~[xac10264]*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45322) /*~RAAAHHHHR! You die! You die!~[xac10265]*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@45323) /*~I will crush you, puny one!~[xac10266]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45324) /*~~[xac10267]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45325) /*~~[xac10268]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45326) /*~Uhh? What you want?~[xac10269]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45327) /*~I watching you!~[xac10270]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45328) /*~Speak, manling. Speak quick!~[xac10271]*/
-	WRITE_LONG 280 RESOLVE_STR_REF(@45329) /*~You and my kind not get along!~[xac10272]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45310) /*~Flaming Fist Battlemage~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45311) /*~Flaming Fist Battlemage~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45312) /*~Punish the lawbreakers!~[xac10239]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45313) /*~We're more than mercenaries.~[xac10240]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45314) /*~War is almost here.~[xac10241]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac131.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45315) /*~Flaming Fist Veteran~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45316) /*~Flaming Fist Veteran~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45317) /*~Show them our steel!~[xac10245]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45318) /*~Order is what matters.~[xac10246]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45319) /*~For Baldur's Gate.~[xac10247]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac132.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45330) /*~Mercenary~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45331) /*~Mercenary~*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45332) /*~If I get paid, I fight.~[xac10273]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45333) /*~I like smashin' heads.~[xac10274]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45320) /*~Waterdhavian Soldier~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45321) /*~Waterdhavian Soldier~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45322) /*~To arms! To arms!~[xac10261]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45323) /*~Still we wait.~[xac10262]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45324) /*~The City of Splendors is my home.~[xac10263]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac133.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45334) /*~Mercenary~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45335) /*~Mercenary~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45336) /*~I'll test your mettle with cold steel!~[xac10243]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45337) /*~~[xac10244]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45338) /*~~[xac10245]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45339) /*~Declare yourself!~[xac10246]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45340) /*~Do not disturb my duties.~[xac10247]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45341) /*~At ease, citizen.~[xac10248]*/
-	WRITE_LONG 280 RESOLVE_STR_REF(@45342) /*~I trust you have no hostile intentions.~[xac10249]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45325) /*~Waterdhavian Soldier~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45326) /*~Waterdhavian Soldier~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45327) /*~ By Moradin's hammer.~[xac10220]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45328) /*~~[xac10221]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45329) /*~~[xac10222]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45330) /*~ I need a swig o' some strong dwarven ale.~[xac10223]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45331) /*~ Me temper's bad enough without ye botherin' me.~[xac10224]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45332) /*~ Your chatterin's startin' to wear on me nerves.~[xac10225]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac134.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45343) /*~Mercenary~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45344) /*~Mercenary~*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45345) /*~If I get paid, I fight.~[xac10273]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45346) /*~I like smashin' heads.~[xac10274]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45333) /*~Waterdhavian Soldier~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45334) /*~Waterdhavian Soldier~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45335) /*~Lift up your blades and fight!~[xac10270]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45336) /*~For Waterdeep.~[xac10271]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45337) /*~What is it?~[xac10272]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac135.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45338) /*~Waterdhavian Soldier~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45339) /*~Waterdhavian Soldier~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45340) /*~ ~[xac10196]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45341) /*~ ~[xac10197]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45342) /*~ Good day and hello to you.~[xac10198]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45343) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45344) /*~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac136.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45345) /*~Crusader Archer~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45346) /*~Crusader Archer~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45347) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45348) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45349) /*~We serve the light.~[xac10280]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac137.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45347) /*~Mercenary~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45348) /*~Mercenary~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45349) /*~For the Shining Lady!~[xac10232]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45350) /*~You need somethin'?~[xac10233]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45351) /*~We serve the light.~[xac10234]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45350) /*~Crusader~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45351) /*~Crusader~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@45352) /*~ A pleasure it is to meet ya.~[xac10281]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45353) /*~ A stout hammer will fix most any bandit.~[xac10282]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45354) /*~~[xac10283]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45355) /*~~[xac10284]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45356) /*~ A pleasure it is to meet ya.~[xac10281]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45357) /*~ You canna get better than the stability stone walls provide.~[xac10286]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac138.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45352) /*~Mercenary~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45353) /*~Mercenary~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45354) /*~ By Moradin's hammer.~[xac10258]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45355) /*~~[xac10259]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45356) /*~~[xac10260]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45357) /*~ I need a swig o' some strong dwarven ale.~[xac10261]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45358) /*~ Me temper's bad enough without ye botherin' me.~[xac10262]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45359) /*~ Your chatterin's startin' to wear on me nerves.~[xac10263]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45358) /*~Crusader~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45359) /*~Crusader~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45360) /*~~[xac10287]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45361) /*~~[xac10288]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45362) /*~ The Fair Folk rarely have time for small talk.~[xac10289]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45363) /*~ Troubled times are upon us.~[xac10290]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45364) /*~ Soon, we shall all be together upon Evermeet.~[xac10291]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac139.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45360) /*~Crusader Commander~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45361) /*~Crusader Commander~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45362) /*~For the Shining Lady!~[xac10232]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45363) /*~You need somethin'?~[xac10233]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45364) /*~We serve the light.~[xac10234]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45365) /*~Crusader Recruit~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45366) /*~Crusader Recruit~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45367) /*~Die in her name!~[xac10292]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45368) /*~Somethin' you need?~[xac10182]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45369) /*~As the light wills.~[xac10183]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac140.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45365) /*~Sindret~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45366) /*~Sindret~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45370) /*~Crusader Recruit~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45371) /*~Crusader Recruit~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@45372) /*~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45373) /*~~[xac10233]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45374) /*~~[xac10234]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45375) /*~ Nasty times are comin', I reckon.~[xac10235]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45376) /*~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45377) /*~ Queer things have been afoot lately.~[xac10237]*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@45378) /*~ I wish I had my old tobacco pipe.~[xac10238]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac141.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45367) /*~Troll~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45368) /*~Troll~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45379) /*~Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45380) /*~Mercenary~*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac142.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45369) /*~Troll Wrangler~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45370) /*~Troll Wrangler~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@45371) /*~Stay back, or you'll regret it.~[xac10296]*/
-	WRITE_LONG 168 RESOLVE_STR_REF(@45372) /*~I give! I give!~[xac10297]*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45373) /*~All right! You and me! Let's go!~[xac10298]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45374) /*~~[xac10299]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45375) /*~~[xac10300]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45376) /*~I can break an arm or a leg fer a copper or two.~[xac10301]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45377) /*~Ahhh, be off with ya.~[xac10302]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45378) /*~Ye're a piece o' iron, you are.~[xac10303]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45381) /*~Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45382) /*~Mercenary~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45383) /*~ Spare no one!~[xac10302]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45384) /*~ You be quiet!~[xac10303]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45385) /*~ Forward march!~[xac10304]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac143.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45379) /*~Crusader~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45380) /*~Crusader~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45381) /*~For the Shining Lady!~[xac10232]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45382) /*~You need somethin'?~[xac10233]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45383) /*~We serve the light.~[xac10234]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45386) /*~Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45387) /*~Mercenary~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45388) /*~ Die, scum!~[xac10305]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45389) /*~~[xac10306]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45390) /*~ ~[xac10307]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac144.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45391) /*~Crusader Cleric~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45392) /*~Crusader Cleric~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@45393) /*~ A pleasure it is to meet ya.~[xac10281]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45394) /*~ A stout hammer will fix most any bandit.~[xac10282]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45395) /*~~[xac10283]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45396) /*~~[xac10284]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45397) /*~ A pleasure it is to meet ya.~[xac10281]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45398) /*~ You canna get better than the stability stone walls provide.~[xac10286]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac145.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45399) /*~Crusader Cleric~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45400) /*~Crusader Cleric~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@45401) /*~I welcome you with outstretched hand.~[xac10314]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45402) /*~Justice shall be swift and final!~[xac10315]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45403) /*~~[xac10316]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45404) /*~~[xac10317]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45405) /*~I trust you are here in good faith.~[xac10318]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45406) /*~May the gods look upon you kindly.~[xac10319]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45407) /*~All of the faithful are welcome here.~[xac10320]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac146.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45384) /*~Leopas~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45385) /*~Leopas~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45408) /*~Crusader Cleric~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45409) /*~Crusader Cleric~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45410) /*~ ~[xac10196]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45411) /*~ ~[xac10197]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45412) /*~ Good day and hello to you.~[xac10198]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45413) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45414) /*~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac147.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45386) /*~Crusader~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45387) /*~Crusader~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45388) /*~For the Shining Lady!~[xac10232]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45389) /*~You need somethin'?~[xac10233]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45390) /*~We serve the light.~[xac10234]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45415) /*~Crusader Cleric~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45416) /*~Crusader Cleric~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@45417) /*~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45418) /*~~[xac10233]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45419) /*~~[xac10234]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45420) /*~ Nasty times are comin', I reckon.~[xac10235]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45421) /*~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45422) /*~ Queer things have been afoot lately.~[xac10237]*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@45423) /*~ I wish I had my old tobacco pipe.~[xac10238]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac148.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45424) /*~Crusader Mage~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45425) /*~Crusader Mage~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45426) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45427) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45428) /*~We serve the light.~[xac10280]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac149.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45391) /*~Crusader Archer~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45392) /*~Crusader Archer~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45393) /*~~[xac10235]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45394) /*~~[xac10236]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45395) /*~ The Fair Folk rarely have time for small talk.~[xac10237]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45396) /*~ Troubled times are upon us.~[xac10238]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45397) /*~ Soon, we shall all be together upon Evermeet.~[xac10239]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45429) /*~Crusader Mage~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45430) /*~Crusader Mage~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45431) /*~~[xac10336]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45432) /*~~[xac10337]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45433) /*~ Your acquaintance I am glad to have made.~[xac10338]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45434) /*~ Soon to go back to the grotto, I am. I miss the tunnels of home.~[xac10339]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45435) /*~ The underground seems safer by far, and gems to find are welcome too.~[xac10340]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac150.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45398) /*~Corinth~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45399) /*~Corinth~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45436) /*~Crusader Mage~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45437) /*~Crusader Mage~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45438) /*~~[xac10287]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45439) /*~~[xac10288]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45440) /*~ The Fair Folk rarely have time for small talk.~[xac10289]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45441) /*~ Troubled times are upon us.~[xac10290]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45442) /*~ Soon, we shall all be together upon Evermeet.~[xac10291]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac151.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45400) /*~Valis~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45401) /*~Valis~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45443) /*~Crusader Mage~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45444) /*~Crusader Mage~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45445) /*~Die in her name!~[xac10292]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45446) /*~Somethin' you need?~[xac10182]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45447) /*~As the light wills.~[xac10183]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac152.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45402) /*~Ravoc~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45403) /*~Ravoc~*/
-	WRITE_LONG 168 RESOLVE_STR_REF(@45404) /*~Nooooooo!~[xac10264]*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45405) /*~RAAAHHHHR! You die! You die!~[xac10265]*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@45406) /*~I will crush you, puny one!~[xac10266]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45407) /*~~[xac10267]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45408) /*~~[xac10268]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45409) /*~Uhh? What you want?~[xac10269]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45410) /*~I watching you!~[xac10270]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45411) /*~Speak, manling. Speak quick!~[xac10271]*/
-	WRITE_LONG 280 RESOLVE_STR_REF(@45412) /*~You and my kind not get along!~[xac10272]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45448) /*~Troll Wrangler~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45449) /*~Troll Wrangler~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@45450) /*~Stay back, or you'll regret it.~[xac10349]*/
+	WRITE_LONG 168 RESOLVE_STR_REF(@45451) /*~I give! I give!~[xac10350]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45452) /*~All right! You and me! Let's go!~[xac10351]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45453) /*~~[xac10352]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45454) /*~~[xac10353]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45455) /*~I can break an arm or a leg fer a copper or two.~[xac10354]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45456) /*~Ahhh, be off with ya.~[xac10355]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45457) /*~Ye're a piece o' iron, you are.~[xac10356]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac153.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45413) /*~Delton~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45414) /*~Delton~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@45415) /*~ I am happy not. No, I'm not.~[xac10324]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45416) /*~~[xac10325]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45417) /*~~[xac10326]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45418) /*~ I am happy not. No, I'm not.~[xac10324]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45419) /*~ Happy I am. Yes, I am!~[xac10328]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45420) /*~ Who you are, know not I.~[xac10329]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45458) /*~Priest of Oghma~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45459) /*~Priest of Oghma~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@45460) /*~ These walls contain the world's knowledge.~[xac10357]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45461) /*~~[xac10358]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45462) /*~~[xac10359]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45463) /*~ Wisdom is only possessed by the learned.~[xac10360]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45464) /*~ These walls contain the world's knowledge.~[xac10357]*/
+	WRITE_LONG 304 RESOLVE_STR_REF(@45465) /*~ ~[xac10362]*/
+	WRITE_LONG 308 RESOLVE_STR_REF(@45466) /*~ ~[xac10363]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac154.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45421) /*~Damarr~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45422) /*~Damarr~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45423) /*~Die in her name!~[xac10240]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45424) /*~Somethin' you need?~[xac10182]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45425) /*~As the light wills.~[xac10183]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45467) /*~Piato~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45468) /*~Piato~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@45469) /*~ Our library is a man's harem of knowledge.~[xac10364]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45470) /*~~[xac10365]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45471) /*~~[xac10366]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45472) /*~ Our library is a man's harem of knowledge.~[xac10364]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45473) /*~ Oh—'scuse me, but I am late for my classes.~[xac10368]*/
+	WRITE_LONG 304 RESOLVE_STR_REF(@45474) /*~ Oh—'scuse me, but I am late for my classes.~[xac10368]*/
+	WRITE_LONG 308 RESOLVE_STR_REF(@45475) /*~ Oh—'scuse me, but I am late for my classes.~[xac10368]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac155.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45426) /*~Crusader~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45427) /*~Crusader~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45428) /*~For the Shining Lady!~[xac10232]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45429) /*~You need somethin'?~[xac10233]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45430) /*~We serve the light.~[xac10234]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45476) /*~Crusader Guard~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45477) /*~Crusader Guard~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45478) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45479) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45480) /*~We serve the light.~[xac10280]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac156.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45431) /*~Mercenary~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45432) /*~Mercenary~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45433) /*~Die in her name!~[xac10240]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45434) /*~Somethin' you need?~[xac10182]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45435) /*~As the light wills.~[xac10183]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45481) /*~Crusader Officer~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45482) /*~Crusader Officer~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45483) /*~~[xac10287]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45484) /*~~[xac10288]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45485) /*~ The Fair Folk rarely have time for small talk.~[xac10289]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45486) /*~ Troubled times are upon us.~[xac10290]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45487) /*~ Soon, we shall all be together upon Evermeet.~[xac10291]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac157.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45436) /*~Crusader~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45437) /*~Crusader~*/
-	WRITE_LONG 168 RESOLVE_STR_REF(@45438) /*~Nooooooo!~[xac10264]*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45439) /*~RAAAHHHHR! You die! You die!~[xac10265]*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@45440) /*~I will crush you, puny one!~[xac10266]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45441) /*~~[xac10267]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45442) /*~~[xac10268]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45443) /*~Uhh? What you want?~[xac10269]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45444) /*~I watching you!~[xac10270]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45445) /*~Speak, manling. Speak quick!~[xac10271]*/
-	WRITE_LONG 280 RESOLVE_STR_REF(@45446) /*~You and my kind not get along!~[xac10272]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45488) /*~Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45489) /*~Mercenary~*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac158.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45447) /*~Mercenary~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45448) /*~Mercenary~*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45449) /*~If I get paid, I fight.~[xac10273]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45450) /*~I like smashin' heads.~[xac10274]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45490) /*~Crusader Guard~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45491) /*~Crusader Guard~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45492) /*~Die in her name!~[xac10292]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45493) /*~Somethin' you need?~[xac10182]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45494) /*~As the light wills.~[xac10183]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac159.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45451) /*~Crusader~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45452) /*~Crusader~*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45453) /*~What you looking at?~[xac10350]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45454) /*~Go 'way.~[xac10351]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45495) /*~Crusader Guard~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45496) /*~Crusader Guard~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45497) /*~I'll test your mettle with cold steel!~[xac10382]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45498) /*~~[xac10383]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45499) /*~~[xac10384]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45500) /*~Declare yourself!~[xac10385]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45501) /*~Do not disturb my duties.~[xac10386]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45502) /*~At ease, citizen.~[xac10387]*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@45503) /*~I trust you have no hostile intentions.~[xac10388]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac160.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45455) /*~Tristian~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45456) /*~Tristian~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45457) /*~For the Shining Lady!~[xac10232]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45458) /*~You need somethin'?~[xac10233]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45459) /*~We serve the light.~[xac10234]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45504) /*~Crusader Guard~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45505) /*~Crusader Guard~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45506) /*~ ~[xac10196]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45507) /*~ ~[xac10197]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45508) /*~ Good day and hello to you.~[xac10198]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45509) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45510) /*~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac161.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45460) /*~Crusader Sergeant~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45461) /*~Crusader Sergeant~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45462) /*~Die in her name!~[xac10240]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45463) /*~Somethin' you need?~[xac10182]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45464) /*~As the light wills.~[xac10183]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45511) /*~Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45512) /*~Mercenary~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45513) /*~ Spare no one!~[xac10302]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45514) /*~ You be quiet!~[xac10303]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45515) /*~ Forward march!~[xac10304]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac162.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45465) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45466) /*~Crusader Elite~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45467) /*~Die in her name!~[xac10240]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45468) /*~Somethin' you need?~[xac10182]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45469) /*~As the light wills.~[xac10183]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45516) /*~Crusader Guard~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45517) /*~Crusader Guard~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45518) /*~ By Moradin's hammer.~[xac10220]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45519) /*~~[xac10221]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45520) /*~~[xac10222]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45521) /*~ I need a swig o' some strong dwarven ale.~[xac10223]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45522) /*~ Me temper's bad enough without ye botherin' me.~[xac10224]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45523) /*~ Your chatterin's startin' to wear on me nerves.~[xac10225]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac163.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45470) /*~Crusader Sergeant~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45471) /*~Crusader Sergeant~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45472) /*~ By Moradin's hammer.~[xac10258]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45473) /*~~[xac10259]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45474) /*~~[xac10260]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45475) /*~ I need a swig o' some strong dwarven ale.~[xac10261]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45476) /*~ Me temper's bad enough without ye botherin' me.~[xac10262]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45477) /*~ Your chatterin's startin' to wear on me nerves.~[xac10263]*/
-
-COPY ~%MOD_FOLDER%\generated\c\cre\xac164.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45478) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45479) /*~Crusader Elite~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45480) /*~ ~[xac10196]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45481) /*~ ~[xac10197]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45482) /*~ Good day and hello to you.~[xac10198]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45483) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45484) /*~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45524) /*~Crusader Guard~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45525) /*~Crusader Guard~*/
+	WRITE_LONG 168 RESOLVE_STR_REF(@45526) /*~Nooooooo!~[xac10403]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45527) /*~RAAAHHHHR! You die! You die!~[xac10404]*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@45528) /*~I will crush you, puny one!~[xac10405]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45529) /*~~[xac10406]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45530) /*~~[xac10407]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45531) /*~Uhh? What you want?~[xac10408]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45532) /*~I watching you!~[xac10409]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45533) /*~Speak, manling. Speak quick!~[xac10410]*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@45534) /*~You and my kind not get along!~[xac10411]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac165.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45485) /*~Zare~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45486) /*~Zare~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45487) /*~For the Shining Lady!~[xac10232]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45488) /*~You need somethin'?~[xac10233]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45489) /*~We serve the light.~[xac10234]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45535) /*~Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45536) /*~Mercenary~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45537) /*~If I get paid, I fight.~[xac10412]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45538) /*~I like smashin' heads.~[xac10413]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac166.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45490) /*~Crusader Recruit~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45491) /*~Crusader Recruit~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45492) /*~For the Shining Lady!~[xac10232]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45493) /*~You need somethin'?~[xac10233]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45494) /*~We serve the light.~[xac10234]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45539) /*~Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45540) /*~Mercenary~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45541) /*~I'll test your mettle with cold steel!~[xac10382]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45542) /*~~[xac10383]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45543) /*~~[xac10384]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45544) /*~Declare yourself!~[xac10385]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45545) /*~Do not disturb my duties.~[xac10386]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45546) /*~At ease, citizen.~[xac10387]*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@45547) /*~I trust you have no hostile intentions.~[xac10388]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac167.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45495) /*~Recruit Kjarvan~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45496) /*~Recruit Kjarvan~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45497) /*~For the Shining Lady!~[xac10232]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45498) /*~You need somethin'?~[xac10233]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45499) /*~We serve the light.~[xac10234]*/
-
-COPY ~%MOD_FOLDER%\generated\c\cre\xac168.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45500) /*~Recruit Qing~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45501) /*~Recruit Qing~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45502) /*~For the Shining Lady!~[xac10232]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45503) /*~You need somethin'?~[xac10233]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45504) /*~We serve the light.~[xac10234]*/
-
-COPY ~%MOD_FOLDER%\generated\c\cre\xac169.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45505) /*~Deneld~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45506) /*~Deneld~*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45507) /*~Glory and honor.~*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45508) /*~The light will reward you.~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45548) /*~Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45549) /*~Mercenary~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45550) /*~If I get paid, I fight.~[xac10412]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45551) /*~I like smashin' heads.~[xac10413]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac170.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45509) /*~Crusader~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45510) /*~Crusader~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@45511) /*~ I am happy not. No, I'm not.~[xac10324]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45512) /*~~[xac10325]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45513) /*~~[xac10326]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45514) /*~ I am happy not. No, I'm not.~[xac10324]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45515) /*~ Happy I am. Yes, I am!~[xac10328]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45516) /*~ Who you are, know not I.~[xac10329]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45552) /*~Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45553) /*~Mercenary~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45554) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45555) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45556) /*~We serve the light.~[xac10280]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac171.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45517) /*~Crusader~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45518) /*~Crusader~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@45519) /*~ You're rather outlandish folk to be wanderin' 'round here.~[xac10390]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45520) /*~~[xac10391]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45521) /*~~[xac10392]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45522) /*~ Nasty times are comin', I reckon.~[xac10393]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45523) /*~ You're rather outlandish folk to be wanderin' 'round here.~[xac10390]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45524) /*~ Queer things have been afoot lately.~[xac10395]*/
-	WRITE_LONG 280 RESOLVE_STR_REF(@45525) /*~ I wish I had my old tobacco pipe.~[xac10396]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45557) /*~Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45558) /*~Mercenary~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45559) /*~ By Moradin's hammer.~[xac10220]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45560) /*~~[xac10221]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45561) /*~~[xac10222]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45562) /*~ I need a swig o' some strong dwarven ale.~[xac10223]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45563) /*~ Me temper's bad enough without ye botherin' me.~[xac10224]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45564) /*~ Your chatterin's startin' to wear on me nerves.~[xac10225]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac172.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45526) /*~Commander Dreon~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45527) /*~Commander Dreon~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45528) /*~For the Shining Lady!~[xac10232]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45529) /*~You need somethin'?~[xac10233]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45530) /*~We serve the light.~[xac10234]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45565) /*~Crusader Commander~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45566) /*~Crusader Commander~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45567) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45568) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45569) /*~We serve the light.~[xac10280]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac173.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45531) /*~Sallo~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45532) /*~Sallo~*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45533) /*~ ZZZZzzzzzzz...~[xac10400]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45534) /*~ ZZZZzzzzz... *snort*~[xac10401]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45570) /*~Sindret~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45571) /*~Sindret~*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac174.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45535) /*~Crusader Nan~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45536) /*~Crusader Nan~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@45537) /*~ Ooh, it's a fine day for meeting new friends.~[xac10402]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45538) /*~~[xac10403]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45539) /*~~[xac10404]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45540) /*~ May you know the happiness of a warm hearth and home.~[xac10405]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45541) /*~ Dallillia guides the way of all those that seek the path home.~[xac10406]*/
-
-COPY ~%MOD_FOLDER%\generated\c\cre\xac175.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45542) /*~Crusader Pedro~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45543) /*~Crusader Pedro~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45544) /*~For the Shining Lady!~[xac10232]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45545) /*~You need somethin'?~[xac10233]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45546) /*~We serve the light.~[xac10234]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45572) /*~Troll~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45573) /*~Troll~*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac176.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45547) /*~Crusader Recruit~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45548) /*~Crusader Recruit~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45549) /*~ ~[xac10196]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45550) /*~ ~[xac10197]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45551) /*~ Good day and hello to you.~[xac10198]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45552) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45553) /*~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]*/
-
-COPY ~%MOD_FOLDER%\generated\c\cre\xac178.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45554) /*~Crusader Recruit~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45555) /*~Crusader Recruit~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45556) /*~Die in her name!~[xac10240]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45557) /*~Somethin' you need?~[xac10182]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45558) /*~As the light wills.~[xac10183]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45574) /*~Crusader~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45575) /*~Crusader~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45576) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45577) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45578) /*~We serve the light.~[xac10280]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac179.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45559) /*~Crusader Recruit~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45560) /*~Crusader Recruit~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@45561) /*~ You're rather outlandish folk to be wanderin' 'round here.~[xac10390]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45562) /*~~[xac10391]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45563) /*~~[xac10392]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45564) /*~ Nasty times are comin', I reckon.~[xac10393]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45565) /*~ You're rather outlandish folk to be wanderin' 'round here.~[xac10390]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45566) /*~ Queer things have been afoot lately.~[xac10395]*/
-	WRITE_LONG 280 RESOLVE_STR_REF(@45567) /*~ I wish I had my old tobacco pipe.~[xac10396]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45579) /*~Leopas~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45580) /*~Leopas~*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac180.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45568) /*~Mercenary~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45569) /*~Mercenary~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45581) /*~Crusader~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45582) /*~Crusader~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45583) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45584) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45585) /*~We serve the light.~[xac10280]*/
 
-COPY ~%MOD_FOLDER%\generated\c\cre\xac181.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45570) /*~Crusader Recruit~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45571) /*~Crusader Recruit~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45572) /*~ By Moradin's hammer.~[xac10258]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45573) /*~~[xac10259]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45574) /*~~[xac10260]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45575) /*~ I need a swig o' some strong dwarven ale.~[xac10261]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45576) /*~ Me temper's bad enough without ye botherin' me.~[xac10262]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45577) /*~ Your chatterin's startin' to wear on me nerves.~[xac10263]*/
+COPY ~%MOD_FOLDER%\generated\c\cre\xac182.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45586) /*~Crusader Archer~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45587) /*~Crusader Archer~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45588) /*~~[xac10287]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45589) /*~~[xac10288]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45590) /*~ The Fair Folk rarely have time for small talk.~[xac10289]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45591) /*~ Troubled times are upon us.~[xac10290]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45592) /*~ Soon, we shall all be together upon Evermeet.~[xac10291]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac183.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45593) /*~Corinth~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45594) /*~Corinth~*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac184.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45578) /*~Crusader Recruit~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45579) /*~Crusader Recruit~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45580) /*~ Grrrrrrrr... grrrr!~[xac10431]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45581) /*~ ~[xac10432]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45582) /*~ ~[xac10433]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45583) /*~ Grrrr, yip yip yap! Yip yip *snarl*...~[xac10434]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45584) /*~ Yap! Grrr grr... yip yip yip yap! Look, we don't speak Common, all right?! *snarl* Yip yip yap!~[xac10435]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45585) /*~ *snarl* Yip! Yip yip yip yip yap!~[xac10436]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45595) /*~Valis~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45596) /*~Valis~*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac185.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45586) /*~Crusader~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45587) /*~Crusader~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45588) /*~~[xac10235]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45589) /*~~[xac10236]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45590) /*~ The Fair Folk rarely have time for small talk.~[xac10237]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45591) /*~ Troubled times are upon us.~[xac10238]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45592) /*~ Soon, we shall all be together upon Evermeet.~[xac10239]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45597) /*~Ravoc~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45598) /*~Ravoc~*/
+	WRITE_LONG 168 RESOLVE_STR_REF(@45599) /*~Nooooooo!~[xac10403]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45600) /*~RAAAHHHHR! You die! You die!~[xac10404]*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@45601) /*~I will crush you, puny one!~[xac10405]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45602) /*~~[xac10406]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45603) /*~~[xac10407]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45604) /*~Uhh? What you want?~[xac10408]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45605) /*~I watching you!~[xac10409]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45606) /*~Speak, manling. Speak quick!~[xac10410]*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@45607) /*~You and my kind not get along!~[xac10411]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac186.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45593) /*~Crusader~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45594) /*~Crusader~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45595) /*~For the Shining Lady!~[xac10232]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45596) /*~You need somethin'?~[xac10233]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45597) /*~We serve the light.~[xac10234]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45608) /*~Delton~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45609) /*~Delton~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@45610) /*~ I am happy not. No, I'm not.~[xac10455]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45611) /*~~[xac10456]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45612) /*~~[xac10457]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45613) /*~ I am happy not. No, I'm not.~[xac10455]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45614) /*~ Happy I am. Yes, I am!~[xac10459]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45615) /*~ Who you are, know not I.~[xac10460]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac187.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45598) /*~Mercenary Captain~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45599) /*~Mercenary Captain~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45600) /*~For the Shining Lady!~[xac10232]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45601) /*~You need somethin'?~[xac10233]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45602) /*~We serve the light.~[xac10234]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45616) /*~Damarr~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45617) /*~Damarr~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45618) /*~Die in her name!~[xac10292]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45619) /*~Somethin' you need?~[xac10182]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45620) /*~As the light wills.~[xac10183]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac188.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45603) /*~Mercenary~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45604) /*~Mercenary~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@45605) /*~Stay back, or you'll regret it.~[xac10296]*/
-	WRITE_LONG 168 RESOLVE_STR_REF(@45606) /*~I give! I give!~[xac10297]*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45607) /*~All right! You and me! Let's go!~[xac10298]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45608) /*~~[xac10299]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45609) /*~~[xac10300]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45610) /*~I can break an arm or a leg fer a copper or two.~[xac10301]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45611) /*~Ahhh, be off with ya.~[xac10302]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45612) /*~Ye're a piece o' iron, you are.~[xac10303]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45621) /*~Crusader~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45622) /*~Crusader~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45623) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45624) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45625) /*~We serve the light.~[xac10280]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac189.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45626) /*~Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45627) /*~Mercenary~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45628) /*~Die in her name!~[xac10292]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45629) /*~Somethin' you need?~[xac10182]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45630) /*~As the light wills.~[xac10183]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac190.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45613) /*~Crusader Recruit~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45614) /*~Crusader Recruit~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45615) /*~For the Shining Lady!~[xac10232]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45616) /*~You need somethin'?~[xac10233]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45617) /*~We serve the light.~[xac10234]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45631) /*~Crusader~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45632) /*~Crusader~*/
+	WRITE_LONG 168 RESOLVE_STR_REF(@45633) /*~Nooooooo!~[xac10403]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45634) /*~RAAAHHHHR! You die! You die!~[xac10404]*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@45635) /*~I will crush you, puny one!~[xac10405]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45636) /*~~[xac10406]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45637) /*~~[xac10407]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45638) /*~Uhh? What you want?~[xac10408]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45639) /*~I watching you!~[xac10409]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45640) /*~Speak, manling. Speak quick!~[xac10410]*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@45641) /*~You and my kind not get along!~[xac10411]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac191.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45642) /*~Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45643) /*~Mercenary~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45644) /*~If I get paid, I fight.~[xac10412]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45645) /*~I like smashin' heads.~[xac10413]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac192.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45618) /*~Crusader Recruit~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45619) /*~Crusader Recruit~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45620) /*~Die in her name!~[xac10240]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45621) /*~Somethin' you need?~[xac10182]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45622) /*~As the light wills.~[xac10183]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45646) /*~Crusader~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45647) /*~Crusader~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45648) /*~What you looking at?~[xac10481]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45649) /*~Go 'way.~[xac10482]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac193.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45623) /*~Crusader Recruit~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45624) /*~Crusader Recruit~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45625) /*~~[xac10462]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45626) /*~~[xac10463]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45627) /*~ Your acquaintance I am glad to have made.~[xac10464]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45628) /*~ Soon to go back to the grotto, I am. I miss the tunnels of home.~[xac10465]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45629) /*~ The underground seems safer by far, and gems to find are welcome too.~[xac10466]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45650) /*~Tristian~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45651) /*~Tristian~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45652) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45653) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45654) /*~We serve the light.~[xac10280]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac194.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45630) /*~Crusader Recruit~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45631) /*~Crusader Recruit~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45632) /*~ Spare no one!~[xac10255]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45633) /*~ You be quiet!~[xac10256]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45634) /*~ Forward march!~[xac10257]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45655) /*~Crusader Sergeant~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45656) /*~Crusader Sergeant~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45657) /*~Die in her name!~[xac10292]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45658) /*~Somethin' you need?~[xac10182]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45659) /*~As the light wills.~[xac10183]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac195.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45635) /*~Crusader Recruit~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45636) /*~Crusader Recruit~*/
-	WRITE_LONG 168 RESOLVE_STR_REF(@45637) /*~Nooooooo!~[xac10264]*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45638) /*~RAAAHHHHR! You die! You die!~[xac10265]*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@45639) /*~I will crush you, puny one!~[xac10266]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45640) /*~~[xac10267]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45641) /*~~[xac10268]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45642) /*~Uhh? What you want?~[xac10269]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45643) /*~I watching you!~[xac10270]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45644) /*~Speak, manling. Speak quick!~[xac10271]*/
-	WRITE_LONG 280 RESOLVE_STR_REF(@45645) /*~You and my kind not get along!~[xac10272]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45660) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45661) /*~Crusader Elite~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45662) /*~Die in her name!~[xac10292]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45663) /*~Somethin' you need?~[xac10182]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45664) /*~As the light wills.~[xac10183]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac196.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45665) /*~Crusader Sergeant~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45666) /*~Crusader Sergeant~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45667) /*~ By Moradin's hammer.~[xac10220]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45668) /*~~[xac10221]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45669) /*~~[xac10222]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45670) /*~ I need a swig o' some strong dwarven ale.~[xac10223]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45671) /*~ Me temper's bad enough without ye botherin' me.~[xac10224]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45672) /*~ Your chatterin's startin' to wear on me nerves.~[xac10225]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac197.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45646) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45647) /*~Crusader Elite~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45648) /*~For the Shining Lady!~[xac10232]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45649) /*~You need somethin'?~[xac10233]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45650) /*~We serve the light.~[xac10234]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45673) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45674) /*~Crusader Elite~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45675) /*~ ~[xac10196]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45676) /*~ ~[xac10197]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45677) /*~ Good day and hello to you.~[xac10198]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45678) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45679) /*~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac198.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45651) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45652) /*~Crusader Elite~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45653) /*~~[xac10235]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45654) /*~~[xac10236]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45655) /*~ The Fair Folk rarely have time for small talk.~[xac10237]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45656) /*~ Troubled times are upon us.~[xac10238]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45657) /*~ Soon, we shall all be together upon Evermeet.~[xac10239]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45680) /*~Zare~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45681) /*~Zare~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45682) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45683) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45684) /*~We serve the light.~[xac10280]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac199.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45685) /*~Crusader Recruit~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45686) /*~Crusader Recruit~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45687) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45688) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45689) /*~We serve the light.~[xac10280]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac200.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45658) /*~Kara-Turan Mercenary~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45659) /*~Kara-Turan Mercenary~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45660) /*~For the Shining Lady!~[xac10232]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45661) /*~You need somethin'?~[xac10233]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45662) /*~We serve the light.~[xac10234]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45690) /*~Recruit Kjarvan~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45691) /*~Recruit Kjarvan~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45692) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45693) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45694) /*~We serve the light.~[xac10280]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac201.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45695) /*~Recruit Qing~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45696) /*~Recruit Qing~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45697) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45698) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45699) /*~We serve the light.~[xac10280]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac202.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45700) /*~Deneld~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45701) /*~Deneld~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45702) /*~Glory and honor.~*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45703) /*~The light will reward you.~*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac203.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45663) /*~Mercenary~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45664) /*~Mercenary~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45665) /*~ Die, scum!~[xac10490]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45666) /*~~[xac10491]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45667) /*~ ~[xac10492]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45704) /*~Crusader~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45705) /*~Crusader~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@45706) /*~ I am happy not. No, I'm not.~[xac10455]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45707) /*~~[xac10456]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45708) /*~~[xac10457]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45709) /*~ I am happy not. No, I'm not.~[xac10455]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45710) /*~ Happy I am. Yes, I am!~[xac10459]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45711) /*~ Who you are, know not I.~[xac10460]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac204.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45668) /*~Mercenary~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45669) /*~Mercenary~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45712) /*~Crusader~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45713) /*~Crusader~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@45714) /*~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45715) /*~~[xac10233]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45716) /*~~[xac10234]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45717) /*~ Nasty times are comin', I reckon.~[xac10235]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45718) /*~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45719) /*~ Queer things have been afoot lately.~[xac10237]*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@45720) /*~ I wish I had my old tobacco pipe.~[xac10238]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac205.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45721) /*~Commander Dreon~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45722) /*~Commander Dreon~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45723) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45724) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45725) /*~We serve the light.~[xac10280]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac206.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45726) /*~Sallo~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45727) /*~Sallo~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45728) /*~ ZZZZzzzzzzz...~[xac10531]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45729) /*~ ZZZZzzzzz... *snort*~[xac10532]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac207.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45670) /*~Mercenary~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45671) /*~Mercenary~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45672) /*~ Grrrrrrrr... grrrr!~[xac10431]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45673) /*~ ~[xac10432]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45674) /*~ ~[xac10433]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45675) /*~ Grrrr, yip yip yap! Yip yip *snarl*...~[xac10434]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45676) /*~ Yap! Grrr grr... yip yip yip yap! Look, we don't speak Common, all right?! *snarl* Yip yip yap!~[xac10435]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45677) /*~ *snarl* Yip! Yip yip yip yip yap!~[xac10436]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45730) /*~Crusader Nan~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45731) /*~Crusader Nan~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@45732) /*~ Ooh, it's a fine day for meeting new friends.~[xac10533]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45733) /*~~[xac10534]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45734) /*~~[xac10535]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45735) /*~ May you know the happiness of a warm hearth and home.~[xac10536]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45736) /*~ Dallillia guides the way of all those that seek the path home.~[xac10537]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac208.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45678) /*~Mercenary~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45679) /*~Mercenary~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45680) /*~ Grrrrrrrr... grrrr!~[xac10431]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45681) /*~ ~[xac10432]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45682) /*~ ~[xac10433]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45683) /*~ Grrrr, yip yip yap! Yip yip *snarl*...~[xac10434]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45684) /*~ Yap! Grrr grr... yip yip yip yap! Look, we don't speak Common, all right?! *snarl* Yip yip yap!~[xac10435]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45685) /*~ *snarl* Yip! Yip yip yip yip yap!~[xac10436]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45737) /*~Crusader Pedro~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45738) /*~Crusader Pedro~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45739) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45740) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45741) /*~We serve the light.~[xac10280]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac209.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45742) /*~Crusader Recruit~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45743) /*~Crusader Recruit~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45744) /*~ ~[xac10196]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45745) /*~ ~[xac10197]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45746) /*~ Good day and hello to you.~[xac10198]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45747) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45748) /*~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac211.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45686) /*~Crusader Archer~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45687) /*~Crusader Archer~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45688) /*~Die in her name!~[xac10240]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45689) /*~Somethin' you need?~[xac10182]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45690) /*~As the light wills.~[xac10183]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45749) /*~Crusader Recruit~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45750) /*~Crusader Recruit~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45751) /*~Die in her name!~[xac10292]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45752) /*~Somethin' you need?~[xac10182]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45753) /*~As the light wills.~[xac10183]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac212.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45691) /*~Crusader Archer~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45692) /*~Crusader Archer~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45693) /*~~[xac10235]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45694) /*~~[xac10236]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45695) /*~ The Fair Folk rarely have time for small talk.~[xac10237]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45696) /*~ Troubled times are upon us.~[xac10238]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45697) /*~ Soon, we shall all be together upon Evermeet.~[xac10239]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45754) /*~Crusader Recruit~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45755) /*~Crusader Recruit~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@45756) /*~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45757) /*~~[xac10233]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45758) /*~~[xac10234]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45759) /*~ Nasty times are comin', I reckon.~[xac10235]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45760) /*~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45761) /*~ Queer things have been afoot lately.~[xac10237]*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@45762) /*~ I wish I had my old tobacco pipe.~[xac10238]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac213.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45698) /*~Crusader Archer~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45699) /*~Crusader Archer~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@45700) /*~For the Shining Lady!~[xac10232]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45701) /*~You need somethin'?~[xac10233]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45702) /*~We serve the light.~[xac10234]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45763) /*~Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45764) /*~Mercenary~*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac214.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45703) /*~Crusader Archer~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45704) /*~Crusader Archer~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@45705) /*~ ~[xac10196]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@45706) /*~ ~[xac10197]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45707) /*~ Good day and hello to you.~[xac10198]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45708) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@45709) /*~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45765) /*~Crusader Recruit~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45766) /*~Crusader Recruit~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45767) /*~ By Moradin's hammer.~[xac10220]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45768) /*~~[xac10221]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45769) /*~~[xac10222]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45770) /*~ I need a swig o' some strong dwarven ale.~[xac10223]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45771) /*~ Me temper's bad enough without ye botherin' me.~[xac10224]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45772) /*~ Your chatterin's startin' to wear on me nerves.~[xac10225]*/
 
-COPY ~%MOD_FOLDER%\generated\c\cre\xac215.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45710) /*~<NO TEXT>~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45711) /*~<NO TEXT>~*/
+COPY ~%MOD_FOLDER%\generated\c\cre\xac217.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45773) /*~Crusader Recruit~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45774) /*~Crusader Recruit~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45775) /*~ Grrrrrrrr... grrrr!~[xac10562]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45776) /*~ ~[xac10563]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45777) /*~ ~[xac10564]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45778) /*~ Grrrr, yip yip yap! Yip yip *snarl*...~[xac10565]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45779) /*~ Yap! Grrr grr... yip yip yip yap! Look, we don't speak Common, all right?! *snarl* Yip yip yap!~[xac10566]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45780) /*~ *snarl* Yip! Yip yip yip yip yap!~[xac10567]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac218.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45781) /*~Crusader~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45782) /*~Crusader~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45783) /*~~[xac10287]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45784) /*~~[xac10288]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45785) /*~ The Fair Folk rarely have time for small talk.~[xac10289]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45786) /*~ Troubled times are upon us.~[xac10290]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45787) /*~ Soon, we shall all be together upon Evermeet.~[xac10291]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac219.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45788) /*~Crusader~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45789) /*~Crusader~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45790) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45791) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45792) /*~We serve the light.~[xac10280]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac220.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45793) /*~Mercenary Captain~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45794) /*~Mercenary Captain~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45795) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45796) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45797) /*~We serve the light.~[xac10280]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac221.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45798) /*~Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45799) /*~Mercenary~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@45800) /*~Stay back, or you'll regret it.~[xac10349]*/
+	WRITE_LONG 168 RESOLVE_STR_REF(@45801) /*~I give! I give!~[xac10350]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45802) /*~All right! You and me! Let's go!~[xac10351]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45803) /*~~[xac10352]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45804) /*~~[xac10353]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45805) /*~I can break an arm or a leg fer a copper or two.~[xac10354]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45806) /*~Ahhh, be off with ya.~[xac10355]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45807) /*~Ye're a piece o' iron, you are.~[xac10356]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac223.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45808) /*~Crusader Recruit~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45809) /*~Crusader Recruit~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45810) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45811) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45812) /*~We serve the light.~[xac10280]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac225.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45813) /*~Crusader Recruit~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45814) /*~Crusader Recruit~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45815) /*~Die in her name!~[xac10292]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45816) /*~Somethin' you need?~[xac10182]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45817) /*~As the light wills.~[xac10183]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac226.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45818) /*~Crusader Recruit~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45819) /*~Crusader Recruit~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45820) /*~~[xac10336]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45821) /*~~[xac10337]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45822) /*~ Your acquaintance I am glad to have made.~[xac10338]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45823) /*~ Soon to go back to the grotto, I am. I miss the tunnels of home.~[xac10339]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45824) /*~ The underground seems safer by far, and gems to find are welcome too.~[xac10340]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac227.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45712) /*~Stone Golem~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45713) /*~Stone Golem~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@45825) /*~Crusader Recruit~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45826) /*~Crusader Recruit~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45827) /*~ Spare no one!~[xac10302]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45828) /*~ You be quiet!~[xac10303]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45829) /*~ Forward march!~[xac10304]*/
 
-COPY ~%MOD_FOLDER%\generated\c\cre\xac229.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45714) /*~Crusader Scout~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45715) /*~Crusader Scout~*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@45716) /*~If I get paid, I fight.~[xac10273]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@45717) /*~I like smashin' heads.~[xac10274]*/
+COPY ~%MOD_FOLDER%\generated\c\cre\xac228.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45830) /*~Crusader Recruit~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45831) /*~Crusader Recruit~*/
+	WRITE_LONG 168 RESOLVE_STR_REF(@45832) /*~Nooooooo!~[xac10403]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45833) /*~RAAAHHHHR! You die! You die!~[xac10404]*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@45834) /*~I will crush you, puny one!~[xac10405]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45835) /*~~[xac10406]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45836) /*~~[xac10407]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45837) /*~Uhh? What you want?~[xac10408]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45838) /*~I watching you!~[xac10409]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45839) /*~Speak, manling. Speak quick!~[xac10410]*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@45840) /*~You and my kind not get along!~[xac10411]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac230.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45841) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45842) /*~Crusader Elite~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45843) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45844) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45845) /*~We serve the light.~[xac10280]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac231.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45846) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45847) /*~Crusader Elite~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45848) /*~~[xac10287]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45849) /*~~[xac10288]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45850) /*~ The Fair Folk rarely have time for small talk.~[xac10289]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45851) /*~ Troubled times are upon us.~[xac10290]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45852) /*~ Soon, we shall all be together upon Evermeet.~[xac10291]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac233.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45853) /*~Kara-Turan Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45854) /*~Kara-Turan Mercenary~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45855) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45856) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45857) /*~We serve the light.~[xac10280]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac236.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45858) /*~Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45859) /*~Mercenary~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45860) /*~ Die, scum!~[xac10305]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45861) /*~~[xac10306]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45862) /*~ ~[xac10307]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac237.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45863) /*~Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45864) /*~Mercenary~*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac240.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45865) /*~Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45866) /*~Mercenary~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45867) /*~ Grrrrrrrr... grrrr!~[xac10562]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45868) /*~ ~[xac10563]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45869) /*~ ~[xac10564]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45870) /*~ Grrrr, yip yip yap! Yip yip *snarl*...~[xac10565]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45871) /*~ Yap! Grrr grr... yip yip yip yap! Look, we don't speak Common, all right?! *snarl* Yip yip yap!~[xac10566]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45872) /*~ *snarl* Yip! Yip yip yip yip yap!~[xac10567]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac241.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45873) /*~Mercenary~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45874) /*~Mercenary~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45875) /*~ Grrrrrrrr... grrrr!~[xac10562]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45876) /*~ ~[xac10563]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45877) /*~ ~[xac10564]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45878) /*~ Grrrr, yip yip yap! Yip yip *snarl*...~[xac10565]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45879) /*~ Yap! Grrr grr... yip yip yip yap! Look, we don't speak Common, all right?! *snarl* Yip yip yap!~[xac10566]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45880) /*~ *snarl* Yip! Yip yip yip yip yap!~[xac10567]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac244.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45881) /*~Crusader Archer~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45882) /*~Crusader Archer~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45883) /*~Die in her name!~[xac10292]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45884) /*~Somethin' you need?~[xac10182]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45885) /*~As the light wills.~[xac10183]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac245.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45886) /*~Crusader Archer~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45887) /*~Crusader Archer~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45888) /*~~[xac10287]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45889) /*~~[xac10288]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45890) /*~ The Fair Folk rarely have time for small talk.~[xac10289]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45891) /*~ Troubled times are upon us.~[xac10290]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45892) /*~ Soon, we shall all be together upon Evermeet.~[xac10291]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac246.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45893) /*~Crusader Archer~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45894) /*~Crusader Archer~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@45895) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45896) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45897) /*~We serve the light.~[xac10280]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac247.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45898) /*~Crusader Archer~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45899) /*~Crusader Archer~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@45900) /*~ ~[xac10196]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@45901) /*~ ~[xac10197]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45902) /*~ Good day and hello to you.~[xac10198]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45903) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@45904) /*~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac248.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45905) /*~<NO TEXT>~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45906) /*~<NO TEXT>~*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac260.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45907) /*~Stone Golem~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45908) /*~Stone Golem~*/
+
+COPY ~%MOD_FOLDER%\generated\c\cre\xac262.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45909) /*~Crusader Scout~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45910) /*~Crusader Scout~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@45911) /*~If I get paid, I fight.~[xac10412]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@45912) /*~I like smashin' heads.~[xac10413]*/
 
 
 //are files
@@ -1028,13 +1287,13 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~xac101.are~) BEGIN
 	PRINT ~Area already exists: xac101. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\c\are\xac101.are~ ~override~
-	WRITE_LONG 33516 RESOLVE_STR_REF(@45718) /*~This heavy slab displays the holy symbol of Tempus.~*/
-	WRITE_LONG 36064 RESOLVE_STR_REF(@45719) /*~This magical barrier hums with arcane power. Beyond, the camp buzzes with activity as the crusaders prepare for battle.~*/
-	WRITE_LONG 36260 RESOLVE_STR_REF(@45720) /*~A translucent field of force glimmers before the gate, its magic repelling any attempt to enter the courtyard.~*/
-	WRITE_LONG 36848 RESOLVE_STR_REF(@45721) /*~Though the crusade's symbol is a sun upon the horizon, this banner offers little warmth or light to the oppressive gloom permeating Dragonspear Castle.~*/
-	WRITE_LONG 37044 RESOLVE_STR_REF(@45722) /*~Properly positioned, this recently repaired catapult could inflict serious damage upon Caelar's enemies.~*/
-	WRITE_LONG 37240 RESOLVE_STR_REF(@45723) /*~Though dead for decades, the red dragon remains that crown this castle radiate menace.~*/
-	WRITE_LONG 54628 RESOLVE_STR_REF(@45724) /*~Exit~*/
+	WRITE_LONG 33516 RESOLVE_STR_REF(@45913) /*~This heavy slab displays the holy symbol of Tempus.~*/
+	WRITE_LONG 36064 RESOLVE_STR_REF(@45914) /*~This magical barrier hums with arcane power. Beyond, the camp buzzes with activity as the crusaders prepare for battle.~*/
+	WRITE_LONG 36260 RESOLVE_STR_REF(@45915) /*~A translucent field of force glimmers before the gate, its magic repelling any attempt to enter the courtyard.~*/
+	WRITE_LONG 36848 RESOLVE_STR_REF(@45916) /*~Though the crusade's symbol is a sun upon the horizon, this banner offers little warmth or light to the oppressive gloom permeating Dragonspear Castle.~*/
+	WRITE_LONG 37044 RESOLVE_STR_REF(@45917) /*~Properly positioned, this recently repaired catapult could inflict serious damage upon Caelar's enemies.~*/
+	WRITE_LONG 37240 RESOLVE_STR_REF(@45918) /*~Though dead for decades, the red dragon remains that crown this castle radiate menace.~*/
+	WRITE_LONG 54628 RESOLVE_STR_REF(@45919) /*~Exit~*/
 	WRITE_LONG 54264 %xac2%
 	WRITE_LONG 54272 %xac3%
 END
@@ -1232,94 +1491,130 @@ COPY ~%MOD_FOLDER%\generated\c\wav\xac10214.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10215.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10216.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10217.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10232.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10229.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10227.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10226.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10225.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10224.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10223.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10221.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10220.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10219.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10218.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10219.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10220.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10221.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10222.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10223.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10224.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10225.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10226.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10227.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10228.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10229.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10230.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10231.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10232.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10233.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10234.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10235.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10236.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10237.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10238.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10239.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10240.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10243.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10244.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10241.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10245.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10246.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10247.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10248.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10249.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10255.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10256.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10257.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10258.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10259.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10260.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10251.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10252.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10253.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10254.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10261.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10262.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10263.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10264.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10265.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10266.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10267.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10268.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10269.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10270.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10271.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10272.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10273.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10274.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10296.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10297.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10298.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10299.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10300.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10301.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10278.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10279.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10280.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10281.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10282.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10283.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10284.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10286.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10287.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10288.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10289.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10290.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10291.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10292.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10302.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10303.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10324.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10325.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10326.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10328.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10329.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10304.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10305.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10306.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10307.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10314.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10315.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10316.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10317.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10318.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10319.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10320.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10336.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10337.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10338.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10339.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10340.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10349.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10350.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10351.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10390.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10391.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10392.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10393.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10395.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10396.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10400.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10401.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10402.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10403.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10404.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10405.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10352.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10353.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10354.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10355.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10356.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10460.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10459.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10457.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10456.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10455.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10413.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10412.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10411.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10410.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10409.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10408.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10407.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10406.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10431.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10432.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10433.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10434.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10435.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10436.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10462.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10463.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10464.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10465.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10466.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10490.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10491.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10492.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10405.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10404.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10403.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10388.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10387.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10386.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10385.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10384.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10383.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10382.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10368.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10366.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10365.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10364.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10363.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10362.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10360.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10359.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10358.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10357.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10481.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10482.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10531.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10532.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10533.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10534.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10535.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10536.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10537.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10562.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10563.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10564.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10565.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10566.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10567.wav~ ~override~
 
 //baf files
 //===================
@@ -1327,14 +1622,14 @@ COPY ~%MOD_FOLDER%\generated\c\wav\xac10492.wav~ ~override~
 //itm files
 //===================
 COPY ~%MOD_FOLDER%\generated\c\itm\xac100.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45725) /*~Belt~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45726) /*~Belt of the Cunning Rogue~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45727) /*~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+	WRITE_LONG 8 RESOLVE_STR_REF(@45920) /*~Belt~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45921) /*~Belt of the Cunning Rogue~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45922) /*~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
 
 STATISTICS:
 
 Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45728) /*~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45923) /*~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
 
 The pouches attached to the belt contain a number of small tools, wires, picks, and blades that can be used to pick locks and disable traps. 
 
@@ -1346,9 +1641,9 @@ Equipped abilities:
 
 Weight: 2~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac101.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45729) /*~Bullet~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45730) /*~Bullet of Fire +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45731) /*~A bullet is simply a rounded, well-balanced stone.
+	WRITE_LONG 8 RESOLVE_STR_REF(@45924) /*~Bullet~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45925) /*~Bullet of Fire +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45926) /*~A bullet is simply a rounded, well-balanced stone.
 
 STATISTICS:
 
@@ -1356,7 +1651,7 @@ Damage: 1d4+1 (missile)
 Launcher: Sling
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45732) /*~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45927) /*~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
 
 STATISTICS:
 
@@ -1366,14 +1661,14 @@ Launcher: Sling
 
 Weight: 0~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac102.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45733) /*~Ring~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45734) /*~Ring of Protection +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45735) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+	WRITE_LONG 8 RESOLVE_STR_REF(@45928) /*~Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45929) /*~Ring of Protection +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45930) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45736) /*~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45931) /*~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
 
 STATISTICS:
 
@@ -1385,12 +1680,12 @@ Weight: 0~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac103.itm~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\itm\xac105.itm~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\itm\xac106.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45737) /*~Circlet~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45738) /*~Circlet of the Cynosure~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45739) /*~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
+	WRITE_LONG 8 RESOLVE_STR_REF(@45932) /*~Circlet~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45933) /*~Circlet of the Cynosure~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45934) /*~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
 
 Weight: 1~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45740) /*~Almost a century ago, paladin of Lathander Edythe Brightsworn commissioned this helm while preparing to face a powerful vampire. During her many years as a knight of the Morninglord, Lady Brightsworn had accumulated some wealth, most of which she spent in preparation for her quest. After tracking the vampire to Waterdeep's City of the Dead, she assembled a party of adventurers and led them into the monster's lair. Only one of the group returned. Bloodied and wild-eyed, clutching Lady Brightsworn's helm in his hands, he relayed a tale of the nightmarish warrens the group had found and the vampire who culled them from their group, slaughtering them one by one. Investigations into the City of the Dead uncovered some of the tunnels, but all had collapsed. Of the vampire, there was no trace.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45935) /*~Almost a century ago, paladin of Lathander Edythe Brightsworn commissioned this helm while preparing to face a powerful vampire. During her many years as a knight of the Morninglord, Lady Brightsworn had accumulated some wealth, most of which she spent in preparation for her quest. After tracking the vampire to Waterdeep's City of the Dead, she assembled a party of adventurers and led them into the monster's lair. Only one of the group returned. Bloodied and wild-eyed, clutching Lady Brightsworn's helm in his hands, he relayed a tale of the nightmarish warrens the group had found and the vampire who culled them from their group, slaughtering them one by one. Investigations into the City of the Dead uncovered some of the tunnels, but all had collapsed. Of the vampire, there was no trace.
 
 STATISTICS:
 
@@ -1400,9 +1695,9 @@ Equipped abilities:
 
 Weight: 1~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac107.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45741) /*~Chain Mail~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45742) /*~Mail of the Hallowed Hero +3~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45743) /*~A chain mail tunic fashioned from some sort of bright metal. It is always worn over a layer of padded fabric or soft leather to prevent chafing and lessen the impact of blows.
+	WRITE_LONG 8 RESOLVE_STR_REF(@45936) /*~Chain Mail~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45937) /*~Mail of the Hallowed Hero +3~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45938) /*~A chain mail tunic fashioned from some sort of bright metal. It is always worn over a layer of padded fabric or soft leather to prevent chafing and lessen the impact of blows.
 
 STATISTICS:
 
@@ -1411,7 +1706,7 @@ Requires:
  6 Strength
 
 Weight: 40~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45744) /*~This armor was first worn by Olen Argent, Caelar's great-grandfather. Olen Argent's quest to hunt down a cult of Malar led him to the Misty Forest, where he encountered a group of elves living in the woods. At first, the elves were suspicious of Olen and tried to drive him out of the forest, but he spoke so eloquently of his quest that they agreed to help him. The elves tracked the cult to their hiding place within the forest, where Olen eradicated the cultists for their murderous deeds. Thankful to have the evil presence out of their homeland, the elves crafted a fine suit of mail for the paladin.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45939) /*~This armor was first worn by Olen Argent, Caelar's great-grandfather. Olen Argent's quest to hunt down a cult of Malar led him to the Misty Forest, where he encountered a group of elves living in the woods. At first, the elves were suspicious of Olen and tried to drive him out of the forest, but he spoke so eloquently of his quest that they agreed to help him. The elves tracked the cult to their hiding place within the forest, where Olen eradicated the cultists for their murderous deeds. Thankful to have the evil presence out of their homeland, the elves crafted a fine suit of mail for the paladin.
 
 STATISTICS:
 
@@ -1425,9 +1720,9 @@ Requires:
 
 Weight: 7~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac108.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45745) /*~Medium Shield~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45746) /*~Solar Aegis +3~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45747) /*~A medium shield is carried in the same manner as a small shield. Unlike the small shield, however, its weight prevents the character from using <PRO_HISHER> shield hand for anything other than carrying the medium shield. Medium shields are usually made of metal, range from three to four feet in diameter, and can be of any shape, from round to square to a dragon's spread wings. A typical medieval shield resembles a triangle with one point facing downward.
+	WRITE_LONG 8 RESOLVE_STR_REF(@45940) /*~Medium Shield~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45941) /*~Solar Aegis +3~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45942) /*~A medium shield is carried in the same manner as a small shield. Unlike the small shield, however, its weight prevents the character from using <PRO_HISHER> shield hand for anything other than carrying the medium shield. Medium shields are usually made of metal, range from three to four feet in diameter, and can be of any shape, from round to square to a dragon's spread wings. A typical medieval shield resembles a triangle with one point facing downward.
 
 STATISTICS:
 
@@ -1438,7 +1733,7 @@ Requires:
  12 Strength
 
 Weight: 8~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45748) /*~Engraved wings stretch across the face of this ornate shield. The silver shield, inlaid with pure sapphire, gleams with a high polish no matter how much damage it suffers or what rough environs it is carried through. Often crafted for paladins and members of holy militaristic orders, a solar aegis provides substantial protection for the pure of heart.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45943) /*~Engraved wings stretch across the face of this ornate shield. The silver shield, inlaid with pure sapphire, gleams with a high polish no matter how much damage it suffers or what rough environs it is carried through. Often crafted for paladins and members of holy militaristic orders, a solar aegis provides substantial protection for the pure of heart.
 
 STATISTICS:
 
@@ -1452,14 +1747,14 @@ Requires:
 
 Weight: 3~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac109.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45749) /*~Girdle~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45750) /*~Golden Girdle~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45751) /*~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+	WRITE_LONG 8 RESOLVE_STR_REF(@45944) /*~Girdle~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45945) /*~Golden Girdle~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45946) /*~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
 
 STATISTICS:
 
 Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45752) /*~Though its battered condition speaks to its past use in combat, few of the cuts in this leather girdle were made by an enemy's blade. It would seem the magical symbols gouged into the hide have the practical effect of making the item's wearer less vulnerable to the swords of their foes.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45947) /*~Though its battered condition speaks to its past use in combat, few of the cuts in this leather girdle were made by an enemy's blade. It would seem the magical symbols gouged into the hide have the practical effect of making the item's wearer less vulnerable to the swords of their foes.
 
 STATISTICS:
 
@@ -1468,9 +1763,9 @@ Equipped abilities:
 
 Weight: 2~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac110.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45753) /*~Long Sword~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45754) /*~Aster's Edge +3~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45755) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+	WRITE_LONG 8 RESOLVE_STR_REF(@45948) /*~Long Sword~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45949) /*~Aster's Edge +3~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45950) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
 
 STATISTICS:
 
@@ -1482,7 +1777,7 @@ Requires:
  6 Strength
 
 Weight: 4~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45756) /*~Legend tells that a powerful angelic being gifted this blade to a member of the Order of the Aster long ago. Details of the legend have been lost over time, but many believe the sword was a reward for slaying a monstrous fiend, perhaps even a balor. Delicate etchings of asters decorate the blade, which glows with a silver-blue flame when drawn.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45951) /*~Legend tells that a powerful angelic being gifted this blade to a member of the Order of the Aster long ago. Details of the legend have been lost over time, but many believe the sword was a reward for slaying a monstrous fiend, perhaps even a balor. Delicate etchings of asters decorate the blade, which glows with a silver-blue flame when drawn.
 
 STATISTICS:
 
@@ -1502,14 +1797,14 @@ Weight: 2~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac111.itm~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\itm\xac117.itm~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\itm\xac118.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45757) /*~Belt~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45758) /*~Belt of Antipode~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45759) /*~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+	WRITE_LONG 8 RESOLVE_STR_REF(@45952) /*~Belt~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45953) /*~Belt of Antipode~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45954) /*~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
 
 STATISTICS:
 
 Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45760) /*~Trimmed in the fur of a polar bear, this sturdy belt is tooled with images of blue moons and white ice floes. The wearer is immune to all cold-based effects but suffers double any fire damage.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45955) /*~Trimmed in the fur of a polar bear, this sturdy belt is tooled with images of blue moons and white ice floes. The wearer is immune to all cold-based effects but suffers double any fire damage.
 
 STATISTICS:
 
@@ -1520,14 +1815,14 @@ Equipped abilities:
 Weight: 2~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac119.itm~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\itm\xac120.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45761) /*~Bracers~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45762) /*~Bracers of Defense AC 5~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45763) /*~Bracers are thick bands of metal or leather that are strapped, belted, or tied to a character's forearm. Generally, the magic that is instilled in bracers is good only during combat, since most bracers help protect the wearer from injury or improve their chances to strike an opponent. Exceptions do exist, though such specialized items are rare at best.
+	WRITE_LONG 8 RESOLVE_STR_REF(@45956) /*~Bracers~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45957) /*~Bracers of Defense AC 5~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45958) /*~Bracers are thick bands of metal or leather that are strapped, belted, or tied to a character's forearm. Generally, the magic that is instilled in bracers is good only during combat, since most bracers help protect the wearer from injury or improve their chances to strike an opponent. Exceptions do exist, though such specialized items are rare at best.
 
 STATISTICS:
 
 Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45764) /*~Standard bracers support the forearm, which often proves handy in combat situations. This magically altered pair is handier still, bestowing the wearer with protection comparable to a full suit of armor. Unlike armor, the bracers allow a full range of motion. This makes them highly prized by wizards and sorcerers, who cannot allow physical restriction to be imposed upon them if they're to successfully manipulate the Weave.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45959) /*~Standard bracers support the forearm, which often proves handy in combat situations. This magically altered pair is handier still, bestowing the wearer with protection comparable to a full suit of armor. Unlike armor, the bracers allow a full range of motion. This makes them highly prized by wizards and sorcerers, who cannot allow physical restriction to be imposed upon them if they're to successfully manipulate the Weave.
 
 STATISTICS:
 
@@ -1536,14 +1831,14 @@ Equipped abilities:
 
 Weight: 2~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac121.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45765) /*~Ring~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45766) /*~Ring of Free Action~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45767) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+	WRITE_LONG 8 RESOLVE_STR_REF(@45960) /*~Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45961) /*~Ring of Free Action~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45962) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45768) /*~Enemies have a hard time slowing this ring's wearer down. The runes etched in the silver band ward off spells designed to impede movement, granting its owner a freedom of mobility others affected by such magic are denied.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45963) /*~Enemies have a hard time slowing this ring's wearer down. The runes etched in the silver band ward off spells designed to impede movement, granting its owner a freedom of mobility others affected by such magic are denied.
 
 STATISTICS:
 
@@ -1552,9 +1847,9 @@ Equipped abilities:
 
 Weight: 0~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac125.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45769) /*~Battle Axe~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45770) /*~Chill Axe +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45771) /*~The most common version of the battle axe is a stout pole about four feet in length with a single-edged, trumpet-shaped blade mounted on one end. Battle axes are also called broad axes.
+	WRITE_LONG 8 RESOLVE_STR_REF(@45964) /*~Battle Axe~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45965) /*~Chill Axe +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45966) /*~The most common version of the battle axe is a stout pole about four feet in length with a single-edged, trumpet-shaped blade mounted on one end. Battle axes are also called broad axes.
 
 STATISTICS:
 
@@ -1566,7 +1861,7 @@ Requires:
  10 Strength
 
 Weight: 7~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45772) /*~This finely crafted axe bears the sigil of the Ice Dragon Berserker Lodge. Glowing white runes edge its cold silver blade, and a cloud of chill air trails behind the axe whenever it is swung. The most powerful rangers of the Ice Dragon Berserker Lodge carry these axes with them on their dejemmas, as protection from southern threats.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45967) /*~This finely crafted axe bears the sigil of the Ice Dragon Berserker Lodge. Glowing white runes edge its cold silver blade, and a cloud of chill air trails behind the axe whenever it is swung. The most powerful rangers of the Ice Dragon Berserker Lodge carry these axes with them on their dejemmas, as protection from southern threats.
 
 STATISTICS:
 
@@ -1588,22 +1883,22 @@ Requires:
 Weight: 5~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac126.itm~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\itm\xac127.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45773) /*~Gloves of Gripping~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45774) /*~Gloves of Gripping~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45775) /*~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
+	WRITE_LONG 8 RESOLVE_STR_REF(@45968) /*~Gloves of Gripping~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45969) /*~Gloves of Gripping~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45970) /*~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
 
 STATISTICS:
 
 Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45776) /*~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45971) /*~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
 
 STATISTICS:
 
 Weight: 2~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac128.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45777) /*~Hide Armor~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45778) /*~Cornugon's Revenge +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45779) /*~Hide armor is made from the thick hide of a very large animal (an elephant for example) or from many layers of normal leather from common animals, like cows. Hide armor is far too bulky, inflexible and heavy to be used much in advanced human cultures. However, among the barbaric humanoid masses throughout the dark forests and misty jungles of the world, hide armor is common. Even though it does offer more protection than leather armor, one must get by the offensive odor and shoddy appearance in order to wear it effectively. Even though Thieves can wear this armor, it has a negative effect on their abilities.
+	WRITE_LONG 8 RESOLVE_STR_REF(@45972) /*~Hide Armor~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45973) /*~Cornugon's Revenge +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45974) /*~Hide armor is made from the thick hide of a very large animal (an elephant for example) or from many layers of normal leather from common animals, like cows. Hide armor is far too bulky, inflexible and heavy to be used much in advanced human cultures. However, among the barbaric humanoid masses throughout the dark forests and misty jungles of the world, hide armor is common. Even though it does offer more protection than leather armor, one must get by the offensive odor and shoddy appearance in order to wear it effectively. Even though Thieves can wear this armor, it has a negative effect on their abilities.
 
 STATISTICS:
 
@@ -1618,7 +1913,7 @@ Requires:
  6 Strength
 
 Weight: 40~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45780) /*~The devil Thel’blax was a scourge against the armies of the Abyss until he was assassinated by the servants of his own master, Dispater. With his final breath, Thel’blax cursed his own body to never lie still even in death. When his body was carried to the Iron Tower, Thel’blax’s horns and barbs continued to thrash about as though alive.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45975) /*~The devil Thel’blax was a scourge against the armies of the Abyss until he was assassinated by the servants of his own master, Dispater. With his final breath, Thel’blax cursed his own body to never lie still even in death. When his body was carried to the Iron Tower, Thel’blax’s horns and barbs continued to thrash about as though alive.
 
 The cursed cornugon’s body was dismantled by his peers, in the hopes that destroying him would end the curse; but the disparate pieces of Thel’blax’s body continued to prick and tear at any who approached. At last, Dispater ordered his ironsmiths to forge the pieces into a suit of armor, intending to use it as a means of torturing insubordinates. Inevitably, the armor fell into the hands of intrepid (if foolhardy) adventurers, who then brought the piece to Faerûn.
 
@@ -1642,43 +1937,68 @@ Requires:
 
 Weight: 35~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac136.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45781) /*~A Key~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45782) /*~Troll Pen Key~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45783) /*~This is a standard key. Keys are used to open doors.
+	WRITE_LONG 8 RESOLVE_STR_REF(@45976) /*~A Key~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45977) /*~Troll Pen Key~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45978) /*~This is a standard key. Keys are used to open doors.
 
 STATISTICS:
 
 Weight: 1~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45784) /*~This heavy iron key has a handle shaped like a troll's face.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45979) /*~This heavy iron key has a handle shaped like a troll's face.
 
 STATISTICS:
 
 Weight: 1~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac156.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45980) /*~Plate Mail~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45981) /*~Bloody Bone Plate +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45982) /*~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+
+STATISTICS:
+
+Armor Class: 3 (0 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 50~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@45983) /*~The warrior who once wore this armor died at the hands of a friend she trusted. The mark of her betrayal remains in the bloodstains that have darkened to brown on the gleaming bone-white armor. The armor functions properly, though it makes the wearer unappealing to look at.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to backstab
+– Charisma: -1
+
+Armor Class: 1 (-2 vs. slashing)
+Requires:
+ 8 Strength
+
+Weight: 20~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac157.itm~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\itm\xac162.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45785) /*~Helmet~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45786) /*~Helmet~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45787) /*~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+	WRITE_LONG 8 RESOLVE_STR_REF(@45984) /*~Amulet~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45985) /*~Amulet of Abnormally Awesome Ankheg Summoning~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45986) /*~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
+
+STATISTICS:
+
+Weight: 1~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@45987) /*~Crafted by the dark druid Ferrusk, this amulet resembles the curved pincers of an ankheg hanging from an iron chain. The pincers' polished green carapace catches the light, gleaming with an emerald sheen. Ferrusk created this amulet to summon a passel of ankhegs to fight at its wearer's command.
 
 STATISTICS:
 
 Equipped abilities:
-– Protects against critical hits
+– Acid Resistance: +15%
 
-Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45788) /*~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+Charge abilities:
+– Summons two ankhegs
+  Range: 30 ft.
+  Duration: 2 turns
 
-STATISTICS:
-
-Equipped abilities:
-– Protects against critical hits
-
-Weight: 2~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac176.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45789) /*~Club~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45790) /*~Club +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45791) /*~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
+Weight: 0~*/
+COPY ~%MOD_FOLDER%\generated\c\itm\xac158.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45988) /*~Club~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45989) /*~Club +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45990) /*~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
 
 STATISTICS:
 
@@ -1690,7 +2010,7 @@ Requires:
  5 Strength
 
 Weight: 3~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45792) /*~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
+	WRITE_LONG 84 RESOLVE_STR_REF(@45991) /*~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
 
 STATISTICS:
 
@@ -1703,10 +2023,27 @@ Requires:
  5 Strength
 
 Weight: 3~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac178.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45793) /*~Helmet~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45794) /*~Helmet~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45795) /*~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+COPY ~%MOD_FOLDER%\generated\c\itm\xac159.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45992) /*~Potion~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45993) /*~Slime Sickness Curative~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45994) /*~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
+
+STATISTICS:
+
+Weight: 1~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@45995) /*~This bottle contains a special healing potion that counteracts fungal poison found in the caverns beneath Dragonspear Castle. One sip from the bottle is enough to cure the afflicted.
+
+STATISTICS:
+
+Weight: 1~*/
+COPY ~%MOD_FOLDER%\generated\c\itm\xac160.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac168.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac171.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac175.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac181.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45996) /*~Helmet~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45997) /*~Helmet~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45998) /*~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -1714,7 +2051,7 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45796) /*~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+	WRITE_LONG 84 RESOLVE_STR_REF(@45999) /*~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -1722,10 +2059,10 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac183.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45797) /*~Composite Longbow~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45798) /*~Corinth's Bow +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45799) /*~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac219.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46000) /*~Composite Longbow~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46001) /*~Corinth's Bow +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@46002) /*~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
 
 STATISTICS:
 
@@ -1738,7 +2075,7 @@ Requires:
  18 Strength
 
 Weight: 10~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45800) /*~Though obviously well-used, someone has taken excellent care of this finely crafted bow. A small golden seal on one side appears to be a family crest.
+	WRITE_LONG 84 RESOLVE_STR_REF(@46003) /*~Though obviously well-used, someone has taken excellent care of this finely crafted bow. A small golden seal on one side appears to be a family crest.
 
 STATISTICS:
 
@@ -1757,18 +2094,38 @@ Requires:
  18 Strength
 
 Weight: 8~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac197.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45801) /*~Tristian's Holy Symbol~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45802) /*~Tristian's Holy Symbol~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45803) /*~A carved wooden chesspiece painted a brilliant cherry red. Two glittering rubies wink from the horse's eye sockets.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac214.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46004) /*~Helmet~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46005) /*~Helmet~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@46006) /*~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+
+Weight: 2~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@46007) /*~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+
+Weight: 2~*/
+COPY ~%MOD_FOLDER%\generated\c\itm\xac194.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac233.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46008) /*~Tristian's Holy Symbol~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46009) /*~Tristian's Holy Symbol~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@46010) /*~A carved wooden chesspiece painted a brilliant cherry red. Two glittering rubies wink from the horse's eye sockets.
 
 STATISTICS:
 
 Weight: 1~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac199.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45804) /*~Long Sword~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45805) /*~Long Sword +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45806) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac235.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46011) /*~Long Sword~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46012) /*~Long Sword +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@46013) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
 
 STATISTICS:
 
@@ -1780,7 +2137,7 @@ Requires:
  6 Strength
 
 Weight: 4~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45807) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
+	WRITE_LONG 84 RESOLVE_STR_REF(@46014) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
 
 STATISTICS:
 
@@ -1793,15 +2150,15 @@ Requires:
  6 Strength
 
 Weight: 4~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac207.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45808) /*~Ring~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45809) /*~Ring of the Crusade~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45810) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac243.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46015) /*~Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46016) /*~Ring of the Crusade~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@46017) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45811) /*~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
+	WRITE_LONG 84 RESOLVE_STR_REF(@46018) /*~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
 
 STATISTICS:
 
@@ -1810,44 +2167,44 @@ Equipped abilities:
 – Saving Throws: +1, +3 vs. demons and devils
 
 Weight: 0~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac209.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45812) /*~Second Stone Fragment~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45813) /*~Second Stone Fragment~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45814) /*~A shard of stone belonging to an icon of Tempus.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac245.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46019) /*~Second Stone Fragment~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46020) /*~Second Stone Fragment~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@46021) /*~A shard of stone belonging to an icon of Tempus.
 
 STATISTICS:
 
 Weight: 10~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac213.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45815) /*~Dreon's Signet Ring~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45816) /*~Dreon's Signet Ring~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45817) /*~This heavy gold ring displays the seal of Caelar Argent, leader of the Shining Lady's crusade.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac249.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46022) /*~Dreon's Signet Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46023) /*~Dreon's Signet Ring~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@46024) /*~This heavy gold ring displays the seal of Caelar Argent, leader of the Shining Lady's crusade.
 
 STATISTICS:
 
 Weight: 0~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac215.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45818) /*~Empty Wineskin~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45819) /*~Empty Wineskin~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45820) /*~This well-used wineskin is stained purple around the spout.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac251.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46025) /*~Empty Wineskin~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46026) /*~Empty Wineskin~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@46027) /*~This well-used wineskin is stained purple around the spout.
 
 STATISTICS:
 
 Weight: 1~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac219.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45821) /*~Token of Faith~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45822) /*~Token of Faith~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45823) /*~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac255.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46028) /*~Token of Faith~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46029) /*~Token of Faith~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@46030) /*~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
 
 STATISTICS:
 
 Weight: 1~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45824) /*~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
+	WRITE_LONG 84 RESOLVE_STR_REF(@46031) /*~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
 
 STATISTICS:
 
 Weight: 1~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac247.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac283.itm~ ~override~
 
 //bmp files
 //===================
@@ -1874,6 +2231,11 @@ COPY ~%MOD_FOLDER%\generated\c\bam\xac104.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac103.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac102.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac101.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac108.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac109.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac110.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac119.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac118.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac117.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac116.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac115.bam~ ~override~
@@ -1881,9 +2243,6 @@ COPY ~%MOD_FOLDER%\generated\c\bam\xac114.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac113.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac112.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac111.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac110.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac109.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac108.bam~ ~override~
 
 //tis files
 //===================

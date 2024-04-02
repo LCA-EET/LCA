@@ -253,486 +253,681 @@ Glint happily expounds on his many adventures since leaving home; it's difficult
 @45250 = ~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]
 @45251 = ~Grimgor~
 @45252 = ~Grimgor~
-@45253 = ~Priest of Oghma~
-@45254 = ~Priest of Oghma~
-@45255 = ~ These walls contain the world's knowledge.~[xac10218]
+@45253 = ~Ferrusk~
+@45254 = ~Ferrusk~
+@45255 = ~~[xac10218]
 @45256 = ~~[xac10219]
-@45257 = ~~[xac10220]
-@45258 = ~ Wisdom is only possessed by the learned.~[xac10221]
-@45259 = ~ These walls contain the world's knowledge.~[xac10218]
-@45260 = ~ ~[xac10223]
-@45261 = ~ ~[xac10224]
-@45262 = ~Piato~
-@45263 = ~Piato~
-@45264 = ~ Our library is a man's harem of knowledge.~[xac10225]
-@45265 = ~~[xac10226]
-@45266 = ~~[xac10227]
-@45267 = ~ Our library is a man's harem of knowledge.~[xac10225]
-@45268 = ~ Oh—'scuse me, but I am late for my classes.~[xac10229]
-@45269 = ~ Oh—'scuse me, but I am late for my classes.~[xac10229]
-@45270 = ~ Oh—'scuse me, but I am late for my classes.~[xac10229]
-@45271 = ~Crusader Guard~
-@45272 = ~Crusader Guard~
-@45273 = ~For the Shining Lady!~[xac10232]
-@45274 = ~You need somethin'?~[xac10233]
-@45275 = ~We serve the light.~[xac10234]
-@45276 = ~Crusader Officer~
-@45277 = ~Crusader Officer~
-@45278 = ~~[xac10235]
-@45279 = ~~[xac10236]
-@45280 = ~ The Fair Folk rarely have time for small talk.~[xac10237]
-@45281 = ~ Troubled times are upon us.~[xac10238]
-@45282 = ~ Soon, we shall all be together upon Evermeet.~[xac10239]
-@45283 = ~Mercenary~
-@45284 = ~Mercenary~
-@45285 = ~Crusader Guard~
-@45286 = ~Crusader Guard~
-@45287 = ~Die in her name!~[xac10240]
-@45288 = ~Somethin' you need?~[xac10182]
-@45289 = ~As the light wills.~[xac10183]
-@45290 = ~Crusader Guard~
-@45291 = ~Crusader Guard~
-@45292 = ~I'll test your mettle with cold steel!~[xac10243]
-@45293 = ~~[xac10244]
-@45294 = ~~[xac10245]
-@45295 = ~Declare yourself!~[xac10246]
-@45296 = ~Do not disturb my duties.~[xac10247]
-@45297 = ~At ease, citizen.~[xac10248]
-@45298 = ~I trust you have no hostile intentions.~[xac10249]
-@45299 = ~Crusader Guard~
-@45300 = ~Crusader Guard~
-@45301 = ~ ~[xac10196]
-@45302 = ~ ~[xac10197]
-@45303 = ~ Good day and hello to you.~[xac10198]
-@45304 = ~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]
-@45305 = ~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]
-@45306 = ~Mercenary~
-@45307 = ~Mercenary~
-@45308 = ~ Spare no one!~[xac10255]
-@45309 = ~ You be quiet!~[xac10256]
-@45310 = ~ Forward march!~[xac10257]
-@45311 = ~Crusader Guard~
-@45312 = ~Crusader Guard~
-@45313 = ~ By Moradin's hammer.~[xac10258]
-@45314 = ~~[xac10259]
-@45315 = ~~[xac10260]
-@45316 = ~ I need a swig o' some strong dwarven ale.~[xac10261]
-@45317 = ~ Me temper's bad enough without ye botherin' me.~[xac10262]
-@45318 = ~ Your chatterin's startin' to wear on me nerves.~[xac10263]
-@45319 = ~Crusader Guard~
-@45320 = ~Crusader Guard~
-@45321 = ~Nooooooo!~[xac10264]
-@45322 = ~RAAAHHHHR! You die! You die!~[xac10265]
-@45323 = ~I will crush you, puny one!~[xac10266]
-@45324 = ~~[xac10267]
-@45325 = ~~[xac10268]
-@45326 = ~Uhh? What you want?~[xac10269]
-@45327 = ~I watching you!~[xac10270]
-@45328 = ~Speak, manling. Speak quick!~[xac10271]
-@45329 = ~You and my kind not get along!~[xac10272]
-@45330 = ~Mercenary~
-@45331 = ~Mercenary~
-@45332 = ~If I get paid, I fight.~[xac10273]
-@45333 = ~I like smashin' heads.~[xac10274]
-@45334 = ~Mercenary~
-@45335 = ~Mercenary~
-@45336 = ~I'll test your mettle with cold steel!~[xac10243]
-@45337 = ~~[xac10244]
-@45338 = ~~[xac10245]
-@45339 = ~Declare yourself!~[xac10246]
-@45340 = ~Do not disturb my duties.~[xac10247]
-@45341 = ~At ease, citizen.~[xac10248]
-@45342 = ~I trust you have no hostile intentions.~[xac10249]
-@45343 = ~Mercenary~
-@45344 = ~Mercenary~
-@45345 = ~If I get paid, I fight.~[xac10273]
-@45346 = ~I like smashin' heads.~[xac10274]
-@45347 = ~Mercenary~
-@45348 = ~Mercenary~
-@45349 = ~For the Shining Lady!~[xac10232]
-@45350 = ~You need somethin'?~[xac10233]
-@45351 = ~We serve the light.~[xac10234]
-@45352 = ~Mercenary~
-@45353 = ~Mercenary~
-@45354 = ~ By Moradin's hammer.~[xac10258]
-@45355 = ~~[xac10259]
-@45356 = ~~[xac10260]
-@45357 = ~ I need a swig o' some strong dwarven ale.~[xac10261]
-@45358 = ~ Me temper's bad enough without ye botherin' me.~[xac10262]
-@45359 = ~ Your chatterin's startin' to wear on me nerves.~[xac10263]
-@45360 = ~Crusader Commander~
-@45361 = ~Crusader Commander~
-@45362 = ~For the Shining Lady!~[xac10232]
-@45363 = ~You need somethin'?~[xac10233]
-@45364 = ~We serve the light.~[xac10234]
-@45365 = ~Sindret~
-@45366 = ~Sindret~
-@45367 = ~Troll~
-@45368 = ~Troll~
-@45369 = ~Troll Wrangler~
-@45370 = ~Troll Wrangler~
-@45371 = ~Stay back, or you'll regret it.~[xac10296]
-@45372 = ~I give! I give!~[xac10297]
-@45373 = ~All right! You and me! Let's go!~[xac10298]
-@45374 = ~~[xac10299]
-@45375 = ~~[xac10300]
-@45376 = ~I can break an arm or a leg fer a copper or two.~[xac10301]
-@45377 = ~Ahhh, be off with ya.~[xac10302]
-@45378 = ~Ye're a piece o' iron, you are.~[xac10303]
-@45379 = ~Crusader~
-@45380 = ~Crusader~
-@45381 = ~For the Shining Lady!~[xac10232]
-@45382 = ~You need somethin'?~[xac10233]
-@45383 = ~We serve the light.~[xac10234]
-@45384 = ~Leopas~
-@45385 = ~Leopas~
-@45386 = ~Crusader~
-@45387 = ~Crusader~
-@45388 = ~For the Shining Lady!~[xac10232]
-@45389 = ~You need somethin'?~[xac10233]
-@45390 = ~We serve the light.~[xac10234]
-@45391 = ~Crusader Archer~
-@45392 = ~Crusader Archer~
-@45393 = ~~[xac10235]
-@45394 = ~~[xac10236]
-@45395 = ~ The Fair Folk rarely have time for small talk.~[xac10237]
-@45396 = ~ Troubled times are upon us.~[xac10238]
-@45397 = ~ Soon, we shall all be together upon Evermeet.~[xac10239]
-@45398 = ~Corinth~
-@45399 = ~Corinth~
-@45400 = ~Valis~
-@45401 = ~Valis~
-@45402 = ~Ravoc~
-@45403 = ~Ravoc~
-@45404 = ~Nooooooo!~[xac10264]
-@45405 = ~RAAAHHHHR! You die! You die!~[xac10265]
-@45406 = ~I will crush you, puny one!~[xac10266]
-@45407 = ~~[xac10267]
-@45408 = ~~[xac10268]
-@45409 = ~Uhh? What you want?~[xac10269]
-@45410 = ~I watching you!~[xac10270]
-@45411 = ~Speak, manling. Speak quick!~[xac10271]
-@45412 = ~You and my kind not get along!~[xac10272]
-@45413 = ~Delton~
-@45414 = ~Delton~
-@45415 = ~ I am happy not. No, I'm not.~[xac10324]
-@45416 = ~~[xac10325]
-@45417 = ~~[xac10326]
-@45418 = ~ I am happy not. No, I'm not.~[xac10324]
-@45419 = ~ Happy I am. Yes, I am!~[xac10328]
-@45420 = ~ Who you are, know not I.~[xac10329]
-@45421 = ~Damarr~
-@45422 = ~Damarr~
-@45423 = ~Die in her name!~[xac10240]
-@45424 = ~Somethin' you need?~[xac10182]
-@45425 = ~As the light wills.~[xac10183]
-@45426 = ~Crusader~
-@45427 = ~Crusader~
-@45428 = ~For the Shining Lady!~[xac10232]
-@45429 = ~You need somethin'?~[xac10233]
-@45430 = ~We serve the light.~[xac10234]
-@45431 = ~Mercenary~
-@45432 = ~Mercenary~
-@45433 = ~Die in her name!~[xac10240]
-@45434 = ~Somethin' you need?~[xac10182]
-@45435 = ~As the light wills.~[xac10183]
-@45436 = ~Crusader~
-@45437 = ~Crusader~
-@45438 = ~Nooooooo!~[xac10264]
-@45439 = ~RAAAHHHHR! You die! You die!~[xac10265]
-@45440 = ~I will crush you, puny one!~[xac10266]
-@45441 = ~~[xac10267]
-@45442 = ~~[xac10268]
-@45443 = ~Uhh? What you want?~[xac10269]
-@45444 = ~I watching you!~[xac10270]
-@45445 = ~Speak, manling. Speak quick!~[xac10271]
-@45446 = ~You and my kind not get along!~[xac10272]
-@45447 = ~Mercenary~
-@45448 = ~Mercenary~
-@45449 = ~If I get paid, I fight.~[xac10273]
-@45450 = ~I like smashin' heads.~[xac10274]
-@45451 = ~Crusader~
-@45452 = ~Crusader~
-@45453 = ~What you looking at?~[xac10350]
-@45454 = ~Go 'way.~[xac10351]
-@45455 = ~Tristian~
-@45456 = ~Tristian~
-@45457 = ~For the Shining Lady!~[xac10232]
-@45458 = ~You need somethin'?~[xac10233]
-@45459 = ~We serve the light.~[xac10234]
-@45460 = ~Crusader Sergeant~
-@45461 = ~Crusader Sergeant~
-@45462 = ~Die in her name!~[xac10240]
-@45463 = ~Somethin' you need?~[xac10182]
-@45464 = ~As the light wills.~[xac10183]
-@45465 = ~Crusader Elite~
-@45466 = ~Crusader Elite~
-@45467 = ~Die in her name!~[xac10240]
-@45468 = ~Somethin' you need?~[xac10182]
-@45469 = ~As the light wills.~[xac10183]
-@45470 = ~Crusader Sergeant~
-@45471 = ~Crusader Sergeant~
-@45472 = ~ By Moradin's hammer.~[xac10258]
-@45473 = ~~[xac10259]
-@45474 = ~~[xac10260]
-@45475 = ~ I need a swig o' some strong dwarven ale.~[xac10261]
-@45476 = ~ Me temper's bad enough without ye botherin' me.~[xac10262]
-@45477 = ~ Your chatterin's startin' to wear on me nerves.~[xac10263]
-@45478 = ~Crusader Elite~
-@45479 = ~Crusader Elite~
-@45480 = ~ ~[xac10196]
-@45481 = ~ ~[xac10197]
-@45482 = ~ Good day and hello to you.~[xac10198]
-@45483 = ~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]
-@45484 = ~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]
-@45485 = ~Zare~
-@45486 = ~Zare~
-@45487 = ~For the Shining Lady!~[xac10232]
-@45488 = ~You need somethin'?~[xac10233]
-@45489 = ~We serve the light.~[xac10234]
-@45490 = ~Crusader Recruit~
-@45491 = ~Crusader Recruit~
-@45492 = ~For the Shining Lady!~[xac10232]
-@45493 = ~You need somethin'?~[xac10233]
-@45494 = ~We serve the light.~[xac10234]
-@45495 = ~Recruit Kjarvan~
-@45496 = ~Recruit Kjarvan~
-@45497 = ~For the Shining Lady!~[xac10232]
-@45498 = ~You need somethin'?~[xac10233]
-@45499 = ~We serve the light.~[xac10234]
-@45500 = ~Recruit Qing~
-@45501 = ~Recruit Qing~
-@45502 = ~For the Shining Lady!~[xac10232]
-@45503 = ~You need somethin'?~[xac10233]
-@45504 = ~We serve the light.~[xac10234]
-@45505 = ~Deneld~
-@45506 = ~Deneld~
-@45507 = ~Glory and honor.~
-@45508 = ~The light will reward you.~
-@45509 = ~Crusader~
-@45510 = ~Crusader~
-@45511 = ~ I am happy not. No, I'm not.~[xac10324]
-@45512 = ~~[xac10325]
-@45513 = ~~[xac10326]
-@45514 = ~ I am happy not. No, I'm not.~[xac10324]
-@45515 = ~ Happy I am. Yes, I am!~[xac10328]
-@45516 = ~ Who you are, know not I.~[xac10329]
-@45517 = ~Crusader~
-@45518 = ~Crusader~
-@45519 = ~ You're rather outlandish folk to be wanderin' 'round here.~[xac10390]
-@45520 = ~~[xac10391]
-@45521 = ~~[xac10392]
-@45522 = ~ Nasty times are comin', I reckon.~[xac10393]
-@45523 = ~ You're rather outlandish folk to be wanderin' 'round here.~[xac10390]
-@45524 = ~ Queer things have been afoot lately.~[xac10395]
-@45525 = ~ I wish I had my old tobacco pipe.~[xac10396]
-@45526 = ~Commander Dreon~
-@45527 = ~Commander Dreon~
-@45528 = ~For the Shining Lady!~[xac10232]
-@45529 = ~You need somethin'?~[xac10233]
-@45530 = ~We serve the light.~[xac10234]
-@45531 = ~Sallo~
-@45532 = ~Sallo~
-@45533 = ~ ZZZZzzzzzzz...~[xac10400]
-@45534 = ~ ZZZZzzzzz... *snort*~[xac10401]
-@45535 = ~Crusader Nan~
-@45536 = ~Crusader Nan~
-@45537 = ~ Ooh, it's a fine day for meeting new friends.~[xac10402]
-@45538 = ~~[xac10403]
-@45539 = ~~[xac10404]
-@45540 = ~ May you know the happiness of a warm hearth and home.~[xac10405]
-@45541 = ~ Dallillia guides the way of all those that seek the path home.~[xac10406]
-@45542 = ~Crusader Pedro~
-@45543 = ~Crusader Pedro~
-@45544 = ~For the Shining Lady!~[xac10232]
-@45545 = ~You need somethin'?~[xac10233]
-@45546 = ~We serve the light.~[xac10234]
-@45547 = ~Crusader Recruit~
-@45548 = ~Crusader Recruit~
-@45549 = ~ ~[xac10196]
-@45550 = ~ ~[xac10197]
-@45551 = ~ Good day and hello to you.~[xac10198]
-@45552 = ~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]
-@45553 = ~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]
-@45554 = ~Crusader Recruit~
-@45555 = ~Crusader Recruit~
-@45556 = ~Die in her name!~[xac10240]
-@45557 = ~Somethin' you need?~[xac10182]
-@45558 = ~As the light wills.~[xac10183]
-@45559 = ~Crusader Recruit~
-@45560 = ~Crusader Recruit~
-@45561 = ~ You're rather outlandish folk to be wanderin' 'round here.~[xac10390]
-@45562 = ~~[xac10391]
-@45563 = ~~[xac10392]
-@45564 = ~ Nasty times are comin', I reckon.~[xac10393]
-@45565 = ~ You're rather outlandish folk to be wanderin' 'round here.~[xac10390]
-@45566 = ~ Queer things have been afoot lately.~[xac10395]
-@45567 = ~ I wish I had my old tobacco pipe.~[xac10396]
-@45568 = ~Mercenary~
-@45569 = ~Mercenary~
-@45570 = ~Crusader Recruit~
-@45571 = ~Crusader Recruit~
-@45572 = ~ By Moradin's hammer.~[xac10258]
-@45573 = ~~[xac10259]
-@45574 = ~~[xac10260]
-@45575 = ~ I need a swig o' some strong dwarven ale.~[xac10261]
-@45576 = ~ Me temper's bad enough without ye botherin' me.~[xac10262]
-@45577 = ~ Your chatterin's startin' to wear on me nerves.~[xac10263]
-@45578 = ~Crusader Recruit~
-@45579 = ~Crusader Recruit~
-@45580 = ~ Grrrrrrrr... grrrr!~[xac10431]
-@45581 = ~ ~[xac10432]
-@45582 = ~ ~[xac10433]
-@45583 = ~ Grrrr, yip yip yap! Yip yip *snarl*...~[xac10434]
-@45584 = ~ Yap! Grrr grr... yip yip yip yap! Look, we don't speak Common, all right?! *snarl* Yip yip yap!~[xac10435]
-@45585 = ~ *snarl* Yip! Yip yip yip yip yap!~[xac10436]
-@45586 = ~Crusader~
-@45587 = ~Crusader~
-@45588 = ~~[xac10235]
-@45589 = ~~[xac10236]
-@45590 = ~ The Fair Folk rarely have time for small talk.~[xac10237]
-@45591 = ~ Troubled times are upon us.~[xac10238]
-@45592 = ~ Soon, we shall all be together upon Evermeet.~[xac10239]
-@45593 = ~Crusader~
-@45594 = ~Crusader~
-@45595 = ~For the Shining Lady!~[xac10232]
-@45596 = ~You need somethin'?~[xac10233]
-@45597 = ~We serve the light.~[xac10234]
-@45598 = ~Mercenary Captain~
-@45599 = ~Mercenary Captain~
-@45600 = ~For the Shining Lady!~[xac10232]
-@45601 = ~You need somethin'?~[xac10233]
-@45602 = ~We serve the light.~[xac10234]
-@45603 = ~Mercenary~
-@45604 = ~Mercenary~
-@45605 = ~Stay back, or you'll regret it.~[xac10296]
-@45606 = ~I give! I give!~[xac10297]
-@45607 = ~All right! You and me! Let's go!~[xac10298]
-@45608 = ~~[xac10299]
-@45609 = ~~[xac10300]
-@45610 = ~I can break an arm or a leg fer a copper or two.~[xac10301]
-@45611 = ~Ahhh, be off with ya.~[xac10302]
-@45612 = ~Ye're a piece o' iron, you are.~[xac10303]
-@45613 = ~Crusader Recruit~
-@45614 = ~Crusader Recruit~
-@45615 = ~For the Shining Lady!~[xac10232]
-@45616 = ~You need somethin'?~[xac10233]
-@45617 = ~We serve the light.~[xac10234]
-@45618 = ~Crusader Recruit~
-@45619 = ~Crusader Recruit~
-@45620 = ~Die in her name!~[xac10240]
-@45621 = ~Somethin' you need?~[xac10182]
-@45622 = ~As the light wills.~[xac10183]
-@45623 = ~Crusader Recruit~
-@45624 = ~Crusader Recruit~
-@45625 = ~~[xac10462]
-@45626 = ~~[xac10463]
-@45627 = ~ Your acquaintance I am glad to have made.~[xac10464]
-@45628 = ~ Soon to go back to the grotto, I am. I miss the tunnels of home.~[xac10465]
-@45629 = ~ The underground seems safer by far, and gems to find are welcome too.~[xac10466]
-@45630 = ~Crusader Recruit~
-@45631 = ~Crusader Recruit~
-@45632 = ~ Spare no one!~[xac10255]
-@45633 = ~ You be quiet!~[xac10256]
-@45634 = ~ Forward march!~[xac10257]
-@45635 = ~Crusader Recruit~
-@45636 = ~Crusader Recruit~
-@45637 = ~Nooooooo!~[xac10264]
-@45638 = ~RAAAHHHHR! You die! You die!~[xac10265]
-@45639 = ~I will crush you, puny one!~[xac10266]
-@45640 = ~~[xac10267]
-@45641 = ~~[xac10268]
-@45642 = ~Uhh? What you want?~[xac10269]
-@45643 = ~I watching you!~[xac10270]
-@45644 = ~Speak, manling. Speak quick!~[xac10271]
-@45645 = ~You and my kind not get along!~[xac10272]
-@45646 = ~Crusader Elite~
-@45647 = ~Crusader Elite~
-@45648 = ~For the Shining Lady!~[xac10232]
-@45649 = ~You need somethin'?~[xac10233]
-@45650 = ~We serve the light.~[xac10234]
-@45651 = ~Crusader Elite~
-@45652 = ~Crusader Elite~
-@45653 = ~~[xac10235]
-@45654 = ~~[xac10236]
-@45655 = ~ The Fair Folk rarely have time for small talk.~[xac10237]
-@45656 = ~ Troubled times are upon us.~[xac10238]
-@45657 = ~ Soon, we shall all be together upon Evermeet.~[xac10239]
-@45658 = ~Kara-Turan Mercenary~
-@45659 = ~Kara-Turan Mercenary~
-@45660 = ~For the Shining Lady!~[xac10232]
-@45661 = ~You need somethin'?~[xac10233]
-@45662 = ~We serve the light.~[xac10234]
-@45663 = ~Mercenary~
-@45664 = ~Mercenary~
-@45665 = ~ Die, scum!~[xac10490]
-@45666 = ~~[xac10491]
-@45667 = ~ ~[xac10492]
-@45668 = ~Mercenary~
-@45669 = ~Mercenary~
-@45670 = ~Mercenary~
-@45671 = ~Mercenary~
-@45672 = ~ Grrrrrrrr... grrrr!~[xac10431]
-@45673 = ~ ~[xac10432]
-@45674 = ~ ~[xac10433]
-@45675 = ~ Grrrr, yip yip yap! Yip yip *snarl*...~[xac10434]
-@45676 = ~ Yap! Grrr grr... yip yip yip yap! Look, we don't speak Common, all right?! *snarl* Yip yip yap!~[xac10435]
-@45677 = ~ *snarl* Yip! Yip yip yip yip yap!~[xac10436]
-@45678 = ~Mercenary~
-@45679 = ~Mercenary~
-@45680 = ~ Grrrrrrrr... grrrr!~[xac10431]
-@45681 = ~ ~[xac10432]
-@45682 = ~ ~[xac10433]
-@45683 = ~ Grrrr, yip yip yap! Yip yip *snarl*...~[xac10434]
-@45684 = ~ Yap! Grrr grr... yip yip yip yap! Look, we don't speak Common, all right?! *snarl* Yip yip yap!~[xac10435]
-@45685 = ~ *snarl* Yip! Yip yip yip yip yap!~[xac10436]
-@45686 = ~Crusader Archer~
-@45687 = ~Crusader Archer~
-@45688 = ~Die in her name!~[xac10240]
-@45689 = ~Somethin' you need?~[xac10182]
-@45690 = ~As the light wills.~[xac10183]
-@45691 = ~Crusader Archer~
-@45692 = ~Crusader Archer~
-@45693 = ~~[xac10235]
-@45694 = ~~[xac10236]
-@45695 = ~ The Fair Folk rarely have time for small talk.~[xac10237]
-@45696 = ~ Troubled times are upon us.~[xac10238]
-@45697 = ~ Soon, we shall all be together upon Evermeet.~[xac10239]
-@45698 = ~Crusader Archer~
-@45699 = ~Crusader Archer~
-@45700 = ~For the Shining Lady!~[xac10232]
-@45701 = ~You need somethin'?~[xac10233]
-@45702 = ~We serve the light.~[xac10234]
-@45703 = ~Crusader Archer~
-@45704 = ~Crusader Archer~
-@45705 = ~ ~[xac10196]
-@45706 = ~ ~[xac10197]
-@45707 = ~ Good day and hello to you.~[xac10198]
-@45708 = ~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]
-@45709 = ~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]
-@45710 = ~<NO TEXT>~
-@45711 = ~<NO TEXT>~
-@45712 = ~Stone Golem~
-@45713 = ~Stone Golem~
-@45714 = ~Crusader Scout~
-@45715 = ~Crusader Scout~
-@45716 = ~If I get paid, I fight.~[xac10273]
-@45717 = ~I like smashin' heads.~[xac10274]
-@45718 = ~This heavy slab displays the holy symbol of Tempus.~
-@45719 = ~This magical barrier hums with arcane power. Beyond, the camp buzzes with activity as the crusaders prepare for battle.~
-@45720 = ~A translucent field of force glimmers before the gate, its magic repelling any attempt to enter the courtyard.~
-@45721 = ~Though the crusade's symbol is a sun upon the horizon, this banner offers little warmth or light to the oppressive gloom permeating Dragonspear Castle.~
-@45722 = ~Properly positioned, this recently repaired catapult could inflict serious damage upon Caelar's enemies.~
-@45723 = ~Though dead for decades, the red dragon remains that crown this castle radiate menace.~
-@45724 = ~Exit~
-@45725 = ~Belt~
-@45726 = ~Belt of the Cunning Rogue~
-@45727 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+@45257 = ~Daggerford Militia~
+@45258 = ~Daggerford Militia~
+@45259 = ~ By Moradin's hammer.~[xac10220]
+@45260 = ~~[xac10221]
+@45261 = ~~[xac10222]
+@45262 = ~ I need a swig o' some strong dwarven ale.~[xac10223]
+@45263 = ~ Me temper's bad enough without ye botherin' me.~[xac10224]
+@45264 = ~ Your chatterin's startin' to wear on me nerves.~[xac10225]
+@45265 = ~Daggerford Militia~
+@45266 = ~Daggerford Militia~
+@45267 = ~Defend our allies!~[xac10226]
+@45268 = ~Yes?~[xac10227]
+@45269 = ~I'm here to fight.~[xac10228]
+@45270 = ~Daggerford Militia~
+@45271 = ~Daggerford Militia~
+@45272 = ~Kill 'em all!~[xac10229]
+@45273 = ~We're few but fierce!~[xac10230]
+@45274 = ~Soon we march.~[xac10231]
+@45275 = ~Daggerford Militia~
+@45276 = ~Daggerford Militia~
+@45277 = ~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]
+@45278 = ~~[xac10233]
+@45279 = ~~[xac10234]
+@45280 = ~ Nasty times are comin', I reckon.~[xac10235]
+@45281 = ~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]
+@45282 = ~ Queer things have been afoot lately.~[xac10237]
+@45283 = ~ I wish I had my old tobacco pipe.~[xac10238]
+@45284 = ~Flaming Fist Mercenary~
+@45285 = ~Flaming Fist Mercenary~
+@45286 = ~Punish the lawbreakers!~[xac10239]
+@45287 = ~We're more than mercenaries.~[xac10240]
+@45288 = ~War is almost here.~[xac10241]
+@45289 = ~Flaming Fist Mercenary~
+@45290 = ~Flaming Fist Mercenary~
+@45291 = ~Punish the lawbreakers!~[xac10239]
+@45292 = ~We're more than mercenaries.~[xac10240]
+@45293 = ~War is almost here.~[xac10241]
+@45294 = ~Flaming Fist Mercenary~
+@45295 = ~Flaming Fist Mercenary~
+@45296 = ~Show them our steel!~[xac10245]
+@45297 = ~Order is what matters.~[xac10246]
+@45298 = ~For Baldur's Gate.~[xac10247]
+@45299 = ~Flaming Fist Mercenary~
+@45300 = ~Flaming Fist Mercenary~
+@45301 = ~Show them our steel!~[xac10245]
+@45302 = ~Order is what matters.~[xac10246]
+@45303 = ~For Baldur's Gate.~[xac10247]
+@45304 = ~Flaming Fist Watcher~
+@45305 = ~Flaming Fist Watcher~
+@45306 = ~ ~[xac10251]
+@45307 = ~ ~[xac10252]
+@45308 = ~ Helm sees all. Know that and be judged!~[xac10253]
+@45309 = ~ The Vigilant One knows of all your sins.~[xac10254]
+@45310 = ~Flaming Fist Battlemage~
+@45311 = ~Flaming Fist Battlemage~
+@45312 = ~Punish the lawbreakers!~[xac10239]
+@45313 = ~We're more than mercenaries.~[xac10240]
+@45314 = ~War is almost here.~[xac10241]
+@45315 = ~Flaming Fist Veteran~
+@45316 = ~Flaming Fist Veteran~
+@45317 = ~Show them our steel!~[xac10245]
+@45318 = ~Order is what matters.~[xac10246]
+@45319 = ~For Baldur's Gate.~[xac10247]
+@45320 = ~Waterdhavian Soldier~
+@45321 = ~Waterdhavian Soldier~
+@45322 = ~To arms! To arms!~[xac10261]
+@45323 = ~Still we wait.~[xac10262]
+@45324 = ~The City of Splendors is my home.~[xac10263]
+@45325 = ~Waterdhavian Soldier~
+@45326 = ~Waterdhavian Soldier~
+@45327 = ~ By Moradin's hammer.~[xac10220]
+@45328 = ~~[xac10221]
+@45329 = ~~[xac10222]
+@45330 = ~ I need a swig o' some strong dwarven ale.~[xac10223]
+@45331 = ~ Me temper's bad enough without ye botherin' me.~[xac10224]
+@45332 = ~ Your chatterin's startin' to wear on me nerves.~[xac10225]
+@45333 = ~Waterdhavian Soldier~
+@45334 = ~Waterdhavian Soldier~
+@45335 = ~Lift up your blades and fight!~[xac10270]
+@45336 = ~For Waterdeep.~[xac10271]
+@45337 = ~What is it?~[xac10272]
+@45338 = ~Waterdhavian Soldier~
+@45339 = ~Waterdhavian Soldier~
+@45340 = ~ ~[xac10196]
+@45341 = ~ ~[xac10197]
+@45342 = ~ Good day and hello to you.~[xac10198]
+@45343 = ~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]
+@45344 = ~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]
+@45345 = ~Crusader Archer~
+@45346 = ~Crusader Archer~
+@45347 = ~For the Shining Lady!~[xac10278]
+@45348 = ~You need somethin'?~[xac10279]
+@45349 = ~We serve the light.~[xac10280]
+@45350 = ~Crusader~
+@45351 = ~Crusader~
+@45352 = ~ A pleasure it is to meet ya.~[xac10281]
+@45353 = ~ A stout hammer will fix most any bandit.~[xac10282]
+@45354 = ~~[xac10283]
+@45355 = ~~[xac10284]
+@45356 = ~ A pleasure it is to meet ya.~[xac10281]
+@45357 = ~ You canna get better than the stability stone walls provide.~[xac10286]
+@45358 = ~Crusader~
+@45359 = ~Crusader~
+@45360 = ~~[xac10287]
+@45361 = ~~[xac10288]
+@45362 = ~ The Fair Folk rarely have time for small talk.~[xac10289]
+@45363 = ~ Troubled times are upon us.~[xac10290]
+@45364 = ~ Soon, we shall all be together upon Evermeet.~[xac10291]
+@45365 = ~Crusader Recruit~
+@45366 = ~Crusader Recruit~
+@45367 = ~Die in her name!~[xac10292]
+@45368 = ~Somethin' you need?~[xac10182]
+@45369 = ~As the light wills.~[xac10183]
+@45370 = ~Crusader Recruit~
+@45371 = ~Crusader Recruit~
+@45372 = ~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]
+@45373 = ~~[xac10233]
+@45374 = ~~[xac10234]
+@45375 = ~ Nasty times are comin', I reckon.~[xac10235]
+@45376 = ~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]
+@45377 = ~ Queer things have been afoot lately.~[xac10237]
+@45378 = ~ I wish I had my old tobacco pipe.~[xac10238]
+@45379 = ~Mercenary~
+@45380 = ~Mercenary~
+@45381 = ~Mercenary~
+@45382 = ~Mercenary~
+@45383 = ~ Spare no one!~[xac10302]
+@45384 = ~ You be quiet!~[xac10303]
+@45385 = ~ Forward march!~[xac10304]
+@45386 = ~Mercenary~
+@45387 = ~Mercenary~
+@45388 = ~ Die, scum!~[xac10305]
+@45389 = ~~[xac10306]
+@45390 = ~ ~[xac10307]
+@45391 = ~Crusader Cleric~
+@45392 = ~Crusader Cleric~
+@45393 = ~ A pleasure it is to meet ya.~[xac10281]
+@45394 = ~ A stout hammer will fix most any bandit.~[xac10282]
+@45395 = ~~[xac10283]
+@45396 = ~~[xac10284]
+@45397 = ~ A pleasure it is to meet ya.~[xac10281]
+@45398 = ~ You canna get better than the stability stone walls provide.~[xac10286]
+@45399 = ~Crusader Cleric~
+@45400 = ~Crusader Cleric~
+@45401 = ~I welcome you with outstretched hand.~[xac10314]
+@45402 = ~Justice shall be swift and final!~[xac10315]
+@45403 = ~~[xac10316]
+@45404 = ~~[xac10317]
+@45405 = ~I trust you are here in good faith.~[xac10318]
+@45406 = ~May the gods look upon you kindly.~[xac10319]
+@45407 = ~All of the faithful are welcome here.~[xac10320]
+@45408 = ~Crusader Cleric~
+@45409 = ~Crusader Cleric~
+@45410 = ~ ~[xac10196]
+@45411 = ~ ~[xac10197]
+@45412 = ~ Good day and hello to you.~[xac10198]
+@45413 = ~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]
+@45414 = ~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]
+@45415 = ~Crusader Cleric~
+@45416 = ~Crusader Cleric~
+@45417 = ~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]
+@45418 = ~~[xac10233]
+@45419 = ~~[xac10234]
+@45420 = ~ Nasty times are comin', I reckon.~[xac10235]
+@45421 = ~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]
+@45422 = ~ Queer things have been afoot lately.~[xac10237]
+@45423 = ~ I wish I had my old tobacco pipe.~[xac10238]
+@45424 = ~Crusader Mage~
+@45425 = ~Crusader Mage~
+@45426 = ~For the Shining Lady!~[xac10278]
+@45427 = ~You need somethin'?~[xac10279]
+@45428 = ~We serve the light.~[xac10280]
+@45429 = ~Crusader Mage~
+@45430 = ~Crusader Mage~
+@45431 = ~~[xac10336]
+@45432 = ~~[xac10337]
+@45433 = ~ Your acquaintance I am glad to have made.~[xac10338]
+@45434 = ~ Soon to go back to the grotto, I am. I miss the tunnels of home.~[xac10339]
+@45435 = ~ The underground seems safer by far, and gems to find are welcome too.~[xac10340]
+@45436 = ~Crusader Mage~
+@45437 = ~Crusader Mage~
+@45438 = ~~[xac10287]
+@45439 = ~~[xac10288]
+@45440 = ~ The Fair Folk rarely have time for small talk.~[xac10289]
+@45441 = ~ Troubled times are upon us.~[xac10290]
+@45442 = ~ Soon, we shall all be together upon Evermeet.~[xac10291]
+@45443 = ~Crusader Mage~
+@45444 = ~Crusader Mage~
+@45445 = ~Die in her name!~[xac10292]
+@45446 = ~Somethin' you need?~[xac10182]
+@45447 = ~As the light wills.~[xac10183]
+@45448 = ~Troll Wrangler~
+@45449 = ~Troll Wrangler~
+@45450 = ~Stay back, or you'll regret it.~[xac10349]
+@45451 = ~I give! I give!~[xac10350]
+@45452 = ~All right! You and me! Let's go!~[xac10351]
+@45453 = ~~[xac10352]
+@45454 = ~~[xac10353]
+@45455 = ~I can break an arm or a leg fer a copper or two.~[xac10354]
+@45456 = ~Ahhh, be off with ya.~[xac10355]
+@45457 = ~Ye're a piece o' iron, you are.~[xac10356]
+@45458 = ~Priest of Oghma~
+@45459 = ~Priest of Oghma~
+@45460 = ~ These walls contain the world's knowledge.~[xac10357]
+@45461 = ~~[xac10358]
+@45462 = ~~[xac10359]
+@45463 = ~ Wisdom is only possessed by the learned.~[xac10360]
+@45464 = ~ These walls contain the world's knowledge.~[xac10357]
+@45465 = ~ ~[xac10362]
+@45466 = ~ ~[xac10363]
+@45467 = ~Piato~
+@45468 = ~Piato~
+@45469 = ~ Our library is a man's harem of knowledge.~[xac10364]
+@45470 = ~~[xac10365]
+@45471 = ~~[xac10366]
+@45472 = ~ Our library is a man's harem of knowledge.~[xac10364]
+@45473 = ~ Oh—'scuse me, but I am late for my classes.~[xac10368]
+@45474 = ~ Oh—'scuse me, but I am late for my classes.~[xac10368]
+@45475 = ~ Oh—'scuse me, but I am late for my classes.~[xac10368]
+@45476 = ~Crusader Guard~
+@45477 = ~Crusader Guard~
+@45478 = ~For the Shining Lady!~[xac10278]
+@45479 = ~You need somethin'?~[xac10279]
+@45480 = ~We serve the light.~[xac10280]
+@45481 = ~Crusader Officer~
+@45482 = ~Crusader Officer~
+@45483 = ~~[xac10287]
+@45484 = ~~[xac10288]
+@45485 = ~ The Fair Folk rarely have time for small talk.~[xac10289]
+@45486 = ~ Troubled times are upon us.~[xac10290]
+@45487 = ~ Soon, we shall all be together upon Evermeet.~[xac10291]
+@45488 = ~Mercenary~
+@45489 = ~Mercenary~
+@45490 = ~Crusader Guard~
+@45491 = ~Crusader Guard~
+@45492 = ~Die in her name!~[xac10292]
+@45493 = ~Somethin' you need?~[xac10182]
+@45494 = ~As the light wills.~[xac10183]
+@45495 = ~Crusader Guard~
+@45496 = ~Crusader Guard~
+@45497 = ~I'll test your mettle with cold steel!~[xac10382]
+@45498 = ~~[xac10383]
+@45499 = ~~[xac10384]
+@45500 = ~Declare yourself!~[xac10385]
+@45501 = ~Do not disturb my duties.~[xac10386]
+@45502 = ~At ease, citizen.~[xac10387]
+@45503 = ~I trust you have no hostile intentions.~[xac10388]
+@45504 = ~Crusader Guard~
+@45505 = ~Crusader Guard~
+@45506 = ~ ~[xac10196]
+@45507 = ~ ~[xac10197]
+@45508 = ~ Good day and hello to you.~[xac10198]
+@45509 = ~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]
+@45510 = ~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]
+@45511 = ~Mercenary~
+@45512 = ~Mercenary~
+@45513 = ~ Spare no one!~[xac10302]
+@45514 = ~ You be quiet!~[xac10303]
+@45515 = ~ Forward march!~[xac10304]
+@45516 = ~Crusader Guard~
+@45517 = ~Crusader Guard~
+@45518 = ~ By Moradin's hammer.~[xac10220]
+@45519 = ~~[xac10221]
+@45520 = ~~[xac10222]
+@45521 = ~ I need a swig o' some strong dwarven ale.~[xac10223]
+@45522 = ~ Me temper's bad enough without ye botherin' me.~[xac10224]
+@45523 = ~ Your chatterin's startin' to wear on me nerves.~[xac10225]
+@45524 = ~Crusader Guard~
+@45525 = ~Crusader Guard~
+@45526 = ~Nooooooo!~[xac10403]
+@45527 = ~RAAAHHHHR! You die! You die!~[xac10404]
+@45528 = ~I will crush you, puny one!~[xac10405]
+@45529 = ~~[xac10406]
+@45530 = ~~[xac10407]
+@45531 = ~Uhh? What you want?~[xac10408]
+@45532 = ~I watching you!~[xac10409]
+@45533 = ~Speak, manling. Speak quick!~[xac10410]
+@45534 = ~You and my kind not get along!~[xac10411]
+@45535 = ~Mercenary~
+@45536 = ~Mercenary~
+@45537 = ~If I get paid, I fight.~[xac10412]
+@45538 = ~I like smashin' heads.~[xac10413]
+@45539 = ~Mercenary~
+@45540 = ~Mercenary~
+@45541 = ~I'll test your mettle with cold steel!~[xac10382]
+@45542 = ~~[xac10383]
+@45543 = ~~[xac10384]
+@45544 = ~Declare yourself!~[xac10385]
+@45545 = ~Do not disturb my duties.~[xac10386]
+@45546 = ~At ease, citizen.~[xac10387]
+@45547 = ~I trust you have no hostile intentions.~[xac10388]
+@45548 = ~Mercenary~
+@45549 = ~Mercenary~
+@45550 = ~If I get paid, I fight.~[xac10412]
+@45551 = ~I like smashin' heads.~[xac10413]
+@45552 = ~Mercenary~
+@45553 = ~Mercenary~
+@45554 = ~For the Shining Lady!~[xac10278]
+@45555 = ~You need somethin'?~[xac10279]
+@45556 = ~We serve the light.~[xac10280]
+@45557 = ~Mercenary~
+@45558 = ~Mercenary~
+@45559 = ~ By Moradin's hammer.~[xac10220]
+@45560 = ~~[xac10221]
+@45561 = ~~[xac10222]
+@45562 = ~ I need a swig o' some strong dwarven ale.~[xac10223]
+@45563 = ~ Me temper's bad enough without ye botherin' me.~[xac10224]
+@45564 = ~ Your chatterin's startin' to wear on me nerves.~[xac10225]
+@45565 = ~Crusader Commander~
+@45566 = ~Crusader Commander~
+@45567 = ~For the Shining Lady!~[xac10278]
+@45568 = ~You need somethin'?~[xac10279]
+@45569 = ~We serve the light.~[xac10280]
+@45570 = ~Sindret~
+@45571 = ~Sindret~
+@45572 = ~Troll~
+@45573 = ~Troll~
+@45574 = ~Crusader~
+@45575 = ~Crusader~
+@45576 = ~For the Shining Lady!~[xac10278]
+@45577 = ~You need somethin'?~[xac10279]
+@45578 = ~We serve the light.~[xac10280]
+@45579 = ~Leopas~
+@45580 = ~Leopas~
+@45581 = ~Crusader~
+@45582 = ~Crusader~
+@45583 = ~For the Shining Lady!~[xac10278]
+@45584 = ~You need somethin'?~[xac10279]
+@45585 = ~We serve the light.~[xac10280]
+@45586 = ~Crusader Archer~
+@45587 = ~Crusader Archer~
+@45588 = ~~[xac10287]
+@45589 = ~~[xac10288]
+@45590 = ~ The Fair Folk rarely have time for small talk.~[xac10289]
+@45591 = ~ Troubled times are upon us.~[xac10290]
+@45592 = ~ Soon, we shall all be together upon Evermeet.~[xac10291]
+@45593 = ~Corinth~
+@45594 = ~Corinth~
+@45595 = ~Valis~
+@45596 = ~Valis~
+@45597 = ~Ravoc~
+@45598 = ~Ravoc~
+@45599 = ~Nooooooo!~[xac10403]
+@45600 = ~RAAAHHHHR! You die! You die!~[xac10404]
+@45601 = ~I will crush you, puny one!~[xac10405]
+@45602 = ~~[xac10406]
+@45603 = ~~[xac10407]
+@45604 = ~Uhh? What you want?~[xac10408]
+@45605 = ~I watching you!~[xac10409]
+@45606 = ~Speak, manling. Speak quick!~[xac10410]
+@45607 = ~You and my kind not get along!~[xac10411]
+@45608 = ~Delton~
+@45609 = ~Delton~
+@45610 = ~ I am happy not. No, I'm not.~[xac10455]
+@45611 = ~~[xac10456]
+@45612 = ~~[xac10457]
+@45613 = ~ I am happy not. No, I'm not.~[xac10455]
+@45614 = ~ Happy I am. Yes, I am!~[xac10459]
+@45615 = ~ Who you are, know not I.~[xac10460]
+@45616 = ~Damarr~
+@45617 = ~Damarr~
+@45618 = ~Die in her name!~[xac10292]
+@45619 = ~Somethin' you need?~[xac10182]
+@45620 = ~As the light wills.~[xac10183]
+@45621 = ~Crusader~
+@45622 = ~Crusader~
+@45623 = ~For the Shining Lady!~[xac10278]
+@45624 = ~You need somethin'?~[xac10279]
+@45625 = ~We serve the light.~[xac10280]
+@45626 = ~Mercenary~
+@45627 = ~Mercenary~
+@45628 = ~Die in her name!~[xac10292]
+@45629 = ~Somethin' you need?~[xac10182]
+@45630 = ~As the light wills.~[xac10183]
+@45631 = ~Crusader~
+@45632 = ~Crusader~
+@45633 = ~Nooooooo!~[xac10403]
+@45634 = ~RAAAHHHHR! You die! You die!~[xac10404]
+@45635 = ~I will crush you, puny one!~[xac10405]
+@45636 = ~~[xac10406]
+@45637 = ~~[xac10407]
+@45638 = ~Uhh? What you want?~[xac10408]
+@45639 = ~I watching you!~[xac10409]
+@45640 = ~Speak, manling. Speak quick!~[xac10410]
+@45641 = ~You and my kind not get along!~[xac10411]
+@45642 = ~Mercenary~
+@45643 = ~Mercenary~
+@45644 = ~If I get paid, I fight.~[xac10412]
+@45645 = ~I like smashin' heads.~[xac10413]
+@45646 = ~Crusader~
+@45647 = ~Crusader~
+@45648 = ~What you looking at?~[xac10481]
+@45649 = ~Go 'way.~[xac10482]
+@45650 = ~Tristian~
+@45651 = ~Tristian~
+@45652 = ~For the Shining Lady!~[xac10278]
+@45653 = ~You need somethin'?~[xac10279]
+@45654 = ~We serve the light.~[xac10280]
+@45655 = ~Crusader Sergeant~
+@45656 = ~Crusader Sergeant~
+@45657 = ~Die in her name!~[xac10292]
+@45658 = ~Somethin' you need?~[xac10182]
+@45659 = ~As the light wills.~[xac10183]
+@45660 = ~Crusader Elite~
+@45661 = ~Crusader Elite~
+@45662 = ~Die in her name!~[xac10292]
+@45663 = ~Somethin' you need?~[xac10182]
+@45664 = ~As the light wills.~[xac10183]
+@45665 = ~Crusader Sergeant~
+@45666 = ~Crusader Sergeant~
+@45667 = ~ By Moradin's hammer.~[xac10220]
+@45668 = ~~[xac10221]
+@45669 = ~~[xac10222]
+@45670 = ~ I need a swig o' some strong dwarven ale.~[xac10223]
+@45671 = ~ Me temper's bad enough without ye botherin' me.~[xac10224]
+@45672 = ~ Your chatterin's startin' to wear on me nerves.~[xac10225]
+@45673 = ~Crusader Elite~
+@45674 = ~Crusader Elite~
+@45675 = ~ ~[xac10196]
+@45676 = ~ ~[xac10197]
+@45677 = ~ Good day and hello to you.~[xac10198]
+@45678 = ~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]
+@45679 = ~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]
+@45680 = ~Zare~
+@45681 = ~Zare~
+@45682 = ~For the Shining Lady!~[xac10278]
+@45683 = ~You need somethin'?~[xac10279]
+@45684 = ~We serve the light.~[xac10280]
+@45685 = ~Crusader Recruit~
+@45686 = ~Crusader Recruit~
+@45687 = ~For the Shining Lady!~[xac10278]
+@45688 = ~You need somethin'?~[xac10279]
+@45689 = ~We serve the light.~[xac10280]
+@45690 = ~Recruit Kjarvan~
+@45691 = ~Recruit Kjarvan~
+@45692 = ~For the Shining Lady!~[xac10278]
+@45693 = ~You need somethin'?~[xac10279]
+@45694 = ~We serve the light.~[xac10280]
+@45695 = ~Recruit Qing~
+@45696 = ~Recruit Qing~
+@45697 = ~For the Shining Lady!~[xac10278]
+@45698 = ~You need somethin'?~[xac10279]
+@45699 = ~We serve the light.~[xac10280]
+@45700 = ~Deneld~
+@45701 = ~Deneld~
+@45702 = ~Glory and honor.~
+@45703 = ~The light will reward you.~
+@45704 = ~Crusader~
+@45705 = ~Crusader~
+@45706 = ~ I am happy not. No, I'm not.~[xac10455]
+@45707 = ~~[xac10456]
+@45708 = ~~[xac10457]
+@45709 = ~ I am happy not. No, I'm not.~[xac10455]
+@45710 = ~ Happy I am. Yes, I am!~[xac10459]
+@45711 = ~ Who you are, know not I.~[xac10460]
+@45712 = ~Crusader~
+@45713 = ~Crusader~
+@45714 = ~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]
+@45715 = ~~[xac10233]
+@45716 = ~~[xac10234]
+@45717 = ~ Nasty times are comin', I reckon.~[xac10235]
+@45718 = ~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]
+@45719 = ~ Queer things have been afoot lately.~[xac10237]
+@45720 = ~ I wish I had my old tobacco pipe.~[xac10238]
+@45721 = ~Commander Dreon~
+@45722 = ~Commander Dreon~
+@45723 = ~For the Shining Lady!~[xac10278]
+@45724 = ~You need somethin'?~[xac10279]
+@45725 = ~We serve the light.~[xac10280]
+@45726 = ~Sallo~
+@45727 = ~Sallo~
+@45728 = ~ ZZZZzzzzzzz...~[xac10531]
+@45729 = ~ ZZZZzzzzz... *snort*~[xac10532]
+@45730 = ~Crusader Nan~
+@45731 = ~Crusader Nan~
+@45732 = ~ Ooh, it's a fine day for meeting new friends.~[xac10533]
+@45733 = ~~[xac10534]
+@45734 = ~~[xac10535]
+@45735 = ~ May you know the happiness of a warm hearth and home.~[xac10536]
+@45736 = ~ Dallillia guides the way of all those that seek the path home.~[xac10537]
+@45737 = ~Crusader Pedro~
+@45738 = ~Crusader Pedro~
+@45739 = ~For the Shining Lady!~[xac10278]
+@45740 = ~You need somethin'?~[xac10279]
+@45741 = ~We serve the light.~[xac10280]
+@45742 = ~Crusader Recruit~
+@45743 = ~Crusader Recruit~
+@45744 = ~ ~[xac10196]
+@45745 = ~ ~[xac10197]
+@45746 = ~ Good day and hello to you.~[xac10198]
+@45747 = ~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]
+@45748 = ~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]
+@45749 = ~Crusader Recruit~
+@45750 = ~Crusader Recruit~
+@45751 = ~Die in her name!~[xac10292]
+@45752 = ~Somethin' you need?~[xac10182]
+@45753 = ~As the light wills.~[xac10183]
+@45754 = ~Crusader Recruit~
+@45755 = ~Crusader Recruit~
+@45756 = ~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]
+@45757 = ~~[xac10233]
+@45758 = ~~[xac10234]
+@45759 = ~ Nasty times are comin', I reckon.~[xac10235]
+@45760 = ~ You're rather outlandish folk to be wanderin' 'round here.~[xac10232]
+@45761 = ~ Queer things have been afoot lately.~[xac10237]
+@45762 = ~ I wish I had my old tobacco pipe.~[xac10238]
+@45763 = ~Mercenary~
+@45764 = ~Mercenary~
+@45765 = ~Crusader Recruit~
+@45766 = ~Crusader Recruit~
+@45767 = ~ By Moradin's hammer.~[xac10220]
+@45768 = ~~[xac10221]
+@45769 = ~~[xac10222]
+@45770 = ~ I need a swig o' some strong dwarven ale.~[xac10223]
+@45771 = ~ Me temper's bad enough without ye botherin' me.~[xac10224]
+@45772 = ~ Your chatterin's startin' to wear on me nerves.~[xac10225]
+@45773 = ~Crusader Recruit~
+@45774 = ~Crusader Recruit~
+@45775 = ~ Grrrrrrrr... grrrr!~[xac10562]
+@45776 = ~ ~[xac10563]
+@45777 = ~ ~[xac10564]
+@45778 = ~ Grrrr, yip yip yap! Yip yip *snarl*...~[xac10565]
+@45779 = ~ Yap! Grrr grr... yip yip yip yap! Look, we don't speak Common, all right?! *snarl* Yip yip yap!~[xac10566]
+@45780 = ~ *snarl* Yip! Yip yip yip yip yap!~[xac10567]
+@45781 = ~Crusader~
+@45782 = ~Crusader~
+@45783 = ~~[xac10287]
+@45784 = ~~[xac10288]
+@45785 = ~ The Fair Folk rarely have time for small talk.~[xac10289]
+@45786 = ~ Troubled times are upon us.~[xac10290]
+@45787 = ~ Soon, we shall all be together upon Evermeet.~[xac10291]
+@45788 = ~Crusader~
+@45789 = ~Crusader~
+@45790 = ~For the Shining Lady!~[xac10278]
+@45791 = ~You need somethin'?~[xac10279]
+@45792 = ~We serve the light.~[xac10280]
+@45793 = ~Mercenary Captain~
+@45794 = ~Mercenary Captain~
+@45795 = ~For the Shining Lady!~[xac10278]
+@45796 = ~You need somethin'?~[xac10279]
+@45797 = ~We serve the light.~[xac10280]
+@45798 = ~Mercenary~
+@45799 = ~Mercenary~
+@45800 = ~Stay back, or you'll regret it.~[xac10349]
+@45801 = ~I give! I give!~[xac10350]
+@45802 = ~All right! You and me! Let's go!~[xac10351]
+@45803 = ~~[xac10352]
+@45804 = ~~[xac10353]
+@45805 = ~I can break an arm or a leg fer a copper or two.~[xac10354]
+@45806 = ~Ahhh, be off with ya.~[xac10355]
+@45807 = ~Ye're a piece o' iron, you are.~[xac10356]
+@45808 = ~Crusader Recruit~
+@45809 = ~Crusader Recruit~
+@45810 = ~For the Shining Lady!~[xac10278]
+@45811 = ~You need somethin'?~[xac10279]
+@45812 = ~We serve the light.~[xac10280]
+@45813 = ~Crusader Recruit~
+@45814 = ~Crusader Recruit~
+@45815 = ~Die in her name!~[xac10292]
+@45816 = ~Somethin' you need?~[xac10182]
+@45817 = ~As the light wills.~[xac10183]
+@45818 = ~Crusader Recruit~
+@45819 = ~Crusader Recruit~
+@45820 = ~~[xac10336]
+@45821 = ~~[xac10337]
+@45822 = ~ Your acquaintance I am glad to have made.~[xac10338]
+@45823 = ~ Soon to go back to the grotto, I am. I miss the tunnels of home.~[xac10339]
+@45824 = ~ The underground seems safer by far, and gems to find are welcome too.~[xac10340]
+@45825 = ~Crusader Recruit~
+@45826 = ~Crusader Recruit~
+@45827 = ~ Spare no one!~[xac10302]
+@45828 = ~ You be quiet!~[xac10303]
+@45829 = ~ Forward march!~[xac10304]
+@45830 = ~Crusader Recruit~
+@45831 = ~Crusader Recruit~
+@45832 = ~Nooooooo!~[xac10403]
+@45833 = ~RAAAHHHHR! You die! You die!~[xac10404]
+@45834 = ~I will crush you, puny one!~[xac10405]
+@45835 = ~~[xac10406]
+@45836 = ~~[xac10407]
+@45837 = ~Uhh? What you want?~[xac10408]
+@45838 = ~I watching you!~[xac10409]
+@45839 = ~Speak, manling. Speak quick!~[xac10410]
+@45840 = ~You and my kind not get along!~[xac10411]
+@45841 = ~Crusader Elite~
+@45842 = ~Crusader Elite~
+@45843 = ~For the Shining Lady!~[xac10278]
+@45844 = ~You need somethin'?~[xac10279]
+@45845 = ~We serve the light.~[xac10280]
+@45846 = ~Crusader Elite~
+@45847 = ~Crusader Elite~
+@45848 = ~~[xac10287]
+@45849 = ~~[xac10288]
+@45850 = ~ The Fair Folk rarely have time for small talk.~[xac10289]
+@45851 = ~ Troubled times are upon us.~[xac10290]
+@45852 = ~ Soon, we shall all be together upon Evermeet.~[xac10291]
+@45853 = ~Kara-Turan Mercenary~
+@45854 = ~Kara-Turan Mercenary~
+@45855 = ~For the Shining Lady!~[xac10278]
+@45856 = ~You need somethin'?~[xac10279]
+@45857 = ~We serve the light.~[xac10280]
+@45858 = ~Mercenary~
+@45859 = ~Mercenary~
+@45860 = ~ Die, scum!~[xac10305]
+@45861 = ~~[xac10306]
+@45862 = ~ ~[xac10307]
+@45863 = ~Mercenary~
+@45864 = ~Mercenary~
+@45865 = ~Mercenary~
+@45866 = ~Mercenary~
+@45867 = ~ Grrrrrrrr... grrrr!~[xac10562]
+@45868 = ~ ~[xac10563]
+@45869 = ~ ~[xac10564]
+@45870 = ~ Grrrr, yip yip yap! Yip yip *snarl*...~[xac10565]
+@45871 = ~ Yap! Grrr grr... yip yip yip yap! Look, we don't speak Common, all right?! *snarl* Yip yip yap!~[xac10566]
+@45872 = ~ *snarl* Yip! Yip yip yip yip yap!~[xac10567]
+@45873 = ~Mercenary~
+@45874 = ~Mercenary~
+@45875 = ~ Grrrrrrrr... grrrr!~[xac10562]
+@45876 = ~ ~[xac10563]
+@45877 = ~ ~[xac10564]
+@45878 = ~ Grrrr, yip yip yap! Yip yip *snarl*...~[xac10565]
+@45879 = ~ Yap! Grrr grr... yip yip yip yap! Look, we don't speak Common, all right?! *snarl* Yip yip yap!~[xac10566]
+@45880 = ~ *snarl* Yip! Yip yip yip yip yap!~[xac10567]
+@45881 = ~Crusader Archer~
+@45882 = ~Crusader Archer~
+@45883 = ~Die in her name!~[xac10292]
+@45884 = ~Somethin' you need?~[xac10182]
+@45885 = ~As the light wills.~[xac10183]
+@45886 = ~Crusader Archer~
+@45887 = ~Crusader Archer~
+@45888 = ~~[xac10287]
+@45889 = ~~[xac10288]
+@45890 = ~ The Fair Folk rarely have time for small talk.~[xac10289]
+@45891 = ~ Troubled times are upon us.~[xac10290]
+@45892 = ~ Soon, we shall all be together upon Evermeet.~[xac10291]
+@45893 = ~Crusader Archer~
+@45894 = ~Crusader Archer~
+@45895 = ~For the Shining Lady!~[xac10278]
+@45896 = ~You need somethin'?~[xac10279]
+@45897 = ~We serve the light.~[xac10280]
+@45898 = ~Crusader Archer~
+@45899 = ~Crusader Archer~
+@45900 = ~ ~[xac10196]
+@45901 = ~ ~[xac10197]
+@45902 = ~ Good day and hello to you.~[xac10198]
+@45903 = ~ I much prefer wooded regions, but one must be flexible in these times.~[xac10199]
+@45904 = ~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]
+@45905 = ~<NO TEXT>~
+@45906 = ~<NO TEXT>~
+@45907 = ~Stone Golem~
+@45908 = ~Stone Golem~
+@45909 = ~Crusader Scout~
+@45910 = ~Crusader Scout~
+@45911 = ~If I get paid, I fight.~[xac10412]
+@45912 = ~I like smashin' heads.~[xac10413]
+@45913 = ~This heavy slab displays the holy symbol of Tempus.~
+@45914 = ~This magical barrier hums with arcane power. Beyond, the camp buzzes with activity as the crusaders prepare for battle.~
+@45915 = ~A translucent field of force glimmers before the gate, its magic repelling any attempt to enter the courtyard.~
+@45916 = ~Though the crusade's symbol is a sun upon the horizon, this banner offers little warmth or light to the oppressive gloom permeating Dragonspear Castle.~
+@45917 = ~Properly positioned, this recently repaired catapult could inflict serious damage upon Caelar's enemies.~
+@45918 = ~Though dead for decades, the red dragon remains that crown this castle radiate menace.~
+@45919 = ~Exit~
+@45920 = ~Belt~
+@45921 = ~Belt of the Cunning Rogue~
+@45922 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
 
 STATISTICS:
 
 Weight: 2~
-@45728 = ~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
+@45923 = ~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
 
 The pouches attached to the belt contain a number of small tools, wires, picks, and blades that can be used to pick locks and disable traps. 
 
@@ -743,9 +938,9 @@ Equipped abilities:
 – Find Traps: +15%
 
 Weight: 2~
-@45729 = ~Bullet~
-@45730 = ~Bullet of Fire +1~
-@45731 = ~A bullet is simply a rounded, well-balanced stone.
+@45924 = ~Bullet~
+@45925 = ~Bullet of Fire +1~
+@45926 = ~A bullet is simply a rounded, well-balanced stone.
 
 STATISTICS:
 
@@ -753,7 +948,7 @@ Damage: 1d4+1 (missile)
 Launcher: Sling
 
 Weight: 0~
-@45732 = ~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
+@45927 = ~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
 
 STATISTICS:
 
@@ -762,14 +957,14 @@ Damage type: Missile
 Launcher: Sling
 
 Weight: 0~
-@45733 = ~Ring~
-@45734 = ~Ring of Protection +1~
-@45735 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+@45928 = ~Ring~
+@45929 = ~Ring of Protection +1~
+@45930 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~
-@45736 = ~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
+@45931 = ~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
 
 STATISTICS:
 
@@ -778,12 +973,12 @@ Equipped abilities:
 – Saving Throws: +1
 
 Weight: 0~
-@45737 = ~Circlet~
-@45738 = ~Circlet of the Cynosure~
-@45739 = ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
+@45932 = ~Circlet~
+@45933 = ~Circlet of the Cynosure~
+@45934 = ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
 
 Weight: 1~
-@45740 = ~Almost a century ago, paladin of Lathander Edythe Brightsworn commissioned this helm while preparing to face a powerful vampire. During her many years as a knight of the Morninglord, Lady Brightsworn had accumulated some wealth, most of which she spent in preparation for her quest. After tracking the vampire to Waterdeep's City of the Dead, she assembled a party of adventurers and led them into the monster's lair. Only one of the group returned. Bloodied and wild-eyed, clutching Lady Brightsworn's helm in his hands, he relayed a tale of the nightmarish warrens the group had found and the vampire who culled them from their group, slaughtering them one by one. Investigations into the City of the Dead uncovered some of the tunnels, but all had collapsed. Of the vampire, there was no trace.
+@45935 = ~Almost a century ago, paladin of Lathander Edythe Brightsworn commissioned this helm while preparing to face a powerful vampire. During her many years as a knight of the Morninglord, Lady Brightsworn had accumulated some wealth, most of which she spent in preparation for her quest. After tracking the vampire to Waterdeep's City of the Dead, she assembled a party of adventurers and led them into the monster's lair. Only one of the group returned. Bloodied and wild-eyed, clutching Lady Brightsworn's helm in his hands, he relayed a tale of the nightmarish warrens the group had found and the vampire who culled them from their group, slaughtering them one by one. Investigations into the City of the Dead uncovered some of the tunnels, but all had collapsed. Of the vampire, there was no trace.
 
 STATISTICS:
 
@@ -792,9 +987,9 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 1~
-@45741 = ~Chain Mail~
-@45742 = ~Mail of the Hallowed Hero +3~
-@45743 = ~A chain mail tunic fashioned from some sort of bright metal. It is always worn over a layer of padded fabric or soft leather to prevent chafing and lessen the impact of blows.
+@45936 = ~Chain Mail~
+@45937 = ~Mail of the Hallowed Hero +3~
+@45938 = ~A chain mail tunic fashioned from some sort of bright metal. It is always worn over a layer of padded fabric or soft leather to prevent chafing and lessen the impact of blows.
 
 STATISTICS:
 
@@ -803,7 +998,7 @@ Requires:
  6 Strength
 
 Weight: 40~
-@45744 = ~This armor was first worn by Olen Argent, Caelar's great-grandfather. Olen Argent's quest to hunt down a cult of Malar led him to the Misty Forest, where he encountered a group of elves living in the woods. At first, the elves were suspicious of Olen and tried to drive him out of the forest, but he spoke so eloquently of his quest that they agreed to help him. The elves tracked the cult to their hiding place within the forest, where Olen eradicated the cultists for their murderous deeds. Thankful to have the evil presence out of their homeland, the elves crafted a fine suit of mail for the paladin.
+@45939 = ~This armor was first worn by Olen Argent, Caelar's great-grandfather. Olen Argent's quest to hunt down a cult of Malar led him to the Misty Forest, where he encountered a group of elves living in the woods. At first, the elves were suspicious of Olen and tried to drive him out of the forest, but he spoke so eloquently of his quest that they agreed to help him. The elves tracked the cult to their hiding place within the forest, where Olen eradicated the cultists for their murderous deeds. Thankful to have the evil presence out of their homeland, the elves crafted a fine suit of mail for the paladin.
 
 STATISTICS:
 
@@ -816,9 +1011,9 @@ Requires:
  6 Strength
 
 Weight: 7~
-@45745 = ~Medium Shield~
-@45746 = ~Solar Aegis +3~
-@45747 = ~A medium shield is carried in the same manner as a small shield. Unlike the small shield, however, its weight prevents the character from using <PRO_HISHER> shield hand for anything other than carrying the medium shield. Medium shields are usually made of metal, range from three to four feet in diameter, and can be of any shape, from round to square to a dragon's spread wings. A typical medieval shield resembles a triangle with one point facing downward.
+@45940 = ~Medium Shield~
+@45941 = ~Solar Aegis +3~
+@45942 = ~A medium shield is carried in the same manner as a small shield. Unlike the small shield, however, its weight prevents the character from using <PRO_HISHER> shield hand for anything other than carrying the medium shield. Medium shields are usually made of metal, range from three to four feet in diameter, and can be of any shape, from round to square to a dragon's spread wings. A typical medieval shield resembles a triangle with one point facing downward.
 
 STATISTICS:
 
@@ -829,7 +1024,7 @@ Requires:
  12 Strength
 
 Weight: 8~
-@45748 = ~Engraved wings stretch across the face of this ornate shield. The silver shield, inlaid with pure sapphire, gleams with a high polish no matter how much damage it suffers or what rough environs it is carried through. Often crafted for paladins and members of holy militaristic orders, a solar aegis provides substantial protection for the pure of heart.
+@45943 = ~Engraved wings stretch across the face of this ornate shield. The silver shield, inlaid with pure sapphire, gleams with a high polish no matter how much damage it suffers or what rough environs it is carried through. Often crafted for paladins and members of holy militaristic orders, a solar aegis provides substantial protection for the pure of heart.
 
 STATISTICS:
 
@@ -842,14 +1037,14 @@ Requires:
  12 Strength
 
 Weight: 3~
-@45749 = ~Girdle~
-@45750 = ~Golden Girdle~
-@45751 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+@45944 = ~Girdle~
+@45945 = ~Golden Girdle~
+@45946 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
 
 STATISTICS:
 
 Weight: 2~
-@45752 = ~Though its battered condition speaks to its past use in combat, few of the cuts in this leather girdle were made by an enemy's blade. It would seem the magical symbols gouged into the hide have the practical effect of making the item's wearer less vulnerable to the swords of their foes.
+@45947 = ~Though its battered condition speaks to its past use in combat, few of the cuts in this leather girdle were made by an enemy's blade. It would seem the magical symbols gouged into the hide have the practical effect of making the item's wearer less vulnerable to the swords of their foes.
 
 STATISTICS:
 
@@ -857,9 +1052,9 @@ Equipped abilities:
 – Armor Class: +3 vs. slashing attacks
 
 Weight: 2~
-@45753 = ~Long Sword~
-@45754 = ~Aster's Edge +3~
-@45755 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+@45948 = ~Long Sword~
+@45949 = ~Aster's Edge +3~
+@45950 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
 
 STATISTICS:
 
@@ -871,7 +1066,7 @@ Requires:
  6 Strength
 
 Weight: 4~
-@45756 = ~Legend tells that a powerful angelic being gifted this blade to a member of the Order of the Aster long ago. Details of the legend have been lost over time, but many believe the sword was a reward for slaying a monstrous fiend, perhaps even a balor. Delicate etchings of asters decorate the blade, which glows with a silver-blue flame when drawn.
+@45951 = ~Legend tells that a powerful angelic being gifted this blade to a member of the Order of the Aster long ago. Details of the legend have been lost over time, but many believe the sword was a reward for slaying a monstrous fiend, perhaps even a balor. Delicate etchings of asters decorate the blade, which glows with a silver-blue flame when drawn.
 
 STATISTICS:
 
@@ -888,14 +1083,14 @@ Requires:
  5 Strength
 
 Weight: 2~
-@45757 = ~Belt~
-@45758 = ~Belt of Antipode~
-@45759 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+@45952 = ~Belt~
+@45953 = ~Belt of Antipode~
+@45954 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
 
 STATISTICS:
 
 Weight: 2~
-@45760 = ~Trimmed in the fur of a polar bear, this sturdy belt is tooled with images of blue moons and white ice floes. The wearer is immune to all cold-based effects but suffers double any fire damage.
+@45955 = ~Trimmed in the fur of a polar bear, this sturdy belt is tooled with images of blue moons and white ice floes. The wearer is immune to all cold-based effects but suffers double any fire damage.
 
 STATISTICS:
 
@@ -904,14 +1099,14 @@ Equipped abilities:
 – Doubles all fire-based damage taken
 
 Weight: 2~
-@45761 = ~Bracers~
-@45762 = ~Bracers of Defense AC 5~
-@45763 = ~Bracers are thick bands of metal or leather that are strapped, belted, or tied to a character's forearm. Generally, the magic that is instilled in bracers is good only during combat, since most bracers help protect the wearer from injury or improve their chances to strike an opponent. Exceptions do exist, though such specialized items are rare at best.
+@45956 = ~Bracers~
+@45957 = ~Bracers of Defense AC 5~
+@45958 = ~Bracers are thick bands of metal or leather that are strapped, belted, or tied to a character's forearm. Generally, the magic that is instilled in bracers is good only during combat, since most bracers help protect the wearer from injury or improve their chances to strike an opponent. Exceptions do exist, though such specialized items are rare at best.
 
 STATISTICS:
 
 Weight: 2~
-@45764 = ~Standard bracers support the forearm, which often proves handy in combat situations. This magically altered pair is handier still, bestowing the wearer with protection comparable to a full suit of armor. Unlike armor, the bracers allow a full range of motion. This makes them highly prized by wizards and sorcerers, who cannot allow physical restriction to be imposed upon them if they're to successfully manipulate the Weave.
+@45959 = ~Standard bracers support the forearm, which often proves handy in combat situations. This magically altered pair is handier still, bestowing the wearer with protection comparable to a full suit of armor. Unlike armor, the bracers allow a full range of motion. This makes them highly prized by wizards and sorcerers, who cannot allow physical restriction to be imposed upon them if they're to successfully manipulate the Weave.
 
 STATISTICS:
 
@@ -919,14 +1114,14 @@ Equipped abilities:
 – Armor Class: 5
 
 Weight: 2~
-@45765 = ~Ring~
-@45766 = ~Ring of Free Action~
-@45767 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+@45960 = ~Ring~
+@45961 = ~Ring of Free Action~
+@45962 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~
-@45768 = ~Enemies have a hard time slowing this ring's wearer down. The runes etched in the silver band ward off spells designed to impede movement, granting its owner a freedom of mobility others affected by such magic are denied.
+@45963 = ~Enemies have a hard time slowing this ring's wearer down. The runes etched in the silver band ward off spells designed to impede movement, granting its owner a freedom of mobility others affected by such magic are denied.
 
 STATISTICS:
 
@@ -934,9 +1129,9 @@ Equipped abilities:
 – The wearer is immune to everything, magical and otherwise, that affects mobility in any way. This includes Haste and Slow spells.
 
 Weight: 0~
-@45769 = ~Battle Axe~
-@45770 = ~Chill Axe +2~
-@45771 = ~The most common version of the battle axe is a stout pole about four feet in length with a single-edged, trumpet-shaped blade mounted on one end. Battle axes are also called broad axes.
+@45964 = ~Battle Axe~
+@45965 = ~Chill Axe +2~
+@45966 = ~The most common version of the battle axe is a stout pole about four feet in length with a single-edged, trumpet-shaped blade mounted on one end. Battle axes are also called broad axes.
 
 STATISTICS:
 
@@ -948,7 +1143,7 @@ Requires:
  10 Strength
 
 Weight: 7~
-@45772 = ~This finely crafted axe bears the sigil of the Ice Dragon Berserker Lodge. Glowing white runes edge its cold silver blade, and a cloud of chill air trails behind the axe whenever it is swung. The most powerful rangers of the Ice Dragon Berserker Lodge carry these axes with them on their dejemmas, as protection from southern threats.
+@45967 = ~This finely crafted axe bears the sigil of the Ice Dragon Berserker Lodge. Glowing white runes edge its cold silver blade, and a cloud of chill air trails behind the axe whenever it is swung. The most powerful rangers of the Ice Dragon Berserker Lodge carry these axes with them on their dejemmas, as protection from southern threats.
 
 STATISTICS:
 
@@ -968,21 +1163,21 @@ Requires:
  10 Strength
 
 Weight: 5~
-@45773 = ~Gloves of Gripping~
-@45774 = ~Gloves of Gripping~
-@45775 = ~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
+@45968 = ~Gloves of Gripping~
+@45969 = ~Gloves of Gripping~
+@45970 = ~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
 
 STATISTICS:
 
 Weight: 2~
-@45776 = ~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
+@45971 = ~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
 
 STATISTICS:
 
 Weight: 2~
-@45777 = ~Hide Armor~
-@45778 = ~Cornugon's Revenge +2~
-@45779 = ~Hide armor is made from the thick hide of a very large animal (an elephant for example) or from many layers of normal leather from common animals, like cows. Hide armor is far too bulky, inflexible and heavy to be used much in advanced human cultures. However, among the barbaric humanoid masses throughout the dark forests and misty jungles of the world, hide armor is common. Even though it does offer more protection than leather armor, one must get by the offensive odor and shoddy appearance in order to wear it effectively. Even though Thieves can wear this armor, it has a negative effect on their abilities.
+@45972 = ~Hide Armor~
+@45973 = ~Cornugon's Revenge +2~
+@45974 = ~Hide armor is made from the thick hide of a very large animal (an elephant for example) or from many layers of normal leather from common animals, like cows. Hide armor is far too bulky, inflexible and heavy to be used much in advanced human cultures. However, among the barbaric humanoid masses throughout the dark forests and misty jungles of the world, hide armor is common. Even though it does offer more protection than leather armor, one must get by the offensive odor and shoddy appearance in order to wear it effectively. Even though Thieves can wear this armor, it has a negative effect on their abilities.
 
 STATISTICS:
 
@@ -997,7 +1192,7 @@ Requires:
  6 Strength
 
 Weight: 40~
-@45780 = ~The devil Thel’blax was a scourge against the armies of the Abyss until he was assassinated by the servants of his own master, Dispater. With his final breath, Thel’blax cursed his own body to never lie still even in death. When his body was carried to the Iron Tower, Thel’blax’s horns and barbs continued to thrash about as though alive.
+@45975 = ~The devil Thel’blax was a scourge against the armies of the Abyss until he was assassinated by the servants of his own master, Dispater. With his final breath, Thel’blax cursed his own body to never lie still even in death. When his body was carried to the Iron Tower, Thel’blax’s horns and barbs continued to thrash about as though alive.
 
 The cursed cornugon’s body was dismantled by his peers, in the hopes that destroying him would end the curse; but the disparate pieces of Thel’blax’s body continued to prick and tear at any who approached. At last, Dispater ordered his ironsmiths to forge the pieces into a suit of armor, intending to use it as a means of torturing insubordinates. Inevitably, the armor fell into the hands of intrepid (if foolhardy) adventurers, who then brought the piece to Faerûn.
 
@@ -1020,39 +1215,65 @@ Requires:
  6 Strength
 
 Weight: 35~
-@45781 = ~A Key~
-@45782 = ~Troll Pen Key~
-@45783 = ~This is a standard key. Keys are used to open doors.
+@45976 = ~A Key~
+@45977 = ~Troll Pen Key~
+@45978 = ~This is a standard key. Keys are used to open doors.
 
 STATISTICS:
 
 Weight: 1~
-@45784 = ~This heavy iron key has a handle shaped like a troll's face.
+@45979 = ~This heavy iron key has a handle shaped like a troll's face.
 
 STATISTICS:
 
 Weight: 1~
-@45785 = ~Helmet~
-@45786 = ~Helmet~
-@45787 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+@45980 = ~Plate Mail~
+@45981 = ~Bloody Bone Plate +2~
+@45982 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+
+STATISTICS:
+
+Armor Class: 3 (0 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 50~
+@45983 = ~The warrior who once wore this armor died at the hands of a friend she trusted. The mark of her betrayal remains in the bloodstains that have darkened to brown on the gleaming bone-white armor. The armor functions properly, though it makes the wearer unappealing to look at.
 
 STATISTICS:
 
 Equipped abilities:
-– Protects against critical hits
+– Immunity to backstab
+– Charisma: -1
 
-Weight: 2~
-@45788 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+Armor Class: 1 (-2 vs. slashing)
+Requires:
+ 8 Strength
+
+Weight: 20~
+@45984 = ~Amulet~
+@45985 = ~Amulet of Abnormally Awesome Ankheg Summoning~
+@45986 = ~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
+
+STATISTICS:
+
+Weight: 1~
+@45987 = ~Crafted by the dark druid Ferrusk, this amulet resembles the curved pincers of an ankheg hanging from an iron chain. The pincers' polished green carapace catches the light, gleaming with an emerald sheen. Ferrusk created this amulet to summon a passel of ankhegs to fight at its wearer's command.
 
 STATISTICS:
 
 Equipped abilities:
-– Protects against critical hits
+– Acid Resistance: +15%
 
-Weight: 2~
-@45789 = ~Club~
-@45790 = ~Club +1~
-@45791 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
+Charge abilities:
+– Summons two ankhegs
+  Range: 30 ft.
+  Duration: 2 turns
+
+Weight: 0~
+@45988 = ~Club~
+@45989 = ~Club +1~
+@45990 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
 
 STATISTICS:
 
@@ -1064,7 +1285,7 @@ Requires:
  5 Strength
 
 Weight: 3~
-@45792 = ~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
+@45991 = ~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
 
 STATISTICS:
 
@@ -1077,9 +1298,21 @@ Requires:
  5 Strength
 
 Weight: 3~
-@45793 = ~Helmet~
-@45794 = ~Helmet~
-@45795 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+@45992 = ~Potion~
+@45993 = ~Slime Sickness Curative~
+@45994 = ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
+
+STATISTICS:
+
+Weight: 1~
+@45995 = ~This bottle contains a special healing potion that counteracts fungal poison found in the caverns beneath Dragonspear Castle. One sip from the bottle is enough to cure the afflicted.
+
+STATISTICS:
+
+Weight: 1~
+@45996 = ~Helmet~
+@45997 = ~Helmet~
+@45998 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -1087,7 +1320,7 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@45796 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+@45999 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -1095,9 +1328,9 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@45797 = ~Composite Longbow~
-@45798 = ~Corinth's Bow +2~
-@45799 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
+@46000 = ~Composite Longbow~
+@46001 = ~Corinth's Bow +2~
+@46002 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
 
 STATISTICS:
 
@@ -1110,7 +1343,7 @@ Requires:
  18 Strength
 
 Weight: 10~
-@45800 = ~Though obviously well-used, someone has taken excellent care of this finely crafted bow. A small golden seal on one side appears to be a family crest.
+@46003 = ~Though obviously well-used, someone has taken excellent care of this finely crafted bow. A small golden seal on one side appears to be a family crest.
 
 STATISTICS:
 
@@ -1129,16 +1362,34 @@ Requires:
  18 Strength
 
 Weight: 8~
-@45801 = ~Tristian's Holy Symbol~
-@45802 = ~Tristian's Holy Symbol~
-@45803 = ~A carved wooden chesspiece painted a brilliant cherry red. Two glittering rubies wink from the horse's eye sockets.
+@46004 = ~Helmet~
+@46005 = ~Helmet~
+@46006 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+
+Weight: 2~
+@46007 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+
+Weight: 2~
+@46008 = ~Tristian's Holy Symbol~
+@46009 = ~Tristian's Holy Symbol~
+@46010 = ~A carved wooden chesspiece painted a brilliant cherry red. Two glittering rubies wink from the horse's eye sockets.
 
 STATISTICS:
 
 Weight: 1~
-@45804 = ~Long Sword~
-@45805 = ~Long Sword +1~
-@45806 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+@46011 = ~Long Sword~
+@46012 = ~Long Sword +1~
+@46013 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
 
 STATISTICS:
 
@@ -1150,7 +1401,7 @@ Requires:
  6 Strength
 
 Weight: 4~
-@45807 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
+@46014 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
 
 STATISTICS:
 
@@ -1163,14 +1414,14 @@ Requires:
  6 Strength
 
 Weight: 4~
-@45808 = ~Ring~
-@45809 = ~Ring of the Crusade~
-@45810 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+@46015 = ~Ring~
+@46016 = ~Ring of the Crusade~
+@46017 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~
-@45811 = ~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
+@46018 = ~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
 
 STATISTICS:
 
@@ -1179,35 +1430,35 @@ Equipped abilities:
 – Saving Throws: +1, +3 vs. demons and devils
 
 Weight: 0~
-@45812 = ~Second Stone Fragment~
-@45813 = ~Second Stone Fragment~
-@45814 = ~A shard of stone belonging to an icon of Tempus.
+@46019 = ~Second Stone Fragment~
+@46020 = ~Second Stone Fragment~
+@46021 = ~A shard of stone belonging to an icon of Tempus.
 
 STATISTICS:
 
 Weight: 10~
-@45815 = ~Dreon's Signet Ring~
-@45816 = ~Dreon's Signet Ring~
-@45817 = ~This heavy gold ring displays the seal of Caelar Argent, leader of the Shining Lady's crusade.
+@46022 = ~Dreon's Signet Ring~
+@46023 = ~Dreon's Signet Ring~
+@46024 = ~This heavy gold ring displays the seal of Caelar Argent, leader of the Shining Lady's crusade.
 
 STATISTICS:
 
 Weight: 0~
-@45818 = ~Empty Wineskin~
-@45819 = ~Empty Wineskin~
-@45820 = ~This well-used wineskin is stained purple around the spout.
+@46025 = ~Empty Wineskin~
+@46026 = ~Empty Wineskin~
+@46027 = ~This well-used wineskin is stained purple around the spout.
 
 STATISTICS:
 
 Weight: 1~
-@45821 = ~Token of Faith~
-@45822 = ~Token of Faith~
-@45823 = ~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
+@46028 = ~Token of Faith~
+@46029 = ~Token of Faith~
+@46030 = ~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
 
 STATISTICS:
 
 Weight: 1~
-@45824 = ~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
+@46031 = ~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
 
 STATISTICS:
 

@@ -84,6 +84,13 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @6064 
+		DO ~
+			StartCutSceneMode()
+			StartCutscene("XAG1ENT")
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @6063 
 		DO ~
 			StartCutSceneMode()
@@ -370,6 +377,17 @@ APPEND ~XALCDBG~
 			ActionOverride(Player4, LeaveAreaLUA("XADUC3", "", [0.0], S))
 			ActionOverride(Player5, LeaveAreaLUA("XADUC3", "", [0.0], S))
 			ActionOverride(Player6, LeaveAreaLUA("XADUC3", "", [0.0], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6065
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XAG1", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAG1", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAG1", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAG1", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAG1", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAG1", "", [0.0], S))
 		~
 		EXIT
 		

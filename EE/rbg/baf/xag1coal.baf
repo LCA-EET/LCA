@@ -1,0 +1,9 @@
+// Override Script
+IF
+	GlobalLT("XA_CoalitionAlly", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		ChangeEnemyAlly(Myself, ALLY)
+		SetGlobal("XA_CoalitionAlly", "LOCALS", 1)
+		Continue()
+END
