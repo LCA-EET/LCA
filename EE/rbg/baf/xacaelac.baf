@@ -7,7 +7,7 @@ THEN
 		SmallWait(1)
 		DestroyItem("MONHP01")
 		SmallWait(1)
-		ActionOverride("XACAELA1", ChangeAnimation("XAG1001B"))
+		ActionOverride("XAC109", ChangeAnimation("XAC108")) // "Good" Caelar change to "Bad" Caelar
 		SetGlobal("XA_CaelarTransform", "GLOBAL",2)
 		SetGlobal("XA_BeginSpawning", "GLOBAL", 2)
 		SetInterrupt(TRUE)

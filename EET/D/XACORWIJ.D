@@ -10810,8 +10810,7 @@ IF ~
 		ChangeAIScript("", OVERRIDE)
 		ChangeAIScript("", DEFAULT)
 		LeaveParty()
-		StartCutSceneMode()
-		StartCutScene("XA100EX")
+		EscapeArea()
 	~
 	EXIT
 END

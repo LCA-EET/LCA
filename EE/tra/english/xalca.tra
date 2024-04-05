@@ -350,23 +350,7 @@ Weight: 1~
 @120 = ~They still have leadership. How effective it is, I do not know. With Captain Corwin sent on some training exercise up north, I hear Angelo Dosan is now effectively in control. Such a weasel he is. I am surprised he has the support of the troops. He's got powerful friends though, and I hear that he takes orders straight from Sarevok. You've heard of him, right? With Entar dead, the other Dukes have called an emergency election. Sarevok is the front-runner, and his stand against Amn is very popular. Imagine how much pull he will have if he actually has the Flaming Fist in his back pocket.~
 @121 = ~There's trouble in the Fist, <CHARNAME>, big trouble. Duke Eltan's fallen sick and Scar was killed, supposedly in a simple robbery but I have my doubts... It's all Angelo, he's making a power grab, taking control of the Fist and, with Scar gone and Corwin sent on some bogus errand up north, there's nothing to stop him! I've seen him paying visits to the Iron Throne, too, and I don't like it one bit... There are some of us that are still loyal to Eltan and, lucky for you, I happen to be one of them. Please, for your sake and ours, keep your head down and, if you get the chance, sniff around the Iron Throne's base. If you can find a way to talk to Duke Eltan, even better, but they're keeping him in the middle of Fist headquarters... Damn it, Angelo will pay dearly for this and I hope it's soon...~
 @122 = ~Thank you, <CHARNAME>. You efforts have not been in vain. My commanding officer, Captain Corwin, has ordered my contingent and I back to the city to make our reports. You will figure prominently in them and I assure you that our accounts will be favorable.~
-@123 = ~Enslaved would be a more accurate word. I was captured in my home, on this Plane of Air, by some wizard. He bound me to this flask that I might guard a powerful dagger of his—and something of yours.~
-@124 = ~You have an item of mine? And what's this about a dagger?~
-@125 = ~I do. A thing of power that still carries a hint of your essence. There is something odd about the signature that you leave on this item. I am also in possession of my master's dagger, a prison of souls, that I sense is of great importance to you.~ 
-@126 = ~Can you give them to me?~
-@127 = ~Not so quickly. I have a powerful item that belongs to you. A thing that was stripped from you by our collective captor. I am also in possession of a dagger, a prison of souls, that I sense is of great interest to you.~
-@128 = ~That I would, manling. I assume that, now that you have escaped, you have come seeking the magical item that has been stripped from you by our collective captor? Perhaps his dagger as well?~
-@129 = ~If you can secure the means of my release, I will give you your weapon and my master's dagger.~
-@130 = ~You must help me. There is no other way for you to obtain these powerful items I possess.~
-@131 = ~In your place, I would not be so quick to give up such powerful equipment. Free me, I beg you, and I shall give these items to you.~
-@132 = ~I cannot pinpoint its location from another plane. You shall have to search for it. Return to me when you have found it, and we shall exchange my freedom for the dagger, and your weapon.~
-@133 = ~Will you now help me to be free in exchange for my master's dagger, and your magical weapon?~
-@134 = ~If I had the power to give you these items, I would, but the force that binds me is strong. As long as I am trapped within this flask, I am within the mage's power.~ 
-@135 = ~Please find the flask that is the twin of the one in which I am bound. Do this for me, and I shall give you items of great power, including my master's dagger.~
-@136 = ~Freeing the djinni
 
-I freed the genie Malaaq by retrieving a flask from three dryads and giving it to him. In return, he returned some equipment that he was keeping in storage for the wizard Irenicus. The items include a magical weapon that I will undoubtedly make use of, and a dagger that the genie referred to as a prison of souls. Could this be the Soultaker dagger used to murder and imprison Skie Silvershield? If it is, I need to find a way to have it sent to Baldur's Gate as soon as possible.~
-@137 = ~You are welcome to try. While I am bound, neither myself nor the flask can be damaged. While I am bound, I cannot give you the master's dagger, or your weapon.~
 @138 = ~~
 @139 = ~~
 
@@ -1242,6 +1226,24 @@ Weight: 9
 ~
 @3169 = ~Flaming Fist Valiant~
 @3170 = ~Soul Trap~
+@3171 = ~Enslaved would be a more accurate word. I was captured in my home, on this Plane of Air, by some wizard. He bound me to this flask that I might guard a powerful dagger of his—and something of yours.~
+@3172 = ~You have an item of mine? And what's this about a dagger?~
+@3173 = ~I do. A thing of power that still carries a hint of your essence. There is something odd about the signature that you leave on this item. I am also in possession of my master's dagger, a prison of souls, that I sense is of great importance to you.~ 
+@3174 = ~Can you give them to me?~
+@3175 = ~Not so quickly. I have a powerful item that belongs to you. A thing that was stripped from you by our collective captor. I am also in possession of a dagger, a prison of souls, that I sense is of great interest to you.~
+@3176 = ~That I would, manling. I assume that, now that you have escaped, you have come seeking the magical item that has been stripped from you by our collective captor? Perhaps his dagger as well?~
+@3177 = ~If you can secure the means of my release, I will give you your weapon and my master's dagger.~
+@3178 = ~You must help me. There is no other way for you to obtain these powerful items I possess.~
+@3179 = ~In your place, I would not be so quick to give up such powerful equipment. Free me, I beg you, and I shall give these items to you.~
+@3180 = ~I cannot pinpoint its location from another plane. You shall have to search for it. Return to me when you have found it, and we shall exchange my freedom for the dagger, and your weapon.~
+@3181 = ~Will you now help me to be free in exchange for my master's dagger, and your magical weapon?~
+@3182 = ~If I had the power to give you these items, I would, but the force that binds me is strong. As long as I am trapped within this flask, I am within the mage's power.~ 
+@3183 = ~Please find the flask that is the twin of the one in which I am bound. Do this for me, and I shall give you items of great power, including my master's dagger.~
+@3184 = ~Freeing the djinni
+
+I freed the genie Malaaq by retrieving a flask from three dryads and giving it to him. In return, he returned some equipment that he was keeping in storage for the wizard Irenicus. The items include a magical weapon that I will undoubtedly make use of, and a dagger that the genie referred to as a prison of souls. Could this be the Soultaker dagger used to murder and imprison Skie Silvershield? If it is, I need to find a way to have it sent to Baldur's Gate as soon as possible.~
+@3185 = ~You are welcome to try. While I am bound, neither myself nor the flask can be damaged. While I am bound, I cannot give you the master's dagger, or your weapon.~
+
 
 @4000 = ~Processing Return to Baldur's Gate Changes...~
 @4001 = ~The Hen that Laid the Golden Egg~
@@ -13440,9 +13442,46 @@ Weight: 1~
 STATISTICS:
 
 Weight: 1~
+@46032 = ~Cure Critical Wounds~
+@46033 = ~Cure Critical Wounds
+(Necromancy)
+
+Level: 5
+Sphere: Healing 
+Range: Touch
+Duration: Permanent
+Casting Time: 8
+Area of Effect: 1 creature
+Saving Throw: None
+
+The Cure Critical Wounds spell is a very potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hands upon a creature and heals 27 points of damage from wounds or other injuries. The spell does not affect creatures without corporeal bodies, those of extraplanar origin, or those not living.~
+@46034 = ~Shining Bolt~
+@46035 = ~Shining Bolt
+(Invocation/Evocation)
+
+Level: 1
+Range: 60 ft.
+Duration: Instant
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+This unique ability allows Caelar to hurl a bolt of divine energy at an enemy once per day, dealing them 5d6 points of magic damage. Undead creatures and fiends are particularly susceptible to the bolt's effects, suffering double damage when they are struck. The target's Magic Resistance, if any, does not affect this ability.~
+@46036 = ~Bless~
+@46037 = ~Bless
+(Conjuration/Summoning)
+
+Level: 1
+Sphere: All
+Range: 40 ft.
+Duration: 6 rounds
+Casting Time: 9
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+Upon uttering the Bless spell, the caster raises the morale of friendly creatures by +1. Furthermore, it raises their attack and damage rolls by +1. The caster determines at what range (up to 40 ft.) the spell will be cast. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster (thus, affected creatures leaving the area are still subject to the spell's effects; those entering the area after the casting is completed are not).~
 
 //}
-
 //{ Block B Translations
 @50000 = ~Flaming Fist Mercenary~
 @50001 = ~Flaming Fist Mercenary~

@@ -4,6 +4,11 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v1.1e 2024-04-03
+* Fixed a compatibility issue with the Cost of One Girl's Soul mod that could cause the Djinn to erroneously give two copies of the Soultaker dagger to the protagonist.
+* Resolved a compatibility issue with the Another Fine Hell mod.
+* Fixed a bug in a transition concerning Corwin's departure from the party after <CHARNAME> had turned into a lich.
+
 # v1.1d 2024-03-20
 * Fixed an intermittent trigger issue when trying to start the Archery Lesson cutscene from the Allied Siege Camp.
 

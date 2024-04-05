@@ -1,3 +1,32 @@
+//{ AFH Compatibility Fix
+IF
+	GlobalGT("C#AfHSoD_RevisedEnd","GLOBAL",0)
+	GlobalLT("XA_AFHFix", "GLOBAL", 1)
+	!Dead("Corwin")
+	Global("bd_corwin_romanceactive","global",2)
+	GlobalLT("XA_CorwinContinue", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_AFHFix", "GLOBAL", 1)
+		SetGlobal("XA_CorwinContinue","GLOBAL",2) /* continue romance into BG2 */
+		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2) /* continue romance into BG2 */
+		Continue()
+END
+
+IF
+	GlobalGT("C#AfHSoD_RevisedEnd","GLOBAL",0)
+	GlobalLT("XA_AFHFix", "GLOBAL", 1)
+	!Dead("Corwin")
+	!Global("bd_corwin_romanceactive","global",2)
+	GlobalLT("XA_CorwinContinue", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_AFHFix", "GLOBAL", 1)
+		SetGlobal("XA_CorwinContinue","GLOBAL",1) /* continue friendship*/
+		Continue()
+END
+//}
+
 //{ Item Creation, when starting in BG2
 IF
 	InMyArea("XACORWIN")

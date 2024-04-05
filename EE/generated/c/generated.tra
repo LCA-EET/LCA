@@ -1463,3 +1463,41 @@ Weight: 1~
 STATISTICS:
 
 Weight: 1~
+@46032 = ~Cure Critical Wounds~
+@46033 = ~Cure Critical Wounds
+(Necromancy)
+
+Level: 5
+Sphere: Healing 
+Range: Touch
+Duration: Permanent
+Casting Time: 8
+Area of Effect: 1 creature
+Saving Throw: None
+
+The Cure Critical Wounds spell is a very potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hands upon a creature and heals 27 points of damage from wounds or other injuries. The spell does not affect creatures without corporeal bodies, those of extraplanar origin, or those not living.~
+@46034 = ~Shining Bolt~
+@46035 = ~Shining Bolt
+(Invocation/Evocation)
+
+Level: 1
+Range: 60 ft.
+Duration: Instant
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+This unique ability allows Caelar to hurl a bolt of divine energy at an enemy once per day, dealing them 5d6 points of magic damage. Undead creatures and fiends are particularly susceptible to the bolt's effects, suffering double damage when they are struck. The target's Magic Resistance, if any, does not affect this ability.~
+@46036 = ~Bless~
+@46037 = ~Bless
+(Conjuration/Summoning)
+
+Level: 1
+Sphere: All
+Range: 40 ft.
+Duration: 6 rounds
+Casting Time: 9
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+Upon uttering the Bless spell, the caster raises the morale of friendly creatures by +1. Furthermore, it raises their attack and damage rolls by +1. The caster determines at what range (up to 40 ft.) the spell will be cast. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster (thus, affected creatures leaving the area are still subject to the spell's effects; those entering the area after the casting is completed are not).~

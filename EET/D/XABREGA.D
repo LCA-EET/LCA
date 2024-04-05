@@ -172,14 +172,14 @@ APPEND_EARLY HABREGA
 		
 		IF ~
 			Global("XA_CorwinContinue", "GLOBAL", 2) // continues romance
-			!Alignment(Player1,MASK_EVIL)
+			//!Alignment(Player1,MASK_EVIL)
 		~
 		THEN REPLY @42 /* ~One moment... (Write a romantic letter to Captain Schael Corwin of the Flaming Fist).~ */
 		GOTO M31A
 		
 		IF ~
 			Global("XA_CorwinContinue", "GLOBAL", 1) // friendship
-			!Alignment(Player1,MASK_EVIL)
+			//!Alignment(Player1,MASK_EVIL)
 		~
 		THEN REPLY @43 /* ~One moment... (Write a letter to Captain Schael Corwin of the Flaming Fist).~ */
 		GOTO M32A

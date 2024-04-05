@@ -2217,6 +2217,12 @@ COPY ~%MOD_FOLDER%\generated\c\bmp\xac109.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bmp\xac112.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bmp\xac113.bmp~ ~override~
 
+//spl files
+//===================
+COPY ~%MOD_FOLDER%\generated\c\spl\xac100.spl~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\spl\xac101.spl~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\spl\xac102.spl~ ~override~
+
 //wed files
 //===================
 COPY ~%MOD_FOLDER%\generated\c\wed\xac100.wed~ ~override~

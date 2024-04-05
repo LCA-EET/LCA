@@ -460,15 +460,6 @@
 	END
 	//}
 	
-	//{ IDJINNI
-	ADD_TRANS_ACTION IDJINNI 
-	BEGIN 12 END
-	BEGIN 0 END
-	~
-		GiveItemCreate("xastdag", LastTalkedToBy, 1,0,0)
-	~
-	//}
-	
 	//{ BDBELT
 	ADD_TRANS_ACTION BDBELT
 	BEGIN 0 1 END

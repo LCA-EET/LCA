@@ -1,8 +1,8 @@
 IF 
 	Global("XA_BeginSpawning", "GLOBAL", 1)
 	OR(2)
-		Dead("XACAELA1")
-		Dead("XACAELA2")
+		Dead("XAC109") // Good Caelar
+		Dead("XAC108") // Bad Caelar
 THEN
 	RESPONSE #100
 		SetGlobal("XA_BeginSpawning", "GLOBAL", 2)
@@ -24,11 +24,11 @@ END
 
 IF
 	OR(2)
-		Dead("XACAELA1")
-		Dead("XACAELA2")
-	Dead("XAASHATI")
-	Dead("XABARGHE")
-	Dead("XAHEPHER")
+		Dead("XAC108")
+		Dead("XAC109")
+	Dead("XAC111") // Ashatiel
+	Dead("XAC113") // Barghest
+	Dead("XAC112") // Hephernaan
 	!Global("XA_DemonSpeak", "GLOBAL", 1)
 	!Global("XA_CompletedG1", "GLOBAL", 1)
 THEN
@@ -77,39 +77,39 @@ THEN
 		Continue()
 	RESPONSE #10
 		//DisplayStringHead(Player1, ~Coalition - Spawn x3.~)
-		CreateCreature("XACOAL01", [20.3300], NE)
+		CreateCreature("xac125", [20.3300], NE)
 		IncrementGlobal("XA_CoalitionAlive", "GLOBAL", 1)
 		Continue()
 	RESPONSE #10
-		CreateCreature("XACOAL02", [50.3390], NE)
+		CreateCreature("xac126", [50.3390], NE)
 		IncrementGlobal("XA_CoalitionAlive", "GLOBAL", 1)
 		Continue()
 	RESPONSE #10
-		CreateCreature("XACOAL03", [100.3400], NE)
+		CreateCreature("xac127", [100.3400], NE)
 		IncrementGlobal("XA_CoalitionAlive", "GLOBAL", 1)
 		Continue()
 	RESPONSE #10
-		CreateCreature("XACOAL04", [20.3300], NE)
+		CreateCreature("xac121", [20.3300], NE)
 		IncrementGlobal("XA_CoalitionAlive", "GLOBAL", 1)
 		Continue()
 	RESPONSE #10
-		CreateCreature("XACOAL05", [50.3390], NE)
+		CreateCreature("xac122", [50.3390], NE)
 		IncrementGlobal("XA_CoalitionAlive", "GLOBAL", 1)
 		Continue()
 	RESPONSE #10
-		CreateCreature("XACOAL06", [100.3400], NE)
+		CreateCreature("xac123", [100.3400], NE)
 		IncrementGlobal("XA_CoalitionAlive", "GLOBAL", 1)
 		Continue()
 	RESPONSE #10
-		CreateCreature("XACOAL07", [20.3300], NE)
+		CreateCreature("xac132", [20.3300], NE)
 		IncrementGlobal("XA_CoalitionAlive", "GLOBAL", 1)
 		Continue()
 	RESPONSE #10
-		CreateCreature("XACOAL08", [50.3390], NE)
+		CreateCreature("xac133", [50.3390], NE)
 		IncrementGlobal("XA_CoalitionAlive", "GLOBAL", 1)
 		Continue()
 	RESPONSE #10
-		CreateCreature("XACOAL09", [100.3400], NE)
+		CreateCreature("xac134", [100.3400], NE)
 		IncrementGlobal("XA_CoalitionAlive", "GLOBAL", 1)
 		Continue()
 END
@@ -123,39 +123,39 @@ THEN
 		//DisplayStringHead(Player1, ~Crusader - No action.~)
 		Continue()
 	RESPONSE #10
-		CreateCreature("XACRUS01", [2690.1870], SW)
+		CreateCreature("xac190", [2690.1870], SW)
 		IncrementGlobal("XA_CrusadersAlive", "GLOBAL", 1)
 		Continue()
 	RESPONSE #10
-		CreateCreature("XACRUS02", [2660.1820], SW)
+		CreateCreature("xac262", [2660.1820], SW)
 		IncrementGlobal("XA_CrusadersAlive", "GLOBAL", 1)
 		Continue()
 	RESPONSE #10
-		CreateCreature("XACRUS03", [2750.1910], SW)
+		CreateCreature("xac218", [2750.1910], SW)
 		IncrementGlobal("XA_CrusadersAlive", "GLOBAL", 1)
 		Continue()
 	RESPONSE #10
-		CreateCreature("XACRUS04", [1370.1460], SW)
+		CreateCreature("xac182", [1370.1460], SW)
 		IncrementGlobal("XA_CrusadersAlive", "GLOBAL", 1)
 		Continue()
 	RESPONSE #10
-		CreateCreature("XACRUS05", [1690.1570], SW)
+		CreateCreature("xac180", [1690.1570], SW)
 		IncrementGlobal("XA_CrusadersAlive", "GLOBAL", 1)
 		Continue()
 	RESPONSE #10
-		CreateCreature("XACRUS06", [1960.1600], SW)
+		CreateCreature("xac203", [1960.1600], SW)
 		IncrementGlobal("XA_CrusadersAlive", "GLOBAL", 1)
 		Continue()
 	RESPONSE #10
-		CreateCreature("XACRUS07", [970.2300], SE)
+		CreateCreature("xac192", [970.2300], SE)
 		IncrementGlobal("XA_CrusadersAlive", "GLOBAL", 1)
 		Continue()
 	RESPONSE #10
-		CreateCreature("XACRUS08", [970.1586], E)
+		CreateCreature("xac244", [970.1586], E)
 		IncrementGlobal("XA_CrusadersAlive", "GLOBAL", 1)
 		Continue()
 	RESPONSE #10
-		CreateCreature("XACRUS09", [2650.1880], SW)
+		CreateCreature("xac246", [2650.1880], SW)
 		IncrementGlobal("XA_CrusadersAlive", "GLOBAL", 1)
 		Continue()
 		//1600.900

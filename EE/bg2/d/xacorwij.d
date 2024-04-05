@@ -896,7 +896,7 @@ IF ~~ THEN BEGIN XA_LeaveAfterSoA_100_Dorn
 		ChangeAIScript("", DEFAULT)
 		LeaveParty()
 		StartCutSceneMode()
-		StartCutScene("XA100EX")
+		EscapeArea()
 	~
 	EXIT
 END
