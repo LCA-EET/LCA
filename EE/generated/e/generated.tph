@@ -1,4 +1,5 @@
-PRINT ~Processing AssetConverter generated elements...~
+PRINT ~Processing converted asset block: xae...~
+SILENT
 //{ MUSIC
 ADD_MUSIC xae0 ~%MOD_FOLDER%\generated\e\mus\xae0.mus~
 ADD_MUSIC xae1 ~%MOD_FOLDER%\generated\e\mus\xae1.mus~
@@ -51,12 +52,12 @@ COPY ~%MOD_FOLDER%\generated\e\mus\xae1\xae1h4.acm~ ~MUSIC\xae1\xae1h4.acm~
 //are files
 //===================
 ACTION_IF (FILE_EXISTS_IN_GAME ~xae100.are~) BEGIN
-	PRINT ~Area already exists: xae100. Skipping...~
+	//PRINT ~Area already exists: xae100. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\e\are\xae100.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xae101.are~) BEGIN
-	PRINT ~Area already exists: xae101. Skipping...~
+	//PRINT ~Area already exists: xae101. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\e\are\xae101.are~ ~override~
 	WRITE_LONG 284 %xae0%

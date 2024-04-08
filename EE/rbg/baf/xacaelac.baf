@@ -65,7 +65,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
 		UseItem("POTN52",Myself)  // Potion of Extra Healing
-		DisplayStringHead(Myself,256560)  // *quaffs a potion*
+		DisplayStringHead(Myself,@2)  // *quaffs a potion*
 		SetInterrupt(TRUE)
 END
 
@@ -117,7 +117,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
 		UseItem("POTN34",Myself)  // Potion of Magic Protection
-		DisplayStringHead(Myself,256560)  // *quaffs a potion*
+		DisplayStringHead(Myself,@2)  // *quaffs a potion*
 		SetInterrupt(TRUE)
 END
 
@@ -133,7 +133,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
 		UseItem("POTN28",Myself)  // Potion of Fortitude
-		DisplayStringHead(Myself,256560)  // *quaffs a potion*
+		DisplayStringHead(Myself,@2)  // *quaffs a potion*
 		SetInterrupt(TRUE)
 END
 
@@ -147,7 +147,7 @@ THEN
 	RESPONSE #100
 		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
 		UseItem("POTN11",Myself)  // Potion of Invulnerability
-		DisplayStringHead(Myself,256560)  // *quaffs a potion*
+		DisplayStringHead(Myself,@2)  // *quaffs a potion*
 END
 
 IF

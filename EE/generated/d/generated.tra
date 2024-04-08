@@ -227,9 +227,10 @@ She seems the eternal child, and is quite content to play the part of little sis
 @40222 = ~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~
 @40223 = ~Tiax's Cell~
 @40224 = ~Exit~
-@40225 = ~Plate Mail~
-@40226 = ~The Magma Bulwark +2~
-@40227 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+@40225 = ~Trap the Soul~
+@40226 = ~Plate Mail~
+@40227 = ~The Magma Bulwark +2~
+@40228 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
 
 STATISTICS:
 
@@ -238,7 +239,7 @@ Requires:
  12 Strength
 
 Weight: 50~
-@40228 = ~Forged by the fire giant Varboti as a gift for a Cormyrian general who made peace with his clan, this red-and-black armor lends its wearer a molten aspect while providing protection against all but the most powerful blows. Due to its incredibly strong but thin material, it also weighs far less than ordinary plate mail.
+@40229 = ~Forged by the fire giant Varboti as a gift for a Cormyrian general who made peace with his clan, this red-and-black armor lends its wearer a molten aspect while providing protection against all but the most powerful blows. Due to its incredibly strong but thin material, it also weighs far less than ordinary plate mail.
 
 STATISTICS:
 
@@ -247,14 +248,14 @@ Requires:
  12 Strength
 
 Weight: 20~
-@40229 = ~Ring~
-@40230 = ~Ring of Protection +1~
-@40231 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+@40230 = ~Ring~
+@40231 = ~Ring of Protection +1~
+@40232 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~
-@40232 = ~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
+@40233 = ~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
 
 STATISTICS:
 
@@ -263,14 +264,14 @@ Equipped abilities:
 – Saving Throws: +1
 
 Weight: 0~
-@40233 = ~Ring~
-@40234 = ~Ring of Protection +2~
-@40235 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+@40234 = ~Ring~
+@40235 = ~Ring of Protection +2~
+@40236 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~
-@40236 = ~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
+@40237 = ~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
 
 STATISTICS:
 
@@ -279,21 +280,8 @@ Equipped abilities:
 – Saving Throws: +2
 
 Weight: 0~
-@40237 = ~Corwin's Armor +2~
 @40238 = ~Corwin's Armor +2~
-@40239 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
-
-STATISTICS:
-
-Equipped abilities:
-– Movement Speed: +1
-– Magic Resistance: +10%
-
-Armor Class: 3 (1 vs. slashing, 5 vs. crushing)
-Requires: 
- 5 Strength
-
-Weight: 7~
+@40239 = ~Corwin's Armor +2~
 @40240 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
 
 STATISTICS:
@@ -307,9 +295,22 @@ Requires:
  5 Strength
 
 Weight: 7~
-@40241 = ~Composite Longbow~
-@40242 = ~Corwin's Bow +1~
-@40243 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
+@40241 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
+
+STATISTICS:
+
+Equipped abilities:
+– Movement Speed: +1
+– Magic Resistance: +10%
+
+Armor Class: 3 (1 vs. slashing, 5 vs. crushing)
+Requires: 
+ 5 Strength
+
+Weight: 7~
+@40242 = ~Composite Longbow~
+@40243 = ~Corwin's Bow +1~
+@40244 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
 
 STATISTICS:
 
@@ -322,7 +323,7 @@ Requires:
  18 Strength
 
 Weight: 10~
-@40244 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+@40245 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
 
 Equipped abilities: 
 – Dexterity: +1

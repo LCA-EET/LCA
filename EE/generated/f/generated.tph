@@ -1,4 +1,5 @@
-PRINT ~Processing AssetConverter generated elements...~
+PRINT ~Processing converted asset block: xaf...~
+SILENT
 //{ MUSIC
 ADD_MUSIC xaf0 ~%MOD_FOLDER%\generated\f\mus\xaf0.mus~
 ADD_MUSIC xaf1 ~%MOD_FOLDER%\generated\f\mus\xaf1.mus~
@@ -84,7 +85,7 @@ COPY ~%MOD_FOLDER%\generated\f\mus\xaf3\xaf3zr.acm~ ~MUSIC\xaf3\xaf3zr.acm~
 //are files
 //===================
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaf100.are~) BEGIN
-	PRINT ~Area already exists: xaf100. Skipping...~
+	//PRINT ~Area already exists: xaf100. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\f\are\xaf100.are~ ~override~
 	WRITE_LONG 1584 %xaf0%
@@ -92,7 +93,7 @@ END ELSE BEGIN
 	WRITE_LONG 1596 %xaf1%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaf101.are~) BEGIN
-	PRINT ~Area already exists: xaf101. Skipping...~
+	//PRINT ~Area already exists: xaf101. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\f\are\xaf101.are~ ~override~
 	WRITE_LONG 1396 RESOLVE_STR_REF(@25000) /*~Exit~*/

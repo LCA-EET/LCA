@@ -1,5 +1,5 @@
 PRINT @4000  /* ~Processing Return to Baldur's Gate Changes...~ */
-
+SILENT
 //{ BAM
 	COPY ~%MOD_FOLDER%/rbg/bam/xabenohd.bam~ ~override~
 	COPY ~%MOD_FOLDER%/rbg/bam/xaegg.bam~ ~override~
@@ -2472,8 +2472,11 @@ END
 	//{ Painting One
 		EXTEND_BOTTOM ~xag1coal.bcs~ ~%MOD_FOLDER%/rbg/baf/xacrtyrd.baf~
 		EXTEND_BOTTOM ~xag1crus.bcs~ ~%MOD_FOLDER%/rbg/baf/xacrtyrd.baf~
+		EXTEND_TOP ~xacs101.bcs~ ~%MOD_FOLDER%/rbg/baf/xag1.baf~
 		
 		COPY ~%MOD_FOLDER%/rbg/are/xag1.are~ ~override~
+		WRITE_LONG 0x5B94 xac2
+		WRITE_LONG 0x5B98 xac2
 	//}
 	
 	//{ Painting Two

@@ -1,4 +1,5 @@
-PRINT ~Processing AssetConverter generated elements...~
+PRINT ~Processing converted asset block: xaa...~
+SILENT
 //{ MUSIC
 ADD_MUSIC xaa0 ~%MOD_FOLDER%\generated\a\mus\xaa0.mus~
 ADD_MUSIC xaa1 ~%MOD_FOLDER%\generated\a\mus\xaa1.mus~
@@ -343,7 +344,7 @@ COPY ~%MOD_FOLDER%\generated\a\mus\xaa23\xaa23h6.acm~ ~MUSIC\xaa23\xaa23h6.acm~
 //are files
 //===================
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa100.are~) BEGIN
-	PRINT ~Area already exists: xaa100. Skipping...~
+	//PRINT ~Area already exists: xaa100. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa100.are~ ~override~
 	WRITE_LONG 2680 RESOLVE_STR_REF(@60000) /*~Wyrm's Crossing~*/
@@ -353,7 +354,7 @@ END ELSE BEGIN
 	WRITE_LONG 17860 %xaa2%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa103.are~) BEGIN
-	PRINT ~Area already exists: xaa103. Skipping...~
+	//PRINT ~Area already exists: xaa103. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa103.are~ ~override~
 	WRITE_LONG 24148 RESOLVE_STR_REF(@60002) /*~Elfsong~*/
@@ -383,12 +384,12 @@ END ELSE BEGIN
 	WRITE_LONG 42944 %xaa2%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa104.are~) BEGIN
-	PRINT ~Area already exists: xaa104. Skipping...~
+	//PRINT ~Area already exists: xaa104. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa104.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa105.are~) BEGIN
-	PRINT ~Area already exists: xaa105. Skipping...~
+	//PRINT ~Area already exists: xaa105. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa105.are~ ~override~
 	WRITE_LONG 10808 RESOLVE_STR_REF(@60024) /*~Blushing Mermaid~*/
@@ -408,7 +409,7 @@ END ELSE BEGIN
 	WRITE_LONG 26756 %xaa6%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa106.are~) BEGIN
-	PRINT ~Area already exists: xaa106. Skipping...~
+	//PRINT ~Area already exists: xaa106. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa106.are~ ~override~
 	WRITE_LONG 24420 RESOLVE_STR_REF(@60036) /*~Harbor Master's Building~*/
@@ -431,7 +432,7 @@ END ELSE BEGIN
 	WRITE_LONG 45060 %xaa2%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa107.are~) BEGIN
-	PRINT ~Area already exists: xaa107. Skipping...~
+	//PRINT ~Area already exists: xaa107. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa107.are~ ~override~
 	WRITE_LONG 27804 RESOLVE_STR_REF(@60051) /*~The Fortune Teller~*/
@@ -449,75 +450,75 @@ END ELSE BEGIN
 	WRITE_LONG 45276 %xaa2%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa108.are~) BEGIN
-	PRINT ~Area already exists: xaa108. Skipping...~
+	//PRINT ~Area already exists: xaa108. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa108.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa109.are~) BEGIN
-	PRINT ~Area already exists: xaa109. Skipping...~
+	//PRINT ~Area already exists: xaa109. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa109.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa110.are~) BEGIN
-	PRINT ~Area already exists: xaa110. Skipping...~
+	//PRINT ~Area already exists: xaa110. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa110.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa111.are~) BEGIN
-	PRINT ~Area already exists: xaa111. Skipping...~
+	//PRINT ~Area already exists: xaa111. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa111.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa112.are~) BEGIN
-	PRINT ~Area already exists: xaa112. Skipping...~
+	//PRINT ~Area already exists: xaa112. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa112.are~ ~override~
 	WRITE_LONG 2820 %xaa7%
 	WRITE_LONG 2824 %xaa7%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa113.are~) BEGIN
-	PRINT ~Area already exists: xaa113. Skipping...~
+	//PRINT ~Area already exists: xaa113. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa113.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa114.are~) BEGIN
-	PRINT ~Area already exists: xaa114. Skipping...~
+	//PRINT ~Area already exists: xaa114. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa114.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa115.are~) BEGIN
-	PRINT ~Area already exists: xaa115. Skipping...~
+	//PRINT ~Area already exists: xaa115. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa115.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa116.are~) BEGIN
-	PRINT ~Area already exists: xaa116. Skipping...~
+	//PRINT ~Area already exists: xaa116. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa116.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa117.are~) BEGIN
-	PRINT ~Area already exists: xaa117. Skipping...~
+	//PRINT ~Area already exists: xaa117. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa117.are~ ~override~
 	WRITE_LONG 5408 %xaa6%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa118.are~) BEGIN
-	PRINT ~Area already exists: xaa118. Skipping...~
+	//PRINT ~Area already exists: xaa118. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa118.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa119.are~) BEGIN
-	PRINT ~Area already exists: xaa119. Skipping...~
+	//PRINT ~Area already exists: xaa119. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa119.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa120.are~) BEGIN
-	PRINT ~Area already exists: xaa120. Skipping...~
+	//PRINT ~Area already exists: xaa120. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa120.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa121.are~) BEGIN
-	PRINT ~Area already exists: xaa121. Skipping...~
+	//PRINT ~Area already exists: xaa121. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa121.are~ ~override~
 	WRITE_LONG 15264 %xaa8%
@@ -525,14 +526,14 @@ END ELSE BEGIN
 	WRITE_LONG 15276 %xaa8%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa127.are~) BEGIN
-	PRINT ~Area already exists: xaa127. Skipping...~
+	//PRINT ~Area already exists: xaa127. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa127.are~ ~override~
 	WRITE_LONG 2012 %xaa9%
 	WRITE_LONG 2016 %xaa9%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa130.are~) BEGIN
-	PRINT ~Area already exists: xaa130. Skipping...~
+	//PRINT ~Area already exists: xaa130. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa130.are~ ~override~
 	WRITE_LONG 16804 RESOLVE_STR_REF(@60061) /*~Three Old Kegs~*/
@@ -554,47 +555,47 @@ END ELSE BEGIN
 	WRITE_LONG 34976 %xaa6%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa131.are~) BEGIN
-	PRINT ~Area already exists: xaa131. Skipping...~
+	//PRINT ~Area already exists: xaa131. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa131.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa132.are~) BEGIN
-	PRINT ~Area already exists: xaa132. Skipping...~
+	//PRINT ~Area already exists: xaa132. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa132.are~ ~override~
 	WRITE_LONG 1100 %xaa10%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa133.are~) BEGIN
-	PRINT ~Area already exists: xaa133. Skipping...~
+	//PRINT ~Area already exists: xaa133. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa133.are~ ~override~
 	WRITE_LONG 7224 %xaa9%
 	WRITE_LONG 7228 %xaa9%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa134.are~) BEGIN
-	PRINT ~Area already exists: xaa134. Skipping...~
+	//PRINT ~Area already exists: xaa134. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa134.are~ ~override~
 	WRITE_LONG 3880 %xaa7%
 	WRITE_LONG 3884 %xaa7%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa135.are~) BEGIN
-	PRINT ~Area already exists: xaa135. Skipping...~
+	//PRINT ~Area already exists: xaa135. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa135.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa136.are~) BEGIN
-	PRINT ~Area already exists: xaa136. Skipping...~
+	//PRINT ~Area already exists: xaa136. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa136.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa137.are~) BEGIN
-	PRINT ~Area already exists: xaa137. Skipping...~
+	//PRINT ~Area already exists: xaa137. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa137.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa141.are~) BEGIN
-	PRINT ~Area already exists: xaa141. Skipping...~
+	//PRINT ~Area already exists: xaa141. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa141.are~ ~override~
 	WRITE_LONG 17620 RESOLVE_STR_REF(@60075) /*~Blade and Stars~*/
@@ -614,7 +615,7 @@ END ELSE BEGIN
 	WRITE_LONG 35036 %xaa6%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa142.are~) BEGIN
-	PRINT ~Area already exists: xaa142. Skipping...~
+	//PRINT ~Area already exists: xaa142. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa142.are~ ~override~
 	WRITE_LONG 19448 RESOLVE_STR_REF(@60087) /*~Seven Suns~*/
@@ -639,7 +640,7 @@ END ELSE BEGIN
 	WRITE_LONG 35408 %xaa2%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa143.are~) BEGIN
-	PRINT ~Area already exists: xaa143. Skipping...~
+	//PRINT ~Area already exists: xaa143. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa143.are~ ~override~
 	WRITE_LONG 2852 %xaa3%
@@ -647,75 +648,75 @@ END ELSE BEGIN
 	WRITE_LONG 2864 %xaa11%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa144.are~) BEGIN
-	PRINT ~Area already exists: xaa144. Skipping...~
+	//PRINT ~Area already exists: xaa144. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa144.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa145.are~) BEGIN
-	PRINT ~Area already exists: xaa145. Skipping...~
+	//PRINT ~Area already exists: xaa145. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa145.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa146.are~) BEGIN
-	PRINT ~Area already exists: xaa146. Skipping...~
+	//PRINT ~Area already exists: xaa146. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa146.are~ ~override~
 	WRITE_LONG 3204 %xaa12%
 	WRITE_LONG 3208 %xaa13%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa147.are~) BEGIN
-	PRINT ~Area already exists: xaa147. Skipping...~
+	//PRINT ~Area already exists: xaa147. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa147.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa148.are~) BEGIN
-	PRINT ~Area already exists: xaa148. Skipping...~
+	//PRINT ~Area already exists: xaa148. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa148.are~ ~override~
 	WRITE_LONG 872 %xaa12%
 	WRITE_LONG 876 %xaa13%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa149.are~) BEGIN
-	PRINT ~Area already exists: xaa149. Skipping...~
+	//PRINT ~Area already exists: xaa149. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa149.are~ ~override~
 	WRITE_LONG 3292 %xaa14%
 	WRITE_LONG 3296 %xaa14%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa150.are~) BEGIN
-	PRINT ~Area already exists: xaa150. Skipping...~
+	//PRINT ~Area already exists: xaa150. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa150.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa151.are~) BEGIN
-	PRINT ~Area already exists: xaa151. Skipping...~
+	//PRINT ~Area already exists: xaa151. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa151.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa152.are~) BEGIN
-	PRINT ~Area already exists: xaa152. Skipping...~
+	//PRINT ~Area already exists: xaa152. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa152.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa153.are~) BEGIN
-	PRINT ~Area already exists: xaa153. Skipping...~
+	//PRINT ~Area already exists: xaa153. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa153.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa154.are~) BEGIN
-	PRINT ~Area already exists: xaa154. Skipping...~
+	//PRINT ~Area already exists: xaa154. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa154.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa155.are~) BEGIN
-	PRINT ~Area already exists: xaa155. Skipping...~
+	//PRINT ~Area already exists: xaa155. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa155.are~ ~override~
 	WRITE_LONG 4716 %xaa5%
 	WRITE_LONG 4720 %xaa5%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa156.are~) BEGIN
-	PRINT ~Area already exists: xaa156. Skipping...~
+	//PRINT ~Area already exists: xaa156. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa156.are~ ~override~
 	WRITE_LONG 15004 %xaa8%
@@ -723,7 +724,7 @@ END ELSE BEGIN
 	WRITE_LONG 15016 %xaa10%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa164.are~) BEGIN
-	PRINT ~Area already exists: xaa164. Skipping...~
+	//PRINT ~Area already exists: xaa164. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa164.are~ ~override~
 	WRITE_LONG 17380 RESOLVE_STR_REF(@60104) /*~The Lady's Hall~*/
@@ -745,76 +746,76 @@ END ELSE BEGIN
 	WRITE_LONG 28432 %xaa6%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa165.are~) BEGIN
-	PRINT ~Area already exists: xaa165. Skipping...~
+	//PRINT ~Area already exists: xaa165. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa165.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa166.are~) BEGIN
-	PRINT ~Area already exists: xaa166. Skipping...~
+	//PRINT ~Area already exists: xaa166. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa166.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa167.are~) BEGIN
-	PRINT ~Area already exists: xaa167. Skipping...~
+	//PRINT ~Area already exists: xaa167. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa167.are~ ~override~
 	WRITE_LONG 4136 %xaa14%
 	WRITE_LONG 4140 %xaa14%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa169.are~) BEGIN
-	PRINT ~Area already exists: xaa169. Skipping...~
+	//PRINT ~Area already exists: xaa169. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa169.are~ ~override~
 	WRITE_LONG 3084 %xaa12%
 	WRITE_LONG 3088 %xaa13%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa171.are~) BEGIN
-	PRINT ~Area already exists: xaa171. Skipping...~
+	//PRINT ~Area already exists: xaa171. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa171.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa172.are~) BEGIN
-	PRINT ~Area already exists: xaa172. Skipping...~
+	//PRINT ~Area already exists: xaa172. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa172.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa173.are~) BEGIN
-	PRINT ~Area already exists: xaa173. Skipping...~
+	//PRINT ~Area already exists: xaa173. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa173.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa174.are~) BEGIN
-	PRINT ~Area already exists: xaa174. Skipping...~
+	//PRINT ~Area already exists: xaa174. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa174.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa175.are~) BEGIN
-	PRINT ~Area already exists: xaa175. Skipping...~
+	//PRINT ~Area already exists: xaa175. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa175.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa176.are~) BEGIN
-	PRINT ~Area already exists: xaa176. Skipping...~
+	//PRINT ~Area already exists: xaa176. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa176.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa177.are~) BEGIN
-	PRINT ~Area already exists: xaa177. Skipping...~
+	//PRINT ~Area already exists: xaa177. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa177.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa178.are~) BEGIN
-	PRINT ~Area already exists: xaa178. Skipping...~
+	//PRINT ~Area already exists: xaa178. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa178.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa179.are~) BEGIN
-	PRINT ~Area already exists: xaa179. Skipping...~
+	//PRINT ~Area already exists: xaa179. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa179.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa181.are~) BEGIN
-	PRINT ~Area already exists: xaa181. Skipping...~
+	//PRINT ~Area already exists: xaa181. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa181.are~ ~override~
 	WRITE_LONG 2736 %xaa12%
@@ -822,64 +823,64 @@ END ELSE BEGIN
 	WRITE_LONG 2748 %xaa6%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa188.are~) BEGIN
-	PRINT ~Area already exists: xaa188. Skipping...~
+	//PRINT ~Area already exists: xaa188. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa188.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa195.are~) BEGIN
-	PRINT ~Area already exists: xaa195. Skipping...~
+	//PRINT ~Area already exists: xaa195. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa195.are~ ~override~
 	WRITE_LONG 1688 %xaa7%
 	WRITE_LONG 1692 %xaa7%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa198.are~) BEGIN
-	PRINT ~Area already exists: xaa198. Skipping...~
+	//PRINT ~Area already exists: xaa198. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa198.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa200.are~) BEGIN
-	PRINT ~Area already exists: xaa200. Skipping...~
+	//PRINT ~Area already exists: xaa200. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa200.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa202.are~) BEGIN
-	PRINT ~Area already exists: xaa202. Skipping...~
+	//PRINT ~Area already exists: xaa202. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa202.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa204.are~) BEGIN
-	PRINT ~Area already exists: xaa204. Skipping...~
+	//PRINT ~Area already exists: xaa204. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa204.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa206.are~) BEGIN
-	PRINT ~Area already exists: xaa206. Skipping...~
+	//PRINT ~Area already exists: xaa206. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa206.are~ ~override~
 	WRITE_LONG 4392 %xaa6%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa210.are~) BEGIN
-	PRINT ~Area already exists: xaa210. Skipping...~
+	//PRINT ~Area already exists: xaa210. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa210.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa224.are~) BEGIN
-	PRINT ~Area already exists: xaa224. Skipping...~
+	//PRINT ~Area already exists: xaa224. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa224.are~ ~override~
 	WRITE_LONG 11456 %xaa5%
 	WRITE_LONG 11460 %xaa4%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa226.are~) BEGIN
-	PRINT ~Area already exists: xaa226. Skipping...~
+	//PRINT ~Area already exists: xaa226. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa226.are~ ~override~
 	WRITE_LONG 1688 %xaa9%
 	WRITE_LONG 1692 %xaa9%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa270.are~) BEGIN
-	PRINT ~Area already exists: xaa270. Skipping...~
+	//PRINT ~Area already exists: xaa270. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa270.are~ ~override~
 	WRITE_LONG 2680 RESOLVE_STR_REF(@60118) /*~These stairs are closed due to poor workmanship.~*/
@@ -887,66 +888,66 @@ END ELSE BEGIN
 	WRITE_LONG 3540 %xaa9%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa269.are~) BEGIN
-	PRINT ~Area already exists: xaa269. Skipping...~
+	//PRINT ~Area already exists: xaa269. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa269.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa268.are~) BEGIN
-	PRINT ~Area already exists: xaa268. Skipping...~
+	//PRINT ~Area already exists: xaa268. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa268.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa267.are~) BEGIN
-	PRINT ~Area already exists: xaa267. Skipping...~
+	//PRINT ~Area already exists: xaa267. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa267.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa266.are~) BEGIN
-	PRINT ~Area already exists: xaa266. Skipping...~
+	//PRINT ~Area already exists: xaa266. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa266.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa265.are~) BEGIN
-	PRINT ~Area already exists: xaa265. Skipping...~
+	//PRINT ~Area already exists: xaa265. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa265.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa264.are~) BEGIN
-	PRINT ~Area already exists: xaa264. Skipping...~
+	//PRINT ~Area already exists: xaa264. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa264.are~ ~override~
 	WRITE_LONG 3284 %xaa14%
 	WRITE_LONG 3288 %xaa14%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa260.are~) BEGIN
-	PRINT ~Area already exists: xaa260. Skipping...~
+	//PRINT ~Area already exists: xaa260. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa260.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa259.are~) BEGIN
-	PRINT ~Area already exists: xaa259. Skipping...~
+	//PRINT ~Area already exists: xaa259. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa259.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa256.are~) BEGIN
-	PRINT ~Area already exists: xaa256. Skipping...~
+	//PRINT ~Area already exists: xaa256. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa256.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa253.are~) BEGIN
-	PRINT ~Area already exists: xaa253. Skipping...~
+	//PRINT ~Area already exists: xaa253. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa253.are~ ~override~
 	WRITE_LONG 2508 %xaa9%
 	WRITE_LONG 2512 %xaa9%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa250.are~) BEGIN
-	PRINT ~Area already exists: xaa250. Skipping...~
+	//PRINT ~Area already exists: xaa250. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa250.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa242.are~) BEGIN
-	PRINT ~Area already exists: xaa242. Skipping...~
+	//PRINT ~Area already exists: xaa242. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa242.are~ ~override~
 	WRITE_LONG 5668 %xaa12%
@@ -954,64 +955,64 @@ END ELSE BEGIN
 	WRITE_LONG 5680 %xaa6%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa241.are~) BEGIN
-	PRINT ~Area already exists: xaa241. Skipping...~
+	//PRINT ~Area already exists: xaa241. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa241.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa240.are~) BEGIN
-	PRINT ~Area already exists: xaa240. Skipping...~
+	//PRINT ~Area already exists: xaa240. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa240.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa239.are~) BEGIN
-	PRINT ~Area already exists: xaa239. Skipping...~
+	//PRINT ~Area already exists: xaa239. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa239.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa238.are~) BEGIN
-	PRINT ~Area already exists: xaa238. Skipping...~
+	//PRINT ~Area already exists: xaa238. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa238.are~ ~override~
 	WRITE_LONG 3872 %xaa14%
 	WRITE_LONG 3876 %xaa14%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa237.are~) BEGIN
-	PRINT ~Area already exists: xaa237. Skipping...~
+	//PRINT ~Area already exists: xaa237. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa237.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa236.are~) BEGIN
-	PRINT ~Area already exists: xaa236. Skipping...~
+	//PRINT ~Area already exists: xaa236. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa236.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa235.are~) BEGIN
-	PRINT ~Area already exists: xaa235. Skipping...~
+	//PRINT ~Area already exists: xaa235. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa235.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa234.are~) BEGIN
-	PRINT ~Area already exists: xaa234. Skipping...~
+	//PRINT ~Area already exists: xaa234. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa234.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa233.are~) BEGIN
-	PRINT ~Area already exists: xaa233. Skipping...~
+	//PRINT ~Area already exists: xaa233. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa233.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa232.are~) BEGIN
-	PRINT ~Area already exists: xaa232. Skipping...~
+	//PRINT ~Area already exists: xaa232. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa232.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa231.are~) BEGIN
-	PRINT ~Area already exists: xaa231. Skipping...~
+	//PRINT ~Area already exists: xaa231. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa231.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa230.are~) BEGIN
-	PRINT ~Area already exists: xaa230. Skipping...~
+	//PRINT ~Area already exists: xaa230. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa230.are~ ~override~
 	WRITE_LONG 1100 %xaa15%
@@ -1019,7 +1020,7 @@ END ELSE BEGIN
 	WRITE_LONG 1112 %xaa6%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa229.are~) BEGIN
-	PRINT ~Area already exists: xaa229. Skipping...~
+	//PRINT ~Area already exists: xaa229. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa229.are~ ~override~
 	WRITE_LONG 14432 RESOLVE_STR_REF(@60119) /*~Entar Silvershield's Estate~*/
@@ -1036,43 +1037,43 @@ END ELSE BEGIN
 	WRITE_LONG 30692 %xaa2%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa271.are~) BEGIN
-	PRINT ~Area already exists: xaa271. Skipping...~
+	//PRINT ~Area already exists: xaa271. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa271.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa273.are~) BEGIN
-	PRINT ~Area already exists: xaa273. Skipping...~
+	//PRINT ~Area already exists: xaa273. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa273.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa274.are~) BEGIN
-	PRINT ~Area already exists: xaa274. Skipping...~
+	//PRINT ~Area already exists: xaa274. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa274.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa275.are~) BEGIN
-	PRINT ~Area already exists: xaa275. Skipping...~
+	//PRINT ~Area already exists: xaa275. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa275.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa276.are~) BEGIN
-	PRINT ~Area already exists: xaa276. Skipping...~
+	//PRINT ~Area already exists: xaa276. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa276.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa280.are~) BEGIN
-	PRINT ~Area already exists: xaa280. Skipping...~
+	//PRINT ~Area already exists: xaa280. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa280.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa283.are~) BEGIN
-	PRINT ~Area already exists: xaa283. Skipping...~
+	//PRINT ~Area already exists: xaa283. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa283.are~ ~override~
 	WRITE_LONG 3660 RESOLVE_STR_REF(@60128) /*~The cell door appears to have been tampered with.~*/
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa284.are~) BEGIN
-	PRINT ~Area already exists: xaa284. Skipping...~
+	//PRINT ~Area already exists: xaa284. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa284.are~ ~override~
 	WRITE_LONG 4312 RESOLVE_STR_REF(@60129) /*~These stairs are closed due to poor workmanship.~*/
@@ -1080,75 +1081,75 @@ END ELSE BEGIN
 	WRITE_LONG 5168 %xaa16%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa285.are~) BEGIN
-	PRINT ~Area already exists: xaa285. Skipping...~
+	//PRINT ~Area already exists: xaa285. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa285.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa286.are~) BEGIN
-	PRINT ~Area already exists: xaa286. Skipping...~
+	//PRINT ~Area already exists: xaa286. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa286.are~ ~override~
 	WRITE_LONG 2068 %xaa12%
 	WRITE_LONG 2072 %xaa13%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa287.are~) BEGIN
-	PRINT ~Area already exists: xaa287. Skipping...~
+	//PRINT ~Area already exists: xaa287. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa287.are~ ~override~
 	WRITE_LONG 2880 %xaa12%
 	WRITE_LONG 2884 %xaa13%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa288.are~) BEGIN
-	PRINT ~Area already exists: xaa288. Skipping...~
+	//PRINT ~Area already exists: xaa288. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa288.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa289.are~) BEGIN
-	PRINT ~Area already exists: xaa289. Skipping...~
+	//PRINT ~Area already exists: xaa289. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa289.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa290.are~) BEGIN
-	PRINT ~Area already exists: xaa290. Skipping...~
+	//PRINT ~Area already exists: xaa290. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa290.are~ ~override~
 	WRITE_LONG 5544 %xaa7%
 	WRITE_LONG 5548 %xaa7%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa291.are~) BEGIN
-	PRINT ~Area already exists: xaa291. Skipping...~
+	//PRINT ~Area already exists: xaa291. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa291.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa292.are~) BEGIN
-	PRINT ~Area already exists: xaa292. Skipping...~
+	//PRINT ~Area already exists: xaa292. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa292.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa293.are~) BEGIN
-	PRINT ~Area already exists: xaa293. Skipping...~
+	//PRINT ~Area already exists: xaa293. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa293.are~ ~override~
 	WRITE_LONG 2556 %xaa12%
 	WRITE_LONG 2560 %xaa13%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa294.are~) BEGIN
-	PRINT ~Area already exists: xaa294. Skipping...~
+	//PRINT ~Area already exists: xaa294. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa294.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa295.are~) BEGIN
-	PRINT ~Area already exists: xaa295. Skipping...~
+	//PRINT ~Area already exists: xaa295. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa295.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa296.are~) BEGIN
-	PRINT ~Area already exists: xaa296. Skipping...~
+	//PRINT ~Area already exists: xaa296. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa296.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa297.are~) BEGIN
-	PRINT ~Area already exists: xaa297. Skipping...~
+	//PRINT ~Area already exists: xaa297. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa297.are~ ~override~
 	WRITE_LONG 14048 %xaa17%
@@ -1156,7 +1157,7 @@ END ELSE BEGIN
 	WRITE_LONG 14060 %xaa18%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa305.are~) BEGIN
-	PRINT ~Area already exists: xaa305. Skipping...~
+	//PRINT ~Area already exists: xaa305. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa305.are~ ~override~
 	WRITE_LONG 2048 %xaa3%
@@ -1164,70 +1165,70 @@ END ELSE BEGIN
 	WRITE_LONG 2060 %xaa6%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa307.are~) BEGIN
-	PRINT ~Area already exists: xaa307. Skipping...~
+	//PRINT ~Area already exists: xaa307. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa307.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa309.are~) BEGIN
-	PRINT ~Area already exists: xaa309. Skipping...~
+	//PRINT ~Area already exists: xaa309. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa309.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa311.are~) BEGIN
-	PRINT ~Area already exists: xaa311. Skipping...~
+	//PRINT ~Area already exists: xaa311. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa311.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa313.are~) BEGIN
-	PRINT ~Area already exists: xaa313. Skipping...~
+	//PRINT ~Area already exists: xaa313. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa313.are~ ~override~
 	WRITE_LONG 832 %xaa12%
 	WRITE_LONG 836 %xaa13%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa318.are~) BEGIN
-	PRINT ~Area already exists: xaa318. Skipping...~
+	//PRINT ~Area already exists: xaa318. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa318.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa322.are~) BEGIN
-	PRINT ~Area already exists: xaa322. Skipping...~
+	//PRINT ~Area already exists: xaa322. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa322.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa324.are~) BEGIN
-	PRINT ~Area already exists: xaa324. Skipping...~
+	//PRINT ~Area already exists: xaa324. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa324.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa326.are~) BEGIN
-	PRINT ~Area already exists: xaa326. Skipping...~
+	//PRINT ~Area already exists: xaa326. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa326.are~ ~override~
 	WRITE_LONG 2956 %xaa5%
 	WRITE_LONG 2960 %xaa5%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa352.are~) BEGIN
-	PRINT ~Area already exists: xaa352. Skipping...~
+	//PRINT ~Area already exists: xaa352. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa352.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa353.are~) BEGIN
-	PRINT ~Area already exists: xaa353. Skipping...~
+	//PRINT ~Area already exists: xaa353. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa353.are~ ~override~
 	WRITE_LONG 2112 %xaa19%
 	WRITE_LONG 2120 %xaa6%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa357.are~) BEGIN
-	PRINT ~Area already exists: xaa357. Skipping...~
+	//PRINT ~Area already exists: xaa357. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa357.are~ ~override~
 	WRITE_LONG 1780 %xaa12%
 	WRITE_LONG 1784 %xaa13%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa358.are~) BEGIN
-	PRINT ~Area already exists: xaa358. Skipping...~
+	//PRINT ~Area already exists: xaa358. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa358.are~ ~override~
 	WRITE_LONG 2004 %xaa12%
@@ -1235,7 +1236,7 @@ END ELSE BEGIN
 	WRITE_LONG 2016 %xaa6%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa359.are~) BEGIN
-	PRINT ~Area already exists: xaa359. Skipping...~
+	//PRINT ~Area already exists: xaa359. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa359.are~ ~override~
 	WRITE_LONG 3344 RESOLVE_STR_REF(@60130) /*~Gondsman Leonardo's Helical Aerial Wonder~*/
@@ -1247,47 +1248,47 @@ END ELSE BEGIN
 	WRITE_LONG 6572 %xaa6%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa360.are~) BEGIN
-	PRINT ~Area already exists: xaa360. Skipping...~
+	//PRINT ~Area already exists: xaa360. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa360.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa363.are~) BEGIN
-	PRINT ~Area already exists: xaa363. Skipping...~
+	//PRINT ~Area already exists: xaa363. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa363.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa373.are~) BEGIN
-	PRINT ~Area already exists: xaa373. Skipping...~
+	//PRINT ~Area already exists: xaa373. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa373.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa375.are~) BEGIN
-	PRINT ~Area already exists: xaa375. Skipping...~
+	//PRINT ~Area already exists: xaa375. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa375.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa377.are~) BEGIN
-	PRINT ~Area already exists: xaa377. Skipping...~
+	//PRINT ~Area already exists: xaa377. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa377.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa379.are~) BEGIN
-	PRINT ~Area already exists: xaa379. Skipping...~
+	//PRINT ~Area already exists: xaa379. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa379.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa381.are~) BEGIN
-	PRINT ~Area already exists: xaa381. Skipping...~
+	//PRINT ~Area already exists: xaa381. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa381.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa383.are~) BEGIN
-	PRINT ~Area already exists: xaa383. Skipping...~
+	//PRINT ~Area already exists: xaa383. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa383.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa384.are~) BEGIN
-	PRINT ~Area already exists: xaa384. Skipping...~
+	//PRINT ~Area already exists: xaa384. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa384.are~ ~override~
 	WRITE_LONG 2408 %xaa12%
@@ -1295,7 +1296,7 @@ END ELSE BEGIN
 	WRITE_LONG 2420 %xaa6%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa389.are~) BEGIN
-	PRINT ~Area already exists: xaa389. Skipping...~
+	//PRINT ~Area already exists: xaa389. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa389.are~ ~override~
 	WRITE_LONG 10616 %xaa4%
@@ -1303,7 +1304,7 @@ END ELSE BEGIN
 	WRITE_LONG 10628 %xaa20%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa527.are~) BEGIN
-	PRINT ~Area already exists: xaa527. Skipping...~
+	//PRINT ~Area already exists: xaa527. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa527.are~ ~override~
 	WRITE_LONG 4356 %xaa3%
@@ -1311,57 +1312,57 @@ END ELSE BEGIN
 	WRITE_LONG 4368 %xaa18%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa503.are~) BEGIN
-	PRINT ~Area already exists: xaa503. Skipping...~
+	//PRINT ~Area already exists: xaa503. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa503.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa501.are~) BEGIN
-	PRINT ~Area already exists: xaa501. Skipping...~
+	//PRINT ~Area already exists: xaa501. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa501.are~ ~override~
 	WRITE_LONG 1492 %xaa12%
 	WRITE_LONG 1496 %xaa13%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa499.are~) BEGIN
-	PRINT ~Area already exists: xaa499. Skipping...~
+	//PRINT ~Area already exists: xaa499. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa499.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa497.are~) BEGIN
-	PRINT ~Area already exists: xaa497. Skipping...~
+	//PRINT ~Area already exists: xaa497. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa497.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa495.are~) BEGIN
-	PRINT ~Area already exists: xaa495. Skipping...~
+	//PRINT ~Area already exists: xaa495. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa495.are~ ~override~
 	WRITE_LONG 3876 %xaa7%
 	WRITE_LONG 3880 %xaa7%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa490.are~) BEGIN
-	PRINT ~Area already exists: xaa490. Skipping...~
+	//PRINT ~Area already exists: xaa490. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa490.are~ ~override~
 	WRITE_LONG 3716 %xaa12%
 	WRITE_LONG 3720 %xaa13%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa488.are~) BEGIN
-	PRINT ~Area already exists: xaa488. Skipping...~
+	//PRINT ~Area already exists: xaa488. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa488.are~ ~override~
 	WRITE_LONG 2548 %xaa12%
 	WRITE_LONG 2552 %xaa13%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa487.are~) BEGIN
-	PRINT ~Area already exists: xaa487. Skipping...~
+	//PRINT ~Area already exists: xaa487. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa487.are~ ~override~
 	WRITE_LONG 1144 %xaa12%
 	WRITE_LONG 1148 %xaa13%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa484.are~) BEGIN
-	PRINT ~Area already exists: xaa484. Skipping...~
+	//PRINT ~Area already exists: xaa484. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa484.are~ ~override~
 	WRITE_LONG 580 RESOLVE_STR_REF(@60134) /*~These stairs are closed due to poor workmanship.~*/
@@ -1369,79 +1370,79 @@ END ELSE BEGIN
 	WRITE_LONG 2112 %xaa16%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa482.are~) BEGIN
-	PRINT ~Area already exists: xaa482. Skipping...~
+	//PRINT ~Area already exists: xaa482. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa482.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa481.are~) BEGIN
-	PRINT ~Area already exists: xaa481. Skipping...~
+	//PRINT ~Area already exists: xaa481. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa481.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa479.are~) BEGIN
-	PRINT ~Area already exists: xaa479. Skipping...~
+	//PRINT ~Area already exists: xaa479. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa479.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa476.are~) BEGIN
-	PRINT ~Area already exists: xaa476. Skipping...~
+	//PRINT ~Area already exists: xaa476. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa476.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa473.are~) BEGIN
-	PRINT ~Area already exists: xaa473. Skipping...~
+	//PRINT ~Area already exists: xaa473. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa473.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa462.are~) BEGIN
-	PRINT ~Area already exists: xaa462. Skipping...~
+	//PRINT ~Area already exists: xaa462. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa462.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa461.are~) BEGIN
-	PRINT ~Area already exists: xaa461. Skipping...~
+	//PRINT ~Area already exists: xaa461. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa461.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa460.are~) BEGIN
-	PRINT ~Area already exists: xaa460. Skipping...~
+	//PRINT ~Area already exists: xaa460. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa460.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa459.are~) BEGIN
-	PRINT ~Area already exists: xaa459. Skipping...~
+	//PRINT ~Area already exists: xaa459. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa459.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa458.are~) BEGIN
-	PRINT ~Area already exists: xaa458. Skipping...~
+	//PRINT ~Area already exists: xaa458. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa458.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa457.are~) BEGIN
-	PRINT ~Area already exists: xaa457. Skipping...~
+	//PRINT ~Area already exists: xaa457. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa457.are~ ~override~
 	WRITE_LONG 4208 %xaa7%
 	WRITE_LONG 4212 %xaa7%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa456.are~) BEGIN
-	PRINT ~Area already exists: xaa456. Skipping...~
+	//PRINT ~Area already exists: xaa456. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa456.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa455.are~) BEGIN
-	PRINT ~Area already exists: xaa455. Skipping...~
+	//PRINT ~Area already exists: xaa455. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa455.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa454.are~) BEGIN
-	PRINT ~Area already exists: xaa454. Skipping...~
+	//PRINT ~Area already exists: xaa454. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa454.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa453.are~) BEGIN
-	PRINT ~Area already exists: xaa453. Skipping...~
+	//PRINT ~Area already exists: xaa453. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa453.are~ ~override~
 	WRITE_LONG 1668 RESOLVE_STR_REF(@60135) /*~These stairs are closed due to poor workmanship.~*/
@@ -1449,12 +1450,12 @@ END ELSE BEGIN
 	WRITE_LONG 2432 %xaa16%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa452.are~) BEGIN
-	PRINT ~Area already exists: xaa452. Skipping...~
+	//PRINT ~Area already exists: xaa452. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa452.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa451.are~) BEGIN
-	PRINT ~Area already exists: xaa451. Skipping...~
+	//PRINT ~Area already exists: xaa451. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa451.are~ ~override~
 	WRITE_LONG 5636 %xaa12%
@@ -1462,64 +1463,64 @@ END ELSE BEGIN
 	WRITE_LONG 5648 %xaa6%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa447.are~) BEGIN
-	PRINT ~Area already exists: xaa447. Skipping...~
+	//PRINT ~Area already exists: xaa447. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa447.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa445.are~) BEGIN
-	PRINT ~Area already exists: xaa445. Skipping...~
+	//PRINT ~Area already exists: xaa445. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa445.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa443.are~) BEGIN
-	PRINT ~Area already exists: xaa443. Skipping...~
+	//PRINT ~Area already exists: xaa443. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa443.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa441.are~) BEGIN
-	PRINT ~Area already exists: xaa441. Skipping...~
+	//PRINT ~Area already exists: xaa441. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa441.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa439.are~) BEGIN
-	PRINT ~Area already exists: xaa439. Skipping...~
+	//PRINT ~Area already exists: xaa439. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa439.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa437.are~) BEGIN
-	PRINT ~Area already exists: xaa437. Skipping...~
+	//PRINT ~Area already exists: xaa437. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa437.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa435.are~) BEGIN
-	PRINT ~Area already exists: xaa435. Skipping...~
+	//PRINT ~Area already exists: xaa435. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa435.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa433.are~) BEGIN
-	PRINT ~Area already exists: xaa433. Skipping...~
+	//PRINT ~Area already exists: xaa433. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa433.are~ ~override~
 	WRITE_LONG 1692 %xaa14%
 	WRITE_LONG 1696 %xaa14%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa430.are~) BEGIN
-	PRINT ~Area already exists: xaa430. Skipping...~
+	//PRINT ~Area already exists: xaa430. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa430.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa428.are~) BEGIN
-	PRINT ~Area already exists: xaa428. Skipping...~
+	//PRINT ~Area already exists: xaa428. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa428.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa427.are~) BEGIN
-	PRINT ~Area already exists: xaa427. Skipping...~
+	//PRINT ~Area already exists: xaa427. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa427.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa425.are~) BEGIN
-	PRINT ~Area already exists: xaa425. Skipping...~
+	//PRINT ~Area already exists: xaa425. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa425.are~ ~override~
 	WRITE_LONG 2132 %xaa8%
@@ -1527,7 +1528,7 @@ END ELSE BEGIN
 	WRITE_LONG 2144 %xaa10%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa423.are~) BEGIN
-	PRINT ~Area already exists: xaa423. Skipping...~
+	//PRINT ~Area already exists: xaa423. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa423.are~ ~override~
 	WRITE_LONG 2612 %xaa12%
@@ -1535,34 +1536,34 @@ END ELSE BEGIN
 	WRITE_LONG 2624 %xaa6%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa415.are~) BEGIN
-	PRINT ~Area already exists: xaa415. Skipping...~
+	//PRINT ~Area already exists: xaa415. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa415.are~ ~override~
 	WRITE_LONG 1792 %xaa14%
 	WRITE_LONG 1796 %xaa14%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa413.are~) BEGIN
-	PRINT ~Area already exists: xaa413. Skipping...~
+	//PRINT ~Area already exists: xaa413. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa413.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa411.are~) BEGIN
-	PRINT ~Area already exists: xaa411. Skipping...~
+	//PRINT ~Area already exists: xaa411. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa411.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa409.are~) BEGIN
-	PRINT ~Area already exists: xaa409. Skipping...~
+	//PRINT ~Area already exists: xaa409. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa409.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa407.are~) BEGIN
-	PRINT ~Area already exists: xaa407. Skipping...~
+	//PRINT ~Area already exists: xaa407. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa407.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa404.are~) BEGIN
-	PRINT ~Area already exists: xaa404. Skipping...~
+	//PRINT ~Area already exists: xaa404. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa404.are~ ~override~
 	WRITE_LONG 2212 RESOLVE_STR_REF(@60136) /*~These stairs are closed due to poor workmanship.~*/
@@ -1570,24 +1571,24 @@ END ELSE BEGIN
 	WRITE_LONG 3764 %xaa9%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa538.are~) BEGIN
-	PRINT ~Area already exists: xaa538. Skipping...~
+	//PRINT ~Area already exists: xaa538. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa538.are~ ~override~
 	WRITE_LONG 2756 %xaa5%
 	WRITE_LONG 2760 %xaa5%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa540.are~) BEGIN
-	PRINT ~Area already exists: xaa540. Skipping...~
+	//PRINT ~Area already exists: xaa540. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa540.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa551.are~) BEGIN
-	PRINT ~Area already exists: xaa551. Skipping...~
+	//PRINT ~Area already exists: xaa551. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa551.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa560.are~) BEGIN
-	PRINT ~Area already exists: xaa560. Skipping...~
+	//PRINT ~Area already exists: xaa560. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa560.are~ ~override~
 	WRITE_LONG 2472 %xaa12%
@@ -1595,7 +1596,7 @@ END ELSE BEGIN
 	WRITE_LONG 2484 %xaa6%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa561.are~) BEGIN
-	PRINT ~Area already exists: xaa561. Skipping...~
+	//PRINT ~Area already exists: xaa561. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa561.are~ ~override~
 	WRITE_LONG 9260 %xaa21%
@@ -1603,25 +1604,25 @@ END ELSE BEGIN
 	WRITE_LONG 9272 %xaa22%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa642.are~) BEGIN
-	PRINT ~Area already exists: xaa642. Skipping...~
+	//PRINT ~Area already exists: xaa642. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa642.are~ ~override~
 	WRITE_LONG 9400 %xaa22%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa638.are~) BEGIN
-	PRINT ~Area already exists: xaa638. Skipping...~
+	//PRINT ~Area already exists: xaa638. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa638.are~ ~override~
 	WRITE_LONG 1808 %xaa5%
 	WRITE_LONG 1812 %xaa5%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa629.are~) BEGIN
-	PRINT ~Area already exists: xaa629. Skipping...~
+	//PRINT ~Area already exists: xaa629. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa629.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa625.are~) BEGIN
-	PRINT ~Area already exists: xaa625. Skipping...~
+	//PRINT ~Area already exists: xaa625. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa625.are~ ~override~
 	WRITE_LONG 3832 %xaa12%
@@ -1629,72 +1630,72 @@ END ELSE BEGIN
 	WRITE_LONG 3844 %xaa6%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa619.are~) BEGIN
-	PRINT ~Area already exists: xaa619. Skipping...~
+	//PRINT ~Area already exists: xaa619. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa619.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa617.are~) BEGIN
-	PRINT ~Area already exists: xaa617. Skipping...~
+	//PRINT ~Area already exists: xaa617. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa617.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa606.are~) BEGIN
-	PRINT ~Area already exists: xaa606. Skipping...~
+	//PRINT ~Area already exists: xaa606. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa606.are~ ~override~
 	WRITE_LONG 5336 %xaa12%
 	WRITE_LONG 5340 %xaa13%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa605.are~) BEGIN
-	PRINT ~Area already exists: xaa605. Skipping...~
+	//PRINT ~Area already exists: xaa605. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa605.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa603.are~) BEGIN
-	PRINT ~Area already exists: xaa603. Skipping...~
+	//PRINT ~Area already exists: xaa603. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa603.are~ ~override~
 	WRITE_LONG 1124 RESOLVE_STR_REF(@60137) /*~These stairs are closed due to poor workmanship.~*/
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa600.are~) BEGIN
-	PRINT ~Area already exists: xaa600. Skipping...~
+	//PRINT ~Area already exists: xaa600. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa600.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa598.are~) BEGIN
-	PRINT ~Area already exists: xaa598. Skipping...~
+	//PRINT ~Area already exists: xaa598. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa598.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa596.are~) BEGIN
-	PRINT ~Area already exists: xaa596. Skipping...~
+	//PRINT ~Area already exists: xaa596. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa596.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa594.are~) BEGIN
-	PRINT ~Area already exists: xaa594. Skipping...~
+	//PRINT ~Area already exists: xaa594. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa594.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa591.are~) BEGIN
-	PRINT ~Area already exists: xaa591. Skipping...~
+	//PRINT ~Area already exists: xaa591. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa591.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa584.are~) BEGIN
-	PRINT ~Area already exists: xaa584. Skipping...~
+	//PRINT ~Area already exists: xaa584. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa584.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa574.are~) BEGIN
-	PRINT ~Area already exists: xaa574. Skipping...~
+	//PRINT ~Area already exists: xaa574. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa574.are~ ~override~
 	WRITE_LONG 1132 %xaa12%
 	WRITE_LONG 1136 %xaa13%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa565.are~) BEGIN
-	PRINT ~Area already exists: xaa565. Skipping...~
+	//PRINT ~Area already exists: xaa565. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa565.are~ ~override~
 	WRITE_LONG 6472 %xaa3%
@@ -1702,7 +1703,7 @@ END ELSE BEGIN
 	WRITE_LONG 6484 %xaa18%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa669.are~) BEGIN
-	PRINT ~Area already exists: xaa669. Skipping...~
+	//PRINT ~Area already exists: xaa669. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa669.are~ ~override~
 	WRITE_LONG 4652 %xaa3%
@@ -1710,17 +1711,17 @@ END ELSE BEGIN
 	WRITE_LONG 4664 %xaa23%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa651.are~) BEGIN
-	PRINT ~Area already exists: xaa651. Skipping...~
+	//PRINT ~Area already exists: xaa651. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa651.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa675.are~) BEGIN
-	PRINT ~Area already exists: xaa675. Skipping...~
+	//PRINT ~Area already exists: xaa675. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa675.are~ ~override~
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa673.are~) BEGIN
-	PRINT ~Area already exists: xaa673. Skipping...~
+	//PRINT ~Area already exists: xaa673. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa673.are~ ~override~
 	WRITE_LONG 580 RESOLVE_STR_REF(@60138) /*~This portion of the railing looks as if it's been recently repaired.~*/
@@ -1730,7 +1731,7 @@ END ELSE BEGIN
 	WRITE_LONG 1665 %xaa6%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xaa677.are~) BEGIN
-	PRINT ~Area already exists: xaa677. Skipping...~
+	//PRINT ~Area already exists: xaa677. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa677.are~ ~override~
 END

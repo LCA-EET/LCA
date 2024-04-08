@@ -1,4 +1,5 @@
-PRINT ~Processing AssetConverter generated elements...~
+PRINT ~Processing converted asset block: xad...~
+SILENT
 //{ MUSIC
 ADD_MUSIC xad0 ~%MOD_FOLDER%\generated\d\mus\xad0.mus~
 ADD_MUSIC xad1 ~%MOD_FOLDER%\generated\d\mus\xad1.mus~
@@ -337,7 +338,7 @@ COPY ~%MOD_FOLDER%\generated\d\cre\xad155.cre~ ~override~
 //are files
 //===================
 ACTION_IF (FILE_EXISTS_IN_GAME ~xad100.are~) BEGIN
-	PRINT ~Area already exists: xad100. Skipping...~
+	//PRINT ~Area already exists: xad100. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\d\are\xad100.are~ ~override~
 	WRITE_LONG 1048 RESOLVE_STR_REF(@40209) /*~Imoen lies still on the bed. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~*/
@@ -353,7 +354,7 @@ END ELSE BEGIN
 	WRITE_LONG 4050 %xad2%
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xad101.are~) BEGIN
-	PRINT ~Area already exists: xad101. Skipping...~
+	//PRINT ~Area already exists: xad101. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\d\are\xad101.are~ ~override~
 	WRITE_LONG 15812 RESOLVE_STR_REF(@40217) /*~The second floor is securely locked and guarded. No one is permitted upstairs. ~*/
@@ -381,6 +382,8 @@ COPY ~%MOD_FOLDER%\generated\d\bmp\xad116.bmp~ ~override~
 
 //spl files
 //===================
+COPY ~%MOD_FOLDER%\generated\d\spl\xad100.spl~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@40225) /*~Trap the Soul~*/
 
 //wav files
 //===================
@@ -499,9 +502,9 @@ COPY ~%MOD_FOLDER%\generated\d\wav\xad10149.wav~ ~override~
 //itm files
 //===================
 COPY ~%MOD_FOLDER%\generated\d\itm\xad100.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40225) /*~Plate Mail~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40226) /*~The Magma Bulwark +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@40227) /*~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+	WRITE_LONG 8 RESOLVE_STR_REF(@40226) /*~Plate Mail~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40227) /*~The Magma Bulwark +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@40228) /*~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
 
 STATISTICS:
 
@@ -510,7 +513,7 @@ Requires:
  12 Strength
 
 Weight: 50~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@40228) /*~Forged by the fire giant Varboti as a gift for a Cormyrian general who made peace with his clan, this red-and-black armor lends its wearer a molten aspect while providing protection against all but the most powerful blows. Due to its incredibly strong but thin material, it also weighs far less than ordinary plate mail.
+	WRITE_LONG 84 RESOLVE_STR_REF(@40229) /*~Forged by the fire giant Varboti as a gift for a Cormyrian general who made peace with his clan, this red-and-black armor lends its wearer a molten aspect while providing protection against all but the most powerful blows. Due to its incredibly strong but thin material, it also weighs far less than ordinary plate mail.
 
 STATISTICS:
 
@@ -520,14 +523,14 @@ Requires:
 
 Weight: 20~*/
 COPY ~%MOD_FOLDER%\generated\d\itm\xad101.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40229) /*~Ring~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40230) /*~Ring of Protection +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@40231) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+	WRITE_LONG 8 RESOLVE_STR_REF(@40230) /*~Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40231) /*~Ring of Protection +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@40232) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@40232) /*~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
+	WRITE_LONG 84 RESOLVE_STR_REF(@40233) /*~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
 
 STATISTICS:
 
@@ -538,14 +541,14 @@ Equipped abilities:
 Weight: 0~*/
 COPY ~%MOD_FOLDER%\generated\d\itm\xad102.itm~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\itm\xad104.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40233) /*~Ring~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40234) /*~Ring of Protection +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@40235) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+	WRITE_LONG 8 RESOLVE_STR_REF(@40234) /*~Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40235) /*~Ring of Protection +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@40236) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@40236) /*~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
+	WRITE_LONG 84 RESOLVE_STR_REF(@40237) /*~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
 
 STATISTICS:
 
@@ -555,9 +558,9 @@ Equipped abilities:
 
 Weight: 0~*/
 COPY ~%MOD_FOLDER%\generated\d\itm\xad106.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40237) /*~Corwin's Armor +2~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40238) /*~Corwin's Armor +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@40239) /*~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
+	WRITE_LONG 8 RESOLVE_STR_REF(@40238) /*~Corwin's Armor +2~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40239) /*~Corwin's Armor +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@40240) /*~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
 
 STATISTICS:
 
@@ -570,7 +573,7 @@ Requires:
  5 Strength
 
 Weight: 7~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@40240) /*~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
+	WRITE_LONG 84 RESOLVE_STR_REF(@40241) /*~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
 
 STATISTICS:
 
@@ -584,9 +587,9 @@ Requires:
 
 Weight: 7~*/
 COPY ~%MOD_FOLDER%\generated\d\itm\xad107.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@40241) /*~Composite Longbow~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@40242) /*~Corwin's Bow +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@40243) /*~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
+	WRITE_LONG 8 RESOLVE_STR_REF(@40242) /*~Composite Longbow~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@40243) /*~Corwin's Bow +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@40244) /*~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
 
 STATISTICS:
 
@@ -599,7 +602,7 @@ Requires:
  18 Strength
 
 Weight: 10~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@40244) /*~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+	WRITE_LONG 84 RESOLVE_STR_REF(@40245) /*~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
 
 Equipped abilities: 
 – Dexterity: +1
