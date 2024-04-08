@@ -957,6 +957,62 @@ END
 		WRITE_ASCII 0x258 ~~ #8		// Race Script
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		
+		//{ Coalition Respawns
+			ACTION_DEFINE_ARRAY coalitionRespawns
+			BEGIN
+				xac121
+				xac122
+				xac123
+				xac125
+				xac126
+				xac127
+				xac132
+				xac133
+				xac134
+			END
+			
+			ACTION_PHP_EACH coaliationRespawns AS _ => coalCre
+			BEGIN
+				COPY_EXISTING ~%coalCre%.cre~ ~override~
+				
+				// Apply Coalition Scripts
+				WRITE_ASCII 0x2CC ~z2~ #8 	// Dialogue
+				WRITE_ASCII 0x248 ~xag1coal~ #8		// Override Script
+				WRITE_ASCII 0x250 ~xalcnull~ #8		// Class Script
+				WRITE_ASCII 0x258 ~xalcnull~ #8		// Race Script
+				WRITE_ASCII 0x260 ~xac130~ #8		// General Script
+				WRITE_ASCII 0x268 ~xalcnull~ #8		// Default Script
+			END
+		//}
+		
+		//{ Crusader Respawns
+			ACTION_DEFINE_ARRAY crusaderRespawns
+			BEGIN
+				xac190
+				xac262
+				xac218
+				xac182
+				xac180
+				xac203
+				xac192
+				xac244
+				xac246
+			END
+			
+			ACTION_PHP_EACH crusaderRespawns AS _ => crusCre
+			BEGIN
+				COPY_EXISTING ~%crusCre%.cre~ ~override~
+				
+				// Apply Coalition Scripts
+				WRITE_ASCII 0x2CC ~z2~ #8 	// Dialogue
+				WRITE_ASCII 0x248 ~xag1crus~ #8		// Override Script
+				WRITE_ASCII 0x250 ~xalcnull~ #8		// Class Script
+				WRITE_ASCII 0x258 ~xalcnull~ #8		// Race Script
+				WRITE_ASCII 0x260 ~xac130~ #8		// General Script
+				WRITE_ASCII 0x268 ~xalcnull~ #8		// Default Script
+			END
+		//}
 	//}
 	
 	//{ Block D Base

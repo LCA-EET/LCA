@@ -1,3 +1,13 @@
+IF
+	GlobalLT("XA_Baseline", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_CoalitionAlive", "GLOBAL", 100)
+		SetGlobal("XA_CrusadersAlive", "GLOBAL", 100)
+		SetGlobal("XA_Baseline", "MYAREA", 1)
+		Continue()
+END
+
 IF 
 	Global("XA_BeginSpawning", "GLOBAL", 1)
 	OR(2)
@@ -69,7 +79,7 @@ THEN
 END
 
 IF
-	GlobalLT("XA_CoalitionAlive", "GLOBAL", 5)
+	GlobalLT("XA_CoalitionAlive", "GLOBAL", 100)
 	Global("XA_BeginSpawning", "GLOBAL", 1)
 THEN
 	RESPONSE #10
@@ -116,7 +126,7 @@ END
 
 
 IF
-	GlobalLT("XA_CrusadersAlive", "GLOBAL", 5)
+	GlobalLT("XA_CrusadersAlive", "GLOBAL", 100)
 	Global("XA_BeginSpawning", "GLOBAL", 1)
 THEN
 	RESPONSE #10

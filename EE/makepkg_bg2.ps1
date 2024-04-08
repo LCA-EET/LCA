@@ -8,6 +8,7 @@ $folders = @(
 'assistant',
 'bg1',
 'bg2',
+'compat',
 'generated/a',
 'generated/c',
 'generated/d',
