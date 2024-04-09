@@ -1,0 +1,94 @@
+
+//{ Golden Egg
+	IF
+		PartyHasItem("XACHICK")
+		GlobalLT("XA_GoldenHenTimerSet", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_GoldenHenTimerSet", "GLOBAL", 1)
+			SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+			//DisplayStringHead(Player1, @18)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		HasItem("XACHICK", Player1)
+		GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			GiveItemCreate("XAEGG", Player1, 0,0,0)
+			DisplayString(Myself, @0)
+			SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+			DisplayStringHead(Player1, @0)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		HasItem("XACHICK", Player2)
+		GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			GiveItemCreate("XAEGG", Player2, 0,0,0)
+			DisplayStringHead(Player2, @0)
+			SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		HasItem("XACHICK", Player3)
+		GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			GiveItemCreate("XAEGG", Player3, 0,0,0)
+			DisplayStringHead(Player3, @0)
+			SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		HasItem("XACHICK", Player4)
+		GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			GiveItemCreate("XAEGG", Player4, 0,0,0)
+			DisplayString(Player4, @0)
+			SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		HasItem("XACHICK", Player5)
+		GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			GiveItemCreate("XAEGG", Player5, 0,0,0)
+			DisplayString(Player5,  @0)
+			SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		HasItem("XACHICK", Player6)
+		GlobalTimerExpired("XA_GoldenHenTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			GiveItemCreate("XAEGG", Player6, 0,0,0)
+			DisplayString(Player6,  @0)
+			SetGlobalTimer("XA_GoldenHenTimer", "GLOBAL", ONE_DAY)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+//}

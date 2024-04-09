@@ -1,8 +1,8 @@
 IF 
-	GlobalLT("XA_DestroyNPCs_0613", "MYAREA", 1)
+	GlobalLT("XA_CreateNPCs_0613", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_DestroyNPCs_0613", "MYAREA", 1)
+		SetGlobal("XA_CreateNPCs_0613", "MYAREA", 1)
 		CreateCreature("XAWVMER2", [850.420], N)
 		CreateCreature("XAWVMER1", [910.460], E)
 		CreateCreature("XAA630", [380.640], N)

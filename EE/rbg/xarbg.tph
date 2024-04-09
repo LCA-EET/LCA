@@ -518,6 +518,7 @@ END
 //{ Script Extensions
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~
 	EXTEND_BOTTOM ~xadings.bcs~	~%MOD_FOLDER%/rbg/baf/xadings.baf~
+	EXTEND_TOP ~xabalrbg.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalegg.baf~
 	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalrbg.baf~	
 //}
 
@@ -526,8 +527,6 @@ END
 	COPY ~%MOD_FOLDER%/rbg/bmp/xaneomas.bmp~ ~override~
 	COPY ~%MOD_FOLDER%/rbg/bmp/xaf100lm.bmp~ ~override~
 //}
-
-
 
 //{ CRE
 
@@ -782,14 +781,7 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xaa1052.cre~ ~override/xawvmer2.cre~ // WV Merchant
-		WRITE_ASCII 0x2CC ~xawvmer~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8		// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		COPY_EXISTING ~xawvmer1.cre~ ~override/xawvmer2.cre~ // WV Merchant
 		
 		COPY_EXISTING ~xaa1052.cre~ ~override/xamerlea.cre~ // Merchant's League Merchant
 		WRITE_ASCII 0x2CC ~xamerlea~ #8 	// Dialogue
@@ -958,6 +950,9 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
+		EXTEND_BOTTOM ~xag1coal.bcs~ ~%MOD_FOLDER%/rbg/baf/xacrtyrd.baf~
+		EXTEND_BOTTOM ~xag1crus.bcs~ ~%MOD_FOLDER%/rbg/baf/xacrtyrd.baf~
+		
 		//{ Coalition Respawns
 			ACTION_DEFINE_ARRAY coalitionRespawns
 			BEGIN
@@ -972,7 +967,7 @@ END
 				xac134
 			END
 			
-			ACTION_PHP_EACH coaliationRespawns AS _ => coalCre
+			ACTION_PHP_EACH coalitionRespawns AS _ => coalCre
 			BEGIN
 				COPY_EXISTING ~%coalCre%.cre~ ~override~
 				
@@ -1039,6 +1034,40 @@ END
 		WRITE_ASCII 0x250 ~~ #8		// Class Script
 		WRITE_ASCII 0x258 ~~ #8		// Race Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		
+		COPY_EXISTING ~xaff1271.cre~ ~override/xab147b.cre~
+		SAY NAME1 @3058
+		SAY NAME2 @3058
+		WRITE_ASCII 0x280 ~XAB147B~ #20  	// Script Name
+		
+		COPY_EXISTING ~xaff1272.cre~ ~override/xab149b.cre~
+		SAY NAME1 @3058
+		SAY NAME2 @3058
+		WRITE_ASCII 0x280 ~XAB149B~ #20  	// Script Name
+		
+		COPY_EXISTING ~xaff1248.cre~ ~override/xab144a.cre~
+		SAY NAME1 @4151
+		SAY NAME2 @4151
+		WRITE_ASCII 0x2CC ~xabridge~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~XAB144A~ #20  	// Script Name
+		
+		COPY_EXISTING ~xaff1271.cre~ ~override/xab145a.cre~
+		SAY NAME1 @4151
+		SAY NAME2 @4151
+		WRITE_ASCII 0x2CC ~xabridge~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~XAB145A~ #20  	// Script Name
+		
+		COPY_EXISTING ~xaff1272.cre~ ~override/xab147a.cre~
+		SAY NAME1 @4151
+		SAY NAME2 @4151
+		WRITE_ASCII 0x2CC ~xabridge~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~XAB147A~ #20  	// Script Name
+		
+		COPY_EXISTING ~xac105.cre~ ~override/xab149a.cre~
+		SAY NAME1 @4151
+		SAY NAME2 @4151
+		WRITE_ASCII 0x2CC ~xabridge~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~XAB149A~ #20  	// Script Name
 	//}
 	
 	//{ Block F Base
@@ -1075,17 +1104,6 @@ END
 		WRITE_ASCII 0x280 ~xaneb~ #20  	// Script Name
 		WRITE_ASCII 0x250 ~xaneb~ #8		// Class Script
 		
-		COPY_EXISTING ~amcust02.cre~ ~override/xarbnb02.cre~
-		SAY NAME1 @4140
-		SAY NAME2 @4140
-		WRITE_ASCII 0x2CC ~~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xarbnb02~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8		// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
-		
 		COPY_EXISTING ~CHWRAITH.CRE~ ~override/xachwrai.cre~
 		WRITE_LONG 0x14 2000 // XP Value
 		WRITE_SHORT 0x24 33
@@ -1111,9 +1129,10 @@ END
 		WRITE_ASCII 0x258 ~~ #8		// Race Script
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
-	//}
-	
-	//{ BG2 Base
+		
+		COPY_EXISTING ~xarbnb01.cre~ ~override/xarbnb02.cre~
+		WRITE_ASCII 0x280 ~xarbnb02~ #20  	// Script Name
+		
 		COPY_EXISTING ~xaschael.cre~ ~override/xacc3.cre~ // Corwin
 		WRITE_ASCII 0x2CC ~xacc3~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xacc3~ #20  	// Script Name
@@ -1742,8 +1761,6 @@ END
 		WRITE_BYTE 0x564 0
 	//}
 //}
-
-
 
 //{ Kidnap Music
 	ADD_MUSIC xamu04	~%MOD_FOLDER%/rbg/mus/xamu04.mus~
@@ -2470,8 +2487,7 @@ END
 	//}
 	
 	//{ Painting One
-		EXTEND_BOTTOM ~xag1coal.bcs~ ~%MOD_FOLDER%/rbg/baf/xacrtyrd.baf~
-		EXTEND_BOTTOM ~xag1crus.bcs~ ~%MOD_FOLDER%/rbg/baf/xacrtyrd.baf~
+		
 		EXTEND_TOP ~xacs101.bcs~ ~%MOD_FOLDER%/rbg/baf/xag1.baf~
 		
 		COPY ~%MOD_FOLDER%/rbg/are/xag1.are~ ~override~

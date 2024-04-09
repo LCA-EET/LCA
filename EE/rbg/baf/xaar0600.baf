@@ -1,6 +1,5 @@
 IF
-	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_CreateHOWSpy_0600", "MYAREA", 1)
+	GlobalLT("XA_CreateHOWSpy_0600", "MYAREA", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_CreateHOWSpy_0600", "MYAREA", 1)

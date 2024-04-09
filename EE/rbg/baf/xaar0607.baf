@@ -1,5 +1,4 @@
 IF
-	Global("XA_ReturnToBG", "GLOBAL", 1)
 	GlobalLT("XA_CellSpyCreated", "MYAREA", 1)
 THEN
 	RESPONSE #100

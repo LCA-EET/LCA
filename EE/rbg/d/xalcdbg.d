@@ -520,7 +520,7 @@ APPEND ~XALCDBG~
 	
 	IF ~~ THEN BEGIN XA_RBG_ItemTest
 		SAY @6001 /*  ~Item Test~ */
-		 				
+		
 		IF ~~ THEN REPLY @6003/* ~Engagement Rings (Unenchanted)~*/
 		DO ~
 			GiveItemCreate("xaringj", Player1, 0,0,0)

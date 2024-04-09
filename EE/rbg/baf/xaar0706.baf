@@ -97,8 +97,8 @@ END
 IF
 	InMyArea(Player1)
 	PartyHasItem("XACHICK")
-	!Global("XA_IncubusGoose", "GLOBAL", 1)
-	!Global("XA_PickUpGoose", "GLOBAL", 1)
+	GlobalLT("XA_IncubusGoose", "GLOBAL", 1)
+	GlobalLT("XA_PickUpGoose", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		ActionOverride(Player1, DestroyItem("XACHICK"))

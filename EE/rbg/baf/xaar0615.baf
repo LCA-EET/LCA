@@ -1,8 +1,8 @@
 IF 
-	GlobalLT("XA_DestroyNPCs_0615", "MYAREA", 1)
+	GlobalLT("XA_CreateNPCs_0615", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_DestroyNPCs_0615", "MYAREA", 1)
+		SetGlobal("XA_CreateNPCs_0615", "MYAREA", 1)
 		ActionOverride("Container 3", DestroyItem("SCRL1I"))
 		ActionOverride("Container 3", DestroyItem("SCRL1K"))
 		ActionOverride("Container 3", DestroyItem("SCRL3A"))

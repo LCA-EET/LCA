@@ -1,8 +1,6 @@
-
 IF
-	Global("XA_ReturnToBG", "GLOBAL", 1)
 	InMyArea("Aerie")
-	!Global("XA_AerieInBG", "GLOBAL", 1)
+	GlobalLT("XA_AerieInBG", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_AerieInBG", "GLOBAL", 1)
@@ -13,7 +11,7 @@ END
 
 IF 
 	Global("XA_PartyRemovalProcessing", "GLOBAL", 2)
-	!Global("XA_WyrmNPCsCreated", "GLOBAL", 1)
+	GlobalLT("XA_WyrmNPCsCreated", "MYAREA", 1)
 THEN
 	RESPONSE #100
 		AdvanceTime(FOURTEEN_DAYS)
@@ -35,7 +33,7 @@ THEN
 		CreateCreature("XAB145A", [3916.3244], SE) // Bridge Guard
 		CreateCreature("XAB144A", [2634.2404], SE) // Bridge Guard
 		CreateCreature("XAB147A", [2891.2217], SE) // Bridge Guard
-		SetGlobal("XA_WyrmNPCsCreated", "GLOBAL", 1)
+		SetGlobal("XA_WyrmNPCsCreated", "MYAREA", 1)
 		SetGlobal("ThiefSecretQuestion","GLOBAL",0)
 		FadeFromColor([20.0],0)
 		Continue()
@@ -109,16 +107,6 @@ THEN
 	RESPONSE #100
 		SetGlobal("XA_DrawBridgeDown","GLOBAL",1)
 		CloseDoor("DoorDraw")
-		Continue()
-END
-
-IF
-	Global("XA_ReturnToBG", "GLOBAL", 2)
-	Global("XA_DrawBridgeDown","GLOBAL",1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_DrawBridgeDown","GLOBAL",0)
-		OpenDoor("DoorDraw")
 		Continue()
 END
 

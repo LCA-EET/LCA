@@ -188,7 +188,7 @@
 @5084 = ~SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 2)~
 @5085 = ~SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 1)~
 @5086 = ~SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 0)~
-
+@5089 = ~Godbow x3~
 
 @6000 = ~Return to Baldur's Gate Debug~
 @6001 = ~Item Test~

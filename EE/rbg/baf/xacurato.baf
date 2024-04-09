@@ -4,9 +4,6 @@ IF
 	InParty("XACORWIN")
 	ActionListEmpty()
 	GlobalLT("XA_MagdaTalk", "GLOBAL", 1)
-	OR(2)
-		!InMyArea("XAA1148") // BELAND
-		Global("BelandEntranceFee","GLOBAL",2)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_MagdaTalk", "GLOBAL", 1)

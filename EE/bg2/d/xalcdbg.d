@@ -276,6 +276,14 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_BG2_ItemTest
 		SAY @5008
 		
+		IF ~~ THEN REPLY @5089
+		DO ~
+			GiveItemCreate("godbow", Player1, 0,0,0)
+			GiveItemCreate("godbow", Player1, 0,0,0)
+			GiveItemCreate("godbow", Player1, 0,0,0)
+		~
+		GOTO XA_BG2_ItemTest
+		
 		IF ~~ THEN REPLY @5009
 		DO ~
 			GiveItemCreate("xaamul2", Player1, 0,0,0)
