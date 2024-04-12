@@ -1,7 +1,7 @@
 BEGIN ~XAVIRGIL~
 
 IF ~
-	AreaCheck("xa2165")
+	AreaCheck("xaa283")
 	Global("XA_LC_VirgilInCustody", "GLOBAL", 1)
 	InPartySlot(LastTalkedToBy, 0)
 	Global("XA_LC_VirgilCellTalk", "GLOBAL", 1)
@@ -32,7 +32,7 @@ IF ~
 END
 
 IF ~
-	AreaCheck("xa2165")
+	AreaCheck("xaa283")
 	Global("XA_LC_VirgilInCustody", "GLOBAL", 1)
 ~ THEN BEGIN XA_InJail3
 	SAY @51 /* ~Leave me be. There is much on my mind.~ */
