@@ -2,12 +2,12 @@
 
 IF
 	GlobalGT("L#2SkieDagger","GLOBAL",30)
-	GlobalLT("XA_PromptToSendLetter", "GLOBAL", 1)
+	GlobalLT("XA_LC_PromptToSendLetter", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_SkieModActive", "GLOBAL",1)
-		SetGlobal("XA_PromptToSendLetter", "GLOBAL", 1)
+		SetGlobal("XA_LC_SkieModActive", "GLOBAL",1)
+		SetGlobal("XA_LC_PromptToSendLetter", "GLOBAL", 1)
 		////DisplayStringHead(Player1, @1)
 		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 		SetInterrupt(TRUE)
@@ -17,20 +17,20 @@ END
 
 //{ Brega Timer Expiration
 IF 
-	GlobalTimerExpired("XA_Ath","GLOBAL")
-	GlobalLT("XA_CheckWithBrega", "GLOBAL", 1)
+	GlobalTimerExpired("XA_LC_Ath","GLOBAL")
+	GlobalLT("XA_LC_CheckWithBrega", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CheckWithBrega", "GLOBAL", 1)
+		SetGlobal("XA_LC_CheckWithBrega", "GLOBAL", 1)
 		ActionOverride(Player1,StartDialog("player1",Player1))
 END
 
 IF 
-	GlobalTimerExpired("XA_Ath2","GLOBAL")
-	GlobalLT("XA_CheckWithBrega2", "GLOBAL", 1)
+	GlobalTimerExpired("XA_LC_Ath2","GLOBAL")
+	GlobalLT("XA_LC_CheckWithBrega2", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CheckWithBrega2", "GLOBAL", 1)
+		SetGlobal("XA_LC_CheckWithBrega2", "GLOBAL", 1)
 		ActionOverride(Player1,StartDialog("player1",Player1))
 END
 //}
@@ -88,10 +88,10 @@ END
 		ActionListEmpty()
 		Global("CerndBaby","GLOBAL",1)
 		!InParty("XACORWIN")
-		GlobalLT("XA_CorwinCerndBaby", "GLOBAL", 1)
+		GlobalLT("XA_LC_CorwinCerndBaby", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_CorwinCerndBaby", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinCerndBaby", "GLOBAL", 1)
 			Continue()
 	END
 	//}
@@ -101,10 +101,10 @@ END
 		ActionListEmpty()
 		!InParty("XACORWIN")
 		Global("OHD_WEDDING_HOSTILE","OH5000",3)
-		GlobalLT("XA_WeddingHostile", "GLOBAL", 1)
+		GlobalLT("XA_LC_WeddingHostile", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_WeddingHostile", "GLOBAL", 1)
+			SetGlobal("XA_LC_WeddingHostile", "GLOBAL", 1)
 			Continue()
 	END
 	//}
@@ -128,10 +128,10 @@ END
 		ActionListEmpty()
 		!InParty("XACORWIN")
 		Global("OpenJonBedroom","GLOBAL",1)
-		GlobalLT("XA_PlayerSoulStolen", "GLOBAL", 1)
+		GlobalLT("XA_LC_PlayerSoulStolen", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_PlayerSoulStolen", "GLOBAL", 1)
+			SetGlobal("XA_LC_PlayerSoulStolen", "GLOBAL", 1)
 			Continue()
 	END
 	//}
@@ -141,10 +141,10 @@ END
 		ActionListEmpty()
 		!InParty("XACORWIN")
 		Global("OHD_sexreactions","GLOBAL",1)
-		GlobalLT("XA_DornSex", "GLOBAL", 1)
+		GlobalLT("XA_LC_DornSex", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_DornSex", "GLOBAL", 1)
+			SetGlobal("XA_LC_DornSex", "GLOBAL", 1)
 			Continue()
 	END
 	//}
@@ -154,10 +154,10 @@ END
 		ActionListEmpty()
 		!InParty("XACORWIN")
 		Global("BodhiDead","GLOBAL",1)
-		GlobalLT("XA_BodhiDead", "GLOBAL", 1)
+		GlobalLT("XA_LC_BodhiDead", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_BodhiDead", "GLOBAL", 1)
+			SetGlobal("XA_LC_BodhiDead", "GLOBAL", 1)
 			Continue()
 	END
 	//}
@@ -167,10 +167,10 @@ END
 		ActionListEmpty()
 		!InParty("XACORWIN")
 		Global("LadyMaria","GLOBAL",5) /* Keldorn reconciled with his wife */
-		GlobalLT("XA_KeldornMaria", "GLOBAL", 1)
+		GlobalLT("XA_LC_KeldornMaria", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_KeldornMaria", "GLOBAL", 1)
+			SetGlobal("XA_LC_KeldornMaria", "GLOBAL", 1)
 			Continue()
 	END
 	//}
@@ -180,10 +180,10 @@ END
 		ActionListEmpty()
 		!InParty("XACORWIN")
 		GlobalGT("PhaereInnuendo","GLOBAL",1)
-		GlobalLT("XA_AloneWithPhaere", "GLOBAL", 1)
+		GlobalLT("XA_LC_AloneWithPhaere", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_AloneWithPhaere", "GLOBAL", 1)
+			SetGlobal("XA_LC_AloneWithPhaere", "GLOBAL", 1)
 			Continue()
 	END
 	//}
@@ -193,10 +193,10 @@ END
 		ActionListEmpty()
 		!InParty("XACORWIN")
 		Global("BodhiJob","GLOBAL",2)
-		GlobalLT("XA_BodhiDeal2", "GLOBAL", 1)
+		GlobalLT("XA_LC_BodhiDeal2", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_BodhiDeal2", "GLOBAL", 1)
+			SetGlobal("XA_LC_BodhiDeal2", "GLOBAL", 1)
 			Continue()
 	END
 
@@ -204,10 +204,10 @@ END
 		ActionListEmpty()
 		!InParty("XACORWIN")
 		Global("BodhiJob","GLOBAL",3)
-		GlobalLT("XA_BodhiDeal3", "GLOBAL", 1)
+		GlobalLT("XA_LC_BodhiDeal3", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_BodhiDeal3", "GLOBAL", 1)
+			SetGlobal("XA_LC_BodhiDeal3", "GLOBAL", 1)
 			Continue()
 	END
 
@@ -215,10 +215,10 @@ END
 		ActionListEmpty()
 		!InParty("XACORWIN")
 		Global("BodhiJob","GLOBAL",4)
-		GlobalLT("XA_BodhiDeal4", "GLOBAL", 1)
+		GlobalLT("XA_LC_BodhiDeal4", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_BodhiDeal4", "GLOBAL", 1)
+			SetGlobal("XA_LC_BodhiDeal4", "GLOBAL", 1)
 			Continue()
 	END
 	//}
@@ -228,10 +228,10 @@ END
 		ActionListEmpty()
 		!InParty("XACORWIN")
 		Global("FirkraagDeal","GLOBAL",1)
-		GlobalLT("XA_FirkraagDeal", "GLOBAL", 1)
+		GlobalLT("XA_LC_FirkraagDeal", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_FirkraagDeal", "GLOBAL", 1)
+			SetGlobal("XA_LC_FirkraagDeal", "GLOBAL", 1)
 			Continue()
 	END
 	//}
@@ -239,21 +239,21 @@ END
 	//{ After Sex Party Banter
 	IF
 		ActionListEmpty()
-		Global("XA_CorwinSex_1", "GLOBAL", 4)
-		GlobalLT("XA_CorwinSexNoSleepTimerSet", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_1", "GLOBAL", 4)
+		GlobalLT("XA_LC_CorwinSexNoSleepTimerSet", "GLOBAL", 1)
 	THEN
 		RESPONSE #100	
 			SetInterrupt(FALSE)
-			SetGlobalTimer("XA_CorwinSexNoSleepTimer", "GLOBAL", ONE_ROUND)
-			SetGlobal("XA_CorwinSexNoSleepTimerSet", "GLOBAL", 1)
+			SetGlobalTimer("XA_LC_CorwinSexNoSleepTimer", "GLOBAL", ONE_ROUND)
+			SetGlobal("XA_LC_CorwinSexNoSleepTimerSet", "GLOBAL", 1)
 			SetInterrupt(TRUE)
 			Continue()
 	END
 	
 	IF 
 		ActionListEmpty()
-		GlobalTimerExpired("XA_CorwinSexNoSleepTimer", "GLOBAL")
-		GlobalLT("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		GlobalTimerExpired("XA_LC_CorwinSexNoSleepTimer", "GLOBAL")
+		GlobalLT("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		OR(6)
 			IsValidForPartyDialogue("Aerie")
 			IsValidForPartyDialogue("Neera")
@@ -264,7 +264,7 @@ END
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
 			////DisplayStringHead(Myself, ~DEBUG: CSNC A~)
 			SetInterrupt(TRUE)
 			Continue()
@@ -272,8 +272,8 @@ END
 	
 	IF 
 		ActionListEmpty()
-		GlobalTimerExpired("XA_CorwinSexNoSleepTimer", "GLOBAL")
-		GlobalLT("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		GlobalTimerExpired("XA_LC_CorwinSexNoSleepTimer", "GLOBAL")
+		GlobalLT("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		!IsValidForPartyDialogue("Aerie")
 		!IsValidForPartyDialogue("Neera")
 		!IsValidForPartyDialogue("Nalia")
@@ -283,15 +283,15 @@ END
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 2)
 			////DisplayStringHead(Myself, ~DEBUG: CSNC B~)
 			SetInterrupt(TRUE)
 			Continue()
 	END
 
 	IF
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		TriggerOverride("XACORWIN", Global("XA_CanTalkToPlayer", "LOCALS", 1))
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		TriggerOverride("XACORWIN", Global("XA_LC_CanTalkToPlayer", "LOCALS", 1))
 		IsValidForPartyDialog("Aerie")
 		!AreaCheck("AR0011")
 		!AreaCheck("AR0012")
@@ -306,8 +306,8 @@ END
 	END
 	
 	IF
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		TriggerOverride("XACORWIN", Global("XA_CanTalkToPlayer", "LOCALS", 1))
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		TriggerOverride("XACORWIN", Global("XA_LC_CanTalkToPlayer", "LOCALS", 1))
 		IsValidForPartyDialog("Imoen2")
 		!AreaCheck("AR0011")
 		!AreaCheck("AR0012")
@@ -322,8 +322,8 @@ END
 	END
 	
 	IF
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		TriggerOverride("XACORWIN", Global("XA_CanTalkToPlayer", "LOCALS", 1))
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		TriggerOverride("XACORWIN", Global("XA_LC_CanTalkToPlayer", "LOCALS", 1))
 		IsValidForPartyDialog("Nalia")
 		!AreaCheck("AR0011")
 		!AreaCheck("AR0012")
@@ -338,8 +338,8 @@ END
 	END
 	
 	IF
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		TriggerOverride("XACORWIN", Global("XA_CanTalkToPlayer", "LOCALS", 1))
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		TriggerOverride("XACORWIN", Global("XA_LC_CanTalkToPlayer", "LOCALS", 1))
 		IsValidForPartyDialog("Neera")
 		!AreaCheck("AR0011")
 		!AreaCheck("AR0012")
@@ -354,8 +354,8 @@ END
 	END
 	
 	IF
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		TriggerOverride("XACORWIN", Global("XA_CanTalkToPlayer", "LOCALS", 1))
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		TriggerOverride("XACORWIN", Global("XA_LC_CanTalkToPlayer", "LOCALS", 1))
 		IsValidForPartyDialog("Jaheira")
 		!AreaCheck("AR0011")
 		!AreaCheck("AR0012")
@@ -371,7 +371,7 @@ END
 	
 	IF 
 		ActionListEmpty()
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		!AreaCheck("AR0011")
 		!AreaCheck("AR0012")
 		!AreaCheck("AR0013")
@@ -379,7 +379,7 @@ END
 		!AreaCheck("AR0028")
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 2)
 			Continue()
 	END
 	//}
@@ -387,8 +387,8 @@ END
 
 //{ v1.1.1 - Mod Conflict in Spellhold. Ensures that the dialog progresses as designed
 IF
-	Global("XA_CorwinIrenicus", "GLOBAL", 2)
-	//GlobalTimerExpired("XA_CorwinIrenicusForceTimer", "GLOBAL", ONE_ROUND)
+	Global("XA_LC_CorwinIrenicus", "GLOBAL", 2)
+	//GlobalTimerExpired("XA_LC_CorwinIrenicusForceTimer", "GLOBAL", ONE_ROUND)
 THEN
 	RESPONSE #100
 		StartCutSceneMode()

@@ -6,8 +6,8 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_Sex1Debug", "GLOBAL", 0)
-		SetGlobal("XA_CorwinSex_1", "GLOBAL", 1)
-		SetGlobal("XA_SleepInn", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinSex_1", "GLOBAL", 1)
+		SetGlobal("XA_LC_SleepInn", "GLOBAL", 1)
 		CreateCreature("XALCHOOK", [-1.-1], N)
 END
 
@@ -16,16 +16,16 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_Sex2Debug", "GLOBAL", 0)
-		SetGlobal("XA_CorwinSex_2", "GLOBAL", 1)
-		SetGlobal("XA_SleepInn", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinSex_2", "GLOBAL", 1)
+		SetGlobal("XA_LC_SleepInn", "GLOBAL", 1)
 		CreateCreature("XALCHOOK", [-1.-1], N)
 END
 
 IF
-	Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
+	Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
 	OR(2)
-		Global("XA_CorwinSex_1", "GLOBAL", 1)
-		Global("XA_CorwinSex_2", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_1", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_2", "GLOBAL", 1)
 	OR(13)
 		AreaCheck("AR0313") //Sea Bounty 1FL
 		AreaCheck("AR0314") //Sea Bounty 2FL
@@ -42,67 +42,67 @@ IF
 		AreaCheck("AR2010") //Trademeet's Inn
 THEN
 	RESPONSE #100
-		SetGlobal("XA_SleepInn", "GLOBAL", 1)
+		SetGlobal("XA_LC_SleepInn", "GLOBAL", 1)
 		CreateCreature("XALCHOOK", [-1.-1], N)
 END
 //}
 
 
 IF
-	GlobalTimerExpired("XA_STtoBG","GLOBAL") // see MBREGA.d state M34
-	!Global("XA_CS03_Done", "GLOBAL", 1)
+	GlobalTimerExpired("XA_LC_STtoBG","GLOBAL") // see MBREGA.d state M34
+	!Global("XA_LC_CS03_Done", "GLOBAL", 1)
 	OR(2)
-		Global("XA_LetterSent", "GLOBAL", 1) // Corwin Love
-		Global("XA_LetterSent", "GLOBAL", 2) // Corwin 
+		Global("XA_LC_LetterSent", "GLOBAL", 1) // Corwin Love
+		Global("XA_LC_LetterSent", "GLOBAL", 2) // Corwin 
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself,~Debug Player1D - 9~)
-		SetGlobal("XA_CS03_Done", "GLOBAL", 1)
+		SetGlobal("XA_LC_CS03_Done", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutSceneEx("XAcs03a",FALSE)
 END
 
 IF
-	GlobalTimerExpired("XA_STtoBG","GLOBAL") // see MBREGA.d state M34
-	Global("XA_LetterSent", "GLOBAL", 3) // Duncan
-	!Global("XA_CS02_Done", "GLOBAL", 1)
+	GlobalTimerExpired("XA_LC_STtoBG","GLOBAL") // see MBREGA.d state M34
+	Global("XA_LC_LetterSent", "GLOBAL", 3) // Duncan
+	!Global("XA_LC_CS02_Done", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself,~Debug Player1D - 10~)
-		SetGlobal("XA_CS02_Done", "GLOBAL", 1)
+		SetGlobal("XA_LC_CS02_Done", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutSceneEx("XAcs02a",FALSE)
 END
 
 IF
-	GlobalTimerExpired("XA_CS04","GLOBAL")
-	!Global("XA_CS04_Done", "GLOBAL", 1)
+	GlobalTimerExpired("XA_LC_CS04","GLOBAL")
+	!Global("XA_LC_CS04_Done", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself,~Debug Player1D - 11~)
-		SetGlobal("XA_CS04_Done", "GLOBAL", 1)
+		SetGlobal("XA_LC_CS04_Done", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutSceneEx("XAcs04a",FALSE)
 END
 
 IF
-	GlobalTimerExpired("XA_CS05","GLOBAL")
-	!Global("XA_CS05_Done", "GLOBAL", 1)
+	GlobalTimerExpired("XA_LC_CS05","GLOBAL")
+	!Global("XA_LC_CS05_Done", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself,~Debug Player1D - 12~)
-		SetGlobal("XA_CS05_Done", "GLOBAL", 1)
+		SetGlobal("XA_LC_CS05_Done", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutSceneEx("XAcs05a",FALSE)
 END
 
 IF
-	GlobalTimerExpired("XA_CS01","GLOBAL")
-	!Global("XA_CS01_Done", "GLOBAL", 1)
+	GlobalTimerExpired("XA_LC_CS01","GLOBAL")
+	!Global("XA_LC_CS01_Done", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself,~Debug Player1D - 13~)
-		SetGlobal("XA_CS01_Done", "GLOBAL", 1)
+		SetGlobal("XA_LC_CS01_Done", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutSceneEx("XAcs01a",FALSE)
 END
@@ -110,9 +110,9 @@ END
 
 IF 
 	OR(2)
-		Global("XA_CorwinSex_1", "GLOBAL", 1)
-		Global("XA_CorwinSex_2", "GLOBAL", 1)
-	Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_1", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_2", "GLOBAL", 1)
+	Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
 	OR(3)
 		AreaCheck("AR0406") // Copper Coronet
 		AreaCheck("AR0021") // Crooked Crane 1FL
@@ -120,20 +120,20 @@ IF
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself,~Debug Player1D - 14~)
-		SetGlobal("XA_CorwinComplainSex", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinComplainSex", "GLOBAL", 1)
 		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
 END
 
 IF 
-	GlobalLT("XA_OnlySleep", "GLOBAL", 1)
-	!Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
+	GlobalLT("XA_LC_OnlySleep", "GLOBAL", 1)
+	!Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
 	OR(3)
-		Global("XA_CorwinSex_1", "GLOBAL", 1)
-		Global("XA_CorwinSex_2", "GLOBAL", 1)
-		Global("XA_CorwinSex_3", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_1", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_2", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_3", "GLOBAL", 1)
 THEN 
 	RESPONSE #100
 		//DisplayStringHead(Myself,~Debug Player1D - 15~)
-		SetGlobal("XA_TryToSleep", "GLOBAL", 1)
+		SetGlobal("XA_LC_TryToSleep", "GLOBAL", 1)
 		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
 END

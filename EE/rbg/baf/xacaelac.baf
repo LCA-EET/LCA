@@ -1,5 +1,5 @@
 IF 
-	Global("XA_CaelarTransform", "GLOBAL", 1)
+	Global("XA_LC_CaelarTransform", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -8,28 +8,28 @@ THEN
 		DestroyItem("MONHP01")
 		SmallWait(1)
 		ActionOverride("XAC109", ChangeAnimation("XAC108")) // "Good" Caelar change to "Bad" Caelar
-		SetGlobal("XA_CaelarTransform", "GLOBAL",2)
-		SetGlobal("XA_BeginSpawning", "GLOBAL", 2)
+		SetGlobal("XA_LC_CaelarTransform", "GLOBAL",2)
+		SetGlobal("XA_LC_BeginSpawning", "GLOBAL", 2)
 		SetInterrupt(TRUE)
 END
 IF
 	HPPercentLT(Myself, 10)
-	GlobalLT("XA_CaelarTransform", "GLOBAL", 1)
+	GlobalLT("XA_LC_CaelarTransform", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		DisplayStringHead(Myself, @0)
-		SetGlobal("XA_CaelarTransform", "GLOBAL", 1)
+		SetGlobal("XA_LC_CaelarTransform", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 END
 
 IF
 	See(Player1)
-	GlobalLT("XA_CaelarSawPlayer", "GLOBAL", 1)
+	GlobalLT("XA_LC_CaelarSawPlayer", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		DisplayStringHead(Myself, @1)
-		SetGlobal("XA_CaelarSawPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC_CaelarSawPlayer", "GLOBAL", 1)
 END
 
 IF
@@ -37,6 +37,30 @@ IF
 THEN
 	RESPONSE #100
 		RandomWalkContinuous()
+END
+
+IF
+	!Allegiance(Myself,EVILCUTOFF)
+	OR(2)
+		!InParty(Myself)
+		ActionListEmpty()
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpellRES("XAC103")  // Shining Bolt
+	See([EVILCUTOFF.0.DEMONIC])
+	CheckStatLT(LastSeenBy(Myself),51,MAGICDAMAGERESISTANCE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("XAC103",LastSeenBy(Myself))  // Shining Bolt
+		SetInterrupt(TRUE)
 END
 
 IF
@@ -75,7 +99,7 @@ IF
 		!InParty(Myself)
 		ActionListEmpty()
 	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	HaveSpellRES("BDCAELA3")  // Cure Critical Wounds
+	HaveSpellRES("XAC102")  // Cure Critical Wounds
 	!HasItem("POTN52",Myself)  // Potion of Extra Healing
 	HPPercentLT(Myself,85)
 	!StateCheck(Myself,STATE_SILENCED)
@@ -85,7 +109,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		SpellRES("BDCAELA3",Myself)  // Cure Critical Wounds
+		SpellRES("XAC102",Myself)  // Cure Critical Wounds
 		SetInterrupt(TRUE)
 END
 
@@ -164,7 +188,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
 		RemoveSpell(CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
-		SpellRES("BDCAELA2",Myself)  // Draw Upon Unholy Might
+		SpellRES("xac101",Myself)  // Draw Upon Unholy Might
 		SetInterrupt(TRUE)
 END
 
@@ -189,7 +213,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
 		RemoveSpell(CLERIC_PROTECT_FROM_EVIL)  // SPPR107.SPL (Protection From Evil)
-		SpellRES("BDCAELA1",Myself)  // Protection From Good
+		SpellRES("XAC100",Myself)  // Protection From Good
 		SetInterrupt(TRUE)
 END
 
@@ -610,7 +634,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
 		RemoveSpell(CLERIC_PROTECT_FROM_EVIL)  // SPPR107.SPL (Protection From Evil)
-		SpellRES("BDCAELA1",Myself)  // Protection From Good
+		SpellRES("XAC100",Myself)  // Protection From Good
 		SetInterrupt(TRUE)
 END
 

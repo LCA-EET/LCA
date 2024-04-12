@@ -1,7 +1,7 @@
 BEGIN ~XATOWNF~
 
 IF ~
-	Global("XA_TownspersonSupportsHero", "LOCALS", 1)
+	Global("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_SupportHero
 	SAY @11 /* ~Hello again! No one belived me when I told them I met the hero of Baldur's Gate!~ */
@@ -10,7 +10,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_TownspersonHatesHero", "LOCALS", 1)
+	Global("XA_LC_TownspersonHatesHero", "LOCALS", 1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_HatesHero
 	SAY @12 /* ~Oh, look, the "hero" returns! Come to whisk me away on a grand adventure? Get lost, you bum!~ */
@@ -45,8 +45,8 @@ END
 
 IF ~
 	RandomNum(8,4)
-	!Global("XA_TownspersonHatesHero", "LOCALS", 1)
-	!Global("XA_TownspersonSupportsHero", "LOCALS", 1)
+	!Global("XA_LC_TownspersonHatesHero", "LOCALS", 1)
+	!Global("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_4
 	SAY @3 /* ~You know, you bear a striking resemblance to the so-called hero of Baldur's Gate. Could you believe they're saying that <PRO_HESHE>'s innocent? Something's amiss, I tell you.~    */
@@ -60,7 +60,7 @@ IF ~~ THEN BEGIN XA_4A
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_TownspersonHatesHero", "LOCALS", 1)
+		SetGlobal("XA_LC_TownspersonHatesHero", "LOCALS", 1)
 	~
 	EXIT
 END
@@ -75,8 +75,8 @@ END
 
 IF ~
 	RandomNum(8,6)
-	!Global("XA_TownspersonHatesHero", "LOCALS", 1)
-	!Global("XA_TownspersonSupportsHero", "LOCALS", 1)
+	!Global("XA_LC_TownspersonHatesHero", "LOCALS", 1)
+	!Global("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_6
 	SAY @7 /* ~I hear that Duke Entar's daughter is fully recovered, supposedly thanks to <CHARNAME>. Maybe the things said about <PRO_HIMHER> are true, and that they're a hero after all.~  */
@@ -90,15 +90,15 @@ IF ~~ THEN BEGIN XA_6A
 	
 	IF ~~ THEN REPLY @10 /* ~Thanks for the support.~ */
 	DO ~
-		SetGlobal("XA_TownspersonSupportsHero", "LOCALS", 1)
+		SetGlobal("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	~
 	EXIT
 END
 
 IF ~
 	RandomNum(8,7)
-	!Global("XA_TownspersonHatesHero", "LOCALS", 1)
-	!Global("XA_TownspersonSupportsHero", "LOCALS", 1)
+	!Global("XA_LC_TownspersonHatesHero", "LOCALS", 1)
+	!Global("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_7
 	SAY @13 /* ~I hear that <CHARNAME>, the <PRO_BROTHERSISTER> of that rotten Sarevok, is coming back to Baldur's Gate. They're saying <PRO_HESHE>'s innocent. Do you believe it?~   */
@@ -112,15 +112,15 @@ IF ~~ THEN BEGIN XA_7A
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_TownspersonHatesHero", "LOCALS", 1)
+		SetGlobal("XA_LC_TownspersonHatesHero", "LOCALS", 1)
 	~
 	EXIT
 END
 
 IF ~
 	RandomNum(8,8)
-	!Global("XA_TownspersonHatesHero", "LOCALS", 1)
-	!Global("XA_TownspersonSupportsHero", "LOCALS", 1)
+	!Global("XA_LC_TownspersonHatesHero", "LOCALS", 1)
+	!Global("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_8
 	SAY @15 /* ~Did you hear the news? <CHARNAME>, the hero, the Sarevok slayer, is returning to Baldur's Gate! The Dukes proclaimed <PRO_HISHER> innocence!~  */
@@ -134,7 +134,7 @@ IF ~~ THEN BEGIN XA_8A
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_TownspersonSupportsHero", "LOCALS", 1)
+		SetGlobal("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	~
 	EXIT
 END

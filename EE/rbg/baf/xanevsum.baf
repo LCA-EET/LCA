@@ -6,29 +6,29 @@ THEN
 END
 
 IF
-	Global("XA_PrisonKnowledge", "GLOBAL", 6)
-	!Global("XA_ChooseAllegiance", "LOCALS", 1)
+	Global("XA_LC_PrisonKnowledge", "GLOBAL", 6)
+	!Global("XA_LC_ChooseAllegiance", "LOCALS", 1)
 THEN
 	RESPONSE #33
-		SetGlobal("XA_ChooseAllegiance", "LOCALS", 1)
+		SetGlobal("XA_LC_ChooseAllegiance", "LOCALS", 1)
 		ChangeEnemyAlly(Myself,ALLY)
 		DisplayStringHead(Myself, @0)
 	RESPONSE #33
-		SetGlobal("XA_ChooseAllegiance", "LOCALS", 1)
+		SetGlobal("XA_LC_ChooseAllegiance", "LOCALS", 1)
 		ChangeEnemyAlly(Myself,ALLY)
 		DisplayStringHead(Myself, @0)
 	RESPONSE #34
-		SetGlobal("XA_ChooseAllegiance", "LOCALS", 1)
+		SetGlobal("XA_LC_ChooseAllegiance", "LOCALS", 1)
 		ChangeEnemyAlly(Myself,ENEMY)
 		DisplayStringHead(Myself, @1)
 END
 
 IF 
-	!Global("XA_PrisonKnowledge", "GLOBAL", 6)
-	!Global("XA_ChooseAllegiance", "LOCALS", 1)
+	!Global("XA_LC_PrisonKnowledge", "GLOBAL", 6)
+	!Global("XA_LC_ChooseAllegiance", "LOCALS", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_ChooseAllegiance", "LOCALS", 1)
+		SetGlobal("XA_LC_ChooseAllegiance", "LOCALS", 1)
 		ChangeEnemyAlly(Myself,ENEMY)
 		DisplayStringHead(Myself, @1)
 END

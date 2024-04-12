@@ -51,20 +51,20 @@ THEN
 END
 
 IF 
-	GlobalLT("XA_BackToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_BackToBG", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		Wait(1)
-		SetGlobal("XA_BackToBG", "GLOBAL", 1)
+		SetGlobal("XA_LC_BackToBG", "GLOBAL", 1)
 		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
 END
 
 //{ Imoen2
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("Imoen2")
-	!Global("XA_BackToBG_Imoen", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Imoen", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Imoen2",SetGlobal("KickedOut","LOCALS",1))
@@ -79,9 +79,9 @@ END
 //{ Hexxat
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("Imoen2")
-	!Global("XA_BackToBG_Hexxat", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Hexxat", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Hexxat",SetGlobal("KickedOut","LOCALS",1))
@@ -96,9 +96,9 @@ END
 //{ Jaheira
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("Jaheira")
-	!Global("XA_BackToBG_Jaheira", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Jaheira", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Jaheira",SetGlobal("KickedOut","LOCALS",1))
@@ -113,9 +113,9 @@ END
 //{ Viconia
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("Viconia")
-	!Global("XA_BackToBG_Viconia", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Viconia", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Viconia",SetGlobal("KickedOut","LOCALS",1))
@@ -130,9 +130,9 @@ END
 //{ Jan
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("Jan")
-	!Global("XA_BackToBG_Jan", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Jan", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Jan",SetGlobal("KickedOut","LOCALS",1))
@@ -147,9 +147,9 @@ END
 //{ Edwin
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("Edwin")
-	!Global("XA_BackToBG_Edwin", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Edwin", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Edwin",SetGlobal("KickedOut","LOCALS",1))
@@ -164,9 +164,9 @@ END
 //{ Minsc
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("Minsc")
-	!Global("XA_BackToBG_Minsc", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Minsc", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Minsc",SetGlobal("KickedOut","LOCALS",1))
@@ -181,9 +181,9 @@ END
 //{ Aerie
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("Aerie")
-	!Global("XA_BackToBG_Aerie", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Aerie", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Aerie",SetGlobal("KickedOut","LOCALS",1))
@@ -198,9 +198,9 @@ END
 //{ HaerDalis
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("HaerDalis")
-	!Global("XA_BackToBG_HaerDalis", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_HaerDalis", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Nalia",SetGlobal("KickedOut","LOCALS",1))
@@ -215,9 +215,9 @@ END
 //{ Nalia
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("Nalia")
-	!Global("XA_BackToBG_Nalia", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Nalia", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Nalia",SetGlobal("KickedOut","LOCALS",1))
@@ -232,9 +232,9 @@ END
 //{ Korgan
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("Korgan")
-	!Global("XA_BackToBG_Korgan", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Korgan", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Korgan",SetGlobal("KickedOut","LOCALS",1))
@@ -249,9 +249,9 @@ END
 //{ Keldorn
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("Keldorn")
-	!Global("XA_BackToBG_Keldorn", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Keldorn", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Keldorn",SetGlobal("KickedOut","LOCALS",1))
@@ -266,9 +266,9 @@ END
 //{ Anomen
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("Anomen")
-	!Global("XA_BackToBG_Anomen", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Anomen", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Anomen",SetGlobal("KickedOut","LOCALS",1))
@@ -283,9 +283,9 @@ END
 //{ Dorn
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("Dorn")
-	!Global("XA_BackToBG_Dorn", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Dorn", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Dorn",SetGlobal("KickedOut","LOCALS",1))
@@ -300,9 +300,9 @@ END
 //{ Valygar
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("Valygar")
-	!Global("XA_BackToBG_Valygar", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Valygar", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Valygar",SetGlobal("KickedOut","LOCALS",1))
@@ -317,9 +317,9 @@ END
 //{ Neera
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("Neera")
-	!Global("XA_BackToBG_Neera", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Neera", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Neera",SetGlobal("KickedOut","LOCALS",1))
@@ -334,9 +334,9 @@ END
 //{ Cernd
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("Cernd")
-	!Global("XA_BackToBG_Cernd", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Cernd", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Cernd",SetGlobal("KickedOut","LOCALS",1))
@@ -350,9 +350,9 @@ END
 
 //{ Mazzy
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("Mazzy")
-	!Global("XA_BackToBG_Mazzy", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Mazzy", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Cernd",SetGlobal("KickedOut","LOCALS",1))
@@ -367,9 +367,9 @@ END
 //{ Rasaad
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("Rasaad")
-	!Global("XA_BackToBG_Rasaad", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Rasaad", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Rasaad",SetGlobal("KickedOut","LOCALS",1))
@@ -386,9 +386,9 @@ END
 //{ Skie
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("L#2SDSKIE")
-	!Global("XA_BackToBG_Skie", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Skie", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Rasaad",SetGlobal("KickedOut","LOCALS",1))
@@ -404,9 +404,9 @@ END
 //{ Eddard
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	InPartyAllowDead("L#2EDDRD")
-	!Global("XA_BackToBG_Eddard", "GLOBAL", 1)
+	!Global("XA_LC_BackToBG_Eddard", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		//ActionOverride("Rasaad",SetGlobal("KickedOut","LOCALS",1))
@@ -419,14 +419,14 @@ END
 //}
 
 IF
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 1)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_PartyRemovalProcessing", "GLOBAL", 2)
+		SetGlobal("XA_LC_PartyRemovalProcessing", "GLOBAL", 2)
 END
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 2)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 2)
 	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 THEN 
 	RESPONSE #100
@@ -446,7 +446,7 @@ THEN
 END
 
 IF 
-	Global("XA_PartyRemovalProcessing", "GLOBAL", 2)
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 2)
 	!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 THEN 
 	RESPONSE #100

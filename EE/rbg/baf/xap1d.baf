@@ -2,74 +2,74 @@
 //{ Sex 3 CS
 
 	IF
-		Global("XA_LC_Sex3Debug", "GLOBAL", 1)
+		Global("XA_LC__Sex3Debug", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_CorwinSex_3", "GLOBAL", 1)
-			SetGlobal("XA_LC_Sex3Debug", "GLOBAL", 0)
-			SetGlobal("XA_SleepBG", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinSex_3", "GLOBAL", 1)
+			SetGlobal("XA_LC__Sex3Debug", "GLOBAL", 0)
+			SetGlobal("XA_LC_SleepBG", "GLOBAL", 1)
 			CreateCreature("XALCHOOK", [-1.-1], N)
 	END
 
 
 	//{ Three Old Kegs
 	IF
-		Global("XA_StayingAtThreeOldKegs", "GLOBAL", 1)
-		Global("XA_CorwinSex_3", "GLOBAL", 1)
-		Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
+		Global("XA_LC_StayingAtThreeOldKegs", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_3", "GLOBAL", 1)
+		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
 		OR(3)
-			AreaCheck("BG0119") // ToK L1
-			AreaCheck("BG0120") // ToK L2
-			AreaCheck("BG0121") // ToK L3
+			AreaCheck("XAA238") // ToK L1
+			AreaCheck("XAA433") // ToK L2
+			AreaCheck("XAA619") // ToK L3
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_SleepBG", "GLOBAL", 1)
+			SetGlobal("XA_LC_SleepBG", "GLOBAL", 1)
 			CreateCreature("XALCHOOK", [-1.-1], N)
 	END
 	//}
 	
 	//{ Blade and Stars
 	IF
-		Global("XA_StayingAtBladeAndStars", "GLOBAL", 1)
-		Global("XA_CorwinSex_3", "GLOBAL", 1)
-		Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
+		Global("XA_LC_StayingAtBladeAndStars", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_3", "GLOBAL", 1)
+		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
 		OR(3)
-			AreaCheck("BG0105") // B&S L1
-			AreaCheck("BG0106") // B&S L2
-			AreaCheck("BG0107") // B&S L3
+			AreaCheck("XAA264") // B&S L1
+			AreaCheck("XAA415") // B&S L2
+			AreaCheck("XAA629") // B&S L3
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_SleepBG", "GLOBAL", 1)
+			SetGlobal("XA_LC_SleepBG", "GLOBAL", 1)
 			CreateCreature("XALCHOOK", [-1.-1], N)
 	END
 	//}
 	
 	//{ Elfsong
 	IF
-		Global("XA_StayingAtElfsongTavern", "GLOBAL", 1)
-		Global("XA_CorwinSex_3", "GLOBAL", 1)
-		Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
+		Global("XA_LC_StayingAtElfsongTavern", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_3", "GLOBAL", 1)
+		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
 		OR(2)
-			AreaCheck("BG0705") // Elfsong L1
-			AreaCheck("BG0706") // Elfsong L2
+			AreaCheck("XAA117") // Elfsong L1
+			AreaCheck("XAA206") // Elfsong L2
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_SleepBG", "GLOBAL", 1)
+			SetGlobal("XA_LC_SleepBG", "GLOBAL", 1)
 			CreateCreature("XALCHOOK", [-1.-1], N)
 	END
 	//}
 	
 	//{ Blushing Mermaid
 	IF
-		Global("XA_StayingAtBlushingMermaid", "GLOBAL", 1)
-		Global("XA_CorwinSex_3", "GLOBAL", 1)
-		Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
+		Global("XA_LC_StayingAtBlushingMermaid", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_3", "GLOBAL", 1)
+		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
 		OR(2)
-			AreaCheck("BG0114") // Blushing Mermaid L1
-			AreaCheck("BG0115") // Blushing Mermaid L2
+			AreaCheck("XAA133") // Blushing Mermaid L1
+			AreaCheck("XAA253") // Blushing Mermaid L2
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_SleepBG", "GLOBAL", 1)
+			SetGlobal("XA_LC_SleepBG", "GLOBAL", 1)
 			CreateCreature("XALCHOOK", [-1.-1], N)
 	END
 	//}
@@ -77,18 +77,18 @@
 
 //{ Advance RBG Timers
 IF
-	Global("XA_ReturnToBG", "GLOBAL", 1)
-	GlobalLT("XA_Advance7", "GLOBAL", 1)
-	GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
-	Global("XA_HaltRBGTimers", "GLOBAL", 0)
+	Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_Advance7", "GLOBAL", 1)
+	GlobalLT("XA_LC_DukesDebriefed", "GLOBAL", 1)
+	Global("XA_LC_HaltRBGTimers", "GLOBAL", 0)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_Advance7", "GLOBAL", 1)
-		SetGlobalTimer("XA_Advance7Timer", "GLOBAL", SEVEN_HOURS)
-		IncrementGlobal("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 7) 
-		IncrementGlobal("XA_CorwinFamilyTimer_Hours", "GLOBAL", 7)
-		IncrementGlobal("XA_DukeDebriefTimer_Hours", "GLOBAL", 7)
+		SetGlobal("XA_LC_Advance7", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_Advance7Timer", "GLOBAL", SEVEN_HOURS)
+		IncrementGlobal("XA_LC_CorwinLeaveForFamily_Hours", "GLOBAL", 7) 
+		IncrementGlobal("XA_LC_CorwinFamilyTimer_Hours", "GLOBAL", 7)
+		IncrementGlobal("XA_LC_DukeDebriefTimer_Hours", "GLOBAL", 7)
 		RestParty()
 		SetInterrupt(TRUE)
 END

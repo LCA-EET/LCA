@@ -7,7 +7,7 @@ THEN
 		FadeToColor([30.0],0)
 		Wait(1)
 		ActionOverride(Player1, JumpToObject("XACORWIN")) 
-		SetGlobal("XA_CorwinVampire","GLOBAL",1)
+		SetGlobal("XA_LC_CorwinVampire","GLOBAL",1)
 		
 		Wait(1)
 		ZoomLock(TRUE)

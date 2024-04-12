@@ -4,7 +4,7 @@ THEN
 	RESPONSE #100
 		CutSceneId(Player1)
 		//415 445
-		SetGlobal("XA_BGEND3", "GLOBAL", 1)
+		SetGlobal("XA_LC_BGEND3", "GLOBAL", 1)
 		ActionOverride("XALIIA", EscapeAreaObject("TrigExit"))
 		Wait(1)
 		ActionOverride("XABELT", EscapeAreaObject("TrigExit"))

@@ -39,7 +39,7 @@ IF ~~ THEN BEGIN XA_Join
 	IF ~~ THEN
 	DO ~
 		ChangeAIScript("XACAESCR", OVERRIDE)
-		SetGlobal("XA_CaelarRejoinProcessed", "GLOBAL", 1)
+		SetGlobal("XA_LC_CaelarRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
 END

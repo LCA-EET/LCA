@@ -1,25 +1,25 @@
 BEGIN ~XAAUN~
 
 IF ~
-	Global("XA_SummonAun", "GLOBAL", 2)
+	Global("XA_LC_SummonAun", "GLOBAL", 2)
 ~ THEN BEGIN XA_CaelarAunReunite
 	SAY @0 /* ~<CHARNAME>? What's th— Caelar! Is it really you!?~ */
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_SummonAun", "GLOBAL", 3)
+		SetGlobal("XA_LC_SummonAun", "GLOBAL", 3)
 	~
 	EXTERN XACAELAB XA_CaelarAunReuniteChain
 END
 
 IF ~
-	GlobalLT("XA_AunCaelar", "GLOBAL", 1)
+	GlobalLT("XA_LC_AunCaelar", "GLOBAL", 1)
 ~ THEN BEGIN XA_AunCaelar
 	SAY @0 /*~<CHARNAME>? What's th— Caelar!~*/
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_AunCaelar", "GLOBAL", 1)
+		SetGlobal("XA_LC_AunCaelar", "GLOBAL", 1)
 	~
 	EXTERN XACAELA2 XA_AunCaelarChain
 	
@@ -27,8 +27,8 @@ IF ~
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN
 	DO ~
-		SetGlobal("XA_AunCaelar", "GLOBAL", 1)
-		SetGlobal("XA_CorwinCaelarHome", "GLOBAL", 1)
+		SetGlobal("XA_LC_AunCaelar", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinCaelarHome", "GLOBAL", 1)
 	~
 	EXTERN XACAELA2 XA_AunCaelarChain
 END
@@ -85,7 +85,7 @@ CHAIN XAAUN XA_AunCaelarFarewell
 	@11 /*~Goodbye... and thank you.~  */
 	DO ~
 		SetGlobal("XA_LC_Journal_CaelarHome", "GLOBAL", 1)
-		SetGlobal("XA_CaelarHome", "GLOBAL", 1)
+		SetGlobal("XA_LC_CaelarHome", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XACAEBYE")
 	~
@@ -121,7 +121,7 @@ CHAIN XAAUN XA_AunByeChain
 	== XACAELAB
 	@28 /*~Walk in the light of the Morninglord.~*/
 	DO ~
-		SetGlobalTimer("XA_CaelarThanks", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_LC_CaelarThanks", "GLOBAL", ONE_ROUND)
 		StartCutSceneMode()
 		StartCutScene("XACAEBYE")
 	~

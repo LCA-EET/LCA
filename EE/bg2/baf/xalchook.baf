@@ -1,9 +1,9 @@
 IF
-	GlobalLT("XA_TalkedToPlayer", "LOCALS", 1)
+	GlobalLT("XA_LC_TalkedToPlayer", "LOCALS", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_TalkedToPlayer", "LOCALS", 1)
+		SetGlobal("XA_LC_TalkedToPlayer", "LOCALS", 1)
 		StartDialog("XALCHOOK", Player1)
 		SetInterrupt(TRUE)
 END

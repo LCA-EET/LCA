@@ -31,7 +31,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("CleanseVampire","AR1401",2)  // Shadow Temple
-		SetGlobal("XA_CorwinCleansed", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinCleansed", "GLOBAL", 1)
 		DestroyItem("XACORBOD")  // Corwin's Body
 		DestroyItem("MISCBP")  // Bodhi's Black Heart
 		CreateVisualEffect("SPMETSW2",[2592.1701])

@@ -6,9 +6,9 @@ THEN
 		ClearAllActions()
 		FadeToColor([30.0],0)
 		Wait(1)
-		SetGlobal("XA_ArrivedInUndercity", "GLOBAL", 1)
+		SetGlobal("XA_LC_ArrivedInUndercity", "GLOBAL", 1)
 		
-		LeaveAreaLUA("XAA561","",[4800.925],W)
+		LeaveAreaLUA("XAA561","",[4800.925],W) // Undercity
 		ActionOverride("XACORWIN",LeaveAreaLUA("XAA561","",[4800.900],W))  
 		
 		FadeFromColor([30.0],0)

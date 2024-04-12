@@ -1,7 +1,7 @@
 BEGIN ~XAKANA1~
 
 IF ~
-	Global("XA_VoiceSpawn", "GLOBAL", 1)
+	Global("XA_LC_VoiceSpawn", "GLOBAL", 1)
 ~ THEN BEGIN XA_Avernus
 	SAY @14
 	
@@ -17,15 +17,15 @@ IF ~~ THEN BEGIN XA_Avernus2
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_VoiceSpawn", "GLOBAL", 2)
-		SetGlobal("XA_TowerUnlock", "GLOBAL", 1)
+		SetGlobal("XA_LC_VoiceSpawn", "GLOBAL", 2)
+		SetGlobal("XA_LC_TowerUnlock", "GLOBAL", 1)
 		DestroySelf()
 	~
 	EXIT
 END
 
 IF ~
-	Global("XA_KanaDream", "GLOBAL", 1)
+	Global("XA_LC_KanaDream", "GLOBAL", 1)
 ~ THEN BEGIN XA_KanaDream_1_Intro
 	SAY @0 /* ~<CHARNAME>...~ */
 	
@@ -33,13 +33,13 @@ IF ~
 	
 	IF ~~ THEN REPLY @2 /* ~Am I dreaming?~*/
 	DO ~
-		SetGlobal("XA_KanaDream", "GLOBAL", 2)
+		SetGlobal("XA_LC_KanaDream", "GLOBAL", 2)
 	~
 	GOTO XA_KanaDream_1_2
 	
 	IF ~~ THEN REPLY @3 /* ~Who are you?~*/
 	DO ~
-		SetGlobal("XA_KanaDream", "GLOBAL", 2)
+		SetGlobal("XA_LC_KanaDream", "GLOBAL", 2)
 	~
 	GOTO XA_KanaDream_1_2
 END
@@ -67,19 +67,19 @@ IF ~~ THEN BEGIN XA_KanaDream_1_3
 END
 
 IF ~
-	Global("XA_KanaDream", "GLOBAL", 3)
+	Global("XA_LC_KanaDream", "GLOBAL", 3)
 ~ THEN BEGIN XA_KanaDream_2_Intro
 	SAY @6 /* ~You must stop him, <CHARNAME>. I tried... but he was too powerful.~ */ 
 	
 	IF ~~ THEN REPLY @7 /* ~You again?~ */
 	DO ~
-		SetGlobal("XA_KanaDream", "GLOBAL", 4)
+		SetGlobal("XA_LC_KanaDream", "GLOBAL", 4)
 	~
 	GOTO XA_KanaDream_2_2
 	
 	IF ~~ THEN REPLY @8 /* ~Who is too strong? Who — where are you?~*/
 	DO ~
-		SetGlobal("XA_KanaDream", "GLOBAL", 4)
+		SetGlobal("XA_LC_KanaDream", "GLOBAL", 4)
 	~
 	GOTO XA_KanaDream_2_2
 END

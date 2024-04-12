@@ -1,7 +1,7 @@
 BEGIN ~XACORLTR~
 
 IF ~
-	Global("XA_ReadCorwinLetter", "GLOBAL", 1)
+	Global("XA_LC_ReadCorwinLetter", "GLOBAL", 1)
 ~ THEN BEGIN XA_ReadCorwinLetter
 	SAY @0 /* ~(The letter reads as follows.)~ */
 	
@@ -9,9 +9,9 @@ IF ~
 		Global("XA_LC_CorwinContinue", "GLOBAL", 2)
 	~ THEN
 	DO ~
-		SetGlobal("XA_ReadCorwinLetter", "GLOBAL", 2)
+		SetGlobal("XA_LC_ReadCorwinLetter", "GLOBAL", 2)
 		SetGlobal("bd_plot","global",665)
-		SetGlobal("XA_ReadCorwinLetter", "GLOBAL", 2)
+		SetGlobal("XA_LC_ReadCorwinLetter", "GLOBAL", 2)
 	~
 	GOTO XA_ReadLetter_Romantic
 	
@@ -19,9 +19,9 @@ IF ~
 		Global("XA_LC_CorwinContinue", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_ReadCorwinLetter", "GLOBAL", 2)
+		SetGlobal("XA_LC_ReadCorwinLetter", "GLOBAL", 2)
 		SetGlobal("bd_plot","global",665)
-		SetGlobal("XA_ReadCorwinLetter", "GLOBAL", 2)
+		SetGlobal("XA_LC_ReadCorwinLetter", "GLOBAL", 2)
 	~
 	GOTO XA_ReadLetter_Friend
 END

@@ -1,13 +1,13 @@
 BEGIN ~XAWVMER~
 
 IF ~
-	!Global("XA_Questioned_WV_Merchant", "GLOBAL", 1)
+	GlobalLT("XA_LC_Questioned_WV_Merchant", "GLOBAL", 1)
 ~ THEN BEGIN XA_Greeting
 	SAY @1 /* ~Welcome to the Winston Ventures. May your stay be a profitable one.~ */
 	
 	IF ~~ THEN REPLY @6 /* ~Who's in charge here?~ */
 	DO ~
-		SetGlobal("XA_Questioned_WV_Merchant", "GLOBAL", 1)
+		SetGlobal("XA_LC_Questioned_WV_Merchant", "GLOBAL", 1)
 	~
 	GOTO XA_Greeting2
 END

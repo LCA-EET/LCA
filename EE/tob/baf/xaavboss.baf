@@ -1,7 +1,7 @@
 
 IF
 	HPPercentLT(Myself, 21)
-	GlobalLT("XA_AVBossFled", "GLOBAL", 1)
+	GlobalLT("XA_LC_AVBossFled", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -9,17 +9,17 @@ THEN
 		AddexperienceParty(75000)
 		Wait(3)
 		ForceSpellRES("BDTELAW",Myself)  // Teleport Without Error
-		SetGlobal("XA_AVBossFled", "GLOBAL", 1)
+		SetGlobal("XA_LC_AVBossFled", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 END
 
 IF
-	Global("XA_Hostile4700", "GLOBAL", 1)
-	!Global("XA_IncubusBuff", "LOCALS", 1)
+	Global("XA_LC_Hostile4700", "GLOBAL", 1)
+	!Global("XA_LC_IncubusBuff", "LOCALS", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_IncubusBuff", "LOCALS", 1)
+		SetGlobal("XA_LC_IncubusBuff", "LOCALS", 1)
 		ClearActions(Myself)
 		ReallyForceSpell(Myself, WIZARD_GLOBE_OF_INVULNERABILITY)
 		ReallyForceSpell(Myself, WIZARD_MIRROR_IMAGE)
@@ -36,12 +36,12 @@ IF
 	See(NearestEnemyOfType([0.0.0.0.0.SUMMONED]))
 	Range(LastSeenBy(Myself),15)
 	LevelLT(LastSeenBy(Myself),10)
-	!GlobalTimerNotExpired("XA_IncubusDeath","LOCALS")
+	!GlobalTimerNotExpired("XA_LC_IncubusDeath","LOCALS")
 	RandomNum(2,1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobalTimer("XA_IncubusDeath","LOCALS",TWO_ROUNDS)
+		SetGlobalTimer("XA_LC_IncubusDeath","LOCALS",TWO_ROUNDS)
 		ForceSpell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)  // SPWI605.SPL (Death Spell)
 		SetInterrupt(TRUE)
 END
@@ -50,11 +50,11 @@ IF
 	See(NearestEnemyOf(Myself))
 	Range(LastSeenBy(Myself),10)
 	CheckStat(Myself,0,STONESKINS)
-	!GlobalTimerNotExpired("XA_IncubusStone","LOCALS")
+	!GlobalTimerNotExpired("XA_LC_IncubusStone","LOCALS")
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobalTimer("XA_IncubusStone","LOCALS",TWO_MINUTES)
+		SetGlobalTimer("XA_LC_IncubusStone","LOCALS",TWO_MINUTES)
 		ForceSpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
 		SetInterrupt(TRUE)
 END
@@ -64,17 +64,17 @@ IF
 	RandomNum(2,1)
 	!StateCheck(NearestEnemyOf(Myself),STATE_CHARMED)
 	!StateCheck(NearestEnemyOf(Myself),STATE_CONFUSED)
-	!GlobalTimerNotExpired("XA_Gaze","LOCALS")
+	!GlobalTimerNotExpired("XA_LC_Gaze","LOCALS")
 THEN
 	RESPONSE #50
 		SetInterrupt(FALSE)
-		SetGlobalTimer("XA_Gaze","LOCALS",TWO_ROUNDS)
+		SetGlobalTimer("XA_LC_Gaze","LOCALS",TWO_ROUNDS)
 		FaceObject(NearestEnemyOf(Myself))
 		ReallyForceSpellRES("beguile",NearestEnemyOf(Myself))
 		SetInterrupt(TRUE)
 	RESPONSE #50
 		SetInterrupt(FALSE)
-		SetGlobalTimer("XA_Gaze","LOCALS",TWO_ROUNDS)
+		SetGlobalTimer("XA_LC_Gaze","LOCALS",TWO_ROUNDS)
 		FaceObject(NearestEnemyOf(Myself))
 		ReallyForceSpellRES("insanity",NearestEnemyOf(Myself))
 		SetInterrupt(TRUE)		
@@ -82,44 +82,44 @@ THEN
 END
 
 IF
-	!GlobalTimerNotExpired("XA_Finger","LOCALS")
+	!GlobalTimerNotExpired("XA_LC_Finger","LOCALS")
 	RandomNum(3,1)
 	See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobalTimer("XA_Finger","LOCALS",THREE_MINUTES)
+		SetGlobalTimer("XA_LC_Finger","LOCALS",THREE_MINUTES)
 		ForceSpell(NearestEnemyOf(Myself),CLERIC_FINGER_OF_DEATH)
 		SetInterrupt(TRUE)	
 END
 
 IF
-	!GlobalTimerNotExpired("XA_Unholy","LOCALS")
+	!GlobalTimerNotExpired("XA_LC_Unholy","LOCALS")
 	RandomNum(2,1)
 	See(NearestEnemyOf(Myself))
 	!Alignment(NearestEnemyOf(Myself),MASK_EVIL)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobalTimer("XA_Unholy","LOCALS",FIVE_ROUNDS)
+		SetGlobalTimer("XA_LC_Unholy","LOCALS",FIVE_ROUNDS)
 		ForceSpell(Myself,CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
 		SetInterrupt(TRUE)
 END
 
 IF
-	!GlobalTimerNotExpired("XA_Quake","LOCALS")
+	!GlobalTimerNotExpired("XA_LC_Quake","LOCALS")
 	RandomNum(3,1)
 	See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobalTimer("XA_Quake","LOCALS",TEN_ROUNDS)
+		SetGlobalTimer("XA_LC_Quake","LOCALS",TEN_ROUNDS)
 		ForceSpell(Myself,CLERIC_EARTHQUAKE)  // SPPR720.SPL (Earthquake)
 		SetInterrupt(TRUE)
 END
 
 IF
-	GlobalTimerNotExpired("XA_Harm","LOCALS")
+	GlobalTimerNotExpired("XA_LC_Harm","LOCALS")
 	RandomNum(3,1)
 	OR(2)
 		See(NearestEnemyOf(Myself))
@@ -129,7 +129,7 @@ IF
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobalTimer("XA_Harm","LOCALS",FOUR_MINUTES)
+		SetGlobalTimer("XA_LC_Harm","LOCALS",FOUR_MINUTES)
 		ForceSpell(LastSeenBy(Myself),ENEMY_CLERIC_HARM)
 		SetInterrupt(TRUE)		
 END

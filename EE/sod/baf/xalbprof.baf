@@ -11,7 +11,7 @@ THEN
 		ActionOverride("Corwin", LeaveAreaLUA("XAE101","",[550.385], SW))
 		FadeFromColor([30.0],0)
 		Wait(2)
-		SetGlobal("XA_ProficiencyTalk", "GLOBAL", 2)
+		SetGlobal("XA_LC_ProficiencyTalk", "GLOBAL", 2)
 		EquipRanged()
 		SmallWait(5)
 		ActionOverride("Corwin", EquipRanged())

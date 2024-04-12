@@ -3,13 +3,13 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
-		SetGlobalTimer("XA_CorwinSexTimer", "GLOBAL", THREE_DAYS)		
+		SetGlobalTimer("XA_LC_CorwinSexTimer", "GLOBAL", THREE_DAYS)		
 		ChangeStat(Player1,CON,1,ADD)
 		ChangeStat("XACORWIN",CON,1,ADD)
 		SetGlobal("XA_LC_Journal_Sex1", "GLOBAL", 1)
-		SetGlobal("XA_CorwinSex_1", "GLOBAL", 4)
-		SetGlobal("XA_SleepInn", "GLOBAL", 0)
-		IncrementGlobal("XA_TimesHadSex", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinSex_1", "GLOBAL", 4)
+		SetGlobal("XA_LC_SleepInn", "GLOBAL", 0)
+		IncrementGlobal("XA_LC_TimesHadSex", "GLOBAL", 1)
 		RestPartyEx(0,0,FALSE)
 		ChangeStat(Player1, FATIGUE, 7, SET)
 		ChangeStat(Player2, FATIGUE, 7, SET)

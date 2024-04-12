@@ -2,8 +2,8 @@
 
 	IF
 		ActionListEmpty()
-		GlobalGT("XA_CorwinBit", "GLOBAL", 2)
-		!Global("XA_BiteSoundSet", "LOCALS", 1)
+		GlobalGT("XA_LC_CorwinBit", "GLOBAL", 2)
+		!Global("XA_LC_BiteSoundSet", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -52,7 +52,7 @@
 			SetPlayerSound(Myself,@45,PICKED_POCKET)
 			SetPlayerSound(Myself,@45,SPELL_DISRUPTED)
 			SetPlayerSound(Myself,@46,SET_A_TRAP)
-			SetGlobal("XA_BiteSoundSet", "LOCALS", 1)
+			SetGlobal("XA_LC_BiteSoundSet", "LOCALS", 1)
 			SetInterrupt(TRUE)
 			Continue()
 	END
@@ -60,8 +60,8 @@
 //{ Reset to Original Sounds
 	IF
 		ActionListEmpty()
-		Global("XA_BiteSoundSet", "LOCALS", 1)
-		Global("XA_CorwinBit", "GLOBAL", 0)
+		Global("XA_LC_BiteSoundSet", "LOCALS", 1)
+		Global("XA_LC_CorwinBit", "GLOBAL", 0)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -111,8 +111,8 @@
 			SetPlayerSound(Myself,@41,HIDDEN_IN_SHADOWS)
 			SetPlayerSound(Myself,@42,SPELL_DISRUPTED)
 			SetPlayerSound(Myself,@43,SET_A_TRAP)
-			SetGlobal("XA_BiteSoundSet", "LOCALS", 0)
-			SetGlobal("XA_LCASoundSwap", "LOCALS", 0)
+			SetGlobal("XA_LC_BiteSoundSet", "LOCALS", 0)
+			SetGlobal("XA_LC_ASoundSwap", "LOCALS", 0)
 			SetInterrupt(TRUE)
 			Continue()
 	END
@@ -121,24 +121,24 @@
 //{ Romance - Change Select Sound
 	IF
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		GlobalLT("XA_LCASoundSwap", "LOCALS", 1)
+		GlobalLT("XA_LC_ASoundSwap", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetPlayerSound(Myself,@48,SELECT_ACTION6) 
-			SetGlobal("XA_LCASoundSwap", "LOCALS", 1)
+			SetGlobal("XA_LC_ASoundSwap", "LOCALS", 1)
 			SetInterrupt(TRUE)
 			Continue()
 	END
 
 	IF
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		Global("XA_LCASoundSwap", "LOCALS", 1)
+		Global("XA_LC_ASoundSwap", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetPlayerSound(Myself,@31,SELECT_ACTION6) 
-			SetGlobal("XA_LCASoundSwap", "LOCALS", 0)
+			SetGlobal("XA_LC_ASoundSwap", "LOCALS", 0)
 			SetInterrupt(TRUE)
 			Continue()
 	END

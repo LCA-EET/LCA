@@ -1,57 +1,57 @@
 BEGIN ~XABRILLA~
 
 IF ~
-	!Global("XA_TalkedToBrilla", "GLOBAL", 1)
+	!Global("XA_LC_TalkedToBrilla", "GLOBAL", 1)
 ~ THEN BEGIN XA_GreetPlayer
 	SAY @175 /* ~Oh it's you! You're <CHARNAME>, the <PRO_MANWOMAN> who saved my precious Skie!~*/
 
 	= @177 /* ~Thank you!~ */
 
 	IF ~
-		!Global("XA_SkieModActive", "GLOBAL",1)
+		!Global("XA_LC_SkieModActive", "GLOBAL",1)
 	~ THEN REPLY @178 /* ~You're welcome. I'm glad Skie is alright.~*/
 	DO ~
-		SetGlobal("XA_TalkedToBrilla", "GLOBAL", 1)
+		SetGlobal("XA_LC_TalkedToBrilla", "GLOBAL", 1)
 	~
 	GOTO XA_GreetPlayer2
 	
 	IF ~
-		!Global("XA_SkieModActive", "GLOBAL",1)
+		!Global("XA_LC_SkieModActive", "GLOBAL",1)
 	 ~ THEN REPLY @179 /* ~I did it as much for her as for me. Your husband eventually would have hunted me down had I not saved your daughter.~ */
 	DO ~
-		SetGlobal("XA_TalkedToBrilla", "GLOBAL", 1)
+		SetGlobal("XA_LC_TalkedToBrilla", "GLOBAL", 1)
 	~
 	GOTO XA_GreetPlayer2
 	
 	IF ~
-		!Global("XA_SkieModActive", "GLOBAL",1)
+		!Global("XA_LC_SkieModActive", "GLOBAL",1)
 	~ THEN REPLY @180 /* ~I told her that accompanying the coalition was a mistake. It nearly got her killed. You and your husband should have told her the same.~ */
 	DO ~
-		SetGlobal("XA_TalkedToBrilla", "GLOBAL", 1)
+		SetGlobal("XA_LC_TalkedToBrilla", "GLOBAL", 1)
 	~
 	GOTO XA_GreetPlayer2
 	
 	IF ~
-		Global("XA_SkieModActive", "GLOBAL",1)
+		Global("XA_LC_SkieModActive", "GLOBAL",1)
 	~ THEN REPLY @178 /* ~You're welcome. I'm glad Skie is alright.~*/
 	DO ~
-		SetGlobal("XA_TalkedToBrilla", "GLOBAL", 1)
+		SetGlobal("XA_LC_TalkedToBrilla", "GLOBAL", 1)
 	~
 	GOTO XA_DefaultGreeting
 	
 	IF ~
-		Global("XA_SkieModActive", "GLOBAL",1)
+		Global("XA_LC_SkieModActive", "GLOBAL",1)
 	 ~ THEN REPLY @179 /* ~I did it as much for her as for me. Your husband eventually would have hunted me down had I not saved your daughter.~ */
 	DO ~
-		SetGlobal("XA_TalkedToBrilla", "GLOBAL", 1)
+		SetGlobal("XA_LC_TalkedToBrilla", "GLOBAL", 1)
 	~
 	GOTO XA_GreetPlayer2A
 	
 	IF ~
-		Global("XA_SkieModActive", "GLOBAL",1)
+		Global("XA_LC_SkieModActive", "GLOBAL",1)
 	~ THEN REPLY @180 /* ~I told her that accompanying the coalition was a mistake. It nearly got her killed. You and your husband should have told her the same.~ */
 	DO ~
-		SetGlobal("XA_TalkedToBrilla", "GLOBAL", 1)
+		SetGlobal("XA_LC_TalkedToBrilla", "GLOBAL", 1)
 	~
 	GOTO XA_GreetPlayer2B
 END
@@ -81,27 +81,27 @@ IF ~~ THEN BEGIN XA_GreetPlayer2
 	= @184 /* ~You've done so much for us, and for the city already. If you can, please speak to the wizard Melkor, in the next room. He has a theory on how the souls within the dagger can be freed. I hope that once they are, Skie will return to normal.~ */
 	
 	IF ~
-		Global("XA_TalkedToMelkor", "GLOBAL", 1)
-		!Global("XA_TalkedToSkie", "GLOBAL", 1)
+		Global("XA_LC_TalkedToMelkor", "GLOBAL", 1)
+		!Global("XA_LC_TalkedToSkie", "GLOBAL", 1)
 	~ THEN REPLY @205 /* ~I'll talk to Skie and Melkor to see if there's anything that can be done.~*/
 	GOTO XA_WillTalkToSkieAndMelkor
 	
 	IF ~
-		Global("XA_TalkedToMelkor", "GLOBAL", 1)
-		Global("XA_TalkedToSkie", "GLOBAL", 1)
-		!Global("XA_ConcernedAboutSkie", "GLOBAL", 1)
+		Global("XA_LC_TalkedToMelkor", "GLOBAL", 1)
+		Global("XA_LC_TalkedToSkie", "GLOBAL", 1)
+		!Global("XA_LC_ConcernedAboutSkie", "GLOBAL", 1)
 	~ THEN REPLY @205 /* ~I'll talk to Skie and Melkor to see if there's anything that can be done.~*/
 	GOTO XA_WillTalkToSkieAndMelkor
 	
 	IF ~
-		!Global("XA_TalkedToMelkor", "GLOBAL", 1)
+		!Global("XA_LC_TalkedToMelkor", "GLOBAL", 1)
 	~ THEN REPLY @192 /* ~I'll talk to him and see what can be done for Skie.~ */
 	GOTO XA_WillTalkToMelkor
 	
 	IF ~
-		Global("XA_TalkedToMelkor", "GLOBAL", 1)
-		Global("XA_TalkedToSkie", "GLOBAL", 1)
-		Global("XA_ConcernedAboutSkie", "GLOBAL", 1)
+		Global("XA_LC_TalkedToMelkor", "GLOBAL", 1)
+		Global("XA_LC_TalkedToSkie", "GLOBAL", 1)
+		Global("XA_LC_ConcernedAboutSkie", "GLOBAL", 1)
 	~ THEN REPLY @185 /* ~I've already spoken to him, and I've agreed to help. I will petition the Dukes to release the dagger to me. Once I have it, I'll work to release those still trapped within.~ */
 	GOTO XA_TalkedToMelkor
 	
@@ -143,24 +143,24 @@ IF ~~ THEN BEGIN XA_WillTalkToMelkor
 END
 
 IF ~
-	!Global("XA_BrillaCorwin", "LOCALS", 1)
+	!Global("XA_LC_BrillaCorwin", "LOCALS", 1)
 	IsGabber("XACORWIN")
 ~ THEN BEGIN XA_CorwinGreeting
 	SAY @195 /* ~Captain, it's good to see you again. I trust your family is well?~ */
 	
 	IF ~
-		!Global("XA_CorwinMetFamily", "GLOBAL", 1)
+		!Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_BrillaCorwin", "LOCALS", 1)
+		SetGlobal("XA_LC_BrillaCorwin", "LOCALS", 1)
 	~
 	EXTERN XACORWIJ XA_CorwinBrillaChainNotMetFamily
 	
 	IF ~
-		Global("XA_CorwinMetFamily", "GLOBAL", 1)
+		Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_BrillaCorwin", "LOCALS", 1)
+		SetGlobal("XA_LC_BrillaCorwin", "LOCALS", 1)
 	~
 	EXTERN XACORWIJ XA_CorwinBrillaChainMetFamily
 END

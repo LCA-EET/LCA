@@ -7,7 +7,7 @@
 
 */
 IF
-	Global("XA_CorwinBit","GLOBAL",1)
+	Global("XA_LC_CorwinBit","GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetGlobal("Deactivate0801","AR0800",3)  // Graveyard

@@ -1,26 +1,26 @@
 BEGIN ~XA800W~
 
 IF ~
-	Global("XA_SavedElfsong", "GLOBAL", 1)
-	!Global("XA_800MW", "GLOBAL", 1)
+	Global("XA_LC_SavedElfsong", "GLOBAL", 1)
+	!Global("XA_LC_800MW", "GLOBAL", 1)
 ~ THEN BEGIN XA_GoodDay
 	SAY @3 /* @3 = ~'Ey there. Did you hear the news? Elfsong's back in business.~*/
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_800MW", "GLOBAL", 1)
+		SetGlobal("XA_LC_800MW", "GLOBAL", 1)
 	~
 	EXTERN XA800M XA_End2
 END
 
 IF ~
-	!Global("XA_800MW", "GLOBAL", 1)
+	!Global("XA_LC_800MW", "GLOBAL", 1)
 ~ THEN BEGIN XA_Intro
 	SAY @0 /* ~'Ey there. Did you hear the news? Another disappearance over at Elfsong.~*/
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_800MW", "GLOBAL", 1)
+		SetGlobal("XA_LC_800MW", "GLOBAL", 1)
 	~
 	EXTERN XA800M XA_End
 END

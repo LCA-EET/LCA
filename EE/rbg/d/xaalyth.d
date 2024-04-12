@@ -1,7 +1,7 @@
 BEGIN ~XAALYTH~
 
 IF ~
-	Global("XA_SavedElfsong", "GLOBAL", 1)
+	Global("XA_LC_SavedElfsong", "GLOBAL", 1)
 ~ THEN BEGIN XA_SavedElfsong
 	SAY @29 /* ~Please, make yourselves at home my friends. You are always welcome in the Elfsong.~*/
 	
@@ -9,7 +9,7 @@ IF ~
 END
 
 IF ~
-	GlobalGT("XA_SavedLyriel", "GLOBAL", 0)
+	GlobalGT("XA_LC_SavedLyriel", "GLOBAL", 0)
 ~ THEN BEGIN XA_LyrielSaved
 	SAY @21 /* ~Are my ears deceiving me?~*/
 	
@@ -20,7 +20,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_ExitPrison", "GLOBAL", 1)
+	Global("XA_LC_ExitPrison", "GLOBAL", 1)
 ~ THEN BEGIN XA_ExitPrison
 	SAY @37 /* ~Oh, thank goodness you've returned! I heard a commotion upstairs, and when I went to check on you, you were gone!~ */
 	
@@ -35,17 +35,17 @@ IF ~~ THEN BEGIN XA_TellWhatHappened
 	= @25 /* ~Thank you, hero... were you able to find out what happened to the missing patrons?~ */
 	
 	IF ~
-		!Global("XA_AskedAboutPatrons", "GLOBAL", 1)
+		!Global("XA_LC_AskedAboutPatrons", "GLOBAL", 1)
 	~ THEN REPLY @26 /* ~Unfortunately, no. They were likely killed by the Incubus, or one of his creations.~*/
 	GOTO XA_WhatHappened
 	
 	IF ~
-		Global("XA_AskedAboutPatrons", "GLOBAL", 1)
+		Global("XA_LC_AskedAboutPatrons", "GLOBAL", 1)
 	~ THEN REPLY @31 /* ~Sufficeth to say, they won't be returning.~ */
 	GOTO XA_WhatHappened
 	
 	IF ~
-		Global("XA_AskedAboutPatrons", "GLOBAL", 1)
+		Global("XA_LC_AskedAboutPatrons", "GLOBAL", 1)
 	~ THEN REPLY @30 /* ~They were turned into dopplegangers by the Incubus' foul magic. I had no choice but to destroy them.~ */
 	GOTO XA_WhatHappened
 END
@@ -57,7 +57,7 @@ IF ~~ THEN BEGIN XA_WhatHappened
 	GOTO XA_End2
 	
 	IF ~
-		GlobalGT("XA_SavedLyriel", "GLOBAL", 0)
+		GlobalGT("XA_LC_SavedLyriel", "GLOBAL", 0)
 	~ THEN GOTO XA_End1
 END
 
@@ -82,7 +82,7 @@ IF ~~ THEN BEGIN XA_End3
 	
 	IF ~~ THEN REPLY @35 /* ~Thank you.~ */
 	DO ~
-		SetGlobal("XA_SavedElfsong", "GLOBAL", 1)
+		SetGlobal("XA_LC_SavedElfsong", "GLOBAL", 1)
 		SetGlobal("XA_LC_Journal_Elfsong3", "GLOBAL", 1)
 		ReputationInc(1)
 	~
@@ -109,33 +109,33 @@ IF ~~ THEN BEGIN XA_ThankYou
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_SavedElfsong", "GLOBAL", 1)
+		SetGlobal("XA_LC_SavedElfsong", "GLOBAL", 1)
 	~	
 	EXIT
 END
 
 IF ~
-	!Global("XA_AlythIntro", "GLOBAL", 1)
+	!Global("XA_LC_AlythIntro", "GLOBAL", 1)
 ~ THEN BEGIN XA_AlythIntro
 	SAY @0 /* ~Ah, the hero of Baldur's Gate returns, and not a moment too soon.~ */
 	
 	IF ~~ THEN REPLY @1 /* ~Hello, Alyth.~ */
 	DO ~
-		SetGlobal("XA_AlythIntro", "GLOBAL", 1)
+		SetGlobal("XA_LC_AlythIntro", "GLOBAL", 1)
 	~
 	GOTO XA_Problem
 	
 	IF ~~ THEN REPLY @2 /* ~What seems to be the problem?~ */
 	DO ~
-		SetGlobal("XA_AlythIntro", "GLOBAL", 1)
+		SetGlobal("XA_LC_AlythIntro", "GLOBAL", 1)
 	~
 	GOTO XA_Problem
 	
 	IF ~
-		Global("XA_800MW", "GLOBAL", 1)
+		Global("XA_LC_800MW", "GLOBAL", 1)
 	~ THEN REPLY @3 
 	DO ~
-		SetGlobal("XA_AlythIntro", "GLOBAL", 1)
+		SetGlobal("XA_LC_AlythIntro", "GLOBAL", 1)
 	~
 	GOTO XA_Problem
 	
@@ -144,16 +144,16 @@ IF ~
 END
 
 IF ~
-	Global("XA_AlythIntro", "GLOBAL", 1)
-	GlobalLT("XA_HelpAlyth", "GLOBAL", 1)
+	Global("XA_LC_AlythIntro", "GLOBAL", 1)
+	GlobalLT("XA_LC_HelpAlyth", "GLOBAL", 1)
 ~ THEN BEGIN XA_Intro2
 	SAY @17 /* ~Have you reconsidered? If there's any help you can provide, I'd greatly appreciate it.~ */
 	
 	IF ~
-		!Global("XA_WhatProblem", "LOCALS", 1)
+		!Global("XA_LC_WhatProblem", "LOCALS", 1)
 	~ THEN REPLY @16 /* ~What was the problem again?~*/
 	DO ~
-		SetGlobal("XA_WhatProblem", "LOCALS", 1)
+		SetGlobal("XA_LC_WhatProblem", "LOCALS", 1)
 	~
 	GOTO XA_Problem
 	
@@ -234,7 +234,7 @@ IF ~~ THEN BEGIN XA_AgreeToInvestigate
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_HelpAlyth", "GLOBAL", 1)
+		SetGlobal("XA_LC_HelpAlyth", "GLOBAL", 1)
 		SetGlobal("XA_LC_Journal_Elfsong1", "GLOBAL", 1)
 	~
 	EXIT

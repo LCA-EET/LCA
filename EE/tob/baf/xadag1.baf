@@ -13,7 +13,7 @@ THEN
 		ActionOverride("XACORWIN", JumpToPoint([890.1155]))
 		Wait(1)
 		FadeFromColor([30.0],0)
-		SetGlobal("XA_DaggerDestruction", "GLOBAL", 1)
+		SetGlobal("XA_LC_DaggerDestruction", "GLOBAL", 1)
 		StartDialog("PLAYER1", Player1)
 		EndCutSceneMode()
 END

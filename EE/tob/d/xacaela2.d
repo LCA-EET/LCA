@@ -1,27 +1,27 @@
 BEGIN ~XACAELA2~
 
 IF ~
-	Global("XA_SparedCaelar", "GLOBAL", 1)
-	Global("XA_CrusadersGone", "GLOBAL", 1)
-	GlobalLT("XA_CaelarChoice", "GLOBAL", 1)
+	Global("XA_LC_SparedCaelar", "GLOBAL", 1)
+	Global("XA_LC_CrusadersGone", "GLOBAL", 1)
+	GlobalLT("XA_LC_CaelarChoice", "GLOBAL", 1)
 ~ THEN BEGIN XA_Choice
 	SAY @44 /*~They're free... <CHARNAME>, you spared my life, but for what purpose? What do you intend to do with me?~*/
 	
 	IF ~~ THEN REPLY @45 /* ~I'm going to send you to the Flaming Fist, so that you can be tried for your crimes.~*/
 	DO ~
-		SetGlobal("XA_CaelarChoice", "GLOBAL", 1)
+		SetGlobal("XA_LC_CaelarChoice", "GLOBAL", 1)
 	~
 	GOTO XA_GoToJail
 	
 	IF ~~ THEN REPLY @46 /* ~You've suffered enough. I'm going to send you to live with your uncle.~ */
 	DO ~
-		SetGlobal("XA_CaelarChoice", "GLOBAL", 1)
+		SetGlobal("XA_LC_CaelarChoice", "GLOBAL", 1)
 	~
 	GOTO XA_LiveWithAun
 	
 	IF ~~ THEN REPLY @47 /*~I want you to fight at my side.~ */
 	DO ~
-		SetGlobal("XA_CaelarChoice", "GLOBAL", 1)
+		SetGlobal("XA_LC_CaelarChoice", "GLOBAL", 1)
 	~
 	GOTO XA_Join
 END
@@ -75,14 +75,14 @@ IF ~~ THEN BEGIN XA_Join2
 END
 
 IF ~
-	GlobalLT("XA_AshaCaelar", "GLOBAL", 1)
+	GlobalLT("XA_LC_AshaCaelar", "GLOBAL", 1)
 	AreaCheck("XA5300")
 ~ THEN BEGIN XA_CaelarAsha
 	SAY @20 /*  ~My loyal Adras... forgive me. Why are you confined to this place?~*/
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_AshaCaelar", "GLOBAL", 1)
+		SetGlobal("XA_LC_AshaCaelar", "GLOBAL", 1)
 	~
 	EXTERN XAASHASP XA_CaelarAshaChain
 END
@@ -92,8 +92,8 @@ IF ~~ THEN BEGIN XA_CaelarAshaChain_END
 	
 	IF ~~ THEN REPLY @30 /* ~With pleasure.~ */
 	DO ~
-		SetGlobal("XA_KilledCaelar", "GLOBAL", 1)
-		SetGlobal("XA_OathRelease", "GLOBAL", 1)
+		SetGlobal("XA_LC_KilledCaelar", "GLOBAL", 1)
+		SetGlobal("XA_LC_OathRelease", "GLOBAL", 1)
 		Kill(Myself)
 	~
 	EXIT
@@ -118,8 +118,8 @@ IF ~~ THEN BEGIN XA_CaelarWait
 	
 	IF ~~ THEN REPLY @38  /* ~Very well. (Kill her.)~ */
 	DO ~
-		SetGlobal("XA_KilledCaelar", "GLOBAL", 1)
-		SetGlobal("XA_OathRelease", "GLOBAL", 1)
+		SetGlobal("XA_LC_KilledCaelar", "GLOBAL", 1)
+		SetGlobal("XA_LC_OathRelease", "GLOBAL", 1)
 		Kill(Myself)
 	~
 	EXIT
@@ -140,28 +140,28 @@ IF ~~ THEN BEGIN XA_CaelarWait3
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_SparedCaelar", "GLOBAL", 1)
-		SetGlobal("XA_OathRelease", "GLOBAL", 1)
+		SetGlobal("XA_LC_SparedCaelar", "GLOBAL", 1)
+		SetGlobal("XA_LC_OathRelease", "GLOBAL", 1)
 	~
 	EXIT
 END
 
 IF ~
-	GlobalGT("XA_AVBossFled", "GLOBAL", 1)
+	GlobalGT("XA_LC_AVBossFled", "GLOBAL", 1)
 	!AreaCheck("XA5300")
-	GlobalLT("XA_CaelarAVTalk", "GLOBAL",2)
+	GlobalLT("XA_LC_CaelarAVTalk", "GLOBAL",2)
 ~ THEN BEGIN XA_WonBattle
 	SAY @16 /* ~You defeated him? Praise be ... I can't believe it.~*/
 	
 	IF ~~ THEN REPLY @15  /* ~Caelar... your ordeal is over. Come with me. (Take her hand.)~*/
 	DO ~
-		SetGlobal("XA_CaelarAVTalk", "GLOBAL", 2)
+		SetGlobal("XA_LC_CaelarAVTalk", "GLOBAL", 2)
 	~
 	GOTO XA_WonBattle2
 	
 	IF ~~ THEN REPLY @57  /* ~Of course I did. Now, back in your cage.~ */
 	DO ~
-		SetGlobal("XA_CaelarAVTalk", "GLOBAL", 2)
+		SetGlobal("XA_LC_CaelarAVTalk", "GLOBAL", 2)
 	~
 	GOTO XA_LeaveInCage
 END
@@ -193,7 +193,7 @@ IF ~~ THEN BEGIN XA_CaelarSuicide
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_CaelarSuicide", "GLOBAL", 1)
+		SetGlobal("XA_LC_CaelarSuicide", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XACAESUI")
 	~
@@ -215,31 +215,31 @@ IF ~~ THEN BEGIN XA_WonBattle3
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_Return5300", "MYAREA", 1)
+		SetGlobal("XA_LC_Return5300", "MYAREA", 1)
 	~
 	EXIT
 END
 
 IF ~
-	GlobalLT("XA_CaelarRescue", "GLOBAL", 1)
+	GlobalLT("XA_LC_CaelarRescue", "GLOBAL", 1)
 ~ THEN BEGIN XA_CaelarRescue
 	SAY @4 /* ~(Caelar... she's been bloodied and brutalized beyond words, but you're sure it's her. Pieces of her shattered armor and sword lie strewn about the roof of the tower.)~*/
 	
 	IF ~~ THEN REPLY @5 /*  ~Caelar!~*/
 	DO ~
-		SetGlobal("XA_CaelarRescue", "GLOBAL", 1)
+		SetGlobal("XA_LC_CaelarRescue", "GLOBAL", 1)
 	~
 	GOTO XA_CaelarRescue2
 	
 	IF ~~ THEN REPLY @6  /* ~By the gods, what happened to you?~ */
 	DO ~
-		SetGlobal("XA_CaelarRescue", "GLOBAL", 1)
+		SetGlobal("XA_LC_CaelarRescue", "GLOBAL", 1)
 	~
 	GOTO XA_CaelarRescue2
 	
 	IF ~~ THEN REPLY @7 /* ~It looks like you received your just punishment.~*/
 	DO ~
-		SetGlobal("XA_CaelarRescue", "GLOBAL", 1)
+		SetGlobal("XA_LC_CaelarRescue", "GLOBAL", 1)
 	~
 	GOTO XA_CaelarRescue2
 END

@@ -1,6 +1,6 @@
 //{ Banter Block during key moments
 	IF
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		GlobalLT("XA_LC_BanterBlock_RBG", "LOCALS", 1)
 		OR(4)
 			AreaCheck("XAKIDNAP")
@@ -13,7 +13,7 @@
 	END
 	
 	IF
-		Global("XA_ReturnToBG", "GLOBAL", 2)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 2)
 		Global("XA_LC_BanterBlock_RBG", "LOCALS", 1)
 	THEN
 		RESPONSE #100
@@ -25,9 +25,9 @@
 
 	//{ Complimenting Corwin's Family
 	IF
-		AreaCheck("BG1300") //SE Baldur's Gate
-		Global("XA_AVComplimentFamily", "GLOBAL", 1)
-		Global("XA_CanTalk", "LOCALS", 1)
+		AreaCheck("XAA141") //SE Baldur's Gate
+		Global("XA_LC_AVComplimentFamily", "GLOBAL", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
 		IsValidForPartyDialogue("Aerie")
 	THEN
 		//Dialog B-66, B-79, B-82, B-83, B-84
@@ -36,9 +36,9 @@
 	END
 	
 	IF
-		AreaCheck("BG1300") //SE Baldur's Gate
-		Global("XA_AVComplimentFamily", "GLOBAL", 1)
-		Global("XA_CanTalk", "LOCALS", 1)
+		AreaCheck("XAA141") //SE Baldur's Gate
+		Global("XA_LC_AVComplimentFamily", "GLOBAL", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
 		IsValidForPartyDialogue("Neera")
 		
 	THEN
@@ -48,9 +48,9 @@
 	END
 	
 	IF
-		AreaCheck("BG1300") //SE Baldur's Gate
-		Global("XA_AVComplimentFamily", "GLOBAL", 1)
-		Global("XA_CanTalk", "LOCALS", 1)
+		AreaCheck("XAA141") //SE Baldur's Gate
+		Global("XA_LC_AVComplimentFamily", "GLOBAL", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
 		IsValidForPartyDialogue("Valygar")
 		
 	THEN
@@ -62,8 +62,8 @@
 
 	//{ Corwin Hall of Wonders Arrest
 	IF 
-		Global("XA_CorwinArrest", "GLOBAL", 1)
-		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CorwinArrest", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			//Dialog J-50
@@ -73,7 +73,7 @@
 
 	//{ Rohma Kidnapped
 	IF 
-		Global("XA_RohmaKidnapped", "GLOBAL", 2)
+		Global("XA_LC_RohmaKidnapped", "GLOBAL", 2)
 		//See(Player1)
 	THEN
 		RESPONSE #100
@@ -84,13 +84,13 @@
 
 	//{ SoD Anxiety
 	IF 
-		Global("XA_SoDAnxiety", "GLOBAL", 1)
-		GlobalTimerExpired("XA_SoDAnxietyTimer", "GLOBAL")
-		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_SoDAnxiety", "GLOBAL", 1)
+		GlobalTimerExpired("XA_LC_SoDAnxietyTimer", "GLOBAL")
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_SoDAnxiety", "GLOBAL", 2)
+			SetGlobal("XA_LC_SoDAnxiety", "GLOBAL", 2)
 			PlaySong(142)
 			//Dialog J-39
 			StartDialog("XACORWIJ", Player1)
@@ -100,8 +100,8 @@
 	
 	//{ Corwin Leave for Family
 	IF
-		Global("XA_CanTalkToPlayer", "LOCALS", 1)
-		Global("XA_CorwinLeaveForFamily", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CorwinLeaveForFamily", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			//Dialogs J-19, J-20
@@ -111,8 +111,8 @@
 	
 	//{ Corwin Need to See Family
 	IF
-		Global("XA_CanTalkToPlayer", "LOCALS", 1)
-		Global("XA_CorwinNeedSeeFamily", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			//Dialog J-18
@@ -122,8 +122,8 @@
 
 	//{ Meet Tianna
 	IF
-		Global("XA_AskCorwinAboutTianna", "GLOBAL", 1)
-		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_AskCorwinAboutTianna", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -136,16 +136,16 @@
 
 	//{ Dialog init after Corwin / Neoma reunite
 	IF 
-		Global("XA_ReturnToBG", "GLOBAL", 1)
-		Global("XA_XACS15Cutscene", "GLOBAL", 5)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_XACS15Cutscene", "GLOBAL", 5)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!See("XANEOMA")
-		Global("XA_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			PlaySong(146)
-			SetGlobal("XA_XACS15Cutscene", "GLOBAL", 6)
+			SetGlobal("XA_LC_XACS15Cutscene", "GLOBAL", 6)
 			//Dialog J-17
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)
@@ -154,9 +154,9 @@
 
 	//{ Request Corwin ToB
 	IF
-		Global("XA_BGEND3", "GLOBAL", 1)
-		Global("XA_DidNotRequestCorwin", "GLOBAL", 1)
-		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 99)
+		Global("XA_LC_BGEND3", "GLOBAL", 1)
+		Global("XA_LC_DidNotRequestCorwin", "GLOBAL", 1)
+		GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 99)
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
@@ -168,9 +168,9 @@
 	END
 
 	IF
-		Global("XA_BGEND3", "GLOBAL", 1)
-		Global("XA_DidNotRequestCorwin", "GLOBAL", 1)
-		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 99)
+		Global("XA_LC_BGEND3", "GLOBAL", 1)
+		Global("XA_LC_DidNotRequestCorwin", "GLOBAL", 1)
+		GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 99)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
@@ -183,8 +183,8 @@
 	END
 
 	IF
-		Global("XA_BGEND4", "GLOBAL", 1)
-		Global("XA_DidRequestCorwin", "GLOBAL", 1)
+		Global("XA_LC_BGEND4", "GLOBAL", 1)
+		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
@@ -196,8 +196,8 @@
 	END
 
 	IF
-		Global("XA_BGEND4", "GLOBAL", 1)
-		Global("XA_DidRequestCorwin", "GLOBAL", 1)
+		Global("XA_LC_BGEND4", "GLOBAL", 1)
+		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
@@ -213,8 +213,8 @@
 	//{ Kill Beno
 	IF 
 		OR(2)
-			Global("XA_CorwinKillBeno", "GLOBAL", 1)
-			Global("XA_CorwinBenoST", "GLOBAL", 1)
+			Global("XA_LC_CorwinKillBeno", "GLOBAL", 1)
+			Global("XA_LC_CorwinBenoST", "GLOBAL", 1)
 		ActionListEmpty()
 		!Range("XABENO2", 4)
 	THEN
@@ -225,8 +225,8 @@
 
 	IF 
 		OR(2)
-			Global("XA_CorwinKillBeno", "GLOBAL", 1)
-			Global("XA_CorwinBenoST", "GLOBAL", 1)
+			Global("XA_LC_CorwinKillBeno", "GLOBAL", 1)
+			Global("XA_LC_CorwinBenoST", "GLOBAL", 1)
 		Range("XABENO2", 4)
 	THEN
 		RESPONSE #100
@@ -244,7 +244,7 @@
 IF
 	ActionListEmpty()
 	InParty(Myself)
-	!Global("XA_TrappedInDemonPrison", "GLOBAL", 1)
+	!Global("XA_LC_TrappedInDemonPrison", "GLOBAL", 1)
 	OR(5)
 		AreaCheck("XADEMSAN")
 		AreaCheck("XAG1")
@@ -253,14 +253,14 @@ IF
 		AreaCheck("XAPAINT1")
 THEN
 	RESPONSE #100
-		SetGlobal("XA_TrappedInDemonPrison", "GLOBAL", 1)
+		SetGlobal("XA_LC_TrappedInDemonPrison", "GLOBAL", 1)
 		Continue()
 END
 
 IF
 	ActionListEmpty()
 	InParty(Myself)
-	Global("XA_TrappedInDemonPrison", "GLOBAL", 1)
+	Global("XA_LC_TrappedInDemonPrison", "GLOBAL", 1)
 	!AreaCheck("XADEMSAN")
 	!AreaCheck("XAG1")
 	!AreaCheck("XAG2")
@@ -268,7 +268,7 @@ IF
 	!AreaCheck("XAPAINT1")
 THEN
 	RESPONSE #100
-		SetGlobal("XA_TrappedInDemonPrison", "GLOBAL", 0)
+		SetGlobal("XA_LC_TrappedInDemonPrison", "GLOBAL", 0)
 		Continue()
 END
 //}

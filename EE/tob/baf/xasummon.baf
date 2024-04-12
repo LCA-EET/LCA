@@ -2,12 +2,12 @@ IF
 	Die()
 THEN
 	RESPONSE #100
-		IncrementGlobal("XA_4700_Adds", "MYAREA", -1)
+		IncrementGlobal("XA_LC_4700_Adds", "MYAREA", -1)
 		Continue()
 END
 
 IF
-	GlobalGT("XA_AVBossFled", "GLOBAL", 0)
+	GlobalGT("XA_LC_AVBossFled", "GLOBAL", 0)
 THEN
 	RESPONSE #100
 		Kill(Myself)

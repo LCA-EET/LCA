@@ -1,28 +1,28 @@
 //{ AFH Compatibility Fix
 IF
 	GlobalGT("C#AfHSoD_RevisedEnd","GLOBAL",0)
-	GlobalLT("XA_AFHFix", "GLOBAL", 1)
+	GlobalLT("XA_LC_AFHFix", "GLOBAL", 1)
 	!Dead("Corwin")
 	Global("bd_corwin_romanceactive","global",2)
-	GlobalLT("XA_CorwinContinue", "GLOBAL", 1)
+	GlobalLT("XA_LC_CorwinContinue", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_AFHFix", "GLOBAL", 1)
-		SetGlobal("XA_CorwinContinue","GLOBAL",2) /* continue romance into BG2 */
-		SetGlobal("XA_CorwinRomanceActive", "GLOBAL", 2) /* continue romance into BG2 */
+		SetGlobal("XA_LC_AFHFix", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinContinue","GLOBAL",2) /* continue romance into BG2 */
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 2) /* continue romance into BG2 */
 		Continue()
 END
 
 IF
 	GlobalGT("C#AfHSoD_RevisedEnd","GLOBAL",0)
-	GlobalLT("XA_AFHFix", "GLOBAL", 1)
+	GlobalLT("XA_LC_AFHFix", "GLOBAL", 1)
 	!Dead("Corwin")
 	!Global("bd_corwin_romanceactive","global",2)
-	GlobalLT("XA_CorwinContinue", "GLOBAL", 1)
+	GlobalLT("XA_LC_CorwinContinue", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_AFHFix", "GLOBAL", 1)
-		SetGlobal("XA_CorwinContinue","GLOBAL",1) /* continue friendship*/
+		SetGlobal("XA_LC_AFHFix", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinContinue","GLOBAL",1) /* continue friendship*/
 		Continue()
 END
 //}
@@ -183,60 +183,60 @@ END
 
 
 IF
-	Global("XA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
+	Global("XA_LC_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		MoveGlobal("AR1002", "XACORWIN", [1033.563])
-		SetGlobal("XA_CorwinMeetAthkatlaCouncil", "GLOBAL", 0)
+		SetGlobal("XA_LC_CorwinMeetAthkatlaCouncil", "GLOBAL", 0)
 END
 
 IF
-	GlobalTimerExpired("XA_Ath", "GLOBAL")
-	Global("XA_SkieSaved", "GLOBAL", 2) // Cache
+	GlobalTimerExpired("XA_LC_Ath", "GLOBAL")
+	Global("XA_LC_SkieSaved", "GLOBAL", 2) // Cache
 THEN
 	RESPONSE #100
-		SetGlobal("XA_SkieSaved", "GLOBAL", 3) // mark complete
+		SetGlobal("XA_LC_SkieSaved", "GLOBAL", 3) // mark complete
 		CreateCreature("xad120", [1033.563], SW)
 		Continue()
 		
 END
 
 IF
-	Global("XA_SkieSaved", "GLOBAL", 1) // Corwin
+	Global("XA_LC_SkieSaved", "GLOBAL", 1) // Corwin
 	OR(2)
-		GlobalTimerExpired("XA_Ath", "GLOBAL")
-		Global("XA_CorwinDebug1002", "GLOBAL", 1)
+		GlobalTimerExpired("XA_LC_Ath", "GLOBAL")
+		Global("XA_LC_CorwinDebug1002", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		CreateCreature("XACORINV", [1125.400], N)
-		SetGlobal("XA_SkieSaved", "GLOBAL", 3) // mark complete
+		SetGlobal("XA_LC_SkieSaved", "GLOBAL", 3) // mark complete
 		CreateCreature("XACORWIN", [1033.563], SW)
 		Continue()
 END
 
 IF 
-	GlobalTimerExpired("XA_Ath2", "GLOBAL")
+	GlobalTimerExpired("XA_LC_Ath2", "GLOBAL")
 	GlobalLT("XA_LC_Spawn2", "AR1002", 1)
 	OR(2)
-		Global("XA_LetterSent", "GLOBAL", 2)
-		Global("XA_LetterSent", "GLOBAL", 1)
+		Global("XA_LC_LetterSent", "GLOBAL", 2)
+		Global("XA_LC_LetterSent", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		CreateCreature("XACORINV", [1125.400], N)
 		CreateCreature("XACORWIN", [1033.563], SW)
 		SetGlobal("XA_LC_Spawn2", "AR1002", 1)
-		SetGlobal("XA_SkieSaved", "GLOBAL", 3) // mark complete
+		SetGlobal("XA_LC_SkieSaved", "GLOBAL", 3) // mark complete
 		Continue()
 END
 
 IF 
-	GlobalTimerExpired("XA_Ath2", "GLOBAL")
-	Global("XA_LetterSent", "GLOBAL", 3)
+	GlobalTimerExpired("XA_LC_Ath2", "GLOBAL")
+	Global("XA_LC_LetterSent", "GLOBAL", 3)
 	GlobalLT("XA_LC_Spawn2", "AR1002", 1)
 THEN
 	RESPONSE #100
 		CreateCreature("XAFFOFCR", [1033.563], SW)
-		SetGlobal("XA_SkieSaved", "GLOBAL", 3) // mark complete
+		SetGlobal("XA_LC_SkieSaved", "GLOBAL", 3) // mark complete
 		SetGlobal("XA_LC_Spawn2", "AR1002", 1)
 		Continue()
 END

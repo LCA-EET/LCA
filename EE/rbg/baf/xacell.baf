@@ -1,15 +1,15 @@
 IF 
 	See(Player1)
 	Range(Player1, 7)
-	Global("XA_SoDAnxiety", "GLOBAL", 0)
-	Global("XA_SoDAnxietyCell", "GLOBAL", 0)
+	Global("XA_LC_SoDAnxiety", "GLOBAL", 0)
+	Global("XA_LC_SoDAnxietyCell", "GLOBAL", 0)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_SoDAnxietyCell", "GLOBAL", 1)
+		SetGlobal("XA_LC_SoDAnxietyCell", "GLOBAL", 1)
 END
 
 IF 
-	GlobalGT("XA_SoDAnxietyCell", "GLOBAL", 0)
+	GlobalGT("XA_LC_SoDAnxietyCell", "GLOBAL", 0)
 THEN
 	RESPONSE #100
 		DestroySelf()

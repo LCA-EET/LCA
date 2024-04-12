@@ -3,7 +3,7 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
-		SetGlobal("XA_ExtrasCreated", "GLOBAL", 1)
+		SetGlobal("XA_LC_ExtrasCreated", "GLOBAL", 1)
 		CreateCreature("XAFISTEX",[1345.820],NW) 
 		CreateCreature("XAWTREX",[1233.882],NW) 
 END

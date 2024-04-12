@@ -6,7 +6,7 @@ THEN
 		ZoomLock(TRUE)
 		AdvanceTime(FOURTEEN_DAYS)
 		DayNight(8)
-		SetGlobal("XA_ReturnToBG", "GLOBAL", 2)
+		SetGlobal("XA_LC_ReturnToBG", "GLOBAL", 2)
 		//EndCutSceneMode()
 		Wait(1)
 		MoveToCampaign("ToB")

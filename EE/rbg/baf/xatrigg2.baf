@@ -1,10 +1,10 @@
 IF
 	Clicked([ANYONE])
 	Range(LastTrigger,10)
-	!Global("XA_CompletedG2", "GLOBAL", 1)
+	!Global("XA_LC_CompletedG2", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_EnterG2", "GLOBAL", 1)
+		SetGlobal("XA_LC_EnterG2", "GLOBAL", 1)
 		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 END
 
@@ -19,7 +19,7 @@ END
 IF 
 	Clicked([ANYONE])
 	Range(LastTrigger,10)
-	Global("XA_CompletedG2", "GLOBAL", 1)
+	Global("XA_LC_CompletedG2", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		DisplayString(Myself,@1)

@@ -1,16 +1,16 @@
 IF
 	!See([ENEMY])
 	See([PC])
-	GlobalLT("XA_2802_EnemiesDead", "MYAREA", 1)
+	GlobalLT("XA_LC_2802_EnemiesDead", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_2802_EnemiesDead", "MYAREA", 1)
+		SetGlobal("XA_LC_2802_EnemiesDead", "MYAREA", 1)
 		StartDialogueNoSet([PC])
 END
 
 IF 
 	ActionListEmpty()
-	Global("XA_2802_EnemiesDead", "MYAREA", 2)
+	Global("XA_LC_2802_EnemiesDead", "MYAREA", 2)
 THEN
 	RESPONSE #100
 		EscapeArea()

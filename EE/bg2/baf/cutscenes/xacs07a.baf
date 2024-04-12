@@ -14,7 +14,7 @@ THEN
 		JumpToPoint([1950.1690]) 	
 		ReallyForceSpellRES("BGSleep","XACORWIN") 
 		Wait(1)
-		SetGlobal("XA_CorwinBit","GLOBAL",1)
+		SetGlobal("XA_LC_CorwinBit","GLOBAL",1)
 		//ForceSpell("XACORWIN",HELL_HOLD)
 		
 		DestroySelf()

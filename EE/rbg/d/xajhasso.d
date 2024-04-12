@@ -3,7 +3,7 @@ BEGIN ~XAJHASSO~
 
 IF ~
 	IsGabber("XACORWIN")
-	Global("XA_JhassoCorwinGreeting", "LOCALS", 1)
+	Global("XA_LC_JhassoCorwinGreeting", "LOCALS", 1)
 ~ THEN BEGIN XA_CorwinGreeting2
 	SAY @43 /* ~Good to see you again, Captain.~ */
 	
@@ -12,32 +12,32 @@ END
 
 IF ~
 	IsGabber("XACORWIN")
-	!Global("XA_JhassoCorwinGreeting", "LOCALS", 1)
+	!Global("XA_LC_JhassoCorwinGreeting", "LOCALS", 1)
 ~ THEN BEGIN XA_CorwinGreeting
 	SAY @42 /* ~Captain, I heard you'd be returning soon. Welcome home!~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_JhassoCorwinGreeting", "LOCALS", 1)
+		SetGlobal("XA_LC_JhassoCorwinGreeting", "LOCALS", 1)
 	~
 	EXTERN XACORWIJ XA_JhassoCorwinGreetingChain
 	
 END
 
 IF ~
-	!Global("XA_JhassoGreeting", "LOCALS", 1)
+	!Global("XA_LC_JhassoGreeting", "LOCALS", 1)
 	InPartySlot(LastTalkedToBy, 0)
 ~ THEN BEGIN XA_Greeting
 	SAY @0 /* ~Hah, <CHARNAME>! After the Dukes exonerated you, I knew it would only be a matter of time before you returned. Welcome back my friend!~ */
 	
 	IF ~~ THEN REPLY @1 /* ~Thank you Jhasso, it's good to be back. How are things with you?~ */
 	DO ~
-		SetGlobal("XA_JhassoGreeting", "LOCALS", 1)
+		SetGlobal("XA_LC_JhassoGreeting", "LOCALS", 1)
 	~
 	GOTO XA_Greeting2
 END
 
 IF ~
-	!Global("XA_JhassoGreeting", "LOCALS", 1)
+	!Global("XA_LC_JhassoGreeting", "LOCALS", 1)
 ~ THEN BEGIN XA_OtherGreeting
 	SAY @30 /* ~Please, enjoy your time at the Seven Suns, my friend.~ */
 	
@@ -62,18 +62,18 @@ IF ~~ THEN BEGIN XA_Greeting3
 	GOTO XA_JhassoEnd
 	
 	IF ~
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN GOTO XA_JhassoPlayerRomance
 	
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		!Global("XA_JhassoCorwinGreeting", "LOCALS", 1)
+		!Global("XA_LC_JhassoCorwinGreeting", "LOCALS", 1)
 	~ THEN GOTO XA_JhassoCorwinFamily
 	
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_JhassoCorwinGreeting", "LOCALS", 1)
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_JhassoCorwinGreeting", "LOCALS", 1)
+		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN GOTO XA_JhassoCorwinRomance
 END
 
@@ -82,30 +82,30 @@ IF ~~ THEN BEGIN XA_JhassoPlayerRomance
 	
 	IF ~
 		OR(3)
-			Global("XA_RingGiftAldeth", "GLOBAL", 1)
-			Global("XA_RingGiftJhasso", "GLOBAL", 1)
+			Global("XA_LC_RingGiftAldeth", "GLOBAL", 1)
+			Global("XA_LC_RingGiftJhasso", "GLOBAL", 1)
 			Dead("halbaz")
 	~ THEN REPLY @36 /* ~I wasn't aware that our love life was of interest to anyone else.~ */
 	GOTO XA_JhassoCorwinRomance2
 	
 	IF ~
 		OR(3)
-			Global("XA_RingGiftAldeth", "GLOBAL", 1)
-			Global("XA_RingGiftJhasso", "GLOBAL", 1)
+			Global("XA_LC_RingGiftAldeth", "GLOBAL", 1)
+			Global("XA_LC_RingGiftJhasso", "GLOBAL", 1)
 			Dead("halbaz")
 	~ THEN REPLY @35 /* ~Word travels fast, it seems.~  */
 	GOTO XA_JhassoCorwinRomance2
 	
 	IF ~
-		!Global("XA_RingGiftAldeth", "GLOBAL", 1)
-		!Global("XA_RingGiftJhasso", "GLOBAL", 1)
+		!Global("XA_LC_RingGiftAldeth", "GLOBAL", 1)
+		!Global("XA_LC_RingGiftJhasso", "GLOBAL", 1)
 		!Dead("halbaz")
 	~ THEN REPLY @36 /* ~I wasn't aware that our love life was of interest to anyone else.~ */
 	GOTO XA_GiveRing
 	
 	IF ~
-		!Global("XA_RingGiftAldeth", "GLOBAL", 1)
-		!Global("XA_RingGiftJhasso", "GLOBAL", 1)
+		!Global("XA_LC_RingGiftAldeth", "GLOBAL", 1)
+		!Global("XA_LC_RingGiftJhasso", "GLOBAL", 1)
 		!Dead("halbaz")
 	~ THEN REPLY @35 /* ~Word travels fast, it seems.~  */
 	GOTO XA_GiveRing
@@ -135,8 +135,8 @@ IF ~~ THEN BEGIN XA_JhassoCorwinRomanceHow
 	GOTO XA_JhassoEnd
 	
 	IF ~
-		!Global("XA_RingGiftAldeth", "GLOBAL", 1)
-		!Global("XA_RingGiftJhasso", "GLOBAL", 1)
+		!Global("XA_LC_RingGiftAldeth", "GLOBAL", 1)
+		!Global("XA_LC_RingGiftJhasso", "GLOBAL", 1)
 	~ THEN
 	GOTO XA_GiveRing
 END
@@ -147,11 +147,11 @@ IF ~~ THEN BEGIN XA_JhassoCorwinFamilyEnd
 	SAY @31 /* ~I'm glad to hear it.~ */
 	
 	IF ~
-		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN GOTO XA_JhassoEnd
 	
 	IF ~
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN GOTO XA_JhassoCorwinRomance
 END
 
@@ -164,8 +164,8 @@ IF ~~ THEN BEGIN XA_JhassoCorwinRomanceEnd
 	GOTO XA_JhassoEnd
 	
 	IF ~
-		!Global("XA_RingGiftAldeth", "GLOBAL", 1)
-		!Global("XA_RingGiftJhasso", "GLOBAL", 1)
+		!Global("XA_LC_RingGiftAldeth", "GLOBAL", 1)
+		!Global("XA_LC_RingGiftJhasso", "GLOBAL", 1)
 	~ THEN GOTO XA_GiveRingGT1
 END
 
@@ -205,7 +205,7 @@ IF ~~ THEN BEGIN XA_GiveRing3
 	
 	IF ~~ THEN REPLY @23 /* ~Thank you, Jhasso. I appreciate it.~*/
 	DO ~
-		SetGlobal("XA_RingGiftJhasso", "GLOBAL", 1)
+		SetGlobal("XA_LC_RingGiftJhasso", "GLOBAL", 1)
 		//GiveItemCreate("XARINGJ", LastTalkedToBy(Myself),1,0,0)
 		//ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XARINGJ", IDENTIFIED,TRUE))
 	~
@@ -220,7 +220,7 @@ IF ~~ THEN BEGIN XA_WontFit
 	
 	IF ~~ THEN REPLY @23 /* ~Thank you, Jhasso. I appreciate it.~*/
 	DO ~
-		SetGlobal("XA_RingGiftJhasso", "GLOBAL", 1)
+		SetGlobal("XA_LC_RingGiftJhasso", "GLOBAL", 1)
 		//GiveItemCreate("XARINGJ", LastTalkedToBy(Myself),1,0,0)
 		//ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XARINGJ", IDENTIFIED,TRUE))
 	~
@@ -232,7 +232,7 @@ IF ~~ THEN BEGIN XA_GiveRing4
 	
 	IF ~~ THEN REPLY @27 /* ~What is it?~*/
 	DO ~
-		SetGlobal("XA_LC_Journal_RingJhasso", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_RingJhasso", "GLOBAL", 1)
 	~
 	GOTO XA_GiveRing5
 END
@@ -245,7 +245,7 @@ IF ~~ THEN BEGIN XA_GiveRing5
 END
 
 IF ~
-	Global("XA_JhassoGreeting", "LOCALS", 1)
+	Global("XA_LC_JhassoGreeting", "LOCALS", 1)
 ~ THEN BEGIN XA_JhassoEnd
 	SAY @30 /* ~Please, enjoy yourselves my friends. The Seven Suns is at your disposal.~*/
 	IF ~~ THEN
@@ -268,17 +268,17 @@ CHAIN
 	IF ~~ THEN XAJHASSO XA_JhassoCorwinFamily
 		@5 /* ~Captain Corwin, it's always a pleasure to see you. How is your family?~ */
 		DO ~
-			SetGlobal("XA_JhassoCorwinGreeting", "LOCALS", 1)
+			SetGlobal("XA_LC_JhassoCorwinGreeting", "LOCALS", 1)
 		~
 		== XACORWIJ
 		IF ~
-			Global("XA_CorwinMetFamily", "GLOBAL", 1)
+			Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
 		~
 		@6 /* ~Likewise, Jhasso. My family is doing well - we saw them shortly after we returned to the city.~ */
 		
 		== XACORWIJ
 		IF ~
-			!Global("XA_CorwinMetFamily", "GLOBAL", 1)
+			!Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
 		~
 		@7 /* ~Likewise, Jhasso. We're going to my home to see them shortly.~  */
 END XAJHASSO XA_JhassoCorwinFamilyEnd
@@ -291,12 +291,12 @@ CHAIN
 		@45 /* ~How is the family?~ */
 		== XACORWIJ
 		IF ~
-			Global("XA_CorwinMetFamily", "GLOBAL", 1)
+			Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
 		~
 		@46 /* ~They're doing well. I spent some time with them shortly after we returned to the city.~ */
 		== XACORWIJ
 		IF ~
-			!Global("XA_CorwinMetFamily", "GLOBAL", 1)
+			!Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
 		~
 		@47 /* ~We're going to go and see them shortly.~ */
 		== XAJHASSO

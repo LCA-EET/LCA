@@ -920,14 +920,66 @@ Glint happily expounds on his many adventures since leaving home; it's difficult
 @45917 = ~Properly positioned, this recently repaired catapult could inflict serious damage upon Caelar's enemies.~
 @45918 = ~Though dead for decades, the red dragon remains that crown this castle radiate menace.~
 @45919 = ~Exit~
-@45920 = ~Belt~
-@45921 = ~Belt of the Cunning Rogue~
-@45922 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+@45920 = ~Protection From Good~
+@45921 = ~Draw Upon Unholy Might~
+@45922 = ~Cure Critical Wounds~
+@45923 = ~Cure Critical Wounds
+(Necromancy)
+
+Level: 5
+Sphere: Healing 
+Range: Touch
+Duration: Permanent
+Casting Time: 8
+Area of Effect: 1 creature
+Saving Throw: None
+
+The Cure Critical Wounds spell is a very potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hands upon a creature and heals 27 points of damage from wounds or other injuries. The spell does not affect creatures without corporeal bodies, those of extraplanar origin, or those not living.~
+@45924 = ~Shining Bolt~
+@45925 = ~Shining Bolt
+(Invocation/Evocation)
+
+Level: 1
+Range: 60 ft.
+Duration: Instant
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+This unique ability allows Caelar to hurl a bolt of divine energy at an enemy once per day, dealing them 5d6 points of magic damage. Undead creatures and fiends are particularly susceptible to the bolt's effects, suffering double damage when they are struck. The target's Magic Resistance, if any, does not affect this ability.~
+@45926 = ~Bless~
+@45927 = ~Bless
+(Conjuration/Summoning)
+
+Level: 1
+Sphere: All
+Range: 40 ft.
+Duration: 6 rounds
+Casting Time: 9
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+Upon uttering the Bless spell, the caster raises the morale of friendly creatures by +1. Furthermore, it raises their attack and damage rolls by +1. The caster determines at what range (up to 40 ft.) the spell will be cast. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster (thus, affected creatures leaving the area are still subject to the spell's effects; those entering the area after the casting is completed are not).~
+@45928 = ~Darkness, 15' Radius~
+@45929 = ~Darkness, 15' Radius
+(Alteration)
+
+Level: 2
+Range: 30 ft.
+Duration: 1 turn
+Casting Time: 2
+Area of Effect: 8-ft. radius
+Saving Throw: None
+
+This spell causes total, impenetrable darkness. Neither normal nor magical light works in the area of effect. All vision (including infravision) is severely limited; anyone hostile caught in the area of effect is for all practical purposes blinded as per the 1st-level wizard spell. Creatures that leave the area covered by darkness will have their vision restored after 1 round.~
+@45930 = ~Belt~
+@45931 = ~Belt of the Cunning Rogue~
+@45932 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
 
 STATISTICS:
 
 Weight: 2~
-@45923 = ~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
+@45933 = ~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
 
 The pouches attached to the belt contain a number of small tools, wires, picks, and blades that can be used to pick locks and disable traps. 
 
@@ -938,9 +990,9 @@ Equipped abilities:
 – Find Traps: +15%
 
 Weight: 2~
-@45924 = ~Bullet~
-@45925 = ~Bullet of Fire +1~
-@45926 = ~A bullet is simply a rounded, well-balanced stone.
+@45934 = ~Bullet~
+@45935 = ~Bullet of Fire +1~
+@45936 = ~A bullet is simply a rounded, well-balanced stone.
 
 STATISTICS:
 
@@ -948,7 +1000,7 @@ Damage: 1d4+1 (missile)
 Launcher: Sling
 
 Weight: 0~
-@45927 = ~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
+@45937 = ~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
 
 STATISTICS:
 
@@ -957,14 +1009,14 @@ Damage type: Missile
 Launcher: Sling
 
 Weight: 0~
-@45928 = ~Ring~
-@45929 = ~Ring of Protection +1~
-@45930 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+@45938 = ~Ring~
+@45939 = ~Ring of Protection +1~
+@45940 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~
-@45931 = ~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
+@45941 = ~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
 
 STATISTICS:
 
@@ -973,12 +1025,12 @@ Equipped abilities:
 – Saving Throws: +1
 
 Weight: 0~
-@45932 = ~Circlet~
-@45933 = ~Circlet of the Cynosure~
-@45934 = ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
+@45942 = ~Circlet~
+@45943 = ~Circlet of the Cynosure~
+@45944 = ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
 
 Weight: 1~
-@45935 = ~Almost a century ago, paladin of Lathander Edythe Brightsworn commissioned this helm while preparing to face a powerful vampire. During her many years as a knight of the Morninglord, Lady Brightsworn had accumulated some wealth, most of which she spent in preparation for her quest. After tracking the vampire to Waterdeep's City of the Dead, she assembled a party of adventurers and led them into the monster's lair. Only one of the group returned. Bloodied and wild-eyed, clutching Lady Brightsworn's helm in his hands, he relayed a tale of the nightmarish warrens the group had found and the vampire who culled them from their group, slaughtering them one by one. Investigations into the City of the Dead uncovered some of the tunnels, but all had collapsed. Of the vampire, there was no trace.
+@45945 = ~Almost a century ago, paladin of Lathander Edythe Brightsworn commissioned this helm while preparing to face a powerful vampire. During her many years as a knight of the Morninglord, Lady Brightsworn had accumulated some wealth, most of which she spent in preparation for her quest. After tracking the vampire to Waterdeep's City of the Dead, she assembled a party of adventurers and led them into the monster's lair. Only one of the group returned. Bloodied and wild-eyed, clutching Lady Brightsworn's helm in his hands, he relayed a tale of the nightmarish warrens the group had found and the vampire who culled them from their group, slaughtering them one by one. Investigations into the City of the Dead uncovered some of the tunnels, but all had collapsed. Of the vampire, there was no trace.
 
 STATISTICS:
 
@@ -987,9 +1039,9 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 1~
-@45936 = ~Chain Mail~
-@45937 = ~Mail of the Hallowed Hero +3~
-@45938 = ~A chain mail tunic fashioned from some sort of bright metal. It is always worn over a layer of padded fabric or soft leather to prevent chafing and lessen the impact of blows.
+@45946 = ~Chain Mail~
+@45947 = ~Mail of the Hallowed Hero +3~
+@45948 = ~A chain mail tunic fashioned from some sort of bright metal. It is always worn over a layer of padded fabric or soft leather to prevent chafing and lessen the impact of blows.
 
 STATISTICS:
 
@@ -998,7 +1050,7 @@ Requires:
  6 Strength
 
 Weight: 40~
-@45939 = ~This armor was first worn by Olen Argent, Caelar's great-grandfather. Olen Argent's quest to hunt down a cult of Malar led him to the Misty Forest, where he encountered a group of elves living in the woods. At first, the elves were suspicious of Olen and tried to drive him out of the forest, but he spoke so eloquently of his quest that they agreed to help him. The elves tracked the cult to their hiding place within the forest, where Olen eradicated the cultists for their murderous deeds. Thankful to have the evil presence out of their homeland, the elves crafted a fine suit of mail for the paladin.
+@45949 = ~This armor was first worn by Olen Argent, Caelar's great-grandfather. Olen Argent's quest to hunt down a cult of Malar led him to the Misty Forest, where he encountered a group of elves living in the woods. At first, the elves were suspicious of Olen and tried to drive him out of the forest, but he spoke so eloquently of his quest that they agreed to help him. The elves tracked the cult to their hiding place within the forest, where Olen eradicated the cultists for their murderous deeds. Thankful to have the evil presence out of their homeland, the elves crafted a fine suit of mail for the paladin.
 
 STATISTICS:
 
@@ -1011,9 +1063,9 @@ Requires:
  6 Strength
 
 Weight: 7~
-@45940 = ~Medium Shield~
-@45941 = ~Solar Aegis +3~
-@45942 = ~A medium shield is carried in the same manner as a small shield. Unlike the small shield, however, its weight prevents the character from using <PRO_HISHER> shield hand for anything other than carrying the medium shield. Medium shields are usually made of metal, range from three to four feet in diameter, and can be of any shape, from round to square to a dragon's spread wings. A typical medieval shield resembles a triangle with one point facing downward.
+@45950 = ~Medium Shield~
+@45951 = ~Solar Aegis +3~
+@45952 = ~A medium shield is carried in the same manner as a small shield. Unlike the small shield, however, its weight prevents the character from using <PRO_HISHER> shield hand for anything other than carrying the medium shield. Medium shields are usually made of metal, range from three to four feet in diameter, and can be of any shape, from round to square to a dragon's spread wings. A typical medieval shield resembles a triangle with one point facing downward.
 
 STATISTICS:
 
@@ -1024,7 +1076,7 @@ Requires:
  12 Strength
 
 Weight: 8~
-@45943 = ~Engraved wings stretch across the face of this ornate shield. The silver shield, inlaid with pure sapphire, gleams with a high polish no matter how much damage it suffers or what rough environs it is carried through. Often crafted for paladins and members of holy militaristic orders, a solar aegis provides substantial protection for the pure of heart.
+@45953 = ~Engraved wings stretch across the face of this ornate shield. The silver shield, inlaid with pure sapphire, gleams with a high polish no matter how much damage it suffers or what rough environs it is carried through. Often crafted for paladins and members of holy militaristic orders, a solar aegis provides substantial protection for the pure of heart.
 
 STATISTICS:
 
@@ -1037,14 +1089,14 @@ Requires:
  12 Strength
 
 Weight: 3~
-@45944 = ~Girdle~
-@45945 = ~Golden Girdle~
-@45946 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+@45954 = ~Girdle~
+@45955 = ~Golden Girdle~
+@45956 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
 
 STATISTICS:
 
 Weight: 2~
-@45947 = ~Though its battered condition speaks to its past use in combat, few of the cuts in this leather girdle were made by an enemy's blade. It would seem the magical symbols gouged into the hide have the practical effect of making the item's wearer less vulnerable to the swords of their foes.
+@45957 = ~Though its battered condition speaks to its past use in combat, few of the cuts in this leather girdle were made by an enemy's blade. It would seem the magical symbols gouged into the hide have the practical effect of making the item's wearer less vulnerable to the swords of their foes.
 
 STATISTICS:
 
@@ -1052,9 +1104,9 @@ Equipped abilities:
 – Armor Class: +3 vs. slashing attacks
 
 Weight: 2~
-@45948 = ~Long Sword~
-@45949 = ~Aster's Edge +3~
-@45950 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+@45958 = ~Long Sword~
+@45959 = ~Aster's Edge +3~
+@45960 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
 
 STATISTICS:
 
@@ -1066,7 +1118,7 @@ Requires:
  6 Strength
 
 Weight: 4~
-@45951 = ~Legend tells that a powerful angelic being gifted this blade to a member of the Order of the Aster long ago. Details of the legend have been lost over time, but many believe the sword was a reward for slaying a monstrous fiend, perhaps even a balor. Delicate etchings of asters decorate the blade, which glows with a silver-blue flame when drawn.
+@45961 = ~Legend tells that a powerful angelic being gifted this blade to a member of the Order of the Aster long ago. Details of the legend have been lost over time, but many believe the sword was a reward for slaying a monstrous fiend, perhaps even a balor. Delicate etchings of asters decorate the blade, which glows with a silver-blue flame when drawn.
 
 STATISTICS:
 
@@ -1083,14 +1135,14 @@ Requires:
  5 Strength
 
 Weight: 2~
-@45952 = ~Belt~
-@45953 = ~Belt of Antipode~
-@45954 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+@45962 = ~Belt~
+@45963 = ~Belt of Antipode~
+@45964 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
 
 STATISTICS:
 
 Weight: 2~
-@45955 = ~Trimmed in the fur of a polar bear, this sturdy belt is tooled with images of blue moons and white ice floes. The wearer is immune to all cold-based effects but suffers double any fire damage.
+@45965 = ~Trimmed in the fur of a polar bear, this sturdy belt is tooled with images of blue moons and white ice floes. The wearer is immune to all cold-based effects but suffers double any fire damage.
 
 STATISTICS:
 
@@ -1099,14 +1151,14 @@ Equipped abilities:
 – Doubles all fire-based damage taken
 
 Weight: 2~
-@45956 = ~Bracers~
-@45957 = ~Bracers of Defense AC 5~
-@45958 = ~Bracers are thick bands of metal or leather that are strapped, belted, or tied to a character's forearm. Generally, the magic that is instilled in bracers is good only during combat, since most bracers help protect the wearer from injury or improve their chances to strike an opponent. Exceptions do exist, though such specialized items are rare at best.
+@45966 = ~Bracers~
+@45967 = ~Bracers of Defense AC 5~
+@45968 = ~Bracers are thick bands of metal or leather that are strapped, belted, or tied to a character's forearm. Generally, the magic that is instilled in bracers is good only during combat, since most bracers help protect the wearer from injury or improve their chances to strike an opponent. Exceptions do exist, though such specialized items are rare at best.
 
 STATISTICS:
 
 Weight: 2~
-@45959 = ~Standard bracers support the forearm, which often proves handy in combat situations. This magically altered pair is handier still, bestowing the wearer with protection comparable to a full suit of armor. Unlike armor, the bracers allow a full range of motion. This makes them highly prized by wizards and sorcerers, who cannot allow physical restriction to be imposed upon them if they're to successfully manipulate the Weave.
+@45969 = ~Standard bracers support the forearm, which often proves handy in combat situations. This magically altered pair is handier still, bestowing the wearer with protection comparable to a full suit of armor. Unlike armor, the bracers allow a full range of motion. This makes them highly prized by wizards and sorcerers, who cannot allow physical restriction to be imposed upon them if they're to successfully manipulate the Weave.
 
 STATISTICS:
 
@@ -1114,14 +1166,14 @@ Equipped abilities:
 – Armor Class: 5
 
 Weight: 2~
-@45960 = ~Ring~
-@45961 = ~Ring of Free Action~
-@45962 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+@45970 = ~Ring~
+@45971 = ~Ring of Free Action~
+@45972 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~
-@45963 = ~Enemies have a hard time slowing this ring's wearer down. The runes etched in the silver band ward off spells designed to impede movement, granting its owner a freedom of mobility others affected by such magic are denied.
+@45973 = ~Enemies have a hard time slowing this ring's wearer down. The runes etched in the silver band ward off spells designed to impede movement, granting its owner a freedom of mobility others affected by such magic are denied.
 
 STATISTICS:
 
@@ -1129,9 +1181,9 @@ Equipped abilities:
 – The wearer is immune to everything, magical and otherwise, that affects mobility in any way. This includes Haste and Slow spells.
 
 Weight: 0~
-@45964 = ~Battle Axe~
-@45965 = ~Chill Axe +2~
-@45966 = ~The most common version of the battle axe is a stout pole about four feet in length with a single-edged, trumpet-shaped blade mounted on one end. Battle axes are also called broad axes.
+@45974 = ~Battle Axe~
+@45975 = ~Chill Axe +2~
+@45976 = ~The most common version of the battle axe is a stout pole about four feet in length with a single-edged, trumpet-shaped blade mounted on one end. Battle axes are also called broad axes.
 
 STATISTICS:
 
@@ -1143,7 +1195,7 @@ Requires:
  10 Strength
 
 Weight: 7~
-@45967 = ~This finely crafted axe bears the sigil of the Ice Dragon Berserker Lodge. Glowing white runes edge its cold silver blade, and a cloud of chill air trails behind the axe whenever it is swung. The most powerful rangers of the Ice Dragon Berserker Lodge carry these axes with them on their dejemmas, as protection from southern threats.
+@45977 = ~This finely crafted axe bears the sigil of the Ice Dragon Berserker Lodge. Glowing white runes edge its cold silver blade, and a cloud of chill air trails behind the axe whenever it is swung. The most powerful rangers of the Ice Dragon Berserker Lodge carry these axes with them on their dejemmas, as protection from southern threats.
 
 STATISTICS:
 
@@ -1163,21 +1215,21 @@ Requires:
  10 Strength
 
 Weight: 5~
-@45968 = ~Gloves of Gripping~
-@45969 = ~Gloves of Gripping~
-@45970 = ~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
+@45978 = ~Gloves of Gripping~
+@45979 = ~Gloves of Gripping~
+@45980 = ~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
 
 STATISTICS:
 
 Weight: 2~
-@45971 = ~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
+@45981 = ~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
 
 STATISTICS:
 
 Weight: 2~
-@45972 = ~Hide Armor~
-@45973 = ~Cornugon's Revenge +2~
-@45974 = ~Hide armor is made from the thick hide of a very large animal (an elephant for example) or from many layers of normal leather from common animals, like cows. Hide armor is far too bulky, inflexible and heavy to be used much in advanced human cultures. However, among the barbaric humanoid masses throughout the dark forests and misty jungles of the world, hide armor is common. Even though it does offer more protection than leather armor, one must get by the offensive odor and shoddy appearance in order to wear it effectively. Even though Thieves can wear this armor, it has a negative effect on their abilities.
+@45982 = ~Hide Armor~
+@45983 = ~Cornugon's Revenge +2~
+@45984 = ~Hide armor is made from the thick hide of a very large animal (an elephant for example) or from many layers of normal leather from common animals, like cows. Hide armor is far too bulky, inflexible and heavy to be used much in advanced human cultures. However, among the barbaric humanoid masses throughout the dark forests and misty jungles of the world, hide armor is common. Even though it does offer more protection than leather armor, one must get by the offensive odor and shoddy appearance in order to wear it effectively. Even though Thieves can wear this armor, it has a negative effect on their abilities.
 
 STATISTICS:
 
@@ -1192,7 +1244,7 @@ Requires:
  6 Strength
 
 Weight: 40~
-@45975 = ~The devil Thel’blax was a scourge against the armies of the Abyss until he was assassinated by the servants of his own master, Dispater. With his final breath, Thel’blax cursed his own body to never lie still even in death. When his body was carried to the Iron Tower, Thel’blax’s horns and barbs continued to thrash about as though alive.
+@45985 = ~The devil Thel’blax was a scourge against the armies of the Abyss until he was assassinated by the servants of his own master, Dispater. With his final breath, Thel’blax cursed his own body to never lie still even in death. When his body was carried to the Iron Tower, Thel’blax’s horns and barbs continued to thrash about as though alive.
 
 The cursed cornugon’s body was dismantled by his peers, in the hopes that destroying him would end the curse; but the disparate pieces of Thel’blax’s body continued to prick and tear at any who approached. At last, Dispater ordered his ironsmiths to forge the pieces into a suit of armor, intending to use it as a means of torturing insubordinates. Inevitably, the armor fell into the hands of intrepid (if foolhardy) adventurers, who then brought the piece to Faerûn.
 
@@ -1215,21 +1267,21 @@ Requires:
  6 Strength
 
 Weight: 35~
-@45976 = ~A Key~
-@45977 = ~Troll Pen Key~
-@45978 = ~This is a standard key. Keys are used to open doors.
+@45986 = ~A Key~
+@45987 = ~Troll Pen Key~
+@45988 = ~This is a standard key. Keys are used to open doors.
 
 STATISTICS:
 
 Weight: 1~
-@45979 = ~This heavy iron key has a handle shaped like a troll's face.
+@45989 = ~This heavy iron key has a handle shaped like a troll's face.
 
 STATISTICS:
 
 Weight: 1~
-@45980 = ~Plate Mail~
-@45981 = ~Bloody Bone Plate +2~
-@45982 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+@45990 = ~Plate Mail~
+@45991 = ~Bloody Bone Plate +2~
+@45992 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
 
 STATISTICS:
 
@@ -1238,7 +1290,7 @@ Requires:
  12 Strength
 
 Weight: 50~
-@45983 = ~The warrior who once wore this armor died at the hands of a friend she trusted. The mark of her betrayal remains in the bloodstains that have darkened to brown on the gleaming bone-white armor. The armor functions properly, though it makes the wearer unappealing to look at.
+@45993 = ~The warrior who once wore this armor died at the hands of a friend she trusted. The mark of her betrayal remains in the bloodstains that have darkened to brown on the gleaming bone-white armor. The armor functions properly, though it makes the wearer unappealing to look at.
 
 STATISTICS:
 
@@ -1251,14 +1303,14 @@ Requires:
  8 Strength
 
 Weight: 20~
-@45984 = ~Amulet~
-@45985 = ~Amulet of Abnormally Awesome Ankheg Summoning~
-@45986 = ~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
+@45994 = ~Amulet~
+@45995 = ~Amulet of Abnormally Awesome Ankheg Summoning~
+@45996 = ~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
 
 STATISTICS:
 
 Weight: 1~
-@45987 = ~Crafted by the dark druid Ferrusk, this amulet resembles the curved pincers of an ankheg hanging from an iron chain. The pincers' polished green carapace catches the light, gleaming with an emerald sheen. Ferrusk created this amulet to summon a passel of ankhegs to fight at its wearer's command.
+@45997 = ~Crafted by the dark druid Ferrusk, this amulet resembles the curved pincers of an ankheg hanging from an iron chain. The pincers' polished green carapace catches the light, gleaming with an emerald sheen. Ferrusk created this amulet to summon a passel of ankhegs to fight at its wearer's command.
 
 STATISTICS:
 
@@ -1271,9 +1323,9 @@ Charge abilities:
   Duration: 2 turns
 
 Weight: 0~
-@45988 = ~Club~
-@45989 = ~Club +1~
-@45990 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
+@45998 = ~Club~
+@45999 = ~Club +1~
+@46000 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
 
 STATISTICS:
 
@@ -1285,7 +1337,7 @@ Requires:
  5 Strength
 
 Weight: 3~
-@45991 = ~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
+@46001 = ~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
 
 STATISTICS:
 
@@ -1298,21 +1350,21 @@ Requires:
  5 Strength
 
 Weight: 3~
-@45992 = ~Potion~
-@45993 = ~Slime Sickness Curative~
-@45994 = ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
+@46002 = ~Potion~
+@46003 = ~Slime Sickness Curative~
+@46004 = ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
 
 STATISTICS:
 
 Weight: 1~
-@45995 = ~This bottle contains a special healing potion that counteracts fungal poison found in the caverns beneath Dragonspear Castle. One sip from the bottle is enough to cure the afflicted.
+@46005 = ~This bottle contains a special healing potion that counteracts fungal poison found in the caverns beneath Dragonspear Castle. One sip from the bottle is enough to cure the afflicted.
 
 STATISTICS:
 
 Weight: 1~
-@45996 = ~Helmet~
-@45997 = ~Helmet~
-@45998 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+@46006 = ~Helmet~
+@46007 = ~Helmet~
+@46008 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -1320,7 +1372,7 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@45999 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+@46009 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -1328,9 +1380,9 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@46000 = ~Composite Longbow~
-@46001 = ~Corinth's Bow +2~
-@46002 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
+@46010 = ~Composite Longbow~
+@46011 = ~Corinth's Bow +2~
+@46012 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
 
 STATISTICS:
 
@@ -1343,7 +1395,7 @@ Requires:
  18 Strength
 
 Weight: 10~
-@46003 = ~Though obviously well-used, someone has taken excellent care of this finely crafted bow. A small golden seal on one side appears to be a family crest.
+@46013 = ~Though obviously well-used, someone has taken excellent care of this finely crafted bow. A small golden seal on one side appears to be a family crest.
 
 STATISTICS:
 
@@ -1362,9 +1414,9 @@ Requires:
  18 Strength
 
 Weight: 8~
-@46004 = ~Helmet~
-@46005 = ~Helmet~
-@46006 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+@46014 = ~Helmet~
+@46015 = ~Helmet~
+@46016 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
 
 STATISTICS:
 
@@ -1372,7 +1424,7 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@46007 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+@46017 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
 
 STATISTICS:
 
@@ -1380,16 +1432,16 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@46008 = ~Tristian's Holy Symbol~
-@46009 = ~Tristian's Holy Symbol~
-@46010 = ~A carved wooden chesspiece painted a brilliant cherry red. Two glittering rubies wink from the horse's eye sockets.
+@46018 = ~Tristian's Holy Symbol~
+@46019 = ~Tristian's Holy Symbol~
+@46020 = ~A carved wooden chesspiece painted a brilliant cherry red. Two glittering rubies wink from the horse's eye sockets.
 
 STATISTICS:
 
 Weight: 1~
-@46011 = ~Long Sword~
-@46012 = ~Long Sword +1~
-@46013 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+@46021 = ~Long Sword~
+@46022 = ~Long Sword +1~
+@46023 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
 
 STATISTICS:
 
@@ -1401,7 +1453,7 @@ Requires:
  6 Strength
 
 Weight: 4~
-@46014 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
+@46024 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
 
 STATISTICS:
 
@@ -1414,14 +1466,14 @@ Requires:
  6 Strength
 
 Weight: 4~
-@46015 = ~Ring~
-@46016 = ~Ring of the Crusade~
-@46017 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+@46025 = ~Ring~
+@46026 = ~Ring of the Crusade~
+@46027 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~
-@46018 = ~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
+@46028 = ~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
 
 STATISTICS:
 
@@ -1430,86 +1482,36 @@ Equipped abilities:
 – Saving Throws: +1, +3 vs. demons and devils
 
 Weight: 0~
-@46019 = ~Second Stone Fragment~
-@46020 = ~Second Stone Fragment~
-@46021 = ~A shard of stone belonging to an icon of Tempus.
+@46029 = ~Second Stone Fragment~
+@46030 = ~Second Stone Fragment~
+@46031 = ~A shard of stone belonging to an icon of Tempus.
 
 STATISTICS:
 
 Weight: 10~
-@46022 = ~Dreon's Signet Ring~
-@46023 = ~Dreon's Signet Ring~
-@46024 = ~This heavy gold ring displays the seal of Caelar Argent, leader of the Shining Lady's crusade.
+@46032 = ~Dreon's Signet Ring~
+@46033 = ~Dreon's Signet Ring~
+@46034 = ~This heavy gold ring displays the seal of Caelar Argent, leader of the Shining Lady's crusade.
 
 STATISTICS:
 
 Weight: 0~
-@46025 = ~Empty Wineskin~
-@46026 = ~Empty Wineskin~
-@46027 = ~This well-used wineskin is stained purple around the spout.
+@46035 = ~Empty Wineskin~
+@46036 = ~Empty Wineskin~
+@46037 = ~This well-used wineskin is stained purple around the spout.
 
 STATISTICS:
 
 Weight: 1~
-@46028 = ~Token of Faith~
-@46029 = ~Token of Faith~
-@46030 = ~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
+@46038 = ~Token of Faith~
+@46039 = ~Token of Faith~
+@46040 = ~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
 
 STATISTICS:
 
 Weight: 1~
-@46031 = ~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
+@46041 = ~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
 
 STATISTICS:
 
 Weight: 1~
-@46032 = ~Cure Critical Wounds~
-@46033 = ~Cure Critical Wounds
-(Necromancy)
-
-Level: 5
-Sphere: Healing 
-Range: Touch
-Duration: Permanent
-Casting Time: 8
-Area of Effect: 1 creature
-Saving Throw: None
-
-The Cure Critical Wounds spell is a very potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hands upon a creature and heals 27 points of damage from wounds or other injuries. The spell does not affect creatures without corporeal bodies, those of extraplanar origin, or those not living.~
-@46034 = ~Shining Bolt~
-@46035 = ~Shining Bolt
-(Invocation/Evocation)
-
-Level: 1
-Range: 60 ft.
-Duration: Instant
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: None
-
-This unique ability allows Caelar to hurl a bolt of divine energy at an enemy once per day, dealing them 5d6 points of magic damage. Undead creatures and fiends are particularly susceptible to the bolt's effects, suffering double damage when they are struck. The target's Magic Resistance, if any, does not affect this ability.~
-@46036 = ~Bless~
-@46037 = ~Bless
-(Conjuration/Summoning)
-
-Level: 1
-Sphere: All
-Range: 40 ft.
-Duration: 6 rounds
-Casting Time: 9
-Area of Effect: 15-ft. radius
-Saving Throw: None
-
-Upon uttering the Bless spell, the caster raises the morale of friendly creatures by +1. Furthermore, it raises their attack and damage rolls by +1. The caster determines at what range (up to 40 ft.) the spell will be cast. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster (thus, affected creatures leaving the area are still subject to the spell's effects; those entering the area after the casting is completed are not).~
-@46038 = ~Darkness, 15' Radius~
-@46039 = ~Darkness, 15' Radius
-(Alteration)
-
-Level: 2
-Range: 30 ft.
-Duration: 1 turn
-Casting Time: 2
-Area of Effect: 8-ft. radius
-Saving Throw: None
-
-This spell causes total, impenetrable darkness. Neither normal nor magical light works in the area of effect. All vision (including infravision) is severely limited; anyone hostile caught in the area of effect is for all practical purposes blinded as per the 1st-level wizard spell. Creatures that leave the area covered by darkness will have their vision restored after 1 round.~

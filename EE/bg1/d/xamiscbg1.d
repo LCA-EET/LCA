@@ -88,6 +88,6 @@
 	BEGIN 6 END
 	BEGIN 0 END
 	~
-		IncrementGlobal("XA_CorwinOpinionOfPlayer","GLOBAL",2)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer","GLOBAL",2)
 	~
 //}

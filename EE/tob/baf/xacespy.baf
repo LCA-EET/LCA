@@ -1,5 +1,5 @@
 IF
-	Global("XA_ItemMaker", "GLOBAL", 1)
+	Global("XA_LC_ItemMaker", "GLOBAL", 1)
 	Global("ImpForgeStuff","GLOBAL",1)
 THEN
 	RESPONSE #100
@@ -11,7 +11,7 @@ THEN
 END
 
 IF
-	Global("XA_ItemMaker", "GLOBAL", 2)
+	Global("XA_LC_ItemMaker", "GLOBAL", 2)
 	Global("ImpForgeStuff","GLOBAL",1)
 THEN
 	RESPONSE #100
@@ -23,7 +23,7 @@ THEN
 END
 
 IF
-	Global("XA_ItemMaker", "GLOBAL", 3)
+	Global("XA_LC_ItemMaker", "GLOBAL", 3)
 	Global("ImpForgeStuff","GLOBAL",1)
 THEN
 	RESPONSE #100
@@ -40,7 +40,7 @@ END
 
 
 IF
-	Global("XA_ItemMaker", "GLOBAL", 4)
+	Global("XA_LC_ItemMaker", "GLOBAL", 4)
 	Global("ImpForgeStuff","GLOBAL",1)
 THEN
 	RESPONSE #100

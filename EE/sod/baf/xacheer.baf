@@ -1,10 +1,10 @@
 IF
-	Global("XA_Cut59B_Ran", "GLOBAL", 1)
+	Global("XA_LC_Cut59B_Ran", "GLOBAL", 1)
 	InMyArea("BDFIST80")
 	InMyArea("BDWTR82")
 THEN
 	RESPONSE #100
-		SetGlobal("XA_Cut59B_Ran", "GLOBAL", 2)
+		SetGlobal("XA_LC_Cut59B_Ran", "GLOBAL", 2)
 		ActionOverride("BDFIST80", SetDialog("XAFISTEX"))
 		ActionOverride("BDWTR82", SetDialog("XAWTREX"))
 END

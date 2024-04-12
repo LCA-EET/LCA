@@ -1,8 +1,6 @@
 BEGIN ~XAALDETH~
 
 IF ~
-	//!IsGabber("XACORWIN")
-	//!InPartySlot(LastTalkedToBy, 0)
 	!IsGabber("XACORWIN")
 	!IsGabber(Player1)
 ~ THEN BEGIN XA_DefaultGreeting
@@ -12,14 +10,13 @@ END
 
 IF ~
 	IsGabber("XACORWIN")
-	//IsGabber("XACORWIN")
 ~ THEN BEGIN XA_CorwinGreeting
 	SAY @30 /* ~Welcome to the Merchant's League, Captain. Please, make yourself comfortable.~ */
 
 	IF ~~ THEN EXIT
 	
 	IF ~
-		!Global("XA_AldethGreeting", "LOCALS", 1)
+		!Global("XA_LC_AldethGreeting", "LOCALS", 1)
 	~ THEN GOTO XA_WantToSpeakToPlayer
 END
 
@@ -30,8 +27,7 @@ IF ~~ THEN XA_WantToSpeakToPlayer
 END
 
 IF ~
-	!Global("XA_AldethGreeting", "LOCALS", 1)
-	//InPartySlot(LastTalkedToBy, 0)
+	!Global("XA_LC_AldethGreeting", "LOCALS", 1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_Greeting
 	SAY @0 /* ~<CHARNAME>, you've returned! It's wonderful to see you again.~ */
@@ -40,14 +36,13 @@ IF ~
 	
 	IF ~~ THEN REPLY @1 /* ~Aldeth, it's good to see you. I see you've gotten things back on track in the Merchant's League.~ */
 	DO ~
-		SetGlobal("XA_AldethGreeting", "LOCALS", 1)
+		SetGlobal("XA_LC_AldethGreeting", "LOCALS", 1)
 	~
 	GOTO XA_1 //OK
 END
 
 IF ~
-	Global("XA_AldethGreeting", "LOCALS", 1)
-	//InPartySlot(LastTalkedToBy, 0)
+	Global("XA_LC_AldethGreeting", "LOCALS", 1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_SecondGreeting
 	SAY @25 /* ~Ah, you've returned. Please, stay for as long as you like. The Merchant's League is at your disposal.~*/
@@ -56,9 +51,9 @@ IF ~
 	EXIT
 	
 	IF ~
-		Global("XA_HandedOverManifests", "GLOBAL", 1)
-		!Global("XA_AskedAldethAboutWinston", "LOCALS", 1)
-		!Global("XA_RefugeeQuestComplete", "GLOBAL", 1)
+		Global("XA_LC_HandedOverManifests", "GLOBAL", 1)
+		!Global("XA_LC_AskedAldethAboutWinston", "LOCALS", 1)
+		!Global("XA_LC_RefugeeQuestComplete", "GLOBAL", 1)
 	~ THEN REPLY @26 /* ~Aldeth, I'm investigating reports of slaver activity in Baldur's Gate. Do you know anything of Winston Ventures?~ */
 	GOTO XA_AldethSlavers //OK
 END
@@ -68,7 +63,7 @@ IF ~~ THEN BEGIN XA_AldethSlavers
 	
 	IF ~~ THEN REPLY @28 /* ~Thank you.~*/
 	DO ~
-		SetGlobal("XA_AskedAldethAboutWinston", "LOCALS", 1)
+		SetGlobal("XA_LC_AskedAldethAboutWinston", "LOCALS", 1)
 	~
 	EXIT
 END
@@ -82,16 +77,16 @@ IF ~~ THEN BEGIN XA_1
 	
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		!Global("XA_RingGiftAldeth", "GLOBAL", 1)
-		!Global("XA_RingGiftJhasso", "GLOBAL", 1)
+		!Global("XA_LC_RingGiftAldeth", "GLOBAL", 1)
+		!Global("XA_LC_RingGiftJhasso", "GLOBAL", 1)
 		!Dead("halbaz")
 		!NumInPartyGT(1)
 	~ THEN GOTO XA_CorwinRomance //OK
 	
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		!Global("XA_RingGiftAldeth", "GLOBAL", 1)
-		!Global("XA_RingGiftJhasso", "GLOBAL", 1)
+		!Global("XA_LC_RingGiftAldeth", "GLOBAL", 1)
+		!Global("XA_LC_RingGiftJhasso", "GLOBAL", 1)
 		!Dead("halbaz")
 		NumInPartyGT(1)
 	~ THEN GOTO XA_CorwinRomanceGT1 //OK
@@ -138,9 +133,7 @@ IF ~~ THEN BEGIN XA_CorwinRomance3
 	
 	IF ~~ THEN REPLY @15 /* ~This is beautiful. It must've cost a fortune - I can't accept this!~ */
 	DO ~
-		SetGlobal("XA_RingGiftAldeth", "GLOBAL", 1)
-		//GiveItemCreate("XARINGA", LastTalkedToBy(Myself),1,0,0)
-		//ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XARINGA", IDENTIFIED,TRUE))
+		SetGlobal("XA_LC_RingGiftAldeth", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinRomance4 //OK
 END

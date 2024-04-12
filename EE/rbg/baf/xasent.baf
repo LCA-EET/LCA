@@ -14,8 +14,8 @@ THEN
 		ActionOverride(Player4, LeaveAreaLUA("XADEMSAN", "", [320.320], N))
 		ActionOverride(Player5, LeaveAreaLUA("XADEMSAN", "", [320.320], N))
 		ActionOverride(Player6, LeaveAreaLUA("XADEMSAN", "", [320.320], N))
-		SetGlobal("XA_SanctumCS_End", "GLOBAL", 1)
-		SetGlobal("XA_EnterSanctum", "GLOBAL", 1)
+		SetGlobal("XA_LC_SanctumCS_End", "GLOBAL", 1)
+		SetGlobal("XA_LC_EnterSanctum", "GLOBAL", 1)
 		
 		EndCutSceneMode()
 		

@@ -8,54 +8,54 @@
 */
 APPEND ~PLAYER1~
 	IF ~
-		Global("XA_OdrenDebug", "GLOBAL", 1)
+		Global("XA_LC_OdrenDebug", "GLOBAL", 1)
 	~ THEN BEGIN XA_OdrenDebug
 		SAY @194
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_OdrenDebug", "GLOBAL", 0)
+			SetGlobal("XA_LC_OdrenDebug", "GLOBAL", 0)
 		~
 		EXTERN GORODR1 35
 	END
 	IF ~
-		Global("XA_PromptToSendLetter", "GLOBAL", 1)
+		Global("XA_LC_PromptToSendLetter", "GLOBAL", 1)
 	~ THEN BEGIN XA_PromptCGS
 		SAY @141  /* ~(Now that Skie's soul has been freed, it may be worthwhile to send a letter to Baldur's Gate. The Dukes or the Flaming Fist may be able to assist you in your hunt for Irenicus. Perhaps someone in the Athkatla magistrate can help.)~*/
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_PromptToSendLetter", "GLOBAL", 2)
+			SetGlobal("XA_LC_PromptToSendLetter", "GLOBAL", 2)
 		~
 		EXIT
 	END
 
 	IF ~
-		Global("XA_CheckWithBrega", "GLOBAL", 1)
+		Global("XA_LC_CheckWithBrega", "GLOBAL", 1)
 	~ THEN BEGIN XA_Reminder
 		SAY @178  /*~(It's been a few days since you sent the letter and dagger to Baldur's Gate. Perhaps it's worthwhile to visit Brega and see if there is any news concerning Skie.)~ */
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CheckWithBrega", "GLOBAL", 2)
+			SetGlobal("XA_LC_CheckWithBrega", "GLOBAL", 2)
 		~
 		EXIT
 	END
 	
 	IF ~
-		Global("XA_CheckWithBrega2", "GLOBAL", 1)
+		Global("XA_LC_CheckWithBrega2", "GLOBAL", 1)
 	~ THEN BEGIN XA_Reminder
 		SAY @187 /*~(It's been a few days since you sent the letter and dagger to Baldur's Gate. Perhaps it's worthwhile to visit Brega and see if there is any news concerning Skie.)~ */
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CheckWithBrega2", "GLOBAL", 2)
+			SetGlobal("XA_LC_CheckWithBrega2", "GLOBAL", 2)
 		~
 		EXIT
 	END
 
 	IF ~
-		Global("XA_CorwinDiedFromBite", "GLOBAL", 1)
+		Global("XA_LC_CorwinDiedFromBite", "GLOBAL", 1)
 	~ THEN BEGIN XA_CorwinDiedFromBite
 		SAY @138 /* ~(You are nearly overcome by grief and anger — not just toward Bodhi and Irenicus, but also yourself, for your failure to save the woman you love.)~ */
 		
@@ -63,7 +63,7 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CorwinDiedFromBite", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinDiedFromBite", "GLOBAL", 2)
 			StartCutSceneMode()
 			StartCutScene("xacs08x")
 		~
@@ -208,23 +208,23 @@ END
 EXTEND_BOTTOM ~PLAYER1~ 25
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		!Global("XA_CorwinHell", "GLOBAL", 1)
+		!Global("XA_LC_CorwinHell", "GLOBAL", 1)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN
 	DO ~
-		SetGlobal("XA_CorwinHell", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinHell", "GLOBAL", 1)
 	~	
 	EXTERN ~XACORWIJ~ XA_P1_25A
 	
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		!Global("XA_CorwinHell", "GLOBAL", 1) 
+		!Global("XA_LC_CorwinHell", "GLOBAL", 1) 
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	THEN
 	DO ~
-		SetGlobal("XA_CorwinHell", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinHell", "GLOBAL", 1)
 	~	
 	EXTERN ~XACORWIJ~ XA_P1_25B
 END
@@ -233,13 +233,13 @@ EXTEND_BOTTOM PLAYER1 33
 	IF ~  
 		IsValidForPartyDialogue("XACORWIN")
 		Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
-		!Global("XA_CorwinLoveBG2", "GLOBAL", 1)
+		!Global("XA_LC_CorwinLoveBG2", "GLOBAL", 1)
 	~ THEN GOTO XAA0 //OK
 	
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 		Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
-		Global("XA_CorwinLoveBG2", "GLOBAL", 1)
+		Global("XA_LC_CorwinLoveBG2", "GLOBAL", 1)
 	~ THEN GOTO XAA0A //OK 
 	
 	IF ~  

@@ -2,37 +2,37 @@ BEGIN ~XALATH01~
 
 //{ Beno Boom
 IF ~
-	Global("XA_BenoBoom", "GLOBAL", 1)
+	Global("XA_LC_BenoBoom", "GLOBAL", 1)
 ~ THEN BEGIN XA_BenoBoom_ST
 	SAY @62 /* ~(He turns to you. He's covered in ... well... Beno.)~ */
 	
 	IF ~~ THEN REPLY @63  /* ~That was a satisfying explosion. Great job.~ */
 	DO ~
-		SetGlobal("XA_BenoBoom", "GLOBAL", 3)
-		SetGlobalTimer("XA_CorwinBenoSoul", "GLOBAL", ONE_DAY)
+		SetGlobal("XA_LC_BenoBoom", "GLOBAL", 3)
+		SetGlobalTimer("XA_LC_CorwinBenoSoul", "GLOBAL", ONE_DAY)
 		GiveItemCreate("XASTDAGD", LastTalkedToBy(Myself),1,0,0)
 	~
 	GOTO XA_BenoBoom_ST_2
 	
 	IF ~~ THEN REPLY @64 /*~Did I forget to tell you? The dagger contains multiple souls, not just Beno's.~ */
 	DO ~
-		SetGlobal("XA_BenoBoom", "GLOBAL", 3)
-		SetGlobalTimer("XA_CorwinBenoSoul", "GLOBAL", ONE_DAY)
+		SetGlobal("XA_LC_BenoBoom", "GLOBAL", 3)
+		SetGlobalTimer("XA_LC_CorwinBenoSoul", "GLOBAL", ONE_DAY)
 		GiveItemCreate("XASTDAGD", LastTalkedToBy(Myself),1,0,0)
 	~
 	GOTO XA_BenoBoom_ST_2
 	
 	IF ~~ THEN REPLY @65 /* ~Hahahah... you should take a look at yourself!~ */
 	DO ~
-		SetGlobal("XA_BenoBoom", "GLOBAL", 3)
-		SetGlobalTimer("XA_CorwinBenoSoul", "GLOBAL", ONE_DAY)
+		SetGlobal("XA_LC_BenoBoom", "GLOBAL", 3)
+		SetGlobalTimer("XA_LC_CorwinBenoSoul", "GLOBAL", ONE_DAY)
 		GiveItemCreate("XASTDAGD", LastTalkedToBy(Myself),1,0,0)
 	~
 	GOTO XA_BenoBoom_ST_2
 END
 
 IF ~
-	Global("XA_BenoBoom", "GLOBAL", 2)
+	Global("XA_LC_BenoBoom", "GLOBAL", 2)
 ~ THEN BEGIN XA_BenoBoom_Zombie
 	SAY @62 /* ~(He turns to you. He's covered in ... well... Beno.)~ */
 	
@@ -112,7 +112,7 @@ END
 
 //{ Initial Meeting
 IF ~
-	Global("XA_LathMetPlayer", "GLOBAL", 1)
+	Global("XA_LC_LathMetPlayer", "GLOBAL", 1)
 	OR(2)
 		PartyHasItem("XABENOHD")
 		PartyHasItem("XASTDAGB")
@@ -123,7 +123,7 @@ IF ~
 		PartyHasItem("XABENOHD")
 	~ THEN REPLY @1 /* ~What is it?~ */
 	DO ~
-		SetGlobal("XA_LathMetPlayer", "GLOBAL", 2)
+		SetGlobal("XA_LC_LathMetPlayer", "GLOBAL", 2)
 	~
 	GOTO XA_MissingHead
 	
@@ -131,7 +131,7 @@ IF ~
 		PartyHasItem("XASTDAGB")
 	~ THEN REPLY @1 /* ~What is it?~*/
 	DO ~
-		SetGlobal("XA_LathMetPlayer", "GLOBAL", 2)
+		SetGlobal("XA_LC_LathMetPlayer", "GLOBAL", 2)
 	~
 	GOTO XA_MissingSoul
 	
@@ -139,7 +139,7 @@ IF ~
 		PartyHasItem("XABENOHD")
 	~ THEN REPLY @2 /* ~Who are you?~*/
 	DO ~
-		SetGlobal("XA_LathMetPlayer", "GLOBAL", 2)
+		SetGlobal("XA_LC_LathMetPlayer", "GLOBAL", 2)
 	~
 	GOTO XA_MissingHead
 	
@@ -147,7 +147,7 @@ IF ~
 		PartyHasItem("XASTDAGB")
 	~ THEN REPLY @2 /* ~Who are you?~*/
 	DO ~
-		SetGlobal("XA_LathMetPlayer", "GLOBAL", 2)
+		SetGlobal("XA_LC_LathMetPlayer", "GLOBAL", 2)
 	~
 	GOTO XA_MissingSoul
 END
@@ -217,7 +217,7 @@ IF ~~ THEN BEGIN XA_ToldALie2
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @13 /* ~He kidnapped the daughter of the woman I love. Death was an appropriate punishment.~ */
 	DO ~
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	GOTO XA_KidnappedRohma
 	
@@ -226,7 +226,7 @@ IF ~~ THEN BEGIN XA_ToldALie2
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @15 /* ~He kidnapped the daughter of the woman I love. His imprisonment ensures that he'll never hurt her, or anyone else ever again.~ */
 	DO ~
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	GOTO XA_KidnappedRohma
 	
@@ -343,7 +343,7 @@ IF ~~ THEN BEGIN XA_BroughtBody_Soul
 		ActionOverride(Player4, DestroyItem("XASTDAGB"))
 		ActionOverride(Player5, DestroyItem("XASTDAGB"))
 		ActionOverride(Player6, DestroyItem("XASTDAGB"))
-		SetGlobal("XA_GaveDagger", "LOCALS", 1)
+		SetGlobal("XA_LC_GaveDagger", "LOCALS", 1)
 	~
 	GOTO XA_GaveDagger
 END

@@ -134,7 +134,7 @@ THEN
 		SmallWait(1)
 		DisplayStringHead("Crowd5", @1) /* ~*Cheering and Applause*~ */
 		
-		SetGlobal("XA_TM_ArcheryChallenge", "GLOBAL", 2)
+		SetGlobal("XA_LC_TM_ArcheryChallenge", "GLOBAL", 2)
 		
 		ActionOverride("trhmer01", MoveToPoint([3496.2317]))
 		Wait(3)
@@ -153,6 +153,6 @@ THEN
 		DisplayStringHead("Crowd5", @1) /* ~*Cheering and Applause*~ */
 		FadeToColor([30.0],0)
 		Wait(3)
-		SetGlobal("XA_CorwinWonTM", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinWonTM", "GLOBAL", 1)
 		StartCutScene("xacsexit")
 END

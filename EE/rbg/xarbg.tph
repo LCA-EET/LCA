@@ -519,6 +519,7 @@ END
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~
 	EXTEND_BOTTOM ~xadings.bcs~	~%MOD_FOLDER%/rbg/baf/xadings.baf~
 	EXTEND_TOP ~xabalrbg.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalegg.baf~
+	EXTEND_TOP ~xabalrbg.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalamu.baf~
 	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalrbg.baf~	
 //}
 
@@ -723,7 +724,7 @@ END
 		COPY_EXISTING ~xaa630.cre~ ~override~ // WV Guard 2
 		WRITE_ASCII 0x2CC ~xawvgrd2~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xawvgrd2~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8		// Override Script
+		WRITE_ASCII 0x248 ~xaguard~ #8		// Override Script
 		WRITE_ASCII 0x250 ~~ #8		// Class Script
 		WRITE_ASCII 0x258 ~~ #8		// Race Script
 		WRITE_ASCII 0x260 ~~ #8		// General Script
@@ -867,12 +868,8 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
 		
-		
-		
-		
 		COPY_EXISTING ~xaa130.sto~ ~override/xabartml.sto~ // Merchants' League Bar
 		WRITE_LONG 0xC RESOLVE_STR_REF(@4149)
-	
 	//}
 	
 	//{ Block C Base
@@ -888,7 +885,7 @@ END
 		COPY_EXISTING ~xac101.cre~ ~override/xarohma.cre~ // Rohma
 		WRITE_ASCII 0x2CC ~xarohma~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xarohma~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8		// Override Script
+		WRITE_ASCII 0x248 ~xarohma1~ #8		// Override Script
 		WRITE_ASCII 0x250 ~~ #8		// Class Script
 		WRITE_ASCII 0x258 ~~ #8		// Race Script
 		WRITE_ASCII 0x260 ~~ #8		// General Script
@@ -950,6 +947,16 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
+		//{ Evil Caelar
+			COPY_EXISTING ~xac108.cre~ ~override~
+			WRITE_ASCII 0x2CC ~z2~ #8 	// Dialogue
+			WRITE_ASCII 0x280 ~xac108~ #20  	// Script Name
+			WRITE_ASCII 0x248 ~xag1crus~ #8		// Override Script
+			WRITE_ASCII 0x250 ~xalcnull~ #8		// Class Script
+			WRITE_ASCII 0x258 ~xalcnull~ #8		// Race Script
+			WRITE_ASCII 0x260 ~xacaelac~ #8		// General Script
+			WRITE_ASCII 0x268 ~xalcnull~ #8		// Default Script
+		//}
 		EXTEND_BOTTOM ~xag1coal.bcs~ ~%MOD_FOLDER%/rbg/baf/xacrtyrd.baf~
 		EXTEND_BOTTOM ~xag1crus.bcs~ ~%MOD_FOLDER%/rbg/baf/xacrtyrd.baf~
 		
@@ -1197,6 +1204,7 @@ END
 		SAY NAME2 @4067
 		
 		COPY ~%MOD_FOLDER%/rbg/cre/xagorion.cre~ ~override~
+		WRITE_ASCII 0x250 ~mage14a~ #8		// Class Script
 		
 		COPY ~%MOD_FOLDER%/rbg/cre/xajasper.cre~ ~override~
 		SAY NAME1 @4092
@@ -1783,6 +1791,22 @@ END
 //}
 
 //{ Block A Area Modifications
+	//{ Places where Brevlik can spawn
+		ACTION_DEFINE_ARRAY brevSpawns
+		BEGIN
+			xaas133
+			xaas134
+			xaas155
+			xaas238
+			xaas457
+		END
+
+		ACTION_PHP_EACH brevSpawns AS _ => spawnArea
+		BEGIN
+			EXTEND_TOP ~%spawnArea%.bcs~ ~%MOD_FOLDER%/rbg/baf/xabrvspw.baf~
+		END
+	//}
+	
 	//{ ar0100 xaa229 NW Baldur's Gate
 		COPY_EXISTING ~xaa229.are~ ~override~
 		
@@ -1924,6 +1948,8 @@ END
 		// Replace Battle Song
 		WRITE_LONG 0x2438 xaf3
 		
+		// Replace Area Triggers
+		WRITE_ASCII 0x1474 ~xauctemp~ #8
 	//}
 	
 	//{ ar0126 xaa357 Ragefast's Home
@@ -2222,6 +2248,28 @@ END
 	
 	//{ ar0615 xaa669
 		EXTEND_TOP ~xaas669.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0615.baf~
+		
+		COPY_EXISTING ~xaa669.are~ ~override~
+		LPF fj_are_structure
+			INT_VAR
+				fj_type 		= 2
+				fj_box_left		= 724
+				fj_box_top		= 779
+				fj_box_right	= 791
+				fj_box_bottom	= 861
+				fj_cursor_idx	= 22
+				fj_alt_x		= 760
+				fj_alt_y		= 822
+				fj_flags		= 1024
+				fj_vertex_0     = 724 + (807 << 16)
+				fj_vertex_1     = 791 + (779 << 16)
+				fj_vertex_2     = 791 + (834 << 16)
+				fj_vertex_3     = 724 + (861 << 16)
+			STR_VAR
+				fj_structure_type = region
+				fj_name = ~XAP0615~
+				fj_reg_script = ~XAP0615~
+	END
 	//}
 	
 	//{ ar0619 xaa360
@@ -2255,6 +2303,28 @@ END
 	
 	//{ ar0706 xaa206
 		EXTEND_TOP ~xaas206.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0706.baf~
+		
+		COPY_EXISTING ~xaa0705.are~ ~override~
+		LPF fj_are_structure
+			INT_VAR
+				fj_type 		= 2
+				fj_box_left		= 215
+				fj_box_top		= 447
+				fj_box_right	= 271
+				fj_box_bottom	= 510
+				fj_cursor_idx	= 22
+				fj_alt_x		= 270
+				fj_alt_y		= 527
+				fj_flags		= 1024
+				fj_vertex_0     = 215 + (479 << 16)
+				fj_vertex_1     = 270 + (447 << 16)
+				fj_vertex_2     = 271 + (475 << 16)
+				fj_vertex_3     = 217 + (510 << 16)
+			STR_VAR
+				fj_structure_type = region
+				fj_name = ~XAP0706~
+				fj_reg_script = ~XAP0706~
+	END
 	//}
 	
 	//{ ar0726 xaa171 Diviner's Tent
@@ -2315,7 +2385,7 @@ END
 	//}
 	
 	//{ ar1113 xaa284 Slime Inn
-		COPY_EXISTING ~xaa132.sto~ ~override~
+		COPY_EXISTING ~xaa132.sto~ ~override/xasto00.sto~
 		WRITE_LONG 0xC RESOLVE_STR_REF(@4150)
 	
 		COPY_EXISTING ~xaa284.are~ ~override~

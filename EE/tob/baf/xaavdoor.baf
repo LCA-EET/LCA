@@ -1,8 +1,8 @@
 IF
 	Clicked([ANYONE])
-	GlobalGT("XA_TowerUnlock", "GLOBAL", 0)
+	GlobalGT("XA_LC_TowerUnlock", "GLOBAL", 0)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_TowerUnlock", "GLOBAL", 1)
+		SetGlobal("XA_LC_TowerUnlock", "GLOBAL", 1)
 		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 END

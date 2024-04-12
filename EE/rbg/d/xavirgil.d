@@ -2,15 +2,15 @@ BEGIN ~XAVIRGIL~
 
 IF ~
 	AreaCheck("xa2165")
-	Global("XA_VirgilInCustody", "GLOBAL", 1)
+	Global("XA_LC_VirgilInCustody", "GLOBAL", 1)
 	InPartySlot(LastTalkedToBy, 0)
-	Global("XA_VirgilCellTalk", "GLOBAL", 1)
+	Global("XA_LC_VirgilCellTalk", "GLOBAL", 1)
 ~ THEN BEGIN XA_InJail2
 	SAY @52 /* ~Oh, it's you. The 'hero'. I bet you're glad to see me in here.~ */
 	
 	IF ~~ THEN REPLY @53 /* ~I'm not. The overwhelming hopelessness that you're feeling now... I wouldn't wish it on anyone.~*/
 	DO ~
-		SetGlobal("XA_VirgilCellTalk", "GLOBAL", 2)
+		SetGlobal("XA_LC_VirgilCellTalk", "GLOBAL", 2)
 	~
 	GOTO XA_Hopelessness
 	
@@ -18,7 +18,7 @@ IF ~
 		Gender(Player1, MALE)
 	~ THEN REPLY @54 /*  ~It's what you deserve. Don't do the crime if you can't do the time.~ */
 	DO ~
-		SetGlobal("XA_VirgilCellTalk", "GLOBAL", 2)
+		SetGlobal("XA_LC_VirgilCellTalk", "GLOBAL", 2)
 	~
 	GOTO XA_GoToHell_M
 	
@@ -26,14 +26,14 @@ IF ~
 		!Gender(Player1, MALE)
 	~ THEN REPLY @54 /*  ~It's what you deserve. Don't do the crime if you can't do the time.~ */
 	DO ~
-		SetGlobal("XA_VirgilCellTalk", "GLOBAL", 2)
+		SetGlobal("XA_LC_VirgilCellTalk", "GLOBAL", 2)
 	~
 	GOTO XA_GoToHell_F
 END
 
 IF ~
 	AreaCheck("xa2165")
-	Global("XA_VirgilInCustody", "GLOBAL", 1)
+	Global("XA_LC_VirgilInCustody", "GLOBAL", 1)
 ~ THEN BEGIN XA_InJail3
 	SAY @51 /* ~Leave me be. There is much on my mind.~ */
 	IF ~~ THEN EXIT
@@ -70,7 +70,7 @@ IF ~~ THEN BEGIN XA_Hopeful
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN REPLY @63 /* ~Good to hear. Take care of yourself.~*/
 	DO ~
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	EXIT
 	
@@ -94,12 +94,12 @@ IF ~~ THEN BEGIN XA_GoToHell_F
 END
 
 IF ~
-	!Global("XA_VirgilGreeting", "LOCALS", 1)
+	!Global("XA_LC_VirgilGreeting", "LOCALS", 1)
 ~ THEN BEGIN XA_Greeting
 	SAY @0 /* ~Hello, and welcome to Winston Ventures. How may I help you?~ */
 	IF ~~ THEN REPLY @1
 	DO ~
-		SetGlobal("XA_VirgilGreeting", "LOCALS", 1)
+		SetGlobal("XA_LC_VirgilGreeting", "LOCALS", 1)
 	~
 	GOTO XA_Greeting2
 END
@@ -111,7 +111,7 @@ IF ~~ THEN BEGIN XA_Greeting2
 END
 
 IF ~
-	Global("XA_VirgilGreeting", "LOCALS", 1)
+	Global("XA_LC_VirgilGreeting", "LOCALS", 1)
 ~ THEN BEGIN XA_Greeting3
 	SAY @39 /* ~Is there something I can help you with?~ */
 	
@@ -119,27 +119,27 @@ IF ~
 	EXIT
 	
 	IF ~
-		Global("XA_DecodedManifest", "GLOBAL", 1)
-		Global("XA_AskVirgilManifest", "LOCALS", 1)
+		Global("XA_LC_DecodedManifest", "GLOBAL", 1)
+		Global("XA_LC_AskVirgilManifest", "LOCALS", 1)
 	~ THEN REPLY @46 /* ~Remember that manifest that you said wasn't yours? Well, we found your secret ledger and had it decoded.~ */
 	GOTO XA_ConfrontVirgil
 	
 	IF ~
-		Global("XA_HandedOverManifests", "GLOBAL", 1)
-		!Global("XA_AskVirgilManifest", "LOCALS", 1)
+		Global("XA_LC_HandedOverManifests", "GLOBAL", 1)
+		!Global("XA_LC_AskVirgilManifest", "LOCALS", 1)
 	~ THEN REPLY @3 /* ~We're investigating reports of slaver activity in Baldur's Gate. Do you know anything about the refugees from Caelar's crusade being sold as slaves?~ */
 	DO ~
-		SetGlobal("XA_AskVirgilManifest", "LOCALS", 1)
+		SetGlobal("XA_LC_AskVirgilManifest", "LOCALS", 1)
 	~
 	GOTO XA_AskAboutManifest
 	
 	IF ~
-		Global("XA_DecodedManifest", "GLOBAL", 1)
+		Global("XA_LC_DecodedManifest", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN EXTERN XACORWIJ XA_TakeIntoCustodyChain 
 	
 	IF ~
-		Global("XA_AskVirgilManifest", "LOCALS", 1)
+		Global("XA_LC_AskVirgilManifest", "LOCALS", 1)
 		PartyHasItem("XALEDGER")
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN EXTERN XACORWIJ XA_TakeIntoCustodyChain2
@@ -183,21 +183,21 @@ IF ~~ THEN BEGIN XA_AnythingElse
 	EXIT
 	
 	IF ~
-		Global("XA_HandedOverManifests", "GLOBAL", 1)
-		!Global("XA_AskVirgilManifest", "LOCALS", 1)
+		Global("XA_LC_HandedOverManifests", "GLOBAL", 1)
+		!Global("XA_LC_AskVirgilManifest", "LOCALS", 1)
 	~ THEN REPLY @3 /* ~We're investigating reports of slaver activity in Baldur's Gate. Do you know anything about the refugees from Caelar's crusade being sold as slaves?~ */
 	DO ~
-		SetGlobal("XA_AskVirgilManifest", "LOCALS", 1)
+		SetGlobal("XA_LC_AskVirgilManifest", "LOCALS", 1)
 	~
 	GOTO XA_AskAboutManifest
 	
 	IF ~
-		Global("XA_DecodedManifest", "GLOBAL", 1)
+		Global("XA_LC_DecodedManifest", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN EXTERN XACORWIJ XA_TakeIntoCustodyChain 
 	
 	IF ~
-		Global("XA_AskVirgilManifest", "LOCALS", 1)
+		Global("XA_LC_AskVirgilManifest", "LOCALS", 1)
 		PartyHasItem("XALEDGER")
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN EXTERN XACORWIJ XA_TakeIntoCustodyChain2

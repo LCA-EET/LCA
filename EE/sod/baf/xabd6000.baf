@@ -1,10 +1,10 @@
 IF
-	GlobalLT("XA_BD6000_DialogSwap", "GLOBAL", 1)
+	GlobalLT("XA_LC_BD6000_DialogSwap", "GLOBAL", 1)
 	InMyArea("bdschae2")
 	InMyArea("bdbence")
 THEN
 	RESPONSE #100
 		ActionOverride("bdbence", SetDialog("XABDBENC"))
 		ActionOverride("bdschae2", SetDialog("XABDSCH2"))
-		SetGlobal("XA_BD6000_DialogSwap", "GLOBAL", 1)
+		SetGlobal("XA_LC_BD6000_DialogSwap", "GLOBAL", 1)
 END

@@ -97,7 +97,7 @@ APPEND_EARLY VALYGARJ
 		SAY @22 /* ~Very funny. Can we go now?~ */
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 2)
 		~
 		EXIT
 	END
@@ -122,7 +122,7 @@ APPEND_EARLY VICONIJ
 		SAY @21 /* ~I respect a male who knows what he wants, and is willing to take it. I also respect a strong female who can force so many cries of passion from her mate. You are both worthy companions.~ */
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 2)
 		~
 		EXIT
 	END
@@ -131,7 +131,7 @@ APPEND_EARLY VICONIJ
 		SAY @23 /* ~I respect strong females who can force so many cries of passion from their mate. You are both worthy companions.~  */
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 2)
 		~
 		EXIT
 	END
@@ -141,8 +141,8 @@ END
 //{ Aerie
 APPEND_EARLY AERIEJ
 	IF ~
-		Global("XA_CorwinSex_1", "GLOBAL", 4)
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_1", "GLOBAL", 4)
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 		IsValidForPartyDialogue(Player1)
 		OR(4)
@@ -179,8 +179,8 @@ APPEND_EARLY AERIEJ
 	END
 	
 	IF ~
-		Global("XA_CorwinSex_1", "GLOBAL", 4)
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_1", "GLOBAL", 4)
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 		IsValidForPartyDialogue(Player1)
 		!IsValidForPartyDialogue("Imoen2")
@@ -307,7 +307,7 @@ APPEND_EARLY AERIEJ
 		= @16 /* ~I'm glad that you were able to ... express your love for eachother, but could you p-please do so more q-quietly in the future?~ */
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 2)
 		~
 		EXIT
 	END
@@ -317,8 +317,8 @@ END
 //{ Imoen
 APPEND_EARLY IMOEN2J
 	IF ~
-		Global("XA_CorwinSex_1", "GLOBAL", 4)
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_1", "GLOBAL", 4)
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 		IsValidForPartyDialogue(Player1)
 		OR(4)
@@ -355,8 +355,8 @@ APPEND_EARLY IMOEN2J
 	END
 	
 	IF ~
-		Global("XA_CorwinSex_1", "GLOBAL", 4)
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_1", "GLOBAL", 4)
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 		IsValidForPartyDialogue(Player1)
 		!IsValidForPartyDialogue("Aerie")
@@ -484,7 +484,7 @@ APPEND_EARLY IMOEN2J
 		= @29 /*  ~Hah, way to go kid!~ */
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 2)
 		~
 		EXIT
 	END
@@ -494,8 +494,8 @@ END
 //{ Jaheira
 APPEND_EARLY JAHEIRAJ
 	IF ~
-		Global("XA_CorwinSex_1", "GLOBAL", 4)
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_1", "GLOBAL", 4)
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 		IsValidForPartyDialogue(Player1)
 		OR(4)
@@ -532,8 +532,8 @@ APPEND_EARLY JAHEIRAJ
 	END
 	
 	IF ~
-		Global("XA_CorwinSex_1", "GLOBAL", 4)
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_1", "GLOBAL", 4)
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 		IsValidForPartyDialogue(Player1)
 		!IsValidForPartyDialogue("Aerie")
@@ -660,7 +660,7 @@ APPEND_EARLY JAHEIRAJ
 		= @14 /* ~Next time, let us know so the rest of us can book a room on the other side of town, or perhaps in a different city. Maybe then we can get some sleep!~*/
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 2)
 		~
 		EXIT
 	END
@@ -670,8 +670,8 @@ END
 //{ Nalia
 APPEND_EARLY NALIAJ
 	IF ~
-		Global("XA_CorwinSex_1", "GLOBAL", 4)
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_1", "GLOBAL", 4)
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 		IsValidForPartyDialogue(Player1)
 		OR(4)
@@ -708,8 +708,8 @@ APPEND_EARLY NALIAJ
 	END
 	
 	IF ~
-		Global("XA_CorwinSex_1", "GLOBAL", 4)
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_1", "GLOBAL", 4)
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 		IsValidForPartyDialogue(Player1)
 		!IsValidForPartyDialogue("Aerie")
@@ -836,7 +836,7 @@ APPEND_EARLY NALIAJ
 		= @14 /* ~Next time, let us know so the rest of us can book a room on the other side of town, or perhaps in a different city. Maybe then we can get some sleep!~*/
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 2)
 		~
 		EXIT
 	END
@@ -846,8 +846,8 @@ END
 //{ Neera
 APPEND_EARLY NEERAJ
 	IF ~
-		Global("XA_CorwinSex_1", "GLOBAL", 4)
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_1", "GLOBAL", 4)
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 		IsValidForPartyDialogue(Player1)
 		OR(4)
@@ -884,8 +884,8 @@ APPEND_EARLY NEERAJ
 	END
 	
 	IF ~
-		Global("XA_CorwinSex_1", "GLOBAL", 4)
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_1", "GLOBAL", 4)
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 		IsValidForPartyDialogue(Player1)
 		!IsValidForPartyDialogue("Aerie")
@@ -1011,7 +1011,7 @@ APPEND_EARLY NEERAJ
 		SAY @17 /* ~Oh I see now, no wonder you two look so happy! Next time, keep it down a notch, will ya?~*/
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 2)
 		~
 		EXIT
 	END

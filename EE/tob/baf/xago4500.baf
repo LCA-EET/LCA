@@ -4,7 +4,7 @@ THEN
 	RESPONSE #100
 		CutSceneId(Player1)
 		FadeToColor([30.0],0)
-		SetGlobal("XA_ReturnToAvernus", "GLOBAL", 1)
+		SetGlobal("XA_LC_ReturnToAvernus", "GLOBAL", 1)
 		ActionOverride("ppguy01", DestroySelf())
 		Wait(1)
 		LeaveAreaLUAPanic("XA4500","",[475.1550],NE)

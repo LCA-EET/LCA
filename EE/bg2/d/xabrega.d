@@ -19,7 +19,7 @@ ADD_STATE_TRIGGER HABREGA 0
 
 APPEND_EARLY HABREGA
 	IF ~
-		GlobalLT("XA_LetterSent", "GLOBAL",1)
+		GlobalLT("XA_LC_LetterSent", "GLOBAL",1)
 		!PartyHasItem("XASTDAG")
 		OR(3)
 			PartyHasItem("XALCORW1")
@@ -33,7 +33,7 @@ APPEND_EARLY HABREGA
 	END
 	
 	IF ~
-		GlobalLT("XA_LetterSent", "GLOBAL",1)
+		GlobalLT("XA_LC_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
 		PartyHasItem("XALCORW1")
 	~
@@ -45,7 +45,7 @@ APPEND_EARLY HABREGA
 		Brega, who works for the Athkatla magistrate, was kind enough to send the Soultaker dagger and a letter explaining my current situation to my love, Captain Schael Corwin of the Flaming Fist. I hope that the city's mages and priests can use the dagger to restore Skie Silvershield's soul to her body. If it works, Skie will be able to confirm that I am innocent of the crimes that I am accused of. Maybe then, Schael and I can finally be together, once this business with Irenicus is over. It is that hope which gives the strength to move forward.~ */
 		DO ~
 			AddJournalEntry(@14, INFO) 
-			SetGlobal("XA_LetterSent", "GLOBAL",1)
+			SetGlobal("XA_LC_LetterSent", "GLOBAL",1)
 		~
 		GOTO M34
 		
@@ -83,7 +83,7 @@ APPEND_EARLY HABREGA
 	END
 	
 	IF ~
-		GlobalLT("XA_LetterSent", "GLOBAL",1)
+		GlobalLT("XA_LC_LetterSent", "GLOBAL",1)
 		PartyHasItem("XALCOR1A")
 	~
 	THEN BEGIN M39A
@@ -92,7 +92,7 @@ APPEND_EARLY HABREGA
 
 		DO ~
 			AddJournalEntry(@45, INFO) 
-			SetGlobal("XA_LetterSent", "GLOBAL",1)
+			SetGlobal("XA_LC_LetterSent", "GLOBAL",1)
 		~
 		GOTO M34A
 		
@@ -101,7 +101,7 @@ APPEND_EARLY HABREGA
 	END
 	
 	IF ~
-		GlobalLT("XA_LetterSent", "GLOBAL",1)
+		GlobalLT("XA_LC_LetterSent", "GLOBAL",1)
 		PartyHasItem("XALCOR2A")
 	~
 	THEN BEGIN M40A
@@ -110,7 +110,7 @@ APPEND_EARLY HABREGA
 
 		DO ~
 			AddJournalEntry(@49, INFO)
-			SetGlobal("XA_LetterSent", "GLOBAL", 2)
+			SetGlobal("XA_LC_LetterSent", "GLOBAL", 2)
 		~
 		GOTO M34A
 		
@@ -119,7 +119,7 @@ APPEND_EARLY HABREGA
 	END
 	
 	IF ~
-		GlobalLT("XA_LetterSent", "GLOBAL",1)
+		GlobalLT("XA_LC_LetterSent", "GLOBAL",1)
 		PartyHasItem("XALDUNCA")
 	~
 	THEN BEGIN M41A
@@ -127,7 +127,7 @@ APPEND_EARLY HABREGA
 		IF ~~ THEN REPLY @13 /* ~Yes, that is correct.~ */
 		DO ~
 			AddJournalEntry(@51, INFO)
-			SetGlobal("XA_LetterSent", "GLOBAL", 3)
+			SetGlobal("XA_LC_LetterSent", "GLOBAL", 3)
 		~
 		GOTO M34A
 		
@@ -142,7 +142,7 @@ APPEND_EARLY HABREGA
 			PartyGoldGT(99)
 		~ THEN REPLY @41  /*~Here/ (Pay 100 gold.)~ */
 		DO ~
-			SetGlobal("XA_PaidForLetter", "GLOBAL", 1)
+			SetGlobal("XA_LC_PaidForLetter", "GLOBAL", 1)
 			TakePartyGold(100)
 		~ GOTO XA_WhoToSendTo
 		
@@ -199,7 +199,7 @@ APPEND_EARLY HABREGA
 			DestroyItem("XALCOR1A")
 			DestroyItem("XALCOR2A")
 			DestroyItem("XALDUNCA")
-			SetGlobalTimer("XA_Ath2","GLOBAL", FIVE_DAYS)
+			SetGlobalTimer("XA_LC_Ath2","GLOBAL", FIVE_DAYS)
 			AddexperienceParty(35000)
 		~
 		EXIT
@@ -208,7 +208,7 @@ APPEND_EARLY HABREGA
 	
 	
 	IF ~
-		GlobalLT("XA_LetterSent", "GLOBAL",1)
+		GlobalLT("XA_LC_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
 		PartyHasItem("XALCORW2")
 	~
@@ -220,7 +220,7 @@ APPEND_EARLY HABREGA
 		Brega, who works for the Athkatla magistrate, was kind enough to send the Soultaker dagger and a letter explaining my current situation to Captain Schael Corwin of the Flaming Fist. I hope that the city's mages and priests can use the dagger to restore Skie Silvershield's soul to her body. If it works, Skie will be able to confirm that I am innocent of the crimes that I am accused of.~*/
 		DO ~
 			AddJournalEntry(@16, INFO)
-			SetGlobal("XA_LetterSent", "GLOBAL", 2)
+			SetGlobal("XA_LC_LetterSent", "GLOBAL", 2)
 		~
 		GOTO M34
 		
@@ -231,7 +231,7 @@ APPEND_EARLY HABREGA
 	
 	
 	IF ~
-		GlobalLT("XA_LetterSent", "GLOBAL",1)
+		GlobalLT("XA_LC_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
 		PartyHasItem("XALDUNC")
 	~
@@ -244,7 +244,7 @@ APPEND_EARLY HABREGA
 		*/
 		DO ~
 			AddJournalEntry(@18, INFO)
-			SetGlobal("XA_LetterSent", "GLOBAL", 3)
+			SetGlobal("XA_LC_LetterSent", "GLOBAL", 3)
 		~
 		GOTO M34
 		
@@ -260,32 +260,32 @@ END
 EXTEND_BOTTOM HABREGA 0
 	
 	IF ~
-		GlobalLT("XA_LetterSent", "GLOBAL",1)
-		Global("XA_PromptToSendLetter", "GLOBAL", 2)
-		Global("XA_HelpBrega", "GLOBAL", 1)
+		GlobalLT("XA_LC_LetterSent", "GLOBAL",1)
+		Global("XA_LC_PromptToSendLetter", "GLOBAL", 2)
+		Global("XA_LC_HelpBrega", "GLOBAL", 1)
 	~
 	THEN REPLY @36  /* ~I need to send a letter to Baldur's Gate.~ */
 	GOTO XA_SendCGS_Free
 	
 	IF ~
-		GlobalLT("XA_LetterSent", "GLOBAL",1)
-		Global("XA_PromptToSendLetter", "GLOBAL", 2)
-		!Global("XA_HelpBrega", "GLOBAL", 1)
+		GlobalLT("XA_LC_LetterSent", "GLOBAL",1)
+		Global("XA_LC_PromptToSendLetter", "GLOBAL", 2)
+		!Global("XA_LC_HelpBrega", "GLOBAL", 1)
 	~
 	THEN REPLY @36  /* ~I need to send a letter to Baldur's Gate.~ */
 	GOTO XA_SendCGS
 	
 	IF ~
-		GlobalLT("XA_LetterSent", "GLOBAL",1)
+		GlobalLT("XA_LC_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
-		Global("XA_DaggerCHROverride", "GLOBAL", 1)
+		Global("XA_LC_DaggerCHROverride", "GLOBAL", 1)
 	~
 	THEN REPLY @34 /* ~You said you'd help me to send this dagger to Baldur's Gate.~ */
 	GOTO M30
 	
 	IF ~ 
-		GlobalLT("XA_LetterSent", "GLOBAL",1)
-		!Global("XA_HelpBrega", "GLOBAL", 1)
+		GlobalLT("XA_LC_LetterSent", "GLOBAL",1)
+		!Global("XA_LC_HelpBrega", "GLOBAL", 1)
 		PartyHasItem("XASTDAG")
 		!Global("MurdersSolved","GLOBAL",1)
 	~ 
@@ -293,10 +293,10 @@ EXTEND_BOTTOM HABREGA 0
 	GOTO M0
 	
 	IF ~  
-		GlobalLT("XA_LetterSent", "GLOBAL",1)
+		GlobalLT("XA_LC_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
 		Global("MurdersSolved","GLOBAL",1)
-		Global("XA_HelpBrega", "GLOBAL", 1)
+		Global("XA_LC_HelpBrega", "GLOBAL", 1)
 		!PartyHasItem("XALCORW1")
 		!PartyHasItem("XALCORW2")
 		!PartyHasItem("XALDUNC")
@@ -305,10 +305,10 @@ EXTEND_BOTTOM HABREGA 0
 	GOTO M30
 
 	IF ~  
-		GlobalLT("XA_LetterSent", "GLOBAL",1)
+		GlobalLT("XA_LC_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
 		Global("MurdersSolved","GLOBAL",1)
-		!Global("XA_HelpBrega", "GLOBAL", 1)
+		!Global("XA_LC_HelpBrega", "GLOBAL", 1)
 		!PartyHasItem("XALCORW1")
 		!PartyHasItem("XALCORW2")
 		!PartyHasItem("XALDUNC")
@@ -317,7 +317,7 @@ EXTEND_BOTTOM HABREGA 0
 	GOTO M30 	
 	
 	IF ~  
-		GlobalLT("XA_LetterSent", "GLOBAL",1)
+		GlobalLT("XA_LC_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
 		Global("MurdersSolved","GLOBAL",1)
 		PartyHasItem("XALCORW1")
@@ -326,7 +326,7 @@ EXTEND_BOTTOM HABREGA 0
 	GOTO M36a 
 	
 	IF ~  
-		GlobalLT("XA_LetterSent", "GLOBAL",1)
+		GlobalLT("XA_LC_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
 		Global("MurdersSolved","GLOBAL",1)
 		PartyHasItem("XALCORW2")
@@ -335,7 +335,7 @@ EXTEND_BOTTOM HABREGA 0
 	GOTO M36b 
 	
 	IF ~  
-		GlobalLT("XA_LetterSent", "GLOBAL",1)
+		GlobalLT("XA_LC_LetterSent", "GLOBAL",1)
 		PartyHasItem("XASTDAG")
 		Global("MurdersSolved","GLOBAL",1)
 		PartyHasItem("XALDUNC")
@@ -444,7 +444,7 @@ APPEND HABREGA
 			DestroyItem("XALCORW1")
 			DestroyItem("XALCORW2")
 			DestroyItem("XALDUNC")
-			SetGlobalTimer("XA_STtoBG","GLOBAL",TWO_DAYS)
+			SetGlobalTimer("XA_LC_STtoBG","GLOBAL",TWO_DAYS)
 			AddexperienceParty(35000)
 		~
 		EXIT
@@ -465,7 +465,7 @@ APPEND HABREGA
 		Brega, who works for the Athkatla magistrate, was kind enough to send the Soultaker dagger and a letter explaining my current situation to my love, Captain Schael Corwin of the Flaming Fist. I hope that the city's mages and priests can use the dagger to restore Skie Silvershield's soul to her body. If it works, Skie will be able to confirm that I am innocent of the crimes that I am accused of. Maybe then, Schael and I can finally be together, once this business with Irenicus is over. It is that hope which gives the strength to move forward.~ */
 		DO ~
 			AddJournalEntry(@14, INFO) 
-			SetGlobal("XA_LetterSent", "GLOBAL",1)
+			SetGlobal("XA_LC_LetterSent", "GLOBAL",1)
 		~
 		GOTO M34
 		
@@ -483,7 +483,7 @@ APPEND HABREGA
 		Brega, who works for the Athkatla magistrate, was kind enough to send the Soultaker dagger and a letter explaining my current situation to Captain Schael Corwin of the Flaming Fist. I hope that the city's mages and priests can use the dagger to restore Skie Silvershield's soul to her body. If it works, Skie will be able to confirm that I am innocent of the crimes that I am accused of.~*/
 		DO ~
 			AddJournalEntry(@16, INFO)
-			SetGlobal("XA_LetterSent", "GLOBAL", 2)
+			SetGlobal("XA_LC_LetterSent", "GLOBAL", 2)
 		~
 		GOTO M34
 		
@@ -501,7 +501,7 @@ APPEND HABREGA
 		*/
 		DO ~
 			AddJournalEntry(@18, INFO)
-			SetGlobal("XA_LetterSent", "GLOBAL", 3)
+			SetGlobal("XA_LC_LetterSent", "GLOBAL", 3)
 		~
 		GOTO M34
 		
@@ -518,7 +518,7 @@ APPEND HABREGA
 
 		Brega, who works for the Athkatla magistrate, offered to send the Soultaker dagger to Baldur's gate, in exchange for helping him with the investiation of a series of murders in the Bridge District. The mages and priests in the city may be able to use the dagger to restore Skie Silvershield's soul to her body. I agreed to help him.~ */
 		DO ~
-			SetGlobal("XA_HelpBrega", "GLOBAL", 1)
+			SetGlobal("XA_LC_HelpBrega", "GLOBAL", 1)
 			AddJournalEntry(@6, INFO)
 		~
 		
@@ -529,7 +529,7 @@ APPEND HABREGA
 		SAY @31 /* ~Well... if it's that urgent... sure, I'll have the dagger delivered.~ */
 		IF ~~ THEN REPLY @33 /* ~I appreciate that, thank you.~ */
 		DO ~
-			SetGlobal("XA_DaggerCHROverride", "GLOBAL", 1)
+			SetGlobal("XA_LC_DaggerCHROverride", "GLOBAL", 1)
 		~
 		GOTO M44
 	END

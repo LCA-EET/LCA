@@ -132,7 +132,7 @@ THEN
 		SmallWait(1)
 		DisplayStringHead("Crowd5", @1) /* ~*Cheering and Applause*~ */
 		
-		SetGlobal("XA_TM_ArcheryChallenge", "GLOBAL", 2)
+		SetGlobal("XA_LC_TM_ArcheryChallenge", "GLOBAL", 2)
 		
 		ActionOverride("trhmer01", MoveToPoint([3496.2317]))
 		Wait(3)

@@ -1,7 +1,7 @@
 BEGIN ~XAROHMA~
 
 IF ~
-	Global("XA_ByeRohma", "GLOBAL", 1)
+	Global("XA_LC_ByeRohma", "GLOBAL", 1)
 	!See("XACORWIN")
 ~ THEN BEGIN XA_EndBGQuest_CorwinRequested
 	SAY @69 /* ~(Yawn)~ */
@@ -10,9 +10,9 @@ IF ~
 END
 
 IF ~
-	Global("XA_ByeRohma", "GLOBAL", 1)
+	Global("XA_LC_ByeRohma", "GLOBAL", 1)
 	See("XACORWIN")
-	Global("XA_DidRequestCorwin", "GLOBAL", 1)
+	Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
 ~ THEN BEGIN XA_EndBGQuest_CorwinRequested
 	SAY @40 /* ~Mommy, what did the Dukes want?~ */
 	
@@ -21,9 +21,9 @@ IF ~
 END
 
 IF ~
-	Global("XA_ByeRohma", "GLOBAL", 1)
+	Global("XA_LC_ByeRohma", "GLOBAL", 1)
 	See("XACORWIN")
-	!Global("XA_DidRequestCorwin", "GLOBAL", 1)
+	!Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
 ~ THEN BEGIN XA_EndBGQuest_CorwinNotRequested
 	SAY @40 /* ~Mommy, what did the Dukes want?~ */
 	
@@ -34,14 +34,14 @@ END
 IF ~
 	IsGabber("XACORWIN")
 	Gender(Player1, MALE)
-	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-	!Global("XA_RohmaPlayerDaddy", "LOCALS", 1)
+	Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+	!Global("XA_LC_RohmaPlayerDaddy", "LOCALS", 1)
 ~ THEN BEGIN XA_PlayerNewDad
 	SAY @36 /* ~Mommy, is <CHARNAME> going to be my daddy now?~*/
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_RohmaPlayerDaddy", "LOCALS", 1)
+		SetGlobal("XA_LC_RohmaPlayerDaddy", "LOCALS", 1)
 	~ 
 	EXTERN XACORWIJ XA_PlayerNewDadChain
 END
@@ -58,7 +58,7 @@ IF ~
 	IsGabber("XACORWIN")
 	Gender(Player1, MALE)
 	RandomNum(2,2)
-	!Global("XA_RohmaPlayerDaddy", "LOCALS", 1)
+	!Global("XA_LC_RohmaPlayerDaddy", "LOCALS", 1)
 ~ THEN BEGIN XA_GreetMommyB
 	SAY @36 /* ~Mommy, is <CHARNAME> going to be my daddy now?~ */
 	
@@ -66,8 +66,8 @@ IF ~
 END
 
 IF ~
-	Global("XA_CorwinMetFamily", "GLOBAL", 1)
-	Global("XA_CorwinFamilyTalk", "GLOBAL", 3)
+	Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
+	Global("XA_LC_CorwinFamilyTalk", "GLOBAL", 3)
 	RandomNum(2,1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_Default
@@ -77,8 +77,8 @@ IF ~
 END
 
 IF ~
-	Global("XA_CorwinMetFamily", "GLOBAL", 1)
-	Global("XA_CorwinFamilyTalk", "GLOBAL", 3)
+	Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
+	Global("XA_LC_CorwinFamilyTalk", "GLOBAL", 3)
 	IsGabber(Player1)
 	RandomNum(2,2)
 ~ THEN BEGIN XA_Default
@@ -88,8 +88,8 @@ IF ~
 END
 
 IF ~
-	Global("XA_CorwinMetFamily", "GLOBAL", 1)
-	Global("XA_CorwinFamilyTalk", "GLOBAL", 3)
+	Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
+	Global("XA_LC_CorwinFamilyTalk", "GLOBAL", 3)
 	RandomNum(2,1)
 	!IsGabber(Player1)
 ~ THEN BEGIN XA_Default
@@ -99,8 +99,8 @@ IF ~
 END
 
 IF ~
-	Global("XA_CorwinMetFamily", "GLOBAL", 1)
-	Global("XA_CorwinFamilyTalk", "GLOBAL", 3)
+	Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
+	Global("XA_LC_CorwinFamilyTalk", "GLOBAL", 3)
 	!IsGabber(Player1)
 	RandomNum(2,2)
 ~ THEN BEGIN XA_Default
@@ -113,15 +113,15 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite3
 	SAY @10 /* ~(She turns to look at you.)~ */
 	
 	IF ~
-		!Global("XA_LC_MetRohma","Global",1)
+		!Global("XA_LC__MetRohma","Global",1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_LC_MetRohma","Global",1)
+		SetGlobal("XA_LC__MetRohma","Global",1)
 	~
 	GOTO XA_CorwinFamilyReunite3A1
 	
 	IF ~
-		Global("XA_LC_MetRohma","Global",1)
+		Global("XA_LC__MetRohma","Global",1)
 	~ THEN
 	GOTO XA_CorwinFamilyReunite3B1
 END
@@ -167,7 +167,7 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite3A4A1
 	
 	IF ~~ THEN REPLY @20 /* ~Your mommy was right. Rohma, here. I want you to have this. (Hand over the doll.)~ */
 	DO ~
-		SetGlobal("XA_LC_Journal_RohmaGift_2", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_RohmaGift_2", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinFamilyReunite3A4A2
 END
@@ -179,7 +179,7 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite3A4A2
 	DO ~
 		TakePartyItem("XARDOLL")
 		DestroyItem("XARDOLL")
-		SetGlobal("XA_GaveDoll", "Global", 1)
+		SetGlobal("XA_LC_GaveDoll", "Global", 1)
 	~
 	EXTERN XACORWIJ XA_CorwinFamilyReunite3A4A3
 END
@@ -188,17 +188,17 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite3A4A4
 	SAY @22 /*  ~Thank you!~ */
 	
 	IF ~
-		!Global("XA_JustBoughtDoll", "GLOBAL", 1)
+		!Global("XA_LC_JustBoughtDoll", "GLOBAL", 1)
 	~ THEN REPLY @24 /* ~Your welcome! How old are you, dear?~ */
 	GOTO XA_CorwinFamilyReunite3A5
 	
 	IF ~
-		Global("XA_JustBoughtDoll", "GLOBAL", 1)
+		Global("XA_LC_JustBoughtDoll", "GLOBAL", 1)
 	~ THEN REPLY @25 /* ~Your welcome. You've grown since I last saw you.~ */
 	GOTO XA_CorwinFamilyReunite3Z
 	
 	IF ~
-		Global("XA_JustBoughtDoll", "GLOBAL", 1)
+		Global("XA_LC_JustBoughtDoll", "GLOBAL", 1)
 	~ THEN REPLY @26 /* ~Your welcome. The last time I saw you Rohma, you were five years old. How old are you now?~ */
 	GOTO XA_CorwinFamilyReunite3Z
 END
@@ -214,7 +214,7 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite3A5
 	SAY @19 /* ~I'm one-two-three-four-five-six - six years old!~*/
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinFamilyTalk", "GLOBAL", 3)
+		SetGlobal("XA_LC_CorwinFamilyTalk", "GLOBAL", 3)
 	~
 	EXTERN XACORWIJ XA_CorwinFamilyReunite4
 END
@@ -232,8 +232,8 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite3B1
 	
 	IF ~
 		OR(2)
-			Global("XA_GaveDoll", "GLOBAL", 1)
-			Global("XA_GaveDoll", "GLOBAL", 2)
+			Global("XA_LC_GaveDoll", "GLOBAL", 1)
+			Global("XA_LC_GaveDoll", "GLOBAL", 2)
 	~ THEN GOTO XA_CorwinFamilyReunite3B1A
 END
 
@@ -244,7 +244,7 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite3B1A
 
 	IF ~~ THEN
 	DO ~
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinFamilyReunite3B2A
 END
@@ -264,8 +264,8 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite3B2B
 	
 	IF ~~ THEN REPLY @20 /* ~Your mommy was right. Rohma, here. I want you to have this. (Hand her the doll.)~ */
 	DO ~
-		SetGlobal("XA_JustBoughtDoll", "GLOBAL", 1)
-		SetGlobal("XA_LC_Journal_RohmaGift_2", "GLOBAL", 1)
+		SetGlobal("XA_LC_JustBoughtDoll", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_RohmaGift_2", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinFamilyReunite3A4A2
 	
@@ -275,7 +275,7 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite3Z
 	SAY @1 /* ~I'm six now!~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinFamilyTalk", "GLOBAL", 3)
+		SetGlobal("XA_LC_CorwinFamilyTalk", "GLOBAL", 3)
 	~
 	EXTERN XACORWIJ XA_CorwinFamilyReunite4
 END
@@ -312,19 +312,19 @@ IF ~~ THEN BEGIN XA_SayBye
 	SAY @32 /* ~Bye <CHARNAME>!~ */
 	
 	IF ~
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @33 /* ~Bye Rohma! Take good care of your mommy for me. I'll see the two of you tomorrow.~ */
 	DO ~
-		SetGlobal("XA_CorwinWithFamily", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinWithFamily", "GLOBAL", 1)
 		ActionOverride("XACORWIN", LeaveParty())
 	~
 	EXIT
 	
 	IF ~
-		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @34 /* ~Bye Rohma! It was nice to see you again. See you tomorrow, Schael.~*/
 	DO ~
-		SetGlobal("XA_CorwinWithFamily", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinWithFamily", "GLOBAL", 1)
 		ActionOverride("XACORWIN", LeaveParty())
 	~
 	EXIT
@@ -334,26 +334,26 @@ IF ~~ THEN BEGIN XA_ByeRohmaChain1End
 	SAY @49 /* ~Are we going home now?~ */
 	
 	IF ~
-		Global("XA_DidRequestCorwin", "GLOBAL", 1)
-		!Global("XA_SkieModActive", "GLOBAL",1)
+		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
+		!Global("XA_LC__SkieModActive", "GLOBAL",1)
 	~ THEN REPLY @50 /* ~No, sweetie. You and your grandpa are going to stay here, until your mom and I return from our trip. There's a guest room for you downstairs.~ */
 	GOTO XA_ByeRohmaChain2
 	
 	IF ~
-		!Global("XA_DidRequestCorwin", "GLOBAL", 1)
-		!Global("XA_SkieModActive", "GLOBAL",1)
+		!Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
+		!Global("XA_LC__SkieModActive", "GLOBAL",1)
 	~ THEN REPLY @68 /* ~You, mommy and grandpa are going to stay here until I return from my trip. There's a guest room for you downstairs.~ */
 	GOTO XA_ByeRohmaChain2
 	
 	IF ~
-		Global("XA_DidRequestCorwin", "GLOBAL", 1)
-		Global("XA_SkieModActive", "GLOBAL",1)
+		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
+		Global("XA_LC__SkieModActive", "GLOBAL",1)
 	~ THEN REPLY @50 /* ~No, sweetie. You and your grandpa are going to stay here, until your mom and I return from our trip. There's a guest room for you downstairs.~ */
 	GOTO XA_ByeRohmaChain2A
 	
 	IF ~
-		!Global("XA_DidRequestCorwin", "GLOBAL", 1)
-		Global("XA_SkieModActive", "GLOBAL",1)
+		!Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
+		Global("XA_LC__SkieModActive", "GLOBAL",1)
 	~ THEN REPLY @68 /* ~You, mommy and grandpa are going to stay here until I return from my trip. There's a guest room for you downstairs.~ */
 	GOTO XA_ByeRohmaChain2A
 END
@@ -362,15 +362,15 @@ IF ~~ THEN BEGIN XA_ByeRohmaChain2End
 	SAY @58 /* ~Goodnight, <CHARNAME>!~ */
 	
 	IF ~
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @59 /* ~Goodnight Rohma.~ */
 	DO ~
-		SetGlobal("XA_CorwinLoveBG2", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinLoveBG2", "GLOBAL", 1)
 	~	
 	GOTO XA_ByeRohmaEnd_Romance
 	
 	IF ~
-		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @59 /* ~Goodnight Rohma.~ */
 	EXTERN XACORWIJ XA_BedtimeRohmaChain
 END
@@ -382,33 +382,33 @@ IF ~~ THEN BEGIN XA_ByeRohmaEnd_Romance
 	
 	IF ~
 		Gender(Player1, MALE)
-		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 97)
+		GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 97)
 	~ THEN REPLY @62 /* ~I love you too, honey. Sleep well - I'll see you in the morning.~ */
 	DO ~
-		SetGlobal("XA_CorwinPregnant", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", SIXTEEN_DAYS)
+		SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_CorwinPregnantTimer", "GLOBAL", SIXTEEN_DAYS)
 	~
 	EXTERN XACORWIJ XA_BedtimeRohmaChain
 	
 	IF ~
 		Gender(Player1, MALE)
-		!GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 97)
+		!GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 97)
 	~ THEN REPLY @62 /* ~I love you too, honey. Sleep well - I'll see you in the morning.~ */
 	EXTERN XACORWIJ XA_BedtimeRohmaChain
 	
 	IF ~
 		Gender(Player1, MALE)
-		GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 97)
+		GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 97)
 	~ THEN REPLY @81 /* ~See you tomorrow.~ */
 	DO ~
-		SetGlobal("XA_CorwinPregnant", "GLOBAL", 1)
-		SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", SIXTEEN_DAYS)
+		SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_CorwinPregnantTimer", "GLOBAL", SIXTEEN_DAYS)
 	~
 	EXTERN XACORWIJ XA_BedtimeRohmaChain
 	
 	IF ~
 		Gender(Player1, MALE)
-		!GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 97)
+		!GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 97)
 	~ THEN REPLY @81 /* ~See you tomorrow.~ */
 	EXTERN XACORWIJ XA_BedtimeRohmaChain
 	
@@ -427,41 +427,41 @@ IF ~~ THEN XA_BedtimeRohmaChainEnd
 	SAY @65 /* ~Yes mommy.~ */
 	
 	IF ~
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		Global("XA_DidRequestCorwin", "GLOBAL", 1)
+		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_ReturnToBG", "GLOBAL", 2)
+		SetGlobal("XA_LC_ReturnToBG", "GLOBAL", 2)
 		StartCutscene("XASARA1")
 	~
 	EXIT
 	
 	IF ~
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		!Global("XA_DidRequestCorwin", "GLOBAL", 1)
+		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_ReturnToBG", "GLOBAL", 2)
+		SetGlobal("XA_LC_ReturnToBG", "GLOBAL", 2)
 		StartCutscene("XASARA3")
 	~
 	EXIT
 	
 	IF ~
-		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		Global("XA_DidRequestCorwin", "GLOBAL", 1)
+		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_ReturnToBG", "GLOBAL", 2)
+		SetGlobal("XA_LC_ReturnToBG", "GLOBAL", 2)
 		StartCutscene("XASARA2")
 	~
 	EXIT
 	
 	IF ~
-		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		!Global("XA_DidRequestCorwin", "GLOBAL", 1)
+		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_ReturnToBG", "GLOBAL", 2)
+		SetGlobal("XA_LC_ReturnToBG", "GLOBAL", 2)
 		StartCutscene("XASARA4")
 	~
 	EXIT
@@ -475,12 +475,12 @@ CHAIN XACORWIJ XA_ByeRohmaChain1
 	@43 /* ~It's a city, far away to the southeast. The Dukes are worried that if the Five aren't stopped, that they will come here to attack our city.~*/
 	== XAROHMA
 	IF ~
-		Global("XA_CorwinEET", "GLOBAL", 1)
+		Global("XA_LC_CorwinEET", "GLOBAL", 1)
 	~
 	@44 /* ~Mommy, are you going to go and fight them? Like what happened with Sarevok and Caelar?~*/
 	== XAROHMA
 	IF ~
-		!Global("XA_CorwinEET", "GLOBAL", 1)
+		!Global("XA_LC_CorwinEET", "GLOBAL", 1)
 	~
 	@75 /* ~Mommy, are you going to go and fight them? Like what happened with  Caelar?~*/
 	== XACORWIJ
@@ -509,20 +509,20 @@ CHAIN XAROHMA XA_ByeRohmaChain2
 	@55 /* ~Don't worry. <CHARNAME> and I are going to head over there and gather some things for you and grandpa.~  */
 	== XAROHMA
 	IF ~
-		Global("XA_GaveDoll", "GLOBAL", 1)
-		GlobalLT("XA_LC_DingsRohma", "GLOBAL", 1)
+		Global("XA_LC_GaveDoll", "GLOBAL", 1)
+		GlobalLT("XA_LC__DingsRohma", "GLOBAL", 1)
 	~
 	@56 /* ~Remember to bring my dolly.~ */
 	== XAROHMA
 	IF ~
-		Global("XA_GaveDoll", "GLOBAL", 1)
-		GlobalGT("XA_LC_DingsRohma", "GLOBAL", 0)
+		Global("XA_LC_GaveDoll", "GLOBAL", 1)
+		GlobalGT("XA_LC__DingsRohma", "GLOBAL", 0)
 	~
 	@79 /* ~Remember to bring Dings, and my dolly too.~ */
 	== XAROHMA
 	IF ~
-		!Global("XA_GaveDoll", "GLOBAL", 1)
-		GlobalGT("XA_LC_DingsRohma", "GLOBAL", 0)
+		!Global("XA_LC_GaveDoll", "GLOBAL", 1)
+		GlobalGT("XA_LC__DingsRohma", "GLOBAL", 0)
 	~
 	@80 /* ~Remember to bring Dings.~ */
 	== XACORWIJ
@@ -543,20 +543,20 @@ CHAIN XAROHMA XA_ByeRohmaChain2A
 	@55 /* ~Don't worry. <CHARNAME> and I are going to head over there and gather some things for you and grandpa.~  */
 	== XAROHMA
 	IF ~
-		Global("XA_GaveDoll", "GLOBAL", 1)
-		GlobalLT("XA_LC_DingsRohma", "GLOBAL", 1)
+		Global("XA_LC_GaveDoll", "GLOBAL", 1)
+		GlobalLT("XA_LC__DingsRohma", "GLOBAL", 1)
 	~
 	@56 /* ~Remember to bring my dolly.~ */
 	== XAROHMA
 	IF ~
-		Global("XA_GaveDoll", "GLOBAL", 1)
-		GlobalGT("XA_LC_DingsRohma", "GLOBAL", 0)
+		Global("XA_LC_GaveDoll", "GLOBAL", 1)
+		GlobalGT("XA_LC__DingsRohma", "GLOBAL", 0)
 	~
 	@79 /* ~Remember to bring Dings, and my dolly too.~ */
 	== XAROHMA
 	IF ~
-		!Global("XA_GaveDoll", "GLOBAL", 1)
-		GlobalGT("XA_LC_DingsRohma", "GLOBAL", 0)
+		!Global("XA_LC_GaveDoll", "GLOBAL", 1)
+		GlobalGT("XA_LC__DingsRohma", "GLOBAL", 0)
 	~
 	@80 /* ~Remember to bring Dings.~ */
 	== XACORWIJ
@@ -577,12 +577,12 @@ CHAIN XACORWIJ XA_ByeRohmaChain1_NR
 	@43 /* ~It's a city, far away to the southeast. The Dukes are worried that if the Five aren't stopped, that they will come here to attack our city.~*/
 	== XAROHMA
 	IF ~
-		Global("XA_CorwinEET", "GLOBAL", 1)
+		Global("XA_LC_CorwinEET", "GLOBAL", 1)
 	~
 	@44 /* ~Mommy, are you going to go and fight them? Like what happened with Sarevok and Caelar?~*/
 	== XAROHMA
 	IF ~
-		!Global("XA_CorwinEET", "GLOBAL", 1)
+		!Global("XA_LC_CorwinEET", "GLOBAL", 1)
 	~
 	@75 /* ~Mommy, are you going to go and fight them? Like what happened with  Caelar?~*/
 	== XACORWIJ

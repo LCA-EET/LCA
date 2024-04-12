@@ -1,7 +1,7 @@
 APPEND XALIIA
 
 	IF ~
-		Global("XA_RohmaKidnapped", "GLOBAL", 5)
+		Global("XA_LC_RohmaKidnapped", "GLOBAL", 5)
 	~ THEN BEGIN XA_RohmaKidnapped
 		SAY @0 /* ~We will look after Audamar. Go, and rescue the child.~*/
 		
@@ -18,11 +18,11 @@ APPEND XALIIA
 		SAY @9 /* ~It will take a couple of days to prepare... */
 		
 		IF ~
-			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN GOTO XA_SaradushDiscussion5A
 		
 		IF ~
-			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN GOTO XA_SaradushDiscussion5B
 	END
 

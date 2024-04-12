@@ -1,7 +1,7 @@
 BEGIN ~XABELAND~
 
 IF~
-	Global("XA_BelandEntranceFee","LOCALS",2)
+	Global("XA_LC_BelandEntranceFee","LOCALS",2)
 ~ THEN BEGIN XA_Greet2 
 	SAY @7 /* ~Please enter, and enjoy the works within.~ */
 	
@@ -10,17 +10,17 @@ IF~
 	
 	IF ~
 		PartyHasItem("XAFARSEE")
-		!Global("XA_GaveFarseer", "GLOBAL", 1)
+		!Global("XA_LC_GaveFarseer", "GLOBAL", 1)
 	~ THEN REPLY @28 /* ~We've recovered the Farseer. Unfortunately, it's been damaged, but perhaps you can repair it.~ */
 	DO ~
 		TakePartyItem("XAFARSEE")
-		SetGlobal("XA_GaveFarseer", "GLOBAL", 1)
+		SetGlobal("XA_LC_GaveFarseer", "GLOBAL", 1)
 	~
 	GOTO XA_TakeFarseer
 END
 
 IF ~ 
-	!Global("XA_BelandEntranceFee","LOCALS",2)
+	!Global("XA_LC_BelandEntranceFee","LOCALS",2)
 ~ THEN BEGIN 0 // from:
 	SAY @0 /* ~Welcome, all, to the Hall of Wonders.~*/
 	
@@ -41,7 +41,7 @@ IF ~~ THEN BEGIN XA_TakeFarseer
 	
 	IF ~
 		IsValidForPartyDialog("XACORWIN")
-		Global("XA_BrevlikArrested", "GLOBAL", 1)
+		Global("XA_LC_BrevlikArrested", "GLOBAL", 1)
 	~ THEN EXTERN XACORWIJ XA_TakeFarseer
 END
 
@@ -206,8 +206,8 @@ IF ~~ THEN BEGIN XA_HelpFindFarseer
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 1)
-		SetGlobal("XA_SpawnBrevlik", "GLOBAL", 1)
-		SetGlobal("XA_BelandEntranceFee","LOCALS",2)
+		SetGlobal("XA_LC_SpawnBrevlik", "GLOBAL", 1)
+		SetGlobal("XA_LC_BelandEntranceFee","LOCALS",2)
 	~
 	EXIT
 END
@@ -218,8 +218,8 @@ IF ~~ THEN BEGIN XA_HelpFindFarseer_Stolen
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 1)
-		SetGlobal("XA_SpawnBrevlik", "GLOBAL", 1)
-		SetGlobal("XA_BelandEntranceFee","LOCALS",2)
+		SetGlobal("XA_LC_SpawnBrevlik", "GLOBAL", 1)
+		SetGlobal("XA_LC_BelandEntranceFee","LOCALS",2)
 	~
 	EXIT
 END
@@ -230,8 +230,8 @@ IF ~~ THEN BEGIN XA_MakeAmends
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_LC_Journal_Farseer", "GLOBAL", 2)
-		SetGlobal("XA_SpawnBrevlik", "GLOBAL", 1)
-		SetGlobal("XA_BelandEntranceFee","LOCALS",2)
+		SetGlobal("XA_LC_SpawnBrevlik", "GLOBAL", 1)
+		SetGlobal("XA_LC_BelandEntranceFee","LOCALS",2)
 	~
 	EXIT
 	
@@ -249,7 +249,7 @@ IF ~~ THEN BEGIN XA_PleaseEnter
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_BelandEntranceFee","LOCALS",2)
+		SetGlobal("XA_LC_BelandEntranceFee","LOCALS",2)
 	~
 	EXIT
 END

@@ -4,7 +4,7 @@ THEN
 	RESPONSE #100
 		CutSceneId(Player1)
 		ActionOverride("ppireni2", FaceObject("XACORWIN"))
-		SetGlobal("XA_CorwinIrenicus", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinIrenicus", "GLOBAL", 1)
 		Wait(2)
 		ActionOverride("ppireni2", StartDialogNoSet(Player1))
 END

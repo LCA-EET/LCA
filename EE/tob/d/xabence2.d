@@ -1,13 +1,13 @@
 BEGIN ~XABENCE2~
 
 IF ~
-	GlobalLT("XA_BenceCaelar", "GLOBAL", 1)
+	GlobalLT("XA_LC_BenceCaelar", "GLOBAL", 1)
 ~ THEN BEGIN XA_BenceCaelar
 	SAY @0 /*~Where the hells am I!? <CHARNAME>?~*/
 	
 	IF ~~ THEN REPLY @1 /*~Corporal Duncan, allow me to present Caelar Argent, leader of the crusade. I summoned you here to take her into custody.~*/
 	DO ~
-		SetGlobal("XA_BenceCaelar", "GLOBAL", 1)
+		SetGlobal("XA_LC_BenceCaelar", "GLOBAL", 1)
 	~
 	GOTO XA_CaelarArrestChain
 END
@@ -28,7 +28,7 @@ IF ~~ THEN BEGIN XA_OffToJail2
 	~ THEN
 	DO ~
 		SetGlobal("XA_LC_Journal_CaelarJail", "GLOBAL", 1)
-		SetGlobal("XA_CorwinCaelarJail", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinCaelarJail", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XACAEBYE")
 	~

@@ -13,21 +13,21 @@ IF ~
 END
 
 IF ~
-	!Global("XA_HalbazGreeting", "LOCALS", 1)
+	!Global("XA_LC_HalbazGreeting", "LOCALS", 1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_Greeting
 	SAY @1 /* ~Ah, welcome. I'd heard that the hero of Baldur's Gate would be returning soon.~ */
 	
 	IF ~~ THEN REPLY @2 /* ~Things seem to have improved markedly since the last time I was here.~ */
 	DO ~
-		SetGlobal("XA_HalbazGreeting", "LOCALS", 1)
+		SetGlobal("XA_LC_HalbazGreeting", "LOCALS", 1)
 	~
 	GOTO XA_RefugeesCleared //OK
 
 END
 
 IF ~
-	Global("XA_HalbazGreeting", "LOCALS", 1)
+	Global("XA_LC_HalbazGreeting", "LOCALS", 1)
 ~ THEN BEGIN XA_SecondGreeting
 	SAY @4 /* ~Come to check out the wares of ol' Halbazzer, have ye?~*/
 	
@@ -35,23 +35,23 @@ IF ~
 	GOTO XA_StartStore
 	
 	IF ~
-		Global("XA_HandedOverManifests", "GLOBAL", 1)
-		!Global("XA_AskedHalbazAboutWinston", "LOCALS", 1)
-		!Global("XA_RefugeeQuestComplete", "GLOBAL", 1)
+		Global("XA_LC_HandedOverManifests", "GLOBAL", 1)
+		!Global("XA_LC_AskedHalbazAboutWinston", "LOCALS", 1)
+		!Global("XA_LC_RefugeeQuestComplete", "GLOBAL", 1)
 	~
 	THEN REPLY @6 /* ~About that. What can you tell me about Winston Ventures? I understand that they were primarily responsible for moving the refugees out of the city.~ */
 	GOTO XA_AskAboutSlavers
 	
 	IF ~
-		Global("XA_RingGiftAldeth", "GLOBAL", 1)
-		GlobalLT("XA_RingEnchanted", "GLOBAL", 1)
+		Global("XA_LC_RingGiftAldeth", "GLOBAL", 1)
+		GlobalLT("XA_LC_RingEnchanted", "GLOBAL", 1)
 		IsGabber(Player1)
 	~ THEN REPLY @10 /* ~Listen... (approach and ask about enchanting the ring.)~*/
 	GOTO XA_RingEnchant1__A //OK
 	
 	IF ~
-		Global("XA_RingGiftJhasso", "GLOBAL", 1)
-		GlobalLT("XA_RingEnchanted", "GLOBAL", 1)
+		Global("XA_LC_RingGiftJhasso", "GLOBAL", 1)
+		GlobalLT("XA_LC_RingEnchanted", "GLOBAL", 1)
 		IsGabber(Player1)
 	~ THEN REPLY @10 /* ~Listen... (approach and ask about enchanting the ring.)~*/
 	GOTO XA_RingEnchant1__J //OK
@@ -64,23 +64,23 @@ IF ~~ THEN BEGIN XA_RefugeesCleared
 	GOTO XA_StartStore
 	
 	IF ~
-		Global("XA_HandedOverManifests", "GLOBAL", 1)
-		!Global("XA_AskedHalbazAboutWinston", "LOCALS", 1)
-		!Global("XA_RefugeeQuestComplete", "GLOBAL", 1)
+		Global("XA_LC_HandedOverManifests", "GLOBAL", 1)
+		!Global("XA_LC_AskedHalbazAboutWinston", "LOCALS", 1)
+		!Global("XA_LC_RefugeeQuestComplete", "GLOBAL", 1)
 	~
 	THEN REPLY @6 /* ~About that. What can you tell me about Winston Ventures? I understand that they were primarily responsible for moving the refugees out of the city.~ */
 	GOTO XA_AskAboutSlavers
 	
 	IF ~
-		Global("XA_RingGiftAldeth", "GLOBAL", 1)
-		GlobalLT("XA_RingEnchanted", "GLOBAL", 1)
+		Global("XA_LC_RingGiftAldeth", "GLOBAL", 1)
+		GlobalLT("XA_LC_RingEnchanted", "GLOBAL", 1)
 		IsGabber(Player1)
 	~ THEN REPLY @10 /* ~Listen... (approach and ask about enchanting the ring.)~*/
 	GOTO XA_RingEnchant1__A //OK
 	
 	IF ~
-		Global("XA_RingGiftJhasso", "GLOBAL", 1)
-		GlobalLT("XA_RingEnchanted", "GLOBAL", 1)
+		Global("XA_LC_RingGiftJhasso", "GLOBAL", 1)
+		GlobalLT("XA_LC_RingEnchanted", "GLOBAL", 1)
 		IsGabber(Player1)
 	~ THEN REPLY @10 /* ~Listen... (approach and ask about enchanting the ring.)~*/
 	GOTO XA_RingEnchant1__J //OK
@@ -200,42 +200,42 @@ IF ~~ THEN BEGIN XA_RingEnchantmentDescriptions
 	What is the first enchantment you'd like to add?~*/
 	
 	IF ~
-		!Global("XA_RingEnchantment1", "GLOBAL", 1)
+		!Global("XA_LC_RingEnchantment1", "GLOBAL", 1)
 	~ THEN REPLY @30
 	DO ~
-		SetGlobal("XA_RingEnchantment1", "GLOBAL", 1)
+		SetGlobal("XA_LC_RingEnchantment1", "GLOBAL", 1)
 	~
 	GOTO XA_Note1
 	
 	IF ~
-		!Global("XA_RingEnchantment2", "GLOBAL", 1)
+		!Global("XA_LC_RingEnchantment2", "GLOBAL", 1)
 	~ THEN REPLY @31
 	DO ~
-		SetGlobal("XA_RingEnchantment2", "GLOBAL", 1)
+		SetGlobal("XA_LC_RingEnchantment2", "GLOBAL", 1)
 	~
 	GOTO XA_Note1
 	
 	IF ~
-		!Global("XA_RingEnchantment3", "GLOBAL", 1)
+		!Global("XA_LC_RingEnchantment3", "GLOBAL", 1)
 	~ THEN REPLY @32
 	DO ~
-		SetGlobal("XA_RingEnchantment3", "GLOBAL", 1)
+		SetGlobal("XA_LC_RingEnchantment3", "GLOBAL", 1)
 	~
 	GOTO XA_Note1
 	
 	IF ~
-		!Global("XA_RingEnchantment4", "GLOBAL", 1)
+		!Global("XA_LC_RingEnchantment4", "GLOBAL", 1)
 	~ THEN REPLY @33
 	DO ~
-		SetGlobal("XA_RingEnchantment4", "GLOBAL", 1)
+		SetGlobal("XA_LC_RingEnchantment4", "GLOBAL", 1)
 	~
 	GOTO XA_Note1
 	
 	IF ~
-		!Global("XA_RingEnchantment5", "GLOBAL", 1)
+		!Global("XA_LC_RingEnchantment5", "GLOBAL", 1)
 	~ THEN REPLY @34
 	DO ~
-		SetGlobal("XA_RingEnchantment5", "GLOBAL", 1)
+		SetGlobal("XA_LC_RingEnchantment5", "GLOBAL", 1)
 	~
 	GOTO XA_Note1
 	
@@ -245,42 +245,42 @@ IF ~~ THEN BEGIN XA_RingSecondEnchant
 	SAY @28 /* ~What is the second enchantment you'd like to add?~ */
 	
 	IF ~
-		!Global("XA_RingEnchantment1", "GLOBAL", 1)
+		!Global("XA_LC_RingEnchantment1", "GLOBAL", 1)
 	~ THEN REPLY @30
 	DO ~
-		SetGlobal("XA_RingEnchantment1", "GLOBAL", 1)
+		SetGlobal("XA_LC_RingEnchantment1", "GLOBAL", 1)
 	~
 	GOTO XA_Note2
 	
 	IF ~
-		!Global("XA_RingEnchantment2", "GLOBAL", 1)
+		!Global("XA_LC_RingEnchantment2", "GLOBAL", 1)
 	~ THEN REPLY @31
 	DO ~
-		SetGlobal("XA_RingEnchantment2", "GLOBAL", 1)
+		SetGlobal("XA_LC_RingEnchantment2", "GLOBAL", 1)
 	~
 	GOTO XA_Note2
 	
 	IF ~
-		!Global("XA_RingEnchantment3", "GLOBAL", 1)
+		!Global("XA_LC_RingEnchantment3", "GLOBAL", 1)
 	~ THEN REPLY @32
 	DO ~
-		SetGlobal("XA_RingEnchantment3", "GLOBAL", 1)
+		SetGlobal("XA_LC_RingEnchantment3", "GLOBAL", 1)
 	~
 	GOTO XA_Note2
 	
 	IF ~
-		!Global("XA_RingEnchantment4", "GLOBAL", 1)
+		!Global("XA_LC_RingEnchantment4", "GLOBAL", 1)
 	~ THEN REPLY @33
 	DO ~
-		SetGlobal("XA_RingEnchantment4", "GLOBAL", 1)
+		SetGlobal("XA_LC_RingEnchantment4", "GLOBAL", 1)
 	~
 	GOTO XA_Note2
 	
 	IF ~
-		!Global("XA_RingEnchantment5", "GLOBAL", 1)
+		!Global("XA_LC_RingEnchantment5", "GLOBAL", 1)
 	~ THEN REPLY @34
 	DO ~
-		SetGlobal("XA_RingEnchantment5", "GLOBAL", 1)
+		SetGlobal("XA_LC_RingEnchantment5", "GLOBAL", 1)
 	~
 	GOTO XA_Note2
 END
@@ -289,42 +289,42 @@ IF ~~ THEN XA_RingThirdEnchant
 	SAY @29 /* ~And the last enchantment?~ */
 	
 	IF ~
-		!Global("XA_RingEnchantment1", "GLOBAL", 1)
+		!Global("XA_LC_RingEnchantment1", "GLOBAL", 1)
 	~ THEN REPLY @30
 	DO ~
-		SetGlobal("XA_RingEnchantment1", "GLOBAL", 1)
+		SetGlobal("XA_LC_RingEnchantment1", "GLOBAL", 1)
 	~
 	GOTO XA_RingEnchantBoost
 	
 	IF ~
-		!Global("XA_RingEnchantment2", "GLOBAL", 1)
+		!Global("XA_LC_RingEnchantment2", "GLOBAL", 1)
 	~ THEN REPLY @31
 	DO ~
-		SetGlobal("XA_RingEnchantment2", "GLOBAL", 1)
+		SetGlobal("XA_LC_RingEnchantment2", "GLOBAL", 1)
 	~
 	GOTO XA_RingEnchantBoost
 	
 	IF ~
-		!Global("XA_RingEnchantment3", "GLOBAL", 1)
+		!Global("XA_LC_RingEnchantment3", "GLOBAL", 1)
 	~ THEN REPLY @32
 	DO ~
-		SetGlobal("XA_RingEnchantment3", "GLOBAL", 1)
+		SetGlobal("XA_LC_RingEnchantment3", "GLOBAL", 1)
 	~
 	GOTO XA_RingEnchantBoost
 	
 	IF ~
-		!Global("XA_RingEnchantment4", "GLOBAL", 1)
+		!Global("XA_LC_RingEnchantment4", "GLOBAL", 1)
 	~ THEN REPLY @33
 	DO ~
-		SetGlobal("XA_RingEnchantment4", "GLOBAL", 1)
+		SetGlobal("XA_LC_RingEnchantment4", "GLOBAL", 1)
 	~
 	GOTO XA_RingEnchantBoost
 	
 	IF ~
-		!Global("XA_RingEnchantment5", "GLOBAL", 1)
+		!Global("XA_LC_RingEnchantment5", "GLOBAL", 1)
 	~ THEN REPLY @34
 	DO ~
-		SetGlobal("XA_RingEnchantment5", "GLOBAL", 1)
+		SetGlobal("XA_LC_RingEnchantment5", "GLOBAL", 1)
 	~
 	GOTO XA_RingEnchantBoost
 END
@@ -366,8 +366,8 @@ IF ~~ THEN BEGIN XA_RingEnchantEnd_NoImbue
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LC_Journal_HalbazzerRing", "GLOBAL", 1)
-		SetGlobal("XA_RingEnchanted", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_HalbazzerRing", "GLOBAL", 1)
+		SetGlobal("XA_LC_RingEnchanted", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -378,8 +378,8 @@ IF ~~ THEN BEGIN XA_RingEnchantEnd_Imbue
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LC_Journal_HalbazzerRing", "GLOBAL", 1)
-		SetGlobal("XA_RingEnchanted", "GLOBAL", 2)
+		SetGlobal("XA_LC__Journal_HalbazzerRing", "GLOBAL", 1)
+		SetGlobal("XA_LC_RingEnchanted", "GLOBAL", 2)
 	~
 	EXIT
 END
@@ -389,7 +389,7 @@ IF ~~ THEN BEGIN XA_AskAboutSlavers
 	
 	IF ~~ THEN REPLY @8 /* ~I'm investigating slaver activity... I believe that the refugees were not resettled, but rather sold as slaves.~ */
 	DO ~
-		SetGlobal("XA_AskedHalbazAboutWinston", "LOCALS", 1)
+		SetGlobal("XA_LC_AskedHalbazAboutWinston", "LOCALS", 1)
 	~
 	GOTO XA_SlaversEnd
 	

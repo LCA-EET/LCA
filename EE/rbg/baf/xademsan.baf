@@ -1,26 +1,26 @@
 IF
-	Global("XA_EnterSanctum", "GLOBAL", 1)
-	GlobalLT("XA_NarzuSpawn", "MYAREA", 1)
+	Global("XA_LC_EnterSanctum", "GLOBAL", 1)
+	GlobalLT("XA_LC_NarzuSpawn", "MYAREA", 1)
 THEN
 	RESPONSE #100
 		CreateCreature("XANARZU", [327.180], S)
-		SetGlobal("XA_NarzuSpawn", "MYAREA", 1)
-		SetGlobal("XA_EnterSanctum", "GLOBAL", 0)
+		SetGlobal("XA_LC_NarzuSpawn", "MYAREA", 1)
+		SetGlobal("XA_LC_EnterSanctum", "GLOBAL", 0)
 		FadeFromColor([30.0],0)
 		Wait(1)
 END
 
 IF
-	Global("XA_EnterSanctum", "GLOBAL", 1)
+	Global("XA_LC_EnterSanctum", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_EnterSanctum", "GLOBAL", 0)
+		SetGlobal("XA_LC_EnterSanctum", "GLOBAL", 0)
 		FadeFromColor([30.0],0)
 		Wait(1)
 END
 
 IF
-	Global("XA_DemonDead", "GLOBAL", 3)
+	Global("XA_LC_DemonDead", "GLOBAL", 3)
 THEN
 	RESPONSE #100
 		ActionOverride("XALYRIEL", SetSequence(SEQ_CAST))
@@ -42,29 +42,23 @@ THEN
 		ApplySpell(Player5, CLERIC_CURE_CRITICAL_WOUNDS)
 		ApplySpell(Player6, CLERIC_CURE_CRITICAL_WOUNDS)
 		ActionOverride("XALYRIEL", SetSequence(SEQ_READY))
-		SetGlobal("XA_DemonDead", "GLOBAL", 4)
+		SetGlobal("XA_LC_DemonDead", "GLOBAL", 4)
 END
 
 
 IF
 	Dead("XANARZU")
-	GlobalLT("XA_DemonDead", "GLOBAL", 1)
+	GlobalLT("XA_LC_DemonDead", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_DemonDead", "GLOBAL", 1)
+		SetGlobal("XA_LC_DemonDead", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XADEMDED")
-		//SetInterrupt(FALSE)
-		//SetGlobal("XA_DemonDead", "GLOBAL", 1)
-		//CreateVisualEffect("SPPORTAL",[320.320])
-		//Wait(2)
-		//CreateCreature("XALYRIEL",[320.320],N)
-		//SetInterrupt(TRUE)
 END
 
 IF
 	HPPercentLT("XANARZU", 100)
-	GlobalLT("XA_ConfrontDemon", "GLOBAL", 1)
+	GlobalLT("XA_LC_ConfrontDemon", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		ApplySpell("XANARZU", CLERIC_HEAL)

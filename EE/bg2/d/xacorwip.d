@@ -20,7 +20,7 @@ IF ~
 	DO ~
 		SetInterrupt(FALSE)
 		ChangeAIScript("XACORWIN", OVERRIDE)
-		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinRejoinProcessed", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 	~
 	EXIT
@@ -29,7 +29,7 @@ END
 
 //{ Spellhold
 IF ~
-	Global("XA_CorwinIrenicus", "GLOBAL", 4)
+	Global("XA_LC_CorwinIrenicus", "GLOBAL", 4)
 ~ THEN BEGIN XA_CorwinIrenicusRejoin
 	SAY @75  /* ~Get me out of here!~ */
 	
@@ -38,8 +38,8 @@ IF ~
 	~ THEN REPLY @76 /* ~(Break the glass.)~*/
 	DO ~
 		SetInterrupt(FALSE)
-		SetGlobal("XA_CorwinIrenicus", "GLOBAL", 6)
-		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinIrenicus", "GLOBAL", 6)
+		SetGlobal("XA_LC_CorwinRejoinProcessed", "GLOBAL", 1)
 		//DisplayStringHead(Myself, @98)
 		JumpToPoint([810.945])
 		SetInterrupt(TRUE)
@@ -51,8 +51,8 @@ IF ~
 	~ THEN REPLY @76 /* ~(Break the glass.)~*/
 	DO ~
 		SetInterrupt(FALSE)
-		SetGlobal("XA_CorwinIrenicus", "GLOBAL", 5)
-		SetGlobalTimer("XA_CorwinRejoinTimer", "LOCALS", ONE_ROUND)
+		SetGlobal("XA_LC_CorwinIrenicus", "GLOBAL", 5)
+		SetGlobalTimer("XA_LC_CorwinRejoinTimer", "LOCALS", ONE_ROUND)
 		//DisplayStringHead(Myself, @99)
 		JumpToPoint([810.945])
 		Ally()
@@ -65,7 +65,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_CorwinIrenicusTalk", "LOCALS", 1)
+	Global("XA_LC_CorwinIrenicusTalk", "LOCALS", 1)
 ~ THEN BEGIN XA_CorwinIrenicusTalk
 	SAY @78  /* ~Thanks for the help back there.~ */
 	
@@ -73,9 +73,9 @@ IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @79 /* ~Are you sure you're alright, love?~ */
 	DO ~
-		SetGlobal("XA_CorwinIrenicusTalk", "LOCALS", 2)
-		SetGlobal("XA_PlayerRescueTalk", "LOCALS", 2)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinIrenicusTalk", "LOCALS", 2)
+		SetGlobal("XA_LC_PlayerRescueTalk", "LOCALS", 2)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinRescueTalk2
 	
@@ -83,17 +83,17 @@ IF ~
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @80 /* ~Are you sure you're alright, Captain?~ */
 	DO ~
-		SetGlobal("XA_CorwinIrenicusTalk", "LOCALS", 2)
-		SetGlobal("XA_PlayerRescueTalk", "LOCALS", 2)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinIrenicusTalk", "LOCALS", 2)
+		SetGlobal("XA_LC_PlayerRescueTalk", "LOCALS", 2)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinRescueTalk2
 	
 	IF ~~ THEN REPLY @81  /* ~That golem sure gave you a good squeeze.~*/
 	DO ~
-		SetGlobal("XA_CorwinIrenicusTalk", "LOCALS", 2)
-		SetGlobal("XA_PlayerRescueTalk", "LOCALS", 2)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinIrenicusTalk", "LOCALS", 2)
+		SetGlobal("XA_LC_PlayerRescueTalk", "LOCALS", 2)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinRescueTalk2
 END
@@ -109,7 +109,7 @@ IF ~~ THEN BEGIN XA_CorwinRescueTalk2
 
 	IF ~~ THEN REPLY @84  /* ~Nothing. Just the small matter of having my soul ripped out from me. Imoen too.~*/
 	DO ~
-		SetGlobal("XA_CorwinToldAboutSoul", "LOCALS", 1)
+		SetGlobal("XA_LC_CorwinToldAboutSoul", "LOCALS", 1)
 	~
 	GOTO XA_CorwinRescueTalk3
 END
@@ -131,20 +131,20 @@ IF ~~ THEN BEGIN XA_CorwinRescueTalk4
 	DO ~
 		SetInterrupt(FALSE)
 		//ChangeAIScript("XACORSCR", OVERRIDE)
-		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinRejoinProcessed", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 	~
 	EXIT
 	
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		Global("XA_CorwinToldAboutSoul", "LOCALS", 1)
+		Global("XA_LC_CorwinToldAboutSoul", "LOCALS", 1)
 	~ THEN
 	GOTO XA_CorwinRescueTalk5A
 	
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		!Global("XA_CorwinToldAboutSoul", "LOCALS", 1)
+		!Global("XA_LC_CorwinToldAboutSoul", "LOCALS", 1)
 	~ THEN
 	GOTO XA_CorwinRescueTalk5B
 END
@@ -160,7 +160,7 @@ IF ~~ THEN BEGIN XA_CorwinRescueTalk5A
 	DO ~
 		SetInterrupt(FALSE)
 		//ChangeAIScript("XACORSCR", OVERRIDE)
-		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinRejoinProcessed", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 	~
 	EXIT
@@ -176,7 +176,7 @@ IF ~~ THEN BEGIN XA_CorwinRescueTalk5B
 	DO ~
 		SetInterrupt(FALSE)
 		//ChangeAIScript("XACORSCR", OVERRIDE)
-		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinRejoinProcessed", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 	~
 	EXIT
@@ -186,10 +186,10 @@ END
 //{ Return to Baldur's Gate Dialog P-1
 IF ~
 	AreaCheck("XAHOME")
-	Global("XA_CorwinWithFamily", "GLOBAL", 1)
+	Global("XA_LC_CorwinWithFamily", "GLOBAL", 1)
 	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	IsGabber(Player1)
-	GlobalLT("XA_CorwinSex_3", "GLOBAL", 7)
+	GlobalLT("XA_LC_CorwinSex_3", "GLOBAL", 7)
 ~ THEN BEGIN XA_SeeYouLater
 	SAY @38 /* ~(She whispers in your ear.) I'll come see you in your room tonight, lover.~ */
 	
@@ -198,10 +198,10 @@ END
 
 IF ~
 	AreaCheck("XAHOME")
-	Global("XA_CorwinWithFamily", "GLOBAL", 1)
+	Global("XA_LC_CorwinWithFamily", "GLOBAL", 1)
 	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	IsGabber(Player1)
-	Global("XA_CorwinSex_3", "GLOBAL", 7)
+	Global("XA_LC_CorwinSex_3", "GLOBAL", 7)
 ~ THEN BEGIN XA_SeeYouLater2
 	SAY @100 /* ~I'll see you at the debriefing, love.~ */
 	
@@ -212,7 +212,7 @@ END
 //{ Return to Baldur's Gate Dialog P-2
 IF ~
 	AreaCheck("XAHOME")
-	Global("XA_CorwinWithFamily", "GLOBAL", 1)
+	Global("XA_LC_CorwinWithFamily", "GLOBAL", 1)
 ~ THEN BEGIN XA_SeeYouLater2
 	SAY @39 /* ~<GABBER>, I'll see you at the debriefing.~ */
 	
@@ -222,7 +222,7 @@ END
 
 //{ Corwin Can't Leave - See XACORSCR for Conditions. Dialog P-3
 IF ~
-	!Global("XA_CanLeaveParty", "LOCALS", 1)
+	!Global("XA_LC_CanLeaveParty", "LOCALS", 1)
 ~
 THEN BEGIN XA_CantLeave
 	SAY @33 /* ~No - we need to stick together if we're to find out way out of here. We can discuss this later.~ */
@@ -231,7 +231,7 @@ THEN BEGIN XA_CantLeave
 	
 	DO ~
 		ChangeAIScript("XACORWIN", OVERRIDE)
-		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -239,8 +239,8 @@ END
 
 //{ Return to Baldur's Gate - Can't Leave. Dialog P-4
 IF ~
-	Global("XA_ReturnToBG", "GLOBAL", 1)
-	GlobalLT("XA_CorwinWithFamily", "GLOBAL", 1)
+	Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_CorwinWithFamily", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinReturnToBG
 	SAY @37 /* ~Let's stick together for now.~*/
 	
@@ -248,7 +248,7 @@ IF ~
 	
 	DO ~
 		ChangeAIScript("XACORWIN", OVERRIDE)
-		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -256,8 +256,8 @@ END
 
 //{ Bit By Bodhi - Can't Leave. Dialog P-5
 IF ~
-	GlobalGT("XA_CorwinBit", "GLOBAL", 0)
-	GlobalLT("XA_CorwinCleansed", "GLOBAL", 1)
+	GlobalGT("XA_LC_CorwinBit", "GLOBAL", 0)
+	GlobalLT("XA_LC_CorwinCleansed", "GLOBAL", 1)
 ~
 THEN BEGIN XA_CorwinSick
 	SAY @30 /* ~My love? This bite... I'm not feeling well, at all. Please, don't leave my side.~ */
@@ -265,7 +265,7 @@ THEN BEGIN XA_CorwinSick
 	IF ~~ THEN REPLY @31 /* ~You're right, my dear. Stay with me. I'll look after you as best I can.~ */
 	DO ~
 		ChangeAIScript("XACORWIN", OVERRIDE)
-		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -273,17 +273,17 @@ END
 
 //{ Rejoin after resurrection from Bodhi episode. Dialog P-6
 IF ~
-	GlobalGT("XA_CorwinBit", "GLOBAL", 0)
-	Global("XA_CorwinCleansed", "GLOBAL", 1)
+	GlobalGT("XA_LC_CorwinBit", "GLOBAL", 0)
+	Global("XA_LC_CorwinCleansed", "GLOBAL", 1)
 ~
 THEN BEGIN XA_CorwinCleansed
 	SAY @15 /*~<CHARNAME>? I'm alive... but, how? ~*/
 	
 	IF ~~ THEN REPLY @16 /* ~Schael! Oh, thank goodness, I thought I had lost you.~ */
 	DO ~
-		SetGlobal("XA_CorwinCleansed", "GLOBAL", 2)
-		SetGlobal("XA_CorwinBit", "GLOBAL", 0)
-		SetGlobal("XA_PlayerRezzedCorwin", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinCleansed", "GLOBAL", 2)
+		SetGlobal("XA_LC_CorwinBit", "GLOBAL", 0)
+		SetGlobal("XA_LC_PlayerRezzedCorwin", "GLOBAL", 1)
 	~
 	GOTO XAA4
 END
@@ -291,21 +291,21 @@ END
 
 //{ Ask to Rejoin
 IF ~
-	Global("XA_CorwinJoined", "LOCALS", 1)
-	GlobalLT("XA_CorwinKickedOut", "LOCALS", 1)
+	Global("XA_LC_CorwinJoined", "LOCALS", 1)
+	GlobalLT("XA_LC_CorwinKickedOut", "LOCALS", 1)
 	ReputationGT(Player1,6)
 	!Race(Player1, LICH)
 ~ THEN BEGIN XA_AreYouSure
 	SAY @0 /* ~<CHARNAME>? Are you sure you don't want me with you?~ [BDCORP6] */
 	
 	IF ~
-		!Global("XA_CorwinPromoted", "GLOBAL", 1)
+		!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @6 /* ~Your assistance would be welcome Captain. Join me.~ */
 	GOTO XAA1
 	
 	IF ~
-		Global("XA_CorwinPromoted", "GLOBAL", 1)
+		Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @41 /* ~Your assistance would be welcome Major. Join me.~ */
 	GOTO XAA1
@@ -317,26 +317,26 @@ IF ~
 		
 	IF ~~ THEN REPLY @2 /* ~I do, but not at the moment. Wait here, I will come for you later.~ */
 	DO ~
-		SetGlobal("XA_CorwinJoined", "LOCALS", 0)
-		SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+		SetGlobal("XA_LC_CorwinJoined", "LOCALS", 0)
+		SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
 	~
 	GOTO XAA3
 	
 	IF ~
 		!AreaCheck("AR1002")
-		GlobalLT("XA_BeenToPocketPlane", "GLOBAL", 1)
+		GlobalLT("XA_LC_BeenToPocketPlane", "GLOBAL", 1)
 	~ THEN REPLY @73  /* ~Go. I'll meet you back at the Athkatla magistrate.~*/
 	GOTO XA_MeetAth
 	
 	IF ~
 		!AreaCheck("AR4500")
 		!AreaCheck("AR6200")
-		Global("XA_BeenToPocketPlane", "GLOBAL", 1)
+		Global("XA_LC_BeenToPocketPlane", "GLOBAL", 1)
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY #65302 /* ~I'll send you back to the pocket plane. Wait for me there.~ */ 
 	DO ~
-		SetGlobal("XA_CorwinJoined", "LOCALS", 0)
-		SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+		SetGlobal("XA_LC_CorwinJoined", "LOCALS", 0)
+		SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
 		CreateVisualEffectObject("SPDIMNDR",Myself)
 		Wait(2)
 		MoveBetweenAreas("AR4500",[1800.1465],S)
@@ -346,12 +346,12 @@ IF ~
 	IF ~
 		!AreaCheck("AR4500")
 		!AreaCheck("AR6200")
-		Global("XA_BeenToPocketPlane", "GLOBAL", 1)
+		Global("XA_LC_BeenToPocketPlane", "GLOBAL", 1)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @101 /* ~I'll send you back to the pocket plane. Wait for me there, dear.~ */ 
 	DO ~
-		SetGlobal("XA_CorwinJoined", "LOCALS", 0)
-		SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+		SetGlobal("XA_LC_CorwinJoined", "LOCALS", 0)
+		SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
 		CreateVisualEffectObject("SPDIMNDR",Myself)
 		Wait(2)
 		MoveBetweenAreas("AR4500",[1800.1465],S)
@@ -362,16 +362,16 @@ END
 
 //{ Kicked from Party - Don't Ask to Rejoin
 IF ~
-	Global("XA_CorwinJoined", "LOCALS", 1)
-	GlobalLT("XA_CorwinKickedOut", "LOCALS", 1)
+	Global("XA_LC_CorwinJoined", "LOCALS", 1)
+	GlobalLT("XA_LC_CorwinKickedOut", "LOCALS", 1)
 	ReputationLT(Player1,7)
 	!Race(Player1, LICH)
 ~ THEN BEGIN XA_AreYouSure_RepLT7
 	SAY @32 /* ~You want me out of here? Fine. If you ever clean up your act, you can find me in the Athkatla magistrate.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
-		SetGlobal("XA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
+		SetGlobal("XA_LC_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
 		ChangeAIScript("", OVERRIDE)
 		ChangeAIScript("", DEFAULT)
 		EscapeArea()
@@ -393,7 +393,7 @@ END
 //{ Rejoin After Kicked Out Dialogs
 	//{ Athkatla Magistrate - Rep OK
 	IF ~
-		Global("XA_CorwinKickedOut", "LOCALS", 1)
+		Global("XA_LC_CorwinKickedOut", "LOCALS", 1)
 		AreaCheck("AR1002")
 		ReputationGT(Player1,6)
 		!Race(Player1, LICH)
@@ -401,13 +401,13 @@ END
 		SAY @63  /*~<CHARNAME>. What do you need?~ [XA100032] */
 		
 		IF ~
-			!Global("XA_CorwinPromoted", "GLOBAL", 1)
+			!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @6 /* ~Your assistance would be welcome Captain. Join me.~ */
 		GOTO XAA1
 		
 		IF ~
-			Global("XA_CorwinPromoted", "GLOBAL", 1)
+			Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @41 /* ~Your assistance would be welcome Major. Join me.~ */
 		GOTO XAA1
@@ -419,20 +419,20 @@ END
 			
 		IF ~~ THEN REPLY @2 /* ~I do, but not at the moment. Wait here, I will come for you later.~ */
 		DO ~
-			SetGlobal("XA_CorwinJoined", "LOCALS", 0)
-			SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+			SetGlobal("XA_LC_CorwinJoined", "LOCALS", 0)
+			SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
 		~
 		GOTO XAA3
 		
 		IF ~
 			!AreaCheck("AR4500")
 			!AreaCheck("AR6200")
-			Global("XA_BeenToPocketPlane", "GLOBAL", 1)
+			Global("XA_LC_BeenToPocketPlane", "GLOBAL", 1)
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY #65302 /* ~I'll send you back to the pocket plane. Wait for me there.~ */ 
 		DO ~
-			SetGlobal("XA_CorwinJoined", "LOCALS", 0)
-			SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+			SetGlobal("XA_LC_CorwinJoined", "LOCALS", 0)
+			SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
 			CreateVisualEffectObject("SPDIMNDR",Myself)
 			Wait(2)
 			MoveBetweenAreas("AR4500",[1800.1465],S)
@@ -442,12 +442,12 @@ END
 		IF ~
 			!AreaCheck("AR4500")
 			!AreaCheck("AR6200")
-			Global("XA_BeenToPocketPlane", "GLOBAL", 1)
+			Global("XA_LC_BeenToPocketPlane", "GLOBAL", 1)
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @101 /* ~I'll send you back to the pocket plane. Wait for me there, dear.~ */ 
 		DO ~
-			SetGlobal("XA_CorwinJoined", "LOCALS", 0)
-			SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+			SetGlobal("XA_LC_CorwinJoined", "LOCALS", 0)
+			SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
 			CreateVisualEffectObject("SPDIMNDR",Myself)
 			Wait(2)
 			MoveBetweenAreas("AR4500",[1800.1465],S)
@@ -457,7 +457,7 @@ END
 	//}
 
 	IF ~
-		Global("XA_CorwinKickedOut", "LOCALS", 1)
+		Global("XA_LC_CorwinKickedOut", "LOCALS", 1)
 		!AreaCheck("AR1002")
 		ReputationGT(Player1,6)
 		!Race(Player1, LICH)
@@ -465,13 +465,13 @@ END
 		SAY @63  /*~<CHARNAME>. What do you need?~ [XA100032] */
 		
 		IF ~
-			!Global("XA_CorwinPromoted", "GLOBAL", 1)
+			!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @6 /* ~Your assistance would be welcome Captain. Join me.~ */
 		GOTO XAA1
 		
 		IF ~
-			Global("XA_CorwinPromoted", "GLOBAL", 1)
+			Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @41 /* ~Your assistance would be welcome Major. Join me.~ */
 		GOTO XAA1
@@ -483,20 +483,20 @@ END
 			
 		IF ~~ THEN REPLY @2 /* ~I do, but not at the moment. Wait here, I will come for you later.~ */
 		DO ~
-			SetGlobal("XA_CorwinJoined", "LOCALS", 0)
-			SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+			SetGlobal("XA_LC_CorwinJoined", "LOCALS", 0)
+			SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
 		~
 		GOTO XAA3
 		
 		IF ~
 			!AreaCheck("AR4500")
 			!AreaCheck("AR6200")
-			Global("XA_BeenToPocketPlane", "GLOBAL", 1)
+			Global("XA_LC_BeenToPocketPlane", "GLOBAL", 1)
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY #65302 /* ~I'll send you back to the pocket plane. Wait for me there.~ */ 
 		DO ~
-			SetGlobal("XA_CorwinJoined", "LOCALS", 0)
-			SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+			SetGlobal("XA_LC_CorwinJoined", "LOCALS", 0)
+			SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
 			CreateVisualEffectObject("SPDIMNDR",Myself)
 			Wait(2)
 			MoveBetweenAreas("AR4500",[1800.1465],S)
@@ -506,12 +506,12 @@ END
 		IF ~
 			!AreaCheck("AR4500")
 			!AreaCheck("AR6200")
-			Global("XA_BeenToPocketPlane", "GLOBAL", 1)
+			Global("XA_LC_BeenToPocketPlane", "GLOBAL", 1)
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @101 /* ~I'll send you back to the pocket plane. Wait for me there, dear.~ */ 
 		DO ~
-			SetGlobal("XA_CorwinJoined", "LOCALS", 0)
-			SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+			SetGlobal("XA_LC_CorwinJoined", "LOCALS", 0)
+			SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
 			CreateVisualEffectObject("SPDIMNDR",Myself)
 			Wait(2)
 			MoveBetweenAreas("AR4500",[1800.1465],S)
@@ -520,7 +520,7 @@ END
 		
 		IF ~
 			!AreaCheck("AR1002")
-			GlobalLT("XA_BeenToPocketPlane", "GLOBAL", 1)
+			GlobalLT("XA_LC_BeenToPocketPlane", "GLOBAL", 1)
 		~ THEN REPLY @73  /* ~Go. I'll meet you back at the Athkatla magistrate.~*/
 		GOTO XA_MeetAth
 	END
@@ -528,18 +528,18 @@ END
 
 	//{ Athkatla Magistrate - Rep Bad
 	IF ~
-		Global("XA_CorwinKickedOut", "LOCALS", 1)
+		Global("XA_LC_CorwinKickedOut", "LOCALS", 1)
 		!Race(Player1, LICH)
 		ReputationLT(Player1,7)
 		OR(2)
 			AreaCheck("AR1002")
-			Global("XA_BeenToPocketPlane", "GLOBAL", 1)
+			Global("XA_LC_BeenToPocketPlane", "GLOBAL", 1)
 	~ THEN BEGIN XA_BackAtAthkatlaCouncil_BadRep
 		SAY @102 /* ~Your reputation precedes you, 'hero'. Come and see me when you've cleaned up your act.~  */
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+			SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
 		~
 		EXIT
 	END 
@@ -547,18 +547,18 @@ END
 	
 	//{ Athkatla Magistrate - Rep Bad
 	IF ~
-		Global("XA_CorwinKickedOut", "LOCALS", 1)
+		Global("XA_LC_CorwinKickedOut", "LOCALS", 1)
 		!Race(Player1, LICH)
 		!AreaCheck("AR1002")
 		ReputationLT(Player1,7)
-		GlobalLT("XA_BeenToPocketPlane", "GLOBAL", 1)
+		GlobalLT("XA_LC_BeenToPocketPlane", "GLOBAL", 1)
 	~ THEN BEGIN XA_OutsideAthkatlaCouncil_BadRep
 		SAY @103 /* ~Your reputation precedes you, 'hero'. Come and see me at the Athkatla magistrate once you've cleaned up your act.~  */
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
-			SetGlobal("XA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
+			SetGlobal("XA_LC_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
 			ChangeAIScript("", OVERRIDE)
 			ChangeAIScript("", DEFAULT)
 			EscapeArea()
@@ -573,8 +573,8 @@ IF ~~ THEN BEGIN XA_MeetAth
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
-		SetGlobal("XA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
+		SetGlobal("XA_LC_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
 		ChangeAIScript("", OVERRIDE)
 		ChangeAIScript("", DEFAULT)
 		EscapeArea()
@@ -587,7 +587,7 @@ IF ~~ THEN BEGIN XAA1
 	IF ~~ THEN
 	DO ~
 		ChangeAIScript("XACORWIN", OVERRIDE)
-		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -597,7 +597,7 @@ IF ~~ THEN BEGIN XAA2
 	IF ~~ THEN
 	DO ~
 		ChangeAIScript("XACORWIN", OVERRIDE)
-		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -606,7 +606,7 @@ IF ~~ THEN BEGIN XAA3
 	SAY @5 /* ~Very well. Don't take too long.~ [BDCORP5]*/ 
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinKickedOut", "LOCALS", 1)
+		SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
 	~
 	EXIT
 END
@@ -665,7 +665,7 @@ IF ~~ THEN BEGIN XAA8
 	SAY @29 /* ~(Sigh) Fair enough. I'll be waiting for you, love.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
 		ChangeAIScript("", OVERRIDE)
 		ChangeAIScript("", DEFAULT)
 		EscapeArea()

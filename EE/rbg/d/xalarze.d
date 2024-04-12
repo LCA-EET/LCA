@@ -1,19 +1,19 @@
 BEGIN ~XALARZE~
 
 IF ~
-	!Global("XA_LarzeIntro", "LOCALS", 1)
+	!Global("XA_LC_LarzeIntro", "LOCALS", 1)
 ~ THEN BEGIN XA_Intro
 	SAY @0 /* ~Hah. Larze found you. You are <CHARNAME>.~ */
 	
 	IF ~~ THEN REPLY @1 /* ~Sorry? Do I know you?~ */
 	DO ~
-		SetGlobal("XA_LarzeIntro", "LOCALS", 1)
+		SetGlobal("XA_LC_LarzeIntro", "LOCALS", 1)
 	~
 	GOTO XAA2
 	
 	IF ~~ THEN REPLY @13 /* ~Get lost, beast.~ */
 	DO ~
-		SetGlobal("XA_LarzeIntro", "LOCALS", 1)
+		SetGlobal("XA_LC_LarzeIntro", "LOCALS", 1)
 	~
 	GOTO XA_Fight
 END

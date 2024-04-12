@@ -3,7 +3,7 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
-		SetGlobal("XA_GoHome", "XAHOME", 1)
+		SetGlobal("XA_LC_GoHome", "XAHOME", 1)
 		ClearAllActions()
 		FadeToColor([30.0],0)
 		Wait(3)

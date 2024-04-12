@@ -1,25 +1,25 @@
 IF
-	GlobalLT("XA_CellSpyCreated", "MYAREA", 1)
+	GlobalLT("XA_LC_CellSpyCreated", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CellSpyCreated", "MYAREA", 1)
+		SetGlobal("XA_LC_CellSpyCreated", "MYAREA", 1)
 		CreateCreature("XACELL", [330.440], SEE)
 		Continue()
 END
 
 IF 
-	Global("XA_VirgilInCustody", "GLOBAL", 1)
-	GlobalLT("XA_VirgiXAreated_0607", "MYAREA", 1)
+	Global("XA_LC_VirgilInCustody", "GLOBAL", 1)
+	GlobalLT("XA_LC_VirgiXAreated_0607", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_VirgiXAreated_0607", "MYAREA", 1)
+		SetGlobal("XA_LC_VirgiXAreated_0607", "MYAREA", 1)
 		CreateCreature("XAVIRGIL", [400.340], SSW)
 		Continue()
 END
 
 IF
-	Global("XA_SoDAnxiety", "GLOBAL", 0)
-	Global("XA_SoDAnxietyCell", "GLOBAL", 1)
+	Global("XA_LC_SoDAnxiety", "GLOBAL", 0)
+	Global("XA_LC_SoDAnxietyCell", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		ActionOverride(Player1, StartDialog("PLAYER1", Myself))

@@ -1,9 +1,9 @@
 IF
-	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_NPCs_0112", "MYAREA", 1)
+	Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_LC_NPCs_0112", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_NPCs_0112", "MYAREA", 1)
+		SetGlobal("XA_LC_NPCs_0112", "MYAREA", 1)
 		CreateCreature("XAJASPER", [420.1542], SSE)
 		Continue()
 END

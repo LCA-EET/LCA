@@ -1,5 +1,5 @@
 IF
-	Global("XA_ApproachBeno", "GLOBAL", 1)
+	Global("XA_LC_ApproachBeno", "GLOBAL", 1)
 	Range(Player1,5)
 THEN
 	RESPONSE #100
@@ -9,7 +9,7 @@ THEN
 END
 
 IF 
-	Global("XA_ApproachBeno", "GLOBAL", 1)
+	Global("XA_LC_ApproachBeno", "GLOBAL", 1)
 	!Range(Player1,5)
 THEN
 	RESPONSE #100

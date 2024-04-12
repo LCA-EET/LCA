@@ -1,19 +1,19 @@
 APPEND ~XACOR25J~
 //{ Killed Wraith - CC OK
 	IF ~
-		Global("XA_RohmaWraith", "GLOBAL", 3)
+		Global("XA_LC_RohmaWraith", "GLOBAL", 3)
 	~ THEN BEGIN XA_KilledWraith
 		SAY @1326 /*~Rohma...~ [XA100122]*/
 		
 		IF ~~ THEN REPLY @1328 /*~Rohma's safe and sound, love. That wraith was trying to rattle your cage, that's all.~*/
 		DO ~
-			SetGlobal("XA_RohmaWraith", "GLOBAL", 4)
+			SetGlobal("XA_LC_RohmaWraith", "GLOBAL", 4)
 		~
 		GOTO XA_KilledWraith2
 		
 		IF ~~ THEN REPLY @1327 /*~Whatever that thing was, it wasn't your daughter.~*/
 		DO ~
-			SetGlobal("XA_RohmaWraith", "GLOBAL", 4)
+			SetGlobal("XA_LC_RohmaWraith", "GLOBAL", 4)
 		~
 		GOTO XA_KilledWraith2
 	END
@@ -31,28 +31,28 @@ APPEND ~XACOR25J~
 
 //{ Caelar Sent to prison - CC OK
 	IF ~
-		Global("XA_CorwinCaelarJailTalk", "GLOBAL", 1)
+		Global("XA_LC_CorwinCaelarJailTalk", "GLOBAL", 1)
 	~ THEN BEGIN XA_CaelarSentJail
 		SAY @591 /* You decided to send her to prison, instead of letting her go. Interesting. I'll need to let the Dukes know about this.~ */
 		
 		IF ~~ THEN REPLY @587 /*~You don't approve?~*/
 		DO ~
-			SetGlobal("XA_CorwinCaelarJailTalk", "GLOBAL", 2)
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinCaelarJailTalk", "GLOBAL", 2)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		GOTO XA_CaelarSentJail2
 		
 		IF ~~ THEN REPLY @589 /*~Would you have chosen differently?~*/
 		DO ~
-			SetGlobal("XA_CorwinCaelarJailTalk", "GLOBAL", 2)
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinCaelarJailTalk", "GLOBAL", 2)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		GOTO XA_CaelarSentJail2
 		
 		IF ~~ THEN REPLY @590 /*~You have a problem with that?~*/
 		DO ~
-			SetGlobal("XA_CorwinCaelarJailTalk", "GLOBAL", 2)
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinCaelarJailTalk", "GLOBAL", 2)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		GOTO XA_CaelarSentJail2
 	END
@@ -67,28 +67,28 @@ APPEND ~XACOR25J~
 
 //{ Caelar Sent Home Instead of Jail - CC OK
 	IF ~
-		Global("XA_CorwinCaelarHomeTalk", "GLOBAL", 1)
+		Global("XA_LC_CorwinCaelarHomeTalk", "GLOBAL", 1)
 	~ THEN BEGIN XA_CaelarSentHome
 		SAY @586 /*~You decided to send her home, instead of jail? Interesting. I'll need to let the Dukes know about this.~*/
 		
 		IF ~~ THEN REPLY @587 /*~You don't approve?~*/
 		DO ~
-			SetGlobal("XA_CorwinCaelarHomeTalk", "GLOBAL", 2)
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinCaelarHomeTalk", "GLOBAL", 2)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		GOTO XA_CaelarSentHome2
 		
 		IF ~~ THEN REPLY @589 /*~Would you have chosen differently?~*/
 		DO ~
-			SetGlobal("XA_CorwinCaelarHomeTalk", "GLOBAL", 2)
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinCaelarHomeTalk", "GLOBAL", 2)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		GOTO XA_CaelarSentHome2
 		
 		IF ~~ THEN REPLY @590 /*~You have a problem with that?~*/
 		DO ~
-			SetGlobal("XA_CorwinCaelarHomeTalk", "GLOBAL", 2)
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinCaelarHomeTalk", "GLOBAL", 2)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		GOTO XA_CaelarSentHome2
 	END
@@ -103,13 +103,13 @@ APPEND ~XACOR25J~
 
 //{ Corwin Avernus Return - CC OK
 	IF ~
-		Global("XA_AvernusChat", "GLOBAL", 1)
+		Global("XA_LC_AvernusChat", "GLOBAL", 1)
 	~ THEN BEGIN XA_AvernusEntry
 		SAY @981 /* ~Back in Avernus. What in Tymora's name were we thinking? We must have a deathwish.~ */
 		
 		IF ~~ THEN REPLY @982
 		DO ~
-			SetGlobal("XA_AvernusChat", "GLOBAL", 2)
+			SetGlobal("XA_LC_AvernusChat", "GLOBAL", 2)
 		~
 		EXIT
 	END
@@ -117,25 +117,25 @@ APPEND ~XACOR25J~
 
 //{ Corwin Beno Soul Talk Dialog J-85 - CC OK
 	IF ~
-		Global("XA_CorwinBenoSoulTalk", "GLOBAL", 1)
+		Global("XA_LC_CorwinBenoSoulTalk", "GLOBAL", 1)
 	~ THEN BEGIN XA_CorwinBenoSoulTalk
 		SAY @286 /*  ~A moment of your time, <CHARNAME>?~*/
 		
 		IF ~~ THEN REPLY @287 /* ~Sure, what's on your mind?~*/
 		DO ~
-			SetGlobal("XA_CorwinBenoSoulTalk", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinBenoSoulTalk", "GLOBAL", 2)
 		~
 		GOTO XA_CorwinBenoSoulTalk2
 		
 		IF ~~ THEN REPLY @288 /* ~For you, of course.~*/
 		DO ~
-			SetGlobal("XA_CorwinBenoSoulTalk", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinBenoSoulTalk", "GLOBAL", 2)
 		~
 		GOTO XA_CorwinBenoSoulTalk2
 		
 		IF ~~ THEN REPLY @289 /*~A moment, a smidgen, a wee bit... whatever you need.~ */
 		DO ~
-			SetGlobal("XA_CorwinBenoSoulTalk", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinBenoSoulTalk", "GLOBAL", 2)
 		~
 		GOTO XA_CorwinBenoSoulTalk2
 	END
@@ -149,12 +149,12 @@ APPEND ~XACOR25J~
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @292 /* ~I understand. Perhaps Cespenar knows something that can help us.~ */
 		DO ~
-			SetGlobal("XA_AskCespenarDagger", "GLOBAL", 1)
+			SetGlobal("XA_LC_AskCespenarDagger", "GLOBAL", 1)
 		~
 		GOTO XA_CorwinBenoSoulTalk3_Romance
 		
 		IF ~
-			Global("XA_ST_Kanaglym", "GLOBAL", 1)
+			Global("XA_LC_ST_Kanaglym", "GLOBAL", 1)
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @296 /* ~I remember the wizard Melkor had mentioned something about the Fugue Plane... If we can bring the dagger to Kanaglym, he thought that it would release the souls trapped within.~ */
 		GOTO XA_CorwinBenoSoulTalk3_Romance
@@ -163,12 +163,12 @@ APPEND ~XACOR25J~
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @292 /* ~I understand. Perhaps Cespenar knows something that can help us.~ */
 		DO ~
-			SetGlobal("XA_AskCespenarDagger", "GLOBAL", 1)
+			SetGlobal("XA_LC_AskCespenarDagger", "GLOBAL", 1)
 		~
 		GOTO XA_CorwinBenoSoulTalk3
 		
 		IF ~
-			Global("XA_ST_Kanaglym", "GLOBAL", 1)
+			Global("XA_LC_ST_Kanaglym", "GLOBAL", 1)
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @296 /* ~I remember the wizard Melkor had mentioned something about the Fugue Plane... If we can bring the dagger to Kanaglym, he thought that it would release the souls trapped within.~ */
 		GOTO XA_CorwinBenoSoulTalk3
@@ -222,7 +222,7 @@ APPEND ~XACOR25J~
 
 //{ FINSOL01 Debug - CC OK
 	IF ~
-		Global("XA_FINSOL01_Debug", "GLOBAL", 1)
+		Global("XA_LC_FINSOL01_Debug", "GLOBAL", 1)
 	~ THEN BEGIN XA_FINSOL01_Debug
 		SAY @482 /* ~FINSOL01 Debug.~*/
 		
@@ -230,7 +230,7 @@ APPEND ~XACOR25J~
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_FINSOL01_Debug", "GLOBAL", 0)
+			SetGlobal("XA_LC_FINSOL01_Debug", "GLOBAL", 0)
 		~
 		GOTO XA_Choice
 		
@@ -238,7 +238,7 @@ APPEND ~XACOR25J~
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_FINSOL01_Debug", "GLOBAL", 0)
+			SetGlobal("XA_LC_FINSOL01_Debug", "GLOBAL", 0)
 		~
 		GOTO XA_Choice_NonRomance
 	END
@@ -338,11 +338,11 @@ APPEND ~XACOR25J~
 		GOTO XA_ChoiceNotPregnant
 		
 		IF ~
-			Global("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
+			Global("XA_LC_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
 		~ THEN GOTO XA_ChoicePregnant
 		
 		IF ~
-			Global("XA_CorwinTwins", "GLOBAL", 1)
+			Global("XA_LC_CorwinTwins", "GLOBAL", 1)
 		~ THEN GOTO XA_ChoiceTwins
 	END
 	
@@ -467,20 +467,20 @@ APPEND ~XACOR25J~
 		SAY @321  /* ~If what the celestial said is true though... you'd be leaving the struggle of this life, only to enter into a new struggle against gods and other planar powers. An endless battle, for perhaps all of eternity... I can't even begin to fathom what that would be like. Will you ever find peace? Will you ever find ... love, again?~*/
 
 		IF ~
-			!Global("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
-			!Global("XA_CorwinTwins", "GLOBAL", 1)
+			!Global("XA_LC_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
+			!Global("XA_LC_CorwinTwins", "GLOBAL", 1)
 		~ THEN REPLY @323 /* ~You've given me a lot to think about. If I do accept this power, I promise you that at the very least, I will keep you and Rohma safe from any who would seek to do you harm.~*/
 		GOTO XA_ChoiceEmbrace
 		
 		IF ~
-			Global("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
-			Global("XA_CorwinTwins", "GLOBAL", 1)
+			Global("XA_LC_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
+			Global("XA_LC_CorwinTwins", "GLOBAL", 1)
 		~ THEN REPLY @324 /* ~You've given me a lot to think about. If I do accept this power, I promise you that at the very least, I will keep you, Rohma, and our children safe from any who would seek to do you harm.~*/
 		GOTO XA_ChoiceEmbrace
 		
 		IF ~
-			Global("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
-			!Global("XA_CorwinTwins", "GLOBAL", 1)
+			Global("XA_LC_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
+			!Global("XA_LC_CorwinTwins", "GLOBAL", 1)
 		~ THEN REPLY @322 /* ~You've given me a lot to think about. If I do accept this power, I promise you that at the very least, I will keep you, Rohma, and our child safe from any who would seek to do you harm.~*/
 		GOTO XA_ChoiceEmbrace
 	END
@@ -547,7 +547,7 @@ IF ~~ THEN BEGIN XA_SARPRO01_EndRomance
 	IF ~~ THEN 
 	DO ~
 		SetGlobal("XA_LC_CorwinRomanceActive","GLOBAL",3)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -2)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", -2)
 	~ 
 	EXTERN ~SARPRO01~ 12
 END
@@ -566,7 +566,7 @@ IF ~~ THEN BEGIN XA_SARPROVF_0
 	
 	IF ~~ THEN
 	DO ~
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", -1)
 	~
 	EXTERN ~SARPROVF~ 1
 END
@@ -576,7 +576,7 @@ IF ~~ THEN BEGIN XA_SARPROVF_0_BodhiBite
 	
 	IF ~~ THEN REPLY @1623 /* ~Are you alright?~*/
 	DO ~
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", -1)
 		
 	~
 	GOTO XA_SARPROVF_0_BodhiBite2
@@ -594,13 +594,13 @@ END
 
 //{ Dialog J-82 - CC OK
 IF ~
-	Global("XA_CorwinPregnant", "GLOBAL", 10)
+	Global("XA_LC_CorwinPregnant", "GLOBAL", 10)
 ~ THEN BEGIN XA_CorwinPregnant_Final
 	SAY @1667 /* ~<CHARNAME>... It's time. I need to go home. Have the gateway send me back to Baldur's Gate.~*/
 	
 	IF ~~ THEN REPLY @1676 /* ~Can't you stay with me for a while longer? I need you.~*/
 	DO ~
-		SetGlobal("XA_CorwinPregnant", "GLOBAL", 11)
+		SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 11)
 	~
 	GOTO XA_CorwinPregnant_Final_2
 END
@@ -693,14 +693,14 @@ END
 
 //{ Dialog J-81 - CC OK
 IF ~
-	Global("XA_CorwinPregnant", "GLOBAL", 8)
+	Global("XA_LC_CorwinPregnant", "GLOBAL", 8)
 ~ THEN BEGIN XA_CorwinPregnant_Fourth
 	SAY @1661 /* ~My love, a moment of your time?~ */
 	
 	IF ~~ THEN REPLY @1662 /* ~Of course, what's on your mind?~ */
 	DO ~
-		SetGlobal("XA_CorwinPregnant", "GLOBAL", 9)
-		SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", "ONE_MONTH")
+		SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 9)
+		SetGlobalTimer("XA_LC_CorwinPregnantTimer", "GLOBAL", "ONE_MONTH")
 	~
 	GOTO XA_CorwinPregnant_Fourth_2
 END
@@ -724,28 +724,28 @@ END
 
 //{ Dialog J-80 - CC OK
 IF ~
-	Global("XA_CorwinPregnant", "GLOBAL", 6)
+	Global("XA_LC_CorwinPregnant", "GLOBAL", 6)
 ~ THEN BEGIN XA_CorwinPregnant_Third
 	SAY @1640 /* ~Mmm...~ */
 	
 	IF ~~ THEN REPLY @1641 /* ~How are you feeling, love?~ */
 	DO ~
-		SetGlobal("XA_CorwinPregnant", "GLOBAL", 7)
-		SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", "ONE_MONTH")
+		SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 7)
+		SetGlobalTimer("XA_LC_CorwinPregnantTimer", "GLOBAL", "ONE_MONTH")
 	~
 	GOTO XA_CorwinPregnant_Third_2
 	
 	IF ~~ THEN REPLY @1642 /* ~What is it?~ */
 	DO ~
-		SetGlobal("XA_CorwinPregnant", "GLOBAL", 7)
-		SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", "ONE_MONTH")
+		SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 7)
+		SetGlobalTimer("XA_LC_CorwinPregnantTimer", "GLOBAL", "ONE_MONTH")
 	~
 	GOTO XA_CorwinPregnant_Third_2
 	
 	IF ~~ THEN REPLY @1648 /* ~Hungry? I'm sure we can find something our packs to satisfy any new cravings.~ */
 	DO ~
-		SetGlobal("XA_CorwinPregnant", "GLOBAL", 7)
-		SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", "ONE_MONTH")
+		SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 7)
+		SetGlobalTimer("XA_LC_CorwinPregnantTimer", "GLOBAL", "ONE_MONTH")
 	~
 	GOTO XA_CorwinPregnant_Third_2
 END
@@ -807,27 +807,27 @@ END
 
 //{ Dialog J-79 - CC OK
 IF ~
-	Global("XA_MessageToBG", "GLOBAL", 1)
+	Global("XA_LC_MessageToBG", "GLOBAL", 1)
 	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-	GlobalGT("XA_CorwinPregnant", "GLOBAL", 4)
+	GlobalGT("XA_LC_CorwinPregnant", "GLOBAL", 4)
 ~ THEN BEGIN XA_AmkethranCourier_Pregnant
 	SAY @1596 /* ~Listen — we need to provide a status update to the Dukes. They'll want to know that the fire giants have been dealt with, and they'll need my assessment of the threat posed by the remaining members of the Five. I also need to let my family know that we're fine ... and that I'm with child.~*/
 	
 	IF ~~ THEN REPLY @1597 /* ~Of course, love.~ */
 	DO ~
-		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
+		SetGlobal("XA_LC_MessageToBG", "GLOBAL", 2)
 	~
 	GOTO XA_AmkethranCourier_END
 	
 	IF ~~ THEN REPLY @1593 /* ~What do you suggest we do?~ */
 	DO ~
-		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
+		SetGlobal("XA_LC_MessageToBG", "GLOBAL", 2)
 	~
 	GOTO XA_AmkethranCourier_END
 	
 	IF ~~ THEN REPLY @1598 /* ~How do you think your father will take the news? And Rohma?~ */
 	DO ~
-		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
+		SetGlobal("XA_LC_MessageToBG", "GLOBAL", 2)
 	~
 	GOTO XA_AudamarCorwinPregnant
 END
@@ -842,21 +842,21 @@ END
 
 //{ Dialog J-78 - CC OK
 IF ~
-	Global("XA_MessageToBG", "GLOBAL", 1)
+	Global("XA_LC_MessageToBG", "GLOBAL", 1)
 	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-	GlobalLT("XA_CorwinPregnant", "GLOBAL", 5)
+	GlobalLT("XA_LC_CorwinPregnant", "GLOBAL", 5)
 ~ THEN BEGIN XA_AmkethranCourier_Romance
 	SAY @1595 /* ~Listen — we need to provide a status update to the Dukes. They'll want to know that the fire giants have been dealt with, and they'll need an assessment of the threat posed by the remaining members of the Five. I also need to let my family know that we're fine ...~ */
 	
 	IF ~~ THEN REPLY @1597 /* ~Of course, love.~ */
 	DO ~
-		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
+		SetGlobal("XA_LC_MessageToBG", "GLOBAL", 2)
 	~
 	GOTO XA_AmkethranCourier_END
 	
 	IF ~~ THEN REPLY @1593 /* ~What do you suggest we do?~ */
 	DO ~
-		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
+		SetGlobal("XA_LC_MessageToBG", "GLOBAL", 2)
 	~
 	GOTO XA_AmkethranCourier_END
 END
@@ -864,19 +864,19 @@ END
 
 //{ Dialog J-77 - CC OK
 IF ~
-	Global("XA_MessageToBG", "GLOBAL", 1)
+	Global("XA_LC_MessageToBG", "GLOBAL", 1)
 ~ THEN BEGIN XA_AmkethranCourier
 	SAY @1595 /* ~Listen — we need to provide a status update to the Dukes. They'll want to know that the fire giants have been dealt with, and they'll need an assessment of the threat posed by the remaining members of the Five. I also need to let my family know that we're fine ...~ */
 	
 	IF ~~ THEN REPLY @1592 /* ~Of course.~ */
 	DO ~
-		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
+		SetGlobal("XA_LC_MessageToBG", "GLOBAL", 2)
 	~
 	GOTO XA_AmkethranCourier_END
 	
 	IF ~~ THEN REPLY @1593 /* ~What do you suggest we do?~ */
 	DO ~
-		SetGlobal("XA_MessageToBG", "GLOBAL", 2)
+		SetGlobal("XA_LC_MessageToBG", "GLOBAL", 2)
 	~
 	GOTO XA_AmkethranCourier_END
 END
@@ -887,7 +887,7 @@ IF ~~ THEN BEGIN XA_AmkethranCourier_END
 	SAY @1594 /* ~This town might have a message courier we can use. Let's have a look around.~*/
 	
 	IF ~
-		GlobalGT("XA_CorwinPregnant", "GLOBAL", 4)
+		GlobalGT("XA_LC_CorwinPregnant", "GLOBAL", 4)
 	~ THEN REPLY @403 /* Right */
 	DO ~
 		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 2)
@@ -895,7 +895,7 @@ IF ~~ THEN BEGIN XA_AmkethranCourier_END
 	EXIT
 	
 	IF ~
-		GlobalLT("XA_CorwinPregnant", "GLOBAL", 5)
+		GlobalLT("XA_LC_CorwinPregnant", "GLOBAL", 5)
 	~ THEN REPLY @403 /* Right */
 	DO ~
 		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 1)
@@ -903,8 +903,8 @@ IF ~~ THEN BEGIN XA_AmkethranCourier_END
 	EXIT
 	
 	IF ~
-		GlobalGT("XA_CorwinPregnant", "GLOBAL", 4)
-		Global("XA_CanTalkToRasaad", "LOCALS", 1)
+		GlobalGT("XA_LC_CorwinPregnant", "GLOBAL", 4)
+		Global("XA_LC_CanTalkToRasaad", "LOCALS", 1)
 	~ THEN
 	DO ~
 		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 2)
@@ -912,8 +912,8 @@ IF ~~ THEN BEGIN XA_AmkethranCourier_END
 	EXTERN RASAA25J XA_AmkethranCourier_END
 	
 	IF ~
-		GlobalLT("XA_CorwinPregnant", "GLOBAL", 5)
-		Global("XA_CanTalkToRasaad", "LOCALS", 1)
+		GlobalLT("XA_LC_CorwinPregnant", "GLOBAL", 5)
+		Global("XA_LC_CanTalkToRasaad", "LOCALS", 1)
 	~ THEN
 	DO ~
 		SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 1)
@@ -925,19 +925,19 @@ END
 
 //{ Dialog J-76 - CC OK
 IF ~
-	Global("XA_CorwinParentAdvice", "GLOBAL", 2)
+	Global("XA_LC_CorwinParentAdvice", "GLOBAL", 2)
 ~ THEN BEGIN XA_ParentAdvice
 	SAY @1568 /* ~Aerie told me the news. Congratulations, <CHARNAME>. You're going to be a father.~ */
 	
 	IF ~~ THEN REPLY @1569 /* ~She told you? I thought she wanted to keep it a secret, at least for the time being.~ */
 	DO ~
-		SetGlobal("XA_CorwinParentAdvice", "GLOBAL", 3)
+		SetGlobal("XA_LC_CorwinParentAdvice", "GLOBAL", 3)
 	~
 	GOTO XA_ParentAdvice_AerieSecret
 	
 	IF ~~ THEN REPLY @1571 /* ~Thanks, Schael.~ */
 	DO ~
-		SetGlobal("XA_CorwinParentAdvice", "GLOBAL", 3)
+		SetGlobal("XA_LC_CorwinParentAdvice", "GLOBAL", 3)
 	~
 	GOTO XA_ParentAdvice_ThanksSchael
 END
@@ -1004,15 +1004,15 @@ END
 
 //{ Dialog J-71 - CC OK
 IF ~
-	Global("XA_CorwinPregnant", "GLOBAL", 2)
+	Global("XA_LC_CorwinPregnant", "GLOBAL", 2)
 ~ THEN BEGIN XA_CorwinPregnantInitial
 	SAY @1510 /* ~Unhh...~ [XA100068]*/ 
 	
 	
 	IF ~~ THEN REPLY @1511 /*  ~You look a little under the weather, love. Is everything alright?~ */
 	DO ~
-		SetGlobal("XA_CorwinPregnant", "GLOBAL", 3)
-		SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", THREE_DAYS)
+		SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 3)
+		SetGlobalTimer("XA_LC_CorwinPregnantTimer", "GLOBAL", THREE_DAYS)
 	~
 	GOTO XA_CorwinPregnantInitial_END
 	
@@ -1021,8 +1021,8 @@ IF ~
 		//See("Jaheira")
 	~ THEN
 	DO ~
-		SetGlobal("XA_CorwinPregnant", "GLOBAL", 3)
-		SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", THREE_DAYS)
+		SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 3)
+		SetGlobalTimer("XA_LC_CorwinPregnantTimer", "GLOBAL", THREE_DAYS)
 	~
 	GOTO XA_CorwinPregnantInitial_Jaheira
 		
@@ -1031,8 +1031,8 @@ IF ~
 		//See("Aerie")
 	~ THEN
 	DO ~
-		SetGlobal("XA_CorwinPregnant", "GLOBAL", 3)
-		SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", THREE_DAYS)
+		SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 3)
+		SetGlobalTimer("XA_LC_CorwinPregnantTimer", "GLOBAL", THREE_DAYS)
 	~
 	GOTO XA_CorwinPregnantInitial_Aerie
 END
@@ -1074,7 +1074,7 @@ IF ~~ THEN BEGIN XA_DeliverTwoLetters
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_NeedLettersDelivered", "GLOBAL", 2)
+		SetGlobal("XA_LC_NeedLettersDelivered", "GLOBAL", 2)
 	~
 	EXTERN XAHAMZA XA_DeliverTwoLetters
 END
@@ -1084,7 +1084,7 @@ IF ~~ THEN BEGIN XA_DeliverTwoLetters2
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_NeedLettersDelivered", "GLOBAL", 2)
+		SetGlobal("XA_LC_NeedLettersDelivered", "GLOBAL", 2)
 	~
 	EXTERN XAHAMZA XA_DeliverToBG
 END
@@ -1106,14 +1106,14 @@ END
 
 //{ Dialog J-72 - CC OK
 IF ~
-	Global("XA_CorwinPregnant", "GLOBAL", 4)
+	Global("XA_LC_CorwinPregnant", "GLOBAL", 4)
 ~ THEN BEGIN XA_CorwinPregnant2
 	SAY @1517 /* ~<CHARNAME> ... there's something I need to tell you. I ...~ */
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinPregnant", "GLOBAL", 5)
-		SetGlobal("XA_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 5)
+		SetGlobal("XA_LC_PlayerKnowsCorwinPregnant", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinPregnant2_1
 END
@@ -1126,19 +1126,19 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_1
 	
 	IF ~~ THEN REPLY @1521 /* ~Schael, that's wonderful news!~ */
 	DO ~
-		SetGlobal("XA_PregnantNews", "LOCALS", 1)
+		SetGlobal("XA_LC_PregnantNews", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_GoodNews
 	
 	IF ~~ THEN REPLY @1519 /* ~What? But you don't look pregnant — are you sure?~ */
 	DO ~
-		SetGlobal("XA_PregnantSure", "LOCALS", 1)
+		SetGlobal("XA_LC_PregnantSure", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_DontLookPregnant
 	
 	IF ~~ THEN REPLY @1523 /* But... how can that be? */
 	DO ~
-		SetGlobal("XA_PregnantHow", "LOCALS", 1)
+		SetGlobal("XA_LC_PregnantHow", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_How
 	
@@ -1169,11 +1169,11 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_BabyNow
 	GOTO XA_CorwinPregnant2_GoHome_Medic
 	
 	IF ~
-		Global("XA_CorwinPregnantAerie", "GLOBAL", 1)
+		Global("XA_LC_CorwinPregnantAerie", "GLOBAL", 1)
 	~ THEN GOTO XA_CorwinPregnant2_GoHome_Aerie
 	
 	IF ~
-		Global("XA_CorwinPregnantJaheira", "GLOBAL", 1)
+		Global("XA_LC_CorwinPregnantJaheira", "GLOBAL", 1)
 	~ THEN GOTO XA_CorwinPregnant2_GoHome_Jaheira
 END
 
@@ -1184,10 +1184,10 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_DontLookPregnant
 	GOTO XA_CorwinPregnant2_GoodNews
 	
 	IF ~
-		!Global("XA_PregnantHow", "LOCALS", 1)
+		!Global("XA_LC_PregnantHow", "LOCALS", 1)
 	~ THEN REPLY @1523 /* But... how can that be? */
 	DO ~
-		SetGlobal("XA_PregnantHow", "LOCALS", 1)
+		SetGlobal("XA_LC_PregnantHow", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_How
 	
@@ -1202,10 +1202,10 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_How
 	GOTO XA_CorwinPregnant2_GoodNews
 	
 	IF ~
-		!Global("XA_PregnantSure", "LOCALS", 1)
+		!Global("XA_LC_PregnantSure", "LOCALS", 1)
 	~ THEN REPLY @1519 /* ~What? But you don't look pregnant — are you sure?~ */
 	DO ~
-		SetGlobal("XA_PregnantSure", "LOCALS", 1)
+		SetGlobal("XA_LC_PregnantSure", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_DontLookPregnant
 	
@@ -1231,11 +1231,11 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_GoHome
 	GOTO XA_CorwinPregnant2_GoHome_Medic
 	
 	IF ~
-		Global("XA_CorwinPregnantAerie", "GLOBAL", 1)
+		Global("XA_LC_CorwinPregnantAerie", "GLOBAL", 1)
 	~ THEN GOTO XA_CorwinPregnant2_GoHome_Aerie
 	
 	IF ~
-		Global("XA_CorwinPregnantJaheira", "GLOBAL", 1)
+		Global("XA_LC_CorwinPregnantJaheira", "GLOBAL", 1)
 	~ THEN GOTO XA_CorwinPregnant2_GoHome_Jaheira
 END
 
@@ -1244,59 +1244,59 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_Questions
 	
 	IF ~
 		!IsValidForPartyDialogue("Jan")
-		!Global("XA_Pregnant_NeedAnything", "LOCALS", 1)
+		!Global("XA_LC_Pregnant_NeedAnything", "LOCALS", 1)
 	~ THEN REPLY @1536 /* ~Is there anything that I can do for you? I hear pregnant women get some odd cravings from time to time.~ */
 	DO ~
-		SetGlobal("XA_Pregnant_NeedAnything", "LOCALS", 1)
+		SetGlobal("XA_LC_Pregnant_NeedAnything", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_NeedAnything
 	
 	IF ~
 		IsValidForPartyDialogue("Jan")
-		!Global("XA_Pregnant_NeedAnything", "LOCALS", 1)
+		!Global("XA_LC_Pregnant_NeedAnything", "LOCALS", 1)
 	~ THEN REPLY @1536 /* ~Is there anything that I can do for you? I hear pregnant women get some odd cravings from time to time.~ */
 	DO ~
-		SetGlobal("XA_Pregnant_NeedAnything", "LOCALS", 1)
+		SetGlobal("XA_LC_Pregnant_NeedAnything", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_NeedAnything_Jan
 	
 	IF ~
-		!Global("XA_Pregnant_Gender", "LOCALS", 1)
+		!Global("XA_LC_Pregnant_Gender", "LOCALS", 1)
 		OR(2)
-			GlobalGT("XA_CorwinPregnantAerie", "GLOBAL", 0)
-			GlobalGT("XA_CorwinPregnantJaheira", "GLOBAL", 0)
+			GlobalGT("XA_LC_CorwinPregnantAerie", "GLOBAL", 0)
+			GlobalGT("XA_LC_CorwinPregnantJaheira", "GLOBAL", 0)
 	~ THEN REPLY @1550 /* ~Did she tell you if it was a boy or a girl?~ */
 	DO ~
-		SetGlobal("XA_Pregnant_Gender", "LOCALS", 1)
+		SetGlobal("XA_LC_Pregnant_Gender", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_BabyGender
 	
 	IF ~
-		!Global("XA_Pregnant_DueDate", "LOCALS", 1)
+		!Global("XA_LC_Pregnant_DueDate", "LOCALS", 1)
 		OR(2)
-			GlobalGT("XA_CorwinPregnantAerie", "GLOBAL", 0)
-			GlobalGT("XA_CorwinPregnantJaheira", "GLOBAL", 0)
+			GlobalGT("XA_LC_CorwinPregnantAerie", "GLOBAL", 0)
+			GlobalGT("XA_LC_CorwinPregnantJaheira", "GLOBAL", 0)
 	~ THEN REPLY @1554 /* ~Did she give you a due date?~ */
 	DO ~
-		SetGlobal("XA_Pregnant_DueDate", "LOCALS", 1)
+		SetGlobal("XA_LC_Pregnant_DueDate", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_DueDate
 	
 	IF ~
-		!Global("XA_Pregnant_DueDate", "LOCALS", 1)
-		GlobalLT("XA_CorwinPregnantAerie", "GLOBAL", 1)
-		GlobalLT("XA_CorwinPregnantJaheira", "GLOBAL", 1)
+		!Global("XA_LC_Pregnant_DueDate", "LOCALS", 1)
+		GlobalLT("XA_LC_CorwinPregnantAerie", "GLOBAL", 1)
+		GlobalLT("XA_LC_CorwinPregnantJaheira", "GLOBAL", 1)
 	~ THEN REPLY @1565 /* ~Do you know when you're expecting?~ */
 	DO ~
-		SetGlobal("XA_Pregnant_DueDate", "LOCALS", 1)
+		SetGlobal("XA_LC_Pregnant_DueDate", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_DueDate
 	
 	IF ~
-		!Global("XA_Pregnant_NeedAnything", "LOCALS", 1)
+		!Global("XA_LC_Pregnant_NeedAnything", "LOCALS", 1)
 	~ THEN REPLY @1563 /* ~I'm here for you, my love. If there's anything you require, you need only ask.~*/
 	DO ~
-		SetGlobal("XA_Pregnant_NeedAnything", "LOCALS", 1)
+		SetGlobal("XA_LC_Pregnant_NeedAnything", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_NeedAnything
 END
@@ -1329,12 +1329,12 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_NeedAnything_Jan
 	GOTO XA_CorwinPregnant2_DontTell
 	
 	IF ~
-		Global("XA_CorwinPregnantAerie", "GLOBAL", 1)
+		Global("XA_LC_CorwinPregnantAerie", "GLOBAL", 1)
 	~ THEN
 	GOTO XA_CorwinPregnant2_DontTell_Aerie
 	
 	IF ~
-		Global("XA_CorwinPregnantJaheira", "GLOBAL", 1)
+		Global("XA_LC_CorwinPregnantJaheira", "GLOBAL", 1)
 	~ THEN
 	GOTO XA_CorwinPregnant2_DontTell_Jaheira 
 END
@@ -1344,39 +1344,39 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_DueDate
 	
 		IF ~
 		!IsValidForPartyDialogue("Jan")
-		!Global("XA_Pregnant_NeedAnything", "LOCALS", 1)
+		!Global("XA_LC_Pregnant_NeedAnything", "LOCALS", 1)
 	~ THEN REPLY @1536 /* ~Is there anything that I can do for you? I hear pregnant women get some odd cravings from time to time.~ */
 	DO ~
-		SetGlobal("XA_Pregnant_NeedAnything", "LOCALS", 1)
+		SetGlobal("XA_LC_Pregnant_NeedAnything", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_NeedAnything
 	
 	IF ~
 		IsValidForPartyDialogue("Jan")
-		!Global("XA_Pregnant_NeedAnything", "LOCALS", 1)
+		!Global("XA_LC_Pregnant_NeedAnything", "LOCALS", 1)
 	~ THEN REPLY @1536 /* ~Is there anything that I can do for you? I hear pregnant women get some odd cravings from time to time.~ */
 	DO ~
-		SetGlobal("XA_Pregnant_NeedAnything", "LOCALS", 1)
+		SetGlobal("XA_LC_Pregnant_NeedAnything", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_NeedAnything_Jan
 	
 	IF ~
-		!Global("XA_Pregnant_Gender", "LOCALS", 1)
+		!Global("XA_LC_Pregnant_Gender", "LOCALS", 1)
 		OR(2)
-			GlobalGT("XA_CorwinPregnantAerie", "GLOBAL", 0)
-			GlobalGT("XA_CorwinPregnantJaheira", "GLOBAL", 0)
+			GlobalGT("XA_LC_CorwinPregnantAerie", "GLOBAL", 0)
+			GlobalGT("XA_LC_CorwinPregnantJaheira", "GLOBAL", 0)
 	~ THEN REPLY @1550 /* ~Did she tell you if it was a boy or a girl?~ */
 	DO ~
-		SetGlobal("XA_Pregnant_Gender", "LOCALS", 1)
+		SetGlobal("XA_LC_Pregnant_Gender", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_BabyGender
 	
 	
 	IF ~
-		!Global("XA_Pregnant_NeedAnything", "LOCALS", 1)
+		!Global("XA_LC_Pregnant_NeedAnything", "LOCALS", 1)
 	~ THEN REPLY @1563 /* ~I'm here for you, my love. If there's anything you require, you need only ask.~*/
 	DO ~
-		SetGlobal("XA_Pregnant_NeedAnything", "LOCALS", 1)
+		SetGlobal("XA_LC_Pregnant_NeedAnything", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_NeedAnything
 END
@@ -1388,48 +1388,48 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_BabyGender
 	
 	IF ~
 		!IsValidForPartyDialogue("Jan")
-		!Global("XA_Pregnant_NeedAnything", "LOCALS", 1)
+		!Global("XA_LC_Pregnant_NeedAnything", "LOCALS", 1)
 	~ THEN REPLY @1536 /* ~Is there anything that I can do for you? I hear pregnant women get some odd cravings from time to time.~ */
 	DO ~
-		SetGlobal("XA_Pregnant_NeedAnything", "LOCALS", 1)
+		SetGlobal("XA_LC_Pregnant_NeedAnything", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_NeedAnything
 	
 	IF ~
 		IsValidForPartyDialogue("Jan")
-		!Global("XA_Pregnant_NeedAnything", "LOCALS", 1)
+		!Global("XA_LC_Pregnant_NeedAnything", "LOCALS", 1)
 	~ THEN REPLY @1536 /* ~Is there anything that I can do for you? I hear pregnant women get some odd cravings from time to time.~ */
 	DO ~
-		SetGlobal("XA_Pregnant_NeedAnything", "LOCALS", 1)
+		SetGlobal("XA_LC_Pregnant_NeedAnything", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_NeedAnything_Jan
 	
 	IF ~
-		!Global("XA_Pregnant_DueDate", "LOCALS", 1)
+		!Global("XA_LC_Pregnant_DueDate", "LOCALS", 1)
 		OR(2)
-			GlobalGT("XA_CorwinPregnantAerie", "GLOBAL", 0)
-			GlobalGT("XA_CorwinPregnantJaheira", "GLOBAL", 0)
+			GlobalGT("XA_LC_CorwinPregnantAerie", "GLOBAL", 0)
+			GlobalGT("XA_LC_CorwinPregnantJaheira", "GLOBAL", 0)
 	~ THEN REPLY @1554 /* ~Did she give you a due date?~ */
 	DO ~
-		SetGlobal("XA_Pregnant_DueDate", "LOCALS", 1)
+		SetGlobal("XA_LC_Pregnant_DueDate", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_DueDate
 	
 	IF ~
-		!Global("XA_Pregnant_DueDate", "LOCALS", 1)
-		GlobalLT("XA_CorwinPregnantAerie", "GLOBAL", 1)
-		GlobalLT("XA_CorwinPregnantJaheira", "GLOBAL", 1)
+		!Global("XA_LC_Pregnant_DueDate", "LOCALS", 1)
+		GlobalLT("XA_LC_CorwinPregnantAerie", "GLOBAL", 1)
+		GlobalLT("XA_LC_CorwinPregnantJaheira", "GLOBAL", 1)
 	~ THEN REPLY @1565 /* ~Do you know when you're expecting?~ */
 	DO ~
-		SetGlobal("XA_Pregnant_DueDate", "LOCALS", 1)
+		SetGlobal("XA_LC_Pregnant_DueDate", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_DueDate
 	
 	IF ~
-		!Global("XA_Pregnant_NeedAnything", "LOCALS", 1)
+		!Global("XA_LC_Pregnant_NeedAnything", "LOCALS", 1)
 	~ THEN REPLY @1563 /* ~I'm here for you, my love. If there's anything you require, you need only ask.~*/
 	DO ~
-		SetGlobal("XA_Pregnant_NeedAnything", "LOCALS", 1)
+		SetGlobal("XA_LC_Pregnant_NeedAnything", "LOCALS", 1)
 	~
 	GOTO XA_CorwinPregnant2_NeedAnything
 END
@@ -1441,12 +1441,12 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_NeedAnything
 	GOTO XA_CorwinPregnant2_DontTell
 	
 	IF ~
-		Global("XA_CorwinPregnantAerie", "GLOBAL", 1)
+		Global("XA_LC_CorwinPregnantAerie", "GLOBAL", 1)
 	~ THEN
 	GOTO XA_CorwinPregnant2_DontTell_Aerie
 	
 	IF ~
-		Global("XA_CorwinPregnantJaheira", "GLOBAL", 1)
+		Global("XA_LC_CorwinPregnantJaheira", "GLOBAL", 1)
 	~ THEN
 	GOTO XA_CorwinPregnant2_DontTell_Jaheira
 END
@@ -1470,15 +1470,15 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_Imoen
 	
 	IF ~~ THEN REPLY @1548 /* ~It does. She's going to be thrilled when she hears the news.~ */
 	DO ~
-		SetGlobalTimer("XA_CorwinPregnantImoenTimer", "GLOBAL", TWO_DAYS)
-		SetGlobal("XA_CorwinPregnantImoen", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_CorwinPregnantImoenTimer", "GLOBAL", TWO_DAYS)
+		SetGlobal("XA_LC_CorwinPregnantImoen", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinPregnant2_End
 	
 	IF ~~ THEN REPLY @1555 /* ~I'm going to be a father ...~*/
 	DO ~
-		SetGlobalTimer("XA_CorwinPregnantImoenTimer", "GLOBAL", TWO_DAYS)
-		SetGlobal("XA_CorwinPregnantImoen", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_CorwinPregnantImoenTimer", "GLOBAL", TWO_DAYS)
+		SetGlobal("XA_LC_CorwinPregnantImoen", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinPregnant2_End
 	
@@ -1521,7 +1521,7 @@ IF ~~ THEN BEGIN XA_CorwinPregnant2_End
 	
 	IF ~~ THEN REPLY @1544 /* ~And I love you */
 	DO ~
-		SetGlobalTimer("XA_CorwinPregnantTimer", "GLOBAL", ONE_MONTH)
+		SetGlobalTimer("XA_LC_CorwinPregnantTimer", "GLOBAL", ONE_MONTH)
 	~
 	EXIT
 END
@@ -1529,19 +1529,19 @@ END
 
 //{ Dialog J-70 - CC OK
 IF ~
-	Global("XA_SaradushDestroyed", "GLOBAL", 1)
+	Global("XA_LC_SaradushDestroyed", "GLOBAL", 1)
 ~ THEN BEGIN XA_SaradushDestroyed
 	SAY @1507 /* ~Stand ready — this place has been overrun by giants.~ */
 	
 	IF ~~ THEN REPLY @1508 /* ~The city's been completely destroyed.~ */
 	DO ~
-		SetGlobal("XA_SaradushDestroyed", "GLOBAL", 2)
+		SetGlobal("XA_LC_SaradushDestroyed", "GLOBAL", 2)
 	~
 	GOTO XA_TimeToGrieveLater
 	
 	IF ~~ THEN REPLY @1509 /* ~I haven't seen destruction like this since Caelar's crusade.~ */
 	DO ~
-		SetGlobal("XA_SaradushDestroyed", "GLOBAL", 2)
+		SetGlobal("XA_LC_SaradushDestroyed", "GLOBAL", 2)
 	~
 	GOTO XA_TimeToGrieveLater
 	
@@ -1549,7 +1549,7 @@ IF ~
 		IsValidForPartyDialogue("Jaheira")
 	~ THEN
 	DO ~
-		SetGlobal("XA_SaradushDestroyed", "GLOBAL", 2)
+		SetGlobal("XA_LC_SaradushDestroyed", "GLOBAL", 2)
 	~
 	EXTERN JAHEI25J XA_SaradushDestroyed 
 	
@@ -1557,7 +1557,7 @@ IF ~
 		IsValidForPartyDialogue("Imoen2")
 	~ THEN
 	DO ~
-		SetGlobal("XA_SaradushDestroyed", "GLOBAL", 2)
+		SetGlobal("XA_LC_SaradushDestroyed", "GLOBAL", 2)
 	~
 	EXTERN IMOEN25J XA_SaradushDestroyed
 	
@@ -1565,7 +1565,7 @@ IF ~
 		IsValidForPartyDialogue("Neera")
 	~ THEN
 	DO ~
-		SetGlobal("XA_SaradushDestroyed", "GLOBAL", 2)
+		SetGlobal("XA_LC_SaradushDestroyed", "GLOBAL", 2)
 	~
 	EXTERN NEERA25J XA_SaradushDestroyed
 	
@@ -1573,7 +1573,7 @@ IF ~
 		IsValidForPartyDialogue("Aerie")
 	~ THEN
 	DO ~
-		SetGlobal("XA_SaradushDestroyed", "GLOBAL", 2)
+		SetGlobal("XA_LC_SaradushDestroyed", "GLOBAL", 2)
 	~
 	EXTERN AERIE25J XA_SaradushDestroyed
 END
@@ -1607,7 +1607,7 @@ END
 
 //{ Dialog J-69 - CC OK
 IF ~
-	Global("XA_CorwinComplainSarevok", "GLOBAL", 2)
+	Global("XA_LC_CorwinComplainSarevok", "GLOBAL", 2)
 ~ THEN BEGIN XA_CorwinComplainSarevokInit
 	SAY @1472 /* ~We need to talk.~ [BD54471]*/
 	
@@ -1615,7 +1615,7 @@ IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @1473 /* ~What's on your mind, love.~ */
 	DO ~
-		SetGlobal("XA_CorwinComplainSarevok", "GLOBAL", 3)
+		SetGlobal("XA_LC_CorwinComplainSarevok", "GLOBAL", 3)
 	~
 	GOTO XA_CorwinComplainSarevok
 	
@@ -1623,13 +1623,13 @@ IF ~
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @1474 /* ~What's on your mind, Major?~ */
 	DO ~
-		SetGlobal("XA_CorwinComplainSarevok", "GLOBAL", 3)
+		SetGlobal("XA_LC_CorwinComplainSarevok", "GLOBAL", 3)
 	~
 	GOTO XA_CorwinComplainSarevok
 	
 	IF ~~ THEN REPLY @1475 /* ~This isn't a good time.~*/
 	DO ~
-		SetGlobal("XA_CorwinComplainSarevok", "GLOBAL", 3)
+		SetGlobal("XA_LC_CorwinComplainSarevok", "GLOBAL", 3)
 	~
 	GOTO XA_NotAGoodTime
 END
@@ -1773,7 +1773,7 @@ END
 //{ Dialog J-57 - CC OK
 IF ~
 	InParty(Myself)
-	Global("XA_CorwinHexxat", "GLOBAL", 5)
+	Global("XA_LC_CorwinHexxat", "GLOBAL", 5)
 	IsValidForPartyDialogue("Hexxat")
 	OR(6)
 		IsValidForPartyDialogue("Mazzy")
@@ -1787,8 +1787,8 @@ IF ~
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinHexxat", "GLOBAL", 6)
-		SetGlobal("XA_CorwinHexxatFight", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinHexxat", "GLOBAL", 6)
+		SetGlobal("XA_LC_CorwinHexxatFight", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -1798,7 +1798,7 @@ END
 //{ Dialog J-58 - CC OK
 IF ~
 	InParty(Myself)
-	Global("XA_CorwinHexxat", "GLOBAL", 5)
+	Global("XA_LC_CorwinHexxat", "GLOBAL", 5)
 	IsValidForPartyDialogue("Hexxat")
 	!IsValidForPartyDialogue("Mazzy")
 	!IsValidForPartyDialogue("Anomen")
@@ -1810,8 +1810,8 @@ IF ~
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinHexxat", "GLOBAL", 6)
-		SetGlobal("XA_CorwinHexxatFight", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinHexxat", "GLOBAL", 6)
+		SetGlobal("XA_LC_CorwinHexxatFight", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -1819,7 +1819,7 @@ END
 
 //{ Dialog J-59 - CC OK
 IF ~
-	Global("XA_CorwinHexxat", "GLOBAL", 1)
+	Global("XA_LC_CorwinHexxat", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinHexxat1
 	SAY @130 /* ~<CHARNAME>. We need to talk.~ */
 	
@@ -1827,28 +1827,28 @@ IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @132 /* ~Of course love, what's on your mind? */
 	DO ~
-		SetGlobal("XA_CorwinHexxat", "GLOBAL", 2)
-		SetGlobalTimer("XA_CorwinHexxatTimer", "LOCALS", ONE_DAY)
+		SetGlobal("XA_LC_CorwinHexxat", "GLOBAL", 2)
+		SetGlobalTimer("XA_LC_CorwinHexxatTimer", "LOCALS", ONE_DAY)
 	~
 	GOTO XAA38
 	
 	IF ~
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		!Global("XA_CorwinPromoted", "GLOBAL", 1)
+		!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 	~ THEN REPLY @131 /*  ~What is it, Captain?~*/
 	DO ~
-		SetGlobal("XA_CorwinHexxat", "GLOBAL", 2)
-		SetGlobalTimer("XA_CorwinHexxatTimer", "LOCALS", ONE_DAY)
+		SetGlobal("XA_LC_CorwinHexxat", "GLOBAL", 2)
+		SetGlobalTimer("XA_LC_CorwinHexxatTimer", "LOCALS", ONE_DAY)
 	~
 	GOTO XAA38
 	
 	IF ~
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		Global("XA_CorwinPromoted", "GLOBAL", 1)
+		Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 	~ THEN REPLY @312 /*  What is it, Major?~*/
 	DO ~
-		SetGlobal("XA_CorwinHexxat", "GLOBAL", 2)
-		SetGlobalTimer("XA_CorwinHexxatTimer", "LOCALS", ONE_DAY)
+		SetGlobal("XA_LC_CorwinHexxat", "GLOBAL", 2)
+		SetGlobalTimer("XA_LC_CorwinHexxatTimer", "LOCALS", ONE_DAY)
 	~
 	GOTO XAA38
 END
@@ -1879,7 +1879,7 @@ IF ~
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinDepart", "GLOBAL", 3)
+		SetGlobal("XA_LC_CorwinDepart", "GLOBAL", 3)
 		SetGlobal("XA_LC_CorwinLeaveLich", "GLOBAL", 3)
 		ActionOverride(Player1, TakeCreatureItems("XACORWIN", BACKPACK))
 		ChangeAIScript("", OVERRIDE)
@@ -1906,13 +1906,13 @@ IF ~~ THEN BEGIN XA_GeneralTalk_ChainEnd
 END
 
 IF ~
-	Global("XA_GeneralDeadTalk", "LOCALS", 1)
+	Global("XA_LC_GeneralDeadTalk", "LOCALS", 1)
 ~ THEN BEGIN XA_GeneralDeadTalk
 	SAY @1804 /*~This is bad. We better get out of here before the Tethyrian reinforcements arrive. Let's go.~*/
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_GeneralDeadTalk", "LOCALS", 2)
+		SetGlobal("XA_LC_GeneralDeadTalk", "LOCALS", 2)
 	~
 	EXIT
 END

@@ -1,0 +1,15 @@
+//{ Seldarine / Lyriel Amulet conflict
+	IF
+		PartyHasItem("XALYAMUL")
+		PartyHasItem("XAAMUL27")
+	THEN
+		RESPONSE #100
+			ActionOverride(Player1, DestroyItem("XAAMUL27"))
+			ActionOverride(Player2, DestroyItem("XAAMUL27"))
+			ActionOverride(Player3, DestroyItem("XAAMUL27"))
+			ActionOverride(Player4, DestroyItem("XAAMUL27"))
+			ActionOverride(Player5, DestroyItem("XAAMUL27"))
+			ActionOverride(Player6, DestroyItem("XAAMUL27"))
+			Continue()
+	END
+//}

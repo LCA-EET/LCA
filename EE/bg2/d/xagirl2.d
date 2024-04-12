@@ -6,7 +6,7 @@ IF ~  NumTimesTalkedTo(0)
 	
 	IF ~~ THEN REPLY @1 /* ~True enough. You are free now, so I suggest you flee while you can.~ */ 
 	DO ~
-		IncrementGlobal("XA_SlaveKidsFreed", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_SlaveKidsFreed", "GLOBAL", 1)
 	~
 	GOTO 1
 END
@@ -15,7 +15,7 @@ IF ~~ THEN BEGIN 1 // from: 0.0
 	SAY @2 /* ~Y-yes, <PRO_SIRMAAM> but... our homes were destroyed during the crusade. I and many of the others here fled with our families to Baldur's Gate, but then they sent us here... I guess anything is better than fighting just so those evil men can laugh at us!~ */
 	IF ~~ THEN REPLY @17 /* ~Why did the slavers have so many children here?~ */ 
 	DO ~
-		SetGlobal("XA_BGSlaverPlot", "GLOBAL", 1)
+		SetGlobal("XA_LC_BGSlaverPlot", "GLOBAL", 1)
 		SetGlobal("XA_LC_Journal_SlaveGirl", "GLOBAL", 1)
 	~
 	GOTO 2
@@ -24,7 +24,7 @@ IF ~~ THEN BEGIN 1 // from: 0.0
 		PartyGoldGT(99)
 	~ THEN REPLY @4 /* ~Here, child. Here is 100 gold pieces... see if that can't get you and some of these other children back to safety.~ */ 
 	DO ~
-		SetGlobal("XA_BGSlaverPlot", "GLOBAL", 1)
+		SetGlobal("XA_LC_BGSlaverPlot", "GLOBAL", 1)
 		SetGlobal("XA_LC_Journal_SlaveGirl", "GLOBAL", 1)
 		TakePartyGold(100)
 	~ 
@@ -32,7 +32,7 @@ IF ~~ THEN BEGIN 1 // from: 0.0
   
 	IF ~~ THEN REPLY @5 /* ~Never mind that, child, just run!~ */ 
 	DO ~
-		SetGlobal("XA_BGSlaverPlot", "GLOBAL", 1)
+		SetGlobal("XA_LC_BGSlaverPlot", "GLOBAL", 1)
 		SetGlobal("XA_LC_Journal_SlaveGirl", "GLOBAL", 1)
 	~
 	GOTO 4
@@ -42,7 +42,7 @@ IF ~~ THEN BEGIN 1 // from: 0.0
 	~ 
 	THEN 
 	DO ~
-		SetGlobal("XA_BGSlaverPlot", "GLOBAL", 1)
+		SetGlobal("XA_LC_BGSlaverPlot", "GLOBAL", 1)
 		SetGlobal("XA_LC_Journal_SlaveGirl", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_SlaveGirl
@@ -73,12 +73,12 @@ IF ~~ THEN BEGIN XA_SlaveGirl5B
 	SAY @19  /* ~I - I don't know, I think a boy and a girl. You have to save them!~ */
 	
 	IF ~
-		Global("XA_SlaveKidsFreed", "GLOBAL", 3)
+		Global("XA_LC_SlaveKidsFreed", "GLOBAL", 3)
 	~ THEN 
 	EXTERN XACORWIJ XA_SlaveGirl5C_A
 	
 	IF ~
-		GlobalLT("XA_SlaveKidsFreed", "GLOBAL", 3)
+		GlobalLT("XA_LC_SlaveKidsFreed", "GLOBAL", 3)
 	~ THEN 
 	EXTERN XACORWIJ XA_SlaveGirl5C_B
 END

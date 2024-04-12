@@ -1,12 +1,12 @@
 //{ Amulet
 IF
-	GlobalLT("XA_CorwinAmulet", "LOCALS", 1)
+	GlobalLT("XA_LC_CorwinAmulet", "LOCALS", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		GiveItemCreate("XAAMUL1", Myself, 0,0,0)
 		XEquipItem("XAAMUL1","Corwin",SLOT_AMULET,EQUIP)
-		SetGlobal("XA_CorwinAmulet", "LOCALS", 1)
+		SetGlobal("XA_LC_CorwinAmulet", "LOCALS", 1)
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -14,12 +14,12 @@ END
 
 //{ Corwin Opinion Baseline
 IF
-	GlobalLT("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+	GlobalLT("XA_LC_CorwinOpinionBaselined", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 100)
-		SetGlobal("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 100)
+		SetGlobal("XA_LC_CorwinOpinionBaselined", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -30,7 +30,7 @@ IF
 	Dead("bdashati")
 	Global("bd_asha_duel", "GLOBAL", 3)
 	IsValidForPartyDialog(Player1)
-	Global("XA_CorwinWitnessedDuel", "GLOBAL", 1)
+	Global("XA_LC_CorwinWitnessedDuel", "GLOBAL", 1)
 	!ActuallyInCombat()
 	Range(Player1, 8)
 	See(Player1)
@@ -49,13 +49,13 @@ IF
 		Dead("BDDIRLA")
 		Dead("BDLLUIS")
 		Dead("BDASERY")
-	GlobalLT("XA_LCA_THIEVES", "GLOBAL", 1)
-	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+	GlobalLT("XA_LC_A_THIEVES", "GLOBAL", 1)
+	Global("XA_LC_CorwinOpinionBaselined", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_LCA_THIEVES", "GLOBAL", 1)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC_A_THIEVES", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -63,13 +63,13 @@ END
 IF
 	ActionListEmpty()
 	Dead("BDLON")
-	GlobalLT("XA_LCA_BDLON", "GLOBAL", 1)
-	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+	GlobalLT("XA_LC_A_BDLON", "GLOBAL", 1)
+	Global("XA_LC_CorwinOpinionBaselined", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_LCA_BDLON", "GLOBAL", 1)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC_A_BDLON", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -77,13 +77,13 @@ END
 IF
 	ActionListEmpty()
 	Global("BD_Refugees","GLOBAL",2)
-	GlobalLT("XA_LCA_GARACH", "GLOBAL", 1)
-	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+	GlobalLT("XA_LC_A_GARACH", "GLOBAL", 1)
+	Global("XA_LC_CorwinOpinionBaselined", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_LCA_GARACH", "GLOBAL", 1)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC_A_GARACH", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -91,13 +91,13 @@ END
 IF
 	ActionListEmpty()
 	Global("BD_TO_THE_BANK","GLOBAL",2)
-	GlobalLT("XA_LCA_TEERA", "GLOBAL", 1)
-	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+	GlobalLT("XA_LC_A_TEERA", "GLOBAL", 1)
+	Global("XA_LC_CorwinOpinionBaselined", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_LCA_TEERA", "GLOBAL", 1)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC_A_TEERA", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -105,13 +105,13 @@ END
 IF
 	ActionListEmpty()
 	Global("XA_LC_StoppedNobles", "GLOBAL", 1)
-	GlobalLT("XA_LCA_PLOT", "GLOBAL", 1)
-	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+	GlobalLT("XA_LC_A_PLOT", "GLOBAL", 1)
+	Global("XA_LC_CorwinOpinionBaselined", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_LCA_PLOT", "GLOBAL", 1)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC_A_PLOT", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -119,13 +119,13 @@ END
 IF
 	ActionListEmpty()
 	Global("bd_alerted_corwin", "GLOBAL", 2)
-	GlobalLT("XA_LCA_PLOT", "GLOBAL", 1)
-	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+	GlobalLT("XA_LC_A_PLOT", "GLOBAL", 1)
+	Global("XA_LC_CorwinOpinionBaselined", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_LCA_PLOT", "GLOBAL", 1)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC_A_PLOT", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -133,13 +133,13 @@ END
 IF
 	ActionListEmpty()
 	Global("BD_Rousers_Reinforcements","GLOBAL",1)
-	GlobalLT("XA_LCA_VIDA", "GLOBAL", 1)
-	Global("XA_CorwinOpinionBaselined", "GLOBAL", 1)
+	GlobalLT("XA_LC_A_VIDA", "GLOBAL", 1)
+	Global("XA_LC_CorwinOpinionBaselined", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_LCA_VIDA", "GLOBAL", 1)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC_A_VIDA", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -148,22 +148,22 @@ END
 //{ Longbow Training
 IF
 	InParty(Myself)
-	GlobalLT("XA_LCA_ProficiencyTimerSet", "GLOBAL", 1)
-	GlobalGT("XA_CorwinOpinionOfPlayer", "GLOBAL", 102)
+	GlobalLT("XA_LC_A_ProficiencyTimerSet", "GLOBAL", 1)
+	GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 102)
 	OR(2)
 		CheckStatGT(Player1, 0, PROFICIENCYLONGBOW)
 		CheckStatGT(Player1, 0, PROFICIENCYSHORTBOW)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobalTimer("XA_LCA_ProficiencyTimer", "GLOBAL", EIGHTEEN_HOURS)
-		SetGlobal("XA_LCA_ProficiencyTimerSet", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_A_ProficiencyTimer", "GLOBAL", EIGHTEEN_HOURS)
+		SetGlobal("XA_LC_A_ProficiencyTimerSet", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 		Continue()
 END
 
 IF
-	Global("XA_LCA_ProficiencyTalk", "GLOBAL", 1)
+	Global("XA_LC_A_ProficiencyTalk", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		StartDialog("BDCORWIJ", Player1)

@@ -1,7 +1,7 @@
 BEGIN ~XAKERRAC~
 
 IF ~  
-	!Global("XA_LC_MetKerrachus", "GLOBAL", 1)
+	!Global("XA_LC__MetKerrachus", "GLOBAL", 1)
 ~ THEN BEGIN XA_GreetingNotMet // from:
 	SAY @12 /* ~Ho there, watch your step on the wharfs hereabouts. The sea spray can make the cobbles a touch treacherous... My name is Kerrachus. Is there anything I can help you with?~ */
 	IF ~~ THEN REPLY @13 /* ~What do you do here?~ */
@@ -9,7 +9,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_LC_MetKerrachus", "GLOBAL", 1)
+	Global("XA_LC__MetKerrachus", "GLOBAL", 1)
 ~ THEN BEGIN XA_GreetingMet
 	SAY @0 /* ~Ho there, good to see you again! Is there anything I can help you with?~ */
 	
@@ -24,7 +24,7 @@ IF ~~ THEN BEGIN XA_GreetingNotMet2
 	GOTO XA_GreetingNotMet3 
 	
 	IF ~
-		Global("XA_BGSlaverPlot", "GLOBAL", 1)
+		Global("XA_LC_BGSlaverPlot", "GLOBAL", 1)
 	~ THEN REPLY @16 /* ~A dockhand, you say? We're investigating reports of slaver activity in Baldur's Gate. Do you know anything about families being shipped from here to Athkatla?~ */
 	GOTO XA_SlaverQuestioning
 END
@@ -38,7 +38,7 @@ IF ~~ THEN BEGIN XA_SlaverQuestioning
 	
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
+		Global("XA_LC_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~ THEN EXTERN XACORWIJ XA_KerracQuestioning
 	
 	IF ~~ THEN REPLY @8 /* ~I see. Was there anything that led you to believe they were being taken against their will?~  */
@@ -62,7 +62,7 @@ IF ~~ THEN BEGIN XA_GreetingNotMet3
 	EXIT
 	
 	IF ~
-		Global("XA_BGSlaverPlot", "GLOBAL", 1)
+		Global("XA_LC_BGSlaverPlot", "GLOBAL", 1)
 	~ THEN REPLY @19 /* ~You said you were a dockhand, yes? We're investigating reports of slaver activity in Baldur's Gate. Do you know anything about families being shipped from here to Athkatla?~ */
 	GOTO XA_SlaverQuestioning
 END
@@ -74,7 +74,7 @@ IF ~~ THEN BEGIN XA_Introduction
 	GOTO XA_End
 	
 	IF ~
-		Global("XA_BGSlaverPlot", "GLOBAL", 1)
+		Global("XA_LC_BGSlaverPlot", "GLOBAL", 1)
 	~ THEN REPLY @16 /* ~A dockhand, you say? We're investigating reports of slaver activity in Baldur's Gate. Do you know anything about families being shipped from here to Athkatla?~ */
 	GOTO XA_SlaverQuestioning
 END

@@ -1,5 +1,5 @@
 IF
-	Global("XA_StartTOB", "GLOBAL", 1)
+	Global("XA_LC_StartTOB", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		AdvanceTime(FOURTEEN_DAYS)
@@ -7,7 +7,7 @@ THEN
 		MoveToCampaign("ToB")
 END
 IF
-	Global("XA_SkieModActive", "GLOBAL", 1)
+	Global("XA_LC_SkieModActive", "GLOBAL", 1)
 	InMyArea("XASKIE")
 THEN
 	RESPONSE #100
@@ -16,11 +16,11 @@ THEN
 END
 
 IF
-	GlobalLT("XA_RohmaCorwinCS", "XADUC3", 1)
-	Global("XA_PrepareCSBGEND1", "GLOBAL", 1)
+	GlobalLT("XA_LC_RohmaCorwinCS", "XADUC3", 1)
+	Global("XA_LC_PrepareCSBGEND1", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_RohmaCorwinCS", "XADUC3", 1)
+		SetGlobal("XA_LC_RohmaCorwinCS", "XADUC3", 1)
 		StartCutSceneMode()
 		StartCutScene("XABGEND1")
 END

@@ -22,7 +22,7 @@ THEN
 	ActionOverride(Player6,FaceObject(Player1))
 	Wait(1)
     StartMovie("END15FPS")
-	SetGlobal("XA_IrenicusDead", "GLOBAL", 1)
+	SetGlobal("XA_LC_IrenicusDead", "GLOBAL", 1)
 	FadeFromColor([30.0],0)
     EndCutSceneMode()
 END

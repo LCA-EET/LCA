@@ -9,7 +9,7 @@ THEN
 		Wait(1)
 		DisplayStringHead(Myself, @0) /*~(She slowly opens her eyes.)~ */
 		Wait(2)
-		SetGlobal("XA_CorwinSaved9", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinSaved9", "GLOBAL", 1)
 		Wait(1)
 		PlaySong(1003)
 		StartDialog("XACORWIJ", Player1)

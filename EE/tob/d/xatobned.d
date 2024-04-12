@@ -1,13 +1,13 @@
 BEGIN ~XATOBNED~
 
 IF ~
-	Global("XA_NedToB", "GLOBAL", 1)
+	Global("XA_LC_NedToB", "GLOBAL", 1)
 ~ THEN BEGIN XA_NedToB 
 	SAY @0 /* ~What in the Nine Hells — Major!? <CHARNAME>!?~ */
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_NedToB", "GLOBAL", 2)
+		SetGlobal("XA_LC_NedToB", "GLOBAL", 2)
 	~
 	EXTERN XACORWIP XA_NedToB2
 END

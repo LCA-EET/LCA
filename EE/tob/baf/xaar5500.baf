@@ -1,39 +1,39 @@
 IF
 	GlobalGT("METBAL","GLOBAL",0)
-	GlobalLT("XA_LathanderEncounterTimerSet", "GLOBAL", 1)
+	GlobalLT("XA_LC_LathanderEncounterTimerSet", "GLOBAL", 1)
 	OR(2)
 		PartyHasItem("XABENOHD")
 		PartyHasItem("XASTDAGB")
 THEN
 	RESPONSE #100
-		SetGlobalTimer("XA_LathanderEncounter5500", "GLOBAL", TWO_ROUNDS)
-		SetGlobal("XA_LathanderEncounterTimerSet", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_LathanderEncounter5500", "GLOBAL", TWO_ROUNDS)
+		SetGlobal("XA_LC_LathanderEncounterTimerSet", "GLOBAL", 1)
 		Continue()
 END
 
 IF 
-	GlobalTimerExpired("XA_LathanderEncounter5500", "GLOBAL")
-	GlobalLT("XA_LathSpawn", "GLOBAL", 1)
+	GlobalTimerExpired("XA_LC_LathanderEncounter5500", "GLOBAL")
+	GlobalLT("XA_LC_LathSpawn", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 
-		SetGlobal("XA_LathSpawn", "GLOBAL", 1)
+		SetGlobal("XA_LC_LathSpawn", "GLOBAL", 1)
 		Continue()
 END
 
 IF
-	Global("XA_LathSpawn", "GLOBAL", 1)
+	Global("XA_LC_LathSpawn", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		CreateCreature("XALATH01", [2665.1445], NW)
 		CreateCreature("XALATH02", [2705.1455], NW)
 		CreateCreature("XALATH03", [2545.1412], E)
 		//DisplayStringHead("XACORWIN", ~Spawned~)
-		SetGlobal("XA_LathSpawn", "GLOBAL", 2)
+		SetGlobal("XA_LC_LathSpawn", "GLOBAL", 2)
 END
 
 IF 
-	GlobalGT("XA_BenoBoom", "GLOBAL", 0)
+	GlobalGT("XA_LC_BenoBoom", "GLOBAL", 0)
 	OR(3)
 		InMyArea("XALATH01")
 		InMyArea("XALATH02")

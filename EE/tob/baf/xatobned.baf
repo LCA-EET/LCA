@@ -6,6 +6,6 @@ THEN
 		CreateVisualEffect("SPPORTAL",[1949.1218])
 		Wait(2)
 		CreateCreature("XATOBNED", [1949.1218], S)
-		SetGlobal("XA_NedToB", "GLOBAL", 1)
+		SetGlobal("XA_LC_NedToB", "GLOBAL", 1)
 		ActionOverride("XATOBNED",StartDialog("XATOBNED", Player1))
 END

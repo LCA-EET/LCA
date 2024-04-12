@@ -3,16 +3,16 @@ IF
 	See("XACORWIN")
 	InParty("XACORWIN")
 	ActionListEmpty()
-	GlobalLT("XA_MagdaTalk", "GLOBAL", 1)
+	GlobalLT("XA_LC_MagdaTalk", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_MagdaTalk", "GLOBAL", 1)
+		SetGlobal("XA_LC_MagdaTalk", "GLOBAL", 1)
 		MoveToObject("XACORWIN")
 		Continue()
 END
 
 IF
-	Global("XA_MagdaTalk", "GLOBAL", 1)
+	Global("XA_LC_MagdaTalk", "GLOBAL", 1)
 	Range("XACORWIN", 8)
 THEN
 	RESPONSE #100

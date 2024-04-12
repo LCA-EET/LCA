@@ -33,7 +33,7 @@ THEN
 		ActionOverride("XAELF02", FaceObject(Player1))
 		ActionOverride("XAELF03", FaceObject(Player1))
 		ActionOverride("XABENOSP", FaceObject(Player1))
-		SetGlobal("XA_ElfSpirit", "GLOBAL", 1)
+		SetGlobal("XA_LC_ElfSpirit", "GLOBAL", 1)
 		Wait(1)
 		ActionOverride("XAELF01", StartDialog("XAELF01", Player1))
 		EndCutSceneMode()

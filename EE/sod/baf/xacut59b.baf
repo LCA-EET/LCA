@@ -2,5 +2,5 @@ IF
 	True()
 THEN
 	RESPONSE #100
-		SetGlobal("XA_Cut59B_Ran", "GLOBAL", 1)
+		SetGlobal("XA_LC_Cut59B_Ran", "GLOBAL", 1)
 END

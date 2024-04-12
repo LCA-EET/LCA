@@ -1,9 +1,9 @@
 IF
-	GlobalLT("XA_CreateElfsong", "GLOBAL", 1)
-	GlobalLT("XA_SavedElfsong", "GLOBAL", 1)
+	GlobalLT("XA_LC_CreateElfsong", "GLOBAL", 1)
+	GlobalLT("XA_LC_SavedElfsong", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CreateElfsong", "GLOBAL", 1)
+		SetGlobal("XA_LC_CreateElfsong", "GLOBAL", 1)
 		CreateCreature("XA800M", [3150.1260], S)
 		CreateCreature("XA800W", [3100.1260], S)
 		SetInterrupt(FALSE)
@@ -17,27 +17,27 @@ END
 IF 
 	InMyArea("XA800M")
 	InMyArea("XA800W")
-	GlobalLT("XA_ElfsongTimerSet", "MYAREA", 1)
-	GlobalLT("XA_SavedElfsong", "GLOBAL", 1)
+	GlobalLT("XA_LC_ElfsongTimerSet", "MYAREA", 1)
+	GlobalLT("XA_LC_SavedElfsong", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_ElfsongTimerSet", "MYAREA", 1)
-		SetGlobalTimer("XA_ElfsongTimer", "GLOBAL", TWO_MINUTES) 
+		SetGlobal("XA_LC_ElfsongTimerSet", "MYAREA", 1)
+		SetGlobalTimer("XA_LC_ElfsongTimer", "GLOBAL", TWO_MINUTES) 
 END
 
 IF 
 	InMyArea(Player1)
 	InMyArea("XA800M")
 	InMyArea("XA800W")
-	GlobalTimerExpired("XA_ElfsongTimer", "GLOBAL")
-	GlobalLT("XA_SavedElfsong", "GLOBAL", 1)	
-	!Global("XA_800MW", "GLOBAL", 1)
+	GlobalTimerExpired("XA_LC_ElfsongTimer", "GLOBAL")
+	GlobalLT("XA_LC_SavedElfsong", "GLOBAL", 1)	
+	!Global("XA_LC_800MW", "GLOBAL", 1)
 THEN
 	RESPONSE #50
-		SetGlobalTimer("XA_ElfsongTimer", "GLOBAL", TWO_MINUTES) 
+		SetGlobalTimer("XA_LC_ElfsongTimer", "GLOBAL", TWO_MINUTES) 
 	RESPONSE #50
 		SetInterrupt(FALSE)
-		SetGlobalTimer("XA_ElfsongTimer", "GLOBAL", TWO_MINUTES) 
+		SetGlobalTimer("XA_LC_ElfsongTimer", "GLOBAL", TWO_MINUTES) 
 		DisplayStringHead("XA800W", @0)
 		Wait(3)
 		DisplayStringHead("XA800M", @1)
@@ -45,9 +45,9 @@ THEN
 END
 
 IF 
-	GlobalLT("XA_CreateNeomaNPC", "MYAREA", 1)
+	GlobalLT("XA_LC_CreateNeomaNPC", "MYAREA", 1)
 THEN
 	RESPONSE #100
 		CreateCreature("XANEOMA", [3075.1390], E)
-		SetGlobal("XA_CreateNeomaNPC", "MYAREA", 1)
+		SetGlobal("XA_LC_CreateNeomaNPC", "MYAREA", 1)
 END

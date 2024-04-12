@@ -1,5 +1,5 @@
 IF
-	Global("XA_Lodob", "GLOBAL", 1)
+	Global("XA_LC_Lodob", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		StartDialog("XALODOB", Player1)

@@ -1,25 +1,25 @@
 BEGIN ~XABRIELB~
 
 IF ~
-	!Global("XA_BrielGreeting", "GLOBAL", 1)
+	!Global("XA_LC_BrielGreeting", "GLOBAL", 1)
 ~ THEN BEGIN 0
 	SAY @0 /* ~Oh, <CHARNAME>, it's you!~ */
 	
 	IF ~~ THEN REPLY @1 /* ~Yes..?~ */
 	DO ~
-		SetGlobal("XA_BrielGreeting", "GLOBAL", 1)
+		SetGlobal("XA_LC_BrielGreeting", "GLOBAL", 1)
 	~
 	GOTO 1 //OK
 	
 	IF ~~ THEN REPLY @2 /* ~Who else would I be?~ */
 	DO ~
-		SetGlobal("XA_BrielGreeting", "GLOBAL", 1)
+		SetGlobal("XA_LC_BrielGreeting", "GLOBAL", 1)
 	~
 	GOTO 1 //OK
 	
 	IF ~~ THEN REPLY @3 /* ~Ugh, what is it?~ */
 	DO ~
-		SetGlobal("XA_BrielGreeting", "GLOBAL", 1)
+		SetGlobal("XA_LC_BrielGreeting", "GLOBAL", 1)
 	~
 	GOTO 1 //OK
 END
@@ -114,7 +114,7 @@ IF ~~ THEN BEGIN XA_Show_Kindness
 	IF ~~ THEN
 	DO ~
 		ReputationInc(1)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	GOTO XA_END
 END

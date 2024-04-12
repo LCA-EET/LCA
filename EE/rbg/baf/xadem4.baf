@@ -15,6 +15,6 @@ THEN
 		CreateCreature("XADEM03",[185.400],NE)
 		CreateCreature("XADEM04",[445.400],NW)
 		ActionOverride("XANARZU", Enemy())
-		SetGlobal("XA_DemonSpawn", "GLOBAL", 2)
+		SetGlobal("XA_LC_DemonSpawn", "GLOBAL", 2)
 		EndCutSceneMode()
 END

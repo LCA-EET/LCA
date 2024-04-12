@@ -1,26 +1,26 @@
 IF
-	Global("XA_G2_Intro","GLOBAL",1)
+	Global("XA_LC_G2_Intro","GLOBAL",1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_G2_Intro","GLOBAL",2)
+		SetGlobal("XA_LC_G2_Intro","GLOBAL",2)
 		ActionOverride(Player1,StartDialog("PLAYER1",Player1))
 END
 
 IF
-	Global("XA_EndG2","GLOBAL",3)
+	Global("XA_LC_EndG2","GLOBAL",3)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_EndG2","GLOBAL",4)
-		SetGlobal("XA_DemonSpeak","GLOBAL",1)
-		SetGlobal("XA_CompletedG2","GLOBAL",1)
+		SetGlobal("XA_LC_EndG2","GLOBAL",4)
+		SetGlobal("XA_LC_DemonSpeak","GLOBAL",1)
+		SetGlobal("XA_LC_CompletedG2","GLOBAL",1)
 		DisplayStringHead(Player1,104678)  // (The world swirls, and your vision darkens...)
 		SetInterrupt(TRUE)
 		Continue()
 END
 
 IF
-	Global("XA_CompletedG2","GLOBAL",1)
+	Global("XA_LC_CompletedG2","GLOBAL",1)
 	OR(6)
 		InMyArea(Player1)
 		InMyArea(Player2)
@@ -44,48 +44,48 @@ IF
 	Dead("XAGARDUS")  // Gardush
 	Dead("XAAASIM")  // Aasim
 	Dead("XADIYAB")  // Diyab
-	GlobalLT("XA_EndG2","GLOBAL",1)
+	GlobalLT("XA_LC_EndG2","GLOBAL",1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_EndG2","GLOBAL",1)
+		SetGlobal("XA_LC_EndG2","GLOBAL",1)
 		Continue()
 END
 
 IF
 	Dead("XASAREVO")  // Duke Sarevok Anchev
-	GlobalLT("XA_G2TimerSet","LOCALS",1)
+	GlobalLT("XA_LC_G2TimerSet","LOCALS",1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_G2TimerSet","LOCALS",1)
-		SetGlobalTimer("XA_SarevokG2","GLOBAL",TWO_ROUNDS)
+		SetGlobal("XA_LC_G2TimerSet","LOCALS",1)
+		SetGlobalTimer("XA_LC_SarevokG2","GLOBAL",TWO_ROUNDS)
 END
 
 IF
-	GlobalTimerExpired("XA_SarevokG2","GLOBAL")
-	GlobalLT("XA_EndG2","GLOBAL",1)
+	GlobalTimerExpired("XA_LC_SarevokG2","GLOBAL")
+	GlobalLT("XA_LC_EndG2","GLOBAL",1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_EndG2","GLOBAL",1)
+		SetGlobal("XA_LC_EndG2","GLOBAL",1)
 END
 
 IF
-	Global("XA_EndG2","GLOBAL",1)
+	Global("XA_LC_EndG2","GLOBAL",1)
 	Dead("XACC3")  // Corwin
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_EndG2","GLOBAL",2)
-		SetGlobal("XA_CompletedG2","GLOBAL",1)
-		SetGlobal("XA_DemonSpeak","GLOBAL",1)
+		SetGlobal("XA_LC_EndG2","GLOBAL",2)
+		SetGlobal("XA_LC_CompletedG2","GLOBAL",1)
+		SetGlobal("XA_LC_DemonSpeak","GLOBAL",1)
 		SetInterrupt(TRUE)
 END
 
 IF
-	Global("XA_G2_Intro","GLOBAL",3)
+	Global("XA_LC_G2_Intro","GLOBAL",3)
 	InMyArea(Player1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_G2_Intro","GLOBAL",4)
+		SetGlobal("XA_LC_G2_Intro","GLOBAL",4)
 		StartCutSceneMode()
 		StartCutScene("XACSG2A")
 END

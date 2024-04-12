@@ -1,10 +1,10 @@
 IF
 	Clicked([ANYONE])
-	GlobalLT("XA_Letter", "MYAREA", 1)
+	GlobalLT("XA_LC_Letter", "MYAREA", 1)
 THEN
 	RESPONSE #100
 		DisplayString(Myself, @0)
-		SetGlobal("XA_Letter", "MYAREA", 1)
+		SetGlobal("XA_LC_Letter", "MYAREA", 1)
 		GiveItemCreate("XALTRBRN",LastTrigger,0,0,0)
 		//GiveItemCreate("XALTRBRN", LastTriggeredBy,0,0,0)
 END

@@ -1,6 +1,6 @@
 //{ Show the maps again, now that RBG quest has ended.
 IF
-	GlobalLT("XA_ShowMapAreas", "XA4000", 1)
+	GlobalLT("XA_LC_ShowMapAreas", "XA4000", 1)
 THEN
 	RESPONSE #100
 		AddWorldmapAreaFlag("AR0020", VISIBLE)
@@ -86,22 +86,22 @@ THEN
 		AddWorldmapAreaFlag("OH5100", VISIBLE)
 		AddWorldmapAreaFlag("OH6000", VISIBLE)
 		
-		SetGlobal("XA_HideMapAreas", "XA4000", 1)
+		SetGlobal("XA_LC_HideMapAreas", "XA4000", 1)
 		Continue()
 END
 //}
 
 //{ Party Members that went back to BG will rejoin at this point.
 IF
-	Global("XA_Entered4000", "XA4000", 0)
+	Global("XA_LC_Entered4000", "XA4000", 0)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_Entered4000", "XA4000", 1)
+		SetGlobal("XA_LC_Entered4000", "XA4000", 1)
 		FadeFromColor([30.0],0)
 END
 //{ Corwin
 IF
-	GlobalLT("XA_MovedParty", "GLOBAL", 1)
+	GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
 	InParty("XACORWIN")
 THEN
 	RESPONSE #100
@@ -111,8 +111,8 @@ END
 //}
 //{ Imoen
 IF
-	GlobalLT("XA_MovedParty", "GLOBAL", 1)
-	Global("XA_BackToBG_Imoen", "GLOBAL", 1)
+	GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+	Global("XA_LC_BackToBG_Imoen", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		MoveGlobal("XA4000", "Imoen2", [1300.1830])
@@ -123,8 +123,8 @@ END
 
 //{ Jaheira
 IF
-	GlobalLT("XA_MovedParty", "GLOBAL", 1)
-	Global("XA_BackToBG_Jaheira", "GLOBAL", 1)
+	GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+	Global("XA_LC_BackToBG_Jaheira", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		MoveGlobal("XA4000", "Jaheira", [1300.1825])
@@ -135,8 +135,8 @@ END
 
 //{ Viconia
 IF
-	GlobalLT("XA_MovedParty", "GLOBAL", 1)
-	Global("XA_BackToBG_Viconia", "GLOBAL", 1)
+	GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+	Global("XA_LC_BackToBG_Viconia", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		MoveGlobal("XA4000", "Viconia", [1300.1820])
@@ -147,8 +147,8 @@ END
 
 //{ Jan
 IF
-	GlobalLT("XA_MovedParty", "GLOBAL", 1)
-	Global("XA_BackToBG_Jan", "GLOBAL", 1)
+	GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+	Global("XA_LC_BackToBG_Jan", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		MoveGlobal("XA4000", "Jan", [1295.1840])
@@ -159,8 +159,8 @@ END
 
 //{ Aerie
 IF
-	GlobalLT("XA_MovedParty", "GLOBAL", 1)
-	Global("XA_BackToBG_Aerie", "GLOBAL", 1)
+	GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+	Global("XA_LC_BackToBG_Aerie", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		MoveGlobal("XA4000", "Aerie", [1290.1840])
@@ -171,8 +171,8 @@ END
 
 //{ Nalia
 IF
-	GlobalLT("XA_MovedParty", "GLOBAL", 1)
-	Global("XA_BackToBG_Nalia", "GLOBAL", 1)
+	GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+	Global("XA_LC_BackToBG_Nalia", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		MoveGlobal("XA4000", "Nalia", [1285.1840])
@@ -183,8 +183,8 @@ END
 
 //{ Korgan
 IF
-	GlobalLT("XA_MovedParty", "GLOBAL", 1)
-	Global("XA_BackToBG_Korgan", "GLOBAL", 1)
+	GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+	Global("XA_LC_BackToBG_Korgan", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		MoveGlobal("XA4000", "Korgan", [1280.1840])
@@ -195,8 +195,8 @@ END
 
 //{ Anomen
 IF
-	GlobalLT("XA_MovedParty", "GLOBAL", 1)
-	Global("XA_BackToBG_Anomen", "GLOBAL", 1)
+	GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+	Global("XA_LC_BackToBG_Anomen", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		MoveGlobal("XA4000", "Anomen", [1275.1840])
@@ -207,8 +207,8 @@ END
 
 //{ Dorn
 IF
-	GlobalLT("XA_MovedParty", "GLOBAL", 1)
-	Global("XA_BackToBG_Dorn", "GLOBAL", 1)
+	GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+	Global("XA_LC_BackToBG_Dorn", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		MoveGlobal("XA4000", "Dorn", [1270.1840])
@@ -219,8 +219,8 @@ END
 
 //{ Valygar
 IF
-	GlobalLT("XA_MovedParty", "GLOBAL", 1)
-	Global("XA_BackToBG_Valygar", "GLOBAL", 1)
+	GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+	Global("XA_LC_BackToBG_Valygar", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		MoveGlobal("XA4000", "Valygar", [1265.1840])
@@ -231,8 +231,8 @@ END
 
 //{ Neera
 IF
-	GlobalLT("XA_MovedParty", "GLOBAL", 1)
-	Global("XA_BackToBG_Neera", "GLOBAL", 1)
+	GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+	Global("XA_LC_BackToBG_Neera", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		MoveGlobal("XA4000", "Neera", [1260.1840])
@@ -243,8 +243,8 @@ END
 
 //{ Rasaad
 IF
-	GlobalLT("XA_MovedParty", "GLOBAL", 1)
-	Global("XA_BackToBG_Rasaad", "GLOBAL", 1)
+	GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+	Global("XA_LC_BackToBG_Rasaad", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		MoveGlobal("XA4000", "Rasaad", [1255.1840])
@@ -254,10 +254,10 @@ END
 //}
 
 IF
-	GlobalLT("XA_MovedParty", "GLOBAL", 1)
+	GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_MovedParty", "GLOBAL", 1)
+		SetGlobal("XA_LC_MovedParty", "GLOBAL", 1)
 		Continue()
 END
 
@@ -346,11 +346,11 @@ END
 
 IF
 	Global("HeadsSave","XA4000",2) 
-	GlobalLT("XA_GiantsSpawned", "GLOBAL", 1)
-	GlobalTimerExpired("XA_GiantSpawnTimer", "GLOBAL")
+	GlobalLT("XA_LC_GiantsSpawned", "GLOBAL", 1)
+	GlobalTimerExpired("XA_LC_GiantSpawnTimer", "GLOBAL")
 THEN
 	RESPONSE #100
-		SetGlobal("XA_GiantsSpawned", "GLOBAL", 1)
+		SetGlobal("XA_LC_GiantsSpawned", "GLOBAL", 1)
 		//760 380
 		ScreenShake([20.20],20)
 		CreateCreature("XAFGSC1",[800.1600],N)
@@ -360,7 +360,7 @@ END
 
 IF
 	Global("HeadsSave","XA4000",2)  // Spirit Heads
-	Global("XA_GiantsSpawned", "GLOBAL", 1)
+	Global("XA_LC_GiantsSpawned", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("HeadsSave","XA4000",3)  // Spirit Heads
@@ -375,11 +375,11 @@ IF
 	Dead("XAFGSC1")
 	Dead("XAFGSC2")
 	Dead("XAFGSC3")
-	Global("XA_GiantsSpawned", "GLOBAL", 1)
-	!Global("XA_SolarTimer", "GLOBAL", 1)
+	Global("XA_LC_GiantsSpawned", "GLOBAL", 1)
+	!Global("XA_LC_SolarTimer", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_SolarTimer", "GLOBAL", 1)
+		SetGlobal("XA_LC_SolarTimer", "GLOBAL", 1)
 		SetGlobalTimer("DreamSolarTimer", "GLOBAL", ONE_MINUTE)
 END
 

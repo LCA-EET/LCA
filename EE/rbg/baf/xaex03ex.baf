@@ -3,9 +3,9 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
-		SetGlobal("XA_CorwinSex_3", "GLOBAL", 7)
-		SetGlobal("XA_SleepBG", "GLOBAL", 0)
+		SetGlobal("XA_LC_CorwinSex_3", "GLOBAL", 7)
+		SetGlobal("XA_LC_SleepBG", "GLOBAL", 0)
 		SetGlobal("XA_LC_Journal_Sex3", "GLOBAL", 1)
-		IncrementGlobal("XA_TimesHadSex", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_TimesHadSex", "GLOBAL", 1)
 		StartCutscene("XAEXPLEX")
 END

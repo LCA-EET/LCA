@@ -27,35 +27,35 @@ BEGIN ~XAFFOFCR~
 	END
 
 	IF ~
-		!Global("XA_RewardGiven", "LOCALS", 1)
-		!Global("XA_IDOfficer", "LOCALS", 1)
-		!Global("XA_TalkedToOfficer", "LOCALS", 1)
+		!Global("XA_LC_RewardGiven", "LOCALS", 1)
+		!Global("XA_LC_IDOfficer", "LOCALS", 1)
+		!Global("XA_LC_TalkedToOfficer", "LOCALS", 1)
 	~ 
 	THEN BEGIN XAA0
 		SAY @0 /* ~Excuse me, are you <CHARNAME>?~ */
 		IF ~~ THEN REPLY @1 /*  ~Perhaps - who is asking?~ */
 		DO ~
-			SetGlobal("XA_TalkedToOfficer", "LOCALS", 1)
+			SetGlobal("XA_LC_TalkedToOfficer", "LOCALS", 1)
 		~
 		GOTO XAA1 // OK
 		
 		IF ~~ THEN REPLY @2 /* ~No, I am not.~ */
 		DO ~
-			SetGlobal("XA_TalkedToOfficer", "LOCALS", 1)
+			SetGlobal("XA_LC_TalkedToOfficer", "LOCALS", 1)
 		~
 		GOTO XAA5 //OK
 		
 		IF ~~ THEN REPLY @5 /* ~I am <PRO_HESHE>. What is it that you want?~ */
 		DO ~
-			SetGlobal("XA_IDOfficer", "LOCALS", 1)
-			SetGlobal("XA_TalkedToOfficer", "LOCALS", 1)
+			SetGlobal("XA_LC_IDOfficer", "LOCALS", 1)
+			SetGlobal("XA_LC_TalkedToOfficer", "LOCALS", 1)
 		~
 		GOTO XAA6 // OK
 		
 		IF ~~ THEN REPLY @10 /* ~I am <PRO_HESHE>. Are you here to arrest me for another crime I did not commit?~ */
 		DO ~
-			SetGlobal("XA_IDOfficer", "LOCALS", 1)
-			SetGlobal("XA_TalkedToOfficer", "LOCALS", 1)
+			SetGlobal("XA_LC_IDOfficer", "LOCALS", 1)
+			SetGlobal("XA_LC_TalkedToOfficer", "LOCALS", 1)
 		~
 		GOTO XAA7 // OK
 	END
@@ -64,13 +64,13 @@ BEGIN ~XAFFOFCR~
 		SAY @4 /*~I am Corporal Allen of the Flaming Fist. I have been sent from Baldur's Gate to locate <CHARNAME>.~*/
 		IF ~~ THEN REPLY @5 /* ~I am <PRO_HESHE>. What is it that you want?~ */
 		DO ~
-			SetGlobal("XA_IDOfficer", "LOCALS", 1)
+			SetGlobal("XA_LC_IDOfficer", "LOCALS", 1)
 		~
 		GOTO XAA2 // OK
 		
 		IF ~~ THEN REPLY @10 /* ~I am <PRO_HESHE>. Are you here to arrest me for another crime I did not commit?~ */
 		DO ~
-			SetGlobal("XA_IDOfficer", "LOCALS", 1)
+			SetGlobal("XA_LC_IDOfficer", "LOCALS", 1)
 		~
 		GOTO XAA7 // OK
 		
@@ -90,8 +90,8 @@ BEGIN ~XAFFOFCR~
 	END
 
 	IF ~
-		Global("XA_IDOfficer", "LOCALS", 1)
-		!Global("XA_RewardGiven", "LOCALS", 1)
+		Global("XA_LC_IDOfficer", "LOCALS", 1)
+		!Global("XA_LC_RewardGiven", "LOCALS", 1)
 	~ THEN BEGIN XAA2
 		SAY @6 /* ~The Dukes sent me to express their thanks for your aid in restoring Skie Silvershield.~ */
 		=@7 /* ~Also, they have provided a large sum of gold to help you in your hunt for the wizard, Irenicus.~ */
@@ -100,7 +100,7 @@ BEGIN ~XAFFOFCR~
 		DO ~
 			GivePartyGold(10000)
 			AddExperienceParty(35000)
-			SetGlobal("XA_RewardGiven", "LOCALS", 1)
+			SetGlobal("XA_LC_RewardGiven", "LOCALS", 1)
 		~
 		GOTO XAA3 //OK
 		
@@ -147,9 +147,9 @@ BEGIN ~XAFFOFCR~
 	END
 	
 	IF ~
-		!Global("XA_IDOfficer", "LOCALS", 1)
-		!Global("XA_RewardGiven", "LOCALS", 1)
-		Global("XA_TalkedToOfficer", "LOCALS", 1)
+		!Global("XA_LC_IDOfficer", "LOCALS", 1)
+		!Global("XA_LC_RewardGiven", "LOCALS", 1)
+		Global("XA_LC_TalkedToOfficer", "LOCALS", 1)
 	~ THEN BEGIN XAA9
 		SAY @22 /* ~Ah, hello again. Have you found <CHARNAME>?~ */
 		
@@ -161,8 +161,8 @@ BEGIN ~XAFFOFCR~
 		
 		IF ~~ THEN REPLY @5 /* ~I am <PRO_HESHE>. What is it that you want?~ */
 		DO ~
-			SetGlobal("XA_IDOfficer", "LOCALS", 1)
-			SetGlobal("XA_TalkedToOfficer", "LOCALS", 1)
+			SetGlobal("XA_LC_IDOfficer", "LOCALS", 1)
+			SetGlobal("XA_LC_TalkedToOfficer", "LOCALS", 1)
 		~
 		GOTO XAA6
 		

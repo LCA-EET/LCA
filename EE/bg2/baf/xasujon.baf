@@ -2,7 +2,7 @@ IF
 	HP(Myself,1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_IrenicusBeat", "GLOBAL", 1)
+		SetGlobal("XA_LC_IrenicusBeat", "GLOBAL", 1)
 		SetGlobal("IrenicusBeat","AR2806",1)  // Tree of Life
 		StartDialogueNoSet([PC])
 END

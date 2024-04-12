@@ -1,19 +1,19 @@
 BEGIN ~XAASHASP~
 
 IF ~
-	Global("XA_CaelarSuicide", "GLOBAL", 2)
+	Global("XA_LC_CaelarSuicide", "GLOBAL", 2)
 ~ THEN BEGIN XA_CaelarSuicide
 	SAY @57  /* ~You've returned... we sensed Caelar's passing, and the way to the beyond is open to us. Before we depart this plane, tell me... how did she die?~*/
 	
 	IF ~~ THEN REPLY @58  /* ~Not well. (Explain what happened.)~*/
 	DO ~
-		SetGlobal("XA_CaelarSuicide", "GLOBAL", 3)
+		SetGlobal("XA_LC_CaelarSuicide", "GLOBAL", 3)
 	~
 	GOTO XA_CaelarSuicide_2A
 	
 	IF ~~ THEN REPLY @59  /* ~It matters not. Go now, spirit.~*/
 	DO ~
-		SetGlobal("XA_CaelarSuicide", "GLOBAL", 3)
+		SetGlobal("XA_LC_CaelarSuicide", "GLOBAL", 3)
 	~
 	GOTO XA_CaelarSuicide_2B
 END
@@ -23,7 +23,7 @@ IF ~~ THEN BEGIN XA_CaelarSuicide_2A
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_OathRelease", "GLOBAL", 1)
+		SetGlobal("XA_LC_OathRelease", "GLOBAL", 1)
 		SetGlobal("XA_LC_Journal_Ashatiel", "GLOBAL", 2)
 	~
 	EXIT
@@ -34,7 +34,7 @@ IF ~~ THEN BEGIN XA_CaelarSuicide_2B
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_OathRelease", "GLOBAL", 1)
+		SetGlobal("XA_LC_OathRelease", "GLOBAL", 1)
 		SetGlobal("XA_LC_Journal_Ashatiel", "GLOBAL", 3)
 	~
 	EXIT
@@ -43,7 +43,7 @@ END
 IF ~
 	OR(2)
 		InMyArea("XACAELA2")
-		Global("XA_OathRelease", "GLOBAL", 1)
+		Global("XA_LC_OathRelease", "GLOBAL", 1)
 ~ THEN BEGIN XA_ThankYou
 	SAY @56 /*~Thank you for bringing Caelar back to us.~*/
 	
@@ -62,19 +62,19 @@ END
 
 IF ~
 	IsGabber("Aerie")
-	GlobalLT("XA_AerieAshatiel", "GLOBAL", 1)
+	GlobalLT("XA_LC_AerieAshatiel", "GLOBAL", 1)
 ~ THEN BEGIN XA_AerieAshatiel
 	SAY @42 /* ~Yes, child?~ */
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_AerieAshatiel", "GLOBAL", 1)
+		SetGlobal("XA_LC_AerieAshatiel", "GLOBAL", 1)
 	~
 	EXTERN AERIE25J XA_AerieAshatielChain
 END
 
 IF ~
-	Global("XA_HelpAshatiel", "GLOBAL", 1)
+	Global("XA_LC_HelpAshatiel", "GLOBAL", 1)
 ~ THEN BEGIN XA_AgreedToHelp
 	SAY @28 /* ~Remember, you must bring Caelar here so that she can release us from our oath. Only then will we be able to move on to whatever awaits us.~*/
 	
@@ -83,59 +83,59 @@ IF ~
 END
 
 IF ~
-	Global("XA_ShowCrusaders", "GLOBAL", 1)
+	Global("XA_LC_ShowCrusaders", "GLOBAL", 1)
 ~ THEN BEGIN XA_ShowCrusaders
 	SAY @11 /* ~You've no reason to help us. To go back to that horrible place, and rescue our Shining Lady... All I can offer you is our eternal gratitude.~*/
 	
 	IF ~~ THEN REPLY @12 /* ~I barely escaped the first time. I'm sorry, 
 	but there's no way I'm going back there.~*/
 	DO ~
-		SetGlobal("XA_ShowCrusaders", "GLOBAL", 2)
+		SetGlobal("XA_LC_ShowCrusaders", "GLOBAL", 2)
 	~
 	GOTO XA_GoInPeace
 	
 	IF ~~ THEN REPLY @18 /* ~Since we last met, I've gained access to a planar gate. Perhaps I can use it to reach Avernus.~ */
 	DO ~
-		SetGlobal("XA_ShowCrusaders", "GLOBAL", 2)
-		SetGlobal("XA_HelpAshatiel", "GLOBAL", 1)
+		SetGlobal("XA_LC_ShowCrusaders", "GLOBAL", 2)
+		SetGlobal("XA_LC_HelpAshatiel", "GLOBAL", 1)
 	~
 	GOTO XA_DecideToHelp
 	
 	IF ~~ THEN REPLY @27 /* ~I won't help you. Caelar is exactly where she belongs.~ */
 	DO ~
-		SetGlobal("XA_ShowCrusaders", "GLOBAL", 2)
+		SetGlobal("XA_LC_ShowCrusaders", "GLOBAL", 2)
 	~
 	GOTO XA_GoInPeace
 	
 	IF ~
-		GlobalLT("XA_WhyLoyal", "LOCALS", 1)
+		GlobalLT("XA_LC_WhyLoyal", "LOCALS", 1)
 	~ THEN REPLY @35 /* ~Why are you still so loyal to her? She threw the lives of you and your fellow crusaders away just so she could free her uncle from a hell of her own making.~ */
 	DO ~
-		SetGlobal("XA_WhyLoyal", "LOCALS", 1)
+		SetGlobal("XA_LC_WhyLoyal", "LOCALS", 1)
 	~
 	GOTO XA_WhyLoyal
 END
 
 IF ~
-	Global("XA_AshatielSpirit", "GLOBAL", 1)
+	Global("XA_LC_AshatielSpirit", "GLOBAL", 1)
 ~ THEN BEGIN XA_Intro
 	SAY @0 /* ~<CHARNAME>... You've returned.~*/
 	
 	IF ~~ THEN REPLY @1 /* ~I recognize you... Ashatiel. Caelar's right hand.~*/
 	DO ~
-		SetGlobal("XA_AshatielSpirit", "GLOBAL", 2)
+		SetGlobal("XA_LC_AshatielSpirit", "GLOBAL", 2)
 	~
 	GOTO XA_Ashatiel
 	
 	IF ~~ THEN REPLY @19 /* ~I recognize you... Ashatiel. The Shining Lady's lapdog.~*/
 	DO ~
-		SetGlobal("XA_AshatielSpirit", "GLOBAL", 2)
+		SetGlobal("XA_LC_AshatielSpirit", "GLOBAL", 2)
 	~
 	GOTO XA_Ashatiel
 	
 	IF ~~ THEN REPLY @23 /* ~I remember you, Ashatiel. You were as brave as you were foolish.~*/
 	DO ~
-		SetGlobal("XA_AshatielSpirit", "GLOBAL", 2)
+		SetGlobal("XA_LC_AshatielSpirit", "GLOBAL", 2)
 	~
 	GOTO XA_Ashatiel
 END
@@ -153,7 +153,7 @@ IF ~~ THEN BEGIN XA_Ashatiel
 	GOTO XA_CantDie
 	
 	IF ~
-		Global("XA_KanaDream", "GLOBAL", 4)
+		Global("XA_LC_KanaDream", "GLOBAL", 4)
 	~ THEN REPLY @29 /* ~What do you mean? Wasn't it you who told me to come here, in my dream?~*/
 	GOTO XA_Dream
 END
@@ -203,7 +203,7 @@ IF ~~ THEN BEGIN XA_CaelarAlive2
 	GOTO XA_HowMany
 	
 	IF ~
-		Global("XA_KanaDream", "GLOBAL", 4)
+		Global("XA_LC_KanaDream", "GLOBAL", 4)
 	~ THEN REPLY @31 /*  ~The voice in the dream... it must have been Caelar's! She told me that she needed my help against some powerful force.~*/
 	GOTO XA_Dream_Help
 END
@@ -222,7 +222,7 @@ IF ~~ THEN BEGIN XA_HowMany
 	GOTO XA_HelpCaelar
 	
 	IF ~
-		Global("XA_KanaDream", "GLOBAL", 4)
+		Global("XA_LC_KanaDream", "GLOBAL", 4)
 	~ THEN REPLY @31 /*  ~The voice in the dream... it must have been Caelar's! She told me that she needed my help against some powerful force.~*/
 	GOTO XA_Dream_Help
 END
@@ -242,7 +242,7 @@ IF ~~ THEN BEGIN XA_HelpCaelar2
 	
 	IF ~~ THEN REPLY @18 /* ~Since we last met, I've gained access to a planar gate. Perhaps I can use it to reach Avernus.~ */
 	DO ~
-		SetGlobal("XA_HelpAshatiel", "GLOBAL", 1)
+		SetGlobal("XA_LC_HelpAshatiel", "GLOBAL", 1)
 		SetGlobal("XA_LC_Journal_Ashatiel", "GLOBAL", 1)
 	~
 	GOTO XA_DecideToHelp
@@ -251,10 +251,10 @@ IF ~~ THEN BEGIN XA_HelpCaelar2
 	GOTO XA_GoInPeace
 	
 	IF ~
-		GlobalLT("XA_WhyLoyal", "LOCALS", 1)
+		GlobalLT("XA_LC_WhyLoyal", "LOCALS", 1)
 	~ THEN REPLY @35 /* ~Why are you still so loyal to her? She threw the lives of you and your fellow crusaders away just so she could free her uncle from a hell of her own making.~ */
 	DO ~
-		SetGlobal("XA_WhyLoyal", "LOCALS", 1)
+		SetGlobal("XA_LC_WhyLoyal", "LOCALS", 1)
 	~
 	GOTO XA_WhyLoyal
 END
@@ -281,7 +281,7 @@ IF ~~ THEN BEGIN XA_WhyLoyal2
 	
 	IF ~~ THEN REPLY @18 /* ~Since we last met, I've gained access to a planar gate. Perhaps I can use it to reach Avernus.~ */
 	DO ~
-		SetGlobal("XA_HelpAshatiel", "GLOBAL", 1)
+		SetGlobal("XA_LC_HelpAshatiel", "GLOBAL", 1)
 		SetGlobal("XA_LC_Journal_Ashatiel", "GLOBAL", 1)
 	~
 	GOTO XA_DecideToHelp
@@ -290,10 +290,10 @@ IF ~~ THEN BEGIN XA_WhyLoyal2
 	GOTO XA_GoInPeace
 	
 	IF ~
-		GlobalLT("XA_WhyLoyal", "LOCALS", 1)
+		GlobalLT("XA_LC_WhyLoyal", "LOCALS", 1)
 	~ THEN REPLY @35 /* ~Why are you still so loyal to her? She threw the lives of you and your fellow crusaders away just so she could free her uncle from a hell of her own making.~ */
 	DO ~
-		SetGlobal("XA_WhyLoyal", "LOCALS", 1)
+		SetGlobal("XA_LC_WhyLoyal", "LOCALS", 1)
 	~
 	GOTO XA_WhyLoyal
 END
@@ -313,7 +313,7 @@ IF ~~ THEN BEGIN XA_DecideToHelp
 END
 
 IF ~
-	GlobalLT("XA_HelpAshatiel", "GLOBAL", 1)
+	GlobalLT("XA_LC_HelpAshatiel", "GLOBAL", 1)
 ~ THEN BEGIN XA_Reconsider
 	SAY @34 /* ~Have you reconsidered? Will you help rescue Caelar?~*/
 	
@@ -322,7 +322,7 @@ IF ~
 	
 	IF ~~ THEN REPLY @18 /* ~Since we last met, I've gained access to a planar gate. Perhaps I can use it to reach Avernus.~ */
 	DO ~
-		SetGlobal("XA_HelpAshatiel", "GLOBAL", 1)
+		SetGlobal("XA_LC_HelpAshatiel", "GLOBAL", 1)
 		SetGlobal("XA_LC_Journal_Ashatiel", "GLOBAL", 1)
 	~
 	GOTO XA_DecideToHelp
@@ -331,10 +331,10 @@ IF ~
 	GOTO XA_GoInPeace
 	
 	IF ~
-		GlobalLT("XA_WhyLoyal", "LOCALS", 1)
+		GlobalLT("XA_LC_WhyLoyal", "LOCALS", 1)
 	~ THEN REPLY @35 /* ~Why are you still so loyal to her? She threw the lives of you and your fellow crusaders away just so she could free her uncle from a hell of her own making.~ */
 	DO ~
-		SetGlobal("XA_WhyLoyal", "LOCALS", 1)
+		SetGlobal("XA_LC_WhyLoyal", "LOCALS", 1)
 	~
 	GOTO XA_WhyLoyal
 END

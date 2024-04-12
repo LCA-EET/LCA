@@ -19,7 +19,7 @@ APPEND BDCORWIJ
 		
 		IF ~~ THEN
 		DO ~
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		EXTERN XAWTREX XA_KissReaction 
 	END

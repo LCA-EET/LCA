@@ -1,13 +1,13 @@
 BEGIN ~XANEB~
 
 IF ~
-	GlobalLT("XA_MeetNebSewer", "LOCALS", 1)
+	GlobalLT("XA_LC_MeetNebSewer", "LOCALS", 1)
 ~ THEN BEGIN XA_MeetNebSewer
 	SAY @0 /* ~Distractions, distractions. Even in these filthy sewers, a gnome can't find peace, hee hee...~ */
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_MeetNebSewer", "LOCALS", 1)
+		SetGlobal("XA_LC_MeetNebSewer", "LOCALS", 1)
 	~
 	GOTO XA_MeetNebSewer2
 	
@@ -16,7 +16,7 @@ IF ~
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN 
 	DO ~
-		SetGlobal("XA_MeetNebSewer", "LOCALS", 1)
+		SetGlobal("XA_LC_MeetNebSewer", "LOCALS", 1)
 	~
 	EXTERN XACORWIJ XA_XANEB_1
 END
@@ -28,8 +28,8 @@ IF ~~ THEN BEGIN XA_XANEB_2
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_NebRohma", "GLOBAL", 1)
-		SetGlobal("XA_NebFight", "GLOBAL", 1)
+		SetGlobal("XA_LC_NebRohma", "GLOBAL", 1)
+		SetGlobal("XA_LC_NebFight", "GLOBAL", 1)
 		Enemy()
 	~
 	EXIT
@@ -38,7 +38,7 @@ IF ~~ THEN BEGIN XA_XANEB_2
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN 
 	DO ~
-		SetGlobal("XA_NebRohma", "GLOBAL", 1)
+		SetGlobal("XA_LC_NebRohma", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_XANebFight
 END
@@ -66,7 +66,7 @@ IF ~~ THEN BEGIN XA_MeetNebSewer3A
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN
 	DO ~
-		SetGlobal("XA_NebFight", "GLOBAL", 1)
+		SetGlobal("XA_LC_NebFight", "GLOBAL", 1)
 		Enemy()
 	~
 	EXIT
@@ -87,7 +87,7 @@ IF ~~ THEN BEGIN XA_MeetNebSewer3B
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN
 	DO ~
-		SetGlobal("XA_NebFight", "GLOBAL", 1)
+		SetGlobal("XA_LC_NebFight", "GLOBAL", 1)
 		Enemy()
 	~
 	EXIT

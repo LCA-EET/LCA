@@ -1,28 +1,28 @@
 BEGIN ~XACOOK~
 
 IF ~
-	!Global("XA_CookGreeting", "GLOBAL", 1)
+	!Global("XA_LC_CookGreeting", "GLOBAL", 1)
 	InPartySlot(LastTalkedToBy, 0)
 ~ THEN BEGIN XA_Greeting
 	SAY @176 /* ~Hello! The Duke's daughter said we might be having visitors. I just heated up some Sembian meatballs - would you like to try some?~  */
 	
 	IF ~~ THEN REPLY @177 /* ~Sure!~*/
 	DO ~
-		SetGlobal("XA_CookGreeting", "GLOBAL", 1)
+		SetGlobal("XA_LC_CookGreeting", "GLOBAL", 1)
 	~
 	GOTO XA_EatMeatballsChain
 	
 	IF ~~ THEN REPLY @178 /* ~No thanks, I'm not hungry.~*/
 	DO ~
-		SetGlobal("XA_CookGreeting", "GLOBAL", 1)
+		SetGlobal("XA_LC_CookGreeting", "GLOBAL", 1)
 	~
 	EXIT
 END
 
 IF ~
-	Global("XA_CookGreeting", "GLOBAL", 1)
+	Global("XA_LC_CookGreeting", "GLOBAL", 1)
 	InPartySlot(LastTalkedToBy, 0)
-	!Global("XA_SembianMeatballs", "GLOBAL", 1)
+	!Global("XA_LC_SembianMeatballs", "GLOBAL", 1)
 ~ THEN BEGIN XA_TryMeatballs
 	SAY @192 /* ~Hello again.~ */
 	
@@ -31,16 +31,16 @@ IF ~
 END
 
 IF ~
-	Global("XA_CookGreeting", "GLOBAL", 1)
+	Global("XA_LC_CookGreeting", "GLOBAL", 1)
 	InPartySlot(LastTalkedToBy, 0)
-	Global("XA_SembianMeatballs", "GLOBAL", 1)
-	!Global("XA_MoreMeatballs", "GLOBAL", 1)
+	Global("XA_LC_SembianMeatballs", "GLOBAL", 1)
+	!Global("XA_LC_MoreMeatballs", "GLOBAL", 1)
 ~ THEN BEGIN XA_TryMeatballs
 	SAY @192 /* ~Hello again.~ */
 	
 	IF ~~ THEN REPLY @195 /* ~I'm afraid not - if I'd known such a group of strong and hungry adventurers were coming I'd have made more. Sorry!~ */
 	DO ~
-		SetGlobal("XA_MoreMeatballs", "GLOBAL", 1)
+		SetGlobal("XA_LC_MoreMeatballs", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -77,7 +77,7 @@ IF ~~ THEN BEGIN XA_YoureWelcome
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_SembianMeatballs", "GLOBAL", 1)
+		SetGlobal("XA_LC_SembianMeatballs", "GLOBAL", 1)
 		ActionOverride(Player1, ChangeStat(Myself, MAXHITPOINTS, 2, ADD))
 	~
 	EXIT

@@ -1,7 +1,7 @@
 BEGIN ~XASKIE~
 
 IF ~
-	Global("XA_ByeRohma", "GLOBAL", 1)
+	Global("XA_LC_ByeRohma", "GLOBAL", 1)
 	RandomNum(2,1)
 ~ THEN BEGIN XA_EndBGQuest_CorwinRequested
 	SAY @77 /* ~Rohma's just too sweet - I love her!~*/
@@ -9,7 +9,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_ByeRohma", "GLOBAL", 1)
+	Global("XA_LC_ByeRohma", "GLOBAL", 1)
 	RandomNum(2,2)
 ~ THEN BEGIN XA_EndBGQuest_CorwinRequested
 	SAY @78 /* ~Thanks for keeping your word. My father would have locked up in my room if he knew I had any part in the rescue.~*/
@@ -17,12 +17,12 @@ IF ~
 END
 
 IF ~
-	Global("XA_ArrivedInUndercity", "GLOBAL", 3)
+	Global("XA_LC_ArrivedInUndercity", "GLOBAL", 3)
 ~ THEN BEGIN XA_SkieUC
 	SAY @48 /* Psst. */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_ArrivedInUndercity", "GLOBAL", 4)
+		SetGlobal("XA_LC_ArrivedInUndercity", "GLOBAL", 4)
 	~
 	GOTO XA_SkieUCChain
 END 
@@ -60,7 +60,7 @@ IF ~~ THEN BEGIN XA_Thanks2
 	SAY @73 /* ~Don't tell my father about this! He thinks I'm asleep at home.~ */
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_DontTellEntar", "GLOBAL", 1)
+		SetGlobal("XA_LC_DontTellEntar", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_Thanks3
 END
@@ -88,37 +88,37 @@ IF ~~ THEN BEGIN XA_CanGetRohma
 	IF ~~ THEN EXTERN XACORWIJ XA_GiveSkieRing
 END
 IF ~
-	Global("XA_DukesDebriefed", "GLOBAL", 4)
+	Global("XA_LC_DukesDebriefed", "GLOBAL", 4)
 ~ THEN BEGIN XA_Congratulations
 	SAY @46 /* ~Congratulations! I'm so happy for the both of you!~ */
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_DukesDebriefed", "GLOBAL", 5)
-		SetGlobal("XA_DukesFullyDebriefed", "GLOBAL", 1)
+		SetGlobal("XA_LC_DukesDebriefed", "GLOBAL", 5)
+		SetGlobal("XA_LC_DukesFullyDebriefed", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_Congratulations1
 END
 
 IF ~
 	IsGabber("XACORWIN")
-	!Global("XA_CorwinTalkedToSkie", "GLOBAL", 1)
+	!Global("XA_LC_CorwinTalkedToSkie", "GLOBAL", 1)
 ~ THEN BEGIN XA_MeetSkieCorwin
 	SAY @34 /* ~Captain! Welcome home!~ */
 	
 	IF ~
-		Global("XA_TalkedToSkie", "GLOBAL", 1)
+		Global("XA_LC_TalkedToSkie", "GLOBAL", 1)
 	~ THEN EXTERN XACORWIJ XA_MeetSkieCorwinChain2
 	
 	IF ~
-		!Global("XA_TalkedToSkie", "GLOBAL", 1)
+		!Global("XA_LC_TalkedToSkie", "GLOBAL", 1)
 	~ THEN EXTERN XACORWIJ XA_MeetSkieCorwinChain
 END
 
 IF ~
-	!Global("XA_TalkedToSkie", "GLOBAL", 1)
+	!Global("XA_LC_TalkedToSkie", "GLOBAL", 1)
 	IsGabber("XACORWIN")
-	Global("XA_CorwinTalkedToSkie", "GLOBAL", 1)
+	Global("XA_LC_CorwinTalkedToSkie", "GLOBAL", 1)
 ~ THEN BEGIN XA_MeetSkieCorwin
 	SAY @35 /* ~Captain? Please let <CHARNAME> know that we need to speak to <PRO_HIMHER>.~ */
 	
@@ -127,8 +127,8 @@ IF ~
 END
 
 IF ~
-	Global("XA_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_TalkedToSkie", "GLOBAL", 1)
+	Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_LC_TalkedToSkie", "GLOBAL", 1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_MeetSkie
 	SAY @0 /* ~<CHARNAME>! Welcome back!~*/
@@ -255,7 +255,7 @@ IF ~~ THEN BEGIN XA_MeetSkieEnd3
 	SAY @31 /* ~Right. See you tomorrow!~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_TalkedToSkie", "GLOBAL", 1)
+		SetGlobal("XA_LC_TalkedToSkie", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -263,7 +263,7 @@ END
 CHAIN XACORWIJ XA_MeetSkieCorwinChain
 	@37 /* ~Thanks Skie. I trust you are well?~*/
 	DO ~
-		SetGlobal("XA_CorwinTalkedToSkie", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinTalkedToSkie", "GLOBAL", 1)
 	~
 	== XASKIE
 	@38 /* ~Never better.~ */
@@ -283,7 +283,7 @@ EXIT
 CHAIN XACORWIJ XA_MeetSkieCorwinChain2
 	@37 /* ~Thanks Skie. I trust you are well?~*/
 	DO ~
-		SetGlobal("XA_CorwinTalkedToSkie", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinTalkedToSkie", "GLOBAL", 1)
 	~
 	== XASKIE
 	@38 /* ~Never better.~ */
@@ -295,7 +295,7 @@ CHAIN XACORWIJ XA_MeetSkieCorwinChain2
 EXIT
 
 CHAIN IF ~
-	Global("XA_ArrivedInUndercity", "GLOBAL", 3)
+	Global("XA_LC_ArrivedInUndercity", "GLOBAL", 3)
 ~ THEN XASKIE XA_SkieUCChain
 	@67 /* ~Over here.~*/
 	== XACORWIJ

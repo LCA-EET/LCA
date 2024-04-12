@@ -21,15 +21,15 @@ APPEND ~XALCDBG~
 		
 		IF ~~ THEN REPLY @5032
 		DO ~
-			SetGlobal("XA_CorwinDebug1002", "GLOBAL", 1)
-			SetGlobal("XA_SkieSaved", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinDebug1002", "GLOBAL", 1)
+			SetGlobal("XA_LC_SkieSaved", "GLOBAL", 1)
 			SetGlobal("XA_LC_CorwinContinue", "GLOBAL", 2)
 		~
 		GOTO XA_BG2_Debug
 		
 		IF ~~ THEN REPLY @5033 /* Reset Corwin's Banters. */
 		DO ~
-			SetGlobal("XA_ResetCorwinBanters", "GLOBAL", 1)
+			SetGlobal("XA_LC_ResetCorwinBanters", "GLOBAL", 1)
 		~
 		GOTO XA_BG2_Debug
 		
@@ -140,7 +140,7 @@ APPEND ~XALCDBG~
 		
 		IF ~~ THEN REPLY @5076 /* ~Corwin Death from Bite.~*/
 		DO ~
-			SetGlobal("XA_CorwinBit", "GLOBAL", 8)
+			SetGlobal("XA_LC_CorwinBit", "GLOBAL", 8)
 			ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
 		~
 		EXIT

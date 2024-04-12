@@ -1,7 +1,7 @@
 BEGIN ~XALYRIEL~
 
 IF ~
-	Global("XA_SavedLyriel", "GLOBAL", 3)
+	Global("XA_LC_SavedLyriel", "GLOBAL", 3)
 ~ THEN BEGIN XA_Escaped
 	SAY @79 /* ~We've escaped! Thank you!~ */
 	
@@ -27,7 +27,7 @@ IF ~~ THEN BEGIN XA_EnchantAmulet
 		ActionOverride(Player4,TransformItem("AMUL27","XALYAMUL"))
 		ActionOverride(Player5,TransformItem("AMUL27","XALYAMUL"))
 		ActionOverride(Player6,TransformItem("AMUL27","XALYAMUL"))
-		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_Lyriel", "GLOBAL", 1)
 	~
 	GOTO XA_EnchantAmulet2
 END
@@ -54,21 +54,21 @@ IF ~~ THEN BEGIN XA_GoodBye
 	IF ~~ THEN
 	DO ~
 		AddExperienceParty(100000)
-		SetGlobalTimer("XA_LyrielSingTimer", "GLOBAL", TEN_MINUTES)
-		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 2)
+		SetGlobalTimer("XA_LC_LyrielSingTimer", "GLOBAL", TEN_MINUTES)
+		SetGlobal("XA_LC__Journal_Lyriel", "GLOBAL", 2)
 		DestroySelf()
 	~
 	EXIT
 END
 
 IF ~
-	Global("XA_DemonDead", "GLOBAL", 5)
+	Global("XA_LC_DemonDead", "GLOBAL", 5)
 ~ THEN BEGIN XA_ReadyToLeave
 	SAY @73 /* ~Are you ready to leave?~ */
 	
 	IF ~~ THEN REPLY @74 /* ~Yes. Let's go.~ */
 	DO ~
-		SetGlobal("XA_SavedLyriel", "GLOBAL", 1)
+		SetGlobal("XA_LC_SavedLyriel", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XAPEXIT")
 	~
@@ -81,26 +81,26 @@ END
 
 IF ~
 	OR(2)
-		Global("XA_DemonDead", "GLOBAL", 2)
-		Global("XA_DemonDead", "GLOBAL", 3)
+		Global("XA_LC_DemonDead", "GLOBAL", 2)
+		Global("XA_LC_DemonDead", "GLOBAL", 3)
 ~ THEN BEGIN XA_IncubusDead
 	SAY @66 /* ~You've done it! Please hero, hold still and allow me to tend to your wounds.~ */
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_DemonDead", "GLOBAL", 3)
+		SetGlobal("XA_LC_DemonDead", "GLOBAL", 3)
 	~
 	EXIT
 END
 
 IF ~
-	Global("XA_DemonDead", "GLOBAL", 4)
+	Global("XA_LC_DemonDead", "GLOBAL", 4)
 ~ THEN BEGIN XA_IncubusDead2
 	SAY @67 /* ~You were able to break the wards and defeat the demon in his own enclave. Surely, you can lead us out of this place.~ */
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_DemonDead", "GLOBAL", 5)
+		SetGlobal("XA_LC_DemonDead", "GLOBAL", 5)
 	~
 	GOTO XA_IncubusDead3
 END
@@ -110,7 +110,7 @@ IF ~~ THEN BEGIN XA_IncubusDead3
 	
 	IF ~~ THEN REPLY @69 /* ~Right. Let's go.~ */
 	DO ~
-		SetGlobal("XA_SavedLyriel", "GLOBAL", 1)
+		SetGlobal("XA_LC_SavedLyriel", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XAPEXIT")
 	~
@@ -130,7 +130,7 @@ IF ~~ THEN BEGIN XA_IncubusLove
 	
 	IF ~~ THEN REPLY @77 /* ~It's time to leave.~ */
 	DO ~
-		SetGlobal("XA_SavedLyriel", "GLOBAL", 1)
+		SetGlobal("XA_LC_SavedLyriel", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XAPEXIT")
 	~
@@ -141,7 +141,7 @@ IF ~~ THEN BEGIN XA_IncubusLove
 END
 
 IF ~
-	GlobalLT("XA_Lyriel", "GLOBAL", 1)
+	GlobalLT("XA_LC_Lyriel", "GLOBAL", 1)
 ~ THEN BEGIN XA_Startled
 	SAY @31 /* ~(Startled, she turns and faces you.)~ */
 	
@@ -150,35 +150,35 @@ IF ~
 END 
 
 IF ~
-	Global("XA_Lyriel", "GLOBAL", 1)
+	Global("XA_LC_Lyriel", "GLOBAL", 1)
 ~ THEN BEGIN XA_Intro2
 	SAY @49 /* ~You've returned... Do you need anything?~ */
 	
 	IF ~
-		!Global("XA_AskedAboutDemon", "LOCALS",1)
+		!Global("XA_LC_AskedAboutDemon", "LOCALS",1)
 	~ THEN REPLY @50 /* ~Tell me more about the demon trapped with us.~*/
 	DO ~
-		SetGlobal("XA_AskedAboutDemon", "LOCALS",1)
-		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 3)
+		SetGlobal("XA_LC_AskedAboutDemon", "LOCALS",1)
+		SetGlobal("XA_LC__Journal_Lyriel", "GLOBAL", 3)
 	~
 	GOTO XA_AskedAboutDemon
 	
 	IF ~
-		!Global("XA_AskedAboutPatrons", "GLOBAL", 1)
-		Global("XA_AlythIntro", "GLOBAL", 1)
+		!Global("XA_LC_AskedAboutPatrons", "GLOBAL", 1)
+		Global("XA_LC_AlythIntro", "GLOBAL", 1)
 	~ THEN REPLY @91 /* ~When I spoke with Alyth, proprietor of the Elfsong, she told me that three of her regulars had gone missing. Do you know anything about what happened to them?~*/
 	DO ~
-		SetGlobal("XA_AskedAboutPatrons", "GLOBAL", 1)
-		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 4)
+		SetGlobal("XA_LC_AskedAboutPatrons", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_Lyriel", "GLOBAL", 4)
 	~
 	GOTO XA_AskedAboutPatrons
 	
 	IF ~
-		!Global("XA_AskedAboutGuardians", "LOCALS",1)
+		!Global("XA_LC_AskedAboutGuardians", "LOCALS",1)
 	~ THEN REPLY @54 /* ~Tell me about the guardians.~ */
 	DO ~
-		SetGlobal("XA_AskedAboutGuardians", "LOCALS",1)
-		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 5)
+		SetGlobal("XA_LC_AskedAboutGuardians", "LOCALS",1)
+		SetGlobal("XA_LC__Journal_Lyriel", "GLOBAL", 5)
 	~
 	GOTO XA_AskedAboutGuardians
 	
@@ -193,20 +193,20 @@ IF ~~ THEN BEGIN XA_AskedAboutPatrons
 	SAY @92 /* ~I do. They were lured here, as you and I were, and transmogrified into dopplegangers by the demon. Hideous, grotesque creatures.~ */
 	
 	IF ~
-		!Global("XA_AskedAboutGuardians", "LOCALS",1)
+		!Global("XA_LC_AskedAboutGuardians", "LOCALS",1)
 	~ THEN REPLY @54 /* ~Tell me about the guardians.~ */
 	DO ~
-		SetGlobal("XA_AskedAboutGuardians", "LOCALS",1)
-		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 5)
+		SetGlobal("XA_LC_AskedAboutGuardians", "LOCALS",1)
+		SetGlobal("XA_LC__Journal_Lyriel", "GLOBAL", 5)
 	~
 	GOTO XA_AskedAboutGuardians
 	
 	IF ~
-		!Global("XA_AskedAboutDemon", "LOCALS",1)
+		!Global("XA_LC_AskedAboutDemon", "LOCALS",1)
 	~ THEN REPLY @50 /* ~Tell me more about the demon trapped with us.~*/
 	DO ~
-		SetGlobal("XA_AskedAboutDemon", "LOCALS",1)
-		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 3)
+		SetGlobal("XA_LC_AskedAboutDemon", "LOCALS",1)
+		SetGlobal("XA_LC__Journal_Lyriel", "GLOBAL", 3)
 	~
 	GOTO XA_AskedAboutDemon
 	
@@ -223,20 +223,20 @@ IF ~~ THEN BEGIN XA_AskedAboutDemon
 	= @52 /*  ~The wizard created this prison, and confined the demon within it.~ */
 	
 	IF ~
-		!Global("XA_AskedAboutGuardians", "LOCALS",1)
+		!Global("XA_LC_AskedAboutGuardians", "LOCALS",1)
 	~ THEN REPLY @54 /* ~Tell me about the guardians.~ */
 	DO ~
-		SetGlobal("XA_AskedAboutGuardians", "LOCALS",1)
-		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 5)
+		SetGlobal("XA_LC_AskedAboutGuardians", "LOCALS",1)
+		SetGlobal("XA_LC__Journal_Lyriel", "GLOBAL", 5)
 	~
 	GOTO XA_AskedAboutGuardians
 	
 	IF ~
-		!Global("XA_AskedAboutPatrons", "GLOBAL", 1)
-		Global("XA_AlythIntro", "GLOBAL", 1)
+		!Global("XA_LC_AskedAboutPatrons", "GLOBAL", 1)
+		Global("XA_LC_AlythIntro", "GLOBAL", 1)
 	~ THEN REPLY @91 /* ~When I spoke with Alyth, proprietor of the Elfsong, she told me that three of her regulars had gone missing. Do you know anything about what happened to them?~*/
 	DO ~
-		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 4)
+		SetGlobal("XA_LC__Journal_Lyriel", "GLOBAL", 4)
 	~
 	GOTO XA_AskedAboutPatrons
 	
@@ -254,20 +254,20 @@ IF ~~ THEN BEGIN XA_AskedAboutGuardians
 	= @56 /* ~The guardians could take the form of an opponent from your past, someone you loved or respected, or even an aspect of yourself.~ */
 	
 	IF ~
-		!Global("XA_AskedAboutDemon", "LOCALS",1)
+		!Global("XA_LC_AskedAboutDemon", "LOCALS",1)
 	~ THEN REPLY @50 /* ~Tell me more about the demon trapped with us.~*/
 	DO ~
-		SetGlobal("XA_AskedAboutDemon", "LOCALS",1)
-		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 3)
+		SetGlobal("XA_LC_AskedAboutDemon", "LOCALS",1)
+		SetGlobal("XA_LC__Journal_Lyriel", "GLOBAL", 3)
 	~
 	GOTO XA_AskedAboutDemon
 	
 	IF ~
-		!Global("XA_AskedAboutPatrons", "GLOBAL", 1)
-		Global("XA_AlythIntro", "GLOBAL", 1)
+		!Global("XA_LC_AskedAboutPatrons", "GLOBAL", 1)
+		Global("XA_LC_AlythIntro", "GLOBAL", 1)
 	~ THEN REPLY @91 /* ~When I spoke with Alyth, proprietor of the Elfsong, she told me that three of her regulars had gone missing. Do you know anything about what happened to them?~*/
 	DO ~
-		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 4)
+		SetGlobal("XA_LC__Journal_Lyriel", "GLOBAL", 4)
 	~
 	GOTO XA_AskedAboutPatrons
 	
@@ -283,16 +283,16 @@ IF ~~ THEN BEGIN XA_Intro
 	
 	IF ~~ THEN REPLY @63 /* ~Calm yourself, spirit. I am <CHARNAME>. What is this place?~*/
 	DO ~
-		SetGlobal("XA_Lyriel", "GLOBAL", 1)
-		SetGlobal("XA_WhatIsThisPlace", "LOCALS", 1)
+		SetGlobal("XA_LC_Lyriel", "GLOBAL", 1)
+		SetGlobal("XA_LC_WhatIsThisPlace", "LOCALS", 1)
 	~
 	GOTO XA_FM_WhatIsThisPlace //OK
 	
 	IF ~~ THEN REPLY @2 /* ~I recognize you - you're the woman from the painting... but you're a ghost?~*/
 	DO ~
-		SetGlobal("XA_Lyriel", "GLOBAL", 1)
-		SetGlobal("XA_Canvas", "LOCALS", 1)
-		SetGlobal("XA_Spirit", "LOCALS", 1)
+		SetGlobal("XA_LC_Lyriel", "GLOBAL", 1)
+		SetGlobal("XA_LC_Canvas", "LOCALS", 1)
+		SetGlobal("XA_LC_Spirit", "LOCALS", 1)
 	~
 	GOTO XA_Canvas_FM
 END
@@ -318,34 +318,34 @@ IF ~~ THEN BEGIN XA_WhatIsThisPlace
 	SAY @5 /* ~As I understand it, this ... reality ... was created as a prison for a powerful demon trapped within. Over the eons, he's learned to reshape it according to his needs. He can look and hear through the painting to your reality, and has even learned to send his creations through to the other side, though he himself can never escape.~ */
 	
 	IF ~
-		!Global("XA_Canvas", "LOCALS", 1)
+		!Global("XA_LC_Canvas", "LOCALS", 1)
 	~ THEN REPLY @2 /* ~I recognize you - you're the woman from the painting... but you're a ghost?~ */
 	DO ~
-		SetGlobal("XA_Canvas", "LOCALS", 1)
+		SetGlobal("XA_LC_Canvas", "LOCALS", 1)
 	~
 	GOTO XA_Canvas //OK
 	
 	IF ~
-		!Global("XA_Spirit", "LOCALS", 1)
+		!Global("XA_LC_Spirit", "LOCALS", 1)
 	~ THEN REPLY @30 /* ~Who are you, spirit?~ */
 	DO ~
-		SetGlobal("XA_Spirit", "LOCALS", 1)
+		SetGlobal("XA_LC_Spirit", "LOCALS", 1)
 	~
 	GOTO XA_Spirit //OK
 	
 	IF ~
-		!Global("XA_HowDidEndUpHere", "LOCALS", 1)
+		!Global("XA_LC_HowDidEndUpHere", "LOCALS", 1)
 	~ THEN REPLY @32 /* ~How did you end up here?~ */
 	DO ~
-		SetGlobal("XA_HowDidEndUpHere", "LOCALS", 1)
+		SetGlobal("XA_LC_HowDidEndUpHere", "LOCALS", 1)
 	~
 	GOTO XA_HowDidEndUpHere //OK
 	
 	IF ~
-		!Global("XA_WhyAmIHere", "LOCALS", 1)
+		!Global("XA_LC_WhyAmIHere", "LOCALS", 1)
 	~ THEN REPLY @20 /* ~But, why me? Why would he bring me here?~ */
 	DO ~
-		SetGlobal("XA_WhyAmIHere", "LOCALS", 1)
+		SetGlobal("XA_LC_WhyAmIHere", "LOCALS", 1)
 	~
 	GOTO XA_WhyAmIHere
 END
@@ -402,26 +402,26 @@ IF ~~ THEN BEGIN XA_Spirit //OK
 	SAY @8 /* ~I am Lyriel. Long ago, I took my own life after the man I loved perished at sea. The Elfsong, as you call it... it is where we first professed our love for eachother, and it is where I ended my life. My spirit remained there until I became trapped here, as you are.~*/
 	
 	IF ~
-		!Global("XA_HowDidEndUpHere", "LOCALS", 1)
+		!Global("XA_LC_HowDidEndUpHere", "LOCALS", 1)
 	~ THEN REPLY @32 /* ~How did you end up here?~ */
 	DO ~
-		SetGlobal("XA_HowDidEndUpHere", "LOCALS", 1)
+		SetGlobal("XA_LC_HowDidEndUpHere", "LOCALS", 1)
 	~
 	GOTO XA_HowDidEndUpHere //OK
 	
 	IF ~
-		!Global("XA_HowToEscape", "LOCALS", 1)
+		!Global("XA_LC_HowToEscape", "LOCALS", 1)
 	~ THEN REPLY @9 /* ~How do I get out of here?~ */
 	DO ~
-		SetGlobal("XA_HowToEscape", "LOCALS", 1)
+		SetGlobal("XA_LC_HowToEscape", "LOCALS", 1)
 	~
 	GOTO XA_HowToEscape //OK
 	
 	IF ~
-		!Global("XA_WhatIsThisPlace", "LOCALS", 1)
+		!Global("XA_LC_WhatIsThisPlace", "LOCALS", 1)
 	~ THEN REPLY @1 /* ~I'm <CHARNAME>. What is this place?~*/
 	DO ~
-		SetGlobal("XA_WhatIsThisPlace", "LOCALS", 1)
+		SetGlobal("XA_LC_WhatIsThisPlace", "LOCALS", 1)
 	~
 	GOTO XA_WhatIsThisPlace //OK
 END
@@ -441,7 +441,7 @@ IF ~~ THEN BEGIN XA_HowToEscape
 	
 	IF ~~ THEN REPLY @41 /* ~Where is the demon?~ */
 	DO ~
-		SetGlobal("XA_LC_Journal_Lyriel", "GLOBAL", 6)
+		SetGlobal("XA_LC__Journal_Lyriel", "GLOBAL", 6)
 	~
 	GOTO XA_HowToEscape2 //OK
 END
@@ -475,7 +475,7 @@ IF ~~ THEN BEGIN XA_GiveHeal
 
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LyrielHeal", "GLOBAL", 1)
+		SetGlobal("XA_LC_LyrielHeal", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -485,7 +485,7 @@ IF ~~ THEN BEGIN XA_GiveRezAndHeal
 
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LyrielRez", "GLOBAL", 1)
+		SetGlobal("XA_LC_LyrielRez", "GLOBAL", 1)
 	~
 	EXIT
 END

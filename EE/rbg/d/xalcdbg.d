@@ -11,7 +11,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @6020 /*~Area Test~ */
 		GOTO XA_RBG_AreaTest
 	
-		IF ~~ THEN REPLY @6036
+		IF ~~ THEN REPLY @6036 /* Cutscene Test */
 		GOTO XA_RBG_CutsceneTest
 	
 		IF ~~ THEN REPLY @6001 /* ~Item Test~*/
@@ -102,6 +102,13 @@ APPEND ~XALCDBG~
 		DO ~
 			StartCutSceneMode()
 			StartCutscene("XAG3ENT")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6066 
+		DO ~
+			StartCutSceneMode()
+			StartCutscene("XAPROPOS")
 		~
 		EXIT
 		
@@ -501,7 +508,7 @@ APPEND ~XALCDBG~
 		
 		IF ~~ THEN REPLY @6019
 		DO ~
-			SetGlobal("XA_ReturnToBG", "GLOBAL", 1)
+			SetGlobal("XA_LC_ReturnToBG", "GLOBAL", 1)
 		~
 		GOTO XA_RBG_AdjustVariables
 		

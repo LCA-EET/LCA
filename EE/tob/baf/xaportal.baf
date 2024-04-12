@@ -1,6 +1,6 @@
 IF
 	WalkedToTrigger([ANYONE])
-	Global("XA_KanaDream", "GLOBAL", 4)  
+	Global("XA_LC_KanaDream", "GLOBAL", 4)  
 	Global("LeavingPocketPlane","AR4500",1)  // Pocket Plane
 	GlobalGT("GavePocketPlane","GLOBAL",0)
 	!GlobalTimerNotExpired("Triggered","MYAREA")

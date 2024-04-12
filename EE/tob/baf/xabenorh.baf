@@ -5,7 +5,7 @@ THEN
 		CutSceneId(Player1)
 		StorePartyLocations()
 		HideGUI()
-		SetGlobal("XA_BenoBoom", "GLOBAL", 2)
+		SetGlobal("XA_LC_BenoBoom", "GLOBAL", 2)
 		FadeToColor([30.0],0)
 		Wait(2)
 		LeaveAreaLUAPanic("XA5501","",[530.355],NE)  // Flaming Fist HQ, Level 1

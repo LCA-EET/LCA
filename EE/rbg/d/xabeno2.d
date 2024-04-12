@@ -20,19 +20,19 @@ IF ~~ THEN XA_IllaseraCorwinDead2
 END
 
 IF ~
-	Global("XA_ApproachBeno", "GLOBAL", 1)
+	Global("XA_LC_ApproachBeno", "GLOBAL", 1)
 ~ THEN BEGIN XA_ApproachBeno
 	SAY @2 /* ~...R...Rohma..~ */
 	
 	IF ~~ THEN REPLY @3 /* ~She's safe.~ */
 	DO ~
-		SetGlobal("XA_ApproachBeno", "GLOBAL", 2)
+		SetGlobal("XA_LC_ApproachBeno", "GLOBAL", 2)
 	~
 	GOTO XA_ApproachBeno2
 	
 	IF ~~ THEN REPLY @12 /* ~You nearly got her killed. It won't happen again.~ */
 	DO ~
-		SetGlobal("XA_ApproachBeno", "GLOBAL", 2)
+		SetGlobal("XA_LC_ApproachBeno", "GLOBAL", 2)
 	~
 	GOTO XA_DealWithBeno
 	
@@ -65,13 +65,13 @@ IF ~~ THEN BEGIN XA_DealWithBeno
 	
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		GlobalGT("XA_MarriageProposal", "GLOBAL", 0)
+		GlobalGT("XA_LC_MarriageProposal", "GLOBAL", 0)
 	~ THEN REPLY @25 /* ~Not likely. I'm going to dismember you, slowly, and scatter your remains across the four corners of Toril. I might keep your head as a wedding gift for Schael. What, you didn't hear the news? She and I are to be married!~*/
 	GOTO XA_KillBeno_Dismember
 	
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		GlobalLT("XA_MarriageProposal", "GLOBAL", 1)
+		GlobalLT("XA_LC_MarriageProposal", "GLOBAL", 1)
 	~ THEN REPLY @35 /* ~Not likely. I'm going to dismember you, slowly, and scatter your remains across the four corners of Toril. I might keep your head as a gift for Schael. She can use it for target practice.~*/
 	GOTO XA_KillBeno_Dismember
 	

@@ -1,7 +1,7 @@
 IF
 	Allegiance("DRIZZT", ENEMY)
-	GlobalLT("XA_AttackedDrizztBG1", "GLOBAL", 1)
+	GlobalLT("XA_LC_AttackedDrizztBG1", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_AttackedDrizztBG1", "GLOBAL", 1)
+		SetGlobal("XA_LC_AttackedDrizztBG1", "GLOBAL", 1)
 END

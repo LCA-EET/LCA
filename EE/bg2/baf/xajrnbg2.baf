@@ -39,7 +39,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_Journal_RohmaGift_2", "GLOBAL", 0)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 4)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 4)
 		AddXPObject(Player1,10000)
 		AddJournalEntry(@51, QUEST_DONE) /*~A Gift for Rohma
 I gave Rohma the doll that I bought for her. She and her mother were delighted by the small but meaningful act of kindness and generosity.~  */
@@ -244,7 +244,7 @@ THEN
 		AddXPObject("XACORWIN",25000)
 		AddXPObject(Player1,25000)
 		ReputationInc(1)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -265,7 +265,7 @@ THEN
 		AddXPObject("XACORWIN",50000)
 		AddXPObject(Player1,50000)
 		ReputationInc(2)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 2)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 2)
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -287,7 +287,7 @@ THEN
 		AddXPObject("XACORWIN",100000)
 		AddXPObject(Player1,100000)
 		ReputationInc(3)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 3)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 3)
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -513,7 +513,7 @@ END
 
 //{ Completed Painting 1
 IF
-	Global("XA_CompletedG1", "GLOBAL", 1)
+	Global("XA_LC_CompletedG1", "GLOBAL", 1)
 	GlobalLT("XA_LC_RewardG1", "GLOBAL", 1)
 THEN
 	RESPONSE #100
@@ -532,7 +532,7 @@ END
 
 //{ Completed Painting 2
 IF
-	Global("XA_CompletedG2", "GLOBAL", 1)
+	Global("XA_LC_CompletedG2", "GLOBAL", 1)
 	GlobalLT("XA_LC_RewardG2", "GLOBAL", 1)
 THEN
 	RESPONSE #100
@@ -546,7 +546,7 @@ END
 
 //{ Completed Painting 3
 IF
-	Global("XA_CompletedG3", "GLOBAL", 1)
+	Global("XA_LC_CompletedG3", "GLOBAL", 1)
 	GlobalLT("XA_LC_RewardG3", "GLOBAL", 1)
 THEN
 	RESPONSE #100

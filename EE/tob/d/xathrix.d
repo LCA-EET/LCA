@@ -1,33 +1,33 @@
 BEGIN ~XATHRIX~
 
 IF ~
-	Global("XA_ThrixSpawn","GLOBAL",1)
+	Global("XA_LC_ThrixSpawn","GLOBAL",1)
 ~ THEN BEGIN XA_ThrixIntro
 	SAY @0 /*~Hah, you've returned! My master bids you welcome, <CHARNAME>.~*/
 	
 	IF ~~ THEN REPLY @1 /*~I destroyed your master, and I'll destroy you if you don't get out of my way!~*/
 	DO ~
-		SetGlobal("XA_ThrixSpawn","GLOBAL",2)
+		SetGlobal("XA_LC_ThrixSpawn","GLOBAL",2)
 	~
 	GOTO XA_OutOfWay
 	
 	IF ~~ THEN REPLY @2 /*~Your master? Belhifet is long dead. Who is 
 	now in charge of this place?~*/
 	DO ~
-		SetGlobal("XA_ThrixSpawn","GLOBAL",2)
+		SetGlobal("XA_LC_ThrixSpawn","GLOBAL",2)
 	~
 	GOTO XA_NewMaster
 	
 	IF ~~ THEN REPLY @3 /*~I thought you would have taken the throne, 
 	after I dispatched your former master.~*/
 	DO ~
-		SetGlobal("XA_ThrixSpawn","GLOBAL",2)
+		SetGlobal("XA_LC_ThrixSpawn","GLOBAL",2)
 	~
 	GOTO XA_AssumeThrone
 	
 	IF ~~ THEN REPLY @6 /* ~I've come for Caelar Argent. Where is she?~ */
 	DO ~
-		SetGlobal("XA_ThrixSpawn","GLOBAL",2)
+		SetGlobal("XA_LC_ThrixSpawn","GLOBAL",2)
 	~
 	GOTO XA_Caelar
 END
@@ -65,8 +65,8 @@ IF ~~ THEN BEGIN XA_EnterTower
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_TowerUnlock", "GLOBAL", 1)
-		SetGlobal("XA_ThrixLeave","GLOBAL",1)
+		SetGlobal("XA_LC_TowerUnlock", "GLOBAL", 1)
+		SetGlobal("XA_LC_ThrixLeave","GLOBAL",1)
 	~
 	EXIT
 END
@@ -76,8 +76,8 @@ IF ~~ THEN BEGIN XA_NewMaster
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_TowerUnlock", "GLOBAL", 1)
-		SetGlobal("XA_ThrixLeave","GLOBAL",1)
+		SetGlobal("XA_LC_TowerUnlock", "GLOBAL", 1)
+		SetGlobal("XA_LC_ThrixLeave","GLOBAL",1)
 	~
 	EXIT
 END

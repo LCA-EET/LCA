@@ -1,40 +1,40 @@
 IF
 	Global("XA_LC_StoleFarseer", "GLOBAL", 1)
-	GlobalLT("XA_DestroyScope", "MYAREA", 1)
+	GlobalLT("XA_LC_DestroyScope", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_DestroyScope", "MYAREA", 1)
+		SetGlobal("XA_LC_DestroyScope", "MYAREA", 1)
 		ActionOverride("Container5", DestroyItem("MISC64")) 
 		Continue()
 END
 
 IF
-	Global("XA_SpawnBrevlik", "GLOBAL", 1)
+	Global("XA_LC_SpawnBrevlik", "GLOBAL", 1)
 THEN
 	RESPONSE #20
-		SetGlobal("XA_SpawnBrevlik", "GLOBAL", 2) //Blushing Mermaid BG0114
+		SetGlobal("XA_LC_SpawnBrevlik", "GLOBAL", 2) //Blushing Mermaid BG0114
 		Continue()
 	RESPONSE #20
-		SetGlobal("XA_SpawnBrevlik", "GLOBAL", 3) //Three Old Kegs BG0119
+		SetGlobal("XA_LC_SpawnBrevlik", "GLOBAL", 3) //Three Old Kegs BG0119
 		Continue()
 	RESPONSE #20
-		SetGlobal("XA_SpawnBrevlik", "GLOBAL", 4) //Low Lantern BG0133
+		SetGlobal("XA_LC_SpawnBrevlik", "GLOBAL", 4) //Low Lantern BG0133
 		Continue()
 	RESPONSE #20
-		SetGlobal("XA_SpawnBrevlik", "GLOBAL", 5) //Helm and Cloak //BG0116
+		SetGlobal("XA_LC_SpawnBrevlik", "GLOBAL", 5) //Helm and Cloak //BG0116
 		Continue()
 	RESPONSE #20
-		SetGlobal("XA_SpawnBrevlik", "GLOBAL", 6) //Splurging Sturgeon BG0103
+		SetGlobal("XA_LC_SpawnBrevlik", "GLOBAL", 6) //Splurging Sturgeon BG0103
 		Continue()
 END
 
 IF
 	InMyArea("XACORWIN")
 	InMyArea(Player1)
-	GlobalLT("XA_CuratorSpawned", "GLOBAL", 1)
+	GlobalLT("XA_LC_CuratorSpawned", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CuratorSpawned", "GLOBAL", 1)
+		SetGlobal("XA_LC_CuratorSpawned", "GLOBAL", 1)
 		CreateCreature("XACURATO", [580.1175], SW)
 		Continue()
 END

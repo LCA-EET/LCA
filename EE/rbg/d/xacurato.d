@@ -1,7 +1,7 @@
 BEGIN ~XACURATO~
 
 IF ~
-	Global("XA_LeaveArea", "LOCALS", 1)
+	Global("XA_LC_LeaveArea", "LOCALS", 1)
 ~ THEN BEGIN XA_LeaveArea
 	SAY @16 /* ~Now, if you'll excuse me, I must return to my duties. Good day.~ */
 	
@@ -13,7 +13,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_CSHOW_TALK", "GLOBAL", 2)
+	Global("XA_LC_CSHOW_TALK", "GLOBAL", 2)
 ~ THEN BEGIN XA_CSHOW_END
 	SAY @14 /* ~Captain, <CHARNAME>, thank you again for taking time out of your day to share your insights with those orphans.~ */
 	
@@ -21,7 +21,7 @@ IF ~
 	GOTO XA_BadBehavior
 	
 	IF ~
-		Global("XA_ScaredChildren", "GLOBAL", 1)
+		Global("XA_LC_ScaredChildren", "GLOBAL", 1)
 	~ THEN 
 	GOTO XA_NotHappy
 END
@@ -31,7 +31,7 @@ IF ~~ THEN BEGIN XA_BadBehavior
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LC_Journal_HOW", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_HOW", "GLOBAL", 1)
 	~
 	GOTO XA_GoodBye
 END
@@ -41,7 +41,7 @@ IF ~~ THEN BEGIN XA_NotHappy
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LC_Journal_HOW", "GLOBAL", 2)
+		SetGlobal("XA_LC__Journal_HOW", "GLOBAL", 2)
 	~
 	GOTO XA_GoodBye
 END
@@ -51,7 +51,7 @@ IF ~~ THEN BEGIN XA_GoodBye
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LeaveArea", "LOCALS", 1)
+		SetGlobal("XA_LC_LeaveArea", "LOCALS", 1)
 		EscapeArea()
 	~
 	EXIT
@@ -63,8 +63,8 @@ IF ~~ THEN BEGIN XA_GoodBye
 			PartyHasItem("WA2SHIEL")
 	~ THEN
 	DO ~
-		SetGlobal("XA_LeaveArea", "LOCALS", 1)
-		SetGlobal("XA_LC_ArtifactsReturned", "GLOBAL", 1)
+		SetGlobal("XA_LC_LeaveArea", "LOCALS", 1)
+		SetGlobal("XA_LC__ArtifactsReturned", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_OneArtifactRecovered
 	
@@ -73,8 +73,8 @@ IF ~~ THEN BEGIN XA_GoodBye
 		PartyHasItem("WA2PLAT")
 	~ THEN
 	DO ~
-		SetGlobal("XA_LeaveArea", "LOCALS", 1)
-		SetGlobal("XA_LC_ArtifactsReturned", "GLOBAL", 2)
+		SetGlobal("XA_LC_LeaveArea", "LOCALS", 1)
+		SetGlobal("XA_LC__ArtifactsReturned", "GLOBAL", 2)
 	~
 	EXTERN XACORWIJ XA_TwoArtifactsRecovered
 	
@@ -83,8 +83,8 @@ IF ~~ THEN BEGIN XA_GoodBye
 		PartyHasItem("WA2SHIEL")
 	~ THEN
 	DO ~
-		SetGlobal("XA_LeaveArea", "LOCALS", 1)
-		SetGlobal("XA_LC_ArtifactsReturned", "GLOBAL", 2)
+		SetGlobal("XA_LC_LeaveArea", "LOCALS", 1)
+		SetGlobal("XA_LC__ArtifactsReturned", "GLOBAL", 2)
 	~
 	EXTERN XACORWIJ XA_TwoArtifactsRecovered
 	
@@ -93,8 +93,8 @@ IF ~~ THEN BEGIN XA_GoodBye
 		PartyHasItem("WA2SHIEL")
 	~ THEN
 	DO ~
-		SetGlobal("XA_LeaveArea", "LOCALS", 1)
-		SetGlobal("XA_LC_ArtifactsReturned", "GLOBAL", 2)
+		SetGlobal("XA_LC_LeaveArea", "LOCALS", 1)
+		SetGlobal("XA_LC__ArtifactsReturned", "GLOBAL", 2)
 	~
 	EXTERN XACORWIJ XA_TwoArtifactsRecovered
 	
@@ -104,19 +104,19 @@ IF ~~ THEN BEGIN XA_GoodBye
 		PartyHasItem("WA2SHIEL")
 	~ THEN
 	DO ~
-		SetGlobal("XA_LeaveArea", "LOCALS", 1)
-		SetGlobal("XA_LC_ArtifactsReturned", "GLOBAL", 3)
+		SetGlobal("XA_LC_LeaveArea", "LOCALS", 1)
+		SetGlobal("XA_LC__ArtifactsReturned", "GLOBAL", 3)
 	~
 	EXTERN XACORWIJ XA_AllArtifactsRecovered
 END
 IF ~
-	Global("XA_MagdaTalk", "GLOBAL", 1)
+	Global("XA_LC_MagdaTalk", "GLOBAL", 1)
 ~ THEN BEGIN XA_Meeting
 	SAY @2 /* ~Captain Corwin, welcome home! It's good to see you.~ */
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_MagdaTalk", "GLOBAL", 2)
+		SetGlobal("XA_LC_MagdaTalk", "GLOBAL", 2)
 	~
 	EXTERN XACORWIJ XA_MagdaChain
 	
@@ -147,13 +147,13 @@ IF ~~ THEN BEGIN XA_AskToTalk
 	
 	IF ~~ THEN REPLY @11 /* ~Of course. Lead the way, Curator Magda.~ */
 	DO ~
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_StartHOWCutscene
 	
 	IF ~~ THEN REPLY @12 /* ~We're not interested.~ */
 	DO ~
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_HOW_WhyNot
 	
@@ -186,13 +186,13 @@ IF ~~ THEN BEGIN XA_ArtifactChain_End
 	
 	IF ~~ THEN REPLY @28  /* ~You're welcome.~*/
 	DO ~
-		SetGlobal("XA_LC_Journal_Artifacts", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_Artifacts", "GLOBAL", 1)
 	~
 	GOTO XA_LeaveArea2
 	
 	IF ~~ THEN REPLY @29  /* ~I paid a fortune for the acquisition. Is there anything you can offer besides gratitude?~ */
 	DO ~
-		SetGlobal("XA_LC_Journal_Artifacts", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_Artifacts", "GLOBAL", 1)
 	~
 	GOTO XA_WantMore
 END

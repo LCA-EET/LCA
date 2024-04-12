@@ -1,10 +1,10 @@
 //{ Proficiency Talk
 	IF
-		Global("XA_ProficiencyTalk", "GLOBAL", 6)
+		Global("XA_LC_ProficiencyTalk", "GLOBAL", 6)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_ProficiencyTalk", "GLOBAL", 7)
+			SetGlobal("XA_LC_ProficiencyTalk", "GLOBAL", 7)
 			SetGlobal("XA_LC_Journal_ArcheryLesson", "GLOBAL", 1)
 			ActionOverride(Player1, ReallyForceSpellRES("XALCARCH", Myself))
 			SetInterrupt(TRUE)

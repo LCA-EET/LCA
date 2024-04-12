@@ -160,7 +160,7 @@ APPEND XALCDBG
 		IF ~~ THEN REPLY @4018/* ~Trial Cutscene (Ashatiel honorable duel.)~*/
 		DO ~
 			SetGlobal("bd_asha_duel", "GLOBAL", 3)
-			SetGlobal("XA_CorwinWitnessedDuel", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinWitnessedDuel", "GLOBAL", 2)
 			StartCutsceneMode()
 			StartCutscene("bdcut61t")
 		~

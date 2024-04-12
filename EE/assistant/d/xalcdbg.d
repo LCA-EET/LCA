@@ -28,7 +28,7 @@ BEGIN ~XALCDBG~
 		DO ~
 			ReallyForceSpellRES("XACHNG01", "XACORWIN")
 			ReallyForceSpellRES("XACHNG01", "Corwin")
-			SetGlobal("XA_PortraitChange_LCA", "GLOBAL", 1)
+			SetGlobal("XA_LC_PortraitChange_LCA", "GLOBAL", 1)
 		~
 		GOTO XA_ChangeDone
 		
@@ -36,7 +36,7 @@ BEGIN ~XALCDBG~
 		DO ~
 			ReallyForceSpellRES("XACHNG02", "XACORWIN")
 			ReallyForceSpellRES("XACHNG02", "Corwin")
-			SetGlobal("XA_PortraitChange_LCA", "GLOBAL", 0)
+			SetGlobal("XA_LC_PortraitChange_LCA", "GLOBAL", 0)
 		~
 		GOTO XA_ChangeDone
 		
@@ -184,85 +184,85 @@ BEGIN ~XALCDBG~
 		
 		IF ~~ THEN REPLY @2041 /*~One hour.~ */
 		DO ~
-			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 1) 
+			SetGlobal("XA_LC_CorwinBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBanterInterval", "GLOBAL", 1) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2042 /*~Two hours.~ */
 		DO ~
-			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 2) 
+			SetGlobal("XA_LC_CorwinBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBanterInterval", "GLOBAL", 2) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2043 /*~Four hour.~ */
 		DO ~
-			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 3) 
+			SetGlobal("XA_LC_CorwinBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBanterInterval", "GLOBAL", 3) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2044 /*~Eight hour.~ */
 		DO ~
-			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 4) 
+			SetGlobal("XA_LC_CorwinBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBanterInterval", "GLOBAL", 4) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2045 /*~Twelve Hours.~ */
 		DO ~
-			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 5) 
+			SetGlobal("XA_LC_CorwinBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBanterInterval", "GLOBAL", 5) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2047 /*~Sixteen hour.~ */
 		DO ~
-			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 6) 
+			SetGlobal("XA_LC_CorwinBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBanterInterval", "GLOBAL", 6) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2048 /*~Twenty Hours.~ */
 		DO ~
-			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 7) 
+			SetGlobal("XA_LC_CorwinBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBanterInterval", "GLOBAL", 7) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2049 /* ~Twenty-four hours.~*/
 		DO ~
-			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 8) 
+			SetGlobal("XA_LC_CorwinBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBanterInterval", "GLOBAL", 8) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2050 /* ~Thirty-six hours.~ */
 		DO ~
-			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 9) 
+			SetGlobal("XA_LC_CorwinBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBanterInterval", "GLOBAL", 9) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2051 /* ~Forty-eight hours.~ */
 		DO ~
-			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 10) 
+			SetGlobal("XA_LC_CorwinBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBanterInterval", "GLOBAL", 10) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2052 /* ~Sixty hours.~ */
 		DO ~
-			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 11) 
+			SetGlobal("XA_LC_CorwinBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBanterInterval", "GLOBAL", 11) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2053 /* ~Seventy-two hours.~*/
 		DO ~
-			SetGlobal("XA_CorwinBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CorwinBanterInterval", "GLOBAL", 12) 
+			SetGlobal("XA_LC_CorwinBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBanterInterval", "GLOBAL", 12) 
 		~
 		GOTO XA_ChangeDone
 		
@@ -273,85 +273,85 @@ BEGIN ~XALCDBG~
 		
 		IF ~~ THEN REPLY @2041 /*~One hour.~ */
 		DO ~
-			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 1) 
+			SetGlobal("XA_LC_CaelarBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CaelarBanterInterval", "GLOBAL", 1) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2042 /*~Two hours.~ */
 		DO ~
-			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 2) 
+			SetGlobal("XA_LC_CaelarBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CaelarBanterInterval", "GLOBAL", 2) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2043 /*~Four hour.~ */
 		DO ~
-			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 3) 
+			SetGlobal("XA_LC_CaelarBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CaelarBanterInterval", "GLOBAL", 3) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2044 /*~Eight hour.~ */
 		DO ~
-			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 4) 
+			SetGlobal("XA_LC_CaelarBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CaelarBanterInterval", "GLOBAL", 4) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2045 /*~Twelve Hours.~ */
 		DO ~
-			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 5) 
+			SetGlobal("XA_LC_CaelarBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CaelarBanterInterval", "GLOBAL", 5) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2047 /*~Sixteen hour.~ */
 		DO ~
-			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 6) 
+			SetGlobal("XA_LC_CaelarBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CaelarBanterInterval", "GLOBAL", 6) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2048 /*~Twenty Hours.~ */
 		DO ~
-			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 7) 
+			SetGlobal("XA_LC_CaelarBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CaelarBanterInterval", "GLOBAL", 7) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2049 /* ~Twenty-four hours.~*/
 		DO ~
-			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 8) 
+			SetGlobal("XA_LC_CaelarBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CaelarBanterInterval", "GLOBAL", 8) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2050 /* ~Thirty-six hours.~ */
 		DO ~
-			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 9) 
+			SetGlobal("XA_LC_CaelarBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CaelarBanterInterval", "GLOBAL", 9) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2051 /* ~Forty-eight hours.~ */
 		DO ~
-			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 10) 
+			SetGlobal("XA_LC_CaelarBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CaelarBanterInterval", "GLOBAL", 10) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2052 /* ~Sixty hours.~ */
 		DO ~
-			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 11) 
+			SetGlobal("XA_LC_CaelarBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CaelarBanterInterval", "GLOBAL", 11) 
 		~
 		GOTO XA_ChangeDone
 		
 		IF ~~ THEN REPLY @2053/* ~Seventy-two hours.~*/
 		DO ~
-			SetGlobal("XA_CaelarBanterTimerReset", "GLOBAL", 1)
-			SetGlobal("XA_CaelarBanterInterval", "GLOBAL", 12) 
+			SetGlobal("XA_LC_CaelarBanterTimerReset", "GLOBAL", 1)
+			SetGlobal("XA_LC_CaelarBanterInterval", "GLOBAL", 12) 
 		~
 		GOTO XA_ChangeDone
 

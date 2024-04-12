@@ -16,7 +16,7 @@ THEN
 		StorePartyLocations()
 		ZoomLock(TRUE)
 		FadeToColor([30.0],0)
-		SetGlobal("XA_CSHOW_TALK", "GLOBAL", 1)
+		SetGlobal("XA_LC_CSHOW_TALK", "GLOBAL", 1)
 		Wait(3)
 		
 		ActionOverride(Player1,LeaveAreaLUA("XACSHOW","",[896.828],SW))

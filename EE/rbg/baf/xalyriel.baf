@@ -1,23 +1,23 @@
 IF
-	AreaCheck("BG0706")
-	Global("XA_SavedLyriel", "GLOBAL", 2)
+	AreaCheck("XAA206")
+	Global("XA_LC_SavedLyriel", "GLOBAL", 2)
 	InMyArea(Player1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_SavedLyriel", "GLOBAL", 3)
+		SetGlobal("XA_LC_SavedLyriel", "GLOBAL", 3)
 		StartDialog("XALYRIEL", Player1)
 END
 IF
 	AreaCheck("XADEMSAN")
-	Global("XA_DemonDead", "GLOBAL", 1)
+	Global("XA_LC_DemonDead", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_DemonDead", "GLOBAL", 2)
+		SetGlobal("XA_LC_DemonDead", "GLOBAL", 2)
 		StartDialog("XALYRIEL", Player1)
 END
 
 IF
-	Global("XA_DemonDead", "GLOBAL", 4)
+	Global("XA_LC_DemonDead", "GLOBAL", 4)
 THEN
 	RESPONSE #100
 		StartDialog("XALYRIEL", Player1)
@@ -25,19 +25,19 @@ END
 
 IF
 	AreaCheck("XAPAINT1")
-	GlobalLT("XA_Lyriel", "GLOBAL", 1)
-	!Global("XA_Sing", "LOCALS", 1)
+	GlobalLT("XA_LC_Lyriel", "GLOBAL", 1)
+	!Global("XA_LC_Sing", "LOCALS", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_Sing", "LOCALS", 1)
+		SetGlobal("XA_LC_Sing", "LOCALS", 1)
 		DisplayStringHead(Myself, @94)
-		SetGlobalTimer("XA_LyrielSingTimer", "GLOBAL", TWO_ROUNDS)
+		SetGlobalTimer("XA_LC_LyrielSingTimer", "GLOBAL", TWO_ROUNDS)
 		Continue()
 END
 
 IF
 	AreaCheck("XAPAINT1")
-	GlobalLT("XA_Lyriel", "GLOBAL", 1)
+	GlobalLT("XA_LC_Lyriel", "GLOBAL", 1)
 	Range([ANYONE], 8)
 THEN
 	RESPONSE #100
@@ -48,12 +48,12 @@ END
 
 IF
 	AreaCheck("XAPAINT1")
-	GlobalTimerExpired("XA_LyrielSingTimer", "GLOBAL")
-	!Global("XA_LeavePrison", "GLOBAL", 1)
+	GlobalTimerExpired("XA_LC_LyrielSingTimer", "GLOBAL")
+	!Global("XA_LC_LeavePrison", "GLOBAL", 1)
 THEN
 	RESPONSE #50
 		DisplayStringHead(Myself, @94)
-		SetGlobalTimer("XA_LyrielSingTimer", "GLOBAL", TWO_ROUNDS)
+		SetGlobalTimer("XA_LC_LyrielSingTimer", "GLOBAL", TWO_ROUNDS)
 	RESPONSE #50
-		SetGlobalTimer("XA_LyrielSingTimer", "GLOBAL", TWO_ROUNDS)
+		SetGlobalTimer("XA_LC_LyrielSingTimer", "GLOBAL", TWO_ROUNDS)
 END

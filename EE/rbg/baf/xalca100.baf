@@ -1,8 +1,0 @@
-IF
-	GlobalLT("XA_LC_WorldMapChange", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_LC_WorldMapChange", "GLOBAL", 1)
-		SetWorldmap("XAMAPRBG")
-		Wait(1)
-END

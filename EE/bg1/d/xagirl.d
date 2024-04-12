@@ -1,17 +1,31 @@
 BEGIN ~XAGIRL~
 
 IF ~
-	GlobalLT("XA_TalkedToCryingGirl", "LOCALS", 1)
-	AreaCheck("BG1300")
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_TalkedToCryingGirl", "LOCALS", 1)
 ~ THEN BEGIN XA_MissRohma
 	SAY @0  /*~Who are *sob* you?~*/
 	
 	IF ~~ THEN REPLY @1 /* ~I'm <GABBER>. Little girl, why are you crying?~*/
 	DO ~
-		SetGlobal("XA_TalkedToCryingGirl", "LOCALS", 1)
+		SetGlobal("XA_LC_TalkedToCryingGirl", "LOCALS", 1)
 	~
 	GOTO XA_MissRohma2
+	
+	IF ~~ THEN REPLY @8/* ~Didn't your parents teach you not to talk to strangers? Scram, kid.~*/
+	DO ~
+		SetGlobal("XA_LC_TalkedToCryingGirl", "LOCALS", 1)
+	~
+	GOTO XA_Mean
+END
+
+IF ~~ THEN BEGIN XA_Mean
+	SAY @9/* ~You're mean!~*/
+	
+	IF ~~ THEN 
+	DO ~
+		EscapeArea()
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN XA_MissRohma2
@@ -30,7 +44,7 @@ IF ~~ THEN BEGIN XA_MissRohma3
 	IF ~~ THEN REPLY @5 /* ~Don't worry honey. I'm sure your friend will be back soon. Maybe you can play with one of the other kids around here instead?~*/
 	DO ~
 		AddMapNote([1732.1126], @7)
-		SetGlobal("XA_CorwinMapNoteAdded", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinMapNoteAdded", "GLOBAL", 1)
 	~
 	GOTO XA_MissRohmaEnd
 
@@ -40,5 +54,8 @@ IF ~~ THEN BEGIN XA_MissRohmaEnd
 	SAY @6  /* ~Maybe... but Rohma and her mommy are very nice. So are you.~*/
 	
 	IF ~~ THEN
+	DO ~
+		EscapeArea()
+	~
 	EXIT
 END

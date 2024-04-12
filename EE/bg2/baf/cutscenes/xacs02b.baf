@@ -26,7 +26,7 @@ THEN
 		Wait(5)
 		DisplayStringHead("xabence",@6)
 		Wait(5)
-		SetGlobalTimer("XA_CS04","GLOBAL",FOUR_HOURS)
+		SetGlobalTimer("XA_LC_CS04","GLOBAL",FOUR_HOURS)
 		FadeToColor([30.0],0)
 		Wait(3)
 		StartCutScene("xacsexit")

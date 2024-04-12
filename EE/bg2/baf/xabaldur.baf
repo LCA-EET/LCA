@@ -1,17 +1,13 @@
-
-
-
-
 //{ Hexxat Fight - LCA
 
 	//{ Corwin / Hexxat Leave
 	IF 
-		Global("XA_CorwinHexxatFight", "GLOBAL", 1)
+		Global("XA_LC_CorwinHexxatFight", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			////DisplayStringHead(Myself, ~DEBUG_135~)
 			SetInterrupt(FALSE)
-			SetGlobal("XA_CorwinHexxatFight", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinHexxatFight", "GLOBAL", 2)
 			ActionOverride("XACORWIN", LeaveParty())
 			ActionOverride("XACORWIN", SetLeavePartyDialogFile())
 			ActionOverride("XACORWIN", ChangeAIScript("",DEFAULT))
@@ -28,12 +24,12 @@
 	END
 	
 	IF
-		Global("XA_CorwinHexxatFight", "GLOBAL", 1)
+		Global("XA_LC_CorwinHexxatFight", "GLOBAL", 1)
 		InParty("Aerie")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_AerieFightHexxat", "GLOBAL", 1)
+			SetGlobal("XA_LC_AerieFightHexxat", "GLOBAL", 1)
 			ActionOverride("Aerie", LeaveParty())
 			ActionOverride("Aerie", SetLeavePartyDialogFile())
 			ActionOverride("Aerie", ChangeAIScript("",DEFAULT))
@@ -44,12 +40,12 @@
 	END
 	
 	IF
-		Global("XA_CorwinHexxatFight", "GLOBAL", 1)
+		Global("XA_LC_CorwinHexxatFight", "GLOBAL", 1)
 		InParty("Keldorn")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_KeldornFightHexxat", "GLOBAL", 1)
+			SetGlobal("XA_LC_KeldornFightHexxat", "GLOBAL", 1)
 			ActionOverride("Keldorn", LeaveParty())
 			ActionOverride("Keldorn", SetLeavePartyDialogFile())
 			ActionOverride("Keldorn", ChangeAIScript("",DEFAULT))
@@ -60,12 +56,12 @@
 	END
 	
 	IF
-		Global("XA_CorwinHexxatFight", "GLOBAL", 1)
+		Global("XA_LC_CorwinHexxatFight", "GLOBAL", 1)
 		InParty("Mazzy")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_MazzyFightHexxat", "GLOBAL", 1)
+			SetGlobal("XA_LC_MazzyFightHexxat", "GLOBAL", 1)
 			ActionOverride("Mazzy", LeaveParty())
 			ActionOverride("Mazzy", SetLeavePartyDialogFile())
 			ActionOverride("Mazzy", ChangeAIScript("",DEFAULT))
@@ -76,12 +72,12 @@
 	END
 	
 	IF
-		Global("XA_CorwinHexxatFight", "GLOBAL", 1)
+		Global("XA_LC_CorwinHexxatFight", "GLOBAL", 1)
 		InParty("Jaheira")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_JaheiraFightHexxat", "GLOBAL", 1)
+			SetGlobal("XA_LC_JaheiraFightHexxat", "GLOBAL", 1)
 			ActionOverride("Jaheira", LeaveParty())
 			ActionOverride("Jaheira", SetLeavePartyDialogFile())
 			ActionOverride("Jaheira", ChangeAIScript("",DEFAULT))
@@ -92,12 +88,12 @@
 	END
 	
 	IF
-		Global("XA_CorwinHexxatFight", "GLOBAL", 1)
+		Global("XA_LC_CorwinHexxatFight", "GLOBAL", 1)
 		InParty("XACAELAR")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_CaelarFightHexxat", "GLOBAL", 1)
+			SetGlobal("XA_LC_CaelarFightHexxat", "GLOBAL", 1)
 			ActionOverride("XACAELAR", LeaveParty())
 			ActionOverride("XACAELAR", SetLeavePartyDialogFile())
 			ActionOverride("XACAELAR", ChangeAIScript("",DEFAULT))
@@ -108,12 +104,12 @@
 	END
 	
 	IF
-		Global("XA_CorwinHexxatFight", "GLOBAL", 1)
+		Global("XA_LC_CorwinHexxatFight", "GLOBAL", 1)
 		InParty("Anomen")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_AnomenFightHexxat", "GLOBAL", 1)
+			SetGlobal("XA_LC_AnomenFightHexxat", "GLOBAL", 1)
 			ActionOverride("Anomen", LeaveParty())
 			ActionOverride("Anomen", SetLeavePartyDialogFile())
 			ActionOverride("Anomen", ChangeAIScript("",DEFAULT))
@@ -127,15 +123,15 @@
 	//{ Corwin / Hexxat Re-join After Battle
 	IF
 		HPPercentLT("hexxat",5)
-		Global("XA_CorwinHexxatFight", "GLOBAL", 2)
-		GlobalLT("XA_HexxatLostFight", "GLOBAL", 1)
+		Global("XA_LC_CorwinHexxatFight", "GLOBAL", 2)
+		GlobalLT("XA_LC_HexxatLostFight", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_HexxatLostFight", "GLOBAL", 1)
+			SetGlobal("XA_LC_HexxatLostFight", "GLOBAL", 1)
 			SetGlobal("OHH_hexxatfightdead","GLOBAL",1)
-			SetGlobal("XA_CorwinHexxatFight", "GLOBAL", 3)
-			SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinHexxatFight", "GLOBAL", 3)
+			SetGlobal("XA_LC_CorwinRejoinProcessed", "GLOBAL", 1)
 			ActionOverride("XACORWIN", ChangeAIScript("XACORWIN",OVERRIDE))
 			ActionOverride(Player1,DestroyItem("ohhbag"))  // Dragomir's Respite
 			ActionOverride(Player2,DestroyItem("ohhbag"))  // Dragomir's Respite
@@ -149,13 +145,13 @@
 
 	IF
 		Dead("XACORWIN")
-		Global("XA_CorwinHexxatFight", "GLOBAL", 2)
-		GlobalLT("XA_CorwinLostFight", "GLOBAL", 1)
+		Global("XA_LC_CorwinHexxatFight", "GLOBAL", 2)
+		GlobalLT("XA_LC_CorwinLostFight", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_CorwinLostFight", "GLOBAL", 1)
-			SetGlobal("XA_CorwinHexxatFight", "GLOBAL", 3)
+			SetGlobal("XA_LC_CorwinLostFight", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinHexxatFight", "GLOBAL", 3)
 			ActionOverride("hexxat", JoinParty())
 			SetInterrupt(TRUE)
 	END
@@ -163,78 +159,78 @@
 
 	//{ Party Members Re-join After Battle
 	IF
-		Global("XA_CorwinHexxatFight", "GLOBAL", 3)
-		Global("XA_AerieFightHexxat", "GLOBAL", 1)
+		Global("XA_LC_CorwinHexxatFight", "GLOBAL", 3)
+		Global("XA_LC_AerieFightHexxat", "GLOBAL", 1)
 		InMyArea("Aerie")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_AerieFightHexxat", "GLOBAL", 2)
+			SetGlobal("XA_LC_AerieFightHexxat", "GLOBAL", 2)
 			ActionOverride("Aerie", JoinParty())
 			SetInterrupt(TRUE)
 			Continue()
 	END
 	
 	IF
-		Global("XA_CorwinHexxatFight", "GLOBAL", 3)
-		Global("XA_AnomenFightHexxat", "GLOBAL", 1)
+		Global("XA_LC_CorwinHexxatFight", "GLOBAL", 3)
+		Global("XA_LC_AnomenFightHexxat", "GLOBAL", 1)
 		InMyArea("Anomen")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_AnomenFightHexxat", "GLOBAL", 2)
+			SetGlobal("XA_LC_AnomenFightHexxat", "GLOBAL", 2)
 			ActionOverride("Anomen", JoinParty())
 			SetInterrupt(TRUE)
 			Continue()
 	END
 	
 	IF
-		Global("XA_CorwinHexxatFight", "GLOBAL", 3)
-		Global("XA_KeldornFightHexxat", "GLOBAL", 1)
+		Global("XA_LC_CorwinHexxatFight", "GLOBAL", 3)
+		Global("XA_LC_KeldornFightHexxat", "GLOBAL", 1)
 		InMyArea("Keldorn")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_KeldornFightHexxat", "GLOBAL", 2)
+			SetGlobal("XA_LC_KeldornFightHexxat", "GLOBAL", 2)
 			ActionOverride("Keldorn", JoinParty())
 			SetInterrupt(TRUE)
 			Continue()
 	END
 	
 	IF
-		Global("XA_CorwinHexxatFight", "GLOBAL", 3)
-		Global("XA_JaheiraFightHexxat", "GLOBAL", 1)
+		Global("XA_LC_CorwinHexxatFight", "GLOBAL", 3)
+		Global("XA_LC_JaheiraFightHexxat", "GLOBAL", 1)
 		InMyArea("Jaheira")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_JaheiraFightHexxat", "GLOBAL", 2)
+			SetGlobal("XA_LC_JaheiraFightHexxat", "GLOBAL", 2)
 			ActionOverride("Jaheira", JoinParty())
 			SetInterrupt(TRUE)
 			Continue()
 	END
 	
 	IF
-		Global("XA_CorwinHexxatFight", "GLOBAL", 3)
-		Global("XA_MazzyFightHexxat", "GLOBAL", 1)
+		Global("XA_LC_CorwinHexxatFight", "GLOBAL", 3)
+		Global("XA_LC_MazzyFightHexxat", "GLOBAL", 1)
 		InMyArea("Mazzy")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_MazzyFightHexxat", "GLOBAL", 2)
+			SetGlobal("XA_LC_MazzyFightHexxat", "GLOBAL", 2)
 			ActionOverride("Mazzy", JoinParty())
 			SetInterrupt(TRUE)
 			Continue()
 	END
 	
 	IF
-		Global("XA_CorwinHexxatFight", "GLOBAL", 3)
-		Global("XA_CaelarFightHexxat", "GLOBAL", 1)
+		Global("XA_LC_CorwinHexxatFight", "GLOBAL", 3)
+		Global("XA_LC_CaelarFightHexxat", "GLOBAL", 1)
 		InMyArea("XACAELAR")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_CaelarFightHexxat", "GLOBAL", 2)
+			SetGlobal("XA_LC_CaelarFightHexxat", "GLOBAL", 2)
 			ActionOverride("XACAELAR", JoinParty())
 			SetInterrupt(TRUE)
 			Continue()
@@ -245,287 +241,34 @@
 
 IF
 	GlobalGT("L#2SkieDagger","GLOBAL",30)
-	GlobalLT("XA_PromptToSendLetter", "GLOBAL", 1)
+	GlobalLT("XA_LC_PromptToSendLetter", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_SkieModActive", "GLOBAL",1)
-		SetGlobal("XA_PromptToSendLetter", "GLOBAL", 1)
+		SetGlobal("XA_LC_SkieModActive", "GLOBAL",1)
+		SetGlobal("XA_LC_PromptToSendLetter", "GLOBAL", 1)
 		////DisplayStringHead(Player1, @1)
 		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 		SetInterrupt(TRUE)
 		Continue()
 END
 
-
-
-//{ Return to Baldur's Gate Timers
-
-	IF
-		Global("XA_ReturnToBG", "GLOBAL", 1)
-		OR(7)
-			AreaCheck("BG0706") // Elfsong L2
-			AreaCheck("XAPAINT1")
-			AreaCheck("XAG1")
-			AreaCheck("XAG2A")
-			AreaCheck("XAG3")
-			AreaCheck("XADEMSAN")
-			AreaCheck("XACSHOW")
-		GlobalLT("XA_HaltRBGTimers", "GLOBAL", 1)
-	THEN
-		RESPONSE #100
-			SetGlobal("XA_HaltRBGTimers", "GLOBAL", 1)
-			//DisplayStringHead(Player1, @4)
-	END
-	
-	IF
-		Global("XA_ReturnToBG", "GLOBAL", 1)
-		!AreaCheck("XAPAINT1")
-		!AreaCheck("XAG1")
-		!AreaCheck("XAG2A")
-		!AreaCheck("XAG3")
-		!AreaCheck("XADEMSAN")
-		!AreaCheck("XACSHOW")
-		!AreaCheck("BG0706")
-		Global("XA_HaltRBGTimers", "GLOBAL", 1)
-	THEN
-		RESPONSE #100
-			SetGlobal("XA_HaltRBGTimers", "GLOBAL", 0)
-			//DisplayStringHead(Player1, @5)
-	END
-	
-	IF 
-		Global("XA_ReturnToBG", "GLOBAL", 1)
-		GlobalTimerExpired("XA_Advance7Timer", "GLOBAL")
-		Global("XA_Advance7", "GLOBAL", 1)
-	THEN
-		RESPONSE #100
-			SetGlobal("XA_Advance7", "GLOBAL", 0)
-			//DisplayStringHead(Player1, @6)
-			Continue()
-	END
-	//{ Leave for Family Timer
-	
-		//{ Set the Timer
-		IF
-			Global("XA_ReturnToBG", "GLOBAL", 1)
-			GlobalLT("XA_CorwinLeaveForFamilyTimerSet", "GLOBAL", 1)
-			Global("XA_CorwinMetFamily", "GLOBAL", 1)
-		THEN
-			RESPONSE #100
-				SetInterrupt(FALSE)
-				SetGlobalTimer("XA_CorwinLeaveForFamilyTimer", "GLOBAL", ONE_HOUR)
-				SetGlobal("XA_CorwinLeaveForFamilyTimerSet", "GLOBAL", 1)
-				//DisplayStringHead(Player1, @7)
-				SetInterrupt(TRUE)
-				Continue()
-		END
-		//}
-	
-		//{ Advance the Timer by One Hour
-		IF
-			Global("XA_ReturnToBG", "GLOBAL", 1)
-			GlobalTimerExpired("XA_CorwinLeaveForFamilyTimer", "GLOBAL")
-			GlobalLT("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
-			GlobalLT("XA_CorwinMetFamily", "GLOBAL", 2)
-			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
-			Global("XA_HaltRBGTimers", "GLOBAL", 0)
-		THEN
-			RESPONSE #100
-				SetInterrupt(FALSE)
-				IncrementGlobal("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 1) // TICK
-				SetGlobal("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
-				SetInterrupt(TRUE)
-				// Don't continue on the tick.
-				//DisplayStringHead(Player1, @8)
-		END
-		//}
-		
-		//{ Have at least Four Hours Elapsed?
-		IF
-			Global("XA_ReturnToBG", "GLOBAL", 1)
-			Global("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
-			GlobalGT("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 3)
-			GlobalLT("XA_CorwinMetFamily", "GLOBAL", 2)
-			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
-			Global("XA_HaltRBGTimers", "GLOBAL", 0)
-		THEN
-			RESPONSE #100
-				SetInterrupt(FALSE)
-				SetGlobal("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 2)
-				SetGlobal("XA_CorwinLeaveForFamily", "GLOBAL", 1)
-				//DisplayStringHead(Player1, @9)
-				SetInterrupt(TRUE)
-				Continue()
-		END
-		//}
-	
-		//{ If not, then reset the timer.
-		IF
-			Global("XA_ReturnToBG", "GLOBAL", 1)
-			Global("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 1)
-			GlobalLT("XA_CorwinLeaveForFamily_Hours", "GLOBAL", 4)
-			GlobalLT("XA_CorwinMetFamily", "GLOBAL", 2)
-			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
-			Global("XA_HaltRBGTimers", "GLOBAL", 0)
-			//If the timer has ticked, but has not reached the maximum alloted time, reset the timer.
-		THEN
-			RESPONSE #100
-				SetInterrupt(FALSE)
-				SetGlobal("XA_CorwinLeaveForFamilyTicked", "GLOBAL", 0)
-				SetGlobalTimer("XA_CorwinLeaveForFamilyTimer", "GLOBAL", ONE_HOUR)
-				//DisplayStringHead(Player1, @10)
-				SetInterrupt(TRUE)
-				Continue()
-		END
-		//}
-	
-	//}	
-	
-	//{ See Family Timer
-	
-		//{ Set the Timer
-		IF
-			Global("XA_ReturnToBG", "GLOBAL", 1)
-			GlobalLT("XA_CorwinFamilyTimerSet", "GLOBAL", 1)
-		THEN
-			RESPONSE #100
-				SetInterrupt(FALSE)
-				SetGlobalTimer("XA_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
-				SetGlobal("XA_CorwinFamilyTimerSet", "GLOBAL", 1)
-				//DisplayStringHead(Player1, @11)
-				SetInterrupt(TRUE)
-				Continue()
-		END
-		//}
-		
-		//{ Advance the Timer by One Hour
-		IF
-			Global("XA_ReturnToBG", "GLOBAL", 1)
-			GlobalTimerExpired("XA_CorwinFamilyTimer", "GLOBAL")
-			GlobalLT("XA_CorwinFamilyTimerTicked", "GLOBAL", 1)
-			GlobalLT("XA_CorwinMetFamily", "GLOBAL", 1)
-			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
-			Global("XA_HaltRBGTimers", "GLOBAL", 0)
-		THEN
-			RESPONSE #100
-				SetInterrupt(FALSE)
-				SetGlobal("XA_CorwinFamilyTimerTicked", "GLOBAL", 1)
-				IncrementGlobal("XA_CorwinFamilyTimer_Hours", "GLOBAL", 1)
-				SetInterrupt(TRUE)
-				//Don't continue on the tick
-				//DisplayStringHead(Player1, @12)
-		END
-		//}
-		
-		//{ Corwin Complain about not seeing family.
-		IF
-			Global("XA_ReturnToBG", "GLOBAL", 1)
-			Global("XA_CorwinFamilyTimerTicked", "GLOBAL", 1)
-			GlobalLT("XA_CorwinMetFamily", "GLOBAL", 1)
-			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
-			GlobalLT("XA_CorwinNeedSeeFamily", "GLOBAL", 1)
-			Global("XA_HaltRBGTimers", "GLOBAL", 0)
-		THEN
-			RESPONSE #100
-				SetGlobal("XA_CorwinFamilyTimerTicked", "GLOBAL", 0)
-				SetGlobal("XA_CorwinNeedSeeFamily", "GLOBAL", 1)
-				//DisplayStringHead(Player1, @13)
-		END
-		//}
-
-	//}
-	//{ Duke Debriefed Timer
-	
-		//{ Set the Timer
-		IF
-			Global("XA_ReturnToBG", "GLOBAL", 1)
-			GlobalLT("XA_DukeDebriefTimerSet", "GLOBAL", 1)
-			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
-		THEN
-			RESPONSE #100
-				SetInterrupt(FALSE)
-				SetGlobal("XA_DukeDebriefTimerSet", "GLOBAL", 1)
-				SetGlobalTimer("XA_DukeDebriefTimer", "GLOBAL", ONE_HOUR)
-				//DisplayStringHead(Player1, @14)
-				SetInterrupt(TRUE)
-				Continue()
-		END
-		//}
-		
-		//{ Advance the timer by One Hour
-		IF
-			Global("XA_ReturnToBG", "GLOBAL", 1)
-			GlobalLT("XA_DukeDebriefTimerTick", "GLOBAL", 1)
-			GlobalTimerExpired("XA_DukeDebriefTimer", "GLOBAL")
-			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
-			Global("XA_HaltRBGTimers", "GLOBAL", 0)
-		THEN
-			RESPONSE #100
-				SetInterrupt(FALSE)
-				IncrementGlobal("XA_DukeDebriefTimer_Hours", "GLOBAL", 1) // TICK
-				SetGlobal("XA_Advance7", "GLOBAL", 0)
-				SetGlobal("XA_DukeDebriefTimerTick", "GLOBAL", 1)
-				SetInterrupt(TRUE)
-				//DisplayStringHead(Player1, @15)
-		END
-		//}
-	
-		//{ Have 24 Hours Elapsed?
-		IF
-			Global("XA_ReturnToBG", "GLOBAL", 1)
-			Global("XA_DukeDebriefTimerTick", "GLOBAL", 1)
-			GlobalGT("XA_DukeDebriefTimer_Hours", "GLOBAL", 23)
-			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
-			Global("XA_CorwinMetFamily", "GLOBAL", 2)
-			Global("XA_HaltRBGTimers", "GLOBAL", 0)
-		THEN
-			RESPONSE #100
-				SetGlobal("XA_DukeDebriefTimerTick", "GLOBAL", 2)
-				SetGlobal("XA_DukeDebrief_BenceSpawn", "GLOBAL", 1)
-				SetGlobal("XA_DukeDebrief_TimerElapsed", "GLOBAL", 1)
-				//DisplayStringHead(Player1, @16)
-				Continue()
-		END
-		//}
-	
-		//{ Less than 24 Hours Has Elapsed
-		IF
-			Global("XA_ReturnToBG", "GLOBAL", 1)
-			Global("XA_DukeDebriefTimerTick", "GLOBAL", 1)
-			GlobalLT("XA_DukeDebriefTimer_Hours", "GLOBAL", 24)
-			GlobalLT("XA_DukesDebriefed", "GLOBAL", 1)
-			Global("XA_HaltRBGTimers", "GLOBAL", 0)
-		THEN
-			RESPONSE #100
-				SetGlobalTimer("XA_DukeDebriefTimer", "GLOBAL", ONE_HOUR)
-				SetGlobal("XA_DukeDebriefTimerTick", "GLOBAL", 0)
-				//DisplayStringHead(Player1, @17)
-				Continue()
-		END
-		//}
-//}
-
-//}
-
-
-
 //{ Brega Timer Expiration
 IF 
-	GlobalTimerExpired("XA_Ath","GLOBAL")
-	GlobalLT("XA_CheckWithBrega", "GLOBAL", 1)
+	GlobalTimerExpired("XA_LC_Ath","GLOBAL")
+	GlobalLT("XA_LC_CheckWithBrega", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CheckWithBrega", "GLOBAL", 1)
+		SetGlobal("XA_LC_CheckWithBrega", "GLOBAL", 1)
 		ActionOverride(Player1,StartDialog("player1",Player1))
 END
 
 IF 
-	GlobalTimerExpired("XA_Ath2","GLOBAL")
-	GlobalLT("XA_CheckWithBrega2", "GLOBAL", 1)
+	GlobalTimerExpired("XA_LC_Ath2","GLOBAL")
+	GlobalLT("XA_LC_CheckWithBrega2", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CheckWithBrega2", "GLOBAL", 1)
+		SetGlobal("XA_LC_CheckWithBrega2", "GLOBAL", 1)
 		ActionOverride(Player1,StartDialog("player1",Player1))
 END
 //}
@@ -583,10 +326,10 @@ END
 		ActionListEmpty()
 		Global("CerndBaby","GLOBAL",1)
 		!InParty("XACORWIN")
-		GlobalLT("XA_CorwinCerndBaby", "GLOBAL", 1)
+		GlobalLT("XA_LC_CorwinCerndBaby", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_CorwinCerndBaby", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinCerndBaby", "GLOBAL", 1)
 			Continue()
 	END
 	//}
@@ -596,10 +339,10 @@ END
 		ActionListEmpty()
 		!InParty("XACORWIN")
 		Global("OHD_WEDDING_HOSTILE","OH5000",3)
-		GlobalLT("XA_WeddingHostile", "GLOBAL", 1)
+		GlobalLT("XA_LC_WeddingHostile", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_WeddingHostile", "GLOBAL", 1)
+			SetGlobal("XA_LC_WeddingHostile", "GLOBAL", 1)
 			Continue()
 	END
 	//}
@@ -623,10 +366,10 @@ END
 		ActionListEmpty()
 		!InParty("XACORWIN")
 		Global("OpenJonBedroom","GLOBAL",1)
-		GlobalLT("XA_PlayerSoulStolen", "GLOBAL", 1)
+		GlobalLT("XA_LC_PlayerSoulStolen", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_PlayerSoulStolen", "GLOBAL", 1)
+			SetGlobal("XA_LC_PlayerSoulStolen", "GLOBAL", 1)
 			Continue()
 	END
 	//}
@@ -636,10 +379,10 @@ END
 		ActionListEmpty()
 		!InParty("XACORWIN")
 		Global("OHD_sexreactions","GLOBAL",1)
-		GlobalLT("XA_DornSex", "GLOBAL", 1)
+		GlobalLT("XA_LC_DornSex", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_DornSex", "GLOBAL", 1)
+			SetGlobal("XA_LC_DornSex", "GLOBAL", 1)
 			Continue()
 	END
 	//}
@@ -649,10 +392,10 @@ END
 		ActionListEmpty()
 		!InParty("XACORWIN")
 		Global("BodhiDead","GLOBAL",1)
-		GlobalLT("XA_BodhiDead", "GLOBAL", 1)
+		GlobalLT("XA_LC_BodhiDead", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_BodhiDead", "GLOBAL", 1)
+			SetGlobal("XA_LC_BodhiDead", "GLOBAL", 1)
 			Continue()
 	END
 	//}
@@ -662,10 +405,10 @@ END
 		ActionListEmpty()
 		!InParty("XACORWIN")
 		Global("LadyMaria","GLOBAL",5) /* Keldorn reconciled with his wife */
-		GlobalLT("XA_KeldornMaria", "GLOBAL", 1)
+		GlobalLT("XA_LC_KeldornMaria", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_KeldornMaria", "GLOBAL", 1)
+			SetGlobal("XA_LC_KeldornMaria", "GLOBAL", 1)
 			Continue()
 	END
 	//}
@@ -675,10 +418,10 @@ END
 		ActionListEmpty()
 		!InParty("XACORWIN")
 		GlobalGT("PhaereInnuendo","GLOBAL",1)
-		GlobalLT("XA_AloneWithPhaere", "GLOBAL", 1)
+		GlobalLT("XA_LC_AloneWithPhaere", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_AloneWithPhaere", "GLOBAL", 1)
+			SetGlobal("XA_LC_AloneWithPhaere", "GLOBAL", 1)
 			Continue()
 	END
 	//}
@@ -688,10 +431,10 @@ END
 		ActionListEmpty()
 		!InParty("XACORWIN")
 		Global("BodhiJob","GLOBAL",2)
-		GlobalLT("XA_BodhiDeal2", "GLOBAL", 1)
+		GlobalLT("XA_LC_BodhiDeal2", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_BodhiDeal2", "GLOBAL", 1)
+			SetGlobal("XA_LC_BodhiDeal2", "GLOBAL", 1)
 			Continue()
 	END
 
@@ -699,10 +442,10 @@ END
 		ActionListEmpty()
 		!InParty("XACORWIN")
 		Global("BodhiJob","GLOBAL",3)
-		GlobalLT("XA_BodhiDeal3", "GLOBAL", 1)
+		GlobalLT("XA_LC_BodhiDeal3", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_BodhiDeal3", "GLOBAL", 1)
+			SetGlobal("XA_LC_BodhiDeal3", "GLOBAL", 1)
 			Continue()
 	END
 
@@ -710,10 +453,10 @@ END
 		ActionListEmpty()
 		!InParty("XACORWIN")
 		Global("BodhiJob","GLOBAL",4)
-		GlobalLT("XA_BodhiDeal4", "GLOBAL", 1)
+		GlobalLT("XA_LC_BodhiDeal4", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_BodhiDeal4", "GLOBAL", 1)
+			SetGlobal("XA_LC_BodhiDeal4", "GLOBAL", 1)
 			Continue()
 	END
 	//}
@@ -723,10 +466,10 @@ IF
 	ActionListEmpty()
 	!InParty("XACORWIN")
 	Global("FirkraagDeal","GLOBAL",1)
-	GlobalLT("XA_FirkraagDeal", "GLOBAL", 1)
+	GlobalLT("XA_LC_FirkraagDeal", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_FirkraagDeal", "GLOBAL", 1)
+		SetGlobal("XA_LC_FirkraagDeal", "GLOBAL", 1)
 		Continue()
 END
 //}
@@ -734,21 +477,21 @@ END
 	//{ After Sex Party Banter
 	IF
 		ActionListEmpty()
-		Global("XA_CorwinSex_1", "GLOBAL", 4)
-		GlobalLT("XA_CorwinSexNoSleepTimerSet", "GLOBAL", 1)
+		Global("XA_LC_CorwinSex_1", "GLOBAL", 4)
+		GlobalLT("XA_LC_CorwinSexNoSleepTimerSet", "GLOBAL", 1)
 	THEN
 		RESPONSE #100	
 			SetInterrupt(FALSE)
-			SetGlobalTimer("XA_CorwinSexNoSleepTimer", "GLOBAL", ONE_ROUND)
-			SetGlobal("XA_CorwinSexNoSleepTimerSet", "GLOBAL", 1)
+			SetGlobalTimer("XA_LC_CorwinSexNoSleepTimer", "GLOBAL", ONE_ROUND)
+			SetGlobal("XA_LC_CorwinSexNoSleepTimerSet", "GLOBAL", 1)
 			SetInterrupt(TRUE)
 			Continue()
 	END
 	
 	IF 
 		ActionListEmpty()
-		GlobalTimerExpired("XA_CorwinSexNoSleepTimer", "GLOBAL")
-		GlobalLT("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		GlobalTimerExpired("XA_LC_CorwinSexNoSleepTimer", "GLOBAL")
+		GlobalLT("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		OR(6)
 			IsValidForPartyDialogue("Aerie")
 			IsValidForPartyDialogue("Neera")
@@ -759,7 +502,7 @@ END
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
 			////DisplayStringHead(Myself, ~DEBUG: CSNC A~)
 			SetInterrupt(TRUE)
 			Continue()
@@ -767,8 +510,8 @@ END
 	
 	IF 
 		ActionListEmpty()
-		GlobalTimerExpired("XA_CorwinSexNoSleepTimer", "GLOBAL")
-		GlobalLT("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		GlobalTimerExpired("XA_LC_CorwinSexNoSleepTimer", "GLOBAL")
+		GlobalLT("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		!IsValidForPartyDialogue("Aerie")
 		!IsValidForPartyDialogue("Neera")
 		!IsValidForPartyDialogue("Nalia")
@@ -778,15 +521,15 @@ END
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 2)
 			////DisplayStringHead(Myself, ~DEBUG: CSNC B~)
 			SetInterrupt(TRUE)
 			Continue()
 	END
 
 	IF
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		TriggerOverride("XACORWIN", Global("XA_CanTalkToPlayer", "LOCALS", 1))
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		TriggerOverride("XACORWIN", Global("XA_LC_CanTalkToPlayer", "LOCALS", 1))
 		IsValidForPartyDialog("Aerie")
 		!AreaCheck("AR0011")
 		!AreaCheck("AR0012")
@@ -801,8 +544,8 @@ END
 	END
 	
 	IF
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		TriggerOverride("XACORWIN", Global("XA_CanTalkToPlayer", "LOCALS", 1))
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		TriggerOverride("XACORWIN", Global("XA_LC_CanTalkToPlayer", "LOCALS", 1))
 		IsValidForPartyDialog("Imoen2")
 		!AreaCheck("AR0011")
 		!AreaCheck("AR0012")
@@ -817,8 +560,8 @@ END
 	END
 	
 	IF
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		TriggerOverride("XACORWIN", Global("XA_CanTalkToPlayer", "LOCALS", 1))
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		TriggerOverride("XACORWIN", Global("XA_LC_CanTalkToPlayer", "LOCALS", 1))
 		IsValidForPartyDialog("Nalia")
 		!AreaCheck("AR0011")
 		!AreaCheck("AR0012")
@@ -833,8 +576,8 @@ END
 	END
 	
 	IF
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		TriggerOverride("XACORWIN", Global("XA_CanTalkToPlayer", "LOCALS", 1))
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		TriggerOverride("XACORWIN", Global("XA_LC_CanTalkToPlayer", "LOCALS", 1))
 		IsValidForPartyDialog("Neera")
 		!AreaCheck("AR0011")
 		!AreaCheck("AR0012")
@@ -849,8 +592,8 @@ END
 	END
 	
 	IF
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
-		TriggerOverride("XACORWIN", Global("XA_CanTalkToPlayer", "LOCALS", 1))
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		TriggerOverride("XACORWIN", Global("XA_LC_CanTalkToPlayer", "LOCALS", 1))
 		IsValidForPartyDialog("Jaheira")
 		!AreaCheck("AR0011")
 		!AreaCheck("AR0012")
@@ -866,7 +609,7 @@ END
 	
 	IF 
 		ActionListEmpty()
-		Global("XA_CorwinSexNoSleepComplain", "GLOBAL", 1)
+		Global("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 1)
 		!AreaCheck("AR0011")
 		!AreaCheck("AR0012")
 		!AreaCheck("AR0013")
@@ -874,43 +617,9 @@ END
 		!AreaCheck("AR0028")
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_CorwinSexNoSleepComplain", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 2)
 			Continue()
 	END
 	//}
 //}
 
-
-
-//{ v1.0.14a Fix - Mark Beno as Killed
-IF
-	Global("XA_CorwinKillBeno", "GLOBAL", 1)
-	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_CorwinKillBeno", "GLOBAL", 2)
-		Continue()
-END
-//}
-
-//{ v1.0.14a Fix - Mark Illasera as Killed
-IF
-	Global("XA_IllaseraDead", "GLOBAL", 1)
-	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_IllaseraDead", "GLOBAL", 2)
-		Continue()
-END
-//}
-
-//{ v1.0.14a Fix - Marriage Proposal Fix
-IF
-	Global("XA_CorwinProposalCS", "GLOBAL", 2)
-	GlobalGT("XA_ReturnToBG", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_CorwinProposalCS", "GLOBAL", 3)
-		Continue()
-END
-//}

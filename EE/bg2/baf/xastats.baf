@@ -1,55 +1,55 @@
 //{ Check Stats - SoD Corwin
 	IF
 		!CheckStat("Corwin", 18, STR)
-		GlobalLT("XA_Corwin_STR_Changed", "LOCALS", 1)
+		GlobalLT("XA_LC_Corwin_STR_Changed", "LOCALS", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 1)
+			SetGlobal("XA_LC_Corwin_STR_Changed", "LOCALS", 1)
 			Continue()
 	END
 
 	IF
 		!CheckStat("Corwin", 15, DEX)
-		GlobalLT("XA_Corwin_DEX_Changed", "LOCALS", 1)
+		GlobalLT("XA_LC_Corwin_DEX_Changed", "LOCALS", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_Corwin_DEX_Changed", "LOCALS", 1)
+			SetGlobal("XA_LC_Corwin_DEX_Changed", "LOCALS", 1)
 			Continue()
 	END
 
 	IF
 		!CheckStat("Corwin", 14, CON)
-		GlobalLT("XA_Corwin_CON_Changed", "LOCALS", 1)
+		GlobalLT("XA_LC_Corwin_CON_Changed", "LOCALS", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_Corwin_CON_Changed", "LOCALS", 1)
+			SetGlobal("XA_LC_Corwin_CON_Changed", "LOCALS", 1)
 			Continue()
 	END
 
 	IF
 		!CheckStat("Corwin", 12, INT)
-		GlobalLT("XA_Corwin_INT_Changed", "LOCALS", 1)
+		GlobalLT("XA_LC_Corwin_INT_Changed", "LOCALS", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_Corwin_INT_Changed", "LOCALS", 1)
+			SetGlobal("XA_LC_Corwin_INT_Changed", "LOCALS", 1)
 			Continue()
 	END
 
 	IF
 		!CheckStat("Corwin", 14, WIS)
-		GlobalLT("XA_Corwin_WIS_Changed", "LOCALS", 1)
+		GlobalLT("XA_LC_Corwin_WIS_Changed", "LOCALS", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_Corwin_WIS_Changed", "LOCALS", 1)
+			SetGlobal("XA_LC_Corwin_WIS_Changed", "LOCALS", 1)
 			Continue()
 	END
 
 	IF
 		!CheckStat("Corwin", 14, CHR)
-		GlobalLT("XA_Corwin_CHR_Changed", "LOCALS", 1)
+		GlobalLT("XA_LC_Corwin_CHR_Changed", "LOCALS", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_Corwin_CHR_Changed", "LOCALS", 1)
+			SetGlobal("XA_LC_Corwin_CHR_Changed", "LOCALS", 1)
 			Continue()
 	END
 //}
@@ -59,132 +59,132 @@
 	//{ Adjust STR to Match SoD Corwin
 		IF
 			CheckStat("Corwin", 20, STR)
-			Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_STR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, STR, 20, SET)
-				SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_STR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 19, STR)
-			Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_STR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, STR, 19, SET)
-				SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_STR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 18, STR)
-			Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_STR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, STR, 18, SET)
-				SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_STR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 17, STR)
-			Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_STR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, STR, 17, SET)
-				SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_STR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 16, STR)
-			Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_STR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, STR, 16, SET)
-				SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_STR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 15, STR)
-			Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_STR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, STR, 15, SET)
-				SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_STR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 14, STR)
-			Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_STR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, STR, 14, SET)
-				SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_STR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 13, STR)
-			Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_STR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, STR, 13, SET)
-				SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_STR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 12, STR)
-			Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_STR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, STR, 12, SET)
-				SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_STR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 11, STR)
-			Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_STR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, STR, 11, SET)
-				SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_STR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 10, STR)
-			Global("XA_Corwin_STR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_STR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, STR, 10, SET)
-				SetGlobal("XA_Corwin_STR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_STR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
@@ -193,132 +193,132 @@
 	//{ Adjust DEX to Match SoD Corwin
 		IF
 			CheckStat("Corwin", 20, DEX)
-			Global("XA_Corwin_DEX_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_DEX_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, DEX, 20, SET)
-				SetGlobal("XA_Corwin_DEX_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_DEX_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 19, DEX)
-			Global("XA_Corwin_DEX_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_DEX_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, DEX, 19, SET)
-				SetGlobal("XA_Corwin_DEX_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_DEX_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 18, DEX)
-			Global("XA_Corwin_DEX_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_DEX_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, DEX, 18, SET)
-				SetGlobal("XA_Corwin_DEX_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_DEX_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 17, DEX)
-			Global("XA_Corwin_DEX_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_DEX_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, DEX, 17, SET)
-				SetGlobal("XA_Corwin_DEX_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_DEX_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 16, DEX)
-			Global("XA_Corwin_DEX_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_DEX_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, DEX, 16, SET)
-				SetGlobal("XA_Corwin_DEX_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_DEX_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 15, DEX)
-			Global("XA_Corwin_DEX_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_DEX_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, DEX, 15, SET)
-				SetGlobal("XA_Corwin_DEX_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_DEX_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 14, DEX)
-			Global("XA_Corwin_DEX_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_DEX_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, DEX, 14, SET)
-				SetGlobal("XA_Corwin_DEX_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_DEX_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 13, DEX)
-			Global("XA_Corwin_DEX_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_DEX_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, DEX, 13, SET)
-				SetGlobal("XA_Corwin_DEX_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_DEX_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 12, DEX)
-			Global("XA_Corwin_DEX_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_DEX_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, DEX, 12, SET)
-				SetGlobal("XA_Corwin_DEX_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_DEX_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 11, DEX)
-			Global("XA_Corwin_DEX_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_DEX_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, DEX, 11, SET)
-				SetGlobal("XA_Corwin_DEX_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_DEX_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 10, DEX)
-			Global("XA_Corwin_DEX_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_DEX_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, DEX, 10, SET)
-				SetGlobal("XA_Corwin_DEX_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_DEX_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
@@ -327,132 +327,132 @@
 	//{ Adjust WIS to Match SoD Corwin
 		IF
 			CheckStat("Corwin", 20, WIS)
-			Global("XA_Corwin_WIS_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_WIS_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, WIS, 20, SET)
-				SetGlobal("XA_Corwin_WIS_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_WIS_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 19, WIS)
-			Global("XA_Corwin_WIS_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_WIS_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, WIS, 19, SET)
-				SetGlobal("XA_Corwin_WIS_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_WIS_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 18, WIS)
-			Global("XA_Corwin_WIS_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_WIS_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, WIS, 18, SET)
-				SetGlobal("XA_Corwin_WIS_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_WIS_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 17, WIS)
-			Global("XA_Corwin_WIS_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_WIS_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, WIS, 17, SET)
-				SetGlobal("XA_Corwin_WIS_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_WIS_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 16, WIS)
-			Global("XA_Corwin_WIS_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_WIS_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, WIS, 16, SET)
-				SetGlobal("XA_Corwin_WIS_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_WIS_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 15, WIS)
-			Global("XA_Corwin_WIS_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_WIS_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, WIS, 15, SET)
-				SetGlobal("XA_Corwin_WIS_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_WIS_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 14, WIS)
-			Global("XA_Corwin_WIS_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_WIS_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, WIS, 14, SET)
-				SetGlobal("XA_Corwin_WIS_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_WIS_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 13, WIS)
-			Global("XA_Corwin_WIS_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_WIS_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, WIS, 13, SET)
-				SetGlobal("XA_Corwin_WIS_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_WIS_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 12, WIS)
-			Global("XA_Corwin_WIS_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_WIS_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, WIS, 12, SET)
-				SetGlobal("XA_Corwin_WIS_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_WIS_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 11, WIS)
-			Global("XA_Corwin_WIS_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_WIS_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, WIS, 11, SET)
-				SetGlobal("XA_Corwin_WIS_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_WIS_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 10, WIS)
-			Global("XA_Corwin_WIS_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_WIS_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, WIS, 10, SET)
-				SetGlobal("XA_Corwin_WIS_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_WIS_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
@@ -461,132 +461,132 @@
 	//{ Adjust CHR to Match SoD Corwin
 		IF
 			CheckStat("Corwin", 20, CHR)
-			Global("XA_Corwin_CHR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CHR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CHR, 20, SET)
-				SetGlobal("XA_Corwin_CHR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CHR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 19, CHR)
-			Global("XA_Corwin_CHR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CHR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CHR, 19, SET)
-				SetGlobal("XA_Corwin_CHR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CHR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 18, CHR)
-			Global("XA_Corwin_CHR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CHR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CHR, 18, SET)
-				SetGlobal("XA_Corwin_CHR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CHR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 17, CHR)
-			Global("XA_Corwin_CHR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CHR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CHR, 17, SET)
-				SetGlobal("XA_Corwin_CHR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CHR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 16, CHR)
-			Global("XA_Corwin_CHR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CHR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CHR, 16, SET)
-				SetGlobal("XA_Corwin_CHR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CHR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 15, CHR)
-			Global("XA_Corwin_CHR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CHR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CHR, 15, SET)
-				SetGlobal("XA_Corwin_CHR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CHR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 14, CHR)
-			Global("XA_Corwin_CHR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CHR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CHR, 14, SET)
-				SetGlobal("XA_Corwin_CHR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CHR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 13, CHR)
-			Global("XA_Corwin_CHR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CHR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CHR, 13, SET)
-				SetGlobal("XA_Corwin_CHR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CHR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 12, CHR)
-			Global("XA_Corwin_CHR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CHR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CHR, 12, SET)
-				SetGlobal("XA_Corwin_CHR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CHR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 11, CHR)
-			Global("XA_Corwin_CHR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CHR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CHR, 11, SET)
-				SetGlobal("XA_Corwin_CHR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CHR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 10, CHR)
-			Global("XA_Corwin_CHR_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CHR_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CHR, 10, SET)
-				SetGlobal("XA_Corwin_CHR_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CHR_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
@@ -595,132 +595,132 @@
 	//{ Adjust CON to Match SoD Corwin
 		IF
 			CheckStat("Corwin", 20, CON)
-			Global("XA_Corwin_CON_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CON_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CON, 20, SET)
-				SetGlobal("XA_Corwin_CON_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CON_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 19, CON)
-			Global("XA_Corwin_CON_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CON_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CON, 19, SET)
-				SetGlobal("XA_Corwin_CON_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CON_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 18, CON)
-			Global("XA_Corwin_CON_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CON_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CON, 18, SET)
-				SetGlobal("XA_Corwin_CON_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CON_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 17, CON)
-			Global("XA_Corwin_CON_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CON_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CON, 17, SET)
-				SetGlobal("XA_Corwin_CON_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CON_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 16, CON)
-			Global("XA_Corwin_CON_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CON_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CON, 16, SET)
-				SetGlobal("XA_Corwin_CON_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CON_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 15, CON)
-			Global("XA_Corwin_CON_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CON_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CON, 15, SET)
-				SetGlobal("XA_Corwin_CON_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CON_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 14, CON)
-			Global("XA_Corwin_CON_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CON_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CON, 14, SET)
-				SetGlobal("XA_Corwin_CON_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CON_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 13, CON)
-			Global("XA_Corwin_CON_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CON_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CON, 13, SET)
-				SetGlobal("XA_Corwin_CON_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CON_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 12, CON)
-			Global("XA_Corwin_CON_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CON_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CON, 12, SET)
-				SetGlobal("XA_Corwin_CON_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CON_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 11, CON)
-			Global("XA_Corwin_CON_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CON_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CON, 11, SET)
-				SetGlobal("XA_Corwin_CON_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CON_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 10, CON)
-			Global("XA_Corwin_CON_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_CON_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, CON, 10, SET)
-				SetGlobal("XA_Corwin_CON_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_CON_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
@@ -729,132 +729,132 @@
 	//{ Adjust INT to Match SoD Corwin
 		IF
 			CheckStat("Corwin", 20, INT)
-			Global("XA_Corwin_INT_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_INT_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, INT, 20, SET)
-				SetGlobal("XA_Corwin_INT_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_INT_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 19, INT)
-			Global("XA_Corwin_INT_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_INT_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, INT, 19, SET)
-				SetGlobal("XA_Corwin_INT_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_INT_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 18, INT)
-			Global("XA_Corwin_INT_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_INT_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, INT, 18, SET)
-				SetGlobal("XA_Corwin_INT_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_INT_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 17, INT)
-			Global("XA_Corwin_INT_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_INT_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, INT, 17, SET)
-				SetGlobal("XA_Corwin_INT_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_INT_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 16, INT)
-			Global("XA_Corwin_INT_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_INT_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, INT, 16, SET)
-				SetGlobal("XA_Corwin_INT_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_INT_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 15, INT)
-			Global("XA_Corwin_INT_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_INT_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, INT, 15, SET)
-				SetGlobal("XA_Corwin_INT_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_INT_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 14, INT)
-			Global("XA_Corwin_INT_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_INT_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, INT, 14, SET)
-				SetGlobal("XA_Corwin_INT_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_INT_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 13, INT)
-			Global("XA_Corwin_INT_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_INT_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, INT, 13, SET)
-				SetGlobal("XA_Corwin_INT_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_INT_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 12, INT)
-			Global("XA_Corwin_INT_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_INT_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, INT, 12, SET)
-				SetGlobal("XA_Corwin_INT_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_INT_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 11, INT)
-			Global("XA_Corwin_INT_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_INT_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, INT, 11, SET)
-				SetGlobal("XA_Corwin_INT_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_INT_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END
 
 		IF
 			CheckStat("Corwin", 10, INT)
-			Global("XA_Corwin_INT_Changed", "LOCALS", 1)
+			Global("XA_LC_Corwin_INT_Changed", "LOCALS", 1)
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				ChangeStat(Myself, INT, 10, SET)
-				SetGlobal("XA_Corwin_INT_Changed", "LOCALS", 2)
+				SetGlobal("XA_LC_Corwin_INT_Changed", "LOCALS", 2)
 				SetInterrupt(TRUE)
 				Continue()
 		END

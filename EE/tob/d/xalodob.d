@@ -1,19 +1,19 @@
 BEGIN ~XALODOB~
 
 IF ~
-	Global("XA_Lodob", "GLOBAL", 1)
+	Global("XA_LC_Lodob", "GLOBAL", 1)
 ~ THEN BEGIN XA_Lodob
 	SAY @0 /* ~HAHAHAH! I AM FREE! GROVEL BEFORE ME, MANLINGS!~ */
 	
 	IF ~~ THEN REPLY @3 /* ~I bow to no one.~*/
 	DO ~
-		SetGlobal("XA_Lodob", "GLOBAL", 2)
+		SetGlobal("XA_LC_Lodob", "GLOBAL", 2)
 	~
 	GOTO XA_Lodob2
 	
 	IF ~~ THEN REPLY @4 /* ~Who are you?~ */
 	DO ~
-		SetGlobal("XA_Lodob", "GLOBAL", 2)
+		SetGlobal("XA_LC_Lodob", "GLOBAL", 2)
 	~
 	GOTO XA_Lodob2
 END
@@ -51,7 +51,7 @@ IF ~~ THEN BEGIN XA_Lodob3
 	EXIT
 	
 	IF ~
-		Global("XA_BenoSpirit", "GLOBAL", 1)
+		Global("XA_LC_BenoSpirit", "GLOBAL", 1)
 	~ THEN
 	DO ~
 		StartCutSceneMode()

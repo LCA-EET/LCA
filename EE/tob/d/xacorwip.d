@@ -14,8 +14,8 @@ END
 
 //{ Pocket Plane - Dialog P-7
 IF ~
-	Global("XA_CorwinSpawnPlane", "GLOBAL", 1)
-	GlobalLT("XA_CorwinSpawnComplain", "GLOBAL", 1)
+	Global("XA_LC_CorwinSpawnPlane", "GLOBAL", 1)
+	GlobalLT("XA_LC_CorwinSpawnComplain", "GLOBAL", 1)
 	!Race(Player1, LICH)
 ~ THEN BEGIN XA_JoinToB
 	SAY @7 /* ~Wh... where... what the hells is this place? <CHARNAME>!? There better be a DAMN good explanation for this!~*/
@@ -24,8 +24,8 @@ IF ~
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @8 /* ~Did I catch you at a bad time?~ */
 	DO ~
-		SetGlobal("XA_CorwinPromoted", "GLOBAL", 1)
-		SetGlobal("XA_CorwinSpawnComplain", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinPromoted", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinSpawnComplain", "GLOBAL", 1)
 	~ 
 	GOTO XA_JoinToB_BadTime_NR
 	
@@ -33,8 +33,8 @@ IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @8 /* ~Did I catch you at a bad time?~ */
 	DO ~
-		SetGlobal("XA_CorwinPromoted", "GLOBAL", 1)
-		SetGlobal("XA_CorwinSpawnComplain", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinPromoted", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinSpawnComplain", "GLOBAL", 1)
 	~ 
 	GOTO XA_JoinToB_BadTime_R
 	
@@ -42,8 +42,8 @@ IF ~
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @9 /* ~Hi, Captain.~ */
 	DO ~
-		SetGlobal("XA_CorwinPromoted", "GLOBAL", 1)
-		SetGlobal("XA_CorwinSpawnComplain", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinPromoted", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinSpawnComplain", "GLOBAL", 1)
 	~ 
 	GOTO XA_JoinToB_Promoted
 	
@@ -51,8 +51,8 @@ IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @10 /* Hi, Schael.*/
 	DO ~
-		SetGlobal("XA_CorwinPromoted", "GLOBAL", 1)
-		SetGlobal("XA_CorwinSpawnComplain", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinPromoted", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinSpawnComplain", "GLOBAL", 1)
 	~ 
 	GOTO XA_JoinToB_HiMad
 END

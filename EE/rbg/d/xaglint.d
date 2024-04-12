@@ -13,7 +13,7 @@ END
 
 IF ~
 	IsGabber(Player1)
-	GlobalLT("XA_TalkedToGlint", "Global", 1)
+	GlobalLT("XA_LC_TalkedToGlint", "Global", 1)
 	AreaCheck("XAA141")
 ~
 THEN BEGIN XA_Greeting
@@ -23,7 +23,7 @@ THEN BEGIN XA_Greeting
 		!Dead("GLINT")
 	~ THEN REPLY @1 /* ~Glint! What're you doing here?~*/
 	DO ~
-		SetGlobal("XA_TalkedToGlint", "Global", 1)
+		SetGlobal("XA_LC_TalkedToGlint", "Global", 1)
 	~
 	GOTO XA_WhatAreYouDoingHere
 	
@@ -31,7 +31,7 @@ THEN BEGIN XA_Greeting
 		!Dead("GLINT")
 	~ THEN REPLY @2 /* ~Who're you?~*/
 	DO ~
-		SetGlobal("XA_TalkedToGlint", "Global", 1)
+		SetGlobal("XA_LC_TalkedToGlint", "Global", 1)
 	~
 	GOTO XA_WhoAreYou
 	
@@ -39,7 +39,7 @@ THEN BEGIN XA_Greeting
 		Dead("GLINT")
 	~ THEN REPLY @29
 	DO ~
-		SetGlobal("XA_TalkedToGlint", "Global", 1)
+		SetGlobal("XA_LC_TalkedToGlint", "Global", 1)
 	~
 	GOTO XA_YouDied
 END
@@ -91,12 +91,12 @@ IF ~~ THEN BEGIN XA_Bye
 END
 
 IF ~
-	Global("XA_ArrivedInUndercity", "GLOBAL", 3)
+	Global("XA_LC_ArrivedInUndercity", "GLOBAL", 3)
 ~ THEN BEGIN XA_GlintUC
 	SAY @10 /* Psst. */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_ArrivedInUndercity", "GLOBAL", 4)
+		SetGlobal("XA_LC_ArrivedInUndercity", "GLOBAL", 4)
 	~
 	GOTO XA_GlintUCChain
 END
@@ -144,7 +144,7 @@ IF ~~ THEN BEGIN XA_SetUp
 END
 
 CHAIN IF ~
-	Global("XA_ArrivedInUndercity", "GLOBAL", 3)
+	Global("XA_LC_ArrivedInUndercity", "GLOBAL", 3)
 ~ THEN XAGLINT XA_GlintUCChain
 	@11 /* ~Over here.~*/
 	== XACORWIJ

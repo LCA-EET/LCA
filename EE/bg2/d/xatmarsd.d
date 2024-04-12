@@ -1,7 +1,7 @@
 BEGIN ~XATMARSD~
 
 IF ~
-	GlobalGT("XA_TM_ArcheryChallenge", "GLOBAL", 1)
+	GlobalGT("XA_LC_TM_ArcheryChallenge", "GLOBAL", 1)
 ~ THEN BEGIN XAA0
 	SAY @9 /* ~Congratulations on winning the Archery Competition!~ */
 	IF ~~ THEN
@@ -35,7 +35,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_TM_ArcheryChallenge", "GLOBAL", 1)
+	Global("XA_LC_TM_ArcheryChallenge", "GLOBAL", 1)
 	!TimeOfDay(DAY)
 ~ THEN BEGIN XAA6
 	SAY @10 /* ~The signup desk is closed for today. Please come back tomorrow to sign up for the Archery Competition!~ */
@@ -44,7 +44,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_TM_ArcheryChallenge", "GLOBAL", 1)
+	Global("XA_LC_TM_ArcheryChallenge", "GLOBAL", 1)
 	TimeOfDay(DAY)
 ~ THEN BEGIN XAA1
 	SAY @0 /* ~Hi! Are you here to sign up for the annual Archery Competition?~ */

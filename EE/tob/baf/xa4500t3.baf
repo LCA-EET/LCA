@@ -1,6 +1,6 @@
 IF
 	!Dead("bdthrix")
-	GlobalLT("XA_ThrixSpawn", "GLOBAL", 1)
+	GlobalLT("XA_LC_ThrixSpawn", "GLOBAL", 1)
 	OR(6)
 		IsOverMe(Player1)
 		IsOverMe(Player2)
@@ -11,7 +11,7 @@ IF
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_ThrixSpawn", "GLOBAL", 1)
+		SetGlobal("XA_LC_ThrixSpawn", "GLOBAL", 1)
 		CreateVisualEffect("SPFLESHS",[2165.380])
 		Wait(1)
 		CreateCreature("XATHRIX", [2165.380],SW)
@@ -20,12 +20,12 @@ END
 
 IF
 	Dead("bdthrix")
-	GlobalLT("XA_VoiceSpawn", "GLOBAL", 1)
+	GlobalLT("XA_LC_VoiceSpawn", "GLOBAL", 1)
 	IsOverMe([PC])
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_VoiceSpawn", "GLOBAL", 1)
+		SetGlobal("XA_LC_VoiceSpawn", "GLOBAL", 1)
 		CreateCreature("XAKANA1", [2165.380],SW)
 		SetInterrupt(TRUE)
 END

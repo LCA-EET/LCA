@@ -1,9 +1,9 @@
 IF
-	Global("XA_GorionHostile", "GLOBAL", 1)
+	Global("XA_LC_GorionHostile", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_GorionHostile", "GLOBAL", 2)
+		SetGlobal("XA_LC_GorionHostile", "GLOBAL", 2)
 		ClearActions(Myself)
 		ReallyForceSpell(Myself, WIZARD_GLOBE_OF_INVULNERABILITY)
 		ReallyForceSpell(Myself, WIZARD_MIRROR_IMAGE)

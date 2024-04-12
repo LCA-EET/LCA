@@ -1,28 +1,28 @@
 IF
-	GlobalLT("XA_GlintSpawn", "MYAREA", 1)
+	GlobalLT("XA_LC_GlintSpawn", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_GlintSpawn", "MYAREA", 1)
+		SetGlobal("XA_LC_GlintSpawn", "MYAREA", 1)
 		CreateCreature("xaglint", [1900.1240], NW) /* Glint */
 		Continue()
 END
 
 IF
-	GlobalLT("XA_CorwinMapNoteAdded", "MYAREA", 1)
+	GlobalLT("XA_LC_CorwinMapNoteAdded", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CorwinMapNoteAdded", "MYAREA", 1)
+		SetGlobal("XA_LC_CorwinMapNoteAdded", "MYAREA", 1)
 		AddMapNote([1732.1126],@0)
 		Continue()
 END
 
 IF 
-	Global("XA_Briel1300", "MYAREA", 1)
+	Global("XA_LC_Briel1300", "MYAREA", 1)
 	Global("XA_LC_HelpedBrielbara", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		CreateCreature("xabrielb", [1660.1360], NE)
-		SetGlobal("XA_Briel1300", "MYAREA", 1)
+		SetGlobal("XA_LC_Briel1300", "MYAREA", 1)
 		Continue()
 END
 

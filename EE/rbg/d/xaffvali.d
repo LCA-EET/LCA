@@ -1,7 +1,7 @@
 BEGIN ~XAFFVALI~
 
 IF ~
-	Global("XA_ByeRohma", "GLOBAL", 1)
+	Global("XA_LC_ByeRohma", "GLOBAL", 1)
 	IsGabber("XACORWIN")
 ~ THEN BEGIN XA_Evening
 	SAY @14 /* ~Evening, Major.~ */
@@ -10,7 +10,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_ByeRohma", "GLOBAL", 1)
+	Global("XA_LC_ByeRohma", "GLOBAL", 1)
 	!IsGabber("XACORWIN")
 	Gender(Player1, MALE)
 ~ THEN BEGIN XA_Evening
@@ -20,7 +20,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_ByeRohma", "GLOBAL", 1)
+	Global("XA_LC_ByeRohma", "GLOBAL", 1)
 	!IsGabber("XACORWIN")
 	Gender(Player1, FEMALE)
 ~ THEN BEGIN XA_Evening
@@ -30,20 +30,20 @@ IF ~
 END
 
 IF ~
-	!Global("XA_SpokeToValiant", "GLOBAL", 1)
+	!Global("XA_LC_SpokeToValiant", "GLOBAL", 1)
 	!IsGabber("XACORWIN")
 ~ THEN BEGIN XA_Greeting
 	SAY @5 /* ~Can I help you?~ */
 	
 	IF ~~ THEN REPLY @4 /* ~You seem exceptionally well-armed and armored.~ */
 	DO ~
-		SetGlobal("XA_SpokeToValiant", "GLOBAL", 1)
+		SetGlobal("XA_LC_SpokeToValiant", "GLOBAL", 1)
 	~
 	GOTO XA_Explain
 	
 	IF ~~ THEN REPLY @6 /* ~I heard Marshal Nederlok refer to you as a 'Valiant'. Could you explain what that is?~ */
 	DO ~
-		SetGlobal("XA_SpokeToValiant", "GLOBAL", 1)
+		SetGlobal("XA_LC_SpokeToValiant", "GLOBAL", 1)
 	~
 	GOTO XA_Explain
 END

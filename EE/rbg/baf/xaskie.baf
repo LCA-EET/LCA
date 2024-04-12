@@ -1,5 +1,5 @@
 IF
-	Global("XA_SkieModActive", "GLOBAL",1)
+	Global("XA_LC_SkieModActive", "GLOBAL",1)
 THEN
 	RESPONSE #100
 		DestroySelf()

@@ -6,7 +6,7 @@ APPEND ANOMENJ
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_AnomenAskedDiviner", "GLOBAL", 1)
+			SetGlobal("XA_LC_AnomenAskedDiviner", "GLOBAL", 1)
 		~
 		EXTERN XADIVINE XA_AskAway
 	END
@@ -18,12 +18,12 @@ END
 //{ BART0133
 ADD_STATE_TRIGGER xaa251 0
 ~
-	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND xaa251
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XAA0
 		SAY @46 /* ~Business has been slow since the refugees left. If you've need of anything, don't hesitate to ask.~  */
 		
@@ -41,24 +41,24 @@ END
 //{ BART8
 EXTEND_BOTTOM xaa184 0 /* OK */
 	IF ~
-		GlobalGT("XA_BrevlikSpawn", "GLOBAL", 0)
-		!Global("XA_FoundBrevlik", "GLOBAL", 1)
-		!Global("XA_AskedAboutBrevlik", "GLOBAL", 1)
+		GlobalGT("XA_LC_BrevlikSpawn", "GLOBAL", 0)
+		!Global("XA_LC_FoundBrevlik", "GLOBAL", 1)
+		!Global("XA_LC_AskedAboutBrevlik", "GLOBAL", 1)
 	~ THEN REPLY @16 /* ~I'm looking for a gnome named Brevlik. Have you seen him recently?~*/
 	DO ~
-		SetGlobal("XA_AskedAboutBrevlik", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskedAboutBrevlik", "GLOBAL", 1)
 	~
 	GOTO XA_Brevlik
 END
 
 EXTEND_BOTTOM xaa184 1 /* OK */
 	IF ~
-		GlobalGT("XA_BrevlikSpawn", "GLOBAL", 0)
-		!Global("XA_FoundBrevlik", "GLOBAL", 1)
-		!Global("XA_AskedAboutBrevlik", "GLOBAL", 1)
+		GlobalGT("XA_LC_BrevlikSpawn", "GLOBAL", 0)
+		!Global("XA_LC_FoundBrevlik", "GLOBAL", 1)
+		!Global("XA_LC_AskedAboutBrevlik", "GLOBAL", 1)
 	~ THEN REPLY @16 /* ~I'm looking for a gnome named Brevlik. Have you seen him recently?~*/
 	DO ~
-		SetGlobal("XA_AskedAboutBrevlik", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskedAboutBrevlik", "GLOBAL", 1)
 	~
 	GOTO XA_Brevlik
 END
@@ -89,14 +89,14 @@ END
 //{ BRIELB
 ADD_STATE_TRIGGER xaa148 3
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND xaa148
 	IF WEIGHT #2 /* Triggers after states #: 15 even though they appear after this state */
 	~  !InParty("Coran")
 		NumTimesTalkedTo(0)
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XA_Greeting // from:
 		SAY @75 /* ~Oh my! You're the hero of Baldur's Gate - please, I need your help!~*/
 		IF ~~ THEN REPLY @76 /* ~We've just returned from a long journey, and we're tired.~ */ 
@@ -110,7 +110,7 @@ END
 //{ FATMBA
 ADD_STATE_TRIGGER xaa133 4
 ~
-	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND xaa133
@@ -127,13 +127,13 @@ END
 //{ FLAMBG
 ADD_STATE_TRIGGER xaa327 0
 ~
-	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 5 6
 
 APPEND xaa327
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 		RandomNum(2,1)
 	~
@@ -143,8 +143,8 @@ APPEND xaa327
 	END
 	
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
-		!Global("XA_DukesDebriefed", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+		!Global("XA_LC_DukesDebriefed", "GLOBAL", 1)
 	~
 	THEN BEGIN XAA1
 		SAY @80 /* ~Good day <CHARNAME>, Captain. If you are looking for Marshal Nederlok, he is in his office upstairs.~ */
@@ -157,38 +157,38 @@ END
 //{ FLAMGG
 ADD_STATE_TRIGGER xaa101 0
 ~
-	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 ADD_STATE_TRIGGER xaa101 3
 ~
-	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND xaa101
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
-		GlobalLT("XA_TollPaid", "LOCALS", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+		GlobalLT("XA_LC_TollPaid", "LOCALS", 1)
 	~ THEN BEGIN XA_RBG
 		SAY @7  /* ~Your entrance tax has been paid for by Duke Entar. Welcome back, <CHARNAME>.~*/
 		
 		IF ~~ THEN REPLY @8  /* ~Thank you.~*/
 		DO ~
-			SetGlobal("XA_TollPaid", "LOCALS", 1)
+			SetGlobal("XA_LC_TollPaid", "LOCALS", 1)
 		~
 		EXIT
 		
 		IF ~~ THEN REPLY @9  /* ~All six gold? How generous of him.~ */
 		DO ~
-			SetGlobal("XA_TollPaid", "LOCALS", 1)
+			SetGlobal("XA_LC_TollPaid", "LOCALS", 1)
 		~
 		EXIT
 		
 	END
 	
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
-		Global("XA_TollPaid", "LOCALS", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_TollPaid", "LOCALS", 1)
 		TimeOfDay(NIGHT)
 	~ THEN BEGIN XA_RBG_Paid
 		SAY @10  /* ~Good evening.~*/
@@ -196,8 +196,8 @@ APPEND xaa101
 		IF ~~ THEN EXIT
 	END
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
-		Global("XA_TollPaid", "LOCALS", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_TollPaid", "LOCALS", 1)
 		!TimeOfDay(NIGHT)
 	~ THEN BEGIN XA_RBG_Paid
 		SAY @11  /* ~Good day.~*/
@@ -210,12 +210,12 @@ END
 //{ HOUSG3
 ADD_STATE_TRIGGER xaa394 0
 ~
-	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 ADD_STATE_TRIGGER xaa394 1
 ~
-	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND xaa394
@@ -223,8 +223,8 @@ APPEND xaa394
 		//IsGabber(Player1)
 		IsGabber(Player1)
 		RandomNum(2,1)
-		Global("XA_ReturnToBG", "GLOBAL", 1)
-		!Global("XA_TalkedToSkie", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+		!Global("XA_LC_TalkedToSkie", "GLOBAL", 1)
 	~ THEN BEGIN XA_PlayerGreeting
 		SAY @27 /* ~<CHARNAME> - Lady Silvershield is expecting you.~*/
 		
@@ -234,7 +234,7 @@ APPEND xaa394
 	IF ~
 		IsGabber("XACORWIN")
 		!TimeOfDay(NIGHT)
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XA_CorwinGreeting1
 		SAY @28 /* ~Good day, officer.~*/
 		
@@ -244,7 +244,7 @@ APPEND xaa394
 	IF ~
 		IsGabber("XACORWIN")
 		TimeOfDay(NIGHT)
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XA_CorwinGreeting2
 		SAY @29 /* ~Good evening, officer.~*/
 		
@@ -252,7 +252,7 @@ APPEND xaa394
 	END
 	
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XA_DefaultGreeting
 		SAY @30 /* ~Behave yourselves - you are in the home of Duke Entar Silvershield.~*/
 		
@@ -271,7 +271,7 @@ APPEND IMOEN2J
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_ImoenAskedDiviner", "GLOBAL", 1)
+			SetGlobal("XA_LC_ImoenAskedDiviner", "GLOBAL", 1)
 		~
 		EXTERN XADIVINE XA_AskAway
 	END
@@ -281,15 +281,15 @@ END
 //{ IRONM4
 ADD_STATE_TRIGGER xaa420 7
 ~
-	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 EXTEND_BOTTOM xaa420 0
 	IF ~
-		Global("XA_HelpTianna", "GLOBAL", 1)
-		!Global("XA_AskedAboutJasper", "LOCALS", 1)
+		Global("XA_LC_HelpTianna", "GLOBAL", 1)
+		!Global("XA_LC_AskedAboutJasper", "LOCALS", 1)
 		!Dead("XAJASPER")
-		!Global("XA_TiannaDebtResolved", "GLOBAL", 1)
+		!Global("XA_LC_TiannaDebtResolved", "GLOBAL", 1)
 	~ THEN REPLY @51 /* ~I'm looking for a man named Jasper. I was told that he's here - do you know where I can find him?~ */
 	GOTO XA_Jasper
 END
@@ -297,17 +297,17 @@ END
 APPEND xaa420
 	IF ~  
 		StateCheck(Myself,STATE_CHARMED)
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XAA0 // from:
 		SAY @52 /* ~Please, all of my girls are available for friends of mine, so long as they behave themselves.~ */
 		IF ~~ THEN EXIT
 	END
 	
 	IF ~
-		Global("XA_HelpTianna", "GLOBAL", 1)
-		!Global("XA_AskedAboutJasper", "LOCALS", 1)
+		Global("XA_LC_HelpTianna", "GLOBAL", 1)
+		!Global("XA_LC_AskedAboutJasper", "LOCALS", 1)
 		!Dead("XAJASPER")
-		!Global("XA_TiannaDebtResolved", "GLOBAL", 1)
+		!Global("XA_LC_TiannaDebtResolved", "GLOBAL", 1)
 	~ THEN BEGIN XA_AskAboutJasper
 		SAY @53 /* ~Can I help you?~ */
 		IF ~~ THEN REPLY @51 /* ~I'm looking for a man named Jasper. I was told that he's here - do you know where I can find him?~ */
@@ -318,7 +318,7 @@ APPEND xaa420
 		SAY @54 /* ~Jasper, yes. He and his girls are set up to the southwest. He wears a bright green coat, you can't miss him.~ */
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_AskedAboutJasper", "LOCALS", 1)
+			SetGlobal("XA_LC_AskedAboutJasper", "LOCALS", 1)
 		~
 		EXIT
 	END
@@ -332,7 +332,7 @@ APPEND JAHEIRAJ
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_JaheiraAskedDiviner", "GLOBAL", 1)
+			SetGlobal("XA_LC_JaheiraAskedDiviner", "GLOBAL", 1)
 		~
 		EXTERN XADIVINE XA_AskAway
 	END
@@ -425,11 +425,11 @@ ADD_STATE_TRIGGER xaa249 8
 EXTEND_BOTTOM xaa249 0
 	IF ~
 		IsValidForPartyDialog("XACORWIN")
-		!Global("XA_CorwinLobarTianna", "GLOBAL", 1)
-		!Global("XA_TalkedToTianna", "GLOBAL", 1)
+		!Global("XA_LC_CorwinLobarTianna", "GLOBAL", 1)
+		!Global("XA_LC_TalkedToTianna", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_CorwinLobarTianna", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinLobarTianna", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_CorwinLobar
 END
@@ -437,11 +437,11 @@ END
 EXTEND_BOTTOM xaa249 8
 	IF ~
 		IsValidForPartyDialog("XACORWIN")
-		!Global("XA_CorwinLobarTianna", "GLOBAL", 1)
-		!Global("XA_TalkedToTianna", "GLOBAL", 1)
+		!Global("XA_LC_CorwinLobarTianna", "GLOBAL", 1)
+		!Global("XA_LC_TalkedToTianna", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_CorwinLobarTianna", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinLobarTianna", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_CorwinLobar
 END
@@ -449,7 +449,7 @@ END
 APPEND xaa249
 	IF ~
 		IsGabber("XACORWIN")
-		Global("XA_CorwinLobar", "GLOBAL", 1)
+		Global("XA_LC_CorwinLobar", "GLOBAL", 1)
 	~ THEN BEGIN XA_CorwinGreeting2
 		SAY @34 /* ~Hello again, officer. How can the Low Lantern be of assistance?~ */
 		
@@ -457,47 +457,47 @@ APPEND xaa249
 		EXIT
 		
 		IF ~
-			Global("XA_BGSlaverPlot", "GLOBAL", 1)
-			!Global("XA_AskedLobarSlaver", "GLOBAL", 1)
+			Global("XA_LC_BGSlaverPlot", "GLOBAL", 1)
+			!Global("XA_LC_AskedLobarSlaver", "GLOBAL", 1)
 		~ THEN REPLY @36 /* ~We're investigating reports of slaver activity in Baldur's Gate. Are you aware of any refugees having been sold into servitude?~ */
 		DO ~
-			SetGlobal("XA_AskedLobarSlaver", "GLOBAL", 1)
+			SetGlobal("XA_LC_AskedLobarSlaver", "GLOBAL", 1)
 		~
 		GOTO XA_SlaverInvestigation
 		
 		IF ~
-			!Global("XA_CorwinLobarTianna", "GLOBAL", 1)
-			!Global("XA_TalkedToTianna", "GLOBAL", 1)
+			!Global("XA_LC_CorwinLobarTianna", "GLOBAL", 1)
+			!Global("XA_LC_TalkedToTianna", "GLOBAL", 1)
 		~ THEN REPLY @37 /* ~Is Tianna working?~ */
 		DO ~
-			SetGlobal("XA_CorwinLobarTianna", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinLobarTianna", "GLOBAL", 1)
 		~
 		GOTO XA_LobarTianna
 	END
 	
 	IF ~
 		IsGabber("XACORWIN")
-		!Global("XA_CorwinLobar", "GLOBAL", 1)
+		!Global("XA_LC_CorwinLobar", "GLOBAL", 1)
 	~ THEN BEGIN XA_CorwinGreeting
 		SAY @38 /*  ~Greetings officer, and welcome to the Low Lantern. Are you here for business, or for pleasure? Perhaps a little of both?~  */
 		
 		IF ~
-			Global("XA_BGSlaverPlot", "GLOBAL", 1)
-			!Global("XA_AskedLobarSlaver", "GLOBAL", 1)
+			Global("XA_LC_BGSlaverPlot", "GLOBAL", 1)
+			!Global("XA_LC_AskedLobarSlaver", "GLOBAL", 1)
 		~ THEN REPLY @36 /* ~We're investigating reports of slaver activity in Baldur's Gate. Are you aware of any refugees having been sold into servitude?~ */
 		DO ~
-			SetGlobal("XA_CorwinLobar", "GLOBAL", 1)
-			SetGlobal("XA_AskedLobarSlaver", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinLobar", "GLOBAL", 1)
+			SetGlobal("XA_LC_AskedLobarSlaver", "GLOBAL", 1)
 		~
 		GOTO XA_SlaverInvestigation
 		
 		IF ~
-			!Global("XA_CorwinLobarTianna", "GLOBAL", 1)
-			!Global("XA_TalkedToTianna", "GLOBAL", 1)
+			!Global("XA_LC_CorwinLobarTianna", "GLOBAL", 1)
+			!Global("XA_LC_TalkedToTianna", "GLOBAL", 1)
 		~ THEN REPLY @37 /* ~Is Tianna working?~ */
 		DO ~
-			SetGlobal("XA_CorwinLobar", "GLOBAL", 1)
-			SetGlobal("XA_CorwinLobarTianna", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinLobar", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinLobarTianna", "GLOBAL", 1)
 		~
 		GOTO XA_LobarTianna
 	
@@ -523,11 +523,11 @@ APPEND xaa249
 		IF ~~ THEN EXIT
 		
 		IF ~
-			!Global("XA_CorwinLobarTianna", "GLOBAL", 1)
-			!Global("XA_TalkedToTianna", "GLOBAL", 1)
+			!Global("XA_LC_CorwinLobarTianna", "GLOBAL", 1)
+			!Global("XA_LC_TalkedToTianna", "GLOBAL", 1)
 		~ THEN REPLY @37 /* ~Is Tianna working?~ */
 		DO ~
-			SetGlobal("XA_CorwinLobarTianna", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinLobarTianna", "GLOBAL", 1)
 		~
 		GOTO XA_LobarTianna
 	END
@@ -537,8 +537,8 @@ END
 //{ LUCKY
 EXTEND_BOTTOM xaa187 0
 	IF ~
-		GlobalLT("XA_BoughtRohmaDoll", "GLOBAL", 1)
-		Global("XA_WantToGetDoll", "GLOBAL", 1)
+		GlobalLT("XA_LC_BoughtRohmaDoll", "GLOBAL", 1)
+		Global("XA_LC_WantToGetDoll", "GLOBAL", 1)
 		InPartySlot(LastTalkedToBy, 0)
 	~ 
 	THEN REPLY @0 /* ~I'm looking for a gift for a young child, perhaps a doll of some sort. Do you have anything like that in your store?~ */
@@ -554,7 +554,7 @@ APPEND xaa187
 		THEN REPLY @2 /* ~Yes, that is perfect, thank you. (Pay three gold for the doll). ~ */
 		DO ~
 			TakePartyGold(3)
-			SetGlobal("XA_BoughtRohmaDoll", "GLOBAL", 1)
+			SetGlobal("XA_LC_BoughtRohmaDoll", "GLOBAL", 1)
 		~
 		GOTO M1
 		
@@ -573,7 +573,7 @@ APPEND xaa187
 		IF ~~ THEN
 		DO ~
 			GiveItemCreate("XARDOLL", LastTalkedToBy(Myself),1,0,0)
-			SetGlobal("XA_LC_Journal_RohmaGift_1", "GLOBAL", 1)
+			SetGlobal("XA_LC__Journal_RohmaGift_1", "GLOBAL", 1)
 		~
 		EXIT
 	END
@@ -595,19 +595,19 @@ END
 //{ MCOOK4
 ADD_STATE_TRIGGER xaa389 1
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 //}
 
 //{ MICK
 ADD_STATE_TRIGGER xaa135 0
 ~
-	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND xaa135
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XAA0
 		SAY @101 /* ~Speedy delivery, speedy delivery coming through. Must inform the Grand Dukes that <CHARNAME> and <PRO_HISHER> companions have arrived. Speedy delivery, coming through!~ */
 		IF ~~ THEN
@@ -622,13 +622,13 @@ END
 //{ MERLEA
 ADD_STATE_TRIGGER xaa316 0
 ~
-	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 4 5 6
 
 APPEND xaa316
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		RandomNum(6,1)
 	~ THEN BEGIN XAA0
 		SAY @68 /* ~Leave me be, I've business to attend to.~ */
@@ -637,10 +637,10 @@ APPEND xaa316
 	END
 
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		RandomNum(6,2)
-		Global("XA_LC_SavedAldeth","GLOBAL",1)
-		!AreaCheck("BG0128")
+		Global("XA_LC__SavedAldeth","GLOBAL",1)
+		!AreaCheck("XAA490")
 		!Dead("Aldeth")
 	~ THEN BEGIN XAA1
 		SAY @69 /* ~If you're seeking Aldeth, he's upstairs.~*/
@@ -649,7 +649,7 @@ APPEND xaa316
 	END
 
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		RandomNum(6,2)
 	~ THEN BEGIN XAA2
 		SAY @70 /* ~Grain futures are lower, with the bandit activity down and all.~  */
@@ -658,7 +658,7 @@ APPEND xaa316
 	END
 
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		RandomNum(6,3)
 	~ THEN BEGIN XAA3
 		SAY @71 /* ~With the refugee crisis finally dealt with, the strain on the city's economy should lessen.~*/
@@ -667,7 +667,7 @@ APPEND xaa316
 	END
 
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		RandomNum(6,4)
 	~ THEN BEGIN XAA4
 		SAY @72 /* ~Lumber futures are up, no doubt because of the new construction east of the city.~*/
@@ -676,7 +676,7 @@ APPEND xaa316
 	END
 
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		RandomNum(6,5)
 	~ THEN BEGIN XAA5
 		SAY @73 /* ~The value of my holdings has doubled since the fall of the Iron Throne.~
@@ -686,7 +686,7 @@ APPEND xaa316
 	END
 
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		RandomNum(6,6)
 	~ THEN BEGIN XAA6
 		SAY @74 /* ~Welcome to the Merchant's League. May your stay be a profitable one.~
@@ -713,18 +713,18 @@ END
 //{ NOBW9
 ADD_STATE_TRIGGER xaa246 6
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 ADD_TRANS_TRIGGER xaa246 0
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 DO 3
 
 EXTEND_BOTTOM xaa246 0
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN REPLY @43 /* ~We've just returned after a long adventure in Amn.~*/
 	GOTO XAA1
 END
@@ -732,7 +732,7 @@ END
 APPEND xaa246
 	IF ~
 		StateCheck(Myself,STATE_CHARMED)
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XAA0
 		SAY @44 /* ~I've heard quite a bit about what's been going on around town. There are rumors that <CHARNAME> will return, now that <PRO_HISHER> innocence has been established.~ */
 		
@@ -750,17 +750,17 @@ END
 //{ NOBL11
 ADD_TRANS_TRIGGER xaa247 0
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 EXTEND_BOTTOM xaa247 0 /* OK */
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN REPLY @12 /* ~Tell me what the common folk are talking about these days.~ */ 
 	GOTO XAA1
 	
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN REPLY @13 /* ~What have you heard bandied about the bar lately?~ */ 
 	GOTO XAA1
 END
@@ -810,13 +810,13 @@ END
 //{ PROST5
 ADD_STATE_TRIGGER xaa290 4
 ~
-	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND xaa290
 	IF ~  
 		StateCheck(Myself,STATE_CHARMED)
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XAA0 // from:
 		SAY @55 /* ~Things have been much better since Slythe and Krystin were killed. Those two were crazy.~ */
 		IF ~~ THEN EXIT
@@ -827,13 +827,13 @@ END
 //{ PROST6
 ADD_STATE_TRIGGER xaa291 2
 ~
-	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND xaa291
 	IF ~  
 		StateCheck(Myself,STATE_CHARMED)
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XAA0 // from:
 		SAY @55 /* ~Things have been much better since Slythe and Krystin were killed. Those two were crazy.~ */
 		IF ~~ THEN EXIT
@@ -844,13 +844,13 @@ END
 //{ PROST7
 ADD_STATE_TRIGGER xaa294 6
 ~
-	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND xaa294
 	IF ~  
 		StateCheck(Myself,STATE_CHARMED)
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XAA0 // from:
 		SAY @55 /* ~Things have been much better since Slythe and Krystin were killed. Those two were crazy.~ */
 		IF ~~ THEN EXIT
@@ -861,13 +861,13 @@ END
 //{ PROST8
 ADD_STATE_TRIGGER xaa296 3
 ~
-	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND xaa296
 	IF ~  
 		StateCheck(Myself,STATE_CHARMED)
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XAA0 // from:
 		SAY @55 /* ~Things have been much better since Slythe and Krystin were killed. Those two were crazy.~ */
 		IF ~~ THEN EXIT
@@ -878,12 +878,12 @@ END
 //{ SERVA2
 ADD_STATE_TRIGGER xaa395 0
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 ADD_STATE_TRIGGER xaa395 11
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND xaa395
@@ -891,7 +891,7 @@ APPEND xaa395
 		//IsGabber(Player1)
 		IsGabber(Player1)
 		RandomNum(3,1)
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XA_PlayerGreeting
 		SAY @31 /* ~Oh, it's you, the hero. Entar Silvershield's daughter told us you may be stopping by.~*/
 		
@@ -902,7 +902,7 @@ APPEND xaa395
 		//IsGabber(Player1)
 		IsGabber(Player1)
 		RandomNum(3,2)
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XA_PlayerGreeting2
 		SAY @32 /* ~I'm just a servant.~*/
 		
@@ -913,7 +913,7 @@ APPEND xaa395
 		//IsGabber(Player1)
 		IsGabber(Player1)
 		RandomNum(3,3)
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XA_PlayerGreeting3
 		SAY @33 /* ~Not to be rude, but I need to get back to work.~*/
 		
@@ -923,7 +923,7 @@ APPEND xaa395
 	IF ~
 		IsGabber("XACORWIN")
 		!TimeOfDay(NIGHT)
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XA_CorwinGreeting1
 		SAY @28 /* ~Good day, officer.~*/
 		
@@ -933,7 +933,7 @@ APPEND xaa395
 	IF ~
 		IsGabber("XACORWIN")
 		TimeOfDay(NIGHT)
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XA_CorwinGreeting2
 		SAY @29 /* ~Good evening, officer.~*/
 		
@@ -942,7 +942,7 @@ APPEND xaa395
 
 	IF ~
 		RandomNum(2,1)
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XA_Greeting1
 		SAY @32 /* ~I'm just a servant.~ */
 		
@@ -951,7 +951,7 @@ APPEND xaa395
 
 	IF ~
 		RandomNum(2,2)
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XA_Greeting2
 		SAY @33 /* ~Not to be rude, but I need to get back to work.~*/
 		
@@ -963,8 +963,8 @@ END
 //{ SHOP06
 EXTEND_BOTTOM xaa353 0
 	IF ~
-		GlobalLT("XA_BoughtRohmaDoll", "GLOBAL", 1)
-		Global("XA_WantToGetDoll", "GLOBAL", 1)
+		GlobalLT("XA_LC_BoughtRohmaDoll", "GLOBAL", 1)
+		Global("XA_LC_WantToGetDoll", "GLOBAL", 1)
 		InPartySlot(LastTalkedToBy, 0)
 	~ 
 	THEN REPLY @0 /* ~I'm looking for a gift for a young child, perhaps a doll of some sort. Do you have anything like that in your store?~ */
@@ -980,7 +980,7 @@ APPEND xaa353
 		THEN REPLY @2 /* ~Yes, that is perfect, thank you. (Pay three gold for the doll). ~ */
 		DO ~
 			TakePartyGold(3)
-			SetGlobal("XA_BoughtRohmaDoll", "GLOBAL", 1)
+			SetGlobal("XA_LC_BoughtRohmaDoll", "GLOBAL", 1)
 		~
 		GOTO M1
 		
@@ -999,7 +999,7 @@ APPEND xaa353
 		IF ~~ THEN
 		DO ~
 			GiveItemCreate("XARDOLL", LastTalkedToBy(Myself),1,0,0)
-			SetGlobal("XA_LC_Journal_RohmaGift_1", "GLOBAL", 1)
+			SetGlobal("XA_LC__Journal_RohmaGift_1", "GLOBAL", 1)
 		~
 		EXIT
 	END
@@ -1021,8 +1021,8 @@ END
 //{ SHOP08
 EXTEND_BOTTOM xaa331 0
 	IF ~
-		GlobalLT("XA_BoughtRohmaDoll", "GLOBAL", 1)
-		Global("XA_WantToGetDoll", "GLOBAL", 1)
+		GlobalLT("XA_LC_BoughtRohmaDoll", "GLOBAL", 1)
+		Global("XA_LC_WantToGetDoll", "GLOBAL", 1)
 		InPartySlot(LastTalkedToBy, 0)
 	~ 
 	THEN REPLY @0 /* ~I'm looking for a gift for a young child, perhaps a doll of some sort. Do you have anything like that in your store?~ */
@@ -1038,7 +1038,7 @@ APPEND xaa331
 		THEN REPLY @2 /* ~Yes, that is perfect, thank you. (Pay three gold for the doll). ~ */
 		DO ~
 			TakePartyGold(3)
-			SetGlobal("XA_BoughtRohmaDoll", "GLOBAL", 1)
+			SetGlobal("XA_LC_BoughtRohmaDoll", "GLOBAL", 1)
 		~
 		GOTO M1
 		
@@ -1057,7 +1057,7 @@ APPEND xaa331
 		IF ~~ THEN
 		DO ~
 			GiveItemCreate("XARDOLL", LastTalkedToBy(Myself),1,0,0)
-			SetGlobal("XA_LC_Journal_RohmaGift_1", "GLOBAL", 1)
+			SetGlobal("XA_LC__Journal_RohmaGift_1", "GLOBAL", 1)
 		~
 		EXIT
 	END
@@ -1079,22 +1079,22 @@ END
 //{ SUTHIE
 ADD_STATE_TRIGGER xaa138 0
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 ADD_STATE_TRIGGER xaa138 7
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 ADD_STATE_TRIGGER xaa138 9
 ~
-	!Global("XA_ReturnToBG", "GLOBAL", 1)
+	!Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND xaa138
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	~ THEN BEGIN XA_Intro
 		SAY @15 /* ~ 'Ere there, a word wit' you I would have. House rules you be needin' to know. This here be Sanctuary, and Silence be our patron saint. You do anythin' to harm either, an' every thief, assassin, and scoundrel within 1,000 leagues will want ye dead. I dunno the magics that keep this place secure, but 'taint nowhere else where a night-sneak can sleep sound. It's neutral ground, and you leave your fightin' outside. Be on yer best behavior, 'cuz banishment for life is the nicest punishment Silence knows.~ */
 		  
@@ -1106,26 +1106,26 @@ END
 //{ THIEFG
 ADD_TRANS_TRIGGER xaa170 0
 ~
-	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 DO 1
 
 EXTEND_BOTTOM xaa170 0 /* OK */
 	
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
-		!Global("XA_ThiefAllowPass", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+		!Global("XA_LC_ThiefAllowPass", "GLOBAL", 1)
 	~ THEN REPLY @84 /* ~Ya, I know the password.~ */
 	GOTO XAA0
 	
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
-		!Global("XA_ThiefAllowPass", "GLOBAL", 1)
+		!Global("XA_LC_ThiefAllowPass", "GLOBAL", 1)
 	~ THEN EXTERN XACORWIJ XA_ThiefGuildEntry
 	
 	IF ~
-		Global("XA_ThiefAllowPass", "GLOBAL", 1)
+		Global("XA_LC_ThiefAllowPass", "GLOBAL", 1)
 	~ THEN GOTO XA_MoveAlong
 END
 
@@ -1169,7 +1169,7 @@ APPEND xaa170
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_ThiefAllowPass", "GLOBAL", 1)
+			SetGlobal("XA_LC_ThiefAllowPass", "GLOBAL", 1)
 			SetGlobal("ThiefSecretQuestion","GLOBAL",1)
 		~
 		EXIT
@@ -1179,7 +1179,7 @@ APPEND xaa170
 		SAY @98 /* ~(You hear someone yelling from the next room: "It's been a while, Captain! Go ahead, let them through!")~ */
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_ThiefAllowPass", "GLOBAL", 1)
+			SetGlobal("XA_LC_ThiefAllowPass", "GLOBAL", 1)
 			SetGlobal("ThiefSecretQuestion","GLOBAL",1)
 		~
 		EXIT
@@ -1197,12 +1197,12 @@ END
 //{ THIEFM
 ADD_STATE_TRIGGER xaa186 3
 ~
-	GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
 APPEND xaa186
 	IF ~
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		RandomNum(5,3)
 	~ THEN BEGIN XAA3
 		SAY @67 /* @133 = ~Never had such easy pickings as those refugees, I tell ya. It's a shame they're all gone.~*/
@@ -1229,7 +1229,7 @@ APPEND VICONIJ
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_ViconiaAskedDiviner", "GLOBAL", 1)
+			SetGlobal("XA_LC_ViconiaAskedDiviner", "GLOBAL", 1)
 		~
 		EXTERN XADIVINE XA_AskAway
 	END
@@ -1274,7 +1274,7 @@ CHAIN
 	IF ~~ THEN NALIAJ XA_AskDiviner
 		@117 /* ~To this fraudster? No. How many poor people has this soothsayer swindled with his lies?~ */
 		DO ~
-			SetGlobal("XA_NaliaAskedDiviner", "GLOBAL", 1)
+			SetGlobal("XA_LC_NaliaAskedDiviner", "GLOBAL", 1)
 		~
 		== XADIVINE
 		@118 /* ~The only fraudster here is you, young lady.~ */

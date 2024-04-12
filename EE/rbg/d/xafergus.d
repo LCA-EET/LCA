@@ -25,8 +25,8 @@ IF ~
 END
 
 IF ~
-	!Global("XA_FergusMarried", "GLOBAL", 1)
-	Global("XA_LC_BrielbaraCoran", "GLOBAL", 1)
+	!Global("XA_LC_FergusMarried", "GLOBAL", 1)
+	Global("XA_LC__BrielbaraCoran", "GLOBAL", 1)
 	!IsGabber(Player1)
 ~ THEN BEGIN XA_FergusCharname
 	SAY @10 /* ~Is <CHARNAME> with you? I'd like to speak with <PRO_HIMHER>, if <PRO_HESHE>'s available.~ */
@@ -34,9 +34,9 @@ IF ~
 END
 
 IF ~
-	Global("XA_LC_BrielbaraCoran", "GLOBAL", 1)
+	Global("XA_LC__BrielbaraCoran", "GLOBAL", 1)
 	IsGabber(Player1)
-	!Global("XA_FergusMarried", "GLOBAL", 1)
+	!Global("XA_LC_FergusMarried", "GLOBAL", 1)
 ~ THEN BEGIN XA_FergusMarried
 	SAY @0 /* <CHARNAME>! It's good to see you again!~*/
 	
@@ -48,7 +48,7 @@ IF ~
 END
 
 IF ~
-	//Global("XA_FergusMarried", "GLOBAL", 1)
+	//Global("XA_LC_FergusMarried", "GLOBAL", 1)
 	RandomNum(2,1)
 ~ THEN BEGIN XAA0
 	SAY @7 /* ~I can't wait for this shift to end, so I can see my lady again.~ */
@@ -56,7 +56,7 @@ IF ~
 END
 
 IF ~
-	//Global("XA_FergusMarried", "GLOBAL", 1)
+	//Global("XA_LC_FergusMarried", "GLOBAL", 1)
 	RandomNum(2,2)
 ~ THEN BEGIN XAA1
 	SAY @8 /* ~Nothing unusual to report, Captain.~ */
@@ -83,8 +83,8 @@ IF ~~ THEN BEGIN XA_FergusMarriedC
 	IF ~~ THEN
 	DO ~
 		AddJournalEntry(@15, INFO)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("XA_FergusMarried", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC_FergusMarried", "GLOBAL", 1)
 	~
 	EXIT
 END

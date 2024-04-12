@@ -1,61 +1,61 @@
 IF 
-	GlobalTimerExpired("XA_Amulet3Timer", "GLOBAL")
+	GlobalTimerExpired("XA_LC_Amulet3Timer", "GLOBAL")
 	PartyHasItem("AMUL27")
 	InMyArea(Player1)
-	GlobalLT("XA_PaintSpySpawn", "GLOBAL", 1)
-	GlobalLT("XA_ExitPrison", "GLOBAL", 1)
+	GlobalLT("XA_LC_PaintSpySpawn", "GLOBAL", 1)
+	GlobalLT("XA_LC_ExitPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_PaintSpySpawn", "GLOBAL", 1)
+		SetGlobal("XA_LC_PaintSpySpawn", "GLOBAL", 1)
 		CreateCreature("XAPSPY", [250.560], NE)
 		Continue()
 END
 
 IF
-	Global("XA_AmuletPainting", "GLOBAL", 5)
+	Global("XA_LC_AmuletPainting", "GLOBAL", 5)
 THEN
 	RESPONSE #100
 		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 END
 
 IF
-	Global("XA_DoppleSpawn_0706", "MYAREA", 1)
+	Global("XA_LC_DoppleSpawn_0706", "MYAREA", 1)
 THEN
 	RESPONSE #100
 		CreateCreature("DOPGRE01", [433.466], SW)
 		CreateCreature("DOPGRE01", [386.584], NW)
 		CreateCreature("DOPGRE01", [303.607], NW)
-		SetGlobal("XA_DoppleSpawn_0706", "MYAREA", 2)
+		SetGlobal("XA_LC_DoppleSpawn_0706", "MYAREA", 2)
 END
 
 IF
-	Global("XA_DoppleSpawn_0706", "MYAREA", 2)
+	Global("XA_LC_DoppleSpawn_0706", "MYAREA", 2)
 	CombatCounter(0)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_AmuletPainting", "GLOBAL", 7)
-		SetGlobal("XA_DoppleSpawn_0706", "MYAREA", 3)
+		SetGlobal("XA_LC_AmuletPainting", "GLOBAL", 7)
+		SetGlobal("XA_LC_DoppleSpawn_0706", "MYAREA", 3)
 		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 END
 
 
 IF
 	InMyArea(Player1)
-	GlobalTimerExpired("XA_LyrielSingTimer", "GLOBAL")
+	GlobalTimerExpired("XA_LC_LyrielSingTimer", "GLOBAL")
 THEN
 	RESPONSE #100
-		SetGlobalTimer("XA_LyrielSingTimer", "GLOBAL", TEN_MINUTES)
+		SetGlobalTimer("XA_LC_LyrielSingTimer", "GLOBAL", TEN_MINUTES)
 		DisplayStringHead(Myself, @0) 
 		Continue()
 	RESPONSE #100
-		SetGlobalTimer("XA_LyrielSingTimer", "GLOBAL", TEN_MINUTES)
+		SetGlobalTimer("XA_LC_LyrielSingTimer", "GLOBAL", TEN_MINUTES)
 		Continue()
 END
 
 IF
 	InMyArea(Player1)
 	PartyHasItem("XAQUIVER")
-	!Global("XA_IncubusQuiver", "GLOBAL", 1)
+	!Global("XA_LC_IncubusQuiver", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		ActionOverride(Player1, DestroyItem("XAQUIVER"))
@@ -69,7 +69,7 @@ END
 IF
 	InMyArea(Player1)
 	PartyHasItem("XAMSRING")
-	!Global("XA_IncubusRing", "GLOBAL", 1)
+	!Global("XA_LC_IncubusRing", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		ActionOverride(Player1, DestroyItem("XAMSRING"))
@@ -83,7 +83,7 @@ END
 IF
 	InMyArea(Player1)
 	PartyHasItem("XASWORD")
-	!Global("XA_IncubusSword", "GLOBAL", 1)
+	!Global("XA_LC_IncubusSword", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		ActionOverride(Player1, DestroyItem("XASWORD"))
@@ -97,8 +97,8 @@ END
 IF
 	InMyArea(Player1)
 	PartyHasItem("XACHICK")
-	GlobalLT("XA_IncubusGoose", "GLOBAL", 1)
-	GlobalLT("XA_PickUpGoose", "GLOBAL", 1)
+	GlobalLT("XA_LC_IncubusGoose", "GLOBAL", 1)
+	GlobalLT("XA_LC_PickUpGoose", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		ActionOverride(Player1, DestroyItem("XACHICK"))
@@ -111,12 +111,12 @@ END
 
 IF
 	AreaCheck("XAA206")
-	Global("XA_SavedLyriel", "GLOBAL", 1)
+	Global("XA_LC_SavedLyriel", "GLOBAL", 1)
 	InMyArea(Player1)
-	Global("XA_ExitPrison", "GLOBAL", 1)
+	Global("XA_LC_ExitPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_SavedLyriel", "GLOBAL", 2)
+		SetGlobal("XA_LC_SavedLyriel", "GLOBAL", 2)
 		//400,, 480
 		CreateVisualEffect("SPPORTAL",[400.480])
 		Wait(2)
@@ -125,64 +125,64 @@ THEN
 END
 
 IF
-	GlobalLT("XA_AmuletTimer1Started", "GLOBAL", 1)
+	GlobalLT("XA_LC_AmuletTimer1Started", "GLOBAL", 1)
 	PartyHasItem("AMUL27")
 	InMyArea(Player1)
-	GlobalLT("XA_ExitPrison", "GLOBAL", 1)
+	GlobalLT("XA_LC_ExitPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_AmuletTimer1Started", "GLOBAL", 1)
-		SetGlobalTimer("XA_Amulet1Timer", "GLOBAL", ONE_ROUND)
+		SetGlobal("XA_LC_AmuletTimer1Started", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_Amulet1Timer", "GLOBAL", ONE_ROUND)
 		Continue()
 END
 
 IF 
-	GlobalTimerExpired("XA_Amulet1Timer", "GLOBAL")
-	GlobalLT("XA_AmuletPainting", "GLOBAL", 1)
+	GlobalTimerExpired("XA_LC_Amulet1Timer", "GLOBAL")
+	GlobalLT("XA_LC_AmuletPainting", "GLOBAL", 1)
 	PartyHasItem("AMUL27")
 	InMyArea(Player1)
-	GlobalLT("XA_ExitPrison", "GLOBAL", 1)
+	GlobalLT("XA_LC_ExitPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_AmuletPainting", "GLOBAL", 1)
+		SetGlobal("XA_LC_AmuletPainting", "GLOBAL", 1)
 		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 END
 
 IF 
-	GlobalLT("XA_AmuletTimer2Started", "GLOBAL", 1)
+	GlobalLT("XA_LC_AmuletTimer2Started", "GLOBAL", 1)
 	PartyHasItem("AMUL27")
-	Global("XA_AmuletPainting", "GLOBAL", 2)
+	Global("XA_LC_AmuletPainting", "GLOBAL", 2)
 	InMyArea(Player1)
-	GlobalLT("XA_ExitPrison", "GLOBAL", 1)
+	GlobalLT("XA_LC_ExitPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_AmuletTimer2Started", "GLOBAL", 1)
-		SetGlobalTimer("XA_Amulet2Timer", "GLOBAL", ONE_ROUND)
+		SetGlobal("XA_LC_AmuletTimer2Started", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_Amulet2Timer", "GLOBAL", ONE_ROUND)
 		Continue()
 END
 
 IF 
-	GlobalTimerExpired("XA_Amulet2Timer", "GLOBAL")
-	GlobalLT("XA_AmuletPainting", "GLOBAL", 3)
+	GlobalTimerExpired("XA_LC_Amulet2Timer", "GLOBAL")
+	GlobalLT("XA_LC_AmuletPainting", "GLOBAL", 3)
 	PartyHasItem("AMUL27")
 	InMyArea(Player1)
-	GlobalLT("XA_ExitPrison", "GLOBAL", 1)
+	GlobalLT("XA_LC_ExitPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_AmuletPainting", "GLOBAL", 3)
+		SetGlobal("XA_LC_AmuletPainting", "GLOBAL", 3)
 		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 END
 
 IF 
-	GlobalLT("XA_AmuletTimer3Started", "GLOBAL", 1)
+	GlobalLT("XA_LC_AmuletTimer3Started", "GLOBAL", 1)
 	PartyHasItem("AMUL27")
-	Global("XA_AmuletPainting", "GLOBAL", 4)
+	Global("XA_LC_AmuletPainting", "GLOBAL", 4)
 	InMyArea(Player1)
-	GlobalLT("XA_ExitPrison", "GLOBAL", 1)
+	GlobalLT("XA_LC_ExitPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_AmuletTimer3Started", "GLOBAL", 1)
-		SetGlobalTimer("XA_Amulet3Timer", "GLOBAL", ONE_ROUND)
+		SetGlobal("XA_LC_AmuletTimer3Started", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_Amulet3Timer", "GLOBAL", ONE_ROUND)
 		Continue()
 END
 

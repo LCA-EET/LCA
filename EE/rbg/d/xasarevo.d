@@ -1,7 +1,7 @@
 BEGIN ~XASAREVO~
 
 IF ~
-	Global("XA_G2_Intro", "GLOBAL", 4)
+	Global("XA_LC_G2_Intro", "GLOBAL", 4)
 ~ THEN BEGIN XA_Intro
 	SAY @2 /* ~Any final words?~ */
 	

@@ -2,13 +2,13 @@ BEGIN ~XABRANDI~
 
 IF ~
 	IsGabber(Player1)
-	GlobalLT("XA_Intro", "LOCALS", 1)
+	GlobalLT("XA_LC_Intro", "LOCALS", 1)
 ~ THEN BEGIN XA_Intro
 	SAY @0 /* ~Ah, <CHARNAME>, it's good to see you again.~*/
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_Intro", "LOCALS", 1)
+		SetGlobal("XA_LC_Intro", "LOCALS", 1)
 	~
 	GOTO XA_Welcome
 END

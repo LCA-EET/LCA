@@ -1,31 +1,31 @@
 IF
-	Global("XA_TM_ArcheryChallenge", "GLOBAL", 1)
-	!Global("XA_TM_ArcheryTimerInit", "GLOBAL", 1)
+	Global("XA_LC_TM_ArcheryChallenge", "GLOBAL", 1)
+	!Global("XA_LC_TM_ArcheryTimerInit", "GLOBAL", 1)
 	!Dead("celogan")
 	!Dead("trhmer01")
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_TM_ArcheryTimerInit", "GLOBAL", 1)
-		SetGlobalTimer("XA_TM_ArcheryTimer", "GLOBAL", ONE_ROUND)
+		SetGlobal("XA_LC_TM_ArcheryTimerInit", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_TM_ArcheryTimer", "GLOBAL", ONE_ROUND)
 		SetInterrupt(TRUE)
 END
 
 IF
-	Global("XA_TM_ArcheryChallenge", "GLOBAL", 1)
-	Global("XA_TM_ArcheryTimerInit", "GLOBAL", 1)
-	GlobalTimerExpired("XA_TM_ArcheryTimer", "GLOBAL")
+	Global("XA_LC_TM_ArcheryChallenge", "GLOBAL", 1)
+	Global("XA_LC_TM_ArcheryTimerInit", "GLOBAL", 1)
+	GlobalTimerExpired("XA_LC_TM_ArcheryTimer", "GLOBAL")
 	!Dead("trhmer01")
 	!Dead("celogan")
 THEN
 	RESPONSE #50
 		SetInterrupt(FALSE)
-		SetGlobalTimer("XA_TM_ArcheryTimer", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_LC_TM_ArcheryTimer", "GLOBAL", ONE_ROUND)
 		DisplayStringHead("XATMARSU", @0)
 		SetInterrupt(TRUE)
 	RESPONSE #50
 		SetInterrupt(FALSE)
-		SetGlobalTimer("XA_TM_ArcheryTimer", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("XA_LC_TM_ArcheryTimer", "GLOBAL", ONE_ROUND)
 		DisplayStringHead("XATMARSU", @1)
 		SetInterrupt(TRUE)
 END

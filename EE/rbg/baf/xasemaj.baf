@@ -13,7 +13,7 @@ THEN
 END
 
 IF
-	Global("XA_SarevokHostile", "GLOBAL", 1)
+	Global("XA_LC_SarevokHostile", "GLOBAL", 1)
 	Global("SemajBehavior","GLOBAL",0)
 	See([PC])
 THEN
@@ -26,7 +26,7 @@ THEN
 END
 
 IF
-	Global("XA_SarevokHostile", "GLOBAL", 1)
+	Global("XA_LC_SarevokHostile", "GLOBAL", 1)
 	Global("SemajBehavior","GLOBAL",1)
 	See([PC])
 THEN
@@ -36,7 +36,7 @@ THEN
 END
 
 IF
-	Global("XA_SarevokHostile", "GLOBAL", 1)
+	Global("XA_LC_SarevokHostile", "GLOBAL", 1)
 	Global("SemajBehavior","GLOBAL",1)
 	See(NearestEnemyOf(Myself))
 THEN
@@ -46,7 +46,7 @@ THEN
 END
 
 IF
-	Global("XA_SarevokHostile", "GLOBAL", 1)
+	Global("XA_LC_SarevokHostile", "GLOBAL", 1)
 	Global("SemajBehavior","GLOBAL",2)
 	See(NearestEnemyOf(Myself))
 THEN
@@ -56,7 +56,7 @@ THEN
 END
 
 IF
-	Global("XA_SarevokHostile", "GLOBAL", 1)
+	Global("XA_LC_SarevokHostile", "GLOBAL", 1)
 	Global("SemajBehavior","GLOBAL",3)
 	See([PC])
 THEN
@@ -68,7 +68,7 @@ THEN
 END
 
 IF
-	Global("XA_SarevokHostile", "GLOBAL", 1)
+	Global("XA_LC_SarevokHostile", "GLOBAL", 1)
 	Global("SemajBehavior","GLOBAL",3)
 	See(NearestEnemyOf(Myself))
 THEN
@@ -80,7 +80,7 @@ THEN
 END
 
 IF
-	Global("XA_SarevokHostile", "GLOBAL", 1)
+	Global("XA_LC_SarevokHostile", "GLOBAL", 1)
 	Global("SemajBehavior","GLOBAL",4)
 	See(NearestEnemyOf(Myself))
 THEN
@@ -90,7 +90,7 @@ THEN
 END
 
 IF
-	Global("XA_SarevokHostile", "GLOBAL", 1)
+	Global("XA_LC_SarevokHostile", "GLOBAL", 1)
 	Global("SemajBehavior","GLOBAL",5)
 	See(NearestEnemyOf(Myself))
 THEN
@@ -100,7 +100,7 @@ THEN
 END
 
 IF
-	Global("XA_SarevokHostile", "GLOBAL", 1)
+	Global("XA_LC_SarevokHostile", "GLOBAL", 1)
 	Global("SemajBehavior","GLOBAL",6)
 	See(NearestEnemyOf(Myself))
 THEN
@@ -111,7 +111,7 @@ THEN
 END
 
 IF
-	Global("XA_SarevokHostile", "GLOBAL", 1)
+	Global("XA_LC_SarevokHostile", "GLOBAL", 1)
 	See(NearestEnemyOf(Myself))
 	HaveSpell(WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Lightning Bolt)
 THEN
@@ -120,7 +120,7 @@ THEN
 END
 
 IF
-	Global("XA_SarevokHostile", "GLOBAL", 1)
+	Global("XA_LC_SarevokHostile", "GLOBAL", 1)
 	See(NearestEnemyOf(Myself))
 	HaveSpell(WIZARD_FIREBALL)  // SPWI304.SPL (Fireball)
 THEN
@@ -129,7 +129,7 @@ THEN
 END
 
 IF
-	Global("XA_SarevokHostile", "GLOBAL", 1)
+	Global("XA_LC_SarevokHostile", "GLOBAL", 1)
 	See(NearestEnemyOf(Myself))
 	HaveSpell(WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
 THEN

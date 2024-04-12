@@ -1,37 +1,37 @@
 BEGIN ~XAGORION~
 
 IF ~
-	Global("XA_G3_Intro", "GLOBAL", 4)
+	Global("XA_LC_G3_Intro", "GLOBAL", 4)
 ~ THEN BEGIN XA_GorionTalk
 	SAY @0 /* ~Hello, child. It's good to see you again.~ */
 	
 	IF ~~ THEN REPLY @22 /* ~Whoever, or whatever you are, you are not Gorion.~ */
 	DO ~
-		SetGlobal("XA_G3_Intro", "GLOBAL", 5)
-		SetGlobal("XA_GorionTalk", "GLOBAL", 1)
+		SetGlobal("XA_LC_G3_Intro", "GLOBAL", 5)
+		SetGlobal("XA_LC_GorionTalk", "GLOBAL", 1)
 	~
 	GOTO XA_NotGorion
 	
 	IF ~~ THEN REPLY @21 /* ~What trickery is this?  */
 	DO ~
-		SetGlobal("XA_G3_Intro", "GLOBAL", 5)
-		SetGlobal("XA_GorionTalk", "GLOBAL", 1)
+		SetGlobal("XA_LC_G3_Intro", "GLOBAL", 5)
+		SetGlobal("XA_LC_GorionTalk", "GLOBAL", 1)
 	~
 	GOTO XA_NotGorion2
 	
 	IF ~~ THEN REPLY @59 /* ~Father?~ */
 	DO ~
-		SetGlobal("XA_G3_Intro", "GLOBAL", 5)
-		SetGlobal("XA_GorionTalk", "GLOBAL", 1)
+		SetGlobal("XA_LC_G3_Intro", "GLOBAL", 5)
+		SetGlobal("XA_LC_GorionTalk", "GLOBAL", 1)
 	~
 	GOTO XA_NotGorion2
 	
 	IF ~
-		Global("XA_DemonDebug", "GLOBAL", 1)
+		Global("XA_LC_DemonDebug", "GLOBAL", 1)
 	~ THEN REPLY @60 /* ~Set as Enemy.~ */
 	DO ~
-		SetGlobal("XA_G3_Intro", "GLOBAL", 5)
-		SetGlobal("XA_GorionHostile", "GLOBAL", 1)
+		SetGlobal("XA_LC_G3_Intro", "GLOBAL", 5)
+		SetGlobal("XA_LC_GorionHostile", "GLOBAL", 1)
 		Enemy()
 	~
 	EXIT
@@ -58,7 +58,7 @@ IF ~~ THEN BEGIN XA_WhyHere
 	
 	IF ~~ THEN REPLY @24 /* ~No. This is a waste of time. Send me back to Lyriel.~ */
 	DO ~
-		SetGlobal("XA_GorionTalk", "GLOBAL", 2)
+		SetGlobal("XA_LC_GorionTalk", "GLOBAL", 2)
 	~
 	GOTO XA_Leave
 	
@@ -105,86 +105,86 @@ IF ~~ THEN BEGIN XA_MoreQuestions
 	SAY @37 /* ~You have questions?~ */
 	
 	IF ~
-		GlobalLT("XA_GorionQuestions", "GLOBAL", 3)
+		GlobalLT("XA_LC_GorionQuestions", "GLOBAL", 3)
 	~ THEN REPLY @24 /* ~No. This is a waste of time. Send me back to Lyriel.~ */
 	DO ~
-		SetGlobal("XA_GorionTalk", "GLOBAL", 2)
+		SetGlobal("XA_LC_GorionTalk", "GLOBAL", 2)
 	~
 	GOTO XA_Leave
 	
 	IF ~
-		GlobalGT("XA_GorionQuestions", "GLOBAL", 2)
+		GlobalGT("XA_LC_GorionQuestions", "GLOBAL", 2)
 	~ THEN REPLY @47 /* ~No more questions. I appreciate the insight you've provided.~ */
 	GOTO XA_Leave3
 	
 	IF ~
-		!Global("XA_Prepare", "LOCALS", 1)
+		!Global("XA_LC_Prepare", "LOCALS", 1)
 	~ THEN REPLY @6 /* ~Why didn't you prepare Imoen and I for what was coming?~*/
 	DO ~
-		SetGlobal("XA_Prepare", "LOCALS", 1)
-		IncrementGlobal("XA_GorionQuestions", "GLOBAL", 1)
+		SetGlobal("XA_LC_Prepare", "LOCALS", 1)
+		IncrementGlobal("XA_LC_GorionQuestions", "GLOBAL", 1)
 		ChangeStat(Player1, XP, 2000, ADD)
 	~
 	GOTO XA_Prepare
 	
 	IF ~
-		!Global("XA_Prepare", "LOCALS", 1)
+		!Global("XA_LC_Prepare", "LOCALS", 1)
 	~ THEN REPLY @7 /* ~You've always known what Imoen and I were. Why didn't you tell us?~ */
 	DO ~
-		SetGlobal("XA_Prepare", "LOCALS", 1)
-		IncrementGlobal("XA_GorionQuestions", "GLOBAL", 1)
+		SetGlobal("XA_LC_Prepare", "LOCALS", 1)
+		IncrementGlobal("XA_LC_GorionQuestions", "GLOBAL", 1)
 		ChangeStat(Player1, XP, 2000, ADD)
 	~
 	GOTO XA_Prepare
 	
 	IF ~
-		!Global("XA_Mother", "LOCALS", 1)
+		!Global("XA_LC_Mother", "LOCALS", 1)
 	~ THEN REPLY @29 /* ~What can you tell me about my mother?~ */
 	DO ~
-		SetGlobal("XA_Mother", "LOCALS", 1)
-		IncrementGlobal("XA_GorionQuestions", "GLOBAL", 1)
+		SetGlobal("XA_LC_Mother", "LOCALS", 1)
+		IncrementGlobal("XA_LC_GorionQuestions", "GLOBAL", 1)
 		ChangeStat(Player1, XP, 2000, ADD)
 	~
 	GOTO XA_Mother
 	
 	IF ~
-		!Global("XA_Escape", "LOCALS", 1)
+		!Global("XA_LC_Escape", "LOCALS", 1)
 	~ THEN REPLY @38 /* ~How do I escape this prison?~ */
 	DO ~
-		SetGlobal("XA_Escape", "LOCALS", 1)
-		IncrementGlobal("XA_GorionQuestions", "GLOBAL", 1)
+		SetGlobal("XA_LC_Escape", "LOCALS", 1)
+		IncrementGlobal("XA_LC_GorionQuestions", "GLOBAL", 1)
 		ChangeStat(Player1, XP, 2000, ADD)
 	~
 	GOTO XA_Escape
 	
 	IF ~
-		!Global("XA_WhatWillHappen", "LOCALS", 1)
-		GlobalGT("XA_GorionQuestions", "GLOBAL", 2)
+		!Global("XA_LC_WhatWillHappen", "LOCALS", 1)
+		GlobalGT("XA_LC_GorionQuestions", "GLOBAL", 2)
 	~ THEN REPLY @12 /* ~What will happen to you when I leave here?~*/
 	DO ~
-		SetGlobal("XA_WhatWillHappen", "LOCALS", 1)
-		IncrementGlobal("XA_GorionQuestions", "GLOBAL", 1)
+		SetGlobal("XA_LC_WhatWillHappen", "LOCALS", 1)
+		IncrementGlobal("XA_LC_GorionQuestions", "GLOBAL", 1)
 		ChangeStat(Player1, XP, 2000, ADD)
 	~
 	GOTO XA_WhatWillHappen
 	
 	IF ~
-		!Global("XA_GorionImpression", "LOCALS", 1)
-		GlobalGT("XA_GorionQuestions", "GLOBAL", 3)
+		!Global("XA_LC_GorionImpression", "LOCALS", 1)
+		GlobalGT("XA_LC_GorionQuestions", "GLOBAL", 3)
 	~ THEN REPLY @14 /* ~What would Gorion think of the <PRO_MANWOMAN> I've become?~ */
 	DO ~
-		SetGlobal("XA_GorionImpression", "LOCALS", 1)
-		IncrementGlobal("XA_GorionQuestions", "GLOBAL", 1)
+		SetGlobal("XA_LC_GorionImpression", "LOCALS", 1)
+		IncrementGlobal("XA_LC_GorionQuestions", "GLOBAL", 1)
 		ChangeStat(Player1, XP, 5000, ADD)
 	~
 	GOTO XA_GorionImpression
 	
 	IF ~
-		!Global("XA_WhyHarpers", "LOCALS", 1)
+		!Global("XA_LC_WhyHarpers", "LOCALS", 1)
 	~ THEN REPLY @55 /* ~Why join the Harpers?~ */
 	DO ~
-		SetGlobal("XA_WhyHarpers", "LOCALS", 1)
-		IncrementGlobal("XA_GorionQuestions", "GLOBAL", 1)
+		SetGlobal("XA_LC_WhyHarpers", "LOCALS", 1)
+		IncrementGlobal("XA_LC_GorionQuestions", "GLOBAL", 1)
 		ChangeStat(Player1, XP, 2000, ADD)
 	~
 	GOTO XA_WhyHarpers
@@ -247,7 +247,7 @@ IF ~~ THEN BEGIN XA_Leave2
 	= @53 /* ~Though you defeated Sarevok, Aluando's prophecy spoke of scores of Bhaalspawn sowing chaos throughout the land. It's likely the case that fate is not done with you. You must remain vigilant at all times, child. Good luck.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_EndG3", "GLOBAL", 1)
+		SetGlobal("XA_LC_EndG3", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -292,7 +292,7 @@ IF ~~ THEN BEGIN XA_GorionImpression_VeryBad
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_GorionHostile", "GLOBAL", 1)
+		SetGlobal("XA_LC_GorionHostile", "GLOBAL", 1)
 		Enemy()
 	~
 	EXIT
@@ -333,7 +333,7 @@ IF ~~ THEN BEGIN XA_Leave
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_EndG3", "GLOBAL", 1)
+		SetGlobal("XA_LC_EndG3", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -343,7 +343,7 @@ IF ~~ THEN BEGIN XA_Leave3
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_EndG3", "GLOBAL", 1)
+		SetGlobal("XA_LC_EndG3", "GLOBAL", 1)
 	~
 	EXIT	
 END

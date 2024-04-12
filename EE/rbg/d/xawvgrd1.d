@@ -1,7 +1,7 @@
 BEGIN ~XAWVGRD1~
 
 IF ~
-	Global("XA_GuardGetLost", "GLOBAL", 1)
+	Global("XA_LC_GuardGetLost", "GLOBAL", 1)
 	!IsGabber("XACORWIN")
 ~ THEN BEGIN XA_GetLost2
 	SAY @14 /* ~As I told you earlier - if you've no business with Winston Ventures, then please leave.~ */
@@ -10,30 +10,30 @@ IF ~
 END
 
 IF ~
-	!Global("XA_GuardIntroduction", "GLOBAL", 1)
+	!Global("XA_LC_GuardIntroduction", "GLOBAL", 1)
 	!IsGabber("XACORWIN")
 ~ THEN BEGIN XA_Greeting
 	SAY @0 /*  ~Welcome to Winston Ventures. Please state your business.~ */
 	
 	IF ~~ THEN REPLY @1 /* ~Winston what? Isn't this the Iron Throne building?~*/
 	DO ~
-		SetGlobal("XA_GuardIntroduction", "GLOBAL", 1)
+		SetGlobal("XA_LC_GuardIntroduction", "GLOBAL", 1)
 	~
 	GOTO XA_IronThrone
 	
 	IF ~~ THEN REPLY @5 /* ~Just looking around.~*/
 	DO ~
-		SetGlobal("XA_GuardIntroduction", "GLOBAL", 1)
+		SetGlobal("XA_LC_GuardIntroduction", "GLOBAL", 1)
 	~
 	GOTO XA_GetLost
 	
 	IF ~
-		Global("XA_BGSlaverPlot", "GLOBAL", 1)
+		Global("XA_LC_BGSlaverPlot", "GLOBAL", 1)
 		PartyHasItem("XAMANFST")
-		!Global("XA_RefugeeQuestComplete", "GLOBAL", 1)
+		!Global("XA_LC_RefugeeQuestComplete", "GLOBAL", 1)
 	~ THEN REPLY @6 /* ~We're looking into reports of slaver activity in Baldur's Gate. We found some encoded shipping manifests that may shed some light on the investigation.~*/
 	DO ~
-		SetGlobal("XA_GuardIntroduction", "GLOBAL", 1)
+		SetGlobal("XA_LC_GuardIntroduction", "GLOBAL", 1)
 	~
 	GOTO XA_SlaverQuestion
 END
@@ -48,7 +48,7 @@ IF ~~ THEN BEGIN XA_GetLost
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_GuardGetLost", "GLOBAL", 1)
+		SetGlobal("XA_LC_GuardGetLost", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -67,7 +67,7 @@ IF ~~ THEN BEGIN XA_Winston
 END
 
 IF ~
-	!Global("XA_GuardIntroduction", "GLOBAL", 1)
+	!Global("XA_LC_GuardIntroduction", "GLOBAL", 1)
 	IsGabber("XACORWIN")
 	!TimeOfDay(NIGHT)
 ~ THEN BEGIN XA_CorwinGreeting
@@ -76,18 +76,18 @@ IF ~
 	IF ~~ THEN
 	GOTO XA_CorwinGreetingChain
 	IF ~
-		Global("XA_BGSlaverPlot", "GLOBAL", 1)
+		Global("XA_LC_BGSlaverPlot", "GLOBAL", 1)
 		PartyHasItem("XAMANFST")
-		!Global("XA_RefugeeQuestComplete", "GLOBAL", 1)
+		!Global("XA_LC_RefugeeQuestComplete", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_GuardIntroduction", "GLOBAL", 1)
+		SetGlobal("XA_LC_GuardIntroduction", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinGreetingSlaverChain
 END
 
 IF ~
-	!Global("XA_GuardIntroduction", "GLOBAL", 1)
+	!Global("XA_LC_GuardIntroduction", "GLOBAL", 1)
 	IsGabber("XACORWIN")
 	TimeOfDay(NIGHT)
 ~ THEN BEGIN XA_CorwinGreeting
@@ -96,11 +96,11 @@ IF ~
 	IF ~~ THEN
 	GOTO XA_CorwinGreetingChain
 	IF ~
-		Global("XA_BGSlaverPlot", "GLOBAL", 1)
-		!Global("XA_RefugeeQuestComplete", "GLOBAL", 1)
+		Global("XA_LC_BGSlaverPlot", "GLOBAL", 1)
+		!Global("XA_LC_RefugeeQuestComplete", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_GuardIntroduction", "GLOBAL", 1)
+		SetGlobal("XA_LC_GuardIntroduction", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinGreetingSlaverChain
 END

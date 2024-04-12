@@ -1,7 +1,7 @@
 APPEND ~PLAYER1~
 //{ Ledger, BG0614 / XAP0614
 	IF ~
-		Global("XA_LC_StoleLedger", "GLOBAL", 1)
+		Global("XA_LC__StoleLedger", "GLOBAL", 1)
 	~ THEN BEGIN XA_LC_Alcove
 		SAY @212  /* ~(The painting depicts a fire-breathing dragon. Strange... it is slightly askew, and you can make out what appears to be a small alcove behind the lower left corner of the painting. Investigate?)~*/
 		
@@ -10,7 +10,7 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN REPLY @207  /* ~No.~*/
 		DO ~
-			SetGlobal("XA_LC_StoleLedger", "GLOBAL", 0)
+			SetGlobal("XA_LC__StoleLedger", "GLOBAL", 0)
 		~
 		EXIT
 	END
@@ -20,7 +20,7 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_LC_StoleLedger", "GLOBAL", 2)
+			SetGlobal("XA_LC__StoleLedger", "GLOBAL", 2)
 			GiveItemCreate("XALEDGER", Player1, 0,0,0)
 			SetItemFlags("XALEDGER", IDENTIFIED,TRUE)
 		~
@@ -28,7 +28,7 @@ APPEND ~PLAYER1~
 	END
 	//}
 	IF ~
-		Global("XA_IllaseraDead", "GLOBAL", 1)
+		Global("XA_LC_IllaseraDead", "GLOBAL", 1)
 		Dead("XACORWIN")
 		InPartyAllowDead("XACORWIN")
 	~ THEN BEGIN XA_IllaseraDead
@@ -36,46 +36,46 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_IllaseraDead", "GLOBAL", 2)
+			SetGlobal("XA_LC_IllaseraDead", "GLOBAL", 2)
 		~
 		EXTERN XABENO2 XA_IllaseraCorwinDead2
 	END
 
 	IF ~
-		Global("XA_IllaseraDead", "GLOBAL", 1)
+		Global("XA_LC_IllaseraDead", "GLOBAL", 1)
 		Dead("XACORWIN")
 		!InPartyAllowDead("XACORWIN")
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN BEGIN XA_IllaseraDead2
 		SAY @87 /* ~Schael? Schael! No...~*/
 		
 		IF ~
-			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-			Global("XA_MarriageProposal", "GLOBAL", 1)
+			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_MarriageProposal", "GLOBAL", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_IllaseraDead", "GLOBAL", 2)
+			SetGlobal("XA_LC_IllaseraDead", "GLOBAL", 2)
 			TextScreen("xabad1")
 			ActionOverride(Player1, Kill(Myself))
 		~
 		EXIT
 		
 		IF ~
-			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-			!Global("XA_MarriageProposal", "GLOBAL", 1)
+			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_MarriageProposal", "GLOBAL", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_IllaseraDead", "GLOBAL", 2)
+			SetGlobal("XA_LC_IllaseraDead", "GLOBAL", 2)
 			TextScreen("xabad2")
 			ActionOverride(Player1, Kill(Myself))
 		~
 		EXIT
 		
 		IF ~
-			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_IllaseraDead", "GLOBAL", 2)
+			SetGlobal("XA_LC_IllaseraDead", "GLOBAL", 2)
 			TextScreen("xabad3")
 			ActionOverride(Player1, Kill(Myself))
 		~
@@ -84,13 +84,13 @@ APPEND ~PLAYER1~
 	END
 
 	IF ~
-		Global("XA_RohmaKidnapped", "GLOBAL", 3)
+		Global("XA_LC_RohmaKidnapped", "GLOBAL", 3)
 	~ THEN BEGIN XA_Kidnap
 		SAY @9 /* ~(Quickly, you made way to the nearest temple, and brought a healer back to the home. The healer sucessfully stabilized Audamar, who was taken back to the temple for further treatment. After a short discussion, you and Schael agree that it would be best to rouse the Dukes, and to discuss the matter with them before deciding on a course of action.)~ [XA100067] */
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_RohmaKidnapped", "GLOBAL", 4)
+			SetGlobal("XA_LC_RohmaKidnapped", "GLOBAL", 4)
 			StartCutsceneMode()
 			StartCutscene("XADUCAL")
 		~
@@ -98,45 +98,45 @@ APPEND ~PLAYER1~
 	END
 
 	IF ~
-		Global("XA_IllaseraDead", "GLOBAL", 1)
+		Global("XA_LC_IllaseraDead", "GLOBAL", 1)
 		Dead("XACORWIN")
 		!InParty("XACORWIN")
-		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN BEGIN XA_IllaseraDead3
 		SAY @68 /* ~(You were victorious, but at great cost. Schael sacrificed herself to save Rohma. Sadly, there is no hope of bringing her back.)~ */
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_IllaseraDead", "GLOBAL", 2)
+			SetGlobal("XA_LC_IllaseraDead", "GLOBAL", 2)
 		~
 		EXIT
 	END
 
 	IF ~
-		Global("XA_EnterIncubusSanctum", "GLOBAL", 1)
+		Global("XA_LC_EnterIncubusSanctum", "GLOBAL", 1)
 	~ THEN BEGIN XA_EnterSanctum
 		SAY @130 /* ~(You approach the painting of the demon's inner sanctum.)~ */
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_EnterIncubusSanctum", "GLOBAL", 0)
+			SetGlobal("XA_LC_EnterIncubusSanctum", "GLOBAL", 0)
 		~
 		GOTO XA_WantToEnterSanctum
 		
 		IF ~
-			!Global("XA_WardsRemoved", "GLOBAL", 1)
+			!Global("XA_LC_WardsRemoved", "GLOBAL", 1)
 		~ THEN
 		DO ~
-			SetGlobal("XA_EnterIncubusSanctum", "GLOBAL", 0)
-			SetGlobal("XA_WardsRemoved", "GLOBAL", 1)
+			SetGlobal("XA_LC_EnterIncubusSanctum", "GLOBAL", 0)
+			SetGlobal("XA_LC_WardsRemoved", "GLOBAL", 1)
 		~
 		GOTO XA_RemoveWards
 		
 		IF ~
-			GlobalLT("XA_PrisonKnowledge", "GLOBAL", 4)
+			GlobalLT("XA_LC_PrisonKnowledge", "GLOBAL", 4)
 		~ THEN
 		DO ~
-			SetGlobal("XA_EnterIncubusSanctum", "GLOBAL", 0)
+			SetGlobal("XA_LC_EnterIncubusSanctum", "GLOBAL", 0)
 		~
 		GOTO XA_CannotEnter
 	END
@@ -153,7 +153,7 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN REPLY @111 /* ~Yes.~ */
 		DO ~
-			SetGlobal("XA_ConfrontDemon", "GLOBAL", 1)
+			SetGlobal("XA_LC_ConfrontDemon", "GLOBAL", 1)
 			StartCutSceneMode()
 			StartCutScene("XASENT")
 		~
@@ -171,8 +171,8 @@ APPEND ~PLAYER1~
 	END
 
 	IF ~
-		Global("XA_MetIncubus", "GLOBAL", 1)
-		Global("XA_PrisonKnowledge", "GLOBAL", 1)
+		Global("XA_LC_MetIncubus", "GLOBAL", 1)
+		Global("XA_LC_PrisonKnowledge", "GLOBAL", 1)
 	~ THEN BEGIN XA_PrisonKnowledge_1
 		SAY @122 /* ~(You awaken and find yourself back in the room that the demon created for Lyriel.)~ */
 		
@@ -182,14 +182,14 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_PrisonKnowledge", "GLOBAL", 2)
+			SetGlobal("XA_LC_PrisonKnowledge", "GLOBAL", 2)
 		~
 		EXIT
 	END
 	
 	IF ~
-		Global("XA_MetIncubus", "GLOBAL", 2)
-		Global("XA_PrisonKnowledge", "GLOBAL", 3)
+		Global("XA_LC_MetIncubus", "GLOBAL", 2)
+		Global("XA_LC_PrisonKnowledge", "GLOBAL", 3)
 	~ THEN BEGIN XA_PrisonKnowledge_3
 		SAY @125 /* ~(Again, you've been transported back to Lyriel's room.)~ */
 		
@@ -197,14 +197,14 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_PrisonKnowledge", "GLOBAL", 4)
+			SetGlobal("XA_LC_PrisonKnowledge", "GLOBAL", 4)
 		~
 		EXIT
 	END
 	
 	IF ~
-		Global("XA_MetIncubus", "GLOBAL", 3)
-		Global("XA_PrisonKnowledge", "GLOBAL", 5)
+		Global("XA_LC_MetIncubus", "GLOBAL", 3)
+		Global("XA_LC_PrisonKnowledge", "GLOBAL", 5)
 	~ THEN BEGIN XA_PrisonKnowledge_5
 		SAY @127 /* ~(The demon has again transported you to Lyriel's room.)~ */
 		
@@ -214,19 +214,19 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_PrisonKnowledge", "GLOBAL", 6)
+			SetGlobal("XA_LC_PrisonKnowledge", "GLOBAL", 6)
 		~
 		EXIT
 	END
 	
 	IF ~
-		Global("XA_G1_Intro", "GLOBAL", 1)
+		Global("XA_LC_G1_Intro", "GLOBAL", 1)
 	~ THEN BEGIN XA_G1_Intro
 		SAY @121 /* ~(You come to, and take stock of your surroundings. It would seem that somehow, the demon has recreated the coalition's siege of Dragonspear. The sounds of a raging battle emanate from the courtyard beyond the gate.)~ */
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_G1_Intro", "GLOBAL", 2)
+			SetGlobal("XA_LC_G1_Intro", "GLOBAL", 2)
 		~
 		EXIT
 		
@@ -234,18 +234,18 @@ APPEND ~PLAYER1~
 			IsValidForPartyDialogue("XACORWIN")
 		~ THEN
 		DO ~
-			SetGlobal("XA_G1_Intro", "GLOBAL", 2)
+			SetGlobal("XA_LC_G1_Intro", "GLOBAL", 2)
 		~
 		EXTERN XACORWIJ XA_TrappedG1
 	END
 	IF ~
-		Global("XA_EnterG1", "GLOBAL", 1)
+		Global("XA_LC_EnterG1", "GLOBAL", 1)
 	~ THEN BEGIN XA_EnterG1
 		SAY @118 /*~(As you approach the painting, you feel a force probing your thoughts and memories. The image swirls, then depicts a castle under siege. You recognize it as Dragonspear. Touch the painting?)~*/
 		
 		IF ~~ THEN REPLY @111 /* Yes */
 		DO ~
-			SetGlobal("XA_EnterG1", "GLOBAL", 0)
+			SetGlobal("XA_LC_EnterG1", "GLOBAL", 0)
 			StartCutSceneMode()
 			StartCutScene("XAG1ENT")
 		~
@@ -253,13 +253,13 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN REPLY @112 /* No */
 		DO ~
-			SetGlobal("XA_EnterG1", "GLOBAL", 0)
+			SetGlobal("XA_LC_EnterG1", "GLOBAL", 0)
 		~
 		EXIT
 	END
 	
 	IF ~
-		Global("XA_G2_Intro", "GLOBAL", 2)
+		Global("XA_LC_G2_Intro", "GLOBAL", 2)
 	~ THEN BEGIN XA_G2_Intro
 		SAY @134
 		= @135
@@ -267,19 +267,19 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_G2_Intro", "GLOBAL", 3)
+			SetGlobal("XA_LC_G2_Intro", "GLOBAL", 3)
 		~
 		EXIT
 	END
 	
 	IF ~
-		Global("XA_EnterG2", "GLOBAL", 1)
+		Global("XA_LC_EnterG2", "GLOBAL", 1)
 	~ THEN BEGIN XA_EnterG2
 		SAY @120 /*~(As you approach the painting, you feel a force probing your thoughts and memories. The image swirls, then depicts a magnificent library. You recognize it as Candlekeep. Touch the painting?)~*/
 		
 		IF ~~ THEN REPLY @111 /* Yes */
 		DO ~
-			SetGlobal("XA_EnterG2", "GLOBAL", 0)
+			SetGlobal("XA_LC_EnterG2", "GLOBAL", 0)
 			StartCutSceneMode()
 			StartCutScene("XAG2ENT")
 		~
@@ -287,31 +287,31 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN REPLY @112 /* No */
 		DO ~
-			SetGlobal("XA_EnterG2", "GLOBAL", 0)
+			SetGlobal("XA_LC_EnterG2", "GLOBAL", 0)
 		~
 		EXIT
 	END
 	
 	IF ~
-		Global("XA_G3_Intro", "GLOBAL", 2)
+		Global("XA_LC_G3_Intro", "GLOBAL", 2)
 	~ THEN BEGIN XA_G3_Intro
 		SAY @137 /* ~(You regain consciousness and are greeted with the sight of a loving and familiar countenance...)~ */
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_G3_Intro", "GLOBAL", 3)
+			SetGlobal("XA_LC_G3_Intro", "GLOBAL", 3)
 		~
 		EXIT
 	END
 	
 	IF ~
-		Global("XA_EnterG3", "GLOBAL", 1)
+		Global("XA_LC_EnterG3", "GLOBAL", 1)
 	~ THEN BEGIN XA_EnterG3
 		SAY @119 /*~(As you approach the painting, you feel a force probing your thoughts and memories. The image swirls, then depicts a magnificent library. You recognize it as Candlekeep. Touch the painting?)~*/
 		
 		IF ~~ THEN REPLY @111 /* Yes */
 		DO ~
-			SetGlobal("XA_EnterG3", "GLOBAL", 0)
+			SetGlobal("XA_LC_EnterG3", "GLOBAL", 0)
 			StartCutSceneMode()
 			StartCutScene("XAG3ENT")
 		~
@@ -319,27 +319,27 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN REPLY @112 /* No */
 		DO ~
-			SetGlobal("XA_EnterG3", "GLOBAL", 0)
+			SetGlobal("XA_LC_EnterG3", "GLOBAL", 0)
 		~
 		EXIT
 	END
 	
 	IF ~
-		Global("XA_EnterPainting", "GLOBAL", 1)
+		Global("XA_LC_EnterPainting", "GLOBAL", 1)
 	~ THEN BEGIN XA_ApproachPainting
 		SAY @109 /* ~(You approach the painting...)~ */
 		
 		IF ~~ THEN 
 		DO ~
-			SetGlobal("XA_EnterPainting", "GLOBAL", 0)
+			SetGlobal("XA_LC_EnterPainting", "GLOBAL", 0)
 		~
 		GOTO XA_PaintingDescription2
 		
 		IF ~
-			!Global("XA_PaintDesc", "GLOBAL", 1)
+			!Global("XA_LC_PaintDesc", "GLOBAL", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_EnterPainting", "GLOBAL", 0)
+			SetGlobal("XA_LC_EnterPainting", "GLOBAL", 0)
 		~
 		GOTO XA_PaintingDescription
 		
@@ -379,10 +379,10 @@ APPEND ~PLAYER1~
 		GOTO XA_DoNotEnter
 		
 		IF ~
-			!Global("XA_TriedDestroy", "GLOBAL", 1)
+			!Global("XA_LC_TriedDestroy", "GLOBAL", 1)
 		~ THEN REPLY @116 /* ~(Destroy the painting.)~ */
 		DO ~
-			SetGlobal("XA_TriedDestroy", "GLOBAL", 1)
+			SetGlobal("XA_LC_TriedDestroy", "GLOBAL", 1)
 		~
 		GOTO XA_DestroyPainting
 	END
@@ -424,31 +424,31 @@ APPEND ~PLAYER1~
 	END
 	
 	IF ~
-		Global("XA_AmuletPainting", "GLOBAL", 1)
+		Global("XA_LC_AmuletPainting", "GLOBAL", 1)
 	~ THEN BEGIN XA_AmuletPainting1
 		SAY @97 /* ~(For a moment, you could have sworn hearing a low hum emanate from the Amulet of the Seldarine. Odd.)~ */
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_AmuletPainting", "GLOBAL", 2) 
+			SetGlobal("XA_LC_AmuletPainting", "GLOBAL", 2) 
 		~
 		EXIT
 	END
 	
 	IF ~
-		Global("XA_AmuletPainting", "GLOBAL", 3)
+		Global("XA_LC_AmuletPainting", "GLOBAL", 3)
 	~ THEN BEGIN XA_AmuletPainting2
 		SAY @98 /* ~(The humming from the amulet is louder now, and you're sure that you're not imagining it. Somehow it is responding to something — or someone — in this room.)~ */
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_AmuletPainting", "GLOBAL", 4)
+			SetGlobal("XA_LC_AmuletPainting", "GLOBAL", 4)
 		~
 		EXIT
 	END
 	
 	IF ~
-		Global("XA_AmuletPainting", "GLOBAL", 5)
+		Global("XA_LC_AmuletPainting", "GLOBAL", 5)
 	~ THEN BEGIN XA_AmuletPainting3
 		SAY @99 /* ~(The humming turns into a shrill screech, and the amulet becomes hot to the touch. It seems to be responding to the painting in the southwest corner of the room.)~ */
 		
@@ -460,43 +460,43 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_AmuletPainting", "GLOBAL", 6)
-			SetGlobal("XA_DoppleSpawn_0706", "GLOBAL", 1)
+			SetGlobal("XA_LC_AmuletPainting", "GLOBAL", 6)
+			SetGlobal("XA_LC_DoppleSpawn_0706", "GLOBAL", 1)
 		~
 		EXIT
 	END
 	
 	IF ~
-		Global("XA_AmuletPainting", "GLOBAL", 7)
+		Global("XA_LC_AmuletPainting", "GLOBAL", 7)
 	~ THEN BEGIN XA_InvestigatePainting
 		SAY @108 /* ~(The dopplegangers have been dispatched. Perhaps now, you can investigate the painting unmolested.)~ */
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_AmuletPainting", "GLOBAL", 8)
+			SetGlobal("XA_LC_AmuletPainting", "GLOBAL", 8)
 		~
 		EXIT
 	END
 	
 	IF ~
-		Global("XA_SoDAnxiety", "GLOBAL", 0)
-		Global("XA_SoDAnxietyCell", "GLOBAL", 1)
+		Global("XA_LC_SoDAnxiety", "GLOBAL", 0)
+		Global("XA_LC_SoDAnxietyCell", "GLOBAL", 1)
 	~ THEN BEGIN XA_DarkMemories
 		SAY @88 /* ~(Upon seeing the cell in which you were once imprisoned, you recall the dark circumstances that forced your departure from the city...)~ */
 
 		IF ~
-			Global("XA_LC_PlayerExiled", "GLOBAL", 1)
+			Global("XA_LC__PlayerExiled", "GLOBAL", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_SoDAnxietyCell", "GLOBAL", 2)
+			SetGlobal("XA_LC_SoDAnxietyCell", "GLOBAL", 2)
 		~
 		GOTO XA_DarkMemories_Exile
 		
 		IF ~
-			GlobalLT("XA_LC_PlayerExiled", "GLOBAL", 1)
+			GlobalLT("XA_LC__PlayerExiled", "GLOBAL", 1)
 		~ THEN 
 		DO ~
-			SetGlobal("XA_SoDAnxietyCell", "GLOBAL", 2)
+			SetGlobal("XA_LC_SoDAnxietyCell", "GLOBAL", 2)
 		~
 		GOTO XA_DarkMemories_Escape
 		
@@ -523,11 +523,11 @@ APPEND ~PLAYER1~
 		
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN 
 		DO ~
-			SetGlobalTimer("XA_SoDAnxietyTimer", "GLOBAL", ONE_ROUND)
-			SetGlobal("XA_SoDAnxiety", "GLOBAL", 1)
+			SetGlobalTimer("XA_LC_SoDAnxietyTimer", "GLOBAL", ONE_ROUND)
+			SetGlobal("XA_LC_SoDAnxiety", "GLOBAL", 1)
 		~
 		EXIT
 	END
@@ -571,7 +571,7 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN REPLY @81 /* ~(Approach him.)~ */
 		DO ~
-			SetGlobal("XA_ApproachBeno", "GLOBAL", 1)
+			SetGlobal("XA_LC_ApproachBeno", "GLOBAL", 1)
 		~
 		EXIT
 		
@@ -593,7 +593,7 @@ END
 //{ Duke Debrief
 
 CHAIN IF ~
-	Global("XA_DukesDebriefed", "GLOBAL", 3)
+	Global("XA_LC_DukesDebriefed", "GLOBAL", 3)
 ~ THEN PLAYER1 XA_DebriefChain3
 	@44 /* ~(Again, you and Captain Corwin step into the meeting chamber. While you are inwardly annoyed at having been kept waiting for so long, you do a good job of concealing this from the Council. You briefly glance at the faces of the Dukes. They are expressionless, and yield no indication of what they discussed, or what is about to take place.)~ */
 	== XAELTAN
@@ -634,27 +634,27 @@ CHAIN IF ~
 	== XANEDERL
 	@61 /* ~For your role in bringing Irenicus to justice, and for your fine work in supporting <CHARNAME>'s defeat of the Iron Throne, Sarevok, and Caelar, you are hereby promoted to the rank of Major. Congratulations, and keep up the good work!~ */
 	DO ~
-		SetGlobal("XA_CorwinPromoted", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinPromoted", "GLOBAL", 1)
 	~
 	== XACORWIJ
 	@62 /* ~Thank you, sir!~ */
 	== XABELT
 	IF ~
-		!Global("XA_SkieModActive", "GLOBAL", 1)
+		!Global("XA_LC__SkieModActive", "GLOBAL", 1)
 	~
 	@63 /* ~Being that there is no other business to discuss, this meeting is adjourned.~ */
 	DO ~
-		SetGlobal("XA_DukesDebriefed", "GLOBAL", 4)
+		SetGlobal("XA_LC_DukesDebriefed", "GLOBAL", 4)
 		StartCutSceneMode()
 		StartCutScene("XADEBR03")
 	~
 	== XABELT
 	IF ~
-		Global("XA_SkieModActive", "GLOBAL", 1)
+		Global("XA_LC__SkieModActive", "GLOBAL", 1)
 	~
 	@63 /* ~Being that there is no other business to discuss, this meeting is adjourned.~ */
 	DO ~
-		SetGlobal("XA_DukesDebriefed", "GLOBAL", 4)
+		SetGlobal("XA_LC_DukesDebriefed", "GLOBAL", 4)
 		StartCutSceneMode()
 		StartCutScene("XADEBR04")
 	~
@@ -665,8 +665,8 @@ EXIT
 //{ Duke Debrief - Skie Mod
 
 CHAIN IF ~
-	Global("XA_DukesDebriefed", "GLOBAL", 1)
-	Global("XA_SkieModActive", "GLOBAL", 1)
+	Global("XA_LC_DukesDebriefed", "GLOBAL", 1)
+	Global("XA_LC__SkieModActive", "GLOBAL", 1)
 ~ THEN PLAYER1 XA_DebriefChainSkieMod
 	 /* */
 	@15 /* ~(Unsure of what to expect, you enter the Ducal Palace for the debriefing. Captain Corwin is already there, and you can tell that she's eager to begin. Several minutes pass before you and the Captain are escorted into the meeting chamber on the second floor. The Council is seated behind a long, mahogany table, as are their adjutants.)~*/
@@ -702,8 +702,8 @@ CHAIN IF ~
 	=@42 /* ~Corporal Duncan, please escort <CHARNAME> and Captain Corwin to the study.~*/
 END XABENCE XA_StartDebrief01
 CHAIN IF ~
-	Global("XA_DukesDebriefed", "GLOBAL", 1)
-	!Global("XA_SkieModActive", "GLOBAL", 1)
+	Global("XA_LC_DukesDebriefed", "GLOBAL", 1)
+	!Global("XA_LC__SkieModActive", "GLOBAL", 1)
 ~ THEN PLAYER1 XA_DebriefChain
 	 /* */
 	@15 /* ~(Unsure of what to expect, you enter the Ducal Palace for the debriefing. Captain Corwin is already there, and you can tell that she's eager to begin. Several minutes pass before you and the Captain are escorted into the meeting chamber on the second floor. The Council is seated behind a long, mahogany table, as are their adjutants.)~*/

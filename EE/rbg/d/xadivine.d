@@ -1,7 +1,7 @@
 BEGIN ~XADIVINE~
 
 IF ~
-	Global("XA_AskedDiviner", "GLOBAL", 1)
+	Global("XA_LC_AskedDiviner", "GLOBAL", 1)
 ~ THEN BEGIN XA_AlreadyAsked
 	SAY @24 /* ~I'm sorry, but I won't have the strength to do another such reading until tomorrow.~  */
 	IF ~~ THEN EXIT
@@ -16,20 +16,20 @@ END
 
 IF ~
 	IsGabber(Player1)
-	!Global("XA_DivinerGreeting", "GLOBAL", 1)
+	!Global("XA_LC_DivinerGreeting", "GLOBAL", 1)
 ~ THEN BEGIN XA_Greeting
 	SAY @0 /* Ah. You've returned. Welcome.~ */
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_DivinerGreeting", "GLOBAL", 1)
+		SetGlobal("XA_LC_DivinerGreeting", "GLOBAL", 1)
 	~
 	GOTO XA_Greeting2
 END
 
 IF ~
-	Global("XA_DivinerGreeting", "GLOBAL", 1)
-	!Global("XA_AskedDiviner", "GLOBAL", 1)
+	Global("XA_LC_DivinerGreeting", "GLOBAL", 1)
+	!Global("XA_LC_AskedDiviner", "GLOBAL", 1)
 ~ THEN BEGIN XA_Greeting2
 	SAY @7 /* ~You wish to hear the arcane knowledge of Haspur? It will cost you 100 gold for the answers to your questions no matter how small. Choose wisely, as I only have the strength to perform the diviniation once per day. ~*/
 	
@@ -61,7 +61,7 @@ IF ~~ THEN BEGIN XA_AskAway
 	
 	IF ~
 		IsValidForPartyDialog("IMOEN2")
-		!Global("XA_ImoenAskedDiviner", "GLOBAL", 1)
+		!Global("XA_LC_ImoenAskedDiviner", "GLOBAL", 1)
 	~ THEN REPLY @2 /* ~Imoen? Do you have a question you'd like to ask?~*/
 	EXTERN IMOEN2J XA_AskDiviner
 
@@ -77,25 +77,25 @@ IF ~~ THEN BEGIN XA_AskAway
 	
 	IF ~
 		IsValidForPartyDialog("JAHEIRA")
-		!Global("XA_JaheiraAskedDiviner", "GLOBAL", 1)
+		!Global("XA_LC_JaheiraAskedDiviner", "GLOBAL", 1)
 	~ THEN REPLY @5 /* ~Jaheira? Do you have a question you'd like to ask?~*/
 	EXTERN JAHEIRAJ XA_AskDiviner
 	
 	IF ~
 		IsValidForPartyDialog("ANOMEN")
-		!Global("XA_AnomenAskedDiviner", "GLOBAL", 1)
+		!Global("XA_LC_AnomenAskedDiviner", "GLOBAL", 1)
 	~ THEN REPLY @42 /* ~Anomen? Do you have a question you'd like to ask?~ */
 	EXTERN ANOMENJ XA_AskDiviner
 	
 	IF ~
 		IsValidForPartyDialog("NALIA")
-		!Global("XA_NaliaAskedDiviner", "GLOBAL", 1)
+		!Global("XA_LC_NaliaAskedDiviner", "GLOBAL", 1)
 	~ THEN REPLY @15 /* ~Nalia? Do you have a question you'd like to ask?~ */
 	EXTERN NALIAJ XA_AskDiviner
 	
 	IF ~
 		IsValidForPartyDialog("VICONIA")
-		!Global("XA_ViconiaAskedDiviner", "GLOBAL", 1)
+		!Global("XA_LC_ViconiaAskedDiviner", "GLOBAL", 1)
 	~ THEN REPLY @27 /* ~Viconia? Do you have a question you'd like to ask?~ */
 	EXTERN VICONIJ XA_AskDiviner
 	
@@ -108,8 +108,8 @@ IF ~~ THEN BEGIN XA_PlayerQuestion
 	SAY @51 /*  ~(Haspur waits in silence.)~ */
 	
 	IF ~ 
-		Global("XA_BGSlaverPlot", "GLOBAL", 1)
-		GlobalLT("XA_VirgilInCustody", "GLOBAL", 1)
+		Global("XA_LC_BGSlaverPlot", "GLOBAL", 1)
+		GlobalLT("XA_LC_VirgilInCustody", "GLOBAL", 1)
 	~ THEN REPLY @36 /* ~Who is responsible for the slaver activity in Baldur's Gate?~*/
 	GOTO XA_Slavers
 	
@@ -124,17 +124,17 @@ IF ~~ THEN BEGIN XA_PlayerQuestion
 	
 	IF ~~ THEN REPLY @60 /* ~What are next week's winning lottery numbers?~ */
 	DO ~
-		SetGlobal("XA_WonLottery", "GLOBAL", 1)
+		SetGlobal("XA_LC_WonLottery", "GLOBAL", 1)
 	~
 	GOTO XA_LottoNumbers
 	
 	IF ~
-		Global("XA_LC_CaelarAliveInAvernus","GLOBAL",1)
+		Global("XA_LC__CaelarAliveInAvernus","GLOBAL",1)
 	~ THEN REPLY @54 /* ~Does Caelar Argent still live?~ */
 	GOTO XA_Caelar
 
 	IF ~
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @18 /* ~Do Schael and I have a future together?~ */
 	GOTO XA_FutureRomance
 	
@@ -174,7 +174,7 @@ IF ~~ THEN BEGIN XA_Caelar
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_LC_Journal_Haspur_Caelar", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_Haspur_Caelar", "GLOBAL", 1)
 	~
 	GOTO XA_AlreadyAsked
 END
@@ -183,7 +183,7 @@ IF ~~ THEN BEGIN XA_LottoNumbers
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LC_Journal_Haspur_Lotto", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_Haspur_Lotto", "GLOBAL", 1)
 	~
 	GOTO XA_AlreadyAsked
 END
@@ -207,7 +207,7 @@ IF ~~ THEN XA_BigDecision2
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_LC_Journal_Haspur_Decide", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_Haspur_Decide", "GLOBAL", 1)
 	~
 	GOTO XA_AlreadyAsked
 END
@@ -216,7 +216,7 @@ IF ~~ THEN BEGIN XA_IrenicusGone
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LC_Journal_Haspur_Irenicus", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_Haspur_Irenicus", "GLOBAL", 1)
 	~
 	GOTO XA_AlreadyAsked	
 END
@@ -227,7 +227,7 @@ IF ~~ THEN BEGIN XA_WillBhaalReturn
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LC_Journal_Haspur_Bhaal", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_Haspur_Bhaal", "GLOBAL", 1)
 	~
 	GOTO XA_AlreadyAsked
 END
@@ -236,8 +236,8 @@ IF ~~ THEN BEGIN XA_Slavers
 	SAY @37 /* ~Lord Winston and his company are responsible. They have been selling refugees as slaves, under the guise of moving them to new homes in other cities.~ */
 	IF ~~ THEN REPLY @38 /* ~I see.~ */
 	DO ~
-		SetGlobal("XA_LC_Journal_Haspur_Slaves", "GLOBAL", 1)
-		SetGlobal("XA_AskedDivinerAboutSlaves", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_Haspur_Slaves", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskedDivinerAboutSlaves", "GLOBAL", 1)
 	~
 	GOTO XA_AlreadyAsked
 END

@@ -1,23 +1,23 @@
 IF
 	Global("XA_LC_StartedInBG2", "GLOBAL", 1)
 	Global("XA_LC_CorwinContinue", "GLOBAL", 2)
-	GlobalLT("XA_0602Items", "MYAREA", 1)
+	GlobalLT("XA_LC_0602Items", "MYAREA", 1)
 THEN
 	RESPONSE #100
 		ActionOverride("Chest 4", CreateItem("XALTRSCH",0,0,0))
 		ActionOverride("Chest 4", CreateItem("XAAMULET",0,0,0))
-		SetGlobal("XA_0602Items", "MYAREA", 1)
+		SetGlobal("XA_LC_0602Items", "MYAREA", 1)
 		Continue()
 END
 
 IF
 	Global("XA_LC_StartedInBG2", "GLOBAL", 1)
 	Global("XA_LC_CorwinContinue", "GLOBAL", 1)
-	GlobalLT("XA_0602Items", "MYAREA", 1)
+	GlobalLT("XA_LC_0602Items", "MYAREA", 1)
 THEN
 	RESPONSE #100
 		ActionOverride("Chest 4", CreateItem("XALTRCOR",0,0,0))
-		SetGlobal("XA_0602Items", "MYAREA", 1)
+		SetGlobal("XA_LC_0602Items", "MYAREA", 1)
 		Continue()
 END
 

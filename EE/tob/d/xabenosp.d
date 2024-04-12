@@ -1,13 +1,13 @@
 BEGIN ~XABENOSP~
 
 IF ~
-	Global("XA_BenoGoodbye", "GLOBAL", 1)
+	Global("XA_LC_BenoGoodbye", "GLOBAL", 1)
 ~ THEN BEGIN XA_BenoSpirit
 	SAY @0 /* ~Schael... It's me.~ */
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_BenoGoodbye", "GLOBAL", 2)
+		SetGlobal("XA_LC_BenoGoodbye", "GLOBAL", 2)
 	~
 	EXTERN XACOR25J XA_GoodbyeBenoChain
 END

@@ -1,10 +1,10 @@
 IF
-	AreaCheck("BG0607")
+	AreaCheck("XAA283")
 	See(Player1)
-	GlobalLT("XA_VirgilCellTalk", "GLOBAL", 1)
+	GlobalLT("XA_LC_VirgilCellTalk", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_VirgilCellTalk", "GLOBAL", 1)
+		SetGlobal("XA_LC_VirgilCellTalk", "GLOBAL", 1)
 		StartDialog("XAVIRGIL", Player1)
 END
 

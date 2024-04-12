@@ -926,7 +926,7 @@ IF ~~ THEN BEGIN 48 // from: 46.0
 	GOTO 60
   
 	IF ~ 
-		!Global("XA_ToldTruthBhaal", "GLOBAL", 1)
+		!Global("XA_LC_ToldTruthBhaal", "GLOBAL", 1)
 		!Alignment(Player1,MASK_EVIL)
 	~ THEN REPLY @174/* ~Listen, just listen to me, please. Do you truly believe me so mad that I would, that I could even be capable of doing this thing I'm accused of? Do you truly think so little of me?~ */ 
 	GOTO 54
@@ -940,7 +940,7 @@ IF ~~ THEN BEGIN 48 // from: 46.0
 	GOTO 53
 	
 	IF ~
-		Global("XA_ToldTruthBhaal", "GLOBAL", 1)
+		Global("XA_LC_ToldTruthBhaal", "GLOBAL", 1)
 		!Alignment(Player1,MASK_EVIL)
 	~ THEN REPLY @105 /* ~Do you seriously think so little of me? That I'd stoop to killing in cold blood? I admitted to you that I was a child of Bhaal - I could've lied to you about my heritage, but I didn't. Sarevok would lie to you. I won't.~ */ 
 	GOTO XA_SG12_1

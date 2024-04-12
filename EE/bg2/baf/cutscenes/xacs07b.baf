@@ -19,7 +19,7 @@ THEN
 		CreateVisualEffectObject("SPDISPMA",Myself)
 		JumpToPoint([1950.1690]) 	 
 		Wait(1)
-		SetGlobal("XA_CorwinBit","GLOBAL",1)
+		SetGlobal("XA_LC_CorwinBit","GLOBAL",1)
 		DestroySelf()
 		EndCutSceneMode()
 END

@@ -9,8 +9,8 @@ IF ~
 END
 
 IF ~
-	Global("XA_CaelarJoined", "LOCALS", 1)
-	!Global("XA_AskedToRejoin", "LOCALS", 1)
+	Global("XA_LC_CaelarJoined", "LOCALS", 1)
+	!Global("XA_LC_AskedToRejoin", "LOCALS", 1)
 	!ReputationLT(Player1,7)
 ~ THEN BEGIN XA_AskToRejoin
 	SAY @0 /* ~Are you sure that you do not require my aid for the battles ahead?~*/
@@ -20,14 +20,14 @@ IF ~
 	
 	IF ~~ THEN REPLY @2 /* ~Wait here. I will come for you later.~*/
 	DO ~
-		SetGlobal("XA_AskedToRejoin", "LOCALS", 1)
+		SetGlobal("XA_LC_AskedToRejoin", "LOCALS", 1)
 	~
 	GOTO XA_Wait
 	
 	IF ~~ THEN REPLY @3 /* ~Your assistance would be most welcome, Caelar.~*/
 	DO ~
 		ChangeAIScript("XACAESCR", OVERRIDE)
-		SetGlobal("XA_CaelarRejoinProcessed", "GLOBAL", 1)
+		SetGlobal("XA_LC_CaelarRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -71,7 +71,7 @@ IF ~~ THEN BEGIN XA_Join
 	IF ~~ THEN
 	DO ~
 		ChangeAIScript("XACAESCR", OVERRIDE)
-		SetGlobal("XA_CaelarRejoinProcessed", "GLOBAL", 1)
+		SetGlobal("XA_LC_CaelarRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
 END

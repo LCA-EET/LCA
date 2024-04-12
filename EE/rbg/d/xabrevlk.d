@@ -1,7 +1,7 @@
 BEGIN ~XABREVLK~
 
 IF ~
-	Global("XA_BrevlikArrested", "GLOBAL", 1)
+	Global("XA_LC_BrevlikArrested", "GLOBAL", 1)
 	RandomNum(3,1)
 ~ THEN BEGIN XA_Arrested
 	SAY @30 /* ~I wish I never heard of that damned telescope!~*/
@@ -10,7 +10,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_BrevlikArrested", "GLOBAL", 1)
+	Global("XA_LC_BrevlikArrested", "GLOBAL", 1)
 	RandomNum(3,2)
 ~ THEN BEGIN XA_Arrested
 	SAY @31 /*~Beat it!~*/
@@ -19,7 +19,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_BrevlikArrested", "GLOBAL", 1)
+	Global("XA_LC_BrevlikArrested", "GLOBAL", 1)
 	RandomNum(3,3)
 ~ THEN BEGIN XA_Arrested
 	SAY @32 /*~Get lost!~*/
@@ -30,26 +30,26 @@ END
 IF ~
 	IsGabber(Player1)
 	Global("XA_LC_StoleFarseer", "GLOBAL", 1)
-	!Global("XA_BrevIntro", "LOCALS", 1)
+	!Global("XA_LC_BrevIntro", "LOCALS", 1)
 ~ THEN BEGIN XA_Greeting
 	SAY @0 /*~Didn't think I'd see you again.~*/
 	
 	IF ~~ THEN REPLY @1 /* ~Brevlik. I'm seeking the Farseer.~ */
 	DO ~
-		SetGlobal("XA_BrevIntro", "LOCALS", 1)
+		SetGlobal("XA_LC_BrevIntro", "LOCALS", 1)
 	~
 	GOTO XA_Farseer //OK
 END
 
 IF ~
 	!IsGabber(Player1)
-	!Global("XA_BrevIntro", "LOCALS", 1)
+	!Global("XA_LC_BrevIntro", "LOCALS", 1)
 ~ THEN BEGIN XA_Greeting_NP
 	SAY @27 /* ~Whaddya want? Can't a gnome drink in peace 'round here?~ */
 	
 	IF ~~ THEN REPLY @28 /* ~Are you Brevlik? I'm seeking the Farseer.~ */
 	DO ~
-		SetGlobal("XA_BrevIntro", "LOCALS", 1)
+		SetGlobal("XA_LC_BrevIntro", "LOCALS", 1)
 	~
 	GOTO XA_Farseer
 END

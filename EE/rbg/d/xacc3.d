@@ -1,7 +1,7 @@
 BEGIN ~XACC3~
 
 IF ~
-	Global("XA_EndG2", "GLOBAL", 2)
+	Global("XA_LC_EndG2", "GLOBAL", 2)
 ~ THEN BEGIN XA_G2END
 	SAY @16 /* ~Good work. It looks like we got here just in the nick of time.~ */
 	
@@ -54,19 +54,19 @@ IF ~~ THEN BEGIN XA_DontUnderstand
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_EndG2", "GLOBAL", 3)
+		SetGlobal("XA_LC_EndG2", "GLOBAL", 3)
 	~
 	EXIT
 END
 
 IF ~
-	!Global("XA_XACC3", "GLOBAL", 1)
+	!Global("XA_LC_XACC3", "GLOBAL", 1)
 ~ THEN BEGIN XA_XACC3
 	SAY @0 /*  ~Sarevok! By the order of Dukes Jannath and Belt, you are under arrest!~ */
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_XACC3", "GLOBAL", 1)
+		SetGlobal("XA_LC_XACC3", "GLOBAL", 1)
 	~
 	EXTERN XASAREVO XA_G2Chain
 END
@@ -85,7 +85,7 @@ CHAIN XASAREVO XA_G2Chain
 	== XASAREVO
 	@4 /* ~You'd dare disobey the order of a Grand Duke! Destroy them!~ */
 	DO ~
-		SetGlobal("XA_SarevokHostile", "GLOBAL", 1)
+		SetGlobal("XA_LC_SarevokHostile", "GLOBAL", 1)
 		ChangeEnemyAlly("XASAREVO", ENEMY)
 		ChangeEnemyAlly("XASEMAJ", ENEMY)
 		ChangeEnemyAlly("XAANGELO", ENEMY)

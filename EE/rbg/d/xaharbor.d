@@ -1,10 +1,10 @@
 BEGIN ~XAHARBOR~
 
 IF ~
-	Global("XA_HarborGreeting", "GLOBAL", 1)
-	!GlobalTimerExpired("XA_ManifestsTimer", "GLOBAL")	
-	Global("XA_AskedAboutManifests", "GLOBAL", 1)
-	!Global("XA_HandedOverManifests", "GLOBAL", 1)
+	Global("XA_LC_HarborGreeting", "GLOBAL", 1)
+	!GlobalTimerExpired("XA_LC_ManifestsTimer", "GLOBAL")	
+	Global("XA_LC_AskedAboutManifests", "GLOBAL", 1)
+	!Global("XA_LC_HandedOverManifests", "GLOBAL", 1)
 ~ THEN BEGIN XA_WaitingOnManifests1
 	SAY @17 /* ~I need some more time for those manifests. Give me an hour, I should have them ready for you by then.~ */
 	IF ~~ THEN 
@@ -12,17 +12,17 @@ IF ~
 END
 
 IF ~
-	Global("XA_HarborGreeting", "GLOBAL", 1)
-	GlobalTimerExpired("XA_ManifestsTimer", "GLOBAL")	
-	Global("XA_AskedAboutManifests", "GLOBAL", 1)
-	!Global("XA_HandedOverManifests", "GLOBAL", 1)
+	Global("XA_LC_HarborGreeting", "GLOBAL", 1)
+	GlobalTimerExpired("XA_LC_ManifestsTimer", "GLOBAL")	
+	Global("XA_LC_AskedAboutManifests", "GLOBAL", 1)
+	!Global("XA_LC_HandedOverManifests", "GLOBAL", 1)
 ~ THEN BEGIN XA_WaitingOnManifests2
 	SAY @18 /* ~Ah good. Here are the manifests you requested.~ */
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LC_Journal_SlaveHarbor", "GLOBAL", 1)
-		SetGlobal("XA_HandedOverManifests", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_SlaveHarbor", "GLOBAL", 1)
+		SetGlobal("XA_LC_HandedOverManifests", "GLOBAL", 1)
 		GiveItemCreate("XAMANFST",LastTalkedToBy(Myself),1,0,0)
 	~
 	GOTO XA_HandedOverManifests
@@ -34,7 +34,7 @@ IF ~~ THEN BEGIN XA_WaitingOnManifests3
 	IF ~~ THEN REPLY @24 /* ~What is this? These manifests are gibberish!~ */
 	
 	DO ~
-		SetGlobal("XA_HandedOverManifests", "GLOBAL", 1)
+		SetGlobal("XA_LC_HandedOverManifests", "GLOBAL", 1)
 	~
 	GOTO XA_HandedOverManifests
 END
@@ -51,16 +51,16 @@ IF ~~ THEN BEGIN XA_HandedOverManifests2
 	
 	IF ~~ THEN REPLY @28 /* ~Perhaps. Thanks for your help.~ */
 	DO ~
-		SetGlobal("XA_LC_Journal_SlaveHarbor", "GLOBAL", 2)
+		SetGlobal("XA_LC__Journal_SlaveHarbor", "GLOBAL", 2)
 	~
 	EXIT
 END
 
 IF ~
-	Global("XA_HarborGreeting", "GLOBAL", 1)
-	Global("XA_BGSlaverPlot", "GLOBAL", 1)
-	Global("XA_RefugeeQuestComplete", "GLOBAL", 1)
-	!Global("XA_ToldHMSlaverDone", "GLOBAL", 1)
+	Global("XA_LC_HarborGreeting", "GLOBAL", 1)
+	Global("XA_LC_BGSlaverPlot", "GLOBAL", 1)
+	Global("XA_LC_RefugeeQuestComplete", "GLOBAL", 1)
+	!Global("XA_LC_ToldHMSlaverDone", "GLOBAL", 1)
 ~ THEN BEGIN XA_TellHMSlaverDone
 	SAY @20 /* ~Hello again - were you able to figure out sold those kids to the slavers?~ */
 	
@@ -68,9 +68,9 @@ IF ~
 	GOTO XA_WinstonGuilty
 END
 IF ~
-	Global("XA_HarborGreeting", "GLOBAL", 1)
-	Global("XA_BGSlaverPlot", "GLOBAL", 1)
-	!Global("XA_RefugeeQuestComplete", "GLOBAL", 1)
+	Global("XA_LC_HarborGreeting", "GLOBAL", 1)
+	Global("XA_LC_BGSlaverPlot", "GLOBAL", 1)
+	!Global("XA_LC_RefugeeQuestComplete", "GLOBAL", 1)
 ~ THEN BEGIN XA_HarborGreting3
 	SAY @20 /* ~Hello again - were you able to figure out sold those kids to the slavers?~ */
 	
@@ -83,16 +83,16 @@ IF ~~ THEN BEGIN XA_WinstonGuilty
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_ToldHMSlaverDone", "GLOBAL", 1)
+		SetGlobal("XA_LC_ToldHMSlaverDone", "GLOBAL", 1)
 		ReputationInc(1)
 	~
 	EXIT
 END
 
 IF ~
-	Global("XA_HarborGreeting", "GLOBAL", 1)
-	Global("XA_RefugeeQuestComplete", "GLOBAL", 1)
-	Global("XA_ToldHMSlaverDone", "GLOBAL", 1)
+	Global("XA_LC_HarborGreeting", "GLOBAL", 1)
+	Global("XA_LC_RefugeeQuestComplete", "GLOBAL", 1)
+	Global("XA_LC_ToldHMSlaverDone", "GLOBAL", 1)
 ~ THEN BEGIN XA_HarborGreting4
 	SAY @15 /* ~Good to see you again.~ */
 	IF ~~ THEN 
@@ -100,28 +100,28 @@ IF ~
 END
 
 IF ~
-	!Global("XA_HarborGreeting", "GLOBAL", 1)
+	!Global("XA_LC_HarborGreeting", "GLOBAL", 1)
 	OR(2)
 		!IsGabber("XACORWIN")
-		!Global("XA_BGSlaverPlot", "GLOBAL", 1)
+		!Global("XA_LC_BGSlaverPlot", "GLOBAL", 1)
 ~ THEN BEGIN XA_HarborGreting1
 	SAY @30 /* ~Good to see you again!~*/
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_HarborGreeting", "GLOBAL", 1)
+		SetGlobal("XA_LC_HarborGreeting", "GLOBAL", 1)
 	~
 	GOTO XA_HarborGreeting2
 END
 
 IF ~
 	IsGabber("XACORWIN")
-	Global("XA_BGSlaverPlot", "GLOBAL", 1)
+	Global("XA_LC_BGSlaverPlot", "GLOBAL", 1)
 ~ THEN BEGIN XA_HarborGreeting1Corwin
 	SAY @31 /*  ~Captain! Good to see you again. It's been a while.~ */
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_HarborGreeting", "GLOBAL", 1)
+		SetGlobal("XA_LC_HarborGreeting", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_HarborCorwin
 END
@@ -130,12 +130,12 @@ IF ~~ THEN BEGIN XA_HarborGreeting2
 	SAY @1 /* ~What can I do for ya?~ */
 	
 	IF ~
-		!Global("XA_BGSlaverPlot", "GLOBAL", 1)
+		!Global("XA_LC_BGSlaverPlot", "GLOBAL", 1)
 	~ THEN REPLY @35 /* ~Nothing right now.~ */
 	EXIT
 	
 	IF ~
-		Global("XA_BGSlaverPlot", "GLOBAL", 1)
+		Global("XA_LC_BGSlaverPlot", "GLOBAL", 1)
 	~ THEN REPLY @3 /* ~While in Athkatla, we learned that a number of children were being sold as slaves.~ */
 	GOTO XA_RefugeeSlavery
 	
@@ -160,19 +160,19 @@ IF ~~ THEN BEGIN XA_RefugeeSlavery2
 	=@8 /* ~He chartered a number of ships from this dock, to places like Athkatla, Waterdeep, and others.~*/
 	
 	IF ~
-		!Global("XA_AskedAboutName", "GLOBAL", 1)
+		!Global("XA_LC_AskedAboutName", "GLOBAL", 1)
 	~ THEN REPLY @9 /* ~What is his name? Where is he now?~ */
 	DO ~
-		SetGlobal("XA_AskedAboutName", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskedAboutName", "GLOBAL", 1)
 	~
 	GOTO XA_AskName
 	
 	IF ~
-		!Global("XA_AskedAboutManifests", "GLOBAL", 1)
+		!Global("XA_LC_AskedAboutManifests", "GLOBAL", 1)
 	~ THEN REPLY @11 /* ~Do you have any shipping manifests?~  */
 	DO ~
-		SetGlobal("XA_AskedAboutManifests", "GLOBAL", 1)
-		SetGlobalTimer("XA_ManifestsTimer", "GLOBAL", ONE_HOUR)
+		SetGlobal("XA_LC_AskedAboutManifests", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_ManifestsTimer", "GLOBAL", ONE_HOUR)
 	~
 	GOTO XA_AskAboutManifests
 END
@@ -181,15 +181,15 @@ IF ~~ THEN BEGIN XA_AskAboutManifests
 	SAY @16 /* ~Yes, I'll need some time to locate them. Give me an hour, I should have them ready for you by then.~*/
 	
 	IF ~
-		!Global("XA_AskedAboutName", "GLOBAL", 1)
+		!Global("XA_LC_AskedAboutName", "GLOBAL", 1)
 	~ THEN REPLY @9 /* ~What is his name? Where is he now?~ */
 	DO ~
-		SetGlobal("XA_AskedAboutName", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskedAboutName", "GLOBAL", 1)
 	~
 	GOTO XA_AskName
 	
 	IF ~
-		Global("XA_AskedAboutName", "GLOBAL", 1)
+		Global("XA_LC_AskedAboutName", "GLOBAL", 1)
 	~
 	THEN REPLY @12 /* ~Is there anything else you can tell me?~ */
 	GOTO XA_EndRefugeeQuestioning
@@ -199,16 +199,16 @@ IF ~~ THEN BEGIN XA_AskName
 	SAY @10 /* ~I don't remember his name, but I know he and his company have set up shop in the old Iron Throne headquarters.~ */
 	
 	IF ~
-		!Global("XA_AskedAboutManifests", "GLOBAL", 1)
+		!Global("XA_LC_AskedAboutManifests", "GLOBAL", 1)
 	~ THEN REPLY @11 /* ~Do you have any shipping manifests?~  */
 	DO ~
-		SetGlobal("XA_AskedAboutManifests", "GLOBAL", 1)
-		SetGlobalTimer("XA_ManifestsTimer", "GLOBAL", ONE_HOUR)
+		SetGlobal("XA_LC_AskedAboutManifests", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_ManifestsTimer", "GLOBAL", ONE_HOUR)
 	~
 	GOTO XA_AskAboutManifests
 	
 	IF ~
-		Global("XA_AskedAboutManifests", "GLOBAL", 1)
+		Global("XA_LC_AskedAboutManifests", "GLOBAL", 1)
 	~
 	THEN REPLY @12 /* ~Is there anything else you can tell me?~ */
 	GOTO XA_EndRefugeeQuestioning

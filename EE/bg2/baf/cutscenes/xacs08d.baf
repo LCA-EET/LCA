@@ -9,7 +9,7 @@ THEN
 		FadeFromColor([30.0],0)
 		Wait(1)
 		ActionOverride(Player1, FaceObject("XACORWIN"))
-		SetGlobal("XA_CorwinVampire","GLOBAL",1)
+		SetGlobal("XA_LC_CorwinVampire","GLOBAL",1)
 		Wait(1)
 		DisplayStringHead("XACORWIN", @0) /* ~I'm sorry, my love...~ */
 		Wait(5)

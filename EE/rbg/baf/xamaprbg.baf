@@ -1,6 +1,6 @@
 //{ Map Change
 	IF
-		Global("XA_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		GlobalLT("XA_LC_RBGWorldMap", "GLOBAL", 1)
 	THEN
 		RESPONSE #100

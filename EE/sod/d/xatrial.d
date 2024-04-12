@@ -12,15 +12,15 @@ ADD_TRANS_TRIGGER BDBELT 6
 ~
 	OR(2)
 		Dead("Corwin")
-		!GlobalGT("XA_CorwinWitnessedDuel", "GLOBAL", 0)
+		!GlobalGT("XA_LC_CorwinWitnessedDuel", "GLOBAL", 0)
 ~
 
 EXTEND_BOTTOM BDBELT 6
 	IF ~
 		!Dead("Corwin")
 		OR(2)
-			Global("XA_CorwinWitnessedDuel", "GLOBAL", 1)
-			Global("XA_CorwinWitnessedDuel", "GLOBAL", 2)
+			Global("XA_LC_CorwinWitnessedDuel", "GLOBAL", 1)
+			Global("XA_LC_CorwinWitnessedDuel", "GLOBAL", 2)
 	~ THEN 
 	DO ~
 		SetCutSceneLite(TRUE)
@@ -65,7 +65,7 @@ APPEND BDBELT
 		IF ~~ THEN
 		DO ~
 			SetGlobal("bd_mdd1697_plot","global",10)
-			SetGlobal("XA_CorwinSpokeAtTrial", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinSpokeAtTrial", "GLOBAL", 1)
 		~
 		EXTERN XABDSCH2 XA_CorwinTrial_0
 	END

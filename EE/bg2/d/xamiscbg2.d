@@ -37,18 +37,18 @@
 	~
 	EXTEND_BOTTOM HABREGA 0
 		IF ~
-			GlobalGT("XA_SlaveKidsFreed", "GLOBAL", 0)
-			GlobalLT("XA_SlavesBrega", "LOCALS", 1)
+			GlobalGT("XA_LC_SlaveKidsFreed", "GLOBAL", 0)
+			GlobalLT("XA_LC_SlavesBrega", "LOCALS", 1)
 		~ THEN REPLY @328  /*~Inspector, we freed some children that were being held captive in the slaver stockade. Did they make it back here safely?~ */
 		DO ~
-			SetGlobal("XA_SlavesBrega", "LOCALS", 1)
+			SetGlobal("XA_LC_SlavesBrega", "LOCALS", 1)
 		~
 		GOTO XA_KidsFreed1
 	END
 	EXTEND_BOTTOM HABREGA 13
 		IF ~
 			PartyHasItem("XASTDAG")
-			Global("XA_HelpBrega", "GLOBAL", 1)
+			Global("XA_LC_HelpBrega", "GLOBAL", 1)
 		~ THEN REPLY @324 /* ~About the dagger — you said you'd send it to Baldur's Gate if I helped solve your case.~*/
 		DO ~
 			AddexperienceParty(45000)
@@ -61,7 +61,7 @@
 		
 		IF ~
 			PartyHasItem("XASTDAG")
-			!Global("XA_HelpBrega", "GLOBAL", 1)
+			!Global("XA_LC_HelpBrega", "GLOBAL", 1)
 		~ THEN REPLY @325 /*~I need to send this dagger to Baldur's Gate. I believe it is the weapon used to murder the daughter of one of the Grand Dukes.~ */
 		DO ~
 			AddexperienceParty(45000)
@@ -77,21 +77,21 @@
 	BEGIN 0 END
 	BEGIN 0 END 
 	~
-		IncrementGlobal("XA_SlaveKidsFreed", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_SlaveKidsFreed", "GLOBAL", 1)
 	~
 	
 	ADD_TRANS_ACTION GIRL1 
 	BEGIN 1 END
 	BEGIN 0 END 
 	~
-		IncrementGlobal("XA_SlaveKidsFreed", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_SlaveKidsFreed", "GLOBAL", 1)
 	~
 	
 	ADD_TRANS_ACTION PPIRENI2
 	BEGIN 36 END
 	BEGIN 0 END
 	~
-		SetGlobal("XA_RescueCorwin1516", "GLOBAL", 1)
+		SetGlobal("XA_LC_RescueCorwin1516", "GLOBAL", 1)
 	~
 	
 	EXTEND_BOTTOM JARLAXLE 0
@@ -151,7 +151,7 @@
 		~
 		THEN 
 		DO ~
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		EXTERN XACORWIJ XA_CALAHA_15
 	END
@@ -172,20 +172,20 @@ IF ~~ THEN BEGIN BCorwinAnomen1A
 		EXTERN XACORWIB BCorwinAnomen1B
 		
 		IF ~
-			!Global("XA_CorwinPromoted", "GLOBAL", 1)
+			!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @191 /* ~You know little of what you speak. Captain Corwin is a fine mother.~ */
 		DO ~
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		EXTERN XACORWIB BCorwinAnomen1B
 		
 		IF ~
-			Global("XA_CorwinPromoted", "GLOBAL", 1)
+			Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @192 /* ~You know little of what you speak. Major Corwin is a fine mother.~ */
 		DO ~
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		EXTERN XACORWIB BCorwinAnomen1B
 		
@@ -193,7 +193,7 @@ IF ~~ THEN BEGIN BCorwinAnomen1A
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @228 /* ~You know little of what you speak. Schael is a fine mother.~ */
 		DO ~
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		EXTERN XACORWIB BCorwinAnomen1B
 		
@@ -212,11 +212,11 @@ END
 			COPY_TRANS HABREGA 0
 			
 			IF ~
-				GlobalGT("XA_SlaveKidsFreed", "GLOBAL", 0)
-				GlobalLT("XA_SlavesBrega", "LOCALS", 1)
+				GlobalGT("XA_LC_SlaveKidsFreed", "GLOBAL", 0)
+				GlobalLT("XA_LC_SlavesBrega", "LOCALS", 1)
 			~ THEN REPLY @328  /*~Inspector, we freed some children that were being held captive in the slaver stockade. Did they make it back here safely?~ */
 			DO ~
-				SetGlobal("XA_SlavesBrega", "LOCALS", 1)
+				SetGlobal("XA_LC_SlavesBrega", "LOCALS", 1)
 			~
 			GOTO XA_KidsFreed1
 		END
@@ -329,7 +329,7 @@ END
 			DO ~
 				TakePartyGold(7500)
 				DestroyGold(7500)
-				SetGlobal("XA_Cromwell_CorwinBow", "GLOBAL", 1)
+				SetGlobal("XA_LC_Cromwell_CorwinBow", "GLOBAL", 1)
 			~
 			GOTO 56
 			
@@ -361,14 +361,14 @@ END
 EXTEND_BOTTOM PPIRENI2 3
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_LCA_41G", "GLOBAL", 1)
+		Global("XA_LC_A_41G", "GLOBAL", 1)
 	~ THEN
 	EXTERN XACORWIJ XA_CorwinIrenicusStart
 END
 
 EXTEND_BOTTOM PPIRENI2 27
 	IF ~
-		Global("XA_CorwinIrenicus", "GLOBAL", 3)
+		Global("XA_LC_CorwinIrenicus", "GLOBAL", 3)
 	~ THEN
 	DO ~
 		EraseJournalEntry(7252)
@@ -389,7 +389,7 @@ END
 
 EXTEND_BOTTOM PPIRENI2 31
 	IF ~
-		Global("XA_CorwinIrenicus", "GLOBAL", 4)
+		Global("XA_LC_CorwinIrenicus", "GLOBAL", 4)
 	~ THEN REPLY @346  /* ~Release Schael and return what you stole from us, or I swear that I'll bury you where you stand!~*/
 	GOTO XA_Geas
 END
@@ -404,7 +404,7 @@ APPEND PPIRENI2
 	END
 	
 	IF ~
-		Global("XA_CorwinIrenicus", "GLOBAL", 1)
+		Global("XA_LC_CorwinIrenicus", "GLOBAL", 1)
 	~ THEN BEGIN XA_CorwinIrenicus
 		SAY @336 /*~And you, young lady.~ */
 		
@@ -412,19 +412,19 @@ APPEND PPIRENI2
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CorwinIrenicus", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinIrenicus", "GLOBAL", 2)
 		~
 		EXTERN XACORWIJ XA_CorwinIrenicusChain
 	END
 	
 	IF ~
-		Global("XA_CorwinIrenicus", "GLOBAL", 2)
+		Global("XA_LC_CorwinIrenicus", "GLOBAL", 2)
 	~ THEN BEGIN XA_CorwinIrenicus_Sleep2
 		SAY @338 /*~Worry not.*/
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_CorwinIrenicus", "GLOBAL", 3)
+			SetGlobal("XA_LC_CorwinIrenicus", "GLOBAL", 3)
 		~
 		GOTO XA_CorwinIrenicus_Sleep2A
 		
@@ -441,17 +441,17 @@ END
 //{ BAERIE
 EXTEND_BOTTOM BAERIE 112
 	IF ~
-		!GlobalGT("XA_Banter_CorwinAerie", "GLOBAL", 5)
+		!GlobalGT("XA_LC_Banter_CorwinAerie", "GLOBAL", 5)
 	~ THEN REPLY @196 /* ~I've met one of your kind before.~ */
 	GOTO XA_Ashatiel
 	
 	IF ~
-		GlobalGT("XA_Banter_CorwinAerie", "GLOBAL", 5)
+		GlobalGT("XA_LC_Banter_CorwinAerie", "GLOBAL", 5)
 	~ THEN REPLY @199 /* ~Schael's already told you of my experience with Ashatiel. Could you tell me more about your people? Your society?~ */
 	GOTO 114
 	
 	IF ~
-		GlobalGT("XA_Banter_CorwinAerie", "GLOBAL", 5)
+		GlobalGT("XA_LC_Banter_CorwinAerie", "GLOBAL", 5)
 	~ THEN REPLY @201 /* ~Schael's already told you of my experience with Ashatiel. We really should get moving.~ */
 	GOTO 116
 END
@@ -477,11 +477,11 @@ APPEND MAZZYJ
 		SAY @226 /* ~It's alright. I know you didn't mean anything by it. Besides, I'm quite happy with the crossbow.~*/
 		
 		IF ~
-			GlobalGT("XA_ReturnToBG", "GLOBAL", 0)
+			GlobalGT("XA_LC_ReturnToBG", "GLOBAL", 0)
 		~ THEN GOTO BCorwinMazzy2_RBG
 		
 		IF ~
-			GlobalLT("XA_ReturnToBG", "GLOBAL", 1)
+			GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 		~ THEN GOTO BCorwinMazzy2_RESUME		
 	END
 	
@@ -500,7 +500,7 @@ APPEND MAZZYJ
 	END
 	
 	IF ~
-		Global("XA_TM_ArcheryChallenge", "GLOBAL", 2)
+		Global("XA_LC_TM_ArcheryChallenge", "GLOBAL", 2)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN BEGIN XA_Trademeet_Competition_SchaelWon
 		SAY @186 /* ~Schael, congratulations on your victory. That was quite the performance.~ */
@@ -525,13 +525,13 @@ APPEND DORNJ
 		
 		IF ~~ THEN REPLY @194 /* ~That's enough. Dorn, I don't know what you think exists between us, but I love Schael and nothing is going to change that.~  */
 		DO ~
-			SetGlobal("XA_CorwinDornConflict", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinDornConflict", "GLOBAL", 2)
 		~
 		GOTO XA_ChooseCorwin
 		
 		IF ~~ THEN REPLY @195 /* ~Stop it, Dorn. You know my affections lie with you.~ */
 		DO ~
-			SetGlobal("XA_CorwinDornConflict", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinDornConflict", "GLOBAL", 2)
 		~
 		EXTERN XACORWIB XA_ChooseDorn
 	END
@@ -596,13 +596,13 @@ END
 
 EXTEND_BOTTOM IMOEN2 19
 	IF ~
-		Global("XA_CorwinIrenicus", "GLOBAL", 4)
+		Global("XA_LC_CorwinIrenicus", "GLOBAL", 4)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @340  /* ~Schael, too. He's planning to use her to assassinate the Dukes. I have to save her!~*/
 	GOTO XA_ImoenSchaelSpellhold
 	
 	IF ~
-		Global("XA_CorwinIrenicus", "GLOBAL", 4)
+		Global("XA_LC_CorwinIrenicus", "GLOBAL", 4)
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @344  /* ~Schael, too. He's planning to use her to assassinate the Dukes. I have to stop him!~*/
 	GOTO XA_ImoenSchaelSpellhold
@@ -616,7 +616,7 @@ END
 //{ SUELLE2
 ADD_STATE_TRIGGER SUELLE2 0
 ~
-	!Global("XA_59AOverride", "GLOBAL", 1)
+	!Global("XA_LC_59AOverride", "GLOBAL", 1)
 ~
 
 EXTEND_BOTTOM SUELLE2 0 /* OK */
@@ -633,7 +633,7 @@ EXTEND_BOTTOM SUELLE2 5 /* OK */
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN
 	DO ~
-		SetGlobal("XA_59AOverride","GLOBAL",1)
+		SetGlobal("XA_LC_59AOverride","GLOBAL",1)
 		ClearAllActions()
 		StartCutSceneMode()
 		StartCutSceneEx("XA59ATOB",FALSE)
@@ -653,7 +653,7 @@ EXTEND_BOTTOM SUELLE2 8 /* OK */
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN
 	DO ~
-		SetGlobal("XA_59AOverride","GLOBAL",1)
+		SetGlobal("XA_LC_59AOverride","GLOBAL",1)
 		ClearAllActions()
 		StartCutSceneMode()
 		StartCutSceneEx("XA59ATOB",FALSE)
@@ -717,7 +717,7 @@ EXTEND_BOTTOM SUELLE2 18 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 		ReputationLT(Player1,10)
-		Global("XA_LeaveAfterSoA", "GLOBAL", 1)
+		Global("XA_LC_LeaveAfterSoA", "GLOBAL", 1)
 		OR(4)
 			Global("DornRomanceActive","GLOBAL",2)
 			Global("HexxatRomanceActive","GLOBAL",2)
@@ -735,7 +735,7 @@ EXTEND_BOTTOM SUELLE2 18 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 		ReputationGT(Player1,9)
-		Global("XA_LeaveAfterSoA", "GLOBAL", 1)
+		Global("XA_LC_LeaveAfterSoA", "GLOBAL", 1)
 		OR(4)
 			Global("DornRomanceActive","GLOBAL",2)
 			Global("HexxatRomanceActive","GLOBAL",2)
@@ -792,7 +792,7 @@ DO 0
 EXTEND_BOTTOM UDSVIR03 25 /* OK */
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		!Global("XA_CorwinStopSvirFight", "GLOBAL", 1)
+		!Global("XA_LC_CorwinStopSvirFight", "GLOBAL", 1)
 	~ THEN REPLY @58 /* ~Saying that was a mistake, fool! I will kill you and take the stone! Forget your deal!~  */
 	EXTERN XACORWIJ XA_Svir
 END
@@ -801,7 +801,7 @@ END
 //{ DADROW3
 	ADD_TRANS_TRIGGER DADROW3 0
 	~
-		GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+		GlobalLT("XA_LC_CorwinCoverUD", "GLOBAL", 1)
 	~
 	DO 6
 	
@@ -809,7 +809,7 @@ END
 	~
 		!IsValidForPartyDialogue("XACORWIN")
 		!IsGabber("XACORWIN")
-		GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+		GlobalLT("XA_LC_CorwinCoverUD", "GLOBAL", 1)
 	~
 	DO 4
 	
@@ -817,7 +817,7 @@ END
 		IF ~
 			IsGabber(Player1)
 			IsValidForPartyDialogue("XACORWIN")
-			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+			GlobalLT("XA_LC_CorwinCoverUD", "GLOBAL", 1)
 			OR(2)
 				!IsValidForPartyDialogue("Keldorn")
 				!Global("KeldornOutrage","GLOBAL",0)
@@ -827,7 +827,7 @@ END
 		IF ~
 			!IsGabber(Player1)
 			IsValidForPartyDialogue("XACORWIN")
-			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+			GlobalLT("XA_LC_CorwinCoverUD", "GLOBAL", 1)
 			OR(2)
 				!IsValidForPartyDialogue("Keldorn")
 				!Global("KeldornOutrage","GLOBAL",0)
@@ -847,7 +847,7 @@ END
 
 ADD_TRANS_TRIGGER UDPHAE01 61
 ~
-	GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+	GlobalLT("XA_LC_CorwinCoverUD", "GLOBAL", 1)
 ~
 DO 1 2 3 4
 
@@ -911,7 +911,7 @@ DO 0
 EXTEND_BOTTOM SUDEMIN 39
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		!Global("XA_CorwinStopDeminFight", "GLOBAL", 1)
+		!Global("XA_LC_CorwinStopDeminFight", "GLOBAL", 1)
 	~ THEN REPLY @52 /* ~You asked for it, sister... time for you to die!~  */
 	EXTERN XACORWIJ XA_Demin
 END
@@ -954,25 +954,25 @@ APPEND MADAM
 		EXIT
 		
 		IF ~
-			Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
-			!Global("XA_CorwinHitOnPlayer", "GLOBAL", 1)
-			GlobalLT("XA_TimesHadSex", "GLOBAL", 1)
-			Global("XA_CorwinLoveBG2", "GLOBAL", 1) // only for romance that continues from SoD. 
+			Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
+			!Global("XA_LC_CorwinHitOnPlayer", "GLOBAL", 1)
+			GlobalLT("XA_LC_TimesHadSex", "GLOBAL", 1)
+			Global("XA_LC_CorwinLoveBG2", "GLOBAL", 1) // only for romance that continues from SoD. 
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinHitOnPlayer", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinHitOnPlayer", "GLOBAL", 1)
 			SetGlobal("MadamUpset", "GLOBAL", 1)
 		~
 		EXTERN ~XACORWIJ~ XAA27A
 		
 		IF ~
-			Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
-			!Global("XA_CorwinHitOnPlayer", "GLOBAL", 1)
-			GlobalLT("XA_TimesHadSex", "GLOBAL", 1)
-			!Global("XA_CorwinLoveBG2", "GLOBAL", 1) // only for romance that continues from SoD. 
+			Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
+			!Global("XA_LC_CorwinHitOnPlayer", "GLOBAL", 1)
+			GlobalLT("XA_LC_TimesHadSex", "GLOBAL", 1)
+			!Global("XA_LC_CorwinLoveBG2", "GLOBAL", 1) // only for romance that continues from SoD. 
 		~ THEN 
 		DO ~
-			SetGlobal("XA_CorwinHitOnPlayer", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinHitOnPlayer", "GLOBAL", 1)
 			SetGlobal("MadamUpset", "GLOBAL", 1)
 		~
 		EXTERN ~XACORWIJ~ XAA27
@@ -1043,14 +1043,14 @@ EXTEND_BOTTOM NEB 1
 	IF ~
 		InMyArea("XACORWIN")
 		IsValidForPartyDialogue("XACORWIN")
-		!Global("XA_CorwinNebAthkatla", "GLOBAL", 1)
+		!Global("XA_LC_CorwinNebAthkatla", "GLOBAL", 1)
 	~
 	THEN EXTERN ~XACORWIJ~ XA_NEB_2
 	
 	IF ~
 		InMyArea("XACORWIN")
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_CorwinNebAthkatla", "GLOBAL", 1)
+		Global("XA_LC_CorwinNebAthkatla", "GLOBAL", 1)
 	~
 	THEN EXTERN ~XACORWIJ~ XA_NEB_2A
 END
@@ -1067,14 +1067,14 @@ EXTEND_BOTTOM NEB 2
 	IF ~
 		InMyArea("XACORWIN")
 		IsValidForPartyDialogue("XACORWIN")
-		!Global("XA_CorwinNebAthkatla", "GLOBAL", 1)
+		!Global("XA_LC_CorwinNebAthkatla", "GLOBAL", 1)
 	~
 	THEN EXTERN ~XACORWIJ~ XA_NEB_2
 	
 	IF ~
 		InMyArea("XACORWIN")
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_CorwinNebAthkatla", "GLOBAL", 1)
+		Global("XA_LC_CorwinNebAthkatla", "GLOBAL", 1)
 	~
 	THEN EXTERN ~XACORWIJ~ XA_NEB_2A
 END
@@ -1085,8 +1085,8 @@ APPEND NEB
 		= @51 /*   ~I don't know how you found me, but I promise that when I'm done with you, I'll be sure to pay her a visit!~*/
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_NebRohma", "GLOBAL", 1)
-			SetGlobal("XA_NebFight", "GLOBAL", 1)
+			SetGlobal("XA_LC_NebRohma", "GLOBAL", 1)
+			SetGlobal("XA_LC_NebFight", "GLOBAL", 1)
 			Enemy()
 		~
 		EXIT
@@ -1158,7 +1158,7 @@ EXTEND_TOP GORODR1 39 //OK
 	~
 	THEN REPLY @22 /* ~What say you, my loyal comrades? They wronged you as much as I. Should they be allowed to live, or must the treacherous cowards taste steel?~ */
 	DO ~
-		SetGlobal("XA_OdrenShouldDie", "GLOBAL", 100)
+		SetGlobal("XA_LC_OdrenShouldDie", "GLOBAL", 100)
 	~
 	
 	EXTERN GORODR1 XA_OdrenJudgeSOA
@@ -1177,17 +1177,17 @@ APPEND GORODR1
 		SAY @42 /* ~Please, I ask you once again to forgive us, <CHARNAME>.~ */
 		= @33  /* ~What is your decision?~ */
 		IF ~
-			GlobalGT("XA_OdrenShouldDie", "GLOBAL", 100)
+			GlobalGT("XA_LC_OdrenShouldDie", "GLOBAL", 100)
 		~ THEN REPLY @43 /* ~Prepare to die, you treacherous cowards!~  */
 		GOTO 45
 		
 		IF ~
-			GlobalLT("XA_OdrenShouldDie", "GLOBAL", 100)
+			GlobalLT("XA_LC_OdrenShouldDie", "GLOBAL", 100)
 		~ THEN REPLY @44 /* ~We've decided that you and your treacherous comrades will live. Get out of my sight!~  */
 		GOTO 55
 		
 		IF ~
-			GlobalLT("XA_OdrenShouldDie", "GLOBAL", 100)
+			GlobalLT("XA_LC_OdrenShouldDie", "GLOBAL", 100)
 		~ THEN REPLY @45 /* ~We've decided that you and your treacherous comrades will live. Give us our reward, and get out of my sight!~  */
 		DO ~
 			GiveGoldForce(10000)
@@ -1196,7 +1196,7 @@ APPEND GORODR1
 		GOTO 57
 		
 		IF ~
-			Global("XA_OdrenShouldDie", "GLOBAL", 100)
+			Global("XA_LC_OdrenShouldDie", "GLOBAL", 100)
 		~
 		THEN GOTO XA_OdrenDecisionDecidingVote
 	END
@@ -1232,8 +1232,8 @@ EXTEND_BOTTOM DEGARD 4 //OK
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN REPLY @21 /* ~If I should happen across this "Edwin," I'll be sure to seek you out and let you know where he is.~ */
 	DO ~
-		SetGlobalTimer("XA_CorwinEdwinThayTimer", "GLOBAL", TWO_ROUNDS)
-		//SetGlobal("XA_CorwinEdwinThay", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_CorwinEdwinThayTimer", "GLOBAL", TWO_ROUNDS)
+		//SetGlobal("XA_LC_CorwinEdwinThay", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT
@@ -1245,10 +1245,10 @@ EXTEND_BOTTOM NALIAJ 70
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		IsValidForPartyDialogue("XACORWIN")
-		GlobalLT("XA_NaliaShamMarriage", "GLOBAL", 1)
+		GlobalLT("XA_LC_NaliaShamMarriage", "GLOBAL", 1)
 	~ THEN REPLY @334 /*~Schael? What do you think?~ */
 	DO ~
-		SetGlobal("XA_NaliaShamMarriage", "GLOBAL", 1)
+		SetGlobal("XA_LC_NaliaShamMarriage", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_NaliaShamMarriage_70 
 END
@@ -1257,10 +1257,10 @@ EXTEND_BOTTOM NALIAJ 71
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		IsValidForPartyDialogue("XACORWIN")
-		GlobalLT("XA_NaliaShamMarriage", "GLOBAL", 1)
+		GlobalLT("XA_LC_NaliaShamMarriage", "GLOBAL", 1)
 	~ THEN REPLY @334 /*~Schael? What do you think?~ */
 	DO ~
-		SetGlobal("XA_NaliaShamMarriage", "GLOBAL", 1)
+		SetGlobal("XA_LC_NaliaShamMarriage", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_NaliaShamMarriage_71 
 END
@@ -1269,10 +1269,10 @@ EXTEND_BOTTOM NALIAJ 72
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		IsValidForPartyDialogue("XACORWIN")
-		GlobalLT("XA_NaliaShamMarriage", "GLOBAL", 1)
+		GlobalLT("XA_LC_NaliaShamMarriage", "GLOBAL", 1)
 	~ THEN REPLY @334 /*~Schael? What do you think?~ */
 	DO ~
-		SetGlobal("XA_NaliaShamMarriage", "GLOBAL", 1)
+		SetGlobal("XA_LC_NaliaShamMarriage", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_NaliaShamMarriage_72 
 END
@@ -1281,10 +1281,10 @@ EXTEND_BOTTOM NALIAJ 73
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		IsValidForPartyDialogue("XACORWIN")
-		GlobalLT("XA_NaliaShamMarriage", "GLOBAL", 1)
+		GlobalLT("XA_LC_NaliaShamMarriage", "GLOBAL", 1)
 	~ THEN REPLY @334 /*~Schael? What do you think?~ */
 	DO ~
-		SetGlobal("XA_NaliaShamMarriage", "GLOBAL", 1)
+		SetGlobal("XA_LC_NaliaShamMarriage", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_NaliaShamMarriage_73 
 END
@@ -1403,7 +1403,7 @@ APPEND DELCIA
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_DelciaEnd", "GLOBAL", 2)
+			SetGlobal("XA_LC_DelciaEnd", "GLOBAL", 2)
 			SetGlobal("DelceaMove","GLOBAL",1)
 			ActionOverride("kpsold01",EscapeArea())
 			SetGlobal("DelciaLeave","GLOBAL",2)
@@ -1417,12 +1417,12 @@ END
 //{ C6DRIZZ1
 ADD_STATE_TRIGGER C6DRIZZ1 0
 ~
-	!Global("XA_AttackedDrizztBG1", "GLOBAL", 1)
+	!Global("XA_LC_AttackedDrizztBG1", "GLOBAL", 1)
 ~
 
 ADD_STATE_TRIGGER C6DRIZZ1 39
 ~
-	!Global("XA_AttackedDrizztBG1", "GLOBAL", 1)
+	!Global("XA_LC_AttackedDrizztBG1", "GLOBAL", 1)
 ~
 
 EXTEND_BOTTOM C6DRIZZ1 1  //OK
@@ -1434,7 +1434,7 @@ END
 
 APPEND C6DRIZZ1
 	IF ~
-		Global("XA_AttackedDrizztBG1", "GLOBAL", 1)
+		Global("XA_LC_AttackedDrizztBG1", "GLOBAL", 1)
 	~ THEN BEGIN XA_DrizzMad
 		SAY #53289 /* ~You there! I recognize you! You are the scoundrel that attacked me for no good reason near Baldur's Gate and made off with my equipment!~ [DRIZZT02] */
 		
@@ -1737,7 +1737,7 @@ CHAIN
 		~
 		@24 /* ~They deserve to die. Not just for their treachery, but also for their cowardice. There's been so much death already, though... If you decide to spare them, I will understand.~ */
 		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", 1)
 		~
 		
 		== RASAADJ
@@ -1746,7 +1746,7 @@ CHAIN
 		~
 		@211  /* ~The willpower of even the most resolute can falter from time to time. Let us not be so quick to judge, lest we be judged ourselves. Let them live, <CHARNAME>.~*/
 		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", -1)
 		~
 				
 		== JANJ
@@ -1755,7 +1755,7 @@ CHAIN
 		~
 		@321 /* ~I'll not have their blood on my hands; I'd need to wash them before picking my turnips. Let them live, <CHARNAME>.*/
 		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", -1)
 		~
 	
 		== MINSCJ
@@ -1764,7 +1764,7 @@ CHAIN
 		~
 		@29 /* ~(Minsc is engaged in an animated discussion with Boo about the circumstances of Odren's betrayal. You decide to treat this as a vote for life, not just because you don't have the time for this nonsense, but because Minsc is completely insane. It would be wrong, after all, to have a person's life be decided by an abject fool.)~ */
 		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", -1)
 		~
 		
 		== KORGANJ
@@ -1773,7 +1773,7 @@ CHAIN
 		~
 		@25 /* ~Death, I say. Me axe be waitin' to taste their squirrely innards.~ */
 		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", 1)
 		~
 		
 		== AERIEJ
@@ -1782,7 +1782,7 @@ CHAIN
 		~
 		@30 /* ~I ... I know what they did was wrong... maybe they can learn from this and do some good? They can at least tell o-others not to judge you just because you are a Bhaalspawn. I think we should let them live.~ */
 		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", -1)
 		~
 		
 		== JAHEIRAJ
@@ -1791,7 +1791,7 @@ CHAIN
 		~
 		@26 /* ~A great evil has been purged from this world. To restore balance, these warriors must be purged as well.~ */
 		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", 1)
 		~
 		
 		== IMOEN2J
@@ -1800,7 +1800,7 @@ CHAIN
 		~
 		@32 /* ~We've experienced enough bloodshed for one lifetime. Let them go, <CHARNAME>.~*/
 		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", -1)
 		~
 		
 		== NEERAJ
@@ -1810,7 +1810,7 @@ CHAIN
 		@231  /* ~You're really gonna make me choose? Well... let's see...~*/
 		= @224 /* ~They did lie to us, and they knowingly sent us to our doom. On the other hand, I'm REALLY hungry. Let's just make our way to the nearest taven and leave them be.~ */
 		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", -1)
 		~
 		
 		== VALYGARJ
@@ -1819,7 +1819,7 @@ CHAIN
 		~
 		@27 /* ~These treacherous dogs deserve death. They've shown me nothing to indicate otherwise.~ */
 		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", 1)
 		~
 		
 		== HAERDAJ
@@ -1828,7 +1828,7 @@ CHAIN
 		~
 		@34 /* ~Life, I say. Think of the songs the bards will sing! <CHARNAME>, the mighty! <CHARNAME>, the merciful!~   */
 		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", -1)
 		~
 		
 		== DORNJ
@@ -1837,7 +1837,7 @@ CHAIN
 		~
 		@28 /* ~Few things please me more than to shed the blood of sanctimonious hypocrites. Death to them all!~ */
 		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", 1)
 		~
 			
 		== ANOMENJ
@@ -1846,7 +1846,7 @@ CHAIN
 		~
 		@35 /* ~They have betrayed not only us, but their god, and everything they believed in. Let us end their misery and put them to the sword.~ */
 		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", 1)
 		~
 		
 		== MAZZYJ
@@ -1855,7 +1855,7 @@ CHAIN
 		~
 		@36 /* ~We must choose life. Yes, they've wronged us, but what's done is done. What will killing these priests accomplish?~  */
 		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", -1)
 		~
 		
 		== VICONIJ
@@ -1864,7 +1864,7 @@ CHAIN
 		~
 		@38 /* ~Helmites hunt my kind for sport on the surface. I welcome the opportunity to help even the score.~  */
 		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", -1)
 		~
 		
 		== NALIAJ
@@ -1873,7 +1873,7 @@ CHAIN
 		~
 		@37 /* ~We must choose life. Yes, they've wronged us, but what's done is done. What will killing these priests accomplish?~  */
 		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", -1)
 		~
 		
 		== CERNDJ
@@ -1882,7 +1882,7 @@ CHAIN
 		~
 		@40 /* ~Their foolishness could have easily led to the world being utterly ravaged at the hands of Demogorgon. As much as it pains me to say it, death is the only fitting punishment for these scoundrels.~  */
 		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", 1)
 		~
 		
 		== KELDORJ
@@ -1891,7 +1891,7 @@ CHAIN
 		~
 		@288 /* ~These false priests deserve death, yet... part of me wishes that they are one day able to redeem themselves in the eyes of Helm, and they cannot do that if they are dead. I will support whatever you decide.~ */
 		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", -1)
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", -1)
 		~
 		
 		== EDWINJ
@@ -1900,7 +1900,7 @@ CHAIN
 		~
 		@31 /* ~They must be punished! (Yes, severely!) Die, die, die, die, DIE!~ */
 		DO ~
-			IncrementGlobal("XA_OdrenShouldDie", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", 1)
 		~
 END
 ++@41 GOTO XA_OdrenDecision 

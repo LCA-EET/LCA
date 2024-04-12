@@ -7,6 +7,6 @@ THEN
 		LeaveAreaLUA("XAKIDNAP","",[375.310],NE)
 		ActionOverride("XACORWIN", ChangeAIScript("XACORSCR", OVERRIDE))
 		ActionOverride("XACORWIN",LeaveAreaLUA("XAKIDNAP","",[420.266],NW))
-		SetGlobal("XA_RohmaKidnapped", "GLOBAL", 1)
+		SetGlobal("XA_LC_RohmaKidnapped", "GLOBAL", 1)
 		StartCutScene("XAKIDNAP")
 END

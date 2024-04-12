@@ -6,7 +6,7 @@ THEN
 END
 
 IF
-	GlobalLT("XA_IllaseraDead", "GLOBAL", 1)
+	GlobalLT("XA_LC_IllaseraDead", "GLOBAL", 1)
 	Dead("illasera")
 	OR(2)
 		Dead("ZILFGT01")
@@ -26,12 +26,12 @@ IF
 THEN
 	RESPONSE #100
 		CreateCreature("XABENO2", [760.630], SE)
-		SetGlobal("XA_IllaseraDead", "GLOBAL", 1)
+		SetGlobal("XA_LC_IllaseraDead", "GLOBAL", 1)
 		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
 END
 
 IF
-	GlobalLT("XA_IllaseraDead", "GLOBAL", 1)
+	GlobalLT("XA_LC_IllaseraDead", "GLOBAL", 1)
 	Dead("illasera")
 	OR(2)
 		Dead("ZILFGT01")
@@ -50,7 +50,7 @@ IF
 THEN
 	RESPONSE #100
 		CreateCreature("XABENO2", [760.630], SE)
-		SetGlobal("XA_IllaseraDead", "GLOBAL", 1)
+		SetGlobal("XA_LC_IllaseraDead", "GLOBAL", 1)
 		ActionOverride(Player1, StartDialog("Player1", Player1))
 END
 

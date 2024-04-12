@@ -1,8 +1,8 @@
 BEGIN ~XAWVBART~
 
 IF ~
-	Global("XA_RefugeeQuestComplete", "GLOBAL", 1)
-	Global("XA_MaxFriendly_Corwin", "GLOBAL", 1)
+	Global("XA_LC_RefugeeQuestComplete", "GLOBAL", 1)
+	Global("XA_LC_MaxFriendly_Corwin", "GLOBAL", 1)
 	IsGabber("XACORWIN")
 ~ THEN BEGIN XA_WinstonGuilty_Corwin
 	SAY @75 /* ~Nice to see you again, Captain. What can I get you?~ */
@@ -12,8 +12,8 @@ IF ~
 END
 
 IF ~
-	Global("XA_RefugeeQuestComplete", "GLOBAL", 1)
-	Global("XA_MaxFriendly_Charname", "GLOBAL", 1)
+	Global("XA_LC_RefugeeQuestComplete", "GLOBAL", 1)
+	Global("XA_LC_MaxFriendly_Charname", "GLOBAL", 1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_WinstonGuilty
 	SAY @68 /*~<CHARNAME> - What can I get ya?~ */
@@ -62,13 +62,13 @@ END
 IF ~
 	IsGabber("XACORWIN")
 	TimeOfDay(NIGHT)
-	!Global("XA_CorwinMetMax", "GLOBAL", 1)
+	!Global("XA_LC_CorwinMetMax", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinGreet_Night
 	SAY @27 /*~Evenin' officer.~*/
 	
 	IF ~~ THEN	
 	DO ~
-		SetGlobal("XA_CorwinMetMax", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinMetMax", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinGreet //OK
 END
@@ -76,42 +76,42 @@ END
 IF ~
 	IsGabber("XACORWIN")
 	!TimeOfDay(NIGHT)
-	!Global("XA_CorwinMetMax", "GLOBAL", 1)
+	!Global("XA_LC_CorwinMetMax", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinGreet_Day
 	SAY @28 /*~Good day, officer.~*/
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_CorwinMetMax", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinMetMax", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinGreet //OK
 END
 
 IF ~
 	IsGabber("XACORWIN")
-	Global("XA_CorwinMetMax", "GLOBAL", 1)
+	Global("XA_LC_CorwinMetMax", "GLOBAL", 1)
 ~ THEN BEGIN XA_AlreadySpokeToCorwin
 	SAY @51 /*~Always a pleasure to see you, Captain. What can I get for you?~*/
 	
 	IF ~~ THEN EXTERN XACORWIJ CorwinWantsNothingChain //OK
 	
 	IF ~
-		!Global("XA_AskedBartenderManifest", "GLOBAL", 1)
+		!Global("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 		PartyHasItem("XAMANFST")
-		!Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
+		!Global("XA_LC_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_AskedBartenderManifest", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 	~	
 	EXTERN XACORWIJ CorwinBartenderSlaverChain_DoesntKnowName //OK
 	
 	IF ~
-		!Global("XA_AskedBartenderManifest", "GLOBAL", 1)
+		!Global("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 		PartyHasItem("XAMANFST")
-		Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
+		Global("XA_LC_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_AskedBartenderManifest", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 	~	
 	EXTERN XACORWIJ CorwinBartenderSlaverChain_KnowsName //OK
 END
@@ -120,10 +120,10 @@ IF ~~ THEN BEGIN XA_CorwinGreet
 	SAY @29 /* ~It's good to see a new face around here... Can I get you anything?~ */
 	
 	IF ~
-		!Global("XA_CorwinWVDrink", "GLOBAL", 1)
+		!Global("XA_LC_CorwinWVDrink", "GLOBAL", 1)
 	~ THEN 
 	DO ~
-		SetGlobal("XA_CorwinWVDrink", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinWVDrink", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ CorwinBartenderDrinkChain //OK
 END
@@ -134,19 +134,19 @@ IF ~
 	SAY @0 /* ~What can I get 'ya?~ */
 	
 	IF ~
-		!Global("XA_AskedBartenderManifest", "GLOBAL", 1)
+		!Global("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 		PartyHasItem("XAMANFST")
 	~ THEN REPLY @79 /* ~Listen. I have reason to believe that Winston, or someone in his company, is involved in slaver activity.~  */
 	DO ~
-		SetGlobal("XA_AskedBartenderManifest", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 	~
 	GOTO XA_SlaverQuestioning //OK
 	
 	IF ~
-		!Global("XA_AskBartender_Winston", "GLOBAL", 1)
+		!Global("XA_LC_AskBartender_Winston", "GLOBAL", 1)
 	~ THEN REPLY @1 /* ~Information. Tell me about Lord Winston and this company.~ */
 	DO ~
-		SetGlobal("XA_AskBartender_Winston", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskBartender_Winston", "GLOBAL", 1)
 	~
 	GOTO XA_AskBartender_Winston //OK
 
@@ -178,11 +178,11 @@ IF ~~ THEN BEGIN XA_AskBartender_Winston3
 	EXIT
 	
 	IF ~
-		!Global("XA_AskedBartenderManifest", "GLOBAL", 1)
+		!Global("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 		PartyHasItem("XAMANFST")
 	~ THEN REPLY @79 /* ~Listen. I have reason to believe that Winston, or someone in his company, is involved in slaver activity.~  */
 	DO ~
-		SetGlobal("XA_AskedBartenderManifest", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 	~
 	GOTO XA_SlaverQuestioning //OK
 END
@@ -192,7 +192,7 @@ IF ~~ THEN BEGIN XA_WelcomeCharname
 	
 	IF ~~ THEN REPLY @9 /* ~Thanks.~ */
 	DO ~
-		SetGlobal("XA_MaxFriendly_Charname", "GLOBAL", 1)
+		SetGlobal("XA_LC_MaxFriendly_Charname", "GLOBAL", 1)
 	~
 	GOTO XA_WelcomeCharname2 //OK
 END
@@ -201,17 +201,17 @@ IF ~~ THEN BEGIN XA_WelcomeCharname2
 	SAY @11 /* ~Don't mention it. So, what brings you here?~ */
 	
 	IF ~
-		!Global("XA_AskedBartenderManifest", "GLOBAL", 1)
+		!Global("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 		PartyHasItem("XAMANFST")
 	~ THEN REPLY @20 /* ~Listen, Max. I have reason to believe that Winston, or someone in his company, is involved in slaver activity.~  */
 	DO ~
-		SetGlobal("XA_AskedBartenderManifest", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 	~
 	GOTO XA_SlaverQuestioning //OK
 	
 	IF ~~ THEN REPLY @12 /* ~Well, last time I was here it was under some very different circumstances. Why don't you tell me about Lord Winston and his company?~ */
 	DO ~
-		SetGlobal("XA_AskBartender_Winston", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskBartender_Winston", "GLOBAL", 1)
 	~
 	GOTO XA_WelcomeCharname3 //OK
 	
@@ -233,11 +233,11 @@ IF ~~ THEN BEGIN XA_WelcomeCharname4
 	GOTO XA_WelcomeCharnameEnd //OK
 	
 	IF ~
-		!Global("XA_AskedBartenderManifest", "GLOBAL", 1)
+		!Global("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 		PartyHasItem("XAMANFST")
 	~ THEN REPLY @20 /* ~Listen, Max. I have reason to believe that Winston, or someone in his company, is involved in slaver activity.~  */
 	DO ~
-		SetGlobal("XA_AskedBartenderManifest", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 	~
 	GOTO XA_SlaverQuestioning //OK
 END
@@ -249,11 +249,11 @@ IF ~~ THEN BEGIN XA_WelcomeCharnameEnd
 	IF ~~ THEN EXIT
 	
 	IF ~
-		!Global("XA_AskedBartenderManifest", "GLOBAL", 1)
+		!Global("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 		PartyHasItem("XAMANFST")
 	~ THEN REPLY @20 /* ~Listen, Max. I have reason to believe that Winston, or someone in his company, is involved in slaver activity.~  */
 	DO ~
-		SetGlobal("XA_AskedBartenderManifest", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 	~
 	GOTO XA_SlaverQuestioning //OK
 END
@@ -262,15 +262,15 @@ IF ~~ THEN BEGIN XA_NoneOfYourBusiness
 	
 	IF ~
 		PartyHasItem("XAMANFST")
-		!Global("XA_AskedBartenderManifest", "GLOBAL", 1)
+		!Global("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 	~ THEN REPLY @65 /* ~I've reason to suspect that this company is involved in slaver activity.~ */
 	DO ~
-		SetGlobal("XA_AskedBartenderManifest", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 	~
 	GOTO XA_SlaverQuestioning //OK
 	
 	IF ~
-		!Global("XA_AskBartender_Winston", "GLOBAL", 1)
+		!Global("XA_LC_AskBartender_Winston", "GLOBAL", 1)
 	~ THEN REPLY @1 /* ~Information. Tell me about Lord Winston and this company.~ */
 	GOTO XA_AskBartender_Winston
 
@@ -285,12 +285,12 @@ IF ~~ THEN BEGIN XA_SlaverQuestioning
 	SAY @66 /* ~Really? Why do you think that?~ */
 	
 	IF ~ 
-		Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
+		Global("XA_LC_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~ THEN REPLY @23 /* ~While in Athkatla, we freed a girl named Tina Bennett. She was being held captive in a slaver stockade.~*/
 	GOTO XA_SlaverQuestioning2_KnowName //OK
 	
 	IF ~
-		Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
+		Global("XA_LC_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~ THEN REPLY @62 /* ~While in Athkatla, we learned that the children of the refugees from Caelar's crusade were being sold as slaves. We asked the harbor master what he knew, and he told us that Winston and his company had sent refugees to cities up and down the coast, including Athkatla.~*/
 	GOTO XA_SlaverQuestioning2_DoesntKnowName //OK
 END
@@ -322,11 +322,11 @@ IF ~~ THEN BEGIN XA_CorwinBartenderSwitch //OK
 	SAY @42 /* ~I see... and did you? I mean, did you get the one responsible?~ */
 	
 	IF ~
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN EXTERN XACORWIJ XA_CorwinBartenderEnd_Romance //OK
 	
 	IF ~
-		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN EXTERN XACORWIJ XA_CorwinBartenderEnd //OK
 	
 END
@@ -336,22 +336,22 @@ IF ~~ THEN XA_CorwinManifestSwitch_Romance
 	IF ~~ THEN EXIT
 	
 	IF ~
-		!Global("XA_AskedBartenderManifest", "GLOBAL", 1)
+		!Global("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 		PartyHasItem("XAMANFST")
-		!Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
+		!Global("XA_LC_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_AskedBartenderManifest", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 	~	
 	EXTERN XACORWIJ CorwinBartenderSlaverChain_DoesntKnowName //OK
 	
 	IF ~
-		!Global("XA_AskedBartenderManifest", "GLOBAL", 1)
+		!Global("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 		PartyHasItem("XAMANFST")
-		Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
+		Global("XA_LC_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_AskedBartenderManifest", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 	~	
 	EXTERN XACORWIJ CorwinBartenderSlaverChain_KnowsName //OK
 END
@@ -362,22 +362,22 @@ IF ~~ THEN XA_CorwinManifestSwitch_NonRomance
 	IF ~~ THEN EXIT
 	
 	IF ~
-		!Global("XA_AskedBartenderManifest", "GLOBAL", 1)
+		!Global("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 		PartyHasItem("XAMANFST")
-		!Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
+		!Global("XA_LC_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_AskedBartenderManifest", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 	~	
 	EXTERN XACORWIJ CorwinBartenderSlaverChain_DoesntKnowName //OK
 	
 	IF ~
-		!Global("XA_AskedBartenderManifest", "GLOBAL", 1)
+		!Global("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 		PartyHasItem("XAMANFST")
-		Global("XA_LearnedSlaveGirlsName", "GLOBAL", 1)
+		Global("XA_LC_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_AskedBartenderManifest", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
 	~	
 	EXTERN XACORWIJ CorwinBartenderSlaverChain_KnowsName //OK
 END
@@ -409,7 +409,7 @@ END
 CHAIN XACORWIJ CorwinBartenderDrinkChain
 	@31 /* ~I'll have the Berduskan dark wine.~*/
 	DO ~
-		SetGlobal("XA_MaxFriendly_Coriwn", "GLOBAL", 1)
+		SetGlobal("XA_LC_MaxFriendly_Coriwn", "GLOBAL", 1)
 	~
 	== XAWVBART
 	@32 /* ~Mm, good choice. Here you are.~*/
@@ -427,12 +427,12 @@ CHAIN XACORWIJ CorwinBartenderDrinkChain
 	@36 /* ~Amn? The Fist sends officers that far south?~ */
 	== XACORWIJ
 	IF ~
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 	~ 
 	@41 /* ~~Normally, they don't. The <PRO_MANWOMAN> I love was exiled to Amn after being framed for a crime they didn't commit. They needed my help to bring the one responsible to justice.~*/
 	== XACORWIJ
 	IF ~
-		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 	~ 
 	@37 /* ~Normally, they don't. It was a special assignment on behalf of the Dukes...~ */
 END XAWVBART XA_CorwinBartenderSwitch //OK

@@ -27,7 +27,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_TownspersonSupportsHero", "LOCALS", 1)
+	Global("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 ~ THEN BEGIN XA_SupportHero
 	SAY @8 /* ~I knew it! The hero of Baldur's Gate has returned!~ */
 	
@@ -35,7 +35,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_TownspersonHatesHero", "LOCALS", 1)
+	Global("XA_LC_TownspersonHatesHero", "LOCALS", 1)
 ~ THEN BEGIN XA_HatesHero
 	SAY @7 /* ~<CHARNAME> the Bhaalspawn, here? Get away from me, you scoundrel!~ */
 	
@@ -115,8 +115,8 @@ END
 
 IF ~
 	RandomNum(8,6)
-	!Global("XA_TownspersonHatesHero", "LOCALS", 1)
-	!Global("XA_TownspersonSupportsHero", "LOCALS", 1)
+	!Global("XA_LC_TownspersonHatesHero", "LOCALS", 1)
+	!Global("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_6
 	SAY @5 /* ~You there! You look familiar.~   */
@@ -130,7 +130,7 @@ IF ~~ THEN BEGIN XA_6A
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_TownspersonHatesHero", "LOCALS", 1)
+		SetGlobal("XA_LC_TownspersonHatesHero", "LOCALS", 1)
 	~
 	EXIT
 	
@@ -142,8 +142,8 @@ END
 
 IF ~
 	RandomNum(8,7)
-	!Global("XA_TownspersonHatesHero", "LOCALS", 1)
-	!Global("XA_TownspersonSupportsHero", "LOCALS", 1)
+	!Global("XA_LC_TownspersonHatesHero", "LOCALS", 1)
+	!Global("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_7
 	SAY @5 /* ~You there! You look familiar.~   */
@@ -157,7 +157,7 @@ IF ~~ THEN BEGIN XA_7A
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_TownspersonSupportsHero", "LOCALS", 1)
+		SetGlobal("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	~
 	EXIT
 END
@@ -177,7 +177,7 @@ IF ~~ THEN BEGIN XA_CorwinMadXANOBLW1
 		RandomNum(3,1)
 	~ THEN 
 	DO ~
-		SetGlobal("XA_TownspersonSupportsHero", "LOCALS", 1)
+		SetGlobal("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	~
 	EXTERN XACORWIJ XA_CorwinMadEnd1
 	
@@ -185,7 +185,7 @@ IF ~~ THEN BEGIN XA_CorwinMadXANOBLW1
 		RandomNum(3,2)
 	~ THEN 
 	DO ~
-		SetGlobal("XA_TownspersonSupportsHero", "LOCALS", 1)
+		SetGlobal("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	~
 	EXTERN XACORWIJ XA_CorwinMadEnd2
 	
@@ -193,7 +193,7 @@ IF ~~ THEN BEGIN XA_CorwinMadXANOBLW1
 		RandomNum(3,3)
 	~ THEN 
 	DO ~
-		SetGlobal("XA_TownspersonSupportsHero", "LOCALS", 1)
+		SetGlobal("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	~
 	EXTERN XACORWIJ XA_CorwinMadEnd3
 END
@@ -205,7 +205,7 @@ IF ~~ THEN BEGIN XA_CorwinMadXANOBLW2
 		RandomNum(3,1)
 	~ THEN 
 	DO ~
-		SetGlobal("XA_TownspersonSupportsHero", "LOCALS", 1)
+		SetGlobal("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	~
 	EXTERN XACORWIJ XA_CorwinMadEnd1
 	
@@ -213,7 +213,7 @@ IF ~~ THEN BEGIN XA_CorwinMadXANOBLW2
 		RandomNum(3,2)
 	~ THEN 
 	DO ~
-		SetGlobal("XA_TownspersonSupportsHero", "LOCALS", 1)
+		SetGlobal("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	~
 	EXTERN XACORWIJ XA_CorwinMadEnd2
 	
@@ -221,7 +221,7 @@ IF ~~ THEN BEGIN XA_CorwinMadXANOBLW2
 		RandomNum(3,3)
 	~ THEN 
 	DO ~
-		SetGlobal("XA_TownspersonSupportsHero", "LOCALS", 1)
+		SetGlobal("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	~
 	EXTERN XACORWIJ XA_CorwinMadEnd3
 END

@@ -13,15 +13,15 @@ END
 		Global("StartEndBios","AR6200",1) 
 		OR(2)
 			InParty("XACORWIN")
-			Global("XA_CorwinPregnant", "GLOBAL", 11)
-		Global("XA_CorwinBio", "GLOBAL", 0)
+			Global("XA_LC_CorwinPregnant", "GLOBAL", 11)
+		Global("XA_LC_CorwinBio", "GLOBAL", 0)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Gender(Player1, MALE)
 		Global("PlayerChoseEssence","GLOBAL",0)
-		Global("XA_PortraitChange_LCA", "GLOBAL", 0)
+		Global("XA_LC_PortraitChange_LCA", "GLOBAL", 0)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_CorwinBio", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBio", "GLOBAL", 1)
 			TextScreen("XACORND1")
 			SmallWait(1)
 			Continue()
@@ -32,14 +32,14 @@ END
 	IF 
 		Global("StartEndBios","AR6200",1) 
 		InParty("XACORWIN")
-		Global("XA_CorwinBio", "GLOBAL", 0)
+		Global("XA_LC_CorwinBio", "GLOBAL", 0)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Gender(Player1, FEMALE)
 		Global("PlayerChoseEssence","GLOBAL",0)
-		Global("XA_PortraitChange_LCA", "GLOBAL", 0)
+		Global("XA_LC_PortraitChange_LCA", "GLOBAL", 0)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_CorwinBio", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBio", "GLOBAL", 1)
 			TextScreen("XACORND2")
 			SmallWait(1)
 			Continue()
@@ -51,15 +51,15 @@ END
 		Global("StartEndBios","AR6200",1) 
 		OR(2)
 			InParty("XACORWIN")
-			Global("XA_CorwinPregnant", "GLOBAL", 11)
-		Global("XA_CorwinBio", "GLOBAL", 0)
+			Global("XA_LC_CorwinPregnant", "GLOBAL", 11)
+		Global("XA_LC_CorwinBio", "GLOBAL", 0)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Gender(Player1, MALE)
 		Global("PlayerChoseEssence","GLOBAL",1)
-		Global("XA_PortraitChange_LCA", "GLOBAL", 0)
+		Global("XA_LC_PortraitChange_LCA", "GLOBAL", 0)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_CorwinBio", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBio", "GLOBAL", 1)
 			TextScreen("XACORND3")
 			SmallWait(1)
 			Continue()
@@ -71,14 +71,14 @@ END
 	IF 
 		Global("StartEndBios","AR6200",1) 
 		InParty("XACORWIN")
-		Global("XA_CorwinBio", "GLOBAL", 0)
+		Global("XA_LC_CorwinBio", "GLOBAL", 0)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Gender(Player1, FEMALE)
 		Global("PlayerChoseEssence","GLOBAL",1)
-		Global("XA_PortraitChange_LCA", "GLOBAL", 0)
+		Global("XA_LC_PortraitChange_LCA", "GLOBAL", 0)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_CorwinBio", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBio", "GLOBAL", 1)
 			TextScreen("XACORND4")
 			SmallWait(1)
 			Continue()
@@ -89,13 +89,13 @@ END
 	IF 
 		Global("StartEndBios","AR6200",1) 
 		InParty("XACORWIN")
-		Global("XA_CorwinBio", "GLOBAL", 0)
+		Global("XA_LC_CorwinBio", "GLOBAL", 0)
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Global("PlayerChoseEssence","GLOBAL",0)
-		Global("XA_PortraitChange_LCA", "GLOBAL", 0)
+		Global("XA_LC_PortraitChange_LCA", "GLOBAL", 0)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_CorwinBio", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBio", "GLOBAL", 1)
 			TextScreen("XACORND5")
 			SmallWait(1)
 			Continue()
@@ -106,13 +106,13 @@ END
 	IF 
 		Global("StartEndBios","AR6200",1) 
 		InParty("XACORWIN")
-		Global("XA_CorwinBio", "GLOBAL", 0)
+		Global("XA_LC_CorwinBio", "GLOBAL", 0)
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Global("PlayerChoseEssence","GLOBAL",1)
-		Global("XA_PortraitChange_LCA", "GLOBAL", 0)
+		Global("XA_LC_PortraitChange_LCA", "GLOBAL", 0)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_CorwinBio", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBio", "GLOBAL", 1)
 			TextScreen("XACORND6")
 			SmallWait(1)
 			Continue()
@@ -126,15 +126,15 @@ END
 		Global("StartEndBios","AR6200",1)
 		OR(2)
 			InParty("XACORWIN")
-			Global("XA_CorwinPregnant", "GLOBAL", 11)
-		Global("XA_CorwinBio", "GLOBAL", 0)
+			Global("XA_LC_CorwinPregnant", "GLOBAL", 11)
+		Global("XA_LC_CorwinBio", "GLOBAL", 0)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Gender(Player1, MALE)
 		Global("PlayerChoseEssence","GLOBAL",0)
-		Global("XA_PortraitChange_LCA", "GLOBAL", 1)
+		Global("XA_LC_PortraitChange_LCA", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_CorwinBio", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBio", "GLOBAL", 1)
 			TextScreen("XALCAND1")
 			SmallWait(1)
 			Continue()
@@ -145,14 +145,14 @@ END
 	IF 
 		Global("StartEndBios","AR6200",1) 
 		InParty("XACORWIN")
-		Global("XA_CorwinBio", "GLOBAL", 0)
+		Global("XA_LC_CorwinBio", "GLOBAL", 0)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Gender(Player1, FEMALE)
 		Global("PlayerChoseEssence","GLOBAL",0)
-		Global("XA_PortraitChange_LCA", "GLOBAL", 1)
+		Global("XA_LC_PortraitChange_LCA", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_CorwinBio", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBio", "GLOBAL", 1)
 			TextScreen("XALCAND2")
 			SmallWait(1)
 			Continue()
@@ -164,15 +164,15 @@ END
 		Global("StartEndBios","AR6200",1) 
 		OR(2)
 			InParty("XACORWIN")
-			Global("XA_CorwinPregnant", "GLOBAL", 11)
-		Global("XA_CorwinBio", "GLOBAL", 0)
+			Global("XA_LC_CorwinPregnant", "GLOBAL", 11)
+		Global("XA_LC_CorwinBio", "GLOBAL", 0)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Gender(Player1, MALE)
 		Global("PlayerChoseEssence","GLOBAL",1)
-		Global("XA_PortraitChange_LCA", "GLOBAL", 1)
+		Global("XA_LC_PortraitChange_LCA", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_CorwinBio", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBio", "GLOBAL", 1)
 			TextScreen("XALCAND3")
 			SmallWait(1)
 			Continue()
@@ -184,14 +184,14 @@ END
 	IF 
 		Global("StartEndBios","AR6200",1) 
 		InParty("XACORWIN")
-		Global("XA_CorwinBio", "GLOBAL", 0)
+		Global("XA_LC_CorwinBio", "GLOBAL", 0)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Gender(Player1, FEMALE)
 		Global("PlayerChoseEssence","GLOBAL",1)
-		Global("XA_PortraitChange_LCA", "GLOBAL", 1)
+		Global("XA_LC_PortraitChange_LCA", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_CorwinBio", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBio", "GLOBAL", 1)
 			TextScreen("XALCAND4")
 			SmallWait(1)
 			Continue()
@@ -202,13 +202,13 @@ END
 	IF 
 		Global("StartEndBios","AR6200",1) 
 		InParty("XACORWIN")
-		Global("XA_CorwinBio", "GLOBAL", 0)
+		Global("XA_LC_CorwinBio", "GLOBAL", 0)
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Global("PlayerChoseEssence","GLOBAL",0)
-		Global("XA_PortraitChange_LCA", "GLOBAL", 1)
+		Global("XA_LC_PortraitChange_LCA", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_CorwinBio", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBio", "GLOBAL", 1)
 			TextScreen("XALCAND5")
 			SmallWait(1)
 			Continue()
@@ -219,13 +219,13 @@ END
 	IF 
 		Global("StartEndBios","AR6200",1) 
 		InParty("XACORWIN")
-		Global("XA_CorwinBio", "GLOBAL", 0)
+		Global("XA_LC_CorwinBio", "GLOBAL", 0)
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Global("PlayerChoseEssence","GLOBAL",1)
-		Global("XA_PortraitChange_LCA", "GLOBAL", 1)
+		Global("XA_LC_PortraitChange_LCA", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_CorwinBio", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBio", "GLOBAL", 1)
 			TextScreen("XALCAND6")
 			SmallWait(1)
 			Continue()
@@ -239,10 +239,10 @@ END
 IF 
 	Global("StartEndBios","AR6200",1) 
 	InParty("XACAELAR")
-	Global("XA_CaelarBio", "GLOBAL", 0)
+	Global("XA_LC_CaelarBio", "GLOBAL", 0)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CaelarBio", "GLOBAL", 1)
+		SetGlobal("XA_LC_CaelarBio", "GLOBAL", 1)
 		TextScreen("XACAEEND")
 		SmallWait(1)
 		Continue()

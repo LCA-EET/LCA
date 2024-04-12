@@ -1,7 +1,7 @@
 BEGIN ~XACC4~
 
 IF ~
-	Global("XA_TentCS", "GLOBAL", 1)
+	Global("XA_LC_TentCS", "GLOBAL", 1)
 ~ THEN BEGIN XA_TentCSStart
 	SAY @0 /* ~(You wake to the sound of rustling papers. It's Captain Corwin reviewing some paperwork at a makeshift desk. She hears you stirring, and turns to you.)~*/
 	
@@ -9,7 +9,7 @@ IF ~
 	
 	IF ~~ THEN REPLY @2 /* ~It's fine. I wasn't getting much sleep, anyway. What are you working on?~ */
 	DO ~
-		SetGlobal("XA_TentCS", "GLOBAL", 2)
+		SetGlobal("XA_LC_TentCS", "GLOBAL", 2)
 	~
 	GOTO XA_TentCS_DutyRoster
 END
@@ -22,7 +22,7 @@ IF ~~ THEN BEGIN XA_TentCS_DutyRoster
 	
 	IF ~~ THEN REPLY @35  /*~I'll pass. Back to bed for me. See you tomorrow, Captain.~ */
 	DO ~
-		SetGlobal("XA_TentCS", "GLOBAL", 3)
+		SetGlobal("XA_LC_TentCS", "GLOBAL", 3)
 	~
 	GOTO XA_Skipped
 END
@@ -38,20 +38,20 @@ IF ~~ THEN BEGIN XA_TentCS_DutyRoster2
 	EXIT
 	
 	IF ~
-		Global("XA_XACC4_Debug","GLOBAL", 1)
+		Global("XA_LC_XACC4_Debug","GLOBAL", 1)
 	~ THEN
 	EXIT
 	
 END
 
 IF ~
-	Global("XA_TentCS", "GLOBAL", 2)
+	Global("XA_LC_TentCS", "GLOBAL", 2)
 ~ THEN BEGIN XA_TestCS2Start
 	SAY @6 /* ~Have you ever seen one of these before? They cover everything from site logistics, to sentry duty, scouting parties, and everything in between.~ */
 	
 	IF ~~ THEN REPLY @7 /* ~No, I haven't. Can you walk me through it?~ */
 	DO ~
-		SetGlobal("XA_TentCS", "GLOBAL", 3)
+		SetGlobal("XA_LC_TentCS", "GLOBAL", 3)
 	~
 	GOTO XA_TentCS_Sentry
 END
@@ -142,7 +142,7 @@ IF ~~ THEN BEGIN XA_Flattering
 	EXIT
 	
 	IF ~
-		Global("XA_XACC4_Debug","GLOBAL", 1)
+		Global("XA_LC_XACC4_Debug","GLOBAL", 1)
 	~ THEN
 	DO ~
 		AddJournalEntry(@15, INFO)
@@ -172,7 +172,7 @@ IF ~~ THEN BEGIN XA_Single3
 	EXIT
 	
 	IF ~
-		Global("XA_XACC4_Debug","GLOBAL", 1)
+		Global("XA_LC_XACC4_Debug","GLOBAL", 1)
 	~ THEN
 	DO ~
 		AddJournalEntry(@15, INFO)
@@ -197,7 +197,7 @@ IF ~~ THEN BEGIN XA_TakeBreak
 	EXIT
 	
 	IF ~
-		Global("XA_XACC4_Debug","GLOBAL", 1)
+		Global("XA_LC_XACC4_Debug","GLOBAL", 1)
 	~ THEN
 	DO ~
 		AddJournalEntry(@15, INFO)
@@ -220,7 +220,7 @@ IF ~~ THEN BEGIN XA_TentCS_END
 	EXIT
 	
 	IF ~
-		Global("XA_XACC4_Debug","GLOBAL", 1)
+		Global("XA_LC_XACC4_Debug","GLOBAL", 1)
 	~ THEN
 	DO ~
 		AddJournalEntry(@15, INFO)

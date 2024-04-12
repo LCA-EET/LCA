@@ -53,7 +53,7 @@
 	BEGIN 0 1 END
 	BEGIN 0 END
 	~
-		SetGlobal("XA_Trial","GLOBAL",1)
+		SetGlobal("XA_LC_Trial","GLOBAL",1)
 	~
 //}
 
@@ -120,7 +120,7 @@ APPEND BDIMOEN
 		
 		IF ~~ THEN REPLY @3 /* ~Thank you, Imoen. (Read the letter now).~ */
 		DO ~
-			SetGlobal("XA_ReadCorwinLetter", "GLOBAL", 1)
+			SetGlobal("XA_LC_ReadCorwinLetter", "GLOBAL", 1)
 			ActionOverride(Player1, CreateCreature("XACORLTR", [-1.-1], S))
 		~
 		EXIT
@@ -176,14 +176,14 @@ ADD_TRANS_ACTION BDCORWIJ
 BEGIN 235 END
 BEGIN 0 1 3 END
 ~
-	SetGlobal("XA_ToldTruthBhaal", "GLOBAL", 1)
+	SetGlobal("XA_LC_ToldTruthBhaal", "GLOBAL", 1)
 ~
 
 ADD_TRANS_ACTION BDCORWIJ  
 BEGIN 245 END
 BEGIN 0 1 END
 ~
-	SetGlobal("XA_ToldTruthBhaal", "GLOBAL", 1)
+	SetGlobal("XA_LC_ToldTruthBhaal", "GLOBAL", 1)
 ~
 
 ALTER_TRANS BDCORWIJ
@@ -201,19 +201,19 @@ END
 
 APPEND BDCORWIJ
 	IF ~
-		Global("XA_ProficiencyTalk", "GLOBAL", 4)
+		Global("XA_LC_ProficiencyTalk", "GLOBAL", 4)
 	~ THEN BEGIN XA_ProficiencyTalk6
 		SAY @8 /*~Not bad... You're a quick learner, <CHARNAME>.~ [XA100129]*/
 		
 		IF ~~ THEN REPLY @9 /* ~Well, it helps that you're an excellent instructor. The Fist is fortunate to have you.~ */
 		DO ~
-			SetGlobal("XA_ProficiencyTalk", "GLOBAL", 5)
+			SetGlobal("XA_LC_ProficiencyTalk", "GLOBAL", 5)
 		~
 		GOTO XA_ProficiencyTalk7
 		
 		IF ~~ THEN REPLY @10 /* ~I appreciate the help, Captain.~ */
 		DO ~
-			SetGlobal("XA_ProficiencyTalk", "GLOBAL", 5)
+			SetGlobal("XA_LC_ProficiencyTalk", "GLOBAL", 5)
 		~
 		GOTO XA_ProficiencyTalk7
 	END
@@ -224,7 +224,7 @@ APPEND BDCORWIJ
 		IF ~~ THEN REPLY @12  /* ~Right. Let's go.~ */
 		DO ~
 			ChangeStat(Player1, XP, 5000, ADD)
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		EXIT
 		
@@ -245,13 +245,13 @@ APPEND BDCORWIJ
 		IF ~~ THEN
 		DO ~
 			ChangeStat(Player1, XP, 5000, ADD)
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		EXIT
 	END
 
 	IF ~
-		Global("XA_ProficiencyTalk", "GLOBAL", 3)
+		Global("XA_LC_ProficiencyTalk", "GLOBAL", 3)
 	~ THEN BEGIN XA_ProficiencyTalk4
 		SAY @16 /*~(She takes hold of your hand and traces your palm line with her finger.)~*/
 		
@@ -276,7 +276,7 @@ APPEND BDCORWIJ
 		SAY @23 /*~Good. Now try again.~*/
 		
 		IF ~~ THEN DO ~
-			SetGlobal("XA_ProficiencyTalk", "GLOBAL", 4)
+			SetGlobal("XA_LC_ProficiencyTalk", "GLOBAL", 4)
 			StartCutSceneMode()
 			StartCutScene("XALBPRO2")
 		~
@@ -284,25 +284,25 @@ APPEND BDCORWIJ
 	END
 
 	IF ~
-		Global("XA_LCA_ProficiencyTalk", "GLOBAL", 1)
+		Global("XA_LC_A_ProficiencyTalk", "GLOBAL", 1)
 	~ THEN BEGIN XA_ProficiencyTalk
 		SAY @24 /* ~<CHARNAME>. A word?~ */
 		
 		IF ~~ THEN REPLY @25 /*~Of course. What can I do for you, Captain?~*/
 		DO ~
-			SetGlobal("XA_LCA_ProficiencyTalk", "GLOBAL", 2)
+			SetGlobal("XA_LC_A_ProficiencyTalk", "GLOBAL", 2)
 		~
 		GOTO XA_ProficiencyTalk2
 		
 		IF ~~ THEN REPLY @26 /*~What is it?~*/
 		DO ~
-			SetGlobal("XA_LCA_ProficiencyTalk", "GLOBAL", 2)
+			SetGlobal("XA_LC_A_ProficiencyTalk", "GLOBAL", 2)
 		~
 		GOTO XA_ProficiencyTalk2
 		
 		IF ~~ THEN REPLY @27 /*~Another one? Can't you see that I'm busy?~*/
 		DO ~
-			SetGlobal("XA_LCA_ProficiencyTalk", "GLOBAL", 2)
+			SetGlobal("XA_LC_A_ProficiencyTalk", "GLOBAL", 2)
 		~
 		GOTO XA_ProficiencyTalkEnd
 	END

@@ -5,7 +5,7 @@ THEN
 		ClearAllActions()
 		StartCutSceneMode()
 		SetCutSceneLite(TRUE)
-		SetGlobal("XA_XACS15Cutscene", "GLOBAL", 2)
+		SetGlobal("XA_LC_XACS15Cutscene", "GLOBAL", 2)
 		CutSceneId("XACORWIN")
 		ActionOverride("XANEOMA", FaceObject("XACORWIN"))
 		SmallWait(5)

@@ -1,15 +1,15 @@
 IF
-	GlobalGT("XA_TM_ArcheryChallenge", "GLOBAL", 0)
-	!Global("XA_2000_MapNote", "AR2000", 1)
+	GlobalGT("XA_LC_TM_ArcheryChallenge", "GLOBAL", 0)
+	!Global("XA_LC_2000_MapNote", "AR2000", 1)
 THEN
 	RESPONSE #100
 		AddMapNote([3463.2123],@0)
-		SetGlobal("XA_2000_MapNote", "AR2000", 1)
+		SetGlobal("XA_LC_2000_MapNote", "AR2000", 1)
 		Continue()
 END
 
 IF
-	GlobalGT("XA_TM_ArcheryChallenge", "GLOBAL", 0)
+	GlobalGT("XA_LC_TM_ArcheryChallenge", "GLOBAL", 0)
 	TimeOfDay(DAY)
 	!Dead("trhmer01")
 	!Dead("celogan")
@@ -24,54 +24,54 @@ END
 IF
 	Global("MakeStatue","GLOBAL",1)
 	Name("XACORWIN", Player2)
-	!Global("XA_CorStatue", "MYAREA", 1)
+	!Global("XA_LC_CorStatue", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CorStatue", "MYAREA", 1)
-		SetGlobal("XA_CorwinStatue", "GLOBAL", 2)
+		SetGlobal("XA_LC_CorStatue", "MYAREA", 1)
+		SetGlobal("XA_LC_CorwinStatue", "GLOBAL", 2)
 		Continue()
 END
 
 IF
 	Global("MakeStatue","GLOBAL",1)
 	Name("XACORWIN", Player3)
-	!Global("XA_CorStatue", "MYAREA", 1)
+	!Global("XA_LC_CorStatue", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CorStatue", "MYAREA", 1)
-		SetGlobal("XA_CorwinStatue", "GLOBAL", 3)
+		SetGlobal("XA_LC_CorStatue", "MYAREA", 1)
+		SetGlobal("XA_LC_CorwinStatue", "GLOBAL", 3)
 		Continue()
 END
 
 IF
 	Global("MakeStatue","GLOBAL",1)
 	Name("XACORWIN", Player4)
-	!Global("XA_CorStatue", "MYAREA", 1)
+	!Global("XA_LC_CorStatue", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CorStatue", "MYAREA", 1)
-		SetGlobal("XA_CorwinStatue", "GLOBAL", 4)
+		SetGlobal("XA_LC_CorStatue", "MYAREA", 1)
+		SetGlobal("XA_LC_CorwinStatue", "GLOBAL", 4)
 		Continue()
 END
 
 IF
 	Global("MakeStatue","GLOBAL",1)
 	Name("XACORWIN", Player5)
-	!Global("XA_CorStatue", "MYAREA", 1)
+	!Global("XA_LC_CorStatue", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CorStatue", "MYAREA", 1)
-		SetGlobal("XA_CorwinStatue", "GLOBAL", 5)
+		SetGlobal("XA_LC_CorStatue", "MYAREA", 1)
+		SetGlobal("XA_LC_CorwinStatue", "GLOBAL", 5)
 		Continue()
 END
 
 IF
 	Global("MakeStatue","GLOBAL",1)
 	Name("XACORWIN", Player6)
-	!Global("XA_CorStatue", "MYAREA", 1)
+	!Global("XA_LC_CorStatue", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CorStatue", "MYAREA", 1)
-		SetGlobal("XA_CorwinStatue", "GLOBAL", 6)
+		SetGlobal("XA_LC_CorStatue", "MYAREA", 1)
+		SetGlobal("XA_LC_CorwinStatue", "GLOBAL", 6)
 		Continue()
 END

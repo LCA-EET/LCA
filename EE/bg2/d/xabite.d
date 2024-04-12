@@ -88,12 +88,12 @@ END
 
 ADD_TRANS_TRIGGER C6BODHI 5
 ~
-	Global("XA_CorwinBit", "GLOBAL", 0)
+	Global("XA_LC_CorwinBit", "GLOBAL", 0)
 ~
 
 EXTEND_BOTTOM C6BODHI 5
 	IF ~
-		!Global("XA_CorwinBit", "GLOBAL", 0)
+		!Global("XA_LC_CorwinBit", "GLOBAL", 0)
 	~ 
 	THEN DO ~
 		SetGlobal("Death","LOCALS",1)
@@ -121,36 +121,36 @@ END
 
 ADD_TRANS_TRIGGER C6BODHI 20
 ~
-	!GlobalGT("XA_CorwinBit", "GLOBAL", 0)
+	!GlobalGT("XA_LC_CorwinBit", "GLOBAL", 0)
 ~
 
 EXTEND_BOTTOM C6BODHI 20
 	IF ~
-		GlobalGT("XA_CorwinBit", "GLOBAL", 0)
+		GlobalGT("XA_LC_CorwinBit", "GLOBAL", 0)
 	~
 	THEN GOTO XAA4
 END
 
 ADD_TRANS_TRIGGER C6BODHI 4
 ~
-	Global("XA_CorwinBit", "GLOBAL", 0)
+	Global("XA_LC_CorwinBit", "GLOBAL", 0)
 ~
 
 EXTEND_BOTTOM C6BODHI 4
 	IF ~
-		GlobalGT("XA_CorwinBit", "GLOBAL", 0)
+		GlobalGT("XA_LC_CorwinBit", "GLOBAL", 0)
 	~
 	THEN GOTO XAA0
 END
 
 ADD_TRANS_TRIGGER C6BODHI 14
 ~
-	Global("XA_CorwinBit", "GLOBAL", 0)
+	Global("XA_LC_CorwinBit", "GLOBAL", 0)
 ~
 
 EXTEND_BOTTOM C6BODHI 14
 	IF ~
-		GlobalGT("XA_CorwinBit", "GLOBAL", 0)
+		GlobalGT("XA_LC_CorwinBit", "GLOBAL", 0)
 	~
 	THEN GOTO XAA0
 END
@@ -168,7 +168,7 @@ APPEND ~C6BODHI~
 		GOTO XAA1 //Schael is still alive
 		
 		IF ~
-			GlobalGT("XA_CorwinDiedFromBite", "GLOBAL", 0)
+			GlobalGT("XA_LC_CorwinDiedFromBite", "GLOBAL", 0)
 		~ THEN REPLY @7 /* ~I will avenge what you have done to me, Schael and Imoen. You will pay for your crimes.~ */
 		GOTO XAA2 //Schael is dead due to Bodhi's bite
 		

@@ -141,7 +141,7 @@
 		~
 		@162  /* ~Neb is here!? <CHARNAME>, Neb is wanted for the murder of dozens of children in Baldur's Gate! He escaped our custody just weeks before I arrived here. We have to apprehend him!~*/
 		DO ~
-			SetGlobal("XA_CorwinNebAthkatla", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinNebAthkatla", "GLOBAL", 1)
 		~
 	END
 //}
@@ -296,7 +296,7 @@
 		~
 		@19 /* ~She's your sister, for Tymora's sake! You're not going to leave her to escape on her own, right?~*/
 		DO ~
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", -1)
 		~
 	END
 //}
@@ -469,7 +469,7 @@
 		~
 		@39 /* ~Strong, and compassionate. Just two of the many traits I love about you.~ */
 		DO ~
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		
 		== XACORWIB
@@ -479,7 +479,7 @@
 		~
 		@40 /*  ~Strong, and compassionate. Just two of the many traits I admire about you.~ */
 		DO ~
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 	END
 //}
@@ -511,12 +511,12 @@
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_HelpDelon", "GLOBAL", 1)
+			!Global("XA_LC_HelpDelon", "GLOBAL", 1)
 		~
 		@44 /* ~I'm glad you agreed to help. There's a lot of good we can do out here, even if it's not direcly tied to the hunt for the wizard.~ */
 		DO ~
-			SetGlobal("XA_HelpDelon", "GLOBAL", 1)
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			SetGlobal("XA_LC_HelpDelon", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 	END
 
@@ -524,12 +524,12 @@
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_HelpDelon", "GLOBAL", 1)
+			!Global("XA_LC_HelpDelon", "GLOBAL", 1)
 		~
 		@44 /* ~I'm glad you agreed to help. There's a lot of good we can do out here, even though it's not tied to our hunt for the wizard.~ */
 		DO ~
-			SetGlobal("XA_HelpDelon", "GLOBAL", 1)
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			SetGlobal("XA_LC_HelpDelon", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 	END
 
@@ -540,7 +540,7 @@
 		~
 		@45 /* ~Would it kill you to show a little kindness to this child?~ */
 		DO ~
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", -1)
 		~
 		
 		== XACORWIB
@@ -587,7 +587,7 @@
 		~
 		@50 /* ~Anomen - his daughter was innocent! Have you lost your mind!?~ */
 		DO ~
-			SetGlobal("XA_CorwinHatesAnomen", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinHatesAnomen", "GLOBAL", 1)
 		~
 	END
 //}
@@ -612,7 +612,7 @@
 		~
 		@52 /* ~They need our help more than we need their money, love.~*/
 		DO ~
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", -1)
 		~
 		
 		== XACORWIB
@@ -623,7 +623,7 @@
 		~
 		@53 /*  ~They need our help more than we need their money, <CHARNAME>.~*/
 		DO ~
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", -1)
 		~
 		
 		== XACORWIB
@@ -634,7 +634,7 @@
 		~
 		@54 /* ~They need our help, love.~ */
 		DO ~
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", -1)
 		~
 		
 		== XACORWIB
@@ -645,7 +645,7 @@
 		~
 		@55 /*  ~They need our help, <CHARNAME>.~ */
 		DO ~
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", -1)
 		~
 		
 	END
@@ -792,12 +792,12 @@
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+			GlobalLT("XA_LC_CorwinCoverUD", "GLOBAL", 1)
 		~
 		@89 /*  ~(She gives Keldorn a sharp stare.)~ */
 		DO ~
-			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
-			SetGlobalTimer("XA_CorwinScoldKeldornTimer", "GLOBAL", ONE_ROUND)
+			SetGlobal("XA_LC_CorwinCoverUD", "GLOBAL", 1)
+			SetGlobalTimer("XA_LC_CorwinScoldKeldornTimer", "GLOBAL", ONE_ROUND)
 		~
 	END
 
@@ -805,12 +805,12 @@
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
+			GlobalLT("XA_LC_CorwinCoverUD", "GLOBAL", 1)
 		~
 		@89 /*  ~(She gives Keldorn a sharp stare.)~ */
 		DO ~
-			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
-			SetGlobalTimer("XA_CorwinScoldKeldornTimer", "LOCALS", ONE_ROUND)
+			SetGlobal("XA_LC_CorwinCoverUD", "GLOBAL", 1)
+			SetGlobalTimer("XA_LC_CorwinScoldKeldornTimer", "LOCALS", ONE_ROUND)
 		~
 	END
 //}
@@ -859,7 +859,7 @@
 		~
 		@92 /*  ~I hope you made the right decision. I can't shake the feeling that you didn't.~ */
 		DO ~
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", -1)
 		~
 	END
 
@@ -904,7 +904,7 @@
 		~
 		@97 /* ~<CHARNAME> — I don't know what you're up to, but I warn you that I won't take part in this betrayal.~ */
 		DO ~
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", -1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", -1)
 		~
 	END 
 //} 
@@ -942,13 +942,13 @@
 		== VICONIJ
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinPromoted","GLOBAL",1)
+			!Global("XA_LC_CorwinPromoted","GLOBAL",1)
 		~
 		@101 /* ~What about our dear Captain Corwin, then? You seem the type of man that would enjoy having a strong, assertive woman have her way with him.~   */
 		== VICONIJ
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			Global("XA_CorwinPromoted","GLOBAL",1)
+			Global("XA_LC_CorwinPromoted","GLOBAL",1)
 		~
 		@102 /* ~What about our dear Major Corwin, then? You seem the type of man that would enjoy having a strong, authoritative female have her way with him.~   */
 		== VALYGARJ
@@ -978,14 +978,14 @@
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-			!Global("XA_CorwinPromoted", "GLOBAL", 1)
+			!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 		~
 		@107 /* ~I.. I appreciate the advice, Captain. ~*/
 		== VALYGARJ
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-			Global("XA_CorwinPromoted", "GLOBAL", 1)
+			Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 		~
 		@108 /* ~I.. I appreciate the advice, Major. ~*/
 	END
@@ -998,12 +998,12 @@
 		@109 /* ~Don't let her get to you, Valygar. Calm down.~ */
 		== VALYGARJ
 		IF ~
-			!Global("XA_CorwinPromoted", "GLOBAL", 1)
+			!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 		~
 		@110 /*~But she - damnit! No, you're right, Captain.~ */
 		== VALYGARJ
 		IF ~
-			Global("XA_CorwinPromoted", "GLOBAL", 1)
+			Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 		~
 		@111 /*~But she - damnit! No, you're right, Major.~ */
 		== VICONIJ
@@ -1034,11 +1034,11 @@
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			!Global("XA_CorwinHexxatCloak", "GLOBAL", 1)
+			!Global("XA_LC_CorwinHexxatCloak", "GLOBAL", 1)
 		~
 		@116 /* ~You aren't a person at all. You're a monster, a beast. <CHARNAME>, let's not waste anymore time with this creature.~ */
 		DO ~
-			SetGlobal("XA_CorwinHexxatCloak", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinHexxatCloak", "GLOBAL", 1)
 		~
 	END
 
@@ -1364,13 +1364,13 @@
 			== JANJ
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
-				!Global("XA_CorwinPromoted", "GLOBAL", 1)
+				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 			~
 			@62 /* ~Oh, is that the sweet sound of laughter I hear? From our ever-stoic Captain Corwin? Look, she has a lovely smile too! I'm afraid no one would believe me if I told them it happened.~ */
 			== JANJ
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
-				Global("XA_CorwinPromoted", "GLOBAL", 1)
+				Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 			~
 			@63 /* ~Oh, is that the sweet sound of laughter I hear? From our ever-stoic Major Corwin? Look, she has a lovely smile too! I'm afraid no one would believe me if I told them it happened.~ */
 		END
@@ -1416,13 +1416,13 @@
 			== JANJ
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
-				!Global("XA_CorwinPromoted", "GLOBAL",1)
+				!Global("XA_LC_CorwinPromoted", "GLOBAL",1)
 			~
 			@69 /* ~Yes, Captain?~ */
 			== JANJ
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
-				Global("XA_CorwinPromoted", "GLOBAL",1)
+				Global("XA_LC_CorwinPromoted", "GLOBAL",1)
 			~
 			@70 /* ~Yes, Major?~ */
 			== XACORWIB
@@ -1496,15 +1496,15 @@
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
-			GlobalLT("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+			GlobalLT("XA_LC_CorwinCoverUD", "GLOBAL", 1)
+			GlobalLT("XA_LC_CorwinCoverUD_Party", "GLOBAL", 1)
 		~
 		@184  /* ~(She gives Aerie a sharp stare.)~*/
 		DO ~
-			SetGlobal("XA_CorwinScoldAerie", "LOCALS", 1)
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
-			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
-			SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+			SetGlobal("XA_LC_CorwinScoldAerie", "LOCALS", 1)
+			SetGlobal("XA_LC_CorwinCoverUD_Party", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinCoverUD", "GLOBAL", 1)
+			SetGlobalTimer("XA_LC_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
 		~
 	END
 	
@@ -1512,15 +1512,15 @@
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
-			GlobalLT("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+			GlobalLT("XA_LC_CorwinCoverUD", "GLOBAL", 1)
+			GlobalLT("XA_LC_CorwinCoverUD_Party", "GLOBAL", 1)
 		~
 		@185  /* ~(She gives Mazzy a sharp stare.)~*/
 		DO ~
-			SetGlobal("XA_CorwinScoldMazzy", "LOCALS", 1)
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
-			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
-			SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+			SetGlobal("XA_LC_CorwinScoldMazzy", "LOCALS", 1)
+			SetGlobal("XA_LC_CorwinCoverUD_Party", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinCoverUD", "GLOBAL", 1)
+			SetGlobalTimer("XA_LC_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
 		~
 	END
 	
@@ -1528,15 +1528,15 @@
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
-			GlobalLT("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+			GlobalLT("XA_LC_CorwinCoverUD", "GLOBAL", 1)
+			GlobalLT("XA_LC_CorwinCoverUD_Party", "GLOBAL", 1)
 		~
 		@186  /* ~(She gives Keldorn a sharp stare.)~*/
 		DO ~
-			SetGlobal("XA_CorwinScoldKeldorn", "LOCALS", 1)
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
-			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
-			SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+			SetGlobal("XA_LC_CorwinScoldKeldorn", "LOCALS", 1)
+			SetGlobal("XA_LC_CorwinCoverUD_Party", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinCoverUD", "GLOBAL", 1)
+			SetGlobalTimer("XA_LC_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
 		~
 	END
 	
@@ -1544,15 +1544,15 @@
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			GlobalLT("XA_CorwinCoverUD", "GLOBAL", 1)
-			GlobalLT("XA_CorwinCoverUD_Party", "GLOBAL", 1)
+			GlobalLT("XA_LC_CorwinCoverUD", "GLOBAL", 1)
+			GlobalLT("XA_LC_CorwinCoverUD_Party", "GLOBAL", 1)
 		~
 		@187  /* ~(She gives Jan a sharp stare.)~*/
 		DO ~
-			SetGlobal("XA_CorwinScoldJan", "LOCALS", 1)
-			SetGlobal("XA_CorwinCoverUD_Party", "GLOBAL", 1)
-			SetGlobal("XA_CorwinCoverUD", "GLOBAL", 1)
-			SetGlobalTimer("XA_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
+			SetGlobal("XA_LC_CorwinScoldJan", "LOCALS", 1)
+			SetGlobal("XA_LC_CorwinCoverUD_Party", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinCoverUD", "GLOBAL", 1)
+			SetGlobalTimer("XA_LC_CorwinScoldPartyTimer", "LOCALS", ONE_ROUND)
 		~
 	END
 //}
@@ -1670,14 +1670,14 @@
 			== BNALIA
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
-				!Global("XA_CorwinPromoted", "GLOBAL", 1)
+				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 			~  
 			@123 /* ~Perhaps, Captain, but you can't deny the negative effects these establishments have on the less fortunate among us.~ */
 			
 			== BNALIA
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
-				Global("XA_CorwinPromoted", "GLOBAL", 1)
+				Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 			~  
 			@124 /* ~Perhaps, Captain, but you can't deny the negative effects these establishments have on the less fortunate among us.~ */
 		END 

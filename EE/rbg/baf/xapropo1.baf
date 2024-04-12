@@ -4,7 +4,7 @@ THEN
 	RESPONSE #100
 		CutSceneId(Player1)
 		FadeFromColor([30.0],0)
-		PlaySong(146)
+		//PlaySong(146)
 		Wait(3)
 		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
 		Wait(1)

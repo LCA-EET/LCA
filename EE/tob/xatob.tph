@@ -4,6 +4,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/baf~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 
 //{ Script Extensions
+	EXTEND_TOP ~xabaltob.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalamu.baf~
 	EXTEND_TOP ~xabaltob.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalegg.baf~
 	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%/tob/baf/xabaltob.baf~
 	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%/tob/baf/xachfight.baf~

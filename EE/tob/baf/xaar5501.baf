@@ -1,5 +1,5 @@
 IF 
-	GlobalTimerExpired("XA_HamzaLeaveTimer", "GLOBAL")
+	GlobalTimerExpired("XA_LC_HamzaLeaveTimer", "GLOBAL")
 	InMyArea("XAHAMZA")
 THEN
 	RESPONSE #100
@@ -8,13 +8,13 @@ THEN
 END
 
 IF
-	!Global("XA_HamzaSpawn", "GLOBAL", 1)
+	!Global("XA_LC_HamzaSpawn", "GLOBAL", 1)
 	!InMyArea("XAHAMZA")
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		CreateCreature("XAHAMZA", [340.435], NW)
-		SetGlobal("XA_HamzaSpawn", "GLOBAL", 1)
+		SetGlobal("XA_LC_HamzaSpawn", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 		Continue()
 END

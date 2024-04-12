@@ -8,41 +8,41 @@ THEN
 END
 
 IF 
-	GlobalLT("XA_CorwinInKanaglym", "GLOBAL",1)
+	GlobalLT("XA_LC_CorwinInKanaglym", "GLOBAL",1)
 	IsValidForPartyDialogue("Corwin")
 	Dead("bdkherr")
 THEN
 	RESPONSE #100
-		SetGlobal("XA_CorwinInKanaglym", "GLOBAL",1)
+		SetGlobal("XA_LC_CorwinInKanaglym", "GLOBAL",1)
 		Continue()
 END
 
 IF 
-	GlobalLT("XA_ViconiaInKanaglym", "GLOBAL",1)
+	GlobalLT("XA_LC_ViconiaInKanaglym", "GLOBAL",1)
 	IsValidForPartyDialogue("Viconia")
 	Dead("bdkherr")
 THEN
 	RESPONSE #100
-		SetGlobal("XA_ViconiaInKanaglym", "GLOBAL",1)
+		SetGlobal("XA_LC_ViconiaInKanaglym", "GLOBAL",1)
 		Continue()
 END
 
 IF 
-	GlobalLT("XA_JaheiraInKanaglym", "GLOBAL",1)
+	GlobalLT("XA_LC_JaheiraInKanaglym", "GLOBAL",1)
 	IsValidForPartyDialogue("Jaheira")
 	Dead("bdkherr")
 THEN
 	RESPONSE #100
-		SetGlobal("XA_JaheiraInKanaglym", "GLOBAL",1)
+		SetGlobal("XA_LC_JaheiraInKanaglym", "GLOBAL",1)
 		Continue()
 END
 
 IF 
-	GlobalLT("XA_DornInKanaglym", "GLOBAL",1)
+	GlobalLT("XA_LC_DornInKanaglym", "GLOBAL",1)
 	IsValidForPartyDialogue("Dorn")
 	Dead("bdkherr")
 THEN
 	RESPONSE #100
-		SetGlobal("XA_DornInKanaglym", "GLOBAL",1)
+		SetGlobal("XA_LC_DornInKanaglym", "GLOBAL",1)
 		Continue()
 END

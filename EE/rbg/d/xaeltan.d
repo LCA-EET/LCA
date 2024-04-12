@@ -1,7 +1,7 @@
 APPEND XAELTAN
 
 	IF ~
-		Global("XA_ByeRohma", "GLOBAL", 1)
+		Global("XA_LC_ByeRohma", "GLOBAL", 1)
 	~ THEN BEGIN XA_Evening
 		SAY @25 /* ~I'm quite busy at the moment - come and see me in the morning.~ */
 		
@@ -10,13 +10,13 @@ APPEND XAELTAN
 
 
 	IF ~
-		Global("XA_RohmaSaved", "GLOBAL", 2)
+		Global("XA_LC_RohmaSaved", "GLOBAL", 2)
 	~ THEN BEGIN XA_SaradushDiscussion
 		SAY @2 /* ~Good. You're here. Forgive me, but there is no time for the usual pleasantries.~*/
 		
 		IF ~~ THEN 
 		DO ~
-			SetGlobal("XA_RohmaSaved", "GLOBAL", 3)
+			SetGlobal("XA_LC_RohmaSaved", "GLOBAL", 3)
 		~
 		EXTERN XABELT XA_SaradushDiscussionChain
 	END
@@ -28,12 +28,12 @@ APPEND XAELTAN
 		GOTO XA_SaradushDiscussion3
 		
 		IF ~
-			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @15 /* ~You needn't ask. I will go and make the Five - four, now - pay for threatening the Major's family.~  */
 		GOTO XA_SaradushDiscussion3
 		
 		IF ~
-			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @16 /*  ~You needn't ask. I will go and make the Five - four, now - pay for threatening my loved ones.~   */
 		GOTO XA_SaradushDiscussion3
 		

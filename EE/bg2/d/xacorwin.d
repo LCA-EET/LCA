@@ -23,7 +23,7 @@ END
 //{ Dialog I-1
 IF ~
 	Global("XA_LC_CorwinContinue", "GLOBAL", 2) 
-	GlobalLT("XA_CorwinReunited", "GLOBAL", 1)
+	GlobalLT("XA_LC_CorwinReunited", "GLOBAL", 1)
 	!Race(Player1, LICH)
 ~ THEN BEGIN XAA0
 	SAY @7 /* ~<CHARNAME>! There you are... thank the gods.~ [XA100085] */
@@ -31,14 +31,14 @@ IF ~
 	= @60  /* ~(You share a warm and emotional embrace.)~*/
 	IF ~~ THEN REPLY @30 /* ~Schael! What're you doing here?~ */ 
 	DO ~
-		SetGlobal("XA_CorwinReunited", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinReunited", "GLOBAL", 1)
 		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	GOTO XAA3
 	  
 	IF ~~ THEN REPLY @9 /* ~You're not here to have me arrested again, I hope?~ */ 
 	DO ~
-		SetGlobal("XA_CorwinReunited", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinReunited", "GLOBAL", 1)
 		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	GOTO XAA2
@@ -48,20 +48,20 @@ END
 //{ Dialog I-2
 IF ~
 	Global("XA_LC_CorwinContinue", "GLOBAL", 1) // Friend
-	GlobalLT("XA_CorwinReunited", "GLOBAL", 1)
+	GlobalLT("XA_LC_CorwinReunited", "GLOBAL", 1)
 	!Race(Player1, LICH)
 ~ THEN BEGIN XAA1
 	SAY @7 /* ~<CHARNAME>! Thank Tymora...~ */
 	IF ~~ THEN REPLY @30 /* ~Schael! What are you doing here?~ */ 
 	DO ~
-		SetGlobal("XA_CorwinReunited", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinReunited", "GLOBAL", 1)
 		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 1)
 	~
 	GOTO XAA3
 	  
 	IF ~~ THEN REPLY @9 /* ~You're not here to have me arrested again, I hope?~ */ 
 	DO ~
-		SetGlobal("XA_CorwinReunited", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinReunited", "GLOBAL", 1)
 		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 1)
 	~
 	GOTO XAA2
@@ -70,7 +70,7 @@ END
 
 //{ Dialog I-3
 IF ~ 
-	Global("XA_CorwinReunited", "GLOBAL", 1)
+	Global("XA_LC_CorwinReunited", "GLOBAL", 1)
 ~
 THEN BEGIN XAAJoinAsk
 	SAY @35	/* ~<CHARNAME> - what do you need?~ */
@@ -116,7 +116,7 @@ IF ~~ THEN BEGIN XAAJoinLove
 	IF ~~ THEN
 	DO ~
 		ChangeAIScript("XACORWIN", OVERRIDE)
-		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -126,7 +126,7 @@ IF ~~ THEN BEGIN XAAJoinFriend
 	IF ~~ THEN
 	DO ~
 		ChangeAIScript("XACORWIN", OVERRIDE)
-		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -308,7 +308,7 @@ IF ~~ THEN BEGIN XAA11
 	SAY @27 /* ~Very well. I await your decision.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_CorwinJoined", "LOCALS", 0)
+		SetGlobal("XA_LC_CorwinJoined", "LOCALS", 0)
 	~
 	EXIT
 END
@@ -329,7 +329,7 @@ IF ~~ THEN BEGIN XAAKissEnd
 	IF ~~ THEN REPLY @53  /* ~Gladly, dear.~*/
 	DO ~
 		ChangeAIScript("XACORWIN", OVERRIDE)
-		SetGlobal("XA_CorwinRejoinProcessed", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinRejoinProcessed", "GLOBAL", 1)
 	~
 	EXIT
 END

@@ -2,24 +2,24 @@ BEGIN ~XAELF01~
 
 IF ~
 	OR(2)
-		Global("XA_LodobDead", "GLOBAL", 1)
-		Global("XA_ElfSpirit", "GLOBAL", 1)
+		Global("XA_LC_LodobDead", "GLOBAL", 1)
+		Global("XA_LC_ElfSpirit", "GLOBAL", 1)
 ~ THEN BEGIN XA_LodobDead
 	SAY @0 /*~Thank you for releasing us from that prison.~ */
 	
 	IF ~~ THEN REPLY @1 /* ~How long were you trapped inside?~*/
 	DO ~
-		SetGlobal("XA_LodobDead", "GLOBAL", 2)
-		SetGlobal("XA_ElfSpirit", "GLOBAL", 2)
+		SetGlobal("XA_LC_LodobDead", "GLOBAL", 2)
+		SetGlobal("XA_LC_ElfSpirit", "GLOBAL", 2)
 	~
 	GOTO XA_LodobDead2A
 	
 	IF ~
-		Global("XA_LodobDead", "GLOBAL", 1)
+		Global("XA_LC_LodobDead", "GLOBAL", 1)
 	~ THEN REPLY @2 /* ~It is I who should thank you for helping dispatch Lodob.~*/
 	DO ~
-		SetGlobal("XA_LodobDead", "GLOBAL", 2)
-		SetGlobal("XA_ElfSpirit", "GLOBAL", 2)
+		SetGlobal("XA_LC_LodobDead", "GLOBAL", 2)
+		SetGlobal("XA_LC_ElfSpirit", "GLOBAL", 2)
 	~
 	GOTO XA_LodobDead2B
 END

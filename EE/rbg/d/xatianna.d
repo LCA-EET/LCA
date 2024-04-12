@@ -1,34 +1,34 @@
 BEGIN ~XATIANNA~
 
 IF ~
-	Global("XA_TiannaGoodBye", "GLOBAL", 2)
+	Global("XA_LC_TiannaGoodBye", "GLOBAL", 2)
 ~ THEN BEGIN XA_TiannaGoodBye
 	SAY @53 /* ~Thank you, <CHARNAME>.~ */
 	
 	IF ~~ THEN REPLY @57  /* ~Good-bye...~*/
 	DO ~
 		ReputationInc(1)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("XA_LC_Journal_Tianna3", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_Tianna3", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT
 	
 	IF ~
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 	~
 	GOTO XA_GoodByeRomance
 END
 
 IF ~
-	Global("XA_TiannaIntroduction", "GLOBAL", 1)
+	Global("XA_LC_TiannaIntroduction", "GLOBAL", 1)
 ~ THEN BEGIN XA_TiannaIntroduction
 	SAY @0 /* ~Schael!~ */
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_TiannaIntroduction", "GLOBAL", 2)
-		SetGlobal("XA_TalkedToTianna", "GLOBAL", 1)
+		SetGlobal("XA_LC_TiannaIntroduction", "GLOBAL", 2)
+		SetGlobal("XA_LC_TalkedToTianna", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_CorwinTiannaChain
 END
@@ -43,8 +43,8 @@ IF ~
 END
 
 IF ~
-	Global("XA_TiannaIntroduction", "GLOBAL", 2)
-	!Global("XA_HelpTianna", "GLOBAL", 1)
+	Global("XA_LC_TiannaIntroduction", "GLOBAL", 2)
+	!Global("XA_LC_HelpTianna", "GLOBAL", 1)
 	OR(2)
 		IsGabber("XACORWIN")
 		IsGabber(Player1)
@@ -59,39 +59,39 @@ IF ~
 END
 
 IF ~
-	Global("XA_TiannaIntroduction", "GLOBAL", 2)
-	Global("XA_HelpTianna", "GLOBAL", 1)
+	Global("XA_LC_TiannaIntroduction", "GLOBAL", 2)
+	Global("XA_LC_HelpTianna", "GLOBAL", 1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_IntroWillHelp
 	SAY @35 /* ~Hi! Were you able to talk to Jasper about resolving my debt?~*/
 	
 	IF ~
-		!Global("XA_TiannaDebtResolved", "GLOBAL", 1)
+		!Global("XA_LC_TiannaDebtResolved", "GLOBAL", 1)
 	~ THEN REPLY @36 /* ~No, not yet.~*/
 	GOTO XA_HelpEnd
 	
 	IF ~
 		OR(2)
-			Global("XA_TiannaDebtResolved", "GLOBAL", 1)
+			Global("XA_LC_TiannaDebtResolved", "GLOBAL", 1)
 			Dead("XAJASPER")
 	~ THEN REPLY @38 /* ~Yes. You won't have to worry about Jasper any more.~ */
 	GOTO XA_DebtResolved
 END
 
 IF ~
-	Global("XA_TiannaIntroduction", "GLOBAL", 2)
-	Global("XA_HelpTianna", "GLOBAL", 1)
+	Global("XA_LC_TiannaIntroduction", "GLOBAL", 2)
+	Global("XA_LC_HelpTianna", "GLOBAL", 1)
 	IsGabber("XACORWIN")
 ~ THEN BEGIN XA_IntroWillHelp
 	SAY @35 /* ~Hi! Were you able to talk to Jasper about resolving my debt?~*/
 	
 	IF ~
-		!Global("XA_TiannaDebtResolved", "GLOBAL", 1)
+		!Global("XA_LC_TiannaDebtResolved", "GLOBAL", 1)
 	~ THEN EXTERN XACORWIJ XA_NotYetTianna
 	
 	IF ~
 		OR(2)
-			Global("XA_TiannaDebtResolved", "GLOBAL", 1)
+			Global("XA_LC_TiannaDebtResolved", "GLOBAL", 1)
 			Dead("XAJASPER")
 	~ THEN EXTERN XACORWIJ XA_TiannaDebtResolvedCorwinChain
 END
@@ -105,19 +105,19 @@ IF ~~ THEN BEGIN XA_DebtResolved
 	GOTO XA_KilledJasper //OK
 	
 	IF ~
-		Global("XA_PaidJasperFull", "GLOBAL", 1)
+		Global("XA_LC_PaidJasperFull", "GLOBAL", 1)
 	~ THEN REPLY @47 /* ~I paid off the debt. It was a lot more than the 700 gold you claimed.~*/
 	GOTO XA_PaidJasper //OK
 	
 	IF ~
-		Global("XA_PaidJasperPartial", "GLOBAL", 1)
+		Global("XA_LC_PaidJasperPartial", "GLOBAL", 1)
 	~ THEN REPLY @49 /* ~I paid off the debt. It was a lot more than the 700 gold you claimed.~*/
 	GOTO XA_PaidJasper //OK
 	
 	IF ~
 		!Dead("XAJASPER")
-		!Global("XA_PaidJasperFull", "GLOBAL", 1)
-		!Global("XA_PaidJasperPartial", "GLOBAL", 1)
+		!Global("XA_LC_PaidJasperFull", "GLOBAL", 1)
+		!Global("XA_LC_PaidJasperPartial", "GLOBAL", 1)
 	~ THEN REPLY @50 /* ~I made him an offer he couldn't refuse.~ */
 	GOTO XA_ScaredJasper
 END
@@ -156,7 +156,7 @@ IF ~~ THEN BEGIN XA_TiannaLeave
 	IF ~~ THEN REPLY @63 /* ~I will. Good-bye, Tianna.~*/
 	DO ~
 		ReputationInc(1)
-		SetGlobal("XA_LC_Journal_Tianna3", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_Tianna3", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT
@@ -166,7 +166,7 @@ IF ~~ THEN BEGIN XA_KilledJasper
 	SAY @41 /* ~You WHAT? Oh - oh n-no. I need to get out of the city. His associates will think that I had him killed.. oh... my..~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LC_Journal_Tianna4", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_Tianna4", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT
@@ -178,14 +178,14 @@ IF ~~ THEN BEGIN XA_GoodBye
 	IF ~~ THEN REPLY @57 
 	DO ~
 		ReputationInc(1)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("XA_LC_Journal_Tianna3", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_Tianna3", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT
 	
 	IF ~
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 	~
 	GOTO XA_GoodByeRomance
 END
@@ -197,8 +197,8 @@ IF ~~ THEN BEGIN XA_GoodByeRomance
 	IF ~~ THEN REPLY @56 /* ~Thank you for the kind words, Tianna. I will - she's a very special woman.~ */
 	DO ~
 		ReputationInc(1)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("XA_LC_Journal_Tianna3", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_Tianna3", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT
@@ -223,13 +223,13 @@ IF ~~ THEN BEGIN XA_CorwinTiannaChainEnd
 	GOTO XA_WontHelp //OK
 	
 	IF ~
-		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 		InMyArea("XACORWIN")
 	~ THEN REPLY @24 /* ~Schael, what do you think? Do you believe her story?~*/
 	EXTERN XACORWIJ XA_SchaelBelievesTianna //OK
 	
 	IF ~
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 		InMyArea("XACORWIN")
 	~ THEN REPLY @25 /* ~My love, what do you think? Do you believe her story?~ */
 	EXTERN XACORWIJ XA_SchaelBelievesTianna //OK
@@ -262,8 +262,8 @@ IF ~~ THEN BEGIN XA_HelpTianna
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_HelpTianna", "GLOBAL", 1)
-		SetGlobal("XA_LC_Journal_Tianna1", "GLOBAL", 1)
+		SetGlobal("XA_LC_HelpTianna", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_Tianna1", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -273,8 +273,8 @@ IF ~~ THEN BEGIN XA_CorwinHelpTianna
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_HelpTianna", "GLOBAL", 1)
-		SetGlobal("XA_LC_Journal_Tianna2", "GLOBAL", 1)
+		SetGlobal("XA_LC_HelpTianna", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_Tianna2", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -302,8 +302,8 @@ IF ~~ THEN BEGIN XA_HugSchael
 	IF ~~ THEN
 	DO ~
 		ReputationInc(1)
-		IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("XA_LC_Journal_Tianna3", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC__Journal_Tianna3", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT
@@ -312,7 +312,7 @@ IF ~~ THEN BEGIN XA_HugSchael
 		InMyArea(Player1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_TiannaGoodBye", "GLOBAL", 1)
+		SetGlobal("XA_LC_TiannaGoodBye", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -330,13 +330,13 @@ CHAIN
 		== XACORWIJ
 		IF ~
 			!Dead("XAJASPER")
-			Global("XA_ScaredJasperAway", "GLOBAL", 1)
+			Global("XA_LC_ScaredJasperAway", "GLOBAL", 1)
 		~
 		@73 /* ~<CHARNAME> told Jasper that <PRO_HESHE>'d hand him his innards on a platter if he didn't forgive the debt.~ */
 		== XACORWIJ
 		IF ~
 			!Dead("XAJASPER")
-			!Global("XA_ScaredJasperAway", "GLOBAL", 1)
+			!Global("XA_LC_ScaredJasperAway", "GLOBAL", 1)
 		~
 		@71 /* ~<CHARNAME> was generous enough to pay it off on your behalf.~*/
 		== XATIANNA
@@ -380,13 +380,13 @@ CHAIN
 		== XACORWIJ
 		IF ~
 			InMyArea(Player1)
-			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@11 /* ~Tianna, this is <CHARNAME>, the hero of Baldur's Gate and the Sword Coast and... the <PRO_MANWOMAN> that I love.~ */
 		== XACORWIJ
 		IF ~
 			InMyArea(Player1)
-			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@12 /* ~Tianna, this is <CHARNAME>, the hero of Baldur's Gate and the Sword Coast.~ */
 		== XATIANNA
@@ -397,7 +397,7 @@ CHAIN
 		== XATIANNA
 		IF ~
 			InMyArea(Player1)
-			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@13 /* ~So you and Schael are... t-that's great. I'm happy for you.~ */
 		== XATIANNA

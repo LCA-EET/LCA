@@ -27,7 +27,7 @@ APPEND BDCORWIJ
 		IF ~~ THEN
 		DO ~
 			StartCutSceneMode()
-			SetGlobal("XA_CorwinWitnessedDuel", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinWitnessedDuel", "GLOBAL", 1)
 			SetGlobal("bd_asha_duel","global",3)
 			StartCutSceneEx("bdcut44",FALSE)
 		~
@@ -35,7 +35,7 @@ APPEND BDCORWIJ
 	END
 	
 	IF ~ 
-		Global("XA_CorwinWitnessedDuel", "GLOBAL", 1)
+		Global("XA_LC_CorwinWitnessedDuel", "GLOBAL", 1)
 		OR(2)
 			Global("bd_corwin_romanceactive","global",1)
 			Global("bd_corwin_romanceactive","global",2)
@@ -46,19 +46,19 @@ APPEND BDCORWIJ
 		
 		IF ~~ THEN REPLY @6 /* ~Schael? Were you worried about me?~ */
 		DO ~
-			SetGlobal("XA_CorwinWitnessedDuel", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinWitnessedDuel", "GLOBAL", 2)
 		~
 		GOTO XA_AshatielDuel_3 
 		
 		IF ~~ THEN REPLY @15 /* ~Is that it, then? I need only risk my life in a duel to the death to get you to show me some affection?~*/
 		DO ~
-			SetGlobal("XA_CorwinWitnessedDuel", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinWitnessedDuel", "GLOBAL", 2)
 		~
 		GOTO XA_AshatielDuel_3A
 	END
 	
 	IF ~ 
-		Global("XA_CorwinWitnessedDuel", "GLOBAL", 1)
+		Global("XA_LC_CorwinWitnessedDuel", "GLOBAL", 1)
 		!Global("bd_corwin_romanceactive","global",1)
 		!Global("bd_corwin_romanceactive","global",2)
 	~ THEN BEGIN XA_AshatielDuel_2
@@ -66,7 +66,7 @@ APPEND BDCORWIJ
 		
 		IF ~~ THEN REPLY @4 /* ~Captain? Were you worried about me?~ */
 		DO ~
-			SetGlobal("XA_CorwinWitnessedDuel", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinWitnessedDuel", "GLOBAL", 2)
 		~
 		GOTO XA_AshatielDuel_3 
 	END
@@ -93,7 +93,7 @@ APPEND BDCORWIJ
 		SAY @10 /* ~Look! The crusaders are fleeing or laying down their weapons. Your victory has likely saved many lives, on both sides. I'll make sure that the higher-ups know about what you did here today. Let's go.~ */
 		IF ~~ THEN
 		DO ~
-			IncrementGlobal("XA_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		EXIT
 	END

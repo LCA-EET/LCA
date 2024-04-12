@@ -1,14 +1,14 @@
 IF
-	Global("XA_ProficiencyTalk", "GLOBAL", 2)
+	Global("XA_LC_ProficiencyTalk", "GLOBAL", 2)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_ProficiencyTalk", "GLOBAL", 3)
+		SetGlobal("XA_LC_ProficiencyTalk", "GLOBAL", 3)
 		StartCutSceneMode()
 		StartCutScene("XALBPRO1")
 END
 
 IF
-	Global("XA_ProficiencyTalk", "GLOBAL", 5)
+	Global("XA_LC_ProficiencyTalk", "GLOBAL", 5)
 	OR(2)
 		InMyArea(Player1)
 		InMyArea("Corwin")

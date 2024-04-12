@@ -1,0 +1,18 @@
+IF
+	GlobalLT("XA_LC_CryTimerSet", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_CryTimerSet", "LOCALS", 1)
+		SetGlobalTimer("XA_LC_CryTimer", "GLOBAL", TWO_ROUNDS)
+		Continue()
+END
+
+
+IF
+	GlobalLT("XA_LC_TalkedToCryingGirl", "LOCALS", 1)
+	GlobalTimerExpired("XA_LC_CryTimer", "GLOBAL")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("XA_LC_CryTimer", "GLOBAL", TWO_ROUNDS)
+		DisplayStringHead(#4862, Myself)
+END

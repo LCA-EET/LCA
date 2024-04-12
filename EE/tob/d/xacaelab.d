@@ -2,25 +2,25 @@ BEGIN ~XACAELAB~
 
 //{ Dialog B-102
 IF ~
-	Global("XA_SummonAun", "GLOBAL", 4)
+	Global("XA_LC_SummonAun", "GLOBAL", 4)
 ~ THEN BEGIN XA_CaelarThanks
 	SAY @121 /*~<CHARNAME> — before we move on, I want you to know how much I truly appreciate everything that you've done for me. Thank you... my friend.~*/
 	
 	IF ~~ THEN REPLY @122 /*~You're welcome.~*/
 	DO ~
-		SetGlobal("XA_SummonAun", "GLOBAL", 5)
+		SetGlobal("XA_LC_SummonAun", "GLOBAL", 5)
 	~
 	GOTO XA_CaelarThanks2
 	
 	IF ~~ THEN REPLY @123 /*~Were our roles reversed, you'd have done the same.~*/
 	DO ~
-		SetGlobal("XA_SummonAun", "GLOBAL", 5)
+		SetGlobal("XA_LC_SummonAun", "GLOBAL", 5)
 	~
 	GOTO XA_CaelarThanks2
 	
 	IF ~~ THEN REPLY @124 /*~I'm glad to have been able to help.~*/
 	DO ~
-		SetGlobal("XA_SummonAun", "GLOBAL", 5)
+		SetGlobal("XA_LC_SummonAun", "GLOBAL", 5)
 	~
 	GOTO XA_CaelarThanks2
 END
@@ -40,7 +40,7 @@ END
 
 //{ Dialog B-101
 IF ~
-	Global("XA_Banter_CaelarPlayer", "GLOBAL", 2)
+	Global("XA_LC_Banter_CaelarPlayer", "GLOBAL", 2)
 ~ THEN BEGIN XA_CaelarPlayerBanter1Chain
 	SAY @120 /* ~<CHARNAME>, a moment if I may. What happened after I stayed behind in Avernus? To you, I mean. Your power has grown significantly since I first saw you at the Coast Way Crossing.~*/
 	
@@ -48,7 +48,7 @@ IF ~
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @89 /* ~That's going to take a while... (Explain what happened after the events of Dragonspear.)~ */
 	DO ~
-		SetGlobal("XA_Banter_CaelarPlayer", "GLOBAL", 3)
+		SetGlobal("XA_LC_Banter_CaelarPlayer", "GLOBAL", 3)
 	~
 	GOTO XA_ExplainTrial_NR
 	
@@ -56,13 +56,13 @@ IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @89 /* ~That's going to take a while... (Explain what happened after the events of Dragonspear.)~ */
 	DO ~
-		SetGlobal("XA_Banter_CaelarPlayer", "GLOBAL", 3)
+		SetGlobal("XA_LC_Banter_CaelarPlayer", "GLOBAL", 3)
 	~
 	GOTO XA_ExplainTrial_R
 	
 	IF ~~ THEN REPLY @102 /*~I'd rather not discuss it.~*/
 	DO ~
-		SetGlobal("XA_Banter_CaelarPlayer", "GLOBAL", 3)
+		SetGlobal("XA_LC_Banter_CaelarPlayer", "GLOBAL", 3)
 	~
 	GOTO XA_NoDiscuss
 END
@@ -128,13 +128,13 @@ IF ~~ THEN BEGIN XA_GivenUp
 	IF ~
 		OR(2)
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-			!Global("XA_CorwinLoveBG2", "GLOBAL", 1)
+			!Global("XA_LC_CorwinLoveBG2", "GLOBAL", 1)
 	~ THEN REPLY @106 /*~Your will may have faltered, but you hadn't given up. I was in that same, dark place too you know. I nearly gave up when I was locked in that cell. If it weren't for Imoen...~*/
 	GOTO XA_HadSomeone
 	
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		Global("XA_CorwinLoveBG2", "GLOBAL", 1)
+		Global("XA_LC_CorwinLoveBG2", "GLOBAL", 1)
 	~ THEN REPLY @101 /*~Your will may have faltered, but you hadn't given up. I was in that same, dark place too you know. I nearly gave up when I was locked in that cell. If it weren't for Schael...~*/
 	GOTO XA_HadSomeone
 	
@@ -174,7 +174,7 @@ IF ~~ THEN BEGIN XA_HasAun
 		!AreaCheck("AR4500")
 	~ THEN REPLY @111 /*~Next time we're in the Pocket Plane, I will attempt to summon him.~*/
 	DO ~
-		SetGlobal("XA_SummonAun", "GLOBAL", 1)
+		SetGlobal("XA_LC_SummonAun", "GLOBAL", 1)
 	~
 	GOTO XA_WillSummonAun
 	
@@ -185,7 +185,7 @@ IF ~~ THEN BEGIN XA_HasAun
 		AreaCheck("AR4500")
 	~ THEN REPLY @115 /* ~I believe that can be arranged. (Summon Aun through the Planar Gate.)~*/
 	DO ~
-		SetGlobal("XA_SummonAun", "GLOBAL", 1)
+		SetGlobal("XA_LC_SummonAun", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -221,11 +221,11 @@ END
 
 //{ Dialog B-91
 CHAIN IF ~
-	Global("XA_Banter_CaelarSarevok", "GLOBAL", 2)
+	Global("XA_LC_Banter_CaelarSarevok", "GLOBAL", 2)
 ~ THEN SAREV25J XA_CaelarSarevokBanter1Chain
 	@0 /*~It's interesting isn't it?~*/
 	DO ~
-		SetGlobal("XA_Banter_CaelarSarevok", "GLOBAL", 3)
+		SetGlobal("XA_LC_Banter_CaelarSarevok", "GLOBAL", 3)
 	~
 	== XACAELAB
 	@1 /*~Pardon?~*/
@@ -245,11 +245,11 @@ EXIT
 
 //{ Dialog B-92
 CHAIN IF ~
-	Global("XA_Banter_CaelarKeldorn", "GLOBAL", 2)
+	Global("XA_LC_Banter_CaelarKeldorn", "GLOBAL", 2)
 ~ THEN KELDO25J XA_CaelarKeldornBanter1Chain
 	@8 /* ~Lady Argent, I never dreamed that I would one day fight alongside an aasimar. It's been quite an honor.~ */
 	DO ~
-		SetGlobal("XA_Banter_CaelarKeldorn", "GLOBAL", 3)
+		SetGlobal("XA_LC_Banter_CaelarKeldorn", "GLOBAL", 3)
 	~
 	== XACAELAB
 	@9 /* ~The honor is mine. <CHARNAME> chose <PRO_HISHER> companions well, Sir Keldorn.~*/
@@ -266,11 +266,11 @@ EXIT
 
 //{ Dialog B-93
 CHAIN IF ~
-	Global("XA_Banter_CaelarRasaad", "GLOBAL", 2)
+	Global("XA_LC_Banter_CaelarRasaad", "GLOBAL", 2)
 ~ THEN RASAA25J XA_CaelarRasaadBanter1Chain
 	@21 /*~Caelar? Your hand is trembling — is something wrong?~*/
 	DO ~
-		SetGlobal("XA_Banter_CaelarRasaad", "GLOBAL", 3)
+		SetGlobal("XA_LC_Banter_CaelarRasaad", "GLOBAL", 3)
 	~
 	== XACAELAB
 	@22 /*~It's nothing, Rasaad. I was just remembering...~*/ 
@@ -290,11 +290,11 @@ EXIT
 
 //{ Dialog B-94
 CHAIN IF ~
-	Global("XA_Banter_CaelarJaheira", "GLOBAL", 2)
+	Global("XA_LC_Banter_CaelarJaheira", "GLOBAL", 2)
 ~ THEN XACAELAB XA_CaelarJaheiraBanter1Chain
 	@29 /*~Jaheria... a moment of your time?~*/
 	DO ~
-		SetGlobal("XA_Banter_CaelarJaheira", "GLOBAL", 3)
+		SetGlobal("XA_LC_Banter_CaelarJaheira", "GLOBAL", 3)
 	~
 	== JAHEI25J
 	@30 /*~Of course, Lady Argent. What is it?~*/
@@ -315,11 +315,11 @@ EXIT
 
 //{ Dialog B-95
 CHAIN IF ~
-	Global("XA_Banter_CaelarMazzy", "GLOBAL", 2)
+	Global("XA_LC_Banter_CaelarMazzy", "GLOBAL", 2)
 ~ THEN MAZZY25J XA_CaelarMazzyBanter1Chain
 	@55 /*~Lady Argent, do you have a moment?~*/
 	DO ~
-		SetGlobal("XA_Banter_CaelarMazzy", "GLOBAL", 3)
+		SetGlobal("XA_LC_Banter_CaelarMazzy", "GLOBAL", 3)
 	~
 	== XACAELAB
 	@37 /*~Yes, Mazzy. What can I do for you?~ */
@@ -344,11 +344,11 @@ EXIT
 
 //{ Dialog B-96
 CHAIN IF ~
-	Global("XA_DornProposal", "GLOBAL", 1)
+	Global("XA_LC_DornProposal", "GLOBAL", 1)
 ~ THEN DORNJ XA_CaelarDornBanter1Chain
 	@56 /*~Caelar...~*/
 	DO ~
-		SetGlobal("XA_DornProposal", "GLOBAL", 2)
+		SetGlobal("XA_LC_DornProposal", "GLOBAL", 2)
 	~
 	== XACAELAB
 	@46 /*~Out with it, blackguard.~*/
@@ -373,13 +373,13 @@ EXIT
 
 //{ Dialog B-97
 CHAIN IF ~
-	Global("XA_CaelarAerieScars", "GLOBAL", 1)
-	Global("XA_CorwinAerieScars", "GLOBAL", 1)
+	Global("XA_LC_CaelarAerieScars", "GLOBAL", 1)
+	Global("XA_LC_CorwinAerieScars", "GLOBAL", 1)
 	InParty("XACORWIN")
 ~ THEN XACAELAB XA_CaelarAerieScars
 	@59 /*~Good... we could all use some rest. Aerie — would you help me with my armor?~*/
 	DO ~
-		SetGlobal("XA_CaelarAerieScars", "GLOBAL", 2)
+		SetGlobal("XA_LC_CaelarAerieScars", "GLOBAL", 2)
 	~
 	== AERIE25J
 	@60 /*~Of course, my lady.~*/
@@ -405,14 +405,14 @@ EXIT
 
 //{ Dialog B-98
 CHAIN IF ~
-	Global("XA_CaelarAerieScars", "GLOBAL", 1)
+	Global("XA_LC_CaelarAerieScars", "GLOBAL", 1)
 	OR(2)
-		!Global("XA_CorwinAerieScars", "GLOBAL", 1)
+		!Global("XA_LC_CorwinAerieScars", "GLOBAL", 1)
 		!InParty("XACORWIN")
 ~ THEN XACAELAB XA_CaelarAerieScars
 	@59 /*~Good... we could all use some rest. Aerie — would you help me with my armor?~*/
 	DO ~
-		SetGlobal("XA_CaelarAerieScars", "GLOBAL", 2)
+		SetGlobal("XA_LC_CaelarAerieScars", "GLOBAL", 2)
 	~
 	== AERIE25J
 	@60 /*~Of course, my lady.~*/
@@ -438,11 +438,11 @@ EXIT
 
 //{ Dialog B-99
 CHAIN IF ~
-	Global("XA_Banter_CaelarNeera", "GLOBAL", 2)
+	Global("XA_LC_Banter_CaelarNeera", "GLOBAL", 2)
 ~ THEN XACAELAB XA_CaelarNeeraBanter1Chain
 	@76 /*~Neera, a word please.~*/
 	DO ~
-		SetGlobal("XA_Banter_CaelarNeera", "GLOBAL", 3)
+		SetGlobal("XA_LC_Banter_CaelarNeera", "GLOBAL", 3)
 	~
 	== NEERA25J
 	@77 /*~Sure Caelar, what's on your mind?~*/
