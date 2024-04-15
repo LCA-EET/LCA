@@ -1,0 +1,10 @@
+IF
+	GlobalLT("XA_LC_HelpMother", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself, @15)
+	RESPONSE #100
+		DisplayStringHead(Myself, @16)
+	RESPONSE #100
+		Wait(5)
+END

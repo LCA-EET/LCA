@@ -1,7 +1,8 @@
 PRINT @4000  /* ~Processing Return to Baldur's Gate Changes...~ */
-SILENT
+//SILENT
 //{ BAM
 	COPY ~%MOD_FOLDER%/rbg/bam/xabenohd.bam~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/bam/xacbas.bam~ ~override~
 	COPY ~%MOD_FOLDER%/rbg/bam/xaegg.bam~ ~override~
 	COPY ~%MOD_FOLDER%/rbg/bam/xaibenoh.bam~ ~override~
 	COPY ~%MOD_FOLDER%/rbg/bam/xaiegg.bam~ ~override~
@@ -712,6 +713,17 @@ END
 		COPY_EXISTING ~xaa503.cre~ ~override~ // ftowba
 		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
 		
+		COPY_EXISTING ~xaa503.cre~ ~override/xamom.cre~ // ftowba
+		WRITE_ASCII 0x2CC ~xamom~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xamom~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~xamom~ #8		// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		SAY NAME1 @4154 /*~Anguished Mother~ */
+		SAY NAME2 @4154 /* */
+		
 		COPY_EXISTING ~xaa503.cre~ ~override/xa800w.cre~ // ftowba
 		WRITE_ASCII 0x2CC ~xa800w~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xa800w~ #20  	// Script Name
@@ -1098,6 +1110,24 @@ END
 		WRITE_BYTE 0x52 8 		// THAC0
 		WRITE_SHORT 0x46 0		// Natural AC
 		WRITE_SHORT 0x48 0		// Effective AC
+	
+		COPY_EXISTING ~boy1.cre~ ~override/xapercy.cre~
+		WRITE_ASCII 0x2CC ~xapercy~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xapercy~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~~ #8		// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		SAY NAME1 @4155/*~Percy~ */
+		SAY NAME2 @4155
+		
+		COPY_EXISTING ~xapercy.cre~ ~override/xatimoty.cre~
+		WRITE_ASCII 0x2CC ~xatimoty~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xatimoty~ #20  	// Script Name
+		SAY NAME1 @4156/* ~Timotey~*/
+		SAY NAME2 @4156
+		WRITE_LONG 0x20 128 // Stone Death
 	
 		COPY_EXISTING ~chicke.cre~ ~override/xachick.cre~ // Chicken
 		WRITE_ASCII 0x2CC ~xachick~ #8 	// Dialogue
@@ -2135,6 +2165,27 @@ END
 		WRITE_LONG 0x3674 0 // Rodnim
 		WRITE_LONG 0x3564 0 // Tartusse
 		WRITE_LONG 0x3454 0 // Tick
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 3765
+				fj_loc_y = 1640
+				fj_orientation = 7 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xamom
+				fj_cre_resref = xamom
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 3820
+				fj_loc_y = 1620
+				fj_orientation = 7 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xapercy
+				fj_cre_resref = xapercy
+		END
 	//}
 	
 	//{ ar0224 xaa297 BG Sewers (Sewerfolk)
@@ -2304,7 +2355,7 @@ END
 	//{ ar0706 xaa206
 		EXTEND_TOP ~xaas206.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0706.baf~
 		
-		COPY_EXISTING ~xaa0705.are~ ~override~
+		COPY_EXISTING ~xaa206.are~ ~override~
 		LPF fj_are_structure
 			INT_VAR
 				fj_type 		= 2
@@ -2662,4 +2713,20 @@ END
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY ~PlaySong(1023)~ ~PlaySong(%xaa23%)~
 	END
+//}
+
+//{ Basilisk Figurine
+	COPY ~%MOD_FOLDER%/rbg/bam/xaibas.bam~ ~override~
+
+	COPY_EXISTING ~figspid.eff~ ~override/xabasfig.eff~
+	WRITE_ASCII 0x30 ~basgrt01~ #8
+	
+	COPY_EXISTING ~misc3e.itm~ ~override/xabasfig.itm~
+	WRITE_ASCII 0x3A ~xaibas~ #8
+	WRITE_LONG 0x34 6000
+	WRITE_LONG 0xC RESOLVE_STR_REF(@4152)
+	WRITE_LONG 0x54 RESOLVE_STR_REF(@4153)
+	WRITE_ASCII 0x58 ~xacbas~ #8
+	WRITE_ASCII 0xEE ~xabasfig~ #8
+	WRITE_ASCII 0x76 ~xaibas~ #8
 //}

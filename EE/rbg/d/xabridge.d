@@ -1,3 +1,5 @@
+BEGIN ~XABRIDGE~
+
 IF ~
 	IsGabber("XACORWIN")
 ~ THEN BEGIN XA_Welcome

@@ -528,6 +528,12 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_RBG_ItemTest
 		SAY @6001 /*  ~Item Test~ */
 		
+		IF ~~ THEN REPLY @6067 /* ~Basilisk Figurine~*/
+		DO ~
+			GiveItemCreate("xabasfig", Player1, 1,1,1)
+		~
+		GOTO XA_RBG_ItemTest
+		
 		IF ~~ THEN REPLY @6003/* ~Engagement Rings (Unenchanted)~*/
 		DO ~
 			GiveItemCreate("xaringj", Player1, 0,0,0)
