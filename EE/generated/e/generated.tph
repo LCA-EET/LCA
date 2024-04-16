@@ -1,5 +1,5 @@
 PRINT ~Processing converted asset block: xae...~
-SILENT
+//SILENT
 //{ MUSIC
 ADD_MUSIC xae0 ~%MOD_FOLDER%\generated\e\mus\xae0.mus~
 ADD_MUSIC xae1 ~%MOD_FOLDER%\generated\e\mus\xae1.mus~
@@ -64,9 +64,6 @@ END ELSE BEGIN
 	WRITE_LONG 288 %xae0%
 	WRITE_LONG 296 %xae1%
 END
-
-//itm files
-//===================
 
 //baf files
 //===================

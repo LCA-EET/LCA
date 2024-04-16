@@ -1,5 +1,5 @@
 PRINT ~Processing converted asset block: xaa...~
-SILENT
+//SILENT
 //{ MUSIC
 ADD_MUSIC xaa0 ~%MOD_FOLDER%\generated\a\mus\xaa0.mus~
 ADD_MUSIC xaa1 ~%MOD_FOLDER%\generated\a\mus\xaa1.mus~
@@ -5954,6 +5954,10 @@ COPY ~%MOD_FOLDER%\generated\a\wav\xaa10827.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wav\xaa10835.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wav\xaa10836.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wav\xaa10839.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\wav\xaa11130.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\wav\xaa11129.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\wav\xaa11128.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\wav\xaa11094.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wav\xaa11075.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wav\xaa11074.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wav\xaa11073.wav~ ~override~
@@ -5982,10 +5986,6 @@ COPY ~%MOD_FOLDER%\generated\a\wav\xaa10890.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wav\xaa10885.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wav\xaa10884.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wav\xaa10882.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\a\wav\xaa11094.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\a\wav\xaa11128.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\a\wav\xaa11129.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\a\wav\xaa11130.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wav\xaa11132.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wav\xaa11133.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wav\xaa11137.wav~ ~override~
@@ -6427,6 +6427,7 @@ COPY ~%MOD_FOLDER%\generated\a\wed\xaa202.wed~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wed\xaa204.wed~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wed\xaa206.wed~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wed\xaa224.wed~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\wed\xaa307.wed~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wed\xaa305.wed~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wed\xaa297.wed~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wed\xaa289.wed~ ~override~
@@ -6444,7 +6445,6 @@ COPY ~%MOD_FOLDER%\generated\a\wed\xaa256.wed~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wed\xaa259.wed~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wed\xaa264.wed~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wed\xaa270.wed~ ~override~
-COPY ~%MOD_FOLDER%\generated\a\wed\xaa307.wed~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wed\xaa324.wed~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wed\xaa326.wed~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\wed\xaa353.wed~ ~override~
@@ -6506,7 +6506,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\generated\a\d~
 //itm files
 //===================
 COPY ~%MOD_FOLDER%\generated\a\itm\xaa100.itm~ ~override~
-COPY ~%MOD_FOLDER%\generated\a\itm\xaa215.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\itm\xaa102.itm~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@63278) /*~Amulet~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@63279) /*~Arkion's Bloodstone Amulet~*/
 	WRITE_LONG 80 RESOLVE_STR_REF(@63280) /*~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
@@ -6514,7 +6514,7 @@ COPY ~%MOD_FOLDER%\generated\a\itm\xaa215.itm~ ~override~
 STATISTICS:
 
 Weight: 1~*/
-COPY ~%MOD_FOLDER%\generated\a\itm\xaa226.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\itm\xaa103.itm~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@63281) /*~Ring~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@63282) /*~Sashenstar's Ruby Ring~*/
 	WRITE_LONG 80 RESOLVE_STR_REF(@63283) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
@@ -6527,10 +6527,64 @@ Weight: 0~*/
 STATISTICS:
 
 Weight: 0~*/
-COPY ~%MOD_FOLDER%\generated\a\itm\xaa450.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@63285) /*~Plate Mail~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@63286) /*~The Magma Bulwark +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@63287) /*~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+COPY ~%MOD_FOLDER%\generated\a\itm\xaa105.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@63285) /*~Club~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63286) /*~Night Club +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@63287) /*~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
+
+STATISTICS:
+
+Damage: 1d6 (crushing)
+Speed Factor: 4
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@63288) /*~This darkwood shaft surrounds a core of lead, giving it both stealth and heft. Its enchantment connects the club to the Shadow Weave, lending it greater power under cloak of night.
+
+STATISTICS:
+
+THAC0: +1, +2 at night
+Damage: 1d6+1 (crushing)
+Speed Factor: 3
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~*/
+COPY ~%MOD_FOLDER%\generated\a\itm\xaa104.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@63289) /*~Sling~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63290) /*~Sling of Unerring Accuracy +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@63291) /*~Slings have existed since the beginning of recorded history. The basic sling consists of a leather or fabric strap with a pouch for holding the missile. The weapon is held by both ends of the strap and twirled around the wielder's head. When top speed is attained, the missile is launched by releasing one of the strap's ends.
+
+STATISTICS:
+
+Speed Factor: 6
+Proficiency Type: Sling
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 0~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@63292) /*~Dandifox was one of the greatest heroes of the hin, the small people also known as halflings. From the concealment of forest arbors, he would attack rich caravans for a "tithe," which he then distributed among the local poor. The heroic robber finally met his end on the point of a guardsman's spear, but not before the constabulary had learned to fear and hate his infallible aim.
+
+STATISTICS:
+
+THAC0: +2
+Speed Factor: 6
+Proficiency Type: Sling
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 0~*/
+COPY ~%MOD_FOLDER%\generated\a\itm\xaa117.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@63293) /*~Plate Mail~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63294) /*~The Magma Bulwark +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@63295) /*~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
 
 STATISTICS:
 
@@ -6539,7 +6593,7 @@ Requires:
  12 Strength
 
 Weight: 50~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@63288) /*~Forged by the fire giant Varboti as a gift for a Cormyrian general who made peace with his clan, this red-and-black armor lends its wearer a molten aspect while providing protection against all but the most powerful blows. Due to its incredibly strong but thin material, it also weighs far less than ordinary plate mail.
+	WRITE_LONG 84 RESOLVE_STR_REF(@63296) /*~Forged by the fire giant Varboti as a gift for a Cormyrian general who made peace with his clan, this red-and-black armor lends its wearer a molten aspect while providing protection against all but the most powerful blows. Due to its incredibly strong but thin material, it also weighs far less than ordinary plate mail.
 
 STATISTICS:
 
@@ -6548,10 +6602,10 @@ Requires:
  12 Strength
 
 Weight: 20~*/
-COPY ~%MOD_FOLDER%\generated\a\itm\xaa444.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@63289) /*~Battle Axe~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@63290) /*~Golden Axe +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@63291) /*~The most common version of the battle axe is a stout pole about four feet in length with a single-edged, trumpet-shaped blade mounted on one end. Battle axes are also called broad axes.
+COPY ~%MOD_FOLDER%\generated\a\itm\xaa116.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@63297) /*~Battle Axe~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63298) /*~Golden Axe +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@63299) /*~The most common version of the battle axe is a stout pole about four feet in length with a single-edged, trumpet-shaped blade mounted on one end. Battle axes are also called broad axes.
 
 STATISTICS:
 
@@ -6563,7 +6617,7 @@ Requires:
  10 Strength
 
 Weight: 7~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@63292) /*~To counter the spells of the hated drow, the gold dwarves developed the sturdy and relatively inexpensive battle axe imbued with rare alloys and enchantments allowing a keen strike to dispel a foe's magic. The twin axes of Clangeddin Silverbeard are stamped on the butt of each of these weapons.
+	WRITE_LONG 84 RESOLVE_STR_REF(@63300) /*~To counter the spells of the hated drow, the gold dwarves developed the sturdy and relatively inexpensive battle axe imbued with rare alloys and enchantments allowing a keen strike to dispel a foe's magic. The twin axes of Clangeddin Silverbeard are stamped on the butt of each of these weapons.
 
 STATISTICS:
 
@@ -6579,10 +6633,10 @@ Requires:
  10 Strength
 
 Weight: 7~*/
-COPY ~%MOD_FOLDER%\generated\a\itm\xaa442.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@63293) /*~War Hammer~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@63294) /*~Hammer of Dawn +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@63295) /*~Mounted knights cannot effectively use long pole weapons while on horseback and, as a result, many weapons have been fitted with shorter shafts so they may be wielded with just one hand. Maces and flails are two examples of this—the war hammer is another. The horseman's war hammer is the descendent of the Lucerne hammer. It is made entirely of steel, with rondels protecting and strengthening the grip. (Rondels are small disks of metal, often shaped into decorative designs.) The shaft is about eighteen inches long.
+COPY ~%MOD_FOLDER%\generated\a\itm\xaa114.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@63301) /*~War Hammer~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63302) /*~Hammer of Dawn +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@63303) /*~Mounted knights cannot effectively use long pole weapons while on horseback and, as a result, many weapons have been fitted with shorter shafts so they may be wielded with just one hand. Maces and flails are two examples of this—the war hammer is another. The horseman's war hammer is the descendent of the Lucerne hammer. It is made entirely of steel, with rondels protecting and strengthening the grip. (Rondels are small disks of metal, often shaped into decorative designs.) The shaft is about eighteen inches long.
 
 STATISTICS:
 
@@ -6594,7 +6648,7 @@ Requires:
  9 Strength
 
 Weight: 6~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@63296) /*~Crafted from the scales and bones of a gold dragon servant of Lathander, this warhammer sometimes channels the power of the ancient wyrm's mighty wings.
+	WRITE_LONG 84 RESOLVE_STR_REF(@63304) /*~Crafted from the scales and bones of a gold dragon servant of Lathander, this warhammer sometimes channels the power of the ancient wyrm's mighty wings.
 
 STATISTICS:
 
@@ -6613,10 +6667,10 @@ Requires:
  9 Strength
 
 Weight: 6~*/
-COPY ~%MOD_FOLDER%\generated\a\itm\xaa430.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@63297) /*~Long Sword~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@63298) /*~Harrower +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@63299) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+COPY ~%MOD_FOLDER%\generated\a\itm\xaa113.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@63305) /*~Long Sword~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63306) /*~Harrower +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@63307) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
 
 STATISTICS:
 
@@ -6628,7 +6682,7 @@ Requires:
  6 Strength
 
 Weight: 4~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@63300) /*~This double-edged long sword gleams white even in the reddest of torchlight. The Dethek runes along its sides name the blade "Harrower," a weapon once wielded by Ariabel, a Waterdhavian Paladin of Lathander who once carried the weapon into combat against the vampire Zerafex and her host of unholy spawn. Ariabel did not survive the contest, but decades later a gang of Tethyrian tomb robbers recovered her sword from the crypt where she fell.
+	WRITE_LONG 84 RESOLVE_STR_REF(@63308) /*~This double-edged long sword gleams white even in the reddest of torchlight. The Dethek runes along its sides name the blade "Harrower," a weapon once wielded by Ariabel, a Waterdhavian Paladin of Lathander who once carried the weapon into combat against the vampire Zerafex and her host of unholy spawn. Ariabel did not survive the contest, but decades later a gang of Tethyrian tomb robbers recovered her sword from the crypt where she fell.
 
 STATISTICS:
 
@@ -6642,51 +6696,36 @@ Requires:
  6 Strength
 
 Weight: 4~*/
-COPY ~%MOD_FOLDER%\generated\a\itm\xaa375.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@63301) /*~Ring~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@63302) /*~Nemphre's Onyx Ring~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@63303) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+COPY ~%MOD_FOLDER%\generated\a\itm\xaa111.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@63309) /*~Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63310) /*~Angel the Cat's Angel Skin Ring~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@63311) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@63304) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+	WRITE_LONG 84 RESOLVE_STR_REF(@63312) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~*/
-COPY ~%MOD_FOLDER%\generated\a\itm\xaa534.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@63305) /*~Flail ~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@63306) /*~The Thresher +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@63307) /*~The flail is a sturdy wooden handle attached to an iron rod, a wooden rod with spikes, or a spiked iron ball. Between the handle and its implement is either a hinge or chain link. The weapon was originally used as a tool for threshing grain.
+COPY ~%MOD_FOLDER%\generated\a\itm\xaa109.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@63313) /*~Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63314) /*~Nemphre's Onyx Ring~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@63315) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
-Damage: 1d6+1 (crushing)
-Speed Factor: 7
-Proficiency Type: Flail/Morning Star
-Type: One-handed
-Requires:
- 13 Strength
-
-Weight: 15~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@63308) /*~With one rod of steel and another of bronze, this double-headed flail metes out punishment right and left. The weapon's carved wooden haft depicts scenes of battle in which champions of Helm, each wielding an identical flail, wade through a field of orcs, threshing them like so much wheat.
+Weight: 0~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@63316) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
-THAC0: +2
-Damage: 1d6+3 (crushing)
-Speed Factor: 5
-Proficiency Type: Flail/Morning Star
-Type: One-handed
-Requires:
- 13 Strength
-
-Weight: 13~*/
-COPY ~%MOD_FOLDER%\generated\a\itm\xaa533.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@63309) /*~Two-handed Sword~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@63310) /*~Gold Digger +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@63311) /*~The two-handed sword is a derivative of the long sword. Weaponsmiths have always looked for ways to improve existing weapons. In an effort to improve the long sword, the blade was lengthened. Eventually, the handle had to be extended and two hands became necessary to properly swing the sword. The primary function of two-handed swords is cleaving mounted knights and breaking up pike formations.
+Weight: 0~*/
+COPY ~%MOD_FOLDER%\generated\a\itm\xaa125.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@63317) /*~Two-handed Sword~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63318) /*~Gold Digger +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@63319) /*~The two-handed sword is a derivative of the long sword. Weaponsmiths have always looked for ways to improve existing weapons. In an effort to improve the long sword, the blade was lengthened. Eventually, the handle had to be extended and two hands became necessary to properly swing the sword. The primary function of two-handed swords is cleaving mounted knights and breaking up pike formations.
 
 STATISTICS:
 
@@ -6698,7 +6737,7 @@ Requires:
  14 Strength
 
 Weight: 15~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@63312) /*~Crafted by dwarves in service to the temple of Waukeen in Amn, this two-handed sword draws power from the gold in its wielder's purse. For the wealthy it strikes mighty blows. For the impoverished, the Gold Digger is no better than a mundane greatsword.
+	WRITE_LONG 84 RESOLVE_STR_REF(@63320) /*~Crafted by dwarves in service to the temple of Waukeen in Amn, this two-handed sword draws power from the gold in its wielder's purse. For the wealthy it strikes mighty blows. For the impoverished, the Gold Digger is no better than a mundane greatsword.
 
 STATISTICS:
 
@@ -6714,10 +6753,10 @@ Requires:
  14 Strength
 
 Weight: 15~*/
-COPY ~%MOD_FOLDER%\generated\a\itm\xaa532.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@63313) /*~Quarterstaff~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@63314) /*~The Ossifier~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@63315) /*~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High-quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
+COPY ~%MOD_FOLDER%\generated\a\itm\xaa124.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@63321) /*~Quarterstaff~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63322) /*~The Ossifier~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@63323) /*~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High-quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
 
 STATISTICS:
 
@@ -6729,7 +6768,7 @@ Requires:
  5 Strength
 
 Weight: 4~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@63316) /*~Cursed Staff of Petrification: The Ossifier
+	WRITE_LONG 84 RESOLVE_STR_REF(@63324) /*~Cursed Staff of Petrification: The Ossifier
 The surface of this seven-foot shaft more resembles stone than wood, but in the hands of a skilled wielder it weighs little more than a staff of oak. Along its length appear the ghost-like images of various foes caught in defensive postures, appearing almost as thought they had been suddenly turned to stone.
 
 STATISTICS:
@@ -6748,32 +6787,34 @@ Requires:
  5 Strength
 
 Weight: 4~*/
-COPY ~%MOD_FOLDER%\generated\a\itm\xaa531.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@63317) /*~Sling~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@63318) /*~Sling of Unerring Accuracy +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@63319) /*~Slings have existed since the beginning of recorded history. The basic sling consists of a leather or fabric strap with a pouch for holding the missile. The weapon is held by both ends of the strap and twirled around the wielder's head. When top speed is attained, the missile is launched by releasing one of the strap's ends.
+COPY ~%MOD_FOLDER%\generated\a\itm\xaa122.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@63325) /*~Flail ~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63326) /*~The Thresher +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@63327) /*~The flail is a sturdy wooden handle attached to an iron rod, a wooden rod with spikes, or a spiked iron ball. Between the handle and its implement is either a hinge or chain link. The weapon was originally used as a tool for threshing grain.
 
 STATISTICS:
 
-Speed Factor: 6
-Proficiency Type: Sling
+Damage: 1d6+1 (crushing)
+Speed Factor: 7
+Proficiency Type: Flail/Morning Star
 Type: One-handed
 Requires:
- 3 Strength
+ 13 Strength
 
-Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@63320) /*~Dandifox was one of the greatest heroes of the hin, the small people also known as halflings. From the concealment of forest arbors, he would attack rich caravans for a "tithe," which he then distributed among the local poor. The heroic robber finally met his end on the point of a guardsman's spear, but not before the constabulary had learned to fear and hate his infallible aim.
+Weight: 15~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@63328) /*~With one rod of steel and another of bronze, this double-headed flail metes out punishment right and left. The weapon's carved wooden haft depicts scenes of battle in which champions of Helm, each wielding an identical flail, wade through a field of orcs, threshing them like so much wheat.
 
 STATISTICS:
 
 THAC0: +2
-Speed Factor: 6
-Proficiency Type: Sling
+Damage: 1d6+3 (crushing)
+Speed Factor: 5
+Proficiency Type: Flail/Morning Star
 Type: One-handed
 Requires:
- 3 Strength
+ 13 Strength
 
-Weight: 0~*/
+Weight: 13~*/
 
 //tis files
 //===================
@@ -6796,6 +6837,7 @@ COPY ~%MOD_FOLDER%\generated\a\tis\xaa117.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa118.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa119.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa121.tis~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\tis\xaa143.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa142.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa141.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa130.tis~ ~override~
@@ -6803,7 +6845,6 @@ COPY ~%MOD_FOLDER%\generated\a\tis\xaa132.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa133.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa134.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa136.tis~ ~override~
-COPY ~%MOD_FOLDER%\generated\a\tis\xaa143.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa147.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa148.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa149.tis~ ~override~
@@ -6834,7 +6875,6 @@ COPY ~%MOD_FOLDER%\generated\a\tis\xaa357.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa353.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa326.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa324.tis~ ~override~
-COPY ~%MOD_FOLDER%\generated\a\tis\xaa307.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa270.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa264.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa259.tis~ ~override~
@@ -6852,6 +6892,7 @@ COPY ~%MOD_FOLDER%\generated\a\tis\xaa287.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa289.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa297.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa305.tis~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\tis\xaa307.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa527.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa490.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa488.tis~ ~override~
@@ -6888,141 +6929,141 @@ COPY ~%MOD_FOLDER%\generated\a\tis\xaa677.tis~ ~override~
 
 //sto files
 //===================
-COPY ~%MOD_FOLDER%\generated\a\sto\xaa128.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63321) /*~Black Lily~*/
-COPY ~%MOD_FOLDER%\generated\a\sto\xaa125.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63322) /*~Drakon Tavern~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@63323) /*~Mead~*/
-	WRITE_LONG 184 RESOLVE_STR_REF(@63324) /*~Westgate Ruby Wine~*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@63325) /*~Golden Sands Brews~*/
-	WRITE_LONG 224 RESOLVE_STR_REF(@63326) /*~Shadowdark Ale~*/
-	WRITE_LONG 244 RESOLVE_STR_REF(@63327) /*~Suz-ale~*/
-	WRITE_LONG 264 RESOLVE_STR_REF(@63328) /*~Old One Eye Beer~*/
-COPY ~%MOD_FOLDER%\generated\a\sto\xaa124.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63329) /*~Low Lantern~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@63330) /*~Westgate Ruby Wine~*/
-	WRITE_LONG 184 RESOLVE_STR_REF(@63331) /*~Suz-ale~*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@63332) /*~Old One Eye Beer~*/
-	WRITE_LONG 224 RESOLVE_STR_REF(@63333) /*~Dragon's Breath Beer~*/
-	WRITE_LONG 244 RESOLVE_STR_REF(@63334) /*~Luiren's Best Ale~*/
-	WRITE_LONG 264 RESOLVE_STR_REF(@63335) /*~Shadowdark Ale~*/
-	WRITE_LONG 284 RESOLVE_STR_REF(@63336) /*~Bitter Black Ale~*/
-COPY ~%MOD_FOLDER%\generated\a\sto\xaa123.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63337) /*~Jopalin's Tavern~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@63338) /*~Westgate Ruby Wine~*/
-	WRITE_LONG 184 RESOLVE_STR_REF(@63339) /*~Shadowdark Ale~*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@63340) /*~Old One Eye Beer~*/
-	WRITE_LONG 224 RESOLVE_STR_REF(@63341) /*~Dragon's Breath Beer~*/
-	WRITE_LONG 244 RESOLVE_STR_REF(@63342) /*~Firewine~*/
-	WRITE_LONG 264 RESOLVE_STR_REF(@63343) /*~Tanagyr's Stout Ale~*/
-COPY ~%MOD_FOLDER%\generated\a\sto\xaa122.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63344) /*~Store~*/
-COPY ~%MOD_FOLDER%\generated\a\sto\xaa119.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63345) /*~Splurging Sturgeon~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@63346) /*~Blood Wine~*/
-	WRITE_LONG 184 RESOLVE_STR_REF(@63347) /*~Golden Sands Brews~*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@63348) /*~Luiren's Best Ale~*/
-	WRITE_LONG 224 RESOLVE_STR_REF(@63349) /*~Tanagyr's Stout Ale~*/
-COPY ~%MOD_FOLDER%\generated\a\sto\xaa116.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63350) /*~Blushing Mermaid~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@63351) /*~Mead~*/
-	WRITE_LONG 184 RESOLVE_STR_REF(@63352) /*~Saerloonian Topaz Wine~*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@63353) /*~Elminster's Choice Beer~*/
-	WRITE_LONG 224 RESOLVE_STR_REF(@63354) /*~Tanagyr's Stout Ale~*/
-	WRITE_LONG 244 RESOLVE_STR_REF(@63355) /*~Berduskan Dark Wine~*/
-	WRITE_LONG 264 RESOLVE_STR_REF(@63356) /*~Bitter Black Ale~*/
-	WRITE_LONG 284 RESOLVE_STR_REF(@63357) /*~Firewine~*/
-	WRITE_LONG 304 RESOLVE_STR_REF(@63358) /*~Old One Eye Beer~*/
-COPY ~%MOD_FOLDER%\generated\a\sto\xaa113.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63359) /*~Tavern~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@63360) /*~Mead~*/
-	WRITE_LONG 184 RESOLVE_STR_REF(@63361) /*~Westgate Ruby Wine~*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@63362) /*~Golden Sands Brews~*/
-	WRITE_LONG 224 RESOLVE_STR_REF(@63363) /*~Shadowdark Ale~*/
-	WRITE_LONG 244 RESOLVE_STR_REF(@63364) /*~Suz-ale~*/
-	WRITE_LONG 264 RESOLVE_STR_REF(@63365) /*~Old One Eye Beer~*/
-COPY ~%MOD_FOLDER%\generated\a\sto\xaa112.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63366) /*~Lucky Aello's Discount Store~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa105.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63367) /*~Shop of Silence~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63329) /*~Shop of Silence~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa103.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63368) /*~Elfsong Tavern~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@63369) /*~Westgate Ruby Wine~*/
-	WRITE_LONG 184 RESOLVE_STR_REF(@63370) /*~Golden Sands Brews~*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@63371) /*~Suz-ale~*/
-	WRITE_LONG 224 RESOLVE_STR_REF(@63372) /*~Old One Eye Beer~*/
-	WRITE_LONG 244 RESOLVE_STR_REF(@63373) /*~Saerloonian Topaz Wine~*/
-	WRITE_LONG 264 RESOLVE_STR_REF(@63374) /*~Tanagyr's Stout Ale~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63330) /*~Elfsong Tavern~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@63331) /*~Westgate Ruby Wine~*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@63332) /*~Golden Sands Brews~*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@63333) /*~Suz-ale~*/
+	WRITE_LONG 224 RESOLVE_STR_REF(@63334) /*~Old One Eye Beer~*/
+	WRITE_LONG 244 RESOLVE_STR_REF(@63335) /*~Saerloonian Topaz Wine~*/
+	WRITE_LONG 264 RESOLVE_STR_REF(@63336) /*~Tanagyr's Stout Ale~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa102.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63375) /*~Maltz's Weapon Shop~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63337) /*~Maltz's Weapon Shop~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa101.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63376) /*~Sorcerous Sundries~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63338) /*~Sorcerous Sundries~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa151.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63377) /*~Helm and Cloak~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@63378) /*~Alurlyath Wine~*/
-	WRITE_LONG 184 RESOLVE_STR_REF(@63379) /*~Blood Wine~*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@63380) /*~Firewine~*/
-	WRITE_LONG 224 RESOLVE_STR_REF(@63381) /*~Mead~*/
-	WRITE_LONG 244 RESOLVE_STR_REF(@63382) /*~Evermead~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63339) /*~Helm and Cloak~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@63340) /*~Alurlyath Wine~*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@63341) /*~Blood Wine~*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@63342) /*~Firewine~*/
+	WRITE_LONG 224 RESOLVE_STR_REF(@63343) /*~Mead~*/
+	WRITE_LONG 244 RESOLVE_STR_REF(@63344) /*~Evermead~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa150.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63383) /*~General Store~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63345) /*~General Store~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa149.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63384) /*~General Store~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63346) /*~General Store~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa148.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63385) /*~General Store~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63347) /*~General Store~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa147.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63386) /*~General Store~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63348) /*~General Store~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa146.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63387) /*~General Store~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63349) /*~General Store~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa145.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63388) /*~Temple of Helm~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63350) /*~Temple of Helm~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa142.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63389) /*~Three Old Kegs~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@63390) /*~Mead~*/
-	WRITE_LONG 184 RESOLVE_STR_REF(@63391) /*~Evermead~*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@63392) /*~Winter Wine~*/
-	WRITE_LONG 224 RESOLVE_STR_REF(@63393) /*~Berduskan Dark Wine~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63351) /*~Three Old Kegs~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@63352) /*~Mead~*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@63353) /*~Evermead~*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@63354) /*~Winter Wine~*/
+	WRITE_LONG 224 RESOLVE_STR_REF(@63355) /*~Berduskan Dark Wine~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa138.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63394) /*~Blade and Stars~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@63395) /*~Suz-ale~*/
-	WRITE_LONG 184 RESOLVE_STR_REF(@63396) /*~Dragon's Breath Beer~*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@63397) /*~Firewine~*/
-	WRITE_LONG 224 RESOLVE_STR_REF(@63398) /*~Golden Sands Brews~*/
-	WRITE_LONG 244 RESOLVE_STR_REF(@63399) /*~Luiren's Best Ale~*/
-	WRITE_LONG 264 RESOLVE_STR_REF(@63400) /*~Bitter Black Ale~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63356) /*~Blade and Stars~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@63357) /*~Suz-ale~*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@63358) /*~Dragon's Breath Beer~*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@63359) /*~Firewine~*/
+	WRITE_LONG 224 RESOLVE_STR_REF(@63360) /*~Golden Sands Brews~*/
+	WRITE_LONG 244 RESOLVE_STR_REF(@63361) /*~Luiren's Best Ale~*/
+	WRITE_LONG 264 RESOLVE_STR_REF(@63362) /*~Bitter Black Ale~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa137.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63401) /*~General Store~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63363) /*~General Store~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa136.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63402) /*~Lady's Hall~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63364) /*~Lady's Hall~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa135.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63403) /*~High House of Wonders~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63365) /*~High House of Wonders~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa132.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63404) /*~Tavern~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@63405) /*~Mead~*/
-	WRITE_LONG 184 RESOLVE_STR_REF(@63406) /*~Westgate Ruby Wine~*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@63407) /*~Golden Sands Brews~*/
-	WRITE_LONG 224 RESOLVE_STR_REF(@63408) /*~Shadowdark Ale~*/
-	WRITE_LONG 244 RESOLVE_STR_REF(@63409) /*~Suz-ale~*/
-	WRITE_LONG 264 RESOLVE_STR_REF(@63410) /*~Old One Eye Beer~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63366) /*~Tavern~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@63367) /*~Mead~*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@63368) /*~Westgate Ruby Wine~*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@63369) /*~Golden Sands Brews~*/
+	WRITE_LONG 224 RESOLVE_STR_REF(@63370) /*~Shadowdark Ale~*/
+	WRITE_LONG 244 RESOLVE_STR_REF(@63371) /*~Suz-ale~*/
+	WRITE_LONG 264 RESOLVE_STR_REF(@63372) /*~Old One Eye Beer~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa131.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63411) /*~Merchant~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63373) /*~Merchant~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa130.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63412) /*~Elfsong Tavern~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@63413) /*~Westgate Ruby Wine~*/
-	WRITE_LONG 184 RESOLVE_STR_REF(@63414) /*~Golden Sands Brews~*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@63415) /*~Suz-ale~*/
-	WRITE_LONG 224 RESOLVE_STR_REF(@63416) /*~Old One Eye Beer~*/
-	WRITE_LONG 244 RESOLVE_STR_REF(@63417) /*~Saerloonian Topaz Wine~*/
-	WRITE_LONG 264 RESOLVE_STR_REF(@63418) /*~Tanagyr's Stout Ale~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63374) /*~Elfsong Tavern~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@63375) /*~Westgate Ruby Wine~*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@63376) /*~Golden Sands Brews~*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@63377) /*~Suz-ale~*/
+	WRITE_LONG 224 RESOLVE_STR_REF(@63378) /*~Old One Eye Beer~*/
+	WRITE_LONG 244 RESOLVE_STR_REF(@63379) /*~Saerloonian Topaz Wine~*/
+	WRITE_LONG 264 RESOLVE_STR_REF(@63380) /*~Tanagyr's Stout Ale~*/
+COPY ~%MOD_FOLDER%\generated\a\sto\xaa128.sto~ ~override~
+	WRITE_LONG 12 RESOLVE_STR_REF(@63381) /*~Black Lily~*/
+COPY ~%MOD_FOLDER%\generated\a\sto\xaa125.sto~ ~override~
+	WRITE_LONG 12 RESOLVE_STR_REF(@63382) /*~Drakon Tavern~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@63383) /*~Mead~*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@63384) /*~Westgate Ruby Wine~*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@63385) /*~Golden Sands Brews~*/
+	WRITE_LONG 224 RESOLVE_STR_REF(@63386) /*~Shadowdark Ale~*/
+	WRITE_LONG 244 RESOLVE_STR_REF(@63387) /*~Suz-ale~*/
+	WRITE_LONG 264 RESOLVE_STR_REF(@63388) /*~Old One Eye Beer~*/
+COPY ~%MOD_FOLDER%\generated\a\sto\xaa124.sto~ ~override~
+	WRITE_LONG 12 RESOLVE_STR_REF(@63389) /*~Low Lantern~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@63390) /*~Westgate Ruby Wine~*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@63391) /*~Suz-ale~*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@63392) /*~Old One Eye Beer~*/
+	WRITE_LONG 224 RESOLVE_STR_REF(@63393) /*~Dragon's Breath Beer~*/
+	WRITE_LONG 244 RESOLVE_STR_REF(@63394) /*~Luiren's Best Ale~*/
+	WRITE_LONG 264 RESOLVE_STR_REF(@63395) /*~Shadowdark Ale~*/
+	WRITE_LONG 284 RESOLVE_STR_REF(@63396) /*~Bitter Black Ale~*/
+COPY ~%MOD_FOLDER%\generated\a\sto\xaa123.sto~ ~override~
+	WRITE_LONG 12 RESOLVE_STR_REF(@63397) /*~Jopalin's Tavern~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@63398) /*~Westgate Ruby Wine~*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@63399) /*~Shadowdark Ale~*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@63400) /*~Old One Eye Beer~*/
+	WRITE_LONG 224 RESOLVE_STR_REF(@63401) /*~Dragon's Breath Beer~*/
+	WRITE_LONG 244 RESOLVE_STR_REF(@63402) /*~Firewine~*/
+	WRITE_LONG 264 RESOLVE_STR_REF(@63403) /*~Tanagyr's Stout Ale~*/
+COPY ~%MOD_FOLDER%\generated\a\sto\xaa122.sto~ ~override~
+	WRITE_LONG 12 RESOLVE_STR_REF(@63404) /*~Store~*/
+COPY ~%MOD_FOLDER%\generated\a\sto\xaa119.sto~ ~override~
+	WRITE_LONG 12 RESOLVE_STR_REF(@63405) /*~Splurging Sturgeon~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@63406) /*~Blood Wine~*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@63407) /*~Golden Sands Brews~*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@63408) /*~Luiren's Best Ale~*/
+	WRITE_LONG 224 RESOLVE_STR_REF(@63409) /*~Tanagyr's Stout Ale~*/
+COPY ~%MOD_FOLDER%\generated\a\sto\xaa116.sto~ ~override~
+	WRITE_LONG 12 RESOLVE_STR_REF(@63410) /*~Blushing Mermaid~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@63411) /*~Mead~*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@63412) /*~Saerloonian Topaz Wine~*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@63413) /*~Elminster's Choice Beer~*/
+	WRITE_LONG 224 RESOLVE_STR_REF(@63414) /*~Tanagyr's Stout Ale~*/
+	WRITE_LONG 244 RESOLVE_STR_REF(@63415) /*~Berduskan Dark Wine~*/
+	WRITE_LONG 264 RESOLVE_STR_REF(@63416) /*~Bitter Black Ale~*/
+	WRITE_LONG 284 RESOLVE_STR_REF(@63417) /*~Firewine~*/
+	WRITE_LONG 304 RESOLVE_STR_REF(@63418) /*~Old One Eye Beer~*/
+COPY ~%MOD_FOLDER%\generated\a\sto\xaa113.sto~ ~override~
+	WRITE_LONG 12 RESOLVE_STR_REF(@63419) /*~Tavern~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@63420) /*~Mead~*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@63421) /*~Westgate Ruby Wine~*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@63422) /*~Golden Sands Brews~*/
+	WRITE_LONG 224 RESOLVE_STR_REF(@63423) /*~Shadowdark Ale~*/
+	WRITE_LONG 244 RESOLVE_STR_REF(@63424) /*~Suz-ale~*/
+	WRITE_LONG 264 RESOLVE_STR_REF(@63425) /*~Old One Eye Beer~*/
+COPY ~%MOD_FOLDER%\generated\a\sto\xaa112.sto~ ~override~
+	WRITE_LONG 12 RESOLVE_STR_REF(@63426) /*~Lucky Aello's Discount Store~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa100.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@63419) /*~Keexie Tavern~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@63420) /*~Westgate Ruby Wine~*/
-	WRITE_LONG 184 RESOLVE_STR_REF(@63421) /*~Suz-ale~*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@63422) /*~Old One Eye Beer~*/
-	WRITE_LONG 224 RESOLVE_STR_REF(@63423) /*~Dragon's Breath Beer~*/
-	WRITE_LONG 244 RESOLVE_STR_REF(@63424) /*~Luiren's Best Ale~*/
-	WRITE_LONG 264 RESOLVE_STR_REF(@63425) /*~Shadowdark Ale~*/
-	WRITE_LONG 284 RESOLVE_STR_REF(@63426) /*~Bitter Black Ale~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@63427) /*~Keexie Tavern~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@63428) /*~Westgate Ruby Wine~*/
+	WRITE_LONG 184 RESOLVE_STR_REF(@63429) /*~Suz-ale~*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@63430) /*~Old One Eye Beer~*/
+	WRITE_LONG 224 RESOLVE_STR_REF(@63431) /*~Dragon's Breath Beer~*/
+	WRITE_LONG 244 RESOLVE_STR_REF(@63432) /*~Luiren's Best Ale~*/
+	WRITE_LONG 264 RESOLVE_STR_REF(@63433) /*~Shadowdark Ale~*/
+	WRITE_LONG 284 RESOLVE_STR_REF(@63434) /*~Bitter Black Ale~*/
 
 //{ PVRZ
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa10000.pvrz~ ~override~
@@ -7301,6 +7342,7 @@ COPY ~%MOD_FOLDER%\generated\a\sto\xaa100.sto~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa12118.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa12119.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa12120.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa14300.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa14200.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa14201.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa14202.pvrz~ ~override~
@@ -7431,7 +7473,6 @@ COPY ~%MOD_FOLDER%\generated\a\sto\xaa100.sto~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa13400.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa13600.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa13601.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa14300.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa14700.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa14701.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa14702.pvrz~ ~override~
@@ -7548,7 +7589,6 @@ COPY ~%MOD_FOLDER%\generated\a\sto\xaa100.sto~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa32600.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa32601.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa32400.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa30700.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa27000.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa26400.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa25900.pvrz~ ~override~
@@ -7611,6 +7651,7 @@ COPY ~%MOD_FOLDER%\generated\a\sto\xaa100.sto~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa29712.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa30500.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa30501.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa30700.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa52700.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa52701.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\a\pvrz\xa49000.pvrz~ ~override~

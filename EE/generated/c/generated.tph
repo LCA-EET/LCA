@@ -1,5 +1,5 @@
 PRINT ~Processing converted asset block: xac...~
-SILENT
+//SILENT
 //{ MUSIC
 ADD_MUSIC xac0 ~%MOD_FOLDER%\generated\c\mus\xac0.mus~
 ADD_MUSIC xac1 ~%MOD_FOLDER%\generated\c\mus\xac1.mus~
@@ -1998,7 +1998,7 @@ Requires:
  6 Strength
 
 Weight: 35~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac136.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac129.itm~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@45986) /*~A Key~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@45987) /*~Troll Pen Key~*/
 	WRITE_LONG 80 RESOLVE_STR_REF(@45988) /*~This is a standard key. Keys are used to open doors.
@@ -2011,10 +2011,46 @@ Weight: 1~*/
 STATISTICS:
 
 Weight: 1~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac156.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45990) /*~Plate Mail~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45991) /*~Bloody Bone Plate +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45992) /*~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac130.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac131.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac132.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45990) /*~Troll Shackles~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45991) /*~Troll Shackles~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45992) /*~These reinforced steel manacles are extra large to fit a troll's massive wrists.
+
+STATISTICS:
+
+Weight: 5~*/
+COPY ~%MOD_FOLDER%\generated\c\itm\xac133.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45993) /*~Crusader Uniform~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45994) /*~Crusader Uniform~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45995) /*~This colorful tunic displays the sigil of Caelar's crusaders.
+
+STATISTICS:
+
+Weight: 10~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@45996) /*~This colorful tunic displays the sigil of Caelar's crusaders.
+
+STATISTICS:
+
+Weight: 10~*/
+COPY ~%MOD_FOLDER%\generated\c\itm\xac134.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@45997) /*~Battle Standard~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@45998) /*~Battle Standard~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@45999) /*~This long flag, edged with metallic embroidery, is used to rally troops and send messages to other units of Caelar Argent's army.
+
+STATISTICS:
+
+Weight: 1~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@46000) /*~This long flag, edged with metallic embroidery, is used to rally troops and send messages to other units of Caelar Argent's army.
+
+STATISTICS:
+
+Weight: 1~*/
+COPY ~%MOD_FOLDER%\generated\c\itm\xac136.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46001) /*~Plate Mail~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46002) /*~Bloody Bone Plate +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@46003) /*~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
 
 STATISTICS:
 
@@ -2023,7 +2059,7 @@ Requires:
  12 Strength
 
 Weight: 50~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45993) /*~The warrior who once wore this armor died at the hands of a friend she trusted. The mark of her betrayal remains in the bloodstains that have darkened to brown on the gleaming bone-white armor. The armor functions properly, though it makes the wearer unappealing to look at.
+	WRITE_LONG 84 RESOLVE_STR_REF(@46004) /*~The warrior who once wore this armor died at the hands of a friend she trusted. The mark of her betrayal remains in the bloodstains that have darkened to brown on the gleaming bone-white armor. The armor functions properly, though it makes the wearer unappealing to look at.
 
 STATISTICS:
 
@@ -2036,15 +2072,15 @@ Requires:
  8 Strength
 
 Weight: 20~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac157.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45994) /*~Amulet~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45995) /*~Amulet of Abnormally Awesome Ankheg Summoning~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@45996) /*~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac137.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46005) /*~Amulet~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46006) /*~Amulet of Abnormally Awesome Ankheg Summoning~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@46007) /*~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
 
 STATISTICS:
 
 Weight: 1~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@45997) /*~Crafted by the dark druid Ferrusk, this amulet resembles the curved pincers of an ankheg hanging from an iron chain. The pincers' polished green carapace catches the light, gleaming with an emerald sheen. Ferrusk created this amulet to summon a passel of ankhegs to fight at its wearer's command.
+	WRITE_LONG 84 RESOLVE_STR_REF(@46008) /*~Crafted by the dark druid Ferrusk, this amulet resembles the curved pincers of an ankheg hanging from an iron chain. The pincers' polished green carapace catches the light, gleaming with an emerald sheen. Ferrusk created this amulet to summon a passel of ankhegs to fight at its wearer's command.
 
 STATISTICS:
 
@@ -2057,10 +2093,10 @@ Charge abilities:
   Duration: 2 turns
 
 Weight: 0~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac158.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@45998) /*~Club~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@45999) /*~Club +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@46000) /*~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac138.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46009) /*~Club~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46010) /*~Club +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@46011) /*~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
 
 STATISTICS:
 
@@ -2072,7 +2108,7 @@ Requires:
  5 Strength
 
 Weight: 3~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@46001) /*~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
+	WRITE_LONG 84 RESOLVE_STR_REF(@46012) /*~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
 
 STATISTICS:
 
@@ -2085,27 +2121,27 @@ Requires:
  5 Strength
 
 Weight: 3~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac159.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@46002) /*~Potion~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@46003) /*~Slime Sickness Curative~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@46004) /*~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac139.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46013) /*~Potion~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46014) /*~Slime Sickness Curative~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@46015) /*~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
 
 STATISTICS:
 
 Weight: 1~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@46005) /*~This bottle contains a special healing potion that counteracts fungal poison found in the caverns beneath Dragonspear Castle. One sip from the bottle is enough to cure the afflicted.
+	WRITE_LONG 84 RESOLVE_STR_REF(@46016) /*~This bottle contains a special healing potion that counteracts fungal poison found in the caverns beneath Dragonspear Castle. One sip from the bottle is enough to cure the afflicted.
 
 STATISTICS:
 
 Weight: 1~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac160.itm~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\itm\xac168.itm~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\itm\xac171.itm~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\itm\xac175.itm~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\itm\xac181.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@46006) /*~Helmet~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@46007) /*~Helmet~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@46008) /*~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+COPY ~%MOD_FOLDER%\generated\c\itm\xac140.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac148.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac151.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac155.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac161.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46017) /*~Helmet~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46018) /*~Helmet~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@46019) /*~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -2113,7 +2149,7 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@46009) /*~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+	WRITE_LONG 84 RESOLVE_STR_REF(@46020) /*~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -2121,10 +2157,10 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac219.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@46010) /*~Composite Longbow~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@46011) /*~Corinth's Bow +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@46012) /*~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac199.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46021) /*~Composite Longbow~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46022) /*~Corinth's Bow +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@46023) /*~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
 
 STATISTICS:
 
@@ -2137,7 +2173,7 @@ Requires:
  18 Strength
 
 Weight: 10~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@46013) /*~Though obviously well-used, someone has taken excellent care of this finely crafted bow. A small golden seal on one side appears to be a family crest.
+	WRITE_LONG 84 RESOLVE_STR_REF(@46024) /*~Though obviously well-used, someone has taken excellent care of this finely crafted bow. A small golden seal on one side appears to be a family crest.
 
 STATISTICS:
 
@@ -2156,38 +2192,38 @@ Requires:
  18 Strength
 
 Weight: 8~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac214.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@46014) /*~Helmet~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@46015) /*~Helmet~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@46016) /*~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
-
-STATISTICS:
-
-Equipped abilities:
-– Protects against critical hits
-
-Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@46017) /*~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
-
-STATISTICS:
-
-Equipped abilities:
-– Protects against critical hits
-
-Weight: 2~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac194.itm~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\itm\xac233.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@46018) /*~Tristian's Holy Symbol~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@46019) /*~Tristian's Holy Symbol~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@46020) /*~A carved wooden chesspiece painted a brilliant cherry red. Two glittering rubies wink from the horse's eye sockets.
+	WRITE_LONG 8 RESOLVE_STR_REF(@46025) /*~Helmet~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46026) /*~Helmet~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@46027) /*~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+
+Weight: 2~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@46028) /*~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+
+Weight: 2~*/
+COPY ~%MOD_FOLDER%\generated\c\itm\xac174.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac213.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46029) /*~Tristian's Holy Symbol~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46030) /*~Tristian's Holy Symbol~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@46031) /*~A carved wooden chesspiece painted a brilliant cherry red. Two glittering rubies wink from the horse's eye sockets.
 
 STATISTICS:
 
 Weight: 1~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac235.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@46021) /*~Long Sword~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@46022) /*~Long Sword +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@46023) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac215.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46032) /*~Long Sword~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46033) /*~Long Sword +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@46034) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
 
 STATISTICS:
 
@@ -2199,7 +2235,7 @@ Requires:
  6 Strength
 
 Weight: 4~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@46024) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
+	WRITE_LONG 84 RESOLVE_STR_REF(@46035) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
 
 STATISTICS:
 
@@ -2212,15 +2248,15 @@ Requires:
  6 Strength
 
 Weight: 4~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac243.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@46025) /*~Ring~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@46026) /*~Ring of the Crusade~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@46027) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac223.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46036) /*~Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46037) /*~Ring of the Crusade~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@46038) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@46028) /*~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
+	WRITE_LONG 84 RESOLVE_STR_REF(@46039) /*~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
 
 STATISTICS:
 
@@ -2229,44 +2265,44 @@ Equipped abilities:
 – Saving Throws: +1, +3 vs. demons and devils
 
 Weight: 0~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac245.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@46029) /*~Second Stone Fragment~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@46030) /*~Second Stone Fragment~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@46031) /*~A shard of stone belonging to an icon of Tempus.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac225.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46040) /*~Second Stone Fragment~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46041) /*~Second Stone Fragment~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@46042) /*~A shard of stone belonging to an icon of Tempus.
 
 STATISTICS:
 
 Weight: 10~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac249.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@46032) /*~Dreon's Signet Ring~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@46033) /*~Dreon's Signet Ring~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@46034) /*~This heavy gold ring displays the seal of Caelar Argent, leader of the Shining Lady's crusade.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac229.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46043) /*~Dreon's Signet Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46044) /*~Dreon's Signet Ring~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@46045) /*~This heavy gold ring displays the seal of Caelar Argent, leader of the Shining Lady's crusade.
 
 STATISTICS:
 
 Weight: 0~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac251.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@46035) /*~Empty Wineskin~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@46036) /*~Empty Wineskin~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@46037) /*~This well-used wineskin is stained purple around the spout.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac231.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46046) /*~Empty Wineskin~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46047) /*~Empty Wineskin~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@46048) /*~This well-used wineskin is stained purple around the spout.
 
 STATISTICS:
 
 Weight: 1~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac255.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@46038) /*~Token of Faith~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@46039) /*~Token of Faith~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@46040) /*~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac235.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@46049) /*~Token of Faith~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@46050) /*~Token of Faith~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@46051) /*~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
 
 STATISTICS:
 
 Weight: 1~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@46041) /*~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
+	WRITE_LONG 84 RESOLVE_STR_REF(@46052) /*~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
 
 STATISTICS:
 
 Weight: 1~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac283.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac263.itm~ ~override~
 
 //bmp files
 //===================
@@ -2296,15 +2332,21 @@ COPY ~%MOD_FOLDER%\generated\c\bam\xac101.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac108.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac109.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac110.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac111.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac112.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac113.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac114.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac115.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac116.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac125.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac124.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac123.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac122.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac121.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac120.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac119.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac118.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac117.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac116.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac115.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac114.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac113.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac112.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac111.bam~ ~override~
 
 //tis files
 //===================

@@ -1,5 +1,5 @@
 PRINT ~Processing converted asset block: xad...~
-SILENT
+//SILENT
 //{ MUSIC
 ADD_MUSIC xad0 ~%MOD_FOLDER%\generated\d\mus\xad0.mus~
 ADD_MUSIC xad1 ~%MOD_FOLDER%\generated\d\mus\xad1.mus~
@@ -540,7 +540,7 @@ Equipped abilities:
 
 Weight: 0~*/
 COPY ~%MOD_FOLDER%\generated\d\itm\xad102.itm~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\itm\xad104.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\itm\xad103.itm~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@40234) /*~Ring~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@40235) /*~Ring of Protection +2~*/
 	WRITE_LONG 80 RESOLVE_STR_REF(@40236) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
@@ -557,7 +557,7 @@ Equipped abilities:
 – Saving Throws: +2
 
 Weight: 0~*/
-COPY ~%MOD_FOLDER%\generated\d\itm\xad106.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\itm\xad105.itm~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@40238) /*~Corwin's Armor +2~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@40239) /*~Corwin's Armor +2~*/
 	WRITE_LONG 80 RESOLVE_STR_REF(@40240) /*~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
@@ -586,7 +586,7 @@ Requires:
  5 Strength
 
 Weight: 7~*/
-COPY ~%MOD_FOLDER%\generated\d\itm\xad107.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\itm\xad106.itm~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@40242) /*~Composite Longbow~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@40243) /*~Corwin's Bow +1~*/
 	WRITE_LONG 80 RESOLVE_STR_REF(@40244) /*~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
@@ -621,7 +621,7 @@ Requires:
  18 Strength
 
 Weight: 9~*/
-COPY ~%MOD_FOLDER%\generated\d\itm\xad111.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\itm\xad110.itm~ ~override~
 
 //wed files
 //===================

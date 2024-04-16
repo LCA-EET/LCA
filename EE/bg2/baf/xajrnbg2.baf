@@ -1,3 +1,36 @@
+//{ Trouble in the Tower
+IF
+	GlobalGT("XA_LC_HelpMother", "GLOBAL", 0)
+	GlobalLT("XA_LC_Journal_Trouble", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Trouble", "GLOBAL", 1)
+		AddJournalEntry(@79, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	GlobalGT("XA_LC_SavedTimotey", "GLOBAL", 0)
+	GlobalLT("XA_LC_Journal_Trouble", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Trouble", "GLOBAL", 2)
+		AddJournalEntry(@80, INFO)
+		AddXPObject(Player1, 5000)
+		AddXPObject(Player2, 5000)
+		AddXPObject(Player3, 5000)
+		AddXPObject(Player4, 5000)
+		AddXPObject(Player5, 5000)
+		AddXPObject(Player6, 5000)
+		EraseJournalEntry(@79)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
 //{ Gift for Rohma
 
 IF

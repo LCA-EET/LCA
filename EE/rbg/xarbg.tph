@@ -2046,6 +2046,44 @@ END
 		WRITE_LONG 0x154 0 // Yago
 	//}
 	
+	//{ ar0138 xaa677 Ramazith L5
+		COPY_EXISTING ~xaa677.are~ ~override~
+		
+		// Disable Containers
+		WRITE_LONG 0x270 32
+		WRITE_LONG 0x330 32
+		WRITE_LONG 0x3F0 32
+		WRITE_LONG 0x4B0 32
+		WRITE_LONG 0x570 32
+		WRITE_LONG 0x630 32
+		WRITE_LONG 0x6F0 32
+		WRITE_LONG 0x7B0 32
+		WRITE_LONG 0x870 32
+		
+		//{ Tower Trouble Quest
+			LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 170
+					fj_loc_y = 138
+					fj_orientation = 14 
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = xatimoty
+					fj_cre_resref = xatimoty
+			END
+			LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 193
+					fj_loc_y = 176
+					fj_orientation = 14 
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = basgrt01
+					fj_cre_resref = basgrt01
+			END
+		//}
+	//}
+	
 	//{ ar0139 xaa437 Ramazith L2
 		COPY_EXISTING ~xaa437.are~ ~override~
 		
@@ -2088,6 +2126,8 @@ END
 		WRITE_LONG 0x594 0 // Kobold
 		WRITE_LONG 0x6A4 0 // Kobold
 	//}
+	
+	
 
 	//{ ar0153 xaa188 Thieves' Guild
 		COPY_EXISTING ~xaa188.are~ ~override~

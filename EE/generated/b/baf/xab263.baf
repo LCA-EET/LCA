@@ -1,7 +1,0 @@
-IF
-	StateCheck(Myself,STATE_SLEEPING)
-THEN
-	RESPONSE #100
-		NoAction()
-END
-

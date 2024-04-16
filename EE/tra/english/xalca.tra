@@ -2146,7 +2146,6 @@ Requires:
  18 Strength
 
 Weight: 9~
-
 //}
 
 //{ Block C Translations
@@ -3431,9 +3430,40 @@ Weight: 1~
 STATISTICS:
 
 Weight: 1~
-@45990 = ~Plate Mail~
-@45991 = ~Bloody Bone Plate +2~
-@45992 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+@45990 = ~Troll Shackles~
+@45991 = ~Troll Shackles~
+@45992 = ~These reinforced steel manacles are extra large to fit a troll's massive wrists.
+
+STATISTICS:
+
+Weight: 5~
+@45993 = ~Crusader Uniform~
+@45994 = ~Crusader Uniform~
+@45995 = ~This colorful tunic displays the sigil of Caelar's crusaders.
+
+STATISTICS:
+
+Weight: 10~
+@45996 = ~This colorful tunic displays the sigil of Caelar's crusaders.
+
+STATISTICS:
+
+Weight: 10~
+@45997 = ~Battle Standard~
+@45998 = ~Battle Standard~
+@45999 = ~This long flag, edged with metallic embroidery, is used to rally troops and send messages to other units of Caelar Argent's army.
+
+STATISTICS:
+
+Weight: 1~
+@46000 = ~This long flag, edged with metallic embroidery, is used to rally troops and send messages to other units of Caelar Argent's army.
+
+STATISTICS:
+
+Weight: 1~
+@46001 = ~Plate Mail~
+@46002 = ~Bloody Bone Plate +2~
+@46003 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
 
 STATISTICS:
 
@@ -3442,7 +3472,7 @@ Requires:
  12 Strength
 
 Weight: 50~
-@45993 = ~The warrior who once wore this armor died at the hands of a friend she trusted. The mark of her betrayal remains in the bloodstains that have darkened to brown on the gleaming bone-white armor. The armor functions properly, though it makes the wearer unappealing to look at.
+@46004 = ~The warrior who once wore this armor died at the hands of a friend she trusted. The mark of her betrayal remains in the bloodstains that have darkened to brown on the gleaming bone-white armor. The armor functions properly, though it makes the wearer unappealing to look at.
 
 STATISTICS:
 
@@ -3455,14 +3485,14 @@ Requires:
  8 Strength
 
 Weight: 20~
-@45994 = ~Amulet~
-@45995 = ~Amulet of Abnormally Awesome Ankheg Summoning~
-@45996 = ~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
+@46005 = ~Amulet~
+@46006 = ~Amulet of Abnormally Awesome Ankheg Summoning~
+@46007 = ~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
 
 STATISTICS:
 
 Weight: 1~
-@45997 = ~Crafted by the dark druid Ferrusk, this amulet resembles the curved pincers of an ankheg hanging from an iron chain. The pincers' polished green carapace catches the light, gleaming with an emerald sheen. Ferrusk created this amulet to summon a passel of ankhegs to fight at its wearer's command.
+@46008 = ~Crafted by the dark druid Ferrusk, this amulet resembles the curved pincers of an ankheg hanging from an iron chain. The pincers' polished green carapace catches the light, gleaming with an emerald sheen. Ferrusk created this amulet to summon a passel of ankhegs to fight at its wearer's command.
 
 STATISTICS:
 
@@ -3475,9 +3505,9 @@ Charge abilities:
   Duration: 2 turns
 
 Weight: 0~
-@45998 = ~Club~
-@45999 = ~Club +1~
-@46000 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
+@46009 = ~Club~
+@46010 = ~Club +1~
+@46011 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
 
 STATISTICS:
 
@@ -3489,7 +3519,7 @@ Requires:
  5 Strength
 
 Weight: 3~
-@46001 = ~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
+@46012 = ~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
 
 STATISTICS:
 
@@ -3502,21 +3532,21 @@ Requires:
  5 Strength
 
 Weight: 3~
-@46002 = ~Potion~
-@46003 = ~Slime Sickness Curative~
-@46004 = ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
+@46013 = ~Potion~
+@46014 = ~Slime Sickness Curative~
+@46015 = ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
 
 STATISTICS:
 
 Weight: 1~
-@46005 = ~This bottle contains a special healing potion that counteracts fungal poison found in the caverns beneath Dragonspear Castle. One sip from the bottle is enough to cure the afflicted.
+@46016 = ~This bottle contains a special healing potion that counteracts fungal poison found in the caverns beneath Dragonspear Castle. One sip from the bottle is enough to cure the afflicted.
 
 STATISTICS:
 
 Weight: 1~
-@46006 = ~Helmet~
-@46007 = ~Helmet~
-@46008 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+@46017 = ~Helmet~
+@46018 = ~Helmet~
+@46019 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -3524,7 +3554,7 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@46009 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+@46020 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -3532,9 +3562,9 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@46010 = ~Composite Longbow~
-@46011 = ~Corinth's Bow +2~
-@46012 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
+@46021 = ~Composite Longbow~
+@46022 = ~Corinth's Bow +2~
+@46023 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
 
 STATISTICS:
 
@@ -3547,7 +3577,7 @@ Requires:
  18 Strength
 
 Weight: 10~
-@46013 = ~Though obviously well-used, someone has taken excellent care of this finely crafted bow. A small golden seal on one side appears to be a family crest.
+@46024 = ~Though obviously well-used, someone has taken excellent care of this finely crafted bow. A small golden seal on one side appears to be a family crest.
 
 STATISTICS:
 
@@ -3566,9 +3596,9 @@ Requires:
  18 Strength
 
 Weight: 8~
-@46014 = ~Helmet~
-@46015 = ~Helmet~
-@46016 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+@46025 = ~Helmet~
+@46026 = ~Helmet~
+@46027 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
 
 STATISTICS:
 
@@ -3576,7 +3606,7 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@46017 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+@46028 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
 
 STATISTICS:
 
@@ -3584,16 +3614,16 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@46018 = ~Tristian's Holy Symbol~
-@46019 = ~Tristian's Holy Symbol~
-@46020 = ~A carved wooden chesspiece painted a brilliant cherry red. Two glittering rubies wink from the horse's eye sockets.
+@46029 = ~Tristian's Holy Symbol~
+@46030 = ~Tristian's Holy Symbol~
+@46031 = ~A carved wooden chesspiece painted a brilliant cherry red. Two glittering rubies wink from the horse's eye sockets.
 
 STATISTICS:
 
 Weight: 1~
-@46021 = ~Long Sword~
-@46022 = ~Long Sword +1~
-@46023 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+@46032 = ~Long Sword~
+@46033 = ~Long Sword +1~
+@46034 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
 
 STATISTICS:
 
@@ -3605,7 +3635,7 @@ Requires:
  6 Strength
 
 Weight: 4~
-@46024 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
+@46035 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
 
 STATISTICS:
 
@@ -3618,14 +3648,14 @@ Requires:
  6 Strength
 
 Weight: 4~
-@46025 = ~Ring~
-@46026 = ~Ring of the Crusade~
-@46027 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+@46036 = ~Ring~
+@46037 = ~Ring of the Crusade~
+@46038 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~
-@46028 = ~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
+@46039 = ~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
 
 STATISTICS:
 
@@ -3634,40 +3664,39 @@ Equipped abilities:
 – Saving Throws: +1, +3 vs. demons and devils
 
 Weight: 0~
-@46029 = ~Second Stone Fragment~
-@46030 = ~Second Stone Fragment~
-@46031 = ~A shard of stone belonging to an icon of Tempus.
+@46040 = ~Second Stone Fragment~
+@46041 = ~Second Stone Fragment~
+@46042 = ~A shard of stone belonging to an icon of Tempus.
 
 STATISTICS:
 
 Weight: 10~
-@46032 = ~Dreon's Signet Ring~
-@46033 = ~Dreon's Signet Ring~
-@46034 = ~This heavy gold ring displays the seal of Caelar Argent, leader of the Shining Lady's crusade.
+@46043 = ~Dreon's Signet Ring~
+@46044 = ~Dreon's Signet Ring~
+@46045 = ~This heavy gold ring displays the seal of Caelar Argent, leader of the Shining Lady's crusade.
 
 STATISTICS:
 
 Weight: 0~
-@46035 = ~Empty Wineskin~
-@46036 = ~Empty Wineskin~
-@46037 = ~This well-used wineskin is stained purple around the spout.
+@46046 = ~Empty Wineskin~
+@46047 = ~Empty Wineskin~
+@46048 = ~This well-used wineskin is stained purple around the spout.
 
 STATISTICS:
 
 Weight: 1~
-@46038 = ~Token of Faith~
-@46039 = ~Token of Faith~
-@46040 = ~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
+@46049 = ~Token of Faith~
+@46050 = ~Token of Faith~
+@46051 = ~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
 
 STATISTICS:
 
 Weight: 1~
-@46041 = ~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
+@46052 = ~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
 
 STATISTICS:
 
 Weight: 1~
-
 //}
 
 //{ Block A Translations
@@ -6968,9 +6997,61 @@ Weight: 0~
 STATISTICS:
 
 Weight: 0~
-@63285 = ~Plate Mail~
-@63286 = ~The Magma Bulwark +2~
-@63287 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+@63285 = ~Club~
+@63286 = ~Night Club +1~
+@63287 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
+
+STATISTICS:
+
+Damage: 1d6 (crushing)
+Speed Factor: 4
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+@63288 = ~This darkwood shaft surrounds a core of lead, giving it both stealth and heft. Its enchantment connects the club to the Shadow Weave, lending it greater power under cloak of night.
+
+STATISTICS:
+
+THAC0: +1, +2 at night
+Damage: 1d6+1 (crushing)
+Speed Factor: 3
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+@63289 = ~Sling~
+@63290 = ~Sling of Unerring Accuracy +1~
+@63291 = ~Slings have existed since the beginning of recorded history. The basic sling consists of a leather or fabric strap with a pouch for holding the missile. The weapon is held by both ends of the strap and twirled around the wielder's head. When top speed is attained, the missile is launched by releasing one of the strap's ends.
+
+STATISTICS:
+
+Speed Factor: 6
+Proficiency Type: Sling
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 0~
+@63292 = ~Dandifox was one of the greatest heroes of the hin, the small people also known as halflings. From the concealment of forest arbors, he would attack rich caravans for a "tithe," which he then distributed among the local poor. The heroic robber finally met his end on the point of a guardsman's spear, but not before the constabulary had learned to fear and hate his infallible aim.
+
+STATISTICS:
+
+THAC0: +2
+Speed Factor: 6
+Proficiency Type: Sling
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 0~
+@63293 = ~Plate Mail~
+@63294 = ~The Magma Bulwark +2~
+@63295 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
 
 STATISTICS:
 
@@ -6979,7 +7060,7 @@ Requires:
  12 Strength
 
 Weight: 50~
-@63288 = ~Forged by the fire giant Varboti as a gift for a Cormyrian general who made peace with his clan, this red-and-black armor lends its wearer a molten aspect while providing protection against all but the most powerful blows. Due to its incredibly strong but thin material, it also weighs far less than ordinary plate mail.
+@63296 = ~Forged by the fire giant Varboti as a gift for a Cormyrian general who made peace with his clan, this red-and-black armor lends its wearer a molten aspect while providing protection against all but the most powerful blows. Due to its incredibly strong but thin material, it also weighs far less than ordinary plate mail.
 
 STATISTICS:
 
@@ -6988,9 +7069,9 @@ Requires:
  12 Strength
 
 Weight: 20~
-@63289 = ~Battle Axe~
-@63290 = ~Golden Axe +1~
-@63291 = ~The most common version of the battle axe is a stout pole about four feet in length with a single-edged, trumpet-shaped blade mounted on one end. Battle axes are also called broad axes.
+@63297 = ~Battle Axe~
+@63298 = ~Golden Axe +1~
+@63299 = ~The most common version of the battle axe is a stout pole about four feet in length with a single-edged, trumpet-shaped blade mounted on one end. Battle axes are also called broad axes.
 
 STATISTICS:
 
@@ -7002,7 +7083,7 @@ Requires:
  10 Strength
 
 Weight: 7~
-@63292 = ~To counter the spells of the hated drow, the gold dwarves developed the sturdy and relatively inexpensive battle axe imbued with rare alloys and enchantments allowing a keen strike to dispel a foe's magic. The twin axes of Clangeddin Silverbeard are stamped on the butt of each of these weapons.
+@63300 = ~To counter the spells of the hated drow, the gold dwarves developed the sturdy and relatively inexpensive battle axe imbued with rare alloys and enchantments allowing a keen strike to dispel a foe's magic. The twin axes of Clangeddin Silverbeard are stamped on the butt of each of these weapons.
 
 STATISTICS:
 
@@ -7018,9 +7099,9 @@ Requires:
  10 Strength
 
 Weight: 7~
-@63293 = ~War Hammer~
-@63294 = ~Hammer of Dawn +1~
-@63295 = ~Mounted knights cannot effectively use long pole weapons while on horseback and, as a result, many weapons have been fitted with shorter shafts so they may be wielded with just one hand. Maces and flails are two examples of this—the war hammer is another. The horseman's war hammer is the descendent of the Lucerne hammer. It is made entirely of steel, with rondels protecting and strengthening the grip. (Rondels are small disks of metal, often shaped into decorative designs.) The shaft is about eighteen inches long.
+@63301 = ~War Hammer~
+@63302 = ~Hammer of Dawn +1~
+@63303 = ~Mounted knights cannot effectively use long pole weapons while on horseback and, as a result, many weapons have been fitted with shorter shafts so they may be wielded with just one hand. Maces and flails are two examples of this—the war hammer is another. The horseman's war hammer is the descendent of the Lucerne hammer. It is made entirely of steel, with rondels protecting and strengthening the grip. (Rondels are small disks of metal, often shaped into decorative designs.) The shaft is about eighteen inches long.
 
 STATISTICS:
 
@@ -7032,7 +7113,7 @@ Requires:
  9 Strength
 
 Weight: 6~
-@63296 = ~Crafted from the scales and bones of a gold dragon servant of Lathander, this warhammer sometimes channels the power of the ancient wyrm's mighty wings.
+@63304 = ~Crafted from the scales and bones of a gold dragon servant of Lathander, this warhammer sometimes channels the power of the ancient wyrm's mighty wings.
 
 STATISTICS:
 
@@ -7051,9 +7132,9 @@ Requires:
  9 Strength
 
 Weight: 6~
-@63297 = ~Long Sword~
-@63298 = ~Harrower +1~
-@63299 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+@63305 = ~Long Sword~
+@63306 = ~Harrower +1~
+@63307 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
 
 STATISTICS:
 
@@ -7065,7 +7146,7 @@ Requires:
  6 Strength
 
 Weight: 4~
-@63300 = ~This double-edged long sword gleams white even in the reddest of torchlight. The Dethek runes along its sides name the blade "Harrower," a weapon once wielded by Ariabel, a Waterdhavian Paladin of Lathander who once carried the weapon into combat against the vampire Zerafex and her host of unholy spawn. Ariabel did not survive the contest, but decades later a gang of Tethyrian tomb robbers recovered her sword from the crypt where she fell.
+@63308 = ~This double-edged long sword gleams white even in the reddest of torchlight. The Dethek runes along its sides name the blade "Harrower," a weapon once wielded by Ariabel, a Waterdhavian Paladin of Lathander who once carried the weapon into combat against the vampire Zerafex and her host of unholy spawn. Ariabel did not survive the contest, but decades later a gang of Tethyrian tomb robbers recovered her sword from the crypt where she fell.
 
 STATISTICS:
 
@@ -7079,48 +7160,33 @@ Requires:
  6 Strength
 
 Weight: 4~
-@63301 = ~Ring~
-@63302 = ~Nemphre's Onyx Ring~
-@63303 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+@63309 = ~Ring~
+@63310 = ~Angel the Cat's Angel Skin Ring~
+@63311 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~
-@63304 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+@63312 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~
-@63305 = ~Flail ~
-@63306 = ~The Thresher +2~
-@63307 = ~The flail is a sturdy wooden handle attached to an iron rod, a wooden rod with spikes, or a spiked iron ball. Between the handle and its implement is either a hinge or chain link. The weapon was originally used as a tool for threshing grain.
+@63313 = ~Ring~
+@63314 = ~Nemphre's Onyx Ring~
+@63315 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
-Damage: 1d6+1 (crushing)
-Speed Factor: 7
-Proficiency Type: Flail/Morning Star
-Type: One-handed
-Requires:
- 13 Strength
-
-Weight: 15~
-@63308 = ~With one rod of steel and another of bronze, this double-headed flail metes out punishment right and left. The weapon's carved wooden haft depicts scenes of battle in which champions of Helm, each wielding an identical flail, wade through a field of orcs, threshing them like so much wheat.
+Weight: 0~
+@63316 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
-THAC0: +2
-Damage: 1d6+3 (crushing)
-Speed Factor: 5
-Proficiency Type: Flail/Morning Star
-Type: One-handed
-Requires:
- 13 Strength
-
-Weight: 13~
-@63309 = ~Two-handed Sword~
-@63310 = ~Gold Digger +1~
-@63311 = ~The two-handed sword is a derivative of the long sword. Weaponsmiths have always looked for ways to improve existing weapons. In an effort to improve the long sword, the blade was lengthened. Eventually, the handle had to be extended and two hands became necessary to properly swing the sword. The primary function of two-handed swords is cleaving mounted knights and breaking up pike formations.
+Weight: 0~
+@63317 = ~Two-handed Sword~
+@63318 = ~Gold Digger +1~
+@63319 = ~The two-handed sword is a derivative of the long sword. Weaponsmiths have always looked for ways to improve existing weapons. In an effort to improve the long sword, the blade was lengthened. Eventually, the handle had to be extended and two hands became necessary to properly swing the sword. The primary function of two-handed swords is cleaving mounted knights and breaking up pike formations.
 
 STATISTICS:
 
@@ -7132,7 +7198,7 @@ Requires:
  14 Strength
 
 Weight: 15~
-@63312 = ~Crafted by dwarves in service to the temple of Waukeen in Amn, this two-handed sword draws power from the gold in its wielder's purse. For the wealthy it strikes mighty blows. For the impoverished, the Gold Digger is no better than a mundane greatsword.
+@63320 = ~Crafted by dwarves in service to the temple of Waukeen in Amn, this two-handed sword draws power from the gold in its wielder's purse. For the wealthy it strikes mighty blows. For the impoverished, the Gold Digger is no better than a mundane greatsword.
 
 STATISTICS:
 
@@ -7148,9 +7214,9 @@ Requires:
  14 Strength
 
 Weight: 15~
-@63313 = ~Quarterstaff~
-@63314 = ~The Ossifier~
-@63315 = ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High-quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
+@63321 = ~Quarterstaff~
+@63322 = ~The Ossifier~
+@63323 = ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High-quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
 
 STATISTICS:
 
@@ -7162,7 +7228,7 @@ Requires:
  5 Strength
 
 Weight: 4~
-@63316 = ~Cursed Staff of Petrification: The Ossifier
+@63324 = ~Cursed Staff of Petrification: The Ossifier
 The surface of this seven-foot shaft more resembles stone than wood, but in the hands of a skilled wielder it weighs little more than a staff of oak. Along its length appear the ghost-like images of various foes caught in defensive postures, appearing almost as thought they had been suddenly turned to stone.
 
 STATISTICS:
@@ -7181,135 +7247,139 @@ Requires:
  5 Strength
 
 Weight: 4~
-@63317 = ~Sling~
-@63318 = ~Sling of Unerring Accuracy +1~
-@63319 = ~Slings have existed since the beginning of recorded history. The basic sling consists of a leather or fabric strap with a pouch for holding the missile. The weapon is held by both ends of the strap and twirled around the wielder's head. When top speed is attained, the missile is launched by releasing one of the strap's ends.
+@63325 = ~Flail ~
+@63326 = ~The Thresher +2~
+@63327 = ~The flail is a sturdy wooden handle attached to an iron rod, a wooden rod with spikes, or a spiked iron ball. Between the handle and its implement is either a hinge or chain link. The weapon was originally used as a tool for threshing grain.
 
 STATISTICS:
 
-Speed Factor: 6
-Proficiency Type: Sling
+Damage: 1d6+1 (crushing)
+Speed Factor: 7
+Proficiency Type: Flail/Morning Star
 Type: One-handed
 Requires:
- 3 Strength
+ 13 Strength
 
-Weight: 0~
-@63320 = ~Dandifox was one of the greatest heroes of the hin, the small people also known as halflings. From the concealment of forest arbors, he would attack rich caravans for a "tithe," which he then distributed among the local poor. The heroic robber finally met his end on the point of a guardsman's spear, but not before the constabulary had learned to fear and hate his infallible aim.
+Weight: 15~
+@63328 = ~With one rod of steel and another of bronze, this double-headed flail metes out punishment right and left. The weapon's carved wooden haft depicts scenes of battle in which champions of Helm, each wielding an identical flail, wade through a field of orcs, threshing them like so much wheat.
 
 STATISTICS:
 
 THAC0: +2
-Speed Factor: 6
-Proficiency Type: Sling
+Damage: 1d6+3 (crushing)
+Speed Factor: 5
+Proficiency Type: Flail/Morning Star
 Type: One-handed
 Requires:
- 3 Strength
+ 13 Strength
 
-Weight: 0~
-@63321 = ~Black Lily~
-@63322 = ~Drakon Tavern~
-@63323 = ~Mead~
-@63324 = ~Westgate Ruby Wine~
-@63325 = ~Golden Sands Brews~
-@63326 = ~Shadowdark Ale~
-@63327 = ~Suz-ale~
-@63328 = ~Old One Eye Beer~
-@63329 = ~Low Lantern~
-@63330 = ~Westgate Ruby Wine~
-@63331 = ~Suz-ale~
-@63332 = ~Old One Eye Beer~
-@63333 = ~Dragon's Breath Beer~
-@63334 = ~Luiren's Best Ale~
-@63335 = ~Shadowdark Ale~
-@63336 = ~Bitter Black Ale~
-@63337 = ~Jopalin's Tavern~
-@63338 = ~Westgate Ruby Wine~
-@63339 = ~Shadowdark Ale~
-@63340 = ~Old One Eye Beer~
-@63341 = ~Dragon's Breath Beer~
+Weight: 13~
+@63329 = ~Shop of Silence~
+@63330 = ~Elfsong Tavern~
+@63331 = ~Westgate Ruby Wine~
+@63332 = ~Golden Sands Brews~
+@63333 = ~Suz-ale~
+@63334 = ~Old One Eye Beer~
+@63335 = ~Saerloonian Topaz Wine~
+@63336 = ~Tanagyr's Stout Ale~
+@63337 = ~Maltz's Weapon Shop~
+@63338 = ~Sorcerous Sundries~
+@63339 = ~Helm and Cloak~
+@63340 = ~Alurlyath Wine~
+@63341 = ~Blood Wine~
 @63342 = ~Firewine~
-@63343 = ~Tanagyr's Stout Ale~
-@63344 = ~Store~
-@63345 = ~Splurging Sturgeon~
-@63346 = ~Blood Wine~
-@63347 = ~Golden Sands Brews~
-@63348 = ~Luiren's Best Ale~
-@63349 = ~Tanagyr's Stout Ale~
-@63350 = ~Blushing Mermaid~
-@63351 = ~Mead~
-@63352 = ~Saerloonian Topaz Wine~
-@63353 = ~Elminster's Choice Beer~
-@63354 = ~Tanagyr's Stout Ale~
+@63343 = ~Mead~
+@63344 = ~Evermead~
+@63345 = ~General Store~
+@63346 = ~General Store~
+@63347 = ~General Store~
+@63348 = ~General Store~
+@63349 = ~General Store~
+@63350 = ~Temple of Helm~
+@63351 = ~Three Old Kegs~
+@63352 = ~Mead~
+@63353 = ~Evermead~
+@63354 = ~Winter Wine~
 @63355 = ~Berduskan Dark Wine~
-@63356 = ~Bitter Black Ale~
-@63357 = ~Firewine~
-@63358 = ~Old One Eye Beer~
-@63359 = ~Tavern~
-@63360 = ~Mead~
-@63361 = ~Westgate Ruby Wine~
-@63362 = ~Golden Sands Brews~
-@63363 = ~Shadowdark Ale~
-@63364 = ~Suz-ale~
-@63365 = ~Old One Eye Beer~
-@63366 = ~Lucky Aello's Discount Store~
-@63367 = ~Shop of Silence~
-@63368 = ~Elfsong Tavern~
-@63369 = ~Westgate Ruby Wine~
-@63370 = ~Golden Sands Brews~
+@63356 = ~Blade and Stars~
+@63357 = ~Suz-ale~
+@63358 = ~Dragon's Breath Beer~
+@63359 = ~Firewine~
+@63360 = ~Golden Sands Brews~
+@63361 = ~Luiren's Best Ale~
+@63362 = ~Bitter Black Ale~
+@63363 = ~General Store~
+@63364 = ~Lady's Hall~
+@63365 = ~High House of Wonders~
+@63366 = ~Tavern~
+@63367 = ~Mead~
+@63368 = ~Westgate Ruby Wine~
+@63369 = ~Golden Sands Brews~
+@63370 = ~Shadowdark Ale~
 @63371 = ~Suz-ale~
 @63372 = ~Old One Eye Beer~
-@63373 = ~Saerloonian Topaz Wine~
-@63374 = ~Tanagyr's Stout Ale~
-@63375 = ~Maltz's Weapon Shop~
-@63376 = ~Sorcerous Sundries~
-@63377 = ~Helm and Cloak~
-@63378 = ~Alurlyath Wine~
-@63379 = ~Blood Wine~
-@63380 = ~Firewine~
-@63381 = ~Mead~
-@63382 = ~Evermead~
-@63383 = ~General Store~
-@63384 = ~General Store~
-@63385 = ~General Store~
-@63386 = ~General Store~
-@63387 = ~General Store~
-@63388 = ~Temple of Helm~
-@63389 = ~Three Old Kegs~
-@63390 = ~Mead~
-@63391 = ~Evermead~
-@63392 = ~Winter Wine~
-@63393 = ~Berduskan Dark Wine~
-@63394 = ~Blade and Stars~
-@63395 = ~Suz-ale~
-@63396 = ~Dragon's Breath Beer~
-@63397 = ~Firewine~
-@63398 = ~Golden Sands Brews~
-@63399 = ~Luiren's Best Ale~
-@63400 = ~Bitter Black Ale~
-@63401 = ~General Store~
-@63402 = ~Lady's Hall~
-@63403 = ~High House of Wonders~
-@63404 = ~Tavern~
-@63405 = ~Mead~
-@63406 = ~Westgate Ruby Wine~
+@63373 = ~Merchant~
+@63374 = ~Elfsong Tavern~
+@63375 = ~Westgate Ruby Wine~
+@63376 = ~Golden Sands Brews~
+@63377 = ~Suz-ale~
+@63378 = ~Old One Eye Beer~
+@63379 = ~Saerloonian Topaz Wine~
+@63380 = ~Tanagyr's Stout Ale~
+@63381 = ~Black Lily~
+@63382 = ~Drakon Tavern~
+@63383 = ~Mead~
+@63384 = ~Westgate Ruby Wine~
+@63385 = ~Golden Sands Brews~
+@63386 = ~Shadowdark Ale~
+@63387 = ~Suz-ale~
+@63388 = ~Old One Eye Beer~
+@63389 = ~Low Lantern~
+@63390 = ~Westgate Ruby Wine~
+@63391 = ~Suz-ale~
+@63392 = ~Old One Eye Beer~
+@63393 = ~Dragon's Breath Beer~
+@63394 = ~Luiren's Best Ale~
+@63395 = ~Shadowdark Ale~
+@63396 = ~Bitter Black Ale~
+@63397 = ~Jopalin's Tavern~
+@63398 = ~Westgate Ruby Wine~
+@63399 = ~Shadowdark Ale~
+@63400 = ~Old One Eye Beer~
+@63401 = ~Dragon's Breath Beer~
+@63402 = ~Firewine~
+@63403 = ~Tanagyr's Stout Ale~
+@63404 = ~Store~
+@63405 = ~Splurging Sturgeon~
+@63406 = ~Blood Wine~
 @63407 = ~Golden Sands Brews~
-@63408 = ~Shadowdark Ale~
-@63409 = ~Suz-ale~
-@63410 = ~Old One Eye Beer~
-@63411 = ~Merchant~
-@63412 = ~Elfsong Tavern~
-@63413 = ~Westgate Ruby Wine~
-@63414 = ~Golden Sands Brews~
-@63415 = ~Suz-ale~
-@63416 = ~Old One Eye Beer~
-@63417 = ~Saerloonian Topaz Wine~
-@63418 = ~Tanagyr's Stout Ale~
-@63419 = ~Keexie Tavern~
-@63420 = ~Westgate Ruby Wine~
-@63421 = ~Suz-ale~
-@63422 = ~Old One Eye Beer~
-@63423 = ~Dragon's Breath Beer~
-@63424 = ~Luiren's Best Ale~
-@63425 = ~Shadowdark Ale~
-@63426 = ~Bitter Black Ale~
+@63408 = ~Luiren's Best Ale~
+@63409 = ~Tanagyr's Stout Ale~
+@63410 = ~Blushing Mermaid~
+@63411 = ~Mead~
+@63412 = ~Saerloonian Topaz Wine~
+@63413 = ~Elminster's Choice Beer~
+@63414 = ~Tanagyr's Stout Ale~
+@63415 = ~Berduskan Dark Wine~
+@63416 = ~Bitter Black Ale~
+@63417 = ~Firewine~
+@63418 = ~Old One Eye Beer~
+@63419 = ~Tavern~
+@63420 = ~Mead~
+@63421 = ~Westgate Ruby Wine~
+@63422 = ~Golden Sands Brews~
+@63423 = ~Shadowdark Ale~
+@63424 = ~Suz-ale~
+@63425 = ~Old One Eye Beer~
+@63426 = ~Lucky Aello's Discount Store~
+@63427 = ~Keexie Tavern~
+@63428 = ~Westgate Ruby Wine~
+@63429 = ~Suz-ale~
+@63430 = ~Old One Eye Beer~
+@63431 = ~Dragon's Breath Beer~
+@63432 = ~Luiren's Best Ale~
+@63433 = ~Shadowdark Ale~
+@63434 = ~Bitter Black Ale~
 //}
+
+

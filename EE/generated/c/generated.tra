@@ -1279,9 +1279,40 @@ Weight: 1~
 STATISTICS:
 
 Weight: 1~
-@45990 = ~Plate Mail~
-@45991 = ~Bloody Bone Plate +2~
-@45992 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+@45990 = ~Troll Shackles~
+@45991 = ~Troll Shackles~
+@45992 = ~These reinforced steel manacles are extra large to fit a troll's massive wrists.
+
+STATISTICS:
+
+Weight: 5~
+@45993 = ~Crusader Uniform~
+@45994 = ~Crusader Uniform~
+@45995 = ~This colorful tunic displays the sigil of Caelar's crusaders.
+
+STATISTICS:
+
+Weight: 10~
+@45996 = ~This colorful tunic displays the sigil of Caelar's crusaders.
+
+STATISTICS:
+
+Weight: 10~
+@45997 = ~Battle Standard~
+@45998 = ~Battle Standard~
+@45999 = ~This long flag, edged with metallic embroidery, is used to rally troops and send messages to other units of Caelar Argent's army.
+
+STATISTICS:
+
+Weight: 1~
+@46000 = ~This long flag, edged with metallic embroidery, is used to rally troops and send messages to other units of Caelar Argent's army.
+
+STATISTICS:
+
+Weight: 1~
+@46001 = ~Plate Mail~
+@46002 = ~Bloody Bone Plate +2~
+@46003 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
 
 STATISTICS:
 
@@ -1290,7 +1321,7 @@ Requires:
  12 Strength
 
 Weight: 50~
-@45993 = ~The warrior who once wore this armor died at the hands of a friend she trusted. The mark of her betrayal remains in the bloodstains that have darkened to brown on the gleaming bone-white armor. The armor functions properly, though it makes the wearer unappealing to look at.
+@46004 = ~The warrior who once wore this armor died at the hands of a friend she trusted. The mark of her betrayal remains in the bloodstains that have darkened to brown on the gleaming bone-white armor. The armor functions properly, though it makes the wearer unappealing to look at.
 
 STATISTICS:
 
@@ -1303,14 +1334,14 @@ Requires:
  8 Strength
 
 Weight: 20~
-@45994 = ~Amulet~
-@45995 = ~Amulet of Abnormally Awesome Ankheg Summoning~
-@45996 = ~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
+@46005 = ~Amulet~
+@46006 = ~Amulet of Abnormally Awesome Ankheg Summoning~
+@46007 = ~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
 
 STATISTICS:
 
 Weight: 1~
-@45997 = ~Crafted by the dark druid Ferrusk, this amulet resembles the curved pincers of an ankheg hanging from an iron chain. The pincers' polished green carapace catches the light, gleaming with an emerald sheen. Ferrusk created this amulet to summon a passel of ankhegs to fight at its wearer's command.
+@46008 = ~Crafted by the dark druid Ferrusk, this amulet resembles the curved pincers of an ankheg hanging from an iron chain. The pincers' polished green carapace catches the light, gleaming with an emerald sheen. Ferrusk created this amulet to summon a passel of ankhegs to fight at its wearer's command.
 
 STATISTICS:
 
@@ -1323,9 +1354,9 @@ Charge abilities:
   Duration: 2 turns
 
 Weight: 0~
-@45998 = ~Club~
-@45999 = ~Club +1~
-@46000 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
+@46009 = ~Club~
+@46010 = ~Club +1~
+@46011 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
 
 STATISTICS:
 
@@ -1337,7 +1368,7 @@ Requires:
  5 Strength
 
 Weight: 3~
-@46001 = ~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
+@46012 = ~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
 
 STATISTICS:
 
@@ -1350,21 +1381,21 @@ Requires:
  5 Strength
 
 Weight: 3~
-@46002 = ~Potion~
-@46003 = ~Slime Sickness Curative~
-@46004 = ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
+@46013 = ~Potion~
+@46014 = ~Slime Sickness Curative~
+@46015 = ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
 
 STATISTICS:
 
 Weight: 1~
-@46005 = ~This bottle contains a special healing potion that counteracts fungal poison found in the caverns beneath Dragonspear Castle. One sip from the bottle is enough to cure the afflicted.
+@46016 = ~This bottle contains a special healing potion that counteracts fungal poison found in the caverns beneath Dragonspear Castle. One sip from the bottle is enough to cure the afflicted.
 
 STATISTICS:
 
 Weight: 1~
-@46006 = ~Helmet~
-@46007 = ~Helmet~
-@46008 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+@46017 = ~Helmet~
+@46018 = ~Helmet~
+@46019 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -1372,7 +1403,7 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@46009 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+@46020 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -1380,9 +1411,9 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@46010 = ~Composite Longbow~
-@46011 = ~Corinth's Bow +2~
-@46012 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
+@46021 = ~Composite Longbow~
+@46022 = ~Corinth's Bow +2~
+@46023 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
 
 STATISTICS:
 
@@ -1395,7 +1426,7 @@ Requires:
  18 Strength
 
 Weight: 10~
-@46013 = ~Though obviously well-used, someone has taken excellent care of this finely crafted bow. A small golden seal on one side appears to be a family crest.
+@46024 = ~Though obviously well-used, someone has taken excellent care of this finely crafted bow. A small golden seal on one side appears to be a family crest.
 
 STATISTICS:
 
@@ -1414,9 +1445,9 @@ Requires:
  18 Strength
 
 Weight: 8~
-@46014 = ~Helmet~
-@46015 = ~Helmet~
-@46016 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+@46025 = ~Helmet~
+@46026 = ~Helmet~
+@46027 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
 
 STATISTICS:
 
@@ -1424,7 +1455,7 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@46017 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+@46028 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
 
 STATISTICS:
 
@@ -1432,16 +1463,16 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@46018 = ~Tristian's Holy Symbol~
-@46019 = ~Tristian's Holy Symbol~
-@46020 = ~A carved wooden chesspiece painted a brilliant cherry red. Two glittering rubies wink from the horse's eye sockets.
+@46029 = ~Tristian's Holy Symbol~
+@46030 = ~Tristian's Holy Symbol~
+@46031 = ~A carved wooden chesspiece painted a brilliant cherry red. Two glittering rubies wink from the horse's eye sockets.
 
 STATISTICS:
 
 Weight: 1~
-@46021 = ~Long Sword~
-@46022 = ~Long Sword +1~
-@46023 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+@46032 = ~Long Sword~
+@46033 = ~Long Sword +1~
+@46034 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
 
 STATISTICS:
 
@@ -1453,7 +1484,7 @@ Requires:
  6 Strength
 
 Weight: 4~
-@46024 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
+@46035 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
 
 STATISTICS:
 
@@ -1466,14 +1497,14 @@ Requires:
  6 Strength
 
 Weight: 4~
-@46025 = ~Ring~
-@46026 = ~Ring of the Crusade~
-@46027 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+@46036 = ~Ring~
+@46037 = ~Ring of the Crusade~
+@46038 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~
-@46028 = ~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
+@46039 = ~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
 
 STATISTICS:
 
@@ -1482,35 +1513,35 @@ Equipped abilities:
 – Saving Throws: +1, +3 vs. demons and devils
 
 Weight: 0~
-@46029 = ~Second Stone Fragment~
-@46030 = ~Second Stone Fragment~
-@46031 = ~A shard of stone belonging to an icon of Tempus.
+@46040 = ~Second Stone Fragment~
+@46041 = ~Second Stone Fragment~
+@46042 = ~A shard of stone belonging to an icon of Tempus.
 
 STATISTICS:
 
 Weight: 10~
-@46032 = ~Dreon's Signet Ring~
-@46033 = ~Dreon's Signet Ring~
-@46034 = ~This heavy gold ring displays the seal of Caelar Argent, leader of the Shining Lady's crusade.
+@46043 = ~Dreon's Signet Ring~
+@46044 = ~Dreon's Signet Ring~
+@46045 = ~This heavy gold ring displays the seal of Caelar Argent, leader of the Shining Lady's crusade.
 
 STATISTICS:
 
 Weight: 0~
-@46035 = ~Empty Wineskin~
-@46036 = ~Empty Wineskin~
-@46037 = ~This well-used wineskin is stained purple around the spout.
+@46046 = ~Empty Wineskin~
+@46047 = ~Empty Wineskin~
+@46048 = ~This well-used wineskin is stained purple around the spout.
 
 STATISTICS:
 
 Weight: 1~
-@46038 = ~Token of Faith~
-@46039 = ~Token of Faith~
-@46040 = ~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
+@46049 = ~Token of Faith~
+@46050 = ~Token of Faith~
+@46051 = ~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
 
 STATISTICS:
 
 Weight: 1~
-@46041 = ~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
+@46052 = ~It looks as though someone punched a hole in a gold piece and a silver piece and strung the two together.
 
 STATISTICS:
 
