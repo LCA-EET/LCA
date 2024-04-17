@@ -9,13 +9,13 @@ IF ~
 	DO ~
 		ReputationInc(1)
 		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("XA_LC__Journal_Tianna3", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Tianna3", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT
 	
 	IF ~
-		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	GOTO XA_GoodByeRomance
 END
@@ -156,7 +156,7 @@ IF ~~ THEN BEGIN XA_TiannaLeave
 	IF ~~ THEN REPLY @63 /* ~I will. Good-bye, Tianna.~*/
 	DO ~
 		ReputationInc(1)
-		SetGlobal("XA_LC__Journal_Tianna3", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Tianna3", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT
@@ -166,7 +166,7 @@ IF ~~ THEN BEGIN XA_KilledJasper
 	SAY @41 /* ~You WHAT? Oh - oh n-no. I need to get out of the city. His associates will think that I had him killed.. oh... my..~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LC__Journal_Tianna4", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Tianna4", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT
@@ -179,13 +179,13 @@ IF ~~ THEN BEGIN XA_GoodBye
 	DO ~
 		ReputationInc(1)
 		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("XA_LC__Journal_Tianna3", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Tianna3", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT
 	
 	IF ~
-		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~
 	GOTO XA_GoodByeRomance
 END
@@ -198,7 +198,7 @@ IF ~~ THEN BEGIN XA_GoodByeRomance
 	DO ~
 		ReputationInc(1)
 		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("XA_LC__Journal_Tianna3", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Tianna3", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT
@@ -223,13 +223,13 @@ IF ~~ THEN BEGIN XA_CorwinTiannaChainEnd
 	GOTO XA_WontHelp //OK
 	
 	IF ~
-		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		InMyArea("XACORWIN")
 	~ THEN REPLY @24 /* ~Schael, what do you think? Do you believe her story?~*/
 	EXTERN XACORWIJ XA_SchaelBelievesTianna //OK
 	
 	IF ~
-		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		InMyArea("XACORWIN")
 	~ THEN REPLY @25 /* ~My love, what do you think? Do you believe her story?~ */
 	EXTERN XACORWIJ XA_SchaelBelievesTianna //OK
@@ -263,7 +263,7 @@ IF ~~ THEN BEGIN XA_HelpTianna
 	IF ~~ THEN 
 	DO ~
 		SetGlobal("XA_LC_HelpTianna", "GLOBAL", 1)
-		SetGlobal("XA_LC__Journal_Tianna1", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Tianna1", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -274,7 +274,7 @@ IF ~~ THEN BEGIN XA_CorwinHelpTianna
 	IF ~~ THEN 
 	DO ~
 		SetGlobal("XA_LC_HelpTianna", "GLOBAL", 1)
-		SetGlobal("XA_LC__Journal_Tianna2", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Tianna2", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -303,7 +303,7 @@ IF ~~ THEN BEGIN XA_HugSchael
 	DO ~
 		ReputationInc(1)
 		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("XA_LC__Journal_Tianna3", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Tianna3", "GLOBAL", 1)
 		EscapeArea()
 	~
 	EXIT
@@ -380,13 +380,13 @@ CHAIN
 		== XACORWIJ
 		IF ~
 			InMyArea(Player1)
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@11 /* ~Tianna, this is <CHARNAME>, the hero of Baldur's Gate and the Sword Coast and... the <PRO_MANWOMAN> that I love.~ */
 		== XACORWIJ
 		IF ~
 			InMyArea(Player1)
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@12 /* ~Tianna, this is <CHARNAME>, the hero of Baldur's Gate and the Sword Coast.~ */
 		== XATIANNA
@@ -397,7 +397,7 @@ CHAIN
 		== XATIANNA
 		IF ~
 			InMyArea(Player1)
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@13 /* ~So you and Schael are... t-that's great. I'm happy for you.~ */
 		== XATIANNA

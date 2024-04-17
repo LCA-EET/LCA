@@ -30,7 +30,7 @@ IF ~
 	EXIT
 	
 	IF ~
-		!Global("XA_LC__SkieModActive", "GLOBAL", 1)
+		!Global("XA_LC_SkieModActive", "GLOBAL", 1)
 		!Global("XA_LC_MelkorDagger", "GLOBAL", 1)
 	~ THEN GOTO XA_HandOverDagger
 END
@@ -43,7 +43,7 @@ IF ~~ THEN BEGIN XA_HandOverDagger
 		SetGlobal("XA_LC_MelkorDagger", "GLOBAL", 1)
 		GiveItemCreate("XASTDAG", LastTalkedToBy(Myself),1,0,0)
 		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XASTDAG", IDENTIFIED,TRUE))
-		SetGlobal("XA_LC__Journal_Soultaker", "GLOBAL", 4)
+		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 4)
 	~
 	GOTO XA_HandOverDagger2
 END
@@ -71,7 +71,7 @@ IF ~
 	SAY @0 /* ~Ah. <CHARNAME>. How can I help you?~ */
 	
 	IF ~
-		!Global("XA_LC__SkieModActive", "GLOBAL",1)
+		!Global("XA_LC_SkieModActive", "GLOBAL",1)
 	~ THEN REPLY @1 /* ~You are one of the wizards assisting Skie in her recovery?~ */
 	DO ~
 		SetGlobal("XA_LC_TalkedToMelkor", "GLOBAL", 1)
@@ -79,7 +79,7 @@ IF ~
 	GOTO XA_MeetMelkor2A
 	
 	IF ~
-		!Global("XA_LC__SkieModActive", "GLOBAL",1)
+		!Global("XA_LC_SkieModActive", "GLOBAL",1)
 	~ THEN REPLY @11 /* ~Have we met?~ */
 	DO ~
 		SetGlobal("XA_LC_TalkedToMelkor", "GLOBAL", 1)
@@ -88,7 +88,7 @@ IF ~
 	
 	IF ~
 		GlobalLT("XA_LC_MelkorTalk", "LOCALS", 1)
-		Global("XA_LC__SkieModActive", "GLOBAL",1)
+		Global("XA_LC_SkieModActive", "GLOBAL",1)
 	~ THEN REPLY @11 /* ~Have we met?~ */
 	DO ~
 		SetGlobal("XA_LC_TalkedToMelkor", "GLOBAL", 1)
@@ -313,11 +313,11 @@ IF ~~ THEN BEGIN XA_MeetMelkor5B5
 	SAY @31 /* ~If the dagger were brought to a location where the barrier between the material plane and the Fugue plane were weakest, the spirits within may be drawn out of the dagger. Once freed, they would enter the Fugue plane.~ */
 	
 	IF ~
-		!Global("XA_LC__ClearedKanaglym", "GLOBAL", 1)
+		!Global("XA_LC_ClearedKanaglym", "GLOBAL", 1)
 	~ THEN GOTO XA_MeetMelkor5B7
 	
 	IF ~
-		Global("XA_LC__ClearedKanaglym", "GLOBAL", 1)
+		Global("XA_LC_ClearedKanaglym", "GLOBAL", 1)
 	~ THEN REPLY @32 /* ~I know of one such place - Kanaglym, in the caves beneath Dragonspear. There was a rift that opened into the Fugue plane. */
 	GOTO XA_MeetMelkor5B7
 	
@@ -350,20 +350,20 @@ IF ~~ THEN BEGIN XA_MeetMelkor5B7
 	SAY @33 /* ~If you could bring the dagger to a place like that, we suspect that the souls trapped within could be freed.~ */
 	
 	IF ~
-		Global("XA_LC__ClearedKanaglym", "GLOBAL", 1)
+		Global("XA_LC_ClearedKanaglym", "GLOBAL", 1)
 	~ THEN REPLY @34  /*  ~Give me the dagger, then. I'll take it to Dragonspear and release the souls within.~ */
 	DO ~
 		SetGlobal("XA_LC_ST_Kanaglym", "GLOBAL", 1)
-		SetGlobal("XA_LC__Journal_Soultaker", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 1)
 	~
 	GOTO XA_MeetMelkor5B8
 	
 	IF ~
-		!Global("XA_LC__ClearedKanaglym", "GLOBAL", 1)
+		!Global("XA_LC_ClearedKanaglym", "GLOBAL", 1)
 	~ THEN REPLY @68 /* ~Give me the dagger then. If I learn of such a place in my travels, I'll bring the dagger there and release the souls trapped inside.~*/
 	DO ~
 		SetGlobal("XA_LC_ST_Kanaglym", "GLOBAL", 1)
-		SetGlobal("XA_LC__Journal_Soultaker", "GLOBAL", 2)
+		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 2)
 	~
 	GOTO XA_MeetMelkor5B8
 END
@@ -381,7 +381,7 @@ IF ~~ THEN BEGIN XA_MeetMelkor5B9
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_LC_ST_Kanaglym", "GLOBAL", 1)
-		SetGlobal("XA_LC__Journal_Soultaker", "GLOBAL", 3)
+		SetGlobal("XA_LC_Journal_Soultaker", "GLOBAL", 3)
 	~
 	GOTO XA_MeetMelkor5B10
 END

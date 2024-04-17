@@ -45,6 +45,13 @@ APPEND ~XALCDBG~
 		//~
 		GOTO XA_BG2_Debug
 		
+		IF ~~ THEN REPLY @5090 /* ~Spawn Corwin (XACORWIN) and add her to the party.~ */
+		DO ~
+			CreateCreature("XACORWIN", [-1.-1], S)
+			ActionOverride("XACORWIN", JoinParty())
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @5077 /* ~Music Test~*/
 		GOTO XA_BG2_MusicTest
 		

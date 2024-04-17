@@ -6,25 +6,26 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_Journal_Trouble", "GLOBAL", 1)
-		AddJournalEntry(@79, INFO)
+		AddJournalEntry(@79, QUEST)
 		SetInterrupt(TRUE)
 		Continue()
 END
 
 IF
-	GlobalGT("XA_LC_SavedTimotey", "GLOBAL", 0)
+	Global("XA_LC_SavedTimotey", "GLOBAL", 5)
 	GlobalLT("XA_LC_Journal_Trouble", "GLOBAL", 2)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_Journal_Trouble", "GLOBAL", 2)
-		AddJournalEntry(@80, INFO)
+		AddJournalEntry(@80, QUEST_DONE)
 		AddXPObject(Player1, 5000)
 		AddXPObject(Player2, 5000)
 		AddXPObject(Player3, 5000)
 		AddXPObject(Player4, 5000)
 		AddXPObject(Player5, 5000)
 		AddXPObject(Player6, 5000)
+		ReputationInc(1)
 		EraseJournalEntry(@79)
 		SetInterrupt(TRUE)
 		Continue()

@@ -12,6 +12,7 @@ If you have any questions, or would like to provide feedback, please contact me 
 <ul>
 	<li>A Gift for Rohma</li>
 	<li>A Pet for Rohma</li>
+	<li>Disappearances at the Elfsong</li>
 	<li>Engagement Ring</li>
 	<li>Locating the Farseer</li>
 	<li>Recovering the Baldurian Artifacts</li>
@@ -20,7 +21,7 @@ If you have any questions, or would like to provide feedback, please contact me 
 	<li>Slaver Conspiracy</li>
 	<li>The Soultaker Dagger</li>
 	<li>Tianna's Problem</li>
-	<li>Trouble at the Elfsong</li>
+	<li>Trouble in the Tower</li>
 </ul>
 
 ### Useful Links

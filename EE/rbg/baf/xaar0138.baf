@@ -3,6 +3,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_SavedTimotey", "GLOBAL", 2)
-		StartCutScene("XATIMOTY")
+		StartCutSceneMode()
+		StartCutScene("XATIMOT1")
 END
 

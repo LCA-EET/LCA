@@ -1,0 +1,21 @@
+IF
+	Global("XA_LC_SavedTimotey", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		CreateCreature("XATIMOTY", [3795.1610], S)
+		ActionOverride("XAMOM", JumpToPoint([3765.1640])
+		ActionOverride("XAPERCY", JumpToPoint([3820.1620])
+		SetGlobal("XA_LC_SavedTimotey", "GLOBAL", 3)
+		
+END
+
+IF
+	Global("XA_LC_SavedTimotey", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		ActionOverride("XATIMOTY", ApplySpell(Myself,WIZARD_STONE_TO_FLESH))
+		Wait(2)
+		SetGlobal("XA_LC_SavedTimotey", "GLOBAL", 4)
+		StartCutSceneMode()
+		StartCutScene("XATIMOT2")
+END

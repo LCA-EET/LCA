@@ -34,7 +34,7 @@ END
 IF ~
 	IsGabber("XACORWIN")
 	Gender(Player1, MALE)
-	Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	!Global("XA_LC_RohmaPlayerDaddy", "LOCALS", 1)
 ~ THEN BEGIN XA_PlayerNewDad
 	SAY @36 /* ~Mommy, is <CHARNAME> going to be my daddy now?~*/
@@ -113,15 +113,15 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite3
 	SAY @10 /* ~(She turns to look at you.)~ */
 	
 	IF ~
-		!Global("XA_LC__MetRohma","Global",1)
+		!Global("XA_LC_MetRohma","Global",1)
 	~ THEN
 	DO ~
-		SetGlobal("XA_LC__MetRohma","Global",1)
+		SetGlobal("XA_LC_MetRohma","Global",1)
 	~
 	GOTO XA_CorwinFamilyReunite3A1
 	
 	IF ~
-		Global("XA_LC__MetRohma","Global",1)
+		Global("XA_LC_MetRohma","Global",1)
 	~ THEN
 	GOTO XA_CorwinFamilyReunite3B1
 END
@@ -167,7 +167,7 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite3A4A1
 	
 	IF ~~ THEN REPLY @20 /* ~Your mommy was right. Rohma, here. I want you to have this. (Hand over the doll.)~ */
 	DO ~
-		SetGlobal("XA_LC__Journal_RohmaGift_2", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_RohmaGift_2", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinFamilyReunite3A4A2
 END
@@ -265,7 +265,7 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite3B2B
 	IF ~~ THEN REPLY @20 /* ~Your mommy was right. Rohma, here. I want you to have this. (Hand her the doll.)~ */
 	DO ~
 		SetGlobal("XA_LC_JustBoughtDoll", "GLOBAL", 1)
-		SetGlobal("XA_LC__Journal_RohmaGift_2", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_RohmaGift_2", "GLOBAL", 1)
 	~
 	GOTO XA_CorwinFamilyReunite3A4A2
 	
@@ -312,7 +312,7 @@ IF ~~ THEN BEGIN XA_SayBye
 	SAY @32 /* ~Bye <CHARNAME>!~ */
 	
 	IF ~
-		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @33 /* ~Bye Rohma! Take good care of your mommy for me. I'll see the two of you tomorrow.~ */
 	DO ~
 		SetGlobal("XA_LC_CorwinWithFamily", "GLOBAL", 1)
@@ -321,7 +321,7 @@ IF ~~ THEN BEGIN XA_SayBye
 	EXIT
 	
 	IF ~
-		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @34 /* ~Bye Rohma! It was nice to see you again. See you tomorrow, Schael.~*/
 	DO ~
 		SetGlobal("XA_LC_CorwinWithFamily", "GLOBAL", 1)
@@ -335,25 +335,25 @@ IF ~~ THEN BEGIN XA_ByeRohmaChain1End
 	
 	IF ~
 		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
-		!Global("XA_LC__SkieModActive", "GLOBAL",1)
+		!Global("XA_LC_SkieModActive", "GLOBAL",1)
 	~ THEN REPLY @50 /* ~No, sweetie. You and your grandpa are going to stay here, until your mom and I return from our trip. There's a guest room for you downstairs.~ */
 	GOTO XA_ByeRohmaChain2
 	
 	IF ~
 		!Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
-		!Global("XA_LC__SkieModActive", "GLOBAL",1)
+		!Global("XA_LC_SkieModActive", "GLOBAL",1)
 	~ THEN REPLY @68 /* ~You, mommy and grandpa are going to stay here until I return from my trip. There's a guest room for you downstairs.~ */
 	GOTO XA_ByeRohmaChain2
 	
 	IF ~
 		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
-		Global("XA_LC__SkieModActive", "GLOBAL",1)
+		Global("XA_LC_SkieModActive", "GLOBAL",1)
 	~ THEN REPLY @50 /* ~No, sweetie. You and your grandpa are going to stay here, until your mom and I return from our trip. There's a guest room for you downstairs.~ */
 	GOTO XA_ByeRohmaChain2A
 	
 	IF ~
 		!Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
-		Global("XA_LC__SkieModActive", "GLOBAL",1)
+		Global("XA_LC_SkieModActive", "GLOBAL",1)
 	~ THEN REPLY @68 /* ~You, mommy and grandpa are going to stay here until I return from my trip. There's a guest room for you downstairs.~ */
 	GOTO XA_ByeRohmaChain2A
 END
@@ -362,7 +362,7 @@ IF ~~ THEN BEGIN XA_ByeRohmaChain2End
 	SAY @58 /* ~Goodnight, <CHARNAME>!~ */
 	
 	IF ~
-		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @59 /* ~Goodnight Rohma.~ */
 	DO ~
 		SetGlobal("XA_LC_CorwinLoveBG2", "GLOBAL", 1)
@@ -370,7 +370,7 @@ IF ~~ THEN BEGIN XA_ByeRohmaChain2End
 	GOTO XA_ByeRohmaEnd_Romance
 	
 	IF ~
-		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @59 /* ~Goodnight Rohma.~ */
 	EXTERN XACORWIJ XA_BedtimeRohmaChain
 END
@@ -427,7 +427,7 @@ IF ~~ THEN XA_BedtimeRohmaChainEnd
 	SAY @65 /* ~Yes mommy.~ */
 	
 	IF ~
-		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
 	~ THEN
 	DO ~
@@ -437,7 +437,7 @@ IF ~~ THEN XA_BedtimeRohmaChainEnd
 	EXIT
 	
 	IF ~
-		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
 	~ THEN
 	DO ~
@@ -447,7 +447,7 @@ IF ~~ THEN XA_BedtimeRohmaChainEnd
 	EXIT
 	
 	IF ~
-		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
 	~ THEN
 	DO ~
@@ -457,7 +457,7 @@ IF ~~ THEN XA_BedtimeRohmaChainEnd
 	EXIT
 	
 	IF ~
-		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
 	~ THEN
 	DO ~
@@ -510,19 +510,19 @@ CHAIN XAROHMA XA_ByeRohmaChain2
 	== XAROHMA
 	IF ~
 		Global("XA_LC_GaveDoll", "GLOBAL", 1)
-		GlobalLT("XA_LC__DingsRohma", "GLOBAL", 1)
+		GlobalLT("XA_LC_DingsRohma", "GLOBAL", 1)
 	~
 	@56 /* ~Remember to bring my dolly.~ */
 	== XAROHMA
 	IF ~
 		Global("XA_LC_GaveDoll", "GLOBAL", 1)
-		GlobalGT("XA_LC__DingsRohma", "GLOBAL", 0)
+		GlobalGT("XA_LC_DingsRohma", "GLOBAL", 0)
 	~
 	@79 /* ~Remember to bring Dings, and my dolly too.~ */
 	== XAROHMA
 	IF ~
 		!Global("XA_LC_GaveDoll", "GLOBAL", 1)
-		GlobalGT("XA_LC__DingsRohma", "GLOBAL", 0)
+		GlobalGT("XA_LC_DingsRohma", "GLOBAL", 0)
 	~
 	@80 /* ~Remember to bring Dings.~ */
 	== XACORWIJ
@@ -544,19 +544,19 @@ CHAIN XAROHMA XA_ByeRohmaChain2A
 	== XAROHMA
 	IF ~
 		Global("XA_LC_GaveDoll", "GLOBAL", 1)
-		GlobalLT("XA_LC__DingsRohma", "GLOBAL", 1)
+		GlobalLT("XA_LC_DingsRohma", "GLOBAL", 1)
 	~
 	@56 /* ~Remember to bring my dolly.~ */
 	== XAROHMA
 	IF ~
 		Global("XA_LC_GaveDoll", "GLOBAL", 1)
-		GlobalGT("XA_LC__DingsRohma", "GLOBAL", 0)
+		GlobalGT("XA_LC_DingsRohma", "GLOBAL", 0)
 	~
 	@79 /* ~Remember to bring Dings, and my dolly too.~ */
 	== XAROHMA
 	IF ~
 		!Global("XA_LC_GaveDoll", "GLOBAL", 1)
-		GlobalGT("XA_LC__DingsRohma", "GLOBAL", 0)
+		GlobalGT("XA_LC_DingsRohma", "GLOBAL", 0)
 	~
 	@80 /* ~Remember to bring Dings.~ */
 	== XACORWIJ

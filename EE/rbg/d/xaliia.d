@@ -18,11 +18,11 @@ APPEND XALIIA
 		SAY @9 /* ~It will take a couple of days to prepare... */
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN GOTO XA_SaradushDiscussion5A
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN GOTO XA_SaradushDiscussion5B
 	END
 

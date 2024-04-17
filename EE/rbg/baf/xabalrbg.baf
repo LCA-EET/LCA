@@ -282,3 +282,14 @@
 	END
 //}
 
+//{ Post Quest Dialogue - Trouble in the Tower
+	IF
+		Global("XA_LC_SavedTimotey", "GLOBAL", 5)
+		GlobalLT("XA_LC_TroubleTalk", "GLOBAL", 1)
+		!InParty("XACORWIN")
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_TroubleTalk", "GLOBAL", 2)
+			Continue()
+	END
+//}

@@ -62,7 +62,7 @@ IF ~~ THEN BEGIN XA_Greeting3
 	GOTO XA_JhassoEnd
 	
 	IF ~
-		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN GOTO XA_JhassoPlayerRomance
 	
 	IF ~
@@ -73,7 +73,7 @@ IF ~~ THEN BEGIN XA_Greeting3
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
 		Global("XA_LC_JhassoCorwinGreeting", "LOCALS", 1)
-		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN GOTO XA_JhassoCorwinRomance
 END
 
@@ -147,11 +147,11 @@ IF ~~ THEN BEGIN XA_JhassoCorwinFamilyEnd
 	SAY @31 /* ~I'm glad to hear it.~ */
 	
 	IF ~
-		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN GOTO XA_JhassoEnd
 	
 	IF ~
-		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN GOTO XA_JhassoCorwinRomance
 END
 
@@ -232,7 +232,7 @@ IF ~~ THEN BEGIN XA_GiveRing4
 	
 	IF ~~ THEN REPLY @27 /* ~What is it?~*/
 	DO ~
-		SetGlobal("XA_LC__Journal_RingJhasso", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_RingJhasso", "GLOBAL", 1)
 	~
 	GOTO XA_GiveRing5
 END

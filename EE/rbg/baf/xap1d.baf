@@ -2,11 +2,11 @@
 //{ Sex 3 CS
 
 	IF
-		Global("XA_LC__Sex3Debug", "GLOBAL", 1)
+		Global("XA_LC_Sex3Debug", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinSex_3", "GLOBAL", 1)
-			SetGlobal("XA_LC__Sex3Debug", "GLOBAL", 0)
+			SetGlobal("XA_LC_Sex3Debug", "GLOBAL", 0)
 			SetGlobal("XA_LC_SleepBG", "GLOBAL", 1)
 			CreateCreature("XALCHOOK", [-1.-1], N)
 	END

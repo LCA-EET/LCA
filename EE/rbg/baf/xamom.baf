@@ -1,10 +1,22 @@
 IF
 	GlobalLT("XA_LC_HelpMother", "GLOBAL", 1)
+	Range([PC], 12)
+	NumTimesTalkedTo(0)
+THEN
+	RESPONSE #100
+		Dialogue([PC])
+END
+
+IF
+	GlobalLT("XA_LC_HelpMother", "GLOBAL", 1)
+	Range([PC], 20)
 THEN
 	RESPONSE #100
 		DisplayStringHead(Myself, @15)
+		Wait(5)
 	RESPONSE #100
 		DisplayStringHead(Myself, @16)
+		Wait(5)
 	RESPONSE #100
 		Wait(5)
 END

@@ -1,0 +1,17 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("XATIMOTY")
+		ClearAllActions()
+		FadeToColor([30.0],0)
+		Wait(3)
+		ActionOverride(Player1, LeaveAreaLUA("xaa130", "", [3770.1520], S))
+		ActionOverride(Player2, LeaveAreaLUA("xaa130", "", [3770.1520], S))
+		ActionOverride(Player3, LeaveAreaLUA("xaa130", "", [3770.1520], S))
+		ActionOverride(Player4, LeaveAreaLUA("xaa130", "", [3770.1520], S))
+		ActionOverride(Player5, LeaveAreaLUA("xaa130", "", [3770.1520], S))
+		ActionOverride(Player6, LeaveAreaLUA("xaa130", "", [3770.1520], S))
+		DestroySelf()
+		EndCutSceneMode()
+END

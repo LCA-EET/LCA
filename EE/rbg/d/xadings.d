@@ -1,13 +1,13 @@
 APPEND ~XADINGS~
 
 	IF ~
-		Global("XA_LC__DingsRohma", "GLOBAL", 2)
+		Global("XA_LC_DingsRohma", "GLOBAL", 2)
 	~ THEN BEGIN XA_LC_DingsRohma
 		SAY @5  /* ~Meow.~ */
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_LC__DingsRohma", "GLOBAL", 3)
+			SetGlobal("XA_LC_DingsRohma", "GLOBAL", 3)
 		~
 		EXTERN XAROHMA XA_LC_Chain_DingsRohma
 	END
@@ -38,7 +38,7 @@ CHAIN XAROHMA XA_LC_Chain_DingsRohma
 	== XAROHMA
 	@13  /* ~Yes grandpa! I will, I promise!~ */
 	DO ~
-		SetGlobal("XA_LC__Journal_Dings2", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Dings2", "GLOBAL", 1)
 	~
 	== XACORWIJ
 	@14  /* ~Good.~*/

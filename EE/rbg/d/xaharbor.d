@@ -21,7 +21,7 @@ IF ~
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LC__Journal_SlaveHarbor", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_SlaveHarbor", "GLOBAL", 1)
 		SetGlobal("XA_LC_HandedOverManifests", "GLOBAL", 1)
 		GiveItemCreate("XAMANFST",LastTalkedToBy(Myself),1,0,0)
 	~
@@ -51,7 +51,7 @@ IF ~~ THEN BEGIN XA_HandedOverManifests2
 	
 	IF ~~ THEN REPLY @28 /* ~Perhaps. Thanks for your help.~ */
 	DO ~
-		SetGlobal("XA_LC__Journal_SlaveHarbor", "GLOBAL", 2)
+		SetGlobal("XA_LC_Journal_SlaveHarbor", "GLOBAL", 2)
 	~
 	EXIT
 END

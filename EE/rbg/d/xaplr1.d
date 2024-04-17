@@ -1,7 +1,7 @@
 APPEND ~PLAYER1~
 //{ Ledger, BG0614 / XAP0614
 	IF ~
-		Global("XA_LC__StoleLedger", "GLOBAL", 1)
+		Global("XA_LC_StoleLedger", "GLOBAL", 1)
 	~ THEN BEGIN XA_LC_Alcove
 		SAY @212  /* ~(The painting depicts a fire-breathing dragon. Strange... it is slightly askew, and you can make out what appears to be a small alcove behind the lower left corner of the painting. Investigate?)~*/
 		
@@ -10,7 +10,7 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN REPLY @207  /* ~No.~*/
 		DO ~
-			SetGlobal("XA_LC__StoleLedger", "GLOBAL", 0)
+			SetGlobal("XA_LC_StoleLedger", "GLOBAL", 0)
 		~
 		EXIT
 	END
@@ -20,7 +20,7 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_LC__StoleLedger", "GLOBAL", 2)
+			SetGlobal("XA_LC_StoleLedger", "GLOBAL", 2)
 			GiveItemCreate("XALEDGER", Player1, 0,0,0)
 			SetItemFlags("XALEDGER", IDENTIFIED,TRUE)
 		~
@@ -45,12 +45,12 @@ APPEND ~PLAYER1~
 		Global("XA_LC_IllaseraDead", "GLOBAL", 1)
 		Dead("XACORWIN")
 		!InPartyAllowDead("XACORWIN")
-		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN BEGIN XA_IllaseraDead2
 		SAY @87 /* ~Schael? Schael! No...~*/
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			Global("XA_LC_MarriageProposal", "GLOBAL", 1)
 		~ THEN 
 		DO ~
@@ -61,7 +61,7 @@ APPEND ~PLAYER1~
 		EXIT
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			!Global("XA_LC_MarriageProposal", "GLOBAL", 1)
 		~ THEN 
 		DO ~
@@ -72,7 +72,7 @@ APPEND ~PLAYER1~
 		EXIT
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_LC_IllaseraDead", "GLOBAL", 2)
@@ -101,7 +101,7 @@ APPEND ~PLAYER1~
 		Global("XA_LC_IllaseraDead", "GLOBAL", 1)
 		Dead("XACORWIN")
 		!InParty("XACORWIN")
-		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN BEGIN XA_IllaseraDead3
 		SAY @68 /* ~(You were victorious, but at great cost. Schael sacrificed herself to save Rohma. Sadly, there is no hope of bringing her back.)~ */
 		
@@ -485,7 +485,7 @@ APPEND ~PLAYER1~
 		SAY @88 /* ~(Upon seeing the cell in which you were once imprisoned, you recall the dark circumstances that forced your departure from the city...)~ */
 
 		IF ~
-			Global("XA_LC__PlayerExiled", "GLOBAL", 1)
+			Global("XA_LC_PlayerExiled", "GLOBAL", 1)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_LC_SoDAnxietyCell", "GLOBAL", 2)
@@ -493,7 +493,7 @@ APPEND ~PLAYER1~
 		GOTO XA_DarkMemories_Exile
 		
 		IF ~
-			GlobalLT("XA_LC__PlayerExiled", "GLOBAL", 1)
+			GlobalLT("XA_LC_PlayerExiled", "GLOBAL", 1)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_LC_SoDAnxietyCell", "GLOBAL", 2)
@@ -523,7 +523,7 @@ APPEND ~PLAYER1~
 		
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN 
 		DO ~
 			SetGlobalTimer("XA_LC_SoDAnxietyTimer", "GLOBAL", ONE_ROUND)
@@ -640,7 +640,7 @@ CHAIN IF ~
 	@62 /* ~Thank you, sir!~ */
 	== XABELT
 	IF ~
-		!Global("XA_LC__SkieModActive", "GLOBAL", 1)
+		!Global("XA_LC_SkieModActive", "GLOBAL", 1)
 	~
 	@63 /* ~Being that there is no other business to discuss, this meeting is adjourned.~ */
 	DO ~
@@ -650,7 +650,7 @@ CHAIN IF ~
 	~
 	== XABELT
 	IF ~
-		Global("XA_LC__SkieModActive", "GLOBAL", 1)
+		Global("XA_LC_SkieModActive", "GLOBAL", 1)
 	~
 	@63 /* ~Being that there is no other business to discuss, this meeting is adjourned.~ */
 	DO ~
@@ -666,7 +666,7 @@ EXIT
 
 CHAIN IF ~
 	Global("XA_LC_DukesDebriefed", "GLOBAL", 1)
-	Global("XA_LC__SkieModActive", "GLOBAL", 1)
+	Global("XA_LC_SkieModActive", "GLOBAL", 1)
 ~ THEN PLAYER1 XA_DebriefChainSkieMod
 	 /* */
 	@15 /* ~(Unsure of what to expect, you enter the Ducal Palace for the debriefing. Captain Corwin is already there, and you can tell that she's eager to begin. Several minutes pass before you and the Captain are escorted into the meeting chamber on the second floor. The Council is seated behind a long, mahogany table, as are their adjutants.)~*/
@@ -703,7 +703,7 @@ CHAIN IF ~
 END XABENCE XA_StartDebrief01
 CHAIN IF ~
 	Global("XA_LC_DukesDebriefed", "GLOBAL", 1)
-	!Global("XA_LC__SkieModActive", "GLOBAL", 1)
+	!Global("XA_LC_SkieModActive", "GLOBAL", 1)
 ~ THEN PLAYER1 XA_DebriefChain
 	 /* */
 	@15 /* ~(Unsure of what to expect, you enter the Ducal Palace for the debriefing. Captain Corwin is already there, and you can tell that she's eager to begin. Several minutes pass before you and the Captain are escorted into the meeting chamber on the second floor. The Council is seated behind a long, mahogany table, as are their adjutants.)~*/

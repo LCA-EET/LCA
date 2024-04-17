@@ -6,7 +6,7 @@ APPEND XACORWIJ
 	//{ End of Duke Debriefing - Skie Mod Active - CC OK
 	IF ~
 		Global("XA_LC_DukesDebriefed", "GLOBAL", 4)
-		Global("XA_LC__SkieModActive", "GLOBAL", 1)
+		Global("XA_LC_SkieModActive", "GLOBAL", 1)
 	~ THEN BEGIN XA_Congratulations
 		SAY @1127 /* ~<CHARNAME>, you must be thrilled!~ */
 		
@@ -41,11 +41,11 @@ APPEND XACORWIJ
 		SAY @1106 /* ~I can hardly believe it myself.~ */
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN GOTO XA_Congratulations2A
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN GOTO XA_Congratulations2B
 	END
 
@@ -400,12 +400,12 @@ APPEND XACORWIJ
 		SAY @1421 /* ~Are we — are we still trapped? ~ */
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1425 /* ~I think so, Captain. Look — it seems to be a recreation of the siege.~*/
 		GOTO XA_TrappedG1_2
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1422 /* ~I think so. Look — it seems to be a recreation of the siege.~ */
 		GOTO XA_TrappedG1_2
 	END
@@ -452,7 +452,7 @@ APPEND XACORWIJ
 		GOTO XA_CorwinArrest2
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @556 /* ~No, I don't think you did, Captain.~ */
 		DO ~
 			SetGlobal("XA_LC_CorwinArrest", "GLOBAL", 2)
@@ -460,7 +460,7 @@ APPEND XACORWIJ
 		GOTO XA_CorwinArrest2
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @557 /*  ~No love, I don't think you did.~ */
 		DO ~
 			SetGlobal("XA_LC_CorwinArrest", "GLOBAL", 2)
@@ -512,7 +512,7 @@ APPEND XACORWIJ
 		GOTO XA_CorwinArrest6_NoRomance
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN GOTO XA_CorwinArrest6_Romance
 	END
 
@@ -523,7 +523,7 @@ APPEND XACORWIJ
 		GOTO XA_CorwinArrest6_NoRomance
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN GOTO XA_CorwinArrest6_Romance
 	END
 
@@ -618,12 +618,12 @@ APPEND XACORWIJ
 		SAY @1312 /* ~I understand... it was a traumatic experience, for all of us.~ */
 		
 		IF ~
-			!Global("XA_LC__PlayerExiled", "GLOBAL", 1)
+			!Global("XA_LC_PlayerExiled", "GLOBAL", 1)
 		~ THEN REPLY @1314 /* ~I think about it, still. Not as much as I used to, but... it's scary to think how close you were to... how close we were to —~ */
 		GOTO XA_SoDAnxiety5
 		
 		IF ~
-			Global("XA_LC__PlayerExiled", "GLOBAL", 1)
+			Global("XA_LC_PlayerExiled", "GLOBAL", 1)
 		~ THEN REPLY @1433 /* ~I think about it, still. Not just my exile, but how close I was to being —~ */
 		GOTO XA_SoDAnxiety5
 	END
@@ -640,19 +640,19 @@ APPEND XACORWIJ
 		SAY @1319 /* ~We have each other... and we have Rohma. The new memories we make together will drown out those dark echoes. You'll see.~*/
 		
 		IF ~
-			!Global("XA_LC__PlayerExiled", "GLOBAL", 1)
+			!Global("XA_LC_PlayerExiled", "GLOBAL", 1)
 		~ THEN REPLY @1321 /* ~I look forward to it.~ */
 		DO ~
-			SetGlobal("XA_LC__Journal_DarkCircumstances", "GLOBAL", 2)
+			SetGlobal("XA_LC_Journal_DarkCircumstances", "GLOBAL", 2)
 			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		EXIT
 		
 		IF ~
-			Global("XA_LC__PlayerExiled", "GLOBAL", 1)
+			Global("XA_LC_PlayerExiled", "GLOBAL", 1)
 		~ THEN REPLY @1321 /* ~I look forward to it.~ */
 		DO ~
-			SetGlobal("XA_LC__Journal_DarkCircumstances", "GLOBAL", 1)
+			SetGlobal("XA_LC_Journal_DarkCircumstances", "GLOBAL", 1)
 			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		EXIT
@@ -720,12 +720,12 @@ APPEND XACORWIJ
 		SAY @2 /* ~You sure you don't want me with you?~ [XA100101]*/
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1221 /* ~I'm sure, my love. I can't risk losing you.~ */
 		GOTO XA_BGEND3_DontWantCorwinR //OK
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1222 /* ~I'm sure. The city can't risk losing the both of us.~ */
 		GOTO XA_BGEND3_DontWantCorwinNR //OK
 		
@@ -778,7 +778,7 @@ APPEND XACORWIJ
 		SAY @1280 /* ~I'm glad that you chose me for this assignment.~*/
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1282 /* ~I've learned to rely on your skill and counsel, my friend.~ */
 		DO ~
 			SetGlobal("XA_LC_BGEND4", "GLOBAL", 2)
@@ -786,7 +786,7 @@ APPEND XACORWIJ
 		GOTO XA_NeedEachother_NR //OK
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1286 /* ~I need you Schael. You know that.~ */
 		DO ~
 			SetGlobal("XA_LC_BGEND4", "GLOBAL", 2)
@@ -831,11 +831,11 @@ APPEND XACORWIJ
 		=@1291 /* ~You heard Nederlok, and the Dukes. The success of this mission is essential to the safety of this city. And that includes Rohma, and my father.~*/
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN GOTO XA_BGEND4_2R //OK
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN GOTO XA_BGEND4_4 //OK
 	END
 
@@ -851,11 +851,11 @@ APPEND XACORWIJ
 		SAY @1266 /* ~It never is, but... you heard Nederlok, and the Dukes. The success of this mission is essential to the safety of this city. And that includes Rohma, and my father.~ */
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN GOTO XA_BGEND4_2R //OK
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN GOTO XA_BGEND4_4 //OK
 	END
 
@@ -918,7 +918,7 @@ APPEND XACORWIJ
 		SAY @1210 /* ~(They share a warm embrace.)~ */
 		
 		IF ~
-			!Global("XA_LC__SkieModActive", "GLOBAL",1)
+			!Global("XA_LC_SkieModActive", "GLOBAL",1)
 		~ THEN
 		DO ~
 			SetGlobal("XA_LC_RohmaSaved", "GLOBAL", 2)
@@ -926,7 +926,7 @@ APPEND XACORWIJ
 		GOTO XA_CorwinRohmaReuniteChain
 		
 		IF ~
-			Global("XA_LC__SkieModActive", "GLOBAL",1)
+			Global("XA_LC_SkieModActive", "GLOBAL",1)
 		~ THEN
 		DO ~
 			SetGlobal("XA_LC_RohmaSaved", "GLOBAL", 2)
@@ -961,12 +961,12 @@ APPEND XACORWIJ
 		= @1249 /* ~I just hope we've done the right thing.~*/
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1189 /* ~It was the only way. He'll never trouble you again. Come - I'm sure Rohma is eager to see you, my love.~ */
 		GOTO XA_CorwinBenoSTChainEndCS
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1190 /* ~It was the only way. He'll never trouble you again. Come - I'm sure Rohma is eager to see you, my love.~ */
 		GOTO XA_CorwinBenoSTChainEndCS
 	END
@@ -1020,12 +1020,12 @@ APPEND XACORWIJ
 		SAY  @1248 /* ~It's done. Thank the gods.~ [BD39327] */
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1195 /* ~Are you alright? That couldn't have been easy for you, love.~ */
 		GOTO XA_CorwinKillBenoChainEndCS //OK
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1197 /* ~Are you alright? That couldn't have been easy for you.~*/
 		GOTO XA_CorwinKillBenoChainEndCS //OK
 	END
@@ -1061,7 +1061,7 @@ APPEND XACORWIJ
 		SAY @1142 /* ~That was the last of them...~ */
 		
 		IF ~
-			!Global("XA_LC__SkieModActive", "GLOBAL",1)
+			!Global("XA_LC_SkieModActive", "GLOBAL",1)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_LC_IllaseraDead", "GLOBAL", 2)
@@ -1069,7 +1069,7 @@ APPEND XACORWIJ
 		GOTO XA_IllaseraDeadSkie
 		
 		IF ~
-			Global("XA_LC__SkieModActive", "GLOBAL",1)
+			Global("XA_LC_SkieModActive", "GLOBAL",1)
 		~ THEN 
 		DO ~
 			SetGlobal("XA_LC_IllaseraDead", "GLOBAL", 2)
@@ -1105,36 +1105,36 @@ APPEND XACORWIJ
 		SAY @1150 /* ~What is it?~ [XA100030] */
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1147 /* ~What is killing him again going to solve?~ */
 		GOTO XA_IllaseraDead5R //OK
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1147 /* ~What is killing him again going to solve?~ */
 		GOTO XA_IllaseraDead5NR //OK
 		
 		IF ~
 			HasItem("XASTDAG", "XACORWIN")
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1183 /* ~You have the Soultaker dagger. Give it to me, I'll do the deed. It's the only way we'll be free of him for good.~ */
 		GOTO XA_IllaseraDead_ST_Corwin //OK
 		
 		IF ~
 			HasItem("XASTDAG", "XACORWIN")
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1182 /* ~You have the Soultaker dagger. Give it to me, I'll do the deed. It's the only way you'll be free of him for good.~ */
 		GOTO XA_IllaseraDead_ST_Corwin //OK
 		
 		IF ~
 			HasItem("XASTDAG", Player1)
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1168 /* ~I have the Soultaker dagger. I'll do the deed. It's the only way you'll be free of him for good.~ */
 		GOTO XA_IllaseraDead_ST_PlayerR //OK
 		
 		IF ~
 			HasItem("XASTDAG", Player1)
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1154 /* ~I have the Soultaker dagger. I'll do the deed. It's the only way you'll be free of him for good.~ */
 		GOTO XA_IllaseraDead_ST_PlayerNR 
 		
@@ -1177,13 +1177,13 @@ APPEND XACORWIJ
 		
 		IF ~
 			HasItem("XASTDAG", Player1)
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1168 /* ~You're right... I have the Soultaker dagger. I will do the deed. It's the only way we'll be free of him for good.~ */
 		GOTO XA_IllaseraDead_ST_PlayerR //OK
 		
 		IF ~
 			HasItem("XASTDAG", Player1)
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1169 /* ~You're right... I have the Soultaker dagger. I will do the deed. It's the only way you'll be free of him for good.~ */
 		GOTO XA_IllaseraDead_ST_PlayerNR //OK
 		
@@ -1402,7 +1402,7 @@ APPEND XACORWIJ
 	//{ #region Dinner with Corwin (Romance) - Dialog J-14 - Tested - CC OK
 	IF ~
 		Global("XA_LC_CorwinDinner", "GLOBAL", 1)
-		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN BEGIN XA_CorwinDinner_Romance
 		SAY @920 /* ~Mm. That was delicious.~ */
 		
@@ -1511,7 +1511,7 @@ APPEND XACORWIJ
 	//{ #region Dinner with Corwin (Non-Romance) - Dialog J-15 - Tested - CC OK
 	IF ~
 		Global("XA_LC_CorwinDinner", "GLOBAL", 1)
-		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN BEGIN XA_CorwinDinner_NonRomance
 		SAY @920 /*~Mm. That was delicious.~*/
 		
@@ -1671,12 +1671,12 @@ APPEND XACORWIJ
 		SAY @1024 /* ~That's your money. Consider it compensation for everything you've had to endure.~*/
 		
 		IF ~
-			!Global("XA_LC__PlayerExiled", "GLOBAL", 1)
+			!Global("XA_LC_PlayerExiled", "GLOBAL", 1)
 		~ THEN REPLY @1323 /*~It's as much yours, Schael, as it is mine. You could've killed me during my escape. Instead, you showed mercy.~ */
 		GOTO XA_CorwinDinner_Work2
 		
 		IF ~
-			Global("XA_LC__PlayerExiled", "GLOBAL", 1)
+			Global("XA_LC_PlayerExiled", "GLOBAL", 1)
 		~ THEN REPLY @1025 /* ~It's as much yours, Schael, as it is mine... I wouldn't be here were it not for your efforts in securing my release.~ */
 		GOTO XA_CorwinDinner_Work2
 	END
@@ -1714,11 +1714,11 @@ APPEND XACORWIJ
 		SAY @1034 /* ~(She smiles.)~ */
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN GOTO XA_CorwinDinner_NonRomance3
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN GOTO XA_CorwinDinner_Romance3
 		
 		IF ~
@@ -1753,7 +1753,7 @@ APPEND XACORWIJ
 		IF ~
 			!GlobalGT("XA_LC_TimesHadSex", "GLOBAL", 0)
 			!Global("XA_LC_SlappedDelcia", "GLOBAL", 1)
-			!Global("XA_LC__CorwinWonTM", "GLOBAL", 1)
+			!Global("XA_LC_CorwinWonTM", "GLOBAL", 1)
 			!Global("XA_LC_CorwinCleansed", "GLOBAL", 1)
 			!Global("XA_LC_CorwinCleansed", "GLOBAL", 2)
 		~ THEN REPLY @1098 /* ~Hm. I wonder what they're discussing...~*/
@@ -1763,7 +1763,7 @@ APPEND XACORWIJ
 			OR(4)
 				GlobalGT("XA_LC_TimesHadSex", "GLOBAL", 0)
 				GlobalGT("XA_LC_SlappedDelcia", "GLOBAL", 0)
-				GlobalGT("XA_LC__CorwinWonTM", "GLOBAL", 0)
+				GlobalGT("XA_LC_CorwinWonTM", "GLOBAL", 0)
 				GlobalGT("XA_LC_CorwinCleansed", "GLOBAL", 0)
 		~ THEN REPLY @1074 /* ~Although... I noticed you did leave *some* things out.~ */
 		GOTO XA_DukeDebrief02_A2
@@ -1792,7 +1792,7 @@ APPEND XACORWIJ
 		GOTO XA_DukeDebrief02_Slap
 		
 		IF ~
-			Global("XA_LC__CorwinWonTM", "GLOBAL", 1)
+			Global("XA_LC_CorwinWonTM", "GLOBAL", 1)
 			!Global("XA_LC_Recall_TM", "GLOBAL", 1)
 		~ THEN REPLY @1083 /* ~You competed in the Trademeet Archery Competition, and you won! You were amazing, Schael.~ */
 		DO ~
@@ -1803,7 +1803,7 @@ APPEND XACORWIJ
 		
 		IF ~
 			GlobalGT("XA_LC_TimesHadSex", "GLOBAL", 0)
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			!Global("XA_LC_Recall_Sex", "GLOBAL", 1)
 		~ THEN REPLY @1082 /* ~Our, ah, adventures in the bedroom. Especially that one time we kept the entire inn from getting any sleep.~ */
 		DO ~
@@ -2266,33 +2266,33 @@ APPEND XACORWIJ
 		SAY @680 /* ~<CHARNAME> - I really need to see my family. My home is in the southeast part of the city. Let's go.~*/
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			GlobalLT("XA_LC_CorwinFamilyTimer_Hours", "GLOBAL", 4)
 		~ THEN REPLY @1636 /* ~Soon, love.~ */
 		DO ~
-			SetGlobalTimer("XA_LC__CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
+			SetGlobalTimer("XA_LC_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
 			SetGlobal("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 0)
 		~
 		EXIT
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			GlobalLT("XA_LC_CorwinFamilyTimer_Hours", "GLOBAL", 4)
 		~ THEN REPLY @1635 /* ~Soon, Captain.~ */
 		DO ~
-			SetGlobalTimer("XA_LC__CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
+			SetGlobalTimer("XA_LC_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
 			SetGlobal("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 0)
 		~
 		EXIT
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			!GlobalLT("XA_LC_CorwinFamilyTimer_Hours", "GLOBAL", 4)
 		~ THEN REPLY @1636 /* ~Soon, love.~ */
 		GOTO XA_SeeFamilyNow
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			!GlobalLT("XA_LC_CorwinFamilyTimer_Hours", "GLOBAL", 4)
 		~ THEN REPLY @1635 /* ~Soon, Captain.~ */
 		GOTO XA_SeeFamilyNow
@@ -2336,7 +2336,7 @@ APPEND XACORWIJ
 	//{ #region Corwin Family Timer Expired (Non-Romance) - Dialog J-19 - CC OK
 	IF ~
 		Global("XA_LC_CorwinLeaveForFamily", "GLOBAL", 1)
-		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN BEGIN XA_CorwinFamilyTimer_ExpiredNR
 		SAY @903 /* ~<CHARNAME>, I'm going home to spend the rest of the day with my family. I'll see you tomorrow morning at the debriefing.~*/
 		
@@ -2358,7 +2358,7 @@ APPEND XACORWIJ
 	//{ #region Corwin Family Timer Expired (Romance) - Dialog J-20 - CC OK
 	IF ~
 		Global("XA_LC_CorwinLeaveForFamily", "GLOBAL", 1)
-		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN BEGIN XA_CorwinFamilyTimer_ExpiredRomance
 		SAY @904 /* ~My love, I'm going home to spend the rest of the day with my family. Have you decided where you're staying tonight?~*/
 		
@@ -2475,7 +2475,7 @@ APPEND XACORWIJ
 		SAY @726 /* ~Oh, Neoma...~ */
 		
 		IF ~
-			Global("XA_LC__GaveEarrings", "GLOBAL", 1)
+			Global("XA_LC_GaveEarrings", "GLOBAL", 1)
 		~ THEN REPLY @1337 /* ~Her name sounds familiar... oh, right — the earrings for Voghiln!~ */
 		DO ~
 			SetGlobal("XA_LC_XACS15Cutscene", "GLOBAL", 7)
@@ -2599,7 +2599,7 @@ APPEND XACORWIJ
 		EXIT	
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @603 /* ~Something wrong?~*/
 		DO ~
 			SetGlobal("XA_LC_AskCorwinAboutTianna", "GLOBAL", 2)
@@ -2607,7 +2607,7 @@ APPEND XACORWIJ
 		GOTO XA_CorwinTianna2
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @838 /* ~My love... that name, Tianna - haven't you mentioned her to me before?~ */
 		DO ~
 			SetGlobal("XA_LC_AskCorwinAboutTianna", "GLOBAL", 2)
@@ -2619,22 +2619,22 @@ APPEND XACORWIJ
 		SAY @839 /* ~Yes... Tianna and I were seeing eachother for a time. A very short time.~ */
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @840 /* ~I see... What happened? I mean, why did you two break up?~ */
 		GOTO XA_CorwinTianna3
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1429 /* ~Well? Go on.~ */
 		GOTO XA_CorwinTianna3
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @840 /* ~I see... What happened? I mean, why did you two break up?~ */
 		GOTO XA_CorwinTianna3_END
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1429 /* ~Well? Go on.~ */
 		GOTO XA_CorwinTianna3_END
 	END
@@ -3002,22 +3002,22 @@ APPEND XACORWIJ
 		SAY @1033 /* ~What are we waiting for, then!? Let's go!~*/
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1031 /* ~Schael, I want you by my side, but not if you're emotionally compromised. The risk would be too great.~ */
 		GOTO XA_CalmDown
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1032 /* ~Schael, if you're to come with me, I need you calm, cool and collected - for Rohma's sake. Can I count on you?~ */
 		GOTO XA_CalmDown
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1016 /* ~Schael, I want you by my side, but not if you're emotionally compromised. The risk would be too great.~ */
 		GOTO XA_CalmDown
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1017 /* ~Schael, if you're to come with me, I need you calm, cool and collected - for Rohma's sake. Can I count on you?~ */
 		GOTO XA_CalmDown
 	END
@@ -3155,21 +3155,21 @@ APPEND XACORWIJ
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobalTimer("XA_LC__CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
+			SetGlobalTimer("XA_LC_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
 			SetGlobal("XA_LC_ReturnToBG", "GLOBAL", 1)
 			EndCutSceneMode()
 		~
 		EXIT
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			GlobalLT("XA_LC_GaveDoll", "GLOBAL", 1)
 		~
 		THEN GOTO XA_GetRohmaGift
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
-			!Global("XA_LC__MetRohma", "GLOBAL", 1)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_MetRohma", "GLOBAL", 1)
 		~ 
 		THEN GOTO XA_FirstMeetingRohma
 	END
@@ -3179,8 +3179,8 @@ APPEND XACORWIJ
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_LC__Journal_RohmaGift_0", "GLOBAL", 1)
-			SetGlobalTimer("XA_LC__CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
+			SetGlobal("XA_LC_Journal_RohmaGift_0", "GLOBAL", 1)
+			SetGlobalTimer("XA_LC_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
 			SetGlobal("XA_LC_WantToGetDoll", "GLOBAL", 1)
 			EndCutSceneMode()
 		~
@@ -3192,8 +3192,8 @@ APPEND XACORWIJ
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_LC__Journal_RohmaGift_0A", "GLOBAL", 1)
-			SetGlobalTimer("XA_LC__CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
+			SetGlobal("XA_LC_Journal_RohmaGift_0A", "GLOBAL", 1)
+			SetGlobalTimer("XA_LC_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
 			SetGlobal("XA_LC_WantToGetDoll", "GLOBAL", 1)
 			EndCutSceneMode()
 		~
@@ -3216,12 +3216,12 @@ APPEND XACORWIJ
 		GOTO XA_CorwinFamilyReuniteSwitch
 		
 		IF ~
-			Global("XA_LC__DingsRohma", "GLOBAL", 1)
+			Global("XA_LC_DingsRohma", "GLOBAL", 1)
 		~ THEN
 		GOTO XA_DingsRohma
 		
 		IF ~
-			Global("XA_LC__CorwinWonTM", "GLOBAL", 1)
+			Global("XA_LC_CorwinWonTM", "GLOBAL", 1)
 		~
 		GOTO XA_CorwinFamilyReuniteTM
 	END
@@ -3231,7 +3231,7 @@ APPEND XACORWIJ
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_LC__DingsRohma", "GLOBAL", 2)
+			SetGlobal("XA_LC_DingsRohma", "GLOBAL", 2)
 			CreateCreature("XADINGS", [-1.-1], N)
 		~
 		EXIT
@@ -3274,11 +3274,11 @@ APPEND XACORWIJ
 		SAY @769 /* ~(She turns to you.)~ */
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN GOTO XA_Depart_NonRomance
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN GOTO XA_Depart_Romance	
 	END
 
@@ -3458,14 +3458,14 @@ APPEND XACORWIJ
 		IF ~~ THEN
 		DO ~
 			StartCutSceneMode()
-			SetGlobal("XA_LC__BrevlikArrested", "GLOBAL", 1)
+			SetGlobal("XA_LC_BrevlikArrested", "GLOBAL", 1)
 			StartCutScene("XAARREST")
 		~
 		EXIT
 		
 		IF ~
-			Global("XA_LC__StoleFarseer", "GLOBAL", 1)
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_StoleFarseer", "GLOBAL", 1)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1372 /* ~If you arrest him, you'll have to arrest me too, love.~*/
 		DO ~
 			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", -1)
@@ -3473,19 +3473,19 @@ APPEND XACORWIJ
 		GOTO XA_ArrestBrevlik_Mad
 		
 		IF ~
-			Global("XA_LC__StoleFarseer", "GLOBAL", 1)
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_StoleFarseer", "GLOBAL", 1)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @583 /* ~(Keep quiet.)~*/
 		DO ~
 			StartCutSceneMode()
-			SetGlobal("XA_LC__BrevlikArrested", "GLOBAL", 1)
+			SetGlobal("XA_LC_BrevlikArrested", "GLOBAL", 1)
 			StartCutScene("XAARREST")
 		~
 		EXIT
 		
 		IF ~
-			Global("XA_LC__StoleFarseer", "GLOBAL", 1)
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_StoleFarseer", "GLOBAL", 1)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @689 /* ~If you arrest him, you'll have to arrest me too, Captain.~*/
 		DO ~
 			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", -1)
@@ -3493,12 +3493,12 @@ APPEND XACORWIJ
 		GOTO XA_ArrestBrevlik_Mad
 		
 		IF ~
-			Global("XA_LC__StoleFarseer", "GLOBAL", 1)
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_StoleFarseer", "GLOBAL", 1)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @583 /* ~(Keep quiet.)~*/
 		DO ~
 			StartCutSceneMode()
-			SetGlobal("XA_LC__BrevlikArrested", "GLOBAL", 1)
+			SetGlobal("XA_LC_BrevlikArrested", "GLOBAL", 1)
 			StartCutScene("XAARREST")
 		~
 		EXIT
@@ -3550,22 +3550,22 @@ APPEND XACORWIJ
 		SAY @1015 /* ~I can't let you do that!~ */
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1031 /* ~My love, I want you by my side, but not if you're emotionally compromised. The risk to Rohma would be too great.~*/
 		GOTO XA_CalmDown
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1032 /* ~Schael, if you're to come with me, I need you calm, cool and collected - for Rohma's sake. Can I count on you?~ */
 		GOTO XA_CalmDown
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1016 /* ~Schael, I want you by my side, but not if you're emotionally compromised. The risk would be too great.~ */
 		GOTO XA_CalmDown
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1017 /* ~Schael, if you're to come with me, I need you calm, cool and collected - for Rohma's sake. Can I count on you?~ */
 		GOTO XA_CalmDown
 	END
@@ -3601,7 +3601,7 @@ APPEND XACORWIJ
 		= @1379 /* ~What's the problem? They're orphans — they have nothing. A few words from you could at least give them some inspiration.~ */
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1380 /* ~Public speaking isn't my forte... but I'll do it for you, dear.~ */
 		GOTO XA_StartHOWCutscene2 
 		
@@ -3659,6 +3659,59 @@ APPEND XACORWIJ
 		~
 		EXIT
 
+	END
+	
+	IF ~
+		Global("XA_LC_TroubleTalk", "GLOBAL", 1)
+	~ THEN BEGIN XA_TroubleTalk
+		SAY @1839 /* ~Heh... the joys of parenthood.~*/
+		
+		IF ~~ THEN REPLY @1843 /* ~Boys will be boys, I suppose.~*/
+		GOTO XA_TroubleTalk2
+		
+		IF ~~ THEN REPLY @1842 /* ~If you say so.~*/
+		GOTO XA_TroubleTalk2
+		
+		IF ~~ THEN REPLY @1840 /*~Think they learned their lesson?~ */
+		GOTO XA_TroubleTalk2
+	END
+	
+	IF ~~ THEN BEGIN XA_TroubleTalk2
+		SAY @1841 /*~They seem like good kids. I'm sure from now on they'll be on their best behavior.~  */
+		
+		= @1844 /* ~I'm just glad things turned out as well as they did. It could have been a lot worse. I'll have the Fist wizards properly ward the tower so that this doesn't happen again.~ */
+		
+		IF ~
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN 
+		GOTO XA_TroubleTalk3A
+		
+		IF ~
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN 
+		GOTO XA_TroubleTalk3B
+	END
+	
+	IF ~~ THEN BEGIN XA_TroubleTalk3A
+		SAY @1845 /* ~Let's go, love.~*/
+		
+		IF ~~ THEN 
+		DO ~
+			SetGlobal("XA_LC_TroubleTalk", "GLOBAL", 2)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 2)
+		~
+		EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_TroubleTalk3B
+		SAY @1846 /* ~Let's go.~*/
+		
+		IF ~~ THEN 
+		DO ~
+			SetGlobal("XA_LC_TroubleTalk", "GLOBAL", 2)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 2)
+		~
+		EXIT
 	END
 END
 
@@ -4036,7 +4089,7 @@ CHAIN
 		DO ~
 			SetGlobal("XA_LC_HandedOverManifests", "GLOBAL", 1)
 			GiveItemCreate("XAMANFST",LastTalkedToBy(Myself),1,0,0)
-			SetGlobal("XA_LC__Journal_SlaveHarbor", "GLOBAL", 1)
+			SetGlobal("XA_LC_Journal_SlaveHarbor", "GLOBAL", 1)
 		~
 		== XACORWIJ
 		@811 /* ~Thank you for your cooperation.~ */
@@ -4079,7 +4132,7 @@ END
 IF ~~ THEN GOTO XA_CorwinFamilyReuniteSwitch
 IF
 	~	
-		Global("XA_LC__DingsRohma", "GLOBAL", 1)
+		Global("XA_LC_DingsRohma", "GLOBAL", 1)
 	~
 THEN GOTO XA_DingsRohma
 
@@ -4100,12 +4153,12 @@ CHAIN
 		@721 /* ~(They speak amongst themselves for a time. You can't make out what they are saying.)~ */
 		== XANEOMA
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@722 /* ~Really? You and ... (she looks at you, smiles.)~ */
 		== XACORWIJ
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
 		@718 /* ~(They break into laughter.)~*/
 		== XANEOMA

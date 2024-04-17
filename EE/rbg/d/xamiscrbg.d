@@ -573,7 +573,7 @@ APPEND xaa187
 		IF ~~ THEN
 		DO ~
 			GiveItemCreate("XARDOLL", LastTalkedToBy(Myself),1,0,0)
-			SetGlobal("XA_LC__Journal_RohmaGift_1", "GLOBAL", 1)
+			SetGlobal("XA_LC_Journal_RohmaGift_1", "GLOBAL", 1)
 		~
 		EXIT
 	END
@@ -639,7 +639,7 @@ APPEND xaa316
 	IF ~
 		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		RandomNum(6,2)
-		Global("XA_LC__SavedAldeth","GLOBAL",1)
+		Global("XA_LC_SavedAldeth","GLOBAL",1)
 		!AreaCheck("XAA490")
 		!Dead("Aldeth")
 	~ THEN BEGIN XAA1
@@ -999,7 +999,7 @@ APPEND xaa353
 		IF ~~ THEN
 		DO ~
 			GiveItemCreate("XARDOLL", LastTalkedToBy(Myself),1,0,0)
-			SetGlobal("XA_LC__Journal_RohmaGift_1", "GLOBAL", 1)
+			SetGlobal("XA_LC_Journal_RohmaGift_1", "GLOBAL", 1)
 		~
 		EXIT
 	END
@@ -1057,7 +1057,7 @@ APPEND xaa331
 		IF ~~ THEN
 		DO ~
 			GiveItemCreate("XARDOLL", LastTalkedToBy(Myself),1,0,0)
-			SetGlobal("XA_LC__Journal_RohmaGift_1", "GLOBAL", 1)
+			SetGlobal("XA_LC_Journal_RohmaGift_1", "GLOBAL", 1)
 		~
 		EXIT
 	END

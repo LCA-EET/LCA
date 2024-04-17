@@ -506,6 +506,12 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_RBG_AdjustVariables
 		SAY @6016 /* ~Adjust Variables~*/
 		
+		IF ~~ THEN REPLY @6068
+		DO ~
+			SetGlobal("XA_LC_SavedTimotey", "GLOBAL", 2)
+		~
+		GOTO XA_RBG_AdjustVariables
+		
 		IF ~~ THEN REPLY @6019
 		DO ~
 			SetGlobal("XA_LC_ReturnToBG", "GLOBAL", 1)

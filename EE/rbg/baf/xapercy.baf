@@ -1,0 +1,6 @@
+IF
+	!Range("XAMOM", 5)
+THEN
+	RESPONSE #100
+		MoveToObject("XAMOM")
+END

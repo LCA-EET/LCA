@@ -28,12 +28,12 @@ APPEND XAELTAN
 		GOTO XA_SaradushDiscussion3
 		
 		IF ~
-			!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @15 /* ~You needn't ask. I will go and make the Five - four, now - pay for threatening the Major's family.~  */
 		GOTO XA_SaradushDiscussion3
 		
 		IF ~
-			Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @16 /*  ~You needn't ask. I will go and make the Five - four, now - pay for threatening my loved ones.~   */
 		GOTO XA_SaradushDiscussion3
 		

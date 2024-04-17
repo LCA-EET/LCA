@@ -129,12 +129,12 @@ IF ~~ THEN BEGIN XA_PlayerQuestion
 	GOTO XA_LottoNumbers
 	
 	IF ~
-		Global("XA_LC__CaelarAliveInAvernus","GLOBAL",1)
+		Global("XA_LC_CaelarAliveInAvernus","GLOBAL",1)
 	~ THEN REPLY @54 /* ~Does Caelar Argent still live?~ */
 	GOTO XA_Caelar
 
 	IF ~
-		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @18 /* ~Do Schael and I have a future together?~ */
 	GOTO XA_FutureRomance
 	
@@ -174,7 +174,7 @@ IF ~~ THEN BEGIN XA_Caelar
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_LC__Journal_Haspur_Caelar", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Haspur_Caelar", "GLOBAL", 1)
 	~
 	GOTO XA_AlreadyAsked
 END
@@ -183,7 +183,7 @@ IF ~~ THEN BEGIN XA_LottoNumbers
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LC__Journal_Haspur_Lotto", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Haspur_Lotto", "GLOBAL", 1)
 	~
 	GOTO XA_AlreadyAsked
 END
@@ -207,7 +207,7 @@ IF ~~ THEN XA_BigDecision2
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_LC__Journal_Haspur_Decide", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Haspur_Decide", "GLOBAL", 1)
 	~
 	GOTO XA_AlreadyAsked
 END
@@ -216,7 +216,7 @@ IF ~~ THEN BEGIN XA_IrenicusGone
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LC__Journal_Haspur_Irenicus", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Haspur_Irenicus", "GLOBAL", 1)
 	~
 	GOTO XA_AlreadyAsked	
 END
@@ -227,7 +227,7 @@ IF ~~ THEN BEGIN XA_WillBhaalReturn
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LC__Journal_Haspur_Bhaal", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Haspur_Bhaal", "GLOBAL", 1)
 	~
 	GOTO XA_AlreadyAsked
 END
@@ -236,7 +236,7 @@ IF ~~ THEN BEGIN XA_Slavers
 	SAY @37 /* ~Lord Winston and his company are responsible. They have been selling refugees as slaves, under the guise of moving them to new homes in other cities.~ */
 	IF ~~ THEN REPLY @38 /* ~I see.~ */
 	DO ~
-		SetGlobal("XA_LC__Journal_Haspur_Slaves", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Haspur_Slaves", "GLOBAL", 1)
 		SetGlobal("XA_LC_AskedDivinerAboutSlaves", "GLOBAL", 1)
 	~
 	GOTO XA_AlreadyAsked

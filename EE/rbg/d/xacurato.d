@@ -31,7 +31,7 @@ IF ~~ THEN BEGIN XA_BadBehavior
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LC__Journal_HOW", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_HOW", "GLOBAL", 1)
 	~
 	GOTO XA_GoodBye
 END
@@ -41,7 +41,7 @@ IF ~~ THEN BEGIN XA_NotHappy
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LC__Journal_HOW", "GLOBAL", 2)
+		SetGlobal("XA_LC_Journal_HOW", "GLOBAL", 2)
 	~
 	GOTO XA_GoodBye
 END
@@ -64,7 +64,7 @@ IF ~~ THEN BEGIN XA_GoodBye
 	~ THEN
 	DO ~
 		SetGlobal("XA_LC_LeaveArea", "LOCALS", 1)
-		SetGlobal("XA_LC__ArtifactsReturned", "GLOBAL", 1)
+		SetGlobal("XA_LC_ArtifactsReturned", "GLOBAL", 1)
 	~
 	EXTERN XACORWIJ XA_OneArtifactRecovered
 	
@@ -74,7 +74,7 @@ IF ~~ THEN BEGIN XA_GoodBye
 	~ THEN
 	DO ~
 		SetGlobal("XA_LC_LeaveArea", "LOCALS", 1)
-		SetGlobal("XA_LC__ArtifactsReturned", "GLOBAL", 2)
+		SetGlobal("XA_LC_ArtifactsReturned", "GLOBAL", 2)
 	~
 	EXTERN XACORWIJ XA_TwoArtifactsRecovered
 	
@@ -84,7 +84,7 @@ IF ~~ THEN BEGIN XA_GoodBye
 	~ THEN
 	DO ~
 		SetGlobal("XA_LC_LeaveArea", "LOCALS", 1)
-		SetGlobal("XA_LC__ArtifactsReturned", "GLOBAL", 2)
+		SetGlobal("XA_LC_ArtifactsReturned", "GLOBAL", 2)
 	~
 	EXTERN XACORWIJ XA_TwoArtifactsRecovered
 	
@@ -94,7 +94,7 @@ IF ~~ THEN BEGIN XA_GoodBye
 	~ THEN
 	DO ~
 		SetGlobal("XA_LC_LeaveArea", "LOCALS", 1)
-		SetGlobal("XA_LC__ArtifactsReturned", "GLOBAL", 2)
+		SetGlobal("XA_LC_ArtifactsReturned", "GLOBAL", 2)
 	~
 	EXTERN XACORWIJ XA_TwoArtifactsRecovered
 	
@@ -105,7 +105,7 @@ IF ~~ THEN BEGIN XA_GoodBye
 	~ THEN
 	DO ~
 		SetGlobal("XA_LC_LeaveArea", "LOCALS", 1)
-		SetGlobal("XA_LC__ArtifactsReturned", "GLOBAL", 3)
+		SetGlobal("XA_LC_ArtifactsReturned", "GLOBAL", 3)
 	~
 	EXTERN XACORWIJ XA_AllArtifactsRecovered
 END
@@ -186,13 +186,13 @@ IF ~~ THEN BEGIN XA_ArtifactChain_End
 	
 	IF ~~ THEN REPLY @28  /* ~You're welcome.~*/
 	DO ~
-		SetGlobal("XA_LC__Journal_Artifacts", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Artifacts", "GLOBAL", 1)
 	~
 	GOTO XA_LeaveArea2
 	
 	IF ~~ THEN REPLY @29  /* ~I paid a fortune for the acquisition. Is there anything you can offer besides gratitude?~ */
 	DO ~
-		SetGlobal("XA_LC__Journal_Artifacts", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Artifacts", "GLOBAL", 1)
 	~
 	GOTO XA_WantMore
 END

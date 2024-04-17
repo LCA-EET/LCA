@@ -1,4 +1,5 @@
 PRINT @4000  /* ~Processing Return to Baldur's Gate Changes...~ */
+
 //SILENT
 //{ BAM
 	COPY ~%MOD_FOLDER%/rbg/bam/xabenohd.bam~ ~override~
@@ -517,6 +518,7 @@ BEGIN
 END
 
 //{ Script Extensions
+	EXTEND_TOP ~xacorwin.bcs~ ~%MOD_FOLDER%/rbg/baf/xacorscr.baf~
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~
 	EXTEND_BOTTOM ~xadings.bcs~	~%MOD_FOLDER%/rbg/baf/xadings.baf~
 	EXTEND_TOP ~xabalrbg.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalegg.baf~
@@ -1114,7 +1116,7 @@ END
 		COPY_EXISTING ~boy1.cre~ ~override/xapercy.cre~
 		WRITE_ASCII 0x2CC ~xapercy~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xapercy~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8		// Override Script
+		WRITE_ASCII 0x248 ~xapercy~ #8		// Override Script
 		WRITE_ASCII 0x250 ~~ #8		// Class Script
 		WRITE_ASCII 0x258 ~~ #8		// Race Script
 		WRITE_ASCII 0x260 ~~ #8		// General Script
@@ -2047,6 +2049,8 @@ END
 	//}
 	
 	//{ ar0138 xaa677 Ramazith L5
+		EXTEND_TOP ~xaas677.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0138.baf~
+	
 		COPY_EXISTING ~xaa677.are~ ~override~
 		
 		// Disable Containers
@@ -2104,7 +2108,7 @@ END
 	//}
 	
 	//{ ar0141 xaa651 Ramazith L4
-		COPY_EXISTING ~xaa617.are~ ~override~
+		COPY_EXISTING ~xaa651.are~ ~override~
 		
 		// Disable NPCs
 		WRITE_LONG 0x154 0 // Hobgoblin
@@ -2188,6 +2192,8 @@ END
 	//}
 	
 	//{ ar0200 xaa130 N Baldur's Gate
+		EXTEND_TOP ~xaas130.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0200.baf~
+	
 		COPY_EXISTING ~xaa130.are~ ~override~
 		
 		// Disable rep traps
@@ -2226,6 +2232,13 @@ END
 				fj_name = xapercy
 				fj_cre_resref = xapercy
 		END
+		
+		WRITE_LONG 0x4610 RESOLVE_STR_REF(@4157) // update info trigger for Ramazith's Tower
+		
+		WRITE_ASCII 0x768C ~~ #8 // remove door closing script for Ramazith's Tower
+		WRITE_LONG 0x7634 1 // Set door flag to open (and nothing else)
+		WRITE_LONG 0x3E64 0 // Remove travel trigger connection to door
+		WRITE_LONG 0x8C60 RESOLVE_STR_REF(@4157) // update map note text for Ramazith's Tower
 	//}
 	
 	//{ ar0224 xaa297 BG Sewers (Sewerfolk)

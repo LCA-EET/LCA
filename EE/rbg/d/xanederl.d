@@ -101,7 +101,7 @@ IF ~
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_LC__Journal_SlaverEnd", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_SlaverEnd", "GLOBAL", 1)
 		SetGlobal("XA_LC_RefugeeQuestComplete", "GLOBAL", 1)
 		SetGlobal("XA_LC_NederlokVirgil", "GLOBAL", 3)
 		ReputationInc(1)
@@ -781,7 +781,7 @@ IF ~~ THEN BEGIN XA_NebNederlok6
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LC__Journal_NebNederlok", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_NebNederlok", "GLOBAL", 1)
 	~
 	EXIT
 END

@@ -322,11 +322,11 @@ IF ~~ THEN BEGIN XA_CorwinBartenderSwitch //OK
 	SAY @42 /* ~I see... and did you? I mean, did you get the one responsible?~ */
 	
 	IF ~
-		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN EXTERN XACORWIJ XA_CorwinBartenderEnd_Romance //OK
 	
 	IF ~
-		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN EXTERN XACORWIJ XA_CorwinBartenderEnd //OK
 	
 END
@@ -427,12 +427,12 @@ CHAIN XACORWIJ CorwinBartenderDrinkChain
 	@36 /* ~Amn? The Fist sends officers that far south?~ */
 	== XACORWIJ
 	IF ~
-		Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ 
 	@41 /* ~~Normally, they don't. The <PRO_MANWOMAN> I love was exiled to Amn after being framed for a crime they didn't commit. They needed my help to bring the one responsible to justice.~*/
 	== XACORWIJ
 	IF ~
-		!Global("XA_LC__CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ 
 	@37 /* ~Normally, they don't. It was a special assignment on behalf of the Dukes...~ */
 END XAWVBART XA_CorwinBartenderSwitch //OK

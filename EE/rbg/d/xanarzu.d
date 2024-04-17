@@ -867,7 +867,7 @@ IF ~~ THEN BEGIN XA_GiveAmuletToDemon_M
 		TakePartyItem("AMUL27")
 		SetGlobal("XA_LC_GaveUpAmulet", "GLOBAL", 1)
 		SetGlobal("XA_LC_LeavePrison", "GLOBAL", 1)
-		SetGlobal("XA_LC__Journal_Incubus", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Incubus", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XAPEXIT")
 	~
@@ -882,7 +882,7 @@ IF ~~ THEN BEGIN XA_GiveAmuletToDemon_F
 		TakePartyItem("AMUL27")
 		SetGlobal("XA_LC_GaveUpAmulet", "GLOBAL", 1)
 		SetGlobal("XA_LC_LeavePrison", "GLOBAL", 1)
-		SetGlobal("XA_LC__Journal_Incubus", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Incubus", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XAPEXIT")
 	~
