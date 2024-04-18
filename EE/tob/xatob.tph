@@ -1,5 +1,7 @@
 PRINT @5000  /* ~Processing ToB changes...~ */
 
+INCLUDE ~%MOD_FOLDER%/generated/g/generated.tph~
+
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/baf~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 
@@ -7,7 +9,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 	EXTEND_TOP ~xabaltob.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalamu.baf~
 	EXTEND_TOP ~xabaltob.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalegg.baf~
 	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%/tob/baf/xabaltob.baf~
-	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%/tob/baf/xachfight.baf~
+	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%/bg2/baf/xachfight.baf~
 	EXTEND_TOP ~baldur25.bcs~	~%MOD_FOLDER%/tob/baf/xajrntob.baf~
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/tob/baf/xap1d.baf~
 //}
@@ -20,6 +22,88 @@ ACTION_IF (sod_carryover = 0) THEN BEGIN
 	INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
 END
 
-ACTION_IF (bg2_carryover = 0) THEN BEGIN
-	INCLUDE ~%MOD_FOLDER%/bg2/xabg2_co.tph~
-END
+//{ Epilogues
+	//{ Caelar
+		COPY ~%MOD_FOLDER%/tob/2da/xacaeend.2da~ ~override~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5001)
+	//}
+	
+	//{ Corwin, SoD Portrait
+		COPY ~%MOD_FOLDER%/tob/2da/xacornd1.2da~ ~override~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5002)
+		
+		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd2.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5003)
+		
+		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd3.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5004)
+		
+		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd4.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5005)
+		
+		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd5.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5006)
+		
+		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd6.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5007)
+	//}
+	
+	//{ Corwin, LCA Portrait
+		COPY ~%MOD_FOLDER%/tob/2da/xalcand1.2da~ ~override~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5002)
+		
+		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand2.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5003)
+		
+		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand3.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5004)
+		
+		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand4.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5005)
+		
+		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand5.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5006)
+		
+		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand6.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5007)
+	//}
+//}
+
+//{ Areas
+	//{ xag104 bd5300 Kanaglym
+		EXTEND_TOP ~xags104.bcs~ ~%MOD_FOLDER%/tob/baf/xa5300.baf~
+		
+		OUTER_SET expiryOffset = 0x154
+		OUTER_SET containerFlagOffset = 0x39A8
+		OUTER_SET i = 0
+		COPY_EXISTING ~xag104.are~ ~override~
+		//{ Disable Actors
+			WHILE (i < 39) BEGIN
+				WRITE_LONG expiryOffset 0
+				expiryOffset = (expiryOffset + 0x110)
+				i = (i + 1)
+			END
+		//}
+		
+		i = 0
+		//{ Disable Containers
+			WHILE (i < 4) BEGIN
+				WRITE_LONG containerFlagOffset 32
+				containerFlagOffset = (containerFlagOffset + 0xC0)
+				i = (i + 1)
+			END
+		//}
+		
+		//{ Disable Triggers
+			WRITE_LONG 0x2DFC 256
+			WRITE_LONG 0x2BB0 256
+			WRITE_LONG 0x2C74 256
+			WRITE_LONG 0x2D38 256
+		//}
+		
+		//{ Change Travel Trigger to Info Trigger, and Update Text String
+			WRITE_SHORT 0x2AAC 1
+			WRITE_LONG 0x2AF0 RESOLVE_STR_REF(@5008)
+		//}
+	//}
+//}

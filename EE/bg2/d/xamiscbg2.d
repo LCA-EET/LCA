@@ -470,9 +470,8 @@ END
 
 //}
 
-
-//{ MAZZYJ
-APPEND MAZZYJ
+//{ BMAZZY
+APPEND BMAZZY
 	IF ~~ THEN BEGIN BCorwinMazzy2_BREAK
 		SAY @226 /* ~It's alright. I know you didn't mean anything by it. Besides, I'm quite happy with the crossbow.~*/
 		

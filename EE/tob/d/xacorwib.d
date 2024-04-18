@@ -1,42 +1,42 @@
 APPEND ~XACOR25B~
-//{ Dialog B-1
-	IF ~
-		Global("XA_LC_CorwinAnomenTalk", "LOCALS", 1)
-	~ THEN BEGIN BCorwinAnomen1A
-		SAY @541 /* ~You've been glaring at me for the last hour Anomen. What is it?~ [XACORB20] */
-		IF ~~ THEN
-		DO ~
-			SetGlobal("XA_LC_CorwinAnomenTalk", "LOCALS", 2)
-			SetGlobal("XA_LC_Banter_CorwinAnomenEnd", "GLOBAL", 3)	
-		~ 
-		EXIT
-		
+	//{ Dialog B-1
 		IF ~
-			IsValidForPartyDialogue("Anomen")
-		~ THEN 
+			Global("XA_LC_CorwinAnomenTalk", "LOCALS", 1)
+		~ THEN BEGIN BCorwinAnomen1A
+			SAY @541 /* ~You've been glaring at me for the last hour Anomen. What is it?~ [XACORB20] */
+			IF ~~ THEN
+			DO ~
+				SetGlobal("XA_LC_CorwinAnomenTalk", "LOCALS", 2)
+				SetGlobal("XA_LC_Banter_CorwinAnomenEnd", "GLOBAL", 3)	
+			~ 
+			EXIT
+			
+			IF ~
+				IsValidForPartyDialogue("Anomen")
+			~ THEN 
+			DO ~
+				SetGlobal("XA_LC_CorwinAnomenTalk", "LOCALS", 2)
+				SetGlobal("XA_LC_Banter_CorwinAnomenEnd", "GLOBAL", 3)	
+			~ 
+			EXTERN ANOME25J BCorwinAnomen1A
+		END
+	//}
+
+	//{ region Dialog B-4
+	IF ~
+		Global("XA_LC_Banter_CorwinMazzy", "GLOBAL", 4)
+	~ THEN BEGIN XA_Banter_CorwinMazzy2_Init
+		SAY @528 /* ~Mazzy, I'm curious as to why you chose to specialize in the crossbow instead of the longbow.~ [XA100071]*/
+		
+		IF ~~ THEN 
 		DO ~
-			SetGlobal("XA_LC_CorwinAnomenTalk", "LOCALS", 2)
-			SetGlobal("XA_LC_Banter_CorwinAnomenEnd", "GLOBAL", 3)	
-		~ 
-		EXTERN ANOME25J BCorwinAnomen1A
+			SetGlobal("XA_LC_Banter_CorwinMazzy", "GLOBAL", 5)
+			SetGlobal("XA_LC_TM_ArcheryChallenge", "GLOBAL", 1)
+		~
+		EXTERN MAZZY25J BCorwinMazzy2
 	END
-//}
-
-//{ region Dialog B-4
-IF ~
-	Global("XA_LC_Banter_CorwinMazzy", "GLOBAL", 4)
-~ THEN BEGIN XA_Banter_CorwinMazzy2_Init
-	SAY @528 /* ~Mazzy, I'm curious as to why you chose to specialize in the crossbow instead of the longbow.~ [XA100071]*/
-	
-	IF ~~ THEN 
-	DO ~
-		SetGlobal("XA_LC_Banter_CorwinMazzy", "GLOBAL", 5)
-		SetGlobal("XA_LC_TM_ArcheryChallenge", "GLOBAL", 1)
-	~
-	EXTERN MAZZY25J BCorwinMazzy2
+	//}
 END
-//}
-
 //{ Mazzy Banters
 
 	//{ region Dialog B-9
@@ -2961,5 +2961,3 @@ END
 	
 	//}
 //}
-
-END

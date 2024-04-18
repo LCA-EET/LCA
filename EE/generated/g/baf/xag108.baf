@@ -1,0 +1,47 @@
+IF
+	False()
+	Global("bd_hellevator","global",0)
+	GlobalGT("bd_plot","global",569)
+	IsOverMe(Player1)
+	OR(3)
+		IsOverMe(Player2)
+		StateCheck(Player2,STATE_REALLY_DEAD)
+		!NumInPartyGT(1)
+	OR(3)
+		IsOverMe(Player3)
+		StateCheck(Player3,STATE_REALLY_DEAD)
+		!NumInPartyGT(2)
+	OR(3)
+		IsOverMe(Player4)
+		StateCheck(Player4,STATE_REALLY_DEAD)
+		!NumInPartyGT(3)
+	OR(3)
+		IsOverMe(Player5)
+		StateCheck(Player5,STATE_REALLY_DEAD)
+		!NumInPartyGT(4)
+	OR(3)
+		IsOverMe(Player6)
+		StateCheck(Player6,STATE_REALLY_DEAD)
+		!NumInPartyGT(5)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		SetGlobal("bd_hellevator","global",2)
+		StartCutScene("bdcut55")
+END
+
+IF
+	!Global("bd_hellevator","global",0)
+	InMyArea(Player1)
+	!IsOverMe(Player1)
+	!IsOverMe(Player2)
+	!IsOverMe(Player3)
+	!IsOverMe(Player4)
+	!IsOverMe(Player5)
+	!IsOverMe(Player6)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_hellevator","global",0)
+END
+

@@ -1,5 +1,5 @@
 PRINT @3000  /* ~Processing BG2 changes...~ */
-SILENT
+//SILENT
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf/params~
@@ -820,6 +820,10 @@ OUTER_SET bg2_carryover = 1
 	COPY ~%MOD_FOLDER%/bg2/spl/xacorbo3.spl~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/spl/xahide.spl~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/spl/xaunhide.spl~ ~override~
+//}
+
+//{ Corwin Banters
+	EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/bg2/baf/xabancor.baf~
 //}
 
 //{ Corwin Sounds

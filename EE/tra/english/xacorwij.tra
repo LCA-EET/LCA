@@ -1,5 +1,5 @@
 @0 = ~<CHARNAME>? Are you sure that you don't need my help?~
-@1 = ~That... That's it? That's all you wanted to say?~ [xalc1167]
+
 @2 = ~You sure you don't want me with you?~ [xalc1160]
 @3 = ~~
 @4 = ~They, ah... seem to have exaggerated some of your... attributes.~
@@ -72,49 +72,38 @@
 @71 = ~You know what? Forget it. I'm not in the mood anymore. Let's go.~
 @72 = ~And look at the reflection of the moonlight on the stream...~ 
 @73 = ~Come here, hero —~
-@74 = ~(You share a passionate embrace and kiss.)~
-@75 = ~Oh my... that's s-so romantic!~
-@76 = ~Ah, the lovers' embrace - the inspiration for many a playwright, myself included.~ 
-@77 = ~Gorion would be so happy for you, <CHARNAME>...~ 
-@78 = ~Let's go, love. We have work to do.~
-@79 = ~Gladly, my dear.~
+
+
 @80 = ~Come here...~ [xalc1170]
 @81 = ~(You share a tender and emotional embrace.)~
 @82 = ~I'm covered in him! Gods, you are too!~
-@83 = ~With your help, he will be, my friend. Let's go.~
-@84 = ~<CHARNAME>, do you have a moment?~
-@85 = ~Of course Schael, what's on your mind?~
-@86 = ~Before I left Baldur's Gate, Skie approached me and asked that I give you a message.~
-@87 = ~She said that she wanted to thank you for releasing her from the dagger, and to apologize for her father's behavior. You deserved far better than what happened to you.~
-@88 = ~There's no need for her to apologize for her father's actions. She was not the one who tried to have me executed. I do appreciate the gesture, however. ~
-@89 = ~Thank you Schael, though I doubt I'd have acted any differently were I in Entar's shoes. That scoundrel Irenicus made sure that all of the evidence painted me as Skie's murderer.~ 
-@90 = ~Entar and half the city were completely convinced of your guilt.~ 
-@91 = ~Indeed. He had much of the city convinced of your guilt.~
-@92 = ~But not you. Schael, your belief in my innocence was what kept me going. I want you to know that. I also want you to know that I appreciate dearly your being here. It couldn't have been easy for you to leave Rohma.~
-@93 = ~It wasn't. I miss her everyday. But I need to be here, with you. Irenicus must be punished for the crimes he's committed.~
-@94 = ~Schael... I... I didn't realize how much I needed you near me, until you were gone. Your being here, now, fills a void in my heart that I didn't know was there. I'd like for us to move past friendship, into a more serious relationship. I... I'm in love with you, Schael.~
-@95 = ~<CHARNAME>, I missed you too, dearly... and I've been thinking about this for a long time. I also want us to be more to each other than what we are now.~
-@96 = ~Stop it, Schael. You can't blame yourself for what happened. There's nothing that you could have done to stop it; Irenicus set his trap perfectly. It's better that you weren't with me when we were captured — I shudder to think what Irenicus would've done to you had you been captured as well.~
-@97 = ~Schael, forget the past. What matters is that we're here together, now.~
+
+
+
+
+
+
+
+
+
 @98 = ~At least he won't be coming back this time... Pray to Tymora that there's a bathhouse in this village. Let's go.~
-@99 = ~Gladly, my dear.~
-@100 = ~My love, do you have a moment?~
-@101 = ~Of course dear, what's on your mind?~
-@102 = ~But not you. My love, your belief in my innocence was what kept me going. I want you to know that. I also want you to know that I appreciate dearly your being here. It couldn't have been easy for you to leave Rohma.~
+
+
+
 @103 = ~It wasn't. I miss her everyday. But I need to be here, with you, dear. Irenicus must be punished for the crimes he's committed.~
-@104 = ~He will be. And when this is done, love, we'll go back to Baldur's Gate and start our new life together, with Rohma.~
-@105 = ~I've been looking forward to that day... more than you know. Let's go, love.~
+
+
 @106 = ~I don't know what I should do.~
 @107 = ~Not now.~
 @108 = ~(She smiles, and places her arms around your shoulders.)~
 @109 = ~Gods know it's been too long already.~
 @110 = ~Not right now.~
-@111 = ~I know you have a lot on your mind, but surely you can spare a minute.~
-@112 = ~Fine, what is it?~
-@113 = ~Like I said, I'm busy.~
+
+
+
 @114 = ~Fine. Sorry to have bothered you.~
 @115 = ~Gladly, my dear.~ 
-@116 = ~It's nothing... Let's go.~
+
 @117 = ~Thank goodness... wait... children? You mean...~
 @118 = ~Oh my...~
 @119 = ~Oh, my love. I... I knew this was coming. You did too, I think... those nightmares you had about this very decision. But knowing that this was coming doesn't make it any easier, now that it's here. I tried to — to somehow convince myself that there was a future for us... but deep down, I knew.~
@@ -122,8 +111,8 @@
 @121 = ~I want you to know that I'll always treasure our time together... and I'll tell our children about what an amazing man their father was. A hero, in every sense of the word. I love you, <CHARNAME>, now and always.~
 @122 = ~I don't want to leave you, Schael. I love you, more than anything.~
 @123 = ~Love, children, and a life together with you... it's all that I could ever want. But I don't have to choose between that, and godhood. I don't know how anyone could...~
-@124 = ~(She's momentarily taken aback.)~
-@125 = ~My... my heart broke when I read your letter. I keep thinking that if I'd left with you, you wouldn't have been captured, maybe Khalid and Dynaheir would still be alive, maybe —~
+
+
 @126 = ~You think I should give up the essence?~
 @127 = ~I won't lie to you. I want you to stay. Love, children, and a life together with you... it's all that I could ever want. But I don't have to choose between that, and godhood. I don't know how anyone could...~
 @128 = ~I'm sorry, Schael. I feel I have to go forward and accept my birthright.~ 
@@ -137,66 +126,40 @@
 @136 = ~You're going to have to make a decision, and soon, or I'll make it for you. I trust that I've made myself clear.~
 @137 = ~Your time has come, vampire. Allies, to me! Let's rid the world of this beast once and for all! ~
 @138 = ~Your time has come, vampire. Draw steel! ~
-@139 = ~(You notice Captain Corwin staring into the distance, with sadness in her eyes.)~
-@140 = ~(You notice Schael staring into the distance, with sadness in her eyes.)~
-@141 = ~Captain? Are you alright?~
-@142 = ~My love, are you alright?~
-@143 = ~(She snaps to attention.)~
+
+
+
+
+
 @144 = ~(She snaps to attention.)~
-@145 = ~About your daughter and father. I understand.~
-@146 = ~Yes... You know, Rohma asks about you.~
-@147 = ~Really? I didn't think I'd made much of an impression on her.~
-@148 = ~She loves the doll you bought for her. It's her favorite toy.~
+
+
+
+@148 = ~(Leave her be.)~
 @149 = ~Rohma and your father. I understand.~
-@150 = ~Oh yes, I remember! I bought it at the general store, not long after I met her for the first time.~
-@151 = ~It was a simple gesture.. I didn't think it would mean that much to her.~
-@152 = ~That one small act of kindness was more than her father ever did for her.~
-@153 = ~She deserves better.~
-@154 = ~She does. Listen, Schael — I don't know if I'd be a good step parent for Rohma. What I do know is that I'll do my best.~
-@155 = ~She does. Listen, Schael — I'm fully aware of the responsibilities and challenges of being a step parent, and I want you to know that I welcome them.~
-@156 = ~I know you will. You step up to challenges instead of running from them. That's one of the reasons that I love you, <CHARNAME>. ~
-@157 = ~That one small act of kindness from you is more than her father ever did for her... thank you, <CHARNAME>.~
-@158 = ~Let's get moving, love.~
-@159 = ~Of course she does. I am the *ahem* hero of Baldur's Gate, after all.~
-@160 = ~(She rolls her eyes.)~
 @161 = ~I want you to know that I'll always treasure our time together... and I'll tell our child about what an amazing man their father was. A hero, in every sense of the word. I love you, <CHARNAME>, now and always.~
-@162 = ~Are you alright, hon? You've a look of concern about you.~
-@163 = ~Yes love, I'm fine. I was just thinking about some of the places and people we've seen...~
-@164 = ~Before I was exiled, I remember the city was still struggling with the refugee crisis. Have the Dukes had any success in resettling the refugees?~
-@165 = ~Yes, at least those whose homes were not completely destroyed by the crusade. Many still need to be resettled.~
-@166 = ~There are plans to settle them just east of the city. Some ankheg nests will need to be cleared, but the city planners think it's a workable solution.~
-@167 = ~Yes Schael, I'm fine. I was just thinking about some of the places and people we've seen...~
-@168 = ~We met some interesting people during the Dragonspear campaign. Remember that gnome, Glint? The goblin shaman, M'Khlin? The others, as well.~
-@169 = ~Hah, how could anyone forget. I miss our colleagues from the coalition, too... even that prick de Lancie. Hopefully they're doing well.~
-@170 = ~Yes, I hope so too. I have a feeling we'll run into them again, sooner or later.~
-@171 = ~That's enough reminiscing, for now. Let's get going, love.~
-@172 = ~I've thought from time to time about the terror that we experienced in Avernus. Do you think about that place?~
-@173 = ~I do. It's only natural, I suppose. It was a traumatic experience for all of us. I still can hardly believe that we went into one of the Nine Hells and came back alive.~
-@174 = ~Yes. I often wonder about Aun, Caelar's uncle. Do you think he's still alive, in Avernus?~
-@175 = ~Yes. I often wonder about Caelar, and whether she's still alive in Avernus.~
-@176 = ~Perhaps she is. But it doesn't matter. I don't think we'll need to worry about her ever again. Even if she did manage to escape, I doubt she would try to raise up a new army. She'd do better to lay low and live her days in peace.~
-@177 = ~Perhaps he is. I'm grateful for his sacrifice. I can't imagine the heartbreak he felt watching his niece pledge her soul to a devil like Belhifet.~  
+
+
+
+
+
+
 @178 = ~I want you to know that I'll always treasure our time together... You're a hero, in every sense of the word. I love you, <CHARNAME>, now and always.~
 @179 = ~Love, Rohma, and a life together with you... it's all that I could ever want. But I don't have to decide between that, and godhood. I don't know how anyone could...~
-@180 = ~I was thinking about the first time we met. Do you remember, love?~
-@181 = ~Of course. It was at Wyrm's Crossing. Scar, rest his soul, introduced us. <CHARNAME>, the intrepid adventurer who had been battling bandits up and down the Sword Coast.~
-@182 = ~And Captain Schael Corwin of the Flaming Fist, who was investigating the Iron Throne within the city. I remember being captivated by your beauty. I still am.~
-@183 = ~I'll take your words over roses, any day.~ [xalc1143]
-@184 = ~And Captain Schael Corwin of the Flaming Fist, who was investigating the Iron Throne within the city. ~
+
+
+
 @185 = ~I won't lie to you. I want you to stay. Love, Rohma, and a life together with you... it's all that I could ever want. But I don't have to decide between that, and godhood. I don't know how anyone could...~
-@186 = ~I hope you're right.~
-@187 = ~As do I, my friend.~
-@188 = ~<CHARNAME>, are you alright? You've a look of concern about you.~
-@189 = ~What's on your mind?~
-@190 = ~Anything else you'd like to discuss?~
-@191 = ~It's good that at least some progress was made.~
-@192 = ~Indeed. I too am grateful.~
-@193 = ~I was thinking about the first time we met. Do you remember?~
-@194 = ~Maj — Schael, wait. There's something I need to tell you.~
-@195 = ~(You share a warm embrace.)~
-@196 = ~You nearly sacrificed my soul to that damned baatezu.. what was its name? Thrax?~
-@197 = ~Thrix the Profane, if I remember correctly. Your soul was never in danger — I'd never let a devil like that outsmart me.~
-@198 = ~Still, it was quite a gamble. Next time risk your own damned soul, or better yet, don't play such high stakes games with demons and devils, got it?~
+
+
+
+
+
+
+
+
+
+
 @199 = ~I've gone as far as I can. When you regain your senses, you can find me at the Athkatla magistrate.~
 @200 = ~~
 @201 = ~I don't believe it! <CHARNAME>, this is Neb, the fugitive who murdered more than two dozen children in Baldur's Gate!~
@@ -253,7 +216,7 @@
 @252 = ~(A fleeting smile graces her face.)~
 @253 = ~Let's just get out of this hole and forget that it ever happened.~
 @254 = ~That's enough, all of you. You there!~
-@255 = ~No need to apologize. It must be difficult for you to be away from your family.~
+
 @256 = ~(He points at Corwin.)~
 @257 = ~I think I'll stay here for a while longer. Say hi to my mom and dad for me!~
 @258 = ~Who are you, and what is your business here?~ 
@@ -1308,9 +1271,8 @@ Corwin has arrested Beno Famari for kidnapping and attempted murder. Hopefully, 
 @1297 = ~<CHARNAME>?~
 @1298 = ~We could use their help.~
 @1299 = ~Thank you for the offer, Drizzt, but we aren't in need of any assistance.~
-@1300 = ~Of course. It was at the Ducal palace... we were under attack from Caelar's forces.~
-@1301 = ~Even amidst all that chaos, I remember being captivated by your beauty. I still am.~
-@1302 = ~We defeated the assassins and left for Dragonspear shortly thereafter.~
+
+
 @1303 = ~A Gift for Rohma
 It's been a while since I've seen Schael's family. It may be worthwhile stopping at one of the General Stores and getting a gift for her daughter.~
 @1304 = ~Meeting Schael's Family
@@ -1362,19 +1324,18 @@ Schael and I shared a tender moment; it seems that we are still dealing with the
 @1347 = ~(She smiles)~
 @1348 = ~Sweet of you to say.~
 @1349 =  ~Hey — you alright?~
-@1350 = ~A little humility from time to time wouldn't hurt, you know. But yes, you did leave quite the impression on her.~
-@1351 = ~<CHARNAME>, yes. Sorry — I was thinking about home.~
-@1352 = ~Yes, sorry. I was thinking about home. I just miss them, that's all.~
-@1353 = ~Right.~
-@1354 = ~Capt — Schael, wait. There's something I need to tell you.~
-@1355 = ~Ah... never mind. Let's go.~
-@1356 = ~Hm?~ [xalc1029]
-@1357 = ~(A look of disappointment flashes across her face.)~
-@1358 = ~Fine. Let's go.~
-@1359 = ~Major? Are you alright?~
-@1360 = ~(You notice Major Corwin staring into the distance, with sadness in her eyes.)~
-@1361 = ~What is it? You can tell me.~
-@1362 = ~The kindness that you showed her is more than her father ever did... thank you, <CHARNAME>.~
+
+
+
+
+
+
+
+
+
+
+
+
 @1363 = ~Hall of Wonders
 Captain Corwin shared with me the story of how she was arrested in the Hall of Wonders. The arrest changed the course of her life for the better, and helped to forge her into the woman she is today.~
 @1364 = ~Curator Magda! It's good to see you, too.~
@@ -1441,7 +1402,7 @@ Captain Corwin shared with me the story of how she was arrested in the Hall of W
 @1425 = ~I think so, Captain. Look — it seems to be a recreation of the siege.~
 @1426 = ~Ma'am, did you report these disappearances to the Flaming Fist?~
 @1427 = ~(She hands it over.)~ 
-@1428 = ~(Leave her be.)~
+
 @1429 = ~Well? Go on.~
 @1430 = ~Ahh... forget I said anything. You have enough on your mind already. Let's go.~
 @1431 = ~(She smiles.)~
@@ -1449,20 +1410,16 @@ Captain Corwin shared with me the story of how she was arrested in the Hall of W
 @1433 = ~I think about it, still. Not just my exile, but how close I was to being —~ 
 @1434 = ~Dark Circumstances
 You and Schael shared a tender moment; it seems that the two of you are still dealing with the trauma of your imprisonment and exile from the city. Together, with Rohma, you and Schael hope to make new memories to silence the dark echoes of your past.~
-@1435 = ~What's wrong, dear?~
-@1436 = ~I think of the kindness that you've shown to Rohma, and how good you've been with me... ~
-@1437 = ~And then I think of Beno, and how stupid I was to be with scum like that... you must think I'm a fool.~
-@1438 = ~Schael, stop it. You're more than any <PRO_MANWOMAN> can hope for in this life, and you've been a great mother to Rohma.~
-@1439 = ~Schael, I've never met anyone like you. I hope you understand how special you are. I do, and I know Rohma does.~
-@1440 = ~Nonsense. Let go of the past, love. Focus on our future together — you, me, and Rohma.~ 
-@1441 = ~The care and interest you've shown for her is more than Beno ever did.~
+
+
+
 @1442 = ~Yes... You know, Rohma asks about you all the time.~
 @1443 = ~Of course she does. I am the *ahem* hero and defender of Baldur's Gate, after all.~
 @1444 = ~~
 @1445 = ~And I'd rather you be open with me. Fine. Let's go.~
 @1446 = ~I'm sorry. I can't be a part of this any longer. If you ever clean up your act, come and see me.~
 @1447 = ~(You help her back to her feet. She appears to be in very bad shape. Her eyes are bloodshot, she's covered in sweat, and her skin is pale and cold to the touch.)~ 
-@1448 = ~I want you to know that I greatly appreciate your friendship. And I don't want to do anything to jeopardize that. But...~
+
 @1449 = ~So am I... look at me complaining. You've been through the ringer and you keep moving forward. You'd have made a great officer, you know.~
 @1450 = ~Doubtful, but I appreciate the sentiment. Let's get going.~
 @1451 = ~And I may still. Who knows what the future holds in store for us? Let's get going.~
@@ -1854,7 +1811,7 @@ Captain Corwin has identified some stolen merchandise that once belonged to Bald
 @1827 = ~Sure you do. And I'm the queen of Tethyr.~
 @1828 = ~Captain? Is there a problem?~
 @1829 = ~Schael? Is there a problem?~
-@1830 = ~*Ahem* May I help you, your highness?~
+@1830 = ~*Ahem* Is there a problem, your highness?~
 @1831 = ~No. There are better ways to spend the money. Some other time, perhaps.~ 
 @1832 = ~Thank you, love.~ 
 @1833 = ~Rohma, look what <CHARNAME> brought for you!~

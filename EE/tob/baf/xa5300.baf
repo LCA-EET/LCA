@@ -22,10 +22,10 @@ END
 IF
 	Global("XA_LC_CaelarRescue", "GLOBAL", 1)
 	GlobalLT("XA_LC_CaelarSuicide", "GLOBAL", 1)
-	GlobalLT("XA_LC_CaelarSpawn", "XA5300", 1)
+	GlobalLT("XA_LC_CaelarSpawn", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LC_CaelarSpawn", "XA5300", 1)
+		SetGlobal("XA_LC_CaelarSpawn", "MYAREA", 1)
 		CreateCreature("XACAELA2", [787.555], S)
 		Continue()
 END

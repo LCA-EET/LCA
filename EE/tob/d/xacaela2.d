@@ -76,7 +76,7 @@ END
 
 IF ~
 	GlobalLT("XA_LC_AshaCaelar", "GLOBAL", 1)
-	AreaCheck("XA5300")
+	AreaCheck("XAG104")
 ~ THEN BEGIN XA_CaelarAsha
 	SAY @20 /*  ~My loyal Adras... forgive me. Why are you confined to this place?~*/
 	
@@ -148,7 +148,7 @@ END
 
 IF ~
 	GlobalGT("XA_LC_AVBossFled", "GLOBAL", 1)
-	!AreaCheck("XA5300")
+	!AreaCheck("XAG104")
 	GlobalLT("XA_LC_CaelarAVTalk", "GLOBAL",2)
 ~ THEN BEGIN XA_WonBattle
 	SAY @16 /* ~You defeated him? Praise be ... I can't believe it.~*/
