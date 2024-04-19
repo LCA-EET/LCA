@@ -98,7 +98,7 @@
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				SetGlobal("XA_LC_CommentOnFather", "LOCALS", 1)
-				DisplayStringHead(Myself, @22)
+				DisplayStringHead(Myself, @1)
 				SetInterrupt(TRUE)
 				Continue()
 		END
@@ -128,7 +128,7 @@
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
-				DisplayStringHead(Myself, @17)	
+				DisplayStringHead(Myself, @0)	
 				SetGlobal("XA_LC_AR5204_Talk", "LOCALS", 1)
 				SetInterrupt(TRUE)
 				Continue()
@@ -159,7 +159,7 @@
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
-				DisplayStringHead(Myself, @26)	
+				DisplayStringHead(Myself, @2)	
 				SetGlobal("XA_LC_AR6101_Talk", "LOCALS", 1)
 				SetInterrupt(TRUE)
 				Continue()
@@ -259,7 +259,7 @@
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
-				PlaySong(142)
+				PlaySong(1001)
 				SetGlobal("XA_LC_MessageToBG", "GLOBAL", 1)
 				StartDialog("xacor25j", Player1)
 				SetInterrupt(TRUE)

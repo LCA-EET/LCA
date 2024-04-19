@@ -465,35 +465,9 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/d~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 
 //{ Replace Rumors
-	COPY_EXISTING ~xaa100.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa101.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa102.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa103.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa105.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa112.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa113.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa116.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa119.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa122.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa123.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa124.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa125.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa128.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa130.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa131.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa132.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa135.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa136.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa137.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa138.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa142.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa145.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa146.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa147.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa148.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa149.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa150.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
-	COPY_EXISTING ~xaa151.sto~ ~override~ WRITE_ASCII 0x44 ~xarumor~ #8
+	COPY_EXISTING_REGEXP GLOB ~xaa.+\.sto$~ ~override~ 
+	WRITE_ASCII 0x44 ~xarumor~ #8
+	BUT_ONLY
 //}
 
 ACTION_DEFINE_ARRAY bgAreaScripts
@@ -1040,7 +1014,7 @@ END
 		WRITE_ASCII 0x258 ~~ #8		// Race Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xad122.cre~ ~override/xaff1271.cre~ // Flaming Fist Enforcer
+		COPY_EXISTING ~xad123.cre~ ~override/xaff1271.cre~ // Flaming Fist Enforcer
 		WRITE_ASCII 0x2CC ~~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~XAFF1271~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~~ #8		// Override Script

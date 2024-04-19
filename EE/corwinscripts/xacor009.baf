@@ -104,7 +104,7 @@
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_SoDAnxiety", "GLOBAL", 2)
-			PlaySong(142)
+			PlaySong(1001)
 			//Dialog J-39
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)
@@ -157,7 +157,7 @@
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			PlaySong(146)
+			PlaySong(1002)
 			SetGlobal("XA_LC_XACS15Cutscene", "GLOBAL", 6)
 			//Dialog J-17
 			StartDialog("XACORWIJ", Player1)
@@ -189,7 +189,7 @@
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			Wait(3)
-			PlaySong(146)
+			PlaySong(1001)
 			//Dialog J-2
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)
@@ -216,7 +216,7 @@
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			Wait(3)
-			PlaySong(146)
+			PlaySong(1001)
 			//Dialog J-2
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)

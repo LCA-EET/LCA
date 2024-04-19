@@ -9,6 +9,7 @@ $folders = @(
 'bg1',
 'bg2',
 'compat',
+'corwinscripts',
 'generated/a',
 'generated/c',
 'generated/d',
@@ -32,3 +33,5 @@ Copy-Item -Path ($tp2Name + ".tp2") -Destination $modPath
 #Remove-Item -LiteralPath ($testDir + $tp2Name) -Force -Recurse
 
 Copy-Item -Path $modPath -Destination $testDir -Recurse
+
+Remove-Item -LiteralPath $basePath -Force -Recurse

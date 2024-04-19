@@ -1677,7 +1677,7 @@ END
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
 			IncrementGlobal("XA_LC_Banter_CaelarSarevok", "GLOBAL", 1)
 			Interact("Sarevok")
-			ActionOverride("Sarevok", StartDialog("SAREV25J", "XACAELAR"))
+			ActionOverride("Sarevok", Interact("XACAELAR"))
 			SetInterrupt(TRUE)
 	END
 	//}
@@ -1709,7 +1709,7 @@ END
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
 			IncrementGlobal("XA_LC_Banter_CaelarRasaad", "GLOBAL", 1)
 			Interact("Rasaad")
-			ActionOverride("Rasaad", StartDialog("RASAADJ", "XACAELAR"))
+			ActionOverride("Rasaad", Interact("XACAELAR"))
 			SetInterrupt(TRUE)
 	END
 	//}
@@ -1741,7 +1741,7 @@ END
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
 			IncrementGlobal("XA_LC_Banter_CaelarJaheira", "GLOBAL", 1)
 			Interact("Jaheira")
-			ActionOverride("Jaheira", StartDialog("JAHEIRAJ", "XACAELAR"))
+			ActionOverride("Jaheira", Interact("XACAELAR"))
 			SetInterrupt(TRUE)
 	END
 	//}
@@ -1774,7 +1774,7 @@ END
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
 			IncrementGlobal("XA_LC_Banter_CaelarMazzy", "GLOBAL", 1)
 			Interact("Mazzy")
-			ActionOverride("Mazzy", StartDialog("MAZZYJ", "XACAELAR"))
+			ActionOverride("Mazzy", Interact("XACAELAR"))
 			SetInterrupt(TRUE)
 	END
 	//}
@@ -1805,7 +1805,7 @@ END
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_DornProposal", "GLOBAL", 1)
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
-			ActionOverride("Dorn", StartDialog("DORNJ", "XACAELAR"))
+			ActionOverride("Dorn", Interact("XACAELAR"))
 			SetInterrupt(TRUE)
 	END
 //} End Dorn Interactions
@@ -1836,7 +1836,7 @@ END
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
 			IncrementGlobal("XA_LC_Banter_CaelarNeera", "GLOBAL", 1)
 			Interact("Neera")
-			ActionOverride("Neera", StartDialog("NEERAJ", "XACAELAR"))
+			ActionOverride("Neera", Interact("XACAELAR"))
 			SetInterrupt(TRUE)
 	END
 	//}
@@ -1869,7 +1869,7 @@ END
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
 			IncrementGlobal("XA_LC_Banter_CaelarKeldorn", "GLOBAL", 1)
 			Interact("Keldorn")
-			ActionOverride("Keldorn", StartDialog("KELDORJ", "XACAELAR"))
+			ActionOverride("Keldorn", Interact("XACAELAR"))
 			SetInterrupt(TRUE)
 	END
 	//}

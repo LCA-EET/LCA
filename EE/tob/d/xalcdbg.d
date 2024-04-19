@@ -10,6 +10,13 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @6020 /* ~Area Test~*/
 		GOTO XA_ToB_AreaTest
 		
+		IF ~~ THEN REPLY @7002 /* ~Spawn Caelar (XACAELAR) and add her to the party.~~*/
+		DO ~
+			CreateCreature("XACAELAR", [-1.-1], N)
+			ActionOverride("XACAELAR", JoinParty())
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 10
 		

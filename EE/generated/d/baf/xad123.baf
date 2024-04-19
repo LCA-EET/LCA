@@ -1,155 +1,143 @@
 IF
-	NumberOfTimesTalkedTo(0)
-	See([PC])
+	Global("bd_ai_controls","locals",0)
+	OR(3)
+		AreaCheck("bd1000")  // Coast Way Crossing
+		AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+		AreaCheck("bd7100")  // Troll Forest
 THEN
 	RESPONSE #100
-		MoveToPoint([586.723])
-		Face(NE)
-		SmallWait(2)
-		StartDialogueNoSet([PC])
+		SetGlobal("bd_ai_controls","locals",1)
+		SetGlobal("bd_no_search","locals",1)
+		SaveObjectLocation("LOCALS","bd_default_loc",Myself)
+		SetSequence(SEQ_HEAD_TURN)
 END
 
 IF
-	OpenState("DOOR03",TRUE)
-	OR(6)
-		NearLocation(Player1,498,530,40)
-		NearLocation(Player2,498,530,40)
-		NearLocation(Player3,498,530,40)
-		NearLocation(Player4,498,530,40)
-		NearLocation(Player5,498,530,40)
-		NearLocation(Player6,498,530,40)
-	Delay(5)
-	Global("BD_Tiax_OT","bd0104",0)  // Flaming Fist HQ
-	GlobalLT("BD_TIAX_FAIL","LOCALS",2)
+	Global("bd_no_retreat","locals",0)
+	Global("bd_fists_attack","global",4)
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
 THEN
-	RESPONSE #25
-		DisplayStringHead(Myself,39837)  // FIRST, Tiax will kill all those who dare look down upon him.
-		SetGlobal("BD_Tiax_OT","bd0104",1)  // Flaming Fist HQ
+	RESPONSE #100
+		SetGlobal("bd_no_retreat","locals",1)
+		ChangeEnemyAlly(Myself,GOODBUTBLUE)
+		DialogInterrupt(FALSE)
+		Continue()
 END
 
 IF
-	OpenState("DOOR03",TRUE)
-	OR(6)
-		NearLocation(Player1,498,530,40)
-		NearLocation(Player2,498,530,40)
-		NearLocation(Player3,498,530,40)
-		NearLocation(Player4,498,530,40)
-		NearLocation(Player5,498,530,40)
-		NearLocation(Player6,498,530,40)
-	Delay(5)
-	Global("BD_Tiax_OT","bd0104",1)  // Flaming Fist HQ
-	GlobalLT("BD_TIAX_FAIL","LOCALS",2)
+	GlobalLT("bd_random_walk","locals",2)
+	Global("bd_crusaders_retreat","bd2000",1)  // Boareskyr Bridge & Bridgefort
 THEN
-	RESPONSE #25
-		DisplayStringHead(Myself,39838)  // THEN he will have all who question slaughtering the tall put to the death.
-		SetGlobal("BD_Tiax_OT","bd0104",2)  // Flaming Fist HQ
+	RESPONSE #100
+		SetGlobal("bd_random_walk","locals",2)
+		SetGlobal("bd_retreat","locals",0)
+		SetGlobal("bd_no_retreat","locals",1)
+		ChangeEnemyAlly(Myself,NEUTRAL)
+		DialogInterrupt(TRUE)
 END
 
 IF
-	OpenState("DOOR03",TRUE)
-	OR(6)
-		NearLocation(Player1,498,530,40)
-		NearLocation(Player2,498,530,40)
-		NearLocation(Player3,498,530,40)
-		NearLocation(Player4,498,530,40)
-		NearLocation(Player5,498,530,40)
-		NearLocation(Player6,498,530,40)
-	Delay(5)
-	Global("BD_Tiax_OT","bd0104",2)  // Flaming Fist HQ
-	GlobalLT("BD_TIAX_FAIL","LOCALS",2)
+	Global("bd_random_walk","locals",3)
+	!Detect(NearestEnemyOf(Myself))
+	Range("Boaresky_blockade",20)
 THEN
-	RESPONSE #25
-		DisplayStringHead(Myself,39839)  // The families of those who question him must also be taught a lesson. Their firstborns will be sacrificed to Cyric! 
-		SetGlobal("BD_Tiax_OT","bd0104",3)  // Flaming Fist HQ
+	RESPONSE #100
+		SetGlobal("bd_random_walk","locals",2)
 END
 
 IF
-	OpenState("DOOR03",TRUE)
-	OR(6)
-		NearLocation(Player1,498,530,40)
-		NearLocation(Player2,498,530,40)
-		NearLocation(Player3,498,530,40)
-		NearLocation(Player4,498,530,40)
-		NearLocation(Player5,498,530,40)
-		NearLocation(Player6,498,530,40)
-	Delay(5)
-	Global("BD_Tiax_OT","bd0104",3)  // Flaming Fist HQ
-	GlobalLT("BD_TIAX_FAIL","LOCALS",2)
+	Global("bd_random_walk","locals",2)
+	!Detect(NearestEnemyOf(Myself))
+	Range("camp_center",20)
 THEN
-	RESPONSE #25
-		DisplayStringHead(Myself,39840)  // Whoever's left will happily accept Tiax's rule! Or ELSE... 
-		SetGlobal("BD_Tiax_OT","bd0104",0)  // Flaming Fist HQ
+	RESPONSE #100
+		SetGlobal("bd_random_walk","locals",3)
+		SetGlobal("bd_search","locals",1)
+		SetGlobal("bd_combat","locals",1)
+		SetGlobal("bd_no_search","locals",0)
+		SetGlobalTimer("bd_search_timer","locals",TWO_ROUNDS)
 END
 
 IF
-	OpenState("DOOR03",FALSE)
-	OR(6)
-		NearLocation(Player1,498,530,20)
-		NearLocation(Player2,498,530,20)
-		NearLocation(Player3,498,530,20)
-		NearLocation(Player4,498,530,20)
-		NearLocation(Player5,498,530,20)
-		NearLocation(Player6,498,530,20)
-	Delay(5)
-	Global("BD_Tiax_OT","bd0104",0)  // Flaming Fist HQ
-	GlobalLT("BD_TIAX_FAIL","LOCALS",2)
+	Global("bd_random_walk","locals",2)
+	!Detect(NearestEnemyOf(Myself))
+	!Range("camp_center",15)
 THEN
-	RESPONSE #25
-		DisplayStringHead(Myself,39837)  // FIRST, Tiax will kill all those who dare look down upon him.
-		SetGlobal("BD_Tiax_OT","bd0104",1)  // Flaming Fist HQ
+	RESPONSE #100
+		MoveToObject("camp_center")
 END
 
 IF
-	OpenState("DOOR03",FALSE)
-	OR(6)
-		NearLocation(Player1,498,530,20)
-		NearLocation(Player2,498,530,20)
-		NearLocation(Player3,498,530,20)
-		NearLocation(Player4,498,530,20)
-		NearLocation(Player5,498,530,20)
-		NearLocation(Player6,498,530,20)
-	Delay(5)
-	Global("BD_Tiax_OT","bd0104",1)  // Flaming Fist HQ
-	GlobalLT("BD_TIAX_FAIL","LOCALS",2)
+	Global("bd_fists_attack","global",4)
+	Global("bd_crusaders_retreat","bd2000",0)  // Boareskyr Bridge & Bridgefort
+	Global("bd_random_walk","locals",0)
+	!Detect(NearestEnemyOf(Myself))
+	!Range("camp_center",15)
 THEN
-	RESPONSE #25
-		DisplayStringHead(Myself,39838)  // THEN he will have all who question slaughtering the tall put to the death.
-		SetGlobal("BD_Tiax_OT","bd0104",2)  // Flaming Fist HQ
+	RESPONSE #100
+		MoveToObject("camp_center")
 END
 
 IF
-	OpenState("DOOR03",FALSE)
-	OR(6)
-		NearLocation(Player1,498,530,20)
-		NearLocation(Player2,498,530,20)
-		NearLocation(Player3,498,530,20)
-		NearLocation(Player4,498,530,20)
-		NearLocation(Player5,498,530,20)
-		NearLocation(Player6,498,530,20)
-	Delay(5)
-	Global("BD_Tiax_OT","bd0104",2)  // Flaming Fist HQ
-	GlobalLT("BD_TIAX_FAIL","LOCALS",2)
+	Global("bd_fists_attack","global",4)
+	Global("bd_random_walk","locals",1)
+	Global("bd_crusaders_retreat","bd2000",0)  // Boareskyr Bridge & Bridgefort
+	Detect(NearestEnemyOf(Myself))
 THEN
-	RESPONSE #25
-		DisplayStringHead(Myself,39839)  // The families of those who question him must also be taught a lesson. Their firstborns will be sacrificed to Cyric! 
-		SetGlobal("BD_Tiax_OT","bd0104",3)  // Flaming Fist HQ
+	RESPONSE #100
+		SetGlobal("bd_random_walk","locals",0)
 END
 
 IF
-	OpenState("DOOR03",FALSE)
-	OR(6)
-		NearLocation(Player1,498,530,20)
-		NearLocation(Player2,498,530,20)
-		NearLocation(Player3,498,530,20)
-		NearLocation(Player4,498,530,20)
-		NearLocation(Player5,498,530,20)
-		NearLocation(Player6,498,530,20)
-	Delay(5)
-	Global("BD_Tiax_OT","bd0104",3)  // Flaming Fist HQ
-	GlobalLT("BD_TIAX_FAIL","LOCALS",2)
+	Global("bd_fists_attack","global",4)
+	Global("bd_crusaders_retreat","bd2000",0)  // Boareskyr Bridge & Bridgefort
+	Global("bd_random_walk","locals",0)
+	!Detect(NearestEnemyOf(Myself))
+	Range("camp_center",20)
 THEN
-	RESPONSE #25
-		DisplayStringHead(Myself,39840)  // Whoever's left will happily accept Tiax's rule! Or ELSE... 
-		SetGlobal("BD_Tiax_OT","bd0104",0)  // Flaming Fist HQ
+	RESPONSE #100
+		SetGlobal("bd_random_walk","locals",1)
+		RandomWalkContinuous()
+END
+
+IF
+	GlobalGT("bd_fists_attack","global",2)
+	AreaCheck("bd7100")  // Troll Forest
+THEN
+	RESPONSE #100
+		EscapeAreaObject("TransBD7110")
+END
+
+IF
+	OR(2)
+		AreaCheck("bd1000")  // Coast Way Crossing
+		AreaCheck("bd7100")  // Troll Forest
+	Die()
+	Allegiance(LastAttackerOf(Myself),PC)
+	!Race(Myself,HALFORC)
+	Allegiance(Myself,NEUTRAL)
+	!Specifics(Myself,THIEF)
+	Global("bd_attacked_allies","myarea",0)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_attacked_allies","myarea",1)
+END
+
+IF
+	AreaCheck("bd7100")  // Troll Forest
+	!GlobalTimerNotExpired("bd_sdd225l_ot_timer","bd7100")  // Troll Forest
+	Allegiance(Myself,NEUTRAL)
+	Specifics(Myself,ALLIES)
+	See([ENEMY.0.HALFORC.0.ALLIES2])
+	Switch("bd_sdd225l_ot","bd7100")  // Troll Forest
+THEN
+	RESPONSE #0
+		SetGlobal("bd_sdd225l_ot","bd7100",1)  // Troll Forest
+		SetGlobalTimer("bd_sdd225l_ot_timer","bd7100",ONE_ROUND)  // Troll Forest
+		DisplayStringHead(Myself,69701)  // Hey, the hero is fighting those mercenaries!
+		SetGlobal("BD_SDD225_FIGHT","BD7100",1)  // Troll Forest
+	RESPONSE #1
+		SetGlobal("bd_sdd225l_ot","bd7100",2)  // Troll Forest
+		DisplayStringHead(Myself,69702)  // They must be enemies. Get 'em!
 END
 

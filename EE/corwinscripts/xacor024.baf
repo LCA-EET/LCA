@@ -1,0 +1,287 @@
+//{ Banter Block during key moments
+	IF
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+		GlobalLT("XA_LC_BanterBlock_RBG", "LOCALS", 1)
+		OR(4)
+			AreaCheck("XAKIDNAP")
+			AreaCheck("XADUCAL")
+			AreaCheck("XADUCAL2")
+			AreaCheck("XADUC3")
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_BanterBlock_RBG", "LOCALS", 1)
+	END
+	
+	IF
+		Global("XA_LC_ReturnToBG", "GLOBAL", 2)
+		Global("XA_LC_BanterBlock_RBG", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_BanterBlock_RBG", "LOCALS", 0)
+	END
+//}
+
+//{ 10: Interactions concerning the Return to BG Mini Quest
+
+	//{ Tower Trouble Conclusion
+	IF
+		Global("XA_LC_SavedTimotey", "GLOBAL", 5)
+		GlobalLT("XA_LC_TroubleTalk", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_TroubleTalk", "GLOBAL", 1)
+			StartDialog("XACORWIJ", Player1)
+	END
+	//}
+
+	//{ Complimenting Corwin's Family
+	IF
+		AreaCheck("XAA141") //SE Baldur's Gate
+		Global("XA_LC_AVComplimentFamily", "GLOBAL", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		IsValidForPartyDialogue("Aerie")
+	THEN
+		//Dialog B-66, B-79, B-82, B-83, B-84
+		RESPONSE #100
+			Interact("Aerie")
+	END
+	
+	IF
+		AreaCheck("XAA141") //SE Baldur's Gate
+		Global("XA_LC_AVComplimentFamily", "GLOBAL", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		IsValidForPartyDialogue("Neera")
+		
+	THEN
+		//Dialog B-66, B-79, B-82, B-83, B-84
+		RESPONSE #100
+			Interact("Neera")
+	END
+	
+	IF
+		AreaCheck("XAA141") //SE Baldur's Gate
+		Global("XA_LC_AVComplimentFamily", "GLOBAL", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		IsValidForPartyDialogue("Valygar")
+		
+	THEN
+		//Dialog B-66, B-79, B-82, B-83, B-84
+		RESPONSE #100
+			Interact("Valygar")
+	END
+	//}
+
+	//{ Corwin Hall of Wonders Arrest
+	IF 
+		Global("XA_LC_CorwinArrest", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			//Dialog J-50
+			StartDialog("XACORWIJ", Player1)
+	END
+	//}
+
+	//{ Rohma Kidnapped
+	IF 
+		Global("XA_LC_RohmaKidnapped", "GLOBAL", 2)
+		//See(Player1)
+	THEN
+		RESPONSE #100
+			//Dialog J-68
+			StartDialog("XACORWIJ", Player1)
+	END
+	//}
+
+	//{ SoD Anxiety
+	IF 
+		Global("XA_LC_SoDAnxiety", "GLOBAL", 1)
+		GlobalTimerExpired("XA_LC_SoDAnxietyTimer", "GLOBAL")
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_SoDAnxiety", "GLOBAL", 2)
+			PlaySong(1001)
+			//Dialog J-39
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+	
+	//{ Corwin Leave for Family
+	IF
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CorwinLeaveForFamily", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			//Dialogs J-19, J-20
+			StartDialog("XACORWIJ", Player1)
+	END
+	//}
+	
+	//{ Corwin Need to See Family
+	IF
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			//Dialog J-18
+			StartDialog("XACORWIJ", Player1)
+	END
+	//}	
+
+	//{ Meet Tianna
+	IF
+		Global("XA_LC_AskCorwinAboutTianna", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			Wait(1)
+			//Dialog J-15
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Dialog init after Corwin / Neoma reunite
+	IF 
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_XACS15Cutscene", "GLOBAL", 5)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		!See("XANEOMA")
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			PlaySong(1002)
+			SetGlobal("XA_LC_XACS15Cutscene", "GLOBAL", 6)
+			//Dialog J-17
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Request Corwin ToB
+	IF
+		Global("XA_LC_BGEND3", "GLOBAL", 1)
+		Global("XA_LC_DidNotRequestCorwin", "GLOBAL", 1)
+		GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 99)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			Wait(3)
+			//Dialog J-2
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+
+	IF
+		Global("XA_LC_BGEND3", "GLOBAL", 1)
+		Global("XA_LC_DidNotRequestCorwin", "GLOBAL", 1)
+		GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 99)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			Wait(3)
+			PlaySong(1001)
+			//Dialog J-2
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+
+	IF
+		Global("XA_LC_BGEND4", "GLOBAL", 1)
+		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			Wait(3)
+			//Dialog J-2
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+
+	IF
+		Global("XA_LC_BGEND4", "GLOBAL", 1)
+		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			Wait(3)
+			PlaySong(1001)
+			//Dialog J-2
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Kill Beno
+	IF 
+		OR(2)
+			Global("XA_LC_CorwinKillBeno", "GLOBAL", 1)
+			Global("XA_LC_CorwinBenoST", "GLOBAL", 1)
+		ActionListEmpty()
+		!Range("XABENO2", 4)
+	THEN
+		RESPONSE #100
+			MoveToObject("XATRBENO")
+			Continue()
+	END
+
+	IF 
+		OR(2)
+			Global("XA_LC_CorwinKillBeno", "GLOBAL", 1)
+			Global("XA_LC_CorwinBenoST", "GLOBAL", 1)
+		Range("XABENO2", 4)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			ActionOverride("XACORWIN", FaceObject("XABENO2"))
+			//Dialog J-5
+			ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+			SetInterrupt(TRUE)
+	END
+	//}
+
+//} BGMiniQuest Interaction End
+
+//{ 14: Check if the Player is in the Demon's Prison 
+IF
+	ActionListEmpty()
+	InParty(Myself)
+	!Global("XA_LC_TrappedInDemonPrison", "GLOBAL", 1)
+	OR(5)
+		AreaCheck("XADEMSAN")
+		AreaCheck("XAG1")
+		AreaCheck("XAG2")
+		AreaCheck("XAG3")
+		AreaCheck("XAPAINT1")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_TrappedInDemonPrison", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	InParty(Myself)
+	Global("XA_LC_TrappedInDemonPrison", "GLOBAL", 1)
+	!AreaCheck("XADEMSAN")
+	!AreaCheck("XAG1")
+	!AreaCheck("XAG2")
+	!AreaCheck("XAG3")
+	!AreaCheck("XAPAINT1")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_TrappedInDemonPrison", "GLOBAL", 0)
+		Continue()
+END
+//}
+

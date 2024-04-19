@@ -71,7 +71,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_CorwinHostile", "GLOBAL", 2)
-		DisplayStringHead(Myself, @11)
+		DisplayStringHead(Myself, @0)
 		SetLeavePartyDialogFile()
 		ChangeAIScript("", DEFAULT)
 		LeaveParty()

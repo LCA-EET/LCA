@@ -13,7 +13,7 @@
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CIExpBoost", "LOCALS", 1)
 			ChangeStat(Myself,XP,35000,ADD)
-			AddJournalEntry(@25, INFO)
+			AddJournalEntry(@0, INFO)
 			SetInterrupt(TRUE)
 			Continue()
 	END

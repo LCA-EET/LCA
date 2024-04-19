@@ -196,7 +196,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_SkieSaved", "GLOBAL", 3) // mark complete
-		CreateCreature("xad120", [1033.563], SW)
+		CreateCreature("xad121", [1033.563], SW)
 		Continue()
 		
 END
