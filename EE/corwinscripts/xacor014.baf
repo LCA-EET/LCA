@@ -1,0 +1,80 @@
+
+	//{ Corwin Can Talk
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		OR(12)
+			!IsValidForPartyDialogue(Myself)
+			ActuallyInCombat()
+			GlobalGT("XA_LC_ArrivedInUndercity", "GLOBAL", 0)
+			!InParty(Myself)
+			AreaCheck("XACS13")
+			Global("XA_LC_E_EXTalk", "GLOBAL", 1)
+			AreaCheck("AR6200")
+			AreaCheck("AR0011")
+			AreaCheck("AR0012")
+			AreaCheck("AR0013")
+			AreaCheck("AR0014")
+			AreaCheck("AR0028")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CanTalk", "LOCALS", 0)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		InParty(Myself)
+		!Global("XA_LC_CanTalk", "LOCALS", 1)
+		IsValidForPartyDialogue(Myself)
+		!ActuallyInCombat()
+		GlobalLT("XA_LC_E_EXTalk", "GLOBAL", 1)
+		!AreaCheck("AR6200")
+		!AreaCheck("AR0011")
+		!AreaCheck("AR0012")
+		!AreaCheck("AR0013")
+		!AreaCheck("AR0014")
+		!AreaCheck("AR0028")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CanTalk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+	
+	//{ Corwin Can Talk to Player Check
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		OR(3)
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+			!IsValidForPartyDialogue(Player1)
+			!See(Player1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CanTalkToPlayer", "LOCALS", 0)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+
+	IF
+		ActionListEmpty()
+		!Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		IsValidForPartyDialogue(Player1)
+		See(Player1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+	

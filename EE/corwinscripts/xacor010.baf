@@ -1,0 +1,379 @@
+
+//{ ToB Events
+	
+	//{ Player became a Lich
+		IF
+			Race(Player1, LICH)
+			InParty(Myself)
+			GlobalLT("XA_LC_CorwinLeaveLich", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobalTimer("XA_LC_CorwinLichTimer", "GLOBAL", THREE_DAYS)
+				SetGlobal("XA_LC_CorwinLeaveLich", "GLOBAL", 1)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+		
+		IF
+			GlobalTimerExpired("XA_LC_CorwinLichTimer", "GLOBAL")
+			Global("XA_LC_CorwinLeaveLich", "GLOBAL", 1)
+			Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_LC_CorwinLeaveLich", "GLOBAL", 2)
+				StartDialog("XACOR25J", Player1)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+	//}
+
+	//{ Corwin Complain about Sarevok
+		IF
+			ActionListEmpty()
+			Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+			InParty("Sarevok")
+			GlobalTimerExpired("XA_LC_CorwinComplainSarevokTimer", "GLOBAL")
+			Global("XA_LC_CorwinComplainSarevok", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_LC_CorwinComplainSarevok", "GLOBAL", 2)
+				StartDialog("xacor25j", Player1)
+				Continue()
+		END
+	//}
+
+	//{ Saradush Destruction
+		IF 
+			ActionListEmpty()
+			GlobalTimerExpired("XA_LC_YagaTimer", "GLOBAL")
+			GlobalLT("XA_LC_SaradushDestroyed", "GLOBAL", 1)
+			Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+			!ActuallyInCombat()
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_LC_SaradushDestroyed", "GLOBAL", 1)
+				//Dialog J-70
+				StartDialog("xacor25j", Player1)
+				SetInterrupt(TRUE)
+		END
+	//}
+
+	//{ Killed Wraith
+		IF
+			Global("XA_LC_RohmaWraith", "GLOBAL", 1)
+			Dead("hgwra01")
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_LC_RohmaWraith", "GLOBAL", 2)
+				SetGlobalTimer("XA_LC_RohmaWraithTimer", "LOCALS", ONE_ROUND)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+		
+		IF
+			!ActuallyInCombat()
+			Global("XA_LC_RohmaWraith", "GLOBAL", 2)
+			Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+			GlobalTimerExpired("XA_LC_RohmaWraithTimer", "LOCALS")
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_LC_RohmaWraith", "GLOBAL", 3)
+				StartDialog("xacor25j", Player1)
+				SetInterrupt(TRUE)
+		END
+		//}
+
+	//{ Saved Father in Saradush
+		IF
+			AreaCheck("AR5000")
+			Global("FatherKilled","AR5000",2)
+			GlobalLT("XA_LC_CommentOnFather", "LOCALS", 1)
+			!InMyArea("orphan2")
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_LC_CommentOnFather", "LOCALS", 1)
+				DisplayStringHead(Myself, @22)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+	//}
+
+	//{ Entered Fire Temple 5204
+		IF
+			ActionListEmpty()
+			Global("XA_LC_CanTalk", "LOCALS", 1)
+			GlobalLT("XA_LC_AR5204TimerSet", "LOCALS", 1)
+			AreaCheck("AR5204")
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_LC_AR5204TimerSet", "LOCALS", 1)	
+				SetGlobalTimer("XA_LC_AR5204Timer", "LOCALS", ONE_ROUND)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+
+		IF 
+			ActionListEmpty()
+			Global("XA_LC_CanTalk", "LOCALS", 1)
+			GlobalTimerExpired("XA_LC_AR5204Timer", "LOCALS")
+			GlobalLT("XA_LC_AR5204_Talk", "LOCALS", 1)
+			AreaCheck("AR5204")
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				DisplayStringHead(Myself, @17)	
+				SetGlobal("XA_LC_AR5204_Talk", "LOCALS", 1)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+	//}
+
+	//{ Entered Sendai's Lair
+		IF
+			ActionListEmpty()
+			Global("XA_LC_CanTalk", "LOCALS", 1)
+			GlobalLT("XA_LC_AR6101TimerSet", "LOCALS", 1)
+			AreaCheck("AR6101")
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_LC_AR6101TimerSet", "LOCALS", 1)	
+				SetGlobalTimer("XA_LC_AR6101Timer", "LOCALS", ONE_ROUND)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+
+		IF 
+			ActionListEmpty()
+			Global("XA_LC_CanTalk", "LOCALS", 1)
+			GlobalTimerExpired("XA_LC_AR6101Timer", "LOCALS")
+			GlobalLT("XA_LC_AR6101_Talk", "LOCALS", 1)
+			AreaCheck("AR6101")
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				DisplayStringHead(Myself, @26)	
+				SetGlobal("XA_LC_AR6101_Talk", "LOCALS", 1)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+	//}
+
+	//{ Caelar Jailed
+		IF 
+			ActionListEmpty()
+			Global("XA_LC_CorwinCaelarJail", "GLOBAL", 1)
+			GlobalLT("XA_LC_CorwinCaelarJailTimerSet", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobalTimer("XA_LC_CorwinCaelarJailTimer", "GLOBAL", TWO_ROUNDS)
+				SetGlobal("XA_LC_CorwinCaelarJailTimerSet", "GLOBAL", 1)
+				SetInterrupt(TRUE)
+		END
+		
+		IF
+			ActionListEmpty()
+			Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+			GlobalTimerExpired("XA_LC_CorwinCaelarJailTimer", "GLOBAL")
+			GlobalLT("XA_LC_CorwinCaelarJailTalk", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_LC_CorwinCaelarJailTalk", "GLOBAL", 1)
+				StartDialog("xacor25j", Player1)
+				SetInterrupt(TRUE)
+		END
+	//}
+
+	//{ Caelar Went Home
+		IF 
+			ActionListEmpty()
+			Global("XA_LC_CorwinCaelarHome", "GLOBAL", 1)
+			GlobalLT("XA_LC_CorwinCaelarHomeTimerSet", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobalTimer("XA_LC_CorwinCaelarHomeTimer", "GLOBAL", TWO_ROUNDS)
+				SetGlobal("XA_LC_CorwinCaelarHomeTimerSet", "GLOBAL", 1)
+				SetInterrupt(TRUE)
+		END
+		
+		IF
+			ActionListEmpty()
+			Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+			GlobalTimerExpired("XA_LC_CorwinCaelarHomeTimer", "GLOBAL")
+			GlobalLT("XA_LC_CorwinCaelarHomeTalk", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_LC_CorwinCaelarHomeTalk", "GLOBAL", 1)
+				StartDialog("xacor25j", Player1)
+				SetInterrupt(TRUE)
+		END
+	//}
+
+	//{ Beno Exploded
+		IF
+			ActionListEmpty()
+			InParty(Myself)
+			GlobalTimerExpired("XA_LC_CorwinBenoSoul", "GLOBAL")
+			Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+			GlobalLT("XA_LC_CorwinBenoSoulTalk", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_LC_CorwinBenoSoulTalk", "GLOBAL", 1)
+				StartDialog("xacor25j", Player1)
+				SetInterrupt(TRUE)
+		END
+	//}
+
+	//{ Entered Amkethran
+		IF
+			ActionListEmpty()
+			InParty(Myself)
+			AreaCheck("AR5500")
+			!Global("XA_LC_AmkethranTimerSet", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobalTimer("XA_LC_AmkethranTimer", "GLOBAL", ONE_ROUND)
+				SetGlobal("XA_LC_AmkethranTimerSet", "GLOBAL", 1)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+		
+		IF
+			ActionListEmpty()
+			Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+			GlobalTimerExpired("XA_LC_AmkethranTimer", "GLOBAL")
+			GlobalLT("XA_LC_MessageToBG", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				PlaySong(142)
+				SetGlobal("XA_LC_MessageToBG", "GLOBAL", 1)
+				StartDialog("xacor25j", Player1)
+				SetInterrupt(TRUE)
+		END
+		//}
+
+	//{ Player gives soul fragment to Sarevok
+		IF
+			ActionListEmpty()
+			GlobalGT("SarevokAlive", "GLOBAL", 0)
+			GlobalLT("ImoenGiveSoul","GLOBAL",2)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
+			!Global("XA_LC_SarevokSoulTimerSet", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobalTimer("XA_LC_SarevokSoulTimer", "GLOBAL",TWO_DAYS)
+				SetGlobal("XA_LC_SarevokSoulTimerSet", "GLOBAL", 1)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+	//}
+
+	//{ Aerie Pregnant Check
+		IF
+			ActionListEmpty()
+			GlobalGT("babytalk", "GLOBAL", 0)
+			IsValidForPartyDialog("Aerie")
+			!Global("XA_LC_CorwinAerieBabyTimerSet", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_LC_CorwinAerieBabyTimerSet", "GLOBAL", 1)
+				SetGlobalTimer("XA_LC_CorwinAerieBabyTimer", "GLOBAL", ONE_DAY)
+				SetInterrupt(TRUE)
+				Continue()
+		END	
+	//}
+		
+	//{ Entered Yaga-Shura Camp
+		IF
+			GlobalGT("YagaShuraHeart", "GLOBAL", 0)
+			ActionListEmpty()
+			GlobalLT("XA_LC_YagaTimerSet", "GLOBAL", 1)
+			AreaCheck("AR5203")
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobalTimer("XA_LC_YagaTimer", "GLOBAL", ONE_ROUND)
+				SetGlobal("XA_LC_YagaTimerSet", "GLOBAL", 1)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+		
+		IF 
+			ActionListEmpty()
+			AreaCheck("AR5203")
+			Gender(Player1, MALE)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+			GlobalGT("XA_LC_CorwinPregnant", "GLOBAL", 0)
+			GlobalLT("XA_LC_PregnantOverride", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_LC_PregnantOverride", "GLOBAL", 1)
+				Continue()
+		END
+	//}
+		
+	//{ Sarevok Joined Party
+		IF
+			ActionListEmpty()
+			InParty("Sarevok")
+			InParty(Myself)
+			GlobalLT("XA_LC_CorwinComplainSarevok", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobalTimer("XA_LC_CorwinComplainSarevokTimer", "GLOBAL", ONE_HOUR)
+				SetGlobal("XA_LC_CorwinComplainSarevok", "GLOBAL", 1)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+	//}
+
+	//{ Completed Challenge 3
+		IF
+			InParty(Myself)
+			Global("BeginChallenge3", "GLOBAL", 3)
+			GlobalLT("XA_LC_C3TimerSet", "LOCALS", 1)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_LC_C3TimerSet", "LOCALS", 1)
+				SetGlobalTimer("XA_LC_C3Timer", "LOCALS", ONE_HOUR)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+	//}
+
+	//{ Killed General
+		IF
+			Dead("amtgen01")
+			GlobalLT("XA_LC_GeneralDeadTalk", "LOCALS", 1)
+			!ActuallyInCombat()
+			Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_LC_GeneralDeadTalk", "LOCALS", 1)
+				StartDialog("XACOR25J", Player1)
+				SetInterrupt(TRUE)
+		END
+	//}
+
+//}

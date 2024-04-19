@@ -1,0 +1,53 @@
+//{ Can Talk to Caelar
+	IF
+		ActionListEmpty()
+		See("XACAELAR")
+		IsValidForPartyDialogue("XACAELAR")
+		!Global("XA_LC_CanTalkToCaelar", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToCaelar", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToCaelar", "LOCALS", 1)
+		OR(3)	
+			!See("XACAELAR")
+			!IsValidForPartyDialogue("XACAELAR")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToCaelar", "LOCALS", 0)
+			Continue()
+	END
+//}
+
+//{ Can Talk to Sarevok
+	IF
+		ActionListEmpty()
+		See("Sarevok")
+		IsValidForPartyDialogue("Sarevok")
+		!Global("XA_LC_CanTalkToSarevok", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToSarevok", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToSarevok", "LOCALS", 1)
+		OR(3)	
+			!See("Sarevok")
+			!IsValidForPartyDialogue("Sarevok")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToSarevok", "LOCALS", 0)
+			Continue()
+	END
+	//}

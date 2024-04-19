@@ -1,0 +1,149 @@
+
+//{ Romance Conflicts
+
+	//{ Other Romance == 2
+	IF
+		ActionListEmpty()
+		GlobalLT("XA_LC_RomanceConflictTimerSet", "GLOBAL", 1)
+		Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
+		OR(8)
+			Global("AerieRomanceActive","GLOBAL",2)
+			Global("ViconiaRomanceActive","GLOBAL",2)
+			Global("DornRomanceActive","GLOBAL",2)
+			Global("NeeraRomanceActive","GLOBAL",2)
+			Global("SarevokRomanceActive","GLOBAL",2)
+			Global("JaheiraRomanceActive","GLOBAL",2)
+			Global("HexxatRomanceActive","GLOBAL",2)
+			Global("RasaadRomanceActive","GLOBAL",2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_LC_RomanceConflictTimer", "GLOBAL", ONE_DAY)
+			SetGlobal("XA_LC_RomanceConflictTimerSet", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+	END
+	
+	IF
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_RomanceConflictTimer", "GLOBAL")
+		GlobalLT("XA_LC_RomanceConflictTalk", "GLOBAL", 1)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_RomanceConflictTalk", "GLOBAL", 1)
+			//Dialog J-83
+			Interact(Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Other Romance < 2
+	
+		//{ Aerie
+		IF
+			ActionListEmpty()
+			InParty(Myself)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
+			GlobalLT("AerieRomanceActive", "GLOBAL", 2)
+		THEN
+			RESPONSE #100
+				SetGlobal("AerieRomanceActive","GLOBAL",3)
+				Continue()
+		END
+		//}
+
+		//{ Viconia
+		IF
+			ActionListEmpty()
+			InParty(Myself)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
+			GlobalLT("ViconiaRomanceActive","GLOBAL",2)
+		THEN
+			RESPONSE #100
+				SetGlobal("ViconiaRomanceActive","GLOBAL",3)
+				Continue()
+		END
+		//}
+
+		//{ Dorn
+		IF
+			ActionListEmpty()
+			InParty(Myself)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
+			GlobalLT("DornRomanceActive","GLOBAL",2)
+		THEN
+			RESPONSE #100
+				SetGlobal("DornRomanceActive","GLOBAL",3)
+				Continue()
+		END
+		//}
+		
+		//{ Neera
+		IF
+			ActionListEmpty()
+			InParty(Myself)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
+			GlobalLT("NeeraRomanceActive","GLOBAL",2)
+		THEN
+			RESPONSE #100
+				SetGlobal("NeeraRomanceActive","GLOBAL",3)
+				Continue()
+		END
+		//}
+
+		//{ Anomen
+		IF
+			ActionListEmpty()
+			InParty(Myself)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
+			GlobalLT("AnomenRomanceActive","GLOBAL",2)
+		THEN
+			RESPONSE #100
+				SetGlobal("AnomenRomanceActive","GLOBAL",3)
+				Continue()
+		END
+		//}
+
+		//{ Jaheira
+		IF
+			ActionListEmpty()
+			InParty(Myself)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
+			GlobalLT("JaheiraRomanceActive","GLOBAL",2)
+		THEN
+			RESPONSE #100
+				SetGlobal("JaheiraRomanceActive","GLOBAL",3)
+				Continue()
+		END
+		//}
+
+		//{ Hexxat
+		IF
+			ActionListEmpty()
+			InParty(Myself)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
+			GlobalLT("HexxatRomanceActive","GLOBAL",2)
+		THEN
+			RESPONSE #100
+				SetGlobal("HexxatRomanceActive","GLOBAL",3)
+				Continue()
+		END
+		//}
+		
+		//{ Rasaad
+		IF
+			ActionListEmpty()
+			InParty(Myself)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
+			GlobalLT("RasaadRomanceActive","GLOBAL",2)
+		THEN
+			RESPONSE #100
+				SetGlobal("RasaadRomanceActive","GLOBAL",3)
+				Continue()
+		END
+		//}
+		
+	//}
+
+//}

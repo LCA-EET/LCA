@@ -1,0 +1,25 @@
+//{ Sarevok Banter Primer
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToSarevok", "LOCALS", 1)
+		Global("XA_LC_Banter_NextInteraction", "LOCALS", 22) /* Sarevok */
+		!Global("XA_LC_Banter_Pending", "LOCALS", 22)
+		GlobalsGT("XA_LC_Banter_CorwinSarevokEnd", "XA_LC_Banter_CorwinSarevok")
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_Banter_Pending", "LOCALS", 22)
+	END
+//}
+	
+//{ Caelar Banter Primer
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToCaelar", "LOCALS", 1)
+		Global("XA_LC_Banter_NextInteraction", "LOCALS", 23) /* Caelar */
+		!Global("XA_LC_Banter_Pending", "LOCALS", 23)
+		GlobalsGT("XA_LC_Banter_CorwinCaelarEnd", "XA_LC_Banter_CorwinCaelar")
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_Banter_Pending", "LOCALS", 23)
+	END
+//}

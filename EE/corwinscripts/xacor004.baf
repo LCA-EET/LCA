@@ -1,0 +1,12 @@
+//{ 02: Corwin Opinion Baseline
+IF
+	GlobalLT("XA_LC_CorwinOpinionBaselined", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 100)
+		SetGlobal("XA_LC_CorwinOpinionBaselined", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}

@@ -1,0 +1,291 @@
+//{ Sarevok - <CHARNAME> Soul Interaction
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToSarevok", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_SarevokSoulTimer", "GLOBAL")
+		GlobalLT("XA_LC_SarevokSoul", "GLOBAL", 1)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_SarevokSoul", "GLOBAL", 1)
+			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			Interact("Sarevok")
+			SetInterrupt(TRUE)
+	END
+//}
+	
+//{ Corwin Pregnant Interactions
+	
+	//{ Aerie Baby Parent Advice
+	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_LC_CorwinAerieBabyTimer", "GLOBAL")
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		IsValidForPartyDialogue("Aerie")
+		GlobalLT("XA_LC_CorwinParentAdvice", "GLOBAL", 1)
+		GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 97)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CorwinParentAdvice", "GLOBAL", 1)
+			Continue()
+	END
+	
+	IF
+		Global("XA_LC_CorwinParentAdvice", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		!Range(Player1, 6)
+		ActionListEmpty()
+	THEN
+		RESPONSE #100
+			MoveToObject(Player1)
+			Continue()
+	END
+	
+	IF
+		Global("XA_LC_CorwinParentAdvice", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Range(Player1,7)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinParentAdvice", "GLOBAL", 2)
+			//Dialog J-76
+			StartDialog("xacor25j", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+	
+	//{ Initial Timer Expiration
+	IF 
+		!AreaCheck("AR5203") // Yaga-Shura Camp
+		Global("XA_LC_CorwinPregnant", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		!ActuallyInCombat()
+		OR(2)
+			Global("XA_LC_PregnantOverride", "GLOBAL", 1)
+			GlobalTimerExpired("XA_LC_CorwinPregnantTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_PregnantOverride", "GLOBAL", 2)
+			SetGlobalTimer("XA_LC_OneRoundTimer", "LOCALS", ONE_ROUND)
+			SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 2)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		GlobalTimerExpired("XA_LC_OneRoundTimer", "LOCALS")
+		Global("XA_LC_CorwinPregnant", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			PlaySong(142)
+			//Dialog J-71
+			StartDialog("xacor25j", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+	
+	//{ Second Interaction
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CorwinPregnant", "GLOBAL", 3)
+		GlobalTimerExpired("XA_LC_CorwinPregnantTimer", "GLOBAL")
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 4)
+			DisplayStringHead(Myself, @15)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		Global("XA_LC_CorwinPregnant", "GLOBAL", 4)
+		!Range(Player1,6)
+		ActionListEmpty()
+	THEN
+		RESPONSE #100
+			MoveToObject(Player1)
+			Continue()
+	END
+	
+	IF
+		Global("XA_LC_CorwinPregnant", "GLOBAL", 4)
+		Range(Player1,7)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			PlaySong(146)
+			StartDialog("xacor25j", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+	
+	//{ Third Interaction
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinPregnant", "GLOBAL", 5)
+		OR(2)
+			GlobalTimerExpired("XA_LC_CorwinPregnantTimer", "GLOBAL")
+			GlobalTimerExpired("XA_LC_C3Timer", "LOCALS")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 6)
+			PlaySong(142)
+			StartDialog("xacor25j", Player1)
+			SetInterrupt(TRUE)
+	END
+	
+
+	//}
+	
+	//{ Fourth Interaction
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinPregnant", "GLOBAL", 7)
+		GlobalTimerExpired("XA_LC_CorwinPregnantTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 8)
+			PlaySong(142)
+			StartDialog("xacor25j", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+	
+	//{ Final Interaction - Corwin Leaves
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinPregnant", "GLOBAL", 9)
+		GlobalTimerExpired("XA_LC_CorwinPregnantTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 10)
+			Continue()
+	END
+	
+	IF
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_CorwinPregnant", "GLOBAL", 10)
+		AreaCheck("AR4500")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			PlaySong(146)
+			StartDialog("xacor25j", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+	
+	//{ Baby Name Interaction Imoen
+	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_LC_CorwinPregnantImoenTimer", "GLOBAL")
+		GlobalLT("XA_LC_CorwinPregBabyName_Imoen", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToImoen2", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinPregBabyName_Imoen", "GLOBAL", 1)
+			////DisplayStringHead(Myself, ~C~)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		Global("XA_LC_CorwinPregBabyName_Imoen", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToImoen2", "LOCALS", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			//Dialog J-73
+			SetInterrupt(FALSE)
+			ActionOverride("Imoen2", StartDialog("IMOEN2J", Player1))
+			SetInterrupt(TRUE)
+	END
+	//}
+	
+	//{ Baby Name Interaction Aerie
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CorwinPregnant", "GLOBAL", 5)
+		Global("XA_LC_CorwinPregnantAerie", "GLOBAL", 1)
+		!Global("XA_LC_CorwinPregnantImoen", "GLOBAL", 1)
+		!Global("XA_LC_CorwinPregAerieTimerSet", "GLOBAL", 1)
+		InParty("Aerie")
+		InParty(Myself)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_LC_CorwinPregnantAerieTimer", "GLOBAL", TWO_DAYS)
+			SetGlobal("XA_LC_CorwinPregAerieTimerSet", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalTimerExpired("XA_LC_CorwinPregnantAerieTimer", "GLOBAL")
+		Global("XA_LC_CanTalkToAerie", "LOCALS", 1)
+		GlobalLT("XA_LC_CorwinPregBabyName_Aerie", "GLOBAL", 1)
+		See(Player1)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinPregBabyName_Aerie", "GLOBAL", 1)
+			//Dialog J-74
+			ActionOverride("Aerie", StartDialog("AERIEJ", Player1))
+			SetInterrupt(TRUE)
+	END
+	//}
+	
+	//{ Baby Name Interaction Jaheira
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CorwinPregnant", "GLOBAL", 5)
+		Global("XA_LC_CorwinPregnantJaheira", "GLOBAL", 1)
+		!Global("XA_LC_CorwinPregnantImoen", "GLOBAL", 1)
+		!Global("XA_LC_CorwinPregnantJahTimerSet", "GLOBAL", 1)
+		InParty("Jaheira")
+		InParty(Myself)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_LC_CorwinPregnantJahTimer", "GLOBAL", TWO_DAYS)
+			SetGlobal("XA_LC_CorwinPregnantJahTimerSet", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalTimerExpired("XA_LC_CorwinPregnantJahTimer", "GLOBAL")
+		IsValidForPartyDialogue("Jaheira")
+		GlobalLT("XA_LC_CorwinPregnantBabyName_Jah", "GLOBAL", 1)
+		See(Player1)
+		See("Jaheira")
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinPregnantBabyName_Jah", "GLOBAL", 1)
+			//Dialog J-75
+			ActionOverride("Jaheira", StartDialog("JAHEIRAJ", Player1))
+			SetInterrupt(TRUE)
+	END
+	//}
+//}

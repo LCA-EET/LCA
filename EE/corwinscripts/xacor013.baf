@@ -1,0 +1,53 @@
+/* Reputation Handling */
+
+//{ 13: Reputation Handling
+IF 
+	Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+	ReputationLT(Player1,7)
+	Global("XA_LC_CanLeaveParty", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_CorwinLeftPoorRep", "GLOBAL", 1)
+		Interact(Player1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	ActionListEmpty()
+	InParty(Myself)
+	ReputationLT(Player1,8)
+	GlobalLT("XA_LC_CorwinRepWarning", "GLOBAL", 1)
+THEN 
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("XA_LC_CorwinRepWarningTimer", "GLOBAL", ONE_ROUND)
+		SetGlobal("XA_LC_CorwinRepWarning", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	ActionListEmpty()
+	Global("XA_LC_CorwinRepWarning", "GLOBAL", 1)
+	Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+	ReputationLT(Player1,8)
+	GlobalTimerExpired("XA_LC_CorwinRepWarningTimer", "GLOBAL")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_CorwinRepWarning", "GLOBAL", 2)
+		Interact(Player1)
+		SetInterrupt(TRUE)
+END
+
+IF 
+	ActionListEmpty()
+	GlobalGT("XA_LC_CorwinRepWarning", "GLOBAL", 0)
+	ReputationGT(Player1,7)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_CorwinRepWarning", "GLOBAL", 0)
+		Continue()
+END
+//}

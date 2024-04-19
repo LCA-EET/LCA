@@ -1,0 +1,1161 @@
+
+//{ 03: Mark as In-Party in BG2 (For later summoning via the fate-spirit)
+IF
+	InParty(Myself)
+	GlobalLT("XA_LC_CorwinInPartyBG2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_CorwinInPartyBG2", "GLOBAL", 1)
+		Continue()
+END
+//}
+
+//{ 15: Check if the Player is in the Planar Sphere
+IF 
+	ActionListEmpty()
+	InParty(Myself)
+	GlobalLT("XA_LC_PlanarSphere", "GLOBAL", 1)
+	OR(6)
+		AreaCheck("AR0410")
+		AreaCheck("AR0411")
+		AreaCheck("AR0412")
+		AreaCheck("AR0413")
+		AreaCheck("AR0414")
+		AreaCheck("AR0415")
+THEN 
+	RESPONSE #100
+		SetGlobal("XA_LC_PlanarSphere", "GLOBAL", 1)
+		Continue()
+END
+
+IF 
+	ActionListEmpty()
+	InParty(Myself)
+	Global("XA_LC_PlanarSphere", "GLOBAL", 1)
+	!AreaCheck("AR0410")
+	!AreaCheck("AR0411")
+	!AreaCheck("AR0412")
+	!AreaCheck("AR0413")
+	!AreaCheck("AR0414")
+	!AreaCheck("AR0415")
+THEN 
+	RESPONSE #100
+		SetGlobal("XA_LC_PlanarSphere", "GLOBAL", 0)
+		Continue()
+END
+//} End Planar Sphere Check
+
+//{ 16: Check if the Player is in the Planar Prison
+IF 
+	ActionListEmpty()
+	InParty(Myself)
+	GlobalLT("XA_LC_PlanarPrison", "GLOBAL", 1)
+	OR(6)
+		AreaCheck("AR0516")
+		AreaCheck("AR0517")
+		AreaCheck("AR0518")
+		AreaCheck("AR0519")
+		AreaCheck("AR0520")
+		AreaCheck("AR0521")
+THEN 
+	RESPONSE #100
+		SetGlobal("XA_LC_PlanarPrison", "GLOBAL", 1)
+		Continue()
+END
+
+IF 
+	ActionListEmpty()
+	InParty(Myself)
+	Global("XA_LC_PlanarPrison", "GLOBAL", 1)
+	!AreaCheck("AR0516")
+	!AreaCheck("AR0517")
+	!AreaCheck("AR0518")
+	!AreaCheck("AR0519")
+	!AreaCheck("AR0520")
+	!AreaCheck("AR0521")
+THEN 
+	RESPONSE #100
+		SetGlobal("XA_LC_PlanarPrison", "GLOBAL", 0)
+		Continue()
+END
+//} End Planar Prison Check
+
+//{ 17: Check if the Player is in the Underdark
+IF
+	ActionListEmpty()
+	InParty(Myself)
+	GlobalLT("XA_LC_InUnderdark", "GLOBAL", 1)
+	OR(18)
+		AreaCheck("AR2100") // Underdark
+		AreaCheck("AR2101") // Beholder Cave in Underdark
+		AreaCheck("AR2102") // Adalon's Cave
+		AreaCheck("AR2200") // Ust Natha
+		AreaCheck("AR2201") // Ust Natha Temple
+		AreaCheck("AR2202") // Ust Natha Inn 1FL
+		AreaCheck("AR2203") // Ust Natha Inn 2FL
+		AreaCheck("AR2204") // Ust Natha House
+		AreaCheck("AR2205") // Ust Natha House
+		AreaCheck("AR2206") // Qilue's House
+		AreaCheck("AR2207") // Deirex's Tower
+		AreaCheck("AR2208") // Jarlaxle's House
+		AreaCheck("AR2209") // Jarlaxle's House
+		AreaCheck("AR2210") // Deirex's Cave
+		AreaCheck("AR2300") // Sahuagin City
+		AreaCheck("AR2400") // Mind Flayers
+		AreaCheck("AR2401") // Cave to Exit
+		AreaCheck("AR2402") // Kuo Toa
+THEN 
+	RESPONSE #100
+		////DisplayStringHead(Myself, ~DEBUG_In Underdark~)
+		SetGlobal("XA_LC_InUnderdark", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	InParty(Myself)
+	Global("XA_LC_InUnderdark", "GLOBAL", 1)
+	!AreaCheck("AR2100") // Underdark
+	!AreaCheck("AR2101") // Beholder Cave in Underdark
+	!AreaCheck("AR2102") // Adalon's Cave
+	!AreaCheck("AR2200") // Ust Natha
+	!AreaCheck("AR2201") // Ust Natha Temple
+	!AreaCheck("AR2202") // Ust Natha Inn 1FL
+	!AreaCheck("AR2203") // Ust Natha Inn 2FL
+	!AreaCheck("AR2204") // Ust Natha House
+	!AreaCheck("AR2205") // Ust Natha House
+	!AreaCheck("AR2206") // Qilue's House
+	!AreaCheck("AR2207") // Deirex's Tower
+	!AreaCheck("AR2208") // Jarlaxle's House
+	!AreaCheck("AR2209") // Jarlaxle's House
+	!AreaCheck("AR2210") // Deirex's Cave
+	!AreaCheck("AR2300") // Sahuagin City
+	!AreaCheck("AR2400") // Mind Flayers
+	!AreaCheck("AR2401") // Cave to Exit
+	!AreaCheck("AR2402") // Kuo Toa
+THEN 
+	RESPONSE #100
+		////DisplayStringHead(Myself, ~DEBUG_Not In Underdark~)
+		SetGlobal("XA_LC_InUnderdark", "GLOBAL", 0)
+		Continue()
+END
+//} End Underdark Check
+
+//{ 18: Event Checks
+
+	//{ Player became a Lich
+	IF
+		Race(Player1, LICH)
+		InParty(Myself)
+		GlobalLT("XA_LC_CorwinLeaveLich", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_LC_CorwinLichTimer", "GLOBAL", THREE_DAYS)
+			SetGlobal("XA_LC_CorwinLeaveLich", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalTimerExpired("XA_LC_CorwinLichTimer", "GLOBAL")
+		Global("XA_LC_CorwinLeaveLich", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinLeaveLich", "GLOBAL", 2)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Dings Joined
+	IF
+		GlobalLT("XA_LC_DingsCorwin", "GLOBAL", 1)
+		InParty(Myself)
+		PartyHasItem("OHNDINGS")
+		GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_LC_DingsCorwinTimer", "GLOBAL", THREE_DAYS)
+			SetGlobal("XA_LC_DingsCorwin", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+	
+	//{ Dings Interaction 1
+	IF
+		InParty(Myself)
+		PartyHasItem("OHNDINGS")
+		GlobalLT("XA_LC_DingsCorwin", "GLOBAL", 2)
+		!AreaType(DUNGEON)
+		OR(2)
+			GlobalTimerExpired("XA_LC_DingsCorwinTimer", "GLOBAL")
+			Global("XA_LC_DingsDebug", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_DingsDebug", "GLOBAL", 0)
+			SetGlobal("XA_LC_DingsCorwin", "GLOBAL", 2)
+			CreateCreature("XADINGS", [-1.-1], N)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Kalah Killed
+	IF
+		AreaCheck("AR0607")
+		ActionListEmpty()
+		Dead("Kalah")
+		InParty(Myself)
+		GlobalLT("XA_LC_CorwinKalah", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_LC_CorwinKalahTimer", "LOCALS", ONE_ROUND)
+			SetGlobal("XA_LC_CorwinKalah", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalTimerExpired("XA_LC_CorwinKalahTimer", "LOCALS")
+		GlobalLT("XA_LC_CorwinKalahRemark", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinKalahRemark", "LOCALS", 1)
+			DisplayStringHead( Myself, @27)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Corwin Larceny Talk
+	IF
+		ActionListEmpty()
+		InParty(Myself)
+		GlobalGT("MaeVarWork", "GLOBAL", 0)
+		GlobalLT("XA_LC_CorwinLarceny", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_LC_CorwinLarcenyTimer", "LOCALS", ONE_ROUND)
+			//DisplayStringHead(Myself, ~Timer started~)
+			SetGlobal("XA_LC_CorwinLarceny", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalTimerExpired("XA_LC_CorwinLarcenyTimer", "LOCALS")
+		GlobalLT("XA_LC_CorwinLarcenyTalk", "LOCALS", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		ReputationGT(Player1,9) //Amulet
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinLarcenyTalk", "LOCALS", 1)
+			//DisplayStringHead(Myself, ~Start Dialog~)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalTimerExpired("XA_LC_CorwinLarcenyTimer", "LOCALS")
+		GlobalLT("XA_LC_CorwinLarcenyTalk", "LOCALS", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		ReputationLT(Player1,10) //Statue
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinLarcenyTalk", "LOCALS", 2)
+			//DisplayStringHead(Myself, ~Start Dialog~)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Gorge Tree Climb
+	IF
+		Global("OHD_GORGE_NTRJEX","OH5100",2)
+		GlobalLT("XA_LC_CorwinOH5100", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_ForceTreeTalk", "GLOBAL", 1)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Helped Ginia
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		Global("HelpGinia","GLOBAL",3)
+		GlobalLT("XA_LC_CorwinGinia", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinGinia", "GLOBAL", 1)
+			DisplayStringHead(Myself, @22)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+	
+	//{ See Statue
+	IF
+		GlobalLT("XA_LC_CorwinStatueTalk", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		OR(6)
+			See("statue01")
+			See("statue02")
+			See("statue03")
+			See("statue04")
+			See("statue05")
+			See("statue06")
+		OR(6)
+			Range("statue01", 10)
+			Range("statue02", 10)
+			Range("statue03", 10)
+			Range("statue04", 10)
+			Range("statue05", 10)
+			Range("statue06", 10)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinStatueTalk", "GLOBAL", 1)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Slapped Delcia
+	IF
+		ActionListEmpty()
+		GlobalGT("XA_LC_SlappedDelcia", "GLOBAL", 0)
+		GlobalLT("XA_LC_SlapTalk", "LOCALS", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		!See("Delcia")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_SlapTalk", "LOCALS", 1)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Entered De'Arnise Keep
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_LC_AR1300TimerSet", "LOCALS", 1)
+		OR(6)
+			AreaCheck("AR1301")
+			AreaCheck("AR1302")
+			AreaCheck("AR1303")
+			AreaCheck("AR1305")
+			AreaCheck("AR1306")
+			AreaCheck("AR1307")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_AR1300TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_LC_AR1300Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_AR1300Timer", "LOCALS")
+		GlobalLT("XA_LC_AR1300_Talk", "LOCALS", 1)
+		OR(6)
+			AreaCheck("AR1301")
+			AreaCheck("AR1302")
+			AreaCheck("AR1303")
+			AreaCheck("AR1305")
+			AreaCheck("AR1306")
+			AreaCheck("AR1307")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @21)	
+			SetGlobal("XA_LC_AR1300_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+	
+	//{ Entered Troll Hill
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_LC_AR1904TimerSet", "LOCALS", 1)
+		AreaCheck("AR1904")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_AR1904TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_LC_AR1904Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_AR1904Timer", "LOCALS")
+		GlobalLT("XA_LC_AR1904_Talk", "LOCALS", 1)
+		AreaCheck("AR1904")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @21)	
+			SetGlobal("XA_LC_AR1904_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+	
+	//{ Entered Demon Plane (Planar Sphere)
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_LC_AR0414TimerSet", "LOCALS", 1)
+		AreaCheck("AR0414")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_AR0414TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_LC_AR0414Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_AR0414Timer", "LOCALS")
+		GlobalLT("XA_LC_AR0414_Talk", "LOCALS", 1)
+		AreaCheck("AR0414")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @17)	
+			SetGlobal("XA_LC_AR0414_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+	
+	//{ Entered Maze
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_LC_AR1202TimerSet", "LOCALS", 1)
+		AreaCheck("AR1202")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_AR1202TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_LC_AR1202Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_AR1202Timer", "LOCALS")
+		GlobalLT("XA_LC_AR1202_Talk", "LOCALS", 1)
+		AreaCheck("AR1202")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @20)	
+			SetGlobal("XA_LC_AR1202_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Entered Illithid Lair
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_LC_AR2400TimerSet", "LOCALS", 1)
+		AreaCheck("AR2400")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_AR2400TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_LC_AR2400Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_AR2400Timer", "LOCALS")
+		GlobalLT("XA_LC_AR2400_Talk", "LOCALS", 1)
+		AreaCheck("AR2400")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @20)	
+			SetGlobal("XA_LC_AR2400_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Entered Beholder's Lair
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_LC_AR2101TimerSet", "LOCALS", 1)
+		AreaCheck("AR2101")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_AR2101TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_LC_AR2101Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_AR2101Timer", "LOCALS")
+		GlobalLT("XA_LC_AR2101_Talk", "LOCALS", 1)
+		AreaCheck("AR2101")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @17)	
+			SetGlobal("XA_LC_AR2101_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Entered Adventurer's Mart
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_LC_AR0702TimerSet", "LOCALS", 1)
+		AreaCheck("AR0702")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_AR0702TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_LC_AR0702Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_AR0702Timer", "LOCALS")
+		GlobalLT("XA_LC_AR0702_Talk", "LOCALS", 1)
+		AreaCheck("AR0702")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @19)	
+			SetGlobal("XA_LC_AR0702_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Entered Sewers
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_LC_AR0701TimerSet", "LOCALS", 1)
+		AreaCheck("AR0701")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_AR0701TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_LC_AR0701Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_AR0701Timer", "LOCALS")
+		GlobalLT("XA_LC_AR0701_Talk", "LOCALS", 1)
+		AreaCheck("AR0701")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @18)	
+			SetGlobal("XA_LC_AR0701_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Entered Planar Prison
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_LC_AR0516TimerSet", "LOCALS", 1)
+		AreaCheck("AR0516")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_AR0516TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_LC_AR0516Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_AR0516Timer", "LOCALS")
+		GlobalLT("XA_LC_AR0516_Talk", "LOCALS", 1)
+		AreaCheck("AR0516")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @17)	
+			SetGlobal("XA_LC_AR0516_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Entered Circus Tent (Illusion)
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_LC_AR0604TimerSet", "LOCALS", 1)
+		AreaCheck("AR0604")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_AR0604TimerSet", "LOCALS", 1)	
+			SetGlobalTimer("XA_LC_AR0604Timer", "LOCALS", ONE_ROUND)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_AR0604Timer", "LOCALS")
+		GlobalLT("XA_LC_AR0604_Talk", "LOCALS", 1)
+		AreaCheck("AR0604")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			DisplayStringHead(Myself, @16)	
+			SetGlobal("XA_LC_AR0604_Talk", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Neb Killed While Corwin in Party 
+	IF
+		ActionListEmpty()
+		!ActuallyInCombat()
+		Global("XA_LC_NebFight", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		GlobalLT("XA_LC_NebDead", "GLOBAL", 1)
+		OR(2)
+			Dead("Neb")
+			Dead("XANEB")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_NebDead", "GLOBAL", 1)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Checks if Dorn's patrons are dead
+	IF
+		ActionListEmpty()
+		GlobalLT("XA_LC_DornPatronsDead", "GLOBAL", 1)
+		Dead("ohdazoth")  // Azothet
+		Dead("ohdugoth")  // Ur-Gothoz
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_DornPatronsDead", "GLOBAL", 1)
+			Continue()
+	END
+	//}
+
+	//{ Wedding Hostile
+	IF 
+		ActionListEmpty()
+		Global("OHD_WEDDING_HOSTILE","OH5000",3)
+		GlobalLT("XA_LC_WeddingHostile", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_WeddingHostile", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinLeaveWedding", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+	
+	//{ Keldorn Wife Reconciled
+	IF 
+		ActionListEmpty()
+		Global("LadyMaria","GLOBAL",5)
+		!Global("XA_LC_KeldornMaria", "GLOBAL", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+		GlobalLT("XA_LC_Banter_CorwinKeldornOpt1", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Banter_CorwinKeldornOpt1", "GLOBAL", 1)
+			SetGlobal("XA_LC_KeldornMaria", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+	
+	//{ Svir Gnome Hostilities
+	IF
+		ActionListEmpty()
+		InParty(Myself)
+		Global("SvirHostile", "GLOBAL", 1)
+		!Global("XA_LC_CorwinHostile", "GLOBAL", 1)
+		!Global("XA_LC_LeftPartySvir", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinHostile", "GLOBAL", 1)
+			SetGlobal("XA_LC_LeftPartySvir", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Met with Drizzt - Corwin vouched
+	IF 
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CorwinVouchedDrizz", "GLOBAL", 1)
+		!InMyArea("C6DRIZZ")
+		!Dead("C6DRIZZ")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinVouchedDrizz", "GLOBAL", 2)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Grove Poisoning
+	IF
+		ActionListEmpty()
+		InParty(Myself)
+		Global("GrovePoisoned", "GLOBAL", 1)
+		!Global("XA_LC_CorwinHostile", "GLOBAL", 1)
+		!Global("XA_LC_LeftPartyGrove", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinHostle", "GLOBAL", 1)
+			SetGlobal("XA_LC_LeftPartyGrove", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Resurrection Gorge
+	IF
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("OHD_ritual_interjects","GLOBAL",0)
+		!InParty("dorn")  // Dorn
+		AreaCheck("oh5120")  // Dorn - Resurrection Gorge Tree Interior
+		OR(2)
+			Dead("ohdvern")  // Vernus
+			!Exists("ohdvern")  // Vernus
+		Range("RitualCircle",20)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("OHD_ritual_interjects","GLOBAL",1)
+			StartDialog("XACORWIJ",Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Slaver Stockade
+	IF 
+		Global("XA_LC_BGSlaverPlot", "GLOBAL", 1)
+		Global("XA_LC_CorwinSlaverPlot", "GLOBAL", 1)
+		AreaCheck("AR0405")
+		!InMyArea("girl2")
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			StartDialog("XACORWIJ", Player1)
+	END
+	//}
+
+	//{ Player's Soul Stolen
+	IF 
+		ActionListEmpty()
+		Global("OpenJonBedroom","GLOBAL",1)
+		GlobalLT("XA_LC_PlayerSoulStolen", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		GlobalLT("XA_LC_CorwinIrenicus", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_PlayerSoulStolen", "GLOBAL", 1)
+			SetGlobalTimer("XA_LC_OBJTimer1", "LOCALS", TWO_ROUNDS)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalTimerExpired("XA_LC_OBJTimer1", "LOCALS")
+		GlobalLT("XA_LC_PlayerSoulTalk", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_PlayerSoulTalk", "GLOBAL", 1)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+	
+	//{ Player Rescued Corwin in Spellhold
+	IF
+		ActionListEmpty()
+		Global("OpenJonBedroom","GLOBAL",1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		GlobalGT("XA_LC_CorwinIrenicus", "GLOBAL", 1)
+		GlobalLT("XA_LC_OBJTimer2Set", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_OBJTimer2Set", "LOCALS", 1)
+			SetGlobalTimer("XA_LC_OBJTimer2", "LOCALS", TWO_ROUNDS)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalTimerExpired("XA_LC_OBJTimer2", "LOCALS")
+		GlobalLT("XA_LC_PlayerRescueTalk", "LOCALS", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_PlayerRescueTalk", "LOCALS", 1)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	
+	IF 
+		GlobalTimerExpired("XA_LC_CorwinRejoinTimer", "LOCALS")
+		GlobalLT("XA_LC_CorwinIrenicusTalk", "LOCALS", 1)
+		IsValidForPartyDialogue(Player1)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinIrenicusTalk", "LOCALS", 1)
+			StartDialog("XACORWIP", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+	//{ Bodhi Killed
+	/* Checks if Corwin was in the party when Bodhi was killed */
+	IF 
+		ActionListEmpty()
+		Global("BodhiDead","GLOBAL",1)
+		IsValidForPartyDialogue("XACORWIN")
+		!Global("XA_LC_BodhiDead", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_LC_CorwinImoenSoulTimer", "GLOBAL", ONE_HOUR)
+			SetGlobal("XA_LC_BodhiDead", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Phaere Alone With Player
+	/* Checks if Corwin was in the party when the Player was alone with Phaere. */
+	IF 
+		GlobalGT("PhaereInnuendo","GLOBAL",1)
+		GlobalLT("XA_LC_AloneWithPhaere", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		!InMyArea("Phaere")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_AloneWithPhaere", "GLOBAL", 1)
+			SetGlobal("XA_LC_PhaereTalk", "GLOBAL", 1)
+			PlaySong(1001)
+			StartDialogue("XACORWIJ", PLAYER1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Firkraag Deal
+	/* Checks if Corwin was in the party when the deal with Firkraag was made. */
+	IF 
+		Global("FirkraagDeal","GLOBAL",1)
+		!Global("XA_LC_FirkraagDeal", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_FirkraagDeal", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinFirkraagDeal", "GLOBAL", 1)
+			//Dialog J-35
+			StartDialogue("XACORWIJ", PLAYER1)
+			SetInterrupt(TRUE)
+	END
+	//}
+	
+	//{ Bodhi Job 2
+	/* Checks if Corwin was in the party when the deal with Bodhi was made. Bodhi Job 2 */
+	IF 
+		Global("BodhiJob","GLOBAL",2)
+		!Global("XA_LC_BodhiDeal2", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_BodhiDeal2", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBodhiDeal", "GLOBAL", 1)
+			StartDialogue("XACORWIJ", PLAYER1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Bodhi Job 3
+	/* Checks if Corwin was in the party when the deal with Bodhi was made. Bodhi Job 3 */
+	IF 
+		Global("BodhiJob","GLOBAL",3)
+		!Global("XA_LC_BodhiDeal3", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_BodhiDeal3", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBodhiDeal", "GLOBAL", 1)
+			StartDialogue("XACORWIJ", PLAYER1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Bodhi Job 4
+	/* Checks if Corwin was in the party when the deal with Bodhi was made. Bodhi Job 4 */
+	IF 
+		Global("BodhiJob","GLOBAL",4)
+		!Global("XA_LC_BodhiDeal4", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_BodhiDeal4", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinBodhiDeal", "GLOBAL", 1)
+			StartDialogue("XACORWIJ", PLAYER1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+//} End Event Checks
+
+
+//{ 20: Corwin Sex Scripting
+	//{ Checks is Corwin is Able
+	IF
+		ActionListEmpty()
+		!Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
+		GlobalLT("XA_LC_CorwinBit", "GLOBAL", 1)
+		Gender(Player1, MALE)
+		!HPPercentLT(Myself, 50)
+		!HPPercentLT(Player1, 50)
+		Global("XA_LC_RohmaKidnapped", "GLOBAL", 0)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		GlobalLT("XA_LC_CorwinPregnant", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_OnlySleep", "GLOBAL", 0)
+			SetGlobal("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
+		OR(7)
+			GlobalGT("XA_LC_RohmaKidnapped", "GLOBAL", 0)
+			GlobalGT("XA_LC_CorwinBit", "GLOBAL", 0)
+			!Gender(Player1, MALE)
+			HPPercentLT(Myself, 50)
+			HPPercentLT(Player1, 50)
+			!Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+			GlobalGT("XA_LC_CorwinPregnant", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CorwinCanHaveSex", "GLOBAL", 0)
+			Continue()
+	END
+	//}
+
+	//{ Corwin Sex After Bodhi Experience
+	/* If Corwin has not already had sex with CHARNAME, she will ask for sex after being healed / resurrected (Bodhi Bite) */
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CorwinCleansed", "GLOBAL", 2) 
+		GlobalLT("XA_LC_TimesHadSex", "GLOBAL", 1)
+		!Global("XA_LC_CorwinSexBodhiTimerSet", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_LC_CorwinSexAfterBodhiTimer", "GLOBAL", ONE_DAY)
+			SetGlobal("XA_LC_CorwinSexBodhiTimerSet", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF 
+		ActionListEmpty()
+		GlobalTimerExpired("XA_LC_CorwinSexAfterBodhiTimer", "GLOBAL")
+		GlobalLT("XA_LC_TimesHadSex", "GLOBAL", 1)
+		GlobalLT("XA_LC_CorwinSexAfterBodhi", "GLOBAL", 1) //She has not asked for sex after Bodhi episode
+		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
+	THEN 
+		RESPONSE #100
+			SetGlobal("XA_LC_CorwinSexAfterBodhi", "GLOBAL", 1)
+			Continue()
+	END
+		
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CorwinSexAfterBodhi", "GLOBAL", 1)
+		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
+		!Range(Player1, 6)
+	THEN
+		RESPONSE #100
+			MoveToObject(Player1)
+			Continue()
+	END
+
+	IF 
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CorwinSexAfterBodhi", "GLOBAL", 1)
+		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
+		Range(Player1, 7)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			PlaySong(1003)
+			//Dialog J-51
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Corwin After Sex Interaction 1
+	IF
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CorwinSex_1", "GLOBAL", 3)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			Wait(1)
+			//Dialog J-44
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+	
+	//{ After Sex HP Boost
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CorwinSexBoost", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinSexBoost", "GLOBAL", 0)
+			SetGlobalTimer("XA_LC_CorwinSexTimer", "GLOBAL", THREE_DAYS)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
+			ApplySpellRES("bdrejuve","XACORWIN")
+			ApplySpellRES("bdrejuve",Player1)
+			ChangeStat("XACORWIN", MINHITPOINTS, 5, ADD)
+			ChangeStat(Player1, MINHITPOINTS, 5, ADD)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	//}
+
+	//{ Corwin Sex Second Time
+	IF
+		ActionListEmpty()
+		GlobalGT("XA_LC_TimesHadSex", "GLOBAL", 0)
+		GlobalLT("XA_LC_Sex2TimerSet", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_LC_CorwinSex_2_Timer", "GLOBAL", FOUR_DAYS)
+			SetGlobal("XA_LC_Sex2TimerSet", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		GlobalTimerExpired("XA_LC_CorwinSex_2_Timer", "GLOBAL")
+		GlobalLT("XA_LC_CorwinSex_2", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		GlobalLT("XA_LC_CorwinSex2_Init", "GLOBAL", 1)
+		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinSex2_Init", "GLOBAL", 1)
+			PlaySong(1003)
+			//Dialog J-46
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+//} End Corwin Sex Scripting
+

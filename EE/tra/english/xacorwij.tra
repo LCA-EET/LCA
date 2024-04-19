@@ -392,10 +392,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @414 = ~You've no idea how much this hurts. Allies, to me!~
 @415 = ~My friend, I wish there was some way for me to help you... just keep it together. We'll find a way through this. Goldander — we'll help you.~
 @416 = ~~
-@417 = ~We need to talk.~
-@418 = ~I don't like the way things are going. I didn't come all this way to watch you terrorize innocents. If things get any worse, you'll find yourself on your own. Let's go.~
-@419 = ~What's on your mind?~
-@420 = ~I'm sorry. I won't be party to this any longer. When you clean up your act, you can find me in the Athkatla magistrate.~ 
+
 @421 = ~~
 @422 = ~Hahah, wait... you *are* joking, right?~
 @423 = ~~
@@ -1429,7 +1426,7 @@ You and Schael shared a tender moment; it seems that the two of you are still de
 @1443 = ~Of course she does. I am the *ahem* hero and defender of Baldur's Gate, after all.~
 @1444 = ~~
 @1445 = ~And I'd rather you be open with me. Fine. Let's go.~
-@1446 = ~I'm sorry. I can't be a part of this any longer. If you ever clean up your act, come and see me.~
+
 @1447 = ~(You help her back to her feet. She appears to be in very bad shape. Her eyes are bloodshot, she's covered in sweat, and her skin is pale and cold to the touch.)~ 
 
 @1449 = ~So am I... look at me complaining. You've been through the ringer and you keep moving forward. You'd have made a great officer, you know.~
@@ -1709,32 +1706,12 @@ Schael needs to send a message to the Dukes to inform them of our progress thus 
 @1721 = ~This reminds me of the time when —~
 @1722 = ~Jan. I'll miss you, too.~
 @1723 = ~Aye. Before you go Schael, take this recipe. It's for a buttered turnip puree. My children loved it when they were wee babies.~
-@1724 = ~<CHARNAME>. We need to talk.~ [xalc1152]
-@1725 = ~What's on your mind, love?~
-@1726 = ~Sure — what is it?~
-@1727 = ~You made it clear to me, I thought, that you wanted us to be together.~
+
+
 @1728 = ~...~
 @1729 = ~I, um... I don't know anything about that.~
 @1730 = ~~
-@1731 = ~Why, then, is Aerie spending so much time with you? Do you have feelings for her? She's a sweet girl, and you shouldn't lead her on.~
-@1732 = ~Why, then, is Neera spending so much time with you? Do you have feelings for her? She's a sweet girl, and you shouldn't lead her on.~ 
-@1733 = ~Why, then, is Jaheira spending so much time with you? Do you have feelings for her? She's been through a lot with the loss of her husband, and you shouldn't lead her on.~
-@1734 = ~She's just a friend. You're the woman I love Schael, not her. I'll make it clear to her, in case it wasn't already.~
-@1735 = ~I do love her. I'm sorry, Schael. I thought you and I had something, but I realize now that I was mistaken.~
-@1736 = ~Fine. Be with her. I can't tell you how much this hurts... but I appreciate your honesty. Let's go.~ 
-@1737 = ~Fine. Be with him. I can't tell you how much this hurts... but I appreciate your honesty. Let's go.~ 
-@1738 = ~That's all I needed to hear. Let's go.~ [xalc1153]
-@1739 = ~Why, then, is Rasaad spending so much time with you? Do you have feelings for him? You shouldn't lead him on.~
-@1740 = ~He's just a friend. You're the one I love Schael, not him. I'll make it clear to him, in case it wasn't already.~
-@1741 = ~I do love him. I'm sorry, Schael. I thought you and I had something, but I realize now that I was mistaken.~
-@1742 = ~Why, then, is Anomen spending so much time with you? Do you have feelings for that insufferable braggart? You shouldn't lead him on.~
-@1743 = ~Why, then, is Hexxat spending so much time with you? Do you have feelings for that monster?~ 
-@1744 = ~Unbelievable! Irenicus must've done a number on your senses. There's no other explanation for you choosing that beast over me. As soon as this mission is over, we're through.~ 
-@1745 = ~Why, then, is Dorn spending so much time with you? Do you have feelings for that filthy blackguard?~ 
-@1746 = ~You're the one I love Schael, not him. I'll make it clear to him, in case it wasn't already.~
-@1747 = ~You're the one I love Schael, not her. I'll make it clear to her, in case it wasn't already.~
-@1748 = ~Why, then, is Viconia spending so much time with you? Do you have feelings for that wretched drow?~ 
-@1749 = ~Unbelievable! Irenicus must've done a number on your senses. There's no other explanation for you choosing that ... that slut, over me. As soon as this mission is over, we're through.~ 
+
 @1750 = ~~
 @1751 = ~(She gives you a kiss on the cheek.)~
 @1752 = ~Let's go.~ [xalc1188]

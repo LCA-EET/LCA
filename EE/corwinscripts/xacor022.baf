@@ -1,0 +1,28 @@
+//{ Banter Error - if NBI and Pending are greater than zero for more than 10 cycles, something is wrong. Reset the timer in this case.
+
+IF 
+	ActionListEmpty()
+	InParty(Myself)
+	GlobalGT("XA_LC_Banter_NextInteraction", "LOCALS", 0)
+	GlobalGT("XA_LC_Banter_Pending", "LOCALS", 0)
+	GlobalLT("XA_LC_BanterProblemTick", "LOCALS", 10)
+THEN
+	RESPONSE #100
+		IncrementGlobal("XA_LC_BanterProblemTick", "LOCALS", 1)
+		Continue()
+END
+
+IF 
+	ActionListEmpty()
+	InParty(Myself)
+	GlobalGT("XA_LC_Banter_NextInteraction", "LOCALS", 0)
+	GlobalGT("XA_LC_Banter_Pending", "LOCALS", 0)
+	GlobalGT("XA_LC_BanterProblemTick", "LOCALS", 9)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_BanterProblemTick", "LOCALS", 0)
+		SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+		////DisplayStringHead(Myself, ~Error. Resetting Banter Timer.~)
+		Continue()
+END
+//}

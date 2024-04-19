@@ -1,0 +1,18 @@
+//{	Rejoin processing - triggered in XACORWIN.D and XACORWIP.D
+IF 
+	//!InParty(Myself)
+	ActionListEmpty()
+	Global("XA_LC_CorwinRejoinProcessed", "GLOBAL", 1)
+THEN 
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		JoinParty()
+		SetGlobal("XA_LC_CorwinJoined","LOCALS",1)
+		SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 0)
+		SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+		SetGlobal("XA_LC_CorwinRepWarning", "GLOBAL", 0)
+		SetGlobal("XA_LC_CorwinRejoinProcessed", "GLOBAL", 2)
+		////DisplayStringHead(Myself, ~DEBUG: 07-00~)
+		SetInterrupt(TRUE)
+END
+//}

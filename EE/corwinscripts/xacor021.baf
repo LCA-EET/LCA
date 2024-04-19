@@ -1,0 +1,33 @@
+//{ Sarevok Banters
+	IF
+		ActionListEmpty()
+		Global("XA_LC_Banter_Pending", "LOCALS", 22)
+		Global("XA_LC_CanTalkToSarevok", "LOCALS", 1)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			IncrementGlobal("XA_LC_Banter_CorwinSarevok", "GLOBAL", 1)
+			Interact("Sarevok")
+			ActionOverride("Sarevok", Interact("XACORWIN"))
+			SetInterrupt(TRUE)
+	END
+//}
+	
+//{ Caelar Banters
+	IF
+		ActionListEmpty()
+		Global("XA_LC_Banter_Pending", "LOCALS", 23)
+		Global("XA_LC_CanTalkToCaelar", "LOCALS", 1)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			IncrementGlobal("XA_LC_Banter_CorwinCaelar", "GLOBAL", 1)
+			Interact("XACAELAR")
+			ActionOverride("XACAELAR", Interact("XACORWIN"))
+			SetInterrupt(TRUE)
+	END
+//}

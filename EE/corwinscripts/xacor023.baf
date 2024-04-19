@@ -1,0 +1,740 @@
+
+//{ Mazzy Interactions
+
+	//{ Trademeet Archery Competition Ended - Corwin Won 
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CanTalkToMazzy", "LOCALS", 1)
+		Global("XA_LC_TM_ArcheryChallenge", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			//Dialog B-3A
+			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			ActionOverride("Mazzy", StartDialog("MAZZYJ", Player1))
+	END
+	//}
+
+	//{ Trademeet Archery Competition Ended - Mazzy Won
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CanTalkToMazzy", "LOCALS", 1)
+		Global("XA_LC_TM_ArcheryChallenge", "GLOBAL", 2)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			//Dialog B-3B
+			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			StartDialog("XACORWIB", Player1)
+	END
+	//}
+
+//} End Mazzy Interactions
+
+//{ Cernd Interactions
+
+	//{ Compliment Child
+	IF
+		ActionListEmpty()
+		Global("CerndBaby","GLOBAL",1)
+		GlobalLT("XA_LC_CorwinCerndBaby", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToCernd", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinCerndBaby", "GLOBAL", 1)
+			SetGlobalTimer("XA_LC_CorwinCerndBabyTimer", "LOCALS", THREE_HOURS)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		ActionListEmpty()
+		Global("CerndBaby","GLOBAL", 1)
+		Global("XA_LC_CorwinCerndBaby", "GLOBAL", 1)
+		GlobalTimerExpired("XA_LC_CorwinCerndBabyTimer", "LOCALS")
+		Global("XA_LC_CanTalkToCernd", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			SetGlobal("XA_LC_CorwinCerndBaby", "GLOBAL", 2)
+			Interact("Cernd")
+			SetInterrupt(TRUE)
+	END
+	//}
+//} End Cernd Interactions
+
+//{ Valygar Interactions
+		
+	//{ Lavok Dead
+	IF
+		ActionListEmpty()
+		//GlobalTimerExpired("XA_LC_PauseBeforeBanterTimer", "LOCALS")
+		Global("XA_LC_CanTalkToValygar", "LOCALS", 1)
+		Global("LavokDead", "GLOBAL", 1)
+		!Global("XA_LC_CorwinLavokTimerSet", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_LC_CorwinLavokTimer", "GLOBAL", ONE_HOUR)
+			SetGlobal("XA_LC_CorwinLavokTimerSet", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+	END
+	
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToValygar", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_CorwinLavokTimer", "GLOBAL")
+		GlobalLT("XA_LC_CorwinValygarLavok", "GLOBAL", 1)
+		GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinValygarLavok", "GLOBAL", 1)
+			//Dialog B-39
+			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			IncrementGlobal("XA_LC_Banter_CorwinValygar", "GLOBAL", 1)
+			Interact("Valygar")
+			SetInterrupt(TRUE)
+	END
+	//}
+	
+	//{ Valygar Return BG
+	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_LC_CorwinValygarTimer", "GLOBAL")
+		Global("XA_LC_CanTalkToValygar", "LOCALS", 1)
+		GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
+		GlobalLT("XA_LC_CorwinValygarBG", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinValygarBG", "GLOBAL", 1)
+			ActionOverride("Valygar", StartDialog("VALYGARJ", "XACORWIN"))
+			SetInterrupt(TRUE)
+	END
+	//}
+	
+//} End Valygar Interactions
+
+//{ Hexxat Interactions
+	
+	//{ First Interaction
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToHexxat", "LOCALS", 1)
+		Global("XA_LC_CorwinHexxat", "GLOBAL", 2)
+		GlobalTimerExpired("XA_LC_CorwinHexxatTimer", "LOCALS")
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			SetGlobal("XA_LC_CorwinHexxat", "GLOBAL", 3)
+			Interact("Hexxat")
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Second Interaction
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToHexxat", "LOCALS", 1)
+		Global("XA_LC_CorwinHexxat", "GLOBAL", 4)
+		GlobalTimerExpired("XA_LC_CorwinHexxatTimer", "LOCALS")
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			SetGlobal("XA_LC_CorwinHexxat", "GLOBAL", 5)
+			StartDialogue("XACORWIJ","Hexxat")
+			SetInterrupt(TRUE)
+	END
+	//}
+
+//} End Hexxat Interaction
+
+//{ Neera Interactions
+
+	//{ Neera - Corwin Second Interaction 
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToNeera", "LOCALS", 1)
+		Global("XA_LC_CanTalkToImoen2", "LOCALS", 1)
+		GlobalGT("XA_LC_Banter_CorwinNeera", "GLOBAL", 2)
+		GlobalLT("XA_LC_NeeraBanterBump", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_NeeraBanterBump", "LOCALS", 1)
+			SetGlobalTimer("XA_LC_CorwinNeeraImoenTimer", "LOCALS", ONE_DAY)
+			SetInterrupt(TRUE)
+	END
+	
+	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_LC_CorwinNeeraImoenTimer", "LOCALS")
+		Global("XA_LC_CanTalkToNeera", "LOCALS", 1)
+		Global("XA_LC_CanTalkToImoen2", "LOCALS", 1)
+		GlobalLT("XA_LC_CorwinNeeraImoen", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinNeeraImoen", "GLOBAL", 1)
+			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			Interact("Neera")
+			SetInterrupt(TRUE)
+	END
+	//}
+
+//} End Neera Interactions
+
+//{ Dorn Interactions
+
+	//{ Dorn / Corwin Love Conflict
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToDorn", "LOCALS", 1)
+		OR(2)
+			Global("DornRomanceActive","GLOBAL",1)
+			Global("DornRomanceActive","GLOBAL",2)
+		GlobalGT("DornLovetalks","GLOBAL",9)
+		OR(2)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",1)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
+		Global("OHD_corwinconflict","GLOBAL",0)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			RealSetGlobalTimer("OHD_corwinconflict_timer","GLOBAL",NINE_HOURS)
+			SetGlobal("OHD_corwinconflict","GLOBAL",1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToDorn", "LOCALS", 1)
+		OR(2)
+			Global("DornRomanceActive","GLOBAL",1)
+			Global("DornRomanceActive","GLOBAL",2)
+		OR(2)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",1)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
+		Global("OHD_corwinconflict","GLOBAL",1)
+		RealGlobalTimerExpired("OHD_corwinconflict_timer","GLOBAL")
+	THEN
+		RESPONSE #100
+			SetGlobal("OHD_corwinconflict","GLOBAL",2)
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_CanTalkToDorn", "LOCALS", 1)
+		!AreaType(DUNGEON)
+		!See([ENEMY])
+		Global("OHD_corwinconflict","GLOBAL",2)
+		See("Dorn")
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			//Dialog B-0
+			StartDialog("XACORWIB", Player1)
+	END
+
+	IF
+		Global("OHD_sexreactions","GLOBAL",1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)  
+		!Global("XA_LC_DornSex", "GLOBAL", 1)
+		!ActuallyInCombat()
+		OR(2)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",1)
+			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_DornSex", "GLOBAL", 1)
+			SetGlobal("XA_LC_ComplainDornSex", "GLOBAL", 1)
+			//Dialog J-25
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+	
+//}
+
+//{ Keldorn Interactions 
+
+	//{ Keldorn Audamar
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToKeldorn", "LOCALS", 1)
+		GlobalLT("XA_LC_KeldornAudamarTimerSet", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_KeldornAudamarTimerSet", "GLOBAL", 1)
+			SetGlobalTimer("XA_LC_KeldornAudamarTimer", "GLOBAL", SIX_HOURS)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToKeldorn", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_KeldornAudamarTimer", "GLOBAL")
+		GlobalLT("XA_LC_Banter_CorwinKeldInitial", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Banter_CorwinKeldInitial", "GLOBAL", 1)
+			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			ActionOverride("Keldorn", StartDialog("KELDORJ", "XACORWIN"))
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Corwin Mad at Keldorn - Underdark
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToKeldorn", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_CorwinScoldKeldornTimer", "LOCALS")
+		Global("XA_LC_CorwinCoverUD", "GLOBAL", 1)
+		GlobalLT("DrowCityHostile","GLOBAL",1)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinCoverUD", "GLOBAL", 2)
+			//Dialog B-61
+			Interact("Keldorn")
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Keldorn - Corwin Optional Interaction (Reconciled with Maria) 
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToKeldorn", "LOCALS", 1)
+		Global("XA_LC_Banter_CorwinKeldornOpt1", "GLOBAL", 1)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Banter_CorwinKeldornOpt1", "GLOBAL", 2)
+			SetGlobalTimer("XA_LC_Banter_CorwinKeldornOpt1", "LOCALS", ONE_HOUR)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToKeldorn", "LOCALS", 1)
+		Global("XA_LC_Banter_CorwinKeldornOpt1", "GLOBAL", 2)
+		GlobalTimerExpired("XA_LC_Banter_CorwinKeldornOpt1", "LOCALS")
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			//Dialog B-62
+			SetGlobal("XA_LC_Banter_CorwinKeldornOpt1", "GLOBAL", 3)
+			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			Interact("Keldorn")
+			SetInterrupt(TRUE)
+	END
+	//}
+
+//} End Keldorn Interactions
+
+//{ Edwin Interactions
+	
+	//{ Corwin Edwin Thay Interaction
+
+	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_LC_CorwinEdwinThayTimer", "GLOBAL")
+		GlobalLT("XA_LC_CorwinEdwinThay", "GLOBAL", 1)
+		Global("XA_LC_CanTalkToEdwin", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinEdwinThay", "GLOBAL", 1)
+			//Dialog B-54
+			Interact("Edwin")
+			SetInterrupt(TRUE)
+	END
+	//}
+
+//} End Edwin Interactions
+
+//{ Imoen Interactions
+
+	//{ Imoen Soul Returned
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToImoen2", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_CorwinImoenSoulTimer", "GLOBAL")
+		GlobalLT("XA_LC_CorwinImoenSoulTalk", "GLOBAL", 1)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinImoenSoulTalk", "GLOBAL", 1)
+			//Dialogs B-50, B-51
+			Interact("Imoen2")
+			SetInterrupt(TRUE)
+	END
+	//}
+
+//} End Imoen Interactions
+
+//{ Corwin / Player Interactions
+
+	//{ Hexxat in Party
+	IF
+		ActionListEmpty()
+		InParty(Myself)
+		InPartyAllowDead("Hexxat")
+		GlobalLT("XA_LC_CorwinHexxatTimerSet", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinHexxatTimerSet", "LOCALS", 1)
+			SetGlobalTimer("XA_LC_CorwinHexxatTimer", "LOCALS", FOUR_HOURS)
+			SetInterrupt(TRUE)
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinHexxatTimerSet", "LOCALS", 1)
+			SetGlobalTimer("XA_LC_CorwinHexxatTimer", "LOCALS", EIGHT_HOURS)
+			SetInterrupt(TRUE)
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinHexxatTimerSet", "LOCALS", 1)
+			SetGlobalTimer("XA_LC_CorwinHexxatTimer", "LOCALS", TWELVE_HOURS)
+			SetInterrupt(TRUE)
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinHexxatTimerSet", "LOCALS", 1)
+			SetGlobalTimer("XA_LC_CorwinHexxatTimer", "LOCALS", SIXTEEN_HOURS)
+			SetInterrupt(TRUE)
+	END
+	
+	IF
+		ActionListEmpty()
+		InParty(Myself)
+		InPartyAllowDead("Hexxat")
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_CorwinHexxatTimer", "LOCALS")
+		GlobalLT("XA_LC_CorwinHexxat", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinHexxat", "GLOBAL", 1)
+			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Corwin Sees Player for the First Time Since SoD
+	IF
+		GlobalLT("XA_LC_CorwinReunited", "GLOBAL", 1)
+		!Range(Player1, 6)
+		ActionListEmpty()
+	THEN
+		RESPONSE #100
+			MoveToObject(Player1)
+			Continue()
+	END
+	
+	IF
+		GlobalLT("XA_LC_CorwinReunited", "GLOBAL", 1)
+		See(Player1)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			ActionOverride(Player1, FaceObject("XACORWIN"))
+			PlaySong(1002)
+			// Dialog I-1
+			StartDialog("XACORWIN", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Scold Player UD - Party
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_CorwinScoldPartyTimer", "LOCALS")
+		Global("XA_LC_CorwinCoverUD_Party", "GLOBAL", 1)
+		GlobalLT("DrowCityHostile","GLOBAL",1)
+		!InMyArea("Phaere")
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinCoverUD_Party", "GLOBAL", 2)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Scold Player UD
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_CorwinScoldPlayerTimer", "LOCALS")
+		Global("XA_LC_CorwinCoverUD_Player", "GLOBAL", 1)
+		GlobalLT("DrowCityHostile","GLOBAL",1)
+		!InMyArea("Phaere")
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinCoverUD_Player", "GLOBAL", 2)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	
+//} End Player Interactions
+
+
+//{ 21: Corwin Bite Disease Interactions
+
+	//{ First Bit
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CorwinBit", "GLOBAL", 1)
+		!ActuallyInCombat()
+		IsValidForPartyDialog(Player1)
+	THEN
+		RESPONSE #100
+			////DisplayStringHead(Myself, ~DEBUG_018~)
+			SetGlobal("XA_LC_CorwinBit", "GLOBAL", 2)
+			Continue()
+	END
+
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CorwinBit", "GLOBAL", 2)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		!Range(Player1, 6)
+	THEN
+		RESPONSE #100
+			////DisplayStringHead(Myself, ~DEBUG_019~)
+			MoveToObject(Player1)
+			Continue()
+	END
+
+	IF 
+		Global("XA_LC_CorwinBit", "GLOBAL", 2)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Range(Player1, 7)
+	THEN
+		RESPONSE #100
+			//Dialog J-31
+			StartDialog("XACORWIJ", Player1)
+	END
+	//}
+
+	//{ Bite Death Warning 2
+	IF 
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CorwinBit", "GLOBAL", 3)
+		GlobalTimerExpired("XA_LC_CorwinBitTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinBit", "GLOBAL", 4)
+			//Dialog J-32
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Bite Death Warning 3
+	IF 
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CorwinBit", "GLOBAL", 5)
+		GlobalTimerExpired("XA_LC_CorwinBitTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinBit", "GLOBAL", 6)
+			//Dialog J-33
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Death from Bite
+	IF 
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CorwinBit", "GLOBAL", 7)
+		GlobalTimerExpired("XA_LC_CorwinBitTimer", "GLOBAL")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinBit", "GLOBAL", 8)
+			//Dialog J-34
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Corwin Resurrected At Shadow Temple
+	IF 
+		!InParty(Myself)
+		Global("XA_LC_CorwinCleansed", "GLOBAL", 1)
+		GlobalGT("XA_LC_CorwinBit", "GLOBAL", 0)
+		See(Player1)
+	THEN
+		RESPONSE #100
+			//Dialog P-6
+			SetInterrupt(FALSE)
+			PlaySong(1002)
+			Wait(1)
+			StartDialogNoSet(Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Corwin Bit - Apply Disease
+	/* Corwin Bite Disease */
+	/* This will reapply the disease while CorwinBit is greater than 0. CorwinBit is set to zero when Corwin is cleansed (or resurrected in the Shadow Temple). */
+
+	IF 
+		ActionListEmpty()
+		GlobalGT("XA_LC_CorwinBit", "GLOBAL", 0)
+		!CheckSpellState(Myself, DISEASED)
+	THEN 
+		RESPONSE #100
+			////DisplayStringHead(Myself, ~DEBUG_016~)
+			ForceSpellRES("bdisease",Myself)
+			Continue()
+	END
+	//}
+
+	//{ Corwin Cured from Bodhi Disease
+	/* Corwin Disease Cured */
+	// Might need to re-write this. Concerned that if the script is interrupted, stat gains could erroneously continue
+	IF 
+		ActionListEmpty()
+		Global("XA_LC_CorwinCleansed", "GLOBAL", 2)
+		GlobalLT("XA_LC_CorwinCured", "GLOBAL", 1)
+	THEN 
+		RESPONSE #100
+			//ForceSpell("XACORWIN",CLERIC_CURE_DISEASE)
+			////DisplayStringHead(Myself, ~DEBUG_017~)
+			SetInterrupt(FALSE)
+			ChangeStat(Myself,CON,1,ADD)
+			ChangeStat(Myself,DEX,1,ADD)
+			ChangeStat(Myself,STR,1,ADD)
+			ChangeStat(Myself,CHR,1,ADD)
+			ReallyForceSpell(Myself,CLERIC_CURE_DISEASE)
+			SetGlobal("XA_LC_CorwinCured", "GLOBAL", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	//}
+
+	//{ Corwin Healed with Bodhi's Death
+	/* This handles Bodhi's death when Corwin was bit, is still alive, and in the party. */
+	IF
+		InParty(Myself)
+		GlobalGT("XA_LC_CorwinBit", "GLOBAL", 0)
+		Global("BodhiDead","GLOBAL",1)
+		!ActuallyInCombat()
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			ClearAllActions()
+			StartCutSceneMode()
+			StartCutSceneEx("xacs09a", FALSE)
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Party Concerned Corwin Sick
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		GlobalGT("XA_LC_CorwinBit", "GLOBAL", 0)
+		GlobalTimerExpired("XA_LC_CorwinSickPartyTimer", "GLOBAL")
+		GlobalLT("XA_LC_CorwinPartySick", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CorwinPartySick", "GLOBAL", 1)
+			Continue()
+	END
+	
+	IF
+		Global("XA_LC_CorwinPartySick", "GLOBAL", 1)
+		IsValidForPartyDialogue("Jaheira")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinSick_Jaheira", "GLOBAL", 1)
+			//Dialog B-6
+			ActionOverride("JAHEIRA", StartDialog("JAHEIRAJ", "XACORWIN"))
+			SetInterrupt(TRUE)
+	END
+	
+	IF
+		Global("XA_LC_CorwinPartySick", "GLOBAL", 1)
+		IsValidForPartyDialogue("Aerie")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinSick_Aerie", "GLOBAL", 1)
+			//Dialog B-5
+			ActionOverride("AERIE", StartDialog("AERIEJ", "XACORWIN"))
+			SetInterrupt(TRUE)
+	END
+
+	IF
+		Global("XA_LC_CorwinPartySick", "GLOBAL", 1)
+		IsValidForPartyDialogue("Korgan")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinSick_Korgan", "GLOBAL", 1)
+			//Dialog B-7
+			ActionOverride("KORGAN", StartDialog("KORGANJ", Player1))
+			SetInterrupt(TRUE)
+	END
+	
+	IF
+		Global("XA_LC_CorwinPartySick", "GLOBAL", 1)
+		IsValidForPartyDialogue("Imoen2")
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinSick_Imoen", "GLOBAL", 1)
+			//Dialog B-8
+			ActionOverride("IMOEN2", StartDialog("IMOEN2J", "XACORWIN"))
+			SetInterrupt(TRUE)
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CorwinPartySick", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CorwinPartySick", "GLOBAL", 2)
+			Continue()
+	END
+	//}
+
+//} End Corwin Disease Interactions

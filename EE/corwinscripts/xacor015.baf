@@ -1,0 +1,540 @@
+
+	//{ Can Talk to Aerie
+	IF
+		ActionListEmpty()
+		See("Aerie")
+		IsValidForPartyDialogue("Aerie")
+		!Global("XA_LC_CanTalkToAerie", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToAerie", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToAerie", "LOCALS", 1)
+		OR(3)	
+			!See("Aerie")
+			!IsValidForPartyDialogue("Aerie")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToAerie", "LOCALS", 0)
+			Continue()
+	END
+	//}
+	
+	//{ Can Talk to Anomen
+	IF
+		ActionListEmpty()
+		See("Anomen")
+		IsValidForPartyDialogue("Anomen")
+		!Global("XA_LC_CanTalkToAnomen", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToAnomen", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToAnomen", "LOCALS", 1)
+		OR(3)	
+			!See("Anomen")
+			!IsValidForPartyDialogue("Anomen")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToAnomen", "LOCALS", 0)
+			Continue()
+	END
+	//}
+		
+	//{ Can Talk to Cernd
+	IF
+		ActionListEmpty()
+		See("Cernd")
+		IsValidForPartyDialogue("Cernd")
+		!Global("XA_LC_CanTalkToCernd", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToCernd", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToCernd", "LOCALS", 1)
+		OR(3)	
+			!See("Cernd")
+			!IsValidForPartyDialogue("Cernd")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToCernd", "LOCALS", 0)
+			Continue()
+	END
+	//}
+	
+	//{ Can Talk to Dorn
+	IF
+		ActionListEmpty()
+		See("Dorn")
+		IsValidForPartyDialogue("Dorn")
+		!Global("XA_LC_CanTalkToDorn", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToDorn", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToDorn", "LOCALS", 1)
+		OR(3)	
+			!See("Dorn")
+			!IsValidForPartyDialogue("Dorn")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToDorn", "LOCALS", 0)
+			Continue()
+	END
+	//}
+
+	//{ Can Talk to Edwin
+	IF
+		ActionListEmpty()
+		See("Edwin")
+		IsValidForPartyDialogue("Edwin")
+		!Global("XA_LC_CanTalkToEdwin", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToEdwin", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToEdwin", "LOCALS", 1)
+		OR(3)	
+			!See("Edwin")
+			!IsValidForPartyDialogue("Edwin")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToEdwin", "LOCALS", 0)
+			Continue()
+	END
+	//}
+
+	//{ Can Talk to HaerDalis
+	IF
+		ActionListEmpty()
+		See("HaerDalis")
+		IsValidForPartyDialogue("HaerDalis")
+		!Global("XA_LC_CanTalkToHaerDalis", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToHaerDalis", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToHaerDalis", "LOCALS", 1)
+		OR(3)	
+			!See("HaerDalis")
+			!IsValidForPartyDialogue("HaerDalis")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToHaerDalis", "LOCALS", 0)
+			Continue()
+	END
+	//}
+		
+	//{ Can Talk to Hexxat
+	IF
+		ActionListEmpty()
+		See("Hexxat")
+		IsValidForPartyDialogue("Hexxat")
+		!Global("XA_LC_CanTalkToHexxat", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToHexxat", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToHexxat", "LOCALS", 1)
+		OR(3)	
+			!See("Hexxat")
+			!IsValidForPartyDialogue("Hexxat")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToHexxat", "LOCALS", 0)
+			Continue()
+	END
+	//}
+	
+	//{ Can Talk to Imoen2
+	IF
+		ActionListEmpty()
+		See("Imoen2")
+		IsValidForPartyDialogue("Imoen2")
+		!Global("XA_LC_CanTalkToImoen2", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToImoen2", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToImoen2", "LOCALS", 1)
+		OR(3)	
+			!See("Imoen2")
+			!IsValidForPartyDialogue("Imoen2")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToImoen2", "LOCALS", 0)
+			Continue()
+	END
+	//}
+
+	//{ Can Talk to Jaheira
+	IF
+		ActionListEmpty()
+		See("Jaheira")
+		IsValidForPartyDialogue("Jaheira")
+		!Global("XA_LC_CanTalkToJaheira", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToJaheira", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToJaheira", "LOCALS", 1)
+		OR(3)	
+			!See("Jaheira")
+			!IsValidForPartyDialogue("Jaheira")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToJaheira", "LOCALS", 0)
+			Continue()
+	END
+	//}
+	
+	//{ Can Talk to Jan
+	IF
+		ActionListEmpty()
+		See("Jan")
+		IsValidForPartyDialogue("Jan")
+		!Global("XA_LC_CanTalkToJan", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToJan", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToJan", "LOCALS", 1)
+		OR(3)	
+			!See("Jan")
+			!IsValidForPartyDialogue("Jan")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToJan", "LOCALS", 0)
+			Continue()
+	END
+	//}
+		
+	//{ Can Talk to Keldorn
+	IF
+		ActionListEmpty()
+		See("Keldorn")
+		IsValidForPartyDialogue("Keldorn")
+		!Global("XA_LC_CanTalkToKeldorn", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToKeldorn", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToKeldorn", "LOCALS", 1)
+		OR(3)	
+			!See("Keldorn")
+			!IsValidForPartyDialogue("Keldorn")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToKeldorn", "LOCALS", 0)
+			Continue()
+	END
+	//}
+	
+	//{ Can Talk to Korgan
+	IF
+		ActionListEmpty()
+		See("Korgan")
+		IsValidForPartyDialogue("Korgan")
+		!Global("XA_LC_CanTalkToKorgan", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToKorgan", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToKorgan", "LOCALS", 1)
+		OR(3)	
+			!See("Korgan")
+			!IsValidForPartyDialogue("Korgan")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToKorgan", "LOCALS", 0)
+			Continue()
+	END
+	//}
+
+	//{ Can Talk to Mazzy
+	IF
+		ActionListEmpty()
+		See("Mazzy")
+		IsValidForPartyDialogue("Mazzy")
+		!Global("XA_LC_CanTalkToMazzy", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToMazzy", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToMazzy", "LOCALS", 1)
+		OR(3)	
+			!See("Mazzy")
+			!IsValidForPartyDialogue("Mazzy")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToMazzy", "LOCALS", 0)
+			Continue()
+	END
+	//}
+	
+	//{ Can Talk to Minsc
+	IF	
+		ActionListEmpty()
+		See("Minsc")
+		IsValidForPartyDialogue("Minsc")
+		!Global("XA_LC_CanTalkToMinsc", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToMinsc", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToMinsc", "LOCALS", 1)
+		OR(3)	
+			!See("Minsc")
+			!IsValidForPartyDialogue("Minsc")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToMinsc", "LOCALS", 0)
+			Continue()
+	END
+	//}
+	
+	//{ Can Talk to Nalia
+	IF
+		ActionListEmpty()
+		See("Nalia")
+		IsValidForPartyDialogue("Nalia")
+		!Global("XA_LC_CanTalkToNalia", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToNalia", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToNalia", "LOCALS", 1)
+		OR(3)	
+			!See("Nalia")
+			!IsValidForPartyDialogue("Nalia")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToNalia", "LOCALS", 0)
+			Continue()
+	END
+	//}
+	
+	//{ Can Talk to Neera
+	IF
+		ActionListEmpty()
+		See("Neera")
+		IsValidForPartyDialogue("Neera")
+		!Global("XA_LC_CanTalkToNeera", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToNeera", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToNeera", "LOCALS", 1)
+		OR(3)	
+			!See("Neera")
+			!IsValidForPartyDialogue("Neera")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToNeera", "LOCALS", 0)
+			Continue()
+	END
+	//}
+	
+	//{ Can Talk to Rasaad
+	IF
+		ActionListEmpty()
+		See("Rasaad")
+		IsValidForPartyDialogue("Rasaad")
+		!Global("XA_LC_CanTalkToRasaad", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToRasaad", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToRasaad", "LOCALS", 1)
+		OR(3)	
+			!See("Rasaad")
+			!IsValidForPartyDialogue("Rasaad")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToRasaad", "LOCALS", 0)
+			Continue()
+	END
+	//}
+		
+	//{ Can Talk to Valygar
+	IF
+		ActionListEmpty()
+		See("Valygar")
+		IsValidForPartyDialogue("Valygar")
+		!Global("XA_LC_CanTalkToValygar", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToValygar", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToValygar", "LOCALS", 1)
+		OR(3)	
+			!See("Valygar")
+			!IsValidForPartyDialogue("Valygar")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToValygar", "LOCALS", 0)
+			Continue()
+	END
+	//}
+	
+	//{ Can Talk to Viconia
+	IF
+		ActionListEmpty()
+		See("Viconia")
+		IsValidForPartyDialogue("Viconia")
+		!Global("XA_LC_CanTalkToViconia", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToViconia", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToViconia", "LOCALS", 1)
+		OR(3)	
+			!See("Viconia")
+			!IsValidForPartyDialogue("Viconia")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToViconia", "LOCALS", 0)
+			Continue()
+	END
+	//}
+
+	//{ Can Talk to Yoshimo
+	IF
+		ActionListEmpty()
+		See("Yoshimo")
+		IsValidForPartyDialogue("Yoshimo")
+		!Global("XA_LC_CanTalkToYoshimo", "LOCALS", 1)
+		Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToYoshimo", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		ActionListEmpty()
+		Global("XA_LC_CanTalkToYoshimo", "LOCALS", 1)
+		OR(3)	
+			!See("Yoshimo")
+			!IsValidForPartyDialogue("Yoshimo")
+			!Global("XA_LC_CanTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CanTalkToYoshimo", "LOCALS", 0)
+			Continue()
+	END
+	//}

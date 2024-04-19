@@ -1,5 +1,97 @@
 APPEND ~XACOR25B~
 
+
+	//{ #region Corwin Rep Warning - Dialog J-27 - CC OK
+	IF ~
+		Global("XA_LC_CorwinRepWarning", "GLOBAL", 2)
+	~ THEN BEGIN XA_RepComplain
+		SAY @923 /* ~We need to talk.~ */
+		IF ~~ THEN REPLY @925 /* ~What's on your mind?~ */
+		DO ~
+			SetGlobal("XA_LC_CorwinRepWarning", "GLOBAL", 3)
+		~
+		GOTO XA_RepComplain2
+		
+		IF ~~ THEN REPLY @927 /* Not now. */
+		DO ~
+			SetGlobal("XA_LC_CorwinRepWarning", "GLOBAL", 3)
+		~
+		GOTO XA_RepComplain2
+	END
+
+	IF ~~ THEN BEGIN XA_RepComplain2
+		SAY @924 /* ~I don't like the way things are going. I didn't come all this way to help you in committing acts of evil. If things get much worse, you'll find yourself on your own. Let's go.~ */
+		IF ~~ THEN
+		EXIT
+	END
+	//} #endregion
+
+	//{ #region Corwin Left - Bad Reputation - Dialog J-28A - CC OK
+	IF ~
+		Global("XA_LC_CorwinLeftPoorRep", "GLOBAL", 1)
+		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
+		!AreaCheck("AR1002")
+	~ THEN BEGIN XA_LeftPoorRep_SoA_A
+		SAY @926 /* ~I'm sorry. I can't be a part of this any longer. When you clean up your act, you can find me in the Athkatla magistrate.~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_LC_CorwinLeftPoorRep", "GLOBAL", 0)
+			SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
+			SetLeavePartyDialogFile()
+			ChangeAIScript("", OVERRIDE)
+			ChangeAIScript("", DEFAULT)
+			LeaveParty()
+			EscapeAreaMove("AR1002",1033,563, SW)
+		~
+		EXIT
+	END  
+	//} #endregion
+
+	//{ #region Corwin Left - Bad Reputation - Dialog J-28C - CC OK
+	IF ~
+		Global("XA_LC_CorwinLeftPoorRep", "GLOBAL", 1)
+		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
+		AreaCheck("AR1002")
+	~ THEN BEGIN XA_LeftPoorRep_SoA_B
+		SAY @928 /* ~I'm sorry. I can't be a part of this any longer. If you ever clean up your act, come and see me.~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_LC_CorwinLeftPoorRep", "GLOBAL", 0)
+			SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
+			SetLeavePartyDialogFile()
+			ChangeAIScript("", OVERRIDE)
+			ChangeAIScript("", DEFAULT)
+			LeaveParty()
+		~
+		EXIT
+	END  
+	//}
+
+	//{ #region Corwin Left - Bad Reputation - Dialog J-28B - CC OK
+	IF ~
+		Global("XA_LC_CorwinLeftPoorRep", "GLOBAL", 1)
+		Global("XA_LC_EnteredToB", "GLOBAL", 1)
+	~ THEN BEGIN XA_LeftPoorRep_ToB
+		SAY @928 /* ~I'm sorry. I can't be a part of this any longer. If you ever clean up your act, come and see me.~ */
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_LC_CorwinLeftPoorRep", "GLOBAL", 0)
+			SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
+			
+			SetLeavePartyDialogFile()
+			ChangeAIScript("", OVERRIDE)
+			ChangeAIScript("", DEFAULT)
+			LeaveParty()
+			//EscapeArea()
+		~
+		EXIT
+	END  
+	//} #endregion
+
+
 	//{ Optional Banter 1A
 	IF ~
 		Global("XA_LC_Banter_CorwinPlayerOpt1A", "GLOBAL", 1)

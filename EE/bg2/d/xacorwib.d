@@ -1,5 +1,354 @@
 BEGIN ~XACORWIB~
 
+//{ Dialog J-83 - Romance Conflict - CC OK
+
+IF ~
+	Global("XA_LC_RomanceConflictTalk", "GLOBAL", 1)
+	OR(8)
+		Global("AerieRomanceActive","GLOBAL",2)
+		Global("ViconiaRomanceActive","GLOBAL",2)
+		Global("DornRomanceActive","GLOBAL",2)
+		Global("NeeraRomanceActive","GLOBAL",2)
+		Global("AnomenRomanceActive","GLOBAL",2)
+		Global("JaheiraRomanceActive","GLOBAL",2)
+		Global("HexxatRomanceActive","GLOBAL",2)
+		Global("RasaadRomanceActive","GLOBAL",2)
+~ THEN BEGIN XA_RomanceConflictTalk
+	SAY @929 /*  ~<CHARNAME>. I think we need to have a talk.~ */
+	
+	IF ~~ THEN REPLY @930  /* ~What's on your mind, love?~*/
+	DO ~
+		SetGlobal("XA_LC_RomanceConflictTalk", "GLOBAL", 2)
+	~
+	GOTO XA_RomanceConflict2
+	
+	IF ~~ THEN REPLY @931 /* ~Sure — what is it?~*/
+	DO ~
+		SetGlobal("XA_LC_RomanceConflictTalk", "GLOBAL", 2)
+	~
+	GOTO XA_RomanceConflict2
+END
+
+IF ~~ THEN BEGIN XA_RomanceConflict2
+	SAY @932 /* ~You made it clear to me, I thought, that you wanted us to be together.~ */
+	
+	IF ~
+		Global("AerieRomanceActive", "GLOBAL", 2)
+	~ THEN 
+	GOTO XA_RomanceConflict_Aerie
+	
+	IF ~
+		Global("ViconiaRomanceActive", "GLOBAL", 2)
+	~ THEN 
+	GOTO XA_RomanceConflict_Viconia
+	
+	IF ~
+		Global("DornRomanceActive", "GLOBAL", 2)
+	~ THEN 
+	GOTO XA_RomanceConflict_Dorn
+	
+	IF ~
+		Global("NeeraRomanceActive", "GLOBAL", 2)
+	~ THEN 
+	GOTO XA_RomanceConflict_Neera
+	
+	IF ~
+		Global("AnomenRomanceActive", "GLOBAL", 2)
+	~ THEN 
+	GOTO XA_RomanceConflict_Anomen
+	
+	IF ~
+		Global("JaheiraRomanceActive", "GLOBAL", 2)
+	~ THEN 
+	GOTO XA_RomanceConflict_Jaheira
+	
+	IF ~
+		Global("HexxatRomanceActive", "GLOBAL", 2)
+	~ THEN 
+	GOTO XA_RomanceConflict_Hexxat
+	
+	IF ~
+		Global("RasaadRomanceActive", "GLOBAL", 2)
+	~ THEN 
+	GOTO XA_RomanceConflict_Rasaad
+END
+
+//{ Aerie
+IF ~~ THEN BEGIN XA_RomanceConflict_Aerie
+	SAY @933 /* ~Why, then, are you spending so much time with Aerie? Do you have feelings for her? She's a sweet girl, and you shouldn't lead her on.~ */
+	
+	IF ~~ THEN REPLY @936 /* ~She's just a friend. You're the woman I love Schael, not her. I'll make it clear to her, in case it wasn't already.~ */
+	DO ~
+		SetGlobal("AerieRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_Continue
+	
+	IF ~~ THEN REPLY @937 /* ~I do love her. I'm sorry, Schael. I thought you and I had something, but I realize now I was mistaken.~ */
+	DO ~
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_EndCR_F
+END
+//}
+
+//{ Neera
+IF ~~ THEN BEGIN XA_RomanceConflict_Neera
+	SAY @934 /* ~Why, then, are you spending so much time with Neera? Do you have feelings for her? She's a sweet girl, and you shouldn't lead her on.~ */
+	
+	IF ~~ THEN REPLY @936 /* ~She's just a friend. You're the woman I love Schael, not her. I'll make it clear to her, in case it wasn't already.~ */
+	DO ~
+		SetGlobal("NeeraRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_Continue
+	
+	IF ~~ THEN REPLY @937 /* ~I do love her. I'm sorry, Schael. I thought you and I had something, but I realize now I was mistaken.~ */
+	DO ~
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_EndCR_F
+END
+//}
+
+//{ Jaheira
+IF ~~ THEN BEGIN XA_RomanceConflict_Jaheira
+	SAY @935 /* ~Why, then, are you spending so much time with Jaheira? Do you have feelings for her? She's been through a lot with the loss of her husband, and you shouldn't lead her on.~ */
+	
+	IF ~~ THEN REPLY @936 /* ~She's just a friend. You're the woman I love Schael, not her. I'll make it clear to her, in case it wasn't already.~ */
+	DO ~
+		SetGlobal("JaheiraRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_Continue
+	
+	IF ~~ THEN REPLY @937 /* ~I do love her. I'm sorry, Schael. I thought you and I had something, but I realize now I was mistaken.~ */
+	DO ~
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_EndCR_F
+END
+//}
+
+//{ Rasaad
+IF ~~ THEN BEGIN XA_RomanceConflict_Rasaad
+	SAY @941 /* ~Why, then, are you spending so much time with Rasaad? Do you have feelings for him? You shouldn't lead him on.~ */
+	
+	IF ~~ THEN REPLY @942 /* ~He's just a friend. You're the one I love Schael, not him. I'll make it clear to him, in case it wasn't already.~ */
+	DO ~
+		SetGlobal("RasaadRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_Continue
+	
+	IF ~~ THEN REPLY @943 /* ~I do love him. I'm sorry, Schael. I thought you and I had something, but I realize now that I was mistaken.~ */
+	DO ~
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_EndCR_M
+END
+//}
+
+//{ Anomen
+IF ~~ THEN BEGIN XA_RomanceConflict_Anomen
+	SAY @944 /* ~Why, then, are you spending so much time with Anomen? Do you have feelings for that insufferable braggart? You shouldn't lead him on.~ */
+	
+	IF ~~ THEN REPLY @942 /* ~He's just a friend. You're the one I love Schael, not him. I'll make it clear to him, in case it wasn't already.~ */
+	DO ~
+		SetGlobal("AnomenRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_Continue
+	
+	IF ~~ THEN REPLY @943 /* ~I do love him. I'm sorry, Schael. I thought you and I had something, but I realize now that I was mistaken.~ */
+	DO ~
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_EndCR_M
+END
+//}
+
+//{ Hexxat
+IF ~~ THEN BEGIN XA_RomanceConflict_Hexxat
+	SAY @945 /* ~Why, then, are you spending so much time with Hexxat? Do you have feelings for that monster?~ */
+	
+	IF ~~ THEN REPLY @949 /* ~You're the one I love Schael, not her. I'll make it clear to her, in case it wasn't already.~*/
+	DO ~
+		SetGlobal("HexxatRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_Continue
+	
+	IF ~~ THEN REPLY @937 /* ~I do love her. I'm sorry, Schael. I thought you and I had something, but I realize now I was mistaken.~ */
+	DO ~
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_EndCR_Bad
+END
+//}
+
+//{ Dorn
+IF ~~ THEN BEGIN XA_RomanceConflict_Dorn
+	SAY @947 /* ~Why, then, is Dorn spending so much time with you? Do you have feelings for that filthy blackguard?~  */
+	
+	IF ~~ THEN REPLY @948 /* ~You're the one I love Schael, not him. I'll make it clear to him, in case it wasn't already.~ */
+	DO ~
+		SetGlobal("DornRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_Continue
+	
+	IF ~~ THEN REPLY @943 /* ~I do love him. I'm sorry, Schael. I thought you and I had something, but I realize now that I was mistaken.~ */
+	DO ~
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_EndCR_Bad
+END
+//}
+
+//{ Viconia
+IF ~~ THEN BEGIN XA_RomanceConflict_Viconia
+	SAY @950 /* ~Why, then, is Viconia spending so much time with you? Do you have feelings for that wretched drow?~  */
+	
+	IF ~~ THEN REPLY @949 /* ~You're the one I love Schael, not her. I'll make it clear to her, in case it wasn't already.~*/
+	DO ~
+		SetGlobal("ViconiaRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_Continue
+	
+	IF ~~ THEN REPLY @937 /* ~I do love her. I'm sorry, Schael. I thought you and I had something, but I realize now that I was mistaken.~ */
+	DO ~
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceConflict_EndCR_Bad2
+END
+//}
+
+IF ~~ THEN BEGIN XA_RomanceConflict_EndCR_Bad
+	SAY @946 /* ~Unbelievable! Irenicus must've done a number on your senses. There's no other explanation for you choosing that beast over me. As soon as this mission is over, we're through.~  */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_LeaveAfterSoA", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_RomanceConflict_EndCR_Bad2
+	SAY @951 /* ~Unbelievable! Irenicus must've done a number on your senses. There's no other explanation for you choosing that ... that slut, over me. As soon as this mission is over, we're through.~   */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_LeaveAfterSoA", "GLOBAL", 1)
+	~	
+	EXIT
+END
+
+
+
+IF ~~ THEN BEGIN XA_RomanceConflict_Continue
+	SAY @940 /* ~That's all I needed to hear. Let's go.~ [BD54525] */
+	
+	IF ~~ THEN 
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_RomanceConflict_EndCR_F
+	SAY @938 /* ~Fine. Be with her. I can't tell you how much this hurts... but I appreciate your honesty. Let's go.~ */
+	
+	IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN XA_RomanceConflict_EndCR_M
+	SAY @939 /* ~Fine. Be with him. I can't tell you how much this hurts... but I appreciate your honesty. Let's go.~  */
+	
+	IF ~~ THEN EXIT
+END
+
+//}
+
+//{ #region Corwin Rep Warning - Dialog J-27 - CC OK
+IF ~
+	Global("XA_LC_CorwinRepWarning", "GLOBAL", 2)
+~ THEN BEGIN XA_RepComplain
+	SAY @923 /* ~We need to talk.~ */
+	IF ~~ THEN REPLY @925 /* ~What's on your mind?~ */
+	DO ~
+		SetGlobal("XA_LC_CorwinRepWarning", "GLOBAL", 3)
+	~
+	GOTO XA_RepComplain2
+	
+	IF ~~ THEN REPLY @927 /* Not now. */
+	DO ~
+		SetGlobal("XA_LC_CorwinRepWarning", "GLOBAL", 3)
+	~
+	GOTO XA_RepComplain2
+END
+
+IF ~~ THEN BEGIN XA_RepComplain2
+	SAY @924 /* ~I don't like the way things are going. I didn't come all this way to help you in committing acts of evil. If things get much worse, you'll find yourself on your own. Let's go.~ */
+	IF ~~ THEN
+	EXIT
+END
+//} #endregion
+
+//{ #region Corwin Left - Bad Reputation - Dialog J-28A - CC OK
+IF ~
+	Global("XA_LC_CorwinLeftPoorRep", "GLOBAL", 1)
+	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
+	!AreaCheck("AR1002")
+~ THEN BEGIN XA_LeftPoorRep_SoA_A
+	SAY @926 /* ~I'm sorry. I can't be a part of this any longer. When you clean up your act, you can find me in the Athkatla magistrate.~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_CorwinLeftPoorRep", "GLOBAL", 0)
+		SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
+		SetLeavePartyDialogFile()
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
+		LeaveParty()
+		EscapeAreaMove("AR1002",1033,563, SW)
+	~
+	EXIT
+END  
+//} #endregion
+
+//{ #region Corwin Left - Bad Reputation - Dialog J-28C - CC OK
+IF ~
+	Global("XA_LC_CorwinLeftPoorRep", "GLOBAL", 1)
+	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
+	AreaCheck("AR1002")
+~ THEN BEGIN XA_LeftPoorRep_SoA_B
+	SAY @928 /* ~I'm sorry. I can't be a part of this any longer. If you ever clean up your act, come and see me.~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_CorwinLeftPoorRep", "GLOBAL", 0)
+		SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
+		SetLeavePartyDialogFile()
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
+		LeaveParty()
+	~
+	EXIT
+END  
+//}
+
+//{ #region Corwin Left - Bad Reputation - Dialog J-28B - CC OK
+IF ~
+	Global("XA_LC_CorwinLeftPoorRep", "GLOBAL", 1)
+	Global("XA_LC_EnteredToB", "GLOBAL", 1)
+~ THEN BEGIN XA_LeftPoorRep_ToB
+	SAY @928 /* ~I'm sorry. I can't be a part of this any longer. If you ever clean up your act, come and see me.~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_CorwinLeftPoorRep", "GLOBAL", 0)
+		SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
+		
+		SetLeavePartyDialogFile()
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
+		LeaveParty()
+		//EscapeArea()
+	~
+	EXIT
+END  
+//} #endregion
 
 //{ Optional Banter 1A
 IF ~

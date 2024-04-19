@@ -1,0 +1,31 @@
+
+//{ 13: Corwin Can Leave Party Check
+IF 
+	ActionListEmpty()
+	InParty(Myself)
+	!Global("XA_LC_CanLeaveParty", "LOCALS", 1)
+	!Global("XA_LC_PlanarSphere", "GLOBAL", 1)
+	!Global("XA_LC_PlanarPrison", "GLOBAL", 1)
+	!Global("XA_LC_InUnderdark", "GLOBAL", 1)
+	!Global("XA_LC_TrappedInDemonPrison", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_CanLeaveParty", "LOCALS", 1)
+		Continue()
+END
+
+IF 
+	ActionListEmpty()
+	InParty(Myself)
+	Global("XA_LC_CanLeaveParty", "LOCALS", 1)
+	OR(4)
+		Global("XA_LC_PlanarSphere", "GLOBAL", 1)
+		Global("XA_LC_PlanarPrison", "GLOBAL", 1)
+		Global("XA_LC_InUnderdark", "GLOBAL", 1)
+		Global("XA_LC_TrappedInDemonPrison", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_CanLeaveParty", "LOCALS", 0)
+		Continue()
+END
+//}
