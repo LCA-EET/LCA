@@ -9,7 +9,7 @@ IF ~
 	DO ~
 		SetGlobal("XA_LC_NedToB", "GLOBAL", 2)
 	~
-	EXTERN XACORWIP XA_NedToB2
+	EXTERN XACOR25P XA_NedToB2
 END
 
 IF ~~ THEN BEGIN XA_Threat
@@ -20,7 +20,7 @@ IF ~~ THEN BEGIN XA_Threat
 	= @3 /*~Major, I leave it up to you as to whether you'll part in this assignment. Under normal circumstances, I wouldn't hesitate to order you to. But these are far from normal circumstances... just look at this place.~*/
 	
 	IF ~~ THEN
-	EXTERN XACORWIP XA_Threat2
+	EXTERN XACOR25P XA_Threat2
 END
 
 IF ~~ THEN BEGIN XA_CorwinJoin

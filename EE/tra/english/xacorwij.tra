@@ -77,7 +77,19 @@
 @80 = ~Come here...~ [xalc1170]
 @81 = ~(You share a tender and emotional embrace.)~
 @82 = ~I'm covered in him! Gods, you are too!~
-
+@83 = ~Oh, you're so precious!~
+@84 = ~It seems you two have taken a liking to each other.~
+@85 = ~I didn't know you liked animals, Captain.~
+@86 = ~Somehow, I didn't think you a cat person.~
+@87 = ~I love animals. When I was a kid, I had a hamster, then a dog. But never a cat. I want to — ah, nevermind.~
+@88 = ~What is it?~
+@89 = ~Right. Dings, back in the pack you go.~
+@90 = ~Rohma always wanted a pet. I was hesitant to get her one, but now that she's a little older... they're great for teaching responsibility. Dings would be perfect, and I know she'd love him.~
+@91 = ~Take him, then. I'm sure he'd feel right at home with you and Rohma.~
+@92 = ~Sorry, but I plan to keep him.~ 
+@93 = ~Fair enough. Let's get going.~
+@94 = ~Thank you, <CHARNAME>. I really appreciate it.~
+@95 = ~Dings, sweetie! Back in the pack, it's time to go.~
 
 
 
@@ -197,15 +209,15 @@
 @233 = ~Hm, I didn't see her as the type to be so easily turned away. Let's go love.~
 @234 = ~A little.~ [xalc1144]
 @235 = ~What have we here?~ [xalc1056]
-@236 = ~You don’t know how much I appreciate that.~ [xalc1145]
-@237 = ~I think Rohma will appreciate it more... gods, I miss them...~
-@238 = ~You know, I heard you cheering for me, love...~
-@239 = ~Let me see that trophy.~
-@240 = ~So, what do you think?~
-@241 = ~I think that you'll never cease to amaze me.~
-@242 = ~Hah, that much is obvious. What do you think about the *trophy*.~
-@243 = ~(You examine the trophy — it's a figurine of an archer cast in gold, with a plaque beneath that states 'Schael Corwin - Winner - Trademeet Archery Competition'.)~ 
-@244 = ~Well, that was an entertaining distraction, but it WAS a distraction. We have work to do. Let's go, love.~ [xalc1146]
+@236 = ~Here it comes...~ [xalc1115]
+@237 = ~There's nothing that gets my blood pumping like seeing a strong, beautiful woman in uniform... Come, love, and let us get to know each other over a drink or two.~
+@238 = ~Oh, let's not, please.~ [xalc1116]
+@239 = ~I wonder... what delightful pleasures are you hiding behind all of that armor? I'll show you mine if you show me yours...~
+@240 = ~For the love of the gods, save that filth for a chamberpot!~ [xalc1108]
+
+
+
+
 @245 = ~You... you monster! What you did to Skie, to Imoen, to <CHARNAME>, and the others... it can never be forgiven. You nearly destroyed my hope of a future with the <PRO_MANWOMAN> I love. Prepare to meet your end, Irenicus!~ 
 @246 = ~~
 @247 = ~Irenicus already tried to force us apart and failed. You'll do no better.~
@@ -1401,7 +1413,7 @@ Captain Corwin shared with me the story of how she was arrested in the Hall of W
 @1424 = ~Let's head in.~
 @1425 = ~I think so, Captain. Look — it seems to be a recreation of the siege.~
 @1426 = ~Ma'am, did you report these disappearances to the Flaming Fist?~
-@1427 = ~(She hands it over.)~ 
+
 
 @1429 = ~Well? Go on.~
 @1430 = ~Ahh... forget I said anything. You have enough on your mind already. Let's go.~
@@ -1435,10 +1447,9 @@ You and Schael shared a tender moment; it seems that the two of you are still de
 @1461 = ~Well you did ... ahh ... gush with exuberance the last time we were together. Multiple times, if I remember correctly.~
 @1462 = ~She's a sweet kid. You and your father have done a great job with her.~
 @1463 = ~A little humility from time to time wouldn't hurt, you know.~
-@1464 = ~(Examine the trophy.)~
-@1465 = ~Very nice. Your father will be proud.~
-@1466 = ~The figurine doesn't quite do you justice, dear.~
-@1467 = ~(She lets out a hearty laugh.)~
+
+
+
 @1468 = ~~
 @1469 = ~(She punches you in the shoulder.)~ 
 @1470 = ~Captain as we discussed, I will return with you to Baldur's Gate to join the Flaming Fist.~

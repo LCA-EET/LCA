@@ -72,5 +72,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_AvernusChat", "GLOBAL", 1)
 		Wait(3)
-		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+		ActionOverride("XACORWIN", StartDialog("xacor25j", Player1))
 END

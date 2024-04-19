@@ -72,7 +72,7 @@
 	
 	APPEND AMBAR01
 		IF ~~ THEN BEGIN XA_AMBAR01_Hamza
-			SAY @356 /* ~Hamza can help with that. He's right over here, at the bar.~ */
+			SAY @1 /* ~Hamza can help with that. He's right over here, at the bar.~ */
 			
 			IF ~~ THEN
 			GOTO 21
@@ -171,17 +171,7 @@
 		GOTO XA_BringCaelar
 	END
 	
-	APPEND SALVANAS
-		IF ~
-			!InPartySlot(LastTalkedToBy,0)
-			Name("XACORWIN", LastTalkedToBy)
-		~ THEN BEGIN XA_MeetCorwin
-			SAY @5 /*~My, oh my...~*/
-			
-			IF ~~ THEN 
-			EXTERN XACORWIB XA_SavanasCorwinChain
-		END
-	END
+	
 	APPEND PPGUY01
 		IF ~~ THEN BEGIN XA_Avernus_KnowRisk
 			SAY @6 /* ~As you wish.~*/
@@ -1092,7 +1082,7 @@ APPEND NEERA25J
 	END
 
 	IF ~~ THEN BEGIN XA_SaradushDestroyed
-		SAY @233
+		SAY @167 /* ~The city's been completely destroyed... all those people...~*/
 		
 		IF ~~ THEN
 		EXTERN XACOR25J XA_TimeToGrieveLater
@@ -1385,6 +1375,7 @@ END
 //}
 
 //{ JAHEI25J
+APPEND JAHEI25J
 	IF ~~ THEN BEGIN XA_BenoBoom
 		SAY @114 /* ~You're covered as well! No, don't put your hands on me, they're filthy!~ */
 		
@@ -1502,6 +1493,7 @@ END
 		EXIT
 	END
 	//}
+END
 //}
 
 //{ SAREV25A
@@ -1526,12 +1518,13 @@ END
 //}
 
 //{ KELDO25J
-IF ~
+APPEND KELDO25J
+	IF ~
 		Global("XA_LC_AvernusChat", "GLOBAL", 1)
 	~ THEN BEGIN XA_AvernusEntry
-		SAY @306 /*~In Torm's name... the Hells are far worse than I could've imagined!~ */
+		SAY @168 /*~In Torm's name... the Hells are far worse than I could've imagined!~ */
 		
-		IF ~~ THEN REPLY @303 /* ~We'll be out of here as soon as we find Caelar. Stay alert.~ */
+		IF ~~ THEN REPLY @169 /* ~We'll be out of here as soon as we find Caelar. Stay alert.~ */
 		DO ~
 			SetGlobal("XA_LC_AvernusChat", "GLOBAL", 2)
 		~
@@ -1545,11 +1538,13 @@ IF ~
 		~
 		EXTERN XACOR25J XA_AvernusEntry
 	END
+END
 //}
 //{ GORODR1
 EXTEND_BOTTOM GORODR1 17 //OK
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
+		Global("XA_LC_EnteredToB", "GLOBAL", 1)
 	~
 	THEN EXTERN XACOR25J XA_GORODR1_17_18
 END
@@ -1557,6 +1552,7 @@ END
 EXTEND_BOTTOM GORODR1 18 //OK
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
+		Global("XA_LC_EnteredToB", "GLOBAL", 1)
 	~
 	THEN EXTERN XACOR25J XA_GORODR1_17_18
 END
@@ -1564,13 +1560,14 @@ END
 EXTEND_BOTTOM GORODR1 34 //OK
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
+		Global("XA_LC_EnteredToB", "GLOBAL", 1)
 	~
 	THEN EXTERN XACOR25J XA_GORODR1_34_44
 END
 
 EXTEND_TOP GORODR1 39 //OK	
 	IF ~
-		//GlobalLT("Chapter","GLOBAL",20)
+		Global("XA_LC_EnteredToB", "GLOBAL", 1)
 		OR(20)
 			IsValidForPartyDialogue("XACORWIN")
 			IsValidForPartyDialogue("XACAELAR")
@@ -1597,13 +1594,13 @@ EXTEND_TOP GORODR1 39 //OK
 	DO ~
 		SetGlobal("XA_LC_OdrenShouldDie", "GLOBAL", 100)
 	~
-	
-	EXTERN GORODR1 XA_OdrenJudgeSOA
+	EXTERN GORODR1 XA_OdrenJudgeTOB
 END
 
 EXTEND_BOTTOM GORODR1 44 //OK
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
+		Global("XA_LC_EnteredToB", "GLOBAL", 1)
 	~
 	THEN EXTERN XACOR25J XA_GORODR1_34_44
 END
@@ -1660,7 +1657,7 @@ END
 
 
 CHAIN 
-	IF ~~ THEN GORODR1 XA_OdrenJudgeSOA
+	IF ~~ THEN GORODR1 XA_OdrenJudgeTOB
 		@135 /* ~(Odren and his companions look at your party with hope in their eyes.)~ */
 		
 		== XACOR25J

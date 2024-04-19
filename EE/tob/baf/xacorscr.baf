@@ -62,7 +62,7 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinComplainSarevok", "GLOBAL", 2)
-			StartDialog("XACORWIJ", Player1)
+			StartDialog("xacor25j", Player1)
 			Continue()
 	END
 //}
@@ -79,7 +79,7 @@
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_SaradushDestroyed", "GLOBAL", 1)
 			//Dialog J-70
-			StartDialog("XACORWIJ", Player1)
+			StartDialog("xacor25j", Player1)
 			SetInterrupt(TRUE)
 	END
 //}
@@ -106,7 +106,7 @@
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_RohmaWraith", "GLOBAL", 3)
-			StartDialog("XACORWIJ", Player1)
+			StartDialog("xacor25j", Player1)
 			SetInterrupt(TRUE)
 	END
 	//}
@@ -211,7 +211,7 @@
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinCaelarJailTalk", "GLOBAL", 1)
-			StartDialog("XACORWIJ", Player1)
+			StartDialog("xacor25j", Player1)
 			SetInterrupt(TRUE)
 	END
 //}
@@ -238,7 +238,7 @@
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinCaelarHomeTalk", "GLOBAL", 1)
-			StartDialog("XACORWIJ", Player1)
+			StartDialog("xacor25j", Player1)
 			SetInterrupt(TRUE)
 	END
 //}
@@ -254,7 +254,7 @@
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinBenoSoulTalk", "GLOBAL", 1)
-			StartDialog("XACORWIJ", Player1)
+			StartDialog("xacor25j", Player1)
 			SetInterrupt(TRUE)
 	END
 //}
@@ -284,7 +284,7 @@
 			SetInterrupt(FALSE)
 			PlaySong(142)
 			SetGlobal("XA_LC_MessageToBG", "GLOBAL", 1)
-			StartDialog("XACORWIJ", Player1)
+			StartDialog("xacor25j", Player1)
 			SetInterrupt(TRUE)
 	END
 	//}
@@ -489,7 +489,7 @@
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinParentAdvice", "GLOBAL", 2)
 			//Dialog J-76
-			StartDialog("XACORWIJ", Player1)
+			StartDialog("xacor25j", Player1)
 			SetInterrupt(TRUE)
 	END
 	//}
@@ -521,7 +521,7 @@
 			SetInterrupt(FALSE)
 			PlaySong(142)
 			//Dialog J-71
-			StartDialog("XACORWIJ", Player1)
+			StartDialog("xacor25j", Player1)
 			SetInterrupt(TRUE)
 	END
 	//}
@@ -559,7 +559,7 @@
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			PlaySong(146)
-			StartDialog("XACORWIJ", Player1)
+			StartDialog("xacor25j", Player1)
 			SetInterrupt(TRUE)
 	END
 	//}
@@ -578,7 +578,7 @@
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 6)
 			PlaySong(142)
-			StartDialog("XACORWIJ", Player1)
+			StartDialog("xacor25j", Player1)
 			SetInterrupt(TRUE)
 	END
 	
@@ -597,7 +597,7 @@
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 8)
 			PlaySong(142)
-			StartDialog("XACORWIJ", Player1)
+			StartDialog("xacor25j", Player1)
 			SetInterrupt(TRUE)
 	END
 	//}
@@ -623,7 +623,7 @@
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			PlaySong(146)
-			StartDialog("XACORWIJ", Player1)
+			StartDialog("xacor25j", Player1)
 			SetInterrupt(TRUE)
 	END
 	//}

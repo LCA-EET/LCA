@@ -30,6 +30,7 @@
 */
 
 //{ Altered Transitions	
+	
 
 	ADD_TRANS_TRIGGER HABREGA 13
 	~
@@ -143,6 +144,19 @@
 	//}
 
 //}	
+//{ SALVANAS
+	APPEND SALVANAS
+		IF ~
+			!InPartySlot(LastTalkedToBy,0)
+			Name("XACORWIN", LastTalkedToBy)
+		~ THEN BEGIN XA_MeetCorwin
+			SAY @84 /*~My, oh my...~*/
+			
+			IF ~~ THEN 
+			EXTERN XACORWIJ XA_SavanasCorwinChain
+		END
+	END
+//}
 
 //{ CALAHA
 	EXTEND_BOTTOM CALAHA 15
@@ -155,50 +169,6 @@
 		~
 		EXTERN XACORWIJ XA_CALAHA_15
 	END
-//}
-
-//{ ANOMENJ
-APPEND ~ANOMENJ~
-
-IF ~~ THEN BEGIN BCorwinAnomen1A
-		SAY @187 /* ~A mother's place is at home with her child, not on the battlefield.~ */
-	
-		= @188 /* ~You're a poor example of a parent.~ */
-		
-		IF ~~ THEN REPLY @189 /* ~You're out of line Anomen. Knock it off.~ */
-		EXTERN XACORWIB BCorwinAnomen1B
-		
-		IF ~~ THEN REPLY @190 /* ~(Remain silent)~ */
-		EXTERN XACORWIB BCorwinAnomen1B
-		
-		IF ~
-			!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
-			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		~ THEN REPLY @191 /* ~You know little of what you speak. Captain Corwin is a fine mother.~ */
-		DO ~
-			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		~
-		EXTERN XACORWIB BCorwinAnomen1B
-		
-		IF ~
-			Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
-			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		~ THEN REPLY @192 /* ~You know little of what you speak. Major Corwin is a fine mother.~ */
-		DO ~
-			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		~
-		EXTERN XACORWIB BCorwinAnomen1B
-		
-		IF ~
-			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		~ THEN REPLY @228 /* ~You know little of what you speak. Schael is a fine mother.~ */
-		DO ~
-			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		~
-		EXTERN XACORWIB BCorwinAnomen1B
-		
-	END
-END
 //}
 	
 //{ HABREGA
@@ -438,116 +408,6 @@ APPEND PPIRENI2
 END
 //}
 
-//{ BAERIE
-EXTEND_BOTTOM BAERIE 112
-	IF ~
-		!GlobalGT("XA_LC_Banter_CorwinAerie", "GLOBAL", 5)
-	~ THEN REPLY @196 /* ~I've met one of your kind before.~ */
-	GOTO XA_Ashatiel
-	
-	IF ~
-		GlobalGT("XA_LC_Banter_CorwinAerie", "GLOBAL", 5)
-	~ THEN REPLY @199 /* ~Schael's already told you of my experience with Ashatiel. Could you tell me more about your people? Your society?~ */
-	GOTO 114
-	
-	IF ~
-		GlobalGT("XA_LC_Banter_CorwinAerie", "GLOBAL", 5)
-	~ THEN REPLY @201 /* ~Schael's already told you of my experience with Ashatiel. We really should get moving.~ */
-	GOTO 116
-END
-
-APPEND BAERIE
-	IF ~~ THEN BEGIN XA_Ashatiel
-		SAY @197 /* ~R-really? When? What were they l-like?~ */
-		
-		IF ~~ THEN REPLY @198 /* ~It was during the Dragonspear campaign. Aerie... I'm sorry. I'd rather not talk about it.~ */
-		GOTO 116
-		
-		IF ~~ THEN REPLY @200 /* ~It doesn't matter. Could you tell me more about your people? Your society?~ */
-		GOTO 114
-	END
-END
-
-//}
-
-//{ BMAZZY
-APPEND BMAZZY
-	IF ~~ THEN BEGIN BCorwinMazzy2_BREAK
-		SAY @226 /* ~It's alright. I know you didn't mean anything by it. Besides, I'm quite happy with the crossbow.~*/
-		
-		IF ~
-			GlobalGT("XA_LC_ReturnToBG", "GLOBAL", 0)
-		~ THEN GOTO BCorwinMazzy2_RBG
-		
-		IF ~
-			GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
-		~ THEN GOTO BCorwinMazzy2_RESUME		
-	END
-	
-	IF ~~ THEN BEGIN BCorwinMazzy2_RBG
-		SAY @227 /* ~Looks like the others are ready... let's get moving.~ */
-		
-		IF ~~ THEN 
-		EXIT
-	END
-	
-	IF ~~ THEN BEGIN XA_MazzyWonCompetition
-		SAY @184 /* ~Thank you, Schael. You're one of the toughest competitors I've faced.~ */
-		
-		IF ~~ THEN REPLY @185 /* ~You both performed well. I'm glad to have such skilled companions at my side.~  */
-		GOTO XA_MazzyWonCompetition2
-	END
-	
-	IF ~
-		Global("XA_LC_TM_ArcheryChallenge", "GLOBAL", 2)
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN BEGIN XA_Trademeet_Competition_SchaelWon
-		SAY @186 /* ~Schael, congratulations on your victory. That was quite the performance.~ */
-	
-		IF ~~ THEN 
-		EXTERN XACORWIB XA_CorwinWonCompetition
-	END
-END
-//}
-
-//{ DORNJ
-APPEND DORNJ
-	IF ~~ THEN BEGIN XA_CorwinDornConflict2
-		SAY @229 /* ~It is not your concern.~ */
-		
-		IF ~~ THEN 
-		EXTERN XACORWIB XA_CorwinDornConflict3
-	END
-	
-	IF ~~ THEN BEGIN XA_CorwinDornConflict4
-		SAY @193 /* ~Laughable, woman. Stand in my way, and your neck will snap as easily as a tree in the midst of a hurricane.~ */
-		
-		IF ~~ THEN REPLY @194 /* ~That's enough. Dorn, I don't know what you think exists between us, but I love Schael and nothing is going to change that.~  */
-		DO ~
-			SetGlobal("XA_LC_CorwinDornConflict", "GLOBAL", 2)
-		~
-		GOTO XA_ChooseCorwin
-		
-		IF ~~ THEN REPLY @195 /* ~Stop it, Dorn. You know my affections lie with you.~ */
-		DO ~
-			SetGlobal("XA_LC_CorwinDornConflict", "GLOBAL", 2)
-		~
-		EXTERN XACORWIB XA_ChooseDorn
-	END
-	
-	IF ~~ THEN BEGIN XA_ChooseCorwin
-		SAY @230 /* ~Bah! To hell with the lot of you!~ */
-		
-		IF ~~ THEN
-		DO ~
-			SetGlobal("OHD_corwinconflict","GLOBAL",4)
-			SetGlobal("DornRomanceActive", "GLOBAL", 3)
-		~
-		EXIT
-	END
-END
-//}
-
 //{ JAHEIRAJ
 EXTEND_BOTTOM JAHEIRAJ 472
 	IF ~
@@ -607,10 +467,6 @@ EXTEND_BOTTOM IMOEN2 19
 	GOTO XA_ImoenSchaelSpellhold
 END
 //}
-
-/* 
-	End of SoA - Ask who wants to go to Baldur's Gate
-*/
 
 //{ SUELLE2
 ADD_STATE_TRIGGER SUELLE2 0
@@ -1112,6 +968,7 @@ END
 EXTEND_BOTTOM GORODR1 17 //OK
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
+		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	~
 	THEN EXTERN XACORWIJ XA_GORODR1_17_18
 END
@@ -1119,6 +976,7 @@ END
 EXTEND_BOTTOM GORODR1 18 //OK
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
+		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	~
 	THEN EXTERN XACORWIJ XA_GORODR1_17_18
 END
@@ -1126,13 +984,14 @@ END
 EXTEND_BOTTOM GORODR1 34 //OK
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
+		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	~
 	THEN EXTERN XACORWIJ XA_GORODR1_34_44
 END
 
 EXTEND_TOP GORODR1 39 //OK	
 	IF ~
-		//GlobalLT("Chapter","GLOBAL",20)
+		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 		OR(20)
 			IsValidForPartyDialogue("XACORWIN")
 			IsValidForPartyDialogue("XACAELAR")
@@ -1159,13 +1018,13 @@ EXTEND_TOP GORODR1 39 //OK
 	DO ~
 		SetGlobal("XA_LC_OdrenShouldDie", "GLOBAL", 100)
 	~
-	
 	EXTERN GORODR1 XA_OdrenJudgeSOA
 END
 
 EXTEND_BOTTOM GORODR1 44 //OK
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
+		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	~
 	THEN EXTERN XACORWIJ XA_GORODR1_34_44
 END

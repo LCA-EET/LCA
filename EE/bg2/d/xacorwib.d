@@ -740,7 +740,7 @@ IF ~~ THEN BEGIN XA_ChooseDorn
 	DO ~
 		SetGlobal("OHD_corwinconflict","GLOBAL",4)
 		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 3)
-		SetPlayerSound(Myself,@865,SELECT_ACTION6)
+		//SetPlayerSound(Myself,@865,SELECT_ACTION6)
 	~
 	EXIT
 END
@@ -780,10 +780,74 @@ IF ~~ THEN BEGIN XA_CorwinWonCompetition
 	SAY @555 /* ~Thanks, Mazzy. You're one of the toughest people I've competed against.~ */
 	
 	IF ~~ THEN REPLY @551 /* ~You both performed well. I'm glad to have such skilled companions at my side.~ */
-	EXTERN XACORWIJ XAA77
+	GOTO XAA77
 	
 	IF ~~ THEN REPLY @556 /* ~Schael, you were amazing.~  */
-	EXTERN XACORWIJ XAA77
+	GOTO XAA77
+END
+
+IF ~~ THEN BEGIN XAA77
+	SAY @597 /* ~You know, I heard you cheering for me, love. It meant a lot.~ */
+	
+	= @598 /*~You don’t know how much I appreciate that.~ [XA100093]*/
+	
+	= @188 /* ~(You share a warm embrace.)~ */
+	
+	IF ~~ THEN REPLY @189 /* ~Let me see that trophy.~ */
+	GOTO XAA78
+END
+
+IF ~~ THEN BEGIN XAA78
+	SAY @192 /* ~(She hands it over.)~  */
+	
+	= @315 /* ~So, what do you think?~ */
+	IF ~~ THEN REPLY @316 /* ~I think that you'll never cease to amaze me.~ */
+	GOTO XAA79
+	
+	IF ~~ THEN REPLY @320 /* ~(Examine the trophy.)~ */
+	GOTO XAA80
+END
+
+IF ~~ THEN BEGIN XAA79
+	SAY @317 /* ~Hah, that much is obvious. What do you think about the *trophy*.~ */
+	
+	IF ~~ THEN REPLY @320 /* ~(Examine the trophy.)~ */
+	GOTO XAA80
+END
+
+IF ~~ THEN BEGIN XAA80
+	SAY @318 /* You examine the trophy — it's a figurine of an archer cast in gold, with a plaque beneath that states 'Schael Corwin - Winner - Trademeet Archery Competition'.*/
+	
+	IF ~~ THEN REPLY @321 /* ~Very nice. Your father will be proud.~*/
+	GOTO XAA80A
+	
+	IF ~~ THEN REPLY @322 /* ~The figurine doesn't quite do you justice, dear.~ */
+	GOTO XAA80B
+END
+
+IF ~~ THEN BEGIN XAA80A
+	SAY @323  /* ~I think Rohma will appreciate it more... gods, I miss them...~*/
+	
+	IF ~~ THEN 
+	GOTO XAA80C
+END
+
+IF ~~ THEN BEGIN XAA80C
+	SAY @319  /* Well, that was an entertaining distraction, but it WAS a distraction. We have work to do. Let's go, love.*/
+	
+	IF ~~ THEN 
+	DO ~
+		SetGlobal("XA_LC_Journal_TMCorwin", "GLOBAL", 1)
+		SetGlobal("XA_LC_TM_ArcheryChallenge", "GLOBAL", 3)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XAA80B
+	SAY @326 /* ~(She lets out a hearty laugh.)~*/
+	
+	IF ~~ THEN 
+	GOTO XAA80C
 END
 
 IF ~~ THEN BEGIN BCorwinMazzy2_End
@@ -793,67 +857,7 @@ IF ~~ THEN BEGIN BCorwinMazzy2_End
 	EXTERN BMAZZY XA_TMSignup
 END
 
-IF ~~ THEN BEGIN XA_LC_Chain_DingsCorwin2_END
-	SAY @893 /* ~Oh, you're so precious!~*/
-	
-	IF ~~ THEN REPLY @894  /*  ~The cat seems to have grown on you.~*/
-	GOTO XA_LC_DingsCorwin3
-	
-	IF ~~ THEN REPLY @895  /* ~I didn't know you liked animals, Captain.~*/
-	GOTO XA_LC_DingsCorwin3
-	
-	IF ~~ THEN REPLY @896 /* ~Somehow, I didn't think you a cat person.*/
-	GOTO XA_LC_DingsCorwin3
-END
 
-IF ~~ THEN BEGIN XA_LC_DingsCorwin3
-	SAY @897 /* ~I love animals. When I was a kid, I had a hamster, then a dog. But never a cat. I want to — ah, nevermind.~ */
-	
-	IF ~~ THEN REPLY @898  /* ~What is it?~*/
-	GOTO XA_LC_DingsCorwin4
-		
-	IF ~~ THEN REPLY @899  /* ~We better get going. Dings, back in the bag.~ */
-	EXTERN XADINGS XA_LC_DingsCorwinEnd
-END
-
-IF ~~ THEN BEGIN XA_LC_DingsCorwin4
-	SAY @900  /* ~I want to get a pet for Rohma. They're great for teaching responsibility. Dings would be perfect, and I know she'd love him.~*/
-	
-	IF ~~ THEN REPLY @901 /* ~Take him, then. I'm sure he'd be right at home with you and Rohma.~*/
-	DO ~
-		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("XA_LC_DingsRohma", "GLOBAL", 1)
-	~
-	GOTO XA_LC_DingsCorwinEnd_A
-	
-	IF ~~ THEN REPLY @902 /* ~Sorry, but I plan to keep him.~ */
-	GOTO XA_LC_DingsCorwinEnd_B
-END
-
-IF ~~ THEN BEGIN XA_LC_DingsCorwinEnd_A
-	SAY @904  /*~Thank you, <CHARNAME>. I really appreciate it.~ */
-	
-	= @905  /*~Dings, sweetie! Back in the bag, it's time to go.~ */
-	
-	IF ~~ THEN
-	DO ~
-		ActionOverride(Player1, DestroyItem("OHNDINGS"))
-		ActionOverride(Player2, DestroyItem("OHNDINGS"))
-		ActionOverride(Player3, DestroyItem("OHNDINGS"))
-		ActionOverride(Player4, DestroyItem("OHNDINGS"))
-		ActionOverride(Player5, DestroyItem("OHNDINGS"))
-		ActionOverride(Player6, DestroyItem("OHNDINGS"))
-		SetGlobal("XA_LC_Journal_Dings", "GLOBAL", 1)
-	~
-	EXTERN XADINGS XA_LC_DingsCorwinEnd
-END
-
-IF ~~ THEN BEGIN XA_LC_DingsCorwinEnd_B
-	SAY @903  /* ~Fair enough. Let's get going.~*/
-	
-	IF ~~ THEN REPLY @899  /* ~Right. Dings, back in the bag.~*/
-	EXTERN XADINGS XA_LC_DingsCorwinEnd
-END
 
 
 //{ #region Met Rohma Interaction BG2 (Non-Romance) - Dialog J-40 - CC OK
@@ -4316,17 +4320,7 @@ END
 	
 //}
 
-CHAIN XACORWIB XA_SavanasCorwinChain
-	@619 /* ~Here it comes...~ [BD58941] */
-	== SALVANAS
-	@620 /* ~There's nothing that gets my blood pumping like seeing a strong, beautiful woman in uniform... Come, love, and let us get to know each other over a drink or two.~*/
-	== XACORWIB
-	@621 /* ~Oh, let's not, please.~ [BD63913] */
-	== SALVANAS
-	@622 /*~I wonder... what delightful pleasures are you hiding behind all of that armor? I'll show you mine if you show me yours...~*/
-	== XACORWIB
-	@623 /*~~For the love of the gods, save that filth for a chamberpot.~ [XA100003]*/
-EXIT
+
 
 CHAIN
 	IF ~~ THEN XACORWIB XAAKissChain

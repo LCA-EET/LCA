@@ -186,11 +186,11 @@
 @185 = ~What's wrong, dear?~
 @186 = ~(Leave her be.)~
 @187 = ~I hope you're right.~
-@188 = ~~
-@189 = ~~
+@188 = ~(You share a warm embrace.)~
+@189 = ~Let me see that trophy.~
 @190 = ~Heh. My father let me fall down a lot. At the time, it made me angry. I thought I'd never forgive him. Then I realized how hard it was for him to let me struggle—and fail—on my own. It made me the woman I am.~ [xalc1086]
 @191 = ~A young age? It must have been difficult for you, then.~
-@192 = ~~
+@192 = ~(She hands it over.)~ 
 @193 = ~You noticed. Good eye.~ [xalc1087]
 @194 =  ~What is it Korgan?~ [xalc1088]
 @195 =  ~Aye, girlie. I feel yer eyes on me rear in battle. Doth ye like what ye see?~
@@ -313,18 +313,18 @@
 @312 =  ~You can drop the formalities. Schael will do just fine.~
 @313 =  ~Thank you, Schael. I appreciate that.~
 @314 = ~This must be a tough time for you, then.~ [xalc1133]
-@315 = ~~
-@316 = ~~
-@317 = ~~
-@318 = ~~
-@319 = ~~
-@320 = ~~
-@321 = ~~
-@322 = ~~
-@323 = ~~
+@315 = ~So, what do you think?~
+@316 = ~I think that you'll never cease to amaze me.~
+@317 = ~Hah, that much is obvious. What do you think about the *trophy*.~
+@318 = ~(You examine the trophy — it's a figurine of an archer cast in gold, with a plaque beneath that states 'Schael Corwin - Winner - Trademeet Archery Competition'.)~ 
+@319 = ~Well, that was an entertaining distraction, but it WAS a distraction. We have work to do. Let's go, love.~ [xalc1146]
+@320 = ~(Examine the trophy.)~
+@321 = ~Very nice. Your father will be proud.~
+@322 = ~The figurine doesn't quite do you justice, dear.~
+@323 = ~I think Rohma will appreciate it more... gods, I miss them...~
 @324 = ~~
 @325 =  ~Oh let's not, please.~ [xalc1116]
-@326 = ~~
+@326 = ~(She lets out a hearty laugh.)~
 @327 =  ~(sigh) Fine. What is it Boo.~
 @328 =  ~Boo says, "You are a Ranger like Minsc, yet you do not carry a space hamster. Why is this?"~
 @329 =  ~Really, Minsc?~
@@ -596,8 +596,8 @@ Mazzy and Schael have expressed interest in taking part in this year's Trademeet
 @594 = ~I know you will. You step up to challenges instead of running from them. That's just one of the many reasons why I love you, <CHARNAME>.~
 @595 = ~We've work to do. Let's get moving.~
 @596 = ~(She plants a kiss on your cheek.)~
-@597 = ~~
-@598 = ~~
+@597 = ~You know, I heard you cheering for me, love...~
+@598 = ~You don’t know how much I appreciate that.~ [xalc1145]
 @599 = ~~
 @600 = ~~
 @601 = ~~
@@ -618,11 +618,7 @@ Mazzy and Schael have expressed interest in taking part in this year's Trademeet
 @616 = ~Spoken like someone who barely knows me, but I'll take what compliments I can get and do what I can not to change your mind.~ [xalc1114]
 @617 = ~It's worth it though, Neera. It really is.~
 @618 = ~I guess if I can find the right person, then one day, MAYBE. Oh, look. The others are leaving us in the dust. Time to go.~
-@619 = ~Here it comes...~ [xalc1115]
-@620 = ~There's nothing that gets my blood pumping like seeing a strong, beautiful woman in uniform... Come, love, and let us get to know each other over a drink or two.~
-@621 = ~Oh, let's not, please.~ [xalc1116]
-@622 = ~I wonder... what delightful pleasures are you hiding behind all of that armor? I'll show you mine if you show me yours...~
-@623 = ~For the love of the gods, save that filth for a chamberpot!~ [xalc1108]
+
 @624 = ~Captain, if I may... I once knew a Flaming Fist officer with the surname Corwin. Tell me, are you related to a man named Audamar?~
 @625 = ~Yes, that's my father.~
 @626 = ~I thought so. Some twenty-five or so years past I'd ventured west to the vicinity of Baldur's Gate, to evaluate locations for a new chapter of our order. It was then that I met your father... and your mother, presumably.~
@@ -895,19 +891,7 @@ Mazzy and Schael have expressed interest in taking part in this year's Trademeet
 @892 = ~But you must've heard that I rescued the virgin maiden of—~
 
 /* 1.0.8 */
-@893 = ~Oh, you're so precious!~
-@894 = ~It seems you two have taken a liking to each other.~
-@895 = ~I didn't know you liked animals, Captain.~
-@896 = ~Somehow, I didn't think you a cat person.~
-@897 = ~I love animals. When I was a kid, I had a hamster, then a dog. But never a cat. I want to — ah, nevermind.~
-@898 = ~What is it?~
-@899 = ~Right. Dings, back in the pack you go.~
-@900 = ~Rohma always wanted a pet. I was hesitant to get her one, but now that she's a little older... they're great for teaching responsibility. Dings would be perfect, and I know she'd love him.~
-@901 = ~Take him, then. I'm sure he'd feel right at home with you and Rohma.~
-@902 = ~Sorry, but I plan to keep him.~ 
-@903 = ~Fair enough. Let's get going.~
-@904 = ~Thank you, <CHARNAME>. I really appreciate it.~
-@905 = ~Dings, sweetie! Back in the pack, it's time to go.~
+
 @906 = ~Perhaps she is. But it doesn't matter. I don't think we'll need to worry about her ever again. Even if she did manage to escape, I doubt she would try to raise up a new army. She'd do better to lay low and live her days in peace.~
 @907 = ~Perhaps he is. I'm grateful for his sacrifice. I can't imagine the heartbreak he felt watching his niece pledge her soul to a devil like Belhifet.~  
 @908 = ~Of course. It was at the Ducal palace... we were under attack from Caelar's forces. I ran upstairs to make sure you and Imoen were alright.~

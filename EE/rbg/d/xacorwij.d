@@ -2592,7 +2592,7 @@ APPEND XACORWIJ
 	~ THEN BEGIN XA_AskCorwinAboutTianna
 		SAY @861 /* ~(You hear her muttering under her breath.)~ */
 		
-		IF ~~ THEN REPLY @1428 /* ~(Leave her be.)~*/
+		IF ~~ THEN REPLY @148 /* ~(Leave her be.)~*/
 		DO ~
 			SetGlobal("XA_LC_AskCorwinAboutTianna", "GLOBAL", 2)
 		~

@@ -1,4 +1,12 @@
 IF
+	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_EnteredToB", "GLOBAL", 1)
+		Continue()
+END
+
+IF
 	Global("XA_LC_ReturnToBG", "GLOBAL", 2)
 	InMyArea(Player1)
 THEN

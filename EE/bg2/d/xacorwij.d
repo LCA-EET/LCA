@@ -3306,69 +3306,7 @@ IF ~~ THEN BEGIN XAA68
 	EXTERN ~UDPHAE01~ 138
 END
 
-IF ~~ THEN BEGIN XAA77
-	SAY @238 /* ~You know, I heard you cheering for me, love. It meant a lot.~ */
-	
-	= @236 /*~You don’t know how much I appreciate that.~ [XA100093]*/
-	
-	= @195 /* ~(You share a warm embrace.)~ */
-	
-	IF ~~ THEN REPLY @239 /* ~Let me see that trophy.~ */
-	GOTO XAA78
-END
 
-IF ~~ THEN BEGIN XAA78
-	SAY @1427 /* ~(She hands it over.)~  */
-	
-	= @240 /* ~So, what do you think?~ */
-	IF ~~ THEN REPLY @241 /* ~I think that you'll never cease to amaze me.~ */
-	GOTO XAA79
-	
-	IF ~~ THEN REPLY @1464 /* ~(Examine the trophy.)~ */
-	GOTO XAA80
-END
-
-IF ~~ THEN BEGIN XAA79
-	SAY @242 /* ~Hah, that much is obvious. What do you think about the *trophy*.~ */
-	
-	IF ~~ THEN REPLY @243 /* @243 = ~Hm... (You examine the trophy - it's a figurine of an archer cast in gold, with a plaque beneath that states 'Schael Corwin - Winner - Trademeet Archery Competition'.) Very nice. Your father will be proud.~ */
-	GOTO XAA80
-END
-
-IF ~~ THEN BEGIN XAA80
-	SAY @243 /* You examine the trophy — it's a figurine of an archer cast in gold, with a plaque beneath that states 'Schael Corwin - Winner - Trademeet Archery Competition'.*/
-	
-	IF ~~ THEN REPLY @1465 /* ~Very nice. Your father will be proud.~*/
-	GOTO XAA80A
-	
-	IF ~~ THEN REPLY @1466 /* ~The figurine doesn't quite do you justice, dear.~ */
-	GOTO XAA80B
-END
-
-IF ~~ THEN BEGIN XAA80A
-	SAY @237  /* ~I think Rohma will appreciate it more... gods, I miss them...~*/
-	
-	IF ~~ THEN 
-	GOTO XAA80C
-END
-
-IF ~~ THEN BEGIN XAA80C
-	SAY @244  /* Well, that was an entertaining distraction, but it WAS a distraction. We have work to do. Let's go, love.*/
-	
-	IF ~~ THEN 
-	DO ~
-		SetGlobal("XA_LC_Journal_TMCorwin", "GLOBAL", 1)
-		SetGlobal("XA_LC_TM_ArcheryChallenge", "GLOBAL", 3)
-	~
-	EXIT
-END
-
-IF ~~ THEN BEGIN XAA80B
-	SAY @1467 /* ~(She lets out a hearty laugh.)~*/
-	
-	IF ~~ THEN 
-	GOTO XAA80C
-END
 
 IF ~~ THEN BEGIN XA_HELLJON_7A
 	SAY @245 /* ~You... you monster! What you did to Skie, to Imoen, to <CHARNAME>, and the others... it can never be forgiven. You nearly destroyed my hope of a future with the <PRO_MANWOMAN> I love. Prepare to meet your end, Irenicus!~ */
@@ -4243,6 +4181,68 @@ IF ~
 	EXIT
 END
 
+IF ~~ THEN BEGIN XA_LC_Chain_DingsCorwin2_END
+	SAY @83 /* ~Oh, you're so precious!~*/
+	
+	IF ~~ THEN REPLY @84  /*  ~The cat seems to have grown on you.~*/
+	GOTO XA_LC_DingsCorwin3
+	
+	IF ~~ THEN REPLY @85  /* ~I didn't know you liked animals, Captain.~*/
+	GOTO XA_LC_DingsCorwin3
+	
+	IF ~~ THEN REPLY @86 /* ~Somehow, I didn't think you a cat person.*/
+	GOTO XA_LC_DingsCorwin3
+END
+
+IF ~~ THEN BEGIN XA_LC_DingsCorwin3
+	SAY @87 /* ~I love animals. When I was a kid, I had a hamster, then a dog. But never a cat. I want to — ah, nevermind.~ */
+	
+	IF ~~ THEN REPLY @88  /* ~What is it?~*/
+	GOTO XA_LC_DingsCorwin4
+		
+	IF ~~ THEN REPLY @89  /* ~We better get going. Dings, back in the bag.~ */
+	EXTERN XADINGS XA_LC_DingsCorwinEnd
+END
+
+IF ~~ THEN BEGIN XA_LC_DingsCorwin4
+	SAY @90  /* ~I want to get a pet for Rohma. They're great for teaching responsibility. Dings would be perfect, and I know she'd love him.~*/
+	
+	IF ~~ THEN REPLY @91 /* ~Take him, then. I'm sure he'd be right at home with you and Rohma.~*/
+	DO ~
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC_DingsRohma", "GLOBAL", 1)
+	~
+	GOTO XA_LC_DingsCorwinEnd_A
+	
+	IF ~~ THEN REPLY @92 /* ~Sorry, but I plan to keep him.~ */
+	GOTO XA_LC_DingsCorwinEnd_B
+END
+
+IF ~~ THEN BEGIN XA_LC_DingsCorwinEnd_A
+	SAY @94  /*~Thank you, <CHARNAME>. I really appreciate it.~ */
+	
+	= @95  /*~Dings, sweetie! Back in the bag, it's time to go.~ */
+	
+	IF ~~ THEN
+	DO ~
+		ActionOverride(Player1, DestroyItem("OHNDINGS"))
+		ActionOverride(Player2, DestroyItem("OHNDINGS"))
+		ActionOverride(Player3, DestroyItem("OHNDINGS"))
+		ActionOverride(Player4, DestroyItem("OHNDINGS"))
+		ActionOverride(Player5, DestroyItem("OHNDINGS"))
+		ActionOverride(Player6, DestroyItem("OHNDINGS"))
+		SetGlobal("XA_LC_Journal_Dings", "GLOBAL", 1)
+	~
+	EXTERN XADINGS XA_LC_DingsCorwinEnd
+END
+
+IF ~~ THEN BEGIN XA_LC_DingsCorwinEnd_B
+	SAY @93  /* ~Fair enough. Let's get going.~*/
+	
+	IF ~~ THEN REPLY @89  /* ~Right. Dings, back in the bag.~*/
+	EXTERN XADINGS XA_LC_DingsCorwinEnd
+END
+
 CHAIN
 	IF ~~ THEN XACORWIJ XA_CorwinArtifacts_Chain
 		@1816 /*~Let me have a look at that.~*/
@@ -4762,3 +4762,14 @@ CHAIN XACORWIJ XA_CorwinIrenicusChain
 	@1766 /*~(The golem slowly increases the pressure around her midsection as she continues her futile efforts to break free.)~*/
 END XACORWIJ XA_CorwinIrenicusChain_END
 
+CHAIN XACORWIJ XA_SavanasCorwinChain
+	@236 /* ~Here it comes...~ [BD58941] */
+	== SALVANAS
+	@237 /* ~There's nothing that gets my blood pumping like seeing a strong, beautiful woman in uniform... Come, love, and let us get to know each other over a drink or two.~*/
+	== XACORWIB
+	@238 /* ~Oh, let's not, please.~ [BD63913] */
+	== SALVANAS
+	@239 /*~I wonder... what delightful pleasures are you hiding behind all of that armor? I'll show you mine if you show me yours...~*/
+	== XACORWIB
+	@240 /*~~For the love of the gods, save that filth for a chamberpot.~ [XA100003]*/
+EXIT

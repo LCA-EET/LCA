@@ -10,15 +10,15 @@ IF ~~ THEN BEGIN XA_LC_DingsCorwinEnd
 	EXIT
 END
 
-CHAIN XACORWIB XA_LC_Chain_DingsCorwin2
+CHAIN XACORWIJ XA_LC_Chain_DingsCorwin2
 	@1  /* ~Dings! What is it boy? Do you want a tummy rub?~ */
 	
 	== XADINGS
 	@2  /* ~Mew.~ */
 	
-	== XACORWIB
+	== XACORWIJ
 	@3  /* ~Come to mama!~*/
 	
 	== XADINGS
 	@4  /* Purr. */
-END XACORWIB XA_LC_Chain_DingsCorwin2_END
+END XACORWIJ XA_LC_Chain_DingsCorwin2_END
