@@ -104,10 +104,90 @@ END
 		WRITE_ASCII 0x258 ~~ #8		// Race Script
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		WRITE_LONG 0x1CC RESOLVE_STR_REF(@5009) // Bio
 	//}
-
+	
+	//{ Crusader Spirits
+		COPY_EXISTING ~xac111.cre~ ~override/xaashasp.cre~
+		WRITE_ASCII 0x2CC ~xaashasp~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xaashasp~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~xacrug~ #8			// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		LPF ADD_CRE_EFFECT
+			INT_VAR
+				opcode = 65
+				target = 1
+		END
+		
+		SET cid = 0
+		ACTION_DEFINE_ARRAY crusaderSpirits
+		BEGIN
+			xag128
+			xag132
+			xag121
+			xag123
+			xag124
+			xag106 
+			xag136
+			xag137
+		END
+		ACTION_PHP_EACH crusaderSpirits AS _ => cSpirit
+		BEGIN
+			COPY_EXISTING ~%cSpirit%.cre~ ~override/xacrug0%cid%.cre~
+			WRITE_ASCII 0x2CC ~~ #8 	// Dialogue
+			WRITE_ASCII 0x280 ~~ #20  	// Script Name
+			WRITE_ASCII 0x248 ~xacrug~ #8			// Override Script
+			WRITE_ASCII 0x250 ~~ #8		// Class Script
+			WRITE_ASCII 0x258 ~~ #8		// Race Script
+			WRITE_ASCII 0x260 ~~ #8		// General Script
+			WRITE_ASCII 0x268 ~~ #8		// Default Script
+			LPF ADD_CRE_EFFECT
+				INT_VAR
+					opcode = 65
+					target = 1
+			END
+			cid = (cid + 1)
+		END
+	//}
 //}
-//{ Areas
+//{ Modification to Existing Areas
+	COPY_EXISTING ~ar4000.are~ ~override~
+	WRITE_ASCII 0x94 ~xaar4000~ #8
+//}
+
+//{ New Areas
+	//{ xa4000 ar4000 Spirit Heads (LCA - Forest Outside Saradush)
+		COPY_EXISTING ~ar4000.are~ ~override/xa4000.are~
+		WRITE_ASCII 0x94 ~xa4000~ #8
+	//}
+	
+	//{ xag100 bd4500 Avernus Bridge
+		EXTEND_TOP ~xags100.bcs~ ~%MOD_FOLDER%/tob/baf/xa4500.baf~
+		
+		OUTER_SET expiryOffset = 0x154
+		OUTER_SET i = 0
+		
+		COPY_EXISTING ~xag100.are~ ~override~
+		WHILE (i < 16) BEGIN
+			WRITE_LONG expiryOffset 0
+			expiryOffset = (expiryOffset + 0x110)
+			i = (i + 1)
+		END
+		
+		//{ Disable Triggers
+			WRITE_LONG 0x1404 256 // Hell Bridge
+		//}
+		
+		//{ Change 4400 Travel Trigger to an Info Trigger
+			WRITE_SHORT 0x123C 1
+			WRITE_LONG 0x127C 0
+			WRITE_LONG 0x1280 RESOLVE_STR_REF(@5010)
+		//}
+	//}
+	
 	//{ xag104 bd5300 Kanaglym
 		EXTEND_TOP ~xags104.bcs~ ~%MOD_FOLDER%/tob/baf/xa5300.baf~
 		
@@ -143,5 +223,52 @@ END
 			WRITE_SHORT 0x2AAC 1
 			WRITE_LONG 0x2AF0 RESOLVE_STR_REF(@5008)
 		//}
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 800
+				fj_loc_y = 590
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Ashatiel
+				fj_cre_resref = xaashasp
+		END
+		
+		LPF fj_are_structure INT_VAR fj_loc_x = 721 fj_loc_y =455 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug00 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 928 fj_loc_y =748 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug01 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 494 fj_loc_y =567 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug02 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 395 fj_loc_y =595 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug03 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 1100 fj_loc_y =610 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug04 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 1180 fj_loc_y =865 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug05 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 500 fj_loc_y =500 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug06 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 1000 fj_loc_y =520 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug07 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 975 fj_loc_y =830 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug00 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 375 fj_loc_y =650 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug01 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 1200 fj_loc_y =630 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug02 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 1175 fj_loc_y =920 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug03 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 815 fj_loc_y =500 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug04 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 625 fj_loc_y =610 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug05 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 783 fj_loc_y =733 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug06 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 708 fj_loc_y =962 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug07 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 907 fj_loc_y =940 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug00 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 931 fj_loc_y =477 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug01 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 678 fj_loc_y =546 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug02 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 915 fj_loc_y =830 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug03 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 631 fj_loc_y =927 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug04 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 1010 fj_loc_y =580 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug05 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 970 fj_loc_y =930 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug06 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 615 fj_loc_y =510 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug07 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 830 fj_loc_y =838 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug00 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 890 fj_loc_y =535 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug01 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 440 fj_loc_y =620 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug02 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 1050 fj_loc_y =685 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug03 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 1050 fj_loc_y =914 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug04 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 530 fj_loc_y =940 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug05 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 616 fj_loc_y =995 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug06 fj_name = ghost END
+		LPF fj_are_structure INT_VAR fj_loc_x = 900 fj_loc_y =679 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug07 fj_name = ghost END
+
+
+
+
 	//}
 //}

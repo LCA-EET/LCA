@@ -1,7 +1,7 @@
 IF
 	Clicked([ANYONE])
 	Name("door",Myself)
-	AreaCheck("XA4500") 
+	AreaCheck("XAG100") 
 THEN
 	RESPONSE #100
 		DisplayString(Myself, @0)
@@ -10,7 +10,7 @@ END
 IF
 	Clicked([ANYONE])
 	Name("TranBD4400",Myself)
-	AreaCheck("XA4500") 
+	AreaCheck("XAG100") 
 THEN
 	RESPONSE #100
 		DisplayString(Myself, @1)
