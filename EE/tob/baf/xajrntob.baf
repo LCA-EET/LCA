@@ -1,3 +1,13 @@
+//{ Return to Avernus
+IF
+	Global("XA_LC_4500Journal", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_4500Journal", "GLOBAL", 2)
+		AddJournalEntry(@17, INFO)
+		Continue()
+END
+//}
 
 //{ Beno Kanaglym
 IF

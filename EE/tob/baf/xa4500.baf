@@ -1,10 +1,18 @@
 IF
+	GlobalLT("XA_LC_4500Journal", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_4500Journal", "GLOBAL", 1)
+		Continue()
+END
+
+IF
 	Global("XA_LC_ThrixLeave","GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_ThrixLeave","GLOBAL",1)
-		ForceSpellRES("BDTELAW","XATHRIX")  // Teleport Without Error
+		ForceSpellRES("XAG100","XATHRIX")  // Teleport Without Error
 		SetInterrupt(TRUE)
 END
 
@@ -26,14 +34,7 @@ THEN
 		Continue()
 END
 
-IF
-	GlobalLT("XA_LC_4500Journal", "MYAREA", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_LC_4500Journal", "MYAREA", 1)
-		AddJournalEntry(@0, INFO)
-		Continue()
-END
+
 
 IF
 	IsValidForPartyDialogue("Sarevok")
@@ -52,7 +53,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_AvernusChat", "GLOBAL", 1)
 		Wait(3)
-		ActionOverride("Aerie", StartDialog("AERIEJ", Player1))
+		ActionOverride("Aerie", StartDialog("AERIE25J", Player1))
 END
 
 IF
@@ -62,7 +63,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_AvernusChat", "GLOBAL", 1)
 		Wait(3)
-		ActionOverride("Keldorn", StartDialog("KELDORJ", Player1))
+		ActionOverride("Keldorn", StartDialog("KELDO25J", Player1))
 END
 
 IF

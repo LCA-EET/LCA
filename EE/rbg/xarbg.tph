@@ -492,7 +492,6 @@ BEGIN
 END
 
 //{ Script Extensions
-	EXTEND_TOP ~xacorwin.bcs~ ~%MOD_FOLDER%/rbg/baf/xacorscr.baf~
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~
 	EXTEND_BOTTOM ~xadings.bcs~	~%MOD_FOLDER%/rbg/baf/xadings.baf~
 	EXTEND_TOP ~xabalrbg.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalegg.baf~

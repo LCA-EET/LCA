@@ -157,6 +157,10 @@ END
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor006.baf~ // Exp Boost on Join
 	//}
 	
+	ACTION_IF (isEET = 1) THEN BEGIN
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor002.baf~ // Corwin Stat Matching
+	END
+	
 	COPY_EXISTING ~xacorwin.bcs~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY ~PlaySong(1001)~ ~PlaySong(%xamu01%)~
@@ -590,13 +594,6 @@ OUTER_SET bg2_carryover = 1
 	COPY ~%MOD_FOLDER%/bg2/spl/xaunhide.spl~ ~override~
 //}
 
-//{ Corwin Banters
-	EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/bg2/baf/xabancor.baf~
-//}
-
-//{ Corwin Sounds
-	EXTEND_TOP ~xacorwin.bcs~	~%MOD_FOLDER%/bg2/baf/xacorsnd.baf~
-//}
 
 //{ Stat Matching with Corwin (SoD), if playing EET
 	ACTION_IF (isEET = 1) THEN BEGIN

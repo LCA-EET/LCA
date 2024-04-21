@@ -45,6 +45,53 @@ ACTION_IF (sod_carryover = 0) THEN BEGIN
 	INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
 END
 
+//{ Animations
+	ACTION_IF(isEET = 0) THEN BEGIN
+		COPY ~%MOD_FOLDER%/tob/anim/7f58.INI~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/7f59.INI~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/7f5a.INI~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/7f5b.INI~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/e276.INI~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mabbg1.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mabbg2.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mabgg1.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mabgg2.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mabrg1.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mabrg2.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlema1.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlema1e.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlema2.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlema2e.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemca.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemcae.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemde.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemdee.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemgh.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemghe.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemgu.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemgue.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemsc.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemsce.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemsd.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemsde.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemsl.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemsle.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemsp.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemspe.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemtw.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemtwe.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemwk.BAM~ ~override~
+		COPY ~%MOD_FOLDER%/tob/anim/mlemwke.BAM~ ~override~
+		
+		APPEND ~animate.ids~ ~0x7F58 ABISHAI_BLACK~
+		APPEND ~animate.ids~ ~0x7F59 ABISHAI_GREEN~
+		APPEND ~animate.ids~ ~0x7F5A ABISHAI_RED~
+		APPEND ~animate.ids~ ~0x7F5B ABISHAI_BLUE~
+		APPEND ~animate.ids~ ~0xE276 LEMURE~
+
+	END
+//}
+
 //{ Epilogues
 	//{ Caelar
 		COPY ~%MOD_FOLDER%/tob/2da/xacaeend.2da~ ~override~
@@ -107,6 +154,17 @@ END
 		WRITE_LONG 0x1CC RESOLVE_STR_REF(@5009) // Bio
 	//}
 	
+	//{ Thrix
+		COPY_EXISTING ~xag100.cre~ ~override/xathrix.cre~
+		WRITE_ASCII 0x2CC ~xathrix~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xathrix~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~xathrix~ #8		// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~~ #8		// Default Script
+	//}
+	
 	//{ Crusader Spirits
 		COPY_EXISTING ~xac111.cre~ ~override/xaashasp.cre~
 		WRITE_ASCII 0x2CC ~xaashasp~ #8 	// Dialogue
@@ -125,14 +183,14 @@ END
 		SET cid = 0
 		ACTION_DEFINE_ARRAY crusaderSpirits
 		BEGIN
-			xag128
-			xag132
-			xag121
-			xag123
+			xag129
+			xag133
+			xag122
 			xag124
-			xag106 
-			xag136
+			xag125
+			xag107 
 			xag137
+			xag138
 		END
 		ACTION_PHP_EACH crusaderSpirits AS _ => cSpirit
 		BEGIN
@@ -186,6 +244,62 @@ END
 			WRITE_LONG 0x127C 0
 			WRITE_LONG 0x1280 RESOLVE_STR_REF(@5010)
 		//}
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_type = 0
+				fj_box_left 	= 582
+				fj_box_top 		= 1184
+				fj_box_right 	= 830
+				fj_box_bottom 	= 1346
+				fj_vertex_0 = (634 + (1184 << 16))
+				fj_vertex_1 = (466 + (1304 << 16))
+				fj_vertex_2 = (655 + (1440 << 16))
+				fj_vertex_3 = (830 + (1320 << 16))
+				fj_flags = 128
+			STR_VAR
+				fj_reg_script = XA4500T1
+				fj_name = TRBR01	
+				fj_structure_type = region
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_type = 0
+				fj_box_left 	= 975
+				fj_box_top 		= 940
+				fj_box_right 	= 1420
+				fj_box_bottom 	= 1240
+				fj_vertex_0 = (1390 + (1240 << 16))
+				fj_vertex_1 = (1492 + (1166 << 16))
+				fj_vertex_2 = (1080 + (880 << 16))
+				fj_vertex_3 = (975 + (950 << 16))
+				fj_flags = 128
+			STR_VAR
+				fj_reg_script = XA4500T2
+				fj_name = TRBR02		
+				fj_structure_type = region
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_type = 0
+				fj_box_left 	= 1770
+				fj_box_top 		= 365
+				fj_box_right 	= 2200
+				fj_box_bottom 	= 690
+				fj_vertex_0 = (1638 + (479 << 16))
+				fj_vertex_1 = (1810 + (365 << 16))
+				fj_vertex_2 = (2200 + (670 << 16))
+				fj_vertex_3 = (1803 + (586 << 16))
+				fj_flags = 128
+			STR_VAR
+				fj_reg_script = XA4500T3
+				fj_name = TRBR03		
+				fj_structure_type = region
+		END
+		
+		WRITE_ASCII 0x14E4 ~xaavdoor~ #8
 	//}
 	
 	//{ xag104 bd5300 Kanaglym

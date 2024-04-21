@@ -1,596 +1,678 @@
 IF
-	Detect(Myself)
-	Global("bd_no_combat","locals",2)
+	OR(4)
+		Global("BD_Engaged","LOCALS",0)
+		!Allegiance(Myself,EVILCUTOFF)
+		StateCheck(Myself,STATE_IMMOBILE)
+		StateCheck(Myself,STATE_REALLY_DEAD)
 THEN
 	RESPONSE #100
 		NoAction()
 END
 
 IF
-	Global("bd_no_retreat","locals",0)
-	Global("bd_retreat","locals",1)
-	Global("bd_no_combat","locals",1)
-	Global("bd_combat","locals",0)
+	!GlobalTimerNotExpired("BD_Rest","LOCALS")
 THEN
 	RESPONSE #100
-		NoAction()
+		SetGlobalTimer("BD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)  // SPIN746.SPL (No such index)
+		SetGlobal("BD_LBolt","LOCALS",0)
+		Rest()
 END
 
 IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	StateCheck(Myself,STATE_POISONED)
-	OR(2)
-		DifficultyGT(EASIEST)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn17",Myself)  // Elixir of Health
+	AreaCheck("BD4700")  // Avernus Roof
+	Dead("BDBELHIF")  // Belhifet
+	Global("BD_TelAway","LOCALS",0)
 THEN
 	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn17",Myself)  // Elixir of Health
-		SetInterrupt(TRUE)
+		SetGlobal("BD_TelAway","LOCALS",1)
+		ForceSpellRES("BDTELAW",Myself)  // Teleport Without Error
 END
 
 IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	StateCheck(Myself,STATE_POISONED)
-	OR(2)
-		DifficultyGT(EASIEST)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn20",Myself)  // Antidote
+	StateCheck(Myself,STATE_PANIC)
 THEN
 	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn20",Myself)  // Antidote
-		SetInterrupt(TRUE)
+		RandomWalkContinuous()
 END
 
 IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	OR(2)
-		DifficultyGT(EASIEST)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn52",Myself)  // Potion of Extra Healing
-	HPPercentLT(Myself,75)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn52",Myself)  // Potion of Extra Healing
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	OR(2)
-		DifficultyGT(EASIEST)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn08",Myself)  // Potion of Healing
-	HPPercentLT(Myself,80)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn08",Myself)  // Potion of Healing
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASY)
-		Allegiance(Myself,GOODCUTOFF)
-	HaveSpell(BARBARIAN_RAGE)  // SPCL152.SPL (Barbarian Rage)
-	CheckStat(Myself,0,OFFENSIVE_MODIFIER)
-THEN
-	RESPONSE #100
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		RemoveSpell(BARBARIAN_RAGE)  // SPCL152.SPL (Barbarian Rage)
-		ForceSpell(Myself,BARBARIAN_RAGE)  // SPCL152.SPL (Barbarian Rage)
-	RESPONSE #35
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASY)
-		Allegiance(Myself,GOODCUTOFF)
-	HaveSpell(KENSAI_KIA)  // SPCL144.SPL (Kai)
-	CheckStatLT(Myself,2,OFFENSIVE_MODIFIER)
-	Range(NearestEnemyOf(Myself),10)
-THEN
-	RESPONSE #100
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		RemoveSpell(KENSAI_KIA)  // SPCL144.SPL (Kai)
-		ForceSpell(Myself,KENSAI_KIA)  // SPCL144.SPL (Kai)
-	RESPONSE #35
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASY)
-		Allegiance(Myself,GOODCUTOFF)
-	HaveSpell(BERSERKER_RAGE)  // SPCL321.SPL (Enrage)
-	CheckStat(Myself,0,OFFENSIVE_MODIFIER)
-THEN
-	RESPONSE #100
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		RemoveSpell(BERSERKER_RAGE)  // SPCL321.SPL (Enrage)
-		ForceSpell(Myself,BERSERKER_RAGE)  // SPCL321.SPL (Enrage)
-	RESPONSE #35
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASY)
-		Allegiance(Myself,GOODCUTOFF)
-	HaveSpell(ARCHER_CALL_SHOT)  // SPCL121.SPL (Called Shot)
-	!CheckSpellState(Myself,ARCHER_CALL_SHOT)
-THEN
-	RESPONSE #100
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		RemoveSpell(ARCHER_CALL_SHOT)  // SPCL121.SPL (Called Shot)
-		ForceSpell(Myself,ARCHER_CALL_SHOT)  // SPCL121.SPL (Called Shot)
-	RESPONSE #35
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	!GlobalTimerNotExpired("bd_defence_timer","locals")
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASIEST)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn35",Myself)  // Potion of Magic Shielding
-	CheckStatGT(Myself,-5,SAVEVSSPELL)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn35",Myself)  // Potion of Magic Shielding
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	!GlobalTimerNotExpired("bd_defence_timer","locals")
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASIEST)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn34",Myself)  // Potion of Magic Protection
-	CheckStatLT(Myself,20,RESISTMAGIC)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn34",Myself)  // Potion of Magic Protection
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	!GlobalTimerNotExpired("bd_defence_timer","locals")
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASIEST)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn21",Myself)  // Potion of Clarity
-	CheckStat(Myself,0,CLERIC_CHAOTIC_COMMANDS)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn21",Myself)  // Potion of Clarity
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	!GlobalTimerNotExpired("bd_defence_timer","locals")
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASIEST)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn45",Myself)  // Potion of Freedom
-	CheckStat(Myself,0,CLERIC_FREE_ACTION)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn45",Myself)  // Potion of Freedom
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	!GlobalTimerNotExpired("bd_defence_timer","locals")
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASIEST)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn11",Myself)  // Potion of Invulnerability
-	OR(2)
-		CheckStatGT(Myself,0,ARMORCLASS)
-		CheckStatGT(Myself,0,SAVEVSSPELL)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn11",Myself)  // Potion of Invulnerability
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	!GlobalTimerNotExpired("bd_defence_timer","locals")
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASIEST)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn24",Myself)  // Potion of Defense
-	CheckStatGT(Myself,0,ARMORCLASS)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn24",Myself)  // Potion of Defense
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	!GlobalTimerNotExpired("bd_defence_timer","locals")
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASIEST)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn19",Myself)  // Potion of Agility
-	CheckStatLT(Myself,18,DEX)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn19",Myself)  // Potion of Agility
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	!GlobalTimerNotExpired("bd_defence_timer","locals")
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASIEST)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn37",Myself)  // Potion of Mind Focusing
-	CheckStatLT(Myself,19,DEX)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn37",Myself)  // Potion of Mind Focusing
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	!GlobalTimerNotExpired("bd_defence_timer","locals")
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASIEST)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn28",Myself)  // Potion of Fortitude
-	CheckStatLT(Myself,18,CON)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn28",Myself)  // Potion of Fortitude
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASY)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn14",Myself)  // Oil of Speed
-	!StateCheck(Myself,STATE_HASTED)
-	CheckStat(Myself,0,IMPROVEDHASTE)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn14",Myself)  // Oil of Speed
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASY)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn07",Myself)  // Potion of Storm Giant Strength
-	CheckStatLT(Myself,19,STR)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn07",Myself)  // Potion of Storm Giant Strength
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASY)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn06",Myself)  // Potion of Cloud Giant Strength
-	CheckStatLT(Myself,19,STR)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn06",Myself)  // Potion of Cloud Giant Strength
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASY)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn05",Myself)  // Potion of Fire Giant Strength
-	CheckStatLT(Myself,19,STR)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn05",Myself)  // Potion of Fire Giant Strength
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASY)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn04",Myself)  // Potion of Frost Giant Strength
-	CheckStatLT(Myself,19,STR)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn04",Myself)  // Potion of Frost Giant Strength
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASY)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn12",Myself)  // Potion of Stone Giant Strength
-	CheckStatLT(Myself,19,STR)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn12",Myself)  // Potion of Stone Giant Strength
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASY)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn03",Myself)  // Potion of Hill Giant Strength
-	CheckStatLT(Myself,19,STR)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn03",Myself)  // Potion of Hill Giant Strength
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASY)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn41",Myself)  // Potion of Power
-	!CheckSpellState(Myself,BUFF_ENHANCEMENT)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn41",Myself)  // Potion of Power
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Global("bd_no_innates","locals",0)
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASY)
-		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn09",Myself)  // Potion of Heroism
-	!CheckSpellState(Myself,BUFF_ENHANCEMENT)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn09",Myself)  // Potion of Heroism
-		SetInterrupt(TRUE)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Detect(Myself)
 	DifficultyGT(EASY)
-	HasItem("potn26",Myself)  // Potion of Explosions
-	OR(3)
-		!See(FarthestEnemyOf(Myself))
-		!TriggerOverride(FarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
-		TriggerOverride(FarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
-	OR(3)
-		!See(SecondFarthestEnemyOf(Myself))
-		!TriggerOverride(SecondFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
-		TriggerOverride(SecondFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
-	OR(3)
-		!See(ThirdFarthestEnemyOf(Myself))
-		!TriggerOverride(ThirdFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
-		TriggerOverride(ThirdFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
-	OR(3)
-		!See(FourthFarthestEnemyOf(Myself))
-		!TriggerOverride(FourthFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
-		TriggerOverride(FourthFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
-	OR(3)
-		!See(FifthFarthestEnemyOf(Myself))
-		!TriggerOverride(FifthFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
-		TriggerOverride(FifthFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
-	OR(3)
-		!See(SixthFarthestEnemyOf(Myself))
-		!TriggerOverride(SixthFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
-		TriggerOverride(SixthFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
-	OR(3)
-		!See(SeventhFarthestEnemyOf(Myself))
-		!TriggerOverride(SeventhFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
-		TriggerOverride(SeventhFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
-	OR(3)
-		!See(EighthFarthestEnemyOf(Myself))
-		!TriggerOverride(EighthFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
-		TriggerOverride(EighthFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
-	OR(3)
-		!See(NinthFarthestEnemyOf(Myself))
-		!TriggerOverride(NinthFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
-		TriggerOverride(NinthFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
-	OR(3)
-		!See(TenthFarthestEnemyOf(Myself))
-		!TriggerOverride(TenthFarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
-		TriggerOverride(TenthFarthestEnemyOf(Myself),Range(NearestEnemyOf(Myself),22))
-	False()
+	!GlobalTimerNotExpired("BD_PFear","LOCALS")
+	Range(NearestEnemyOf(Myself),20)
+	!StateCheck(Myself,STATE_INVISIBLE)
 THEN
 	RESPONSE #100
-		NoAction()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	DifficultyGT(EASY)
-	HasItem("potn26",Myself)  // Potion of Explosions
-	See(LastSeenBy)
-	!Range(LastSeenBy,0)
-	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-	TriggerOverride(LastSeenBy,Range(NearestAllyOf(Myself),15))
-	!TriggerOverride(LastSeenBy,Range(NearestEnemyOf(Myself),22))
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn26",LastSeenBy)  // Potion of Explosions
-		SetInterrupt(TRUE)
-	RESPONSE #50
+		SetGlobalTimer("BD_PFear","LOCALS",THREE_ROUNDS)
+		ReallyForceSpellRES("BDAURAFE",Myself)  // Aura of Fear
 		Continue()
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	Range(LastSeenBy(Myself),5)
+	Difficulty(EASY)
+	!GlobalTimerNotExpired("BD_PFear","LOCALS")
+	Range(NearestEnemyOf(Myself),20)
+	!StateCheck(Myself,STATE_INVISIBLE)
 THEN
 	RESPONSE #100
-		EquipMostDamagingMelee()
-		AttackReevaluate(NearestEnemyOf(Myself),30)
+		SetGlobalTimer("BD_PFear","LOCALS",FIVE_ROUNDS)
+		ReallyForceSpellRES("BDAURAFE",Myself)  // Aura of Fear
+		Continue()
 END
 
 IF
-	See(NearestEnemyOf(Myself))
+	Difficulty(EASIEST)
+	!GlobalTimerNotExpired("BD_PFear","LOCALS")
+	Range(NearestEnemyOf(Myself),20)
+	!StateCheck(Myself,STATE_INVISIBLE)
 THEN
 	RESPONSE #100
-		EquipRanged()
-		AttackReevaluate(NearestEnemyOf(Myself),30)
+		SetGlobalTimer("BD_PFear","LOCALS",SEVEN_ROUNDS)
+		ReallyForceSpellRES("BDAURAFE",Myself)  // Aura of Fear
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	Exists(LastAttackerOf(Myself))
+	!Range(LastAttackerOf(Myself),6)
+	InMyArea(LastAttackerOf(Myself))
+	Allegiance(LastAttackerOf(Myself),GOODCUTOFF)
+	!StateCheck(LastAttackerOf(Myself),STATE_REALLY_DEAD)
+	!StateCheck(LastAttackerOf(Myself),STATE_INVISIBLE)
+	WeaponEffectiveVs(LastAttackerOf(Myself),MAINHAND)
+	WeaponCanDamage(LastAttackerOf(Myself),MAINHAND)
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		ForceSpellRES("BDTELWE",LastAttackerOf(Myself))  // Teleport Without Error
+		SetInterrupt(TRUE)
+END
+
+IF
+	GlobalLT("BD_LBolt","LOCALS",3)
+	!GlobalTimerNotExpired("BD_Tactic","LOCALS")
+	See(NearestEnemyOf(Myself))
+	RandomNum(3,1)
+THEN
+	RESPONSE #100
+		SetGlobal("BD_Bhave","LOCALS",1)
+		SetGlobalTimer("BD_Tactic","LOCALS",TWO_ROUNDS)
+END
+
+IF
+	!GlobalTimerNotExpired("BD_Tactic","LOCALS")
+	See(NearestEnemyOf(Myself))
+	RandomNum(3,2)
+THEN
+	RESPONSE #100
+		SetGlobal("BD_Bhave","LOCALS",2)
+		SetGlobalTimer("BD_Tactic","LOCALS",TWO_ROUNDS)
+END
+
+IF
+	!GlobalTimerNotExpired("BD_Tactic","LOCALS")
+	!Global("BD_Bhave","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("BD_Bhave","LOCALS",0)
+		SetGlobalTimer("BD_Tactic","LOCALS",TWO_ROUNDS)
+END
+
+IF
+	Global("BD_Bhave","LOCALS",1)
+	GlobalLT("BD_LBolt","LOCALS",3)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	See(NearestEnemyOf(Myself))
+	HPGT(LastSeenBy(Myself),19)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTELECTRICITY)
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		IncrementGlobal("BD_LBolt","LOCALS",1)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		ForceSpell(LastSeenBy(Myself),WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Lightning Bolt)
+END
+
+IF
+	Global("BD_Bhave","LOCALS",1)
+	GlobalLT("BD_LBolt","LOCALS",3)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	See(SecondNearestEnemyOf(Myself))
+	HPGT(LastSeenBy(Myself),19)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTELECTRICITY)
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		IncrementGlobal("BD_LBolt","LOCALS",1)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		ForceSpell(LastSeenBy(Myself),WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Lightning Bolt)
+END
+
+IF
+	Global("BD_Bhave","LOCALS",1)
+	GlobalLT("BD_LBolt","LOCALS",3)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	See(ThirdNearestEnemyOf(Myself))
+	HPGT(LastSeenBy(Myself),19)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTELECTRICITY)
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		IncrementGlobal("BD_LBolt","LOCALS",1)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		ForceSpell(LastSeenBy(Myself),WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Lightning Bolt)
+END
+
+IF
+	Global("BD_Bhave","LOCALS",1)
+	GlobalLT("BD_LBolt","LOCALS",3)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	See(FourthNearestEnemyOf(Myself))
+	HPGT(LastSeenBy(Myself),19)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTELECTRICITY)
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		IncrementGlobal("BD_LBolt","LOCALS",1)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		ForceSpell(LastSeenBy(Myself),WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Lightning Bolt)
+END
+
+IF
+	Global("BD_Bhave","LOCALS",1)
+	GlobalLT("BD_LBolt","LOCALS",3)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	See(FifthNearestEnemyOf(Myself))
+	HPGT(LastSeenBy(Myself),19)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTELECTRICITY)
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		IncrementGlobal("BD_LBolt","LOCALS",1)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		ForceSpell(LastSeenBy(Myself),WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Lightning Bolt)
+END
+
+IF
+	Global("BD_Bhave","LOCALS",1)
+	GlobalLT("BD_LBolt","LOCALS",3)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	See(SixthNearestEnemyOf(Myself))
+	HPGT(LastSeenBy(Myself),19)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTELECTRICITY)
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		IncrementGlobal("BD_LBolt","LOCALS",1)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		ForceSpell(LastSeenBy(Myself),WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Lightning Bolt)
+END
+
+IF
+	Difficulty(EASY)
+	!GlobalTimerNotExpired("BD_CharmT","LOCALS")
+	Global("BD_Bhave","LOCALS",2)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	See([GOODCUTOFF.HUMANOID])
+	!Class(LastSeenBy(Myself),MONK)
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!Race(LastSeenBy(Myself),ELF)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
+	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+THEN
+	RESPONSE #60
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("BD_CharmT","LOCALS",THREE_ROUNDS)
+		ForceSpell(LastSeenBy,WIZARD_DIRE_CHARM)  // SPWI316.SPL (Dire Charm)
+	RESPONSE #40
+		SetGlobalTimer("BD_CharmT","LOCALS",THREE_ROUNDS)
+END
+
+IF
+	Difficulty(EASY)
+	!GlobalTimerNotExpired("BD_CharmT","LOCALS")
+	Global("BD_Bhave","LOCALS",2)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	See(SecondNearest([GOODCUTOFF.HUMANOID]))
+	!Class(LastSeenBy(Myself),MONK)
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!Race(LastSeenBy(Myself),ELF)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
+	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+THEN
+	RESPONSE #60
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("BD_CharmT","LOCALS",THREE_ROUNDS)
+		ForceSpell(LastSeenBy,WIZARD_DIRE_CHARM)  // SPWI316.SPL (Dire Charm)
+	RESPONSE #40
+		SetGlobalTimer("BD_CharmT","LOCALS",THREE_ROUNDS)
+END
+
+IF
+	Difficulty(EASY)
+	!GlobalTimerNotExpired("BD_CharmT","LOCALS")
+	Global("BD_Bhave","LOCALS",2)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	See(ThirdNearest([GOODCUTOFF.HUMANOID]))
+	!Class(LastSeenBy(Myself),MONK)
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!Race(LastSeenBy(Myself),ELF)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
+	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+THEN
+	RESPONSE #60
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("BD_CharmT","LOCALS",THREE_ROUNDS)
+		ForceSpell(LastSeenBy,WIZARD_DIRE_CHARM)  // SPWI316.SPL (Dire Charm)
+	RESPONSE #40
+		SetGlobalTimer("BD_CharmT","LOCALS",THREE_ROUNDS)
+END
+
+IF
+	Difficulty(EASY)
+	!GlobalTimerNotExpired("BD_CharmT","LOCALS")
+	Global("BD_Bhave","LOCALS",2)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	See(FourthNearest([GOODCUTOFF.HUMANOID]))
+	!Class(LastSeenBy(Myself),MONK)
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!Race(LastSeenBy(Myself),ELF)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
+	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+THEN
+	RESPONSE #60
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("BD_CharmT","LOCALS",THREE_ROUNDS)
+		ForceSpell(LastSeenBy,WIZARD_DIRE_CHARM)  // SPWI316.SPL (Dire Charm)
+	RESPONSE #40
+		SetGlobalTimer("BD_CharmT","LOCALS",THREE_ROUNDS)
+END
+
+IF
+	Difficulty(EASY)
+	!GlobalTimerNotExpired("BD_CharmT","LOCALS")
+	Global("BD_Bhave","LOCALS",2)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	See(FifthNearest([GOODCUTOFF.HUMANOID]))
+	!Class(LastSeenBy(Myself),MONK)
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!Race(LastSeenBy(Myself),ELF)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
+	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+THEN
+	RESPONSE #60
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("BD_CharmT","LOCALS",THREE_ROUNDS)
+		ForceSpell(LastSeenBy,WIZARD_DIRE_CHARM)  // SPWI316.SPL (Dire Charm)
+	RESPONSE #40
+		SetGlobalTimer("BD_CharmT","LOCALS",THREE_ROUNDS)
+END
+
+IF
+	Difficulty(EASY)
+	!GlobalTimerNotExpired("BD_CharmT","LOCALS")
+	Global("BD_Bhave","LOCALS",2)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	See(SixthNearest([GOODCUTOFF.HUMANOID]))
+	!Class(LastSeenBy(Myself),MONK)
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!Race(LastSeenBy(Myself),ELF)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
+	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+THEN
+	RESPONSE #60
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SetGlobalTimer("BD_CharmT","LOCALS",THREE_ROUNDS)
+		ForceSpell(LastSeenBy,WIZARD_DIRE_CHARM)  // SPWI316.SPL (Dire Charm)
+	RESPONSE #40
+		SetGlobalTimer("BD_CharmT","LOCALS",THREE_ROUNDS)
+END
+
+IF
+	DifficultyGT(EASY)
+	Global("BD_Bhave","LOCALS",2)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	See([GOODCUTOFF.HUMANOID])
+	!Class(LastSeenBy(Myself),MONK)
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!Race(LastSeenBy(Myself),ELF)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
+	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		ForceSpell(LastSeenBy,WIZARD_DIRE_CHARM)  // SPWI316.SPL (Dire Charm)
+END
+
+IF
+	DifficultyGT(EASY)
+	Global("BD_Bhave","LOCALS",2)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	See(SecondNearest([GOODCUTOFF.HUMANOID]))
+	!Class(LastSeenBy(Myself),MONK)
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!Race(LastSeenBy(Myself),ELF)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
+	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		ForceSpell(LastSeenBy,WIZARD_DIRE_CHARM)  // SPWI316.SPL (Dire Charm)
+END
+
+IF
+	DifficultyGT(EASY)
+	Global("BD_Bhave","LOCALS",2)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	See(ThirdNearest([GOODCUTOFF.HUMANOID]))
+	!Class(LastSeenBy(Myself),MONK)
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!Race(LastSeenBy(Myself),ELF)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
+	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		ForceSpell(LastSeenBy,WIZARD_DIRE_CHARM)  // SPWI316.SPL (Dire Charm)
+END
+
+IF
+	DifficultyGT(EASY)
+	Global("BD_Bhave","LOCALS",2)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	See(FourthNearest([GOODCUTOFF.HUMANOID]))
+	!Class(LastSeenBy(Myself),MONK)
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!Race(LastSeenBy(Myself),ELF)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
+	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		ForceSpell(LastSeenBy,WIZARD_DIRE_CHARM)  // SPWI316.SPL (Dire Charm)
+END
+
+IF
+	DifficultyGT(EASY)
+	Global("BD_Bhave","LOCALS",2)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	See(FifthNearest([GOODCUTOFF.HUMANOID]))
+	!Class(LastSeenBy(Myself),MONK)
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!Race(LastSeenBy(Myself),ELF)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
+	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		ForceSpell(LastSeenBy,WIZARD_DIRE_CHARM)  // SPWI316.SPL (Dire Charm)
+END
+
+IF
+	DifficultyGT(EASY)
+	Global("BD_Bhave","LOCALS",2)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	See(SixthNearest([GOODCUTOFF.HUMANOID]))
+	!Class(LastSeenBy(Myself),MONK)
+	!Kit(LastSeenBy(Myself),INQUISITOR)
+	!Kit(LastSeenBy(Myself),CAVALIER)
+	!Race(LastSeenBy(Myself),ELF)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatGT(LastSeenBy(Myself),0,SAVEVSSPELL)
+	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
+	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		ForceSpell(LastSeenBy,WIZARD_DIRE_CHARM)  // SPWI316.SPL (Dire Charm)
+END
+
+IF
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	!Range(NearestEnemyOf(Myself),6)
+	See(NearestEnemyOf(Myself))
+	OR(2)
+		StateCheck(LastSeenBy(Myself),STATE_PANIC)
+		HPLT(LastSeenBy(Myself),11)
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+	CheckStatLT(LastSeenBy(Myself),50,RESISTFIRE)
+	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		ForceSpellRES("BDPFLAME",LastSeenBy(Myself))  // Produce Flame
+END
+
+IF
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	!Range(NearestEnemyOf(Myself),8)
+	See(NearestEnemyOf(Myself))
+	InMyArea(LastSeenBy(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+	WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+	WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		ForceSpellRES("BDTELWE",LastSeenBy(Myself))  // Teleport Without Error
+		SetInterrupt(TRUE)
 END
 

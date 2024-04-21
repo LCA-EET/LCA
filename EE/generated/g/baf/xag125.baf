@@ -1,511 +1,164 @@
 IF
+	Die()
+THEN
+	RESPONSE #100
+		Help()
+		Continue()
+END
+
+IF
 	Global("bd_default_loc","locals",0)
 THEN
 	RESPONSE #100
 		SaveObjectLocation("LOCALS","bd_default_loc",Myself)
-		SetSequence(SEQ_HEAD_TURN)
 		Continue()
 END
 
 IF
-	OR(2)
-		Allegiance(Myself,GOODBUTBLUE)
-		Allegiance(Myself,NEUTRAL)
+	!Allegiance(Myself,EVILCUTOFF)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		SetGlobal("BD_Engaged","LOCALS",1)
+		SetGlobalTimer("BD_Rest","LOCALS",EIGHT_HOURS)
+		SetGlobalTimerRandom("bd_combat_timer","locals",THREE_MINUTES,FIVE_ROUNDS)
+		SetGlobalTimerRandom("bd_retreat_timer","locals",SEVEN_MINUTES,TEN_ROUNDS)
+		Enemy()
+		Help()
+		Continue()
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	Global("BD_Engaged","LOCALS",0)
 	OR(4)
-		Specifics(Myself,HOSTILES4)
-		Specifics(Myself,HOSTILES3)
-		Specifics(Myself,HOSTILES2)
-		Specifics(Myself,CRUSADERS)
-	OR(2)
-		HitBy([GOODCUTOFF],CRUSHING)
 		AttackedBy([GOODCUTOFF],DEFAULT)
+		Range(NearestEnemyOf(Myself),30)
+		TookDamage()
+		AreaCheck("BD4700")  // Avernus Roof
 THEN
 	RESPONSE #100
+		SetGlobal("BD_Engaged","LOCALS",1)
+		SetGlobalTimer("BD_Rest","LOCALS",EIGHT_HOURS)
+		SetGlobalTimer("BD_Help","LOCALS",ONE_ROUND)
+		SetGlobalTimerRandom("bd_combat_timer","locals",THREE_MINUTES,FIVE_ROUNDS)
+		SetGlobalTimerRandom("bd_retreat_timer","locals",SEVEN_MINUTES,TEN_ROUNDS)
 		Enemy()
-		Shout(ASSIST)
-		SetGlobal("bd_combat","locals",1)
-		SetGlobal("bd_search","locals",0)
-		SetGlobalTimerRandom("bd_shout_timer","locals",9,THREE_MINUTES)
-		SetGlobalTimer("bd_combat_timer","locals",TWO_ROUNDS)
+		Help()
 		Continue()
 END
 
 IF
-	GlobalLT("bd_no_assist","locals",2)
-	OR(2)
-		Allegiance(Myself,GOODBUTBLUE)
-		Allegiance(Myself,NEUTRAL)
-	OR(4)
-		Specifics(Myself,HOSTILES4)
-		Specifics(Myself,HOSTILES3)
-		Specifics(Myself,HOSTILES2)
-		Specifics(Myself,CRUSADERS)
-	OR(2)
-		Heard([ANYONE],ALERT)
-		Heard([ANYONE],ASSIST)
-	OR(3)
-		Heard([ANYONE],ALERT)
-		Global("bd_no_assist","locals",0)
-		Detect(LastHeardBy(Myself))
-	InMyGroup(LastHeardBy(Myself))
-	Allegiance(LastHeardBy(Myself),EVILCUTOFF)
+	DifficultyGT(EASY)
+	Global("BD_Engaged","LOCALS",1)
+	!GlobalTimerNotExpired("BD_Rest","LOCALS")
 THEN
 	RESPONSE #100
-		Enemy()
-		SetGlobal("bd_combat","locals",1)
-		Continue()
-END
-
-IF
-	Allegiance(Myself,NEUTRAL)
-	OR(5)
-		Specifics(Myself,ALLIES_NEUTRAL2)
-		Specifics(Myself,ALLIES_NEUTRAL)
-		Specifics(Myself,ALLIES3)
-		Specifics(Myself,ALLIES2)
-		Specifics(Myself,ALLIES)
-	Detect([ENEMY])
-	!Specifics(LastSeenBy(Myself),THIEF)
-	GlobalLT("bd_no_aggro","locals",2)
-	OR(2)
-		Detect([GOODCUTOFF])
-		Global("bd_no_aggro","locals",0)
-THEN
-	RESPONSE #100
-		ChangeEnemyAlly(Myself,GOODBUTBLUE)
-		SetGlobal("bd_combat","locals",1)
-		Continue()
-END
-
-/*IF
-	OR(2)
-		Allegiance(Myself,GOODBUTBLUE)
-		Allegiance(Myself,NEUTRAL)
-	OR(3)
-		Specifics(Myself,NEUTRALS)
-		Specifics(Myself,ALLIES_NEUTRAL2)
-		Specifics(Myself,ALLIES_NEUTRAL)
-	AttackedBy([GOODCUTOFF],DEFAULT)
-	!InMyGroup(LastAttackerOf(Myself))
-	!StateCheck(LastAttackerOf(Myself),STATE_BERSERK :: STATE_CHARMED :: STATE_CONFUSED)
-THEN
-	RESPONSE #100
-		Enemy()
-		Shout(ASSIST)
-		SetGlobal("bd_combat","locals",1)
-		SetGlobal("bd_search","locals",0)
-		SetGlobalTimerRandom("bd_shout_timer","locals",9,THREE_MINUTES)
-		SetGlobalTimer("bd_combat_timer","locals",TWO_ROUNDS)
-		Continue()
-END*/
-
-IF
-	OR(2)
-		Allegiance(Myself,GOODBUTBLUE)
-		Allegiance(Myself,NEUTRAL)
-	OR(3)
-		Specifics(Myself,NEUTRALS)
-		Specifics(Myself,ALLIES_NEUTRAL2)
-		Specifics(Myself,ALLIES_NEUTRAL)
-	HitBy([GOODCUTOFF],CRUSHING)
-	!InMyGroup(LastHitter(Myself))
-	!Range(LastHitter(Myself),0)
-THEN
-	RESPONSE #100
-		Enemy()
-		Shout(ASSIST)
-		SetGlobal("bd_combat","locals",1)
-		SetGlobal("bd_search","locals",0)
-		SetGlobalTimerRandom("bd_shout_timer","locals",9,THREE_MINUTES)
-		SetGlobalTimer("bd_combat_timer","locals",TWO_ROUNDS)
-		Continue()
-END
-
-IF
-	GlobalLT("bd_no_assist","locals",2)
-	OR(2)
-		Allegiance(Myself,GOODBUTBLUE)
-		Allegiance(Myself,NEUTRAL)
-	OR(3)
-		Specifics(Myself,NEUTRALS)
-		Specifics(Myself,ALLIES_NEUTRAL2)
-		Specifics(Myself,ALLIES_NEUTRAL)
-	OR(2)
-		Heard([ANYONE],ALERT)
-		Heard([ANYONE],ASSIST)
-	OR(3)
-		Heard([ANYONE],ALERT)
-		Global("bd_no_assist","locals",0)
-		Detect(LastHeardBy(Myself))
-	InMyGroup(LastHeardBy(Myself))
-	Allegiance(LastHeardBy(Myself),EVILCUTOFF)
-THEN
-	RESPONSE #100
-		Enemy()
-		SetGlobal("bd_combat","locals",1)
-		Continue()
-END
-
-/*IF
-	Allegiance(Myself,NEUTRAL)
-	OR(3)
-		Specifics(Myself,NEUTRALS)
-		Specifics(Myself,ALLIES_NEUTRAL2)
-		Specifics(Myself,ALLIES_NEUTRAL)
-	AttackedBy([ENEMY],DEFAULT)
-	!InMyGroup(LastAttackerOf(Myself))
-	!StateCheck(LastAttackerOf(Myself),STATE_BERSERK :: STATE_CHARMED :: STATE_CONFUSED)
-THEN
-	RESPONSE #100
-		ChangeEnemyAlly(Myself,GOODBUTBLUE)
-		Shout(ASSIST)
-		SetGlobal("bd_combat","locals",1)
-		SetGlobal("bd_search","locals",0)
-		SetGlobalTimerRandom("bd_shout_timer","locals",9,THREE_MINUTES)
-		SetGlobalTimer("bd_combat_timer","locals",TWO_ROUNDS)
-		Continue()
-END*/
-
-IF
-	Allegiance(Myself,NEUTRAL)
-	OR(2)
-		Specifics(Myself,ALLIES_NEUTRAL2)
-		Specifics(Myself,ALLIES_NEUTRAL)
-	HitBy([ENEMY],CRUSHING)
-	!InMyGroup(LastHitter(Myself))
-THEN
-	RESPONSE #100
-		ChangeEnemyAlly(Myself,GOODBUTBLUE)
-		Shout(ASSIST)
-		SetGlobal("bd_combat","locals",1)
-		SetGlobal("bd_search","locals",0)
-		SetGlobalTimerRandom("bd_shout_timer","locals",9,THREE_MINUTES)
-		SetGlobalTimer("bd_combat_timer","locals",TWO_ROUNDS)
-		Continue()
-END
-
-IF
-	GlobalLT("bd_no_assist","locals",2)
-	Allegiance(Myself,NEUTRAL)
-	OR(3)
-		Specifics(Myself,NEUTRALS)
-		Specifics(Myself,ALLIES_NEUTRAL2)
-		Specifics(Myself,ALLIES_NEUTRAL)
-	OR(2)
-		Heard([ANYONE],ALERT)
-		Heard([ANYONE],ASSIST)
-	OR(3)
-		Heard([ANYONE],ALERT)
-		Global("bd_no_assist","locals",0)
-		Detect(LastHeardBy(Myself))
-	InMyGroup(LastHeardBy(Myself))
-	Allegiance(LastHeardBy(Myself),GOODCUTOFF)
-THEN
-	RESPONSE #100
-		ChangeEnemyAlly(Myself,GOODBUTBLUE)
-		SetGlobal("bd_combat","locals",1)
-		Continue()
-END
-
-/*IF
-	Allegiance(Myself,NEUTRAL)
-	AttackedBy([GOODCUTOFF],DEFAULT)
-	OR(3)
-		!InMyGroup(LastAttackerOf(Myself))
-		Allegiance(LastAttackerOf,PC)
-		Allegiance(LastAttackerOf,CONTROLLED)
-	!StateCheck(LastAttackerOf(Myself),STATE_BERSERK :: STATE_CHARMED :: STATE_CONFUSED)
-	!Specifics(Myself,ALLIES)
-	!Specifics(Myself,ALLIES2)
-	!Specifics(Myself,ALLIES3)
-	!Specifics(Myself,ALLIES_NEUTRAL)
-	!Specifics(Myself,ALLIES_NEUTRAL2)
-	!Specifics(Myself,ORC)
-	!Specifics(Myself,NEUTRALS)
-	!Specifics(Myself,CRUSADERS)
-	!Specifics(Myself,HOSTILES2)
-	!Specifics(Myself,HOSTILES3)
-	!Specifics(Myself,HOSTILES4)
-THEN
-	RESPONSE #100
-		Enemy()
-		Shout(ASSIST)
-		SetGlobal("bd_combat","locals",1)
-		SetGlobal("bd_search","locals",0)
-		SetGlobalTimerRandom("bd_shout_timer","locals",9,THREE_MINUTES)
-		SetGlobalTimer("bd_combat_timer","locals",TWO_ROUNDS)
-		Continue()
-END*/
-
-IF
-	Allegiance(Myself,NEUTRAL)
-	Heard([ANYONE],ASSIST)
-	OR(2)
-		Global("bd_no_assist","locals",0)
-		Detect(LastHeardBy(Myself))
-	InMyGroup(LastHeardBy(Myself))
-	Allegiance(LastHeardBy(Myself),ENEMY)
-	!Specifics(Myself,ALLIES)
-	!Specifics(Myself,ALLIES2)
-	!Specifics(Myself,ALLIES3)
-	!Specifics(Myself,ALLIES_NEUTRAL)
-	!Specifics(Myself,ALLIES_NEUTRAL2)
-	!Specifics(Myself,ORC)
-	!Specifics(Myself,NEUTRALS)
-	!Specifics(Myself,CRUSADERS)
-	!Specifics(Myself,HOSTILES2)
-	!Specifics(Myself,HOSTILES3)
-	!Specifics(Myself,HOSTILES4)
-THEN
-	RESPONSE #100
-		Enemy()
-		SetGlobal("bd_combat","locals",1)
-		Continue()
-END
-
-IF
-	GlobalLT("bd_no_combat","locals",2)
-	Global("bd_combat","locals",0)
-	OR(2)
-		Global("bd_retreat","locals",0)
-		Global("bd_no_combat","locals",0)
-	See(NearestEnemyOf(Myself))
-THEN
-	RESPONSE #100
-		SetGlobal("bd_combat","locals",1)
-		Continue()
-END
-
-IF
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		Global("bd_search","locals",1)
-		GlobalTimerNotExpired("bd_respond_timer","locals")
-THEN
-	RESPONSE #100
-		SetGlobal("bd_search","locals",0)
-		SetGlobal("bd_search_timer","locals",0)
-		SetGlobal("bd_respond_timer","locals",0)
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_combat_timer","locals")
-	OR(3)
-		AttackedBy([ANYONE],DEFAULT)
-		HitBy([ANYONE],CRUSHING)
-		Die()
-	!Allegiance(Myself,NEUTRAL)
-	!Range(LastAttackerOf(Myself),0)
-	!Allegiance(LastAttackerOf(Myself),NEUTRAL)
-THEN
-	RESPONSE #100
-		Shout(ASSIST)
-		SetGlobal("bd_combat","locals",1)
-		SetGlobal("bd_search","locals",0)
-		SetGlobalTimerRandom("bd_shout_timer","locals",9,THREE_MINUTES)
-		SetGlobalTimer("bd_combat_timer","locals",TWO_ROUNDS)
-END
-
-IF
-	Global("bd_no_shout","locals",0)
-	See(NearestEnemyOf(Myself))
-	OR(2)
-		Global("bd_retreat","locals",0)
-		Global("bd_no_combat","locals",0)
-	!GlobalTimerNotExpired("bd_shout_timer","locals")
-THEN
-	RESPONSE #100
-		Shout(ASSIST)
-		SetGlobal("bd_combat","locals",1)
-		SetGlobalTimerRandom("bd_shout_timer","locals",9,THREE_MINUTES)
-		SetGlobal("bd_respond_timer","locals",0)
-END
-
-IF
-	GlobalLT("bd_no_assist","locals",2)
-	GlobalLT("bd_no_combat","locals",2)
-	Heard([ANYONE],ALERT)
-	InMyGroup(LastHeardBy(Myself))
-	!See(NearestEnemyOf(Myself))
-	!GlobalTimerNotExpired("bd_respond_timer","locals")
-THEN
-	RESPONSE #100
-		SetGlobal("bd_combat","locals",1)
-		SetGlobalTimer("bd_respond_timer","locals",FOUR_ROUNDS)
-		MoveToObject(LastHeardBy(Myself))
-END
-
-IF
-	GlobalLT("bd_no_assist","locals",2)
-	OR(2)
-		Global("bd_retreat","locals",0)
-		Global("bd_no_combat","locals",0)
-	!Allegiance(Myself,NEUTRAL)
-	!See(NearestEnemyOf(Myself))
-	!GlobalTimerNotExpired("bd_respond_timer","locals")
-	Heard([ANYONE],ASSIST)
-	InMyGroup(LastHeardBy(Myself))
-	OR(2)
-		Global("bd_no_assist","locals",0)
-		Detect(LastHeardBy(Myself))
-THEN
-	RESPONSE #100
-		SetGlobal("bd_combat","locals",1)
-		SetGlobalTimer("bd_respond_timer","locals",FOUR_ROUNDS)
-		MoveToObject(LastHeardBy(Myself))
-END
-
-IF
-	GlobalLT("bd_no_assist","locals",2)
-	Range(LastHeardBy(Myself),4)
-	GlobalTimerNotExpired("bd_respond_timer","locals")
-THEN
-	RESPONSE #100
-		SetGlobal("bd_respond_timer","locals",0)
-END
-
-IF
-	Global("bd_no_search","locals",0)
-	Global("bd_combat","locals",1)
-	Global("bd_search","locals",0)
-	Delay(4)
-	!See(NearestEnemyOf(Myself))
-	!GlobalTimerNotExpired("bd_respond_timer","locals")
-THEN
-	RESPONSE #100
-		SetGlobal("bd_search","locals",1)
-		SetGlobalTimerRandom("bd_search_timer","locals",THREE_MINUTES,FIVE_ROUNDS)
-END
-
-IF
-	Global("bd_combat","locals",1)
-	Global("bd_search","locals",1)
-	GlobalTimerExpired("bd_search_timer","locals")
-THEN
-	RESPONSE #100
-		SetGlobal("bd_search","locals",2)
-		Continue()
-END
-
-IF
-	Global("bd_no_search","locals",0)
-	Global("bd_retreat","locals",0)
-	Global("bd_search","locals",1)
-	GlobalTimerNotExpired("bd_search_timer","locals")
-	OR(2)
-		!GlobalTimerNotExpired("bd_respond_timer","locals")
-		Global("bd_no_assist","locals",2)
-THEN
-	RESPONSE #100
-		RandomWalkContinuous()
-END
-
-IF
-	Global("bd_retreat","locals",1)
-	Global("bd_combat","locals",1)
-	!GlobalTimerNotExpired("bd_respond_timer","locals")
-	!GlobalTimerNotExpired("bd_combat_timer","locals")
-	Global("bd_no_retreat","locals",0)
-THEN
-	RESPONSE #100
-		SetGlobal("bd_combat","locals",0)
-END
-
-IF
-	Global("bd_retreat","locals",0)
-	Global("bd_combat","locals",1)
-	!See(NearestEnemyOf(Myself))
-	Delay(15)
-	!GlobalTimerNotExpired("bd_combat_timer","locals")
-	!GlobalTimerNotExpired("bd_search_timer","locals")
-	!GlobalTimerNotExpired("bd_respond_timer","locals")
-THEN
-	RESPONSE #100
-		SetGlobal("bd_retreat","locals",1)
-		SetGlobal("bd_search","locals",0)
-		SetGlobal("bd_combat","locals",0)
-END
-
-IF
-	Global("bd_retreat","locals",1)
-	Global("bd_combat","locals",0)
-	OR(2)
-		!See(NearestEnemyOf(Myself))
-		!Global("bd_no_combat","locals",0)
-	!NearSavedLocation(Myself,"LOCALSbd_default_loc",5)
-	!GlobalTimerNotExpired("bd_search_timer","locals")
-	!GlobalTimerNotExpired("bd_respond_timer","locals")
-	Switch("bd_no_retreat","locals")
-THEN
-	RESPONSE #0
-		MoveToSavedLocationn("bd_default_loc","LOCALS")
-	RESPONSE #1
-		SetGlobal("bd_retreat","locals",0)
-END
-
-IF
-	Global("bd_retreat","locals",1)
-	Global("bd_combat","locals",0)
-	NearSavedLocation(Myself,"LOCALSbd_default_loc",5)
-	Global("bd_no_retreat","locals",0)
-	Allegiance(Myself,ENEMY)
-	Switch("bd_retreat_escape","locals")
-THEN
-	RESPONSE #0
-		SetGlobal("bd_retreat","locals",0)
-		SetGlobalTimer("bd_rest_timer","locals",SIX_HOURS)
-		MoveToSavedLocationn("bd_default_loc","LOCALS")
-	RESPONSE #1
-		DestroySelf()
-END
-
-IF
-	Global("bd_retreat","locals",1)
-	Global("bd_combat","locals",0)
-	NearSavedLocation(Myself,"LOCALSbd_default_loc",5)
-	Global("bd_no_retreat","locals",0)
-	!Allegiance(Myself,ENEMY)
-	Switch("bd_retreat_escape","locals")
-THEN
-	RESPONSE #0
-		SetGlobal("bd_retreat","locals",0)
-		SetGlobalTimer("bd_rest_timer","locals",SIX_HOURS)
-		ChangeEnemyAlly(Myself,NEUTRAL)
-		MoveToSavedLocationn("bd_default_loc","LOCALS")
-	RESPONSE #1
-		DestroySelf()
-END
-
-IF
-	Global("bd_combat","locals",0)
-	Global("bd_retreat","locals",0)
-	GlobalTimerExpired("bd_rest_timer","locals")
-	!Detect(NearestEnemyOf(Myself))
-	CombatCounter(0)
-THEN
-	RESPONSE #100
-		SetGlobalTimer("bd_rest_timer","locals",TWELVE_HOURS)
-		SetGlobal("bd_prebuff","locals",0)
-		SetGlobal("bd_hide_in_ambush","locals",0)
+		SetGlobalTimer("BD_Rest","LOCALS",EIGHT_HOURS)
+		SetGlobal("BD_CHCntg","LOCALS",0)
+		SetGlobal("BD_Cntg","LOCALS",0)
+		SetGlobal("BD_Seq","LOCALS",0)
+		SetGlobal("BD_MSeq","LOCALS",0)
+		SetGlobal("BD_Trig","LOCALS",0)
+		SetGlobal("BD_Precast","LOCALS",0)
+		SetGlobal("BD_DChrm","LOCALS",0)
 		ApplySpell(Myself,RESTORE_FULL_HEALTH)  // SPIN746.SPL (No such index)
 		Rest()
 END
 
 IF
+	Allegiance(Myself,EVILCUTOFF)
+	!GlobalTimerNotExpired("BD_Help","LOCALS")
 	OR(2)
-		Heard([ANYONE],ALERT)
-		Heard([ANYONE],ASSIST)
-	False()
+		Range(NearestEnemyOf(Myself),30)
+		AttackedBy([GOODCUTOFF],DEFAULT)
 THEN
 	RESPONSE #100
+		SetGlobalTimer("BD_Help","LOCALS",ONE_ROUND)
+		SetGlobalTimerRandom("bd_combat_timer","locals",THREE_MINUTES,FIVE_ROUNDS)
+		SetGlobalTimerRandom("bd_retreat_timer","locals",SEVEN_MINUTES,TEN_ROUNDS)
+		Help()
 		Continue()
 END
 
 IF
-	StateCheck(Myself,STATE_PANIC)
+	Allegiance(Myself,EVILCUTOFF)
+	Global("BD_Engaged","LOCALS",0)
+	!Range(NearestEnemyOf(Myself),30)
+	OR(10)
+		Help([EVILCUTOFF])
+		Help(SecondNearest([EVILCUTOFF]))
+		Help(ThirdNearest([EVILCUTOFF]))
+		Help(FourthNearest([EVILCUTOFF]))
+		Help(FifthNearest([EVILCUTOFF]))
+		Help(SixthNearest([EVILCUTOFF]))
+		Help(SeventhNearest([EVILCUTOFF]))
+		Help(EighthNearest([EVILCUTOFF]))
+		Help(NinthNearest([EVILCUTOFF]))
+		Help(TenthNearest([EVILCUTOFF]))
+	LOS(LastHelp(Myself),30)
+THEN
+	RESPONSE #100
+		SetGlobal("BD_Engaged","LOCALS",1)
+		SetGlobalTimer("BD_Rest","LOCALS",EIGHT_HOURS)
+		Help()
+		Continue()
+END
+
+IF
+	Global("BD_Engaged","LOCALS",1)
+	Allegiance(Myself,EVILCUTOFF)
+	!Range(NearestEnemyOf(Myself),30)
+	Help([ANYONE])
+	Allegiance(LastHelp(Myself),EVILCUTOFF)
+	TriggerOverride(LastHelp(Myself),LOS(LastSeenBy(Myself),30))
+	Allegiance(LastSeenBy(LastHelp(Myself)),GOODCUTOFF)
+	!GlobalTimerNotExpired("bd_respond_timer","locals")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("bd_combat_timer","locals",FIVE_MINUTES,EIGHT_MINUTES)
+		SetGlobalTimerRandom("bd_retreat_timer","locals",NINE_MINUTES,TEN_ROUNDS)
+		SetGlobalTimer("bd_respond_timer","locals",TWO_ROUNDS)
+		MoveToObject(LastSeenBy(LastHelp(Myself)))
+END
+
+IF
+	Global("BD_Engaged","LOCALS",1)
+	Allegiance(Myself,EVILCUTOFF)
+	!Range(NearestEnemyOf(Myself),30)
+	Help([ANYONE])
+	Allegiance(LastHelp(Myself),EVILCUTOFF)
+	!Range(LastHelp(Myself),5)
+	!GlobalTimerNotExpired("bd_respond_timer","locals")
+	!GlobalTimerNotExpired("bd_respond2_timer","locals")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("bd_combat_timer","locals",THREE_MINUTES,FIVE_ROUNDS)
+		SetGlobalTimerRandom("bd_retreat_timer","locals",SEVEN_MINUTES,TEN_ROUNDS)
+		SetGlobalTimer("bd_respond2_timer","locals",ONE_ROUND)
+		MoveToObject(LastHelp(Myself))
+END
+
+IF
+	Global("BD_Engaged","LOCALS",1)
+	Allegiance(Myself,EVILCUTOFF)
+	!Range(NearestEnemyOf(Myself),30)
+	!GlobalTimerNotExpired("bd_respond_timer","locals")
+	!GlobalTimerNotExpired("bd_respond2_timer","locals")
+	GlobalTimerNotExpired("bd_combat_timer","locals")
 THEN
 	RESPONSE #100
 		RandomWalkContinuous()
+END
+
+IF
+	Global("BD_Engaged","LOCALS",1)
+	Allegiance(Myself,EVILCUTOFF)
+	!GlobalTimerNotExpired("bd_retreat_timer","locals")
+	!Range(NearestEnemyOf(Myself),30)
+	!NearSavedLocation(Myself,"LOCALSbd_default_loc",5)
+THEN
+	RESPONSE #100
+		MoveToSavedLocationn("bd_default_loc","LOCALS")
 END
 

@@ -287,116 +287,119 @@ END
 //cre files
 //===================
 COPY ~%MOD_FOLDER%\generated\g\cre\xag100.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20030) /*~Lemure~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20031) /*~Lemure~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20030) /*~Thrix~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20031) /*~Thrix~*/
 
-COPY ~%MOD_FOLDER%\generated\g\cre\xag102.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20032) /*~Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20033) /*~Abishai~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag101.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@20032) /*~Lemure~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20033) /*~Lemure~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag103.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20034) /*~Imp~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20035) /*~Imp~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20034) /*~Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20035) /*~Abishai~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag104.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20036) /*~Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20037) /*~Abishai~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20036) /*~Imp~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20037) /*~Imp~*/
 
-COPY ~%MOD_FOLDER%\generated\g\cre\xag106.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20038) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20039) /*~Crusader Elite~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag105.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@20038) /*~Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20039) /*~Abishai~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag107.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20040) /*~Lemure~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20041) /*~Lemure~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20040) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20041) /*~Crusader Elite~*/
 
-COPY ~%MOD_FOLDER%\generated\g\cre\xag110.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20042) /*~Imp~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20043) /*~Imp~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag108.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@20042) /*~Lemure~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20043) /*~Lemure~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag111.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20044) /*~Black Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20045) /*~Black Abishai~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20044) /*~Imp~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20045) /*~Imp~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag112.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20046) /*~Green Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20047) /*~Green Abishai~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20046) /*~Black Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20047) /*~Black Abishai~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag113.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20048) /*~Red Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20049) /*~Red Abishai~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20048) /*~Green Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20049) /*~Green Abishai~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag114.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20050) /*~Hamatula~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20051) /*~Hamatula~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20050) /*~Red Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20051) /*~Red Abishai~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag115.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20052) /*~Bone Fiend~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20053) /*~Bone Fiend~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20052) /*~Hamatula~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20053) /*~Hamatula~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag116.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20054) /*~Xhost~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20055) /*~Xhost~*/
-	WRITE_LONG 408 RESOLVE_STR_REF(@20056) /*~This creature is on another plane of existence and cannot hear you. You must use the Spectacles of Spectacle to pull it into your world if you wish to speak to it.~*/
-	WRITE_LONG 412 RESOLVE_STR_REF(@20057) /*~This creature is on another plane of existence and cannot hear you. You must use the Spectacles of Spectacle to pull it into your world if you wish to speak to it.~*/
-
-COPY ~%MOD_FOLDER%\generated\g\cre\xag121.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20058) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20059) /*~Crusader Elite~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@20060) /*~For the Shining Lady!~[xag10016]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@20061) /*~You need somethin'?~[xag10017]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@20062) /*~We serve the light.~[xag10018]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20054) /*~Bone Fiend~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20055) /*~Bone Fiend~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag122.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20063) /*~Lemure~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20064) /*~Lemure~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20056) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20057) /*~Crusader Elite~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@20058) /*~For the Shining Lady!~[xag10016]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@20059) /*~You need somethin'?~[xag10017]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@20060) /*~We serve the light.~[xag10018]*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag123.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20065) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20066) /*~Crusader Elite~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@20067) /*~Die in her name!~[xag10019]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@20068) /*~Somethin' you need?~[xag10020]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@20069) /*~As the light wills.~[xag10021]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20061) /*~Lemure~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20062) /*~Lemure~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag124.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20070) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20071) /*~Crusader Elite~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@20072) /*~~[xag10022]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@20073) /*~~[xag10023]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@20074) /*~ The Fair Folk rarely have time for small talk.~[xag10024]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@20075) /*~ Troubled times are upon us.~[xag10025]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@20076) /*~ Soon, we shall all be together upon Evermeet.~[xag10026]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20063) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20064) /*~Crusader Elite~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@20065) /*~Die in her name!~[xag10019]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@20066) /*~Somethin' you need?~[xag10020]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@20067) /*~As the light wills.~[xag10021]*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag125.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20077) /*~Green Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20078) /*~Green Abishai~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20068) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20069) /*~Crusader Elite~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@20070) /*~~[xag10022]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@20071) /*~~[xag10023]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@20072) /*~ The Fair Folk rarely have time for small talk.~[xag10024]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@20073) /*~ Troubled times are upon us.~[xag10025]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@20074) /*~ Soon, we shall all be together upon Evermeet.~[xag10026]*/
 
-COPY ~%MOD_FOLDER%\generated\g\cre\xag128.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20079) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20080) /*~Crusader Elite~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@20081) /*~For the Shining Lady!~[xag10016]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@20082) /*~You need somethin'?~[xag10017]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@20083) /*~We serve the light.~[xag10018]*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag126.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@20075) /*~Green Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20076) /*~Green Abishai~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag129.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20084) /*~Black Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20085) /*~Black Abishai~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20077) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20078) /*~Crusader Elite~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@20079) /*~For the Shining Lady!~[xag10016]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@20080) /*~You need somethin'?~[xag10017]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@20081) /*~We serve the light.~[xag10018]*/
 
-COPY ~%MOD_FOLDER%\generated\g\cre\xag132.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20086) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20087) /*~Crusader Elite~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@20088) /*~Die in her name!~[xag10019]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@20089) /*~Somethin' you need?~[xag10020]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@20090) /*~As the light wills.~[xag10021]*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag130.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@20082) /*~Black Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20083) /*~Black Abishai~*/
 
-COPY ~%MOD_FOLDER%\generated\g\cre\xag136.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\cre\xag133.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@20084) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20085) /*~Crusader Elite~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@20086) /*~Die in her name!~[xag10019]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@20087) /*~Somethin' you need?~[xag10020]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@20088) /*~As the light wills.~[xag10021]*/
+
+COPY ~%MOD_FOLDER%\generated\g\cre\xag137.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@20089) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20090) /*~Crusader Elite~*/
+
+COPY ~%MOD_FOLDER%\generated\g\cre\xag138.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@20091) /*~Crusader Elite~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@20092) /*~Crusader Elite~*/
 
-COPY ~%MOD_FOLDER%\generated\g\cre\xag137.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20093) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20094) /*~Crusader Elite~*/
 
+//spl files
+//===================
+COPY ~%MOD_FOLDER%\generated\g\spl\xag100.spl~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@20093) /*~Teleport Without Error~*/
 
 //baf files
 //===================
@@ -453,9 +456,9 @@ COPY ~%MOD_FOLDER%\generated\g\bam\xag153.bam~ ~override~
 //itm files
 //===================
 COPY ~%MOD_FOLDER%\generated\g\itm\xag100.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20095) /*~Throwing Axe~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20096) /*~Axe of Kruntur +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@20097) /*~The hand axe or throwing axe is also known as a hatchet. The axe blade has a sharp steel tip counterbalanced by a pointed fluke. The short handle has a point on the bottom, and the head may have a spike on the top.
+	WRITE_LONG 8 RESOLVE_STR_REF(@20094) /*~Throwing Axe~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20095) /*~Axe of Kruntur +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@20096) /*~The hand axe or throwing axe is also known as a hatchet. The axe blade has a sharp steel tip counterbalanced by a pointed fluke. The short handle has a point on the bottom, and the head may have a spike on the top.
 
 STATISTICS:
 
@@ -469,7 +472,7 @@ Requires:
  4 Strength
 
 Weight: 1~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@20098) /*~As mighty a weapon as a goblin could hope to wield, the Axe of Kruntur belonged to a dekanter goblin warlord a century or more ago. Though a famous figure in his tribe, Kruntur was less well-known beyond it. After his death, his signature weapon moved from hand to hand in rapid succession, finally ending up discarded in the ruins of the dwarven town of Kanaglym.
+	WRITE_LONG 84 RESOLVE_STR_REF(@20097) /*~As mighty a weapon as a goblin could hope to wield, the Axe of Kruntur belonged to a dekanter goblin warlord a century or more ago. Though a famous figure in his tribe, Kruntur was less well-known beyond it. After his death, his signature weapon moved from hand to hand in rapid succession, finally ending up discarded in the ruins of the dwarven town of Kanaglym.
 
 STATISTICS:
 
@@ -492,14 +495,14 @@ Requires:
 
 Weight: 3~*/
 COPY ~%MOD_FOLDER%\generated\g\itm\xag101.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20099) /*~Robe~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20100) /*~The Ghostdreamers' Robe~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@20101) /*~A robe is a loose garment with long sleeves. Some have an attached hood, a drawstring belt, or other small alterations. Robes can possess enchantments, but many are worn simply for comfort or fashion.
+	WRITE_LONG 8 RESOLVE_STR_REF(@20098) /*~Robe~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20099) /*~The Ghostdreamers' Robe~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@20100) /*~A robe is a loose garment with long sleeves. Some have an attached hood, a drawstring belt, or other small alterations. Robes can possess enchantments, but many are worn simply for comfort or fashion.
 
 STATISTICS:
 
 Weight: 3~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@20102) /*~Seemingly little more than rags stitched together, the Ghostdreamers' Robe is actually an artifact of great historical significance to the dak'Dekanter goblin tribe. Each of the robe's dozens of patches was cut from the robe of an enemy tribe's shaman. This makes the Ghostdreamers' Robe more than an article of clothing; it is a physical representation of the dak'Dekanters' victories over the centuries and a symbol of power for the shaman who wears it.
+	WRITE_LONG 84 RESOLVE_STR_REF(@20101) /*~Seemingly little more than rags stitched together, the Ghostdreamers' Robe is actually an artifact of great historical significance to the dak'Dekanter goblin tribe. Each of the robe's dozens of patches was cut from the robe of an enemy tribe's shaman. This makes the Ghostdreamers' Robe more than an article of clothing; it is a physical representation of the dak'Dekanters' victories over the centuries and a symbol of power for the shaman who wears it.
 
 STATISTICS:
 
@@ -510,9 +513,9 @@ Equipped abilities:
 
 Weight: 3~*/
 COPY ~%MOD_FOLDER%\generated\g\itm\xag102.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20103) /*~Quarterstaff~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20104) /*~The Soulherder's Staff +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@20105) /*~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High-quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
+	WRITE_LONG 8 RESOLVE_STR_REF(@20102) /*~Quarterstaff~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20103) /*~The Soulherder's Staff +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@20104) /*~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High-quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
 
 STATISTICS:
 
@@ -524,7 +527,7 @@ Requires:
  5 Strength
 
 Weight: 4~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@20106) /*~A gnarled wooden staff cut from the dak'Dekanter goblin tribe's sacred tree, this item was a symbol of spiritual power for centuries. It disappeared during a hard-fought battle between the dak'Dekanters and a dwarven clan whose name is lost to history, and those few who remembered it once existed thought it lost forever. It was found discarded in the lost dwarven town of Kanaglym, among other treasures the dwarves stole from their goblin enemies over the years.
+	WRITE_LONG 84 RESOLVE_STR_REF(@20105) /*~A gnarled wooden staff cut from the dak'Dekanter goblin tribe's sacred tree, this item was a symbol of spiritual power for centuries. It disappeared during a hard-fought battle between the dak'Dekanters and a dwarven clan whose name is lost to history, and those few who remembered it once existed thought it lost forever. It was found discarded in the lost dwarven town of Kanaglym, among other treasures the dwarves stole from their goblin enemies over the years.
 
 STATISTICS:
 
@@ -543,9 +546,9 @@ Requires:
 
 Weight: 3~*/
 COPY ~%MOD_FOLDER%\generated\g\itm\xag103.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20107) /*~Hide Armor~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20108) /*~Kruntur's Armor +3~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@20109) /*~Hide armor is made from the thick hide of a very large animal (an elephant for example) or from many layers of normal leather from common animals, like cows. Hide armor is far too bulky, inflexible and heavy to be used much in advanced human cultures. However, among the barbaric humanoid masses throughout the dark forests and misty jungles of the world, hide armor is common. Even though it does offer more protection than leather armor, one must get by the offensive odor and shoddy appearance in order to wear it effectively. Even though Thieves can wear this armor, it has a negative effect on their abilities.
+	WRITE_LONG 8 RESOLVE_STR_REF(@20106) /*~Hide Armor~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20107) /*~Kruntur's Armor +3~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@20108) /*~Hide armor is made from the thick hide of a very large animal (an elephant for example) or from many layers of normal leather from common animals, like cows. Hide armor is far too bulky, inflexible and heavy to be used much in advanced human cultures. However, among the barbaric humanoid masses throughout the dark forests and misty jungles of the world, hide armor is common. Even though it does offer more protection than leather armor, one must get by the offensive odor and shoddy appearance in order to wear it effectively. Even though Thieves can wear this armor, it has a negative effect on their abilities.
 
 STATISTICS:
 
@@ -560,7 +563,7 @@ Requires:
  6 Strength
 
 Weight: 40~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@20110) /*~Once worn by the dekanter goblin warlord Kruntur, this armor is of an unusually high quality considering the race of its owner—most non-goblin smiths won't bother making armor suitable for goblinoid physiques, while those few goblins who know how to use a forge are generally more focused on weaponry. Kruntur prized this armor to such a degree that, upon his death, he refused to leave it. To this day, more than a hundred years later, his spirit still permeates the armor, whispering threats to all who dare wear it and generally making a nuisance of himself. He cannot directly harm the wearer, however, and for a goblinoid, the chance to have such fine protection might well make up for the aggravation the armor brings with it.
+	WRITE_LONG 84 RESOLVE_STR_REF(@20109) /*~Once worn by the dekanter goblin warlord Kruntur, this armor is of an unusually high quality considering the race of its owner—most non-goblin smiths won't bother making armor suitable for goblinoid physiques, while those few goblins who know how to use a forge are generally more focused on weaponry. Kruntur prized this armor to such a degree that, upon his death, he refused to leave it. To this day, more than a hundred years later, his spirit still permeates the armor, whispering threats to all who dare wear it and generally making a nuisance of himself. He cannot directly harm the wearer, however, and for a goblinoid, the chance to have such fine protection might well make up for the aggravation the armor brings with it.
 
 STATISTICS:
 
@@ -578,38 +581,32 @@ Requires:
 
 Weight: 20~*/
 COPY ~%MOD_FOLDER%\generated\g\itm\xag104.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20111) /*~Hephernaan's Ritual Notes~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20112) /*~Hephernaan's Ritual Notes~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@20113) /*~These arcane notes contain formulas devised by Hephernaan to raise an army of undead. The ritual cannot be used as written without certain artifacts destroyed in Hephernaan's first attempt to work the spells, but the theoretical underpinning of the magic remains sound.~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20110) /*~Hephernaan's Ritual Notes~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20111) /*~Hephernaan's Ritual Notes~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@20112) /*~These arcane notes contain formulas devised by Hephernaan to raise an army of undead. The ritual cannot be used as written without certain artifacts destroyed in Hephernaan's first attempt to work the spells, but the theoretical underpinning of the magic remains sound.~*/
 COPY ~%MOD_FOLDER%\generated\g\itm\xag105.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20114) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20115) /*~Attack~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20113) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20114) /*~Attack~*/
 COPY ~%MOD_FOLDER%\generated\g\itm\xag106.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20116) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20117) /*~Attack~*/
-COPY ~%MOD_FOLDER%\generated\g\itm\xag109.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20118) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20119) /*~Attack~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20115) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20116) /*~Attack~*/
+COPY ~%MOD_FOLDER%\generated\g\itm\xag107.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@20117) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20118) /*~Attack~*/
 COPY ~%MOD_FOLDER%\generated\g\itm\xag110.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20120) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20121) /*~Attack~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20119) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20120) /*~Attack~*/
 COPY ~%MOD_FOLDER%\generated\g\itm\xag111.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20122) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20123) /*~Attack~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20121) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20122) /*~Attack~*/
 COPY ~%MOD_FOLDER%\generated\g\itm\xag112.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20124) /*~Invulnerable~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20125) /*~Invulnerable~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@20123) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20124) /*~Attack~*/
 COPY ~%MOD_FOLDER%\generated\g\itm\xag113.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20126) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20127) /*~Attack~*/
-COPY ~%MOD_FOLDER%\generated\g\itm\xag114.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20128) /*~Invisible~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20129) /*~Invisible~*/
-COPY ~%MOD_FOLDER%\generated\g\itm\xag115.itm~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\itm\xag121.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@20130) /*~Club~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@20131) /*~Club +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@20132) /*~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
+COPY ~%MOD_FOLDER%\generated\g\itm\xag119.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@20125) /*~Club~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@20126) /*~Club +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@20127) /*~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
 
 STATISTICS:
 
@@ -621,7 +618,7 @@ Requires:
  5 Strength
 
 Weight: 3~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@20133) /*~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
+	WRITE_LONG 84 RESOLVE_STR_REF(@20128) /*~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
 
 STATISTICS:
 
