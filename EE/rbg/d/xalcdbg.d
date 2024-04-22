@@ -26,6 +26,9 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @6054 /* ~Interaction Test~*/
 		GOTO XA_RBG_InteractionTest
 		
+		IF ~~ THEN REPLY @6069 /* ~Store Test~*/
+		GOTO XA_RBG_StoreTest
+		
 		IF ~~ THEN REPLY @6023 /* ~Change Worldmap (xamaprbg).~*/
 		DO ~
 			SetWorldmap("xamaprbg")
@@ -43,6 +46,34 @@ APPEND ~XALCDBG~
 			DestroySelf()
 		~
 		EXIT	
+	END
+	
+	IF ~~ THEN BEGIN XA_RBG_StoreTest
+		SAY @6069
+		
+		IF ~~ THEN REPLY @6070
+		DO ~
+			StartStore("XAMELKOR", LastTalkedToBy(Myself))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6071
+		DO ~
+			StartStore("XAWVBAR", LastTalkedToBy(Myself))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_RBG_Debug
+		
+		IF ~~ THEN REPLY @3012 /*~Exit.~ */
+		GOTO 6
+		
+		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
+		DO ~
+			DestroySelf()
+		~
+		EXIT
 	END
 	
 	IF ~~ THEN BEGIN XA_RBG_InteractionTest

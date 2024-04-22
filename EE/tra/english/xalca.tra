@@ -171,7 +171,7 @@ Equipped abilities:
 @062 = ~Melkor~
 @063 = ~Virgil~
 
-@066 = ~Emergency Provisions~
+
 @067 = ~Winston Ventures~
 @068 = ~Winston Ventures Headquarters~
 @069 = ~Flaming Fist Valiant~
@@ -461,15 +461,8 @@ The dagger contains, among others, the soul of Major Corwin's former lover, Beno
 
 
 
-@165 = ~Illumination's Embrace~
-@166 = ~This magical cloak was gifted to Caelar Argent by one of her trusted lieutenants shortly before the start of her ill-fated crusade. The threads have been enchanted to shine and shimmer as its wearer moves to and fro. It creates a kind of mesmerizing effect that hinders the ability of enemies to accurately target its wearer.
 
-STATISTICS:
 
-Equipped abilities:
-– Armor Class: +1
-– Saving Throws: +1
-~
 
 
 
@@ -497,26 +490,7 @@ This assistant allows you to configure certain characteristics of the Love Conqu
 @189 = ~Saving the city of Baldur's Gate, ending Caelar Argent's crusade, and bravely venturing to certain death in the first of the Nine Hells, only to return alive, covered in the ichor of the mighty devil Belhifet! What should have been your ultimate triumph was turned into a nightmare, when you were falsely accused of the heinous murder of Skie Silvershield... yet you persevered where others would have faltered, and brought the culprit, the mad mage Jon Irenicus to justice while preserving the Tree of Life. Such heroic accomplishments are mere footnotes in the epic tale of <CHARNAME>, greatest of the children of Bhaal!~ 
 
 /* 1.0.15 */
-@190 = ~Aster's Edge +5~
-@191 = ~Legend tells that a powerful angelic being gifted this blade to a member of the Order of the Aster long ago. Details of the legend have been lost over time, but many believe the sword was a reward for slaying a monstrous fiend, perhaps even a balor. Delicate etchings of asters decorate the blade.
 
-With the Eye of Tyr affixed to the pommel, the power of this magnificent weapon now matches its beauty. When drawn, the augmented blade pulses with an other-worldly glow, signifying its holy power.  
-
-STATISTICS:
-
-Equipped abilities:
-– Magic Resistance: +35%
-
-THAC0: +5
-Damage: 1d8+5, +4 extra vs. fiends
-Damage type: Slashing
-Speed Factor: 2
-Proficiency Type: Long Sword
-Type: One-handed
-Requires:
- 5 Strength
-
-Weight: 2~
 @192= ~Corwin's Bow +3~
 @193 = ~This enchanted bow boosts the wielder's dexterity, allowing them to fire more accurately. The bow was further enhanced by Flaming Fist mages to help then Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. 
 
@@ -782,12 +756,6 @@ Weight: 9
 @1012 = ~This appears to be a Flaming Fist officers' training manual. It includes policies and procedures covering incident investigations, suspect apprehension techniques, proper etiquette when dealing with city officials, and much more. The initials "S.C." are written on the inside cover. It's clear that "S.C", whoever they are, has spent a great many hours intently studying the manual; it is well-worn, and several of the pages are coming loose from the binding.~ 
 @1013 = ~Burned Document~  
 @1014 = ~This document has been burned, but parts of it are still legible. From what you can make out, the recipient was ordered to head to a staging area north of the city, due to a spate of assassinations. They were to wait there and prepare to retake... something. You can't make it out. Who it was addressed to you cannot say, though you see what you think is a Flaming Fist insignia on the lower right corner of the page. Interesting.~
-@1015 = ~Ammo Belt~
-@1016 = ~This shoulder belt is ideally suited for holding sling bullets, darts, arrows or bolts.
-
-STATISTICS:
-
-Weight: 2~
 // SoD
 @2000 = ~Processing SoD changes...~
 @2001 = ~Corwin's Letter~
@@ -1740,6 +1708,8 @@ Weight: 0~
 @4155 = ~Percy~
 @4156 = ~Timotey~
 @4157 = ~Abandoned Tower~
+@4158 = ~Emergency Provisions~
+
 @5000 = ~Processing ToB changes...~
 
 @5001 = ~After leaving <CHARNAME>'s company, Caelar began the long journey back to Waterdeep, determined to face justice for the crimes that she and her soldiers had committed during the crusade. Upon her arrival in the city, she was detained and interrogated by the Waterdhavian authorities, who were stunned to learn of what had transpired in Avernus. 
@@ -1805,6 +1775,35 @@ The happy family was never troubled by Beno or his associates ever again.~
 @5019 =~Merely having this weapon on your person makes you fills you with a sense of dread. Holding it in your hand, you can almost hear the whispers of the souls trapped within. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illuminations and still be so deathly black at its core, you do not know.
 
 The dagger contains, among others, the soul of Major Corwin's former lover, Beno Famari. A group of Lathanderian clergymen attempted to restore his soul to his body, but were unsuccessful. Their plan — and Beno's body — quite literally blew up in their face, after they'd reanimated the corpse with the soul of a demon that'd been trapped in the dagger.~ 
+@5020 = ~Illumination's Embrace~
+@5021 = ~This magical cloak was gifted to Caelar Argent by one of her trusted lieutenants shortly before the start of her ill-fated crusade. The threads have been enchanted to shine and shimmer as its wearer moves to and fro. It creates a kind of mesmerizing effect that hinders the ability of enemies to accurately target its wearer.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Saving Throws: +1
+~
+@5022 = ~Aster's Edge +5~
+@5023 = ~Legend tells that a powerful angelic being gifted this blade to a member of the Order of the Aster long ago. Details of the legend have been lost over time, but many believe the sword was a reward for slaying a monstrous fiend, perhaps even a balor. Delicate etchings of asters decorate the blade.
+
+With the Eye of Tyr affixed to the pommel, the power of this magnificent weapon now matches its beauty. When drawn, the augmented blade pulses with an other-worldly glow, signifying its holy power.  
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +35%
+
+THAC0: +5
+Damage: 1d8+5, +4 extra vs. fiends
+Damage type: Slashing
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 2~
 //{ Block G Translations
 @20000 = ~Aun Argent~
 @20001 = ~Aun Argent~
