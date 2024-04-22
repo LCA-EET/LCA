@@ -1,5 +1,5 @@
 PRINT ~Processing converted asset block: xaa...~
-//SILENT
+SILENT
 //{ MUSIC
 ADD_MUSIC xaa0 ~%MOD_FOLDER%\generated\a\mus\xaa0.mus~
 ADD_MUSIC xaa1 ~%MOD_FOLDER%\generated\a\mus\xaa1.mus~
@@ -6926,6 +6926,12 @@ COPY ~%MOD_FOLDER%\generated\a\tis\xaa651.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa675.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa673.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\tis\xaa677.tis~ ~override~
+
+//eff files
+//===================
+COPY ~%MOD_FOLDER%\generated\a\eff\xaa102.eff~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\eff\xaa101.eff~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\eff\xaa100.eff~ ~override~
 
 //sto files
 //===================

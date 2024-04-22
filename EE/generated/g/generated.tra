@@ -102,9 +102,10 @@
 @20101 = ~Ritual Chamber~
 @20102 = ~Portal to the Fugue Plane~
 @20103 = ~Teleport Without Error~
-@20104 = ~Throwing Axe~
-@20105 = ~Axe of Kruntur +2~
-@20106 = ~The hand axe or throwing axe is also known as a hatchet. The axe blade has a sharp steel tip counterbalanced by a pointed fluke. The short handle has a point on the bottom, and the head may have a spike on the top.
+@20104 = ~Impale~
+@20105 = ~Throwing Axe~
+@20106 = ~Axe of Kruntur +2~
+@20107 = ~The hand axe or throwing axe is also known as a hatchet. The axe blade has a sharp steel tip counterbalanced by a pointed fluke. The short handle has a point on the bottom, and the head may have a spike on the top.
 
 STATISTICS:
 
@@ -118,7 +119,7 @@ Requires:
  4 Strength
 
 Weight: 1~
-@20107 = ~As mighty a weapon as a goblin could hope to wield, the Axe of Kruntur belonged to a dekanter goblin warlord a century or more ago. Though a famous figure in his tribe, Kruntur was less well-known beyond it. After his death, his signature weapon moved from hand to hand in rapid succession, finally ending up discarded in the ruins of the dwarven town of Kanaglym.
+@20108 = ~As mighty a weapon as a goblin could hope to wield, the Axe of Kruntur belonged to a dekanter goblin warlord a century or more ago. Though a famous figure in his tribe, Kruntur was less well-known beyond it. After his death, his signature weapon moved from hand to hand in rapid succession, finally ending up discarded in the ruins of the dwarven town of Kanaglym.
 
 STATISTICS:
 
@@ -140,14 +141,14 @@ Requires:
  4 Strength
 
 Weight: 3~
-@20108 = ~Robe~
-@20109 = ~The Ghostdreamers' Robe~
-@20110 = ~A robe is a loose garment with long sleeves. Some have an attached hood, a drawstring belt, or other small alterations. Robes can possess enchantments, but many are worn simply for comfort or fashion.
+@20109 = ~Robe~
+@20110 = ~The Ghostdreamers' Robe~
+@20111 = ~A robe is a loose garment with long sleeves. Some have an attached hood, a drawstring belt, or other small alterations. Robes can possess enchantments, but many are worn simply for comfort or fashion.
 
 STATISTICS:
 
 Weight: 3~
-@20111 = ~Seemingly little more than rags stitched together, the Ghostdreamers' Robe is actually an artifact of great historical significance to the dak'Dekanter goblin tribe. Each of the robe's dozens of patches was cut from the robe of an enemy tribe's shaman. This makes the Ghostdreamers' Robe more than an article of clothing; it is a physical representation of the dak'Dekanters' victories over the centuries and a symbol of power for the shaman who wears it.
+@20112 = ~Seemingly little more than rags stitched together, the Ghostdreamers' Robe is actually an artifact of great historical significance to the dak'Dekanter goblin tribe. Each of the robe's dozens of patches was cut from the robe of an enemy tribe's shaman. This makes the Ghostdreamers' Robe more than an article of clothing; it is a physical representation of the dak'Dekanters' victories over the centuries and a symbol of power for the shaman who wears it.
 
 STATISTICS:
 
@@ -157,9 +158,9 @@ Equipped abilities:
 – Vocalize
 
 Weight: 3~
-@20112 = ~Quarterstaff~
-@20113 = ~The Soulherder's Staff +2~
-@20114 = ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High-quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
+@20113 = ~Quarterstaff~
+@20114 = ~The Soulherder's Staff +2~
+@20115 = ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High-quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
 
 STATISTICS:
 
@@ -171,7 +172,7 @@ Requires:
  5 Strength
 
 Weight: 4~
-@20115 = ~A gnarled wooden staff cut from the dak'Dekanter goblin tribe's sacred tree, this item was a symbol of spiritual power for centuries. It disappeared during a hard-fought battle between the dak'Dekanters and a dwarven clan whose name is lost to history, and those few who remembered it once existed thought it lost forever. It was found discarded in the lost dwarven town of Kanaglym, among other treasures the dwarves stole from their goblin enemies over the years.
+@20116 = ~A gnarled wooden staff cut from the dak'Dekanter goblin tribe's sacred tree, this item was a symbol of spiritual power for centuries. It disappeared during a hard-fought battle between the dak'Dekanters and a dwarven clan whose name is lost to history, and those few who remembered it once existed thought it lost forever. It was found discarded in the lost dwarven town of Kanaglym, among other treasures the dwarves stole from their goblin enemies over the years.
 
 STATISTICS:
 
@@ -189,9 +190,9 @@ Requires:
  5 Strength
 
 Weight: 3~
-@20116 = ~Hide Armor~
-@20117 = ~Kruntur's Armor +3~
-@20118 = ~Hide armor is made from the thick hide of a very large animal (an elephant for example) or from many layers of normal leather from common animals, like cows. Hide armor is far too bulky, inflexible and heavy to be used much in advanced human cultures. However, among the barbaric humanoid masses throughout the dark forests and misty jungles of the world, hide armor is common. Even though it does offer more protection than leather armor, one must get by the offensive odor and shoddy appearance in order to wear it effectively. Even though Thieves can wear this armor, it has a negative effect on their abilities.
+@20117 = ~Hide Armor~
+@20118 = ~Kruntur's Armor +3~
+@20119 = ~Hide armor is made from the thick hide of a very large animal (an elephant for example) or from many layers of normal leather from common animals, like cows. Hide armor is far too bulky, inflexible and heavy to be used much in advanced human cultures. However, among the barbaric humanoid masses throughout the dark forests and misty jungles of the world, hide armor is common. Even though it does offer more protection than leather armor, one must get by the offensive odor and shoddy appearance in order to wear it effectively. Even though Thieves can wear this armor, it has a negative effect on their abilities.
 
 STATISTICS:
 
@@ -206,7 +207,7 @@ Requires:
  6 Strength
 
 Weight: 40~
-@20119 = ~Once worn by the dekanter goblin warlord Kruntur, this armor is of an unusually high quality considering the race of its owner—most non-goblin smiths won't bother making armor suitable for goblinoid physiques, while those few goblins who know how to use a forge are generally more focused on weaponry. Kruntur prized this armor to such a degree that, upon his death, he refused to leave it. To this day, more than a hundred years later, his spirit still permeates the armor, whispering threats to all who dare wear it and generally making a nuisance of himself. He cannot directly harm the wearer, however, and for a goblinoid, the chance to have such fine protection might well make up for the aggravation the armor brings with it.
+@20120 = ~Once worn by the dekanter goblin warlord Kruntur, this armor is of an unusually high quality considering the race of its owner—most non-goblin smiths won't bother making armor suitable for goblinoid physiques, while those few goblins who know how to use a forge are generally more focused on weaponry. Kruntur prized this armor to such a degree that, upon his death, he refused to leave it. To this day, more than a hundred years later, his spirit still permeates the armor, whispering threats to all who dare wear it and generally making a nuisance of himself. He cannot directly harm the wearer, however, and for a goblinoid, the chance to have such fine protection might well make up for the aggravation the armor brings with it.
 
 STATISTICS:
 
@@ -223,10 +224,9 @@ Requires:
  6 Strength
 
 Weight: 20~
-@20120 = ~Hephernaan's Ritual Notes~
 @20121 = ~Hephernaan's Ritual Notes~
-@20122 = ~These arcane notes contain formulas devised by Hephernaan to raise an army of undead. The ritual cannot be used as written without certain artifacts destroyed in Hephernaan's first attempt to work the spells, but the theoretical underpinning of the magic remains sound.~
-@20123 = ~Attack~
+@20122 = ~Hephernaan's Ritual Notes~
+@20123 = ~These arcane notes contain formulas devised by Hephernaan to raise an army of undead. The ritual cannot be used as written without certain artifacts destroyed in Hephernaan's first attempt to work the spells, but the theoretical underpinning of the magic remains sound.~
 @20124 = ~Attack~
 @20125 = ~Attack~
 @20126 = ~Attack~
@@ -240,9 +240,10 @@ Weight: 20~
 @20134 = ~Attack~
 @20135 = ~Attack~
 @20136 = ~Attack~
-@20137 = ~Club~
-@20138 = ~Club +1~
-@20139 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
+@20137 = ~Attack~
+@20138 = ~Club~
+@20139 = ~Club +1~
+@20140 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
 
 STATISTICS:
 
@@ -254,7 +255,7 @@ Requires:
  5 Strength
 
 Weight: 3~
-@20140 = ~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
+@20141 = ~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
 
 STATISTICS:
 

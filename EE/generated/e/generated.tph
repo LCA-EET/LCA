@@ -1,5 +1,5 @@
 PRINT ~Processing converted asset block: xae...~
-//SILENT
+SILENT
 //{ MUSIC
 ADD_MUSIC xae0 ~%MOD_FOLDER%\generated\e\mus\xae0.mus~
 ADD_MUSIC xae1 ~%MOD_FOLDER%\generated\e\mus\xae1.mus~

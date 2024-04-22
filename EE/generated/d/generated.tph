@@ -354,6 +354,7 @@ COPY ~%MOD_FOLDER%\generated\d\bmp\xad113.bmp~ ~override~
 //===================
 COPY ~%MOD_FOLDER%\generated\d\spl\xad100.spl~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@40201) /*~Trap the Soul~*/
+COPY ~%MOD_FOLDER%\generated\d\spl\xad101.spl~ ~override~
 
 //wav files
 //===================

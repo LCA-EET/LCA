@@ -20,13 +20,13 @@ OUTER_SET sod_carryover = 1
 //}
 
 //{ New Items
-	COPY ~%MOD_FOLDER%/sod/itm/xaltrcor.itm~ ~override~
+	COPY_EXISTING ~scrl3z.itm~  ~override/xaltrcor.itm~ 
 	SAY NAME1 @2001
 	SAY NAME2 @2001
 	SAY UNIDENTIFIED_DESC @2007
 	SAY DESC @2007
 	
-	COPY ~%MOD_FOLDER%/sod/itm/xaltrsch.itm~ ~override~
+	COPY_EXISTING ~scrl3z.itm~  ~override/xaltrsch.itm~ 
 	SAY NAME1 @2003
 	SAY NAME2 @2003
 	SAY UNIDENTIFIED_DESC @2006
