@@ -1,164 +1,100 @@
 IF
-	Die()
+	Clicked([ANYONE])
+	!Range(LastTrigger,13)
 THEN
 	RESPONSE #100
-		Help()
-		Continue()
+		DisplayString(Myself,38224)  // You are too far away to use that.
 END
 
 IF
-	Global("bd_default_loc","locals",0)
+	Clicked([ANYONE])
+	Range(LastTrigger,13)
+	Global("bd_fugue_portal_ot","bd5300",1)  // Kanaglym
+	PartyHasItem("bdbone01")  // Remains
 THEN
 	RESPONSE #100
-		SaveObjectLocation("LOCALS","bd_default_loc",Myself)
-		Continue()
+		ActionOverride("Fugue_portal_chasm",TakePartyItemNum("bdbone01",5))  // Remains
+		DisplayStringHead(Myself,70258)  // You throw the lost souls' corpses down into the chasm and watch them disappear into the gray. A silent flash of spiritual energy marks each body's crossing of the threshold into the Fugue Plane.
+		AddJournalEntry(61932,QUEST_DONE)  // The Lost The bones of the ghosts have been put to rest. I was able to deliver the mortal remains of the ghosts I encountered to the Fugue Plane. The spirits are now at rest.
 END
 
 IF
-	!Allegiance(Myself,EVILCUTOFF)
-	AttackedBy([GOODCUTOFF],DEFAULT)
+	Clicked([ANYONE])
 THEN
 	RESPONSE #100
-		SetGlobal("BD_Engaged","LOCALS",1)
-		SetGlobalTimer("BD_Rest","LOCALS",EIGHT_HOURS)
-		SetGlobalTimerRandom("bd_combat_timer","locals",THREE_MINUTES,FIVE_ROUNDS)
-		SetGlobalTimerRandom("bd_retreat_timer","locals",SEVEN_MINUTES,TEN_ROUNDS)
-		Enemy()
-		Help()
-		Continue()
+		SetGlobal("bd_fugue_portal_ot","bd5300",1)  // Kanaglym
+		DisplayStringHead(Myself,70257)  // The walls of this chasm sink down not into darkness, but a portal to the desolate gray of the Fugue Plane. Anything dropped from here into that dreary realm will surely be lost to it forever.
 END
 
 IF
-	Allegiance(Myself,EVILCUTOFF)
-	Global("BD_Engaged","LOCALS",0)
-	OR(4)
-		AttackedBy([GOODCUTOFF],DEFAULT)
-		Range(NearestEnemyOf(Myself),30)
-		TookDamage()
-		AreaCheck("BD4700")  // Avernus Roof
+	GlobalLT("BD_BONES","BD5300",5)  // Kanaglym
+	HasItem("bdbone01","Fugue_portal_chasm")  // Remains
 THEN
 	RESPONSE #100
-		SetGlobal("BD_Engaged","LOCALS",1)
-		SetGlobalTimer("BD_Rest","LOCALS",EIGHT_HOURS)
-		SetGlobalTimer("BD_Help","LOCALS",ONE_ROUND)
-		SetGlobalTimerRandom("bd_combat_timer","locals",THREE_MINUTES,FIVE_ROUNDS)
-		SetGlobalTimerRandom("bd_retreat_timer","locals",SEVEN_MINUTES,TEN_ROUNDS)
-		Enemy()
-		Help()
-		Continue()
+		ActionOverride("Fugue_portal_chasm",DestroyItem("bdbone01"))  // Remains
+		IncrementGlobal("BD_BONES","BD5300",1)  // Kanaglym
 END
 
 IF
-	DifficultyGT(EASY)
-	Global("BD_Engaged","LOCALS",1)
-	!GlobalTimerNotExpired("BD_Rest","LOCALS")
+	Global("BD_BONES","BD5300",5)  // Kanaglym
+	Range([PC],13)
+	!GlobalTimerNotExpired("bd_use_fountain","bd5300")  // Kanaglym
+	!Dead("bdworis")  // Woris
+	Dead("bdkherr")  // Kherriun
+	!Range([EVILCUTOFF],30)
+	CombatCounter(0)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("BD_Rest","LOCALS",EIGHT_HOURS)
-		SetGlobal("BD_CHCntg","LOCALS",0)
-		SetGlobal("BD_Cntg","LOCALS",0)
-		SetGlobal("BD_Seq","LOCALS",0)
-		SetGlobal("BD_MSeq","LOCALS",0)
-		SetGlobal("BD_Trig","LOCALS",0)
-		SetGlobal("BD_Precast","LOCALS",0)
-		SetGlobal("BD_DChrm","LOCALS",0)
-		ApplySpell(Myself,RESTORE_FULL_HEALTH)  // SPIN746.SPL (No such index)
-		Rest()
+		SetInterrupt(FALSE)
+		SetGlobal("BD_BONES","BD5300",6)  // Kanaglym
+		SetGlobalTimer("bd_use_fountain","bd5300",ONE_ROUND)  // Kanaglym
+		CreateCreature("bdghostf",[820.1130],NW)  // Ghost
+		CreateVisualEffectObject("OHRSHFIE","bdghostf")  // Ghost
+		SmallWait(10)
+		CreateCreature("bdghostf",[955.1165],NE)  // Ghost
+		CreateVisualEffectObject("OHRSHFIE","bdghostm")  // Ghost
+		SmallWait(10)
+		CreateCreature("bdsotuk",[860.1170],NW)  // Sotuk
+		CreateVisualEffectObject("OHRSHFIE","bdsotuk")  // Sotuk
+		SmallWait(10)
+		CreateCreature("bdlitla",[910.1140],NE)  // Litla
+		CreateVisualEffectObject("OHRSHFIE","bdlitla")  // Litla
+		SmallWait(10)
+		CreateCreature("bdworis",[900.1195],N)  // Woris
+		CreateVisualEffectObject("OHRSHFIE","bdworis")  // Woris
+		SmallWait(10)
+		SetInterrupt(TRUE)
 END
 
 IF
-	Allegiance(Myself,EVILCUTOFF)
-	!GlobalTimerNotExpired("BD_Help","LOCALS")
+	Global("SDD321","GLOBAL",2)
+	Range("neera",30)  // Neera
+	!GlobalTimerNotExpired("bd_use_fountain","bd5300")  // Kanaglym
+	IfValidForPartyDialog("neera")  // Neera
 	OR(2)
-		Range(NearestEnemyOf(Myself),30)
-		AttackedBy([GOODCUTOFF],DEFAULT)
+		Dead("bdkherr")  // Kherriun
+		Global("BD_AREA_HOSTILE","BD5300",0)  // Kanaglym
+	!Range([EVILCUTOFF],30)
+	CombatCounter(0)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("BD_Help","LOCALS",ONE_ROUND)
-		SetGlobalTimerRandom("bd_combat_timer","locals",THREE_MINUTES,FIVE_ROUNDS)
-		SetGlobalTimerRandom("bd_retreat_timer","locals",SEVEN_MINUTES,TEN_ROUNDS)
-		Help()
-		Continue()
+		SetGlobal("SDD321","GLOBAL",3)
 END
 
 IF
-	Allegiance(Myself,EVILCUTOFF)
-	Global("BD_Engaged","LOCALS",0)
-	!Range(NearestEnemyOf(Myself),30)
-	OR(10)
-		Help([EVILCUTOFF])
-		Help(SecondNearest([EVILCUTOFF]))
-		Help(ThirdNearest([EVILCUTOFF]))
-		Help(FourthNearest([EVILCUTOFF]))
-		Help(FifthNearest([EVILCUTOFF]))
-		Help(SixthNearest([EVILCUTOFF]))
-		Help(SeventhNearest([EVILCUTOFF]))
-		Help(EighthNearest([EVILCUTOFF]))
-		Help(NinthNearest([EVILCUTOFF]))
-		Help(TenthNearest([EVILCUTOFF]))
-	LOS(LastHelp(Myself),30)
+	Global("SDD321","GLOBAL",4)
+	Range("neera",20)  // Neera
+	!GlobalTimerNotExpired("bd_use_fountain","bd5300")  // Kanaglym
+	IfValidForPartyDialog("neera")  // Neera
+	OR(2)
+		Dead("bdkherr")  // Kherriun
+		Global("BD_AREA_HOSTILE","BD5300",0)  // Kanaglym
+	!Range([EVILCUTOFF],30)
+	CombatCounter(0)
 THEN
 	RESPONSE #100
-		SetGlobal("BD_Engaged","LOCALS",1)
-		SetGlobalTimer("BD_Rest","LOCALS",EIGHT_HOURS)
-		Help()
-		Continue()
-END
-
-IF
-	Global("BD_Engaged","LOCALS",1)
-	Allegiance(Myself,EVILCUTOFF)
-	!Range(NearestEnemyOf(Myself),30)
-	Help([ANYONE])
-	Allegiance(LastHelp(Myself),EVILCUTOFF)
-	TriggerOverride(LastHelp(Myself),LOS(LastSeenBy(Myself),30))
-	Allegiance(LastSeenBy(LastHelp(Myself)),GOODCUTOFF)
-	!GlobalTimerNotExpired("bd_respond_timer","locals")
-THEN
-	RESPONSE #100
-		SetGlobalTimerRandom("bd_combat_timer","locals",FIVE_MINUTES,EIGHT_MINUTES)
-		SetGlobalTimerRandom("bd_retreat_timer","locals",NINE_MINUTES,TEN_ROUNDS)
-		SetGlobalTimer("bd_respond_timer","locals",TWO_ROUNDS)
-		MoveToObject(LastSeenBy(LastHelp(Myself)))
-END
-
-IF
-	Global("BD_Engaged","LOCALS",1)
-	Allegiance(Myself,EVILCUTOFF)
-	!Range(NearestEnemyOf(Myself),30)
-	Help([ANYONE])
-	Allegiance(LastHelp(Myself),EVILCUTOFF)
-	!Range(LastHelp(Myself),5)
-	!GlobalTimerNotExpired("bd_respond_timer","locals")
-	!GlobalTimerNotExpired("bd_respond2_timer","locals")
-THEN
-	RESPONSE #100
-		SetGlobalTimerRandom("bd_combat_timer","locals",THREE_MINUTES,FIVE_ROUNDS)
-		SetGlobalTimerRandom("bd_retreat_timer","locals",SEVEN_MINUTES,TEN_ROUNDS)
-		SetGlobalTimer("bd_respond2_timer","locals",ONE_ROUND)
-		MoveToObject(LastHelp(Myself))
-END
-
-IF
-	Global("BD_Engaged","LOCALS",1)
-	Allegiance(Myself,EVILCUTOFF)
-	!Range(NearestEnemyOf(Myself),30)
-	!GlobalTimerNotExpired("bd_respond_timer","locals")
-	!GlobalTimerNotExpired("bd_respond2_timer","locals")
-	GlobalTimerNotExpired("bd_combat_timer","locals")
-THEN
-	RESPONSE #100
-		RandomWalkContinuous()
-END
-
-IF
-	Global("BD_Engaged","LOCALS",1)
-	Allegiance(Myself,EVILCUTOFF)
-	!GlobalTimerNotExpired("bd_retreat_timer","locals")
-	!Range(NearestEnemyOf(Myself),30)
-	!NearSavedLocation(Myself,"LOCALSbd_default_loc",5)
-THEN
-	RESPONSE #100
-		MoveToSavedLocationn("bd_default_loc","LOCALS")
+		StartCutSceneMode()
+		ClearAllActions()
+		StartCutSceneEx("bdcut322",TRUE)
 END
 

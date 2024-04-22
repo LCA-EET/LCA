@@ -140,6 +140,118 @@ END
 //}
 
 //{ New Creatures
+	//{ Aun Argent
+		COPY_EXISTING ~xag100.cre~ ~override/xaaun.cre~ 
+		WRITE_ASCII 0x2CC ~xaaun~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xaaun~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~~ #8		// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~~ #8		// Default Script
+	//}
+	
+	//{ Baatezu
+	
+		//{ Thrix
+			COPY_EXISTING ~xag101.cre~ ~override/xathrix.cre~
+			WRITE_ASCII 0x2CC ~xathrix~ #8 	// Dialogue
+			WRITE_ASCII 0x280 ~xathrix~ #20  	// Script Name
+			WRITE_ASCII 0x248 ~xathrix~ #8		// Override Script
+			WRITE_ASCII 0x250 ~~ #8		// Class Script
+			WRITE_ASCII 0x258 ~~ #8		// Race Script
+			WRITE_ASCII 0x260 ~~ #8		// General Script
+			WRITE_ASCII 0x268 ~~ #8		// Default Script
+		//}
+		
+		COPY_EXISTING ~xag102.cre~ ~override/xaavc1.cre~ // bdhelcat
+		COPY_EXISTING ~xag119.cre~ ~override/xaavc2.cre~ // bdbonefi
+		COPY_EXISTING ~telpit1.cre~ ~override/xaavc3.cre~ 
+		COPY_EXISTING ~demcor01.cre~ ~override/xaavc4.cre~
+		COPY_EXISTING ~xag115.cre~ ~override/xaavc5.cre~ // bdabibla
+		COPY_EXISTING ~xag116.cre~ ~override/xaavc6.cre~ // bdabigre
+		COPY_EXISTING ~xag117.cre~ ~override/xaavc7.cre~ // bdabired
+		COPY_EXISTING ~xag118.cre~ ~override/xaavc8.cre~ // bdhamatu
+		COPY_EXISTING ~xag114.cre~ ~override/xaavc9.cre~ // bdimp
+		COPY_EXISTING ~xag111.cre~ ~override/xaavc10.cre~ // bdlemure
+		COPY_EXISTING ~elfirg01.cre~ ~override/xaavc11.cre~
+		COPY_EXISTING ~elfir01.cre~ ~override/xaavc12.cre~
+		COPY_EXISTING ~xag103.cre~ ~override/xaavc13.cre~ // bderinye
+		
+		COPY_EXISTING_REGEXP GLOB ~xaavc.+\.cre$~ ~override~ 
+		WRITE_BYTE 0x270 255 	// Set Allegiance to Enemy
+		WRITE_BYTE 0x271 255 	// Set General to Monster
+		WRITE_BYTE 0x272 121 	// Set Race to Demonic
+		WRITE_BYTE 0x273 179 	// Set Class to Imp (Baatezu)
+		WRITE_BYTE 0x274 0 		// Set Specifics to None
+		WRITE_BYTE 0x27B 19 	// Set Alignment to Lawful Evil
+		WRITE_ASCII 0x2CC ~~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~xasummon~ #8		// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+		BUT_ONLY
+		
+		COPY_EXISTING ~xaavc4.cre~ ~override~
+		WRITE_ASCII 0x268 ~cornugon~ #8
+		
+		COPY_EXISTING ~xaavc13.cre~ ~override~
+		WRITE_ASCII 0x268 ~xaerin~ #8
+		
+		COPY_EXISTING ~xanarzu.cre~ ~override/xanarzu2.cre~
+		WRITE_LONG 0x14 36000
+		WRITE_SHORT 0x24 444
+		WRITE_SHORT 0x26 444
+		WRITE_ASCII 0x2CC ~xanarzu~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xaavboss~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~xaavboss~ #8		// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~xanarzu~ #8		// Default Script
+	//}
+	
+	//{ Bence Duncan
+		COPY_EXISTING ~xabence.cre~ ~override/xabence2.cre~ 
+		WRITE_ASCII 0x2CC ~xabence2~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xabence2~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~~ #8		// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~~ #8		// Default Script
+	//}
+	
+	//{ Beno (Amkethran)
+		COPY_EXISTING ~xabeno.cre~ ~override/xabenoam.cre~ 
+		WRITE_ASCII 0x2CC ~xabenoam~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xabenoam~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~~ #8		// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~~ #8		// Default Script
+	//}
+	
+	//{ Beno (Kanaglym Spirit)
+		COPY_EXISTING ~xabenoam.cre~ ~override/xabenosp.cre~
+		ADD_CRE_ITEM ~minhp1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~LRING~	
+		WRITE_ASCII 0x2CC ~xabenosp~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xabenosp~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~~ #8		// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~xabenof~ #8		// General Script
+		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		LPF ADD_CRE_EFFECT
+			INT_VAR
+				opcode = 65
+				target = 1
+		END
+	//}
+	
 	//{ Caelar
 		COPY_EXISTING ~xac109.cre~ ~override/xacaelar.cre~ 
 		REMOVE_CRE_ITEMS
@@ -152,17 +264,15 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		WRITE_LONG 0x1CC RESOLVE_STR_REF(@5009) // Bio
-	//}
-	
-	//{ Thrix
-		COPY_EXISTING ~xag100.cre~ ~override/xathrix.cre~
-		WRITE_ASCII 0x2CC ~xathrix~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xathrix~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~xathrix~ #8		// Override Script
+		
+		COPY_EXISTING ~xacaelar.cre~ ~override/xacaela2.cre~
+		WRITE_ASCII 0x2CC ~xacaela2~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xacaela2~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~xacaela2~ #8		// Override Script
 		WRITE_ASCII 0x250 ~~ #8		// Class Script
 		WRITE_ASCII 0x258 ~~ #8		// Race Script
 		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		WRITE_ASCII 0x268 ~~ #8		// Default Script		
 	//}
 	
 	//{ Crusader Spirits
@@ -183,14 +293,14 @@ END
 		SET cid = 0
 		ACTION_DEFINE_ARRAY crusaderSpirits
 		BEGIN
-			xag129
-			xag133
-			xag122
-			xag124
-			xag125
-			xag107 
-			xag137
-			xag138
+			xag132 // bdcrue50
+			xag136 // bdcrue51
+			xag125 // bdcrue52
+			xag127 // bdcrue53
+			xag128 // bdcrue54
+			xag110 // bdcrus5d
+			xag140 // bdcrus6d
+			xag141 // bdcrus7d
 		END
 		ACTION_PHP_EACH crusaderSpirits AS _ => cSpirit
 		BEGIN
@@ -210,7 +320,191 @@ END
 			cid = (cid + 1)
 		END
 	//}
+	
+	//{ Dream Voice
+		COPY_EXISTING ~xalcspy.cre~ ~override/xakana1.cre~
+		SAY NAME1 @5015
+		SAY NAME2 @5015
+		WRITE_ASCII 0x2CC ~xakana1~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xakana1~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~~ #8			// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~~ #8		// Default Script
+	//}
+	
+	//{ Elven Spirits
+		COPY_EXISTING ~suelf13.cre~ ~override/xaelf01.cre~
+		SAY NAME1 @5016
+		SAY NAME2 @5016
+		WRITE_ASCII 0x2CC ~xaelf01~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xaelf01~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~~ #8			// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+		LPF ADD_CRE_EFFECT
+			INT_VAR
+				opcode = 65
+				target = 1
+		END
+	
+		COPY_EXISTING ~suelf12.cre~ ~override/xaelf02.cre~
+		SAY NAME1 @5016
+		SAY NAME2 @5016
+		WRITE_ASCII 0x2CC ~~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xaelf02~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~~ #8			// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+		LPF ADD_CRE_EFFECT
+			INT_VAR
+				opcode = 65
+				target = 1
+		END
+		
+		COPY_EXISTING ~suelf10.cre~ ~override/xaelf03.cre~
+		SAY NAME1 @5016
+		SAY NAME2 @5016
+		WRITE_ASCII 0x2CC ~~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xaelf03~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~~ #8			// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~priet12b~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+		LPF ADD_CRE_EFFECT
+			INT_VAR
+				opcode = 65
+				target = 1
+		END
+	//}
+	
+	//{ Fire Giant Scouts
+		COPY_EXISTING ~giafir01.cre~ ~override/xafgsc1.cre~
+		SAY NAME1 @5012
+		SAY NAME2 @5012
+		WRITE_SHORT 0x24 100
+		WRITE_SHORT 0x26 100
+		WRITE_ASCII 0x280 ~xafgsc1~ #8
+		
+		COPY_EXISTING ~xafgsc1.cre~ ~override/xafgsc2.cre~
+		WRITE_ASCII 0x280 ~xafgsc2~ #8
+		
+		COPY_EXISTING ~xafgsc1.cre~ ~override/xafgsc3.cre~
+		WRITE_ASCII 0x280 ~xafgsc3~ #8
+	//}
+	
+	//{ Hamza
+		COPY_EXISTING ~plfarm01.cre~ ~override/xahamza.cre~
+		SAY NAME1 @5014
+		SAY NAME2 @5014
+		WRITE_ASCII 0x2CC ~xahamza~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xahamza~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~gensht01~ #8			// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~~ #8		// Default Script
+	//}
+	
+	//{ Lathander Clergymen
+		COPY_EXISTING ~dawnmas.cre~ ~override/xalath01.cre~
+		SAY NAME1 @5013
+		SAY NAME2 @5013
+		WRITE_ASCII 0x2CC ~xalath01~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xalath01~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~~ #8			// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~priest6~ #8		// Race Script
+		WRITE_ASCII 0x260 ~xalath01~ #8		// General Script
+		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+	
+		COPY_EXISTING ~latkni01.cre~ ~override/xalath02.cre~
+		WRITE_ASCII 0x2CC ~xalath02~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xalath02~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~~ #8			// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+		
+		COPY_EXISTING ~latkni02.cre~ ~override/xalath03.cre~
+		WRITE_ASCII 0x2CC ~xalath03~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xalath03~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~~ #8			// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+	//}
+	
+	//{ Lodob
+		COPY_EXISTING ~demlord.cre~ ~override/xalodob.cre~
+		SAY NAME1 @5011
+		SAY NAME2 @5011
+		WRITE_ASCII 0x2CC ~xalodob~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xalodob~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~~ #8			// Override Script
+		WRITE_ASCII 0x250 ~demlord~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+		LPF ADD_CRE_EFFECT
+			INT_VAR
+				opcode = 65
+				target = 1
+		END
+	//}
+	
+	//{ Nederlok
+		COPY_EXISTING ~xanederl.cre~ ~override/xatobned.cre~
+		WRITE_ASCII 0x2CC ~xatobned~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xatobned~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~~ #8			// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~~ #8		// Default Script
+	//}
+	
+	//{ Rohma (Child Wraith)
+		COPY_EXISTING ~xarohma.cre~ ~override/xarohma4.cre~
+		WRITE_ASCII 0x2CC ~xarohma4~ #8 	// Dialogue
+		WRITE_ASCII 0x280 ~xarohma4~ #20  	// Script Name
+		WRITE_ASCII 0x248 ~~ #8			// Override Script
+		WRITE_ASCII 0x250 ~~ #8		// Class Script
+		WRITE_ASCII 0x258 ~~ #8		// Race Script
+		WRITE_ASCII 0x260 ~~ #8		// General Script
+		WRITE_ASCII 0x268 ~~ #8		// Default Script
+	//}
+	
+	//{ Spirit Head
+		COPY_EXISTING ~head1.cre~ ~override/xahead1.cre~
+		WRITE_ASCII 0x2CC ~xahead1~ #8 	// Dialogue
+	//}
 //}
+
+//{ Items
+	//{ Shattered Gear
+		COPY_EXISTING ~misc59.itm~ ~override/xabroken.itm~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@5017)
+		WRITE_LONG 0xC RESOLVE_STR_REF(@5017)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@5018)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@5018)
+	//}
+	
+	//{ Soultaker Dagger (Demon)
+		COPY_EXISTING ~dagg10.itm~ ~override/xastdagd.itm~
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@5019)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@5019)
+	//}
+//}
+
 //{ Modification to Existing Areas
 	COPY_EXISTING ~ar4000.are~ ~override~
 	WRITE_ASCII 0x94 ~xaar4000~ #8

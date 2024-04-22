@@ -569,9 +569,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Soultaker Dagger
-		COPY ~%MOD_FOLDER%/bg2/itm/xastdag.itm~ ~override~
-		WRITE_LONG 0x08 RESOLVE_STR_REF(@3157)
-		WRITE_LONG 0x0C RESOLVE_STR_REF(@3158)						
+		COPY_EXISTING ~dagg10.itm~ ~override/xastdag.itm~				
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3159)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3160)
 	//}
@@ -637,7 +635,8 @@ OUTER_SET bg2_carryover = 1
 	OUTER_SET fergus_ring = 1
 	OUTER_SET cleared_kanaglym = 1
 	OUTER_SET corwin_avernus = 1
-
+	OUTER_SET thrix_alive = 1
+	
 	/*
 		If a parameter file exists, overwrite the default parameter with the contents of the parameter file.
 	*/
@@ -729,6 +728,10 @@ OUTER_SET bg2_carryover = 1
 	
 	ACTION_IF (corwin_avernus = 1) THEN BEGIN
 		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa21.baf~
+	END
+	
+	ACTION_IF (thrix_alive = 1) THEN BEGIN
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa22.baf~
 	END
 
 	EXTEND_BOTTOM ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpaEE.baf~

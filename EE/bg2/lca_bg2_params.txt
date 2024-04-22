@@ -123,3 +123,9 @@ OUTER_SET cleared_kanaglym = 1
 	Set to 1 to proceed as though the Corwin ventured to Avernus with the rest of the party.
 */
 OUTER_SET corwin_avernus = 1
+
+/*
+	Parameter: thrix_alive
+	Set to 1 to proceed as though Thrix the Profane was left alive in Avernus.
+*/
+OUTER_SET thrix_alive = 1

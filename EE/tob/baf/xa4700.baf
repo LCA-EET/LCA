@@ -100,4 +100,10 @@ THEN
 		//Wait(2)
 		CreateCreature("XAAVC12",[1500.730],SW) 
 		Continue()
+	RESPONSE #100
+		CreateVisualEffect("SPFLESHS",[1050.1075])	/* SW */
+		IncrementGlobal("XA_LC_4700_Adds", "MYAREA", 1)
+		//Wait(2)
+		CreateCreature("XAAVC13",[1050.1075],NE)  
+		Continue()
 END

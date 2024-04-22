@@ -1,7 +1,52 @@
 IF
-	DifficultyLT(NORMAL)
+	Global("bd_plot","global",572)
+	Global("bd_move_to_caelar","locals",0)
+	!Range("bdcaeld",25)  // Caelar Argent
 THEN
 	RESPONSE #100
-		DestroySelf()
+		MoveToObject("bdcaeld")  // Caelar Argent
+END
+
+IF
+	Global("bd_plot","global",572)
+	Global("bd_move_to_caelar","locals",0)
+	Range("bdcaeld",10)  // Caelar Argent
+THEN
+	RESPONSE #100
+		SetGlobal("bd_move_to_caelar","locals",1)
+END
+
+IF
+	Global("bd_plot","global",572)
+	Global("bd_move_to_caelar","locals",1)
+	Range([PC],15)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	Global("bd_plot","global",575)
+	Dead("bdcaelar")  // Caelar Argent
+THEN
+	RESPONSE #100
+		SetGlobal("bd_plot","global",577)
+END
+
+IF
+	Global("bd_plot","global",577)
+	Dead("bdcaelar")  // Caelar Argent
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	AreaCheck("bd4400")  // Avernus
+	Global("bd_plot","global",580)
+	!Detect("bdcaelar")  // Caelar Argent
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
 END
 

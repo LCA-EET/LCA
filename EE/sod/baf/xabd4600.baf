@@ -1,0 +1,8 @@
+IF
+	!Dead("bdthrix")
+	GlobalLT("XA_LC_ThrixAlive", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_ThrixAlive", "GLOBAL", 1)
+		Continue()
+END
