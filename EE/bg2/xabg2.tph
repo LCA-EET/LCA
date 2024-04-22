@@ -429,15 +429,6 @@ OUTER_SET bg2_carryover = 1
 //}
 
 //{ New Items
-
-	//{ Corwin's Default Helmet
-		COPY ~%MOD_FOLDER%/bg2/itm/xahelm.itm~ ~override~
-		
-		COPY ~%MOD_FOLDER%/bg2/bam/xaihelm.bam~ ~override~
-		COPY ~%MOD_FOLDER%/bg2/bam/xaghelm.bam~ ~override~
-		COPY ~%MOD_FOLDER%/bg2/bam/xadhelm.bam~ ~override~
-	//}
-	
 	//{ Corwin's Body
 		COPY ~%MOD_FOLDER%/bg2/itm/xacorbod.itm~ ~override~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3138)
@@ -450,7 +441,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Letter to Duncan
-		COPY ~%MOD_FOLDER%/bg2/itm/xaldunc.itm~ ~override~
+		COPY_EXISTING ~scrl2i.itm~  ~override/xaldunc.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3140)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3140)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3144)
@@ -458,7 +449,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Letter to Duncan (Cost)
-		COPY ~%MOD_FOLDER%/bg2/itm/xaldunca.itm~ ~override~
+		COPY_EXISTING ~scrl2i.itm~  ~override/xaldunca.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3140)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3140)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3147)
@@ -466,7 +457,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Letter to Corwin, Romantic
-		COPY ~%MOD_FOLDER%/bg2/itm/xalcorw1.itm~ ~override~
+		COPY_EXISTING ~scrl2i.itm~  ~override/xalcorw1.itm~ 
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3142)
@@ -474,7 +465,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Letter to Corwin, Friend
-		COPY ~%MOD_FOLDER%/bg2/itm/xalcorw2.itm~ ~override~
+		COPY_EXISTING ~scrl2i.itm~  ~override/xalcorw2.itm~ 
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3143)
@@ -482,7 +473,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Letter to Corwin, Romantic (Cost)
-		COPY ~%MOD_FOLDER%/bg2/itm/xalcor1a.itm~ ~override~
+		COPY_EXISTING ~scrl2i.itm~  ~override/xalcor1a.itm~ 
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3145)
@@ -490,7 +481,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Letter to Corwin, Friend (Cost)
-		COPY ~%MOD_FOLDER%/bg2/itm/xalcor2a.itm~ ~override~
+		COPY_EXISTING ~scrl2i.itm~  ~override/xalcor2a.itm~ 
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3146)
@@ -513,9 +504,6 @@ OUTER_SET bg2_carryover = 1
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3154)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3154)
 		WRITE_LONG 0x1C6 RESOLVE_STR_REF(@3152)
-	
-		COPY ~%MOD_FOLDER%/bg2/bam/xaicorbo.bam~ ~override~
-		COPY ~%MOD_FOLDER%/bg2/bam/xacorbow.bam~ ~override~
 	//}
 	
 	//{ Corwin's Bow + 3 
@@ -554,9 +542,6 @@ OUTER_SET bg2_carryover = 1
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3156)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3156)
 		WRITE_LONG 0x2AE RESOLVE_STR_REF(@3152)
-		
-		COPY ~%MOD_FOLDER%/bg2/bam/xacorchn.bam~ ~override~
-		COPY ~%MOD_FOLDER%/bg2/bam/xaicorch.bam~ ~override~
 	//}
 	
 	//{ Corwin's Armor + 4
