@@ -47,17 +47,7 @@ END
 
 //{ Animations
 	ACTION_IF(isEET = 0) THEN BEGIN
-		COPY ~%MOD_FOLDER%/tob/anim/7f58.INI~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/7f59.INI~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/7f5a.INI~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/7f5b.INI~ ~override~
 		COPY ~%MOD_FOLDER%/tob/anim/e276.INI~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mabbg1.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mabbg2.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mabgg1.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mabgg2.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mabrg1.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mabrg2.BAM~ ~override~
 		COPY ~%MOD_FOLDER%/tob/anim/mlema1.BAM~ ~override~
 		COPY ~%MOD_FOLDER%/tob/anim/mlema1e.BAM~ ~override~
 		COPY ~%MOD_FOLDER%/tob/anim/mlema2.BAM~ ~override~
@@ -82,13 +72,7 @@ END
 		COPY ~%MOD_FOLDER%/tob/anim/mlemtwe.BAM~ ~override~
 		COPY ~%MOD_FOLDER%/tob/anim/mlemwk.BAM~ ~override~
 		COPY ~%MOD_FOLDER%/tob/anim/mlemwke.BAM~ ~override~
-		
-		APPEND ~animate.ids~ ~0x7F58 ABISHAI_BLACK~
-		APPEND ~animate.ids~ ~0x7F59 ABISHAI_GREEN~
-		APPEND ~animate.ids~ ~0x7F5A ABISHAI_RED~
-		APPEND ~animate.ids~ ~0x7F5B ABISHAI_BLUE~
 		APPEND ~animate.ids~ ~0xE276 LEMURE~
-
 	END
 //}
 

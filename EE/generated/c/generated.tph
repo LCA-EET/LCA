@@ -1629,6 +1629,7 @@ COPY ~%MOD_FOLDER%\generated\c\wav\xac10353.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10354.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10355.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10356.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\wav\xac10481.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10460.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10459.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10457.wav~ ~override~
@@ -1662,7 +1663,6 @@ COPY ~%MOD_FOLDER%\generated\c\wav\xac10360.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10359.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10358.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10357.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10481.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10482.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10531.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wav\xac10532.wav~ ~override~
@@ -2322,13 +2322,15 @@ COPY ~%MOD_FOLDER%\generated\c\wed\xac101.wed~ ~override~
 
 //bam files
 //===================
-COPY ~%MOD_FOLDER%\generated\c\bam\xac110.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac109.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac108.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac107.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac106.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac105.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac104.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac102.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac101.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac109.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac110.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac111.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac112.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac113.bam~ ~override~
@@ -2336,17 +2338,15 @@ COPY ~%MOD_FOLDER%\generated\c\bam\xac114.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac115.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac116.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac117.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac118.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac120.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac133.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac132.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac131.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac130.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac129.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac128.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac127.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac126.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac125.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bam\xac124.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac123.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac122.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac121.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac120.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac119.bam~ ~override~
 
 //eff files
 //===================
@@ -2361,6 +2361,10 @@ COPY ~%MOD_FOLDER%\generated\c\tis\xac101.tis~ ~override~
 //{ PVRZ
 	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10000.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10001.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\c\pvrz\mos1046.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\c\pvrz\mos1033.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\c\pvrz\mos1030.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\c\pvrz\mos1032.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10100.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10101.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10102.pvrz~ ~override~
@@ -2415,6 +2419,8 @@ COPY ~%MOD_FOLDER%\generated\c\tis\xac101.tis~ ~override~
 	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n24.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n25.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n26.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\c\pvrz\mos1048.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\c\pvrz\mos1031.pvrz~ ~override~
 //}
 
 //bmp files.

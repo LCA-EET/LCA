@@ -417,12 +417,12 @@ END
 COPY ~%MOD_FOLDER%\generated\g\spl\xag100.spl~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@20103) /*~Teleport Without Error~*/
 COPY ~%MOD_FOLDER%\generated\g\spl\xag101.spl~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\spl\xag105.spl~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\spl\xag103.spl~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\spl\xag104.spl~ ~override~
 COPY ~%MOD_FOLDER%\generated\g\spl\xag107.spl~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\spl\xag113.spl~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\spl\xag111.spl~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\spl\xag106.spl~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@20104) /*~Impale~*/
-COPY ~%MOD_FOLDER%\generated\g\spl\xag109.spl~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\spl\xag105.spl~ ~override~
 
 //wav files
 //===================
@@ -480,8 +480,8 @@ COPY ~%MOD_FOLDER%\generated\g\bam\xag148.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\g\bam\xag149.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\g\bam\xag150.bam~ ~override~
 COPY ~%MOD_FOLDER%\generated\g\bam\xag153.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\bam\xag155.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\bam\xag166.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\bam\xag154.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\bam\xag158.bam~ ~override~
 
 //itm files
 //===================

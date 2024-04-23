@@ -617,6 +617,7 @@ COPY ~%MOD_FOLDER%\generated\d\bam\xad103.bam~ ~override~
 	COPY ~%MOD_FOLDER%\generated\d\pvrz\xd10002.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\d\pvrz\xd10100.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\d\pvrz\xd10101.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\d\pvrz\mos1045.pvrz~ ~override~
 //}
 
 //bmp files.

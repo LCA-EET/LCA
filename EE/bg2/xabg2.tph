@@ -430,14 +430,17 @@ OUTER_SET bg2_carryover = 1
 
 //{ New Items
 	//{ Corwin's Body
-		COPY ~%MOD_FOLDER%/bg2/itm/xacorbod.itm~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/bam/xacorbod.bam~ ~override~
+		COPY ~%MOD_FOLDER%/bg2/bam/xagcorbd.bam~ ~override~
+		
+		COPY_EXISTING ~MISCBL.itm~ ~override/xacorbod.itm~
+		WRITE_LONG 0x4C 155 // Weight
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3138)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3138)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3139)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3139)
-		
-		COPY ~%MOD_FOLDER%/bg2/bam/xacorbod.bam~ ~override~
-		COPY ~%MOD_FOLDER%/bg2/bam/xagcorbd.bam~ ~override~
+		WRITE_ASCII 0x3A ~xacorbod~ #8
+		WRITE_ASCII 0x44 ~xagcorbd~ #8
 	//}
 	
 	//{ Letter to Duncan
@@ -498,21 +501,27 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Corwin's Bow + 2
-		COPY ~%MOD_FOLDER%/bg2/itm/xacorbow.itm~ ~override~
-		WRITE_LONG 0x08 RESOLVE_STR_REF(@3153)
-		WRITE_LONG 0x0C RESOLVE_STR_REF(@3153)
-		WRITE_LONG 0x50 RESOLVE_STR_REF(@3154)
+		COPY_EXISTING ~xad107.itm~ ~override/xacorbow.itm~
+		WRITE_LONG 0xC RESOLVE_STR_REF(@3057)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3154)
+		WRITE_ASCII 0x1AE ~xacorwin~ #8
+		WRITE_BYTE 0x84 5 // Lower Speed from 6 to 5
+		WRITE_SHORT 0x86 3 // Increase to-hit bonus from 2 to 3
+		WRITE_SHORT 0x8C 4 // Increase to-hit bonus from 3 to 4
+		WRITE_LONG 0x60 2 // Increase enchantment from 1 to 2
+		WRITE_BYTE 0x1DC 15 // Increase entangle chance to 15%
 		WRITE_LONG 0x1C6 RESOLVE_STR_REF(@3152)
 	//}
 	
 	//{ Corwin's Bow + 3 
-		COPY ~%MOD_FOLDER%/bg2/itm/xacorbo3.itm~ ~override~
-		WRITE_LONG 0x08 RESOLVE_STR_REF(@3165)
-		WRITE_LONG 0x0C RESOLVE_STR_REF(@3165)
-		WRITE_LONG 0x50 RESOLVE_STR_REF(@3166)
+		COPY_EXISTING ~xacorbow.itm~ ~override/xacorbo3.itm~
+		WRITE_LONG 0xC RESOLVE_STR_REF(@3163)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3166)
-		WRITE_LONG 0x1C6 RESOLVE_STR_REF(@3152)
+		WRITE_BYTE 0x84 4 // Lower Speed from 5 to 4
+		WRITE_SHORT 0x86 4 // Increase to-hit bonus from 3 to 4
+		WRITE_SHORT 0x8C 5 // Increase to-hit bonus from 4 to 5
+		WRITE_LONG 0x60 3 // Increase enchantment from 2 to 3
+		WRITE_BYTE 0x1DC 19 // Increase entangle chance to 19%
 	//}
 	
 	//{ Corwin's Bow + 3 (Gesen)
@@ -536,21 +545,35 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Corwin's Armor + 3
-		COPY ~%MOD_FOLDER%/bg2/itm/xacorchn.itm~ ~override~
-		WRITE_LONG 0x08 RESOLVE_STR_REF(@3155)
-		WRITE_LONG 0x0C RESOLVE_STR_REF(@3155)
+		COPY_EXISTING ~xad106.itm~ ~override/xacorchn.itm~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@3155)
+		WRITE_LONG 0xC RESOLVE_STR_REF(@3155)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3156)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3156)
 		WRITE_LONG 0x2AE RESOLVE_STR_REF(@3152)
+		WRITE_LONG 0x166 2 // Lower Base AC from 3 to 2
+		WRITE_LONG 0x225 15 // Increase Magic Resistance from 10% to 15%
+		WRITE_ASCII 0x296 ~xacorwin~ #8	
 	//}
 	
 	//{ Corwin's Armor + 4
-		COPY ~%MOD_FOLDER%/bg2/itm/xacorch4.itm~ ~override~
+		COPY_EXISTING ~xacorchn.itm~ ~override/xacorch4.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3161)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3161)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3162)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3162)
-		WRITE_LONG 0x2DE RESOLVE_STR_REF(@3152)
+		WRITE_LONG 0x2AE RESOLVE_STR_REF(@3152)
+		WRITE_LONG 0x166 1 // Lower Base AC from 2 to 1
+		LPF ADD_ITEM_EFFECT // +1 Saving Throw Bonus
+			INT_VAR
+				opcode = 325
+				target = 1
+				power = 1
+				timing = 2
+				parameter1 = 1
+				parameter2 = 0
+				savebonus = 1 
+		END
 	//}
 	
 	//{ Soultaker Dagger
@@ -571,7 +594,6 @@ OUTER_SET bg2_carryover = 1
 	COPY ~%MOD_FOLDER%/bg2/spl/xagameov.spl~ ~override~
 	WRITE_LONG 0x08 RESOLVE_STR_REF(@3170)
 	
-	COPY ~%MOD_FOLDER%/bg2/spl/xacorbow.spl~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/spl/xacorbo3.spl~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/spl/xahide.spl~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/spl/xaunhide.spl~ ~override~
