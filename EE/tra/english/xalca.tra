@@ -378,58 +378,7 @@ Requires:
 
 Weight: 9
 ~
-@146 = ~Corwin's Bow +4~
-@147 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
 
-The bow was further enhanced by Flaming Fist mages to help then Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. 
-
-With the addition of the Bowstring of Gond, this weapon has reached its full potential. In the hands of an archer as talented as Corwin, it is capable of dealing death faster than anything you've ever seen. 
-
-Equipped abilities: 
-– Dexterity: +1
-
-Combat abilities: 
-– 22% chance per hit of entangling the target for 3 rounds (Save vs. Breath negates)
-– Extra half attack per round
-
-STATISTICS:
-
-THAC0: +5
-Damage: +6
-Speed Factor: 3
-Proficiency Type: Longbow
-Type: Two-handed
-Requires:
- 18 Strength
-
-Weight: 9
-~
-@148 = ~Corwin's Bow +5~
-@149 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
-
-The bow was further enhanced by Flaming Fist mages to help then Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. Additional enchantments to reduce the draw weight were placed on the weapon by the master bowyer of Suldanessellar, as a token of gratitude for saving the elven city. The reduced draw weight makes the weapon less physically taxing to use, resulting in improved power and accuracy.
-
-With the addition of the Bowstring of Gond, this weapon has reached its full potential. In the hands of an archer as talented as Corwin, it is capable of dealing death faster than anything you've ever seen. 
-
-Equipped abilities: 
-– Dexterity: +1
-
-Combat abilities: 
-– 24% chance per hit of entangling the target for 3 rounds (Save vs. Breath negates)
-– Extra half attack per round
-
-STATISTICS:
-
-THAC0: +6
-Damage: +7
-Speed Factor: 2
-Proficiency Type: Longbow
-Type: Two-handed
-Requires:
- 18 Strength
-
-Weight: 9
-~
 @150 = ~Master Bowyer~
 @151 = ~Elven Smith~
 @152 = ~Corwin's Armor +4~
@@ -1804,6 +1753,59 @@ Requires:
  5 Strength
 
 Weight: 2~
+@5024 = ~Corwin's Bow +4~
+@5025 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+
+The bow was further enhanced by Flaming Fist mages to help then Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. 
+
+With the addition of the Bowstring of Gond, this weapon has reached its full potential. In the hands of an archer as talented as Corwin, it is capable of dealing death faster than anything you've ever seen. 
+
+Equipped abilities: 
+– Dexterity: +1
+
+Combat abilities: 
+– 22% chance per hit of entangling the target for 3 rounds (Save vs. Breath negates)
+– Extra half attack per round
+
+STATISTICS:
+
+THAC0: +5
+Damage: +6
+Speed Factor: 3
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 9
+~
+@5026 = ~Corwin's Bow +5~
+@5027 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+
+The bow was further enhanced by Flaming Fist mages to help then Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. Additional enchantments to reduce the draw weight were placed on the weapon by the master bowyer of Suldanessellar, as a token of gratitude for saving the elven city. The reduced draw weight makes the weapon less physically taxing to use, resulting in improved power and accuracy.
+
+With the addition of the Bowstring of Gond, this weapon has reached its full potential. In the hands of an archer as talented as Corwin, it is capable of dealing death faster than anything you've ever seen. 
+
+Equipped abilities: 
+– Dexterity: +1
+
+Combat abilities: 
+– 24% chance per hit of entangling the target for 3 rounds (Save vs. Breath negates)
+– Extra half attack per round
+
+STATISTICS:
+
+THAC0: +6
+Damage: +7
+Speed Factor: 2
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 9
+~
+
 //{ Block G Translations
 @20000 = ~Aun Argent~
 @20001 = ~Aun Argent~

@@ -508,6 +508,35 @@ END
 		COPY ~%MOD_FOLDER%/tob/eff/xasw1hc5.eff~ ~override~
 	//}
 	
+	//{ Corwin's Bow + 4 (Gond)
+		COPY_EXISTING ~xacorbo3.itm~ ~override/xacorbo4.itm~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@5024)
+		WRITE_LONG 0xC RESOLVE_STR_REF(@5024)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@5025)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@5025)
+		WRITE_LONG 0x13E 8 // Increase attacks to 2.5 per round
+		WRITE_SHORT 0x80 112 // Set range to 112
+		WRITE_BYTE 0x84 3 // Set speed to 3
+		WRITE_SHORT 0x86 5 // Set to hit bonus to 5
+		WRITE_SHORT 0x8C 6 // Set damage bonus to 6
+		WRITE_LONG 0x60 4 // Set enchantment to 4
+		WRITE_BYTE 0x1DC 22 // Set entangle chance to 22%
+	//}
+	
+	//{ Corwin's Bow + 5 (Gond)
+		COPY_EXISTING ~xacorbo4.itm~ ~override/xacorbo5.itm~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@5026)
+		WRITE_LONG 0xC RESOLVE_STR_REF(@5026)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@5027)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@5027)
+		WRITE_SHORT 0x80 114 // Set range to 114
+		WRITE_BYTE 0x84 2 // Set speed to 2
+		WRITE_SHORT 0x86 6 // Set to hit bonus to 6
+		WRITE_SHORT 0x8C 7 // Set damage bonus to 7
+		WRITE_LONG 0x60 5 // Set enchantment to 5
+		WRITE_BYTE 0x1DC 24 // Set entangle chance to 24%
+	//}
+	
 	//{ Shattered Gear
 		COPY_EXISTING ~misc59.itm~ ~override/xabroken.itm~
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@5017)

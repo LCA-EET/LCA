@@ -505,9 +505,10 @@ OUTER_SET bg2_carryover = 1
 		WRITE_LONG 0xC RESOLVE_STR_REF(@3057)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3154)
 		WRITE_ASCII 0x1AE ~xacorwin~ #8
+		WRITE_SHORT 0x80 109 // Set range to 105
 		WRITE_BYTE 0x84 5 // Lower Speed from 6 to 5
 		WRITE_SHORT 0x86 3 // Increase to-hit bonus from 2 to 3
-		WRITE_SHORT 0x8C 4 // Increase to-hit bonus from 3 to 4
+		WRITE_SHORT 0x8C 4 // Increase damage bonus from 3 to 4
 		WRITE_LONG 0x60 2 // Increase enchantment from 1 to 2
 		WRITE_BYTE 0x1DC 15 // Increase entangle chance to 15%
 		WRITE_LONG 0x1C6 RESOLVE_STR_REF(@3152)
@@ -517,9 +518,10 @@ OUTER_SET bg2_carryover = 1
 		COPY_EXISTING ~xacorbow.itm~ ~override/xacorbo3.itm~
 		WRITE_LONG 0xC RESOLVE_STR_REF(@3163)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3166)
+		WRITE_SHORT 0x80 109 // Set range to 109
 		WRITE_BYTE 0x84 4 // Lower Speed from 5 to 4
 		WRITE_SHORT 0x86 4 // Increase to-hit bonus from 3 to 4
-		WRITE_SHORT 0x8C 5 // Increase to-hit bonus from 4 to 5
+		WRITE_SHORT 0x8C 5 // Increase damage bonus from 4 to 5
 		WRITE_LONG 0x60 3 // Increase enchantment from 2 to 3
 		WRITE_BYTE 0x1DC 19 // Increase entangle chance to 19%
 	//}
@@ -535,13 +537,16 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Corwin's Bow + 4 (Gesen)
-		COPY ~%MOD_FOLDER%/bg2/itm/xacorbg4.itm~ ~override~
-		WRITE_SHORT 0x09c ~%xalarrow%~
+		COPY_EXISTING ~xacorbg3.itm~ ~override/xacorbg4.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3167)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3167)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3168)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3168)
-		WRITE_LONG 0x25E RESOLVE_STR_REF(@3152)
+		WRITE_LONG 0x60 4 // Increase enchantment from 3 to 4
+		WRITE_SHORT 0x80 80 // Increase range to 80
+		WRITE_SHORT 0xB8 80 // Increase range to 80
+		WRITE_SHORT 0xBE 5 // Set to-hit bonus
+		WRITE_SHORT 0xC4 6 // Set damage bonus
 	//}
 	
 	//{ Corwin's Armor + 3
