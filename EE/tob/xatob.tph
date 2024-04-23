@@ -477,6 +477,7 @@ END
 	//{ Caelar's Chainmail
 		COPY_EXISTING ~xac107.itm~ ~override/xachanca.itm~
 		WRITE_ASCII 0x446 ~xacaelar~ #8
+		WRITE_LONG 0x45E RESOLVE_STR_REF(@5028)
 	//}
 
 	//{ Caelar's Cloak
@@ -485,27 +486,32 @@ END
 		WRITE_LONG 0xC RESOLVE_STR_REF(@5020)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@5021)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@5021)
+		WRITE_LONG 0x3FE RESOLVE_STR_REF(@5028)
 	//}
 	
 	//{ Caelar's Helmet
 		COPY_EXISTING ~xac106.itm~ ~override/xahelmca.itm~
 		WRITE_ASCII 0x656 ~xacaelar~ #8
+		WRITE_LONG 0x66E RESOLVE_STR_REF(@5028)
 	//}
 
 	//{ Caelar's Shield
 		COPY_EXISTING ~xac108.itm~ ~override/xashldca.itm~
 		WRITE_ASCII 0x176 ~xacaelar~ #8
+		WRITE_LONG 0x18E RESOLVE_STR_REF(@5028)
 	//}
 
-	//{ Caelar's Sword
+	//{ Caelar's Sword + 3
 		COPY_EXISTING ~xac110.itm~ ~override/xasw1hca.itm~
 		WRITE_ASCII 0x11E ~xacaelar~ #8
+		WRITE_LONG 0x136 RESOLVE_STR_REF(@5028)
 	//}
 	
 	//{ Caelar's Sword + 5
-		COPY ~%MOD_FOLDER%/tob/itm/xasw1hc5.itm~ ~override~
 		COPY ~%MOD_FOLDER%/tob/bam/xasw1hc5.bam~ ~override~
-		COPY ~%MOD_FOLDER%/tob/eff/xasw1hc5.eff~ ~override~
+	
+		COPY ~%MOD_FOLDER%/tob/itm/xasw1hc5.itm~ ~override~
+		WRITE_LONG 0x1F6 RESOLVE_STR_REF(@5028)
 	//}
 	
 	//{ Corwin's Bow + 4 (Gond)
