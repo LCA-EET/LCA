@@ -4,6 +4,29 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v2.0-beta 2024-04-23
+* Added compatibility with EE (non-EET).
+* Added a new quest, "Trouble in the Tower", to the Return to Baldur's Gate portion of the mod.
+
+# v1.1e 2024-04-03
+* Fixed a compatibility issue with the Cost of One Girl's Soul mod that could cause the Djinn to erroneously give two copies of the Soultaker dagger to the protagonist.
+* Resolved a compatibility issue with the Another Fine Hell mod.
+* Fixed a bug in a transition concerning Corwin's departure from the party after <CHARNAME> had turned into a lich.
+
+# v1.1d 2024-03-20
+* Fixed an intermittent trigger issue when trying to start the Archery Lesson cutscene from the Allied Siege Camp.
+
+# v1.1c 2024-03-09
+* Fixed an error that could cause Corwin to start a dialog with someone who is no longer in the party.
+* Fixed a banter blocking issue.
+* Fixed a couple of typos. 
+
+# v1.1b 2024-02-24
+* Fixed an error in the installer when the Cost of One Girl's Soul mod is installed. Specifically, the installer will no longer assume that the Eddard component was installed, and instead will patch dialogs based on the presence of certain files within the game. 
+
+# v1.1a 2024-02-09
+* Fixed a mod conflict in one of the Spellhold cutscenes that could cause a failure of a key cutscene to progress as designed.
+
 # v1.1 2024-01-13
 * Various dialog and lore consistency improvements based on feedback received from T. Mounier. Thank you!
 * Players can now disable and remove the LCA Assistant ability using the debugger.
@@ -37,11 +60,11 @@
 
 # v1.0.12c 2023-12-17
 * Golden Eggs can now be placed in Jewellery Bags.
-* Fixed a bug that prevented the "XA_LC_ClearedKanaglym" variable from being set correctly. This variable is important, because it it one of the triggers used to start the Kanaglym dream sequence in ToB. Players can manually set this variable after the fact by opening the LCA Assistant, and choosing the following options:
+* Fixed a bug that prevented the "XA_ClearedKanaglym" variable from being set correctly. This variable is important, because it it one of the triggers used to start the Kanaglym dream sequence in ToB. Players can manually set this variable after the fact by opening the LCA Assistant, and choosing the following options:
 - 9. Open debugger.
 - 1. Proceed.
 - 43. Adjust Variables.
-- 138. Set XA_LC_ClearedKanaglym to 1.
+- 138. Set XA_ClearedKanaglym to 1.
 - 58. Dismiss Debugger.
 * For players starting their game from BG2, an initial configuration option concerning Kanaglym has been added.
  

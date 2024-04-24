@@ -1,3 +1,14 @@
+//{ Helm of Balduran Possessed
+IF
+	PartyHasItem("HELM07")
+	GlobalLT("XA_LC_PossessedHelm", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_PossessedHelm", "GLOBAL", 1)
+		Continue()
+END
+//}
+
 //{ Proficiency Talk
 	IF
 		Global("XA_LC_ProficiencyTalk", "GLOBAL", 6)

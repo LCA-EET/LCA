@@ -1,0 +1,9 @@
+IF
+	Global("XA_LC_PossessedHelm", "GLOBAL", 1)
+	GlobalLT("XA_LC_RemoveHelm", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_RemoveHelm", "MYAREA", 1)
+		ActionOverride("Container 4", DestroyItem("HELM07"))
+		ActionOverride("Container 4", CreateItem("MISC07", 4891, 0, 0))
+END

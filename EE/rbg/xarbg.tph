@@ -1892,6 +1892,10 @@ END
 		WRITE_LONG 0x374 0 // Noblewoman
 	//}
 	
+	//{ ar0118 xaa596
+		EXTEND_TOP ~xaas596.bcs~ ~%MOD_FOLDER%/rbg/baf/xaar0118.baf~
+	//}
+	
 	//{ ar0119 xaa238
 		COPY_EXISTING ~xaa238.are~ ~override~
 		
