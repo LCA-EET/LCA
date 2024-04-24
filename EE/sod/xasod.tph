@@ -63,13 +63,10 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 	WRITE_ASCII 0x2CC ~xabdsch2~ #8
 	WRITE_ASCII 0x280 ~XABDSCH2~ #20
 	
-	COPY ~%MOD_FOLDER%/sod/cre/xabdsch2.cre~	~override~
-	WRITE_LONG 0x08 RESOLVE_STR_REF(@2010)
-	WRITE_LONG 0x0C RESOLVE_STR_REF(@2010)
-	
-	COPY ~%MOD_FOLDER%/sod/cre/xacc4.cre~		~override~
-	WRITE_LONG 0x08 RESOLVE_STR_REF(@2010)
-	WRITE_LONG 0x08 RESOLVE_STR_REF(@2010)
+	COPY_EXISTING ~xabdsch2.cre~ ~override/xacc4.cre~
+	REMOVE_CRE_ITEMS
+	WRITE_ASCII 0x2CC ~xacc4~ #8 	// Dialogue
+	WRITE_ASCII 0x280 ~xacc4~ #20  	// Script Name
 //}
 
 //{ Creature modifications

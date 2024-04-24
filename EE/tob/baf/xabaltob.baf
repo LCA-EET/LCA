@@ -1,7 +1,7 @@
 //{ Remove Pocket Plane Ability - Avernus Tower
 	IF
 		GlobalLT("XA_LC_AVBossFled", "GLOBAL", 1)
-		AreaCheck("XA4700")
+		AreaCheck("XAG103")
 		TriggerOverride(Player1,HaveSpellRES("SPIN649")) 
 	THEN
 		RESPONSE #100

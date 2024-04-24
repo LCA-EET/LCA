@@ -655,6 +655,24 @@ END
 		WRITE_ASCII 0x14E4 ~xaavdoor~ #8
 	//}
 	
+	//{ xag103 bd4700 Avernus Tower Roof
+		EXTEND_TOP ~xags100.bcs~ ~%MOD_FOLDER%/tob/baf/xa4700.baf~
+		
+		OUTER_SET expiryOffset = 0x154
+		OUTER_SET i = 0
+		
+		COPY_EXISTING ~xag100.are~ ~override~
+		WHILE (i < 23) BEGIN // Disable the existing area actors
+			WRITE_LONG expiryOffset 0
+			expiryOffset = (expiryOffset + 0x110)
+			i = (i + 1)
+		END
+		
+		//{ Disable Hellevator
+			WRITE_LONG 0x19EC 256
+		//}
+	//}
+	
 	//{ xag104 bd5300 Kanaglym
 		EXTEND_TOP ~xags104.bcs~ ~%MOD_FOLDER%/tob/baf/xa5300.baf~
 		
@@ -733,9 +751,13 @@ END
 		LPF fj_are_structure INT_VAR fj_loc_x = 530 fj_loc_y =940 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug05 fj_name = ghost END
 		LPF fj_are_structure INT_VAR fj_loc_x = 616 fj_loc_y =995 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug06 fj_name = ghost END
 		LPF fj_are_structure INT_VAR fj_loc_x = 900 fj_loc_y =679 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug07 fj_name = ghost END
-
-
-
-
+	//}
+	
+	//{ xa5501 Amkethran Tavern
+		COPY ~%MOD_FOLDER%/tob/are/xa5501.are~ ~override~
+	//}
+	
+	//{ xabye ar4500 Pocket Plane
+		COPY ~%MOD_FOLDER%/tob/are/xabye.are~ ~override~
 	//}
 //}
