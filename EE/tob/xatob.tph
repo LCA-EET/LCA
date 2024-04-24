@@ -760,4 +760,14 @@ END
 	//{ xabye ar4500 Pocket Plane
 		COPY ~%MOD_FOLDER%/tob/are/xabye.are~ ~override~
 	//}
+	
+	//{ 2DA Modifications
+		//{ XACAELAR
+			COPY_EXISTING ~pdialog.2da~ ~override~
+			INSERT_2DA_ROW 0 8 ~XACAELAR XACAELAP XACAELAJ XACAELAD XACAELAP XACAELAJ XACAELAD XACAELAR~
+
+			COPY_EXISTING ~interdia.2da~ ~override~
+			INSERT_2DA_ROW 0 3 ~XACAELAR XACAELAB XACAELAB~
+		//}
+	//}
 //}

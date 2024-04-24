@@ -989,3 +989,13 @@ THEN
 		Continue()
 END
 
+//{ Reset Worldmap
+IF
+	Global("XA_LC_RBGWorldMap", "GLOBAL", 1)
+	GlobalLT("XA_ToBMapSet", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_ToBMapSet", "GLOBAL", 1)
+		SetWorldmap("WORLDM25")
+END
+//}
