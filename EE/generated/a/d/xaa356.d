@@ -1,31 +1,29 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\MTOB3.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\WAITER.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\MTOB3.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\WAITER.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA356~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
 
-IF ~  NumTimesTalkedTo(0)
+IF WEIGHT #1 /* Triggers after states #: 1 even though they appear after this state */
+~  True()
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~By Sune's boobies, this place is heaven. I can't believe the women of the Lantern; they have that glamor my old hag wife lost so long ago.~ #7512 */
+  SAY @1 /* ~Please do not distract me, good patron. I've orders to fill amongst the regulars.~ #8383 */
   IF ~~ THEN EXIT
 END
 
-IF ~  NumTimesTalkedTo(1)
+IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
 ~ THEN BEGIN 1 // from:
-  SAY @2 /* ~I'm not looking forward to heading home tonight. I don't know how I'll explain it to my wife how I lost 6 gold. I'll have to make up some excuse, but she'll know it was the gamblin'.~ #7513 */
+  SAY @2 /* ~Even though you're a good friend, I don't think you'd understand the highbrow political talk that I hear among the patrons. Please don't take insult my friend, it is hardly your fault that you were born into the world to such a lowly caste.~ #8385 */
   IF ~~ THEN EXIT
 END
 
-IF ~  StateCheck(Myself,STATE_CHARMED)
-~ THEN BEGIN 2 // from:
-  SAY @3 /* ~Sorry, pal, I wish I could help ya, but I've lost all my money in this devil pit.~ #7514 */
-  IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN 3 // from:
-  SAY @4 /* ~I'll not speak a word after what you did!~ #9179 */
+IF ~~ THEN BEGIN 2 // from:
+  SAY @3 /* ~Get out of my sight! I'll do nothing for you!~ #9038 */
   IF ~~ THEN EXIT
 END

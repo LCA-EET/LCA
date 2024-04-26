@@ -1,59 +1,74 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\PROST4.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\DOPPSM.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\PROST4.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\DOPPSM.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA289~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #1 /* Triggers after states #: 6 even though they appear after this state */
-~  True()
+IF ~  True()
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Heh... hehe... Well, welcome to ye! I trust ye are of fine health today? Come to do something about it? I f-f-find that most of the people above are a bit too healthy sometimes. Stay awhile and free your mind a bit...~ #8268 */
-  IF ~~ THEN REPLY @2 /* ~Your offer is tempting indeed, but I have obligations elsewhere.~ #8274 */ GOTO 1
-  IF ~~ THEN REPLY @3 /* ~Away from me, harlot! I'll not let your presence despoil me or my companions!~ #8275 */ GOTO 2
-  IF ~  Gender(LastTalkedToBy,MALE)
-~ THEN REPLY @4 /* ~Why darling, is that a personal invitation?~ #8276 */ GOTO 3
-  IF ~  Gender(LastTalkedToBy,FEMALE)
-~ THEN REPLY @4 /* ~Why darling, is that a personal invitation?~ #8277 */ GOTO 4
+  SAY @1 /* ~What can I do for you?~ #981 */
+  IF ~~ THEN REPLY @2 /* ~We wanted to ask you some questions on your recent business decisions. Some people find them very questionable.~ #988 */ DO ~SetGlobal("CheckedSevenSuns","GLOBAL",2)
+~ GOTO 2
+  IF ~~ THEN REPLY @3 /* ~We wanted a tour.~ #989 */ DO ~SetGlobal("AskedForTour","GLOBAL",1)
+SetGlobal("CheckedSevenSuns","GLOBAL",2)
+~ GOTO 1
+  IF ~~ THEN REPLY @4 /* ~We want to talk to the owner of the Seven Suns.~ #990 */ DO ~SetGlobal("CheckedSevenSuns","GLOBAL",2)
+~ GOTO 1
 END
 
-IF ~~ THEN BEGIN 1 // from: 0.0
-  SAY @5 /* ~I am sure you do. No matter. More of me for someone else...~ #8269 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 1 // from: 0.2 0.1
+  SAY @5 /* ~Unfortunately, I cannot grant any of your desires, so could you kindly leave?~ #982 */
+  IF ~~ THEN REPLY @6 /* ~Not until we get to see Jhasso.~ #991 */ GOTO 7
+  IF ~~ THEN REPLY @7 /* ~We want a tour first.~ #992 */ GOTO 3
+  IF ~  Global("AskedForTour","GLOBAL",1)
+~ THEN REPLY @8 /* ~No tour, huh? Well, I guess we'll be on our way.~ #993 */ GOTO 8
+  IF ~~ THEN REPLY @9 /* ~Fine, we'll find someone else to answer our questions.~ #994 */ GOTO 8
 END
 
-IF ~~ THEN BEGIN 2 // from: 0.1
-  SAY @6 /* ~Ooooo, you are waaaaay too healthy. Bet you spend most your nights buffing the helm, hmm? Off with you then, and don't come back until you've loosened your belt a little. Have a friend help, it's more fun that way. Heeeeheee.~ #8270 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 2 // from: 0.0
+  SAY @10 /* ~I'm sorry, but I'm in a real hurry, please don't bother me.~ #983 */
+  IF ~~ THEN REPLY @11 /* ~Not until you answer some questions.~ #995 */ GOTO 3
+  IF ~~ THEN REPLY @12 /* ~Sure thing, bye.~ #996 */ GOTO 8
 END
 
-IF ~~ THEN BEGIN 3 // from: 0.2
-  SAY @7 /* ~Now don't get me wrong big... fella. Not that you're not attractive an all, but tonight I'm enjoying my own company. Stay awhile and relax for an eve. No pressures here.~ #8271 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 3 // from: 2.0 1.1
+  SAY @13 /* ~Listen here. There have been some strange things happening about the Seven Suns, but I'd rather not talk about it. Everybody I know has been acting really strange of late. I've seen some of the other merchants change faces when they thought I wasn't looking. Yes, you heard me right, they changed faces! Some sort of shapeshifters have infiltrated the Seven Suns. If I were you, I'd get out of here while there's still time. That's what I'm planning to do.~ #984 */
+  IF ~~ THEN DO ~EscapeArea()
+~ UNSOLVED_JOURNAL @14 /* ~The Seven Suns
+A frightened merchant inside the Seven Suns building says the Seven Suns has been infiltrated by shapeshifters!~ #26986 */ EXIT
 END
 
-IF ~~ THEN BEGIN 4 // from: 0.3
-  SAY @8 /* ~Heeheeee... not that I'm a... Xena-phobe or anything, but... you're not my type, sister. Enjoy the eve, though.~ #8272 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 4 // from:
+  SAY @15 /* ~Excuse me, could I inquire to what you're doing here?~ #985 */
+  IF ~~ THEN REPLY @16 /* ~We're tourists.~ #997 */ GOTO 5
+  IF ~~ THEN REPLY @17 /* ~We're new mercenaries.~ #998 */ GOTO 5
+  IF ~~ THEN REPLY @18 /* ~We work for Jhasso.~ #999 */ GOTO 5
 END
 
-IF ~~ THEN BEGIN 5 // from:
-  SAY @9 /* ~Oooh, colors.~ #8273 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 5 // from: 4.2 4.1 4.0
+  SAY @19 /* ~Lying primates! Guards, kill the intruders.~ #986 */
+  IF ~~ THEN EXTERN ~SSUNGU~ 5
 END
 
-IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
-~ THEN BEGIN 6 // from:
-  SAY @10 /* ~I'm too high to be of any use to you honey.~ #8278 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 6 // from:
+  SAY @20 /* ~Do not question my orders meat, just do it.~ #987 */
+  IF ~~ THEN DO ~Enemy()
+~ EXIT
 END
 
-IF ~~ THEN BEGIN 7 // from:
-  SAY @11 /* ~Get near me again and I'll have your nethers on a platter!~ #9102 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 7 // from: 1.0
+  SAY @21 /* ~I don't know where he is. He's been missing ever since everything went strange. I've seen some of the other merchants change faces when they thought I wasn't looking. Yes, you heard me right, they changed faces! Some sort of shapeshifters have infiltrated the Seven Suns. If I were you, I'd get out of here while there's still time, that's what I'm planning to do.~ #16590 */
+  IF ~~ THEN DO ~EscapeArea()
+~ UNSOLVED_JOURNAL @14 /* ~The Seven Suns
+A frightened merchant inside the Seven Suns building says the Seven Suns has been infiltrated by shapeshifters!~ #26986 */ EXIT
+END
+
+IF ~~ THEN BEGIN 8 // from: 2.1 1.3 1.2
+  SAY @22 /* ~Wait! You should get out of here as soon as possible. Everybody I know has been acting really strange of late. I've seen some of the other merchants change faces when they thought I wasn't looking. Yes, you heard me right: They changed faces! Some sort of shapeshifters have infiltrated the Seven Suns. Get out while you still can.~ #11853 */
+  IF ~~ THEN DO ~EscapeArea()
+~ UNSOLVED_JOURNAL @14 /* ~The Seven Suns
+A frightened merchant inside the Seven Suns building says the Seven Suns has been infiltrated by shapeshifters!~ #26986 */ EXIT
 END

@@ -1,5 +1,5 @@
 PRINT @5000  /* ~Processing ToB changes...~ */
-
+SILENT
 INCLUDE ~%MOD_FOLDER%/generated/g/generated.tph~
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/baf~
@@ -277,14 +277,14 @@ END
 		SET cid = 0
 		ACTION_DEFINE_ARRAY crusaderSpirits
 		BEGIN
-			xag132 // bdcrue50
-			xag136 // bdcrue51
-			xag125 // bdcrue52
-			xag127 // bdcrue53
-			xag128 // bdcrue54
+			xag131 // bdcrue50
+			xag135 // bdcrue51
+			xag124 // bdcrue52
+			xag126 // bdcrue53
+			xag127 // bdcrue54
 			xag110 // bdcrus5d
-			xag140 // bdcrus6d
-			xag141 // bdcrus7d
+			xag139 // bdcrus6d
+			xag140 // bdcrus7d
 		END
 		ACTION_PHP_EACH crusaderSpirits AS _ => cSpirit
 		BEGIN
@@ -564,12 +564,6 @@ END
 //}
 
 //{ New Areas
-	//{ xablck (Dream)
-		COPY ~%MOD_FOLDER%/tob/are/xablck.are~ ~override~
-		COPY ~%MOD_FOLDER%/tob/wed/xablck.wed~ ~override~
-		COPY ~%MOD_FOLDER%/tob/tis/xablck.tis~ ~override~
-	//}
-
 	//{ xa4000 ar4000 Spirit Heads (LCA - Forest Outside Saradush)
 		COPY_EXISTING ~ar4000.are~ ~override/xa4000.are~
 		WRITE_ASCII 0x94 ~xa4000~ #8
@@ -655,13 +649,13 @@ END
 		WRITE_ASCII 0x14E4 ~xaavdoor~ #8
 	//}
 	
-	//{ xag103 bd4700 Avernus Tower Roof
-		EXTEND_TOP ~xags100.bcs~ ~%MOD_FOLDER%/tob/baf/xa4700.baf~
+	//{ xag101 bd4700 Avernus Tower Roof
+		EXTEND_TOP ~xags101.bcs~ ~%MOD_FOLDER%/tob/baf/xa4700.baf~
 		
 		OUTER_SET expiryOffset = 0x154
 		OUTER_SET i = 0
 		
-		COPY_EXISTING ~xag100.are~ ~override~
+		COPY_EXISTING ~xag101.are~ ~override~
 		WHILE (i < 23) BEGIN // Disable the existing area actors
 			WRITE_LONG expiryOffset 0
 			expiryOffset = (expiryOffset + 0x110)
@@ -673,13 +667,13 @@ END
 		//}
 	//}
 	
-	//{ xag104 bd5300 Kanaglym
-		EXTEND_TOP ~xags104.bcs~ ~%MOD_FOLDER%/tob/baf/xa5300.baf~
+	//{ xag102 bd5300 Kanaglym
+		EXTEND_TOP ~xags102.bcs~ ~%MOD_FOLDER%/tob/baf/xa5300.baf~
 		
 		OUTER_SET expiryOffset = 0x154
 		OUTER_SET containerFlagOffset = 0x39A8
 		OUTER_SET i = 0
-		COPY_EXISTING ~xag104.are~ ~override~
+		COPY_EXISTING ~xag102.are~ ~override~
 		//{ Disable Actors
 			WHILE (i < 39) BEGIN
 				WRITE_LONG expiryOffset 0

@@ -1,39 +1,24 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\MTOB8.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\HOUSG5.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\MTOB8.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\HOUSG5.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA271~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #2 /* Triggers after states #: 2 3 even though they appear after this state */
-~  NumTimesTalkedTo(0)
+IF ~  True()
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Hello friends. At least, I hope you are friends. Wouldn't want enemies barging into my home at all hours uninvited.~ #8796 */
+  SAY @1 /* ~Hey, there, make sure ya don't cause any trouble with our ladies. If you want to be rough with non-employees, then keep it to yourself.~ #7586 */
   IF ~~ THEN EXIT
 END
 
-IF WEIGHT #3 /* Triggers after states #: 2 3 even though they appear after this state */
-~  NumTimesTalkedTo(1)
-~ THEN BEGIN 1 // from:
-  SAY @2 /* ~Were you planning on staying in my home long? Only until the guard arrives, I'll wager.~ #8797 */
+IF ~~ THEN BEGIN 1 // from:
+  SAY @2 /* ~Just a word of warning to a friend: Watch for those two crazies, Slythe and Krystin. They're not with it, if you know what I mean.~ #7587 */
   IF ~~ THEN EXIT
 END
 
-IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
-CheckStatGT(Myself,0,GOLD)
-~ THEN BEGIN 2 // from:
-  SAY @3 /* ~I don't leave my home much, so there's little I know about what goes on within the city. Why don't you take this gold piece and enjoy yourself at the market square? There's all sorts of things to do there.~ #8798 */
-  IF ~~ THEN DO ~GivePartyGold(1)
-~ EXIT
-END
-
-IF WEIGHT #1 ~  ReputationLT(Player1,3)
-~ THEN BEGIN 3 // from:
-  SAY @4 /* ~Leave me! You've outstayed your welcome!~ #9174 */
+IF ~~ THEN BEGIN 2 // from:
+  SAY @3 /* ~You're not welcome here! Get out or be thrown out!~ #9258 */
   IF ~~ THEN EXIT
 END

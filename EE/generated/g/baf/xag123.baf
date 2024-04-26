@@ -1,10 +1,100 @@
 IF
-	OR(2)
-		Entered([ANYONE])
-		Opened([ANYONE])
+	Clicked([ANYONE])
+	!Range(LastTrigger,13)
 THEN
 	RESPONSE #100
-		DisplayString(LastTrigger,14381)  // Trap Sprung
-		ForceSpell(LastTrigger,WIZARD_SLOW)  // SPWI312.SPL (Slow)
+		DisplayString(Myself,38224)  // You are too far away to use that.
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,13)
+	Global("bd_fugue_portal_ot","bd5300",1)  // Kanaglym
+	PartyHasItem("bdbone01")  // Remains
+THEN
+	RESPONSE #100
+		ActionOverride("Fugue_portal_chasm",TakePartyItemNum("bdbone01",5))  // Remains
+		DisplayStringHead(Myself,70258)  // You throw the lost souls' corpses down into the chasm and watch them disappear into the gray. A silent flash of spiritual energy marks each body's crossing of the threshold into the Fugue Plane.
+		AddJournalEntry(61932,QUEST_DONE)  // The Lost The bones of the ghosts have been put to rest. I was able to deliver the mortal remains of the ghosts I encountered to the Fugue Plane. The spirits are now at rest.
+END
+
+IF
+	Clicked([ANYONE])
+THEN
+	RESPONSE #100
+		SetGlobal("bd_fugue_portal_ot","bd5300",1)  // Kanaglym
+		DisplayStringHead(Myself,70257)  // The walls of this chasm sink down not into darkness, but a portal to the desolate gray of the Fugue Plane. Anything dropped from here into that dreary realm will surely be lost to it forever.
+END
+
+IF
+	GlobalLT("BD_BONES","BD5300",5)  // Kanaglym
+	HasItem("bdbone01","Fugue_portal_chasm")  // Remains
+THEN
+	RESPONSE #100
+		ActionOverride("Fugue_portal_chasm",DestroyItem("bdbone01"))  // Remains
+		IncrementGlobal("BD_BONES","BD5300",1)  // Kanaglym
+END
+
+IF
+	Global("BD_BONES","BD5300",5)  // Kanaglym
+	Range([PC],13)
+	!GlobalTimerNotExpired("bd_use_fountain","bd5300")  // Kanaglym
+	!Dead("bdworis")  // Woris
+	Dead("bdkherr")  // Kherriun
+	!Range([EVILCUTOFF],30)
+	CombatCounter(0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("BD_BONES","BD5300",6)  // Kanaglym
+		SetGlobalTimer("bd_use_fountain","bd5300",ONE_ROUND)  // Kanaglym
+		CreateCreature("bdghostf",[820.1130],NW)  // Ghost
+		CreateVisualEffectObject("OHRSHFIE","bdghostf")  // Ghost
+		SmallWait(10)
+		CreateCreature("bdghostf",[955.1165],NE)  // Ghost
+		CreateVisualEffectObject("OHRSHFIE","bdghostm")  // Ghost
+		SmallWait(10)
+		CreateCreature("bdsotuk",[860.1170],NW)  // Sotuk
+		CreateVisualEffectObject("OHRSHFIE","bdsotuk")  // Sotuk
+		SmallWait(10)
+		CreateCreature("bdlitla",[910.1140],NE)  // Litla
+		CreateVisualEffectObject("OHRSHFIE","bdlitla")  // Litla
+		SmallWait(10)
+		CreateCreature("bdworis",[900.1195],N)  // Woris
+		CreateVisualEffectObject("OHRSHFIE","bdworis")  // Woris
+		SmallWait(10)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("SDD321","GLOBAL",2)
+	Range("neera",30)  // Neera
+	!GlobalTimerNotExpired("bd_use_fountain","bd5300")  // Kanaglym
+	IfValidForPartyDialog("neera")  // Neera
+	OR(2)
+		Dead("bdkherr")  // Kherriun
+		Global("BD_AREA_HOSTILE","BD5300",0)  // Kanaglym
+	!Range([EVILCUTOFF],30)
+	CombatCounter(0)
+THEN
+	RESPONSE #100
+		SetGlobal("SDD321","GLOBAL",3)
+END
+
+IF
+	Global("SDD321","GLOBAL",4)
+	Range("neera",20)  // Neera
+	!GlobalTimerNotExpired("bd_use_fountain","bd5300")  // Kanaglym
+	IfValidForPartyDialog("neera")  // Neera
+	OR(2)
+		Dead("bdkherr")  // Kherriun
+		Global("BD_AREA_HOSTILE","BD5300",0)  // Kanaglym
+	!Range([EVILCUTOFF],30)
+	CombatCounter(0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		StartCutSceneEx("bdcut322",TRUE)
 END
 

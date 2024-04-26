@@ -1,17 +1,48 @@
 IF
-	AttackedBy([ANYONE],DEFAULT)
+	StateCheck(Myself,STATE_PANIC)
 THEN
 	RESPONSE #100
-		SetGlobal("Doppleganger","GLOBAL",1)
-		SetGlobal("Laola","GLOBAL",1)
-		SetGlobal("CheckedSevenSuns","GLOBAL",2)
+		RandomWalkContinuous()
 END
 
 IF
-	Global("Doppleganger","GLOBAL",1)
-	Allegiance(Myself,NEUTRAL)
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flame Strike)
 THEN
 	RESPONSE #100
-		ForceSpell(Myself,DOPPLEGANGER_CHANGE)  // SPWI993.SPL (No such index)
+		Spell(NearestEnemyOf(Myself),CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flame Strike)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_ANIMATE_DEAD)  // SPPR301.SPL (Animate Dead)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_ANIMATE_DEAD)  // SPPR301.SPL (Animate Dead)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Hold Person)
+	!StateCheck(NearestEnemyOf(Myself),STATE_SLEEPING)
+	!StateCheck(NearestEnemyOf(Myself),STATE_HELPLESS)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_HOLD_PERSON)  // SPPR208.SPL (Hold Person)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Attack(NearestEnemyOf(Myself))
 END
 

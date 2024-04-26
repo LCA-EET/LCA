@@ -1,6 +1,7 @@
 PRINT @4000  /* ~Processing Return to Baldur's Gate Changes...~ */
 
-//SILENT
+SILENT
+
 //{ BAM
 	COPY ~%MOD_FOLDER%/rbg/bam/xabenohd.bam~ ~override~
 	COPY ~%MOD_FOLDER%/rbg/bam/xacbas.bam~ ~override~
@@ -1076,6 +1077,17 @@ END
 	//}
 	
 	//{ BG2 Base
+		COPY_EXISTING ~bonebld.cre~ ~override/xabondag.cre~ // Bone Dagger
+		SAY NAME1 @4159 /* ~Bone Dagger~ */
+		SAY NAME2 @4159 /* ~Bone Dagger~ */
+		WRITE_ASCII 0x248 ~~ #8		// Override Script
+		WRITE_LONG 0x14 500	// Exp
+		WRITE_SHORT 0x24 10		// Current HP
+		WRITE_SHORT 0x24 10 	// Max HP
+		WRITE_SHORT 0x46 -4		// Natural AC
+		WRITE_SHORT 0x48 -4		// Effective AC
+		
+	
 		COPY_EXISTING ~ankheg01.cre~ ~override/xamutank.cre~ // Mutated Ankheg
 		SAY NAME1 @4077
 		SAY NAME2 @4077
@@ -1785,11 +1797,11 @@ END
 	//{ Places where Brevlik can spawn
 		ACTION_DEFINE_ARRAY brevSpawns
 		BEGIN
-			xaas133
-			xaas134
-			xaas155
-			xaas238
-			xaas457
+			xaas133 // ar0114
+			xaas134 // ar0103
+			xaas155 // ar0133
+			xaas238 // ar0119
+			xaas457 // ar0157
 		END
 
 		ACTION_PHP_EACH brevSpawns AS _ => spawnArea
@@ -1814,8 +1826,8 @@ END
 		WRITE_LONG 0x2BD4 0
 	//}
 	
-	//{ ar0101 xaa451 Silvershield Estate L1
-		COPY_EXISTING ~xaa451.are~ ~override~
+	//{ ar0101 xaa453 Silvershield Estate L1
+		COPY_EXISTING ~xaa453.are~ ~override~
 		
 		// Disable rep traps
 		WRITE_LONG 0x990 256
@@ -1854,6 +1866,7 @@ END
 		
 		// Disable NPCs
 		WRITE_LONG 0x264 0 // Mr. Shade
+		WRITE_LONG 0x374 0 // Mustard Jelly
 	//}
 	
 	//{ ar0112 xaa224 Undercellar
@@ -1873,8 +1886,8 @@ END
 		WRITE_LONG 0x484 0 // Vivienne
 	//}
 	
-	//{ ar0116 xaa457 
-		COPY_EXISTING ~xaa457.are~ ~override~
+	//{ ar0116 xaa459 
+		COPY_EXISTING ~xaa459.are~ ~override~
 		
 		// Disable NPCs
 		WRITE_LONG 0x374 0 // Farluck
@@ -1906,8 +1919,8 @@ END
 		WRITE_LONG 0x154 0 // Bellamy
 	//}
 	
-	//{ ar0120 xaa433
-		COPY_EXISTING ~xaa433.are~ ~override~
+	//{ ar0120 xaa435
+		COPY_EXISTING ~xaa435.are~ ~override~
 		
 		// Replace Ithtyl Dialogue
 		WRITE_ASCII 0x164 ~xaithtyl~ #8
@@ -1931,8 +1944,8 @@ END
 		// Replace Ambush Party with Shadows
 		WRITE_ASCII 0x2AC ~SHADFI01~ #8
 		WRITE_ASCII 0x3BC ~SHADOW01~ #8
-		WRITE_ASCII 0x4CC ~SHADFI01~ #8
-		WRITE_ASCII 0x5DC ~SHADOW01~ #8
+		WRITE_ASCII 0x4CC ~xac158~ #8 // bdshsoul Shadowed Soul
+		WRITE_ASCII 0x5DC ~xac152~ #8 // bdwrai01 Wraith
 		WRITE_ASCII 0x6EC ~SHADFI01~ #8
 		WRITE_ASCII 0x7FC ~SHADOW01~ #8
 		
@@ -1945,6 +1958,65 @@ END
 		
 		// Replace Area Triggers
 		WRITE_ASCII 0x1474 ~xauctemp~ #8
+		
+		//{ Update Spawn Points to use BG2 and SoD Assets
+			//{ Spawn Point 0
+				WRITE_ASCII 0x15E8 ~xabondag~ #8 // Bone Dagger
+				WRITE_ASCII 0x15F0 ~skelsu07~ #8
+				WRITE_ASCII 0x15F8 ~skelsu11~ #8
+				WRITE_ASCII 0x1600 ~xac158~ #8 // bdshsoul Shadowed Soul
+			//}
+			
+			//{ Spawn Point 1
+				WRITE_ASCII 0x16B0 ~xabondag~ #8 // Bone Dagger
+				WRITE_ASCII 0x16B8 ~ghastgsu~ #8
+				WRITE_ASCII 0x16C0 ~ghastf01~ #8
+				WRITE_ASCII 0x16C8 ~xac154~ #8 // bdwight2 Imbued Wight
+			//}
+			
+			//{ Spawn Point 2
+				WRITE_ASCII 0x1778 ~xabondag~ #8
+				WRITE_ASCII 0x1780 ~xac153~ #8 // bdbonbat Bone Bat
+				WRITE_ASCII 0x1788 ~xac155~ #8 // bdskgr07 Skeletal Mage
+			//}
+			
+			//{ Spawn Point 3
+				WRITE_ASCII 0x1840 ~xabondag~ #8
+				WRITE_ASCII 0x1848 ~ghast01~ #8
+			//}
+			
+			//{ Spawn Point 4
+				WRITE_ASCII 0x1908 ~xabondag~ #8 // Bone Dagger
+				WRITE_ASCII 0x1910 ~skelsu01~ #8
+				WRITE_ASCII 0x1912 ~zombie01~ #8
+			//}
+			
+			//{ Spawn Point 5
+				WRITE_ASCII 0x19D0 ~xabondag~ #8 // Bone Dagger
+				WRITE_ASCII 0x19D8 ~xac152~ #8
+				WRITE_ASCII 0x19E0 ~xac158~ #8 // bdshsoul Shadowed Soul
+			//}
+			
+			//{ Spawn Point 6
+				WRITE_ASCII 0x1A98 ~xabondag~ #8 // Bone Dagger
+			//}
+			
+			//{ Spawn Point 7
+				WRITE_ASCII 0x1B60 ~xabondag~ #8 // Bone Dagger
+			//}
+			
+			//{ Spawn Point 8
+				WRITE_ASCII 0x1C28 ~xabondag~ #8 // Bone Dagger
+			//}
+			
+			//{ Spawn Point 9
+				WRITE_ASCII 0x1CF0 ~xabondag~ #8 // Bone Dagger
+			//}
+			
+			//{ Spawn Point 10
+				WRITE_ASCII 0x1DB8 ~xabondag~ #8 // Bone Dagger
+			//}
+		//}
 	//}
 	
 	//{ ar0126 xaa357 Ragefast's Home
@@ -2051,8 +2123,8 @@ END
 		//}
 	//}
 	
-	//{ ar0139 xaa437 Ramazith L2
-		COPY_EXISTING ~xaa437.are~ ~override~
+	//{ ar0139 xaa439 Ramazith L2
+		COPY_EXISTING ~xaa439.are~ ~override~
 		
 		// Disable NPCs
 		WRITE_LONG 0x154 0 // Mustard Jelly
@@ -2086,12 +2158,12 @@ END
 		COPY_EXISTING ~xaa675.are~ ~override~
 		
 		// Disable NPCs
-		WRITE_LONG 0x154 0 // Kobold
-		WRITE_LONG 0x264 0 // Kobold
-		WRITE_LONG 0x374 0 // Kobold
-		WRITE_LONG 0x484 0 // Kobold
-		WRITE_LONG 0x594 0 // Kobold
-		WRITE_LONG 0x6A4 0 // Kobold
+		WRITE_LONG 0x154 0 // Kobold Commando
+		WRITE_LONG 0x264 0 // Kobold Commando
+		WRITE_LONG 0x374 0 // Kobold Commando
+		WRITE_LONG 0x484 0 // Kobold Commando
+		WRITE_LONG 0x594 0 // Kobold Commando
+		WRITE_LONG 0x6A4 0 // Kobold Commando
 	//}
 	
 	
@@ -2106,12 +2178,12 @@ END
 		WRITE_LONG 0x264 0 // Resar
 	//}
 
-	//{ ar0161 xaa458 Degrodel's Home
-		COPY_EXISTING ~xaa458.are~ ~override~
+	//{ ar0161 xaa460 Degrodel's Home
+		COPY_EXISTING ~xaa460.are~ ~override~
 		
 		// Change Creatures
-		WRITE_ASCII 0x154 ~xaa491~ #8
-		WRITE_ASCII 0x264 ~xaa136~ #8
+		WRITE_ASCII 0x154 ~xaa491~ #8 // ftowb5
+		WRITE_ASCII 0x264 ~xaa136~ #8 // mtowba_a
 		
 		// Disable NPCs
 		WRITE_LONG 0x374 0 
@@ -2121,18 +2193,18 @@ END
 		WRITE_LONG 0x7B4 0
 	//}
 	
-	//{ ar0162 xaa454 Louise and Laerta's Home
-		COPY_EXISTING ~xaa454.are~ ~override~
+	//{ ar0162 xaa456 Louise and Laerta's Home
+		COPY_EXISTING ~xaa456.are~ ~override~
 		
 		// Disable NPCs
 		WRITE_LONG 0x154 0 // Louise
 		WRITE_LONG 0x264 0 // Laerta
 	//}
 	
-	//{ ar0165 xaa453 Tavern
-		EXTEND_TOP ~xaas453.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0165.baf~
+	//{ ar0165 xaa455 Tavern
+		EXTEND_TOP ~xaas455.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0165.baf~
 
-		COPY_EXISTING ~xaa453.are~ ~override~
+		COPY_EXISTING ~xaa455.are~ ~override~
 		
 		// Replace Dialog
 		WRITE_ASCII 0x164 ~xaconnol~ #8
@@ -2145,13 +2217,13 @@ END
 		WRITE_LONG 0x264 0 // Borinole
 	//}
 	
-	//{ ar0167 xaa459 Pheirkas Home
-		EXTEND_TOP ~xaas459.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0116.baf~
+	//{ ar0167 xaa461 Pheirkas Home
+		EXTEND_TOP ~xaas461.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0116.baf~
 		
-		COPY_EXISTING ~xaa459.are~ ~override~
+		COPY_EXISTING ~xaa461.are~ ~override~
 		
 		// Change Creatures
-		WRITE_ASCII 0x154 ~xaa491~ #8
+		WRITE_ASCII 0x154 ~xaa491~ #8 // ftowb5
 	//}
 	
 	//{ ar0200 xaa130 N Baldur's Gate
@@ -2207,15 +2279,42 @@ END
 	//{ ar0224 xaa297 BG Sewers (Sewerfolk)
 		COPY_EXISTING ~xaa297.are~ ~override~
 		
-		// Change Creatures
-		WRITE_ASCII 0x3BC ~carrio~ #8
-		WRITE_ASCII 0x4CC ~carrio~ #8
-		WRITE_ASCII 0x5DC ~carrio~ #8
-		WRITE_ASCII 0x6EC ~carrio~ #8
-		WRITE_ASCII 0x7FC ~carrio~ #8
-		WRITE_ASCII 0x90C ~carrio~ #8
-		WRITE_ASCII 0x3BC ~carrio~ #8
-		WRITE_ASCII 0xA1C ~carrio~ #8
+		// Change Spiders to BG2 assets
+		WRITE_ASCII 0x19C ~spidgi01~ #8
+		WRITE_ASCII 0x2AC ~spidhu01~ #8
+		
+		// Change Sewerfolk to Carrion Crawlers
+		WRITE_ASCII 0x3BC ~carcra01~ #8
+		WRITE_ASCII 0x4CC ~carcra01~ #8
+		WRITE_ASCII 0x5DC ~carcra01~ #8
+		WRITE_ASCII 0x6EC ~carcra01~ #8
+		WRITE_ASCII 0x7FC ~carcra01~ #8
+		WRITE_ASCII 0x90C ~carcra01~ #8
+		WRITE_ASCII 0x3BC ~carcra01~ #8
+		WRITE_ASCII 0xA1C ~carcra01~ #8
+		
+		// Sleep Creatures
+		WRITE_ASCII 0x37B8 ~spidgi01~ #8 // use the BG2 asset
+		
+		//{ Update spawn points to use BG2 assets
+			//{ Spawn Point 0
+				WRITE_ASCII 0x1C8C ~ghoul01~ #8
+				WRITE_ASCII 0x1C94 ~ghast01~ #8
+			//}
+			
+			//{ Spawn Point 1
+				WRITE_ASCII 0x1D54 ~spidsm01~ #8
+			//}
+			
+			//{ Spawn Point 2
+				WRITE_ASCII 0x1E1C ~spidsm01~ #8
+				WRITE_ASCII 0x1E24 ~spidph01~ #8
+			//}
+			
+			//{ Spawn Point 3
+				WRITE_ASCII 0x1EE4 ~spidwr01~ #8
+			//}
+		//}
 	//}
 	
 	//{ ar0225 xaa156 BG Sewers (Ratchild)
@@ -2225,6 +2324,25 @@ END
 		
 		// Disable NPCs
 		WRITE_LONG 0x374 0 // Ratchild
+		
+		//{ Update spawn points to use BG2 assets
+			//{ Spawn Point 0
+				WRITE_ASCII 0x1CB8 ~jellgr~ #8
+				WRITE_ASCII 0x1CC0 ~jellmu~ #8
+				WRITE_ASCII 0x1CC8 ~jelloc~ #8
+			//}
+			
+			//{ Spawn Point 1
+				WRITE_ASCII 0x1D80 ~jellygr~ #8
+				WRITE_ASCII 0x1D88 ~jellgr~ #8
+			//}
+			
+			//{ Spawn Point 2
+				WRITE_ASCII 0x1E48 ~jellygr~ #8
+				WRITE_ASCII 0x1E50 ~jelloc~ #8
+				WRITE_ASCII 0x1E58 ~slfis01~ #8
+			//}
+		//}
 	//}
 	
 	//{ ar0226 xaa121 BG Sewers (Ogre Mage)
@@ -2232,6 +2350,30 @@ END
 		
 		// Disable NPCs
 		WRITE_LONG 0x374 0 // Ogre Mage
+		
+		//{ Change Creatures - use BG2 assets
+			WRITE_ASCII 0x19C ~spidph01~ #8
+			WRITE_ASCII 0x2AC ~spidph01~ #8
+			WRITE_ASCII 0x4CC ~carcra01~ #8
+			WRITE_ASCII 0x5DC ~carcra01~ #8
+			WRITE_ASCII 0x6EC ~carriosu~ #8
+			WRITE_ASCII 0x7FC ~carriosu~ #8
+			WRITE_ASCII 0x90C ~carcra01~ #8
+		//}
+		
+		//{ Update Spawn Points to use BG2 assets
+			//{ Spawn Point 0
+				WRITE_ASCII 0x18B8 ~carcra01~ #8
+			//}
+			
+			//{ Spawn Point 1
+				WRITE_ASCII 0x1980 ~carriosu~ #8
+			//}
+			
+			//{ Spawn Point 2
+				WRITE_ASCII 0x1A48 ~carcra01~ #8
+			//}
+		//}
 	//}
 	
 	//{ ar0300 xaa105
@@ -2429,6 +2571,10 @@ END
 		
 		// Disable rep traps
 		WRITE_LONG 0x9B0 256
+		
+		// Disable Ankheg & Tenya
+		WRITE_LONG 0x6A4 0
+		WRITE_LONG 0x264 0
 	//}
 	
 	//{ ar1100 xaa142
@@ -2491,6 +2637,19 @@ END
 		// Change Iron Throne to WV
 		WRITE_LONG 0x61B0 RESOLVE_STR_REF(@4138)
 		WRITE_LONG 0x6BA4 RESOLVE_STR_REF(@4138)
+	//}
+	
+	//{ ar1201 xaa146 Ogre Mage Ambush House
+		COPY_EXISTING ~xaa146.are~ ~override~
+		
+		OUTER_SET expiryOffset = 0x154
+		OUTER_SET i = 0
+		
+		WHILE (i < 5) BEGIN // Disable the existing area actors
+			WRITE_LONG expiryOffset 0
+			expiryOffset = (expiryOffset + 0x110)
+			i = (i + 1)
+		END
 	//}
 	
 	//{ ar1207 xaa151
@@ -2557,15 +2716,15 @@ END
 		WRITE_LONG 0x3674 0 // Nikolai
 	//}
 	
-	//{ ar1307 xaa404
-		COPY_EXISTING ~xaa404.are~ ~override~
+	//{ ar1307 xaa406
+		COPY_EXISTING ~xaa406.are~ ~override~
 		
 		// Disable NPCs
 		WRITE_LONG 0x6A4 0 // Sanadal
 	//}
 	
-	//{ ar1313 xaa413 Gantolandan's Home
-		COPY_EXISTING ~xaa413.are~ ~override~
+	//{ ar1313 xaa415 Gantolandan's Home
+		COPY_EXISTING ~xaa415.are~ ~override~
 		
 		// Disable NPCs
 		WRITE_LONG 0x154 0 // Gantolandan

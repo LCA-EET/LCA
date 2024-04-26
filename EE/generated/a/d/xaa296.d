@@ -1,36 +1,64 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\PROST8.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FERGUS.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\PROST8.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FERGUS.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA296~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
 
-IF ~  NumTimesTalkedTo(0)
+IF WEIGHT #0 ~  ReactionLT(LastTalkedToBy(Myself),NEUTRAL_LOWER)
+NumTimesTalkedTo(0)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Sorry, sweetheart, I've no time for play right now. Must pay off the boss man or I lose room privileges. Ah well, it's better than having no roof at all. Although I DO like watching the stars while I work. Can't have everything, I guess.~ #8314 */
+  SAY @1 /* ~Eh? Lazy day, ain't it?~ #15265 */
   IF ~~ THEN EXIT
 END
 
-IF ~  NumTimesTalkedTo(1)
+IF WEIGHT #1 ~  NumTimesTalkedTo(0)
 ~ THEN BEGIN 1 // from:
-  SAY @2 /* ~Off wit' you fruity fools, I've payments to make at Dillar's. Percentage of profits for use of the 'cellar, don't ye know.~ #8315 */
+  SAY @2 /* ~I've gotta admit, I ain't never been happier. Got a letter from my lady and she's gonna be home reeeal soon... Just gotta find me a pretty little ring for her pretty little finger and all's gonna be just fine, just fine. But my lady, she transcends gold or silver or fancy stones. She'll have nothing less than an angel skin ring from me.~ #15269 */
+  IF ~~ THEN DO ~SetGlobal("FERGUS1","GLOBAL",1)
+~ UNSOLVED_JOURNAL @3 /* ~A Ring for a Lady
+If I find an angel skin ring, I could help Fergus, a Flaming Fist soldier, with his romantic problem.~ #27079 */ EXIT
+END
+
+IF WEIGHT #2 ~  False()
+~ THEN BEGIN 2 // from:
+  SAY @4 /* ~Ah, that there's a fine ring but my lady, she transcends gold or silver or fancy stones. No, she'll have nothing less than angel skin from me.~ #15273 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 2 // from:
-  SAY @3 /* ~Why do I get the feeling that, where you're from, "bumping uglies" meant a head-butting contest? Out of my way, I've a money-grubbing manager to pay off.~ #8316 */
-  IF ~~ THEN EXIT
-END
-
-IF ~  StateCheck(Myself,STATE_CHARMED)
+IF WEIGHT #3 ~  Global("FERGUS1","GLOBAL",1)
+PartyHasItem("RING16")
 ~ THEN BEGIN 3 // from:
-  SAY @4 /* ~All I can tell you, lover, is to watch for Slythe and Krystin. They're crazy.~ #8317 */
+  SAY @5 /* ~Ah, a ring of angel skin. You must know my lady well to have chosen so appropriately... If you're ever needin' a little work around here, check with Scar, second-in-command of the Flamin' Fist. You can tell him I recommended you.~ #15274 */
+  IF ~~ THEN DO ~EraseJournalEntry(@3)
+AddJournalEntry(32877,QUEST_DONE)
+TakePartyItem("RING16")
+SetGlobal("FERGUS1","GLOBAL",2)
+AddexperienceParty(800)
+ReputationInc(1)
+~ EXIT
+END
+
+IF WEIGHT #4 ~  False()
+~ THEN BEGIN 4 // from:
+  SAY @6 /* ~Fight you and ne'er see my lady? I am in love but that don't mean I'm foolish.~ #15282 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 4 // from:
-  SAY @5 /* ~Get near me again and I'll have your nethers on a platter!~ #9098 */
+IF WEIGHT #6 /* Triggers after states #: 6 even though they appear after this state */
+~  True()
+~ THEN BEGIN 5 // from:
+  SAY @7 /* ~Ah, it is a fine wind that brings my lady, fresh and cool and beautiful.~ #15283 */
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #5 ~  Global("FERGUS1","GLOBAL",2)
+~ THEN BEGIN 6 // from:
+  SAY @8 /* ~Ring in hand, I still wait for my lady. She will be here soon enough. Travel well, my friend.~ #15284 */
   IF ~~ THEN EXIT
 END

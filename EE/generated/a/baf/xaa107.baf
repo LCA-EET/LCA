@@ -1,21 +1,29 @@
 IF
-	HitBy([PC],CRUSHING)
-	GlobalLT("TenyaHit","GLOBAL",2)
-	!Global("HelpJebadoh","GLOBAL",0)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
 THEN
 	RESPONSE #100
-		SetGlobal("TenyaHit","GLOBAL",1)
-		DestroyItem("minhp1")  // No such index
-		Dialogue([PC])
+		Enemy()
 END
 
 IF
 	See(NearestEnemyOf(Myself))
-	HaveSpell(CLERIC_COMMAND)  // SPPR102.SPL (Command)
-	!StateCheck(NearestEnemyOf(Myself),STATE_SLEEPING)
-	!StateCheck(NearestEnemyOf(Myself),STATE_HELPLESS)
 THEN
 	RESPONSE #100
-		Spell(NearestEnemyOf(Myself),CLERIC_COMMAND)  // SPPR102.SPL (Command)
+		RunAwayFromNoLeaveArea(NearestEnemyOf(Myself),150)
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		RunAwayFromNoLeaveArea(LastAttackerOf(Myself),150)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		RandomWalk()
 END
 

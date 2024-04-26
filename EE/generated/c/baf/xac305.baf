@@ -1,7 +1,0 @@
-IF
-	Clicked([ANYONE])
-THEN
-	RESPONSE #100
-		DisplayStringNoName(Myself,66756)  // Crusaders flee, singly and in packs, a straggling line of beaten fighters that flows away from Dragonspear Castle. They have been soundly defeated.
-END
-

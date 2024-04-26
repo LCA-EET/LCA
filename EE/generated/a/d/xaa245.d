@@ -1,57 +1,52 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\GHORAK.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\ACHEN.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\GHORAK.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\ACHEN.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA245~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #3 /* Triggers after states #: 1 3 5 even though they appear after this state */
-~  Global("HelpGhorak","GLOBAL",1)
+IF ~  Global("Baldurian","GLOBAL",1)
+!Global("VailLeft","AR0719",1)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Diseased! Diseased! Stand well back... Diseased! Diseased!~ #15216 */
-  IF ~~ THEN EXIT
+  SAY @1 /* ~I live again? The last thing I remember is some old mage and a funny-looking lizard with beady eyes. Wha—? What happened?~ #10515 */
+  IF ~~ THEN REPLY @2 /* ~I care not! Give me the Helm of Balduran or you'll wish I had left you as a statue!~ #10516 */ GOTO 1
+  IF ~~ THEN REPLY @3 /* ~Easy now, you have been petrified for some time. Take a moment to gather your senses.~ #10517 */ GOTO 2
+  IF ~~ THEN REPLY @4 /* ~Your assault on Ramazith cost you dearly. I have freed you, and I ask for the Helm of Balduran as payment.~ #10518 */ GOTO 5
 END
 
-IF WEIGHT #0 ~  Global("HelpAgnasia","GLOBAL",0)
-~ THEN BEGIN 1 // from:
-  SAY @2 /* ~For your own health and that of your children, come no closer. I was cursed with this fell disease as punishment for my wickedness... Diseased! Diseased! Stand well back...~ #15217 */
-  IF ~~ THEN REPLY @3 /* ~Let us cure you of your affliction.~ #17177 */ GOTO 2
-  IF ~~ THEN REPLY @4 /* ~I'm sorry, but there is little that we can do to help you.~ #17178 */ DO ~EscapeArea()
+IF ~~ THEN BEGIN 1 // from: 2.1 0.0
+  SAY @5 /* ~What? I know of no such thing! Please, I was new to the group and was not party to their plans. They said our target was evil and only worthy of death. I fought in good faith. If they took anything, it was after I... after... Please let me go. My family must be worried sick!~ #10519 */
+  IF ~~ THEN REPLY @6 /* ~Fine, be on your way. I shall hunt you down if you are lying though!~ #10520 */ GOTO 3
+  IF ~~ THEN REPLY @7 /* ~They can wait! You will stay put until I have what I came for!~ #10524 */ GOTO 4
+END
+
+IF ~~ THEN BEGIN 2 // from: 0.1
+  SAY @8 /* ~Petrified? For how long? My family... my family will be worried to death! I must get back to them!~ #10521 */
+  IF ~~ THEN REPLY @9 /* ~All in good time. First, I would like you to give me the Helm of Balduran. I have been hired to retrieve it.~ #10522 */ GOTO 5
+  IF ~~ THEN REPLY @10 /* ~Your family can wait! I will have the Helm of Balduran from you before you take a step!~ #10523 */ GOTO 1
+END
+
+IF ~~ THEN BEGIN 3 // from: 1.0
+  SAY @11 /* ~Thank you so much! Fare thee well!~ #10525 */
+  IF ~~ THEN DO ~EscapeArea()
 ~ EXIT
 END
 
-IF ~~ THEN BEGIN 2 // from: 1.0
-  SAY @5 /* ~No, your potions and magics are of little use. The only way to cure this sickness is to right the wrongs of the past. Behind a painting at the Three Old Kegs, you will find the skull of my brother, Kereph. Take it to Agnasia in The Lady's Hall. She will know what to do with it.~ #15221 */
-  IF ~~ THEN DO ~SetGlobal("HelpGhorak","GLOBAL",1)
-~ UNSOLVED_JOURNAL @6 /* ~Ghorak the Diseased
-When I offered to cure Ghorak the diseased, he asked me to fetch his brother's skull from its hiding place behind a painting in the Three Old Kegs. Then Ghorak wants me to present Kereph's skull to Agnasia in The Lady's Hall. I can't wait to hear what she has to say about that.~ #27128 */ EXIT
-END
-
-IF WEIGHT #1 ~  Global("HelpAgnasia","GLOBAL",1)
-~ THEN BEGIN 3 // from:
-  SAY @7 /* ~I— I am cured. After all these long years of rotting away, an end has come. Blessed be Tymora and may my brother at last have peace. You are kinder than you'll ever know.~ #15222 */
-  IF ~~ THEN DO ~EraseJournalEntry(@6)
-EraseJournalEntry(@9)
-Polymorph(FIGHTER_MALE_HUMAN)
-~ SOLVED_JOURNAL @8 /* ~Ghorak the Cured!
-As expected, returning Kereph's skull to a follower of Tymora lifted the wasting curse from Ghorak. At last, both brothers have found peace.~ #27130 */ EXIT
-END
-
-IF WEIGHT #4 /* Triggers after states #: 5 even though they appear after this state */
-~  True()
-~ THEN BEGIN 4 // from:
-  SAY @10 /* ~Not diseased! Not diseased! Come as close as you want... Not diseased! Not diseased!~ #15223 */
+IF ~~ THEN BEGIN 4 // from: 1.1
+  SAY @12 /* ~If... if I must. I'll not risk my life again after coming so close to death. Hopefully my fellows can help you, but I cannot. I will wait if you wish.~ #10526 */
   IF ~~ THEN EXIT
 END
 
-IF WEIGHT #2 ~  False()
-~ THEN BEGIN 5 // from:
-  SAY @11 /* ~I have nothing but my past and, I assure you, you do not want it.~ #15224 */
+IF ~~ THEN BEGIN 5 // from: 2.0 0.2
+  SAY @13 /* ~Helm of Balduran? I have no such item. One of my fellows might possess it, but I do not know. Ask them if you will, I can tell you nothing more.~ #10527 */
+  IF ~~ THEN EXIT
+END
+
+IF ~  True()
+~ THEN BEGIN 6 // from:
+  SAY @14 /* ~I... I live again? The last thing I remember is... is some old mage and a funny looking lizard with beady eyes. Where am I now? I must go... find...~ #10596 */
   IF ~~ THEN DO ~EscapeArea()
 ~ EXIT
 END

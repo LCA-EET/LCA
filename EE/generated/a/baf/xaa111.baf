@@ -1,42 +1,19 @@
 IF
-	StateCheck(Myself,STATE_PANIC)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
 THEN
 	RESPONSE #100
-		RandomWalkContinuous()
+		SetGlobal("AttackedThieves","GLOBAL",1)
+		EraseJournalEntry(26815)  // Alatos and the Thieves' Guild I have been hired by Alatos Thuibuld to do a bit of burglary. I am to sneak into Oberan's estate and there steal several magical components from the three daughters of Shandalar. The components in question are the necessary ingredients for creating a Halruaan flying ship, and the Halruaans want their secret preserved and the items stolen. Alatos suggested that I either "persuade" the daughters to release the items or spirit them out from under their noses. The items are as follows: a spellbook that outlines the rituals needed, a statuette of indeterminate origin, and a fragment of some powerful artifact. I am to return to the Thieves' Guild once the items are in my possession.
+		Enemy()
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	Range(NearestEnemyOf(Myself),5)
-	Delay(12)
+	Global("AttackedThieves","GLOBAL",1)
+	Allegiance(Myself,NEUTRAL)
 THEN
-	RESPONSE #40
-		SelectWeaponAbility(SLOT_WEAPON0,0)
-		RunAwayFromNoLeaveArea(NearestEnemyOf(Myself),45)
-		AttackReevaluate(NearestEnemyOf(Myself),15)
-	RESPONSE #60
-		SelectWeaponAbility(SLOT_WEAPON1,0)
-		AttackReevaluate(NearestEnemyOf(Myself),15)
-END
-
-IF
-	See(NearestEnemyOf(Myself))
-	Delay(12)
-THEN
-	RESPONSE #40
-		SelectWeaponAbility(SLOT_WEAPON0,0)
-		AttackReevaluate(NearestEnemyOf(Myself),15)
-	RESPONSE #60
-		SelectWeaponAbility(SLOT_WEAPON1,0)
-		AttackReevaluate(NearestEnemyOf(Myself),15)
-END
-
-IF
-	See(NearestEnemyOf(Myself))
-	ActionListEmpty()
-THEN
-	RESPONSE #40
-		SelectWeaponAbility(SLOT_WEAPON0,0)
-		AttackReevaluate(NearestEnemyOf(Myself),15)
+	RESPONSE #100
+		EraseJournalEntry(26815)  // Alatos and the Thieves' Guild I have been hired by Alatos Thuibuld to do a bit of burglary. I am to sneak into Oberan's estate and there steal several magical components from the three daughters of Shandalar. The components in question are the necessary ingredients for creating a Halruaan flying ship, and the Halruaans want their secret preserved and the items stolen. Alatos suggested that I either "persuade" the daughters to release the items or spirit them out from under their noses. The items are as follows: a spellbook that outlines the rituals needed, a statuette of indeterminate origin, and a fragment of some powerful artifact. I am to return to the Thieves' Guild once the items are in my possession.
+		Enemy()
 END
 

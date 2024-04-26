@@ -1,56 +1,32 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\MERCHG.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NOBW5.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\MERCHG.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NOBW5.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA317~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #3 /* Triggers after states #: 4 5 6 even though they appear after this state */
-~  ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
+IF ~  NumTimesTalkedTo(0)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Greetings, <SIRMAAM>. I hope your stay at the Merchants' League Estate is profitable.~ #7703 */
+  SAY @1 /* ~It is quite the honor to be here on this occasion. That Sarevok is such a fine young man.~ #8239 */
   IF ~~ THEN EXIT
 END
 
-IF WEIGHT #4 /* Triggers after states #: 4 5 6 even though they appear after this state */
-~  ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+IF ~  NumTimesTalkedTo(1)
 ~ THEN BEGIN 1 // from:
-  SAY @2 /* ~Hello, <SIRMAAM>. If I'm not being too forward, might I suggest something?~ #7704 */
-  IF ~  !Global("HelpBrandilar","GLOBAL",3)
-~ THEN REPLY @3 /* ~Sure, continue.~ #7708 */ GOTO 3
-  IF ~~ THEN REPLY @4 /* ~Shut up, guard!~ #7709 */ GOTO 2
-END
-
-IF ~~ THEN BEGIN 2 // from: 1.1
-  SAY @5 /* ~Yes, <SIRMAAM>!~ #7705 */
+  SAY @2 /* ~I had thought this function was invitation only. Who let rabble such as you in?~ #8240 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 3 // from: 1.0
-  SAY @6 /* ~If I've guessed correctly, you're here to investigate Zorl and Irlentree. I think you should contact my superior, Brandilar. He might be able to help you.~ #7706 */
-  IF ~~ THEN EXIT
+IF ~  StateCheck(Myself,STATE_CHARMED)
+~ THEN BEGIN 2 // from:
+  SAY @3 /* ~There's quite a few rumors going about. Most of them center about Sarevok. It's rather obvious that he'll be the next Grand Duke, but the real news is that he's thinking about war... against Amn.~ #8241 */
+  IF ~~ THEN UNSOLVED_JOURNAL @4 /* ~The Rise of Sarevok
+There are many rumors going about at the party. Most people expect Sarevok to be the next Grand Duke. They also think that his first act as Duke will be to declare war on Amn.~ #27327 */ EXIT
 END
 
-IF WEIGHT #2 /* Triggers after states #: 5 6 even though they appear after this state */
-~  Global("ZorlDopple","GLOBAL",1)
-~ THEN BEGIN 4 // from:
-  SAY @7 /* ~Nothing to see here, <SIRMAAM>!~ #7707 */
-  IF ~~ THEN EXIT
-END
-
-IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
-~ THEN BEGIN 5 // from:
-  SAY @8 /* ~If I were you, friend, I'd go talk with Brandilar.~ #7710 */
-  IF ~~ THEN EXIT
-END
-
-IF WEIGHT #1 ~  Global("Captured","GLOBAL",1)
-~ THEN BEGIN 6 // from:
-  SAY @9 /* ~You're not welcome here!~ #9163 */
+IF ~~ THEN BEGIN 3 // from:
+  SAY @5 /* ~I'll not have you near me!~ #9129 */
   IF ~~ THEN EXIT
 END

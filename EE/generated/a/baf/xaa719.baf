@@ -1,7 +1,12 @@
 IF
-	AttackedBy([GOODCUTOFF],DEFAULT)
+	StealFailed([ANYONE])
 THEN
 	RESPONSE #100
-		Shout(1)
+		DialogInterrupt(FALSE)
+		Recoil()
+		SmallWait(6)
+		CreateCreature("FLAMEN",[694.372],NW)  // Flaming Fist Enforcer
+		CreateCreature("FLAMEN2",[694.372],NW)  // Flaming Fist Enforcer
+		CreateCreature("FLAMEN2",[694.372],NW)  // Flaming Fist Enforcer
 END
 

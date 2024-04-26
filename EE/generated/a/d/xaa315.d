@@ -1,52 +1,78 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\IRLENT.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\RINNIE.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\IRLENT.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\RINNIE.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA315~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
 
-IF ~  NumTimesTalkedTo(0)
+IF WEIGHT #0 ~  NumTimesTalkedTo(0)
+ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Greetings, house guests. I must assume that you are the friends that have had Aldeth so excited. I must introduce myself: I am Irlentree, one of Aldeth's partners in business. I've come to announce that the company is celebrating the anniversary of Aldeth's stay with us. I would like you to join us for the festivities. There should be some interesting surprises.~ #1289 */
-  IF ~~ THEN REPLY @2 /* ~Sorry, we don't feel up to it right now.~ #1295 */ DO ~SetGlobal("ZorlParty","GLOBAL",1)
-SetGlobal("TalkedToZorlIrenl","GLOBAL",1)
-~ GOTO 1
-  IF ~~ THEN REPLY @3 /* ~We'll be there.~ #1296 */ DO ~SetGlobal("ZorlParty","GLOBAL",1)
-SetGlobal("TalkedToZorlIrenl","GLOBAL",1)
-~ GOTO 2
+  SAY @1 /* ~Please don't interrupt me. I'm waiting to be inspired.~ #15138 */
+  IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 1 // from: 0.0
-  SAY @4 /* ~No, I don't think you understand. I insist that you be there. You should go soon. I'm sure you'd enjoy it.~ #1290 */
-  IF ~~ THEN GOTO 2
+IF WEIGHT #1 ~  NumTimesTalkedTo(0)
+ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
+~ THEN BEGIN 1 // from:
+  SAY @2 /* ~I have been working on a ballad about the Unicorn Run in the High Forest. I'd like to use a more reliable source than simply hearsay and folklore, though. If you ever find an authoritative history of the run in your travels, I'd love to get my hands on it.~ #15139 */
+  IF ~~ THEN UNSOLVED_JOURNAL @3 /* ~A Bard's Request
+Rinnie, a bard and balladeer here in Baldur's Gate, has asked me to bring her a history of the Unicorn Run should I encounter one in my travels. Rinnie can be found in one of the houses located beside the palace.~ #27415 */ EXIT
 END
 
-IF ~~ THEN BEGIN 2 // from: 1.0 0.1
-  SAY @5 /* ~The party is set to take place on the third floor. If you go up there, I'll meet you soon after.~ #1291 */
-  IF ~~ THEN UNSOLVED_JOURNAL @6 /* ~Investigating the Merchants' League Estate
-Irlentree, one of the owners of the Merchants' League, invited us to Aldeth's anniversary party on the third floor.~ #26827 */ EXIT
+IF WEIGHT #5 /* Triggers after states #: 3 4 6 even though they appear after this state */
+~  Global("HelpRinnie","GLOBAL",0)
+~ THEN BEGIN 2 // from:
+  SAY @4 /* ~Hi there. Found anything substantial on the Unicorn Run yet?~ #15140 */
+  IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 3 // from:
-  SAY @7 /* ~Are you sure Aldeth, I was most certain that this was the day.~ #1293 */
-  IF ~~ THEN EXTERN ~XAA410~ 6
+IF WEIGHT #2 ~  PartyHasItem("BOOK55")
+ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+Global("HelpRinnie","GLOBAL",0)
+~ THEN BEGIN 3 // from:
+  SAY @5 /* ~"History of the Unicorn Run..." How wonderfully ideal! You wouldn't believe how grateful I am to get my hands on this. Here, a friend of mine gave me this magical scroll and I have yet to make use of it.~ #15141 */
+  IF ~~ THEN DO ~EraseJournalEntry(@3)
+TakePartyItem("BOOK55")
+GiveItem("SCRL08",LastTalkedToBy)
+SetGlobal("HelpRinnie","GLOBAL",1)
+AddexperienceParty(900)
+~ SOLVED_JOURNAL @6 /* ~A Bard's Request
+I didn't need it myself, so I gave "The History of the Unicorn Run" to Rinnie.~ #27416 */ EXIT
 END
 
-IF ~~ THEN BEGIN 4 // from:
-  SAY @8 /* ~Come now Zorl, we mustn't be so rude. These primates are about to take the final step, to become something much greater than what they were.~ #1294 */
-  IF ~~ THEN EXTERN ~XAA410~ 7
+IF WEIGHT #3 ~  False()
+~ THEN BEGIN 4 // from:
+  SAY @7 /* ~Must you pick on me when I'm trying to concentrate?~ #15142 */
+  IF ~~ THEN DO ~EscapeArea()
+~ EXIT
 END
 
-IF ~  NumTimesTalkedTo(1)
+IF WEIGHT #6 /* Triggers after states #: 6 even though they appear after this state */
+~  True()
 ~ THEN BEGIN 5 // from:
-  SAY @9 /* ~You must not bother me at the moment prim—friends; I am a very busy man. If you are overly excited about the upcoming feas—party, don't be worried, we won't start without you.~ #7030 */
+  SAY @8 /* ~"Sweet waters of the forest
+flow through each den and glade,
+nourishing the unicorns
+who lie graceful in the shade..."~ #15143 */
   IF ~~ THEN EXIT
 END
 
-IF ~  True()
+IF WEIGHT #4 ~  PartyHasItem("BOOK55")
+ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
+Global("HelpRinnie","GLOBAL",0)
 ~ THEN BEGIN 6 // from:
-  SAY @10 /* ~Why don't you go to the third floor, friend? The party is starting there, and some, ah, friends of mine wouldn't mind meeting you.~ #11811 */
-  IF ~~ THEN EXIT
+  SAY @9 /* ~"History of the Unicorn Run..." Interesting... I'll give you 80 gold pieces for it.~ #15144 */
+  IF ~~ THEN DO ~EraseJournalEntry(@3)
+TakePartyItem("BOOK55")
+SetGlobal("HelpRinnie","GLOBAL",1)
+AddexperienceParty(900)
+GiveGoldForce(80)
+~ SOLVED_JOURNAL @6 /* ~A Bard's Request
+I didn't need it myself, so I gave "The History of the Unicorn Run" to Rinnie.~ #27416 */ EXIT
 END

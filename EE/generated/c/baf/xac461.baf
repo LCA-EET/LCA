@@ -1,0 +1,178 @@
+IF
+	OR(4)
+		!Allegiance(Myself,EVILCUTOFF)
+		StateCheck(Myself,STATE_IMMOBILE)
+		StateCheck(Myself,STATE_REALLY_DEAD)
+		Global("BD_Engaged","LOCALS",0)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!InActiveArea(Myself)
+	!Range(NearestEnemyOf(Myself),30)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	Range(NearestEnemyOf(Myself),6)
+	IsWeaponRanged(Myself)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+END
+
+IF
+	!Range(NearestEnemyOf(Myself),6)
+	!IsWeaponRanged(Myself)
+	CanEquipRanged()
+THEN
+	RESPONSE #100
+		EquipRanged()
+END
+
+IF
+	DifficultyGT(EASY)
+	Range(NearestEnemyOf(Myself),6)
+	CheckStat(Myself,0,ENTANGLE)
+	CheckStat(Myself,0,GREASE)
+	IsWeaponRanged(Myself)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	OR(6)
+		See(Player1)
+		See(Player2)
+		See(Player3)
+		See(Player4)
+		See(Player5)
+		See(Player6)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStat([GOODCUTOFF],1,CLERIC_PHYSICAL_MIRROR)
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(SixthNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(SixthNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
+	CheckStatLT(SixthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(SixthNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	See(SixthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(FifthNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(FifthNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
+	CheckStatLT(FifthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(FifthNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	See(FifthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(FourthNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(FourthNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
+	CheckStatLT(FourthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(FourthNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	See(FourthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(ThirdNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(ThirdNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	See(ThirdNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(SecondNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(SecondNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	See(SecondNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat([GOODCUTOFF],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT([GOODCUTOFF],-5,ACMISSILEMOD)
+	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF],100,RESISTMISSILE)
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	See(LastSeenBy(Myself))
+THEN
+	RESPONSE #100
+		AttackOneRound(LastSeenBy(Myself))
+END
+

@@ -1,7 +1,7 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NANTRI.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\MCOOK4.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NANTRI.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\MCOOK4.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
@@ -10,50 +10,20 @@ BEGIN ~XAA340~
 // WARNING: this file contains non-trivial WEIGHTs
 //////////////////////////////////////////////////
 
-IF WEIGHT #1 /* Triggers after states #: 4 even though they appear after this state */
-~  Gender(LastTalkedToBy,FEMALE)
-ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+IF WEIGHT #1 /* Triggers after states #: 1 even though they appear after this state */
+~  True()
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Hello, milady. I trust you will find your stay at the Three Old Kegs to be as restful as anyplace ye have ever called home. Old Nantrin shall see to it. What do you need?~ #8397 */
-  IF ~~ THEN REPLY @2 /* ~What provender do you provide?~ #15311 */ DO ~StartStore("xaa142",LastTalkedToBy(Myself))
-~ EXIT
-  IF ~~ THEN REPLY @3 /* ~We need nothing at the moment.~ #15312 */ EXIT
-END
-
-IF WEIGHT #2 /* Triggers after states #: 4 even though they appear after this state */
-~  Gender(LastTalkedToBy,MALE)
-ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
-~ THEN BEGIN 1 // from:
-  SAY @4 /* ~Hello, milord. I trust you will find your stay at the Three Old Kegs to be as restful as anyplace you have ever called home. Old Nantrin shall see to it.~ #8398 */
-  IF ~~ THEN REPLY @2 /* ~What provender do you provide?~ #15315 */ DO ~StartStore("xaa142",LastTalkedToBy(Myself))
-~ EXIT
-  IF ~~ THEN REPLY @5 /* ~We need nothing right now.~ #15316 */ EXIT
-END
-
-IF WEIGHT #3 /* Triggers after states #: 4 even though they appear after this state */
-~  ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
-ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
-~ THEN BEGIN 2 // from:
-  SAY @6 /* ~You have the look of someone unaccustomed to the quiet life. Well, that is what we are all about here at the Three Old Kegs. If you are looking for otherwise you had best keep moving, because you won't find it here.~ #8399 */
-  IF ~~ THEN REPLY @7 /* ~Could you describe to us your provender?~ #15317 */ DO ~StartStore("xaa142",LastTalkedToBy(Myself))
-~ EXIT
-  IF ~~ THEN REPLY @8 /* ~We'll just be on our way.~ #15318 */ EXIT
-END
-
-IF WEIGHT #4 /* Triggers after states #: 4 even though they appear after this state */
-~  ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
-~ THEN BEGIN 3 // from:
-  SAY @9 /* ~I tell you straight and true right now so there is no mistaking. This is a QUIET place, and those that wish to make it otherwise shall find themselves "escorted" to the door. If lucky, you will be able to continue on by yourself after.~ #8400 */
+  SAY @1 /* ~Out out OUT! I'll no be giving out scraps to fools wandering about tonight! I've a DUKE to cook for, so if you try to distract me you'll likely get a pot upside your head!~ #8242 */
   IF ~~ THEN EXIT
 END
 
 IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
-~ THEN BEGIN 4 // from:
-  SAY @10 /* ~You are welcome to stay as long as you like, though please remember to keep it quiet. We like our rest here at the "Kegs."~ #9150 */
+~ THEN BEGIN 1 // from:
+  SAY @2 /* ~Though I'm stuck in this here kitchen, it don't mean I haven't got rumors coming my way. From what I hear, Sarevok's the next Grand Duke fer sure.~ #8243 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 5 // from:
-  SAY @11 /* ~You've outstayed your welcome! Out with you!~ #9151 */
+IF ~~ THEN BEGIN 2 // from:
+  SAY @3 /* ~Out! And never darken my door again!~ #9184 */
   IF ~~ THEN EXIT
 END

@@ -1,121 +1,82 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BELAND.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\IRON14.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BELAND.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\IRON14.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA364~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #1 /* Triggers after states #: 10 even though they appear after this state */
-~  Global("BelandEntranceFee","GLOBAL",0)
-ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+IF ~  NumTimesTalkedTo(0)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Welcome all to the Hall of Wonders. A mere gold piece secures entry to the most curious collection of machination inspirations on all Abeir-Toril. The craft displayed within is truly a sight to see, and the gold raised goes to needed supplies, that future wonders will be wrought.~ #2516 */
-  IF ~~ THEN REPLY @2 /* ~I am afraid I cannot pay the suggested donation.~ #2524 */ GOTO 3
-  IF ~~ THEN REPLY @3 /* ~I'll not pay to enter a building open to the public!~ #2525 */ GOTO 8
-  IF ~  PartyGoldGT(0)
-~ THEN REPLY @4 /* ~A mere pittance to pay for a day's entertainment.~ #2526 */ DO ~TakePartyGold(1)
-~ GOTO 7
+  SAY @1 /* ~You there! What are you doing here? I don't recognize you.~ #7618 */
+  IF ~  ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
+PartyGoldGT(99)
+~ THEN REPLY @2 /* ~How about you just take this 100 gold and look the other way?~ #7626 */ GOTO 1
+  IF ~  ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
+PartyGoldGT(99)
+~ THEN REPLY @2 /* ~How about you just take this 100 gold and look the other way?~ #7627 */ GOTO 2
+  IF ~  ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
+~ THEN REPLY @3 /* ~We've business with your leaders. We've just come from Sembia and are quite weary, so if you would just step aside, we would be grateful.~ #7628 */ GOTO 3
+  IF ~  ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+~ THEN REPLY @3 /* ~We've business with your leaders. We've just come from Sembia and are quite weary, so if you would just step aside, we would be grateful.~ #7629 */ GOTO 4
+  IF ~  ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
+~ THEN REPLY @4 /* ~Calm down; we're just new recruits. We just haven't got our uniforms yet.~ #7630 */ GOTO 5
+  IF ~  ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+~ THEN REPLY @5 /* ~Calm down, we're new recruits. We just haven't got our uniforms yet.~ #7631 */ GOTO 6
+  IF ~~ THEN REPLY @6 /* ~We've just come from Cormyr. With business going so well there, we have brought a large sum of surplus money for your superiors. I'm sure they wouldn't wish to be kept waiting.~ #7632 */ GOTO 7
 END
 
-IF WEIGHT #2 /* Triggers after states #: 10 even though they appear after this state */
-~  Global("BelandEntranceFee","GLOBAL",0)
-ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
-ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
-~ THEN BEGIN 1 // from:
-  SAY @5 /* ~Good on you, friend. Come inside the Hall of Wonders, but please remember the 1 gold donation. It provides sponsorship for those that craft the curious wonders inspired by Gond. This patronage supports the... not immediately salable works produced.~ #2517 */
-  IF ~~ THEN REPLY @2 /* ~I am afraid I cannot pay the suggested donation.~ #2527 */ GOTO 8
-  IF ~~ THEN REPLY @3 /* ~I'll not pay to enter a building open to the public!~ #2528 */ GOTO 5
-  IF ~  PartyGoldGT(0)
-~ THEN REPLY @4 /* ~A mere pittance to pay for a day's entertainment.~ #2529 */ DO ~TakePartyGold(1)
-~ GOTO 7
-END
-
-IF WEIGHT #3 /* Triggers after states #: 10 even though they appear after this state */
-~  Global("BelandEntranceFee","GLOBAL",0)
-ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
-~ THEN BEGIN 2 // from:
-  SAY @6 /* ~1 gold, no talking, and please wipe your feet. The Hall of Wonders is open to all, but touch nothing while herein. We wish to preserve the condition of our exhibits that we might have example for our craftsmen to copy. Duplicates of many items are available by long-term request, for more than you are likely to have in a lifetime.~ #2518 */
-  IF ~~ THEN REPLY @2 /* ~I am afraid I cannot pay the suggested donation.~ #2530 */ GOTO 5
-  IF ~~ THEN REPLY @3 /* ~I'll not pay to enter a building open to the public!~ #2531 */ GOTO 5
-  IF ~  PartyGoldGT(0)
-~ THEN REPLY @4 /* ~A mere pittance to pay for a day's entertainment.~ #2532 */ DO ~TakePartyGold(1)
-~ GOTO 7
-END
-
-IF ~~ THEN BEGIN 3 // from: 8.0 0.0
-  SAY @7 /* ~It's but a small matter to momentarily lapse the entry fee, though if ye can soon afford a coin or two in the future, we'd sorely appreciate it.~ #2519 */
-  IF ~~ THEN GOTO 7
-END
-
-IF ~~ THEN BEGIN 4 // from:
-  SAY @8 /* ~Oh, do reconsider! You'll not find these items anywhere else in Faerûn. It would be a shame to miss them, would it not?~ #2520 */
-  IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN 5 // from: 2.1 2.0 1.1
-  SAY @9 /* ~You are welcome to return when you have the coin, but I cannot permit your entry now. My apologies.~ #2521 */
-  IF ~~ THEN DO ~ActionOverride(Player1,LeaveAreaLUAPanic("AR0600","",[1306.2473],SW))
-ActionOverride(Player1,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player1,SetMasterArea("AR0130"))
-ActionOverride(Player2,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player3,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player4,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player5,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player6,LeaveAreaLUA("AR0600","",[1306.2473],SW))
+IF ~~ THEN BEGIN 1 // from: 0.0
+  SAY @7 /* ~We're looking the other way, now get out of here.~ #7619 */
+  IF ~~ THEN DO ~TakePartyGold(100)
+EscapeArea()
 ~ EXIT
 END
 
-IF ~~ THEN BEGIN 6 // from:
-  SAY @10 /* ~You cannot enter without payment, so please don't make this difficult. I'd rather not call the hall guards, they've ever so much to attend to.~ #2522 */
-  IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN 7 // from: 8.2 3.0 2.2 1.2 0.2
-  SAY @11 /* ~Please enter, and enjoy the works within. Gondsman Brathlen will offer insights on a number of items, but his time is limited and the tour will not be extensive. Enjoy.~ #2523 */
-  IF ~~ THEN DO ~SetGlobal("BelandEntranceFee","GLOBAL",1)
+IF ~~ THEN BEGIN 2 // from: 0.1
+  SAY @8 /* ~Sure, we'll take your money... from your cooling corpse that is.~ #7620 */
+  IF ~~ THEN DO ~Enemy()
 ~ EXIT
 END
 
-IF ~~ THEN BEGIN 8 // from: 1.0 0.1
-  SAY @8 /* ~Oh, do reconsider! You'll not find these items anywhere else in Faerûn. It would be a shame to miss them, would it not?~ #2533 */
-  IF ~~ THEN REPLY @2 /* ~I am afraid I cannot pay the suggested donation.~ #2536 */ GOTO 3
-  IF ~~ THEN REPLY @3 /* ~I'll not pay to enter a building open to the public!~ #2537 */ GOTO 9
-  IF ~  PartyGoldGT(0)
-~ THEN REPLY @4 /* ~A mere pittance to pay for a day's entertainment.~ #2538 */ DO ~TakePartyGold(1)
-~ GOTO 7
-END
-
-IF ~~ THEN BEGIN 9 // from: 8.1
-  SAY @12 /* ~I'm sorry you feel that way.~ #6249 */
-  IF ~~ THEN DO ~ActionOverride(Player1,LeaveAreaLUAPanic("AR0600","",[1306.2473],SW))
-ActionOverride(Player1,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player1,SetMasterArea("AR0130"))
-ActionOverride(Player2,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player3,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player4,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player5,LeaveAreaLUA("AR0600","",[1306.2473],SW))
-ActionOverride(Player6,LeaveAreaLUA("AR0600","",[1306.2473],SW))
+IF ~~ THEN BEGIN 3 // from: 0.2
+  SAY @9 /* ~All you are is a dead liar.~ #7621 */
+  IF ~~ THEN DO ~Enemy()
 ~ EXIT
 END
 
-IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
-~ THEN BEGIN 10 // from:
-  SAY @13 /* ~Since all of you are friends, you can freely explore the museum! I hope you enjoy your stay.~ #6250 */
+IF ~~ THEN BEGIN 4 // from: 0.3
+  SAY @10 /* ~Okay, sorry for troubling you.~ #7622 */
+  IF ~~ THEN DO ~EscapeArea()
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from: 0.4
+  SAY @11 /* ~We've got no new recruits. What I think you are is a spy.~ #7623 */
+  IF ~~ THEN DO ~Enemy()
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from: 0.5
+  SAY @12 /* ~Get a move on then, and put your uniforms on.~ #7624 */
+  IF ~~ THEN DO ~EscapeArea()
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from: 0.6
+  SAY @13 /* ~That's funny, 'cause last I heard, the Iron Throne was banned from operating in Cormyr. Lying scum! I don't know how you've gotten this far, but you'll get no further.~ #7625 */
+  IF ~~ THEN DO ~Enemy()
+~ EXIT
+END
+
+IF ~  StateCheck(Myself,STATE_CHARMED)
+~ THEN BEGIN 8 // from:
+  SAY @14 /* ~If ye're lookin' to talk with some of the high-ups, you should visit the fourth floor.~ #7633 */
   IF ~~ THEN EXIT
 END
 
-IF WEIGHT #4 ~  Global("BelandEntranceFee","GLOBAL",1)
-~ THEN BEGIN 11 // from:
-  SAY @14 /* ~Hello again. I hope you have been enjoying yourself.~ #6251 */
-  IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN 12 // from:
-  SAY @15 /* ~Get out or be thrown out!~ #9301 */
+IF ~~ THEN BEGIN 9 // from:
+  SAY @15 /* ~You're not welcome here! You'll pay with your life!~ #9220 */
   IF ~~ THEN EXIT
 END

@@ -1,5 +1,5 @@
 PRINT @3000  /* ~Processing BG2 changes...~ */
-//SILENT
+SILENT
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/corwinscripts~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf~
@@ -177,21 +177,24 @@ END
 //}
 
 //{ are
-	COPY_EXISTING ~xad100.are~ ~override~ // Ducal Palace 3 Fl
+	COPY_EXISTING ~xad100.are~ ~override~ // bd0103, Ducal Palace 3 Fl
 	WRITE_LONG 0x154 0 // Set Imoen Expiry Time to 0.
 	
-	COPY_EXISTING ~xad101.are~ ~override~ // FFHQ 1st Floor
+	COPY_EXISTING ~xad101.are~ ~override~ // bd0104, FFHQ 1st Floor
 	WRITE_LONG 0x264 0 	// Set Corwin Expiry Time to 0.
 	WRITE_LONG 0x154 0 	// Set Tiax Expiry Time to 0.
 	WRITE_LONG 0x5417 1	// Open Door07
 	
+	COPY ~%MOD_FOLDER%/bg2/are/xablck.are~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/tis/xablck.tis~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wed/xablck.wed~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xablckht.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xablcklm.bmp~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/bmp/xablcksr.bmp~ ~override~
+	
+	COPY_EXISTING ~xablck.are~ ~override/xapen.are~
+	
 	COPY ~%MOD_FOLDER%/bg2/are/xacs06.are~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/tis/xacs06.tis~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wed/xacs06.wed~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/mos/xacs06.mos~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacs06ht.bmp~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacs06lm.bmp~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacs06sr.bmp~ ~override~
 	
 	COPY ~%MOD_FOLDER%/bg2/are/xacs12.are~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/tis/xacs12.tis~ ~override~
@@ -275,7 +278,6 @@ END
 //}
 
 //{ bmp
-	COPY ~%MOD_FOLDER%/bg2/bmp/xaskies.bmp~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/bmp/xadingss.bmp~ ~override~
 //}
 
@@ -288,7 +290,7 @@ END
 		OUTER_SET wavIdx = (wavIdx + 1)
 	END
 
-	COPY_EXISTING ~xad106.cre~ ~override/xacorwin.cre~
+	COPY_EXISTING ~xad106.cre~ ~override/xacorwin.cre~ // corwin7
 	REMOVE_CRE_ITEMS
 	WRITE_ASCII 0x2CC ~xacorwin~ #8 	// Dialogue
 	WRITE_ASCII 0x280 ~xacorwin~ #20  	// Script Name
@@ -321,7 +323,7 @@ END
 	WRITE_ASCII 0x2CC ~xabowsmi~ #8
 	WRITE_ASCII 0x258 ~xabowsmi~ #8
 
-	COPY_EXISTING ~xad105.cre~ ~override/xamelkor.cre~
+	COPY_EXISTING ~xad105.cre~ ~override/xamelkor.cre~ // bdffwiz
 	SAY NAME1 @3148
 	SAY NAME2 @3148
 	WRITE_ASCII 0x280 ~xamelkor~ #20
@@ -336,7 +338,7 @@ END
 	WRITE_ASCII 0x280 ~xadings~ #20
 	WRITE_ASCII 0x2CC ~xadings~ #8
 
-	COPY_EXISTING ~xad121.cre~ ~override/xaffofcr.cre~
+	COPY_EXISTING ~xad121.cre~ ~override/xaffofcr.cre~ //bdffgirl
 	WRITE_ASCII 0x280 ~xaffofcr~ #20
 	WRITE_ASCII 0x2CC ~xaffofcr~ #8
 	SAY NAME1 @3058
@@ -345,9 +347,9 @@ END
 	COPY ~%MOD_FOLDER%/bg2/cre/xaffval1.cre~ ~override~
 	SAY NAME1 					@3169 /*~Flaming Fist Valiant~*/
 	SAY NAME2 					@3169 /*~Flaming Fist Valiant~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@40152) /*~Punish the lawbreakers!~[xad10004]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@40153) /*~We're more than mercenaries.~[xad10005]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@40154) /*~War is almost here.~[xad10006]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@13721) /*~Punish the lawbreakers!~[xad10004]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@13722) /*~We're more than mercenaries.~[xad10005]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@13723) /*~War is almost here.~[xad10006]*/
 	
 	COPY_EXISTING ~xaffval1.cre~ ~override/xaffval2.cre~
 	WRITE_ASCII 0x280 ~XAFFVAL2~ #20  	// Script Name
@@ -389,27 +391,27 @@ END
 //}
 
 //{ Block D Modifications
-	COPY_EXISTING ~xad100.cre~ ~override/xabelt.cre~
+	COPY_EXISTING ~xad100.cre~ ~override/xabelt.cre~ // bdbelt
 	WRITE_ASCII 0x280 ~xabelt~ #20  	// Script Name
 	WRITE_ASCII 0x2CC ~xabelt~ #8		// Dialogue 
 	
-	COPY_EXISTING ~xad101.cre~ ~override/xaeltan.cre~
+	COPY_EXISTING ~xad101.cre~ ~override/xaeltan.cre~ // bdeltan
 	WRITE_ASCII 0x280 ~xaeltan~ #20  	// Script Name
 	WRITE_ASCII 0x2CC ~xaeltan~ #8		// Dialogue
 	
-	COPY_EXISTING ~xad102.cre~ ~override/xaentar.cre~
+	COPY_EXISTING ~xad102.cre~ ~override/xaentar.cre~ // bdentar
 	WRITE_ASCII 0x280 ~xaentar~ #20  	// Script Name
 	WRITE_ASCII 0x2CC ~xaentar~ #8		// Dialogue
 	
-	COPY_EXISTING ~xad103.cre~ ~override/xaliia.cre~
+	COPY_EXISTING ~xad103.cre~ ~override/xaliia.cre~ // bdliia
 	WRITE_ASCII 0x280 ~xaliia~ #20  	// Script Name
 	WRITE_ASCII 0x2CC ~xaliia~ #8		// Dialogue
 	
-	COPY_EXISTING ~xad104.cre~ ~override/xabence.cre~
+	COPY_EXISTING ~xad104.cre~ ~override/xabence.cre~ // bdbence
 	WRITE_ASCII 0x280 ~xabence~ #20  	// Script Name
 	WRITE_ASCII 0x2CC ~xabence~ #8		// Dialogue
 	
-	COPY_EXISTING ~xad109.cre~ ~override/xaschael.cre~
+	COPY_EXISTING ~xad109.cre~ ~override/xaschael.cre~ // bdschael
 	WRITE_ASCII 0x280 ~xaschael~ #20  	// Script Name
 //}
 
@@ -501,7 +503,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Corwin's Bow + 2
-		COPY_EXISTING ~xad107.itm~ ~override/xacorbow.itm~
+		COPY_EXISTING ~xad107.itm~ ~override/xacorbow.itm~ // bdbow06
 		WRITE_LONG 0xC RESOLVE_STR_REF(@3057)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3154)
 		WRITE_ASCII 0x1AE ~xacorwin~ #8
@@ -550,7 +552,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Corwin's Armor + 3
-		COPY_EXISTING ~xad106.itm~ ~override/xacorchn.itm~
+		COPY_EXISTING ~xad106.itm~ ~override/xacorchn.itm~ // bdchan05
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@3155)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@3155)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3156)

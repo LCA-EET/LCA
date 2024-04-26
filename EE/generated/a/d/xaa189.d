@@ -1,32 +1,16 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BART12.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\SHOP01.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BART12.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\SHOP01.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA189~
 
-IF ~  RandomNum(3,1)
+IF ~  True()
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~I help run a clean establishment here. Don't go messin' it up. So, would you like a drink?~ #13996 */
-  IF ~~ THEN REPLY @2 /* ~Yes.~ #15051 */ DO ~StartStore("xaa113",LastTalkedToBy(Myself))
+  SAY @1 /* ~Show me a pretty bit of gold and you can have anything in the store.~ #15371 */
+  IF ~~ THEN REPLY @2 /* ~I've got the gold, but have you anything I need?~ #15372 */ DO ~StartStore("xaa122",LastTalkedToBy(Myself))
 ~ EXIT
-  IF ~~ THEN REPLY @3 /* ~No.~ #15052 */ EXIT
-END
-
-IF ~  RandomNum(3,2)
-~ THEN BEGIN 1 // from:
-  SAY @4 /* ~Whatever your poison, you're sure to find it somewhere in Baldur's Gate. So, would you like a drink?~ #13997 */
-  IF ~~ THEN REPLY @2 /* ~Yes.~ #15053 */ DO ~StartStore("xaa113",LastTalkedToBy(Myself))
-~ EXIT
-  IF ~~ THEN REPLY @3 /* ~No.~ #15054 */ EXIT
-END
-
-IF ~  RandomNum(3,3)
-~ THEN BEGIN 2 // from:
-  SAY @5 /* ~If you've complaints about the service, there's a wall out back that'll be glad to hear 'em. So, would you like a drink?~ #13998 */
-  IF ~~ THEN REPLY @2 /* ~Yes.~ #15055 */ DO ~StartStore("xaa113",LastTalkedToBy(Myself))
-~ EXIT
-  IF ~~ THEN REPLY @3 /* ~No.~ #15056 */ EXIT
+  IF ~~ THEN REPLY @3 /* ~Sorry, but I'm keeping my coins to myself today.~ #15373 */ EXIT
 END

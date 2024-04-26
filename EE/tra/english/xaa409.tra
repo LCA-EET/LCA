@@ -1,41 +1,27 @@
-// JHASSO translation file
-@1   = ~Well, you'll get naught from me this day, not a cry of pain nor the knowledge in my noggin. Get away from me, shapeshifter scum.~
-@2   = ~We're not the shapeshifter you speak of. We're friends, sent by Scar to see what's been going wrong here at the Seven Suns. Who are you?~
-@3   = ~Ha ha ha, we've come to torture you.~
-@4   = ~We're not here to torture you, we're here to save you.~
-@5   = ~As I said before, you'll get nothing from me.~
-@6   = ~You think I believe that, you shapeshifting scum? I know your tricks, and that one won't work no more.~
-@7   = ~It's not a trick, trust us.~
-@8   = ~Think what you want, we've been sent by Scar to find Jhasso, could you help us?~
-@9   = ~Fine with us. Goodbye.~
-@10  = ~Jhasso? I'm Jhasso. You know Scar? You might be telling the truth. Is my torment to finally end?~
-@11  = ~If you're Jhasso, then you might have an idea of what's been going on here. Tell us everything.~
-@12  = ~We don't have time to chat with you. Come with us, we can get you out of here.~
-@13  = ~Bye-bye, Jhasso. You can make it out on your own.~
-@14  = ~You know Scar? I'm Jhasso, a friend of his and the owner of the Seven Suns. You have to help me get out of here!~
-@15  = ~It's good that we found you. Now we can find out what's been going on here. Before we take you anywhere, could you tell us what has been going on?~
-@16  = ~You can find your own way out, if you're really Jhasso.~
-@17  = ~Now that we're free of those monsters, I can tell you what's been going on.~
-@18  = ~Those creatures, the shapeshifters, started infiltrating the Seven Suns some months ago. They must have started with some of the less important members of my coster. Eventually they captured me, and their leader took my face. They've been keeping me alive in order to gain information that they need through torture. I don't know what their purpose is, but they have been running my business very poorly. All of you will be well rewarded for rescuing me. When you meet Scar again, he will give you my reward. I must be off now, as there is much of the monsters' work to be undone. I assume you've dealt with the other monsters upstairs. If you haven't, I'll get the Flaming Fist to clear out the rest. It'll probably be weeks before we can clean out their stench.~
-@19  = ~The Seven Suns
-We've learned from Jhasso that a group of shapeshifting creatures has taken over the Seven Suns trading coster.~
-@20  = ~It is good to see you all again friends. I've been hearing quite a few rumors about you, all of which are undoubtedly untrue.~
-@21  = ~Rising Tensions with Amn
-Rumors are flying about town that we're Amnian spies.~
-@22  = ~So, do you know all the rumors flying about town? Seems people think you're Amnian spies, and that you've murdered the leaders of the Iron Throne. Does any of that have any truth to it?~
-@23  = ~Not a bit, we were framed.~
-@24  = ~We killed the Iron Throne leaders, they had it coming.~
-@25  = ~That's too bad, I cannot harbor criminals. I'm going to have to ask you to leave.~
-@26  = ~Guards! Will you please escort these unwanted guests from the premises?~
-@27  = ~I'm glad to hear it. I never took any of you to be the murderin' type. Well then, have you heard all the other rumors flying about the city? Seems that Commander Scar, of the Flaming Fist, has been assassinated. Even worse, Grand Duke Eltan has come down with some sort of magical illness. It was those two who first hired you to save my company from the wretched doppelgangers, so I owe them a lot. Do you think you'd be up to investigate what's wrong with Duke Eltan? I know it'd be tough with you wanted and all, but there's no one else who I think is up to the job.~
-@28  = ~I don't think we're up to it. Sorry.~
-@29  = ~What is it exactly that you want us to do?~
-@30  = ~Well, I guess there's nothing more to talk about; perhaps we'll meet again.~
-@31  = ~I think it would be best to investigate the site where Scar was murdered. He was killed at the Blushing Mermaid tavern. I have no idea why he was there, but if you do some questioning you might learn something.~
-@32  = ~We'll look into it. Do you have anything more for us?~
-@33  = ~Doesn't sound like a promising enough lead. We have other things on our agenda, we'll have to pass up on this one.~
-@34  = ~I don't have anything more for you at the moment. I wish you luck.~
-@35  = ~I'm disappointed, but I guess that's how things have to be.~
-@36  = ~Sorry, my friends, but I have very little information to give you. I have been a captive of the doppelgangers for quite a time, and am out of touch with the politics of my beloved city.~
-@37  = ~You're barely better than my captors! Leave me!~
-@38  = ~All right then, that's just what I'll do.~
+// RFRIEN translation file
+@1   = ~I heard there's some sort o' trouble in Nashkel. Somethin' sinister has been moving about in the Nashkel mines. Nobody seems to know for sure. Too busy coping with the bandit raids and such.~
+@2   = ~Troubles in the Region: Bandit Problems
+
+There are rumors of something disrupting operations in the Nashkel mines, contributing to the iron shortage.~
+@3   = ~Did you hear about the assassinations at Candlekeep? Seems that the leaders of the Iron Throne went and got themselves killed. Those same people who helped the folks down in Nashkel did the deed. They were Amnian agents, I hear. Anyhow, one of the dead guys' son is now the leader, Sarevok is his name I think.~
+@4   = ~Rising Tensions with Amn
+Sarevok has assumed command of the Iron Throne. I am still accused of the former leaders' murders, though it is thought I was an agent of Amn. Someone is intent upon pushing the region into war.~
+@5   = ~Hear about the heroes of Nashkel? Some good folk—mercenaries, it's said—came down and solved all that town's problems. I hope they weren't helping just because of the money.~
+@6   = ~Tales of my actions are spreading, though I'm not sure I like the term "mercenaries."~
+@7   = ~I hear relations haven't been going too good 'tween the two powers in this region. The Grand Dukes supposedly accused Amn of all the raiding that's been happening along the roads. Not a good thing to go accusin' the most powerful country in the western world.~
+@8   = ~Rising Tensions with Amn
+Tension seems to be building between Baldur's Gate and Amn.~
+@9   = ~I hear some units of the Flaming Fist have been sent to Beregost. Seems like the Grand Dukes are getting real paranoid about Amn. Lots of people think that Amn might be behind the iron shortage. Could be a prelude to war.~
+@10  = ~Rising Tensions with Amn
+Tensions are growing in the region due to the supposed threat from Amn, though the evidence I've seen is somewhat confused.~
+@11  = ~Iron's so scarce these days, you'd think it was as valuable as gold. Not a good thing, not a good thing at all. Ain't going to be long before no one can afford to be well equipped. What will the guards do then?~
+@12  = ~Troubles in the Region: Iron Crisis
+
+Iron continues to be scarce, driving prices of tools and weapons ever higher.~
+@13  = ~It's been really weird these past few months. Iron's been going bad, falling apart almost if it were rustin' for no particular reason. From what I hear, most o' this "bad iron" comes from the mines at Nashkel. Can't trust those Amnian miners; probably some scheme they've come up with.~
+@14  = ~Troubles in the Region: Iron Crisis
+
+Iron from the Nashkel mines is nearly useless when smelted. People suspect that the denizens of Nashkel are doing it intentionally, as part of some grandiose plot in the service of Amn.~
+@15  = ~Lots of trouble down in Nashkel. Monsters or some such are said to be killing the workers at the Nashkel mines.~
+@16  = ~You hear of the Midsummer fair down in Nashkel? I hear it's actually doing quite well, despite all the trouble that town's had recently.~
+@17  = ~There is a festival east of Nashkel. Many people are gathering there.~

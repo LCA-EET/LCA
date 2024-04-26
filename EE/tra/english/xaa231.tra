@@ -1,58 +1,36 @@
-// HARBOR translation file
-@1   = ~Hey there, what can I do for ya?~
-@2   = ~We've been investigating some of the weird goings-on of Baldur's Gate, and we thought that the Harbor Master must know a great deal, what with the comings and goings of the merchant ships.~
-@3   = ~We wanted to charter a ship.~
-@4   = ~We're sorry to have bothered you.~
-@5   = ~Ya. As the Harbor Master, I'm privy to a lot of what's going on. What's it that ya want ta know?~
-@6   = ~Tell us what you know about the iron shortage.~
-@7   = ~Do you know much about the Iron Throne?~
-@8   = ~Tell us whatever you might think is interesting.~
-@9   = ~Actually, we have to get going.~
-@10  = ~The iron shortage, eh? Well, there's not much to tell. With the Nashkel mines basically shut down, and bandits making it impossible to ship overland, iron's become rare. Recently though, the Iron Throne's been shipping in iron through their merchant fleet. It's really strange, 'cause their main competitors aren't doing the same. They're just lettin' the Throne hog the whole market.~
-@11  = ~Investigating the Iron Throne
-According to the Harbor Master, the Iron Throne has been shipping iron into the city via its merchant fleet.~
-@12  = ~The Iron Throne's been making some major moves in the city. They've been making inroads in all sorts of markets, though the most noticeable would be iron. Their competitors just sit there and take it. It's really weird.~
-@13  = ~I'm not here to entertain people. I'm gonna have to ask ya to leave so I can get some work done now.~
-@14  = ~Nice talkin' to ya guys.~
-@15  = ~Ya wanna charter a ship, do ya? Well, where is it that ya wanna go?~
-@16  = ~Waterdeep would be a fine destination.~
-@17  = ~I've always wanted to see Calimport.~
-@18  = ~The Moonshae Isles.~
-@19  = ~Usually there's a ship going to Waterdeep every couple days, but with all the troubles in the Sea of Swords, travel's kinda dropped off. It'll be a couple weeks 'fore something comes in.~
-@20  = ~No ships headed there at the moment. If one comes in, I'll tell the captain someone's interested.~
-@21  = ~By the Bitch Queen's breath! That's Duke Eltan ya have with you. He's looking in a bad way. Leave him here with me; I'll make sure he's all right. You're the people who've been working fer Scar and Eltan against the Iron Throne. Well, I'm sure you have much to do, so you should a get a move on it. Don't worry about Eltan, I'll keep good care of him. I've got to get him to a safe place, so good luck.~
-@22  = ~Duke Eltan's Illness
-I took the defenseless Duke Eltan to the Harbor Master, who promised to keep him safe.~
-@23  = ~Duke Eltan's Illness
-A smuggler we charmed told us that Duke Eltan is sick with some sort of disease and that his second-in-command, Scar, is dead.~
-@24  = ~Duke Eltan's Illness
-Rumor has it that recent tragedies involving Entar Silvershield and Scar are connected to Duke Eltan's sudden illness.~
-@25  = ~Duke Eltan's Illness
-Duke Eltan is the most beloved and respected of the Grand Dukes of Baldur's Gate. His death would leave an immense hole in the leadership of the region.~
-@26  = ~Duke Eltan's Illness
-Despite the constant presence of a healer, Duke Eltan continues to decline. I wonder whether he needs a better healer than this Rashad.~
-@27  = ~Duke Eltan's Illness
-Duke Eltan, the leader of the Flaming Fist, is gravely ill; Scar, the second-in-command, is dead; and Grand Duke Entar Silvershield has been assassinated. The key is to learn who is behind these events. The people of Baldur's Gate believe Sarevok when he says Amn is to blame, but I think the answer is closer than anyone yet understands.~
-@28  = ~Duke Eltan's Illness
-I have learned that Duke Eltan, commander of the Flaming Fist, lies sick in bed at the Flaming Fist compound, tended to by his cleric Rashad. A man named Angelo seems to be acting in his stead, and, from all accounts, seems to be closely connected to Sarevok. I find myself overwhelmed with a sense of unease about this all. Sick or not, perhaps Duke Eltan has some answers for me.~
-@29  = ~Duke Eltan's Illness
-Kolvar tells us that Duke Eltan has been stricken by a mysterious disease and Scar has been assassinated.~
-@30  = ~Duke Eltan's Illness
-Kolvar is suspicious as to why Rashad, Eltan's priest, hasn't healed the Grand Duke yet.~
-@31  = ~Duke Eltan's Illness
-Delthyr has suggested that we investigate Rashad, Duke Eltan's healer.~
-@32  = ~Duke Eltan's Illness
-The recent trouble has one of the former guards planning to desert the Flaming Fist. According to Kent, Eltan's healer Rashad frequents a brothel called the Undercellar. The place is so foul that the entrance lies through the city sewers.~
-@33  = ~Duke Eltan's Illness
-Duke Eltan wants me to deliver him to the Harbor Master's building on the east side of the harbor.~
-@34  = ~Duke Eltan's Illness
-According to the seer, Duke Eltan's healer is really the one making him ill.~
-@35  = ~The Dying Duke
+// AMNIS translation file
+@1   = ~The commander was friend to many before he found that sword. He's not the man he was, by Helm.~
+@2   = ~The Tale of Captain Brage
+Brage, the captain of the guard in Nashkel, apparently changed greatly after acquiring his new sword.~
+@3   = ~The reward for the commander's head is a king's ransom, but I'll not be lifting MY sword against a brother soldier.~
+@4   = ~The Tale of Captain Brage
+There is a large reward for the head of Brage! His former comrades seem unwilling to try to collect it, however.~
+@5   = ~An entire unit went west after Brage to try to talk some sense to him. It's been a week, and none have returned.~
+@6   = ~The Tale of Captain Brage
+A large force of men from Nashkel went to reclaim Brage a week ago. None have returned.~
+@7   = ~I am sorry for my mood. All the guard are still grieving the loss of Commander Brage.~
+@8   = ~The Tale of Captain Brage
+The change in Captain Brage astonishes everyone. The people of Nashkel liked and respected him before his rampage.~
+@9   = ~I'll not believe a man of Brage's rank could kill his own family. 'Twas evil magics of some sort.~
+@10  = ~The Tale of Captain Brage
+Some believe Brage to be under an evil enchantment. It's certainly possible.~
+@11  = ~Why are you not at the fair, citizen? 'Tis but a moment's walk east of Nashkel.~
+@12  = ~There is a festival east of Nashkel. Many people are gathering there.~
+@13  = ~My sword is chipped and tarnished, but we'll not be given new until prices come down.~
+@14  = ~Troubles in the Region: Iron Crisis
 
-Duke Eltan is on his deathbed, and I have stopped an assassination attempt on his life. I must get Duke Eltan to safety with the Harbor Master in the southern portion of the city.~
-@36  = ~I'm really busy now, so I'm gonna have to ask ya ta come back some time later.~
-@37  = ~You guys shouldn't be hanging 'round here. Ya might bring attention to Duke Eltan.~
-@38  = ~Well, friend, ya might be interested ta know that there's been quite a few Iron Throne ships coming to dock these past few weeks. They've been stockpiling something, and if I guess right, that something is iron.~
-@39  = ~Investigating the Iron Throne
-When we charmed the Harbor Master, he told us that there were quite a few Iron Throne merchant ships coming into port these past few weeks. He thinks that the ships were carrying iron.~
-@40  = ~You've made no friends here! Get off my docks!~
+The soldiers are rapidly wearing out their old weapons and cannot re-equip themselves because of the scarcity and price of iron-forged tools and weapons.~
+@15  = ~We don't have the manpower to patrol the mines, what with the problem of bandits up north.~
+@16  = ~Troubles in the Region: Bandit Problems
+
+The problem in the Nashkel mines goes unchecked because the guards are needed to combat a rash of banditry in the north.~
+@17  = ~If ye be a bounty hunter, rewards can be collected with Oublek, just outside of the garrison.~
+@18  = ~Oublek the Bounty Officer
+Oublek offers bounties and rewards outside the Nashkel garrison.~
+@19  = ~Travel lightly, wanderer. The woods harbor strange things.~
+@20  = ~Move along, citizen.~
+@21  = ~Even if we find the captain, a court would surely have his head for his crimes. Such a waste!~
+@22  = ~The Tale of Captain Brage
+Even if Captain Brage were to be captured alive, he would most assuredly be put to death for his crimes.~
+@23  = ~I'm only a guard. All I know are the rumors flying about town.~
+@24  = ~I'll box your ears if you step an inch closer!~

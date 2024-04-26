@@ -1,44 +1,58 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BLACKL.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\IRON12.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BLACKL.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\IRON12.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA279~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #1 /* Triggers after states #: 4 even though they appear after this state */
-~  True()
+IF ~  NumTimesTalkedTo(0)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~It will be the darkest day ye have never seen before I don't have what ye need. Fer the right price, anyway.~ #2842 */
-  IF ~  !Global("Chapter","GLOBAL",7)
-~ THEN GOTO 1
-  IF ~  Global("Chapter","GLOBAL",7)
-~ THEN DO ~StartStore("xaa128",LastTalkedToBy(Myself))
+  SAY @1 /* ~Hey, no one's supposed to be down here. State your business, 'fore I have to give you the beats.~ #7588 */
+  IF ~  ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
+~ THEN REPLY @2 /* ~Don't get so excited! We're just checking out some wares that we bought from the Iron Throne.~ #7594 */ GOTO 1
+  IF ~  ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+~ THEN REPLY @2 /* ~Don't get so excited! We're just checking out some wares that we bought from the Iron Throne.~ #7595 */ GOTO 2
+  IF ~  ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
+~ THEN REPLY @3 /* ~We're new recruits. We were told to have a look around, so that's what we're doing.~ #7596 */ GOTO 3
+  IF ~  ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+~ THEN REPLY @3 /* ~We're new recruits. We were told to have a look around, so that's what we're doing.~ #7597 */ GOTO 4
+  IF ~~ THEN REPLY @4 /* ~Eat steel, scum!~ #7598 */ DO ~Enemy()
 ~ EXIT
 END
 
 IF ~~ THEN BEGIN 1 // from: 0.0
-  SAY @2 /* ~What will ye need today? Remember, cash or hit the bricks. I extend no credit, especially to new recruits.~ #2843 */
-  IF ~~ THEN DO ~StartStore("xaa128",LastTalkedToBy(Myself))
+  SAY @5 /* ~I wasn't told, and I think ye're lying.~ #7589 */
+  IF ~~ THEN DO ~Enemy()
 ~ EXIT
 END
 
-IF ~~ THEN BEGIN 2 // from:
-  SAY @3 /* ~Off wit' ye now. I've counting to do.~ #2844 */
+IF ~~ THEN BEGIN 2 // from: 0.1
+  SAY @6 /* ~Okay, carry on then.~ #7590 */
+  IF ~~ THEN DO ~EscapeArea()
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from: 0.2
+  SAY @7 /* ~Lying scum! There aren't any new recruits.~ #7591 */
+  IF ~~ THEN DO ~Enemy()
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 4 // from: 0.3
+  SAY @8 /* ~Well, if that's true, ye're still not supposed ta be in the basements. Git outta here.~ #7592 */
+  IF ~~ THEN DO ~EscapeArea()
+~ EXIT
+END
+
+IF ~  StateCheck(Myself,STATE_CHARMED)
+~ THEN BEGIN 5 // from:
+  SAY @9 /* ~Hey, buddy, take as long as you want down here. It's all been rather lax since the two bosses left.~ #7599 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 3 // from:
-  SAY @4 /* ~Alarm! Alarm! Snakes in our own guild! Take 'em alive so we can kill 'em slow!~ #2845 */
-  IF ~~ THEN EXIT
-END
-
-IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
-~ THEN BEGIN 4 // from:
-  SAY @5 /* ~As a good friend, I must warn you: Magic use isn't appreciated in the guild, especially if it's used against guild members. I'll likely have to kill you once this parlor sorcery wears off.~ #6393 */
+IF ~~ THEN BEGIN 6 // from:
+  SAY @10 /* ~You're not welcome here! You'll pay with your life!~ #9222 */
   IF ~~ THEN EXIT
 END

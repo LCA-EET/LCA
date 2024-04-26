@@ -1,34 +1,47 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\SHVERT.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\EURIC.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\SHVERT.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\EURIC.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA302~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
 
-IF ~  True()
+IF WEIGHT #2 /* Triggers after states #: 1 3 even though they appear after this state */
+~  Global("HelpEuric","GLOBAL",0)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Schtopp where you are, pale child.~ #19878 */
-  IF ~~ THEN REPLY @2 /* ~Your flesh! It's all green and alive and—and crawling! What has done this to you?!~ #19886 */ GOTO 1
-  IF ~~ THEN REPLY @3 /* ~Stand aside and grant me passage—I have no fear of ye.~ #19894 */ GOTO 2
-  IF ~~ THEN REPLY @4 /* ~I have heard that foul things breed in these sewer's airs and now I have seen it for my own eyes. Let me put you out of your misery, whatever you may be.~ #19904 */ GOTO 3
+  SAY @1 /* ~What? I didn't do anything... just leave me alone!~ #15242 */
+  IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 1 // from: 0.0
-  SAY @5 /* ~Foolisch one, you mishtake a... schlopshe... a blesching for a curshe... schollpsh... What isss thish meager flesch in the facshe of shusch terrific beauty? It isss Schlumpsha who hassh done thisch to me and you would be blesshed schould he grant you the shame priveledge...~ #19913 */
-  IF ~~ THEN DO ~EscapeArea()
-~ EXIT
+IF WEIGHT #0 ~  Global("GivenEuricQuest","GLOBAL",1)
+PartyHasItem("AMUL14")
+Global("HelpEuric","GLOBAL",0)
+~ THEN BEGIN 1 // from:
+  SAY @2 /* ~Hey, what do you want? I didn't do nothin'. Hey, what's that amulet you have there?~ #15243 */
+  IF ~~ THEN DO ~SetGlobal("HelpEuric","GLOBAL",1)
+TakePartyItemNum("AMUL14",1)
+AddexperienceParty(1100)
+~ GOTO 2
 END
 
-IF ~~ THEN BEGIN 2 // from: 0.1
-  SAY @6 /* ~Aye, scho it be, then. Scho it be... All are welcome here amongsht the schewerfolk. Heh, scho it be...~ #19914 */
-  IF ~~ THEN DO ~EscapeArea()
-~ EXIT
+IF ~~ THEN BEGIN 2 // from: 1.0
+  SAY @3 /* ~Mom set you up to this, didn't she? All right, all right, it looks dumb, but I'll wear it. Tell my mom, Nadine, that I miss her, but I'm not comin' back. Tell her that I'll be safe. Bye-bye now.~ #15244 */
+  IF ~~ THEN UNSOLVED_JOURNAL @4 /* ~Nadine and Euric
+Euric accepted Nadine's amulet but didn't seem too happy about it. He asked me to return to her with a message that he misses her.~ #27051 */ EXIT
 END
 
-IF ~~ THEN BEGIN 3 // from: 0.2
-  SAY @7 /* ~Hah, weak abovelings! We Children of Schlumpsha have freed ourshelvesss from the cloying fearsh of death. Hah heh hee hee heeeeee...~ #19915 */
-  IF ~~ THEN DO ~EscapeArea()
-~ EXIT
+IF WEIGHT #1 ~  False()
+~ THEN BEGIN 3 // from:
+  SAY @5 /* ~I ain't afraid of you!~ #15245 */
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #3 ~  True()
+~ THEN BEGIN 4 // from:
+  SAY @6 /* ~Say hi to my mom for me, could you? I'm still doing okay, but you can tell her I'll probably be coming home soon.~ #15246 */
+  IF ~~ THEN EXIT
 END
