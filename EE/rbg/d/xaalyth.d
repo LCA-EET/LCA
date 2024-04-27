@@ -96,8 +96,8 @@ IF ~~ THEN BEGIN XA_End1
 	
 	IF ~~ THEN REPLY @35 /* ~Thank you.~ */
 	DO ~
-		GiveItemCreate("XABELT13", LastTalkedToBy(Myself),1,0,0)
-		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XABELT13", IDENTIFIED,TRUE))
+		GiveItemCreate("XAC100", LastTalkedToBy(Myself),1,0,0)
+		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XAC100", IDENTIFIED,TRUE))
 		SetGlobal("XA_LC_Journal_Elfsong2", "GLOBAL", 1)
 		ReputationInc(2)
 	~

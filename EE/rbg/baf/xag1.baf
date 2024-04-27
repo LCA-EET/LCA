@@ -11,8 +11,8 @@ END
 IF 
 	Global("XA_LC_BeginSpawning", "GLOBAL", 1)
 	OR(2)
-		Dead("XAC109") // Good Caelar
-		Dead("XAC108") // Bad Caelar
+		Dead("XAC109") // bdcaela3 (Good)
+		Dead("XAC108") // bdcaela2 (Evil)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_BeginSpawning", "GLOBAL", 2)
@@ -34,11 +34,11 @@ END
 
 IF
 	OR(2)
-		Dead("XAC108")
-		Dead("XAC109")
-	Dead("XAC111") // Ashatiel
-	Dead("XAC113") // Barghest
-	Dead("XAC112") // Hephernaan
+		Dead("XAC108") // bdcaela2
+		Dead("XAC109") // bdcaela3
+	Dead("XAC111") // bdashati
+	Dead("XAC113") // bdbarghe
+	Dead("XAC112") // bdhepher
 	!Global("XA_LC_DemonSpeak", "GLOBAL", 1)
 	!Global("XA_LC_CompletedG1", "GLOBAL", 1)
 THEN
@@ -83,90 +83,246 @@ IF
 	Global("XA_LC_BeginSpawning", "GLOBAL", 1)
 THEN
 	RESPONSE #10
-		//DisplayStringHead(Player1, ~Coalition - No action.~)
+		CreateCreature("xacoal0", [20.3300], NE)
 		Continue()
 	RESPONSE #10
-		//DisplayStringHead(Player1, ~Coalition - Spawn x3.~)
-		CreateCreature("xac125", [20.3300], NE)
-		IncrementGlobal("XA_LC_CoalitionAlive", "GLOBAL", 1)
+		CreateCreature("xacoal1", [50.3390], NE)
 		Continue()
 	RESPONSE #10
-		CreateCreature("xac126", [50.3390], NE)
-		IncrementGlobal("XA_LC_CoalitionAlive", "GLOBAL", 1)
+		CreateCreature("xacoal2", [100.3400], NE)
 		Continue()
 	RESPONSE #10
-		CreateCreature("xac127", [100.3400], NE)
-		IncrementGlobal("XA_LC_CoalitionAlive", "GLOBAL", 1)
+		CreateCreature("xacoal3", [20.3300], NE)
 		Continue()
 	RESPONSE #10
-		CreateCreature("xac121", [20.3300], NE)
-		IncrementGlobal("XA_LC_CoalitionAlive", "GLOBAL", 1)
+		CreateCreature("xacoal4", [50.3390], NE)
 		Continue()
 	RESPONSE #10
-		CreateCreature("xac122", [50.3390], NE)
-		IncrementGlobal("XA_LC_CoalitionAlive", "GLOBAL", 1)
+		CreateCreature("xacoal5", [100.3400], NE)
 		Continue()
 	RESPONSE #10
-		CreateCreature("xac123", [100.3400], NE)
-		IncrementGlobal("XA_LC_CoalitionAlive", "GLOBAL", 1)
+		CreateCreature("xacoal6", [20.3300], NE)
 		Continue()
 	RESPONSE #10
-		CreateCreature("xac132", [20.3300], NE)
-		IncrementGlobal("XA_LC_CoalitionAlive", "GLOBAL", 1)
+		CreateCreature("xacoal7", [50.3390], NE)
 		Continue()
 	RESPONSE #10
-		CreateCreature("xac133", [50.3390], NE)
-		IncrementGlobal("XA_LC_CoalitionAlive", "GLOBAL", 1)
+		CreateCreature("xacoal8", [100.3400], NE)
 		Continue()
 	RESPONSE #10
-		CreateCreature("xac134", [100.3400], NE)
-		IncrementGlobal("XA_LC_CoalitionAlive", "GLOBAL", 1)
+		CreateCreature("xacoal9", [20.3300], NE)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacoal10", [50.3390], NE)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacoal11", [100.3400], NE)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacoal12", [20.3300], NE)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacoal13", [50.3390], NE)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacoal14", [100.3400], NE)
 		Continue()
 END
-
 
 IF
 	GlobalLT("XA_LC_CrusadersAlive", "GLOBAL", 100)
 	Global("XA_LC_BeginSpawning", "GLOBAL", 1)
 THEN
 	RESPONSE #10
-		//DisplayStringHead(Player1, ~Crusader - No action.~)
+		CreateCreature("xacrus0", [2690.1870], SW)
 		Continue()
 	RESPONSE #10
-		CreateCreature("xac190", [2690.1870], SW)
-		IncrementGlobal("XA_LC_CrusadersAlive", "GLOBAL", 1)
+		CreateCreature("xacrus1", [2660.1820], SW)
 		Continue()
 	RESPONSE #10
-		CreateCreature("xac262", [2660.1820], SW)
-		IncrementGlobal("XA_LC_CrusadersAlive", "GLOBAL", 1)
+		CreateCreature("xacrus2", [2750.1910], SW)
 		Continue()
 	RESPONSE #10
-		CreateCreature("xac218", [2750.1910], SW)
-		IncrementGlobal("XA_LC_CrusadersAlive", "GLOBAL", 1)
+		CreateCreature("xacrus3", [1370.1460], SW)
 		Continue()
 	RESPONSE #10
-		CreateCreature("xac182", [1370.1460], SW)
-		IncrementGlobal("XA_LC_CrusadersAlive", "GLOBAL", 1)
+		CreateCreature("xacrus4", [1690.1570], SW)
 		Continue()
 	RESPONSE #10
-		CreateCreature("xac180", [1690.1570], SW)
-		IncrementGlobal("XA_LC_CrusadersAlive", "GLOBAL", 1)
+		CreateCreature("xacrus5", [1960.1600], SW)
 		Continue()
 	RESPONSE #10
-		CreateCreature("xac203", [1960.1600], SW)
-		IncrementGlobal("XA_LC_CrusadersAlive", "GLOBAL", 1)
+		CreateCreature("xacrus6", [970.2300], SE)
 		Continue()
 	RESPONSE #10
-		CreateCreature("xac192", [970.2300], SE)
-		IncrementGlobal("XA_LC_CrusadersAlive", "GLOBAL", 1)
+		CreateCreature("xacrus7", [970.1586], E)
 		Continue()
 	RESPONSE #10
-		CreateCreature("xac244", [970.1586], E)
-		IncrementGlobal("XA_LC_CrusadersAlive", "GLOBAL", 1)
+		CreateCreature("xacrus8", [2650.1880], SW)
 		Continue()
 	RESPONSE #10
-		CreateCreature("xac246", [2650.1880], SW)
+		CreateCreature("xacrus9", [2690.1870], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus10", [2660.1820], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus11", [2750.1910], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus12", [1370.1460], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus13", [1690.1570], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus14", [1960.1600], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus15", [970.2300], SE)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus16", [970.1586], E)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus17", [2650.1880], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus18", [2690.1870], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus19", [2660.1820], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus20", [2750.1910], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus21", [1370.1460], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus22", [1690.1570], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus23", [1960.1600], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus24", [970.2300], SE)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus25", [970.1586], E)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus26", [2650.1880], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus27", [2690.1870], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus28", [2660.1820], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus29", [2750.1910], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus30", [1370.1460], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus31", [1690.1570], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus32", [1960.1600], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus33", [970.2300], SE)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus34", [970.1586], E)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus35", [2650.1880], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus36", [2690.1870], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus37", [2660.1820], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus38", [2750.1910], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus39", [1370.1460], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus40", [1690.1570], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus41", [1960.1600], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus42", [970.2300], SE)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus43", [970.1586], E)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus44", [2650.1880], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus45", [2690.1870], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus46", [2660.1820], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus47", [2750.1910], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus48", [1370.1460], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus49", [1690.1570], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus50", [1960.1600], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus51", [970.2300], SE)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus52", [970.1586], E)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus53", [2650.1880], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus54", [1960.1600], SW)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus55", [970.2300], SE)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus56", [970.1586], E)
+		Continue()
+	RESPONSE #10
+		CreateCreature("xacrus57", [2650.1880], SW)
+		Continue()
+END
+
+IF
+	GlobalLT("XA_LC_CoalitionAlive", "GLOBAL", 100)
+	Global("XA_LC_BeginSpawning", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("XA_LC_CoalitionAlive", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	GlobalLT("XA_LC_CrusadersAlive", "GLOBAL", 100)
+	Global("XA_LC_BeginSpawning", "GLOBAL", 1)
+THEN
+	RESPONSE #100
 		IncrementGlobal("XA_LC_CrusadersAlive", "GLOBAL", 1)
 		Continue()
-		//1600.900
 END

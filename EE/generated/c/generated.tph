@@ -1375,20 +1375,33 @@ Saving Throw: None
 
 This spell causes total, impenetrable darkness. Neither normal nor magical light works in the area of effect. All vision (including infravision) is severely limited; anyone hostile caught in the area of effect is for all practical purposes blinded as per the 1st-level wizard spell. Creatures that leave the area covered by darkness will have their vision restored after 1 round.~*/
 
-//baf files
-//===================
-
 //itm files
 //===================
 COPY ~%MOD_FOLDER%\generated\c\itm\xac100.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11148) /*~Belt~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11149) /*~Belt of the Cunning Rogue~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11148) /*~Girdle~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11149) /*~Girdle of Bluntness~*/
 	WRITE_LONG 80 RESOLVE_STR_REF(@11150) /*~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
 
 STATISTICS:
 
 Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11151) /*~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11151) /*~Covered in intricate designs sewn into its leather with golden thread, at first glance this girdle seems more decorative than practical. Closer examination is rewarded by the realization that it functions as far more than it appears, bestowing magical protection from hammers, clubs, and other blunt weapons to its wearer.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +4 vs. crushing attacks
+
+Weight: 2~*/
+COPY ~%MOD_FOLDER%\generated\c\itm\xac101.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11152) /*~Belt~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11153) /*~Belt of the Cunning Rogue~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11150) /*~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+
+STATISTICS:
+
+Weight: 2~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@11154) /*~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
 
 The pouches attached to the belt contain a number of small tools, wires, picks, and blades that can be used to pick locks and disable traps. 
 
@@ -1399,10 +1412,10 @@ Equipped abilities:
 – Find Traps: +15%
 
 Weight: 2~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac101.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11152) /*~Bullet~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11153) /*~Bullet of Fire +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11154) /*~A bullet is simply a rounded, well-balanced stone.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac102.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11155) /*~Bullet~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11156) /*~Bullet of Fire +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11157) /*~A bullet is simply a rounded, well-balanced stone.
 
 STATISTICS:
 
@@ -1410,7 +1423,7 @@ Damage: 1d4+1 (missile)
 Launcher: Sling
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11155) /*~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11158) /*~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
 
 STATISTICS:
 
@@ -1419,15 +1432,15 @@ Damage type: Missile
 Launcher: Sling
 
 Weight: 0~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac102.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11156) /*~Ring~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11157) /*~Ring of Protection +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11158) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac103.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11159) /*~Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11160) /*~Ring of Protection +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11161) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11159) /*~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11162) /*~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
 
 STATISTICS:
 
@@ -1436,14 +1449,14 @@ Equipped abilities:
 – Saving Throws: +1
 
 Weight: 0~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac105.itm~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\itm\xac106.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11160) /*~Circlet~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11161) /*~Circlet of the Cynosure~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11162) /*~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac107.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11163) /*~Circlet~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11164) /*~Circlet of the Cynosure~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11165) /*~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
 
 Weight: 1~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11163) /*~Almost a century ago, paladin of Lathander Edythe Brightsworn commissioned this helm while preparing to face a powerful vampire. During her many years as a knight of the Morninglord, Lady Brightsworn had accumulated some wealth, most of which she spent in preparation for her quest. After tracking the vampire to Waterdeep's City of the Dead, she assembled a party of adventurers and led them into the monster's lair. Only one of the group returned. Bloodied and wild-eyed, clutching Lady Brightsworn's helm in his hands, he relayed a tale of the nightmarish warrens the group had found and the vampire who culled them from their group, slaughtering them one by one. Investigations into the City of the Dead uncovered some of the tunnels, but all had collapsed. Of the vampire, there was no trace.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11166) /*~Almost a century ago, paladin of Lathander Edythe Brightsworn commissioned this helm while preparing to face a powerful vampire. During her many years as a knight of the Morninglord, Lady Brightsworn had accumulated some wealth, most of which she spent in preparation for her quest. After tracking the vampire to Waterdeep's City of the Dead, she assembled a party of adventurers and led them into the monster's lair. Only one of the group returned. Bloodied and wild-eyed, clutching Lady Brightsworn's helm in his hands, he relayed a tale of the nightmarish warrens the group had found and the vampire who culled them from their group, slaughtering them one by one. Investigations into the City of the Dead uncovered some of the tunnels, but all had collapsed. Of the vampire, there was no trace.
 
 STATISTICS:
 
@@ -1452,10 +1465,10 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 1~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac107.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11164) /*~Chain Mail~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11165) /*~Mail of the Hallowed Hero +3~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11166) /*~A chain mail tunic fashioned from some sort of bright metal. It is always worn over a layer of padded fabric or soft leather to prevent chafing and lessen the impact of blows.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac108.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11167) /*~Chain Mail~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11168) /*~Mail of the Hallowed Hero +3~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11169) /*~A chain mail tunic fashioned from some sort of bright metal. It is always worn over a layer of padded fabric or soft leather to prevent chafing and lessen the impact of blows.
 
 STATISTICS:
 
@@ -1464,7 +1477,7 @@ Requires:
  6 Strength
 
 Weight: 40~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11167) /*~This armor was first worn by Olen Argent, Caelar's great-grandfather. Olen Argent's quest to hunt down a cult of Malar led him to the Misty Forest, where he encountered a group of elves living in the woods. At first, the elves were suspicious of Olen and tried to drive him out of the forest, but he spoke so eloquently of his quest that they agreed to help him. The elves tracked the cult to their hiding place within the forest, where Olen eradicated the cultists for their murderous deeds. Thankful to have the evil presence out of their homeland, the elves crafted a fine suit of mail for the paladin.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11170) /*~This armor was first worn by Olen Argent, Caelar's great-grandfather. Olen Argent's quest to hunt down a cult of Malar led him to the Misty Forest, where he encountered a group of elves living in the woods. At first, the elves were suspicious of Olen and tried to drive him out of the forest, but he spoke so eloquently of his quest that they agreed to help him. The elves tracked the cult to their hiding place within the forest, where Olen eradicated the cultists for their murderous deeds. Thankful to have the evil presence out of their homeland, the elves crafted a fine suit of mail for the paladin.
 
 STATISTICS:
 
@@ -1477,10 +1490,10 @@ Requires:
  6 Strength
 
 Weight: 7~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac108.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11168) /*~Medium Shield~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11169) /*~Solar Aegis +3~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11170) /*~A medium shield is carried in the same manner as a small shield. Unlike the small shield, however, its weight prevents the character from using <PRO_HISHER> shield hand for anything other than carrying the medium shield. Medium shields are usually made of metal, range from three to four feet in diameter, and can be of any shape, from round to square to a dragon's spread wings. A typical medieval shield resembles a triangle with one point facing downward.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac109.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11171) /*~Medium Shield~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11172) /*~Solar Aegis +3~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11173) /*~A medium shield is carried in the same manner as a small shield. Unlike the small shield, however, its weight prevents the character from using <PRO_HISHER> shield hand for anything other than carrying the medium shield. Medium shields are usually made of metal, range from three to four feet in diameter, and can be of any shape, from round to square to a dragon's spread wings. A typical medieval shield resembles a triangle with one point facing downward.
 
 STATISTICS:
 
@@ -1491,7 +1504,7 @@ Requires:
  12 Strength
 
 Weight: 8~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11171) /*~Engraved wings stretch across the face of this ornate shield. The silver shield, inlaid with pure sapphire, gleams with a high polish no matter how much damage it suffers or what rough environs it is carried through. Often crafted for paladins and members of holy militaristic orders, a solar aegis provides substantial protection for the pure of heart.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11174) /*~Engraved wings stretch across the face of this ornate shield. The silver shield, inlaid with pure sapphire, gleams with a high polish no matter how much damage it suffers or what rough environs it is carried through. Often crafted for paladins and members of holy militaristic orders, a solar aegis provides substantial protection for the pure of heart.
 
 STATISTICS:
 
@@ -1504,15 +1517,15 @@ Requires:
  12 Strength
 
 Weight: 3~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac109.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11172) /*~Girdle~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11173) /*~Golden Girdle~*/
+COPY ~%MOD_FOLDER%\generated\c\itm\xac110.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11148) /*~Girdle~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11175) /*~Golden Girdle~*/
 	WRITE_LONG 80 RESOLVE_STR_REF(@11150) /*~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
 
 STATISTICS:
 
 Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11174) /*~Though its battered condition speaks to its past use in combat, few of the cuts in this leather girdle were made by an enemy's blade. It would seem the magical symbols gouged into the hide have the practical effect of making the item's wearer less vulnerable to the swords of their foes.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11176) /*~Though its battered condition speaks to its past use in combat, few of the cuts in this leather girdle were made by an enemy's blade. It would seem the magical symbols gouged into the hide have the practical effect of making the item's wearer less vulnerable to the swords of their foes.
 
 STATISTICS:
 
@@ -1520,10 +1533,10 @@ Equipped abilities:
 – Armor Class: +3 vs. slashing attacks
 
 Weight: 2~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac110.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11175) /*~Long Sword~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11176) /*~Aster's Edge +3~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11177) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac111.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11177) /*~Long Sword~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11178) /*~Aster's Edge +3~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11179) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
 
 STATISTICS:
 
@@ -1535,7 +1548,7 @@ Requires:
  6 Strength
 
 Weight: 4~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11178) /*~Legend tells that a powerful angelic being gifted this blade to a member of the Order of the Aster long ago. Details of the legend have been lost over time, but many believe the sword was a reward for slaying a monstrous fiend, perhaps even a balor. Delicate etchings of asters decorate the blade, which glows with a silver-blue flame when drawn.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11180) /*~Legend tells that a powerful angelic being gifted this blade to a member of the Order of the Aster long ago. Details of the legend have been lost over time, but many believe the sword was a reward for slaying a monstrous fiend, perhaps even a balor. Delicate etchings of asters decorate the blade, which glows with a silver-blue flame when drawn.
 
 STATISTICS:
 
@@ -1552,17 +1565,17 @@ Requires:
  5 Strength
 
 Weight: 2~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac111.itm~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\itm\xac117.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac112.itm~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\itm\xac118.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11148) /*~Belt~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11179) /*~Belt of Antipode~*/
+COPY ~%MOD_FOLDER%\generated\c\itm\xac119.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11152) /*~Belt~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11181) /*~Belt of Antipode~*/
 	WRITE_LONG 80 RESOLVE_STR_REF(@11150) /*~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
 
 STATISTICS:
 
 Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11180) /*~Trimmed in the fur of a polar bear, this sturdy belt is tooled with images of blue moons and white ice floes. The wearer is immune to all cold-based effects but suffers double any fire damage.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11182) /*~Trimmed in the fur of a polar bear, this sturdy belt is tooled with images of blue moons and white ice floes. The wearer is immune to all cold-based effects but suffers double any fire damage.
 
 STATISTICS:
 
@@ -1571,16 +1584,16 @@ Equipped abilities:
 – Doubles all fire-based damage taken
 
 Weight: 2~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac119.itm~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\itm\xac120.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11181) /*~Bracers~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11182) /*~Bracers of Defense AC 5~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11183) /*~Bracers are thick bands of metal or leather that are strapped, belted, or tied to a character's forearm. Generally, the magic that is instilled in bracers is good only during combat, since most bracers help protect the wearer from injury or improve their chances to strike an opponent. Exceptions do exist, though such specialized items are rare at best.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac121.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11183) /*~Bracers~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11184) /*~Bracers of Defense AC 5~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11185) /*~Bracers are thick bands of metal or leather that are strapped, belted, or tied to a character's forearm. Generally, the magic that is instilled in bracers is good only during combat, since most bracers help protect the wearer from injury or improve their chances to strike an opponent. Exceptions do exist, though such specialized items are rare at best.
 
 STATISTICS:
 
 Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11184) /*~Standard bracers support the forearm, which often proves handy in combat situations. This magically altered pair is handier still, bestowing the wearer with protection comparable to a full suit of armor. Unlike armor, the bracers allow a full range of motion. This makes them highly prized by wizards and sorcerers, who cannot allow physical restriction to be imposed upon them if they're to successfully manipulate the Weave.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11186) /*~Standard bracers support the forearm, which often proves handy in combat situations. This magically altered pair is handier still, bestowing the wearer with protection comparable to a full suit of armor. Unlike armor, the bracers allow a full range of motion. This makes them highly prized by wizards and sorcerers, who cannot allow physical restriction to be imposed upon them if they're to successfully manipulate the Weave.
 
 STATISTICS:
 
@@ -1588,15 +1601,15 @@ Equipped abilities:
 – Armor Class: 5
 
 Weight: 2~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac121.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11156) /*~Ring~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11185) /*~Ring of Free Action~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11158) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac122.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11159) /*~Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11187) /*~Ring of Free Action~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11161) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11186) /*~Enemies have a hard time slowing this ring's wearer down. The runes etched in the silver band ward off spells designed to impede movement, granting its owner a freedom of mobility others affected by such magic are denied.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11188) /*~Enemies have a hard time slowing this ring's wearer down. The runes etched in the silver band ward off spells designed to impede movement, granting its owner a freedom of mobility others affected by such magic are denied.
 
 STATISTICS:
 
@@ -1604,10 +1617,10 @@ Equipped abilities:
 – The wearer is immune to everything, magical and otherwise, that affects mobility in any way. This includes Haste and Slow spells.
 
 Weight: 0~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac125.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11187) /*~Battle Axe~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11188) /*~Chill Axe +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11189) /*~The most common version of the battle axe is a stout pole about four feet in length with a single-edged, trumpet-shaped blade mounted on one end. Battle axes are also called broad axes.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac126.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11189) /*~Battle Axe~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11190) /*~Chill Axe +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11191) /*~The most common version of the battle axe is a stout pole about four feet in length with a single-edged, trumpet-shaped blade mounted on one end. Battle axes are also called broad axes.
 
 STATISTICS:
 
@@ -1619,7 +1632,7 @@ Requires:
  10 Strength
 
 Weight: 7~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11190) /*~This finely crafted axe bears the sigil of the Ice Dragon Berserker Lodge. Glowing white runes edge its cold silver blade, and a cloud of chill air trails behind the axe whenever it is swung. The most powerful rangers of the Ice Dragon Berserker Lodge carry these axes with them on their dejemmas, as protection from southern threats.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11192) /*~This finely crafted axe bears the sigil of the Ice Dragon Berserker Lodge. Glowing white runes edge its cold silver blade, and a cloud of chill air trails behind the axe whenever it is swung. The most powerful rangers of the Ice Dragon Berserker Lodge carry these axes with them on their dejemmas, as protection from southern threats.
 
 STATISTICS:
 
@@ -1639,24 +1652,24 @@ Requires:
  10 Strength
 
 Weight: 5~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac126.itm~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\itm\xac127.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11191) /*~Gloves of Gripping~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11191) /*~Gloves of Gripping~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11192) /*~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
-
-STATISTICS:
-
-Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11192) /*~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
-
-STATISTICS:
-
-Weight: 2~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac128.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11193) /*~Hide Armor~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11194) /*~Cornugon's Revenge +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11195) /*~Hide armor is made from the thick hide of a very large animal (an elephant for example) or from many layers of normal leather from common animals, like cows. Hide armor is far too bulky, inflexible and heavy to be used much in advanced human cultures. However, among the barbaric humanoid masses throughout the dark forests and misty jungles of the world, hide armor is common. Even though it does offer more protection than leather armor, one must get by the offensive odor and shoddy appearance in order to wear it effectively. Even though Thieves can wear this armor, it has a negative effect on their abilities.
+	WRITE_LONG 8 RESOLVE_STR_REF(@11193) /*~Gloves of Gripping~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11193) /*~Gloves of Gripping~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11194) /*~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
+
+STATISTICS:
+
+Weight: 2~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@11194) /*~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
+
+STATISTICS:
+
+Weight: 2~*/
+COPY ~%MOD_FOLDER%\generated\c\itm\xac129.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11195) /*~Hide Armor~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11196) /*~Cornugon's Revenge +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11197) /*~Hide armor is made from the thick hide of a very large animal (an elephant for example) or from many layers of normal leather from common animals, like cows. Hide armor is far too bulky, inflexible and heavy to be used much in advanced human cultures. However, among the barbaric humanoid masses throughout the dark forests and misty jungles of the world, hide armor is common. Even though it does offer more protection than leather armor, one must get by the offensive odor and shoddy appearance in order to wear it effectively. Even though Thieves can wear this armor, it has a negative effect on their abilities.
 
 STATISTICS:
 
@@ -1671,7 +1684,7 @@ Requires:
  6 Strength
 
 Weight: 40~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11196) /*~The devil Thel’blax was a scourge against the armies of the Abyss until he was assassinated by the servants of his own master, Dispater. With his final breath, Thel’blax cursed his own body to never lie still even in death. When his body was carried to the Iron Tower, Thel’blax’s horns and barbs continued to thrash about as though alive.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11198) /*~The devil Thel’blax was a scourge against the armies of the Abyss until he was assassinated by the servants of his own master, Dispater. With his final breath, Thel’blax cursed his own body to never lie still even in death. When his body was carried to the Iron Tower, Thel’blax’s horns and barbs continued to thrash about as though alive.
 
 The cursed cornugon’s body was dismantled by his peers, in the hopes that destroying him would end the curse; but the disparate pieces of Thel’blax’s body continued to prick and tear at any who approached. At last, Dispater ordered his ironsmiths to forge the pieces into a suit of armor, intending to use it as a means of torturing insubordinates. Inevitably, the armor fell into the hands of intrepid (if foolhardy) adventurers, who then brought the piece to Faerûn.
 
@@ -1694,38 +1707,38 @@ Requires:
  6 Strength
 
 Weight: 35~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac129.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11197) /*~A Key~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11198) /*~Troll Pen Key~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11199) /*~This is a standard key. Keys are used to open doors.
-
-STATISTICS:
-
-Weight: 1~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11200) /*~This heavy iron key has a handle shaped like a troll's face.
-
-STATISTICS:
-
-Weight: 1~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac130.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11199) /*~A Key~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11200) /*~Troll Pen Key~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11201) /*~This is a standard key. Keys are used to open doors.
+
+STATISTICS:
+
+Weight: 1~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@11202) /*~This heavy iron key has a handle shaped like a troll's face.
+
+STATISTICS:
+
+Weight: 1~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac131.itm~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\itm\xac133.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11201) /*~Crusader Uniform~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11201) /*~Crusader Uniform~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11202) /*~This colorful tunic displays the sigil of Caelar's crusaders.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac132.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac134.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11203) /*~Crusader Uniform~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11203) /*~Crusader Uniform~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11204) /*~This colorful tunic displays the sigil of Caelar's crusaders.
 
 STATISTICS:
 
 Weight: 10~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11202) /*~This colorful tunic displays the sigil of Caelar's crusaders.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11204) /*~This colorful tunic displays the sigil of Caelar's crusaders.
 
 STATISTICS:
 
 Weight: 10~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac136.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11203) /*~Plate Mail~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11204) /*~Bloody Bone Plate +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11205) /*~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac137.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11205) /*~Plate Mail~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11206) /*~Bloody Bone Plate +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11207) /*~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
 
 STATISTICS:
 
@@ -1734,7 +1747,7 @@ Requires:
  12 Strength
 
 Weight: 50~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11206) /*~The warrior who once wore this armor died at the hands of a friend she trusted. The mark of her betrayal remains in the bloodstains that have darkened to brown on the gleaming bone-white armor. The armor functions properly, though it makes the wearer unappealing to look at.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11208) /*~The warrior who once wore this armor died at the hands of a friend she trusted. The mark of her betrayal remains in the bloodstains that have darkened to brown on the gleaming bone-white armor. The armor functions properly, though it makes the wearer unappealing to look at.
 
 STATISTICS:
 
@@ -1747,15 +1760,15 @@ Requires:
  8 Strength
 
 Weight: 20~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac137.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11207) /*~Amulet~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11208) /*~Amulet of Abnormally Awesome Ankheg Summoning~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11209) /*~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac138.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11209) /*~Amulet~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11210) /*~Amulet of Abnormally Awesome Ankheg Summoning~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11211) /*~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
 
 STATISTICS:
 
 Weight: 1~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11210) /*~Crafted by the dark druid Ferrusk, this amulet resembles the curved pincers of an ankheg hanging from an iron chain. The pincers' polished green carapace catches the light, gleaming with an emerald sheen. Ferrusk created this amulet to summon a passel of ankhegs to fight at its wearer's command.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11212) /*~Crafted by the dark druid Ferrusk, this amulet resembles the curved pincers of an ankheg hanging from an iron chain. The pincers' polished green carapace catches the light, gleaming with an emerald sheen. Ferrusk created this amulet to summon a passel of ankhegs to fight at its wearer's command.
 
 STATISTICS:
 
@@ -1768,10 +1781,10 @@ Charge abilities:
   Duration: 2 turns
 
 Weight: 0~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac138.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11211) /*~Club~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11212) /*~Club +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11213) /*~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac139.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11213) /*~Club~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11214) /*~Club +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11215) /*~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
 
 STATISTICS:
 
@@ -1783,7 +1796,7 @@ Requires:
  5 Strength
 
 Weight: 3~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11214) /*~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11216) /*~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
 
 STATISTICS:
 
@@ -1796,27 +1809,27 @@ Requires:
  5 Strength
 
 Weight: 3~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac139.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11215) /*~Potion~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11216) /*~Slime Sickness Curative~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11217) /*~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
-
-STATISTICS:
-
-Weight: 1~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11218) /*~This bottle contains a special healing potion that counteracts fungal poison found in the caverns beneath Dragonspear Castle. One sip from the bottle is enough to cure the afflicted.
-
-STATISTICS:
-
-Weight: 1~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac140.itm~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\itm\xac148.itm~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\itm\xac151.itm~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\itm\xac155.itm~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\itm\xac161.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11219) /*~Helmet~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11219) /*~Helmet~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11220) /*~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+	WRITE_LONG 8 RESOLVE_STR_REF(@11217) /*~Potion~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11218) /*~Slime Sickness Curative~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11219) /*~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
+
+STATISTICS:
+
+Weight: 1~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@11220) /*~This bottle contains a special healing potion that counteracts fungal poison found in the caverns beneath Dragonspear Castle. One sip from the bottle is enough to cure the afflicted.
+
+STATISTICS:
+
+Weight: 1~*/
+COPY ~%MOD_FOLDER%\generated\c\itm\xac141.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac149.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac152.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac156.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac162.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11221) /*~Helmet~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11221) /*~Helmet~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11222) /*~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -1824,7 +1837,7 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11220) /*~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+	WRITE_LONG 84 RESOLVE_STR_REF(@11222) /*~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -1832,16 +1845,16 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac173.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11221) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11221) /*~Attack~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac174.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11221) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11221) /*~Attack~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac176.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11175) /*~Long Sword~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11175) /*~Long Sword~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11177) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+	WRITE_LONG 8 RESOLVE_STR_REF(@11223) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11223) /*~Attack~*/
+COPY ~%MOD_FOLDER%\generated\c\itm\xac175.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11223) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11223) /*~Attack~*/
+COPY ~%MOD_FOLDER%\generated\c\itm\xac177.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11177) /*~Long Sword~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11177) /*~Long Sword~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11179) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
 
 STATISTICS:
 
@@ -1853,7 +1866,7 @@ Requires:
  6 Strength
 
 Weight: 4~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11177) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11179) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
 
 STATISTICS:
 
@@ -1865,23 +1878,23 @@ Requires:
  6 Strength
 
 Weight: 4~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac232.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11222) /*~Dreon's Signet Ring~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11222) /*~Dreon's Signet Ring~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11223) /*~This heavy gold ring displays the seal of Caelar Argent, leader of the Shining Lady's crusade.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac233.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11224) /*~Dreon's Signet Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11224) /*~Dreon's Signet Ring~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11225) /*~This heavy gold ring displays the seal of Caelar Argent, leader of the Shining Lady's crusade.
 
 STATISTICS:
 
 Weight: 0~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac226.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11156) /*~Ring~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11224) /*~Ring of the Crusade~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11158) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac227.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11159) /*~Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11226) /*~Ring of the Crusade~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11161) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11225) /*~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11227) /*~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
 
 STATISTICS:
 
@@ -1890,10 +1903,10 @@ Equipped abilities:
 – Saving Throws: +1, +3 vs. demons and devils
 
 Weight: 0~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac218.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11175) /*~Long Sword~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11226) /*~Long Sword +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11177) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac219.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11177) /*~Long Sword~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11228) /*~Long Sword +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11179) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
 
 STATISTICS:
 
@@ -1905,7 +1918,7 @@ Requires:
  6 Strength
 
 Weight: 4~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11227) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11229) /*~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
 
 STATISTICS:
 
@@ -1918,10 +1931,10 @@ Requires:
  6 Strength
 
 Weight: 4~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac202.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11228) /*~Composite Longbow~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11229) /*~Corinth's Bow +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11230) /*~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
+COPY ~%MOD_FOLDER%\generated\c\itm\xac203.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11230) /*~Composite Longbow~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11231) /*~Corinth's Bow +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11232) /*~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
 
 STATISTICS:
 
@@ -1934,7 +1947,7 @@ Requires:
  18 Strength
 
 Weight: 10~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11231) /*~Though obviously well-used, someone has taken excellent care of this finely crafted bow. A small golden seal on one side appears to be a family crest.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11233) /*~Though obviously well-used, someone has taken excellent care of this finely crafted bow. A small golden seal on one side appears to be a family crest.
 
 STATISTICS:
 
@@ -1953,10 +1966,10 @@ Requires:
  18 Strength
 
 Weight: 8~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac197.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11219) /*~Helmet~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11219) /*~Helmet~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11232) /*~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+COPY ~%MOD_FOLDER%\generated\c\itm\xac198.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11221) /*~Helmet~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11221) /*~Helmet~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11234) /*~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
 
 STATISTICS:
 
@@ -1964,7 +1977,7 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11232) /*~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+	WRITE_LONG 84 RESOLVE_STR_REF(@11234) /*~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
 
 STATISTICS:
 
@@ -1972,7 +1985,10 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~*/
-COPY ~%MOD_FOLDER%\generated\c\itm\xac179.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\itm\xac180.itm~ ~override~
+
+//baf files
+//===================
 
 //bmp files
 //===================

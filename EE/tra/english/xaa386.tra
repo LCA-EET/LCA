@@ -1,10 +1,27 @@
-// DESTUS translation file
-@1   = ~Mmn, hello. You must be the city negotiators... Lemme see on the list here: Emissary... Emissary Tar? Right on time and a pleasure to meet you. My name is Destus Gurn, Assistant Chief Accountant for the Iron Throne's operations on the Sword Coast. Now, just a quick briefing on our negotiating procedures before you head on up the stairs: Thaldorn will be accompanied by a board of six Iron Throne advisors sent to us from abroad: Zhalimar Cloudwulfe, Gardush, Naaman, Diyab, Aasim, and Alai, all of them quite respectable men and eager to meet you. We also have a seventh member on that board today, a Mr. Lyle Espejo. He is there to ensure that things go smoothly in this time of transition. As for the agenda—~
-@2   = ~I'm afraid you've mistaken me for someone else. Please, just let me go about my business here.~
-@3   = ~Yes?~
-@4   = ~Please, Mr. Gurn, I have my own copy of the agenda and no desire to waste any more time here than necessary. If you would be so kind as to allow me to proceed upstairs to the negotiations, I would be very grateful.~
-@5   = ~You're not Emissary Tar? Then I'm afraid you have no business here and I would urge you to leave the way you came.~
-@6   = ~Investigating the Iron Throne
-It seems the Iron Throne is negotiating a treaty with the city's Grand Dukes. Is this simple treaty the key to ending all the unrest of the past season, or is it just another link in the long chain of motivations? Will money satisfy the Throne's greed, or is there something more behind it all? I have so many questions. While I feel close to finding answers, I somehow doubt that they will be quite as fulfilling as I hope...~
-@7   = ~On the agenda, as you well know, are a discussion of our current offer regarding iron prices and some notes regarding the output of the new mines we have acquired. Preceding all of that, however, Mr. Espejo would like to have a few words with you about the positive change and dynamism, economic and otherwise, that he has been witness to in his recent travels through the Sword Coast region. I do not doubt that you will find it interesting. But I have taken enough of your time. Please proceed upstairs so that the negotiations may begin.~
-@8   = ~Yes, true. Very well then, Emissary Tar. Proceed upstairs and don't allow me to keep you here a moment longer. Great things are afoot and I am very proud to have met you on behalf of the Iron Throne and I hope, for everyone's sake, that the... negotiations... proceed swiftly, yes, thank you.~
+// RFRIEN translation file
+@1   = ~I heard there's some sort o' trouble in Nashkel. Somethin' sinister has been moving about in the Nashkel mines. Nobody seems to know for sure. Too busy coping with the bandit raids and such.~
+@2   = ~Troubles in the Region: Bandit Problems
+
+There are rumors of something disrupting operations in the Nashkel mines, contributing to the iron shortage.~
+@3   = ~Did you hear about the assassinations at Candlekeep? Seems that the leaders of the Iron Throne went and got themselves killed. Those same people who helped the folks down in Nashkel did the deed. They were Amnian agents, I hear. Anyhow, one of the dead guys' son is now the leader, Sarevok is his name I think.~
+@4   = ~Rising Tensions with Amn
+Sarevok has assumed command of the Iron Throne. I am still accused of the former leaders' murders, though it is thought I was an agent of Amn. Someone is intent upon pushing the region into war.~
+@5   = ~Hear about the heroes of Nashkel? Some good folk—mercenaries, it's said—came down and solved all that town's problems. I hope they weren't helping just because of the money.~
+@6   = ~Tales of my actions are spreading, though I'm not sure I like the term "mercenaries."~
+@7   = ~I hear relations haven't been going too good 'tween the two powers in this region. The Grand Dukes supposedly accused Amn of all the raiding that's been happening along the roads. Not a good thing to go accusin' the most powerful country in the western world.~
+@8   = ~Rising Tensions with Amn
+Tension seems to be building between Baldur's Gate and Amn.~
+@9   = ~I hear some units of the Flaming Fist have been sent to Beregost. Seems like the Grand Dukes are getting real paranoid about Amn. Lots of people think that Amn might be behind the iron shortage. Could be a prelude to war.~
+@10  = ~Rising Tensions with Amn
+Tensions are growing in the region due to the supposed threat from Amn, though the evidence I've seen is somewhat confused.~
+@11  = ~Iron's so scarce these days, you'd think it was as valuable as gold. Not a good thing, not a good thing at all. Ain't going to be long before no one can afford to be well equipped. What will the guards do then?~
+@12  = ~Troubles in the Region: Iron Crisis
+
+Iron continues to be scarce, driving prices of tools and weapons ever higher.~
+@13  = ~It's been really weird these past few months. Iron's been going bad, falling apart almost if it were rustin' for no particular reason. From what I hear, most o' this "bad iron" comes from the mines at Nashkel. Can't trust those Amnian miners; probably some scheme they've come up with.~
+@14  = ~Troubles in the Region: Iron Crisis
+
+Iron from the Nashkel mines is nearly useless when smelted. People suspect that the denizens of Nashkel are doing it intentionally, as part of some grandiose plot in the service of Amn.~
+@15  = ~Lots of trouble down in Nashkel. Monsters or some such are said to be killing the workers at the Nashkel mines.~
+@16  = ~You hear of the Midsummer fair down in Nashkel? I hear it's actually doing quite well, despite all the trouble that town's had recently.~
+@17  = ~There is a festival east of Nashkel. Many people are gathering there.~

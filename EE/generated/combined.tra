@@ -1389,14 +1389,24 @@ Area of Effect: 8-ft. radius
 Saving Throw: None
 
 This spell causes total, impenetrable darkness. Neither normal nor magical light works in the area of effect. All vision (including infravision) is severely limited; anyone hostile caught in the area of effect is for all practical purposes blinded as per the 1st-level wizard spell. Creatures that leave the area covered by darkness will have their vision restored after 1 round.~
-@11148 = ~Belt~
-@11149 = ~Belt of the Cunning Rogue~
+@11148 = ~Girdle~
+@11149 = ~Girdle of Bluntness~
 @11150 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
 
 STATISTICS:
 
 Weight: 2~
-@11151 = ~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
+@11151 = ~Covered in intricate designs sewn into its leather with golden thread, at first glance this girdle seems more decorative than practical. Closer examination is rewarded by the realization that it functions as far more than it appears, bestowing magical protection from hammers, clubs, and other blunt weapons to its wearer.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +4 vs. crushing attacks
+
+Weight: 2~
+@11152 = ~Belt~
+@11153 = ~Belt of the Cunning Rogue~
+@11154 = ~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
 
 The pouches attached to the belt contain a number of small tools, wires, picks, and blades that can be used to pick locks and disable traps. 
 
@@ -1407,9 +1417,9 @@ Equipped abilities:
 – Find Traps: +15%
 
 Weight: 2~
-@11152 = ~Bullet~
-@11153 = ~Bullet of Fire +1~
-@11154 = ~A bullet is simply a rounded, well-balanced stone.
+@11155 = ~Bullet~
+@11156 = ~Bullet of Fire +1~
+@11157 = ~A bullet is simply a rounded, well-balanced stone.
 
 STATISTICS:
 
@@ -1417,7 +1427,7 @@ Damage: 1d4+1 (missile)
 Launcher: Sling
 
 Weight: 0~
-@11155 = ~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
+@11158 = ~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
 
 STATISTICS:
 
@@ -1426,14 +1436,14 @@ Damage type: Missile
 Launcher: Sling
 
 Weight: 0~
-@11156 = ~Ring~
-@11157 = ~Ring of Protection +1~
-@11158 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+@11159 = ~Ring~
+@11160 = ~Ring of Protection +1~
+@11161 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~
-@11159 = ~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
+@11162 = ~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
 
 STATISTICS:
 
@@ -1442,12 +1452,12 @@ Equipped abilities:
 – Saving Throws: +1
 
 Weight: 0~
-@11160 = ~Circlet~
-@11161 = ~Circlet of the Cynosure~
-@11162 = ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
+@11163 = ~Circlet~
+@11164 = ~Circlet of the Cynosure~
+@11165 = ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
 
 Weight: 1~
-@11163 = ~Almost a century ago, paladin of Lathander Edythe Brightsworn commissioned this helm while preparing to face a powerful vampire. During her many years as a knight of the Morninglord, Lady Brightsworn had accumulated some wealth, most of which she spent in preparation for her quest. After tracking the vampire to Waterdeep's City of the Dead, she assembled a party of adventurers and led them into the monster's lair. Only one of the group returned. Bloodied and wild-eyed, clutching Lady Brightsworn's helm in his hands, he relayed a tale of the nightmarish warrens the group had found and the vampire who culled them from their group, slaughtering them one by one. Investigations into the City of the Dead uncovered some of the tunnels, but all had collapsed. Of the vampire, there was no trace.
+@11166 = ~Almost a century ago, paladin of Lathander Edythe Brightsworn commissioned this helm while preparing to face a powerful vampire. During her many years as a knight of the Morninglord, Lady Brightsworn had accumulated some wealth, most of which she spent in preparation for her quest. After tracking the vampire to Waterdeep's City of the Dead, she assembled a party of adventurers and led them into the monster's lair. Only one of the group returned. Bloodied and wild-eyed, clutching Lady Brightsworn's helm in his hands, he relayed a tale of the nightmarish warrens the group had found and the vampire who culled them from their group, slaughtering them one by one. Investigations into the City of the Dead uncovered some of the tunnels, but all had collapsed. Of the vampire, there was no trace.
 
 STATISTICS:
 
@@ -1456,9 +1466,9 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 1~
-@11164 = ~Chain Mail~
-@11165 = ~Mail of the Hallowed Hero +3~
-@11166 = ~A chain mail tunic fashioned from some sort of bright metal. It is always worn over a layer of padded fabric or soft leather to prevent chafing and lessen the impact of blows.
+@11167 = ~Chain Mail~
+@11168 = ~Mail of the Hallowed Hero +3~
+@11169 = ~A chain mail tunic fashioned from some sort of bright metal. It is always worn over a layer of padded fabric or soft leather to prevent chafing and lessen the impact of blows.
 
 STATISTICS:
 
@@ -1467,7 +1477,7 @@ Requires:
  6 Strength
 
 Weight: 40~
-@11167 = ~This armor was first worn by Olen Argent, Caelar's great-grandfather. Olen Argent's quest to hunt down a cult of Malar led him to the Misty Forest, where he encountered a group of elves living in the woods. At first, the elves were suspicious of Olen and tried to drive him out of the forest, but he spoke so eloquently of his quest that they agreed to help him. The elves tracked the cult to their hiding place within the forest, where Olen eradicated the cultists for their murderous deeds. Thankful to have the evil presence out of their homeland, the elves crafted a fine suit of mail for the paladin.
+@11170 = ~This armor was first worn by Olen Argent, Caelar's great-grandfather. Olen Argent's quest to hunt down a cult of Malar led him to the Misty Forest, where he encountered a group of elves living in the woods. At first, the elves were suspicious of Olen and tried to drive him out of the forest, but he spoke so eloquently of his quest that they agreed to help him. The elves tracked the cult to their hiding place within the forest, where Olen eradicated the cultists for their murderous deeds. Thankful to have the evil presence out of their homeland, the elves crafted a fine suit of mail for the paladin.
 
 STATISTICS:
 
@@ -1480,9 +1490,9 @@ Requires:
  6 Strength
 
 Weight: 7~
-@11168 = ~Medium Shield~
-@11169 = ~Solar Aegis +3~
-@11170 = ~A medium shield is carried in the same manner as a small shield. Unlike the small shield, however, its weight prevents the character from using <PRO_HISHER> shield hand for anything other than carrying the medium shield. Medium shields are usually made of metal, range from three to four feet in diameter, and can be of any shape, from round to square to a dragon's spread wings. A typical medieval shield resembles a triangle with one point facing downward.
+@11171 = ~Medium Shield~
+@11172 = ~Solar Aegis +3~
+@11173 = ~A medium shield is carried in the same manner as a small shield. Unlike the small shield, however, its weight prevents the character from using <PRO_HISHER> shield hand for anything other than carrying the medium shield. Medium shields are usually made of metal, range from three to four feet in diameter, and can be of any shape, from round to square to a dragon's spread wings. A typical medieval shield resembles a triangle with one point facing downward.
 
 STATISTICS:
 
@@ -1493,7 +1503,7 @@ Requires:
  12 Strength
 
 Weight: 8~
-@11171 = ~Engraved wings stretch across the face of this ornate shield. The silver shield, inlaid with pure sapphire, gleams with a high polish no matter how much damage it suffers or what rough environs it is carried through. Often crafted for paladins and members of holy militaristic orders, a solar aegis provides substantial protection for the pure of heart.
+@11174 = ~Engraved wings stretch across the face of this ornate shield. The silver shield, inlaid with pure sapphire, gleams with a high polish no matter how much damage it suffers or what rough environs it is carried through. Often crafted for paladins and members of holy militaristic orders, a solar aegis provides substantial protection for the pure of heart.
 
 STATISTICS:
 
@@ -1506,9 +1516,8 @@ Requires:
  12 Strength
 
 Weight: 3~
-@11172 = ~Girdle~
-@11173 = ~Golden Girdle~
-@11174 = ~Though its battered condition speaks to its past use in combat, few of the cuts in this leather girdle were made by an enemy's blade. It would seem the magical symbols gouged into the hide have the practical effect of making the item's wearer less vulnerable to the swords of their foes.
+@11175 = ~Golden Girdle~
+@11176 = ~Though its battered condition speaks to its past use in combat, few of the cuts in this leather girdle were made by an enemy's blade. It would seem the magical symbols gouged into the hide have the practical effect of making the item's wearer less vulnerable to the swords of their foes.
 
 STATISTICS:
 
@@ -1516,9 +1525,9 @@ Equipped abilities:
 – Armor Class: +3 vs. slashing attacks
 
 Weight: 2~
-@11175 = ~Long Sword~
-@11176 = ~Aster's Edge +3~
-@11177 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+@11177 = ~Long Sword~
+@11178 = ~Aster's Edge +3~
+@11179 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
 
 STATISTICS:
 
@@ -1530,7 +1539,7 @@ Requires:
  6 Strength
 
 Weight: 4~
-@11178 = ~Legend tells that a powerful angelic being gifted this blade to a member of the Order of the Aster long ago. Details of the legend have been lost over time, but many believe the sword was a reward for slaying a monstrous fiend, perhaps even a balor. Delicate etchings of asters decorate the blade, which glows with a silver-blue flame when drawn.
+@11180 = ~Legend tells that a powerful angelic being gifted this blade to a member of the Order of the Aster long ago. Details of the legend have been lost over time, but many believe the sword was a reward for slaying a monstrous fiend, perhaps even a balor. Delicate etchings of asters decorate the blade, which glows with a silver-blue flame when drawn.
 
 STATISTICS:
 
@@ -1547,8 +1556,8 @@ Requires:
  5 Strength
 
 Weight: 2~
-@11179 = ~Belt of Antipode~
-@11180 = ~Trimmed in the fur of a polar bear, this sturdy belt is tooled with images of blue moons and white ice floes. The wearer is immune to all cold-based effects but suffers double any fire damage.
+@11181 = ~Belt of Antipode~
+@11182 = ~Trimmed in the fur of a polar bear, this sturdy belt is tooled with images of blue moons and white ice floes. The wearer is immune to all cold-based effects but suffers double any fire damage.
 
 STATISTICS:
 
@@ -1557,14 +1566,14 @@ Equipped abilities:
 – Doubles all fire-based damage taken
 
 Weight: 2~
-@11181 = ~Bracers~
-@11182 = ~Bracers of Defense AC 5~
-@11183 = ~Bracers are thick bands of metal or leather that are strapped, belted, or tied to a character's forearm. Generally, the magic that is instilled in bracers is good only during combat, since most bracers help protect the wearer from injury or improve their chances to strike an opponent. Exceptions do exist, though such specialized items are rare at best.
+@11183 = ~Bracers~
+@11184 = ~Bracers of Defense AC 5~
+@11185 = ~Bracers are thick bands of metal or leather that are strapped, belted, or tied to a character's forearm. Generally, the magic that is instilled in bracers is good only during combat, since most bracers help protect the wearer from injury or improve their chances to strike an opponent. Exceptions do exist, though such specialized items are rare at best.
 
 STATISTICS:
 
 Weight: 2~
-@11184 = ~Standard bracers support the forearm, which often proves handy in combat situations. This magically altered pair is handier still, bestowing the wearer with protection comparable to a full suit of armor. Unlike armor, the bracers allow a full range of motion. This makes them highly prized by wizards and sorcerers, who cannot allow physical restriction to be imposed upon them if they're to successfully manipulate the Weave.
+@11186 = ~Standard bracers support the forearm, which often proves handy in combat situations. This magically altered pair is handier still, bestowing the wearer with protection comparable to a full suit of armor. Unlike armor, the bracers allow a full range of motion. This makes them highly prized by wizards and sorcerers, who cannot allow physical restriction to be imposed upon them if they're to successfully manipulate the Weave.
 
 STATISTICS:
 
@@ -1572,8 +1581,8 @@ Equipped abilities:
 – Armor Class: 5
 
 Weight: 2~
-@11185 = ~Ring of Free Action~
-@11186 = ~Enemies have a hard time slowing this ring's wearer down. The runes etched in the silver band ward off spells designed to impede movement, granting its owner a freedom of mobility others affected by such magic are denied.
+@11187 = ~Ring of Free Action~
+@11188 = ~Enemies have a hard time slowing this ring's wearer down. The runes etched in the silver band ward off spells designed to impede movement, granting its owner a freedom of mobility others affected by such magic are denied.
 
 STATISTICS:
 
@@ -1581,9 +1590,9 @@ Equipped abilities:
 – The wearer is immune to everything, magical and otherwise, that affects mobility in any way. This includes Haste and Slow spells.
 
 Weight: 0~
-@11187 = ~Battle Axe~
-@11188 = ~Chill Axe +2~
-@11189 = ~The most common version of the battle axe is a stout pole about four feet in length with a single-edged, trumpet-shaped blade mounted on one end. Battle axes are also called broad axes.
+@11189 = ~Battle Axe~
+@11190 = ~Chill Axe +2~
+@11191 = ~The most common version of the battle axe is a stout pole about four feet in length with a single-edged, trumpet-shaped blade mounted on one end. Battle axes are also called broad axes.
 
 STATISTICS:
 
@@ -1595,7 +1604,7 @@ Requires:
  10 Strength
 
 Weight: 7~
-@11190 = ~This finely crafted axe bears the sigil of the Ice Dragon Berserker Lodge. Glowing white runes edge its cold silver blade, and a cloud of chill air trails behind the axe whenever it is swung. The most powerful rangers of the Ice Dragon Berserker Lodge carry these axes with them on their dejemmas, as protection from southern threats.
+@11192 = ~This finely crafted axe bears the sigil of the Ice Dragon Berserker Lodge. Glowing white runes edge its cold silver blade, and a cloud of chill air trails behind the axe whenever it is swung. The most powerful rangers of the Ice Dragon Berserker Lodge carry these axes with them on their dejemmas, as protection from southern threats.
 
 STATISTICS:
 
@@ -1615,15 +1624,15 @@ Requires:
  10 Strength
 
 Weight: 5~
-@11191 = ~Gloves of Gripping~
-@11192 = ~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
+@11193 = ~Gloves of Gripping~
+@11194 = ~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
 
 STATISTICS:
 
 Weight: 2~
-@11193 = ~Hide Armor~
-@11194 = ~Cornugon's Revenge +2~
-@11195 = ~Hide armor is made from the thick hide of a very large animal (an elephant for example) or from many layers of normal leather from common animals, like cows. Hide armor is far too bulky, inflexible and heavy to be used much in advanced human cultures. However, among the barbaric humanoid masses throughout the dark forests and misty jungles of the world, hide armor is common. Even though it does offer more protection than leather armor, one must get by the offensive odor and shoddy appearance in order to wear it effectively. Even though Thieves can wear this armor, it has a negative effect on their abilities.
+@11195 = ~Hide Armor~
+@11196 = ~Cornugon's Revenge +2~
+@11197 = ~Hide armor is made from the thick hide of a very large animal (an elephant for example) or from many layers of normal leather from common animals, like cows. Hide armor is far too bulky, inflexible and heavy to be used much in advanced human cultures. However, among the barbaric humanoid masses throughout the dark forests and misty jungles of the world, hide armor is common. Even though it does offer more protection than leather armor, one must get by the offensive odor and shoddy appearance in order to wear it effectively. Even though Thieves can wear this armor, it has a negative effect on their abilities.
 
 STATISTICS:
 
@@ -1638,7 +1647,7 @@ Requires:
  6 Strength
 
 Weight: 40~
-@11196 = ~The devil Thel’blax was a scourge against the armies of the Abyss until he was assassinated by the servants of his own master, Dispater. With his final breath, Thel’blax cursed his own body to never lie still even in death. When his body was carried to the Iron Tower, Thel’blax’s horns and barbs continued to thrash about as though alive.
+@11198 = ~The devil Thel’blax was a scourge against the armies of the Abyss until he was assassinated by the servants of his own master, Dispater. With his final breath, Thel’blax cursed his own body to never lie still even in death. When his body was carried to the Iron Tower, Thel’blax’s horns and barbs continued to thrash about as though alive.
 
 The cursed cornugon’s body was dismantled by his peers, in the hopes that destroying him would end the curse; but the disparate pieces of Thel’blax’s body continued to prick and tear at any who approached. At last, Dispater ordered his ironsmiths to forge the pieces into a suit of armor, intending to use it as a means of torturing insubordinates. Inevitably, the armor fell into the hands of intrepid (if foolhardy) adventurers, who then brought the piece to Faerûn.
 
@@ -1661,27 +1670,27 @@ Requires:
  6 Strength
 
 Weight: 35~
-@11197 = ~A Key~
-@11198 = ~Troll Pen Key~
-@11199 = ~This is a standard key. Keys are used to open doors.
+@11199 = ~A Key~
+@11200 = ~Troll Pen Key~
+@11201 = ~This is a standard key. Keys are used to open doors.
 
 STATISTICS:
 
 Weight: 1~
-@11200 = ~This heavy iron key has a handle shaped like a troll's face.
+@11202 = ~This heavy iron key has a handle shaped like a troll's face.
 
 STATISTICS:
 
 Weight: 1~
-@11201 = ~Crusader Uniform~
-@11202 = ~This colorful tunic displays the sigil of Caelar's crusaders.
+@11203 = ~Crusader Uniform~
+@11204 = ~This colorful tunic displays the sigil of Caelar's crusaders.
 
 STATISTICS:
 
 Weight: 10~
-@11203 = ~Plate Mail~
-@11204 = ~Bloody Bone Plate +2~
-@11205 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+@11205 = ~Plate Mail~
+@11206 = ~Bloody Bone Plate +2~
+@11207 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
 
 STATISTICS:
 
@@ -1690,7 +1699,7 @@ Requires:
  12 Strength
 
 Weight: 50~
-@11206 = ~The warrior who once wore this armor died at the hands of a friend she trusted. The mark of her betrayal remains in the bloodstains that have darkened to brown on the gleaming bone-white armor. The armor functions properly, though it makes the wearer unappealing to look at.
+@11208 = ~The warrior who once wore this armor died at the hands of a friend she trusted. The mark of her betrayal remains in the bloodstains that have darkened to brown on the gleaming bone-white armor. The armor functions properly, though it makes the wearer unappealing to look at.
 
 STATISTICS:
 
@@ -1703,14 +1712,14 @@ Requires:
  8 Strength
 
 Weight: 20~
-@11207 = ~Amulet~
-@11208 = ~Amulet of Abnormally Awesome Ankheg Summoning~
-@11209 = ~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
+@11209 = ~Amulet~
+@11210 = ~Amulet of Abnormally Awesome Ankheg Summoning~
+@11211 = ~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
 
 STATISTICS:
 
 Weight: 1~
-@11210 = ~Crafted by the dark druid Ferrusk, this amulet resembles the curved pincers of an ankheg hanging from an iron chain. The pincers' polished green carapace catches the light, gleaming with an emerald sheen. Ferrusk created this amulet to summon a passel of ankhegs to fight at its wearer's command.
+@11212 = ~Crafted by the dark druid Ferrusk, this amulet resembles the curved pincers of an ankheg hanging from an iron chain. The pincers' polished green carapace catches the light, gleaming with an emerald sheen. Ferrusk created this amulet to summon a passel of ankhegs to fight at its wearer's command.
 
 STATISTICS:
 
@@ -1723,9 +1732,9 @@ Charge abilities:
   Duration: 2 turns
 
 Weight: 0~
-@11211 = ~Club~
-@11212 = ~Club +1~
-@11213 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
+@11213 = ~Club~
+@11214 = ~Club +1~
+@11215 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
 
 STATISTICS:
 
@@ -1737,7 +1746,7 @@ Requires:
  5 Strength
 
 Weight: 3~
-@11214 = ~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
+@11216 = ~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
 
 STATISTICS:
 
@@ -1750,20 +1759,20 @@ Requires:
  5 Strength
 
 Weight: 3~
-@11215 = ~Potion~
-@11216 = ~Slime Sickness Curative~
-@11217 = ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
+@11217 = ~Potion~
+@11218 = ~Slime Sickness Curative~
+@11219 = ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
 
 STATISTICS:
 
 Weight: 1~
-@11218 = ~This bottle contains a special healing potion that counteracts fungal poison found in the caverns beneath Dragonspear Castle. One sip from the bottle is enough to cure the afflicted.
+@11220 = ~This bottle contains a special healing potion that counteracts fungal poison found in the caverns beneath Dragonspear Castle. One sip from the bottle is enough to cure the afflicted.
 
 STATISTICS:
 
 Weight: 1~
-@11219 = ~Helmet~
-@11220 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+@11221 = ~Helmet~
+@11222 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -1771,15 +1780,15 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@11221 = ~Attack~
-@11222 = ~Dreon's Signet Ring~
-@11223 = ~This heavy gold ring displays the seal of Caelar Argent, leader of the Shining Lady's crusade.
+@11223 = ~Attack~
+@11224 = ~Dreon's Signet Ring~
+@11225 = ~This heavy gold ring displays the seal of Caelar Argent, leader of the Shining Lady's crusade.
 
 STATISTICS:
 
 Weight: 0~
-@11224 = ~Ring of the Crusade~
-@11225 = ~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
+@11226 = ~Ring of the Crusade~
+@11227 = ~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
 
 STATISTICS:
 
@@ -1788,8 +1797,8 @@ Equipped abilities:
 – Saving Throws: +1, +3 vs. demons and devils
 
 Weight: 0~
-@11226 = ~Long Sword +1~
-@11227 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
+@11228 = ~Long Sword +1~
+@11229 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
 
 STATISTICS:
 
@@ -1802,9 +1811,9 @@ Requires:
  6 Strength
 
 Weight: 4~
-@11228 = ~Composite Longbow~
-@11229 = ~Corinth's Bow +2~
-@11230 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
+@11230 = ~Composite Longbow~
+@11231 = ~Corinth's Bow +2~
+@11232 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
 
 STATISTICS:
 
@@ -1817,7 +1826,7 @@ Requires:
  18 Strength
 
 Weight: 10~
-@11231 = ~Though obviously well-used, someone has taken excellent care of this finely crafted bow. A small golden seal on one side appears to be a family crest.
+@11233 = ~Though obviously well-used, someone has taken excellent care of this finely crafted bow. A small golden seal on one side appears to be a family crest.
 
 STATISTICS:
 
@@ -1836,7 +1845,7 @@ Requires:
  18 Strength
 
 Weight: 8~
-@11232 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+@11234 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
 
 STATISTICS:
 
@@ -1844,114 +1853,114 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@11233 = ~Belt~
-@11234 = ~ ~[xaa11801]
-@11235 = ~ ~[xaa11802]
-@11236 = ~Duke Eltan~
-@11237 = ~Entar Silvershield~
-@11238 = ~ Mon Dieu!~
-@11239 = ~~
-@11240 = ~Liia Jannath~
-@11241 = ~Bence Duncan~
-@11242 = ~Punish the lawbreakers!~[xac10239]
-@11243 = ~We're more than mercenaries.~[xac10240]
-@11244 = ~War is almost here.~[xac10241]
-@11245 = ~Flaming Fist Battle Wizard~
-@11246 = ~Corwin~
-@11247 = ~Rohma needs a mother!~[xad10016]
-@11248 = ~A team like this can't be beat.~[xad10017]
-@11249 = ~This isn't working. We need to do better.~[xad10018]
-@11250 = ~Watch it. You're straying farther off the path than I'm ready to go.~[xad10019]
-@11251 = ~I can't support this effort, not anymore. Farewell.~[xad10020]
-@11252 = ~I'm used to being in charge. I'll lead us to victory.~[xad10021]
-@11253 = ~An army can't march forever. We've got to rest.~[xad10022]
-@11254 = ~We've work to do. Let's get moving.~[xad10023]
-@11255 = ~To battle!~[xad10024]
-@11256 = ~Let's see how long you last against me.~[xad10025]
-@11257 = ~Fight if you must, but you're not winning this.~[xad10026]
-@11258 = ~I'm looking forward to this.~[xad10027]
-@11259 = ~Time to end you!~[xad10028]
-@11260 = ~Ow!~[xad10029]
-@11261 = ~No... Rohma...~[xad10030]
-@11262 = ~Medic!~[xad10031]
-@11263 = ~The forest is so serene. I always catch myself watching for bandits, though.~[xad10032]
-@11264 = ~Ah, noise and crowds. Feels like home.~[xad10033]
-@11265 = ~Watch your step. Nothing good comes out of a place like this.~[xad10034]
-@11266 = ~Light and warmth. I'm glad for both.~[xad10035]
-@11267 = ~In the city, you rarely see the stars. They're beautiful tonight.~[xad10036]
-@11268 = ~Yes?~[xad10037]
-@11269 = ~Your orders?~[xad10038]
-@11270 = ~Hm?~[xad10039]
-@11271 = ~What?~[xad10040]
-@11272 = ~Go ahead.~[xad10041]
-@11273 = ~I'm listening.~[xad10042]
-@11274 = ~Right.~[xad10043]
-@11275 = ~I understand.~[xad10044]
-@11276 = ~Yes.~[xad10045]
-@11277 = ~What are your orders, hero?~[xad10046]
-@11278 = ~I'm a ranger. I want to RANGE.~[xad10047]
-@11279 = ~Do you think love can bloom even on a battlefield?~[xad10048]
-@11280 = ~Sometimes I dream I'm a chaotic good elf.~[xad10049]
-@11281 = ~I won't forget you. Your sacrifice won't have been in vain.~[xad10050]
-@11282 = ~We're better off without him.~[xad10051]
-@11283 = ~Hah! My aim is true.~[xad10054]
-@11284 = ~I'll recover.~[xad10055]
-@11285 = ~This isn't working! We have to try something else.~[xad10056]
-@11286 = ~I can't carry that too. I dropped it.~[xad10057]
-@11287 = ~I'll just take that...~[xad10058]
-@11288 = ~Shhh. I'm hidden.~[xad10059]
-@11289 = ~My spell! I lost it.~[xad10060]
-@11290 = ~Careful—I've put a trap down.~[xad10061]
-@11291 = ~When asked about her past, Schael Corwin reluctantly admits she ran wild as a child on the streets of Baldur's Gate. Her rebelliousness soon got her into trouble with the Flaming Fist. 
+@11235 = ~Belt~
+@11236 = ~ ~[xaa11801]
+@11237 = ~ ~[xaa11802]
+@11238 = ~Duke Eltan~
+@11239 = ~Entar Silvershield~
+@11240 = ~ Mon Dieu!~
+@11241 = ~~
+@11242 = ~Liia Jannath~
+@11243 = ~Bence Duncan~
+@11244 = ~Punish the lawbreakers!~[xac10239]
+@11245 = ~We're more than mercenaries.~[xac10240]
+@11246 = ~War is almost here.~[xac10241]
+@11247 = ~Flaming Fist Battle Wizard~
+@11248 = ~Corwin~
+@11249 = ~Rohma needs a mother!~[xad10016]
+@11250 = ~A team like this can't be beat.~[xad10017]
+@11251 = ~This isn't working. We need to do better.~[xad10018]
+@11252 = ~Watch it. You're straying farther off the path than I'm ready to go.~[xad10019]
+@11253 = ~I can't support this effort, not anymore. Farewell.~[xad10020]
+@11254 = ~I'm used to being in charge. I'll lead us to victory.~[xad10021]
+@11255 = ~An army can't march forever. We've got to rest.~[xad10022]
+@11256 = ~We've work to do. Let's get moving.~[xad10023]
+@11257 = ~To battle!~[xad10024]
+@11258 = ~Let's see how long you last against me.~[xad10025]
+@11259 = ~Fight if you must, but you're not winning this.~[xad10026]
+@11260 = ~I'm looking forward to this.~[xad10027]
+@11261 = ~Time to end you!~[xad10028]
+@11262 = ~Ow!~[xad10029]
+@11263 = ~No... Rohma...~[xad10030]
+@11264 = ~Medic!~[xad10031]
+@11265 = ~The forest is so serene. I always catch myself watching for bandits, though.~[xad10032]
+@11266 = ~Ah, noise and crowds. Feels like home.~[xad10033]
+@11267 = ~Watch your step. Nothing good comes out of a place like this.~[xad10034]
+@11268 = ~Light and warmth. I'm glad for both.~[xad10035]
+@11269 = ~In the city, you rarely see the stars. They're beautiful tonight.~[xad10036]
+@11270 = ~Yes?~[xad10037]
+@11271 = ~Your orders?~[xad10038]
+@11272 = ~Hm?~[xad10039]
+@11273 = ~What?~[xad10040]
+@11274 = ~Go ahead.~[xad10041]
+@11275 = ~I'm listening.~[xad10042]
+@11276 = ~Right.~[xad10043]
+@11277 = ~I understand.~[xad10044]
+@11278 = ~Yes.~[xad10045]
+@11279 = ~What are your orders, hero?~[xad10046]
+@11280 = ~I'm a ranger. I want to RANGE.~[xad10047]
+@11281 = ~Do you think love can bloom even on a battlefield?~[xad10048]
+@11282 = ~Sometimes I dream I'm a chaotic good elf.~[xad10049]
+@11283 = ~I won't forget you. Your sacrifice won't have been in vain.~[xad10050]
+@11284 = ~We're better off without him.~[xad10051]
+@11285 = ~Hah! My aim is true.~[xad10054]
+@11286 = ~I'll recover.~[xad10055]
+@11287 = ~This isn't working! We have to try something else.~[xad10056]
+@11288 = ~I can't carry that too. I dropped it.~[xad10057]
+@11289 = ~I'll just take that...~[xad10058]
+@11290 = ~Shhh. I'm hidden.~[xad10059]
+@11291 = ~My spell! I lost it.~[xad10060]
+@11292 = ~Careful—I've put a trap down.~[xad10061]
+@11293 = ~When asked about her past, Schael Corwin reluctantly admits she ran wild as a child on the streets of Baldur's Gate. Her rebelliousness soon got her into trouble with the Flaming Fist. 
 
 Left alone in a cell with nothing but her thoughts for company, she began to reflect on the decisions she'd made in the past and see where they would inevitably take her. When she was eventually freed, she decided to change the direction of her life. She enlisted in the Flaming Fist and rose quickly through the ranks.
 
 You sense there is little Schael Corwin would not do for her family or for the Flaming Fist.~
-@11292 = ~Officer Fritz~
-@11293 = ~I'll test your mettle with cold steel!~[xac10382]
-@11294 = ~~[xac10383]
-@11295 = ~~[xac10384]
-@11296 = ~Declare yourself!~[xac10385]
-@11297 = ~Do not disturb my duties.~[xac10386]
-@11298 = ~At ease, citizen.~[xac10387]
-@11299 = ~I trust you have no hostile intentions.~[xac10388]
-@11300 = ~Officer Jenks~
-@11301 = ~Flaming Fist Enforcer~
-@11302 = ~ I serve the Flaming Fist!~[xaa10039]
-@11303 = ~ I AM the law!~[xaa10040]
-@11304 = ~~[xaa10041]
-@11305 = ~~[xaa10042]
-@11306 = ~ Every crime must be punished!~[xaa10044]
-@11307 = ~ You there! Give me fifty pushups!~[xaa10045]
-@11308 = ~Sleeping Man~
-@11309 = ~ ZZZZzzzzzzz...~[xaa11168]
-@11310 = ~ ZZZZzzzzz... *snort*~[xaa11167]
-@11311 = ~Sleeping Woman~
-@11312 = ~Commoner~
-@11313 = ~Show them our steel!~[xac10245]
-@11314 = ~Order is what matters.~[xac10246]
-@11315 = ~For Baldur's Gate.~[xac10247]
-@11316 = ~Thug~
-@11317 = ~I'll wipe your filthy lineage right out of the realms!~
-@11318 = ~You deserve no less than death... and no more.~
-@11319 = ~What can it be now?~
-@11320 = ~Let us speak and be done with this!~
-@11321 = ~Imoen lies still on the bed. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~
-@11322 = ~Imoen lies still on the floor. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~
-@11323 = ~Below you, the streets of Baldur's Gate are so packed it's difficult to make out individual figures.~
-@11324 = ~Even with the window closed, the dull roar of the crowded street outside is hard to ignore.~
-@11325 = ~This comfortable bed offers luxury you never found in Candlekeep.~
-@11326 = ~<CHARNAME>'s Equipment~
-@11327 = ~<CHARNAME>'s chamber~
-@11328 = ~Imoen's Equipment~
-@11329 = ~The second floor is securely locked and guarded. No one is permitted upstairs. ~
-@11330 = ~There's no escape this way. The sewers are the only way out.~
-@11331 = ~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~
-@11332 = ~Tiax's Cell~
-@11333 = ~Exit~
-@11334 = ~Trap the Soul~
-@11335 = ~Helmet~
-@11336 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+@11294 = ~Officer Fritz~
+@11295 = ~I'll test your mettle with cold steel!~[xac10382]
+@11296 = ~~[xac10383]
+@11297 = ~~[xac10384]
+@11298 = ~Declare yourself!~[xac10385]
+@11299 = ~Do not disturb my duties.~[xac10386]
+@11300 = ~At ease, citizen.~[xac10387]
+@11301 = ~I trust you have no hostile intentions.~[xac10388]
+@11302 = ~Officer Jenks~
+@11303 = ~Flaming Fist Enforcer~
+@11304 = ~ I serve the Flaming Fist!~[xaa10039]
+@11305 = ~ I AM the law!~[xaa10040]
+@11306 = ~~[xaa10041]
+@11307 = ~~[xaa10042]
+@11308 = ~ Every crime must be punished!~[xaa10044]
+@11309 = ~ You there! Give me fifty pushups!~[xaa10045]
+@11310 = ~Sleeping Man~
+@11311 = ~ ZZZZzzzzzzz...~[xaa11168]
+@11312 = ~ ZZZZzzzzz... *snort*~[xaa11167]
+@11313 = ~Sleeping Woman~
+@11314 = ~Commoner~
+@11315 = ~Show them our steel!~[xac10245]
+@11316 = ~Order is what matters.~[xac10246]
+@11317 = ~For Baldur's Gate.~[xac10247]
+@11318 = ~Thug~
+@11319 = ~I'll wipe your filthy lineage right out of the realms!~
+@11320 = ~You deserve no less than death... and no more.~
+@11321 = ~What can it be now?~
+@11322 = ~Let us speak and be done with this!~
+@11323 = ~Imoen lies still on the bed. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~
+@11324 = ~Imoen lies still on the floor. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~
+@11325 = ~Below you, the streets of Baldur's Gate are so packed it's difficult to make out individual figures.~
+@11326 = ~Even with the window closed, the dull roar of the crowded street outside is hard to ignore.~
+@11327 = ~This comfortable bed offers luxury you never found in Candlekeep.~
+@11328 = ~<CHARNAME>'s Equipment~
+@11329 = ~<CHARNAME>'s chamber~
+@11330 = ~Imoen's Equipment~
+@11331 = ~The second floor is securely locked and guarded. No one is permitted upstairs. ~
+@11332 = ~There's no escape this way. The sewers are the only way out.~
+@11333 = ~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~
+@11334 = ~Tiax's Cell~
+@11335 = ~Exit~
+@11336 = ~Trap the Soul~
+@11337 = ~Helmet~
+@11338 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -1959,8 +1968,8 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@11337 = ~Corwin's Armor +2~
-@11338 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
+@11339 = ~Corwin's Armor +2~
+@11340 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
 
 STATISTICS:
 
@@ -1973,9 +1982,9 @@ Requires:
  5 Strength
 
 Weight: 7~
-@11339 = ~Composite Longbow~
-@11340 = ~Corwin's Bow +1~
-@11341 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
+@11341 = ~Composite Longbow~
+@11342 = ~Corwin's Bow +1~
+@11343 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
 
 STATISTICS:
 
@@ -1988,7 +1997,7 @@ Requires:
  18 Strength
 
 Weight: 10~
-@11342 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+@11344 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
 
 Equipped abilities: 
 – Dexterity: +1
@@ -2007,56 +2016,56 @@ Requires:
  18 Strength
 
 Weight: 9~
-@11343 = ~Exit~
-@11344 = ~Angelo~
-@11345 = ~ So, these are the infamous murderers, finally brought to justice.~
-@11346 = ~ Dreadfully sorry, but I'm afraid... I'm gonna have ta kill ya.~[xaa12064]
-@11347 = ~~[xaf10005]
-@11348 = ~~[xaf10006]
-@11349 = ~ Justice may be blind, but I'm not.~[xaf10007]
-@11350 = ~Aun Argent~
-@11351 = ~If this is how it ends, then so be it!~[xag10000]
-@11352 = ~Ugh!~[xag10001]
-@11353 = ~~[xag10002]
-@11354 = ~I will do what I can to help you.~[xag10003]
-@11355 = ~Thrix~
-@11356 = ~Hellcat~
-@11357 = ~Erinyes~
-@11358 = ~Abishai~
-@11359 = ~Imp~
-@11360 = ~Crusader Elite~
-@11361 = ~Lemure~
-@11362 = ~Black Abishai~
-@11363 = ~Green Abishai~
-@11364 = ~Red Abishai~
-@11365 = ~Hamatula~
-@11366 = ~Bone Fiend~
-@11367 = ~For the Shining Lady!~[xac10278]
-@11368 = ~You need somethin'?~[xac10279]
-@11369 = ~We serve the light.~[xac10280]
-@11370 = ~Die in her name!~[xac10292]
-@11371 = ~Somethin' you need?~[xac10182]
-@11372 = ~As the light wills.~[xac10183]
-@11373 = ~~[xaa11126]
-@11374 = ~~[xaa11854]
-@11375 = ~ The Fair Folk rarely have time for small talk.~[xac10289]
-@11376 = ~ Troubled times are upon us.~[xac10290]
-@11377 = ~ Soon, we shall all be together upon Evermeet.~[xac10291]
-@11378 = ~Stairs Down~
-@11379 = ~Massive Door~
-@11380 = ~In the distance, you can make out the legions of Avernus marching in formation.~
-@11381 = ~Through the haze that envelops Avernus you can see a blasted landscape dotted with lakes of bubbling magma amongst towering ruins of iron and basalt.~
-@11382 = ~The utter desolation of the First Hell is an awe-inspiring, if terrifying, sight. Red skies periodically rain down fireballs, battering the landscape.~
-@11383 = ~Horrifying creatures are chained up by the thousands far below. Enormous devils rake them with whips, shaking with laughter after each strike.~
-@11384 = ~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~
-@11385 = ~Cage~
-@11386 = ~This sturdy, well-crafted door resists all efforts to open it.~
-@11387 = ~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~
-@11388 = ~This door's dwarven craftspeople made certain none but the one who held its key would ever be able to open it. Peering through a crack, the light that leaks inward reveals nothing of interest or value.~
-@11389 = ~An unearthly light glows from deep within the chasm. Voices echo throughout the gaping crevasse, pressing against the walls, seeking escape.~
-@11390 = ~Exit~
-@11391 = ~Ritual Chamber~
-@11392 = ~Portal to the Fugue Plane~
-@11393 = ~Teleport Without Error~
-@11394 = ~Impale~
-@11395 = ~Attack~
+@11345 = ~Exit~
+@11346 = ~Angelo~
+@11347 = ~ So, these are the infamous murderers, finally brought to justice.~
+@11348 = ~ Dreadfully sorry, but I'm afraid... I'm gonna have ta kill ya.~[xaa12064]
+@11349 = ~~[xaf10005]
+@11350 = ~~[xaf10006]
+@11351 = ~ Justice may be blind, but I'm not.~[xaf10007]
+@11352 = ~Aun Argent~
+@11353 = ~If this is how it ends, then so be it!~[xag10000]
+@11354 = ~Ugh!~[xag10001]
+@11355 = ~~[xag10002]
+@11356 = ~I will do what I can to help you.~[xag10003]
+@11357 = ~Thrix~
+@11358 = ~Hellcat~
+@11359 = ~Erinyes~
+@11360 = ~Abishai~
+@11361 = ~Imp~
+@11362 = ~Crusader Elite~
+@11363 = ~Lemure~
+@11364 = ~Black Abishai~
+@11365 = ~Green Abishai~
+@11366 = ~Red Abishai~
+@11367 = ~Hamatula~
+@11368 = ~Bone Fiend~
+@11369 = ~For the Shining Lady!~[xac10278]
+@11370 = ~You need somethin'?~[xac10279]
+@11371 = ~We serve the light.~[xac10280]
+@11372 = ~Die in her name!~[xac10292]
+@11373 = ~Somethin' you need?~[xac10182]
+@11374 = ~As the light wills.~[xac10183]
+@11375 = ~~[xaa11126]
+@11376 = ~~[xaa11854]
+@11377 = ~ The Fair Folk rarely have time for small talk.~[xac10289]
+@11378 = ~ Troubled times are upon us.~[xac10290]
+@11379 = ~ Soon, we shall all be together upon Evermeet.~[xac10291]
+@11380 = ~Stairs Down~
+@11381 = ~Massive Door~
+@11382 = ~In the distance, you can make out the legions of Avernus marching in formation.~
+@11383 = ~Through the haze that envelops Avernus you can see a blasted landscape dotted with lakes of bubbling magma amongst towering ruins of iron and basalt.~
+@11384 = ~The utter desolation of the First Hell is an awe-inspiring, if terrifying, sight. Red skies periodically rain down fireballs, battering the landscape.~
+@11385 = ~Horrifying creatures are chained up by the thousands far below. Enormous devils rake them with whips, shaking with laughter after each strike.~
+@11386 = ~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~
+@11387 = ~Cage~
+@11388 = ~This sturdy, well-crafted door resists all efforts to open it.~
+@11389 = ~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~
+@11390 = ~This door's dwarven craftspeople made certain none but the one who held its key would ever be able to open it. Peering through a crack, the light that leaks inward reveals nothing of interest or value.~
+@11391 = ~An unearthly light glows from deep within the chasm. Voices echo throughout the gaping crevasse, pressing against the walls, seeking escape.~
+@11392 = ~Exit~
+@11393 = ~Ritual Chamber~
+@11394 = ~Portal to the Fugue Plane~
+@11395 = ~Teleport Without Error~
+@11396 = ~Impale~
+@11397 = ~Attack~
