@@ -49,12 +49,12 @@
 @10048 = ~Hall of Wonders~
 @10049 = ~High House of Wonders~
 @10050 = ~Ragefast's Home~
-@10051 = ~Entar Silvershield's Estate~
-@10052 = ~Helm and Cloak~
-@10053 = ~Quinn's House~
-@10054 = ~Degrodel's House~
-@10055 = ~These stairs are closed due to poor workmanship.~
-@10056 = ~The cell door appears to have been tampered with.~
+@10051 = ~These stairs are closed due to poor workmanship.~
+@10052 = ~The cell door appears to have been tampered with.~
+@10053 = ~Entar Silvershield's Estate~
+@10054 = ~Helm and Cloak~
+@10055 = ~Quinn's House~
+@10056 = ~Degrodel's House~
 @10057 = ~Gondsman Leonardo's Helical Aerial Wonder~
 @10058 = ~Steam Dragon~
 @10059 = ~Pump of Gond~
@@ -87,614 +87,649 @@
 @10086 = ~ becawp bwa ca~[xaa10046]
 @10087 = ~ There ain't nobody here but us chickens.~
 @10088 = ~~[xaa10047]
-@10089 = ~Commoner~
-@10090 = ~ 'Ey, friend! Good to meet a fine sod such as yerself.~[xaa10094]
+@10089 = ~Semaj~
+@10090 = ~ Tremble before the might of my sorcery!~[xaa10094]
 @10091 = ~~[xaa10095]
 @10092 = ~~[xaa10096]
-@10093 = ~ Bugger off! It'll be a blade fer your backside, elsewise!~[xaa10098]
-@10094 = ~~[xaa10099]
-@10095 = ~~[xaa10100]
-@10096 = ~~[xaa10101]
-@10097 = ~~[xaa10102]
-@10098 = ~~[xaa10103]
-@10099 = ~ Hullo.~[xaa10104]
-@10100 = ~~[xaa10105]
-@10101 = ~~[xaa10106]
-@10102 = ~ Ye're a long-tongued lout, ain't ya?~[xaa10108]
-@10103 = ~ Salutations.~[xaa10112]
-@10104 = ~~[xaa10113]
-@10105 = ~~[xaa10114]
-@10106 = ~ Get away from me!~
-@10107 = ~ Hullo.~[xaa10116]
-@10108 = ~ Yes?~[xaa10120]
-@10109 = ~~[xaa10120]
-@10110 = ~ My hubby don't want me talkin' to no strangers.~[xaa10125]
-@10111 = ~ What do you need?~[xaa10129]
-@10112 = ~ 'Ello, pal.~[xaa10133]
-@10113 = ~ Me young 'uns are waitin'.~[xaa10137]
-@10114 = ~ Yeah?~[xaa10141]
-@10115 = ~ Hello there.~[xaa10145]
-@10116 = ~~[xaa10145]
-@10117 = ~Courtesan~
-@10118 = ~ I'm a fine-lookin' strumpet, ain't I?~[xaa10150]
-@10119 = ~~[xaa10151]
-@10120 = ~~[xaa10152]
-@10121 = ~ You'll get nothing from me!~
-@10122 = ~~[xaa10150]
-@10123 = ~ Well, if ya wants to go strappin' with this nab, you'll first have to give up the socket money.~[xaa10155]
-@10124 = ~ Are ya interested in some thrills, darlin'?~[xaa10159]
-@10125 = ~Sleeping Woman~
-@10126 = ~~[xaa10163]
-@10127 = ~~[xaa10164]
-@10128 = ~ ZZZzzzzzz...~[xaa10165]
-@10129 = ~ ZZZzzzzz... *sniffle*~[xaa10166]
-@10130 = ~ ZZZzzzzz...~[xaa10165]
-@10131 = ~~[xaa10165]
-@10132 = ~ Yes?~[xaa10099]
-@10133 = ~~[xaa10173]
-@10134 = ~~[xaa10177]
-@10135 = ~ Oh, ye're a handsome bunch, ain't ya?~[xaa10178]
-@10136 = ~ Hmm?~[xaa10100]
-@10137 = ~ What's your tale?~[xaa10186]
-@10138 = ~ Can I assist you?~[xaa10190]
-@10139 = ~~[xaa10198]
-@10140 = ~ Hi, friend.~[xaa10199]
-@10141 = ~Boy~
-@10142 = ~ You funny lookin'.~[xaa10203]
-@10143 = ~~[xaa10204]
-@10144 = ~~[xaa10205]
-@10145 = ~ Leave me alone! You're mean!~
-@10146 = ~ Loser, loser, loser!~[xaa10207]
-@10147 = ~ You need somethin', stranger?~[xaa10101]
-@10148 = ~Beggar~
-@10149 = ~ Alms, alms for the poor?~[xaa10215]
-@10150 = ~~[xaa10216]
-@10151 = ~~[xaa10217]
-@10152 = ~I have nothing of value... p-please, let me be.~[xaa10218]
-@10153 = ~*cough* *cough* *retch* My lung! It's flopping all over the dirt! Damn.~[xaa10220]
-@10154 = ~Eh, miserable ragamuffins.~[xaa10221]
-@10155 = ~ You've made no friends here! Move along!~
-@10156 = ~ Wife's been gettin' prickly on me arse.~[xaa10173]
-@10157 = ~Mick Feelie~
-@10158 = ~Nobleman~
-@10159 = ~ Hello! Nice to make the acquaintance of such a cultured personage.~[xaa10251]
-@10160 = ~~[xaa10252]
-@10161 = ~ ~[xaa10253]
-@10162 = ~ Approach me not! I'll ruffle you up, I will!~
-@10163 = ~~[xaa10264]
-@10164 = ~ You wanna fight me? Come on, you wanna fight?~[xaa10397]
-@10165 = ~Girl~
-@10166 = ~ I want my mommy.~[xaa10401]
-@10167 = ~~[xaa10402]
-@10168 = ~~[xaa10403]
-@10169 = ~Lothander~
-@10170 = ~ Excuse me, please let me speak before you attack.~[xaa10409]
-@10171 = ~ My life is in shambles.~[xaa10410]
-@10172 = ~~[xaa10411]
-@10173 = ~~[xaa10412]
-@10174 = ~ Hmm... Bother 'n bother! Never a calm spot, never a break.~[xaa10414]
-@10175 = ~~[xaa10415]
-@10176 = ~~[xaa10416]
-@10177 = ~Brielbara~
-@10178 = ~ Wait! I—I must speak with thee.~[xaa10418]
-@10179 = ~~[xaa10419]
-@10180 = ~~[xaa10420]
-@10181 = ~ My poor, dear Namara. I hope she fares well.~[xaa10421]
-@10182 = ~ I'll not speak a word after what you did!~
-@10183 = ~ I must thank you again for the service you have done.~
-@10184 = ~ How are you?~[xaa10462]
-@10185 = ~ I lost my dolly.~[xaa10466]
-@10186 = ~~[xaa10263]
-@10187 = ~ *sob*~[xaa10471]
-@10188 = ~ Ooh, you smell!~[xaa10475]
-@10189 = ~Kerrachus~
-@10190 = ~ Glad to meet you, friend.~[xaa10479]
-@10191 = ~Kesheel~
-@10192 = ~ 'Ey! Get outta me way, ya crummy lager-head.~[xaa10486]
-@10193 = ~ I have things to do—one NOT being sittin' on me duffer talkin' to you.~[xaa10488]
-@10194 = ~Noblewoman~
-@10195 = ~~[xaa10584]
-@10196 = ~~[xaa10585]
-@10197 = ~ I'll not have you near me!~
-@10198 = ~ Don't give me any lip, peasant. Do you know who I am?~[xaa10591]
-@10199 = ~ Touch me not! You are... unclean.~[xaa10595]
-@10200 = ~~[xaa10596]
-@10201 = ~~[xaa10597]
-@10202 = ~ A man shouldn't speak to his better unless spoken to first.~[xaa10599]
-@10203 = ~~[xaa10600]
-@10204 = ~~[xaa10601]
-@10205 = ~ What?~[xaa10603]
-@10206 = ~~[xaa10603]
-@10207 = ~ No time to chitchat.~[xaa10608]
-@10208 = ~ A pleasure to meet a socially acceptable person such as yourself.~[xaa10612]
-@10209 = ~ You need a new tailor; your clothes are absolutely dreadful!~[xaa10616]
-@10210 = ~ Mother said not to talk with strangers.~[xaa10620]
-@10211 = ~Rogue~
-@10212 = ~ Sorry, friend, but you've got a date down under.~[xaa10673]
-@10213 = ~~[xaa10674]
-@10214 = ~~[xaa10675]
-@10215 = ~ Yeah, mate?~[xaa10177]
-@10216 = ~Bartender~
-@10217 = ~ You want some whiskey?~[xaa10683]
-@10218 = ~~[xaa10684]
-@10219 = ~~[xaa10685]
-@10220 = ~ I got some cheap beer for ya.~[xaa10687]
-@10221 = ~ Urgh... I gotta stop dippin' into me own ale.~[xaa10688]
-@10222 = ~ I got me some nice lookin' waitresses, don't I? Eh he hehehe...~[xaa10689]
-@10223 = ~Ordulinian~
-@10224 = ~Halbazzer Drin~
-@10225 = ~Maltz~
-@10226 = ~ Welcome to my humble establishment.~[xaa10707]
-@10227 = ~~[xaa10708]
-@10228 = ~~[xaa10709]
-@10229 = ~Arkion~
-@10230 = ~ Speak up, speak up!~[xaa10103]
-@10231 = ~ Get out of my sight! I'll do nothing for you!~
-@10232 = ~Serving Wench~
-@10233 = ~ Please, seat yourselves wherever you wish.~[xaa10721]
-@10234 = ~~[xaa10722]
-@10235 = ~~[xaa10723]
-@10236 = ~ Get away, you nobbish plonker!~
-@10237 = ~ Ye drop another careless hand near me and I swears you'll lose it! Order up at the bar.~
-@10238 = ~Brevlik~
-@10239 = ~ HELLO! SHHH... um... I mean... hello. *chuckle*~[xaa10725]
-@10240 = ~~[xaa10726]
-@10241 = ~~[xaa10727]
-@10242 = ~ All that glitters is not gold, but all that's gold most certainly glitters.~[xaa10728]
-@10243 = ~ Talking to you ain't worth the risk, no, <SIRMAAM>. Go away... please?~
-@10244 = ~Cauternus~
-@10245 = ~ Whatcha want?~[xaa10729]
-@10246 = ~Cook~
-@10247 = ~ Hey, clear out. I don't need you meatheads roaming through my kitchen! *sigh* I wanna work somewhere where beer and blood aren't seasonings.~
-@10248 = ~Silence~
-@10249 = ~ Be ye friend or be ye dead?~[xaa10744]
-@10250 = ~~[xaa10745]
-@10251 = ~~[xaa10746]
-@10252 = ~ I'll speak when I wills it. Not 'cause ye're proddin'.~[xaa10747]
-@10253 = ~Lucky Aello~
-@10254 = ~ My prices are the best south of Waterdeep.~[xaa10754]
-@10255 = ~Rat~
-@10256 = ~~[xaa10758]
-@10257 = ~Squeak~[xaa10759]
-@10258 = ~Squeak~[xaa10760]
-@10259 = ~~[xaa10759]
-@10260 = ~~[xaa10760]
-@10261 = ~Jacil~
-@10262 = ~ You got somethin' comin', pal. Just you wait.~[xaa10809]
-@10263 = ~~[xaa10811]
-@10264 = ~~[xaa10812]
-@10265 = ~Storekeep~
-@10266 = ~ Eh, business has been poor, what with the iron shortage and all.~[xaa10817]
-@10267 = ~ The customers are always right.~[xaa10818]
-@10268 = ~ Out! And never darken my door again!~
-@10269 = ~ It's you again. By the claws of Umberlee, I can't take these interruptions much longer. Get out of my kitchen, and stay out.~
-@10270 = ~Lantanara~
-@10271 = ~Lusselyn~
-@10272 = ~ Ha ha ha ha ha! Haa ha ha! *burp* ...eh, sorry—'scuse me!~[xaa10198]
-@10273 = ~ W-whoa... Why're the streets so wobbly?~[xaa10829]
-@10274 = ~~[xaa10830]
-@10275 = ~~[xaa10831]
-@10276 = ~ Blaaarrrghghgh... *cough* Corn? When did I eats corn...?~[xaa10833]
-@10277 = ~~[xaa10834]
-@10278 = ~Vivienne~
-@10279 = ~ 'Allo, mate! You look a friendly face.~[xaa10846]
-@10280 = ~Larze~
-@10281 = ~~[xaa10850]
-@10282 = ~ Me will crush you, crush you to goo!~[xaa10851]
-@10283 = ~ ~[xaa10852]
-@10284 = ~ ~[xaa10853]
-@10285 = ~ ~[xaa10855]
-@10286 = ~~[xaa10856]
-@10287 = ~Bork~
-@10288 = ~ Something you require?~[xaa10870]
-@10289 = ~~[xaa10870]
-@10290 = ~Rodnim~
-@10291 = ~ I've no interest in speaking to the likes of you.~[xaa10919]
-@10292 = ~ I needs some ale. *burp* Eh...~[xaa10834]
-@10293 = ~Guard~
-@10294 = ~ Heya.~[xaa10981]
-@10295 = ~ You're not welcome here! You'll pay with your life!~
-@10296 = ~Merchant~
-@10297 = ~ All my stuff is authentic. Really, it is.~[xaa10985]
-@10298 = ~~[xaa10986]
-@10299 = ~~[xaa10987]
-@10300 = ~Triadore~
-@10301 = ~ Leave me! You've outstayed your welcome!~
-@10302 = ~ Don't go pokin' folk about the table, young 'un. You're liable to catch a nasty backhand.~
-@10303 = ~~[xaa10486]
-@10304 = ~~[xaa10098]
-@10305 = ~ Pleasure to meet you.~[xaa11006]
-@10306 = ~Priestess of Umberlee~
-@10307 = ~ The storm shall take those who are unfaithful.~[xaa11010]
-@10308 = ~~[xaa11011]
-@10309 = ~~[xaa11012]
-@10310 = ~ You've outstayed your welcome!~
-@10311 = ~ The Bitch Queen brooks no insolence.~[xaa11014]
-@10312 = ~ Your life means nothing to me.~[xaa11015]
-@10313 = ~Harbor Master~
-@10314 = ~ Nasty times are comin', I reckon.~[xaa11019]
-@10315 = ~~[xaa11020]
-@10316 = ~~[xaa11021]
-@10317 = ~ You're rather outlandish folk to be wanderin' 'round here.~[xaa11022]
-@10318 = ~ You've made no friends here! Get off my docks!~
-@10319 = ~ I'm really busy now, so I'm gonna have to ask ya ta come back some time later.~
-@10320 = ~ You guys shouldn't be hanging 'round here. Ya might bring attention to Duke Eltan.~
-@10321 = ~Sailor Al~
-@10322 = ~Sailor Dan~
-@10323 = ~Sailor Finch~
-@10324 = ~~[xaa10833]
-@10325 = ~Sailor Joss~
-@10326 = ~ *hic* I think I h-had too much to drink.~[xaa11037]
-@10327 = ~~[xaa11037]
-@10328 = ~Sailor Ned~
-@10329 = ~Sailor Newf~
-@10330 = ~~[xaa10829]
-@10331 = ~Cordyr~
-@10332 = ~~[xaa11060]
-@10333 = ~~[xaa11061]
-@10334 = ~Nivek~
-@10335 = ~ Raaagh! Help!~[xaa11064]
-@10336 = ~ Don't touch me! I might catch something.~[xaa11073]
-@10337 = ~ Not to be rude, but I'd rather you left immediately.~
-@10338 = ~ You visit again? It is not unwelcome, even though Carl and Jurgen may make it seem so. Do not overstay your welcome though, as I am unaccustomed to long visits.~
-@10339 = ~ Hope ye're havin' a great evening. I sure am.~
-@10340 = ~Lobar~
-@10341 = ~~[xaa11082]
-@10342 = ~ I trust everything is satisfactory? Please don't hesitate to leave if it is not.~
-@10343 = ~ Hello again. A pleasure having you here, to be sure.~
-@10344 = ~Gamesman~
-@10345 = ~ Ye're a lucky fella, aren't ya?~[xaa11085]
-@10346 = ~~[xaa11086]
-@10347 = ~~[xaa11087]
-@10348 = ~~[xaa11085]
-@10349 = ~Sewer Cleaner~
-@10350 = ~~[xaa11102]
-@10351 = ~~[xaa11103]
-@10352 = ~ I hobe the monsterbs downd here get youb!~
-@10353 = ~ ~[xaa11105]
-@10354 = ~ ~[xaa11106]
-@10355 = ~ ~[xaa11107]
-@10356 = ~ ~[xaa11108]
-@10357 = ~Seagull~
-@10358 = ~~[xaa10281]
-@10359 = ~Sleeping Man~
-@10360 = ~ ZZZZzzzzz... *snort*~[xaa11123]
-@10361 = ~ ZZZZzzzzzz...~[xaa11124]
-@10362 = ~ ZZZZzzzzzzz...~[xaa11124]
-@10363 = ~~[xaa11124]
-@10364 = ~Dun~
-@10365 = ~ I love money! Yes, I do.~[xaa11127]
-@10366 = ~ I've got the best prices this side of Cormyr.~[xaa11130]
-@10367 = ~Varci Roaringhorn~
-@10368 = ~ P-please, might I have your ear a moment?~[xaa11132]
-@10369 = ~~[xaa11133]
-@10370 = ~~[xaa11134]
-@10371 = ~ Please help. 'Tis a wasted life at stake.~[xaa11135]
-@10372 = ~Rabid Chicken~
-@10373 = ~Felonius Gist~
-@10374 = ~ Away with you, beggar.~[xaa11160]
-@10375 = ~Statue~
-@10376 = ~ Leave us alone, will you? Nothin' for you here.~[xaa11167]
-@10377 = ~ What?! Oh, oh, sorry for yelling.~[xaa11168]
-@10378 = ~~[xaa11169]
-@10379 = ~~[xaa11170]
-@10380 = ~~[xaa11177]
-@10381 = ~~[xaa11178]
-@10382 = ~Diviner~
-@10383 = ~ Knowledge, used wisely, is the most powerful of tools.~[xaa11184]
-@10384 = ~~[xaa11185]
-@10385 = ~~[xaa11186]
-@10386 = ~ Come on! Be a man. See if fortune smiles on ya!~[xaa11193]
-@10387 = ~~[xaa11193]
-@10388 = ~ Come in poor, walk out rich!~[xaa11198]
-@10389 = ~~[xaa11198]
-@10390 = ~ Take your chance with Lady Tymora!~[xaa11203]
-@10391 = ~Nadine~
-@10392 = ~ Dallillia guides the way of all those that seek the path home.~[xaa11207]
-@10393 = ~~[xaa11208]
-@10394 = ~~[xaa11209]
-@10395 = ~ May you know the happiness of a warm hearth and home.~[xaa11211]
-@10396 = ~Husam~
-@10397 = ~ Greetingshh, fellow rogues. *hic*~[xaa11220]
-@10398 = ~ There are too many. Retreat!~[xaa11221]
-@10399 = ~ The Shadow Thieves send their regards.~[xaa11222]
-@10400 = ~ ~[xaa11223]
-@10401 = ~ ~[xaa11224]
-@10402 = ~~[xaa11226]
-@10403 = ~ You know, one day, I'lls have me mys revengsh. Ha ha ha ha ha! *hic* *burp*~[xaa11227]
-@10404 = ~Resar~
-@10405 = ~ Apologies, but you must die!~[xaa11228]
-@10406 = ~ I listen not to you! Your death by my hand!~[xaa11229]
-@10407 = ~~[xaa11230]
-@10408 = ~~[xaa11231]
-@10409 = ~Narlen Darkwalk~
-@10410 = ~ So I's at daggers drawing with him, an' he drops the swag an' runs!~[xaa11233]
-@10411 = ~ Draw your daggers and spells, and let's have at her!~[xaa11234]
-@10412 = ~~[xaa11235]
-@10413 = ~~[xaa11236]
-@10414 = ~ Swiped the duchess's knickers once, if ya know what I mean.~[xaa11237]
-@10415 = ~Alatos "Ravenscar" Thuibuld~
-@10416 = ~ Welcome, my little friends! Please, relax, and keep your weapons at your sides.~[xaa11239]
-@10417 = ~~[xaa11241]
-@10418 = ~~[xaa11242]
-@10419 = ~ My apologies, but no time for idle chatter.~[xaa11244]
-@10420 = ~Black Lily~
-@10421 = ~ 'Twill be the darkest day ye never seen before I don't have what ye need.~[xaa11246]
-@10422 = ~~[xaa11248]
-@10423 = ~~[xaa11249]
-@10424 = ~ Off with ye now! I've got counting to do.~[xaa11250]
-@10425 = ~ So I kicked 'im in the head till he was dead. Har har.~[xaa11257]
-@10426 = ~~[xaa11258]
-@10427 = ~~[xaa11259]
-@10428 = ~ I hate dem Flamin' Fist pansies.~[xaa11261]
-@10429 = ~ Whoa, now that was a stinker. Har har.~[xaa11262]
-@10430 = ~ Stop pickin' yer nose!~[xaa11263]
-@10431 = ~Rededge~
-@10432 = ~ I daresay, the guard is downright rude these days!~[xaa11265]
-@10433 = ~~[xaa11266]
-@10434 = ~~[xaa11267]
-@10435 = ~ I'll not taint the beauty of the night with superfluous chatter.~[xaa11268]
-@10436 = ~Niemain~
-@10437 = ~~[xaa11272]
-@10438 = ~~[xaa11273]
-@10439 = ~Oulam~
-@10440 = ~Wheber Ott~
-@10441 = ~ You said something?~[xaa10102]
-@10442 = ~ ~[xaa11280]
-@10443 = ~ ~[xaa11281]
-@10444 = ~William Garst~
-@10445 = ~ ~[xaa11284]
-@10446 = ~ ~[xaa11285]
-@10447 = ~ Fear my wrath, for it is great indeed.~[xaa11286]
-@10448 = ~~[xaa11123]
-@10449 = ~"Lady" Alyth Elendara~
-@10450 = ~ It may be a touch unladylike, but I'm gonna slit your throat, I am!~[xaa11294]
-@10451 = ~ 'Ello.~[xaa11298]
-@10452 = ~ Those damnable bandits have been really bad for business.~[xaa11304]
-@10453 = ~ I wouldn't trust you as far as I can spit!~
-@10454 = ~Cyrdemac~
-@10455 = ~ You shouldn't have come back here! Now you'll never leave!~
-@10456 = ~Ruffian~
-@10457 = ~ *yawn*~[xaa11318]
-@10458 = ~ I shoulda joined the army.~[xaa11322]
-@10459 = ~ Today, I saw a girl with the biggest pair of diddeys I've ever seen!~[xaa11323]
-@10460 = ~ I could take Drizzt with both my arms tied behind my back.~[xaa11324]
-@10461 = ~ You're not welcome here! Get out or be thrown out!~
-@10462 = ~ Get outta my face.~
-@10463 = ~ Hey, sexy. Do ya want to take a look at me diddeys?~[xaa11325]
-@10464 = ~~[xaa11325]
-@10465 = ~Dillar~
-@10466 = ~ It is a continuing annoyance to me that, because ANYONE is welcome in the Undercellar, they think anyone is welcome in my personal office. Were that so, I would not be bracketed by the beef you see before you. I ask you again to leave.~
-@10467 = ~~[xaa10159]
-@10468 = ~Quenash~
-@10469 = ~~[xaa11373]
-@10470 = ~~[xaa11318]
-@10471 = ~Dra'tan~
-@10472 = ~Wiven~
-@10473 = ~ Methinks you'll be pushin' up daisies before the eve is through.~[xaa11409]
-@10474 = ~Phandalyn~
-@10475 = ~ Helm sees all. Know that and be judged!~[xaa11415]
-@10476 = ~~[xaa11419]
-@10477 = ~Sunin~
-@10478 = ~ Your feeble skills are no match for my magic!~[xaa11420]
-@10479 = ~ ~[xaa11422]
-@10480 = ~ ~[xaa11423]
-@10481 = ~ Lost your chance with me, you did! Get lost!~
-@10482 = ~ Please don't bother me, I have a lot on my mind.~
-@10483 = ~ Nothing to see here, <SIRMAAM>!~
-@10484 = ~ Get away from me! I've work to do!~
-@10485 = ~~[xaa11064]
-@10486 = ~ This way, good sir, over here!~[xaa11504]
-@10487 = ~~[xaa11504]
-@10488 = ~Prisoner~
-@10489 = ~~[xaa11512]
-@10490 = ~~[xaa11513]
-@10491 = ~ Help us, please.~[xaa11514]
-@10492 = ~ ~[xaa11515]
-@10493 = ~~[xaa11514]
-@10494 = ~~[xaa11517]
-@10495 = ~~[xaa11518]
-@10496 = ~Fergus~
-@10497 = ~Dilos~
-@10498 = ~ I've a blade with your name on it.~[xaa11524]
-@10499 = ~Nemphre~
-@10500 = ~ Your screams shall be music to my ears.~[xaa11529]
-@10501 = ~Nadarin~
-@10502 = ~ Me temper's bad enough without ye botherin' me.~[xaa11533]
-@10503 = ~ By Moradin's hammer.~[xaa11534]
-@10504 = ~~[xaa11535]
-@10505 = ~~[xaa11536]
-@10506 = ~ Your chatterin's startin' to wear on me nerves.~[xaa11538]
-@10507 = ~ Greetin's.~[xaa11540]
-@10508 = ~Euric~
-@10509 = ~Flaming Fist Enforcer~
-@10510 = ~Gardener~
-@10511 = ~Ocellis~
-@10512 = ~ Do you mind? I'm off to go shopping.~[xaa11587]
-@10513 = ~Priest of Helm~
-@10514 = ~ The Vigilant One knows of all your sins.~[xaa11419]
-@10515 = ~~[xaa11284]
-@10516 = ~Drelik~
-@10517 = ~Shep~
-@10518 = ~Nantrin Bellowglyn~
-@10519 = ~~[xaa11611]
-@10520 = ~~[xaa11612]
-@10521 = ~ You've outstayed your welcome! Out with you!~
-@10522 = ~Bellamy~
-@10523 = ~Bheren~
-@10524 = ~ ~[xaa11618]
-@10525 = ~ ~[xaa11619]
-@10526 = ~Rinnie~
-@10527 = ~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11622]
-@10528 = ~ ~[xaa11623]
-@10529 = ~ ~[xaa11624]
-@10530 = ~Sleeping Halfling~
-@10531 = ~~[xaa10166]
-@10532 = ~Elkart~
-@10533 = ~G'axir the Seer~
-@10534 = ~~[xaa11656]
-@10535 = ~~[xaa11657]
-@10536 = ~Shaella~
-@10537 = ~Innkeeper ~
-@10538 = ~Innkeeper~
-@10539 = ~ My rooms are the best kept on the Sword Coast.~[xaa11663]
-@10540 = ~~[xaa11664]
-@10541 = ~~[xaa11665]
-@10542 = ~Michael~
-@10543 = ~Taxek~
-@10544 = ~ Somethin' on your mind?~[xaa11676]
-@10545 = ~~[xaa11676]
-@10546 = ~Chanthalas Ulbright~
-@10547 = ~ Forgive me, but I have meditations to attend to.~[xaa11690]
-@10548 = ~Agnasia~
-@10549 = ~ You will die! I'll make double sure of it!~[xaa11692]
-@10550 = ~ Yes, friend?~[xaa11695]
-@10551 = ~Abela the Nymph~
-@10552 = ~ Destiny or no, I am not long for this place.~[xaa11696]
-@10553 = ~ Monsters, attack me not!~[xaa11697]
-@10554 = ~~[xaa11698]
-@10555 = ~~[xaa11699]
-@10556 = ~ I must be free!~[xaa11700]
-@10557 = ~Priest of Gond~
-@10558 = ~~[xaa11701]
-@10559 = ~~[xaa11702]
-@10560 = ~ Gond's greatest gift was the ability to invent.~[xaa11703]
-@10561 = ~ My friend Oppenheimer's got some cool invention cooked up.~[xaa11704]
-@10562 = ~ ~
-@10563 = ~Forthel August~
-@10564 = ~ ~[xaa11706]
-@10565 = ~ ~[xaa11707]
-@10566 = ~Be'land~
-@10567 = ~ Welcome, travelers, to the archival stores of Gond, Wonderbringer to the realms.~[xaa11709]
-@10568 = ~~[xaa11710]
-@10569 = ~~[xaa11711]
-@10570 = ~ 'Tis a pleasure to serve Gond's tinkering majesty.~[xaa11712]
-@10571 = ~Brathlen~
-@10572 = ~ Please, follow, and I shall endeavor to introduce you to the majesty of Gond.~[xaa11713]
-@10573 = ~~[xaa11714]
-@10574 = ~~[xaa11715]
-@10575 = ~ Please, don't touch the displays... or me.~[xaa11716]
-@10576 = ~Sleeping Dwarf~
-@10577 = ~Maple Willow Aspen~
-@10578 = ~ Pleased to make your acquaintance.~[xaa11755]
-@10579 = ~Nila~
-@10580 = ~ 'Allo.~[xaa11759]
-@10581 = ~ That party still going on? It's a wonder they haven't all fallen asleep where they stand.~
-@10582 = ~ You're still here? Fun's fun, but you should go quickly now.~
-@10583 = ~Angel the Cat~
-@10584 = ~~[xaa11781]
-@10585 = ~~[xaa11782]
-@10586 = ~Sleeping Elf~
-@10587 = ~~[xaa11791]
-@10588 = ~Ithtyl Calantryn~
-@10589 = ~ I should make my stay brief, if I were you.~
-@10590 = ~ I must ask you not to disturb me, as I have many financial matters that now occupy my attention.~
-@10591 = ~Jardak~
-@10592 = ~~[xaa11805]
-@10593 = ~~[xaa11806]
-@10594 = ~Servant~
-@10595 = ~Connoly Finn~
-@10596 = ~Laerta~
-@10597 = ~Louise~
-@10598 = ~Quinn~
-@10599 = ~Nelik~
-@10600 = ~Turpin~
-@10601 = ~Farluck~
-@10602 = ~ ~[xaa11853]
-@10603 = ~ ~[xaa11854]
-@10604 = ~Gorpel Hind~
-@10605 = ~~[xaa11857]
-@10606 = ~~[xaa11858]
-@10607 = ~Waiter~
-@10608 = ~Invisible Stalker~
-@10609 = ~~[xaa10550]
-@10610 = ~~[xaa10551]
-@10611 = ~~[xaa11866]
-@10612 = ~~[xaa11867]
-@10613 = ~~[xaa11868]
-@10614 = ~ ~[xaa11869]
-@10615 = ~Doom Guard~
-@10616 = ~~[xaa11878]
-@10617 = ~~[xaa11879]
-@10618 = ~~[xaa11880]
-@10619 = ~~[xaa11881]
-@10620 = ~ ~[xaa11883]
-@10621 = ~Helmed Horror~
-@10622 = ~ ~[xaa11892]
-@10623 = ~ ~[xaa11893]
-@10624 = ~ ~[xaa11894]
-@10625 = ~ ~[xaa11896]
-@10626 = ~Degrodel~
-@10627 = ~~[xaa11899]
-@10628 = ~~[xaa11900]
-@10629 = ~Pheirkas~
-@10630 = ~ A stout hammer will fix most any bandit.~[xaa11902]
-@10631 = ~~[xaa11903]
-@10632 = ~~[xaa11904]
-@10633 = ~Doppelganger~
-@10634 = ~ SSSSsssssss.~[xaa11913]
-@10635 = ~ It is useless to resist. SSSssssss.~[xaa11914]
-@10636 = ~ Die, meat!~[xaa11915]
-@10637 = ~ ~[xaa11917]
-@10638 = ~ ~[xaa11918]
-@10639 = ~ ~[xaa11919]
-@10640 = ~ Your time is done, primates.~[xaa11922]
-@10641 = ~Jhasso~
-@10642 = ~ *pant* Come to torment me some more, you shapeshifting bastards?~[xaa11923]
-@10643 = ~~[xaa11924]
-@10644 = ~~[xaa11925]
-@10645 = ~ Damn, this would've cost my business a pretty penny!~[xaa11926]
-@10646 = ~ You're barely better than my captors! Leave me!~
-@10647 = ~Brandilar~
-@10648 = ~ ~[xaa11929]
-@10649 = ~ ~[xaa11930]
-@10650 = ~ It is good to see you all again. I'm very busy at the moment, so perhaps we can talk later.~
-@10651 = ~ Get out or be thrown out!~
-@10652 = ~Nortuary~
-@10653 = ~ 'Eya, friend.~[xaa11954]
-@10654 = ~ Sorry, no food fer ya right now.~
-@10655 = ~ Get away from me! I wouldn't trust you as far as I can spit!~
-@10656 = ~Destus Gurn~
-@10657 = ~ Do you mind? I'm a very busy man, and I don't need these constant interruptions.~
-@10658 = ~~[xaa11127]
-@10659 = ~Borinole Mann~
-@10660 = ~Brilla~
-@10661 = ~ Hmph! Well, I never!~[xaa12002]
-@10662 = ~Areana~
-@10663 = ~Reginald "Longtooth" Worthington III~
-@10664 = ~Hobgoblin Elite~
-@10665 = ~ Forward march!~[xaa12023]
-@10666 = ~ Spare no one!~[xaa12024]
-@10667 = ~ ~[xaa12025]
-@10668 = ~ ~[xaa12026]
-@10669 = ~ You be quiet!~[xaa12027]
-@10670 = ~ Manure mouth.~[xaa12028]
-@10671 = ~~[xaa12029]
-@10672 = ~Naaman~
-@10673 = ~Gardush~
-@10674 = ~~[xaa12035]
-@10675 = ~~[xaa12036]
-@10676 = ~Diyab~
-@10677 = ~ Dreadfully sorry, but I'm afraid... I'm gonna have ta kill ya.~[xaa12038]
-@10678 = ~Aasim~
-@10679 = ~ ~[xaa12044]
-@10680 = ~ ~[xaa12045]
-@10681 = ~Alai~
-@10682 = ~ You're at the end of your rope, I'll wager!~[xaa12047]
-@10683 = ~Zhalimar Cloudwulfe~
-@10684 = ~Thaldorn~
-@10685 = ~ H-hello, I don't want any trouble.~[xaa12057]
-@10686 = ~ Leave me be or you'll regret it!~
-@10687 = ~Amulet~
-@10688 = ~Arkion's Bloodstone Amulet~
-@10689 = ~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
+@10093 = ~Bat~
+@10094 = ~~[xaa10098]
+@10095 = ~~[xaa10099]
+@10096 = ~~[xaa10100]
+@10097 = ~~[xaa10101]
+@10098 = ~~[xaa10102]
+@10099 = ~Commoner~
+@10100 = ~ 'Ey, friend! Good to meet a fine sod such as yerself.~[xaa10106]
+@10101 = ~~[xaa10107]
+@10102 = ~~[xaa10108]
+@10103 = ~ Bugger off! It'll be a blade fer your backside, elsewise!~[xaa10110]
+@10104 = ~~[xaa10111]
+@10105 = ~~[xaa10112]
+@10106 = ~~[xaa10113]
+@10107 = ~~[xaa10114]
+@10108 = ~~[xaa10115]
+@10109 = ~ Hullo.~[xaa10116]
+@10110 = ~~[xaa10117]
+@10111 = ~~[xaa10118]
+@10112 = ~ Ye're a long-tongued lout, ain't ya?~[xaa10120]
+@10113 = ~ Salutations.~[xaa10124]
+@10114 = ~~[xaa10125]
+@10115 = ~~[xaa10126]
+@10116 = ~ Get away from me!~
+@10117 = ~ Hullo.~[xaa10128]
+@10118 = ~ Yes?~[xaa10132]
+@10119 = ~~[xaa10132]
+@10120 = ~ My hubby don't want me talkin' to no strangers.~[xaa10137]
+@10121 = ~ What do you need?~[xaa10141]
+@10122 = ~ 'Ello, pal.~[xaa10145]
+@10123 = ~ Me young 'uns are waitin'.~[xaa10149]
+@10124 = ~ Yeah?~[xaa10153]
+@10125 = ~ Hello there.~[xaa10157]
+@10126 = ~~[xaa10157]
+@10127 = ~Courtesan~
+@10128 = ~ I'm a fine-lookin' strumpet, ain't I?~[xaa10162]
+@10129 = ~~[xaa10163]
+@10130 = ~~[xaa10164]
+@10131 = ~ You'll get nothing from me!~
+@10132 = ~~[xaa10162]
+@10133 = ~ Well, if ya wants to go strappin' with this nab, you'll first have to give up the socket money.~[xaa10167]
+@10134 = ~ Are ya interested in some thrills, darlin'?~[xaa10171]
+@10135 = ~Sleeping Woman~
+@10136 = ~~[xaa10175]
+@10137 = ~~[xaa10176]
+@10138 = ~ ZZZzzzzzz...~[xaa10177]
+@10139 = ~ ZZZzzzzz... *sniffle*~[xaa10178]
+@10140 = ~ ZZZzzzzz...~[xaa10177]
+@10141 = ~~[xaa10177]
+@10142 = ~ Yes?~[xaa10111]
+@10143 = ~~[xaa10185]
+@10144 = ~~[xaa10189]
+@10145 = ~ Oh, ye're a handsome bunch, ain't ya?~[xaa10190]
+@10146 = ~ Hmm?~[xaa10112]
+@10147 = ~ What's your tale?~[xaa10198]
+@10148 = ~ Can I assist you?~[xaa10202]
+@10149 = ~~[xaa10210]
+@10150 = ~ Hi, friend.~[xaa10211]
+@10151 = ~Boy~
+@10152 = ~ You funny lookin'.~[xaa10215]
+@10153 = ~~[xaa10216]
+@10154 = ~~[xaa10217]
+@10155 = ~ Leave me alone! You're mean!~
+@10156 = ~ Loser, loser, loser!~[xaa10219]
+@10157 = ~ You need somethin', stranger?~[xaa10113]
+@10158 = ~Beggar~
+@10159 = ~ Alms, alms for the poor?~[xaa10227]
+@10160 = ~~[xaa10228]
+@10161 = ~~[xaa10229]
+@10162 = ~I have nothing of value... p-please, let me be.~[xaa10230]
+@10163 = ~*cough* *cough* *retch* My lung! It's flopping all over the dirt! Damn.~[xaa10232]
+@10164 = ~Eh, miserable ragamuffins.~[xaa10233]
+@10165 = ~ You've made no friends here! Move along!~
+@10166 = ~ Wife's been gettin' prickly on me arse.~[xaa10185]
+@10167 = ~Mick Feelie~
+@10168 = ~Nobleman~
+@10169 = ~ Hello! Nice to make the acquaintance of such a cultured personage.~[xaa10263]
+@10170 = ~~[xaa10264]
+@10171 = ~ ~[xaa10265]
+@10172 = ~ Approach me not! I'll ruffle you up, I will!~
+@10173 = ~Skeleton Warrior~
+@10174 = ~ Die...~[xaa10396]
+@10175 = ~ ~[xaa10397]
+@10176 = ~ ~[xaa10398]
+@10177 = ~ ~[xaa10399]
+@10178 = ~ ~[xaa10400]
+@10179 = ~ ~[xaa10401]
+@10180 = ~ ~[xaa10402]
+@10181 = ~~[xaa10403]
+@10182 = ~ ~[xaa10404]
+@10183 = ~~[xaa10276]
+@10184 = ~ You wanna fight me? Come on, you wanna fight?~[xaa10441]
+@10185 = ~Girl~
+@10186 = ~ I want my mommy.~[xaa10445]
+@10187 = ~~[xaa10446]
+@10188 = ~~[xaa10447]
+@10189 = ~Lothander~
+@10190 = ~ Excuse me, please let me speak before you attack.~[xaa10453]
+@10191 = ~ My life is in shambles.~[xaa10454]
+@10192 = ~~[xaa10455]
+@10193 = ~~[xaa10456]
+@10194 = ~ Hmm... Bother 'n bother! Never a calm spot, never a break.~[xaa10458]
+@10195 = ~~[xaa10459]
+@10196 = ~~[xaa10460]
+@10197 = ~Brielbara~
+@10198 = ~ Wait! I—I must speak with thee.~[xaa10462]
+@10199 = ~~[xaa10463]
+@10200 = ~~[xaa10464]
+@10201 = ~ My poor, dear Namara. I hope she fares well.~[xaa10465]
+@10202 = ~ I'll not speak a word after what you did!~
+@10203 = ~ I must thank you again for the service you have done.~
+@10204 = ~ How are you?~[xaa10506]
+@10205 = ~ I lost my dolly.~[xaa10510]
+@10206 = ~~[xaa10275]
+@10207 = ~ *sob*~[xaa10515]
+@10208 = ~ Ooh, you smell!~[xaa10519]
+@10209 = ~Kerrachus~
+@10210 = ~ Glad to meet you, friend.~[xaa10523]
+@10211 = ~Kesheel~
+@10212 = ~ 'Ey! Get outta me way, ya crummy lager-head.~[xaa10530]
+@10213 = ~ I have things to do—one NOT being sittin' on me duffer talkin' to you.~[xaa10532]
+@10214 = ~Noblewoman~
+@10215 = ~~[xaa10628]
+@10216 = ~~[xaa10629]
+@10217 = ~ I'll not have you near me!~
+@10218 = ~ Don't give me any lip, peasant. Do you know who I am?~[xaa10635]
+@10219 = ~ Touch me not! You are... unclean.~[xaa10639]
+@10220 = ~~[xaa10640]
+@10221 = ~~[xaa10641]
+@10222 = ~ A man shouldn't speak to his better unless spoken to first.~[xaa10643]
+@10223 = ~~[xaa10644]
+@10224 = ~~[xaa10645]
+@10225 = ~ What?~[xaa10647]
+@10226 = ~~[xaa10647]
+@10227 = ~ No time to chitchat.~[xaa10652]
+@10228 = ~ A pleasure to meet a socially acceptable person such as yourself.~[xaa10656]
+@10229 = ~ You need a new tailor; your clothes are absolutely dreadful!~[xaa10660]
+@10230 = ~ Mother said not to talk with strangers.~[xaa10664]
+@10231 = ~Rogue~
+@10232 = ~ Sorry, friend, but you've got a date down under.~[xaa10717]
+@10233 = ~~[xaa10718]
+@10234 = ~~[xaa10719]
+@10235 = ~ Yeah, mate?~[xaa10189]
+@10236 = ~Bartender~
+@10237 = ~ You want some whiskey?~[xaa10727]
+@10238 = ~~[xaa10728]
+@10239 = ~~[xaa10729]
+@10240 = ~ I got some cheap beer for ya.~[xaa10731]
+@10241 = ~ Urgh... I gotta stop dippin' into me own ale.~[xaa10732]
+@10242 = ~ I got me some nice lookin' waitresses, don't I? Eh he hehehe...~[xaa10733]
+@10243 = ~Ordulinian~
+@10244 = ~Halbazzer Drin~
+@10245 = ~Maltz~
+@10246 = ~ Welcome to my humble establishment.~[xaa10751]
+@10247 = ~~[xaa10752]
+@10248 = ~~[xaa10753]
+@10249 = ~Arkion~
+@10250 = ~ Speak up, speak up!~[xaa10115]
+@10251 = ~ Get out of my sight! I'll do nothing for you!~
+@10252 = ~Serving Wench~
+@10253 = ~ Please, seat yourselves wherever you wish.~[xaa10765]
+@10254 = ~~[xaa10766]
+@10255 = ~~[xaa10767]
+@10256 = ~ Get away, you nobbish plonker!~
+@10257 = ~ Ye drop another careless hand near me and I swears you'll lose it! Order up at the bar.~
+@10258 = ~Brevlik~
+@10259 = ~ HELLO! SHHH... um... I mean... hello. *chuckle*~[xaa10769]
+@10260 = ~~[xaa10770]
+@10261 = ~~[xaa10771]
+@10262 = ~ All that glitters is not gold, but all that's gold most certainly glitters.~[xaa10772]
+@10263 = ~ Talking to you ain't worth the risk, no, <SIRMAAM>. Go away... please?~
+@10264 = ~Cauternus~
+@10265 = ~ Whatcha want?~[xaa10773]
+@10266 = ~Cook~
+@10267 = ~ Hey, clear out. I don't need you meatheads roaming through my kitchen! *sigh* I wanna work somewhere where beer and blood aren't seasonings.~
+@10268 = ~Silence~
+@10269 = ~ Be ye friend or be ye dead?~[xaa10788]
+@10270 = ~~[xaa10789]
+@10271 = ~~[xaa10790]
+@10272 = ~ I'll speak when I wills it. Not 'cause ye're proddin'.~[xaa10791]
+@10273 = ~Lucky Aello~
+@10274 = ~ My prices are the best south of Waterdeep.~[xaa10798]
+@10275 = ~Rat~
+@10276 = ~~[xaa10802]
+@10277 = ~Squeak~[xaa10803]
+@10278 = ~Squeak~[xaa10804]
+@10279 = ~~[xaa10803]
+@10280 = ~~[xaa10804]
+@10281 = ~Jacil~
+@10282 = ~ You got somethin' comin', pal. Just you wait.~[xaa10865]
+@10283 = ~~[xaa10867]
+@10284 = ~~[xaa10868]
+@10285 = ~Storekeep~
+@10286 = ~ Eh, business has been poor, what with the iron shortage and all.~[xaa10873]
+@10287 = ~ The customers are always right.~[xaa10874]
+@10288 = ~ Out! And never darken my door again!~
+@10289 = ~ It's you again. By the claws of Umberlee, I can't take these interruptions much longer. Get out of my kitchen, and stay out.~
+@10290 = ~Lantanara~
+@10291 = ~Lusselyn~
+@10292 = ~ Ha ha ha ha ha! Haa ha ha! *burp* ...eh, sorry—'scuse me!~[xaa10210]
+@10293 = ~ W-whoa... Why're the streets so wobbly?~[xaa10885]
+@10294 = ~~[xaa10886]
+@10295 = ~~[xaa10887]
+@10296 = ~ Blaaarrrghghgh... *cough* Corn? When did I eats corn...?~[xaa10889]
+@10297 = ~~[xaa10890]
+@10298 = ~Vivienne~
+@10299 = ~ 'Allo, mate! You look a friendly face.~[xaa10902]
+@10300 = ~Larze~
+@10301 = ~~[xaa10906]
+@10302 = ~ Me will crush you, crush you to goo!~[xaa10907]
+@10303 = ~ ~[xaa10908]
+@10304 = ~ ~[xaa10909]
+@10305 = ~ ~[xaa10911]
+@10306 = ~~[xaa10912]
+@10307 = ~Bork~
+@10308 = ~ Something you require?~[xaa10926]
+@10309 = ~~[xaa10926]
+@10310 = ~Rodnim~
+@10311 = ~ I've no interest in speaking to the likes of you.~[xaa10975]
+@10312 = ~ I needs some ale. *burp* Eh...~[xaa10890]
+@10313 = ~Guard~
+@10314 = ~ Heya.~[xaa11025]
+@10315 = ~ You're not welcome here! You'll pay with your life!~
+@10316 = ~Merchant~
+@10317 = ~ All my stuff is authentic. Really, it is.~[xaa11029]
+@10318 = ~~[xaa11030]
+@10319 = ~~[xaa11031]
+@10320 = ~Triadore~
+@10321 = ~ Leave me! You've outstayed your welcome!~
+@10322 = ~ Don't go pokin' folk about the table, young 'un. You're liable to catch a nasty backhand.~
+@10323 = ~~[xaa10530]
+@10324 = ~~[xaa10110]
+@10325 = ~ Pleasure to meet you.~[xaa11050]
+@10326 = ~Priestess of Umberlee~
+@10327 = ~ The storm shall take those who are unfaithful.~[xaa11054]
+@10328 = ~~[xaa11055]
+@10329 = ~~[xaa11056]
+@10330 = ~ You've outstayed your welcome!~
+@10331 = ~ The Bitch Queen brooks no insolence.~[xaa11058]
+@10332 = ~ Your life means nothing to me.~[xaa11059]
+@10333 = ~Harbor Master~
+@10334 = ~ Nasty times are comin', I reckon.~[xaa11063]
+@10335 = ~~[xaa11064]
+@10336 = ~~[xaa11065]
+@10337 = ~ You're rather outlandish folk to be wanderin' 'round here.~[xaa11066]
+@10338 = ~ You've made no friends here! Get off my docks!~
+@10339 = ~ I'm really busy now, so I'm gonna have to ask ya ta come back some time later.~
+@10340 = ~ You guys shouldn't be hanging 'round here. Ya might bring attention to Duke Eltan.~
+@10341 = ~Sailor Al~
+@10342 = ~Sailor Dan~
+@10343 = ~Sailor Finch~
+@10344 = ~~[xaa10889]
+@10345 = ~Sailor Joss~
+@10346 = ~ *hic* I think I h-had too much to drink.~[xaa11081]
+@10347 = ~~[xaa11081]
+@10348 = ~Sailor Ned~
+@10349 = ~Sailor Newf~
+@10350 = ~~[xaa10885]
+@10351 = ~Cordyr~
+@10352 = ~~[xaa11104]
+@10353 = ~~[xaa11105]
+@10354 = ~Nivek~
+@10355 = ~ Raaagh! Help!~[xaa11108]
+@10356 = ~ Don't touch me! I might catch something.~[xaa11117]
+@10357 = ~ Not to be rude, but I'd rather you left immediately.~
+@10358 = ~ You visit again? It is not unwelcome, even though Carl and Jurgen may make it seem so. Do not overstay your welcome though, as I am unaccustomed to long visits.~
+@10359 = ~ Hope ye're havin' a great evening. I sure am.~
+@10360 = ~Lobar~
+@10361 = ~~[xaa11126]
+@10362 = ~ I trust everything is satisfactory? Please don't hesitate to leave if it is not.~
+@10363 = ~ Hello again. A pleasure having you here, to be sure.~
+@10364 = ~Gamesman~
+@10365 = ~ Ye're a lucky fella, aren't ya?~[xaa11129]
+@10366 = ~~[xaa11130]
+@10367 = ~~[xaa11131]
+@10368 = ~~[xaa11129]
+@10369 = ~Sewer Cleaner~
+@10370 = ~~[xaa11146]
+@10371 = ~~[xaa11147]
+@10372 = ~ I hobe the monsterbs downd here get youb!~
+@10373 = ~ ~[xaa11149]
+@10374 = ~ ~[xaa11150]
+@10375 = ~ ~[xaa11151]
+@10376 = ~ ~[xaa11152]
+@10377 = ~Seagull~
+@10378 = ~~[xaa10293]
+@10379 = ~Sleeping Man~
+@10380 = ~ ZZZZzzzzz... *snort*~[xaa11167]
+@10381 = ~ ZZZZzzzzzz...~[xaa11168]
+@10382 = ~ ZZZZzzzzzzz...~[xaa11168]
+@10383 = ~~[xaa11168]
+@10384 = ~Dun~
+@10385 = ~ I love money! Yes, I do.~[xaa11171]
+@10386 = ~ I've got the best prices this side of Cormyr.~[xaa11174]
+@10387 = ~Varci Roaringhorn~
+@10388 = ~ P-please, might I have your ear a moment?~[xaa11176]
+@10389 = ~~[xaa11177]
+@10390 = ~~[xaa11178]
+@10391 = ~ Please help. 'Tis a wasted life at stake.~[xaa11179]
+@10392 = ~Rabid Chicken~
+@10393 = ~Felonius Gist~
+@10394 = ~ Away with you, beggar.~[xaa11204]
+@10395 = ~Statue~
+@10396 = ~ Leave us alone, will you? Nothin' for you here.~[xaa11211]
+@10397 = ~ What?! Oh, oh, sorry for yelling.~[xaa11212]
+@10398 = ~~[xaa11213]
+@10399 = ~~[xaa11214]
+@10400 = ~~[xaa11221]
+@10401 = ~~[xaa11222]
+@10402 = ~Diviner~
+@10403 = ~ Knowledge, used wisely, is the most powerful of tools.~[xaa11228]
+@10404 = ~~[xaa11229]
+@10405 = ~~[xaa11230]
+@10406 = ~ Come on! Be a man. See if fortune smiles on ya!~[xaa11237]
+@10407 = ~~[xaa11237]
+@10408 = ~ Come in poor, walk out rich!~[xaa11242]
+@10409 = ~~[xaa11242]
+@10410 = ~ Take your chance with Lady Tymora!~[xaa11247]
+@10411 = ~Nadine~
+@10412 = ~ Dallillia guides the way of all those that seek the path home.~[xaa11251]
+@10413 = ~~[xaa11252]
+@10414 = ~~[xaa11253]
+@10415 = ~ May you know the happiness of a warm hearth and home.~[xaa11255]
+@10416 = ~Husam~
+@10417 = ~ Greetingshh, fellow rogues. *hic*~[xaa11264]
+@10418 = ~ There are too many. Retreat!~[xaa11265]
+@10419 = ~ The Shadow Thieves send their regards.~[xaa11266]
+@10420 = ~ ~[xaa11267]
+@10421 = ~ ~[xaa11268]
+@10422 = ~~[xaa11270]
+@10423 = ~ You know, one day, I'lls have me mys revengsh. Ha ha ha ha ha! *hic* *burp*~[xaa11271]
+@10424 = ~Resar~
+@10425 = ~ Apologies, but you must die!~[xaa11272]
+@10426 = ~ I listen not to you! Your death by my hand!~[xaa11273]
+@10427 = ~~[xaa11274]
+@10428 = ~~[xaa11275]
+@10429 = ~Narlen Darkwalk~
+@10430 = ~ So I's at daggers drawing with him, an' he drops the swag an' runs!~[xaa11277]
+@10431 = ~ Draw your daggers and spells, and let's have at her!~[xaa11278]
+@10432 = ~~[xaa11279]
+@10433 = ~~[xaa11280]
+@10434 = ~ Swiped the duchess's knickers once, if ya know what I mean.~[xaa11281]
+@10435 = ~Alatos "Ravenscar" Thuibuld~
+@10436 = ~ Welcome, my little friends! Please, relax, and keep your weapons at your sides.~[xaa11283]
+@10437 = ~~[xaa11285]
+@10438 = ~~[xaa11286]
+@10439 = ~ My apologies, but no time for idle chatter.~[xaa11288]
+@10440 = ~Black Lily~
+@10441 = ~ 'Twill be the darkest day ye never seen before I don't have what ye need.~[xaa11290]
+@10442 = ~~[xaa11292]
+@10443 = ~~[xaa11293]
+@10444 = ~ Off with ye now! I've got counting to do.~[xaa11294]
+@10445 = ~ So I kicked 'im in the head till he was dead. Har har.~[xaa11301]
+@10446 = ~~[xaa11302]
+@10447 = ~~[xaa11303]
+@10448 = ~ I hate dem Flamin' Fist pansies.~[xaa11305]
+@10449 = ~ Whoa, now that was a stinker. Har har.~[xaa11306]
+@10450 = ~ Stop pickin' yer nose!~[xaa11307]
+@10451 = ~Rededge~
+@10452 = ~ I daresay, the guard is downright rude these days!~[xaa11309]
+@10453 = ~~[xaa11310]
+@10454 = ~~[xaa11311]
+@10455 = ~ I'll not taint the beauty of the night with superfluous chatter.~[xaa11312]
+@10456 = ~Niemain~
+@10457 = ~~[xaa11316]
+@10458 = ~~[xaa11317]
+@10459 = ~Oulam~
+@10460 = ~Wheber Ott~
+@10461 = ~ You said something?~[xaa10114]
+@10462 = ~ ~[xaa11324]
+@10463 = ~ ~[xaa11325]
+@10464 = ~William Garst~
+@10465 = ~ ~[xaa11328]
+@10466 = ~ ~[xaa11329]
+@10467 = ~ Fear my wrath, for it is great indeed.~[xaa11330]
+@10468 = ~~[xaa11167]
+@10469 = ~"Lady" Alyth Elendara~
+@10470 = ~ It may be a touch unladylike, but I'm gonna slit your throat, I am!~[xaa11338]
+@10471 = ~ 'Ello.~[xaa11342]
+@10472 = ~ Those damnable bandits have been really bad for business.~[xaa11348]
+@10473 = ~ I wouldn't trust you as far as I can spit!~
+@10474 = ~Cyrdemac~
+@10475 = ~ You shouldn't have come back here! Now you'll never leave!~
+@10476 = ~Ruffian~
+@10477 = ~ *yawn*~[xaa11362]
+@10478 = ~ I shoulda joined the army.~[xaa11366]
+@10479 = ~ Today, I saw a girl with the biggest pair of diddeys I've ever seen!~[xaa11367]
+@10480 = ~ I could take Drizzt with both my arms tied behind my back.~[xaa11368]
+@10481 = ~ You're not welcome here! Get out or be thrown out!~
+@10482 = ~ Get outta my face.~
+@10483 = ~ Hey, sexy. Do ya want to take a look at me diddeys?~[xaa11369]
+@10484 = ~~[xaa11369]
+@10485 = ~Dillar~
+@10486 = ~ It is a continuing annoyance to me that, because ANYONE is welcome in the Undercellar, they think anyone is welcome in my personal office. Were that so, I would not be bracketed by the beef you see before you. I ask you again to leave.~
+@10487 = ~~[xaa10171]
+@10488 = ~Quenash~
+@10489 = ~~[xaa11417]
+@10490 = ~~[xaa11362]
+@10491 = ~Dra'tan~
+@10492 = ~Wiven~
+@10493 = ~ Methinks you'll be pushin' up daisies before the eve is through.~[xaa11453]
+@10494 = ~Phandalyn~
+@10495 = ~ Helm sees all. Know that and be judged!~[xaa11459]
+@10496 = ~~[xaa11463]
+@10497 = ~Sunin~
+@10498 = ~ Your feeble skills are no match for my magic!~[xaa11464]
+@10499 = ~ ~[xaa11466]
+@10500 = ~ ~[xaa11467]
+@10501 = ~Flaming Fist Enforcer~
+@10502 = ~Gardener~
+@10503 = ~Ocellis~
+@10504 = ~ Do you mind? I'm off to go shopping.~[xaa11501]
+@10505 = ~Priest of Helm~
+@10506 = ~ The Vigilant One knows of all your sins.~[xaa11463]
+@10507 = ~~[xaa11328]
+@10508 = ~Drelik~
+@10509 = ~Shep~
+@10510 = ~Nantrin Bellowglyn~
+@10511 = ~~[xaa11525]
+@10512 = ~~[xaa11526]
+@10513 = ~ You've outstayed your welcome! Out with you!~
+@10514 = ~Bellamy~
+@10515 = ~Bheren~
+@10516 = ~ ~[xaa11532]
+@10517 = ~ ~[xaa11533]
+@10518 = ~Rinnie~
+@10519 = ~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11536]
+@10520 = ~ ~[xaa11537]
+@10521 = ~ ~[xaa11538]
+@10522 = ~Sleeping Halfling~
+@10523 = ~~[xaa10178]
+@10524 = ~Elkart~
+@10525 = ~G'axir the Seer~
+@10526 = ~~[xaa11570]
+@10527 = ~~[xaa11571]
+@10528 = ~Shaella~
+@10529 = ~Innkeeper ~
+@10530 = ~Innkeeper~
+@10531 = ~ My rooms are the best kept on the Sword Coast.~[xaa11577]
+@10532 = ~~[xaa11578]
+@10533 = ~~[xaa11579]
+@10534 = ~Michael~
+@10535 = ~Taxek~
+@10536 = ~ I've a blade with your name on it.~[xaa11586]
+@10537 = ~Euric~
+@10538 = ~Nadarin~
+@10539 = ~ Me temper's bad enough without ye botherin' me.~[xaa11608]
+@10540 = ~ By Moradin's hammer.~[xaa11609]
+@10541 = ~~[xaa11610]
+@10542 = ~~[xaa11611]
+@10543 = ~ Your chatterin's startin' to wear on me nerves.~[xaa11613]
+@10544 = ~ Greetin's.~[xaa11614]
+@10545 = ~Nemphre~
+@10546 = ~ Your screams shall be music to my ears.~[xaa11619]
+@10547 = ~ This way, good sir, over here!~[xaa11623]
+@10548 = ~~[xaa11623]
+@10549 = ~Prisoner~
+@10550 = ~~[xaa11631]
+@10551 = ~~[xaa11632]
+@10552 = ~ Help us, please.~[xaa11633]
+@10553 = ~ ~[xaa11634]
+@10554 = ~~[xaa11633]
+@10555 = ~~[xaa11636]
+@10556 = ~~[xaa11637]
+@10557 = ~Fergus~
+@10558 = ~Dilos~
+@10559 = ~ Get away from me! I've work to do!~
+@10560 = ~~[xaa11108]
+@10561 = ~ Lost your chance with me, you did! Get lost!~
+@10562 = ~ Please don't bother me, I have a lot on my mind.~
+@10563 = ~ Nothing to see here, <SIRMAAM>!~
+@10564 = ~ Somethin' on your mind?~[xaa11720]
+@10565 = ~~[xaa11720]
+@10566 = ~Chanthalas Ulbright~
+@10567 = ~ Forgive me, but I have meditations to attend to.~[xaa11734]
+@10568 = ~Agnasia~
+@10569 = ~ You will die! I'll make double sure of it!~[xaa11736]
+@10570 = ~ Yes, friend?~[xaa11739]
+@10571 = ~Abela the Nymph~
+@10572 = ~ Destiny or no, I am not long for this place.~[xaa11740]
+@10573 = ~ Monsters, attack me not!~[xaa11741]
+@10574 = ~~[xaa11742]
+@10575 = ~~[xaa11743]
+@10576 = ~ I must be free!~[xaa11744]
+@10577 = ~Priest of Gond~
+@10578 = ~~[xaa11745]
+@10579 = ~~[xaa11746]
+@10580 = ~ Gond's greatest gift was the ability to invent.~[xaa11747]
+@10581 = ~ My friend Oppenheimer's got some cool invention cooked up.~[xaa11748]
+@10582 = ~ ~
+@10583 = ~Forthel August~
+@10584 = ~ ~[xaa11750]
+@10585 = ~ ~[xaa11751]
+@10586 = ~Be'land~
+@10587 = ~ Welcome, travelers, to the archival stores of Gond, Wonderbringer to the realms.~[xaa11753]
+@10588 = ~~[xaa11754]
+@10589 = ~~[xaa11755]
+@10590 = ~ 'Tis a pleasure to serve Gond's tinkering majesty.~[xaa11756]
+@10591 = ~Brathlen~
+@10592 = ~ Please, follow, and I shall endeavor to introduce you to the majesty of Gond.~[xaa11757]
+@10593 = ~~[xaa11758]
+@10594 = ~~[xaa11759]
+@10595 = ~ Please, don't touch the displays... or me.~[xaa11760]
+@10596 = ~Sleeping Dwarf~
+@10597 = ~Brandilar~
+@10598 = ~ ~[xaa11801]
+@10599 = ~ ~[xaa11802]
+@10600 = ~ It is good to see you all again. I'm very busy at the moment, so perhaps we can talk later.~
+@10601 = ~ Get out or be thrown out!~
+@10602 = ~Doppelganger~
+@10603 = ~ SSSSsssssss.~[xaa11815]
+@10604 = ~ It is useless to resist. SSSssssss.~[xaa11816]
+@10605 = ~ Die, meat!~[xaa11817]
+@10606 = ~ ~[xaa11819]
+@10607 = ~ ~[xaa11820]
+@10608 = ~ ~[xaa11821]
+@10609 = ~ Your time is done, primates.~[xaa11824]
+@10610 = ~Jhasso~
+@10611 = ~ *pant* Come to torment me some more, you shapeshifting bastards?~[xaa11825]
+@10612 = ~~[xaa11826]
+@10613 = ~~[xaa11827]
+@10614 = ~ Damn, this would've cost my business a pretty penny!~[xaa11828]
+@10615 = ~ You're barely better than my captors! Leave me!~
+@10616 = ~Maple Willow Aspen~
+@10617 = ~ Pleased to make your acquaintance.~[xaa11836]
+@10618 = ~Angel the Cat~
+@10619 = ~~[xaa11844]
+@10620 = ~~[xaa11845]
+@10621 = ~Sleeping Elf~
+@10622 = ~~[xaa11854]
+@10623 = ~Ithtyl Calantryn~
+@10624 = ~ 'Allo.~[xaa11862]
+@10625 = ~ I should make my stay brief, if I were you.~
+@10626 = ~ I must ask you not to disturb me, as I have many financial matters that now occupy my attention.~
+@10627 = ~Jardak~
+@10628 = ~~[xaa11868]
+@10629 = ~~[xaa11869]
+@10630 = ~Servant~
+@10631 = ~Connoly Finn~
+@10632 = ~Laerta~
+@10633 = ~Louise~
+@10634 = ~Quinn~
+@10635 = ~Nelik~
+@10636 = ~Turpin~
+@10637 = ~Farluck~
+@10638 = ~ ~[xaa11916]
+@10639 = ~ ~[xaa11917]
+@10640 = ~Gorpel Hind~
+@10641 = ~~[xaa11920]
+@10642 = ~~[xaa11921]
+@10643 = ~Waiter~
+@10644 = ~Invisible Stalker~
+@10645 = ~~[xaa10594]
+@10646 = ~~[xaa10595]
+@10647 = ~~[xaa11929]
+@10648 = ~~[xaa11930]
+@10649 = ~~[xaa11931]
+@10650 = ~ ~[xaa11932]
+@10651 = ~Doom Guard~
+@10652 = ~~[xaa11941]
+@10653 = ~~[xaa11942]
+@10654 = ~~[xaa11943]
+@10655 = ~~[xaa11944]
+@10656 = ~ ~[xaa11946]
+@10657 = ~Helmed Horror~
+@10658 = ~ ~[xaa11955]
+@10659 = ~ ~[xaa11956]
+@10660 = ~ ~[xaa11957]
+@10661 = ~ ~[xaa11959]
+@10662 = ~Degrodel~
+@10663 = ~Pheirkas~
+@10664 = ~ A stout hammer will fix most any bandit.~[xaa11965]
+@10665 = ~~[xaa11966]
+@10666 = ~~[xaa11967]
+@10667 = ~Nortuary~
+@10668 = ~ 'Eya, friend.~[xaa11980]
+@10669 = ~ Sorry, no food fer ya right now.~
+@10670 = ~ Get away from me! I wouldn't trust you as far as I can spit!~
+@10671 = ~Destus Gurn~
+@10672 = ~ Do you mind? I'm a very busy man, and I don't need these constant interruptions.~
+@10673 = ~~[xaa11171]
+@10674 = ~Borinole Mann~
+@10675 = ~Brilla~
+@10676 = ~ Hmph! Well, I never!~[xaa12028]
+@10677 = ~Areana~
+@10678 = ~Reginald "Longtooth" Worthington III~
+@10679 = ~Hobgoblin Elite~
+@10680 = ~ Forward march!~[xaa12049]
+@10681 = ~ Spare no one!~[xaa12050]
+@10682 = ~ ~[xaa12051]
+@10683 = ~ ~[xaa12052]
+@10684 = ~ You be quiet!~[xaa12053]
+@10685 = ~ Manure mouth.~[xaa12054]
+@10686 = ~~[xaa12055]
+@10687 = ~Naaman~
+@10688 = ~Gardush~
+@10689 = ~~[xaa12061]
+@10690 = ~~[xaa12062]
+@10691 = ~Diyab~
+@10692 = ~ Dreadfully sorry, but I'm afraid... I'm gonna have ta kill ya.~[xaa12064]
+@10693 = ~Aasim~
+@10694 = ~ ~[xaa12070]
+@10695 = ~ ~[xaa12071]
+@10696 = ~Alai~
+@10697 = ~ You're at the end of your rope, I'll wager!~[xaa12073]
+@10698 = ~Zhalimar Cloudwulfe~
+@10699 = ~Thaldorn~
+@10700 = ~ H-hello, I don't want any trouble.~[xaa12083]
+@10701 = ~ Leave me be or you'll regret it!~
+@10702 = ~Plate Mail~
+@10703 = ~The Magma Bulwark +2~
+@10704 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+
+STATISTICS:
+
+Armor Class: 3 (0 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 50~
+@10705 = ~Forged by the fire giant Varboti as a gift for a Cormyrian general who made peace with his clan, this red-and-black armor lends its wearer a molten aspect while providing protection against all but the most powerful blows. Due to its incredibly strong but thin material, it also weighs far less than ordinary plate mail.
+
+STATISTICS:
+
+Armor Class: 1 (-2 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 20~
+@10706 = ~Amulet~
+@10707 = ~Arkion's Bloodstone Amulet~
+@10708 = ~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
 
 STATISTICS:
 
 Weight: 1~
-@10690 = ~Club~
-@10691 = ~Night Club +1~
-@10692 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
+@10709 = ~Club~
+@10710 = ~Night Club +1~
+@10711 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
 
 STATISTICS:
 
@@ -706,7 +741,7 @@ Requires:
  5 Strength
 
 Weight: 3~
-@10693 = ~This darkwood shaft surrounds a core of lead, giving it both stealth and heft. Its enchantment connects the club to the Shadow Weave, lending it greater power under cloak of night.
+@10712 = ~This darkwood shaft surrounds a core of lead, giving it both stealth and heft. Its enchantment connects the club to the Shadow Weave, lending it greater power under cloak of night.
 
 STATISTICS:
 
@@ -719,9 +754,9 @@ Requires:
  5 Strength
 
 Weight: 3~
-@10694 = ~Sling~
-@10695 = ~Sling of Unerring Accuracy +1~
-@10696 = ~Slings have existed since the beginning of recorded history. The basic sling consists of a leather or fabric strap with a pouch for holding the missile. The weapon is held by both ends of the strap and twirled around the wielder's head. When top speed is attained, the missile is launched by releasing one of the strap's ends.
+@10713 = ~Sling~
+@10714 = ~Sling of Unerring Accuracy +1~
+@10715 = ~Slings have existed since the beginning of recorded history. The basic sling consists of a leather or fabric strap with a pouch for holding the missile. The weapon is held by both ends of the strap and twirled around the wielder's head. When top speed is attained, the missile is launched by releasing one of the strap's ends.
 
 STATISTICS:
 
@@ -732,7 +767,7 @@ Requires:
  3 Strength
 
 Weight: 0~
-@10697 = ~Dandifox was one of the greatest heroes of the hin, the small people also known as halflings. From the concealment of forest arbors, he would attack rich caravans for a "tithe," which he then distributed among the local poor. The heroic robber finally met his end on the point of a guardsman's spear, but not before the constabulary had learned to fear and hate his infallible aim.
+@10716 = ~Dandifox was one of the greatest heroes of the hin, the small people also known as halflings. From the concealment of forest arbors, he would attack rich caravans for a "tithe," which he then distributed among the local poor. The heroic robber finally met his end on the point of a guardsman's spear, but not before the constabulary had learned to fear and hate his infallible aim.
 
 STATISTICS:
 
@@ -744,9 +779,9 @@ Requires:
  3 Strength
 
 Weight: 0~
-@10698 = ~War Hammer~
-@10699 = ~Hammer of Dawn +1~
-@10700 = ~Mounted knights cannot effectively use long pole weapons while on horseback and, as a result, many weapons have been fitted with shorter shafts so they may be wielded with just one hand. Maces and flails are two examples of this—the war hammer is another. The horseman's war hammer is the descendent of the Lucerne hammer. It is made entirely of steel, with rondels protecting and strengthening the grip. (Rondels are small disks of metal, often shaped into decorative designs.) The shaft is about eighteen inches long.
+@10717 = ~War Hammer~
+@10718 = ~Hammer of Dawn +1~
+@10719 = ~Mounted knights cannot effectively use long pole weapons while on horseback and, as a result, many weapons have been fitted with shorter shafts so they may be wielded with just one hand. Maces and flails are two examples of this—the war hammer is another. The horseman's war hammer is the descendent of the Lucerne hammer. It is made entirely of steel, with rondels protecting and strengthening the grip. (Rondels are small disks of metal, often shaped into decorative designs.) The shaft is about eighteen inches long.
 
 STATISTICS:
 
@@ -758,7 +793,7 @@ Requires:
  9 Strength
 
 Weight: 6~
-@10701 = ~Crafted from the scales and bones of a gold dragon servant of Lathander, this warhammer sometimes channels the power of the ancient wyrm's mighty wings.
+@10720 = ~Crafted from the scales and bones of a gold dragon servant of Lathander, this warhammer sometimes channels the power of the ancient wyrm's mighty wings.
 
 STATISTICS:
 
@@ -777,9 +812,16 @@ Requires:
  9 Strength
 
 Weight: 6~
-@10702 = ~Long Sword~
-@10703 = ~Harrower +1~
-@10704 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+@10721 = ~Ring~
+@10722 = ~Nemphre's Onyx Ring~
+@10723 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+
+STATISTICS:
+
+Weight: 0~
+@10724 = ~Long Sword~
+@10725 = ~Harrower +1~
+@10726 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
 
 STATISTICS:
 
@@ -791,7 +833,7 @@ Requires:
  6 Strength
 
 Weight: 4~
-@10705 = ~This double-edged long sword gleams white even in the reddest of torchlight. The Dethek runes along its sides name the blade "Harrower," a weapon once wielded by Ariabel, a Waterdhavian Paladin of Lathander who once carried the weapon into combat against the vampire Zerafex and her host of unholy spawn. Ariabel did not survive the contest, but decades later a gang of Tethyrian tomb robbers recovered her sword from the crypt where she fell.
+@10727 = ~This double-edged long sword gleams white even in the reddest of torchlight. The Dethek runes along its sides name the blade "Harrower," a weapon once wielded by Ariabel, a Waterdhavian Paladin of Lathander who once carried the weapon into combat against the vampire Zerafex and her host of unholy spawn. Ariabel did not survive the contest, but decades later a gang of Tethyrian tomb robbers recovered her sword from the crypt where she fell.
 
 STATISTICS:
 
@@ -805,17 +847,10 @@ Requires:
  6 Strength
 
 Weight: 4~
-@10706 = ~Ring~
-@10707 = ~Angel the Cat's Angel Skin Ring~
-@10708 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
-
-STATISTICS:
-
-Weight: 0~
-@10709 = ~Nemphre's Onyx Ring~
-@10710 = ~Two-handed Sword~
-@10711 = ~Gold Digger +1~
-@10712 = ~The two-handed sword is a derivative of the long sword. Weaponsmiths have always looked for ways to improve existing weapons. In an effort to improve the long sword, the blade was lengthened. Eventually, the handle had to be extended and two hands became necessary to properly swing the sword. The primary function of two-handed swords is cleaving mounted knights and breaking up pike formations.
+@10728 = ~Angel the Cat's Angel Skin Ring~
+@10729 = ~Two-handed Sword~
+@10730 = ~Gold Digger +1~
+@10731 = ~The two-handed sword is a derivative of the long sword. Weaponsmiths have always looked for ways to improve existing weapons. In an effort to improve the long sword, the blade was lengthened. Eventually, the handle had to be extended and two hands became necessary to properly swing the sword. The primary function of two-handed swords is cleaving mounted knights and breaking up pike formations.
 
 STATISTICS:
 
@@ -827,7 +862,7 @@ Requires:
  14 Strength
 
 Weight: 15~
-@10713 = ~Crafted by dwarves in service to the temple of Waukeen in Amn, this two-handed sword draws power from the gold in its wielder's purse. For the wealthy it strikes mighty blows. For the impoverished, the Gold Digger is no better than a mundane greatsword.
+@10732 = ~Crafted by dwarves in service to the temple of Waukeen in Amn, this two-handed sword draws power from the gold in its wielder's purse. For the wealthy it strikes mighty blows. For the impoverished, the Gold Digger is no better than a mundane greatsword.
 
 STATISTICS:
 
@@ -843,9 +878,9 @@ Requires:
  14 Strength
 
 Weight: 15~
-@10714 = ~Quarterstaff~
-@10715 = ~The Ossifier~
-@10716 = ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High-quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
+@10733 = ~Quarterstaff~
+@10734 = ~The Ossifier~
+@10735 = ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High-quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
 
 STATISTICS:
 
@@ -857,7 +892,7 @@ Requires:
  5 Strength
 
 Weight: 4~
-@10717 = ~Cursed Staff of Petrification: The Ossifier
+@10736 = ~Cursed Staff of Petrification: The Ossifier
 The surface of this seven-foot shaft more resembles stone than wood, but in the hands of a skilled wielder it weighs little more than a staff of oak. Along its length appear the ghost-like images of various foes caught in defensive postures, appearing almost as thought they had been suddenly turned to stone.
 
 STATISTICS:
@@ -876,9 +911,9 @@ Requires:
  5 Strength
 
 Weight: 4~
-@10718 = ~Flail ~
-@10719 = ~The Thresher +2~
-@10720 = ~The flail is a sturdy wooden handle attached to an iron rod, a wooden rod with spikes, or a spiked iron ball. Between the handle and its implement is either a hinge or chain link. The weapon was originally used as a tool for threshing grain.
+@10737 = ~Flail ~
+@10738 = ~The Thresher +2~
+@10739 = ~The flail is a sturdy wooden handle attached to an iron rod, a wooden rod with spikes, or a spiked iron ball. Between the handle and its implement is either a hinge or chain link. The weapon was originally used as a tool for threshing grain.
 
 STATISTICS:
 
@@ -890,7 +925,7 @@ Requires:
  13 Strength
 
 Weight: 15~
-@10721 = ~With one rod of steel and another of bronze, this double-headed flail metes out punishment right and left. The weapon's carved wooden haft depicts scenes of battle in which champions of Helm, each wielding an identical flail, wade through a field of orcs, threshing them like so much wheat.
+@10740 = ~With one rod of steel and another of bronze, this double-headed flail metes out punishment right and left. The weapon's carved wooden haft depicts scenes of battle in which champions of Helm, each wielding an identical flail, wade through a field of orcs, threshing them like so much wheat.
 
 STATISTICS:
 
@@ -903,409 +938,409 @@ Requires:
  13 Strength
 
 Weight: 13~
-@10722 = ~Westgate Ruby Wine~
-@10723 = ~Golden Sands Brews~
-@10724 = ~Suz-ale~
-@10725 = ~Old One Eye Beer~
-@10726 = ~Saerloonian Topaz Wine~
-@10727 = ~Tanagyr's Stout Ale~
-@10728 = ~Alurlyath Wine~
-@10729 = ~Blood Wine~
-@10730 = ~Firewine~
-@10731 = ~Mead~
-@10732 = ~Evermead~
-@10733 = ~Winter Wine~
-@10734 = ~Berduskan Dark Wine~
-@10735 = ~Dragon's Breath Beer~
-@10736 = ~Luiren's Best Ale~
-@10737 = ~Bitter Black Ale~
-@10738 = ~Lady's Hall~
-@10739 = ~Tavern~
-@10740 = ~Shadowdark Ale~
-@10741 = ~Store~
-@10742 = ~Elminster's Choice Beer~
-@10743 = ~Glint~
-@10744 = ~You can't see me! I'm hiding! I'm hiding!~
-@10745 = ~I've traveled with a lot of great people in the past. More than you might believe. But this is the best team ever.~
-@10746 = ~Seriously? Seriously. We're making some seriously bad calls.~
-@10747 = ~I'm at the end of my rope here. There are ample opportunities elsewhere for a gnome of my caliber.~
-@10748 = ~That's it! I've had it with you and your poor leadership choices. I'm done. DONE!~
-@10749 = ~Nobody panic! I'm in charge now. Well, perhaps you should panic after all. But don't!~
-@10750 = ~My eyelids are as heavy as lead. Or steel. Or gold. Oooh, let's say gold! What I mean is, I'm tired.~
-@10751 = ~If you don't give me something to do, I'll have to amuse myself, and NO ONE wants that.~
-@10752 = ~Come at me!~
-@10753 = ~For Cloakshadow!~
-@10754 = ~Death comes for you on short legs!~
-@10755 = ~I killed two ogres with a bent fork and some bootblack once!~
-@10756 = ~Destruction! Ruin! Mayhem! Other synonyms for death!~
-@10757 = ~Owww!~
-@10758 = ~I regret nothing...~
-@10759 = ~My insides are becoming my outsides!~
-@10760 = ~Ah, fresh air and the beauty of nature! So... how long do we have to stay out here?~
-@10761 = ~Look at all these marks—I, I mean, potential converts to the glory of Cloakshadow.~
-@10762 = ~The Sly One protects us in the darkness. Good thing too, 'cause this place is nasty.~
-@10763 = ~Without the sun, we'd have no shadows.~
-@10764 = ~Night time is the right time for sneaking!~
-@10765 = ~You called?~
-@10766 = ~Yes, yes?~
-@10767 = ~Whaddaya need?~
-@10768 = ~Time to go?~
-@10769 = ~Uh-huh?~
-@10770 = ~Hey!~
-@10771 = ~You bet!~
-@10772 = ~With FLAIR!~
-@10773 = ~Yep!~
-@10774 = ~Trust no one.~
-@10775 = ~I've done this a million times.~
-@10776 = ~I've done this a million and ONE times.~
-@10777 = ~Gnomes are the best! HUZZAH!~
-@10778 = ~Oh dear. That's an unfortunate turn of events.~
-@10779 = ~Neera! You can't die, not like this—there isn't nearly enough fire!~
-@10780 = ~In Baravar's name!~
-@10781 = ~No one saw that.~
-@10782 = ~This isn't doing any good!~
-@10783 = ~My pockets are a little full right now. Had to drop it.~
-@10784 = ~Oooh, what have we here?~
-@10785 = ~It's the amazing vanishing gnome!~
-@10786 = ~Darn, lost the spell!~
-@10787 = ~Trap's on the ground. Step carefully.~
-@10788 = ~When asked about his past, GLINT GARDNERSONSON tends to use three words where one will do and constantly breaks off on tangents as he speaks. Eventually, you learn that he comes from a large family and has always been seen as something of a troublemaker. He gained his nickname, "Three-Eyes," when his exasperated mother exclaimed that she needed three eyes to keep watch on him. 
+@10741 = ~Westgate Ruby Wine~
+@10742 = ~Golden Sands Brews~
+@10743 = ~Suz-ale~
+@10744 = ~Old One Eye Beer~
+@10745 = ~Saerloonian Topaz Wine~
+@10746 = ~Tanagyr's Stout Ale~
+@10747 = ~Alurlyath Wine~
+@10748 = ~Blood Wine~
+@10749 = ~Firewine~
+@10750 = ~Mead~
+@10751 = ~Evermead~
+@10752 = ~Winter Wine~
+@10753 = ~Berduskan Dark Wine~
+@10754 = ~Dragon's Breath Beer~
+@10755 = ~Luiren's Best Ale~
+@10756 = ~Bitter Black Ale~
+@10757 = ~Lady's Hall~
+@10758 = ~Tavern~
+@10759 = ~Shadowdark Ale~
+@10760 = ~Store~
+@10761 = ~Elminster's Choice Beer~
+@10762 = ~Glint~
+@10763 = ~You can't see me! I'm hiding! I'm hiding!~
+@10764 = ~I've traveled with a lot of great people in the past. More than you might believe. But this is the best team ever.~
+@10765 = ~Seriously? Seriously. We're making some seriously bad calls.~
+@10766 = ~I'm at the end of my rope here. There are ample opportunities elsewhere for a gnome of my caliber.~
+@10767 = ~That's it! I've had it with you and your poor leadership choices. I'm done. DONE!~
+@10768 = ~Nobody panic! I'm in charge now. Well, perhaps you should panic after all. But don't!~
+@10769 = ~My eyelids are as heavy as lead. Or steel. Or gold. Oooh, let's say gold! What I mean is, I'm tired.~
+@10770 = ~If you don't give me something to do, I'll have to amuse myself, and NO ONE wants that.~
+@10771 = ~Come at me!~
+@10772 = ~For Cloakshadow!~
+@10773 = ~Death comes for you on short legs!~
+@10774 = ~I killed two ogres with a bent fork and some bootblack once!~
+@10775 = ~Destruction! Ruin! Mayhem! Other synonyms for death!~
+@10776 = ~Owww!~
+@10777 = ~I regret nothing...~
+@10778 = ~My insides are becoming my outsides!~
+@10779 = ~Ah, fresh air and the beauty of nature! So... how long do we have to stay out here?~
+@10780 = ~Look at all these marks—I, I mean, potential converts to the glory of Cloakshadow.~
+@10781 = ~The Sly One protects us in the darkness. Good thing too, 'cause this place is nasty.~
+@10782 = ~Without the sun, we'd have no shadows.~
+@10783 = ~Night time is the right time for sneaking!~
+@10784 = ~You called?~
+@10785 = ~Yes, yes?~
+@10786 = ~Whaddaya need?~
+@10787 = ~Time to go?~
+@10788 = ~Uh-huh?~
+@10789 = ~Hey!~
+@10790 = ~You bet!~
+@10791 = ~With FLAIR!~
+@10792 = ~Yep!~
+@10793 = ~Trust no one.~
+@10794 = ~I've done this a million times.~
+@10795 = ~I've done this a million and ONE times.~
+@10796 = ~Gnomes are the best! HUZZAH!~
+@10797 = ~Oh dear. That's an unfortunate turn of events.~
+@10798 = ~Neera! You can't die, not like this—there isn't nearly enough fire!~
+@10799 = ~In Baravar's name!~
+@10800 = ~No one saw that.~
+@10801 = ~This isn't doing any good!~
+@10802 = ~My pockets are a little full right now. Had to drop it.~
+@10803 = ~Oooh, what have we here?~
+@10804 = ~It's the amazing vanishing gnome!~
+@10805 = ~Darn, lost the spell!~
+@10806 = ~Trap's on the ground. Step carefully.~
+@10807 = ~When asked about his past, GLINT GARDNERSONSON tends to use three words where one will do and constantly breaks off on tangents as he speaks. Eventually, you learn that he comes from a large family and has always been seen as something of a troublemaker. He gained his nickname, "Three-Eyes," when his exasperated mother exclaimed that she needed three eyes to keep watch on him. 
 
 Glint happily expounds on his many adventures since leaving home; it's difficult to tell where reality ends and exaggeration begins. Though Glint initially ventured from Baldur's Gate in search of several missing relatives, he seems to have been caught up in the mission of ending Caelar's crusade.~
-@10789 = ~Rohma~
-@10790 = ~ I want my mommy.~[xaa10401]
-@10791 = ~~[xaa10402]
-@10792 = ~~[xaa10403]
-@10793 = ~ I lost my dolly.~[xaa10466]
-@10794 = ~ *sob*~[xaa10471]
-@10795 = ~Audamar~
-@10796 = ~Marshal Nederlok~
-@10797 = ~It's too late to surrender.~[xac10052]
-@10798 = ~Courage will carry us through.~[xac10053]
-@10799 = ~The Flaming Fist stands ready.~[xac10054]
-@10800 = ~Aldeth Sashenstar~
-@10801 = ~ You there! Identify yourselves!~[xac10055]
-@10802 = ~ Come now, old chaps, can't we be friends?~[xac10056]
-@10803 = ~ For Baldur's Gate!~[xac10057]
-@10804 = ~ ~[xac10058]
-@10805 = ~ ~[xac10059]
-@10806 = ~ Learn some manners, brute.~[xac10060]
-@10807 = ~ Nothing is more vulgar than bad manners.~[xac10061]
-@10808 = ~ Learn to bathe, lout.~[xac10062]
-@10809 = ~ Oh my goodness!~[xac10063]
-@10810 = ~ I don't think that I have anything to say to you! Why don't you leave me be?!~
-@10811 = ~Kent~
-@10812 = ~ Every crime must be punished!~[xaa10044]
-@10813 = ~ I AM the law!~[xaa10040]
-@10814 = ~~[xaa10041]
-@10815 = ~~[xaa10042]
-@10816 = ~ I serve the Flaming Fist!~[xaa10039]
-@10817 = ~ You there! Give me fifty pushups!~[xaa10045]
-@10818 = ~ You're not welcome here!~
-@10819 = ~Beno Famari~
-@10820 = ~Skie~
-@10821 = ~ Please, help me!~
-@10822 = ~ You're the finest group of friends I've ever had.~
-@10823 = ~ I don't think what we're doing is morally right.~
-@10824 = ~ All of you are such pigs.~
-@10825 = ~ I can't take this anymore. I'm going back home!~
-@10826 = ~ I don't know if I can handle this leadership thing, but I'm gonna try.~
-@10827 = ~ I'm getting tired. Couldn't we take a rest soon?~
-@10828 = ~ I'm so bored.~
-@10829 = ~ Let's go shopping!~
-@10830 = ~ ~
-@10831 = ~ Ahh! I'm hurt. Help!~
-@10832 = ~ Can I help you?~
-@10833 = ~ Aw, I broke a nail.~
-@10834 = ~ Oh, I've mussed my hair.~
-@10835 = ~ Oh, my feet hurt.~
-@10836 = ~ I have a cold.~
-@10837 = ~ I have a headache.~
-@10838 = ~ Eldoth, why do you treat our companions so badly?~
-@10839 = ~ I love you, Eldoth.~
-@10840 = ~ Why do you always have to make fun of me?! I hate you! Get away from me!~
-@10841 = ~ I'd love to hear your music, Garrick.~
-@10842 = ~ Eldoth is a kind man. He cares about me, Garrick.~
-@10843 = ~ You're a good friend.~
-@10844 = ~ I feel safe with you in the party.~
-@10845 = ~ I think you're a beautiful person.~
-@10846 = ~ I wanna go home.~
-@10847 = ~ *sniffle* I can't believe he's dead.~
-@10848 = ~ What am I gonna do? *sniffle* You can't die, Eldoth, you can't.~
-@10849 = ~ Thank you. You're very kind.~
-@10850 = ~ Uh, I'm sorry. Did I do something wrong?~
-@10851 = ~ Eldoth, tell them to stop being so cruel.~
-@10852 = ~ Do you like my perfume?~
-@10853 = ~ It's been so long since I've had a hot meal.~
-@10854 = ~Caelar Argent~
-@10855 = ~Retreat! Regroup!~[xac10107]
-@10856 = ~Fatigue plagues me, but I press on.~[xac10108]
-@10857 = ~Triumph or death!~[xac10109]
-@10858 = ~Honor, blood, and victory!~[xac10110]
-@10859 = ~Ah!~[xac10111]
-@10860 = ~Aye?~[xac10112]
-@10861 = ~I listen.~[xac10113]
-@10862 = ~Orders?~[xac10114]
-@10863 = ~Yes?~[xac10115]
-@10864 = ~Speak to me.~[xac10116]
-@10865 = ~What is it?~[xac10117]
-@10866 = ~Without fail.~[xac10118]
-@10867 = ~Yes.~[xac10119]
-@10868 = ~At once!~[xac10120]
-@10869 = ~Agreed.~[xac10121]
-@10870 = ~I... have... THE POWER!~[xac10122]
-@10871 = ~Feel the power of the divine!~[xac10123]
-@10872 = ~I shall strike again.~[xac10124]
-@10873 = ~I cannot harm this enemy. We must try something else.~[xac10125]
-@10874 = ~My spell is lost.~[xac10126]
-@10875 = ~When pressed to reveal her past, Caelar tells a tale repeated a thousand times over in her mind. As a child, Caelar Argent labored under the high expectations that came with her semi-divine heritage. Her early life in a monastery of the Order of the Aster was a hard one as Caelar's temperamental nature did not fit comfortably with the Asters' devotion to discipline. She believed, even then, that she was destined for great things. One day, alone in the chapterhouse library, she attempted to grow her powers by reading from a tome of forbidden knowledge. Instead she unwittingly opened a gate to the realm of the devil Belhifet. Caelar's soul should have been forfeit, but her uncle, Aun Argent, offered himself to the devil prince and was pulled down into the Nine Hells in his niece's place. Caelar never forgot his sacrifice. She vowed that someday, somehow, she would find a way to rescue her uncle from the pit of Avernus. After more than a decade in seclusion, she made contact with the Revered Brother Hephernaan. He offered her a path to Avernus, but walking it would not be easy. She would, he claimed, require three things: an army to fight the legions of the Nine Hells, possession of Dragonspear Castle, and the divine blood that was the key to opening the portal beneath the castle...~
-@10876 = ~Surely the gods of light smile on us.~[xac10128]
-@10877 = ~ 'Tis easy to walk astray from the path of righteousness. Watch your steps.~[xac10129]
-@10878 = ~We wander too far into darkness. Put me or another righteous soul in charge. I will soon steer us back on course.~[xac10130]
-@10879 = ~This is wrong. I'll not stand by and watch you make a mockery of all the principles I hold to. We part ways here.~[xac10131]
-@10880 = ~Follow me and I shall lead us unto righteousness.~[xac10132]
-@10881 = ~We should not stand idle while there are good works to be done.~[xac10134]
-@10882 = ~For glory!~[xac10135]
-@10883 = ~The damned shall fall!~[xac10136]
-@10884 = ~I shall send you to the light!~[xac10137]
-@10885 = ~I go now... to the light...~[xac10141]
-@10886 = ~By the light, heal me!~[xac10142]
-@10887 = ~The beauty of our world strengthens my resolve. This land is worth protecting.~[xac10143]
-@10888 = ~Even strong walls such as these cannot keep evil from the doors of innocents.~[xac10144]
-@10889 = ~Here, we shall find enemies worth fighting!~[xac10145]
-@10890 = ~The radiance of the light blesses us.~[xac10146]
-@10891 = ~Another day passed. Tomorrow shall bring new evil for us to strive against.~[xac10147]
-@10892 = ~By the light.~[xac10154]
-@10893 = ~Verily.~[xac10156]
-@10894 = ~For the glory of the Morninglord.~[xac10157]
-@10895 = ~What do you demand of a daughter of Argent?~[xac10158]
-@10896 = ~I am an aasimar. A child of the heavens. You would do well to heed me.~[xac10159]
-@10897 = ~Go into the light.~[xac10161]
-@10898 = ~Sister! I will avenge you!~[xac10162]
-@10899 = ~I have no room to carry that. It is dropped.~[xac10168]
-@10900 = ~I claim this for the crusade.~[xac10169]
-@10901 = ~I am hidden from evil's eyes.~[xac10170]
-@10902 = ~I have a laid a trap for our enemies.~[xac10172]
-@10903 = ~Gorion~
-@10904 = ~ Ahhh, my child, I am glad I have found you.~[xac10173]
-@10905 = ~ Run, child! Get out of here!~[xac10174]
-@10906 = ~ ~[xaa11618]
-@10907 = ~ ~[xaa11619]
-@10908 = ~ You must learn to be patient, child.~[xac10177]
-@10909 = ~ Everything will be explained to you in time.~[xac10178]
-@10910 = ~ *cough* *cough* I'm too old for this.~[xac10179]
-@10911 = ~ We have very little time!~[xac10180]
-@10912 = ~Ashatiel~
-@10913 = ~Somethin' you need?~[xac10182]
-@10914 = ~As the light wills.~[xac10183]
-@10915 = ~Hephernaan~
-@10916 = ~Greetings. Your power impresses.~[xac10184]
-@10917 = ~Mercy! Have mercy!~[xac10185]
-@10918 = ~You will pray for death when I am done with you!~[xac10187]
-@10919 = ~~[xac10188]
-@10920 = ~~[xac10189]
-@10921 = ~What do you want amongst the faithful?~[xac10190]
-@10922 = ~Bow down before the gods and beg for mercy!~[xac10191]
-@10923 = ~The gods are unforgiving, fool!~[xac10192]
-@10924 = ~The Barghest~
-@10925 = ~Fall before the Barghest!~[xac10193]
-@10926 = ~Do not question my orders.~[xac10194]
-@10927 = ~Caelar brought me to the light.~[xac10195]
-@10928 = ~Einer~
-@10929 = ~Me will smash your face!~
-@10930 = ~I will crush!~
-@10931 = ~Me will crush you, crush you to goo!~
-@10932 = ~Betror~
-@10933 = ~Yarok~
-@10934 = ~Rhayla~
-@10935 = ~ ~[xaa11623]
-@10936 = ~ ~[xaa11624]
-@10937 = ~ Good day and hello to you.~[xac10198]
-@10938 = ~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11622]
-@10939 = ~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]
-@10940 = ~Grimgor~
-@10941 = ~Ferrusk~
-@10942 = ~~[xac10218]
-@10943 = ~~[xac10219]
-@10944 = ~Daggerford Militia~
-@10945 = ~ By Moradin's hammer.~[xaa11534]
-@10946 = ~~[xaa11535]
-@10947 = ~~[xaa11536]
-@10948 = ~ I need a swig o' some strong dwarven ale.~[xac10223]
-@10949 = ~ Me temper's bad enough without ye botherin' me.~[xaa11533]
-@10950 = ~ Your chatterin's startin' to wear on me nerves.~[xaa11538]
-@10951 = ~Defend our allies!~[xac10226]
-@10952 = ~Yes?~[xac10227]
-@10953 = ~I'm here to fight.~[xac10228]
-@10954 = ~Kill 'em all!~[xac10229]
-@10955 = ~We're few but fierce!~[xac10230]
-@10956 = ~Soon we march.~[xac10231]
-@10957 = ~ You're rather outlandish folk to be wanderin' 'round here.~[xaa11022]
-@10958 = ~~[xaa11020]
-@10959 = ~~[xaa11021]
-@10960 = ~ Nasty times are comin', I reckon.~[xaa11019]
-@10961 = ~ Queer things have been afoot lately.~[xac10237]
-@10962 = ~ I wish I had my old tobacco pipe.~[xac10238]
-@10963 = ~Flaming Fist Mercenary~
-@10964 = ~Punish the lawbreakers!~[xac10239]
-@10965 = ~We're more than mercenaries.~[xac10240]
-@10966 = ~War is almost here.~[xac10241]
-@10967 = ~Show them our steel!~[xac10245]
-@10968 = ~Order is what matters.~[xac10246]
-@10969 = ~For Baldur's Gate.~[xac10247]
-@10970 = ~Flaming Fist Watcher~
-@10971 = ~ ~[xaa11284]
-@10972 = ~ ~[xaa11285]
-@10973 = ~ Helm sees all. Know that and be judged!~[xaa11415]
-@10974 = ~ The Vigilant One knows of all your sins.~[xaa11419]
-@10975 = ~Flaming Fist Battlemage~
-@10976 = ~Flaming Fist Veteran~
-@10977 = ~Waterdhavian Soldier~
-@10978 = ~To arms! To arms!~[xac10261]
-@10979 = ~Still we wait.~[xac10262]
-@10980 = ~The City of Splendors is my home.~[xac10263]
-@10981 = ~Lift up your blades and fight!~[xac10270]
-@10982 = ~For Waterdeep.~[xac10271]
-@10983 = ~What is it?~[xac10272]
-@10984 = ~Crusader Archer~
-@10985 = ~For the Shining Lady!~[xac10278]
-@10986 = ~You need somethin'?~[xac10279]
-@10987 = ~We serve the light.~[xac10280]
-@10988 = ~Crusader~
-@10989 = ~ A pleasure it is to meet ya.~[xac10281]
-@10990 = ~ A stout hammer will fix most any bandit.~[xaa11902]
-@10991 = ~~[xaa11903]
-@10992 = ~~[xaa11904]
-@10993 = ~ You canna get better than the stability stone walls provide.~[xac10286]
-@10994 = ~~[xaa11082]
-@10995 = ~~[xaa11791]
-@10996 = ~ The Fair Folk rarely have time for small talk.~[xac10289]
-@10997 = ~ Troubled times are upon us.~[xac10290]
-@10998 = ~ Soon, we shall all be together upon Evermeet.~[xac10291]
-@10999 = ~Crusader Recruit~
-@11000 = ~Die in her name!~[xac10292]
-@11001 = ~Mercenary~
-@11002 = ~ Spare no one!~[xaa12024]
-@11003 = ~ You be quiet!~[xaa12027]
-@11004 = ~ Forward march!~[xaa12023]
-@11005 = ~ Die, scum!~[xac10305]
-@11006 = ~~[xac10306]
-@11007 = ~ ~[xac10307]
-@11008 = ~Crusader Cleric~
-@11009 = ~I welcome you with outstretched hand.~[xac10314]
-@11010 = ~Justice shall be swift and final!~[xac10315]
-@11011 = ~~[xac10316]
-@11012 = ~~[xac10317]
-@11013 = ~I trust you are here in good faith.~[xac10318]
-@11014 = ~May the gods look upon you kindly.~[xac10319]
-@11015 = ~All of the faithful are welcome here.~[xac10320]
-@11016 = ~Crusader Mage~
-@11017 = ~~[xac10336]
-@11018 = ~~[xac10337]
-@11019 = ~ Your acquaintance I am glad to have made.~[xac10338]
-@11020 = ~ Soon to go back to the grotto, I am. I miss the tunnels of home.~[xac10339]
-@11021 = ~ The underground seems safer by far, and gems to find are welcome too.~[xac10340]
-@11022 = ~Troll Wrangler~
-@11023 = ~Stay back, or you'll regret it.~[xac10349]
-@11024 = ~I give! I give!~[xac10350]
-@11025 = ~All right! You and me! Let's go!~[xac10351]
-@11026 = ~~[xac10352]
-@11027 = ~~[xac10353]
-@11028 = ~I can break an arm or a leg fer a copper or two.~[xac10354]
-@11029 = ~Ahhh, be off with ya.~[xac10355]
-@11030 = ~Ye're a piece o' iron, you are.~[xac10356]
-@11031 = ~Bonebat~
-@11032 = ~Imbued Wight~
-@11033 = ~Skeletal Mage~
-@11034 = ~Skeleton Archer~
-@11035 = ~Tattered Skeleton~
-@11036 = ~Shadowed Soul~
-@11037 = ~Burning Skeleton~
-@11038 = ~Skeleton~
-@11039 = ~Wraith~
-@11040 = ~Priest of Oghma~
-@11041 = ~ These walls contain the world's knowledge.~
-@11042 = ~~
-@11043 = ~ Wisdom is only possessed by the learned.~
-@11044 = ~Piato~
-@11045 = ~ Our library is a man's harem of knowledge.~
-@11046 = ~ Oh—'scuse me, but I am late for my classes.~
-@11047 = ~Crusader Guard~
-@11048 = ~Crusader Officer~
-@11049 = ~I'll test your mettle with cold steel!~[xac10382]
-@11050 = ~~[xac10383]
-@11051 = ~~[xac10384]
-@11052 = ~Declare yourself!~[xac10385]
-@11053 = ~Do not disturb my duties.~[xac10386]
-@11054 = ~At ease, citizen.~[xac10387]
-@11055 = ~I trust you have no hostile intentions.~[xac10388]
-@11056 = ~Nooooooo!~[xac10403]
-@11057 = ~RAAAHHHHR! You die! You die!~[xac10404]
-@11058 = ~I will crush you, puny one!~[xac10405]
-@11059 = ~~[xac10406]
-@11060 = ~~[xac10407]
-@11061 = ~Uhh? What you want?~[xac10408]
-@11062 = ~I watching you!~[xac10409]
-@11063 = ~Speak, manling. Speak quick!~[xac10410]
-@11064 = ~You and my kind not get along!~[xac10411]
-@11065 = ~If I get paid, I fight.~[xac10412]
-@11066 = ~I like smashin' heads.~[xac10413]
-@11067 = ~Crusader Commander~
-@11068 = ~Sindret~
-@11069 = ~Troll~
-@11070 = ~Leopas~
-@11071 = ~Corinth~
-@11072 = ~Valis~
-@11073 = ~Ravoc~
-@11074 = ~Delton~
-@11075 = ~ I am happy not. No, I'm not.~[xac10446]
-@11076 = ~~[xac10447]
-@11077 = ~~[xac10448]
-@11078 = ~ Happy I am. Yes, I am!~[xac10450]
-@11079 = ~ Who you are, know not I.~[xac10451]
-@11080 = ~Damarr~
-@11081 = ~What you looking at?~[xac10472]
-@11082 = ~Go 'way.~[xac10473]
-@11083 = ~Tristian~
-@11084 = ~Crusader Sergeant~
-@11085 = ~Crusader Elite~
-@11086 = ~Zare~
-@11087 = ~Recruit Kjarvan~
-@11088 = ~Recruit Qing~
-@11089 = ~Deneld~
-@11090 = ~Glory and honor.~
-@11091 = ~The light will reward you.~
-@11092 = ~Commander Dreon~
-@11093 = ~Sallo~
-@11094 = ~ ZZZZzzzzzzz...~[xaa11124]
-@11095 = ~ ZZZZzzzzz... *snort*~[xaa11123]
-@11096 = ~Crusader Nan~
-@11097 = ~ Ooh, it's a fine day for meeting new friends.~[xac10524]
-@11098 = ~~[xaa11208]
-@11099 = ~~[xaa11209]
-@11100 = ~ May you know the happiness of a warm hearth and home.~[xaa11211]
-@11101 = ~ Dallillia guides the way of all those that seek the path home.~[xaa11207]
-@11102 = ~Crusader Pedro~
-@11103 = ~ Grrrrrrrr... grrrr!~[xac10553]
-@11104 = ~ ~[xac10554]
-@11105 = ~ ~[xac10555]
-@11106 = ~ Grrrr, yip yip yap! Yip yip *snarl*...~[xac10556]
-@11107 = ~ Yap! Grrr grr... yip yip yip yap! Look, we don't speak Common, all right?! *snarl* Yip yip yap!~[xac10557]
-@11108 = ~ *snarl* Yip! Yip yip yip yip yap!~[xac10558]
-@11109 = ~Mercenary Captain~
-@11110 = ~Kara-Turan Mercenary~
-@11111 = ~Crusader Scout~
-@11112 = ~This heavy slab displays the holy symbol of Tempus.~
-@11113 = ~This magical barrier hums with arcane power. Beyond, the camp buzzes with activity as the crusaders prepare for battle.~
-@11114 = ~A translucent field of force glimmers before the gate, its magic repelling any attempt to enter the courtyard.~
-@11115 = ~Though the crusade's symbol is a sun upon the horizon, this banner offers little warmth or light to the oppressive gloom permeating Dragonspear Castle.~
-@11116 = ~Properly positioned, this recently repaired catapult could inflict serious damage upon Caelar's enemies.~
-@11117 = ~Though dead for decades, the red dragon remains that crown this castle radiate menace.~
-@11118 = ~Exit~
-@11119 = ~Protection From Good~
-@11120 = ~Draw Upon Unholy Might~
-@11121 = ~Cure Critical Wounds~
-@11122 = ~Cure Critical Wounds
+@10808 = ~Rohma~
+@10809 = ~ I want my mommy.~[xaa10445]
+@10810 = ~~[xaa10446]
+@10811 = ~~[xaa10447]
+@10812 = ~ I lost my dolly.~[xaa10510]
+@10813 = ~ *sob*~[xaa10515]
+@10814 = ~Audamar~
+@10815 = ~Marshal Nederlok~
+@10816 = ~It's too late to surrender.~[xac10052]
+@10817 = ~Courage will carry us through.~[xac10053]
+@10818 = ~The Flaming Fist stands ready.~[xac10054]
+@10819 = ~Aldeth Sashenstar~
+@10820 = ~ You there! Identify yourselves!~[xac10055]
+@10821 = ~ Come now, old chaps, can't we be friends?~[xac10056]
+@10822 = ~ For Baldur's Gate!~[xac10057]
+@10823 = ~ ~[xac10058]
+@10824 = ~ ~[xac10059]
+@10825 = ~ Learn some manners, brute.~[xac10060]
+@10826 = ~ Nothing is more vulgar than bad manners.~[xac10061]
+@10827 = ~ Learn to bathe, lout.~[xac10062]
+@10828 = ~ Oh my goodness!~[xac10063]
+@10829 = ~ I don't think that I have anything to say to you! Why don't you leave me be?!~
+@10830 = ~Kent~
+@10831 = ~ Every crime must be punished!~[xaa10044]
+@10832 = ~ I AM the law!~[xaa10040]
+@10833 = ~~[xaa10041]
+@10834 = ~~[xaa10042]
+@10835 = ~ I serve the Flaming Fist!~[xaa10039]
+@10836 = ~ You there! Give me fifty pushups!~[xaa10045]
+@10837 = ~ You're not welcome here!~
+@10838 = ~Beno Famari~
+@10839 = ~Skie~
+@10840 = ~ Please, help me!~
+@10841 = ~ You're the finest group of friends I've ever had.~
+@10842 = ~ I don't think what we're doing is morally right.~
+@10843 = ~ All of you are such pigs.~
+@10844 = ~ I can't take this anymore. I'm going back home!~
+@10845 = ~ I don't know if I can handle this leadership thing, but I'm gonna try.~
+@10846 = ~ I'm getting tired. Couldn't we take a rest soon?~
+@10847 = ~ I'm so bored.~
+@10848 = ~ Let's go shopping!~
+@10849 = ~ ~
+@10850 = ~ Ahh! I'm hurt. Help!~
+@10851 = ~ Can I help you?~
+@10852 = ~ Aw, I broke a nail.~
+@10853 = ~ Oh, I've mussed my hair.~
+@10854 = ~ Oh, my feet hurt.~
+@10855 = ~ I have a cold.~
+@10856 = ~ I have a headache.~
+@10857 = ~ Eldoth, why do you treat our companions so badly?~
+@10858 = ~ I love you, Eldoth.~
+@10859 = ~ Why do you always have to make fun of me?! I hate you! Get away from me!~
+@10860 = ~ I'd love to hear your music, Garrick.~
+@10861 = ~ Eldoth is a kind man. He cares about me, Garrick.~
+@10862 = ~ You're a good friend.~
+@10863 = ~ I feel safe with you in the party.~
+@10864 = ~ I think you're a beautiful person.~
+@10865 = ~ I wanna go home.~
+@10866 = ~ *sniffle* I can't believe he's dead.~
+@10867 = ~ What am I gonna do? *sniffle* You can't die, Eldoth, you can't.~
+@10868 = ~ Thank you. You're very kind.~
+@10869 = ~ Uh, I'm sorry. Did I do something wrong?~
+@10870 = ~ Eldoth, tell them to stop being so cruel.~
+@10871 = ~ Do you like my perfume?~
+@10872 = ~ It's been so long since I've had a hot meal.~
+@10873 = ~Caelar Argent~
+@10874 = ~Retreat! Regroup!~[xac10107]
+@10875 = ~Fatigue plagues me, but I press on.~[xac10108]
+@10876 = ~Triumph or death!~[xac10109]
+@10877 = ~Honor, blood, and victory!~[xac10110]
+@10878 = ~Ah!~[xac10111]
+@10879 = ~Aye?~[xac10112]
+@10880 = ~I listen.~[xac10113]
+@10881 = ~Orders?~[xac10114]
+@10882 = ~Yes?~[xac10115]
+@10883 = ~Speak to me.~[xac10116]
+@10884 = ~What is it?~[xac10117]
+@10885 = ~Without fail.~[xac10118]
+@10886 = ~Yes.~[xac10119]
+@10887 = ~At once!~[xac10120]
+@10888 = ~Agreed.~[xac10121]
+@10889 = ~I... have... THE POWER!~[xac10122]
+@10890 = ~Feel the power of the divine!~[xac10123]
+@10891 = ~I shall strike again.~[xac10124]
+@10892 = ~I cannot harm this enemy. We must try something else.~[xac10125]
+@10893 = ~My spell is lost.~[xac10126]
+@10894 = ~When pressed to reveal her past, Caelar tells a tale repeated a thousand times over in her mind. As a child, Caelar Argent labored under the high expectations that came with her semi-divine heritage. Her early life in a monastery of the Order of the Aster was a hard one as Caelar's temperamental nature did not fit comfortably with the Asters' devotion to discipline. She believed, even then, that she was destined for great things. One day, alone in the chapterhouse library, she attempted to grow her powers by reading from a tome of forbidden knowledge. Instead she unwittingly opened a gate to the realm of the devil Belhifet. Caelar's soul should have been forfeit, but her uncle, Aun Argent, offered himself to the devil prince and was pulled down into the Nine Hells in his niece's place. Caelar never forgot his sacrifice. She vowed that someday, somehow, she would find a way to rescue her uncle from the pit of Avernus. After more than a decade in seclusion, she made contact with the Revered Brother Hephernaan. He offered her a path to Avernus, but walking it would not be easy. She would, he claimed, require three things: an army to fight the legions of the Nine Hells, possession of Dragonspear Castle, and the divine blood that was the key to opening the portal beneath the castle...~
+@10895 = ~Surely the gods of light smile on us.~[xac10128]
+@10896 = ~ 'Tis easy to walk astray from the path of righteousness. Watch your steps.~[xac10129]
+@10897 = ~We wander too far into darkness. Put me or another righteous soul in charge. I will soon steer us back on course.~[xac10130]
+@10898 = ~This is wrong. I'll not stand by and watch you make a mockery of all the principles I hold to. We part ways here.~[xac10131]
+@10899 = ~Follow me and I shall lead us unto righteousness.~[xac10132]
+@10900 = ~We should not stand idle while there are good works to be done.~[xac10134]
+@10901 = ~For glory!~[xac10135]
+@10902 = ~The damned shall fall!~[xac10136]
+@10903 = ~I shall send you to the light!~[xac10137]
+@10904 = ~I go now... to the light...~[xac10141]
+@10905 = ~By the light, heal me!~[xac10142]
+@10906 = ~The beauty of our world strengthens my resolve. This land is worth protecting.~[xac10143]
+@10907 = ~Even strong walls such as these cannot keep evil from the doors of innocents.~[xac10144]
+@10908 = ~Here, we shall find enemies worth fighting!~[xac10145]
+@10909 = ~The radiance of the light blesses us.~[xac10146]
+@10910 = ~Another day passed. Tomorrow shall bring new evil for us to strive against.~[xac10147]
+@10911 = ~By the light.~[xac10154]
+@10912 = ~Verily.~[xac10156]
+@10913 = ~For the glory of the Morninglord.~[xac10157]
+@10914 = ~What do you demand of a daughter of Argent?~[xac10158]
+@10915 = ~I am an aasimar. A child of the heavens. You would do well to heed me.~[xac10159]
+@10916 = ~Go into the light.~[xac10161]
+@10917 = ~Sister! I will avenge you!~[xac10162]
+@10918 = ~I have no room to carry that. It is dropped.~[xac10168]
+@10919 = ~I claim this for the crusade.~[xac10169]
+@10920 = ~I am hidden from evil's eyes.~[xac10170]
+@10921 = ~I have a laid a trap for our enemies.~[xac10172]
+@10922 = ~Gorion~
+@10923 = ~ Ahhh, my child, I am glad I have found you.~[xac10173]
+@10924 = ~ Run, child! Get out of here!~[xac10174]
+@10925 = ~ ~[xaa11532]
+@10926 = ~ ~[xaa11533]
+@10927 = ~ You must learn to be patient, child.~[xac10177]
+@10928 = ~ Everything will be explained to you in time.~[xac10178]
+@10929 = ~ *cough* *cough* I'm too old for this.~[xac10179]
+@10930 = ~ We have very little time!~[xac10180]
+@10931 = ~Ashatiel~
+@10932 = ~Somethin' you need?~[xac10182]
+@10933 = ~As the light wills.~[xac10183]
+@10934 = ~Hephernaan~
+@10935 = ~Greetings. Your power impresses.~[xac10184]
+@10936 = ~Mercy! Have mercy!~[xac10185]
+@10937 = ~You will pray for death when I am done with you!~[xac10187]
+@10938 = ~~[xac10188]
+@10939 = ~~[xac10189]
+@10940 = ~What do you want amongst the faithful?~[xac10190]
+@10941 = ~Bow down before the gods and beg for mercy!~[xac10191]
+@10942 = ~The gods are unforgiving, fool!~[xac10192]
+@10943 = ~The Barghest~
+@10944 = ~Fall before the Barghest!~[xac10193]
+@10945 = ~Do not question my orders.~[xac10194]
+@10946 = ~Caelar brought me to the light.~[xac10195]
+@10947 = ~Einer~
+@10948 = ~Me will smash your face!~
+@10949 = ~I will crush!~
+@10950 = ~Me will crush you, crush you to goo!~
+@10951 = ~Betror~
+@10952 = ~Yarok~
+@10953 = ~Rhayla~
+@10954 = ~ ~[xaa11537]
+@10955 = ~ ~[xaa11538]
+@10956 = ~ Good day and hello to you.~[xac10198]
+@10957 = ~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11536]
+@10958 = ~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]
+@10959 = ~Grimgor~
+@10960 = ~Ferrusk~
+@10961 = ~~[xac10218]
+@10962 = ~~[xac10219]
+@10963 = ~Daggerford Militia~
+@10964 = ~ By Moradin's hammer.~[xaa11609]
+@10965 = ~~[xaa11610]
+@10966 = ~~[xaa11611]
+@10967 = ~ I need a swig o' some strong dwarven ale.~[xac10223]
+@10968 = ~ Me temper's bad enough without ye botherin' me.~[xaa11608]
+@10969 = ~ Your chatterin's startin' to wear on me nerves.~[xaa11613]
+@10970 = ~Defend our allies!~[xac10226]
+@10971 = ~Yes?~[xac10227]
+@10972 = ~I'm here to fight.~[xac10228]
+@10973 = ~Kill 'em all!~[xac10229]
+@10974 = ~We're few but fierce!~[xac10230]
+@10975 = ~Soon we march.~[xac10231]
+@10976 = ~ You're rather outlandish folk to be wanderin' 'round here.~[xaa11066]
+@10977 = ~~[xaa11064]
+@10978 = ~~[xaa11065]
+@10979 = ~ Nasty times are comin', I reckon.~[xaa11063]
+@10980 = ~ Queer things have been afoot lately.~[xac10237]
+@10981 = ~ I wish I had my old tobacco pipe.~[xac10238]
+@10982 = ~Flaming Fist Mercenary~
+@10983 = ~Punish the lawbreakers!~[xac10239]
+@10984 = ~We're more than mercenaries.~[xac10240]
+@10985 = ~War is almost here.~[xac10241]
+@10986 = ~Show them our steel!~[xac10245]
+@10987 = ~Order is what matters.~[xac10246]
+@10988 = ~For Baldur's Gate.~[xac10247]
+@10989 = ~Flaming Fist Watcher~
+@10990 = ~ ~[xaa11328]
+@10991 = ~ ~[xaa11329]
+@10992 = ~ Helm sees all. Know that and be judged!~[xaa11459]
+@10993 = ~ The Vigilant One knows of all your sins.~[xaa11463]
+@10994 = ~Flaming Fist Battlemage~
+@10995 = ~Flaming Fist Veteran~
+@10996 = ~Waterdhavian Soldier~
+@10997 = ~To arms! To arms!~[xac10261]
+@10998 = ~Still we wait.~[xac10262]
+@10999 = ~The City of Splendors is my home.~[xac10263]
+@11000 = ~Lift up your blades and fight!~[xac10270]
+@11001 = ~For Waterdeep.~[xac10271]
+@11002 = ~What is it?~[xac10272]
+@11003 = ~Crusader Archer~
+@11004 = ~For the Shining Lady!~[xac10278]
+@11005 = ~You need somethin'?~[xac10279]
+@11006 = ~We serve the light.~[xac10280]
+@11007 = ~Crusader~
+@11008 = ~ A pleasure it is to meet ya.~[xac10281]
+@11009 = ~ A stout hammer will fix most any bandit.~[xaa11965]
+@11010 = ~~[xaa11966]
+@11011 = ~~[xaa11967]
+@11012 = ~ You canna get better than the stability stone walls provide.~[xac10286]
+@11013 = ~~[xaa11126]
+@11014 = ~~[xaa11854]
+@11015 = ~ The Fair Folk rarely have time for small talk.~[xac10289]
+@11016 = ~ Troubled times are upon us.~[xac10290]
+@11017 = ~ Soon, we shall all be together upon Evermeet.~[xac10291]
+@11018 = ~Crusader Recruit~
+@11019 = ~Die in her name!~[xac10292]
+@11020 = ~Mercenary~
+@11021 = ~ Spare no one!~[xaa12050]
+@11022 = ~ You be quiet!~[xaa12053]
+@11023 = ~ Forward march!~[xaa12049]
+@11024 = ~ Die, scum!~[xac10305]
+@11025 = ~~[xac10306]
+@11026 = ~ ~[xac10307]
+@11027 = ~Crusader Cleric~
+@11028 = ~I welcome you with outstretched hand.~[xac10314]
+@11029 = ~Justice shall be swift and final!~[xac10315]
+@11030 = ~~[xac10316]
+@11031 = ~~[xac10317]
+@11032 = ~I trust you are here in good faith.~[xac10318]
+@11033 = ~May the gods look upon you kindly.~[xac10319]
+@11034 = ~All of the faithful are welcome here.~[xac10320]
+@11035 = ~Crusader Mage~
+@11036 = ~~[xac10336]
+@11037 = ~~[xac10337]
+@11038 = ~ Your acquaintance I am glad to have made.~[xac10338]
+@11039 = ~ Soon to go back to the grotto, I am. I miss the tunnels of home.~[xac10339]
+@11040 = ~ The underground seems safer by far, and gems to find are welcome too.~[xac10340]
+@11041 = ~Troll Wrangler~
+@11042 = ~Stay back, or you'll regret it.~[xac10349]
+@11043 = ~I give! I give!~[xac10350]
+@11044 = ~All right! You and me! Let's go!~[xac10351]
+@11045 = ~~[xac10352]
+@11046 = ~~[xac10353]
+@11047 = ~I can break an arm or a leg fer a copper or two.~[xac10354]
+@11048 = ~Ahhh, be off with ya.~[xac10355]
+@11049 = ~Ye're a piece o' iron, you are.~[xac10356]
+@11050 = ~Bonebat~
+@11051 = ~Imbued Wight~
+@11052 = ~Skeletal Mage~
+@11053 = ~Skeleton Archer~
+@11054 = ~Tattered Skeleton~
+@11055 = ~Shadowed Soul~
+@11056 = ~Burning Skeleton~
+@11057 = ~Skeleton~
+@11058 = ~Wraith~
+@11059 = ~Priest of Oghma~
+@11060 = ~ These walls contain the world's knowledge.~
+@11061 = ~~
+@11062 = ~ Wisdom is only possessed by the learned.~
+@11063 = ~Piato~
+@11064 = ~ Our library is a man's harem of knowledge.~
+@11065 = ~ Oh—'scuse me, but I am late for my classes.~
+@11066 = ~Crusader Guard~
+@11067 = ~Crusader Officer~
+@11068 = ~I'll test your mettle with cold steel!~[xac10382]
+@11069 = ~~[xac10383]
+@11070 = ~~[xac10384]
+@11071 = ~Declare yourself!~[xac10385]
+@11072 = ~Do not disturb my duties.~[xac10386]
+@11073 = ~At ease, citizen.~[xac10387]
+@11074 = ~I trust you have no hostile intentions.~[xac10388]
+@11075 = ~Nooooooo!~[xac10403]
+@11076 = ~RAAAHHHHR! You die! You die!~[xac10404]
+@11077 = ~I will crush you, puny one!~[xac10405]
+@11078 = ~~[xac10406]
+@11079 = ~~[xac10407]
+@11080 = ~Uhh? What you want?~[xac10408]
+@11081 = ~I watching you!~[xac10409]
+@11082 = ~Speak, manling. Speak quick!~[xac10410]
+@11083 = ~You and my kind not get along!~[xac10411]
+@11084 = ~If I get paid, I fight.~[xac10412]
+@11085 = ~I like smashin' heads.~[xac10413]
+@11086 = ~Crusader Commander~
+@11087 = ~Sindret~
+@11088 = ~Troll~
+@11089 = ~Leopas~
+@11090 = ~Corinth~
+@11091 = ~Valis~
+@11092 = ~Ravoc~
+@11093 = ~Delton~
+@11094 = ~ I am happy not. No, I'm not.~[xac10446]
+@11095 = ~~[xac10447]
+@11096 = ~~[xac10448]
+@11097 = ~ Happy I am. Yes, I am!~[xac10450]
+@11098 = ~ Who you are, know not I.~[xac10451]
+@11099 = ~Damarr~
+@11100 = ~What you looking at?~[xac10472]
+@11101 = ~Go 'way.~[xac10473]
+@11102 = ~Tristian~
+@11103 = ~Crusader Sergeant~
+@11104 = ~Crusader Elite~
+@11105 = ~Zare~
+@11106 = ~Recruit Kjarvan~
+@11107 = ~Recruit Qing~
+@11108 = ~Deneld~
+@11109 = ~Glory and honor.~
+@11110 = ~The light will reward you.~
+@11111 = ~Commander Dreon~
+@11112 = ~Sallo~
+@11113 = ~ ZZZZzzzzzzz...~[xaa11168]
+@11114 = ~ ZZZZzzzzz... *snort*~[xaa11167]
+@11115 = ~Crusader Nan~
+@11116 = ~ Ooh, it's a fine day for meeting new friends.~[xac10524]
+@11117 = ~~[xaa11252]
+@11118 = ~~[xaa11253]
+@11119 = ~ May you know the happiness of a warm hearth and home.~[xaa11255]
+@11120 = ~ Dallillia guides the way of all those that seek the path home.~[xaa11251]
+@11121 = ~Crusader Pedro~
+@11122 = ~ Grrrrrrrr... grrrr!~[xac10553]
+@11123 = ~ ~[xac10554]
+@11124 = ~ ~[xac10555]
+@11125 = ~ Grrrr, yip yip yap! Yip yip *snarl*...~[xac10556]
+@11126 = ~ Yap! Grrr grr... yip yip yip yap! Look, we don't speak Common, all right?! *snarl* Yip yip yap!~[xac10557]
+@11127 = ~ *snarl* Yip! Yip yip yip yip yap!~[xac10558]
+@11128 = ~Mercenary Captain~
+@11129 = ~Kara-Turan Mercenary~
+@11130 = ~Crusader Scout~
+@11131 = ~This heavy slab displays the holy symbol of Tempus.~
+@11132 = ~This magical barrier hums with arcane power. Beyond, the camp buzzes with activity as the crusaders prepare for battle.~
+@11133 = ~A translucent field of force glimmers before the gate, its magic repelling any attempt to enter the courtyard.~
+@11134 = ~Though the crusade's symbol is a sun upon the horizon, this banner offers little warmth or light to the oppressive gloom permeating Dragonspear Castle.~
+@11135 = ~Properly positioned, this recently repaired catapult could inflict serious damage upon Caelar's enemies.~
+@11136 = ~Though dead for decades, the red dragon remains that crown this castle radiate menace.~
+@11137 = ~Exit~
+@11138 = ~Protection From Good~
+@11139 = ~Draw Upon Unholy Might~
+@11140 = ~Cure Critical Wounds~
+@11141 = ~Cure Critical Wounds
 (Necromancy)
 
 Level: 5
@@ -1317,8 +1352,8 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 The Cure Critical Wounds spell is a very potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hands upon a creature and heals 27 points of damage from wounds or other injuries. The spell does not affect creatures without corporeal bodies, those of extraplanar origin, or those not living.~
-@11123 = ~Shining Bolt~
-@11124 = ~Shining Bolt
+@11142 = ~Shining Bolt~
+@11143 = ~Shining Bolt
 (Invocation/Evocation)
 
 Level: 1
@@ -1329,8 +1364,8 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This unique ability allows Caelar to hurl a bolt of divine energy at an enemy once per day, dealing them 5d6 points of magic damage. Undead creatures and fiends are particularly susceptible to the bolt's effects, suffering double damage when they are struck. The target's Magic Resistance, if any, does not affect this ability.~
-@11125 = ~Bless~
-@11126 = ~Bless
+@11144 = ~Bless~
+@11145 = ~Bless
 (Conjuration/Summoning)
 
 Level: 1
@@ -1342,8 +1377,8 @@ Area of Effect: 15-ft. radius
 Saving Throw: None
 
 Upon uttering the Bless spell, the caster raises the morale of friendly creatures by +1. Furthermore, it raises their attack and damage rolls by +1. The caster determines at what range (up to 40 ft.) the spell will be cast. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster (thus, affected creatures leaving the area are still subject to the spell's effects; those entering the area after the casting is completed are not).~
-@11127 = ~Darkness, 15' Radius~
-@11128 = ~Darkness, 15' Radius
+@11146 = ~Darkness, 15' Radius~
+@11147 = ~Darkness, 15' Radius
 (Alteration)
 
 Level: 2
@@ -1354,14 +1389,14 @@ Area of Effect: 8-ft. radius
 Saving Throw: None
 
 This spell causes total, impenetrable darkness. Neither normal nor magical light works in the area of effect. All vision (including infravision) is severely limited; anyone hostile caught in the area of effect is for all practical purposes blinded as per the 1st-level wizard spell. Creatures that leave the area covered by darkness will have their vision restored after 1 round.~
-@11129 = ~Belt~
-@11130 = ~Belt of the Cunning Rogue~
-@11131 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+@11148 = ~Belt~
+@11149 = ~Belt of the Cunning Rogue~
+@11150 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
 
 STATISTICS:
 
 Weight: 2~
-@11132 = ~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
+@11151 = ~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
 
 The pouches attached to the belt contain a number of small tools, wires, picks, and blades that can be used to pick locks and disable traps. 
 
@@ -1372,9 +1407,9 @@ Equipped abilities:
 – Find Traps: +15%
 
 Weight: 2~
-@11133 = ~Bullet~
-@11134 = ~Bullet of Fire +1~
-@11135 = ~A bullet is simply a rounded, well-balanced stone.
+@11152 = ~Bullet~
+@11153 = ~Bullet of Fire +1~
+@11154 = ~A bullet is simply a rounded, well-balanced stone.
 
 STATISTICS:
 
@@ -1382,7 +1417,7 @@ Damage: 1d4+1 (missile)
 Launcher: Sling
 
 Weight: 0~
-@11136 = ~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
+@11155 = ~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
 
 STATISTICS:
 
@@ -1391,14 +1426,14 @@ Damage type: Missile
 Launcher: Sling
 
 Weight: 0~
-@11137 = ~Ring~
-@11138 = ~Ring of Protection +1~
-@11139 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+@11156 = ~Ring~
+@11157 = ~Ring of Protection +1~
+@11158 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~
-@11140 = ~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
+@11159 = ~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
 
 STATISTICS:
 
@@ -1407,12 +1442,12 @@ Equipped abilities:
 – Saving Throws: +1
 
 Weight: 0~
-@11141 = ~Circlet~
-@11142 = ~Circlet of the Cynosure~
-@11143 = ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
+@11160 = ~Circlet~
+@11161 = ~Circlet of the Cynosure~
+@11162 = ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
 
 Weight: 1~
-@11144 = ~Almost a century ago, paladin of Lathander Edythe Brightsworn commissioned this helm while preparing to face a powerful vampire. During her many years as a knight of the Morninglord, Lady Brightsworn had accumulated some wealth, most of which she spent in preparation for her quest. After tracking the vampire to Waterdeep's City of the Dead, she assembled a party of adventurers and led them into the monster's lair. Only one of the group returned. Bloodied and wild-eyed, clutching Lady Brightsworn's helm in his hands, he relayed a tale of the nightmarish warrens the group had found and the vampire who culled them from their group, slaughtering them one by one. Investigations into the City of the Dead uncovered some of the tunnels, but all had collapsed. Of the vampire, there was no trace.
+@11163 = ~Almost a century ago, paladin of Lathander Edythe Brightsworn commissioned this helm while preparing to face a powerful vampire. During her many years as a knight of the Morninglord, Lady Brightsworn had accumulated some wealth, most of which she spent in preparation for her quest. After tracking the vampire to Waterdeep's City of the Dead, she assembled a party of adventurers and led them into the monster's lair. Only one of the group returned. Bloodied and wild-eyed, clutching Lady Brightsworn's helm in his hands, he relayed a tale of the nightmarish warrens the group had found and the vampire who culled them from their group, slaughtering them one by one. Investigations into the City of the Dead uncovered some of the tunnels, but all had collapsed. Of the vampire, there was no trace.
 
 STATISTICS:
 
@@ -1421,9 +1456,9 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 1~
-@11145 = ~Chain Mail~
-@11146 = ~Mail of the Hallowed Hero +3~
-@11147 = ~A chain mail tunic fashioned from some sort of bright metal. It is always worn over a layer of padded fabric or soft leather to prevent chafing and lessen the impact of blows.
+@11164 = ~Chain Mail~
+@11165 = ~Mail of the Hallowed Hero +3~
+@11166 = ~A chain mail tunic fashioned from some sort of bright metal. It is always worn over a layer of padded fabric or soft leather to prevent chafing and lessen the impact of blows.
 
 STATISTICS:
 
@@ -1432,7 +1467,7 @@ Requires:
  6 Strength
 
 Weight: 40~
-@11148 = ~This armor was first worn by Olen Argent, Caelar's great-grandfather. Olen Argent's quest to hunt down a cult of Malar led him to the Misty Forest, where he encountered a group of elves living in the woods. At first, the elves were suspicious of Olen and tried to drive him out of the forest, but he spoke so eloquently of his quest that they agreed to help him. The elves tracked the cult to their hiding place within the forest, where Olen eradicated the cultists for their murderous deeds. Thankful to have the evil presence out of their homeland, the elves crafted a fine suit of mail for the paladin.
+@11167 = ~This armor was first worn by Olen Argent, Caelar's great-grandfather. Olen Argent's quest to hunt down a cult of Malar led him to the Misty Forest, where he encountered a group of elves living in the woods. At first, the elves were suspicious of Olen and tried to drive him out of the forest, but he spoke so eloquently of his quest that they agreed to help him. The elves tracked the cult to their hiding place within the forest, where Olen eradicated the cultists for their murderous deeds. Thankful to have the evil presence out of their homeland, the elves crafted a fine suit of mail for the paladin.
 
 STATISTICS:
 
@@ -1445,9 +1480,9 @@ Requires:
  6 Strength
 
 Weight: 7~
-@11149 = ~Medium Shield~
-@11150 = ~Solar Aegis +3~
-@11151 = ~A medium shield is carried in the same manner as a small shield. Unlike the small shield, however, its weight prevents the character from using <PRO_HISHER> shield hand for anything other than carrying the medium shield. Medium shields are usually made of metal, range from three to four feet in diameter, and can be of any shape, from round to square to a dragon's spread wings. A typical medieval shield resembles a triangle with one point facing downward.
+@11168 = ~Medium Shield~
+@11169 = ~Solar Aegis +3~
+@11170 = ~A medium shield is carried in the same manner as a small shield. Unlike the small shield, however, its weight prevents the character from using <PRO_HISHER> shield hand for anything other than carrying the medium shield. Medium shields are usually made of metal, range from three to four feet in diameter, and can be of any shape, from round to square to a dragon's spread wings. A typical medieval shield resembles a triangle with one point facing downward.
 
 STATISTICS:
 
@@ -1458,7 +1493,7 @@ Requires:
  12 Strength
 
 Weight: 8~
-@11152 = ~Engraved wings stretch across the face of this ornate shield. The silver shield, inlaid with pure sapphire, gleams with a high polish no matter how much damage it suffers or what rough environs it is carried through. Often crafted for paladins and members of holy militaristic orders, a solar aegis provides substantial protection for the pure of heart.
+@11171 = ~Engraved wings stretch across the face of this ornate shield. The silver shield, inlaid with pure sapphire, gleams with a high polish no matter how much damage it suffers or what rough environs it is carried through. Often crafted for paladins and members of holy militaristic orders, a solar aegis provides substantial protection for the pure of heart.
 
 STATISTICS:
 
@@ -1471,9 +1506,9 @@ Requires:
  12 Strength
 
 Weight: 3~
-@11153 = ~Girdle~
-@11154 = ~Golden Girdle~
-@11155 = ~Though its battered condition speaks to its past use in combat, few of the cuts in this leather girdle were made by an enemy's blade. It would seem the magical symbols gouged into the hide have the practical effect of making the item's wearer less vulnerable to the swords of their foes.
+@11172 = ~Girdle~
+@11173 = ~Golden Girdle~
+@11174 = ~Though its battered condition speaks to its past use in combat, few of the cuts in this leather girdle were made by an enemy's blade. It would seem the magical symbols gouged into the hide have the practical effect of making the item's wearer less vulnerable to the swords of their foes.
 
 STATISTICS:
 
@@ -1481,9 +1516,9 @@ Equipped abilities:
 – Armor Class: +3 vs. slashing attacks
 
 Weight: 2~
-@11156 = ~Long Sword~
-@11157 = ~Aster's Edge +3~
-@11158 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+@11175 = ~Long Sword~
+@11176 = ~Aster's Edge +3~
+@11177 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
 
 STATISTICS:
 
@@ -1495,7 +1530,7 @@ Requires:
  6 Strength
 
 Weight: 4~
-@11159 = ~Legend tells that a powerful angelic being gifted this blade to a member of the Order of the Aster long ago. Details of the legend have been lost over time, but many believe the sword was a reward for slaying a monstrous fiend, perhaps even a balor. Delicate etchings of asters decorate the blade, which glows with a silver-blue flame when drawn.
+@11178 = ~Legend tells that a powerful angelic being gifted this blade to a member of the Order of the Aster long ago. Details of the legend have been lost over time, but many believe the sword was a reward for slaying a monstrous fiend, perhaps even a balor. Delicate etchings of asters decorate the blade, which glows with a silver-blue flame when drawn.
 
 STATISTICS:
 
@@ -1512,8 +1547,8 @@ Requires:
  5 Strength
 
 Weight: 2~
-@11160 = ~Belt of Antipode~
-@11161 = ~Trimmed in the fur of a polar bear, this sturdy belt is tooled with images of blue moons and white ice floes. The wearer is immune to all cold-based effects but suffers double any fire damage.
+@11179 = ~Belt of Antipode~
+@11180 = ~Trimmed in the fur of a polar bear, this sturdy belt is tooled with images of blue moons and white ice floes. The wearer is immune to all cold-based effects but suffers double any fire damage.
 
 STATISTICS:
 
@@ -1522,14 +1557,14 @@ Equipped abilities:
 – Doubles all fire-based damage taken
 
 Weight: 2~
-@11162 = ~Bracers~
-@11163 = ~Bracers of Defense AC 5~
-@11164 = ~Bracers are thick bands of metal or leather that are strapped, belted, or tied to a character's forearm. Generally, the magic that is instilled in bracers is good only during combat, since most bracers help protect the wearer from injury or improve their chances to strike an opponent. Exceptions do exist, though such specialized items are rare at best.
+@11181 = ~Bracers~
+@11182 = ~Bracers of Defense AC 5~
+@11183 = ~Bracers are thick bands of metal or leather that are strapped, belted, or tied to a character's forearm. Generally, the magic that is instilled in bracers is good only during combat, since most bracers help protect the wearer from injury or improve their chances to strike an opponent. Exceptions do exist, though such specialized items are rare at best.
 
 STATISTICS:
 
 Weight: 2~
-@11165 = ~Standard bracers support the forearm, which often proves handy in combat situations. This magically altered pair is handier still, bestowing the wearer with protection comparable to a full suit of armor. Unlike armor, the bracers allow a full range of motion. This makes them highly prized by wizards and sorcerers, who cannot allow physical restriction to be imposed upon them if they're to successfully manipulate the Weave.
+@11184 = ~Standard bracers support the forearm, which often proves handy in combat situations. This magically altered pair is handier still, bestowing the wearer with protection comparable to a full suit of armor. Unlike armor, the bracers allow a full range of motion. This makes them highly prized by wizards and sorcerers, who cannot allow physical restriction to be imposed upon them if they're to successfully manipulate the Weave.
 
 STATISTICS:
 
@@ -1537,8 +1572,8 @@ Equipped abilities:
 – Armor Class: 5
 
 Weight: 2~
-@11166 = ~Ring of Free Action~
-@11167 = ~Enemies have a hard time slowing this ring's wearer down. The runes etched in the silver band ward off spells designed to impede movement, granting its owner a freedom of mobility others affected by such magic are denied.
+@11185 = ~Ring of Free Action~
+@11186 = ~Enemies have a hard time slowing this ring's wearer down. The runes etched in the silver band ward off spells designed to impede movement, granting its owner a freedom of mobility others affected by such magic are denied.
 
 STATISTICS:
 
@@ -1546,9 +1581,9 @@ Equipped abilities:
 – The wearer is immune to everything, magical and otherwise, that affects mobility in any way. This includes Haste and Slow spells.
 
 Weight: 0~
-@11168 = ~Battle Axe~
-@11169 = ~Chill Axe +2~
-@11170 = ~The most common version of the battle axe is a stout pole about four feet in length with a single-edged, trumpet-shaped blade mounted on one end. Battle axes are also called broad axes.
+@11187 = ~Battle Axe~
+@11188 = ~Chill Axe +2~
+@11189 = ~The most common version of the battle axe is a stout pole about four feet in length with a single-edged, trumpet-shaped blade mounted on one end. Battle axes are also called broad axes.
 
 STATISTICS:
 
@@ -1560,7 +1595,7 @@ Requires:
  10 Strength
 
 Weight: 7~
-@11171 = ~This finely crafted axe bears the sigil of the Ice Dragon Berserker Lodge. Glowing white runes edge its cold silver blade, and a cloud of chill air trails behind the axe whenever it is swung. The most powerful rangers of the Ice Dragon Berserker Lodge carry these axes with them on their dejemmas, as protection from southern threats.
+@11190 = ~This finely crafted axe bears the sigil of the Ice Dragon Berserker Lodge. Glowing white runes edge its cold silver blade, and a cloud of chill air trails behind the axe whenever it is swung. The most powerful rangers of the Ice Dragon Berserker Lodge carry these axes with them on their dejemmas, as protection from southern threats.
 
 STATISTICS:
 
@@ -1580,15 +1615,15 @@ Requires:
  10 Strength
 
 Weight: 5~
-@11172 = ~Gloves of Gripping~
-@11173 = ~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
+@11191 = ~Gloves of Gripping~
+@11192 = ~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
 
 STATISTICS:
 
 Weight: 2~
-@11174 = ~Hide Armor~
-@11175 = ~Cornugon's Revenge +2~
-@11176 = ~Hide armor is made from the thick hide of a very large animal (an elephant for example) or from many layers of normal leather from common animals, like cows. Hide armor is far too bulky, inflexible and heavy to be used much in advanced human cultures. However, among the barbaric humanoid masses throughout the dark forests and misty jungles of the world, hide armor is common. Even though it does offer more protection than leather armor, one must get by the offensive odor and shoddy appearance in order to wear it effectively. Even though Thieves can wear this armor, it has a negative effect on their abilities.
+@11193 = ~Hide Armor~
+@11194 = ~Cornugon's Revenge +2~
+@11195 = ~Hide armor is made from the thick hide of a very large animal (an elephant for example) or from many layers of normal leather from common animals, like cows. Hide armor is far too bulky, inflexible and heavy to be used much in advanced human cultures. However, among the barbaric humanoid masses throughout the dark forests and misty jungles of the world, hide armor is common. Even though it does offer more protection than leather armor, one must get by the offensive odor and shoddy appearance in order to wear it effectively. Even though Thieves can wear this armor, it has a negative effect on their abilities.
 
 STATISTICS:
 
@@ -1603,7 +1638,7 @@ Requires:
  6 Strength
 
 Weight: 40~
-@11177 = ~The devil Thel’blax was a scourge against the armies of the Abyss until he was assassinated by the servants of his own master, Dispater. With his final breath, Thel’blax cursed his own body to never lie still even in death. When his body was carried to the Iron Tower, Thel’blax’s horns and barbs continued to thrash about as though alive.
+@11196 = ~The devil Thel’blax was a scourge against the armies of the Abyss until he was assassinated by the servants of his own master, Dispater. With his final breath, Thel’blax cursed his own body to never lie still even in death. When his body was carried to the Iron Tower, Thel’blax’s horns and barbs continued to thrash about as though alive.
 
 The cursed cornugon’s body was dismantled by his peers, in the hopes that destroying him would end the curse; but the disparate pieces of Thel’blax’s body continued to prick and tear at any who approached. At last, Dispater ordered his ironsmiths to forge the pieces into a suit of armor, intending to use it as a means of torturing insubordinates. Inevitably, the armor fell into the hands of intrepid (if foolhardy) adventurers, who then brought the piece to Faerûn.
 
@@ -1626,27 +1661,27 @@ Requires:
  6 Strength
 
 Weight: 35~
-@11178 = ~A Key~
-@11179 = ~Troll Pen Key~
-@11180 = ~This is a standard key. Keys are used to open doors.
+@11197 = ~A Key~
+@11198 = ~Troll Pen Key~
+@11199 = ~This is a standard key. Keys are used to open doors.
 
 STATISTICS:
 
 Weight: 1~
-@11181 = ~This heavy iron key has a handle shaped like a troll's face.
+@11200 = ~This heavy iron key has a handle shaped like a troll's face.
 
 STATISTICS:
 
 Weight: 1~
-@11182 = ~Crusader Uniform~
-@11183 = ~This colorful tunic displays the sigil of Caelar's crusaders.
+@11201 = ~Crusader Uniform~
+@11202 = ~This colorful tunic displays the sigil of Caelar's crusaders.
 
 STATISTICS:
 
 Weight: 10~
-@11184 = ~Plate Mail~
-@11185 = ~Bloody Bone Plate +2~
-@11186 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+@11203 = ~Plate Mail~
+@11204 = ~Bloody Bone Plate +2~
+@11205 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
 
 STATISTICS:
 
@@ -1655,7 +1690,7 @@ Requires:
  12 Strength
 
 Weight: 50~
-@11187 = ~The warrior who once wore this armor died at the hands of a friend she trusted. The mark of her betrayal remains in the bloodstains that have darkened to brown on the gleaming bone-white armor. The armor functions properly, though it makes the wearer unappealing to look at.
+@11206 = ~The warrior who once wore this armor died at the hands of a friend she trusted. The mark of her betrayal remains in the bloodstains that have darkened to brown on the gleaming bone-white armor. The armor functions properly, though it makes the wearer unappealing to look at.
 
 STATISTICS:
 
@@ -1668,14 +1703,14 @@ Requires:
  8 Strength
 
 Weight: 20~
-@11188 = ~Amulet~
-@11189 = ~Amulet of Abnormally Awesome Ankheg Summoning~
-@11190 = ~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
+@11207 = ~Amulet~
+@11208 = ~Amulet of Abnormally Awesome Ankheg Summoning~
+@11209 = ~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
 
 STATISTICS:
 
 Weight: 1~
-@11191 = ~Crafted by the dark druid Ferrusk, this amulet resembles the curved pincers of an ankheg hanging from an iron chain. The pincers' polished green carapace catches the light, gleaming with an emerald sheen. Ferrusk created this amulet to summon a passel of ankhegs to fight at its wearer's command.
+@11210 = ~Crafted by the dark druid Ferrusk, this amulet resembles the curved pincers of an ankheg hanging from an iron chain. The pincers' polished green carapace catches the light, gleaming with an emerald sheen. Ferrusk created this amulet to summon a passel of ankhegs to fight at its wearer's command.
 
 STATISTICS:
 
@@ -1688,9 +1723,9 @@ Charge abilities:
   Duration: 2 turns
 
 Weight: 0~
-@11192 = ~Club~
-@11193 = ~Club +1~
-@11194 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
+@11211 = ~Club~
+@11212 = ~Club +1~
+@11213 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
 
 STATISTICS:
 
@@ -1702,7 +1737,7 @@ Requires:
  5 Strength
 
 Weight: 3~
-@11195 = ~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
+@11214 = ~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
 
 STATISTICS:
 
@@ -1715,20 +1750,20 @@ Requires:
  5 Strength
 
 Weight: 3~
-@11196 = ~Potion~
-@11197 = ~Slime Sickness Curative~
-@11198 = ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
+@11215 = ~Potion~
+@11216 = ~Slime Sickness Curative~
+@11217 = ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
 
 STATISTICS:
 
 Weight: 1~
-@11199 = ~This bottle contains a special healing potion that counteracts fungal poison found in the caverns beneath Dragonspear Castle. One sip from the bottle is enough to cure the afflicted.
+@11218 = ~This bottle contains a special healing potion that counteracts fungal poison found in the caverns beneath Dragonspear Castle. One sip from the bottle is enough to cure the afflicted.
 
 STATISTICS:
 
 Weight: 1~
-@11200 = ~Helmet~
-@11201 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+@11219 = ~Helmet~
+@11220 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -1736,15 +1771,15 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@11202 = ~Attack~
-@11203 = ~Dreon's Signet Ring~
-@11204 = ~This heavy gold ring displays the seal of Caelar Argent, leader of the Shining Lady's crusade.
+@11221 = ~Attack~
+@11222 = ~Dreon's Signet Ring~
+@11223 = ~This heavy gold ring displays the seal of Caelar Argent, leader of the Shining Lady's crusade.
 
 STATISTICS:
 
 Weight: 0~
-@11205 = ~Ring of the Crusade~
-@11206 = ~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
+@11224 = ~Ring of the Crusade~
+@11225 = ~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
 
 STATISTICS:
 
@@ -1753,8 +1788,8 @@ Equipped abilities:
 – Saving Throws: +1, +3 vs. demons and devils
 
 Weight: 0~
-@11207 = ~Long Sword +1~
-@11208 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
+@11226 = ~Long Sword +1~
+@11227 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
 
 STATISTICS:
 
@@ -1767,9 +1802,9 @@ Requires:
  6 Strength
 
 Weight: 4~
-@11209 = ~Composite Longbow~
-@11210 = ~Corinth's Bow +2~
-@11211 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
+@11228 = ~Composite Longbow~
+@11229 = ~Corinth's Bow +2~
+@11230 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
 
 STATISTICS:
 
@@ -1782,7 +1817,7 @@ Requires:
  18 Strength
 
 Weight: 10~
-@11212 = ~Though obviously well-used, someone has taken excellent care of this finely crafted bow. A small golden seal on one side appears to be a family crest.
+@11231 = ~Though obviously well-used, someone has taken excellent care of this finely crafted bow. A small golden seal on one side appears to be a family crest.
 
 STATISTICS:
 
@@ -1801,7 +1836,7 @@ Requires:
  18 Strength
 
 Weight: 8~
-@11213 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+@11232 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
 
 STATISTICS:
 
@@ -1809,134 +1844,114 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@11214 = ~Belt~
-@11215 = ~ ~[xaa11929]
-@11216 = ~ ~[xaa11930]
-@11217 = ~Duke Eltan~
-@11218 = ~Entar Silvershield~
-@11219 = ~ Mon Dieu!~
-@11220 = ~~
-@11221 = ~Liia Jannath~
-@11222 = ~Bence Duncan~
-@11223 = ~Punish the lawbreakers!~[xac10239]
-@11224 = ~We're more than mercenaries.~[xac10240]
-@11225 = ~War is almost here.~[xac10241]
-@11226 = ~Flaming Fist Battle Wizard~
-@11227 = ~Corwin~
-@11228 = ~Rohma needs a mother!~[xad10016]
-@11229 = ~A team like this can't be beat.~[xad10017]
-@11230 = ~This isn't working. We need to do better.~[xad10018]
-@11231 = ~Watch it. You're straying farther off the path than I'm ready to go.~[xad10019]
-@11232 = ~I can't support this effort, not anymore. Farewell.~[xad10020]
-@11233 = ~I'm used to being in charge. I'll lead us to victory.~[xad10021]
-@11234 = ~An army can't march forever. We've got to rest.~[xad10022]
-@11235 = ~We've work to do. Let's get moving.~[xad10023]
-@11236 = ~To battle!~[xad10024]
-@11237 = ~Let's see how long you last against me.~[xad10025]
-@11238 = ~Fight if you must, but you're not winning this.~[xad10026]
-@11239 = ~I'm looking forward to this.~[xad10027]
-@11240 = ~Time to end you!~[xad10028]
-@11241 = ~Ow!~[xad10029]
-@11242 = ~No... Rohma...~[xad10030]
-@11243 = ~Medic!~[xad10031]
-@11244 = ~The forest is so serene. I always catch myself watching for bandits, though.~[xad10032]
-@11245 = ~Ah, noise and crowds. Feels like home.~[xad10033]
-@11246 = ~Watch your step. Nothing good comes out of a place like this.~[xad10034]
-@11247 = ~Light and warmth. I'm glad for both.~[xad10035]
-@11248 = ~In the city, you rarely see the stars. They're beautiful tonight.~[xad10036]
-@11249 = ~Yes?~[xad10037]
-@11250 = ~Your orders?~[xad10038]
-@11251 = ~Hm?~[xad10039]
-@11252 = ~What?~[xad10040]
-@11253 = ~Go ahead.~[xad10041]
-@11254 = ~I'm listening.~[xad10042]
-@11255 = ~Right.~[xad10043]
-@11256 = ~I understand.~[xad10044]
-@11257 = ~Yes.~[xad10045]
-@11258 = ~What are your orders, hero?~[xad10046]
-@11259 = ~I'm a ranger. I want to RANGE.~[xad10047]
-@11260 = ~Do you think love can bloom even on a battlefield?~[xad10048]
-@11261 = ~Sometimes I dream I'm a chaotic good elf.~[xad10049]
-@11262 = ~I won't forget you. Your sacrifice won't have been in vain.~[xad10050]
-@11263 = ~We're better off without him.~[xad10051]
-@11264 = ~Hah! My aim is true.~[xad10054]
-@11265 = ~I'll recover.~[xad10055]
-@11266 = ~This isn't working! We have to try something else.~[xad10056]
-@11267 = ~I can't carry that too. I dropped it.~[xad10057]
-@11268 = ~I'll just take that...~[xad10058]
-@11269 = ~Shhh. I'm hidden.~[xad10059]
-@11270 = ~My spell! I lost it.~[xad10060]
-@11271 = ~Careful—I've put a trap down.~[xad10061]
-@11272 = ~When asked about her past, Schael Corwin reluctantly admits she ran wild as a child on the streets of Baldur's Gate. Her rebelliousness soon got her into trouble with the Flaming Fist. 
+@11233 = ~Belt~
+@11234 = ~ ~[xaa11801]
+@11235 = ~ ~[xaa11802]
+@11236 = ~Duke Eltan~
+@11237 = ~Entar Silvershield~
+@11238 = ~ Mon Dieu!~
+@11239 = ~~
+@11240 = ~Liia Jannath~
+@11241 = ~Bence Duncan~
+@11242 = ~Punish the lawbreakers!~[xac10239]
+@11243 = ~We're more than mercenaries.~[xac10240]
+@11244 = ~War is almost here.~[xac10241]
+@11245 = ~Flaming Fist Battle Wizard~
+@11246 = ~Corwin~
+@11247 = ~Rohma needs a mother!~[xad10016]
+@11248 = ~A team like this can't be beat.~[xad10017]
+@11249 = ~This isn't working. We need to do better.~[xad10018]
+@11250 = ~Watch it. You're straying farther off the path than I'm ready to go.~[xad10019]
+@11251 = ~I can't support this effort, not anymore. Farewell.~[xad10020]
+@11252 = ~I'm used to being in charge. I'll lead us to victory.~[xad10021]
+@11253 = ~An army can't march forever. We've got to rest.~[xad10022]
+@11254 = ~We've work to do. Let's get moving.~[xad10023]
+@11255 = ~To battle!~[xad10024]
+@11256 = ~Let's see how long you last against me.~[xad10025]
+@11257 = ~Fight if you must, but you're not winning this.~[xad10026]
+@11258 = ~I'm looking forward to this.~[xad10027]
+@11259 = ~Time to end you!~[xad10028]
+@11260 = ~Ow!~[xad10029]
+@11261 = ~No... Rohma...~[xad10030]
+@11262 = ~Medic!~[xad10031]
+@11263 = ~The forest is so serene. I always catch myself watching for bandits, though.~[xad10032]
+@11264 = ~Ah, noise and crowds. Feels like home.~[xad10033]
+@11265 = ~Watch your step. Nothing good comes out of a place like this.~[xad10034]
+@11266 = ~Light and warmth. I'm glad for both.~[xad10035]
+@11267 = ~In the city, you rarely see the stars. They're beautiful tonight.~[xad10036]
+@11268 = ~Yes?~[xad10037]
+@11269 = ~Your orders?~[xad10038]
+@11270 = ~Hm?~[xad10039]
+@11271 = ~What?~[xad10040]
+@11272 = ~Go ahead.~[xad10041]
+@11273 = ~I'm listening.~[xad10042]
+@11274 = ~Right.~[xad10043]
+@11275 = ~I understand.~[xad10044]
+@11276 = ~Yes.~[xad10045]
+@11277 = ~What are your orders, hero?~[xad10046]
+@11278 = ~I'm a ranger. I want to RANGE.~[xad10047]
+@11279 = ~Do you think love can bloom even on a battlefield?~[xad10048]
+@11280 = ~Sometimes I dream I'm a chaotic good elf.~[xad10049]
+@11281 = ~I won't forget you. Your sacrifice won't have been in vain.~[xad10050]
+@11282 = ~We're better off without him.~[xad10051]
+@11283 = ~Hah! My aim is true.~[xad10054]
+@11284 = ~I'll recover.~[xad10055]
+@11285 = ~This isn't working! We have to try something else.~[xad10056]
+@11286 = ~I can't carry that too. I dropped it.~[xad10057]
+@11287 = ~I'll just take that...~[xad10058]
+@11288 = ~Shhh. I'm hidden.~[xad10059]
+@11289 = ~My spell! I lost it.~[xad10060]
+@11290 = ~Careful—I've put a trap down.~[xad10061]
+@11291 = ~When asked about her past, Schael Corwin reluctantly admits she ran wild as a child on the streets of Baldur's Gate. Her rebelliousness soon got her into trouble with the Flaming Fist. 
 
 Left alone in a cell with nothing but her thoughts for company, she began to reflect on the decisions she'd made in the past and see where they would inevitably take her. When she was eventually freed, she decided to change the direction of her life. She enlisted in the Flaming Fist and rose quickly through the ranks.
 
 You sense there is little Schael Corwin would not do for her family or for the Flaming Fist.~
-@11273 = ~Officer Fritz~
-@11274 = ~I'll test your mettle with cold steel!~[xac10382]
-@11275 = ~~[xac10383]
-@11276 = ~~[xac10384]
-@11277 = ~Declare yourself!~[xac10385]
-@11278 = ~Do not disturb my duties.~[xac10386]
-@11279 = ~At ease, citizen.~[xac10387]
-@11280 = ~I trust you have no hostile intentions.~[xac10388]
-@11281 = ~Officer Jenks~
-@11282 = ~Flaming Fist Enforcer~
-@11283 = ~ I serve the Flaming Fist!~[xaa10039]
-@11284 = ~ I AM the law!~[xaa10040]
-@11285 = ~~[xaa10041]
-@11286 = ~~[xaa10042]
-@11287 = ~ Every crime must be punished!~[xaa10044]
-@11288 = ~ You there! Give me fifty pushups!~[xaa10045]
-@11289 = ~Sleeping Man~
-@11290 = ~ ZZZZzzzzzzz...~[xaa11124]
-@11291 = ~ ZZZZzzzzz... *snort*~[xaa11123]
-@11292 = ~Sleeping Woman~
-@11293 = ~Commoner~
-@11294 = ~Show them our steel!~[xac10245]
-@11295 = ~Order is what matters.~[xac10246]
-@11296 = ~For Baldur's Gate.~[xac10247]
-@11297 = ~Thug~
-@11298 = ~I'll wipe your filthy lineage right out of the realms!~
-@11299 = ~You deserve no less than death... and no more.~
-@11300 = ~What can it be now?~
-@11301 = ~Let us speak and be done with this!~
-@11302 = ~Imoen lies still on the bed. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~
-@11303 = ~Imoen lies still on the floor. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~
-@11304 = ~Below you, the streets of Baldur's Gate are so packed it's difficult to make out individual figures.~
-@11305 = ~Even with the window closed, the dull roar of the crowded street outside is hard to ignore.~
-@11306 = ~This comfortable bed offers luxury you never found in Candlekeep.~
-@11307 = ~<CHARNAME>'s Equipment~
-@11308 = ~<CHARNAME>'s chamber~
-@11309 = ~Imoen's Equipment~
-@11310 = ~The second floor is securely locked and guarded. No one is permitted upstairs. ~
-@11311 = ~There's no escape this way. The sewers are the only way out.~
-@11312 = ~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~
-@11313 = ~Tiax's Cell~
-@11314 = ~Exit~
-@11315 = ~Trap the Soul~
-@11316 = ~Plate Mail~
-@11317 = ~The Magma Bulwark +2~
-@11318 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
-
-STATISTICS:
-
-Armor Class: 3 (0 vs. slashing)
-Requires:
- 12 Strength
-
-Weight: 50~
-@11319 = ~Forged by the fire giant Varboti as a gift for a Cormyrian general who made peace with his clan, this red-and-black armor lends its wearer a molten aspect while providing protection against all but the most powerful blows. Due to its incredibly strong but thin material, it also weighs far less than ordinary plate mail.
-
-STATISTICS:
-
-Armor Class: 1 (-2 vs. slashing)
-Requires:
- 12 Strength
-
-Weight: 20~
-@11320 = ~Helmet~
-@11321 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+@11292 = ~Officer Fritz~
+@11293 = ~I'll test your mettle with cold steel!~[xac10382]
+@11294 = ~~[xac10383]
+@11295 = ~~[xac10384]
+@11296 = ~Declare yourself!~[xac10385]
+@11297 = ~Do not disturb my duties.~[xac10386]
+@11298 = ~At ease, citizen.~[xac10387]
+@11299 = ~I trust you have no hostile intentions.~[xac10388]
+@11300 = ~Officer Jenks~
+@11301 = ~Flaming Fist Enforcer~
+@11302 = ~ I serve the Flaming Fist!~[xaa10039]
+@11303 = ~ I AM the law!~[xaa10040]
+@11304 = ~~[xaa10041]
+@11305 = ~~[xaa10042]
+@11306 = ~ Every crime must be punished!~[xaa10044]
+@11307 = ~ You there! Give me fifty pushups!~[xaa10045]
+@11308 = ~Sleeping Man~
+@11309 = ~ ZZZZzzzzzzz...~[xaa11168]
+@11310 = ~ ZZZZzzzzz... *snort*~[xaa11167]
+@11311 = ~Sleeping Woman~
+@11312 = ~Commoner~
+@11313 = ~Show them our steel!~[xac10245]
+@11314 = ~Order is what matters.~[xac10246]
+@11315 = ~For Baldur's Gate.~[xac10247]
+@11316 = ~Thug~
+@11317 = ~I'll wipe your filthy lineage right out of the realms!~
+@11318 = ~You deserve no less than death... and no more.~
+@11319 = ~What can it be now?~
+@11320 = ~Let us speak and be done with this!~
+@11321 = ~Imoen lies still on the bed. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~
+@11322 = ~Imoen lies still on the floor. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~
+@11323 = ~Below you, the streets of Baldur's Gate are so packed it's difficult to make out individual figures.~
+@11324 = ~Even with the window closed, the dull roar of the crowded street outside is hard to ignore.~
+@11325 = ~This comfortable bed offers luxury you never found in Candlekeep.~
+@11326 = ~<CHARNAME>'s Equipment~
+@11327 = ~<CHARNAME>'s chamber~
+@11328 = ~Imoen's Equipment~
+@11329 = ~The second floor is securely locked and guarded. No one is permitted upstairs. ~
+@11330 = ~There's no escape this way. The sewers are the only way out.~
+@11331 = ~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~
+@11332 = ~Tiax's Cell~
+@11333 = ~Exit~
+@11334 = ~Trap the Soul~
+@11335 = ~Helmet~
+@11336 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -1944,8 +1959,8 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@11322 = ~Corwin's Armor +2~
-@11323 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
+@11337 = ~Corwin's Armor +2~
+@11338 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
 
 STATISTICS:
 
@@ -1958,9 +1973,9 @@ Requires:
  5 Strength
 
 Weight: 7~
-@11324 = ~Composite Longbow~
-@11325 = ~Corwin's Bow +1~
-@11326 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
+@11339 = ~Composite Longbow~
+@11340 = ~Corwin's Bow +1~
+@11341 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
 
 STATISTICS:
 
@@ -1973,7 +1988,7 @@ Requires:
  18 Strength
 
 Weight: 10~
-@11327 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+@11342 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
 
 Equipped abilities: 
 – Dexterity: +1
@@ -1992,56 +2007,56 @@ Requires:
  18 Strength
 
 Weight: 9~
-@11328 = ~Exit~
-@11329 = ~Angelo~
-@11330 = ~ So, these are the infamous murderers, finally brought to justice.~
-@11331 = ~ Dreadfully sorry, but I'm afraid... I'm gonna have ta kill ya.~[xaa12038]
-@11332 = ~~[xaf10005]
-@11333 = ~~[xaf10006]
-@11334 = ~ Justice may be blind, but I'm not.~[xaf10007]
-@11335 = ~Aun Argent~
-@11336 = ~If this is how it ends, then so be it!~[xag10000]
-@11337 = ~Ugh!~[xag10001]
-@11338 = ~~[xag10002]
-@11339 = ~I will do what I can to help you.~[xag10003]
-@11340 = ~Thrix~
-@11341 = ~Hellcat~
-@11342 = ~Erinyes~
-@11343 = ~Abishai~
-@11344 = ~Imp~
-@11345 = ~Crusader Elite~
-@11346 = ~Lemure~
-@11347 = ~Black Abishai~
-@11348 = ~Green Abishai~
-@11349 = ~Red Abishai~
-@11350 = ~Hamatula~
-@11351 = ~Bone Fiend~
-@11352 = ~For the Shining Lady!~[xac10278]
-@11353 = ~You need somethin'?~[xac10279]
-@11354 = ~We serve the light.~[xac10280]
-@11355 = ~Die in her name!~[xac10292]
-@11356 = ~Somethin' you need?~[xac10182]
-@11357 = ~As the light wills.~[xac10183]
-@11358 = ~~[xaa11082]
-@11359 = ~~[xaa11791]
-@11360 = ~ The Fair Folk rarely have time for small talk.~[xac10289]
-@11361 = ~ Troubled times are upon us.~[xac10290]
-@11362 = ~ Soon, we shall all be together upon Evermeet.~[xac10291]
-@11363 = ~Stairs Down~
-@11364 = ~Massive Door~
-@11365 = ~In the distance, you can make out the legions of Avernus marching in formation.~
-@11366 = ~Through the haze that envelops Avernus you can see a blasted landscape dotted with lakes of bubbling magma amongst towering ruins of iron and basalt.~
-@11367 = ~The utter desolation of the First Hell is an awe-inspiring, if terrifying, sight. Red skies periodically rain down fireballs, battering the landscape.~
-@11368 = ~Horrifying creatures are chained up by the thousands far below. Enormous devils rake them with whips, shaking with laughter after each strike.~
-@11369 = ~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~
-@11370 = ~Cage~
-@11371 = ~This sturdy, well-crafted door resists all efforts to open it.~
-@11372 = ~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~
-@11373 = ~This door's dwarven craftspeople made certain none but the one who held its key would ever be able to open it. Peering through a crack, the light that leaks inward reveals nothing of interest or value.~
-@11374 = ~An unearthly light glows from deep within the chasm. Voices echo throughout the gaping crevasse, pressing against the walls, seeking escape.~
-@11375 = ~Exit~
-@11376 = ~Ritual Chamber~
-@11377 = ~Portal to the Fugue Plane~
-@11378 = ~Teleport Without Error~
-@11379 = ~Impale~
-@11380 = ~Attack~
+@11343 = ~Exit~
+@11344 = ~Angelo~
+@11345 = ~ So, these are the infamous murderers, finally brought to justice.~
+@11346 = ~ Dreadfully sorry, but I'm afraid... I'm gonna have ta kill ya.~[xaa12064]
+@11347 = ~~[xaf10005]
+@11348 = ~~[xaf10006]
+@11349 = ~ Justice may be blind, but I'm not.~[xaf10007]
+@11350 = ~Aun Argent~
+@11351 = ~If this is how it ends, then so be it!~[xag10000]
+@11352 = ~Ugh!~[xag10001]
+@11353 = ~~[xag10002]
+@11354 = ~I will do what I can to help you.~[xag10003]
+@11355 = ~Thrix~
+@11356 = ~Hellcat~
+@11357 = ~Erinyes~
+@11358 = ~Abishai~
+@11359 = ~Imp~
+@11360 = ~Crusader Elite~
+@11361 = ~Lemure~
+@11362 = ~Black Abishai~
+@11363 = ~Green Abishai~
+@11364 = ~Red Abishai~
+@11365 = ~Hamatula~
+@11366 = ~Bone Fiend~
+@11367 = ~For the Shining Lady!~[xac10278]
+@11368 = ~You need somethin'?~[xac10279]
+@11369 = ~We serve the light.~[xac10280]
+@11370 = ~Die in her name!~[xac10292]
+@11371 = ~Somethin' you need?~[xac10182]
+@11372 = ~As the light wills.~[xac10183]
+@11373 = ~~[xaa11126]
+@11374 = ~~[xaa11854]
+@11375 = ~ The Fair Folk rarely have time for small talk.~[xac10289]
+@11376 = ~ Troubled times are upon us.~[xac10290]
+@11377 = ~ Soon, we shall all be together upon Evermeet.~[xac10291]
+@11378 = ~Stairs Down~
+@11379 = ~Massive Door~
+@11380 = ~In the distance, you can make out the legions of Avernus marching in formation.~
+@11381 = ~Through the haze that envelops Avernus you can see a blasted landscape dotted with lakes of bubbling magma amongst towering ruins of iron and basalt.~
+@11382 = ~The utter desolation of the First Hell is an awe-inspiring, if terrifying, sight. Red skies periodically rain down fireballs, battering the landscape.~
+@11383 = ~Horrifying creatures are chained up by the thousands far below. Enormous devils rake them with whips, shaking with laughter after each strike.~
+@11384 = ~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~
+@11385 = ~Cage~
+@11386 = ~This sturdy, well-crafted door resists all efforts to open it.~
+@11387 = ~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~
+@11388 = ~This door's dwarven craftspeople made certain none but the one who held its key would ever be able to open it. Peering through a crack, the light that leaks inward reveals nothing of interest or value.~
+@11389 = ~An unearthly light glows from deep within the chasm. Voices echo throughout the gaping crevasse, pressing against the walls, seeking escape.~
+@11390 = ~Exit~
+@11391 = ~Ritual Chamber~
+@11392 = ~Portal to the Fugue Plane~
+@11393 = ~Teleport Without Error~
+@11394 = ~Impale~
+@11395 = ~Attack~

@@ -1,20 +1,12 @@
 IF
-	See([PC])
-	AttackedBy([GOODCUTOFF],DEFAULT)
-	Allegiance(Myself,NEUTRAL)
+	StealFailed([ANYONE])
 THEN
 	RESPONSE #100
-		SmallWait(5)
-		Enemy()
-END
-
-IF
-	See([PC])
-	!Allegiance(Myself,ENEMY)
-	Global("BelandEntranceFee","GLOBAL",0)
-THEN
-	RESPONSE #100
-		SmallWait(8)
-		StartDialog("BELAND",[PC])
+		DialogInterrupt(FALSE)
+		Recoil()
+		SmallWait(6)
+		CreateCreature("FLAMEN",[694.372],NW)  // Flaming Fist Enforcer
+		CreateCreature("FLAMEN2",[694.372],NW)  // Flaming Fist Enforcer
+		CreateCreature("FLAMEN2",[694.372],NW)  // Flaming Fist Enforcer
 END
 

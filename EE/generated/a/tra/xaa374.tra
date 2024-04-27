@@ -1,19 +1,51 @@
-// BORIN translation file
-@1   = ~Hail and well met, young 'un. Have you come to old Borinole for a tale or two of life in the realms, or are you just strolling about meeting the folks of Baldur's Gate?~
-@2   = ~I've no interest in you or your stories.~
-@3   = ~Have you any interesting tales?~
-@4   = ~Indeed, there are many interesting folk about.~
-@5   = ~I see. Well, take your leave then, and don't come back this way any time soon.~
-@6   = ~Oh, I have tales. Whether they are interesting or not is a matter of debate, I suppose. I could share one with you, though it likely has no bearing on anything of importance. Nothing at all to be gained from the telling, save a moment of time well spent.~
-@7   = ~If it is of no importance, then I am not interested.~
-@8   = ~By all means, go right ahead.~
-@9   = ~I should say so, though not as many as in the past. People are avoiding the roads because of the recent troubles, as I am sure you are aware. We keep up a strong front though, and I know we'll get through just fine. The people of "the Gate" have always been good at adapting. Why, in my day we could weather month-long storms with nothing but a log or two, the skins of a few unfortunate bears, and the warm company of those we held dear. Of course, in those days trees were bigger, you understand? A good stout log could fire the hearth for a tenday, though you'd have to empty out the stables for a place to keep them dry. Likewise the pelt of an adult grizzly could carpet your whole house. And company? Company was HUGE! I remember old skinny Morgan. Nigh unto a giant he was. Soft at heart though...~
-@10  = ~Please, will you stop with the incessant chatter?! I can take no more!~
-@11  = ~Ah, we'll never see the like of those days again. I'd love to stay and chat, but I should be off.~
-@12  = ~If you say so, young 'un. Good on you and those you travel with.~
-@13  = ~I shall then. It was the dawning of a new year, and Chester Blackboot and I were off to rally our friends and storm the gates of the old Firewine ruins. Vella Stablehand was at the head; she was the eldest, you understand. We pretty much agreed that she would take point and absorb most of the initial damage were we attacked. Of course Vella had her father's axe too, and that made her an imposing sight at the forefront. She was tall as a pine and could deliver a backhand like you were so much silt on the breeze. I remember a time when she and Chester—this was Chester Allendale, no relation to the Blackboots (and a good thing too. Them Blackboots had not patience for Vella and her shenanigans)—well, Chester and Vella were spelunking in the Ulcaster (at least, that's what the kids called it in those days) and her father comes up and by golly, Vella up and belts Chester so hard he didn't hit the ground for a week. Vella's father sees this and laughs so hard he plumb forgets he's mad. He's like that though, and the day he passes up a good joke will be the day he passes on entirely. I remember a time...~
-@14  = ~I don't mean to be critical but does this story have an end? Or a beginning, for that matter?~
-@15  = ~Shut up, shut up, shut up! I can't take another second of your rambling.~
-@16  = ~A rousing tale. I learned a lot. I'll be leaving now. Goodbye.~
-@17  = ~Stories continue long after the exciting bits end, young 'un. You'll miss a lot of life if you don't pay attention to anything outside of swinging the axe and smacking the head. Ah, well. People had more patience in my time. Why, Buck Longbrow could stare at corn from seed to harvest, though he always was a bit shaky after the fall. Eh... leave me be.~
-@18  = ~Those were the days, weren't they?~
+// NOBW8 translation file
+@1   = ~How dare you barge into my room?! I will have you leave at once!~
+@2   = ~Wait!~
+@3   = ~Perhaps... perhaps you are the type of people who can help me. I am in need of someone to... perform a service for me. I need someone... removed.~
+@4   = ~You wish someone disposed of? I'll not have a part in the killing of innocents. Why should he deserve death?~
+@5   = ~I fear I do not have sufficient time for such an assignment. Perhaps another day.~
+@6   = ~Removed? Do you intend for me to kill someone?! I'll have none of this! Keep this nefarious plan to yourself!~
+@7   = ~This scoundrel is no innocent! He threatens to ruin my life with... with the spreading of... accusations. He threatens to ruin my reputation and standing unless I pay him an exorbitant sum almost weekly! I beg of thee... you must help me.~
+@8   = ~I must decline. Even such a scoundrel as this is not deserving of murder. I sympathize, but cannot help.~
+@9   = ~The fiend! He'll be a day's journey down before he knows he's dead! Where can he be found?~
+@10  = ~If he is a weekly drain on your finance, you must be willing to invest heavily in his removal. What will be my reward?~
+@11  = ~Yes, well perhaps some other time then. Whenever you can fit me into your schedule. It's not as though this would be urgent! Begone!~
+@12  = ~If such is your decision, then so be it. Leave me to my misery! Get out!~
+@13  = ~A Contract Killing
+When the noblewoman asked me to kill her blackmailer, one Cyrdemac, I turned her down flat.~
+@14  = ~A Contract Killing
+My job is to kill a blackmailer named Cyrdemac, and I should find him at the Elfsong Tavern.~
+@15  = ~Thank you indeed! His name is Cyrdemac and he frequents the Elfsong Tavern. I have not been there myself, but I hear it is quite a rough place. You could do the deed in the main bar itself and likely none would call the guards. I know not if he will have friends with him though. Thank you for this. Upon your return I shall pay you 500 gold. A small price to have this embarrassment removed.~
+@16  = ~Have you... have you done it? Is he...?~
+@17  = ~The fool is dead, milady. He will trouble you no more.~
+@18  = ~He lives still, though not for long.~
+@19  = ~I have no wish to continue with this job. Find another killer to do your dirty work.~
+@20  = ~Please hurry. The longer this continues the more likely it is he will find out.~
+@21  = ~You are very blunt, though I suppose that is to be expected. If gold is that much of a concern for you, you shall have it in abundance. I shall pay you 2,000 gold for your trouble. His name is Cyrdemac, and he frequents the Elfsong Tavern. I have heard it is a rough place, and one could likely commit the deed even in the main room with nary a guard called. Please hurry.~
+@22  = ~That is a sufficient reward. I shall return with his head as proof of the deed.~
+@23  = ~You shall have to find someone else. I have no wish to be a part of this.~
+@24  = ~That is insufficient. You will have to pay more if you wish this deed done.~
+@25  = ~Certainly. I shall double the offer if you so wish it. 4,000 gold for your trouble. Is that acceptable now?~
+@26  = ~I am no bloodthirsty monster. What use would I have for such a grisly trophy? Just do the job and leave all his parts at the scene.~
+@27  = ~Oh, that is just perfect. Wonderful! All that is left is to pay you for your trouble.~
+@28  = ~I think not. This fool had a good idea, and I plan to continue where he "left off." I will take your 500, but I demand 500 more every two days until I tire of coming back to get it.~
+@29  = ~I thank you. It was no trouble, really. Better that his kind of scum is removed from society by any means possible.~
+@30  = ~Indeed. Here is your coin. Our business is concluded, so I trust you will withdraw as soon as possible. It would not do for me to be seen consorting with a known killer. Good day.~
+@31  = ~A Contract Killing
+Cyrdemac is now a late blackmailer, and I've collected my pay from his noble victim.~
+@32  = ~What?! You are no better than... I suppose I should have seen it in your eyes when we first met. It would seem I was better off with the devil I knew. Very well, there is little I can do to stop you. I shall be here promptly every two days.~
+@33  = ~A Contract Killing
+Cyrdemac was strictly small time. I killed him all right, but now the noblewoman who paid him will have to pay me instead. If she knows what's good for her, she'll turn up every two days to keep my purse full.~
+@34  = ~Oh, that is just perfect. Wonderful! All that is left is to pay you for your trouble. I fear that I am unable to give you the money I promised, however. Please forgive me, but I was desperate and you seemed so preoccupied with the gold. I figured that I must offer a large sum to get the deed done. I apologize, but I have just 500 gold to give you.~
+@35  = ~That will suffice, though you needn't have lied. It was worth it just to have scum such as him off the streets.~
+@36  = ~What?! This is intolerable! I demand the gold I was promised!~
+@37  = ~No matter. I have other plans that shall make up the difference in the long term. I will take your 500, but I demand 500 more every two days. If I do not receive it, people will hear of your murderous ways.~
+@38  = ~You may demand all you wish, but it will do you no good. I simply do not have the gold I promised. The 500 I have offered is the most I can give. I am sorry.~
+@39  = ~It is not time for your pickup yet, and I'll not suffer your company otherwise. Get out!~
+@40  = ~It's you again. Must you be so bloody prompt? Here is your gold, now get out!~
+@41  = ~Here is the 500 gold that I owe you. I feel that I owe you more for your gallant acts. Here, take this gem, this should be satisfactory payment.~
+@42  = ~A Contract Killing
+Killing is an awful lot of work. How much easier it was to charm the woman who wanted me to kill Cyrdemac and simply ask her to reward me now.~
+@43  = ~I wish I had the money I had promised you, but I have only this 500 gold. Here, take this gem, perhaps this will balance the inequity.~
+@44  = ~I'll not have you near me! I should know better than to slum with the likes of you!~
+@45  = ~I've become very tired of your blackmail. Today I have a little surprise for you. I hope you like it! Tor Lobo! Kill these bandits.~

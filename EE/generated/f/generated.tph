@@ -96,9 +96,9 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~xaf101.are~) BEGIN
 	//PRINT ~Area already exists: xaf101. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\f\are\xaf101.are~ ~override~
-	WRITE_LONG 1396 RESOLVE_STR_REF(@11328) /*~Exit~*/
-	WRITE_LONG 1448 RESOLVE_STR_REF(@11328) /*~Exit~*/
-	WRITE_LONG 1500 RESOLVE_STR_REF(@11328) /*~Exit~*/
+	WRITE_LONG 1396 RESOLVE_STR_REF(@11343) /*~Exit~*/
+	WRITE_LONG 1448 RESOLVE_STR_REF(@11343) /*~Exit~*/
+	WRITE_LONG 1500 RESOLVE_STR_REF(@11343) /*~Exit~*/
 	WRITE_LONG 1020 %xaf2%
 	WRITE_LONG 1024 %xaf2%
 	WRITE_LONG 1028 %xaf3%
@@ -109,13 +109,13 @@ END
 //cre files
 //===================
 COPY ~%MOD_FOLDER%\generated\f\cre\xaf100.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11329) /*~Angelo~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11329) /*~Angelo~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@11330) /*~ So, these are the infamous murderers, finally brought to justice.~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@11331) /*~ Dreadfully sorry, but I'm afraid... I'm gonna have ta kill ya.~[xaa12038]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@11332) /*~~[xaf10005]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@11333) /*~~[xaf10006]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@11334) /*~ Justice may be blind, but I'm not.~[xaf10007]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11344) /*~Angelo~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11344) /*~Angelo~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@11345) /*~ So, these are the infamous murderers, finally brought to justice.~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@11346) /*~ Dreadfully sorry, but I'm afraid... I'm gonna have ta kill ya.~[xaa12064]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@11347) /*~~[xaf10005]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@11348) /*~~[xaf10006]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11349) /*~ Justice may be blind, but I'm not.~[xaf10007]*/
 
 
 //wed files

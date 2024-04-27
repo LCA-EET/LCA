@@ -1,29 +1,30 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FECOOK.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FCOOK3.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FECOOK.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FCOOK3.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA363~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #1 /* Triggers after states #: 1 even though they appear after this state */
-~  True()
+IF ~  NumTimesTalkedTo(0)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Ya, I don't like no snot-nosed brats causin' trouble here. You better scram, 'fore I give you a whippin'.~ #3418 */
+  SAY @1 /* ~I must apologize for me fella here, John. He just gets irate real easy. You'd do best to avoid him when he's in these kinda moods.~ #7638 */
   IF ~~ THEN EXIT
 END
 
-IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
-~ THEN BEGIN 1 // from:
-  SAY @2 /* ~Only stuff I know about is cooking, baking, and how ta run a kitchen.~ #6148 */
+IF ~~ THEN BEGIN 1 // from:
+  SAY @2 /* ~Sorry, no food fer ya right now.~ #7639 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 2 // from:
-  SAY @3 /* ~Get out or be thrown out!~ #8990 */
+IF ~  StateCheck(Myself,STATE_CHARMED)
+~ THEN BEGIN 2 // from:
+  SAY @3 /* ~I'm just a cook, what should I know?~ #7640 */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 3 // from:
+  SAY @4 /* ~Get out or be thrown out!~ #8992 */
   IF ~~ THEN EXIT
 END

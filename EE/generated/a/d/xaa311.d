@@ -1,32 +1,42 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\SHEP.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FTOWB6.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\SHEP.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FTOWB6.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA311~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
 
-IF ~  NumTimesTalkedTo(0)
+IF WEIGHT #1 /* Triggers after states #: 3 even though they appear after this state */
+~  NumTimesTalkedTo(0)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Ye stink like the adventuring rogues that ye are!~ #19125 */
-  IF ~~ THEN REPLY @2 /* ~And you have the stench about you of a peasant knave. Now I ask you, which of us smells the sweeter?~ #19126 */ GOTO 1
-  IF ~~ THEN REPLY @3 /* ~Look, comrades! The peasant has a tongue! If only he had the wit to match...~ #19127 */ GOTO 2
-END
-
-IF ~~ THEN BEGIN 1 // from: 0.0
-  SAY @4 /* ~Sweetness is best judged by those around ye. My cows and horses know my scent and snuggle close to share it. But ye surround yerself wit' monsters and they crowd close only to extinguish yer fetid wafts and purge them wit' a slow turn on the spit! Aye, then, there be firm proof that between our two stenches, mine be far more the tolerable!~ #19128 */
+  SAY @1 /* ~You will find little here to interest you. I am but a common citizen.~ #8814 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 2 // from: 0.1
-  SAY @5 /* ~What good be wit unless ye use it? Rest assured, stranger, I have not seen it grace yer party yet.~ #19130 */
+IF WEIGHT #2 /* Triggers after states #: 3 even though they appear after this state */
+~  NumTimesTalkedTo(1)
+~ THEN BEGIN 1 // from:
+  SAY @2 /* ~Please behave yourself in my home. I should hate to have to call upon the guards. They tend to get a bit overzealous.~ #8815 */
   IF ~~ THEN EXIT
 END
 
-IF ~  True()
+IF ~~ THEN BEGIN 2 // from:
+  SAY @3 /* ~You leave me no choice! Help!~ #8816 */
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
 ~ THEN BEGIN 3 // from:
-  SAY @6 /* ~Yer type was meant to spar wit' magic globes and sharpened steel. Yer attempts at verbal conquest leave much to be desired. Begone, imps, and through the window fly.~ #19131 */
-  IF ~~ THEN DO ~EscapeArea()
-~ EXIT
+  SAY @4 /* ~I wish I was up to making a fine supper for the lot of you, but I've only enough for my family. Perhaps you'd stay and enjoy the comforts of my humble home? It seems to me though, that you're not the type to have time for rest. I wish you the best.~ #8817 */
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #3 ~  ReputationLT(Player1,3)
+~ THEN BEGIN 4 // from:
+  SAY @5 /* ~I'll not speak a word after what you did!~ #8996 */
+  IF ~~ THEN EXIT
 END

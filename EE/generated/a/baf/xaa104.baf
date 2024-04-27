@@ -1,19 +1,7 @@
 IF
-	See([PC])
-	AttackedBy([GOODCUTOFF],DEFAULT)
-	Allegiance(Myself,NEUTRAL)
+	Entered([ANYONE])
 THEN
 	RESPONSE #100
-		SmallWait(5)
-		Enemy()
-END
-
-IF
-	See([PC])
-	!Allegiance(Myself,ENEMY)
-	NumberOfTimesTalkedTo(0)
-THEN
-	RESPONSE #100
-		Dialogue([PC])
+		ForceSpell([PC],WIZARD_WEB)  // SPWI215.SPL (Web)
 END
 

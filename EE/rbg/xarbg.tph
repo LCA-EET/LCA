@@ -509,7 +509,7 @@ END
 //{ CRE
 
 	//{ Block A Base
-		COPY_EXISTING ~xaa100.cre~ ~override/xasarevo.cre~
+		COPY_EXISTING ~xaa100.cre~ ~override/xasarevo.cre~ // sarevo
 		WRITE_ASCII 0x2CC ~xasarevo~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xasarevo~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~xasarevo~ #8		// Override Script
@@ -518,85 +518,134 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 	
-		COPY_EXISTING ~xaa108.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
+		//{ Male Townspeople
+			ACTION_DEFINE_ARRAY maleTownspeople
+			BEGIN
+				xaa731
+				xaa1190
+				xaa849
+				xaa694
+				xaa877
+				xaa695
+				xaa463
+				xaa151
+				xaa166
+				xaa180
+				xaa172
+				xaa250
+				xaa170
+				xaa132
+				xaa452
+				xaa583
+				xaa498
+				xaa1207
+				xaa1208
+				xaa1209
+				xaa123
+				xaa124
+				xaa128
+				xaa126
+				xaa131
+				xaa958
+				xaa959
+				xaa960
+			END
+			
+			ACTION_PHP_EACH maleTownspeople AS _ => maleTownsperson
+			BEGIN
+				COPY_EXISTING ~%maleTownsperson%.cre~ ~override~
+				
+				// Apply Updated Dialog
+				WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
+			END
+		//}
 		
-		COPY_EXISTING ~xaa109.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
-	
-		COPY_EXISTING ~xaa111.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
+		//{ Female Townspeople
+			ACTION_DEFINE_ARRAY femaleTownspeople
+			BEGIN
+				xaa548
+				xaa987
+				xaa696
+				xaa560
+				xaa167
+				xaa375
+				xaa251
+				xaa130
+				xaa134
+				xaa129
+				xaa291
+				xaa605
+				xaa127
+				xaa140
+				xaa163
+				xaa135
+				xaa168
+			END
+			
+			ACTION_PHP_EACH femaleTownspeople AS _ => femaleTownsperson
+			BEGIN
+				COPY_EXISTING ~%femaleTownsperson%.cre~ ~override~
+				
+				// Apply Updated Dialog
+				WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
+			END
+		//}
+			
+		//{ Noblemen
+			ACTION_DEFINE_ARRAY noblemen
+			BEGIN
+				xaa257
+				xaa200
+				xaa524
+				xaa372
+				xaa396
+				xaa730
+				xaa1041
+				xaa932
+				xaa359
+				xaa767
+				xaa532
+				xaa521
+				xaa755
+			END
+			
+			ACTION_PHP_EACH noblemen AS _ => nobleman
+			BEGIN
+				COPY_EXISTING ~%nobleman%.cre~ ~override~
+				
+				// Apply Updated Dialog
+				WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
+			END
+		//}
 		
-		COPY_EXISTING ~xaa111.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
+		//{ Noblewomen
+			ACTION_DEFINE_ARRAY noblewomen
+			BEGIN
+				xaa1039
+				xaa1353
+				xaa1334
+				xaa728
+				xaa360
+				xaa1078
+				xaa514
+				xaa1090
+				xaa361
+				xaa397
+				xaa402
+				xaa369
+				xaa370
+			END
+			
+			ACTION_PHP_EACH noblewomen AS _ => noblewoman
+			BEGIN
+				COPY_EXISTING ~%noblewoman%.cre~ ~override~
+				
+				// Apply Updated Dialog
+				WRITE_ASCII 0x2CC ~xanoblf~ #8 	// Dialogue
+			END
+		//}
 		
-		COPY_EXISTING ~xaa112.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa113.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa114.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa115.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa116.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa117.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa119.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa120.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa125.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa129.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa136.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa148.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa151.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa152.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa153.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa155.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa157.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa165.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa185.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa193.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa194.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa200.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa217.cre~ ~override/xabrielb.cre~ // Brielbara
+		COPY_EXISTING ~xaa274.cre~ ~override/xabrielb.cre~ // Brielbara
 		WRITE_ASCII 0x2CC ~xabrielb~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xabrielb~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~xainitp1~ #8		// Override Script
@@ -605,46 +654,7 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xaa234.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa302.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa303.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xanoblf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa304.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xanoblf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa312.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xanoblf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa313.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xanoblf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa315.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa318.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa339.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa340.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xanoblf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa345.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xanoblf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa395.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa406.cre~ ~override~ // mtowba
-		WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa406.cre~ ~override/xa800m.cre~ // mtowba
+		COPY_EXISTING ~xaa463.cre~ ~override/xa800m.cre~ // mtowba
 		WRITE_ASCII 0x2CC ~xa800m~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xa800m~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~~ #8		// Override Script
@@ -653,7 +663,7 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xaa408.cre~ ~override/xabrevlk.cre~ // Brevlik
+		COPY_EXISTING ~xaa465.cre~ ~override/xabrevlk.cre~ // Brevlik
 		WRITE_ASCII 0x2CC ~xabrevlk~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xabrevlk~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~xabrevlk~ #8		// Override Script
@@ -662,22 +672,7 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xaa457.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xanoblf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa464.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa467.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa475.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa475.cre~ ~override~
-		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa495.cre~ ~override/xalarze.cre~ // Larze
+		COPY_EXISTING ~xaa552.cre~ ~override/xalarze.cre~ // Larze
 		WRITE_ASCII 0x2CC ~xalarze~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xalarze~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~xainitp1~ #8		// Override Script
@@ -686,10 +681,7 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xaa503.cre~ ~override~ // ftowba
-		WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
-		
-		COPY_EXISTING ~xaa503.cre~ ~override/xamom.cre~ // ftowba
+		COPY_EXISTING ~xaa560.cre~ ~override/xamom.cre~ // ftowba
 		WRITE_ASCII 0x2CC ~xamom~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xamom~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~xamom~ #8		// Override Script
@@ -700,7 +692,7 @@ END
 		SAY NAME1 @4154 /*~Anguished Mother~ */
 		SAY NAME2 @4154 /* */
 		
-		COPY_EXISTING ~xaa503.cre~ ~override/xa800w.cre~ // ftowba
+		COPY_EXISTING ~xaa560.cre~ ~override/xa800w.cre~ // ftowba
 		WRITE_ASCII 0x2CC ~xa800w~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xa800w~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~~ #8		// Override Script
@@ -709,7 +701,7 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xaa630.cre~ ~override~ // WV Guard 2
+		COPY_EXISTING ~xaa1179.cre~ ~override~ // WV Guard 2 iron12
 		WRITE_ASCII 0x2CC ~xawvgrd2~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xawvgrd2~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~xaguard~ #8		// Override Script
@@ -718,7 +710,7 @@ END
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xaa673.cre~ ~override/xavirgil.cre~ // Virgil
+		COPY_EXISTING ~xaa730.cre~ ~override/xavirgil.cre~ // Virgil nobl11
 		SAY NAME1 @4082
 		SAY NAME2 @4082
 		WRITE_ASCII 0x2CC ~xavirgil~ #8 	// Dialogue
@@ -730,7 +722,7 @@ END
 		WRITE_ASCII 0x268 ~xavirgil~ #8		// Default Script
 		
 		
-		COPY_EXISTING ~xaa851.cre~ ~override/xaalyth.cre~ // Alyth
+		COPY_EXISTING ~xaa904.cre~ ~override/xaalyth.cre~ // Alyth
 		WRITE_ASCII 0x2CC ~xaalyth~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xaalyth~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~xainitp1~ #8		// Override Script
@@ -738,6 +730,8 @@ END
 		WRITE_ASCII 0x258 ~~ #8		// Race Script
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		
+		// Left off here - 4/26/24
 		
 		COPY_EXISTING ~xaa1033.cre~ ~override~ // Ye Olde Inn Bartender
 		WRITE_ASCII 0x2CC ~xabartyo~ #8 	// Dialogue
@@ -1954,7 +1948,7 @@ END
 		WRITE_SHORT 0x1FF6 2
 		
 		// Replace Battle Song
-		WRITE_LONG 0x2438 xaf3
+		WRITE_LONG 0x24B8 xaf3
 		
 		// Replace Area Triggers
 		WRITE_ASCII 0x1474 ~xauctemp~ #8
@@ -2478,7 +2472,7 @@ END
 				fj_structure_type = region
 				fj_name = ~XAP0615~
 				fj_reg_script = ~XAP0615~
-	END
+		END
 	//}
 	
 	//{ ar0619 xaa360
@@ -2640,10 +2634,10 @@ END
 	//}
 	
 	//{ ar1201 xaa146 Ogre Mage Ambush House
-		COPY_EXISTING ~xaa146.are~ ~override~
-		
 		OUTER_SET expiryOffset = 0x154
 		OUTER_SET i = 0
+		
+		COPY_EXISTING ~xaa146.are~ ~override~
 		
 		WHILE (i < 5) BEGIN // Disable the existing area actors
 			WRITE_LONG expiryOffset 0
@@ -2751,26 +2745,453 @@ END
 //{ New ARE
 	
 
-	//{ Hall of Wonders Cutscene Area
-		COPY ~%MOD_FOLDER%/rbg/are/xacshow.are~ ~override~
+	//{ Hall of Wonders Cutscene Area ar0131
+		OUTER_SET expiryOffset = 0x154
+		OUTER_SET i = 0
+	
+		COPY_EXISTING ~xaa358.are~ ~override/xacshow.are~ 
 		
 		// Replace Music
 		WRITE_LONG 0x9F4 xaa12
 		WRITE_LONG 0x9F8 xaa12
 		WRITE_LONG 0xA00 0
+		
+		WHILE (i < 4) BEGIN // Disable the existing area actors
+			WRITE_LONG expiryOffset 0
+			expiryOffset = (expiryOffset + 0x110)
+			i = (i + 1)
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 718
+				fj_loc_y = 858
+				fj_orientation = 10 
+				fj_flags = 9
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xaorph01
+				fj_cre_resref = boy3
+				fj_dlg_resref = xaorph01
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 748
+				fj_loc_y = 894
+				fj_orientation = 10 
+				fj_flags = 9
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xaorph02
+				fj_cre_resref = girl01
+				fj_dlg_resref = xaorph02
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 727
+				fj_loc_y = 892
+				fj_orientation = 10 
+				fj_flags = 9
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xaorph03
+				fj_cre_resref = boy3
+				fj_dlg_resref = xaorph03
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 781
+				fj_loc_y = 892
+				fj_orientation = 10 
+				fj_flags = 9
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xaorph04
+				fj_cre_resref = girl01
+				fj_dlg_resref = xaorph04
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 832
+				fj_loc_y = 927
+				fj_orientation = 10 
+				fj_flags = 9
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xaorph05
+				fj_cre_resref = boy1
+				fj_dlg_resref = xaorph05
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 812
+				fj_loc_y = 945
+				fj_orientation = 10 
+				fj_flags = 9
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xaorph06
+				fj_cre_resref = girl01
+				fj_dlg_resref = xaorph06
+		END
 	//}
 	
-	//{ Ducal Palace 1FL (Kidnap)
-		COPY ~%MOD_FOLDER%/rbg/are/xaducal.are~ ~override~
+	//{ Ducal Palace 1FL (Kidnap) ar0108
+		OUTER_SET expiryOffset = 0x154
+		OUTER_SET i = 0
+		
+		COPY_EXISTING ~xaa242.are~ ~override/xaducal.are~ 
 		WRITE_LONG 0x99C xamu07
 		WRITE_LONG 0x9A0 xamu07
+		
+		// Disable Travel Triggers
+		WRITE_LONG 0xD2C 256
+		WRITE_LONG 0xDF0 256
+		WRITE_LONG 0xEB4 256
+		WRITE_LONG 0xF78 256
+		
+		WHILE (i < 11) BEGIN // Disable the existing area actors
+			WRITE_LONG expiryOffset 0
+			expiryOffset = (expiryOffset + 0x110)
+			i = (i + 1)
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 620
+				fj_loc_y = 460
+				fj_orientation = 10 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Belt
+				fj_cre_resref = xabelt
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 740
+				fj_loc_y = 350
+				fj_orientation = 2 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Eltan
+				fj_cre_resref = xaeltan
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 800
+				fj_loc_y = 365
+				fj_orientation = 2 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Kent
+				fj_cre_resref = xakent
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 619
+				fj_loc_y = 337
+				fj_orientation = 14 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Liia
+				fj_cre_resref = xalia
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 550
+				fj_loc_y = 400
+				fj_orientation = 14 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Melkor
+				fj_cre_resref = xamelkor
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 740
+				fj_loc_y = 321
+				fj_orientation = 2 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Nederlok
+				fj_cre_resref = xanederl
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 860
+				fj_loc_y = 470
+				fj_orientation = 6 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Valiant
+				fj_cre_resref = xaffval1
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 780
+				fj_loc_y = 512
+				fj_orientation = 6 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Valiant
+				fj_cre_resref = xaffval2
+		END
 	//}
 	
-	//{ Ducal Palace 2FL (Debrief)
-		COPY ~%MOD_FOLDER%/rbg/are/xaducal2.are~ ~override~
+	//{ Ducal Palace 2FL (Debrief) ar0109
+		OUTER_SET expiryOffset = 0x154
+		OUTER_SET i = 0
+		
+		COPY_EXISTING ~xaa418.are~ ~override/xaducal2.are~
 		WRITE_LONG 0x11B8 xaa12
 		WRITE_LONG 0x11BC xaa13
+		
+		WHILE (i < 2) BEGIN // Disable the existing area actors
+			WRITE_LONG expiryOffset 0
+			expiryOffset = (expiryOffset + 0x110)
+			i = (i + 1)
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 872
+				fj_loc_y = 437
+				fj_orientation = 2 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Belt
+				fj_cre_resref = xabelt
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 552
+				fj_loc_y = 376
+				fj_orientation = 14 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Bence
+				fj_cre_resref = xabence
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 792
+				fj_loc_y = 390
+				fj_orientation = 2 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Eltan
+				fj_cre_resref = xaeltan
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 900
+				fj_loc_y = 467
+				fj_orientation = 2 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Entar
+				fj_cre_resref = xaentar
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 720
+				fj_loc_y = 260
+				fj_orientation = 2 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Kent
+				fj_cre_resref = xakent
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 830
+				fj_loc_y = 412
+				fj_orientation = 2 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Liia
+				fj_cre_resref = xaliia
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 761
+				fj_loc_y = 292
+				fj_orientation = 2 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Nederlok
+				fj_cre_resref = xanederl
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 986
+				fj_loc_y = 466
+				fj_orientation = 2 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Skie
+				fj_cre_resref = xaskie
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 880
+				fj_loc_y = 600
+				fj_orientation = 6 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Valiant
+				fj_cre_resref = xaffval1
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 570
+				fj_loc_y = 307
+				fj_orientation = 14 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Valiant
+				fj_cre_resref = xaffval2
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 620
+				fj_loc_y = 275
+				fj_orientation = 14 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Valiant
+				fj_cre_resref = xaffval3
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+			fj_type 		= 0
+			fj_box_left		= 360
+			fj_box_top		= 454
+			fj_box_right	= 364
+			fj_box_bottom	= 450
+			fj_cursor_idx	= 0
+			fj_flags		= 0
+			fj_vertex_0     = 360 + (450 << 16)
+			fj_vertex_1     = 360 + (454 << 16)
+			fj_vertex_2     = 364 + (450 << 16)
+			fj_vertex_3     = 364 + (454 << 16)
+			STR_VAR
+			fj_structure_type = region
+			fj_name = ~TrigCC~
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+			fj_type 		= 0
+			fj_box_left		= 750
+			fj_box_top		= 500
+			fj_box_right	= 752
+			fj_box_bottom	= 498
+			fj_cursor_idx	= 0
+			fj_flags		= 0
+			fj_vertex_0     = 752 + (498 << 16)
+			fj_vertex_1     = 752 + (500 << 16)
+			fj_vertex_2     = 750 + (498 << 16)
+			fj_vertex_3     = 750 + (500 << 16)
+			STR_VAR
+			fj_structure_type = region
+			fj_name = ~TrigCC2~
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+			fj_type 		= 0
+			fj_box_left		= 600
+			fj_box_top		= 150
+			fj_box_right	= 600
+			fj_box_bottom	= 150
+			fj_cursor_idx	= 0
+			fj_flags		= 0
+			fj_vertex_0     = 600 + (150 << 16)
+			STR_VAR
+			fj_structure_type = region
+			fj_name = ~TrigExit~
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+			fj_type 		= 0
+			fj_box_left		= 360
+			fj_box_top		= 504
+			fj_box_right	= 364
+			fj_box_bottom	= 500
+			fj_cursor_idx	= 0
+			fj_flags		= 0
+			fj_vertex_0     = 360 + (500 << 16)
+			fj_vertex_1     = 360 + (504 << 16)
+			fj_vertex_2     = 364 + (500 << 16)
+			fj_vertex_3     = 364 + (504 << 16)
+			STR_VAR
+			fj_structure_type = region
+			fj_name = ~TrigP1~
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+			fj_type 		= 0
+			fj_box_left		= 700
+			fj_box_top		= 465
+			fj_box_right	= 702
+			fj_box_bottom	= 463
+			fj_cursor_idx	= 0
+			fj_flags		= 0
+			fj_vertex_0     = 702 + (463 << 16)
+			fj_vertex_1     = 702 + (465 << 16)
+			fj_vertex_2     = 700 + (463 << 16)
+			fj_vertex_3     = 700 + (465 << 16)
+			STR_VAR
+			fj_structure_type = region
+			fj_name = ~TrigP12~
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+			fj_type 		= 0
+			fj_box_left		= 800
+			fj_box_top		= 530
+			fj_box_right	= 802
+			fj_box_bottom	= 528
+			fj_cursor_idx	= 0
+			fj_flags		= 0
+			fj_vertex_0     = 800 + (530 << 16)
+			fj_vertex_1     = 800 + (528 << 16)
+			fj_vertex_2     = 802 + (530 << 16)
+			fj_vertex_3     = 802 + (528 << 16)
+			STR_VAR
+			fj_structure_type = region
+			fj_name = ~TrigSS~
+		END
 	//}
+	
+	
 	
 	//{ Ducal Palace 3FL
 		COPY ~%MOD_FOLDER%/rbg/bmp/xaa625lm.bmp~ ~override~
@@ -2798,20 +3219,86 @@ END
 		WRITE_LONG 0x59BC xaa22
 	//}
 	
-	//{ Corwin's Home, L1 and L2
-		COPY ~%MOD_FOLDER%/rbg/are/xahome.are~ ~override~
+	//{ Corwin's Home, L1 ar1316
+		OUTER_SET expiryOffset = 0x154
+		OUTER_SET i = 0
+		
+		COPY_EXISTING ~xaa268.are~ ~override/xahome.are~ 
 		WRITE_LONG 0x688 xamu02
 		WRITE_LONG 0x68C xamu02
 		
-		COPY ~%MOD_FOLDER%/rbg/are/xahom2.are~ ~override~
+		WHILE (i < 2) BEGIN // Disable the existing area actors
+			WRITE_LONG expiryOffset 0
+			expiryOffset = (expiryOffset + 0x110)
+			i = (i + 1)
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 440
+				fj_loc_y = 164
+				fj_orientation = 14 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Audamar
+				fj_cre_resref = xaaudam
+				fj_bcs_override = wdasight
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 160
+				fj_loc_y = 300
+				fj_orientation = 14 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Rohma
+				fj_cre_resref = xarohma
+				fj_bcs_override = wdasight
+		END
+	//}	
+		
+	//{ Corwin's Home, L2 ar1317
+		OUTER_SET expiryOffset = 0x154
+		OUTER_SET i = 0
+		
+		COPY_EXISTING ~xaa402.are~ ~override/xahom2.are~
 		WRITE_LONG 0x784 xamu02
 		WRITE_LONG 0x788 xamu02
+		
+		WHILE (i < 2) BEGIN // Disable the existing area actors
+			WRITE_LONG expiryOffset 0
+			expiryOffset = (expiryOffset + 0x110)
+			i = (i + 1)
+		END
+		
 	//}
 	
-	//{ Corwin's Home, Rohma Kidnapped
-		COPY ~%MOD_FOLDER%/rbg/are/xakidnap.are~ ~override~
-		WRITE_LONG 0x300 xamu04
-		WRITE_LONG 0x304 xamu04
+	//{ Corwin's Home, Rohma Kidnapped ar1316
+		OUTER_SET expiryOffset = 0x154
+		OUTER_SET i = 0
+		
+		COPY_EXISTING ~xaa268.are~ ~override/xakidnap.are~
+		
+		WHILE (i < 2) BEGIN // Disable the existing area actors
+			WRITE_LONG expiryOffset 0
+			expiryOffset = (expiryOffset + 0x110)
+			i = (i + 1)
+		END
+		
+		WRITE_LONG 0x688 xamu04
+		WRITE_LONG 0x68C xamu04
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 389
+				fj_loc_y = 257
+				fj_orientation = 8 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Audamar
+				fj_cre_resref = xaaudam2
+		END
 	//}
 	
 	
@@ -2849,11 +3336,91 @@ END
 		WRITE_LONG 0x5BE8 0
 	//}
 	
-	//{ Undercity Temple
-		COPY ~%MOD_FOLDER%/rbg/are/xauctemp.are~ ~override~
+	//{ Undercity Temple ar0125
+		OUTER_SET expiryOffset = 0x154
+		OUTER_SET triggerFlagOffset = 0x116C
+		OUTER_SET i = 0
+		OUTER_SET j = 0
+	
+		COPY_EXISTING ~xaa101.are~ ~override/xauctemp.are~
+		
+		WRITE_ASCII 0x94 ~xauctemp~ #8 // Area Script
+		
+		WHILE (i < 21) BEGIN // Disable the existing area triggers
+			WRITE_LONG triggerFlagOffset 256
+			triggerFlagOffset = (triggerFlagOffset + 0xC4)
+			i = (i + 1)
+		END
+		
+		WHILE (j < 3) BEGIN // Disable Unneeded NPCs
+			WRITE_LONG expiryOffset 0
+			expiryOffset = (expiryOffset + 0x110)
+			i = (i + 1)
+		END
 		
 		// Battle Music
 		WRITE_LONG 0x1364 xaa22
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 755
+				fj_loc_y = 660
+				fj_orientation = 0 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Beno
+				fj_cre_resref = xabeno
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 610
+				fj_loc_y = 690
+				fj_orientation = 15 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Illasera
+				fj_cre_resref = xaillase
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 740
+				fj_loc_y = 780
+				fj_orientation = 0 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Rohma
+				fj_cre_resref = xarohma2
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 750
+				fj_loc_y = 790
+				fj_orientation = 0 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Rohma
+				fj_cre_resref = xarohma3
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_type 		= 0
+				fj_box_left		= 730
+				fj_box_top		= 670
+				fj_box_right	= 740
+				fj_box_bottom	= 680
+				fj_cursor_idx	= 0
+				fj_vertex_0     = 740 + (670 << 16)
+				fj_vertex_1     = 730 + (670 << 16)
+				fj_vertex_2     = 730 + (680 << 16)
+				fj_vertex_3     = 740 + (680 << 16)
+			STR_VAR
+				fj_structure_type = region
+				fj_name = ~xatrbeno~
+		END
 	//}
 	
 	//{ Dinner Cutscene - Three Old Kegs

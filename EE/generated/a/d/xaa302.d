@@ -1,7 +1,7 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\EURIC.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\ELKART.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\EURIC.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\ELKART.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
@@ -10,38 +10,43 @@ BEGIN ~XAA302~
 // WARNING: this file contains non-trivial WEIGHTs
 //////////////////////////////////////////////////
 
-IF WEIGHT #2 /* Triggers after states #: 1 3 even though they appear after this state */
-~  Global("HelpEuric","GLOBAL",0)
+IF WEIGHT #1 /* Triggers after states #: 2 even though they appear after this state */
+~  !GlobalTimerNotExpired("Ransom","GLOBAL")
+Global("RescuedSkie","GLOBAL",1)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~What? I didn't do anything... just leave me alone!~ #15242 */
-  IF ~~ THEN EXIT
+  SAY @1 /* ~I see that you're here prompt for your ransom money. I hope you don't think you'll get away with this forever!~ #17325 */
+  IF ~~ THEN DO ~GiveGoldForce(1000)
+IncrementGlobal("RansomTaken","GLOBAL",1)
+SetGlobalTimer("Ransom","GLOBAL",TWO_DAYS)
+~ EXIT
 END
 
-IF WEIGHT #0 ~  Global("GivenEuricQuest","GLOBAL",1)
-PartyHasItem("AMUL14")
-Global("HelpEuric","GLOBAL",0)
+IF WEIGHT #3 /* Triggers after states #: 2 3 even though they appear after this state */
+~  True()
 ~ THEN BEGIN 1 // from:
-  SAY @2 /* ~Hey, what do you want? I didn't do nothin'. Hey, what's that amulet you have there?~ #15243 */
-  IF ~~ THEN DO ~SetGlobal("HelpEuric","GLOBAL",1)
-TakePartyItemNum("AMUL14",1)
-AddexperienceParty(1100)
-~ GOTO 2
-END
-
-IF ~~ THEN BEGIN 2 // from: 1.0
-  SAY @3 /* ~Mom set you up to this, didn't she? All right, all right, it looks dumb, but I'll wear it. Tell my mom, Nadine, that I miss her, but I'm not comin' back. Tell her that I'll be safe. Bye-bye now.~ #15244 */
-  IF ~~ THEN UNSOLVED_JOURNAL @4 /* ~Nadine and Euric
-Euric accepted Nadine's amulet but didn't seem too happy about it. He asked me to return to her with a message that he misses her.~ #27051 */ EXIT
-END
-
-IF WEIGHT #1 ~  False()
-~ THEN BEGIN 3 // from:
-  SAY @5 /* ~I ain't afraid of you!~ #15245 */
+  SAY @2 /* ~Get out of my face.~ #17326 */
   IF ~~ THEN EXIT
 END
 
-IF WEIGHT #3 ~  True()
-~ THEN BEGIN 4 // from:
-  SAY @6 /* ~Say hi to my mom for me, could you? I'm still doing okay, but you can tell her I'll probably be coming home soon.~ #15246 */
+IF WEIGHT #0 ~  GlobalGT("RescuedSkie","GLOBAL",0)
+OR(2)
+Global("RansomTaken","GLOBAL",8)
+Global("Chapter","GLOBAL",7)
+~ THEN BEGIN 2 // from:
+  SAY @3 /* ~You foolish little prigs, you've become way too predictable. HEY! They're all here ripe for the slaughter!~ #17327 */
+  IF ~~ THEN DO ~CreateCreature("FLAME",[343.148],SW)
+CreateCreature("FLAME",[305.166],SW)
+CreateCreature("FLAME",[363.180],SW)
+CreateCreature("FLAME",[348.297],NW)
+CreateCreature("FLAME",[384.281],NW)
+CreateCreature("FLAME",[417.270],NW)
+EscapeArea()
+~ EXIT
+END
+
+IF WEIGHT #2 ~  GlobalTimerNotExpired("Ransom","GLOBAL")
+GlobalGT("RansomTaken","GLOBAL",0)
+~ THEN BEGIN 3 // from:
+  SAY @4 /* ~You're a little early. Come back later and you'll get your damn blood money!~ #17546 */
   IF ~~ THEN EXIT
 END

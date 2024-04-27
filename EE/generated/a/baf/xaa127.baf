@@ -1,18 +1,29 @@
 IF
-	Global("DukeThanks","GLOBAL",1)
-	Global("oh_dialog_set_1","locals",0)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
 THEN
 	RESPONSE #100
-		SetGlobal("oh_dialog_set_1","locals",1)
-		SetDialog("ftowbas")
+		Enemy()
 END
 
 IF
-	Global("Chapter","GLOBAL",7)
-	Global("oh_dialog_set_2","locals",0)
+	See(NearestEnemyOf(Myself))
 THEN
 	RESPONSE #100
-		SetGlobal("oh_dialog_set_2","locals",1)
-		SetDialog("ftowbaz")
+		RunAwayFromNoLeaveArea(NearestEnemyOf(Myself),150)
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		RunAwayFromNoLeaveArea(LastAttackerOf(Myself),150)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		RandomWalk()
 END
 

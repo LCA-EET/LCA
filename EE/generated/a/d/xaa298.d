@@ -1,7 +1,7 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NEMPHR.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\RINNIE.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NEMPHR.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\RINNIE.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
@@ -10,56 +10,69 @@ BEGIN ~XAA298~
 // WARNING: this file contains non-trivial WEIGHTs
 //////////////////////////////////////////////////
 
-IF WEIGHT #5 /* Triggers after states #: 1 2 3 4 5 even though they appear after this state */
-~  True()
+IF WEIGHT #0 ~  NumTimesTalkedTo(0)
+ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~I have little need of one such as you.~ #15019 */
+  SAY @1 /* ~Please don't interrupt me. I'm waiting to be inspired.~ #15138 */
   IF ~~ THEN EXIT
 END
 
-IF WEIGHT #0 ~  Global("HelpNemphre","GLOBAL",0)
-ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
-Gender(LastTalkedToBy,MALE)
+IF WEIGHT #1 ~  NumTimesTalkedTo(0)
+ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
 ~ THEN BEGIN 1 // from:
-  SAY @2 /* ~You will make an adequate pawn. Don't argue, as I have little patience for your prattle. There is a dark mage at work somewhere in this city and he must be stopped. He goes by the name of Arkion and has a bloodstone amulet that is of great importance to my plans. Return it to me and I will reward you greatly.~ #15020 */
-  IF ~~ THEN DO ~SetGlobal("HelpNemphre","GLOBAL",1)
-~ UNSOLVED_JOURNAL @3 /* ~Arkion's Bloodstone Amulet
-I have met a necromancer by the name of Nemphre here in Baldur's Gate... and I must admit, I think I am in a bit over my head. She has asked me to obtain a bloodstone amulet from a man named Arkion and return it to her. The only trouble is, Arkion sounds like a rather powerful mage, and I get the sense that he won't part with that amulet willingly... There is something about this city that scares me somehow. Nemphre can be found in a house just south of the Elfsong Tavern.~ #27318 */ EXIT
+  SAY @2 /* ~I have been working on a ballad about the Unicorn Run in the High Forest. I'd like to use a more reliable source than simply hearsay and folklore, though. If you ever find an authoritative history of the run in your travels, I'd love to get my hands on it.~ #15139 */
+  IF ~~ THEN UNSOLVED_JOURNAL @3 /* ~A Bard's Request
+Rinnie, a bard and balladeer here in Baldur's Gate, has asked me to bring her a history of the Unicorn Run should I encounter one in my travels. Rinnie can be found in one of the houses located beside the palace.~ #27415 */ EXIT
 END
 
-IF WEIGHT #1 ~  Global("HelpNemphre","GLOBAL",0)
-ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
-Gender(LastTalkedToBy,MALE)
+IF WEIGHT #5 /* Triggers after states #: 3 4 6 even though they appear after this state */
+~  Global("HelpRinnie","GLOBAL",0)
 ~ THEN BEGIN 2 // from:
-  SAY @4 /* ~Mmm, you are a sweet one. Could you do a favor for Nemphre? An old lover of mine has followed me here to the city and has been threatening me with some very dark magic. His name is Arkion and, if you could just get a certain amulet of his to me, perhaps there are a few things I could do for you, don't you think, mmn?~ #15021 */
-  IF ~~ THEN DO ~SetGlobal("HelpNemphre","GLOBAL",1)
-~ UNSOLVED_JOURNAL @5 /* ~Arkion's Bloodstone Amulet
-There is a woman in Baldur's Gate who has been gifted with the... succulent... name of Nemphre. I must admit, I am torn between a certain sense of passion and a much less certain sense of foreboding. Arkion, an old lover of hers, has apparently kept an amulet of hers that she would like to have returned. Maybe if I could just talk to him... I found Nemphre in a house just south of the Elfsong Tavern.~ #27319 */ EXIT
+  SAY @4 /* ~Hi there. Found anything substantial on the Unicorn Run yet?~ #15140 */
+  IF ~~ THEN EXIT
 END
 
-IF WEIGHT #2 ~  PartyHasItem("OHAMUL13")
-Global("HelpNemphre","GLOBAL",1)
+IF WEIGHT #2 ~  PartyHasItem("BOOK55")
+ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+Global("HelpRinnie","GLOBAL",0)
 ~ THEN BEGIN 3 // from:
-  SAY @6 /* ~You are a sweet fool but a fool nonetheless. Here, take this scroll and go. I have no further need of you.~ #15022 */
+  SAY @5 /* ~"History of the Unicorn Run..." How wonderfully ideal! You wouldn't believe how grateful I am to get my hands on this. Here, a friend of mine gave me this magical scroll and I have yet to make use of it.~ #15141 */
   IF ~~ THEN DO ~EraseJournalEntry(@3)
-EraseJournalEntry(@5)
-EraseJournalEntry(@8)
-SetGlobal("HelpNemphre","GLOBAL",2)
-TakePartyItem("OHAMUL13")
-GiveItem("SCRL1Q",LastTalkedToBy)
-AddexperienceParty(1000)
-~ SOLVED_JOURNAL @7 /* ~Arkion's Bloodstone Amulet
-For returning Arkion's amulet to Nemphre, I have a nice new magical scroll.~ #27322 */ EXIT
+TakePartyItem("BOOK55")
+GiveItem("SCRL08",LastTalkedToBy)
+SetGlobal("HelpRinnie","GLOBAL",1)
+AddexperienceParty(900)
+~ SOLVED_JOURNAL @6 /* ~A Bard's Request
+I didn't need it myself, so I gave "The History of the Unicorn Run" to Rinnie.~ #27416 */ EXIT
 END
 
-IF WEIGHT #3 ~  Global("HelpNemphre","GLOBAL",1)
+IF WEIGHT #3 ~  False()
 ~ THEN BEGIN 4 // from:
-  SAY @9 /* ~How many times must I ask you to do my bidding, imbecile? Find Arkion and get his amulet to me and do it NOW!~ #15023 */
+  SAY @7 /* ~Must you pick on me when I'm trying to concentrate?~ #15142 */
+  IF ~~ THEN DO ~EscapeArea()
+~ EXIT
+END
+
+IF WEIGHT #6 /* Triggers after states #: 6 even though they appear after this state */
+~  True()
+~ THEN BEGIN 5 // from:
+  SAY @8 /* ~"Sweet waters of the forest
+flow through each den and glade,
+nourishing the unicorns
+who lie graceful in the shade..."~ #15143 */
   IF ~~ THEN EXIT
 END
 
-IF WEIGHT #4 ~  False()
-~ THEN BEGIN 5 // from:
-  SAY @10 /* ~You dare to attack the great Nemphre? You shall shrivel in the face of my wrath.~ #15024 */
-  IF ~~ THEN EXIT
+IF WEIGHT #4 ~  PartyHasItem("BOOK55")
+ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
+Global("HelpRinnie","GLOBAL",0)
+~ THEN BEGIN 6 // from:
+  SAY @9 /* ~"History of the Unicorn Run..." Interesting... I'll give you 80 gold pieces for it.~ #15144 */
+  IF ~~ THEN DO ~EraseJournalEntry(@3)
+TakePartyItem("BOOK55")
+SetGlobal("HelpRinnie","GLOBAL",1)
+AddexperienceParty(900)
+GiveGoldForce(80)
+~ SOLVED_JOURNAL @6 /* ~A Bard's Request
+I didn't need it myself, so I gave "The History of the Unicorn Run" to Rinnie.~ #27416 */ EXIT
 END

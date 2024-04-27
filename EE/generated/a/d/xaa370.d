@@ -1,45 +1,49 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\IRONM3.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\HOUSG6.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\IRONM3.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\HOUSG6.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA370~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #1 /* Triggers after states #: 3 even though they appear after this state */
-~  NumTimesTalkedTo(0)
+IF ~  NumTimesTalkedTo(0)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Ahhh look, some newcomers. I assume that the lot of you has just arrived with new supplies from Ordulin. If you're looking for Rieltar or Brunos, look no further. Both of them have traveled to Candlekeep on important business.~ #7658 */
+  SAY @1 /* ~Frightfully sorry, but this room is off limits for the time being. No offense intended, you understand. It's just that we've a rather nervous guest who insists that their room be kept under strictest lock and key. Frightfully sorry, but you cannot pass.~ #8386 */
   IF ~~ THEN EXIT
 END
 
-IF WEIGHT #2 /* Triggers after states #: 3 even though they appear after this state */
-~  NumTimesTalkedTo(1)
+IF ~  NumTimesTalkedTo(1)
 ~ THEN BEGIN 1 // from:
-  SAY @2 /* ~Could you please stop bothering me?~ #7659 */
+  SAY @2 /* ~I am afraid I shall have to ask you to step back. Please do so, as I can only give so many warnings before I must enforce my request. I must also remind you that the city guard always sides with house security in matters such as this, so any disturbance here will surely bring them out to assist.~ #8387 */
   IF ~~ THEN EXIT
 END
 
-IF WEIGHT #3 /* Triggers after states #: 3 even though they appear after this state */
-~  NumTimesTalkedTo(2)
-~ THEN BEGIN 2 // from:
-  SAY @3 /* ~If you need someone to speak with, talk to Larnos in the side room.~ #7660 */
+IF ~~ THEN BEGIN 2 // from:
+  SAY @3 /* ~You have all of a few seconds to step back! I cannot allow entry, and if you persist, I shall be forced to apply my blade! Please do not force the issue!~ #8388 */
   IF ~~ THEN EXIT
 END
 
-IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
-CheckStatGT(Myself,24,GOLD)
+IF ~  NumTimesTalkedTo(2)
 ~ THEN BEGIN 3 // from:
-  SAY @4 /* ~Good friend, why don't you take these 25 gold pieces and run along? Have some fun.~ #7661 */
-  IF ~~ THEN DO ~GivePartyGold(25)
+  SAY @4 /* ~I have little alternative! Defend yourself!~ #8389 */
+  IF ~~ THEN DO ~Shout(99)
+Enemy()
 ~ EXIT
 END
 
 IF ~~ THEN BEGIN 4 // from:
-  SAY @5 /* ~You're not welcome here! Get out or be thrown out!~ #9209 */
+  SAY @5 /* ~You have one chance to leave this instant. Hesitate and you lose your head.~ #8390 */
+  IF ~~ THEN EXIT
+END
+
+IF ~  StateCheck(Myself,STATE_CHARMED)
+~ THEN BEGIN 5 // from:
+  SAY @6 /* ~Enter as you please, good friend! I trust that you'll be no trouble.~ #8391 */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 6 // from:
+  SAY @7 /* ~You're not welcome here! Get out or be thrown out!~ #9257 */
   IF ~~ THEN EXIT
 END

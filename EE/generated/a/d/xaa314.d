@@ -1,66 +1,64 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BHEREN.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FERGUS.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BHEREN.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\FERGUS.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA314~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
 
-IF ~  NumTimesTalkedTo(0)
-ReputationGT(Player1,14)
+IF WEIGHT #0 ~  ReactionLT(LastTalkedToBy(Myself),NEUTRAL_LOWER)
+NumTimesTalkedTo(0)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Damnable cat! I figured Petrine would take the beast with her, but life isn't that kind, is it?~ #15132 */
-  IF ~~ THEN UNSOLVED_JOURNAL @2 /* ~Petrine's Cat
-I visited Bheren of Baldur's Gate in his house today. A loitering cat was annoying him, and he mentioned someone named Petrine.~ #26879 */ EXIT
-END
-
-IF ~  NumTimesTalkedTo(0)
-ReputationLT(Player1,15)
-~ THEN BEGIN 1 // from:
-  SAY @3 /* ~Damnable cat! I'll give you the cloak off my back if you can kill the pesky thing.~ #15133 */
-  IF ~~ THEN UNSOLVED_JOURNAL @4 /* ~Petrine's Cat
-I visited Bheren of Baldur's Gate in his house today. He has offered me the proverbial cloak off his back in exchange for the death of a rather bothersome cat...~ #26880 */ EXIT
-END
-
-IF ~  ReputationLT(Player1,8)
-Dead("PetrinesCat")
-Global("HelpBheren","GLOBAL",0)
-~ THEN BEGIN 2 // from:
-  SAY @5 /* ~I'm not usually a man who honors his words too much, but you wouldn't believe how glad I am to be rid of that crazy cat! Here, take my cloak and good riddance.~ #15134 */
-  IF ~~ THEN DO ~EraseJournalEntry(@7)
-EraseJournalEntry(@2)
-EraseJournalEntry(@4)
-SetGlobal("HelpBheren","GLOBAL",1)
-AddexperienceParty(400)
-GiveItem("CLCK01",LastTalkedToBy)
-~ SOLVED_JOURNAL @6 /* ~Petrine's Cat
-I showed Bheren that I definitely know one way to skin a cat. He's glad to be rid of that pesky Angel.~ #26882 */ EXIT
-END
-
-IF ~  ReputationGT(Player1,7)
-Dead("PetrinesCat")
-Global("HelpBheren","GLOBAL",0)
-~ THEN BEGIN 3 // from:
-  SAY @8 /* ~You didn't think I was serious, did you? Cripes, you go find my niece Petrine and tell her you killed her stinking cat, 'cause I'm sure not going to!~ #15135 */
-  IF ~~ THEN DO ~EraseJournalEntry(@7)
-EraseJournalEntry(@2)
-EraseJournalEntry(@4)
-SetGlobal("HelpBheren","GLOBAL",1)
-AddexperienceParty(400)
-ReputationInc(-1)
-~ SOLVED_JOURNAL @6 /* ~Petrine's Cat
-I showed Bheren that I definitely know one way to skin a cat. He's glad to be rid of that pesky Angel.~ #26882 */ EXIT
-END
-
-IF ~  False()
-~ THEN BEGIN 4 // from:
-  SAY @9 /* ~Between you and that cat, life has been sheer hell ever since Petrine ran away. Damn you!~ #15136 */
+  SAY @1 /* ~Eh? Lazy day, ain't it?~ #15265 */
   IF ~~ THEN EXIT
 END
 
-IF ~  Global("HelpBheren","GLOBAL",1)
+IF WEIGHT #1 ~  NumTimesTalkedTo(0)
+~ THEN BEGIN 1 // from:
+  SAY @2 /* ~I've gotta admit, I ain't never been happier. Got a letter from my lady and she's gonna be home reeeal soon... Just gotta find me a pretty little ring for her pretty little finger and all's gonna be just fine, just fine. But my lady, she transcends gold or silver or fancy stones. She'll have nothing less than an angel skin ring from me.~ #15269 */
+  IF ~~ THEN DO ~SetGlobal("FERGUS1","GLOBAL",1)
+~ UNSOLVED_JOURNAL @3 /* ~A Ring for a Lady
+If I find an angel skin ring, I could help Fergus, a Flaming Fist soldier, with his romantic problem.~ #27079 */ EXIT
+END
+
+IF WEIGHT #2 ~  False()
+~ THEN BEGIN 2 // from:
+  SAY @4 /* ~Ah, that there's a fine ring but my lady, she transcends gold or silver or fancy stones. No, she'll have nothing less than angel skin from me.~ #15273 */
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #3 ~  Global("FERGUS1","GLOBAL",1)
+PartyHasItem("RING16")
+~ THEN BEGIN 3 // from:
+  SAY @5 /* ~Ah, a ring of angel skin. You must know my lady well to have chosen so appropriately... If you're ever needin' a little work around here, check with Scar, second-in-command of the Flamin' Fist. You can tell him I recommended you.~ #15274 */
+  IF ~~ THEN DO ~EraseJournalEntry(@3)
+AddJournalEntry(32877,QUEST_DONE)
+TakePartyItem("RING16")
+SetGlobal("FERGUS1","GLOBAL",2)
+AddexperienceParty(800)
+ReputationInc(1)
+~ EXIT
+END
+
+IF WEIGHT #4 ~  False()
+~ THEN BEGIN 4 // from:
+  SAY @6 /* ~Fight you and ne'er see my lady? I am in love but that don't mean I'm foolish.~ #15282 */
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #6 /* Triggers after states #: 6 even though they appear after this state */
+~  True()
 ~ THEN BEGIN 5 // from:
-  SAY @10 /* ~Sure is quiet around here without that infernal cat. Almost miss her, I do...~ #15137 */
+  SAY @7 /* ~Ah, it is a fine wind that brings my lady, fresh and cool and beautiful.~ #15283 */
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #5 ~  Global("FERGUS1","GLOBAL",2)
+~ THEN BEGIN 6 // from:
+  SAY @8 /* ~Ring in hand, I still wait for my lady. She will be here soon enough. Travel well, my friend.~ #15284 */
   IF ~~ THEN EXIT
 END

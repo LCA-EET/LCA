@@ -1,66 +1,74 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\GAXIR.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\DOPPSM.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\GAXIR.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\DOPPSM.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA320~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #0 ~  Global("HelpGaxir","GLOBAL",0)
-CheckStatLT(LastTalkedToBy,4,LEVEL)
+IF ~  True()
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~You... will meet your doom today, child...~ #15520 */
-  IF ~~ THEN EXIT
+  SAY @1 /* ~What can I do for you?~ #981 */
+  IF ~~ THEN REPLY @2 /* ~We wanted to ask you some questions on your recent business decisions. Some people find them very questionable.~ #988 */ DO ~SetGlobal("CheckedSevenSuns","GLOBAL",2)
+~ GOTO 2
+  IF ~~ THEN REPLY @3 /* ~We wanted a tour.~ #989 */ DO ~SetGlobal("AskedForTour","GLOBAL",1)
+SetGlobal("CheckedSevenSuns","GLOBAL",2)
+~ GOTO 1
+  IF ~~ THEN REPLY @4 /* ~We want to talk to the owner of the Seven Suns.~ #990 */ DO ~SetGlobal("CheckedSevenSuns","GLOBAL",2)
+~ GOTO 1
 END
 
-IF WEIGHT #1 ~  Global("HelpGaxir","GLOBAL",0)
-CheckStatLT(LastTalkedToBy,6,LEVEL)
-~ THEN BEGIN 1 // from:
-  SAY @2 /* ~Your future... is hemmed in darkness. Your lives... are in the balance. Act wisely, act judiciously... and bring me the sphene gem, should you find it...~ #15521 */
-  IF ~~ THEN DO ~SetGlobal("HelpGaxir","GLOBAL",1)
-~ UNSOLVED_JOURNAL @3 /* ~G'axir the Seer
-His sentences overwrought with emphatic hesitations, G'axir the Seer has informed me that my future is hemmed in darkness. His predictions are less than surprising... In any event, he has asked me to bring him a sphene gem. G'axir can be found at the Blade and Stars.~ #27121 */ EXIT
+IF ~~ THEN BEGIN 1 // from: 0.2 0.1
+  SAY @5 /* ~Unfortunately, I cannot grant any of your desires, so could you kindly leave?~ #982 */
+  IF ~~ THEN REPLY @6 /* ~Not until we get to see Jhasso.~ #991 */ GOTO 7
+  IF ~~ THEN REPLY @7 /* ~We want a tour first.~ #992 */ GOTO 3
+  IF ~  Global("AskedForTour","GLOBAL",1)
+~ THEN REPLY @8 /* ~No tour, huh? Well, I guess we'll be on our way.~ #993 */ GOTO 8
+  IF ~~ THEN REPLY @9 /* ~Fine, we'll find someone else to answer our questions.~ #994 */ GOTO 8
 END
 
-IF WEIGHT #2 ~  Global("HelpGaxir","GLOBAL",0)
-~ THEN BEGIN 2 // from:
-  SAY @4 /* ~You... are a light entering darkness. You... are a seeker of truths. You... are more than you realize. The Seer has spoken it because the Seer knows the fear you harbor, the fear you shall yet become. In the lair of the basilisk, you will find a sphene gem... You would do well to bring it to me.~ #15522 */
-  IF ~~ THEN DO ~SetGlobal("HelpGaxir","GLOBAL",1)
-~ UNSOLVED_JOURNAL @3 /* ~G'axir the Seer
-His sentences overwrought with emphatic hesitations, G'axir the Seer has informed me that my future is hemmed in darkness. His predictions are less than surprising... In any event, he has asked me to bring him a sphene gem. G'axir can be found at the Blade and Stars.~ #27121 */ EXIT
+IF ~~ THEN BEGIN 2 // from: 0.0
+  SAY @10 /* ~I'm sorry, but I'm in a real hurry, please don't bother me.~ #983 */
+  IF ~~ THEN REPLY @11 /* ~Not until you answer some questions.~ #995 */ GOTO 3
+  IF ~~ THEN REPLY @12 /* ~Sure thing, bye.~ #996 */ GOTO 8
 END
 
-IF WEIGHT #5 /* Triggers after states #: 4 5 even though they appear after this state */
-~  Global("HelpGaxir","GLOBAL",1)
-~ THEN BEGIN 3 // from:
-  SAY @5 /* ~Ah... it is sometimes better to abandon one's destiny for a time... It will find you again soon enough.~ #15523 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 3 // from: 2.0 1.1
+  SAY @13 /* ~Listen here. There have been some strange things happening about the Seven Suns, but I'd rather not talk about it. Everybody I know has been acting really strange of late. I've seen some of the other merchants change faces when they thought I wasn't looking. Yes, you heard me right, they changed faces! Some sort of shapeshifters have infiltrated the Seven Suns. If I were you, I'd get out of here while there's still time. That's what I'm planning to do.~ #984 */
+  IF ~~ THEN DO ~EscapeArea()
+~ UNSOLVED_JOURNAL @14 /* ~The Seven Suns
+A frightened merchant inside the Seven Suns building says the Seven Suns has been infiltrated by shapeshifters!~ #26986 */ EXIT
 END
 
-IF WEIGHT #3 ~  PartyHasItem("MISC37")
-Global("HelpGaxir","GLOBAL",1)
-~ THEN BEGIN 4 // from:
-  SAY @6 /* ~The sphene gem! Indeed, then... you are more than you appear. Someday, you must journey further through the muck and mire of this place for it will tell you as much or more than all of fabled Candlekeep... Like yourself, this city is more than it appears. There are cities below cities, dreams beneath dreams, the past laying buried beneath the crushing weight of the present... Go now, wanderer, for the time will come when you must walk through the darkness to find the light.~ #15524 */
-  IF ~~ THEN DO ~EraseJournalEntry(@3)
-SetGlobal("HelpGaxir","GLOBAL",2)
-AddexperienceParty(1000)
-TakePartyItem("MISC37")
-~ SOLVED_JOURNAL @7 /* ~G'axir the Seer
-I gave G'axir the Seer the sphene gem he wanted, and all he said was that my future lies beyond "the muck and mire" of Baldur's Gate.~ #27122 */ EXIT
+IF ~~ THEN BEGIN 4 // from:
+  SAY @15 /* ~Excuse me, could I inquire to what you're doing here?~ #985 */
+  IF ~~ THEN REPLY @16 /* ~We're tourists.~ #997 */ GOTO 5
+  IF ~~ THEN REPLY @17 /* ~We're new mercenaries.~ #998 */ GOTO 5
+  IF ~~ THEN REPLY @18 /* ~We work for Jhasso.~ #999 */ GOTO 5
 END
 
-IF WEIGHT #4 ~  False()
-~ THEN BEGIN 5 // from:
-  SAY @8 /* ~You are still young and rash and too much of this world... It will be your death all too soon.~ #15525 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 5 // from: 4.2 4.1 4.0
+  SAY @19 /* ~Lying primates! Guards, kill the intruders.~ #986 */
+  IF ~~ THEN EXTERN ~SSUNGU~ 5
 END
 
-IF WEIGHT #6 ~  True()
-~ THEN BEGIN 6 // from:
-  SAY @9 /* ~To define your future, you must know your past, wanderer...~ #15526 */
-  IF ~~ THEN EXIT
+IF ~~ THEN BEGIN 6 // from:
+  SAY @20 /* ~Do not question my orders meat, just do it.~ #987 */
+  IF ~~ THEN DO ~Enemy()
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from: 1.0
+  SAY @21 /* ~I don't know where he is. He's been missing ever since everything went strange. I've seen some of the other merchants change faces when they thought I wasn't looking. Yes, you heard me right, they changed faces! Some sort of shapeshifters have infiltrated the Seven Suns. If I were you, I'd get out of here while there's still time, that's what I'm planning to do.~ #16590 */
+  IF ~~ THEN DO ~EscapeArea()
+~ UNSOLVED_JOURNAL @14 /* ~The Seven Suns
+A frightened merchant inside the Seven Suns building says the Seven Suns has been infiltrated by shapeshifters!~ #26986 */ EXIT
+END
+
+IF ~~ THEN BEGIN 8 // from: 2.1 1.3 1.2
+  SAY @22 /* ~Wait! You should get out of here as soon as possible. Everybody I know has been acting really strange of late. I've seen some of the other merchants change faces when they thought I wasn't looking. Yes, you heard me right: They changed faces! Some sort of shapeshifters have infiltrated the Seven Suns. Get out while you still can.~ #11853 */
+  IF ~~ THEN DO ~EscapeArea()
+~ UNSOLVED_JOURNAL @14 /* ~The Seven Suns
+A frightened merchant inside the Seven Suns building says the Seven Suns has been infiltrated by shapeshifters!~ #26986 */ EXIT
 END

@@ -1,23 +1,8 @@
-// DEGROD translation file
-@1   = ~You have done well to bypass all of my guardians. I should be angry with you, but to be truthful, I have been on the lookout for skilled adventurers. So, I would ask you, do you wish to help me in a task, or would you rather die?~
-@2   = ~Don't threaten us, mage! We've dealt with far more powerful than you.~
-@3   = ~We want to die.~
-@4   = ~What is it that you want us to do?~
-@5   = ~So you want to die, do you? Well then, let me assist you in achieving your desire.~
-@6   = ~First of all, my name is Degrodel. I can only assume that you're <CHARNAME>, the adventurer who has been stirring up so much trouble in the recent past. Now that introductions are done, let us get down to business. My task is very simple. Some years ago, an evil band of mercenaries were all petrified while trying to break into the home of Ramazith. For those of you with a limited vocabulary, petrified means "turned to stone." Anyhow, one of those adventurers had in his possession an item of power: the Helm of Balduran. Ramazith didn't know this at the time and so, after turning them all to stone, he simply sold their bodies to an art collector living in the heart of Baldur's Gate. What I would like you to do is find these statues, turn them back to flesh, and take the item.~
-@7   = ~How much are we going to be paid to do you this service?~
-@8   = ~How do we turn them from stone back to flesh?~
-@9   = ~How did you come by this information?~
-@10  = ~How I came by this information is unimportant. Suffice to say, no one else knows of this, and I would like to keep it that way.~
-@11  = ~You will be paid 5,000 gold for this service. This is a kingly sum, so I won't barter with you about the amount.~
-@12  = ~Very simple, really. I will give you these six scrolls of stone to flesh. Use them on the statues when you find them. The estate can be found just west of the fairgrounds in the center of town. Good luck, and don't entertain any thoughts about betraying me. It could be very hazardous to your health.~
-@13  = ~The Helm of Balduran
-A wizard called Degrodel wants me to find the Helm of Balduran, which I should be able to find on the petrified bodies of a group of adventurers currently held by an art dealer on an estate just west of the fairgrounds. Once I have the helm, I can find Degrodel in his estate in the northwest part of town.~
-@14  = ~You don't have the Helm of Balduran! Until you have the helm, don't bother me!~
-@15  = ~Thank you for returning with the Helm of Balduran. It was so good to do business together. Here is your payment, and I shall take the helm. Now I must be off, I'll leave you with some of my servants to escort you out. My servants aren't known for their gentle nature, so I would leave as soon as possible.~
-@16  = ~The Helm of Balduran
-Degrodel gave me a nice reward for the Helm of Balduran, but he didn't want me hanging around afterwards.~
-@17  = ~The Helm of Balduran
-From Vail the elf I've received a scroll that is supposed to reveal the location of the Helm of Balduran.~
-@18  = ~The Helm of Balduran
-Quenash could tell me little about the location of the Helm. She said Vail "could not have found a better location to hide both the cloak and the helm, and that the building was practically named for the purpose."~
+// GORPEL translation file
+@1   = ~Ahoy, fellow adventurers! Come share a glass with Gorpel Hind and his Band of Merry Fools. Seated with me are Farluck the Fearless, Turpin the Roaring Ranger, and Nelik the Most Devious and Fiendish of Thieves! (We owe him money so he gets the good title...) But away with these meager introductions! Sidle up to the bar and tell us a tall tale of your latest adventures!~
+@2   = ~Well, we've been through the Cloakwood and fought our way through every level of a guarded and secret iron mine at its heart! There were mages at every turn, casting lightning bolts and fireballs into the heart of our party before stepping through their dimension doors to renew their attacks from another flank! Aye, there was loss and carnage but I revel in the memory of it still!~
+@3   = ~Ho, tall tales shall tempt us not. Keep to yourself and we shall do the same. Goodnight and goodbye, Mr. Hind.~
+@4   = ~Iron mines in the Cloakwood? Your tales are tall, indeed, and we are richer for the telling. Consider yourselves honorary members of the Merry Fools and may ale and friendship always flow within these hallowed halls! A toast, you drunkards, to <CHARNAME> and the winsome souls that surround us now!~
+@5   = ~Good night and goodbye to you, <CHARNAME>. It is late, and we were leaving, weren't we, my Merry Fools?~
+@6   = ~We have been honored by your presence tonight and awed by your prowess. I beg your leave, however, for some of my men are wounded and must seek attention elsewhere. May the houses of <CHARNAME> and Gorpel Hind be ever graced with each other's friendship... Come, men, and carry your wounds bravely.~
+@7   = ~Fight on, brave souls! Gretek and his lackeys have had this coming for longer than you could know.~

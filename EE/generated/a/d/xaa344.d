@@ -1,21 +1,29 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\JARDAK.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\MCOOK4.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\JARDAK.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\MCOOK4.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA344~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
 
-IF ~  True()
+IF WEIGHT #1 /* Triggers after states #: 1 even though they appear after this state */
+~  True()
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~What have you done?! My butler wouldn't have let you up here... unless you killed him. Pathetic wretches, do you know what you have done? Your screams will echo in hell for all eternity for your insolence!~ #18810 */
-  IF ~~ THEN REPLY @2 /* ~Hey, hold on mister. It was your butler who attacked us! We just defended ourselves. If you're going to have hired help, make sure that you get someone a little smarter next time.~ #18812 */ GOTO 1
-  IF ~~ THEN REPLY @3 /* ~Who are you, and where did you get that cool armor? Hmmm, at least you have better fashion sense than your butler.~ #18813 */ GOTO 1
+  SAY @1 /* ~Out out OUT! I'll no be giving out scraps to fools wandering about tonight! I've a DUKE to cook for, so if you try to distract me you'll likely get a pot upside your head!~ #8242 */
+  IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 1 // from: 0.1 0.0
-  SAY @4 /* ~You don't understand the gravity of your situation. Stinking brigands, draw steel so that we may fight to the death!~ #18814 */
-  IF ~~ THEN DO ~Enemy()
-~ EXIT
+IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
+~ THEN BEGIN 1 // from:
+  SAY @2 /* ~Though I'm stuck in this here kitchen, it don't mean I haven't got rumors coming my way. From what I hear, Sarevok's the next Grand Duke fer sure.~ #8243 */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 2 // from:
+  SAY @3 /* ~Out! And never darken my door again!~ #9184 */
+  IF ~~ THEN EXIT
 END
