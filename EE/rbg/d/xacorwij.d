@@ -2923,7 +2923,7 @@ APPEND XACORWIJ
 
 	IF ~~ THEN BEGIN XA_ThiefGuildEntry
 		SAY @835 /* ~We're here on Flaming Fist business. Let us through.~ */
-		IF ~~ THEN EXTERN xaa170 XAA2B
+		IF ~~ THEN EXTERN xaa164 XAA2B // thiefg
 	END
 
 	IF ~~ THEN BEGIN XA_KerracQuestioning
@@ -2963,7 +2963,7 @@ APPEND XACORWIJ
 	IF ~~ THEN BEGIN XA_CorwinLobar
 		SAY @859 /* ~Is Tianna working?~  */
 		
-		IF ~~ THEN EXTERN xaa249 XA_LobarTianna
+		IF ~~ THEN EXTERN xaa231 XA_LobarTianna // lobar
 	END
 
 	IF ~~ THEN BEGIN XA_GreetMommyA2

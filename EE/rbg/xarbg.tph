@@ -1117,8 +1117,8 @@ END
 		WRITE_LONG 0x14 500	// Exp
 		WRITE_SHORT 0x24 10		// Current HP
 		WRITE_SHORT 0x24 10 	// Max HP
-		WRITE_SHORT 0x46 -4		// Natural AC
-		WRITE_SHORT 0x48 -4		// Effective AC
+		WRITE_SHORT 0x46 0		// Natural AC
+		WRITE_SHORT 0x48 0		// Effective AC
 		
 	
 		COPY_EXISTING ~ankheg01.cre~ ~override/xamutank.cre~ // Mutated Ankheg
@@ -2781,9 +2781,7 @@ END
 		COPY_EXISTING ~xaa362.are~ ~override/xacshow.are~ 
 		
 		// Replace Music
-		WRITE_LONG 0x9F4 xaa12
-		WRITE_LONG 0x9F8 xaa12
-		WRITE_LONG 0xA00 0
+		WRITE_LONG 0x7E0 0
 		
 		WHILE (i < 4) BEGIN // Disable the existing area actors
 			WRITE_LONG expiryOffset 0
@@ -2984,8 +2982,8 @@ END
 		OUTER_SET i = 0
 		
 		COPY_EXISTING ~xaa447.are~ ~override/xaducal2.are~
-		WRITE_LONG 0x11B8 xaa12
-		WRITE_LONG 0x11BC xaa13
+		WRITE_LONG 0xA34 xaa12
+		WRITE_LONG 0xA38 xaa13
 		
 		WHILE (i < 2) BEGIN // Disable the existing area actors
 			WRITE_LONG expiryOffset 0
@@ -3346,7 +3344,7 @@ END
 		// Add Music
 		WRITE_LONG 0x630 xamu05
 		WRITE_LONG 0x634 xamu05
-		WRITE_LONG 0x63C xaa23
+		WRITE_LONG 0x63C xaa22
 
 		// Add Area Script
 		WRITE_ASCII 0x94 ~xademsan~ #8
@@ -3360,8 +3358,6 @@ END
 		COPY ~%MOD_FOLDER%/rbg/are/xawlkhom.are~ ~override~
 		
 		// Replace Music
-		WRITE_LONG 0x5BDC xaa1
-		WRITE_LONG 0x5BE0 xaa1
 		WRITE_LONG 0x5BE8 0
 	//}
 	
@@ -3482,7 +3478,7 @@ END
 //{ Script & Dialogue Music
 	COPY_EXISTING ~xanarzu.dlg~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY ~PlaySong(1023)~ ~PlaySong(%xaa23%)~
+		REPLACE_TEXTUALLY ~PlaySong(1023)~ ~PlaySong(%xaa22%)~
 	END
 //}
 
