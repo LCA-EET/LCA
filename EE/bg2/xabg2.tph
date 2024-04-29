@@ -599,13 +599,6 @@ OUTER_SET bg2_carryover = 1
 	COPY ~%MOD_FOLDER%/bg2/spl/xaunhide.spl~ ~override~
 //}
 
-
-//{ Stat Matching with Corwin (SoD), if playing EET
-	ACTION_IF (isEET = 1) THEN BEGIN
-		EXTEND_TOP ~xacorwin.bcs~ 	~%MOD_FOLDER%/bg2/baf/xastats.baf~
-	END
-//}
-
 //{ 2DA Modifications
 	//{ XACORWIN
 		COPY_EXISTING ~pdialog.2da~ ~override~

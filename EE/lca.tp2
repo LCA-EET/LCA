@@ -49,7 +49,7 @@
 
 BACKUP ~%MOD_FOLDER%/backup~
 
-AUTHOR ~Daniel Valle, dan@danielvalle.net~
+AUTHOR ~Daniel Valle, lcamod@danielvalle.net~
 
 AUTO_TRA ~%MOD_FOLDER%/tra/%s~ //automatically associate .tras to their respective .D files
 LANGUAGE ~English~ ~english~ ~%MOD_FOLDER%/tra/english/xalca.tra~
@@ -81,7 +81,7 @@ ACTION_IF (isEET = 1) THEN BEGIN
 	INCLUDE ~%MOD_FOLDER%/rbg/xarbg.tph~
 	INCLUDE ~%MOD_FOLDER%/tob/xatob.tph~
 END ELSE BEGIN
-	ACTION_IF(GAME_IS ~bg1~) THEN BEGIN
+	ACTION_IF(GAME_IS ~bgee~) THEN BEGIN
 		PRINT @803  // ~Baldur's Gate Enhanced Edition detected.~ 
 		INCLUDE ~%MOD_FOLDER%/bg1/xabg1.tph~
 	END

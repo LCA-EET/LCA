@@ -5,9 +5,6 @@ INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
 
 COPY_EXISTING ~xae100.are~	~override~
 LPF fj_are_structure 
-	STR_VAR
-		fj_structure_type = region
-		fj_name = ~XATREE~
 	INT_VAR
 		fj_box_left 	= 367
 		fj_box_top 		= 230
@@ -17,6 +14,9 @@ LPF fj_are_structure
 		fj_vertex_1     = 367 + (231 << 16)
 		fj_vertex_2     = 368 + (231 << 16)
 		fj_vertex_3     = 368 + (230 << 16)
+	STR_VAR
+		fj_structure_type = region
+		fj_name = ~XATREE~
 END
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/baf~

@@ -36,9 +36,9 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/d~
 	
 	//{ Corwin's House (SE Baldur's Gate)
 		ACTION_IF (isEET = 1) THEN BEGIN
-			OUTER_SPRINT filename ~BG1316.ARE~
+			OUTER_SPRINT filename ~bg1316.are~
 		END ELSE BEGIN
-			OUTER_SPRINT filename ~AR1316.ARE~
+			OUTER_SPRINT filename ~ar1316.are~
 		END
 		COPY_EXISTING ~%filename%~ ~override~
 		LPF fj_are_structure
@@ -65,9 +65,9 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/d~
 	
 	//{ Corwin's House (SE Baldur's Gate), Second Floor
 		ACTION_IF (isEET = 1) THEN BEGIN
-			OUTER_SPRINT filename ~BG1317.ARE~
+			OUTER_SPRINT filename ~bg1317.are~
 		END ELSE BEGIN
-			OUTER_SPRINT filename ~AR1317.ARE~
+			OUTER_SPRINT filename ~ar1317.are~
 		END
 		COPY_EXISTING ~%filename%~ ~override~
 		LPF ALTER_AREA_ACTOR
@@ -91,20 +91,26 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/d~
 	WRITE_ASCII 0x250 ~xagirba3~ #8		// Class Script
 //}
 
-ACTION_IF (isEET = 1) THEN BEGIN
-	COPY_EXISTING ~bg1300.are~ ~override~
-END ELSE BEGIN
-	COPY_EXISTING ~ar1300.are~ ~override~
-END
-LPF fj_are_structure
-		STR_VAR
-			fj_structure_type = actor
-			fj_name = ~rohmafriend~
-			fj_cre_resref = ~xagirba3~
-		INT_VAR
-			fj_loc_x = 1950
-			fj_loc_y = 1250
-			fj_schedule = 261632 // appear from 0900 to 1700 hours
+//{ AR1300 / BG1300 modification
+	ACTION_IF (isEET = 1) THEN BEGIN
+		OUTER_SPRINT filename ~bg1300.are~
+	END ELSE BEGIN
+		OUTER_SPRINT filename ~ar1300.are~
+	END
+
+	COPY_EXISTING ~%filename%~ ~override~
+
+	LPF fj_are_structure
+	INT_VAR
+		fj_loc_x = 1950
+		fj_loc_y = 1250
+		fj_schedule = 261632 // appear from 0900 to 1700 hours
+	STR_VAR
+		fj_structure_type = actor
+		fj_name = ~rohmafriend~
+		fj_cre_resref = ~xagirba3~
+	END
+//}
 
 //{ Script Modifications
 	ACTION_IF (isEET = 1) THEN BEGIN

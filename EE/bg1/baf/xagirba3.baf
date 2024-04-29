@@ -14,5 +14,5 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobalTimer("XA_LC_CryTimer", "GLOBAL", TWO_ROUNDS)
-		DisplayStringHead(#4862, Myself)
+		DisplayStringHead(Myself, #4862)
 END
