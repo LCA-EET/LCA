@@ -474,13 +474,13 @@ END
 //}
 
 //{ Items
-	//{ Caelar's Chainmail
-		COPY_EXISTING ~xac107.itm~ ~override/xachanca.itm~
+	//{ Caelar's Chainmail bdchanca
+		COPY_EXISTING ~xac108.itm~ ~override/xachanca.itm~
 		WRITE_ASCII 0x446 ~xacaelar~ #8
 		WRITE_LONG 0x45E RESOLVE_STR_REF(@5028)
 	//}
 
-	//{ Caelar's Cloak
+	//{ Caelar's Cloak new
 		COPY ~%MOD_FOLDER%/tob/itm/xafinca1.itm~ ~override~
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@5020)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@5020)
@@ -489,32 +489,32 @@ END
 		WRITE_LONG 0x3FE RESOLVE_STR_REF(@5028)
 	//}
 	
-	//{ Caelar's Helmet
-		COPY_EXISTING ~xac106.itm~ ~override/xahelmca.itm~
+	//{ Caelar's Helmet bdhelmca
+		COPY_EXISTING ~xac107.itm~ ~override/xahelmca.itm~
 		WRITE_ASCII 0x656 ~xacaelar~ #8
 		WRITE_LONG 0x66E RESOLVE_STR_REF(@5028)
 	//}
 
-	//{ Caelar's Shield
-		COPY_EXISTING ~xac108.itm~ ~override/xashldca.itm~
+	//{ Caelar's Shield bdshldca
+		COPY_EXISTING ~xac109.itm~ ~override/xashldca.itm~
 		WRITE_ASCII 0x176 ~xacaelar~ #8
 		WRITE_LONG 0x18E RESOLVE_STR_REF(@5028)
 	//}
 
-	//{ Caelar's Sword + 3
-		COPY_EXISTING ~xac110.itm~ ~override/xasw1hca.itm~
+	//{ Caelar's Sword + 3 bdsw1hca
+		COPY_EXISTING ~xac111.itm~ ~override/xasw1hca.itm~
 		WRITE_ASCII 0x11E ~xacaelar~ #8
 		WRITE_LONG 0x136 RESOLVE_STR_REF(@5028)
 	//}
 	
-	//{ Caelar's Sword + 5
+	//{ Caelar's Sword + 5 new 
 		COPY ~%MOD_FOLDER%/tob/bam/xasw1hc5.bam~ ~override~
 	
 		COPY ~%MOD_FOLDER%/tob/itm/xasw1hc5.itm~ ~override~
 		WRITE_LONG 0x1F6 RESOLVE_STR_REF(@5028)
 	//}
 	
-	//{ Corwin's Bow + 4 (Gond)
+	//{ Corwin's Bow + 4 (Gond) new 
 		COPY_EXISTING ~xacorbo3.itm~ ~override/xacorbo4.itm~
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@5024)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@5024)
@@ -529,7 +529,7 @@ END
 		WRITE_BYTE 0x1DC 22 // Set entangle chance to 22%
 	//}
 	
-	//{ Corwin's Bow + 5 (Gond)
+	//{ Corwin's Bow + 5 (Gond) new 
 		COPY_EXISTING ~xacorbo4.itm~ ~override/xacorbo5.itm~
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@5026)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@5026)
@@ -543,7 +543,7 @@ END
 		WRITE_BYTE 0x1DC 24 // Set entangle chance to 24%
 	//}
 	
-	//{ Shattered Gear
+	//{ Shattered Gear 
 		COPY_EXISTING ~misc59.itm~ ~override/xabroken.itm~
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@5017)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@5017)

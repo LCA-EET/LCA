@@ -3380,11 +3380,11 @@ END
 		WHILE (j < 3) BEGIN // Disable Unneeded NPCs
 			WRITE_LONG expiryOffset 0
 			expiryOffset = (expiryOffset + 0x110)
-			i = (i + 1)
+			j = (j + 1)
 		END
 		
 		// Battle Music
-		WRITE_LONG 0x1364 xaa22
+		WRITE_LONG 0x24B8 xaa22
 		
 		LPF fj_are_structure
 			INT_VAR
