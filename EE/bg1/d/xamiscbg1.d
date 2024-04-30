@@ -88,6 +88,6 @@
 	BEGIN 6 END
 	BEGIN 0 END
 	~
-		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer","GLOBAL",2)
+		SetGlobal("XA_LC_VaiBoost","GLOBAL",1)
 	~
 //}

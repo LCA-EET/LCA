@@ -326,14 +326,41 @@ APPEND BDCORWIJ
 		IF ~~ THEN REPLY @33 /*~A free lesson from one as talented as yourself? How could I refuse?~*/
 		GOTO XA_ProficiencyTalkCSStart
 		
-		IF ~~ THEN REPLY @34 /*~Somehow, I don't think you'd do this for just anyone. Why me?~*/
+		IF ~
+			Global("XA_LC_VaiBoost","GLOBAL",0)
+		~ THEN REPLY @34 /*~Somehow, I don't think you'd do this for just anyone. Why me?~*/
 		GOTO XA_ProficiencyTalkWhy
+		
+		IF ~
+			GlobalGT("XA_LC_VaiBoost","GLOBAL",0)
+		~ THEN REPLY @34 /*~Somehow, I don't think you'd do this for just anyone. Why me?~*/
+		GOTO XA_ProficiencyTalkWhy_Vai
 	END
 	
 	IF ~~ THEN BEGIN XA_ProficiencyTalkWhy
 		SAY @35 /*~Consider it a thank you for the care and concern you showed back in the Gate. The refugee crisis has been a strain on everyone, and every bit of help makes a difference.~*/
 		
-		= @36  /*~Besides, anything that can increase our chances of success is a worthwhile investment.~ [XA100130] */
+		IF ~~ THEN GOTO XA_ProficiencyTalkWhy_Besides
+	END
+	
+	IF ~~ THEN BEGIN XA_ProficiencyTalkWhy_Vai
+		SAY @48 /*~Consider it a thank you for the care and concern you showed back in the Gate. The refugee crisis has been a strain on everyone, and every bit of help makes a difference. Plus, some months ago you helped Jessa — erm, one of my officers — with a bandit problem down in Beregost.~*/
+		
+		IF ~~ THEN REPLY @49 /* ~Ah, Officer Vai, yes? She said she'd put in a good word for me.~ */
+		GOTO XA_ProficiencyTalkWhy_Vai2
+		
+		IF ~~ THEN REPLY @51 /* ~You needed bandits killed, and I needed money. I'd call that a win-win.~ */
+		GOTO XA_ProficiencyTalkWhy_Vai2
+	END
+	
+	IF ~~ THEN BEGIN XA_ProficiencyTalkWhy_Vai2
+		SAY @50 /*~That's right... your actions made a big difference. The coalition will need more of that kind of skill and initiative if we're to succeed against Caelar.~*/
+		
+		IF ~~ THEN GOTO XA_ProficiencyTalkWhy_Besides
+	END
+	
+	IF ~~ THEN BEGIN XA_ProficiencyTalkWhy_Besides
+		SAY @36  /*~Besides, anything that can increase our chances of success is a worthwhile investment.~ [XA100130] */
 		
 		IF ~~ THEN REPLY @37 /*~Agreed. Let's get started.~*/
 		GOTO XA_ProficiencyTalkCSStart

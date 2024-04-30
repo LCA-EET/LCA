@@ -25,6 +25,20 @@ THEN
 END
 //}
 
+//{ Opinion Boost - Vai
+IF
+	Global("XA_LC_CorwinOpinionBaselined", "GLOBAL", 1)
+	Global("XA_LC_VaiBoost","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_VaiBoost","GLOBAL",2)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 2)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
 //{ Post Ashatiel Duel
 IF
 	Dead("bdashati")

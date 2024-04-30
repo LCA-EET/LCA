@@ -23,7 +23,7 @@ IF ~~ THEN BEGIN XA_Mean
 	
 	IF ~~ THEN 
 	DO ~
-		EscapeArea()
+		EscapeAreaObject("Door1314")
 	~
 	EXIT
 END
@@ -55,7 +55,7 @@ IF ~~ THEN BEGIN XA_MissRohmaEnd
 	
 	IF ~~ THEN
 	DO ~
-		EscapeArea()
+		EscapeAreaObject("Door1314")
 	~
 	EXIT
 END
