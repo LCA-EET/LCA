@@ -118,7 +118,18 @@ APPEND BDIMOEN
 	IF ~~ THEN BEGIN XA_GiveLetter
 		SAY @2 /* She said that she's sorry she couldn't see you, but that you'd understand once you've read the letter. */
 		
-		IF ~~ THEN REPLY @3 /* ~Thank you, Imoen. (Read the letter now).~ */
+		IF ~
+			Global("XA_LC_CorwinContinue", "GLOBAL", 2)
+		~ THEN REPLY @3 /* ~Thank you, Imoen. (Read the letter now).~ */
+		DO ~
+			SetGlobal("XA_LC_ReadCorwinLetter", "GLOBAL", 1)
+			ActionOverride(Player1, CreateCreature("XASCHLTR", [-1.-1], S))
+		~
+		EXIT
+		
+		IF ~
+			Global("XA_LC_CorwinContinue", "GLOBAL", 1)
+		~ THEN REPLY @3 /* ~Thank you, Imoen. (Read the letter now).~ */
 		DO ~
 			SetGlobal("XA_LC_ReadCorwinLetter", "GLOBAL", 1)
 			ActionOverride(Player1, CreateCreature("XACORLTR", [-1.-1], S))

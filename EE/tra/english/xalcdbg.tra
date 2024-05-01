@@ -99,6 +99,12 @@
 @4018 = ~Trial Cutscene (Ashatiel honorable duel.)~
 @4019 = ~Trial Cutscene.~
 @4020 = ~Escape from Avernus (BDCUT59A)~
+@4021 = ~SetGlobal("XA_LC_VaiBoost","GLOBAL",1)~
+@4022 = ~IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 3)~
+@4023 = ~Area Test~
+@4024 = ~BD1000~
+@4025 = ~BD3000~
+@4026 = ~BD7100~
 
 @5000 = ~BG2 Debug~
 @5001 = ~Area Test~

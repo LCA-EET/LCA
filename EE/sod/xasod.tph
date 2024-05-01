@@ -3,7 +3,9 @@ PRINT @2000  /* ~Processing SoD changes...~ */
 INCLUDE ~%MOD_FOLDER%/generated/e/generated.tph~
 INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
 
-COPY_EXISTING ~xae100.are~	~override~
+COPY_EXISTING ~xae100.are~ ~override~ // AR1906 Tent Cutscene
+
+COPY_EXISTING ~xae101.are~	~override~ // AR6001 Archery Clearing
 LPF fj_are_structure 
 	INT_VAR
 		fj_box_left 	= 367

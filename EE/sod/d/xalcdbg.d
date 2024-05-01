@@ -41,8 +41,60 @@ APPEND XALCDBG
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @4023 /*~Area Test~*/
+		GOTO XA_SoD_AreaTest
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 10
+		
+		IF ~~ THEN REPLY @3012 /*~Exit.~ */
+		GOTO 6
+		
+		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
+		DO ~
+			DestroySelf()
+		~
+		EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_SoD_AreaTest
+		SAY @4023 /*~Area Test~*/
+		
+		IF ~~ THEN REPLY @4024 /* BD1000 */
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("BD1000", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("BD1000", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("BD1000", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("BD1000", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("BD1000", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("BD1000", "", [0.0], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @4025 /* BD3000 */
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("BD3000", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("BD3000", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("BD3000", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("BD3000", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("BD3000", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("BD3000", "", [0.0], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @4026 /* BD7100 */
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("BD7100", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("BD7100", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("BD7100", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("BD7100", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("BD7100", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("BD7100", "", [0.0], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_SoD_Debug
 		
 		IF ~~ THEN REPLY @3012 /*~Exit.~ */
 		GOTO 6
@@ -114,6 +166,18 @@ APPEND XALCDBG
 		IF ~~ THEN REPLY @4011
 		DO ~
 			SetGlobal("bd_player_exiled","global",1)
+		~
+		GOTO XA_SoD_AdjustVariables
+		
+		IF ~~ THEN REPLY @4021
+		DO ~
+			SetGlobal("XA_LC_VaiBoost","GLOBAL",1)
+		~
+		GOTO XA_SoD_AdjustVariables
+		
+		IF ~~ THEN REPLY @4022
+		DO ~
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 3)
 		~
 		GOTO XA_SoD_AdjustVariables
 		
