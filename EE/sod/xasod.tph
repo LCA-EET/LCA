@@ -1,25 +1,62 @@
 PRINT @2000  /* ~Processing SoD changes...~ */
 
-INCLUDE ~%MOD_FOLDER%/generated/e/generated.tph~
 INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
 
-COPY_EXISTING ~xae100.are~ ~override~ // AR1906 Tent Cutscene
+//{ Tent Cutscene Area
+	ACTION_IF (isEET = 1) THEN BEGIN
+		OUTER_SPRINT filename = ~bg1906.are~
+		OUTER_SET song = 142 // BDBGNX
+	ELSE
+		OUTER_SPRINT filename = ~ar1906.are~
+		OUTER_SET song = 63 // BDBGNX
+	END
 
-COPY_EXISTING ~xae101.are~	~override~ // AR6001 Archery Clearing
-LPF fj_are_structure 
-	INT_VAR
-		fj_box_left 	= 367
-		fj_box_top 		= 230
-		fj_box_right 	= 368
-		fj_box_bottom 	= 231
-		fj_vertex_0     = 367 + (230 << 16)
-		fj_vertex_1     = 367 + (231 << 16)
-		fj_vertex_2     = 368 + (231 << 16)
-		fj_vertex_3     = 368 + (230 << 16)
-	STR_VAR
-		fj_structure_type = region
-		fj_name = ~XATREE~
-END
+	COPY_EXISTING %filename% ~override/xatent.are~
+	WRITE_ASCII 0x94 ~xatntscr~ #8
+	WRITE_LONG 0x688 song
+	WRITE_LONG 0x68C song
+	LPF fj_are_structure
+		INT_VAR
+			fj_loc_x = 293
+			fj_loc_y = 131
+			fj_orientation = 8 
+		STR_VAR
+			fj_structure_type = actor
+			fj_name = Corwin
+			fj_cre_resref = xacc4
+	END
+	
+//}
+
+//{ Archery Clearing Cutscene Area
+	ACTION_IF (isEET = 1) THEN BEGIN
+		OUTER_SPRINT filename = ~bg6001.are~
+		OUTER_SET song = 146 // BD100X
+	ELSE
+		OUTER_SPRINT filename = ~ar6001.are~
+		OUTER_SET song = 67 // BD100X
+	END
+
+	COPY_EXISTING ~%filename%~ ~override/xaclrg.are~ 
+	WRITE_ASCII 0x94 ~xaclrg~ #8
+	WRITE_SHORT 0x4A 0 // set rain probability to zero
+	WRITE_LONG 0x11C song
+	WRITE_LONG 0x120 song
+	LPF fj_are_structure 
+		INT_VAR
+			fj_box_left 	= 367
+			fj_box_top 		= 230
+			fj_box_right 	= 368
+			fj_box_bottom 	= 231
+			fj_vertex_0     = 367 + (230 << 16)
+			fj_vertex_1     = 367 + (231 << 16)
+			fj_vertex_2     = 368 + (231 << 16)
+			fj_vertex_3     = 368 + (230 << 16)
+		STR_VAR
+			fj_structure_type = region
+			fj_name = ~XATREE~
+	END
+//}
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/baf~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
@@ -38,8 +75,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xabalsod.baf~
 	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xajrnsod.baf~
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/sod/baf/xap1d.baf~
-	EXTEND_TOP ~xaes100.bcs~ 	~%MOD_FOLDER%/sod/baf/xatntscr.baf~	// Tent Cutscene
-	EXTEND_TOP ~xaes101.bcs~ 	~%MOD_FOLDER%/sod/baf/xaclrg.baf~ 		// Archery Cutscene
 	EXTEND_TOP ~bd4300.bcs~ 	~%MOD_FOLDER%/sod/baf/xacheer.baf~ 	
 	EXTEND_TOP ~bdcut59b.bcs~ 	~%MOD_FOLDER%/sod/baf/xacut59b.baf~ 
 
