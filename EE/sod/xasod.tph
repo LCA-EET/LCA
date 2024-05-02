@@ -4,14 +4,14 @@ INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
 
 //{ Tent Cutscene Area
 	ACTION_IF (isEET = 1) THEN BEGIN
-		OUTER_SPRINT filename = ~bg1906.are~
+		OUTER_SPRINT filename ~bg1906.are~
 		OUTER_SET song = 142 // BDBGNX
-	ELSE
-		OUTER_SPRINT filename = ~ar1906.are~
+	END ELSE BEGIN
+		OUTER_SPRINT filename ~ar1906.are~
 		OUTER_SET song = 63 // BDBGNX
 	END
 
-	COPY_EXISTING %filename% ~override/xatent.are~
+	COPY_EXISTING ~%filename%~ ~override/xatent.are~
 	WRITE_ASCII 0x94 ~xatntscr~ #8
 	WRITE_LONG 0x688 song
 	WRITE_LONG 0x68C song
@@ -30,10 +30,10 @@ INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
 
 //{ Archery Clearing Cutscene Area
 	ACTION_IF (isEET = 1) THEN BEGIN
-		OUTER_SPRINT filename = ~bg6001.are~
+		OUTER_SPRINT filename ~bg6001.are~
 		OUTER_SET song = 146 // BD100X
-	ELSE
-		OUTER_SPRINT filename = ~ar6001.are~
+	END ELSE BEGIN
+		OUTER_SPRINT filename ~ar6001.are~
 		OUTER_SET song = 67 // BD100X
 	END
 
