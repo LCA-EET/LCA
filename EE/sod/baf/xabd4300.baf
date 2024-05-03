@@ -1,0 +1,54 @@
+//{ Debugging
+IF
+	Global("XA_LC_SkipTo4300Kiss", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_SkipTo4300Kiss", "GLOBAL", 2)
+		SetGlobal("bd_corwin_romanceactive","global",2)
+		SetGlobal("bd_plot","global",400)
+		Continue()
+END
+
+IF
+	Global("XA_LC_SkipTo4300Kiss", "GLOBAL", 2)
+	Global("bd_plot","global",480)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_SkipTo4300Kiss", "GLOBAL", 3)
+		SetGlobal("bd_plot","global",490)
+		Continue()
+END
+
+IF
+	Global("XA_LC_SkipTo4300Kiss", "GLOBAL", 3)
+	Global("bd_plot","global",495)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_SkipTo4300Kiss", "GLOBAL", 4)
+		SetGlobal("bd_plot","global",581)
+		Continue()
+END
+
+IF
+	Global("XA_LC_SkipTo4300Kiss", "GLOBAL", 4)
+	Global("bd_plot","global",586)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_SkipTo4300Kiss", "GLOBAL", 5)
+		DisplayStringHead(Myself, ~Ready~)
+		Continue()
+END
+//}
+
+IF
+	InParty("Corwin")
+	Global("bd_corwin_romanceactive","global",2)
+	GlobalGT("bd_plot","global",581)
+	GlobalLT("XA_LC_KissExtras", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_KissExtras", "MYAREA", 2)
+		CreateCreature("xawtrex", [1235.875], NW)
+		CreateCreature("xafistex", [1330.825], NW)
+		Continue()
+END

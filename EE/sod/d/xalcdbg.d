@@ -238,6 +238,17 @@ APPEND XALCDBG
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @4027 /* ~Post-Avernus Kiss~ */
+		DO ~
+			SetGlobal("XA_LC_SkipTo4300Kiss", "GLOBAL", 1)
+			ActionOverride(Player1, LeaveAreaLUA("BD4300", "", [428.266], S))
+			ActionOverride(Player2, LeaveAreaLUA("BD4300", "", [428.266], S))
+			ActionOverride(Player3, LeaveAreaLUA("BD4300", "", [428.266], S))
+			ActionOverride(Player4, LeaveAreaLUA("BD4300", "", [428.266], S))
+			ActionOverride(Player5, LeaveAreaLUA("BD4300", "", [428.266], S))
+			ActionOverride(Player6, LeaveAreaLUA("BD4300", "", [428.266], S))
+		~
+		EXIT
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_SoD_Debug
