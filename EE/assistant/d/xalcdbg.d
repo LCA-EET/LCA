@@ -59,7 +59,6 @@ BEGIN ~XALCDBG~
 		GOTO XA_Exit
 	END
 	
-	
 	IF ~~ THEN BEGIN XA_LC_Support //1
 		SAY @2062 /* ~Please visit www.patreon.com/EETMods. There, you can make either a one-time or a recurring contribution. Thank you for your generosity.~ */
 		
@@ -390,5 +389,21 @@ BEGIN ~XALCDBG~
 		EXIT
 		
 
+	END
+	
+	IF ~~ THEN BEGIN XA_ClosingOptions //11
+		SAY @3011
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_SoD_Debug
+		
+		IF ~~ THEN REPLY @3012 /*~Exit.~ */
+		GOTO 6
+		
+		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
+		DO ~
+			DestroySelf()
+		~
+		EXIT
 	END
 //}
