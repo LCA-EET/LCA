@@ -11,7 +11,7 @@ END
 
 //{ Proficiency Talk
 	IF
-		Global("XA_LC_ProficiencyTalk", "GLOBAL", 6)
+		Global("XA_LC_ProficiencyTalk", "GLOBAL", 6) // set in xalbpro3.baf
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)

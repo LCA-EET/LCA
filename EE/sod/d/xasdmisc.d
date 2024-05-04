@@ -24,29 +24,6 @@
 		SetGlobal("XA_LC_StoppedNobles", "GLOBAL", 1)
 	~
 //}
-
-//{ BDBENCE
-	ALTER_TRANS BDBENCE
-	BEGIN 85 END
-	BEGIN 0 END
-	BEGIN
-		"ACTION"
-		~
-			SetGlobal("bd_plot","global",650)
-			ActionOverride("bdschae2", SetDialog("XABDSCH2"))
-			SetDialog("XABDBENC")
-			ActionOverride("bdschae2", StartDialog("XABDSCH2", Player1))
-		~
-	END
-
-	ALTER_TRANS BDBENCE
-	BEGIN 85 END
-	BEGIN 0 END
-	BEGIN
-		"EPILOGUE"
-		~EXIT~
-	END
-//}
 	
 //{ BDBELT
 	ADD_TRANS_ACTION BDBELT

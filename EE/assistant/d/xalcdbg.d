@@ -379,26 +379,14 @@ BEGIN ~XALCDBG~
 		~
 		EXIT
 		
-		IF ~~ THEN REPLY @2058 /* ~I do not need assistance at this time.~ */
-		EXIT
-		
-		IF ~~ THEN REPLY @2059 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
-		
-
+		COPY_TRANS XALCDBG XA_ClosingOptions 
 	END
 	
 	IF ~~ THEN BEGIN XA_ClosingOptions //11
 		SAY @3011
 		
-		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
-		GOTO XA_SoD_Debug
-		
 		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 6
+		GOTO XA_Exit
 		
 		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
 		DO ~

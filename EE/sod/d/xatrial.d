@@ -39,15 +39,15 @@ EXTEND_BOTTOM BDBELT 6
 		Wait(3)
 		FaceObject(Player1)
 		Wait(1)
-		CreateCreature("XABDSCH2",[941.674], S)
+		CreateCreature("XATRICOR",[941.674], S)
 		SmallWait(5)
 		SmallWait(5)
-		ActionOverride("XABDSCH2",MoveToPoint([621.720]))
+		ActionOverride("XATRICOR",MoveToPoint([621.720]))
 		SmallWait(55)
 		Face(E)
 		SmallWait(25)
 		Face(SSW)
-		ActionOverride("XABDSCH2",Face(SW))
+		ActionOverride("XATRICOR",Face(SW))
 		SmallWait(6)
 		StartDialogNoSet(Player1)
 	~ 
@@ -67,7 +67,7 @@ APPEND BDBELT
 			SetGlobal("bd_mdd1697_plot","global",10)
 			SetGlobal("XA_LC_CorwinSpokeAtTrial", "GLOBAL", 1)
 		~
-		EXTERN XABDSCH2 XA_CorwinTrial_0
+		EXTERN XATRICOR XA_CorwinTrial_0
 	END
 	
 	IF ~~ THEN BEGIN XAA3
@@ -76,9 +76,9 @@ APPEND BDBELT
 		IF ~~ THEN 
 		DO ~
 			SetCutSceneLite(TRUE)
-			ActionOverride("XABDSCH2",MoveToPoint([743.762]))
+			ActionOverride("XATRICOR",MoveToPoint([743.762]))
 			SmallWait(30)
-			ActionOverride("XABDSCH2",MoveToPoint([1030.566]))
+			ActionOverride("XATRICOR",MoveToPoint([1030.566]))
 			Face(SSW)
 			Wait(3)
 			FaceObject(Player1)
@@ -92,13 +92,13 @@ APPEND BDBELT
 				Global("bd_corwin_romanceactive","global",1)
 				Global("bd_corwin_romanceactive","global",2)
 		~ THEN
-		EXTERN XABDSCH2 XA_CorwinTrial_1
+		EXTERN XATRICOR XA_CorwinTrial_1
 	END
 	
 	IF ~~ THEN BEGIN XAA4
 		SAY @6 /* ~Of course, Captain. What is it?~ */
 		IF ~~ THEN
-		EXTERN XABDSCH2 XA_CorwinTrial_2
+		EXTERN XATRICOR XA_CorwinTrial_2
 	END
 	
 	IF ~~ THEN BEGIN XAA5
@@ -106,9 +106,9 @@ APPEND BDBELT
 		IF ~~ THEN
 		DO ~
 			SetCutSceneLite(TRUE)
-			ActionOverride("XABDSCH2",MoveToPoint([743.762]))
+			ActionOverride("XATRICOR",MoveToPoint([743.762]))
 			SmallWait(30)
-			ActionOverride("XABDSCH2",MoveToPoint([1030.566]))
+			ActionOverride("XATRICOR",MoveToPoint([1030.566]))
 			Face(SSW)
 			Wait(3)
 			FaceObject(Player1)

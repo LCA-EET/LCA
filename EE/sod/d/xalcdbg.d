@@ -1,8 +1,3 @@
-EXTEND_BOTTOM XALCDBG 10
-	IF ~~ THEN REPLY @4000/* ~SoD Debug~*/
-	GOTO XA_SoD_Debug
-END
-
 APPEND XALCDBG
 	IF ~~ THEN BEGIN XA_SoD_Debug
 		SAY @4000/* ~SoD Debug~*/
@@ -23,7 +18,7 @@ APPEND XALCDBG
 		IF ~~ THEN REPLY @4001/* ~Cutscene Test~*/
 		GOTO XA_SoD_CutsceneTest
 		
-		IF ~~ THEN REPLY @4012 /* ~Corwin Letter Interaction (Romantic)~ */
+		IF ~~ THEN REPLY @4012 /* ~Schael Letter Interaction (Romantic)~ */
 		DO ~
 			CreateCreature("BDIMOEN", [-1.-1], S)
 			SetGlobal("XA_LC_SoDLetterDebug", "GLOBAL", 1)
@@ -32,7 +27,7 @@ APPEND XALCDBG
 		~
 		EXIT
 		
-		IF ~~ THEN REPLY @4013 /* ~Corwin Letter Interaction (Romantic)~ */
+		IF ~~ THEN REPLY @4013 /* ~Corwin Letter Interaction (Non-Romantic)~ */
 		DO ~
 			CreateCreature("BDIMOEN", [-1.-1], S)
 			SetGlobal("XA_LC_SoDLetterDebug", "GLOBAL", 1)
@@ -41,20 +36,19 @@ APPEND XALCDBG
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @4028 /* ~Change Campaign from BGEE to SoD~ */
+		DO ~
+			MoveToCampaign("SoD")
+		~
+		GOTO XA_SoD_AreaTest
+		
 		IF ~~ THEN REPLY @4023 /*~Area Test~*/
 		GOTO XA_SoD_AreaTest
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
-		GOTO 10
+		GOTO 0
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 6
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_SoD_AreaTest
@@ -96,14 +90,7 @@ APPEND XALCDBG
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_SoD_Debug
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 6
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_SoD_ItemTest
@@ -120,14 +107,7 @@ APPEND XALCDBG
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_SoD_Debug
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 6
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_SoD_AdjustVariables
@@ -181,18 +161,34 @@ APPEND XALCDBG
 		~
 		GOTO XA_SoD_AdjustVariables
 		
+		IF ~~ THEN REPLY @4031
+		DO ~
+			SetGlobal("XA_LC_CorwinContinue","GLOBAL",2)
+		~
+		GOTO XA_SoD_AdjustVariables
+		
+		IF ~~ THEN REPLY @4032
+		DO ~
+			SetGlobal("XA_LC_CorwinContinue","GLOBAL",1)
+		~
+		GOTO XA_SoD_AdjustVariables
+		
+		IF ~~ THEN REPLY @4033
+		DO ~
+			SetGlobal("XA_LC_CorwinContinue","GLOBAL",0)
+		~
+		GOTO XA_SoD_AdjustVariables
+		
+		IF ~~ THEN REPLY @4034
+		DO ~
+			SetGlobal("XA_LC_ToldTruthBhaal", "GLOBAL", 1)
+		~
+		GOTO XA_SoD_AdjustVariables
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_SoD_Debug
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 6
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
-		
+		COPY_TRANS XALCDBG 11
 	END
 	IF ~~ THEN BEGIN XA_SoD_CutsceneTest
 		SAY @4001 /* ~Cutscene Test~*/
@@ -250,16 +246,32 @@ APPEND XALCDBG
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @4029 /* ~Jail Visit (Exile)~ */
+		DO ~
+			SetGlobal("chapter","global",13)
+			SetGlobal("bd_plot","global",600)
+			SetGlobal("bd_player_exiled","global",1)
+			ActionOverride(Player1, LeaveAreaLUA("bd0104", "", [395.355], S))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @4030 /* ~Jail Visit (Execute)~ */
+		DO ~
+			SetGlobal("chapter","global",13)
+			SetGlobal("bd_plot","global",600)
+			SetGlobal("bd_player_exiled","global",0)
+			ActionOverride(Player1, LeaveAreaLUA("bd0104", "", [395.355], S))
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_SoD_Debug
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 6
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		COPY_TRANS XALCDBG 11
 	END
+END
+
+EXTEND_BOTTOM XALCDBG 10
+	IF ~~ THEN REPLY @4000/* ~SoD Debug~*/
+	GOTO XA_SoD_Debug
 END

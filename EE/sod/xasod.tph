@@ -70,7 +70,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 	EXTEND_TOP ~bd4400.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd4400.baf~
 	EXTEND_TOP ~bd4600.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd4600.baf~
 	EXTEND_TOP ~bd5300.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd5300.baf~
-	EXTEND_TOP ~bd6000.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd6000.baf~
 	EXTEND_TOP ~bd7100.bcs~		~%MOD_FOLDER%/sod/baf/xaartrig.baf~
 	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xabalsod.baf~
 	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xajrnsod.baf~
@@ -91,6 +90,8 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 	COPY ~%MOD_FOLDER%/sod/wav/xalcsd05.wav~ 	~override~
 	COPY ~%MOD_FOLDER%/sod/wav/xalcsd06.wav~ 	~override~
 	COPY ~%MOD_FOLDER%/sod/wav/xalcsd07.wav~ 	~override~
+	COPY ~%MOD_FOLDER%/sod/wav/xalcsd08.wav~ 	~override~
+	COPY ~%MOD_FOLDER%/sod/wav/xalcsd09.wav~ 	~override~
 //}
 
 //{ New Creatures
@@ -101,15 +102,18 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 	COPY_EXISTING ~bdfist31.cre~ ~override/xafistex.cre~
 	WRITE_ASCII 0x2CC ~xafistex~ #8 	// Dialogue
 	WRITE_ASCII 0x280 ~xafistex~ #20  	// Script Name
-
-	COPY_EXISTING ~bdschael.cre~ ~override/xabdsch2.cre~
-	WRITE_ASCII 0x248 ~bdvisit~ #8
-	WRITE_ASCII 0x2CC ~xabdsch2~ #8
-	WRITE_ASCII 0x280 ~XABDSCH2~ #20
 	
-	COPY_EXISTING ~xabdsch2.cre~ ~override/xacc4.cre~
+	COPY_EXISTING ~bdschael.cre~ ~override/xatricor.cre~
+	WRITE_ASCII 0x2CC ~xatricor~ #8 	// Dialogue
+	WRITE_ASCII 0x280 ~xatricor~ #20  	// Script Name
+	WRITE_ASCII 0x248 ~~ #8		// Override Script
+	WRITE_ASCII 0x250 ~~ #8		// Class Script
+	WRITE_ASCII 0x258 ~~ #8		// Race Script
+	WRITE_ASCII 0x260 ~~ #8		// General Script
+	WRITE_ASCII 0x268 ~~ #8		// Default Script
+	
+	COPY_EXISTING ~xatricor.cre~ ~override/xacc4.cre~
 	REMOVE_CRE_ITEMS
-	WRITE_ASCII 0x248 ~~ #8
 	WRITE_ASCII 0x2CC ~xacc4~ #8 	// Dialogue
 	WRITE_ASCII 0x280 ~xacc4~ #20  	// Script Name
 //}
@@ -126,6 +130,8 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 	COPY_EXISTING ~BDFAMAR2.CRE~ ~override~
 	READ_LONG 0x10 benoflags
 	WRITE_LONG 0x10 (benoflags + 1048576) /* Set Flag 20 to True(No exploding on death). 1048576 = 2^20*/
+	
+	
 //}
 
 ACTION_IF (bg1_carryover = 0) THEN BEGIN

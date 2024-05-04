@@ -106,6 +106,13 @@
 @4025 = ~BD3000~
 @4026 = ~BD7100~
 @4027 = ~BD4300 Kiss~
+@4028 = ~Change Campaign from BGEE to SoD~
+@4029 = ~Jail Visit (Exile)~
+@4030 = ~Jail Visit (Execute)~
+@4031 = ~SetGlobal("XA_LC_CorwinContinue","GLOBAL",2)~
+@4032 = ~SetGlobal("XA_LC_CorwinContinue","GLOBAL",1)~
+@4033 = ~SetGlobal("XA_LC_CorwinContinue","GLOBAL",0)~
+@4034 = ~SetGlobal("XA_LC_ToldTruthBhaal", "GLOBAL", 1)~
 
 @5000 = ~BG2 Debug~
 @5001 = ~Area Test~
