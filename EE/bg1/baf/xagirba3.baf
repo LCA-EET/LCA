@@ -1,4 +1,11 @@
 IF
+	Global("XA_LC_CorwinEET", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
 	GlobalLT("XA_LC_CryTimerSet", "LOCALS", 1)
 THEN
 	RESPONSE #100
