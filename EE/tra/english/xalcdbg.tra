@@ -146,7 +146,6 @@
 @5029 = ~xacs05a~
 @5030 = ~xacs06a~
 @5031 = ~xacs07a~
-
 @5032 = ~Place Corwin in the Athkatla Magistrate.~
 @5033 = ~Reset Corwin's Banters.~
 @5034 = ~Parameter Check.~
@@ -202,8 +201,12 @@
 @5084 = ~SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 2)~
 @5085 = ~SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 1)~
 @5086 = ~SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 0)~
+@5087 = ~SetGlobal("XA_LC_CorwinSexBoost", "GLOBAL", 1)~
+@5088 = ~SetGlobal("XA_LC_TimesHadSex", "GLOBAL", 1)~
 @5089 = ~Godbow x3~
 @5090 = ~Spawn Corwin (XACORWIN) and add her to the party.~
+@5091 = ~IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 3)~
+
 
 @6000 = ~Return to Baldur's Gate Debug~
 @6001 = ~Item Test~

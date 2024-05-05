@@ -1107,24 +1107,7 @@ END
 	END
 	//}
 	
-	//{ After Sex HP Boost
-	IF 
-		ActionListEmpty()
-		Global("XA_LC_CorwinSexBoost", "GLOBAL", 1)
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_LC_CorwinSexBoost", "GLOBAL", 0)
-			SetGlobalTimer("XA_LC_CorwinSexTimer", "GLOBAL", THREE_DAYS)
-			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
-			ApplySpellRES("bdrejuve","XACORWIN")
-			ApplySpellRES("bdrejuve",Player1)
-			ChangeStat("XACORWIN", MINHITPOINTS, 5, ADD)
-			ChangeStat(Player1, MINHITPOINTS, 5, ADD)
-			SetInterrupt(TRUE)
-			Continue()
-	END
-	//}
+	
 
 	//{ Corwin Sex Second Time
 	IF

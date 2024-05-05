@@ -58,14 +58,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 10
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 6
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		COPY_TRANS XALCDBG 11
 	END
 
 	IF ~~ THEN BEGIN XA_BG2_AdjustVariables
@@ -89,17 +82,28 @@ APPEND ~XALCDBG~
 		~
 		GOTO XA_BG2_AdjustVariables
 		
+		IF ~~ THEN REPLY @5087 /**/
+		DO ~
+			SetGlobal("XA_LC_CorwinSexBoost", "GLOBAL", 1)
+		~
+		GOTO XA_BG2_AdjustVariables
+		
+		IF ~~ THEN REPLY @5088 /**/
+		DO ~
+			SetGlobal("XA_LC_TimesHadSex", "GLOBAL", 1)
+		~
+		GOTO XA_BG2_AdjustVariables
+		
+		IF ~~ THEN REPLY @5091 /**/
+		DO ~
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 3)
+		~
+		GOTO XA_BG2_AdjustVariables
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 6
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		COPY_TRANS XALCDBG 11
 	END
 
 	IF ~~ THEN BEGIN XA_BG2_MusicTest
@@ -132,14 +136,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 6
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_BG2_InteractionTest
@@ -155,14 +152,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 6
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_BG2_ParameterCheck
@@ -210,14 +200,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 6
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_BG2_AreaTest
@@ -270,14 +253,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 6
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_BG2_ItemTest
@@ -404,14 +380,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 6
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_BG2_CutsceneTest
@@ -476,13 +445,6 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 6
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		COPY_TRANS XALCDBG 11
 	END
 END
