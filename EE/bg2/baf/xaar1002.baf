@@ -3,6 +3,7 @@ IF
 	GlobalGT("C#AfHSoD_RevisedEnd","GLOBAL",0)
 	GlobalLT("XA_LC_AFHFix", "GLOBAL", 1)
 	!Dead("Corwin")
+	!Dead("bdschae2")
 	Global("bd_corwin_romanceactive","global",2)
 	GlobalLT("XA_LC_CorwinContinue", "GLOBAL", 1)
 THEN
@@ -17,6 +18,7 @@ IF
 	GlobalGT("C#AfHSoD_RevisedEnd","GLOBAL",0)
 	GlobalLT("XA_LC_AFHFix", "GLOBAL", 1)
 	!Dead("Corwin")
+	!Dead("bdschae2")
 	!Global("bd_corwin_romanceactive","global",2)
 	GlobalLT("XA_LC_CorwinContinue", "GLOBAL", 1)
 THEN

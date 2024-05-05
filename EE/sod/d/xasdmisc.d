@@ -332,7 +332,9 @@ APPEND BDCORWIJ
 	END
 	
 	IF ~~ THEN BEGIN XA_ProficiencyTalkWhy_Vai
-		SAY @48 /*~Consider it a thank you for the care and concern you showed back in the Gate. The refugee crisis has been a strain on everyone, and every bit of help makes a difference. Plus, some months ago you helped Jessa — erm, one of my officers — with a bandit problem down in Beregost.~*/
+		SAY @48 /*~Consider it a thank you for the care and concern you showed back in the Gate. The refugee crisis has been a strain on everyone, and every bit of help makes a difference.~*/
+		
+		= @52 /*~Plus, some months ago you helped Jessa — erm, one of my officers — with a bandit problem down in Beregost.*/
 		
 		IF ~~ THEN REPLY @49 /* ~Ah, Officer Vai, yes? She said she'd put in a good word for me.~ */
 		GOTO XA_ProficiencyTalkWhy_Vai2

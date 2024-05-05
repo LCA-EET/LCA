@@ -12,15 +12,13 @@ ADD_TRANS_TRIGGER BDBELT 6
 ~
 	OR(2)
 		Dead("Corwin")
-		!GlobalGT("XA_LC_CorwinWitnessedDuel", "GLOBAL", 0)
+		GlobalLT("XA_LC_CorwinWitnessedDuel", "GLOBAL", 1)
 ~
 
 EXTEND_BOTTOM BDBELT 6
 	IF ~
 		!Dead("Corwin")
-		OR(2)
-			Global("XA_LC_CorwinWitnessedDuel", "GLOBAL", 1)
-			Global("XA_LC_CorwinWitnessedDuel", "GLOBAL", 2)
+		GlobalGT("XA_LC_CorwinWitnessedDuel", "GLOBAL", 0)
 	~ THEN 
 	DO ~
 		SetCutSceneLite(TRUE)

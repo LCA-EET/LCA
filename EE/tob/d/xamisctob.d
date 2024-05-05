@@ -8,9 +8,10 @@
 			"TRIGGER"
 			~
 				Global("CORWINSummoned","GLOBAL",0)
-				OR(2)
+				OR(3)
 					Dead("Corwin")
 					Dead("XACORWIN")
+					Dead("bdschae2")
 			~
 		END
 		//}
@@ -26,6 +27,7 @@
 				GlobalLT("XA_LC_CorwinInPartyBG2", "GLOBAL", 1)
 				!Dead("Corwin")
 				!Dead("XACORWIN")
+				!Dead("bdschae2")
 			~
 		END
 		//}
@@ -41,6 +43,7 @@
 				Global("XA_LC_CorwinInPartyBG2", "GLOBAL", 1)
 				!Dead("Corwin")
 				!Dead("XACORWIN")
+				!Dead("bdschae2")
 			~
 		END
 		//}
