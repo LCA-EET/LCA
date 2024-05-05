@@ -55,6 +55,30 @@ SILENT
 		COPY ~%MOD_FOLDER%/rbg/anim/mbe1twe.bam~ ~override~
 		COPY ~%MOD_FOLDER%/rbg/anim/mbe1wk.bam~ ~override~
 		COPY ~%MOD_FOLDER%/rbg/anim/mbe1wke.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2a1.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2a1e.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2a2.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2a2e.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2ca.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2cae.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2de.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2dee.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2gh.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2ghe.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2gu.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2gue.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2sc.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2sce.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2sd.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2sde.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2sl.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2sle.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2sp.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2spe.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2tw.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2twe.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2wk.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/anim/mbe2wke.bam~ ~override~
 		COPY ~%MOD_FOLDER%/rbg/anim/mnosa1.bam~ ~override~
 		COPY ~%MOD_FOLDER%/rbg/anim/mnosa1e.bam~ ~override~
 		COPY ~%MOD_FOLDER%/rbg/anim/mnosa2.bam~ ~override~
