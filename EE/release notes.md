@@ -7,6 +7,9 @@
 # v2.0-beta 2024-04-23
 * Added compatibility with EE (non-EET).
 * Added a new quest, "Trouble in the Tower", to the Return to Baldur's Gate portion of the mod.
+* Improved AI voice fidelity.
+* Added a new condition for initiating the second intimate encounter in SoA (Corwin must have a healing spell in her spellbook).
+* Miscellaneous refinements.
 
 # v1.1e 2024-04-03
 * Fixed a compatibility issue with the Cost of One Girl's Soul mod that could cause the Djinn to erroneously give two copies of the Soultaker dagger to the protagonist.

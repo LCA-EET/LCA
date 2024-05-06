@@ -114,7 +114,7 @@ THEN
 END
 //}
 
-//{ Check if Corwin is a Healer (needed for second intimate encounter)
+//{ Check if Corwin is a Healer (needed for second SoA intimate encounter)
 IF
 	OR(3)
 		HaveSpellRES("SPPR103") // Cure Light Wounds
