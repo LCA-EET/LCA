@@ -62,14 +62,14 @@
 @61 = ~Mm, is that an order, hero?~
 @62 = ~Let's go find some place a little more private...~ [xalc1169]
 @63 = ~What did you have in mind?~
-@64 = ~The street in mid-day, or perhaps the amphitheater. Gods, what do you think? There are plenty of inns in the city, pick one!~
+@64 = ~The street in mid-day, or perhaps the amphitheater. Gods, what do you think? There are plenty of inns in the city, pick one!~ [xalc1041]
 @65 = ~Come with me love, I know just the place.~
-@66 = ~When I said to get us a room, I didn't mean this dump. It's filthy. Let's go to one of the cleaner establishments in the city.~
+@66 = ~When I said to get us a room, I didn't mean this dump. It's filthy. Let's go to one of the cleaner establishments in the city.~ [xalc1042]
 @67 = ~Right... sorry, love.~
 @68 = ~The rats bother you, eh?~
 @69 = ~Rats, slavers, thieves, the stench, all of it bothers me. Let's go.~
 @70 = ~I already told you, we're not making love in this dump.~ 
-@71 = ~You know what? Forget it. I'm not in the mood anymore. Let's go.~
+@71 = ~You know what? Forget it. I'm not in the mood anymore. Let's go.~ [xalc1043]
 @72 = ~And look at the reflection of the moonlight on the stream...~ 
 @73 = ~Come here, hero —~
 
@@ -182,28 +182,28 @@
 @206 = ~I wouldn't worry about it. He was just trying to rattle you.~
 @207 = ~Whatever his intentions, it doesn't matter now. He's dead, and the world is a better place for it.~
 @208 = ~You're right...~
-@209 = ~We better let Investigator Brega know what happened here. Come on, let's go.~ 
+@209 = ~We better let Investigator Brega know what happened here. Come on, let's go.~ [xalc1044]
 @210 = ~(Her hands tremble with anger.)~
 @211 = ~What kind of monster could murder one child, let alone dozens?~
 @212 = ~(She calms down.)~
-@213 = ~We better let Investigator Brega know what happened here. Come on love, let's go.~
+@213 = ~We better let Investigator Brega know what happened here. Come on, let's go.~ [xalc1044]
 @214 = ~Thank you.~ [xalc1171]
 @215 = ~What does Irenicus gain from a war between the surface elves and the drow? There must be a reason.~
 @216 = ~You were with her for a while...~
 @217 = ~Listen, Schael. She didn't leave me any choice. I had to in order to maintain our cover.~
 @218 = ~It meant nothing to me. You're the one that I love.~
 @219 = ~And? I did what I needed to, nothing more.~
-@220 = ~It means something to me. I understand though why you had to. Let's just get out of this hole and forget that it ever happened.~
+@220 = ~It means something to me. I understand though why you had to. Let's just get out of this hole and forget that it ever happened.~ [xalc1045]
 @221 = ~I understand. Let's just get out of this hole and forget that it ever happened.~
 @222 = ~I see. And did you enjoy it?~
 @223 = ~To be perfectly honest, I did.~
 @224 = ~That's none of your concern.~
 @225 = ~No, I didn't. I feel nothing toward her but disgust.~
 @226 = ~You've changed, love, and not in a good way. I can only hope that you'll be yourself again once we've restored what the wizard stole from you. Let's go.~ 
-@227 = ~What'd she want?~
+@227 = ~What'd she want?~ [xalc1046]
 @228 = ~For me to sleep with her.~
 @229 = ~Better not to ask. What matters is that she didn't get it.~
-@230 = ~Really — how'd you manage to get out of that one?~
+@230 = ~Really — how'd you manage to get out of that one?~ [xalc1194]
 @231 = ~I told her you'd kill me for cheating on you.~
 @232 = ~Hah! In spite of everything, you haven't lost your sense of humor. Come love, let's get going.~
 @233 = ~Hm, I didn't see her as the type to be so easily turned away. Let's go love.~
@@ -220,7 +220,7 @@
 
 @245 = ~You... you monster! What you did to Skie, to Imoen, to <CHARNAME>, and the others... it can never be forgiven. You nearly destroyed my hope of a future with the <PRO_MANWOMAN> I love. Prepare to meet your end, Irenicus!~ 
 @246 = ~~
-@247 = ~Irenicus already tried to force us apart and failed. You'll do no better.~
+@247 = ~Irenicus already tried to force us apart and failed. You'll do no better.~ [xalc1047]
 @248 = ~My love, we... died? I felt you, pulling me with you to this place. Very well — we were together in life and will remain so, in death.~
 @249 = ~Thanks, but...~
 @250 = ~(She nods in your direction.)~
@@ -260,7 +260,7 @@
 @284 = ~Y-yes... come on, love.. let's go.~
 @285 = ~Schael is Dead
 Schael died in my arms, mere hours after being bit by Bodhi. I believe that the bite was intended to turn Schael into a vampire, but she died before the transition could complete. There may still be a way to revive her. I will find Bodhi and make her pay for the loss of my love, with her life.~
-@286 = ~A moment of your time, <CHARNAME>?~
+@286 = ~A moment of your time, <CHARNAME>?~ [xalc1048]
 @287 = ~Sure, what's on your mind?~
 @288 = ~For you, of course.~
 @289 = ~A moment, a smidgen, a wee bit... whatever you need.~
@@ -296,13 +296,13 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @318 = ~I'd stay and celebrate, but I can't stomach the sight of you and Hexxat together any longer. Farewell.~
 @319 = ~I'd stay and celebrate, but I can't stomach the sight of you and Dorn together any longer. Farewell.~
 @320 = ~I know we've had our ups and downs, but I wish you well. If you ever want to give us another try, come and see me in Baldur's Gate. Farewell.~
-@321 = ~If what the celestial said is true though... you'd be leaving the struggle of this life, only to enter into a new struggle against gods and other planar powers. An endless battle, for perhaps all of eternity... I can't even begin to fathom what that would be like. Will you ever find peace? Will you ever find ... love, again?~
+@321 = ~If what the celestial said is true though... you'd be leaving the struggle of this life, only to enter into a new struggle against gods and other planar powers. A relentless battle, for perhaps all of eternity... I can't even begin to fathom what that would be like. Will you ever find peace? Will you ever find ... love?~ [xalc1049]
 @322 = ~You've given me a lot to think about. If I do accept this power, I promise you that at the very least, I will keep you, Rohma, and our child safe from any who would seek to do you harm.~
 @323 = ~You've given me a lot to think about. If I do accept this power, I promise you that at the very least, I will keep you and Rohma safe from any who would seek to do you harm.~
 @324 = ~You've given me a lot to think about. If I do accept this power, I promise you that at the very least, I will keep you, Rohma, and our children safe from any who would seek to do you harm.~
 @325 = ~~
 @326 = ~This statue makes me look like a damned troll! Look, the arms are nearly as long as the legs! And gods, that nose!~
-@327 = ~Do you think this looks like me?~
+@327 = ~Do you think this looks like me?~ [xalc1050]
 @328 = ~Take it as a compliment.~ [xalc1158]
 @329 = ~Not at all...~
 @330 = ~~
@@ -364,7 +364,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @386 = ~~
 @387 = ~But, I thought you wanted to wait until we returned home, to Baldur's Gate.~
 @388 = ~I agree wholeheartedly.~  
-@389 = ~It wasn't that I didn't want to... I do. It's just that I've always put my duty ahead of my own desires.~
+@389 = ~It wasn't that I didn't want to... I do. It's just that I've always put my duty ahead of my own desires.~ [xalc1051]
 @390 = ~Let me be perfectly clear. I want you, <CHARNAME>. I want you to make love to me.~
 @391 = ~Are you saying what I think you're saying?~
 @392 = ~That might be the most romantic thing anyone has ever said.~
@@ -536,10 +536,10 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @561 = ~Hah, some things never change. You still get into a lot of trouble, only with me instead!~
 @562 = ~One day, we had the brilliant idea to go to the Hall of Wonders and play hot potato with a jeweled egg. It was donated to the museum by an emissary from Tethyr. It must have been worth hundreds, or even thousands of gold.~
 @563 = ~There we were, throwing this very expensive and precious egg around, while the museum guards were frantically chasing us in and around the Hall.~
-@564 = ~Guess who was holding the egg when the music stopped?~
+@564 = ~Guess who was holding the egg when the music stopped?~ [xalc1198]
 @565 = ~You.~
 @566 = ~That's right. I was arrested... and my 'friends' all ran away. It's a good thing that the egg wasn't damaged, otherwise I might still be in prison, hah.~
-@567 = ~My father could've gotten me out like he did so many times before, but this time, he didn't — and I'm glad. Spending that night in that cold cell was a major wake up call for me.~
+@567 = ~My father could've gotten me out like he did so many times before, but this time, he didn't — and I'm glad. Spending that night in that cold cell was a major wake up call for me.~ [xalc1197]
 @568 = ~I know what you mean. I never want to see those cells again.~
 @569 = ~Do you ever think of how the course of your life would've changed had you not been arrested?~
 @570 = ~I do... Would Rohma be here? Would I have joined the Fist? Taken part in the Dragonspear campaign?~
@@ -549,7 +549,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @574 = ~Would Rohma be here? Would I have joined the Fist? Taken part in the Dragonspear campaign?~
 @575 = ~And would I be in love with such an incredible, beautiful and determined woman?~
 @576 = ~(You share a warm embrace.)~
-@577 = ~Come on, let's head in. I'm sure they've set up some interesting new exhibits since the last time we were here.~ 
+@577 = ~Come on, let's head in. I'm sure they've set up some interesting new exhibits since the last time we were here.~ [xalc1196]
 @578 = ~Only the Gods know, I guess...~
 @579 = ~Fine. But you and I are going to have a long talk about this.~
 @580 = ~(She turns, and looks at you with disappointment.)~
@@ -594,7 +594,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @619 = ~That was one hell of a party.~
 @620 = ~It definitely was.~ 
 @621 = ~A better liquor selection would have been nice...~
-@622 = ~I think it'll pale in comparison to the one the city will throw for us upon our return.~
+@622 = ~I think it'll pale in comparison to the one the city will throw for us upon our return.~ [xalc1195]
 @623 = ~Baldur's Gate? Are they expecting us?~
 @624 = ~They are. While you were recovering, I asked the elves to send word to the Council that Irenicus was dead, and that we'd be returning to the city soon. Gods, I can't wait to see Rohma and my father.~
 @625 = ~Wh...What? I don't believe it. You chose to stay, instead of becoming a god?~
@@ -816,10 +816,10 @@ I received the shipping manifests from the harbor master, but they are encoded a
 @839 = ~Yes... Tianna and I were seeing each other for a time. A very short time.~
 @840 = ~I see... What happened? I mean, why'd you two break up?~
 @841 = ~Tianna... is a user. She takes advantage of people, and their trust. The last straw was when she stole money from my family.~
-@842 = ~It wasn't much. If she'd just asked me, I'd have given it to her. She thought she'd got away with it, but Rohma saw her.~
-@843 = ~When she told me what Tianna did, Tianna called Rohma a liar. Like a five year old could even think to lie about something like that.~
+@842 = ~It wasn't much. If she'd just asked me, I'd have given it to her. She thought she'd got away with it, but Rohma saw her.~ [xalc1010]
+@843 = ~When she told me what Tianna did, Tianna called Rohma a liar. Like a five year old could even think to lie about something like that.~ [xalc1011]
 @844 = ~You made the right decision.~
-@845 = ~I just wish I'd seen what she was earlier. ~
+@845 = ~I just wish I'd seen what she was earlier.~ [xalc1012]
 @846 = ~That's not someone I'd want around my child.~
 @847 = ~It worked out in the end. You found someone better.~
 @848 = ~(You share a warm embrace and kiss).~
@@ -828,8 +828,8 @@ I received the shipping manifests from the harbor master, but they are encoded a
 @851 = ~Come here.~
 @852 = ~~
 @853 = ~We're here on behalf of Tianna.~
-@854 = ~I hope you learned something from this Tianna. Next time, you might not be so lucky.~
-@855 = ~That's a good decision. Take care of yourself, Tianna.~
+@854 = ~I hope you learned something from this Tianna. Next time, you might not be so lucky.~ [xalc1013]
+@855 = ~That's a good decision. Take care of yourself.~
 @856 = ~(They share an embrace.)~
 @857 = ~You too, Schael.~
 @858 = ~I've been doing a lot of thinking and... I don't think this city is a good fit for me. I'm going to take my mom south to Beregost, and try for a fresh start over there.~
@@ -852,7 +852,7 @@ I received the shipping manifests from the harbor master, but they are encoded a
 @875 = ~(They share a warm embrace.)~
 @876 = ~I'll see you soon, sweetie.~
 @877 = ~Good. Don't take too long. Rohma, say bye to mommy.~
-@878 = ~I love you too honey. I'll be back soon, I promise.~
+@878 = ~I love you too honey. I'll be back soon, I promise.~ [xalc1014]
 @879 = ~Oh, Rohma... I hope so. It's a big commitment.~
 @880 = ~You know how mommy has a duty to the Flaming Fist? Well, I also have a duty to you and grandpa. A commitment is like a duty.~
 @881 = ~It's a big duty for anyone, sweetie, but it's very rewarding at the same time.~
@@ -899,7 +899,7 @@ I received the shipping manifests from the harbor master, but they are encoded a
 @922 = ~No, thanks. Two was enough. Work in the morning, you know?~
 @923 = ~So, love. Tell me — how's life in the Ducal palace?~
 @924 = ~Good... It'll be better though once the three of you move in.~
-@925 = ~I don't doubt it. You've been great with Rohma... She's adjusted well to our being together, I think.~
+@925 = ~I don't doubt it. You've been great with Rohma... She's adjusted well to our being together, I think.~ [xalc1015]
 @926 = ~I'm just about settled in.~
 @927 = ~Right.~
 @928 = ~~
@@ -910,7 +910,7 @@ I received the shipping manifests from the harbor master, but they are encoded a
 @933 = ~You think so?~
 @934 = ~I do. He told me that he liked the speech that you gave at the Hall of Wonders the other day. The one about your experiences in Amn.~
 @935 = ~Oh, really? I'm glad. ~
-@936 = ~It's getting late, love. I should head home.~
+@936 = ~It's getting late, love. I should head home.~ [xalc1016]
 @937 = ~Speaking of work, how's Valygar? I heard he took Marshal Nederlok up on his offer to join the Flaming Fist.~
 @938 = ~He's doing well. He got his first arrest a few days ago. Breaking and entering.~
 @939 = ~I'm glad to hear it.~  
@@ -943,11 +943,11 @@ I received the shipping manifests from the harbor master, but they are encoded a
 @966 = ~I know how difficult it is, but we mustn't lose focus given what's at stake. Let's go.~
 @967 = ~Do you like it?~
 @968 = ~I love it... it's perfect. And I love you. More than you'll ever know.~
-@969 = ~Yes! Yes of course I will!~
+@969 = ~Yes! Yes of course I will!~ [xalc1023]
 @970 = ~(You stand, and you quickly pull each other into a long and very passionate embrace.)~
 @971 = ~Hold out your hand, love. (Place the ring onto her finger.)~
 @972 = ~I love you too, Schael.~
-@973 = ~I know it's late, but come home with me. I want to tell Rohma the good news!~
+@973 = ~I know it's late, but come home with me. I want to tell Rohma the good news!~ [xalc1024]
 @974 = ~Of course, my dear. Let's go.~
 @975 = ~Father!~ [xalcrb02]
 @976 = ~...uhnnn... S-Schael...~
@@ -986,7 +986,7 @@ Do not keep us waiting for long."~
 @1007 = ~Yes. He's Rohma's father, as distasteful as it sounds.~
 @1008 = ~~
 @1009 = ~You'll almost certainly be walking into a trap. It'd be better to send some additional support, perhaps a platoon of Valiants —~
-@1010 = ~No! Forgive me sir, but you saw the letter. I can't risk my daughter being harmed.~
+@1010 = ~No! Forgive me sir, but you saw the letter. I can't risk my daughter being harmed.~ [xalc1025]
 @1011 = ~That bodes well for your daughter, then. I doubt that he'd wish to see her harmed.~
 @1012 = ~~
 @1013 = ~Schael is right. We need to go after them, alone.~
@@ -1003,7 +1003,7 @@ Do not keep us waiting for long."~
 @1024 = ~That's your money. Consider it compensation for everything you've had to endure.~
 @1025 = ~It's as much yours, Schael, as it is mine... I wouldn't be here were it not for your efforts in securing my release.~
 @1026 = ~Even if it were my money, I'd probably keep working, at least for a while longer. Rohma needs to understand the value of hard work.~
-@1027 = ~Besides, I haven't given up on making Colonel one day.~ 
+@1027 = ~Besides, I haven't given up on making Colonel one day.~ [xalc1027]
 @1028 = ~Nor should you. Colonel Corwin... I think I like the sound of that.~
 @1029 = ~~
 @1030 = ~(She begins to slowly breathe in and out. You recognize this as the breathing exercise that Rasaad taught her in Amn.)~ 
@@ -1042,17 +1042,17 @@ Do not keep us waiting for long."~
 @1063 = ~~
 @1064 = ~~
 @1065 = ~~
-@1066 = ~That went well, don't you think?~ 
+@1066 = ~That went well, don't you think?~ [xalc1028]
 @1067 = ~Me too. You did a great job recounting the events.~
 @1068 = ~I don't know... they seemed fearful of 'The Slayer'.~
 @1069 = ~You can control that power now, and that's what matters. What happened in Spellhold, when you lost control... it can never happen again.~
 @1070 = ~And it won't. I promise you.~
 @1071 = ~You're right. If it did, not even your pleading on my behalf would save me. Not like last time.~
-@1072 = ~That's for damn sure.~ 
+@1072 = ~That's for damn sure.~ [xalc1029]
 @1073 = ~~
 @1074 = ~Although... I noticed you did leave *some* things out.~
 @1075 = ~~
-@1076 = ~Thanks. I keep a journal whenever I'm deployed. It helps a lot when I need to deliver reports to my superiors.~
+@1076 = ~Thanks. I keep a journal whenever I'm deployed. It helps a lot when I need to deliver reports to my superiors.~ [xalc1030]
 @1077 = ~~
 @1078 = ~I recall you smacking some sense into Nalia's aunt.~
 @1079 = ~Like what?~ 
@@ -1069,8 +1069,8 @@ Do not keep us waiting for long."~
 @1090 = ~And... I look forward to making more of those kinds of memories with you, my dear.~
 @1091 = ~I thought you'd tell them about the time you were nearly transformed into a vampire, by Bodhi.~
 @1092 = ~Yes, well... honestly...~
-@1093 = ~If I'd told them, it'd only be a matter of time before my father, and Rohma, would hear about it. I'd rather not trouble them with the knowledge of how close I was to turning into a monster.~ 
-@1094 = ~But... I haven't forgotten how you saved me, <CHARNAME>. And I never will.~
+@1093 = ~If I'd told them, it'd only be a matter of time before my father, and Rohma, would hear about it. I'd rather not trouble them with the knowledge of how close I was to turning into a monster.~ [xalc1017]
+@1094 = ~...But I haven't forgotten how you saved me, <CHARNAME>. And I never will.~ [xalc1018]
 @1095 = ~And I'll never forget what you did for me, Schael. My corpse would still be hanging from Entar's gallows were it not for you.~
 @1096 = ~(You share a warm embrace.)~ 
 @1097 = ~There was one other thing...~ 
@@ -1095,7 +1095,7 @@ Do not keep us waiting for long."~
 @1116 = ~Come on! Let's go get Anomen and celebrate!~
 @1117 = ~Come on! Let's go and celebrate!~
 @1118 = ~The Undercity... They must be nearby.~
-@1119 = ~Look at this ... I count at least five distinct sets of tracks. They lead toward the temple.~
+@1119 = ~Look at this ... I count at least five distinct sets of tracks. They lead toward the temple.~ [xalc1019]
 @1120 = ~Let's go.~
 @1121 = ~We should scout around first. Stay alert.~
 @1122 = ~Right.~
@@ -1112,13 +1112,13 @@ Schael has asked that I get us a room at one of the inns in Amn. I can hardly co
 @1132 = ~The man with the scar on his neck is Beno.~
 @1133 = ~Skie, do you think you can sneak Rohma out of there?~
 @1134 = ~How'd you get in there without them detecting you?~
-@1135 = ~One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~
+@1135 = ~One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~ [xalc1020]
 @1136 = ~(Skie takes the ring from Schael.)~
 @1137 = ~Skie, whatever you do, don't put it on. You'll be teleported. You MUST place it on Rohma's finger.~
 @1138 = ~We won't tell. Just be careful.~
 @1139 = ~Skie, do you think you can get to Rohma without being seen?~
 @1140 = ~Glint, do you think you can get to Rohma without being seen?~
-@1141 = ~You wouldn't need to move her... One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~
+@1141 = ~You wouldn't need to move her... One of the city wizards gave us this ring. If you slip it on to Rohma's finger, she'll be teleported to safety.~ [xalc1021]
 @1142 = ~That's the last of them...~ 
 @1143 = ~Rohma... thank Tymora that Skie got her out in time.~
 @1144 = ~(Glint takes the ring from Schael.)~
@@ -1161,7 +1161,7 @@ Schael has asked that I get us a room at one of the inns in Amn. I can hardly co
 @1181 = ~No, I'm sorry. No mercy.~
 @1182 = ~You have the Soultaker dagger. Give it to me, I'll do the deed. It's the only way you'll be free of him for good.~
 @1183 = ~You have the Soultaker dagger. Give it to me, I'll do the deed. It's the only way we'll be free of him for good.~
-@1184 = ~Any last words?~
+@1184 = ~Any last words?~ [xalc1031]
 @1185 = ~To hells with you, and your father!~ 
 @1186 = ~(She plunges the dagger into his heart. His mouth opens as if to cry in pain, but strangely, no sound is heard. A gray mist rises out of the gaping wound in his chest, and coalesces into the form of a man; it's Beno, you're sure of it.)~
 @1187 = ~(For a brief moment, the spirit gazes down at its physical body, with a look of wonder and confusion. That confusion turns to terror as the spirit is slowly drawn into the blade of the dagger. The spirit turns as if to flee, but it is no use. You hear a piercing scream in your mind as the last remnants of the spirit are swallowed up by the dagger.)~   
@@ -1173,7 +1173,7 @@ Schael has asked that I get us a room at one of the inns in Amn. I can hardly co
 @1193 = ~(Schael walks over to the now detached head, picks it up, and places it into her pack.)~
 @1194 = ~~
 @1195 = ~Are you alright? That couldn't have been easy for you, love.~
-@1196 = ~I'll be fine once I see Rohma. Let's go.~ 
+@1196 = ~I'll be fine once I see Rohma. Let's go.~ [xalc1032]
 @1197 = ~Are you alright? That couldn't have been easy for you.~
 @1198 = ~Schael... I'm sorry.~
 @1199 = ~What?~
@@ -1220,14 +1220,14 @@ Corwin has arrested Beno Famari for kidnapping and attempted murder. Hopefully, 
 @1237 = ~Yes mommy.~
 @1238 = ~Mommy?~ 
 @1239 = ~I'm glad to have been able to help.~
-@1240 = ~Thanks for the help back there.~
+@1240 = ~Thanks for the help back there.~ [xalc1035]
 @1241 = ~Are you sure you're alright, love?~
 @1242 = ~Are you sure you're alright, Captain?~
-@1243 = ~A few cracked ribs, but it's nothing that a healer and a nice, hot bath can't fix... what happened while I was out?~
+@1243 = ~A few cracked ribs, but it's nothing that a healer and a nice, hot bath can't fix... What happened while I was out?~ [xalc1033]
 @1244 = ~~
 @1245 = ~That golem sure gave you a good squeeze.~
-@1246 = ~Nothing. Just the small matter of having my soul ripped out from me. Imoen too.~
-@1247 = ~What!?~
+@1246 = ~Nothing. Just the small matter of having my soul ripped out of my body. Imoen suffered the same.~
+@1247 = ~What!?~ [xalc1034]
 @1248 = ~It's done. Thank the gods.~ [xalc1151]
 @1249 = ~I just hope we've done the right thing.~
 @1250 = ~He's going to be fine — the healers said that he'll be up and about in the morning.~
@@ -1260,7 +1260,7 @@ Corwin has arrested Beno Famari for kidnapping and attempted murder. Hopefully, 
 @1277 = ~~
 @1278 = ~It's late... I need to get Rohma to bed.~
 @1279 = ~I'll come with you.~
-@1280 = ~I'm glad that you chose me for this new assignment.~
+@1280 = ~I'm glad that you chose me for this new assignment.~ [xalc1036]
 @1281 = ~~
 @1282 = ~I've learned to rely on your skill and counsel, my friend.~
 @1283 = ~It was a difficult decision.~
@@ -1289,7 +1289,7 @@ I'm eager to finally meet Schael's family. First impressions are lasting impress
 @1305 = ~Slaver Conspiracy
 The harbor master provided me with the shipping manifests for a new company called Winston Ventures. Unfortunately, the manifests are encrypted. I'll have to find some way to decode them.~
 @1306 = ~You alright?~ [xalc1111]
-@1307 = ~You look like you've seen a ghost.~
+@1307 = ~You look like you've seen a ghost.~ [xalc1037]
 @1308 = ~(She looks at the statue the townsfolk erected in her image.)~
 @1309 = ~I... I'm fine... ~
 @1310 = ~Honey, what's wrong? You can tell me.~
@@ -1301,7 +1301,7 @@ The harbor master provided me with the shipping manifests for a new company call
 @1316 = ~I know, love. Come here.~ 
 @1317 = ~(You share a long and tender embrace.)~
 @1318 = ~Thank you, Schael... For believing in me, and for believing in us.~ 
-@1319 = ~We have each other... and we have Rohma. The new memories we make together will drown out those dark echoes. You'll see.~
+@1319 = ~We have each other... and we have Rohma. The new memories we make together will drown out those dark echoes. You'll see.~ [xalc1038]
 @1320 = ~Dark Circumstances
 Schael and I shared a tender moment; it seems that we are still dealing with the trauma of my escape from the city. Together, with Rohma, maybe we can make new memories to silence the dark echoes of my past.~ 
 @1321 = ~I look forward to it.~
@@ -1324,14 +1324,14 @@ Schael and I shared a tender moment; it seems that we are still dealing with the
 @1338 = ~Hah, I'm surprised you remember.~
 @1339 = ~As if I didn't hang on your every word, love.~
 @1340 = ~Beautiful earrings for an even more beautiful woman. I remember.~
-@1341 = ~She was a little upset when I told her I gave them away, but when I explained why, she understood.~
+@1341 = ~She was a little upset when I told her I gave them away, but when I explained why, she understood.~ [xalc1039]
 @1342 = ~Well... as long as your flings with her are a thing of the past...~
 @1343 = ~They are. Come here.~
 @1344 = ~(You kiss and embrace).~
 @1345 = ~Right. Thank you, Schael.~
 @1346 = ~Let's not let any past relationships jeopardize our love for one another.~
 @1347 = ~(She smiles)~
-@1348 = ~Sweet of you to say.~
+@1348 = ~Sweet of you to say.~ [xalc1040]
 @1349 =  ~Hey — you alright?~
 
 
@@ -1788,7 +1788,7 @@ Captain Corwin assured me that she's willing to do what is needed to accomplish 
 @1817 = ~Of course. It's yours, if you have the coin.~
 @1818 = ~As I suspected. These artifacts were reported stolen years ago. How did you acquire these?~
 @1819 = ~I can assure you that I only procure from the most reputable vendors.~
-@1820 = ~Some of these items once belonged to Balduran, the founder of Baldur's Gate. They were stolen years ago from the Hall of Wonders. I'm sure the Dukes and the city historians would greatly appreciate it if we could bring them back to the Gate.~
+@1820 = ~Some of these items once belonged to Balduran, the founder of Baldur's Gate. They were stolen years ago from the Hall of Wonders. I'm sure the Council and the city historians would greatly appreciate it if we could bring them back to the Gate.~ [xalc1199]
 @1821 = ~I'm sure they would, but they must cost a fortune!~
 @1822 = ~I'm aware. If we could bring even one of these items back though...~
 @1823 = ~It's clear that this is important to you. Let's do what we can.~
@@ -1803,7 +1803,7 @@ Captain Corwin has identified some stolen merchandise that once belonged to Bald
 @1831 = ~No. There are better ways to spend the money. Some other time, perhaps.~ 
 @1832 = ~Thank you, love.~ 
 @1833 = ~Rohma, look what <CHARNAME> brought for you!~
-@1834 = ~She's lied to me before, but this time I think she's telling truth. I'd like for us to help her, but it's your decision.~
+@1834 = ~She's lied to me before, but this time I think she's telling the truth. I'd like for us to help her, but it's your decision.~ [xalc1001]
 @1835 = ~Very well. Tianna - tell me, where is this Jasper fellow? Perhaps I can talk him into forgiving your debt.~ 
 @1836 = ~I'm afraid it's not my problem.~
 @1837 = ~I'd stay and celebrate, but I can't stomach being at the side of a lich any longer. Farewell.~

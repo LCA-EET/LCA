@@ -92,6 +92,12 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 	COPY ~%MOD_FOLDER%/sod/wav/xalcsd07.wav~ 	~override~
 	COPY ~%MOD_FOLDER%/sod/wav/xalcsd08.wav~ 	~override~
 	COPY ~%MOD_FOLDER%/sod/wav/xalcsd09.wav~ 	~override~
+	COPY ~%MOD_FOLDER%/sod/wav/xalcsd10.wav~ 	~override~
+	COPY ~%MOD_FOLDER%/sod/wav/xalcsd11.wav~ 	~override~
+	COPY ~%MOD_FOLDER%/sod/wav/xalcsd12.wav~ 	~override~
+	COPY ~%MOD_FOLDER%/sod/wav/xalcsd13.wav~ 	~override~
+	COPY ~%MOD_FOLDER%/sod/wav/xalcsd14.wav~ 	~override~
+	COPY ~%MOD_FOLDER%/sod/wav/xalcsd15.wav~ 	~override~
 //}
 
 //{ New Creatures
