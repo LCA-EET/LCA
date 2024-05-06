@@ -1129,6 +1129,7 @@ END
 		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 		GlobalLT("XA_LC_CorwinSex2_Init", "GLOBAL", 1)
 		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
+		Global("XA_LC_CorwinCanHeal", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)

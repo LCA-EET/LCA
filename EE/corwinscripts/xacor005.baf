@@ -113,3 +113,19 @@ THEN
 		Continue()
 END
 //}
+
+//{ Check if Corwin is a Healer (needed for second intimate encounter)
+IF
+	OR(3)
+		HaveSpellRES("SPPR103") // Cure Light Wounds
+		HaveSpellRES("SPPR315") // Cure Medium Wounds
+		HaveSpellRES("SPPR401") // Cure Serious Wounds
+		HaveSpellRES("SPPR502") // Cure Critical Wounds
+		HaveSpellRES("SPPR514") // Mass Cure
+	GlobalLT("XA_LC_CorwinCanHeal", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_CorwinCanHeal", "GLOBAL", 1)
+		Continue()
+END
+//}
