@@ -278,7 +278,7 @@ END
 
 //{ cre
 	SET wavIdx = 1000
-	OUTER_WHILE (wavIdx < 1200) BEGIN
+	OUTER_WHILE (wavIdx < 1250) BEGIN
 		ACTION_IF FILE_EXISTS ~%MOD_FOLDER%/bg2/wav/corwin/xalc%wavIdx%.wav~ THEN BEGIN
 			COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc%wavIdx%.wav~ ~override~
 		END

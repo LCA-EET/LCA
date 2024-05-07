@@ -2271,7 +2271,8 @@ END
 			== BMINSC
 			@338 /* ~Yes, so I and Dynaheir travelled together for more than a thumb, but less than a furlong. Quite a long time.~*/
 			== XACORWIB
-			@339 /* ~And in that.. time, how in Toril did she put up with your insanity? Everytime you open your mouth I want to scream!~*/
+			@339 /* ~And in that.. time, how in Toril did she put up with your insanity?~*/
+			= @355 /* ~Every time you open your mouth I want to scream!~ [xalc1235] */
 			== BMINSC
 			@340 /* ~Ah, my charge was a master of the magical arts, as you know. When she needed some peace and quiet, she would simply mutter a Silence spell.~ */
 			= @341 /* ~I did not mind, as Boo is perfectly capable of speaking on my behalf.~ */
