@@ -777,7 +777,9 @@ APPEND ~XACOR25J~
 	IF ~~ THEN BEGIN XA_CorwinPregnant_Third_3
 		SAY @1649 /* ~I see a change in you, love. Your skill in battle is unlike anything I've ever seen. You're becoming something... greater, if that makes sense.~ */
 		
-		= @1650 /* ~You know that I've never been one to believe in prophecies. But, if you did have to choose between godhood, and this life... what would that mean for us? For our child? There's nothing I can offer you that can compare with that.~ */
+		= @1650 /* ~You know that I've never been one to believe in prophecies. But, if you did have to choose between godhood, and this life...? */
+		
+		= @1644 /*What would that mean for us? For our child? There's nothing I can offer you that can compare with that.~*/
 		
 		IF ~~ THEN REPLY @1651 /*  ~Your love is enough, Schael. It's more than any <PRO_MANWOMAN> can ask for.~*/
 		GOTO XA_CorwinPregnant_Third_4A
