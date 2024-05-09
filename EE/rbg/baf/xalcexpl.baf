@@ -1,8 +1,0 @@
-IF
-	GlobalLT("XA_LC_ExploreArea", "MYAREA", 1)
-THEN
-	RESPONSE #100
-		Explore()
-		SetGlobal("XA_LC_ExploreArea", "MYAREA", 1)
-		Continue()
-END

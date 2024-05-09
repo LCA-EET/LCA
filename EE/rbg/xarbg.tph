@@ -509,28 +509,10 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	BUT_ONLY
 //}
 
-ACTION_DEFINE_ARRAY bgAreaScripts
-BEGIN
-	xaas100
-	xaas229
-	xaas130
-	xaas105
-	xaas164
-	xaas107 
-	xaas103
-	xaas142
-	xaas106
-	xaas141
-END
-
-ACTION_PHP_EACH bgAreaScripts AS _ => bgArea
-BEGIN
-	// Apply Exploration Script & Bence Spawning Script
-	EXTEND_TOP ~%bgArea%.bcs~ ~%MOD_FOLDER%/rbg/baf/xalcexpl.baf~
-	EXTEND_TOP ~%bgArea%.bcs~ ~%MOD_FOLDER%/rbg/baf/xalcbspw.baf~
-END
-
 //{ Script Extensions
+	/* Explore BG1 Areas, and cause Bence to spawn when the debriefing timer expires. */
+	EXTEND_TOP_REGEXP ~xaas.+\.bcs$~ ~%MOD_FOLDER%/rbg/baf/xalcbg1a.baf~
+
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~
 	EXTEND_BOTTOM ~xadings.bcs~	~%MOD_FOLDER%/rbg/baf/xadings.baf~
 	EXTEND_TOP ~xabalrbg.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalegg.baf~
@@ -559,34 +541,34 @@ END
 		//{ Male Townspeople
 			ACTION_DEFINE_ARRAY maleTownspeople
 			BEGIN
-				xaa731
-				xaa1190
-				xaa849
-				xaa694
-				xaa877
-				xaa695
-				xaa463
-				xaa151
-				xaa166
-				xaa180
-				xaa172
-				xaa250
-				xaa170
-				xaa132
-				xaa452
-				xaa583
-				xaa498
-				xaa1207
-				xaa1208
-				xaa1209
-				xaa123
-				xaa124
-				xaa128
-				xaa126
-				xaa131
-				xaa958
-				xaa959
-				xaa960
+				xaa731		// mtob2
+				xaa1190		// mtob3
+				xaa849		// mtob6
+				xaa694		// mtob7
+				xaa877		// mtob8
+				xaa695		// mtob9
+				xaa463		// mtowba
+				xaa151		// mtowba_a
+				xaa166		// mtowba_b
+				xaa180		// mtowba_c
+				xaa172		// mtowba_d
+				xaa250		// mtowba_e
+				xaa170		// mtowbasc
+				xaa132		// mtowbasn
+				xaa452		// mtowbast
+				xaa583		// mtowbax
+				xaa498		// mtowbesn
+				xaa1207		// mtowwon1
+				xaa1208		// mtowwon2
+				xaa1209		// mtowwon3
+				xaa123		// mtwbax_a
+				xaa124		// mtwbax_b
+				xaa128		// mtwbax_c
+				xaa126		// mtwbax_d
+				xaa131		// mtwbax_e
+				xaa958		// mtwslim
+				xaa959		// mtwslim2
+				xaa960		// mtwslim3
 			END
 			
 			ACTION_PHP_EACH maleTownspeople AS _ => maleTownsperson
@@ -601,23 +583,23 @@ END
 		//{ Female Townspeople
 			ACTION_DEFINE_ARRAY femaleTownspeople
 			BEGIN
-				xaa548
-				xaa987
-				xaa696
-				xaa560
-				xaa167
-				xaa375
-				xaa251
-				xaa130
-				xaa134
-				xaa129
-				xaa291
-				xaa605
-				xaa127
-				xaa140
-				xaa163
-				xaa135
-				xaa168
+				xaa548	// ftowb5
+				xaa987	// ftowb6
+				xaa696	// ftowb7
+				xaa560	// ftowba
+				xaa167	// ftowba_a
+				xaa375	// ftowba_b
+				xaa251	// ftowba_c
+				xaa130	// ftowba_d
+				xaa134	// ftowba_e
+				xaa129	// ftowbasc
+				xaa291	// ftowbasn
+				xaa605	// ftowbax
+				xaa127	// ftwbax_a
+				xaa140	// ftwbax_b
+				xaa163	// ftwbax_c
+				xaa135	// ftwbax_d
+				xaa168	// ftwbax_e
 			END
 			
 			ACTION_PHP_EACH femaleTownspeople AS _ => femaleTownsperson
@@ -632,19 +614,19 @@ END
 		//{ Noblemen
 			ACTION_DEFINE_ARRAY noblemen
 			BEGIN
-				xaa257
-				xaa200
-				xaa524
-				xaa372
-				xaa396
-				xaa730
-				xaa1041
-				xaa932
-				xaa359
-				xaa767
-				xaa532
-				xaa521
-				xaa755
+				xaa257 	// nobbax_a
+				xaa200 	// nobbax_b
+				xaa524 	// nobbax_c
+				xaa372 	// nobbax_d
+				xaa396 	// nobbax_e
+				xaa730 	// nobl11
+				xaa1041 // nobl12
+				xaa932 	// nobl14
+				xaa359 	// noblba_a
+				xaa767 	// noblba_b
+				xaa532 	// noblba_c
+				xaa521 	// noblba_d
+				xaa755 	// noblba_e
 			END
 			
 			ACTION_PHP_EACH noblemen AS _ => nobleman
@@ -659,19 +641,19 @@ END
 		//{ Noblewomen
 			ACTION_DEFINE_ARRAY noblewomen
 			BEGIN
-				xaa1039
-				xaa1353
-				xaa1334
-				xaa728
-				xaa360
-				xaa1078
-				xaa514
-				xaa1090
-				xaa361
-				xaa397
-				xaa402
-				xaa369
-				xaa370
+				xaa1039	// nobw5
+				xaa1353 // nobw7
+				xaa1334 // nobw8
+				xaa728	// nobw9
+				xaa360	// nobwba
+				xaa1078 // nobwba_a
+				xaa514	// nobwba_d
+				xaa1090 // nobwba_e
+				xaa361	// nowbax_a
+				xaa397	// nowbax_b
+				xaa402	// nowbax_c
+				xaa369	// nowbax_d
+				xaa370	// nowbax_e
 			END
 			
 			ACTION_PHP_EACH noblewomen AS _ => noblewoman
