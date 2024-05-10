@@ -2,7 +2,7 @@
 	/* Copyright Notice
 	Copyright © 2024 Daniel Valle, LCA
 	 
-	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and\or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 	The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
@@ -11,22 +11,22 @@
 
 	/* ARTWORK CREDITS
 
-	Defender of Baldur's Gate Cutscene - The Festival of the Middle Ages, by Taehoon Kang. https://www.artstation.com/taegongsin
+	Defender of Baldur's Gate Cutscene - The Festival of the Middle Ages, by Taehoon Kang. https://www.artstation.com\taegongsin
 
-	Journey to Saradush Cutscene - Medeival City Under Siege, by Raymond Minnaar. https://www.deviantart.com/raymondminnaar/art/Avalon-Lords-Castle-Siege-450232609
+	Journey to Saradush Cutscene - Medeival City Under Siege, by Raymond Minnaar. https://www.deviantart.com\raymondminnaar\art\Avalon-Lords-Castle-Siege-450232609
 
 	Demon Knight, by Anakin Lee
-	https://www.artstation.com/artwork/d0mbQ
-	https://twitter.com/li_anakin
+	https://www.artstation.com\artwork\d0mbQ
+	https://twitter.com\li_anakin
 	
 	Basilisk Figurine
-	https://www.dndbeyond.com/monsters/16801-basilisk
-	Used in accordance with the Wizards of the Coast Fan Content policy, located here: https://company.wizards.com/en/legal/fancontentpolicy
+	https://www.dndbeyond.com\monsters\16801-basilisk
+	Used in accordance with the Wizards of the Coast Fan Content policy, located here: https://company.wizards.com\en\legal\fancontentpolicy
 	*/
 
 	/* DIALOG CREDITS
 
-	The dialog from the revised sewer cutscene at the end of SoD used with permission from SilentGuy2011 (https://www.deviantart.com/silentguy2011). Check out his DA page, particularly the "Baldur's Gate SoD: Dragonspear Crusade" fanfiction - it's very good! 
+	The dialog from the revised sewer cutscene at the end of SoD used with permission from SilentGuy2011 (https://www.deviantart.com\silentguy2011). Check out his DA page, particularly the "Baldur's Gate SoD: Dragonspear Crusade" fanfiction - it's very good! 
 
 	Thanks again for allowing me to use some of your work!
 
@@ -47,12 +47,13 @@
 	*/
 //}
 
-BACKUP ~%MOD_FOLDER%/backup~
+BACKUP ~%MOD_FOLDER%\backup~
 
 AUTHOR ~Daniel Valle, lcamod@danielvalle.net~
 
-AUTO_TRA ~%MOD_FOLDER%/tra/%s~ //automatically associate .tras to their respective .D files
-LANGUAGE ~English~ ~english~ ~%MOD_FOLDER%/tra/english/xalca.tra~
+AUTO_TRA ~%MOD_FOLDER%\tra\%s~ //automatically associate .tras to their respective .D files
+AUTO_EVAL_STRINGS
+LANGUAGE ~English~ ~english~ ~%MOD_FOLDER%\tra\english\xalca.tra~
 
 BEGIN
 @800 /* ~Love Conquers All (LCA)~ */
@@ -70,30 +71,31 @@ END ELSE BEGIN
 	PRINT @802  // ~Enhanced Edition Trilogy (EET) mod has NOT been detected.~ 
 END
 
-INCLUDE ~%MOD_FOLDER%/assistant/xaassistant.tph~
+INCLUDE ~%MOD_FOLDER%\assistant\xaassistant.tph~
+INCLUDE ~%MOD_FOLDER%\functions.tph~
 
 SILENT
 
 ACTION_IF (isEET = 1) THEN BEGIN
-	INCLUDE ~%MOD_FOLDER%/bg1/xabg1.tph~
-	INCLUDE ~%MOD_FOLDER%/sod/xasod.tph~
-	INCLUDE ~%MOD_FOLDER%/bg2/xabg2.tph~
-	INCLUDE ~%MOD_FOLDER%/rbg/xarbg.tph~
-	INCLUDE ~%MOD_FOLDER%/tob/xatob.tph~
+	INCLUDE ~%MOD_FOLDER%\bg1\xabg1.tph~
+	INCLUDE ~%MOD_FOLDER%\sod\xasod.tph~
+	INCLUDE ~%MOD_FOLDER%\bg2\xabg2.tph~
+	INCLUDE ~%MOD_FOLDER%\rbg\xarbg.tph~
+	INCLUDE ~%MOD_FOLDER%\tob\xatob.tph~
 END ELSE BEGIN
 	ACTION_IF(GAME_IS ~bgee~) THEN BEGIN
 		PRINT @803  // ~Baldur's Gate Enhanced Edition detected.~ 
-		INCLUDE ~%MOD_FOLDER%/bg1/xabg1.tph~
+		INCLUDE ~%MOD_FOLDER%\bg1\xabg1.tph~
 	END
 	ACTION_IF(GAME_INCLUDES ~sod~) THEN BEGIN
 		PRINT @804  // ~Siege of Dragonspear detected.~ 
-		INCLUDE ~%MOD_FOLDER%/sod/xasod.tph~
+		INCLUDE ~%MOD_FOLDER%\sod\xasod.tph~
 	END
 	ACTION_IF(GAME_IS ~bg2ee~) THEN BEGIN
 		PRINT @805  // ~Baldur's Gate II Enhanced Edition detected.~ 
-		INCLUDE ~%MOD_FOLDER%/bg2/xabg2.tph~
-		INCLUDE ~%MOD_FOLDER%/rbg/xarbg.tph~
-		INCLUDE ~%MOD_FOLDER%/tob/xatob.tph~
+		INCLUDE ~%MOD_FOLDER%\bg2\xabg2.tph~
+		INCLUDE ~%MOD_FOLDER%\rbg\xarbg.tph~
+		INCLUDE ~%MOD_FOLDER%\tob\xatob.tph~
 	END
 END
 

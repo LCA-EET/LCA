@@ -1,0 +1,98 @@
+DEFINE_PATCH_FUNCTION xa_delete_are_actors 
+	INT_VAR xa_component_count = 0
+	
+	BEGIN
+		PATCH_IF (xa_component_count = 0) THEN BEGIN
+			READ_SHORT 0x58 xa_component_count
+		END
+		SET xa_itemsProcessed = 0
+		WHILE (xa_itemsProcessed < xa_component_count) BEGIN
+			LPF fj_are_structure
+				INT_VAR
+					fj_delete_mode = 0
+				STR_VAR
+					fj_structure_type = actor
+			END
+			xa_itemsProcessed = (xa_itemsProcessed + 1)
+		END
+	END 
+	
+DEFINE_PATCH_FUNCTION xa_delete_are_containers 
+	INT_VAR xa_component_count = 0
+	
+	BEGIN
+		PATCH_IF(xa_component_count = 0) THEN BEGIN
+			READ_SHORT 0x74 xa_component_count
+		END
+		SET xa_itemsProcessed = 0
+		WHILE (xa_itemsProcessed < xa_component_count) BEGIN
+			LPF fj_are_structure
+				INT_VAR
+					fj_delete_mode = 0
+				STR_VAR
+					fj_structure_type = container
+			END
+			xa_itemsProcessed = (xa_itemsProcessed + 1)
+		END
+	END 
+	
+DEFINE_PATCH_FUNCTION xa_delete_actor_at_index 
+	INT_VAR xa_index = 0
+	
+	BEGIN
+		LPF fj_are_structure
+			INT_VAR
+				fj_delete_mode = xa_index
+			STR_VAR
+				fj_structure_type = actor
+		END
+	END
+	
+DEFINE_PATCH_FUNCTION xa_delete_are_triggers 
+	INT_VAR xa_component_count = 0
+	
+	BEGIN
+		PATCH_IF(xa_component_count = 0) THEN BEGIN
+			READ_SHORT 0x5A xa_component_count
+		END
+		SET xa_itemsProcessed = 0
+		WHILE (xa_itemsProcessed < xa_component_count) BEGIN
+			LPF fj_are_structure
+				INT_VAR
+					fj_delete_mode = 0
+				STR_VAR
+					fj_structure_type = region
+			END
+			xa_itemsProcessed = (xa_itemsProcessed + 1)
+		END
+	END 
+	
+DEFINE_PATCH_FUNCTION xa_reset_cre
+	STR_VAR 
+		xa_dialog = ~~
+		xa_scriptName = ~~
+		xa_override = ~~
+		xa_class = ~~
+		xa_race = ~~
+		xa_general = ~~
+		xa_default = ~~
+	BEGIN
+		WRITE_ASCIIE 0x2CC ~%xa_dialog%~ #8 	// Dialogue
+		WRITE_ASCIIE 0x280 ~%xa_scriptName%~ #20  	// Script Name
+		WRITE_ASCIIE 0x248 ~%xa_override%~ #8		// Override Script
+		WRITE_ASCIIE 0x250 ~%xa_class%~ #8		// Class Script
+		WRITE_ASCIIE 0x258 ~%xa_race%~ #8		// Race Script
+		WRITE_ASCIIE 0x260 ~%xa_general%~ #8		// General Script
+		WRITE_ASCIIE 0x268 ~%xa_default%~ #8		// Default Script
+	END
+	
+DEFINE_ACTION_FUNCTION xa_copy_folder_contents
+	STR_VAR 
+		xa_relative_path = ~~
+	BEGIN
+		GET_FILE_ARRAY xa_files ~%xa_relative_path%~ ~$*~
+		ACTION_PHP_EACH xa_files AS _ => xa_file
+		BEGIN 
+			COPY ~%xa_file%~ ~override~
+		END
+	END

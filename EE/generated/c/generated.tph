@@ -1337,7 +1337,7 @@ The Cure Critical Wounds spell is a very potent version of the Cure Light Wounds
 COPY ~%MOD_FOLDER%\generated\c\spl\xac103.spl~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11142) /*~Shining Bolt~*/
 	WRITE_LONG 80 RESOLVE_STR_REF(@11143) /*~Shining Bolt
-(Invocation/Evocation)
+(Invocation\Evocation)
 
 Level: 1
 Range: 60 ft.
@@ -1350,7 +1350,7 @@ This unique ability allows Caelar to hurl a bolt of divine energy at an enemy on
 COPY ~%MOD_FOLDER%\generated\c\spl\xac104.spl~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11144) /*~Bless~*/
 	WRITE_LONG 80 RESOLVE_STR_REF(@11145) /*~Bless
-(Conjuration/Summoning)
+(Conjuration\Summoning)
 
 Level: 1
 Sphere: All

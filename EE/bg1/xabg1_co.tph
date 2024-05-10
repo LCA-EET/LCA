@@ -2,11 +2,11 @@ OUTER_SET bg1_carryover = 1
 
 //{ New Items
 	//{ Ammo Belt
-		COPY_EXISTING ~bag05.itm~ ~override/xaambelt.itm~
+		COPY_EXISTING ~bag05.itm~ ~override\xaambelt.itm~
 	//}
 	
 	//{ Flaming Fist Manual
-		COPY_EXISTING ~book09.itm~ ~override/xaffbook.itm~
+		COPY_EXISTING ~book09.itm~ ~override\xaffbook.itm~
 		SAY NAME1 @1011 /* ~Officers' Training Manual~*/
 		SAY NAME2 @1011 /* ~Officers Training Manual~ */
 		SAY UNIDENTIFIED_DESC @1012 /* ~This appears to be a Flaming Fist officers' training manual. It includes policies and procedures covering incident investigations, suspect apprehension techniques, proper etiquette when dealing with city officials, and much more. The initials "S.C." are written on the inside cover. It's clear that "S.C", whoever they are, has spent a great many hours studying the manual intently; it is well-worn, and some of the pages are coming loose from the binding.~   */
@@ -14,7 +14,7 @@ OUTER_SET bg1_carryover = 1
 	//}
 	
 	//{ Burned Letter
-		COPY_EXISTING ~scrl3z.itm~ ~override/xaltrbrn.itm~
+		COPY_EXISTING ~scrl3z.itm~ ~override\xaltrbrn.itm~
 		SAY NAME1 @1013 /* ~Burned Document~ */
 		SAY NAME2 @1013 /* ~Burned Document~  */
 		SAY UNIDENTIFIED_DESC @1014 /*~This document has been burned, but parts of it are still legible. From what you can make out, the recipient was ordered to head to a staging area north of the city, due to a spate of assassinations. They were to wait there and prepare to retake... something. You can't make it out. Who it was addressed to you cannot say, though you see what you think is a Flaming Fist insignia on the lower right corner of the page. Interesting.~ */
@@ -23,5 +23,5 @@ OUTER_SET bg1_carryover = 1
 //}
 
 //{ Ammo Belt "Store"
-	COPY_EXISTING ~bag05.sto~ ~override/xaambelt.sto~ 
+	COPY_EXISTING ~bag05.sto~ ~override\xaambelt.sto~ 
 //}

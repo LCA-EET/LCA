@@ -1,167 +1,143 @@
 PRINT @5000  /* ~Processing ToB changes...~ */
 SILENT
-INCLUDE ~%MOD_FOLDER%/generated/g/generated.tph~
+INCLUDE ~%MOD_FOLDER%\generated\g\generated.tph~
 
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/baf~
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\tob\baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\tob\d~
 
 //{ Script Extensions
-	EXTEND_TOP ~xabaltob.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalamu.baf~
-	EXTEND_TOP ~xabaltob.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalegg.baf~
-	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%/tob/baf/xabaltob.baf~
-	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%/bg2/baf/xachfight.baf~
-	EXTEND_TOP ~baldur25.bcs~	~%MOD_FOLDER%/tob/baf/xajrntob.baf~
-	EXTEND_BOTTOM ~baldur25.bcs~	~%MOD_FOLDER%/bg2/baf/xasboost.baf~
-	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/tob/baf/xap1d.baf~
+	EXTEND_TOP ~xabaltob.bcs~ 	~%MOD_FOLDER%\rbg\baf\xabalamu.baf~
+	EXTEND_TOP ~xabaltob.bcs~ 	~%MOD_FOLDER%\rbg\baf\xabalegg.baf~
+	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%\tob\baf\xabaltob.baf~
+	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%\bg2\baf\xachfight.baf~
+	EXTEND_TOP ~baldur25.bcs~	~%MOD_FOLDER%\tob\baf\xajrntob.baf~
+	EXTEND_BOTTOM ~baldur25.bcs~	~%MOD_FOLDER%\bg2\baf\xasboost.baf~
+	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%\tob\baf\xap1d.baf~
 	
-	EXTEND_TOP ~ar4000.bcs~ 	~%MOD_FOLDER%/tob/baf/xaar4000.baf~
+	EXTEND_TOP ~ar4000.bcs~ 	~%MOD_FOLDER%\tob\baf\xaar4000.baf~
 //}
 
 //{ Corwin Script
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor011.baf~ // Rejoin Processing
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor003.baf~ // Sound Adjustments
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor012.baf~ // Can Leave Check
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor014.baf~ // Can Talk - Corwin / Player
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor015.baf~ // Can Talk - BG2
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor016.baf~ // Can Talk - BG2
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor013.baf~ // Rep Handling
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor004.baf~ // Opinion Baseline
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor007.baf~ // Romance Conflict Handling
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor010.baf~ // ToB Event Handling
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor025.baf~ // ToB NPC Interactions
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor017.baf~ // Banter init / NBI
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor018.baf~ // Banter Primers BG2
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor019.baf~ // Banter Primers ToB
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor020.baf~ // Random Banters BG2
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor021.baf~ // Random Banters ToB
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor022.baf~ // Banter Error Handling
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor006.baf~ // Exp Boost on Join
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor011.baf~ // Rejoin Processing
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor003.baf~ // Sound Adjustments
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor012.baf~ // Can Leave Check
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor014.baf~ // Can Talk - Corwin \ Player
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor015.baf~ // Can Talk - BG2
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor016.baf~ // Can Talk - BG2
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor013.baf~ // Rep Handling
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor004.baf~ // Opinion Baseline
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor007.baf~ // Romance Conflict Handling
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor010.baf~ // ToB Event Handling
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor025.baf~ // ToB NPC Interactions
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor017.baf~ // Banter init \ NBI
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor018.baf~ // Banter Primers BG2
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor019.baf~ // Banter Primers ToB
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor020.baf~ // Random Banters BG2
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor021.baf~ // Random Banters ToB
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor022.baf~ // Banter Error Handling
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor006.baf~ // Exp Boost on Join
 //}
 
 ACTION_IF (bg1_carryover = 0) THEN BEGIN
-	INCLUDE ~%MOD_FOLDER%/bg1/xabg1_co.tph~
+	INCLUDE ~%MOD_FOLDER%\bg1\xabg1_co.tph~
 END
 
 ACTION_IF (sod_carryover = 0) THEN BEGIN
-	INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
+	INCLUDE ~%MOD_FOLDER%\sod\xasod_co.tph~
 END
 
 //{ Animations
 	ACTION_IF(isEET = 0) THEN BEGIN
-		COPY ~%MOD_FOLDER%/tob/anim/e276.INI~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlema1.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlema1e.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlema2.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlema2e.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemca.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemcae.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemde.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemdee.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemgh.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemghe.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemgu.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemgue.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemsc.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemsce.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemsd.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemsde.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemsl.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemsle.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemsp.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemspe.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemtw.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemtwe.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemwk.BAM~ ~override~
-		COPY ~%MOD_FOLDER%/tob/anim/mlemwke.BAM~ ~override~
+		LAF xa_copy_folder_contents
+			STR_VAR
+				xa_relative_path = ~%MOD_FOLDER%\tob\anim~
+		END
 		APPEND ~animate.ids~ ~0xE276 LEMURE~
 	END
 //}
 
 //{ Epilogues
 	//{ Caelar
-		COPY ~%MOD_FOLDER%/tob/2da/xacaeend.2da~ ~override~
+		COPY ~%MOD_FOLDER%\tob\2da\xacaeend.2da~ ~override~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5001)
 	//}
 	
 	//{ Corwin, SoD Portrait
-		COPY ~%MOD_FOLDER%/tob/2da/xacornd1.2da~ ~override~
+		COPY ~%MOD_FOLDER%\tob\2da\xacornd1.2da~ ~override~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5002)
 		
-		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd2.2da~
+		COPY_EXISTING ~xacornd1.2da~ ~override\xacornd2.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5003)
 		
-		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd3.2da~
+		COPY_EXISTING ~xacornd1.2da~ ~override\xacornd3.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5004)
 		
-		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd4.2da~
+		COPY_EXISTING ~xacornd1.2da~ ~override\xacornd4.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5005)
 		
-		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd5.2da~
+		COPY_EXISTING ~xacornd1.2da~ ~override\xacornd5.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5006)
 		
-		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd6.2da~
+		COPY_EXISTING ~xacornd1.2da~ ~override\xacornd6.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5007)
 	//}
 	
 	//{ Corwin, LCA Portrait
-		COPY ~%MOD_FOLDER%/tob/2da/xalcand1.2da~ ~override~
+		COPY ~%MOD_FOLDER%\tob\2da\xalcand1.2da~ ~override~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5002)
 		
-		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand2.2da~
+		COPY_EXISTING ~xalcand1.2da~ ~override\xalcand2.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5003)
 		
-		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand3.2da~
+		COPY_EXISTING ~xalcand1.2da~ ~override\xalcand3.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5004)
 		
-		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand4.2da~
+		COPY_EXISTING ~xalcand1.2da~ ~override\xalcand4.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5005)
 		
-		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand5.2da~
+		COPY_EXISTING ~xalcand1.2da~ ~override\xalcand5.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5006)
 		
-		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand6.2da~
+		COPY_EXISTING ~xalcand1.2da~ ~override\xalcand6.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5007)
 	//}
 //}
 
 //{ New Creatures
 	//{ Aun Argent
-		COPY_EXISTING ~xag100.cre~ ~override/xaaun.cre~ 
-		WRITE_ASCII 0x2CC ~xaaun~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xaaun~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8		// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		COPY_EXISTING ~xag100.cre~ ~override\xaaun.cre~ 
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xaaun~
+				xa_scriptName = ~xaaun~
+		END
 	//}
 	
 	//{ Baatezu
 	
 		//{ Thrix
-			COPY_EXISTING ~xag101.cre~ ~override/xathrix.cre~
-			WRITE_ASCII 0x2CC ~xathrix~ #8 	// Dialogue
-			WRITE_ASCII 0x280 ~xathrix~ #20  	// Script Name
-			WRITE_ASCII 0x248 ~xathrix~ #8		// Override Script
-			WRITE_ASCII 0x250 ~~ #8		// Class Script
-			WRITE_ASCII 0x258 ~~ #8		// Race Script
-			WRITE_ASCII 0x260 ~~ #8		// General Script
-			WRITE_ASCII 0x268 ~~ #8		// Default Script
+			COPY_EXISTING ~xag101.cre~ ~override\xathrix.cre~
+			LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xathrix~
+				xa_override = ~xathrix~
+				xa_scriptName = ~xathrix~
+		END
 		//}
 		
-		COPY_EXISTING ~xag102.cre~ ~override/xaavc1.cre~ // bdhelcat
-		COPY_EXISTING ~xag119.cre~ ~override/xaavc2.cre~ // bdbonefi
-		COPY_EXISTING ~telpit1.cre~ ~override/xaavc3.cre~ 
-		COPY_EXISTING ~demcor01.cre~ ~override/xaavc4.cre~
-		COPY_EXISTING ~xag115.cre~ ~override/xaavc5.cre~ // bdabibla
-		COPY_EXISTING ~xag116.cre~ ~override/xaavc6.cre~ // bdabigre
-		COPY_EXISTING ~xag117.cre~ ~override/xaavc7.cre~ // bdabired
-		COPY_EXISTING ~xag118.cre~ ~override/xaavc8.cre~ // bdhamatu
-		COPY_EXISTING ~xag114.cre~ ~override/xaavc9.cre~ // bdimp
-		COPY_EXISTING ~xag111.cre~ ~override/xaavc10.cre~ // bdlemure
-		COPY_EXISTING ~elfirg01.cre~ ~override/xaavc11.cre~
-		COPY_EXISTING ~elfir01.cre~ ~override/xaavc12.cre~
-		COPY_EXISTING ~xag103.cre~ ~override/xaavc13.cre~ // bderinye
+		COPY_EXISTING ~xag102.cre~ ~override\xaavc1.cre~ // bdhelcat
+		COPY_EXISTING ~xag119.cre~ ~override\xaavc2.cre~ // bdbonefi
+		COPY_EXISTING ~telpit1.cre~ ~override\xaavc3.cre~ 
+		COPY_EXISTING ~demcor01.cre~ ~override\xaavc4.cre~
+		COPY_EXISTING ~xag115.cre~ ~override\xaavc5.cre~ // bdabibla
+		COPY_EXISTING ~xag116.cre~ ~override\xaavc6.cre~ // bdabigre
+		COPY_EXISTING ~xag117.cre~ ~override\xaavc7.cre~ // bdabired
+		COPY_EXISTING ~xag118.cre~ ~override\xaavc8.cre~ // bdhamatu
+		COPY_EXISTING ~xag114.cre~ ~override\xaavc9.cre~ // bdimp
+		COPY_EXISTING ~xag111.cre~ ~override\xaavc10.cre~ // bdlemure
+		COPY_EXISTING ~elfirg01.cre~ ~override\xaavc11.cre~
+		COPY_EXISTING ~elfir01.cre~ ~override\xaavc12.cre~
+		COPY_EXISTING ~xag103.cre~ ~override\xaavc13.cre~ // bderinye
 		
 		COPY_EXISTING_REGEXP GLOB ~xaavc.+\.cre$~ ~override~ 
 		WRITE_BYTE 0x270 255 	// Set Allegiance to Enemy
@@ -170,13 +146,11 @@ END
 		WRITE_BYTE 0x273 179 	// Set Class to Imp (Baatezu)
 		WRITE_BYTE 0x274 0 		// Set Specifics to None
 		WRITE_BYTE 0x27B 19 	// Set Alignment to Lawful Evil
-		WRITE_ASCII 0x2CC ~~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~xasummon~ #8		// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+		LPF xa_reset_cre
+			STR_VAR
+				xa_override = ~xasummon~
+				xa_default = ~wtasight~
+		END
 		BUT_ONLY
 		
 		COPY_EXISTING ~xaavc4.cre~ ~override~
@@ -185,51 +159,45 @@ END
 		COPY_EXISTING ~xaavc13.cre~ ~override~
 		WRITE_ASCII 0x268 ~xaerin~ #8
 		
-		COPY_EXISTING ~xanarzu.cre~ ~override/xanarzu2.cre~
-		WRITE_LONG 0x14 36000
-		WRITE_SHORT 0x24 444
-		WRITE_SHORT 0x26 444
-		WRITE_ASCII 0x2CC ~xanarzu~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xaavboss~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~xaavboss~ #8		// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~xanarzu~ #8		// Default Script
-	//}
+		COPY_EXISTING ~xanarzu.cre~ ~override\xanarzu2.cre~
+		WRITE_LONG 0x14 36000 // Exp
+		WRITE_SHORT 0x24 444 // HP
+		WRITE_SHORT 0x26 444 // HP
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xanarzu~
+				xa_scriptName = ~xaavboss~
+				xa_override = ~xaavboss~
+				xa_default = ~xanarzu~
+		END
 	
 	//{ Bence Duncan
-		COPY_EXISTING ~xabence.cre~ ~override/xabence2.cre~ 
-		WRITE_ASCII 0x2CC ~xabence2~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xabence2~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8		// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		COPY_EXISTING ~xabence.cre~ ~override\xabence2.cre~ 
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xabence2~
+				xa_scriptName = ~xabence2~
+		END
 	//}
 	
 	//{ Beno (Amkethran)
-		COPY_EXISTING ~xabeno.cre~ ~override/xabenoam.cre~ 
-		WRITE_ASCII 0x2CC ~xabenoam~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xabenoam~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8		// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		COPY_EXISTING ~xabeno.cre~ ~override\xabenoam.cre~ 
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xabenoam~
+				xa_scriptName = ~xabenoam~
+		END
 	//}
 	
 	//{ Beno (Kanaglym Spirit)
-		COPY_EXISTING ~xabenoam.cre~ ~override/xabenosp.cre~
+		COPY_EXISTING ~xabenoam.cre~ ~override\xabenosp.cre~
 		ADD_CRE_ITEM ~minhp1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~LRING~	
-		WRITE_ASCII 0x2CC ~xabenosp~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xabenosp~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8		// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~xabenof~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xabenosp~
+				xa_scriptName = ~xabenosp~
+				xa_general = ~xabenof~
+		END
 		LPF ADD_CRE_EFFECT
 			INT_VAR
 				opcode = 65
@@ -238,37 +206,35 @@ END
 	//}
 	
 	//{ Caelar
-		COPY_EXISTING ~xac109.cre~ ~override/xacaelar.cre~ 
+		COPY_EXISTING ~xac109.cre~ ~override\xacaelar.cre~ 
 		REMOVE_CRE_ITEMS
 		ADD_CRE_ITEM ~xabroken~ #0 #0 #0 ~IDENTIFIED~ ~INV1~
-		WRITE_ASCII 0x2CC ~xacaelar~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xacaelar~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~xacaelar~ #8		// Override Script
-		WRITE_ASCII 0x250 ~xafigh01~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xacaelar~
+				xa_scriptName = ~xacaelar~
+				xa_override = ~xacaelar~
+				xa_class = ~xafigh01~
+		END
 		WRITE_LONG 0x1CC RESOLVE_STR_REF(@5009) // Bio
 		
-		COPY_EXISTING ~xacaelar.cre~ ~override/xacaela2.cre~
-		WRITE_ASCII 0x2CC ~xacaela2~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xacaela2~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~xacaela2~ #8		// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script		
+		COPY_EXISTING ~xacaelar.cre~ ~override\xacaela2.cre~
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xacaela2~
+				xa_scriptName = ~xacaela2~
+				xa_override = ~xacaela2~
+		END	
 	//}
 	
 	//{ Crusader Spirits
-		COPY_EXISTING ~xac111.cre~ ~override/xaashasp.cre~
-		WRITE_ASCII 0x2CC ~xaashasp~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xaashasp~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~xacrug~ #8			// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		COPY_EXISTING ~xac111.cre~ ~override\xaashasp.cre~
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xaashasp~
+				xa_scriptName = ~xaashasp~
+				xa_override = ~xacrug~
+		END	
 		LPF ADD_CRE_EFFECT
 			INT_VAR
 				opcode = 65
@@ -289,14 +255,11 @@ END
 		END
 		ACTION_PHP_EACH crusaderSpirits AS _ => cSpirit
 		BEGIN
-			COPY_EXISTING ~%cSpirit%.cre~ ~override/xacrug0%cid%.cre~
-			WRITE_ASCII 0x2CC ~~ #8 	// Dialogue
-			WRITE_ASCII 0x280 ~~ #20  	// Script Name
-			WRITE_ASCII 0x248 ~xacrug~ #8			// Override Script
-			WRITE_ASCII 0x250 ~~ #8		// Class Script
-			WRITE_ASCII 0x258 ~~ #8		// Race Script
-			WRITE_ASCII 0x260 ~~ #8		// General Script
-			WRITE_ASCII 0x268 ~~ #8		// Default Script
+			COPY_EXISTING ~%cSpirit%.cre~ ~override\xacrug0%cid%.cre~
+			LPF xa_reset_cre
+				STR_VAR
+					xa_override = ~xacrug~
+			END	
 			LPF ADD_CRE_EFFECT
 				INT_VAR
 					opcode = 65
@@ -307,61 +270,55 @@ END
 	//}
 	
 	//{ Dream Voice
-		COPY_EXISTING ~xalcspy.cre~ ~override/xakana1.cre~
+		COPY_EXISTING ~xalcspy.cre~ ~override\xakana1.cre~
 		SAY NAME1 @5015
 		SAY NAME2 @5015
-		WRITE_ASCII 0x2CC ~xakana1~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xakana1~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8			// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xakana1~
+				xa_scriptName = ~xakana1~
+		END	
 	//}
 	
 	//{ Elven Spirits
-		COPY_EXISTING ~suelf13.cre~ ~override/xaelf01.cre~
+		COPY_EXISTING ~suelf13.cre~ ~override\xaelf01.cre~
 		SAY NAME1 @5016
 		SAY NAME2 @5016
-		WRITE_ASCII 0x2CC ~xaelf01~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xaelf01~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8			// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xaelf01~
+				xa_scriptName = ~xaelf01~
+				xa_default = ~wtasight~
+		END	
 		LPF ADD_CRE_EFFECT
 			INT_VAR
 				opcode = 65
 				target = 1
 		END
 	
-		COPY_EXISTING ~suelf12.cre~ ~override/xaelf02.cre~
+		COPY_EXISTING ~suelf12.cre~ ~override\xaelf02.cre~
 		SAY NAME1 @5016
 		SAY NAME2 @5016
-		WRITE_ASCII 0x2CC ~~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xaelf02~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8			// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+		LPF xa_reset_cre
+			STR_VAR
+				xa_scriptName = ~xaelf02~
+				xa_default = ~wtasight~
+		END	
 		LPF ADD_CRE_EFFECT
 			INT_VAR
 				opcode = 65
 				target = 1
 		END
 		
-		COPY_EXISTING ~suelf10.cre~ ~override/xaelf03.cre~
+		COPY_EXISTING ~suelf10.cre~ ~override\xaelf03.cre~
 		SAY NAME1 @5016
 		SAY NAME2 @5016
-		WRITE_ASCII 0x2CC ~~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xaelf03~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8			// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~priet12b~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+		LPF xa_reset_cre
+			STR_VAR
+				xa_scriptName = ~xaelf03~
+				xa_race = ~priet12b~
+				xa_default = ~wtasight~
+		END
 		LPF ADD_CRE_EFFECT
 			INT_VAR
 				opcode = 65
@@ -370,75 +327,73 @@ END
 	//}
 	
 	//{ Fire Giant Scouts
-		COPY_EXISTING ~giafir01.cre~ ~override/xafgsc1.cre~
+		COPY_EXISTING ~giafir01.cre~ ~override\xafgsc1.cre~
 		SAY NAME1 @5012
 		SAY NAME2 @5012
 		WRITE_SHORT 0x24 100
 		WRITE_SHORT 0x26 100
 		WRITE_ASCII 0x280 ~xafgsc1~ #8
 		
-		COPY_EXISTING ~xafgsc1.cre~ ~override/xafgsc2.cre~
+		COPY_EXISTING ~xafgsc1.cre~ ~override\xafgsc2.cre~
 		WRITE_ASCII 0x280 ~xafgsc2~ #8
 		
-		COPY_EXISTING ~xafgsc1.cre~ ~override/xafgsc3.cre~
+		COPY_EXISTING ~xafgsc1.cre~ ~override\xafgsc3.cre~
 		WRITE_ASCII 0x280 ~xafgsc3~ #8
 	//}
 	
 	//{ Hamza
-		COPY_EXISTING ~plfarm01.cre~ ~override/xahamza.cre~
+		COPY_EXISTING ~plfarm01.cre~ ~override\xahamza.cre~
 		SAY NAME1 @5014
 		SAY NAME2 @5014
-		WRITE_ASCII 0x2CC ~xahamza~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xahamza~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~gensht01~ #8			// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xahamza~
+				xa_scriptName = ~xahamza~
+				xa_override = ~gensht01~
+		END
 	//}
 	
 	//{ Lathander Clergymen
-		COPY_EXISTING ~dawnmas.cre~ ~override/xalath01.cre~
+		COPY_EXISTING ~dawnmas.cre~ ~override\xalath01.cre~
 		SAY NAME1 @5013
 		SAY NAME2 @5013
-		WRITE_ASCII 0x2CC ~xalath01~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xalath01~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8			// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~priest6~ #8		// Race Script
-		WRITE_ASCII 0x260 ~xalath01~ #8		// General Script
-		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xalath01~
+				xa_scriptName = ~xalath01~
+				xa_race = ~priest6~
+				xa_general = ~xalath01~
+				xa_default = ~wtasight~
+		END
 	
-		COPY_EXISTING ~latkni01.cre~ ~override/xalath02.cre~
-		WRITE_ASCII 0x2CC ~xalath02~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xalath02~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8			// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+		COPY_EXISTING ~latkni01.cre~ ~override\xalath02.cre~
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xalath02~
+				xa_scriptName = ~xalath02~
+				xa_default = ~wtasight~
+		END
 		
-		COPY_EXISTING ~latkni02.cre~ ~override/xalath03.cre~
-		WRITE_ASCII 0x2CC ~xalath03~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xalath03~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8			// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+		COPY_EXISTING ~latkni02.cre~ ~override\xalath03.cre~
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xalath03~
+				xa_scriptName = ~xalath03~
+				xa_default = ~wtasight~
+		END
 	//}
 	
 	//{ Lodob
-		COPY_EXISTING ~demlord.cre~ ~override/xalodob.cre~
+		COPY_EXISTING ~demlord.cre~ ~override\xalodob.cre~
 		SAY NAME1 @5011
 		SAY NAME2 @5011
-		WRITE_ASCII 0x2CC ~xalodob~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xalodob~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8			// Override Script
-		WRITE_ASCII 0x250 ~demlord~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xalodob~
+				xa_scriptName = ~xalodob~
+				xa_class = ~demlord~
+				xa_default = ~wtasight~
+		END
 		LPF ADD_CRE_EFFECT
 			INT_VAR
 				opcode = 65
@@ -447,42 +402,38 @@ END
 	//}
 	
 	//{ Nederlok
-		COPY_EXISTING ~xanederl.cre~ ~override/xatobned.cre~
-		WRITE_ASCII 0x2CC ~xatobned~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xatobned~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8			// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		COPY_EXISTING ~xanederl.cre~ ~override\xatobned.cre~
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xatobned~
+				xa_scriptName = ~xatobned~
+		END
 	//}
 	
 	//{ Rohma (Child Wraith)
-		COPY_EXISTING ~xarohma.cre~ ~override/xarohma4.cre~
-		WRITE_ASCII 0x2CC ~xarohma4~ #8 	// Dialogue
-		WRITE_ASCII 0x280 ~xarohma4~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8			// Override Script
-		WRITE_ASCII 0x250 ~~ #8		// Class Script
-		WRITE_ASCII 0x258 ~~ #8		// Race Script
-		WRITE_ASCII 0x260 ~~ #8		// General Script
-		WRITE_ASCII 0x268 ~~ #8		// Default Script
+		COPY_EXISTING ~xarohma.cre~ ~override\xarohma4.cre~
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xarohma4~
+				xa_scriptName = ~xarohma4~
+		END
 	//}
 	
 	//{ Spirit Head
-		COPY_EXISTING ~head1.cre~ ~override/xahead1.cre~
+		COPY_EXISTING ~head1.cre~ ~override\xahead1.cre~
 		WRITE_ASCII 0x2CC ~xahead1~ #8 	// Dialogue
 	//}
 //}
 
 //{ Items
 	//{ Caelar's Chainmail bdchanca
-		COPY_EXISTING ~xac108.itm~ ~override/xachanca.itm~
+		COPY_EXISTING ~xac108.itm~ ~override\xachanca.itm~
 		WRITE_ASCII 0x446 ~xacaelar~ #8
 		WRITE_LONG 0x45E RESOLVE_STR_REF(@5028)
 	//}
 
 	//{ Caelar's Cloak new
-		COPY ~%MOD_FOLDER%/tob/itm/xafinca1.itm~ ~override~
+		COPY ~%MOD_FOLDER%\tob\itm\xafinca1.itm~ ~override~
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@5020)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@5020)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@5021)
@@ -491,32 +442,32 @@ END
 	//}
 	
 	//{ Caelar's Helmet bdhelmca
-		COPY_EXISTING ~xac107.itm~ ~override/xahelmca.itm~
+		COPY_EXISTING ~xac107.itm~ ~override\xahelmca.itm~
 		WRITE_ASCII 0x656 ~xacaelar~ #8
 		WRITE_LONG 0x66E RESOLVE_STR_REF(@5028)
 	//}
 
 	//{ Caelar's Shield bdshldca
-		COPY_EXISTING ~xac109.itm~ ~override/xashldca.itm~
+		COPY_EXISTING ~xac109.itm~ ~override\xashldca.itm~
 		WRITE_ASCII 0x176 ~xacaelar~ #8
 		WRITE_LONG 0x18E RESOLVE_STR_REF(@5028)
 	//}
 
 	//{ Caelar's Sword + 3 bdsw1hca
-		COPY_EXISTING ~xac111.itm~ ~override/xasw1hca.itm~
+		COPY_EXISTING ~xac111.itm~ ~override\xasw1hca.itm~
 		WRITE_ASCII 0x11E ~xacaelar~ #8
 		WRITE_LONG 0x136 RESOLVE_STR_REF(@5028)
 	//}
 	
 	//{ Caelar's Sword + 5 new 
-		COPY ~%MOD_FOLDER%/tob/bam/xasw1hc5.bam~ ~override~
+		COPY ~%MOD_FOLDER%\tob\bam\xasw1hc5.bam~ ~override~
 	
-		COPY ~%MOD_FOLDER%/tob/itm/xasw1hc5.itm~ ~override~
+		COPY ~%MOD_FOLDER%\tob\itm\xasw1hc5.itm~ ~override~
 		WRITE_LONG 0x1F6 RESOLVE_STR_REF(@5028)
 	//}
 	
 	//{ Corwin's Bow + 4 (Gond) new 
-		COPY_EXISTING ~xacorbo3.itm~ ~override/xacorbo4.itm~
+		COPY_EXISTING ~xacorbo3.itm~ ~override\xacorbo4.itm~
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@5024)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@5024)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@5025)
@@ -531,7 +482,7 @@ END
 	//}
 	
 	//{ Corwin's Bow + 5 (Gond) new 
-		COPY_EXISTING ~xacorbo4.itm~ ~override/xacorbo5.itm~
+		COPY_EXISTING ~xacorbo4.itm~ ~override\xacorbo5.itm~
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@5026)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@5026)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@5027)
@@ -545,7 +496,7 @@ END
 	//}
 	
 	//{ Shattered Gear 
-		COPY_EXISTING ~misc59.itm~ ~override/xabroken.itm~
+		COPY_EXISTING ~misc59.itm~ ~override\xabroken.itm~
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@5017)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@5017)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@5018)
@@ -553,7 +504,7 @@ END
 	//}
 	
 	//{ Soultaker Dagger (Demon)
-		COPY_EXISTING ~dagg10.itm~ ~override/xastdagd.itm~
+		COPY_EXISTING ~dagg10.itm~ ~override\xastdagd.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@5019)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@5019)
 	//}
@@ -566,22 +517,15 @@ END
 
 //{ New Areas
 	//{ xa4000 ar4000 Spirit Heads (LCA - Forest Outside Saradush)
-		COPY_EXISTING ~ar4000.are~ ~override/xa4000.are~
+		COPY_EXISTING ~ar4000.are~ ~override\xa4000.are~
 		WRITE_ASCII 0x94 ~xa4000~ #8
 	//}
 	
 	//{ xag100 bd4500 Avernus Bridge
-		EXTEND_TOP ~xags100.bcs~ ~%MOD_FOLDER%/tob/baf/xa4500.baf~
-		
-		OUTER_SET expiryOffset = 0x154
-		OUTER_SET i = 0
+		EXTEND_TOP ~xags100.bcs~ ~%MOD_FOLDER%\tob\baf\xa4500.baf~
 		
 		COPY_EXISTING ~xag100.are~ ~override~
-		WHILE (i < 16) BEGIN
-			WRITE_LONG expiryOffset 0
-			expiryOffset = (expiryOffset + 0x110)
-			i = (i + 1)
-		END
+		WRITE_ASCII 0x14E4 ~xaavdoor~ #8
 		
 		//{ Disable Triggers
 			WRITE_LONG 0x1404 256 // Hell Bridge
@@ -593,6 +537,8 @@ END
 			WRITE_LONG 0x1280 RESOLVE_STR_REF(@5010)
 		//}
 		
+		LPF xa_delete_are_actors END
+
 		LPF fj_are_structure
 			INT_VAR
 				fj_type = 0
@@ -646,50 +592,27 @@ END
 				fj_name = TRBR03		
 				fj_structure_type = region
 		END
-		
-		WRITE_ASCII 0x14E4 ~xaavdoor~ #8
 	//}
 	
 	//{ xag101 bd4700 Avernus Tower Roof
-		EXTEND_TOP ~xags101.bcs~ ~%MOD_FOLDER%/tob/baf/xa4700.baf~
-		
-		OUTER_SET expiryOffset = 0x154
-		OUTER_SET i = 0
+		EXTEND_TOP ~xags101.bcs~ ~%MOD_FOLDER%\tob\baf\xa4700.baf~
 		
 		COPY_EXISTING ~xag101.are~ ~override~
-		WHILE (i < 23) BEGIN // Disable the existing area actors
-			WRITE_LONG expiryOffset 0
-			expiryOffset = (expiryOffset + 0x110)
-			i = (i + 1)
-		END
-		
 		//{ Disable Hellevator
 			WRITE_LONG 0x19EC 256
 		//}
+		
+		LPF xa_delete_are_actors END
 	//}
 	
 	//{ xag102 bd5300 Kanaglym
-		EXTEND_TOP ~xags102.bcs~ ~%MOD_FOLDER%/tob/baf/xa5300.baf~
+		EXTEND_TOP ~xags102.bcs~ ~%MOD_FOLDER%\tob\baf\xa5300.baf~
 		
-		OUTER_SET expiryOffset = 0x154
-		OUTER_SET containerFlagOffset = 0x39A8
-		OUTER_SET i = 0
 		COPY_EXISTING ~xag102.are~ ~override~
-		//{ Disable Actors
-			WHILE (i < 39) BEGIN
-				WRITE_LONG expiryOffset 0
-				expiryOffset = (expiryOffset + 0x110)
-				i = (i + 1)
-			END
-		//}
 		
-		i = 0
-		//{ Disable Containers
-			WHILE (i < 4) BEGIN
-				WRITE_LONG containerFlagOffset 32
-				containerFlagOffset = (containerFlagOffset + 0xC0)
-				i = (i + 1)
-			END
+		//{ Change Travel Trigger to Info Trigger, and Update Text String
+			WRITE_SHORT 0x2AAC 1
+			WRITE_LONG 0x2AF0 RESOLVE_STR_REF(@5008)
 		//}
 		
 		//{ Disable Triggers
@@ -699,61 +622,61 @@ END
 			WRITE_LONG 0x2D38 256
 		//}
 		
-		//{ Change Travel Trigger to Info Trigger, and Update Text String
-			WRITE_SHORT 0x2AAC 1
-			WRITE_LONG 0x2AF0 RESOLVE_STR_REF(@5008)
+		LPF xa_delete_are_actors END
+		LPF xa_delete_are_containers END
+		
+		//{ Crusader Spirit NPCs
+			LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 800
+					fj_loc_y = 590
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = Ashatiel
+					fj_cre_resref = xaashasp
+			END
+			
+			LPF fj_are_structure INT_VAR fj_loc_x = 721 fj_loc_y =455 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug00 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 928 fj_loc_y =748 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug01 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 494 fj_loc_y =567 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug02 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 395 fj_loc_y =595 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug03 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 1100 fj_loc_y =610 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug04 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 1180 fj_loc_y =865 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug05 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 500 fj_loc_y =500 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug06 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 1000 fj_loc_y =520 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug07 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 975 fj_loc_y =830 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug00 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 375 fj_loc_y =650 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug01 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 1200 fj_loc_y =630 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug02 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 1175 fj_loc_y =920 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug03 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 815 fj_loc_y =500 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug04 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 625 fj_loc_y =610 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug05 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 783 fj_loc_y =733 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug06 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 708 fj_loc_y =962 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug07 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 907 fj_loc_y =940 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug00 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 931 fj_loc_y =477 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug01 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 678 fj_loc_y =546 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug02 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 915 fj_loc_y =830 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug03 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 631 fj_loc_y =927 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug04 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 1010 fj_loc_y =580 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug05 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 970 fj_loc_y =930 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug06 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 615 fj_loc_y =510 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug07 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 830 fj_loc_y =838 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug00 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 890 fj_loc_y =535 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug01 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 440 fj_loc_y =620 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug02 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 1050 fj_loc_y =685 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug03 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 1050 fj_loc_y =914 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug04 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 530 fj_loc_y =940 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug05 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 616 fj_loc_y =995 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug06 fj_name = ghost END
+			LPF fj_are_structure INT_VAR fj_loc_x = 900 fj_loc_y =679 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug07 fj_name = ghost END
 		//}
-		
-		LPF fj_are_structure
-			INT_VAR
-				fj_loc_x = 800
-				fj_loc_y = 590
-			STR_VAR
-				fj_structure_type = actor
-				fj_name = Ashatiel
-				fj_cre_resref = xaashasp
-		END
-		
-		LPF fj_are_structure INT_VAR fj_loc_x = 721 fj_loc_y =455 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug00 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 928 fj_loc_y =748 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug01 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 494 fj_loc_y =567 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug02 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 395 fj_loc_y =595 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug03 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 1100 fj_loc_y =610 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug04 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 1180 fj_loc_y =865 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug05 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 500 fj_loc_y =500 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug06 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 1000 fj_loc_y =520 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug07 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 975 fj_loc_y =830 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug00 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 375 fj_loc_y =650 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug01 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 1200 fj_loc_y =630 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug02 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 1175 fj_loc_y =920 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug03 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 815 fj_loc_y =500 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug04 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 625 fj_loc_y =610 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug05 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 783 fj_loc_y =733 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug06 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 708 fj_loc_y =962 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug07 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 907 fj_loc_y =940 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug00 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 931 fj_loc_y =477 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug01 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 678 fj_loc_y =546 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug02 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 915 fj_loc_y =830 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug03 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 631 fj_loc_y =927 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug04 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 1010 fj_loc_y =580 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug05 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 970 fj_loc_y =930 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug06 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 615 fj_loc_y =510 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug07 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 830 fj_loc_y =838 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug00 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 890 fj_loc_y =535 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug01 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 440 fj_loc_y =620 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug02 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 1050 fj_loc_y =685 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug03 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 1050 fj_loc_y =914 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug04 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 530 fj_loc_y =940 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug05 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 616 fj_loc_y =995 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug06 fj_name = ghost END
-		LPF fj_are_structure INT_VAR fj_loc_x = 900 fj_loc_y =679 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug07 fj_name = ghost END
 	//}
 	
 	//{ xa5501 Amkethran Tavern
-		COPY ~%MOD_FOLDER%/tob/are/xa5501.are~ ~override~
+		COPY ~%MOD_FOLDER%\tob\are\xa5501.are~ ~override~
 	//}
 	
 	//{ xabye ar4500 Pocket Plane
-		COPY ~%MOD_FOLDER%/tob/are/xabye.are~ ~override~
+		COPY ~%MOD_FOLDER%\tob\are\xabye.are~ ~override~
 	//}
 	
 	//{ 2DA Modifications

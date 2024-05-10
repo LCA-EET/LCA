@@ -1,11 +1,11 @@
 PRINT @3000  /* ~Processing BG2 changes...~ */
 SILENT
 
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/corwinscripts~
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf~
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf/params~
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf/cutscenes~
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\corwinscripts~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\bg2\baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\bg2\baf\params~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\bg2\baf\cutscenes~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\bg2\d~
 
 ACTION_IF (isEET = 0) THEN BEGIN
 	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~AUTINN_CREW~)
@@ -79,53 +79,53 @@ ACTION_IF (isEET = 0) THEN BEGIN
 	END
 END
 
-INCLUDE ~%MOD_FOLDER%/generated/d/generated.tph~
+INCLUDE ~%MOD_FOLDER%\generated\d\generated.tph~
 
 ACTION_IF (bg1_carryover = 0) THEN BEGIN
-	INCLUDE ~%MOD_FOLDER%/bg1/xabg1_co.tph~
+	INCLUDE ~%MOD_FOLDER%\bg1\xabg1_co.tph~
 END
 
 ACTION_IF (sod_carryover = 0) THEN BEGIN
-	INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
+	INCLUDE ~%MOD_FOLDER%\sod\xasod_co.tph~
 END
 
 //{ Script Extensions
-	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/bg2/baf/xabalbg2.baf~
-	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/bg2/baf/xachfight.baf~
-	EXTEND_TOP ~baldur.bcs~		~%MOD_FOLDER%/bg2/baf/xajrnbg2.baf~
-	EXTEND_BOTTOM ~baldur.bcs~		~%MOD_FOLDER%/bg2/baf/xasboost.baf~
-	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/bg2/baf/xap1d.baf~
-	EXTEND_BOTTOM ~player1d.bcs~	~%MOD_FOLDER%/bg2/baf/xasexbg2.baf~
-	EXTEND_BOTTOM ~player1d.bcs~	~%MOD_FOLDER%/bg2/baf/xasex.baf~
-	EXTEND_TOP ~ppjon.bcs~ 		~%MOD_FOLDER%/bg2/baf/xappjon.baf~
+	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%\bg2\baf\xabalbg2.baf~
+	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%\bg2\baf\xachfight.baf~
+	EXTEND_TOP ~baldur.bcs~		~%MOD_FOLDER%\bg2\baf\xajrnbg2.baf~
+	EXTEND_BOTTOM ~baldur.bcs~		~%MOD_FOLDER%\bg2\baf\xasboost.baf~
+	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%\bg2\baf\xap1d.baf~
+	EXTEND_BOTTOM ~player1d.bcs~	~%MOD_FOLDER%\bg2\baf\xasexbg2.baf~
+	EXTEND_BOTTOM ~player1d.bcs~	~%MOD_FOLDER%\bg2\baf\xasex.baf~
+	EXTEND_TOP ~ppjon.bcs~ 		~%MOD_FOLDER%\bg2\baf\xappjon.baf~
 	
-	EXTEND_TOP ~bodhiamb.bcs~ 	~%MOD_FOLDER%/bg2/baf/xabodamb.baf~
-	EXTEND_TOP ~cleanse.bcs~	~%MOD_FOLDER%/bg2/baf/xaclean.baf~
-	EXTEND_TOP ~bcoffin.bcs~ 	~%MOD_FOLDER%/bg2/baf/xacoffin.baf~
-	EXTEND_TOP ~ccgirl2.bcs~ 	~%MOD_FOLDER%/bg2/baf/xagirlov.baf~
-	EXTEND_TOP ~valygar.bcs~ 	~%MOD_FOLDER%/bg2/baf/xasvir.baf~
-	EXTEND_TOP ~jaheira.bcs~ 	~%MOD_FOLDER%/bg2/baf/xasvir.baf~
-	EXTEND_TOP ~minsc.bcs~ 		~%MOD_FOLDER%/bg2/baf/xasvir.baf~
-	EXTEND_TOP ~mazzy.bcs~ 		~%MOD_FOLDER%/bg2/baf/xasvir.baf~
-	EXTEND_TOP ~aerie.bcs~ 		~%MOD_FOLDER%/bg2/baf/xasvir.baf~
-	EXTEND_TOP ~keldorn.bcs~ 	~%MOD_FOLDER%/bg2/baf/xasvir.baf~
+	EXTEND_TOP ~bodhiamb.bcs~ 	~%MOD_FOLDER%\bg2\baf\xabodamb.baf~
+	EXTEND_TOP ~cleanse.bcs~	~%MOD_FOLDER%\bg2\baf\xaclean.baf~
+	EXTEND_TOP ~bcoffin.bcs~ 	~%MOD_FOLDER%\bg2\baf\xacoffin.baf~
+	EXTEND_TOP ~ccgirl2.bcs~ 	~%MOD_FOLDER%\bg2\baf\xagirlov.baf~
+	EXTEND_TOP ~valygar.bcs~ 	~%MOD_FOLDER%\bg2\baf\xasvir.baf~
+	EXTEND_TOP ~jaheira.bcs~ 	~%MOD_FOLDER%\bg2\baf\xasvir.baf~
+	EXTEND_TOP ~minsc.bcs~ 		~%MOD_FOLDER%\bg2\baf\xasvir.baf~
+	EXTEND_TOP ~mazzy.bcs~ 		~%MOD_FOLDER%\bg2\baf\xasvir.baf~
+	EXTEND_TOP ~aerie.bcs~ 		~%MOD_FOLDER%\bg2\baf\xasvir.baf~
+	EXTEND_TOP ~keldorn.bcs~ 	~%MOD_FOLDER%\bg2\baf\xasvir.baf~
 	
 //}
 
 //{ Music	
 	//{ SoD Track
-		ADD_MUSIC xamu01	~%MOD_FOLDER%/bg2/mus/xamu01.mus~
-		COPY ~%MOD_FOLDER%/bg2/mus/xamu01a.acm~ ~MUSIC/xamu01/xamu01a.acm~
+		ADD_MUSIC xamu01	~%MOD_FOLDER%\bg2\mus\xamu01.mus~
+		COPY ~%MOD_FOLDER%\bg2\mus\xamu01a.acm~ ~MUSIC\xamu01\xamu01a.acm~
 	//}
 	
 	//{ Corwin Romance A
-		ADD_MUSIC xamu02	~%MOD_FOLDER%/bg2/mus/xamu02.mus~
-		COPY ~%MOD_FOLDER%/bg2/mus/xamu02a.acm~ ~MUSIC/xamu02/xamu02a.acm~
+		ADD_MUSIC xamu02	~%MOD_FOLDER%\bg2\mus\xamu02.mus~
+		COPY ~%MOD_FOLDER%\bg2\mus\xamu02a.acm~ ~MUSIC\xamu02\xamu02a.acm~
 	//}
 	
 	//{ Corwin Romance B
-		ADD_MUSIC xamu03	~%MOD_FOLDER%/bg2/mus/xamu03.mus~
-		COPY ~%MOD_FOLDER%/bg2/mus/xamu03a.acm~ ~MUSIC/xamu03/xamu03a.acm~
+		ADD_MUSIC xamu03	~%MOD_FOLDER%\bg2\mus\xamu03.mus~
+		COPY ~%MOD_FOLDER%\bg2\mus\xamu03a.acm~ ~MUSIC\xamu03\xamu03a.acm~
 	//}
 	
 	COPY_EXISTING ~xacs09b.bcs~ ~override~
@@ -139,28 +139,28 @@ END
 	END
 	
 	//{ Corwin Script
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor011.baf~ // Rejoin Processing
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor005.baf~ // BG2 Misc
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor003.baf~ // Sound Adjustments
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor012.baf~ // Can Leave Check
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor014.baf~ // Can Talk - Corwin / Player
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor015.baf~ // Can Talk - BG2
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor013.baf~ // Rep Handling
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor004.baf~ // Opinion Baseline
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor007.baf~ // Romance Conflict Handling
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor008.baf~ // BG2 Event Handling
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor009.baf~ // RBG Event Handling
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor023.baf~ // BG2 NPC Interactions
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor024.baf~ // RBG NPC Interactions
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor017.baf~ // Banter init / NBI
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor018.baf~ // Banter Primers BG2
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor020.baf~ // Random Banters BG2
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor022.baf~ // Banter Error Handling
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor006.baf~ // Exp Boost on Join
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor011.baf~ // Rejoin Processing
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor005.baf~ // BG2 Misc
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor003.baf~ // Sound Adjustments
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor012.baf~ // Can Leave Check
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor014.baf~ // Can Talk - Corwin \ Player
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor015.baf~ // Can Talk - BG2
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor013.baf~ // Rep Handling
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor004.baf~ // Opinion Baseline
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor007.baf~ // Romance Conflict Handling
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor008.baf~ // BG2 Event Handling
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor009.baf~ // RBG Event Handling
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor023.baf~ // BG2 NPC Interactions
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor024.baf~ // RBG NPC Interactions
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor017.baf~ // Banter init \ NBI
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor018.baf~ // Banter Primers BG2
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor020.baf~ // Random Banters BG2
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor022.baf~ // Banter Error Handling
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor006.baf~ // Exp Boost on Join
 	//}
 	
 	ACTION_IF (isEET = 1) THEN BEGIN
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor002.baf~ // Corwin Stat Matching
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor002.baf~ // Corwin Stat Matching
 	END
 	
 	COPY_EXISTING ~xacorwin.bcs~ ~override~
@@ -178,52 +178,47 @@ END
 	END
 //}
 
+//{ bmp
+	LAF xa_copy_folder_contents
+		STR_VAR
+			xa_relative_path = ~%MOD_FOLDER%\bg2\bmp~
+	END
+//}
+
 //{ are
+	LAF xa_copy_folder_contents
+		STR_VAR
+			xa_relative_path = ~%MOD_FOLDER%\bg2\are~
+	END
+
 	COPY_EXISTING ~xad100.are~ ~override~ // bd0103, Ducal Palace 3 Fl
-	WRITE_LONG 0x154 0 // Set Imoen Expiry Time to 0.
+	LPF xa_delete_actor_at_index END
 	
 	COPY_EXISTING ~xad101.are~ ~override~ // bd0104, FFHQ 1st Floor
-	WRITE_LONG 0x264 0 	// Set Corwin Expiry Time to 0.
-	WRITE_LONG 0x154 0 	// Set Tiax Expiry Time to 0.
 	WRITE_LONG 0x5417 1	// Open Door07
-	
-	COPY ~%MOD_FOLDER%/bg2/are/xablck.are~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/tis/xablck.tis~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wed/xablck.wed~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xablckht.bmp~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xablcklm.bmp~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xablcksr.bmp~ ~override~
-	
-	COPY_EXISTING ~xablck.are~ ~override/xapen.are~
-	
-	COPY ~%MOD_FOLDER%/bg2/are/xacs06.are~ ~override~
-	
-	COPY ~%MOD_FOLDER%/bg2/are/xacs12.are~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/tis/xacs12.tis~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wed/xacs12.wed~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacs12ht.bmp~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacs12lm.bmp~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacs12sr.bmp~ ~override~
-	
-	COPY ~%MOD_FOLDER%/bg2/are/xacs13.are~ ~override~
+	LPF xa_delete_are_actors 
+			INT_VAR 
+				xa_component_count = 2 // will delete Tiax & Corwin
+	END
+	COPY_EXISTING ~xablck.are~ ~override\xapen.are~
 //}
 
 //{ Modifications to already-existing areas
 	//{ Area script extensions
-		EXTEND_TOP ~ar0334.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar0334.baf~
-		EXTEND_TOP ~ar0602.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar0602.baf~
-		EXTEND_TOP ~ar1002.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar1002.baf~
-		EXTEND_TOP ~ar1512.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar1512.baf~
-		EXTEND_TOP ~ar1516.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar1516.baf~
-		EXTEND_TOP ~ar2000.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar2000.baf~
-		EXTEND_TOP ~ar2802.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar2802.baf~
-		EXTEND_TOP ~ar2900.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar2900.baf~
-		EXTEND_BOTTOM ~ohgorge.bcs~	~%MOD_FOLDER%/bg2/baf/xagorge.baf~
+		EXTEND_TOP ~ar0334.bcs~ 	~%MOD_FOLDER%\bg2\baf\xaar0334.baf~
+		EXTEND_TOP ~ar0602.bcs~ 	~%MOD_FOLDER%\bg2\baf\xaar0602.baf~
+		EXTEND_TOP ~ar1002.bcs~ 	~%MOD_FOLDER%\bg2\baf\xaar1002.baf~
+		EXTEND_TOP ~ar1512.bcs~ 	~%MOD_FOLDER%\bg2\baf\xaar1512.baf~
+		EXTEND_TOP ~ar1516.bcs~ 	~%MOD_FOLDER%\bg2\baf\xaar1516.baf~
+		EXTEND_TOP ~ar2000.bcs~ 	~%MOD_FOLDER%\bg2\baf\xaar2000.baf~
+		EXTEND_TOP ~ar2802.bcs~ 	~%MOD_FOLDER%\bg2\baf\xaar2802.baf~
+		EXTEND_TOP ~ar2900.bcs~ 	~%MOD_FOLDER%\bg2\baf\xaar2900.baf~
+		EXTEND_BOTTOM ~ohgorge.bcs~	~%MOD_FOLDER%\bg2\baf\xagorge.baf~
 		
 	//}
 	
 	//{ If the playthrough is started in BG2, apply the default or overriden parameters (even for EET games).
-		EXTEND_TOP ~ar0602.bcs~		~%MOD_FOLDER%/bg2/baf/xalcaeet.baf~
+		EXTEND_TOP ~ar0602.bcs~		~%MOD_FOLDER%\bg2\baf\xalcaeet.baf~
 	//}
 	
 	//{ Bodhi's Hideout
@@ -272,60 +267,54 @@ END
 	//}
 //}
 
-//{ bmp
-	COPY ~%MOD_FOLDER%/bg2/bmp/xadingss.bmp~ ~override~
-//}
-
 //{ cre
-	SET wavIdx = 1000
-	OUTER_WHILE (wavIdx < 1250) BEGIN
-		ACTION_IF FILE_EXISTS ~%MOD_FOLDER%/bg2/wav/corwin/xalc%wavIdx%.wav~ THEN BEGIN
-			COPY ~%MOD_FOLDER%/bg2/wav/corwin/xalc%wavIdx%.wav~ ~override~
-		END
-		OUTER_SET wavIdx = (wavIdx + 1)
+	LAF xa_copy_folder_contents
+		STR_VAR
+			xa_relative_path = ~%MOD_FOLDER%\bg2\wav~
+	END
+	LAF xa_copy_folder_contents
+		STR_VAR
+			xa_relative_path = ~%MOD_FOLDER%\bg2\wav\corwin~
 	END
 
-	COPY_EXISTING ~xad106.cre~ ~override/xacorwin.cre~ // corwin7
-	REMOVE_CRE_ITEMS
-	WRITE_ASCII 0x2CC ~xacorwin~ #8 	// Dialogue
-	WRITE_ASCII 0x280 ~xacorwin~ #20  	// Script Name
-	WRITE_ASCII 0x248 ~xacorwin~ #8		// Override Script
-	WRITE_ASCII 0x250 ~xafigh01~ #8		// Class Script
-	WRITE_ASCII 0x258 ~~ #8		// Race Script
-	WRITE_ASCII 0x260 ~~ #8		// General Script
-	WRITE_ASCII 0x268 ~~ #8		// Default Script
-	
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacorwil.bmp~ ~override~	
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacorwim.bmp~ ~override~  	
-	COPY ~%MOD_FOLDER%/bg2/bmp/xacorwis.bmp~ ~override~
-	
+	//{ xacorwin
+		COPY_EXISTING ~xad106.cre~ ~override\xacorwin.cre~ // corwin7
+		REMOVE_CRE_ITEMS
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xacorwin~
+				xa_scriptName = ~xacorwin~
+				xa_override = ~xacorwin~
+				xa_class = ~xafigh01~
+		END	
 	//}
-	COPY_EXISTING ~xalcspy.cre~ ~override/xacorinv.cre~
+	
+	COPY_EXISTING ~xalcspy.cre~ ~override\xacorinv.cre~
 	WRITE_ASCII 0x248 ~xacorinv~ #8
 	WRITE_ASCII 0x280 ~xacorinv~ #20
 	
-	COPY_EXISTING ~suelf2.cre~ ~override/xabowyer.cre~
+	COPY_EXISTING ~suelf2.cre~ ~override\xabowyer.cre~
 	WRITE_ASCII 0x280 ~xabowyer~ #20
 	WRITE_SHORT 0x24 45
 	WRITE_SHORT 0x26 45
 	WRITE_ASCII 0x2CC ~xabowsmi~ #8
 	WRITE_ASCII 0x250 ~xabowsmi~ #8
 	
-	COPY_EXISTING ~suelf7.cre~ ~override/xaesmith.cre~
+	COPY_EXISTING ~suelf7.cre~ ~override\xaesmith.cre~
 	WRITE_ASCII 0x280 ~xaesmith~ #20
 	WRITE_SHORT 0x24 45
 	WRITE_SHORT 0x26 45
 	WRITE_ASCII 0x2CC ~xabowsmi~ #8
 	WRITE_ASCII 0x258 ~xabowsmi~ #8
 
-	COPY_EXISTING ~xad105.cre~ ~override/xamelkor.cre~ // bdffwiz
+	COPY_EXISTING ~xad105.cre~ ~override\xamelkor.cre~ // bdffwiz
 	SAY NAME1 @3148
 	SAY NAME2 @3148
-	WRITE_ASCII 0x280 ~xamelkor~ #20
-	WRITE_ASCII 0x248 ~xamelkor~ #8
-	WRITE_ASCII 0x2CC ~xamelkor~ #8
+	WRITE_ASCII 0x280 ~xamelkor~ #20 // Script Name
+	WRITE_ASCII 0x248 ~xamelkor~ #8 // override
+	WRITE_ASCII 0x2CC ~xamelkor~ #8 // dialog
 	
-	COPY_EXISTING ~cat.cre~ ~override/xadings.cre~
+	COPY_EXISTING ~cat.cre~ ~override\xadings.cre~
 	SAY NAME1 @3016
 	SAY NAME2 @3016
 	WRITE_ASCII 0x34 ~xadingss~ #8
@@ -333,104 +322,95 @@ END
 	WRITE_ASCII 0x280 ~xadings~ #20
 	WRITE_ASCII 0x2CC ~xadings~ #8
 
-	COPY_EXISTING ~xad121.cre~ ~override/xaffofcr.cre~ //bdffgirl
+	COPY_EXISTING ~xad121.cre~ ~override\xaffofcr.cre~ //bdffgirl
 	WRITE_ASCII 0x280 ~xaffofcr~ #20
 	WRITE_ASCII 0x2CC ~xaffofcr~ #8
 	SAY NAME1 @3058
 	SAY NAME2 @3058
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xaffval1.cre~ ~override~
+	COPY ~%MOD_FOLDER%\bg2\cre\xaffval1.cre~ ~override~
 	SAY NAME1 					@3169 /*~Flaming Fist Valiant~*/
 	SAY NAME2 					@3169 /*~Flaming Fist Valiant~*/
 	WRITE_LONG 200 RESOLVE_STR_REF(@10983) /*~Punish the lawbreakers!~[xad10004]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10984) /*~We're more than mercenaries.~[xad10005]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@10985) /*~War is almost here.~[xad10006]*/
 	
-	COPY_EXISTING ~xaffval1.cre~ ~override/xaffval2.cre~
+	COPY_EXISTING ~xaffval1.cre~ ~override\xaffval2.cre~
 	WRITE_ASCII 0x280 ~XAFFVAL2~ #20  	// Script Name
 	
-	COPY_EXISTING ~xaffval1.cre~ ~override/xaffval3.cre~
+	COPY_EXISTING ~xaffval1.cre~ ~override\xaffval3.cre~
 	WRITE_ASCII 0x280 ~XAFFVAL3~ #20  	// Script Name
 	
-	COPY_EXISTING ~golsto01.cre~ ~override/xagolsto.cre~
+	COPY_EXISTING ~golsto01.cre~ ~override\xagolsto.cre~
 	WRITE_ASCII 0x268 ~xalcnull~ #8
 	WRITE_ASCII 0x268 ~xagolsto~ #20
 	WRITE_ASCII 0x2CC ~xagolsto~ #8
 	
-	COPY_EXISTING ~xalcspy.cre~ ~override/xalchook.cre~
+	COPY_EXISTING ~xalcspy.cre~ ~override\xalchook.cre~
 	WRITE_ASCII 0x34 ~xaschaes~ #8
 	WRITE_ASCII 0x248 ~xalchook~ #8
 	WRITE_ASCII 0x280 ~xalchook~ #20
 	WRITE_ASCII 0x2CC ~xalchook~ #8
 		
-	COPY_EXISTING ~golsto01.cre~ ~override/xatargol.cre~
+	COPY_EXISTING ~golsto01.cre~ ~override\xatargol.cre~
 	WRITE_ASCII 0x268 ~xalcnull~ #8
 	WRITE_ASCII 0x268 ~TargetGolem~ #20
 	SAY NAME1 @3071
 	SAY NAME2 @3071
 	
-	COPY_EXISTING ~trftow04.cre~ ~override/xatmarsu.cre~
+	COPY_EXISTING ~trftow04.cre~ ~override\xatmarsu.cre~
 	WRITE_ASCII 0x248 ~xatmarsu~ #8
 	WRITE_ASCII 0x280 ~xatmarsu~ #20
 	WRITE_ASCII 0x2CC ~xatmarsd~ #8
 	
-	COPY_EXISTING ~AMMAG01.cre~ ~override/xawapren.cre~
+	COPY_EXISTING ~AMMAG01.cre~ ~override\xawapren.cre~
 	SAY NAME1 @3149
 	SAY NAME2 @3149
 	WRITE_ASCII 0x280 ~xawapren~ #20
 	WRITE_ASCII 0x248 ~xalcnull~ #8	
 	
-	COPY ~%MOD_FOLDER%/bg2/cre/xaskcut2.cre~ ~override~
+	COPY ~%MOD_FOLDER%\bg2\cre\xaskcut2.cre~ ~override~
 	SAY NAME1 @3070
 	SAY NAME2 @3070
 //}
 
 //{ Block D Modifications
-	COPY_EXISTING ~xad100.cre~ ~override/xabelt.cre~ // bdbelt
+	COPY_EXISTING ~xad100.cre~ ~override\xabelt.cre~ // bdbelt
 	WRITE_ASCII 0x280 ~xabelt~ #20  	// Script Name
 	WRITE_ASCII 0x2CC ~xabelt~ #8		// Dialogue 
 	
-	COPY_EXISTING ~xad101.cre~ ~override/xaeltan.cre~ // bdeltan
+	COPY_EXISTING ~xad101.cre~ ~override\xaeltan.cre~ // bdeltan
 	WRITE_ASCII 0x280 ~xaeltan~ #20  	// Script Name
 	WRITE_ASCII 0x2CC ~xaeltan~ #8		// Dialogue
 	
-	COPY_EXISTING ~xad102.cre~ ~override/xaentar.cre~ // bdentar
+	COPY_EXISTING ~xad102.cre~ ~override\xaentar.cre~ // bdentar
 	WRITE_ASCII 0x280 ~xaentar~ #20  	// Script Name
 	WRITE_ASCII 0x2CC ~xaentar~ #8		// Dialogue
 	
-	COPY_EXISTING ~xad103.cre~ ~override/xaliia.cre~ // bdliia
+	COPY_EXISTING ~xad103.cre~ ~override\xaliia.cre~ // bdliia
 	WRITE_ASCII 0x280 ~xaliia~ #20  	// Script Name
 	WRITE_ASCII 0x2CC ~xaliia~ #8		// Dialogue
 	
-	COPY_EXISTING ~xad104.cre~ ~override/xabence.cre~ // bdbence
+	COPY_EXISTING ~xad104.cre~ ~override\xabence.cre~ // bdbence
 	WRITE_ASCII 0x280 ~xabence~ #20  	// Script Name
 	WRITE_ASCII 0x2CC ~xabence~ #8		// Dialogue
 	
-	COPY_EXISTING ~xad109.cre~ ~override/xaschael.cre~ // bdschael
+	COPY_EXISTING ~xad109.cre~ ~override\xaschael.cre~ // bdschael
 	WRITE_ASCII 0x280 ~xaschael~ #20  	// Script Name
-//}
-
-//{ wav
-	COPY ~%MOD_FOLDER%/bg2/wav/xalcsa00.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xalcsa01.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xalcsa02.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xalcsa03.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xalcsa04.wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/xalcsa05.wav~ ~override~
 //}
 
 OUTER_SET bg2_carryover = 1
 
 //{ Gesen Projectile
-	ADD_PROJECTILE ~%MOD_FOLDER%/bg2/pro/xalarrow.pro~
+	ADD_PROJECTILE ~%MOD_FOLDER%\bg2\pro\xalarrow.pro~
 //}
 
 //{ New Items
 	//{ Corwin's Body
-		COPY ~%MOD_FOLDER%/bg2/bam/xacorbod.bam~ ~override~
-		COPY ~%MOD_FOLDER%/bg2/bam/xagcorbd.bam~ ~override~
+		COPY ~%MOD_FOLDER%\bg2\bam\xacorbod.bam~ ~override~
+		COPY ~%MOD_FOLDER%\bg2\bam\xagcorbd.bam~ ~override~
 		
-		COPY_EXISTING ~MISCBL.itm~ ~override/xacorbod.itm~
+		COPY_EXISTING ~MISCBL.itm~ ~override\xacorbod.itm~
 		WRITE_LONG 0x4C 155 // Weight
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3138)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3138)
@@ -441,7 +421,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Letter to Duncan
-		COPY_EXISTING ~scrl2i.itm~  ~override/xaldunc.itm~
+		COPY_EXISTING ~scrl2i.itm~  ~override\xaldunc.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3140)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3140)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3144)
@@ -449,7 +429,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Letter to Duncan (Cost)
-		COPY_EXISTING ~scrl2i.itm~  ~override/xaldunca.itm~
+		COPY_EXISTING ~scrl2i.itm~  ~override\xaldunca.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3140)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3140)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3147)
@@ -457,7 +437,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Letter to Corwin, Romantic
-		COPY_EXISTING ~scrl2i.itm~  ~override/xalcorw1.itm~ 
+		COPY_EXISTING ~scrl2i.itm~  ~override\xalcorw1.itm~ 
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3142)
@@ -465,7 +445,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Letter to Corwin, Friend
-		COPY_EXISTING ~scrl2i.itm~  ~override/xalcorw2.itm~ 
+		COPY_EXISTING ~scrl2i.itm~  ~override\xalcorw2.itm~ 
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3143)
@@ -473,7 +453,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Letter to Corwin, Romantic (Cost)
-		COPY_EXISTING ~scrl2i.itm~  ~override/xalcor1a.itm~ 
+		COPY_EXISTING ~scrl2i.itm~  ~override\xalcor1a.itm~ 
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3145)
@@ -481,7 +461,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Letter to Corwin, Friend (Cost)
-		COPY_EXISTING ~scrl2i.itm~  ~override/xalcor2a.itm~ 
+		COPY_EXISTING ~scrl2i.itm~  ~override\xalcor2a.itm~ 
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3146)
@@ -489,7 +469,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 		
 	//{ Corwin's Amulet (SoA)
-		COPY ~%MOD_FOLDER%/bg2/itm/xaamul2.itm~ ~override~
+		COPY ~%MOD_FOLDER%\bg2\itm\xaamul2.itm~ ~override~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3150)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3150)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3151)
@@ -498,7 +478,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Corwin's Bow + 2
-		COPY_EXISTING ~xad107.itm~ ~override/xacorbow.itm~ // bdbow06
+		COPY_EXISTING ~xad107.itm~ ~override\xacorbow.itm~ // bdbow06
 		WRITE_LONG 0xC RESOLVE_STR_REF(@3057)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3154)
 		WRITE_ASCII 0x1AE ~xacorwin~ #8
@@ -512,7 +492,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Corwin's Bow + 3 
-		COPY_EXISTING ~xacorbow.itm~ ~override/xacorbo3.itm~
+		COPY_EXISTING ~xacorbow.itm~ ~override\xacorbo3.itm~
 		WRITE_LONG 0xC RESOLVE_STR_REF(@3163)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3166)
 		WRITE_SHORT 0x80 109 // Set range to 109
@@ -524,7 +504,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Corwin's Bow + 3 (Gesen)
-		COPY ~%MOD_FOLDER%/bg2/itm/xacorbg3.itm~ ~override~
+		COPY ~%MOD_FOLDER%\bg2\itm\xacorbg3.itm~ ~override~
 		WRITE_SHORT 0x09c ~%xalarrow%~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3163)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3163)
@@ -534,7 +514,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Corwin's Bow + 4 (Gesen)
-		COPY_EXISTING ~xacorbg3.itm~ ~override/xacorbg4.itm~
+		COPY_EXISTING ~xacorbg3.itm~ ~override\xacorbg4.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3167)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3167)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3168)
@@ -547,7 +527,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Corwin's Armor + 3
-		COPY_EXISTING ~xad106.itm~ ~override/xacorchn.itm~ // bdchan05
+		COPY_EXISTING ~xad106.itm~ ~override\xacorchn.itm~ // bdchan05
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@3155)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@3155)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3156)
@@ -559,7 +539,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Corwin's Armor + 4
-		COPY_EXISTING ~xacorchn.itm~ ~override/xacorch4.itm~
+		COPY_EXISTING ~xacorchn.itm~ ~override\xacorch4.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3161)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3161)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3162)
@@ -579,7 +559,7 @@ OUTER_SET bg2_carryover = 1
 	//}
 	
 	//{ Soultaker Dagger
-		COPY_EXISTING ~dagg10.itm~ ~override/xastdag.itm~				
+		COPY_EXISTING ~dagg10.itm~ ~override\xastdag.itm~				
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3159)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3160)
 	//}
@@ -587,18 +567,18 @@ OUTER_SET bg2_carryover = 1
 //}
 
 //{ New Spells
-	COPY ~%MOD_FOLDER%/bg2/spl/xachng01.spl~ ~override~
+	COPY ~%MOD_FOLDER%\bg2\spl\xachng01.spl~ ~override~
 	WRITE_LONG 0x08 RESOLVE_STR_REF(@3136)
 	
-	COPY ~%MOD_FOLDER%/bg2/spl/xachng02.spl~ ~override~
+	COPY ~%MOD_FOLDER%\bg2\spl\xachng02.spl~ ~override~
 	WRITE_LONG 0x08 RESOLVE_STR_REF(@3137)
 	
-	COPY ~%MOD_FOLDER%/bg2/spl/xagameov.spl~ ~override~
+	COPY ~%MOD_FOLDER%\bg2\spl\xagameov.spl~ ~override~
 	WRITE_LONG 0x08 RESOLVE_STR_REF(@3170)
 	
-	COPY ~%MOD_FOLDER%/bg2/spl/xacorbo3.spl~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/spl/xahide.spl~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/spl/xaunhide.spl~ ~override~
+	COPY ~%MOD_FOLDER%\bg2\spl\xacorbo3.spl~ ~override~
+	COPY ~%MOD_FOLDER%\bg2\spl\xahide.spl~ ~override~
+	COPY ~%MOD_FOLDER%\bg2\spl\xaunhide.spl~ ~override~
 //}
 
 //{ 2DA Modifications
@@ -642,104 +622,104 @@ OUTER_SET bg2_carryover = 1
 	/*
 		If a parameter file exists, overwrite the default parameter with the contents of the parameter file.
 	*/
-	ACTION_IF (FILE_EXISTS ~%MOD_FOLDER%/bg2/lca_bg2_params.txt~) THEN BEGIN
-		INCLUDE ~%MOD_FOLDER%/bg2/lca_bg2_params.txt~
+	ACTION_IF (FILE_EXISTS ~%MOD_FOLDER%\bg2\lca_bg2_params.txt~) THEN BEGIN
+		INCLUDE ~%MOD_FOLDER%\bg2\lca_bg2_params.txt~
 	END
 
 	ACTION_IF (player_exiled = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa00.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa00.baf~
 	END
 
 	ACTION_IF (corwin_romance = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa01.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa01.baf~
 	END ELSE BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa02.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa02.baf~
 	END
 
 	ACTION_IF (caelar_alive = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa03.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa03.baf~
 	END
 
 	ACTION_IF (drinks_with_corwin = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa04.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa04.baf~
 	END
 
 	ACTION_IF (ashatiel_duel = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa05.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa05.baf~
 	END
 
 	ACTION_IF (saved_jhasso = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa06.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa06.baf~
 	END
 
 	ACTION_IF (saved_aldeth = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa07.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa07.baf~
 	END
 
 	ACTION_IF (aldeth_ff = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa08.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa08.baf~
 	END
 
 	ACTION_IF (met_rohma = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa09.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa09.baf~
 	END
 
 	ACTION_IF (sacrifice_corwin = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa10.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa10.baf~
 	END
 
 	ACTION_IF (neoma_earrings = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa11.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa11.baf~
 	END
 
 	ACTION_IF (happy_ending = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa12.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa12.baf~
 	END
 
 	ACTION_IF (tricked_larze = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa13.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa13.baf~
 	END
 
 	ACTION_IF (helped_forthel = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa14.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa14.baf~
 	END
 
 	ACTION_IF (met_kerrachus = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa15.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa15.baf~
 	END
 
 	ACTION_IF (stole_farseer = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa16.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa16.baf~
 	END
 
 	ACTION_IF (helped_brielbara = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa17.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa17.baf~
 	END
 
 	ACTION_IF (brielbara_coran = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa18.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa18.baf~
 	END
 
 	ACTION_IF (fergus_ring = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa19.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa19.baf~
 	END
 
 	ACTION_IF (cleared_kanaglym = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa20.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa20.baf~
 	END
 	
 	ACTION_IF (corwin_avernus = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa21.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa21.baf~
 	END
 	
 	ACTION_IF (thrix_alive = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa22.baf~
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpa22.baf~
 	END
 
-	EXTEND_BOTTOM ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpaEE.baf~
+	EXTEND_BOTTOM ~AR0602.bcs~ ~%MOD_FOLDER%\bg2\baf\params\xalcpaEE.baf~
 //}
 
-//{ Place Corwin's Amulet and Letter in Irenicus' stronghold, if the player has it at the end of SoD. Otherwise, they will be copied by the overriden AR0602 script, but only if the player started their game in BG2 (pursuant to the provided parameters).
+//{ Place Corwin's Amulet and Letter in Irenicus' stronghold, if the player has it at the end of SoD. Otherwise, they will be copied by the overridden AR0602 script, but only if the player started their game in BG2 (pursuant to the provided parameters).
 	
 	COPY_EXISTING ~IMPORT01.2DA~ ~override~
 	COUNT_2DA_ROWS 2 import1rows
@@ -776,16 +756,16 @@ OUTER_SET bg2_carryover = 1
 			STRING_SET 19916 @3185 //IDJINNI State 17
 			STRING_SET 44816 @3183 //IDJINNI State 20
 			STRING_SET 47515 @3184 //IDJINNI State 12 Journal Entry		
-			COMPILE ~%MOD_FOLDER%/compat/cgs/d/xalccgs.d~ USING ~%MOD_FOLDER%/compat/cgs/tra/english/xalccgs.tra~	
+			COMPILE ~%MOD_FOLDER%\compat\cgs\d\xalccgs.d~ USING ~%MOD_FOLDER%\compat\cgs\tra\english\xalccgs.tra~	
 		END ELSE BEGIN
 			PRINT ~Cost of One Girl's Soul is installed.~
 			SILENT
 			
 			ACTION_IF FILE_EXISTS_IN_GAME ~l#2eddrd.dlg~ THEN BEGIN
-				COMPILE ~%MOD_FOLDER%/compat/cgs/d/xalced.d~ USING ~%MOD_FOLDER%/compat/cgs/tra/english/xalced.tra~
+				COMPILE ~%MOD_FOLDER%\compat\cgs\d\xalced.d~ USING ~%MOD_FOLDER%\compat\cgs\tra\english\xalced.tra~
 			END
 			ACTION_IF FILE_EXISTS_IN_GAME ~l#2sdski.dlg~ THEN BEGIN
-				COMPILE ~%MOD_FOLDER%/compat/cgs/d/xalcsk.d~ USING ~%MOD_FOLDER%/compat/cgs/tra/english/xalcsk.tra~
+				COMPILE ~%MOD_FOLDER%\compat\cgs\d\xalcsk.d~ USING ~%MOD_FOLDER%\compat\cgs\tra\english\xalcsk.tra~
 			END
 		END
 	//}
