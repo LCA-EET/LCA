@@ -1,15 +1,15 @@
 //{ Seldarine / Lyriel Amulet conflict
 	IF
 		PartyHasItem("XALYAMUL")
-		PartyHasItem("XAAMUL27")
+		PartyHasItem("AMUL27")
 	THEN
 		RESPONSE #100
-			ActionOverride(Player1, DestroyItem("XAAMUL27"))
-			ActionOverride(Player2, DestroyItem("XAAMUL27"))
-			ActionOverride(Player3, DestroyItem("XAAMUL27"))
-			ActionOverride(Player4, DestroyItem("XAAMUL27"))
-			ActionOverride(Player5, DestroyItem("XAAMUL27"))
-			ActionOverride(Player6, DestroyItem("XAAMUL27"))
+			ActionOverride(Player1, DestroyItem("AMUL27"))
+			ActionOverride(Player2, DestroyItem("AMUL27"))
+			ActionOverride(Player3, DestroyItem("AMUL27"))
+			ActionOverride(Player4, DestroyItem("AMUL27"))
+			ActionOverride(Player5, DestroyItem("AMUL27"))
+			ActionOverride(Player6, DestroyItem("AMUL27"))
 			Continue()
 	END
 //}

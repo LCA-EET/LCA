@@ -3,7 +3,7 @@
 	IF
 		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		OR(7)
-			AreaCheck("XAA206") // Elfsong L2
+			AreaCheck("XAA210") // Elfsong L2 ar0706
 			AreaCheck("XAPAINT1")
 			AreaCheck("XAG1")
 			AreaCheck("XAG2")
@@ -25,7 +25,7 @@
 		!AreaCheck("XAG3")
 		!AreaCheck("XADEMSAN")
 		!AreaCheck("XACSHOW")
-		!AreaCheck("XAA206")
+		!AreaCheck("XAA210") // Elfsong L2 ar0706
 		Global("XA_LC_HaltRBGTimers", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -34,7 +34,6 @@
 	END
 	
 	IF 
-		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		GlobalTimerExpired("XA_LC_Advance7Timer", "GLOBAL")
 		Global("XA_LC_Advance7", "GLOBAL", 1)
 	THEN

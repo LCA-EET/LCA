@@ -721,7 +721,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xaa1179.cre~ ~override~ // WV Guard 2 iron12
+		COPY_EXISTING ~xaa1179.cre~ ~override/xawvgrd.cre~ // WV Guard 2 iron12
 		WRITE_ASCII 0x2CC ~xawvgrd2~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xawvgrd2~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~xaguard~ #8		// Override Script
@@ -894,7 +894,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		COPY_EXISTING ~xac102.cre~ ~override/xaaudam.cre~ // Audamar bdaudam
 		WRITE_ASCII 0x2CC ~xaaudam~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xaaudam~ #20  	// Script Name
-		WRITE_ASCII 0x248 ~~ #8		// Override Script
+		WRITE_ASCII 0x248 ~xaaudam~ #8		// Override Script
 		WRITE_ASCII 0x250 ~~ #8		// Class Script
 		WRITE_ASCII 0x258 ~~ #8		// Race Script
 		WRITE_ASCII 0x260 ~~ #8		// General Script
@@ -1195,6 +1195,21 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		WRITE_ASCII 0x258 ~~ #8		// Race Script
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~wtasight~ #8		// Default Script
+		
+		COPY_EXISTING ~dopgre01.cre~ ~override/xagdop00.cre~
+		WRITE_ASCII 0x280 ~xagdop00~ #20  	// Script Name
+		WRITE_SHORT 0x24 85 // Current HP
+		WRITE_SHORT 0x26 85 // Max HP
+		WRITE_SSHORT 0x46 -2 // N. AC
+		WRITE_SSHORT 0x48 -2 // E. AC
+		WRITE_BYTE 0x52 5 // THAC0
+		WRITE_LONG 0x14 5000 // Exp
+		
+		COPY_EXISTING ~xagdop00.cre~ ~override/xagdop01.cre~
+		WRITE_ASCII 0x280 ~xagdop01~ #20  	// Script Name
+		
+		COPY_EXISTING ~xagdop00.cre~ ~override/xagdop02.cre~
+		WRITE_ASCII 0x280 ~xagdop02~ #20  	// Script Name
 		
 		COPY_EXISTING ~amcust02.cre~ ~override/xarbnb01.cre~
 		SAY NAME1 @4140
@@ -1913,12 +1928,24 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	//}
 	
 	//{ ar0112 xaa228 Undercellar
-		EXTEND_TOP ~xaas228.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0112.baf~
-	
 		COPY_EXISTING ~xaa228.are~ ~override~
 		
 		// Disable NPCs
 		WRITE_LONG 0x2024 0 // Quenash
+		
+		//{ Add Jasper NPC (Tianna's Problem Quest)
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 420
+				fj_loc_y = 1542
+				fj_orientation = 15 // SSE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xajasper
+				fj_cre_resref = xajasper
+		END
+		//}
+		
 	//}
 	
 	//{ ar0114 xaa137 
@@ -1930,6 +1957,8 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	//}
 	
 	//{ ar0116 xaa481 
+		EXTEND_TOP ~xaas481.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0116.baf~
+		
 		COPY_EXISTING ~xaa481.are~ ~override~
 		
 		// Disable NPCs
@@ -2109,14 +2138,24 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	//}
 	
 	//{ ar0134 xaa330 Low Lantern B1
-		EXTEND_TOP ~xaas330.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0134.baf~
-	
 		COPY_EXISTING ~xaa330.are~ ~override~
 		
 		// Disable NPCs
 		WRITE_LONG 0x374 0 // Desreta
 		WRITE_LONG 0x484 0 // Vay-ya
 		
+		//{ Create Tianna NPC (Tianna's Problem Quest)
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 832
+				fj_loc_y = 622
+				fj_orientation = 6 // NW 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xatianna
+				fj_cre_resref = xatianna
+		END
+		//}
 	//}
 	
 	//{ ar0135 xaa540 Low Lantern B2
@@ -2436,8 +2475,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	
 	
 	//{ ar0600 xaa168
-		EXTEND_TOP ~xaas168.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0600.baf~
-		
 		COPY_EXISTING ~xaa168.are~ ~override~
 		
 		// Disable rep traps
@@ -2450,6 +2487,28 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		// Disable NPCs
 		WRITE_LONG 0x3AB4 0 // Dun 
 		WRITE_LONG 0x3BC4 0 // Varci 
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 4254
+				fj_loc_y = 909 
+				fj_orientation = 6 // NW
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xahowspy1
+				fj_cre_resref = xahowspy
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 1580
+				fj_loc_y = 2424
+				fj_orientation = 6 // NW
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xahowspy2
+				fj_cre_resref = xahowspy
+		END
 	//}
 	
 	//{ ar0601 xaa290 - Seven Suns L1
@@ -2480,28 +2539,158 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	
 	//{ ar0607 xaa287
 		EXTEND_TOP ~xaas287.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0607.baf~
+		
+		COPY_EXISTING ~xaa287.are~ ~override~
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 330
+				fj_loc_y = 440
+				fj_orientation = 13 // ESE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = cellspy
+				fj_cre_resref = xacell
+		END
 	//}
 	
-	//{ ar0608 xaa416
-		EXTEND_TOP ~xaas416.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0608.baf~
+	//{ ar0608 xaa416	
+		COPY_EXISTING ~xaa416.are~ ~override~
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 380
+				fj_loc_y = 309
+				fj_orientation = 4 // W 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Kent
+				fj_cre_resref = xakent
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 233
+				fj_loc_y = 399
+				fj_orientation = 11 // ENE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Nederlok
+				fj_cre_resref = xanederl
+		END
 	//}
 	
 	//{ ar0612 xaa309
-		EXTEND_TOP ~xaas309.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0612.baf~
+		COPY_EXISTING ~xaa309.are~ ~override~
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 300
+				fj_loc_y = 410
+				fj_orientation = 8 // N 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Merchant
+				fj_cre_resref = xawvmer1
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 960
+				fj_loc_y = 517
+				fj_orientation = 12 // E 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Merchant
+				fj_cre_resref = xawvmerl
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 330
+				fj_loc_y = 590
+				fj_orientation = 8 // N 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Guard
+				fj_cre_resref = xawvgrd
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 890
+				fj_loc_y = 400
+				fj_orientation = 8 // N 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Guard
+				fj_cre_resref = xawvgrd
+		END
 	//}
 	
 	//{ ar0613 xaa529
-		EXTEND_TOP ~xaas529.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0613.baf~
+		COPY_EXISTING ~xaa529.are~ ~override~
+	
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 850
+				fj_loc_y = 420
+				fj_orientation = 8 // N 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Merchant
+				fj_cre_resref = xawvmer2
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 910
+				fj_loc_y = 460
+				fj_orientation = 12 // E 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Merchant
+				fj_cre_resref = xawvmerl
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 380
+				fj_loc_y = 640
+				fj_orientation = 8 // N 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Guard
+				fj_cre_resref = xawvgrd
+		END
 	//}
 	
 	//{ ar0614 xaa563
 		EXTEND_TOP ~xaas563.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0614.baf~
+		COPY_EXISTING ~xaa563.are~ ~override~
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 850
+				fj_loc_y = 500
+				fj_orientation = 0 // S 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Virgil
+				fj_cre_resref = xavirgil
+		END
 	//}
 	
 	//{ ar0615 xaa662
-		EXTEND_TOP ~xaas662.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0615.baf~
+		OUTER_SET expiryOffset = 0x154
+		OUTER_SET i = 0	
 		
 		COPY_EXISTING ~xaa662.are~ ~override~
+		
+		WHILE (i < 9) BEGIN // Disable the existing area actors
+			WRITE_LONG expiryOffset 0
+			expiryOffset = (expiryOffset + 0x110)
+			i = (i + 1)
+		END
+		
+		//{ Change scrolls in container 3
+			WRITE_ASCII 0x1130 ~SCRL56~ #8
+			WRITE_ASCII 0x1144 ~SCRL59~ #8
+			WRITE_ASCII 0x1158 ~SCRL63~ #8
+			WRITE_ASCII 0x116C ~SCRL15~ #8
+		//}
+		
 		LPF fj_are_structure
 			INT_VAR
 				fj_type 		= 2
@@ -2521,6 +2710,36 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 				fj_structure_type = region
 				fj_name = ~XAP0615~
 				fj_reg_script = ~XAP0615~
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 600
+				fj_loc_y = 440
+				fj_orientation = 8 // N 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Merchant
+				fj_cre_resref = xawvmer2
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 500
+				fj_loc_y = 760
+				fj_orientation = 12 // E 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Merchant
+				fj_cre_resref = xawvmerl
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 770
+				fj_loc_y = 415
+				fj_orientation = 4 // W 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Guard
+				fj_cre_resref = xawvgrd
 		END
 	//}
 	
@@ -2556,7 +2775,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	//{ ar0706 xaa210
 		EXTEND_TOP ~xaas210.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0706.baf~
 		
-		COPY_EXISTING ~xaa206.are~ ~override~
+		COPY_EXISTING ~xaa210.are~ ~override~
 		LPF fj_are_structure
 			INT_VAR
 				fj_type 		= 2
@@ -2576,7 +2795,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 				fj_structure_type = region
 				fj_name = ~XAP0706~
 				fj_reg_script = ~XAP0706~
-	END
+		END
 	//}
 	
 	//{ ar0726 xaa175 Diviner's Tent
@@ -2604,6 +2823,43 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		// Disable NPCs
 		WRITE_LONG 0x4FF4 0 // Elminster
 		WRITE_LONG 0x4DD4 0 // Niklos
+		
+		//{ Add Neoma NPC
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 3075
+				fj_loc_y = 1390
+				fj_orientation = 12 // E 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Neoma
+				fj_cre_resref = xaneoma
+		END
+		//}
+		
+		//{ Elfsong Trouble Intro NPCs
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 3150
+				fj_loc_y = 1260
+				fj_orientation = 0 // S 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xa800w
+				fj_cre_resref = xa800m
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 3100
+				fj_loc_y = 1260
+				fj_orientation = 0 // S 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xa800w
+				fj_cre_resref = xa800w
+		END
+		//}
 	//}
 	
 	//{ ar0900 xaa100
@@ -2618,6 +2874,110 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		// Disable Ankheg & Tenya
 		WRITE_LONG 0x6A4 0
 		WRITE_LONG 0x264 0
+		
+		// Close Drawbridge
+		WRITE_LONG 0x2BFC 0
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 1553
+				fj_loc_y = 1370
+				fj_orientation = 14 // SE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Nederlok
+				fj_cre_resref = xanederl
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 1500
+				fj_loc_y = 1396
+				fj_orientation = 14 // SE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Bence
+				fj_cre_resref = xabence
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 1400
+				fj_loc_y = 1300
+				fj_orientation = 14 // SE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Official
+				fj_cre_resref = xarbnb01
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 1466
+				fj_loc_y = 1263
+				fj_orientation = 14 // SE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Official
+				fj_cre_resref = xarbnb02
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 1415
+				fj_loc_y = 1385
+				fj_orientation = 14 // SE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = FFOfficer
+				fj_cre_resref = xab147b
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 1566
+				fj_loc_y = 1288
+				fj_orientation = 14 // SE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = FFOfficer
+				fj_cre_resref = xab149b
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 4038
+				fj_loc_y = 3160
+				fj_orientation = 14 // SE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = BridgeGuard
+				fj_cre_resref = xab149a
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 3916
+				fj_loc_y = 3244
+				fj_orientation = 14 // SE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = BridgeGuard
+				fj_cre_resref = xab145a
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 2634
+				fj_loc_y = 2404
+				fj_orientation = 14 // SE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = BridgeGuard
+				fj_cre_resref = xab144a
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 2891
+				fj_loc_y = 2217
+				fj_orientation = 14 // SE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = BridgeGuard
+				fj_cre_resref = xab147a
+		END
 	//}
 	
 	//{ ar1100 xaa146
@@ -2688,7 +3048,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		
 		COPY_EXISTING ~xaa150.are~ ~override~
 		
-		WHILE (i < 5) BEGIN // Disable the existing area actors
+		WHILE (i < ) BEGIN // Disable the existing area actors
 			WRITE_LONG expiryOffset 0
 			expiryOffset = (expiryOffset + 0x110)
 			i = (i + 1)
@@ -2757,6 +3117,22 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		
 		// Disable NPCs
 		WRITE_LONG 0x3674 0 // Nikolai
+		
+		// Corwin's Home Map Note
+		ADD_MAP_NOTE #1732 #1126 ~violet~ @4160 
+		
+		//{ Add Glint NPC
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 1900
+				fj_loc_y = 1240
+				fj_orientation = 6 // NW 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Glint
+				fj_cre_resref = xaglint
+		END
+		//}
 	//}
 	
 	//{ ar1307 xaa428
@@ -3251,12 +3627,25 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	//}
 	
 	//{ Painting One
-		
+
 		EXTEND_TOP ~xacs101.bcs~ ~%MOD_FOLDER%/rbg/baf/xag1.baf~
+		OUTER_SET actorsProcessed = 0
 		
-		COPY ~%MOD_FOLDER%/rbg/are/xag1.are~ ~override~
-		WRITE_LONG 0x5B94 xac2
-		WRITE_LONG 0x5B98 xac2
+		COPY_EXISTING ~xac101.are~ ~override/xag1.are~
+		READ_SHORT 0x58 numactors
+		
+		WHILE (actorIndex < numactors) BEGIN // Delete the existing area actors
+			LPF fj_are_structure
+				INT_VAR
+					fj_delete_mode = 0
+				STR_VAR
+					fj_structure_type = actor
+			END
+			actorsProcessed = (actorsProcessed + 1)
+		END
+		
+		//WRITE_LONG 0x5B94 xac2
+		//WRITE_LONG 0x5B98 xac2
 	//}
 	
 	//{ Painting Two

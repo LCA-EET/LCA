@@ -1,6 +1,5 @@
 IF
 	Global("XA_LC_TrickedLarze", "GLOBAL", 1)
-	Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	!Dead("LARZE")
 	!Global("XA_LC_LarzeSpawn", "GLOBAL", 1)
 	InMyArea(Player1)

@@ -22,17 +22,6 @@ THEN
 		ActionOverride(Player5,Rest())
 		ActionOverride(Player6,Rest())
 		
-		CreateCreature("xanederl", [1553.1370], SE) // Nederlok
-		CreateCreature("xabence", [1500.1396], SE) // Bence
-		CreateCreature("XARBNB01", [1400.1300], SE) // City Official
-		CreateCreature("XARBNB02", [1466.1263], SE) // City Official
-		CreateCreature("XAB147B", [1415.1385], SE) // FF Officer
-		CreateCreature("XAB149B", [1566.1288], SE) // FF Officer
-		
-		CreateCreature("XAB149A", [4038.3160], SE) // Bridge Guard
-		CreateCreature("XAB145A", [3916.3244], SE) // Bridge Guard
-		CreateCreature("XAB144A", [2634.2404], SE) // Bridge Guard
-		CreateCreature("XAB147A", [2891.2217], SE) // Bridge Guard
 		SetGlobal("XA_LC_WyrmNPCsCreated", "MYAREA", 1)
 		SetGlobal("ThiefSecretQuestion","GLOBAL",0)
 		FadeFromColor([20.0],0)
@@ -87,32 +76,20 @@ THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_BenceWyrm", "GLOBAL", 4)
 		ActionOverride("XABENCE", MoveToPoint([3.827])
-		
-		//ActionOverride("XABENCE", EscapeArea())
 END
 
 IF
 	Global("XA_LC_BenceWyrm", "GLOBAL", 4)
-	!TriggerOverride(Player1, See("XAC104"))
+	!TriggerOverride(Player1, See("XABENCE"))
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_BenceWyrm", "GLOBAL", 5)
 		ActionOverride("XABENCE", DestroySelf()) 
 END
 
-IF
-	Global("XA_LC_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_LC_DrawBridgeDown","GLOBAL",1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_LC_DrawBridgeDown","GLOBAL",1)
-		CloseDoor("DoorDraw")
-		Continue()
-END
-
 IF 
 	Global("XA_LC_ReturnToBG", "GLOBAL", 1)
-	!Global("XA_LC_NPCsDestroyed","GLOBAL",1)
+	GlobalLT("XA_LC_NPCsDestroyed","GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_NPCsDestroyed","GLOBAL",1)

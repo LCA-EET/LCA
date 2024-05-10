@@ -1,11 +1,11 @@
 IF
-	GlobalLT("XA_LC_NebSpawn225", "MYAREA", 1)
+	GlobalLT("XA_LC_NebSpawn", "MYAREA", 1)
 	OR(2)
 		!Dead("Neb")
 		Global("XA_LC_BG0225Test", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LC_NebSpawn225", "MYAREA", 1)
+		SetGlobal("XA_LC_NebSpawn", "MYAREA", 1)
 		CreateCreature("XANEB", [2300.2085], N)
 		Continue()
 END

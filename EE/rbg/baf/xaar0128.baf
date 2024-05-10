@@ -1,10 +1,10 @@
 IF 
 	Global("XA_LC_SavedAldeth", "GLOBAL", 1)
-	GlobalLT("XA_LC_CreateNPCs0128_Aldeth", "MYAREA", 1)
+	GlobalLT("XA_LC_CreateAldeth", "MYAREA", 1)
 	!Dead("Aldeth")
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LC_CreateNPCs0128_Aldeth", "MYAREA", 1)
+		SetGlobal("XA_LC_CreateAldeth", "MYAREA", 1)
 		CreateCreature("xaaldeth", [600.400], SW) 
 		Continue()
 END

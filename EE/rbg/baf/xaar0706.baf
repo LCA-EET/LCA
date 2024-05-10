@@ -2,11 +2,11 @@ IF
 	GlobalTimerExpired("XA_LC_Amulet3Timer", "GLOBAL")
 	PartyHasItem("AMUL27")
 	InMyArea(Player1)
-	GlobalLT("XA_LC_PaintSpySpawn", "GLOBAL", 1)
+	GlobalLT("XA_LC_PaintSpySpawn", "MYAREA", 1)
 	GlobalLT("XA_LC_ExitPrison", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LC_PaintSpySpawn", "GLOBAL", 1)
+		SetGlobal("XA_LC_PaintSpySpawn", "MYAREA", 1)
 		CreateCreature("XAPSPY", [250.560], NE)
 		Continue()
 END
@@ -19,22 +19,24 @@ THEN
 END
 
 IF
-	Global("XA_LC_DoppleSpawn_0706", "MYAREA", 1)
+	Global("XA_LC_DoppleSpawn", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		CreateCreature("DOPGRE01", [433.466], SW)
-		CreateCreature("DOPGRE01", [386.584], NW)
-		CreateCreature("DOPGRE01", [303.607], NW)
-		SetGlobal("XA_LC_DoppleSpawn_0706", "MYAREA", 2)
+		CreateCreature("xagdop00", [433.466], SW)
+		CreateCreature("xagdop01", [386.584], NW)
+		CreateCreature("xagdop02", [303.607], NW)
+		SetGlobal("XA_LC_DoppleSpawn", "MYAREA", 2)
 END
 
 IF
-	Global("XA_LC_DoppleSpawn_0706", "MYAREA", 2)
-	CombatCounter(0)
+	Global("XA_LC_DoppleSpawn", "MYAREA", 2)
+	Dead("xagdop00")
+	Dead("xagdop01")
+	Dead("xagdop02")
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_AmuletPainting", "GLOBAL", 7)
-		SetGlobal("XA_LC_DoppleSpawn_0706", "MYAREA", 3)
+		SetGlobal("XA_LC_DoppleSpawn", "MYAREA", 3)
 		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 END
 
@@ -55,7 +57,7 @@ END
 IF
 	InMyArea(Player1)
 	PartyHasItem("XAQUIVER")
-	!Global("XA_LC_IncubusQuiver", "GLOBAL", 1)
+	GlobalLT("XA_LC_IncubusQuiver", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		ActionOverride(Player1, DestroyItem("XAQUIVER"))
@@ -69,7 +71,7 @@ END
 IF
 	InMyArea(Player1)
 	PartyHasItem("XAMSRING")
-	!Global("XA_LC_IncubusRing", "GLOBAL", 1)
+	GlobalLT("XA_LC_IncubusRing", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		ActionOverride(Player1, DestroyItem("XAMSRING"))
@@ -83,7 +85,7 @@ END
 IF
 	InMyArea(Player1)
 	PartyHasItem("XASWORD")
-	!Global("XA_LC_IncubusSword", "GLOBAL", 1)
+	GlobalLT("XA_LC_IncubusSword", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		ActionOverride(Player1, DestroyItem("XASWORD"))

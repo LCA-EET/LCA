@@ -1,6 +1,6 @@
 IF 
 	Global("XA_LC_BrevlikArrested", "GLOBAL", 1)
-	!AreaCheck("XAA283")
+	!AreaCheck("XAA287") // ar0607
 THEN
 	RESPONSE #100
 		DestroySelf()

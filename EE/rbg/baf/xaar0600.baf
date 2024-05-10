@@ -1,9 +1,0 @@
-IF
-	GlobalLT("XA_LC_CreateHOWSpy_0600", "MYAREA", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_LC_CreateHOWSpy_0600", "MYAREA", 1)
-		CreateCreature("xahowspy", [4254.909], NW)
-		CreateCreature("xahowspy", [1580.2424], NW)
-		Continue()
-END

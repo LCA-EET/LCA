@@ -31,10 +31,10 @@ END
 IF
 	InMyArea("XACORWIN")
 	InMyArea(Player1)
-	GlobalLT("XA_LC_CuratorSpawned", "GLOBAL", 1)
+	GlobalLT("XA_LC_CuratorSpawned", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LC_CuratorSpawned", "GLOBAL", 1)
+		SetGlobal("XA_LC_CuratorSpawned", "MYAREA", 1)
 		CreateCreature("XACURATO", [580.1175], SW)
 		Continue()
 END

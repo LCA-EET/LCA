@@ -1,18 +1,9 @@
-IF
-	GlobalLT("XA_LC_CellSpyCreated", "MYAREA", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_LC_CellSpyCreated", "MYAREA", 1)
-		CreateCreature("XACELL", [330.440], SEE)
-		Continue()
-END
-
 IF 
 	Global("XA_LC_VirgilInCustody", "GLOBAL", 1)
-	GlobalLT("XA_LC_VirgiXAreated_0607", "MYAREA", 1)
+	GlobalLT("XA_LC_VirgilCreated", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LC_VirgiXAreated_0607", "MYAREA", 1)
+		SetGlobal("XA_LC_VirgilCreated", "MYAREA", 1)
 		CreateCreature("XAVIRGIL", [400.340], SSW)
 		Continue()
 END

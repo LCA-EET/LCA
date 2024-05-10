@@ -1,13 +1,4 @@
 IF 
-	GlobalLT("XA_LC_0614_VirgilSpawn", "MYAREA", 1)
-THEN
-	RESPONSE #100
-		CreateCreature("XAVIRGIL", [850.500], S)
-		SetGlobal("XA_LC_0614_VirgilSpawn", "MYAREA", 1)
-		Continue()
-END
-
-IF 
 	Global("XA_LC_VirgilInCustody", "GLOBAL", 1)
 	InMyArea("XAVIRGIL")
 THEN

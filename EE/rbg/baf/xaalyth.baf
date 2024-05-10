@@ -11,7 +11,7 @@ END
 
 IF
 	See(Player1)
-	!Global("XA_LC_AlythInit", "LOCALS", 1)
+	GlobalLT("XA_LC_AlythInit", "LOCALS", 1)
 	GlobalLT("XA_LC_SavedElfsong", "GLOBAL", 1)
 THEN
 	RESPONSE #100

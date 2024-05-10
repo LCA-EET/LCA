@@ -11,11 +11,11 @@ THEN
 END
 
 IF
-	GlobalLT("XA_LC_Alyth0705", "MYAREA", 1)
+	GlobalLT("XA_LC_CreateAlyth", "MYAREA", 1)
 	!Dead("alyth")
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LC_Alyth0705", "MYAREA", 1)
+		SetGlobal("XA_LC_CreateAlyth", "MYAREA", 1)
 		CreateCreature("xaalyth", [870.640], SE) //Alyth
 		Continue()
 END

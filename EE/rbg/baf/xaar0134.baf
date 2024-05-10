@@ -1,8 +1,0 @@
-IF
-	GlobalLT("XA_LC_NPCs_0134", "MYAREA", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_LC_NPCs_0134", "MYAREA", 1)
-		CreateCreature("XATIANNA", [832.622],NW)
-		Continue()
-END

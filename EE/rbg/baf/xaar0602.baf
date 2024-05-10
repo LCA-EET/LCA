@@ -1,10 +1,10 @@
 IF 
-	GlobalLT("XA_LC_CreateNPCS_0602", "MYAREA", 1)
+	GlobalLT("XA_LC_CreateJhasso", "MYAREA", 1)
 	!Dead("Jhasso")
 	Global("XA_LC_SavedJhasso", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LC_CreateNPCS_0602", "MYAREA", 1)
+		SetGlobal("XA_LC_CreateJhasso", "MYAREA", 1)
 		CreateCreature("xajhasso", [452.370], SE) // Jhasso
 		Continue()
 END
