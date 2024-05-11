@@ -2403,7 +2403,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//{ ar0608 xaa416	
 		COPY_EXISTING ~xaa416.are~ ~override~
 		LPF xa_delete_are_actors END
-		
+		/*
 		LPF fj_are_structure
 			INT_VAR
 				fj_loc_x = 380
@@ -2414,7 +2414,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 				fj_name = Kent
 				fj_cre_resref = xakent
 		END
-		
+		*/
 		LPF fj_are_structure
 			INT_VAR
 				fj_loc_x = 233

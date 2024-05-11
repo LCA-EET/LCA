@@ -610,6 +610,18 @@ END
 		
 		COPY_EXISTING ~xag102.are~ ~override~
 		
+		PATCH_DEFINE_ARRAY xa_extras
+		BEGIN
+			xacrug00 // bdcrue50
+			xacrug01 // bdcrue51
+			xacrug02 // bdcrue52
+			xacrug03 // bdcrue53
+			xacrug04 // bdcrue54
+			xacrug05 // bdcrus5d
+			xacrug06 // bdcrus6d
+			xacrug07 // bdcrus7d
+		END
+		
 		//{ Change Travel Trigger to Info Trigger, and Update Text String
 			WRITE_SHORT 0x2AAC 1
 			WRITE_LONG 0x2AF0 RESOLVE_STR_REF(@5008)
@@ -635,7 +647,16 @@ END
 					fj_name = Ashatiel
 					fj_cre_resref = xaashasp
 			END
-			
+			LPF xa_add_extras
+				INT_VAR
+					xa_minX = 400
+					xa_minY = 420
+					xa_maxX = 1000
+					xa_maxY = 680
+					xa_numToGenerate = 30
+					xa_poolSize = 8
+			END
+			/*
 			LPF fj_are_structure INT_VAR fj_loc_x = 721 fj_loc_y =455 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug00 fj_name = ghost END
 			LPF fj_are_structure INT_VAR fj_loc_x = 928 fj_loc_y =748 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug01 fj_name = ghost END
 			LPF fj_are_structure INT_VAR fj_loc_x = 494 fj_loc_y =567 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug02 fj_name = ghost END
@@ -668,6 +689,7 @@ END
 			LPF fj_are_structure INT_VAR fj_loc_x = 530 fj_loc_y =940 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug05 fj_name = ghost END
 			LPF fj_are_structure INT_VAR fj_loc_x = 616 fj_loc_y =995 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug06 fj_name = ghost END
 			LPF fj_are_structure INT_VAR fj_loc_x = 900 fj_loc_y =679 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug07 fj_name = ghost END
+			*/
 		//}
 	//}
 	

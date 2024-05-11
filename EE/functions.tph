@@ -96,3 +96,36 @@ DEFINE_ACTION_FUNCTION xa_copy_folder_contents
 			COPY ~%xa_file%~ ~override~
 		END
 	END
+
+DEFINE_PATCH_FUNCTION xa_add_extras
+	INT_VAR
+		xa_minX = 0
+		xa_maxX = 0
+		xa_minY = 0
+		xa_maxY = 0
+		xa_numToGenerate = 0
+		xa_poolSize = 0
+	BEGIN
+		SET xa_extrasAdded = 0 
+		WHILE (xa_extrasAdded < xa_numToGenerate) BEGIN
+			//SET xa_extrasIndex = RANDOM (0 (xa_poolSize - 1))
+			PATCH_PHP_EACH xa_extras AS _ => xa_creRef
+			BEGIN
+				PATCH_IF (xa_extrasAdded < xa_numToGenerate) BEGIN
+					SET xa_xCoord = RANDOM (xa_minX xa_maxX)
+					SET xa_yCoord = RANDOM (xa_minY xa_maxY)
+					LPF fj_are_structure 
+						INT_VAR 
+							fj_loc_x = xa_xCoord 
+							fj_loc_y = xa_yCoord 
+						STR_VAR 
+							fj_structure_type = actor 
+							fj_cre_resref = ~%xa_creRef%~ 
+							fj_name = ~extra~
+					END
+					xa_extrasAdded = (xa_extrasAdded + 1)
+				END
+			END
+			
+		END
+	END
