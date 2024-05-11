@@ -1,56 +1,56 @@
 PRINT @5000  /* ~Processing ToB changes...~ */
 SILENT
-INCLUDE ~%MOD_FOLDER%\generated\g\generated.tph~
+INCLUDE ~%MOD_FOLDER%/generated/g/generated.tph~
 
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\tob\baf~
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\tob\d~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 
 //{ Script Extensions
-	EXTEND_TOP ~xabaltob.bcs~ 	~%MOD_FOLDER%\rbg\baf\xabalamu.baf~
-	EXTEND_TOP ~xabaltob.bcs~ 	~%MOD_FOLDER%\rbg\baf\xabalegg.baf~
-	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%\tob\baf\xabaltob.baf~
-	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%\bg2\baf\xachfight.baf~
-	EXTEND_TOP ~baldur25.bcs~	~%MOD_FOLDER%\tob\baf\xajrntob.baf~
-	EXTEND_BOTTOM ~baldur25.bcs~	~%MOD_FOLDER%\bg2\baf\xasboost.baf~
-	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%\tob\baf\xap1d.baf~
+	EXTEND_TOP ~xabaltob.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalamu.baf~
+	EXTEND_TOP ~xabaltob.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalegg.baf~
+	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%/tob/baf/xabaltob.baf~
+	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%/bg2/baf/xachfight.baf~
+	EXTEND_TOP ~baldur25.bcs~	~%MOD_FOLDER%/tob/baf/xajrntob.baf~
+	EXTEND_BOTTOM ~baldur25.bcs~	~%MOD_FOLDER%/bg2/baf/xasboost.baf~
+	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/tob/baf/xap1d.baf~
 	
-	EXTEND_TOP ~ar4000.bcs~ 	~%MOD_FOLDER%\tob\baf\xaar4000.baf~
+	EXTEND_TOP ~ar4000.bcs~ 	~%MOD_FOLDER%/tob/baf/xaar4000.baf~
 //}
 
 //{ Corwin Script
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor011.baf~ // Rejoin Processing
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor003.baf~ // Sound Adjustments
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor012.baf~ // Can Leave Check
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor014.baf~ // Can Talk - Corwin \ Player
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor015.baf~ // Can Talk - BG2
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor016.baf~ // Can Talk - BG2
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor013.baf~ // Rep Handling
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor004.baf~ // Opinion Baseline
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor007.baf~ // Romance Conflict Handling
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor010.baf~ // ToB Event Handling
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor025.baf~ // ToB NPC Interactions
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor017.baf~ // Banter init \ NBI
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor018.baf~ // Banter Primers BG2
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor019.baf~ // Banter Primers ToB
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor020.baf~ // Random Banters BG2
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor021.baf~ // Random Banters ToB
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor022.baf~ // Banter Error Handling
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%\corwinscripts\xacor006.baf~ // Exp Boost on Join
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor011.baf~ // Rejoin Processing
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor003.baf~ // Sound Adjustments
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor012.baf~ // Can Leave Check
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor014.baf~ // Can Talk - Corwin / Player
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor015.baf~ // Can Talk - BG2
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor016.baf~ // Can Talk - BG2
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor013.baf~ // Rep Handling
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor004.baf~ // Opinion Baseline
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor007.baf~ // Romance Conflict Handling
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor010.baf~ // ToB Event Handling
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor025.baf~ // ToB NPC Interactions
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor017.baf~ // Banter init / NBI
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor018.baf~ // Banter Primers BG2
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor019.baf~ // Banter Primers ToB
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor020.baf~ // Random Banters BG2
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor021.baf~ // Random Banters ToB
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor022.baf~ // Banter Error Handling
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor006.baf~ // Exp Boost on Join
 //}
 
 ACTION_IF (bg1_carryover = 0) THEN BEGIN
-	INCLUDE ~%MOD_FOLDER%\bg1\xabg1_co.tph~
+	INCLUDE ~%MOD_FOLDER%/bg1/xabg1_co.tph~
 END
 
 ACTION_IF (sod_carryover = 0) THEN BEGIN
-	INCLUDE ~%MOD_FOLDER%\sod\xasod_co.tph~
+	INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
 END
 
 //{ Animations
 	ACTION_IF(isEET = 0) THEN BEGIN
 		LAF xa_copy_folder_contents
 			STR_VAR
-				xa_relative_path = ~%MOD_FOLDER%\tob\anim~
+				xa_relative_path = ~%MOD_FOLDER%/tob/anim~
 		END
 		APPEND ~animate.ids~ ~0xE276 LEMURE~
 	END
@@ -58,54 +58,54 @@ END
 
 //{ Epilogues
 	//{ Caelar
-		COPY ~%MOD_FOLDER%\tob\2da\xacaeend.2da~ ~override~
+		COPY ~%MOD_FOLDER%/tob/2da/xacaeend.2da~ ~override~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5001)
 	//}
 	
 	//{ Corwin, SoD Portrait
-		COPY ~%MOD_FOLDER%\tob\2da\xacornd1.2da~ ~override~
+		COPY ~%MOD_FOLDER%/tob/2da/xacornd1.2da~ ~override~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5002)
 		
-		COPY_EXISTING ~xacornd1.2da~ ~override\xacornd2.2da~
+		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd2.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5003)
 		
-		COPY_EXISTING ~xacornd1.2da~ ~override\xacornd3.2da~
+		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd3.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5004)
 		
-		COPY_EXISTING ~xacornd1.2da~ ~override\xacornd4.2da~
+		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd4.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5005)
 		
-		COPY_EXISTING ~xacornd1.2da~ ~override\xacornd5.2da~
+		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd5.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5006)
 		
-		COPY_EXISTING ~xacornd1.2da~ ~override\xacornd6.2da~
+		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd6.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5007)
 	//}
 	
 	//{ Corwin, LCA Portrait
-		COPY ~%MOD_FOLDER%\tob\2da\xalcand1.2da~ ~override~
+		COPY ~%MOD_FOLDER%/tob/2da/xalcand1.2da~ ~override~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5002)
 		
-		COPY_EXISTING ~xalcand1.2da~ ~override\xalcand2.2da~
+		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand2.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5003)
 		
-		COPY_EXISTING ~xalcand1.2da~ ~override\xalcand3.2da~
+		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand3.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5004)
 		
-		COPY_EXISTING ~xalcand1.2da~ ~override\xalcand4.2da~
+		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand4.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5005)
 		
-		COPY_EXISTING ~xalcand1.2da~ ~override\xalcand5.2da~
+		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand5.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5006)
 		
-		COPY_EXISTING ~xalcand1.2da~ ~override\xalcand6.2da~
+		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand6.2da~
 		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5007)
 	//}
 //}
 
 //{ New Creatures
 	//{ Aun Argent
-		COPY_EXISTING ~xag100.cre~ ~override\xaaun.cre~ 
+		COPY_EXISTING ~xag100.cre~ ~override/xaaun.cre~ 
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xaaun~
@@ -116,7 +116,7 @@ END
 	//{ Baatezu
 	
 		//{ Thrix
-			COPY_EXISTING ~xag101.cre~ ~override\xathrix.cre~
+			COPY_EXISTING ~xag101.cre~ ~override/xathrix.cre~
 			LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xathrix~
@@ -125,21 +125,21 @@ END
 		END
 		//}
 		
-		COPY_EXISTING ~xag102.cre~ ~override\xaavc1.cre~ // bdhelcat
-		COPY_EXISTING ~xag119.cre~ ~override\xaavc2.cre~ // bdbonefi
-		COPY_EXISTING ~telpit1.cre~ ~override\xaavc3.cre~ 
-		COPY_EXISTING ~demcor01.cre~ ~override\xaavc4.cre~
-		COPY_EXISTING ~xag115.cre~ ~override\xaavc5.cre~ // bdabibla
-		COPY_EXISTING ~xag116.cre~ ~override\xaavc6.cre~ // bdabigre
-		COPY_EXISTING ~xag117.cre~ ~override\xaavc7.cre~ // bdabired
-		COPY_EXISTING ~xag118.cre~ ~override\xaavc8.cre~ // bdhamatu
-		COPY_EXISTING ~xag114.cre~ ~override\xaavc9.cre~ // bdimp
-		COPY_EXISTING ~xag111.cre~ ~override\xaavc10.cre~ // bdlemure
-		COPY_EXISTING ~elfirg01.cre~ ~override\xaavc11.cre~
-		COPY_EXISTING ~elfir01.cre~ ~override\xaavc12.cre~
-		COPY_EXISTING ~xag103.cre~ ~override\xaavc13.cre~ // bderinye
+		COPY_EXISTING ~xag102.cre~ ~override/xaavc1.cre~ // bdhelcat
+		COPY_EXISTING ~xag119.cre~ ~override/xaavc2.cre~ // bdbonefi
+		COPY_EXISTING ~telpit1.cre~ ~override/xaavc3.cre~ 
+		COPY_EXISTING ~demcor01.cre~ ~override/xaavc4.cre~
+		COPY_EXISTING ~xag115.cre~ ~override/xaavc5.cre~ // bdabibla
+		COPY_EXISTING ~xag116.cre~ ~override/xaavc6.cre~ // bdabigre
+		COPY_EXISTING ~xag117.cre~ ~override/xaavc7.cre~ // bdabired
+		COPY_EXISTING ~xag118.cre~ ~override/xaavc8.cre~ // bdhamatu
+		COPY_EXISTING ~xag114.cre~ ~override/xaavc9.cre~ // bdimp
+		COPY_EXISTING ~xag111.cre~ ~override/xaavc10.cre~ // bdlemure
+		COPY_EXISTING ~elfirg01.cre~ ~override/xaavc11.cre~
+		COPY_EXISTING ~elfir01.cre~ ~override/xaavc12.cre~
+		COPY_EXISTING ~xag103.cre~ ~override/xaavc13.cre~ // bderinye
 		
-		COPY_EXISTING_REGEXP GLOB ~xaavc.+\.cre$~ ~override~ 
+		COPY_EXISTING_REGEXP GLOB ~xaavc.+/.cre$~ ~override~ 
 		WRITE_BYTE 0x270 255 	// Set Allegiance to Enemy
 		WRITE_BYTE 0x271 255 	// Set General to Monster
 		WRITE_BYTE 0x272 121 	// Set Race to Demonic
@@ -159,7 +159,7 @@ END
 		COPY_EXISTING ~xaavc13.cre~ ~override~
 		WRITE_ASCII 0x268 ~xaerin~ #8
 		
-		COPY_EXISTING ~xanarzu.cre~ ~override\xanarzu2.cre~
+		COPY_EXISTING ~xanarzu.cre~ ~override/xanarzu2.cre~
 		WRITE_LONG 0x14 36000 // Exp
 		WRITE_SHORT 0x24 444 // HP
 		WRITE_SHORT 0x26 444 // HP
@@ -172,7 +172,7 @@ END
 		END
 	
 	//{ Bence Duncan
-		COPY_EXISTING ~xabence.cre~ ~override\xabence2.cre~ 
+		COPY_EXISTING ~xabence.cre~ ~override/xabence2.cre~ 
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xabence2~
@@ -181,7 +181,7 @@ END
 	//}
 	
 	//{ Beno (Amkethran)
-		COPY_EXISTING ~xabeno.cre~ ~override\xabenoam.cre~ 
+		COPY_EXISTING ~xabeno.cre~ ~override/xabenoam.cre~ 
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xabenoam~
@@ -190,7 +190,7 @@ END
 	//}
 	
 	//{ Beno (Kanaglym Spirit)
-		COPY_EXISTING ~xabenoam.cre~ ~override\xabenosp.cre~
+		COPY_EXISTING ~xabenoam.cre~ ~override/xabenosp.cre~
 		ADD_CRE_ITEM ~minhp1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~LRING~	
 		LPF xa_reset_cre
 			STR_VAR
@@ -206,7 +206,7 @@ END
 	//}
 	
 	//{ Caelar
-		COPY_EXISTING ~xac109.cre~ ~override\xacaelar.cre~ 
+		COPY_EXISTING ~xac109.cre~ ~override/xacaelar.cre~ 
 		REMOVE_CRE_ITEMS
 		ADD_CRE_ITEM ~xabroken~ #0 #0 #0 ~IDENTIFIED~ ~INV1~
 		LPF xa_reset_cre
@@ -218,7 +218,7 @@ END
 		END
 		WRITE_LONG 0x1CC RESOLVE_STR_REF(@5009) // Bio
 		
-		COPY_EXISTING ~xacaelar.cre~ ~override\xacaela2.cre~
+		COPY_EXISTING ~xacaelar.cre~ ~override/xacaela2.cre~
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xacaela2~
@@ -228,7 +228,7 @@ END
 	//}
 	
 	//{ Crusader Spirits
-		COPY_EXISTING ~xac111.cre~ ~override\xaashasp.cre~
+		COPY_EXISTING ~xac111.cre~ ~override/xaashasp.cre~
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xaashasp~
@@ -255,7 +255,7 @@ END
 		END
 		ACTION_PHP_EACH crusaderSpirits AS _ => cSpirit
 		BEGIN
-			COPY_EXISTING ~%cSpirit%.cre~ ~override\xacrug0%cid%.cre~
+			COPY_EXISTING ~%cSpirit%.cre~ ~override/xacrug0%cid%.cre~
 			LPF xa_reset_cre
 				STR_VAR
 					xa_override = ~xacrug~
@@ -270,7 +270,7 @@ END
 	//}
 	
 	//{ Dream Voice
-		COPY_EXISTING ~xalcspy.cre~ ~override\xakana1.cre~
+		COPY_EXISTING ~xalcspy.cre~ ~override/xakana1.cre~
 		SAY NAME1 @5015
 		SAY NAME2 @5015
 		LPF xa_reset_cre
@@ -281,7 +281,7 @@ END
 	//}
 	
 	//{ Elven Spirits
-		COPY_EXISTING ~suelf13.cre~ ~override\xaelf01.cre~
+		COPY_EXISTING ~suelf13.cre~ ~override/xaelf01.cre~
 		SAY NAME1 @5016
 		SAY NAME2 @5016
 		LPF xa_reset_cre
@@ -296,7 +296,7 @@ END
 				target = 1
 		END
 	
-		COPY_EXISTING ~suelf12.cre~ ~override\xaelf02.cre~
+		COPY_EXISTING ~suelf12.cre~ ~override/xaelf02.cre~
 		SAY NAME1 @5016
 		SAY NAME2 @5016
 		LPF xa_reset_cre
@@ -310,7 +310,7 @@ END
 				target = 1
 		END
 		
-		COPY_EXISTING ~suelf10.cre~ ~override\xaelf03.cre~
+		COPY_EXISTING ~suelf10.cre~ ~override/xaelf03.cre~
 		SAY NAME1 @5016
 		SAY NAME2 @5016
 		LPF xa_reset_cre
@@ -327,22 +327,22 @@ END
 	//}
 	
 	//{ Fire Giant Scouts
-		COPY_EXISTING ~giafir01.cre~ ~override\xafgsc1.cre~
+		COPY_EXISTING ~giafir01.cre~ ~override/xafgsc1.cre~
 		SAY NAME1 @5012
 		SAY NAME2 @5012
 		WRITE_SHORT 0x24 100
 		WRITE_SHORT 0x26 100
 		WRITE_ASCII 0x280 ~xafgsc1~ #8
 		
-		COPY_EXISTING ~xafgsc1.cre~ ~override\xafgsc2.cre~
+		COPY_EXISTING ~xafgsc1.cre~ ~override/xafgsc2.cre~
 		WRITE_ASCII 0x280 ~xafgsc2~ #8
 		
-		COPY_EXISTING ~xafgsc1.cre~ ~override\xafgsc3.cre~
+		COPY_EXISTING ~xafgsc1.cre~ ~override/xafgsc3.cre~
 		WRITE_ASCII 0x280 ~xafgsc3~ #8
 	//}
 	
 	//{ Hamza
-		COPY_EXISTING ~plfarm01.cre~ ~override\xahamza.cre~
+		COPY_EXISTING ~plfarm01.cre~ ~override/xahamza.cre~
 		SAY NAME1 @5014
 		SAY NAME2 @5014
 		LPF xa_reset_cre
@@ -354,7 +354,7 @@ END
 	//}
 	
 	//{ Lathander Clergymen
-		COPY_EXISTING ~dawnmas.cre~ ~override\xalath01.cre~
+		COPY_EXISTING ~dawnmas.cre~ ~override/xalath01.cre~
 		SAY NAME1 @5013
 		SAY NAME2 @5013
 		LPF xa_reset_cre
@@ -366,7 +366,7 @@ END
 				xa_default = ~wtasight~
 		END
 	
-		COPY_EXISTING ~latkni01.cre~ ~override\xalath02.cre~
+		COPY_EXISTING ~latkni01.cre~ ~override/xalath02.cre~
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xalath02~
@@ -374,7 +374,7 @@ END
 				xa_default = ~wtasight~
 		END
 		
-		COPY_EXISTING ~latkni02.cre~ ~override\xalath03.cre~
+		COPY_EXISTING ~latkni02.cre~ ~override/xalath03.cre~
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xalath03~
@@ -384,7 +384,7 @@ END
 	//}
 	
 	//{ Lodob
-		COPY_EXISTING ~demlord.cre~ ~override\xalodob.cre~
+		COPY_EXISTING ~demlord.cre~ ~override/xalodob.cre~
 		SAY NAME1 @5011
 		SAY NAME2 @5011
 		LPF xa_reset_cre
@@ -402,7 +402,7 @@ END
 	//}
 	
 	//{ Nederlok
-		COPY_EXISTING ~xanederl.cre~ ~override\xatobned.cre~
+		COPY_EXISTING ~xanederl.cre~ ~override/xatobned.cre~
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xatobned~
@@ -411,7 +411,7 @@ END
 	//}
 	
 	//{ Rohma (Child Wraith)
-		COPY_EXISTING ~xarohma.cre~ ~override\xarohma4.cre~
+		COPY_EXISTING ~xarohma.cre~ ~override/xarohma4.cre~
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xarohma4~
@@ -420,20 +420,20 @@ END
 	//}
 	
 	//{ Spirit Head
-		COPY_EXISTING ~head1.cre~ ~override\xahead1.cre~
+		COPY_EXISTING ~head1.cre~ ~override/xahead1.cre~
 		WRITE_ASCII 0x2CC ~xahead1~ #8 	// Dialogue
 	//}
 //}
 
 //{ Items
 	//{ Caelar's Chainmail bdchanca
-		COPY_EXISTING ~xac108.itm~ ~override\xachanca.itm~
+		COPY_EXISTING ~xac108.itm~ ~override/xachanca.itm~
 		WRITE_ASCII 0x446 ~xacaelar~ #8
 		WRITE_LONG 0x45E RESOLVE_STR_REF(@5028)
 	//}
 
 	//{ Caelar's Cloak new
-		COPY ~%MOD_FOLDER%\tob\itm\xafinca1.itm~ ~override~
+		COPY ~%MOD_FOLDER%/tob/itm/xafinca1.itm~ ~override~
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@5020)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@5020)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@5021)
@@ -442,32 +442,32 @@ END
 	//}
 	
 	//{ Caelar's Helmet bdhelmca
-		COPY_EXISTING ~xac107.itm~ ~override\xahelmca.itm~
+		COPY_EXISTING ~xac107.itm~ ~override/xahelmca.itm~
 		WRITE_ASCII 0x656 ~xacaelar~ #8
 		WRITE_LONG 0x66E RESOLVE_STR_REF(@5028)
 	//}
 
 	//{ Caelar's Shield bdshldca
-		COPY_EXISTING ~xac109.itm~ ~override\xashldca.itm~
+		COPY_EXISTING ~xac109.itm~ ~override/xashldca.itm~
 		WRITE_ASCII 0x176 ~xacaelar~ #8
 		WRITE_LONG 0x18E RESOLVE_STR_REF(@5028)
 	//}
 
 	//{ Caelar's Sword + 3 bdsw1hca
-		COPY_EXISTING ~xac111.itm~ ~override\xasw1hca.itm~
+		COPY_EXISTING ~xac111.itm~ ~override/xasw1hca.itm~
 		WRITE_ASCII 0x11E ~xacaelar~ #8
 		WRITE_LONG 0x136 RESOLVE_STR_REF(@5028)
 	//}
 	
 	//{ Caelar's Sword + 5 new 
-		COPY ~%MOD_FOLDER%\tob\bam\xasw1hc5.bam~ ~override~
+		COPY ~%MOD_FOLDER%/tob/bam/xasw1hc5.bam~ ~override~
 	
-		COPY ~%MOD_FOLDER%\tob\itm\xasw1hc5.itm~ ~override~
+		COPY ~%MOD_FOLDER%/tob/itm/xasw1hc5.itm~ ~override~
 		WRITE_LONG 0x1F6 RESOLVE_STR_REF(@5028)
 	//}
 	
 	//{ Corwin's Bow + 4 (Gond) new 
-		COPY_EXISTING ~xacorbo3.itm~ ~override\xacorbo4.itm~
+		COPY_EXISTING ~xacorbo3.itm~ ~override/xacorbo4.itm~
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@5024)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@5024)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@5025)
@@ -482,7 +482,7 @@ END
 	//}
 	
 	//{ Corwin's Bow + 5 (Gond) new 
-		COPY_EXISTING ~xacorbo4.itm~ ~override\xacorbo5.itm~
+		COPY_EXISTING ~xacorbo4.itm~ ~override/xacorbo5.itm~
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@5026)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@5026)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@5027)
@@ -496,7 +496,7 @@ END
 	//}
 	
 	//{ Shattered Gear 
-		COPY_EXISTING ~misc59.itm~ ~override\xabroken.itm~
+		COPY_EXISTING ~misc59.itm~ ~override/xabroken.itm~
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@5017)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@5017)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@5018)
@@ -504,7 +504,7 @@ END
 	//}
 	
 	//{ Soultaker Dagger (Demon)
-		COPY_EXISTING ~dagg10.itm~ ~override\xastdagd.itm~
+		COPY_EXISTING ~dagg10.itm~ ~override/xastdagd.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@5019)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@5019)
 	//}
@@ -517,12 +517,12 @@ END
 
 //{ New Areas
 	//{ xa4000 ar4000 Spirit Heads (LCA - Forest Outside Saradush)
-		COPY_EXISTING ~ar4000.are~ ~override\xa4000.are~
+		COPY_EXISTING ~ar4000.are~ ~override/xa4000.are~
 		WRITE_ASCII 0x94 ~xa4000~ #8
 	//}
 	
 	//{ xag100 bd4500 Avernus Bridge
-		EXTEND_TOP ~xags100.bcs~ ~%MOD_FOLDER%\tob\baf\xa4500.baf~
+		EXTEND_TOP ~xags100.bcs~ ~%MOD_FOLDER%/tob/baf/xa4500.baf~
 		
 		COPY_EXISTING ~xag100.are~ ~override~
 		WRITE_ASCII 0x14E4 ~xaavdoor~ #8
@@ -595,7 +595,7 @@ END
 	//}
 	
 	//{ xag101 bd4700 Avernus Tower Roof
-		EXTEND_TOP ~xags101.bcs~ ~%MOD_FOLDER%\tob\baf\xa4700.baf~
+		EXTEND_TOP ~xags101.bcs~ ~%MOD_FOLDER%/tob/baf/xa4700.baf~
 		
 		COPY_EXISTING ~xag101.are~ ~override~
 		//{ Disable Hellevator
@@ -606,7 +606,7 @@ END
 	//}
 	
 	//{ xag102 bd5300 Kanaglym
-		EXTEND_TOP ~xags102.bcs~ ~%MOD_FOLDER%\tob\baf\xa5300.baf~
+		EXTEND_TOP ~xags102.bcs~ ~%MOD_FOLDER%/tob/baf/xa5300.baf~
 		
 		COPY_EXISTING ~xag102.are~ ~override~
 		
@@ -694,11 +694,11 @@ END
 	//}
 	
 	//{ xa5501 Amkethran Tavern
-		COPY ~%MOD_FOLDER%\tob\are\xa5501.are~ ~override~
+		COPY ~%MOD_FOLDER%/tob/are/xa5501.are~ ~override~
 	//}
 	
 	//{ xabye ar4500 Pocket Plane
-		COPY ~%MOD_FOLDER%\tob\are\xabye.are~ ~override~
+		COPY ~%MOD_FOLDER%/tob/are/xabye.are~ ~override~
 	//}
 	
 	//{ 2DA Modifications

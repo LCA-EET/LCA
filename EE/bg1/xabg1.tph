@@ -1,7 +1,7 @@
 PRINT @1000  /* ~Processing BG1 changes...~ */
 
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\bg1\baf~
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\bg1\d~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/d~
 
 //{ String Sets
 	ACTION_IF (isEET = 1) THEN BEGIN
@@ -85,13 +85,13 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\bg1\d~
 //}
 
 //{ Rohma's Friend
-	COPY_EXISTING ~girba3.cre~ ~override\xagirba3.cre~
+	COPY_EXISTING ~girba3.cre~ ~override/xagirba3.cre~
 	WRITE_ASCII 0x2CC ~xagirl~ #8 	// Dialogue
 	WRITE_ASCII 0x280 ~xagirba3~ #20  	// Script Name
 	WRITE_ASCII 0x250 ~xagirba3~ #8		// Class Script
 //}
 
-//{ AR1300 \ BG1300 modification
+//{ AR1300 / BG1300 modification
 	ACTION_IF (isEET = 1) THEN BEGIN
 		OUTER_SPRINT filename ~bg1300.are~
 	END ELSE BEGIN
@@ -114,13 +114,13 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\bg1\d~
 
 //{ Script Modifications
 	ACTION_IF (isEET = 1) THEN BEGIN
-		EXTEND_TOP ~BG1317.BCS~ ~%MOD_FOLDER%\bg1\baf\xabg1317.baf~
-		EXTEND_TOP ~BG2600.BCS~ ~%MOD_FOLDER%\bg1\baf\xabg2600.baf~
-		EXTEND_TOP ~BG4200.BCS~ ~%MOD_FOLDER%\bg1\baf\xabg4200.baf~
-		EXTEND_TOP ~BALDUR.BCS~ ~%MOD_FOLDER%\bg1\baf\xabalbg1.baf~
+		EXTEND_TOP ~BG1317.BCS~ ~%MOD_FOLDER%/bg1/baf/xabg1317.baf~
+		EXTEND_TOP ~BG2600.BCS~ ~%MOD_FOLDER%/bg1/baf/xabg2600.baf~
+		EXTEND_TOP ~BG4200.BCS~ ~%MOD_FOLDER%/bg1/baf/xabg4200.baf~
+		EXTEND_TOP ~BALDUR.BCS~ ~%MOD_FOLDER%/bg1/baf/xabalbg1.baf~
 	END ELSE BEGIN
-		EXTEND_TOP ~AR1317.BCS~ ~%MOD_FOLDER%\bg1\baf\xabg1317.baf~
+		EXTEND_TOP ~AR1317.BCS~ ~%MOD_FOLDER%/bg1/baf/xabg1317.baf~
 	END
 //}
 
-INCLUDE ~%MOD_FOLDER%\bg1\xabg1_co.tph~
+INCLUDE ~%MOD_FOLDER%/bg1/xabg1_co.tph~

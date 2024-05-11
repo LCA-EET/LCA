@@ -5,7 +5,7 @@ SILENT
 //{ BAM
 	LAF xa_copy_folder_contents
 		STR_VAR
-			xa_relative_path = ~%MOD_FOLDER%\rbg\bam~
+			xa_relative_path = ~%MOD_FOLDER%/rbg/bam~
 	END
 //}
 
@@ -13,7 +13,7 @@ SILENT
 	ACTION_IF (isEET = 0) THEN BEGIN
 		LAF xa_copy_folder_contents
 			STR_VAR
-				xa_relative_path = ~%MOD_FOLDER%\rbg\anim~
+				xa_relative_path = ~%MOD_FOLDER%/rbg/anim~
 		END
 
 		APPEND ~animate.ids~ ~0x7F5A ABISHAI_RED~
@@ -25,9 +25,9 @@ SILENT
 	END
 	
 //}
-INCLUDE ~%MOD_FOLDER%\generated\a\generated.tph~
-INCLUDE ~%MOD_FOLDER%\generated\c\generated.tph~
-INCLUDE ~%MOD_FOLDER%\generated\f\generated.tph~
+INCLUDE ~%MOD_FOLDER%/generated/a/generated.tph~
+INCLUDE ~%MOD_FOLDER%/generated/c/generated.tph~
+INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 
 
 //{ Worldmap
@@ -40,14 +40,14 @@ INCLUDE ~%MOD_FOLDER%\generated\f\generated.tph~
 	END
 	OUTER_SET secondIndex = (firstIndex + 1)
 	
-	COPY ~%MOD_FOLDER%\rbg\pvrz\mosmapA.pvrz~ ~override\mos%firstIndex%.pvrz~
-	COPY ~%MOD_FOLDER%\rbg\pvrz\mosmapB.pvrz~ ~override\mos%secondIndex%.pvrz~
+	COPY ~%MOD_FOLDER%/rbg/pvrz/mosmapA.pvrz~ ~override/mos%firstIndex%.pvrz~
+	COPY ~%MOD_FOLDER%/rbg/pvrz/mosmapB.pvrz~ ~override/mos%secondIndex%.pvrz~
 	
-	COPY ~%MOD_FOLDER%\rbg\mos\xamaprbg.mos~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/mos/xamaprbg.mos~ ~override~
 	WRITE_LONG 0x34 firstIndex
 	WRITE_LONG 0x50 secondIndex
 	
-	COPY ~%MOD_FOLDER%\rbg\wmp\xamaprbg.wmp~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/wmp/xamaprbg.wmp~ ~override~
 	WRITE_LONG 0x24 RESOLVE_STR_REF(@4136) // Map Name
 	
 	WRITE_LONG 0x978 RESOLVE_STR_REF(@4137) // Wyrm Crossing Label
@@ -409,40 +409,40 @@ INCLUDE ~%MOD_FOLDER%\generated\f\generated.tph~
 		
 		
 	//}
-	COPY ~%MOD_FOLDER%\rbg\bam\xamapico.bam~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/bam/xamapico.bam~ ~override~
 //}
 
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\d~
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/d~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 
 //{ Replace Rumors
-	COPY_EXISTING_REGEXP GLOB ~xaa.+\.sto$~ ~override~ 
+	COPY_EXISTING_REGEXP GLOB ~xaa.+/.sto$~ ~override~ 
 	WRITE_ASCII 0x44 ~xarumor~ #8
 	BUT_ONLY
 //}
 
 //{ Script Extensions
 	/* Explore BG1 Areas, and cause Bence to spawn when the debriefing timer expires. */
-	EXTEND_TOP_REGEXP ~xaas.+\.bcs$~ ~%MOD_FOLDER%\rbg\baf\xalcbg1a.baf~
+	EXTEND_TOP_REGEXP ~xaas.+/.bcs$~ ~%MOD_FOLDER%/rbg/baf/xalcbg1a.baf~
 
-	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%\rbg\baf\xap1d.baf~
-	EXTEND_BOTTOM ~xadings.bcs~	~%MOD_FOLDER%\rbg\baf\xadings.baf~
-	EXTEND_TOP ~xabalrbg.bcs~ 	~%MOD_FOLDER%\rbg\baf\xabalegg.baf~
-	EXTEND_TOP ~xabalrbg.bcs~ 	~%MOD_FOLDER%\rbg\baf\xabalamu.baf~
-	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%\rbg\baf\xabalrbg.baf~	
+	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~
+	EXTEND_BOTTOM ~xadings.bcs~	~%MOD_FOLDER%/rbg/baf/xadings.baf~
+	EXTEND_TOP ~xabalrbg.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalegg.baf~
+	EXTEND_TOP ~xabalrbg.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalamu.baf~
+	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalrbg.baf~	
 //}
 
 //{ BMP
 	LAF xa_copy_folder_contents
 		STR_VAR
-			xa_relative_path = ~%MOD_FOLDER%\rbg\bmp~
+			xa_relative_path = ~%MOD_FOLDER%/rbg/bmp~
 	END
 //}
 
 //{ CRE
 
 	//{ Block A Base
-		COPY_EXISTING ~xaa100.cre~ ~override\xasarevo.cre~ // sarevo
+		COPY_EXISTING ~xaa100.cre~ ~override/xasarevo.cre~ // sarevo
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xasarevo~
@@ -578,7 +578,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 			END
 		//}
 		
-		COPY_EXISTING ~xaa274.cre~ ~override\xabrielb.cre~ // Brielbara
+		COPY_EXISTING ~xaa274.cre~ ~override/xabrielb.cre~ // Brielbara
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xabrielb~
@@ -586,14 +586,14 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 				xa_override = ~xainitp1~
 		END
 		
-		COPY_EXISTING ~xaa463.cre~ ~override\xa800m.cre~ // mtowba
+		COPY_EXISTING ~xaa463.cre~ ~override/xa800m.cre~ // mtowba
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xa800m~
 				xa_scriptName = ~xa800m~
 		END
 		
-		COPY_EXISTING ~xaa465.cre~ ~override\xabrevlk.cre~ // Brevlik
+		COPY_EXISTING ~xaa465.cre~ ~override/xabrevlk.cre~ // Brevlik
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xabrevlk~
@@ -601,7 +601,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 				xa_override = ~xabrevlk~
 		END
 		
-		COPY_EXISTING ~xaa552.cre~ ~override\xalarze.cre~ // Larze
+		COPY_EXISTING ~xaa552.cre~ ~override/xalarze.cre~ // Larze
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xalarze~
@@ -609,7 +609,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 				xa_override = ~xainitp1~
 		END
 		
-		COPY_EXISTING ~xaa560.cre~ ~override\xamom.cre~ // ftowba
+		COPY_EXISTING ~xaa560.cre~ ~override/xamom.cre~ // ftowba
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xamom~
@@ -619,14 +619,14 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		SAY NAME1 @4154 /*~Anguished Mother~ */
 		SAY NAME2 @4154 /* */
 		
-		COPY_EXISTING ~xaa560.cre~ ~override\xa800w.cre~ // ftowba
+		COPY_EXISTING ~xaa560.cre~ ~override/xa800w.cre~ // ftowba
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xa800w~
 				xa_scriptName = ~xa800w~
 		END
 		
-		COPY_EXISTING ~xaa1179.cre~ ~override\xawvgrd.cre~ // WV Guard 2 iron12
+		COPY_EXISTING ~xaa1179.cre~ ~override/xawvgrd.cre~ // WV Guard 2 iron12
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xawvgrd2~
@@ -634,7 +634,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 				xa_override = ~xaguard~
 		END
 		
-		COPY_EXISTING ~xaa730.cre~ ~override\xavirgil.cre~ // Virgil nobl11
+		COPY_EXISTING ~xaa730.cre~ ~override/xavirgil.cre~ // Virgil nobl11
 		SAY NAME1 @4082
 		SAY NAME2 @4082
 		LPF xa_reset_cre
@@ -644,7 +644,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 				xa_default = ~xavirgil~
 		END
 		
-		COPY_EXISTING ~xaa904.cre~ ~override\xaalyth.cre~ // Alyth
+		COPY_EXISTING ~xaa904.cre~ ~override/xaalyth.cre~ // Alyth
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xaalyth~
@@ -660,7 +660,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 				xa_override = ~shout~
 		END
 		
-		COPY_EXISTING ~xaa949.cre~ ~override\xamerchj.cre~ // Seven Suns Merchant merlea
+		COPY_EXISTING ~xaa949.cre~ ~override/xamerchj.cre~ // Seven Suns Merchant merlea
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xamerch~
@@ -671,15 +671,15 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_ASCII 0x2CC ~xamerchg~ #8 	// Dialogue
 		WRITE_ASCII 0x258 ~xamerchg~ #8		// Race Script
 		
-		COPY_EXISTING ~xaa1220.cre~ ~override\xawvmer1.cre~ // WV Merchant ironm3
+		COPY_EXISTING ~xaa1220.cre~ ~override/xawvmer1.cre~ // WV Merchant ironm3
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xawvmer~
 		END
 		
-		COPY_EXISTING ~xawvmer1.cre~ ~override\xawvmer2.cre~ // WV Merchant ironm3
+		COPY_EXISTING ~xawvmer1.cre~ ~override/xawvmer2.cre~ // WV Merchant ironm3
 		
-		COPY_EXISTING ~xaa949.cre~ ~override\xamerlea.cre~ // Merchant's League Merchant
+		COPY_EXISTING ~xaa949.cre~ ~override/xamerlea.cre~ // Merchant's League Merchant
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xamerlea~
@@ -693,12 +693,12 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_ASCII 0x258 ~xamerchg~ #8		// Race Script
 		WRITE_ASCII 0x2CC ~xabartml~ #8 	// Dialogue
 		
-		COPY_EXISTING ~xaa1324.cre~ ~override\xabrandi.cre~ // Brandilar brandi
+		COPY_EXISTING ~xaa1324.cre~ ~override/xabrandi.cre~ // Brandilar brandi
 		WRITE_ASCII 0x280 ~xabrandi~ #20  	// Script Name
 		WRITE_ASCII 0x258 ~xamerchg~ #8		// Race Script
 		WRITE_ASCII 0x2CC ~xabrandi~ #8 	// Dialogue
 		
-		COPY_EXISTING ~xaa1316.cre~ ~override\xajhasso.cre~ // Jhasso jhasso
+		COPY_EXISTING ~xaa1316.cre~ ~override/xajhasso.cre~ // Jhasso jhasso
 		WRITE_ASCII 0x280 ~xajhasso~ #20  	// Script Name
 		WRITE_ASCII 0x2CC ~xajhasso~ #8 	// Dialogue
 		WRITE_ASCII 0x250 ~xainitp1~ #8		// Class Script
@@ -706,7 +706,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		COPY_EXISTING ~xaa737.cre~ ~override~ // Silvershield Servant serva2
 		WRITE_ASCII 0x2CC ~xaserva2~ #8 	// Dialogue
 		
-		COPY_EXISTING ~xaa108.cre~ ~override\xasemaj.cre~ // Semaj semaj
+		COPY_EXISTING ~xaa108.cre~ ~override/xasemaj.cre~ // Semaj semaj
 		LPF xa_reset_cre
 			STR_VAR
 				xa_scriptName = ~xasemaj~
@@ -715,7 +715,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 				xa_general = ~wtasight~
 		END
 		
-		COPY_EXISTING ~xaa1039.cre~ ~override\xacurato.cre~ // Curator Magda nobw5
+		COPY_EXISTING ~xaa1039.cre~ ~override/xacurato.cre~ // Curator Magda nobw5
 		SAY NAME1 @4048 /* Curator Magda */
 		SAY NAME2 @4048
 		LPF xa_reset_cre
@@ -725,7 +725,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 				xa_override = ~xacurato~
 		END
 		
-		COPY_EXISTING ~xaa1366.cre~ ~override\xazhalim.cre~ // Zhalimar zhalim
+		COPY_EXISTING ~xaa1366.cre~ ~override/xazhalim.cre~ // Zhalimar zhalim
 		LPF xa_reset_cre
 			STR_VAR
 				xa_scriptName = ~xazhalim~
@@ -733,7 +733,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 				xa_target = ~wtarsgt~
 		END
 		
-		COPY_EXISTING ~xaa1368.cre~ ~override\xaaasim.cre~ // Aasim aasim
+		COPY_EXISTING ~xaa1368.cre~ ~override/xaaasim.cre~ // Aasim aasim
 		LPF xa_reset_cre
 			STR_VAR
 				xa_scriptName = ~xaaasim~
@@ -742,7 +742,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 				xa_default = ~wtasight~
 		END
 		
-		COPY_EXISTING ~xaa1369.cre~ ~override\xadiyab.cre~ // Diyab diyab
+		COPY_EXISTING ~xaa1369.cre~ ~override/xadiyab.cre~ // Diyab diyab
 		LPF xa_reset_cre
 			STR_VAR
 				xa_scriptName = ~xadiyab~
@@ -751,7 +751,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 				xa_default = ~wtasight~
 		END
 		
-		COPY_EXISTING ~xaa1370.cre~ ~override\xagardus.cre~ // Gardus gardus
+		COPY_EXISTING ~xaa1370.cre~ ~override/xagardus.cre~ // Gardus gardus
 		LPF xa_reset_cre
 			STR_VAR
 				xa_scriptName = ~xagardus~
@@ -759,12 +759,12 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 				xa_default = ~wtasight~
 		END
 		
-		COPY_EXISTING ~xaa130.sto~ ~override\xabartml.sto~ // Merchants' League Bar
+		COPY_EXISTING ~xaa130.sto~ ~override/xabartml.sto~ // Merchants' League Bar
 		WRITE_LONG 0xC RESOLVE_STR_REF(@4149)
 	//}
 	
 	//{ Block C Base
-		COPY_EXISTING ~xac100.cre~ ~override\xaglint.cre~ // Glint glint7
+		COPY_EXISTING ~xac100.cre~ ~override/xaglint.cre~ // Glint glint7
 		WRITE_ASCII 0x2CC ~xaglint~ #8 	// Dialogue
 		
 		WRITE_ASCII 0x280 ~xaglint~ #20  	// Script Name
@@ -774,7 +774,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xac101.cre~ ~override\xarohma.cre~ // Rohma bdrohma
+		COPY_EXISTING ~xac101.cre~ ~override/xarohma.cre~ // Rohma bdrohma
 		WRITE_ASCII 0x2CC ~xarohma~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xarohma~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~xarohma1~ #8		// Override Script
@@ -783,7 +783,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xac102.cre~ ~override\xaaudam.cre~ // Audamar bdaudam
+		COPY_EXISTING ~xac102.cre~ ~override/xaaudam.cre~ // Audamar bdaudam
 		WRITE_ASCII 0x2CC ~xaaudam~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xaaudam~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~xaaudam~ #8		// Override Script
@@ -792,7 +792,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xac103.cre~ ~override\xanederl.cre~ // Nederlok bdnederl
+		COPY_EXISTING ~xac103.cre~ ~override/xanederl.cre~ // Nederlok bdnederl
 		WRITE_ASCII 0x2CC ~xanederl~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xanederl~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~~ #8		// Override Script
@@ -801,7 +801,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xac104.cre~ ~override\xaaldeth.cre~ // Aldeth aldeth
+		COPY_EXISTING ~xac104.cre~ ~override/xaaldeth.cre~ // Aldeth aldeth
 		WRITE_ASCII 0x2CC ~xaaldeth~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xaaldeth~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~xainitp1~ #8		// Override Script
@@ -810,7 +810,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xac105.cre~ ~override\xakent.cre~ // Kent kent
+		COPY_EXISTING ~xac105.cre~ ~override/xakent.cre~ // Kent kent
 		WRITE_ASCII 0x2CC ~xakent~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xakent~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~~ #8		// Override Script
@@ -819,7 +819,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_ASCII 0x260 ~~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xac106.cre~ ~override\xabeno.cre~ // Beno bdfamari
+		COPY_EXISTING ~xac106.cre~ ~override/xabeno.cre~ // Beno bdfamari
 		ADD_CRE_ITEM ~xbow04~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON2~
 		ADD_CRE_ITEM ~bolt01~ #20 #0 #0 ~IDENTIFIED~ ~QUIVER1~
 		WRITE_ASCII 0x2CC ~xabeno~ #8 	// Dialogue
@@ -830,7 +830,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_ASCII 0x260 ~xabenof~ #8		// General Script
 		WRITE_ASCII 0x268 ~~ #8		// Default Script
 		
-		COPY_EXISTING ~xac107.cre~ ~override\xaskie.cre~ // Skie bdskie
+		COPY_EXISTING ~xac107.cre~ ~override/xaskie.cre~ // Skie bdskie
 		WRITE_ASCII 0x2CC ~xaskie~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xaskie~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~xaskie~ #8		// Override Script
@@ -849,27 +849,27 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 			WRITE_ASCII 0x260 ~xacaelac~ #8		// General Script
 			WRITE_ASCII 0x268 ~xalcnull~ #8		// Default Script
 		//}
-		EXTEND_BOTTOM ~xag1coal.bcs~ ~%MOD_FOLDER%\rbg\baf\xacrtyrd.baf~
-		EXTEND_BOTTOM ~xag1crus.bcs~ ~%MOD_FOLDER%\rbg\baf\xacrtyrd.baf~
+		EXTEND_BOTTOM ~xag1coal.bcs~ ~%MOD_FOLDER%/rbg/baf/xacrtyrd.baf~
+		EXTEND_BOTTOM ~xag1crus.bcs~ ~%MOD_FOLDER%/rbg/baf/xacrtyrd.baf~
 		
 		//{ Coalition Respawns
-			COPY_EXISTING ~xac121.cre~ ~override\xacoal0.cre~ // bddagf35
-			COPY_EXISTING ~xac122.cre~ ~override\xacoal1.cre~ // bddagf36
-			COPY_EXISTING ~xac123.cre~ ~override\xacoal2.cre~ // bddagf37
-			COPY_EXISTING ~xac124.cre~ ~override\xacoal3.cre~ // bddagf38
-			COPY_EXISTING ~xac125.cre~ ~override\xacoal4.cre~ // bdfist35
-			COPY_EXISTING ~xac126.cre~ ~override\xacoal5.cre~ // bdfist36
-			COPY_EXISTING ~xac127.cre~ ~override\xacoal6.cre~ // bdfist37
-			COPY_EXISTING ~xac128.cre~ ~override\xacoal7.cre~ // bdfist38
-			COPY_EXISTING ~xac129.cre~ ~override\xacoal8.cre~ // bdfist40
-			COPY_EXISTING ~xac130.cre~ ~override\xacoal9.cre~ // bdfist41
-			COPY_EXISTING ~xac131.cre~ ~override\xacoal10.cre~ // bdfist42
-			COPY_EXISTING ~xac132.cre~ ~override\xacoal11.cre~ // bdwtr35
-			COPY_EXISTING ~xac133.cre~ ~override\xacoal12.cre~ // bdwtr35
-			COPY_EXISTING ~xac134.cre~ ~override\xacoal13.cre~ // bdwtr35
-			COPY_EXISTING ~xac135.cre~ ~override\xacoal14.cre~ // bdwtr35
+			COPY_EXISTING ~xac121.cre~ ~override/xacoal0.cre~ // bddagf35
+			COPY_EXISTING ~xac122.cre~ ~override/xacoal1.cre~ // bddagf36
+			COPY_EXISTING ~xac123.cre~ ~override/xacoal2.cre~ // bddagf37
+			COPY_EXISTING ~xac124.cre~ ~override/xacoal3.cre~ // bddagf38
+			COPY_EXISTING ~xac125.cre~ ~override/xacoal4.cre~ // bdfist35
+			COPY_EXISTING ~xac126.cre~ ~override/xacoal5.cre~ // bdfist36
+			COPY_EXISTING ~xac127.cre~ ~override/xacoal6.cre~ // bdfist37
+			COPY_EXISTING ~xac128.cre~ ~override/xacoal7.cre~ // bdfist38
+			COPY_EXISTING ~xac129.cre~ ~override/xacoal8.cre~ // bdfist40
+			COPY_EXISTING ~xac130.cre~ ~override/xacoal9.cre~ // bdfist41
+			COPY_EXISTING ~xac131.cre~ ~override/xacoal10.cre~ // bdfist42
+			COPY_EXISTING ~xac132.cre~ ~override/xacoal11.cre~ // bdwtr35
+			COPY_EXISTING ~xac133.cre~ ~override/xacoal12.cre~ // bdwtr35
+			COPY_EXISTING ~xac134.cre~ ~override/xacoal13.cre~ // bdwtr35
+			COPY_EXISTING ~xac135.cre~ ~override/xacoal14.cre~ // bdwtr35
 
-			COPY_EXISTING_REGEXP GLOB ~xacoal.+\.cre$~ ~override~ 
+			COPY_EXISTING_REGEXP GLOB ~xacoal.+/.cre$~ ~override~ 
 				LPF xa_reset_cre
 					STR_VAR
 						xa_override = ~xag1coal~
@@ -879,66 +879,66 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		//}
 		
 		//{ Crusader Respawns
-			COPY_EXISTING ~xac136.cre~ ~override\xacrus0.cre~ //bdcru40
-			COPY_EXISTING ~xac137.cre~ ~override\xacrus1.cre~ //bdcru41
-			COPY_EXISTING ~xac138.cre~ ~override\xacrus2.cre~ //bdcru42
-			COPY_EXISTING ~xac139.cre~ ~override\xacrus3.cre~ //bdcru43
-			COPY_EXISTING ~xac140.cre~ ~override\xacrus4.cre~ //bdcru44
-			COPY_EXISTING ~xac141.cre~ ~override\xacrus5.cre~ //bdcru45
-			COPY_EXISTING ~xac142.cre~ ~override\xacrus6.cre~ //bdcru46
-			COPY_EXISTING ~xac143.cre~ ~override\xacrus7.cre~ //bdcru47
-			COPY_EXISTING ~xac144.cre~ ~override\xacrus8.cre~ //bdcru51
-			COPY_EXISTING ~xac145.cre~ ~override\xacrus9.cre~ //bdcru52
-			COPY_EXISTING ~xac146.cre~ ~override\xacrus10.cre~ //bdcru53
-			COPY_EXISTING ~xac147.cre~ ~override\xacrus11.cre~ //bdcru54
-			COPY_EXISTING ~xac148.cre~ ~override\xacrus12.cre~ //bdcru55
-			COPY_EXISTING ~xac149.cre~ ~override\xacrus13.cre~ //bdcru56
-			COPY_EXISTING ~xac150.cre~ ~override\xacrus14.cre~ //bdcru57
-			COPY_EXISTING ~xac151.cre~ ~override\xacrus15.cre~ //bdcru58
-			COPY_EXISTING ~xac167.cre~ ~override\xacrus16.cre~ //bdcru118
-			COPY_EXISTING ~xac171.cre~ ~override\xacrus17.cre~ //bdcru117
-			COPY_EXISTING ~xac175.cre~ ~override\xacrus18.cre~ //bdcrum31
-			COPY_EXISTING ~xac176.cre~ ~override\xacrus19.cre~ //bdcrum32
-			COPY_EXISTING ~xac177.cre~ ~override\xacrus20.cre~ //bdcrum30
-			COPY_EXISTING ~xac190.cre~ ~override\xacrus21.cre~ //bdcrus36
-			COPY_EXISTING ~xac192.cre~ ~override\xacrus22.cre~ //bdcrus35
-			COPY_EXISTING ~xac200.cre~ ~override\xacrus23.cre~ //bdcrus29
-			COPY_EXISTING ~xac202.cre~ ~override\xacrus24.cre~ //bdcrus39
-			COPY_EXISTING ~xac204.cre~ ~override\xacrus25.cre~ //bdcrux31
-			COPY_EXISTING ~xac205.cre~ ~override\xacrus26.cre~ //bdcrue30
-			COPY_EXISTING ~xac206.cre~ ~override\xacrus27.cre~ //bdcrux30
-			COPY_EXISTING ~xac207.cre~ ~override\xacrus28.cre~ //bdcrue33
-			COPY_EXISTING ~xac209.cre~ ~override\xacrus29.cre~ //bdcrur30
-			COPY_EXISTING ~xac213.cre~ ~override\xacrus30.cre~ //bdcrus38
-			COPY_EXISTING ~xac214.cre~ ~override\xacrus31.cre~ //bdcrus20
-			COPY_EXISTING ~xac219.cre~ ~override\xacrus32.cre~ //bdcrur33
-			COPY_EXISTING ~xac221.cre~ ~override\xacrus33.cre~ //bdcrur31
-			COPY_EXISTING ~xac222.cre~ ~override\xacrus34.cre~ //bdcrur34
-			COPY_EXISTING ~xac223.cre~ ~override\xacrus35.cre~ //bdcru101
-			COPY_EXISTING ~xac224.cre~ ~override\xacrus36.cre~ //bdcrur32
-			COPY_EXISTING ~xac227.cre~ ~override\xacrus37.cre~ //bdcrur29
-			COPY_EXISTING ~xac228.cre~ ~override\xacrus38.cre~ //bdcrus33
-			COPY_EXISTING ~xac230.cre~ ~override\xacrus39.cre~ //bdcru111
-			COPY_EXISTING ~xac231.cre~ ~override\xacrus40.cre~ //bdcrus95
-			COPY_EXISTING ~xac233.cre~ ~override\xacrus41.cre~ //bdcrur27
-			COPY_EXISTING ~xac235.cre~ ~override\xacrus42.cre~ //bdcrur28
-			COPY_EXISTING ~xac236.cre~ ~override\xacrus43.cre~ //bdcru100
-			COPY_EXISTING ~xac237.cre~ ~override\xacrus44.cre~ //bdcrur26
-			COPY_EXISTING ~xac238.cre~ ~override\xacrus45.cre~ //bdcrus98
-			COPY_EXISTING ~xac240.cre~ ~override\xacrus46.cre~ //bdcrue32
-			COPY_EXISTING ~xac241.cre~ ~override\xacrus47.cre~ //bdcrue31
-			COPY_EXISTING ~xac243.cre~ ~override\xacrus48.cre~ //bdcru112
-			COPY_EXISTING ~xac246.cre~ ~override\xacrus49.cre~ //bdcru103
-			COPY_EXISTING ~xac247.cre~ ~override\xacrus50.cre~ //bdcru104
-			COPY_EXISTING ~xac250.cre~ ~override\xacrus51.cre~ //bdcru115
-			COPY_EXISTING ~xac251.cre~ ~override\xacrus52.cre~ //bdcru116
-			COPY_EXISTING ~xac254.cre~ ~override\xacrus53.cre~ //bdcrus90
-			COPY_EXISTING ~xac255.cre~ ~override\xacrus54.cre~ //bdcrus97
-			COPY_EXISTING ~xac256.cre~ ~override\xacrus55.cre~ //bdcrus93
-			COPY_EXISTING ~xac257.cre~ ~override\xacrus56.cre~ //bdcrus96
-			COPY_EXISTING ~xac272.cre~ ~override\xacrus57.cre~ //bdcrus32
+			COPY_EXISTING ~xac136.cre~ ~override/xacrus0.cre~ //bdcru40
+			COPY_EXISTING ~xac137.cre~ ~override/xacrus1.cre~ //bdcru41
+			COPY_EXISTING ~xac138.cre~ ~override/xacrus2.cre~ //bdcru42
+			COPY_EXISTING ~xac139.cre~ ~override/xacrus3.cre~ //bdcru43
+			COPY_EXISTING ~xac140.cre~ ~override/xacrus4.cre~ //bdcru44
+			COPY_EXISTING ~xac141.cre~ ~override/xacrus5.cre~ //bdcru45
+			COPY_EXISTING ~xac142.cre~ ~override/xacrus6.cre~ //bdcru46
+			COPY_EXISTING ~xac143.cre~ ~override/xacrus7.cre~ //bdcru47
+			COPY_EXISTING ~xac144.cre~ ~override/xacrus8.cre~ //bdcru51
+			COPY_EXISTING ~xac145.cre~ ~override/xacrus9.cre~ //bdcru52
+			COPY_EXISTING ~xac146.cre~ ~override/xacrus10.cre~ //bdcru53
+			COPY_EXISTING ~xac147.cre~ ~override/xacrus11.cre~ //bdcru54
+			COPY_EXISTING ~xac148.cre~ ~override/xacrus12.cre~ //bdcru55
+			COPY_EXISTING ~xac149.cre~ ~override/xacrus13.cre~ //bdcru56
+			COPY_EXISTING ~xac150.cre~ ~override/xacrus14.cre~ //bdcru57
+			COPY_EXISTING ~xac151.cre~ ~override/xacrus15.cre~ //bdcru58
+			COPY_EXISTING ~xac167.cre~ ~override/xacrus16.cre~ //bdcru118
+			COPY_EXISTING ~xac171.cre~ ~override/xacrus17.cre~ //bdcru117
+			COPY_EXISTING ~xac175.cre~ ~override/xacrus18.cre~ //bdcrum31
+			COPY_EXISTING ~xac176.cre~ ~override/xacrus19.cre~ //bdcrum32
+			COPY_EXISTING ~xac177.cre~ ~override/xacrus20.cre~ //bdcrum30
+			COPY_EXISTING ~xac190.cre~ ~override/xacrus21.cre~ //bdcrus36
+			COPY_EXISTING ~xac192.cre~ ~override/xacrus22.cre~ //bdcrus35
+			COPY_EXISTING ~xac200.cre~ ~override/xacrus23.cre~ //bdcrus29
+			COPY_EXISTING ~xac202.cre~ ~override/xacrus24.cre~ //bdcrus39
+			COPY_EXISTING ~xac204.cre~ ~override/xacrus25.cre~ //bdcrux31
+			COPY_EXISTING ~xac205.cre~ ~override/xacrus26.cre~ //bdcrue30
+			COPY_EXISTING ~xac206.cre~ ~override/xacrus27.cre~ //bdcrux30
+			COPY_EXISTING ~xac207.cre~ ~override/xacrus28.cre~ //bdcrue33
+			COPY_EXISTING ~xac209.cre~ ~override/xacrus29.cre~ //bdcrur30
+			COPY_EXISTING ~xac213.cre~ ~override/xacrus30.cre~ //bdcrus38
+			COPY_EXISTING ~xac214.cre~ ~override/xacrus31.cre~ //bdcrus20
+			COPY_EXISTING ~xac219.cre~ ~override/xacrus32.cre~ //bdcrur33
+			COPY_EXISTING ~xac221.cre~ ~override/xacrus33.cre~ //bdcrur31
+			COPY_EXISTING ~xac222.cre~ ~override/xacrus34.cre~ //bdcrur34
+			COPY_EXISTING ~xac223.cre~ ~override/xacrus35.cre~ //bdcru101
+			COPY_EXISTING ~xac224.cre~ ~override/xacrus36.cre~ //bdcrur32
+			COPY_EXISTING ~xac227.cre~ ~override/xacrus37.cre~ //bdcrur29
+			COPY_EXISTING ~xac228.cre~ ~override/xacrus38.cre~ //bdcrus33
+			COPY_EXISTING ~xac230.cre~ ~override/xacrus39.cre~ //bdcru111
+			COPY_EXISTING ~xac231.cre~ ~override/xacrus40.cre~ //bdcrus95
+			COPY_EXISTING ~xac233.cre~ ~override/xacrus41.cre~ //bdcrur27
+			COPY_EXISTING ~xac235.cre~ ~override/xacrus42.cre~ //bdcrur28
+			COPY_EXISTING ~xac236.cre~ ~override/xacrus43.cre~ //bdcru100
+			COPY_EXISTING ~xac237.cre~ ~override/xacrus44.cre~ //bdcrur26
+			COPY_EXISTING ~xac238.cre~ ~override/xacrus45.cre~ //bdcrus98
+			COPY_EXISTING ~xac240.cre~ ~override/xacrus46.cre~ //bdcrue32
+			COPY_EXISTING ~xac241.cre~ ~override/xacrus47.cre~ //bdcrue31
+			COPY_EXISTING ~xac243.cre~ ~override/xacrus48.cre~ //bdcru112
+			COPY_EXISTING ~xac246.cre~ ~override/xacrus49.cre~ //bdcru103
+			COPY_EXISTING ~xac247.cre~ ~override/xacrus50.cre~ //bdcru104
+			COPY_EXISTING ~xac250.cre~ ~override/xacrus51.cre~ //bdcru115
+			COPY_EXISTING ~xac251.cre~ ~override/xacrus52.cre~ //bdcru116
+			COPY_EXISTING ~xac254.cre~ ~override/xacrus53.cre~ //bdcrus90
+			COPY_EXISTING ~xac255.cre~ ~override/xacrus54.cre~ //bdcrus97
+			COPY_EXISTING ~xac256.cre~ ~override/xacrus55.cre~ //bdcrus93
+			COPY_EXISTING ~xac257.cre~ ~override/xacrus56.cre~ //bdcrus96
+			COPY_EXISTING ~xac272.cre~ ~override/xacrus57.cre~ //bdcrus32
 
-			COPY_EXISTING_REGEXP GLOB ~xacrus.+\.cre$~ ~override~ 
+			COPY_EXISTING_REGEXP GLOB ~xacrus.+/.cre$~ ~override~ 
 				LPF xa_reset_cre
 					STR_VAR
 						xa_override = ~xag1crus~
@@ -949,53 +949,53 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Block D Base
-		COPY_EXISTING ~xad123.cre~ ~override\xaff1248.cre~ // Flaming Fist bdfistcc Enforcer
+		COPY_EXISTING ~xad123.cre~ ~override/xaff1248.cre~ // Flaming Fist bdfistcc Enforcer
 		LPF xa_reset_cre
 			STR_VAR
 				xa_scriptName = ~XAFF1248~
 		END
 		
-		COPY_EXISTING ~xad123.cre~ ~override\xaff1271.cre~ // Flaming Fist bdfistcc Enforcer
+		COPY_EXISTING ~xad123.cre~ ~override/xaff1271.cre~ // Flaming Fist bdfistcc Enforcer
 		LPF xa_reset_cre
 			STR_VAR
 				xa_scriptName = ~XAFF1271~
 		END
 		
-		COPY_EXISTING ~xad123.cre~ ~override\xaff1272.cre~ // Flaming Fist bdfistcc Enforcer
+		COPY_EXISTING ~xad123.cre~ ~override/xaff1272.cre~ // Flaming Fist bdfistcc Enforcer
 		LPF xa_reset_cre
 			STR_VAR
 				xa_scriptName = ~XAFF1272~
 		END
 		
-		COPY_EXISTING ~xaff1271.cre~ ~override\xab147b.cre~
+		COPY_EXISTING ~xaff1271.cre~ ~override/xab147b.cre~
 		SAY NAME1 @3058
 		SAY NAME2 @3058
 		WRITE_ASCII 0x280 ~XAB147B~ #20  	// Script Name
 		
-		COPY_EXISTING ~xaff1272.cre~ ~override\xab149b.cre~
+		COPY_EXISTING ~xaff1272.cre~ ~override/xab149b.cre~
 		SAY NAME1 @3058
 		SAY NAME2 @3058
 		WRITE_ASCII 0x280 ~XAB149B~ #20  	// Script Name
 		
-		COPY_EXISTING ~xaff1248.cre~ ~override\xab144a.cre~
+		COPY_EXISTING ~xaff1248.cre~ ~override/xab144a.cre~
 		SAY NAME1 @4151
 		SAY NAME2 @4151
 		WRITE_ASCII 0x2CC ~xabridge~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~XAB144A~ #20  	// Script Name
 		
-		COPY_EXISTING ~xaff1271.cre~ ~override\xab145a.cre~
+		COPY_EXISTING ~xaff1271.cre~ ~override/xab145a.cre~
 		SAY NAME1 @4151
 		SAY NAME2 @4151
 		WRITE_ASCII 0x2CC ~xabridge~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~XAB145A~ #20  	// Script Name
 		
-		COPY_EXISTING ~xaff1272.cre~ ~override\xab147a.cre~
+		COPY_EXISTING ~xaff1272.cre~ ~override/xab147a.cre~
 		SAY NAME1 @4151
 		SAY NAME2 @4151
 		WRITE_ASCII 0x2CC ~xabridge~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~XAB147A~ #20  	// Script Name
 		
-		COPY_EXISTING ~xac105.cre~ ~override\xab149a.cre~ // kent
+		COPY_EXISTING ~xac105.cre~ ~override/xab149a.cre~ // kent
 		SAY NAME1 @4151
 		SAY NAME2 @4151
 		WRITE_ASCII 0x2CC ~xabridge~ #8 	// Dialogue
@@ -1003,7 +1003,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Block F Base
-		COPY_EXISTING ~xaf100.cre~ ~override\xaangelo.cre~ // Angelo angelo
+		COPY_EXISTING ~xaf100.cre~ ~override/xaangelo.cre~ // Angelo angelo
 		LPF xa_reset_cre
 			STR_VAR
 				xa_scriptName = ~xaangelo~
@@ -1014,7 +1014,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ BG2 Base
-		COPY_EXISTING ~bonebld.cre~ ~override\xabondag.cre~ // Bone Dagger
+		COPY_EXISTING ~bonebld.cre~ ~override/xabondag.cre~ // Bone Dagger
 		SAY NAME1 @4159 /* ~Bone Dagger~ */
 		SAY NAME2 @4159 /* ~Bone Dagger~ */
 		WRITE_ASCII 0x248 ~~ #8		// Override Script
@@ -1025,7 +1025,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_SHORT 0x48 0		// Effective AC
 		
 	
-		COPY_EXISTING ~ankheg01.cre~ ~override\xamutank.cre~ // Mutated Ankheg
+		COPY_EXISTING ~ankheg01.cre~ ~override/xamutank.cre~ // Mutated Ankheg
 		SAY NAME1 @4077
 		SAY NAME2 @4077
 		WRITE_LONG 0x14 2000	// Exp
@@ -1035,7 +1035,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_SHORT 0x46 0		// Natural AC
 		WRITE_SHORT 0x48 0		// Effective AC
 	
-		COPY_EXISTING ~boy1.cre~ ~override\xapercy.cre~
+		COPY_EXISTING ~boy1.cre~ ~override/xapercy.cre~
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xapercy~
@@ -1045,18 +1045,18 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		SAY NAME1 @4155/*~Percy~ */
 		SAY NAME2 @4155
 		
-		COPY_EXISTING ~xapercy.cre~ ~override\xatimoty.cre~
+		COPY_EXISTING ~xapercy.cre~ ~override/xatimoty.cre~
 		WRITE_ASCII 0x2CC ~xatimoty~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~xatimoty~ #20  	// Script Name
 		SAY NAME1 @4156/* ~Timotey~*/
 		SAY NAME2 @4156
 		WRITE_LONG 0x20 128 // Stone Death
 	
-		COPY_EXISTING ~chicke.cre~ ~override\xachick.cre~ // Chicken
+		COPY_EXISTING ~chicke.cre~ ~override/xachick.cre~ // Chicken
 		WRITE_ASCII 0x2CC ~xachick~ #8 	// Dialogue
 		WRITE_ASCII 0x250 ~xachick~ #8		// Class Script
 		
-		COPY_EXISTING ~neb.cre~ ~override\xaneb.cre~ // Flaming Fist Enforcer
+		COPY_EXISTING ~neb.cre~ ~override/xaneb.cre~ // Flaming Fist Enforcer
 		WRITE_LONG 0x14 7000	// XP Value
 		WRITE_SHORT 0x24 145	// Current HP
 		WRITE_SHORT 0x26 145	// Max HP
@@ -1064,7 +1064,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_ASCII 0x280 ~xaneb~ #20  	// Script Name
 		WRITE_ASCII 0x250 ~xaneb~ #8		// Class Script
 		
-		COPY_EXISTING ~CHWRAITH.CRE~ ~override\xachwrai.cre~
+		COPY_EXISTING ~CHWRAITH.CRE~ ~override/xachwrai.cre~
 		WRITE_LONG 0x14 2000 // XP Value
 		WRITE_SHORT 0x24 33
 		WRITE_SHORT 0x26 33
@@ -1078,20 +1078,20 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 				xa_default = ~wtasight~
 		END
 		
-		COPY_EXISTING ~dopgre01.cre~ ~override\xagdop00.cre~
+		COPY_EXISTING ~dopgre01.cre~ ~override/xagdop00.cre~
 		WRITE_ASCII 0x280 ~xagdop00~ #20  	// Script Name
 		WRITE_SHORT 0x24 85 // Current HP
 		WRITE_SHORT 0x26 85 // Max HP
 		WRITE_BYTE 0x52 5 // THAC0
 		WRITE_LONG 0x14 5000 // Exp
 		
-		COPY_EXISTING ~xagdop00.cre~ ~override\xagdop01.cre~
+		COPY_EXISTING ~xagdop00.cre~ ~override/xagdop01.cre~
 		WRITE_ASCII 0x280 ~xagdop01~ #20  	// Script Name
 		
-		COPY_EXISTING ~xagdop00.cre~ ~override\xagdop02.cre~
+		COPY_EXISTING ~xagdop00.cre~ ~override/xagdop02.cre~
 		WRITE_ASCII 0x280 ~xagdop02~ #20  	// Script Name
 		
-		COPY_EXISTING ~amcust02.cre~ ~override\xarbnb01.cre~
+		COPY_EXISTING ~amcust02.cre~ ~override/xarbnb01.cre~
 		SAY NAME1 @4140
 		SAY NAME2 @4140
 		LPF xa_reset_cre
@@ -1099,10 +1099,10 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 				xa_scriptName = ~xarbnb01~
 		END
 		
-		COPY_EXISTING ~xarbnb01.cre~ ~override\xarbnb02.cre~
+		COPY_EXISTING ~xarbnb01.cre~ ~override/xarbnb02.cre~
 		WRITE_ASCII 0x280 ~xarbnb02~ #20  	// Script Name
 		
-		COPY_EXISTING ~xaschael.cre~ ~override\xacc3.cre~ // Corwin
+		COPY_EXISTING ~xaschael.cre~ ~override/xacc3.cre~ // Corwin
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xacc3~
@@ -1114,18 +1114,18 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ToB Base
-		COPY_EXISTING ~illasera.cre~ ~override\xaillase.cre~ // Illasera
+		COPY_EXISTING ~illasera.cre~ ~override/xaillase.cre~ // Illasera
 		WRITE_ASCII 0x2CC ~xaillase~ #8 	// Dialogue
 		WRITE_ASCII 0x250 ~xaillase~ #8	// Class Script
 	//}
 	
-	COPY_EXISTING ~xalcspy.cre~ ~override\xahowspy.cre~ // Hall of Wonders Spy
+	COPY_EXISTING ~xalcspy.cre~ ~override/xahowspy.cre~ // Hall of Wonders Spy
 	WRITE_ASCII 0x248 ~xahowspy~ #8		// Override Script
 	
-	COPY_EXISTING ~xalcspy.cre~ ~override\xacell.cre~ // Cell Spy
+	COPY_EXISTING ~xalcspy.cre~ ~override/xacell.cre~ // Cell Spy
 	WRITE_ASCII 0x248 ~xacell~ #8		// Override Script
 	
-	COPY_EXISTING ~xalcspy.cre~ ~override\xaskieiv.cre~ // Skie invisible
+	COPY_EXISTING ~xalcspy.cre~ ~override/xaskieiv.cre~ // Skie invisible
 	SAY NAME1 @3070 /* Skie */
 	SAY NAME2 @3070
 	WRITE_ASCII 0x34 ~xaskies~ #8 // Portrait
@@ -1133,76 +1133,76 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	WRITE_ASCII 0x280 ~xaskie~ #20  	// Script Name
 	WRITE_ASCII 0x248 ~xaskie~ #8		// Override Script
 	
-	COPY_EXISTING ~xalcspy.cre~ ~override\xabeno2.cre~ // Beno invisible
+	COPY_EXISTING ~xalcspy.cre~ ~override/xabeno2.cre~ // Beno invisible
 	SAY NAME1 @4064 /* Beno Famari */
 	SAY NAME2 @4064
 	WRITE_ASCII 0x2CC ~xabeno2~ #8 	// Dialogue
 	WRITE_ASCII 0x280 ~xabeno2~ #20  	// Script Name
 	WRITE_ASCII 0x248 ~xabeno2~ #8		// Override Script
 	
-	COPY_EXISTING ~xalcspy.cre~ ~override\xaglint2.cre~ // Glint invisible
+	COPY_EXISTING ~xalcspy.cre~ ~override/xaglint2.cre~ // Glint invisible
 	SAY NAME1 @4074 /* Glint */
 	SAY NAME2 @4074
 	WRITE_ASCII 0x34 ~xac100~ #8 // Portrait
 	WRITE_ASCII 0x280 ~xaglint~ #20  	// Script Name
 	WRITE_ASCII 0x248 ~xaglint~ #8		// Override Script
 	
-	COPY_EXISTING ~xalcspy.cre~ ~override\xarohma3.cre~ // Rohma invisible
+	COPY_EXISTING ~xalcspy.cre~ ~override/xarohma3.cre~ // Rohma invisible
 	SAY NAME1 @4079 /* Rohma */
 	SAY NAME2 @4079 /* Rohma */
 	WRITE_ASCII 0x280 ~xarohma3~ #20  	// Script Name
 	
-	COPY_EXISTING ~xalcspy.cre~ ~override\xapspy.cre~ // Paint Spy
+	COPY_EXISTING ~xalcspy.cre~ ~override/xapspy.cre~ // Paint Spy
 	WRITE_ASCII 0x248 ~xapaint~ #8		// Override Script
 	
-	COPY_EXISTING ~xaffval1.cre~ ~override\xaffexec.cre~ // Flaming Fist Executioner
+	COPY_EXISTING ~xaffval1.cre~ ~override/xaffexec.cre~ // Flaming Fist Executioner
 	SAY NAME1 @4072
 	SAY NAME2 @4072
 	WRITE_ASCII 0x280 ~xaffexec~ #20  	// Script Name
 	WRITE_ASCII 0x2CC ~xaffexec~ #8 	// Dialogue
 	
 	//{ New CRE
-		COPY ~%MOD_FOLDER%\rbg\cre\xaaudam2.cre~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/cre/xaaudam2.cre~ ~override~
 		SAY NAME1 @4067
 		SAY NAME2 @4067
 		
-		COPY ~%MOD_FOLDER%\rbg\cre\xagorion.cre~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/cre/xagorion.cre~ ~override~
 		WRITE_ASCII 0x250 ~mage14a~ #8		// Class Script
 		
-		COPY ~%MOD_FOLDER%\rbg\cre\xajasper.cre~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/cre/xajasper.cre~ ~override~
 		SAY NAME1 @4092
 		SAY NAME2 @4092
 		
-		COPY ~%MOD_FOLDER%\rbg\cre\xalyriel.cre~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/cre/xalyriel.cre~ ~override~
 		SAY NAME1 @4049
 		SAY NAME2 @4049
 			
-		COPY ~%MOD_FOLDER%\rbg\cre\xanarzu.cre~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/cre/xanarzu.cre~ ~override~
 		WRITE_LONG 0x28 0xE279 // expressed as a hexadecimal
 		SAY NAME1 @4050
 		SAY NAME2 @4050
 		
-		COPY ~%MOD_FOLDER%\rbg\cre\xaneoma.cre~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/cre/xaneoma.cre~ ~override~
 		SAY NAME1 @4046
 		SAY NAME2 @4046
 		
-		COPY ~%MOD_FOLDER%\rbg\cre\xarohma2.cre~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/cre/xarohma2.cre~ ~override~
 		SAY NAME1 @3067
 		SAY NAME2 @3067
 		
-		COPY ~%MOD_FOLDER%\rbg\cre\xatianna.cre~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/cre/xatianna.cre~ ~override~
 		SAY NAME1 @4078
 		SAY NAME2 @4078
 		
-		COPY ~%MOD_FOLDER%\rbg\cre\xavoidfe.cre~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/cre/xavoidfe.cre~ ~override~
 		SAY NAME1 @4147
 		SAY NAME2 @4147
 		
-		COPY ~%MOD_FOLDER%\rbg\cre\xavoidle.cre~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/cre/xavoidle.cre~ ~override~
 		SAY NAME1 @4148
 		SAY NAME2 @4148	
 		
-		COPY ~%MOD_FOLDER%\rbg\cre\xavoidwe.cre~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/cre/xavoidwe.cre~ ~override~
 		SAY NAME1 @4146
 		SAY NAME2 @4146
 	//}
@@ -1211,63 +1211,63 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 //{ MOS, Text Screens
 	LAF xa_copy_folder_contents
 		STR_VAR
-			xa_relative_path = ~%MOD_FOLDER%\rbg\mos~
+			xa_relative_path = ~%MOD_FOLDER%/rbg/mos~
 	END
 //}
 
 //{ 2da
-	COPY ~%MOD_FOLDER%\rbg\2da\xabad1.2da~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/2da/xabad1.2da~ ~override~
 	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4098)
 	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@4097)
 	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@4097)
 	
-	COPY_EXISTING ~xabad1.2da~ ~override\xabad2.2da~
+	COPY_EXISTING ~xabad1.2da~ ~override/xabad2.2da~
 	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4099)
 	
-	COPY_EXISTING ~xabad1.2da~ ~override\xabad3.2da~
+	COPY_EXISTING ~xabad1.2da~ ~override/xabad3.2da~
 	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4100)
 	
-	COPY ~%MOD_FOLDER%\rbg\2da\xabg.2da~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/2da/xabg.2da~ ~override~
 	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4103)
 	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@4101)
 	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@4101)
 	
-	COPY_EXISTING ~xabg.2da~ ~override\xabgrom.2da~ 
+	COPY_EXISTING ~xabg.2da~ ~override/xabgrom.2da~ 
 	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4102)
 	
-	COPY ~%MOD_FOLDER%\rbg\2da\xadinner.2da~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/2da/xadinner.2da~ ~override~
 	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4104)
 	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@4105)
 	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@4105)
 	
-	COPY_EXISTING ~xadinner.2da~ ~override\xadinrom.2da~
+	COPY_EXISTING ~xadinner.2da~ ~override/xadinrom.2da~
 	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4106)
 	
-	COPY ~%MOD_FOLDER%\rbg\2da\xasara1.2da~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/2da/xasara1.2da~ ~override~
 	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4108)
 	SET_2DA_ENTRY 2 1 3 RESOLVE_STR_REF(@4107)
 	SET_2DA_ENTRY 2 2 3 RESOLVE_STR_REF(@4107)
 	
-	COPY_EXISTING ~xasara1.2da~ ~override\xasara2.2da~ 
+	COPY_EXISTING ~xasara1.2da~ ~override/xasara2.2da~ 
 	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4109)
 	
-	COPY_EXISTING ~xasara1.2da~ ~override\xasara3.2da~ 
+	COPY_EXISTING ~xasara1.2da~ ~override/xasara3.2da~ 
 	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4110)
 	
-	COPY_EXISTING ~xasara1.2da~ ~override\xasara4.2da~ 
+	COPY_EXISTING ~xasara1.2da~ ~override/xasara4.2da~ 
 	SET_2DA_ENTRY 2 3 3 RESOLVE_STR_REF(@4111)
 //}
 
 //{ New Items
 
 	//{ Farseer
-		COPY_EXISTING ~misc64.itm~ ~override\xafarsee.itm~
+		COPY_EXISTING ~misc64.itm~ ~override/xafarsee.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4117)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4117)
 	//}
 	
 	//{ Ledger
-		COPY_EXISTING ~book71.itm~ ~override\xaledger.itm~
+		COPY_EXISTING ~book71.itm~ ~override/xaledger.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4119)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4119)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4120)
@@ -1275,7 +1275,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Manifest 1
-		COPY_EXISTING ~scrl3d.itm~ ~override\xamanfst.itm~
+		COPY_EXISTING ~scrl3d.itm~ ~override/xamanfst.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4121)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4121)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4122)
@@ -1283,7 +1283,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Manifest 2
-		COPY_EXISTING ~scrl3d.itm~ ~override\xamanfs2.itm~
+		COPY_EXISTING ~scrl3d.itm~ ~override/xamanfs2.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4123)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4123)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4124)
@@ -1291,7 +1291,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Manifest 3
-		COPY_EXISTING ~scrl3d.itm~ ~override\xamanfs3.itm~
+		COPY_EXISTING ~scrl3d.itm~ ~override/xamanfs3.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4125)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4125)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4126)
@@ -1299,7 +1299,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Beno's Head
-		COPY_EXISTING ~misc9h.itm~ ~override\xabenohd.itm~
+		COPY_EXISTING ~misc9h.itm~ ~override/xabenohd.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4013)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4013)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4014)
@@ -1307,7 +1307,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Soultaker Dagger (Beno)
-		COPY_EXISTING ~dagg10.itm~ ~override\xastdagb.itm~
+		COPY_EXISTING ~dagg10.itm~ ~override/xastdagb.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3158)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3158)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4015)
@@ -1315,7 +1315,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Soultaker Dagger (Fake)
-		COPY_EXISTING ~dagg10.itm~ ~override\xastdagf.itm~
+		COPY_EXISTING ~dagg10.itm~ ~override/xastdagf.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3158)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3158)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4016)
@@ -1323,17 +1323,17 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Rohma's Doll
-		COPY_EXISTING ~misc1g.itm~ ~override\xardoll.itm~
+		COPY_EXISTING ~misc1g.itm~ ~override/xardoll.itm~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4115)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4115)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4116)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4116)
 	//}
 	
-	// Left off 4\27
+	// Left off 4/27
 	
 	//{ Hen that Laid the Golden Egg
-		COPY ~%MOD_FOLDER%\rbg\itm\xachick.itm~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/itm/xachick.itm~ ~override~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4001)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4001)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4002)
@@ -1341,7 +1341,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Lyriel's Gratitude
-		COPY ~%MOD_FOLDER%\rbg\itm\xalyamul.itm~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/itm/xalyamul.itm~ ~override~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4003)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4003)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4004)
@@ -1349,7 +1349,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Dragonspear Medallion
-		COPY ~%MOD_FOLDER%\rbg\itm\xamedal.itm~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/itm/xamedal.itm~ ~override~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4005)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4005)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4006)
@@ -1357,7 +1357,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Aureate Egg
-		COPY ~%MOD_FOLDER%\rbg\itm\xaegg.itm~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/itm/xaegg.itm~ ~override~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4007)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4007)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4008)
@@ -1365,7 +1365,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Quiver + 4
-		COPY ~%MOD_FOLDER%\rbg\itm\xaquiver.itm~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/itm/xaquiver.itm~ ~override~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4009)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4009)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4010)
@@ -1373,7 +1373,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Mindshield Ring
-		COPY ~%MOD_FOLDER%\rbg\itm\xamsring.itm~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/itm/xamsring.itm~ ~override~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4011)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4011)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4012)
@@ -1381,24 +1381,24 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Baatezu's Gift
-		COPY ~%MOD_FOLDER%\rbg\itm\xasword.itm~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/itm/xasword.itm~ ~override~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4039)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4039)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4040)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4040)
 		
-		COPY ~%MOD_FOLDER%\rbg\bam\xaswordi.bam~ ~override~
-		COPY ~%MOD_FOLDER%\rbg\bam\xaswordd.bam~ ~override~		
+		COPY ~%MOD_FOLDER%/rbg/bam/xaswordi.bam~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/bam/xaswordd.bam~ ~override~		
 	//}
 	
 	//{ Engagement Rings
 		//Refer to ringabilities.txt and ringbits.xlsx
-		COPY ~%MOD_FOLDER%\rbg\itm\xaring99.itm~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/itm/xaring99.itm~ ~override~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4017)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4017)
 		WRITE_LONG 0x536 RESOLVE_STR_REF(@2010)
 		
-		COPY_EXISTING ~xaring99.itm~ ~override\xaring07.itm~
+		COPY_EXISTING ~xaring99.itm~ ~override/xaring07.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4018)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4018)
 		WRITE_BYTE 0x444 0
@@ -1409,7 +1409,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_BYTE 0x3E4 0
 		WRITE_BYTE 0x414 0
 		
-		COPY_EXISTING ~xaring99.itm~ ~override\xaring11.itm~
+		COPY_EXISTING ~xaring99.itm~ ~override/xaring11.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4019)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4019)
 		WRITE_BYTE 0x444 0
@@ -1427,7 +1427,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_BYTE 0x594 0
 		WRITE_BYTE 0x5C4 0
 		
-		COPY_EXISTING ~xaring99.itm~ ~override\xaring13.itm~
+		COPY_EXISTING ~xaring99.itm~ ~override/xaring13.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4020)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4020)
 		WRITE_BYTE 0x444 0
@@ -1441,7 +1441,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_BYTE 0x114 0
 		WRITE_BYTE 0x144 0
 		
-		COPY_EXISTING ~xaring99.itm~ ~override\xaring14.itm~
+		COPY_EXISTING ~xaring99.itm~ ~override/xaring14.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4021)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4021)
 		WRITE_BYTE 0x444 0
@@ -1457,7 +1457,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_BYTE 0x3B4 0
 		WRITE_BYTE 0x564 0
 		
-		COPY_EXISTING ~xaring99.itm~ ~override\xaring19.itm~
+		COPY_EXISTING ~xaring99.itm~ ~override/xaring19.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4022)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4022)
 		WRITE_BYTE 0x3E4 0
@@ -1472,7 +1472,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_BYTE 0x594 0
 		WRITE_BYTE 0x5C4 0
 		
-		COPY_EXISTING ~xaring99.itm~ ~override\xaring21.itm~
+		COPY_EXISTING ~xaring99.itm~ ~override/xaring21.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4023)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4023)
 		WRITE_BYTE 0x3E4 0
@@ -1483,7 +1483,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_BYTE 0x114 0
 		WRITE_BYTE 0x144 0
 		
-		COPY_EXISTING ~xaring99.itm~ ~override\xaring22.itm~
+		COPY_EXISTING ~xaring99.itm~ ~override/xaring22.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4024)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4024)
 		WRITE_BYTE 0x3E4 0
@@ -1496,7 +1496,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_BYTE 0x3B4 0
 		WRITE_BYTE 0x564 0
 		
-		COPY_EXISTING ~xaring99.itm~ ~override\xaring25.itm~
+		COPY_EXISTING ~xaring99.itm~ ~override/xaring25.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4025)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4025)
 		WRITE_BYTE 0x174 0
@@ -1514,7 +1514,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_BYTE 0x114 0
 		WRITE_BYTE 0x144 0
 		
-		COPY_EXISTING ~xaring99.itm~ ~override\xaring26.itm~
+		COPY_EXISTING ~xaring99.itm~ ~override/xaring26.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4026)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4026)
 		WRITE_BYTE 0x174 0
@@ -1534,7 +1534,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_BYTE 0x3B4 0
 		WRITE_BYTE 0x564 0
 		
-		COPY_EXISTING ~xaring99.itm~ ~override\xaring28.itm~
+		COPY_EXISTING ~xaring99.itm~ ~override/xaring28.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4027)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4027)
 		WRITE_BYTE 0x84 0
@@ -1550,12 +1550,12 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_BYTE 0x3B4 0
 		WRITE_BYTE 0x564 0
 		
-		COPY ~%MOD_FOLDER%\rbg\itm\xarng99a.itm~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/itm/xarng99a.itm~ ~override~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4017)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4017)
 		WRITE_LONG 0x536 RESOLVE_STR_REF(@2010)
 		
-		COPY_EXISTING ~xarng99a.itm~ ~override\xarng07a.itm~
+		COPY_EXISTING ~xarng99a.itm~ ~override/xarng07a.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4028)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4028)
 		WRITE_BYTE 0x444 0
@@ -1566,7 +1566,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_BYTE 0x3E4 0
 		WRITE_BYTE 0x414 0
 		
-		COPY_EXISTING ~xarng99a.itm~ ~override\xarng11a.itm~
+		COPY_EXISTING ~xarng99a.itm~ ~override/xarng11a.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4029)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4029)
 		WRITE_BYTE 0x444 0
@@ -1584,7 +1584,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_BYTE 0x594 0
 		WRITE_BYTE 0x5C4 0
 
-		COPY_EXISTING ~xarng99a.itm~ ~override\xarng13a.itm~
+		COPY_EXISTING ~xarng99a.itm~ ~override/xarng13a.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4030)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4030)
 		WRITE_BYTE 0x444 0
@@ -1598,7 +1598,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_BYTE 0x114 0
 		WRITE_BYTE 0x144 0
 		
-		COPY_EXISTING ~xarng99a.itm~ ~override\xarng14a.itm~
+		COPY_EXISTING ~xarng99a.itm~ ~override/xarng14a.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4031)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4031)
 		WRITE_BYTE 0x444 0
@@ -1614,7 +1614,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_BYTE 0x3B4 0
 		WRITE_BYTE 0x564 0
 		
-		COPY_EXISTING ~xarng99a.itm~ ~override\xarng19a.itm~
+		COPY_EXISTING ~xarng99a.itm~ ~override/xarng19a.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4032)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4032)
 		WRITE_BYTE 0x3E4 0
@@ -1629,7 +1629,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_BYTE 0x594 0
 		WRITE_BYTE 0x5C4 0
 		
-		COPY_EXISTING ~xarng99a.itm~ ~override\xarng21a.itm~
+		COPY_EXISTING ~xarng99a.itm~ ~override/xarng21a.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4033)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4033)
 		WRITE_BYTE 0x3E4 0
@@ -1640,7 +1640,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_BYTE 0x114 0
 		WRITE_BYTE 0x144 0
 		
-		COPY_EXISTING ~xarng99a.itm~ ~override\xarng22a.itm~
+		COPY_EXISTING ~xarng99a.itm~ ~override/xarng22a.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4034)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4034)
 		WRITE_BYTE 0x3E4 0
@@ -1653,7 +1653,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_BYTE 0x3B4 0
 		WRITE_BYTE 0x564 0
 		
-		COPY_EXISTING ~xarng99a.itm~ ~override\xarng25a.itm~
+		COPY_EXISTING ~xarng99a.itm~ ~override/xarng25a.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4035)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4035)
 		WRITE_BYTE 0x174 0
@@ -1671,7 +1671,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_BYTE 0x114 0
 		WRITE_BYTE 0x144 0
 		
-		COPY_EXISTING ~xarng99a.itm~ ~override\xarng26a.itm~
+		COPY_EXISTING ~xarng99a.itm~ ~override/xarng26a.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4036)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4036)
 		WRITE_BYTE 0x174 0
@@ -1691,7 +1691,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 		WRITE_BYTE 0x3B4 0
 		WRITE_BYTE 0x564 0
 		
-		COPY_EXISTING ~xarng99a.itm~ ~override\xarng28a.itm~
+		COPY_EXISTING ~xarng99a.itm~ ~override/xarng28a.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4037)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4037)
 		WRITE_BYTE 0x84 0
@@ -1710,23 +1710,23 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 //}
 
 //{ Kidnap Music
-	ADD_MUSIC xamu04	~%MOD_FOLDER%\rbg\mus\xamu04.mus~
-	COPY ~%MOD_FOLDER%\rbg\mus\xamu04a.acm~ ~MUSIC\xamu04\xamu04a.acm~	
+	ADD_MUSIC xamu04	~%MOD_FOLDER%/rbg/mus/xamu04.mus~
+	COPY ~%MOD_FOLDER%/rbg/mus/xamu04a.acm~ ~MUSIC/xamu04/xamu04a.acm~	
 //}
 
 //{ Sanctum Music
-	ADD_MUSIC xamu05	~%MOD_FOLDER%\rbg\mus\xamu05.mus~
-	COPY ~%MOD_FOLDER%\rbg\mus\xamu05a.acm~ ~MUSIC\xamu05\xamu05a.acm~	
+	ADD_MUSIC xamu05	~%MOD_FOLDER%/rbg/mus/xamu05.mus~
+	COPY ~%MOD_FOLDER%/rbg/mus/xamu05a.acm~ ~MUSIC/xamu05/xamu05a.acm~	
 //}
 
 //{ Kidnap Quest End Music
-	ADD_MUSIC xamu06	~%MOD_FOLDER%\rbg\mus\xamu06.mus~
-	COPY ~%MOD_FOLDER%\rbg\mus\xamu06a.acm~ ~MUSIC\xamu06\xamu06a.acm~	
+	ADD_MUSIC xamu06	~%MOD_FOLDER%/rbg/mus/xamu06.mus~
+	COPY ~%MOD_FOLDER%/rbg/mus/xamu06a.acm~ ~MUSIC/xamu06/xamu06a.acm~	
 //}
 
 //{ Preparations Music
-	ADD_MUSIC xamu07	~%MOD_FOLDER%\rbg\mus\xamu07.mus~
-	COPY ~%MOD_FOLDER%\rbg\mus\xamu07a.acm~ ~MUSIC\xamu07\xamu07a.acm~	
+	ADD_MUSIC xamu07	~%MOD_FOLDER%/rbg/mus/xamu07.mus~
+	COPY ~%MOD_FOLDER%/rbg/mus/xamu07a.acm~ ~MUSIC/xamu07/xamu07a.acm~	
 //}
 
 //{ Block A Area Modifications
@@ -1742,7 +1742,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 
 		ACTION_PHP_EACH brevSpawns AS _ => spawnArea
 		BEGIN
-			EXTEND_TOP ~%spawnArea%.bcs~ ~%MOD_FOLDER%\rbg\baf\xabrvspw.baf~
+			EXTEND_TOP ~%spawnArea%.bcs~ ~%MOD_FOLDER%/rbg/baf/xabrvspw.baf~
 		END
 	//}
 	
@@ -1770,7 +1770,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ar0102 xaa592 Silvershield Estate L2
-		EXTEND_TOP ~xaas592.bcs~ 	~%MOD_FOLDER%\rbg\baf\xaar0102.baf~
+		EXTEND_TOP ~xaas592.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0102.baf~
 	
 		COPY_EXISTING ~xaa592.are~ ~override~
 
@@ -1783,7 +1783,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ar0103 xaa138 Splurging Sturgeon L1
-		EXTEND_TOP ~xaas138.bcs~ 	~%MOD_FOLDER%\rbg\baf\xaar0103.baf~
+		EXTEND_TOP ~xaas138.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0103.baf~
 		
 		COPY_EXISTING ~xaa138.are~ ~override~
 		
@@ -1835,7 +1835,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ar0116 xaa481 
-		EXTEND_TOP ~xaas481.bcs~ 	~%MOD_FOLDER%\rbg\baf\xaar0116.baf~
+		EXTEND_TOP ~xaas481.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0116.baf~
 		
 		COPY_EXISTING ~xaa481.are~ ~override~
 		
@@ -1856,7 +1856,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ar0118 xaa582
-		EXTEND_TOP ~xaas582.bcs~ ~%MOD_FOLDER%\rbg\baf\xaar0118.baf~
+		EXTEND_TOP ~xaas582.bcs~ ~%MOD_FOLDER%/rbg/baf/xaar0118.baf~
 	//}
 	
 	//{ ar0119 xaa242
@@ -1884,7 +1884,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ar0123 xaa106
-		EXTEND_TOP ~xaas106.bcs~ 	~%MOD_FOLDER%\rbg\baf\xauc.baf~
+		EXTEND_TOP ~xaas106.bcs~ 	~%MOD_FOLDER%/rbg/baf/xauc.baf~
 	
 		COPY_EXISTING ~xaa106.are~ ~override~
 		
@@ -1990,7 +1990,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ar0128 xaa406 Merchant's League L2
-		EXTEND_TOP ~xaas406.bcs~ 	~%MOD_FOLDER%\rbg\baf\xaar0128.baf~
+		EXTEND_TOP ~xaas406.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0128.baf~
 	
 		COPY_EXISTING ~xaa406.are~ ~override~
 		
@@ -2006,7 +2006,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ar0130 xaa363 Hall of Wonders
-		EXTEND_TOP ~xaas363.bcs~ 	~%MOD_FOLDER%\rbg\baf\xaar0130.baf~
+		EXTEND_TOP ~xaas363.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0130.baf~
 		
 		COPY_EXISTING ~xaa363.are~ ~override~
 		
@@ -2044,7 +2044,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ar0138 xaa670 Ramazith L5
-		EXTEND_TOP ~xaas670.bcs~ 	~%MOD_FOLDER%\rbg\baf\xaar0138.baf~
+		EXTEND_TOP ~xaas670.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0138.baf~
 	
 		COPY_EXISTING ~xaa670.are~ ~override~
 		
@@ -2134,7 +2134,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ar0165 xaa477 Tavern
-		EXTEND_TOP ~xaas477.bcs~ 	~%MOD_FOLDER%\rbg\baf\xaar0165.baf~
+		EXTEND_TOP ~xaas477.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0165.baf~
 
 		COPY_EXISTING ~xaa477.are~ ~override~
 		
@@ -2150,7 +2150,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ar0167 xaa483 Pheirkas Home
-		EXTEND_TOP ~xaas483.bcs~ 	~%MOD_FOLDER%\rbg\baf\xaar0116.baf~
+		EXTEND_TOP ~xaas483.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0116.baf~
 		
 		COPY_EXISTING ~xaa483.are~ ~override~
 		
@@ -2159,7 +2159,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ar0200 xaa134 N Baldur's Gate
-		EXTEND_TOP ~xaas134.bcs~ 	~%MOD_FOLDER%\rbg\baf\xaar0200.baf~
+		EXTEND_TOP ~xaas134.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0200.baf~
 	
 		COPY_EXISTING ~xaa134.are~ ~override~
 		
@@ -2250,7 +2250,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ar0225 xaa160 BG Sewers (Ratchild)
-		EXTEND_TOP ~xaas160.bcs~ 	~%MOD_FOLDER%\rbg\baf\xaar0225.baf~
+		EXTEND_TOP ~xaas160.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0225.baf~
 	
 		COPY_EXISTING ~xaa160.are~ ~override~
 		
@@ -2370,7 +2370,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ar0602 xaa409 - Seven Suns L2
-		EXTEND_TOP ~xaas409.bcs~ 	~%MOD_FOLDER%\rbg\baf\xaar0602.baf~
+		EXTEND_TOP ~xaas409.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0602.baf~
 		
 		COPY_EXISTING ~xaa409.are~ ~override~
 		
@@ -2385,7 +2385,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ar0607 xaa287
-		EXTEND_TOP ~xaas287.bcs~ 	~%MOD_FOLDER%\rbg\baf\xaar0607.baf~
+		EXTEND_TOP ~xaas287.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0607.baf~
 		
 		COPY_EXISTING ~xaa287.are~ ~override~
 		LPF fj_are_structure
@@ -2508,7 +2508,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ar0614 xaa563
-		EXTEND_TOP ~xaas563.bcs~ 	~%MOD_FOLDER%\rbg\baf\xaar0614.baf~
+		EXTEND_TOP ~xaas563.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0614.baf~
 		COPY_EXISTING ~xaa563.are~ ~override~
 		LPF fj_are_structure
 			INT_VAR
@@ -2609,11 +2609,11 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ar0705 xaa119
-		EXTEND_TOP ~xaas119.bcs~ 	~%MOD_FOLDER%\rbg\baf\xaar0705.baf~
+		EXTEND_TOP ~xaas119.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0705.baf~
 	//}
 	
 	//{ ar0706 xaa210
-		EXTEND_TOP ~xaas210.bcs~ 	~%MOD_FOLDER%\rbg\baf\xaar0706.baf~
+		EXTEND_TOP ~xaas210.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0706.baf~
 		
 		COPY_EXISTING ~xaa210.are~ ~override~
 		LPF fj_are_structure
@@ -2646,7 +2646,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ar0800 xaa104
-		EXTEND_TOP ~xaas104.bcs~ 	~%MOD_FOLDER%\rbg\baf\xaar0800.baf~
+		EXTEND_TOP ~xaas104.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0800.baf~
 	
 		COPY_EXISTING ~xaa104.are~ ~override~
 		
@@ -2703,8 +2703,8 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ar0900 xaa100
-		EXTEND_TOP ~xaas100.bcs~ 	~%MOD_FOLDER%\rbg\baf\xaar0900.baf~
-		EXTEND_TOP ~xaas100.bcs~	~%MOD_FOLDER%\rbg\baf\xamaprbg.baf~
+		EXTEND_TOP ~xaas100.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0900.baf~
+		EXTEND_TOP ~xaas100.bcs~	~%MOD_FOLDER%/rbg/baf/xamaprbg.baf~
 		
 		COPY_EXISTING ~xaa100.are~ ~override~
 		
@@ -2841,7 +2841,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ ar1113 xaa288 Slime Inn
-		COPY_EXISTING ~xaa132.sto~ ~override\xasto00.sto~
+		COPY_EXISTING ~xaa132.sto~ ~override/xasto00.sto~
 		WRITE_LONG 0xC RESOLVE_STR_REF(@4150)
 	
 		COPY_EXISTING ~xaa288.are~ ~override~
@@ -2924,7 +2924,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	
 	
 	//{ ar1300 xaa145
-		EXTEND_TOP ~xaas145.bcs~ 	~%MOD_FOLDER%\rbg\baf\xaar1300.baf~
+		EXTEND_TOP ~xaas145.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar1300.baf~
 		
 		COPY_EXISTING ~xaa145.are~ ~override~
 		
@@ -2972,7 +2972,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 
 //{ Block C Area Modifications
 	//{ ar2612 xac100 Candlekeep - Gorion's Quarters
-		COPY_EXISTING ~xac100.are~ ~override\xag3.are~
+		COPY_EXISTING ~xac100.are~ ~override/xag3.are~
 		
 		// Change Area Script
 		WRITE_ASCII 0x94 ~xag3~ #8 
@@ -2989,7 +2989,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	
 
 	//{ Hall of Wonders Cutscene Area ar0131
-		COPY_EXISTING ~xaa362.are~ ~override\xacshow.are~ 
+		COPY_EXISTING ~xaa362.are~ ~override/xacshow.are~ 
 		
 		// Replace Music
 		WRITE_LONG 0x7E0 0
@@ -3075,7 +3075,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Ducal Palace 1FL (Kidnap) ar0108 xaa246
-		COPY_EXISTING ~xaa246.are~ ~override\xaducal.are~ 
+		COPY_EXISTING ~xaa246.are~ ~override/xaducal.are~ 
 		WRITE_LONG 0x99C xamu07
 		WRITE_LONG 0x9A0 xamu07
 		
@@ -3178,7 +3178,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	
 	//{ Ducal Palace 2FL (Debrief) ar0109
 	
-		COPY_EXISTING ~xaa447.are~ ~override\xaducal2.are~
+		COPY_EXISTING ~xaa447.are~ ~override/xaducal2.are~
 		WRITE_LONG 0xA34 xaa12
 		WRITE_LONG 0xA38 xaa13
 		
@@ -3412,15 +3412,15 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Ducal Palace 3FL	
-		COPY ~%MOD_FOLDER%\rbg\are\xaduc3.are~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/are/xaduc3.are~ ~override~
 		WRITE_LONG 0x1A2C xamu06
 		WRITE_LONG 0x1A30 xamu06
 	//}
 	
 	//{ Painting One
-		EXTEND_TOP ~xacs101.bcs~ ~%MOD_FOLDER%\rbg\baf\xag1.baf~
+		EXTEND_TOP ~xacs101.bcs~ ~%MOD_FOLDER%/rbg/baf/xag1.baf~
 		
-		COPY_EXISTING ~xac101.are~ ~override\xag1.are~
+		COPY_EXISTING ~xac101.are~ ~override/xag1.are~
 		LPF xa_delete_are_actors END
 	
 		//WRITE_LONG 0x5B94 xac2
@@ -3428,14 +3428,14 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Painting Two
-		COPY_EXISTING ~xaa146.are~ ~override\xag2.are~
+		COPY_EXISTING ~xaa146.are~ ~override/xag2.are~
 		WRITE_LONG 0x59B0 xaa21
 		WRITE_LONG 0x59B4 xaa21
 		WRITE_LONG 0x59BC xaa22
 	//}
 	
 	//{ Corwin's Home, L1 ar1316
-		COPY_EXISTING ~xaa272.are~ ~override\xahome.are~ 
+		COPY_EXISTING ~xaa272.are~ ~override/xahome.are~ 
 		WRITE_LONG 0x688 xamu02
 		WRITE_LONG 0x68C xamu02
 		
@@ -3467,7 +3467,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}	
 		
 	//{ Corwin's Home, L2 ar1317	
-		COPY_EXISTING ~xaa431.are~ ~override\xahom2.are~
+		COPY_EXISTING ~xaa431.are~ ~override/xahom2.are~
 		WRITE_LONG 0x784 xamu02
 		WRITE_LONG 0x788 xamu02
 		
@@ -3475,7 +3475,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Corwin's Home, Rohma Kidnapped ar1316	
-		COPY_EXISTING ~xaa272.are~ ~override\xakidnap.are~
+		COPY_EXISTING ~xaa272.are~ ~override/xakidnap.are~
 		
 		WRITE_LONG 0x688 xamu04
 		WRITE_LONG 0x68C xamu04
@@ -3495,7 +3495,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Demon's Sanctum
-		COPY_EXISTING ~xaf100.are~ ~override\xademsan.are~
+		COPY_EXISTING ~xaf100.are~ ~override/xademsan.are~
 		
 		WRITE_LONG 0x5EC 1 // Disable Ambient
 
@@ -3511,18 +3511,18 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Lyriel Painting
-		COPY ~%MOD_FOLDER%\rbg\are\xapaint1.are~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/are/xapaint1.are~ ~override~
 	//}
 	
 	//{ Walk Home Cutscene Area
-		COPY ~%MOD_FOLDER%\rbg\are\xawlkhom.are~ ~override~
+		COPY ~%MOD_FOLDER%/rbg/are/xawlkhom.are~ ~override~
 		
 		// Replace Music
 		WRITE_LONG 0x5BE8 0
 	//}
 	
 	//{ Undercity Temple ar0125
-		COPY_EXISTING ~xaa101.are~ ~override\xauctemp.are~
+		COPY_EXISTING ~xaa101.are~ ~override/xauctemp.are~
 		
 		WRITE_ASCII 0x94 ~xauctemp~ #8 // Area Script
 		WRITE_LONG 0x24B8 xaa22 // Battle Music
@@ -3599,7 +3599,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Dinner Cutscene - Three Old Kegs ar0119
-		COPY_EXISTING ~xaa242.are~ ~override\xatok.are~
+		COPY_EXISTING ~xaa242.are~ ~override/xatok.are~
 		
 		// Disable NPCs
 		WRITE_LONG 0xAE4 0
@@ -3610,7 +3610,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 	//}
 	
 	//{ Proposal Area ar0900
-		COPY_EXISTING ~xaa100.are~ ~override\xawyrm.are~
+		COPY_EXISTING ~xaa100.are~ ~override/xawyrm.are~
 		WRITE_LONG 0x30BC xamu03
 		WRITE_LONG 0x30C0 xamu03
 		LPF xa_delete_are_actors END
@@ -3625,12 +3625,12 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 //}
 
 //{ Basilisk Figurine
-	COPY ~%MOD_FOLDER%\rbg\bam\xaibas.bam~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/bam/xaibas.bam~ ~override~
 
-	COPY_EXISTING ~figspid.eff~ ~override\xabasfig.eff~
+	COPY_EXISTING ~figspid.eff~ ~override/xabasfig.eff~
 	WRITE_ASCII 0x30 ~basgrt01~ #8
 	
-	COPY_EXISTING ~misc3e.itm~ ~override\xabasfig.itm~
+	COPY_EXISTING ~misc3e.itm~ ~override/xabasfig.itm~
 	WRITE_ASCII 0x3A ~xaibas~ #8
 	WRITE_LONG 0x34 6000
 	WRITE_LONG 0xC RESOLVE_STR_REF(@4152)
@@ -3641,10 +3641,10 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\rbg\baf~
 //}
 
 //{ Stores
-	COPY ~%MOD_FOLDER%\rbg\sto\xamelkor.sto~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/sto/xamelkor.sto~ ~override~
 	WRITE_LONG 0xc RESOLVE_STR_REF(@4158)
 	
-	COPY ~%MOD_FOLDER%\rbg\sto\xawvbar.sto~ ~override~
+	COPY ~%MOD_FOLDER%/rbg/sto/xawvbar.sto~ ~override~
 	WRITE_LONG 0xc RESOLVE_STR_REF(@4138)
 	WRITE_ASCII 0x44 ~xarumor~ #8
 //}
