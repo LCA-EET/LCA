@@ -22,39 +22,11 @@ IF
 	OR(2)
 		DifficultyGT(EASY)
 		Allegiance(Myself,GOODCUTOFF)
-	HaveSpell(CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
+	HaveSpell(WIZARD_SHIELD)  // SPWI114.SPL (Shield)
 THEN
 	RESPONSE #100
-		RemoveSpell(CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
-		ReallyForceSpell(Myself,CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
-		Continue()
-END
-
-IF
-	Global("bd_prebuff","locals",0)
-	Detect(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASY)
-		Allegiance(Myself,GOODCUTOFF)
-	HaveSpell(CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
-THEN
-	RESPONSE #100
-		RemoveSpell(CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
-		ReallyForceSpell(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
-		Continue()
-END
-
-IF
-	Global("bd_prebuff","locals",0)
-	Detect(NearestEnemyOf(Myself))
-	OR(2)
-		DifficultyGT(EASY)
-		Allegiance(Myself,GOODCUTOFF)
-	HaveSpell(CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
-THEN
-	RESPONSE #100
-		RemoveSpell(CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
-		ReallyForceSpell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
+		RemoveSpell(WIZARD_SHIELD)  // SPWI114.SPL (Shield)
+		ReallyForceSpell(Myself,WIZARD_SHIELD)  // SPWI114.SPL (Shield)
 		Continue()
 END
 
@@ -64,15 +36,34 @@ IF
 	OR(2)
 		DifficultyGT(EASIEST)
 		Allegiance(Myself,GOODCUTOFF)
-	HaveSpell(CLERIC_FREE_ACTION)  // SPPR403.SPL (Free Action)
+	HaveSpell(WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
 	OR(3)
-		RandomNumGT(6,3)
+		RandomNum(2,2)
 		DifficultyGT(EASY)
 		Allegiance(Myself,GOODCUTOFF)
 THEN
 	RESPONSE #100
-		RemoveSpell(CLERIC_FREE_ACTION)  // SPPR403.SPL (Free Action)
-		ReallyForceSpell(Myself,CLERIC_FREE_ACTION)  // SPPR403.SPL (Free Action)
+		RemoveSpell(WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+		ReallyForceSpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+		Continue()
+END
+
+IF
+	Global("bd_prebuff","locals",0)
+	Detect(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)  // SPWI406.SPL (Minor Globe of Invulnerability)
+	!HaveSpell(WIZARD_GLOBE_OF_INVULNERABILITY)  // SPWI602.SPL (Globe of Invulnerability)
+	OR(3)
+		RandomNumGT(4,2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+THEN
+	RESPONSE #100
+		RemoveSpell(WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)  // SPWI406.SPL (Minor Globe of Invulnerability)
+		ReallyForceSpell(Myself,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)  // SPWI406.SPL (Minor Globe of Invulnerability)
 		Continue()
 END
 
@@ -90,71 +81,50 @@ IF
 	OR(2)
 		DifficultyGT(EASIEST)
 		Allegiance(Myself,GOODCUTOFF)
-	HasItem("potn52",Myself)  // Potion of Extra Healing
-	HPPercentLT(Myself,75)
+	HasItem("potn08",Myself)  // Potion of Healing
+	HPPercentLT(Myself,80)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("potn52",Myself)  // Potion of Extra Healing
+		UseItem("potn08",Myself)  // Potion of Healing
 		SetInterrupt(TRUE)
 	RESPONSE #50
 		Continue()
 END
 
 IF
-	CheckStat(Myself,1,SANCTUARY)
-	HPPercentLT(Myself,80)
-	OR(6)
-		HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)  // SPPR502.SPL (Cure Critical Wounds)
-		HaveSpell(CLERIC_CURE_SERIOUS_WOUNDS)  // SPPR401.SPL (Cure Serious Wounds)
-		HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)  // SPPR315.SPL (Cure Medium Wounds)
-		HaveSpell(CLERIC_CURE_LIGHT_WOUNDS)  // SPPR103.SPL (Cure Light Wounds)
-		HasItem("potn52",Myself)  // Potion of Extra Healing
-		HasItem("potn08",Myself)  // Potion of Healing
-	See(NearestEnemyOf(Myself))
-	DifficultyGT(EASIEST)
-THEN
-	RESPONSE #100
-		NoAction()
-END
-
-IF
 	!GlobalTimerNotExpired("bd_cast","locals")
-	Detect(Myself)
-	HaveSpell(CLERIC_HOLY_SMITE)  // SPPR313.SPL (Holy Smite)
-	OR(2)
-		!See(NearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]))
-		TriggerOverride(NearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),Range(NearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),22))
-	OR(2)
-		!See(SecondNearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]))
-		TriggerOverride(SecondNearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),Range(NearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),22))
-	OR(2)
-		!See(ThirdNearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]))
-		TriggerOverride(ThirdNearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),Range(NearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),22))
-	OR(2)
-		!See(FourthNearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]))
-		TriggerOverride(FourthNearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),Range(NearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),22))
-	OR(2)
-		!See(FifthNearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]))
-		TriggerOverride(FifthNearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),Range(NearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),22))
-	False()
+	!GlobalTimerNotExpired("bd_defence_timer","locals")
+	!StateCheck(Myself,STATE_MIRRORIMAGE)
+	CheckStat(Myself,0,STONESKINS)
+	Detect(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
 THEN
 	RESPONSE #100
-		NoAction()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	HaveSpell(CLERIC_HOLY_SMITE)  // SPPR313.SPL (Holy Smite)
-	See(LastSeenBy)
-	!Range(LastSeenBy,0)
-	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-	!TriggerOverride(LastSeenBy,Range(NearestEnemyOfType([0.0.0.0.0.0.MASK_EVIL]),22))
-THEN
-	RESPONSE #100
+		SetGlobalTimer("bd_defence_timer","locals",THREE_MINUTES)
 		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		Spell(LastSeenBy,CLERIC_HOLY_SMITE)  // SPPR313.SPL (Holy Smite)
+		Spell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+	RESPONSE #35
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Global("bd_no_defense","locals",0)
+	!GlobalTimerNotExpired("bd_defence_timer","locals")
+	!CheckSpellState(Myself,BUFF_PRO_SPELLS)
+	HaveSpell(WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)  // SPWI406.SPL (Minor Globe of Invulnerability)
+	OR(4)
+		See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+		See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+		See(NearestEnemyOfType([0.0.0.BARD_ALL]))
+		See(NearestEnemyOfType([0.0.0.DRUID_ALL]))
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_defence_timer","locals",THREE_MINUTES)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)  // SPWI406.SPL (Minor Globe of Invulnerability)
 	RESPONSE #50
 		Continue()
 END
@@ -163,7 +133,7 @@ IF
 	!GlobalTimerNotExpired("bd_cast","locals")
 	Detect(Myself)
 	DifficultyGT(EASY)
-	HaveSpell(CLERIC_GLYPH_OF_WARDING)  // SPPR304.SPL (Glyph of Warding)
+	HaveSpell(WIZARD_SKULL_TRAP)  // SPWI313.SPL (Skull Trap)
 	OR(3)
 		!See(FarthestEnemyOf(Myself))
 		!TriggerOverride(FarthestEnemyOf(Myself),Range(NearestAllyOf(Myself),15))
@@ -213,7 +183,7 @@ END
 IF
 	!GlobalTimerNotExpired("bd_cast","locals")
 	DifficultyGT(EASY)
-	HaveSpell(CLERIC_GLYPH_OF_WARDING)  // SPPR304.SPL (Glyph of Warding)
+	HaveSpell(WIZARD_SKULL_TRAP)  // SPWI313.SPL (Skull Trap)
 	See(LastSeenBy)
 	!Range(LastSeenBy,0)
 	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
@@ -222,137 +192,94 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		Spell(LastSeenBy,CLERIC_GLYPH_OF_WARDING)  // SPPR304.SPL (Glyph of Warding)
+		Spell(LastSeenBy,WIZARD_SKULL_TRAP)  // SPWI313.SPL (Skull Trap)
 	RESPONSE #50
 		Continue()
 END
 
 IF
 	!GlobalTimerNotExpired("bd_cast","locals")
+	CheckStat(Myself,0,TRUE_SIGHT)
+	Allegiance(Myself,EVILCUTOFF)
+	Detect([GOODCUTOFF])
+	!See(LastSeenBy(Myself))
+	HaveSpell(WIZARD_DETECT_INVISIBILITY)  // SPWI203.SPL (Detect Invisibility)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,WIZARD_DETECT_INVISIBILITY)  // SPWI203.SPL (Detect Invisibility)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	CheckStat(Myself,0,TRUE_SIGHT)
+	Allegiance(Myself,GOODCUTOFF)
+	Detect([EVILCUTOFF])
+	!See(LastSeenBy(Myself))
+	HaveSpell(WIZARD_DETECT_INVISIBILITY)  // SPWI203.SPL (Detect Invisibility)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,WIZARD_DETECT_INVISIBILITY)  // SPWI203.SPL (Detect Invisibility)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Detect(Myself)
+	HaveSpell(WIZARD_SPELL_THRUST)  // SPWI321.SPL (Spell Thrust)
+	OR(2)
+		!See(NearestEnemyOf(Myself))
+		!CheckSpellState(NearestEnemyOf(Myself),BUFF_PRO_SPELLS)
+	OR(2)
+		!See(SecondNearestEnemyOf(Myself))
+		!CheckSpellState(SecondNearestEnemyOf(Myself),BUFF_PRO_SPELLS)
+	OR(2)
+		!See(ThirdNearestEnemyOf(Myself))
+		!CheckSpellState(ThirdNearestEnemyOf(Myself),BUFF_PRO_SPELLS)
+	OR(2)
+		!See(FourthNearestEnemyOf(Myself))
+		!CheckSpellState(FourthNearestEnemyOf(Myself),BUFF_PRO_SPELLS)
+	OR(2)
+		!See(FifthNearestEnemyOf(Myself))
+		!CheckSpellState(FifthNearestEnemyOf(Myself),BUFF_PRO_SPELLS)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HaveSpell(WIZARD_SPELL_THRUST)  // SPWI321.SPL (Spell Thrust)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	CheckSpellState(LastSeenBy,BUFF_PRO_SPELLS)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,WIZARD_SPELL_THRUST)  // SPWI321.SPL (Spell Thrust)
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	!Allegiance(Myself,GOODBUTBLUE)
 	Range(NearestEnemyOf(Myself),30)
-	HaveSpell(CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
-	Range(FourthNearestAllyOf(Myself),20)
 	OR(2)
-		CheckStat(NearestAllyOf(Myself),0,CLERIC_DEFENSIVE_HARMONY)
-		CheckStat(SecondNearestAllyOf(Myself),0,CLERIC_DEFENSIVE_HARMONY)
-	OR(2)
-		CheckStat(ThirdNearestAllyOf(Myself),0,CLERIC_DEFENSIVE_HARMONY)
-		CheckStat(FourthNearestAllyOf(Myself),0,CLERIC_DEFENSIVE_HARMONY)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(WIZARD_ANIMATE_DEAD)  // SPWI501.SPL (Animate Dead)
 THEN
 	RESPONSE #100
 		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		Spell(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
+		Spell(Myself,WIZARD_ANIMATE_DEAD)  // SPWI501.SPL (Animate Dead)
 	RESPONSE #50
-		Continue()
-END
-
-/*IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Detect(Myself)
-	HaveSpell(CLERIC_REMOVE_PARALYSIS)  // SPPR308.SPL (Remove Paralysis)
-	OR(2)
-		!See(NearestAllyOf(Myself))
-		!StateCheck(NearestAllyOf(Myself),STATE_STUNNED :: STATE_HELPLESS)
-	OR(2)
-		!See(SecondNearestAllyOf(Myself))
-		!StateCheck(SecondNearestAllyOf(Myself),STATE_STUNNED :: STATE_HELPLESS)
-	OR(2)
-		!See(ThirdNearestAllyOf(Myself))
-		!StateCheck(ThirdNearestAllyOf(Myself),STATE_STUNNED :: STATE_HELPLESS)
-	OR(2)
-		!See(FourthNearestAllyOf(Myself))
-		!StateCheck(FourthNearestAllyOf(Myself),STATE_STUNNED :: STATE_HELPLESS)
-	OR(2)
-		!See(FifthNearestAllyOf(Myself))
-		!StateCheck(FifthNearestAllyOf(Myself),STATE_STUNNED :: STATE_HELPLESS)
-	OR(2)
-		!See(SixthNearestAllyOf(Myself))
-		!StateCheck(SixthNearestAllyOf(Myself),STATE_STUNNED :: STATE_HELPLESS)
-	OR(2)
-		!See(SeventhNearestAllyOf(Myself))
-		!StateCheck(SeventhNearestAllyOf(Myself),STATE_STUNNED :: STATE_HELPLESS)
-	OR(2)
-		!See(EighthNearestAllyOf(Myself))
-		!StateCheck(EighthNearestAllyOf(Myself),STATE_STUNNED :: STATE_HELPLESS)
-	OR(2)
-		!See(NinthNearestAllyOf(Myself))
-		!StateCheck(NinthNearestAllyOf(Myself),STATE_STUNNED :: STATE_HELPLESS)
-	OR(2)
-		!See(TenthNearestAllyOf(Myself))
-		!StateCheck(TenthNearestAllyOf(Myself),STATE_STUNNED :: STATE_HELPLESS)
-	False()
-THEN
-	RESPONSE #100
-		NoAction()
-END*/
-
-/*IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	HaveSpell(CLERIC_REMOVE_PARALYSIS)  // SPPR308.SPL (Remove Paralysis)
-	See(LastSeenBy)
-	!Range(LastSeenBy,0)
-	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-	StateCheck(LastSeenBy,STATE_STUNNED :: STATE_HELPLESS)
-THEN
-	RESPONSE #100
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		Spell(LastSeenBy,CLERIC_REMOVE_PARALYSIS)  // SPPR308.SPL (Remove Paralysis)
-	RESPONSE #25
-		Continue()
-END*/
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Detect(Myself)
-	HaveSpell(CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
-	OR(2)
-		!See(NearestAllyOf(Myself))
-		!StateCheck(NearestAllyOf(Myself),STATE_PANIC)
-	OR(2)
-		!See(SecondNearestAllyOf(Myself))
-		!StateCheck(SecondNearestAllyOf(Myself),STATE_PANIC)
-	OR(2)
-		!See(ThirdNearestAllyOf(Myself))
-		!StateCheck(ThirdNearestAllyOf(Myself),STATE_PANIC)
-	OR(2)
-		!See(FourthNearestAllyOf(Myself))
-		!StateCheck(FourthNearestAllyOf(Myself),STATE_PANIC)
-	OR(2)
-		!See(FifthNearestAllyOf(Myself))
-		!StateCheck(FifthNearestAllyOf(Myself),STATE_PANIC)
-	OR(2)
-		!See(SixthNearestAllyOf(Myself))
-		!StateCheck(SixthNearestAllyOf(Myself),STATE_PANIC)
-	OR(2)
-		!See(SeventhNearestAllyOf(Myself))
-		!StateCheck(SeventhNearestAllyOf(Myself),STATE_PANIC)
-	OR(2)
-		!See(EighthNearestAllyOf(Myself))
-		!StateCheck(EighthNearestAllyOf(Myself),STATE_PANIC)
-	OR(2)
-		!See(NinthNearestAllyOf(Myself))
-		!StateCheck(NinthNearestAllyOf(Myself),STATE_PANIC)
-	OR(2)
-		!See(TenthNearestAllyOf(Myself))
-		!StateCheck(TenthNearestAllyOf(Myself),STATE_PANIC)
-	False()
-THEN
-	RESPONSE #100
-		NoAction()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	HaveSpell(CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
-	See(LastSeenBy)
-	!Range(LastSeenBy,0)
-	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-	StateCheck(LastSeenBy,STATE_PANIC)
-THEN
-	RESPONSE #100
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		Spell(LastSeenBy,CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
-	RESPONSE #25
 		Continue()
 END
 
@@ -362,7 +289,7 @@ IF
 	OR(2)
 		DifficultyGT(EASY)
 		Allegiance(Myself,GOODCUTOFF)
-	HaveSpell(CLERIC_GREATER_COMMAND)  // SPPR512.SPL (Greater Command)
+	HaveSpell(WIZARD_CONFUSION)  // SPWI401.SPL (Confusion)
 	OR(2)
 		!See(NearestEnemyOf(Myself))
 		StateCheck(NearestEnemyOf(Myself),STATE_DEBUFF)
@@ -404,7 +331,7 @@ IF
 	OR(2)
 		DifficultyGT(EASY)
 		Allegiance(Myself,GOODCUTOFF)
-	HaveSpell(CLERIC_GREATER_COMMAND)  // SPPR512.SPL (Greater Command)
+	HaveSpell(WIZARD_CONFUSION)  // SPWI401.SPL (Confusion)
 	See(LastSeenBy)
 	!Range(LastSeenBy,0)
 	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
@@ -412,7 +339,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		Spell(LastSeenBy,CLERIC_GREATER_COMMAND)  // SPPR512.SPL (Greater Command)
+		Spell(LastSeenBy,WIZARD_CONFUSION)  // SPWI401.SPL (Confusion)
 	RESPONSE #50
 		Continue()
 END
@@ -420,122 +347,73 @@ END
 IF
 	!GlobalTimerNotExpired("bd_cast","locals")
 	Detect(Myself)
-	DifficultyGT(EASIEST)
-	HaveSpell(CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Silence, 15' Radius)
-	OR(5)
-		!See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
-		TriggerOverride(NearestEnemyOfType([0.0.0.MAGE_ALL]),Range(NearestEnemyOfType([0.0.0.MAGE_ALL]),15))
-		TriggerOverride(NearestEnemyOfType([0.0.0.MAGE_ALL]),Range(NearestEnemyOfType([0.0.0.CLERIC_ALL]),15))
-		StateCheck(NearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_DISABLED_CASTING)
-		!CheckStat(NearestEnemyOfType([0.0.0.MAGE_ALL]),0,WIZARD_SPELL_TURNING)
-	OR(5)
-		!See(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]))
-		TriggerOverride(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]),Range(NearestEnemyOfType([0.0.0.MAGE_ALL]),15))
-		TriggerOverride(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]),Range(NearestEnemyOfType([0.0.0.CLERIC_ALL]),15))
-		StateCheck(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_DISABLED_CASTING)
-		!CheckStat(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]),0,WIZARD_SPELL_TURNING)
-	OR(5)
-		!See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
-		TriggerOverride(NearestEnemyOfType([0.0.0.CLERIC_ALL]),Range(NearestEnemyOfType([0.0.0.MAGE_ALL]),15))
-		TriggerOverride(NearestEnemyOfType([0.0.0.CLERIC_ALL]),Range(NearestEnemyOfType([0.0.0.CLERIC_ALL]),15))
-		StateCheck(NearestEnemyOfType([0.0.0.CLERIC_ALL]),STATE_DISABLED_CASTING)
-		!CheckStat(NearestEnemyOfType([0.0.0.CLERIC_ALL]),0,WIZARD_SPELL_TURNING)
-	OR(5)
-		!See(SecondNearestEnemyOfType([0.0.0.CLERIC_ALL]))
-		TriggerOverride(SecondNearestEnemyOfType([0.0.0.CLERIC_ALL]),Range(NearestEnemyOfType([0.0.0.MAGE_ALL]),15))
-		TriggerOverride(SecondNearestEnemyOfType([0.0.0.CLERIC_ALL]),Range(NearestEnemyOfType([0.0.0.CLERIC_ALL]),15))
-		StateCheck(SecondNearestEnemyOfType([0.0.0.CLERIC_ALL]),STATE_DISABLED_CASTING)
-		!CheckStat(SecondNearestEnemyOfType([0.0.0.CLERIC_ALL]),0,WIZARD_SPELL_TURNING)
-	OR(5)
-		!See(NearestEnemyOfType([0.0.0.BARD_ALL]))
-		TriggerOverride(NearestEnemyOfType([0.0.0.BARD_ALL]),Range(NearestEnemyOfType([0.0.0.MAGE_ALL]),15))
-		TriggerOverride(NearestEnemyOfType([0.0.0.BARD_ALL]),Range(NearestEnemyOfType([0.0.0.CLERIC_ALL]),15))
-		StateCheck(NearestEnemyOfType([0.0.0.BARD_ALL]),STATE_DISABLED_CASTING)
-		!CheckStat(NearestEnemyOfType([0.0.0.BARD_ALL]),0,WIZARD_SPELL_TURNING)
-	OR(5)
-		!See(SecondNearestEnemyOfType([0.0.0.BARD_ALL]))
-		TriggerOverride(SecondNearestEnemyOfType([0.0.0.BARD_ALL]),Range(NearestEnemyOfType([0.0.0.MAGE_ALL]),15))
-		TriggerOverride(SecondNearestEnemyOfType([0.0.0.BARD_ALL]),Range(NearestEnemyOfType([0.0.0.CLERIC_ALL]),15))
-		StateCheck(SecondNearestEnemyOfType([0.0.0.BARD_ALL]),STATE_DISABLED_CASTING)
-		!CheckStat(SecondNearestEnemyOfType([0.0.0.BARD_ALL]),0,WIZARD_SPELL_TURNING)
-	OR(5)
-		!See(NearestEnemyOfType([0.0.0.DRUID_ALL]))
-		TriggerOverride(NearestEnemyOfType([0.0.0.DRUID_ALL]),Range(NearestEnemyOfType([0.0.0.MAGE_ALL]),15))
-		TriggerOverride(NearestEnemyOfType([0.0.0.DRUID_ALL]),Range(NearestEnemyOfType([0.0.0.CLERIC_ALL]),15))
-		StateCheck(NearestEnemyOfType([0.0.0.DRUID_ALL]),STATE_DISABLED_CASTING)
-		!CheckStat(NearestEnemyOfType([0.0.0.DRUID_ALL]),0,WIZARD_SPELL_TURNING)
-	OR(5)
-		!See(SecondNearestEnemyOfType([0.0.0.DRUID_ALL]))
-		TriggerOverride(SecondNearestEnemyOfType([0.0.0.DRUID_ALL]),Range(NearestEnemyOfType([0.0.0.MAGE_ALL]),15))
-		TriggerOverride(SecondNearestEnemyOfType([0.0.0.DRUID_ALL]),Range(NearestEnemyOfType([0.0.0.CLERIC_ALL]),15))
-		StateCheck(SecondNearestEnemyOfType([0.0.0.DRUID_ALL]),STATE_DISABLED_CASTING)
-		!CheckStat(SecondNearestEnemyOfType([0.0.0.DRUID_ALL]),0,WIZARD_SPELL_TURNING)
-	False()
-THEN
-	RESPONSE #100
-		NoAction()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	DifficultyGT(EASIEST)
-	HaveSpell(CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Silence, 15' Radius)
-	See(LastSeenBy)
-	!Range(LastSeenBy,0)
-	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-	!TriggerOverride(LastSeenBy,Range(NearestEnemyOfType([0.0.0.MAGE_ALL]),15))
-	!TriggerOverride(LastSeenBy,Range(NearestEnemyOfType([0.0.0.CLERIC_ALL]),15))
-	!StateCheck(LastSeenBy,STATE_DISABLED_CASTING)
-	CheckStat(LastSeenBy,0,WIZARD_SPELL_TURNING)
-THEN
-	RESPONSE #100
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		Spell(LastSeenBy,CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Silence, 15' Radius)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Detect(Myself)
-	HaveSpell(CLERIC_DOOM)  // SPPR113.SPL (Doom)
-	OR(2)
-		!See(NearestEnemyOf(Myself))
-		CheckSpellState(NearestEnemyOf(Myself),MALISON)
-	OR(2)
-		!See(SecondNearestEnemyOf(Myself))
-		CheckSpellState(SecondNearestEnemyOf(Myself),MALISON)
-	OR(2)
-		!See(ThirdNearestEnemyOf(Myself))
-		CheckSpellState(ThirdNearestEnemyOf(Myself),MALISON)
-	False()
-THEN
-	RESPONSE #100
-		NoAction()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	HaveSpell(CLERIC_DOOM)  // SPPR113.SPL (Doom)
-	See(LastSeenBy)
-	!Range(LastSeenBy,0)
-	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-	!CheckSpellState(LastSeenBy,MALISON)
-THEN
-	RESPONSE #100
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		Spell(LastSeenBy,CLERIC_DOOM)  // SPPR113.SPL (Doom)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	Detect(Myself)
+	HaveSpell(WIZARD_HORROR)  // SPWI205.SPL (Horror)
 	OR(3)
-		HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Hold Person)
-		HaveSpell(CLERIC_RIGID_THINKING)  // SPPR311.SPL (Rigid Thinking)
-		HaveSpell(CLERIC_COMMAND)  // SPPR102.SPL (Command)
+		!See(NearestEnemyOf(Myself))
+		CheckSpellState(NearestEnemyOf(Myself),RESIST_FEAR)
+		StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+	OR(3)
+		!See(SecondNearestEnemyOf(Myself))
+		CheckSpellState(SecondNearestEnemyOf(Myself),RESIST_FEAR)
+		StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+	OR(3)
+		!See(ThirdNearestEnemyOf(Myself))
+		CheckSpellState(ThirdNearestEnemyOf(Myself),RESIST_FEAR)
+		StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
+	OR(3)
+		!See(FourthNearestEnemyOf(Myself))
+		CheckSpellState(FourthNearestEnemyOf(Myself),RESIST_FEAR)
+		StateCheck(FourthNearestEnemyOf(Myself),STATE_DISABLED)
+	OR(3)
+		!See(FifthNearestEnemyOf(Myself))
+		CheckSpellState(FifthNearestEnemyOf(Myself),RESIST_FEAR)
+		StateCheck(FifthNearestEnemyOf(Myself),STATE_DISABLED)
+	OR(3)
+		!See(SixthNearestEnemyOf(Myself))
+		CheckSpellState(SixthNearestEnemyOf(Myself),RESIST_FEAR)
+		StateCheck(SixthNearestEnemyOf(Myself),STATE_DISABLED)
+	OR(3)
+		!See(SeventhNearestEnemyOf(Myself))
+		CheckSpellState(SeventhNearestEnemyOf(Myself),RESIST_FEAR)
+		StateCheck(SeventhNearestEnemyOf(Myself),STATE_DISABLED)
+	OR(3)
+		!See(EighthNearestEnemyOf(Myself))
+		CheckSpellState(EighthNearestEnemyOf(Myself),RESIST_FEAR)
+		StateCheck(EighthNearestEnemyOf(Myself),STATE_DISABLED)
+	OR(3)
+		!See(NinthNearestEnemyOf(Myself))
+		CheckSpellState(NinthNearestEnemyOf(Myself),RESIST_FEAR)
+		StateCheck(NinthNearestEnemyOf(Myself),STATE_DISABLED)
+	OR(3)
+		!See(TenthNearestEnemyOf(Myself))
+		CheckSpellState(TenthNearestEnemyOf(Myself),RESIST_FEAR)
+		StateCheck(TenthNearestEnemyOf(Myself),STATE_DISABLED)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HaveSpell(WIZARD_HORROR)  // SPWI205.SPL (Horror)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	!CheckSpellState(LastSeenBy,RESIST_FEAR)
+	!StateCheck(LastSeenBy,STATE_DISABLED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,WIZARD_HORROR)  // SPWI205.SPL (Horror)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Detect(Myself)
+	HaveSpell(WIZARD_DIRE_CHARM)  // SPWI316.SPL (Dire Charm)
 	OR(3)
 		!See(NearestEnemyOf(Myself))
 		RandomNumGT(8,4)
@@ -586,7 +464,7 @@ END
 
 IF
 	!GlobalTimerNotExpired("bd_cast","locals")
-	HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Hold Person)
+	HaveSpell(WIZARD_DIRE_CHARM)  // SPWI316.SPL (Dire Charm)
 	See(LastSeenBy)
 	!Range(LastSeenBy,0)
 	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
@@ -595,37 +473,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		Spell(LastSeenBy,CLERIC_HOLD_PERSON)  // SPPR208.SPL (Hold Person)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	HaveSpell(CLERIC_RIGID_THINKING)  // SPPR311.SPL (Rigid Thinking)
-	See(LastSeenBy)
-	!Range(LastSeenBy,0)
-	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-	!StateCheck(LastSeenBy,STATE_DISABLED)
-THEN
-	RESPONSE #100
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		Spell(LastSeenBy,CLERIC_RIGID_THINKING)  // SPPR311.SPL (Rigid Thinking)
-	RESPONSE #50
-		Continue()
-END
-
-IF
-	!GlobalTimerNotExpired("bd_cast","locals")
-	HaveSpell(CLERIC_COMMAND)  // SPPR102.SPL (Command)
-	See(LastSeenBy)
-	!Range(LastSeenBy,0)
-	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-	!StateCheck(LastSeenBy,STATE_DISABLED)
-THEN
-	RESPONSE #100
-		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		Spell(LastSeenBy,CLERIC_COMMAND)  // SPPR102.SPL (Command)
+		Spell(LastSeenBy,WIZARD_DIRE_CHARM)  // SPWI316.SPL (Dire Charm)
 	RESPONSE #50
 		Continue()
 END
@@ -633,7 +481,10 @@ END
 IF
 	!GlobalTimerNotExpired("bd_cast","locals")
 	Detect(Myself)
-	HasItem("wand11",Myself)  // Wand of the Heavens
+	OR(3)
+		HaveSpell(WIZARD_MELF_ACID_ARROW)  // SPWI211.SPL (Melf's Acid Arrow)
+		HaveSpell(WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
+		HaveSpell(WIZARD_LARLOCH_MINOR_DRAIN)  // SPWI119.SPL (Larloch's Minor Drain)
 	OR(2)
 		!See(NearestEnemyOf(Myself))
 		RandomNumGT(4,2)
@@ -651,16 +502,42 @@ END
 
 IF
 	!GlobalTimerNotExpired("bd_cast","locals")
-	HasItem("wand11",Myself)  // Wand of the Heavens
+	HaveSpell(WIZARD_MELF_ACID_ARROW)  // SPWI211.SPL (Melf's Acid Arrow)
 	See(LastSeenBy)
 	!Range(LastSeenBy,0)
 	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
 THEN
 	RESPONSE #100
-		SetInterrupt(FALSE)
 		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-		UseItem("wand11",LastSeenBy)  // Wand of the Heavens
-		SetInterrupt(TRUE)
+		Spell(LastSeenBy,WIZARD_MELF_ACID_ARROW)  // SPWI211.SPL (Melf's Acid Arrow)
+	RESPONSE #25
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HaveSpell(WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
+	RESPONSE #25
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HaveSpell(WIZARD_LARLOCH_MINOR_DRAIN)  // SPWI119.SPL (Larloch's Minor Drain)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(LastSeenBy,WIZARD_LARLOCH_MINOR_DRAIN)  // SPWI119.SPL (Larloch's Minor Drain)
 	RESPONSE #25
 		Continue()
 END
@@ -676,9 +553,26 @@ END
 
 IF
 	See(NearestEnemyOf(Myself))
+	IsWeaponRanged(Myself)
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("bd_cast","locals")
 THEN
 	RESPONSE #100
 		EquipRanged()
 		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Delay(2)
+THEN
+	RESPONSE #100
+		EquipRanged()
 END
 

@@ -1,12 +1,39 @@
 IF
-	GlobalLT("bd_plot","global",530)
-	Range([PC],30)
+	Clicked([ANYONE])
+	Name("portal",Myself)
+	AreaCheck("bd4400")  // Avernus
 THEN
 	RESPONSE #100
-		SetGlobal("bd_plot","global",530)
-		StartCutSceneMode()
-		CreateCreature("bdcutid2",[1940.600],N)  // No such index
-		ClearAllActions()
-		StartCutScene("bdcut50")
+		DisplayString(Myself,62441)  // The portal glows with infernal light. It leads back to Dragonspear, but not to safety, not while Torsin de Lancie holds the portal vault's key. To survive, you must find a way to seal this rift between planes.
+END
+
+IF
+	Clicked([ANYONE])
+	Name("lava",Myself)
+	AreaCheck("bd4400")  // Avernus
+THEN
+	RESPONSE #100
+		DisplayString(Myself,62442)  // The magma-covered fields stretch away into smoke-shrouded wastelands. Beyond a battered bridge in the distance, an imposing basalt tower looms.
+END
+
+IF
+	OR(2)
+		Clicked([ANYONE])
+		Range([PC],12)
+	Name("stairs",Myself)
+	AreaCheck("bd4400")  // Avernus
+THEN
+	RESPONSE #100
+		TriggerActivation("STAIRS",FALSE)
+		DisplayString(Myself,62443)  // Corpses of crusaders and devils litter these pitted stairs. 
+END
+
+IF
+	Clicked([ANYONE])
+	Name("door",Myself)
+	AreaCheck("bd4500")  // Avernus Bridge
+THEN
+	RESPONSE #100
+		DisplayString(Myself,44268)  // Set into the basalt walls are doors of iron, molded in the visage of a damned soul. To look upon the door is to catch a fleeting glimpse of the horror Avernus offers all who find themselves lost within it.
 END
 

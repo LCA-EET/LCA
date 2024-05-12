@@ -1,10 +1,19 @@
 IF
-	OR(2)
-		Entered([ANYONE])
-		Opened([ANYONE])
+	Global("bd_lanewalk","locals",0)
+	!Dead("bdashati")  // Ashatiel
+	AreaCheck("bd4000")  // Dragonspear Castle, Exterior
 THEN
 	RESPONSE #100
-		DisplayString(LastTrigger,14381)  // Trap Sprung
-		ForceSpellRES("bdgspear",LastTrigger)  // No such index
+		SetGlobal("bd_lanewalk","locals",1)
+		SetGlobal("bd_no_retreat","locals",1)
+		SaveObjectLocation("LOCALS","bd_walk_point1","crus_arrival1")
+		SaveObjectLocation("LOCALS","bd_walk_point2","courtyard")
+		Enemy()
+	RESPONSE #100
+		SetGlobal("bd_lanewalk","locals",1)
+		SetGlobal("bd_no_retreat","locals",1)
+		SaveObjectLocation("LOCALS","bd_walk_point1","crus_arrival2")
+		SaveObjectLocation("LOCALS","bd_walk_point2","courtyard")
+		Enemy()
 END
 

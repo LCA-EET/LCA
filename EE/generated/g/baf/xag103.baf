@@ -1,5 +1,5 @@
 IF
-	DifficultyLT(HARD)
+	DifficultyLT(HARDEST)
 THEN
 	RESPONSE #100
 		DestroySelf()

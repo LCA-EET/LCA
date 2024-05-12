@@ -1,25 +1,143 @@
 IF
-	Detect([PC])
-	Global("BD_PRISONER8","BD0104",0)  // Flaming Fist HQ
+	Global("bd_ai_controls","locals",0)
+	OR(3)
+		AreaCheck("bd1000")  // Coast Way Crossing
+		AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+		AreaCheck("bd7100")  // Troll Forest
 THEN
 	RESPONSE #100
-		DisplayStringHead(Myself,36375)  // Here we are. Now, get in. 
-		SmallWait(5)
-		SetSequence(SEQ_ATTACK_SLASH)
-		Wait(1)
-		ActionOverride("Prisoner 8",MoveToPoint([1297.213]))
-		Wait(1)
-		MoveToPoint([1408.300])
-		ActionOverride("Prisoner 8",Face(S))
-		Wait(1)
-		CloseDoor("Door05")
-		PlaySound("AMB_D15")
-		Lock("Door05")
-		Wait(1)
-		ActionOverride("Prisoner 8",DialogInterrupt(TRUE))
-		MoveToPoint([1333.339])
-		Face(SE)
+		SetGlobal("bd_ai_controls","locals",1)
+		SetGlobal("bd_no_search","locals",1)
+		SaveObjectLocation("LOCALS","bd_default_loc",Myself)
+		SetSequence(SEQ_HEAD_TURN)
+END
+
+IF
+	Global("bd_no_retreat","locals",0)
+	Global("bd_fists_attack","global",4)
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #100
+		SetGlobal("bd_no_retreat","locals",1)
+		ChangeEnemyAlly(Myself,GOODBUTBLUE)
+		DialogInterrupt(FALSE)
+		Continue()
+END
+
+IF
+	GlobalLT("bd_random_walk","locals",2)
+	Global("bd_crusaders_retreat","bd2000",1)  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #100
+		SetGlobal("bd_random_walk","locals",2)
+		SetGlobal("bd_retreat","locals",0)
+		SetGlobal("bd_no_retreat","locals",1)
+		ChangeEnemyAlly(Myself,NEUTRAL)
 		DialogInterrupt(TRUE)
-		SetGlobal("BD_PRISONER8","BD0104",1)  // Flaming Fist HQ
+END
+
+IF
+	Global("bd_random_walk","locals",3)
+	!Detect(NearestEnemyOf(Myself))
+	Range("Boaresky_blockade",20)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_random_walk","locals",2)
+END
+
+IF
+	Global("bd_random_walk","locals",2)
+	!Detect(NearestEnemyOf(Myself))
+	Range("camp_center",20)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_random_walk","locals",3)
+		SetGlobal("bd_search","locals",1)
+		SetGlobal("bd_combat","locals",1)
+		SetGlobal("bd_no_search","locals",0)
+		SetGlobalTimer("bd_search_timer","locals",TWO_ROUNDS)
+END
+
+IF
+	Global("bd_random_walk","locals",2)
+	!Detect(NearestEnemyOf(Myself))
+	!Range("camp_center",15)
+THEN
+	RESPONSE #100
+		MoveToObject("camp_center")
+END
+
+IF
+	Global("bd_fists_attack","global",4)
+	Global("bd_crusaders_retreat","bd2000",0)  // Boareskyr Bridge & Bridgefort
+	Global("bd_random_walk","locals",0)
+	!Detect(NearestEnemyOf(Myself))
+	!Range("camp_center",15)
+THEN
+	RESPONSE #100
+		MoveToObject("camp_center")
+END
+
+IF
+	Global("bd_fists_attack","global",4)
+	Global("bd_random_walk","locals",1)
+	Global("bd_crusaders_retreat","bd2000",0)  // Boareskyr Bridge & Bridgefort
+	Detect(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("bd_random_walk","locals",0)
+END
+
+IF
+	Global("bd_fists_attack","global",4)
+	Global("bd_crusaders_retreat","bd2000",0)  // Boareskyr Bridge & Bridgefort
+	Global("bd_random_walk","locals",0)
+	!Detect(NearestEnemyOf(Myself))
+	Range("camp_center",20)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_random_walk","locals",1)
+		RandomWalkContinuous()
+END
+
+IF
+	GlobalGT("bd_fists_attack","global",2)
+	AreaCheck("bd7100")  // Troll Forest
+THEN
+	RESPONSE #100
+		EscapeAreaObject("TransBD7110")
+END
+
+IF
+	OR(2)
+		AreaCheck("bd1000")  // Coast Way Crossing
+		AreaCheck("bd7100")  // Troll Forest
+	Die()
+	Allegiance(LastAttackerOf(Myself),PC)
+	!Race(Myself,HALFORC)
+	Allegiance(Myself,NEUTRAL)
+	!Specifics(Myself,THIEF)
+	Global("bd_attacked_allies","myarea",0)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_attacked_allies","myarea",1)
+END
+
+IF
+	AreaCheck("bd7100")  // Troll Forest
+	!GlobalTimerNotExpired("bd_sdd225l_ot_timer","bd7100")  // Troll Forest
+	Allegiance(Myself,NEUTRAL)
+	Specifics(Myself,ALLIES)
+	See([ENEMY.0.HALFORC.0.ALLIES2])
+	Switch("bd_sdd225l_ot","bd7100")  // Troll Forest
+THEN
+	RESPONSE #0
+		SetGlobal("bd_sdd225l_ot","bd7100",1)  // Troll Forest
+		SetGlobalTimer("bd_sdd225l_ot_timer","bd7100",ONE_ROUND)  // Troll Forest
+		DisplayStringHead(Myself,69701)  // Hey, the hero is fighting those mercenaries!
+		SetGlobal("BD_SDD225_FIGHT","BD7100",1)  // Troll Forest
+	RESPONSE #1
+		SetGlobal("bd_sdd225l_ot","bd7100",2)  // Troll Forest
+		DisplayStringHead(Myself,69702)  // They must be enemies. Get 'em!
 END
 

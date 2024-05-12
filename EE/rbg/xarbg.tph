@@ -1012,6 +1012,52 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 				xa_class = ~mage3~
 				xa_default = ~wtasight~
 		END
+		
+		//{ Drakes
+			COPY_EXISTING ~xaf102.cre~ ~override/xadrake0.cre~ // bdwyrmli
+			SAY NAME1 @4161 /* Alabaster Drake */
+			SAY NAME2 @4161 /* Alabaster Drake */
+			WRITE_LONG 0x14 6000 // XP
+			WRITE_BYTE 0x52 3 // THAC0
+			
+			WRITE_SHORT 0x24 80 // HP
+			WRITE_SHORT 0x26 80 // HP
+			
+			WRITE_BYTE 0x54 8 // Saves Death
+			WRITE_BYTE 0x55 8 // Saves Wand
+			WRITE_BYTE 0x56 8 // Saves Polymorph
+			WRITE_BYTE 0x57 8 // Saves Breath
+			WRITE_BYTE 0x58 8 // Saves Spell
+			
+			WRITE_BYTE 0x59 20 // Resist Fire
+			WRITE_BYTE 0x5A 20 // Resist Cold
+			WRITE_BYTE 0x5B 20 // Resist Elec
+			WRITE_BYTE 0x5C 20 // Resist Acid
+			WRITE_BYTE 0x5D 20 // Resist Magic
+			WRITE_BYTE 0x5E 20 // Resist Magic Fire
+			WRITE_BYTE 0x5F 20 // Resist Magic Cold
+			
+			WRITE_BYTE 0x234 14 // Level
+			WRITE_ASCII 0xB1C ~S3-8~ #8 // 3d8 (3 to 24) damage
+			WRITE_ASCII 0x280 ~xadrake0~ #8 // script name
+			WRITE_ASCII 0x258 ~xadrake~ #8 // race script
+			REMOVE_CRE_ITEM ~bdsw1hda~ ~bddagg05~
+			
+			COPY_EXISTING ~xadrake0.cre~ ~override/xadrake1.cre~
+			WRITE_ASCII 0x280 ~xadrake1~ #8
+			
+			COPY_EXISTING ~xadrake0.cre~ ~override/xadrake2.cre~
+			WRITE_ASCII 0x280 ~xadrake2~ #8
+		//}
+		
+		//{ Dragon
+			COPY_EXISTING ~xaf101.cre~ ~override/xadragon.cre~ // bdhalat2
+			SAY NAME1 @4162 /* Alabaster Dragon */
+			SAY NAME2 @4162 /* Alabaster Dragon */
+			WRITE_ASCII 0x850 ~dragring~ #8
+			WRITE_ASCII 0x280 ~xadragon~ #8
+			WRITE_LONG 0x14 55000
+		//}
 	//}
 	
 	//{ BG2 Base
@@ -3449,6 +3495,38 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 				fj_name = ~CYARD~
 		END
 		//{ Add Drakes
+			LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 1600
+					fj_loc_y = 900
+					fj_orientation = 0 // S 
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = Drake
+					fj_cre_resref = xadrake0
+			END
+			
+			LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 1740
+					fj_loc_y = 600
+					fj_orientation = 0 // S 
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = Drake
+					fj_cre_resref = xadrake1
+			END
+			
+			LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 2170
+					fj_loc_y = 300
+					fj_orientation = 2 // SW 
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = Drake
+					fj_cre_resref = xadrake2
+			END
 			
 		//}
 		//{ Add Caelar & Lieutenants

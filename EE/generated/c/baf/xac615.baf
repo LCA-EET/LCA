@@ -1,32 +1,52 @@
 IF
-	Allegiance(Myself,NEUTRAL)
-	Detect([PC])
-	!GlobalTimerNotExpired("bd_deneld_barks_timer","LOCALS")
-	Switch("bd_deneld_barks","locals")
+	Detect(Myself)
+	Global("bd_no_combat","locals",2)
 THEN
-	RESPONSE #0
-		DisplayStringHead(Myself,48926)  // You have been chosen not because you are the strongest or the wisest.
-		SetGlobalTimer("bd_deneld_barks_timer","locals",FIVE_ROUNDS)
-		IncrementGlobal("bd_deneld_barks","locals",1)
-	RESPONSE #1
-		DisplayStringHead(Myself,48927)  // You have been chosen because you have heart and the faith to see the crusade to its end!
-		SetGlobalTimer("bd_deneld_barks_timer","locals",FIVE_ROUNDS)
-		IncrementGlobal("bd_deneld_barks","locals",1)
-	RESPONSE #2
-		DisplayStringHead(Myself,48928)  // You will storm the gates of the Nine Hells!
-		SetGlobalTimer("bd_deneld_barks_timer","locals",FIVE_ROUNDS)
-		IncrementGlobal("bd_deneld_barks","locals",1)
-	RESPONSE #3
-		DisplayStringHead(Myself,48929)  // You will slay the devils within and claim their realm for good!
-		SetGlobalTimer("bd_deneld_barks_timer","locals",FIVE_ROUNDS)
-		IncrementGlobal("bd_deneld_barks","locals",1)
-	RESPONSE #4
-		DisplayStringHead(Myself,48930)  // You may be frightened, but you will cast aside all doubt!
-		SetGlobalTimer("bd_deneld_barks_timer","locals",FIVE_ROUNDS)
-		IncrementGlobal("bd_deneld_barks","locals",1)
-	RESPONSE #5
-		DisplayStringHead(Myself,48931)  // You are MEANT to be here! You will do great deeds here, because YOU are Caelar's chosen!
-		SetGlobalTimer("bd_deneld_barks_timer","locals",FIVE_ROUNDS)
-		SetGlobal("bd_deneld_barks","locals",0)
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("bd_no_retreat","locals",0)
+	Global("bd_retreat","locals",1)
+	Global("bd_no_combat","locals",1)
+	Global("bd_combat","locals",0)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HasItem("potn52",Myself)  // Potion of Extra Healing
+	HPPercentLT(Myself,75)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		UseItem("potn52",Myself)  // Potion of Extra Healing
+		SetInterrupt(TRUE)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),5)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate(NearestEnemyOf(Myself),30)
 END
 

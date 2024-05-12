@@ -147,125 +147,125 @@ COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5zk.acm~ ~MUSIC\xag5\xag5zk.acm~
 //cre files
 //===================
 COPY ~%MOD_FOLDER%\generated\g\cre\xag100.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11365) /*~Aun Argent~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11365) /*~Aun Argent~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@11366) /*~If this is how it ends, then so be it!~[xag10000]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@11367) /*~Ugh!~[xag10001]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@11368) /*~~[xag10002]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@11369) /*~I will do what I can to help you.~[xag10003]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11361) /*~Aun Argent~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11361) /*~Aun Argent~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@11362) /*~If this is how it ends, then so be it!~[xag10000]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@11363) /*~Ugh!~[xag10001]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@11364) /*~~[xag10002]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11365) /*~I will do what I can to help you.~[xag10003]*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag101.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11370) /*~Thrix~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11370) /*~Thrix~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11366) /*~Thrix~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11366) /*~Thrix~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag102.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11371) /*~Hellcat~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11371) /*~Hellcat~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11367) /*~Hellcat~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11367) /*~Hellcat~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag103.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11372) /*~Erinyes~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11372) /*~Erinyes~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11368) /*~Erinyes~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11368) /*~Erinyes~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag106.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11373) /*~Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11373) /*~Abishai~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11369) /*~Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11369) /*~Abishai~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag107.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11374) /*~Imp~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11374) /*~Imp~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11370) /*~Imp~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11370) /*~Imp~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag108.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11373) /*~Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11373) /*~Abishai~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11369) /*~Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11369) /*~Abishai~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag110.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11371) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11371) /*~Crusader Elite~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag111.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11376) /*~Lemure~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11376) /*~Lemure~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11372) /*~Lemure~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11372) /*~Lemure~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag114.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11374) /*~Imp~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11374) /*~Imp~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11370) /*~Imp~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11370) /*~Imp~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag115.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11377) /*~Black Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11377) /*~Black Abishai~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11373) /*~Black Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11373) /*~Black Abishai~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag116.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11378) /*~Green Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11378) /*~Green Abishai~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11374) /*~Green Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11374) /*~Green Abishai~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag117.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11379) /*~Red Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11379) /*~Red Abishai~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11375) /*~Red Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11375) /*~Red Abishai~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag118.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11380) /*~Hamatula~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11380) /*~Hamatula~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11376) /*~Hamatula~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11376) /*~Hamatula~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag119.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11381) /*~Bone Fiend~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11381) /*~Bone Fiend~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11377) /*~Bone Fiend~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11377) /*~Bone Fiend~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag124.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@11382) /*~For the Shining Lady!~[xac10278]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@11383) /*~You need somethin'?~[xac10279]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@11384) /*~We serve the light.~[xac10280]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11371) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11371) /*~Crusader Elite~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@11378) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11379) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11380) /*~We serve the light.~[xac10280]*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag125.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11376) /*~Lemure~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11376) /*~Lemure~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11372) /*~Lemure~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11372) /*~Lemure~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag126.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@11385) /*~Die in her name!~[xac10292]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@11386) /*~Somethin' you need?~[xac10182]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@11387) /*~As the light wills.~[xac10183]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11371) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11371) /*~Crusader Elite~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@11381) /*~Die in her name!~[xac10292]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11382) /*~Somethin' you need?~[xac10182]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11383) /*~As the light wills.~[xac10183]*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag127.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@11388) /*~~[xaa11126]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@11389) /*~~[xaa11854]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@11390) /*~ The Fair Folk rarely have time for small talk.~[xac10289]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@11391) /*~ Troubled times are upon us.~[xac10290]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@11392) /*~ Soon, we shall all be together upon Evermeet.~[xac10291]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11371) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11371) /*~Crusader Elite~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@11384) /*~~[xaa11126]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@11385) /*~~[xaa11854]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11386) /*~ The Fair Folk rarely have time for small talk.~[xac10289]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11387) /*~ Troubled times are upon us.~[xac10290]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@11388) /*~ Soon, we shall all be together upon Evermeet.~[xac10291]*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag128.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11378) /*~Green Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11378) /*~Green Abishai~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11374) /*~Green Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11374) /*~Green Abishai~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag131.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@11382) /*~For the Shining Lady!~[xac10278]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@11383) /*~You need somethin'?~[xac10279]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@11384) /*~We serve the light.~[xac10280]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11371) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11371) /*~Crusader Elite~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@11378) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11379) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11380) /*~We serve the light.~[xac10280]*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag132.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11377) /*~Black Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11377) /*~Black Abishai~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11373) /*~Black Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11373) /*~Black Abishai~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag135.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@11385) /*~Die in her name!~[xac10292]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@11386) /*~Somethin' you need?~[xac10182]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@11387) /*~As the light wills.~[xac10183]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11371) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11371) /*~Crusader Elite~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@11381) /*~Die in her name!~[xac10292]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11382) /*~Somethin' you need?~[xac10182]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11383) /*~As the light wills.~[xac10183]*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag139.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11371) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11371) /*~Crusader Elite~*/
 
 COPY ~%MOD_FOLDER%\generated\g\cre\xag140.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11371) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11371) /*~Crusader Elite~*/
 
 
 //are files
@@ -274,8 +274,8 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~xag100.are~) BEGIN
 	//PRINT ~Area already exists: xag100. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\g\are\xag100.are~ ~override~
-	WRITE_LONG 8316 RESOLVE_STR_REF(@11393) /*~Stairs Down~*/
-	WRITE_LONG 8368 RESOLVE_STR_REF(@11394) /*~Massive Door~*/
+	WRITE_LONG 8316 RESOLVE_STR_REF(@11389) /*~Stairs Down~*/
+	WRITE_LONG 8368 RESOLVE_STR_REF(@11390) /*~Massive Door~*/
 	WRITE_LONG 7940 %xag0%
 	WRITE_LONG 7944 %xag0%
 	WRITE_LONG 7952 %xag1%
@@ -284,14 +284,14 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~xag101.are~) BEGIN
 	//PRINT ~Area already exists: xag101. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\g\are\xag101.are~ ~override~
-	WRITE_LONG 6836 RESOLVE_STR_REF(@11395) /*~In the distance, you can make out the legions of Avernus marching in formation.~*/
-	WRITE_LONG 7032 RESOLVE_STR_REF(@11396) /*~Through the haze that envelops Avernus you can see a blasted landscape dotted with lakes of bubbling magma amongst towering ruins of iron and basalt.~*/
-	WRITE_LONG 7228 RESOLVE_STR_REF(@11397) /*~The utter desolation of the First Hell is an awe-inspiring, if terrifying, sight. Red skies periodically rain down fireballs, battering the landscape.~*/
-	WRITE_LONG 7424 RESOLVE_STR_REF(@11398) /*~Horrifying creatures are chained up by the thousands far below. Enormous devils rake them with whips, shaking with laughter after each strike.~*/
-	WRITE_LONG 7620 RESOLVE_STR_REF(@11399) /*~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~*/
-	WRITE_LONG 7816 RESOLVE_STR_REF(@11399) /*~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~*/
-	WRITE_LONG 8012 RESOLVE_STR_REF(@11399) /*~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~*/
-	WRITE_LONG 12828 RESOLVE_STR_REF(@11400) /*~Cage~*/
+	WRITE_LONG 6836 RESOLVE_STR_REF(@11391) /*~In the distance, you can make out the legions of Avernus marching in formation.~*/
+	WRITE_LONG 7032 RESOLVE_STR_REF(@11392) /*~Through the haze that envelops Avernus you can see a blasted landscape dotted with lakes of bubbling magma amongst towering ruins of iron and basalt.~*/
+	WRITE_LONG 7228 RESOLVE_STR_REF(@11393) /*~The utter desolation of the First Hell is an awe-inspiring, if terrifying, sight. Red skies periodically rain down fireballs, battering the landscape.~*/
+	WRITE_LONG 7424 RESOLVE_STR_REF(@11394) /*~Horrifying creatures are chained up by the thousands far below. Enormous devils rake them with whips, shaking with laughter after each strike.~*/
+	WRITE_LONG 7620 RESOLVE_STR_REF(@11395) /*~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~*/
+	WRITE_LONG 7816 RESOLVE_STR_REF(@11395) /*~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~*/
+	WRITE_LONG 8012 RESOLVE_STR_REF(@11395) /*~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~*/
+	WRITE_LONG 12828 RESOLVE_STR_REF(@11396) /*~Cage~*/
 	WRITE_LONG 12452 %xag0%
 	WRITE_LONG 12456 %xag0%
 	WRITE_LONG 12464 %xag2%
@@ -301,22 +301,22 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~xag102.are~) BEGIN
 	//PRINT ~Area already exists: xag102. Skipping...~
 END ELSE BEGIN
 	COPY ~%MOD_FOLDER%\generated\g\are\xag102.are~ ~override~
-	WRITE_LONG 11972 RESOLVE_STR_REF(@11401) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
-	WRITE_LONG 12168 RESOLVE_STR_REF(@11402) /*~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~*/
-	WRITE_LONG 12364 RESOLVE_STR_REF(@11401) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
-	WRITE_LONG 12560 RESOLVE_STR_REF(@11403) /*~This door's dwarven craftspeople made certain none but the one who held its key would ever be able to open it. Peering through a crack, the light that leaks inward reveals nothing of interest or value.~*/
-	WRITE_LONG 12756 RESOLVE_STR_REF(@11401) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
-	WRITE_LONG 12952 RESOLVE_STR_REF(@11401) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
-	WRITE_LONG 13148 RESOLVE_STR_REF(@11402) /*~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~*/
-	WRITE_LONG 13344 RESOLVE_STR_REF(@11401) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
-	WRITE_LONG 13540 RESOLVE_STR_REF(@11402) /*~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~*/
-	WRITE_LONG 13736 RESOLVE_STR_REF(@11403) /*~This door's dwarven craftspeople made certain none but the one who held its key would ever be able to open it. Peering through a crack, the light that leaks inward reveals nothing of interest or value.~*/
-	WRITE_LONG 13932 RESOLVE_STR_REF(@11401) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
-	WRITE_LONG 14128 RESOLVE_STR_REF(@11404) /*~An unearthly light glows from deep within the chasm. Voices echo throughout the gaping crevasse, pressing against the walls, seeking escape.~*/
-	WRITE_LONG 14324 RESOLVE_STR_REF(@11404) /*~An unearthly light glows from deep within the chasm. Voices echo throughout the gaping crevasse, pressing against the walls, seeking escape.~*/
-	WRITE_LONG 20212 RESOLVE_STR_REF(@11405) /*~Exit~*/
-	WRITE_LONG 20264 RESOLVE_STR_REF(@11406) /*~Ritual Chamber~*/
-	WRITE_LONG 20316 RESOLVE_STR_REF(@11407) /*~Portal to the Fugue Plane~*/
+	WRITE_LONG 11972 RESOLVE_STR_REF(@11397) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
+	WRITE_LONG 12168 RESOLVE_STR_REF(@11398) /*~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~*/
+	WRITE_LONG 12364 RESOLVE_STR_REF(@11397) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
+	WRITE_LONG 12560 RESOLVE_STR_REF(@11399) /*~This door's dwarven craftspeople made certain none but the one who held its key would ever be able to open it. Peering through a crack, the light that leaks inward reveals nothing of interest or value.~*/
+	WRITE_LONG 12756 RESOLVE_STR_REF(@11397) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
+	WRITE_LONG 12952 RESOLVE_STR_REF(@11397) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
+	WRITE_LONG 13148 RESOLVE_STR_REF(@11398) /*~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~*/
+	WRITE_LONG 13344 RESOLVE_STR_REF(@11397) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
+	WRITE_LONG 13540 RESOLVE_STR_REF(@11398) /*~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~*/
+	WRITE_LONG 13736 RESOLVE_STR_REF(@11399) /*~This door's dwarven craftspeople made certain none but the one who held its key would ever be able to open it. Peering through a crack, the light that leaks inward reveals nothing of interest or value.~*/
+	WRITE_LONG 13932 RESOLVE_STR_REF(@11397) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
+	WRITE_LONG 14128 RESOLVE_STR_REF(@11400) /*~An unearthly light glows from deep within the chasm. Voices echo throughout the gaping crevasse, pressing against the walls, seeking escape.~*/
+	WRITE_LONG 14324 RESOLVE_STR_REF(@11400) /*~An unearthly light glows from deep within the chasm. Voices echo throughout the gaping crevasse, pressing against the walls, seeking escape.~*/
+	WRITE_LONG 20212 RESOLVE_STR_REF(@11401) /*~Exit~*/
+	WRITE_LONG 20264 RESOLVE_STR_REF(@11402) /*~Ritual Chamber~*/
+	WRITE_LONG 20316 RESOLVE_STR_REF(@11403) /*~Portal to the Fugue Plane~*/
 	WRITE_LONG 19836 %xag4%
 	WRITE_LONG 19840 %xag4%
 	WRITE_LONG 19848 %xag5%
@@ -325,12 +325,12 @@ END
 //spl files
 //===================
 COPY ~%MOD_FOLDER%\generated\g\spl\xag100.spl~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11408) /*~Teleport Without Error~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11404) /*~Teleport Without Error~*/
 COPY ~%MOD_FOLDER%\generated\g\spl\xag101.spl~ ~override~
 COPY ~%MOD_FOLDER%\generated\g\spl\xag102.spl~ ~override~
 COPY ~%MOD_FOLDER%\generated\g\spl\xag105.spl~ ~override~
 COPY ~%MOD_FOLDER%\generated\g\spl\xag104.spl~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11409) /*~Impale~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11405) /*~Impale~*/
 COPY ~%MOD_FOLDER%\generated\g\spl\xag103.spl~ ~override~
 
 //wav files
@@ -373,27 +373,27 @@ COPY ~%MOD_FOLDER%\generated\g\bam\xag134.bam~ ~override~
 //itm files
 //===================
 COPY ~%MOD_FOLDER%\generated\g\itm\xag105.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11410) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11410) /*~Attack~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11406) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11406) /*~Attack~*/
 COPY ~%MOD_FOLDER%\generated\g\itm\xag106.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11410) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11410) /*~Attack~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11406) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11406) /*~Attack~*/
 COPY ~%MOD_FOLDER%\generated\g\itm\xag107.itm~ ~override~
 COPY ~%MOD_FOLDER%\generated\g\itm\xag113.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11410) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11410) /*~Attack~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11406) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11406) /*~Attack~*/
 COPY ~%MOD_FOLDER%\generated\g\itm\xag110.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11410) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11410) /*~Attack~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11406) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11406) /*~Attack~*/
 COPY ~%MOD_FOLDER%\generated\g\itm\xag109.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11410) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11410) /*~Attack~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11406) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11406) /*~Attack~*/
 COPY ~%MOD_FOLDER%\generated\g\itm\xag114.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11410) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11410) /*~Attack~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11406) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11406) /*~Attack~*/
 COPY ~%MOD_FOLDER%\generated\g\itm\xag115.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11410) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11410) /*~Attack~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11406) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11406) /*~Attack~*/
 
 //tis files
 //===================

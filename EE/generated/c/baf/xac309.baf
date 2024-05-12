@@ -1,8 +1,227 @@
 IF
-	Entered([ANYONE])
+	Die()
+	GlobalGT("bd_lanewalk","locals",0)
+	GlobalLT("bd_crus_killed","bd4000",0)  // Dragonspear Castle, Exterior
+THEN
+	RESPONSE #300
+		IncrementGlobal("bd_crus_count","bd4000",-1)  // Dragonspear Castle, Exterior
+		IncrementGlobal("bd_crus_killed","bd4000",1)  // Dragonspear Castle, Exterior
+		ChangeAIScript("",RACE)
+		ChangeAIScript("",GENERAL)
+END
+
+IF
+	Die()
+	AreaCheck("bd4000")  // Dragonspear Castle, Exterior
 THEN
 	RESPONSE #100
-		DisplayString(LastTrigger,14381)  // Trap Sprung
-		ForceSpell(LastTrigger,TRAP_CALL_LIGHTNING)  // SPPR987.SPL (Call Lightning)
+		IncrementGlobal("bd_crus_count","bd4000",-1)  // Dragonspear Castle, Exterior
+		IncrementGlobal("bd_crus_killed","bd4000",1)  // Dragonspear Castle, Exterior
+		ChangeAIScript("",RACE)
+		ChangeAIScript("",GENERAL)
+		DestroySelf()
+END
+
+IF
+	GlobalGT("bd_plot","global",439)
+	Global("bd_dsc_escape","locals",0)
+	AreaCheck("bd4000")  // Dragonspear Castle, Exterior
+THEN
+	RESPONSE #100
+		SetGlobal("bd_dsc_escape","locals",1)
+		SetGlobal("bd_no_assist","locals",2)
+		SetGlobal("bd_no_combat","locals",1)
+		SetGlobal("bd_retreat_escape","locals",1)
+		SetGlobal("bd_retreat","locals",1)
+		SaveObjectLocation("LOCALS","bd_default_loc","crusader_camp")
+		SetGlobal("bd_no_retreat","locals",0)
+		ChangeEnemyAlly(Myself,NEUTRAL)
+END
+
+IF
+	Global("bd_dsc_escape","locals",1)
+	AreaCheck("bd4000")  // Dragonspear Castle, Exterior
+THEN
+	RESPONSE #50
+		SetGlobal("bd_dsc_escape","locals",2)
+		SetGlobal("bd_dsc_escape_timer","locals",24)
+		DisplayStringHead(Myself,44183)  // This can't be happening! The Shining Lady promised us divine protection...
+		Continue()
+	RESPONSE #50
+		SetGlobal("bd_dsc_escape","locals",2)
+		SetGlobal("bd_dsc_escape_timer","locals",12)
+		DisplayStringHead(Myself,44184)  // Retreat! Retreat!
+		Continue()
+	RESPONSE #50
+		SetGlobal("bd_dsc_escape","locals",2)
+		SetGlobal("bd_dsc_escape_timer","locals",24)
+		DisplayStringHead(Myself,44185)  // Caelar! Why have you abandoned your humble servants in their hour of need?
+		Continue()
+	RESPONSE #50
+		SetGlobal("bd_dsc_escape","locals",2)
+		SetGlobal("bd_dsc_escape_timer","locals",12)
+		DisplayStringHead(Myself,44186)  // Ashatiel defeated? How is this possible?
+		Continue()
+	RESPONSE #50
+		SetGlobal("bd_dsc_escape","locals",2)
+		SetGlobal("bd_dsc_escape_timer","locals",12)
+		DisplayStringHead(Myself,44187)  // We're being beaten...?
+		Continue()
+	RESPONSE #50
+		SetGlobal("bd_dsc_escape","locals",2)
+		SetGlobal("bd_dsc_escape_timer","locals",12)
+		DisplayStringHead(Myself,44188)  // Ashatiel is defeated—only Caelar can save us now!
+		Continue()
+	RESPONSE #1000
+		SetGlobal("bd_dsc_escape","locals",2)
+		SetGlobal("bd_dsc_escape_timer","locals",12)
+		Continue()
+END
+
+IF
+	GlobalGT("bd_dsc_escape","locals",0)
+	OR(2)
+		GlobalTimerExpired("bd_dsc_escape_timer","locals")
+		Range("crusader_camp",12)
+THEN
+	RESPONSE #100
+		EscapeAreaObject("crusader_camp")
+END
+
+IF
+	GlobalGT("bd_asha_duel","global",1)
+	!Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		ChangeEnemyAlly(Myself,NEUTRAL)
+		FaceObject("bdashati")  // Ashatiel
+END
+
+IF
+	Global("bd_asha_duel","global",3)
+	OR(2)
+		HitBy([GOODCUTOFF],CRUSHING)
+		AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_asha_duel","global",1)
+		SetGlobal("bd_duel_cheat","bd4000",1)  // Dragonspear Castle, Exterior
+END
+
+IF
+	GlobalGT("bd_asha_duel","global",1)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	AreaCheck("bd4000")  // Dragonspear Castle, Exterior
+	Global("bd_ai_controls","locals",0)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_ai_controls","locals",1)
+		SetGlobal("bd_no_search","locals",1)
+		Continue()
+END
+
+IF
+	AreaCheck("bd4000")  // Dragonspear Castle, Exterior
+	Global("bd_poisoned","locals",0)
+	Switch("bd_poison_dsc_supplies","global")
+THEN
+	RESPONSE #0
+		SetGlobal("bd_poisoned","locals",1)
+		Continue()
+	RESPONSE #1
+		SetGlobal("bd_poisoned","locals",1)
+		ApplySpellRES("bdweakds",Myself)  // No such index
+		Continue()
+	RESPONSE #2
+		SetGlobal("bd_poisoned","locals",1)
+		ApplySpellRES("bdweakds",Myself)  // No such index
+		Continue()
+END
+
+IF
+	AreaCheck("bd4000")  // Dragonspear Castle, Exterior
+	Global("bd_go_hostile","locals",0)
+	Global("chapter","global",11)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_go_hostile","locals",1)
+		Enemy()
+		Continue()
+END
+
+IF
+	Global("bd_go_hostile","locals",1)
+	Allegiance(Myself,NEUTRAL)
+	OR(4)
+		Detect([GOODCUTOFF])
+		Detect([0.0.0.0.ALLIES])
+		Detect([ENEMY.0.0.0.CRUSADERS])
+		Detect([ENEMY.0.0.0.HOSTILES2])
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	Global("bd_lanewalk","locals",1)
+	!Dead("bdashati")  // Ashatiel
+	NearSavedLocation(Myself,"LOCALSbd_walk_point1",20)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_lanewalk","locals",2)
+		Continue()
+END
+
+IF
+	Global("bd_lanewalk","locals",1)
+	!Dead("bdashati")  // Ashatiel
+	!NearSavedLocation(Myself,"LOCALSbd_walk_point1",15)
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		MoveToSavedLocationn("bd_walk_point1","LOCALS")
+		Continue()
+END
+
+IF
+	Global("bd_lanewalk","locals",2)
+	!Dead("bdashati")  // Ashatiel
+	NearSavedLocation(Myself,"LOCALSbd_walk_point2",20)
+	!See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("bd_respond_timer","locals")
+THEN
+	RESPONSE #100
+		SetGlobal("bd_lanewalk","locals",4)
+		SetGlobal("bd_no_search","locals",0)
+		SetGlobal("bd_search","locals",1)
+		SetGlobalTimer("bd_search_timer","locals",ONE_ROUND)
+END
+
+IF
+	Global("bd_lanewalk","locals",2)
+	!NearSavedLocation(Myself,"LOCALSbd_walk_point2",15)
+	!Dead("bdashati")  // Ashatiel
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		MoveToSavedLocationn("bd_walk_point2","LOCALS")
+		Continue()
+END
+
+IF
+	Global("bd_lanewalk","locals",4)
+	!Dead("bdashati")  // Ashatiel
+	!GlobalTimerNotExpired("bd_search_timer","locals")
+THEN
+	RESPONSE #100
+		SetGlobal("bd_lanewalk","locals",5)
+		SetGlobal("bd_no_retreat","locals",0)
+		SaveObjectLocation("LOCALS","bd_default_loc",Myself)
 END
 

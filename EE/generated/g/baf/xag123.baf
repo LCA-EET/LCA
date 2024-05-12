@@ -1,100 +1,243 @@
 IF
-	Clicked([ANYONE])
-	!Range(LastTrigger,13)
-THEN
-	RESPONSE #100
-		DisplayString(Myself,38224)  // You are too far away to use that.
-END
-
-IF
-	Clicked([ANYONE])
-	Range(LastTrigger,13)
-	Global("bd_fugue_portal_ot","bd5300",1)  // Kanaglym
-	PartyHasItem("bdbone01")  // Remains
-THEN
-	RESPONSE #100
-		ActionOverride("Fugue_portal_chasm",TakePartyItemNum("bdbone01",5))  // Remains
-		DisplayStringHead(Myself,70258)  // You throw the lost souls' corpses down into the chasm and watch them disappear into the gray. A silent flash of spiritual energy marks each body's crossing of the threshold into the Fugue Plane.
-		AddJournalEntry(61932,QUEST_DONE)  // The Lost The bones of the ghosts have been put to rest. I was able to deliver the mortal remains of the ghosts I encountered to the Fugue Plane. The spirits are now at rest.
-END
-
-IF
-	Clicked([ANYONE])
-THEN
-	RESPONSE #100
-		SetGlobal("bd_fugue_portal_ot","bd5300",1)  // Kanaglym
-		DisplayStringHead(Myself,70257)  // The walls of this chasm sink down not into darkness, but a portal to the desolate gray of the Fugue Plane. Anything dropped from here into that dreary realm will surely be lost to it forever.
-END
-
-IF
-	GlobalLT("BD_BONES","BD5300",5)  // Kanaglym
-	HasItem("bdbone01","Fugue_portal_chasm")  // Remains
-THEN
-	RESPONSE #100
-		ActionOverride("Fugue_portal_chasm",DestroyItem("bdbone01"))  // Remains
-		IncrementGlobal("BD_BONES","BD5300",1)  // Kanaglym
-END
-
-IF
-	Global("BD_BONES","BD5300",5)  // Kanaglym
-	Range([PC],13)
-	!GlobalTimerNotExpired("bd_use_fountain","bd5300")  // Kanaglym
-	!Dead("bdworis")  // Woris
-	Dead("bdkherr")  // Kherriun
-	!Range([EVILCUTOFF],30)
-	CombatCounter(0)
+	DifficultyLT(HARD)
+	Global("BD_THRIX_ALLIES_D","GLOBAL",0)
+	Allegiance(Myself,NEUTRAL)
+	OR(2)
+		AttackedBy([GOODCUTOFF],DEFAULT)
+		HitBy([GOODCUTOFF],CRUSHING)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("BD_BONES","BD5300",6)  // Kanaglym
-		SetGlobalTimer("bd_use_fountain","bd5300",ONE_ROUND)  // Kanaglym
-		CreateCreature("bdghostf",[820.1130],NW)  // Ghost
-		CreateVisualEffectObject("OHRSHFIE","bdghostf")  // Ghost
-		SmallWait(10)
-		CreateCreature("bdghostf",[955.1165],NE)  // Ghost
-		CreateVisualEffectObject("OHRSHFIE","bdghostm")  // Ghost
-		SmallWait(10)
-		CreateCreature("bdsotuk",[860.1170],NW)  // Sotuk
-		CreateVisualEffectObject("OHRSHFIE","bdsotuk")  // Sotuk
-		SmallWait(10)
-		CreateCreature("bdlitla",[910.1140],NE)  // Litla
-		CreateVisualEffectObject("OHRSHFIE","bdlitla")  // Litla
-		SmallWait(10)
-		CreateCreature("bdworis",[900.1195],N)  // Woris
-		CreateVisualEffectObject("OHRSHFIE","bdworis")  // Woris
-		SmallWait(10)
+		SetGlobal("BD_THRIX_ALLIES_D","GLOBAL",1)
+		Enemy()
+		SetSequence(SEQ_CAST)
+		CreateVisualEffect("SPFLESHS",[1990.295])
+		CreateVisualEffect("SPFLESHS",[2055.315])
+		CreateVisualEffect("SPFLESHS",[2125.355])
+		CreateVisualEffect("SPFLESHS",[2170.410])
+		CreateVisualEffect("SPFLESHS",[2190.475])
+		CreateVisualEffect("SPFLESHS",[2195.540])
+		CreateCreature("bdimp",[1990.295],S)  // Imp
+		CreateCreature("bdabired",[2055.315],SW)  // Red Abishai
+		CreateCreature("bderinye",[2125.355],SW)  // Erinyes
+		CreateCreature("bdbonefi",[2170.410],SW)  // Bone Fiend
+		CreateCreature("bdhamatu",[2190.475],W)  // Hamatula
+		CreateCreature("bdhelcat",[2195.540],W)  // Hellcat
+		DisplayStringHead(Myself,70523)  // You dare sully the Profane One's glory with this pitiful assault? You must learn your place, little mortal. Come, let Thrix teach you!
 		SetInterrupt(TRUE)
 END
 
 IF
-	Global("SDD321","GLOBAL",2)
-	Range("neera",30)  // Neera
-	!GlobalTimerNotExpired("bd_use_fountain","bd5300")  // Kanaglym
-	IfValidForPartyDialog("neera")  // Neera
+	DifficultyGT(NORMAL)
+	Global("BD_THRIX_ALLIES_D","GLOBAL",0)
+	Allegiance(Myself,NEUTRAL)
 	OR(2)
-		Dead("bdkherr")  // Kherriun
-		Global("BD_AREA_HOSTILE","BD5300",0)  // Kanaglym
-	!Range([EVILCUTOFF],30)
-	CombatCounter(0)
+		AttackedBy([GOODCUTOFF],DEFAULT)
+		HitBy([GOODCUTOFF],CRUSHING)
 THEN
 	RESPONSE #100
-		SetGlobal("SDD321","GLOBAL",3)
+		SetInterrupt(FALSE)
+		SetGlobal("BD_THRIX_ALLIES_D","GLOBAL",1)
+		Enemy()
+		SetSequence(SEQ_CAST)
+		CreateVisualEffect("SPFLESHS",[1930.290])
+		CreateVisualEffect("SPFLESHS",[1990.295])
+		CreateVisualEffect("SPFLESHS",[2055.315])
+		CreateVisualEffect("SPFLESHS",[2125.355])
+		CreateVisualEffect("SPFLESHS",[2170.410])
+		CreateVisualEffect("SPFLESHS",[2190.475])
+		CreateVisualEffect("SPFLESHS",[2195.540])
+		CreateVisualEffect("SPFLESHS",[2180.610])
+		CreateVisualEffect("SPFLESHS",[2135.665])
+		CreateCreature("bdabigre",[1930.290],S)  // Green Abishai
+		CreateCreature("bdimp",[1990.295],S)  // Imp
+		CreateCreature("bdabired",[2055.315],SW)  // Red Abishai
+		CreateCreature("bderinye",[2125.355],SW)  // Erinyes
+		CreateCreature("bdbonefi",[2170.410],SW)  // Bone Fiend
+		CreateCreature("bdhamatu",[2190.475],W)  // Hamatula
+		CreateCreature("bdhelcat",[2195.540],W)  // Hellcat
+		CreateCreature("bdhamatu",[2180.610],NW)  // Hamatula
+		CreateCreature("bdabibla",[2135.665],NW)  // Black Abishai
+		DisplayStringHead(Myself,70523)  // You dare sully the Profane One's glory with this pitiful assault? You must learn your place, little mortal. Come, let Thrix teach you!
+		SetInterrupt(TRUE)
 END
 
 IF
-	Global("SDD321","GLOBAL",4)
-	Range("neera",20)  // Neera
-	!GlobalTimerNotExpired("bd_use_fountain","bd5300")  // Kanaglym
-	IfValidForPartyDialog("neera")  // Neera
-	OR(2)
-		Dead("bdkherr")  // Kherriun
-		Global("BD_AREA_HOSTILE","BD5300",0)  // Kanaglym
-	!Range([EVILCUTOFF],30)
+	DifficultyLT(HARD)
+	Allegiance(Myself,NEUTRAL)
+	Global("BD_THRIX_ALLIES_A","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		DialogInterrupt(FALSE)
+		SetGlobal("BD_THRIX_ALLIES_A","GLOBAL",2)
+		SetGlobal("bd_thrix_plot","global",4)
+		SetSequence(SEQ_CAST)
+		SmallWait(5)
+		CreateVisualEffect("SPFLESHS",[1990.295])
+		CreateVisualEffect("SPFLESHS",[2055.315])
+		CreateVisualEffect("SPFLESHS",[2125.355])
+		CreateVisualEffect("SPFLESHS",[2170.410])
+		CreateVisualEffect("SPFLESHS",[2190.475])
+		CreateVisualEffect("SPFLESHS",[2195.540])
+		SmallWait(5)
+		CreateCreature("bdhelcat",[1990.295],S)  // Hellcat
+		CreateCreature("bdabired",[2055.315],SW)  // Red Abishai
+		CreateCreature("bderinye",[2125.355],SW)  // Erinyes
+		CreateCreature("bdbonefi",[2170.410],SW)  // Bone Fiend
+		CreateCreature("bdhamatu",[2190.475],W)  // Hamatula
+		CreateCreature("bdlemure",[2195.540],W)  // Lemure
+		SetInterrupt(TRUE)
+END
+
+IF
+	DifficultyGT(NORMAL)
+	Allegiance(Myself,NEUTRAL)
+	Global("BD_THRIX_ALLIES_A","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		DialogInterrupt(FALSE)
+		SetGlobal("BD_THRIX_ALLIES_A","GLOBAL",2)
+		SetGlobal("bd_thrix_plot","global",4)
+		SetSequence(SEQ_CAST)
+		SmallWait(5)
+		CreateVisualEffect("SPFLESHS",[1930.290])
+		CreateVisualEffect("SPFLESHS",[1990.295])
+		CreateVisualEffect("SPFLESHS",[2055.315])
+		CreateVisualEffect("SPFLESHS",[2125.355])
+		CreateVisualEffect("SPFLESHS",[2170.410])
+		CreateVisualEffect("SPFLESHS",[2190.475])
+		CreateVisualEffect("SPFLESHS",[2195.540])
+		CreateVisualEffect("SPFLESHS",[2180.610])
+		CreateVisualEffect("SPFLESHS",[2135.665])
+		SmallWait(5)
+		CreateCreature("bdimp",[1930.290],S)  // Imp
+		CreateCreature("bdhelcat",[1990.295],S)  // Hellcat
+		CreateCreature("bdabired",[2055.315],SW)  // Red Abishai
+		CreateCreature("bderinye",[2125.355],SW)  // Erinyes
+		CreateCreature("bdbonefi",[2170.410],SW)  // Bone Fiend
+		CreateCreature("bdhamatu",[2190.475],W)  // Hamatula
+		CreateCreature("bdlemure",[2195.540],W)  // Lemure
+		CreateCreature("bdabigre",[2180.610],NW)  // Green Abishai
+		CreateCreature("bdabibla",[2135.665],NW)  // Black Abishai
+		SetInterrupt(TRUE)
+END
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	Global("BD_THRIX_ALLIES_A","GLOBAL",2)
+	Global("BD_THRIX_TALK","MYAREA",0)
+	See([PC])
+	!Detect([0.0.DEMONIC])
 	CombatCounter(0)
 THEN
 	RESPONSE #100
-		StartCutSceneMode()
-		ClearAllActions()
-		StartCutSceneEx("bdcut322",TRUE)
+		DialogInterrupt(TRUE)
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	DifficultyLT(HARD)
+	Allegiance(Myself,NEUTRAL)
+	Global("BD_THRIX_ALLIES_B","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		DialogInterrupt(FALSE)
+		SetGlobal("BD_THRIX_ALLIES_B","GLOBAL",2)
+		SetSequence(SEQ_CAST)
+		SmallWait(5)
+		CreateVisualEffect("SPFLESHS",[1990.295])
+		CreateVisualEffect("SPFLESHS",[2055.315])
+		CreateVisualEffect("SPFLESHS",[2125.355])
+		CreateVisualEffect("SPFLESHS",[2170.410])
+		CreateVisualEffect("SPFLESHS",[2190.475])
+		CreateVisualEffect("SPFLESHS",[2195.540])
+		SmallWait(5)
+		CreateCreature("bdhamatu",[1990.295],S)  // Hamatula
+		CreateCreature("bdabired",[2055.315],SW)  // Red Abishai
+		CreateCreature("bdbonefi",[2125.355],SW)  // Bone Fiend
+		CreateCreature("bdbonefi",[2170.410],SW)  // Bone Fiend
+		CreateCreature("bdhamatu",[2190.475],W)  // Hamatula
+		CreateCreature("bdhelcat",[2195.540],W)  // Hellcat
+		SmallWait(5)
+		SetInterrupt(TRUE)
+		ReallyForceSpellRES("BDTELAW",Myself)  // Teleport Without Error
+END
+
+IF
+	DifficultyGT(NORMAL)
+	Allegiance(Myself,NEUTRAL)
+	Global("BD_THRIX_ALLIES_B","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		DialogInterrupt(FALSE)
+		SetGlobal("BD_THRIX_ALLIES_B","GLOBAL",2)
+		SetSequence(SEQ_CAST)
+		SmallWait(5)
+		CreateVisualEffect("SPFLESHS",[1930.290])
+		CreateVisualEffect("SPFLESHS",[1990.295])
+		CreateVisualEffect("SPFLESHS",[2055.315])
+		CreateVisualEffect("SPFLESHS",[2125.355])
+		CreateVisualEffect("SPFLESHS",[2170.410])
+		CreateVisualEffect("SPFLESHS",[2190.475])
+		CreateVisualEffect("SPFLESHS",[2195.540])
+		CreateVisualEffect("SPFLESHS",[2180.610])
+		CreateVisualEffect("SPFLESHS",[2135.665])
+		SmallWait(5)
+		CreateCreature("bderinye",[1930.290],S)  // Erinyes
+		CreateCreature("bdhamatu",[1990.295],S)  // Hamatula
+		CreateCreature("bdabired",[2055.315],SW)  // Red Abishai
+		CreateCreature("bdbonefi",[2125.355],SW)  // Bone Fiend
+		CreateCreature("bdbonefi",[2170.410],SW)  // Bone Fiend
+		CreateCreature("bdhamatu",[2190.475],W)  // Hamatula
+		CreateCreature("bdhelcat",[2195.540],W)  // Hellcat
+		CreateCreature("bdimp",[2180.610],NW)  // Imp
+		CreateCreature("bderinye",[2135.665],NW)  // Erinyes
+		SmallWait(5)
+		SetInterrupt(TRUE)
+		ReallyForceSpellRES("BDTELAW",Myself)  // Teleport Without Error
+END
+
+IF
+	Global("BD_THRIX_ALLIES_C","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("BD_THRIX_ALLIES_C","GLOBAL",2)
+		SetSequence(SEQ_ATTACK)
+		CreateVisualEffect("SPFLESHS",[1930.290])
+		CreateVisualEffect("SPFLESHS",[1990.295])
+		CreateVisualEffect("SPFLESHS",[2055.315])
+		CreateVisualEffect("SPFLESHS",[2125.355])
+		CreateVisualEffect("SPFLESHS",[2170.410])
+		CreateVisualEffect("SPFLESHS",[2190.475])
+		CreateVisualEffect("SPFLESHS",[2195.540])
+		CreateVisualEffect("SPFLESHS",[2180.610])
+		CreateVisualEffect("SPFLESHS",[2135.665])
+		SmallWait(5)
+		CreateCreature("bdlemure",[1930.290],S)  // Lemure
+		CreateCreature("bdabigre",[1990.295],S)  // Green Abishai
+		CreateCreature("bdhelcat",[2055.315],SW)  // Hellcat
+		CreateCreature("bdabired",[2125.355],SW)  // Red Abishai
+		CreateCreature("bderinye",[2170.410],SW)  // Erinyes
+		CreateCreature("bdabired",[2190.475],W)  // Red Abishai
+		CreateCreature("bdhelcat",[2195.540],W)  // Hellcat
+		CreateCreature("bdabibla",[2180.610],NW)  // Black Abishai
+		CreateCreature("bdlemure",[2135.665],NW)  // Lemure
+		ForceSpellRES("BDTELAW",Myself)  // Teleport Without Error
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("BD_Thrix_Leaves","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("BD_Thrix_Leaves","LOCALS",2)
+		ForceSpellRES("BDTELAW",Myself)  // Teleport Without Error
+		SetInterrupt(TRUE)
 END
 

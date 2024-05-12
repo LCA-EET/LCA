@@ -1,0 +1,58 @@
+IF
+	Range(NearestEnemyOf(Myself),20)
+	!GlobalTimerNotExpired("BD_TIMER_BREATH","LOCALS")
+	!GlobalTimerNotExpired("BD_TIMER_CNA","LOCALS")
+	RandomNumLT(6,4)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_TIMER_BREATH","LOCALS",THREE_ROUNDS)
+		SetGlobalTimer("BD_TIMER_CNA","LOCALS",ONE_ROUND)
+		ForceSpellRES("xaf103",NearestEnemyOf(Myself))  // Breath Weapon (bdwyrmb)
+END
+
+IF
+	Range(NearestEnemyOf(Myself),5)
+	!StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+	CheckStatLT(NearestEnemyOf(Myself),1,ENTANGLE)
+	!GlobalTimerNotExpired("BD_TIMER_TAIL","LOCALS")
+	!GlobalTimerNotExpired("BD_TIMER_CNA","LOCALS")
+	!Race(NearestEnemyOf(Myself),ANKHEG)
+	!Race(NearestEnemyOf(Myself),SLIME)
+	!Race(NearestEnemyOf(Myself),BEHOLDER)
+	!Race(NearestEnemyOf(Myself),SHADOW)
+	!Race(NearestEnemyOf(Myself),SPECTRE)
+	!Race(NearestEnemyOf(Myself),WRAITH)
+	!Race(NearestEnemyOf(Myself),MIST)
+	!Race(NearestEnemyOf(Myself),GIANT)
+	!Race(NearestEnemyOf(Myself),GOLEM)
+	!Race(NearestEnemyOf(Myself),ELEMENTAL)
+	!Race(NearestEnemyOf(Myself),DRAGON)
+	!Race(NearestEnemyOf(Myself),WYVERN)
+	!HasItemEquiped("freering",NearestEnemyOf(Myself))  // Edventar's Gift
+	!HasItemEquiped("mage05",NearestEnemyOf(Myself))  // Edventar's Gift
+	!HasItemEquiped("ring09",NearestEnemyOf(Myself))  // Edventar's Gift
+	RandomNumLT(7,4)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_TIMER_TAIL","LOCALS",THREE_ROUNDS)
+		SetGlobalTimer("BD_TIMER_CNA","LOCALS",ONE_ROUND)
+		SwingOnce()
+		ForceSpellRES("xaf102",NearestEnemyOf(Myself))  // Tail Constriction (bdwyrmt)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	GlobalTimerNotExpired("BD_TIMER_CNA","LOCALS")
+THEN
+	RESPONSE #100
+		AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("BD_TIMER_CNA","LOCALS")
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),45)
+END
+

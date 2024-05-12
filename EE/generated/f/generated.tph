@@ -133,6 +133,9 @@ COPY ~%MOD_FOLDER%\generated\f\spl\xaf100.spl~ ~override~
 COPY ~%MOD_FOLDER%\generated\f\spl\xaf101.spl~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11355) /*~Ghost Dragon Breath~*/
 COPY ~%MOD_FOLDER%\generated\f\spl\xaf102.spl~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11356) /*~Tail Constriction~*/
+COPY ~%MOD_FOLDER%\generated\f\spl\xaf103.spl~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11357) /*~Breath Weapon~*/
 
 //wed files
 //===================
@@ -153,73 +156,29 @@ COPY ~%MOD_FOLDER%\generated\f\wav\xaf10007.wav~ ~override~
 //itm files
 //===================
 COPY ~%MOD_FOLDER%\generated\f\itm\xaf100.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11356) /*~Ring~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11356) /*~Ring~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11357) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+	WRITE_LONG 8 RESOLVE_STR_REF(@11358) /*~Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11358) /*~Ring~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11359) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11357) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11359) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~*/
 COPY ~%MOD_FOLDER%\generated\f\itm\xaf101.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11358) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11358) /*~Attack~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11360) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11360) /*~Attack~*/
 COPY ~%MOD_FOLDER%\generated\f\itm\xaf102.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11358) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11358) /*~Attack~*/
-COPY ~%MOD_FOLDER%\generated\f\itm\xaf103.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11359) /*~Half-Digested Sword~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11359) /*~Half-Digested Sword~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11360) /*~A once-fine sword has become a pocked mass of twisted metal in the wyrmling's stomach. The outline of a dragon, wings spread, is barely discernible on the pommel.
-
-STATISTICS:
-
-Weight: 2~*/
-COPY ~%MOD_FOLDER%\generated\f\itm\xaf104.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11361) /*~Dagger~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11362) /*~Acid-Etched Dagger +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11363) /*~The typical dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter.
-
-STATISTICS:
-
-Damage: 1d4 (piercing)
-Speed Factor: 2
-Proficiency Type: Dagger
-Type: One-handed
-Requires:
- 3 Strength
-
-Weight: 1~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11364) /*~This dagger, though old, was obviously crafted well and enchanted carefully. An ordinary dagger would have long ago dissolved in the juices of the albino wyrmling's stomach. Though the dagger is still intact and boasts a sharp edge, its time in the wyrmling's stomach has left swirling patterns of acid etching along the blade and hilt.
-
-STATISTICS:
-
-Combat abilities: 
-– 15% chance per hit that the target takes 1 extra point of acid damage per round during the next 3 rounds
-
-THAC0: +2
-Damage: 1d4+2, +1 (acid)
-Damage Type: Piercing
-Speed Factor: 0
-Proficiency Type: Dagger
-Type: One-handed
-Requires:
- 3 Strength
-
-Weight: 1~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11360) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11360) /*~Attack~*/
 
 //tis files
 //===================
 COPY ~%MOD_FOLDER%\generated\f\tis\xaf101.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\f\tis\xaf100.tis~ ~override~
-
-//bam files
-//===================
-COPY ~%MOD_FOLDER%\generated\f\bam\xaf100.bam~ ~override~
 
 //{ PVRZ
 	COPY ~%MOD_FOLDER%\generated\f\pvrz\xf10100.pvrz~ ~override~

@@ -260,8 +260,8 @@ END
 //bmp files
 //===================
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad100.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad111.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad113.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\bmp\xad101.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\bmp\xad103.bmp~ ~override~
 
 //spl files
 //===================
@@ -439,9 +439,9 @@ COPY ~%MOD_FOLDER%\generated\d\bmp\xad100.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad100ht.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad100lm.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad100sr.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\bmp\xad101.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad101ht.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad101lm.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad101sr.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad111.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad113.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\bmp\xad103.bmp~ ~override~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\generated\d\baf~

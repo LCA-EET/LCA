@@ -1994,10 +1994,10 @@ COPY ~%MOD_FOLDER%\generated\c\itm\xac180.itm~ ~override~
 //===================
 COPY ~%MOD_FOLDER%\generated\c\bmp\xac100.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bmp\xac101.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac106.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac107.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac108.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac109.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bmp\xac102.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bmp\xac103.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bmp\xac104.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bmp\xac105.bmp~ ~override~
 
 //wav files
 //===================
@@ -2290,8 +2290,8 @@ COPY ~%MOD_FOLDER%\generated\c\bmp\xac101ht.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bmp\xac101lm.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bmp\xac101ln.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bmp\xac101sr.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac106.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac107.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac108.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac109.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bmp\xac102.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bmp\xac103.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bmp\xac104.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bmp\xac105.bmp~ ~override~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\generated\c\baf~
