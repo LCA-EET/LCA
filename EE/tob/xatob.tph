@@ -139,7 +139,7 @@ END
 		COPY_EXISTING ~elfir01.cre~ ~override/xaavc12.cre~
 		COPY_EXISTING ~xag103.cre~ ~override/xaavc13.cre~ // bderinye
 		
-		COPY_EXISTING_REGEXP GLOB ~xaavc.+/.cre$~ ~override~ 
+		COPY_EXISTING_REGEXP GLOB ~xaavc.+\.cre$~ ~override~ 
 		WRITE_BYTE 0x270 255 	// Set Allegiance to Enemy
 		WRITE_BYTE 0x271 255 	// Set General to Monster
 		WRITE_BYTE 0x272 121 	// Set Race to Demonic

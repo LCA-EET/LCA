@@ -47,13 +47,13 @@
 	*/
 //}
 
-BACKUP ~%MOD_FOLDER%/backup~
-
+BACKUP ~LCA/backup~
 AUTHOR ~Daniel Valle, lcamod@danielvalle.net~
-
 AUTO_TRA ~%MOD_FOLDER%/tra/%s~ //automatically associate .tras to their respective .D files
 AUTO_EVAL_STRINGS
 LANGUAGE ~English~ ~english~ ~%MOD_FOLDER%/tra/english/xalca.tra~
+
+
 
 BEGIN
 @800 /* ~Love Conquers All (LCA)~ */

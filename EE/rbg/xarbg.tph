@@ -20,8 +20,9 @@ SILENT
 		APPEND ~animate.ids~ ~0x7F5B ABISHAI_BLUE~
 		APPEND ~animate.ids~ ~0x7F58 ABISHAI_BLACK~
 		APPEND ~animate.ids~ ~0x7F59 ABISHAI_GREEN~
-		APPEND ~animate.ids~ ~0xE279 OROG_SHAMAN~
 		APPEND ~animate.ids~ ~0xE258 HERPHERNAAN~
+		APPEND ~animate.ids~ ~0xE279 OROG_SHAMAN~
+		APPEND ~animate.ids~ ~0xE28C DRAGON_WHITE_YOUNG~
 	END
 	
 //}
@@ -416,14 +417,14 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/d~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 
 //{ Replace Rumors
-	COPY_EXISTING_REGEXP GLOB ~xaa.+/.sto$~ ~override~ 
+	COPY_EXISTING_REGEXP GLOB ~xaa.+\.sto$~ ~override~ 
 	WRITE_ASCII 0x44 ~xarumor~ #8
 	BUT_ONLY
 //}
 
 //{ Script Extensions
 	/* Explore BG1 Areas, and cause Bence to spawn when the debriefing timer expires. */
-	EXTEND_TOP_REGEXP ~xaas.+/.bcs$~ ~%MOD_FOLDER%/rbg/baf/xalcbg1a.baf~
+	EXTEND_TOP_REGEXP ~xaas.+\.bcs$~ ~%MOD_FOLDER%/rbg/baf/xalcbg1a.baf~
 
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~
 	EXTEND_BOTTOM ~xadings.bcs~	~%MOD_FOLDER%/rbg/baf/xadings.baf~
@@ -869,7 +870,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 			COPY_EXISTING ~xac134.cre~ ~override/xacoal13.cre~ // bdwtr35
 			COPY_EXISTING ~xac135.cre~ ~override/xacoal14.cre~ // bdwtr35
 
-			COPY_EXISTING_REGEXP GLOB ~xacoal.+/.cre$~ ~override~ 
+			COPY_EXISTING_REGEXP GLOB ~xacoal.+\.cre$~ ~override~ 
 				LPF xa_reset_cre
 					STR_VAR
 						xa_override = ~xag1coal~
@@ -938,7 +939,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 			COPY_EXISTING ~xac257.cre~ ~override/xacrus56.cre~ //bdcrus96
 			COPY_EXISTING ~xac272.cre~ ~override/xacrus57.cre~ //bdcrus32
 
-			COPY_EXISTING_REGEXP GLOB ~xacrus.+/.cre$~ ~override~ 
+			COPY_EXISTING_REGEXP GLOB ~xacrus.+\.cre$~ ~override~ 
 				LPF xa_reset_cre
 					STR_VAR
 						xa_override = ~xag1crus~
@@ -3421,10 +3422,203 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		EXTEND_TOP ~xacs101.bcs~ ~%MOD_FOLDER%/rbg/baf/xag1.baf~
 		
 		COPY_EXISTING ~xac101.are~ ~override/xag1.are~
+		WRITE_LONG 0x5FDC xac2
+		WRITE_LONG 0x5E00 xac2
+		WRITE_LONG 0x5E08 xac2
+		WRITE_LONG 0x5E10 xac2
+		
 		LPF xa_delete_are_actors END
-	
-		//WRITE_LONG 0x5B94 xac2
-		//WRITE_LONG 0x5B98 xac2
+		LPF xa_delete_are_triggers END
+		LPF fj_are_structure
+			INT_VAR
+				fj_type 		= 0
+				fj_box_left		= 1976
+				fj_box_top		= 2049
+				fj_box_right	= 2297
+				fj_box_bottom	= 2232
+				fj_cursor_idx	= 0
+				fj_alt_x		= 0
+				fj_alt_y		= 0
+				fj_flags		= 0
+				fj_vertex_0     = 1976 + (2120 << 16)
+				fj_vertex_1     = 2112 + (2049 << 16)
+				fj_vertex_2     = 2297 + (2115 << 16)
+				fj_vertex_3     = 2232 + (2232 << 16)
+			STR_VAR
+				fj_structure_type = region
+				fj_name = ~CYARD~
+		END
+		//{ Add Drakes
+			
+		//}
+		//{ Add Caelar & Lieutenants
+			PATCH_DEFINE_ARRAY xa_extras
+			BEGIN
+				xac152 // bdsindr2
+				xac109 // bdcaela3
+				xac114 // bdeiner
+				xac115 // bdbertor
+				xac111 // bdashati
+				xac112 // bdhepher
+				xac113 // bdbarghe
+			END
+			LPF xa_add_extras_rescript
+				INT_VAR
+					xa_minX = 2060
+					xa_minY = 1800
+					xa_maxX = 2350
+					xa_maxY = 2040
+					xa_numToGenerate = 7
+					xa_poolSize = 7
+					xa_orientation = 2 // SW
+				STR_VAR 
+					xa_override = ~xag1crus~
+					xa_general = ~xac130~
+			END
+		//}
+		//{ Ferrusk
+			PATCH_DEFINE_ARRAY xa_extras
+			BEGIN
+				xamutank 
+				xamutank 
+				xamutank 
+				xac120 // bdferrus
+				eletro01 
+				hgtrl01 
+				hgtrl01 
+				troll01
+				troll01
+			END
+			LPF xa_add_extras
+				INT_VAR
+					xa_minX = 2060
+					xa_minY = 1800
+					xa_maxX = 2350
+					xa_maxY = 2040
+					xa_numToGenerate = 9
+					xa_poolSize = 9
+					xa_orientation = 16 // random
+			END
+		//}
+		//{ Add Coalition
+			PATCH_DEFINE_ARRAY xa_extras
+			BEGIN
+				xac125 // bdfist35
+				xac126 // bdfist36
+				xac127 // bdfist37
+				xac128 // bdfist38
+				xac129 // bdfist40
+				xac130 // bdfist41
+				xac131 // bdfist42
+				xac121 // bddagf35
+				xac122 // bddagf36
+				xac123 // bddagf37
+				xac124 // bddagf38
+				xac132 // bdwtr35
+				xac133 // bdwtr36
+				xac134 // bdwtr37
+				xac135 // bdwtr38
+			END
+			
+			LPF xa_add_extras_rescript
+				INT_VAR
+					xa_minX = 1000
+					xa_maxX = 1980
+					xa_minY = 1400
+					xa_maxY = 2800
+					xa_numToGenerate = 50
+					xa_poolSize = 15
+					xa_orientation = 16 // random
+				STR_VAR 
+					xa_override = ~xag1coal~
+					xa_general = ~xac130~
+					xa_class = ~xacrtyrd~
+			END
+		//}
+		//{ Add Crusaders
+			PATCH_DEFINE_ARRAY xa_extras
+			BEGIN
+				xac236 // bdcru100
+				xac223 // bdcru101
+				xac246 // bdcru103
+				xac247 // bdcru104
+				xac230 // bdcru111
+				xac243 // bdcru112
+				xac250 // bdcru115
+				xac251 // bdcru116
+				xac171 // bdcru117
+				xac167 // bdcru118
+				xac136 // bdcru40
+				xac137 // bdcru41
+				xac138 // bdcru42
+				xac139 // bdcru43
+				xac140 // bdcru44
+				xac141 // bdcru45
+				xac142 // bdcru46
+				xac143 // bdcru47
+				xac144 // bdcru51
+				xac145 // bdcru52
+				xac146 // bdcru53
+				xac147 // bdcru54
+				xac148 // bdcru55
+				xac149 // bdcru56
+				xac150 // bdcru57
+				xac151 // bdcru58
+				xac205 // bdcrue30
+				xac241 // bdcrue31
+				xac240 // bdcrue32
+				xac207 // bdcrue33
+				xag131 // bdcrue50
+				xag135 // bdcrue51
+				xag124 // bdcrue52
+				xag126 // bdcrue53
+				xag127 // bdcrue54
+				xac177 // bdcrum30
+				xac175 // bdcrum31
+				xac176 // bdcrum32
+				xac237 // bdcrur26
+				xac233 // bdcrur27
+				xac235 // bdcrur28
+				xac227 // bdcrur29
+				xac209 // bdcrur30
+				xac221 // bdcrur31
+				xac224 // bdcrur32
+				xac219 // bdcrur33
+				xac222 // bdcrur34
+				xac214 // bdcrus20
+				xac200 // bdcrus29
+				xac272 // bdcrus32
+				xac228 // bdcrus33
+				xac192 // bdcrus35
+				xac190 // bdcrus36
+				xac213 // bdcrus38
+				xac202 // bdcrus39
+				xag110 // bdcrus5d
+				xag139 // bdcrus6d
+				xag140 // bdcrus7d
+				xac254 // bdcrus90
+				xac256 // bdcrus93
+				xac231 // bdcrus95
+				xac257 // bdcrus96
+				xac255 // bdcrus97
+				xac238 // bdcrus98
+			END
+			
+			LPF xa_add_extras_rescript
+				INT_VAR
+					xa_minX = 1000
+					xa_maxX = 1980
+					xa_minY = 1400
+					xa_maxY = 2800
+					xa_numToGenerate = 64
+					xa_poolSize = 64
+					xa_orientation = 16 // random
+				STR_VAR 
+					xa_override = ~xag1crus~
+					xa_general = ~xac130~
+					xa_class = ~xacrtyrd~
+			END
+		//}
 	//}
 	
 	//{ Painting Two

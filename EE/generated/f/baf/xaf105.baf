@@ -1,0 +1,181 @@
+IF
+	Die()
+THEN
+	RESPONSE #100
+		PlaySound("EFF_M73")
+		CreateVisualEffectObject("spsdimpa",Myself)
+		DestroySelf()
+END
+
+IF
+	Detect(Myself)
+	Global("bd_no_combat","locals",2)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("bd_no_retreat","locals",0)
+	Global("bd_retreat","locals",1)
+	Global("bd_no_combat","locals",1)
+	Global("bd_combat","locals",0)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Detect(Myself)
+	!GlobalTimerNotExpired("bd_breath_timer","locals")
+	GlobalLT("bd_breath_counter","locals",3)
+	OR(2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+	OR(4)
+		!See(NearestEnemyOf(Myself))
+		RandomNumGT(4,2)
+		StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+		!Range(NearestEnemyOf(Myself),12)
+	OR(4)
+		!See(SecondNearestEnemyOf(Myself))
+		RandomNumGT(4,3)
+		StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+		!Range(SecondNearestEnemyOf(Myself),12)
+	OR(3)
+		!See(ThirdNearestEnemyOf(Myself))
+		StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
+		!Range(ThirdNearestEnemyOf(Myself),12)
+	OR(3)
+		!See(FourthNearestEnemyOf(Myself))
+		StateCheck(FourthNearestEnemyOf(Myself),STATE_DISABLED)
+		!Range(FourthNearestEnemyOf(Myself),12)
+	OR(3)
+		!See(FifthNearestEnemyOf(Myself))
+		StateCheck(FifthNearestEnemyOf(Myself),STATE_DISABLED)
+		!Range(FifthNearestEnemyOf(Myself),12)
+	OR(3)
+		!See(NearestEnemyOf(Myself))
+		StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+		!Range(NearestEnemyOf(Myself),12)
+	OR(3)
+		!See(SecondNearestEnemyOf(Myself))
+		StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+		!Range(SecondNearestEnemyOf(Myself),12)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	!GlobalTimerNotExpired("bd_breath_timer","locals")
+	GlobalLT("bd_breath_counter","locals",3)
+	OR(2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	!StateCheck(LastSeenBy,STATE_DISABLED)
+	Range(LastSeenBy,12)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_breath_timer","locals",THREE_ROUNDS)
+		IncrementGlobal("bd_breath_counter","locals",1)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		ForceSpellRES("bddraggh",LastSeenBy)  // Ghost Dragon Breath
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalLT("bd_breath_counter","locals",3)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_breath_counter","locals",0)
+		SetGlobalTimer("bd_breath_timer","locals",72)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Detect(Myself)
+	!GlobalTimerNotExpired("bd_fear_timer","locals")
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	OR(5)
+		!See(NearestEnemyOf(Myself))
+		RandomNumGT(4,2)
+		CheckSpellState(NearestEnemyOf(Myself),RESIST_FEAR)
+		StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+		!Range(NearestEnemyOf(Myself),20)
+	OR(5)
+		!See(SecondNearestEnemyOf(Myself))
+		RandomNumGT(4,3)
+		CheckSpellState(SecondNearestEnemyOf(Myself),RESIST_FEAR)
+		StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+		!Range(SecondNearestEnemyOf(Myself),20)
+	OR(4)
+		!See(ThirdNearestEnemyOf(Myself))
+		CheckSpellState(ThirdNearestEnemyOf(Myself),RESIST_FEAR)
+		StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
+		!Range(ThirdNearestEnemyOf(Myself),20)
+	OR(4)
+		!See(FourthNearestEnemyOf(Myself))
+		CheckSpellState(FourthNearestEnemyOf(Myself),RESIST_FEAR)
+		StateCheck(FourthNearestEnemyOf(Myself),STATE_DISABLED)
+		!Range(FourthNearestEnemyOf(Myself),20)
+	OR(4)
+		!See(FifthNearestEnemyOf(Myself))
+		CheckSpellState(FifthNearestEnemyOf(Myself),RESIST_FEAR)
+		StateCheck(FifthNearestEnemyOf(Myself),STATE_DISABLED)
+		!Range(FifthNearestEnemyOf(Myself),20)
+	OR(4)
+		!See(NearestEnemyOf(Myself))
+		CheckSpellState(NearestEnemyOf(Myself),RESIST_FEAR)
+		StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+		!Range(NearestEnemyOf(Myself),20)
+	OR(4)
+		!See(SecondNearestEnemyOf(Myself))
+		CheckSpellState(SecondNearestEnemyOf(Myself),RESIST_FEAR)
+		StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
+		!Range(SecondNearestEnemyOf(Myself),20)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	!GlobalTimerNotExpired("bd_fear_timer","locals")
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	See(LastSeenBy)
+	!Range(LastSeenBy,0)
+	!StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+	!CheckSpellState(LastSeenBy,RESIST_FEAR)
+	!StateCheck(LastSeenBy,STATE_DISABLED)
+	Range(LastSeenBy,20)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_fear_timer","locals",FIVE_ROUNDS)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		ForceSpellRES("bddragg2",LastSeenBy)  // Dragon Fear
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(LastSeenBy,90)
+END
+

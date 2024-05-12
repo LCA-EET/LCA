@@ -1,0 +1,84 @@
+IF
+	!Allegiance(Myself,ENEMY)
+	OR(4)
+		Allegiance("BDWYRMLI",ENEMY)  // Blind Albino Wyrmling
+		AttackedBy([GOODCUTOFF],DEFAULT)
+		Heard(NearestMyGroupOfType,99)
+		Global("BD_SDD317_WYRMS","BD5100",2)  // Underground River
+THEN
+	RESPONSE #100
+		Shout(99)
+		Enemy()
+END
+
+IF
+	!Global("BD_WYRMS","BD5100",2)  // Underground River
+	OR(2)
+		!Allegiance(Myself,ENEMY)
+		!See([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		RandomWalk()
+END
+
+IF
+	Range(NearestEnemyOf(Myself),20)
+	!GlobalTimerNotExpired("BD_TIMER_BREATH","LOCALS")
+	!GlobalTimerNotExpired("BD_TIMER_CNA","LOCALS")
+	CheckStatLT(NearestEnemyOf(Myself),50,RESISTCOLD)
+	RandomNumLT(6,4)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_TIMER_BREATH","LOCALS",THREE_ROUNDS)
+		SetGlobalTimer("BD_TIMER_CNA","LOCALS",ONE_ROUND)
+		ForceSpellRES("BDWYRMB",NearestEnemyOf(Myself))  // Breath Weapon
+END
+
+IF
+	Range(NearestEnemyOf(Myself),5)
+	!StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
+	CheckStatLT(NearestEnemyOf(Myself),1,ENTANGLE)
+	!GlobalTimerNotExpired("BD_TIMER_TAIL","LOCALS")
+	!GlobalTimerNotExpired("BD_TIMER_CNA","LOCALS")
+	!Race(NearestEnemyOf(Myself),ANKHEG)
+	!Race(NearestEnemyOf(Myself),SLIME)
+	!Race(NearestEnemyOf(Myself),BEHOLDER)
+	!Race(NearestEnemyOf(Myself),SHADOW)
+	!Race(NearestEnemyOf(Myself),SPECTRE)
+	!Race(NearestEnemyOf(Myself),WRAITH)
+	!Race(NearestEnemyOf(Myself),MIST)
+	!Race(NearestEnemyOf(Myself),GIANT)
+	!Race(NearestEnemyOf(Myself),GOLEM)
+	!Race(NearestEnemyOf(Myself),ELEMENTAL)
+	!Race(NearestEnemyOf(Myself),DRAGON)
+	!Race(NearestEnemyOf(Myself),WYVERN)
+	!HasItemEquiped("bdring09",NearestEnemyOf(Myself))  // Ring of Free Action
+	!HasItemEquiped("freering",NearestEnemyOf(Myself))  // Edventar's Gift
+	!HasItemEquiped("mage05",NearestEnemyOf(Myself))  // Edventar's Gift
+	!HasItemEquiped("ring09",NearestEnemyOf(Myself))  // Edventar's Gift
+	!HasItemEquiped("sw2h06",NearestEnemyOf(Myself))  // Spider's Bane +2
+	RandomNumLT(7,4)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_TIMER_TAIL","LOCALS",THREE_ROUNDS)
+		SetGlobalTimer("BD_TIMER_CNA","LOCALS",ONE_ROUND)
+		SwingOnce()
+		ForceSpellRES("BDWYRMT",NearestEnemyOf(Myself))  // Tail Constriction
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	GlobalTimerNotExpired("BD_TIMER_CNA","LOCALS")
+THEN
+	RESPONSE #100
+		AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("BD_TIMER_CNA","LOCALS")
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),45)
+END
+

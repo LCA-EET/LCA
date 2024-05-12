@@ -1,271 +1,271 @@
 PRINT ~Processing converted asset block: xag...~
 SILENT
 //{ MUSIC
-ADD_MUSIC xag0 ~%MOD_FOLDER%/generated/g/mus/xag0.mus~
-ADD_MUSIC xag1 ~%MOD_FOLDER%/generated/g/mus/xag1.mus~
-ADD_MUSIC xag2 ~%MOD_FOLDER%/generated/g/mus/xag2.mus~
-ADD_MUSIC xag3 ~%MOD_FOLDER%/generated/g/mus/xag3.mus~
-ADD_MUSIC xag4 ~%MOD_FOLDER%/generated/g/mus/xag4.mus~
-ADD_MUSIC xag5 ~%MOD_FOLDER%/generated/g/mus/xag5.mus~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag0/xag0a.acm~ ~MUSIC/xag0/xag0a.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1a1.acm~ ~MUSIC/xag1/xag1a1.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1a3.acm~ ~MUSIC/xag1/xag1a3.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1a4.acm~ ~MUSIC/xag1/xag1a4.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1b1.acm~ ~MUSIC/xag1/xag1b1.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1b2.acm~ ~MUSIC/xag1/xag1b2.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1b3.acm~ ~MUSIC/xag1/xag1b3.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1b4.acm~ ~MUSIC/xag1/xag1b4.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1c1.acm~ ~MUSIC/xag1/xag1c1.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1c2.acm~ ~MUSIC/xag1/xag1c2.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1c3.acm~ ~MUSIC/xag1/xag1c3.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1c4.acm~ ~MUSIC/xag1/xag1c4.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1d1.acm~ ~MUSIC/xag1/xag1d1.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1d2.acm~ ~MUSIC/xag1/xag1d2.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1d3.acm~ ~MUSIC/xag1/xag1d3.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1e1.acm~ ~MUSIC/xag1/xag1e1.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1e2.acm~ ~MUSIC/xag1/xag1e2.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1e3.acm~ ~MUSIC/xag1/xag1e3.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1e4a.acm~ ~MUSIC/xag1/xag1e4a.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1enda1.acm~ ~MUSIC/xag1/xag1enda1.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1enda4.acm~ ~MUSIC/xag1/xag1enda4.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1endb1.acm~ ~MUSIC/xag1/xag1endb1.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1endb2.acm~ ~MUSIC/xag1/xag1endb2.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1endb3.acm~ ~MUSIC/xag1/xag1endb3.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1endc1.acm~ ~MUSIC/xag1/xag1endc1.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1ende4.acm~ ~MUSIC/xag1/xag1ende4.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1endh2.acm~ ~MUSIC/xag1/xag1endh2.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1f1a.acm~ ~MUSIC/xag1/xag1f1a.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1f2.acm~ ~MUSIC/xag1/xag1f2.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1f3.acm~ ~MUSIC/xag1/xag1f3.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1f4.acm~ ~MUSIC/xag1/xag1f4.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1g1.acm~ ~MUSIC/xag1/xag1g1.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1g2.acm~ ~MUSIC/xag1/xag1g2.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1g3.acm~ ~MUSIC/xag1/xag1g3.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1h1.acm~ ~MUSIC/xag1/xag1h1.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1h2.acm~ ~MUSIC/xag1/xag1h2.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag1/xag1xa4.acm~ ~MUSIC/xag1/xag1xa4.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2a.acm~ ~MUSIC/xag2/xag2a.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2aa.acm~ ~MUSIC/xag2/xag2aa.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2ab.acm~ ~MUSIC/xag2/xag2ab.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2ac.acm~ ~MUSIC/xag2/xag2ac.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2ad.acm~ ~MUSIC/xag2/xag2ad.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2ae.acm~ ~MUSIC/xag2/xag2ae.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2af.acm~ ~MUSIC/xag2/xag2af.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2ag.acm~ ~MUSIC/xag2/xag2ag.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2ah.acm~ ~MUSIC/xag2/xag2ah.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2ai.acm~ ~MUSIC/xag2/xag2ai.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2aj.acm~ ~MUSIC/xag2/xag2aj.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2ak.acm~ ~MUSIC/xag2/xag2ak.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2al.acm~ ~MUSIC/xag2/xag2al.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2am.acm~ ~MUSIC/xag2/xag2am.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2an.acm~ ~MUSIC/xag2/xag2an.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2ao.acm~ ~MUSIC/xag2/xag2ao.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2ap.acm~ ~MUSIC/xag2/xag2ap.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2aq.acm~ ~MUSIC/xag2/xag2aq.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2b.acm~ ~MUSIC/xag2/xag2b.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2c.acm~ ~MUSIC/xag2/xag2c.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2d.acm~ ~MUSIC/xag2/xag2d.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2e.acm~ ~MUSIC/xag2/xag2e.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2f.acm~ ~MUSIC/xag2/xag2f.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2g.acm~ ~MUSIC/xag2/xag2g.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2h.acm~ ~MUSIC/xag2/xag2h.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2i.acm~ ~MUSIC/xag2/xag2i.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2j.acm~ ~MUSIC/xag2/xag2j.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2k.acm~ ~MUSIC/xag2/xag2k.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2l.acm~ ~MUSIC/xag2/xag2l.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2m.acm~ ~MUSIC/xag2/xag2m.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2n.acm~ ~MUSIC/xag2/xag2n.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2o.acm~ ~MUSIC/xag2/xag2o.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2p.acm~ ~MUSIC/xag2/xag2p.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2q.acm~ ~MUSIC/xag2/xag2q.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2r.acm~ ~MUSIC/xag2/xag2r.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2s.acm~ ~MUSIC/xag2/xag2s.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2t.acm~ ~MUSIC/xag2/xag2t.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2u.acm~ ~MUSIC/xag2/xag2u.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2v.acm~ ~MUSIC/xag2/xag2v.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2w.acm~ ~MUSIC/xag2/xag2w.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2x.acm~ ~MUSIC/xag2/xag2x.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2y.acm~ ~MUSIC/xag2/xag2y.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2z.acm~ ~MUSIC/xag2/xag2z.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2za.acm~ ~MUSIC/xag2/xag2za.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2zag.acm~ ~MUSIC/xag2/xag2zag.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2zap.acm~ ~MUSIC/xag2/xag2zap.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2zb.acm~ ~MUSIC/xag2/xag2zb.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2ze.acm~ ~MUSIC/xag2/xag2ze.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2zm.acm~ ~MUSIC/xag2/xag2zm.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2zq.acm~ ~MUSIC/xag2/xag2zq.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2zu.acm~ ~MUSIC/xag2/xag2zu.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag2/xag2zv.acm~ ~MUSIC/xag2/xag2zv.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3a.acm~ ~MUSIC/xag3/xag3a.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3b.acm~ ~MUSIC/xag3/xag3b.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3c.acm~ ~MUSIC/xag3/xag3c.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3d.acm~ ~MUSIC/xag3/xag3d.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3e.acm~ ~MUSIC/xag3/xag3e.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3f.acm~ ~MUSIC/xag3/xag3f.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3g.acm~ ~MUSIC/xag3/xag3g.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3h.acm~ ~MUSIC/xag3/xag3h.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3i.acm~ ~MUSIC/xag3/xag3i.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3j.acm~ ~MUSIC/xag3/xag3j.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3k.acm~ ~MUSIC/xag3/xag3k.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3l.acm~ ~MUSIC/xag3/xag3l.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3l2.acm~ ~MUSIC/xag3/xag3l2.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3m.acm~ ~MUSIC/xag3/xag3m.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3n.acm~ ~MUSIC/xag3/xag3n.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3o.acm~ ~MUSIC/xag3/xag3o.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3p.acm~ ~MUSIC/xag3/xag3p.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3q.acm~ ~MUSIC/xag3/xag3q.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3r.acm~ ~MUSIC/xag3/xag3r.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3za.acm~ ~MUSIC/xag3/xag3za.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3zg.acm~ ~MUSIC/xag3/xag3zg.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag3/xag3zr.acm~ ~MUSIC/xag3/xag3zr.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag4/xag4a.acm~ ~MUSIC/xag4/xag4a.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5a1.acm~ ~MUSIC/xag5/xag5a1.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5a2.acm~ ~MUSIC/xag5/xag5a2.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5b.acm~ ~MUSIC/xag5/xag5b.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5c.acm~ ~MUSIC/xag5/xag5c.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5d.acm~ ~MUSIC/xag5/xag5d.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5e.acm~ ~MUSIC/xag5/xag5e.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5f.acm~ ~MUSIC/xag5/xag5f.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5g.acm~ ~MUSIC/xag5/xag5g.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5h.acm~ ~MUSIC/xag5/xag5h.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5i.acm~ ~MUSIC/xag5/xag5i.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5j.acm~ ~MUSIC/xag5/xag5j.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5k.acm~ ~MUSIC/xag5/xag5k.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5l.acm~ ~MUSIC/xag5/xag5l.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5m.acm~ ~MUSIC/xag5/xag5m.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5n.acm~ ~MUSIC/xag5/xag5n.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5o.acm~ ~MUSIC/xag5/xag5o.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5za.acm~ ~MUSIC/xag5/xag5za.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5zb.acm~ ~MUSIC/xag5/xag5zb.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5zc.acm~ ~MUSIC/xag5/xag5zc.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5zd.acm~ ~MUSIC/xag5/xag5zd.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5zf.acm~ ~MUSIC/xag5/xag5zf.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5zg.acm~ ~MUSIC/xag5/xag5zg.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5zi.acm~ ~MUSIC/xag5/xag5zi.acm~
-COPY ~%MOD_FOLDER%/generated/g/mus/xag5/xag5zk.acm~ ~MUSIC/xag5/xag5zk.acm~
+ADD_MUSIC xag0 ~%MOD_FOLDER%\generated\g\mus\xag0.mus~
+ADD_MUSIC xag1 ~%MOD_FOLDER%\generated\g\mus\xag1.mus~
+ADD_MUSIC xag2 ~%MOD_FOLDER%\generated\g\mus\xag2.mus~
+ADD_MUSIC xag3 ~%MOD_FOLDER%\generated\g\mus\xag3.mus~
+ADD_MUSIC xag4 ~%MOD_FOLDER%\generated\g\mus\xag4.mus~
+ADD_MUSIC xag5 ~%MOD_FOLDER%\generated\g\mus\xag5.mus~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag0\xag0a.acm~ ~MUSIC\xag0\xag0a.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1a1.acm~ ~MUSIC\xag1\xag1a1.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1a3.acm~ ~MUSIC\xag1\xag1a3.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1a4.acm~ ~MUSIC\xag1\xag1a4.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1b1.acm~ ~MUSIC\xag1\xag1b1.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1b2.acm~ ~MUSIC\xag1\xag1b2.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1b3.acm~ ~MUSIC\xag1\xag1b3.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1b4.acm~ ~MUSIC\xag1\xag1b4.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1c1.acm~ ~MUSIC\xag1\xag1c1.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1c2.acm~ ~MUSIC\xag1\xag1c2.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1c3.acm~ ~MUSIC\xag1\xag1c3.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1c4.acm~ ~MUSIC\xag1\xag1c4.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1d1.acm~ ~MUSIC\xag1\xag1d1.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1d2.acm~ ~MUSIC\xag1\xag1d2.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1d3.acm~ ~MUSIC\xag1\xag1d3.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1e1.acm~ ~MUSIC\xag1\xag1e1.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1e2.acm~ ~MUSIC\xag1\xag1e2.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1e3.acm~ ~MUSIC\xag1\xag1e3.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1e4a.acm~ ~MUSIC\xag1\xag1e4a.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1enda1.acm~ ~MUSIC\xag1\xag1enda1.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1enda4.acm~ ~MUSIC\xag1\xag1enda4.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1endb1.acm~ ~MUSIC\xag1\xag1endb1.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1endb2.acm~ ~MUSIC\xag1\xag1endb2.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1endb3.acm~ ~MUSIC\xag1\xag1endb3.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1endc1.acm~ ~MUSIC\xag1\xag1endc1.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1ende4.acm~ ~MUSIC\xag1\xag1ende4.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1endh2.acm~ ~MUSIC\xag1\xag1endh2.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1f1a.acm~ ~MUSIC\xag1\xag1f1a.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1f2.acm~ ~MUSIC\xag1\xag1f2.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1f3.acm~ ~MUSIC\xag1\xag1f3.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1f4.acm~ ~MUSIC\xag1\xag1f4.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1g1.acm~ ~MUSIC\xag1\xag1g1.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1g2.acm~ ~MUSIC\xag1\xag1g2.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1g3.acm~ ~MUSIC\xag1\xag1g3.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1h1.acm~ ~MUSIC\xag1\xag1h1.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1h2.acm~ ~MUSIC\xag1\xag1h2.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag1\xag1xa4.acm~ ~MUSIC\xag1\xag1xa4.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2a.acm~ ~MUSIC\xag2\xag2a.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2aa.acm~ ~MUSIC\xag2\xag2aa.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2ab.acm~ ~MUSIC\xag2\xag2ab.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2ac.acm~ ~MUSIC\xag2\xag2ac.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2ad.acm~ ~MUSIC\xag2\xag2ad.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2ae.acm~ ~MUSIC\xag2\xag2ae.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2af.acm~ ~MUSIC\xag2\xag2af.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2ag.acm~ ~MUSIC\xag2\xag2ag.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2ah.acm~ ~MUSIC\xag2\xag2ah.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2ai.acm~ ~MUSIC\xag2\xag2ai.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2aj.acm~ ~MUSIC\xag2\xag2aj.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2ak.acm~ ~MUSIC\xag2\xag2ak.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2al.acm~ ~MUSIC\xag2\xag2al.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2am.acm~ ~MUSIC\xag2\xag2am.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2an.acm~ ~MUSIC\xag2\xag2an.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2ao.acm~ ~MUSIC\xag2\xag2ao.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2ap.acm~ ~MUSIC\xag2\xag2ap.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2aq.acm~ ~MUSIC\xag2\xag2aq.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2b.acm~ ~MUSIC\xag2\xag2b.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2c.acm~ ~MUSIC\xag2\xag2c.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2d.acm~ ~MUSIC\xag2\xag2d.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2e.acm~ ~MUSIC\xag2\xag2e.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2f.acm~ ~MUSIC\xag2\xag2f.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2g.acm~ ~MUSIC\xag2\xag2g.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2h.acm~ ~MUSIC\xag2\xag2h.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2i.acm~ ~MUSIC\xag2\xag2i.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2j.acm~ ~MUSIC\xag2\xag2j.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2k.acm~ ~MUSIC\xag2\xag2k.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2l.acm~ ~MUSIC\xag2\xag2l.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2m.acm~ ~MUSIC\xag2\xag2m.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2n.acm~ ~MUSIC\xag2\xag2n.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2o.acm~ ~MUSIC\xag2\xag2o.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2p.acm~ ~MUSIC\xag2\xag2p.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2q.acm~ ~MUSIC\xag2\xag2q.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2r.acm~ ~MUSIC\xag2\xag2r.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2s.acm~ ~MUSIC\xag2\xag2s.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2t.acm~ ~MUSIC\xag2\xag2t.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2u.acm~ ~MUSIC\xag2\xag2u.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2v.acm~ ~MUSIC\xag2\xag2v.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2w.acm~ ~MUSIC\xag2\xag2w.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2x.acm~ ~MUSIC\xag2\xag2x.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2y.acm~ ~MUSIC\xag2\xag2y.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2z.acm~ ~MUSIC\xag2\xag2z.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2za.acm~ ~MUSIC\xag2\xag2za.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2zag.acm~ ~MUSIC\xag2\xag2zag.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2zap.acm~ ~MUSIC\xag2\xag2zap.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2zb.acm~ ~MUSIC\xag2\xag2zb.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2ze.acm~ ~MUSIC\xag2\xag2ze.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2zm.acm~ ~MUSIC\xag2\xag2zm.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2zq.acm~ ~MUSIC\xag2\xag2zq.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2zu.acm~ ~MUSIC\xag2\xag2zu.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag2\xag2zv.acm~ ~MUSIC\xag2\xag2zv.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3a.acm~ ~MUSIC\xag3\xag3a.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3b.acm~ ~MUSIC\xag3\xag3b.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3c.acm~ ~MUSIC\xag3\xag3c.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3d.acm~ ~MUSIC\xag3\xag3d.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3e.acm~ ~MUSIC\xag3\xag3e.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3f.acm~ ~MUSIC\xag3\xag3f.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3g.acm~ ~MUSIC\xag3\xag3g.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3h.acm~ ~MUSIC\xag3\xag3h.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3i.acm~ ~MUSIC\xag3\xag3i.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3j.acm~ ~MUSIC\xag3\xag3j.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3k.acm~ ~MUSIC\xag3\xag3k.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3l.acm~ ~MUSIC\xag3\xag3l.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3l2.acm~ ~MUSIC\xag3\xag3l2.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3m.acm~ ~MUSIC\xag3\xag3m.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3n.acm~ ~MUSIC\xag3\xag3n.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3o.acm~ ~MUSIC\xag3\xag3o.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3p.acm~ ~MUSIC\xag3\xag3p.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3q.acm~ ~MUSIC\xag3\xag3q.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3r.acm~ ~MUSIC\xag3\xag3r.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3za.acm~ ~MUSIC\xag3\xag3za.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3zg.acm~ ~MUSIC\xag3\xag3zg.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag3\xag3zr.acm~ ~MUSIC\xag3\xag3zr.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag4\xag4a.acm~ ~MUSIC\xag4\xag4a.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5a1.acm~ ~MUSIC\xag5\xag5a1.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5a2.acm~ ~MUSIC\xag5\xag5a2.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5b.acm~ ~MUSIC\xag5\xag5b.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5c.acm~ ~MUSIC\xag5\xag5c.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5d.acm~ ~MUSIC\xag5\xag5d.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5e.acm~ ~MUSIC\xag5\xag5e.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5f.acm~ ~MUSIC\xag5\xag5f.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5g.acm~ ~MUSIC\xag5\xag5g.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5h.acm~ ~MUSIC\xag5\xag5h.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5i.acm~ ~MUSIC\xag5\xag5i.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5j.acm~ ~MUSIC\xag5\xag5j.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5k.acm~ ~MUSIC\xag5\xag5k.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5l.acm~ ~MUSIC\xag5\xag5l.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5m.acm~ ~MUSIC\xag5\xag5m.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5n.acm~ ~MUSIC\xag5\xag5n.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5o.acm~ ~MUSIC\xag5\xag5o.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5za.acm~ ~MUSIC\xag5\xag5za.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5zb.acm~ ~MUSIC\xag5\xag5zb.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5zc.acm~ ~MUSIC\xag5\xag5zc.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5zd.acm~ ~MUSIC\xag5\xag5zd.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5zf.acm~ ~MUSIC\xag5\xag5zf.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5zg.acm~ ~MUSIC\xag5\xag5zg.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5zi.acm~ ~MUSIC\xag5\xag5zi.acm~
+COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5zk.acm~ ~MUSIC\xag5\xag5zk.acm~
 //}
 //cre files
 //===================
-COPY ~%MOD_FOLDER%/generated/g/cre/xag100.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11352) /*~Aun Argent~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11352) /*~Aun Argent~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@11353) /*~If this is how it ends, then so be it!~[xag10000]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@11354) /*~Ugh!~[xag10001]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@11355) /*~~[xag10002]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@11356) /*~I will do what I can to help you.~[xag10003]*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag100.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11365) /*~Aun Argent~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11365) /*~Aun Argent~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@11366) /*~If this is how it ends, then so be it!~[xag10000]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@11367) /*~Ugh!~[xag10001]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@11368) /*~~[xag10002]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11369) /*~I will do what I can to help you.~[xag10003]*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag101.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11357) /*~Thrix~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11357) /*~Thrix~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag101.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11370) /*~Thrix~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11370) /*~Thrix~*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag102.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11358) /*~Hellcat~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11358) /*~Hellcat~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag102.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11371) /*~Hellcat~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11371) /*~Hellcat~*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag103.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11359) /*~Erinyes~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11359) /*~Erinyes~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag103.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11372) /*~Erinyes~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11372) /*~Erinyes~*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag106.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11360) /*~Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11360) /*~Abishai~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag106.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11373) /*~Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11373) /*~Abishai~*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag107.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11361) /*~Imp~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11361) /*~Imp~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag107.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11374) /*~Imp~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11374) /*~Imp~*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag108.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11360) /*~Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11360) /*~Abishai~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag108.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11373) /*~Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11373) /*~Abishai~*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag110.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11362) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11362) /*~Crusader Elite~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag110.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag111.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11363) /*~Lemure~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11363) /*~Lemure~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag111.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11376) /*~Lemure~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11376) /*~Lemure~*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag114.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11361) /*~Imp~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11361) /*~Imp~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag114.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11374) /*~Imp~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11374) /*~Imp~*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag115.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11364) /*~Black Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11364) /*~Black Abishai~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag115.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11377) /*~Black Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11377) /*~Black Abishai~*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag116.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11365) /*~Green Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11365) /*~Green Abishai~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag116.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11378) /*~Green Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11378) /*~Green Abishai~*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag117.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11366) /*~Red Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11366) /*~Red Abishai~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag117.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11379) /*~Red Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11379) /*~Red Abishai~*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag118.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11367) /*~Hamatula~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11367) /*~Hamatula~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag118.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11380) /*~Hamatula~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11380) /*~Hamatula~*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag119.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11368) /*~Bone Fiend~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11368) /*~Bone Fiend~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag119.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11381) /*~Bone Fiend~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11381) /*~Bone Fiend~*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag124.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11362) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11362) /*~Crusader Elite~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@11369) /*~For the Shining Lady!~[xac10278]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@11370) /*~You need somethin'?~[xac10279]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@11371) /*~We serve the light.~[xac10280]*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag124.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@11382) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11383) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11384) /*~We serve the light.~[xac10280]*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag125.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11363) /*~Lemure~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11363) /*~Lemure~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag125.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11376) /*~Lemure~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11376) /*~Lemure~*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag126.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11362) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11362) /*~Crusader Elite~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@11372) /*~Die in her name!~[xac10292]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@11373) /*~Somethin' you need?~[xac10182]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@11374) /*~As the light wills.~[xac10183]*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag126.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@11385) /*~Die in her name!~[xac10292]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11386) /*~Somethin' you need?~[xac10182]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11387) /*~As the light wills.~[xac10183]*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag127.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11362) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11362) /*~Crusader Elite~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@11375) /*~~[xaa11126]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@11376) /*~~[xaa11854]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@11377) /*~ The Fair Folk rarely have time for small talk.~[xac10289]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@11378) /*~ Troubled times are upon us.~[xac10290]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@11379) /*~ Soon, we shall all be together upon Evermeet.~[xac10291]*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag127.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@11388) /*~~[xaa11126]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@11389) /*~~[xaa11854]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11390) /*~ The Fair Folk rarely have time for small talk.~[xac10289]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11391) /*~ Troubled times are upon us.~[xac10290]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@11392) /*~ Soon, we shall all be together upon Evermeet.~[xac10291]*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag128.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11365) /*~Green Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11365) /*~Green Abishai~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag128.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11378) /*~Green Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11378) /*~Green Abishai~*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag131.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11362) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11362) /*~Crusader Elite~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@11369) /*~For the Shining Lady!~[xac10278]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@11370) /*~You need somethin'?~[xac10279]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@11371) /*~We serve the light.~[xac10280]*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag131.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@11382) /*~For the Shining Lady!~[xac10278]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11383) /*~You need somethin'?~[xac10279]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11384) /*~We serve the light.~[xac10280]*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag132.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11364) /*~Black Abishai~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11364) /*~Black Abishai~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag132.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11377) /*~Black Abishai~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11377) /*~Black Abishai~*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag135.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11362) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11362) /*~Crusader Elite~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@11372) /*~Die in her name!~[xac10292]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@11373) /*~Somethin' you need?~[xac10182]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@11374) /*~As the light wills.~[xac10183]*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag135.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@11385) /*~Die in her name!~[xac10292]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11386) /*~Somethin' you need?~[xac10182]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11387) /*~As the light wills.~[xac10183]*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag139.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11362) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11362) /*~Crusader Elite~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag139.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
 
-COPY ~%MOD_FOLDER%/generated/g/cre/xag140.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11362) /*~Crusader Elite~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11362) /*~Crusader Elite~*/
+COPY ~%MOD_FOLDER%\generated\g\cre\xag140.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11375) /*~Crusader Elite~*/
 
 
 //are files
@@ -273,9 +273,9 @@ COPY ~%MOD_FOLDER%/generated/g/cre/xag140.cre~ ~override~
 ACTION_IF (FILE_EXISTS_IN_GAME ~xag100.are~) BEGIN
 	//PRINT ~Area already exists: xag100. Skipping...~
 END ELSE BEGIN
-	COPY ~%MOD_FOLDER%/generated/g/are/xag100.are~ ~override~
-	WRITE_LONG 8316 RESOLVE_STR_REF(@11380) /*~Stairs Down~*/
-	WRITE_LONG 8368 RESOLVE_STR_REF(@11381) /*~Massive Door~*/
+	COPY ~%MOD_FOLDER%\generated\g\are\xag100.are~ ~override~
+	WRITE_LONG 8316 RESOLVE_STR_REF(@11393) /*~Stairs Down~*/
+	WRITE_LONG 8368 RESOLVE_STR_REF(@11394) /*~Massive Door~*/
 	WRITE_LONG 7940 %xag0%
 	WRITE_LONG 7944 %xag0%
 	WRITE_LONG 7952 %xag1%
@@ -283,15 +283,15 @@ END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xag101.are~) BEGIN
 	//PRINT ~Area already exists: xag101. Skipping...~
 END ELSE BEGIN
-	COPY ~%MOD_FOLDER%/generated/g/are/xag101.are~ ~override~
-	WRITE_LONG 6836 RESOLVE_STR_REF(@11382) /*~In the distance, you can make out the legions of Avernus marching in formation.~*/
-	WRITE_LONG 7032 RESOLVE_STR_REF(@11383) /*~Through the haze that envelops Avernus you can see a blasted landscape dotted with lakes of bubbling magma amongst towering ruins of iron and basalt.~*/
-	WRITE_LONG 7228 RESOLVE_STR_REF(@11384) /*~The utter desolation of the First Hell is an awe-inspiring, if terrifying, sight. Red skies periodically rain down fireballs, battering the landscape.~*/
-	WRITE_LONG 7424 RESOLVE_STR_REF(@11385) /*~Horrifying creatures are chained up by the thousands far below. Enormous devils rake them with whips, shaking with laughter after each strike.~*/
-	WRITE_LONG 7620 RESOLVE_STR_REF(@11386) /*~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~*/
-	WRITE_LONG 7816 RESOLVE_STR_REF(@11386) /*~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~*/
-	WRITE_LONG 8012 RESOLVE_STR_REF(@11386) /*~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~*/
-	WRITE_LONG 12828 RESOLVE_STR_REF(@11387) /*~Cage~*/
+	COPY ~%MOD_FOLDER%\generated\g\are\xag101.are~ ~override~
+	WRITE_LONG 6836 RESOLVE_STR_REF(@11395) /*~In the distance, you can make out the legions of Avernus marching in formation.~*/
+	WRITE_LONG 7032 RESOLVE_STR_REF(@11396) /*~Through the haze that envelops Avernus you can see a blasted landscape dotted with lakes of bubbling magma amongst towering ruins of iron and basalt.~*/
+	WRITE_LONG 7228 RESOLVE_STR_REF(@11397) /*~The utter desolation of the First Hell is an awe-inspiring, if terrifying, sight. Red skies periodically rain down fireballs, battering the landscape.~*/
+	WRITE_LONG 7424 RESOLVE_STR_REF(@11398) /*~Horrifying creatures are chained up by the thousands far below. Enormous devils rake them with whips, shaking with laughter after each strike.~*/
+	WRITE_LONG 7620 RESOLVE_STR_REF(@11399) /*~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~*/
+	WRITE_LONG 7816 RESOLVE_STR_REF(@11399) /*~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~*/
+	WRITE_LONG 8012 RESOLVE_STR_REF(@11399) /*~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~*/
+	WRITE_LONG 12828 RESOLVE_STR_REF(@11400) /*~Cage~*/
 	WRITE_LONG 12452 %xag0%
 	WRITE_LONG 12456 %xag0%
 	WRITE_LONG 12464 %xag2%
@@ -300,23 +300,23 @@ END
 ACTION_IF (FILE_EXISTS_IN_GAME ~xag102.are~) BEGIN
 	//PRINT ~Area already exists: xag102. Skipping...~
 END ELSE BEGIN
-	COPY ~%MOD_FOLDER%/generated/g/are/xag102.are~ ~override~
-	WRITE_LONG 11972 RESOLVE_STR_REF(@11388) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
-	WRITE_LONG 12168 RESOLVE_STR_REF(@11389) /*~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~*/
-	WRITE_LONG 12364 RESOLVE_STR_REF(@11388) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
-	WRITE_LONG 12560 RESOLVE_STR_REF(@11390) /*~This door's dwarven craftspeople made certain none but the one who held its key would ever be able to open it. Peering through a crack, the light that leaks inward reveals nothing of interest or value.~*/
-	WRITE_LONG 12756 RESOLVE_STR_REF(@11388) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
-	WRITE_LONG 12952 RESOLVE_STR_REF(@11388) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
-	WRITE_LONG 13148 RESOLVE_STR_REF(@11389) /*~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~*/
-	WRITE_LONG 13344 RESOLVE_STR_REF(@11388) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
-	WRITE_LONG 13540 RESOLVE_STR_REF(@11389) /*~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~*/
-	WRITE_LONG 13736 RESOLVE_STR_REF(@11390) /*~This door's dwarven craftspeople made certain none but the one who held its key would ever be able to open it. Peering through a crack, the light that leaks inward reveals nothing of interest or value.~*/
-	WRITE_LONG 13932 RESOLVE_STR_REF(@11388) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
-	WRITE_LONG 14128 RESOLVE_STR_REF(@11391) /*~An unearthly light glows from deep within the chasm. Voices echo throughout the gaping crevasse, pressing against the walls, seeking escape.~*/
-	WRITE_LONG 14324 RESOLVE_STR_REF(@11391) /*~An unearthly light glows from deep within the chasm. Voices echo throughout the gaping crevasse, pressing against the walls, seeking escape.~*/
-	WRITE_LONG 20212 RESOLVE_STR_REF(@11392) /*~Exit~*/
-	WRITE_LONG 20264 RESOLVE_STR_REF(@11393) /*~Ritual Chamber~*/
-	WRITE_LONG 20316 RESOLVE_STR_REF(@11394) /*~Portal to the Fugue Plane~*/
+	COPY ~%MOD_FOLDER%\generated\g\are\xag102.are~ ~override~
+	WRITE_LONG 11972 RESOLVE_STR_REF(@11401) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
+	WRITE_LONG 12168 RESOLVE_STR_REF(@11402) /*~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~*/
+	WRITE_LONG 12364 RESOLVE_STR_REF(@11401) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
+	WRITE_LONG 12560 RESOLVE_STR_REF(@11403) /*~This door's dwarven craftspeople made certain none but the one who held its key would ever be able to open it. Peering through a crack, the light that leaks inward reveals nothing of interest or value.~*/
+	WRITE_LONG 12756 RESOLVE_STR_REF(@11401) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
+	WRITE_LONG 12952 RESOLVE_STR_REF(@11401) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
+	WRITE_LONG 13148 RESOLVE_STR_REF(@11402) /*~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~*/
+	WRITE_LONG 13344 RESOLVE_STR_REF(@11401) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
+	WRITE_LONG 13540 RESOLVE_STR_REF(@11402) /*~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~*/
+	WRITE_LONG 13736 RESOLVE_STR_REF(@11403) /*~This door's dwarven craftspeople made certain none but the one who held its key would ever be able to open it. Peering through a crack, the light that leaks inward reveals nothing of interest or value.~*/
+	WRITE_LONG 13932 RESOLVE_STR_REF(@11401) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
+	WRITE_LONG 14128 RESOLVE_STR_REF(@11404) /*~An unearthly light glows from deep within the chasm. Voices echo throughout the gaping crevasse, pressing against the walls, seeking escape.~*/
+	WRITE_LONG 14324 RESOLVE_STR_REF(@11404) /*~An unearthly light glows from deep within the chasm. Voices echo throughout the gaping crevasse, pressing against the walls, seeking escape.~*/
+	WRITE_LONG 20212 RESOLVE_STR_REF(@11405) /*~Exit~*/
+	WRITE_LONG 20264 RESOLVE_STR_REF(@11406) /*~Ritual Chamber~*/
+	WRITE_LONG 20316 RESOLVE_STR_REF(@11407) /*~Portal to the Fugue Plane~*/
 	WRITE_LONG 19836 %xag4%
 	WRITE_LONG 19840 %xag4%
 	WRITE_LONG 19848 %xag5%
@@ -324,115 +324,115 @@ END
 
 //spl files
 //===================
-COPY ~%MOD_FOLDER%/generated/g/spl/xag100.spl~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11395) /*~Teleport Without Error~*/
-COPY ~%MOD_FOLDER%/generated/g/spl/xag101.spl~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/spl/xag102.spl~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/spl/xag105.spl~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/spl/xag104.spl~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11396) /*~Impale~*/
-COPY ~%MOD_FOLDER%/generated/g/spl/xag103.spl~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\spl\xag100.spl~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11408) /*~Teleport Without Error~*/
+COPY ~%MOD_FOLDER%\generated\g\spl\xag101.spl~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\spl\xag102.spl~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\spl\xag105.spl~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\spl\xag104.spl~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11409) /*~Impale~*/
+COPY ~%MOD_FOLDER%\generated\g\spl\xag103.spl~ ~override~
 
 //wav files
 //===================
-COPY ~%MOD_FOLDER%/generated/g/wav/xag10000.wav~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/wav/xag10001.wav~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/wav/xag10002.wav~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/wav/xag10003.wav~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/wav/xag10004.wav~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/wav/xag10005.wav~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/wav/xag10006.wav~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/wav/xag10008.wav~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/wav/xag10009.wav~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/wav/xag10010.wav~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/wav/xag10011.wav~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/wav/xag10012.wav~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/wav/xag10013.wav~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/wav/xag10014.wav~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/wav/xag10015.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\wav\xag10000.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\wav\xag10001.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\wav\xag10002.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\wav\xag10003.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\wav\xag10004.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\wav\xag10005.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\wav\xag10006.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\wav\xag10008.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\wav\xag10009.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\wav\xag10010.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\wav\xag10011.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\wav\xag10012.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\wav\xag10013.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\wav\xag10014.wav~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\wav\xag10015.wav~ ~override~
 
 //baf files
 //===================
 
 //wed files
 //===================
-COPY ~%MOD_FOLDER%/generated/g/wed/xag100.wed~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/wed/xag101.wed~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/wed/xag102.wed~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\wed\xag100.wed~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\wed\xag101.wed~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\wed\xag102.wed~ ~override~
 
 //bam files
 //===================
-COPY ~%MOD_FOLDER%/generated/g/bam/xag100.bam~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/bam/xag109.bam~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/bam/xag116.bam~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/bam/xag131.bam~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/bam/xag132.bam~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/bam/xag133.bam~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/bam/xag134.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\bam\xag100.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\bam\xag109.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\bam\xag116.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\bam\xag131.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\bam\xag132.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\bam\xag133.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\bam\xag134.bam~ ~override~
 
 //itm files
 //===================
-COPY ~%MOD_FOLDER%/generated/g/itm/xag105.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11397) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11397) /*~Attack~*/
-COPY ~%MOD_FOLDER%/generated/g/itm/xag106.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11397) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11397) /*~Attack~*/
-COPY ~%MOD_FOLDER%/generated/g/itm/xag107.itm~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/itm/xag113.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11397) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11397) /*~Attack~*/
-COPY ~%MOD_FOLDER%/generated/g/itm/xag110.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11397) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11397) /*~Attack~*/
-COPY ~%MOD_FOLDER%/generated/g/itm/xag109.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11397) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11397) /*~Attack~*/
-COPY ~%MOD_FOLDER%/generated/g/itm/xag114.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11397) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11397) /*~Attack~*/
-COPY ~%MOD_FOLDER%/generated/g/itm/xag115.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11397) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11397) /*~Attack~*/
+COPY ~%MOD_FOLDER%\generated\g\itm\xag105.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11410) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11410) /*~Attack~*/
+COPY ~%MOD_FOLDER%\generated\g\itm\xag106.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11410) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11410) /*~Attack~*/
+COPY ~%MOD_FOLDER%\generated\g\itm\xag107.itm~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\itm\xag113.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11410) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11410) /*~Attack~*/
+COPY ~%MOD_FOLDER%\generated\g\itm\xag110.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11410) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11410) /*~Attack~*/
+COPY ~%MOD_FOLDER%\generated\g\itm\xag109.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11410) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11410) /*~Attack~*/
+COPY ~%MOD_FOLDER%\generated\g\itm\xag114.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11410) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11410) /*~Attack~*/
+COPY ~%MOD_FOLDER%\generated\g\itm\xag115.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11410) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11410) /*~Attack~*/
 
 //tis files
 //===================
-COPY ~%MOD_FOLDER%/generated/g/tis/xag100.tis~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/tis/xag101.tis~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/tis/xag102.tis~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\tis\xag100.tis~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\tis\xag101.tis~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\tis\xag102.tis~ ~override~
 
 //{ PVRZ
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10000.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10001.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10002.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10003.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10004.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10005.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10006.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10100.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10101.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10102.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10103.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10104.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10105.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10106.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10200.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10201.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10202.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10203.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10204.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%/generated/g/pvrz/xg10205.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10000.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10001.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10002.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10003.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10004.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10005.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10006.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10100.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10101.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10102.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10103.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10104.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10105.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10106.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10200.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10201.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10202.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10203.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10204.pvrz~ ~override~
+	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10205.pvrz~ ~override~
 //}
 
 //bmp files.
 //=========================
-COPY ~%MOD_FOLDER%/generated/g/bmp/xag100ht.bmp~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/bmp/xag100lm.bmp~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/bmp/xag100sr.bmp~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/bmp/xag101ht.bmp~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/bmp/xag101lm.bmp~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/bmp/xag101sr.bmp~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/bmp/xag102ht.bmp~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/bmp/xag102lm.bmp~ ~override~
-COPY ~%MOD_FOLDER%/generated/g/bmp/xag102sr.bmp~ ~override~
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/generated/g/baf~
+COPY ~%MOD_FOLDER%\generated\g\bmp\xag100ht.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\bmp\xag100lm.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\bmp\xag100sr.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\bmp\xag101ht.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\bmp\xag101lm.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\bmp\xag101sr.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\bmp\xag102ht.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\bmp\xag102lm.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\bmp\xag102sr.bmp~ ~override~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\generated\g\baf~

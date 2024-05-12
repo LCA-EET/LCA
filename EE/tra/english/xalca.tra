@@ -1133,6 +1133,8 @@ Weight: 0~
 @4158 = ~Emergency Provisions~
 @4159 = ~Bone Dagger~
 @4160 = ~Corwin's Home~
+@4161 = ~Alabaster Drake~
+@4162 = ~Alabaster Dragon~
 
 @5000 = ~Processing ToB changes...~
 
@@ -3308,51 +3310,99 @@ Weight: 9~
 @11349 = ~~[xaf10005]
 @11350 = ~~[xaf10006]
 @11351 = ~ Justice may be blind, but I'm not.~[xaf10007]
-@11352 = ~Aun Argent~
-@11353 = ~If this is how it ends, then so be it!~[xag10000]
-@11354 = ~Ugh!~[xag10001]
-@11355 = ~~[xag10002]
-@11356 = ~I will do what I can to help you.~[xag10003]
-@11357 = ~Thrix~
-@11358 = ~Hellcat~
-@11359 = ~Erinyes~
-@11360 = ~Abishai~
-@11361 = ~Imp~
-@11362 = ~Crusader Elite~
-@11363 = ~Lemure~
-@11364 = ~Black Abishai~
-@11365 = ~Green Abishai~
-@11366 = ~Red Abishai~
-@11367 = ~Hamatula~
-@11368 = ~Bone Fiend~
-@11369 = ~For the Shining Lady!~[xac10278]
-@11370 = ~You need somethin'?~[xac10279]
-@11371 = ~We serve the light.~[xac10280]
-@11372 = ~Die in her name!~[xac10292]
-@11373 = ~Somethin' you need?~[xac10182]
-@11374 = ~As the light wills.~[xac10183]
-@11375 = ~~[xaa11126]
-@11376 = ~~[xaa11854]
-@11377 = ~ The Fair Folk rarely have time for small talk.~[xac10289]
-@11378 = ~ Troubled times are upon us.~[xac10290]
-@11379 = ~ Soon, we shall all be together upon Evermeet.~[xac10291]
-@11380 = ~Stairs Down~
-@11381 = ~Massive Door~
-@11382 = ~In the distance, you can make out the legions of Avernus marching in formation.~
-@11383 = ~Through the haze that envelops Avernus you can see a blasted landscape dotted with lakes of bubbling magma amongst towering ruins of iron and basalt.~
-@11384 = ~The utter desolation of the First Hell is an awe-inspiring, if terrifying, sight. Red skies periodically rain down fireballs, battering the landscape.~
-@11385 = ~Horrifying creatures are chained up by the thousands far below. Enormous devils rake them with whips, shaking with laughter after each strike.~
-@11386 = ~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~
-@11387 = ~Cage~
-@11388 = ~This sturdy, well-crafted door resists all efforts to open it.~
-@11389 = ~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~
-@11390 = ~This door's dwarven craftspeople made certain none but the one who held its key would ever be able to open it. Peering through a crack, the light that leaks inward reveals nothing of interest or value.~
-@11391 = ~An unearthly light glows from deep within the chasm. Voices echo throughout the gaping crevasse, pressing against the walls, seeking escape.~
-@11392 = ~Exit~
-@11393 = ~Ritual Chamber~
-@11394 = ~Portal to the Fugue Plane~
-@11395 = ~Teleport Without Error~
-@11396 = ~Impale~
-@11397 = ~Attack~
+@11352 = ~Halatathlaer~
+@11353 = ~Blind Albino Wyrmling~
+@11354 = ~Dragon Fear~
+@11355 = ~Ghost Dragon Breath~
+@11356 = ~Ring~
+@11357 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+
+STATISTICS:
+
+Weight: 0~
+@11358 = ~Attack~
+@11359 = ~Half-Digested Sword~
+@11360 = ~A once-fine sword has become a pocked mass of twisted metal in the wyrmling's stomach. The outline of a dragon, wings spread, is barely discernible on the pommel.
+
+STATISTICS:
+
+Weight: 2~
+@11361 = ~Dagger~
+@11362 = ~Acid-Etched Dagger +2~
+@11363 = ~The typical dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter.
+
+STATISTICS:
+
+Damage: 1d4 (piercing)
+Speed Factor: 2
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+@11364 = ~This dagger, though old, was obviously crafted well and enchanted carefully. An ordinary dagger would have long ago dissolved in the juices of the albino wyrmling's stomach. Though the dagger is still intact and boasts a sharp edge, its time in the wyrmling's stomach has left swirling patterns of acid etching along the blade and hilt.
+
+STATISTICS:
+
+Combat abilities: 
+– 15% chance per hit that the target takes 1 extra point of acid damage per round during the next 3 rounds
+
+THAC0: +2
+Damage: 1d4+2, +1 (acid)
+Damage Type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+@11365 = ~Aun Argent~
+@11366 = ~If this is how it ends, then so be it!~[xag10000]
+@11367 = ~Ugh!~[xag10001]
+@11368 = ~~[xag10002]
+@11369 = ~I will do what I can to help you.~[xag10003]
+@11370 = ~Thrix~
+@11371 = ~Hellcat~
+@11372 = ~Erinyes~
+@11373 = ~Abishai~
+@11374 = ~Imp~
+@11375 = ~Crusader Elite~
+@11376 = ~Lemure~
+@11377 = ~Black Abishai~
+@11378 = ~Green Abishai~
+@11379 = ~Red Abishai~
+@11380 = ~Hamatula~
+@11381 = ~Bone Fiend~
+@11382 = ~For the Shining Lady!~[xac10278]
+@11383 = ~You need somethin'?~[xac10279]
+@11384 = ~We serve the light.~[xac10280]
+@11385 = ~Die in her name!~[xac10292]
+@11386 = ~Somethin' you need?~[xac10182]
+@11387 = ~As the light wills.~[xac10183]
+@11388 = ~~[xaa11126]
+@11389 = ~~[xaa11854]
+@11390 = ~ The Fair Folk rarely have time for small talk.~[xac10289]
+@11391 = ~ Troubled times are upon us.~[xac10290]
+@11392 = ~ Soon, we shall all be together upon Evermeet.~[xac10291]
+@11393 = ~Stairs Down~
+@11394 = ~Massive Door~
+@11395 = ~In the distance, you can make out the legions of Avernus marching in formation.~
+@11396 = ~Through the haze that envelops Avernus you can see a blasted landscape dotted with lakes of bubbling magma amongst towering ruins of iron and basalt.~
+@11397 = ~The utter desolation of the First Hell is an awe-inspiring, if terrifying, sight. Red skies periodically rain down fireballs, battering the landscape.~
+@11398 = ~Horrifying creatures are chained up by the thousands far below. Enormous devils rake them with whips, shaking with laughter after each strike.~
+@11399 = ~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~
+@11400 = ~Cage~
+@11401 = ~This sturdy, well-crafted door resists all efforts to open it.~
+@11402 = ~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~
+@11403 = ~This door's dwarven craftspeople made certain none but the one who held its key would ever be able to open it. Peering through a crack, the light that leaks inward reveals nothing of interest or value.~
+@11404 = ~An unearthly light glows from deep within the chasm. Voices echo throughout the gaping crevasse, pressing against the walls, seeking escape.~
+@11405 = ~Exit~
+@11406 = ~Ritual Chamber~
+@11407 = ~Portal to the Fugue Plane~
+@11408 = ~Teleport Without Error~
+@11409 = ~Impale~
+@11410 = ~Attack~
 
 //}

@@ -1,0 +1,99 @@
+IF
+	Allegiance(Myself,NEUTRAL)
+	OR(2)
+		HitBy([GOODCUTOFF],CRUSHING)
+		AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	AreaCheck("bd5100")  // Underground River
+	!See(NearestEnemyOf(Myself))
+	!NearLocation(Myself,910,2330,5)
+THEN
+	RESPONSE #100
+		MoveToPoint([910.2330])
+END
+
+IF
+	Global("bd_ghost_dragon_plot","bd5100",2)  // Underground River
+	Allegiance(Myself,NEUTRAL)
+	TriggerOverride("door03",Range([PC],12))
+THEN
+	RESPONSE #100
+		SetGlobal("bd_ghost_dragon_plot","bd5100",3)  // Underground River
+END
+
+IF
+	Global("bd_ghost_dragon_plot","bd5100",3)  // Underground River
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	Global("bd_ghost_dragon_plot","bd5100",2)  // Underground River
+	!GlobalTimerNotExpired("bd_halata_threaten","locals")
+	Allegiance(Myself,NEUTRAL)
+	Range([PC],14)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_halata_threaten","locals",3)
+		FaceObject([PC])
+		SmallWait(5)
+		DisplayStringHead(Myself,50173)  // Go no further!
+		SetSequence(SEQ_ATTACK_SLASH)
+	RESPONSE #100
+		SetGlobalTimer("bd_halata_threaten","locals",4)
+		FaceObject([PC])
+		SmallWait(5)
+		DisplayStringHead(Myself,50166)  // You try my patience, little <PRO_RACE>. Begone!
+		SetSequence(SEQ_ATTACK_BACKSLASH)
+	RESPONSE #100
+		SetGlobalTimer("bd_halata_threaten","locals",4)
+		FaceObject([PC])
+		SmallWait(5)
+		DisplayStringHead(Myself,50152)  // Begone, <PRO_RACE>. None shall pass through here. All that try shall die.
+		SetSequence(SEQ_ATTACK_JAB)
+	RESPONSE #100
+		SetGlobalTimer("bd_halata_threaten","locals",3)
+		FaceObject([PC])
+		SmallWait(5)
+		DisplayStringHead(Myself,50173)  // Go no further!
+		SetSequence(SEQ_ATTACK_BACKSLASH)
+	RESPONSE #100
+		SetGlobalTimer("bd_halata_threaten","locals",4)
+		FaceObject([PC])
+		SmallWait(5)
+		DisplayStringHead(Myself,50166)  // You try my patience, little <PRO_RACE>. Begone!
+		SetSequence(SEQ_ATTACK_JAB)
+	RESPONSE #100
+		SetGlobalTimer("bd_halata_threaten","locals",4)
+		FaceObject([PC])
+		SmallWait(5)
+		DisplayStringHead(Myself,50152)  // Begone, <PRO_RACE>. None shall pass through here. All that try shall die.
+		SetSequence(SEQ_ATTACK_SLASH)
+	RESPONSE #100
+		SetGlobalTimer("bd_halata_threaten","locals",3)
+		FaceObject([PC])
+		SmallWait(5)
+		DisplayStringHead(Myself,50173)  // Go no further!
+		SetSequence(SEQ_ATTACK_JAB)
+	RESPONSE #100
+		SetGlobalTimer("bd_halata_threaten","locals",4)
+		FaceObject([PC])
+		SmallWait(5)
+		DisplayStringHead(Myself,50166)  // You try my patience, little <PRO_RACE>. Begone!
+		SetSequence(SEQ_ATTACK_SLASH)
+	RESPONSE #100
+		SetGlobalTimer("bd_halata_threaten","locals",4)
+		FaceObject([PC])
+		SmallWait(5)
+		DisplayStringHead(Myself,50152)  // Begone, <PRO_RACE>. None shall pass through here. All that try shall die.
+		SetSequence(SEQ_ATTACK_BACKSLASH)
+END
+
