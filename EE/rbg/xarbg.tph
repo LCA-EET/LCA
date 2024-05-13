@@ -9,7 +9,7 @@ SILENT
 	END
 //}
 
-//{ Narzugon & Hephernan Animations
+//{ Narzugon, Hephernaan and Dragon Animations
 	ACTION_IF (isEET = 0) THEN BEGIN
 		LAF xa_copy_folder_contents
 			STR_VAR
@@ -26,10 +26,14 @@ SILENT
 	END
 	
 //}
+
+PRINT @4172 /*  ~Processing conversion blocks...~ */
+PRINT @4164 /* ~Please be patient. This may take a while.~ */
+SILENT
+
 INCLUDE ~%MOD_FOLDER%/generated/a/generated.tph~
 INCLUDE ~%MOD_FOLDER%/generated/c/generated.tph~
 INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
-
 
 //{ Worldmap
 	LAF FIND_FREE_PVRZ_INDEX
@@ -410,7 +414,6 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 		
 		
 	//}
-	COPY ~%MOD_FOLDER%/rbg/bam/xamapico.bam~ ~override~
 //}
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/d~
@@ -439,6 +442,9 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 			xa_relative_path = ~%MOD_FOLDER%/rbg/bmp~
 	END
 //}
+
+PRINT @4173 /*  ~Processing creatures...*/
+SILENT
 
 //{ CRE
 
@@ -1321,6 +1327,20 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 //}
 
 //{ New Items
+	
+	//{ Basilisk Figurine
+		COPY_EXISTING ~figspid.eff~ ~override/xabasfig.eff~
+		WRITE_ASCII 0x30 ~basgrt01~ #8
+		
+		COPY_EXISTING ~misc3e.itm~ ~override/xabasfig.itm~
+		WRITE_ASCII 0x3A ~xaibas~ #8
+		WRITE_LONG 0x34 6000
+		WRITE_LONG 0xC RESOLVE_STR_REF(@4152)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4153)
+		WRITE_ASCII 0x58 ~xacbas~ #8
+		WRITE_ASCII 0xEE ~xabasfig~ #8
+		WRITE_ASCII 0x76 ~xaibas~ #8
+	//}
 
 	//{ Farseer
 		COPY_EXISTING ~misc64.itm~ ~override/xafarsee.itm~
@@ -1448,9 +1468,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4039)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4040)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4040)
-		
-		COPY ~%MOD_FOLDER%/rbg/bam/xaswordi.bam~ ~override~
-		COPY ~%MOD_FOLDER%/rbg/bam/xaswordd.bam~ ~override~		
 	//}
 	
 	//{ Engagement Rings
@@ -1771,25 +1788,48 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	//}
 //}
 
-//{ Kidnap Music
-	ADD_MUSIC xamu04	~%MOD_FOLDER%/rbg/mus/xamu04.mus~
-	COPY ~%MOD_FOLDER%/rbg/mus/xamu04a.acm~ ~MUSIC/xamu04/xamu04a.acm~	
+//{ Music
+
+	//{ Kidnap Music
+		ADD_MUSIC xamu04	~%MOD_FOLDER%/rbg/mus/xamu04.mus~
+		COPY ~%MOD_FOLDER%/rbg/mus/xamu04a.acm~ ~MUSIC/xamu04/xamu04a.acm~	
+	//}
+
+	//{ Sanctum Music
+		ADD_MUSIC xamu05	~%MOD_FOLDER%/rbg/mus/xamu05.mus~
+		COPY ~%MOD_FOLDER%/rbg/mus/xamu05a.acm~ ~MUSIC/xamu05/xamu05a.acm~	
+	//}
+
+	//{ Kidnap Quest End Music
+		ADD_MUSIC xamu06	~%MOD_FOLDER%/rbg/mus/xamu06.mus~
+		COPY ~%MOD_FOLDER%/rbg/mus/xamu06a.acm~ ~MUSIC/xamu06/xamu06a.acm~	
+	//}
+
+	//{ Preparations Music
+		ADD_MUSIC xamu07	~%MOD_FOLDER%/rbg/mus/xamu07.mus~
+		COPY ~%MOD_FOLDER%/rbg/mus/xamu07a.acm~ ~MUSIC/xamu07/xamu07a.acm~	
+	//}
+
+	//{ Adjust Script & Dialogue Music
+		COPY_EXISTING ~xanarzu.dlg~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY ~PlaySong(1023)~ ~PlaySong(%xaa22%)~
+		END
+	//}
 //}
 
-//{ Sanctum Music
-	ADD_MUSIC xamu05	~%MOD_FOLDER%/rbg/mus/xamu05.mus~
-	COPY ~%MOD_FOLDER%/rbg/mus/xamu05a.acm~ ~MUSIC/xamu05/xamu05a.acm~	
+//{ Stores
+	COPY ~%MOD_FOLDER%/rbg/sto/xamelkor.sto~ ~override~
+	WRITE_LONG 0xc RESOLVE_STR_REF(@4158)
+	
+	COPY ~%MOD_FOLDER%/rbg/sto/xawvbar.sto~ ~override~
+	WRITE_LONG 0xc RESOLVE_STR_REF(@4138)
+	WRITE_ASCII 0x44 ~xarumor~ #8
 //}
 
-//{ Kidnap Quest End Music
-	ADD_MUSIC xamu06	~%MOD_FOLDER%/rbg/mus/xamu06.mus~
-	COPY ~%MOD_FOLDER%/rbg/mus/xamu06a.acm~ ~MUSIC/xamu06/xamu06a.acm~	
-//}
-
-//{ Preparations Music
-	ADD_MUSIC xamu07	~%MOD_FOLDER%/rbg/mus/xamu07.mus~
-	COPY ~%MOD_FOLDER%/rbg/mus/xamu07a.acm~ ~MUSIC/xamu07/xamu07a.acm~	
-//}
+PRINT @4171 /* ~Processing area modifications: Blocks A and C...~ */
+PRINT @4164 /* ~Please be patient. This may take a while.~ */
+SILENT
 
 //{ Block A Area Modifications
 	//{ Places where Brevlik can spawn
@@ -3053,40 +3093,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		COPY_EXISTING ~xaa437.are~ ~override~
 		LPF xa_delete_are_actors END
 	//}
-//}
-
-//{ Block C Area Modifications
-	//{ ar2612 xac100 Candlekeep - Gorion's Quarters
-		COPY_EXISTING ~xac100.are~ ~override/xag3.are~
-		
-		// Change Area Script
-		WRITE_ASCII 0x94 ~xag3~ #8 
-		
-		// Disable Triggers
-		WRITE_LONG 0x460 256
-		WRITE_LONG 0x39C 256
-		
-		LPF xa_delete_are_actors END
-		LPF xa_delete_are_containers END
-		
-		//{ Add Gorion NPC
-		LPF fj_are_structure
-			INT_VAR
-				fj_loc_x = 740
-				fj_loc_y = 1025
-				fj_orientation = 14 // SE
-			STR_VAR
-				fj_structure_type = actor
-				fj_name = xagorion
-				fj_cre_resref = xagorion
-		END
-		//}
-	//}
-//}
-
-//{ New ARE
 	
-
 	//{ Hall of Wonders Cutscene Area ar0131
 		COPY_EXISTING ~xaa362.are~ ~override/xacshow.are~ 
 		
@@ -3723,7 +3730,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		//}
 	//}
 	
-	//{ Painting One
+	//{ Painting One - Dragonspear Revisit
 		EXTEND_TOP ~xacs101.bcs~ ~%MOD_FOLDER%/rbg/baf/xag1.baf~
 		
 		COPY_EXISTING ~xac101.are~ ~override/xag1.are~
@@ -3958,7 +3965,9 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		//}
 	//}
 	
-	//{ Painting Two
+	PRINT @4174 /* ~Almost done...~ */
+	SILENT
+	//{ Painting Two - Grand Duke Savevok
 		COPY_EXISTING ~xaa146.are~ ~override/xag2.are~
 		WRITE_ASCII 0x94 ~xag2~ #8 // Area Script
 		
@@ -4590,34 +4599,34 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	//}
 //}
 
-//{ Script & Dialogue Music
-	COPY_EXISTING ~xanarzu.dlg~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY ~PlaySong(1023)~ ~PlaySong(%xaa22%)~
-	END
+//{ Block C Area Modifications
+	//{ Painting Three - ar2612 xac100 Candlekeep - Gorion's Quarters
+		COPY_EXISTING ~xac100.are~ ~override/xag3.are~
+		
+		// Change Area Script
+		WRITE_ASCII 0x94 ~xag3~ #8 
+		
+		// Disable Triggers
+		WRITE_LONG 0x460 256
+		WRITE_LONG 0x39C 256
+		
+		LPF xa_delete_are_actors END
+		LPF xa_delete_are_containers END
+		
+		//{ Add Gorion NPC
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 740
+				fj_loc_y = 1025
+				fj_orientation = 14 // SE
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xagorion
+				fj_cre_resref = xagorion
+		END
+		//}
+	//}
 //}
 
-//{ Basilisk Figurine
-	COPY ~%MOD_FOLDER%/rbg/bam/xaibas.bam~ ~override~
 
-	COPY_EXISTING ~figspid.eff~ ~override/xabasfig.eff~
-	WRITE_ASCII 0x30 ~basgrt01~ #8
-	
-	COPY_EXISTING ~misc3e.itm~ ~override/xabasfig.itm~
-	WRITE_ASCII 0x3A ~xaibas~ #8
-	WRITE_LONG 0x34 6000
-	WRITE_LONG 0xC RESOLVE_STR_REF(@4152)
-	WRITE_LONG 0x54 RESOLVE_STR_REF(@4153)
-	WRITE_ASCII 0x58 ~xacbas~ #8
-	WRITE_ASCII 0xEE ~xabasfig~ #8
-	WRITE_ASCII 0x76 ~xaibas~ #8
-//}
 
-//{ Stores
-	COPY ~%MOD_FOLDER%/rbg/sto/xamelkor.sto~ ~override~
-	WRITE_LONG 0xc RESOLVE_STR_REF(@4158)
-	
-	COPY ~%MOD_FOLDER%/rbg/sto/xawvbar.sto~ ~override~
-	WRITE_LONG 0xc RESOLVE_STR_REF(@4138)
-	WRITE_ASCII 0x44 ~xarumor~ #8
-//}
