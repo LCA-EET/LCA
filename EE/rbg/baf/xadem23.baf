@@ -8,8 +8,8 @@ THEN
 		CreateVisualEffect("SPPORTAL",[200.225])
 		CreateVisualEffect("SPPORTAL",[430.235])
 		Wait(2)
-		CreateCreature("xaavc5",[200.225],SE)  
-		CreateCreature("xaavc6",[430.235],SW)
+		CreateCreature("xaavc5",[200.225],SE)  // bdabibla
+		CreateCreature("xaavc6",[430.235],SW)  // bdabigre
 		ActionOverride("XANARZU", Enemy())
 		SetGlobal("XA_LC_DemonSpawn", "GLOBAL", 2)
 		EndCutSceneMode()

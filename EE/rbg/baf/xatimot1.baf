@@ -6,12 +6,12 @@ THEN
 		ClearAllActions()
 		FadeToColor([30.0],0)
 		Wait(3)
-		ActionOverride(Player1, LeaveAreaLUA("xaa130", "", [3770.1520], S))
-		ActionOverride(Player2, LeaveAreaLUA("xaa130", "", [3770.1520], S))
-		ActionOverride(Player3, LeaveAreaLUA("xaa130", "", [3770.1520], S))
-		ActionOverride(Player4, LeaveAreaLUA("xaa130", "", [3770.1520], S))
-		ActionOverride(Player5, LeaveAreaLUA("xaa130", "", [3770.1520], S))
-		ActionOverride(Player6, LeaveAreaLUA("xaa130", "", [3770.1520], S))
+		ActionOverride(Player1, LeaveAreaLUA("xaa134", "", [3770.1520], S)) // ar0200
+		ActionOverride(Player2, LeaveAreaLUA("xaa134", "", [3770.1520], S))
+		ActionOverride(Player3, LeaveAreaLUA("xaa134", "", [3770.1520], S))
+		ActionOverride(Player4, LeaveAreaLUA("xaa134", "", [3770.1520], S))
+		ActionOverride(Player5, LeaveAreaLUA("xaa134", "", [3770.1520], S))
+		ActionOverride(Player6, LeaveAreaLUA("xaa134", "", [3770.1520], S))
 		DestroySelf()
 		EndCutSceneMode()
 END

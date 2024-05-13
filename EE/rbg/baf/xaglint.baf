@@ -1,5 +1,12 @@
 IF
-	AreaCheck("XAA141")
+	AreaCheck("xauc")
+	GlobalLT("XA_LC_SkieModActive", "GLOBAL",1)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+IF
+	AreaCheck("XAA145") // ar1300
 	See(Player1)
 	!Range(Player1, 8)
 	ActionListEmpty()
@@ -10,7 +17,7 @@ THEN
 END
 
 IF
-	AreaCheck("XAA141")
+	AreaCheck("XAA145") // ar1300
 	See(Player1)
 	Range(Player1, 8)
 	GlobalLT("XA_LC_TalkedToGlint", "Global", 1)

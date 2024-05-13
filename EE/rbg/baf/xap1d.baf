@@ -18,9 +18,9 @@
 		Global("XA_LC_CorwinSex_3", "GLOBAL", 1)
 		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
 		OR(3)
-			AreaCheck("XAA238") // ToK L1
-			AreaCheck("XAA433") // ToK L2
-			AreaCheck("XAA619") // ToK L3
+			AreaCheck("XAA242") // ToK L1 ar0119
+			AreaCheck("XAA457") // ToK L2 ar0120
+			AreaCheck("XAA605") // ToK L3 ar0121
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_SleepBG", "GLOBAL", 1)
@@ -34,9 +34,9 @@
 		Global("XA_LC_CorwinSex_3", "GLOBAL", 1)
 		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
 		OR(3)
-			AreaCheck("XAA264") // B&S L1
-			AreaCheck("XAA415") // B&S L2
-			AreaCheck("XAA629") // B&S L3
+			AreaCheck("XAA268") // B&S L1 ar0105
+			AreaCheck("XAA439") // B&S L2 ar0106
+			AreaCheck("XAA614") // B&S L3 ar0107
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_SleepBG", "GLOBAL", 1)
@@ -50,8 +50,8 @@
 		Global("XA_LC_CorwinSex_3", "GLOBAL", 1)
 		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
 		OR(2)
-			AreaCheck("XAA117") // Elfsong L1
-			AreaCheck("XAA206") // Elfsong L2
+			AreaCheck("XAA119") // Elfsong L1 ar0705
+			AreaCheck("XAA210") // Elfsong L2 ar0706
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_SleepBG", "GLOBAL", 1)
@@ -65,8 +65,8 @@
 		Global("XA_LC_CorwinSex_3", "GLOBAL", 1)
 		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
 		OR(2)
-			AreaCheck("XAA133") // Blushing Mermaid L1
-			AreaCheck("XAA253") // Blushing Mermaid L2
+			AreaCheck("XAA137") // Blushing Mermaid L1 ar0114
+			AreaCheck("XAA257") // Blushing Mermaid L2 ar0115
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_SleepBG", "GLOBAL", 1)

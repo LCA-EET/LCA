@@ -140,7 +140,11 @@ END
 IF ~~ THEN BEGIN XA_SetUp
 	SAY @27 /* ~I'll go and get set up on the roof. Good luck.~*/
 	
-	IF ~~ THEN EXIT
+	IF ~~ THEN 
+	DO ~
+		DestroySelf()
+	~
+	EXIT
 END
 
 CHAIN IF ~

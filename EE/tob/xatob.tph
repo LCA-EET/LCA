@@ -130,9 +130,13 @@ END
 		COPY_EXISTING ~telpit1.cre~ ~override/xaavc3.cre~ 
 		COPY_EXISTING ~demcor01.cre~ ~override/xaavc4.cre~
 		COPY_EXISTING ~xag115.cre~ ~override/xaavc5.cre~ // bdabibla
+		WRITE_ASCII 0x280 ~xaavc5~ #20
 		COPY_EXISTING ~xag116.cre~ ~override/xaavc6.cre~ // bdabigre
+		WRITE_ASCII 0x280 ~xaavc6~ #20
 		COPY_EXISTING ~xag117.cre~ ~override/xaavc7.cre~ // bdabired
+		WRITE_ASCII 0x280 ~xaavc7~ #20
 		COPY_EXISTING ~xag118.cre~ ~override/xaavc8.cre~ // bdhamatu
+		WRITE_ASCII 0x280 ~xaavc8~ #20
 		COPY_EXISTING ~xag114.cre~ ~override/xaavc9.cre~ // bdimp
 		COPY_EXISTING ~xag111.cre~ ~override/xaavc10.cre~ // bdlemure
 		COPY_EXISTING ~elfirg01.cre~ ~override/xaavc11.cre~

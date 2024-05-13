@@ -9,13 +9,13 @@ THEN
 END
 
 IF 
-	Global("XA_LC_BeginSpawning", "GLOBAL", 1)
+	Global("XA_LC_BeginSpawning", "MYAREA", 1)
 	OR(2)
 		Dead("XAC109") // bdcaela3 (Good)
 		Dead("XAC108") // bdcaela2 (Evil)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LC_BeginSpawning", "GLOBAL", 2)
+		SetGlobal("XA_LC_BeginSpawning", "MYAREA", 2)
 END
 
 IF
@@ -74,13 +74,13 @@ THEN
 	RESPONSE #100
 		Wait(1)
 		SetGlobal("XA_LC_G1_Intro", "GLOBAL", 1)
-		SetGlobal("XA_LC_BeginSpawning", "GLOBAL", 1)
+		SetGlobal("XA_LC_BeginSpawning", "MYAREA", 1)
 		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 END
 
 IF
 	GlobalLT("XA_LC_CoalitionAlive", "GLOBAL", 100)
-	Global("XA_LC_BeginSpawning", "GLOBAL", 1)
+	Global("XA_LC_BeginSpawning", "MYAREA", 1)
 THEN
 	RESPONSE #10
 		CreateCreature("xacoal0", [20.3300], NE)
@@ -131,7 +131,7 @@ END
 
 IF
 	GlobalLT("XA_LC_CrusadersAlive", "GLOBAL", 100)
-	Global("XA_LC_BeginSpawning", "GLOBAL", 1)
+	Global("XA_LC_BeginSpawning", "MYAREA", 1)
 THEN
 	RESPONSE #10
 		CreateCreature("xacrus0", [2690.1870], SW)
@@ -311,7 +311,7 @@ END
 
 IF
 	GlobalLT("XA_LC_CoalitionAlive", "GLOBAL", 100)
-	Global("XA_LC_BeginSpawning", "GLOBAL", 1)
+	Global("XA_LC_BeginSpawning", "MYAREA", 1)
 THEN
 	RESPONSE #100
 		IncrementGlobal("XA_LC_CoalitionAlive", "GLOBAL", 1)
@@ -320,7 +320,7 @@ END
 
 IF
 	GlobalLT("XA_LC_CrusadersAlive", "GLOBAL", 100)
-	Global("XA_LC_BeginSpawning", "GLOBAL", 1)
+	Global("XA_LC_BeginSpawning", "MYAREA", 1)
 THEN
 	RESPONSE #100
 		IncrementGlobal("XA_LC_CrusadersAlive", "GLOBAL", 1)

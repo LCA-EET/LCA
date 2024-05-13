@@ -1,5 +1,5 @@
 IF
-	AreaCheck("XAA283")
+	AreaCheck("XAA287") // ar0607
 	See(Player1)
 	GlobalLT("XA_LC_VirgilCellTalk", "GLOBAL", 1)
 THEN

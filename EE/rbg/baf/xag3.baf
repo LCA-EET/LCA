@@ -2,7 +2,6 @@ IF
 	GlobalLT("XA_LC_GorionSpawn", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		CreateCreature("XAGORION", [740.1025], SE)
 		SetGlobal("XA_LC_GorionSpawn", "MYAREA", 1)
 		FadeFromColor([30.0],0)
 		Wait(1)

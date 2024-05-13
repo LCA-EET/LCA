@@ -58,11 +58,11 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_G2TimerSet", "LOCALS", 1)
-		SetGlobalTimer("XA_LC_SarevokG2", "GLOBAL", TWO_ROUNDS)
+		SetGlobalTimer("XA_LC_SarevokG2", "MYAREA", TWO_ROUNDS)
 END
 
 IF 
-	GlobalTimerExpired("XA_LC_SarevokG2", "GLOBAL")
+	GlobalTimerExpired("XA_LC_SarevokG2", "MYAREA")
 	GlobalLT("XA_LC_EndG2", "GLOBAL", 1)
 THEN
 	RESPONSE #100

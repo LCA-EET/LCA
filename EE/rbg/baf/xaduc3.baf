@@ -16,11 +16,11 @@ THEN
 END
 
 IF
-	GlobalLT("XA_LC_RohmaCorwinCS", "XADUC3", 1)
+	GlobalLT("XA_LC_RohmaCorwinCS", "MYAREA", 1)
 	Global("XA_LC_PrepareCSBGEND1", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LC_RohmaCorwinCS", "XADUC3", 1)
+		SetGlobal("XA_LC_RohmaCorwinCS", "MYAREA", 1)
 		StartCutSceneMode()
 		StartCutScene("XABGEND1")
 END

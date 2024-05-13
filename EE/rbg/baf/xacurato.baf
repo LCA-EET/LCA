@@ -1,4 +1,3 @@
-
 IF
 	See("XACORWIN")
 	InParty("XACORWIN")
@@ -21,3 +20,12 @@ THEN
 		StartDialogNoSet(Player1)
 END
 
+IF
+	Global("XA_LC_MagdaTalk", "GLOBAL", 1)
+	!Range("XACORWIN", 8)
+	InMyArea("XACORWIN")
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		MoveToObject("XACORWIN")
+END

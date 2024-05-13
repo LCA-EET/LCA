@@ -5,7 +5,6 @@ THEN
 	RESPONSE #100
 		CutSceneId(Player1)
 		ZoomLock(TRUE)
-		CreateCreature("XACURATO", [700.820], SE)
 		FadeFromColor([30.0],0)
 		Wait(2)
 		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))

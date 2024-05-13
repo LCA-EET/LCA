@@ -7,20 +7,8 @@ THEN
 		AdvanceTime(FOURTEEN_DAYS)
 		DayNight(8)
 		SetGlobal("XA_LC_ReturnToBG", "GLOBAL", 2)
-		//EndCutSceneMode()
+		/* So long, old friend :) */
 		Wait(1)
 		MoveToCampaign("ToB")
-		
-		/*
-		LeaveAreaLUA("XA4000","",[1300.1840],S)
-		
-		ActionOverride(Player2, LeaveAreaLUA("XA4000","",[1300.1840],S))
-		ActionOverride(Player3, LeaveAreaLUA("XA4000","",[1300.1840],S))
-		ActionOverride(Player4, LeaveAreaLUA("XA4000","",[1300.1840],S))
-		ActionOverride(Player5, LeaveAreaLUA("XA4000","",[1300.1840],S))
-		ActionOverride(Player6, LeaveAreaLUA("XA4000","",[1300.1840],S))
-		*/
-		//Wait(3)
-		//FadeFromColor([30.0],0)
 		EndCutSceneMode()
 END

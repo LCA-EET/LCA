@@ -8,5 +8,4 @@ THEN
 		SetGlobal("XA_LC_StartTOB", "GLOBAL", 1)
 		TextScreen("XASARA3")
 		EndCutSceneMode()
-		//StartCutscene("XASARA")
 END

@@ -1,5 +1,5 @@
 IF
-	AreaCheck("XAA206")
+	AreaCheck("XAA210") // ar0706
 	Global("XA_LC_SavedLyriel", "GLOBAL", 2)
 	InMyArea(Player1)
 THEN

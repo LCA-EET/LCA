@@ -1,7 +1,7 @@
 IF
 	Global("XA_LC_IncubusHostile", "LOCALS", 1)
 	Global("XA_LC_PrisonKnowledge", "GLOBAL", 6)
-	!Global("XA_LC_IncubusBuff", "LOCALS", 1)
+	GlobalLT("XA_LC_IncubusBuff", "LOCALS", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -17,7 +17,7 @@ END
 IF
 	Global("XA_LC_IncubusHostile", "LOCALS", 1)
 	Global("XA_LC_PrisonKnowledge", "GLOBAL", 4)
-	!Global("XA_LC_IncubusBuff", "LOCALS", 1)
+	GlobalLT("XA_LC_IncubusBuff", "LOCALS", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -92,7 +92,7 @@ END
 
 IF
 	HPPercentLT(Myself, 100)
-	!Global("XA_LC_ParleyAttack", "GLOBAL", 1)
+	GlobalLT("XA_LC_ParleyAttack", "GLOBAL", 1)
 	InMyArea(Player1)
 	GlobalLT("XA_LC_ConfrontDemon", "GLOBAL", 1)
 THEN
@@ -105,7 +105,7 @@ THEN
 END
 
 IF 
-	!Global("XA_LC_IncubusHostile", "LOCALS", 1)
+	GlobalLT("XA_LC_IncubusHostile", "LOCALS", 1)
 THEN
 	RESPONSE #100
 		NoAction()

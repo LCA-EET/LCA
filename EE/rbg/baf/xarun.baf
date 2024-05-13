@@ -12,7 +12,7 @@ IF
 	OR(2)
 		Global("XA_LC_SarevokHostile", "GLOBAL", 1)
 		HPPercentLT(Myself, 100)
-	!Global("XA_LC_RunAway", "LOCALS", 1)
+	GlobalLT("XA_LC_RunAway", "LOCALS", 1)
 THEN
 	RESPONSE #10
 		SetGlobal("XA_LC_RunAway", "LOCALS", 1)

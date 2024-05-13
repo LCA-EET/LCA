@@ -1172,12 +1172,12 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	COPY_EXISTING ~xalcspy.cre~ ~override/xacell.cre~ // Cell Spy
 	WRITE_ASCII 0x248 ~xacell~ #8		// Override Script
 	
-	COPY_EXISTING ~xalcspy.cre~ ~override/xaskieiv.cre~ // Skie invisible
+	COPY_EXISTING ~xalcspy.cre~ ~override/xaskie2.cre~ // Skie invisible
 	SAY NAME1 @3070 /* Skie */
 	SAY NAME2 @3070
 	WRITE_ASCII 0x34 ~xaskies~ #8 // Portrait
 	WRITE_ASCII 0x2CC ~xaskie~ #8 	// Dialogue
-	WRITE_ASCII 0x280 ~xaskie~ #20  	// Script Name
+	WRITE_ASCII 0x280 ~xaskie2~ #20  	// Script Name
 	WRITE_ASCII 0x248 ~xaskie~ #8		// Override Script
 	
 	COPY_EXISTING ~xalcspy.cre~ ~override/xabeno2.cre~ // Beno invisible
@@ -1191,7 +1191,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	SAY NAME1 @4074 /* Glint */
 	SAY NAME2 @4074
 	WRITE_ASCII 0x34 ~xac100~ #8 // Portrait
-	WRITE_ASCII 0x280 ~xaglint~ #20  	// Script Name
+	WRITE_ASCII 0x280 ~xaglint2~ #20  	// Script Name
 	WRITE_ASCII 0x248 ~xaglint~ #8		// Override Script
 	
 	COPY_EXISTING ~xalcspy.cre~ ~override/xarohma3.cre~ // Rohma invisible
@@ -2014,6 +2014,26 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 				WRITE_ASCII 0x1DB8 ~xabondag~ #8 // Bone Dagger
 			//}
 		//}
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 4600
+				fj_loc_y = 975
+				fj_orientation = 0 // S
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xaskie2
+				fj_cre_resref = xaskie2
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 4610
+				fj_loc_y = 985
+				fj_orientation = 0 // S
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xaglint2
+				fj_cre_resref = xaglint2
+		END
 	//}
 	
 	//{ ar0126 xaa361 Ragefast's Home
@@ -2990,6 +3010,9 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		// Corwin's Home Map Note
 		ADD_MAP_NOTE #1732 #1126 ~violet~ @4160 
 		
+		// Change Travel Trigger to Point to Corwin's Home
+		WRITE_ASCII 0x3DC4 ~xahome~ #8
+		
 		//{ Add Glint NPC
 		LPF fj_are_structure
 			INT_VAR
@@ -3029,6 +3052,16 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		WRITE_LONG 0x39C 256
 		
 		LPF xa_delete_are_actors END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 740
+				fj_loc_y = 1025
+				fj_orientation = 14 // SE
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xagorion
+				fj_cre_resref = xagorion
+		END
 	//}
 //}
 
@@ -3118,6 +3151,17 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 				fj_name = xaorph06
 				fj_cre_resref = girl01
 				fj_dlg_resref = xaorph06
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 700
+				fj_loc_y = 820
+				fj_orientation = 14 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xacurato
+				fj_cre_resref = xacurato
 		END
 	//}
 	
@@ -3708,6 +3752,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	
 	//{ Corwin's Home, L1 ar1316
 		COPY_EXISTING ~xaa272.are~ ~override/xahome.are~ 
+		WRITE_ASCII 0x438 ~xahom2~ #8
 		WRITE_LONG 0x688 xamu02
 		WRITE_LONG 0x68C xamu02
 		
@@ -3742,6 +3787,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		COPY_EXISTING ~xaa431.are~ ~override/xahom2.are~
 		WRITE_LONG 0x784 xamu02
 		WRITE_LONG 0x788 xamu02
+		WRITE_ASCII 0x374 ~xahome~ #8
 		
 		LPF xa_delete_are_actors END
 	//}
@@ -3784,6 +3830,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	
 	//{ Lyriel Painting
 		COPY ~%MOD_FOLDER%/rbg/are/xapaint1.are~ ~override~
+		
 	//}
 	
 	//{ Walk Home Cutscene Area
