@@ -1,3 +1,13 @@
+IF
+	InMyArea(Player1)
+	GlobalLT("XA_FacePlayer", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_FacePlayer", "LOCALS", 1)
+		FaceObject(Player1)
+		Continue()
+END
+
 IF 
 	GlobalLT("XA_LC_ChangeClass", "LOCALS", 1)
 THEN

@@ -451,7 +451,22 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 				xa_override = ~xasarevo~
 				xa_race = ~wtasight~
 		END
-	
+		
+		COPY_EXISTING ~xaa953.cre~ ~override/xag2dop0.cre~ // dopmer
+		WRITE_ASCII 0x250 ~xag2dop~ #8 // class script
+		WRITE_ASCII 0x280 ~xag2dop0~ #8 // script name
+		
+		COPY_EXISTING ~xag2dop0.cre~ ~override/xag2dop1.cre~
+		WRITE_ASCII 0x280 ~xag2dop1~ #8 // script name
+		WRITE_LONG 0x28 0xC810 // Fat woman
+		WRITE_BYTE 0x275 2 // Female
+		
+		COPY_EXISTING ~xag2dop0.cre~ ~override/xag2dop2.cre~
+		WRITE_ASCII 0x280 ~xag2dop2~ #8 // script name
+		
+		COPY_EXISTING ~xag2dop1.cre~ ~override/xag2dop3.cre~
+		WRITE_ASCII 0x280 ~xag2dop3~ #8 // script name
+		
 		//{ Male Townspeople
 			ACTION_DEFINE_ARRAY maleTownspeople
 			BEGIN
@@ -3052,6 +3067,9 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		WRITE_LONG 0x39C 256
 		
 		LPF xa_delete_are_actors END
+		LPF xa_delete_are_containers END
+		
+		//{ Add Gorion NPC
 		LPF fj_are_structure
 			INT_VAR
 				fj_loc_x = 740
@@ -3062,6 +3080,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 				fj_name = xagorion
 				fj_cre_resref = xagorion
 		END
+		//}
 	//}
 //}
 
@@ -3502,24 +3521,206 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		END
 	//}
 	
-	//{ Ducal Palace 3FL ar0110	
-		COPY_EXISTING ~xaa610.are~ ~override/ar0110.are~ 
+	//{ Ducal Palace 3FL ar0110	Post-Kidnap
+		COPY_EXISTING ~xaa610.are~ ~override/xaduc3.are~ 
 		WRITE_LONG 0xEF8 xamu06
 		WRITE_LONG 0xEFC xamu06
 		
 		LPF xa_delete_are_actors END
 		LPF xa_delete_are_triggers END
 		
+		//{ Add NPCs
 		LPF fj_are_structure
-				INT_VAR
-					fj_loc_x = 1600
-					fj_loc_y = 900
-					fj_orientation = 0 // S 
-				STR_VAR
-					fj_structure_type = actor
-					fj_name = Drake
-					fj_cre_resref = xadrake0
-			END
+			INT_VAR
+				fj_loc_x = 331
+				fj_loc_y = 311
+				fj_orientation = 14 // SE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Valiant
+				fj_cre_resref = xaffval2
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 650
+				fj_loc_y = 590
+				fj_orientation = 10 // NE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Belt
+				fj_cre_resref = xabelt
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 730
+				fj_loc_y = 550
+				fj_orientation = 2 // SW 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Eltan
+				fj_cre_resref = xaeltan
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 718
+				fj_loc_y = 622
+				fj_orientation = 8 // N 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Nederlok
+				fj_cre_resref = xanederl
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 400
+				fj_loc_y = 385
+				fj_orientation = 2 // SW 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Skie
+				fj_cre_resref = xaskie
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 370
+				fj_loc_y = 370
+				fj_orientation = 2 // SW 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Rohma
+				fj_cre_resref = xarohma
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 400
+				fj_loc_y = 460
+				fj_orientation = 10 // NE
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Liia
+				fj_cre_resref = xaliia
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 630
+				fj_loc_y = 455
+				fj_orientation = 14 // SE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Valiant
+				fj_cre_resref = xaffval3
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 666		
+				fj_loc_y = 210
+				fj_orientation = 2 // SW 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Valiant
+				fj_cre_resref = xaffval1
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 790
+				fj_loc_y = 580
+				fj_orientation = 4 // W 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Entar
+				fj_cre_resref = xaentar
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 216
+				fj_loc_y = 399
+				fj_orientation = 4 // W 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Audamar
+				fj_cre_resref = xaaudam2
+		END
+		//}
+		
+		//{ Add Triggers
+		LPF fj_are_structure
+			INT_VAR
+				fj_type 		= 0
+				fj_box_left		= 454
+				fj_box_top		= 313
+				fj_box_right	= 456
+				fj_box_bottom	= 311
+				fj_cursor_idx	= 0
+				fj_vertex_0     = 454 + (311 << 16)
+				fj_vertex_1     = 454 + (313 << 16)
+				fj_vertex_2     = 456 + (313 << 16)
+				fj_vertex_3     = 456 + (311<< 16)
+			STR_VAR
+				fj_structure_type = region
+				fj_name = ~TrigRom~
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_type 		= 0
+				fj_box_left		= 485
+				fj_box_top		= 292
+				fj_box_right	= 487
+				fj_box_bottom	= 290
+				fj_cursor_idx	= 0
+				fj_vertex_0     = 487 + (292 << 16)
+				fj_vertex_1     = 487 + (290 << 16)
+				fj_vertex_2     = 485 + (290 << 16)
+				fj_vertex_3     = 485 + (292 << 16)
+			STR_VAR
+				fj_structure_type = region
+				fj_name = ~TrigCor~
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_type 		= 0
+				fj_box_left		= 585
+				fj_box_top		= 200
+				fj_box_right	= 587
+				fj_box_bottom	= 198
+				fj_cursor_idx	= 0
+				fj_vertex_0     = 587 + (200 << 16)
+				fj_vertex_1     = 587 + (198 << 16)
+				fj_vertex_2     = 585 + (198 << 16)
+				fj_vertex_3     = 585 + (200 << 16)
+			STR_VAR
+				fj_structure_type = region
+				fj_name = ~TrigExit~
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_type 		= 0
+				fj_box_left		= 545
+				fj_box_top		= 285
+				fj_box_right	= 547
+				fj_box_bottom	= 287
+				fj_cursor_idx	= 0
+				fj_vertex_0     = 545 + (285 << 16)
+				fj_vertex_1     = 545 + (287 << 16)
+				fj_vertex_2     = 547 + (287 << 16)
+				fj_vertex_3     = 547 + (285 << 16)
+			STR_VAR
+				fj_structure_type = region
+				fj_name = ~TrigExit~
+		END
+		//}
 	//}
 	
 	//{ Painting One
@@ -3759,9 +3960,307 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	
 	//{ Painting Two
 		COPY_EXISTING ~xaa146.are~ ~override/xag2.are~
-		WRITE_LONG 0x59B0 xaa21
-		WRITE_LONG 0x59B4 xaa21
-		WRITE_LONG 0x59BC xaa22
+		WRITE_ASCII 0x94 ~xag2~ #8 // Area Script
+		
+		LPF xa_delete_are_actors END
+		LPF xa_delete_are_triggers END
+		//{ Add Doppelgangers
+			LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 925
+					fj_loc_y = 1605
+					fj_orientation = 12 // E 
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = xag2dop0
+					fj_cre_resref = xag2dop0
+			END
+			
+			LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 1520
+					fj_loc_y = 1620
+					fj_orientation = 4 // W 
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = xag2dop1
+					fj_cre_resref = xag2dop1
+			END
+			
+			LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 1510
+					fj_loc_y = 1470
+					fj_orientation = 4 // W 
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = xag2dop2
+					fj_cre_resref = xag2dop2
+			END
+			
+			LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 990
+					fj_loc_y = 1690
+					fj_orientation = 10 // NE 
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = xag2dop3
+					fj_cre_resref = xag2dop3
+			END
+		//}
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 1175
+				fj_loc_y = 1635
+				fj_orientation = 12 // E 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xaffexec
+				fj_cre_resref = xaffexec
+		END
+		
+		//{ Sarevok & Followers
+			LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 1227
+					fj_loc_y = 1557
+					fj_orientation = 12 // E 
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = xasarevo
+					fj_cre_resref = xasarevo
+			END
+			
+			LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 1380
+					fj_loc_y = 1560
+					fj_orientation = 11 // ENE 
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = xazhalim
+					fj_cre_resref = xazhalim
+			END
+			
+			LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 1030
+					fj_loc_y = 1530
+					fj_orientation = 6 // NW 
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = xadiyab
+					fj_cre_resref = xadiyab
+			END
+			
+			LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 1400
+					fj_loc_y = 1650
+					fj_orientation = 10 // NE 
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = xaaasim
+					fj_cre_resref = xaaasim
+			END
+			
+			LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 1300
+					fj_loc_y = 1715
+					fj_orientation = 14 // SE 
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = xagardus
+					fj_cre_resref = xagardus
+			END
+			
+			LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 1100
+					fj_loc_y = 1550
+					fj_orientation = 14 // SE 
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = xasemaj
+					fj_cre_resref = xasemaj
+			END
+			
+			LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 1090
+					fj_loc_y = 1650
+					fj_orientation = 14 // SE 
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = xaangelo
+					fj_cre_resref = xaangelo
+			END
+		//}
+		
+		//{ Add Crowds
+		PATCH_DEFINE_ARRAY xa_extras
+			BEGIN
+				xaa432 // boyba1
+				xaa175 // boyba1_a
+				xaa519 // boyba1_c
+				xaa548 // ftowb5
+				xaa987 // ftowb6
+				xaa696 // ftowb7
+				xaa560 // ftowba
+				xaa167 // ftowba_a
+				xaa375 // ftowba_b
+				xaa251 // ftowba_c
+				xaa130 // ftowba_d
+				xaa134 // ftowba_e
+				xaa129 // ftowbasc
+				xaa291 // ftowbasn
+				xaa605 // ftowbax
+				xaa127 // ftwbax_a
+				xaa140 // ftwbax_b
+				xaa163 // ftwbax_c
+				xaa135 // ftwbax_d
+				xaa168 // ftwbax_e
+				xaa459 // girba1
+				xaa880 // girba2
+				xaa624 // girba3
+				xaa731 // mtob2
+				xaa1190 // mtob3
+				xaa849 // mtob6
+				xaa694 // mtob7
+				xaa877 // mtob8
+				xaa695 // mtob9
+				xaa463 // mtowba
+				xaa151 // mtowba_a
+				xaa166 // mtowba_b
+				xaa180 // mtowba_c
+				xaa172 // mtowba_d
+				xaa250 // mtowba_e
+				xaa170 // mtowbasc
+				xaa132 // mtowbasn
+				xaa452 // mtowbast
+				xaa583 // mtowbax
+				xaa498 // mtowbesn
+				xaa1207 // mtowwon1
+				xaa1208 // mtowwon2
+				xaa1209 // mtowwon3
+				xaa123 // mtwbax_a
+				xaa124 // mtwbax_b
+				xaa128 // mtwbax_c
+				xaa126 // mtwbax_d
+				xaa131 // mtwbax_e
+				xaa958 // mtwslim
+				xaa959 // mtwslim2
+				xaa960 // mtwslim3
+				xaa257 // nobbax_a
+				xaa200 // nobbax_b
+				xaa524 // nobbax_c
+				xaa372 // nobbax_d
+				xaa396 // nobbax_e
+				xaa730 // nobl11
+				xaa1041 // nobl12
+				xaa932 // nobl14
+				xaa359 // noblba_a
+				xaa767 // noblba_b
+				xaa532 // noblba_c
+				xaa521 // noblba_d
+				xaa755 // noblba_e
+				xaa1039 // nobw5
+				xaa1353 // nobw7
+				xaa1334 // nobw8
+				xaa728 // nobw9
+				xaa360 // nobwba
+				xaa1078 // nobwba_a
+				xaa514 // nobwba_d
+				xaa1090 // nobwba_e
+				xaa361 // nowbax_a
+				xaa397 // nowbax_b
+				xaa402 // nowbax_c
+				xaa369 // nowbax_d
+				xaa370 // nowbax_e
+			END
+			LPF xa_add_extras_rescript
+				INT_VAR
+					xa_minX = 700
+					xa_minY = 1400
+					xa_maxX = 1000
+					xa_maxY = 2000
+					xa_numToGenerate = 77
+					xa_poolSize = 77
+					xa_orientation = 12 // E
+				STR_VAR 
+					xa_override = ~xarun~
+			END
+		
+		PATCH_DEFINE_ARRAY xa_extras
+			BEGIN
+				xaa432 // boyba1
+				xaa175 // boyba1_a
+				xaa519 // boyba1_c
+				xaa548 // ftowb5
+				xaa987 // ftowb6
+				xaa696 // ftowb7
+				xaa560 // ftowba
+				xaa167 // ftowba_a
+				xaa375 // ftowba_b
+				xaa251 // ftowba_c
+				xaa130 // ftowba_d
+				xaa134 // ftowba_e
+				xaa129 // ftowbasc
+				xaa291 // ftowbasn
+				xaa605 // ftowbax
+				xaa127 // ftwbax_a
+				xaa140 // ftwbax_b
+				xaa163 // ftwbax_c
+				xaa135 // ftwbax_d
+				xaa168 // ftwbax_e
+				xaa459 // girba1
+				xaa880 // girba2
+				xaa624 // girba3
+				xaa731 // mtob2
+				xaa1190 // mtob3
+				xaa849 // mtob6
+				xaa694 // mtob7
+				xaa877 // mtob8
+				xaa695 // mtob9
+				xaa463 // mtowba
+				xaa151 // mtowba_a
+				xaa166 // mtowba_b
+				xaa180 // mtowba_c
+				xaa172 // mtowba_d
+				xaa250 // mtowba_e
+				xaa170 // mtowbasc
+				xaa132 // mtowbasn
+				xaa452 // mtowbast
+				xaa583 // mtowbax
+				xaa498 // mtowbesn
+				xaa1207 // mtowwon1
+				xaa1208 // mtowwon2
+				xaa1209 // mtowwon3
+				xaa123 // mtwbax_a
+				xaa124 // mtwbax_b
+				xaa128 // mtwbax_c
+				xaa126 // mtwbax_d
+				xaa131 // mtwbax_e
+				xaa958 // mtwslim
+				xaa959 // mtwslim2
+				xaa960 // mtwslim3
+			END
+			LPF xa_add_extras_rescript
+				INT_VAR
+					xa_minX = 1420
+					xa_minY = 1410
+					xa_maxX = 1750
+					xa_maxY = 1650
+					xa_numToGenerate = 51
+					xa_poolSize = 51
+					xa_orientation = 4 // W
+				STR_VAR 
+					xa_override = ~xarun~
+			END
+		//}
 	//}
 	
 	//{ Corwin's Home, L1 ar1316
@@ -3843,8 +4342,99 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	//}
 	
 	//{ Lyriel Painting
-		COPY ~%MOD_FOLDER%/rbg/are/xapaint1.are~ ~override~
+		//COPY ~%MOD_FOLDER%/rbg/are/xapaint1.are~ ~override~
+		COPY_EXISTING ~ar0407.are~ ~override/xapaint1.are~
+		WRITE_ASCII 0x94 ~xapaint1~ // area script
 		
+		LPF xa_delete_are_actors END
+		LPF xa_delete_are_triggers END		
+		
+		//{ Painting Entry Triggers
+		LPF fj_are_structure
+			INT_VAR
+				fj_type 		= 2
+				fj_box_left		= 265
+				fj_box_top		= 216
+				fj_box_right	= 290
+				fj_box_bottom	= 247
+				fj_cursor_idx	= 22
+				fj_vertex_0     = 267 + (247 << 16)
+				fj_vertex_1     = 290 + (233 << 16)
+				fj_vertex_2     = 287 + (216 << 16)
+				fj_vertex_3     = 265 + (228 << 16)
+			STR_VAR
+				fj_reg_script = ~xatrigg3~
+				fj_structure_type = region
+				fj_name = ~xatrigg3~
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_type 		= 2
+				fj_box_left		= 334
+				fj_box_top		= 170
+				fj_box_right	= 366
+				fj_box_bottom	= 197
+				fj_cursor_idx	= 22
+				fj_vertex_0     = 334 + (182 << 16)
+				fj_vertex_1     = 360 + (170 << 16)
+				fj_vertex_2     = 366 + (181 << 16)
+				fj_vertex_3     = 335 + (197 << 16)
+			STR_VAR
+				fj_reg_script = ~xatrigg2~
+				fj_structure_type = region
+				fj_name = ~xatrigg2~
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_type 		= 2
+				fj_box_left		= 190
+				fj_box_top		= 263
+				fj_box_right	= 224
+				fj_box_bottom	= 300
+				fj_cursor_idx	= 22
+				fj_vertex_0     = 219 + (263 << 16)
+				fj_vertex_1     = 224 + (285 << 16)
+				fj_vertex_2     = 193 + (300 << 16)
+				fj_vertex_3     = 190 + (283 << 16)
+			STR_VAR
+				fj_reg_script = ~xatrigg1~
+				fj_structure_type = region
+				fj_name = ~xatrigg1~
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_type 		= 2
+				fj_box_left		= 600
+				fj_box_top		= 128
+				fj_box_right	= 630
+				fj_box_bottom	= 170
+				fj_cursor_idx	= 22
+				fj_vertex_0     = 600 + (150 << 16)
+				fj_vertex_1     = 600 + (130 << 16)
+				fj_vertex_2     = 630 + (150 << 16)
+				fj_vertex_3     = 630 + (175 << 16)
+			STR_VAR
+				fj_reg_script = ~xatrigs~
+				fj_structure_type = region
+				fj_name = ~xatrigs~
+		END
+		//}
+		
+		//{ Add Lyriel NPC
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 465
+				fj_loc_y = 300
+				fj_orientation = 10 // NE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Audamar
+				fj_cre_resref = xalyriel
+		END
+		//}
 	//}
 	
 	//{ Walk Home Cutscene Area // ar1300
