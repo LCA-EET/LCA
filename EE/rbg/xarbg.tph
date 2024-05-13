@@ -3502,10 +3502,24 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		END
 	//}
 	
-	//{ Ducal Palace 3FL	
-		COPY ~%MOD_FOLDER%/rbg/are/xaduc3.are~ ~override~
-		WRITE_LONG 0x1A2C xamu06
-		WRITE_LONG 0x1A30 xamu06
+	//{ Ducal Palace 3FL ar0110	
+		COPY_EXISTING ~xaa610.are~ ~override/ar0110.are~ 
+		WRITE_LONG 0xEF8 xamu06
+		WRITE_LONG 0xEFC xamu06
+		
+		LPF xa_delete_are_actors END
+		LPF xa_delete_are_triggers END
+		
+		LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 1600
+					fj_loc_y = 900
+					fj_orientation = 0 // S 
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = Drake
+					fj_cre_resref = xadrake0
+			END
 	//}
 	
 	//{ Painting One
@@ -3833,11 +3847,61 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		
 	//}
 	
-	//{ Walk Home Cutscene Area
-		COPY ~%MOD_FOLDER%/rbg/are/xawlkhom.are~ ~override~
+	//{ Walk Home Cutscene Area // ar1300
+		COPY_EXISTING ~xaa145.are~ ~override/xawlkhom.are~
+		LPF xa_delete_are_actors END
+		LPF xa_delete_are_triggers END
 		
-		// Replace Music
-		WRITE_LONG 0x5BE8 0
+		LPF fj_are_structure
+			INT_VAR
+				fj_type 		= 0
+				fj_box_left		= 1706
+				fj_box_top		= 1050
+				fj_box_right	= 1746
+				fj_box_bottom	= 1127
+				fj_cursor_idx	= 0
+				fj_vertex_0     = 1706 + (1127 << 16)
+				fj_vertex_1     = 1746 + (1107 << 16)
+				fj_vertex_2     = 1746 + (1050 << 16)
+				fj_vertex_3     = 1706 + (1069 << 16)
+			STR_VAR
+				fj_structure_type = region
+				fj_name = ~Door1316~
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_type 		= 0
+				fj_box_left		= 2083
+				fj_box_top		= 1128
+				fj_box_right	= 2107
+				fj_box_bottom	= 1107
+				fj_cursor_idx	= 0
+				fj_vertex_0     = 2083 + (1112 << 16)
+				fj_vertex_1     = 2100 + (1107 << 16)
+				fj_vertex_2     = 2107 + (1121 << 16)
+				fj_vertex_3     = 2094 + (1128 << 16)
+			STR_VAR
+				fj_structure_type = region
+				fj_name = ~CSTrigger2~
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_type 		= 0
+				fj_box_left		= 2013
+				fj_box_top		= 1081
+				fj_box_right	= 2040
+				fj_box_bottom	= 1066
+				fj_cursor_idx	= 0
+				fj_vertex_0     = 2013 + (1072 << 16)
+				fj_vertex_1     = 2027 + (1066 << 16)
+				fj_vertex_2     = 2040 + (1075 << 16)
+				fj_vertex_3     = 2025 + (1081 << 16)
+			STR_VAR
+				fj_structure_type = region
+				fj_name = ~CSTrigger~
+		END
 	//}
 	
 	//{ Undercity Temple ar0125
