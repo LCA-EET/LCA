@@ -112,7 +112,6 @@ THEN
 END
 
 IF
-	AreaCheck("XAA206")
 	Global("XA_LC_SavedLyriel", "GLOBAL", 1)
 	InMyArea(Player1)
 	Global("XA_LC_ExitPrison", "GLOBAL", 1)

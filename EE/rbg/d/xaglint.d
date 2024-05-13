@@ -2,7 +2,7 @@ BEGIN ~XAGLINT~
 
 IF ~
 	!IsGabber(Player1)
-	AreaCheck("XAA141")
+	AreaCheck("xaa145") // ar1300
 ~
 THEN BEGIN XA_TalkToPlayer
 	SAY @28  /* ~Don't mind me. I'm just waiting for someone.~*/
@@ -14,7 +14,7 @@ END
 IF ~
 	IsGabber(Player1)
 	GlobalLT("XA_LC_TalkedToGlint", "Global", 1)
-	AreaCheck("XAA141")
+	AreaCheck("xaa145") // ar1300
 ~
 THEN BEGIN XA_Greeting
 	SAY @0  /* ~<CHARNAME>! Long time no see, my friend!~ */

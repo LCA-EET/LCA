@@ -10,7 +10,7 @@ END
 
 IF ~
 	RandomNum(5,2)
-	AreaCheck("xaa286")
+	AreaCheck("xaa290") // ar0601
 ~ THEN BEGIN XAA1
 	SAY @1 /* ~If you're seeking Lord Jhasso, he's upstairs.~*/
 	IF ~~ THEN

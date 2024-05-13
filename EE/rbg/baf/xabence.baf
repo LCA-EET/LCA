@@ -2,7 +2,7 @@ IF
 	!Range(Player1, 10)
 	Global("XA_LC_DukeDebrief_TimerElapsed", "GLOBAL", 1)
 	!Global("XA_LC_DukesDebriefed", "GLOBAL", 1)
-	!AreaCheck("XAA100")
+	!AreaCheck("XAA100") //ar0900
 THEN 
 	RESPONSE #100
 		MoveToObjectFollow(Player1)
@@ -13,7 +13,7 @@ IF
 	!Range(Player1, 20)
 	Global("XA_LC_DukeDebrief_TimerElapsed", "GLOBAL", 1)
 	!Global("XA_LC_DukesDebriefed", "GLOBAL", 1)
-	!AreaCheck("XAA100")
+	!AreaCheck("XAA100") //ar0900
 THEN
 	RESPONSE #100
 		JumpToObject(Player1)
@@ -23,7 +23,7 @@ END
 IF 
 	!Global("XA_LC_DukesDebriefed", "GLOBAL", 1)
 	Global("XA_LC_DukeDebrief_TimerElapsed", "GLOBAL", 1)
-	!AreaCheck("XAA100")
+	!AreaCheck("XAA100") //ar0900
 	GlobalLT("XA_LC_BenceDukeDebrief", "GLOBAL", 1)
 THEN
 	RESPONSE #100

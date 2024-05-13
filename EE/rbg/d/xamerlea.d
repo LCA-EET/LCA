@@ -10,7 +10,7 @@ END
 
 IF ~
 	RandomNum(6,2)
-	!AreaCheck("xa2433")
+	!AreaCheck("xaa406") // ar0128
 	!Dead("Aldeth")
 ~ THEN BEGIN XAA1
 	SAY @1 /* ~If you're seeking Aldeth, he's upstairs.~*/

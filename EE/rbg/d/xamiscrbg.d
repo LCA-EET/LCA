@@ -640,7 +640,7 @@ APPEND xaa322
 		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		RandomNum(6,2)
 		Global("XA_LC_SavedAldeth","GLOBAL",1)
-		!AreaCheck("XAA490")
+		!AreaCheck("xaa406") // ar0128
 		!Dead("Aldeth")
 	~ THEN BEGIN XAA1
 		SAY @69 /* ~If you're seeking Aldeth, he's upstairs.~*/
