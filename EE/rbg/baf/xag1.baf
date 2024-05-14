@@ -1,4 +1,33 @@
 IF
+	Dead("xadrake1")
+	Dead("xadrake2")
+	Dead("xadrake3")
+	GlobalLT("XA_LC_G1_Dragon", "GLOBAL", 1)
+	!StateCheck(Player1, STATE_HELPLESS)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_G1_Dragon", "GLOBAL", 1)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END
+
+IF
+	Global("XA_LC_G1_Dragon", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_G1_Dragon", "GLOBAL", 2)
+END
+
+IF
+	Global("XA_LC_G1_Dragon", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		ForceSpell(Myself, CLERIC_EARTHQUAKE)
+		Wait(1)
+		CreateCreature("XADRAGON", [1550.1000], N)
+		SetGlobal("XA_LC_G1_Dragon", "GLOBAL", 3)
+END
+
+IF
 	GlobalLT("XA_LC_Baseline", "MYAREA", 1)
 THEN
 	RESPONSE #100

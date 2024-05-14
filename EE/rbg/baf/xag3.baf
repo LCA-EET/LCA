@@ -1,3 +1,5 @@
+
+
 IF
 	GlobalLT("XA_LC_GorionSpawn", "MYAREA", 1)
 THEN

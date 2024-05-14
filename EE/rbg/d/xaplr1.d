@@ -590,6 +590,19 @@ APPEND ~PLAYER1~
 		EXIT
 	END
 END
+
+IF ~
+	Global("XA_LC_G1_Dragon", "GLOBAL", 1)
+~ THEN BEGIN XA_G1_Dragon
+	SAY @215 /*~(Without warning, you hear a booming, blood-curdling roar from above. You look up and see a large dragon swoop down to the annex where the recently dispatched drakes were nesting. It would seem that you've drawn the ire of their mother.)~*/
+	
+	IF ~~ THEN REPLY @216 /*~Oh, dear.~ */
+	DO ~
+		SetGlobal("XA_LC_G1_Dragon", "GLOBAL", 2)
+	~
+	EXIT
+END
+
 //{ Duke Debrief
 
 CHAIN IF ~

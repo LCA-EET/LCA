@@ -1147,6 +1147,56 @@ Weight: 0~
 @4172 = ~Processing conversion blocks...~
 @4173 = ~Processing creatures...~
 @4174 = ~Almost done...~
+@4175 = ~Dragonskin Robe~
+@4176 = ~The scales of an alabaster dragon have been masterfully woven into this exquisitely crafted robe. It affords the wearer protection against the elements, as well as physical and magical attacks. The scales are light enough that they do not encumber the wearer, and thus do not interfere with their spell-casting.
+
+STATISTICS
+
+Equipped abilities:
+– Armor Class: 3
+– Saving Throws: +2
+– Magic Resistance: +10%
+- Fire Resistance: +15%
+- Cold Resistance: +15%
+- Electricity Resistance: +15%
+
+Weight: 6
+~
+@4177 = ~Dragonscale Shield~
+@4178 = ~The shimmering alabaster surface of this shield is made of interlocking dragon scales. Though thin and light, the shield is strong enough to turn aside even the heaviest blows, while affording the wielder protection against elemental and magical attacks.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +4
+– Saving Throws: +1
+- Fire Resistance: +15%
+- Cold Resistance: +15%
+- Electricity Resistance: +15%
+- Magic Resistance: +5%
+
+Requires:
+ 8 Strength
+
+Weight: 5~
+@4179 = ~Alabaster Dragon Scale~
+@4180 = ~This armor, made from the supple yet strong scales of an alabaster dragon, provides the wearer with an array of protective benefits, while being light enough as to not interfere with spell-casting. 
+
+STATISTICS:
+
+Equipped abilities:
+- Fire Resistance: +15%
+- Cold Resistance: +15%
+- Electricity Resistance: +15%
+- Magic Resistance: +5%
+- Saving Throws: +1
+
+Armor Class: 0 
+
+Requires:
+ 8 Strength
+
+Weight: 10
 @5000 = ~Processing ToB changes...~
 
 @5001 = ~After leaving <CHARNAME>'s company, Caelar began the long journey back to Waterdeep, determined to face justice for the crimes that she and her soldiers had committed during the crusade. Upon her arrival in the city, she was detained and interrogated by the Waterdhavian authorities, who were stunned to learn of what had transpired in Avernus. 

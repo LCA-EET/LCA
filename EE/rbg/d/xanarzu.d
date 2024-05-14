@@ -446,9 +446,23 @@ IF ~~ THEN BEGIN XA_AskAboutGorion
 END
 
 IF ~~ THEN BEGIN XA_AskAboutDS
-	SAY @7 /* ~Dragonspear was a momentous experience in your life. I felt the intensity of that memory, and used it to create a little game for you.~ */
+	SAY @7 /* ~Dragonspear was a momentous experience in your life. I felt the intensity of that memory, and used it to create a little game for you.~ */	
 	
-	= @8 /* ~I hope you enjoyed it as much as I enjoyed watching you do what you do best... though the skill and power of the pawns you defeated pale in comparison to my own.~ */
+	IF ~
+		OR(2)
+			Dead("xadragon")
+			Global("XA_LC_DragonNarzuDebug", "GLOBAL", 1)
+	~ THEN 
+	GOTO XA_AskAboutDS_Dragon
+	
+	IF ~
+		!Dead("xadragon")
+	~ THEN 
+	GOTO XA_AskAboutDS_Crusaders
+END
+
+IF ~~ THEN BEGIN XA_AskAboutDS_Crusaders
+	SAY @8 /* ~I hope you enjoyed it as much as I enjoyed watching you do what you do best... though the skill and power of the pawns you defeated pale in comparison to my own.~ */
 	
 	IF ~
 		Global("XA_LC_MetIncubus", "GLOBAL", 1)
@@ -465,6 +479,36 @@ IF ~~ THEN BEGIN XA_AskAboutDS
 	~ THEN
 	GOTO XA_ThirdMeeting //OK
 END
+
+IF ~~ THEN BEGIN XA_AskAboutDS_Dragon
+	SAY @90 /*~You even managed to defeat my recreation of the dragon Halatathlaer... an impressive feat, even for one of your lineage. Such skill and bravery is worthy of an appropriate reward, yes?~*/
+	
+	= @91 /*(Before you can respond, you experience a profound sense of vertigo, and the room seems to shift and change before your eyes. In your mind, you see images of a robe, a shield, and a suit of armor. Soon, you regain your lucidity, and know that you must make a choice.)*/
+	
+	IF ~~ THEN REPLY @92 /*~(Choose the robe.)~*/
+	DO ~
+		GiveItemCreate("XADROBE", Player1, 0, 0, 0)
+	~ GOTO XA_DragonReward
+	
+	IF ~~ THEN REPLY @93 /*~(Choose the suit of armor.)~*/
+	DO ~
+		GiveItemCreate("XADARMOR", Player1, 0, 0, 0)
+	~ GOTO XA_DragonReward
+	
+	IF ~~ THEN REPLY @94 /*~(Choose the shield.)~*/
+	DO ~
+		GiveItemCreate("XADSHLD", Player1, 0, 0, 0)
+	~ GOTO XA_DragonReward
+END
+
+IF ~~ THEN BEGIN XA_DragonReward
+	SAY @95 /*~May it serve you well, child of Bhaal.~  */
+	
+	= @96 /*~Let us return, now, to the matter at hand.~*/
+	COPY_TRANS XANARZU XA_AskAboutDS_Crusaders
+END
+
+
 
 IF ~~ THEN BEGIN XA_AskAboutTrial
 	SAY @33 /* ~I wanted to explore what might've happened had you not destroyed your brother's plan to become one of the leaders of the city.~ */
