@@ -571,6 +571,30 @@ APPEND ~XALCDBG~
 		~
 		GOTO XA_RBG_ItemTest
 		
+		IF ~~ THEN REPLY @6067 /* ~Basilisk Figurine~*/
+		DO ~
+			GiveItemCreate("xabasfig", Player1, 1,1,1)
+		~
+		GOTO XA_RBG_ItemTest
+		
+		IF ~~ THEN REPLY @6072 /* ~Dragon Armor (xadarmor)~*/
+		DO ~
+			GiveItemCreate("xadarmor", Player1, 1,1,1)
+		~
+		GOTO XA_RBG_ItemTest
+		
+		IF ~~ THEN REPLY @6073 /* ~Dragonskin Robe (xadrobe)~*/
+		DO ~
+			GiveItemCreate("xadrobe", Player1, 1,1,1)
+		~
+		GOTO XA_RBG_ItemTest
+		
+		IF ~~ THEN REPLY @6074 /* ~Dragonscale Shield (xadshld)~*/
+		DO ~
+			GiveItemCreate("xadshld", Player1, 1,1,1)
+		~
+		GOTO XA_RBG_ItemTest
+		
 		IF ~~ THEN REPLY @6003/* ~Engagement Rings (Unenchanted)~*/
 		DO ~
 			GiveItemCreate("xaringj", Player1, 0,0,0)
