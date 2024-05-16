@@ -1987,6 +1987,23 @@ Equipped abilities:
 Weight: 2~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac180.itm~ ~override~
 
+//bam files
+//===================
+COPY ~%MOD_FOLDER%\generated\c\bam\xac100.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac110.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac109.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac108.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac107.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac106.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac105.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac103.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac102.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac111.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac112.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac113.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac114.bam~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bam\xac116.bam~ ~override~
+
 //baf files
 //===================
 
@@ -2191,22 +2208,6 @@ COPY ~%MOD_FOLDER%\generated\c\wav\xac10382.wav~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wed\xac100.wed~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\wed\xac101.wed~ ~override~
 
-//bam files
-//===================
-COPY ~%MOD_FOLDER%\generated\c\bam\xac108.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac107.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac106.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac105.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac104.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac102.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac101.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac109.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac110.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac111.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac112.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac113.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac115.bam~ ~override~
-
 //eff files
 //===================
 COPY ~%MOD_FOLDER%\generated\c\eff\xac100.eff~ ~override~
@@ -2218,6 +2219,7 @@ COPY ~%MOD_FOLDER%\generated\c\tis\xac100.tis~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\tis\xac101.tis~ ~override~
 
 //{ PVRZ
+	COPY ~%MOD_FOLDER%\generated\c\pvrz\mos1117.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10000.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10001.pvrz~ ~override~
 	COPY ~%MOD_FOLDER%\generated\c\pvrz\mos1046.pvrz~ ~override~

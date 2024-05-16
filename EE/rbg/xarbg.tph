@@ -1412,8 +1412,6 @@ SILENT
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4116)
 	//}
 	
-	// Left off 4/27
-	
 	//{ Hen that Laid the Golden Egg
 		COPY ~%MOD_FOLDER%/rbg/itm/xachick.itm~ ~override~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4001)
@@ -1468,6 +1466,31 @@ SILENT
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4039)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4040)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4040)
+	//}
+	
+	//{ Dragon Armor
+		COPY ~%MOD_FOLDER%/rbg/itm/xadarmor.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@4179)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@4179)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@4180)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4180)
+	//}
+	
+	//{ Dragon Robe
+		COPY ~%MOD_FOLDER%/rbg/itm/xadrobe.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@4175)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@4175)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@4176)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4176)
+	//}
+	
+	//{ Dragon Shield
+		COPY ~%MOD_FOLDER%/rbg/itm/xadshld.itm~ ~override~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@4177)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@4177)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@4178)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4178)
+		WRITE_ASCII 0x58 ~xac100~ #8
 	//}
 	
 	//{ Engagement Rings
@@ -2525,7 +2548,7 @@ SILENT
 	//{ ar0608 xaa416	
 		COPY_EXISTING ~xaa416.are~ ~override~
 		LPF xa_delete_are_actors END
-		/*
+		
 		LPF fj_are_structure
 			INT_VAR
 				fj_loc_x = 380
@@ -2536,7 +2559,7 @@ SILENT
 				fj_name = Kent
 				fj_cre_resref = xakent
 		END
-		*/
+		WRITE_LONG 0xC0 0 // Rest Encounter Offset Bug Fix
 		LPF fj_are_structure
 			INT_VAR
 				fj_loc_x = 233
