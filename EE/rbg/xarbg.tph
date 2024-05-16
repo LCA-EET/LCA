@@ -895,7 +895,7 @@ SILENT
 				LPF xa_reset_cre
 					STR_VAR
 						xa_override = ~xag1coal~
-						xa_general = ~xac130~
+						xa_general = ~xac130~ // bdfmcl01
 				END
 			BUT_ONLY
 		//}
@@ -964,7 +964,7 @@ SILENT
 				LPF xa_reset_cre
 					STR_VAR
 						xa_override = ~xag1crus~
-						xa_general = ~xac130~
+						xa_general = ~xac130~ // bdfmcl01
 				END
 			BUT_ONLY
 		//}
@@ -1490,6 +1490,7 @@ SILENT
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4177)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4178)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@4178)
+		WRITE_LONG 0x30E RESOLVE_STR_REF(@4181)
 		WRITE_ASCII 0x58 ~xac100~ #8
 	//}
 	
@@ -2549,6 +2550,13 @@ SILENT
 		COPY_EXISTING ~xaa416.are~ ~override~
 		LPF xa_delete_are_actors END
 		
+		LPF fj_are_structure // Rest Encounter Offset Bug Fix
+			INT_VAR
+				fj_enable = 0
+			STR_VAR
+				fj_structure_type = interrupts
+		END
+		
 		LPF fj_are_structure
 			INT_VAR
 				fj_loc_x = 380
@@ -2559,7 +2567,7 @@ SILENT
 				fj_name = Kent
 				fj_cre_resref = xakent
 		END
-		WRITE_LONG 0xC0 0 // Rest Encounter Offset Bug Fix
+
 		LPF fj_are_structure
 			INT_VAR
 				fj_loc_x = 233
@@ -3840,7 +3848,7 @@ SILENT
 					xa_orientation = 2 // SW
 				STR_VAR 
 					xa_override = ~xag1crus~
-					xa_general = ~xac130~
+					xa_general = ~xac130~ // bdfmcl01
 			END
 		//}
 		//{ Ferrusk
@@ -3898,7 +3906,7 @@ SILENT
 					xa_orientation = 16 // random
 				STR_VAR 
 					xa_override = ~xag1coal~
-					xa_general = ~xac130~
+					xa_general = ~xac130~ // bdfmcl01
 					xa_class = ~xacrtyrd~
 			END
 		//}
@@ -3982,7 +3990,7 @@ SILENT
 					xa_orientation = 16 // random
 				STR_VAR 
 					xa_override = ~xag1crus~
-					xa_general = ~xac130~
+					xa_general = ~xac130~ // bdfmcl01
 					xa_class = ~xacrtyrd~
 			END
 		//}
