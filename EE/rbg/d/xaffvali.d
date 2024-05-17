@@ -106,7 +106,16 @@ END
 
 IF ~
 	RandomNum(4,4)
+	Global("XA_LC_ByeRohma", "GLOBAL", 1)
 ~ THEN BEGIN XAA3
-	SAY @13 /* ~Speak to the wizard Melkor if you require provisions.~ */
+	SAY @17 /* ~I'm glad you were able to rescue the child. What they say about you is true after all, hero.~*/
+	IF ~~ THEN EXIT
+END
+
+IF ~
+	RandomNum(4,4)
+	GlobalLT("XA_LC_ByeRohma", "GLOBAL", 1)
+~ THEN BEGIN XAA4
+	SAY @13 /* ~Speak to the wizard Melkor if you require provisions.~~*/
 	IF ~~ THEN EXIT
 END

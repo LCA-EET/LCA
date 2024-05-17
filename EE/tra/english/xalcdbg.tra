@@ -248,17 +248,17 @@
 @6037 = ~XACS13~
 @6038 = ~XAHOME~
 @6039 = ~XACSHOW~
-@6040 = ~XAA606 (AR0102)~
-@6041 = ~XAA224 (AR0112)~
-@6042 = ~XAA326 (AR0134)~
-@6043 = ~XAA164 (AR0600)~
-@6044 = ~XAA103 (AR0800)~
-@6045 = ~XAA141 (AR1300)~
-@6046 = ~XAA286 (AR0601)~
-@6047 = ~XAA287 (AR0127)~
-@6048 = ~XAA451 (AR0101)~
-@6049 = ~XAA134 (AR0103)~
-@6050 = ~XAA284 (AR1113)~
+@6040 = ~XAA592 (AR0102)~
+@6041 = ~XAA228 (AR0112)~
+@6042 = ~XAA330 (AR0134)~
+@6043 = ~XAA168 (AR0600)~
+@6044 = ~XAA104 (AR0800)~
+@6045 = ~XAA145 (AR1300)~
+@6046 = ~XAA290 (AR0601)~
+@6047 = ~XAA291 (AR0127)~
+@6048 = ~XAA475 (AR0101)~
+@6049 = ~XAA138 (AR0103)~
+@6050 = ~XAA288 (AR1113)~
 @6051 = ~XAKIDNAP~
 @6052 = ~XAWLKHOM~
 @6053 = ~XADEMSAN~
@@ -267,7 +267,7 @@
 @6056 = ~XAPAINT1~
 @6057 = ~XADUC3~
 @6058 = ~XAUCTEMP~
-@6059 = ~AR0123 / XAA561 (Undercity)~
+@6059 = ~AR0123 / XAA106 (Undercity)~
 @6060 = ~XAG3 (Candlekeep)~
 @6061 = ~XAG3ENT~
 @6062 = ~XAG2~
@@ -283,7 +283,8 @@
 @6072 = ~Dragon Armor (xadarmor)~
 @6073 = ~Dragonskin Robe (xadrobe)~
 @6074 = ~Dragonscale Shield (xadshld)~
-
+@6075 = ~xaduc2~
+@6076 = ~xaducal~
 @7000 = ~ToB Debug~
 @7001 = ~XAG104 (BD5300) - Kanaglym~
 @7002 = ~Spawn Caelar (XACAELAR) and add her to the party.~ 
