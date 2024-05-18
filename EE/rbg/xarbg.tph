@@ -1092,7 +1092,9 @@ SILENT
 		WRITE_SHORT 0x46 0		// Natural AC
 		WRITE_SHORT 0x48 0		// Effective AC
 		
-	
+		COPY_EXISTING ~telpit02.cre~ ~override/xasarev2.cre~ 
+		WRITE_ASCII 0x280 ~xasarev2~ #20  	// Script Name
+		
 		COPY_EXISTING ~ankheg01.cre~ ~override/xamutank.cre~ // Mutated Ankheg
 		SAY NAME1 @4077
 		SAY NAME2 @4077

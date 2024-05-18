@@ -1,3 +1,27 @@
+IF
+	Global("XA_LC_SarevokHostile", "GLOBAL", 1)
+	GlobalLT("XA_LC_SarevokTransformTimerSet", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_SarevokTransformTimerSet", "MYAREA", 1)
+		SetGlobalTimer("XA_LC_SarevokTransformTimer", "GLOBAL", TWELVE_ROUNDS)
+		Continue()
+END
+
+IF
+	GlobalTimerExpired("XA_LC_SarevokTransformTimer", "GLOBAL")
+	!Dead("xasarevo")
+	GlobalLT("XA_LC_SarevokTransform", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_SarevokTransform", "MYAREA", 1)
+		DisplayStringHead("xasarevo", @1)
+		Wait(3)
+		CreateVisualEffectObject("ICFIRSDI", "xasarevo") 
+		Wait(1)
+		ActionOverride("xasarevo", ChangeAnimation("xasarev2"))
+END
+
 IF 
 	Global("XA_LC_G2_Intro", "GLOBAL", 1)
 THEN
