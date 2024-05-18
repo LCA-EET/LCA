@@ -61,7 +61,9 @@ THEN
 END
 
 IF
-	Dead("XASAREVO")
+	OR(2)
+		Dead("XASAREVO")
+		Dead("XASAREV2")
 	Dead("XASEMAJ")
 	Dead("XAANGELO")
 	Dead("XAZHALIM")
