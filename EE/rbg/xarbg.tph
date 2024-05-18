@@ -457,6 +457,7 @@ SILENT
 				xa_override = ~xasarevo~
 				xa_race = ~wtasight~
 		END
+		ADD_CRE_ITEM ~xasdiary~ #0 #0 #0 ~identified&unstealable~ ~INV1~
 		
 		COPY_EXISTING ~xaa953.cre~ ~override/xag2dop0.cre~ // dopmer
 		WRITE_ASCII 0x250 ~xag2dop~ #8 // class script
@@ -1092,8 +1093,9 @@ SILENT
 		WRITE_SHORT 0x46 0		// Natural AC
 		WRITE_SHORT 0x48 0		// Effective AC
 		
-		COPY_EXISTING ~telpit02.cre~ ~override/xasarev2.cre~ 
+		COPY_EXISTING ~telpit2.cre~ ~override/xasarev2.cre~ 
 		WRITE_ASCII 0x280 ~xasarev2~ #20  	// Script Name
+		ADD_CRE_ITEM ~xasdiary~ #0 #0 #0 ~identified&unstealable~ ~INV1~
 		
 		COPY_EXISTING ~ankheg01.cre~ ~override/xamutank.cre~ // Mutated Ankheg
 		SAY NAME1 @4077
@@ -1251,7 +1253,7 @@ SILENT
 		WRITE_LONG 0x28 0xE279 // expressed as a hexadecimal
 		SAY NAME1 @4050
 		SAY NAME2 @4050
-		ADD_CRE_ITEM ~xasword~ #0 #0 #0 ~identified&unstealable&undroppable~ ~INV0~
+		ADD_CRE_ITEM ~xasword~ #0 #0 #0 ~identified&unstealable&undroppable~ ~INV1~
 		ADD_CRE_ITEM ~xamsring~ #0 #0 #0 ~identified&unstealable&undroppable~ ~INV1~
 		ADD_CRE_ITEM ~xaquiver~ #0 #0 #0 ~identified&unstealable&undroppable~ ~INV2~
 		
@@ -1332,6 +1334,14 @@ SILENT
 //}
 
 //{ New Items
+	
+	//{ Diary of Sarevok
+		COPY_EXISTING ~ohnnote5.itm~ ~override/xasdiary.itm~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@5030)
+		WRITE_LONG 0xC RESOLVE_STR_REF(@5030)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@5029)
+		WRITE_LONG 0x18 44 // item flags
+	//}
 	
 	//{ Basilisk Figurine
 		COPY_EXISTING ~figspid.eff~ ~override/xabasfig.eff~
