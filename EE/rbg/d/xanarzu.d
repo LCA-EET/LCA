@@ -1,13 +1,14 @@
 BEGIN ~XANARZU~
 
+//{ Confrontation before battle
 IF ~
-	Global("XA_LC_ConfrontDemon", "GLOBAL", 1)
+	Global("XA_LC_ConfrontNarzugon", "GLOBAL", 1)
 ~ THEN BEGIN XA_ConfrontDemon
 	SAY @67 /* ~What's this?~ */
 	
 	IF ~~ THEN
 	DO ~
-		SetGlobal("XA_LC_ConfrontDemon", "GLOBAL", 2)
+		SetGlobal("XA_LC_ConfrontNarzugon", "GLOBAL", 2)
 		PlaySong(1023)
 	~
 	GOTO XA_ConfrontDemon2
@@ -55,7 +56,7 @@ IF ~~ THEN BEGIN XA_ConfrontDemon3
 		NumInPartyLT(2)
 	~ THEN 
 	DO ~
-		SetGlobal("XA_LC_IncubusHostile", "LOCALS", 1)
+		SetGlobal("XA_LC_NarzugonHostile", "LOCALS", 1)
 		StartCutSceneMode()
 		StartCutScene("XADEM1")
 	~
@@ -66,7 +67,7 @@ IF ~~ THEN BEGIN XA_ConfrontDemon3
 		NumInPartyLT(4)
 	~ THEN 
 	DO ~
-		SetGlobal("XA_LC_IncubusHostile", "LOCALS", 1)
+		SetGlobal("XA_LC_NarzugonHostile", "LOCALS", 1)
 		StartCutSceneMode()
 		StartCutScene("XADEM23")
 	~
@@ -76,7 +77,7 @@ IF ~~ THEN BEGIN XA_ConfrontDemon3
 		NumInPartyGT(3)
 	~ THEN 
 	DO ~
-		SetGlobal("XA_LC_IncubusHostile", "LOCALS", 1)
+		SetGlobal("XA_LC_NarzugonHostile", "LOCALS", 1)
 		StartCutSceneMode()
 		StartCutScene("XADEM4")
 	~
@@ -84,6 +85,9 @@ IF ~~ THEN BEGIN XA_ConfrontDemon3
 	
 END
 
+//}
+
+//{ Broke Parley
 IF ~
 	Global("XA_LC_ParleyAttack", "GLOBAL", 1)
 ~ THEN BEGIN XA_ParleyAttack
@@ -94,23 +98,12 @@ IF ~
 		SetGlobal("XA_LC_ParleyAttack", "GLOBAL", 0)
 		StartCutSceneMode()
 		StartCutScene("XAPENT")
-		DestroySelf()
 	~
-	EXIT
-	
-	IF ~
-		Global("XA_LC_GaveTreasure", "LOCALS", 1)
-	~ THEN 
-	DO ~
-		SetGlobal("XA_LC_ParleyAttack", "GLOBAL", 0)
-		StartCutSceneMode()
-		StartCutScene("XAPENT")
-		DestroySelf()
-	~
-	EXIT
-	
+	EXIT	
 END
+//}
 
+//{ Deciding whether to accept treasure
 IF ~
 	Global("XA_LC_GaveTreasure", "LOCALS", 1)
 ~ THEN BEGIN XA_GaveTreasure
@@ -197,9 +190,11 @@ IF ~
 	~
 	GOTO XA_DontWantTreasure
 END
+//}
 
+//{ Meeting Dialogues
 IF ~
-	Global("XA_LC_MetIncubus", "GLOBAL", 1)
+	Global("XA_LC_MetIncubus", "GLOBAL", 0)
 ~ THEN BEGIN XA_StartFirstMeet
 	SAY @0 /* ~Welcome.~ */
 	
@@ -241,53 +236,8 @@ IF ~
 	
 END
 
-IF ~~ THEN BEGIN XA_AskWho
-	SAY @75 /* ~Who am I? What an odd question...~ */
-	
-	= @76 /* ~I did have a name once. Yes, I did. But that was eons ago, and I've long since forgotten what it was.~ */
-	
-	= @77 /* ~I do however remember my nature. In your tongue, I am called an Incubus — an invader of dreams.~ */
-	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 1)
-	~ THEN 
-	GOTO XA_FirstMeeting //OK
-	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 2)
-	~ THEN
-	GOTO XA_SecondMeeting //OK
-	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 3)
-	~ THEN
-	GOTO XA_ThirdMeeting //OK 
-
-END
-
-IF ~~ THEN BEGIN XA_AskWhat
-	SAY @80 /* ~This place was originally created as a prison for me long ago, by a wizard of some repute.~*/
-	
-	= @81 /* ~I've since mastered the energies by which this reality is sustained, and as such I am capable of altering it to suit my needs.~ */
-	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 1)
-	~ THEN 
-	GOTO XA_FirstMeeting //OK
-	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 2)
-	~ THEN
-	GOTO XA_SecondMeeting //OK
-	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 3)
-	~ THEN
-	GOTO XA_ThirdMeeting //OK 
-END
-
 IF ~
-	Global("XA_LC_MetIncubus", "GLOBAL", 2)
+	Global("XA_LC_MetIncubus", "GLOBAL", 1)
 ~ THEN BEGIN XA_StartSecondMeet
 	SAY @27 /*~I hope that now, you are willing to listen to reason.~*/
 	
@@ -350,7 +300,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_LC_MetIncubus", "GLOBAL", 3)
+	Global("XA_LC_MetIncubus", "GLOBAL", 2)
 ~ THEN BEGIN XA_StartThirdMeet
 	SAY @39 /*~Surely you're tired of this by now, yes?~*/
 	
@@ -418,6 +368,55 @@ IF ~
 	~
 	GOTO XA_AskWhat
 END
+
+
+//}
+
+IF ~~ THEN BEGIN XA_AskWho
+	SAY @75 /* ~Who am I? What an odd question...~ */
+	
+	= @76 /* ~I did have a name once. Yes, I did. But that was eons ago, and I've long since forgotten what it was.~ */
+	
+	= @77 /* ~I do however remember my nature. In your tongue, I am called an Incubus — an invader of dreams.~ */
+	
+	IF ~
+		Global("XA_LC_MetIncubus", "GLOBAL", 1)
+	~ THEN 
+	GOTO XA_FirstMeeting //OK
+	
+	IF ~
+		Global("XA_LC_MetIncubus", "GLOBAL", 2)
+	~ THEN
+	GOTO XA_SecondMeeting //OK
+	
+	IF ~
+		Global("XA_LC_MetIncubus", "GLOBAL", 3)
+	~ THEN
+	GOTO XA_ThirdMeeting //OK 
+
+END
+
+IF ~~ THEN BEGIN XA_AskWhat
+	SAY @80 /* ~This place was originally created as a prison for me long ago, by a wizard of some repute.~*/
+	
+	= @81 /* ~I've since mastered the energies by which this reality is sustained, and as such I am capable of altering it to suit my needs.~ */
+	
+	IF ~
+		Global("XA_LC_MetIncubus", "GLOBAL", 1)
+	~ THEN 
+	GOTO XA_FirstMeeting //OK
+	
+	IF ~
+		Global("XA_LC_MetIncubus", "GLOBAL", 2)
+	~ THEN
+	GOTO XA_SecondMeeting //OK
+	
+	IF ~
+		Global("XA_LC_MetIncubus", "GLOBAL", 3)
+	~ THEN
+	GOTO XA_ThirdMeeting //OK 
+END
+
 
 IF ~~ THEN BEGIN XA_AskAboutGorion2
 	SAY @65 /*  ~I sensed that you often wonder what Gorion would think of your actions. Most mortals would jump at the opportunity to speak to a deceased loved one, even if it was just a similacrum.~*/
@@ -690,10 +689,15 @@ IF ~~ THEN BEGIN XA_WhatAreYouOffering
 	EXIT
 END
 
+//{ Exit to XAPAINT States
+
 IF ~~ THEN XA_TakeAmulet
 	SAY @32 /* ~There's no need. Sooner or later you'll come to your senses, whether it take a day, a year, or an eon. Give Lyriel my regards.~  */
 	
-	IF ~~ THEN EXIT
+	IF ~
+		Global("XA_LC_DemonDebug", "GLOBAL", 1)
+	~ THEN 
+	EXIT
 	
 	IF ~
 		!Global("XA_LC_DemonDebug", "GLOBAL", 1)
@@ -705,7 +709,91 @@ IF ~~ THEN XA_TakeAmulet
 	EXIT
 END
 
+IF ~~ THEN BEGIN XA_StillWontGiveAmulet
+	SAY @64 /*~I can afford to wait. As I mentioned earlier, time is meaningless here. Give Lyriel my regards.~ */
+	
+	IF ~
+		Global("XA_LC_DemonDebug", "GLOBAL", 1)
+	~ THEN 
+	EXIT
+	
+	IF ~
+		!Global("XA_LC_DemonDebug", "GLOBAL", 1)
+	~ THEN
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("XAPENT")
+	~
+	EXIT
+END
 
+IF ~~ THEN BEGIN XA_DontWantTreasure
+	SAY @59 /*~You are a fool! Begone!~ */
+	
+	IF ~
+		Global("XA_LC_DemonDebug", "GLOBAL", 1)
+	~ THEN
+	EXIT
+	
+	IF ~
+		!Global("XA_LC_DemonDebug", "GLOBAL", 1)
+	~ THEN
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("XAPENT")
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_WontGiveAmulet
+	SAY @17 /* ~Very well. Time is of no consequence, in this place. Eventually you will acquiesce to my demands. Begone.~ */
+	
+	IF ~
+		Global("XA_LC_DemonDebug", "GLOBAL", 1)
+	~ THEN 
+	EXIT
+	
+	IF ~
+		!Global("XA_LC_DemonDebug", "GLOBAL", 1)
+	~ THEN
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("XAPENT")
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_GiveAmuletToDemon_M
+	SAY @20 /* ~You are as wise as you are mighty, son of Bhaal. Now, you will have your freedom...~ */
+	
+	IF ~~ THEN
+	DO ~
+		TakePartyItem("AMUL27")
+		SetGlobal("XA_LC_GaveUpAmulet", "GLOBAL", 1)
+		SetGlobal("XA_LC_LeavePrison", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Incubus", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutScene("XAPEXIT")
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_GiveAmuletToDemon_F
+	SAY @21 /* ~You are as wise as you are mighty, daughter of Bhaal. Now, you will have your freedom...~ */
+	
+	IF ~~ THEN
+	DO ~
+		TakePartyItem("AMUL27")
+		SetGlobal("XA_LC_GaveUpAmulet", "GLOBAL", 1)
+		SetGlobal("XA_LC_LeavePrison", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Incubus", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutScene("XAPEXIT")
+	~
+	EXIT
+END
+
+//}
 
 IF ~~ THEN BEGIN XA_HaveSomethingDemonWants
 	SAY @5 /*~You have something I want. Give it to me, and you shall have your freedom.~*/
@@ -828,37 +916,6 @@ IF ~~ THEN BEGIN XA_AskAboutLyriel
 	
 END
 
-IF ~~ THEN BEGIN XA_StillWontGiveAmulet
-	SAY @64 /*~I can afford to wait. As I mentioned earlier, time is meaningless here. Give Lyriel my regards.~ */
-	
-	IF ~~ THEN EXIT
-	
-	IF ~
-		!Global("XA_LC_DemonDebug", "GLOBAL", 1)
-	~ THEN
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XAPENT")
-	~
-	EXIT
-END
-
-IF ~~ THEN BEGIN XA_DontWantTreasure
-	SAY @59 /*~You are a fool! Begone!~ */
-	
-	IF ~~ THEN
-	EXIT
-	
-	IF ~
-		!Global("XA_LC_DemonDebug", "GLOBAL", 1)
-	~ THEN
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XAPENT")
-	~
-	EXIT
-
-END
 
 IF ~~ THEN BEGIN XA_AskDemonAmulet
 	SAY @11 /* ~It's not your concern. You will give it to me if you want to return to Baldur's Gate.~ */
@@ -885,50 +942,4 @@ IF ~~ THEN BEGIN XA_AskDemonAmulet
 	~ THEN REPLY @13 /*~Here, take it.~*/
 	GOTO XA_GiveAmuletToDemon_F //OK
 	
-END
-
-IF ~~ THEN BEGIN XA_WontGiveAmulet
-	SAY @17 /* ~Very well. Time is of no consequence, in this place. Eventually you will acquiesce to my demands. Begone.~ */
-	
-	IF ~~ THEN EXIT
-	
-	IF ~
-		!Global("XA_LC_DemonDebug", "GLOBAL", 1)
-	~ THEN
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XAPENT")
-	~
-	EXIT
-END
-
-
-IF ~~ THEN BEGIN XA_GiveAmuletToDemon_M
-	SAY @20 /* ~You are as wise as you are mighty, son of Bhaal. Now, you will have your freedom...~ */
-	
-	IF ~~ THEN
-	DO ~
-		TakePartyItem("AMUL27")
-		SetGlobal("XA_LC_GaveUpAmulet", "GLOBAL", 1)
-		SetGlobal("XA_LC_LeavePrison", "GLOBAL", 1)
-		SetGlobal("XA_LC_Journal_Incubus", "GLOBAL", 1)
-		StartCutSceneMode()
-		StartCutScene("XAPEXIT")
-	~
-	EXIT
-END
-
-IF ~~ THEN BEGIN XA_GiveAmuletToDemon_F
-	SAY @21 /* ~You are as wise as you are mighty, daughter of Bhaal. Now, you will have your freedom...~ */
-	
-	IF ~~ THEN
-	DO ~
-		TakePartyItem("AMUL27")
-		SetGlobal("XA_LC_GaveUpAmulet", "GLOBAL", 1)
-		SetGlobal("XA_LC_LeavePrison", "GLOBAL", 1)
-		SetGlobal("XA_LC_Journal_Incubus", "GLOBAL", 1)
-		StartCutSceneMode()
-		StartCutScene("XAPEXIT")
-	~
-	EXIT
 END

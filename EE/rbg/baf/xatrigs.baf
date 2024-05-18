@@ -1,7 +1,7 @@
 IF
 	Clicked([ANYONE])
 	Range(LastTrigger,10)
-	GlobalGT("XA_LC_PrisonKnowledge", "GLOBAL", 3)
+	GlobalGT("XA_LC_PrisonKnowledge", "GLOBAL", 2)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_EnterIncubusSanctum", "GLOBAL", 1)
@@ -11,7 +11,7 @@ END
 IF
 	Clicked([ANYONE])
 	Range(LastTrigger,10)
-	GlobalLT("XA_LC_PrisonKnowledge", "GLOBAL", 4)
+	GlobalLT("XA_LC_PrisonKnowledge", "GLOBAL", 3)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_EnterIncubusSanctum", "GLOBAL", 1)

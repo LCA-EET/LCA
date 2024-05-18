@@ -1,21 +1,6 @@
-
-IF
-	HPPercentLT(Myself, 21)
-	GlobalLT("XA_LC_AVBossFled", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		DisplayStringHead(Myself, @27) /*~Impressive. But this is not the end, <CHARNAME>. I'll find a way back to the Prime Material Plane, and when I do...~ */
-		AddexperienceParty(75000)
-		Wait(3)
-		ForceSpellRES("BDTELAW",Myself)  // Teleport Without Error
-		SetGlobal("XA_LC_AVBossFled", "GLOBAL", 1)
-		SetInterrupt(TRUE)
-END
-
 IF
 	Global("XA_LC_Hostile4700", "GLOBAL", 1)
-	!Global("XA_LC_IncubusBuff", "LOCALS", 1)
+	GlobalLT("XA_LC_IncubusBuff", "LOCALS", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -24,8 +9,7 @@ THEN
 		ReallyForceSpell(Myself, WIZARD_GLOBE_OF_INVULNERABILITY)
 		ReallyForceSpell(Myself, WIZARD_MIRROR_IMAGE)
 		ReallyForceSpell(Myself, WIZARD_STONE_SKIN)
-		ReallyForceSpell(Myself, WIZARD_SHIELD)
-		
+		ReallyForceSpell(Myself, WIZARD_SHIELD)		
 		SetInterrupt(TRUE)
 		Continue()
 END

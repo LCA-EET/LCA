@@ -157,6 +157,22 @@ END
 		END
 		BUT_ONLY
 		
+		COPY_EXISTING ~xaavc5.cre~ ~override/xanarz01.cre~
+		WRITE_ASCII 0x248 ~xanevsum~ #8 // override
+		WRITE_ASCII 0x280 ~xanarz01~ #8 // script name
+		
+		COPY_EXISTING ~xaavc6.cre~ ~override/xanarz02.cre~
+		WRITE_ASCII 0x248 ~xanevsum~ #8
+		WRITE_ASCII 0x280 ~xanarz02~ #8 // script name
+		
+		COPY_EXISTING ~xaavc7.cre~ ~override/xanarz03.cre~
+		WRITE_ASCII 0x248 ~xanevsum~ #8
+		WRITE_ASCII 0x280 ~xanarz03~ #8 // script name
+		
+		COPY_EXISTING ~xaavc8.cre~ ~override/xanarz04.cre~
+		WRITE_ASCII 0x248 ~xanevsum~ #8
+		WRITE_ASCII 0x280 ~xanarz04~ #8 // script name
+		
 		COPY_EXISTING ~xaavc4.cre~ ~override~
 		WRITE_ASCII 0x268 ~cornugon~ #8
 		

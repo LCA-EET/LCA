@@ -1,3 +1,33 @@
+//{ Remove Pocket Plane Ability - Avernus Tower
+	IF
+		GlobalLT("XA_LC_AVBossFled", "GLOBAL", 1)
+		TriggerOverride(Player1,HaveSpellRES("SPIN649")) 
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("GavePocketPlane","GLOBAL",0)
+			ActionOverride(Player1, RemoveSpellRES("SPIN649"))
+			SetInterrupt(TRUE)
+			Continue()
+	END
+//}
+
+//{ Narzugon flee
+IF
+	HPPercentLT("xaavboss", 21)
+	GlobalLT("XA_LC_AVBossFled", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_AVBossFled", "GLOBAL", 1)
+		DisplayStringHead("xaavboss", @1) /*~Impressive. But this is not the end, <CHARNAME>. I'll find a way back to the Prime Material Plane, and when I do...~ */
+		AddexperienceParty(75000)
+		Wait(3)
+		ForceSpellRES("xag100","xaavboss")  // Teleport Without Error bdtelaw
+		SetInterrupt(TRUE)
+END
+//}
+
 IF
 	Global("XA_LC_Return5300", "MYAREA", 1)
 THEN
@@ -33,77 +63,64 @@ THEN
 		IncrementGlobal("XA_LC_4700_Adds", "MYAREA", 1)
 		//Wait(2)
 		CreateCreature("XAAVC1",[1050.1075],NE)  
-		Continue()
 	RESPONSE #100
 		CreateVisualEffect("SPFLESHS",[1530.1090]) 	/* SE */
 		IncrementGlobal("XA_LC_4700_Adds", "MYAREA", 1)
 		//Wait(2)
 		CreateCreature("XAAVC2",[1530.1090],NW) 
-		Continue()
 	RESPONSE #100
 		CreateVisualEffect("SPFLESHS",[1040.740])	/* NW */
 		IncrementGlobal("XA_LC_4700_Adds", "MYAREA", 1)
 		//Wait(2)
 		CreateCreature("XAAVC3",[1040.740],SE) 
-		Continue()
 	RESPONSE #100
 		CreateVisualEffect("SPFLESHS",[1500.730]) 	/* NE */
 		IncrementGlobal("XA_LC_4700_Adds", "MYAREA", 1)
 		//Wait(2)
 		CreateCreature("XAAVC4",[1500.730],SW) 
-		Continue()
 	RESPONSE #100
 		CreateVisualEffect("SPFLESHS",[1050.1075])	/* SW */
 		IncrementGlobal("XA_LC_4700_Adds", "MYAREA", 1)
 		//Wait(2)
 		CreateCreature("XAAVC5",[1050.1075],NE)  
-		Continue()
 	RESPONSE #100
 		CreateVisualEffect("SPFLESHS",[1530.1090]) 	/* SE */
 		IncrementGlobal("XA_LC_4700_Adds", "MYAREA", 1)
 		//Wait(2)
 		CreateCreature("XAAVC6",[1530.1090],NW) 
-		Continue()
 	RESPONSE #100
 		CreateVisualEffect("SPFLESHS",[1040.740])	/* NW */
 		IncrementGlobal("XA_LC_4700_Adds", "MYAREA", 1)
 		//Wait(2)
 		CreateCreature("XAAVC7",[1040.740],SE) 
-		Continue()
 	RESPONSE #100
 		CreateVisualEffect("SPFLESHS",[1500.730]) 	/* NE */
 		IncrementGlobal("XA_LC_4700_Adds", "MYAREA", 1)
 		//Wait(2)
 		CreateCreature("XAAVC8",[1500.730],SW) 
-		Continue()
 	RESPONSE #100
 		CreateVisualEffect("SPFLESHS",[1050.1075])	/* SW */
 		IncrementGlobal("XA_LC_4700_Adds", "MYAREA", 1)
 		//Wait(2)
 		CreateCreature("XAAVC9",[1050.1075],NE)  
-		Continue()
 	RESPONSE #100
 		CreateVisualEffect("SPFLESHS",[1530.1090]) 	/* SE */
 		IncrementGlobal("XA_LC_4700_Adds", "MYAREA", 1)
 		//Wait(2)
 		CreateCreature("XAAVC10",[1530.1090],NW) 
-		Continue()
 	RESPONSE #100
 		CreateVisualEffect("SPFLESHS",[1040.740])	/* NW */
 		IncrementGlobal("XA_LC_4700_Adds", "MYAREA", 1)
 		//Wait(2)
 		CreateCreature("XAAVC11",[1040.740],SE) 
-		Continue()
 	RESPONSE #100
 		CreateVisualEffect("SPFLESHS",[1500.730]) 	/* NE */
 		IncrementGlobal("XA_LC_4700_Adds", "MYAREA", 1)
 		//Wait(2)
 		CreateCreature("XAAVC12",[1500.730],SW) 
-		Continue()
 	RESPONSE #100
 		CreateVisualEffect("SPFLESHS",[1050.1075])	/* SW */
 		IncrementGlobal("XA_LC_4700_Adds", "MYAREA", 1)
 		//Wait(2)
 		CreateCreature("XAAVC13",[1050.1075],NE)  
-		Continue()
 END

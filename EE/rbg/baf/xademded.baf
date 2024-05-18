@@ -3,10 +3,10 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
-		Kill("xaavc5")
-		Kill("xaavc6")
-		Kill("xaavc7")
-		Kill("xaavc8")
+		Kill("xanarz01")
+		Kill("xanarz02")
+		Kill("xanarz03")
+		Kill("xanarz04")
 		Wait(2)
 		CreateCreature("XACHICK", [165.200], SE)
 		SmallWait(1)

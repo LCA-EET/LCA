@@ -1,6 +1,7 @@
+//{ Apply Buffs When Hostile
 IF
-	Global("XA_LC_IncubusHostile", "LOCALS", 1)
-	Global("XA_LC_PrisonKnowledge", "GLOBAL", 6)
+	Global("XA_LC_NarzugonHostile", "LOCALS", 1)
+	GlobalGT("XA_LC_PrisonKnowledge", "GLOBAL", 2)
 	GlobalLT("XA_LC_IncubusBuff", "LOCALS", 1)
 THEN
 	RESPONSE #100
@@ -9,14 +10,13 @@ THEN
 		ClearActions(Myself)
 		ReallyForceSpell(Myself, WIZARD_GLOBE_OF_INVULNERABILITY)
 		ReallyForceSpell(Myself, WIZARD_STONE_SKIN)
-		
 		SetInterrupt(TRUE)
 		Continue()
 END
 
 IF
-	Global("XA_LC_IncubusHostile", "LOCALS", 1)
-	Global("XA_LC_PrisonKnowledge", "GLOBAL", 4)
+	Global("XA_LC_NarzugonHostile", "LOCALS", 1)
+	GlobalLT("XA_LC_PrisonKnowledge", "GLOBAL", 3)
 	GlobalLT("XA_LC_IncubusBuff", "LOCALS", 1)
 THEN
 	RESPONSE #100
@@ -31,87 +31,28 @@ THEN
 		SetInterrupt(TRUE)
 		Continue()
 END
-
-IF
-	HPPercentLT(Myself, 10)
-	Global("XA_LC_IncubusHostile", "LOCALS", 1)
-THEN
-	RESPONSE #33
-		SetInterrupt(FALSE)
-		DisplayStringHead(Myself, @88)
-		CreateItem("XAQUIVER",0,0,0)
-		SetItemFlags("XAQUIVER", IDENTIFIED, TRUE)
-		DropItem("XAQUIVER",[-1.-1])
-		SetGlobal("XA_LC_IncubusDefeated", "GLOBAL", 1)
-		SetGlobal("XA_LC_IncubusQuiver", "GLOBAL", 1)
-		Kill(Myself)		
-		SetInterrupt(TRUE)
-	RESPONSE #33
-		SetInterrupt(FALSE)
-		DisplayStringHead(Myself, @88)
-		CreateItem("XASWORD",0,0,0)
-		SetItemFlags("XASWORD", IDENTIFIED, TRUE)
-		DropItem("XASWORD",[-1.-1])
-		SetGlobal("XA_LC_IncubusDefeated", "GLOBAL", 1)
-		SetGlobal("XA_LC_IncubusSword", "GLOBAL", 1)
-		Kill(Myself)		
-		SetInterrupt(TRUE)
-	RESPONSE #33
-		SetInterrupt(FALSE)
-		DisplayStringHead(Myself, @88)
-		CreateItem("XAMSRING",0,0,0)
-		SetItemFlags("XAMSRING", IDENTIFIED, TRUE)
-		DropItem("XAMSRING",[-1.-1])
-		SetGlobal("XA_LC_IncubusDefeated", "GLOBAL", 1)
-		SetGlobal("XA_LC_IncubusRing", "GLOBAL", 1)
-		Kill(Myself)		
-		SetInterrupt(TRUE)
-END
-
-IF
-	Global("XA_LC_ConfrontDemon", "GLOBAL", 1)
-	InMyArea(Player1)
-THEN
-	RESPONSE #100
-		StartDialog("XANARZU", Player1)
-END
-
-IF 
-	InMyArea(Player1)
-	Global("XA_LC_DemonSpeak", "GLOBAL", 1)
-	Global("XA_LC_SanctumCS_End", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_DemonSpeak", "GLOBAL", 0)
-		SetGlobal("XA_LC_SanctumCS_End", "GLOBAL", 0)
-		IncrementGlobal("XA_LC_MetIncubus", "GLOBAL", 1)
-		StartDialog("XANARZU", Player1)
-		SetInterrupt(TRUE)
-END
+//}
 
 IF
 	HPPercentLT(Myself, 100)
 	GlobalLT("XA_LC_ParleyAttack", "GLOBAL", 1)
 	InMyArea(Player1)
-	GlobalLT("XA_LC_ConfrontDemon", "GLOBAL", 1)
+	GlobalLT("XA_LC_ConfrontNarzugon", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_ParleyAttack", "GLOBAL", 1)
-		SetGlobal("XA_LC_HealDemon", "GLOBAL", 1)
-		StartDialog("XANARZU", Player1)
-		SetInterrupt(TRUE)
 END
 
+//{ Block fight script if not hostile
 IF 
-	GlobalLT("XA_LC_IncubusHostile", "LOCALS", 1)
+	GlobalLT("XA_LC_NarzugonHostile", "LOCALS", 1)
 THEN
 	RESPONSE #100
 		NoAction()
 END
+//}
 
-//fight AI
+//{ fight script
 
 IF
 	See(NearestEnemyOfType([0.0.0.0.0.SUMMONED]))
@@ -231,3 +172,4 @@ THEN
 		AttackReevaluate(NearestEnemyOf(Myself),30)
 END
 
+//}

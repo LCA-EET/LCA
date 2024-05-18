@@ -1,18 +1,3 @@
-//{ Remove Pocket Plane Ability - Avernus Tower
-	IF
-		GlobalLT("XA_LC_AVBossFled", "GLOBAL", 1)
-		AreaCheck("XAG103")
-		TriggerOverride(Player1,HaveSpellRES("SPIN649")) 
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("GavePocketPlane","GLOBAL",0)
-			ActionOverride(Player1, RemoveSpellRES("SPIN649"))
-			SetInterrupt(TRUE)
-			Continue()
-	END
-//}
-
 //{ Kanaglym Dream
 	IF
 		GlobalLT("XA_LC_KanaDreamTimerSet", "GLOBAL",1)

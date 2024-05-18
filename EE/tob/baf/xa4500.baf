@@ -12,7 +12,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_ThrixLeave","GLOBAL",1)
-		ForceSpellRES("XAG100","XATHRIX")  // Teleport Without Error
+		ForceSpellRES("XAG100","XATHRIX")  // Teleport Without Error bdtelaw
 		SetInterrupt(TRUE)
 END
 

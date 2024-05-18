@@ -1249,6 +1249,9 @@ SILENT
 		WRITE_LONG 0x28 0xE279 // expressed as a hexadecimal
 		SAY NAME1 @4050
 		SAY NAME2 @4050
+		ADD_CRE_ITEM ~xasword~ #0 #0 #0 ~identified&unstealable&undroppable~ ~INV0~
+		ADD_CRE_ITEM ~xamsring~ #0 #0 #0 ~identified&unstealable&undroppable~ ~INV1~
+		ADD_CRE_ITEM ~xaquiver~ #0 #0 #0 ~identified&unstealable&undroppable~ ~INV2~
 		
 		COPY ~%MOD_FOLDER%/rbg/cre/xaneoma.cre~ ~override~
 		SAY NAME1 @4046
@@ -4379,6 +4382,19 @@ SILENT
 		WRITE_ASCII 0x94 ~xademsan~ #8
 		
 		LPF xa_delete_are_actors END
+		
+		//{ Add Narzugon NPC
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 327
+				fj_loc_y = 180
+				fj_orientation = 0 // S 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = xanarzu
+				fj_cre_resref = xanarzu
+		END
+		//}
 	//}
 	
 	//{ Lyriel Painting

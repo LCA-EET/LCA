@@ -1,23 +1,92 @@
 IF
 	Global("XA_LC_EnterSanctum", "GLOBAL", 1)
-	GlobalLT("XA_LC_NarzuSpawn", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		CreateCreature("XANARZU", [327.180], S)
-		SetGlobal("XA_LC_NarzuSpawn", "MYAREA", 1)
 		SetGlobal("XA_LC_EnterSanctum", "GLOBAL", 0)
 		FadeFromColor([30.0],0)
 		Wait(1)
 END
 
+//{ Narzugon Dialog Initiation
 IF
-	Global("XA_LC_EnterSanctum", "GLOBAL", 1)
+	Global("XA_LC_ParleyAttack", "GLOBAL", 1)
+	InMyArea(Player1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LC_EnterSanctum", "GLOBAL", 0)
-		FadeFromColor([30.0],0)
-		Wait(1)
+		ActionOverride("XANARZU",StartDialog("XANARZU", Player1))
 END
+
+IF
+	Global("XA_LC_ConfrontNarzugon", "GLOBAL", 1)
+	InMyArea(Player1)
+THEN
+	RESPONSE #100
+		ActionOverride("XANARZU",StartDialog("XANARZU", Player1))
+END
+
+IF
+	InMyArea(Player1)
+	Global("XA_LC_CompletedG1", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_CompletedG1", "GLOBAL", 2)
+		ActionOverride("XANARZU", StartDialog("XANARZU", Player1))
+		SetInterrupt(TRUE)
+END
+
+IF
+	InMyArea(Player1)
+	Global("XA_LC_CompletedG2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_CompletedG2", "GLOBAL", 2)
+		ActionOverride("XANARZU", StartDialog("XANARZU", Player1))
+		SetInterrupt(TRUE)
+END
+
+IF
+	InMyArea(Player1)
+	Global("XA_LC_CompletedG3", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_CompletedG3", "GLOBAL", 2)
+		ActionOverride("XANARZU", StartDialog("XANARZU", Player1))
+		SetInterrupt(TRUE)
+END
+//}
+
+//{ Kill Narzugon
+IF
+	HPPercentLT("XANARZU", 10)
+	Global("XA_LC_NarzugonHostile", "LOCALS", 1)
+THEN
+	RESPONSE #33
+		ActionOverride("XANARZU", SetItemFlags("XAQUIVER", DROPPABLE, TRUE))
+		SetGlobal("XA_LC_IncubusQuiver", "GLOBAL", 1)
+		Continue()
+	RESPONSE #33
+		ActionOverride("XANARZU", SetItemFlags("XASWORD", DROPPABLE, TRUE))
+		SetGlobal("XA_LC_IncubusSword", "GLOBAL", 1)
+		Continue()
+	RESPONSE #33
+		ActionOverride("XANARZU", SetItemFlags("XAMSRING", DROPPABLE, TRUE))
+		SetGlobal("XA_LC_IncubusRing", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	HPPercentLT("XANARZU", 10)
+	Global("XA_LC_NarzugonHostile", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		DisplayStringHead("XANARZU", @0)
+		SetGlobal("XA_LC_IncubusDefeated", "GLOBAL", 1)
+		Kill("XANARZU")	
+END
+//}
 
 IF
 	Global("XA_LC_DemonDead", "GLOBAL", 3)
@@ -58,7 +127,7 @@ END
 
 IF
 	HPPercentLT("XANARZU", 100)
-	GlobalLT("XA_LC_ConfrontDemon", "GLOBAL", 1)
+	GlobalLT("XA_LC_ConfrontNarzugon", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		ApplySpell("XANARZU", CLERIC_HEAL)

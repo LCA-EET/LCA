@@ -133,7 +133,7 @@ APPEND ~PLAYER1~
 		GOTO XA_RemoveWards
 		
 		IF ~
-			GlobalLT("XA_LC_PrisonKnowledge", "GLOBAL", 4)
+			GlobalLT("XA_LC_PrisonKnowledge", "GLOBAL", 2)
 		~ THEN
 		DO ~
 			SetGlobal("XA_LC_EnterIncubusSanctum", "GLOBAL", 0)
@@ -153,7 +153,7 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN REPLY @111 /* ~Yes.~ */
 		DO ~
-			SetGlobal("XA_LC_ConfrontDemon", "GLOBAL", 1)
+			SetGlobal("XA_LC_ConfrontNarzugon", "GLOBAL", 1)
 			StartCutSceneMode()
 			StartCutScene("XASENT")
 		~
@@ -172,7 +172,7 @@ APPEND ~PLAYER1~
 
 	IF ~
 		Global("XA_LC_MetIncubus", "GLOBAL", 1)
-		Global("XA_LC_PrisonKnowledge", "GLOBAL", 1)
+		Global("XA_LC_PrisonKnowledge", "GLOBAL", 0)
 	~ THEN BEGIN XA_PrisonKnowledge_1
 		SAY @122 /* ~(You awaken and find yourself back in the room that the demon created for Lyriel.)~ */
 		
@@ -182,30 +182,30 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_LC_PrisonKnowledge", "GLOBAL", 2)
+			SetGlobal("XA_LC_PrisonKnowledge", "GLOBAL", 1)
 		~
 		EXIT
 	END
 	
 	IF ~
 		Global("XA_LC_MetIncubus", "GLOBAL", 2)
-		Global("XA_LC_PrisonKnowledge", "GLOBAL", 3)
-	~ THEN BEGIN XA_PrisonKnowledge_3
+		Global("XA_LC_PrisonKnowledge", "GLOBAL", 1)
+	~ THEN BEGIN XA_PrisonKnowledge_2
 		SAY @125 /* ~(Again, you've been transported back to Lyriel's room.)~ */
 		
 		= @126 /* ~(Your understanding of how the demon is able to manipulate the energies of this place has increased, and your confident that you can breach and enter his sanctum, if you choose to do so.)~ */
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_LC_PrisonKnowledge", "GLOBAL", 4)
+			SetGlobal("XA_LC_PrisonKnowledge", "GLOBAL", 2)
 		~
 		EXIT
 	END
 	
 	IF ~
 		Global("XA_LC_MetIncubus", "GLOBAL", 3)
-		Global("XA_LC_PrisonKnowledge", "GLOBAL", 5)
-	~ THEN BEGIN XA_PrisonKnowledge_5
+		Global("XA_LC_PrisonKnowledge", "GLOBAL", 2)
+	~ THEN BEGIN XA_PrisonKnowledge_3
 		SAY @127 /* ~(The demon has again transported you to Lyriel's room.)~ */
 		
 		= @128 /* you with the knowledge you need to manipulate this prison to your own benefit. The knowledge will come handy when you confront the demon, you think to yourself.)~*/
@@ -214,7 +214,7 @@ APPEND ~PLAYER1~
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_LC_PrisonKnowledge", "GLOBAL", 6)
+			SetGlobal("XA_LC_PrisonKnowledge", "GLOBAL", 3)
 		~
 		EXIT
 	END

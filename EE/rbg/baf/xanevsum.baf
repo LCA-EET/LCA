@@ -5,8 +5,10 @@ THEN
 		Kill(Myself)
 END
 
+// If the player has completed the three paintings, the summons have a 2/3 chance of rebelling against the Narzugon
+
 IF
-	Global("XA_LC_PrisonKnowledge", "GLOBAL", 6)
+	Global("XA_LC_PrisonKnowledge", "GLOBAL", 3)
 	GlobalLT("XA_LC_ChooseAllegiance", "LOCALS", 1)
 THEN
 	RESPONSE #33
@@ -24,7 +26,7 @@ THEN
 END
 
 IF 
-	GlobalLT("XA_LC_PrisonKnowledge", "GLOBAL", 6)
+	GlobalLT("XA_LC_PrisonKnowledge", "GLOBAL", 3)
 	GlobalLT("XA_LC_ChooseAllegiance", "LOCALS", 1)
 THEN
 	RESPONSE #100

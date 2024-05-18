@@ -5,6 +5,7 @@ THEN
 		CutSceneID(Player1)
 		FadeToColor([30.0],0)
 		SetGlobal("XA_LC_ExitPrison", "GLOBAL", 1)
+		IncrementGlobal("XA_LC_MetIncubus", "GLOBAL", 1)
 		Wait(2)
 		
 		LeaveAreaLUAPanic("XAPAINT1", "", [290.425], NE)
