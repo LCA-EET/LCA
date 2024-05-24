@@ -17,7 +17,13 @@ END
 
 
 IF
-	Range(Player1, 30)
+	OR(6)
+		Range(Player1, 30)
+		Range(Player2, 30)
+		Range(Player3, 30)
+		Range(Player4, 30)
+		Range(Player5, 30)
+		Range(Player6, 30)
 	GlobalLT("XA_LC_TalkedToCryingGirl", "LOCALS", 1)
 	GlobalTimerExpired("XA_LC_CryTimer", "GLOBAL")
 THEN

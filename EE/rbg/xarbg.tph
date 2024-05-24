@@ -2164,6 +2164,14 @@ SILENT
 		// Replace Merchants
 		WRITE_ASCII 0x3BC ~xamerlea~ #8
 		WRITE_ASCII 0x4CC ~xamerlea~ #8
+		
+		// Gold
+		WRITE_SHORT 0xDCA 322
+		
+		//Replace BG1 storyline items
+		WRITE_ASCII 0xDD4 ~scrl03~ #8
+		WRITE_ASCII 0xDE8 ~scrl04~ #8
+		WRITE_ASCII 0xDFC ~scrl05~ #8
 	//}
 	
 	//{ ar0130 xaa363 Hall of Wonders
