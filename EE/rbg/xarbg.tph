@@ -667,6 +667,9 @@ SILENT
 				xa_default = ~xavirgil~
 		END
 		
+		COPY_EXISTING ~xaa874.cre~ ~override~ // Nadine
+		WRITE_ASCII 0x2CC ~xanadine~ #8 	// Dialogue
+		
 		COPY_EXISTING ~xaa904.cre~ ~override/xaalyth.cre~ // Alyth
 		LPF xa_reset_cre
 			STR_VAR
@@ -711,6 +714,9 @@ SILENT
 				xa_race = ~wtrunsgt~
 				xa_general = ~xamerlea~
 		END
+		
+		COPY_EXISTING ~xaa1006.cre~ ~override~ // Euric
+		WRITE_ASCII 0x2CC ~xaeuric~ #8 	// Dialogue
 		
 		COPY_EXISTING ~xaa1359.cre~ ~override~ // Merchant's League Bartender bart6
 		WRITE_ASCII 0x258 ~xamerchg~ #8		// Race Script
@@ -2820,7 +2826,23 @@ SILENT
 		
 	//}
 	
-	//{ ar0719 Felonius Gist House
+	//{ ar0715 xaa179 Nadine & Euric's House
+		COPY_EXISTING ~xaa179.are~ ~override~
+		
+		// Add Euric to the area
+		LPF fj_are_structure 
+			INT_VAR
+				fj_loc_x = 345
+				fj_loc_y = 300
+				fj_orientation = 12 // E 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Neoma
+				fj_cre_resref = xaa1006 // euric
+		END
+	//}
+	
+	//{ ar0719 xaa173 Felonius Gist House
 		COPY_EXISTING ~xaa173.are~ ~override~
 		
 		// Remove Statues
