@@ -3,11 +3,19 @@ PRINT @1000  /* ~Processing BG1 changes...~ */
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/baf~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/d~
 
+//{ See if CorwinEET is installed
+	ACTION_IF !(MOD_IS_INSTALLED "Setup-CorwinEET.tp2" "0") THEN BEGIN
+		OUTER_SET corwinEET = 1
+	END ELSE BEGIN
+		OUTER_SET corwinEET = 0
+	END
+//}
+
 //{ String Sets
 	ACTION_IF (isEET = 1) THEN BEGIN
 		STRING_SET 202516 @1001 //BELAND State 0 /* */
 		STRING_SET 202517 @1002 //BELAND State 1 /* */
-		ACTION_IF !(MOD_IS_INSTALLED "Setup-CorwinEET.tp2" "0") THEN BEGIN
+		ACTION_IF (corwinEET = 0) THEN BEGIN
 			PRINT @1010  /* ~CorwinEET is not installed. Strings will be patched accordingly.~ */
 			STRING_SET 216992 @1003 //DELTAN2 State 1
 			STRING_SET 216991 @1004 //DELTAN2 State 4
@@ -60,6 +68,18 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/d~
 			fj_structure_type = region
 			fj_name = ~XA1316FP~
 			fj_reg_script = ~XA1316FP~
+		END
+		
+		PATCH_IF (corwinEET = 0) THEN BEGIN
+			COPY_EXISTING ~michae.cre~ ~override/xacoras0.cre~
+			WRITE_LONG 0x8 RESOLVE_STR_REF(@1015)
+			WRITE_LONG 0xC RESOLVE_STR_REF(@1015)
+			WRITE_ASCII 0x2CC ~xacoras1~ #8
+			
+			COPY_EXISTING ~taxek.cre~ ~override/xacoras1.cre~
+			WRITE_LONG 0x8 RESOLVE_STR_REF(@1015)
+			WRITE_LONG 0xC RESOLVE_STR_REF(@1015)
+			WRITE_ASCII 0x2CC ~xacoras0~ #8
 		END
 	//}
 	
