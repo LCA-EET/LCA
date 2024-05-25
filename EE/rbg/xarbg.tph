@@ -2015,6 +2015,10 @@ SILENT
 		
 		// Replace Ithtyl Dialogue
 		WRITE_ASCII 0x164 ~xaithtyl~ #8
+		
+		// Remove Skull of Kereph
+		WRITE_ASCII 0x654 ~misc07~ #8
+		WRITE_SHORT 0x65E 621
 	//}
 	
 	//{ ar0121 xaa605
@@ -2812,6 +2816,20 @@ SILENT
 				fj_name = ~XAP0706~
 				fj_reg_script = ~XAP0706~
 		END
+		LPF xa_delete_are_actors END
+		
+	//}
+	
+	//{ ar0719 Felonius Gist House
+		COPY_EXISTING ~xaa173.are~ ~override~
+		
+		// Remove Statues
+		WRITE_LONG 0x264 0
+		WRITE_LONG 0x374 0
+		WRITE_LONG 0x484 0
+		WRITE_LONG 0x594 0
+		WRITE_LONG 0x6A4 0
+		
 	//}
 	
 	//{ ar0726 xaa175 Diviner's Tent
@@ -3134,6 +3152,13 @@ SILENT
 				fj_cre_resref = xaglint
 		END
 		//}
+	//}
+	
+	//{ ar1306 xaa274
+		COPY_EXISTING ~xaa274.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x7B4 0 // Euric
 	//}
 	
 	//{ ar1307 xaa428
