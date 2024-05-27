@@ -70,17 +70,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/d~
 			fj_reg_script = ~XA1316FP~
 		END
 		
-		PATCH_IF (corwinEET = 0) THEN BEGIN
-			COPY_EXISTING ~michae.cre~ ~override/xacoras0.cre~
-			WRITE_LONG 0x8 RESOLVE_STR_REF(@1015)
-			WRITE_LONG 0xC RESOLVE_STR_REF(@1015)
-			WRITE_ASCII 0x2CC ~xacoras1~ #8
-			
-			COPY_EXISTING ~taxek.cre~ ~override/xacoras1.cre~
-			WRITE_LONG 0x8 RESOLVE_STR_REF(@1015)
-			WRITE_LONG 0xC RESOLVE_STR_REF(@1015)
-			WRITE_ASCII 0x2CC ~xacoras0~ #8
-		END
+		
 	//}
 	
 	//{ Corwin's House (SE Baldur's Gate), Second Floor
@@ -102,6 +92,20 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/d~
 		END
 	//}
 
+//}
+
+//{ Replace Michael & Taxek with Assassins
+	ACTION_IF (corwinEET = 0) THEN BEGIN
+		COPY_EXISTING ~michae.cre~ ~override/xacoras0.cre~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@1015)
+		WRITE_LONG 0xC RESOLVE_STR_REF(@1015)
+		WRITE_ASCII 0x2CC ~xacoras1~ #8
+		
+		COPY_EXISTING ~taxek.cre~ ~override/xacoras1.cre~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@1015)
+		WRITE_LONG 0xC RESOLVE_STR_REF(@1015)
+		WRITE_ASCII 0x2CC ~xacoras0~ #8
+	END
 //}
 
 //{ Rohma's Friend

@@ -8,6 +8,45 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+//{ Action Functions
+DEFINE_ACTION_FUNCTION xa_copy_folder_contents
+	STR_VAR 
+		xa_relative_path = ~~
+	BEGIN
+		GET_FILE_ARRAY xa_files ~%xa_relative_path%~ ~$*~
+		ACTION_PHP_EACH xa_files AS _ => xa_file
+		BEGIN 
+			COPY ~%xa_file%~ ~override~
+		END
+	END
+	
+DEFINE_ACTION_FUNCTION xa_determine_quantity
+	INT_VAR
+		xa_str_ref = 0
+		xa_min_qty = 0
+		xa_max_qty = 0
+	RET
+		xa_quantity
+	BEGIN
+		ACTION_GET_STRREF xa_str_ref xa_prompt
+		PRINT ~%xa_prompt%~
+		ACTION_READLN ~xa_quantity~
+		
+		OUTER_WHILE NOT(IS_AN_INT %xa_quantity%)
+		BEGIN
+			PRINT ~%xa_prompt%~
+			ACTION_READLN ~xa_quantity~
+		END
+	
+		OUTER_WHILE (%xa_quantity% < %xa_min_qty%) OR (%xa_quantity% > %xa_max_qty%) 
+		BEGIN
+			PRINT ~%xa_prompt%~
+			ACTION_READLN ~xa_quantity~
+		END
+	END
+//}
+
+//{ Patch Functions
 DEFINE_PATCH_FUNCTION xa_delete_are_actors 
 	INT_VAR xa_component_count = 0
 	
@@ -96,18 +135,7 @@ DEFINE_PATCH_FUNCTION xa_reset_cre
 		WRITE_ASCIIE 0x268 ~%xa_default%~ #8		// Default Script
 	END
 	
-DEFINE_ACTION_FUNCTION xa_copy_folder_contents
-	STR_VAR 
-		xa_relative_path = ~~
-	BEGIN
-		GET_FILE_ARRAY xa_files ~%xa_relative_path%~ ~$*~
-		ACTION_PHP_EACH xa_files AS _ => xa_file
-		BEGIN 
-			COPY ~%xa_file%~ ~override~
-		END
-	END
-
-DEFINE_PATCH_FUNCTION xa_add_extras
+	DEFINE_PATCH_FUNCTION xa_add_extras
 	INT_VAR
 		xa_minX = 0
 		xa_maxX = 0
@@ -199,3 +227,8 @@ DEFINE_PATCH_FUNCTION xa_add_extras_rescript
 			
 		END
 	END
+//}
+
+	
+
+

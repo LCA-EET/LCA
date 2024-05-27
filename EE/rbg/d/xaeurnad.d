@@ -1,5 +1,4 @@
 BEGIN ~xaeuric~
-
 	IF ~
 		True()
 	~ THEN BEGIN XA_Default
@@ -22,7 +21,6 @@ BEGIN ~xaeuric~
 		IF ~~ THEN
 		EXTERN xanadine XA_Intro3
 	END
-END
 
 BEGIN ~xanadine~
 	IF ~
@@ -43,4 +41,3 @@ BEGIN ~xanadine~
 		IF ~~ THEN 
 		EXTERN xaeuric XA_Intro4
 	END
-END

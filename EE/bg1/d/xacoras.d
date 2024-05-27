@@ -1,5 +1,4 @@
 BEGIN ~xacoras0~
-
 	IF ~
 		NumTimesTalkedTo(0)
 	~ THEN BEGIN XA_Intro
@@ -12,8 +11,6 @@ BEGIN ~xacoras0~
 		EXTERN xacoras1 XA_End
 	END
 
-END
-
 BEGIN ~xacoras1~
 	IF ~~ THEN BEGIN XA_End
 		SAY @1 /* ~Kill them!~ */
@@ -24,5 +21,3 @@ BEGIN ~xacoras1~
 		~
 		EXIT
 	END
-
-END
