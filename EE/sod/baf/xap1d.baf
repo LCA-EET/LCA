@@ -16,6 +16,7 @@ END
 
 IF
 	!Dead("Corwin")
+	GlobalGT("bd_ddd","global",0)
 	InMyArea("Corwin")
 	AreaCheck("BD1000") // Coast Way Crossing
 	See("BDTHAIRD")
