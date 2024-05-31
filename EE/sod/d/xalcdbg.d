@@ -12,6 +12,9 @@ APPEND XALCDBG
 		IF ~~ THEN REPLY @3001
 		GOTO XA_SoD_ItemTest
 		
+		IF ~~ THEN REPLY @4037 
+		GOTO XA_SoD_AdjustExperience
+		
 		IF ~~ THEN REPLY @4005/* ~Adjust variables.~*/
 		GOTO XA_SoD_AdjustVariables
 		
@@ -44,6 +47,51 @@ APPEND XALCDBG
 		
 		IF ~~ THEN REPLY @4023 /*~Area Test~*/
 		GOTO XA_SoD_AreaTest
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO 0
+		
+		COPY_TRANS XALCDBG 11
+	END
+	
+	IF ~~ THEN BEGIN XA_SoD_AdjustExperience
+		SAY @4037
+		
+		IF ~~ THEN REPLY @4038
+		DO ~
+			ChangeStat(Player1, XP, 25000, ADD)
+		~
+		GOTO XA_SoD_AdjustExperience
+		
+		IF ~~ THEN REPLY @4039
+		DO ~
+			ChangeStat(Player2, XP, 25000, ADD)
+		~
+		GOTO XA_SoD_AdjustExperience
+		
+		IF ~~ THEN REPLY @4040
+		DO ~
+			ChangeStat(Player3, XP, 25000, ADD)
+		~
+		GOTO XA_SoD_AdjustExperience
+		
+		IF ~~ THEN REPLY @4041
+		DO ~
+			ChangeStat(Player4, XP, 25000, ADD)
+		~
+		GOTO XA_SoD_AdjustExperience
+		
+		IF ~~ THEN REPLY @4042
+		DO ~
+			ChangeStat(Player5, XP, 25000, ADD)
+		~
+		GOTO XA_SoD_AdjustExperience
+		
+		IF ~~ THEN REPLY @4043
+		DO ~
+			ChangeStat(Player6, XP, 25000, ADD)
+		~
+		GOTO XA_SoD_AdjustExperience
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 0

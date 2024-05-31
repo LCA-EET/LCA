@@ -115,6 +115,14 @@
 @4034 = ~SetGlobal("XA_LC_ToldTruthBhaal", "GLOBAL", 1)~
 @4035 = ~SetGlobal("BD_DOD_PHYLACTERY_DESTROYED","GLOBAL",0)~
 @4036 = ~SetGlobal("BD_DOD_PHYLACTERY_DESTROYED","GLOBAL",1)~
+@4037 = ~Adjust experience.~
+@4038 = ~Player 1 (+ 25,000)~
+@4039 = ~Player 2 (+ 25,000)~
+@4040 = ~Player 3 (+ 25,000)~
+@4041 = ~Player 4 (+ 25,000)~
+@4042 = ~Player 5 (+ 25,000)~
+@4043 = ~Player 6 (+ 25,000)~
+
 
 @5000 = ~BG2 Debug~
 @5001 = ~Area Test~
