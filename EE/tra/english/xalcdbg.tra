@@ -122,7 +122,11 @@
 @4041 = ~Player 4 (+ 25,000)~
 @4042 = ~Player 5 (+ 25,000)~
 @4043 = ~Player 6 (+ 25,000)~
-
+@4044 = ~SetGlobal("bd_ddd","global",0)~
+@4045 = ~SetGlobal("bd_ddd","global",1)~
+@4046 = ~SetGlobal("bd_ddd","global",2)~
+@4047 = ~SetGlobal("bd_ddd","global",3)~
+@4048 = ~SetGlobal("XA_LC_TentCS", "GLOBAL", 0)~
 
 @5000 = ~BG2 Debug~
 @5001 = ~Area Test~

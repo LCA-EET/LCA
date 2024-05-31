@@ -1,6 +1,22 @@
 IF
 	!Dead("Corwin")
 	InMyArea("Corwin")
+	AreaCheck("BD7100") // Troll Forest
+	See("BDTHAIRD")
+	OR(2)
+		Global("XA_LC_TNTCSDebug", "GLOBAL", 1)
+		GlobalLT("XA_LC_TentCS", "GLOBAL", 1)	
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 8~)
+		SetGlobal("XA_LC_TentCS", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutSceneEx("XATNTCS",FALSE)
+END
+
+IF
+	!Dead("Corwin")
+	InMyArea("Corwin")
 	AreaCheck("BD3000") //Allied Siege Camp
 	See("BDTHAIRD")
 	OR(2)

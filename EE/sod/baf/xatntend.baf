@@ -14,7 +14,15 @@ THEN
 		Wait(1)
 		RestorePartyLocations()
 		Wait(1)
-		RestPartyEx(0,10,TRUE)
+		//RestPartyEx(0,10,TRUE)
+		AdvanceTime(EIGHT_HOURS)
+		SetGlobalTimer("bd_dream_timer","global",TWELVE_HOURS)
+		ApplySpellRES("bdrejuve",Player1)  // No such index
+		ApplySpellRES("bdrejuve",Player2)  // No such index
+		ApplySpellRES("bdrejuve",Player3)  // No such index
+		ApplySpellRES("bdrejuve",Player4)  // No such index
+		ApplySpellRES("bdrejuve",Player5)  // No such index
+		ApplySpellRES("bdrejuve",Player6)  // No such index
 		Wait(1)
 		ApplySpellRES("bdunhide","Corwin")  // No such index
 		SmallWait(5)

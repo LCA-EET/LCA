@@ -161,6 +161,36 @@ APPEND XALCDBG
 	IF ~~ THEN BEGIN XA_SoD_AdjustVariables
 		SAY @4005/* ~Adjust variables.~*/
 		
+		IF ~~ THEN REPLY @4044
+		DO ~
+			SetGlobal("bd_ddd","global",0)
+		~
+		GOTO XA_SoD_AdjustVariables
+		
+		IF ~~ THEN REPLY @4045
+		DO ~
+			SetGlobal("bd_ddd","global",1)
+		~
+		GOTO XA_SoD_AdjustVariables
+		
+		IF ~~ THEN REPLY @4046
+		DO ~
+			SetGlobal("bd_ddd","global",2)
+		~
+		GOTO XA_SoD_AdjustVariables
+		
+		IF ~~ THEN REPLY @4047
+		DO ~
+			SetGlobal("bd_ddd","global",3)
+		~
+		GOTO XA_SoD_AdjustVariables
+		
+		IF ~~ THEN REPLY @4048
+		DO ~
+			SetGlobal("XA_LC_TentCS", "GLOBAL", 0)
+		~
+		GOTO XA_SoD_AdjustVariables
+		
 		IF ~~ THEN REPLY @4035
 		DO ~
 			SetGlobal("BD_DOD_PHYLACTERY_DESTROYED","GLOBAL",0)
