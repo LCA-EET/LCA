@@ -113,6 +113,18 @@ APPEND XALCDBG
 	IF ~~ THEN BEGIN XA_SoD_AdjustVariables
 		SAY @4005/* ~Adjust variables.~*/
 		
+		IF ~~ THEN REPLY @4035
+		DO ~
+			SetGlobal("BD_DOD_PHYLACTERY_DESTROYED","GLOBAL",0)
+		~
+		GOTO XA_SoD_AdjustVariables
+		
+		IF ~~ THEN REPLY @4036
+		DO ~
+			SetGlobal("BD_DOD_PHYLACTERY_DESTROYED","GLOBAL",1)
+		~
+		GOTO XA_SoD_AdjustVariables
+		
 		IF ~~ THEN REPLY @4006
 		DO ~
 			SetGlobal("bd_corwin_romanceactive","global",0)

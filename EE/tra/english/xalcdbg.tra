@@ -113,6 +113,8 @@
 @4032 = ~SetGlobal("XA_LC_CorwinContinue","GLOBAL",1)~
 @4033 = ~SetGlobal("XA_LC_CorwinContinue","GLOBAL",0)~
 @4034 = ~SetGlobal("XA_LC_ToldTruthBhaal", "GLOBAL", 1)~
+@4035 = ~SetGlobal("BD_DOD_PHYLACTERY_DESTROYED","GLOBAL",0)~
+@4036 = ~SetGlobal("BD_DOD_PHYLACTERY_DESTROYED","GLOBAL",1)~
 
 @5000 = ~BG2 Debug~
 @5001 = ~Area Test~
