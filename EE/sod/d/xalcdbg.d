@@ -18,6 +18,9 @@ APPEND XALCDBG
 		IF ~~ THEN REPLY @4005/* ~Adjust variables.~*/
 		GOTO XA_SoD_AdjustVariables
 		
+		IF ~~ THEN REPLY @4050
+		GOTO XA_SoD_DreamConditionCheck
+		
 		IF ~~ THEN REPLY @4001/* ~Cutscene Test~*/
 		GOTO XA_SoD_CutsceneTest
 		
@@ -50,6 +53,65 @@ APPEND XALCDBG
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 0
+		
+		COPY_TRANS XALCDBG 11
+	END
+	
+	IF ~~ THEN BEGIN XA_SoD_DreamConditionCheck
+		SAY @4050
+		
+		IF ~
+			GlobalGT("chapter","global",7)
+		~ THEN REPLY @4051
+		GOTO XA_SoD_DreamConditionCheck
+		
+		IF ~
+			GlobalGT("chapter","global",8)
+		~ THEN REPLY @4052
+		GOTO XA_SoD_DreamConditionCheck
+		
+		IF ~
+			GlobalGT("chapter","global",9)
+		~ THEN REPLY @4053
+		GOTO XA_SoD_DreamConditionCheck
+		
+		IF ~
+			GlobalGT("chapter","global",10)
+		~ THEN REPLY @4054
+		GOTO XA_SoD_DreamConditionCheck
+		
+		IF ~
+			GlobalLT("chapter","global",13)
+		~ THEN REPLY @4055
+		GOTO XA_SoD_DreamConditionCheck
+		
+		IF ~
+			Global("bd_ddd", "global", 0)
+		~ THEN REPLY @4056
+		GOTO XA_SoD_DreamConditionCheck
+		
+		IF ~
+			Global("bd_ddd", "global", 1)
+		~ THEN REPLY @4057
+		GOTO XA_SoD_DreamConditionCheck
+		
+		IF ~
+			Global("bd_ddd", "global", 2)
+		~ THEN REPLY @4058
+		GOTO XA_SoD_DreamConditionCheck
+		
+		IF ~
+			Global("bd_ddd", "global", 3)
+		~ THEN REPLY @4059
+		GOTO XA_SoD_DreamConditionCheck
+		
+		IF ~
+			!GlobalTimerNotExpired("bd_dream_timer","global")
+		~ THEN REPLY @4060
+		GOTO XA_SoD_DreamConditionCheck
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_SoD_Debug
 		
 		COPY_TRANS XALCDBG 11
 	END
@@ -94,7 +156,7 @@ APPEND XALCDBG
 		GOTO XA_SoD_AdjustExperience
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
-		GOTO 0
+		GOTO XA_SoD_Debug
 		
 		COPY_TRANS XALCDBG 11
 	END
@@ -160,6 +222,12 @@ APPEND XALCDBG
 	
 	IF ~~ THEN BEGIN XA_SoD_AdjustVariables
 		SAY @4005/* ~Adjust variables.~*/
+		
+		IF ~~ THEN REPLY @4049
+		DO ~
+			SetGlobalTimer("bd_dream_timer", "GLOBAL", ONE_MINUTE)
+		~
+		GOTO XA_SoD_AdjustVariables
 		
 		IF ~~ THEN REPLY @4044
 		DO ~

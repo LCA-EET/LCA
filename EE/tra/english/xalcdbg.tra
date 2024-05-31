@@ -127,6 +127,18 @@
 @4046 = ~SetGlobal("bd_ddd","global",2)~
 @4047 = ~SetGlobal("bd_ddd","global",3)~
 @4048 = ~SetGlobal("XA_LC_TentCS", "GLOBAL", 0)~
+@4049 = ~SetGlobalTimer("bd_dream_timer", "GLOBAL", ONE_MINUTE)~
+@4050 = ~Dream Condition Check~
+@4051 = ~GlobalGT("chapter","global",7)~
+@4052 = ~GlobalGT("chapter","global",8)~
+@4053 = ~GlobalGT("chapter","global",9)~
+@4054 = ~GlobalGT("chapter","global",10)~
+@4055 = ~GlobalLT("chapter","global",13)~
+@4056 = ~Global("bd_ddd", "global", 0)~
+@4057 = ~Global("bd_ddd", "global", 1)~
+@4058 = ~Global("bd_ddd", "global", 2)~
+@4059 = ~Global("bd_ddd", "global", 3)~
+@4060 = ~!GlobalTimerNotExpired("bd_dream_timer","global")~
 
 @5000 = ~BG2 Debug~
 @5001 = ~Area Test~

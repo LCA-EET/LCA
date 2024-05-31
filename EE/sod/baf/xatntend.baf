@@ -16,7 +16,6 @@ THEN
 		Wait(1)
 		//RestPartyEx(0,10,TRUE)
 		AdvanceTime(EIGHT_HOURS)
-		SetGlobalTimer("bd_dream_timer","global",TWELVE_HOURS)
 		ApplySpellRES("bdrejuve",Player1)  // No such index
 		ApplySpellRES("bdrejuve",Player2)  // No such index
 		ApplySpellRES("bdrejuve",Player3)  // No such index

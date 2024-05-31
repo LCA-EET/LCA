@@ -46,8 +46,15 @@ BEGIN ~XALCDBG~
 		IF ~~ THEN REPLY @2021 /*~Support the creator of the LCA mod.~*/
 		GOTO XA_LC_Support
 		
-		IF ~~ THEN REPLY @2038 /*  ~Open Debugger.~ */
+		IF ~
+			GlobalLT("XA_LC_DebugWarning", "GLOBAL", 1)
+		~ THEN REPLY @2038 /*  ~Open Debugger.~ */
 		GOTO XA_Debug
+		
+		IF ~
+			Global("XA_LC_DebugWarning", "GLOBAL", 1)
+		~ THEN REPLY @2038 /*  ~Open Debugger.~ */
+		GOTO XA_MainMenu
 		
 		IF ~~ THEN REPLY @2039
 		DO ~
@@ -153,6 +160,9 @@ BEGIN ~XALCDBG~
 		SAY @2029 /* ~WARNING: The debugger is meant to be used for testing purposes only. Improper alterations to the game state can crash the game, or make it so that you cannot complete the game.~*/
 		
 		IF ~~ THEN REPLY @2030 /*~I understand the risks. Proceed.~*/
+		DO ~
+			SetGlobal("XA_LC_DebugWarning", "GLOBAL", 1)
+		~
 		GOTO XA_MainMenu
 		
 		IF ~~ THEN REPLY @2013 /*~Return to the main menu.~*/
