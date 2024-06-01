@@ -1074,6 +1074,8 @@ SILENT
 				SET opcode = 52
 				SET target = 1
 				SET timing = 9
+				SET parameter1 = 16909056
+				SET parameter2 = 2
 			END
 			
 			COPY_EXISTING ~xadrake0.cre~ ~override/xadrake1.cre~
