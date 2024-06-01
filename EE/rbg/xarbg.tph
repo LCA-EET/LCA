@@ -1074,7 +1074,7 @@ SILENT
 				SET opcode = 52
 				SET target = 1
 				SET timing = 9
-				SET parameter1 = 16909056
+				SET parameter1 = 16909056 // r = 3, b = 2, g = 1
 				SET parameter2 = 2
 			END
 			
