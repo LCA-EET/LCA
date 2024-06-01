@@ -22,7 +22,6 @@ SILENT
 		APPEND ~animate.ids~ ~0x7F59 ABISHAI_GREEN~
 		APPEND ~animate.ids~ ~0xE258 HERPHERNAAN~
 		APPEND ~animate.ids~ ~0xE279 OROG_SHAMAN~
-		APPEND ~animate.ids~ ~0xE28C DRAGON_WHITE_YOUNG~
 	END
 	
 //}
@@ -1047,6 +1046,7 @@ SILENT
 			SAY NAME2 @4161 /* Alabaster Drake */
 			WRITE_LONG 0x14 6000 // XP
 			WRITE_BYTE 0x52 3 // THAC0
+			WRITE_LONG 0x28 0xA000
 			
 			WRITE_SHORT 0x24 80 // HP
 			WRITE_SHORT 0x26 80 // HP
@@ -1070,6 +1070,11 @@ SILENT
 			WRITE_ASCII 0x280 ~xadrake0~ #8 // script name
 			WRITE_ASCII 0x258 ~xadrake~ #8 // race script
 			REMOVE_CRE_ITEM ~bdsw1hda~ ~bddagg05~
+			LPF ADD_CRE_EFFECT
+				SET opcode = 52
+				SET target = 1
+				SET timing = 9
+			END
 			
 			COPY_EXISTING ~xadrake0.cre~ ~override/xadrake1.cre~
 			WRITE_ASCII 0x280 ~xadrake1~ #8
@@ -1085,6 +1090,7 @@ SILENT
 			WRITE_ASCII 0x850 ~dragring~ #8
 			WRITE_ASCII 0x280 ~xadragon~ #8
 			WRITE_LONG 0x14 55000
+			WRITE_LONG 0x28 0x1206
 		//}
 	//}
 	
