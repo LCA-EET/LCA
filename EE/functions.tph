@@ -219,7 +219,7 @@ DEFINE_PATCH_FUNCTION xa_add_extras_rescript
 							fj_bcs_class = ~%xa_class%~
 							fj_bcs_race = ~%xa_race%~
 							fj_bcs_default = ~%xa_default%~
-							fj_bcs_specific = ~%xa_specific%~
+							fj_bcs_specific = ~%xa_specifics%~
 					END
 					xa_extrasAdded = (xa_extrasAdded + 1)
 				END

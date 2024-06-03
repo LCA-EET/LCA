@@ -1,5 +1,6 @@
 OUTER_SET sod_carryover = 1
 
+COMPILE %MOD_FOLDER%/sod/baf_co/xalcnull.baf~
 
 //{ Archery Boost
 	COPY ~%MOD_FOLDER%/sod/spl/xalcarch.spl~ ~override~
