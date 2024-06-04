@@ -1,3 +1,13 @@
+//{ Explicit mod not installed
+IF
+	Global("XA_LCE_Expl00", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LCE_Expl00", "GLOBAL", 2)
+		DisplayStringHead(Myself, @0) /* ~(Install the LCA_Explicit mod to access this content.)~ */
+END
+//}
+
 //{ Debugging
 IF
 	Global("XA_LC_SkipTo4300Kiss", "GLOBAL", 1)
