@@ -627,6 +627,9 @@ CHAIN IF ~
 	== XALIIA
 	@51 /* ~It's unprecedented.~ */
 	= @52 /* ~(The other Dukes nod in agreement.)~ */
+	DO ~
+		PlaySong(1008)
+	~
 	== XAENTAR
 	@53 /* ~We have decided, <CHARNAME>, to bestow upon you the title of 'Defender of Baldur's Gate'. The title comes with a generous stipend.~ */
 	== XABELT

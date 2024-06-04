@@ -680,7 +680,7 @@ APPEND XACORWIJ
 		IF ~~ THEN REPLY @1419 /* Right. (Transform into the Slayer).~ */
 		DO ~
 			SetGlobal("XA_LC_ScaredChildren", "GLOBAL", 1)
-			PlaySong(58)
+			PlaySong(58) // play dragon battle music
 			StartCutScene("XACSHOW3")
 		~	
 		EXIT

@@ -1863,10 +1863,20 @@ SILENT
 		COPY ~%MOD_FOLDER%/rbg/mus/xamu07a.acm~ ~MUSIC/xamu07/xamu07a.acm~	
 	//}
 
+	//{ Triumphant Music
+		ADD_MUSIC xamu08	~%MOD_FOLDER%/rbg/mus/xamu08.mus~
+		COPY ~%MOD_FOLDER%/rbg/mus/xamu08a.acm~ ~MUSIC/xamu08/xamu08a.acm~	
+	//}
+
 	//{ Adjust Script & Dialogue Music
 		COPY_EXISTING ~xanarzu.dlg~ ~override~
 		DECOMPILE_AND_PATCH BEGIN
-			REPLACE_TEXTUALLY ~PlaySong(1023)~ ~PlaySong(%xaa22%)~
+			REPLACE_TEXTUALLY ~PlaySong(1022)~ ~PlaySong(%xaa22%)~
+		END
+		
+		COPY_EXISTING ~player1.dlg~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY ~PlaySong(1008)~ ~PlaySong(%xamu08%)~
 		END
 	//}
 //}
