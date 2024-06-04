@@ -36,5 +36,23 @@ APPEND BDCORWIJ
 		IF ~~ THEN REPLY @10 /* ~That was better than I could've imagined.~ */
 		GOTO 298
 	END
+	
+	IF ~~ THEN BEGIN XA_InstallExplicit
+		SAY @11 /*~(Install the LCA_Explicit mod to access this content.)~*/
+		
+		IF ~~ THEN
+		EXIT
+	END
+END
+
+ADD_TRANS_TRIGGER BDCORWIJ 303
+~
+	!Gender(Player1, MALE)
+~
+
+EXTEND_BOTTOM BDCORWIJ 303
+	IF ~
+		Gender(Player1, MALE)
+	~ THEN GOTO XA_InstallExplicit
 END
 
