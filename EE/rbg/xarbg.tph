@@ -2725,7 +2725,8 @@ SILENT
 				fj_cre_resref = xavirgil
 		END
 	//}
-	
+	PRINT @4182 /* ~Still working... please be patient.~*/
+	SILENT
 	//{ ar0615 xaa662
 		COPY_EXISTING ~xaa662.are~ ~override~	
 		//{ Change scrolls in container 3

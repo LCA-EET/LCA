@@ -4,6 +4,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LCE_Expl00", "GLOBAL", 2)
+		SetGlobal("XA_LC_Journal_Intimate", "GLOBAL", 1)
 		DisplayStringHead(Myself, @0) /* ~(Install the LCA_Explicit mod to access this content.)~ */
 END
 //}

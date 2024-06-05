@@ -1,3 +1,18 @@
+//{ Storeroom Intimate Encounter
+IF
+	Global("XA_LC_Journal_Intimate", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Intimate", "GLOBAL", 0)
+		AddJournalEntry(@5, INFO) /* @5 = ~A Taste of What's to Come
+Schael and I shared an intimate moment in the storeroom in Dragonspear castle. She assured me that it's only a small taste of what she has planned for me when we finally return to Baldur's Gate.~*/
+		AddXPObject(Player1, 5000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
 //{ Archery Lesson
 IF 
 	Global("XA_LC_Journal_ArcheryLesson", "GLOBAL", 1)

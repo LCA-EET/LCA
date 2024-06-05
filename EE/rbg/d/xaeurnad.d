@@ -15,7 +15,7 @@ BEGIN ~xaeuric~
 		EXTERN xanadine XA_Intro3
 	END
 	
-	IF ~~ THEN BEGIN XA_Intro2
+	IF ~~ THEN BEGIN XA_Intro4
 		SAY @4 /* Yes, mom*/
 		
 		IF ~~ THEN
