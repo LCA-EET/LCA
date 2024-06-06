@@ -1071,11 +1071,12 @@ SILENT
 			WRITE_ASCII 0x258 ~xadrake~ #8 // race script
 			REMOVE_CRE_ITEM ~bdsw1hda~ ~bddagg05~
 			LPF ADD_CRE_EFFECT
-				SET opcode = 52
-				SET target = 1
-				SET timing = 9
-				SET parameter1 = 16909056 // r = 3, b = 2, g = 1
-				SET parameter2 = 2
+				INT_VAR
+					opcode = 52
+					target = 1
+					timing = 9
+					parameter1 = 16909056 // r = 3, b = 2, g = 1
+					parameter2 = 2
 			END
 			
 			COPY_EXISTING ~xadrake0.cre~ ~override/xadrake1.cre~
