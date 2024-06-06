@@ -9,20 +9,6 @@ COMPILE ~%MOD_FOLDER%/sod/baf_co/xalcnull.baf~
 	SAY DESC @2002 				 /* ~Corwin's Tutelage~*/
 //}
 
-//{ CRE
-	COPY ~%MOD_FOLDER%/sod/cre/xalcspy.cre~ ~override~
-	COPY_EXISTING ~xalcspy.cre~ ~override/xacorltr.cre~
-	WRITE_LONG 0x08 RESOLVE_STR_REF(@2001)
-	WRITE_LONG 0x0C RESOLVE_STR_REF(@2001)
-	WRITE_ASCII 0x34 ~SCHAELS~ #8
-	WRITE_ASCII 0x3C ~SCHAELS~ #8
-	WRITE_ASCII 0x2CC ~XACORLTR~ #8
-	WRITE_ASCII 0x248 ~XACORLTR~ #8
-	COPY_EXISTING ~xacorltr.cre~ ~override/xaschltr.cre~
-	WRITE_LONG 0x08 RESOLVE_STR_REF(@2015)
-	WRITE_LONG 0x0C RESOLVE_STR_REF(@2015)
-//}
-
 //{ New Items
 	COPY_EXISTING ~scrl3z.itm~  ~override/xaltrcor.itm~ 
 	SAY NAME1 @2001

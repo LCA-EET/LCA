@@ -38,8 +38,9 @@ APPEND BDCORWIJ
 	END
 	
 	IF ~~ THEN BEGIN XA_CutsceneStart
-		SAY @13 /*~(She takes hold of your hand and leads you through the gathered soldiers and officers, nearly all of whom take a moment to congratulate the two of you on your hard-earned victory. Raucous cheering erupts as you hear corks popping all around you, and you and Schael — despite your best efforts — are showered in some very expensive spirits. In the midst of the revelry, you can hear the quartermaster announce that the barrels were rolled in and the spigots are open. While the men and women of the coalition are busy queuing up for their ale, Schael quickly and discreetly leads you into one of the castle's storerooms...)~*/
+		SAY @13 /*~(She takes hold of your hand and leads you through the gathered soldiers and officers, nearly all of whom take a moment to congratulate the two of you on your hard-earned victory. Raucous cheering erupts as you hear corks popping all around you, and you and Schael — despite your best efforts — are showered in some very expensive spirits.)~ */
 		
+		= @14 /*~(In the midst of the revelry, you can hear the quartermaster announce that the barrels were rolled in and the spigots are open. While the men and women of the coalition are busy queuing up for their ale, Schael quickly and discreetly leads you into one of the castle's storerooms...)~*/
 		IF ~~ THEN
 		DO ~
 			SetGlobal("XA_LCE_Expl00", "GLOBAL", 1)
