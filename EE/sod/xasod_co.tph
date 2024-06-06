@@ -2,6 +2,8 @@ OUTER_SET sod_carryover = 1
 
 COMPILE ~%MOD_FOLDER%/sod/baf_co/xalcnull.baf~
 
+COPY ~%MOD_FOLDER%/sod/cre/xalcspy.cre~ ~override~
+
 //{ Archery Boost
 	COPY ~%MOD_FOLDER%/sod/spl/xalcarch.spl~ ~override~
 	SAY NAME1 @2002				 /* ~Corwin's Tutelage~*/
