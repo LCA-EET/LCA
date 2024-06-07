@@ -232,7 +232,7 @@
 @5089 = ~Godbow x3~
 @5090 = ~Spawn Corwin (XACORWIN) and add her to the party.~
 @5091 = ~IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 3)~
-
+@5092 = ~SetGlobal("XA_LC_CorwinLesson", "GLOBAL", 1)~
 
 @6000 = ~Return to Baldur's Gate Debug~
 @6001 = ~Item Test~
