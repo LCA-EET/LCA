@@ -82,19 +82,13 @@ COPY ~%MOD_FOLDER%\generated\f\mus\xaf3\xaf3zn.acm~ ~MUSIC\xaf3\xaf3zn.acm~
 COPY ~%MOD_FOLDER%\generated\f\mus\xaf3\xaf3zp.acm~ ~MUSIC\xaf3\xaf3zp.acm~
 COPY ~%MOD_FOLDER%\generated\f\mus\xaf3\xaf3zr.acm~ ~MUSIC\xaf3\xaf3zr.acm~
 //}
-//are files
-//===================
-ACTION_IF (FILE_EXISTS_IN_GAME ~xaf100.are~) BEGIN
-	//PRINT ~Area already exists: xaf100. Skipping...~
-END ELSE BEGIN
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaf100.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\f\are\xaf100.are~ ~override~
 	WRITE_LONG 1584 %xaf0%
 	WRITE_LONG 1588 %xaf0%
 	WRITE_LONG 1596 %xaf1%
 END
-ACTION_IF (FILE_EXISTS_IN_GAME ~xaf101.are~) BEGIN
-	//PRINT ~Area already exists: xaf101. Skipping...~
-END ELSE BEGIN
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaf101.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\f\are\xaf101.are~ ~override~
 	WRITE_LONG 1396 RESOLVE_STR_REF(@11345) /*~Exit~*/
 	WRITE_LONG 1448 RESOLVE_STR_REF(@11345) /*~Exit~*/
@@ -106,8 +100,6 @@ END ELSE BEGIN
 	WRITE_LONG 1036 %xaf3%
 END
 
-//cre files
-//===================
 COPY ~%MOD_FOLDER%\generated\f\cre\xaf100.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11346) /*~Angelo~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11346) /*~Angelo~*/
@@ -126,8 +118,6 @@ COPY ~%MOD_FOLDER%\generated\f\cre\xaf102.cre~ ~override~
 	WRITE_LONG 12 RESOLVE_STR_REF(@11353) /*~Blind Albino Wyrmling~*/
 
 
-//spl files
-//===================
 COPY ~%MOD_FOLDER%\generated\f\spl\xaf100.spl~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11354) /*~Dragon Fear~*/
 COPY ~%MOD_FOLDER%\generated\f\spl\xaf101.spl~ ~override~
@@ -137,24 +127,9 @@ COPY ~%MOD_FOLDER%\generated\f\spl\xaf102.spl~ ~override~
 COPY ~%MOD_FOLDER%\generated\f\spl\xaf103.spl~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11357) /*~Breath Weapon~*/
 
-//wed files
-//===================
-COPY ~%MOD_FOLDER%\generated\f\wed\xaf100.wed~ ~override~
-COPY ~%MOD_FOLDER%\generated\f\wed\xaf101.wed~ ~override~
 
-//wav files
-//===================
-COPY ~%MOD_FOLDER%\generated\f\wav\xaf10001.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\f\wav\xaf10002.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\f\wav\xaf10005.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\f\wav\xaf10006.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\f\wav\xaf10007.wav~ ~override~
 
-//baf files
-//===================
 
-//itm files
-//===================
 COPY ~%MOD_FOLDER%\generated\f\itm\xaf100.itm~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11358) /*~Ring~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11358) /*~Ring~*/
@@ -175,26 +150,26 @@ COPY ~%MOD_FOLDER%\generated\f\itm\xaf102.itm~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11360) /*~Attack~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11360) /*~Attack~*/
 
-//tis files
-//===================
-COPY ~%MOD_FOLDER%\generated\f\tis\xaf101.tis~ ~override~
-COPY ~%MOD_FOLDER%\generated\f\tis\xaf100.tis~ ~override~
 
-//{ PVRZ
-	COPY ~%MOD_FOLDER%\generated\f\pvrz\xf10100.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\f\pvrz\xf10101.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\f\pvrz\xf101n00.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\f\pvrz\xf101n01.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\f\pvrz\xf10000.pvrz~ ~override~
-//}
 
 //bmp files.
 //=========================
-COPY ~%MOD_FOLDER%\generated\f\bmp\xaf100ht.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\f\bmp\xaf100lm.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\f\bmp\xaf100sr.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\f\bmp\xaf101ht.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\f\bmp\xaf101lm.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\f\bmp\xaf101ln.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\f\bmp\xaf101sr.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\f\bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\f\mos~ ~override~
+
+//pvrz files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\f\pvrz~ ~override~
+
+//tis files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\f\tis~ ~override~
+
+//wav files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\f\wav~ ~override~
+
+//wed files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\f\wed~ ~override~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\generated\f\baf~

@@ -96,8 +96,6 @@ COPY ~%MOD_FOLDER%\generated\c\mus\xac2\xac2zx.acm~ ~MUSIC\xac2\xac2zx.acm~
 COPY ~%MOD_FOLDER%\generated\c\mus\xac2\xac2zz.acm~ ~MUSIC\xac2\xac2zz.acm~
 COPY ~%MOD_FOLDER%\generated\c\mus\xac3\xac3a.acm~ ~MUSIC\xac3\xac3a.acm~
 //}
-//cre files
-//===================
 COPY ~%MOD_FOLDER%\generated\c\cre\xac100.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10762) /*~Glint~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10762) /*~Glint~*/
@@ -1289,19 +1287,13 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac272.cre~ ~override~
 	WRITE_LONG 272 RESOLVE_STR_REF(@11085) /*~I like smashin' heads.~[xac10413]*/
 
 
-//are files
-//===================
-ACTION_IF (FILE_EXISTS_IN_GAME ~xac100.are~) BEGIN
-	//PRINT ~Area already exists: xac100. Skipping...~
-END ELSE BEGIN
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xac100.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\c\are\xac100.are~ ~override~
 	WRITE_LONG 4512 %xac0%
 	WRITE_LONG 4516 %xac0%
 	WRITE_LONG 4524 %xac1%
 END
-ACTION_IF (FILE_EXISTS_IN_GAME ~xac101.are~) BEGIN
-	//PRINT ~Area already exists: xac101. Skipping...~
-END ELSE BEGIN
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xac101.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\c\are\xac101.are~ ~override~
 	WRITE_LONG 33516 RESOLVE_STR_REF(@11131) /*~This heavy slab displays the holy symbol of Tempus.~*/
 	WRITE_LONG 36064 RESOLVE_STR_REF(@11132) /*~This magical barrier hums with arcane power. Beyond, the camp buzzes with activity as the crusaders prepare for battle.~*/
@@ -1314,8 +1306,6 @@ END ELSE BEGIN
 	WRITE_LONG 54272 %xac3%
 END
 
-//spl files
-//===================
 COPY ~%MOD_FOLDER%\generated\c\spl\xac100.spl~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11138) /*~Protection From Good~*/
 COPY ~%MOD_FOLDER%\generated\c\spl\xac101.spl~ ~override~
@@ -1375,8 +1365,6 @@ Saving Throw: None
 
 This spell causes total, impenetrable darkness. Neither normal nor magical light works in the area of effect. All vision (including infravision) is severely limited; anyone hostile caught in the area of effect is for all practical purposes blinded as per the 1st-level wizard spell. Creatures that leave the area covered by darkness will have their vision restored after 1 round.~*/
 
-//itm files
-//===================
 COPY ~%MOD_FOLDER%\generated\c\itm\xac100.itm~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11148) /*~Girdle~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11149) /*~Girdle of Bluntness~*/
@@ -1987,28 +1975,8 @@ Equipped abilities:
 Weight: 2~*/
 COPY ~%MOD_FOLDER%\generated\c\itm\xac180.itm~ ~override~
 
-//bam files
-//===================
-COPY ~%MOD_FOLDER%\generated\c\bam\xac100.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac110.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac109.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac108.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac107.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac106.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac105.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac103.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac102.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac111.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac112.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac113.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac114.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bam\xac116.bam~ ~override~
 
-//baf files
-//===================
 
-//bmp files
-//===================
 COPY ~%MOD_FOLDER%\generated\c\bmp\xac100.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bmp\xac101.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bmp\xac102.bmp~ ~override~
@@ -2016,284 +1984,35 @@ COPY ~%MOD_FOLDER%\generated\c\bmp\xac103.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bmp\xac104.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\bmp\xac105.bmp~ ~override~
 
-//wav files
-//===================
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10052.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10053.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10054.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10055.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10056.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10057.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10058.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10059.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10060.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10061.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10062.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10063.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10107.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10108.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10109.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10110.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10111.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10112.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10113.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10114.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10115.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10116.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10117.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10118.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10119.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10120.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10121.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10122.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10123.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10124.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10125.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10126.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10128.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10129.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10130.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10131.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10132.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10134.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10135.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10136.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10137.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10141.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10142.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10143.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10144.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10145.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10146.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10147.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10154.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10156.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10157.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10158.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10159.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10161.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10162.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10168.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10169.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10170.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10172.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10173.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10174.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10177.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10178.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10179.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10180.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10182.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10183.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10184.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10185.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10187.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10188.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10189.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10190.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10191.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10192.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10193.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10194.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10195.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10198.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10200.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10201.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10202.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10203.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10204.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10205.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10206.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10207.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10208.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10209.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10210.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10211.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10212.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10213.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10214.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10215.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10216.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10217.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10218.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10219.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10223.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10226.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10227.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10228.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10229.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10230.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10231.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10237.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10238.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10239.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10240.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10241.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10245.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10246.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10247.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10261.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10262.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10263.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10270.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10271.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10272.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10278.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10279.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10280.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10281.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10286.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10289.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10290.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10291.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10292.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10305.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10306.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10307.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10314.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10315.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10316.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10317.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10318.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10319.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10320.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10336.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10337.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10338.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10339.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10340.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10349.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10350.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10351.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10352.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10353.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10354.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10355.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10356.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10558.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10557.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10556.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10555.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10554.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10553.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10524.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10473.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10472.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10451.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10450.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10448.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10447.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10446.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10413.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10412.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10411.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10410.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10409.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10408.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10407.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10406.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10405.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10404.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10403.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10388.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10387.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10386.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10385.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10384.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10383.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wav\xac10382.wav~ ~override~
 
-//wed files
-//===================
-COPY ~%MOD_FOLDER%\generated\c\wed\xac100.wed~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\wed\xac101.wed~ ~override~
 
-//eff files
-//===================
 COPY ~%MOD_FOLDER%\generated\c\eff\xac100.eff~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\eff\xac101.eff~ ~override~
 
-//tis files
-//===================
-COPY ~%MOD_FOLDER%\generated\c\tis\xac100.tis~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\tis\xac101.tis~ ~override~
 
-//{ PVRZ
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\mos1117.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10000.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10001.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\mos1046.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\mos1030.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10100.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10101.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10102.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10103.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10104.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10105.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10106.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10107.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10108.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10109.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10110.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10111.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10112.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10113.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10114.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10115.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10116.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10117.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10118.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10119.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10120.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10121.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10122.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10123.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10124.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10125.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc10126.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n00.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n01.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n02.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n03.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n04.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n05.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n06.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n07.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n08.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n09.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n10.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n11.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n12.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n13.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n14.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n15.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n16.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n17.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n18.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n19.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n20.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n21.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n22.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n23.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n24.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n25.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\xc101n26.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\c\pvrz\mos1048.pvrz~ ~override~
-//}
+
+//bam files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\c\bam~ ~override~
 
 //bmp files.
 //=========================
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac100.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac100ht.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac100lm.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac100sr.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac101.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac101ht.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac101lm.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac101ln.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac101sr.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac102.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac103.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac104.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\c\bmp\xac105.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\c\mos~ ~override~
+
+//pvrz files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\c\pvrz~ ~override~
+
+//tis files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\c\tis~ ~override~
+
+//wav files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\c\wav~ ~override~
+
+//wed files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\c\wed~ ~override~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\generated\c\baf~

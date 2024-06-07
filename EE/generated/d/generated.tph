@@ -59,8 +59,6 @@ COPY ~%MOD_FOLDER%\generated\d\mus\xad2\xad2i1.acm~ ~MUSIC\xad2\xad2i1.acm~
 COPY ~%MOD_FOLDER%\generated\d\mus\xad2\xad2i1a.acm~ ~MUSIC\xad2\xad2i1a.acm~
 COPY ~%MOD_FOLDER%\generated\d\mus\xad2\xad2i2a.acm~ ~MUSIC\xad2\xad2i2a.acm~
 //}
-//cre files
-//===================
 COPY ~%MOD_FOLDER%\generated\d\cre\xad100.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11235) /*~Belt~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11235) /*~Belt~*/
@@ -222,11 +220,7 @@ COPY ~%MOD_FOLDER%\generated\d\cre\xad136.cre~ ~override~
 	WRITE_LONG 272 RESOLVE_STR_REF(@11322) /*~Let us speak and be done with this!~*/
 
 
-//are files
-//===================
-ACTION_IF (FILE_EXISTS_IN_GAME ~xad100.are~) BEGIN
-	//PRINT ~Area already exists: xad100. Skipping...~
-END ELSE BEGIN
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xad100.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\d\are\xad100.are~ ~override~
 	WRITE_LONG 1048 RESOLVE_STR_REF(@11323) /*~Imoen lies still on the bed. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~*/
 	WRITE_LONG 1244 RESOLVE_STR_REF(@11324) /*~Imoen lies still on the floor. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~*/
@@ -240,9 +234,7 @@ END ELSE BEGIN
 	WRITE_LONG 4042 %xad1%
 	WRITE_LONG 4050 %xad2%
 END
-ACTION_IF (FILE_EXISTS_IN_GAME ~xad101.are~) BEGIN
-	//PRINT ~Area already exists: xad101. Skipping...~
-END ELSE BEGIN
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xad101.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\d\are\xad101.are~ ~override~
 	WRITE_LONG 15812 RESOLVE_STR_REF(@11331) /*~The second floor is securely locked and guarded. No one is permitted upstairs. ~*/
 	WRITE_LONG 16204 RESOLVE_STR_REF(@11332) /*~There's no escape this way. The sewers are the only way out.~*/
@@ -257,76 +249,17 @@ END ELSE BEGIN
 	WRITE_LONG 25915 %xad2%
 END
 
-//bmp files
-//===================
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad100.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad101.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad103.bmp~ ~override~
 
-//spl files
-//===================
 COPY ~%MOD_FOLDER%\generated\d\spl\xad100.spl~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11336) /*~Trap the Soul~*/
 COPY ~%MOD_FOLDER%\generated\d\spl\xad101.spl~ ~override~
 
-//baf files
-//===================
 
-//wed files
-//===================
-COPY ~%MOD_FOLDER%\generated\d\wed\xad100.wed~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wed\xad101.wed~ ~override~
 
-//wav files
-//===================
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10008.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10016.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10017.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10018.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10019.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10020.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10021.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10022.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10023.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10024.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10025.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10026.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10027.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10028.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10029.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10030.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10031.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10032.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10033.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10034.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10035.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10036.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10037.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10038.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10039.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10040.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10041.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10042.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10043.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10044.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10045.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10046.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10047.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10048.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10049.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10050.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10051.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10054.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10055.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10056.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10057.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10058.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10059.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10060.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\wav\xad10061.wav~ ~override~
 
-//itm files
-//===================
 COPY ~%MOD_FOLDER%\generated\d\itm\xad105.itm~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11337) /*~Helmet~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11337) /*~Helmet~*/
@@ -412,36 +345,31 @@ Requires:
 Weight: 9~*/
 COPY ~%MOD_FOLDER%\generated\d\itm\xad113.itm~ ~override~
 
-//tis files
-//===================
-COPY ~%MOD_FOLDER%\generated\d\tis\xad101.tis~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\tis\xad100.tis~ ~override~
 
-//bam files
-//===================
-COPY ~%MOD_FOLDER%\generated\d\bam\xad102.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bam\xad101.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bam\xad100.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bam\xad103.bam~ ~override~
 
-//{ PVRZ
-	COPY ~%MOD_FOLDER%\generated\d\pvrz\mos1045.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\d\pvrz\xd10100.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\d\pvrz\xd10101.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\d\pvrz\xd10000.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\d\pvrz\xd10001.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\d\pvrz\xd10002.pvrz~ ~override~
-//}
+
+//bam files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\d\bam~ ~override~
 
 //bmp files.
 //=========================
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad100.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad100ht.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad100lm.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad100sr.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad101.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad101ht.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad101lm.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad101sr.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\d\bmp\xad103.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\d\mos~ ~override~
+
+//pvrz files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\d\pvrz~ ~override~
+
+//tis files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\d\tis~ ~override~
+
+//wav files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\d\wav~ ~override~
+
+//wed files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\d\wed~ ~override~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\generated\d\baf~

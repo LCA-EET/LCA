@@ -144,8 +144,6 @@ COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5zg.acm~ ~MUSIC\xag5\xag5zg.acm~
 COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5zi.acm~ ~MUSIC\xag5\xag5zi.acm~
 COPY ~%MOD_FOLDER%\generated\g\mus\xag5\xag5zk.acm~ ~MUSIC\xag5\xag5zk.acm~
 //}
-//cre files
-//===================
 COPY ~%MOD_FOLDER%\generated\g\cre\xag100.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11361) /*~Aun Argent~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11361) /*~Aun Argent~*/
@@ -268,11 +266,7 @@ COPY ~%MOD_FOLDER%\generated\g\cre\xag140.cre~ ~override~
 	WRITE_LONG 12 RESOLVE_STR_REF(@11371) /*~Crusader Elite~*/
 
 
-//are files
-//===================
-ACTION_IF (FILE_EXISTS_IN_GAME ~xag100.are~) BEGIN
-	//PRINT ~Area already exists: xag100. Skipping...~
-END ELSE BEGIN
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xag100.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\g\are\xag100.are~ ~override~
 	WRITE_LONG 8316 RESOLVE_STR_REF(@11389) /*~Stairs Down~*/
 	WRITE_LONG 8368 RESOLVE_STR_REF(@11390) /*~Massive Door~*/
@@ -280,9 +274,7 @@ END ELSE BEGIN
 	WRITE_LONG 7944 %xag0%
 	WRITE_LONG 7952 %xag1%
 END
-ACTION_IF (FILE_EXISTS_IN_GAME ~xag101.are~) BEGIN
-	//PRINT ~Area already exists: xag101. Skipping...~
-END ELSE BEGIN
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xag101.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\g\are\xag101.are~ ~override~
 	WRITE_LONG 6836 RESOLVE_STR_REF(@11391) /*~In the distance, you can make out the legions of Avernus marching in formation.~*/
 	WRITE_LONG 7032 RESOLVE_STR_REF(@11392) /*~Through the haze that envelops Avernus you can see a blasted landscape dotted with lakes of bubbling magma amongst towering ruins of iron and basalt.~*/
@@ -297,9 +289,7 @@ END ELSE BEGIN
 	WRITE_LONG 12464 %xag2%
 	WRITE_LONG 12472 %xag3%
 END
-ACTION_IF (FILE_EXISTS_IN_GAME ~xag102.are~) BEGIN
-	//PRINT ~Area already exists: xag102. Skipping...~
-END ELSE BEGIN
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xag102.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\g\are\xag102.are~ ~override~
 	WRITE_LONG 11972 RESOLVE_STR_REF(@11397) /*~This sturdy, well-crafted door resists all efforts to open it.~*/
 	WRITE_LONG 12168 RESOLVE_STR_REF(@11398) /*~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~*/
@@ -322,8 +312,6 @@ END ELSE BEGIN
 	WRITE_LONG 19848 %xag5%
 END
 
-//spl files
-//===================
 COPY ~%MOD_FOLDER%\generated\g\spl\xag100.spl~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11404) /*~Teleport Without Error~*/
 COPY ~%MOD_FOLDER%\generated\g\spl\xag101.spl~ ~override~
@@ -333,45 +321,10 @@ COPY ~%MOD_FOLDER%\generated\g\spl\xag104.spl~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11405) /*~Impale~*/
 COPY ~%MOD_FOLDER%\generated\g\spl\xag103.spl~ ~override~
 
-//wav files
-//===================
-COPY ~%MOD_FOLDER%\generated\g\wav\xag10000.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\wav\xag10001.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\wav\xag10002.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\wav\xag10003.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\wav\xag10004.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\wav\xag10005.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\wav\xag10006.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\wav\xag10008.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\wav\xag10009.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\wav\xag10010.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\wav\xag10011.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\wav\xag10012.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\wav\xag10013.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\wav\xag10014.wav~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\wav\xag10015.wav~ ~override~
 
-//baf files
-//===================
 
-//wed files
-//===================
-COPY ~%MOD_FOLDER%\generated\g\wed\xag100.wed~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\wed\xag101.wed~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\wed\xag102.wed~ ~override~
 
-//bam files
-//===================
-COPY ~%MOD_FOLDER%\generated\g\bam\xag100.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\bam\xag109.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\bam\xag116.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\bam\xag131.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\bam\xag132.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\bam\xag133.bam~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\bam\xag134.bam~ ~override~
 
-//itm files
-//===================
 COPY ~%MOD_FOLDER%\generated\g\itm\xag105.itm~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11406) /*~Attack~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11406) /*~Attack~*/
@@ -395,44 +348,30 @@ COPY ~%MOD_FOLDER%\generated\g\itm\xag115.itm~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11406) /*~Attack~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11406) /*~Attack~*/
 
-//tis files
-//===================
-COPY ~%MOD_FOLDER%\generated\g\tis\xag100.tis~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\tis\xag101.tis~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\tis\xag102.tis~ ~override~
 
-//{ PVRZ
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10000.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10001.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10002.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10003.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10004.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10005.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10006.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10100.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10101.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10102.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10103.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10104.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10105.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10106.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10200.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10201.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10202.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10203.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10204.pvrz~ ~override~
-	COPY ~%MOD_FOLDER%\generated\g\pvrz\xg10205.pvrz~ ~override~
-//}
+
+//bam files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\g\bam~ ~override~
 
 //bmp files.
 //=========================
-COPY ~%MOD_FOLDER%\generated\g\bmp\xag100ht.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\bmp\xag100lm.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\bmp\xag100sr.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\bmp\xag101ht.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\bmp\xag101lm.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\bmp\xag101sr.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\bmp\xag102ht.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\bmp\xag102lm.bmp~ ~override~
-COPY ~%MOD_FOLDER%\generated\g\bmp\xag102sr.bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\bmp~ ~override~
+COPY ~%MOD_FOLDER%\generated\g\mos~ ~override~
+
+//pvrz files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\g\pvrz~ ~override~
+
+//tis files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\g\tis~ ~override~
+
+//wav files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\g\wav~ ~override~
+
+//wed files.
+//=========================
+COPY ~%MOD_FOLDER%\generated\g\wed~ ~override~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\generated\g\baf~
