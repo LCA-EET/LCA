@@ -133,16 +133,6 @@
 		EXTERN XACORWIJ XA_CorwinArtifacts_Chain
 	END
 	//}
-
-	//{ IDJINNI
-	ADD_TRANS_ACTION IDJINNI 
-	BEGIN 12 END
-	BEGIN 0 END
-	~
-		GiveItemCreate("xastdag", LastTalkedToBy, 1,0,0)
-	~
-	//}
-
 //}	
 //{ SALVANAS
 	APPEND SALVANAS
