@@ -48,10 +48,7 @@ END
 
 //{ Animations
 	ACTION_IF(isEET = 0) THEN BEGIN
-		LAF xa_copy_folder_contents
-			STR_VAR
-				xa_relative_path = ~%MOD_FOLDER%/tob/anim~
-		END
+		COPY ~%MOD_FOLDER%/tob/anim~ ~override~
 		APPEND ~animate.ids~ ~0xE276 LEMURE~
 	END
 //}

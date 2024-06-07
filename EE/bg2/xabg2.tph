@@ -184,17 +184,11 @@ END
 //}
 
 //{ bmp
-	LAF xa_copy_folder_contents
-		STR_VAR
-			xa_relative_path = ~%MOD_FOLDER%/bg2/bmp~
-	END
+	COPY ~%MOD_FOLDER%/bg2/bmp~ ~override~
 //}
 
 //{ are
-	LAF xa_copy_folder_contents
-		STR_VAR
-			xa_relative_path = ~%MOD_FOLDER%/bg2/are~
-	END
+	COPY ~%MOD_FOLDER%/bg2/are~ ~override~
 
 	COPY_EXISTING ~xad100.are~ ~override~ // bd0103, Ducal Palace 3 Fl
 	LPF xa_delete_actor_at_index END
@@ -273,14 +267,8 @@ END
 //}
 
 //{ cre
-	LAF xa_copy_folder_contents
-		STR_VAR
-			xa_relative_path = ~%MOD_FOLDER%/bg2/wav~
-	END
-	LAF xa_copy_folder_contents
-		STR_VAR
-			xa_relative_path = ~%MOD_FOLDER%/bg2/wav/corwin~
-	END
+	COPY ~%MOD_FOLDER%/bg2/wav~ ~override~
+	COPY ~%MOD_FOLDER%/bg2/wav/corwin~ ~override~
 
 	//{ xacorwin
 		COPY_EXISTING ~xad106.cre~ ~override/xacorwin.cre~ // corwin7
@@ -721,6 +709,10 @@ OUTER_SET bg2_carryover = 1
 		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa22.baf~
 	END
 
+	ACTION_IF (corwin_lesson = 1) THEN BEGIN
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa23.baf~
+	END
+
 	EXTEND_BOTTOM ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpaEE.baf~
 //}
 
@@ -759,6 +751,7 @@ OUTER_SET bg2_carryover = 1
 			STRING_SET 11004 @3181 //IDJINNI State 11
 			STRING_SET 19801 @3182 //IDJINNI State 15
 			STRING_SET 19916 @3185 //IDJINNI State 17
+			STRING_SET 19930 @3186 //IDJINNI State 19
 			STRING_SET 44816 @3183 //IDJINNI State 20
 			STRING_SET 47515 @3184 //IDJINNI State 12 Journal Entry		
 			COMPILE ~%MOD_FOLDER%/compat/cgs/d/xalccgs.d~ USING ~%MOD_FOLDER%/compat/cgs/tra/english/xalccgs.tra~	

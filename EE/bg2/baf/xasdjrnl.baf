@@ -19,9 +19,9 @@
 				SetInterrupt(FALSE)
 				SetGlobal("XA_LC_SoDCarryOver_0", "GLOBAL", 1)
 				AddJournalEntry(@0, INFO)/* ~A Taste of What's to Come
-		Schael and I shared an intimate moment in the storeroom in Dragonspear castle. She assured me that it's only a small taste of what she has planned for me when we finally return to Baldur's Gate.~*/
+					Schael and I shared an intimate moment in the storeroom in Dragonspear castle. She assured me that it's only a small taste of what she has planned for me when we finally return to Baldur's Gate.~*/
 				AddJournalEntry(@1, INFO)/* ~Schael Corwin
-		Words cannot describe the pain and anger that I feel. Schael and I can never be together so long as the city holds me responsible for Skie's death. I must be freed from this cell so that I can find something or someone that can exonerate me, otherwise, I fear I may never see my love again.~*/
+					Words cannot describe the pain and anger that I feel. Schael and I can never be together so long as the city holds me responsible for Skie's death. I must be freed from this cell so that I can find something or someone that can exonerate me, otherwise, I fear I may never see my love again.~*/
 				SetInterrupt(TRUE)
 				Continue()
 		END
@@ -47,7 +47,24 @@
 				SetInterrupt(FALSE)
 				SetGlobal("XA_LC_SoDCarryOver_1", "GLOBAL", 1)
 				AddJournalEntry(@2, INFO)/* ~Captain Corwin
-		Captain Corwin visited my cell this morning. She told me that there are those in the city that believe in my innocence, and that she and others are pleading with the Dukes on my behalf. If they're successful, my life may be spared, though I'll be forced into exile. Exile, however, would afford me the time that I need to find Skie's murderer and prove my innocence. So long as I have friends like her, there is hope.~*/
+					Captain Corwin visited my cell this morning. She told me that there are those in the city that believe in my innocence, and that she and others are pleading with the Dukes on my behalf. If they're successful, my life may be spared, though I'll be forced into exile. Exile, however, would afford me the time that I need to find Skie's murderer and prove my innocence. So long as I have friends like her, there is hope.~*/
+				SetInterrupt(TRUE)
+				Continue()
+		END
+	//}
+	
+	//{ Archery Lesson
+		IF
+			Global("XA_LC_EEParamsSet", "GLOBAL", 1)
+			Global("XA_LC_CorwinLesson", "GLOBAL", 1)
+			Global("XA_LC_SoDCarryOver_2", "GLOBAL", 0)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_LC_SoDCarryOver_2", "GLOBAL", 1)
+				ActionOverride(Player1, ReallyForceSpellRES("XALCARCH", Myself))
+				AddJournalEntry(@3, INFO)/* ~Corwin's Tutelage
+					Captain Corwin noticed a couple of problems with my bow grip. She taught me the difference between the pivot and pressure points, and showed me the proper use of my palm to support the pressure of the bow. With these changes, my accuracy and power have improved.~*/
 				SetInterrupt(TRUE)
 				Continue()
 		END
