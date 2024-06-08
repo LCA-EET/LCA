@@ -9,6 +9,26 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 */
 
 //{ Action Functions
+DEFINE_ACTION_FUNCTION xa_replace_recompile
+	STR_VAR
+		xa_bcs = ~~
+		xa_extend = ~~
+		xa_prefix = ~~
+	BEGIN
+		EXTEND_TOP ~%xa_extend%.bcs~ ~override/%xa_bcs%.bcs~
+		OUTER_SET index = 1
+		OUTER_WHILE(index < 6) BEGIN
+			OUTER_SET index = (index + 1)
+			OUTER_SPRINT xa_newfile ~override/%xa_prefix%%index%.bcs~
+			COPY_EXISTING ~%xa_bcs%.bcs~ ~%xa_newfile%~
+			DECOMPILE_AND_PATCH
+			BEGIN
+				REPLACE_TEXTUALLY ~Player1~ ~Player%index%~
+			END
+			EXTEND_TOP ~%xa_extend%.bcs~ ~%xa_newfile%~
+		END
+	END
+
 DEFINE_ACTION_FUNCTION xa_copy_folder_contents
 	STR_VAR 
 		xa_relative_path = ~~
