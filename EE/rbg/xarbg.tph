@@ -1850,6 +1850,10 @@ SILENT
 	//{ Preparations Music
 		ADD_MUSIC xamu07	~%MOD_FOLDER%/rbg/mus/xamu07.mus~
 		COPY ~%MOD_FOLDER%/rbg/mus/xamu07a.acm~ ~MUSIC/xamu07/xamu07a.acm~	
+
+		COPY_EXISTING ~xad101.are~ ~override~
+		WRITE_LONG 0x630B %xamu07%
+		WRITE_LONG 0x630F %xamu07%
 	//}
 
 	//{ Triumphant Music

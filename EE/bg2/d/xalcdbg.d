@@ -254,7 +254,17 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @5093
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("xad100", "", [0.0], S))
+		~
+		EXIT
 		
+		IF ~~ THEN REPLY @5094
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("xad101", "", [0.0], S))
+		~
+		EXIT
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug

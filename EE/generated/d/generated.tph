@@ -193,16 +193,37 @@ COPY ~%MOD_FOLDER%\generated\d\cre\xad116.cre~ ~override~
 	WRITE_LONG 268 RESOLVE_STR_REF(@11311) /*~ ZZZZzzzzzzz...~[xaa11168]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@11312) /*~ ZZZZzzzzz... *snort*~[xaa11167]*/
 
+COPY ~%MOD_FOLDER%\generated\d\cre\xad117.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11314) /*~Refugee~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11314) /*~Refugee~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11315) /*~Please, help us.~[xad10083]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11316) /*~We have nowhere else to go.~[xad10084]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@11317) /*~A pox on the crusade!~[xad10085]*/
+
+COPY ~%MOD_FOLDER%\generated\d\cre\xad118.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11314) /*~Refugee~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11314) /*~Refugee~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11315) /*~Please, help us.~[xad10083]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11316) /*~We have nowhere else to go.~[xad10084]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@11317) /*~A pox on the crusade!~[xad10085]*/
+
 COPY ~%MOD_FOLDER%\generated\d\cre\xad119.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11314) /*~Commoner~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11314) /*~Commoner~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11318) /*~Commoner~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11318) /*~Commoner~*/
+
+COPY ~%MOD_FOLDER%\generated\d\cre\xad120.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11314) /*~Refugee~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11314) /*~Refugee~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11319) /*~I'm so tired.~[xad10089]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11320) /*~I've lost everything.~[xad10090]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@11321) /*~Can the Grand Dukes help us?~[xad10091]*/
 
 COPY ~%MOD_FOLDER%\generated\d\cre\xad121.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11303) /*~Flaming Fist Enforcer~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11303) /*~Flaming Fist Enforcer~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@11315) /*~Show them our steel!~[xac10245]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@11316) /*~Order is what matters.~[xac10246]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@11317) /*~For Baldur's Gate.~[xac10247]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@11322) /*~Show them our steel!~[xac10245]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11323) /*~Order is what matters.~[xac10246]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11324) /*~For Baldur's Gate.~[xac10247]*/
 
 COPY ~%MOD_FOLDER%\generated\d\cre\xad123.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11303) /*~Flaming Fist Enforcer~*/
@@ -211,39 +232,95 @@ COPY ~%MOD_FOLDER%\generated\d\cre\xad123.cre~ ~override~
 	WRITE_LONG 268 RESOLVE_STR_REF(@11245) /*~We're more than mercenaries.~[xac10240]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@11246) /*~War is almost here.~[xac10241]*/
 
+COPY ~%MOD_FOLDER%\generated\d\cre\xad128.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11314) /*~Refugee~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11314) /*~Refugee~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11319) /*~I'm so tired.~[xad10089]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11320) /*~I've lost everything.~[xad10090]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@11321) /*~Can the Grand Dukes help us?~[xad10091]*/
+
+COPY ~%MOD_FOLDER%\generated\d\cre\xad131.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11310) /*~Sleeping Man~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11310) /*~Sleeping Man~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11311) /*~ ZZZZzzzzzzz...~[xaa11168]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11312) /*~ ZZZZzzzzz... *snort*~[xaa11167]*/
+
+COPY ~%MOD_FOLDER%\generated\d\cre\xad135.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11314) /*~Refugee~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11314) /*~Refugee~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11319) /*~I'm so tired.~[xad10089]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11320) /*~I've lost everything.~[xad10090]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@11321) /*~Can the Grand Dukes help us?~[xad10091]*/
+
 COPY ~%MOD_FOLDER%\generated\d\cre\xad136.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11318) /*~Thug~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11318) /*~Thug~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@11319) /*~I'll wipe your filthy lineage right out of the realms!~*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@11320) /*~You deserve no less than death... and no more.~*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@11321) /*~What can it be now?~*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@11322) /*~Let us speak and be done with this!~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11325) /*~Thug~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11325) /*~Thug~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@11326) /*~I'll wipe your filthy lineage right out of the realms!~*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@11327) /*~You deserve no less than death... and no more.~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11328) /*~What can it be now?~*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11329) /*~Let us speak and be done with this!~*/
+
+COPY ~%MOD_FOLDER%\generated\d\cre\xad146.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11314) /*~Refugee~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11314) /*~Refugee~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11319) /*~I'm so tired.~[xad10089]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11320) /*~I've lost everything.~[xad10090]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@11321) /*~Can the Grand Dukes help us?~[xad10091]*/
+
+COPY ~%MOD_FOLDER%\generated\d\cre\xad149.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11314) /*~Refugee~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11314) /*~Refugee~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11315) /*~Please, help us.~[xad10083]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11316) /*~We have nowhere else to go.~[xad10084]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@11317) /*~A pox on the crusade!~[xad10085]*/
+
+COPY ~%MOD_FOLDER%\generated\d\cre\xad152.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11330) /*~Sailor~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11330) /*~Sailor~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@11331) /*~~[xad10116]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@11332) /*~~[xad10117]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11333) /*~The seas are sure rough this time o' year.~[xad10118]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11334) /*~Nothin' like some time ashore... all I needs is some grog an' a good lass on me lap.~[xad10119]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@11335) /*~I best not be gone long... 'fore me captain has me hide.~[xad10120]*/
+
+COPY ~%MOD_FOLDER%\generated\d\cre\xad153.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11330) /*~Sailor~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11330) /*~Sailor~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@11331) /*~~[xad10116]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@11332) /*~~[xad10117]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11333) /*~The seas are sure rough this time o' year.~[xad10118]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@11334) /*~Nothin' like some time ashore... all I needs is some grog an' a good lass on me lap.~[xad10119]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@11335) /*~I best not be gone long... 'fore me captain has me hide.~[xad10120]*/
+
+COPY ~%MOD_FOLDER%\generated\d\cre\xad156.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@11336) /*~Rat~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11336) /*~Rat~*/
 
 
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xad100.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\d\are\xad100.are~ ~override~
-	WRITE_LONG 1048 RESOLVE_STR_REF(@11323) /*~Imoen lies still on the bed. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~*/
-	WRITE_LONG 1244 RESOLVE_STR_REF(@11324) /*~Imoen lies still on the floor. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~*/
-	WRITE_LONG 1440 RESOLVE_STR_REF(@11325) /*~Below you, the streets of Baldur's Gate are so packed it's difficult to make out individual figures.~*/
-	WRITE_LONG 1636 RESOLVE_STR_REF(@11326) /*~Even with the window closed, the dull roar of the crowded street outside is hard to ignore.~*/
-	WRITE_LONG 1832 RESOLVE_STR_REF(@11327) /*~This comfortable bed offers luxury you never found in Candlekeep.~*/
-	WRITE_LONG 4414 RESOLVE_STR_REF(@11328) /*~<CHARNAME>'s Equipment~*/
-	WRITE_LONG 4466 RESOLVE_STR_REF(@11329) /*~<CHARNAME>'s chamber~*/
-	WRITE_LONG 4518 RESOLVE_STR_REF(@11330) /*~Imoen's Equipment~*/
+	WRITE_LONG 1048 RESOLVE_STR_REF(@11337) /*~Imoen lies still on the bed. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~*/
+	WRITE_LONG 1244 RESOLVE_STR_REF(@11338) /*~Imoen lies still on the floor. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~*/
+	WRITE_LONG 1440 RESOLVE_STR_REF(@11339) /*~Below you, the streets of Baldur's Gate are so packed it's difficult to make out individual figures.~*/
+	WRITE_LONG 1636 RESOLVE_STR_REF(@11340) /*~Even with the window closed, the dull roar of the crowded street outside is hard to ignore.~*/
+	WRITE_LONG 1832 RESOLVE_STR_REF(@11341) /*~This comfortable bed offers luxury you never found in Candlekeep.~*/
+	WRITE_LONG 4414 RESOLVE_STR_REF(@11342) /*~<CHARNAME>'s Equipment~*/
+	WRITE_LONG 4466 RESOLVE_STR_REF(@11343) /*~<CHARNAME>'s chamber~*/
+	WRITE_LONG 4518 RESOLVE_STR_REF(@11344) /*~Imoen's Equipment~*/
 	WRITE_LONG 4038 %xad0%
 	WRITE_LONG 4042 %xad1%
 	WRITE_LONG 4050 %xad2%
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xad101.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\d\are\xad101.are~ ~override~
-	WRITE_LONG 15812 RESOLVE_STR_REF(@11331) /*~The second floor is securely locked and guarded. No one is permitted upstairs. ~*/
-	WRITE_LONG 16204 RESOLVE_STR_REF(@11332) /*~There's no escape this way. The sewers are the only way out.~*/
-	WRITE_LONG 16400 RESOLVE_STR_REF(@11333) /*~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~*/
-	WRITE_LONG 16596 RESOLVE_STR_REF(@11333) /*~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~*/
-	WRITE_LONG 16792 RESOLVE_STR_REF(@11333) /*~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~*/
-	WRITE_LONG 16988 RESOLVE_STR_REF(@11333) /*~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~*/
-	WRITE_LONG 26275 RESOLVE_STR_REF(@11334) /*~Tiax's Cell~*/
-	WRITE_LONG 26327 RESOLVE_STR_REF(@11335) /*~Exit~*/
+	WRITE_LONG 15812 RESOLVE_STR_REF(@11345) /*~The second floor is securely locked and guarded. No one is permitted upstairs. ~*/
+	WRITE_LONG 16204 RESOLVE_STR_REF(@11346) /*~There's no escape this way. The sewers are the only way out.~*/
+	WRITE_LONG 16400 RESOLVE_STR_REF(@11347) /*~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~*/
+	WRITE_LONG 16596 RESOLVE_STR_REF(@11347) /*~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~*/
+	WRITE_LONG 16792 RESOLVE_STR_REF(@11347) /*~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~*/
+	WRITE_LONG 16988 RESOLVE_STR_REF(@11347) /*~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~*/
+	WRITE_LONG 26275 RESOLVE_STR_REF(@11348) /*~Tiax's Cell~*/
+	WRITE_LONG 26327 RESOLVE_STR_REF(@11349) /*~Exit~*/
 	WRITE_LONG 25907 %xad2%
 	WRITE_LONG 25911 %xad2%
 	WRITE_LONG 25915 %xad2%
@@ -254,16 +331,16 @@ COPY ~%MOD_FOLDER%\generated\d\bmp\xad101.bmp~ ~override~
 COPY ~%MOD_FOLDER%\generated\d\bmp\xad103.bmp~ ~override~
 
 COPY ~%MOD_FOLDER%\generated\d\spl\xad100.spl~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11336) /*~Trap the Soul~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11350) /*~Trap the Soul~*/
 COPY ~%MOD_FOLDER%\generated\d\spl\xad101.spl~ ~override~
 
 
 
 
 COPY ~%MOD_FOLDER%\generated\d\itm\xad105.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11337) /*~Helmet~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11337) /*~Helmet~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11338) /*~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+	WRITE_LONG 8 RESOLVE_STR_REF(@11351) /*~Helmet~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11351) /*~Helmet~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11352) /*~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -271,7 +348,7 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11338) /*~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+	WRITE_LONG 84 RESOLVE_STR_REF(@11352) /*~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -280,9 +357,9 @@ Equipped abilities:
 
 Weight: 2~*/
 COPY ~%MOD_FOLDER%\generated\d\itm\xad106.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11339) /*~Corwin's Armor +2~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11339) /*~Corwin's Armor +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11340) /*~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
+	WRITE_LONG 8 RESOLVE_STR_REF(@11353) /*~Corwin's Armor +2~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11353) /*~Corwin's Armor +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11354) /*~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
 
 STATISTICS:
 
@@ -295,7 +372,7 @@ Requires:
  5 Strength
 
 Weight: 7~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11340) /*~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11354) /*~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
 
 STATISTICS:
 
@@ -309,9 +386,9 @@ Requires:
 
 Weight: 7~*/
 COPY ~%MOD_FOLDER%\generated\d\itm\xad107.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11341) /*~Composite Longbow~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11342) /*~Corwin's Bow +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11343) /*~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
+	WRITE_LONG 8 RESOLVE_STR_REF(@11355) /*~Composite Longbow~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11356) /*~Corwin's Bow +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11357) /*~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
 
 STATISTICS:
 
@@ -324,7 +401,7 @@ Requires:
  18 Strength
 
 Weight: 10~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11344) /*~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11358) /*~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
 
 Equipped abilities: 
 – Dexterity: +1

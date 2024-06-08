@@ -1936,31 +1936,45 @@ You sense there is little Schael Corwin would not do for her family or for the F
 @11311 = ~ ZZZZzzzzzzz...~[xaa11168]
 @11312 = ~ ZZZZzzzzz... *snort*~[xaa11167]
 @11313 = ~Sleeping Woman~
-@11314 = ~Commoner~
-@11315 = ~Show them our steel!~[xac10245]
-@11316 = ~Order is what matters.~[xac10246]
-@11317 = ~For Baldur's Gate.~[xac10247]
-@11318 = ~Thug~
-@11319 = ~I'll wipe your filthy lineage right out of the realms!~
-@11320 = ~You deserve no less than death... and no more.~
-@11321 = ~What can it be now?~
-@11322 = ~Let us speak and be done with this!~
-@11323 = ~Imoen lies still on the bed. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~
-@11324 = ~Imoen lies still on the floor. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~
-@11325 = ~Below you, the streets of Baldur's Gate are so packed it's difficult to make out individual figures.~
-@11326 = ~Even with the window closed, the dull roar of the crowded street outside is hard to ignore.~
-@11327 = ~This comfortable bed offers luxury you never found in Candlekeep.~
-@11328 = ~<CHARNAME>'s Equipment~
-@11329 = ~<CHARNAME>'s chamber~
-@11330 = ~Imoen's Equipment~
-@11331 = ~The second floor is securely locked and guarded. No one is permitted upstairs. ~
-@11332 = ~There's no escape this way. The sewers are the only way out.~
-@11333 = ~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~
-@11334 = ~Tiax's Cell~
-@11335 = ~Exit~
-@11336 = ~Trap the Soul~
-@11337 = ~Helmet~
-@11338 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+@11314 = ~Refugee~
+@11315 = ~Please, help us.~[xad10083]
+@11316 = ~We have nowhere else to go.~[xad10084]
+@11317 = ~A pox on the crusade!~[xad10085]
+@11318 = ~Commoner~
+@11319 = ~I'm so tired.~[xad10089]
+@11320 = ~I've lost everything.~[xad10090]
+@11321 = ~Can the Grand Dukes help us?~[xad10091]
+@11322 = ~Show them our steel!~[xac10245]
+@11323 = ~Order is what matters.~[xac10246]
+@11324 = ~For Baldur's Gate.~[xac10247]
+@11325 = ~Thug~
+@11326 = ~I'll wipe your filthy lineage right out of the realms!~
+@11327 = ~You deserve no less than death... and no more.~
+@11328 = ~What can it be now?~
+@11329 = ~Let us speak and be done with this!~
+@11330 = ~Sailor~
+@11331 = ~~[xad10116]
+@11332 = ~~[xad10117]
+@11333 = ~The seas are sure rough this time o' year.~[xad10118]
+@11334 = ~Nothin' like some time ashore... all I needs is some grog an' a good lass on me lap.~[xad10119]
+@11335 = ~I best not be gone long... 'fore me captain has me hide.~[xad10120]
+@11336 = ~Rat~
+@11337 = ~Imoen lies still on the bed. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~
+@11338 = ~Imoen lies still on the floor. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~
+@11339 = ~Below you, the streets of Baldur's Gate are so packed it's difficult to make out individual figures.~
+@11340 = ~Even with the window closed, the dull roar of the crowded street outside is hard to ignore.~
+@11341 = ~This comfortable bed offers luxury you never found in Candlekeep.~
+@11342 = ~<CHARNAME>'s Equipment~
+@11343 = ~<CHARNAME>'s chamber~
+@11344 = ~Imoen's Equipment~
+@11345 = ~The second floor is securely locked and guarded. No one is permitted upstairs. ~
+@11346 = ~There's no escape this way. The sewers are the only way out.~
+@11347 = ~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~
+@11348 = ~Tiax's Cell~
+@11349 = ~Exit~
+@11350 = ~Trap the Soul~
+@11351 = ~Helmet~
+@11352 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
 
 STATISTICS:
 
@@ -1968,8 +1982,8 @@ Equipped abilities:
 – Protects against critical hits
 
 Weight: 2~
-@11339 = ~Corwin's Armor +2~
-@11340 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
+@11353 = ~Corwin's Armor +2~
+@11354 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
 
 STATISTICS:
 
@@ -1982,9 +1996,9 @@ Requires:
  5 Strength
 
 Weight: 7~
-@11341 = ~Composite Longbow~
-@11342 = ~Corwin's Bow +1~
-@11343 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
+@11355 = ~Composite Longbow~
+@11356 = ~Corwin's Bow +1~
+@11357 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
 
 STATISTICS:
 
@@ -1997,7 +2011,7 @@ Requires:
  18 Strength
 
 Weight: 10~
-@11344 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+@11358 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
 
 Equipped abilities: 
 – Dexterity: +1
@@ -2016,69 +2030,69 @@ Requires:
  18 Strength
 
 Weight: 9~
-@11345 = ~Exit~
-@11346 = ~Angelo~
-@11347 = ~ So, these are the infamous murderers, finally brought to justice.~
-@11348 = ~ Dreadfully sorry, but I'm afraid... I'm gonna have ta kill ya.~[xaa12064]
-@11349 = ~~[xaf10005]
-@11350 = ~~[xaf10006]
-@11351 = ~ Justice may be blind, but I'm not.~[xaf10007]
-@11352 = ~Halatathlaer~
-@11353 = ~Blind Albino Wyrmling~
-@11354 = ~Dragon Fear~
-@11355 = ~Ghost Dragon Breath~
-@11356 = ~Tail Constriction~
-@11357 = ~Breath Weapon~
-@11358 = ~Ring~
-@11359 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+@11359 = ~Exit~
+@11360 = ~Angelo~
+@11361 = ~ So, these are the infamous murderers, finally brought to justice.~
+@11362 = ~ Dreadfully sorry, but I'm afraid... I'm gonna have ta kill ya.~[xaa12064]
+@11363 = ~~[xaf10005]
+@11364 = ~~[xaf10006]
+@11365 = ~ Justice may be blind, but I'm not.~[xaf10007]
+@11366 = ~Halatathlaer~
+@11367 = ~Blind Albino Wyrmling~
+@11368 = ~Dragon Fear~
+@11369 = ~Ghost Dragon Breath~
+@11370 = ~Tail Constriction~
+@11371 = ~Breath Weapon~
+@11372 = ~Ring~
+@11373 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~
-@11360 = ~Attack~
-@11361 = ~Aun Argent~
-@11362 = ~If this is how it ends, then so be it!~[xag10000]
-@11363 = ~Ugh!~[xag10001]
-@11364 = ~~[xag10002]
-@11365 = ~I will do what I can to help you.~[xag10003]
-@11366 = ~Thrix~
-@11367 = ~Hellcat~
-@11368 = ~Erinyes~
-@11369 = ~Abishai~
-@11370 = ~Imp~
-@11371 = ~Crusader Elite~
-@11372 = ~Lemure~
-@11373 = ~Black Abishai~
-@11374 = ~Green Abishai~
-@11375 = ~Red Abishai~
-@11376 = ~Hamatula~
-@11377 = ~Bone Fiend~
-@11378 = ~For the Shining Lady!~[xac10278]
-@11379 = ~You need somethin'?~[xac10279]
-@11380 = ~We serve the light.~[xac10280]
-@11381 = ~Die in her name!~[xac10292]
-@11382 = ~Somethin' you need?~[xac10182]
-@11383 = ~As the light wills.~[xac10183]
-@11384 = ~~[xaa11126]
-@11385 = ~~[xaa11854]
-@11386 = ~ The Fair Folk rarely have time for small talk.~[xac10289]
-@11387 = ~ Troubled times are upon us.~[xac10290]
-@11388 = ~ Soon, we shall all be together upon Evermeet.~[xac10291]
-@11389 = ~Stairs Down~
-@11390 = ~Massive Door~
-@11391 = ~In the distance, you can make out the legions of Avernus marching in formation.~
-@11392 = ~Through the haze that envelops Avernus you can see a blasted landscape dotted with lakes of bubbling magma amongst towering ruins of iron and basalt.~
-@11393 = ~The utter desolation of the First Hell is an awe-inspiring, if terrifying, sight. Red skies periodically rain down fireballs, battering the landscape.~
-@11394 = ~Horrifying creatures are chained up by the thousands far below. Enormous devils rake them with whips, shaking with laughter after each strike.~
-@11395 = ~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~
-@11396 = ~Cage~
-@11397 = ~This sturdy, well-crafted door resists all efforts to open it.~
-@11398 = ~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~
-@11399 = ~This door's dwarven craftspeople made certain none but the one who held its key would ever be able to open it. Peering through a crack, the light that leaks inward reveals nothing of interest or value.~
-@11400 = ~An unearthly light glows from deep within the chasm. Voices echo throughout the gaping crevasse, pressing against the walls, seeking escape.~
-@11401 = ~Exit~
-@11402 = ~Ritual Chamber~
-@11403 = ~Portal to the Fugue Plane~
-@11404 = ~Teleport Without Error~
-@11405 = ~Impale~
-@11406 = ~Attack~
+@11374 = ~Attack~
+@11375 = ~Aun Argent~
+@11376 = ~If this is how it ends, then so be it!~[xag10000]
+@11377 = ~Ugh!~[xag10001]
+@11378 = ~~[xag10002]
+@11379 = ~I will do what I can to help you.~[xag10003]
+@11380 = ~Thrix~
+@11381 = ~Hellcat~
+@11382 = ~Erinyes~
+@11383 = ~Abishai~
+@11384 = ~Imp~
+@11385 = ~Crusader Elite~
+@11386 = ~Lemure~
+@11387 = ~Black Abishai~
+@11388 = ~Green Abishai~
+@11389 = ~Red Abishai~
+@11390 = ~Hamatula~
+@11391 = ~Bone Fiend~
+@11392 = ~For the Shining Lady!~[xac10278]
+@11393 = ~You need somethin'?~[xac10279]
+@11394 = ~We serve the light.~[xac10280]
+@11395 = ~Die in her name!~[xac10292]
+@11396 = ~Somethin' you need?~[xac10182]
+@11397 = ~As the light wills.~[xac10183]
+@11398 = ~~[xaa11126]
+@11399 = ~~[xaa11854]
+@11400 = ~ The Fair Folk rarely have time for small talk.~[xac10289]
+@11401 = ~ Troubled times are upon us.~[xac10290]
+@11402 = ~ Soon, we shall all be together upon Evermeet.~[xac10291]
+@11403 = ~Stairs Down~
+@11404 = ~Massive Door~
+@11405 = ~In the distance, you can make out the legions of Avernus marching in formation.~
+@11406 = ~Through the haze that envelops Avernus you can see a blasted landscape dotted with lakes of bubbling magma amongst towering ruins of iron and basalt.~
+@11407 = ~The utter desolation of the First Hell is an awe-inspiring, if terrifying, sight. Red skies periodically rain down fireballs, battering the landscape.~
+@11408 = ~Horrifying creatures are chained up by the thousands far below. Enormous devils rake them with whips, shaking with laughter after each strike.~
+@11409 = ~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~
+@11410 = ~Cage~
+@11411 = ~This sturdy, well-crafted door resists all efforts to open it.~
+@11412 = ~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~
+@11413 = ~This door's dwarven craftspeople made certain none but the one who held its key would ever be able to open it. Peering through a crack, the light that leaks inward reveals nothing of interest or value.~
+@11414 = ~An unearthly light glows from deep within the chasm. Voices echo throughout the gaping crevasse, pressing against the walls, seeking escape.~
+@11415 = ~Exit~
+@11416 = ~Ritual Chamber~
+@11417 = ~Portal to the Fugue Plane~
+@11418 = ~Teleport Without Error~
+@11419 = ~Impale~
+@11420 = ~Attack~
