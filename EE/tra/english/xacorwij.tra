@@ -188,7 +188,7 @@
 @212 = ~(She calms down.)~
 @213 = ~We better let Investigator Brega know what happened here. Come on, let's go.~ [xalc1044]
 @214 = ~Thank you.~ [xalc1171]
-@215 = ~What does Irenicus gain from a war between the surface elves and the drow? There must be a reason.~
+@215 = ~What does Irenicus gain from a war between the surface elves and the drow? There must be a reason.~ [xalc1254]
 @216 = ~You were with her for a while...~
 @217 = ~Listen, Schael. She didn't leave me any choice. I had to in order to maintain our cover.~
 @218 = ~It meant nothing to me. You're the one that I love.~
@@ -226,7 +226,7 @@
 @250 = ~(She nods in your direction.)~
 @251 = ~My <PRO_MANWOMAN>'s got me covered.~
 @252 = ~(A fleeting smile graces her face.)~
-@253 = ~Let's just get out of this hole and forget that it ever happened.~
+@253 = ~Let's just get out of this hole and forget that it ever happened.~ [xalc1255]
 @254 = ~That's enough, all of you. You there!~
 
 @256 = ~(He points at Corwin.)~
@@ -355,7 +355,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @377 = ~It's important. You'll want to hear this.~
 @378 = ~~
 @379 = ~Fine (sigh), forget it.~
-@380 = ~I've been reflecting on recent events... and the dangers we face.~
+@380 = ~I've been reflecting on recent events... and the dangers we face.~ [xalc1256]
 @381 = ~You saved my life, <CHARNAME>. I was finished after Bodhi's bite, but you saved me...~
 @382 = ~Would you have expected any less? I love you Schael, more than anything. You know this.~
 @383 = ~You're a valuable ally. You'd have done the same for me.~
@@ -365,7 +365,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @387 = ~But, I thought you wanted to wait until we returned home, to Baldur's Gate.~
 @388 = ~I agree wholeheartedly.~  
 @389 = ~It wasn't that I didn't want to... I do. It's just that I've always put my duty ahead of my own desires.~ [xalc1051]
-@390 = ~Let me be perfectly clear. I want you, <CHARNAME>. I want you to make love to me.~
+@390 = ~Let me be perfectly clear. I want you, <CHARNAME>. I want you to make love to me.~ [xalc1257]
 @391 = ~Are you saying what I think you're saying?~
 @392 = ~That might be the most romantic thing anyone has ever said.~
 @393 = ~Nothing would please me more.~
@@ -725,10 +725,10 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @750 = ~Do you know if there are others being held here?~
 @751 = ~Here, take this gold.~
 @752 = ~We'll find them, don't worry. Mera, listen to me. Get out of here, then head to the Government District. Speak to Inspector Brega, and tell him everything that happened. Go, now!~ 
-@753 = ~I hope those kids can make it to safety.~
+@753 = ~I hope those kids can make it to safety.~ [xalc1252]
 @754 = ~Whatever happens, we've dealt a serious blow to the slavers.~
 @755 = ~So do I.~
-@756 = ~Every time the Fist thinks that the slaver problem is under control, we find out how wrong we are.~
+@756 = ~Every time the Fist thinks that the slaver problem is under control, we find out how wrong we are.~ [xalc1253]
 @757 = ~I'll launch an investigation as soon as I return to the city... someone needs to make those slaver bastards pay!~
 @758 = ~Sir, before you leave — while we were in Athkatla, we found evidence of slaver activity occurring in Baldur's Gate.~
 @759 = ~We encountered a large number of refugees from Caelar's crusade. They told us that they were shipped out of Baldur's Gate to Athkatla.~
