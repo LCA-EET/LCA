@@ -399,6 +399,14 @@ OUTER_SET bg2_carryover = 1
 //}
 
 //{ New Items
+	//{ Corwin's Ammo Belt
+		COPY_EXISTING ~BAG05.ITM~ ~override/xacorblt.itm~
+		COPY_EXISTING ~BAG05.STO~ ~override/xacorblt.sto~
+		ADD_STORE_ITEM "arow01" #1 #0 #0 ~IDENTIFIED~ #80
+		ADD_STORE_ITEM "arow02" #1 #0 #0 ~IDENTIFIED~ #80
+		ADD_STORE_ITEM "arow09" #1 #0 #0 ~IDENTIFIED~ #40
+	//}
+
 	//{ Corwin's Body
 		COPY ~%MOD_FOLDER%/bg2/bam/xacorbod.bam~ ~override~
 		COPY ~%MOD_FOLDER%/bg2/bam/xagcorbd.bam~ ~override~
