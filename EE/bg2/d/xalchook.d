@@ -7,6 +7,7 @@ IF ~
 	SAY @2  /* ~(You and Schael eagerly step into the room, and make your way to the bed...)~*/
 	
 	IF ~
+		Gender(Player1, FEMALE)
 		Global("XA_LC_CorwinSex_1", "GLOBAL", 1)
 	~ THEN
 	DO ~
@@ -16,6 +17,7 @@ IF ~
 	EXIT
 	
 	IF ~
+		Gender(Player1, FEMALE)
 		Global("XA_LC_CorwinSex_2", "GLOBAL", 1)
 	~
 	THEN
@@ -45,6 +47,7 @@ IF ~
 	
 	IF ~
 		Global("XA_LC_CorwinSex_3", "GLOBAL", 1)
+		Gender(Player1, FEMALE)
 	~
 	THEN
 	DO ~
