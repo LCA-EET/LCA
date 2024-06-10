@@ -128,7 +128,7 @@
 @127 =  ~Oh, please let me help you with that... there, is that better?~
 @128 =  ~Ah, yes.. much better. Thanks.~
 @129 =  ~No... what was she like?~
-@130 =  ~That's going to take some time to explain... Let's discuss this another time — we have work to do.~ [xalc1217]
+@130 =  ~Let's discuss this another time — we have work to do.~ [xalc1217]
 @131 =  ~Right.. Thank you, Schael.~
 @132 =  ~Aerie, you wanted to learn more about Ashatiel. Do you have some time now?~ 
 @133 =  ~Yes, Schael. Please, continue with your story.~
@@ -156,7 +156,7 @@
 @155 = ~(A look of disappointment flashes across her face.)~
 @156 =  ~Dorn, I give orders to those under my command either verbally, or in writing. How do you receive orders from your patron?~ [xalc1221]
 @157 =  ~What concern is it of yours?~
-@158 =  ~How do you know that the orders you receive are legitimate? That they aren't sent by some other person, or thing?~
+@158 =  ~How do you know that the orders you receive are legitimate? That they aren't sent by some other person, or thing?~ [xalc1258]
 @159 =  ~My patron communicates their thoughts to my mind. I can... hear them, as clearly as I can hear your mewling voice, Captain.~
 @160 =  ~So, you just follow the voice inside your head that tells you to murder things. Is that right?~ [xalc1222]
 @161 =  ~Get to your point.~
@@ -217,7 +217,7 @@
 @216 =  ~Good, Schael! What's new?~
 @217 =  ~Nothing, it seems. I noticed you're still struggling to control your magic.~ [xalc1226]
 @218 =  ~Yeah... a lot of the time I'm able to control it, but then all of a sudden BAM!~ 
-@219 =  ~Please, keep trying. It's important that we're able to rely on you, and we need to be certain that your spells will help us instead of turning one of us into a chicken.~
+@219 =  ~Please, keep trying. It's important that we're able to rely on you, and we need to be certain that your spells will help us instead of turning one of us into a chicken.~ [xalc1259]
 @220 =  ~A chicken? No, I think you mean a llama.~
 @221 =  ~W-what? You turned someone into a llama?~
 @222 =  ~Yes, while casting a Goodberry spell. I did get the berries, though. I shared them with the llama.~
@@ -226,13 +226,13 @@
 @225 = ~~
 @226 =  ~Imoen — what do you need?~ [xalc1094]
 @227 =  ~Nothing, Captain Corwin. I wanted to tell you that I'm glad you're here. I know it's been difficult being away from your family.~
-@228 =  ~I'm just glad that you're free from the wizard. Duchess Jannath was very worried when she learned that you'd been kidnapped.~
+@228 =  ~I'm just glad that you're free from the wizard. Grand Duchess Jannath was very worried when she learned that you'd been kidnapped.~
 @229 =  ~Liia was worried about me? I miss her... she's a wonderful person, and a great teacher.~
 @230 =  ~Don't worry, you'll see her again once this is over. I'm sure she'd be proud of your progress in the magical arts.~ [xalc1227]
 @231 =  ~I hope so. My magic pales in comparison to Irenicus.~
 @232 = ~~
 @233 =  ~Thanks, Captain.~
-@234 =  ~There's no need to address me by rank. I consider you a friend — Schael will do just fine.~
+@234 =  ~There's no need to address me by rank. I consider you a friend — Schael will do just fine.~ [xalc1260]
 @235 =  ~I too consider you a friend, Schael. Thank you.~ 
 @236 =  ~Relax, Corwin. I am not interested in you, at least not in that way. I've found that males are more to my liking... as you have, judging from your interactions with <CHARNAME>.~
 @237 = ~You're doing a good job. Your skills are proving invaluable.~ [xalc1125]
@@ -242,7 +242,7 @@
 @241 = ~Schael, stop it. You're more than any <PRO_MANWOMAN> can hope for in this life, and you've been a great mother to Rohma.~
 @242 = ~Schael, I've never met anyone like you. I hope you understand how special you are. I do, and I know Rohma does.~
 @243 = ~Nonsense. Let go of the past, love. Focus on our future together — you, me, and Rohma.~ 
-@244 = ~The care and interest you've shown for her is more than Beno ever did.~
+@244 = ~The care and interest you've shown for her is more than Beno ever did.~ [xalc1261]
 @245 =  ~Valygar. It's good to have another Ranger on the team.~ [xalc1106]
 @246 =  ~Well...~
 @247 =  ~Yes, thank you Captain. I've been meaning to talk to you about something... do you have a moment?~
@@ -258,7 +258,7 @@
 @257 = ~Oh yes, I remember! I bought it at the general store, not long after I met her for the first time.~
 @258 =  ~Cernd, you have a beautiful child.~ [xalc1129]
 @259 =  ~Thank you, Captain Corwin. ~
-@260 =  ~I remember when my daughter was just a baby. Holding your newborn in your arms changes you, doesn't it?~
+@260 =  ~I remember when my daughter was just a baby. Holding your newborn in your arms changes you, doesn't it?~ [xalc1262]
 @261 =  ~It does! When I held Ahsdale, I felt a... clarity, that I had never experienced before, like my purpose in this world had changed.~
 @262 =  ~That's almost exactly how I felt with Rohma... like my life had suddenly gained a meaning that it lacked before.~ [xalc1229]
 @263 =  ~It can't be easy being away from your child. I know that isn't easy for me.~
