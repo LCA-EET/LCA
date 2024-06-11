@@ -46,7 +46,7 @@ APPEND ~XALCDBG~
 		GOTO XA_BG2_Debug
 		
 		IF ~~ THEN REPLY @5095
-		GOTO XA_BG2_ SpellTest
+		GOTO XA_BG2_SpellTest
 		
 		IF ~~ THEN REPLY @5090 /* ~Spawn Corwin (XACORWIN) and add her to the party.~ */
 		DO ~
@@ -67,13 +67,13 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_BG2_SpellTest
 		SAY @5095 
 		
-		IF ~~ THEN BEGIN @5096
+		IF ~~ THEN REPLY @5096
 		DO ~
 			ForceSpellRES("xasboost", Player1)
 		~
 		GOTO XA_BG2_SpellTest
 		
-		IF ~~ THEN BEGIN @5097
+		IF ~~ THEN REPLY @5097
 		DO ~
 			ForceSpellRES("xasboost", "xacorwin")
 		~
