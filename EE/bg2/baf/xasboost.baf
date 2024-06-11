@@ -6,11 +6,9 @@
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinSexBoost", "GLOBAL", 0)
 			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
-			ApplySpellRES("bdrejuve","XACORWIN")
-			ApplySpellRES("bdrejuve",Player1)
-			ChangeStat("XACORWIN", MINHITPOINTS, 5, ADD)
-			ChangeStat(Player1, MINHITPOINTS, 5, ADD)
 			DisplayStringHead(Myself, @0)
+			ApplySpellRES("xasboost","XACORWIN")
+			ApplySpellRES("xasboost",Player1)
 			SetInterrupt(TRUE)
 			Continue()
 	END
