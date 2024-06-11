@@ -347,7 +347,7 @@ END
 		GlobalGT("XA_LC_SlappedDelcia", "GLOBAL", 0)
 		GlobalLT("XA_LC_SlapTalk", "LOCALS", 1)
 		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
-		!See("Delcia")
+		!InMyArea("Delcia")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
