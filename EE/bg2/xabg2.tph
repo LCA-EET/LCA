@@ -568,6 +568,9 @@ OUTER_SET bg2_carryover = 1
 //}
 
 //{ New Spells
+	COPY  ~%MOD_FOLDER%/bg2/spl/xasboost.spl~ ~override~
+	WRITE_LONG 0x08 RESOLVE_STR_REF(@3187)
+
 	COPY ~%MOD_FOLDER%/bg2/spl/xachng01.spl~ ~override~
 	WRITE_LONG 0x08 RESOLVE_STR_REF(@3136)
 	

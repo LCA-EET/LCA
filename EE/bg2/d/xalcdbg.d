@@ -45,6 +45,9 @@ APPEND ~XALCDBG~
 		//~
 		GOTO XA_BG2_Debug
 		
+		IF ~~ THEN REPLY @5095
+		GOTO XA_BG2_ SpellTest
+		
 		IF ~~ THEN REPLY @5090 /* ~Spawn Corwin (XACORWIN) and add her to the party.~ */
 		DO ~
 			CreateCreature("XACORWIN", [-1.-1], S)
@@ -57,6 +60,27 @@ APPEND ~XALCDBG~
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 10
+		
+		COPY_TRANS XALCDBG 11
+	END
+
+	IF ~~ THEN BEGIN XA_BG2_SpellTest
+		SAY @5095 
+		
+		IF ~~ THEN BEGIN @5096
+		DO ~
+			ForceSpellRES("xasboost", Player1)
+		~
+		GOTO XA_BG2_SpellTest
+		
+		IF ~~ THEN BEGIN @5097
+		DO ~
+			ForceSpellRES("xasboost", "xacorwin")
+		~
+		GOTO XA_BG2_SpellTest
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_BG2_Debug
 		
 		COPY_TRANS XALCDBG 11
 	END
