@@ -38,6 +38,7 @@ Copy-Item -Path "Release Notes.md" -Destination ($basePath + "/Release Notes.md"
 
 #Remove-Item -LiteralPath $basePath -Force -Recurse
 
+
 $7zipPath = "$env:ProgramFiles/7-Zip/7z.exe"
 
 if (-not (Test-Path -Path $7zipPath -PathType Leaf)) {

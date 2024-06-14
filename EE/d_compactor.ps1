@@ -1,42 +1,58 @@
 param([string]$dPath="d") 
-Get-ChildItem $dPath -Filter *.d | Foreach-Object {
-	$output = ""
-	$openComment = $false
-    foreach($line in [System.IO.File]::ReadLines($_.FullName))
-	{
-		if($line.contains("//"))
-		{
-			$index = $line.IndexOf("//")
-			if($index -gt -1){
-				$append = $line.Substring(0, $index) + " "
-			}
-			$append = $append.replace("`t", " ")
-			$output += $append
-		}
-		else if($line.contains("/*") -or $line.contains("*/")){
-			if($openComment){
-				$index = $line.IndexOf("*/")
-				if($index -gt -1){
-					$append = $line.Substring($index + 2, $line.Length - ($index + 2)) + " "
-				}
-			$a
-			}
-			else{
-				
-			}
-			$openComment = !$openComment
-			$index = $line.IndexOf("/*")
-			if($index -gt -1){
-				$append = $line.Substring(0, $index) + " "
-			}
-			$append = $append.replace("`t", " ")
-			$output += $append
-			$openComment = 1
+
+function HandleInLineComment([string]$append){
+	[int]$index = $append.IndexOf("//")
+	if($index -gt -1){
+		$append = $append.Substring(0, $index)
+	}
+	return $append
+}
+
+function HandleMultilineOpen([string]$append, [ref]$openComment){
+	while($append.contains("/*")){
+		$indexOpen = $append.IndexOf("/*")
+		if($append.contains("*/")){ # closes on the same line as the open
+			([bool]$openComment.value) = $false
+			$indexClose = $append.IndexOf("*/")
+			$append = ($append.Substring(0, $indexOpen) + " " + $append.Substring($indexClose + 2) + " ")	
 		}
 		else{
-			$append = $line + " "
-		}
+			([bool]$openComment.value) = $true
+			$append = ($append.Substring(0, $indexOpen) + " ")
+		}	
+	}
+	if($append.contains("//")){
+		$append = HandleInLineComment $append
+	}
+	return $append
+}
+
+Get-ChildItem $dPath -Filter *.d | Foreach-Object {
+	[string]$output = ""
+	[bool]$openComment = $false
+    foreach($line in [System.IO.File]::ReadLines($_.FullName))
+	{
+		[string]$append = $line
+		$writeOverride = $false
 		
+		if($append.contains("/*")){
+			$append = HandleMultilineOpen $append ([ref]$openComment)
+			$writeOverride = $true
+		}
+		if($append.contains("*/")){
+			$openComment = $false
+			[int]$indexClose = $append.IndexOf("*/") 
+			$append = $append.Substring($indexClose + 2) + " "
+			$append = HandleInLineComment $append
+		}		
+		if($append.contains("//"))
+		{
+			$append = HandleInLineComment $append
+		}		
+		if(!$openComment -or $writeOverride){
+			$append = $append.replace("`t", " ") + " "
+			$output += $append
+		}
 	}
 	while ($output.contains("  ")){
 		$output = $output.replace("  ", " ")
