@@ -25,6 +25,7 @@ Remove-Item -LiteralPath $modPath -Force -Recurse
 
 foreach($folder in $folders){
 	Copy-Item -Path $folder -Destination ($modPath + "/" + $folder) -Recurse
+	& $PSScriptRoot/d_compactor.ps1 -dPath ($modPath + "/" + $folder + "/d")
 }
 
 Copy-Item -Path ("functions.tph") -Destination $modPath 
