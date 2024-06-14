@@ -225,11 +225,7 @@ APPEND ~C6BODHI~
 			CreateCreature("BODFGT01",[1667.220],SW)
 			Enemy()
 		~
-		UNSOLVED_JOURNAL @24 /* ~The final battle with Bodhi
-
-I have finally encountered Bodhi within her lair! I must be careful to use every advantage I have at my disposal, including the holy water that Elhan gave me. I doubt it will do much to her personally... but perhaps there is some way to pollute the power she draws from this place, use the holy water to dim the blood she draws...
-
-And if I survive, I will have to find a way to undo Schael's vampire transformation. Bodhi said that as long as she was alive, that Schael couldn't be restored to her former self.~  */
+		UNSOLVED_JOURNAL @24 /* ~The final battle with Bodhi I have finally encountered Bodhi within her lair! I must be careful to use every advantage I have at my disposal, including the holy water that Elhan gave me. I doubt it will do much to her personally... but perhaps there is some way to pollute the power she draws from this place, use the holy water to dim the blood she draws... And if I survive, I will have to find a way to undo Schael's vampire transformation. Bodhi said that as long as she was alive, that Schael couldn't be restored to her former self.~  */
 		EXIT
 	END
 END
