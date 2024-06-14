@@ -1,37 +1,4 @@
-//Changes to miscellaneous dialogs (BG1 / SoA / ToB)
-//Generally, this file will contain modifications less than 100 lines long. Modifications 100 lines or longer will typically have their own file.
-//Daniel Valle
-//dan@danielvalle.net
-
-/* NOTE ON THE USE OF EXTEND_BOTTOM 
-	When using EXTEND_BOTTOM to add reply options to a state that originally did not have a reply option, such as the following:
-	
-	IF ~~ THEN BEGIN StateLabel
-		SAY @0  
-		
-		IF ~~ THEN
-		GOTO OtherStateLabel
-	END
-	
-	You need to ADD_TRANS_TRIGGER to the original transition. The trigger you add should be the negation of the trigger associated with your EXTEND_BOTTOM. For example:
-	
-	ADD_TRANS_TRIGGER DIALOG StateLabel
-	~
-		!Gender(Player1, MALE)
-	~
-	
-	EXTEND_BOTTOM DIALOG StateLabel
-		IF ~
-			Gender(Player1, MALE)
-		~ THEN REPLY @1 
-	END
-
-	THIS IS NOT NECESSARY WHEN YOUR EXTEND_BOTTOM DOES NOT INCLUDE A REPLY.
-*/
-
 //{ Altered Transitions	
-	
-
 	ADD_TRANS_TRIGGER HABREGA 13
 	~
 		!PartyHasItem("XASTDAG")

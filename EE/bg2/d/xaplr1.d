@@ -1,11 +1,3 @@
-//Modifications to PLAYER1.D
-//Daniel Valle
-//dan@danielvalle.net
-/* Revision History
-
-2022-09-26: Initial Commit
-
-*/
 APPEND ~PLAYER1~
 	IF ~
 		Global("XA_LC_OdrenDebug", "GLOBAL", 1)

@@ -1,7 +1,3 @@
-//XANTRJEX
-
-//Interjects associated with the LCA Mod
-
 //{ Edwin
 	INTERJECT_COPY_TRANS2 EDWIN 8 XA_EDWIN_8
 		== XACORWIB

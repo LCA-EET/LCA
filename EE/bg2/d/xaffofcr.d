@@ -1,13 +1,3 @@
-//FFOFCR
-//Daniel Valle
-//dan@danielvalle.net
-
-/* Revision History
-
-2022-09-17: Initial Commit
-
-*/
-
 BEGIN ~XAFFOFCR~
 
 	IF ~

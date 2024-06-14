@@ -1,13 +1,3 @@
-/* Reactions to <CHARNAME> having sex with Corwin in Amn.
-Daniel Valle
-
-dan@danielvalle.net
-*/
-/* Revision History
-
-2022-12-05: Initial Commit
-
-*/
 
 //{ Corwin
 APPEND XACORWIJ

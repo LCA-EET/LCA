@@ -1,13 +1,3 @@
-//XACORWIP
-//Daniel Valle
-//dan@danielvalle.net
-
-/* Revision History
-
-2022-09-16: Initial Commit
-
-*/
-
 BEGIN ~XACORWIP~
 
 //{ Rilifane

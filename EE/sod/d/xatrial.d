@@ -1,13 +1,3 @@
-//Modifications to the Trial sequence at the end of SoD
-//Daniel Valle
-//dan@danielvalle.net
-
-/* Revision History
-
-2022-12-04: Initial Commit
-
-*/
-
 ADD_TRANS_TRIGGER BDBELT 6
 ~
 	OR(2)

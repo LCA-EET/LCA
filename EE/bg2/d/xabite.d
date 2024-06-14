@@ -1,12 +1,3 @@
-//Modifications to various dialogues to cover Bodhi / Corwin bite.
-//Daniel Valle
-//dan@danielvalle.net
-
-/* Revision History
-
-2022-11-25: Initial Commit
-
-*/
 //BCOFFIN
 
 EXTEND_BOTTOM WARSAGE 0

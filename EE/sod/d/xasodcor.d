@@ -4,14 +4,6 @@
 //Portions of this dialog were created by SilentGuy2011 and used with his expressed permission.
 //Check out his DA page at https://www.deviantart.com/silentguy2011, particularly the Baldur's Gate fanfictions.
 
-//Daniel Valle
-//dan@danielvalle.net
-/* Revision History
-
-2023-04-09: Initial Commit
-
-*/
-
 APPEND BDCORWIJ
 	
 	IF ~~ THEN BEGIN XA_Kiss

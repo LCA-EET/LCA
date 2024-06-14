@@ -1,12 +1,3 @@
-//Modifications to HABREGA.D
-//Daniel Valle
-//dan@danielvalle.net
-/* Revision History
-
-2022-08-25: Initial Commit
-
-*/
-
 ADD_STATE_TRIGGER HABREGA 0
 ~
 	!PartyHasItem("XALCORW1")

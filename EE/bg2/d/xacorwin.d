@@ -1,13 +1,3 @@
-//XACORWIN
-//Daniel Valle
-//dan@danielvalle.net
-
-/* Revision History
-
-2022-09-16: Initial Commit
-
-*/
-
 BEGIN ~XACORWIN~
 
 //{ Dialog I-0

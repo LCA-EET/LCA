@@ -1,13 +1,3 @@
-//Modifications to BDASHATI.DLG
-//Daniel Valle
-//dan@danielvalle.net
-
-/* Revision History
-
-2022-12-04: Initial Commit
-
-*/
-
 ADD_TRANS_TRIGGER BDASHATI 6
 ~
 	!IsValidForPartyDialogue("Corwin")
