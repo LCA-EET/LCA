@@ -27,7 +27,7 @@ function HandleMultilineOpen([string]$append, [ref]$openComment){
 	return $append
 }
 
-Get-ChildItem $dPath -Filter *.d | Foreach-Object {
+Get-ChildItem $dPath -Filter *.d -Recurse | Foreach-Object {
 	[string]$output = ""
 	[bool]$openComment = $false
     foreach($line in [System.IO.File]::ReadLines($_.FullName))
