@@ -2406,7 +2406,7 @@ END
 			IsValidForPartyDialogue("Rasaad")
 		~
 		THEN XACORWIB BCorwinRasaad1
-			@304 /* ~Rasaad - I wanted to thank you. [XACORB29] ~ */
+			@304 /* ~Rasaad - I wanted to thank you. [xalc1292] ~ */
 			DO ~
 				SetGlobal("XA_LC_Banter_CorwinRasaad", "GLOBAL", 7)
 			~
@@ -2459,7 +2459,7 @@ END
 				!IsValidForPartyDialogue("Valygar")
 		~
 		THEN XACORWIB BCorwinRasaad4A
-			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XA100067] */
+			@483 /* ~Rasaad, do you have some time now? I can show you that back exercise we were talking about.~ [xalc1293] */
 			DO ~
 				SetGlobal("XA_LC_Banter_CorwinRasaad", "GLOBAL", 9)
 			~
@@ -2674,7 +2674,7 @@ END
 			IsValidForPartyDialogue("Yoshimo")
 		~
 		THEN XACORWIB BCorwinYoshimo1
-			@269 /* ~Yoshimo - what is it?~ [XACORB30] */
+			@269 /* ~Yoshimo — what is it?~ [xalc1294] */
 			DO ~
 				SetGlobal("XA_LC_Banter_CorwinYoshimo", "GLOBAL", 3)
 			~
@@ -3349,7 +3349,7 @@ END
 			~
 			@764/* ~Thanks, Major.~  */
 			== XACORWIB
-			@234 /* ~Imoen, I consider you a friend. There's no need to address me by rank - Schael will do just fine.~ */
+			@234 /* ~There's no need to address me by rank. I consider you a friend — Schael will do just fine.~ [xalc1260] */
 			== BIMOEN2
 			@235 /* ~I too consider you a friend, Schael. Thank you.~  */
 	EXIT
@@ -3362,7 +3362,7 @@ END
 			Global("XA_LC_CorwinImoenSoulTalk", "GLOBAL", 1)
 			IsValidForPartyDialogue("Imoen2")
 		~ THEN XACORWIB BCorwinImoenSoulA
-			@565 /*  ~Imoen, I can't tell you how relieved I am that you're better.~  */
+			@565 /* ~Imoen, I can't tell you how relieved I am that you're better.~ [xalc1298]  */
 			DO ~
 				SetGlobal("XA_LC_CorwinImoenSoulTalk", "GLOBAL", 2)
 			~
@@ -3386,7 +3386,7 @@ END
 			Global("XA_LC_CorwinImoenSoulTalk", "GLOBAL", 1)
 			IsValidForPartyDialogue("Imoen2")
 		~ THEN XACORWIB BCorwinImoenSoulB
-			@565 /*  ~Imoen, I can't tell you how relieved I am that you're better.~ [XA100067] */
+			@565 /* ~Imoen, I can't tell you how relieved I am that you're better.~ [xalc1298]  */
 			DO ~
 				SetGlobal("XA_LC_CorwinImoenSoulTalk", "GLOBAL", 2)
 			~
@@ -3745,7 +3745,7 @@ END
 			Global("XA_LC_Banter_CorwinKeldInitial", "GLOBAL", 1)
 			IsValidForPartyDialogue("Keldorn")
 		~ THEN BKELDOR BCorwinKeldornInitial
-			@624  /*~Captain, if I may... I once knew an officer with the surname Corwin. Tell me, are you related to a man named Audamar?~ */
+			@624  /*~If I may... I once knew an officer with the surname Corwin. Tell me, are you related to a man named Audamar?~ */
 			DO ~
 				SetGlobal("XA_LC_Banter_CorwinKeldInitial", "GLOBAL", 2)
 			~
@@ -3773,7 +3773,15 @@ END
 			== XACORWIB
 			@638  /* ~Spoken like someone who barely knows me, but I'll take what compliments I can get and do what I can not to change your mind.~ [BD34332] */
 			== BKELDOR
+			IF ~
+				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
+			~
 			@641 /*~Aye. Come, Captain. Duty calls.~*/
+			== BKELDOR
+			IF ~
+				Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
+			~
+			@599 /*~Aye. Come, Major. Duty calls.~*/
 	EXIT
 	//}
 	//{ Dialog B-63
@@ -3788,6 +3796,8 @@ END
 			~ 
 			== BKELDOR
 			IF ~
+				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
+			~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 			~
 			@61 /* ~Of course Captain. How can I help you?~ */
@@ -3984,7 +3994,8 @@ END
 			== BJAHEIR
 			@6 /*Yes?*/
 			== XACORWIB
-			#258901 /* I'm sorry for your loss.*/
+			@344 /* I'm sorry for your loss.*/
+			
 			=@1 /* ~Your husband was good man, and a fine warrior. Those who survived the siege on Bridgefort owe him their lives.~*/
 			== BJAHEIR
 			IF ~
@@ -4015,7 +4026,8 @@ END
 			== BJAHEIR
 			@17 /* ~Yes, Captain?~*/
 			== XACORWIB
-			@1 /* ~I'm very sorry about Khalid. Your husband was good man, and a great warrior. Those who survived the siege on Bridgefort owe him their lives.~ */
+			@344 /* I'm sorry for your loss.*/
+			= @1 /* ~I'm very sorry about Khalid. Your husband was good man, and a great warrior. Those who survived the siege on Bridgefort owe him their lives.~ */
 			== BJAHEIR
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
@@ -4307,7 +4319,7 @@ END
 			== BAERIE
 			@445 /* ~I understand. Thank you, Schael.~ */
 			== XACORWIB
-			@214  /* ~That's what I like to see. Would that there were more like you.~ [BD67546]*/
+			@225  /* ~Anytime. Let's get moving, we've work to do.~ [xalc1309]*/
 	EXIT
 	//}
 
@@ -4379,7 +4391,7 @@ END
 			== BAERIE
 			@445 /* ~I understand. Thank you, Schael.~ */
 			== XACORWIB
-			@214 /* ~That's what I like to see. Would that there were more like you.~ [BD67546]*/
+			@225 /* ~Anytime. Let's get moving, we've work to do.~ [xalc1309]*/
 			
 	EXIT
 	//}
@@ -4462,8 +4474,7 @@ END
 			@162 /* = ~If that voice tells you to harm <CHARNAME>, or anyone else that I care about, then your patron will need to find themselves a new slave. I trust I've made myself clear.~ */
 			== BDORN
 			@163 /* = ~You are a truly pathetic woman. Even still, such insults and threats are beneath you. I've no intention of betraying <CHARNAME>, certainly not while my patron benefits from our arrangement.~ */
-			== XACORWIB
-			@182 /*~Next time, keep that thrice-damned pit of hell you call a mouth shut or I'll shut it for you.~ [XA100081]*/
+
 	EXIT
 	//}
 
@@ -4500,8 +4511,6 @@ END
 			@592 /* ~If you harm <CHARNAME>, or anyone else that I care about, then —~*/
 			== BDORN
 			@585 /*~Pathetic, woman. Save your empty threats for someone who cares. I've no intention of betraying <CHARNAME>, certainly not while I benefit from our arrangement.~ */
-			== XACORWIB
-			@182 /*~Next time, keep that thrice-damned pit of hell you call a mouth shut or I'll shut it for you.~ [XA100081]*/
 	EXIT
 	//}
 
