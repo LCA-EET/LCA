@@ -404,7 +404,7 @@ IF ~~ THEN BEGIN XA_OPT1ARomance_3
 	~ THEN REPLY @780 /* ~Really? I didn't think I'd made much of an impression on her.~ */
 	GOTO XA_OPT1ARomance4_NoDoll //OK
 	
-	IF ~~ THEN REPLY @718 /* ~Of course she does. I am the *ahem* hero of Baldur's Gate, after all.~ */
+	IF ~~ THEN REPLY @781 /* ~Of course she does. I am the *ahem* hero of Baldur's Gate, after all.~ */
 	GOTO XA_OPT1ARomance_4 //OK
 END
 
@@ -512,7 +512,7 @@ IF ~~ THEN BEGIN XAA31A
 	IF ~~ THEN REPLY @651 /* ~Like I said, I'm busy.~ */
 	GOTO XAA31B
 	
-	IF ~~ THEN REPLY @652 /* ~Like I said, I'm busy.~ */
+	IF ~~ THEN REPLY @652 /* ~You're right. What can I do for you?~*/
 	GOTO XAA31
 END
 
@@ -821,7 +821,7 @@ IF ~~ THEN BEGIN XAA51
 END
 
 IF ~~ THEN BEGIN XAA52
-	SAY @907 /* ~Perhaps he is. I'm grateful for his sacrifice. I can't imagine the heartbreak he felt watching his niece pledge her soul to a demon.~ */
+	SAY @907 /* ~Perhaps he is. I'm grateful for his sacrifice. I can't imagine the heartbreak he felt watching his niece pledge herself to a devil like Belhifet.~ */
 	
 	IF ~
 		OR(3)
