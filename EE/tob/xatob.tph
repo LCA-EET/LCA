@@ -3,6 +3,13 @@ SILENT
 INCLUDE ~%MOD_FOLDER%/generated/g/generated.tph~
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/baf~
+
+COPY_EXISTING ~xacorwib.dlg~ ~override/xacor25b.dlg~
+DECOMPILE_AND_PATCH BEGIN
+	REPLACE_TEXTUALLY ~XACORWIB~ ~XACOR25B~
+	LPF xa_dlgb_soa_to_tob END	
+END
+
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 
 //{ Script Extensions
