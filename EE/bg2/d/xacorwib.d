@@ -1409,39 +1409,39 @@ IF ~~ THEN BEGIN XA_OPT1Romance_2
 	
 	IF ~
 		GlobalLT("XA_LC_CorwinPromoted", "GLOBAL", 1)
-	~ THEN REPLY @149 /* ~Rohma and your father. I understand.~ */
+	~ THEN REPLY @778 /* ~Rohma and your father. I understand.~ */
 	GOTO XA_OPT1Romance_3 //OK
 	
 	IF ~
 		GlobalLT("XA_LC_CorwinPromoted", "GLOBAL", 1)
-	~ THEN REPLY @255 /* ~No need to apologize. It must be difficult for you to be away from your family.~*/
+	~ THEN REPLY @779 /* ~No need to apologize. It must be difficult for you to be away from your family.~*/
 	GOTO XA_OPT1Romance_3 //OK
 	
 	IF ~
 		Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
-	~ THEN REPLY @149 /* ~Rohma and your father. I understand.~ */
+	~ THEN REPLY @778 /* ~Rohma and your father. I understand.~ */
 	GOTO XA_OPT1ARomance_3 //OK
 	
 	IF ~
 		Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
-	~ THEN REPLY @255 /* ~No need to apologize. It must be difficult for you to be away from your family.~*/
+	~ THEN REPLY @779 /* ~No need to apologize. It must be difficult for you to be away from your family.~*/
 	GOTO XA_OPT1ARomance_3 //OK
 END
 
 IF ~~ THEN BEGIN XA_OPT1Romance_3
-	SAY @146 /* ~Yes... You know, Rohma asks about you.~ */
+	SAY @769 /* ~Yes... You know, Rohma asks about you.~ */
 	
 	IF ~
 		Global("XA_LC_GaveDoll", "GLOBAL", 1)
-	~ THEN REPLY @147 /* ~Really? I didn't think I'd made much of an impression on her.~ */
+	~ THEN REPLY @780 /* ~Really? I didn't think I'd made much of an impression on her.~ */
 	GOTO XA_OPT1Romance4_GaveDoll //OK
 	
 	IF ~
 		!Global("XA_LC_GaveDoll", "GLOBAL", 1)
-	~ THEN REPLY @147 /* ~Really? I didn't think I'd made much of an impression on her.~ */
+	~ THEN REPLY @780 /* ~Really? I didn't think I'd made much of an impression on her.~ */
 	GOTO XA_OPT1Romance4_NoDoll //OK
 	
-	IF ~~ THEN REPLY @159 /* ~Of course she does. I am the *ahem* hero of Baldur's Gate, after all.~ */
+	IF ~~ THEN REPLY @781 /* ~Of course she does. I am the *ahem* hero of Baldur's Gate, after all.~ */
 	GOTO XA_OPT1Romance_4 //OK
 END
 
