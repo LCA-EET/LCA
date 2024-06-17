@@ -3798,8 +3798,6 @@ END
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 			~
-				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
-			~
 			@61 /* ~Of course Captain. How can I help you?~ */
 			== BKELDOR
 			IF ~
