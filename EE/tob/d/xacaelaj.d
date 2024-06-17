@@ -3,7 +3,7 @@ BEGIN ~XACAELAJ~
 IF ~
 	Global("XA_LC_CaelarLeftPoorRep", "GLOBAL", 1)
 ~ THEN BEGIN XA_RepBreak
-	SAY #268343 /*This is wrong. I'll not stand by and watch you make a mockery of all the principles I hold to. We part ways here.*/
+	SAY @5 /*~This is wrong. I'll not stand by and watch you make a mockery of all the principles I hold to. We part ways here.~ [xalc2000]*/
 	
 	IF ~~ THEN
 	DO ~
@@ -17,7 +17,7 @@ END
 IF ~
 	Global("XA_LC_CaelarRepWarning", "GLOBAL", 2)
 ~ THEN BEGIN XA_RepWarning
-	SAY #268342 /*We wander too far into darkness. Put me or another righteous soul in charge. I will soon steer us back on course.*/
+	SAY @6 /*~We wander too far into darkness. Put me or another righteous soul in charge. I will soon steer us back on course.~ [xalc2001]*/
 	
 	IF ~~ THEN 
 	DO ~

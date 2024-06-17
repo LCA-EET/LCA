@@ -98,7 +98,7 @@
 			== SAREV25J
 			@816 /* ~Ah, Captain — excuse me, *Major* Corwin, to what do I owe the pleasure?~ */
 			== XACOR25B
-			#258881 /* What's the draw */
+			@383 /*~I can't figure you out. What's the draw? What do you hope to gain from helping in this effort?~ [xalc1315]*/
 			== SAREV25J
 			@8/* ~Even though I no longer stand to benefit from it, I want to see Aluando's prophecy fulfilled. It's all I have left.~*/
 			== XACOR25B
@@ -131,7 +131,7 @@
 			== SAREV25J
 			@816 /* ~Ah, Captain — excuse me, *Major* Corwin, to what do I owe the pleasure?~ */
 			== XACOR25B
-			#258881 /* What's the draw */
+			@383 /*~I can't figure you out. What's the draw? What do you hope to gain from helping in this effort?~ [xalc1315]*/
 			== SAREV25J
 			@8/* ~Even though I no longer stand to benefit from it, I want to see Aluando's prophecy fulfilled. It's all I have left.~*/
 			== XACOR25B
@@ -168,7 +168,7 @@
 			= @833 /* ~I suppose then that your orders were to take control of the city, in the event that I, or someone else associated with the Iron Throne, were to overtly usurp control.~ */
 			= @835 /* ~Would you have been successful, I wonder? I doubt you'd have had the numbers, or the strength, to wrest control away from us.~*/
 			== XACOR25B
-			#267555 /* ~I disagree strenuously... Keep talking and I may disagree violently*/
+			@418 /*= ~I disagree strenuously. Keep talking and I may start to disagree violently.~ [xalc1316]*/
 			== SAREV25J
 			@837 /* Hmph. */
 	EXIT
