@@ -286,6 +286,10 @@ END
 	WRITE_ASCII 0x248 ~xacorinv~ #8
 	WRITE_ASCII 0x280 ~xacorinv~ #20
 	
+	COPY_EXISTING ~xalcspy.cre~ ~override/xacrowd.cre~
+	WRITE_LONG 0x8 RESOLVE_STR_REF(@3188)
+	WRITE_LONG 0xC RESOLVE_STR_REF(@3188)	
+	
 	COPY_EXISTING ~suelf2.cre~ ~override/xabowyer.cre~
 	WRITE_ASCII 0x280 ~xabowyer~ #20
 	WRITE_SHORT 0x24 45
