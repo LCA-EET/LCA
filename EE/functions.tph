@@ -180,7 +180,7 @@ DEFINE_PATCH_FUNCTION xa_reset_cre
 		WRITE_ASCIIE 0x268 ~%xa_default%~ #8		// Default Script
 	END
 	
-	DEFINE_PATCH_FUNCTION xa_add_extras
+DEFINE_PATCH_FUNCTION xa_add_extras
 	INT_VAR
 		xa_minX = 0
 		xa_maxX = 0
@@ -220,6 +220,39 @@ DEFINE_PATCH_FUNCTION xa_reset_cre
 		END
 	END
 	
+DEFINE_PATCH_FUNCTION xa_rescript_actors
+	STR_VAR 
+		xa_override = ~~
+		xa_class = ~~
+		xa_race = ~~
+		xa_general = ~~
+		xa_default = ~~
+		xa_specifics = ~~
+	BEGIN
+		READ_SHORT 0x58 xa_numactors
+		READ_LONG 0x54 xa_actors_offset
+		SET xa_actor_index = 0
+		
+		WHILE (xa_actor_index < xa_numactors) BEGIN
+			SET xa_override_offset = (xa_actors_offset + 0x50)
+			SET xa_general_offset = (xa_override_offset + 0x8)
+			SET xa_class_offset = (xa_general_offset + 0x8)
+			SET xa_race_offset = (xa_class_offset + 0x8)
+			SET xa_default_offset = (xa_race_offset + 0x8)
+			SET xa_specifics_offset = (xa_default_offset + 0x8)
+			
+			WRITE_ASCII xa_override_offset ~%xa_override%~ #8
+			WRITE_ASCII xa_general_offset ~%xa_general%~ #8
+			WRITE_ASCII xa_class_offset ~%xa_class%~ #8
+			WRITE_ASCII xa_race_offset ~%xa_race%~ #8
+			WRITE_ASCII xa_default_offset ~%xa_default%~ #8
+			WRITE_ASCII xa_specifics_offset ~%xa_specifics%~ #8
+			
+			SET xa_actors_offset = (xa_actors_offset + 0x110)
+			SET xa_actor_index = (xa_actor_index + 1)
+		END
+	END
+
 DEFINE_PATCH_FUNCTION xa_add_extras_rescript
 	INT_VAR
 		xa_minX = 0
