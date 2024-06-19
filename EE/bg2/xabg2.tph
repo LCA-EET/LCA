@@ -191,7 +191,15 @@ END
 	COPY ~%MOD_FOLDER%/bg2/are~ ~override~
 	
 	COPY_EXISTING ~xacs06.are~ ~override~
-	LPF xa_rescript_actors END // remove any existing scripts on the actors in the scene
+	LPF xa_rescript_actors 
+		STR_VAR
+			xa_override = ~xalcnull~
+			xa_class = ~xalcnull~
+			xa_race = ~xalcnull~
+			xa_general = ~xalcnull~
+			xa_default = ~xalcnull~
+			xa_specifics = ~xalcnull~	
+	END // remove any existing scripts on the actors in the scene
 
 	COPY_EXISTING ~xad100.are~ ~override~ // bd0103, Ducal Palace 3 Fl
 	LPF xa_delete_actor_at_index END

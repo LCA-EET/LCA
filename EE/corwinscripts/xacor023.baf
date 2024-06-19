@@ -13,7 +13,7 @@
 		RESPONSE #100
 			//Dialog B-3A
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
-			ActionOverride("Mazzy", StartDialog("MAZZYJ", Player1))
+			ActionOverride("Mazzy", StartDialog("BMAZZY", Player1))
 	END
 	//}
 

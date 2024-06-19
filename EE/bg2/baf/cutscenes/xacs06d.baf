@@ -3,9 +3,9 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
-		MoveViewPoint([3533.2316], BD_NORMAL)
-		MoveViewObject(Myself, INSTANT)
-		CreateCreature("cutspy",[3533.2316],S) 
+		MoveViewPoint([3500.2290], INSTANT)
+		//MoveViewObject(Myself, INSTANT)
+		CreateCreature("cutspy",[3500.2290],S)  
 		Explore()
 		FadeFromColor([30.0],0)
 		ZoomLock(TRUE)
