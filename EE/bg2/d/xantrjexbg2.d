@@ -1739,3 +1739,13 @@
 
 
 //}
+
+//{ OHNBARAD
+	INTERJECT_COPY_TRANS2 OHNBARAD 24 XA_OHNBARAD_24
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
+		@192 /*~I love animals... I can watch him. Don't worry, I'll keep him out of trouble.~*/		
+	END
+//}

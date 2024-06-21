@@ -53,6 +53,10 @@ ACTION_IF (sod_carryover = 0) THEN BEGIN
 	INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
 END
 
+//{ Sounds
+	COPY ~%MOD_FOLDER%/tob/wav/caelar~ ~override~
+//}
+
 //{ Animations
 	ACTION_IF(isEET = 0) THEN BEGIN
 		COPY ~%MOD_FOLDER%/tob/anim~ ~override~

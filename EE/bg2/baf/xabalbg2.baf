@@ -393,6 +393,18 @@ END
 			SetGlobal("XA_LC_CorwinSexNoSleepComplain", "GLOBAL", 2)
 			Continue()
 	END
+	
+	//{ Met Mereth
+	IF
+		GlobalGT("ohn_mereth_plot","global",0)
+		!InParty("XACORWIN")
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_MerethTalk", "GLOBAL", 3)
+			Continue()
+	END
+	//}
+	
 	//}
 //}
 

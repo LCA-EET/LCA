@@ -3888,6 +3888,42 @@ IF ~~ THEN BEGIN XA_BackToBG_ChainEnd_AndYou
 	
 END
 
+IF ~
+	Global("XA_LC_MerethTalk", "GLOBAL", 2)
+~ THEN BEGIN XA_MerethTalkStart
+	SAY @1847 /* ~Cute kid. She can't be more than a couple of years older than Rohma.~ */
+	
+	IF ~~ THEN REPLY @1848 /* ~I was thinking the same thing.~ */
+	GOTO XA_Mereth3
+	
+	IF ~~ THEN REPLY @1849 /* ~She's certainly in more trouble than Rohma.~ */
+	GOTO XA_Mereth2
+END
+
+IF ~~ THEN BEGIN XA_Mereth2
+	SAY @1850 /*~That's for sure. It's terrible what the Thayans have done to these people.~*/
+	
+	IF ~~ THEN
+	GOTO XA_Mereth3
+END
+
+IF ~~ THEN BEGIN XA_Mereth3
+	SAY @1851 /*~Rohma... gods, I miss her. My father, too. I can't wait for all of this to be over.~*/
+	
+	IF ~~ THEN REPLY @1852 /*~You and me both. Come on, let's get going.~*/
+	GOTO XA_MerethEnd
+END
+
+IF ~~ THEN BEGIN XA_MerethEnd
+	SAY @1853 /*~Right.~*/
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_MerethTalk", "GLOBAL", 3)
+	~
+	EXIT
+END
+
 CHAIN
 	IF ~~ THEN XACORWIJ XA_CorwinArtifacts_Chain
 		@1816 /*~Let me have a look at that.~*/

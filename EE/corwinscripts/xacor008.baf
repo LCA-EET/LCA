@@ -1143,3 +1143,25 @@ END
 
 //} End Corwin Sex Scripting
 
+//{ Post-Mereth Dialog
+IF
+	GlobalGT("ohn_mereth_plot","global",0)
+	GlobalLT("XA_LC_MerethTalk", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("XA_LC_MerethTimer", "GLOBAL", ONE_ROUND)
+		SetGlobal("XA_LC_MerethTalk", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+	GlobalTimerExpired("XA_LC_MerethTimer", "GLOBAL")
+	Global("XA_LC_MerethTalk", "GLOBAL", 1)
+	AreaCheck("OH6100")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_MerethTalk", "GLOBAL", 2)
+		StartDialog("XACORWIJ", Player1)
+END
+//}
