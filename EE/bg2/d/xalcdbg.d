@@ -70,10 +70,10 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_BG2_Sex2ConditionCheck
 		SAY @5114
 		
-		IF ~GlobalLT("XA_LC_Sex2TimerSet", "LOCALS", 1)~ THEN REPLY @5098
+		IF ~TriggerOverride("XACORWIN", GlobalLT("XA_LC_Sex2TimerSet", "LOCALS", 1))~ THEN REPLY @5098
 		GOTO XA_BG2_Sex2ConditionCheck
 		
-		IF ~!GlobalLT("XA_LC_Sex2TimerSet", "LOCALS", 1)~ THEN REPLY @5099
+		IF ~!TriggerOverride("XACORWIN", GlobalLT("XA_LC_Sex2TimerSet", "LOCALS", 1))~ THEN REPLY @5099
 		GOTO XA_BG2_Sex2ConditionCheck
 		
 		IF ~GlobalGT("XA_LC_TimesHadSex", "GLOBAL", 0)~ THEN REPLY @5100
@@ -94,10 +94,10 @@ APPEND ~XALCDBG~
 		IF ~!GlobalLT("XA_LC_CorwinSex_2", "GLOBAL", 1)~ THEN REPLY @5105
 		GOTO XA_BG2_Sex2ConditionCheck
 		
-		IF ~Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)~ THEN REPLY @5106
+		IF ~TriggerOverride("XACORWIN", Global("XA_LC_CanTalkToPlayer", "LOCALS", 1))~ THEN REPLY @5106
 		GOTO XA_BG2_Sex2ConditionCheck
 		
-		IF ~!Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)~ THEN REPLY @5107
+		IF ~!TriggerOverride("XACORWIN", Global("XA_LC_CanTalkToPlayer", "LOCALS", 1))~ THEN REPLY @5107
 		GOTO XA_BG2_Sex2ConditionCheck
 		
 		IF ~GlobalLT("XA_LC_CorwinSex2_Init", "GLOBAL", 1)~ THEN REPLY @5108
