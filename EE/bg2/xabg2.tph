@@ -133,6 +133,11 @@ END
 		COPY ~%MOD_FOLDER%/bg2/mus/xamu03a.acm~ ~MUSIC/xamu03/xamu03a.acm~
 	//}
 	
+	//{ Concern xamu06 ngoblina (SoD)
+		ADD_MUSIC xamu06	~%MOD_FOLDER%/bg2/mus/xamu06.mus~
+		COPY ~%MOD_FOLDER%/bg2/mus/xamu06a.acm~ ~MUSIC/xamu06/xamu06a.acm~
+	//}
+	
 	COPY_EXISTING ~xacs09b.bcs~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu03%)~
@@ -166,6 +171,7 @@ END
 	
 	ACTION_IF (isEET = 1) THEN BEGIN
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor002.baf~ // Corwin Stat Matching
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor026.baf~ // Corwin SoD Item Check
 	END
 	
 	COPY_EXISTING ~xacorwin.bcs~ ~override~
@@ -173,6 +179,7 @@ END
 		REPLACE_TEXTUALLY ~PlaySong(1001)~ ~PlaySong(%xamu01%)~
 		REPLACE_TEXTUALLY ~PlaySong(1002)~ ~PlaySong(%xamu02%)~
 		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu03%)~
+		REPLACE_TEXTUALLY ~PlaySong(1006)~ ~PlaySong(%xamu06%)~
 	END
 	
 	COPY_EXISTING ~xalcdbg.dlg~ ~override~
@@ -180,6 +187,7 @@ END
 		REPLACE_TEXTUALLY ~PlaySong(1001)~ ~PlaySong(%xamu01%)~
 		REPLACE_TEXTUALLY ~PlaySong(1002)~ ~PlaySong(%xamu02%)~
 		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu03%)~
+		REPLACE_TEXTUALLY ~PlaySong(1006)~ ~PlaySong(%xamu06%)~
 	END
 //}
 

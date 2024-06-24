@@ -80,40 +80,6 @@ THEN
 END
 //}
 
-//{ Check for old SoD items
-IF 
-	InParty(Myself)
-	OR(2)
-		GlobalLT("XA_LC_SoDItemCheckTimerSet", "GLOBAL", 1)
-		GlobalTimerExpired("XA_LC_SoDItemCheckTimer", "GLOBAL")
-	OR(2)
-		PartyHasItem("BDBOW06") // Corwin's Bow (SoD)
-		PartyHasItem("BDCHAN05") // Corwin's Armor (SoD)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobalTimer("XA_LC_SoDItemCheckTimer", "GLOBAL", ONE_DAY)
-		SetGlobal("XA_LC_SoDItemCheckTimerSet", "GLOBAL", 1)
-		
-		ActionOverride(Player1, DestroyItem("BDBOW06"))
-		ActionOverride(Player2, DestroyItem("BDBOW06"))
-		ActionOverride(Player3, DestroyItem("BDBOW06"))
-		ActionOverride(Player4, DestroyItem("BDBOW06"))
-		ActionOverride(Player5, DestroyItem("BDBOW06"))
-		ActionOverride(Player6, DestroyItem("BDBOW06"))
-		
-		ActionOverride(Player1, DestroyItem("BDCHAN05"))
-		ActionOverride(Player2, DestroyItem("BDCHAN05"))
-		ActionOverride(Player3, DestroyItem("BDCHAN05"))
-		ActionOverride(Player4, DestroyItem("BDCHAN05"))
-		ActionOverride(Player5, DestroyItem("BDCHAN05"))
-		ActionOverride(Player6, DestroyItem("BDCHAN05"))
-		SetInterrupt(TRUE)
-		
-		Continue()
-END
-//}
-
 //{ Check if Corwin is a Healer (needed for second SoA intimate encounter)
 IF
 	OR(5)
