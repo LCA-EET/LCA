@@ -58,8 +58,68 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @5077 /* ~Music Test~*/
 		GOTO XA_BG2_MusicTest
 		
+		IF ~~ THEN REPLY @5114
+		GOTO XA_BG2_Sex2ConditionCheck
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 10
+		
+		COPY_TRANS XALCDBG 11
+	END
+
+	IF ~~ THEN BEGIN XA_BG2_Sex2ConditionCheck
+		SAY @5114
+		
+		IF ~TriggerOverride("XACORWIN", GlobalLT("XA_LC_Sex2TimerSet", "LOCALS", 1))~ THEN REPLY @5098
+		GOTO XA_BG2_Sex2ConditionCheck
+		
+		IF ~!TriggerOverride("XACORWIN", GlobalLT("XA_LC_Sex2TimerSet", "LOCALS", 1))~ THEN REPLY @5099
+		GOTO XA_BG2_Sex2ConditionCheck
+		
+		IF ~GlobalGT("XA_LC_TimesHadSex", "GLOBAL", 0)~ THEN REPLY @5100
+		GOTO XA_BG2_Sex2ConditionCheck
+		
+		IF ~!GlobalGT("XA_LC_TimesHadSex", "GLOBAL", 0)~ THEN REPLY @5101
+		GOTO XA_BG2_Sex2ConditionCheck
+		
+		IF ~GlobalTimerExpired("XA_LC_CorwinSex_2_Timer", "GLOBAL")~ THEN REPLY @5102
+		GOTO XA_BG2_Sex2ConditionCheck
+		
+		IF ~!GlobalTimerExpired("XA_LC_CorwinSex_2_Timer", "GLOBAL")~ THEN REPLY @5103
+		GOTO XA_BG2_Sex2ConditionCheck
+		
+		IF ~GlobalLT("XA_LC_CorwinSex_2", "GLOBAL", 1)~ THEN REPLY @5104
+		GOTO XA_BG2_Sex2ConditionCheck
+		
+		IF ~!GlobalLT("XA_LC_CorwinSex_2", "GLOBAL", 1)~ THEN REPLY @5105
+		GOTO XA_BG2_Sex2ConditionCheck
+		
+		IF ~TriggerOverride("XACORWIN", Global("XA_LC_CanTalkToPlayer", "LOCALS", 1))~ THEN REPLY @5106
+		GOTO XA_BG2_Sex2ConditionCheck
+		
+		IF ~!TriggerOverride("XACORWIN", Global("XA_LC_CanTalkToPlayer", "LOCALS", 1))~ THEN REPLY @5107
+		GOTO XA_BG2_Sex2ConditionCheck
+		
+		IF ~GlobalLT("XA_LC_CorwinSex2_Init", "GLOBAL", 1)~ THEN REPLY @5108
+		GOTO XA_BG2_Sex2ConditionCheck
+		
+		IF ~!GlobalLT("XA_LC_CorwinSex2_Init", "GLOBAL", 1)~ THEN REPLY @5109
+		GOTO XA_BG2_Sex2ConditionCheck
+		
+		IF ~Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)~ THEN REPLY @5110
+		GOTO XA_BG2_Sex2ConditionCheck
+		
+		IF ~!Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)~ THEN REPLY @5111
+		GOTO XA_BG2_Sex2ConditionCheck
+		
+		IF ~Global("XA_LC_CorwinCanHeal", "GLOBAL", 1)~ THEN REPLY @5112
+		GOTO XA_BG2_Sex2ConditionCheck
+		
+		IF ~!Global("XA_LC_CorwinCanHeal", "GLOBAL", 1)~ THEN REPLY @5113
+		GOTO XA_BG2_Sex2ConditionCheck
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_BG2_Debug
 		
 		COPY_TRANS XALCDBG 11
 	END
