@@ -1134,7 +1134,7 @@ END
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinSex2_Init", "GLOBAL", 1)
-			PlaySong(1006) // xamu06
+			PlaySong(1009) // xamu09
 			//Dialog J-46
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)

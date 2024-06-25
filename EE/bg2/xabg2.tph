@@ -134,8 +134,8 @@ END
 	//}
 	
 	//{ Concern xamu06 ngoblina (SoD)
-		ADD_MUSIC xamu06	~%MOD_FOLDER%/bg2/mus/xamu06.mus~
-		COPY ~%MOD_FOLDER%/bg2/mus/xamu06a.acm~ ~MUSIC/xamu06/xamu06a.acm~
+		ADD_MUSIC xamu09	~%MOD_FOLDER%/bg2/mus/xamu09.mus~
+		COPY ~%MOD_FOLDER%/bg2/mus/xamu09a.acm~ ~MUSIC/xamu09/xamu09a.acm~
 	//}
 	
 	COPY_EXISTING ~xacs09b.bcs~ ~override~
@@ -179,7 +179,7 @@ END
 		REPLACE_TEXTUALLY ~PlaySong(1001)~ ~PlaySong(%xamu01%)~
 		REPLACE_TEXTUALLY ~PlaySong(1002)~ ~PlaySong(%xamu02%)~
 		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu03%)~
-		REPLACE_TEXTUALLY ~PlaySong(1006)~ ~PlaySong(%xamu06%)~
+		REPLACE_TEXTUALLY ~PlaySong(1009)~ ~PlaySong(%xamu09%)~
 	END
 	
 	COPY_EXISTING ~xalcdbg.dlg~ ~override~
@@ -187,7 +187,7 @@ END
 		REPLACE_TEXTUALLY ~PlaySong(1001)~ ~PlaySong(%xamu01%)~
 		REPLACE_TEXTUALLY ~PlaySong(1002)~ ~PlaySong(%xamu02%)~
 		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu03%)~
-		REPLACE_TEXTUALLY ~PlaySong(1006)~ ~PlaySong(%xamu06%)~
+		REPLACE_TEXTUALLY ~PlaySong(1009)~ ~PlaySong(%xamu09%)~
 	END
 //}
 
@@ -606,6 +606,9 @@ OUTER_SET bg2_carryover = 1
 	COPY ~%MOD_FOLDER%/bg2/spl/xacorbo3.spl~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/spl/xahide.spl~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/spl/xaunhide.spl~ ~override~
+	
+	COPY ~%MOD_FOLDER%/bg2/spl/xadisese.spl~ ~override~
+	WRITE_LONG 0x08 RESOLVE_STR_REF(@3189)
 //}
 
 //{ 2DA Modifications
