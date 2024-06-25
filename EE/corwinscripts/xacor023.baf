@@ -620,7 +620,7 @@
 	THEN 
 		RESPONSE #100
 			////DisplayStringHead(Myself, ~DEBUG_016~)
-			ForceSpellRES("bdisease",Myself)
+			ForceSpellRES("xadisese",Myself)
 			Continue()
 	END
 	//}
