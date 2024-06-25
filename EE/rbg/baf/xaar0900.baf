@@ -23,6 +23,7 @@ THEN
 		ActionOverride(Player6,Rest())
 		
 		SetGlobal("XA_LC_WyrmNPCsCreated", "MYAREA", 1)
+		SetGlobal("HadEllesimeDream1","GLOBAL",1)
 		SetGlobal("ThiefSecretQuestion","GLOBAL",0)
 		FadeFromColor([20.0],0)
 		Continue()

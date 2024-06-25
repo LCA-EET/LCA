@@ -4,6 +4,7 @@ IF
 	GlobalLT("XA_HideMapAreas", "BG0900", 1)
 THEN
 	RESPONSE #100
+		SetGlobal("HadEllesimeDream1","GLOBAL",1)
 		RemoveWorldmapAreaFlag("AR0020", VISIBLE)
 		RemoveWorldmapAreaFlag("AR0300", VISIBLE)
 		RemoveWorldmapAreaFlag("AR0400", VISIBLE)
