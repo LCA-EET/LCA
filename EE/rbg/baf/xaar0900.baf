@@ -1,3 +1,12 @@
+//{ Mark Ellesime Dream as complete
+IF
+	GlobalLT("HadEllesimeDream1","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("HadEllesimeDream1","GLOBAL",1)
+		Continue()
+//}
+
 IF
 	InMyArea("Aerie")
 	GlobalLT("XA_LC_AerieInBG", "GLOBAL", 1)
@@ -23,7 +32,6 @@ THEN
 		ActionOverride(Player6,Rest())
 		
 		SetGlobal("XA_LC_WyrmNPCsCreated", "MYAREA", 1)
-		SetGlobal("HadEllesimeDream1","GLOBAL",1)
 		SetGlobal("ThiefSecretQuestion","GLOBAL",0)
 		FadeFromColor([20.0],0)
 		Continue()

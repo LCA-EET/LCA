@@ -4,6 +4,9 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v1.1e 2024-06-25
+* Ellesime's dream will no longer trigger during the Return to Baldur's Gate portion of the mod.
+
 # v1.1e 2024-04-03
 * Fixed a compatibility issue with the Cost of One Girl's Soul mod that could cause the Djinn to erroneously give two copies of the Soultaker dagger to the protagonist.
 * Resolved a compatibility issue with the Another Fine Hell mod.

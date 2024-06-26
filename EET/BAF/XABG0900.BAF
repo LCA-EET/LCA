@@ -1,10 +1,18 @@
+//{ Mark Ellesime Dream as complete
+IF
+	GlobalLT("HadEllesimeDream1","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("HadEllesimeDream1","GLOBAL",1)
+		Continue()
+//}
+
 // Wyrm's Crossing - Return to Baldur's Gate
 IF
 	Global("XA_ReturnToBG", "GLOBAL", 1)
 	GlobalLT("XA_HideMapAreas", "BG0900", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("HadEllesimeDream1","GLOBAL",1)
 		RemoveWorldmapAreaFlag("AR0020", VISIBLE)
 		RemoveWorldmapAreaFlag("AR0300", VISIBLE)
 		RemoveWorldmapAreaFlag("AR0400", VISIBLE)
