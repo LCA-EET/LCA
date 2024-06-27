@@ -1,8 +1,8 @@
 //{ Return to Baldur's Gate Timers
-
 	IF
 		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		GlobalLT("XA_LC_ExitPrison", "GLOBAL", 1)
+		GlobalLT("XA_LC_HaltRBGTimers", "GLOBAL", 1)
 		OR(7)
 			AreaCheck("XAA210") // Elfsong L2 ar0706
 			AreaCheck("XAPAINT1")
@@ -11,7 +11,6 @@
 			AreaCheck("XAG3")
 			AreaCheck("XADEMSAN")
 			AreaCheck("XACSHOW")
-		GlobalLT("XA_LC_HaltRBGTimers", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_HaltRBGTimers", "GLOBAL", 1)

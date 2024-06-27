@@ -5,6 +5,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("HadEllesimeDream1","GLOBAL",1)
 		Continue()
+END
 //}
 
 IF
