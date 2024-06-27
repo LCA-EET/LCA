@@ -9909,6 +9909,9 @@ IF ~~ THEN BEGIN XA_Depart_Romance5
 	= @798 /* ~Sweetie, come and say bye to <CHARNAME>.~ */
 	IF ~~ THEN
 	DO ~
+		SetGlobal("XA_CorwinSex_3", "GLOBAL", 1)
+		SetGlobal("XA_CorwinWithFamily", "GLOBAL", 1)
+		SetGlobal("XA_CorwinMetFamily", "GLOBAL", 2)
 		ChangeAIScript("", OVERRIDE)
 		ChangeAIScript("", DEFAULT)
 		SetLeavePartyDialogFile()
@@ -11734,13 +11737,13 @@ CHAIN XACORWIJ XA_MagdaChain
 	
 	==XACORWIJ
 	IF ~
-		Global("XA_CorwinMetFamily", "GLOBAL", 1)
+		GlobalGT("XA_CorwinMetFamily", "GLOBAL", 0)
 	~
 	@1366 /* ~They are well ma'am, thank you.~ */
 	
 	== XACORWIJ
 	IF ~
-		!Global("XA_CorwinMetFamily", "GLOBAL", 1)
+		GlobalLT("XA_CorwinMetFamily", "GLOBAL", 1)
 	~
 	@1367 /* ~We're going to see them shortly.~*/
 	
