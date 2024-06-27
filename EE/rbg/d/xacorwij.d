@@ -2716,6 +2716,9 @@ APPEND XACORWIJ
 		= @798 /* ~Sweetie, come and say bye to <CHARNAME>.~ */
 		IF ~~ THEN
 		DO ~
+			SetGlobal("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinWithFamily", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinMetFamily", "GLOBAL", 2)
 			ChangeAIScript("", OVERRIDE)
 			ChangeAIScript("", DEFAULT)
 			SetLeavePartyDialogFile()
@@ -3726,13 +3729,13 @@ CHAIN XACORWIJ XA_MagdaChain
 	
 	==XACORWIJ
 	IF ~
-		Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
+		GlobalGT("XA_LC_CorwinMetFamily", "GLOBAL", 0)
 	~
 	@1366 /* ~They are well ma'am, thank you.~ */
 	
 	== XACORWIJ
 	IF ~
-		!Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
+		GlobalLT("XA_LC_CorwinMetFamily", "GLOBAL", 1)
 	~
 	@1367 /* ~We're going to see them shortly.~*/
 	

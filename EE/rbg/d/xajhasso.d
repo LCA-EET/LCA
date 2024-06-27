@@ -272,13 +272,13 @@ CHAIN
 		~
 		== XACORWIJ
 		IF ~
-			Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
+			GlobalGT("XA_LC_CorwinMetFamily", "GLOBAL", 0)
 		~
 		@6 /* ~Likewise, Jhasso. My family is doing well - we saw them shortly after we returned to the city.~ */
 		
 		== XACORWIJ
 		IF ~
-			!Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
+			GlobalLT("XA_LC_CorwinMetFamily", "GLOBAL", 1)
 		~
 		@7 /* ~Likewise, Jhasso. We're going to my home to see them shortly.~  */
 END XAJHASSO XA_JhassoCorwinFamilyEnd
@@ -291,12 +291,12 @@ CHAIN
 		@45 /* ~How is the family?~ */
 		== XACORWIJ
 		IF ~
-			Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
+			GlobalGT("XA_LC_CorwinMetFamily", "GLOBAL", 0)
 		~
 		@46 /* ~They're doing well. I spent some time with them shortly after we returned to the city.~ */
 		== XACORWIJ
 		IF ~
-			!Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
+			GlobalLT("XA_LC_CorwinMetFamily", "GLOBAL", 1)
 		~
 		@47 /* ~We're going to go and see them shortly.~ */
 		== XAJHASSO

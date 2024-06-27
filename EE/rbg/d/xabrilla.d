@@ -149,7 +149,7 @@ IF ~
 	SAY @195 /* ~Captain, it's good to see you again. I trust your family is well?~ */
 	
 	IF ~
-		!Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
+		GlobalLT("XA_LC_CorwinMetFamily", "GLOBAL", 1)
 	~ THEN
 	DO ~
 		SetGlobal("XA_LC_BrillaCorwin", "LOCALS", 1)
@@ -157,7 +157,7 @@ IF ~
 	EXTERN XACORWIJ XA_CorwinBrillaChainNotMetFamily
 	
 	IF ~
-		Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
+		GlobalGT("XA_LC_CorwinMetFamily", "GLOBAL", 0)
 	~ THEN
 	DO ~
 		SetGlobal("XA_LC_BrillaCorwin", "LOCALS", 1)
