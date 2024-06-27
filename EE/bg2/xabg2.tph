@@ -421,6 +421,10 @@ OUTER_SET bg2_carryover = 1
 	ADD_PROJECTILE ~%MOD_FOLDER%/bg2/pro/xalarrow.pro~
 //}
 
+//{ BAM
+	COPY ~%MOD_FOLDER%/bg2/bam~ ~override~
+//}
+
 //{ New Items
 	//{ Corwin's Bag of Holding
 		COPY_EXISTING ~BAG04.ITM~ ~override/xacorbag.itm~
@@ -429,13 +433,13 @@ OUTER_SET bg2_carryover = 1
 		
 		COPY_EXISTING ~BAG04.STO~ ~override/xacorbag.sto~
 		WRITE_SHORT 0x22 50 // store up to 50 items
-		ADD_STORE_ITEM "misc07" #10000 #0 #0 ~IDENTIFIED~ #1
 		ADD_STORE_ITEM "misc42" #1 #0 #0 ~IDENTIFIED~ #1
 		ADD_STORE_ITEM "misc43" #1 #0 #0 ~IDENTIFIED~ #1
 		ADD_STORE_ITEM "misc41" #1 #0 #0 ~IDENTIFIED~ #1
 		ADD_STORE_ITEM "misc36" #1 #0 #0 ~IDENTIFIED~ #1
 		ADD_STORE_ITEM "misc44" #1 #0 #0 ~IDENTIFIED~ #1
 		ADD_STORE_ITEM "misc38" #1 #0 #0 ~IDENTIFIED~ #1
+		ADD_STORE_ITEM "misc07" #10000 #0 #0 ~IDENTIFIED~ #1
 	//}
 	
 	//{ Corwin's Ammo Belt
@@ -447,9 +451,6 @@ OUTER_SET bg2_carryover = 1
 	//}
 
 	//{ Corwin's Body
-		COPY ~%MOD_FOLDER%/bg2/bam/xacorbod.bam~ ~override~
-		COPY ~%MOD_FOLDER%/bg2/bam/xagcorbd.bam~ ~override~
-		
 		COPY_EXISTING ~MISCBL.itm~ ~override/xacorbod.itm~
 		WRITE_LONG 0x4C 155 // Weight
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3138)
