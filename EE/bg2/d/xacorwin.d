@@ -153,7 +153,7 @@ IF ~~ THEN BEGIN XAA4_CGS
 	=@43 /* ~(She hands you a small sack full of gold)~ */
 	IF ~~ THEN
 	DO ~
-		GiveGoldForce(10000)
+		GiveItemCreate("xacorbag", Player1, 0, 0, 0)
 		AddExperienceParty(35000)
 	~
 	GOTO XAA4A
@@ -165,7 +165,7 @@ IF ~~ THEN BEGIN XAA4
 	=@43 /* ~(She hands you a small sack full of gold)~ */
 	IF ~~ THEN
 	DO ~
-		GiveGoldForce(10000)
+		GiveItemCreate("xacorbag", Player1, 0, 0, 0)
 		AddExperienceParty(35000)
 	~
 	GOTO XAA4A

@@ -425,6 +425,7 @@ OUTER_SET bg2_carryover = 1
 	//{ Corwin's Bag of Holding
 		COPY_EXISTING ~BAG04.ITM~ ~override/xacorbag.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@3190)
+		WRITE_ASCII 0x3A ~xacorbag~ #8
 		
 		COPY_EXISTING ~BAG04.STO~ ~override/xacorbag.sto~
 		WRITE_SHORT 0x22 50 // store up to 50 items
