@@ -2,6 +2,7 @@
 
 	IF
 		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+		GlobalLT("XA_LC_ExitPrison", "GLOBAL", 1)
 		OR(7)
 			AreaCheck("XAA210") // Elfsong L2 ar0706
 			AreaCheck("XAPAINT1")
@@ -14,22 +15,26 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_HaltRBGTimers", "GLOBAL", 1)
+			Continue()
 			//DisplayStringHead(Player1, @4)
 	END
 	
 	IF
 		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_HaltRBGTimers", "GLOBAL", 1)
 		!AreaCheck("XAPAINT1")
 		!AreaCheck("XAG1")
 		!AreaCheck("XAG2")
 		!AreaCheck("XAG3")
 		!AreaCheck("XADEMSAN")
 		!AreaCheck("XACSHOW")
-		!AreaCheck("XAA210") // Elfsong L2 ar0706
-		Global("XA_LC_HaltRBGTimers", "GLOBAL", 1)
+		OR(2)
+			!AreaCheck("XAA210") // Elfsong L2 ar0706
+			GlobalGT("XA_LC_ExitPrison", "GLOBAL", 0)
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_HaltRBGTimers", "GLOBAL", 0)
+			Continue()
 			//DisplayStringHead(Player1, @5)
 	END
 	
