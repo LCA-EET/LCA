@@ -3,6 +3,7 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
+		SetGlobal("XA_LC_41G", "GLOBAL", 1)
 		ActionOverride("ppireni2",DisplayString(Myself,50707))  // Slumber
 		ActionOverride("ppireni2",Spell(Myself,DO_NOTHING))  // SPIN905.SPL (No such index)
 		Wait(2)

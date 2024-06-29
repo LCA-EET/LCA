@@ -288,7 +288,7 @@
 EXTEND_BOTTOM PPIRENI2 3
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		Global("XA_LC_A_41G", "GLOBAL", 1)
+		Global("XA_LC_41G", "GLOBAL", 1)
 	~ THEN
 	EXTERN XACORWIJ XA_CorwinIrenicusStart
 END

@@ -4,7 +4,7 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
-# v1.1e 2024-06-25
+# v1.1f 2024-06-25
 * Ellesime's dream will no longer trigger during the Return to Baldur's Gate (RBG) portion of the mod.
 * Improved timer behavior during RBG.
 * Resolved an issue that resulted in some variables not being set correctly.
