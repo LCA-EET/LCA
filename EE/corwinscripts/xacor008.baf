@@ -1015,6 +1015,7 @@ END
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_OnlySleep", "GLOBAL", 0)
+			SetGlobal("XA_LC_TryToSleep", "GLOBAL", 0)
 			SetGlobal("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
 			SetInterrupt(TRUE)
 			Continue()

@@ -295,12 +295,12 @@ THEN
 END
 
 IF 
+	InParty("XACORWIN")
 	GlobalLT("XA_OnlySleep", "GLOBAL", 1)
-	!Global("XA_CorwinCanHaveSex", "GLOBAL", 1)
-	OR(3)
+	GlobalLT("XA_CorwinCanHaveSex", "GLOBAL", 1)
+	OR(2)
 		Global("XA_CorwinSex_1", "GLOBAL", 1)
 		Global("XA_CorwinSex_2", "GLOBAL", 1)
-		Global("XA_CorwinSex_3", "GLOBAL", 1)
 THEN 
 	RESPONSE #100
 		//DisplayStringHead(Myself,~Debug Player1D - 15~)

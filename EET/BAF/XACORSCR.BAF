@@ -2795,6 +2795,7 @@ END
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_OnlySleep", "GLOBAL", 0)
+			SetGlobal("XA_TryToSleep", "GLOBAL", 0)
 			SetGlobal("XA_CorwinCanHaveSex", "GLOBAL", 1)
 			SetInterrupt(TRUE)
 			Continue()
