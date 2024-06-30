@@ -2,6 +2,8 @@ PRINT @4000  /* ~Processing Return to Baldur's Gate Changes...~ */
 
 SILENT
 
+OUTER_SET xa_regenerate = 0 // set to 1 to regenerate areas, 0 to copy pre-generated areas (default)
+
 //{ BAM
 	COPY ~%MOD_FOLDER%/rbg/bam~ ~override~
 //}
@@ -3303,12 +3305,13 @@ SILENT
 					fj_name = xacurato
 					fj_cre_resref = xacurato
 			END
-		END ELSE
+		END ELSE BEGIN
 			LAF xa_copy_area_music
 				STR_VAR
 					xa_sourcearea = ~xaa362.are~
 					xa_destinationarea = ~%MOD_FOLDER%/rbg/are/xacshow.are~
 			END
+			COPY_EXISTING ~xacshow.are~ ~override~
 			WRITE_LONG 0x7E0 0
 		END
 		
@@ -3415,12 +3418,13 @@ SILENT
 					fj_name = Valiant
 					fj_cre_resref = xaffval2
 			END
-		END ELSE 
+		END ELSE BEGIN
 			LAF xa_copy_area_music
 				STR_VAR
 					xa_sourcearea = ~xaa246.are~
 					xa_destinationarea = ~%MOD_FOLDER%/rbg/are/xaducal.are~
 			END
+			COPY_EXISTING ~xaducal.are~ ~override~
 			WRITE_LONG 0x99C xamu07
 			WRITE_LONG 0x9A0 xamu07
 		END
@@ -3660,12 +3664,13 @@ SILENT
 				fj_structure_type = region
 				fj_name = ~TrigSS~
 			END
-		END ELSE
+		END ELSE BEGIN
 			LAF xa_copy_area_music
 				STR_VAR
 					xa_sourcearea = ~xaa447.are~
 					xa_destinationarea = ~%MOD_FOLDER%/rbg/are/xaducal2.are~
 			END
+			COPY_EXISTING ~xaducal2.are~ ~override~
 			WRITE_LONG 0xA34 xaa12
 			WRITE_LONG 0xA38 xaa13
 		END
@@ -3873,12 +3878,13 @@ SILENT
 					fj_name = ~TrigExit~
 			END
 			//}
-		END ELSE
+		END ELSE BEGIN
 			LAF xa_copy_area_music
 				STR_VAR
 					xa_sourcearea = ~xaa610.are~
 					xa_destinationarea = ~%MOD_FOLDER%/rbg/are/xaduc3.are~
 			END
+			COPY_EXISTING ~xaduc3.are~ ~override~
 			WRITE_LONG 0xEF8 xamu06
 			WRITE_LONG 0xEFC xamu06
 		END
@@ -4119,12 +4125,13 @@ SILENT
 						xa_class = ~xacrtyrd~
 				END
 			//}
-		END ELSE
+		END ELSE BEGIN
 			LAF xa_copy_area_music
 				STR_VAR
 					xa_sourcearea = ~xac101.are~
 					xa_destinationarea = ~%MOD_FOLDER%/rbg/are/xag1.are~
 			END
+			COPY_EXISTING ~xag1.are~ ~override~
 			WRITE_LONG 0x5FDC xac2
 			WRITE_LONG 0x5E00 xac2
 			WRITE_LONG 0x5E08 xac2
@@ -4441,7 +4448,7 @@ SILENT
 				END
 			//}
 			
-		END ELSE
+		END ELSE BEGIN
 			LAF xa_copy_area_music
 				STR_VAR
 					xa_sourcearea = ~xaa146.are~
@@ -4694,7 +4701,7 @@ SILENT
 					fj_structure_type = region
 					fj_name = ~CSTrigger~
 			END
-		END ELSE
+		END ELSE BEGIN
 			LAF xa_copy_area_music
 				STR_VAR
 					xa_sourcearea = ~xaa145.are~
