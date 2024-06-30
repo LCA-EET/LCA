@@ -9,7 +9,33 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 */
 
 //{ Action Functions
-
+DEFINE_ACTION_FUNCTION xa_copy_area_music
+	STR_VAR
+		xa_sourcearea = ~~
+		xa_destinationarea = ~~
+	BEGIN
+		OUTER_SET xa_day = 0
+		OUTER_SET xa_night = 0
+		OUTER_SET xa_victory = 0
+		OUTER_SET xa_battle = 0
+		OUTER_SET xa_defeat = 0
+		
+		COPY_EXISTING ~%xa_sourcearea%~ ~override~
+		READ_LONG 0xBC xa_songsoffset
+		READ_LONG xa_songsoffset xa_day
+		READ_LONG (xa_songsoffset + 4) xa_night
+		READ_LONG (xa_songsoffset + 8) xa_victory
+		READ_LONG (xa_songsoffset + 12) xa_battle
+		READ_LONG (xa_songsoffset + 16) xa_defeat
+			
+		COPY ~%xa_destinationarea%~ ~override~
+		READ_LONG 0xBC xa_songsoffset
+		WRITE_LONG xa_songsoffset xa_day
+		WRITE_LONG (xa_songsoffset + 4) xa_night
+		WRITE_LONG (xa_songsoffset + 8) xa_victory
+		WRITE_LONG (xa_songsoffset + 12) xa_battle
+		WRITE_LONG (xa_songsoffset + 16) xa_defeat
+END
 
 DEFINE_ACTION_FUNCTION xa_replace_recompile
 	STR_VAR
