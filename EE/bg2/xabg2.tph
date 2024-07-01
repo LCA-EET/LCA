@@ -667,6 +667,18 @@ OUTER_SET bg2_carryover = 1
 	OUTER_SET corwin_avernus = 1
 	OUTER_SET thrix_alive = 1
 	
+	//{ Blackhearts Compatibility
+		OUTER_SET xa_bhcompat = 0
+		ACTION_IF (MOD_IS_INSTALLED "setup-Blackhearts EET.tp2" "0") THEN BEGIN
+			INCLUDE ~%MOD_FOLDER%/compat/bh_eet/bh_eet.tph~
+		END
+		ACTION_IF (MOD_IS_INSTALLED "setup-Blackhearts EET.tp2" "0") THEN BEGIN
+			ACTION_IF (xa_bhcompat = 0) THEN BEGIN
+				INCLUDE ~%MOD_FOLDER%/compat/bh_eet/bh_eet.tph~
+			END
+		END
+	//}
+	
 	/*
 		If a parameter file exists, overwrite the default parameter with the contents of the parameter file.
 	*/

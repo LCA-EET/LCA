@@ -1,0 +1,26 @@
+OUTER_SET met_illasera = 1
+
+/*
+	If a parameter file exists, overwrite the default parameter with the contents of the parameter file.
+*/
+
+ACTION_IF (FILE_EXISTS ~%MOD_FOLDER%/compat/bh_eet/lca_bh_params.txt~) THEN BEGIN
+		INCLUDE ~%MOD_FOLDER%/compat/bh_eet/lca_bh_params.txt~
+END
+
+PRINT ~Blackhearts EET is installed. Patching dialogs accordingly.~
+
+REPLACE_SAY XAILLASE 6 @4183
+REPLACE_SAY XAILLASE 11 @4184
+
+COMPILE ~%MOD_FOLDER%/compat/bh_eet/d~ USING ~%MOD_FOLDER%/compat/bh_eet/tra/xabheet.tra~
+
+ACTION_IF (met_illasera = 1) THEN BEGIN
+	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/compat/baf/params/xalcbh00.baf~
+END
+
+ACTION_IF (isEET = 1) THEN BEGIN
+	EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/compat/baf/xabh0602.baf~
+END
+
+OUTER_SET xa_bhcompat = 1

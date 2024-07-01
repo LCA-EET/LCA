@@ -1,0 +1,11 @@
+/*
+	LCA Params, for non-EET playthroughs. These parameters do not affect EET playthroughs, unless the player is beginning their playthrough in Shadows of Amn. For EET playthroughs beginning in BG1 or Siege of Dragonspear, your choices are automatically carried forward from one game into the next.
+	
+	Enjoy!
+*/
+
+/*
+	Parameter: met_illasera
+	Set to 1 to procees as though the player met Illasera during the events of BG1.
+*/
+OUTER_SET met_illasera = 1

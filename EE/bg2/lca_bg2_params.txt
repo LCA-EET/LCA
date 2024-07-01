@@ -135,3 +135,4 @@ OUTER_SET thrix_alive = 1
 	Set to 1 to proceed as though the player took up Corwin's offer to give them an archery lesson.
 */
 OUTER_SET corwin_lesson = 1
+
