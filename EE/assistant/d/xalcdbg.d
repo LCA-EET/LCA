@@ -67,26 +67,55 @@ BEGIN ~XALCDBG~
 	END
 	
 	IF ~~ THEN BEGIN XA_LC_Support //1
-		SAY @2062 /* ~Please visit www.patreon.com/EETMods. There, you can make either a one-time or a recurring contribution. Thank you for your generosity.~ */
+		SAY @2063 /* ~I accept payment through the following services (click below to learn more):~ */
 		
-		IF ~~ THEN REPLY @2013 /*~Return to the main menu.~*/
-		GOTO XA_Assistant
+		IF ~~ THEN REPLY @2064 /* ~Patreon~ */
+		GOTO XA_LC_Support_Patreon
 		
-		IF ~~ THEN REPLY @2039
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		IF ~~ THEN REPLY @2065 /* ~Paypal~ */
+		GOTO XA_LC_Support_Paypal
 		
-		IF ~~ THEN REPLY @2014 /*~Exit.~ */
-		GOTO XA_Exit
+		IF ~~ THEN REPLY @2066 /* ~Venmo~ */
+		GOTO XA_LC_Support_Venmo
+		
+		COPY_TRANS XA_ClosingOptions_Assistant
+	END
+	
+	IF ~~ THEN BEGIN XA_LC_Support_Patreon
+		SAY @2062 /* ~Please visit www.patreon.com/EETMods. There, you can make either a one-time or a recurring contribution. Thank you for your generosity.~ */ 
+		
+		IF ~~ THEN REPLY @2067 /* ~Return to the prior menu.~*/
+		GOTO XA_LC_Support
+		
+		COPY_TRANS XA_ClosingOptions_Assistant
+	END
+	
+	IF ~~ THEN BEGIN XA_LC_Support_Paypal
+		SAY @2068 /* ~You can send funds to the PayPal account associated with the following e-mail address:
+LCAMod@danielvalle.net.
+Please indicate 'LCA' in the notes for the payment. Thank you for your generosity.~*/ 
+		
+		IF ~~ THEN REPLY @2067 /* ~Return to the prior menu.~*/
+		GOTO XA_LC_Support
+		
+		COPY_TRANS XA_ClosingOptions_Assistant
+	END
+	
+	IF ~~ THEN BEGIN XA_LC_Support_Venmo
+		SAY @2069 /* ~You can send funds to the following Venmo account associated with Daniel Valle, LLC:
+@dvallellc
+Please indicate 'LCA' in the notes for the payment. Thank you for your generosity.~*/ 
+		
+		IF ~~ THEN REPLY @2067 /* ~Return to the prior menu.~*/
+		GOTO XA_LC_Support
+		
+		COPY_TRANS XA_ClosingOptions_Assistant
 	END
 
 	IF ~~ THEN BEGIN XA_VersionCheck //2
 		SAY @2024 /* ~LCA v1.1, 2024-01-13~*/
 		
-		IF ~~ THEN 
-		GOTO XA_Assistant
+		COPY_TRANS XA_ClosingOptions_Assistant
 	END
 	
 	IF ~~ THEN BEGIN XA_AdvanceTime //3
@@ -148,11 +177,7 @@ BEGIN ~XALCDBG~
 		~
 		GOTO XA_ChangeDone
 		
-		IF ~~ THEN REPLY @2013 /*~Return to the main menu.~*/
-		GOTO XA_Assistant
-		
-		IF ~~ THEN REPLY @2014 /*~Exit.~ */
-		GOTO XA_Exit 
+		COPY_TRANS XA_ClosingOptions_Assistant
 	END
 	
 	
@@ -165,21 +190,13 @@ BEGIN ~XALCDBG~
 		~
 		GOTO XA_MainMenu
 		
-		IF ~~ THEN REPLY @2013 /*~Return to the main menu.~*/
-		GOTO XA_Assistant
-		
-		IF ~~ THEN REPLY @2014 /* ~Exit.~ */
-		GOTO XA_Exit
+		COPY_TRANS XA_ClosingOptions_Assistant
 	END
 	
 	IF ~~ THEN BEGIN XA_ReportBug //5
 		SAY @2031 /*~You can report a bug by e-mailing LCAMod@danielvalle.net. It is recommended (but not required) that you include your save game with the bug report.~*/
 		
-		IF ~~ THEN REPLY @2013 /* ~Return to main menu.~*/
-		GOTO XA_Assistant
-		
-		IF ~~ THEN REPLY @2014 /*~Exit.~ */
-		GOTO XA_Exit 
+		COPY_TRANS XA_ClosingOptions_Assistant
 	END
 	
 	IF ~~ THEN BEGIN XA_Exit //6
@@ -403,5 +420,21 @@ BEGIN ~XALCDBG~
 			DestroySelf()
 		~
 		EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_ClosingOptions_Assistant
+		SAY @3012
+		
+		IF ~~ THEN REPLY @2013 /*~Return to the main menu.~*/
+		GOTO XA_Assistant
+		
+		IF ~~ THEN REPLY @2039 /* ~Dismiss Assistant.~*/
+		DO ~
+			DestroySelf()
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @2014 /*~Exit.~ */
+		GOTO XA_Exit
 	END
 //}

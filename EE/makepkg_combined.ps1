@@ -21,11 +21,23 @@ $folders = @(
 'tra'
 )
 
+$toExclude = @(
+	'generated/a/dlg',
+	'generated/a/tra',
+	'generated/a/songsList.txt',
+	'generated/c/songsList.txt',
+	'generated/d/songsList.txt',
+	'generated/f/songsList.txt',
+	'generated/g/songsList.txt'
+)
 Remove-Item -LiteralPath $modPath -Force -Recurse
 
 foreach($folder in $folders){
-	Copy-Item -Path $folder -Destination ($modPath + "/" + $folder) -Recurse
-	
+	Copy-Item -Path $folder -Destination ($modPath + "/" + $folder) -Recurse	
+}
+
+foreach($folder in $toExclude){
+	Remove-Item ($modPath + "/" + $folder) -Recurse
 }
 
 & $PSScriptRoot/d_compactor.ps1 -dPath $modPath
@@ -34,6 +46,7 @@ Copy-Item -Path ("functions.tph") -Destination $modPath
 Copy-Item -Path ($tp2Name + ".tp2") -Destination $modPath 
 Copy-Item -Path "weidu.exe" -Destination ($basePath + "/" + $exePath)
 Copy-Item -Path "Release Notes.md" -Destination ($basePath + "/Release Notes.md")
+Copy-Item -Path "../User Guide.pdf" -Destination ($basePath + "/User Guide.pdf")
 #Remove-Item -LiteralPath ($testDir + $tp2Name) -Force -Recurse
 
 #Copy-Item -Path $modPath -Destination $testDir -Recurse

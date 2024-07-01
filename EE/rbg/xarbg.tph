@@ -18,6 +18,15 @@ OUTER_SET xa_regenerate = 0 // set to 1 to regenerate areas, 0 to copy pre-gener
 		APPEND ~animate.ids~ ~0x7F59 ABISHAI_GREEN~
 		APPEND ~animate.ids~ ~0xE258 HERPHERNAAN~
 		APPEND ~animate.ids~ ~0xE279 OROG_SHAMAN~
+		
+		// The hashes of these bams are the same. No sense in including them in the download.
+		COPY_EXISTING ~mbe2dee.bam~ ~override/mbe2gue.bam~
+		COPY_EXISTING ~mbe2dee.bam~ ~override/mbe2sce.bam~
+		COPY_EXISTING ~mbe2dee.bam~ ~override/mbe2sle.bam~
+		
+		COPY_EXISTING ~mbe2de.bam~ ~override/mbe2gu.bam~
+		COPY_EXISTING ~mbe2de.bam~ ~override/mbe2sc.bam~
+		COPY_EXISTING ~mbe2de.bam~ ~override/mbe2sl.bam~
 	END
 	
 //}

@@ -246,7 +246,16 @@ APPEND ~PLAYER1~
 	END
 	
 	IF ~~ THEN BEGIN XA_LC_Support
-		SAY @216 /* ~Please visit www.patreon.com/EETMods. There, you can make either a one-time or a recurring contribution. Thank you for your generosity.~ */
+		SAY @222 /* ~I accept payment through the following services (click below to learn more):~*/
+		
+		IF ~~ THEN REPLY @217 /* ~Patreon~ */
+		GOTO XA_LC_Support_Patreon
+		
+		IF ~~ THEN REPLY @220 /* ~Paypal~ */
+		GOTO XA_LC_Support_Paypal
+		
+		IF ~~ THEN REPLY @218 /* ~Venmo~ */
+		GOTO XA_LC_Support_Venmo
 		
 		IF ~~ THEN REPLY @171 /*~Return to the main menu.~*/
 		GOTO XA_Assistant
@@ -254,6 +263,49 @@ APPEND ~PLAYER1~
 		IF ~~ THEN REPLY @160 /*~Exit.~ */
 		GOTO XA_Exit
 	END
+
+	IF ~~ THEN BEGIN XA_LC_Support_Patreon
+		SAY @216 /* ~Please visit www.patreon.com/EETMods. There, you can make either a one-time or a recurring contribution. Thank you for your generosity.~ */ 
+		
+		IF ~~ THEN REPLY @223 /* ~Return to the prior menu.~*/
+		GOTO XA_LC_Support
+		
+		IF ~~ THEN REPLY @171 /*~Return to the main menu.~*/
+		GOTO XA_Assistant
+		
+		IF ~~ THEN REPLY @160 /*~Exit.~ */
+		GOTO XA_Exit
+	END
+	
+	IF ~~ THEN BEGIN XA_LC_Support_Paypal
+		SAY @221 /* ~You can send funds to the PayPal account associated with the following e-mail address:
+		LCAMod@danielvalle.net.
+		Please indicate 'LCA' in the notes for the payment. Thank you for your generosity.~ */ 
+		
+		IF ~~ THEN REPLY @223 /* ~Return to the prior menu.~*/
+		GOTO XA_LC_Support
+		
+		IF ~~ THEN REPLY @171 /*~Return to the main menu.~*/
+		GOTO XA_Assistant
+		
+		IF ~~ THEN REPLY @160 /*~Exit.~ */
+		GOTO XA_Exit
+	END
+	
+	IF ~~ THEN BEGIN XA_LC_Support_Venmo
+		SAY @219 /* ~You can send funds to the following Venmo account associated with Daniel Valle, LLC:
+		@dvallellc
+		Please indicate 'LCA' in the notes for the payment. Thank you for your generosity.~ */ 
+		
+		IF ~~ THEN REPLY @223 /* ~Return to the prior menu.~*/
+		GOTO XA_LC_Support
+		
+		IF ~~ THEN REPLY @171 /*~Return to the main menu.~*/
+		GOTO XA_Assistant
+		
+		IF ~~ THEN REPLY @160 /*~Exit.~ */
+		GOTO XA_Exit
+	END	
 
 	IF ~~ THEN BEGIN XA_VersionCheck
 		SAY @183

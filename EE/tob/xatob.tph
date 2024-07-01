@@ -61,6 +61,13 @@ END
 	ACTION_IF(isEET = 0) THEN BEGIN
 		COPY ~%MOD_FOLDER%/tob/anim~ ~override~
 		APPEND ~animate.ids~ ~0xE276 LEMURE~
+		
+		COPY_EXISTING ~mlemsc.bam~ ~override/mlemsp.bam~
+		COPY_EXISTING ~mlemsce.bam~ ~override/mlemspe.bam~
+		COPY_EXISTING ~mlemde.bam~ ~override/mlemsl.bam~
+		COPY_EXISTING ~mlema1.bam~ ~override/mlemca.bam~
+		COPY_EXISTING ~mlema1e.bam~ ~override/mlemcae.bam~
+		COPY_EXISTING ~mlemdee.bam~ ~override/mlemsle.bam~
 	END
 //}
 
