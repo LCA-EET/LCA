@@ -49,7 +49,7 @@ END
 //{ XANEDERL
 EXTEND_BOTTOM XANEDERL 6
 	IF ~
-		GlobalGT("BHBG1Quest","GLOBAL",0)
+		GlobalGT("XA_LC_BH_MetIllasera","GLOBAL",0)
 	~ THEN REPLY @2 /*~I've dealt with Illasera before. She's a bounty hunter, if I recall... and a dangerous one at that.~*/
 	EXTERN XA_RohmaKidnapped4BH
 END

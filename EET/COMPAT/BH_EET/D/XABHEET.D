@@ -1,18 +1,18 @@
 //{ XABENO
 ADD_TRANS_TRIGGER XABENO 0
 ~
-	GlobalLT("BHBG1Quest","GLOBAL",1)
+	GlobalLT("XA_LC_BH_MetIllasera","GLOBAL",1)
 ~
 
 EXTEND_BOTTOM XABENO 0
 	IF ~
 		Gender(Player1, FEMALE)
-		GlobalGT("BHBG1Quest","GLOBAL",0)
+		GlobalGT("XA_LC_BH_MetIllasera","GLOBAL",0)
 	~ THEN REPLY @0 /*~Illasera... It's been a while.~*/
 	
 	IF ~
 		Gender(Player1, MALE)
-		GlobalGT("BHBG1Quest","GLOBAL",0)
+		GlobalGT("XA_LC_BH_MetIllasera","GLOBAL",0)
 	~ THEN REPLY @0 /*~Illasera... It's been a while.~*/
 END
 //}
@@ -28,14 +28,14 @@ END
 
 ADD_TRANS_TRIGGER XAILLASE 0
 ~
-	GlobalLT("BHBG1Quest","GLOBAL",1)
+	GlobalLT("XA_LC_BH_MetIllasera","GLOBAL",1)
 ~
 DO 0 1
 
 EXTEND_BOTTOM XAILLASE 0
 	IF ~
 		!IsValidForPartyDialogue("XACORWIN")
-		GlobalGT("BHBG1Quest","GLOBAL",0)
+		GlobalGT("XA_LC_BH_MetIllasera","GLOBAL",0)
 	~ THEN REPLY @0 /* ~Illasera... It's been a while.~ */
 	DO ~
 		SetGlobal("XA_MeetIllasera", "GLOBAL", 1)
@@ -49,7 +49,7 @@ END
 //{ XANEDERL
 EXTEND_BOTTOM XANEDERL 6
 	IF ~
-		GlobalGT("BHBG1Quest","GLOBAL",0)
+		GlobalGT("XA_LC_BH_MetIllasera","GLOBAL",0)
 	~ THEN REPLY @2 /*~I've dealt with Illasera before. She's a bounty hunter, if I recall... and a dangerous one at that.~*/
 	EXTERN XA_RohmaKidnapped4BH
 END
