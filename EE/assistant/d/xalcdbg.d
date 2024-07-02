@@ -78,7 +78,7 @@ BEGIN ~XALCDBG~
 		IF ~~ THEN REPLY @2066 /* ~Venmo~ */
 		GOTO XA_LC_Support_Venmo
 		
-		COPY_TRANS XA_ClosingOptions_Assistant
+		COPY_TRANS XALCDBG XA_ClosingOptions_Assistant
 	END
 	
 	IF ~~ THEN BEGIN XA_LC_Support_Patreon
@@ -87,7 +87,7 @@ BEGIN ~XALCDBG~
 		IF ~~ THEN REPLY @2067 /* ~Return to the prior menu.~*/
 		GOTO XA_LC_Support
 		
-		COPY_TRANS XA_ClosingOptions_Assistant
+		COPY_TRANS XALCDBG XA_ClosingOptions_Assistant
 	END
 	
 	IF ~~ THEN BEGIN XA_LC_Support_Paypal
@@ -98,7 +98,7 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 		IF ~~ THEN REPLY @2067 /* ~Return to the prior menu.~*/
 		GOTO XA_LC_Support
 		
-		COPY_TRANS XA_ClosingOptions_Assistant
+		COPY_TRANS XALCDBG XA_ClosingOptions_Assistant
 	END
 	
 	IF ~~ THEN BEGIN XA_LC_Support_Venmo
@@ -109,13 +109,13 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 		IF ~~ THEN REPLY @2067 /* ~Return to the prior menu.~*/
 		GOTO XA_LC_Support
 		
-		COPY_TRANS XA_ClosingOptions_Assistant
+		COPY_TRANS XALCDBG XA_ClosingOptions_Assistant
 	END
 
 	IF ~~ THEN BEGIN XA_VersionCheck //2
 		SAY @2024 /* ~LCA v1.1, 2024-01-13~*/
 		
-		COPY_TRANS XA_ClosingOptions_Assistant
+		COPY_TRANS XALCDBG XA_ClosingOptions_Assistant
 	END
 	
 	IF ~~ THEN BEGIN XA_AdvanceTime //3
@@ -177,7 +177,7 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 		~
 		GOTO XA_ChangeDone
 		
-		COPY_TRANS XA_ClosingOptions_Assistant
+		COPY_TRANS XALCDBG XA_ClosingOptions_Assistant
 	END
 	
 	
@@ -190,13 +190,13 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 		~
 		GOTO XA_MainMenu
 		
-		COPY_TRANS XA_ClosingOptions_Assistant
+		COPY_TRANS XALCDBG XA_ClosingOptions_Assistant
 	END
 	
 	IF ~~ THEN BEGIN XA_ReportBug //5
 		SAY @2031 /*~You can report a bug by e-mailing LCAMod@danielvalle.net. It is recommended (but not required) that you include your save game with the bug report.~*/
 		
-		COPY_TRANS XA_ClosingOptions_Assistant
+		COPY_TRANS XALCDBG XA_ClosingOptions_Assistant
 	END
 	
 	IF ~~ THEN BEGIN XA_Exit //6
