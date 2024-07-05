@@ -4,22 +4,22 @@
 @3 = ~Gods damn it...~
 @4 = ~(She lowers her weapon.)~
 @5 = ~A wise decision. Now, back to the business at hand.~
-@6 = ~The wizards have had time to prepare. They'll be ready for us.~ 
-@7 = ~Beast! You boast of murdering children!? There's only one punishment befitting your crimes!~
+@6 = ~The wizards have had time to prepare. They'll be ready for us.~ [xalc1346]
+@7 = ~You boast of murdering children!? There's only one punishment befitting your crimes!~ [xalc1347]
 @8 = ~We're not going to get anywhere with this one. He's nuts.~
 @9 = ~No. I won't be a party to the murder of defenceless refugees. Goodbye, <CHARNAME>.~
 @10 = ~You can't be serious. <CHARNAME>, he'll turn on us at the first opportunity.~
-@11 = ~The Flaming Fist knows him well. He's a cleric of Cyric. We'd arrested him on numerous occasions for proselytizing on the streets of the city.~ 
+@11 = ~The Flaming Fist knows him well. He's a cleric of Cyric. We'd arrested him on numerous occasions for proselytizing on the streets of the city.~ [xalc1348]
 @12 = ~Ah, I see. While not nearly as mad as his god, he is insane nonetheless.~
 @13 = ~He was released not too long ago, if I recall. It's a wonder how he made it to Amn.~ 
 @14 = ~Madness lends its wielder a drive and determination that should never be underestimated.~
-@15 = ~I don't like the sound of this, <CHARNAME>. We're being asked to venture into an old prison to restore the seals of, what, exactly? We've no idea what we're up against.~
+@15 = ~I don't like the sound of this, <CHARNAME>. We're being asked to venture into an old prison to restore the seals of, what, exactly? We've no idea what we're up against.~ [xalc1349]
 @16 = ~Normally, I'd agree, but these are priests of Helm. We've no reason not to trust them. If there is evil imprisoned within the tower then we must ensure that it remains so.~
-@17 = ~A mother would do anything to protect her child. Humans and dragons aren't any different in that regard.~
+@17 = ~A mother would do anything to protect her child. Humans and dragons aren't any different in that regard.~ [xalc1350]
 @18 = ~Hahah, oh "Eddie", you broke that sweet girl's heart.~
 @19 = ~She's your sister, for Tymora's sake! You're not going to leave her to escape on her own, right?~
 @20 = ~Finally! Any longer and I might've hurled.~
-@21 = ~Trolls? This just gets better and better, doesn't it? We should ready our fire arrows and spells prior to battle.~
+@21 = ~Trolls? This just gets better and better, doesn't it? We should ready our fire arrows and spells prior to battle.~ [xalc1329]
 @22 = ~Gods, it stinks worse than the latrines did back in the siege camp!~
 @23 = ~Try anything, and you'll end up in the infirmary. The same goes for all of you!~
 @24 = ~I'm not exactly eager to go up against the prince of demons... but whatever you decide, you know I'll have your back.~
@@ -27,18 +27,18 @@
 @26 = ~I really don't like the sound of this.~
 @27 = ~These guilds are all the same, in every city. I feel dirty just by speaking to them, let alone working for them. Still, they're a necessary means to an end if we're to rescue Imoen.~
 @28 = ~(She tries — unsuccessfully — to stifle a laugh.)~
-@29 = ~What do you need with the book anyway? Can you even read?~
-@30 = ~Har! Har! Har! Yer lucky I fancy you, longlimbs, else I be burying me axe, and maybe something more, in yer cute little backside, hah hah.~
+@29 = ~What do you need with the book anyway? Can you even read?~ [xalc1330]
+@30 = ~Har! Har! Har! Yer lucky I fancy you, longlimbs, else I be burying me axe, and maybe something more, in yer shapely little backside, hah hah.~
 @31 = ~(She rolls her eyes)~ 
-@32 = ~You're disgusting, Korgan.~
+@32 = ~You're disgusting, Korgan.~ [xalc1331]
 @33 = ~Aerie — whether we take the boat or not — you're strong enough for this.~
 @34 = ~Besides, <CHARNAME> ventured to one of the nine hells and came back alive. I'm sure that with <PRO_HISHER> help we'll be able to handle the Underdark.~
 @35 = ~Besides, <CHARNAME> and I ventured to one of the nine hells and came back alive. I'm sure that together we can handle the Underdark.~
 @36 = ~I-if you say so, Schael... I'll do my best...~
-@37 = ~I'm not sure I trust her either, but... she did prove her worth in supporting the coalition against Caelar's crusade. We should give her a chance — I'll keep a close eye on her.~
+@37 = ~I'm not sure I trust her either, but... she did prove her worth in supporting the coalition against Caelar's crusade. We should give her a chance — I'll keep a close eye on her.~ [xalc1332]
 @38 = ~<CHARNAME>! That's Viconia, she served in our coalition — they're going to kill her!~
-@39 = ~Strong, and compassionate. Just two of the many traits I love about you.~
-@40 = ~Strong, and compassionate. Just two of the many traits I admire about you.~
+@39 = ~Strong, and compassionate. Just two of the many traits I love about you.~ [xalc1333]
+@40 = ~Strong, and compassionate. Just two of the many traits I admire about you.~ [xalc1334]
 @41 = ~You'll back off if you know what's good for you.~
 @42 = ~I don't take orders from the likes of you, wench. Go be a good girl and fetch me another drink.~
 @43 = ~I think you've had enough already. Come on, <CHARNAME>. Let's not waste our time with this one.~
@@ -55,7 +55,7 @@
 @54 = ~They need our help, love.~
 @55 = ~They need our help, <CHARNAME>.~
 @56 = ~Now that's a plan. Let's go.~ [BD50018]
-@57 = ~Wait — You mean to tell me that after all of that, you willingly set them loose?~
+@57 = ~Wait — You mean to tell me that after all of that, you willingly set them loose?~ [xalc1335]
 @58 = ~No one imagined that they would cause so much havoc. We are truly sorry.~
 @59 = ~<CHARNAME>, in spite of their foolishness, we share a common enemy. We should help them.~
 @60 = ~Some would say you haven't grown past puberty.~
@@ -71,14 +71,14 @@
 @70 = ~Yes, Major?~
 @71 = ~Shut up.~
 @72 = ~Now, there's no need to be rude. It was just a simple story of furry feet and the foibles of being a teen-aged gnome. Ah, youth! I still remember her laughter as —~ 
-@73 = ~Your mouth. Shut it, or I'll tie your tongue to an arrow and fire it into the ass of the nearest horse. That would make for a fun story, wouldn't it?~
+@73 = ~Your mouth. Shut it, or I'll tie your tongue to an arrow and fire it into the ass of the nearest horse. That'd make for a fun story, wouldn't it?~ [xalc1336]
 @74 = ~Erm... perhaps. But I'm not keen on it. I'll be quiet.~
 @75 = ~We should heed his warning. Let's prepare before we head in.~
 @76 = ~Is there a point to this story?~
 @77 = ~Harsh truths are never easy to accept, Jan. It's good that you did.~
 @78 = ~The same goes for all of us. We need to act the part to maintain our cover.~
 @79 = ~She has her moments.~
-@80 = ~Let's hear what he has to say. I'm inclined to believe the word of another ranger over that of a wizard.~
+@80 = ~Let's hear what he has to say. I'm inclined to believe the word of another ranger over that of a wizard.~ [xalc1337]
 @81 = ~Keldorn, there must be another way. Your children need their mother.~ 
 @82 = ~How, then, should I proceed? My family's honor is at stake!~
 @83 = ~<CHARNAME> — we need to keep a close eye on Keldorn. I'm afraid that this meeting with Sir William may quickly spiral out of control.~
@@ -93,7 +93,7 @@
 @92 = ~I hope you made the right decision. I can't shake the feeling that you didn't.~
 @93 = ~And we'll be ready for you.~
 @94 = ~Dorn, this is your chance to be free. Take it!~
-@95 = ~Let's get out of here while we still can. We would do well to avoid the wrath of this beast.~
+@95 = ~Let's get out of here while we still can. We'd do well to avoid the wrath of this beast.~ [xalc1338]
 @96 = ~<CHARNAME>! Let's just rescue the child and get out of here! Leave the dragon be.~
 @97 = ~<CHARNAME> — I don't know what you're up to, but I warn you that I won't take part in this betrayal.~
 @98 = ~Don't be so sure. As distasteful as it is to say, we've worked well with Edwin in the past.~
@@ -111,7 +111,7 @@
 @110 = ~But she — damn it! No, you're right, Captain.~
 @111 = ~But she — damn it! No, you're right, Major.~
 @112 = ~Just as I thought. Pathetic.~
-@113 = ~Enough! Infighting isn't going to help any of us achieve our goals. Let's move out.~
+@113 = ~Enough! Infighting isn't going to help us achieve our goals. Let's move out.~ [xalc1339]
 @114 = ~Tell me you aren't seriously considering giving him to this wizard.~
 @115 = ~And that's why you're alone. Yes, you might get hurt, but if you aren't willing to place at least some trust in others, you'll always be alone.~
 @116 = ~You aren't a person at all. You're a monster, a beast. <CHARNAME>, let's not waste anymore time with this creature.~
@@ -131,14 +131,14 @@
 @130 = ~Wow... Aerie, that was a lot better.~
 @131 = ~Vilhon Reach wine? I don't think I've ever tried that... my favorite is the dark wine from Berdusk.~
 @132 = ~That's all this is to you? Revenge?~ [xalc1291]
-@133 = ~Wine tasting? Thanks, but as soon as this is over, I'm going home to my family.~ 
+@133 = ~Wine tasting? Thanks, but as soon as this is over, I'm going home to my family.~ [xalc1340]
 @134 = ~I understand. Be that as it may, I'll have a case of his finest stock shipped to you.~
 @135 = ~Thanks, Nalia. Just not anything *too* pretentious, alright?~
 @136 = ~Ignore him, Rasaad.~
 @137 = ~Dorn! That's enough.~
 @138 = ~Doubtful. What's certain is that we'd be better off without you, blackguard. Why <CHARNAME> is incapable of seeing this I'll never understand.~
 @139 = ~Hmph. <CHARNAME> understands the power that I possess. And <PRO_HESHE>'d be a fool to cast it aside, especially at the behest of a woman as foolish as yourself.~
-@140 = ~Foolish? I'm not the one who sold himself to a demon.~
+@140 = ~Foolish? I'm not the one who sold himself to a demon.~ [xalc1341]
 @141 = ~Yes, foolish. The proper place for a woman is the home, ideally with her legs spread, or perhaps in the birthing room with a midwife. The battlefield is the dominion of men.~
 @142 = ~You're disgusting.~
 @143 = ~'Slave' would be more appropriate.~
@@ -172,7 +172,7 @@
 @171 = ~Mommy? What does she mean?~
 @172 = ~Pay her no mind, sweetheart. As for you, don't you have more important things to do than harass a woman trying to feed her child? Begone!~ 
 @173 = ~Hah! You expect me to what, wait tables for a few coppers an hour? While filthy slobs place their hands on my bottom and my bosom? No thanks — I make much more doing this.~
-@174 = ~You're setting a terrible example for your daughter!~
+@174 = ~You're setting a terrible example for your daughter!~ [xalc1342]
 @175 = ~Don't you have more important things to do than harass a woman trying to feed her child? Begone!~ 
 @176 = ~Safana! You're in league with Irenicus!?~
 @177 = ~Can you try to be serious just for one gods damned minute?~ [xalc1164]
@@ -187,7 +187,7 @@
 
 // Added 2023-11-09 
 
-@183 = ~Killing one of the city wizards may lead us into more trouble than we can handle. If there's an alternative, we'd to well to explore it.~
+@183 = ~Killing one of the city wizards may lead us into more trouble than we can handle. If there's an alternative, we'd do well to explore it.~ [xalc1343]
 @184 = ~(She gives Aerie a sharp stare.)~
 @185 = ~(She gives Mazzy a sharp stare.)~
 @186 = ~(She gives Keldorn a sharp stare.)~
@@ -195,7 +195,7 @@
 
 // 2024-01-06
 @188 = ~What have we here?~ [xalc1056] 
-@189 = ~I can hear the catcalls from the sailors at the Blushing Mermaid already... can't say I'd blame them, either.~ 
+@189 = ~I can hear the catcalls from the sailors at the Blushing Mermaid already... can't say I'd blame them, either.~ [xalc1344]
 @190 = ~Quiet, you flirtatious wench! Those who would dare catcall the great Odesseiron shall suffer his - erm.. her wrath!~
-@191 = ~Does anyone know what the hells these two are talking about?~
+@191 = ~Does anyone know what the hells these two are talking about?~ [xalc1345]
 @192 = ~I can watch him. Don't worry, I'll keep him out of trouble.~ [xalc1318]
