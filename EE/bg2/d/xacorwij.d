@@ -697,14 +697,13 @@ END
 		IF ~~ THEN REPLY @340  /* ~Thank goodness. I was afraid I'd lost you.~ */
 		DO ~
 			SetGlobal("XA_LC_CorwinSaved9", "GLOBAL", 3)
+			ActionOverride("IMOEN2", SetGlobal("DeathOfBodhi","LOCALS",0))
 		~
 		GOTO XA_CorwinSaved9_4
 	END
 	
 	IF ~~ THEN BEGIN XA_CorwinSaved9_4
-		SAY @341  /* ~Not if I can help it... come here.~ */
-		
-		= @342  /* ~(You share a passionate embrace and kiss.)~*/
+		SAY @1213  /* (You share a warm and tender embrace.) */
 		
 		= @343  /* ~With the Lanthorn, we can finally take the fight to Irenicus. I have a feeling that one way or the other, this will all be over, and soon. Let's go.~*/
 		
@@ -989,7 +988,7 @@ IF ~
 	Global("XA_LC_CorwinSlaverPlot", "GLOBAL", 1)
 	Global("XA_LC_SlaveKidsFreed", "GLOBAL", 3)
 ~ THEN BEGIN XA_CorwinBGSlaverDiscuss
-	SAY @753 /* ~I hope those kids can make it to safety. */
+	SAY @753 /* ~I hope those kids can make it to safety.~ [xalc1252] */
 	
 	IF ~~ THEN REPLY @755 /* ~So do I.~ */
 	DO ~
@@ -1070,7 +1069,7 @@ END
 IF ~
 	Global("XA_LC_BackToBG", "GLOBAL", 1)
 ~ THEN BEGIN XA_BackToBG_Romance
-	SAY @619 /* ~That was some celebration.~ */
+	SAY @619 /* ~That was one hell of a party.~ [xalc1271] */
 	
 	IF ~~ THEN REPLY @620 /* ~It definitely was.~ */
 	DO ~
