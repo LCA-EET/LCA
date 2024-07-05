@@ -844,12 +844,6 @@
 	~
 	DO 0
 	
-	ADD_TRANS_TRIGGER WSMITH01 37
-	~
-		!PartyHasItem("XACORBOW")
-	~
-	DO 0
-	
 	EXTEND_BOTTOM WSMITH01 36
 		IF ~
 			PartyHasItem("XACORBOW")

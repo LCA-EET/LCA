@@ -4,6 +4,9 @@
 * Link to Discord: https://discord.com/channels/1092566213420400692/1092566213420400695
 * Link to G3 forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 
+# v1.2a 2024-07-05
+* Fixed an issue in Cromwell's dialog that prevented the player from choosing to create Gesen's bow, when the party held Corwin's Bow, Gesen's shaft and Gesen's bowstring.
+
 # v1.2 2024-07-01
 * Added compatibility with the Blackhearts EET mod.
 
