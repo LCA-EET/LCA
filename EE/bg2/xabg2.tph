@@ -225,6 +225,7 @@ END
 	//{ Area script extensions
 		EXTEND_TOP ~ar0334.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar0334.baf~
 		EXTEND_TOP ~ar0602.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar0602.baf~
+		EXTEND_TOP ~ar0809.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar0809.baf~
 		EXTEND_TOP ~ar1002.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar1002.baf~
 		EXTEND_TOP ~ar1512.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar1512.baf~
 		EXTEND_TOP ~ar1516.bcs~ 	~%MOD_FOLDER%/bg2/baf/xaar1516.baf~
