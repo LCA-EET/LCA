@@ -349,6 +349,7 @@
 	INTERJECT_COPY_TRANS2 GORAPP1 17 XA_GORAPP1_17
 		== XACORWIB
 		IF ~
+			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsValidForPartyDialogue("XACORWIN")
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
@@ -356,6 +357,7 @@
 		
 		== XACORWIB
 		IF ~
+			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsValidForPartyDialogue("XACORWIN")
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~
@@ -569,6 +571,7 @@
 	INTERJECT_COPY_TRANS2 GORDEMO 1 XA_GORDEMO_1
 		== XACORWIB
 		IF ~
+			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsValidForPartyDialogue("XACORWIN")
 		~
 		@49 /* ~Did - did you feel that?~ */
