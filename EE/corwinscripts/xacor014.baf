@@ -3,19 +3,20 @@
 	IF 
 		ActionListEmpty()
 		Global("XA_LC_CanTalk", "LOCALS", 1)
-		OR(12)
+		OR(13)
 			!IsValidForPartyDialogue(Myself)
 			ActuallyInCombat()
 			GlobalGT("XA_LC_ArrivedInUndercity", "GLOBAL", 0)
 			!InParty(Myself)
 			AreaCheck("XACS13")
 			Global("XA_LC_E_EXTalk", "GLOBAL", 1)
-			AreaCheck("AR6200")
-			AreaCheck("AR0011")
-			AreaCheck("AR0012")
-			AreaCheck("AR0013")
-			AreaCheck("AR0014")
-			AreaCheck("AR0028")
+			AreaCheck("AR6200") // Throne of Bhaal
+			AreaCheck("AR0011") // Candlekeep Dream
+			AreaCheck("AR0012") // Candlekeep Dream
+			AreaCheck("AR0013") // Candlekeep Dream
+			AreaCheck("AR0014") // Candlekeep Dream
+			AreaCheck("AR0028") // Candlekeep Dream
+			AreaCheck("AR2900") // Abyss
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -37,6 +38,7 @@
 		!AreaCheck("AR0013")
 		!AreaCheck("AR0014")
 		!AreaCheck("AR0028")
+		!AreaCheck("AR2900") // Abyss
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
