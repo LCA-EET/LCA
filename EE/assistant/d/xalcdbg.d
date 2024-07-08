@@ -40,6 +40,8 @@ BEGIN ~XALCDBG~
 		~
 		GOTO XA_ChangeDone
 		
+		
+		
 		IF ~~ THEN REPLY @2020 /* ~Report a bug.~ */
 		GOTO XA_ReportBug
 		
@@ -405,6 +407,12 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 			CreateCreature("xadummy", [-1.-1], S)
 		~
 		EXIT
+		
+		IF ~~ THEN REPLY @2070
+		DO ~
+			SaveGame(0)
+		~
+		GOTO XA_Assistant
 		
 		COPY_TRANS XALCDBG XA_ClosingOptions 
 	END
