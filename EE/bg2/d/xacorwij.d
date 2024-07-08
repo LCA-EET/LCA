@@ -2740,12 +2740,16 @@ IF ~~ THEN BEGIN XA_CorwinMadam2
 END
 
 IF ~~ THEN BEGIN XA_P1_25A
-	SAY @248 /* ~My love, we... died? I felt you, pulling me with you to this place. Very well - we were together in life and will remain so, in death.~ */
+	SAY @248 /* ~What... what is this place? Did we die? Then why... no... no! Rohma, father... I'm so sorry.~ */
+	= @255 /*~(She takes a moment to regain her composure.)~*/
+	= @244 /* ~We... we still have each other. Irenicus is here — you feel it as well. Come, love. Let's finish what we set out to do!~  */
 	COPY_TRANS PLAYER1 25
 END
 
 IF ~~ THEN BEGIN XA_P1_25B
-	SAY @57 /* ~<CHARNAME>, we... died? I felt you, pulling me with you to this place. Very well - we stood at each other's side in life and will continue to do so, in death.~ */
+	SAY @248 /* ~What... what is this place? Did we die? Then why... no... no! Rohma, father... I'm so sorry.~ */
+	= @255 /*~(She takes a moment to regain her composure.)~*/
+	= @246 /*~Can you feel that? Irenicus is here too, isn't he? Very well... <CHARNAME>, let's finish what we set out to do!~*/
 	COPY_TRANS PLAYER1 25
 END
 
