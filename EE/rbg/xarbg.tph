@@ -4,6 +4,10 @@ SILENT
 
 OUTER_SET xa_regenerate = 0 // set to 1 to regenerate areas, 0 to copy pre-generated areas (default)
 
+//{ WAV
+	COPY ~%MOD_FOLDER%/rbg/wav~ ~override~
+//}
+
 //{ BAM
 	COPY ~%MOD_FOLDER%/rbg/bam~ ~override~
 //}
@@ -1030,6 +1034,7 @@ SILENT
 		SAY NAME2 @4151
 		WRITE_ASCII 0x2CC ~xabridge~ #8 	// Dialogue
 		WRITE_ASCII 0x280 ~XAB149A~ #20  	// Script Name
+		WRITE_ASCII 0x250 ~xalcnull~ #8		// Class Script
 	//}
 	
 	//{ Block F Base
@@ -2950,9 +2955,10 @@ SILENT
 		// Disable rep traps
 		WRITE_LONG 0x9B0 256
 		
-		// Disable Ankheg & Tenya
+		// Disable Ankheg, Tenya and Original Bridge Guard
 		WRITE_LONG 0x6A4 0
 		WRITE_LONG 0x264 0
+		WRITE_LONG 0x7B4 0
 		
 		// Close Drawbridge
 		WRITE_LONG 0x2BFC 0

@@ -40,7 +40,7 @@ END
 
 IF 
 	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 2)
-	Global("XA_LC_WyrmNPCsCreated", "GLOBAL", 1)
+	Global("XA_LC_WyrmNPCsCreated", "MYAREA", 1)
 THEN 
 	RESPONSE #100
 		Wait(1)
