@@ -8,7 +8,7 @@ THEN
 		FadeToColor([30.0],0)
 		Wait(3)
 		ZoomLock(TRUE)
-		LeaveAreaLUAPanic("xad100","",[2762.898],SW)  // Ducal Palace, 3FL
+		//LeaveAreaLUAPanic("xad100","",[2762.898],SW)  // Ducal Palace, 3FL
 		LeaveAreaLUA("xad100","",[2762.898],SW)
 		ActionOverride(Player2,LeaveAreaLUA("xad100","",[2802.919],SW))  
 		ActionOverride(Player3,LeaveAreaLUA("xad100","",[2800.848],SW))  

@@ -34,7 +34,7 @@ THEN
 		Lock("Door05")
 		ActionOverride("ppireni1",DestroySelf())
 		ActionOverride("ppireni2",DestroySelf())
-		LeaveAreaLUAPanic("AR1516","",[762.889],E)  // Spellhold (Soultheft Level)
+		//LeaveAreaLUAPanic("AR1516","",[762.889],E)  // Spellhold (Soultheft Level)
 		LeaveAreaLUA("AR1516","",[762.889],E)  // Spellhold (Soultheft Level)
 		ActionOverride(Player2,LeaveAreaLUA("AR1516","",[981.477],NW))  // Spellhold (Soultheft Level)
 		ActionOverride(Player3,LeaveAreaLUA("AR1516","",[1025.435],NW))  // Spellhold (Soultheft Level)

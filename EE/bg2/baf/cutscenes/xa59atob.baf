@@ -6,7 +6,7 @@ THEN
 		FadeToColor([20.0],0)
 		Wait(2)
 		SetSequence(SEQ_AWAKE)
-		LeaveAreaLUAPanic("AR2812","",[467.264],N)
+		//LeaveAreaLUAPanic("AR2812","",[467.264],N)
 		LeaveAreaLUA("AR2812","",[467.264],N)
 		
 		ActionOverride(Player2,LeaveAreaLUA("AR2812","",[519.262],S))

@@ -25,7 +25,7 @@ THEN
 		ActionOverride(Player5,MakeUnselectable(1))
 		ActionOverride(Player6,MakeUnselectable(1))
 		Wait(1)
-		LeaveAreaLUAPanic("AR1512","",[1669.1382],NW)  // Bodhi's Hunt Level 1
+		//LeaveAreaLUAPanic("AR1512","",[1669.1382],NW)  // Bodhi's Hunt Level 1
 		LeaveAreaLUA("AR1512","",[1669.1382],NW)  // Bodhi's Hunt Level 1
 		ActionOverride(Player2,LeaveAreaLUA("AR1512","",[1680.1373],NW))  // Bodhi's Hunt Level 1
 		ActionOverride(Player3,LeaveAreaLUA("AR1512","",[1653.1406],NW))  // Bodhi's Hunt Level 1

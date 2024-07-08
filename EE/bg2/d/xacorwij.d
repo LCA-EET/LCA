@@ -1082,6 +1082,12 @@ IF ~
 		SetGlobal("XA_LC_BackToBG", "GLOBAL", 2)
 	~
 	GOTO XA_BackToBG2
+	
+	IF ~~ THEN REPLY @630 /*~It was tame compared to the one the coalition threw for us after Avernus.~*/
+	DO ~
+		SetGlobal("XA_LC_BackToBG", "GLOBAL", 2)
+	~
+	GOTO XA_BackToBG2
 END
 
 IF ~~ THEN BEGIN XA_BackToBG2
