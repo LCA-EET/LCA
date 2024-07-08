@@ -6,7 +6,7 @@ THEN
     DisplayStringWait("suelle2",55256)  // ~As for you, I am sure you will be... leaving soon. As a wanderer, I imagine you are eager to resume your travels. Go with the best wishes of Suldanessellar.~ [ELLESI30]
     FadeToColor([30.0],0)
     Wait(2)
-	LeaveAreaLUAPanic("XACS13","",[467.264],N)
+	//LeaveAreaLUAPanic("XACS13","",[467.264],N)
 	LeaveAreaLUA("XACS13","",[467.264],N)
 	
 	ActionOverride(Player2,LeaveAreaLUA("XACS13","",[519.262],S))

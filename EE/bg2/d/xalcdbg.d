@@ -1,4 +1,4 @@
-EXTEND_BOTTOM XALCDBG 10
+EXTEND_BOTTOM XALCDBG 13
 	IF ~~ THEN REPLY @5000 /* ~BG2 Debug~ */
 	GOTO XA_BG2_Debug
 END
@@ -323,12 +323,22 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @5005
 		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("xacs12", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("xacs12", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("xacs12", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("xacs12", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("xacs12", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("xacs12", "", [0.0], S))
 		~
 		EXIT
 		
 		IF ~~ THEN REPLY @5006
 		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("xacs13", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("xacs13", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("xacs13", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("xacs13", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("xacs13", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("xacs13", "", [0.0], S))
 		~
 		EXIT
 		
