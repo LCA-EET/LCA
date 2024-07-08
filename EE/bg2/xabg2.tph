@@ -316,8 +316,8 @@ END
 	WRITE_SHORT 0x26 45
 	WRITE_ASCII 0x2CC ~xabowsmi~ #8
 	WRITE_ASCII 0x250 ~xabowsmi~ #8
-	WRITE_LONG 0x8 RESOLVE_STR_REF @3055 // Master Bowyer
-	WRITE_LONG 0xC RESOLVE_STR_REF @3055 // Master Bowyer
+	WRITE_LONG 0x8 RESOLVE_STR_REF(@3055) // Master Bowyer
+	WRITE_LONG 0xC RESOLVE_STR_REF(@3055) // Master Bowyer
 	
 	COPY_EXISTING ~suelf7.cre~ ~override/xaesmith.cre~
 	WRITE_ASCII 0x280 ~xaesmith~ #20
@@ -325,8 +325,8 @@ END
 	WRITE_SHORT 0x26 45
 	WRITE_ASCII 0x2CC ~xabowsmi~ #8
 	WRITE_ASCII 0x258 ~xabowsmi~ #8
-	WRITE_LONG 0x8 RESOLVE_STR_REF @3036 // Master Smith
-	WRITE_LONG 0xC RESOLVE_STR_REF @3036 // Master Smith
+	WRITE_LONG 0x8 RESOLVE_STR_REF(@3036) // Master Smith
+	WRITE_LONG 0xC RESOLVE_STR_REF(@3036) // Master Smith
 
 	COPY_EXISTING ~xad105.cre~ ~override/xamelkor.cre~ // bdffwiz
 	SAY NAME1 @3148
