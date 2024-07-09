@@ -3403,9 +3403,7 @@ IF ~~ THEN BEGIN XA_SUELLE2_0
 END
 
 IF ~~ THEN BEGIN XA_SUELLE2_0_A
-	SAY @919  /* ~(You notice tears forming in her eyes.)~*/ 
-	
-	= @609 /* ~Two days... *sob* ... h-how are you feeling?~ */
+	SAY @609 /* ~Two days... *sob* ... h-how are you feeling?~ */
 	
 	IF ~~ THEN REPLY @610 /* ~Good, just ... tired. A-are you crying?~  */
 	GOTO XA_SUELLE2_0_B
@@ -4034,7 +4032,9 @@ END XACORWIJ XA_CorwinDrizz_End
 CHAIN
 	IF ~~ THEN XACORWIJ XA_BackToBG_Chain
 		@629 /* ~Before we go, let's check with the rest of the team to see if they want to come with us. I imagine some will want to stay here and help the elves with their wounded.~*/
-		
+		DO ~
+			ActionOverride("XACORWIN", SetGlobal("XA_LC_BackToBG", "LOCALS", 1))
+		~
 		//{ Hexxat
 		== XACORWIJ 
 		IF ~
@@ -4059,7 +4059,7 @@ CHAIN
 			~
 			@636 /* ~You can count me in. Oh, I can't wait to see Liia again! There are so many stories I'll share with her.~ */
 			DO ~
-				SetGlobal("XA_LC_BackToBG_Imoen", "GLOBAL", 1)
+				ActionOverride("Imoen2", SetGlobal("XA_LC_BackToBG", "LOCALS", 1))
 			~
 		//}
 		
@@ -4072,7 +4072,7 @@ CHAIN
 			~
 			@639 /* ~I will be joining you, my dear.~ */
 			DO ~
-				SetGlobal("XA_LC_BackToBG_Jaheira", "GLOBAL", 1)
+				ActionOverride("Jaheira", SetGlobal("XA_LC_BackToBG", "LOCALS", 1))
 			~
 			
 			== JAHEIRAJ
@@ -4105,7 +4105,7 @@ CHAIN
 			~
 			@641 /* ~I will join you. The sooner we can leave, the better - the surface elves are looking for an excuse to murder me, I know it.~ */
 			DO ~
-				SetGlobal("XA_LC_BackToBG_Viconia", "GLOBAL", 1)
+				ActionOverride("Viconia", SetGlobal("XA_LC_BackToBG", "LOCALS", 1))
 			~
 		//}
 		
@@ -4117,7 +4117,7 @@ CHAIN
 			~
 			@642 /* ~Oh, yes, this is a wonderful opportunity to expand my turnip business! I will go with you.~ */
 			DO ~
-				SetGlobal("XA_LC_BackToBG_Jan", "GLOBAL", 1)
+				ActionOverride("Jan", SetGlobal("XA_LC_BackToBG", "LOCALS", 1))
 			~
 			
 			== JANJ
@@ -4153,7 +4153,7 @@ CHAIN
 			~
 			@647 /* ~Oh, of course I will go with you! M-maybe we can also see Candlekeep? It will be fun to see where you g-grew up.~ */
 			DO ~
-				SetGlobal("XA_LC_BackToBG_Aerie", "GLOBAL", 1)
+				ActionOverride("Aerie", SetGlobal("XA_LC_BackToBG", "LOCALS", 1))
 			~
 			
 			== AERIEJ
@@ -4186,7 +4186,7 @@ CHAIN
 			~
 			@651 /* ~This is an opportunity to understand the plight of the poor from a broader perspective. I will go with you. ~ */
 			DO ~
-				SetGlobal("XA_LC_BackToBG_Nalia", "GLOBAL", 1)
+				ActionOverride("Nalia", SetGlobal("XA_LC_BackToBG", "LOCALS", 1))
 			~
 		//}
 		
@@ -4206,7 +4206,7 @@ CHAIN
 			~
 			@653 /* ~Aye, I'll go with ye. It hath been many a year since I travelled the Sword Coast, plus I be sick of these queers already. I'll stop at Beregost on the way and pay an old friend of mine a visit.~ */
 			DO ~
-				SetGlobal("XA_LC_BackToBG_Korgan", "GLOBAL", 1)
+				ActionOverride("Korgan", SetGlobal("XA_LC_BackToBG", "LOCALS", 1))
 			~
 		//}
 		
@@ -4272,7 +4272,7 @@ CHAIN
 			~
 			@664 /* ~I will join you. There is little left for me in Amn, and I am eager for a fresh start.~ */
 			DO ~
-				SetGlobal("XA_LC_BackToBG_Anomen", "GLOBAL", 1)
+				ActionOverride("Anomen", SetGlobal("XA_LC_BackToBG", "LOCALS", 1))
 			~
 			
 			== ANOMENJ
@@ -4284,7 +4284,7 @@ CHAIN
 			~
 			@665 /* ~I will remain by your side my love, now and always.~ */
 			DO ~
-				SetGlobal("XA_LC_BackToBG_Anomen", "GLOBAL", 1)
+				ActionOverride("Anomen", SetGlobal("XA_LC_BackToBG", "LOCALS", 1))
 			~
 		//}
 		
@@ -4305,7 +4305,7 @@ CHAIN
 			~
 			@657 /* ~Yes, I will go with you. Anywhere, even Baldur's Gate, would be better than staying here.~ */
 			DO ~
-				SetGlobal("XA_LC_BackToBG_Dorn", "GLOBAL", 1)
+				ActionOverride("Dorn", SetGlobal("XA_LC_BackToBG", "LOCALS", 1))
 			~
 		//}
 		
@@ -4324,7 +4324,7 @@ CHAIN
 			~
 			@658 /* ~There is nothing left for me in Amn. Captain, I'd like to take you up on your offer and join the Flaming Fist, at least on an interim basis.~ */
 			DO ~
-				SetGlobal("XA_LC_BackToBG_Valygar", "GLOBAL", 1)
+				ActionOverride("Valygar", SetGlobal("XA_LC_BackToBG", "LOCALS", 1))
 			~
 			
 			== XACORWIB
@@ -4342,7 +4342,7 @@ CHAIN
 			~
 			@1470 /* ~Captain as we discussed, I will return with you to Baldur's Gate to join the Flaming Fist.~*/
 			DO ~
-				SetGlobal("XA_LC_BackToBG_Valygar", "GLOBAL", 1)
+				ActionOverride("Valygar", SetGlobal("XA_LC_BackToBG", "LOCALS", 1))
 			~		
 		
 			== XACORWIB
@@ -4361,7 +4361,7 @@ CHAIN
 			~
 			@661 /* ~Of course I'll join you silly! It'll be nice to see the Sword Coast again!~ */
 			DO ~
-				SetGlobal("XA_LC_BackToBG_Neera", "GLOBAL", 1)
+				ActionOverride("Neera", SetGlobal("XA_LC_BackToBG", "LOCALS", 1))
 			~
 		//}
 		
@@ -4390,7 +4390,7 @@ CHAIN
 			~
 			@668 /* ~Yes my friend, I will return with you. I am interested to see what progress has been made in dealing with the refugee crisis. My help may still be needed.~ */
 			DO ~
-				SetGlobal("XA_LC_BackToBG_Rasaad", "GLOBAL", 1)
+				ActionOverride("Rasaad", SetGlobal("XA_LC_BackToBG", "LOCALS", 1))
 			~
 			
 			== RASAADJ
@@ -4402,7 +4402,7 @@ CHAIN
 			~
 			@665 /* ~I will remain by your side my love, now and always.~ */
 			DO ~
-				SetGlobal("XA_LC_BackToBG_Rasaad", "GLOBAL", 1)
+				ActionOverride("Rasaad", SetGlobal("XA_LC_BackToBG", "LOCALS", 1))
 			~
 		//}
 END

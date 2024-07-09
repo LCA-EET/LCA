@@ -115,6 +115,31 @@ END
 	EXTEND_TOP ~aerie.bcs~ 		~%MOD_FOLDER%/bg2/baf/xasvir.baf~
 	EXTEND_TOP ~keldorn.bcs~ 	~%MOD_FOLDER%/bg2/baf/xasvir.baf~
 	
+	COPY_EXISTING ~xabbg02.bcs~ ~override/xabbg03.bcs~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY Player2 Player3
+	END
+	
+	COPY_EXISTING ~xabbg02.bcs~ ~override/xabbg04.bcs~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY Player2 Player4
+	END
+	
+	COPY_EXISTING ~xabbg02.bcs~ ~override/xabbg05.bcs~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY Player2 Player5
+	END
+	
+	COPY_EXISTING ~xabbg02.bcs~ ~override/xabbg06.bcs~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY Player2 Player6
+	END
+	
+	EXTEND_TOP ~xacs13.bcs~ ~override/xabbg02.bcs~
+	EXTEND_TOP ~xacs13.bcs~ ~override/xabbg03.bcs~
+	EXTEND_TOP ~xacs13.bcs~ ~override/xabbg04.bcs~
+	EXTEND_TOP ~xacs13.bcs~ ~override/xabbg05.bcs~
+	EXTEND_TOP ~xacs13.bcs~ ~override/xabbg06.bcs~
 //}
 
 //{ Music	

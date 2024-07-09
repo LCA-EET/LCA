@@ -1,0 +1,11 @@
+IF
+	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
+	TriggerOverride(Player2, GlobalLT("XA_LC_BackToBG", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride(Player2, ChangeAIScript("",DEFAULT))
+		ActionOverride(Player2, SetLeavePartyDialogFile())
+		ActionOverride(Player2, LeaveParty())
+		ActionOverride(Player2, EscapeAreaObject("ExitNull"))
+		Continue()
+END
