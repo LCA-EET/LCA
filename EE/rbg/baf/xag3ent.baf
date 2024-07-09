@@ -6,7 +6,6 @@ THEN
 		FadeToColor([30.0],0)
 		SetGlobal("XA_LC_G3_Intro", "GLOBAL", 1)
 		Wait(2)
-		LeaveAreaLUAPanic("XAG3", "", [800.1060], NW)
 		LeaveAreaLUA("XAG3", "", [800.1060], NW)
 
 		EndCutSceneMode()

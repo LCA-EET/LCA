@@ -7,8 +7,6 @@ THEN
 		SetGlobal("XA_LC_ExitPrison", "GLOBAL", 1)
 		IncrementGlobal("XA_LC_MetIncubus", "GLOBAL", 1)
 		Wait(2)
-		
-		LeaveAreaLUAPanic("XAPAINT1", "", [290.425], NE)
 		LeaveAreaLUA("XAPAINT1", "", [290.425], NE)
 		ActionOverride(Player2, LeaveAreaLUA("XAPAINT1", "", [290.425], NE))
 		ActionOverride(Player3, LeaveAreaLUA("XAPAINT1", "", [290.425], NE))
@@ -18,7 +16,6 @@ THEN
 		Wait(1)
 		CopyGroundPilesTo("xaa210", [350.500]) //ar0706 Elfsong L2
 		Wait(1)
-		LeaveAreaLUAPanic("xaa210", "", [325.540], SE)
 		LeaveAreaLUA("xaa210", "", [325.540], SE)
 		ActionOverride(Player2, LeaveAreaLUA("xaa210", "", [335.530], SE))
 		ActionOverride(Player3, LeaveAreaLUA("xaa210", "", [345.550], SE))

@@ -30,7 +30,6 @@ THEN
 Schael's pregnancy has forced her return home to Baldur's Gate. Though I miss her dearly, I'm relieved that she'll be safe from the dangers that I must now face without her.~  */
 		FadeToColor([30.0],0)
 		Wait(1)
-		LeaveAreaLUAPanic("AR4500","",[1990.1230],N) 
 		LeaveAreaLUA("AR4500","",[1990.1230],N)
 		ActionOverride(Player2,LeaveAreaLUA("AR4500","",[1910.1290], N))  
 		ActionOverride(Player3,LeaveAreaLUA("AR4500","",[1950.1290], N))  

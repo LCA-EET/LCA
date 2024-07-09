@@ -8,7 +8,6 @@ THEN
 		Wait(3)
 		HideGUI()
 		ZoomLock(TRUE)
-		LeaveAreaLUAPanic("xatent","",[227.196],SW) 
 		LeaveAreaLUA("xatent","",[227.196],SW)
 		ActionOverride(Player2,LeaveAreaLUA("xatent","",[155.270],SW))  
 		ActionOverride(Player3,LeaveAreaLUA("xatent","",[215.320],W))  

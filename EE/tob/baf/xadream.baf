@@ -6,8 +6,7 @@ THEN
 		StorePartyLocations()
 		FadeToColor([30.0],0)
 		Wait(1)
-		LeaveAreaLUA("XABLCK","",[420.300],S)
-		LeaveAreaLUAPanic("XABLCK","",[420.300],S)
+		LeaveAreaLUA("XABLCK","",[420.300],S)\
 		Wait(1)
 		FadeFromColor([30.0],0)
 		Wait(1)

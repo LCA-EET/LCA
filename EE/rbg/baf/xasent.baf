@@ -7,7 +7,6 @@ THEN
 		Wait(2)
 		CopyGroundPilesTo("XAPAINT1", [350.300])
 		Wait(1)
-		LeaveAreaLUAPanic("XADEMSAN", "", [320.320], N)
 		LeaveAreaLUA("XADEMSAN", "", [320.320], N)
 		ActionOverride(Player2, LeaveAreaLUA("XADEMSAN", "", [320.320], N))
 		ActionOverride(Player3, LeaveAreaLUA("XADEMSAN", "", [320.320], N))

@@ -8,8 +8,7 @@ THEN
 		SetGlobal("XA_LC_BenoBoom", "GLOBAL", 2)
 		FadeToColor([30.0],0)
 		Wait(2)
-		LeaveAreaLUAPanic("XA5501","",[530.355],NE)  // Flaming Fist HQ, Level 1
-		LeaveAreaLUA("XA5501","",[530.355],NE)
+		LeaveAreaLUA("XA5501","",[530.355],NE) // Flaming Fist HQ, Level 1
 		ActionOverride(Player2,LeaveAreaLUA("XA5501","",[525.360],NE))  
 		ActionOverride(Player3,LeaveAreaLUA("XA5501","",[530.365],NE))  
 		ActionOverride(Player4,LeaveAreaLUA("XA5501","",[520.355],NE))  

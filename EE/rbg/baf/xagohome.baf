@@ -8,7 +8,6 @@ THEN
 		FadeToColor([30.0],0)
 		Wait(3)
 		ZoomLock(TRUE)
-		LeaveAreaLUAPanic("XAHOME","",[380.340],N) 
 		LeaveAreaLUA("XAHOME","",[380.340],N)
 		ActionOverride(Player2,LeaveAreaLUA("XAHOME","",[400.335],N))  
 		ActionOverride(Player3,LeaveAreaLUA("XAHOME","",[430.320],N))  

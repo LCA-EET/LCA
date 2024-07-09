@@ -2962,7 +2962,7 @@ SILENT
 		WRITE_LONG 0x7B4 0
 		
 		// Close Drawbridge
-		WRITE_LONG 0x2BFC 0
+		//WRITE_LONG 0x2BFC 97
 		
 		LPF fj_are_structure
 			INT_VAR

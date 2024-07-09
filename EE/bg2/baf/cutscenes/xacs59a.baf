@@ -1,25 +1,13 @@
-//Rewrite of cut59a, to send the player to a different location after Irenicus' death
-//Daniel Valle
-//dan@danielvalle.net
-
-/* Revision History
-
-2022-12-20: Initial Commit
-
-*/
-
-/*
 IF
 	True()
 THEN
 	RESPONSE #100
-		CutSceneId("helljon2")  
-		DestroyItem("JONHP1")  
+		CutSceneId("helljon2")  // Jon Irenicus
+		DestroyItem("JONHP1")  // No such index
 		PlaySound("EFF_P16")
 		CreateVisualEffectObject("SPDEATH3",Myself)
 		Kill(Myself)
 END
-*/
 
 IF
 	True()
@@ -42,7 +30,6 @@ THEN
 		ApplySpellRES("cdpr417",Player5)  // Lesser Restoration
 		ApplySpellRES("cdpr417",Player6)  // Lesser Restoration
 		Wait(3)
-		//LeaveAreaLUAPanic("XACS12","",[182.419],NE)
 		LeaveAreaLUA("XACS12","",[182.419],NE)  
 		ActionOverride(Player2,LeaveAreaLUA("XACS12","",[389.303],SW))  
 		ActionOverride(Player3,LeaveAreaLUA("XACS12","",[409.328],SW))  

@@ -6,7 +6,6 @@ THEN
 		
 		FadeToColor([30.0],0)
 		Wait(1)
-		LeaveAreaLUAPanic("XABYE","",[1990.1230],N) 
 		LeaveAreaLUA("XABYE","",[1990.1230],N)
 		ActionOverride(Player2,LeaveAreaLUA("XABYE","",[1910.1290], N))  
 		ActionOverride(Player3,LeaveAreaLUA("XABYE","",[1950.1290], N))  

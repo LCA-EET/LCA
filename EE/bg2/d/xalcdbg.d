@@ -202,6 +202,18 @@ APPEND ~XALCDBG~
 		~
 		GOTO XA_BG2_AdjustVariables
 		
+		IF ~~ THEN REPLY @5118 
+		DO ~
+			SetGlobal("FinalBattle", "GLOBAL", 1)
+		~
+		GOTO XA_BG2_AdjustVariables
+		
+		IF ~~ THEN REPLY @5119 
+		DO ~
+			SetGlobal("FinalBattle", "GLOBAL", 0)
+		~
+		GOTO XA_BG2_AdjustVariables
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		

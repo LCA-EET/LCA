@@ -5,8 +5,7 @@ THEN
 		CutSceneID(Player1)
 		FadeToColor([30.0],0)
 		Wait(2)
-		LeaveAreaLUAPanic("XAA287", "", [665.1095], NE) // ar0607
-		LeaveAreaLUA("XAA287", "", [665.1095], NE)
+		LeaveAreaLUA("XAA287", "", [665.1095], NE) // ar0607
 		ActionOverride(Player2, LeaveAreaLUA("XAA287", "", [680.1070], NE))
 		ActionOverride(Player3, LeaveAreaLUA("XAA287", "", [707.1084], NE))
 		ActionOverride(Player4, LeaveAreaLUA("XAA287", "", [678.1111], NE))

@@ -8,7 +8,6 @@ THEN
 		FadeToColor([30.0],0)
 		Wait(3)
 		ZoomLock(TRUE)
-		//LeaveAreaLUAPanic("XACS06","",[3250.2460],NE)  // Trademeet
 		LeaveAreaLUA("XACS06","",[3250.2460],NE)
 		StartCutScene("XAcs06b") 
 END

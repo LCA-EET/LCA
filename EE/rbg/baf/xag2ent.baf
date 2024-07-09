@@ -6,7 +6,6 @@ THEN
 		FadeToColor([30.0],0)
 		SetGlobal("XA_LC_G2_Intro", "GLOBAL", 1)
 		Wait(2)
-		LeaveAreaLUAPanic("XAG2", "", [1230.1640], E)
 		LeaveAreaLUA("XAG2", "", [1230.1640], E)
 		FadeFromColor([30.0],0)
 		Wait(1)

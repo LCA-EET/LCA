@@ -6,7 +6,6 @@ THEN
 		FadeToColor([30.0],0)
 		IncrementGlobal("XA_LC_MetIncubus", "GLOBAL", 1)
 		Wait(2)
-		LeaveAreaLUAPanic("XAPAINT1", "", [290.425], NE)
 		LeaveAreaLUA("XAPAINT1", "", [290.425], NE)
 		ActionOverride(Player2, LeaveAreaLUA("XAPAINT1", "", [290.425], NE))
 		ActionOverride(Player3, LeaveAreaLUA("XAPAINT1", "", [290.425], NE))

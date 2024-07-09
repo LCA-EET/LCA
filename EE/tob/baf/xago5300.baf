@@ -6,7 +6,6 @@ THEN
 		FadeToColor([30.0],0)
 		ActionOverride("ppguy01", DestroySelf())
 		Wait(1)
-		LeaveAreaLUAPanic("XAG104","",[825.550],S)
 		LeaveAreaLUA("XAG104","",[825.550],S)
 		ActionOverride(Player2,LeaveAreaLUA("XAG104","",[710.555],S))
 		ActionOverride(Player3,LeaveAreaLUA("XAG104","",[732.526],S))
