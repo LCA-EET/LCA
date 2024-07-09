@@ -559,8 +559,7 @@ END
 
 APPEND SUELLE2
 	IF ~~ THEN BEGIN XA_SUELLE2_0_D
-		SAY @59 /* ~(She smiles as she looks at the two of you.)~ */
-		= @60 /* ~She never once left your side. I cannot tell you how heartwarming it is to see love blossom in the aftermath of what transpired here.~ */
+		SAY @60 /* ~I'm told that she never once left your side. I cannot tell you how uplifting it is to see love blossom in the aftermath of what has transpired here.~    */
 		
 		IF ~  
 			ReputationLT(Player1,10)

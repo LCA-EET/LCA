@@ -2955,8 +2955,9 @@ SILENT
 		// Disable rep traps
 		WRITE_LONG 0x9B0 256
 		
-		// Disable Ankheg, Tenya and Original Bridge Guard
+		// Disable Ankheg, Tenya and Original Bridge Guards
 		WRITE_LONG 0x6A4 0
+		WRITE_LONG 0x154 0
 		WRITE_LONG 0x264 0
 		WRITE_LONG 0x7B4 0
 		

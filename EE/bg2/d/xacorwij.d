@@ -3455,8 +3455,7 @@ END
 
 
 IF ~~ THEN BEGIN XA_SUELLE2_5_8
-	SAY @1759 /* ~(You reach out and take hold of her hand.)~ */
-	= @115 /* ~Gladly, dear. */
+	SAY @115 /* ~Gladly, dear. */
 	= @1760 /*~(You slide over so there is enough room on the bed for the two of you. When she climbs in, you kiss and rest in eachother's embrace.)~*/
 
 	IF ~~ THEN
