@@ -234,6 +234,27 @@ END
 			xa_specifics = ~xalcnull~	
 	END // remove any existing scripts on the actors in the scene
 
+	COPY_EXISTING ~xacs13.are~ ~override~
+	LPF fj_are_structure
+		INT_VAR
+			fj_box_left		= 249
+			fj_box_top		= 579
+			fj_box_right	= 250
+			fj_box_bottom	= 580
+			fj_cursor_idx	= 0
+			fj_alt_x		= 0
+			fj_alt_y		= 0
+			fj_flags		= 0
+			fj_vertex_0     = 249 + (579 << 16)
+			fj_vertex_1     = 249 + (580 << 16)
+			fj_vertex_2     = 250 + (580 << 16)
+			fj_vertex_3     = 250 + (579 << 16)
+			fj_type			= 1
+		STR_VAR
+			fj_structure_type = region
+			fj_name = ~ExitNull~
+	END
+
 	COPY_EXISTING ~xad100.are~ ~override~ // bd0103, Ducal Palace 3 Fl
 	LPF xa_delete_actor_at_index END
 	
