@@ -1,4 +1,5 @@
 IF
+	GlobalLT("XA_LC_RetainAllRBG", "GLOBAL", 1)
 	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	TriggerOverride(Player2, GlobalLT("XA_LC_BackToBG", "LOCALS", 1))
 THEN

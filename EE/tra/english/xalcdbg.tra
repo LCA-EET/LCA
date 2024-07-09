@@ -268,6 +268,8 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @5113 = ~!Global("XA_LC_CorwinCanHeal", "GLOBAL", 1)~
 @5114 = ~Sex 2 Condition Check~
 @5115 = ~XACORBAG~
+@5116 = ~SetGlobal("XA_LC_RetainAllRBG", "GLOBAL", 1)~
+@5117 = ~SetGlobal("XA_LC_RetainAllRBG", "GLOBAL", 0)~ 
 
 @6000 = ~Return to Baldur's Gate Debug~
 @6001 = ~Item Test~
