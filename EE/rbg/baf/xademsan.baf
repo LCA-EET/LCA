@@ -64,15 +64,15 @@ IF
 	Global("XA_LC_NarzugonHostile", "LOCALS", 1)
 THEN
 	RESPONSE #33
-		ActionOverride("XANARZU", SetItemFlags("XAQUIVER", DROPPABLE, TRUE))
+		ActionOverride("XANARZU", SetItemFlags("XAQUIVER", 1, TRUE))
 		SetGlobal("XA_LC_IncubusQuiver", "GLOBAL", 1)
 		Continue()
 	RESPONSE #33
-		ActionOverride("XANARZU", SetItemFlags("XASWORD", DROPPABLE, TRUE))
+		ActionOverride("XANARZU", SetItemFlags("XASWORD", 1, TRUE))
 		SetGlobal("XA_LC_IncubusSword", "GLOBAL", 1)
 		Continue()
 	RESPONSE #33
-		ActionOverride("XANARZU", SetItemFlags("XAMSRING", DROPPABLE, TRUE))
+		ActionOverride("XANARZU", SetItemFlags("XAMSRING", 1, TRUE))
 		SetGlobal("XA_LC_IncubusRing", "GLOBAL", 1)
 		Continue()
 END

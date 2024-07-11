@@ -53,19 +53,24 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 	END
 	OUTER_SET secondIndex = (firstIndex + 1)
 	
+	PRINT ~PVRZ_0: %firstIndex%~
+	PRINT ~PVRZ_1: %secondIndex%~
+	
 	COPY ~%MOD_FOLDER%/rbg/pvrz/mosmapA.pvrz~ ~override/mos%firstIndex%.pvrz~
 	COPY ~%MOD_FOLDER%/rbg/pvrz/mosmapB.pvrz~ ~override/mos%secondIndex%.pvrz~
 	
 	COPY ~%MOD_FOLDER%/rbg/mos/xamaprbg.mos~ ~override~
+	WRITE_LONG 0x18 firstIndex
 	WRITE_LONG 0x34 firstIndex
 	WRITE_LONG 0x50 secondIndex
+	WRITE_LONG 0x6C secondIndex
 	
 	COPY ~%MOD_FOLDER%/rbg/wmp/xamaprbg.wmp~ ~override~
 	WRITE_LONG 0x24 RESOLVE_STR_REF(@4136) // Map Name
 	
 	WRITE_LONG 0x978 RESOLVE_STR_REF(@4137) // Wyrm Crossing Label
 		
-	//{ Wyrm's Crossing to E Baldur's Gate
+	//{ Wyrm's Crossing (0900) to E Baldur's Gate (0800)
 		LPF ADD_WORLDMAP_LINKS
 			INT_VAR
 				distance_scale = 0
@@ -74,250 +79,250 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 				entry = ~Ext0800e~
 				from_area = ~XAA100~
 				from_node = ~w~
-				to_area = ~XAA103~
+				to_area = ~XAA104~
 		END
 	//}
 	
-	//{ Northwest Baldur's Gate
-		//{ NW Baldur's Gate to N Baldur's Gate
+	//{ Northwest Baldur's Gate (0100)
+		//{ NW Baldur's Gate (0100) to N Baldur's Gate (0200)
 		LPF ADD_WORLDMAP_LINKS
 			INT_VAR
 				distance_scale = 0
 				encounter_probability = 0
 			STR_VAR
 				entry = ~Ext0200w~
-				from_area = ~XAA229~
+				from_area = ~XAA233~
 				from_node = ~n~
-				to_area = ~XAA130~
+				to_area = ~XAA134~
 		END
 		//}
 		
-		//{ NW Baldur's Gate to W Baldur's Gate
+		//{ NW Baldur's Gate (0100) to W Baldur's Gate (0600)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext0200w~
-					from_area = ~XAA229~
+					from_area = ~XAA233~
 					from_node = ~n~
-					to_area = ~XAA164~
+					to_area = ~XAA168~
 			END
 		//}
 	//}
 	
 	//{ North Baldur's Gate
-		//{ N Baldur's Gate to NW Baldur's Gate
+		//{ N Baldur's Gate (0200) to NW Baldur's Gate (0100)
 		LPF ADD_WORLDMAP_LINKS
 			INT_VAR
 				distance_scale = 0
 				encounter_probability = 0
 			STR_VAR
 				entry = ~Ext0100e~
-				from_area = ~XAA130~
+				from_area = ~XAA134~
 				from_node = ~n~
-				to_area = ~XAA229~
+				to_area = ~XAA233~
 		END
 		//}
 		
-		//{ N Baldur's Gate to NE Baldur's Gate
+		//{ N Baldur's Gate (0200) to NE Baldur's Gate (0300)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext0300w~
-					from_area = ~XAA130~
+					from_area = ~XAA134~
 					from_node = ~n~
-					to_area = ~XAA105~
+					to_area = ~XAA107~
 			END
 		//}
 		
-		//{ N Baldur's Gate to C Baldur's Gate
+		//{ N Baldur's Gate (0200) to C Baldur's Gate (0700)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext0700n~
-					from_area = ~XAA130~
+					from_area = ~XAA134~
 					from_node = ~n~
-					to_area = ~XAA107~
+					to_area = ~XAA109~
 			END
 		//}
 	//}
 	
 	//{ Northeast Baldur's Gate
-		//{ NE Baldur's Gate to N Baldur's Gate
+		//{ NE Baldur's Gate (0300) to N Baldur's Gate (0200)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext0200e~
-					from_area = ~XAA105~
+					from_area = ~XAA107~
 					from_node = ~n~
-					to_area = ~XAA130~
+					to_area = ~XAA134~
 			END
 		//}
 		
-		//{ NE Baldur's Gate to E Baldur's Gate
+		//{ NE Baldur's Gate (0300) to E Baldur's Gate (0800)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext0800n~
-					from_area = ~XAA105~
+					from_area = ~XAA107~
 					from_node = ~n~
-					to_area = ~XAA103~
+					to_area = ~XAA104~
 			END
 		//}
 	//}
 	
 	//{ West Baldur's Gate
-		//{ W Baldur's Gate to NW Baldur's Gate
+		//{ W Baldur's Gate (0600) to NW Baldur's Gate (0100)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext0100s~
-					from_area = ~XAA164~
+					from_area = ~XAA168~
 					from_node = ~n~
-					to_area = ~XAA229~
+					to_area = ~XAA233~
 			END
 		//}
 		
-		//{ W Baldur's Gate to C Baldur's Gate
+		//{ W Baldur's Gate (0600) to C Baldur's Gate (0700)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext0700w~
-					from_area = ~XAA164~
+					from_area = ~XAA168~
 					from_node = ~n~
-					to_area = ~XAA107~
+					to_area = ~XAA109~
 			END
 		//}
 		
-		//{ W Baldur's Gate to SW Baldur's Gate
+		//{ W Baldur's Gate (0600) to SW Baldur's Gate (1100)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext1100n~
-					from_area = ~XAA164~
+					from_area = ~XAA168~
 					from_node = ~n~
-					to_area = ~XAA142~
+					to_area = ~XAA146~
 			END
 		//}
 	//}
 	
 	//{ Central Baldur's Gate
-		//{ C Baldur's Gate to N Baldur's Gate
+		//{ C Baldur's Gate (0700) to N Baldur's Gate (0200)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext0200s~
-					from_area = ~XAA107~
+					from_area = ~XAA109~
 					from_node = ~n~
-					to_area = ~XAA130~
+					to_area = ~XAA134~
 			END
 		//}
 		
-		//{ C Baldur's Gate to W Baldur's Gate
+		//{ C Baldur's Gate (0700) to W Baldur's Gate (0600)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext0600e~
-					from_area = ~XAA107~
+					from_area = ~XAA109~
 					from_node = ~n~
-					to_area = ~XAA164~
+					to_area = ~XAA168~
 			END
 		//}
 		
-		//{ C Baldur's Gate to E Baldur's Gate
+		//{ C Baldur's Gate (0700) to E Baldur's Gate (0800)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext0800w~
-					from_area = ~XAA107~
+					from_area = ~XAA109~
 					from_node = ~n~
-					to_area = ~XAA103~
+					to_area = ~XAA104~
 			END
 		//}
 		
-		//{ C Baldur's Gate to S Baldur's Gate (Docks)
+		//{ C Baldur's Gate (0700) to S Baldur's Gate (Docks) (1200)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext1200n~
-					from_area = ~XAA107~
+					from_area = ~XAA109~
 					from_node = ~n~
-					to_area = ~XAA106~
+					to_area = ~XAA108~
 			END
 		//}
 	//}
 	
 	//{ East Baldur's Gate
-		//{ E Baldur's Gate to NE Baldur's Gate
+		//{ E Baldur's Gate (0800) to NE Baldur's Gate (0300)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext0300s~
-					from_area = ~XAA103~
+					from_area = ~XAA104~
 					from_node = ~n~
-					to_area = ~XAA105~
+					to_area = ~XAA107~
 			END
 		//}
 		
-		//{ E Baldur's Gate to C Baldur's Gate
+		//{ E Baldur's Gate (0800) to C Baldur's Gate (0700)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext0700e~
-					from_area = ~XAA103~
+					from_area = ~XAA104~
 					from_node = ~n~
-					to_area = ~XAA107~
+					to_area = ~XAA109~
 			END
 		//}
 		
-		//{ E Baldur's Gate to SE Baldur's Gate
+		//{ E Baldur's Gate (0800) to SE Baldur's Gate (1300)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext1300n~
-					from_area = ~XAA103~
+					from_area = ~XAA104~
 					from_node = ~n~
-					to_area = ~XAA141~
+					to_area = ~XAA145~
 			END
 		//}
 		
-		//{ E Baldur's Gate to Wyrm's Crossing
+		//{ E Baldur's Gate (0800) to Wyrm's Crossing (0900)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Exit0800~
-					from_area = ~XAA103~
+					from_area = ~XAA104~
 					from_node = ~n~
 					to_area = ~XAA100~
 			END
@@ -325,98 +330,98 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 	//}
 	
 	//{ Southwest Baldur's Gate
-		//{ SW Baldur's Gate to W Baldur's Gate
+		//{ SW Baldur's Gate (1100) to W Baldur's Gate (0600)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext0600s~
-					from_area = ~XAA142~
+					from_area = ~XAA146~
 					from_node = ~n~
-					to_area = ~XAA164~
+					to_area = ~XAA168~
 			END
 		//}
 		
-		//{ SW Baldur's Gate to S Baldur's Gate
+		//{ SW Baldur's Gate (1100) to S Baldur's Gate (1200)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext1200w~
-					from_area = ~XAA142~
+					from_area = ~XAA146~
 					from_node = ~n~
-					to_area = ~XAA106~
+					to_area = ~XAA108~
 			END
 		//}
 	//}
 	
 	//{ South Baldur's Gate (Docks)
-		//{ S Baldur's Gate to C Baldur's Gate
+		//{ S Baldur's Gate (1200) to C Baldur's Gate (0700)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext0700s~
-					from_area = ~XAA106~
+					from_area = ~XAA108~
 					from_node = ~n~
-					to_area = ~XAA107~
+					to_area = ~XAA109~
 			END
 		//}
 		
-		//{ S Baldur's Gate to SE Baldur's Gate
+		//{ S Baldur's Gate (1200) to SE Baldur's Gate (1300)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext1300w~
-					from_area = ~XAA106~
+					from_area = ~XAA108~
 					from_node = ~n~
-					to_area = ~XAA141~
+					to_area = ~XAA145~
 			END
 		//}
 		
-		//{ S Baldur's Gate to SW Baldur's Gate
+		//{ S Baldur's Gate (1200) to SW Baldur's Gate (1100)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext1100e~
-					from_area = ~XAA106~
+					from_area = ~XAA108~
 					from_node = ~n~
-					to_area = ~XAA142~
+					to_area = ~XAA146~
 			END
 		//}
 	//}
 	
 	//{ Southeast Baldur's Gate
-		//{ SE Baldur's Gate to E Baldur's Gate
+		//{ SE Baldur's Gate (1300) to E Baldur's Gate (0800)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext0800s~
-					from_area = ~XAA141~
+					from_area = ~XAA145~
 					from_node = ~n~
-					to_area = ~XAA103~
+					to_area = ~XAA104~
 			END
 		//}
 		
-		//{ SE Baldur's Gate to S Baldur's Gate
+		//{ SE Baldur's Gate (1300) to S Baldur's Gate (1200)
 			LPF ADD_WORLDMAP_LINKS
 				INT_VAR
 					distance_scale = 0
 					encounter_probability = 0
 				STR_VAR
 					entry = ~Ext1200e~
-					from_area = ~XAA141~
+					from_area = ~XAA145~
 					from_node = ~n~
-					to_area = ~XAA106~
+					to_area = ~XAA108~
 			END
 		//}
 		

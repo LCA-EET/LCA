@@ -4,7 +4,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_SarevokTransformTimerSet", "MYAREA", 1)
-		SetGlobalTimer("XA_LC_SarevokTransformTimer", "GLOBAL", TWELVE_ROUNDS)
+		SetGlobalTimer("XA_LC_SarevokTransformTimer", "GLOBAL", TEN_ROUNDS)
 		Continue()
 END
 
