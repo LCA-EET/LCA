@@ -14,6 +14,7 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
+		Wait(2)
 		FadeToColor([20.0],0)
 		Wait(2)
 		CopyGroundPilesTo("XACS13",[486.202])  
@@ -29,7 +30,17 @@ THEN
 		ApplySpellRES("cdpr417",Player4)  // Lesser Restoration
 		ApplySpellRES("cdpr417",Player5)  // Lesser Restoration
 		ApplySpellRES("cdpr417",Player6)  // Lesser Restoration
-		Wait(3)
+		Wait(1) 
+		// Take the party to the master area, so that they can save the game 
+		LeaveAreaLUAPanic("AR2800", "", [0.0], N)
+		LeaveAreaLUA("AR2800", "", [0.0], N)
+		ActionOverride(Player2,LeaveAreaLUA("AR2800", "", [0.0], N))
+		ActionOverride(Player3,LeaveAreaLUA("AR2800", "", [0.0], N))
+		ActionOverride(Player4,LeaveAreaLUA("AR2800", "", [0.0], N))
+		ActionOverride(Player5,LeaveAreaLUA("AR2800", "", [0.0], N))
+		ActionOverride(Player6,LeaveAreaLUA("AR2800", "", [0.0], N))
+		Wait(2)
+		LeaveAreaLUAPanic("XACS12","",[182.419],NE) 
 		LeaveAreaLUA("XACS12","",[182.419],NE)  
 		ActionOverride(Player2,LeaveAreaLUA("XACS12","",[389.303],SW))  
 		ActionOverride(Player3,LeaveAreaLUA("XACS12","",[409.328],SW))  

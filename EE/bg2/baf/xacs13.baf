@@ -1,13 +1,4 @@
 IF
-	GlobalLT("XA_LC_MasterChanged", "MYAREA", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_LC_MasterChanged", "MYAREA", 1)
-		SetMasterArea("XACS13")
-		Continue()
-END
-
-IF
 	Global("soa_complete", "GLOBAL", 0)
 THEN
 	RESPONSE #100

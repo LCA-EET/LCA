@@ -270,8 +270,9 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @5115 = ~XACORBAG~
 @5116 = ~SetGlobal("XA_LC_RetainAllRBG", "GLOBAL", 1)~
 @5117 = ~SetGlobal("XA_LC_RetainAllRBG", "GLOBAL", 0)~ 
-@5118 = ~SetGlobal("FinalBattle", "GLOBAL", 1)~
-@5119 = ~SetGlobal("FinalBattle", "GLOBAL", 0)~
+@5118 = ~SetGlobal("DefeatedJon", "GLOBAL", 1)~
+@5119 = ~SetGlobal("DefeatedJon", "GLOBAL", 0)~
+@5120 = ~SetMasterArea("AR2800")~
 
 @6000 = ~Return to Baldur's Gate Debug~
 @6001 = ~Item Test~
