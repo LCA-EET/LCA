@@ -3,6 +3,7 @@ IF
 	InMyArea("XA800W")
 	GlobalLT("XA_LC_ElfsongTimerSet", "MYAREA", 1)
 	GlobalLT("XA_LC_SavedElfsong", "GLOBAL", 1)
+	TriggerOverride("XA800M", See(Player1))
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_ElfsongTimerSet", "MYAREA", 1)
@@ -14,12 +15,12 @@ THEN
 END
 
 IF 
-	InMyArea(Player1)
 	InMyArea("XA800M")
 	InMyArea("XA800W")
 	GlobalTimerExpired("XA_LC_ElfsongTimer", "GLOBAL")
 	GlobalLT("XA_LC_SavedElfsong", "GLOBAL", 1)	
 	GlobalLT("XA_LC_800MW", "GLOBAL", 1)
+	TriggerOverride("XA800M", See(Player1))
 THEN
 	RESPONSE #50
 		SetGlobalTimer("XA_LC_ElfsongTimer", "GLOBAL", TWO_MINUTES) 
