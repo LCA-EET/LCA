@@ -44,6 +44,7 @@ INCLUDE ~%MOD_FOLDER%/generated/c/generated.tph~
 INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 
 //{ Worldmap
+	/*
 	LAF FIND_FREE_PVRZ_INDEX
 		INT_VAR
 			num_to_reserve = 2
@@ -56,18 +57,48 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 	PRINT ~PVRZ_0: %firstIndex%~
 	PRINT ~PVRZ_1: %secondIndex%~
 	
-	COPY ~%MOD_FOLDER%/rbg/pvrz/mosmapA.pvrz~ ~override/mos%firstIndex%.pvrz~
-	COPY ~%MOD_FOLDER%/rbg/pvrz/mosmapB.pvrz~ ~override/mos%secondIndex%.pvrz~
+	COPY ~%MOD_FOLDER%/rbg/pvrz/mos0000.pvrz~ ~override/mos%firstIndex%.pvrz~
+	COPY ~%MOD_FOLDER%/rbg/pvrz/mos0001.pvrz~ ~override/mos%secondIndex%.pvrz~
+
+	WRITE_LONG 0x18 %firstIndex%
+	WRITE_LONG 0x34 %firstIndex%
+	WRITE_LONG 0x50 %secondIndex%
+	WRITE_LONG 0x6C %secondIndex%
+	
+	
+	OUTER_SET xa_originalbase = 0
+	OUTER_SET xa_newbase = 0
 	
 	COPY ~%MOD_FOLDER%/rbg/mos/xamaprbg.mos~ ~override~
-	WRITE_LONG 0x18 firstIndex
-	WRITE_LONG 0x34 firstIndex
-	WRITE_LONG 0x50 secondIndex
-	WRITE_LONG 0x6C secondIndex
+	COPY_EXISTING ~xamaprbg.mos~ ~override~
+	LPF UPDATE_PVRZ_INDICES 
+		RET
+			xa_originalbase = original_base_index
+			xa_newbase = new_base_index
+	END
 	
+	PRINT ~Original Base: %xa_originalbase%~
+	PRINT ~New Base: %xa_newbase%~
+	
+	LAF INSTALL_PVRZ
+		INT_VAR
+			original_base_index = %xa_originalbase%
+			new_base_index = %xa_newbase%
+		STR_VAR
+			source_file = ~%MOD_FOLDER%/rbg/pvrz/mos0000.pvrz~
+	END
+	
+	LAF INSTALL_PVRZ
+		INT_VAR
+			original_base_index = %xa_originalbase%
+			new_base_index = (%xa_newbase% + 1)
+		STR_VAR
+			source_file = ~%MOD_FOLDER%/rbg/pvrz/mos0001.pvrz~
+	END
+	*/
+	COPY ~%MOD_FOLDER%/rbg/mos/xamaprbg.mos~ ~override~
 	COPY ~%MOD_FOLDER%/rbg/wmp/xamaprbg.wmp~ ~override~
 	WRITE_LONG 0x24 RESOLVE_STR_REF(@4136) // Map Name
-	
 	WRITE_LONG 0x978 RESOLVE_STR_REF(@4137) // Wyrm Crossing Label
 		
 	//{ Wyrm's Crossing (0900) to E Baldur's Gate (0800)
