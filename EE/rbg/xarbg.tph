@@ -44,58 +44,6 @@ INCLUDE ~%MOD_FOLDER%/generated/c/generated.tph~
 INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 
 //{ Worldmap
-	/*
-	LAF FIND_FREE_PVRZ_INDEX
-		INT_VAR
-			num_to_reserve = 2
-			start_index = 1000
-		RET
-			firstIndex = free_index
-	END
-	OUTER_SET secondIndex = (firstIndex + 1)
-	
-	PRINT ~PVRZ_0: %firstIndex%~
-	PRINT ~PVRZ_1: %secondIndex%~
-	
-	COPY ~%MOD_FOLDER%/rbg/pvrz/mos0000.pvrz~ ~override/mos%firstIndex%.pvrz~
-	COPY ~%MOD_FOLDER%/rbg/pvrz/mos0001.pvrz~ ~override/mos%secondIndex%.pvrz~
-
-	WRITE_LONG 0x18 %firstIndex%
-	WRITE_LONG 0x34 %firstIndex%
-	WRITE_LONG 0x50 %secondIndex%
-	WRITE_LONG 0x6C %secondIndex%
-	
-	
-	OUTER_SET xa_originalbase = 0
-	OUTER_SET xa_newbase = 0
-	
-	COPY ~%MOD_FOLDER%/rbg/mos/xamaprbg.mos~ ~override~
-	COPY_EXISTING ~xamaprbg.mos~ ~override~
-	LPF UPDATE_PVRZ_INDICES 
-		RET
-			xa_originalbase = original_base_index
-			xa_newbase = new_base_index
-	END
-	
-	PRINT ~Original Base: %xa_originalbase%~
-	PRINT ~New Base: %xa_newbase%~
-	
-	LAF INSTALL_PVRZ
-		INT_VAR
-			original_base_index = %xa_originalbase%
-			new_base_index = %xa_newbase%
-		STR_VAR
-			source_file = ~%MOD_FOLDER%/rbg/pvrz/mos0000.pvrz~
-	END
-	
-	LAF INSTALL_PVRZ
-		INT_VAR
-			original_base_index = %xa_originalbase%
-			new_base_index = (%xa_newbase% + 1)
-		STR_VAR
-			source_file = ~%MOD_FOLDER%/rbg/pvrz/mos0001.pvrz~
-	END
-	*/
 	COPY ~%MOD_FOLDER%/rbg/mos/xamaprbg.mos~ ~override~
 	COPY ~%MOD_FOLDER%/rbg/wmp/xamaprbg.wmp~ ~override~
 	WRITE_LONG 0x24 RESOLVE_STR_REF(@4136) // Map Name
@@ -123,7 +71,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 			STR_VAR
 				entry = ~Ext0200w~
 				from_area = ~XAA233~
-				from_node = ~n~
+				from_node = ~e~
 				to_area = ~XAA134~
 		END
 		//}
@@ -136,7 +84,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 				STR_VAR
 					entry = ~Ext0200w~
 					from_area = ~XAA233~
-					from_node = ~n~
+					from_node = ~s~
 					to_area = ~XAA168~
 			END
 		//}
@@ -151,7 +99,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 			STR_VAR
 				entry = ~Ext0100e~
 				from_area = ~XAA134~
-				from_node = ~n~
+				from_node = ~w~
 				to_area = ~XAA233~
 		END
 		//}
@@ -164,7 +112,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 				STR_VAR
 					entry = ~Ext0300w~
 					from_area = ~XAA134~
-					from_node = ~n~
+					from_node = ~e~
 					to_area = ~XAA107~
 			END
 		//}
@@ -177,7 +125,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 				STR_VAR
 					entry = ~Ext0700n~
 					from_area = ~XAA134~
-					from_node = ~n~
+					from_node = ~s~
 					to_area = ~XAA109~
 			END
 		//}
@@ -192,7 +140,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 				STR_VAR
 					entry = ~Ext0200e~
 					from_area = ~XAA107~
-					from_node = ~n~
+					from_node = ~w~
 					to_area = ~XAA134~
 			END
 		//}
@@ -205,7 +153,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 				STR_VAR
 					entry = ~Ext0800n~
 					from_area = ~XAA107~
-					from_node = ~n~
+					from_node = ~s~
 					to_area = ~XAA104~
 			END
 		//}
@@ -233,7 +181,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 				STR_VAR
 					entry = ~Ext0700w~
 					from_area = ~XAA168~
-					from_node = ~n~
+					from_node = ~e~
 					to_area = ~XAA109~
 			END
 		//}
@@ -246,7 +194,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 				STR_VAR
 					entry = ~Ext1100n~
 					from_area = ~XAA168~
-					from_node = ~n~
+					from_node = ~s~
 					to_area = ~XAA146~
 			END
 		//}
@@ -274,7 +222,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 				STR_VAR
 					entry = ~Ext0600e~
 					from_area = ~XAA109~
-					from_node = ~n~
+					from_node = ~w~
 					to_area = ~XAA168~
 			END
 		//}
@@ -287,7 +235,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 				STR_VAR
 					entry = ~Ext0800w~
 					from_area = ~XAA109~
-					from_node = ~n~
+					from_node = ~e~
 					to_area = ~XAA104~
 			END
 		//}
@@ -300,7 +248,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 				STR_VAR
 					entry = ~Ext1200n~
 					from_area = ~XAA109~
-					from_node = ~n~
+					from_node = ~s~
 					to_area = ~XAA108~
 			END
 		//}
@@ -328,7 +276,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 				STR_VAR
 					entry = ~Ext0700e~
 					from_area = ~XAA104~
-					from_node = ~n~
+					from_node = ~w~
 					to_area = ~XAA109~
 			END
 		//}
@@ -341,7 +289,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 				STR_VAR
 					entry = ~Ext1300n~
 					from_area = ~XAA104~
-					from_node = ~n~
+					from_node = ~s~
 					to_area = ~XAA145~
 			END
 		//}
@@ -354,7 +302,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 				STR_VAR
 					entry = ~Exit0800~
 					from_area = ~XAA104~
-					from_node = ~n~
+					from_node = ~e~
 					to_area = ~XAA100~
 			END
 		//}
@@ -382,7 +330,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 				STR_VAR
 					entry = ~Ext1200w~
 					from_area = ~XAA146~
-					from_node = ~n~
+					from_node = ~e~
 					to_area = ~XAA108~
 			END
 		//}
@@ -410,7 +358,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 				STR_VAR
 					entry = ~Ext1300w~
 					from_area = ~XAA108~
-					from_node = ~n~
+					from_node = ~e~
 					to_area = ~XAA145~
 			END
 		//}
@@ -423,7 +371,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 				STR_VAR
 					entry = ~Ext1100e~
 					from_area = ~XAA108~
-					from_node = ~n~
+					from_node = ~w~
 					to_area = ~XAA146~
 			END
 		//}
@@ -451,7 +399,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 				STR_VAR
 					entry = ~Ext1200e~
 					from_area = ~XAA145~
-					from_node = ~n~
+					from_node = ~w~
 					to_area = ~XAA108~
 			END
 		//}
