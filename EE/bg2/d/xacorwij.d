@@ -1149,6 +1149,7 @@ IF ~~ THEN BEGIN XA_BackToBG_RTL_Leave
 	
 	IF ~~ THEN
 	DO ~
+		SetWorldmap("XAMAPRBG")
 		SetGlobal("XA_LC_BackToBG", "GLOBAL", 3)
 		SetGlobal("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
 	~
