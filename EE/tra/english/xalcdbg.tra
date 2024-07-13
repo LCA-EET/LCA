@@ -1,358 +1,330 @@
-@2000 = ~Welcome to the LCA Configuration Assistant. Select one of the options below.~
-@2001 = ~Adjust Corwin banter timers.~
-@2002 = ~Adjust Caelar banter timers.~
-@2003 = ~Select the new interval between banters. The default is forty-eight hours.~
-@2004 = ~One hour.~
-@2005 = ~Two hours.~
-@2006 = ~Four hours.~
-@2007 = ~Eight hours.~
-@2008 = ~Sixteen hours.~
-@2009 = ~Twenty-four hours.~
-@2010 = ~Forty-eight hours.~
-@2011 = ~Disable Corwin Banter Timer.~
-@2012 = ~Disable Caelar Banter Timer.~
-@2013 = ~Return to main menu.~
-@2014 = ~Exit.~
-@2015 = ~Version Check.~
-@2016 = ~Re-apply Corwin sound swap (See note in User Guide).~
-@2017 = ~Advance the time.~
-@2018 = ~Change Corwin's Portrait (LCA)~
-@2019 = ~Change Corwin's Portrait (SoD)~
-@2020 = ~Report a bug.~
-@2021 = ~Support the creator of the LCA mod.~
-@2022 = ~Please visit www.patreon.com/EETMods. There, you can make either a one-time or a recurring contribution. Thank you for your generosity.~
-@2023 = ~Access BG2 Initial Configuration Menu.~
-@2024 = ~LCA v1.1, 2024-01-13~
-@2025 = ~Twelve Hours~
-@2026 = ~One Day~
-@2027 = ~Two Days~
-@2028 = ~Three Days~
-@2029 = ~WARNING: The debugger is meant to be used for testing purposes only. Improper alterations to the game state can crash the game, or make it so that you cannot complete the game.~
-@2030 = ~I understand the risks. Proceed.~
-@2031 = ~You can report a bug by e-mailing LCAMod@danielvalle.net. It is recommended (but not required) that you include your save game with the bug report.~
-@2032 = ~Thanks for playing!~
-@2033 = ~Twenty Hours.~
-@2034 = ~Thirty-six hours.~
-@2035 = ~Sixty hours.~
-@2036 = ~Seventy-two hours.~
-@2037 = ~The change you requested has been processed.~
-@2038 = ~Open Debugger.~
-@2039 = ~Dismiss Assistant.~
-@2040 = ~Select one of the options below.~
-@2041 = ~One hour.~ 
-@2042 = ~Two hours.~ 
-@2043 = ~Four hours.~
-@2044 = ~Eight hours.~ 
-@2045 = ~Twelve hours.~
-@2046 = ~Select the new interval between banters. The default is forty-eight hours.~
-@2047 = ~Sixteen hours.~ 
-@2048 = ~Twenty hours.~ 
-@2049 = ~Twenty-four hours.~
-@2050 = ~Thirty-six hours.~
-@2051 = ~Forty-eight hours.~
-@2052 = ~Sixty hours.~ 
-@2053 = ~Seventy-two hours.~
-@2054 = ~The change you requested has been processed.~
-@2055 = ~Return to main menu.~
-@2056 = ~Exit.~
-@2057 = ~How can I help you?~ 
-@2058 = ~I do not need assistance at this time.~
-@2059 = ~Dismiss Debugger.~
-@2060 = ~Return to the previous menu.~
-@2061 = ~Spawn Target Dummy~
-@2062 = ~Please visit www.patreon.com/EETMods. There, you can make either a one-time or a recurring contribution. Thank you for your generosity.~ 
-@2063 = ~I accept payment through the following services (click below to learn more):~
-@2064 = ~Patreon.~
-@2065 = ~Paypal.~
-@2066 = ~Venmo.~
-@2067 = ~Return to the prior menu.~
-@2068 = ~You can send funds to the PayPal account associated with the following e-mail address:
+@2000=~Welcome to the LCA Configuration Assistant. Select one of the options below.~
+@2001=~Adjust Corwin banter timers.~
+@2002=~Adjust Caelar banter timers.~
+@2004=~One hour.~
+@2005=~Two hours.~
+@2006=~Four hours.~
+@2007=~Eight hours.~
+@2013=~Return to main menu.~
+@2014=~Exit.~
+@2015=~Version Check.~
+@2016=~Re-apply Corwin sound swap (See note in User Guide).~
+@2017=~Advance the time.~
+@2018=~Change Corwin's Portrait (LCA)~
+@2019=~Change Corwin's Portrait (SoD)~
+@2020=~Report a bug.~
+@2021=~Support the creator of the LCA mod.~
+@2024=~LCA v1.1, 2024-01-13~
+@2025=~Twelve Hours~
+@2026=~One Day~
+@2027=~Two Days~
+@2028=~Three Days~
+@2029=~WARNING: The debugger is meant to be used for testing purposes only. Improper alterations to the game state can crash the game, or make it so that you cannot complete the game.~
+@2030=~I understand the risks. Proceed.~
+@2031=~You can report a bug by e-mailing LCAMod@danielvalle.net. It is recommended (but not required) that you include your save game with the bug report.~
+@2032=~Thanks for playing!~
+@2038=~Open Debugger.~
+@2039=~Dismiss Assistant.~
+@2041=~One hour.~
+@2042=~Two hours.~
+@2043=~Four hours.~
+@2044=~Eight hours.~
+@2045=~Twelve hours.~
+@2046=~Select the new interval between banters. The default is forty-eight hours.~
+@2047=~Sixteen hours.~
+@2048=~Twenty hours.~
+@2049=~Twenty-four hours.~
+@2050=~Thirty-six hours.~
+@2051=~Forty-eight hours.~
+@2052=~Sixty hours.~
+@2053=~Seventy-two hours.~
+@2054=~The change you requested has been processed.~
+@2055=~Return to main menu.~
+@2056=~Exit.~
+@2057=~How can I help you?~
+@2061=~Spawn Target Dummy~
+@2062=~Please visit www.patreon.com/EETMods. There, you can make either a one-time or a recurring contribution. Thank you for your generosity.~
+@2063=~I accept payment through the following services (click below to learn more):~
+@2064=~Patreon.~
+@2065=~Paypal.~
+@2066=~Venmo.~
+@2067=~Return to the prior menu.~
+@2068=~You can send funds to the PayPal account associated with the following e-mail address:
 LCAMod@danielvalle.net.
 Please indicate 'LCA' in the notes for the payment. Thank you for your generosity.~
-@2069 = ~You can send funds to the following Venmo account associated with Daniel Valle, LLC:
+@2069=~You can send funds to the following Venmo account associated with Daniel Valle, LLC:
 @dvallellc
 Please indicate 'LCA' in the notes for the payment. Thank you for your generosity.~
-@2070 = ~Save Game to Slot 0.~
-
-@3000 = ~BG1 Debug~
-@3001 = ~Item Test~
-@3002 = ~xaambelt.itm~
-@3003 = ~xaffbook.itm~
-@3004 = ~xaltrbrn.itm~
-@3005 = ~All BG1 Items~
-@3006 = ~Area Test~
-@3007 = ~AR1316 - Corwin's Home, L1~
-@3008 = ~BG1316 - Corwin's Home, L1~
-@3009 = ~AR1317 - Corwin's Home, L2~
-@3010 = ~BG1317 - Corwin's Home, L2~
-@3011 = ~Return to the previous menu.~
-@3012 = ~Exit.~
-@3013 = ~Dismiss Debugger.~
-
-
-@4000 = ~SoD Debug~
-@4001 = ~Cutscene Test~
-@4002 = ~Tent Cutscene (XATNTCS)~
-@4003 = ~Archery Lesson (XALBPROF)~
-@4004 = ~Create Corwin (CORWIN7), and add her to the party.~
-@4005 = ~Adjust variables.~
-@4006 = ~SetGlobal("bd_corwin_romanceactive","global",0)~
-@4007 = ~SetGlobal("bd_corwin_romanceactive","global",1)~
-@4008 = ~SetGlobal("bd_corwin_romanceactive","global",2)~
-@4009 = ~SetGlobal("bd_corwin_romanceactive","global",3)~
-@4010 = ~SetGlobal("bd_player_exiled","global",0)~
-@4011 = ~SetGlobal("bd_player_exiled","global",1)~
-@4012 = ~Corwin Letter Interaction (Romantic)~
-@4013 = ~Corwin Letter Interaction (Non-Romantic)~
-@4014 = ~xaltrcor~
-@4015 = ~xaltrsch~
-@4016 = ~xaamulet~
-@4017 = ~All SoD Items~
-@4018 = ~Trial Cutscene (Ashatiel honorable duel.)~
-@4019 = ~Trial Cutscene.~
-@4020 = ~Escape from Avernus (BDCUT59A)~
-@4021 = ~SetGlobal("XA_LC_VaiBoost","GLOBAL",1)~
-@4022 = ~IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 3)~
-@4023 = ~Area Test~
-@4024 = ~BD1000~
-@4025 = ~BD3000~
-@4026 = ~BD7100~
-@4027 = ~BD4300 Kiss~
-@4028 = ~Change Campaign from BGEE to SoD~
-@4029 = ~Jail Visit (Exile)~
-@4030 = ~Jail Visit (Execute)~
-@4031 = ~SetGlobal("XA_LC_CorwinContinue","GLOBAL",2)~
-@4032 = ~SetGlobal("XA_LC_CorwinContinue","GLOBAL",1)~
-@4033 = ~SetGlobal("XA_LC_CorwinContinue","GLOBAL",0)~
-@4034 = ~SetGlobal("XA_LC_ToldTruthBhaal", "GLOBAL", 1)~
-@4035 = ~SetGlobal("BD_DOD_PHYLACTERY_DESTROYED","GLOBAL",0)~
-@4036 = ~SetGlobal("BD_DOD_PHYLACTERY_DESTROYED","GLOBAL",1)~
-@4037 = ~Adjust experience.~
-@4038 = ~Player 1 (+ 25,000)~
-@4039 = ~Player 2 (+ 25,000)~
-@4040 = ~Player 3 (+ 25,000)~
-@4041 = ~Player 4 (+ 25,000)~
-@4042 = ~Player 5 (+ 25,000)~
-@4043 = ~Player 6 (+ 25,000)~
-@4044 = ~SetGlobal("bd_ddd","global",0)~
-@4045 = ~SetGlobal("bd_ddd","global",1)~
-@4046 = ~SetGlobal("bd_ddd","global",2)~
-@4047 = ~SetGlobal("bd_ddd","global",3)~
-@4048 = ~SetGlobal("XA_LC_TentCS", "GLOBAL", 0)~
-@4049 = ~SetGlobalTimer("bd_dream_timer", "GLOBAL", ONE_MINUTE)~
-@4050 = ~Dream Condition Check~
-@4051 = ~GlobalGT("chapter","global",7)~
-@4052 = ~GlobalGT("chapter","global",8)~
-@4053 = ~GlobalGT("chapter","global",9)~
-@4054 = ~GlobalGT("chapter","global",10)~
-@4055 = ~GlobalLT("chapter","global",13)~
-@4056 = ~Global("bd_ddd", "global", 0)~
-@4057 = ~Global("bd_ddd", "global", 1)~
-@4058 = ~Global("bd_ddd", "global", 2)~
-@4059 = ~Global("bd_ddd", "global", 3)~
-@4060 = ~!GlobalTimerNotExpired("bd_dream_timer","global")~
-
-@5000 = ~BG2 Debug~
-@5001 = ~Area Test~
-@5002 = ~xa1000~
-@5003 = ~xacs05~
-@5004 = ~xacs06~
-@5005 = ~xacs12~
-@5006 = ~xacs13~
-@5007 = ~xapen~
-@5008 = ~Item Test~
-@5009 = ~xaamul2~
-@5010 = ~xacorbg3~
-@5011 = ~xacorbg4~
-@5012 = ~xacorbo3~
-@5013 = ~xacorbod~
-@5014 = ~xacorbow~
-@5015 = ~xacorch4~
-@5016 = ~xacorchn~
-@5017 = ~xalcor1a~
-@5018 = ~xalcor2a~
-@5019 = ~xalcorw1~
-@5020 = ~xalcorw2~
-@5021 = ~xaldunc~
-@5022 = ~xaldunca~
-@5023 = ~xastdag~
-@5024 = ~All BG2 Items~
-@5025 = ~Cutscene Test~
-@5026 = ~xacs02a~
-@5027 = ~xacs03a~
-@5028 = ~xacs04a~
-@5029 = ~xacs05a~
-@5030 = ~xacs06a~
-@5031 = ~xacs07a~
-@5032 = ~Place Corwin in the Athkatla Magistrate.~
-@5033 = ~Reset Corwin's Banters.~
-@5034 = ~Parameter Check.~
-@5035 = ~XA_LC_PlayerExiled = 0~
-@5036 = ~XA_LC_PlayerExiled = 1~
-@5037 = ~XA_LC_CorwinContinue = 0~
-@5038 = ~XA_LC_CorwinContinue = 1~
-@5039 = ~XA_LC_CorwinContinue = 2~
-@5040 = ~XA_LC_CaelarAliveInAvernus = 0~
-@5041 = ~XA_LC_CaelarAliveInAvernus = 1~
-@5042 = ~XA_LC_DrinksWithCorwin = 0~
-@5043 = ~XA_LC_DrinksWithCorwin = 1~
-@5044 = ~XA_LC_HonorableDuel = 0~
-@5045 = ~XA_LC_HonorableDuel = 1~
-@5046 = ~XA_LC_SavedJhasso = 0~
-@5047 = ~XA_LC_SavedJhasso = 1~
-@5048 = ~XA_LC_SavedAldeth = 0~
-@5049 = ~XA_LC_SavedAldeth = 1~
-@5050 = ~XA_LC_AldethFF = 0~
-@5051 = ~XA_LC_AldethFF = 1~
-@5052 = ~XA_LC_MetRohma = 0~
-@5053 = ~XA_LC_MetRohma = 1~
-@5054 = ~XA_LC_SacrificeCorwin = 0~
-@5055 = ~XA_LC_SacrificeCorwin = 1~
-@5056 = ~XA_LC_GaveEarrings = 0~
-@5057 = ~XA_LC_GaveEarrings = 1~
-@5058 = ~XA_LC_HappyEnding = 0~
-@5059 = ~XA_LC_HappyEnding = 1~
-@5060 = ~XA_LC_TrickedLarze = 0~
-@5061 = ~XA_LC_TrickedLarze = 1~
-@5062 = ~XA_LC_HelpedForthel = 0~
-@5063 = ~XA_LC_HelpedForthel = 1~
-@5064 = ~XA_LC_MetKerrachus = 0~
-@5065 = ~XA_LC_MetKerrachus = 1~
-@5066 = ~XA_LC_StartedInBG1 = 0~
-@5067 = ~XA_LC_StartedInBG1 = 1~
-@5068 = ~XA_LC_StartedInSoD = 0~
-@5069 = ~XA_LC_StartedInSoD = 1~
-@5070 = ~XA_LC_StartedInBG2 = 0~
-@5071 = ~XA_LC_StartedInBG2 = 1~
-@5072 = ~AR1002 (Athkatla Magistrate)~
-@5073 = ~xacs08a~
-@5074 = ~xacs09a~
-@5075 = ~Interaction Test~
-@5076 = ~Corwin Death from Bite.~
-@5077 = ~Music Test~
-@5078 = ~Ducal Palace (xamu00)~
-@5079 = ~SoD Track 1 (xamu01)~
-@5080 = ~Corwin Romance A (xamu02)~
-@5081 = ~Corwin Romance B (xamu03)~
-@5082 = ~Perform BG2 Final Save.~
-@5083 = ~Adjust Variables~
-@5084 = ~SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 2)~
-@5085 = ~SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 1)~
-@5086 = ~SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 0)~
-@5087 = ~SetGlobal("XA_LC_CorwinSexBoost", "GLOBAL", 1)~
-@5088 = ~SetGlobal("XA_LC_TimesHadSex", "GLOBAL", 1)~
-@5089 = ~Godbow x3~
-@5090 = ~Spawn Corwin (XACORWIN) and add her to the party.~
-@5091 = ~IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 3)~
-@5092 = ~SetGlobal("XA_LC_CorwinLesson", "GLOBAL", 1)~
-@5093 = ~xad100~
-@5094 = ~xad101~
-@5095 = ~Spell Test~
-@5096 = ~Vitality Boost (Player)~
-@5097 = ~Vitality Boost (Corwin)~
-@5098 = ~GlobalLT("XA_LC_Sex2TimerSet", "LOCALS", 1)~
-@5099 = ~!GlobalLT("XA_LC_Sex2TimerSet", "LOCALS", 1)~
-@5100 = ~GlobalGT("XA_LC_TimesHadSex", "GLOBAL", 0)~
-@5101 = ~!GlobalGT("XA_LC_TimesHadSex", "GLOBAL", 0)~
-@5102 = ~GlobalTimerExpired("XA_LC_CorwinSex_2_Timer", "GLOBAL")~
-@5103 = ~!GlobalTimerExpired("XA_LC_CorwinSex_2_Timer", "GLOBAL")~
-@5104 = ~GlobalLT("XA_LC_CorwinSex_2", "GLOBAL", 1)~
-@5105 = ~!GlobalLT("XA_LC_CorwinSex_2", "GLOBAL", 1)~
-@5106 = ~Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)~
-@5107 = ~!Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)~
-@5108 = ~GlobalLT("XA_LC_CorwinSex2_Init", "GLOBAL", 1)~
-@5109 = ~!GlobalLT("XA_LC_CorwinSex2_Init", "GLOBAL", 1)~
-@5110 = ~Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)~
-@5111 = ~!Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)~
-@5112 = ~Global("XA_LC_CorwinCanHeal", "GLOBAL", 1)~
-@5113 = ~!Global("XA_LC_CorwinCanHeal", "GLOBAL", 1)~
-@5114 = ~Sex 2 Condition Check~
-@5115 = ~XACORBAG~
-@5116 = ~SetGlobal("XA_LC_RetainAllRBG", "GLOBAL", 1)~
-@5117 = ~SetGlobal("XA_LC_RetainAllRBG", "GLOBAL", 0)~ 
-@5118 = ~SetGlobal("DefeatedJon", "GLOBAL", 1)~
-@5119 = ~SetGlobal("DefeatedJon", "GLOBAL", 0)~
-@5120 = ~SetMasterArea("AR2800")~
-
-@6000 = ~Return to Baldur's Gate Debug~
-@6001 = ~Item Test~
-@6002 = ~All RBG Items~
-@6003 = ~Engagement Rings (Unenchanted)~
-@6004 = ~Engagement Rings (Minor Enchantment)~
-@6005 = ~Lyriel's Gratitude~
-@6006 = ~Demon Gifts~
-@6007 = ~Engagement Rings (Major Enchantment)~
-@6008 = ~Beno's Head~
-@6009 = ~Ledger~
-@6010 = ~Dragonspear Medal~
-@6011 = ~Shipping Manifest (Encoded)~
-@6012 = ~Ring of Mind Shielding~
-@6013 = ~Rohma's Doll~
-@6014 = ~Shipping Manifest (Decoded)~
-@6015 = ~Shipping Manifest (Decoded +)~
-@6016 = ~Adjust Variables~
-@6017 = ~Soultaker (Fake)~
-@6018 = ~Soultaker (Beno)~
-@6019 = ~SetGlobal("XA_ReturnToBG", "GLOBAL", 1)~
-@6020 = ~Area Test~
-@6021 = ~Wyrm's Crossing (AR0900 / XAA100)~
-@6022 = ~Wyrm's Crossing (Proposal CS)~
-@6023 = ~Change Worldmap (xamaprbg).~
-@6024 = ~Text Screen Test~
-@6025 = ~XABAD1~
-@6026 = ~XABAD2~
-@6027 = ~XABAD3~
-@6028 = ~XABG~
-@6029 = ~XABGROM~
-@6030 = ~XADINNER~
-@6031 = ~XADINROM~
-@6032 = ~XASARA1~
-@6033 = ~XASARA2~
-@6034 = ~XASARA3~
-@6035 = ~XASARA4~
-@6036 = ~Cutscene Test~
-@6037 = ~XACS13~
-@6038 = ~XAHOME~
-@6039 = ~XACSHOW~
-@6040 = ~XAA592 (AR0102)~
-@6041 = ~XAA228 (AR0112)~
-@6042 = ~XAA330 (AR0134)~
-@6043 = ~XAA168 (AR0600)~
-@6044 = ~XAA104 (AR0800)~
-@6045 = ~XAA145 (AR1300)~
-@6046 = ~XAA290 (AR0601)~
-@6047 = ~XAA291 (AR0127)~
-@6048 = ~XAA475 (AR0101)~
-@6049 = ~XAA138 (AR0103)~
-@6050 = ~XAA288 (AR1113)~
-@6051 = ~XAKIDNAP~
-@6052 = ~XAWLKHOM~
-@6053 = ~XADEMSAN~
-@6054 = ~Interaction Test~
-@6055 = ~XANARZU~
-@6056 = ~XAPAINT1~
-@6057 = ~XADUC3~
-@6058 = ~XAUCTEMP~
-@6059 = ~AR0123 / XAA106 (Undercity)~
-@6060 = ~XAG3 (Candlekeep)~
-@6061 = ~XAG3ENT~
-@6062 = ~XAG2~
-@6063 = ~XAG2ENT~
-@6064 = ~XAG1ENT~
-@6065 = ~XAG1~
-@6066 = ~XAPROPOS~
-@6067 = ~Basilisk Figurine~
-@6068 = ~SetGlobal("XA_LC_SavedTimotey", "GLOBAL", 2)~
-@6069 = ~Store Test~
-@6070 = ~XAMELKOR~
-@6071 = ~XAWVBAR~
-@6072 = ~Dragon Armor (xadarmor)~
-@6073 = ~Dragonskin Robe (xadrobe)~
-@6074 = ~Dragonscale Shield (xadshld)~
-@6075 = ~xaduc2~
-@6076 = ~xaducal~
-@7000 = ~ToB Debug~
-@7001 = ~XAG104 (BD5300) - Kanaglym~
-@7002 = ~Spawn Caelar (XACAELAR) and add her to the party.~ 
-@7003 = ~XAG100 (BD4500) - Avernus Bridge~
-@7004 = ~XA4000 (AR4000) - LCA Spirit Heads~
+@2070=~Save Game to Slot 0.~
+@3000=~BG1 Debug~
+@3001=~Item Test~
+@3002=~xaambelt.itm~
+@3003=~xaffbook.itm~
+@3004=~xaltrbrn.itm~
+@3005=~All BG1 Items~
+@3006=~Area Test~
+@3007=~AR1316 - Corwin's Home, L1~
+@3008=~BG1316 - Corwin's Home, L1~
+@3009=~AR1317 - Corwin's Home, L2~
+@3010=~BG1317 - Corwin's Home, L2~
+@3011=~Return to the previous menu.~
+@3012=~Exit.~
+@3013=~Dismiss Debugger.~
+@4000=~SoD Debug~
+@4001=~Cutscene Test~
+@4002=~Tent Cutscene (XATNTCS)~
+@4003=~Archery Lesson (XALBPROF)~
+@4004=~Create Corwin (CORWIN7), and add her to the party.~
+@4005=~Adjust variables.~
+@4006=~SetGlobal("bd_corwin_romanceactive","global",0)~
+@4007=~SetGlobal("bd_corwin_romanceactive","global",1)~
+@4008=~SetGlobal("bd_corwin_romanceactive","global",2)~
+@4009=~SetGlobal("bd_corwin_romanceactive","global",3)~
+@4010=~SetGlobal("bd_player_exiled","global",0)~
+@4011=~SetGlobal("bd_player_exiled","global",1)~
+@4012=~Corwin Letter Interaction (Romantic)~
+@4013=~Corwin Letter Interaction (Non-Romantic)~
+@4017=~All SoD Items~
+@4018=~Trial Cutscene (Ashatiel honorable duel.)~
+@4019=~Trial Cutscene.~
+@4020=~Escape from Avernus (BDCUT59A)~
+@4021=~SetGlobal("XA_LC_VaiBoost","GLOBAL",1)~
+@4022=~IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 3)~
+@4023=~Area Test~
+@4024=~BD1000~
+@4025=~BD3000~
+@4026=~BD7100~
+@4027=~BD4300 Kiss~
+@4028=~Change Campaign from BGEE to SoD~
+@4029=~Jail Visit (Exile)~
+@4030=~Jail Visit (Execute)~
+@4031=~SetGlobal("XA_LC_CorwinContinue","GLOBAL",2)~
+@4032=~SetGlobal("XA_LC_CorwinContinue","GLOBAL",1)~
+@4033=~SetGlobal("XA_LC_CorwinContinue","GLOBAL",0)~
+@4034=~SetGlobal("XA_LC_ToldTruthBhaal", "GLOBAL", 1)~
+@4035=~SetGlobal("BD_DOD_PHYLACTERY_DESTROYED","GLOBAL",0)~
+@4036=~SetGlobal("BD_DOD_PHYLACTERY_DESTROYED","GLOBAL",1)~
+@4037=~Adjust experience.~
+@4038=~Player 1 (+ 25,000)~
+@4039=~Player 2 (+ 25,000)~
+@4040=~Player 3 (+ 25,000)~
+@4041=~Player 4 (+ 25,000)~
+@4042=~Player 5 (+ 25,000)~
+@4043=~Player 6 (+ 25,000)~
+@4044=~SetGlobal("bd_ddd","global",0)~
+@4045=~SetGlobal("bd_ddd","global",1)~
+@4046=~SetGlobal("bd_ddd","global",2)~
+@4047=~SetGlobal("bd_ddd","global",3)~
+@4048=~SetGlobal("XA_LC_TentCS", "GLOBAL", 0)~
+@4049=~SetGlobalTimer("bd_dream_timer", "GLOBAL", ONE_MINUTE)~
+@4050=~Dream Condition Check~
+@4051=~GlobalGT("chapter","global",7)~
+@4052=~GlobalGT("chapter","global",8)~
+@4053=~GlobalGT("chapter","global",9)~
+@4054=~GlobalGT("chapter","global",10)~
+@4055=~GlobalLT("chapter","global",13)~
+@4056=~Global("bd_ddd", "global", 0)~
+@4057=~Global("bd_ddd", "global", 1)~
+@4058=~Global("bd_ddd", "global", 2)~
+@4059=~Global("bd_ddd", "global", 3)~
+@4060=~!GlobalTimerNotExpired("bd_dream_timer","global")~
+@5000=~BG2 Debug~
+@5001=~Area Test~
+@5002=~xa1000~
+@5003=~xacs05~
+@5004=~xacs06~
+@5005=~xacs12~
+@5006=~xacs13~
+@5007=~xapen~
+@5008=~Item Test~
+@5009=~xaamul2~
+@5010=~xacorbg3~
+@5011=~xacorbg4~
+@5012=~xacorbo3~
+@5013=~xacorbod~
+@5014=~xacorbow~
+@5015=~xacorch4~
+@5016=~xacorchn~
+@5017=~xalcor1a~
+@5018=~xalcor2a~
+@5019=~xalcorw1~
+@5020=~xalcorw2~
+@5021=~xaldunc~
+@5022=~xaldunca~
+@5023=~xastdag~
+@5024=~All BG2 Items~
+@5025=~Cutscene Test~
+@5026=~xacs02a~
+@5027=~xacs03a~
+@5028=~xacs04a~
+@5029=~xacs05a~
+@5030=~xacs06a~
+@5031=~xacs07a~
+@5032=~Place Corwin in the Athkatla Magistrate.~
+@5033=~Reset Corwin's Banters.~
+@5034=~Parameter Check.~
+@5035=~XA_LC_PlayerExiled = 0~
+@5036=~XA_LC_PlayerExiled = 1~
+@5037=~XA_LC_CorwinContinue = 0~
+@5038=~XA_LC_CorwinContinue = 1~
+@5039=~XA_LC_CorwinContinue = 2~
+@5040=~XA_LC_CaelarAliveInAvernus = 0~
+@5041=~XA_LC_CaelarAliveInAvernus = 1~
+@5042=~XA_LC_DrinksWithCorwin = 0~
+@5043=~XA_LC_DrinksWithCorwin = 1~
+@5044=~XA_LC_HonorableDuel = 0~
+@5045=~XA_LC_HonorableDuel = 1~
+@5046=~XA_LC_SavedJhasso = 0~
+@5047=~XA_LC_SavedJhasso = 1~
+@5048=~XA_LC_SavedAldeth = 0~
+@5049=~XA_LC_SavedAldeth = 1~
+@5050=~XA_LC_AldethFF = 0~
+@5051=~XA_LC_AldethFF = 1~
+@5052=~XA_LC_MetRohma = 0~
+@5053=~XA_LC_MetRohma = 1~
+@5054=~XA_LC_SacrificeCorwin = 0~
+@5055=~XA_LC_SacrificeCorwin = 1~
+@5056=~XA_LC_GaveEarrings = 0~
+@5057=~XA_LC_GaveEarrings = 1~
+@5058=~XA_LC_HappyEnding = 0~
+@5059=~XA_LC_HappyEnding = 1~
+@5060=~XA_LC_TrickedLarze = 0~
+@5061=~XA_LC_TrickedLarze = 1~
+@5062=~XA_LC_HelpedForthel = 0~
+@5063=~XA_LC_HelpedForthel = 1~
+@5064=~XA_LC_MetKerrachus = 0~
+@5065=~XA_LC_MetKerrachus = 1~
+@5066=~XA_LC_StartedInBG1 = 0~
+@5067=~XA_LC_StartedInBG1 = 1~
+@5068=~XA_LC_StartedInSoD = 0~
+@5069=~XA_LC_StartedInSoD = 1~
+@5070=~XA_LC_StartedInBG2 = 0~
+@5071=~XA_LC_StartedInBG2 = 1~
+@5072=~AR1002 (Athkatla Magistrate)~
+@5073=~xacs08a~
+@5074=~xacs09a~
+@5075=~Interaction Test~
+@5076=~Corwin Death from Bite.~
+@5077=~Music Test~
+@5078=~Ducal Palace (xamu00)~
+@5079=~SoD Track 1 (xamu01)~
+@5080=~Corwin Romance A (xamu02)~
+@5081=~Corwin Romance B (xamu03)~
+@5082=~Perform BG2 Final Save.~
+@5083=~Adjust Variables~
+@5084=~SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 2)~
+@5085=~SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 1)~
+@5086=~SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 0)~
+@5087=~SetGlobal("XA_LC_CorwinSexBoost", "GLOBAL", 1)~
+@5088=~SetGlobal("XA_LC_TimesHadSex", "GLOBAL", 1)~
+@5089=~Godbow x3~
+@5090=~Spawn Corwin (XACORWIN) and add her to the party.~
+@5091=~IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 3)~
+@5092=~SetGlobal("XA_LC_CorwinLesson", "GLOBAL", 1)~
+@5093=~xad100~
+@5094=~xad101~
+@5095=~Spell Test~
+@5096=~Vitality Boost (Player)~
+@5097=~Vitality Boost (Corwin)~
+@5098=~GlobalLT("XA_LC_Sex2TimerSet", "LOCALS", 1)~
+@5099=~!GlobalLT("XA_LC_Sex2TimerSet", "LOCALS", 1)~
+@5100=~GlobalGT("XA_LC_TimesHadSex", "GLOBAL", 0)~
+@5101=~!GlobalGT("XA_LC_TimesHadSex", "GLOBAL", 0)~
+@5102=~GlobalTimerExpired("XA_LC_CorwinSex_2_Timer", "GLOBAL")~
+@5103=~!GlobalTimerExpired("XA_LC_CorwinSex_2_Timer", "GLOBAL")~
+@5104=~GlobalLT("XA_LC_CorwinSex_2", "GLOBAL", 1)~
+@5105=~!GlobalLT("XA_LC_CorwinSex_2", "GLOBAL", 1)~
+@5106=~Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)~
+@5107=~!Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)~
+@5108=~GlobalLT("XA_LC_CorwinSex2_Init", "GLOBAL", 1)~
+@5109=~!GlobalLT("XA_LC_CorwinSex2_Init", "GLOBAL", 1)~
+@5110=~Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)~
+@5111=~!Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)~
+@5112=~Global("XA_LC_CorwinCanHeal", "GLOBAL", 1)~
+@5113=~!Global("XA_LC_CorwinCanHeal", "GLOBAL", 1)~
+@5114=~Sex 2 Condition Check~
+@5115=~XACORBAG~
+@5116=~SetGlobal("XA_LC_RetainAllRBG", "GLOBAL", 1)~
+@5117=~SetGlobal("XA_LC_RetainAllRBG", "GLOBAL", 0)~
+@5118=~SetGlobal("DefeatedJon", "GLOBAL", 1)~
+@5119=~SetGlobal("DefeatedJon", "GLOBAL", 0)~
+@5120=~SetMasterArea("AR2800")~
+@6000=~Return to Baldur's Gate Debug~
+@6001=~Item Test~
+@6003=~Engagement Rings (Unenchanted)~
+@6004=~Engagement Rings (Minor Enchantment)~
+@6005=~Lyriel's Gratitude~
+@6006=~Demon Gifts~
+@6007=~Engagement Rings (Major Enchantment)~
+@6008=~Beno's Head~
+@6009=~Ledger~
+@6010=~Dragonspear Medal~
+@6011=~Shipping Manifest (Encoded)~
+@6013=~Rohma's Doll~
+@6014=~Shipping Manifest (Decoded)~
+@6015=~Shipping Manifest (Decoded +)~
+@6016=~Adjust Variables~
+@6017=~Soultaker (Fake)~
+@6018=~Soultaker (Beno)~
+@6019=~SetGlobal("XA_ReturnToBG", "GLOBAL", 1)~
+@6020=~Area Test~
+@6021=~Wyrm's Crossing (AR0900 / XAA100)~
+@6022=~Wyrm's Crossing (Proposal CS)~
+@6023=~Change Worldmap (xamaprbg).~
+@6024=~Text Screen Test~
+@6025=~XABAD1~
+@6026=~XABAD2~
+@6027=~XABAD3~
+@6028=~XABG~
+@6029=~XABGROM~
+@6030=~XADINNER~
+@6031=~XADINROM~
+@6032=~XASARA1~
+@6033=~XASARA2~
+@6034=~XASARA3~
+@6035=~XASARA4~
+@6036=~Cutscene Test~
+@6037=~XACS13~
+@6038=~XAHOME~
+@6039=~XACSHOW~
+@6040=~XAA592 (AR0102)~
+@6041=~XAA228 (AR0112)~
+@6042=~XAA330 (AR0134)~
+@6043=~XAA168 (AR0600)~
+@6044=~XAA104 (AR0800)~
+@6045=~XAA145 (AR1300)~
+@6046=~XAA290 (AR0601)~
+@6047=~XAA291 (AR0127)~
+@6048=~XAA475 (AR0101)~
+@6049=~XAA138 (AR0103)~
+@6051=~XAKIDNAP~
+@6052=~XAWLKHOM~
+@6053=~XADEMSAN~
+@6054=~Interaction Test~
+@6055=~XANARZU~
+@6056=~XAPAINT1~
+@6057=~XADUC3~
+@6058=~XAUCTEMP~
+@6059=~AR0123 / XAA106 (Undercity)~
+@6060=~XAG3 (Candlekeep)~
+@6061=~XAG3ENT~
+@6062=~XAG2~
+@6063=~XAG2ENT~
+@6064=~XAG1ENT~
+@6065=~XAG1~
+@6066=~XAPROPOS~
+@6067=~Basilisk Figurine~
+@6068=~SetGlobal("XA_LC_SavedTimotey", "GLOBAL", 2)~
+@6069=~Store Test~
+@6070=~XAMELKOR~
+@6071=~XAWVBAR~
+@6072=~Dragon Armor (xadarmor)~
+@6073=~Dragonskin Robe (xadrobe)~
+@6074=~Dragonscale Shield (xadshld)~
+@6075=~xaduc2~
+@6076=~xaducal~
+@7000=~ToB Debug~
+@7001=~XAG104 (BD5300) - Kanaglym~
+@7002=~Spawn Caelar (XACAELAR) and add her to the party.~
+@7003=~XAG100 (BD4500) - Avernus Bridge~
+@7004=~XA4000 (AR4000) - LCA Spirit Heads~

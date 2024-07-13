@@ -1,317 +1,101 @@
-@0 = ~I've all I need from you. How about you start running, and we see how far you get?~
-@1 = ~The de'Arnise keep has been invaded
-Daleson told me that there were about thirty trolls within the keep, and one very large one that seemed to be in charge. He also mentioned the yuan-ti that seem to be here as well, though he did not know their numbers.~ 
-@2 = ~The de'Arnise keep has been invaded
-Daleson mentioned that Lord de'Arnise may still be alive, possibly in a dungeon that the man had boarded up long ago. Apparently he was caught trying to collect the pieces to a flail, the heads of which he kept apart throughout the keep, although Daleson didn't know why.~ 
-@3 = ~Wow... a beauty like you, in a place like this? Are ye lookin for someone? Perhaps a nice, strong man to keep you warm at night, eh?~ 
-@4 = ~You there... I see you eying me hon. You some kind of law officer or something?~
-@5 = ~Or are ye here for some action? I go both ways, ya know.~ 
-@6 = ~Then what are ye lookin at? Get lost!~ 
-@7 = ~A Flaming Fist officer, in Athkatla? You're very far from home! You looking for someone?~
-@8 = ~I bet it's those bastard mercenaries upstairs. They're a real rude bunch. Good hunting, young lady.~
-@9 = ~Oh yes... we've braved monsters, Flaming Fist —~
-@10 = ~Erm... as I was saying, we've braved monsters, Sarevok's assorted minions, and fanatical crusaders only to fall to a sneak-thief with an over-fondness for flesh. Excellent deduction.~
-@11 = ~(She leaves in a hurry, with her hand covering the bruise on her face.)~
-@12 = ~That's... not how I would have handled the matter, Captain, but at least the Lady is out of harm's way.~
-@13 = ~I can't believe you did that, Corwin.~
-@14 = ~A proposal? I will hear you out, <PRO_RACE>, but I will be wary. Speak, if you wish.~
-@15 = ~We seek to defeat a vampire in Athkatla too powerful to face alone. Will you help?~
-@16 = ~As you wish.~
-@17 = ~I can't believe you did that, love.~
-@18 = ~She definitely deserved it. Well done, Captain.~
-@19 = ~She definitely deserved it. Well done, love.~
-@20 = ~Foolish woman. Behold, and learn how you have murdered she who is dearest to you.~
-@21 = ~If I should happen across this "Edwin," I'll be sure to seek you out and let you know where he is.~
-@22 = ~What say you, my loyal comrades? They wronged you as much as I. Should they be allowed to live, or must the treacherous cowards taste steel?~
-@23 = ~(Odren and his companions look at your party with hope in their eyes.)~
-@24 = ~They deserve to die. Not just for their treachery, but also for the dereliction of their sworn duty. There's been so much death, so much blood, already though... If you decide to spare them, I'll understand.~
-@25 = ~Death, I say. Me axe be yearnin' to taste their squirrely innards.~
-@26 = ~A great evil has been purged from this world. To restore balance, these warriors must be purged as well.~
-@27 = ~These traitorous dogs deserve death. They've shown me nothing to indicate otherwise.~
-@28 = ~Few things please me more than to shed the blood of sanctimonious hypocrites. Death to them all!~
-@29 = ~(Minsc is engaged in an animated discussion with Boo about the circumstances of Odren's betrayal. You decide to treat this as a vote for life, not just because you don't have the time for this nonsense, but because Minsc is completely insane.)~
-@30 = ~I ... I know what they did was wrong... maybe they can learn from this and do some good? They can at least tell o-others not to judge you just because you are a Bhaalspawn. I think we should let them live.~
-@31 = ~They must be punished! (Yes, severely!) Die, die, die, die, DIE!~
-@32 = ~We've experienced enough bloodshed for one lifetime. Let them go, <CHARNAME>.~
-@33 = ~What is your decision?~
-@34 = ~Life, I say. Think of the songs that will be sung! <CHARNAME>, the mighty! <CHARNAME>, the merciful!~ 
-@35 = ~They have betrayed us, their god, and everything they believed in. Let us end their misery and put them to the sword.~ 
-@36 = ~We must choose life. Yes, they've wronged us, but what's done is done. What will killing these priests accomplish?~ 
-@37 = ~I choose life. People must be given the opportunity to learn from their mistakes, no matter how severe.~
-@38 = ~Helmites hunt my kind for sport on the surface. I welcome the opportunity to help even the score.~
-@39 = ~What about Corwin's bow? Could the string be used to improve it?~
-@40 = ~Their foolishness could have easily led to the world being utterly ravaged at the hands of Demogorgon. As much as it pains me to say it, death is the only fitting punishment for these scoundrels.~
-@41 = ~(You take note of the opinions of your companions, and turn to Odren with your decision.)~ 
-@42 = ~Please, I ask you once again to forgive us, <CHARNAME>.~ 
-@43 = ~We've decided that death is the only appropriate punishment for your treachery. Draw steel!~ 
-@44 = ~We've decided that you and your treacherous comrades will live. Get out of my sight!~ 
-@45 = ~We've decided that you and your treacherous comrades will live. Give us our reward, and get out of my sight!~ 
-@46 = ~(Your group is evenly split — half believe the priests should be executed, and the other half want to show them mercy. You must cast the deciding vote.)~ 
-@47 = ~We've decided that you and your treacherous comrades will live. Get out of my sight!~ 
-@48 = ~We've decided that you and your treacherous comrades will live. Give us our reward, and get out of my sight!~ 
-@49 = ~Bah, hardly. You should read some of my earlier work.~
-@50 = ~You look familiar... yes... Captain Corwin, is it? You had me arrested just before I could introduce myself to your sweet, precious little daughter.~
-@51 = ~I don't know how you found me, but I promise that when I'm done with you, I'll be sure to pay her a visit!~
-@52 = ~You asked for it, sister... time for you to die!~ 
-@53 = ~Thank you for talking some sense into your comrade. Let us focus on the task at hand.~
-@54 = ~You follow in the hopes of retrieving something dear to you. I say that the longer you keep this up, the more you will lose.~ 
-@55 = ~Consider Captain Corwin here. How difficult will it be to lose her, and to know that you were responsible for her daughter growing up without a mother? Leave this place, and treasure what is left of your pathetic existence.~
-@56 = ~Arrogant child. Very well — if it is death you seek, then I will not deny you!~  
-@57 = ~My companion, Schael.~
-@58 = ~Saying that was a mistake, fool! I will kill you and take the stone! Forget your deal!~  
-@59 = ~(She smiles as she looks at the two of you.)~
-@60 = ~I'm told that she never once left your side. I cannot tell you how uplifting it is to see love blossom in the aftermath of what has transpired here.~   
-
-
-
-
-
-
-
-
-
-
-@71 = ~Ooo! Lets me see, lets me see! Very nice.... yes! Cespenar can replace the string on this bow, with Bowstring of Gond! Make very powerful, for 5,000 gold. You wants?~
-@72 = ~~
-@73 = ~Before I decide anything, tell me — does my child also carry the essence?~
-@74 = ~No. The children growing in the womb of your companion are free of the taint of Bhaal.~
-@75 = ~~
-@76 = ~Yes, your future is clear to me, child. You will give birth to fraternal twins.~
-@77 = ~~
-@78 = ~Enough. Let us get back to the matter at hand. <CHARNAME>, a choice lies before you. One that will affect the planes for eons to come.~
-@79 = ~Yes, her future is clear to me, child. She will give birth to fraternal twins. Now, let us get back to the matter at hand. A choice lies before you — one that will shape the future of the planes.~
-@80 = ~Wait... children? You mean...~
-@81 = ~~
-
-
-@84 = ~My, oh my...~
-
-
-@89 = ~Understood.~
-@90 = ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together.~ 
-@91 = ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together.~ 
-@92 = ~I want to go to Kanaglym, in the caverns beneath Dragonspear.~
-@93 = ~Send me to Caelar Argent, in Avernus.~
-@94 = ~Though her precise location cannot be ascertained, she is likely being held in what was once Belhifet's tower. The tower is protected by a magical barrier that is fueled by the life force of an exceptionally powerful baatezu. It is for this reason that you cannot be sent directly to her, nor can she be brought here. Be warned, child of Bhaal. Once you enter the tower, the barrier may interfere with your ability to teleport back to this Pocket Plane.~
-@95 = ~I understand the risk. Send me to Avernus.~
-@96 = ~On second thought, I don't want to go there.~
-@97 = ~If I destroy the baatezu, then I'll be able to return, right?~
-@98 = ~Yes, that is correct.~
-@99 = ~As you wish. You will be sent to the bridge leading up to the tower.~
-@100 = ~Bring me Caelar Argent.~
-@101 = ~Impossible. Though it is certain that she is in Avernus, her exact location cannot be determined.~
-@102 = ~Then send me to Avernus. I'll find her and bring her back.~
-@103 = ~Never mind, then.~
-
-@162 = ~~
-
-@168 = ~Oh, it's you, the hero. Lady Silvershield told us you may be stopping by.~
-@169 = ~I'm just a servant.~
-@170 = ~Not to be rude, but I need to get back to work.~
-@171 = ~Good day, officer.~
-@172 = ~Good evening, officer.~
-@173 = ~Behave yourselves - you are in the home of Duke Entar Silvershield.~
-@174 = ~<CHARNAME> - Lady Silvershield is expecting you.~
-@175 = ~~
-
-@177 = ~~
-@178 = ~The Duke's have proclaimed that <CHARNAME> was innocent after all. Word is <PRO_HESHE> may be coming back to the city. That would be something, wouldn't it?~
-@179 = ~Been hearing that there's trouble brewing far to the southeast. Fire giants are said to be laying siege to a city... Saradush, I think it was.~
-@180 = ~Lord Winston did a great job in clearing out the refugees from Caelar's crusade, don't you think?~
-@181 = ~You didn't hear it from me, but there's word that Duke Silvershield's daughter hasn't fully recovered from her ordeal.~
-@182 = ~Word is that <CHARNAME>, the hero of Baldur's Gate, is romantically involved with an officer of the Flaming Fist.~
-@183 = ~I was already on my way to Saradush before I was dragged here.~
-
-
-
-
-
-
-
-
-
-@211 = ~The willpower of even the most resolute can falter from time to time. Let us not be so quick to judge, lest we be judged ourselves. Let them live, <CHARNAME>.~
-
-@213 = ~I'm looking for a gnome named Brevlik. Have you seen him recently?~
-@214 = ~Does that little runt owe ya money too? He hasn't been allowed here in months, and it'll stay that way so long as his tab is unpaid!~
-@215 = ~Do you know where he is?~
-@216 = ~Alls I know is he ain't here, got it? Go check one of the other taverns 'round town.~
-@217 = ~Locating the Farseer
-The bartender at the Elfsong Tavern hasn't seen Brevlik in months. Apparently, he hasn't been allowed back because of some bad debts. He suggested that I check some of the other taverns in the city.~
-@218 = ~Never mind.~
-@219 = ~I do. How would I go about releasing the souls trapped inside?~
-@220 = ~Soultaker Dagger
-Cespenar told me that in order to free the souls trapped within the Soultaker Dagger, I'd need to take it to the Fugue Plane. If I remember right, there was a rift to the Fugue Plane in Kanaglym beneath Dragonspear castle. Perhaps I can use the planar gate to go there.~
-@221 = ~Go ahead.~
-@222 = ~~
-@223 = ~Go to Fugue Plane! Souls will break free of dagger there. But how to go to Fugue Plane if not dead? Thinking make Cespenar's head ache... oh, well. Would you like me to make you shiny ones? I look though items, yes?~
-@224 = ~They did lie to us, and they knowingly sent us to our doom. On the other hand, I'm REALLY hungry. Let's just make our way to the nearest tavern and leave them be.~
-@225 = ~Aye, remember <CHARNAME>, the so-called hero of Baldur's Gate? The one who was arrested for killing the Duke's daughter? Well, the Dukes are now tellin' everyone now that <PRO_HESHE> was innocent the whole time! What's more, Skie Silvershield is up and about, healthy and lively as ever. Could you believe it? Word on the street is that <PRO_HESHE>'s on <PRO_HISHER> way back to the city as we speak. Good on <PRO_HIMHER>, I s'pose.~
-
-
-
-
-@231 = ~You're really gonna make me choose? Well... let's see...~
-@232 = ~I realize now that I was wrong. Your skill in battle is considerable, as is your ability to lead others.~
-@233 = ~The city's been completely destroyed... all those people...~
-@234 = ~The city's been completely d-destroyed... all those people...~
-@235 = ~Oh, Schael! That's wonderf—~
-@236 = ~Schael! At a time like this? How could you allow yourself—~
-@237 = ~Of course. W-what do you need?~
-@238 = ~Of course. What do you need?~
-@239 = ~(They have a long discussion, but you can't make out the details.)~
-@240 = ~Schael just told me the news. I'm so happy for you two!!~
-@241 = ~Have you given any thought as to the baby's name?~
-@242 = ~If it's a boy, I was thinking of naming him Gorion, to honor my foster father. If it's a girl, Schael wants to name her Ilara, after her mother.~
-@243 = ~Those are great names. Oh, I'm so excited! Gorion would be *so* proud of you.~
-@244 = ~I haven't. Do you have any ideas?~
-@245 = ~And just so you know ... I'm going to spoil my niece or nephew rotten!~
-@246 = ~Hmm... a lot of people name their children after people who've had a profound impact on their life.~
-@247 = ~News?~
-@248 = ~Yes, that she's pregnant! Sheesh!~
-@249 = ~Thanks, Imoen. I can't believe I'm going to be a dad. And you're going to be an aunt!~
-@250 = ~Hahahah. Going to leave all of the disciplining to Schael and I, eh?~
-@251 = ~You got that right.~
-@252 = ~Whatever you two decide ... I want you know that I'm going to spoil my niece or nephew rotten!~
-@253 = ~<CHARNAME>, I'm so h-happy for you and Schael! It's just wonderful!~
-@254 = ~Thanks Aerie.~
-@255 = ~Have you given any thought as to the baby's name?~
-@256 = ~For what?~
-@257 = ~Hee hee, she's pregnant with your child, silly!~
-@258 = ~Hmm... a lot of people n-name their children after people who've had a profound impact on their life. If I ever have a baby boy, I'm going to name him Quayle. Oh, I'm so excited to see your baby!~
-@259 = ~Are you familiar with the Soultaker dagger?~
-@260 = ~There's still a long way to go. I'll be counting on you to help keep Schael and our unborn child healthy.~
-@261 = ~I won't let you down. I promise.~
-@262 = ~Those are both beautiful n-names ... oh, I'm so excited to see your baby!~
-@263 = ~Thank you, Aerie.~
-@264 = ~<CHARNAME>. Congratulations.~
-@265 = ~Is that so? I overheard parts of your conversation, and you didn't sound happy with her at all.~
-@266 = ~Yes. I was surprised that Schael would allow herself to get pregnant under these circumstances. After thinking on it some more however, there was no way you or she could know what was to happen. I cannot in fairness fault her, or you, for the unfortunate timing.~
-@267 = ~Soul prison, yes. Very nasty. Why you ask? You gots dagger?~
-@268 = ~So, child. Have you given any thought as to the baby's name?~
-@269 = ~For?~
-@270 = ~Major Cor — Schael's pregnancy, of course. It is wonderful news.~
-@271 = ~Gorion would be honored. He'd also be proud of the man you've become, and that you've chosen such a good and strong woman as your mate. The two of you will do a wonderful job as parents.~
-@272 = ~It seems that just yesterday you walked in to the Friendly Arm inn, lost and confused after the murder of your foster father. So much has happened since then...~
-@273 = ~And you've stood by my side through all of it. Now, I must rely on you again to help ensure Schael's health, and the health of our unborn child.~
-@274 = ~You can count on me, now and always, my friend.~
-@275 = ~Thank you, Jaheira.~
-@276 = ~Hmm... many name their children after those who've had a profound impact on their lives. Khalid and I often spoke of naming our child after the one who first introduced us to each other.~ 
-@277 = ~Khalid... he would be pleased to hear this news, and to learn that you've selected such good and strong woman as your mate. The two of you will do a wonderful job as parents.~ 
-@278 = ~Major, <CHARNAME> — long ago I rescued a courier based out of this village. He had been beset by brigands on the roads northwest of here. His name was Hamza. If he is here, he will surely help us.~
-@279 = ~Tell me about Schael.~
-@280 = ~Tell me about Corwin.~
-@281 = ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together.~
-@282 = ~Exceptionally accurate and deadly, Major Schael Corwin represents the best and brightest that the Baldur's Gate Flaming Fist has to offer. She solemnly swore to protect her city from all who would threaten it, and it was this oath that that initially brought her and <CHARNAME> together.~ 
-@283 = ~Don't sell yourself short, Major. When people read and hear the story of <CHARNAME>, they'll know that <PRO_HESHE> couldn't have succeeded were it not for your bravery and loyalty. You're as much a hero in this story as <PRO_HESHE> is.~
-@284 = ~Don't sell yourself short, Major. When people read and hear the story of <CHARNAME>, they'll know that <PRO_HESHE> couldn't have succeeded were it not for your bravery and loyalty, and more importantly, the love that you two have for one another. You're as much a hero in this story as <PRO_HESHE> is.~    
-@285 = ~He's right, my friend.~
-@286 = ~You're covered as well! No, don't put your hands on me, they're filthy!~
-@287 = ~What of the inevitable pain you must give to the one you love? The woman you call "Schael."~
-@288 = ~These false priests deserve death, yet... part of me wishes that they are one day able to redeem themselves in the eyes of Helm, and they cannot do that if they are dead. I will support whatever you decide.~
-@289 = ~Oh, dear! I trust your daughter is alright?~
-@290 = ~I'm glad to hear that your child is fine... but I've not heard of the Five before.~
-@291 = ~That's odd. I'd have thought that someone with as much knowledge on the matter would be familiar with them. In any case, with Illasera gone, what other Bhaalspawn should I be concerned with?~ 
-@292 = ~Must you even ask? Death. The more excruciating, the better.~
-@293 = ~Eek! Oh, ewwww! Get it off me! Aah! You're covered in it worse than me!~
-@294 = ~Ohhhh! I hope this v-village has a bathhouse!~
-@295 = ~I'm covered in it, ugh. Don't laugh! You are too!~
-@296 = ~This is worse than the time we fell into that manure pile outside of Dreppin's shed. Come on. Maybe we'll get lucky and find a bathhouse in this village... this village in the middle of the desert. Gods, help us.~
-@297 = ~Ohhhh! This village better have a bathhouse!~
-@298 = ~With luck, we'll find a hot spring to wash in. Let's go.~
-@299 = ~Soultaker Dagger
-Cespenar told me that in order to free the souls trapped within the Soultaker Dagger, I'd need to take it to the Fugue Plane. How can one go to the Fugue Plane, if they're not dead? I'm not sure whether there's anything I can do for those trapped in the dagger.~
-@300 = ~A-are you sure that's a good idea? It's been so long since he died...~
-@301 = ~You mean to attempt a resurrection, after the body has been dead for this long? Nothing good can come from this.~
-@302 = ~Hmph. I wasn't expecting to be back in the Hells so soon. I'd almost begun to miss the tortured screams of the damned.~ 
-@303 = ~We'll be out of here as soon as we find Caelar. Stay alert.~
-@304 = ~~
-@305 = ~Ohh... *cough* it's so h-hot down here! These poor souls!~
-@306 = ~In Torm's name... the Hells are far worse than I could've imagined!~ 
-@307 = ~~
-@308 = ~~
-@309 = ~~
-@310 = ~Take a look at this broken sword and armor. Can they be repaired?~
-@311 = ~Ooo let's me see... yuck! These stink like righteousness! Cespenar can fix, yes, but I needs lots and lots of gold... 15,000 gold!~
-@312 = ~The broken armor and sword we discussed. Here's the gold you need to fix it. (Pay 15,000 gold.)~
-@313 = ~Here. (Pay 15,000 gold.)~
-@314 = ~Never mind.~
-@315 = ~Tell me about Caelar.~
-@316 = ~Caelar... Argent? By the gods, it IS her! I'd heard rumors that a glorious warrior matching her description was traveling with you, but I didn't think it possible! How — how did you manage to free her from Avernus?~
-@317 = ~Amazing! Remarkable! To willingly venture to Avernus again, this time to rescue the Shining Lady herself!~
-@318 = ~I'll spare you the bloody details. All that matters is that she is here now, and that we are fighting for the same cause.~
-@319 = ~She can explain.~
-@320 = ~Surely, there must be some way for these priests to find redemption. Life, I say.~
-@321 = ~I'll not have their blood on my hands, for I'd need to wash them before picking my turnips. Let them live, <CHARNAME>.~
-@322 = ~~
-
-@324 = ~About the dagger — you said you'd send it to Baldur's Gate if I helped solve your case.~
-@325 = ~I need to send this dagger to Baldur's Gate. I believe it is the weapon used to murder the daughter of one of the Grand Dukes.~ 
-@326 = ~~
-@327 = ~My, oh my...~
-@328 = ~Inspector, we freed some children that were being held captive in the slaver stockade. Did they make it back here safely?~
-@329 = ~They did. Efforts are being made to locate their parents, though to be perfectly honest I doubt we'll be successful.~
-@330 = ~What will happen to them if their families cannot be found?~
-@331 = ~I see...~
-@332 = ~Worry not. The matriarch of one of the more respected families heard of their plight and has expressed a willingness to adopt them. They will be spared the foster system and be well taken care of.~
-@333 = ~Thank you for your service, citizen.~
-@334 = ~Schael? What do you think?~
-@335 = ~She brings up a fair point, but I assure you that I'll shield you from as much of that nonsense as possible.~
-@336 = ~And you, young lady.~
-@337 = ~By that insignia on your armor, I trust that you are here to affect some appropriate punishment for what I did to Skie Silvershield?~
-@338 = ~Worry not.~ 
-@339 = ~Unlike you and the rest of your companions, she will live beyond these next few minutes. Once I am done with you, a geas will be placed on her. She'll then be returned to Baldur's Gate, where she will assassinate the Council of Four on my behalf — a fitting punishment for their arrogance and willingness to meddle in my affairs.~ 
-@340 = ~Schael, too. He's planning to use her to assassinate the Dukes. I have to save her!~
-@341 = ~Captain Corwin? What's she doing here?~
-@342 = ~Join me, Imoen. I'll explain on the way.~
-@343 = ~It's a long story, and we don't have the time. Can you make it out of here on your own?~
-@344 = ~Schael, too. He's planning to use her to assassinate the Dukes. I have to stop him!~
-@345 = ~The transformation and the dream
+@0=~I've all I need from you. How about you start running, and we see how far you get?~
+@1=~The de'Arnise keep has been invaded
+Daleson told me that there were about thirty trolls within the keep, and one very large one that seemed to be in charge. He also mentioned the yuan-ti that seem to be here as well, though he did not know their numbers.~
+@2=~The de'Arnise keep has been invaded
+Daleson mentioned that Lord de'Arnise may still be alive, possibly in a dungeon that the man had boarded up long ago. Apparently he was caught trying to collect the pieces to a flail, the heads of which he kept apart throughout the keep, although Daleson didn't know why.~
+@3=~Wow... a beauty like you, in a place like this? Are ye lookin for someone? Perhaps a nice, strong man to keep you warm at night, eh?~
+@4=~You there... I see you eying me hon. You some kind of law officer or something?~
+@5=~Or are ye here for some action? I go both ways, ya know.~
+@6=~Then what are ye lookin at? Get lost!~
+@7=~A Flaming Fist officer, in Athkatla? You're very far from home! You looking for someone?~
+@8=~I bet it's those bastard mercenaries upstairs. They're a real rude bunch. Good hunting, young lady.~
+@9=~Oh yes... we've braved monsters, Flaming Fist —~
+@10=~Erm... as I was saying, we've braved monsters, Sarevok's assorted minions, and fanatical crusaders only to fall to a sneak-thief with an over-fondness for flesh. Excellent deduction.~
+@11=~(She leaves in a hurry, with her hand covering the bruise on her face.)~
+@12=~That's... not how I would have handled the matter, Captain, but at least the Lady is out of harm's way.~
+@13=~I can't believe you did that, Corwin.~
+@14=~A proposal? I will hear you out, <PRO_RACE>, but I will be wary. Speak, if you wish.~
+@15=~We seek to defeat a vampire in Athkatla too powerful to face alone. Will you help?~
+@17=~I can't believe you did that, love.~
+@18=~She definitely deserved it. Well done, Captain.~
+@19=~She definitely deserved it. Well done, love.~
+@21=~If I should happen across this "Edwin," I'll be sure to seek you out and let you know where he is.~
+@22=~What say you, my loyal comrades? They wronged you as much as I. Should they be allowed to live, or must the treacherous cowards taste steel?~
+@23=~(Odren and his companions look at your party with hope in their eyes.)~
+@24=~They deserve to die. Not just for their treachery, but also for the dereliction of their sworn duty. There's been so much death, so much blood, already though... If you decide to spare them, I'll understand.~
+@25=~Death, I say. Me axe be yearnin' to taste their squirrely innards.~
+@26=~A great evil has been purged from this world. To restore balance, these warriors must be purged as well.~
+@27=~These traitorous dogs deserve death. They've shown me nothing to indicate otherwise.~
+@28=~Few things please me more than to shed the blood of sanctimonious hypocrites. Death to them all!~
+@29=~(Minsc is engaged in an animated discussion with Boo about the circumstances of Odren's betrayal. You decide to treat this as a vote for life, not just because you don't have the time for this nonsense, but because Minsc is completely insane.)~
+@30=~I ... I know what they did was wrong... maybe they can learn from this and do some good? They can at least tell o-others not to judge you just because you are a Bhaalspawn. I think we should let them live.~
+@31=~They must be punished! (Yes, severely!) Die, die, die, die, DIE!~
+@32=~We've experienced enough bloodshed for one lifetime. Let them go, <CHARNAME>.~
+@33=~What is your decision?~
+@34=~Life, I say. Think of the songs that will be sung! <CHARNAME>, the mighty! <CHARNAME>, the merciful!~
+@35=~They have betrayed us, their god, and everything they believed in. Let us end their misery and put them to the sword.~
+@36=~We must choose life. Yes, they've wronged us, but what's done is done. What will killing these priests accomplish?~
+@37=~I choose life. People must be given the opportunity to learn from their mistakes, no matter how severe.~
+@38=~Helmites hunt my kind for sport on the surface. I welcome the opportunity to help even the score.~
+@40=~Their foolishness could have easily led to the world being utterly ravaged at the hands of Demogorgon. As much as it pains me to say it, death is the only fitting punishment for these scoundrels.~
+@41=~(You take note of the opinions of your companions, and turn to Odren with your decision.)~
+@42=~Please, I ask you once again to forgive us, <CHARNAME>.~
+@43=~We've decided that death is the only appropriate punishment for your treachery. Draw steel!~
+@44=~We've decided that you and your treacherous comrades will live. Get out of my sight!~
+@45=~We've decided that you and your treacherous comrades will live. Give us our reward, and get out of my sight!~
+@46=~(Your group is evenly split — half believe the priests should be executed, and the other half want to show them mercy. You must cast the deciding vote.)~
+@47=~We've decided that you and your treacherous comrades will live. Get out of my sight!~
+@48=~We've decided that you and your treacherous comrades will live. Give us our reward, and get out of my sight!~
+@49=~Bah, hardly. You should read some of my earlier work.~
+@50=~You look familiar... yes... Captain Corwin, is it? You had me arrested just before I could introduce myself to your sweet, precious little daughter.~
+@51=~I don't know how you found me, but I promise that when I'm done with you, I'll be sure to pay her a visit!~
+@52=~You asked for it, sister... time for you to die!~
+@53=~Thank you for talking some sense into your comrade. Let us focus on the task at hand.~
+@54=~You follow in the hopes of retrieving something dear to you. I say that the longer you keep this up, the more you will lose.~
+@55=~Consider Captain Corwin here. How difficult will it be to lose her, and to know that you were responsible for her daughter growing up without a mother? Leave this place, and treasure what is left of your pathetic existence.~
+@56=~Arrogant child. Very well — if it is death you seek, then I will not deny you!~
+@57=~My companion, Schael.~
+@58=~Saying that was a mistake, fool! I will kill you and take the stone! Forget your deal!~
+@60=~I'm told that she never once left your side. I cannot tell you how uplifting it is to see love blossom in the aftermath of what has transpired here.~
+@84=~My, oh my...~
+@211=~The willpower of even the most resolute can falter from time to time. Let us not be so quick to judge, lest we be judged ourselves. Let them live, <CHARNAME>.~
+@224=~They did lie to us, and they knowingly sent us to our doom. On the other hand, I'm REALLY hungry. Let's just make our way to the nearest tavern and leave them be.~
+@231=~You're really gonna make me choose? Well... let's see...~
+@288=~These false priests deserve death, yet... part of me wishes that they are one day able to redeem themselves in the eyes of Helm, and they cannot do that if they are dead. I will support whatever you decide.~
+@321=~I'll not have their blood on my hands, for I'd need to wash them before picking my turnips. Let them live, <CHARNAME>.~
+@324=~About the dagger — you said you'd send it to Baldur's Gate if I helped solve your case.~
+@325=~I need to send this dagger to Baldur's Gate. I believe it is the weapon used to murder the daughter of one of the Grand Dukes.~
+@328=~Inspector, we freed some children that were being held captive in the slaver stockade. Did they make it back here safely?~
+@329=~They did. Efforts are being made to locate their parents, though to be perfectly honest I doubt we'll be successful.~
+@330=~What will happen to them if their families cannot be found?~
+@331=~I see...~
+@332=~Worry not. The matriarch of one of the more respected families heard of their plight and has expressed a willingness to adopt them. They will be spared the foster system and be well taken care of.~
+@333=~Thank you for your service, citizen.~
+@334=~Schael? What do you think?~
+@335=~She brings up a fair point, but I assure you that I'll shield you from as much of that nonsense as possible.~
+@336=~And you, young lady.~
+@337=~By that insignia on your armor, I trust that you are here to affect some appropriate punishment for what I did to Skie Silvershield?~
+@338=~Worry not.~
+@339=~Unlike you and the rest of your companions, she will live beyond these next few minutes. Once I am done with you, a geas will be placed on her. She'll then be returned to Baldur's Gate, where she will assassinate the Council of Four on my behalf — a fitting punishment for their arrogance and willingness to meddle in my affairs.~
+@340=~Schael, too. He's planning to use her to assassinate the Dukes. I have to save her!~
+@341=~Captain Corwin? What's she doing here?~
+@342=~Join me, Imoen. I'll explain on the way.~
+@343=~It's a long story, and we don't have the time. Can you make it out of here on your own?~
+@344=~Schael, too. He's planning to use her to assassinate the Dukes. I have to stop him!~
+@345=~The transformation and the dream
 While Irenicus cast his spell on me to steal my divinity... my soul... I was mired in a dream in which I fought against the personification of my instinct and prevailed. I awoke. My victory in my dream, however, did not mean victory in reality. Irenicus had successfully taken my soul and stated that now both he and Bodhi were free of the curse which they had been subjected to... and that Imoen and I would both die a slow and withering death. As for Schael, she's alive, though he plans to use her in some plot to assassinate the leaders of Baldur's Gate.
-What he plans to do afterward he would not say, but he left it to Bodhi to finish me off once and for all.~ 
-@346 = ~Release Schael and return what you stole from us, or I swear that I'll bury you where you stand!~
-@347 = ~Fool! Do you not see that you're being here serves my will? Your companion has, to this point, resisted the geas. The sight of you and your army of madness falling by my hand is certain to break her spirit once and for all.~ 
-@348 = ~There are slaves here?! This is an outrage!~
-@349 = ~Your entrance tax has been paid for by Duke Entar. Welcome back, <CHARNAME>.~
-@350 = ~Thank you.~
-@351 = ~All six gold? How generous of him.~
-@352 = ~Good evening.~
-@353 = ~Good day.~
-@354 = ~Never mind. We will be on our way.~
-@355 = ~I'm looking for a courier to deliver a message to the Sword Coast. Can you help?~
-@356 = ~Hamza can help with that. He's right over here, at the bar.~
-@357 = ~I'm looking for a gift for a young child, perhaps a doll of some sort. Do you have anything like that in your store?~
-@358 = ~As a matter of fact, I do. Are you interested in this doll? I'll sell it to you for three gold.~
-@359 = ~Yes, that's perfect, thank you. (Pay three gold for the doll).~
-@360 = ~Yes, that's perfect. I'm a bit short on funds at the moment, however. I'll return later to buy the doll.~
-@361 = ~No thanks. Another time, perhaps.~
-@362 = ~A pleasure doing business with you.~
-@363 = ~No worries. I'll hold on to the doll until you come up with the money.~
-@364 = ~A pleasure doing business with you.~
-@365 = ~Doll for Rohma
-
-I bought a doll for Captain Corwin's daughter, Rohma. I'll give it to her when I see her.~
-
-/* Added 2023-10-12 */
-
-
-// Added for v1.04 11/05/2023
-@399 = ~More importantly, why have you brought an officer of Flaming Fist here? If I didn't know better, I'd think this was some sort of sting operation.~
-@400 = ~Is that so? And why should I trust you? Perhaps it's time to give Lin a break and strap you to the rack instead?~
-@401 =  ~The pair have achieved feats that no one could have imagined, and her devotion to <CHARNAME>'s cause has only grown since <PRO_HESHE> helped rescue her daughter from Illasera the Quick. Though no one can say what the future has in store for this duo, one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~
-@402 = ~<CHARNAME> was smitten by her beauty, and their relationship gradually evolved from friendship into something far more profound. Their fierce devotion toward one another was only strengthened after <CHARNAME> helped rescue her daughter from Illasera the Quick. Their love, to this point, has endured against all odds. Whether it will continue to do so, no one can say, though one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~
-@403 = ~<CHARNAME> was smitten by her beauty, and their relationship gradually evolved from friendship into something far more profound. Their fierce devotion toward one another was only strengthened after <CHARNAME> saved the life of Skie Silvershield, the daughter of one of the Grand Dukes. Their love, to this point, has endured against all odds. Whether it will continue to do so, no one can say, though one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~
-@404 = ~The pair have achieved feats that no one could have imagined, and her devotion to <CHARNAME>'s cause has only grown since <PRO_HESHE> saved the life of Skie Silvershield, the daughter of one of the Grand Dukes. Though no one can say what the future has in store for this duo, one thing is certain — the Major's skill, determination and leadership will continue to prove invaluable.~
-@405 = ~Could the jewel instead be used to improve Caelar's long sword, Aster's Edge?~
-@406 = ~Eh? Yuck, it still stinks like righteousness! I nots have a recipe for it... maybe jewel will make it better and less stinky, maybe not. Give me 5,000 gold and you finds out!~
-@407 = ~Do it. (Pay 5,000 gold.)~
-@408 = ~You have Eye of Tyr. Very shiny... Cespenar has recipe to make better Purifier or Holy Avenger with shiny pommel. If you finds them, bring and I makes sword better.~
-@409 = ~I keeps looking... let's me see...~
-@410 = ~What about my bow? Can you replace the existing string with Gesen's?~
-@411 = ~What about Corwin's bow? Can you replace the existing string with Gesen's?~
-@412 = ~Aye, let me have a look at that...~
-@413 = ~Hmm... 'tis a finely crafted weapon to be sure, but Gesen's string was meant for a short bow, not a long bow. I can replace the string, yes, but the weapon would lose some of its range.~
-@414 = ~How much of the bow's range would be lost, do you think?~
-@415 = ~A third, or thereabouts. A worthwhile trade-off, methinks.~ 
-@416 = ~I'm interested — what would be involved in the replacement?~ 
-@417 = ~Is there somethin' that ye need, citizen?~ [BREGAX02]
+What he plans to do afterward he would not say, but he left it to Bodhi to finish me off once and for all.~
+@346=~Release Schael and return what you stole from us, or I swear that I'll bury you where you stand!~
+@347=~Fool! Do you not see that you're being here serves my will? Your companion has, to this point, resisted the geas. The sight of you and your army of madness falling by my hand is certain to break her spirit once and for all.~
+@348=~There are slaves here?! This is an outrage!~
+@354=~Never mind. We will be on our way.~
+@399=~More importantly, why have you brought an officer of Flaming Fist here? If I didn't know better, I'd think this was some sort of sting operation.~
+@400=~Is that so? And why should I trust you? Perhaps it's time to give Lin a break and strap you to the rack instead?~
+@410=~What about my bow? Can you replace the existing string with Gesen's?~
+@411=~What about Corwin's bow? Can you replace the existing string with Gesen's?~
+@412=~Aye, let me have a look at that...~
+@413=~Hmm... 'tis a finely crafted weapon to be sure, but Gesen's string was meant for a short bow, not a long bow. I can replace the string, yes, but the weapon would lose some of its range.~
+@414=~How much of the bow's range would be lost, do you think?~
+@415=~A third, or thereabouts. A worthwhile trade-off, methinks.~
+@416=~I'm interested — what would be involved in the replacement?~
+@417=~Is there somethin' that ye need, citizen?~ [BREGAX02]
