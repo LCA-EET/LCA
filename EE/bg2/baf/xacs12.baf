@@ -3,8 +3,8 @@ IF
 	GlobalLT("XA_LC_ElleChat", "MYAREA", 1)
 THEN
 	RESPONSE #100
+		SetGlobal("XA_LC_ElleChat", "MYAREA", 1)
 		ActionOverride("suelle2", SetNumTimesTalkedTo(0))
 		Wait(1)
-		SetGlobal("XA_LC_ElleChat", "MYAREA", 1)
 		ActionOverride("suelle2", StartDialog("suelle2",Player1))
 END

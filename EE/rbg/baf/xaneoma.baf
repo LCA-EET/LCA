@@ -8,11 +8,11 @@ THEN
 		SetGlobal("XA_LC_XACS15Started", "GLOBAL", 1)
 		FaceObject("XACORWIN")
 		SmallWait(5)
-		DisplayStringHead("XANEOMA", @1385)/* Schael!*/
+		DisplayStringHead("XANEOMA", @0)/* Schael!*/
 		SmallWait(5)
 		ActionOverride("XACORWIN", FaceObject("XANEOMA"))
 		SmallWait(5)
-		DisplayStringHead("XACORWIN", @1386)/* Neoma!*/
+		DisplayStringHead("XACORWIN", @1)/* Neoma!*/
 		SmallWait(5)
 		MoveToObject("XACORWIN")
 		SetInterrupt(TRUE)
