@@ -43,8 +43,8 @@ END
 
 IF ~
 	RandomNum(9,4)
-	!Global("XA_LC_TownspersonHatesHero", "LOCALS", 1)
-	!Global("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
+	GlobalLT("XA_LC_TownspersonHatesHero", "LOCALS", 1)
+	GlobalLT("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_4
 	SAY @3 /* ~The fools in charge of this city never learn! They're weXAoming <CHARNAME>, the Bhaalspawn, back with open arms!~   */ //OK
@@ -73,8 +73,8 @@ END
 
 IF ~
 	RandomNum(9,6)
-	!Global("XA_LC_TownspersonHatesHero", "LOCALS", 1)
-	!Global("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
+	GlobalLT("XA_LC_TownspersonHatesHero", "LOCALS", 1)
+	GlobalLT("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_6
 	SAY @2 /* ~I hear that Duke Entar's daughter is fully recovered, supposedly thanks to <CHARNAME>. I'd never have thought a Bhaalspawn could be a force for good.~ */ //OK
@@ -102,8 +102,8 @@ END
 
 IF ~
 	RandomNum(9,7)
-	!Global("XA_LC_TownspersonHatesHero", "LOCALS", 1)
-	!Global("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
+	GlobalLT("XA_LC_TownspersonHatesHero", "LOCALS", 1)
+	GlobalLT("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_7
 	SAY @17 /* ~I hear that <CHARNAME>, the <PRO_BROTHERSISTER> of that rotten Sarevok, is coming back to Baldur's Gate. They're saying <PRO_HESHE>'s innocent. Do you believe it?~   */ //OK
@@ -124,8 +124,8 @@ END
 
 IF ~
 	RandomNum(9,8)
-	!Global("XA_LC_TownspersonHatesHero", "LOCALS", 1)
-	!Global("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
+	GlobalLT("XA_LC_TownspersonHatesHero", "LOCALS", 1)
+	GlobalLT("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_8
 	SAY @15 /* ~Did you hear the news? <CHARNAME>, the hero, the Sarevok slayer, is returning to Baldur's Gate! The Dukes proclaimed <PRO_HISHER> innocence!~  */ //OK
@@ -145,7 +145,7 @@ IF ~~ THEN BEGIN XA_8A
 END
 
 IF ~
-	RandomNum(9,9)
+	True()
 ~ THEN BEGIN XA_9
 	SAY @19 /* ~Things've been quiet 'round here lately now that those stinkin' refugees 're gon.~*/
 	

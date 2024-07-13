@@ -5,22 +5,23 @@ THEN
 	RESPONSE #100
 		DestroySelf()
 END
+
 IF
 	AreaCheck("XAA145") // ar1300
 	See(Player1)
-	!Range(Player1, 8)
 	ActionListEmpty()
-	GlobalLT("XA_LC_TalkedToGlint", "Global", 1)
+	GlobalLT("XA_LC_TalkedToGlint", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		MoveToObject(Player1)
+		Continue()
 END
 
 IF
 	AreaCheck("XAA145") // ar1300
 	See(Player1)
-	Range(Player1, 8)
-	GlobalLT("XA_LC_TalkedToGlint", "Global", 1)
+	Range(Player1, 10)
+	GlobalLT("XA_LC_TalkedToGlint", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		StartDialog("XAGLINT", Player1)

@@ -138,3 +138,11 @@ IF ~~ THEN BEGIN XA_8A
 	~
 	EXIT
 END
+
+IF ~
+	True()
+~ THEN BEGIN XA_default
+	SAY @16 // ~Ah, it's so nice to be able to walk around without being accosted by those refugees.~
+	
+	EXIT
+END
