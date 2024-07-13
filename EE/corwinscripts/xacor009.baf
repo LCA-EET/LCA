@@ -250,6 +250,23 @@
 			SetInterrupt(TRUE)
 	END
 	//}
+	
+	//{ Meeting Neoma
+	IF 
+		GlobalLT("XA_LC_XACS15Cutscene", "GLOBAL", 3)
+		Range("XANEOMA", 10)
+		!AreaCheck("XAEXPL03")
+	THEN
+		RESPONSE #100
+			ClearAllActions()
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_XACS15Cutscene", "GLOBAL", 3)
+			FaceObject("XANEOMA")
+			SmallWait(5)
+			StartDialog("XACORWIJ", "XANEOMA")
+			SetInterrupt(TRUE)
+	END
+	//}
 
 //} BGMiniQuest Interaction End
 

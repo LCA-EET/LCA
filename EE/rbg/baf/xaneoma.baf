@@ -21,7 +21,7 @@ END
 
 IF 
 	GlobalLT("XA_LC_XACS15Cutscene", "GLOBAL", 3)
-	Range("XACORWIN", 8)
+	Range("XACORWIN", 10)
 	!AreaCheck("XAEXPL03")
 THEN
 	RESPONSE #100
