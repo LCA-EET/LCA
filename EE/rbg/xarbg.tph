@@ -2810,6 +2810,18 @@ SILENT
 		
 	//}
 	
+	//{ ar0703 xaa115 Halbazzer's Shop L1
+		COPY_EXISTING ~xaa115.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x154 0 // Ordulinian
+	//}
+	
+	//{ ar0704 xaa202 Halbazzer's Shop L2
+		COPY_EXISTING ~xaa202.are~ ~override~
+		LPF xa_delete_are_actors END
+	//}
+	
 	//{ ar0705 xaa119
 		EXTEND_TOP ~xaas119.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0705.baf~
 	//}
