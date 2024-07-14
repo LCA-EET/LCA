@@ -452,6 +452,8 @@ SILENT
 		WRITE_ASCII 0x250 ~xag2dop~ #8 // class script
 		WRITE_ASCII 0x280 ~xag2dop0~ #8 // script name
 		
+		
+		
 		COPY_EXISTING ~xag2dop0.cre~ ~override/xag2dop1.cre~
 		WRITE_ASCII 0x280 ~xag2dop1~ #8 // script name
 		WRITE_LONG 0x28 0xC810 // Fat woman
@@ -2204,9 +2206,17 @@ SILENT
 		
 		COPY_EXISTING ~xaa363.are~ ~override~
 		
+		// Change Beland Dialog
+		WRITE_ASCII 0x164 ~xabeland~ #8
+		
 		// Disable rep traps
 		WRITE_LONG 0xB84 256
 		WRITE_LONG 0xC48 256
+	//}
+	
+	//{ ar0131 xaa363 High Hall of Wonders
+		COPY_EXISTING ~xaa363.are~ ~override~
+		WRITE_ASCII 0x274 ~xaforthe~ #8
 	//}
 	
 	//{ ar0134 xaa330 Low Lantern B1
@@ -2301,7 +2311,7 @@ SILENT
 		COPY_EXISTING ~xaa192.are~ ~override~
 		
 		// Replace Dialog
-		WRITE_ASCII 0x484 ~xaalatos~ #8
+		WRITE_ASCII 0x494 ~xaalatos~ #8
 		
 		// Disable NPCs
 		WRITE_LONG 0x264 0 // Resar
@@ -2582,6 +2592,8 @@ SILENT
 		EXTEND_TOP ~xaas287.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0607.baf~
 		
 		COPY_EXISTING ~xaa287.are~ ~override~
+		WRITE_ASCII 0x384 ~xafergus~ #8 // Change Fergus' Dialogue
+		WRITE_LONG 0x264 0 // Disable Neb
 		LPF fj_are_structure
 			INT_VAR
 				fj_loc_x = 330
@@ -2812,7 +2824,7 @@ SILENT
 	
 	//{ ar0703 xaa115 Halbazzer's Shop L1
 		COPY_EXISTING ~xaa115.are~ ~override~
-		
+		WRITE_ASCII 0x274 ~xahalbaz~ #8 // change halbazzer's dialog
 		// Disable NPCs
 		WRITE_LONG 0x154 0 // Ordulinian
 	//}
