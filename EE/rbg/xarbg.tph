@@ -502,6 +502,8 @@ SILENT
 				
 				// Apply Updated Dialog
 				WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
+				// Remove Class Script
+				WRITE_ASCII 0x250 ~~ #8 // Class Script
 			END
 		//}
 		
@@ -533,6 +535,8 @@ SILENT
 				
 				// Apply Updated Dialog
 				WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
+				// Remove Class Script
+				WRITE_ASCII 0x250 ~~ #8 // Class Script
 			END
 		//}
 			

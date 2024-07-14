@@ -144,5 +144,6 @@ IF ~
 ~ THEN BEGIN XA_default
 	SAY @16 // ~Ah, it's so nice to be able to walk around without being accosted by those refugees.~
 	
+	IF ~~ THEN 
 	EXIT
 END
