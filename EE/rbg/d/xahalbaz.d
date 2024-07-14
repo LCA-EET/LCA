@@ -24,6 +24,8 @@ IF ~
 	~
 	GOTO XA_RefugeesCleared //OK
 
+	IF ~~ THEN REPLY @5 /* ~Let's see what you have, then.~ */
+	GOTO XA_StartStore
 END
 
 IF ~
@@ -406,7 +408,7 @@ IF ~~ THEN BEGIN XA_StartStore
 	SAY @0 /* ~Premium items for a premium price.~ */
 	IF ~~ THEN 
 	DO ~
-		StartStore("xa2014",LastTalkedToBy(Myself))
+		StartStore("xahalbaz",LastTalkedToBy(Myself))
 	~ 
 	EXIT
 END
