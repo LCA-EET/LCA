@@ -2,7 +2,7 @@ PRINT @4000  /* ~Processing Return to Baldur's Gate Changes...~ */
 
 SILENT
 
-OUTER_SET xa_regenerate = 0 // set to 1 to regenerate areas, 0 to copy pre-generated areas (default)
+OUTER_SET xa_regenerate = 0 // set to 1 to regenerate areas, 0 (default) to copy pre-generated areas
 
 //{ WAV
 	COPY ~%MOD_FOLDER%/rbg/wav~ ~override~
@@ -592,7 +592,7 @@ SILENT
 				COPY_EXISTING ~%noblewoman%.cre~ ~override~
 				
 				// Apply Updated Dialog
-				WRITE_ASCII 0x2CC ~xanoblf~ #8 	// Dialogue
+				WRITE_ASCII 0x2CC ~xanoblw~ #8 	// Dialogue
 			END
 		//}
 		
@@ -726,10 +726,7 @@ SILENT
 		WRITE_ASCII 0x280 ~xajhasso~ #20  	// Script Name
 		WRITE_ASCII 0x2CC ~xajhasso~ #8 	// Dialogue
 		WRITE_ASCII 0x250 ~xainitp1~ #8		// Class Script
-		
-		COPY_EXISTING ~xaa737.cre~ ~override~ // Silvershield Servant serva2
-		WRITE_ASCII 0x2CC ~xaserva2~ #8 	// Dialogue
-		
+				
 		COPY_EXISTING ~xaa108.cre~ ~override/xasemaj.cre~ // Semaj semaj
 		LPF xa_reset_cre
 			STR_VAR
@@ -1931,6 +1928,10 @@ SILENT
 		
 		// Disable rep traps
 		WRITE_LONG 0x990 256
+		
+		// Change Servant Dialog
+		WRITE_ASCII 0x164 ~xaserva2~ #8 
+		WRITE_ASCII 0x164 ~xaserva2~ #8
 	//}
 	
 	//{ ar0102 xaa592 Silvershield Estate L2
@@ -2723,6 +2724,7 @@ SILENT
 	//{ ar0614 xaa563
 		EXTEND_TOP ~xaas563.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0614.baf~
 		COPY_EXISTING ~xaa563.are~ ~override~
+		WRITE_ASCII 0x164 ~xawvbart~ #8 // change bartender dialog
 		LPF fj_are_structure
 			INT_VAR
 				fj_loc_x = 850
@@ -2822,6 +2824,11 @@ SILENT
 		
 	//}
 	
+	//{ ar0702 xaa152 Harbor Master's Building
+		COPY_EXISTING ~xaa152.are~ ~override~
+		WRITE_ASCII 0x164 ~xaharbor~ #8 // change harbor master's dialog
+	//}
+	
 	//{ ar0703 xaa115 Halbazzer's Shop L1
 		COPY_EXISTING ~xaa115.are~ ~override~
 		WRITE_ASCII 0x274 ~xahalbaz~ #8 // change halbazzer's dialog
@@ -2892,6 +2899,16 @@ SILENT
 		WRITE_LONG 0x594 0
 		WRITE_LONG 0x6A4 0
 		
+	//}
+	
+	//{ ar0724 xaa176 Games Tent
+		COPY_EXISTING ~xaa176.are~ ~override~
+		WRITE_ASCII 0x6B4 ~xagames2~ #8
+	//}
+	
+	//{ ar0725 xaa177 Games Tent
+		COPY_EXISTING ~xaa177.are~ ~override~
+		WRITE_ASCII 0x644 ~xagames2~ #8
 	//}
 	
 	//{ ar0726 xaa175 Diviner's Tent
@@ -3134,6 +3151,8 @@ SILENT
 		
 		// Disable NPCs
 		WRITE_LONG 0x5324 0 // Entillis Fulsom
+		
+		WRITE_ASCII 0x5114 ~xakerrac~ #8 // kerrachus dialog
 		
 		// Change Iron Throne to WV
 		WRITE_LONG 0x61B0 RESOLVE_STR_REF(@4138)
