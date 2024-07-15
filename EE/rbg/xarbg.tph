@@ -1881,6 +1881,10 @@ SILENT
 	COPY_EXISTING ~xaa101.sto~ ~override/xahalbaz.sto~
 	ADD_STORE_ITEM ~potn52~ AFTER ~potn08~ #1 #0 #0 ~IDENTIFIED~ #3
 	ADD_STORE_ITEM ~potn55~ AFTER ~potn52~ #1 #0 #0 ~IDENTIFIED~ #3
+	
+	COPY_EXISTING ~xaa137.sto~ ~override~
+	ADD_STORE_ITEM ~potn52~ AFTER ~potn08~ #1 #0 #0 ~IDENTIFIED~ #5
+	ADD_STORE_ITEM ~potn55~ AFTER ~potn52~ #1 #0 #0 ~IDENTIFIED~ #2
 			
 	COPY ~%MOD_FOLDER%/rbg/sto/xamelkor.sto~ ~override~
 	WRITE_LONG 0xc RESOLVE_STR_REF(@4158)
@@ -2211,8 +2215,12 @@ SILENT
 		
 		COPY_EXISTING ~xaa363.are~ ~override~
 		
-		// Change Beland Dialog
+		// Disable Brathlen
+		WRITE_LONG 0x264 0 
+		
+		// Change Beland Dialog & Race Script
 		WRITE_ASCII 0x164 ~xabeland~ #8
+		WRITE_ASCII 0x184 ~xainitp1~ #8
 		
 		// Disable rep traps
 		WRITE_LONG 0xB84 256
