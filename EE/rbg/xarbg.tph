@@ -1878,6 +1878,10 @@ SILENT
 //}
 
 //{ Stores
+	COPY_EXISTING ~xaa101.sto~ ~override/xahalbaz.sto~
+	ADD_STORE_ITEM ~potn52~ AFTER ~potn08~ #1 #0 #0 ~IDENTIFIED~ #3
+	ADD_STORE_ITEM ~potn55~ AFTER ~potn52~ #1 #0 #0 ~IDENTIFIED~ #3
+			
 	COPY ~%MOD_FOLDER%/rbg/sto/xamelkor.sto~ ~override~
 	WRITE_LONG 0xc RESOLVE_STR_REF(@4158)
 	
