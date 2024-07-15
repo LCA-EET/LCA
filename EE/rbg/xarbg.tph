@@ -3337,7 +3337,7 @@ SILENT
 				STR_VAR
 					fj_structure_type = actor
 					fj_name = xaorph05
-					fj_cre_resref = boy1
+					fj_cre_resref = boy3
 					fj_dlg_resref = xaorph05
 			END
 			
@@ -4518,6 +4518,8 @@ SILENT
 	//}
 	
 	//{ Corwin's Home, L1 ar1316
+		EXTEND_TOP ~xaas272.are~ ~override/xahome.bcs~
+		
 		COPY_EXISTING ~xaa272.are~ ~override/xahome.are~ 
 		WRITE_ASCII 0x438 ~xahom2~ #8
 		WRITE_LONG 0x688 xamu02
