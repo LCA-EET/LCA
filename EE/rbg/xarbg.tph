@@ -3269,111 +3269,13 @@ SILENT
 	//}
 	
 	//{ Hall of Wonders Cutscene Area ar0131
-		ACTION_IF(xa_regenerate = 1) THEN BEGIN
-			COPY_EXISTING ~xaa362.are~ ~override/xacshow.are~ 
-	
-			// Replace Music
-			WRITE_LONG 0x7E0 0
-
-			LPF xa_delete_are_actors END
-			LPF fj_are_structure
-				INT_VAR
-					fj_loc_x = 718
-					fj_loc_y = 858
-					fj_orientation = 10 
-					fj_flags = 9
-				STR_VAR
-					fj_structure_type = actor
-					fj_name = xaorph01
-					fj_cre_resref = boy3
-					fj_dlg_resref = xaorph01
-			END
-			
-			LPF fj_are_structure
-				INT_VAR
-					fj_loc_x = 748
-					fj_loc_y = 894
-					fj_orientation = 10 
-					fj_flags = 9
-				STR_VAR
-					fj_structure_type = actor
-					fj_name = xaorph02
-					fj_cre_resref = girl01
-					fj_dlg_resref = xaorph02
-			END
-			
-			LPF fj_are_structure
-				INT_VAR
-					fj_loc_x = 727
-					fj_loc_y = 892
-					fj_orientation = 10 
-					fj_flags = 9
-				STR_VAR
-					fj_structure_type = actor
-					fj_name = xaorph03
-					fj_cre_resref = boy3
-					fj_dlg_resref = xaorph03
-			END
-			
-			LPF fj_are_structure
-				INT_VAR
-					fj_loc_x = 781
-					fj_loc_y = 892
-					fj_orientation = 10 
-					fj_flags = 9
-				STR_VAR
-					fj_structure_type = actor
-					fj_name = xaorph04
-					fj_cre_resref = girl01
-					fj_dlg_resref = xaorph04
-			END
-			
-			LPF fj_are_structure
-				INT_VAR
-					fj_loc_x = 832
-					fj_loc_y = 927
-					fj_orientation = 10 
-					fj_flags = 9
-				STR_VAR
-					fj_structure_type = actor
-					fj_name = xaorph05
-					fj_cre_resref = boy3
-					fj_dlg_resref = xaorph05
-			END
-			
-			LPF fj_are_structure
-				INT_VAR
-					fj_loc_x = 812
-					fj_loc_y = 945
-					fj_orientation = 10 
-					fj_flags = 9
-				STR_VAR
-					fj_structure_type = actor
-					fj_name = xaorph06
-					fj_cre_resref = girl01
-					fj_dlg_resref = xaorph06
-			END
-			
-			LPF fj_are_structure
-				INT_VAR
-					fj_loc_x = 700
-					fj_loc_y = 820
-					fj_orientation = 14 
-				STR_VAR
-					fj_structure_type = actor
-					fj_name = xacurato
-					fj_cre_resref = xacurato
-			END
-		END ELSE BEGIN
-			LAF xa_copy_area_music
-				STR_VAR
-					xa_sourcearea = ~xaa362.are~
-					xa_destinationarea = ~%MOD_FOLDER%/rbg/are/xacshow.are~
-			END
-			COPY_EXISTING ~xacshow.are~ ~override~
-			WRITE_LONG 0x7E0 0
+		LAF xa_copy_area_music
+			STR_VAR
+				xa_sourcearea = ~xaa362.are~
+				xa_destinationarea = ~%MOD_FOLDER%/rbg/are/xacshow.are~
 		END
-		
+		COPY_EXISTING ~xacshow.are~ ~override~
+		WRITE_LONG 0x7E0 0
 	//}
 	
 	//{ Ducal Palace 1FL (Kidnap) ar0108 xaa246
