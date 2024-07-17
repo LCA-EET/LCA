@@ -148,6 +148,15 @@ IF ~
 	
 	IF ~~ THEN REPLY @6 /* ~I'm <CHARNAME>. I've returned to Baldur's Gate after a long ordeal in Amn.~*/
 	GOTO XA_7A
+	
+	IF ~~ THEN REPLY @18 /*~I'm afraid you've mistaken me for someone else.~*/
+	GOTO XA_GoAway
+END
+
+IF ~~ THEN BEGIN XA_GoAway
+	SAY @19 /*~Hmph. Begone then, peasant.~*/
+	
+	IF ~~ THEN EXIT
 END
 
 IF ~~ THEN BEGIN XA_7A
@@ -214,4 +223,12 @@ IF ~~ THEN BEGIN XA_CorwinMadXANOBLM2
 		SetGlobal("XA_LC_TownspersonSupportsHero", "LOCALS", 1)
 	~
 	EXTERN XACORWIJ XA_CorwinMadEnd3
+END
+
+IF ~
+	True()
+~ THEN BEGIN XA_Default
+	SAY @20 /*~Would that a man could contemplate his mastery of the universe in peace.~*/
+	
+	IF ~~ THEN EXIT
 END

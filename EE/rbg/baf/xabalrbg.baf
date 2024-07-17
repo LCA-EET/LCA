@@ -164,12 +164,17 @@
 		
 		//{ Corwin Complain about not seeing family.
 		IF
+			InParty("XACORWIN")
 			Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 			Global("XA_LC_CorwinFamilyTimerTicked", "GLOBAL", 1)
 			GlobalLT("XA_LC_CorwinMetFamily", "GLOBAL", 1)
 			GlobalLT("XA_LC_DukesDebriefed", "GLOBAL", 1)
 			GlobalLT("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 1)
 			Global("XA_LC_HaltRBGTimers", "GLOBAL", 0)
+			!AreaCheck("XACSHOW")			
+			OR(2)
+				GlobalLT("XA_LC_SavedTimotey", "GLOBAL", 1)
+				GlobalGT("XA_LC_SavedTimotey", "GLOBAL", 4)
 		THEN
 			RESPONSE #100
 				SetGlobal("XA_LC_CorwinFamilyTimerTicked", "GLOBAL", 0)

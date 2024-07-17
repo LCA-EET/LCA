@@ -124,8 +124,12 @@
 	
 	//{ Corwin Need to See Family
 	IF
-		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)		
 		Global("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 1)
+		!AreaCheck("XACSHOW")			
+		OR(2)
+			GlobalLT("XA_LC_SavedTimotey", "GLOBAL", 1)
+			GlobalGT("XA_LC_SavedTimotey", "GLOBAL", 4)
 	THEN
 		RESPONSE #100
 			//Dialog J-18

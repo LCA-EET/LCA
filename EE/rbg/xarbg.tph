@@ -2832,9 +2832,7 @@ SILENT
 		WRITE_LONG 0x5FE4 0 // Lady Hannah
 		
 		// Lock Doors 
-		WRITE_LONG 0x6FA8 2050 // Oberan Estate
-		WRITE_LONG 0x9DDC 1090 // Force Locked Door to use Key
-		WRITE_ASCII 0x9E2C ~ACIDMIST~ #8 // Key
+		WRITE_LONG 0x9E40 3000 // Set pick difficulty for Oberan's door
 		
 	//}
 	
