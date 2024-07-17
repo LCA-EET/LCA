@@ -193,7 +193,13 @@ APPEND BDCORWIJ
 	~ THEN BEGIN XA_ProficiencyTalk6
 		SAY @8 /*~Not bad... You're a quick learner, <CHARNAME>.~ [XA100129]*/
 		
-		IF ~~ THEN REPLY @9 /* ~Well, it helps that you're an excellent instructor. The Fist is fortunate to have you.~ */
+		IF ~~ THEN REPLY @9 /* ~It helps that you're an excellent instructor. Have you considered starting your own archery academy?~ */
+		DO ~
+			SetGlobal("XA_LC_ProficiencyTalk", "GLOBAL", 5)
+		~
+		GOTO XA_ProficiencyTalk7A
+		
+		IF ~~ THEN REPLY @53 /*~The Fist is fortunate to have you, Corwin.~*/
 		DO ~
 			SetGlobal("XA_LC_ProficiencyTalk", "GLOBAL", 5)
 		~
@@ -423,6 +429,13 @@ APPEND BDCORWIJ
 			IsValidForPartyDialogue("voghiln")
 		~ THEN REPLY @42 /* ~I'd try to talk you out of giving up such a sentimental item, but I can see it would do no good.~ */ 
 		EXTERN ~BDVOGHIJ~ 170
+	END
+	
+	IF ~~ THEN BEGIN XA_ProficiencyTalk7A
+		SAY @54 /*~Heh. Maybe, someday... To be honest, I haven't given much thought to our — I mean, my future. My only concerns at the moment are the crusade, and returning home to Rohma.~*/
+		
+		IF ~~ THEN
+		GOTO XA_ProficiencyTalk7
 	END
 END
 //}
