@@ -566,6 +566,7 @@ SILENT
 				
 				// Apply Updated Dialog
 				WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
+				WRITE_ASCII 0x250 ~xalcnull~ #8 // Class Script
 			END
 		//}
 		
@@ -593,6 +594,7 @@ SILENT
 				
 				// Apply Updated Dialog
 				WRITE_ASCII 0x2CC ~xanoblw~ #8 	// Dialogue
+				WRITE_ASCII 0x250 ~xalcnull~ #8 // Class Script
 			END
 		//}
 		
