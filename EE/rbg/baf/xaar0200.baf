@@ -1,6 +1,7 @@
 IF
 	InMyArea(Player1)
 	Global("XA_LC_SavedTimotey", "GLOBAL", 2)
+	Global("XA_LC_Tim1_2_Transition", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		CreateCreature("XATIMOTY", [3795.1610], S)
@@ -15,9 +16,9 @@ IF
 	Global("XA_LC_SavedTimotey", "GLOBAL", 3)
 THEN
 	RESPONSE #100
+		SetGlobal("XA_LC_SavedTimotey", "GLOBAL", 4)
 		ActionOverride("XATIMOTY", ApplySpell(Myself,WIZARD_STONE_TO_FLESH))
 		Wait(2)
-		SetGlobal("XA_LC_SavedTimotey", "GLOBAL", 4)
 		StartCutSceneMode()
 		StartCutScene("XATIMOT2")
 END

@@ -146,6 +146,7 @@
 		//{ Advance the Timer by One Hour
 		IF
 			Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+			Global("XA_LC_CorwinFamilyTimerSet", "GLOBAL", 1)
 			GlobalTimerExpired("XA_LC_CorwinFamilyTimer", "GLOBAL")
 			GlobalLT("XA_LC_CorwinFamilyTimerTicked", "GLOBAL", 1)
 			GlobalLT("XA_LC_CorwinMetFamily", "GLOBAL", 1)
@@ -178,7 +179,7 @@
 				GlobalGT("XA_LC_SavedTimotey", "GLOBAL", 4)
 		THEN
 			RESPONSE #100
-				SetGlobal("XA_LC_CorwinFamilyTimerTicked", "GLOBAL", 0)
+				SetGlobal("XA_LC_CorwinFamilyTimerTicked", "GLOBAL", 2)
 				SetGlobal("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 1)
 				//DisplayStringHead(Player1, @13)
 		END

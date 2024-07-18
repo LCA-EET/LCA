@@ -422,7 +422,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	EXTEND_TOP_REGEXP ~xaas.+\.bcs$~ ~%MOD_FOLDER%/rbg/baf/xalcbg1a.baf~
 
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/rbg/baf/xap1d.baf~
-	EXTEND_BOTTOM ~xadings.bcs~	~%MOD_FOLDER%/rbg/baf/xadings.baf~
 	EXTEND_TOP ~xabalrbg.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalegg.baf~
 	EXTEND_TOP ~xabalrbg.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalamu.baf~
 	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalrbg.baf~	
@@ -2298,6 +2297,7 @@ SILENT
 					fj_structure_type = actor
 					fj_name = basgrt01
 					fj_cre_resref = basgrt01
+					fj_bcs_general = xabasil
 			END
 		//}
 	//}

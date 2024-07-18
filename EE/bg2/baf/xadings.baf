@@ -1,6 +1,0 @@
-IF
-	Global("XA_LC_DingsCorwin", "GLOBAL", 2)
-THEN
-	RESPONSE #100
-		StartDialog("XADINGS", Player1)
-END

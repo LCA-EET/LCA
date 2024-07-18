@@ -4,9 +4,9 @@ IF
 	InMyArea(Player1)
 THEN
 	RESPONSE #100
-		ActionOverride(Player1, SetMasterArea("XAA104"))
+		ActionOverride(Player1, SetMasterArea("XAA100"))
 		SetGlobal("XA_LC_MasterSet", "MYAREA", 1)
-		Continue()
+		//Continue()
 END
 //}
 

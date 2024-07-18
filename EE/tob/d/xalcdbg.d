@@ -18,10 +18,10 @@ APPEND ~XALCDBG~
 		EXIT
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
-		GOTO 10
+		GOTO 13
 		
 		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 6
+		GOTO 9
 		
 		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
 		DO ~
@@ -55,7 +55,7 @@ APPEND ~XALCDBG~
 		GOTO XA_ToB_Debug
 		
 		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 6
+		GOTO 9
 		
 		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
 		DO ~

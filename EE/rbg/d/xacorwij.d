@@ -2270,6 +2270,7 @@ APPEND XACORWIJ
 			GlobalLT("XA_LC_CorwinFamilyTimer_Hours", "GLOBAL", 4)
 		~ THEN REPLY @1636 /* ~Soon, love.~ */
 		DO ~
+			SetGlobal("XA_LC_CorwinFamilyTimerTicked", "GLOBAL", 0)
 			SetGlobalTimer("XA_LC_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
 			SetGlobal("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 0)
 		~
@@ -2280,6 +2281,7 @@ APPEND XACORWIJ
 			GlobalLT("XA_LC_CorwinFamilyTimer_Hours", "GLOBAL", 4)
 		~ THEN REPLY @1635 /* ~Soon, Captain.~ */
 		DO ~
+			SetGlobal("XA_LC_CorwinFamilyTimerTicked", "GLOBAL", 0)
 			SetGlobalTimer("XA_LC_CorwinFamilyTimer", "GLOBAL", ONE_HOUR)
 			SetGlobal("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 0)
 		~

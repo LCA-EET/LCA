@@ -83,7 +83,7 @@ BEGIN ~XALCDBG~
 		COPY_TRANS XALCDBG XA_ClosingOptions_Assistant
 	END
 	
-	IF ~~ THEN BEGIN XA_LC_Support_Patreon
+	IF ~~ THEN BEGIN XA_LC_Support_Patreon //2
 		SAY @2062 /* ~Please visit www.patreon.com/EETMods. There, you can make either a one-time or a recurring contribution. Thank you for your generosity.~ */ 
 		
 		IF ~~ THEN REPLY @2067 /* ~Return to the prior menu.~*/
@@ -92,7 +92,7 @@ BEGIN ~XALCDBG~
 		COPY_TRANS XALCDBG XA_ClosingOptions_Assistant
 	END
 	
-	IF ~~ THEN BEGIN XA_LC_Support_Paypal
+	IF ~~ THEN BEGIN XA_LC_Support_Paypal //3
 		SAY @2068 /* ~You can send funds to the PayPal account associated with the following e-mail address:
 LCAMod@danielvalle.net.
 Please indicate 'LCA' in the notes for the payment. Thank you for your generosity.~*/ 
@@ -103,7 +103,7 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 		COPY_TRANS XALCDBG XA_ClosingOptions_Assistant
 	END
 	
-	IF ~~ THEN BEGIN XA_LC_Support_Venmo
+	IF ~~ THEN BEGIN XA_LC_Support_Venmo //4
 		SAY @2069 /* ~You can send funds to the following Venmo account associated with Daniel Valle, LLC:
 @dvallellc
 Please indicate 'LCA' in the notes for the payment. Thank you for your generosity.~*/ 
@@ -114,13 +114,13 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 		COPY_TRANS XALCDBG XA_ClosingOptions_Assistant
 	END
 
-	IF ~~ THEN BEGIN XA_VersionCheck //2
+	IF ~~ THEN BEGIN XA_VersionCheck //5
 		SAY @2024 /* ~LCA v1.1, 2024-01-13~*/
 		
 		COPY_TRANS XALCDBG XA_ClosingOptions_Assistant
 	END
 	
-	IF ~~ THEN BEGIN XA_AdvanceTime //3
+	IF ~~ THEN BEGIN XA_AdvanceTime //6
 		SAY @2017  /*~Advance the time.~ */
 		
 		IF ~~ THEN REPLY @2004
@@ -183,7 +183,7 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 	END
 	
 	
-	IF ~~ THEN BEGIN XA_Debug //4
+	IF ~~ THEN BEGIN XA_Debug //7
 		SAY @2029 /* ~WARNING: The debugger is meant to be used for testing purposes only. Improper alterations to the game state can crash the game, or make it so that you cannot complete the game.~*/
 		
 		IF ~~ THEN REPLY @2030 /*~I understand the risks. Proceed.~*/
@@ -195,13 +195,13 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 		COPY_TRANS XALCDBG XA_ClosingOptions_Assistant
 	END
 	
-	IF ~~ THEN BEGIN XA_ReportBug //5
+	IF ~~ THEN BEGIN XA_ReportBug //8
 		SAY @2031 /*~You can report a bug by e-mailing LCAMod@danielvalle.net. It is recommended (but not required) that you include your save game with the bug report.~*/
 		
 		COPY_TRANS XALCDBG XA_ClosingOptions_Assistant
 	END
 	
-	IF ~~ THEN BEGIN XA_Exit //6
+	IF ~~ THEN BEGIN XA_Exit //9
 		SAY @2032/* ~Thanks for playing!~ */
 		IF ~~ THEN 
 		EXIT

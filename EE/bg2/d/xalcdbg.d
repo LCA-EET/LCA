@@ -62,7 +62,7 @@ APPEND ~XALCDBG~
 		GOTO XA_BG2_Sex2ConditionCheck
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
-		GOTO 10
+		GOTO 13
 		
 		COPY_TRANS XALCDBG 14
 	END
