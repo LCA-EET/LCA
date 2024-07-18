@@ -408,6 +408,17 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @2071
+		DO ~
+			GiveItemCreate("boot01", Player1, 0,0,0)
+			GiveItemCreate("boot01", Player2, 0,0,0)
+			GiveItemCreate("boot01", Player3, 0,0,0)
+			GiveItemCreate("boot01", Player4, 0,0,0)
+			GiveItemCreate("boot01", Player5, 0,0,0)
+			GiveItemCreate("boot01", Player6, 0,0,0)
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @2070
 		DO ~
 			SaveGame(0)

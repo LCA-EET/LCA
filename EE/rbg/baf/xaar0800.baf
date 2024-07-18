@@ -1,3 +1,15 @@
+//{ Set Master Area
+IF
+	GlobalLT("XA_LC_MasterSet", "MYAREA", 1)
+	InMyArea(Player1)
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, SetMasterArea("XAA104"))
+		SetGlobal("XA_LC_MasterSet", "MYAREA", 1)
+		Continue()
+END
+//}
+
 IF 
 	InMyArea("XA800M")
 	InMyArea("XA800W")
