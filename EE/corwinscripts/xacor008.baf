@@ -193,6 +193,7 @@ END
 		PartyHasItem("OHNDINGS")
 		GlobalLT("XA_LC_DingsCorwin", "GLOBAL", 2)
 		!AreaType(DUNGEON)
+		!See([ENEMY])
 		OR(2)
 			GlobalTimerExpired("XA_LC_DingsCorwinTimer", "GLOBAL")
 			Global("XA_LC_DingsDebug", "GLOBAL", 1)

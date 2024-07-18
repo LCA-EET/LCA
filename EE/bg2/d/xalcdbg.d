@@ -263,6 +263,12 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @5121 /* ~CreateCreature("XADINGS", [-1.-1], N)~ */
+		DO ~
+			CreateCreature("XADINGS", [-1.-1], N)
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		

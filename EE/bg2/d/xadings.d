@@ -1,5 +1,17 @@
 BEGIN ~XADINGS~
 
+IF ~
+	Global("XA_LC_DingsCorwin", "GLOBAL", 2)
+~ THEN BEGIN XA_Meow
+	SAY @5 /*~Meow.~*/
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_DingsCorwin", "GLOBAL", 3)
+	~
+	EXTERN XACORWIJ XA_LC_Chain_DingsCorwin2
+END
+
 IF ~~ THEN BEGIN XA_LC_DingsCorwinEnd
 	SAY @5  /* ~Meow.~ */
 	
