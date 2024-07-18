@@ -150,6 +150,7 @@
 			GlobalLT("XA_LC_CorwinFamilyTimerTicked", "GLOBAL", 1)
 			GlobalLT("XA_LC_CorwinMetFamily", "GLOBAL", 1)
 			GlobalLT("XA_LC_DukesDebriefed", "GLOBAL", 1)
+			GlobalLT("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 1)
 			Global("XA_LC_HaltRBGTimers", "GLOBAL", 0)
 		THEN
 			RESPONSE #100

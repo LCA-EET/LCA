@@ -4420,7 +4420,7 @@ SILENT
 	//}
 	
 	//{ Corwin's Home, L1 ar1316
-		EXTEND_TOP ~xaas272.are~ ~override/xahome.bcs~
+		EXTEND_TOP ~xaas272.bcs~ ~override/xahome.bcs~
 		
 		COPY_EXISTING ~xaa272.are~ ~override/xahome.are~ 
 		WRITE_ASCII 0x438 ~xahom2~ #8

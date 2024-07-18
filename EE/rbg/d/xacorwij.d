@@ -2260,7 +2260,7 @@ APPEND XACORWIJ
 
 	//{ #region Corwin Family Timer - Dialog J-18 - CC OK
 	IF ~
-		Global("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 1)
+		Global("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 2)
 		GlobalLT("XA_LC_CorwinMetFamily", "GLOBAL", 1)
 	~ THEN BEGIN XA_CorwinFamilyTimer
 		SAY @680 /* ~<CHARNAME> - I really need to see my family. My home is in the southeast part of the city. Let's go.~*/
@@ -2299,7 +2299,7 @@ APPEND XACORWIJ
 		
 		IF ~~ THEN REPLY @1637 /* ~Lead the way.~ */
 		DO ~
-			SetGlobal("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 3)
 			StartCutSceneMode()
 			StartCutscene("XAGOHOME")
 		~
@@ -2312,7 +2312,7 @@ APPEND XACORWIJ
 		IF ~~ THEN REPLY @1639 /* ~See you tomorrow, then.~ */
 		DO ~
 			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", -1)
-			SetGlobal("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 3)
 			SetGlobal("XA_LC_CorwinWithFamily", "GLOBAL", 1)
 			SetGlobal("XA_LC_CorwinMetFamily", "GLOBAL", 2)
 			SetLeavePartyDialogFile()
@@ -2325,7 +2325,7 @@ APPEND XACORWIJ
 		
 		IF ~~ THEN REPLY @1637 /* ~Lead the way.~ */
 		DO ~
-			SetGlobal("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 3)
 			StartCutSceneMode()
 			StartCutscene("XAGOHOME")
 		~
@@ -2716,7 +2716,7 @@ APPEND XACORWIJ
 		= @798 /* ~Sweetie, come and say bye to <CHARNAME>.~ */
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 3)
 			SetGlobal("XA_LC_CorwinWithFamily", "GLOBAL", 1)
 			SetGlobal("XA_LC_CorwinMetFamily", "GLOBAL", 2)
 			ChangeAIScript("", OVERRIDE)
