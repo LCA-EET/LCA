@@ -2832,8 +2832,8 @@ SILENT
 		WRITE_LONG 0x5FE4 0 // Lady Hannah
 		
 		// Lock Doors 
-		WRITE_LONG 0x9E40 3000 // Set pick difficulty for Oberan's door
-		
+		WRITE_LONG 0x9E40 100 // Set pick difficulty for Oberan's door
+		WRITE_ASCII 0x9E2C ~abazring~ #8
 	//}
 	
 	//{ ar0702 xaa152 Harbor Master's Building
