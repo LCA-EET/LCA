@@ -16,6 +16,7 @@ OUTER_SET xa_regenerate = 0 // set to 1 to regenerate areas, 0 (default) to copy
 	ACTION_IF (isEET = 0) THEN BEGIN
 		COPY ~%MOD_FOLDER%/rbg/anim~ ~override~
 
+		APPEND ~animate.ids~ ~0x7D04 HARLOT_FIGHTER~
 		APPEND ~animate.ids~ ~0x7F5A ABISHAI_RED~
 		APPEND ~animate.ids~ ~0x7F5B ABISHAI_BLUE~
 		APPEND ~animate.ids~ ~0x7F58 ABISHAI_BLACK~
