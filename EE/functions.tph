@@ -95,6 +95,41 @@ DEFINE_ACTION_FUNCTION xa_determine_quantity
 //}
 
 //{ Patch Functions
+DEFINE_PATCH_FUNCTION xa_mapdoublelink
+	INT_VAR
+		xa_distance_scale = 0
+		xa_encounter_probability = 0
+	STR_VAR
+		xa_area_a = ~~
+		xa_area_a_entry = ~~
+		xa_area_a_exit_node = ~~
+		xa_area_b = ~~
+		xa_area_b_entry = ~~
+		xa_area_b_exit_node = ~~
+	BEGIN
+		LPF ADD_WORLDMAP_LINKS // A to B
+			INT_VAR
+				distance_scale = xa_distance_scale
+				encounter_probability = xa_encounter_probability
+			STR_VAR
+				entry = ~%xa_area_b_entry%~
+				from_area = ~%xa_area_a%~
+				from_node = ~%xa_area_a_exit_node%~
+				to_area = ~%xa_area_b%~
+		END
+		
+		LPF ADD_WORLDMAP_LINKS // B to A
+			INT_VAR
+				distance_scale = xa_distance_scale
+				encounter_probability = xa_encounter_probability
+			STR_VAR
+				entry = ~%xa_area_a_entry%~
+				from_area = ~%xa_area_b%~
+				from_node = ~%xa_area_b_exit_node%~
+				to_area = ~%xa_area_a%~
+		END
+	END
+
 DEFINE_PATCH_FUNCTION xa_dlgb_soa_to_tob
 	BEGIN
 		REPLACE_TEXTUALLY ~BAERIE~ ~BAERIE25~
