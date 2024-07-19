@@ -2309,8 +2309,8 @@ SILENT
 			WRITE_ASCII 0x2AC ~spidph01~ #8
 			WRITE_ASCII 0x4CC ~carcra01~ #8
 			WRITE_ASCII 0x5DC ~carcra01~ #8
-			WRITE_ASCII 0x6EC ~carriosu~ #8
-			WRITE_ASCII 0x7FC ~carriosu~ #8
+			WRITE_ASCII 0x6EC ~carcra01~ #8
+			WRITE_ASCII 0x7FC ~carcra01~ #8
 			WRITE_ASCII 0x90C ~carcra01~ #8
 		//}
 		
@@ -2320,7 +2320,7 @@ SILENT
 			//}
 			
 			//{ Spawn Point 1
-				WRITE_ASCII 0x1980 ~carriosu~ #8
+				WRITE_ASCII 0x1980 ~carcra01~ #8
 			//}
 			
 			//{ Spawn Point 2
