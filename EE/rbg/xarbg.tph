@@ -299,11 +299,11 @@ SILENT
 			ACTION_PHP_EACH maleTownspeople AS _ => maleTownsperson
 			BEGIN
 				COPY_EXISTING ~%maleTownsperson%.cre~ ~override~
-				
-				// Apply Updated Dialog
-				WRITE_ASCII 0x2CC ~xatownm~ #8 	// Dialogue
-				// Remove Class Script
-				WRITE_ASCII 0x250 ~~ #8 // Class Script
+				LPF xa_reset_cre
+					STR_VAR
+						xa_dialog = ~xatownm~
+						xa_override = ~xalcflee~
+				END
 			END
 		//}
 		
@@ -332,11 +332,11 @@ SILENT
 			ACTION_PHP_EACH femaleTownspeople AS _ => femaleTownsperson
 			BEGIN
 				COPY_EXISTING ~%femaleTownsperson%.cre~ ~override~
-				
-				// Apply Updated Dialog
-				WRITE_ASCII 0x2CC ~xatownf~ #8 	// Dialogue
-				// Remove Class Script
-				WRITE_ASCII 0x250 ~~ #8 // Class Script
+				LPF xa_reset_cre
+					STR_VAR
+						xa_dialog = ~xatownf~
+						xa_override = ~xalcflee~
+				END
 			END
 		//}
 			
@@ -361,10 +361,11 @@ SILENT
 			ACTION_PHP_EACH noblemen AS _ => nobleman
 			BEGIN
 				COPY_EXISTING ~%nobleman%.cre~ ~override~
-				
-				// Apply Updated Dialog
-				WRITE_ASCII 0x2CC ~xanoblm~ #8 	// Dialogue
-				WRITE_ASCII 0x250 ~xalcnull~ #8 // Class Script
+				LPF xa_reset_cre
+					STR_VAR
+						xa_dialog = ~xanoblm~
+						xa_override = ~xalcflee~
+				END
 			END
 		//}
 		
@@ -389,10 +390,11 @@ SILENT
 			ACTION_PHP_EACH noblewomen AS _ => noblewoman
 			BEGIN
 				COPY_EXISTING ~%noblewoman%.cre~ ~override~
-				
-				// Apply Updated Dialog
-				WRITE_ASCII 0x2CC ~xanoblw~ #8 	// Dialogue
-				WRITE_ASCII 0x250 ~xalcnull~ #8 // Class Script
+				LPF xa_reset_cre
+					STR_VAR
+						xa_dialog = ~xanoblw~
+						xa_override = ~xalcflee~
+				END
 			END
 		//}
 		
@@ -1840,6 +1842,7 @@ SILENT
 		
 		// Disable NPCs
 		WRITE_LONG 0x154 0 // Bellamy
+		WRITE_LONG 0xAE4 0 // Shep
 	//}
 	
 	//{ ar0120 xaa457
