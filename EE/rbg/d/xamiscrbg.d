@@ -29,7 +29,7 @@ APPEND xaa233
 		
 		 IF ~~ THEN REPLY @47 /* ~It's been a long journey back from Amn. What do you have to ease our spirits?~ */ 
 		 DO ~
-			StartStore("xa2023",LastTalkedToBy(Myself))
+			StartStore("xaa124",LastTalkedToBy(Myself))
 		~ EXIT
   
 		IF ~~ THEN REPLY @48 /* ~I need nothing at the moment, though your offer is appreciated.~ */ 

@@ -289,7 +289,7 @@ IF ~
 	
 	IF ~~ THEN REPLY @67 /* ~Sure - what do you have?~ */
 	DO ~
-		StartStore("xa2023", LastTalkedToBy(Myself))
+		StartStore("xaa124", LastTalkedToBy(Myself))
 	~
 	EXIT
 

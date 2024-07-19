@@ -2968,9 +2968,12 @@ SILENT
 		
 		WRITE_ASCII 0x5114 ~xakerrac~ #8 // kerrachus dialog
 		
-		// Change Iron Throne to WV
+		// Change Iron Throne to WV (Info Triggers)
 		WRITE_LONG 0x61B0 RESOLVE_STR_REF(@4138)
 		WRITE_LONG 0x6BA4 RESOLVE_STR_REF(@4138)
+		
+		// Change Iron Throne to WV (Map Note)
+		WRITE_LONG 0xB2A8 RESOLVE_STR_REF(@4138)
 	//}
 	
 	//{ ar1201 xaa150 Ogre Mage Ambush House
