@@ -449,11 +449,11 @@ SILENT
 		COPY_EXISTING ~xaa687.cre~ ~override~ // WV Guard 1
 		LPF xa_reset_cre
 			STR_VAR
-				xa_dialog = ~xafigh01~
-				xa_override = ~xalcflee~
+				xa_dialog = ~xawvgrd1~
+				xa_override = ~xaguard~
 		END
 		
-		COPY_EXISTING ~xaa688.cre~ ~override~
+		COPY_EXISTING ~xaa688.cre~ ~override~ // WV Merchant
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xawvmer~
@@ -464,7 +464,6 @@ SILENT
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xawvgrd2~
-				xa_scriptName = ~xawvgrd2~
 				xa_override = ~xaguard~
 		END
 		
@@ -2472,7 +2471,12 @@ SILENT
 		END
 	//}
 	
-	//{ ar0612 xaa309
+	//{ ar0611 xaa311 Iron Throne Basement
+		COPY_EXISTING ~xaa311.are~ ~override~
+		
+	//}
+	
+	//{ ar0612 xaa309 Iron Throne Second Floor
 		COPY_EXISTING ~xaa309.are~ ~override~
 		
 		// Disable NPCs
@@ -2520,14 +2524,10 @@ SILENT
 		END
 	//}
 	
-	//{ ar0613 xaa529
+	//{ ar0613 xaa529 Iron Throne Third Floor
 		COPY_EXISTING ~xaa529.are~ ~override~
 	
-		// Disable NPCs
-		WRITE_LONG 0x594 0 // Emissary Tar
-		WRITE_LONG 0x484 0 // Nortuary
-		
-		WRITE_ASCII 0x6EC ~xawvgrd~ #8
+		LPF xa_delete_are_actors END
 		
 		LPF fj_are_structure
 			INT_VAR
@@ -2561,7 +2561,7 @@ SILENT
 		END
 	//}
 	
-	//{ ar0614 xaa563
+	//{ ar0614 xaa563 Iron Throne Fourth Floor
 		EXTEND_TOP ~xaas563.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0614.baf~
 		COPY_EXISTING ~xaa563.are~ ~override~
 		
@@ -2589,7 +2589,7 @@ SILENT
 	//}
 	PRINT @4182 /* ~Still working... please be patient.~*/
 	SILENT
-	//{ ar0615 xaa662
+	//{ ar0615 xaa662 Iron Throne Fifth Floor
 		COPY_EXISTING ~xaa662.are~ ~override~	
 		//{ Change scrolls in container 3
 			WRITE_ASCII 0x1130 ~SCRL56~ #8
@@ -2650,7 +2650,7 @@ SILENT
 		END
 	//}
 	
-	//{ ar0616 xaa147
+	//{ ar0616 xaa147 Iron Throne Lobby
 		COPY_EXISTING ~xaa147.are~ ~override~
 		
 		// Disable NPCs
