@@ -446,6 +446,20 @@ SILENT
 				xa_scriptName = ~xa800w~
 		END
 		
+		COPY_EXISTING ~xaa687.cre~ ~override~ // WV Guard 1
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xafigh01~
+				xa_override = ~xalcflee~
+		END
+		
+		COPY_EXISTING ~xaa688.cre~ ~override~
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xawvmer~
+				xa_override = ~xalcflee~
+		END
+		
 		COPY_EXISTING ~xaa1179.cre~ ~override/xawvgrd.cre~ // WV Guard 2 iron12
 		LPF xa_reset_cre
 			STR_VAR
@@ -498,6 +512,7 @@ SILENT
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xawvmer~
+				xa_override = ~xalcflee~
 		END
 		
 		COPY_EXISTING ~xawvmer1.cre~ ~override/xawvmer2.cre~ // WV Merchant ironm3
@@ -2460,6 +2475,9 @@ SILENT
 	//{ ar0612 xaa309
 		COPY_EXISTING ~xaa309.are~ ~override~
 		
+		// Disable NPCs
+		WRITE_LONG 0x154 0 // Dra'tan
+		
 		LPF fj_are_structure
 			INT_VAR
 				fj_loc_x = 300
@@ -2478,7 +2496,7 @@ SILENT
 			STR_VAR
 				fj_structure_type = actor
 				fj_name = Merchant
-				fj_cre_resref = xawvmerl
+				fj_cre_resref = xawvmer1
 		END
 		LPF fj_are_structure
 			INT_VAR
@@ -2505,6 +2523,12 @@ SILENT
 	//{ ar0613 xaa529
 		COPY_EXISTING ~xaa529.are~ ~override~
 	
+		// Disable NPCs
+		WRITE_LONG 0x594 0 // Emissary Tar
+		WRITE_LONG 0x484 0 // Nortuary
+		
+		WRITE_ASCII 0x6EC ~xawvgrd~ #8
+		
 		LPF fj_are_structure
 			INT_VAR
 				fj_loc_x = 850
@@ -2540,7 +2564,18 @@ SILENT
 	//{ ar0614 xaa563
 		EXTEND_TOP ~xaas563.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0614.baf~
 		COPY_EXISTING ~xaa563.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x6A4 0 // Destus
+		
 		WRITE_ASCII 0x164 ~xawvbart~ #8 // change bartender dialog
+		
+		// Change Merchants
+		WRITE_ASCII 0x2AC ~xawvmer1~ #8
+		WRITE_ASCII 0x3BC ~xawvmer1~ #8
+		WRITE_ASCII 0x4CC ~xawvmer1~ #8
+		WRITE_ASCII 0x5DC ~xawvmer1~ #8
+		
 		LPF fj_are_structure
 			INT_VAR
 				fj_loc_x = 850
@@ -2613,6 +2648,13 @@ SILENT
 				fj_name = Guard
 				fj_cre_resref = xawvgrd
 		END
+	//}
+	
+	//{ ar0616 xaa147
+		COPY_EXISTING ~xaa147.are~ ~override~
+		
+		// Disable NPCs
+		WRITE_LONG 0x484 0 // Triadore
 	//}
 	
 	//{ ar0619 xaa364
