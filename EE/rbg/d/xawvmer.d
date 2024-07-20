@@ -2,6 +2,7 @@ BEGIN ~XAWVMER~
 
 IF ~
 	GlobalLT("XA_LC_Questioned_WV_Merchant", "GLOBAL", 1)
+	GlobalLT("XA_LC_NederlokVirgil", "GLOBAL", 1)
 ~ THEN BEGIN XA_Greeting
 	SAY @1 /* ~Welcome to the Winston Ventures. May your stay be a profitable one.~ */
 	
@@ -15,8 +16,15 @@ END
 IF ~~ THEN BEGIN XA_Greeting2
 	SAY @7 /* ~Lord Winston is away on business at the moment. His assistant Virgory can assist you with any inquiries.~ */
 	
-	IF ~~ THEN REPLY @8 /* ~I see. Where is Virgory?~ */
+	IF ~
+		!AreaCheck("xaa563")
+	~ THEN REPLY @8 /* ~I see. Where is Virgory?~ */
 	GOTO XA_Greeting3
+	
+	IF ~
+		AreaCheck("xaa563")
+	~ THEN REPLY @8 /* ~I see. Where is Virgory?~ */
+	GOTO XA_Greeting3A
 END
 
 IF ~~ THEN BEGIN XA_Greeting3
@@ -67,3 +75,10 @@ IF ~
 	IF ~~ THEN EXIT
 END
 
+IF ~~ THEN BEGIN XA_Greeting3A
+	SAY @11 /* ~He's in the library, on this floor.~ */
+	
+	IF ~~ THEN REPLY @10 /* ~Thank you.~ */
+	EXIT
+
+END
