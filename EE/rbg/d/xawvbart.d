@@ -333,7 +333,9 @@ END
 IF ~~ THEN XA_CorwinManifestSwitch_Romance
 	SAY @49 /* ~Enjoy your drink, you've certainly earned it. If you need anything else, let me know.~*/
 	
-	IF ~~ THEN EXIT
+	IF ~
+		!PartyHasItem("XAMANFST")
+	~ THEN EXIT
 	
 	IF ~
 		!Global("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
@@ -359,7 +361,9 @@ END
 IF ~~ THEN XA_CorwinManifestSwitch_NonRomance
 	SAY @38 /* ~Good to hear. Well, I'm sure you're glad to be home. Let me know if you need anything else.~ */
 	
-	IF ~~ THEN EXIT
+	IF ~
+		!PartyHasItem("XAMANFST")
+	~ THEN EXIT
 	
 	IF ~
 		!Global("XA_LC_AskedBartenderManifest", "GLOBAL", 1)
@@ -384,10 +388,6 @@ END
 
 CHAIN XACORWIJ XA_CorwinBartenderEnd
 	@43 /*~We did, yes.~*/
-	== XAWVBART
-	@38 /*~Good to hear. Well, I'm sure you're glad to be home. Let me know if you need anything else.~ */
-	== XACORWIJ
-	@50 /*~Thanks, Max.~*/
 END XAWVBART XA_CorwinManifestSwitch_NonRomance //OK
 
 CHAIN XACORWIJ XA_CorwinBartenderEnd_Romance
@@ -396,8 +396,7 @@ CHAIN XACORWIJ XA_CorwinBartenderEnd_Romance
 	@44 /* ~Good to hear. You know, that sounds a lot like what happened to <CHARNAME>, the hero of Baldur's Gate... they said <PRO_HESHE>'d killed the Duke's daughter, then they said <PRO_HESHE> was framed, and that <PRO_HESHE> helped restore...~ */
 	=@45 /* ~Wait... the one you said you helped in Amn... that was <CHARNAME>, wasn't it?~*/
 	== XACORWIJ
-	@46 /*~(She smiles.)~*/
-	=@47 /* ~The one and only.~*/
+	@47 /* ~Mm. The one and only.~*/
 	== XAWVBART
 	@48 /* ~Wow! Well, I'm very glad that things worked out... for the both of you.~*/
 END XAWVBART XA_CorwinManifestSwitch_Romance //OK
@@ -416,25 +415,25 @@ CHAIN XACORWIJ CorwinBartenderDrinkChain
 	== XACORWIJ
 	@33 /* ~Thanks. What do I owe you?~*/
 	== XAWVBART
-	@34 /* ~First drink's on me. The name's Max - nice to meet you.~*/ 
+	@80 /* ~First drink's on me. The name's Max - nice to meet you.~*/ 
 	== XACORWIJ
 	@35 /* ~I'm Captain Schael Corwin. It's good to meet you too.~*/
 	== XAWVBART
-	@36 /* ~So Captain, what brings you here? I didn't know officers were allowed to drink while on duty.~*/
+	@82 /* ~So Captain, what brings you here? Business, or pleasure?~ */
 	== XACORWIJ
-	@37 /*~I'm not on duty. I just got back from a long stint in Amn.~ */
+	@35 /*~I'm not on duty. I just got back from a long stint in Amn.~ */
 	== XAWVBART
 	@36 /* ~Amn? The Fist sends officers that far south?~ */
 	== XACORWIJ
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ 
-	@41 /* ~~Normally, they don't. The <PRO_MANWOMAN> I love was exiled to Amn after being framed for a crime they didn't commit. They needed my help to bring the one responsible to justice.~*/
+	@41 /* ~Normally, they don't. The <PRO_MANWOMAN> I love was exiled from the city after being framed for a crime they didn't commit. The Dukes ordered that I assist <PRO_HIMHER> in bringing the one responsible to justice.~*/
 	== XACORWIJ
 	IF ~
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ 
-	@37 /* ~Normally, they don't. It was a special assignment on behalf of the Dukes...~ */
+	@37 /* ~Normally, they don't. It was a special assignment given to me by the Dukes... to bring the one responsible for Skie Silvershield's murder to justice.~ */
 END XAWVBART XA_CorwinBartenderSwitch //OK
 
 CHAIN XACORWIJ CorwinBartenderSlaverChain_DoesntKnowName

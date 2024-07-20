@@ -561,6 +561,12 @@ APPEND ~XALCDBG~
 		~
 		GOTO XA_RBG_AdjustVariables
 		
+		IF ~~ THEN REPLY @6077
+		DO ~
+			SetGlobal("XA_LC_CorwinLeaveForFamily_Hours", "GLOBAL", 0)
+		~
+		GOTO XA_RBG_AdjustVariables
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
