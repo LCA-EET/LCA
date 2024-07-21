@@ -403,7 +403,7 @@ END XAWVBART XA_CorwinManifestSwitch_Romance //OK
 
 CHAIN XACORWIJ CorwinBartenderOneDrinkChain
 	@30 /* ~One drink was enough. Thanks.~ */
-END
+EXIT
 
 CHAIN XACORWIJ CorwinBartenderDrinkChain
 	@31 /* ~I'll have the Berduskan dark wine.~*/
@@ -417,7 +417,7 @@ CHAIN XACORWIJ CorwinBartenderDrinkChain
 	== XAWVBART
 	@80 /* ~First drink's on me. The name's Max - nice to meet you.~*/ 
 	== XACORWIJ
-	@35 /* ~I'm Captain Schael Corwin. It's good to meet you too.~*/
+	@81 /* ~I'm Captain Schael Corwin. It's good to meet you too.~*/
 	== XAWVBART
 	@82 /* ~So Captain, what brings you here? Business, or pleasure?~ */
 	== XACORWIJ
@@ -447,7 +447,7 @@ CHAIN XACORWIJ CorwinBartenderSlaverChain_DoesntKnowName
 	@64 /*~I'm sure there's been some kind of misunderstanding. Speak to Virgil, he'll be able to help you. He's usually in the library, in the next room over.~*/
 	== XACORWIJ
 	@60 /*~Thanks for the help.~*/
-END
+EXIT
 
 CHAIN XACORWIJ CorwinBartenderSlaverChain_KnowsName
 	@20 /* ~Listen, Max. I have reason to believe that Winston, or someone in his company, is involved in slaver activity.~  */
@@ -471,13 +471,13 @@ CHAIN XACORWIJ CorwinBartenderSlaverChain_KnowsName
 	@60 /*~Thanks for the help.~*/
 	== XAWVBART
 	@61 /*~Anytime... I just hope you're wrong about Winston.~*/
-END
+EXIT
 
 CHAIN XACORWIJ CorwinWantsNothingChain
 	@52 /*~Nothing right now, Max.~*/
 	== XAWVBART
 	@53 /*~Suit yourself. Let me know if you need anything.~*/
-END
+EXIT
 
 CHAIN XACORWIJ CorwinWinstonGuiltyChain //OK
 	@69 /* ~Listen, Max. I wanted to let you know that Virgil's been arrested. He confessed that Winston and his company were selling refugees as slaves.~*/
@@ -494,4 +494,4 @@ CHAIN XACORWIJ CorwinWinstonGuiltyChain //OK
 	DO ~
 		EscapeAreaObject("Ext613a")
 	~
-END
+EXIT

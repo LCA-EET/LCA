@@ -303,6 +303,7 @@ SILENT
 					STR_VAR
 						xa_dialog = ~xatownm~
 						xa_override = ~xalcflee~
+						xa_class = ~xalcwalk~
 				END
 			END
 		//}
@@ -336,6 +337,7 @@ SILENT
 					STR_VAR
 						xa_dialog = ~xatownf~
 						xa_override = ~xalcflee~
+						xa_class = ~xalcwalk~
 				END
 			END
 		//}
@@ -365,6 +367,7 @@ SILENT
 					STR_VAR
 						xa_dialog = ~xanoblm~
 						xa_override = ~xalcflee~
+						xa_class = ~xalcwalk~
 				END
 			END
 		//}
@@ -394,6 +397,7 @@ SILENT
 					STR_VAR
 						xa_dialog = ~xanoblw~
 						xa_override = ~xalcflee~
+						xa_class = ~xalcwalk~
 				END
 			END
 		//}
@@ -458,6 +462,7 @@ SILENT
 			STR_VAR
 				xa_dialog = ~xawvmer~
 				xa_override = ~xalcflee~
+				xa_class = ~xalcwalk~
 		END
 		
 		COPY_EXISTING ~xaa1179.cre~ ~override/xawvgrd.cre~ // WV Guard 2 iron12
@@ -508,6 +513,7 @@ SILENT
 			STR_VAR
 				xa_dialog = ~xawvmer~
 				xa_override = ~xalcflee~
+				xa_class = ~xalcwalk~
 		END
 		
 		COPY_EXISTING ~xawvmer1.cre~ ~override/xawvmer2.cre~ // WV Merchant ironm3
@@ -547,6 +553,7 @@ SILENT
 				xa_override = ~xainitp1~
 				xa_dialog = ~xajhasso~
 				xa_general = ~xalcflee~
+				xa_class = ~xalcwalk~
 		END
 				
 		COPY_EXISTING ~xaa108.cre~ ~override/xasemaj.cre~ // Semaj semaj
