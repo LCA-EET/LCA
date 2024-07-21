@@ -246,6 +246,14 @@ SILENT
 		END
 		ADD_CRE_ITEM ~xasdiary~ #0 #0 #0 ~identified&unstealable~ ~INV1~
 		
+		COPY_EXISTING ~xaa972.cre~ ~override~
+		LPF xa_reset_cre
+			STR_VAR
+				xa_override = ~xafigh01~
+				xa_general = ~xalcwalk~
+				xa_dialog = ~xafergus~
+		END
+		
 		COPY_EXISTING ~xaa953.cre~ ~override/xag2dop0.cre~ // dopmer
 		WRITE_ASCII 0x250 ~xag2dop~ #8 // class script
 		WRITE_ASCII 0x280 ~xag2dop0~ #8 // script name
@@ -2426,7 +2434,6 @@ SILENT
 		EXTEND_TOP ~xaas287.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0607.baf~
 		
 		COPY_EXISTING ~xaa287.are~ ~override~
-		WRITE_ASCII 0x384 ~xafergus~ #8 // Change Fergus' Dialogue
 		WRITE_LONG 0x264 0 // Disable Neb
 		LPF fj_are_structure
 			INT_VAR
