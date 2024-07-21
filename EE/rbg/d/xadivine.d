@@ -1,7 +1,7 @@
 BEGIN ~XADIVINE~
 
 IF ~
-	Global("XA_LC_AskedDiviner", "GLOBAL", 1)
+	Global("XA_LC_AskedDiviner", "LOCALS", 1)
 ~ THEN BEGIN XA_AlreadyAsked
 	SAY @24 /* ~I'm sorry, but I won't have the strength to do another such reading until tomorrow.~  */
 	IF ~~ THEN EXIT
@@ -16,20 +16,20 @@ END
 
 IF ~
 	IsGabber(Player1)
-	!Global("XA_LC_DivinerGreeting", "GLOBAL", 1)
+	GlobalLT("XA_LC_DivinerGreeting", "LOCALS", 1)
 ~ THEN BEGIN XA_Greeting
 	SAY @0 /* Ah. You've returned. Welcome.~ */
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_LC_DivinerGreeting", "GLOBAL", 1)
+		SetGlobal("XA_LC_DivinerGreeting", "LOCALS", 1)
 	~
 	GOTO XA_Greeting2
 END
 
 IF ~
-	Global("XA_LC_DivinerGreeting", "GLOBAL", 1)
-	!Global("XA_LC_AskedDiviner", "GLOBAL", 1)
+	Global("XA_LC_DivinerGreeting", "LOCALS", 1)
+	GlobalLT("XA_LC_AskedDiviner", "LOCALS", 1)
 ~ THEN BEGIN XA_Greeting2
 	SAY @7 /* ~You wish to hear the arcane knowledge of Haspur? It will cost you 100 gold for the answers to your questions no matter how small. Choose wisely, as I only have the strength to perform the diviniation once per day. ~*/
 	
@@ -56,47 +56,74 @@ IF ~~ THEN BEGIN XA_AskAway
 
 	IF ~
 		IsValidForPartyDialog("XACORWIN")
+		GlobalLT("XA_LC_DivinerCorwin", "LOCALS", 1)
 	~ THEN REPLY @1 /* ~Schael? Do you have a question you'd like to ask?~ */ 
+	DO ~
+		SetGlobal("XA_LC_DivinerCorwin", "LOCALS", 1)
+	~
 	EXTERN XACORWIJ XA_AskDiviner
 	
 	IF ~
 		IsValidForPartyDialog("IMOEN2")
-		!Global("XA_LC_ImoenAskedDiviner", "GLOBAL", 1)
+		GlobalLT("XA_LC_DivinerImoen", "LOCALS", 1)
 	~ THEN REPLY @2 /* ~Imoen? Do you have a question you'd like to ask?~*/
+	DO ~
+		SetGlobal("XA_LC_DivinerImoen", "LOCALS", 1)
+	~
 	EXTERN IMOEN2J XA_AskDiviner
 
 	IF ~
 		IsValidForPartyDialog("Valygar")
+		GlobalLT("XA_LC_DivinerValygar", "LOCALS", 1)
 	~ THEN REPLY @3 /* ~Valygar? Do you have a question you'd like to ask?~*/
+	DO ~
+		SetGlobal("XA_LC_DivinerValygar", "LOCALS", 1)
+	~
 	EXTERN VALYGARJ XA_AskDiviner
 	
 	IF ~
 		IsValidForPartyDialog("AERIE")
+		GlobalLT("XA_LC_DivinerAerie", "LOCALS", 1)
 	~ THEN REPLY @4 /* ~Aerie? Do you have a question you'd like to ask?~ */
+	DO ~
+		SetGlobal("XA_LC_DivinerAerie", "LOCALS", 1)
+	~
 	EXTERN AERIEJ XA_AskDiviner
 	
 	IF ~
 		IsValidForPartyDialog("JAHEIRA")
-		!Global("XA_LC_JaheiraAskedDiviner", "GLOBAL", 1)
+		GlobalLT("XA_LC_DivinerJaheira", "LOCALS", 1)
 	~ THEN REPLY @5 /* ~Jaheira? Do you have a question you'd like to ask?~*/
+	DO ~
+		SetGlobal("XA_LC_DivinerJaheira", "LOCALS", 1)
+	~
 	EXTERN JAHEIRAJ XA_AskDiviner
 	
 	IF ~
 		IsValidForPartyDialog("ANOMEN")
-		!Global("XA_LC_AnomenAskedDiviner", "GLOBAL", 1)
+		GlobalLT("XA_LC_DivinerAnomen", "LOCALS", 1)
 	~ THEN REPLY @42 /* ~Anomen? Do you have a question you'd like to ask?~ */
+	DO ~
+		SetGlobal("XA_LC_DivinerAnomen", "LOCALS", 1)
+	~
 	EXTERN ANOMENJ XA_AskDiviner
 	
 	IF ~
 		IsValidForPartyDialog("NALIA")
-		!Global("XA_LC_NaliaAskedDiviner", "GLOBAL", 1)
+		GlobalLT("XA_LC_DivinerNalia", "LOCALS", 1)
 	~ THEN REPLY @15 /* ~Nalia? Do you have a question you'd like to ask?~ */
+	DO ~
+		SetGlobal("XA_LC_DivinerNalia", "LOCALS", 1)
+	~
 	EXTERN NALIAJ XA_AskDiviner
 	
 	IF ~
 		IsValidForPartyDialog("VICONIA")
-		!Global("XA_LC_ViconiaAskedDiviner", "GLOBAL", 1)
+		GlobalLT("XA_LC_DivinerViconia", "LOCALS", 1)
 	~ THEN REPLY @27 /* ~Viconia? Do you have a question you'd like to ask?~ */
+	DO ~
+		SetGlobal("XA_LC_DivinerViconia", "LOCALS", 1)
+	~
 	EXTERN VICONIJ XA_AskDiviner
 	
 	IF ~~ THEN REPLY @50 /* ~I have a question.~*/
@@ -212,7 +239,7 @@ IF ~~ THEN XA_BigDecision2
 	GOTO XA_AlreadyAsked
 END
 IF ~~ THEN BEGIN XA_IrenicusGone
-	SAY @52 /* ~Yes. The Shattered One will not trouble you or anyone else ever again.~*/
+	SAY @53 /* ~Yes. The Shattered One will not trouble you or anyone else ever again.~*/
 	
 	IF ~~ THEN
 	DO ~
