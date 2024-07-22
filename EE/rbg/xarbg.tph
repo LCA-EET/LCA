@@ -968,6 +968,7 @@ SILENT
 		WRITE_ASCII 0x250 ~xachick~ #8		// Class Script
 		
 		COPY_EXISTING ~neb.cre~ ~override/xaneb.cre~ // Flaming Fist Enforcer
+		REMOVE_CRE_ITEM ~MISC5K~
 		WRITE_LONG 0x14 7000	// XP Value
 		WRITE_SHORT 0x24 145	// Current HP
 		WRITE_SHORT 0x26 145	// Max HP
@@ -1812,7 +1813,9 @@ SILENT
 		COPY_EXISTING ~xaa228.are~ ~override~
 		
 		// Disable NPCs
-		WRITE_LONG 0x2024 0 // Quenash
+		//WRITE_LONG 0x2024 0 // Quenash
+		
+		WRITE_ASCII 0x2054 ~xadegrod~ #8 // Update Quenash Script
 		
 		//{ Add Jasper NPC (Tianna's Problem Quest)
 		LPF fj_are_structure
@@ -2165,6 +2168,16 @@ SILENT
 	//{ ar0161 xaa482 Degrodel's Home
 		COPY_EXISTING ~xaa482.are~ ~override~
 		
+		WRITE_ASCII 0x17C ~xadegrod~ #8
+		WRITE_ASCII 0x27C ~xadegrod~ #8
+		WRITE_ASCII 0x38C ~xadegrod~ #8
+		WRITE_ASCII 0x49C ~xadegrod~ #8
+		WRITE_ASCII 0x5AC ~xadegrod~ #8
+		WRITE_ASCII 0x6BC ~xadegrod~ #8
+		WRITE_ASCII 0x7CC ~xadegrod~ #8
+		WRITE_ASCII 0x8DC ~xadegrod~ #8
+		
+		/*
 		// Change Creatures
 		WRITE_ASCII 0x154 ~xaa548~ #8 // ftowb5
 		WRITE_ASCII 0x264 ~xaa151~ #8 // mtowba_a
@@ -2175,6 +2188,7 @@ SILENT
 		WRITE_LONG 0x594 0
 		WRITE_LONG 0x6A4 0
 		WRITE_LONG 0x7B4 0
+		*/
 	//}
 	
 	//{ ar0162 xaa478 Louise and Laerta's Home
@@ -2760,14 +2774,13 @@ SILENT
 	
 	//{ ar0719 xaa173 Felonius Gist House
 		COPY_EXISTING ~xaa173.are~ ~override~
-		
-		// Remove Statues
-		WRITE_LONG 0x264 0
-		WRITE_LONG 0x374 0
-		WRITE_LONG 0x484 0
-		WRITE_LONG 0x594 0
-		WRITE_LONG 0x6A4 0
-		
+		LPF xa_rescript_actors
+			STR_VAR
+				xa_override = ~xaa123~
+				xa_class = ~xaa349~
+				xa_default = ~xaa102~
+				xa_general = ~xadegrod~
+		END
 	//}
 	
 	//{ ar0724 xaa176 Games Tent

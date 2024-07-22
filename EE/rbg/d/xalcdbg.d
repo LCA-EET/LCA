@@ -569,7 +569,19 @@ APPEND ~XALCDBG~
 		
 		IF ~~ THEN REPLY @6078
 		DO ~
-			SetGlobal("XA_LC_NebSpawn", "MYAREA", 1)
+			SetGlobal("XA_LC_NebSewerTest", "GLOBAL", 1)
+		~
+		GOTO XA_RBG_AdjustVariables
+		
+		IF ~~ THEN REPLY @6079
+		DO ~
+			SetGlobal("XA_LC_HelmQuestAlreadyDone", "GLOBAL", 1)
+		~
+		GOTO XA_RBG_AdjustVariables
+		
+		IF ~~ THEN REPLY @6080
+		DO ~
+			SetGlobal("XA_LC_HelmQuestAlreadyDone", "GLOBAL", 0)
 		~
 		GOTO XA_RBG_AdjustVariables
 		

@@ -328,6 +328,8 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @6076=~xaducal~
 @6077=~SetGlobal("XA_LC_CorwinLeaveForFamily_Hours", "GLOBAL", 0)~
 @6078=~SetGlobal("XA_LC_NebSewerTest", "GLOBAL", 1)~
+@6079=~SetGlobal("XA_LC_HelmQuestAlreadyDone", "GLOBAL", 1)~
+@6080=~SetGlobal("XA_LC_HelmQuestAlreadyDone", "GLOBAL", 0)~
 
 @7000=~ToB Debug~
 @7001=~XAG104 (BD5300) - Kanaglym~

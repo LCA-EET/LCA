@@ -1,5 +1,5 @@
 IF
-	Global("XA_LC_PossessedHelm", "GLOBAL", 1)
+	Global("XA_LC_HelmQuestAlreadyDone", "GLOBAL", 1)
 	GlobalLT("XA_LC_RemoveHelm", "MYAREA", 1)
 THEN
 	RESPONSE #100
