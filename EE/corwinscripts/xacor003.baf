@@ -1,3 +1,23 @@
+//{ RBG Sound Swap
+	IF
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+		GlobalLT("XA_LC_RBGSoundSwap", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_RBGSoundSwap", "GLOBAL", 1)
+			SetPlayerSound(Myself,@49,AREA_CITY)
+	END
+
+	IF
+		GlobalGT("XA_LC_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_RBGSoundSwap", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_RBGSoundSwap", "GLOBAL", 0)
+			SetPlayerSound(Myself,@17,AREA_CITY)
+	END
+//}
+
 //{ Set Sickness Sounds
 
 	IF
