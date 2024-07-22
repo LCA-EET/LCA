@@ -1,7 +1,9 @@
 //{ Helm of Balduran Possessed
 IF
-	PartyHasItem("HELM07")
 	GlobalLT("XA_LC_PossessedHelm", "GLOBAL", 1)
+	OR(2)
+		PartyHasItem("HELM07") // Helm of Balduran
+		PartyHasItem("CLCK05") // Cloak of Balduran
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_PossessedHelm", "GLOBAL", 1)

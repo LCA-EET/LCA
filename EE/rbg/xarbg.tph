@@ -968,6 +968,7 @@ SILENT
 		WRITE_ASCII 0x250 ~xachick~ #8		// Class Script
 		
 		COPY_EXISTING ~neb.cre~ ~override/xaneb.cre~ // Flaming Fist Enforcer
+		REMOVE_CRE_ITEM ~MISC5K~
 		WRITE_LONG 0x14 7000	// XP Value
 		WRITE_SHORT 0x24 145	// Current HP
 		WRITE_SHORT 0x26 145	// Max HP

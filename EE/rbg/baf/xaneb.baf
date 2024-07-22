@@ -8,6 +8,7 @@ THEN
 		SetGlobal("ChildrenCalled","MYAREA",1)
 		SetGlobal("NebActs","LOCALS",1)
 		SetInterrupt(TRUE)
+		Continue()
 END
 
 IF
@@ -29,6 +30,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("SetGiggleTimer","LOCALS",1)
 		SetGlobalTimer("NebGiggling","GLOBAL",3)
+		Continue()
 END
 
 IF
@@ -38,6 +40,7 @@ THEN
 	RESPONSE #100
 		DisplayStringHead(Myself,5772)  // Hee hee!
 		SetGlobalTimer("NebGiggling","GLOBAL",3)
+		Continue()
 END
 
 IF
@@ -48,6 +51,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("NebAttacks","LOCALS",1)
+		Continue()
 END
 
 IF
@@ -61,6 +65,7 @@ THEN
 	RESPONSE #100
 		DisplayStringHead(Myself,46150)  // *quaffs a potion*
 		UseItemSlot(Myself,SLOT_MISC0)
+		Continue()
 END
 
 IF

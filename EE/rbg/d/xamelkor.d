@@ -120,7 +120,7 @@ END
 IF ~
 	IsGabber(Player1)
 	Global("XA_LC_TalkedToMelkor", "GLOBAL", 1)
-	!Global("XA_LC_TalkedToSkie", "GLOBAL", 1)
+	GlobalLT("XA_LC_TalkedToSkie", "GLOBAL", 1)
 ~ THEN BEGIN XA_TalkedToSkieAmConcerned
 	SAY @66 /* ~Before we continue, I suggest that you speak with Skie. She is in her room.~ */
 	
@@ -183,8 +183,15 @@ IF ~~ THEN BEGIN XA_MeetMelkor2B
 	
 	= @10 /* ~I am Melkor, battle wizard of the Flaming Fist. It's a pleasure to finally meet you. I've been tasked with the analysis of the artifact known as the Soultaker dagger, and to assist Skie Silvershield in her recovery.~ */
 	
-	IF ~~ THEN REPLY @3 /* ~I just spoke to Skie... I'm concerned, to say the least.~ */
+	IF ~
+		Global("XA_LC_TalkedToSkie", "GLOBAL", 1)
+	~ THEN REPLY @3 /* ~I just spoke to Skie... I'm concerned, to say the least.~ */
 	GOTO XA_MeetMelkor3
+	
+	IF ~
+		GlobalLT("XA_LC_TalkedToSkie", "GLOBAL", 1)
+	~ THEN REPLY @63 /* ~And how is Skie?~ */
+	GOTO XA_HaventSpokenToSkie
 END
 
 IF ~~ THEN BEGIN XA_MeetMelkor2A
@@ -196,7 +203,7 @@ IF ~~ THEN BEGIN XA_MeetMelkor2A
 	GOTO XA_MeetMelkor3
 	
 	IF ~
-		!Global("XA_LC_TalkedToSkie", "GLOBAL", 1)
+		GlobalLT("XA_LC_TalkedToSkie", "GLOBAL", 1)
 	~ THEN REPLY @63 /* ~And how is Skie?~ */
 	GOTO XA_HaventSpokenToSkie
 END
@@ -233,50 +240,43 @@ IF ~~ THEN BEGIN XA_MeetMelkor5
 	
 	= @13 /* ~We created the replica for her, so that we could study the real dagger without unnecessary interruption. The story she concocted is another one of her delusions.~*/
 	
-	IF ~~ THEN REPLY @14 /* ~Where is the real dagger, then?~*/
+	IF ~
+		GlobalLT("XA_LC_Melkor_AskedWhereDagger", "LOCALS", 1)
+	~ THEN REPLY @14 /* ~Where is the real dagger, then?~*/
 	DO ~
-		SetGlobal("XA_LC_Melkor_AskedWhereDagger", "GLOBAL", 1)
+		SetGlobal("XA_LC_Melkor_AskedWhereDagger", "LOCALS", 1)
 	~
 	GOTO XA_MeetMelkor5A
 	
-	IF ~~ THEN REPLY @15 /* ~What have you learned about the dagger?~*/
+	IF ~
+		GlobalLT("XA_LC_Melkor_AskedLearnedDagger", "LOCALS", 1)
+	~ THEN REPLY @15 /* ~What have you learned about the dagger?~*/
 	DO ~
-		SetGlobal("XA_LC_Melkor_AskedLearnedDagger", "GLOBAL", 1)
+		SetGlobal("XA_LC_Melkor_AskedLearnedDagger", "LOCALS", 1)
 	~
 	GOTO XA_MeetMelkor5B
 	
-	IF ~~ THEN REPLY @16 /* ~What are your thoughts on Skie? Will she ever fully recover?~*/
+	IF ~
+		GlobalLT("XA_LC_Melkor_AskedSkie", "LOCALS", 1)
+	~ THEN REPLY @16 /* ~What are your thoughts on Skie? Will she ever fully recover?~*/
 	DO ~
-		SetGlobal("XA_LC_Melkor_AskedSkie", "GLOBAL", 1)
+		SetGlobal("XA_LC_Melkor_AskedSkie", "LOCALS", 1)
 	~
 	GOTO XA_MeetMelkor5C
+	
+	IF ~
+		OR(3)
+			Global("XA_LC_Melkor_AskedSkie", "LOCALS", 1)
+			Global("XA_LC_Melkor_AskedLearnedDagger", "LOCALS", 1)
+			Global("XA_LC_Melkor_AskedWhereDagger", "LOCALS", 1)
+	~ THEN REPLY @38 /* ~Very well. I'll leave you to your work, wizard.~ */
+	EXIT
 END
 
 IF ~~ THEN BEGIN XA_MeetMelkor5A
 	SAY @20 /* ~It is safe. I will not speak more of it's location.~*/
 	
-	IF ~
-		!Global("XA_LC_Melkor_AskedLearnedDagger", "GLOBAL", 1)
-	~ THEN REPLY @15 /* ~What have you learned about the dagger?~*/
-	DO ~
-		SetGlobal("XA_LC_Melkor_AskedLearnedDagger", "GLOBAL", 1)
-	~
-	GOTO XA_MeetMelkor5B
-	
-	IF ~
-		!Global("XA_LC_Melkor_AskedSkie", "GLOBAL", 1)
-	~ THEN REPLY @16 /* ~What are your thoughts on Skie? Will she ever fully recover?~*/
-	DO ~
-		SetGlobal("XA_LC_Melkor_AskedSkie", "GLOBAL", 1)
-	~
-	GOTO XA_MeetMelkor5C
-	
-	IF ~
-		Global("XA_LC_Melkor_AskedSkie", "GLOBAL", 1)
-		Global("XA_LC_Melkor_AskedLearnedDagger", "GLOBAL", 1)
-		Global("XA_LC_Melkor_AskedWhereDagger", "GLOBAL", 1)
-	~ THEN REPLY @38 /* ~Very well. I'll leave you to your work, wizard.~ */
-	EXIT
+	COPY_TRANS XA_MeetMelkor5
 END
 
 IF ~~ THEN BEGIN XA_MeetMelkor5B
@@ -389,51 +389,13 @@ END
 IF ~~ THEN BEGIN XA_MeetMelkor5B10
 	SAY @56 /* ~Being rid of the dagger will allow us to focus all of our efforts on Skie. I'm sure Duke Entar would agree that it would be best for it to be in your possession.~ */
 	
-	IF ~
-		!Global("XA_LC_Melkor_AskedWhereDagger", "GLOBAL", 1)
-	~ THEN REPLY @14 /* ~Where is the real dagger, then?~*/
-	DO ~
-		SetGlobal("XA_LC_Melkor_AskedWhereDagger", "GLOBAL", 1)
-	~
-	GOTO XA_MeetMelkor5A
-	
-	IF ~
-		!Global("XA_LC_Melkor_AskedSkie", "GLOBAL", 1)
-	~ THEN REPLY @16 /* ~What are your thoughts on Skie? Will she ever fully recover?~*/
-	DO ~
-		SetGlobal("XA_LC_Melkor_AskedSkie", "GLOBAL", 1)
-	~
-	GOTO XA_MeetMelkor5C
-	
-	IF ~
-		Global("XA_LC_Melkor_AskedSkie", "GLOBAL", 1)
-		Global("XA_LC_Melkor_AskedLearnedDagger", "GLOBAL", 1)
-		Global("XA_LC_Melkor_AskedWhereDagger", "GLOBAL", 1)
-	~ THEN REPLY @38 /* ~Very well. I'll leave you to your work, wizard.~ */
-	EXIT
+	COPY_TRANS XA_MeetMelkor5
 END
 
 IF ~~ THEN BEGIN XA_MeetMelkor5C
 	SAY @17 /* ~She will. As I said, she's made great strides already. In the days immediately following her restoration, she suffered from severe fits of catatonia. Slowly but surely, and with our help, her mind will be made whole again.~*/
 	
-	IF ~
-		!Global("XA_LC_Melkor_AskedWhereDagger", "GLOBAL", 1)
-	~ THEN REPLY @14 /* ~Where is the real dagger, then?~*/
-	DO ~
-		SetGlobal("XA_LC_Melkor_AskedWhereDagger", "GLOBAL", 1)
-	~
-	GOTO XA_MeetMelkor5A
-	
-	IF ~
-		!Global("XA_LC_Melkor_AskedLearnedDagger", "GLOBAL", 1)
-	~ THEN REPLY @15 /* ~What have you learned about the dagger?~*/
-	DO ~
-		SetGlobal("XA_LC_Melkor_AskedLearnedDagger", "GLOBAL", 1)
-	~
-	GOTO XA_MeetMelkor5B
-	
-	IF ~~ THEN REPLY @38 /* ~Very well. I'll leave you to your work, wizard.~ */
-	EXIT
+	COPY_TRANS XA_MeetMelkor5
 	
 	IF ~
 		IsValidForPartyDialog("XACORWIN")
@@ -444,32 +406,7 @@ END
 IF ~~ THEN BEGIN XA_MeetMelkor5C3
 	SAY @19 /* ~Duke Silvershield felt it was wise to hide the extent of his daughter's... condition... from others. It was for her own good, Captain.~*/
 	
-	IF ~
-		!Global("XA_LC_Melkor_AskedWhereDagger", "GLOBAL", 1)
-	~ THEN REPLY @14 /* ~Where is the real dagger, then?~*/
-	DO ~
-		SetGlobal("XA_LC_Melkor_AskedWhereDagger", "GLOBAL", 1)
-	~
-	GOTO XA_MeetMelkor5A
-	
-	IF ~
-		!Global("XA_LC_Melkor_AskedLearnedDagger", "GLOBAL", 1)
-	~ THEN REPLY @15 /* ~What have you learned about the dagger?~*/
-	DO ~
-		SetGlobal("XA_LC_Melkor_AskedLearnedDagger", "GLOBAL", 1)
-	~
-	GOTO XA_MeetMelkor5B
-	
-	IF ~
-		!Global("XA_LC_Melkor_AskedSkie", "GLOBAL", 1)
-	~ THEN REPLY @16 /* ~What are your thoughts on Skie? Will she ever fully recover?~*/
-	DO ~
-		SetGlobal("XA_LC_Melkor_AskedSkie", "GLOBAL", 1)
-	~
-	GOTO XA_MeetMelkor5C
-	
-	IF ~~ THEN REPLY @38 /* ~Very well. I'll leave you to your work, wizard.~ */
-	EXIT
+	COPY_TRANS XA_MeetMelkor5
 END
 
 CHAIN XACORWIJ XA_Corwin_Kanaglym
