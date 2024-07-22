@@ -276,7 +276,7 @@ END
 IF ~~ THEN BEGIN XA_MeetMelkor5A
 	SAY @20 /* ~It is safe. I will not speak more of it's location.~*/
 	
-	COPY_TRANS XA_MeetMelkor5
+	COPY_TRANS XAMELKOR XA_MeetMelkor5
 END
 
 IF ~~ THEN BEGIN XA_MeetMelkor5B
@@ -389,13 +389,13 @@ END
 IF ~~ THEN BEGIN XA_MeetMelkor5B10
 	SAY @56 /* ~Being rid of the dagger will allow us to focus all of our efforts on Skie. I'm sure Duke Entar would agree that it would be best for it to be in your possession.~ */
 	
-	COPY_TRANS XA_MeetMelkor5
+	COPY_TRANS XAMELKOR XA_MeetMelkor5
 END
 
 IF ~~ THEN BEGIN XA_MeetMelkor5C
 	SAY @17 /* ~She will. As I said, she's made great strides already. In the days immediately following her restoration, she suffered from severe fits of catatonia. Slowly but surely, and with our help, her mind will be made whole again.~*/
 	
-	COPY_TRANS XA_MeetMelkor5
+	COPY_TRANS XAMELKOR XA_MeetMelkor5
 	
 	IF ~
 		IsValidForPartyDialog("XACORWIN")
@@ -406,7 +406,7 @@ END
 IF ~~ THEN BEGIN XA_MeetMelkor5C3
 	SAY @19 /* ~Duke Silvershield felt it was wise to hide the extent of his daughter's... condition... from others. It was for her own good, Captain.~*/
 	
-	COPY_TRANS XA_MeetMelkor5
+	COPY_TRANS XAMELKOR XA_MeetMelkor5
 END
 
 CHAIN XACORWIJ XA_Corwin_Kanaglym
