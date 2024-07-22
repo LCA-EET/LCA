@@ -1,3 +1,24 @@
+//{ See if the player already completed the Helm of Balduran quest
+IF
+	Global("XA_LC_PossessedHelm", "GLOBAL", 1)
+	GlobalLT("XA_LC_BalduranCheck", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_BalduranCheck", "MYAREA", 1)
+		SetGlobal("XA_LC_HelmQuestAlreadyDone", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	GlobalLT("XA_LC_PossessedHelm", "GLOBAL", 1)
+	GlobalLT("XA_LC_BalduranCheck", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_BalduranCheck", "MYAREA", 1)
+		Continue()
+END
+//}
+
 //{ Mark Ellesime Dream as complete
 IF
 	GlobalLT("HadEllesimeDream1","GLOBAL",1)
