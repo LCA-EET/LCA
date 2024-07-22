@@ -480,6 +480,9 @@ SILENT
 				xa_override = ~xaguard~
 		END
 		
+		COPY_EXISTING ~xaa702.cre~ ~override~ // Umberlee Priestess
+		WRITE_ASCII 0x2CC ~xaumberl~ #8
+		
 		COPY_EXISTING ~xaa730.cre~ ~override/xavirgil.cre~ // Virgil nobl11
 		SAY NAME1 @4082
 		SAY NAME2 @4082
@@ -3037,8 +3040,7 @@ SILENT
 	//{ ar1207 xaa155
 		COPY_EXISTING ~xaa155.are~ ~override~
 		
-		// Disable NPCs
-		WRITE_LONG 0x154 0 // Basilisk
+		LPF xa_delete_are_actors END
 	//}
 	
 	//{ ar1208 xaa156
