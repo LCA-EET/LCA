@@ -567,6 +567,12 @@ APPEND ~XALCDBG~
 		~
 		GOTO XA_RBG_AdjustVariables
 		
+		IF ~~ THEN REPLY @6078
+		DO ~
+			SetGlobal("XA_LC_NebSpawn", "MYAREA", 1)
+		~
+		GOTO XA_RBG_AdjustVariables
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
