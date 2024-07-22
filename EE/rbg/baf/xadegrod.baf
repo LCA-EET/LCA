@@ -1,0 +1,6 @@
+IF
+	Global("XA_LC_HelmQuestAlreadyDone", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
