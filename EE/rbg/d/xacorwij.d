@@ -2892,7 +2892,7 @@ APPEND XACORWIJ
 	IF ~~ THEN BEGIN XA_HarborCorwinChainEnd
 		SAY @811 /*~Thank you for your cooperation.~ */  
 		
-		@812 /* ~Hmm.. <CHARNAME>, look. The manifests identify the company as Winston Ventures, but the contents are encoded.~ */	
+		= @812 /* ~Hmm.. <CHARNAME>, look. The manifests identify the company as Winston Ventures, but the contents are encoded.~ */	
 		
 		IF ~
 			!Dead("Alatos")
