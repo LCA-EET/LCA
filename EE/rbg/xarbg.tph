@@ -504,14 +504,6 @@ SILENT
 				xa_override = ~xainitp1~
 		END
 		
-		COPY_EXISTING ~xaa957.cre~ ~override~ // Ye Olde Inn Bartender barslim
-		LPF xa_reset_cre
-			STR_VAR
-				xa_dialog = ~xabartyo~
-				xa_class = ~runenemy~
-				xa_override = ~shout~
-		END
-		
 		COPY_EXISTING ~xaa949.cre~ ~override/xamerchj.cre~ // Seven Suns Merchant merlea
 		LPF xa_reset_cre
 			STR_VAR
@@ -1809,6 +1801,18 @@ SILENT
 		WRITE_LONG 0x374 0 // Mustard Jelly
 	//}
 	
+	//{ ar0105 xaa268 Blade & Stars L1
+		COPY_EXISTING ~xaa268.are~ ~override~
+		
+		// Replace Actors with Commoners
+		WRITE_ASCII 0x2AC ~xaa694~ #8 
+		WRITE_ASCII 0x3BC ~xaa695~ #8 
+		WRITE_ASCII 0x4CC ~xaa696~ #8 
+		
+		// Disable Reptrap
+		WRITE_LONG 0x808 256
+	//}
+	
 	//{ ar0112 xaa228 Undercellar
 		COPY_EXISTING ~xaa228.are~ ~override~
 		
@@ -2026,10 +2030,13 @@ SILENT
 		COPY_EXISTING ~xaa406.are~ ~override~
 		
 		// Adjust script for cook
-		WRITE_ASCII 0x17C ~xamerchg~ #8
+		WRITE_ASCII 0x17C ~xalcflee~ #8
 		
 		// Disable NPCs
 		WRITE_LONG 0x6A4 0 // Zorl
+		
+		// Replace Bartender Dialog
+		WRITE_ASCII 0x274 ~xabartml~ #8
 		
 		// Replace Merchants
 		WRITE_ASCII 0x3BC ~xamerlea~ #8
@@ -2988,6 +2995,15 @@ SILENT
 		WRITE_LONG 0x5770 256
 		WRITE_LONG 0x5834 256
 		WRITE_LONG 0x58F8 256
+		
+		// Unlock Merchant's League Door
+		WRITE_LONG 0x7B84 64
+	//}
+	
+	//{ ar1109 xaa294 Inn (Phandalyn)
+		COPY_EXISTING ~xaa294.are~ ~override~
+		
+		WRITE_ASCII 0x118C ~xaa696~ #8
 	//}
 	
 	//{ ar1111 xaa293 Sunin's Home
@@ -2997,12 +3013,12 @@ SILENT
 		WRITE_ASCII 0x19C ~xaa730~ #8
 	//}
 	
-	//{ ar1113 xaa288 Slime Inn
+	//{ ar1113 xaa288 Slime Inn / Ye Olde Inn
 		COPY_EXISTING ~xaa132.sto~ ~override/xasto00.sto~
 		WRITE_LONG 0xC RESOLVE_STR_REF(@4150)
 	
 		COPY_EXISTING ~xaa288.are~ ~override~
-		
+		WRITE_ASCII 0x19C ~xabartyo~ #8
 		// Disable NPCs
 		WRITE_LONG 0x6A4 0 // Slime
 		WRITE_LONG 0x7B4 0 // Slime
