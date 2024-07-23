@@ -2779,10 +2779,10 @@ SILENT
 		COPY_EXISTING ~xaa173.are~ ~override~
 		LPF xa_rescript_actors
 			STR_VAR
-				xa_override = ~xaa123~
+				xa_override = ~xadegrod~
+				xa_general = ~xaa123~
 				xa_class = ~xaa349~
 				xa_default = ~xaa102~
-				xa_general = ~xadegrod~
 		END
 	//}
 	
