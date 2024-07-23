@@ -632,9 +632,7 @@ APPEND ~XACOR25J~
 		= @1669 /* ~(She takes your hand and places it on her belly, underneath her armor and vestment.)~*/
 		
 		= @1670 /* ~Wait for it...~*/
-		
-		= @1671/*~(You feel the baby kick.)~*/
-		
+	
 		IF ~~ THEN REPLY @1672 /* ~I felt it! I felt our baby kick!~*/
 		GOTO XA_CorwinPregnant_Final_4
 	END

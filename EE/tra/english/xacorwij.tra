@@ -3,7 +3,6 @@
 @5=~Yes. It's a beautiful statue.~
 @6=~It doesn't do you justice, I'm afraid.~
 @7=~Flatterer.~ [xalc1063]
-@8=~(She smiles).~
 @9=~Neb! By order of the Flaming Fist you are under arrest!~ [xalc1168]
 @10=~Are you alright? It looked for a moment like you were about to keel over.~
 @11=~I felt some dizziness... it's nothing, I'll be fine.~
@@ -47,8 +46,7 @@
 @49=~And you shall have it, my friend. Irenicus must be stopped, before he can destroy any more innocent lives.~
 @50=~I'm with you, <CHARNAME>. Irenicus must be stopped, before he can destroy any more innocent lives.~
 @51=~No, Madame, <PRO_HESHE> doesn't need anything from this whorehouse.~
-@52=~(She laughs.)~
-@53=~Don't look so disappointed, love. There'll be plenty of time for those... activities... once we get back to Baldur's Gate.~
+@53=~Heh. Don't look so disappointed, love. There'll be plenty of time for those... activities... once we get back to Baldur's Gate.~
 @54=~He kidnapped my daughter, so we killed him. His head was taken to prevent him from being resurrected yet again. If you're here to exact some sort of revenge, then you're making a big mistake.~
 @55=~As do I. Let's go love. We've work to do.~
 @56=~He kidnapped my daughter, so we killed him. His soul was taken to prevent him from being resurrected yet again. If you're here to exact some sort of revenge, then you're making a big mistake.~
@@ -556,7 +554,6 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @713=~(You think to yourself that this is the first time you'll have met Schael's family. It may be worthwhile stopping at one of the General Stores in the city to see if you can find a gift for her daughter.)~
 @714=~What do you say, Rohma?~
 @715=~(You think to yourself that it's been a while since you've seen Schael's family. It may be worthwhile stopping at one of the General Stores and getting a gift for her daughter.)~
-@716=~(They share a warm hug.)~
 @717=~I heard you'd be coming home! How are you?~
 @718=~(They break into laughter.)~
 @719=~Listen, I have to start my shift soon. Let's get caught up later, over a drink or two.~
@@ -580,7 +577,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @745=~I... see.~
 @746=~And I won't. Thank you for being honest about your feelings, love. Let's go.~ [xalc1277]
 @747=~(A mischievous smile graces her face.)~
-@748=~Somehow, I knew you'd be. I'll see if she's interested. Let's go.~ [xalc1278]
+@748=~Heh. Somehow, I knew you'd be. I'll see if she's interested. Let's go.~ [xalc1278]
 @749=~What's your name, little girl? You said you were sent here from Baldur's Gate?~ [xalc1279]
 @750=~Do you know if there are others being held here?~
 @751=~Here, take this gold.~
@@ -634,7 +631,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @808=~Not in an hour, now! Unless you want the Flaming Fist to turn these docks inside out.~ [xalc1281]
 @809=~Right... one moment.~
 @810=~Here they are. The shipping manifests for Winston Ventures for the period you mentioned.~
-@811=~Thank you for your cooperation. ~
+@811=~Thank you for your cooperation.~
 @812=~Hmm.. <CHARNAME>, look. The manifests identify the company as Winston Ventures, but the contents are encoded.~
 @813=~We should pay a visit to the Thieves' Guild. They may know how to decode them.~
 @814=~Right. Let's go.~
@@ -728,7 +725,7 @@ I received the shipping manifests from the harbor master, but they are encoded a
 @904=~My love, I'm going home to spend the rest of the day with my family. Have you decided where you're staying tonight?~
 @905=~I was hoping to spend the night at your place.~
 @907=~You'll do more than just see me, I hope.~
-@908=~(She laughs). Much more. See you later.~
+@908=~Heh... Much more. See you later.~
 @910=~Skie, listen to me — put the dagger down, slowly.~
 @911=~Put that damned dagger away Skie. It's gotten me into enough trouble already!~
 @912=~Do as she says, Skie.~
@@ -768,7 +765,7 @@ I received the shipping manifests from the harbor master, but they are encoded a
 @948=~Are you and Jaheira settled in?~
 @949=~Are you and Neera settled in?~
 @950=~I don't doubt it.~
-@951=~(She smiles).~
+
 @952=~And you, Schael? How are you and Rohma adjusting to being together again?~
 @953=~It's been great... speaking of... look at the time. I should get going.~
 @954=~The stars... they're beautiful tonight...~ [xalc1178]
@@ -785,7 +782,7 @@ I received the shipping manifests from the harbor master, but they are encoded a
 @965=~Schael, my love. Will you marry me?~
 @966=~I know how difficult it is, but we mustn't lose focus given what's at stake. Let's go.~
 @967=~Do you like it?~
-@968=~I love it... it's perfect. And I love you. More than you'll ever know.~
+@968=~I love it... it's perfect. And I love you. More than you'll ever know.~ [xalc1353]
 @969=~Yes! Yes of course I will!~ [xalc1023]
 @970=~(You stand, and you quickly pull each other into a long and very passionate embrace.)~
 @971=~Hold out your hand, love. (Place the ring onto her finger.)~
@@ -1181,9 +1178,9 @@ Captain Corwin shared with me the story of how she was arrested in the Hall of W
 @1451=~And I may still. Who knows what the future holds in store for us? Let's get going.~
 @1452=~Right... We have work to do. Let's go.~ [xalc1185]
 @1453=~With you as my commander? Sounds intriguing — I bet you'd *love* ordering me around, wouldn't you hon?~
-@1454=~(She smiles wryly.)~
-@1455=~I would. But not as much as you'd enjoy it.~
-@1456=~Get us a room, love, and we'll see how good you are at following my orders.~
+
+@1455=~I would. But not as much as you'd enjoy it.~ [xalc1354]
+@1456=~Get us a room, love, and we'll see how good you are at following orders.~ [xalc1355]
 @1457=~Yes, ma'am!~
 @1458=~Is that so?~
 @1459=~Judging by how ... long ... and firmly ... you stood at attention the last time we were together... yes.~
@@ -1375,7 +1372,6 @@ Major Corwin offered me some valuable parenting advice, which I gladly accepted.
 @1668=~Before I go, come here...~
 @1669=~(She takes your hand and places it on her belly, underneath her armor and vestment.)~
 @1670=~Wait for it...~
-@1671=~(You feel the baby kick.)~
 @1672=~I felt it! I felt our baby kick!~
 @1673=~Mm. That's your child, love. It's going to need its father to come home. And so will I.~
 @1674=~(She struggles to hold back tears.)~
@@ -1432,7 +1428,6 @@ Major Corwin offered me some valuable parenting advice, which I gladly accepted.
 @1729=~I, um... I don't know anything about that.~
 @1751=~(She gives you a kiss on the cheek.)~
 @1752=~Let's go.~ [xalc1188]
-@1753=~(Her voice cracks.)~
 @1754=~I thought I'd *sob* lost you...~
 @1755=~(She lays her head down on your chest, and you hold her tenderly in your arms. In moments, she finally loses her composure and begins to weep in earnest.)~
 @1756=~Good. Let's deal with Chremy, then get those two kids out of here.~

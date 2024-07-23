@@ -1,0 +1,16 @@
+IF
+	Global("XA_LC_HMCutscene", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_HMCutscene", "GLOBAL", 2)
+		StartCutSceneMode()
+		StartCutScene("xacsharb")
+END
+
+IF
+	Global("XA_LC_HMCutscene", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_HMCutscene", "GLOBAL", 4)
+		ActionOverride("xaa706", StartDialog("XAHARBOR", "XACORWIN"))
+END

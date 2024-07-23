@@ -2710,6 +2710,7 @@ SILENT
 	//}
 	
 	//{ ar0702 xaa152 Harbor Master's Building
+		EXTEND_TOP ~xaas152.bcs~	~%MOD_FOLDER%/rbg/baf/xaar0702.baf~
 		COPY_EXISTING ~xaa152.are~ ~override~
 		WRITE_ASCII 0x164 ~xaharbor~ #8 // change harbor master's dialog
 	//}

@@ -732,9 +732,7 @@ END
 	END
 	
 	IF ~~ THEN BEGIN XA_CorwinStatueTalk_2A
-		SAY @8 /* ~(She smiles).~ */
-		
-		= @234  /* ~A little.~ [BD35159]*/ 
+		SAY @234  /* ~A little.~ [BD35159]*/ 
 		
 		IF ~~ THEN
 		GOTO XA_CorwinStatueTalkEnd
@@ -2768,9 +2766,7 @@ IF ~~ THEN BEGIN XAA27A
 END
 
 IF ~~ THEN BEGIN XAA27
-	SAY @52 /*  ~(She laughs) */
-	
-	= @53 /* ~Don't look so disappointed, love. There'll be plenty of time for those... activities... once we get back to Baldur's Gate.~ */
+	SAY @53 /* ~Don't look so disappointed, love. There'll be plenty of time for those... activities... once we get back to Baldur's Gate.~ */
 	
 	IF ~~ THEN REPLY @58 /* ~(Kiss her) I look forward to that day.~ */
 	GOTO XAA28 //OK
@@ -3268,9 +3264,7 @@ IF ~~ THEN BEGIN XA_GladHere
 END
 
 IF ~~ THEN BEGIN XA_GladHere2
-	SAY @1454 /* ~(She smiles wryly.)~ */
-	
-	= @1455 /* ~I would. But not as much as you'd enjoy it.~ */
+	SAY @1455 /* ~I would. But not as much as you'd enjoy it.~ */
 	
 	IF ~
 		GlobalGT("XA_LC_TimesHadSex", "GLOBAL", 0)
@@ -3412,8 +3406,6 @@ END
 
 IF ~~ THEN BEGIN XA_SUELLE2_0_B
 	SAY @611 /* ~Nothing, it's just...~  */
-	
-	= @1753 /*~(Her voice cracks.)~*/
 	
 	= @1754 /*~I thought I'd *sob* lost you...~*/
 	

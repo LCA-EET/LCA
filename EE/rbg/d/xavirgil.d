@@ -263,8 +263,7 @@ CHAIN XACORWIJ XA_TakeIntoCustodyChain2
 	== XAVIRGIL 
 	@36 /* ~I - I don't.. Lord W-Winston said -~*/
 	== XACORWIJ
-	@37 /* ~(She pounds her fist on the desk.)~ */
-	= @38 /* ~Answer me!~  */
+	@38 /* ~Answer me!~  */
 	== XAVIRGIL
 	@23 /* ~F-fine... I'll cooperate. Yes, we sold the refugees as slaves. You saw what it was like... the city couldn't bear it anymore. There wasn't enough food or shelter for so many refugees. We were tasked to get rid of them, and we did!~*/
 	=@24 /* ~The Flaming Fist, the Council, shopkeepers, temples, everyone looked the other way! They were thrilled that the refugees were gone - no one even cared enough to ask what we did with them until you showed up! They had to have known... they had to.~*/

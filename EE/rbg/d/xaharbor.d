@@ -1,6 +1,22 @@
 BEGIN ~XAHARBOR~
 
 IF ~
+	Global("XA_LC_HMCutscene", "GLOBAL", 4)
+~ THEN BEGIN XA_HM_CutsceneDone
+	SAY @36 /* ~Here they are. The shipping manifests for Winston Ventures for the period you mentioned.~*/
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_HMCutscene", "GLOBAL", 5)
+		SetGlobal("XA_LC_HandedOverManifests", "GLOBAL", 1)
+		GiveItemCreate("XAMANFST",LastTalkedToBy(Myself),1,0,0)
+		SetGlobal("XA_LC_Journal_SlaveHarbor", "GLOBAL", 1)
+	~
+	EXTERN XACORWIJ XA_HarborCorwinChainEnd
+END
+
+
+IF ~
 	Global("XA_LC_HarborGreeting", "GLOBAL", 1)
 	!GlobalTimerExpired("XA_LC_ManifestsTimer", "GLOBAL")	
 	Global("XA_LC_AskedAboutManifests", "GLOBAL", 1)

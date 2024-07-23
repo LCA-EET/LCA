@@ -1640,9 +1640,7 @@ APPEND XACORWIJ
 	END
 
 	IF ~~ THEN BEGIN XA_CorwinDinner_WalkHome_Male
-		SAY @951 /* ~(She smiles.)  */
-		
-		= @941 /*~A hero, and a gentleman. Let's go.~*/
+		SAY @941 /*~A hero, and a gentleman. Let's go.~*/
 		
 		IF ~~ THEN
 		DO ~
@@ -1653,9 +1651,7 @@ APPEND XACORWIJ
 	END
 
 	IF ~~ THEN BEGIN XA_CorwinDinner_WalkHome_Female
-		SAY @951 /* ~(She smiles.) */
-		
-		= @942 /* ~Let's go.~ */
+		SAY @942 /* ~Let's go.~ */
 		
 		IF ~~ THEN
 		DO ~
@@ -2565,8 +2561,7 @@ APPEND XACORWIJ
 	END
 
 	IF ~~ THEN XA_CorwinNeoma5C
-		SAY @747 /* ~(A mischievous smile graces her face.)~*/
-		= @748 /* ~Somehow, I knew you would be. I'll see if she's interested. Let's go.~ */
+		SAY @748 /* ~Somehow, I knew you would be. I'll see if she's interested. Let's go.~ */
 		IF ~~ THEN
 		DO ~
 			SetGlobal("XA_LC_CorwinNeomaRelationship", "GLOBAL", 2)
@@ -2895,7 +2890,9 @@ APPEND XACORWIJ
 	END
 
 	IF ~~ THEN BEGIN XA_HarborCorwinChainEnd
-		SAY @812 /* ~Hmm.. <CHARNAME>, look. The manifests identify the company as Winston Ventures, but the contents are encoded.~ */	
+		SAY @811 /*~Thank you for your cooperation.~ */  
+		
+		@812 /* ~Hmm.. <CHARNAME>, look. The manifests identify the company as Winston Ventures, but the contents are encoded.~ */	
 		
 		IF ~
 			!Dead("Alatos")
@@ -4090,6 +4087,10 @@ CHAIN
 		@808 /* ~Not in an hour, now. Unless you want the Flaming Fist to turn these docks inside out.~*/
 		== XAHARBOR 
 		@809 /*  ~Right... one moment.~*/
+		DO ~
+			SetGlobal("XA_LC_HMCutscene", "GLOBAL", 1)
+		~
+EXIT
 		= @810 /* ~Here they are. The shipping manifests for Winston Ventures for the period you mentioned.~*/
 		DO ~
 			SetGlobal("XA_LC_HandedOverManifests", "GLOBAL", 1)
@@ -4145,13 +4146,11 @@ THEN GOTO XA_DingsRohma
 CHAIN 
 	IF ~
 		Global("XA_LC_XACS15Cutscene", "GLOBAL", 3)
-	~ THEN XACORWIJ XA_CorwinNeomaReunite
-		@716 /* ~(They share a close embrace.)~ */
+	~ THEN XANEOMA XA_CorwinNeomaReunite
+		@717 /* ~I heard you'd be coming home! How are you?~ */
 		DO ~
 			SetGlobal("XA_LC_XACS15Cutscene", "GLOBAL", 4)
 		~
-		== XANEOMA
-		@717 /* ~I heard you'd be coming home! How are you?~ */
 		== XACORWIJ
 		@723 /* ~I'm so glad to be back. How're things with you?~ */
 		== XANEOMA
