@@ -2,7 +2,7 @@ IF
 	True()
 THEN
 	RESPONSE #100
-		CutSceneID("xaa152") // Harbor Master
+		CutSceneID("xaa706") // Harbor Master
 		FadeToColor([30.0], 0)
 		Wait(3)
 		FadeFromColor([30.0],0)
