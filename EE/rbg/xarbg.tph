@@ -961,7 +961,7 @@ SILENT
 		WRITE_ASCII 0x250 ~xaneb~ #8		// Class Script
 		
 		COPY_EXISTING ~CHWRAITH.CRE~ ~override/xachwrai.cre~
-		WRITE_LONG 0x14 2000 // XP Value
+		WRITE_LONG 0x14 3333 // XP Value
 		WRITE_SHORT 0x24 33
 		WRITE_SHORT 0x26 33
 		WRITE_SHORT 0x46 3
