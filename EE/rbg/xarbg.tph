@@ -541,14 +541,6 @@ SILENT
 				xa_dialog = ~xabartml~
 		END
 		
-		COPY_EXISTING ~xaa1324.cre~ ~override/xabrandi.cre~ // Brandilar brandi
-		LPF xa_reset_cre
-			STR_VAR
-				xa_scriptName = ~xabrandi~
-				xa_override = ~xafigh01~
-				xa_dialog = ~xabrandi~
-		END
-		
 		COPY_EXISTING ~xaa1316.cre~ ~override/xajhasso.cre~ // Jhasso jhasso
 		LPF xa_reset_cre
 			STR_VAR
@@ -2037,6 +2029,9 @@ SILENT
 		
 		// Replace Bartender Dialog
 		WRITE_ASCII 0x274 ~xabartml~ #8
+		
+		// Replace Brandilar Dialog
+		WRITE_ASCII 0x5A4 ~xabrandi~ #8
 		
 		// Replace Merchants
 		WRITE_ASCII 0x3BC ~xamerlea~ #8
