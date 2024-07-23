@@ -4091,15 +4091,6 @@ CHAIN
 			SetGlobal("XA_LC_HMCutscene", "GLOBAL", 1)
 		~
 EXIT
-		= @810 /* ~Here they are. The shipping manifests for Winston Ventures for the period you mentioned.~*/
-		DO ~
-			SetGlobal("XA_LC_HandedOverManifests", "GLOBAL", 1)
-			GiveItemCreate("XAMANFST",LastTalkedToBy(Myself),1,0,0)
-			SetGlobal("XA_LC_Journal_SlaveHarbor", "GLOBAL", 1)
-		~
-		== XACORWIJ
-		@811 /* ~Thank you for your cooperation.~ */
-END XACORWIJ XA_HarborCorwinChainEnd
 
 CHAIN 
 	IF ~~ THEN XACORWIJ XA_CorwinTiannaGoodbyeChain
