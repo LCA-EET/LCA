@@ -585,6 +585,42 @@ APPEND ~XALCDBG~
 		~
 		GOTO XA_RBG_AdjustVariables
 		
+		IF ~~ THEN REPLY @6081
+		DO ~
+			SetGlobal("XA_LC_SavedAldeth", "GLOBAL", 1)
+		~
+		GOTO XA_RBG_AdjustVariables
+		
+		IF ~~ THEN REPLY @6082
+		DO ~
+			SetGlobal("XA_LC_SavedAldeth", "GLOBAL", 0)
+		~
+		GOTO XA_RBG_AdjustVariables
+		
+		IF ~~ THEN REPLY @6083
+		DO ~
+			SetGlobal("XA_LC_SavedJhasso", "GLOBAL", 1)
+		~
+		GOTO XA_RBG_AdjustVariables
+		
+		IF ~~ THEN REPLY @6084
+		DO ~
+			SetGlobal("XA_LC_SavedJhasso", "GLOBAL", 0)
+		~
+		GOTO XA_RBG_AdjustVariables
+		
+		IF ~~ THEN REPLY @6085
+		DO ~
+			SetGlobal("XA_LC_SkieModActive", "GLOBAL", 1)
+		~
+		GOTO XA_RBG_AdjustVariables
+		
+		IF ~~ THEN REPLY @6086
+		DO ~
+			SetGlobal("XA_LC_SkieModActive", "GLOBAL", 0)
+		~
+		GOTO XA_RBG_AdjustVariables
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		

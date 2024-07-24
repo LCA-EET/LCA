@@ -439,6 +439,7 @@ SILENT
 				xa_dialog = ~xalarze~
 				xa_scriptName = ~xalarze~
 				xa_override = ~xainitp1~
+				xa_general = ~xafigh01~
 		END
 		
 		COPY_EXISTING ~xaa560.cre~ ~override/xamom.cre~ // ftowba
@@ -1794,6 +1795,8 @@ SILENT
 	//}
 	
 	//{ ar0105 xaa268 Blade & Stars L1
+		EXTEND_TOP ~xaas268.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0105.baf~
+	
 		COPY_EXISTING ~xaa268.are~ ~override~
 		
 		// Replace Actors with Commoners
@@ -1831,9 +1834,9 @@ SILENT
 	//{ ar0114 xaa137 
 		COPY_EXISTING ~xaa137.are~ ~override~
 		
-		// Disable NPCs
-		WRITE_LONG 0x374 0 // Larze
-		WRITE_LONG 0x484 0 // Vivienne
+		// Replace NPCs
+		WRITE_ASCII 0x3BC ~xaa694~ #8
+		WRITE_ASCII 0x4CC ~xaa695~ #8
 	//}
 	
 	//{ ar0116 xaa481 
@@ -1841,20 +1844,20 @@ SILENT
 		
 		COPY_EXISTING ~xaa481.are~ ~override~
 		
-		// Disable NPCs
-		WRITE_LONG 0x374 0 // Farluck
-		WRITE_LONG 0x264 0
-		WRITE_LONG 0x594 0
-		WRITE_LONG 0x484 0
+		// Replace NPCs
+		WRITE_ASCII 0x2AC ~xaa166~ #8
+		WRITE_ASCII 0x3BC ~xaa167~ #8
+		WRITE_ASCII 0x4CC ~xaa168~ #8
+		WRITE_ASCII 0x5DC ~xaa170~ #8
 	//}
 	
 	//{ ar0117 xaa580
 		COPY_EXISTING ~xaa580.are~ ~override~
 		
-		// Disable NPCs
-		WRITE_LONG 0x154 0 // Guard
-		WRITE_LONG 0x264 0 // Guard
-		WRITE_LONG 0x374 0 // Noblewoman
+		// Replace NPCs
+		WRITE_ASCII 0x19C ~xaa372~ #8
+		WRITE_ASCII 0x2AC ~xaa396~ #8
+		WRITE_ASCII 0x3BC ~xaa361~ #8
 	//}
 	
 	//{ ar0118 xaa582
@@ -1867,9 +1870,9 @@ SILENT
 		// Disable rep traps
 		WRITE_LONG 0xDA4 256
 		
-		// Disable NPCs
-		WRITE_LONG 0x154 0 // Bellamy
-		WRITE_LONG 0xAE4 0 // Shep
+		// Replace NPCs
+		WRITE_ASCII 0x19C ~xaa694~ #8
+		WRITE_ASCII 0xB2C ~xaa695~ #8
 	//}
 	
 	//{ ar0120 xaa457
@@ -2179,18 +2182,6 @@ SILENT
 		WRITE_ASCII 0x7CC ~xadegrod~ #8
 		WRITE_ASCII 0x8DC ~xadegrod~ #8
 		
-		/*
-		// Change Creatures
-		WRITE_ASCII 0x154 ~xaa548~ #8 // ftowb5
-		WRITE_ASCII 0x264 ~xaa151~ #8 // mtowba_a
-		
-		// Disable NPCs
-		WRITE_LONG 0x374 0 
-		WRITE_LONG 0x484 0 
-		WRITE_LONG 0x594 0
-		WRITE_LONG 0x6A4 0
-		WRITE_LONG 0x7B4 0
-		*/
 	//}
 	
 	//{ ar0162 xaa478 Louise and Laerta's Home
@@ -2207,7 +2198,7 @@ SILENT
 		WRITE_ASCII 0x164 ~xaconnol~ #8
 	//}
 	
-	//{ ar0166 xaa589 Tavern
+	//{ ar0166 xaa589 Tavern L2		
 		COPY_EXISTING ~xaa589.are~ ~override~
 		
 		// Disable NPCs
@@ -2997,6 +2988,7 @@ SILENT
 	//}
 	
 	//{ ar1109 xaa294 Inn (Phandalyn)
+		EXTEND_TOP ~xaas294.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar1109.baf~
 		COPY_EXISTING ~xaa294.are~ ~override~
 		
 		WRITE_ASCII 0x118C ~xaa696~ #8

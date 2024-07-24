@@ -330,6 +330,12 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @6078=~SetGlobal("XA_LC_NebSewerTest", "GLOBAL", 1)~
 @6079=~SetGlobal("XA_LC_HelmQuestAlreadyDone", "GLOBAL", 1)~
 @6080=~SetGlobal("XA_LC_HelmQuestAlreadyDone", "GLOBAL", 0)~
+@6081=~SetGlobal("XA_LC_SavedAldeth", "GLOBAL", 1)~
+@6082=~SetGlobal("XA_LC_SavedAldeth", "GLOBAL", 0)~
+@6083=~SetGlobal("XA_LC_SavedJhasso", "GLOBAL", 1)~
+@6084=~SetGlobal("XA_LC_SavedJhasso", "GLOBAL", 0)~
+@6085=~SetGlobal("XA_LC_SkieModActive", "GLOBAL", 1)~
+@6086=~SetGlobal("XA_LC_SkieModActive", "GLOBAL", 0)~
 
 @7000=~ToB Debug~
 @7001=~XAG104 (BD5300) - Kanaglym~
