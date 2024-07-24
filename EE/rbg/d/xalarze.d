@@ -90,7 +90,10 @@ IF ~~ THEN BEGIN XA_Cheapskate
 	SAY @19 /* ~100 gold not enough. Larze change mind. You die, Larze take head, and find person that give bounty. Stay still now so Large can crush you good.~ */
 	
 	IF ~~ THEN 
-	GOTO XA_Fight
+	DO ~
+		Enemy()
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN XA_Fight
