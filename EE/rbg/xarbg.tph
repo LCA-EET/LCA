@@ -2010,13 +2010,17 @@ SILENT
 	//{ ar0127 xaa291 Merchant's League L1
 		COPY_EXISTING ~xaa291.are~ ~override~
 		
-		// Disable NPCs
-		WRITE_LONG 0x6A4 0 // Irlentree
-		
 		// Replace Doppelgangers
 		WRITE_ASCII 0x3BC ~xamerlea~ #8
 		WRITE_ASCII 0x4CC ~xamerlea~ #8
 		WRITE_ASCII 0x5DC ~xamerlea~ #8
+		WRITE_ASCII 0x6EC ~xamerlea~ #8
+		
+		// Replace Guard Dialogs & Race Scripts
+		WRITE_ASCII 0x164 ~xamerchg~ #8
+		WRITE_ASCII 0x184 ~xamerchg~ #8
+		WRITE_ASCII 0x274 ~xamerchg~ #8
+		WRITE_ASCII 0x294 ~xamerchg~ #8
 	//}
 	
 	//{ ar0128 xaa406 Merchant's League L2
@@ -2027,8 +2031,8 @@ SILENT
 		// Adjust script for cook
 		WRITE_ASCII 0x17C ~xalcflee~ #8
 		
-		// Disable NPCs
-		WRITE_LONG 0x6A4 0 // Zorl
+		// Replace Zorl
+		WRITE_ASCII 0x6EC ~xamerlea~ #8
 		
 		// Replace Bartender Dialog
 		WRITE_ASCII 0x274 ~xabartml~ #8
@@ -2047,6 +2051,11 @@ SILENT
 		WRITE_ASCII 0xDD4 ~scrl03~ #8
 		WRITE_ASCII 0xDE8 ~scrl04~ #8
 		WRITE_ASCII 0xDFC ~scrl05~ #8
+		
+		LPF xa_rescript_actors
+			STR_VAR
+				xa_race = ~xamerchg~
+		END
 	//}
 	
 	//{ ar0130 xaa363 Hall of Wonders
