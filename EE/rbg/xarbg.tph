@@ -1745,6 +1745,9 @@ SILENT
 		
 		// Remove Ocellis
 		WRITE_LONG 0x2BD4 0
+		
+		// Unlock Silvershield Door
+		WRITE_LONG 0x64C8 64
 	//}
 	
 	//{ ar0101 xaa475 Silvershield Estate L1
@@ -4396,6 +4399,17 @@ SILENT
 	//}
 	
 	//{ Lyriel Painting
+		OUTER_SET xa_hour = 0
+		OUTER_WHILE(xa_hour < 24)
+		BEGIN
+			COPY_EXISTING ~xatime.bcs~ ~override/xatime%xa_hour%.bcs~
+			DECOMPILE_AND_PATCH BEGIN
+				REPLACE_TEXTUALLY 24 %xa_hour%
+			END
+			EXTEND_TOP ~xapaint1.bcs~ 	~override/xatime%xa_hour%.bcs~
+			xa_hour = xa_hour + 1
+		END
+	
 		//COPY ~%MOD_FOLDER%/rbg/are/xapaint1.are~ ~override~
 		COPY_EXISTING ~ar0407.are~ ~override/xapaint1.are~
 		WRITE_ASCII 0x94 ~xapaint1~ // area script
