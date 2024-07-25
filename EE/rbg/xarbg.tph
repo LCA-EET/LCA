@@ -2730,13 +2730,22 @@ SILENT
 		LPF xa_delete_are_actors END
 	//}
 	
-	//{ ar0705 xaa119
+	//{ ar0705 xaa119 // Elfsong L1
 		EXTEND_TOP ~xaas119.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0705.baf~
 	//}
 	
-	//{ ar0706 xaa210
+	//{ ar0706 xaa210 // Elfsong L2
 		EXTEND_TOP ~xaas210.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0706.baf~
-		
+		OUTER_SET xa_hour = 0
+		OUTER_WHILE(xa_hour < 24)
+		BEGIN
+			COPY_EXISTING ~xartime.bcs~ ~override/xartime%xa_hour%.bcs~
+			DECOMPILE_AND_PATCH BEGIN
+				REPLACE_TEXTUALLY ~24~ ~%xa_hour%~
+			END
+			EXTEND_TOP ~xaas210.bcs~ 	~override/xartime%xa_hour%.bcs~
+			xa_hour = xa_hour + 1
+		END
 		COPY_EXISTING ~xaa210.are~ ~override~
 		LPF fj_are_structure
 			INT_VAR
@@ -4404,7 +4413,7 @@ SILENT
 		BEGIN
 			COPY_EXISTING ~xatime.bcs~ ~override/xatime%xa_hour%.bcs~
 			DECOMPILE_AND_PATCH BEGIN
-				REPLACE_TEXTUALLY 24 %xa_hour%
+				REPLACE_TEXTUALLY ~24~ ~%xa_hour%~
 			END
 			EXTEND_TOP ~xapaint1.bcs~ 	~override/xatime%xa_hour%.bcs~
 			xa_hour = xa_hour + 1
