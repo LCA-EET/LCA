@@ -85,6 +85,18 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @6087
+		DO ~
+			CreateCreature("XAPAUSE", [-1.-1], N)
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6088
+		DO ~
+			CreateCreature("XAREWIND", [-1.-1], N)
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		

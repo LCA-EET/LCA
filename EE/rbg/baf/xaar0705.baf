@@ -1,4 +1,14 @@
 IF
+	InMyArea(Player1)
+	GlobalGT("XA_LC_ExitPrison", "GLOBAL", 0)
+	GlobalLT("XA_LC_TimeRewind", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_TimeRewind", "MYAREA", 1)
+		CreateCreature("XAREWIND", [0.0], N)
+		Continue()
+END
+IF
 	GlobalTimerExpired("XA_LC_LyrielSingTimer", "GLOBAL")
 THEN
 	RESPONSE #100

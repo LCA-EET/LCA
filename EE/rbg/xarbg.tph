@@ -234,7 +234,33 @@ PRINT @4173 /*  ~Processing creatures...*/
 SILENT
 
 //{ CRE
-
+	//{ Pause / Rewind
+		COPY_EXISTING ~xalcspy.cre~ ~override/xapause.cre~
+		WRITE_ASCII 0x248 ~xapause~ #8 
+		OUTER_SET xa_hour = 0
+		OUTER_WHILE(xa_hour < 24)
+		BEGIN
+			COPY_EXISTING ~xapause24.bcs~ ~override/xapause%xa_hour%.bcs~
+			DECOMPILE_AND_PATCH BEGIN
+				REPLACE_TEXTUALLY ~24~ ~%xa_hour%~
+			END
+			EXTEND_TOP ~xapause.bcs~ 	~override/xapause%xa_hour%.bcs~
+			xa_hour = xa_hour + 1
+		END
+		
+		COPY_EXISTING ~xalcspy.cre~ ~override/xarewind.cre~
+		WRITE_ASCII 0x248 ~xarewind~ #8 
+		OUTER_SET xa_hour = 0
+		OUTER_WHILE(xa_hour < 24)
+		BEGIN
+			COPY_EXISTING ~xarewind24.bcs~ ~override/xarewind%xa_hour%.bcs~
+			DECOMPILE_AND_PATCH BEGIN
+				REPLACE_TEXTUALLY ~24~ ~%xa_hour%~
+			END
+			EXTEND_BOTTOM ~xarewind.bcs~ 	~override/xarewind%xa_hour%.bcs~
+			xa_hour = xa_hour + 1
+		END
+	//}
 	//{ Block A Base
 		COPY_EXISTING ~xaa100.cre~ ~override/xasarevo.cre~ // sarevo
 		LPF xa_reset_cre
@@ -2736,16 +2762,7 @@ SILENT
 	
 	//{ ar0706 xaa210 // Elfsong L2
 		EXTEND_TOP ~xaas210.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0706.baf~
-		OUTER_SET xa_hour = 0
-		OUTER_WHILE(xa_hour < 24)
-		BEGIN
-			COPY_EXISTING ~xartime.bcs~ ~override/xartime%xa_hour%.bcs~
-			DECOMPILE_AND_PATCH BEGIN
-				REPLACE_TEXTUALLY ~24~ ~%xa_hour%~
-			END
-			EXTEND_TOP ~xaas210.bcs~ 	~override/xartime%xa_hour%.bcs~
-			xa_hour = xa_hour + 1
-		END
+		
 		COPY_EXISTING ~xaa210.are~ ~override~
 		LPF fj_are_structure
 			INT_VAR
@@ -4408,18 +4425,6 @@ SILENT
 	//}
 	
 	//{ Lyriel Painting
-		OUTER_SET xa_hour = 0
-		OUTER_WHILE(xa_hour < 24)
-		BEGIN
-			COPY_EXISTING ~xatime.bcs~ ~override/xatime%xa_hour%.bcs~
-			DECOMPILE_AND_PATCH BEGIN
-				REPLACE_TEXTUALLY ~24~ ~%xa_hour%~
-			END
-			EXTEND_TOP ~xapaint1.bcs~ 	~override/xatime%xa_hour%.bcs~
-			xa_hour = xa_hour + 1
-		END
-	
-		//COPY ~%MOD_FOLDER%/rbg/are/xapaint1.are~ ~override~
 		COPY_EXISTING ~ar0407.are~ ~override/xapaint1.are~
 		WRITE_ASCII 0x94 ~xapaint1~ // area script
 		

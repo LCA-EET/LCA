@@ -336,6 +336,8 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @6084=~SetGlobal("XA_LC_SavedJhasso", "GLOBAL", 0)~
 @6085=~SetGlobal("XA_LC_SkieModActive", "GLOBAL", 1)~
 @6086=~SetGlobal("XA_LC_SkieModActive", "GLOBAL", 0)~
+@6087=~CreateCreature("XAPAUSE", [-1.-1], N)~
+@6088=~CreateCreature("XAREWIND", [-1.-1], N)~
 
 @7000=~ToB Debug~
 @7001=~XAG104 (BD5300) - Kanaglym~

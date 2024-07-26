@@ -1,5 +1,15 @@
 IF
 	InMyArea(Player1)
+	GlobalLT("XA_LC_TimePause", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_TimePause", "MYAREA", 1)
+		CreateCreature("XAPAUSE", [0.0], N)
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
 	OR(4)
 		PartyHasItem("XASWORD")
 		PartyHasItem("XACHICK")

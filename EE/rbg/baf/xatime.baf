@@ -1,9 +1,0 @@
-IF
-	Time(24)
-	GlobalLT("XA_LC_RecordTime", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_LC_RecordTime", "GLOBAL", 1)
-		SetGlobal("XA_LC_TimeEntered", "GLOBAL", 24)
-		Continue()
-END
