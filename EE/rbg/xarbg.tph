@@ -2771,12 +2771,19 @@ SILENT
 	
 	//{ ar0705 xaa119 // Elfsong L1
 		EXTEND_TOP ~xaas119.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0705.baf~
+		
+		// Replace NPCs
+		WRITE_ASCII 0x4CC ~xaa695~ #8 // Cauternus
+		WRITE_ASCII 0x3BC ~xaa696~ #8 // Brevlik
+		
+		WRITE_LONG 0x1378 4 // Disable Lyriel's Song
 	//}
 	
 	//{ ar0706 xaa210 // Elfsong L2
 		EXTEND_TOP ~xaas210.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0706.baf~
 		
 		COPY_EXISTING ~xaa210.are~ ~override~
+		WRITE_LONG 0xB4C 4 // Disable Lyriel's Song
 		LPF fj_are_structure
 			INT_VAR
 				fj_type 		= 2
