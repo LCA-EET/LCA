@@ -3,5 +3,5 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_PausedTime", "GLOBAL", 24)
-		Continue()
+		DestroySelf()
 END

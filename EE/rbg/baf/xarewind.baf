@@ -1,5 +1,5 @@
 IF
-	GlobalLT("XA_LC_RecordTime", "GLOBAL", 1)
+	True()
 THEN
 	RESPONSE #100
 		DestroySelf()

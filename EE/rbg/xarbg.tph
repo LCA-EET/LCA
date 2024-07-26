@@ -257,7 +257,7 @@ SILENT
 			DECOMPILE_AND_PATCH BEGIN
 				REPLACE_TEXTUALLY ~24~ ~%xa_hour%~
 			END
-			EXTEND_BOTTOM ~xarewind.bcs~ 	~override/xarewind%xa_hour%.bcs~
+			EXTEND_TOP ~xarewind.bcs~ 	~override/xarewind%xa_hour%.bcs~
 			xa_hour = xa_hour + 1
 		END
 	//}
