@@ -102,6 +102,14 @@ CHAIN
 		DO ~
 			ChangeStat(Myself, MAXHITPOINTS, 2, ADD)
 		~
+		== IMOEN2J
+		IF ~
+			IsValidForPartyDialogue("Imoen2")
+		~
+		@197 /* ~Thank you.. they taste g-great.~ */
+		DO ~
+			ChangeStat(Myself, MAXHITPOINTS, 2, ADD)
+		~
 		== VICONIJ
 		IF ~
 			IsValidForPartyDialogue("Viconia")
