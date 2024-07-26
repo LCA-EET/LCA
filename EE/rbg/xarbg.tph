@@ -1194,7 +1194,7 @@ SILENT
 	
 	//{ Basilisk Figurine
 		COPY_EXISTING ~figspid.eff~ ~override/xabasfig.eff~
-		WRITE_ASCII 0x30 ~basgrt01~ #8
+		WRITE_ASCII 0x30 ~xabasgrt~ #8
 		
 		COPY_EXISTING ~misc3e.itm~ ~override/xabasfig.itm~
 		WRITE_ASCII 0x3A ~xaibas~ #8
@@ -2139,6 +2139,9 @@ SILENT
 	//}
 	
 	//{ ar0138 xaa670 Ramazith L5
+		COPY_EXISTING ~basgrt01.cre~ ~xabasgrt.cre~
+		REMOVE_CRE_ITEM ~rndtre05~
+	
 		EXTEND_TOP ~xaas670.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0138.baf~
 	
 		COPY_EXISTING ~xaa670.are~ ~override~
@@ -2172,8 +2175,8 @@ SILENT
 					fj_orientation = 14 
 				STR_VAR
 					fj_structure_type = actor
-					fj_name = basgrt01
-					fj_cre_resref = basgrt01
+					fj_name = xabasgrt
+					fj_cre_resref = xabasgrt
 					fj_bcs_general = xabasil
 			END
 		//}
@@ -2205,8 +2208,10 @@ SILENT
 		// Replace Dialog
 		WRITE_ASCII 0x494 ~xaalatos~ #8
 		
-		// Disable NPCs
-		WRITE_LONG 0x264 0 // Resar
+		// Replace NPCs
+		WRITE_ASCII 0x19C ~xaa475~ #8 // Husam
+		WRITE_ASCII 0x2AC ~xaa475~ #8 // Resar
+		WRITE_ASCII 0x3BC ~xaa475~ #8 // Narlen
 	//}
 
 	//{ ar0161 xaa482 Degrodel's Home
@@ -2416,6 +2421,13 @@ SILENT
 		WRITE_LONG 0x2244 0 // Brielbara 
 		WRITE_LONG 0x1E04 0 // Lothander
 		WRITE_LONG 0x1F14 0 // Marek
+	//}
+	
+	//{ ar0308 xaa140 Merchant's League Counting House
+		COPY_EXISTING ~xaa140.are~ ~override~
+		
+		// Disable NPC
+		WRITE_LONG 0x154 0 // Jacil
 	//}
 	
 	
