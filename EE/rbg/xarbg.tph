@@ -577,6 +577,7 @@ SILENT
 				xa_general = ~xalcflee~
 				xa_class = ~xalcwalk~
 		END
+		WRITE_LONG 0xA4 4294967295 // set initial greeting str ref to -1
 				
 		COPY_EXISTING ~xaa108.cre~ ~override/xasemaj.cre~ // Semaj semaj
 		LPF xa_reset_cre

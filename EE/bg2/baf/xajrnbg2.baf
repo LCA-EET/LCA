@@ -234,7 +234,7 @@ END
 
 //{ Hall of Wonders Orphans
 IF
-	Global("XA_LC_Journal_HOW", "GLOBAL", 1)
+	Global("XA_LC_Journal_HOW", "GLOBAL", 2)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -248,7 +248,7 @@ Captain Corwin and I spoke to some troubled youths from the local orphanage. Aft
 END
 
 IF
-	Global("XA_LC_Journal_HOW", "GLOBAL", 2)
+	Global("XA_LC_Journal_HOW", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
