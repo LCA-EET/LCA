@@ -2775,6 +2775,7 @@ SILENT
 	//{ ar0705 xaa119 // Elfsong L1
 		EXTEND_TOP ~xaas119.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0705.baf~
 		
+		COPY_EXISTING ~xaa119.are~ ~override~
 		// Replace NPCs
 		WRITE_ASCII 0x4CC ~xaa695~ #8 // Cauternus
 		WRITE_ASCII 0x3BC ~xaa696~ #8 // Brevlik
