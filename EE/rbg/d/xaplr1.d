@@ -407,7 +407,7 @@ APPEND ~PLAYER1~
 		IF ~~ THEN 
 		DO ~
 			StartCutSceneMode()
-			StartCutScene("XAPENT")
+			StartCutScene("XAPENT0")
 		~
 		EXIT
 	END
@@ -418,7 +418,7 @@ APPEND ~PLAYER1~
 		IF ~~ THEN 
 		DO ~
 			StartCutSceneMode()
-			StartCutScene("XAPENT")
+			StartCutScene("XAPENT0")
 		~
 		EXIT
 	END
