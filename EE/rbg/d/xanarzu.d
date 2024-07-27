@@ -198,42 +198,7 @@ IF ~
 ~ THEN BEGIN XA_StartFirstMeet
 	SAY @0 /* ~Welcome.~ */
 	
-	IF ~
-		!Global("XA_LC_AskWho", "LOCALS", 1)
-	~ THEN REPLY @74 /* ~Who are you?~ */
-	DO ~
-		SetGlobal("XA_LC_AskWho", "LOCALS", 1)
-	~
-	GOTO XA_AskWho
-	
-	IF ~
-		!Global("XA_LC_AskWhat", "LOCALS", 1)
-	~ THEN REPLY @79 /* ~What is this place?~ */
-	DO ~
-		SetGlobal("XA_LC_AskWhat", "LOCALS", 1)
-	~
-	GOTO XA_AskWhat
-	
-	IF ~
-		!Global("XA_LC_AskWhy", "LOCALS", 1)
-		NumInPartyGT(1)
-	~ THEN REPLY @78 /* ~Why have you brought us here?~ */
-	DO ~
-		IncrementGlobal("XA_LC_MetIncubus", "GLOBAL", 1)
-		SetGlobal("XA_LC_AskWhy", "LOCALS", 1)
-	~
-	GOTO XA_HaveSomethingDemonWants
-	
-	IF ~
-		!Global("XA_LC_AskWhy", "LOCALS", 1)
-		!NumInPartyGT(1)
-	~ THEN REPLY @1 /* ~Why have you brought me here?~ */
-	DO ~
-		SetGlobal("XA_LC_AskWhy", "LOCALS", 1)
-	~
-	GOTO XA_HaveSomethingDemonWants
-	
-	
+	COPY_TRANS XANARZU XA_WhoWhatWhy
 END
 
 IF ~
@@ -241,106 +206,16 @@ IF ~
 ~ THEN BEGIN XA_StartSecondMeet
 	SAY @27 /*~I hope that now, you are willing to listen to reason.~*/
 	
-	IF ~
-		Global("XA_LC_CompletedG1", "GLOBAL", 1)
-		!Global("XA_LC_AskAboutDS", "GLOBAL", 1)
-	~ THEN REPLY @4 /* ~Why did you send me to Dragonspear?~ */
-	DO ~
-		SetGlobal("XA_LC_AskAboutDS", "GLOBAL", 1)
-	~
-	GOTO XA_AskAboutDS //OK
-	
-	IF ~
-		Global("XA_LC_CompletedG2", "GLOBAL", 1)
-		!Global("XA_LC_AskAboutTrial", "GLOBAL", 1)
-	~ THEN REPLY @34 /* ~Sarevok, a Grand Duke? What was the point of that farce?~  */
-	DO ~
-		SetGlobal("XA_LC_AskAboutTrial", "GLOBAL", 1)
-	~
-	GOTO XA_AskAboutTrial //OK
-	
-	IF ~
-		Global("XA_LC_CompletedG3", "GLOBAL", 1)
-		Global("XA_LC_GorionTalk", "GLOBAL", 2)
-		!Global("XA_LC_AskAboutGorion", "GLOBAL", 1)
-	~ THEN REPLY @38 /* ~You'll pay for mocking the memory of my foster father!~ */
-	DO ~
-		SetGlobal("XA_LC_AskAboutGorion", "GLOBAL", 1)
-	~
-	GOTO XA_AskAboutGorion //OK
-	
-	IF ~
-		Global("XA_LC_CompletedG3", "GLOBAL", 1)
-		Global("XA_LC_GorionTalk", "GLOBAL", 1)
-		!Global("XA_LC_AskAboutGorion", "GLOBAL", 1)
-	~ THEN REPLY @73 /* ~Why go through the trouble of creating a falsification of my dead foster father?~ */
-	DO ~
-		SetGlobal("XA_LC_AskAboutGorion", "GLOBAL", 1)
-	~
-	GOTO XA_AskAboutGorion2 //OK
-	
 	IF ~~ THEN REPLY @37 /* ~You. Again.~ */
 	GOTO XA_SecondMeeting //OK
 	
-	IF ~
-		!Global("XA_LC_AskWho", "LOCALS", 1)
-	~ THEN REPLY @74 /* ~Who are you?~ */
-	DO ~
-		SetGlobal("XA_LC_AskWho", "LOCALS", 1)
-	~
-	GOTO XA_AskWho
-	
-	IF ~
-		!Global("XA_LC_AskWhat", "LOCALS", 1)
-	~ THEN REPLY @79 /* ~What is this place?~ */
-	DO ~
-		SetGlobal("XA_LC_AskWhat", "LOCALS", 1)
-	~
-	GOTO XA_AskWhat
+	COPY_TRANS XANARZU XA_WhoWhatWhy
 END
 
 IF ~
 	Global("XA_LC_MetIncubus", "GLOBAL", 2)
 ~ THEN BEGIN XA_StartThirdMeet
 	SAY @39 /*~Surely you're tired of this by now, yes?~*/
-	
-	IF ~
-		Global("XA_LC_CompletedG1", "GLOBAL", 1)
-		!Global("XA_LC_AskAboutDS", "GLOBAL", 1)
-	~ THEN REPLY @4 /* ~Why did you send me to Dragonspear?~ */
-	DO ~
-		SetGlobal("XA_LC_AskAboutDS", "GLOBAL", 1)
-	~
-	GOTO XA_AskAboutDS //OK
-	
-	IF ~
-		Global("XA_LC_CompletedG2", "GLOBAL", 1)
-		!Global("XA_LC_AskAboutTrial", "GLOBAL", 1)
-	~ THEN REPLY @34 /* ~Sarevok, a Grand Duke? What was the point of that farce?~  */
-	DO ~
-		SetGlobal("XA_LC_AskAboutTrial", "GLOBAL", 1)
-	~
-	GOTO XA_AskAboutTrial //OK
-	
-	IF ~
-		Global("XA_LC_CompletedG3", "GLOBAL", 1)
-		Global("XA_LC_GorionTalk", "GLOBAL", 2)
-		!Global("XA_LC_AskAboutGorion", "GLOBAL", 1)
-	~ THEN REPLY @38 /* ~You'll pay for mocking the memory of my foster father!~ */
-	DO ~
-		SetGlobal("XA_LC_AskAboutGorion", "GLOBAL", 1)
-	~
-	GOTO XA_AskAboutGorion //OK
-	
-	IF ~
-		Global("XA_LC_CompletedG3", "GLOBAL", 1)
-		Global("XA_LC_GorionTalk", "GLOBAL", 1)
-		!Global("XA_LC_AskAboutGorion", "GLOBAL", 1)
-	~ THEN REPLY @73 /* ~Why go through the trouble of creating a falsification of my dead foster father?~ */
-	DO ~
-		SetGlobal("XA_LC_AskAboutGorion", "GLOBAL", 1)
-	~
-	GOTO XA_AskAboutGorion2 //OK
 	
 	IF ~
 		!NumInPartyGT(1)
@@ -352,24 +227,8 @@ IF ~
 	~ THEN REPLY @42 /* ~Our patience is not without limits, beast. Free us, or you'll regret it.~ */
 	GOTO XA_ThirdMeeting //OK
 	
-	IF ~
-		!Global("XA_LC_AskWho", "LOCALS", 1)
-	~ THEN REPLY @74 /* ~Who are you?~ */
-	DO ~
-		SetGlobal("XA_LC_AskWho", "LOCALS", 1)
-	~
-	GOTO XA_AskWho
-	
-	IF ~
-		!Global("XA_LC_AskWhat", "LOCALS", 1)
-	~ THEN REPLY @79 /* ~What is this place?~ */
-	DO ~
-		SetGlobal("XA_LC_AskWhat", "LOCALS", 1)
-	~
-	GOTO XA_AskWhat
+	COPY_TRANS XANARZU XA_WhoWhatWhy
 END
-
-
 //}
 
 IF ~~ THEN BEGIN XA_AskWho
@@ -379,21 +238,7 @@ IF ~~ THEN BEGIN XA_AskWho
 	
 	= @77 /* ~I do however remember my nature. In your tongue, I am called an Incubus — an invader of dreams.~ */
 	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 1)
-	~ THEN 
-	GOTO XA_FirstMeeting //OK
-	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 2)
-	~ THEN
-	GOTO XA_SecondMeeting //OK
-	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 3)
-	~ THEN
-	GOTO XA_ThirdMeeting //OK 
-
+	COPY_TRANS XANARZU XA_MeetingTransition
 END
 
 IF ~~ THEN BEGIN XA_AskWhat
@@ -401,40 +246,13 @@ IF ~~ THEN BEGIN XA_AskWhat
 	
 	= @81 /* ~I've since mastered the energies by which this reality is sustained, and as such I am capable of altering it to suit my needs.~ */
 	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 1)
-	~ THEN 
-	GOTO XA_FirstMeeting //OK
-	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 2)
-	~ THEN
-	GOTO XA_SecondMeeting //OK
-	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 3)
-	~ THEN
-	GOTO XA_ThirdMeeting //OK 
+	COPY_TRANS XANARZU XA_MeetingTransition
 END
-
 
 IF ~~ THEN BEGIN XA_AskAboutGorion2
 	SAY @65 /*  ~I sensed that you often wonder what Gorion would think of your actions. Most mortals would jump at the opportunity to speak to a deceased loved one, even if it was just a similacrum.~*/
 	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 1)
-	~ THEN 
-	GOTO XA_FirstMeeting //OK
-	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 2)
-	~ THEN
-	GOTO XA_SecondMeeting //OK
-	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 3)
-	~ THEN
-	GOTO XA_ThirdMeeting //OK
+	COPY_TRANS XANARZU XA_MeetingTransition
 END
 
 IF ~~ THEN BEGIN XA_AskAboutGorion
@@ -463,20 +281,7 @@ END
 IF ~~ THEN BEGIN XA_AskAboutDS_Crusaders
 	SAY @8 /* ~I hope you enjoyed it as much as I enjoyed watching you do what you do best... though the skill and power of the pawns you defeated pale in comparison to my own.~ */
 	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 1)
-	~ THEN 
-	GOTO XA_FirstMeeting //OK
-	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 2)
-	~ THEN
-	GOTO XA_SecondMeeting //OK
-	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 3)
-	~ THEN
-	GOTO XA_ThirdMeeting //OK
+	COPY_TRANS XANARZU XA_MeetingTransition
 END
 
 IF ~~ THEN BEGIN XA_AskAboutDS_Dragon
@@ -507,82 +312,18 @@ IF ~~ THEN BEGIN XA_DragonReward
 	COPY_TRANS XANARZU XA_AskAboutDS_Crusaders
 END
 
-
-
 IF ~~ THEN BEGIN XA_AskAboutTrial
 	SAY @33 /* ~I wanted to explore what might've happened had you not destroyed your brother's plan to become one of the leaders of the city.~ */
 	
 	= @35 /*  ~Think of what you saw as one possible outcome... one of many.~ */
 	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 1)
-	~ THEN 
-	GOTO XA_FirstMeeting //OK
-	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 2)
-	~ THEN
-	GOTO XA_SecondMeeting //OK
-	
-	IF ~
-		Global("XA_LC_MetIncubus", "GLOBAL", 3)
-	~ THEN
-	GOTO XA_ThirdMeeting //OK
-	
+	COPY_TRANS XANARZU XA_MeetingTransition
 END
 
 IF ~~ THEN XA_FirstMeeting
 	SAY @18 /*~I'm sure you have questions, <CHARNAME>.~*/
 
-	IF ~
-		!Global("XA_LC_AskWhy", "LOCALS", 1)
-		NumInPartyGT(1)
-	~ THEN REPLY @78 /* ~Why have you brought us here?~ */
-	DO ~
-		SetGlobal("XA_LC_AskWhy", "LOCALS", 1)
-	~
-	GOTO XA_HaveSomethingDemonWants
-	
-	IF ~
-		!Global("XA_LC_AskWhy", "LOCALS", 1)
-		!NumInPartyGT(1)
-	~ THEN REPLY @1 /* ~Why have you brought me here?~ */
-	DO ~
-		SetGlobal("XA_LC_AskWhy", "LOCALS", 1)
-	~
-	GOTO XA_HaveSomethingDemonWants
-	
-	IF ~
-		NumInPartyGT(1)
-	~ THEN REPLY @83 /* ~You must be the demon Lyriel told us about.~*/
-	DO ~
-		SetGlobal("XA_LC_AskWhy", "LOCALS", 1)
-	~
-	GOTO XA_HaveSomethingDemonWants_Party //OK
-	
-	IF ~
-		!NumInPartyGT(1)
-	~ THEN REPLY @2 /*~You must be the demon Lyriel told me about.~ */
-	DO ~
-		SetGlobal("XA_LC_AskWhy", "LOCALS", 1)
-	~
-	GOTO XA_HaveSomethingDemonWants //OK
-	
-	IF ~
-		NumInPartyGT(1)
-	~ THEN REPLY @3 /* ~Release me and my companions from this prison!~*/
-	DO ~
-		SetGlobal("XA_LC_AskWhy", "LOCALS", 1)
-	~
-	GOTO XA_HaveSomethingDemonWants_Party //OK
-	
-	IF ~
-		!NumInPartyGT(1)
-	~ THEN REPLY @82 /*~~Release me from this prison!~~ */
-	DO ~
-		SetGlobal("XA_LC_AskWhy", "LOCALS", 1)
-	~
-	GOTO XA_HaveSomethingDemonWants //OK
+	COPY_TRANS XANARZU XA_WhoWhatWhy
 END
 
 IF ~~ THEN BEGIN XA_SecondMeeting
@@ -694,103 +435,37 @@ END
 IF ~~ THEN XA_TakeAmulet
 	SAY @32 /* ~There's no need. Sooner or later you'll come to your senses, whether it take a day, a year, or an eon. Give Lyriel my regards.~  */
 	
-	IF ~
-		Global("XA_LC_DemonDebug", "GLOBAL", 1)
-	~ THEN 
-	EXIT
-	
-	IF ~
-		!Global("XA_LC_DemonDebug", "GLOBAL", 1)
-	~ THEN
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XAPENT")
-	~
-	EXIT
+	COPY_TRANS XANARZU XA_ReturnToPainting
 END
 
 IF ~~ THEN BEGIN XA_StillWontGiveAmulet
 	SAY @64 /*~I can afford to wait. As I mentioned earlier, time is meaningless here. Give Lyriel my regards.~ */
 	
-	IF ~
-		Global("XA_LC_DemonDebug", "GLOBAL", 1)
-	~ THEN 
-	EXIT
-	
-	IF ~
-		!Global("XA_LC_DemonDebug", "GLOBAL", 1)
-	~ THEN
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XAPENT")
-	~
-	EXIT
+	COPY_TRANS XANARZU XA_ReturnToPainting
 END
 
 IF ~~ THEN BEGIN XA_DontWantTreasure
 	SAY @59 /*~You are a fool! Begone!~ */
 	
-	IF ~
-		Global("XA_LC_DemonDebug", "GLOBAL", 1)
-	~ THEN
-	EXIT
-	
-	IF ~
-		!Global("XA_LC_DemonDebug", "GLOBAL", 1)
-	~ THEN
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XAPENT")
-	~
-	EXIT
+	COPY_TRANS XANARZU XA_ReturnToPainting
 END
 
 IF ~~ THEN BEGIN XA_WontGiveAmulet
 	SAY @17 /* ~Very well. Time is of no consequence, in this place. Eventually you will acquiesce to my demands. Begone.~ */
 	
-	IF ~
-		Global("XA_LC_DemonDebug", "GLOBAL", 1)
-	~ THEN 
-	EXIT
-	
-	IF ~
-		!Global("XA_LC_DemonDebug", "GLOBAL", 1)
-	~ THEN
-	DO ~
-		StartCutSceneMode()
-		StartCutScene("XAPENT")
-	~
-	EXIT
+	COPY_TRANS XANARZU XA_ReturnToPainting
 END
 
 IF ~~ THEN BEGIN XA_GiveAmuletToDemon_M
 	SAY @20 /* ~You are as wise as you are mighty, son of Bhaal. Now, you will have your freedom...~ */
 	
-	IF ~~ THEN
-	DO ~
-		TakePartyItem("AMUL27")
-		SetGlobal("XA_LC_GaveUpAmulet", "GLOBAL", 1)
-		SetGlobal("XA_LC_LeavePrison", "GLOBAL", 1)
-		SetGlobal("XA_LC_Journal_Incubus", "GLOBAL", 1)
-		StartCutSceneMode()
-		StartCutScene("XAPEXIT")
-	~
-	EXIT
+	COPY_TRANS XANARZU XA_GiveAmuletTransition
 END
 
 IF ~~ THEN BEGIN XA_GiveAmuletToDemon_F
 	SAY @21 /* ~You are as wise as you are mighty, daughter of Bhaal. Now, you will have your freedom...~ */
 	
-	IF ~~ THEN
-	DO ~
-		TakePartyItem("AMUL27")
-		SetGlobal("XA_LC_GaveUpAmulet", "GLOBAL", 1)
-		SetGlobal("XA_LC_LeavePrison", "GLOBAL", 1)
-		SetGlobal("XA_LC_Journal_Incubus", "GLOBAL", 1)
-		StartCutSceneMode()
-		StartCutScene("XAPEXIT")
-	~
-	EXIT
+	COPY_TRANS XANARZU XA_GiveAmuletTransition
 END
 
 //}
@@ -798,75 +473,13 @@ END
 IF ~~ THEN BEGIN XA_HaveSomethingDemonWants
 	SAY @5 /*~You have something I want. Give it to me, and you shall have your freedom.~*/
 	
-	IF ~
-		Gender(Player1, MALE)
-		PartyHasItem("AMUL27")
-	~ THEN REPLY @9 /*~The amulet of the Seldarine? Fine, take it.~*/
-	GOTO XA_GiveAmuletToDemon_M //OK
-	
-	IF ~
-		Gender(Player1, FEMALE)
-		PartyHasItem("AMUL27")
-	~ THEN REPLY @9 /*~The amulet of the Seldarine? Fine, take it.~*/
-	GOTO XA_GiveAmuletToDemon_F //OK
-	
-	IF ~
-		!Global("XA_LC_AskDemonAmulet", "GLOBAL", 1)
-		PartyHasItem("AMUL27")
-	~ THEN REPLY @10 /* ~The amulet, you mean... why do you want it?~ */
-	DO ~
-		SetGlobal("XA_LC_AskDemonAmulet", "GLOBAL", 1)
-	~
-	GOTO XA_AskDemonAmulet //OK
-	
-	IF ~~ THEN REPLY @12 /* ~No. I'll find my own way out of this place.~ */
-	GOTO XA_WontGiveAmulet //OK
-	
-	IF ~
-		!Global("XA_LC_AskAboutLyriel", "GLOBAL", 1)
-		PartyHasItem("AMUL27")
-	~ THEN REPLY @22 /* ~The amulet of the Seldarine? I will give it to you, but only if you agree to release Lyriel as well.~ */
-	DO ~
-		SetGlobal("XA_LC_AskAboutLyriel", "GLOBAL", 1)
-	~
-	GOTO XA_AskAboutLyriel //OK
+	COPY_TRANS XANARZU XA_AmuletTransitions_1
 END
 
 IF ~~ THEN BEGIN XA_HaveSomethingDemonWants_Party
 	SAY @6 /*~You have something I want. Give it to me, and you and your companions shall have your freedom.~*/
 	
-	IF ~
-		Gender(Player1, MALE)
-		PartyHasItem("AMUL27")
-	~ THEN REPLY @9 /*~The amulet of the Seldarine? Fine, take it.~*/
-	GOTO XA_GiveAmuletToDemon_M //OK
-	
-	IF ~
-		Gender(Player1, FEMALE)
-		PartyHasItem("AMUL27")
-	~ THEN REPLY @9 /*~The amulet of the Seldarine? Fine, take it.~*/
-	GOTO XA_GiveAmuletToDemon_F //OK
-	
-	IF ~
-		!Global("XA_LC_AskDemonAmulet", "GLOBAL", 1)
-		PartyHasItem("AMUL27")
-	~ THEN REPLY @10 /* ~The amulet, you mean... why do you want it?~ */
-	DO ~
-		SetGlobal("XA_LC_AskDemonAmulet", "GLOBAL", 1)
-	~
-	GOTO XA_AskDemonAmulet //OK
-	
-	IF ~~ THEN REPLY @26 /* ~No. I'll find my own way out of this place.~ */
-	GOTO XA_WontGiveAmulet //OK
-	
-	IF ~
-		!Global("XA_LC_AskAboutLyriel", "GLOBAL", 1)
-		PartyHasItem("AMUL27")
-	~ THEN REPLY @22 /* ~The amulet of the Seldarine? I will give it to you, but only if you agree to release Lyriel as well.~ */
-	DO ~
-		SetGlobal("XA_LC_AskAboutLyriel", "GLOBAL", 1)
-	~
-	GOTO XA_AskAboutLyriel //OK
+	COPY_TRANS XANARZU XA_AmuletTransitions_1
 END
 
 IF ~~ THEN BEGIN XA_ComeBackLater
@@ -877,6 +490,19 @@ END
 
 IF ~~ THEN BEGIN XA_AskAboutLyriel
 	SAY @15 /* ~No! She is mine. Give me the amulet in exhange for your freedom from this place.~*/
+	
+	COPY_TRANS XANARZU XA_AmuletTransitions_0
+END
+
+
+IF ~~ THEN BEGIN XA_AskDemonAmulet
+	SAY @11 /* ~It's not your concern. You will give it to me if you want to return to Baldur's Gate.~ */
+	
+	COPY_TRANS XANARZU XA_AmuletTransitions_0
+END
+
+IF ~~ THEN BEGIN XA_AmuletTransitions_0
+	SAY @13
 	
 	IF ~
 		!NumInPartyGT(1)
@@ -913,33 +539,205 @@ IF ~~ THEN BEGIN XA_AskAboutLyriel
 		PartyHasItem("AMUL27")
 	~ THEN REPLY @13 /*~Here, take it.~*/
 	GOTO XA_GiveAmuletToDemon_F //OK
-	
 END
 
-
-IF ~~ THEN BEGIN XA_AskDemonAmulet
-	SAY @11 /* ~It's not your concern. You will give it to me if you want to return to Baldur's Gate.~ */
-	
-	IF ~
-		!NumInPartyGT(1)
-	~ THEN REPLY @12 /* ~No. I'll find my own way out of this place.~ */
-	GOTO XA_WontGiveAmulet //OK
-	
-	IF ~
-		NumInPartyGT(1)
-	~ THEN REPLY @26 /* ~No. We'll find our own way out of here.~ */
-	GOTO XA_WontGiveAmulet //OK
+IF ~~ THEN BEGIN XA_AmuletTransitions_1
+	SAY @13
 	
 	IF ~
 		Gender(Player1, MALE)
 		PartyHasItem("AMUL27")
-	~ THEN REPLY @13 /*~Here, take it.~*/
+	~ THEN REPLY @9 /*~The amulet of the Seldarine? Fine, take it.~*/
 	GOTO XA_GiveAmuletToDemon_M //OK
 	
 	IF ~
 		Gender(Player1, FEMALE)
 		PartyHasItem("AMUL27")
-	~ THEN REPLY @13 /*~Here, take it.~*/
+	~ THEN REPLY @9 /*~The amulet of the Seldarine? Fine, take it.~*/
 	GOTO XA_GiveAmuletToDemon_F //OK
 	
+	IF ~
+		!Global("XA_LC_AskDemonAmulet", "GLOBAL", 1)
+		PartyHasItem("AMUL27")
+	~ THEN REPLY @10 /* ~The amulet, you mean... why do you want it?~ */
+	DO ~
+		SetGlobal("XA_LC_AskDemonAmulet", "GLOBAL", 1)
+	~
+	GOTO XA_AskDemonAmulet //OK
+	
+	IF ~~ THEN REPLY @26 /* ~No. I'll find my own way out of this place.~ */
+	GOTO XA_WontGiveAmulet //OK
+	
+	IF ~
+		!Global("XA_LC_AskAboutLyriel", "GLOBAL", 1)
+		PartyHasItem("AMUL27")
+	~ THEN REPLY @22 /* ~The amulet of the Seldarine? I will give it to you, but only if you agree to release Lyriel as well.~ */
+	DO ~
+		SetGlobal("XA_LC_AskAboutLyriel", "GLOBAL", 1)
+	~
+	GOTO XA_AskAboutLyriel //OK
+END
+
+IF ~~ THEN BEGIN XA_MeetingTransition
+	SAY @13
+	
+	IF ~
+		Global("XA_LC_MetIncubus", "GLOBAL", 1)
+	~ THEN 
+	GOTO XA_FirstMeeting //OK
+	
+	IF ~
+		Global("XA_LC_MetIncubus", "GLOBAL", 2)
+	~ THEN
+	GOTO XA_SecondMeeting //OK
+	
+	IF ~
+		Global("XA_LC_MetIncubus", "GLOBAL", 3)
+	~ THEN
+	GOTO XA_ThirdMeeting //OK
+END
+
+IF ~~ THEN BEGIN XA_WhoWhatWhy
+	SAY @13
+	
+	IF ~
+		GlobalLT("XA_LC_AskWho", "LOCALS", 1)
+	~ THEN REPLY @74 /* ~Who are you?~ */
+	DO ~
+		SetGlobal("XA_LC_AskWho", "LOCALS", 1)
+	~
+	GOTO XA_AskWho
+	
+	IF ~
+		GlobalLT("XA_LC_AskWhat", "LOCALS", 1)
+	~ THEN REPLY @79 /* ~What is this place?~ */
+	DO ~
+		SetGlobal("XA_LC_AskWhat", "LOCALS", 1)
+	~
+	GOTO XA_AskWhat
+	
+	IF ~
+		GlobalLT("XA_LC_AskWhy", "LOCALS", 1)
+		NumInPartyGT(1)
+	~ THEN REPLY @78 /* ~Why have you brought us here?~ */
+	DO ~
+		SetGlobal("XA_LC_AskWhy", "LOCALS", 1)
+	~
+	GOTO XA_HaveSomethingDemonWants
+	
+	IF ~
+		GlobalLT("XA_LC_AskWhy", "LOCALS", 1)
+		!NumInPartyGT(1)
+	~ THEN REPLY @1 /* ~Why have you brought me here?~ */
+	DO ~
+		SetGlobal("XA_LC_AskWhy", "LOCALS", 1)
+	~
+	GOTO XA_HaveSomethingDemonWants 
+	
+	IF ~
+		GlobalLT("XA_LC_AskWhy", "LOCALS", 1)
+		NumInPartyGT(1)
+	~ THEN REPLY @3 /* ~Release me and my companions from this prison!~*/
+	DO ~
+		SetGlobal("XA_LC_AskWhy", "LOCALS", 1)
+	~
+	GOTO XA_HaveSomethingDemonWants_Party //OK
+	
+	IF ~
+		GlobalLT("XA_LC_AskWhy", "LOCALS", 1)
+		!NumInPartyGT(1)
+	~ THEN REPLY @82 /*~~Release me from this prison!~~ */
+	DO ~
+		SetGlobal("XA_LC_AskWhy", "LOCALS", 1)
+	~
+	GOTO XA_HaveSomethingDemonWants //OK
+	
+	IF ~
+		GlobalLT("XA_LC_AskWhy", "LOCALS", 1)
+		NumInPartyGT(1)
+	~ THEN REPLY @83 /* ~You must be the demon Lyriel told us about.~*/
+	DO ~
+		SetGlobal("XA_LC_AskWhy", "LOCALS", 1)
+	~
+	GOTO XA_HaveSomethingDemonWants_Party //OK
+	
+	IF ~
+		GlobalLT("XA_LC_AskWhy", "LOCALS", 1)
+		!NumInPartyGT(1)
+	~ THEN REPLY @2 /*~You must be the demon Lyriel told me about.~ */
+	DO ~
+		SetGlobal("XA_LC_AskWhy", "LOCALS", 1)
+	~
+	GOTO XA_HaveSomethingDemonWants //OK
+	
+	IF ~
+		Global("XA_LC_CompletedG1", "GLOBAL", 1)
+		GlobalLT("XA_LC_AskAboutDS", "LOCALS", 1)
+	~ THEN REPLY @4 /* ~Why did you send me to Dragonspear?~ */
+	DO ~
+		SetGlobal("XA_LC_AskAboutDS", "LOCALS", 1)
+	~
+	GOTO XA_AskAboutDS //OK
+	
+	IF ~
+		Global("XA_LC_CompletedG2", "GLOBAL", 1)
+		GlobalLT("XA_LC_AskAboutTrial", "LOCALS", 1)
+	~ THEN REPLY @34 /* ~Sarevok, a Grand Duke? What was the point of that farce?~  */
+	DO ~
+		SetGlobal("XA_LC_AskAboutTrial", "LOCALS", 1)
+	~
+	GOTO XA_AskAboutTrial //OK
+	
+	IF ~
+		Global("XA_LC_CompletedG3", "GLOBAL", 1)
+		GlobalGT("XA_LC_GorionTalk", "GLOBAL", 0)
+		GlobalLT("XA_LC_AskAboutGorion", "LOCALS", 1)
+	~ THEN REPLY @38 /* ~You'll pay for mocking the memory of my foster father!~ */
+	DO ~
+		SetGlobal("XA_LC_AskAboutGorion", "LOCALS", 1)
+	~
+	GOTO XA_AskAboutGorion //OK
+	
+	IF ~
+		Global("XA_LC_CompletedG3", "GLOBAL", 1)
+		GlobalGT("XA_LC_GorionTalk", "GLOBAL", 0)
+		GlobalLT("XA_LC_AskAboutGorion", "LOCALS", 1)
+	~ THEN REPLY @73 /* ~Why go through the trouble of creating a falsification of my dead foster father?~ */
+	DO ~
+		SetGlobal("XA_LC_AskAboutGorion", "LOCALS", 1)
+	~
+	GOTO XA_AskAboutGorion2 //OK
+END
+
+IF ~~ THEN BEGIN XA_ReturnToPainting
+	SAY @13
+	
+	IF ~
+		Global("XA_LC_DemonDebug", "GLOBAL", 1)
+	~ THEN 
+	EXIT
+	
+	IF ~
+		!Global("XA_LC_DemonDebug", "GLOBAL", 1)
+	~ THEN
+	DO ~
+		StartCutSceneMode()
+		StartCutScene("XAPENT")
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_GiveAmuletTransition
+	SAY @13
+	
+	IF ~~ THEN
+	DO ~
+		TakePartyItem("AMUL27")
+		SetGlobal("XA_LC_GaveUpAmulet", "GLOBAL", 1)
+		SetGlobal("XA_LC_LeavePrison", "GLOBAL", 1)
+		SetGlobal("XA_LC_Journal_Incubus", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutScene("XAPEXIT")
+	~
+	EXIT
 END
