@@ -86,10 +86,10 @@ IF ~~ THEN BEGIN XA_HasRelationship
 	
 	= @61 /*~If I may... what are they like? What about them attracted you?~*/
 	
-	IF ~~ THEN REPLY @67 /*~I'm afraid that's not any of your business.~*/
+	IF ~~ THEN REPLY @68 /*~I'm afraid that's not any of your business.~*/
 	GOTO XA_WontTell
 	
-	IF ~~ THEN REPLY @68 /*~I'd rather not say.~*/
+	IF ~~ THEN REPLY @69 /*~I'd rather not say.~*/
 	GOTO XA_WontTell
 	
 	IF ~
