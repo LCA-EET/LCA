@@ -4051,8 +4051,7 @@ SILENT
 		ACTION_IF (xa_regenerate = 1) THEN BEGIN
 			COPY_EXISTING ~xaa146.are~ ~override/xag2.are~
 			WRITE_ASCII 0x94 ~xag2~ #8 // Area Script
-			WRITE_LONG 0xC058 xaa6 // Change Music
-			WRITE_LONG 0xC05C xaa6 // Change Music
+			
 			LPF xa_delete_are_actors END
 			LPF xa_delete_are_triggers END
 			//{ Add Doppelgangers
@@ -4352,6 +4351,108 @@ SILENT
 						xa_override = ~xarun~
 				END
 			//}
+			LPF fj_are_structure
+				INT_VAR
+					fj_type 		= 0
+					fj_box_left		= 1300
+					fj_box_top		= 1760
+					fj_box_right	= 1305
+					fj_box_bottom	= 1765
+					fj_cursor_idx	= 22
+					fj_vertex_0     = 1300 + (1760 << 16)
+					fj_vertex_1     = 1300 + (1765 << 16)
+					fj_vertex_2     = 1305 + (1760 << 16)
+					fj_vertex_3     = 1305 + (1765 << 16)
+				STR_VAR
+					fj_reg_script = ~trigff3~
+					fj_structure_type = region
+					fj_name = ~trigff3~
+			END
+			LPF fj_are_structure
+				INT_VAR
+					fj_type 		= 0
+					fj_box_left		= 1250
+					fj_box_top		= 1790
+					fj_box_right	= 1250
+					fj_box_bottom	= 1790
+					fj_cursor_idx	= 22
+					fj_vertex_0     = 1250 + (1790 << 16)
+					fj_vertex_1     = 1250 + (1795 << 16)
+					fj_vertex_2     = 1255 + (1790 << 16)
+					fj_vertex_3     = 1255 + (1795 << 16)
+				STR_VAR
+					fj_reg_script = ~trigff1~
+					fj_structure_type = region
+					fj_name = ~trigff1~
+			END
+			LPF fj_are_structure
+				INT_VAR
+					fj_type 		= 0
+					fj_box_left		= 1355
+					fj_box_top		= 1775
+					fj_box_right	= 1360
+					fj_box_bottom	= 1780
+					fj_cursor_idx	= 22
+					fj_vertex_0     = 1355 + (1775 << 16)
+					fj_vertex_1     = 1355 + (1780 << 16)
+					fj_vertex_2     = 1360 + (1775 << 16)
+					fj_vertex_3     = 1360 + (1780 << 16)
+				STR_VAR
+					fj_reg_script = ~trigff2~
+					fj_structure_type = region
+					fj_name = ~trigff2~
+			END
+			LPF fj_are_structure
+				INT_VAR
+					fj_type 		= 0
+					fj_box_left		= 1340
+					fj_box_top		= 1830
+					fj_box_right	= 1345
+					fj_box_bottom	= 1835
+					fj_cursor_idx	= 22
+					fj_vertex_0     = 1340 + (1830 << 16)
+					fj_vertex_1     = 1340 + (1835 << 16)
+					fj_vertex_2     = 1345 + (1830 << 16)
+					fj_vertex_3     = 1345 + (1835 << 16)
+				STR_VAR
+					fj_reg_script = ~trigliia~
+					fj_structure_type = region
+					fj_name = ~trigliia~
+			END
+			LPF fj_are_structure
+				INT_VAR
+					fj_type 		= 0
+					fj_box_left		= 1285
+					fj_box_top		= 1835
+					fj_box_right	= 1290
+					fj_box_bottom	= 1840
+					fj_cursor_idx	= 22
+					fj_vertex_0     = 1285 + (1835 << 16)
+					fj_vertex_1     = 1285 + (1840 << 16)
+					fj_vertex_2     = 1290 + (1835 << 16)
+					fj_vertex_3     = 1290 + (1840 << 16)
+				STR_VAR
+					fj_reg_script = ~trigbelt~
+					fj_structure_type = region
+					fj_name = ~trigbelt~
+			END
+			LPF fj_are_structure
+				INT_VAR
+					fj_type 		= 0
+					fj_box_left		= 1312
+					fj_box_top		= 1800
+					fj_box_right	= 1317
+					fj_box_bottom	= 1805
+					fj_cursor_idx	= 22
+					fj_vertex_0     = 1312 + (1800 << 16)
+					fj_vertex_1     = 1312 + (1805 << 16)
+					fj_vertex_2     = 1317 + (1800 << 16)
+					fj_vertex_3     = 1317 + (1805 << 16)
+				STR_VAR
+					fj_reg_script = ~trigcor~
+					fj_structure_type = region
+					fj_name = ~trigcor~
+			END
 			
 		END ELSE BEGIN
 			LAF xa_copy_area_music
@@ -4360,7 +4461,9 @@ SILENT
 					xa_destinationarea = ~%MOD_FOLDER%/rbg/are/xag2.are~
 			END
 		END
-		
+		WRITE_LONG 0xC058 xaa6 // Change Music
+		WRITE_LONG 0xC05C xaa6 // Change Music
+		WRITE_LONG 0xC064 xabb // Change Fight Music
 	//}
 	
 	//{ Corwin's Home, L1 ar1316
