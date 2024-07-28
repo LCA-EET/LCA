@@ -1,6 +1,7 @@
 
 IF
 	GlobalTimerExpired("XA_LC_LyrielSingTimer", "GLOBAL")
+	GlobalGT("XA_LC_SavedLyriel", "GLOBAL", 0)
 THEN
 	RESPONSE #100
 		SetGlobalTimer("XA_LC_LyrielSingTimer", "GLOBAL", TEN_MINUTES)
