@@ -4453,17 +4453,21 @@ SILENT
 					fj_structure_type = region
 					fj_name = ~trigcor~
 			END
-			
+			WRITE_LONG 0xC058 xaa6 // Change Music
+			WRITE_LONG 0xC05C xaa6 // Change Music
+			WRITE_LONG 0xC064 xabb // Change Fight Music
 		END ELSE BEGIN
 			LAF xa_copy_area_music
 				STR_VAR
 					xa_sourcearea = ~xaa146.are~
 					xa_destinationarea = ~%MOD_FOLDER%/rbg/are/xag2.are~
 			END
+			COPY_EXISTING ~xag2.are~ ~override~
+			WRITE_LONG 0xC058 xaa6 // Change Music
+			WRITE_LONG 0xC05C xaa6 // Change Music
+			WRITE_LONG 0xC064 xabb // Change Fight Music
 		END
-		WRITE_LONG 0xC058 xaa6 // Change Music
-		WRITE_LONG 0xC05C xaa6 // Change Music
-		WRITE_LONG 0xC064 xabb // Change Fight Music
+		
 	//}
 	
 	//{ Corwin's Home, L1 ar1316
