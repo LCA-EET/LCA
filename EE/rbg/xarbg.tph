@@ -819,18 +819,21 @@ SILENT
 		LPF xa_reset_cre
 			STR_VAR
 				xa_scriptName = ~XAFF1248~
+				xa_override = ~XAFIGH01~
 		END
 		
 		COPY_EXISTING ~xad123.cre~ ~override/xaff1271.cre~ // Flaming Fist bdfistcc Enforcer
 		LPF xa_reset_cre
 			STR_VAR
 				xa_scriptName = ~XAFF1271~
+				xa_override = ~XAFIGH01~
 		END
 		
 		COPY_EXISTING ~xad123.cre~ ~override/xaff1272.cre~ // Flaming Fist bdfistcc Enforcer
 		LPF xa_reset_cre
 			STR_VAR
 				xa_scriptName = ~XAFF1272~
+				xa_override = ~XAFIGH01~
 		END
 		
 		COPY_EXISTING ~xaff1271.cre~ ~override/xab147b.cre~
@@ -4453,9 +4456,9 @@ SILENT
 					fj_structure_type = region
 					fj_name = ~trigcor~
 			END
-			WRITE_LONG 0xC058 xaa6 // Change Music
-			WRITE_LONG 0xC05C xaa6 // Change Music
-			WRITE_LONG 0xC064 xabb // Change Fight Music
+			WRITE_LONG 0xC550 xaa6 // Change Music
+			WRITE_LONG 0xC554 xaa6 // Change Music
+			WRITE_LONG 0xC55C xabb // Change Fight Music
 		END ELSE BEGIN
 			LAF xa_copy_area_music
 				STR_VAR
@@ -4463,9 +4466,9 @@ SILENT
 					xa_destinationarea = ~%MOD_FOLDER%/rbg/are/xag2.are~
 			END
 			COPY_EXISTING ~xag2.are~ ~override~
-			WRITE_LONG 0xC058 xaa6 // Change Music
-			WRITE_LONG 0xC05C xaa6 // Change Music
-			WRITE_LONG 0xC064 xabb // Change Fight Music
+			WRITE_LONG 0xC550 xaa6 // Change Music
+			WRITE_LONG 0xC554 xaa6 // Change Music
+			WRITE_LONG 0xC55C xabb // Change Fight Music
 		END
 		
 	//}
