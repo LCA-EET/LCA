@@ -1036,7 +1036,7 @@ SILENT
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xacc3~
-				xa_scriptName = ~xarbnb01~
+				xa_scriptName = ~xacc3~
 				xa_override = ~xacc3~
 				xa_race = ~shout~
 				xa_general = ~xafigh01~
