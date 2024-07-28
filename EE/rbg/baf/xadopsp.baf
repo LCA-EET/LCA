@@ -1,0 +1,17 @@
+IF
+	See(NearestEnemyOf(Myself))
+	GlobalLT("XA_LC_DoppSpell", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_DoppSpell", "LOCALS", 1)
+		ApplySpell(Myself,WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Mirror Image)
+		ApplySpell(Myself,WIZARD_HASTE)  // SPWI305.SPL (Haste)
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Attack(NearestEnemyOf(Myself))
+END

@@ -93,6 +93,7 @@ CHAIN XASAREVO XA_G2Chain
 		ChangeEnemyAlly("XAAASIM", ENEMY)
 		ChangeEnemyAlly("XAGARDUS", ENEMY)
 		ChangeEnemyAlly("XADIYAB", ENEMY)
+		ChangeEnemyAlly("XAGDOP03", ENEMY)
 		ChangeEnemyAlly("XACC3", ALLY)
 		ChangeEnemyAlly("XALIIA", ALLY)
 		ChangeEnemyAlly("XABELT", ALLY)

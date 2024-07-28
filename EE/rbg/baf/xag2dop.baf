@@ -1,0 +1,8 @@
+IF
+	GlobalLT("XA_LC_DoppChange", "LOCALS", 1)
+	GlobalGT("XA_LC_SarevokHostile", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_DoppChange", "LOCALS", 1)
+		ChangeAnimation("XAGDOP03")
+END
