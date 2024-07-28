@@ -97,7 +97,7 @@ IF ~
 	DO ~
 		SetGlobal("XA_LC_ParleyAttack", "GLOBAL", 0)
 		StartCutSceneMode()
-		StartCutScene("XAPENT")
+		StartCutScene("XAPENT0")
 	~
 	EXIT	
 END
@@ -194,7 +194,7 @@ END
 
 //{ Meeting Dialogues
 IF ~
-	Global("XA_LC_MetIncubus", "GLOBAL", 0)
+	Global("XA_LC_MetIncubus", "GLOBAL", 1)
 ~ THEN BEGIN XA_StartFirstMeet
 	SAY @0 /* ~Welcome.~ */
 	
@@ -202,7 +202,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_LC_MetIncubus", "GLOBAL", 1)
+	Global("XA_LC_MetIncubus", "GLOBAL", 2)
 ~ THEN BEGIN XA_StartSecondMeet
 	SAY @27 /*~I hope that now, you are willing to listen to reason.~*/
 	
@@ -213,7 +213,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_LC_MetIncubus", "GLOBAL", 2)
+	Global("XA_LC_MetIncubus", "GLOBAL", 3)
 ~ THEN BEGIN XA_StartThirdMeet
 	SAY @39 /*~Surely you're tired of this by now, yes?~*/
 	
@@ -330,11 +330,11 @@ IF ~~ THEN BEGIN XA_SecondMeeting
 	SAY @28 /* ~My offer stands. Give me the amulet, and you will be freed.~*/
 	
 	IF ~
-		!Global("XA_LC_AskAboutLyriel", "GLOBAL", 1)
+		GlobalLT("XA_LC_AskAboutLyriel", "LOCALS", 1)
 		PartyHasItem("AMUL27")
 	~ THEN REPLY @22 /* ~The amulet of the Seldarine? I will give it to you, but only if you agree to release Lyriel as well.~ */
 	DO ~
-		SetGlobal("XA_LC_AskAboutLyriel", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskAboutLyriel", "LOCALS", 1)
 	~
 	GOTO XA_AskAboutLyriel //OK
 	
@@ -506,26 +506,12 @@ IF ~~ THEN BEGIN XA_AmuletTransitions_0
 	
 	IF ~
 		!NumInPartyGT(1)
-		Global("XA_LC_MetIncubus", "GLOBAL", 1)
 	~ THEN REPLY @12 /* ~No. I'll find my own way out of this place.~ */
 	GOTO XA_WontGiveAmulet //OK
 	
 	IF ~
 		NumInPartyGT(1)
-		Global("XA_LC_MetIncubus", "GLOBAL", 1)
 	~ THEN REPLY @26 /* ~No. We'll find our own way out of here.~ */
-	GOTO XA_WontGiveAmulet //OK
-	
-	IF ~
-		!NumInPartyGT(1)
-		Global("XA_LC_MetIncubus", "GLOBAL", 2)
-	~ THEN REPLY @63 /* ~No. I'll find my own way out of this place.~ */
-	GOTO XA_WontGiveAmulet //OK
-	
-	IF ~
-		NumInPartyGT(1)
-		Global("XA_LC_MetIncubus", "GLOBAL", 2)
-	~ THEN REPLY @63 /* ~No. We'll find our own way out of here.~ */
 	GOTO XA_WontGiveAmulet //OK
 	
 	IF ~
@@ -569,11 +555,11 @@ IF ~~ THEN BEGIN XA_AmuletTransitions_1
 	GOTO XA_WontGiveAmulet //OK
 	
 	IF ~
-		!Global("XA_LC_AskAboutLyriel", "GLOBAL", 1)
+		GlobalLT("XA_LC_AskAboutLyriel", "LOCALS", 1)
 		PartyHasItem("AMUL27")
 	~ THEN REPLY @22 /* ~The amulet of the Seldarine? I will give it to you, but only if you agree to release Lyriel as well.~ */
 	DO ~
-		SetGlobal("XA_LC_AskAboutLyriel", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskAboutLyriel", "LOCALS", 1)
 	~
 	GOTO XA_AskAboutLyriel //OK
 END
@@ -722,7 +708,7 @@ IF ~~ THEN BEGIN XA_ReturnToPainting
 	~ THEN
 	DO ~
 		StartCutSceneMode()
-		StartCutScene("XAPENT")
+		StartCutScene("XAPENT0")
 	~
 	EXIT
 END

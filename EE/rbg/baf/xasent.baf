@@ -5,6 +5,7 @@ THEN
 		CutSceneID(Player1)
 		FadeToColor([30.0],0)
 		Wait(2)
+		IncrementGlobal("XA_LC_MetIncubus", "GLOBAL", 1)
 		CopyGroundPilesTo("XAPAINT1", [350.300])
 		Wait(1)
 		LeaveAreaLUA("XADEMSAN", "", [320.320], N)
