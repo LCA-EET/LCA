@@ -1709,6 +1709,11 @@ SILENT
 		ADD_MUSIC xamu08	~%MOD_FOLDER%/rbg/mus/xamu08.mus~
 		COPY ~%MOD_FOLDER%/rbg/mus/xamu08a.acm~ ~MUSIC/xamu08/xamu08a.acm~	
 	//}
+	
+	//{ SoD Fight Music
+		ADD_MUSIC xabb		~%MOD_FOLDER%/rbg/mus/xabb.mus~
+		COPY ~%MOD_FOLDER%/rbg/mus/xabb/~ ~MUSIC/xabb/~	
+	//}
 
 	//{ Adjust Script & Dialogue Music
 		COPY_EXISTING ~xanarzu.dlg~ ~override~
@@ -1926,7 +1931,7 @@ SILENT
 		WRITE_LONG 0x154 0 // Areana
 	//}
 	
-	//{ ar0123 xaa106
+	//{ ar0123 xaa106 Undercity
 		EXTEND_TOP ~xaas106.bcs~ 	~%MOD_FOLDER%/rbg/baf/xauc.baf~
 	
 		COPY_EXISTING ~xaa106.are~ ~override~
@@ -4046,7 +4051,8 @@ SILENT
 		ACTION_IF (xa_regenerate = 1) THEN BEGIN
 			COPY_EXISTING ~xaa146.are~ ~override/xag2.are~
 			WRITE_ASCII 0x94 ~xag2~ #8 // Area Script
-			
+			WRITE_LONG 0xC058 xaa6 // Change Music
+			WRITE_LONG 0xC05C xaa6 // Change Music
 			LPF xa_delete_are_actors END
 			LPF xa_delete_are_triggers END
 			//{ Add Doppelgangers
