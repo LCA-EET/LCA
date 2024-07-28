@@ -606,7 +606,7 @@ SILENT
 			STR_VAR
 				xa_scriptName = ~xazhalim~
 				xa_override = ~shout~
-				xa_target = ~wtarsgt~
+				xa_default = ~wtasight~
 		END
 		
 		COPY_EXISTING ~xaa1368.cre~ ~override/xaaasim.cre~ // Aasim aasim
