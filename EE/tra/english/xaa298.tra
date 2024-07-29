@@ -1,14 +1,15 @@
-@1=~Please don't interrupt me. I'm waiting to be inspired.~
-@2=~I have been working on a ballad about the Unicorn Run in the High Forest. I'd like to use a more reliable source than simply hearsay and folklore, though. If you ever find an authoritative history of the run in your travels, I'd love to get my hands on it.~
-@3=~A Bard's Request
-Rinnie, a bard and balladeer here in Baldur's Gate, has asked me to bring her a history of the Unicorn Run should I encounter one in my travels. Rinnie can be found in one of the houses located beside the palace.~
-@4=~Hi there. Found anything substantial on the Unicorn Run yet?~
-@5=~"History of the Unicorn Run..." How wonderfully ideal! You wouldn't believe how grateful I am to get my hands on this. Here, a friend of mine gave me this magical scroll and I have yet to make use of it.~
-@6=~A Bard's Request
-I didn't need it myself, so I gave "The History of the Unicorn Run" to Rinnie.~
-@7=~Must you pick on me when I'm trying to concentrate?~
-@8=~"Sweet waters of the forest
-flow through each den and glade,
-nourishing the unicorns
-who lie graceful in the shade..."~
-@9=~"History of the Unicorn Run..." Interesting... I'll give you 80 gold pieces for it.~
+// BELLAM translation file
+@1   = ~I have been sent to warn you and your party of Phandalyn. He is a powerful paladin here in the city and he poses a grave danger to you. I would suggest that you avoid him altogether.~
+@2   = ~Thanks for the warning but before I take it to heart, who are you?~
+@3   = ~Thanks for the warning but I can take care of myself.~
+@4   = ~Where is this Phandalyn you speak of?~
+@5   = ~Good day to ya.~
+@6   = ~Just a friend.~
+@7   = ~Well, thanks "friend," but I can take care of myself.~
+@8   = ~Well, where is this Phandalyn you speak of?~
+@9   = ~Suit yourself, but don't say I didn't warn you.~
+@10  = ~You can usually find him in one of the taverns close to the docks, but I don't recommend you do. If you have business there, I suggest you do it after sundown.~
+@11  = ~Phandalyn
+Bellamy, a decidedly mysterious halfling bard, has warned me to steer clear of a paladin lurking behind one of the dockside taverns here in Baldur's Gate. His name is Phandalyn, and, from the sound of it, my reputation has preceded me.~
+@12  = ~Watch your back out there.~
+@13  = ~Keep your head up out there.~
