@@ -505,14 +505,22 @@ IF ~~ THEN BEGIN XA_AmuletTransitions_0
 	SAY @13
 	
 	IF ~
+		Global("XA_LC_MetIncubus", "GLOBAL", 1)
 		!NumInPartyGT(1)
 	~ THEN REPLY @12 /* ~No. I'll find my own way out of this place.~ */
 	GOTO XA_WontGiveAmulet //OK
 	
 	IF ~
+		Global("XA_LC_MetIncubus", "GLOBAL", 1)
 		NumInPartyGT(1)
 	~ THEN REPLY @26 /* ~No. We'll find our own way out of here.~ */
 	GOTO XA_WontGiveAmulet //OK
+	
+	IF ~
+		Global("XA_LC_MetIncubus", "GLOBAL", 2)
+	~ THEN REPLY @98 /* ~No. I'll find my own way out of this place.~ */
+	GOTO XA_StillWontGiveAmulet //OK
+	
 	
 	IF ~
 		Gender(Player1, MALE)
