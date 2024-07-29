@@ -284,8 +284,9 @@ SILENT
 		WRITE_ASCII 0x250 ~xag2dop~ #8 // class script
 		WRITE_ASCII 0x268 ~xafigh01~ #8 // race script
 		WRITE_ASCII 0x280 ~xag2dop0~ #8 // script name
-		
-		
+		WRITE_LONG 0x14 3500 // xp
+		WRITE_SHORT 0x24 85 // hp
+		WRITE_SHORT 0x26 85 // hp		
 		
 		COPY_EXISTING ~xag2dop0.cre~ ~override/xag2dop1.cre~
 		WRITE_ASCII 0x280 ~xag2dop1~ #8 // script name
@@ -588,7 +589,7 @@ SILENT
 			STR_VAR
 				xa_scriptName = ~xasemaj~
 				xa_override = ~shout~
-				xa_race = ~xasemaj~
+				xa_race = ~mage12d~
 				xa_general = ~wtasight~
 		END
 		
