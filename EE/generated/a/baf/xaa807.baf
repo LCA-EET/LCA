@@ -1,0 +1,67 @@
+IF
+	AreaCheck("AR0102")  // Silvershield Estate, second floor
+	Opened([ANYONE])
+	See([NOTGOOD.HUMANOID])
+	!StateCheck(LastSeenBy(Myself),STATE_SLEEPING)
+	InMyArea(LastTrigger)
+	!StateCheck(LastTrigger,STATE_INVISIBLE)
+	!StateCheck(LastTrigger,STATE_IMPROVEDINVISIBILITY)
+	!Name("SKIE",LastTrigger)  // Skie
+	!IfValidForPartyDialog("SKIE")  // Skie
+THEN
+	RESPONSE #100
+		DisplayString(LastTrigger,9896)  // Someone has noticed you! You hear the guards being summoned!
+		Wait(3)
+		SaveObjectLocation("GLOBAL","DefaultLocation",LastTrigger)
+		CreateCreature("HOUSEN",[663.1387],NE)  // Guard Enforcer
+		ActionOverride("HouseEnforcer",ChangeAIScript("guard",RACE))
+		CreateCreature("HOUSEN2",[665.1414],NE)  // Guard Enforcer
+		ActionOverride("HOUSEN2",ChangeAIScript("guard",RACE))
+		CreateCreature("HOUSEN3",[614.1379],NE)  // Guard Enforcer
+		ActionOverride("HOUSEN3",ChangeAIScript("guard",RACE))
+END
+
+IF
+	AreaCheck("AR0101")  // Silvershield Estate, ground floor
+	Opened([ANYONE])
+	See([NOTGOOD.HUMANOID])
+	!StateCheck(LastSeenBy(Myself),STATE_SLEEPING)
+	InMyArea(LastTrigger)
+	!StateCheck(LastTrigger,STATE_INVISIBLE)
+	!StateCheck(LastTrigger,STATE_IMPROVEDINVISIBILITY)
+	!Name("SKIE",LastTrigger)  // Skie
+	!IfValidForPartyDialog("SKIE")  // Skie
+THEN
+	RESPONSE #100
+		DisplayString(LastTrigger,9896)  // Someone has noticed you! You hear the guards being summoned!
+		Wait(3)
+		SaveObjectLocation("GLOBAL","DefaultLocation",LastTrigger)
+		CreateCreature("HOUSEN",[395.1308],NE)  // Guard Enforcer
+		ActionOverride("HouseEnforcer",ChangeAIScript("guard",RACE))
+		CreateCreature("HOUSEN2",[338.1307],NE)  // Guard Enforcer
+		ActionOverride("HOUSEN2",ChangeAIScript("guard",RACE))
+		CreateCreature("HOUSEN3",[386.1344],NE)  // Guard Enforcer
+		ActionOverride("HOUSEN3",ChangeAIScript("guard",RACE))
+END
+
+IF
+	!Name("SKIE",LastTrigger)  // Skie
+	!IfValidForPartyDialog("SKIE")  // Skie
+	OR(2)
+		!Range(LastTrigger,0)
+		!See(LastTrigger)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	PickLockFailed("SKIE")  // Skie
+THEN
+	RESPONSE #100
+		Unlock(Myself)
+		PlaySound("AMB_D21D")
+		DisplayString(LastTrigger,16517)  // Lock Pick Succeeded
+		AddexperienceParty(17)
+END
+

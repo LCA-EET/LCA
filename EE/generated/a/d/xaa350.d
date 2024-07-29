@@ -1,53 +1,33 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\LAERTA.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BART9.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\LAERTA.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BART9.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA350~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #0 ~  NumTimesTalkedTo(0)
+IF ~  ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Hi! I'm Laerta. That's my twin sister, Louise. Mom and Dad don't believe us, but there's a bogeyman that comes and looks in our window every night. We're real glad we're twins because, if there were only one of us, then there'd be no one to hold on to when we get scared.~ #15292 */
-  IF ~~ THEN DO ~CreateCreature("GERVIS",[807.497],S)
-SetNumTimesTalkedTo(1)
-SetGlobal("TalkedToLaerta","GLOBAL",1)
-~ UNSOLVED_JOURNAL @2 /* ~Laerta and Louise
-The young twins, Laerta and Louise, claim that a "bogeyman" watches them through their window every night. Now I don't believe in bogeymen, but I've seen enough in my travels to believe that there's something out there, and I don't like the sound of it...~ #27225 */ EXIT
+  SAY @1 /* ~Good eve. The Helm and Cloak stands ready to serve thee in a swift and relaxing manner. I trust you are aware that our provender is a touch more pricey than some of the "lesser respected" inns about town? This is true, though I have always maintained that you get what you pay for. Is there anything I can do for you?~ #8380 */
+  IF ~~ THEN REPLY @2 /* ~Yes.~ #15076 */ DO ~StartStore("xaa151",LastTalkedToBy(Myself))
+~ EXIT
+  IF ~~ THEN REPLY @3 /* ~No.~ #15077 */ EXIT
 END
 
-IF WEIGHT #1 ~  Global("HelpLaerta","GLOBAL",0)
+IF ~  ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
+ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
 ~ THEN BEGIN 1 // from:
-  SAY @3 /* ~Do you believe us about the bogeyman?~ #15299 */
-  IF ~~ THEN EXIT
+  SAY @4 /* ~Hmm? Hello there. Welcome to the Helm and Cloak. Whilst here you may expect superior service and excellent quality. Er, you can PAY can't you? As long as this is so we shall be on excellent terms. Please try not to make trouble while here. We are well protected and all a ruckus will serve to do is disturb the other guests. Is there anything I can do for you?~ #8381 */
+  IF ~~ THEN REPLY @2 /* ~Yes.~ #15078 */ DO ~StartStore("xaa151",LastTalkedToBy(Myself))
+~ EXIT
+  IF ~~ THEN REPLY @3 /* ~No.~ #15079 */ EXIT
 END
 
-IF WEIGHT #2 ~  False()
+IF ~  ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
 ~ THEN BEGIN 2 // from:
-  SAY @4 /* ~Get away from us, you bogeypeople!~ #15300 */
-  IF ~~ THEN EXIT
-END
-
-IF WEIGHT #4 /* Triggers after states #: 4 even though they appear after this state */
-~  True()
-~ THEN BEGIN 3 // from:
-  SAY @5 /* ~Thanks for getting rid of the bogeyman. Louise and I aren't scared nearly as much now.~ #15301 */
-  IF ~~ THEN EXIT
-END
-
-IF WEIGHT #3 ~  Global("HelpLaerta","GLOBAL",1)
-~ THEN BEGIN 4 // from:
-  SAY @6 /* ~You scared away the bogeyman, didn't you? Here, Mom says to give this scroll. I think it's supposed to protect you from any other bogeypeople you find.~ #15308 */
-  IF ~~ THEN DO ~EraseJournalEntry(@2)
-EraseJournalEntry(@8)
-EraseJournalEntry(@9)
-SetGlobal("HelpLaerta","GLOBAL",2)
-AddexperienceParty(1000)
-GiveItem("SCRL78",LastTalkedToBy)
-~ SOLVED_JOURNAL @7 /* ~Laerta and Louise
-The "bogeyman" won't bother those girls anymore.~ #27227 */ EXIT
+  SAY @5 /* ~Oh, no, no, no. I rather think someone of your standards will not be comfortable in the Helm and Cloak at all. We pride ourselves on our somewhat expensive but relaxed fare, whereas you seem to be the sort who should enjoy the atmosphere of, say, the Blushing Mermaid. I am sorry to say it, but I did not mean that as a compliment. Best that you go now, for surely it will only mean trouble if you stay. Is there anything I can do for you?~ #8382 */
+  IF ~~ THEN REPLY @2 /* ~Yes.~ #15080 */ DO ~StartStore("xaa151",LastTalkedToBy(Myself))
+~ EXIT
+  IF ~~ THEN REPLY @3 /* ~No.~ #15081 */ EXIT
 END

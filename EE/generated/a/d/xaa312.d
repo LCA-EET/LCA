@@ -1,65 +1,75 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NEMPHR.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NADARI.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NEMPHR.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NADARI.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA312~
-//////////////////////////////////////////////////
-// WARNING: this file contains non-trivial WEIGHTs
-//////////////////////////////////////////////////
 
-IF WEIGHT #5 /* Triggers after states #: 1 2 3 4 5 even though they appear after this state */
-~  True()
+IF ~  Global("NADARIN","GLOBAL",0)
+ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~I have little need of one such as you.~ #15019 */
+  SAY @1 /* ~With breath that strong, you could kill giants. Now get out of here before I hurt you.~ #15228 */
   IF ~~ THEN EXIT
 END
 
-IF WEIGHT #0 ~  Global("HelpNemphre","GLOBAL",0)
-ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
-Gender(LastTalkedToBy,MALE)
+IF ~  Global("NADARIN","GLOBAL",0)
+ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
 ~ THEN BEGIN 1 // from:
-  SAY @2 /* ~You will make an adequate pawn. Don't argue, as I have little patience for your prattle. There is a dark mage at work somewhere in this city and he must be stopped. He goes by the name of Arkion and has a bloodstone amulet that is of great importance to my plans. Return it to me and I will reward you greatly.~ #15020 */
-  IF ~~ THEN DO ~SetGlobal("HelpNemphre","GLOBAL",1)
-~ UNSOLVED_JOURNAL @3 /* ~Arkion's Bloodstone Amulet
-I have met a necromancer by the name of Nemphre here in Baldur's Gate... and I must admit, I think I am in a bit over my head. She has asked me to obtain a bloodstone amulet from a man named Arkion and return it to her. The only trouble is, Arkion sounds like a rather powerful mage, and I get the sense that he won't part with that amulet willingly... There is something about this city that scares me somehow. Nemphre can be found in a house just south of the Elfsong Tavern.~ #27318 */ EXIT
+  SAY @2 /* ~Hey, you! You look either bored or foolish. Either way, I could use your services. Some wiseacre tried to send a basilisk by freight and now it's broken free and is making a mess of one of the warehouses at the harbor. As I said, I need someone who's either bored or foolish.~ #15229 */
+  IF ~~ THEN DO ~SetGlobal("NADARIN","GLOBAL",1)
+~ UNSOLVED_JOURNAL @3 /* ~Basilisk on the Loose
+Some idiot let a basilisk get away from the ship carrying it. Now the monster is loose in a dockside warehouse, petrifying everyone it can see. If I can deal with it, Nadarin should reward me.~ #27299 */ EXIT
 END
 
-IF WEIGHT #1 ~  Global("HelpNemphre","GLOBAL",0)
-ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
-Gender(LastTalkedToBy,MALE)
+IF ~  Global("NADARIN","GLOBAL",1)
+!Dead("BASILNAD")
 ~ THEN BEGIN 2 // from:
-  SAY @4 /* ~Mmm, you are a sweet one. Could you do a favor for Nemphre? An old lover of mine has followed me here to the city and has been threatening me with some very dark magic. His name is Arkion and, if you could just get a certain amulet of his to me, perhaps there are a few things I could do for you, don't you think, mmn?~ #15021 */
-  IF ~~ THEN DO ~SetGlobal("HelpNemphre","GLOBAL",1)
-~ UNSOLVED_JOURNAL @5 /* ~Arkion's Bloodstone Amulet
-There is a woman in Baldur's Gate who has been gifted with the... succulent... name of Nemphre. I must admit, I am torn between a certain sense of passion and a much less certain sense of foreboding. Arkion, an old lover of hers, has apparently kept an amulet of hers that she would like to have returned. Maybe if I could just talk to him... I found Nemphre in a house just south of the Elfsong Tavern.~ #27319 */ EXIT
-END
-
-IF WEIGHT #2 ~  PartyHasItem("OHAMUL13")
-Global("HelpNemphre","GLOBAL",1)
-~ THEN BEGIN 3 // from:
-  SAY @6 /* ~You are a sweet fool but a fool nonetheless. Here, take this scroll and go. I have no further need of you.~ #15022 */
-  IF ~~ THEN DO ~EraseJournalEntry(@3)
-EraseJournalEntry(@5)
-EraseJournalEntry(@8)
-SetGlobal("HelpNemphre","GLOBAL",2)
-TakePartyItem("OHAMUL13")
-GiveItem("SCRL1Q",LastTalkedToBy)
-AddexperienceParty(1000)
-~ SOLVED_JOURNAL @7 /* ~Arkion's Bloodstone Amulet
-For returning Arkion's amulet to Nemphre, I have a nice new magical scroll.~ #27322 */ EXIT
-END
-
-IF WEIGHT #3 ~  Global("HelpNemphre","GLOBAL",1)
-~ THEN BEGIN 4 // from:
-  SAY @9 /* ~How many times must I ask you to do my bidding, imbecile? Find Arkion and get his amulet to me and do it NOW!~ #15023 */
+  SAY @4 /* ~Look, how many times do I have to ask you? The docks are more ornamented than the High Hall!~ #15230 */
   IF ~~ THEN EXIT
 END
 
-IF WEIGHT #4 ~  False()
+IF ~  Global("NADARIN","GLOBAL",1)
+ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
+Dead("BASILNAD")
+~ THEN BEGIN 3 // from:
+  SAY @5 /* ~Thanks and long live the foolish! Here's 500 gold pieces for taking care of that on such short notice. Also, you might want these. They're an item I obtained from a fence I know in Athkatla. You never know, they might fit you.~ #15231 */
+  IF ~~ THEN DO ~EraseJournalEntry(@3)
+AddexperienceParty(1300)
+GiveGoldForce(500)
+GiveItem("BOOT02",LastTalkedToBy)
+SetGlobal("NADARIN","GLOBAL",2)
+~ SOLVED_JOURNAL @6 /* ~Basilisk on the Loose
+That escaped basilisk will terrorize no one else. Nadarin offered a nice reward for the deed.~ #27300 */ EXIT
+END
+
+IF ~  Global("NADARIN","GLOBAL",1)
+ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+Dead("BASILNAD")
+~ THEN BEGIN 4 // from:
+  SAY @7 /* ~Thank the gods for bored adventurers. I don't know what we'd do without you. Here's 500 gold pieces for your help.~ #15232 */
+  IF ~~ THEN DO ~EraseJournalEntry(@3)
+AddexperienceParty(1300)
+GiveGoldForce(500)
+SetGlobal("NADARIN","GLOBAL",2)
+~ SOLVED_JOURNAL @6 /* ~Basilisk on the Loose
+That escaped basilisk will terrorize no one else. Nadarin offered a nice reward for the deed.~ #27300 */ EXIT
+END
+
+IF ~  False()
 ~ THEN BEGIN 5 // from:
-  SAY @10 /* ~You dare to attack the great Nemphre? You shall shrivel in the face of my wrath.~ #15024 */
+  SAY @8 /* ~Curses! You adventurers are all the same! I've got an emergency to deal with and all you want to do is cause trouble! Damn you to the Ninth Hell!~ #15233 */
+  IF ~~ THEN EXIT
+END
+
+IF ~  True()
+~ THEN BEGIN 6 // from:
+  SAY @9 /* ~Cheers to all of you for saving our docks from becoming a stone quarry!~ #15234 */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 7 // from:
+  SAY @10 /* ~~ #18715 */
   IF ~~ THEN EXIT
 END

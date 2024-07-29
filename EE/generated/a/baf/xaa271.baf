@@ -1,0 +1,42 @@
+IF
+	OR(2)
+		AreaCheck("ar2301")  // Friendly Arm Inn, ground floor (Bentley Mirrorshade, Khalid, Jaheira)
+		AreaCheck("ar2302")  // Friendly Arm Inn, second floor (Unshey)
+	Opened([ANYONE])
+	See([NOTGOOD.HUMANOID])
+	!StateCheck(LastSeenBy(Myself),STATE_SLEEPING)
+	!StateCheck(LastTrigger,STATE_INVISIBLE)
+	!StateCheck(LastTrigger,STATE_IMPROVEDINVISIBILITY)
+THEN
+	RESPONSE #100
+		DisplayString(LastTrigger,9896)  // Someone has noticed you! You hear the guards being summoned!
+		Wait(3)
+		CreateCreature("HOUSEN4",[-1.-1],NE)  // Guard Enforcer
+		CreateCreature("HOUSEN5",[-1.-1],NE)  // Guard Enforcer
+END
+
+IF
+	!AreaCheck("ar2301")  // Friendly Arm Inn, ground floor (Bentley Mirrorshade, Khalid, Jaheira)
+	!AreaCheck("ar2302")  // Friendly Arm Inn, second floor (Unshey)
+	Opened([ANYONE])
+	See([NOTGOOD.HUMANOID])
+	!StateCheck(LastSeenBy(Myself),STATE_SLEEPING)
+	!StateCheck(LastTrigger,STATE_INVISIBLE)
+	!StateCheck(LastTrigger,STATE_IMPROVEDINVISIBILITY)
+THEN
+	RESPONSE #100
+		DisplayString(LastTrigger,9896)  // Someone has noticed you! You hear the guards being summoned!
+		Wait(3)
+		CreateCreature("HOUSEN",[-1.-1],NE)  // Guard Enforcer
+		CreateCreature("HOUSEN2",[-1.-1],NE)  // Guard Enforcer
+END
+
+IF
+	OR(2)
+		!Range(LastTrigger,0)
+		!See(LastTrigger)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+

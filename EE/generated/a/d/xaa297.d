@@ -1,66 +1,59 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BHEREN.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NANTRI.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BHEREN.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\NANTRI.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA297~
+//////////////////////////////////////////////////
+// WARNING: this file contains non-trivial WEIGHTs
+//////////////////////////////////////////////////
 
-IF ~  NumTimesTalkedTo(0)
-ReputationGT(Player1,14)
+IF WEIGHT #1 /* Triggers after states #: 4 even though they appear after this state */
+~  Gender(LastTalkedToBy,FEMALE)
+ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Damnable cat! I figured Petrine would take the beast with her, but life isn't that kind, is it?~ #15132 */
-  IF ~~ THEN UNSOLVED_JOURNAL @2 /* ~Petrine's Cat
-I visited Bheren of Baldur's Gate in his house today. A loitering cat was annoying him, and he mentioned someone named Petrine.~ #26879 */ EXIT
+  SAY @1 /* ~Hello, milady. I trust you will find your stay at the Three Old Kegs to be as restful as anyplace ye have ever called home. Old Nantrin shall see to it. What do you need?~ #8397 */
+  IF ~~ THEN REPLY @2 /* ~What provender do you provide?~ #15311 */ DO ~StartStore("xaa144",LastTalkedToBy(Myself))
+~ EXIT
+  IF ~~ THEN REPLY @3 /* ~We need nothing at the moment.~ #15312 */ EXIT
 END
 
-IF ~  NumTimesTalkedTo(0)
-ReputationLT(Player1,15)
+IF WEIGHT #2 /* Triggers after states #: 4 even though they appear after this state */
+~  Gender(LastTalkedToBy,MALE)
+ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
 ~ THEN BEGIN 1 // from:
-  SAY @3 /* ~Damnable cat! I'll give you the cloak off my back if you can kill the pesky thing.~ #15133 */
-  IF ~~ THEN UNSOLVED_JOURNAL @4 /* ~Petrine's Cat
-I visited Bheren of Baldur's Gate in his house today. He has offered me the proverbial cloak off his back in exchange for the death of a rather bothersome cat...~ #26880 */ EXIT
+  SAY @4 /* ~Hello, milord. I trust you will find your stay at the Three Old Kegs to be as restful as anyplace you have ever called home. Old Nantrin shall see to it.~ #8398 */
+  IF ~~ THEN REPLY @2 /* ~What provender do you provide?~ #15315 */ DO ~StartStore("xaa144",LastTalkedToBy(Myself))
+~ EXIT
+  IF ~~ THEN REPLY @5 /* ~We need nothing right now.~ #15316 */ EXIT
 END
 
-IF ~  ReputationLT(Player1,8)
-Dead("PetrinesCat")
-Global("HelpBheren","GLOBAL",0)
+IF WEIGHT #3 /* Triggers after states #: 4 even though they appear after this state */
+~  ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
+ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
 ~ THEN BEGIN 2 // from:
-  SAY @5 /* ~I'm not usually a man who honors his words too much, but you wouldn't believe how glad I am to be rid of that crazy cat! Here, take my cloak and good riddance.~ #15134 */
-  IF ~~ THEN DO ~EraseJournalEntry(@7)
-EraseJournalEntry(@2)
-EraseJournalEntry(@4)
-SetGlobal("HelpBheren","GLOBAL",1)
-AddexperienceParty(400)
-GiveItem("CLCK01",LastTalkedToBy)
-~ SOLVED_JOURNAL @6 /* ~Petrine's Cat
-I showed Bheren that I definitely know one way to skin a cat. He's glad to be rid of that pesky Angel.~ #26882 */ EXIT
+  SAY @6 /* ~You have the look of someone unaccustomed to the quiet life. Well, that is what we are all about here at the Three Old Kegs. If you are looking for otherwise you had best keep moving, because you won't find it here.~ #8399 */
+  IF ~~ THEN REPLY @7 /* ~Could you describe to us your provender?~ #15317 */ DO ~StartStore("xaa144",LastTalkedToBy(Myself))
+~ EXIT
+  IF ~~ THEN REPLY @8 /* ~We'll just be on our way.~ #15318 */ EXIT
 END
 
-IF ~  ReputationGT(Player1,7)
-Dead("PetrinesCat")
-Global("HelpBheren","GLOBAL",0)
+IF WEIGHT #4 /* Triggers after states #: 4 even though they appear after this state */
+~  ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
 ~ THEN BEGIN 3 // from:
-  SAY @8 /* ~You didn't think I was serious, did you? Cripes, you go find my niece Petrine and tell her you killed her stinking cat, 'cause I'm sure not going to!~ #15135 */
-  IF ~~ THEN DO ~EraseJournalEntry(@7)
-EraseJournalEntry(@2)
-EraseJournalEntry(@4)
-SetGlobal("HelpBheren","GLOBAL",1)
-AddexperienceParty(400)
-ReputationInc(-1)
-~ SOLVED_JOURNAL @6 /* ~Petrine's Cat
-I showed Bheren that I definitely know one way to skin a cat. He's glad to be rid of that pesky Angel.~ #26882 */ EXIT
-END
-
-IF ~  False()
-~ THEN BEGIN 4 // from:
-  SAY @9 /* ~Between you and that cat, life has been sheer hell ever since Petrine ran away. Damn you!~ #15136 */
+  SAY @9 /* ~I tell you straight and true right now so there is no mistaking. This is a QUIET place, and those that wish to make it otherwise shall find themselves "escorted" to the door. If lucky, you will be able to continue on by yourself after.~ #8400 */
   IF ~~ THEN EXIT
 END
 
-IF ~  Global("HelpBheren","GLOBAL",1)
-~ THEN BEGIN 5 // from:
-  SAY @10 /* ~Sure is quiet around here without that infernal cat. Almost miss her, I do...~ #15137 */
+IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
+~ THEN BEGIN 4 // from:
+  SAY @10 /* ~You are welcome to stay as long as you like, though please remember to keep it quiet. We like our rest here at the "Kegs."~ #9150 */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 5 // from:
+  SAY @11 /* ~You've outstayed your welcome! Out with you!~ #9151 */
   IF ~~ THEN EXIT
 END

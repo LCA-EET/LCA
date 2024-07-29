@@ -1,38 +1,26 @@
 IF
-	Global("bd_map_fence","global",2)
-	Clicked([ANYONE])
-	!Range(LastTrigger,10)
+	Global("chapter","global",11)
+	GlobalLT("bd_dsc_trolls_plot","bd4000",2)  // Dragonspear Castle, Exterior
+	Opened([ANYONE])
 THEN
 	RESPONSE #100
-		NoAction()
+		SetGlobal("bd_dsc_trolls_plot","bd4000",2)  // Dragonspear Castle, Exterior
+		AddJournalEntry(59805,INFO)  // The Siege of Dragonspear I freed the trolls to wreak vengeance on the crusaders. The crusaders stole the trolls from their homes and used them for shock troops. Now the trolls are free, and the crusade will pay the price for its slaver ways.
+		DisplayStringHead("bdthrudd",38220)  // Kill the crusaders! Gobble 'em up! 
 END
 
 IF
-	Global("bd_map_fence","global",2)
-	Clicked([ANYONE])
-	Range(LastTrigger,10)
-	!StateCheck(LastTrigger,STATE_NOT_TARGETABLE)
-	Range("bdmapgua",20)  // Crusader
-	!Dead("bdmapgua")  // Crusader
+	Global("chapter","global",11)
+	Global("bd_dsc_trolls_plot","bd4000",0)  // Dragonspear Castle, Exterior
+	GlobalGT("bd_gnarg_plot","bd4000",0)  // Dragonspear Castle, Exterior
+	Detect([PC])
+	!Range([ENEMY],30)
+	!Range([0.0.0.0.HOSTILES4],30)
+	!Dead("bdthrudd")  // Troll
 THEN
 	RESPONSE #100
-		SetGlobal("bd_crusmap_fence","bd4000",1)  // Dragonspear Castle, Exterior
-		SmallWait(1)
-		ActionOverride("bdmapgua",StartDialogueNoSet(Player1))
-END
-
-IF
-	Global("bd_map_fence","global",2)
-	Clicked([ANYONE])
-	Range(LastTrigger,10)
-	OR(3)
-		StateCheck(LastTrigger,STATE_NOT_TARGETABLE)
-		!Range("bdmapgua",20)  // Crusader
-		Dead("bdmapgua")  // Crusader
-THEN
-	RESPONSE #100
-		SetGlobal("bd_map_fence","global",3)
-		GiveItemCreate("bdmisc24",LastTrigger,1,0,0)  // Annotated Map
-		TriggerActivation("map_table",FALSE)
+		CreateCreature("cutspy",[3400.2600],S)  // No such index
+		SmallWait(3)
+		ActionOverride("bdthrudd",StartDialogueNoSet(Player1))
 END
 

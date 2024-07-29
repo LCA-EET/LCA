@@ -25,538 +25,1056 @@ THEN
 END
 
 IF
-	!Difficulty(EASIEST)
-	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	GlobalLT("BD_HCharm","LOCALS",1)
-	See([GOODCUTOFF.HUMANOID.0.FIGHTER])
-	!Class(LastSeenBy(Myself),MONK)
-	!Race(LastSeenBy(Myself),ELF)
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
-	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
-	CheckStatGT(LastSeenBy(Myself),3,SAVEVSSPELL)
-	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
-	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
-	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
-	!HasItemEquiped("MISC73",LastSeenBy(Myself))  // The Horn of Kazgaroth
-	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helmet of Charm Protection
+	Range(NearestEnemyOf(Myself),6)
+	IsWeaponRanged(Myself)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+END
+
+IF
+	!Range(NearestEnemyOf(Myself),6)
+	!IsWeaponRanged(Myself)
+	CanEquipRanged()
+THEN
+	RESPONSE #100
+		EquipRanged()
+END
+
+IF
+	!Allegiance(Myself,NEUTRAL)
+	OR(2)
+		!Detect(NearestEnemyOf(Myself))
+		Kit(Myself,SHADOWDANCER)
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!StateCheck(Myself,STATE_BLIND)
+	!GlobalTimerNotExpired("BD_HIDE","LOCALS")
+	CheckStatGT(Myself,20,HIDEINSHADOWS)
+	!ButtonDisabled(BUTTON_STEALTH)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		IncrementGlobal("BD_HCharm","LOCALS",1)
-		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		ForceSpell(LastSeenBy,WIZARD_CHARM_PERSON)  // SPWI104.SPL (Charm Person)
+		SetGlobalTimer("BD_HIDE","LOCALS",ONE_ROUND)
+		DisplayStringHead(Myself,66968)  // *attempts to hide in shadows*
+		Hide()
 		SetInterrupt(TRUE)
 END
 
 IF
-	!Difficulty(EASIEST)
+	Global("BD_No_Potions","LOCALS",0)
+	OR(6)
+		General(Myself,UNDEAD)
+		General(Myself,ANIMAL)
+		General(Myself,MONSTER)
+		Race(Myself,DEMONIC)
+		Race(Myself,ELEMENTAL)
+		Race(Myself,GOLEM)
+THEN
+	RESPONSE #100
+		SetGlobal("BD_No_Potions","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("BD_No_Potions","LOCALS",0)
+	StateCheck(Myself,STATE_POISONED)
+	HasItem("POTN17",Myself)  // Elixir of Health
 	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	GlobalLT("BD_HCharm","LOCALS",1)
-	See(SecondNearest([GOODCUTOFF.HUMANOID.0.FIGHTER]))
-	!Class(LastSeenBy(Myself),MONK)
-	!Race(LastSeenBy(Myself),ELF)
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
-	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
-	CheckStatGT(LastSeenBy(Myself),3,SAVEVSSPELL)
-	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
-	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
-	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
-	!HasItemEquiped("MISC73",LastSeenBy(Myself))  // The Horn of Kazgaroth
-	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helmet of Charm Protection
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		IncrementGlobal("BD_HCharm","LOCALS",1)
 		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		ForceSpell(LastSeenBy,WIZARD_CHARM_PERSON)  // SPWI104.SPL (Charm Person)
+		UseItem("POTN17",Myself)  // Elixir of Health
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
 		SetInterrupt(TRUE)
 END
 
 IF
-	!Difficulty(EASIEST)
+	Global("BD_No_Potions","LOCALS",0)
 	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	GlobalLT("BD_HCharm","LOCALS",1)
-	See([GOODCUTOFF.HUMANOID.0.RANGER])
-	!Race(LastSeenBy(Myself),ELF)
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
-	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
-	CheckStatGT(LastSeenBy(Myself),3,SAVEVSSPELL)
-	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
-	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
-	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
-	!HasItemEquiped("MISC73",LastSeenBy(Myself))  // The Horn of Kazgaroth
-	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helmet of Charm Protection
+	HasItem("POTN20",Myself)  // Antidote
+	StateCheck(Myself,STATE_POISONED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN20",Myself)  // Antidote
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+END
+
+IF
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN52",Myself)  // Potion of Extra Healing
+	HPPercentLT(Myself,85)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		IncrementGlobal("BD_HCharm","LOCALS",1)
 		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		ForceSpell(LastSeenBy,WIZARD_CHARM_PERSON)  // SPWI104.SPL (Charm Person)
+		UseItem("POTN52",Myself)  // Potion of Extra Healing
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
 		SetInterrupt(TRUE)
 END
 
 IF
-	!Difficulty(EASIEST)
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN08",Myself)  // Potion of Healing
+	HPPercentLT(Myself,85)
 	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	GlobalLT("BD_HCharm","LOCALS",1)
-	See(SecondNearest([GOODCUTOFF.HUMANOID.0.RANGER]))
-	!Race(LastSeenBy(Myself),ELF)
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
-	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
-	CheckStatGT(LastSeenBy(Myself),3,SAVEVSSPELL)
-	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
-	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
-	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
-	!HasItemEquiped("MISC73",LastSeenBy(Myself))  // The Horn of Kazgaroth
-	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helmet of Charm Protection
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		IncrementGlobal("BD_HCharm","LOCALS",1)
 		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		ForceSpell(LastSeenBy,WIZARD_CHARM_PERSON)  // SPWI104.SPL (Charm Person)
+		UseItem("POTN08",Myself)  // Potion of Healing
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
 		SetInterrupt(TRUE)
 END
 
 IF
-	!Difficulty(EASIEST)
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN17",Myself)  // Elixir of Health
+	HPPercentLT(Myself,85)
 	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	GlobalLT("BD_HCharm","LOCALS",1)
-	See([GOODCUTOFF.HUMANOID.0.FIGHTER_ALL])
-	!Class(LastSeenBy(Myself),MONK)
-	!Race(LastSeenBy(Myself),ELF)
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
-	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
-	CheckStatGT(LastSeenBy(Myself),3,SAVEVSSPELL)
-	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
-	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
-	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
-	!HasItemEquiped("MISC73",LastSeenBy(Myself))  // The Horn of Kazgaroth
-	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helmet of Charm Protection
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		IncrementGlobal("BD_HCharm","LOCALS",1)
 		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		ForceSpell(LastSeenBy,WIZARD_CHARM_PERSON)  // SPWI104.SPL (Charm Person)
+		UseItem("POTN17",Myself)  // Elixir of Health
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
 		SetInterrupt(TRUE)
 END
 
 IF
-	!Difficulty(EASIEST)
+	Global("BD_No_Potions","LOCALS",0)
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!Global("dvgldust","LOCALS",1)
+	HasItem("POTN10",Myself)  // Potion of Invisibility
 	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	GlobalLT("BD_HCharm","LOCALS",1)
-	See([GOODCUTOFF.HUMANOID.0.RANGER_ALL])
-	!Race(LastSeenBy(Myself),ELF)
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
-	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
-	CheckStatGT(LastSeenBy(Myself),3,SAVEVSSPELL)
-	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
-	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
-	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
-	!HasItemEquiped("MISC73",LastSeenBy(Myself))  // The Horn of Kazgaroth
-	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helmet of Charm Protection
+	OR(3)
+		AttackedBy([ANYONE],DEFAULT)
+		TookDamage()
+		Range([GOODCUTOFF],4)
+	!CheckStatGT(Player1,0,TRUE_SIGHT)
+	!CheckStatGT(Player2,0,TRUE_SIGHT)
+	!CheckStatGT(Player3,0,TRUE_SIGHT)
+	!CheckStatGT(Player4,0,TRUE_SIGHT)
+	!CheckStatGT(Player5,0,TRUE_SIGHT)
+	!CheckStatGT(Player6,0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		IncrementGlobal("BD_HCharm","LOCALS",1)
 		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		ForceSpell(LastSeenBy,WIZARD_CHARM_PERSON)  // SPWI104.SPL (Charm Person)
+		UseItem("POTN10",Myself)  // Potion of Invisibility
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
 		SetInterrupt(TRUE)
 END
 
 IF
-	!Difficulty(EASIEST)
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN11",Myself)  // Potion of Invulnerability
+	CheckStatGT(Myself,0,SAVEVSSPELL)
 	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	GlobalLT("BD_HCharm","LOCALS",1)
-	See([GOODCUTOFF.HUMANOID])
-	!Class(LastSeenBy(Myself),MONK)
-	!Kit(LastSeenBy(Myself),INQUISITOR)
-	!Kit(LastSeenBy(Myself),CAVALIER)
-	!Race(LastSeenBy(Myself),ELF)
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
-	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
-	CheckStatGT(LastSeenBy(Myself),3,SAVEVSSPELL)
-	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
-	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
-	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
-	!HasItemEquiped("MISC73",LastSeenBy(Myself))  // The Horn of Kazgaroth
-	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helmet of Charm Protection
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN11",Myself)  // Potion of Invulnerability
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+END
+
+IF
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN11",Myself)  // Potion of Invulnerability
+	CheckStatGT(Myself,0,ARMORCLASS)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		IncrementGlobal("BD_HCharm","LOCALS",1)
 		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		ForceSpell(LastSeenBy,WIZARD_CHARM_PERSON)  // SPWI104.SPL (Charm Person)
+		UseItem("POTN11",Myself)  // Potion of Invulnerability
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
 		SetInterrupt(TRUE)
 END
 
 IF
-	!Difficulty(EASIEST)
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN35",Myself)  // Potion of Magic Shielding
+	CheckStatLT(Myself,50,MAGICDAMAGERESISTANCE)
 	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	GlobalLT("BD_HCharm","LOCALS",1)
-	See(SecondNearest([GOODCUTOFF.HUMANOID]))
-	!Class(LastSeenBy(Myself),MONK)
-	!Kit(LastSeenBy(Myself),INQUISITOR)
-	!Kit(LastSeenBy(Myself),CAVALIER)
-	!Race(LastSeenBy(Myself),ELF)
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
-	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
-	CheckStatGT(LastSeenBy(Myself),3,SAVEVSSPELL)
-	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
-	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
-	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
-	!HasItemEquiped("MISC73",LastSeenBy(Myself))  // The Horn of Kazgaroth
-	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helmet of Charm Protection
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN35",Myself)  // Potion of Magic Shielding
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+END
+
+IF
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN14",Myself)  // Oil of Speed
+	!StateCheck(Myself,STATE_HASTED)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN14",Myself)  // Oil of Speed
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+END
+
+IF
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN34",Myself)  // Potion of Magic Protection
+	CheckStatLT(Myself,100,RESISTMAGIC)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN34",Myself)  // Potion of Magic Protection
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+END
+
+IF
+	Global("BD_No_Potions","LOCALS",0)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HasItem("POTN21",Myself)  // Potion of Clarity
+	!CheckSpellState(Myself,POTION_OF_CLARITY)
+	!CheckSpellState(Myself,BARBARIAN_RAGE)
+	!CheckSpellState(Myself,BERSERKER_RAGE)
+	!CheckSpellState(Myself,MINSC_BERSERK)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN21",Myself)  // Potion of Clarity
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+END
+
+IF
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN45",Myself)  // Potion of Freedom
+	!CheckStatGT(Myself,0,CLERIC_FREE_ACTION)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN45",Myself)  // Potion of Freedom
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+END
+
+IF
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN19",Myself)  // Potion of Agility
+	CheckStatLT(Myself,18,DEX)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		IncrementGlobal("BD_HCharm","LOCALS",1)
 		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		ForceSpell(LastSeenBy,WIZARD_CHARM_PERSON)  // SPWI104.SPL (Charm Person)
+		UseItem("POTN19",Myself)  // Potion of Agility
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
 		SetInterrupt(TRUE)
 END
 
 IF
-	!Difficulty(EASIEST)
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN37",Myself)  // Potion of Mind Focusing
+	CheckStatLT(Myself,25,DEX)
 	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	GlobalLT("BD_HCharm","LOCALS",1)
-	See(ThirdNearest([GOODCUTOFF.HUMANOID]))
-	!Class(LastSeenBy(Myself),MONK)
-	!Kit(LastSeenBy(Myself),INQUISITOR)
-	!Kit(LastSeenBy(Myself),CAVALIER)
-	!Race(LastSeenBy(Myself),ELF)
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
-	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
-	CheckStatGT(LastSeenBy(Myself),3,SAVEVSSPELL)
-	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
-	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
-	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
-	!HasItemEquiped("MISC73",LastSeenBy(Myself))  // The Horn of Kazgaroth
-	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helmet of Charm Protection
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		IncrementGlobal("BD_HCharm","LOCALS",1)
 		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		ForceSpell(LastSeenBy,WIZARD_CHARM_PERSON)  // SPWI104.SPL (Charm Person)
+		UseItem("POTN37",Myself)  // Potion of Mind Focusing
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
 		SetInterrupt(TRUE)
 END
 
 IF
-	!Difficulty(EASIEST)
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN07",Myself)  // Potion of Storm Giant Strength
+	CheckStatLT(Myself,24,STR)
 	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	GlobalLT("BD_HCharm","LOCALS",1)
-	See(FourthNearest([GOODCUTOFF.HUMANOID]))
-	!Class(LastSeenBy(Myself),MONK)
-	!Kit(LastSeenBy(Myself),INQUISITOR)
-	!Kit(LastSeenBy(Myself),CAVALIER)
-	!Race(LastSeenBy(Myself),ELF)
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
-	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
-	CheckStatGT(LastSeenBy(Myself),3,SAVEVSSPELL)
-	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
-	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
-	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
-	!HasItemEquiped("MISC73",LastSeenBy(Myself))  // The Horn of Kazgaroth
-	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helmet of Charm Protection
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		IncrementGlobal("BD_HCharm","LOCALS",1)
 		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		ForceSpell(LastSeenBy,WIZARD_CHARM_PERSON)  // SPWI104.SPL (Charm Person)
+		UseItem("POTN07",Myself)  // Potion of Storm Giant Strength
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
 		SetInterrupt(TRUE)
 END
 
 IF
-	!Difficulty(EASIEST)
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN06",Myself)  // Potion of Cloud Giant Strength
+	CheckStatLT(Myself,23,STR)
 	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	GlobalLT("BD_HCharm","LOCALS",1)
-	See(FifthNearest([GOODCUTOFF.HUMANOID]))
-	!Class(LastSeenBy(Myself),MONK)
-	!Kit(LastSeenBy(Myself),INQUISITOR)
-	!Kit(LastSeenBy(Myself),CAVALIER)
-	!Race(LastSeenBy(Myself),ELF)
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
-	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
-	CheckStatGT(LastSeenBy(Myself),3,SAVEVSSPELL)
-	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
-	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
-	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
-	!HasItemEquiped("MISC73",LastSeenBy(Myself))  // The Horn of Kazgaroth
-	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helmet of Charm Protection
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		IncrementGlobal("BD_HCharm","LOCALS",1)
 		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		ForceSpell(LastSeenBy,WIZARD_CHARM_PERSON)  // SPWI104.SPL (Charm Person)
+		UseItem("POTN06",Myself)  // Potion of Cloud Giant Strength
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
 		SetInterrupt(TRUE)
 END
 
 IF
-	!Difficulty(EASIEST)
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN05",Myself)  // Potion of Fire Giant Strength
+	CheckStatLT(Myself,22,STR)
 	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	GlobalLT("BD_HCharm","LOCALS",1)
-	See(SixthNearest([GOODCUTOFF.HUMANOID]))
-	!Class(LastSeenBy(Myself),MONK)
-	!Kit(LastSeenBy(Myself),INQUISITOR)
-	!Kit(LastSeenBy(Myself),CAVALIER)
-	!Race(LastSeenBy(Myself),ELF)
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	!StateCheck(LastSeenBy(Myself),STATE_DISABLED)
-	CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
-	CheckStatGT(LastSeenBy(Myself),3,SAVEVSSPELL)
-	!CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
-	!CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
-	!CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
-	!CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-	!CheckStat(LastSeenBy(Myself),4,WIZARD_SPELL_IMMUNITY)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
-	!HasItemEquiped("MISC73",LastSeenBy(Myself))  // The Horn of Kazgaroth
-	!HasItemEquiped("HELM06",LastSeenBy(Myself))  // Helmet of Charm Protection
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		IncrementGlobal("BD_HCharm","LOCALS",1)
 		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		ForceSpell(LastSeenBy,WIZARD_CHARM_PERSON)  // SPWI104.SPL (Charm Person)
+		UseItem("POTN05",Myself)  // Potion of Fire Giant Strength
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN04",Myself)  // Potion of Frost Giant Strength
+	CheckStatLT(Myself,21,STR)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN04",Myself)  // Potion of Frost Giant Strength
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN12",Myself)  // Potion of Stone Giant Strength
+	CheckStatLT(Myself,20,STR)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN12",Myself)  // Potion of Stone Giant Strength
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN03",Myself)  // Potion of Hill Giant Strength
+	CheckStatLT(Myself,19,STR)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN03",Myself)  // Potion of Hill Giant Strength
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN24",Myself)  // Potion of Defense
+	CheckStatGT(Myself,0,ARMORCLASS)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN24",Myself)  // Potion of Defense
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN44",Myself)  // Potion of Strength
+	CheckStatLT(Myself,18,STR)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN44",Myself)  // Potion of Strength
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN28",Myself)  // Potion of Fortitude
+	CheckStatLT(Myself,18,CON)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN28",Myself)  // Potion of Fortitude
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("BD_No_Potions","LOCALS",0)
+	HasItem("POTN02",Myself)  // Potion of Fire Resistance
+	CheckStatLT(Myself,50,RESISTFIRE)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		UseItem("POTN02",Myself)  // Potion of Fire Resistance
+		DisplayStringHead(Myself,56560)  // *quaffs a potion*
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpell(ARCHER_CALL_SHOT)  // SPCL121.SPL (Called Shot)
+	!CheckSpellState(Myself,ARCHER_CALL_SHOT)
+	!Range(NearestEnemyOf(Myself),5)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		ForceSpell(Myself,ARCHER_CALL_SHOT)  // SPCL121.SPL (Called Shot)
+		RemoveSpell(ARCHER_CALL_SHOT)  // SPCL121.SPL (Called Shot)
 		SetInterrupt(TRUE)
 END
 
 IF
 	DifficultyGT(EASY)
-	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	!GlobalTimerNotExpired("BDINVIS","LOCALS")
-	Range([GOODCUTOFF],4)
-	!StateCheck(Myself,STATE_INVISIBLE)
-	!CheckSpellState(Myself,CANNOT_TURN_INVISIBLE)
-	!CheckStatGT(Player1,0,TRUE_SIGHT)
-	!CheckStatGT(Player2,0,TRUE_SIGHT)
-	!CheckStatGT(Player3,0,TRUE_SIGHT)
-	!CheckStatGT(Player4,0,TRUE_SIGHT)
-	!CheckStatGT(Player5,0,TRUE_SIGHT)
-	!CheckStatGT(Player6,0,TRUE_SIGHT)
-	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
-	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+	Range(NearestEnemyOf(Myself),6)
+	CheckStat(Myself,0,ENTANGLE)
+	CheckStat(Myself,0,GREASE)
+	IsWeaponRanged(Myself)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		ForceSpell(Myself,WIZARD_INVISIBILITY)  // SPWI206.SPL (Invisibility)
+		RandomWalkContinuous()
+END
+
+IF
+	Allegiance(Myself,EVILCUTOFF)
+	CheckStatGT(Myself,7,INT)
+	!General(Myself,ANIMAL)
+	!AreaType(OUTDOOR)
+	!Range(NearestEnemyOf(Myself),30)
+	Range(NearestDoor,15)
+	OpenState(NearestDoor,FALSE)
+THEN
+	RESPONSE #100
+		MoveToObject(NearestDoor)
+		OpenDoor(NearestDoor)
+END
+
+IF
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	OR(6)
+		See(Player1)
+		See(Player2)
+		See(Player3)
+		See(Player4)
+		See(Player5)
+		See(Player6)
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!CheckStat([GOODCUTOFF],1,CLERIC_PHYSICAL_MIRROR)
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(SixthNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(SixthNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
+	CheckStatLT(SixthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(SixthNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	See(SixthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(FifthNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(FifthNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
+	CheckStatLT(FifthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(FifthNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	See(FifthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(FourthNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(FourthNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
+	CheckStatLT(FourthNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(FourthNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	See(FourthNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(ThirdNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(ThirdNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	See(ThirdNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat(SecondNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(SecondNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	See(SecondNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!CheckStat([GOODCUTOFF],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT([GOODCUTOFF],-5,ACMISSILEMOD)
+	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF],100,RESISTMISSILE)
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
 END
 
 IF
 	DifficultyGT(EASY)
-	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	!GlobalTimerNotExpired("BDINVIS","LOCALS")
-	!See([GOODCUTOFF])
-	!StateCheck(Myself,STATE_INVISIBLE)
-	!CheckSpellState(Myself,CANNOT_TURN_INVISIBLE)
-	!CheckStatGT(Player1,0,TRUE_SIGHT)
-	!CheckStatGT(Player2,0,TRUE_SIGHT)
-	!CheckStatGT(Player3,0,TRUE_SIGHT)
-	!CheckStatGT(Player4,0,TRUE_SIGHT)
-	!CheckStatGT(Player5,0,TRUE_SIGHT)
-	!CheckStatGT(Player6,0,TRUE_SIGHT)
-	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
-	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+	!CheckStat(WorstAC([PC]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(WorstAC([PC]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(WorstAC([PC]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(WorstAC([PC]),-5,ACMISSILEMOD)
+	CheckStatLT(WorstAC([PC]),1,STONESKINS)
+	CheckStatLT(WorstAC([PC]),100,RESISTMISSILE)
+	!StateCheck(WorstAC([PC]),STATE_CHARMED)
+	See(WorstAC([PC]))
+	False()
 THEN
 	RESPONSE #100
-		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		SetGlobalTimer("BDINVIS","LOCALS",ONE_ROUND)
-		ForceSpell(Myself,WIZARD_INVISIBILITY)  // SPWI206.SPL (Invisibility)
+		Continue()
 END
 
 IF
-	Difficulty(EASY)
-	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	!GlobalTimerNotExpired("BDINVIS","LOCALS")
-	Range([GOODCUTOFF],4)
-	!StateCheck(Myself,STATE_INVISIBLE)
-	!CheckSpellState(Myself,CANNOT_TURN_INVISIBLE)
-	!CheckStatGT(Player1,0,TRUE_SIGHT)
-	!CheckStatGT(Player2,0,TRUE_SIGHT)
-	!CheckStatGT(Player3,0,TRUE_SIGHT)
-	!CheckStatGT(Player4,0,TRUE_SIGHT)
-	!CheckStatGT(Player5,0,TRUE_SIGHT)
-	!CheckStatGT(Player6,0,TRUE_SIGHT)
-	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
-	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+	DifficultyGT(EASY)
+	!CheckStat(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),100,RESISTMISSILE)
+	See(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]))
+	False()
 THEN
 	RESPONSE #100
-		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		SetGlobalTimer("BDINVIS","LOCALS",TWO_ROUNDS)
-		ForceSpell(Myself,WIZARD_INVISIBILITY)  // SPWI206.SPL (Invisibility)
+		Continue()
 END
 
 IF
-	Difficulty(EASY)
-	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	!GlobalTimerNotExpired("BDINVIS","LOCALS")
-	!See([GOODCUTOFF])
-	!StateCheck(Myself,STATE_INVISIBLE)
-	!CheckSpellState(Myself,CANNOT_TURN_INVISIBLE)
-	!CheckStatGT(Player1,0,TRUE_SIGHT)
-	!CheckStatGT(Player2,0,TRUE_SIGHT)
-	!CheckStatGT(Player3,0,TRUE_SIGHT)
-	!CheckStatGT(Player4,0,TRUE_SIGHT)
-	!CheckStatGT(Player5,0,TRUE_SIGHT)
-	!CheckStatGT(Player6,0,TRUE_SIGHT)
-	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
-	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+	DifficultyGT(EASY)
+	!CheckStat([GOODCUTOFF.0.0.DRUID_ALL],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],-5,ACMISSILEMOD)
+	CheckStatLT([GOODCUTOFF.0.0.DRUID_ALL],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.DRUID_ALL],100,RESISTMISSILE)
+	See([GOODCUTOFF.0.0.DRUID_ALL])
+	False()
 THEN
 	RESPONSE #100
-		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		SetGlobalTimer("BDINVIS","LOCALS",TWO_ROUNDS)
-		ForceSpell(Myself,WIZARD_INVISIBILITY)  // SPWI206.SPL (Invisibility)
+		Continue()
 END
 
 IF
-	Difficulty(EASIEST)
-	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	!GlobalTimerNotExpired("BDINVIS","LOCALS")
-	Range([GOODCUTOFF],4)
-	!StateCheck(Myself,STATE_INVISIBLE)
-	!CheckSpellState(Myself,CANNOT_TURN_INVISIBLE)
-	!CheckStatGT(Player1,0,TRUE_SIGHT)
-	!CheckStatGT(Player2,0,TRUE_SIGHT)
-	!CheckStatGT(Player3,0,TRUE_SIGHT)
-	!CheckStatGT(Player4,0,TRUE_SIGHT)
-	!CheckStatGT(Player5,0,TRUE_SIGHT)
-	!CheckStatGT(Player6,0,TRUE_SIGHT)
-	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
-	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+	DifficultyGT(EASY)
+	!CheckStat(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),100,RESISTMISSILE)
+	See(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]))
+	False()
 THEN
 	RESPONSE #100
-		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		SetGlobalTimer("BDINVIS","LOCALS",THREE_ROUNDS)
-		ForceSpell(Myself,WIZARD_INVISIBILITY)  // SPWI206.SPL (Invisibility)
+		Continue()
 END
 
 IF
-	Difficulty(EASIEST)
-	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	!GlobalTimerNotExpired("BDINVIS","LOCALS")
-	!See([GOODCUTOFF])
-	!StateCheck(Myself,STATE_INVISIBLE)
-	!CheckSpellState(Myself,CANNOT_TURN_INVISIBLE)
-	!CheckStatGT(Player1,0,TRUE_SIGHT)
-	!CheckStatGT(Player2,0,TRUE_SIGHT)
-	!CheckStatGT(Player3,0,TRUE_SIGHT)
-	!CheckStatGT(Player4,0,TRUE_SIGHT)
-	!CheckStatGT(Player5,0,TRUE_SIGHT)
-	!CheckStatGT(Player6,0,TRUE_SIGHT)
-	!CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
-	!CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+	DifficultyGT(EASY)
+	!CheckStat([GOODCUTOFF.0.0.CLERIC_ALL],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],-5,ACMISSILEMOD)
+	CheckStatLT([GOODCUTOFF.0.0.CLERIC_ALL],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.CLERIC_ALL],100,RESISTMISSILE)
+	See([GOODCUTOFF.0.0.CLERIC_ALL])
+	False()
 THEN
 	RESPONSE #100
-		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		SetGlobalTimer("BDINVIS","LOCALS",THREE_ROUNDS)
-		ForceSpell(Myself,WIZARD_INVISIBILITY)  // SPWI206.SPL (Invisibility)
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat(SecondNearest([GOODCUTOFF.0.0.THIEF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.THIEF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.THIEF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(SecondNearest([GOODCUTOFF.0.0.THIEF]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.THIEF]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.THIEF]),100,RESISTMISSILE)
+	See(SecondNearest([GOODCUTOFF.0.0.THIEF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat([GOODCUTOFF.0.0.THIEF],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([GOODCUTOFF.0.0.THIEF],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT([GOODCUTOFF.0.0.THIEF],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT([GOODCUTOFF.0.0.THIEF],-5,ACMISSILEMOD)
+	CheckStatLT([GOODCUTOFF.0.0.THIEF],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.THIEF],100,RESISTMISSILE)
+	See([GOODCUTOFF.0.0.THIEF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),100,RESISTMISSILE)
+	See(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat([GOODCUTOFF.0.0.BARD_ALL],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([GOODCUTOFF.0.0.BARD_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT([GOODCUTOFF.0.0.BARD_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT([GOODCUTOFF.0.0.BARD_ALL],-5,ACMISSILEMOD)
+	CheckStatLT([GOODCUTOFF.0.0.BARD_ALL],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.BARD_ALL],100,RESISTMISSILE)
+	See([GOODCUTOFF.0.0.BARD_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),100,RESISTMISSILE)
+	See(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat([GOODCUTOFF.0.0.MAGE_ALL],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],-5,ACMISSILEMOD)
+	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],100,RESISTMISSILE)
+	See([GOODCUTOFF.0.0.MAGE_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat([GOODCUTOFF.0.0.MAGE_THIEF],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([GOODCUTOFF.0.0.MAGE_THIEF],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT([GOODCUTOFF.0.0.MAGE_THIEF],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT([GOODCUTOFF.0.0.MAGE_THIEF],-5,ACMISSILEMOD)
+	CheckStatLT([GOODCUTOFF.0.0.MAGE_THIEF],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.MAGE_THIEF],100,RESISTMISSILE)
+	See([GOODCUTOFF.0.0.MAGE_THIEF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat([GOODCUTOFF.0.0.MAGE],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([GOODCUTOFF.0.0.MAGE],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT([GOODCUTOFF.0.0.MAGE],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT([GOODCUTOFF.0.0.MAGE],-5,ACMISSILEMOD)
+	CheckStatLT([GOODCUTOFF.0.0.MAGE],1,STONESKINS)
+	CheckStatLT([GOODCUTOFF.0.0.MAGE],100,RESISTMISSILE)
+	See([GOODCUTOFF.0.0.MAGE])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat([GOODCUTOFF],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT([GOODCUTOFF],-5,ACMISSILEMOD)
+	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	StateCheck([GOODCUTOFF],STATE_IMMOBILE)
+	CheckStatLT([GOODCUTOFF],100,RESISTMISSILE)
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat(ThirdNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(ThirdNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
+	StateCheck(ThirdNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	CheckStatLT(ThirdNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	See(ThirdNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat(SecondNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(SecondNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
+	StateCheck(SecondNearest([GOODCUTOFF]),STATE_IMMOBILE)
+	CheckStatLT(SecondNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	See(SecondNearest([GOODCUTOFF]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat([GOODCUTOFF],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT([GOODCUTOFF],-5,ACMISSILEMOD)
+	CheckStatLT([GOODCUTOFF],1,STONESKINS)
+	StateCheck([GOODCUTOFF],STATE_IMMOBILE)
+	CheckStatLT([GOODCUTOFF],100,RESISTMISSILE)
+	See([GOODCUTOFF])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat(Player6,1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(Player6,0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(Player6,0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	StateCheck(Player6,STATE_IMMOBILE)
+	CheckStatLT(Player6,100,RESISTMISSILE)
+	See(Player6)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat(Player5,1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(Player5,0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(Player5,0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	StateCheck(Player5,STATE_IMMOBILE)
+	CheckStatLT(Player5,100,RESISTMISSILE)
+	See(Player5)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat(Player4,1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(Player4,0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(Player4,0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	StateCheck(Player4,STATE_IMMOBILE)
+	CheckStatLT(Player4,100,RESISTMISSILE)
+	See(Player4)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat(Player3,1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(Player3,0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(Player3,0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	StateCheck(Player3,STATE_IMMOBILE)
+	CheckStatLT(Player3,100,RESISTMISSILE)
+	See(Player3)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat(Player2,1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(Player2,0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(Player2,0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	StateCheck(Player2,STATE_IMMOBILE)
+	CheckStatLT(Player2,100,RESISTMISSILE)
+	See(Player2)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat(Player1,1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(Player1,0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(Player1,0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	StateCheck(Player1,STATE_IMMOBILE)
+	CheckStatLT(Player1,100,RESISTMISSILE)
+	See(Player1)
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),1,STONESKINS)
+	StateCheck(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),STATE_IMMOBILE)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]),100,RESISTMISSILE)
+	See(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat([GOODCUTOFF.0.0.DRUID_ALL],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT([GOODCUTOFF.0.0.DRUID_ALL],-5,ACMISSILEMOD)
+	CheckStatLT([GOODCUTOFF.0.0.DRUID_ALL],1,STONESKINS)
+	StateCheck([GOODCUTOFF.0.0.DRUID_ALL],STATE_IMMOBILE)
+	CheckStatLT([GOODCUTOFF.0.0.DRUID_ALL],100,RESISTMISSILE)
+	See([GOODCUTOFF.0.0.DRUID_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),1,STONESKINS)
+	StateCheck(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),STATE_IMMOBILE)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]),100,RESISTMISSILE)
+	See(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat([GOODCUTOFF.0.0.CLERIC_ALL],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT([GOODCUTOFF.0.0.CLERIC_ALL],-5,ACMISSILEMOD)
+	CheckStatLT([GOODCUTOFF.0.0.CLERIC_ALL],1,STONESKINS)
+	StateCheck([GOODCUTOFF.0.0.CLERIC_ALL],STATE_IMMOBILE)
+	CheckStatLT([GOODCUTOFF.0.0.CLERIC_ALL],100,RESISTMISSILE)
+	See([GOODCUTOFF.0.0.CLERIC_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),1,STONESKINS)
+	StateCheck(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),STATE_IMMOBILE)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]),100,RESISTMISSILE)
+	See(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat([GOODCUTOFF.0.0.BARD_ALL],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT([GOODCUTOFF.0.0.BARD_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT([GOODCUTOFF.0.0.BARD_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT([GOODCUTOFF.0.0.BARD_ALL],-5,ACMISSILEMOD)
+	CheckStatLT([GOODCUTOFF.0.0.BARD_ALL],1,STONESKINS)
+	StateCheck([GOODCUTOFF.0.0.BARD_ALL],STATE_IMMOBILE)
+	CheckStatLT([GOODCUTOFF.0.0.BARD_ALL],100,RESISTMISSILE)
+	See([GOODCUTOFF.0.0.BARD_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),-5,ACMISSILEMOD)
+	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	StateCheck(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
+	CheckStatLT(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]),100,RESISTMISSILE)
+	See(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	!CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),-5,ACMISSILEMOD)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),1,STONESKINS)
+	StateCheck(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),STATE_IMMOBILE)
+	CheckStatLT(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]),100,RESISTMISSILE)
+	See(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]))
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	DifficultyGT(EASY)
+	!CheckStat([GOODCUTOFF.0.0.MAGE_ALL],1,CLERIC_PHYSICAL_MIRROR)
+	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	!CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	CheckStatGT([GOODCUTOFF.0.0.MAGE_ALL],-5,ACMISSILEMOD)
+	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],1,STONESKINS)
+	StateCheck([GOODCUTOFF.0.0.MAGE_ALL],STATE_IMMOBILE)
+	CheckStatLT([GOODCUTOFF.0.0.MAGE_ALL],100,RESISTMISSILE)
+	See([GOODCUTOFF.0.0.MAGE_ALL])
+	False()
+THEN
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
+	See(LastSeenBy(Myself))
+THEN
+	RESPONSE #100
+		AttackOneRound(LastSeenBy(Myself))
 END
 

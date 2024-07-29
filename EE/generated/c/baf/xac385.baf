@@ -25,42 +25,6 @@ THEN
 END
 
 IF
-	Range(NearestEnemyOf(Myself),6)
-	IsWeaponRanged(Myself)
-THEN
-	RESPONSE #100
-		EquipMostDamagingMelee()
-END
-
-IF
-	!Range(NearestEnemyOf(Myself),6)
-	!IsWeaponRanged(Myself)
-	CanEquipRanged()
-THEN
-	RESPONSE #100
-		EquipRanged()
-END
-
-IF
-	DifficultyGT(EASY)
-	Range(NearestEnemyOf(Myself),6)
-	CheckStat(Myself,0,ENTANGLE)
-	CheckStat(Myself,0,GREASE)
-	IsWeaponRanged(Myself)
-THEN
-	RESPONSE #100
-		RandomWalkContinuous()
-END
-
-IF
-	See([GOODCUTOFF])
-	False()
-THEN
-	RESPONSE #100
-		Continue()
-END
-
-IF
 	OR(6)
 		See(Player1)
 		See(Player2)
@@ -75,101 +39,186 @@ THEN
 END
 
 IF
-	!CheckStat([GOODCUTOFF],1,CLERIC_PHYSICAL_MIRROR)
-	See([GOODCUTOFF])
+	See(NearestEnemyOf(Myself))
 	False()
 THEN
 	RESPONSE #100
-		Continue()
+		NoAction()
 END
 
 IF
-	!CheckStat(SixthNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
-	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
-	!CheckStatGT(SixthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
-	CheckStatGT(SixthNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
-	CheckStatLT(SixthNearest([GOODCUTOFF]),1,STONESKINS)
-	CheckStatLT(SixthNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	WeaponEffectiveVs(SixthNearest([GOODCUTOFF]),MAINHAND)
+	WeaponCanDamage(SixthNearest([GOODCUTOFF]),MAINHAND)
+	!StateCheck(SixthNearest([GOODCUTOFF]),STATE_PANIC)
 	See(SixthNearest([GOODCUTOFF]))
 	False()
 THEN
 	RESPONSE #100
-		Continue()
+		NoAction()
 END
 
 IF
-	!CheckStat(FifthNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
-	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
-	!CheckStatGT(FifthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
-	CheckStatGT(FifthNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
-	CheckStatLT(FifthNearest([GOODCUTOFF]),1,STONESKINS)
-	CheckStatLT(FifthNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	WeaponEffectiveVs(FifthNearest([GOODCUTOFF]),MAINHAND)
+	WeaponCanDamage(FifthNearest([GOODCUTOFF]),MAINHAND)
+	!StateCheck(FifthNearest([GOODCUTOFF]),STATE_PANIC)
 	See(FifthNearest([GOODCUTOFF]))
 	False()
 THEN
 	RESPONSE #100
-		Continue()
+		NoAction()
 END
 
 IF
-	!CheckStat(FourthNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
-	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
-	!CheckStatGT(FourthNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
-	CheckStatGT(FourthNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
-	CheckStatLT(FourthNearest([GOODCUTOFF]),1,STONESKINS)
-	CheckStatLT(FourthNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	WeaponEffectiveVs(FourthNearest([GOODCUTOFF]),MAINHAND)
+	WeaponCanDamage(FourthNearest([GOODCUTOFF]),MAINHAND)
+	!StateCheck(FourthNearest([GOODCUTOFF]),STATE_PANIC)
 	See(FourthNearest([GOODCUTOFF]))
 	False()
 THEN
 	RESPONSE #100
-		Continue()
+		NoAction()
 END
 
 IF
-	!CheckStat(ThirdNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
-	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
-	!CheckStatGT(ThirdNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
-	CheckStatGT(ThirdNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
-	CheckStatLT(ThirdNearest([GOODCUTOFF]),1,STONESKINS)
-	CheckStatLT(ThirdNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	WeaponEffectiveVs(ThirdNearest([GOODCUTOFF]),MAINHAND)
+	WeaponCanDamage(ThirdNearest([GOODCUTOFF]),MAINHAND)
+	!StateCheck(ThirdNearest([GOODCUTOFF]),STATE_PANIC)
 	See(ThirdNearest([GOODCUTOFF]))
 	False()
 THEN
 	RESPONSE #100
-		Continue()
+		NoAction()
 END
 
 IF
-	!CheckStat(SecondNearest([GOODCUTOFF]),1,CLERIC_PHYSICAL_MIRROR)
-	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
-	!CheckStatGT(SecondNearest([GOODCUTOFF]),0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
-	CheckStatGT(SecondNearest([GOODCUTOFF]),-5,ACMISSILEMOD)
-	CheckStatLT(SecondNearest([GOODCUTOFF]),1,STONESKINS)
-	CheckStatLT(SecondNearest([GOODCUTOFF]),100,RESISTMISSILE)
+	WeaponEffectiveVs(SecondNearest([GOODCUTOFF]),MAINHAND)
+	WeaponCanDamage(SecondNearest([GOODCUTOFF]),MAINHAND)
+	!StateCheck(SecondNearest([GOODCUTOFF]),STATE_PANIC)
 	See(SecondNearest([GOODCUTOFF]))
 	False()
 THEN
 	RESPONSE #100
-		Continue()
+		NoAction()
 END
 
 IF
-	!CheckStat([GOODCUTOFF],1,CLERIC_PHYSICAL_MIRROR)
-	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
-	!CheckStatGT([GOODCUTOFF],0,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
-	CheckStatGT([GOODCUTOFF],-5,ACMISSILEMOD)
-	CheckStatLT([GOODCUTOFF],1,STONESKINS)
-	CheckStatLT([GOODCUTOFF],100,RESISTMISSILE)
+	WeaponEffectiveVs([GOODCUTOFF],MAINHAND)
+	WeaponCanDamage([GOODCUTOFF],MAINHAND)
+	!StateCheck([GOODCUTOFF],STATE_PANIC)
 	See([GOODCUTOFF])
 	False()
 THEN
 	RESPONSE #100
-		Continue()
+		NoAction()
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+	WeaponEffectiveVs(LastAttackerOf(Myself),MAINHAND)
+	WeaponCanDamage(LastAttackerOf(Myself),MAINHAND)
+	!StateCheck(LastAttackerOf(Myself),STATE_PANIC)
+	Range(LastAttackerOf(Myself),8)
+	RandomNum(3,1)
+	See(LastAttackerOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+	WeaponEffectiveVs(LastAttackerOf(Myself),MAINHAND)
+	WeaponCanDamage(LastAttackerOf(Myself),MAINHAND)
+	!StateCheck(LastAttackerOf(Myself),STATE_PANIC)
+	Range(LastAttackerOf(Myself),4)
+	See(LastAttackerOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	DifficultyGT(EASY)
+	Race(Myself,SPIDER)
+	CheckStatGT(SixthNearestEnemyOf(Myself),0,WEB)
+	WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
+	WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
+	See(SixthNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	DifficultyGT(EASY)
+	Race(Myself,SPIDER)
+	CheckStatGT(FifthNearestEnemyOf(Myself),0,WEB)
+	WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
+	WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
+	See(FifthNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	DifficultyGT(EASY)
+	Race(Myself,SPIDER)
+	CheckStatGT(FourthNearestEnemyOf(Myself),0,WEB)
+	WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
+	WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
+	See(FourthNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	DifficultyGT(EASY)
+	Race(Myself,SPIDER)
+	CheckStatGT(ThirdNearestEnemyOf(Myself),0,WEB)
+	WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
+	WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
+	See(ThirdNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	DifficultyGT(EASY)
+	Race(Myself,SPIDER)
+	CheckStatGT(SecondNearestEnemyOf(Myself),0,WEB)
+	WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
+	WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
+	See(SecondNearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	DifficultyGT(EASY)
+	Race(Myself,SPIDER)
+	CheckStatGT(NearestEnemyOf(Myself),0,WEB)
+	WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+	WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
+	See(NearestEnemyOf(Myself))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
 END
 
 IF
 	!Allegiance(LastSeenBy(Myself),EVILCUTOFF)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_PHYSICAL_MIRROR)
 	See(LastSeenBy(Myself))
 THEN
 	RESPONSE #100

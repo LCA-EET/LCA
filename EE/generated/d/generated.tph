@@ -62,8 +62,8 @@ COPY ~%MOD_FOLDER%\generated\d\mus\xad2\xad2i2a.acm~ ~MUSIC\xad2\xad2i2a.acm~
 COPY ~%MOD_FOLDER%\generated\d\cre\xad100.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11235) /*~Belt~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11235) /*~Belt~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@11236) /*~ ~[xaa11801]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@11237) /*~ ~[xaa11802]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@11236) /*~ ~[xaa11955]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@11237) /*~ ~[xaa11956]*/
 
 COPY ~%MOD_FOLDER%\generated\d\cre\xad101.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11238) /*~Duke Eltan~*/

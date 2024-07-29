@@ -1,7 +1,7 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\GORPEL.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\PHEIRK.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\GORPEL.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\PHEIRK.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
@@ -10,58 +10,63 @@ BEGIN ~XAA357~
 // WARNING: this file contains non-trivial WEIGHTs
 //////////////////////////////////////////////////
 
-IF WEIGHT #1 /* Triggers after states #: 3 even though they appear after this state */
-~  NumTimesTalkedTo(0)
+IF WEIGHT #0 ~  Global("StartedPheirkasQuest","GLOBAL",0)
+!InParty([0.0.0.THIEF_ALL])
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Ahoy, fellow adventurers! Come share a glass with Gorpel Hind and his Band of Merry Fools. Seated with me are Farluck the Fearless, Turpin the Roaring Ranger, and Nelik the Most Devious and Fiendish of Thieves! (We owe him money so he gets the good title...) But away with these meager introductions! Sidle up to the bar and tell us a tall tale of your latest adventures!~ #19535 */
-  IF ~~ THEN REPLY @2 /* ~Well, we've been through the Cloakwood and fought our way through every level of a guarded and secret iron mine at its heart! There were mages at every turn, casting lightning bolts and fireballs into the heart of our party before stepping through their dimension doors to renew their attacks from another flank! Aye, there was loss and carnage but I revel in the memory of it still!~ #19539 */ DO ~SetNumTimesTalkedTo(1)
-~ GOTO 1
-  IF ~~ THEN REPLY @3 /* ~Ho, tall tales shall tempt us not. Keep to yourself and we shall do the same. Goodnight and goodbye, Mr. Hind.~ #19543 */ DO ~SetNumTimesTalkedTo(1)
-~ GOTO 2
+  SAY @1 /* ~Hmm, I prefer not to work with amateurs.~ #15107 */
+  IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 1 // from: 0.0
-  SAY @4 /* ~Iron mines in the Cloakwood? Your tales are tall, indeed, and we are richer for the telling. Consider yourselves honorary members of the Merry Fools and may ale and friendship always flow within these hallowed halls! A toast, you drunkards, to <CHARNAME> and the winsome souls that surround us now!~ #19545 */
-  IF ~~ THEN DO ~CreateCreature("GRETEK",[743.1041],S)
-CreateCreature("PARGUS",[681.1029],S)
-CreateCreature("WILF",[775.1135],S)
-CreateCreature("NADER",[845.992],S)
-CreateCreature("ARLIN",[812.1057],S)
-CreateCreature("CATURA",[376.1045],S)
-~ EXIT
+IF WEIGHT #1 ~  Global("StartedPheirkasQuest","GLOBAL",0)
+~ THEN BEGIN 1 // from:
+  SAY @2 /* ~There's a fat man by the name of Algernon staying at Feldepost's Inn in Beregost. He keeps a cloak with him in his room and I need you to get your larcenous hands on it and bring it back to me. I assure you that your reward will be handsome. Try not to kill him, just filch it off his person.~ #15108 */
+  IF ~~ THEN DO ~SetGlobal("StartedPheirkasQuest","GLOBAL",1)
+~ UNSOLVED_JOURNAL @3 /* ~Algernon's Cloak
+The dwarf Pheirkas wants me to steal a cloak from an obese man named Algernon, who I can find at Feldepost's Inn in Beregost. Pheirkas awaits his cloak in the northwest section of Baldur's Gate.~ #27360 */ EXIT
 END
 
-IF ~~ THEN BEGIN 2 // from: 0.1
-  SAY @5 /* ~Good night and goodbye to you, <CHARNAME>. It is late, and we were leaving, weren't we, my Merry Fools?~ #19554 */
-  IF ~~ THEN DO ~CreateCreature("GRETEK",[743.1041],S)
-CreateCreature("PARGUS",[681.1029],S)
-CreateCreature("WILF",[775.1135],S)
-CreateCreature("NADER",[845.992],S)
-CreateCreature("ARLIN",[812.1057],S)
-CreateCreature("CATURA",[376.1045],S)
-ActionOverride("FARLUCK",EscapeArea())
-ActionOverride("TURPIN",EscapeArea())
-ActionOverride("NELIK",EscapeArea())
-EscapeArea()
-~ EXIT
+IF WEIGHT #5 /* Triggers after states #: 3 4 5 even though they appear after this state */
+~  Global("StartedPheirkasQuest","GLOBAL",1)
+Global("HelpPheirkas","GLOBAL",0)
+~ THEN BEGIN 2 // from:
+  SAY @4 /* ~Do you have Algernon's cloak with you?~ #15109 */
+  IF ~~ THEN EXIT
 END
 
-IF WEIGHT #0 ~  Dead("GRETEK")
-Dead("PARGUS")
-Dead("WILF")
-Dead("NADER")
-Dead("ARLIN")
-Dead("CATURAK")
+IF WEIGHT #2 ~  ReactionLT(LastTalkedToBy,FRIENDLY_LOWER)
+PartyHasItem("CLCK08")
 ~ THEN BEGIN 3 // from:
-  SAY @6 /* ~We have been honored by your presence tonight and awed by your prowess. I beg your leave, however, for some of my men are wounded and must seek attention elsewhere. May the houses of <CHARNAME> and Gorpel Hind be ever graced with each other's friendship... Come, men, and carry your wounds bravely.~ #19610 */
-  IF ~~ THEN DO ~ActionOverride("FARLUCK",EscapeArea())
-ActionOverride("TURPIN",EscapeArea())
-ActionOverride("NELIK",EscapeArea())
-EscapeArea()
-~ EXIT
+  SAY @5 /* ~Ah, thank you so much. Here is 150 gold pieces for your efforts.~ #15110 */
+  IF ~~ THEN DO ~EraseJournalEntry(@3)
+SetGlobal("HelpPheirkas","GLOBAL",1)
+TakePartyItem("CLCK08")
+AddexperienceParty(200)
+GiveGoldForce(150)
+~ SOLVED_JOURNAL @6 /* ~Algernon's Cloak
+Pheirkas paid me well for my larceny.~ #27361 */ EXIT
 END
 
-IF ~~ THEN BEGIN 4 // from:
-  SAY @7 /* ~Fight on, brave souls! Gretek and his lackeys have had this coming for longer than you could know.~ #19611 */
+IF WEIGHT #3 ~  ReactionGT(LastTalkedToBy,NEUTRAL_UPPER)
+PartyHasItem("CLCK08")
+~ THEN BEGIN 4 // from:
+  SAY @7 /* ~Oh, I do like your handiwork. Here is 200 gold pieces for the trouble.~ #15111 */
+  IF ~~ THEN DO ~EraseJournalEntry(@3)
+SetGlobal("HelpPheirkas","GLOBAL",1)
+TakePartyItem("CLCK08")
+AddexperienceParty(300)
+GivePartyGold(200)
+~ SOLVED_JOURNAL @6 /* ~Algernon's Cloak
+Pheirkas paid me well for my larceny.~ #27361 */ EXIT
+END
+
+IF WEIGHT #4 ~  False()
+~ THEN BEGIN 5 // from:
+  SAY @8 /* ~Damn, I was hoping you were more the passive-aggressive type.~ #15112 */
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #6 ~  True()
+~ THEN BEGIN 6 // from:
+  SAY @9 /* ~How do you like my new cloak?~ #15113 */
   IF ~~ THEN EXIT
 END

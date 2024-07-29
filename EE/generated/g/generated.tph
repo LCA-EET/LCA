@@ -230,7 +230,7 @@ COPY ~%MOD_FOLDER%\generated\g\cre\xag127.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11385) /*~Crusader Elite~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11385) /*~Crusader Elite~*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@11398) /*~~[xaa11126]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@11399) /*~~[xaa11854]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@11399) /*~~[xaa11838]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@11400) /*~ The Fair Folk rarely have time for small talk.~[xac10289]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@11401) /*~ Troubled times are upon us.~[xac10290]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@11402) /*~ Soon, we shall all be together upon Evermeet.~[xac10291]*/

@@ -696,11 +696,6 @@ ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa230.are~) BEGIN
 	WRITE_LONG 1688 %xaa11%
 	WRITE_LONG 1692 %xaa11%
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa291.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa291.are~ ~override~
-	WRITE_LONG 2880 %xaa14%
-	WRITE_LONG 2884 %xaa15%
-END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa290.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa290.are~ ~override~
 	WRITE_LONG 2068 %xaa14%
@@ -841,6 +836,11 @@ ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa233.are~) BEGIN
 	WRITE_LONG 30680 %xaa7%
 	WRITE_LONG 30684 %xaa1%
 	WRITE_LONG 30692 %xaa2%
+END
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa291.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa291.are~ ~override~
+	WRITE_LONG 2880 %xaa14%
+	WRITE_LONG 2884 %xaa15%
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa292.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa292.are~ ~override~
@@ -991,14 +991,10 @@ ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa497.are~) BEGIN
 	WRITE_LONG 3876 %xaa9%
 	WRITE_LONG 3880 %xaa9%
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa486.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa486.are~ ~override~
-END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa485.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa485.are~ ~override~
-END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa484.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa484.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa492.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa492.are~ ~override~
+	WRITE_LONG 3716 %xaa14%
+	WRITE_LONG 3720 %xaa15%
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa483.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa483.are~ ~override~
@@ -1008,8 +1004,6 @@ ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa482.are~) BEGIN
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa481.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa481.are~ ~override~
-	WRITE_LONG 4208 %xaa9%
-	WRITE_LONG 4212 %xaa9%
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa480.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa480.are~ ~override~
@@ -1019,88 +1013,96 @@ ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa479.are~) BEGIN
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa478.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa478.are~ ~override~
+	WRITE_LONG 4208 %xaa9%
+	WRITE_LONG 4212 %xaa9%
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa477.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa477.are~ ~override~
-	WRITE_LONG 1668 RESOLVE_STR_REF(@10051) /*~These stairs are closed due to poor workmanship.~*/
-	WRITE_LONG 2428 %xaa17%
-	WRITE_LONG 2432 %xaa17%
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa476.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa476.are~ ~override~
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa475.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa475.are~ ~override~
+END
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa474.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa474.are~ ~override~
+	WRITE_LONG 1668 RESOLVE_STR_REF(@10051) /*~These stairs are closed due to poor workmanship.~*/
+	WRITE_LONG 2428 %xaa17%
+	WRITE_LONG 2432 %xaa17%
+END
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa473.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa473.are~ ~override~
+END
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa472.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa472.are~ ~override~
 	WRITE_LONG 5636 %xaa14%
 	WRITE_LONG 5640 %xaa15%
 	WRITE_LONG 5648 %xaa8%
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa471.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa471.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa468.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa468.are~ ~override~
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa469.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa469.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa466.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa466.are~ ~override~
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa467.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa467.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa464.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa464.are~ ~override~
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa465.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa465.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa462.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa462.are~ ~override~
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa463.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa463.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa460.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa460.are~ ~override~
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa461.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa461.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa458.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa458.are~ ~override~
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa459.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa459.are~ ~override~
-END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa457.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa457.are~ ~override~
-	WRITE_LONG 1692 %xaa16%
-	WRITE_LONG 1696 %xaa16%
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa456.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa456.are~ ~override~
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa454.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa454.are~ ~override~
-END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa452.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa452.are~ ~override~
+	WRITE_LONG 1692 %xaa16%
+	WRITE_LONG 1696 %xaa16%
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa451.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa451.are~ ~override~
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa447.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa447.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa449.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa449.are~ ~override~
+END
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa448.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa448.are~ ~override~
+END
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa444.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa444.are~ ~override~
 	WRITE_LONG 2612 %xaa14%
 	WRITE_LONG 2616 %xaa15%
 	WRITE_LONG 2624 %xaa8%
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa439.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa439.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa436.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa436.are~ ~override~
 	WRITE_LONG 1792 %xaa16%
 	WRITE_LONG 1796 %xaa16%
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa437.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa437.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa434.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa434.are~ ~override~
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa435.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa435.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa432.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa432.are~ ~override~
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa433.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa433.are~ ~override~
-END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa431.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa431.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa430.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa430.are~ ~override~
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa428.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa428.are~ ~override~
+END
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa425.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa425.are~ ~override~
 	WRITE_LONG 2212 RESOLVE_STR_REF(@10051) /*~These stairs are closed due to poor workmanship.~*/
 	WRITE_LONG 3760 %xaa11%
 	WRITE_LONG 3764 %xaa11%
-END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa424.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa424.are~ ~override~
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa421.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa421.are~ ~override~
@@ -1108,32 +1110,30 @@ END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa418.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa418.are~ ~override~
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa416.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa416.are~ ~override~
-END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa415.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa415.are~ ~override~
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa413.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa413.are~ ~override~
+END
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa412.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa412.are~ ~override~
+END
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa410.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa410.are~ ~override~
 	WRITE_LONG 580 RESOLVE_STR_REF(@10051) /*~These stairs are closed due to poor workmanship.~*/
 	WRITE_LONG 2108 %xaa17%
 	WRITE_LONG 2112 %xaa17%
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa410.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa410.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa407.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa407.are~ ~override~
 	WRITE_LONG 2548 %xaa14%
 	WRITE_LONG 2552 %xaa15%
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa409.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa409.are~ ~override~
-	WRITE_LONG 1144 %xaa14%
-	WRITE_LONG 1148 %xaa15%
-END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa406.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa406.are~ ~override~
-	WRITE_LONG 3716 %xaa14%
-	WRITE_LONG 3720 %xaa15%
+	WRITE_LONG 1144 %xaa14%
+	WRITE_LONG 1148 %xaa15%
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa540.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa540.are~ ~override~
@@ -1151,37 +1151,38 @@ ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa635.are~) BEGIN
 	WRITE_LONG 1808 %xaa7%
 	WRITE_LONG 1812 %xaa7%
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa632.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa632.are~ ~override~
-	WRITE_LONG 1132 %xaa14%
-	WRITE_LONG 1136 %xaa15%
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa618.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa618.are~ ~override~
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa614.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa614.are~ ~override~
-END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa610.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa610.are~ ~override~
 	WRITE_LONG 3832 %xaa14%
 	WRITE_LONG 3836 %xaa15%
 	WRITE_LONG 3844 %xaa8%
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa605.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa605.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa609.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa609.are~ ~override~
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa603.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa603.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa607.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa607.are~ ~override~
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa592.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa592.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa596.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa596.are~ ~override~
 	WRITE_LONG 5336 %xaa14%
 	WRITE_LONG 5340 %xaa15%
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa591.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa591.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa595.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa595.are~ ~override~
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa589.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa589.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa593.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa593.are~ ~override~
 	WRITE_LONG 1124 RESOLVE_STR_REF(@10051) /*~These stairs are closed due to poor workmanship.~*/
+END
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa590.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa590.are~ ~override~
+END
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa588.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa588.are~ ~override~
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa586.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa586.are~ ~override~
@@ -1189,17 +1190,16 @@ END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa584.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa584.are~ ~override~
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa582.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa582.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa581.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa581.are~ ~override~
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa580.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa580.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa574.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa574.are~ ~override~
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa577.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa577.are~ ~override~
-END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa570.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa570.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa572.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa572.are~ ~override~
+	WRITE_LONG 1132 %xaa14%
+	WRITE_LONG 1136 %xaa15%
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa563.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa563.are~ ~override~
@@ -1213,8 +1213,8 @@ ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa662.are~) BEGIN
 	WRITE_LONG 4656 %xaa4%
 	WRITE_LONG 4664 %xaa22%
 END
-ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa646.are~) BEGIN
-	COPY ~%MOD_FOLDER%\generated\a\are\xaa646.are~ ~override~
+ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa644.are~) BEGIN
+	COPY ~%MOD_FOLDER%\generated\a\are\xaa644.are~ ~override~
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaa668.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\a\are\xaa668.are~ ~override~
@@ -3183,9 +3183,35 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1116.cre~ ~override~
 	WRITE_LONG 272 RESOLVE_STR_REF(@10287) /*~ The customers are always right.~[xaa10874]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@10274) /*~ My prices are the best south of Waterdeep.~[xaa10798]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1108.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10501) /*~Flaming Fist Enforcer~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10501) /*~Flaming Fist Enforcer~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1105.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10316) /*~Merchant~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10316) /*~Merchant~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10386) /*~ I've got the best prices this side of Cormyr.~[xaa11174]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10318) /*~~[xaa11030]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10319) /*~~[xaa11031]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10386) /*~ I've got the best prices this side of Cormyr.~[xaa11174]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@10317) /*~ All my stuff is authentic. Really, it is.~[xaa11029]*/
+	WRITE_LONG 304 RESOLVE_STR_REF(@10472) /*~ Those damnable bandits have been really bad for business.~[xaa11348]*/
+	WRITE_LONG 308 RESOLVE_STR_REF(@10385) /*~ I love money! Yes, I do.~[xaa11171]*/
+	WRITE_LONG 408 RESOLVE_STR_REF(@10501) /*~ Lost your chance with me, you did! Get lost!~*/
+	WRITE_LONG 412 RESOLVE_STR_REF(@10502) /*~ Please don't bother me, I have a lot on my mind.~*/
+
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1103.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10313) /*~Guard~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10313) /*~Guard~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10477) /*~ *yawn*~[xaa11362]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10233) /*~~[xaa10718]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10234) /*~~[xaa10719]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10477) /*~ *yawn*~[xaa11362]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@10478) /*~ I shoulda joined the army.~[xaa11366]*/
+	WRITE_LONG 304 RESOLVE_STR_REF(@10479) /*~ Today, I saw a girl with the biggest pair of diddeys I've ever seen!~[xaa11367]*/
+	WRITE_LONG 308 RESOLVE_STR_REF(@10480) /*~ I could take Drizzt with both my arms tied behind my back.~[xaa11368]*/
+	WRITE_LONG 408 RESOLVE_STR_REF(@10082) /*~ You're not welcome here!~*/
+	WRITE_LONG 412 RESOLVE_STR_REF(@10503) /*~ Nothing to see here, <SIRMAAM>!~*/
+
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1102.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10504) /*~Flaming Fist Enforcer~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10504) /*~Flaming Fist Enforcer~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10076) /*~ I serve the Flaming Fist!~[xaa10039]*/
 	WRITE_LONG 200 RESOLVE_STR_REF(@10077) /*~ I AM the law!~[xaa10040]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10078) /*~~[xaa10041]*/
@@ -3195,17 +3221,17 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1108.cre~ ~override~
 	WRITE_LONG 304 RESOLVE_STR_REF(@10081) /*~ You there! Give me fifty pushups!~[xaa10045]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10082) /*~ You're not welcome here!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1107.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10502) /*~Gardener~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10502) /*~Gardener~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1101.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10505) /*~Gardener~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10505) /*~Gardener~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10394) /*~ Away with you, beggar.~[xaa11204]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10223) /*~~[xaa10644]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10224) /*~~[xaa10645]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10394) /*~ Away with you, beggar.~[xaa11204]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1106.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10503) /*~Ocellis~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10503) /*~Ocellis~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1100.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10506) /*~Ocellis~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10506) /*~Ocellis~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10100) /*~ 'Ey, friend! Good to meet a fine sod such as yerself.~[xaa10106]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10110) /*~~[xaa10117]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10111) /*~~[xaa10118]*/
@@ -3213,16 +3239,16 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1106.cre~ ~override~
 	WRITE_LONG 304 RESOLVE_STR_REF(@10213) /*~ I have things to do—one NOT being sittin' on me duffer talkin' to you.~[xaa10532]*/
 	WRITE_LONG 308 RESOLVE_STR_REF(@10166) /*~ Wife's been gettin' prickly on me arse.~[xaa10185]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1090.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1084.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10214) /*~Noblewoman~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10214) /*~Noblewoman~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10504) /*~ Do you mind? I'm off to go shopping.~[xaa11501]*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10507) /*~ Do you mind? I'm off to go shopping.~[xaa11515]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10215) /*~~[xaa10628]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10216) /*~~[xaa10629]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10504) /*~ Do you mind? I'm off to go shopping.~[xaa11501]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10507) /*~ Do you mind? I'm off to go shopping.~[xaa11515]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10217) /*~ I'll not have you near me!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1078.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1072.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10214) /*~Noblewoman~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10214) /*~Noblewoman~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10204) /*~ How are you?~[xaa10506]*/
@@ -3231,67 +3257,67 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1078.cre~ ~override~
 	WRITE_LONG 268 RESOLVE_STR_REF(@10204) /*~ How are you?~[xaa10506]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10217) /*~ I'll not have you near me!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1065.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10505) /*~Priest of Helm~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10505) /*~Priest of Helm~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10506) /*~ The Vigilant One knows of all your sins.~[xaa11463]*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1059.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10508) /*~Priest of Helm~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10508) /*~Priest of Helm~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10509) /*~ The Vigilant One knows of all your sins.~[xaa11463]*/
 	WRITE_LONG 200 RESOLVE_STR_REF(@10495) /*~ Helm sees all. Know that and be judged!~[xaa11459]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10507) /*~~[xaa11328]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10510) /*~~[xaa11328]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10466) /*~ ~[xaa11329]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10506) /*~ The Vigilant One knows of all your sins.~[xaa11463]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10509) /*~ The Vigilant One knows of all your sins.~[xaa11463]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@10495) /*~ Helm sees all. Know that and be judged!~[xaa11459]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10082) /*~ You're not welcome here!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1064.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10508) /*~Drelik~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10508) /*~Drelik~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1058.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10511) /*~Drelik~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10511) /*~Drelik~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10394) /*~ Away with you, beggar.~[xaa11204]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10223) /*~~[xaa10644]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10224) /*~~[xaa10645]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10394) /*~ Away with you, beggar.~[xaa11204]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1056.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10509) /*~Shep~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10509) /*~Shep~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1050.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10512) /*~Shep~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10512) /*~Shep~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10396) /*~ Leave us alone, will you? Nothin' for you here.~[xaa11211]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10110) /*~~[xaa10117]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10111) /*~~[xaa10118]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10396) /*~ Leave us alone, will you? Nothin' for you here.~[xaa11211]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10251) /*~ Get out of my sight! I'll do nothing for you!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1055.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10510) /*~Nantrin Bellowglyn~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10510) /*~Nantrin Bellowglyn~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10511) /*~~[xaa11525]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10512) /*~~[xaa11526]*/
-	WRITE_LONG 408 RESOLVE_STR_REF(@10513) /*~ You've outstayed your welcome! Out with you!~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1049.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10513) /*~Nantrin Bellowglyn~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10513) /*~Nantrin Bellowglyn~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10514) /*~~[xaa11539]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10515) /*~~[xaa11540]*/
+	WRITE_LONG 408 RESOLVE_STR_REF(@10516) /*~ You've outstayed your welcome! Out with you!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1047.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10514) /*~Bellamy~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10514) /*~Bellamy~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1041.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10517) /*~Bellamy~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10517) /*~Bellamy~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10334) /*~ Nasty times are comin', I reckon.~[xaa11063]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10335) /*~~[xaa11064]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10336) /*~~[xaa11065]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10334) /*~ Nasty times are comin', I reckon.~[xaa11063]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10357) /*~ Not to be rude, but I'd rather you left immediately.~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1046.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10515) /*~Bheren~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10515) /*~Bheren~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1040.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10518) /*~Bheren~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10518) /*~Bheren~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10142) /*~ Yes?~[xaa10111]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10516) /*~ ~[xaa11532]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10517) /*~ ~[xaa11533]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10519) /*~ ~[xaa11546]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10520) /*~ ~[xaa11547]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10142) /*~ Yes?~[xaa10111]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1045.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10518) /*~Rinnie~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10518) /*~Rinnie~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10519) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11536]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10520) /*~ ~[xaa11537]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10521) /*~ ~[xaa11538]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10519) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11536]*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1039.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10521) /*~Rinnie~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10521) /*~Rinnie~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10522) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11550]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10523) /*~ ~[xaa11551]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10524) /*~ ~[xaa11552]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10522) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11550]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1041.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1035.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10168) /*~Nobleman~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10168) /*~Nobleman~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10146) /*~ Hmm?~[xaa10112]*/
@@ -3301,7 +3327,7 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1041.cre~ ~override~
 	WRITE_LONG 408 RESOLVE_STR_REF(@10357) /*~ Not to be rude, but I'd rather you left immediately.~*/
 	WRITE_LONG 412 RESOLVE_STR_REF(@10358) /*~ You visit again? It is not unwelcome, even though Carl and Jurgen may make it seem so. Do not overstay your welcome though, as I am unaccustomed to long visits.~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1039.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1033.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10214) /*~Noblewoman~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10214) /*~Noblewoman~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10219) /*~ Touch me not! You are... unclean.~[xaa10639]*/
@@ -3310,7 +3336,7 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1039.cre~ ~override~
 	WRITE_LONG 268 RESOLVE_STR_REF(@10219) /*~ Touch me not! You are... unclean.~[xaa10639]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10217) /*~ I'll not have you near me!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1033.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1027.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10075) /*~Flaming Fist Mercenary~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10075) /*~Flaming Fist Mercenary~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10076) /*~ I serve the Flaming Fist!~[xaa10039]*/
@@ -3323,69 +3349,69 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1033.cre~ ~override~
 	WRITE_LONG 408 RESOLVE_STR_REF(@10082) /*~ You're not welcome here!~*/
 	WRITE_LONG 412 RESOLVE_STR_REF(@10076) /*~ I serve the Flaming Fist!~[xaa10039]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1032.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10522) /*~Sleeping Halfling~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10522) /*~Sleeping Halfling~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1026.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10525) /*~Sleeping Halfling~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10525) /*~Sleeping Halfling~*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10335) /*~~[xaa11064]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10336) /*~~[xaa11065]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10139) /*~ ZZZzzzzz... *sniffle*~[xaa10178]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@10138) /*~ ZZZzzzzzz...~[xaa10177]*/
 	WRITE_LONG 440 RESOLVE_STR_REF(@10141) /*~~[xaa10177]*/
 	WRITE_LONG 444 RESOLVE_STR_REF(@10141) /*~~[xaa10177]*/
-	WRITE_LONG 448 RESOLVE_STR_REF(@10523) /*~~[xaa10178]*/
-	WRITE_LONG 452 RESOLVE_STR_REF(@10523) /*~~[xaa10178]*/
-	WRITE_LONG 456 RESOLVE_STR_REF(@10523) /*~~[xaa10178]*/
+	WRITE_LONG 448 RESOLVE_STR_REF(@10526) /*~~[xaa10178]*/
+	WRITE_LONG 452 RESOLVE_STR_REF(@10526) /*~~[xaa10178]*/
+	WRITE_LONG 456 RESOLVE_STR_REF(@10526) /*~~[xaa10178]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1021.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10524) /*~Elkart~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10524) /*~Elkart~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1015.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10527) /*~Elkart~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10527) /*~Elkart~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10450) /*~ Stop pickin' yer nose!~[xaa11307]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10446) /*~~[xaa11302]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10447) /*~~[xaa11303]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10450) /*~ Stop pickin' yer nose!~[xaa11307]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10315) /*~ You're not welcome here! You'll pay with your life!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1020.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10525) /*~G'axir the Seer~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10525) /*~G'axir the Seer~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1014.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10528) /*~G'axir the Seer~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10528) /*~G'axir the Seer~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10235) /*~ Yeah, mate?~[xaa10189]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10526) /*~~[xaa11570]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10527) /*~~[xaa11571]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10529) /*~~[xaa11584]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10530) /*~~[xaa11585]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10235) /*~ Yeah, mate?~[xaa10189]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1019.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10528) /*~Shaella~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10528) /*~Shaella~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1013.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10531) /*~Shaella~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10531) /*~Shaella~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10308) /*~ Something you require?~[xaa10926]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10114) /*~~[xaa10125]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10115) /*~~[xaa10126]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10308) /*~ Something you require?~[xaa10926]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1018.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10529) /*~Innkeeper ~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10530) /*~Innkeeper~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10531) /*~ My rooms are the best kept on the Sword Coast.~[xaa11577]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10532) /*~~[xaa11578]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10533) /*~~[xaa11579]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10531) /*~ My rooms are the best kept on the Sword Coast.~[xaa11577]*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1012.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10532) /*~Innkeeper ~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10533) /*~Innkeeper~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10534) /*~ My rooms are the best kept on the Sword Coast.~[xaa11591]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10535) /*~~[xaa11592]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10536) /*~~[xaa11593]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10534) /*~ My rooms are the best kept on the Sword Coast.~[xaa11591]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1014.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10534) /*~Michael~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10534) /*~Michael~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1008.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10537) /*~Michael~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10537) /*~Michael~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10448) /*~ I hate dem Flamin' Fist pansies.~[xaa11305]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10446) /*~~[xaa11302]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10447) /*~~[xaa11303]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10445) /*~ So I kicked 'im in the head till he was dead. Har har.~[xaa11301]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1013.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10535) /*~Taxek~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10535) /*~Taxek~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10536) /*~ I've a blade with your name on it.~[xaa11586]*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1007.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10538) /*~Taxek~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10538) /*~Taxek~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10539) /*~ I've a blade with your name on it.~[xaa11600]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10432) /*~~[xaa11279]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10433) /*~~[xaa11280]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10536) /*~ I've a blade with your name on it.~[xaa11586]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10539) /*~ I've a blade with your name on it.~[xaa11600]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1012.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1006.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10285) /*~Storekeep~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10285) /*~Storekeep~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10246) /*~ Welcome to my humble establishment.~[xaa10751]*/
@@ -3395,16 +3421,16 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1012.cre~ ~override~
 	WRITE_LONG 272 RESOLVE_STR_REF(@10287) /*~ The customers are always right.~[xaa10874]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@10274) /*~ My prices are the best south of Waterdeep.~[xaa10798]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1006.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10537) /*~Euric~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10537) /*~Euric~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1000.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10540) /*~Euric~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10540) /*~Euric~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10230) /*~ Mother said not to talk with strangers.~[xaa10664]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10153) /*~~[xaa10216]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10154) /*~~[xaa10217]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10230) /*~ Mother said not to talk with strangers.~[xaa10664]*/
 	WRITE_LONG 304 RESOLVE_STR_REF(@10152) /*~ You funny lookin'.~[xaa10215]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa999.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa993.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10285) /*~Storekeep~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10285) /*~Storekeep~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10246) /*~ Welcome to my humble establishment.~[xaa10751]*/
@@ -3414,38 +3440,38 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa999.cre~ ~override~
 	WRITE_LONG 272 RESOLVE_STR_REF(@10287) /*~ The customers are always right.~[xaa10874]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@10274) /*~ My prices are the best south of Waterdeep.~[xaa10798]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa989.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10538) /*~Nadarin~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10538) /*~Nadarin~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10539) /*~ Me temper's bad enough without ye botherin' me.~[xaa11608]*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@10540) /*~ By Moradin's hammer.~[xaa11609]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10541) /*~~[xaa11610]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10542) /*~~[xaa11611]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10539) /*~ Me temper's bad enough without ye botherin' me.~[xaa11608]*/
-	WRITE_LONG 304 RESOLVE_STR_REF(@10543) /*~ Your chatterin's startin' to wear on me nerves.~[xaa11613]*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa983.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10541) /*~Nadarin~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10541) /*~Nadarin~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10542) /*~ Me temper's bad enough without ye botherin' me.~[xaa11622]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@10543) /*~ By Moradin's hammer.~[xaa11623]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10544) /*~~[xaa11624]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10545) /*~~[xaa11625]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10542) /*~ Me temper's bad enough without ye botherin' me.~[xaa11622]*/
+	WRITE_LONG 304 RESOLVE_STR_REF(@10546) /*~ Your chatterin's startin' to wear on me nerves.~[xaa11627]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa987.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa981.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10099) /*~Commoner~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10099) /*~Commoner~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10544) /*~ Greetin's.~[xaa11614]*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10547) /*~ Greetin's.~[xaa11628]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10114) /*~~[xaa10125]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10115) /*~~[xaa10126]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10544) /*~ Greetin's.~[xaa11614]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10547) /*~ Greetin's.~[xaa11628]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10116) /*~ Get away from me!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa977.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10545) /*~Nemphre~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10545) /*~Nemphre~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa971.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10548) /*~Nemphre~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10548) /*~Nemphre~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10125) /*~ Hello there.~[xaa10157]*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@10546) /*~ Your screams shall be music to my ears.~[xaa11619]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@10549) /*~ Your screams shall be music to my ears.~[xaa11633]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10129) /*~~[xaa10163]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10130) /*~~[xaa10164]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10125) /*~ Hello there.~[xaa10157]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa976.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa970.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10075) /*~Flaming Fist Mercenary~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10075) /*~Flaming Fist Mercenary~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10547) /*~ This way, good sir, over here!~[xaa11623]*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10550) /*~ This way, good sir, over here!~[xaa11637]*/
 	WRITE_LONG 200 RESOLVE_STR_REF(@10077) /*~ I AM the law!~[xaa10040]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10078) /*~~[xaa10041]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10079) /*~~[xaa10042]*/
@@ -3453,39 +3479,39 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa976.cre~ ~override~
 	WRITE_LONG 272 RESOLVE_STR_REF(@10080) /*~ Every crime must be punished!~[xaa10044]*/
 	WRITE_LONG 304 RESOLVE_STR_REF(@10081) /*~ You there! Give me fifty pushups!~[xaa10045]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10082) /*~ You're not welcome here!~*/
-	WRITE_LONG 440 RESOLVE_STR_REF(@10548) /*~~[xaa11623]*/
+	WRITE_LONG 440 RESOLVE_STR_REF(@10551) /*~~[xaa11637]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa973.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10549) /*~Prisoner~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10549) /*~Prisoner~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10550) /*~~[xaa11631]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10551) /*~~[xaa11632]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10552) /*~ Help us, please.~[xaa11633]*/
-	WRITE_LONG 440 RESOLVE_STR_REF(@10553) /*~ ~[xaa11634]*/
-	WRITE_LONG 444 RESOLVE_STR_REF(@10554) /*~~[xaa11633]*/
-	WRITE_LONG 448 RESOLVE_STR_REF(@10555) /*~~[xaa11636]*/
-	WRITE_LONG 452 RESOLVE_STR_REF(@10556) /*~~[xaa11637]*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa967.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10552) /*~Prisoner~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10552) /*~Prisoner~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10553) /*~~[xaa11645]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10554) /*~~[xaa11646]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10555) /*~ Help us, please.~[xaa11647]*/
+	WRITE_LONG 440 RESOLVE_STR_REF(@10556) /*~ ~[xaa11648]*/
+	WRITE_LONG 444 RESOLVE_STR_REF(@10557) /*~~[xaa11647]*/
+	WRITE_LONG 448 RESOLVE_STR_REF(@10558) /*~~[xaa11650]*/
+	WRITE_LONG 452 RESOLVE_STR_REF(@10559) /*~~[xaa11651]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa972.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10557) /*~Fergus~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10557) /*~Fergus~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa966.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10560) /*~Fergus~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10560) /*~Fergus~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10146) /*~ Hmm?~[xaa10112]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10078) /*~~[xaa10041]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10079) /*~~[xaa10042]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10146) /*~ Hmm?~[xaa10112]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10082) /*~ You're not welcome here!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa970.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10558) /*~Dilos~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10558) /*~Dilos~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa964.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10561) /*~Dilos~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10561) /*~Dilos~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10121) /*~ What do you need?~[xaa10141]*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@10536) /*~ I've a blade with your name on it.~[xaa11586]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@10539) /*~ I've a blade with your name on it.~[xaa11600]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10078) /*~~[xaa10041]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10079) /*~~[xaa10042]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10121) /*~ What do you need?~[xaa10141]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10082) /*~ You're not welcome here!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa961.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa955.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10099) /*~Commoner~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10099) /*~Commoner~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10112) /*~ Ye're a long-tongued lout, ain't ya?~[xaa10120]*/
@@ -3495,9 +3521,9 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa961.cre~ ~override~
 	WRITE_LONG 272 RESOLVE_STR_REF(@10112) /*~ Ye're a long-tongued lout, ain't ya?~[xaa10120]*/
 	WRITE_LONG 304 RESOLVE_STR_REF(@10213) /*~ I have things to do—one NOT being sittin' on me duffer talkin' to you.~[xaa10532]*/
 	WRITE_LONG 308 RESOLVE_STR_REF(@10166) /*~ Wife's been gettin' prickly on me arse.~[xaa10185]*/
-	WRITE_LONG 408 RESOLVE_STR_REF(@10559) /*~ Get away from me! I've work to do!~*/
+	WRITE_LONG 408 RESOLVE_STR_REF(@10562) /*~ Get away from me! I've work to do!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa960.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa954.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10099) /*~Commoner~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10099) /*~Commoner~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10112) /*~ Ye're a long-tongued lout, ain't ya?~[xaa10120]*/
@@ -3507,9 +3533,9 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa960.cre~ ~override~
 	WRITE_LONG 272 RESOLVE_STR_REF(@10112) /*~ Ye're a long-tongued lout, ain't ya?~[xaa10120]*/
 	WRITE_LONG 304 RESOLVE_STR_REF(@10213) /*~ I have things to do—one NOT being sittin' on me duffer talkin' to you.~[xaa10532]*/
 	WRITE_LONG 308 RESOLVE_STR_REF(@10166) /*~ Wife's been gettin' prickly on me arse.~[xaa10185]*/
-	WRITE_LONG 408 RESOLVE_STR_REF(@10559) /*~ Get away from me! I've work to do!~*/
+	WRITE_LONG 408 RESOLVE_STR_REF(@10562) /*~ Get away from me! I've work to do!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa959.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa953.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10099) /*~Commoner~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10099) /*~Commoner~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10112) /*~ Ye're a long-tongued lout, ain't ya?~[xaa10120]*/
@@ -3519,38 +3545,38 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa959.cre~ ~override~
 	WRITE_LONG 272 RESOLVE_STR_REF(@10112) /*~ Ye're a long-tongued lout, ain't ya?~[xaa10120]*/
 	WRITE_LONG 304 RESOLVE_STR_REF(@10213) /*~ I have things to do—one NOT being sittin' on me duffer talkin' to you.~[xaa10532]*/
 	WRITE_LONG 308 RESOLVE_STR_REF(@10166) /*~ Wife's been gettin' prickly on me arse.~[xaa10185]*/
-	WRITE_LONG 408 RESOLVE_STR_REF(@10559) /*~ Get away from me! I've work to do!~*/
+	WRITE_LONG 408 RESOLVE_STR_REF(@10562) /*~ Get away from me! I've work to do!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa958.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa952.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10099) /*~Commoner~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10099) /*~Commoner~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10355) /*~ Raaagh! Help!~[xaa11108]*/
-	WRITE_LONG 168 RESOLVE_STR_REF(@10560) /*~~[xaa11108]*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@10560) /*~~[xaa11108]*/
+	WRITE_LONG 168 RESOLVE_STR_REF(@10563) /*~~[xaa11108]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@10563) /*~~[xaa11108]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10110) /*~~[xaa10117]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10111) /*~~[xaa10118]*/
-	WRITE_LONG 252 RESOLVE_STR_REF(@10560) /*~~[xaa11108]*/
-	WRITE_LONG 260 RESOLVE_STR_REF(@10560) /*~~[xaa11108]*/
-	WRITE_LONG 264 RESOLVE_STR_REF(@10560) /*~~[xaa11108]*/
+	WRITE_LONG 252 RESOLVE_STR_REF(@10563) /*~~[xaa11108]*/
+	WRITE_LONG 260 RESOLVE_STR_REF(@10563) /*~~[xaa11108]*/
+	WRITE_LONG 264 RESOLVE_STR_REF(@10563) /*~~[xaa11108]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10355) /*~ Raaagh! Help!~[xaa11108]*/
-	WRITE_LONG 408 RESOLVE_STR_REF(@10560) /*~~[xaa11108]*/
-	WRITE_LONG 412 RESOLVE_STR_REF(@10560) /*~~[xaa11108]*/
-	WRITE_LONG 440 RESOLVE_STR_REF(@10560) /*~~[xaa11108]*/
-	WRITE_LONG 444 RESOLVE_STR_REF(@10560) /*~~[xaa11108]*/
-	WRITE_LONG 448 RESOLVE_STR_REF(@10560) /*~~[xaa11108]*/
-	WRITE_LONG 452 RESOLVE_STR_REF(@10560) /*~~[xaa11108]*/
-	WRITE_LONG 456 RESOLVE_STR_REF(@10560) /*~~[xaa11108]*/
+	WRITE_LONG 408 RESOLVE_STR_REF(@10563) /*~~[xaa11108]*/
+	WRITE_LONG 412 RESOLVE_STR_REF(@10563) /*~~[xaa11108]*/
+	WRITE_LONG 440 RESOLVE_STR_REF(@10563) /*~~[xaa11108]*/
+	WRITE_LONG 444 RESOLVE_STR_REF(@10563) /*~~[xaa11108]*/
+	WRITE_LONG 448 RESOLVE_STR_REF(@10563) /*~~[xaa11108]*/
+	WRITE_LONG 452 RESOLVE_STR_REF(@10563) /*~~[xaa11108]*/
+	WRITE_LONG 456 RESOLVE_STR_REF(@10563) /*~~[xaa11108]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa957.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa951.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10236) /*~Bartender~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10236) /*~Bartender~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10110) /*~~[xaa10117]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10110) /*~~[xaa10117]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10111) /*~~[xaa10118]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10110) /*~~[xaa10117]*/
-	WRITE_LONG 408 RESOLVE_STR_REF(@10559) /*~ Get away from me! I've work to do!~*/
+	WRITE_LONG 408 RESOLVE_STR_REF(@10562) /*~ Get away from me! I've work to do!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa956.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa950.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10285) /*~Storekeep~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10285) /*~Storekeep~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10246) /*~ Welcome to my humble establishment.~[xaa10751]*/
@@ -3560,7 +3586,7 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa956.cre~ ~override~
 	WRITE_LONG 272 RESOLVE_STR_REF(@10287) /*~ The customers are always right.~[xaa10874]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@10274) /*~ My prices are the best south of Waterdeep.~[xaa10798]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa954.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa948.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10316) /*~Merchant~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10316) /*~Merchant~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10142) /*~ Yes?~[xaa10111]*/
@@ -3572,7 +3598,7 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa954.cre~ ~override~
 	WRITE_LONG 308 RESOLVE_STR_REF(@10385) /*~ I love money! Yes, I do.~[xaa11171]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10473) /*~ I wouldn't trust you as far as I can spit!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa953.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa947.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10316) /*~Merchant~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10316) /*~Merchant~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10396) /*~ Leave us alone, will you? Nothin' for you here.~[xaa11211]*/
@@ -3581,32 +3607,6 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa953.cre~ ~override~
 	WRITE_LONG 268 RESOLVE_STR_REF(@10396) /*~ Leave us alone, will you? Nothin' for you here.~[xaa11211]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@10146) /*~ Hmm?~[xaa10112]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10473) /*~ I wouldn't trust you as far as I can spit!~*/
-
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa949.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10316) /*~Merchant~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10316) /*~Merchant~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10386) /*~ I've got the best prices this side of Cormyr.~[xaa11174]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10318) /*~~[xaa11030]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10319) /*~~[xaa11031]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10386) /*~ I've got the best prices this side of Cormyr.~[xaa11174]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@10317) /*~ All my stuff is authentic. Really, it is.~[xaa11029]*/
-	WRITE_LONG 304 RESOLVE_STR_REF(@10472) /*~ Those damnable bandits have been really bad for business.~[xaa11348]*/
-	WRITE_LONG 308 RESOLVE_STR_REF(@10385) /*~ I love money! Yes, I do.~[xaa11171]*/
-	WRITE_LONG 408 RESOLVE_STR_REF(@10561) /*~ Lost your chance with me, you did! Get lost!~*/
-	WRITE_LONG 412 RESOLVE_STR_REF(@10562) /*~ Please don't bother me, I have a lot on my mind.~*/
-
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa947.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10313) /*~Guard~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10313) /*~Guard~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10477) /*~ *yawn*~[xaa11362]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10233) /*~~[xaa10718]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10234) /*~~[xaa10719]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10477) /*~ *yawn*~[xaa11362]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@10478) /*~ I shoulda joined the army.~[xaa11366]*/
-	WRITE_LONG 304 RESOLVE_STR_REF(@10479) /*~ Today, I saw a girl with the biggest pair of diddeys I've ever seen!~[xaa11367]*/
-	WRITE_LONG 308 RESOLVE_STR_REF(@10480) /*~ I could take Drizzt with both my arms tied behind my back.~[xaa11368]*/
-	WRITE_LONG 408 RESOLVE_STR_REF(@10082) /*~ You're not welcome here!~*/
-	WRITE_LONG 412 RESOLVE_STR_REF(@10563) /*~ Nothing to see here, <SIRMAAM>!~*/
 
 COPY ~%MOD_FOLDER%\generated\a\cre\xaa1190.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10099) /*~Commoner~*/
@@ -3625,9 +3625,9 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1190.cre~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\cre\xaa1194.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10566) /*~Chanthalas Ulbright~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10566) /*~Chanthalas Ulbright~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10547) /*~ This way, good sir, over here!~[xaa11623]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10516) /*~ ~[xaa11532]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10517) /*~ ~[xaa11533]*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10550) /*~ This way, good sir, over here!~[xaa11637]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10519) /*~ ~[xaa11546]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10520) /*~ ~[xaa11547]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10567) /*~ Forgive me, but I have meditations to attend to.~[xaa11734]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10082) /*~ You're not welcome here!~*/
 
@@ -3726,8 +3726,8 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1209.cre~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\cre\xaa1211.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10596) /*~Sleeping Dwarf~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10596) /*~Sleeping Dwarf~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10541) /*~~[xaa11610]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10542) /*~~[xaa11611]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10544) /*~~[xaa11624]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10545) /*~~[xaa11625]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10380) /*~ ZZZZzzzzz... *snort*~[xaa11167]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@10381) /*~ ZZZZzzzzzz...~[xaa11168]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@10382) /*~ ZZZZzzzzzzz...~[xaa11168]*/
@@ -3754,61 +3754,30 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1327.cre~ ~override~
 	WRITE_LONG 268 RESOLVE_STR_REF(@10308) /*~ Something you require?~[xaa10926]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10131) /*~ You'll get nothing from me!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1324.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10597) /*~Brandilar~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10597) /*~Brandilar~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10121) /*~ What do you need?~[xaa10141]*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@10536) /*~ I've a blade with your name on it.~[xaa11586]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10598) /*~ ~[xaa11801]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10599) /*~ ~[xaa11802]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10121) /*~ What do you need?~[xaa10141]*/
-	WRITE_LONG 408 RESOLVE_STR_REF(@10561) /*~ Lost your chance with me, you did! Get lost!~*/
-	WRITE_LONG 412 RESOLVE_STR_REF(@10600) /*~ It is good to see you all again. I'm very busy at the moment, so perhaps we can talk later.~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1323.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10597) /*~Doppelganger~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10597) /*~Doppelganger~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10598) /*~ SSSSsssssss.~[xaa11799]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@10599) /*~ It is useless to resist. SSSssssss.~[xaa11800]*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@10600) /*~ Die, meat!~[xaa11801]*/
+	WRITE_LONG 208 RESOLVE_STR_REF(@10598) /*~ SSSSsssssss.~[xaa11799]*/
+	WRITE_LONG 220 RESOLVE_STR_REF(@10601) /*~ ~[xaa11803]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10602) /*~ ~[xaa11804]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10603) /*~ ~[xaa11805]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10600) /*~ Die, meat!~[xaa11801]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@10598) /*~ SSSSsssssss.~[xaa11799]*/
+	WRITE_LONG 304 RESOLVE_STR_REF(@10604) /*~ Your time is done, primates.~[xaa11808]*/
+
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1322.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10605) /*~Jhasso~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10605) /*~Jhasso~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10606) /*~ *pant* Come to torment me some more, you shapeshifting bastards?~[xaa11809]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10607) /*~~[xaa11810]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10608) /*~~[xaa11811]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10609) /*~ Damn, this would've cost my business a pretty penny!~[xaa11812]*/
+	WRITE_LONG 408 RESOLVE_STR_REF(@10610) /*~ You're barely better than my captors! Leave me!~*/
 
 COPY ~%MOD_FOLDER%\generated\a\cre\xaa1321.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10236) /*~Bartender~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10236) /*~Bartender~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10237) /*~ You want some whiskey?~[xaa10727]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10238) /*~~[xaa10728]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10239) /*~~[xaa10729]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10237) /*~ You want some whiskey?~[xaa10727]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@10240) /*~ I got some cheap beer for ya.~[xaa10731]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@10241) /*~ Urgh... I gotta stop dippin' into me own ale.~[xaa10732]*/
-	WRITE_LONG 280 RESOLVE_STR_REF(@10242) /*~ I got me some nice lookin' waitresses, don't I? Eh he hehehe...~[xaa10733]*/
-
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1320.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10266) /*~Cook~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10266) /*~Cook~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10225) /*~ What?~[xaa10647]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10129) /*~~[xaa10163]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10130) /*~~[xaa10164]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10225) /*~ What?~[xaa10647]*/
-	WRITE_LONG 408 RESOLVE_STR_REF(@10601) /*~ Get out or be thrown out!~*/
-
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1317.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10602) /*~Doppelganger~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10602) /*~Doppelganger~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10603) /*~ SSSSsssssss.~[xaa11815]*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@10604) /*~ It is useless to resist. SSSssssss.~[xaa11816]*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@10605) /*~ Die, meat!~[xaa11817]*/
-	WRITE_LONG 208 RESOLVE_STR_REF(@10603) /*~ SSSSsssssss.~[xaa11815]*/
-	WRITE_LONG 220 RESOLVE_STR_REF(@10606) /*~ ~[xaa11819]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10607) /*~ ~[xaa11820]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10608) /*~ ~[xaa11821]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10605) /*~ Die, meat!~[xaa11817]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@10603) /*~ SSSSsssssss.~[xaa11815]*/
-	WRITE_LONG 304 RESOLVE_STR_REF(@10609) /*~ Your time is done, primates.~[xaa11824]*/
-
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1316.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10610) /*~Jhasso~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10610) /*~Jhasso~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10611) /*~ *pant* Come to torment me some more, you shapeshifting bastards?~[xaa11825]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10612) /*~~[xaa11826]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10613) /*~~[xaa11827]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10614) /*~ Damn, this would've cost my business a pretty penny!~[xaa11828]*/
-	WRITE_LONG 408 RESOLVE_STR_REF(@10615) /*~ You're barely better than my captors! Leave me!~*/
-
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1315.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10075) /*~Flaming Fist Mercenary~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10075) /*~Flaming Fist Mercenary~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10076) /*~ I serve the Flaming Fist!~[xaa10039]*/
@@ -3820,16 +3789,16 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1315.cre~ ~override~
 	WRITE_LONG 304 RESOLVE_STR_REF(@10081) /*~ You there! Give me fifty pushups!~[xaa10045]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10082) /*~ You're not welcome here!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1295.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10616) /*~Maple Willow Aspen~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10616) /*~Maple Willow Aspen~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10617) /*~ Pleased to make your acquaintance.~[xaa11836]*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1301.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10611) /*~Maple Willow Aspen~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10611) /*~Maple Willow Aspen~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10612) /*~ Pleased to make your acquaintance.~[xaa11820]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10114) /*~~[xaa10125]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10115) /*~~[xaa10126]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10617) /*~ Pleased to make your acquaintance.~[xaa11836]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10612) /*~ Pleased to make your acquaintance.~[xaa11820]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10131) /*~ You'll get nothing from me!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1292.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1298.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10266) /*~Cook~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10266) /*~Cook~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10250) /*~ Speak up, speak up!~[xaa10115]*/
@@ -3838,52 +3807,52 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1292.cre~ ~override~
 	WRITE_LONG 268 RESOLVE_STR_REF(@10250) /*~ Speak up, speak up!~[xaa10115]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10288) /*~ Out! And never darken my door again!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1288.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10618) /*~Angel the Cat~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10618) /*~Angel the Cat~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10619) /*~~[xaa11844]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10620) /*~~[xaa11845]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10619) /*~~[xaa11844]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@10620) /*~~[xaa11845]*/
-	WRITE_LONG 440 RESOLVE_STR_REF(@10619) /*~~[xaa11844]*/
-	WRITE_LONG 444 RESOLVE_STR_REF(@10620) /*~~[xaa11845]*/
-	WRITE_LONG 448 RESOLVE_STR_REF(@10619) /*~~[xaa11844]*/
-	WRITE_LONG 452 RESOLVE_STR_REF(@10619) /*~~[xaa11844]*/
-	WRITE_LONG 456 RESOLVE_STR_REF(@10620) /*~~[xaa11845]*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1294.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10613) /*~Angel the Cat~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10613) /*~Angel the Cat~*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10614) /*~~[xaa11828]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10615) /*~~[xaa11829]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10614) /*~~[xaa11828]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@10615) /*~~[xaa11829]*/
+	WRITE_LONG 440 RESOLVE_STR_REF(@10614) /*~~[xaa11828]*/
+	WRITE_LONG 444 RESOLVE_STR_REF(@10615) /*~~[xaa11829]*/
+	WRITE_LONG 448 RESOLVE_STR_REF(@10614) /*~~[xaa11828]*/
+	WRITE_LONG 452 RESOLVE_STR_REF(@10614) /*~~[xaa11828]*/
+	WRITE_LONG 456 RESOLVE_STR_REF(@10615) /*~~[xaa11829]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1287.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10621) /*~Sleeping Elf~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10621) /*~Sleeping Elf~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1293.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10616) /*~Sleeping Elf~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10616) /*~Sleeping Elf~*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10361) /*~~[xaa11126]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10622) /*~~[xaa11854]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10617) /*~~[xaa11838]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10138) /*~ ZZZzzzzzz...~[xaa10177]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@10139) /*~ ZZZzzzzz... *sniffle*~[xaa10178]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@10140) /*~ ZZZzzzzz...~[xaa10177]*/
-	WRITE_LONG 440 RESOLVE_STR_REF(@10523) /*~~[xaa10178]*/
-	WRITE_LONG 444 RESOLVE_STR_REF(@10523) /*~~[xaa10178]*/
+	WRITE_LONG 440 RESOLVE_STR_REF(@10526) /*~~[xaa10178]*/
+	WRITE_LONG 444 RESOLVE_STR_REF(@10526) /*~~[xaa10178]*/
 	WRITE_LONG 448 RESOLVE_STR_REF(@10141) /*~~[xaa10177]*/
 	WRITE_LONG 452 RESOLVE_STR_REF(@10141) /*~~[xaa10177]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1285.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10623) /*~Ithtyl Calantryn~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10623) /*~Ithtyl Calantryn~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10624) /*~ 'Allo.~[xaa11862]*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1291.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10618) /*~Ithtyl Calantryn~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10618) /*~Ithtyl Calantryn~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10619) /*~ 'Allo.~[xaa11846]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10129) /*~~[xaa10163]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10130) /*~~[xaa10164]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10624) /*~ 'Allo.~[xaa11862]*/
-	WRITE_LONG 408 RESOLVE_STR_REF(@10625) /*~ I should make my stay brief, if I were you.~*/
-	WRITE_LONG 412 RESOLVE_STR_REF(@10626) /*~ I must ask you not to disturb me, as I have many financial matters that now occupy my attention.~*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10619) /*~ 'Allo.~[xaa11846]*/
+	WRITE_LONG 408 RESOLVE_STR_REF(@10620) /*~ I should make my stay brief, if I were you.~*/
+	WRITE_LONG 412 RESOLVE_STR_REF(@10621) /*~ I must ask you not to disturb me, as I have many financial matters that now occupy my attention.~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1276.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10627) /*~Jardak~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10627) /*~Jardak~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1282.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10622) /*~Jardak~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10622) /*~Jardak~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10467) /*~ Fear my wrath, for it is great indeed.~[xaa11330]*/
 	WRITE_LONG 200 RESOLVE_STR_REF(@10467) /*~ Fear my wrath, for it is great indeed.~[xaa11330]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10628) /*~~[xaa11868]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10629) /*~~[xaa11869]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10623) /*~~[xaa11852]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10624) /*~~[xaa11853]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10467) /*~ Fear my wrath, for it is great indeed.~[xaa11330]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1274.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1280.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10313) /*~Guard~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10313) /*~Guard~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10478) /*~ I shoulda joined the army.~[xaa11366]*/
@@ -3895,35 +3864,35 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1274.cre~ ~override~
 	WRITE_LONG 308 RESOLVE_STR_REF(@10480) /*~ I could take Drizzt with both my arms tied behind my back.~[xaa11368]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10481) /*~ You're not welcome here! Get out or be thrown out!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1272.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10630) /*~Servant~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10630) /*~Servant~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1278.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10625) /*~Servant~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10625) /*~Servant~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10314) /*~ Heya.~[xaa11025]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10110) /*~~[xaa10117]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10111) /*~~[xaa10118]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10314) /*~ Heya.~[xaa11025]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10357) /*~ Not to be rude, but I'd rather you left immediately.~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1267.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10631) /*~Connoly Finn~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10631) /*~Connoly Finn~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1273.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10626) /*~Connoly Finn~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10626) /*~Connoly Finn~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10122) /*~ 'Ello, pal.~[xaa10145]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10110) /*~~[xaa10117]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10111) /*~~[xaa10118]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10122) /*~ 'Ello, pal.~[xaa10145]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1266.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10632) /*~Laerta~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10632) /*~Laerta~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1272.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10627) /*~Laerta~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10627) /*~Laerta~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10186) /*~ I want my mommy.~[xaa10445]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10187) /*~~[xaa10446]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10188) /*~~[xaa10447]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10207) /*~ *sob*~[xaa10515]*/
 	WRITE_LONG 304 RESOLVE_STR_REF(@10208) /*~ Ooh, you smell!~[xaa10519]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1265.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10633) /*~Louise~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10633) /*~Louise~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1271.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10628) /*~Louise~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10628) /*~Louise~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10186) /*~ I want my mommy.~[xaa10445]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10187) /*~~[xaa10446]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10188) /*~~[xaa10447]*/
@@ -3931,15 +3900,15 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1265.cre~ ~override~
 	WRITE_LONG 304 RESOLVE_STR_REF(@10208) /*~ Ooh, you smell!~[xaa10519]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10155) /*~ Leave me alone! You're mean!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1264.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10634) /*~Quinn~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10634) /*~Quinn~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1270.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10629) /*~Quinn~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10629) /*~Quinn~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10564) /*~ Somethin' on your mind?~[xaa11720]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10110) /*~~[xaa10117]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10111) /*~~[xaa10118]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10564) /*~ Somethin' on your mind?~[xaa11720]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1261.cre~ ~override~
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1267.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10236) /*~Bartender~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10236) /*~Bartender~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10237) /*~ You want some whiskey?~[xaa10727]*/
@@ -3950,108 +3919,139 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1261.cre~ ~override~
 	WRITE_LONG 276 RESOLVE_STR_REF(@10241) /*~ Urgh... I gotta stop dippin' into me own ale.~[xaa10732]*/
 	WRITE_LONG 280 RESOLVE_STR_REF(@10242) /*~ I got me some nice lookin' waitresses, don't I? Eh he hehehe...~[xaa10733]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1260.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10635) /*~Nelik~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10635) /*~Nelik~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1266.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10630) /*~Nelik~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10630) /*~Nelik~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10334) /*~ Nasty times are comin', I reckon.~[xaa11063]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10335) /*~~[xaa11064]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10336) /*~~[xaa11065]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10334) /*~ Nasty times are comin', I reckon.~[xaa11063]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1259.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10636) /*~Turpin~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10636) /*~Turpin~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1265.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10631) /*~Turpin~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10631) /*~Turpin~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10109) /*~ Hullo.~[xaa10116]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10628) /*~~[xaa11868]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10629) /*~~[xaa11869]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10623) /*~~[xaa11852]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10624) /*~~[xaa11853]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10109) /*~ Hullo.~[xaa10116]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1258.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10637) /*~Farluck~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10637) /*~Farluck~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1264.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10632) /*~Farluck~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10632) /*~Farluck~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10122) /*~ 'Ello, pal.~[xaa10145]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10638) /*~ ~[xaa11916]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10639) /*~ ~[xaa11917]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10633) /*~ ~[xaa11900]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10634) /*~ ~[xaa11901]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10122) /*~ 'Ello, pal.~[xaa10145]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1257.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10640) /*~Gorpel Hind~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10640) /*~Gorpel Hind~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1263.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10635) /*~Gorpel Hind~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10635) /*~Gorpel Hind~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10157) /*~ You need somethin', stranger?~[xaa10113]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10641) /*~~[xaa11920]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10642) /*~~[xaa11921]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10636) /*~~[xaa11904]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10637) /*~~[xaa11905]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10157) /*~ You need somethin', stranger?~[xaa10113]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1256.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10643) /*~Waiter~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10643) /*~Waiter~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1262.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10638) /*~Waiter~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10638) /*~Waiter~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10142) /*~ Yes?~[xaa10111]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10110) /*~~[xaa10117]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10111) /*~~[xaa10118]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10142) /*~ Yes?~[xaa10111]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10251) /*~ Get out of my sight! I'll do nothing for you!~*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1253.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10644) /*~Invisible Stalker~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10644) /*~Invisible Stalker~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@10645) /*~~[xaa10594]*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@10646) /*~~[xaa10595]*/
-	WRITE_LONG 208 RESOLVE_STR_REF(@10647) /*~~[xaa11929]*/
-	WRITE_LONG 212 RESOLVE_STR_REF(@10648) /*~~[xaa11930]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10649) /*~~[xaa11931]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10650) /*~ ~[xaa11932]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10645) /*~~[xaa10594]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@10646) /*~~[xaa10595]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@10647) /*~~[xaa11929]*/
-	WRITE_LONG 280 RESOLVE_STR_REF(@10648) /*~~[xaa11930]*/
-	WRITE_LONG 440 RESOLVE_STR_REF(@10645) /*~~[xaa10594]*/
-	WRITE_LONG 444 RESOLVE_STR_REF(@10646) /*~~[xaa10595]*/
-	WRITE_LONG 448 RESOLVE_STR_REF(@10647) /*~~[xaa11929]*/
-	WRITE_LONG 452 RESOLVE_STR_REF(@10648) /*~~[xaa11930]*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1259.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10639) /*~Invisible Stalker~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10639) /*~Invisible Stalker~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@10640) /*~~[xaa10594]*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@10641) /*~~[xaa10595]*/
+	WRITE_LONG 208 RESOLVE_STR_REF(@10642) /*~~[xaa11913]*/
+	WRITE_LONG 212 RESOLVE_STR_REF(@10643) /*~~[xaa11914]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10644) /*~~[xaa11915]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10645) /*~ ~[xaa11916]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10640) /*~~[xaa10594]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@10641) /*~~[xaa10595]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@10642) /*~~[xaa11913]*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@10643) /*~~[xaa11914]*/
+	WRITE_LONG 440 RESOLVE_STR_REF(@10640) /*~~[xaa10594]*/
+	WRITE_LONG 444 RESOLVE_STR_REF(@10641) /*~~[xaa10595]*/
+	WRITE_LONG 448 RESOLVE_STR_REF(@10642) /*~~[xaa11913]*/
+	WRITE_LONG 452 RESOLVE_STR_REF(@10643) /*~~[xaa11914]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1250.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10651) /*~Doom Guard~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10651) /*~Doom Guard~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@10652) /*~~[xaa11941]*/
-	WRITE_LONG 204 RESOLVE_STR_REF(@10653) /*~~[xaa11942]*/
-	WRITE_LONG 208 RESOLVE_STR_REF(@10654) /*~~[xaa11943]*/
-	WRITE_LONG 212 RESOLVE_STR_REF(@10655) /*~~[xaa11944]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10653) /*~~[xaa11942]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10656) /*~ ~[xaa11946]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10652) /*~~[xaa11941]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@10653) /*~~[xaa11942]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@10654) /*~~[xaa11943]*/
-	WRITE_LONG 280 RESOLVE_STR_REF(@10655) /*~~[xaa11944]*/
-	WRITE_LONG 440 RESOLVE_STR_REF(@10652) /*~~[xaa11941]*/
-	WRITE_LONG 444 RESOLVE_STR_REF(@10653) /*~~[xaa11942]*/
-	WRITE_LONG 448 RESOLVE_STR_REF(@10654) /*~~[xaa11943]*/
-	WRITE_LONG 452 RESOLVE_STR_REF(@10655) /*~~[xaa11944]*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1256.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10646) /*~Doom Guard~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10646) /*~Doom Guard~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@10647) /*~~[xaa11925]*/
+	WRITE_LONG 204 RESOLVE_STR_REF(@10648) /*~~[xaa11926]*/
+	WRITE_LONG 208 RESOLVE_STR_REF(@10649) /*~~[xaa11927]*/
+	WRITE_LONG 212 RESOLVE_STR_REF(@10650) /*~~[xaa11928]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10648) /*~~[xaa11926]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10651) /*~ ~[xaa11930]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10647) /*~~[xaa11925]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@10648) /*~~[xaa11926]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@10649) /*~~[xaa11927]*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@10650) /*~~[xaa11928]*/
+	WRITE_LONG 440 RESOLVE_STR_REF(@10647) /*~~[xaa11925]*/
+	WRITE_LONG 444 RESOLVE_STR_REF(@10648) /*~~[xaa11926]*/
+	WRITE_LONG 448 RESOLVE_STR_REF(@10649) /*~~[xaa11927]*/
+	WRITE_LONG 452 RESOLVE_STR_REF(@10650) /*~~[xaa11928]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1249.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10657) /*~Helmed Horror~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10657) /*~Helmed Horror~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@10658) /*~ ~[xaa11955]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10659) /*~ ~[xaa11956]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10660) /*~ ~[xaa11957]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10658) /*~ ~[xaa11955]*/
-	WRITE_LONG 440 RESOLVE_STR_REF(@10661) /*~ ~[xaa11959]*/
-	WRITE_LONG 444 RESOLVE_STR_REF(@10658) /*~ ~[xaa11955]*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1255.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10652) /*~Helmed Horror~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10652) /*~Helmed Horror~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@10653) /*~ ~[xaa11939]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10654) /*~ ~[xaa11940]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10655) /*~ ~[xaa11941]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10653) /*~ ~[xaa11939]*/
+	WRITE_LONG 440 RESOLVE_STR_REF(@10656) /*~ ~[xaa11943]*/
+	WRITE_LONG 444 RESOLVE_STR_REF(@10653) /*~ ~[xaa11939]*/
 
-COPY ~%MOD_FOLDER%\generated\a\cre\xaa1248.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10662) /*~Degrodel~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10662) /*~Degrodel~*/
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1254.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10657) /*~Degrodel~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10657) /*~Degrodel~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10157) /*~ You need somethin', stranger?~[xaa10113]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10091) /*~~[xaa10095]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10092) /*~~[xaa10096]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10157) /*~ You need somethin', stranger?~[xaa10113]*/
 
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1253.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10658) /*~Pheirkas~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10658) /*~Pheirkas~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10659) /*~ A stout hammer will fix most any bandit.~[xaa11949]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10660) /*~~[xaa11950]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10661) /*~~[xaa11951]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10659) /*~ A stout hammer will fix most any bandit.~[xaa11949]*/
+
 COPY ~%MOD_FOLDER%\generated\a\cre\xaa1247.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10663) /*~Pheirkas~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10663) /*~Pheirkas~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10664) /*~ A stout hammer will fix most any bandit.~[xaa11965]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10665) /*~~[xaa11966]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10666) /*~~[xaa11967]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10664) /*~ A stout hammer will fix most any bandit.~[xaa11965]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@10662) /*~Brandilar~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10662) /*~Brandilar~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10121) /*~ What do you need?~[xaa10141]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@10539) /*~ I've a blade with your name on it.~[xaa11600]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10663) /*~ ~[xaa11955]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10664) /*~ ~[xaa11956]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10121) /*~ What do you need?~[xaa10141]*/
+	WRITE_LONG 408 RESOLVE_STR_REF(@10501) /*~ Lost your chance with me, you did! Get lost!~*/
+	WRITE_LONG 412 RESOLVE_STR_REF(@10665) /*~ It is good to see you all again. I'm very busy at the moment, so perhaps we can talk later.~*/
+
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1244.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10236) /*~Bartender~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10236) /*~Bartender~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10237) /*~ You want some whiskey?~[xaa10727]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10238) /*~~[xaa10728]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10239) /*~~[xaa10729]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10237) /*~ You want some whiskey?~[xaa10727]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@10240) /*~ I got some cheap beer for ya.~[xaa10731]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@10241) /*~ Urgh... I gotta stop dippin' into me own ale.~[xaa10732]*/
+	WRITE_LONG 280 RESOLVE_STR_REF(@10242) /*~ I got me some nice lookin' waitresses, don't I? Eh he hehehe...~[xaa10733]*/
+
+COPY ~%MOD_FOLDER%\generated\a\cre\xaa1243.cre~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10266) /*~Cook~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10266) /*~Cook~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10225) /*~ What?~[xaa10647]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10129) /*~~[xaa10163]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10130) /*~~[xaa10164]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10225) /*~ What?~[xaa10647]*/
+	WRITE_LONG 408 RESOLVE_STR_REF(@10666) /*~ Get out or be thrown out!~*/
 
 COPY ~%MOD_FOLDER%\generated\a\cre\xaa1225.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10313) /*~Guard~*/
@@ -4080,7 +4080,7 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1222.cre~ ~override~
 	WRITE_LONG 236 RESOLVE_STR_REF(@10114) /*~~[xaa10125]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10115) /*~~[xaa10126]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10668) /*~ 'Eya, friend.~[xaa11980]*/
-	WRITE_LONG 408 RESOLVE_STR_REF(@10601) /*~ Get out or be thrown out!~*/
+	WRITE_LONG 408 RESOLVE_STR_REF(@10666) /*~ Get out or be thrown out!~*/
 	WRITE_LONG 412 RESOLVE_STR_REF(@10669) /*~ Sorry, no food fer ya right now.~*/
 
 COPY ~%MOD_FOLDER%\generated\a\cre\xaa1220.cre~ ~override~
@@ -4133,10 +4133,10 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1359.cre~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\cre\xaa1353.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10214) /*~Noblewoman~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10214) /*~Noblewoman~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10504) /*~ Do you mind? I'm off to go shopping.~[xaa11501]*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10507) /*~ Do you mind? I'm off to go shopping.~[xaa11515]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10215) /*~~[xaa10628]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10216) /*~~[xaa10629]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10504) /*~ Do you mind? I'm off to go shopping.~[xaa11501]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10507) /*~ Do you mind? I'm off to go shopping.~[xaa11515]*/
 	WRITE_LONG 408 RESOLVE_STR_REF(@10217) /*~ I'll not have you near me!~*/
 
 COPY ~%MOD_FOLDER%\generated\a\cre\xaa1351.cre~ ~override~
@@ -4158,7 +4158,7 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1346.cre~ ~override~
 	WRITE_LONG 236 RESOLVE_STR_REF(@10110) /*~~[xaa10117]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10111) /*~~[xaa10118]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10157) /*~ You need somethin', stranger?~[xaa10113]*/
-	WRITE_LONG 408 RESOLVE_STR_REF(@10559) /*~ Get away from me! I've work to do!~*/
+	WRITE_LONG 408 RESOLVE_STR_REF(@10562) /*~ Get away from me! I've work to do!~*/
 
 COPY ~%MOD_FOLDER%\generated\a\cre\xaa1342.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10266) /*~Cook~*/
@@ -4179,7 +4179,7 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1340.cre~ ~override~
 	WRITE_LONG 268 RESOLVE_STR_REF(@10229) /*~ You need a new tailor; your clothes are absolutely dreadful!~[xaa10660]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@10218) /*~ Don't give me any lip, peasant. Do you know who I am?~[xaa10635]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@10676) /*~ Hmph! Well, I never!~[xaa12028]*/
-	WRITE_LONG 408 RESOLVE_STR_REF(@10561) /*~ Lost your chance with me, you did! Get lost!~*/
+	WRITE_LONG 408 RESOLVE_STR_REF(@10501) /*~ Lost your chance with me, you did! Get lost!~*/
 
 COPY ~%MOD_FOLDER%\generated\a\cre\xaa1334.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10677) /*~Areana~*/
@@ -4233,10 +4233,10 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1371.cre~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\cre\xaa1370.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10688) /*~Gardush~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10688) /*~Gardush~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@10536) /*~ I've a blade with your name on it.~[xaa11586]*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@10539) /*~ I've a blade with your name on it.~[xaa11600]*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@10689) /*~~[xaa12061]*/
 	WRITE_LONG 240 RESOLVE_STR_REF(@10690) /*~~[xaa12062]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@10536) /*~ I've a blade with your name on it.~[xaa11586]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@10539) /*~ I've a blade with your name on it.~[xaa11600]*/
 
 COPY ~%MOD_FOLDER%\generated\a\cre\xaa1369.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10691) /*~Diyab~*/
@@ -4260,8 +4260,8 @@ COPY ~%MOD_FOLDER%\generated\a\cre\xaa1367.cre~ ~override~
 	WRITE_LONG 12 RESOLVE_STR_REF(@10696) /*~Alai~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10697) /*~ You're at the end of your rope, I'll wager!~[xaa12073]*/
 	WRITE_LONG 200 RESOLVE_STR_REF(@10697) /*~ You're at the end of your rope, I'll wager!~[xaa12073]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10638) /*~ ~[xaa11916]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10639) /*~ ~[xaa11917]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10633) /*~ ~[xaa11900]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10634) /*~ ~[xaa11901]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10697) /*~ You're at the end of your rope, I'll wager!~[xaa12073]*/
 
 COPY ~%MOD_FOLDER%\generated\a\cre\xaa1366.cre~ ~override~

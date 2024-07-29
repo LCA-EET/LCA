@@ -1,254 +1,66 @@
 IF
-	RandomNum(3,1)
-	DifficultyGT(EASY)
-	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	HaveSpell(WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
-	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-	!StateCheck(Myself,STATE_SILENCED)
-	OR(4)
-		See([GOODCUTOFF.0.0.BARD_ALL])
-		See([GOODCUTOFF.0.0.DRUID_ALL])
-		See([GOODCUTOFF.0.0.CLERIC_ALL])
-		See([GOODCUTOFF.0.0.MAGE_ALL])
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
-	CheckStatLT(LastSeenBy(Myself),31,RESISTMAGIC)
-	CheckStatLT(LastSeenBy(Myself),31,MAGICDAMAGERESISTANCE)
-	!CheckStat(LastSeenBy(Myself),2,DEFENSIVE_MODIFIER)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
+	Die()
+	Name("bdsindre",Myself)  // Sindret
+	Global("bd_dsc_hostile","bd4000",0)  // Dragonspear Castle, Exterior
+	Global("bd_wranglers_assist","bd4000",1)  // Dragonspear Castle, Exterior
+	Global("bd_sindret_plot","bd4000",3)  // Dragonspear Castle, Exterior
+	Allegiance(Myself,GOODBUTBLUE)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		Spell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
+		SetGlobal("bd_sindret_plot","bd4000",5)  // Dragonspear Castle, Exterior
+		AddJournalEntry(58700,QUEST_DONE)  // Troll Breakout Sindret took on the task of shackling the troll. I bluffed Sindret into attempting to shackle the troll herself. Things did not go well for the crusaders.
 END
 
 IF
-	RandomNum(3,2)
-	DifficultyGT(EASY)
-	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	HaveSpell(WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
-	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-	!StateCheck(Myself,STATE_SILENCED)
-	OR(4)
-		See(SecondNearest([GOODCUTOFF.0.0.BARD_ALL]))
-		See(SecondNearest([GOODCUTOFF.0.0.DRUID_ALL]))
-		See(SecondNearest([GOODCUTOFF.0.0.CLERIC_ALL]))
-		See(SecondNearest([GOODCUTOFF.0.0.MAGE_ALL]))
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
-	CheckStatLT(LastSeenBy(Myself),31,RESISTMAGIC)
-	CheckStatLT(LastSeenBy(Myself),31,MAGICDAMAGERESISTANCE)
-	!CheckStat(LastSeenBy(Myself),2,DEFENSIVE_MODIFIER)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
+	Global("bd_ai_controls","locals",0)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		Spell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
+		SetGlobal("bd_ai_controls","locals",1)
+		SetGlobal("bd_no_retreat","locals",1)
+		SetGlobal("bd_no_search","locals",1)
 END
 
 IF
-	RandomNum(3,3)
-	DifficultyGT(EASY)
-	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	HaveSpell(WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
-	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-	!StateCheck(Myself,STATE_SILENCED)
-	OR(4)
-		See(ThirdNearest([GOODCUTOFF.0.0.BARD_ALL]))
-		See(ThirdNearest([GOODCUTOFF.0.0.DRUID_ALL]))
-		See(ThirdNearest([GOODCUTOFF.0.0.CLERIC_ALL]))
-		See(ThirdNearest([GOODCUTOFF.0.0.MAGE_ALL]))
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
-	CheckStatLT(LastSeenBy(Myself),31,RESISTMAGIC)
-	CheckStatLT(LastSeenBy(Myself),31,MAGICDAMAGERESISTANCE)
-	!CheckStat(LastSeenBy(Myself),2,DEFENSIVE_MODIFIER)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
+	Global("bd_dsc_hostile","bd4000",0)  // Dragonspear Castle, Exterior
+	Global("bd_troll_wrangled","bd4000",1)  // Dragonspear Castle, Exterior
+	Global("bd_wranglers_assist","bd4000",1)  // Dragonspear Castle, Exterior
+	Allegiance(Myself,GOODBUTBLUE)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		Spell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
+		ChangeEnemyAlly(Myself,NEUTRAL)
+		ChangeSpecifics(Myself,CRUSADERS)
 END
 
 IF
-	RandomNum(6,1)
-	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	HaveSpell(WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
-	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-	!StateCheck(Myself,STATE_SILENCED)
-	See(NearestEnemyOf(Myself))
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
-	CheckStatLT(LastSeenBy(Myself),31,RESISTMAGIC)
-	CheckStatLT(LastSeenBy(Myself),31,MAGICDAMAGERESISTANCE)
-	!CheckStat(LastSeenBy(Myself),2,DEFENSIVE_MODIFIER)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
+	Global("bd_dsc_hostile","bd4000",0)  // Dragonspear Castle, Exterior
+	Global("bd_wranglers_assist","bd4000",0)  // Dragonspear Castle, Exterior
+	Global("bd_troll_wrangled","bd4000",0)  // Dragonspear Castle, Exterior
+	Allegiance(Myself,NEUTRAL)
+	Range([ENEMY.0.TROLL],15)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		Spell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
+		SetGlobal("bd_wranglers_assist","bd4000",1)  // Dragonspear Castle, Exterior
+		ChangeEnemyAlly(Myself,GOODBUTBLUE)
+		ChangeSpecifics(Myself,NEUTRALS)
 END
 
 IF
-	RandomNum(6,2)
-	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	HaveSpell(WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
-	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-	!StateCheck(Myself,STATE_SILENCED)
-	See(SecondNearestEnemyOf(Myself))
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
-	CheckStatLT(LastSeenBy(Myself),31,RESISTMAGIC)
-	CheckStatLT(LastSeenBy(Myself),31,MAGICDAMAGERESISTANCE)
-	!CheckStat(LastSeenBy(Myself),2,DEFENSIVE_MODIFIER)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
+	Global("bd_dsc_hostile","bd4000",0)  // Dragonspear Castle, Exterior
+	Global("bd_wranglers_assist","bd4000",1)  // Dragonspear Castle, Exterior
+	Global("bd_troll_wrangled","bd4000",0)  // Dragonspear Castle, Exterior
+	Allegiance(Myself,NEUTRAL)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		Spell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
+		ChangeEnemyAlly(Myself,GOODBUTBLUE)
+		ChangeSpecifics(Myself,NEUTRALS)
 END
 
 IF
-	RandomNum(6,3)
-	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	HaveSpell(WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
-	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-	!StateCheck(Myself,STATE_SILENCED)
-	See(ThirdNearestEnemyOf(Myself))
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
-	CheckStatLT(LastSeenBy(Myself),31,RESISTMAGIC)
-	CheckStatLT(LastSeenBy(Myself),31,MAGICDAMAGERESISTANCE)
-	!CheckStat(LastSeenBy(Myself),2,DEFENSIVE_MODIFIER)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
+	GlobalGT("bd_sindret_plot","bd4000",4)  // Dragonspear Castle, Exterior
+	Global("bd_dsc_hostile","bd4000",0)  // Dragonspear Castle, Exterior
+	!Allegiance(Myself,ENEMY)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		Spell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
-END
-
-IF
-	RandomNum(6,4)
-	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	HaveSpell(WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
-	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-	!StateCheck(Myself,STATE_SILENCED)
-	See(FourthNearestEnemyOf(Myself))
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
-	CheckStatLT(LastSeenBy(Myself),31,RESISTMAGIC)
-	CheckStatLT(LastSeenBy(Myself),31,MAGICDAMAGERESISTANCE)
-	!CheckStat(LastSeenBy(Myself),2,DEFENSIVE_MODIFIER)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
-THEN
-	RESPONSE #100
-		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		Spell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
-END
-
-IF
-	RandomNum(6,5)
-	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	HaveSpell(WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
-	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-	!StateCheck(Myself,STATE_SILENCED)
-	See(FifthNearestEnemyOf(Myself))
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
-	CheckStatLT(LastSeenBy(Myself),31,RESISTMAGIC)
-	CheckStatLT(LastSeenBy(Myself),31,MAGICDAMAGERESISTANCE)
-	!CheckStat(LastSeenBy(Myself),2,DEFENSIVE_MODIFIER)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
-THEN
-	RESPONSE #100
-		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		Spell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
-END
-
-IF
-	RandomNum(6,6)
-	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	HaveSpell(WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
-	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-	!StateCheck(Myself,STATE_SILENCED)
-	See(SixthNearestEnemyOf(Myself))
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
-	CheckStatLT(LastSeenBy(Myself),31,RESISTMAGIC)
-	CheckStatLT(LastSeenBy(Myself),31,MAGICDAMAGERESISTANCE)
-	!CheckStat(LastSeenBy(Myself),2,DEFENSIVE_MODIFIER)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
-THEN
-	RESPONSE #100
-		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		Spell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
-END
-
-IF
-	!GlobalTimerNotExpired("BD_Cast","LOCALS")
-	HaveSpell(WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
-	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-	!StateCheck(Myself,STATE_SILENCED)
-	See(NearestEnemyOf(Myself))
-	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
-	CheckStatLT(LastSeenBy(Myself),31,RESISTMAGIC)
-	CheckStatLT(LastSeenBy(Myself),31,MAGICDAMAGERESISTANCE)
-	!CheckStat(LastSeenBy(Myself),2,DEFENSIVE_MODIFIER)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-	!CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-	!CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-	!CheckStat(LastSeenBy(Myself),6,WIZARD_SPELL_IMMUNITY)
-THEN
-	RESPONSE #100
-		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
-		Spell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magic Missile)
+		EscapeArea()
 END
 

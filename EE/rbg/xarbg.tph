@@ -2,7 +2,7 @@ PRINT @4000  /* ~Processing Return to Baldur's Gate Changes...~ */
 
 SILENT
 
-OUTER_SET xa_regenerate = 0 // set to 1 to regenerate areas, 0 (default) to copy pre-generated areas
+OUTER_SET xa_regenerate = 1 // set to 1 to regenerate areas, 0 (default) to copy pre-generated areas
 
 //{ WAV
 	COPY ~%MOD_FOLDER%/rbg/wav~ ~override~
@@ -3941,11 +3941,71 @@ SILENT
 				
 				LPF xa_add_extras_rescript
 					INT_VAR
-						xa_minX = 1000
-						xa_maxX = 1980
-						xa_minY = 1400
-						xa_maxY = 2800
-						xa_numToGenerate = 50
+						xa_minX = 962
+						xa_maxX = 2163
+						xa_minY = 2446
+						xa_maxY = 2782
+						xa_numToGenerate = 30
+						xa_poolSize = 15
+						xa_orientation = 16 // random
+					STR_VAR 
+						xa_override = ~xag1coal~
+						xa_general = ~xac130~ // bdfmcl01
+						xa_class = ~xacrtyrd~
+				END
+				
+				LPF xa_add_extras_rescript
+					INT_VAR
+						xa_minX = 984
+						xa_maxX = 1110
+						xa_minY = 1298
+						xa_maxY = 1990
+						xa_numToGenerate = 10
+						xa_poolSize = 15
+						xa_orientation = 16 // random
+					STR_VAR 
+						xa_override = ~xag1coal~
+						xa_general = ~xac130~ // bdfmcl01
+						xa_class = ~xacrtyrd~
+				END
+				
+				LPF xa_add_extras_rescript
+					INT_VAR
+						xa_minX = 1668
+						xa_maxX = 1987
+						xa_minY = 1588
+						xa_maxY = 1728
+						xa_numToGenerate = 10
+						xa_poolSize = 15
+						xa_orientation = 16 // random
+					STR_VAR 
+						xa_override = ~xag1coal~
+						xa_general = ~xac130~ // bdfmcl01
+						xa_class = ~xacrtyrd~
+				END
+				
+				LPF xa_add_extras_rescript
+					INT_VAR
+						xa_minX = 2771
+						xa_maxX = 3279
+						xa_minY = 2747
+						xa_maxY = 3021
+						xa_numToGenerate = 10
+						xa_poolSize = 15
+						xa_orientation = 16 // random
+					STR_VAR 
+						xa_override = ~xag1coal~
+						xa_general = ~xac130~ // bdfmcl01
+						xa_class = ~xacrtyrd~
+				END
+				
+				LPF xa_add_extras_rescript
+					INT_VAR
+						xa_minX = 1894
+						xa_maxX = 2153
+						xa_minY = 2128
+						xa_maxY = 2378
+						xa_numToGenerate = 12
 						xa_poolSize = 15
 						xa_orientation = 16 // random
 					STR_VAR 
@@ -4012,9 +4072,9 @@ SILENT
 					xac190 // bdcrus36
 					xac213 // bdcrus38
 					xac202 // bdcrus39
-					xag110 // bdcrus5d
-					xag139 // bdcrus6d
-					xag140 // bdcrus7d
+					//xag110 // bdcrus5d
+					//xag139 // bdcrus6d
+					//xag140 // bdcrus7d
 					xac254 // bdcrus90
 					xac256 // bdcrus93
 					xac231 // bdcrus95
@@ -4025,12 +4085,72 @@ SILENT
 				
 				LPF xa_add_extras_rescript
 					INT_VAR
-						xa_minX = 1000
-						xa_maxX = 1980
-						xa_minY = 1400
-						xa_maxY = 2800
-						xa_numToGenerate = 64
-						xa_poolSize = 64
+						xa_minX = 962
+						xa_maxX = 2163
+						xa_minY = 2446
+						xa_maxY = 2782
+						xa_numToGenerate = 40
+						xa_poolSize = 61
+						xa_orientation = 16 // random
+					STR_VAR 
+						xa_override = ~xag1crus~
+						xa_general = ~xac130~ // bdfmcl01
+						xa_class = ~xacrtyrd~
+				END
+				
+				LPF xa_add_extras_rescript
+					INT_VAR
+						xa_minX = 984
+						xa_maxX = 1110
+						xa_minY = 1298
+						xa_maxY = 1990
+						xa_numToGenerate = 10
+						xa_poolSize = 61
+						xa_orientation = 16 // random
+					STR_VAR 
+						xa_override = ~xag1crus~
+						xa_general = ~xac130~ // bdfmcl01
+						xa_class = ~xacrtyrd~
+				END
+				
+				LPF xa_add_extras_rescript
+					INT_VAR
+						xa_minX = 1668
+						xa_maxX = 1987
+						xa_minY = 1588
+						xa_maxY = 1728
+						xa_numToGenerate = 10
+						xa_poolSize = 61
+						xa_orientation = 16 // random
+					STR_VAR 
+						xa_override = ~xag1crus~
+						xa_general = ~xac130~ // bdfmcl01
+						xa_class = ~xacrtyrd~
+				END
+				
+				LPF xa_add_extras_rescript
+					INT_VAR
+						xa_minX = 2771
+						xa_maxX = 3279
+						xa_minY = 2747
+						xa_maxY = 3021
+						xa_numToGenerate = 10
+						xa_poolSize = 61
+						xa_orientation = 16 // random
+					STR_VAR 
+						xa_override = ~xag1crus~
+						xa_general = ~xac130~ // bdfmcl01
+						xa_class = ~xacrtyrd~
+				END
+				
+				LPF xa_add_extras_rescript
+					INT_VAR
+						xa_minX = 1894
+						xa_maxX = 2153
+						xa_minY = 2128
+						xa_maxY = 2378
+						xa_numToGenerate = 12
+						xa_poolSize = 61
 						xa_orientation = 16 // random
 					STR_VAR 
 						xa_override = ~xag1crus~

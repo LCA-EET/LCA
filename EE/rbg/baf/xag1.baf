@@ -1,7 +1,7 @@
 IF
+	Dead("xadrake0")
 	Dead("xadrake1")
 	Dead("xadrake2")
-	Dead("xadrake3")
 	GlobalLT("XA_LC_G1_Dragon", "GLOBAL", 1)
 	!StateCheck(Player1, STATE_HELPLESS)
 THEN

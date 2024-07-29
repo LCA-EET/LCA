@@ -5,8 +5,8 @@ THEN
 		DialogInterrupt(FALSE)
 		Recoil()
 		SmallWait(6)
-		CreateCreature("FLAMEN",[553.407],NNW)  // Flaming Fist Enforcer
-		CreateCreature("FLAMEN2",[553.455],NNW)  // Flaming Fist Enforcer
-		CreateCreature("FLAMEN2",[595.432],NNW)  // Flaming Fist Enforcer
+		CreateCreature("FLAMEN",[425.362],NW)  // Flaming Fist Enforcer
+		CreateCreature("FLAMEN2",[400.370],NW)  // Flaming Fist Enforcer
+		CreateCreature("FLAMEN2",[435.340],NW)  // Flaming Fist Enforcer
 END
 

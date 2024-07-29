@@ -1,7 +1,7 @@
 // creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
-// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BRANDI.DLG
+// argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\JHASSO.DLG
 // game     : F:\Baldur's Gate EE\00766
-// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\BRANDI.DLG
+// source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\JHASSO.DLG
 // dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
@@ -10,151 +10,118 @@ BEGIN ~XAA338~
 // WARNING: this file contains non-trivial WEIGHTs
 //////////////////////////////////////////////////
 
-IF WEIGHT #7 /* Triggers after states #: 7 12 13 14 15 16 17 even though they appear after this state */
-~  Global("TalkToBrandilar","GLOBAL",1)
+IF WEIGHT #1 /* Triggers after states #: 16 even though they appear after this state */
+~  NumTimesTalkedTo(0)
 ~ THEN BEGIN 0 // from:
-  SAY @1 /* ~Hold! I'm Brandilar, commander of the household guard. As the commander of security here, I must ask you a question: I've known Aldeth since he was a kid, and I don't recognize you from no place. Who are you really?~ #1084 */
-  IF ~~ THEN REPLY @3 /* ~We're his childhood friends. You don't think we're lying, do you?~ #1236 */ DO ~SetGlobal("TalkToBrandilar","GLOBAL",2)
-~ UNSOLVED_JOURNAL @2 /* ~Investigating the Merchants' League Estate
-A man named Brandilar commands the guards of the Merchants' League Estate.~ #26823 */ GOTO 3
-  IF ~~ THEN REPLY @4 /* ~If you must know, we've been hired to investigate Aldeth's partners. They seem to be trying to run the business into the ground.~ #1237 */ DO ~SetGlobal("TalkToBrandilar","GLOBAL",2)
-~ UNSOLVED_JOURNAL @2 /* ~Investigating the Merchants' League Estate
-A man named Brandilar commands the guards of the Merchants' League Estate.~ #26823 */ GOTO 4
+  SAY @1 /* ~Well, you'll get naught from me this day, not a cry of pain nor the knowledge in my noggin. Get away from me, shapeshifter scum.~ #1011 */
+  IF ~  Global("TalkedToScar","GLOBAL",1)
+~ THEN REPLY @2 /* ~We're not the shapeshifter you speak of. We're friends, sent by Scar to see what's been going wrong here at the Seven Suns. Who are you?~ #1018 */ GOTO 4
+  IF ~~ THEN REPLY @3 /* ~Ha ha ha, we've come to torture you.~ #1019 */ GOTO 1
+  IF ~~ THEN REPLY @4 /* ~We're not here to torture you, we're here to save you.~ #1020 */ GOTO 2
 END
 
-IF WEIGHT #8 /* Triggers after states #: 7 12 13 14 15 16 17 even though they appear after this state */
-~  ReactionGT(LastTalkedToBy,HOSTILE_UPPER)
-NumTimesTalkedTo(0)
-~ THEN BEGIN 1 // from:
-  SAY @5 /* ~Hold! I'm commander Brandilar, I lead the household guard. You must be the people Aldeth brought back with him, his so-called "childhood friends." That likely story might have hoodwinked some of the others, but I've known Aldeth since he was a kid, and none of you ring any bells.~ #1085 */
-  IF ~~ THEN REPLY @6 /* ~That's 'cause we're all older now.~ #1238 */ UNSOLVED_JOURNAL @2 /* ~Investigating the Merchants' League Estate
-A man named Brandilar commands the guards of the Merchants' League Estate.~ #26823 */ GOTO 3
-  IF ~~ THEN REPLY @7 /* ~Don't you know, Aldeth has hired us on to investigate his partners? They've been acting strangely of late.~ #1239 */ UNSOLVED_JOURNAL @2 /* ~Investigating the Merchants' League Estate
-A man named Brandilar commands the guards of the Merchants' League Estate.~ #26823 */ GOTO 4
+IF ~~ THEN BEGIN 1 // from: 2.0 0.1
+  SAY @5 /* ~As I said before, you'll get nothing from me.~ #1012 */
+  IF ~~ THEN EXIT
 END
 
-IF WEIGHT #9 /* Triggers after states #: 7 12 13 14 15 16 17 even though they appear after this state */
-~  ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
-NumTimesTalkedTo(0)
-~ THEN BEGIN 2 // from:
-  SAY @8 /* ~You there! I don't care if you're the guests of Aldeth, you just make sure you don't cause any trouble while you're here. I'm commander Brandilar, leader of the household guard. If a problem arises, you better be sure I'll hear of it.~ #1086 */
-  IF ~~ THEN UNSOLVED_JOURNAL @2 /* ~Investigating the Merchants' League Estate
-A man named Brandilar commands the guards of the Merchants' League Estate.~ #26823 */ EXIT
+IF ~~ THEN BEGIN 2 // from: 0.2
+  SAY @6 /* ~You think I believe that, you shapeshifting scum? I know your tricks, and that one won't work no more.~ #1013 */
+  IF ~~ THEN REPLY @7 /* ~It's not a trick, trust us.~ #1021 */ GOTO 1
+  IF ~  Global("TalkedToScar","GLOBAL",1)
+~ THEN REPLY @8 /* ~Think what you want, we've been sent by Scar to find Jhasso, could you help us?~ #1022 */ GOTO 3
+  IF ~~ THEN REPLY @9 /* ~Fine with us. Goodbye.~ #1023 */ EXIT
 END
 
-IF ~~ THEN BEGIN 3 // from: 1.0 0.0
-  SAY @9 /* ~I don't like liars, but I'll give you another chance. Perhaps you're suspicious of me, but I've known Aldeth much longer than you have. Now who are you?~ #1087 */
-  IF ~~ THEN REPLY @10 /* ~We're his long-lost brothers and sisters.~ #1240 */ GOTO 5
-  IF ~~ THEN REPLY @11 /* ~Okay, you've cracked our disguise, we're actually investigators hired on to learn as much as possible about Aldeth's business partners. He seems to think that they've gone mad.~ #1241 */ GOTO 4
+IF ~~ THEN BEGIN 3 // from: 2.1
+  SAY @10 /* ~Jhasso? I'm Jhasso. You know Scar? You might be telling the truth. Is my torment to finally end?~ #1014 */
+  IF ~~ THEN REPLY @11 /* ~If you're Jhasso, then you might have an idea of what's been going on here. Tell us everything.~ #1024 */ GOTO 6
+  IF ~~ THEN REPLY @12 /* ~We don't have time to chat with you. Come with us, we can get you out of here.~ #1025 */ EXIT
+  IF ~~ THEN REPLY @13 /* ~Bye-bye, Jhasso. You can make it out on your own.~ #1026 */ EXIT
 END
 
-IF ~~ THEN BEGIN 4 // from: 3.1 1.1 0.1
-  SAY @12 /* ~I'm glad you've been honest with me. To tell you the truth, I've been somewhat suspicious of my other employers as well. They haven't been themselves, and they seem to have a completely callous outlook on the future of their business. I'd almost have to say that Irlentree and Zorl aren't who they say they are, or they've had their minds taken over, or some other rot. Unfortunately, there's nothing I can do because they're my employers. I might be able to turn a blind eye if you were to investigate what they've been doing. If you can find some hard proof that exposes what's been happening, I might be able to do something about this whole mess. What do you say?~ #1088 */
-  IF ~~ THEN REPLY @14 /* ~Sure, we might as well work together.~ #1242 */ UNSOLVED_JOURNAL @13 /* ~Investigating the Merchants' League Estate
-Brandilar, the commander of the Merchants' League Estate's guards, is suspicious of Zorl and Irlentree, two of the organization's leaders.~ #26824 */ GOTO 6
-  IF ~~ THEN REPLY @15 /* ~We only work for Aldeth.~ #1243 */ DO ~SetGlobal("BrandilarDenied","GLOBAL",1)
-~ UNSOLVED_JOURNAL @13 /* ~Investigating the Merchants' League Estate
-Brandilar, the commander of the Merchants' League Estate's guards, is suspicious of Zorl and Irlentree, two of the organization's leaders.~ #26824 */ GOTO 5
+IF ~~ THEN BEGIN 4 // from: 0.0
+  SAY @14 /* ~You know Scar? I'm Jhasso, a friend of his and the owner of the Seven Suns. You have to help me get out of here!~ #1015 */
+  IF ~~ THEN REPLY @15 /* ~It's good that we found you. Now we can find out what's been going on here. Before we take you anywhere, could you tell us what has been going on?~ #1027 */ GOTO 6
+  IF ~~ THEN REPLY @16 /* ~You can find your own way out, if you're really Jhasso.~ #1029 */ GOTO 18
 END
 
-IF ~~ THEN BEGIN 5 // from: 4.1 3.0
-  SAY @16 /* ~If you're going to be this way, then there is nothing more to talk about.~ #1089 */
-  IF ~~ THEN DO ~SetGlobal("LiedBrandilar","GLOBAL",1)
-~ EXIT
+IF ~~ THEN BEGIN 5 // from:
+  SAY @17 /* ~Now that we're free of those monsters, I can tell you what's been going on.~ #1016 */
+  IF ~~ THEN GOTO 6
 END
 
-IF ~~ THEN BEGIN 6 // from: 4.0
-  SAY @17 /* ~If you find anything, come back and see me immediately.~ #1090 */
-  IF ~~ THEN DO ~SetGlobal("HelpBrandilar","GLOBAL",1)
-~ UNSOLVED_JOURNAL @18 /* ~Investigating the Merchants' League Estate
-I should report any suspicious findings about Zorl and Irlentree to Brandilar.~ #26825 */ EXIT
+IF ~~ THEN BEGIN 6 // from: 5.0 4.0 3.0
+  SAY @18 /* ~Those creatures, the shapeshifters, started infiltrating the Seven Suns some months ago. They must have started with some of the less important members of my coster. Eventually they captured me, and their leader took my face. They've been keeping me alive in order to gain information that they need through torture. I don't know what their purpose is, but they have been running my business very poorly. All of you will be well rewarded for rescuing me. When you meet Scar again, he will give you my reward. I must be off now, as there is much of the monsters' work to be undone. I assume you've dealt with the other monsters upstairs. If you haven't, I'll get the Flaming Fist to clear out the rest. It'll probably be weeks before we can clean out their stench.~ #1017 */
+  IF ~~ THEN DO ~EscapeArea()
+~ UNSOLVED_JOURNAL @19 /* ~The Seven Suns
+We've learned from Jhasso that a group of shapeshifting creatures has taken over the Seven Suns trading coster.~ #27186 */ EXIT
 END
 
-IF WEIGHT #1 /* Triggers after states #: 12 even though they appear after this state */
-~  Global("HelpBrandilar","GLOBAL",1)
+IF WEIGHT #2 /* Triggers after states #: 16 even though they appear after this state */
+~  Global("Chapter","GLOBAL",7)
 ~ THEN BEGIN 7 // from:
-  SAY @19 /* ~How has your investigation fared? Have you found anything that may be of use?~ #1091 */
-  IF ~~ THEN REPLY @20 /* ~No such luck just yet.~ #1244 */ GOTO 8
-  IF ~~ THEN REPLY @21 /* ~We've heard and seen quite a few things, but we haven't found any hard evidence.~ #1245 */ GOTO 9
-  IF ~  OR(3)
-PartyHasItem("scrl2o")
-PartyHasItem("scrl2p")
-PartyHasItem("scrl2q")
-~ THEN REPLY @22 /* ~We found some documents that you might find very interesting.~ #1246 */ GOTO 10
+  SAY @20 /* ~It is good to see you all again friends. I've been hearing quite a few rumors about you, all of which are undoubtedly untrue.~ #1783 */
+  IF ~~ THEN JOURNAL @21 /* ~Rising Tensions with Amn
+Rumors are flying about town that we're Amnian spies.~ #27187 */ GOTO 8
 END
 
 IF ~~ THEN BEGIN 8 // from: 7.0
-  SAY @23 /* ~That's unfortunate.~ #1092 */
+  SAY @22 /* ~So, do you know all the rumors flying about town? Seems people think you're Amnian spies, and that you've murdered the leaders of the Iron Throne. Does any of that have any truth to it?~ #1784 */
+  IF ~~ THEN REPLY @23 /* ~Not a bit, we were framed.~ #1792 */ GOTO 11
+  IF ~~ THEN REPLY @24 /* ~We killed the Iron Throne leaders, they had it coming.~ #1793 */ GOTO 9
+END
+
+IF ~~ THEN BEGIN 9 // from: 8.1
+  SAY @25 /* ~That's too bad, I cannot harbor criminals. I'm going to have to ask you to leave.~ #1785 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 9 // from: 7.1
-  SAY @24 /* ~Well, keep trying.~ #1093 */
+IF ~~ THEN BEGIN 10 // from:
+  SAY @26 /* ~Guards! Will you please escort these unwanted guests from the premises?~ #1786 */
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 10 // from: 7.2
-  SAY @25 /* ~Show me what you've found.~ #1094 */
-  IF ~~ THEN REPLY @26 /* ~Sorry, only Aldeth gets to see this stuff.~ #1247 */ EXIT
-  IF ~~ THEN REPLY @27 /* ~Here, take a look.~ #1248 */ DO ~TakePartyItem("scrl2o")
-TakePartyItem("scrl2p")
-TakePartyItem("scrl2q")
-~ GOTO 11
+IF ~~ THEN BEGIN 11 // from: 8.0
+  SAY @27 /* ~I'm glad to hear it. I never took any of you to be the murderin' type. Well then, have you heard all the other rumors flying about the city? Seems that Commander Scar, of the Flaming Fist, has been assassinated. Even worse, Grand Duke Eltan has come down with some sort of magical illness. It was those two who first hired you to save my company from the wretched doppelgangers, so I owe them a lot. Do you think you'd be up to investigate what's wrong with Duke Eltan? I know it'd be tough with you wanted and all, but there's no one else who I think is up to the job.~ #1787 */
+  IF ~~ THEN REPLY @28 /* ~I don't think we're up to it. Sorry.~ #1794 */ GOTO 12
+  IF ~~ THEN REPLY @29 /* ~What is it exactly that you want us to do?~ #1795 */ GOTO 13
 END
 
-IF ~~ THEN BEGIN 11 // from: 10.1
-  SAY @28 /* ~This is exactly what I need. Irlentree and Zorl are obviously doppelgangers! I want you to track down and kill every one of those monstrous shapeshifters.~ #1095 */
-  IF ~~ THEN DO ~SetGlobal("HelpBrandilar","GLOBAL",2)
-SetGlobal("ZorlDopple","GLOBAL",1)
-SetGlobal("AldethMove","GLOBAL",3)
-~ EXIT
+IF ~~ THEN BEGIN 12 // from: 11.0
+  SAY @30 /* ~Well, I guess there's nothing more to talk about; perhaps we'll meet again.~ #1788 */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 13 // from: 11.1
+  SAY @31 /* ~I think it would be best to investigate the site where Scar was murdered. He was killed at the Blushing Mermaid tavern. I have no idea why he was there, but if you do some questioning you might learn something.~ #1789 */
+  IF ~~ THEN REPLY @32 /* ~We'll look into it. Do you have anything more for us?~ #1796 */ GOTO 14
+  IF ~~ THEN REPLY @33 /* ~Doesn't sound like a promising enough lead. We have other things on our agenda, we'll have to pass up on this one.~ #1797 */ GOTO 15
+END
+
+IF ~~ THEN BEGIN 14 // from: 13.0
+  SAY @34 /* ~I don't have anything more for you at the moment. I wish you luck.~ #1790 */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 15 // from: 13.1
+  SAY @35 /* ~I'm disappointed, but I guess that's how things have to be.~ #1791 */
+  IF ~~ THEN EXIT
 END
 
 IF WEIGHT #0 ~  StateCheck(Myself,STATE_CHARMED)
-~ THEN BEGIN 12 // from:
-  SAY @29 /* ~I am commander of the Merchants' League Estate household guard. I have noticed that my employers, Irlentree and Zorl, have been acting very strangely recently.~ #6062 */
-  IF ~~ THEN UNSOLVED_JOURNAL @13 /* ~Investigating the Merchants' League Estate
-Brandilar, the commander of the Merchants' League Estate's guards, is suspicious of Zorl and Irlentree, two of the organization's leaders.~ #26824 */ EXIT
-END
-
-IF WEIGHT #5 /* Triggers after states #: 15 16 17 even though they appear after this state */
-~  Global("HelpBrandilar","GLOBAL",3)
-~ THEN BEGIN 13 // from:
-  SAY @30 /* ~It is good to see you all again. I'm very busy at the moment, so perhaps we can talk later.~ #6065 */
-  IF ~~ THEN EXIT
-END
-
-IF WEIGHT #6 /* Triggers after states #: 15 16 17 even though they appear after this state */
-~  GlobalGT("LiedBrandilar","GLOBAL",0)
-~ THEN BEGIN 14 // from:
-  SAY @31 /* ~Lost your chance with me, you did! Get lost!~ #8949 */
-  IF ~~ THEN EXIT
-END
-
-IF WEIGHT #4 /* Triggers after states #: 16 17 even though they appear after this state */
-~  Global("HelpBrandilar","GLOBAL",2)
-GlobalLT("AldethDopple","GLOBAL",16)
-~ THEN BEGIN 15 // from:
-  SAY @32 /* ~There are still more doppelgangers. We won't be safe until you've killed them all.~ #935 */
-  IF ~~ THEN EXIT
-END
-
-IF WEIGHT #3 /* Triggers after states #: 17 even though they appear after this state */
-~  GlobalGT("AldethDopple","GLOBAL",15)
-Global("HelpBrandilar","GLOBAL",2)
 ~ THEN BEGIN 16 // from:
-  SAY @33 /* ~You've done very well! I'm glad to have worked with such as you. Aldeth should have your reward, if he hasn't already given it to you.~ #951 */
-  IF ~~ THEN DO ~SetGlobal("HelpBrandilar","GLOBAL",3)
-~ EXIT
+  SAY @36 /* ~Sorry, my friends, but I have very little information to give you. I have been a captive of the doppelgangers for quite a time, and am out of touch with the politics of my beloved city.~ #6272 */
+  IF ~~ THEN EXIT
 END
 
-IF WEIGHT #2 ~  GlobalGT("AldethDopple","GLOBAL",15)
-Global("HelpBrandilar","GLOBAL",2)
-OR(2)
-GlobalGT("LiedBrandilar","GLOBAL",0)
-ReactionLT(LastTalkedToBy,NEUTRAL_LOWER)
-~ THEN BEGIN 17 // from:
-  SAY @34 /* ~Surprisingly, you've done very well! Aldeth should have your reward, if he hasn't already given it to you.~ #32196 */
-  IF ~~ THEN DO ~SetGlobal("HelpBrandilar","GLOBAL",3)
+IF ~~ THEN BEGIN 17 // from:
+  SAY @37 /* ~You're barely better than my captors! Leave me!~ #9204 */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 18 // from: 4.1
+  SAY @38 /* ~All right then, that's just what I'll do.~ #10087 */
+  IF ~~ THEN DO ~EscapeArea()
 ~ EXIT
 END

@@ -321,8 +321,8 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac110.cre~ ~override~
 	WRITE_LONG 12 RESOLVE_STR_REF(@10922) /*~Gorion~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10923) /*~ Ahhh, my child, I am glad I have found you.~[xac10173]*/
 	WRITE_LONG 184 RESOLVE_STR_REF(@10924) /*~ Run, child! Get out of here!~[xac10174]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10925) /*~ ~[xaa11532]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10926) /*~ ~[xaa11533]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10925) /*~ ~[xaa11546]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10926) /*~ ~[xaa11547]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10927) /*~ You must learn to be patient, child.~[xac10177]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@10928) /*~ Everything will be explained to you in time.~[xac10178]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@10929) /*~ *cough* *cough* I'm too old for this.~[xac10179]*/
@@ -379,10 +379,10 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac117.cre~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\cre\xac118.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10953) /*~Rhayla~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10953) /*~Rhayla~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10954) /*~ ~[xaa11537]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10955) /*~ ~[xaa11538]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10954) /*~ ~[xaa11551]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10955) /*~ ~[xaa11552]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10956) /*~ Good day and hello to you.~[xac10198]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@10957) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11536]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@10957) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11550]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@10958) /*~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac119.cre~ ~override~
@@ -398,12 +398,12 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac120.cre~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\cre\xac121.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10963) /*~Daggerford Militia~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10963) /*~Daggerford Militia~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@10964) /*~ By Moradin's hammer.~[xaa11609]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10965) /*~~[xaa11610]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10966) /*~~[xaa11611]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@10964) /*~ By Moradin's hammer.~[xaa11623]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10965) /*~~[xaa11624]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10966) /*~~[xaa11625]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10967) /*~ I need a swig o' some strong dwarven ale.~[xac10223]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@10968) /*~ Me temper's bad enough without ye botherin' me.~[xaa11608]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@10969) /*~ Your chatterin's startin' to wear on me nerves.~[xaa11613]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@10968) /*~ Me temper's bad enough without ye botherin' me.~[xaa11622]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@10969) /*~ Your chatterin's startin' to wear on me nerves.~[xaa11627]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac122.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10963) /*~Daggerford Militia~*/
@@ -490,12 +490,12 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac132.cre~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\cre\xac133.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10996) /*~Waterdhavian Soldier~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10996) /*~Waterdhavian Soldier~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@10964) /*~ By Moradin's hammer.~[xaa11609]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10965) /*~~[xaa11610]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10966) /*~~[xaa11611]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@10964) /*~ By Moradin's hammer.~[xaa11623]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10965) /*~~[xaa11624]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10966) /*~~[xaa11625]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10967) /*~ I need a swig o' some strong dwarven ale.~[xac10223]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@10968) /*~ Me temper's bad enough without ye botherin' me.~[xaa11608]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@10969) /*~ Your chatterin's startin' to wear on me nerves.~[xaa11613]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@10968) /*~ Me temper's bad enough without ye botherin' me.~[xaa11622]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@10969) /*~ Your chatterin's startin' to wear on me nerves.~[xaa11627]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac134.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10996) /*~Waterdhavian Soldier~*/
@@ -507,10 +507,10 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac134.cre~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\cre\xac135.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@10996) /*~Waterdhavian Soldier~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@10996) /*~Waterdhavian Soldier~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10954) /*~ ~[xaa11537]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10955) /*~ ~[xaa11538]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10954) /*~ ~[xaa11551]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10955) /*~ ~[xaa11552]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10956) /*~ Good day and hello to you.~[xac10198]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@10957) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11536]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@10957) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11550]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@10958) /*~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac136.cre~ ~override~
@@ -524,9 +524,9 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac137.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11007) /*~Crusader~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11007) /*~Crusader~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@11008) /*~ A pleasure it is to meet ya.~[xac10281]*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@11009) /*~ A stout hammer will fix most any bandit.~[xaa11965]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@11010) /*~~[xaa11966]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@11011) /*~~[xaa11967]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@11009) /*~ A stout hammer will fix most any bandit.~[xaa11949]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@11010) /*~~[xaa11950]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@11011) /*~~[xaa11951]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@11008) /*~ A pleasure it is to meet ya.~[xac10281]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@11012) /*~ You canna get better than the stability stone walls provide.~[xac10286]*/
 
@@ -534,7 +534,7 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac138.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11007) /*~Crusader~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11007) /*~Crusader~*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@11013) /*~~[xaa11126]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@11014) /*~~[xaa11854]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@11014) /*~~[xaa11838]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@11015) /*~ The Fair Folk rarely have time for small talk.~[xac10289]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@11016) /*~ Troubled times are upon us.~[xac10290]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@11017) /*~ Soon, we shall all be together upon Evermeet.~[xac10291]*/
@@ -579,9 +579,9 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac144.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11027) /*~Crusader Cleric~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11027) /*~Crusader Cleric~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@11008) /*~ A pleasure it is to meet ya.~[xac10281]*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@11009) /*~ A stout hammer will fix most any bandit.~[xaa11965]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@11010) /*~~[xaa11966]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@11011) /*~~[xaa11967]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@11009) /*~ A stout hammer will fix most any bandit.~[xaa11949]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@11010) /*~~[xaa11950]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@11011) /*~~[xaa11951]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@11008) /*~ A pleasure it is to meet ya.~[xac10281]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@11012) /*~ You canna get better than the stability stone walls provide.~[xac10286]*/
 
@@ -599,10 +599,10 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac145.cre~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\cre\xac146.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11027) /*~Crusader Cleric~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11027) /*~Crusader Cleric~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10954) /*~ ~[xaa11537]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10955) /*~ ~[xaa11538]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10954) /*~ ~[xaa11551]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10955) /*~ ~[xaa11552]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10956) /*~ Good day and hello to you.~[xac10198]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@10957) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11536]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@10957) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11550]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@10958) /*~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac147.cre~ ~override~
@@ -636,7 +636,7 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac150.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11035) /*~Crusader Mage~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11035) /*~Crusader Mage~*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@11013) /*~~[xaa11126]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@11014) /*~~[xaa11854]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@11014) /*~~[xaa11838]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@11015) /*~ The Fair Folk rarely have time for small talk.~[xac10289]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@11016) /*~ Troubled times are upon us.~[xac10290]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@11017) /*~ Soon, we shall all be together upon Evermeet.~[xac10291]*/
@@ -733,7 +733,7 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac166.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11067) /*~Crusader Officer~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11067) /*~Crusader Officer~*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@11013) /*~~[xaa11126]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@11014) /*~~[xaa11854]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@11014) /*~~[xaa11838]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@11015) /*~ The Fair Folk rarely have time for small talk.~[xac10289]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@11016) /*~ Troubled times are upon us.~[xac10290]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@11017) /*~ Soon, we shall all be together upon Evermeet.~[xac10291]*/
@@ -763,10 +763,10 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac169.cre~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\cre\xac170.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11066) /*~Crusader Guard~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11066) /*~Crusader Guard~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10954) /*~ ~[xaa11537]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10955) /*~ ~[xaa11538]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10954) /*~ ~[xaa11551]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10955) /*~ ~[xaa11552]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10956) /*~ Good day and hello to you.~[xac10198]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@10957) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11536]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@10957) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11550]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@10958) /*~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac171.cre~ ~override~
@@ -779,12 +779,12 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac171.cre~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\cre\xac172.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11066) /*~Crusader Guard~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11066) /*~Crusader Guard~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@10964) /*~ By Moradin's hammer.~[xaa11609]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10965) /*~~[xaa11610]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10966) /*~~[xaa11611]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@10964) /*~ By Moradin's hammer.~[xaa11623]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10965) /*~~[xaa11624]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10966) /*~~[xaa11625]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10967) /*~ I need a swig o' some strong dwarven ale.~[xac10223]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@10968) /*~ Me temper's bad enough without ye botherin' me.~[xaa11608]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@10969) /*~ Your chatterin's startin' to wear on me nerves.~[xaa11613]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@10968) /*~ Me temper's bad enough without ye botherin' me.~[xaa11622]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@10969) /*~ Your chatterin's startin' to wear on me nerves.~[xaa11627]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac173.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11066) /*~Crusader Guard~*/
@@ -859,7 +859,7 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac192.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11003) /*~Crusader Archer~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11003) /*~Crusader Archer~*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@11013) /*~~[xaa11126]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@11014) /*~~[xaa11854]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@11014) /*~~[xaa11838]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@11015) /*~ The Fair Folk rarely have time for small talk.~[xac10289]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@11016) /*~ Troubled times are upon us.~[xac10290]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@11017) /*~ Soon, we shall all be together upon Evermeet.~[xac10291]*/
@@ -965,20 +965,20 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac205.cre~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\cre\xac206.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11103) /*~Crusader Sergeant~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11103) /*~Crusader Sergeant~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@10964) /*~ By Moradin's hammer.~[xaa11609]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10965) /*~~[xaa11610]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10966) /*~~[xaa11611]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@10964) /*~ By Moradin's hammer.~[xaa11623]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10965) /*~~[xaa11624]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10966) /*~~[xaa11625]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10967) /*~ I need a swig o' some strong dwarven ale.~[xac10223]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@10968) /*~ Me temper's bad enough without ye botherin' me.~[xaa11608]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@10969) /*~ Your chatterin's startin' to wear on me nerves.~[xaa11613]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@10968) /*~ Me temper's bad enough without ye botherin' me.~[xaa11622]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@10969) /*~ Your chatterin's startin' to wear on me nerves.~[xaa11627]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac207.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11104) /*~Crusader Elite~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11104) /*~Crusader Elite~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10954) /*~ ~[xaa11537]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10955) /*~ ~[xaa11538]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10954) /*~ ~[xaa11551]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10955) /*~ ~[xaa11552]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10956) /*~ Good day and hello to you.~[xac10198]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@10957) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11536]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@10957) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11550]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@10958) /*~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac208.cre~ ~override~
@@ -1068,10 +1068,10 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac218.cre~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\cre\xac219.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11018) /*~Crusader Recruit~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11018) /*~Crusader Recruit~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10954) /*~ ~[xaa11537]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10955) /*~ ~[xaa11538]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10954) /*~ ~[xaa11551]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10955) /*~ ~[xaa11552]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10956) /*~ Good day and hello to you.~[xac10198]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@10957) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11536]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@10957) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11550]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@10958) /*~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac221.cre~ ~override~
@@ -1099,12 +1099,12 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac223.cre~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\cre\xac224.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11018) /*~Crusader Recruit~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11018) /*~Crusader Recruit~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@10964) /*~ By Moradin's hammer.~[xaa11609]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10965) /*~~[xaa11610]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10966) /*~~[xaa11611]*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@10964) /*~ By Moradin's hammer.~[xaa11623]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10965) /*~~[xaa11624]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10966) /*~~[xaa11625]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10967) /*~ I need a swig o' some strong dwarven ale.~[xac10223]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@10968) /*~ Me temper's bad enough without ye botherin' me.~[xaa11608]*/
-	WRITE_LONG 276 RESOLVE_STR_REF(@10969) /*~ Your chatterin's startin' to wear on me nerves.~[xaa11613]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@10968) /*~ Me temper's bad enough without ye botherin' me.~[xaa11622]*/
+	WRITE_LONG 276 RESOLVE_STR_REF(@10969) /*~ Your chatterin's startin' to wear on me nerves.~[xaa11627]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac227.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11018) /*~Crusader Recruit~*/
@@ -1120,7 +1120,7 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac228.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11007) /*~Crusader~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11007) /*~Crusader~*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@11013) /*~~[xaa11126]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@11014) /*~~[xaa11854]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@11014) /*~~[xaa11838]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@11015) /*~ The Fair Folk rarely have time for small talk.~[xac10289]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@11016) /*~ Troubled times are upon us.~[xac10290]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@11017) /*~ Soon, we shall all be together upon Evermeet.~[xac10291]*/
@@ -1205,7 +1205,7 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac241.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11104) /*~Crusader Elite~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11104) /*~Crusader Elite~*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@11013) /*~~[xaa11126]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@11014) /*~~[xaa11854]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@11014) /*~~[xaa11838]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@11015) /*~ The Fair Folk rarely have time for small talk.~[xac10289]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@11016) /*~ Troubled times are upon us.~[xac10290]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@11017) /*~ Soon, we shall all be together upon Evermeet.~[xac10291]*/
@@ -1259,7 +1259,7 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac255.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11003) /*~Crusader Archer~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11003) /*~Crusader Archer~*/
 	WRITE_LONG 236 RESOLVE_STR_REF(@11013) /*~~[xaa11126]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@11014) /*~~[xaa11854]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@11014) /*~~[xaa11838]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@11015) /*~ The Fair Folk rarely have time for small talk.~[xac10289]*/
 	WRITE_LONG 272 RESOLVE_STR_REF(@11016) /*~ Troubled times are upon us.~[xac10290]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@11017) /*~ Soon, we shall all be together upon Evermeet.~[xac10291]*/
@@ -1274,10 +1274,10 @@ COPY ~%MOD_FOLDER%\generated\c\cre\xac256.cre~ ~override~
 COPY ~%MOD_FOLDER%\generated\c\cre\xac257.cre~ ~override~
 	WRITE_LONG 8 RESOLVE_STR_REF(@11003) /*~Crusader Archer~*/
 	WRITE_LONG 12 RESOLVE_STR_REF(@11003) /*~Crusader Archer~*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@10954) /*~ ~[xaa11537]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@10955) /*~ ~[xaa11538]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@10954) /*~ ~[xaa11551]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@10955) /*~ ~[xaa11552]*/
 	WRITE_LONG 268 RESOLVE_STR_REF(@10956) /*~ Good day and hello to you.~[xac10198]*/
-	WRITE_LONG 272 RESOLVE_STR_REF(@10957) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11536]*/
+	WRITE_LONG 272 RESOLVE_STR_REF(@10957) /*~ I much prefer wooded regions, but one must be flexible in these times.~[xaa11550]*/
 	WRITE_LONG 276 RESOLVE_STR_REF(@10958) /*~ Few of the Fair Folk concern themselves with the affairs of the state.~[xac10200]*/
 
 COPY ~%MOD_FOLDER%\generated\c\cre\xac272.cre~ ~override~
