@@ -2,7 +2,7 @@ PRINT @4000  /* ~Processing Return to Baldur's Gate Changes...~ */
 
 SILENT
 
-OUTER_SET xa_regenerate = 1 // set to 1 to regenerate areas, 0 (default) to copy pre-generated areas
+OUTER_SET xa_regenerate = 0 // set to 1 to regenerate areas, 0 (default) to copy pre-generated areas
 
 //{ WAV
 	COPY ~%MOD_FOLDER%/rbg/wav~ ~override~
@@ -272,7 +272,7 @@ SILENT
 		END
 		ADD_CRE_ITEM ~xasdiary~ #0 #0 #0 ~identified&unstealable~ ~INV1~
 		
-		COPY_EXISTING ~xaa972.cre~ ~override~
+		COPY_EXISTING ~xaa966.cre~ ~override~
 		LPF xa_reset_cre
 			STR_VAR
 				xa_override = ~xafigh01~
@@ -2200,17 +2200,17 @@ SILENT
 	//}
 	
 	//{ ar0139 xaa458 Ramazith L2
-		COPY_EXISTING ~xaa461.are~ ~override~
+		COPY_EXISTING ~xaa458.are~ ~override~
 		LPF xa_delete_are_actors END
 	//}
 	
 	//{ ar0140 xaa607 Ramazith L3
-		COPY_EXISTING ~xaa603.are~ ~override~
+		COPY_EXISTING ~xaa607.are~ ~override~
 		LPF xa_delete_are_actors END
 	//}
 	
 	//{ ar0141 xaa644 Ramazith L4
-		COPY_EXISTING ~xaa646.are~ ~override~
+		COPY_EXISTING ~xaa644.are~ ~override~
 		LPF xa_delete_are_actors END
 	//}
 	
@@ -2232,7 +2232,7 @@ SILENT
 	//}
 
 	//{ ar0161 xaa479 Degrodel's Home
-		COPY_EXISTING ~xaa482.are~ ~override~
+		COPY_EXISTING ~xaa479.are~ ~override~
 		
 		WRITE_ASCII 0x17C ~xadegrod~ #8
 		WRITE_ASCII 0x27C ~xadegrod~ #8
@@ -2246,7 +2246,7 @@ SILENT
 	//}
 	
 	//{ ar0162 xaa475 Louise and Laerta's Home
-		COPY_EXISTING ~xaa478.are~ ~override~
+		COPY_EXISTING ~xaa475.are~ ~override~
 		LPF xa_delete_are_actors END
 	//}
 	
