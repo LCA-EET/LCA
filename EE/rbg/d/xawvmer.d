@@ -17,12 +17,12 @@ IF ~~ THEN BEGIN XA_Greeting2
 	SAY @7 /* ~Lord Winston is away on business at the moment. His assistant Virgory can assist you with any inquiries.~ */
 	
 	IF ~
-		!AreaCheck("xaa563")
+		!AreaCheck("xaa563") // ar0614
 	~ THEN REPLY @8 /* ~I see. Where is Virgory?~ */
 	GOTO XA_Greeting3
 	
 	IF ~
-		AreaCheck("xaa563")
+		AreaCheck("xaa563") // ar0614
 	~ THEN REPLY @8 /* ~I see. Where is Virgory?~ */
 	GOTO XA_Greeting3A
 END

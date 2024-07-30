@@ -253,7 +253,7 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_RBG_AreaTest
 		SAY @6020 /* ~Area Test~*/
 		
-		IF ~~ THEN REPLY @6021
+		IF ~~ THEN REPLY @6021/* @6021=~Wyrm's Crossing (AR0900 / XAA100)~*/
 		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("XAA100", "", [0.0], S))
 			ActionOverride(Player2, LeaveAreaLUA("XAA100", "", [0.0], S))
@@ -264,7 +264,7 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
-		IF ~~ THEN REPLY @6044
+		IF ~~ THEN REPLY @6044/* @6044=~XAA104 (AR0800)~*/
 		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("xaa104", "", [0.0], S))
 			ActionOverride(Player2, LeaveAreaLUA("xaa104", "", [0.0], S))
@@ -275,7 +275,7 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
-		IF ~~ THEN REPLY @6049
+		IF ~~ THEN REPLY @6049/* @6049=~XAA138 (AR0103)~*/
 		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("xaa138", "", [0.0], S))
 			ActionOverride(Player2, LeaveAreaLUA("xaa138", "", [0.0], S))
@@ -286,7 +286,7 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
-		IF ~~ THEN REPLY @6045
+		IF ~~ THEN REPLY @6045/* */
 		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("xaa145", "", [0.0], S))
 			ActionOverride(Player2, LeaveAreaLUA("xaa145", "", [0.0], S))
@@ -297,7 +297,7 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
-		IF ~~ THEN REPLY @6043
+		IF ~~ THEN REPLY @6043/* */
 		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("xaa168", "", [0.0], S))
 			ActionOverride(Player2, LeaveAreaLUA("xaa168", "", [0.0], S))
@@ -308,7 +308,7 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
-		IF ~~ THEN REPLY @6041
+		IF ~~ THEN REPLY @6041/* */
 		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("xaa228", "", [0.0], S))
 			ActionOverride(Player2, LeaveAreaLUA("xaa228", "", [0.0], S))
@@ -319,7 +319,7 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
-		IF ~~ THEN REPLY @6046
+		IF ~~ THEN REPLY @6046/* */
 		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("xaa290", "", [0.0], S))
 			ActionOverride(Player2, LeaveAreaLUA("xaa290", "", [0.0], S))
@@ -331,7 +331,7 @@ APPEND ~XALCDBG~
 		EXIT
 		
 		
-		IF ~~ THEN REPLY @6047
+		IF ~~ THEN REPLY @6047/* */
 		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("xaa291", "", [0.0], S))
 			ActionOverride(Player2, LeaveAreaLUA("xaa291", "", [0.0], S))
@@ -343,7 +343,7 @@ APPEND ~XALCDBG~
 		EXIT
 		
 		
-		IF ~~ THEN REPLY @6048
+		IF ~~ THEN REPLY @6048/* */
 		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("xaa475", "", [0.0], S))
 			ActionOverride(Player2, LeaveAreaLUA("xaa475", "", [0.0], S))
@@ -354,7 +354,7 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
-		IF ~~ THEN REPLY @6040
+		IF ~~ THEN REPLY @6040/* */
 		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("xaa592", "", [0.0], S))
 			ActionOverride(Player2, LeaveAreaLUA("xaa592", "", [0.0], S))
@@ -365,7 +365,7 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
-		IF ~~ THEN REPLY @6059
+		IF ~~ THEN REPLY @6059/* */
 		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("xaa106", "", [0.0], S))
 			ActionOverride(Player2, LeaveAreaLUA("xaa106", "", [0.0], S))
@@ -376,7 +376,7 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
-		IF ~~ THEN REPLY @6042
+		IF ~~ THEN REPLY @6042/* */
 		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("xaa330", "", [0.0], S))
 			ActionOverride(Player2, LeaveAreaLUA("xaa330", "", [0.0], S))

@@ -9,12 +9,12 @@ THEN
 		Wait(3)
 		//[200.375]
 		//[273.356]
-		ActionOverride(Player1,LeaveAreaLUA("XAA416","",[225.440],NW)) // ar0608
-		ActionOverride(Player2,LeaveAreaLUA("xaa416","",[264.264],NW))
-		ActionOverride(Player3,LeaveAreaLUA("xaa416","",[300.400],NW))
-		ActionOverride(Player4,LeaveAreaLUA("xaa416","",[430.520],NW))
-		ActionOverride(Player5,LeaveAreaLUA("xaa416","",[320.480],NW))
-		ActionOverride(Player6,LeaveAreaLUA("xaa416","",[365.500],NW))
+		ActionOverride(Player1,LeaveAreaLUA("XAA413","",[225.440],NW)) // ar0608
+		ActionOverride(Player2,LeaveAreaLUA("xaa413","",[264.264],NW))
+		ActionOverride(Player3,LeaveAreaLUA("xaa413","",[300.400],NW))
+		ActionOverride(Player4,LeaveAreaLUA("xaa413","",[430.520],NW))
+		ActionOverride(Player5,LeaveAreaLUA("xaa413","",[320.480],NW))
+		ActionOverride(Player6,LeaveAreaLUA("xaa413","",[365.500],NW))
 		SetGlobal("XA_LC_NederlokVirgil", "GLOBAL", 1)
 		StartCutscene("XACS16b")
 END

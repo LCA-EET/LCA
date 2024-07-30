@@ -125,13 +125,13 @@ END
 //}
 
 //{ FLAMBG
-ADD_STATE_TRIGGER xaa315 0
+ADD_STATE_TRIGGER xaa317 0
 ~
 	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 5 6
 
-APPEND xaa315
+APPEND xaa317
 	IF ~
 		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
@@ -208,17 +208,17 @@ END
 //}
 
 //{ HOUSG3
-ADD_STATE_TRIGGER xaa347 0
+ADD_STATE_TRIGGER xaa344 0
 ~
 	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
-ADD_STATE_TRIGGER xaa347 1
+ADD_STATE_TRIGGER xaa344 1
 ~
 	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
-APPEND xaa347
+APPEND xaa344
 	IF ~
 		//IsGabber(Player1)
 		IsGabber(Player1)
@@ -593,7 +593,7 @@ END
 //}
 
 //{ MCOOK4
-ADD_STATE_TRIGGER xaa344 1
+ADD_STATE_TRIGGER xaa341 1
 ~
 	!Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
@@ -620,13 +620,13 @@ END
 //}
 
 //{ MERLEA
-ADD_STATE_TRIGGER xaa322 0
+ADD_STATE_TRIGGER xaa287 0
 ~
 	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 4 5 6
 
-APPEND xaa322
+APPEND xaa287
 	IF ~
 		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		RandomNum(6,1)
@@ -640,7 +640,7 @@ APPEND xaa322
 		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		RandomNum(6,2)
 		Global("XA_LC_SavedAldeth","GLOBAL",1)
-		!AreaCheck("xaa406") // ar0128
+		!AreaCheck("xaa492") // ar0128
 		!Dead("Aldeth")
 	~ THEN BEGIN XAA1
 		SAY @69 /* ~If you're seeking Aldeth, he's upstairs.~*/
@@ -876,17 +876,17 @@ END
 //}
 
 //{ SERVA2
-ADD_STATE_TRIGGER xaa348 0
+ADD_STATE_TRIGGER xaa345 0
 ~
 	!Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
-ADD_STATE_TRIGGER xaa348 11
+ADD_STATE_TRIGGER xaa345 11
 ~
 	!Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 ~
 
-APPEND xaa348
+APPEND xaa345
 	IF ~
 		//IsGabber(Player1)
 		IsGabber(Player1)
@@ -961,7 +961,7 @@ END
 //}
 
 //{ SHOP06
-EXTEND_BOTTOM xaa307 0
+EXTEND_BOTTOM xaa309 0
 	IF ~
 		GlobalLT("XA_LC_BoughtRohmaDoll", "GLOBAL", 1)
 		Global("XA_LC_WantToGetDoll", "GLOBAL", 1)
@@ -971,7 +971,7 @@ EXTEND_BOTTOM xaa307 0
 	GOTO M0
 END
 
-APPEND xaa307
+APPEND xaa309
 	IF ~~ THEN BEGIN M0
 		SAY @1 /* ~As a matter of fact, I do. Are you interested in this doll? I'll sell it to you for three gold.~ */
 		IF ~
@@ -1019,7 +1019,7 @@ END
 //}
 
 //{ SHOP08
-EXTEND_BOTTOM xaa309 0
+EXTEND_BOTTOM xaa311 0
 	IF ~
 		GlobalLT("XA_LC_BoughtRohmaDoll", "GLOBAL", 1)
 		Global("XA_LC_WantToGetDoll", "GLOBAL", 1)
@@ -1029,7 +1029,7 @@ EXTEND_BOTTOM xaa309 0
 	GOTO M0
 END
 
-APPEND xaa309
+APPEND xaa311
 	IF ~~ THEN BEGIN M0
 		SAY @1 /* ~As a matter of fact, I do. Are you interested in this doll? I'll sell it to you for three gold.~ */
 		IF ~

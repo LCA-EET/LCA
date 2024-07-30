@@ -29,7 +29,7 @@ THEN
 END
 
 IF
-	AreaCheck("XAA481")  // ar0116
+	AreaCheck("XAA478")  // ar0116
 	Global("XA_LC_SpawnBrevlik", "GLOBAL", 5)
 THEN
 	RESPONSE #100

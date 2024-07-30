@@ -12,5 +12,5 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_HMCutscene", "GLOBAL", 4)
-		ActionOverride("xaa706", StartDialog("XAHARBOR", "XACORWIN"))
+		ActionOverride("xaa706", StartDialog("XAHARBOR", "XACORWIN")) // harbor
 END

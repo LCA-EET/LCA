@@ -50,7 +50,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 	WRITE_LONG 0x24 RESOLVE_STR_REF(@4136) // Map Name
 	WRITE_LONG 0x978 RESOLVE_STR_REF(@4137) // Wyrm Crossing Label
 		
-	//{ Wyrm's Crossing (0900) <--> E Baldur's Gate (0800)
+	//{ Wyrm's Crossing (0900) <--> E Baldur's Gate (0800) xaa100 <--> xaa104
 		LPF xa_mapdoublelink
 			STR_VAR
 				xa_area_a = ~xaa100~
@@ -62,7 +62,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 		END
 	//}
 	
-	//{ NW Baldur's Gate (0100) <--> N Baldur's Gate (0200)
+	//{ NW Baldur's Gate (0100) <--> N Baldur's Gate (0200) xaa233 <--> xaa134
 		LPF xa_mapdoublelink
 			STR_VAR
 				xa_area_a = ~xaa233~
@@ -74,7 +74,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 		END
 	//}
 	
-	//{ NW Baldur's Gate (0100) <--> W Baldur's Gate (0600)
+	//{ NW Baldur's Gate (0100) <--> W Baldur's Gate (0600) xaa233 <--> xaa168
 		LPF xa_mapdoublelink
 			STR_VAR
 				xa_area_a = ~xaa233~
@@ -86,7 +86,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 		END
 	//}
 	
-	//{ N Baldur's Gate (0200) <--> NE Baldur's Gate (0300)
+	//{ N Baldur's Gate (0200) <--> NE Baldur's Gate (0300) xaa134 <--> xaa107
 		LPF xa_mapdoublelink
 			STR_VAR
 				xa_area_a = ~xaa134~
@@ -98,7 +98,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 		END
 	//}
 		
-	//{ N Baldur's Gate (0200) <--> C Baldur's Gate (0700)
+	//{ N Baldur's Gate (0200) <--> C Baldur's Gate (0700) xaa134 <--> xaa109
 		LPF xa_mapdoublelink
 			STR_VAR
 				xa_area_a = ~xaa134~
@@ -110,7 +110,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 		END
 	//}
 	
-	//{ NE Baldur's Gate (0300) <--> E Baldur's Gate (0800)
+	//{ NE Baldur's Gate (0300) <--> E Baldur's Gate (0800) xaa107 <--> xaa104
 		LPF xa_mapdoublelink
 			STR_VAR
 				xa_area_a = ~xaa107~
@@ -122,7 +122,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 		END
 	//}
 	
-	//{ W Baldur's Gate (0600) <--> C Baldur's Gate (0700)
+	//{ W Baldur's Gate (0600) <--> C Baldur's Gate (0700) xaa168 <--> xaa109
 		LPF xa_mapdoublelink
 			STR_VAR
 				xa_area_a = ~xaa168~
@@ -134,7 +134,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 		END
 	//}
 	
-	//{ W Baldur's Gate (0600) <--> SW Baldur's Gate (1100)
+	//{ W Baldur's Gate (0600) <--> SW Baldur's Gate (1100) xaa168 <--> xaa146
 		LPF xa_mapdoublelink
 			STR_VAR
 				xa_area_a = ~xaa168~
@@ -146,7 +146,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 		END
 	//}
 	
-	//{ C Baldur's Gate (0700) <--> E Baldur's Gate (0800)
+	//{ C Baldur's Gate (0700) <--> E Baldur's Gate (0800) xaa109 <--> xaa104
 		LPF xa_mapdoublelink
 			STR_VAR
 				xa_area_a = ~xaa109~
@@ -158,7 +158,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 		END
 	//}
 	
-	//{ C Baldur's Gate (0700) <--> S Baldur's Gate (Docks) (1200)
+	//{ C Baldur's Gate (0700) <--> S Baldur's Gate (Docks) (1200)  xaa107 <--> xaa108
 		LPF xa_mapdoublelink
 			STR_VAR
 				xa_area_a = ~xaa109~
@@ -170,7 +170,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 		END
 	//}
 	
-	//{ E Baldur's Gate (0800) <--> SE Baldur's Gate (1300)
+	//{ E Baldur's Gate (0800) <--> SE Baldur's Gate (1300) xaa104 <--> xaa145
 		LPF xa_mapdoublelink
 			STR_VAR
 				xa_area_a = ~xaa104~
@@ -182,7 +182,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 		END
 	//}
 	
-	//{ SW Baldur's Gate (1100) <--> S Baldur's Gate (1200)
+	//{ SW Baldur's Gate (1100) <--> S Baldur's Gate (1200) xaa146 <--> xaa108
 		LPF xa_mapdoublelink
 			STR_VAR
 				xa_area_a = ~xaa146~
@@ -194,7 +194,7 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 		END
 	//}
 		
-	//{ S Baldur's Gate (1200) <--> SE Baldur's Gate (1300)
+	//{ S Baldur's Gate (1200) <--> SE Baldur's Gate (1300) xaa108 <--> xaa145
 		LPF xa_mapdoublelink
 			STR_VAR
 				xa_area_a = ~xaa108~
@@ -280,7 +280,7 @@ SILENT
 				xa_dialog = ~xafergus~
 		END
 		
-		COPY_EXISTING ~xaa953.cre~ ~override/xag2dop0.cre~ // dopmer
+		COPY_EXISTING ~xaa947.cre~ ~override/xag2dop0.cre~ // dopmer
 		WRITE_ASCII 0x250 ~xag2dop~ #8 // class script
 		WRITE_ASCII 0x268 ~xafigh01~ #8 // race script
 		WRITE_ASCII 0x280 ~xag2dop0~ #8 // script name
@@ -327,9 +327,9 @@ SILENT
 				xaa128		// mtwbax_c
 				xaa126		// mtwbax_d
 				xaa131		// mtwbax_e
-				xaa958		// mtwslim
-				xaa959		// mtwslim2
-				xaa960		// mtwslim3
+				xaa952		// mtwslim
+				xaa953		// mtwslim2
+				xaa954		// mtwslim3
 			END
 			
 			ACTION_PHP_EACH maleTownspeople AS _ => maleTownsperson
@@ -348,7 +348,7 @@ SILENT
 			ACTION_DEFINE_ARRAY femaleTownspeople
 			BEGIN
 				xaa548	// ftowb5
-				xaa987	// ftowb6
+				xaa981	// ftowb6
 				xaa696	// ftowb7
 				xaa560	// ftowba
 				xaa167	// ftowba_a
@@ -387,7 +387,7 @@ SILENT
 				xaa372 	// nobbax_d
 				xaa396 	// nobbax_e
 				xaa730 	// nobl11
-				xaa1041 // nobl12
+				xaa1035 // nobl12
 				xaa932 	// nobl14
 				xaa359 	// noblba_a
 				xaa767 	// noblba_b
@@ -411,14 +411,14 @@ SILENT
 		//{ Noblewomen
 			ACTION_DEFINE_ARRAY noblewomen
 			BEGIN
-				xaa1039	// nobw5
+				xaa1033	// nobw5
 				xaa1353 // nobw7
 				xaa1334 // nobw8
 				xaa728	// nobw9
 				xaa360	// nobwba
-				xaa1078 // nobwba_a
+				xaa1072 // nobwba_a
 				xaa514	// nobwba_d
-				xaa1090 // nobwba_e
+				xaa1084 // nobwba_e
 				xaa361	// nowbax_a
 				xaa397	// nowbax_b
 				xaa402	// nowbax_c
@@ -438,7 +438,7 @@ SILENT
 			END
 		//}
 		
-		COPY_EXISTING ~xaa274.cre~ ~override/xabrielb.cre~ // Brielbara
+		COPY_EXISTING ~xaa274.cre~ ~override/xabrielb.cre~ // Brielbara brielb
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xabrielb~
@@ -453,7 +453,7 @@ SILENT
 				xa_scriptName = ~xa800m~
 		END
 		
-		COPY_EXISTING ~xaa465.cre~ ~override/xabrevlk.cre~ // Brevlik
+		COPY_EXISTING ~xaa465.cre~ ~override/xabrevlk.cre~ // Brevlik brevli
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xabrevlk~
@@ -461,7 +461,7 @@ SILENT
 				xa_override = ~xabrevlk~
 		END
 		
-		COPY_EXISTING ~xaa552.cre~ ~override/xalarze.cre~ // Larze
+		COPY_EXISTING ~xaa552.cre~ ~override/xalarze.cre~ // Larze larze
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xalarze~
@@ -487,14 +487,14 @@ SILENT
 				xa_scriptName = ~xa800w~
 		END
 		
-		COPY_EXISTING ~xaa687.cre~ ~override~ // WV Guard 1
+		COPY_EXISTING ~xaa687.cre~ ~override~ // WV Guard 1 iron13
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xawvgrd1~
 				xa_override = ~xaguard~
 		END
 		
-		COPY_EXISTING ~xaa688.cre~ ~override~ // WV Merchant
+		COPY_EXISTING ~xaa688.cre~ ~override~ // WV Merchant ironme
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xawvmer~
@@ -509,7 +509,7 @@ SILENT
 				xa_override = ~xaguard~
 		END
 		
-		COPY_EXISTING ~xaa702.cre~ ~override~ // Umberlee Priestess
+		COPY_EXISTING ~xaa702.cre~ ~override~ // Umberlee Priestess pumber1
 		WRITE_ASCII 0x2CC ~xaumberl~ #8
 		
 		COPY_EXISTING ~xaa730.cre~ ~override/xavirgil.cre~ // Virgil nobl11
@@ -522,10 +522,10 @@ SILENT
 				xa_default = ~xavirgil~
 		END
 		
-		COPY_EXISTING ~xaa874.cre~ ~override~ // Nadine
+		COPY_EXISTING ~xaa874.cre~ ~override~ // Nadine nadine
 		WRITE_ASCII 0x2CC ~xanadine~ #8 	// Dialogue
 		
-		COPY_EXISTING ~xaa904.cre~ ~override/xaalyth.cre~ // Alyth
+		COPY_EXISTING ~xaa904.cre~ ~override/xaalyth.cre~ // Alyth alyth
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xaalyth~
@@ -533,14 +533,14 @@ SILENT
 				xa_override = ~xainitp1~
 		END
 		
-		COPY_EXISTING ~xaa949.cre~ ~override/xamerchj.cre~ // Seven Suns Merchant merlea
+		COPY_EXISTING ~xaa1105.cre~ ~override/xamerchj.cre~ // Seven Suns Merchant merlea
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xamerch~
 				xa_override = ~xamerchj~
 		END
 		
-		COPY_EXISTING ~xaa1220.cre~ ~override/xawvmer1.cre~ // WV Merchant ironm3
+		COPY_EXISTING ~xaa1360.cre~ ~override/xawvmer1.cre~ // WV Merchant ironm3
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xawvmer~
@@ -550,7 +550,7 @@ SILENT
 		
 		COPY_EXISTING ~xawvmer1.cre~ ~override/xawvmer2.cre~ // WV Merchant ironm3
 		
-		COPY_EXISTING ~xaa949.cre~ ~override/xamerlea.cre~ // Merchant's League Merchant
+		COPY_EXISTING ~xaa1105.cre~ ~override/xamerlea.cre~ // Merchant's League Merchant
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xamerlea~
@@ -560,7 +560,7 @@ SILENT
 				xa_general = ~xamerlea~
 		END
 		
-		COPY_EXISTING ~xaa1006.cre~ ~override~ // Euric
+		COPY_EXISTING ~xaa1000.cre~ ~override~ // Euric
 		WRITE_ASCII 0x2CC ~xaeuric~ #8 	// Dialogue
 		
 		COPY_EXISTING ~xaa1359.cre~ ~override~ // Merchant's League Bartender bart6
@@ -570,7 +570,7 @@ SILENT
 				xa_dialog = ~xabartml~
 		END
 		
-		COPY_EXISTING ~xaa1316.cre~ ~override/xajhasso.cre~ // Jhasso jhasso
+		COPY_EXISTING ~xaa1332.cre~ ~override/xajhasso.cre~ // Jhasso jhasso
 		LPF xa_reset_cre
 			STR_VAR
 				xa_scriptName = ~xajhasso~
@@ -593,7 +593,7 @@ SILENT
 				xa_general = ~wtasight~
 		END
 		
-		COPY_EXISTING ~xaa1039.cre~ ~override/xacurato.cre~ // Curator Magda nobw5
+		COPY_EXISTING ~xaa1033.cre~ ~override/xacurato.cre~ // Curator Magda nobw5
 		SAY NAME1 @4048 /* Curator Magda */
 		SAY NAME2 @4048
 		LPF xa_reset_cre
@@ -637,7 +637,7 @@ SILENT
 				xa_default = ~wtasight~
 		END
 		
-		COPY_EXISTING ~xaa130.sto~ ~override/xabartml.sto~ // Merchants' League Bar
+		COPY_EXISTING ~xaa130.sto~ ~override/xabartml.sto~ // Merchants' League Bar tav0705
 		WRITE_LONG 0xC RESOLVE_STR_REF(@4149)
 	//}
 	
@@ -733,9 +733,9 @@ SILENT
 			COPY_EXISTING ~xac130.cre~ ~override/xacoal9.cre~ // bdfist41
 			COPY_EXISTING ~xac131.cre~ ~override/xacoal10.cre~ // bdfist42
 			COPY_EXISTING ~xac132.cre~ ~override/xacoal11.cre~ // bdwtr35
-			COPY_EXISTING ~xac133.cre~ ~override/xacoal12.cre~ // bdwtr35
-			COPY_EXISTING ~xac134.cre~ ~override/xacoal13.cre~ // bdwtr35
-			COPY_EXISTING ~xac135.cre~ ~override/xacoal14.cre~ // bdwtr35
+			COPY_EXISTING ~xac133.cre~ ~override/xacoal12.cre~ // bdwtr36
+			COPY_EXISTING ~xac134.cre~ ~override/xacoal13.cre~ // bdwtr37
+			COPY_EXISTING ~xac135.cre~ ~override/xacoal14.cre~ // bdwtr38
 
 			COPY_EXISTING_REGEXP GLOB ~xacoal.+\.cre$~ ~override~ 
 				LPF xa_reset_cre
@@ -1738,11 +1738,11 @@ SILENT
 //}
 
 //{ Stores
-	COPY_EXISTING ~xaa101.sto~ ~override/xahalbaz.sto~
+	COPY_EXISTING ~xaa101.sto~ ~override/xahalbaz.sto~ // sto0703
 	ADD_STORE_ITEM ~potn52~ AFTER ~potn08~ #1 #0 #0 ~IDENTIFIED~ #3
 	ADD_STORE_ITEM ~potn55~ AFTER ~potn52~ #1 #0 #0 ~IDENTIFIED~ #3
 	
-	COPY_EXISTING ~xaa137.sto~ ~override~
+	COPY_EXISTING ~xaa137.sto~ ~override~ // sto1115
 	ADD_STORE_ITEM ~potn52~ AFTER ~potn08~ #1 #0 #0 ~IDENTIFIED~ #5
 	ADD_STORE_ITEM ~potn55~ AFTER ~potn52~ #1 #0 #0 ~IDENTIFIED~ #2
 			
@@ -1766,7 +1766,7 @@ SILENT
 			xaas138 // ar0103
 			xaas159 // ar0133
 			xaas242 // ar0119
-			xaas479 // ar0157
+			xaas476 // ar0157
 		END
 
 		ACTION_PHP_EACH brevSpawns AS _ => spawnArea
@@ -1794,8 +1794,8 @@ SILENT
 		WRITE_LONG 0x64C8 64
 	//}
 	
-	//{ ar0101 xaa475 Silvershield Estate L1
-		COPY_EXISTING ~xaa475.are~ ~override~
+	//{ ar0101 xaa472 Silvershield Estate L1
+		COPY_EXISTING ~xaa472.are~ ~override~
 		
 		// Disable rep traps
 		WRITE_LONG 0x990 256
@@ -1805,10 +1805,10 @@ SILENT
 		WRITE_ASCII 0x164 ~xaserva2~ #8
 	//}
 	
-	//{ ar0102 xaa592 Silvershield Estate L2
-		EXTEND_TOP ~xaas592.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0102.baf~
+	//{ ar0102 xaa596 Silvershield Estate L2
+		EXTEND_TOP ~xaas596.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0102.baf~
 	
-		COPY_EXISTING ~xaa592.are~ ~override~
+		COPY_EXISTING ~xaa596.are~ ~override~
 
 		// Replace Dialogues
 		WRITE_ASCII 0x164 ~xabrilla~ #8 // Brilla
@@ -1886,10 +1886,10 @@ SILENT
 		WRITE_ASCII 0x4CC ~xaa695~ #8
 	//}
 	
-	//{ ar0116 xaa481 
-		EXTEND_TOP ~xaas481.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0116.baf~
+	//{ ar0116 xaa478 
+		EXTEND_TOP ~xaas478.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0116.baf~
 		
-		COPY_EXISTING ~xaa481.are~ ~override~
+		COPY_EXISTING ~xaa478.are~ ~override~
 		
 		// Replace NPCs
 		WRITE_ASCII 0x2AC ~xaa166~ #8
@@ -1898,8 +1898,8 @@ SILENT
 		WRITE_ASCII 0x5DC ~xaa170~ #8
 	//}
 	
-	//{ ar0117 xaa580
-		COPY_EXISTING ~xaa580.are~ ~override~
+	//{ ar0117 xaa584
+		COPY_EXISTING ~xaa584.are~ ~override~
 		
 		// Replace NPCs
 		WRITE_ASCII 0x19C ~xaa372~ #8
@@ -1907,8 +1907,8 @@ SILENT
 		WRITE_ASCII 0x3BC ~xaa361~ #8
 	//}
 	
-	//{ ar0118 xaa582
-		EXTEND_TOP ~xaas582.bcs~ ~%MOD_FOLDER%/rbg/baf/xaar0118.baf~
+	//{ ar0118 xaa586
+		EXTEND_TOP ~xaas586.bcs~ ~%MOD_FOLDER%/rbg/baf/xaar0118.baf~
 	//}
 	
 	//{ ar0119 xaa242
@@ -1922,8 +1922,8 @@ SILENT
 		WRITE_ASCII 0xB2C ~xaa695~ #8
 	//}
 	
-	//{ ar0120 xaa457
-		COPY_EXISTING ~xaa457.are~ ~override~
+	//{ ar0120 xaa454
+		COPY_EXISTING ~xaa454.are~ ~override~
 		
 		// Replace Ithtyl Dialogue
 		WRITE_ASCII 0x164 ~xaithtyl~ #8
@@ -1933,8 +1933,8 @@ SILENT
 		WRITE_SHORT 0x65E 621
 	//}
 	
-	//{ ar0121 xaa605
-		COPY_EXISTING ~xaa605.are~ ~override~
+	//{ ar0121 xaa609
+		COPY_EXISTING ~xaa609.are~ ~override~
 		
 		// Disable NPCs
 		WRITE_LONG 0x154 0 // Areana
@@ -1952,7 +1952,7 @@ SILENT
 		WRITE_ASCII 0x2AC ~SHADFI01~ #8
 		WRITE_ASCII 0x3BC ~SHADOW01~ #8
 		WRITE_ASCII 0x4CC ~xac158~ #8 // bdshsoul Shadowed Soul
-		WRITE_ASCII 0x5DC ~xac152~ #8 // bdwrai01 Wraith
+		WRITE_ASCII 0x5DC ~xac162~ #8 // bdwrai02 Wraith
 		WRITE_ASCII 0x6EC ~SHADFI01~ #8
 		WRITE_ASCII 0x7FC ~SHADOW01~ #8
 		
@@ -2000,7 +2000,7 @@ SILENT
 			
 			//{ Spawn Point 5
 				WRITE_ASCII 0x19D0 ~xabondag~ #8 // Bone Dagger
-				WRITE_ASCII 0x19D8 ~xac152~ #8
+				WRITE_ASCII 0x19D8 ~xac162~ #8 // bdwrai02
 				WRITE_ASCII 0x19E0 ~xac158~ #8 // bdshsoul Shadowed Soul
 			//}
 			
@@ -2070,10 +2070,10 @@ SILENT
 		WRITE_ASCII 0x294 ~xamerchg~ #8
 	//}
 	
-	//{ ar0128 xaa406 Merchant's League L2
-		EXTEND_TOP ~xaas406.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0128.baf~
+	//{ ar0128 xaa492 Merchant's League L2
+		EXTEND_TOP ~xaas492.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0128.baf~
 	
-		COPY_EXISTING ~xaa406.are~ ~override~
+		COPY_EXISTING ~xaa492.are~ ~override~
 		
 		// Adjust script for cook
 		WRITE_ASCII 0x17C ~xalcflee~ #8
@@ -2122,7 +2122,7 @@ SILENT
 		WRITE_LONG 0xC48 256
 	//}
 	
-	//{ ar0131 xaa363 High Hall of Wonders
+	//{ ar0131 xaa362 High Hall of Wonders
 		COPY_EXISTING ~xaa363.are~ ~override~
 		WRITE_ASCII 0x274 ~xaforthe~ #8
 	//}
@@ -2199,17 +2199,17 @@ SILENT
 		//}
 	//}
 	
-	//{ ar0139 xaa461 Ramazith L2
+	//{ ar0139 xaa458 Ramazith L2
 		COPY_EXISTING ~xaa461.are~ ~override~
 		LPF xa_delete_are_actors END
 	//}
 	
-	//{ ar0140 xaa603 Ramazith L3
+	//{ ar0140 xaa607 Ramazith L3
 		COPY_EXISTING ~xaa603.are~ ~override~
 		LPF xa_delete_are_actors END
 	//}
 	
-	//{ ar0141 xaa646 Ramazith L4
+	//{ ar0141 xaa644 Ramazith L4
 		COPY_EXISTING ~xaa646.are~ ~override~
 		LPF xa_delete_are_actors END
 	//}
@@ -2231,7 +2231,7 @@ SILENT
 		WRITE_ASCII 0x3BC ~xaa475~ #8 // Narlen
 	//}
 
-	//{ ar0161 xaa482 Degrodel's Home
+	//{ ar0161 xaa479 Degrodel's Home
 		COPY_EXISTING ~xaa482.are~ ~override~
 		
 		WRITE_ASCII 0x17C ~xadegrod~ #8
@@ -2245,31 +2245,31 @@ SILENT
 		
 	//}
 	
-	//{ ar0162 xaa478 Louise and Laerta's Home
+	//{ ar0162 xaa475 Louise and Laerta's Home
 		COPY_EXISTING ~xaa478.are~ ~override~
 		LPF xa_delete_are_actors END
 	//}
 	
-	//{ ar0165 xaa477 Tavern
-		EXTEND_TOP ~xaas477.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0165.baf~
+	//{ ar0165 xaa474 Tavern
+		EXTEND_TOP ~xaas474.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0165.baf~
 
-		COPY_EXISTING ~xaa477.are~ ~override~
+		COPY_EXISTING ~xaa474.are~ ~override~
 		
 		// Replace Dialog
 		WRITE_ASCII 0x164 ~xaconnol~ #8
 	//}
 	
-	//{ ar0166 xaa589 Tavern L2		
-		COPY_EXISTING ~xaa589.are~ ~override~
+	//{ ar0166 xaa593 Tavern L2		
+		COPY_EXISTING ~xaa593.are~ ~override~
 		
 		// Disable NPCs
 		WRITE_LONG 0x264 0 // Borinole
 	//}
 	
-	//{ ar0167 xaa483 Pheirkas Home
-		EXTEND_TOP ~xaas483.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0116.baf~
+	//{ ar0167 xaa480 Pheirkas Home
+		EXTEND_TOP ~xaas480.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0116.baf~
 		
-		COPY_EXISTING ~xaa483.are~ ~override~
+		COPY_EXISTING ~xaa480.are~ ~override~
 		
 		// Change Creatures
 		WRITE_ASCII 0x154 ~xaa548~ #8 // ftowb5
@@ -2440,8 +2440,8 @@ SILENT
 		WRITE_LONG 0x1F14 0 // Marek
 	//}
 	
-	//{ ar0308 xaa140 Merchant's League Counting House
-		COPY_EXISTING ~xaa140.are~ ~override~
+	//{ ar0308 xaa263 Merchant's League Counting House
+		COPY_EXISTING ~xaa263.are~ ~override~
 		
 		// Disable NPC
 		WRITE_LONG 0x154 0 // Jacil
@@ -2493,18 +2493,18 @@ SILENT
 		WRITE_ASCII 0x3BC ~xamerchj~ #8
 	//}
 	
-	//{ ar0602 xaa409 - Seven Suns L2
-		EXTEND_TOP ~xaas409.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0602.baf~
+	//{ ar0602 xaa406 - Seven Suns L2
+		EXTEND_TOP ~xaas406.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0602.baf~
 		
-		COPY_EXISTING ~xaa409.are~ ~override~
+		COPY_EXISTING ~xaa406.are~ ~override~
 		
 		// Replace Doppelgangers
 		WRITE_ASCII 0x19C ~xamerchj~ #8
 		WRITE_ASCII 0x2AC ~xamerchj~ #8
 	//}
 	
-	//{ ar0603 xaa410 - Seven Suns Cellar
-		COPY_EXISTING ~xaa410.are~ ~override~
+	//{ ar0603 xaa407 - Seven Suns Cellar
+		COPY_EXISTING ~xaa407.are~ ~override~
 		LPF xa_delete_are_actors END	
 	//}
 	
@@ -2525,8 +2525,8 @@ SILENT
 		END
 	//}
 	
-	//{ ar0608 xaa416	
-		COPY_EXISTING ~xaa416.are~ ~override~
+	//{ ar0608 xaa413	
+		COPY_EXISTING ~xaa413.are~ ~override~
 		LPF xa_delete_are_actors END
 		
 		LPF fj_are_structure // Rest Encounter Offset Bug Fix
@@ -3208,15 +3208,15 @@ SILENT
 		WRITE_LONG 0x7B4 0 // Euric
 	//}
 	
-	//{ ar1307 xaa428
-		COPY_EXISTING ~xaa428.are~ ~override~
+	//{ ar1307 xaa425
+		COPY_EXISTING ~xaa425.are~ ~override~
 		
 		// Disable NPCs
 		WRITE_LONG 0x6A4 0 // Sanadal
 	//}
 	
-	//{ ar1313 xaa437 Gantolandan's Home
-		COPY_EXISTING ~xaa437.are~ ~override~
+	//{ ar1313 xaa434 Gantolandan's Home
+		COPY_EXISTING ~xaa434.are~ ~override~
 		LPF xa_delete_are_actors END
 	//}
 	
@@ -3346,7 +3346,7 @@ SILENT
 	
 	//{ Ducal Palace 2FL (Debrief) ar0109
 		ACTION_IF(xa_regenerate = 1) THEN BEGIN
-			COPY_EXISTING ~xaa447.are~ ~override/xaducal2.are~
+			COPY_EXISTING ~xaa444.are~ ~override/xaducal2.are~
 			WRITE_LONG 0xA34 xaa12
 			WRITE_LONG 0xA38 xaa13
 			
@@ -3580,7 +3580,7 @@ SILENT
 		END ELSE BEGIN
 			LAF xa_copy_area_music
 				STR_VAR
-					xa_sourcearea = ~xaa447.are~
+					xa_sourcearea = ~xaa444.are~
 					xa_destinationarea = ~%MOD_FOLDER%/rbg/are/xaducal2.are~
 			END
 			COPY_EXISTING ~xaducal2.are~ ~override~
@@ -3592,7 +3592,7 @@ SILENT
 	
 	//{ Ducal Palace 3FL ar0110	Post-Kidnap
 		ACTION_IF (xa_regenerate = 1) THEN BEGIN
-			COPY_EXISTING ~xaa610.are~ ~override/xaduc3.are~ 
+			COPY_EXISTING ~xaa614.are~ ~override/xaduc3.are~ 
 			WRITE_LONG 0xEF8 xamu06
 			WRITE_LONG 0xEFC xamu06
 			
@@ -3794,7 +3794,7 @@ SILENT
 		END ELSE BEGIN
 			LAF xa_copy_area_music
 				STR_VAR
-					xa_sourcearea = ~xaa610.are~
+					xa_sourcearea = ~xaa614.are~
 					xa_destinationarea = ~%MOD_FOLDER%/rbg/are/xaduc3.are~
 			END
 			COPY_EXISTING ~xaduc3.are~ ~override~
@@ -4176,7 +4176,7 @@ SILENT
 	
 	PRINT @4174 /* ~Almost done...~ */
 	SILENT
-	//{ Painting Two - Grand Duke Savevok
+	//{ Painting Two - Grand Duke Savevok ar1100
 		ACTION_IF (xa_regenerate = 1) THEN BEGIN
 			COPY_EXISTING ~xaa146.are~ ~override/xag2.are~
 			WRITE_ASCII 0x94 ~xag2~ #8 // Area Script
@@ -4326,7 +4326,7 @@ SILENT
 					xaa175 // boyba1_a
 					xaa519 // boyba1_c
 					xaa548 // ftowb5
-					xaa987 // ftowb6
+					xaa981 // ftowb6
 					xaa696 // ftowb7
 					xaa560 // ftowba
 					xaa167 // ftowba_a
@@ -4370,30 +4370,30 @@ SILENT
 					xaa128 // mtwbax_c
 					xaa126 // mtwbax_d
 					xaa131 // mtwbax_e
-					xaa958 // mtwslim
-					xaa959 // mtwslim2
-					xaa960 // mtwslim3
+					xaa952 // mtwslim
+					xaa953 // mtwslim2
+					xaa954 // mtwslim3
 					xaa257 // nobbax_a
 					xaa200 // nobbax_b
 					xaa524 // nobbax_c
 					xaa372 // nobbax_d
 					xaa396 // nobbax_e
 					xaa730 // nobl11
-					xaa1041 // nobl12
+					xaa1035 // nobl12
 					xaa932 // nobl14
 					xaa359 // noblba_a
 					xaa767 // noblba_b
 					xaa532 // noblba_c
 					xaa521 // noblba_d
 					xaa755 // noblba_e
-					xaa1039 // nobw5
+					xaa1033 // nobw5
 					xaa1353 // nobw7
 					xaa1334 // nobw8
 					xaa728 // nobw9
 					xaa360 // nobwba
-					xaa1078 // nobwba_a
+					xaa1072 // nobwba_a
 					xaa514 // nobwba_d
-					xaa1090 // nobwba_e
+					xaa1084 // nobwba_e
 					xaa361 // nowbax_a
 					xaa397 // nowbax_b
 					xaa402 // nowbax_c
@@ -4413,60 +4413,6 @@ SILENT
 						xa_override = ~xarun~
 				END
 			
-			PATCH_DEFINE_ARRAY xa_extras
-				BEGIN
-					xaa432 // boyba1
-					xaa175 // boyba1_a
-					xaa519 // boyba1_c
-					xaa548 // ftowb5
-					xaa987 // ftowb6
-					xaa696 // ftowb7
-					xaa560 // ftowba
-					xaa167 // ftowba_a
-					xaa375 // ftowba_b
-					xaa251 // ftowba_c
-					xaa130 // ftowba_d
-					xaa134 // ftowba_e
-					xaa129 // ftowbasc
-					xaa291 // ftowbasn
-					xaa605 // ftowbax
-					xaa127 // ftwbax_a
-					xaa140 // ftwbax_b
-					xaa163 // ftwbax_c
-					xaa135 // ftwbax_d
-					xaa168 // ftwbax_e
-					xaa459 // girba1
-					xaa880 // girba2
-					xaa624 // girba3
-					xaa731 // mtob2
-					xaa1190 // mtob3
-					xaa849 // mtob6
-					xaa694 // mtob7
-					xaa877 // mtob8
-					xaa695 // mtob9
-					xaa463 // mtowba
-					xaa151 // mtowba_a
-					xaa166 // mtowba_b
-					xaa180 // mtowba_c
-					xaa172 // mtowba_d
-					xaa250 // mtowba_e
-					xaa170 // mtowbasc
-					xaa132 // mtowbasn
-					xaa452 // mtowbast
-					xaa583 // mtowbax
-					xaa498 // mtowbesn
-					xaa1207 // mtowwon1
-					xaa1208 // mtowwon2
-					xaa1209 // mtowwon3
-					xaa123 // mtwbax_a
-					xaa124 // mtwbax_b
-					xaa128 // mtwbax_c
-					xaa126 // mtwbax_d
-					xaa131 // mtwbax_e
-					xaa958 // mtwslim
-					xaa959 // mtwslim2
-					xaa960 // mtwslim3
-				END
 				LPF xa_add_extras_rescript
 					INT_VAR
 						xa_minX = 1420
@@ -4474,7 +4420,7 @@ SILENT
 						xa_maxX = 1750
 						xa_maxY = 1650
 						xa_numToGenerate = 51
-						xa_poolSize = 51
+						xa_poolSize = 77
 						xa_orientation = 4 // W
 					STR_VAR 
 						xa_override = ~xarun~
@@ -4633,7 +4579,7 @@ SILENT
 	//}	
 		
 	//{ Corwin's Home, L2 ar1317	
-		COPY_EXISTING ~xaa431.are~ ~override/xahom2.are~
+		COPY_EXISTING ~xaa428.are~ ~override/xahom2.are~
 		WRITE_LONG 0x784 xamu02
 		WRITE_LONG 0x788 xamu02
 		WRITE_ASCII 0x374 ~xahome~ #8

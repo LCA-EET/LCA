@@ -19,8 +19,8 @@
 		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
 		OR(3)
 			AreaCheck("XAA242") // ToK L1 ar0119
-			AreaCheck("XAA457") // ToK L2 ar0120
-			AreaCheck("XAA605") // ToK L3 ar0121
+			AreaCheck("XAA454") // ToK L2 ar0120
+			AreaCheck("XAA609") // ToK L3 ar0121
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_SleepBG", "GLOBAL", 1)
@@ -35,8 +35,8 @@
 		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
 		OR(3)
 			AreaCheck("XAA268") // B&S L1 ar0105
-			AreaCheck("XAA439") // B&S L2 ar0106
-			AreaCheck("XAA614") // B&S L3 ar0107
+			AreaCheck("XAA436") // B&S L2 ar0106
+			AreaCheck("XAA618") // B&S L3 ar0107
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_SleepBG", "GLOBAL", 1)
