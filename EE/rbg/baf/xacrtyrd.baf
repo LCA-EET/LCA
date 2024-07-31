@@ -1,6 +1,6 @@
 IF
 	ActionListEmpty()
-	!See(NearestEnemyOf(Myself))
+	//!See(NearestEnemyOf(Myself))
 	!ActuallyInCombat()
 THEN
 	RESPONSE #100
