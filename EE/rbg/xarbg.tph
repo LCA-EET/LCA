@@ -2,7 +2,7 @@ PRINT @4000  /* ~Processing Return to Baldur's Gate Changes...~ */
 
 SILENT
 
-OUTER_SET xa_regenerate = 1 // set to 1 to regenerate areas, 0 (default) to copy pre-generated areas
+OUTER_SET xa_regenerate = 0 // set to 1 to regenerate areas, 0 (default) to copy pre-generated areas
 
 //{ WAV
 	COPY ~%MOD_FOLDER%/rbg/wav~ ~override~
@@ -4139,10 +4139,12 @@ SILENT
 						xa_general = ~xac130~ // bdfmcl01
 						xa_class = ~xacrtyrd~
 				END
-				WRITE_LONG 0xED10 xac2
-				WRITE_LONG 0xED14 xac2
-				WRITE_LONG 0xED1C xac2
-				WRITE_LONG 0xED24 xac2
+				LPF xa_replacesongs
+					INT_VAR
+						xa_day = xac2
+						xa_night = xac2
+						xa_battle = xac2
+				END
 			//}
 		END ELSE BEGIN
 			LAF xa_copy_area_music
@@ -4151,10 +4153,12 @@ SILENT
 					xa_destinationarea = ~%MOD_FOLDER%/rbg/are/xag1.are~
 			END
 			COPY_EXISTING ~xag1.are~ ~override~
-			WRITE_LONG 0xED10 xac2
-			WRITE_LONG 0xED14 xac2
-			WRITE_LONG 0xED1C xac2
-			WRITE_LONG 0xED24 xac2
+			LPF xa_replacesongs
+				INT_VAR
+					xa_day = xac2
+					xa_night = xac2
+					xa_battle = xac2
+			END
 		END
 		
 		
@@ -4507,9 +4511,12 @@ SILENT
 					fj_structure_type = region
 					fj_name = ~trigcor~
 			END
-			WRITE_LONG 0xC000 xaa6 // Change Music
-			WRITE_LONG 0xC004 xaa6 // Change Music
-			WRITE_LONG 0xC00C xabb // Change Fight Music
+			LPF xa_replacesongs
+				INT_VAR
+					xa_day = xaa6
+					xa_night = xaa6
+					xa_battle = xabb
+			END
 		END ELSE BEGIN
 			LAF xa_copy_area_music
 				STR_VAR
@@ -4517,9 +4524,12 @@ SILENT
 					xa_destinationarea = ~%MOD_FOLDER%/rbg/are/xag2.are~
 			END
 			COPY_EXISTING ~xag2.are~ ~override~
-			WRITE_LONG 0xC000 xaa6 // Change Music
-			WRITE_LONG 0xC004 xaa6 // Change Music
-			WRITE_LONG 0xC00C xabb // Change Fight Music
+			LPF xa_replacesongs
+				INT_VAR
+					xa_day = xaa6
+					xa_night = xaa6
+					xa_battle = xabb
+			END
 		END
 		
 	//}

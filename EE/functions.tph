@@ -95,6 +95,53 @@ DEFINE_ACTION_FUNCTION xa_determine_quantity
 //}
 
 //{ Patch Functions
+DEFINE_PATCH_FUNCTION xa_replacesongs
+	INT_VAR
+		xa_day = 0
+		xa_night = 0
+		xa_victory = 0
+		xa_battle = 0
+		xa_defeat = 0
+		xa_day_alt = 0
+		xa_night_alt = 0
+		xa_victory_alt = 0
+		xa_battle_alt = 0
+		xa_defeat_alt = 0
+	BEGIN
+		SET xa_songsOffset = 0
+		READ_LONG 0xBC xa_songsOffset
+		PATCH_IF(xa_day > 0) THEN BEGIN
+			WRITE_LONG (0xBC + 4) xa_day
+		END
+		PATCH_IF(xa_night > 0) THEN BEGIN
+			WRITE_LONG (0xBC + 8) xa_night
+		END
+		PATCH_IF(xa_victory > 0) THEN BEGIN
+			WRITE_LONG (0xBC + 12) xa_victory
+		END
+		PATCH_IF(xa_battle > 0) THEN BEGIN
+			WRITE_LONG (0xBC + 16) xa_battle
+		END
+		PATCH_IF(xa_defeat > 0) THEN BEGIN
+			WRITE_LONG (0xBC + 20) xa_defeat
+		END
+		PATCH_IF(xa_day_alt > 0) THEN BEGIN
+			WRITE_LONG (0xBC + 24) xa_day_alt
+		END
+		PATCH_IF(xa_night_alt > 0) THEN BEGIN
+			WRITE_LONG (0xBC + 28) xa_night_alt
+		END
+		PATCH_IF(xa_victory_alt > 0) THEN BEGIN
+			WRITE_LONG (0xBC + 32) xa_victory_alt
+		END
+		PATCH_IF(xa_battle_alt > 0) THEN BEGIN
+			WRITE_LONG (0xBC + 36) xa_battle_alt
+		END
+		PATCH_IF(xa_defeat_alt > 0) THEN BEGIN
+			WRITE_LONG (0xBC + 40) xa_defeat_alt
+		END
+	END
+
 DEFINE_PATCH_FUNCTION xa_mapdoublelink
 	INT_VAR
 		xa_distance_scale = 0
