@@ -411,9 +411,11 @@ APPEND XACORWIJ
 	END
 
 	IF ~~ THEN BEGIN XA_TrappedG1_2
-		SAY @1423 /* ~This seems so real... it's just how I remember it...~ */
+		SAY @1423 /* ~This all seems so real... it's just how I remember it, except for — WHOA!~ */
 		
-		= @1424 /*~Come on — let's head in.~*/
+		= @1854 /* ~(She points to the sky. Looking up, you see a large, reddish-brown dragon. As it flies between some low-hanging clouds and into the light, it casts an ominous shadow over the battlefield. It seems to be circling above the area just west of the central keep.)~*/
+		
+		= @1424 /*~We'd do well to avoid drawing the attention of that beast. Come on, let's head in.~*/
 		IF ~~ THEN
 		EXIT
 	END
