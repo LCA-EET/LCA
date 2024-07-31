@@ -1895,7 +1895,7 @@ SILENT
 		WRITE_ASCII 0x2AC ~xaa166~ #8
 		WRITE_ASCII 0x3BC ~xaa167~ #8
 		WRITE_ASCII 0x4CC ~xaa168~ #8
-		WRITE_ASCII 0x5DC ~xaa170~ #8
+		WRITE_ASCII 0x5DC ~xaa250~ #8
 	//}
 	
 	//{ ar0117 xaa584
@@ -3888,7 +3888,6 @@ SILENT
 						xa_maxX = 2350
 						xa_maxY = 2040
 						xa_numToGenerate = 7
-						xa_poolSize = 7
 						xa_orientation = 2 // SW
 					STR_VAR 
 						xa_override = ~xag1crus~
@@ -3915,7 +3914,6 @@ SILENT
 						xa_maxX = 2350
 						xa_maxY = 2040
 						xa_numToGenerate = 9
-						xa_poolSize = 9
 						xa_orientation = 16 // random
 				END
 			//}
@@ -3946,7 +3944,6 @@ SILENT
 						xa_minY = 2446
 						xa_maxY = 2782
 						xa_numToGenerate = 30
-						xa_poolSize = 15
 						xa_orientation = 16 // random
 					STR_VAR 
 						xa_override = ~xag1coal~
@@ -3961,7 +3958,6 @@ SILENT
 						xa_minY = 1298
 						xa_maxY = 1990
 						xa_numToGenerate = 10
-						xa_poolSize = 15
 						xa_orientation = 16 // random
 					STR_VAR 
 						xa_override = ~xag1coal~
@@ -3976,7 +3972,6 @@ SILENT
 						xa_minY = 1588
 						xa_maxY = 1728
 						xa_numToGenerate = 10
-						xa_poolSize = 15
 						xa_orientation = 16 // random
 					STR_VAR 
 						xa_override = ~xag1coal~
@@ -3991,7 +3986,6 @@ SILENT
 						xa_minY = 2747
 						xa_maxY = 3021
 						xa_numToGenerate = 10
-						xa_poolSize = 15
 						xa_orientation = 16 // random
 					STR_VAR 
 						xa_override = ~xag1coal~
@@ -4006,7 +4000,6 @@ SILENT
 						xa_minY = 2128
 						xa_maxY = 2378
 						xa_numToGenerate = 12
-						xa_poolSize = 15
 						xa_orientation = 16 // random
 					STR_VAR 
 						xa_override = ~xag1coal~
@@ -4072,9 +4065,6 @@ SILENT
 					xac190 // bdcrus36
 					xac213 // bdcrus38
 					xac202 // bdcrus39
-					//xag110 // bdcrus5d
-					//xag139 // bdcrus6d
-					//xag140 // bdcrus7d
 					xac254 // bdcrus90
 					xac256 // bdcrus93
 					xac231 // bdcrus95
@@ -4090,7 +4080,6 @@ SILENT
 						xa_minY = 2446
 						xa_maxY = 2782
 						xa_numToGenerate = 40
-						xa_poolSize = 61
 						xa_orientation = 16 // random
 					STR_VAR 
 						xa_override = ~xag1crus~
@@ -4105,7 +4094,6 @@ SILENT
 						xa_minY = 1298
 						xa_maxY = 1990
 						xa_numToGenerate = 10
-						xa_poolSize = 61
 						xa_orientation = 16 // random
 					STR_VAR 
 						xa_override = ~xag1crus~
@@ -4120,7 +4108,6 @@ SILENT
 						xa_minY = 1588
 						xa_maxY = 1728
 						xa_numToGenerate = 10
-						xa_poolSize = 61
 						xa_orientation = 16 // random
 					STR_VAR 
 						xa_override = ~xag1crus~
@@ -4135,7 +4122,6 @@ SILENT
 						xa_minY = 2747
 						xa_maxY = 3021
 						xa_numToGenerate = 10
-						xa_poolSize = 61
 						xa_orientation = 16 // random
 					STR_VAR 
 						xa_override = ~xag1crus~
@@ -4150,7 +4136,6 @@ SILENT
 						xa_minY = 2128
 						xa_maxY = 2378
 						xa_numToGenerate = 12
-						xa_poolSize = 61
 						xa_orientation = 16 // random
 					STR_VAR 
 						xa_override = ~xag1crus~
@@ -4334,8 +4319,6 @@ SILENT
 					xaa251 // ftowba_c
 					xaa130 // ftowba_d
 					xaa134 // ftowba_e
-					xaa129 // ftowbasc
-					xaa291 // ftowbasn
 					xaa605 // ftowbax
 					xaa127 // ftwbax_a
 					xaa140 // ftwbax_b
@@ -4357,9 +4340,6 @@ SILENT
 					xaa180 // mtowba_c
 					xaa172 // mtowba_d
 					xaa250 // mtowba_e
-					xaa170 // mtowbasc
-					xaa132 // mtowbasn
-					xaa452 // mtowbast
 					xaa583 // mtowbax
 					xaa498 // mtowbesn
 					xaa1207 // mtowwon1
@@ -4406,8 +4386,7 @@ SILENT
 						xa_minY = 1400
 						xa_maxX = 1000
 						xa_maxY = 2000
-						xa_numToGenerate = 77
-						xa_poolSize = 77
+						xa_numToGenerate = 72
 						xa_orientation = 12 // E
 					STR_VAR 
 						xa_override = ~xarun~
@@ -4420,7 +4399,6 @@ SILENT
 						xa_maxX = 1750
 						xa_maxY = 1650
 						xa_numToGenerate = 51
-						xa_poolSize = 77
 						xa_orientation = 4 // W
 					STR_VAR 
 						xa_override = ~xarun~
@@ -4528,9 +4506,9 @@ SILENT
 					fj_structure_type = region
 					fj_name = ~trigcor~
 			END
-			WRITE_LONG 0xC550 xaa6 // Change Music
-			WRITE_LONG 0xC554 xaa6 // Change Music
-			WRITE_LONG 0xC55C xabb // Change Fight Music
+			WRITE_LONG 0xC000 xaa6 // Change Music
+			WRITE_LONG 0xC004 xaa6 // Change Music
+			WRITE_LONG 0xC00C xabb // Change Fight Music
 		END ELSE BEGIN
 			LAF xa_copy_area_music
 				STR_VAR
@@ -4538,9 +4516,9 @@ SILENT
 					xa_destinationarea = ~%MOD_FOLDER%/rbg/are/xag2.are~
 			END
 			COPY_EXISTING ~xag2.are~ ~override~
-			WRITE_LONG 0xC550 xaa6 // Change Music
-			WRITE_LONG 0xC554 xaa6 // Change Music
-			WRITE_LONG 0xC55C xabb // Change Fight Music
+			WRITE_LONG 0xC000 xaa6 // Change Music
+			WRITE_LONG 0xC004 xaa6 // Change Music
+			WRITE_LONG 0xC00C xabb // Change Fight Music
 		END
 		
 	//}

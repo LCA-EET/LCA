@@ -248,12 +248,10 @@ DEFINE_PATCH_FUNCTION xa_add_extras
 		xa_minY = 0
 		xa_maxY = 0
 		xa_numToGenerate = 0
-		xa_poolSize = 0
 		xa_orientation = 16
 	BEGIN
 		SET xa_extrasAdded = 0 
 		WHILE (xa_extrasAdded < xa_numToGenerate) BEGIN
-			//SET xa_extrasIndex = RANDOM (0 (xa_poolSize - 1))
 			PATCH_PHP_EACH xa_extras AS _ => xa_creRef
 			BEGIN
 				PATCH_IF (xa_orientation = 16) BEGIN
@@ -321,7 +319,6 @@ DEFINE_PATCH_FUNCTION xa_add_extras_rescript
 		xa_minY = 0
 		xa_maxY = 0
 		xa_numToGenerate = 0
-		xa_poolSize = 0
 		xa_orientation = 16
 	STR_VAR 
 		xa_override = ~~
@@ -333,7 +330,6 @@ DEFINE_PATCH_FUNCTION xa_add_extras_rescript
 	BEGIN
 		SET xa_extrasAdded = 0 
 		WHILE (xa_extrasAdded < xa_numToGenerate) BEGIN
-			//SET xa_extrasIndex = RANDOM (0 (xa_poolSize - 1))
 			PATCH_PHP_EACH xa_extras AS _ => xa_creRef
 			BEGIN
 				PATCH_IF (xa_orientation = 16) BEGIN

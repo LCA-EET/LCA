@@ -689,42 +689,7 @@ END
 					xa_maxX = 1000
 					xa_maxY = 680
 					xa_numToGenerate = 30
-					xa_poolSize = 8
 			END
-			/*
-			LPF fj_are_structure INT_VAR fj_loc_x = 721 fj_loc_y =455 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug00 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 928 fj_loc_y =748 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug01 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 494 fj_loc_y =567 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug02 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 395 fj_loc_y =595 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug03 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 1100 fj_loc_y =610 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug04 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 1180 fj_loc_y =865 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug05 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 500 fj_loc_y =500 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug06 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 1000 fj_loc_y =520 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug07 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 975 fj_loc_y =830 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug00 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 375 fj_loc_y =650 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug01 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 1200 fj_loc_y =630 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug02 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 1175 fj_loc_y =920 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug03 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 815 fj_loc_y =500 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug04 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 625 fj_loc_y =610 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug05 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 783 fj_loc_y =733 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug06 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 708 fj_loc_y =962 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug07 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 907 fj_loc_y =940 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug00 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 931 fj_loc_y =477 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug01 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 678 fj_loc_y =546 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug02 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 915 fj_loc_y =830 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug03 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 631 fj_loc_y =927 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug04 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 1010 fj_loc_y =580 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug05 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 970 fj_loc_y =930 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug06 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 615 fj_loc_y =510 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug07 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 830 fj_loc_y =838 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug00 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 890 fj_loc_y =535 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug01 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 440 fj_loc_y =620 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug02 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 1050 fj_loc_y =685 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug03 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 1050 fj_loc_y =914 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug04 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 530 fj_loc_y =940 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug05 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 616 fj_loc_y =995 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug06 fj_name = ghost END
-			LPF fj_are_structure INT_VAR fj_loc_x = 900 fj_loc_y =679 STR_VAR fj_structure_type = actor fj_cre_resref = xacrug07 fj_name = ghost END
-			*/
 		//}
 	//}
 	
