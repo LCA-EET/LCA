@@ -932,8 +932,8 @@ SILENT
 		
 		//{ Dragon
 			COPY_EXISTING ~xaf101.cre~ ~override/xadragon.cre~ // bdhalat2
-			SAY NAME1 @4162 /* Alabaster Dragon */
-			SAY NAME2 @4162 /* Alabaster Dragon */
+			SAY NAME1 @4162 /* Auburn Dragon */
+			SAY NAME2 @4162 /* Auburn Dragon */
 			WRITE_ASCII 0x850 ~dragring~ #8
 			WRITE_ASCII 0x280 ~xadragon~ #8
 			WRITE_LONG 0x14 55000
@@ -3809,8 +3809,6 @@ SILENT
 		
 		ACTION_IF(xa_regenerate = 1) THEN BEGIN
 			COPY_EXISTING ~xac101.are~ ~override/xag1.are~
-			
-			
 			LPF xa_delete_are_actors END
 			LPF xa_delete_are_triggers END
 			LPF fj_are_structure
@@ -3867,11 +3865,10 @@ SILENT
 				END
 				
 			//}
-			//{ Add Caelar & Lieutenants
+			//{ Add Caelar Lieutenants
 				PATCH_DEFINE_ARRAY xa_extras
 				BEGIN
 					xac152 // bdsindr2
-					xac109 // bdcaela3
 					xac114 // bdeiner
 					xac115 // bdbertor
 					xac111 // bdashati
@@ -3884,7 +3881,7 @@ SILENT
 						xa_minY = 1800
 						xa_maxX = 2350
 						xa_maxY = 2040
-						xa_numToGenerate = 7
+						xa_numToGenerate = 6
 						xa_orientation = 2 // SW
 					STR_VAR 
 						xa_override = ~xag1crus~
@@ -4144,6 +4141,20 @@ SILENT
 						xa_day = xac2
 						xa_night = xac2
 						xa_battle = xac2
+				END
+				LPF fj_are_structure
+					INT_VAR
+						fj_loc_x = 2230
+						fj_loc_y = 1930
+					STR_VAR
+						fj_structure_type = ~actor~
+						fj_name = ~Caelar~
+						fj_cre_resref = ~xac109~
+						fj_bcs_override = ~xag1crus~
+						fj_bcs_general = ~xacaelac~
+						fj_bcs_class = ~xalcnull~
+						fj_bcs_race = ~xalcnull~
+						fj_bcs_default = ~xalcnull~
 				END
 			//}
 		END ELSE BEGIN
