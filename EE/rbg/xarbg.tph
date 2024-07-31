@@ -931,7 +931,7 @@ SILENT
 		//}
 		
 		//{ Dragon
-			COPY_EXISTING ~xaf101.cre~ ~override/xadragon.cre~ // bdhalat2
+			COPY ~%MOD_FOLDER%/rbg/cre/xadragon.cre~ ~override~ // bdhalat2
 			SAY NAME1 @4162 /* Auburn Dragon */
 			SAY NAME2 @4162 /* Auburn Dragon */
 			WRITE_ASCII 0x850 ~dragring~ #8
