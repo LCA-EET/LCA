@@ -108,250 +108,256 @@ THEN
 END
 
 IF
-	GlobalLT("XA_LC_CoalitionAlive", "GLOBAL", 100)
+	GlobalLT("XA_LC_CoalitionAlive", "GLOBAL", 90)
+	GlobalLT("XA_LC_CoalitionRespawns", "MYAREA", 25)
 	Global("XA_LC_BeginSpawning", "MYAREA", 1)
 THEN
-	RESPONSE #10
+	RESPONSE #7
 		CreateCreature("xacoal0", [20.3300], NE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #7
 		CreateCreature("xacoal1", [50.3390], NE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #7
 		CreateCreature("xacoal2", [100.3400], NE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #7
 		CreateCreature("xacoal3", [20.3300], NE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #7
 		CreateCreature("xacoal4", [50.3390], NE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #7
 		CreateCreature("xacoal5", [100.3400], NE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #7
 		CreateCreature("xacoal6", [20.3300], NE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #7
 		CreateCreature("xacoal7", [50.3390], NE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #7
 		CreateCreature("xacoal8", [100.3400], NE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #7
 		CreateCreature("xacoal9", [20.3300], NE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #7
 		CreateCreature("xacoal10", [50.3390], NE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #7
 		CreateCreature("xacoal11", [100.3400], NE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #7
 		CreateCreature("xacoal12", [20.3300], NE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #7
 		CreateCreature("xacoal13", [50.3390], NE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacoal14", [100.3400], NE)
 		Continue()
 END
 
 IF
-	GlobalLT("XA_LC_CrusadersAlive", "GLOBAL", 100)
+	GlobalLT("XA_LC_CrusadersAlive", "GLOBAL", 90)
+	GlobalLT("XA_LC_CrusaderRespawns", "MYAREA", 25)
 	Global("XA_LC_BeginSpawning", "MYAREA", 1)
 THEN
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus0", [2690.1870], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus1", [2660.1820], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus2", [2750.1910], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus3", [1370.1460], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus4", [1690.1570], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus5", [1960.1600], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus6", [970.2300], SE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus7", [970.1586], E)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus8", [2650.1880], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus9", [2690.1870], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus10", [2660.1820], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus11", [2750.1910], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus12", [1370.1460], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus13", [1690.1570], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus14", [1960.1600], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus15", [970.2300], SE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus16", [970.1586], E)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus17", [2650.1880], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus18", [2690.1870], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus19", [2660.1820], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus20", [2750.1910], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus21", [1370.1460], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus22", [1690.1570], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus23", [1960.1600], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2 //50
 		CreateCreature("xacrus24", [970.2300], SE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus25", [970.1586], E)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus26", [2650.1880], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus27", [2690.1870], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus28", [2660.1820], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus29", [2750.1910], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus30", [1370.1460], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus31", [1690.1570], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus32", [1960.1600], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus33", [970.2300], SE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus34", [970.1586], E)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus35", [2650.1880], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus36", [2690.1870], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus37", [2660.1820], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus38", [2750.1910], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus39", [1370.1460], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus40", [1690.1570], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #2
 		CreateCreature("xacrus41", [1960.1600], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #1
 		CreateCreature("xacrus42", [970.2300], SE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #1
 		CreateCreature("xacrus43", [970.1586], E)
 		Continue()
-	RESPONSE #10
+	RESPONSE #1
 		CreateCreature("xacrus44", [2650.1880], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #1
 		CreateCreature("xacrus45", [2690.1870], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #1
 		CreateCreature("xacrus46", [2660.1820], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #1
 		CreateCreature("xacrus47", [2750.1910], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #1
 		CreateCreature("xacrus48", [1370.1460], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #1 // 50
 		CreateCreature("xacrus49", [1690.1570], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #1
 		CreateCreature("xacrus50", [1960.1600], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #1
 		CreateCreature("xacrus51", [970.2300], SE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #1
 		CreateCreature("xacrus52", [970.1586], E)
 		Continue()
-	RESPONSE #10
+	RESPONSE #1
 		CreateCreature("xacrus53", [2650.1880], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #1
 		CreateCreature("xacrus54", [1960.1600], SW)
 		Continue()
-	RESPONSE #10
+	RESPONSE #1
 		CreateCreature("xacrus55", [970.2300], SE)
 		Continue()
-	RESPONSE #10
+	RESPONSE #1
 		CreateCreature("xacrus56", [970.1586], E)
 		Continue()
-	RESPONSE #10
+	RESPONSE #1
 		CreateCreature("xacrus57", [2650.1880], SW)
 		Continue()
 END
 
 IF
-	GlobalLT("XA_LC_CoalitionAlive", "GLOBAL", 100)
+	GlobalLT("XA_LC_CoalitionAlive", "GLOBAL", 90)
+	GlobalLT("XA_LC_CoalitionRespawns", "MYAREA", 25)
 	Global("XA_LC_BeginSpawning", "MYAREA", 1)
 THEN
 	RESPONSE #100
+		IncrementGlobal("XA_LC_CoalitionRespawns", "MYAREA", 1)
 		IncrementGlobal("XA_LC_CoalitionAlive", "GLOBAL", 1)
 		Continue()
 END
 
 IF
-	GlobalLT("XA_LC_CrusadersAlive", "GLOBAL", 100)
+	GlobalLT("XA_LC_CrusadersAlive", "GLOBAL", 90)
+	GlobalLT("XA_LC_CrusaderRespawns", "MYAREA", 25)
 	Global("XA_LC_BeginSpawning", "MYAREA", 1)
 THEN
 	RESPONSE #100
+		IncrementGlobal("XA_LC_CrusaderRespawns", "MYAREA", 1)
 		IncrementGlobal("XA_LC_CrusadersAlive", "GLOBAL", 1)
 		Continue()
 END
