@@ -2,7 +2,7 @@ PRINT @4000  /* ~Processing Return to Baldur's Gate Changes...~ */
 
 SILENT
 
-OUTER_SET xa_regenerate = 0 // set to 1 to regenerate areas, 0 (default) to copy pre-generated areas
+OUTER_SET xa_regenerate = 1 // set to 1 to regenerate areas, 0 (default) to copy pre-generated areas
 
 //{ WAV
 	COPY ~%MOD_FOLDER%/rbg/wav~ ~override~
@@ -3809,10 +3809,7 @@ SILENT
 		
 		ACTION_IF(xa_regenerate = 1) THEN BEGIN
 			COPY_EXISTING ~xac101.are~ ~override/xag1.are~
-			WRITE_LONG 0x5FDC xac2
-			WRITE_LONG 0x5E00 xac2
-			WRITE_LONG 0x5E08 xac2
-			WRITE_LONG 0x5E10 xac2
+			
 			
 			LPF xa_delete_are_actors END
 			LPF xa_delete_are_triggers END
@@ -4142,6 +4139,10 @@ SILENT
 						xa_general = ~xac130~ // bdfmcl01
 						xa_class = ~xacrtyrd~
 				END
+				WRITE_LONG 0xED10 xac2
+				WRITE_LONG 0xED14 xac2
+				WRITE_LONG 0xED1C xac2
+				WRITE_LONG 0xED24 xac2
 			//}
 		END ELSE BEGIN
 			LAF xa_copy_area_music
@@ -4150,10 +4151,10 @@ SILENT
 					xa_destinationarea = ~%MOD_FOLDER%/rbg/are/xag1.are~
 			END
 			COPY_EXISTING ~xag1.are~ ~override~
-			WRITE_LONG 0x5FDC xac2
-			WRITE_LONG 0x5E00 xac2
-			WRITE_LONG 0x5E08 xac2
-			WRITE_LONG 0x5E10 xac2
+			WRITE_LONG 0xED10 xac2
+			WRITE_LONG 0xED14 xac2
+			WRITE_LONG 0xED1C xac2
+			WRITE_LONG 0xED24 xac2
 		END
 		
 		
