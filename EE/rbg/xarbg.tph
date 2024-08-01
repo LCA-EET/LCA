@@ -3807,10 +3807,10 @@ SILENT
 	//{ Painting One - Dragonspear Revisit
 		EXTEND_TOP ~xacs101.bcs~ ~%MOD_FOLDER%/rbg/baf/xag1.baf~
 		
-		COPY_EXISTING ~xac111.are~ ~override~ // bdashati
+		COPY_EXISTING ~xac111.cre~ ~override~ // bdashati
 		REMOVE_CRE_ITEM ~minhp1~
 		
-		COPY_EXISTING ~xac112.are~ ~override~ // bdhepher
+		COPY_EXISTING ~xac112.cre~ ~override~ // bdhepher
 		REMOVE_CRE_ITEM ~minhp1~
 		
 		ACTION_IF(xa_regenerate = 1) THEN BEGIN
