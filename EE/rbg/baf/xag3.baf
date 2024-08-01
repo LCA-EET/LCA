@@ -42,7 +42,6 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_EndG3", "GLOBAL", 2)
 		SetGlobal("XA_LC_CompletedG3", "GLOBAL", 1)
-		SetGlobal("XA_LC_DemonSpeak", "GLOBAL", 1)
 		DisplayStringHead(Player1, @0)
 		SetInterrupt(TRUE)
 END

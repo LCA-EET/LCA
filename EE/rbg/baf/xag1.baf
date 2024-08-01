@@ -54,7 +54,6 @@ IF
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_DemonSpeak", "GLOBAL", 1)
 		SetGlobal("XA_LC_CompletedG1", "GLOBAL", 1)
 		DisplayStringHead(Player1, @0) /* ~(The world swirls, and your vision darkens...)~*/
 		SetInterrupt(TRUE)
@@ -72,7 +71,6 @@ IF
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_DemonSpeak", "GLOBAL", 1)
 		SetGlobal("XA_LC_CompletedG1", "GLOBAL", 1)
 		DisplayStringHead(Player1, @0) /* ~(The world swirls, and your vision darkens...)~*/
 		SetInterrupt(TRUE)

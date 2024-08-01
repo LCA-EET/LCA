@@ -665,7 +665,7 @@ IF ~~ THEN BEGIN XA_WhoWhatWhy
 	GOTO XA_HaveSomethingDemonWants //OK
 	
 	IF ~
-		Global("XA_LC_CompletedG1", "GLOBAL", 1)
+		GlobalGT("XA_LC_CompletedG1", "GLOBAL", 1)
 		GlobalLT("XA_LC_AskAboutDS", "LOCALS", 1)
 	~ THEN REPLY @4 /* ~Why did you send me to Dragonspear?~ */
 	DO ~
@@ -674,7 +674,7 @@ IF ~~ THEN BEGIN XA_WhoWhatWhy
 	GOTO XA_AskAboutDS //OK
 	
 	IF ~
-		Global("XA_LC_CompletedG2", "GLOBAL", 1)
+		GlobalGT("XA_LC_CompletedG2", "GLOBAL", 1)
 		GlobalLT("XA_LC_AskAboutTrial", "LOCALS", 1)
 	~ THEN REPLY @34 /* ~Sarevok, a Grand Duke? What was the point of that farce?~  */
 	DO ~
@@ -683,7 +683,7 @@ IF ~~ THEN BEGIN XA_WhoWhatWhy
 	GOTO XA_AskAboutTrial //OK
 	
 	IF ~
-		Global("XA_LC_CompletedG3", "GLOBAL", 1)
+		GlobalGT("XA_LC_CompletedG3", "GLOBAL", 0)
 		GlobalGT("XA_LC_GorionTalk", "GLOBAL", 0)
 		GlobalLT("XA_LC_AskAboutGorion", "LOCALS", 1)
 	~ THEN REPLY @38 /* ~You'll pay for mocking the memory of my foster father!~ */
@@ -693,7 +693,7 @@ IF ~~ THEN BEGIN XA_WhoWhatWhy
 	GOTO XA_AskAboutGorion //OK
 	
 	IF ~
-		Global("XA_LC_CompletedG3", "GLOBAL", 1)
+		GlobalGT("XA_LC_CompletedG3", "GLOBAL", 1)
 		GlobalGT("XA_LC_GorionTalk", "GLOBAL", 0)
 		GlobalLT("XA_LC_AskAboutGorion", "LOCALS", 1)
 	~ THEN REPLY @73 /* ~Why go through the trouble of creating a falsification of my dead foster father?~ */
