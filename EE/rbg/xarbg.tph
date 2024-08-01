@@ -3807,6 +3807,12 @@ SILENT
 	//{ Painting One - Dragonspear Revisit
 		EXTEND_TOP ~xacs101.bcs~ ~%MOD_FOLDER%/rbg/baf/xag1.baf~
 		
+		COPY_EXISTING ~xac111.are~ ~override~ // bdashati
+		REMOVE_CRE_ITEM ~minhp1~
+		
+		COPY_EXISTING ~xac112.are~ ~override~ // bdhepher
+		REMOVE_CRE_ITEM ~minhp1~
+		
 		ACTION_IF(xa_regenerate = 1) THEN BEGIN
 			COPY_EXISTING ~xac101.are~ ~override/xag1.are~
 			LPF xa_delete_are_actors END
@@ -3865,6 +3871,7 @@ SILENT
 				END
 				
 			//}
+			
 			//{ Add Caelar Lieutenants
 				PATCH_DEFINE_ARRAY xa_extras
 				BEGIN
@@ -3882,7 +3889,7 @@ SILENT
 						xa_minY = 1800
 						xa_maxX = 2350
 						xa_maxY = 2040
-						xa_numToGenerate = 6
+						xa_numToGenerate = 7
 						xa_orientation = 2 // SW
 					STR_VAR 
 						xa_override = ~xag1crus~
