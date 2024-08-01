@@ -715,6 +715,7 @@ SILENT
 					xa_override = ~xag1crus~
 					xa_scriptName = ~xac108~
 					xa_general = ~xacaelac~
+					xa_default = ~xac130~ // bdfmcl01
 			END
 		//}
 		EXTEND_BOTTOM ~xag1coal.bcs~ ~%MOD_FOLDER%/rbg/baf/xacrtyrd.baf~
@@ -4149,7 +4150,7 @@ SILENT
 						fj_cre_resref = ~xac109~
 						fj_bcs_override = ~xag1crus~
 						fj_bcs_general = ~xacaelac~
-						fj_bcs_class = ~xalcnull~
+						fj_bcs_class = ~xac130~ // bdfmcl01
 						fj_bcs_race = ~xalcnull~
 						fj_bcs_default = ~xalcnull~
 				END

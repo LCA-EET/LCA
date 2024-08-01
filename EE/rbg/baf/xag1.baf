@@ -68,8 +68,7 @@ IF
 	Dead("XAC111") // bdashati
 	Dead("XAC113") // bdbarghe
 	Dead("XAC112") // bdhepher
-	!Global("XA_LC_DemonSpeak", "GLOBAL", 1)
-	!Global("XA_LC_CompletedG1", "GLOBAL", 1)
+	GlobalLT("XA_LC_CompletedG1", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
