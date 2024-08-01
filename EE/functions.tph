@@ -111,34 +111,43 @@ DEFINE_PATCH_FUNCTION xa_replacesongs
 		SET xa_songsOffset = 0
 		READ_LONG 0xBC xa_songsOffset
 		PATCH_IF(xa_day > 0) THEN BEGIN
-			WRITE_LONG (xa_songsOffset + 4) xa_day
+			WRITE_LONG xa_songsOffset xa_day
 		END
+		xa_songsOffset = (xa_songsOffset + 4)
 		PATCH_IF(xa_night > 0) THEN BEGIN
-			WRITE_LONG (xa_songsOffset + 8) xa_night
+			WRITE_LONG xa_songsOffset xa_night
 		END
+		xa_songsOffset = (xa_songsOffset + 4)
 		PATCH_IF(xa_victory > 0) THEN BEGIN
-			WRITE_LONG (xa_songsOffset + 12) xa_victory
+			WRITE_LONG xa_songsOffset xa_victory
 		END
+		xa_songsOffset = (xa_songsOffset + 4)
 		PATCH_IF(xa_battle > 0) THEN BEGIN
-			WRITE_LONG (xa_songsOffset + 16) xa_battle
+			WRITE_LONG xa_songsOffset xa_battle
 		END
+		xa_songsOffset = (xa_songsOffset + 4)
 		PATCH_IF(xa_defeat > 0) THEN BEGIN
-			WRITE_LONG (xa_songsOffset + 20) xa_defeat
+			WRITE_LONG xa_songsOffset xa_defeat
 		END
+		xa_songsOffset = (xa_songsOffset + 4)
 		PATCH_IF(xa_day_alt > 0) THEN BEGIN
-			WRITE_LONG (xa_songsOffset + 24) xa_day_alt
+			WRITE_LONG xa_songsOffset xa_day_alt
 		END
+		xa_songsOffset = (xa_songsOffset + 4)
 		PATCH_IF(xa_night_alt > 0) THEN BEGIN
-			WRITE_LONG (xa_songsOffset + 28) xa_night_alt
+			WRITE_LONG xa_songsOffset xa_night_alt
 		END
+		xa_songsOffset = (xa_songsOffset + 4)
 		PATCH_IF(xa_victory_alt > 0) THEN BEGIN
-			WRITE_LONG (xa_songsOffset + 32) xa_victory_alt
+			WRITE_LONG xa_songsOffset xa_victory_alt
 		END
+		xa_songsOffset = (xa_songsOffset + 4)
 		PATCH_IF(xa_battle_alt > 0) THEN BEGIN
-			WRITE_LONG (xa_songsOffset + 36) xa_battle_alt
+			WRITE_LONG xa_songsOffset xa_battle_alt
 		END
+		xa_songsOffset = (xa_songsOffset + 4)
 		PATCH_IF(xa_defeat_alt > 0) THEN BEGIN
-			WRITE_LONG (xa_songsOffset + 40) xa_defeat_alt
+			WRITE_LONG xa_songsOffset xa_defeat_alt
 		END
 	END
 

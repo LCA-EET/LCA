@@ -6,4 +6,5 @@ IF
 THEN
 	RESPONSE #100
 		MoveToObject("CYARD")
+		Continue()
 END

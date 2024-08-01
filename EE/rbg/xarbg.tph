@@ -3874,6 +3874,7 @@ SILENT
 					xac111 // bdashati
 					xac112 // bdhepher
 					xac113 // bdbarghe
+					xac120 // bdferrus
 				END
 				LPF xa_add_extras_rescript
 					INT_VAR
@@ -3894,7 +3895,6 @@ SILENT
 					xamutank 
 					xamutank 
 					xamutank 
-					xac120 // bdferrus
 					eletro01 
 					hgtrl01 
 					hgtrl01 
@@ -3942,7 +3942,6 @@ SILENT
 					STR_VAR 
 						xa_override = ~xag1coal~
 						xa_general = ~xac130~ // bdfmcl01
-						xa_class = ~xacrtyrd~
 				END
 				
 				LPF xa_add_extras_rescript
@@ -3956,7 +3955,6 @@ SILENT
 					STR_VAR 
 						xa_override = ~xag1coal~
 						xa_general = ~xac130~ // bdfmcl01
-						xa_class = ~xacrtyrd~
 				END
 				
 				LPF xa_add_extras_rescript
@@ -3970,7 +3968,6 @@ SILENT
 					STR_VAR 
 						xa_override = ~xag1coal~
 						xa_general = ~xac130~ // bdfmcl01
-						xa_class = ~xacrtyrd~
 				END
 				
 				LPF xa_add_extras_rescript
@@ -3984,7 +3981,6 @@ SILENT
 					STR_VAR 
 						xa_override = ~xag1coal~
 						xa_general = ~xac130~ // bdfmcl01
-						xa_class = ~xacrtyrd~
 				END
 				
 				LPF xa_add_extras_rescript
@@ -3998,7 +3994,6 @@ SILENT
 					STR_VAR 
 						xa_override = ~xag1coal~
 						xa_general = ~xac130~ // bdfmcl01
-						xa_class = ~xacrtyrd~
 				END
 			//}
 			//{ Add Crusaders
@@ -4078,7 +4073,6 @@ SILENT
 					STR_VAR 
 						xa_override = ~xag1crus~
 						xa_general = ~xac130~ // bdfmcl01
-						xa_class = ~xacrtyrd~
 				END
 				
 				LPF xa_add_extras_rescript
@@ -4092,7 +4086,6 @@ SILENT
 					STR_VAR 
 						xa_override = ~xag1crus~
 						xa_general = ~xac130~ // bdfmcl01
-						xa_class = ~xacrtyrd~
 				END
 				
 				LPF xa_add_extras_rescript
@@ -4106,7 +4099,6 @@ SILENT
 					STR_VAR 
 						xa_override = ~xag1crus~
 						xa_general = ~xac130~ // bdfmcl01
-						xa_class = ~xacrtyrd~
 				END
 				
 				LPF xa_add_extras_rescript
@@ -4120,7 +4112,6 @@ SILENT
 					STR_VAR 
 						xa_override = ~xag1crus~
 						xa_general = ~xac130~ // bdfmcl01
-						xa_class = ~xacrtyrd~
 				END
 				
 				LPF xa_add_extras_rescript
@@ -4134,7 +4125,6 @@ SILENT
 					STR_VAR 
 						xa_override = ~xag1crus~
 						xa_general = ~xac130~ // bdfmcl01
-						xa_class = ~xacrtyrd~
 				END
 				LPF xa_replacesongs
 					INT_VAR
