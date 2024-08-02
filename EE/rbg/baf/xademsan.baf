@@ -82,8 +82,9 @@ IF
 	Global("XA_LC_NarzugonHostile", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		DisplayStringHead("XANARZU", @0)
 		SetGlobal("XA_LC_IncubusDefeated", "GLOBAL", 1)
+		SetGlobal("XA_LC_NarzugonHostile", "GLOBAL", 2)
+		DisplayStringHead("XANARZU", @0)
 		Kill("XANARZU")	
 END
 //}
