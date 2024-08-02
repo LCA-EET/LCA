@@ -1,6 +1,6 @@
 //{ Apply Buffs When Hostile
 IF
-	Global("XA_LC_NarzugonHostile", "LOCALS", 1)
+	Global("XA_LC_NarzugonHostile", "GLOBAL", 1)
 	GlobalGT("XA_LC_PrisonKnowledge", "GLOBAL", 2)
 	GlobalLT("XA_LC_IncubusBuff", "LOCALS", 1)
 THEN
@@ -15,7 +15,7 @@ THEN
 END
 
 IF
-	Global("XA_LC_NarzugonHostile", "LOCALS", 1)
+	Global("XA_LC_NarzugonHostile", "GLOBAL", 1)
 	GlobalLT("XA_LC_PrisonKnowledge", "GLOBAL", 3)
 	GlobalLT("XA_LC_IncubusBuff", "LOCALS", 1)
 THEN
@@ -45,7 +45,7 @@ END
 
 //{ Block fight script if not hostile
 IF 
-	GlobalLT("XA_LC_NarzugonHostile", "LOCALS", 1)
+	GlobalLT("XA_LC_NarzugonHostile", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		NoAction()

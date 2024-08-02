@@ -56,7 +56,7 @@ IF ~~ THEN BEGIN XA_ConfrontDemon3
 		NumInPartyLT(2)
 	~ THEN 
 	DO ~
-		SetGlobal("XA_LC_NarzugonHostile", "LOCALS", 1)
+		SetGlobal("XA_LC_NarzugonHostile", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XADEM1")
 	~
@@ -67,7 +67,7 @@ IF ~~ THEN BEGIN XA_ConfrontDemon3
 		NumInPartyLT(4)
 	~ THEN 
 	DO ~
-		SetGlobal("XA_LC_NarzugonHostile", "LOCALS", 1)
+		SetGlobal("XA_LC_NarzugonHostile", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XADEM23")
 	~
@@ -77,7 +77,7 @@ IF ~~ THEN BEGIN XA_ConfrontDemon3
 		NumInPartyGT(3)
 	~ THEN 
 	DO ~
-		SetGlobal("XA_LC_NarzugonHostile", "LOCALS", 1)
+		SetGlobal("XA_LC_NarzugonHostile", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XADEM4")
 	~

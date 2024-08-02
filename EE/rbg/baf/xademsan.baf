@@ -61,7 +61,7 @@ END
 //{ Kill Narzugon
 IF
 	HPPercentLT("XANARZU", 10)
-	Global("XA_LC_NarzugonHostile", "LOCALS", 1)
+	Global("XA_LC_NarzugonHostile", "GLOBAL", 1)
 THEN
 	RESPONSE #33
 		ActionOverride("XANARZU", SetItemFlags("XAQUIVER", 1, TRUE))
@@ -79,7 +79,7 @@ END
 
 IF
 	HPPercentLT("XANARZU", 10)
-	Global("XA_LC_NarzugonHostile", "LOCALS", 1)
+	Global("XA_LC_NarzugonHostile", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		DisplayStringHead("XANARZU", @0)
