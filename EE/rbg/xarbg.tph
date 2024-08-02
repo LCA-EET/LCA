@@ -996,6 +996,8 @@ SILENT
 		COPY_EXISTING ~chicke.cre~ ~override/xachick.cre~ // Chicken
 		WRITE_ASCII 0x2CC ~xachick~ #8 	// Dialogue
 		WRITE_ASCII 0x250 ~xachick~ #8		// Class Script
+		SAY NAME1 @5031 /* Hen */
+		SAY NAME2 @5031 /* Hen */
 		
 		COPY_EXISTING ~neb.cre~ ~override/xaneb.cre~ // Flaming Fist Enforcer
 		REMOVE_CRE_ITEM ~MISC5K~

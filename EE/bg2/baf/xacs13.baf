@@ -1,4 +1,12 @@
 IF
+	Global("PCKeepOwner","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("PCKeepOwner", "GLOBAL", 2)
+		Continue()
+END
+
+IF
 	Global("soa_complete", "GLOBAL", 0)
 THEN
 	RESPONSE #100
