@@ -1754,6 +1754,11 @@ SILENT
 	//}
 //}
 
+//{ New Potion Case
+	COPY_EXISTING ~bag06.itm~ ~override/xapotion.itm~
+	COPY_EXISTING ~bag06.sto~ ~override/xapotion.sto~
+//}
+
 //{ Stores
 	COPY_EXISTING ~xaa101.sto~ ~override/xahalbaz.sto~ // sto0703
 	ADD_STORE_ITEM ~potn52~ AFTER ~potn08~ #1 #0 #0 ~IDENTIFIED~ #3
@@ -1762,6 +1767,7 @@ SILENT
 	COPY_EXISTING ~xaa137.sto~ ~override~ // sto1115
 	ADD_STORE_ITEM ~potn52~ AFTER ~potn08~ #1 #0 #0 ~IDENTIFIED~ #5
 	ADD_STORE_ITEM ~potn55~ AFTER ~potn52~ #1 #0 #0 ~IDENTIFIED~ #2
+	ADD_STORE_ITEM "xapotion" #0 #0 #0 ~IDENTIFIED~ #1
 			
 	COPY ~%MOD_FOLDER%/rbg/sto/xamelkor.sto~ ~override~
 	WRITE_LONG 0xc RESOLVE_STR_REF(@4158)
