@@ -146,21 +146,7 @@ END
 IF ~~ THEN BEGIN XA_JobOffer2
 	SAY @101 /* ~Very well.~ */
 	
-	IF ~
-		!Global("XA_LC_Ask_VirgilWinston", "LOCALS", 1)
-	~ THEN REPLY @90 /* ~What's going to happen to Virgil and Lord Winston?~*/
-	DO ~
-		SetGlobal("XA_LC_Ask_VirgilWinston", "LOCALS", 1)
-	~
-	GOTO XA_VirgilWinston
-	
-	IF ~
-		!Global("XA_LC_Ask_Refugees", "LOCALS", 1)
-	~ THEN REPLY @94 /* ~What about the refugees that were sold into slavery?~ */
-	DO ~
-		SetGlobal("XA_LC_Ask_Refugees", "LOCALS", 1)
-	~
-	GOTO XA_Refugees
+	COPY_TRANS XANEDERL XA_AskVirgilRefugees
 END
 
 IF ~~ THEN BEGIN XA_NederlokSlaverPlotEnd2
@@ -172,23 +158,8 @@ END
 IF ~~ THEN BEGIN XA_Refugees
 	SAY @95 /* ~Well, now that we can decode the manifests, we'll work with the appropriate authorities in Athkatla, Calimshan, and other cities to repatriate the refugees, and arrest the slavers who purchased them.~ */
 	
-	IF ~
-		Global("XA_LC_NederlokMedal", "GLOBAL", 1)
-	~ THEN REPLY @102 /* ~I see. I'll leave you to your work, then.~  */
-	GOTO XA_NederlokSlaverPlotEnd3
-	
-	IF ~
-		!Global("XA_LC_NederlokMedal", "GLOBAL", 1)
-	~ THEN REPLY @102 /* ~I see. I'll leave you to your work.~  */
-	GOTO XA_GiveMedal
-	
-	IF ~
-		!Global("XA_LC_Ask_VirgilWinston", "LOCALS", 1)
-	~ THEN REPLY @90 /* ~What's going to happen to Virgil and Lord Winston?~*/
-	DO ~
-		SetGlobal("XA_LC_Ask_VirgilWinston", "LOCALS", 1)
-	~
-	GOTO XA_VirgilWinston
+	COPY_TRANS XANEDERL XA_LeaveToWork
+	COPY_TRANS XANEDERL XA_AskVirgilRefugees
 END
 
 IF ~~ THEN BEGIN XA_VirgilWinston
@@ -196,23 +167,8 @@ IF ~~ THEN BEGIN XA_VirgilWinston
 	
 	= @92 /* ~As for Winston, he has many friends and connections within the city. He will certainly be punished, though I suspect not as severely as his crimes warrant.~ */
 	
-	IF ~
-		Global("XA_LC_NederlokMedal", "GLOBAL", 1)
-	~ THEN REPLY @102 /* ~I see. I'll leave you to your work, then.~  */
-	GOTO XA_NederlokSlaverPlotEnd3
-	
-	IF ~
-		!Global("XA_LC_NederlokMedal", "GLOBAL", 1)
-	~ THEN REPLY @102 /* ~I see. I'll leave you to your work, then.~  */
-	GOTO XA_GiveMedal
-	
-	IF ~
-		!Global("XA_LC_Ask_Refugees", "LOCALS", 1)
-	~ THEN REPLY @94 /* ~What about the refugees that were sold into slavery?~ */
-	DO ~
-		SetGlobal("XA_LC_Ask_Refugees", "LOCALS", 1)
-	~
-	GOTO XA_Refugees
+	COPY_TRANS XANEDERL XA_LeaveToWork
+	COPY_TRANS XANEDERL XA_AskVirgilRefugees
 END
 
 IF ~~ THEN BEGIN XA_NederlokSlaverPlotEnd3
@@ -244,10 +200,10 @@ IF ~
 	
 	IF ~
 		GlobalGT("XA_LC_NebDead", "GLOBAL", 0)
-		GlobalLT("XA_LC_ToldNederlokNeb", "GLOBAL", 1)
+		GlobalLT("XA_LC_ToldNederlokNeb", "LOCALS", 1)
 	~ THEN 
 	DO ~
-		SetGlobal("XA_LC_ToldNederlokNeb", "GLOBAL", 1)
+		SetGlobal("XA_LC_ToldNederlokNeb", "LOCALS", 1)
 	~
 	EXTERN XACORWIJ XA_NebNederlokSewers
 END
@@ -274,31 +230,16 @@ IF ~
 	~ THEN REPLY @38 /* ~I'd like to go over our progress in the investigation into slaver activity in Baldur's Gate.~ */
 	GOTO XA_InvestigationProgress
 	
-	IF ~
-		Global("XA_LC_NederlokMedal", "GLOBAL", 1)
-	~ THEN REPLY @24 /* ~Nothing at the moment.~ */
-	GOTO XA_EndChat
-	
-	IF ~
-		!Global("XA_LC_NederlokMedal", "GLOBAL", 1)
-		IsGabber(Player1)
-	~ THEN REPLY @24 /* ~Nothing at the moment.~ */
-	GOTO XA_GiveMedal
-	
-	IF ~
-		!Global("XA_LC_NederlokMedal", "GLOBAL", 1)
-		!IsGabber(Player1)
-	~ THEN REPLY @24 /* ~Nothing at the moment.~ */
-	GOTO XA_EndChat
+	COPY_TRANS XANEDERL XA_GiveMedalTransition_Nothing
 	
 	IF ~
 		See("XACORWIN")
 		IsValidForPartyDialogue("XACORWIN")
 		GlobalGT("XA_LC_NebDead", "GLOBAL", 0)
-		GlobalLT("XA_LC_ToldNederlokNeb", "GLOBAL", 1)
+		GlobalLT("XA_LC_ToldNederlokNeb", "LOCALS", 1)
 	~ THEN 
 	DO ~
-		SetGlobal("XA_LC_ToldNederlokNeb", "GLOBAL", 1)
+		SetGlobal("XA_LC_ToldNederlokNeb", "LOCALS", 1)
 	~
 	EXTERN XACORWIJ XA_NebNederlokSewers
 	
@@ -308,23 +249,22 @@ IF ~~ THEN BEGIN XA_GiveHint
 	SAY @63 /* ~Hmm...~ */
 	
 	IF ~
-		!Global("XA_LC_HandedOverManifests", "GLOBAL", 1)
+		GlobalLT("XA_LC_HandedOverManifests", "GLOBAL", 1)
 	~ THEN
 	GOTO XA_GiveHint_AskHarborMaster
 	
 	IF ~
 		Global("XA_LC_HandedOverManifests", "GLOBAL", 1)
-		!Global("XA_LC_AskedAlatosAboutManifests", "GLOBAL", 1)
+		GlobalLT("XA_LC_AskedAlatosAboutManifests", "GLOBAL", 1)
 	~ THEN
 	GOTO XA_GiveHint_AskAlatos
 
 	IF ~
 		Global("XA_LC_HandedOverManifests", "GLOBAL", 1)
 		Global("XA_LC_AskedAlatosAboutManifests", "GLOBAL", 1)
-		!Global("XA_LC_DecodedManifest", "GLOBAL", 1)
+		GlobalLT("XA_LC_DecodedManifest", "GLOBAL", 1)
 	~ THEN 
 	GOTO XA_GiveHint_DecodeManifest
-	
 	
 	IF ~
 		Global("XA_LC_HandedOverManifests", "GLOBAL", 1)
@@ -371,14 +311,8 @@ IF ~~ THEN BEGIN XA_GiveHint_LookForWitness
 	~
 	EXIT
 	
-	IF ~
-		!Global("XA_LC_NederlokMedal", "GLOBAL", 1)
-		IsGabber(Player1)
-	~ THEN REPLY @67 /* ~Thanks for the help.~  */
-	DO ~
-		SetGlobal("XA_LC_AskAboutWitness", "GLOBAL", 1)
-	~
-	GOTO XA_GiveMedal
+	COPY_TRANS XANEDERL XA_GiveMedalTransition_Thanks
+	
 END
 
 
@@ -388,11 +322,7 @@ IF ~~ THEN BEGIN XA_GiveHint_AskHarborMaster
 	IF ~~ THEN
 	EXIT
 	
-	IF ~
-		!Global("XA_LC_NederlokMedal", "GLOBAL", 1)
-		IsGabber(Player1)
-	~ THEN REPLY @67 /* ~Thanks for the help.~ */
-	GOTO XA_GiveMedal
+	COPY_TRANS XANEDERL XA_GiveMedalTransition_Thanks
 END
 
 IF ~~ THEN BEGIN XA_GiveHint_AskAlatos
@@ -401,11 +331,7 @@ IF ~~ THEN BEGIN XA_GiveHint_AskAlatos
 	IF ~~ THEN
 	EXIT
 	
-	IF ~
-		!Global("XA_LC_NederlokMedal", "GLOBAL", 1)
-		IsGabber(Player1)
-	~ THEN REPLY @67 /* ~Thanks for the help.~*/
-	GOTO XA_GiveMedal
+	COPY_TRANS XANEDERL XA_GiveMedalTransition_Thanks
 END
 
 IF ~~ THEN BEGIN XA_GiveHint_DecodeManifest
@@ -414,23 +340,19 @@ IF ~~ THEN BEGIN XA_GiveHint_DecodeManifest
 	IF ~~ THEN
 	EXIT
 	
-	IF ~
-		!Global("XA_LC_NederlokMedal", "GLOBAL", 1)
-		IsGabber(Player1)
-	~ THEN REPLY @67 /* ~Thanks for the help.~ */
-	GOTO XA_GiveMedal
+	COPY_TRANS XANEDERL XA_GiveMedalTransition_Thanks
 END
 
 IF ~~ THEN BEGIN XA_InvestigationProgress
 	SAY @39 /* ~Of course. What have you found so far?~ */
 	
 	IF ~
-		!Global("XA_LC_NederlokMedal", "GLOBAL", 1)
+		GlobalLT("XA_LC_NederlokMedal", "LOCALS", 1)
 	~ THEN REPLY @60 /* ~We haven't uncovered anything else.~ */
 	GOTO XA_GiveMedal
 	
 	IF ~
-		Global("XA_LC_NederlokMedal", "GLOBAL", 1)
+		Global("XA_LC_NederlokMedal", "LOCALS", 1)
 	~ THEN REPLY @60 /* ~We haven't uncovered anything else.~ */
 	EXIT
 	
@@ -438,70 +360,70 @@ IF ~~ THEN BEGIN XA_InvestigationProgress
 	GOTO XA_GiveHint
 	
 	IF ~
-		GlobalLT("XA_LC_Investigation_AskedDiviner", "GLOBAL", 1)
+		GlobalLT("XA_LC_AskedDiviner", "LOCALS", 1)
 		Global("XA_LC_AskedDivinerAboutSlaves", "GLOBAL", 1)
 	~ THEN REPLY @68 /* ~I spoke to Haspur, the diviner. I asked him who was responsible for the recent slaver activity in the city. He told me that Lord Winston and his company were behind everything. Arrest him!~ */
 	DO ~
-		SetGlobal("XA_LC_Investigation_AskedDiviner", "GLOBAL", 1)
+		SetGlobal("XA_LC_AskedDiviner", "LOCALS", 1)
 	~
 	GOTO XA_AskedDiviner
 	
 	IF ~
-		GlobalLT("XA_LC_Investigation_ChildTestimony", "GLOBAL", 1)
+		GlobalLT("XA_LC_ChildTestimony", "LOCALS", 1)
 		Global("XA_LC_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~ THEN REPLY @56 /* We freed a slave in Athkatla, a child named Tina Bennett, and she told us that she was part of a group of refugees that fled to Baldur's Gate. They were told that they would be taken to a new home, and boarded a ship to Athkatla. When they arrived, the children were forcibly separated from their parents and sold to slavers.~ */
 	DO ~
-		SetGlobal("XA_LC_Investigation_ChildTestimony", "GLOBAL", 1)
+		SetGlobal("XA_LC_ChildTestimony", "LOCALS", 1)
 	~
 	GOTO XA_ChildTestimony
 	
 	IF ~
-		GlobalLT("XA_LC_Investigation_ChildTestimony", "GLOBAL", 1)
+		GlobalLT("XA_LC_ChildTestimony", "LOCALS", 1)
 		GlobalLT("XA_LC_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~ THEN REPLY @43 /* ~We freed a slave in Athkatla, a child, and she told us that she was part of a group of refugees that fled to Baldur's Gate. They were told that they would be taken to a new home, and boarded a ship to Athkatla. When they arrived, the children were forcibly separated from their parents and sold to slavers.~ */
 	DO ~
-		SetGlobal("XA_LC_Investigation_ChildTestimony", "GLOBAL", 1)
+		SetGlobal("XA_LC_ChildTestimony", "LOCALS", 1)
 	~
 	GOTO XA_ChildTestimony
 	
 	IF ~
-		GlobalLT("XA_LC_Investigation_EncodedManifest", "GLOBAL", 1)
+		GlobalLT("XA_LC_EncodedManifest", "LOCALS", 1)
 		Global("XA_LC_HandedOverManifests", "GLOBAL", 1)
 	~ THEN REPLY @40 /* ~We spoke to the harbor master. He provided us shipping manifests belonging to the company that just moved into the Iron Throne headquarters. They are encoded, and we can't decipher them. Why would a legitimate company want to obfuscate their shipping manifests?~ */
 	DO ~
-		SetGlobal("XA_LC_Investigation_EncodedManifest", "GLOBAL", 1)
+		SetGlobal("XA_LC_EncodedManifest", "LOCALS", 1)
 	~
 	GOTO XA_FoundManifests
 	
 	IF ~
-		GlobalLT("XA_LC_Investigation_AlatosCipher", "GLOBAL", 1)
+		GlobalLT("XA_LC_AlatosCipher", "LOCALS", 1)
 		Global("XA_LC_AskedAlatosAboutManifests", "GLOBAL", 1)
 	~ THEN REPLY @46 /* ~We spoke to a contact in the Thieves' Guild, who said that they had sold a cryptographic encoder to the same company that had the encoded shipping manifests.~ */
 	DO ~
-		SetGlobal("XA_LC_Investigation_AlatosCipher", "GLOBAL", 1)
+		SetGlobal("XA_LC_AlatosCipher", "LOCALS", 1)
 	~
 	GOTO XA_AlatosCipher
 	
 	IF ~
-		GlobalLT("XA_LC_Investigation_DecodedManifest", "GLOBAL", 1)
+		GlobalLT("XA_LC_DecodedManifest", "LOCALS", 1)
 		Global("XA_LC_DecodedManifest", "GLOBAL", 1)
 		GlobalLT("XA_LC_LearnedSlaveGirlsName", "GLOBAL", 1)
 		PartyHasItem("XAMANFS2")
 	~ THEN REPLY @57 /* ~With the help of the Thieves' Guild, we were able to decode the shipping manifest using the cipher key we found in the Winston Ventures building. Look at the decoded manifest - it's a list of names! They were transporting people as cargo, undoubtedly to sell them as slaves!~ */
 	DO ~
-		SetGlobal("XA_LC_Investigation_DecodedManifest", "GLOBAL", 1)
+		SetGlobal("XA_LC_DecodedManifest", "LOCALS", 1)
 		TakePartyItem("XAMANFS2")
 	~
 	GOTO XA_DecodedManifestB
 
 	IF ~
-		GlobalLT("XA_LC_Investigation_DecodedManifest", "GLOBAL", 1)
+		GlobalLT("XA_LC_DecodedManifest", "LOCALS", 1)
 		Global("XA_LC_DecodedManifest", "GLOBAL", 1)
 		Global("XA_LC_LearnedSlaveGirlsName", "GLOBAL", 1)
 		PartyHasItem("XAMANFS3")
 	~ THEN REPLY @48 /* ~With the help of the Thieves' Guild, we were able to decode the shipping manifest using the cipher key we found in the old Iron Throne building. Look at the decoded manifest - it's a list of names, and here is the name of the girl that we freed in Athkatla!~ */
 	DO ~
-		SetGlobal("XA_LC_Investigation_DecodedManifest", "GLOBAL", 1)
+		SetGlobal("XA_LC_DecodedManifest", "LOCALS", 1)
 		TakePartyItem("XAMANFS3")
 	~
 	GOTO XA_DecodedManifestA
@@ -622,7 +544,7 @@ IF ~~ THEN BEGIN XA_GiveMedal3
 	SAY @32 /* ~Certainly. See you at the debriefing.~*/
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_LC_NederlokMedal", "GLOBAL", 1)
+		SetGlobal("XA_LC_NederlokMedal", "LOCALS", 1)
 	~
 	EXIT
 END
@@ -735,7 +657,7 @@ IF ~~ THEN BEGIN XA_WYRM_6B
 	= @11 /* ~Captain, if anyone gives the hero a hard time, I want you to let me know, personally. Am I clear?~ */
 	
 	IF ~
-		!GlobalGT("XA_LC_CorwinSlaverPlot", "GLOBAL", 0)
+		GlobalLT("XA_LC_CorwinSlaverPlot", "GLOBAL", 1)
 	~ THEN
 	EXTERN XACORWIJ XA_WYRM_7 //OK
 	
@@ -755,7 +677,7 @@ IF ~~ THEN BEGIN XA_WYRM_8
 		GlobalGT("XA_LC_NebDead", "GLOBAL", 0)
 	~ THEN
 	DO ~
-		SetGlobal("XA_LC_ToldNederlokNeb", "GLOBAL", 1)
+		SetGlobal("XA_LC_ToldNederlokNeb", "LOCALS", 1)
 	~
 	EXTERN XACORWIJ XA_NebNederlok 
 END
@@ -829,9 +751,77 @@ IF ~~ THEN BEGIN XA_NEDERL_SlaverPlot4
 		GlobalGT("XA_LC_NebDead", "GLOBAL", 0)
 	~ THEN
 	DO ~
-		SetGlobal("XA_LC_ToldNederlokNeb", "GLOBAL", 1)
+		SetGlobal("XA_LC_ToldNederlokNeb", "LOCALS", 1)
 	~
 	EXTERN XACORWIJ XA_NebNederlok3A
+END
+
+IF ~~ THEN BEGIN XA_AskVirgilRefugees
+	SAY @0
+	
+	IF ~
+		GlobalLT("XA_LC_Ask_VirgilWinston", "LOCALS", 1)
+	~ THEN REPLY @90 /* ~What's going to happen to Virgil and Lord Winston?~*/
+	DO ~
+		SetGlobal("XA_LC_Ask_VirgilWinston", "LOCALS", 1)
+	~
+	GOTO XA_VirgilWinston
+	
+	IF ~
+		GlobalLT("XA_LC_Ask_Refugees", "LOCALS", 1)
+	~ THEN REPLY @94 /* ~What about the refugees that were sold into slavery?~ */
+	DO ~
+		SetGlobal("XA_LC_Ask_Refugees", "LOCALS", 1)
+	~
+	GOTO XA_Refugees
+END
+
+IF ~~ THEN BEGIN XA_LeaveToWork
+	SAY @0 
+	
+	IF ~
+		Global("XA_LC_NederlokMedal", "LOCALS", 1)
+	~ THEN REPLY @102 /* ~I see. I'll leave you to your work, then.~  */
+	GOTO XA_NederlokSlaverPlotEnd3
+	
+	IF ~
+		GlobalLT("XA_LC_NederlokMedal", "LOCALS", 1)
+	~ THEN REPLY @102 /* ~I see. I'll leave you to your work.~  */
+	GOTO XA_GiveMedal
+END
+
+IF ~~ THEN BEGIN XA_GiveMedalTransition_Nothing
+	SAY @0
+	
+	IF ~
+		Global("XA_LC_NederlokMedal", "LOCALS", 1)
+	~ THEN REPLY @24 /* ~Nothing at the moment.~ */
+	GOTO XA_EndChat
+	
+	IF ~
+		GlobalLT("XA_LC_NederlokMedal", "LOCALS", 1)
+		IsGabber(Player1)
+	~ THEN REPLY @24 /* ~Nothing at the moment.~ */
+	GOTO XA_GiveMedal
+	
+	IF ~
+		GlobalLT("XA_LC_NederlokMedal", "LOCALS", 1)
+		!IsGabber(Player1)
+	~ THEN REPLY @24 /* ~Nothing at the moment.~ */
+	GOTO XA_EndChat
+END
+
+IF ~~ THEN BEGIN XA_GiveMedalTransition_Thanks
+	SAY @0
+	
+	IF ~
+		GlobalLT("XA_LC_NederlokMedal", "LOCALS", 1)
+		IsGabber(Player1)
+	~ THEN REPLY @67 /* ~Thanks for the help.~  */
+	DO ~
+		SetGlobal("XA_LC_AskAboutWitness", "LOCALS", 1)
+	~
+	GOTO XA_GiveMedal
 END
 
 CHAIN XAVIRGIL XA_NederlokVirgiXAhain
