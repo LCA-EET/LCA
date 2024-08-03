@@ -570,7 +570,7 @@ SILENT
 				xa_dialog = ~xabartml~
 		END
 		
-		COPY_EXISTING ~xaa1332.cre~ ~override/xajhasso.cre~ // Jhasso jhasso
+		COPY_EXISTING ~xaa1322.cre~ ~override/xajhasso.cre~ // Jhasso jhasso
 		LPF xa_reset_cre
 			STR_VAR
 				xa_scriptName = ~xajhasso~
