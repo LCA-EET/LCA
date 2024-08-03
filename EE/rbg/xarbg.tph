@@ -3099,7 +3099,9 @@ SILENT
 		WRITE_LONG 0xC RESOLVE_STR_REF(@4150)
 	
 		COPY_EXISTING ~xaa288.are~ ~override~
-		WRITE_ASCII 0x19C ~xabartyo~ #8
+		WRITE_ASCII 0x19C ~xaa832~ #8 // change cre to bartender 
+		WRITE_ASCII 0x164 ~xabartyo~ #8 // change bartender dialog
+		
 		// Disable NPCs
 		WRITE_LONG 0x6A4 0 // Slime
 		WRITE_LONG 0x7B4 0 // Slime
