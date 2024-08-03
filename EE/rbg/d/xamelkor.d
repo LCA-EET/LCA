@@ -183,29 +183,13 @@ IF ~~ THEN BEGIN XA_MeetMelkor2B
 	
 	= @10 /* ~I am Melkor, battle wizard of the Flaming Fist. It's a pleasure to finally meet you. I've been tasked with the analysis of the artifact known as the Soultaker dagger, and to assist Skie Silvershield in her recovery.~ */
 	
-	IF ~
-		Global("XA_LC_TalkedToSkie", "GLOBAL", 1)
-	~ THEN REPLY @3 /* ~I just spoke to Skie... I'm concerned, to say the least.~ */
-	GOTO XA_MeetMelkor3
-	
-	IF ~
-		GlobalLT("XA_LC_TalkedToSkie", "GLOBAL", 1)
-	~ THEN REPLY @63 /* ~And how is Skie?~ */
-	GOTO XA_HaventSpokenToSkie
+	COPY_TRANS XAMELKOR TRA_HowIsSkie
 END
 
 IF ~~ THEN BEGIN XA_MeetMelkor2A
 	SAY @50 /* ~Yes. I am Melkor, battle wizard of the Flaming Fist. It's a pleasure to finally meet you. I've been tasked with the analysis of the artifact known as the Soultaker dagger, and to assist Skie Silvershield in her recovery.~ */
 	
-	IF ~
-		Global("XA_LC_TalkedToSkie", "GLOBAL", 1)
-	~ THEN REPLY @3 /* ~I just spoke to Skie... I'm concerned, to say the least.~ */
-	GOTO XA_MeetMelkor3
-	
-	IF ~
-		GlobalLT("XA_LC_TalkedToSkie", "GLOBAL", 1)
-	~ THEN REPLY @63 /* ~And how is Skie?~ */
-	GOTO XA_HaventSpokenToSkie
+	COPY_TRANS XAMELKOR TRA_HowIsSkie
 END
 
 IF ~~ THEN BEGIN XA_HaventSpokenToSkie
@@ -232,13 +216,17 @@ IF ~~ THEN BEGIN XA_MeetMelkor4
 	IF ~
 		PartyHasItem("XASTDAGF")
 	~ THEN REPLY @7 /* ~That's because you are studying a fake. Skie had the real dagger the whole time - look, she gave it to us.~*/
+	GOTO XA_MeetMelkor5_
+END
+
+IF ~~ THEN BEGIN XA_MeetMelkor5_
+	SAY @8 /* ~Let me guess. She told you that the elves within the dagger taught her a way to magically create a replica of the dagger? And that she replaced the real dagger with the fake?~ */
+	
 	GOTO XA_MeetMelkor5
 END
 
 IF ~~ THEN BEGIN XA_MeetMelkor5
-	SAY @8 /* ~Let me guess. She told you that the elves within the dagger taught her a way to magically create a replica of the dagger? And that she replaced the real dagger with the fake?~ */
-	
-	= @13 /* ~We created the replica for her, so that we could study the real dagger without unnecessary interruption. The story she concocted is another one of her delusions.~*/
+	SAY @13 /* ~We created the replica for her, so that we could study the real dagger without unnecessary interruption. The story she concocted is another one of her delusions.~*/
 	
 	IF ~
 		GlobalLT("XA_LC_Melkor_AskedWhereDagger", "LOCALS", 1)
@@ -407,6 +395,20 @@ IF ~~ THEN BEGIN XA_MeetMelkor5C3
 	SAY @19 /* ~Duke Silvershield felt it was wise to hide the extent of his daughter's... condition... from others. It was for her own good, Captain.~*/
 	
 	COPY_TRANS XAMELKOR XA_MeetMelkor5
+END
+
+IF ~~ THEN TRA_HowIsSkie
+	SAY @0
+	
+	IF ~
+		Global("XA_LC_TalkedToSkie", "GLOBAL", 1)
+	~ THEN REPLY @3 /* ~I just spoke to Skie... I'm concerned, to say the least.~ */
+	GOTO XA_MeetMelkor3
+	
+	IF ~
+		GlobalLT("XA_LC_TalkedToSkie", "GLOBAL", 1)
+	~ THEN REPLY @63 /* ~And how is Skie?~ */
+	GOTO XA_HaventSpokenToSkie
 END
 
 CHAIN XACORWIJ XA_Corwin_Kanaglym
