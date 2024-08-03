@@ -584,6 +584,11 @@ SILENT
 		WRITE_BYTE 0xA6 255
 		WRITE_BYTE 0xA7 255
 		
+		WRITE_BYTE 0x10C 255 // set common select str ref to -1
+		WRITE_BYTE 0x10D 255
+		WRITE_BYTE 0x10E 255
+		WRITE_BYTE 0x10F 255
+		
 		COPY_EXISTING ~xaa108.cre~ ~override/xasemaj.cre~ // Semaj semaj
 		LPF xa_reset_cre
 			STR_VAR
