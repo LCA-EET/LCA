@@ -228,7 +228,9 @@ IF ~~ THEN BEGIN XA_MeetMelkor5
 END
 
 IF ~~ THEN BEGIN XA_MeetMelkor5A
-	SAY @20 /* ~It is safe. I will not speak more of it's location.~*/
+	SAY @20 /* ~It is... secure.~*/
+	
+	= @85 /*~I will not speak more of its location.~*/
 	
 	COPY_TRANS XAMELKOR TRA_Melkor5
 END
@@ -313,7 +315,7 @@ IF ~~ THEN BEGIN XA_MeetMelkor5B7
 	GOTO XA_MeetMelkor5B8
 	
 	IF ~
-		!Global("XA_LC_ClearedKanaglym", "GLOBAL", 1)
+		GlobalLT("XA_LC_ClearedKanaglym", "GLOBAL", 1)
 	~ THEN REPLY @68 /* ~Give me the dagger then. If I learn of such a place in my travels, I'll bring the dagger there and release the souls trapped inside.~*/
 	DO ~
 		SetGlobal("XA_LC_ST_Kanaglym", "GLOBAL", 1)
@@ -347,7 +349,9 @@ IF ~~ THEN BEGIN XA_MeetMelkor5B10
 END
 
 IF ~~ THEN BEGIN XA_MeetMelkor5C
-	SAY @17 /* ~She will. As I said, she's made great strides already. In the days immediately following her restoration, she suffered from severe fits of catatonia. Slowly but surely, and with our help, her mind will be made whole again.~*/
+	SAY @17 /* ~She will. As I said, she's made great strides already. In the days immediately following her restoration, she suffered from severe fits of catatonia.~*/
+	
+	= @86 /*~Slowly but surely, and with our help, her mind will be made whole again.~*/
 	
 	COPY_TRANS XAMELKOR TRA_Melkor5
 	
@@ -381,18 +385,18 @@ IF ~~ THEN TRA_Melkor5
 	SAY @0
 	
 	IF ~
-		GlobalLT("XA_LC_Melkor_AskedWhereDagger", "LOCALS", 1)
+		GlobalLT("XA_LC_Melkor_AskedWhere", "LOCALS", 1)
 	~ THEN REPLY @14 /* ~Where is the real dagger, then?~*/
 	DO ~
-		SetGlobal("XA_LC_Melkor_AskedWhereDagger", "LOCALS", 1)
+		SetGlobal("XA_LC_Melkor_AskedWhere", "LOCALS", 1)
 	~
 	GOTO XA_MeetMelkor5A
 	
 	IF ~
-		GlobalLT("XA_LC_Melkor_AskedLearnedDagger", "LOCALS", 1)
+		GlobalLT("XA_LC_Melkor_AskedLearned", "LOCALS", 1)
 	~ THEN REPLY @15 /* ~What have you learned about the dagger?~*/
 	DO ~
-		SetGlobal("XA_LC_Melkor_AskedLearnedDagger", "LOCALS", 1)
+		SetGlobal("XA_LC_Melkor_AskedLearned", "LOCALS", 1)
 	~
 	GOTO XA_MeetMelkor5B
 	
@@ -407,8 +411,8 @@ IF ~~ THEN TRA_Melkor5
 	IF ~
 		OR(3)
 			Global("XA_LC_Melkor_AskedSkie", "LOCALS", 1)
-			Global("XA_LC_Melkor_AskedLearnedDagger", "LOCALS", 1)
-			Global("XA_LC_Melkor_AskedWhereDagger", "LOCALS", 1)
+			Global("XA_LC_Melkor_AskedLearned", "LOCALS", 1)
+			Global("XA_LC_Melkor_AskedWhere", "LOCALS", 1)
 	~ THEN REPLY @38 /* ~Very well. I'll leave you to your work, wizard.~ */
 	EXIT
 END

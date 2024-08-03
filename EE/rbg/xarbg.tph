@@ -2173,7 +2173,7 @@ SILENT
 	//}
 	
 	//{ ar0138 xaa670 Ramazith L5
-		COPY_EXISTING ~basgrt01.cre~ ~xabasgrt.cre~
+		COPY_EXISTING ~basgrt01.cre~ ~override/xabasgrt.cre~
 		REMOVE_CRE_ITEM ~rndtre05~
 	
 		EXTEND_TOP ~xaas670.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0138.baf~
