@@ -54,8 +54,8 @@ END
 EXTEND_BOTTOM xaa178 1 /* OK */
 	IF ~
 		GlobalGT("XA_LC_SpawnBrevlik", "GLOBAL", 0)
-		!Global("XA_LC_FoundBrevlik", "GLOBAL", 1)
-		!Global("XA_LC_AskedAboutBrevlik", "LOCALS", 1)
+		GlobalLT("XA_LC_FoundBrevlik", "GLOBAL", 1)
+		GlobalLT("XA_LC_AskedAboutBrevlik", "LOCALS", 1)
 	~ THEN REPLY @16 /* ~I'm looking for a gnome named Brevlik. Have you seen him recently?~*/
 	DO ~
 		SetGlobal("XA_LC_AskedAboutBrevlik", "LOCALS", 1)
