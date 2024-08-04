@@ -1789,7 +1789,7 @@ SILENT
 			xaas138 // ar0103
 			xaas159 // ar0133
 			xaas242 // ar0119
-			xaas476 // ar0157
+			xaas478 // ar0116
 		END
 
 		ACTION_PHP_EACH brevSpawns AS _ => spawnArea
