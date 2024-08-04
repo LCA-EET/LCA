@@ -651,7 +651,7 @@ SILENT
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xaglint~
-				xa_override = ~xainitp1~
+				xa_override = ~xaglint~
 				xa_scriptName = ~xaglint~
 		END
 		
