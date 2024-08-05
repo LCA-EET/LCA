@@ -30,6 +30,8 @@ $toExclude = @(
 	'generated/f/songsList.txt',
 	'generated/g/songsList.txt'
 )
+
+Remove-Item -LiteralPath $archive -Force
 Remove-Item -LiteralPath $modPath -Force -Recurse
 
 foreach($folder in $folders){
