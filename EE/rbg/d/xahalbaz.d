@@ -360,8 +360,7 @@ END
 IF ~~ THEN BEGIN XA_SlaversEnd
 	SAY @9 /* ~It wouldn't surprise me if that were true, but I have no knowledge of the activities you describe.~ */
 	
-	IF ~~ THEN REPLY @5 /* ~Let's see what you have, then.~ */
-	GOTO XA_StartStore 
+	COPY_TRANS XAHALBAZ TRA_AskQuestions
 END
 
 IF ~~ THEN BEGIN XA_StartStore
@@ -371,18 +370,6 @@ IF ~~ THEN BEGIN XA_StartStore
 		StartStore("xahalbaz",LastTalkedToBy(Myself))
 	~ 
 	EXIT
-END
-
-IF ~~ THEN BEGIN TRA_AskSlavers
-	SAY @0
-	
-	IF ~
-		Global("XA_LC_HandedOverManifests", "GLOBAL", 1)
-		!Global("XA_LC_AskedHalbazAboutWinston", "LOCALS", 1)
-		!Global("XA_LC_RefugeeQuestComplete", "GLOBAL", 1)
-	~
-	THEN REPLY @6 /* ~About that. What can you tell me about Winston Ventures? I understand that they were primarily responsible for moving the refugees out of the city.~ */
-	GOTO XA_AskAboutSlavers
 END
 
 IF ~~ THEN BEGIN XA_RingReselect2
