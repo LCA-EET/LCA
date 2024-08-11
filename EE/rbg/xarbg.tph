@@ -2531,7 +2531,7 @@ SILENT
 		LPF xa_delete_are_actors END	
 	//}
 	
-	//{ ar0607 xaa287
+	//{ ar0607 xaa287	// FF HQ Level 1
 		EXTEND_TOP ~xaas287.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0607.baf~
 		
 		COPY_EXISTING ~xaa287.are~ ~override~
@@ -2548,7 +2548,8 @@ SILENT
 		END
 	//}
 	
-	//{ ar0608 xaa413	
+	//{ ar0608 xaa413	// FF HQ Level 2
+		EXTEND_TOP ~xaas413.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0608.baf~
 		COPY_EXISTING ~xaa413.are~ ~override~
 		LPF xa_delete_are_actors END
 		

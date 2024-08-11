@@ -156,7 +156,9 @@ IF ~~ THEN BEGIN XA_NederlokSlaverPlotEnd2
 END
 
 IF ~~ THEN BEGIN XA_Refugees
-	SAY @95 /* ~Well, now that we can decode the manifests, we'll work with the appropriate authorities in Athkatla, Calimshan, and other cities to repatriate the refugees, and arrest the slavers who purchased them.~ */
+	SAY @131 /*~It's difficult to say...~*/
+	
+	= @95 /* ~Well, now that we can decode the manifests, we'll work with the appropriate authorities in Athkatla, Calimshan, and other cities to repatriate the refugees, and arrest the slavers who purchased them.~ */
 	
 	COPY_TRANS XANEDERL XA_LeaveToWork
 	COPY_TRANS XANEDERL XA_AskVirgilRefugees

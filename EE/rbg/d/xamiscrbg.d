@@ -135,7 +135,9 @@ APPEND xaa317
 	IF ~
 		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
-		RandomNum(2,1)
+		OR(2)
+			RandomNum(2,1)
+			Global("XA_LC_Nederlok0608", "GLOBAL", 1)
 	~
 	THEN BEGIN XAA0
 		SAY @82 /* ~Nothing unusual to report, Captain.~ */
@@ -145,6 +147,7 @@ APPEND xaa317
 	IF ~
 		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		!Global("XA_LC_DukesDebriefed", "GLOBAL", 1)
+		GlobalLT("XA_LC_Nederlok0608", "GLOBAL", 1)
 	~
 	THEN BEGIN XAA1
 		SAY @80 /* ~Good day <CHARNAME>, Captain. If you are looking for Marshal Nederlok, he is in his office upstairs.~ */
