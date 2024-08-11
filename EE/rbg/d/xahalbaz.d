@@ -39,7 +39,8 @@ IF ~
 END
 
 IF ~~ THEN BEGIN XA_RefugeesCleared
-	SAY @3 /* ~Yes, the refugees have finally cleared out and business is back to normal.~ */
+	SAY @58 /*~Yes, you and Captain Corwin had stopped in for some provisions prior to departing for Coast Way Crossing, if I recall.~*/
+	SAY @59 /* ~Business is back to normal, thankfully, now that the refugees are gone.~ */
 	
 	COPY_TRANS XAHALBAZ TRA_AskQuestions
 END
