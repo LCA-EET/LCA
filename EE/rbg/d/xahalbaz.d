@@ -408,9 +408,9 @@ IF ~~ THEN BEGIN TRA_AskQuestions
 	GOTO XA_RefugeesCleared //OK
 	
 	IF ~
-		Global("XA_LC_HandedOverManifests", "GLOBAL", 1)
-		!Global("XA_LC_AskedHalbazAboutWinston", "LOCALS", 1)
-		!Global("XA_LC_RefugeeQuestComplete", "GLOBAL", 1)
+		GlobalGT("XA_LC_HandedOverManifests", "GLOBAL", 0)
+		GlobalLT("XA_LC_AskedHalbazAboutWinston", "LOCALS", 1)
+		GlobalLT("XA_LC_RefugeeQuestComplete", "GLOBAL", 1)
 	~
 	THEN REPLY @36 /* ~Tell me, what do you know of Winston Ventures? I understand that they were primarily responsible for moving the refugees out of the city.~*/
 	DO ~
