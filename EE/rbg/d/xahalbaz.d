@@ -28,20 +28,20 @@ END
 IF ~~ THEN BEGIN XA_Greeting2
 	SAY @37 /* I'd heard that the hero of Baldur's Gate would be returning soon.*/
 	
-	COPY_TRANS XAHALBAZ TRA_AskStoreRing
+	COPY_TRANS XAHALBAZ TRA_AskQuestions
 END
 IF ~
 	Global("XA_LC_HalbazGreeting", "LOCALS", 1)
 ~ THEN BEGIN XA_SecondGreeting
 	SAY @4 /* ~Come to check out the wares of ol' Halbazzer, have ye?~*/
 	
-	COPY_TRANS XAHALBAZ TRA_AskStoreRing
+	COPY_TRANS XAHALBAZ TRA_AskQuestions
 END
 
 IF ~~ THEN BEGIN XA_RefugeesCleared
 	SAY @3 /* ~Yes, the refugees have finally cleared out and business is back to normal.~ */
 	
-	COPY_TRANS XAHALBAZ TRA_AskStoreRing
+	COPY_TRANS XAHALBAZ TRA_AskQuestions
 END
 
 IF ~~ THEN BEGIN XA_RingEnchant1__J
