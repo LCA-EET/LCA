@@ -603,12 +603,12 @@ APPEND XACORWIJ
 		SAY @1310 /* ~Honey, what's wrong? You can tell me.~ */
 		
 		IF ~
-			Global("XA_LC_SoDAnxietyAlatos", "GLOBAL", 1)
+			GlobalGT("XA_LC_SoDAnxietyAlatos", "GLOBAL", 0)
 		~ THEN REPLY @1311 /* ~When Alatos brought up the tunnels beneath the city... it all came flooding back, Schael.~ */
 		GOTO XA_SoDAnxiety4
 		
 		IF ~
-			Global("XA_LC_SoDAnxietyCell", "GLOBAL", 1)
+			GlobalGT("XA_LC_SoDAnxietyCell", "GLOBAL", 0)
 		~ THEN REPLY @1432 /* ~Seeing my cell again... it all came flooding back, Schael.~ */
 		GOTO XA_SoDAnxiety4
 		

@@ -13,79 +13,35 @@ IF ~
 END
 
 IF ~
-	!Global("XA_LC_HalbazGreeting", "LOCALS", 1)
+	GlobalLT("XA_LC_HalbazGreeting", "LOCALS", 1)
 	IsGabber(Player1)
 ~ THEN BEGIN XA_Greeting
-	SAY @1 /* ~Ah, welcome. I'd heard that the hero of Baldur's Gate would be returning soon.~ */
+	SAY @1 /* ~Ah, welcome.~ */
 	
-	IF ~~ THEN REPLY @2 /* ~Things seem to have improved markedly since the last time I was here.~ */
+	IF ~~ THEN 
 	DO ~
 		SetGlobal("XA_LC_HalbazGreeting", "LOCALS", 1)
 	~
-	GOTO XA_RefugeesCleared //OK
-
-	IF ~~ THEN REPLY @5 /* ~Let's see what you have, then.~ */
-	GOTO XA_StartStore
+	GOTO XA_Greeting2
 END
 
+IF ~~ THEN BEGIN XA_Greeting2
+	SAY @37 /* I'd heard that the hero of Baldur's Gate would be returning soon.*/
+	
+	COPY_TRANS XAHALBAZ TRA_AskStoreRing
+END
 IF ~
 	Global("XA_LC_HalbazGreeting", "LOCALS", 1)
 ~ THEN BEGIN XA_SecondGreeting
 	SAY @4 /* ~Come to check out the wares of ol' Halbazzer, have ye?~*/
 	
-	IF ~~ THEN REPLY @5 /* ~Let's see what you have, then.~ */
-	GOTO XA_StartStore
-	
-	IF ~
-		Global("XA_LC_HandedOverManifests", "GLOBAL", 1)
-		!Global("XA_LC_AskedHalbazAboutWinston", "LOCALS", 1)
-		!Global("XA_LC_RefugeeQuestComplete", "GLOBAL", 1)
-	~
-	THEN REPLY @6 /* ~About that. What can you tell me about Winston Ventures? I understand that they were primarily responsible for moving the refugees out of the city.~ */
-	GOTO XA_AskAboutSlavers
-	
-	IF ~
-		Global("XA_LC_RingGiftAldeth", "GLOBAL", 1)
-		GlobalLT("XA_LC_RingEnchanted", "GLOBAL", 1)
-		IsGabber(Player1)
-	~ THEN REPLY @10 /* ~Listen... (approach and ask about enchanting the ring.)~*/
-	GOTO XA_RingEnchant1__A //OK
-	
-	IF ~
-		Global("XA_LC_RingGiftJhasso", "GLOBAL", 1)
-		GlobalLT("XA_LC_RingEnchanted", "GLOBAL", 1)
-		IsGabber(Player1)
-	~ THEN REPLY @10 /* ~Listen... (approach and ask about enchanting the ring.)~*/
-	GOTO XA_RingEnchant1__J //OK
+	COPY_TRANS XAHALBAZ TRA_AskStoreRing
 END
 
 IF ~~ THEN BEGIN XA_RefugeesCleared
 	SAY @3 /* ~Yes, the refugees have finally cleared out and business is back to normal.~ */
 	
-	IF ~~ THEN REPLY @5 /* ~Let's see what you have, then.~ */
-	GOTO XA_StartStore
-	
-	IF ~
-		Global("XA_LC_HandedOverManifests", "GLOBAL", 1)
-		!Global("XA_LC_AskedHalbazAboutWinston", "LOCALS", 1)
-		!Global("XA_LC_RefugeeQuestComplete", "GLOBAL", 1)
-	~
-	THEN REPLY @6 /* ~About that. What can you tell me about Winston Ventures? I understand that they were primarily responsible for moving the refugees out of the city.~ */
-	GOTO XA_AskAboutSlavers
-	
-	IF ~
-		Global("XA_LC_RingGiftAldeth", "GLOBAL", 1)
-		GlobalLT("XA_LC_RingEnchanted", "GLOBAL", 1)
-		IsGabber(Player1)
-	~ THEN REPLY @10 /* ~Listen... (approach and ask about enchanting the ring.)~*/
-	GOTO XA_RingEnchant1__A //OK
-	
-	IF ~
-		Global("XA_LC_RingGiftJhasso", "GLOBAL", 1)
-		GlobalLT("XA_LC_RingEnchanted", "GLOBAL", 1)
-		IsGabber(Player1)
-	~ THEN REPLY @10 /* ~Listen... (approach and ask about enchanting the ring.)~*/
-	GOTO XA_RingEnchant1__J //OK
+	COPY_TRANS XAHALBAZ TRA_AskStoreRing
 END
 
 IF ~~ THEN BEGIN XA_RingEnchant1__J
@@ -240,7 +196,6 @@ IF ~~ THEN BEGIN XA_RingEnchantmentDescriptions
 		SetGlobal("XA_LC_RingEnchantment5", "GLOBAL", 1)
 	~
 	GOTO XA_Note1
-	
 END
 
 IF ~~ THEN BEGIN XA_RingSecondEnchant
@@ -285,6 +240,8 @@ IF ~~ THEN BEGIN XA_RingSecondEnchant
 		SetGlobal("XA_LC_RingEnchantment5", "GLOBAL", 1)
 	~
 	GOTO XA_Note2
+	
+	COPY_TRANS XAHALBAZ TRA_RingReselect
 END
 
 IF ~~ THEN XA_RingThirdEnchant
@@ -329,6 +286,8 @@ IF ~~ THEN XA_RingThirdEnchant
 		SetGlobal("XA_LC_RingEnchantment5", "GLOBAL", 1)
 	~
 	GOTO XA_RingEnchantBoost
+	
+	COPY_TRANS XAHALBAZ TRA_RingReselect
 END
 
 IF ~~ THEN BEGIN XA_RingEnchantBoost
@@ -412,3 +371,77 @@ IF ~~ THEN BEGIN XA_StartStore
 	~ 
 	EXIT
 END
+
+IF ~~ THEN BEGIN TRA_AskSlavers
+	SAY @0
+	
+	IF ~
+		Global("XA_LC_HandedOverManifests", "GLOBAL", 1)
+		!Global("XA_LC_AskedHalbazAboutWinston", "LOCALS", 1)
+		!Global("XA_LC_RefugeeQuestComplete", "GLOBAL", 1)
+	~
+	THEN REPLY @6 /* ~About that. What can you tell me about Winston Ventures? I understand that they were primarily responsible for moving the refugees out of the city.~ */
+	GOTO XA_AskAboutSlavers
+END
+
+IF ~~ THEN BEGIN XA_RingReselect2
+	SAY @57 /*Of course.*/
+	
+	IF ~~ THEN
+	GOTO XA_RingEnchantmentDescriptions
+END
+
+IF ~~ THEN BEGIN TRA_RingReselect
+	SAY @0
+	
+	IF ~~ THEN REPLY @42 /*~Disregard my previous selections, I'd like to start over.~*/
+	DO ~
+		SetGlobal("XA_LC_RingEnchantment1", "GLOBAL", 0)
+		SetGlobal("XA_LC_RingEnchantment2", "GLOBAL", 0)
+		SetGlobal("XA_LC_RingEnchantment3", "GLOBAL", 0)
+		SetGlobal("XA_LC_RingEnchantment4", "GLOBAL", 0)
+		SetGlobal("XA_LC_RingEnchantment5", "GLOBAL", 0)
+	~
+	GOTO XA_RingReselect2
+END
+
+IF ~~ THEN BEGIN TRA_AskQuestions
+	SAY @0
+	
+	IF ~~ THEN REPLY @5 /* ~Let's see what you have, then.~ */
+	GOTO XA_StartStore
+	
+	IF ~
+		GlobalLT("XA_LC_Improved","LOCALS",1)
+	~ THEN REPLY @2 /* ~Things seem to have improved markedly since the last time I was here.~ */
+	DO ~
+		SetGlobal("XA_LC_Improved","LOCALS",1)
+	~
+	GOTO XA_RefugeesCleared //OK
+	
+	IF ~
+		Global("XA_LC_HandedOverManifests", "GLOBAL", 1)
+		!Global("XA_LC_AskedHalbazAboutWinston", "LOCALS", 1)
+		!Global("XA_LC_RefugeeQuestComplete", "GLOBAL", 1)
+	~
+	THEN REPLY @36 /* ~Tell me, what do you know of Winston Ventures? I understand that they were primarily responsible for moving the refugees out of the city.~*/
+	DO ~
+		SetGlobal("XA_LC_AskedHalbazAboutWinston", "LOCALS", 1)
+	~
+	GOTO XA_AskAboutSlavers
+	
+	IF ~
+		Global("XA_LC_RingGiftAldeth", "GLOBAL", 1)
+		GlobalLT("XA_LC_RingEnchanted", "GLOBAL", 1)
+		IsGabber(Player1)
+	~ THEN REPLY @10 /* ~Listen... (approach and ask about enchanting the ring.)~*/
+	GOTO XA_RingEnchant1__A //OK
+	
+	IF ~
+		Global("XA_LC_RingGiftJhasso", "GLOBAL", 1)
+		GlobalLT("XA_LC_RingEnchanted", "GLOBAL", 1)
+		IsGabber(Player1)
+	~ THEN REPLY @10 /* ~Listen... (approach and ask about enchanting the ring.)~*/
+	GOTO XA_RingEnchant1__J //OK
+END
+
