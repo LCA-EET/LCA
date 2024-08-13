@@ -715,6 +715,7 @@ SILENT
 		
 		//{ Evil Caelar
 			COPY_EXISTING ~xac108.cre~ ~override~ // bdcaela2
+			WRITE_BYTE 0x270 255
 			LPF xa_reset_cre
 				STR_VAR
 					xa_override = ~xag1crus~
@@ -723,6 +724,7 @@ SILENT
 					xa_default = ~xac130~ // bdfmcl01
 			END
 			COPY_EXISTING ~xac109.cre~ ~override~
+			WRITE_BYTE 0x270 255
 			LPF xa_reset_cre
 				STR_VAR
 					xa_override = ~xag1crus~
