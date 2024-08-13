@@ -1293,6 +1293,7 @@ SILENT
 	
 	//{ Soultaker Dagger (Fake)
 		COPY_EXISTING ~dagg10.itm~ ~override/xastdagf.itm~
+		WRITE_LONG 0x34 50 // gold
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3158)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@3158)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4016)
@@ -1798,6 +1799,11 @@ SILENT
 		BEGIN
 			EXTEND_TOP ~%spawnArea%.bcs~ ~%MOD_FOLDER%/rbg/baf/xabrvspw.baf~
 		END
+	//}
+	
+	//{ ar0004 xaa243 Bheren's Home
+		COPY_EXISTING ~xaa243.are~ ~override~
+		WRITE_ASCII 0x19C ~xaa359~ #8
 	//}
 	
 	//{ ar0100 xaa233 NW Baldur's Gate
@@ -3924,13 +3930,14 @@ SILENT
 						xa_general = ~xac130~ // bdfmcl01
 				END
 			//}
+			
 			//{ Ferrusk
 				PATCH_DEFINE_ARRAY xa_extras
 				BEGIN
 					xamutank 
 					xamutank 
 					xamutank 
-					eletro01 
+					trolgi01 
 					hgtrl01 
 					hgtrl01 
 					troll01
