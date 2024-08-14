@@ -1806,6 +1806,16 @@ SILENT
 		WRITE_ASCII 0x19C ~xaa359~ #8
 	//}
 	
+	//{ ar0010 xaa245 Jardak's Home L1
+		COPY_EXISTING ~xaa235.are~ ~override~
+		WRITE_ASCII 0x19C ~xaa877~ #8
+	//}
+	
+	//{ ar0011 xaa468 Jardak's Home L2
+		COPY_EXISTING ~xaa235.are~ ~override~
+		WRITE_ASCII 0x19C ~xaa981~ #8
+	//}
+	
 	//{ ar0100 xaa233 NW Baldur's Gate
 		COPY_EXISTING ~xaa233.are~ ~override~
 		
@@ -1909,7 +1919,7 @@ SILENT
 		
 	//}
 	
-	//{ ar0114 xaa137 
+	//{ ar0114 xaa137 Blushing Mermaid
 		COPY_EXISTING ~xaa137.are~ ~override~
 		
 		// Replace NPCs
@@ -1917,7 +1927,7 @@ SILENT
 		WRITE_ASCII 0x4CC ~xaa695~ #8
 	//}
 	
-	//{ ar0116 xaa478 
+	//{ ar0116 xaa478 Helm and Cloak Level 1
 		EXTEND_TOP ~xaas478.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0116.baf~
 		
 		COPY_EXISTING ~xaa478.are~ ~override~
@@ -1929,7 +1939,7 @@ SILENT
 		WRITE_ASCII 0x5DC ~xaa250~ #8
 	//}
 	
-	//{ ar0117 xaa584
+	//{ ar0117 xaa584 Helm and Cloak L2 - Restricted Area
 		COPY_EXISTING ~xaa584.are~ ~override~
 		
 		// Replace NPCs
@@ -1938,7 +1948,7 @@ SILENT
 		WRITE_ASCII 0x3BC ~xaa361~ #8
 	//}
 	
-	//{ ar0118 xaa586
+	//{ ar0118 xaa586 Helm and Cloak L2 - Balduran Helm Area
 		EXTEND_TOP ~xaas586.bcs~ ~%MOD_FOLDER%/rbg/baf/xaar0118.baf~
 	//}
 	
