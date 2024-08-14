@@ -1931,6 +1931,7 @@ SILENT
 		EXTEND_TOP ~xaas478.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0116.baf~
 		
 		COPY_EXISTING ~xaa478.are~ ~override~
+		WRITE_ASCII 0x94 ~xaas478 ~#8 // the area script wasn't attached to the area, for some reason
 		
 		// Replace NPCs
 		WRITE_ASCII 0x2AC ~xaa166~ #8
@@ -2271,7 +2272,12 @@ SILENT
 		WRITE_ASCII 0x2AC ~xaa475~ #8 // Resar
 		WRITE_ASCII 0x3BC ~xaa475~ #8 // Narlen
 	//}
-
+	
+	//{ ar0157 xaa476 Quinn's Home L1
+		COPY_EXISTING ~xaa476.are~ ~override~
+		LPF xa_delete_are_actors END
+	//}
+	
 	//{ ar0161 xaa479 Degrodel's Home
 		COPY_EXISTING ~xaa479.are~ ~override~
 		
