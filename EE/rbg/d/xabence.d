@@ -100,7 +100,7 @@ END
 
 IF ~
 	Global("XA_LC_ExtensionNeeded", "GLOBAL", 1)
-	!Global("XA_LC_DukesDebriefed", "GLOBAL", 1)
+	GlobalLT("XA_LC_DukesDebriefed", "GLOBAL", 1)
 ~ THEN BEGIN XA_BenceWyrm
 	SAY @7 /* ~Are you ready to begin the debriefing?~ */
 
@@ -118,7 +118,7 @@ IF ~~ THEN BEGIN XA_OneMoreHour
 END
 
 IF ~
-	!Global("XA_LC_DukesFullyDebriefed", "GLOBAL", 1)
+	GlobalLT("XA_LC_DukesFullyDebriefed", "GLOBAL", 1)
 ~ THEN BEGIN XA_DebriefTomorrow
 	SAY @17 /* ~I'll come and get you when it's time for the debriefing. In the meantime, take some time to enjoy the city. I'm sure you've missed it.~ */
 	
