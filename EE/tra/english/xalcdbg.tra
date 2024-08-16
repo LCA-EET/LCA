@@ -338,6 +338,8 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @6086=~SetGlobal("XA_LC_SkieModActive", "GLOBAL", 0)~
 @6087=~CreateCreature("XAPAUSE", [-1.-1], N)~
 @6088=~CreateCreature("XAREWIND", [-1.-1], N)~
+@6089=~SetGlobal("XA_LC_CorwinNeomaRelationship", "GLOBAL", 1)~
+@6090=~SetGlobal("XA_LC_CorwinNeomaRelationship", "GLOBAL", 2)~
 
 @7000=~ToB Debug~
 @7001=~XAG104 (BD5300) - Kanaglym~
