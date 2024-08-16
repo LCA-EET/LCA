@@ -40,7 +40,7 @@ END
 
 IF ~
 	Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
-	!Global("XA_LC_DukesDebriefed", "GLOBAL", 1)
+	GlobalLT("XA_LC_DukesDebriefed", "GLOBAL", 1)
 	Global("XA_LC_CorwinFamilyTalk", "GLOBAL", 3)
 	IsGabber(Player1)
 	RandomNum(2,1)
@@ -52,7 +52,7 @@ END
 
 IF ~
 	Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
-	!Global("XA_LC_DukesDebriefed", "GLOBAL", 1)
+	GlobalLT("XA_LC_DukesDebriefed", "GLOBAL", 1)
 	Global("XA_LC_CorwinFamilyTalk", "GLOBAL", 3)
 	IsGabber(Player1)
 	RandomNum(2,2)
@@ -64,7 +64,7 @@ END
 
 IF ~
 	Global("XA_LC_CorwinMetFamily", "GLOBAL", 1)
-	!Global("XA_LC_DukesDebriefed", "GLOBAL", 1)
+	GlobalLT("XA_LC_DukesDebriefed", "GLOBAL", 1)
 	Global("XA_LC_CorwinFamilyTalk", "GLOBAL", 3)
 	!IsGabber(Player1)
 ~ THEN XA_DontKeepDukesWaiting2

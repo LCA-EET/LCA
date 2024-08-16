@@ -146,7 +146,7 @@ APPEND xaa317
 	
 	IF ~
 		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
-		!Global("XA_LC_DukesDebriefed", "GLOBAL", 1)
+		GlobalLT("XA_LC_DukesDebriefed", "GLOBAL", 1)
 		GlobalLT("XA_LC_Nederlok0608", "GLOBAL", 1)
 	~
 	THEN BEGIN XAA1
