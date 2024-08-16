@@ -9,15 +9,6 @@ THEN
 		Wait(3)
 		ZoomLock(TRUE)
 		DayNight(MIDNIGHT)
-		LeaveAreaLUA("XAWYRM","",[1420.480],NE)
 		ActionOverride("XACORWIN",LeaveAreaLUA("XAWYRM","",[1430.435],NE)) 
-		
-		ActionOverride(Player1,Rest())
-		ActionOverride(Player2,Rest())
-		ActionOverride(Player3,Rest())
-		ActionOverride(Player4,Rest())
-		ActionOverride(Player5,Rest())
-		ActionOverride(Player6,Rest())		
-
-		StartCutScene("XAPROPO1") 
+		LeaveAreaLUA("XAWYRM","",[1420.480],NE)
 END

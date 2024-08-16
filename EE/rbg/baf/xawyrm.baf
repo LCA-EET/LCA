@@ -1,0 +1,9 @@
+IF
+	InMyArea(Player1)
+	InMyArea("XACORWIN")
+	GlobalLT("XA_LC_ContinueWyrm", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_ContinueWyrm", "MYAREA", 1)
+		StartCutScene("XAPROPO1") 
+END
