@@ -4933,6 +4933,7 @@ SILENT
 		COPY_EXISTING ~xaa100.are~ ~override/xawyrm.are~
 		WRITE_LONG 0x30BC xamu03
 		WRITE_LONG 0x30C0 xamu03
+		WRITE_ASCII 0x94 ~~ #8
 		LPF xa_delete_are_actors END
 	//}
 //}
