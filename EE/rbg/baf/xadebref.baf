@@ -33,6 +33,8 @@ THEN
 		ActionOverride(Player6, LeaveParty())
 		ActionOverride(Player6, LeaveAreaLUA("XAPEN", "", [500.500],N))
 		
+		CopyGroundPilesTo("XADUCAL", [650.370])
+		
 		LeaveAreaLUA("XAHOME","",[700.465],NE)
 		ActionOverride("XACORWIN", JoinParty())
 		Wait(1)
