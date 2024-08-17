@@ -1,0 +1,17 @@
+IF
+	Global("XA_LC_LeftToK", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_LeftToK", "GLOBAL", 3)
+		StartCutSceneMode()
+		StartCutScene("XAPROPOS")
+END
+
+IF
+	Global("XA_LC_LeftToK", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_LeftToK", "GLOBAL", 3)
+		StartCutSceneMode()
+		StartCutScene("XAWLKHOM")
+END

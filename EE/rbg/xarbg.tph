@@ -4922,7 +4922,7 @@ SILENT
 	
 	//{ Dinner Cutscene - Three Old Kegs ar0119
 		COPY_EXISTING ~xaa242.are~ ~override/xatok.are~
-		
+		WRITE_ASCII 0x94 ~xatok~ #8
 		// Disable NPCs
 		WRITE_LONG 0xAE4 0
 		

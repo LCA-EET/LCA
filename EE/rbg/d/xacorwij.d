@@ -1504,8 +1504,7 @@ APPEND XACORWIJ
 		IF ~~ THEN REPLY @918 /* ~You'll see. Afterwards, I'll walk you home. Let's go.~*/
 		DO ~
 			SaveGame(0)
-			StartCutSceneMode()
-			StartCutScene("XAPROPOS")
+			SetGlobal("XA_LC_LeftToK", "GLOBAL", 1)
 		~
 		EXIT
 	END
@@ -1648,8 +1647,7 @@ APPEND XACORWIJ
 		IF ~~ THEN
 		DO ~
 			SaveGame(0)
-			StartCutSceneMode()
-			StartCutScene("XAWLKHOM")
+			SetGlobal("XA_LC_LeftToK", "GLOBAL", 2)
 		~
 		EXIT
 	END
@@ -1660,8 +1658,7 @@ APPEND XACORWIJ
 		IF ~~ THEN
 		DO ~
 			SaveGame(0)
-			StartCutSceneMode()
-			StartCutScene("XAWLKHOM")
+			SetGlobal("XA_LC_LeftToK", "GLOBAL", 2)
 		~
 		EXIT
 	END
