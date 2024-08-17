@@ -1,0 +1,9 @@
+IF
+	Global("XA_LC_RohmaKidnapped", "GLOBAL", 2)
+	GlobalLT("XA_LC_CSPause", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_CSPause", "MYAREA", 1)
+		Wait(2)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+END

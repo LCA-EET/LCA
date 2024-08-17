@@ -4632,6 +4632,7 @@ SILENT
 	
 	//{ Corwin's Home, Rohma Kidnapped ar1316	
 		COPY_EXISTING ~xaa272.are~ ~override/xakidnap.are~
+		WRITE_ASCII 0x94 ~xahomek~ #8
 		
 		WRITE_LONG 0x688 xamu04
 		WRITE_LONG 0x68C xamu04
