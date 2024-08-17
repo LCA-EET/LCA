@@ -1,8 +1,8 @@
-// creator  : F:\Baldur's Gate EE\00766\weidu.exe (version 24900)
+// creator  : F:\Beamdog\00766\weidu.exe (version 24900)
 // argument : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\ALATOS.DLG
-// game     : F:\Baldur's Gate EE\00766
+// game     : F:\Beamdog\00766
 // source   : F:\ASSETCONVERTER\PRECONVERT\BG1\DLG\ALATOS.DLG
-// dialog   : F:\Baldur's Gate EE\00766\lang\en_us\dialog.tlk
+// dialog   : F:\Beamdog\00766\lang\en_us\dialog.tlk
 // dialogF  : (none)
 
 BEGIN ~XAA257~

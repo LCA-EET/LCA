@@ -4462,10 +4462,38 @@ Weight: 0~*/
 STATISTICS:
 
 Weight: 0~*/
-COPY ~%MOD_FOLDER%\generated\a\itm\xaa121.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10729) /*~Two-handed Sword~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10730) /*~Gold Digger +1~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@10731) /*~The two-handed sword is a derivative of the long sword. Weaponsmiths have always looked for ways to improve existing weapons. In an effort to improve the long sword, the blade was lengthened. Eventually, the handle had to be extended and two hands became necessary to properly swing the sword. The primary function of two-handed swords is cleaving mounted knights and breaking up pike formations.
+COPY ~%MOD_FOLDER%\generated\a\itm\xaa120.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10729) /*~Flail ~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10730) /*~The Thresher +2~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@10731) /*~The flail is a sturdy wooden handle attached to an iron rod, a wooden rod with spikes, or a spiked iron ball. Between the handle and its implement is either a hinge or chain link. The weapon was originally used as a tool for threshing grain.
+
+STATISTICS:
+
+Damage: 1d6+1 (crushing)
+Speed Factor: 7
+Proficiency Type: Flail/Morning Star
+Type: One-handed
+Requires:
+ 13 Strength
+
+Weight: 15~*/
+	WRITE_LONG 84 RESOLVE_STR_REF(@10732) /*~With one rod of steel and another of bronze, this double-headed flail metes out punishment right and left. The weapon's carved wooden haft depicts scenes of battle in which champions of Helm, each wielding an identical flail, wade through a field of orcs, threshing them like so much wheat.
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d6+3 (crushing)
+Speed Factor: 5
+Proficiency Type: Flail/Morning Star
+Type: One-handed
+Requires:
+ 13 Strength
+
+Weight: 13~*/
+COPY ~%MOD_FOLDER%\generated\a\itm\xaa119.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10733) /*~Two-handed Sword~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10734) /*~Gold Digger +1~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@10735) /*~The two-handed sword is a derivative of the long sword. Weaponsmiths have always looked for ways to improve existing weapons. In an effort to improve the long sword, the blade was lengthened. Eventually, the handle had to be extended and two hands became necessary to properly swing the sword. The primary function of two-handed swords is cleaving mounted knights and breaking up pike formations.
 
 STATISTICS:
 
@@ -4477,7 +4505,7 @@ Requires:
  14 Strength
 
 Weight: 15~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@10732) /*~Crafted by dwarves in service to the temple of Waukeen in Amn, this two-handed sword draws power from the gold in its wielder's purse. For the wealthy it strikes mighty blows. For the impoverished, the Gold Digger is no better than a mundane greatsword.
+	WRITE_LONG 84 RESOLVE_STR_REF(@10736) /*~Crafted by dwarves in service to the temple of Waukeen in Amn, this two-handed sword draws power from the gold in its wielder's purse. For the wealthy it strikes mighty blows. For the impoverished, the Gold Digger is no better than a mundane greatsword.
 
 STATISTICS:
 
@@ -4493,10 +4521,10 @@ Requires:
  14 Strength
 
 Weight: 15~*/
-COPY ~%MOD_FOLDER%\generated\a\itm\xaa120.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10733) /*~Quarterstaff~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10734) /*~The Ossifier~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@10735) /*~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High-quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
+COPY ~%MOD_FOLDER%\generated\a\itm\xaa118.itm~ ~override~
+	WRITE_LONG 8 RESOLVE_STR_REF(@10737) /*~Quarterstaff~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@10738) /*~The Ossifier~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@10739) /*~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High-quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
 
 STATISTICS:
 
@@ -4508,7 +4536,7 @@ Requires:
  5 Strength
 
 Weight: 4~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@10736) /*~Cursed Staff of Petrification: The Ossifier
+	WRITE_LONG 84 RESOLVE_STR_REF(@10740) /*~Cursed Staff of Petrification: The Ossifier
 The surface of this seven-foot shaft more resembles stone than wood, but in the hands of a skilled wielder it weighs little more than a staff of oak. Along its length appear the ghost-like images of various foes caught in defensive postures, appearing almost as thought they had been suddenly turned to stone.
 
 STATISTICS:
@@ -4527,39 +4555,13 @@ Requires:
  5 Strength
 
 Weight: 4~*/
-COPY ~%MOD_FOLDER%\generated\a\itm\xaa118.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@10737) /*~Flail ~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@10738) /*~The Thresher +2~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@10739) /*~The flail is a sturdy wooden handle attached to an iron rod, a wooden rod with spikes, or a spiked iron ball. Between the handle and its implement is either a hinge or chain link. The weapon was originally used as a tool for threshing grain.
-
-STATISTICS:
-
-Damage: 1d6+1 (crushing)
-Speed Factor: 7
-Proficiency Type: Flail/Morning Star
-Type: One-handed
-Requires:
- 13 Strength
-
-Weight: 15~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@10740) /*~With one rod of steel and another of bronze, this double-headed flail metes out punishment right and left. The weapon's carved wooden haft depicts scenes of battle in which champions of Helm, each wielding an identical flail, wade through a field of orcs, threshing them like so much wheat.
-
-STATISTICS:
-
-THAC0: +2
-Damage: 1d6+3 (crushing)
-Speed Factor: 5
-Proficiency Type: Flail/Morning Star
-Type: One-handed
-Requires:
- 13 Strength
-
-Weight: 13~*/
 
 
 COPY ~%MOD_FOLDER%\generated\a\eff\xaa101.eff~ ~override~
 COPY ~%MOD_FOLDER%\generated\a\eff\xaa100.eff~ ~override~
 
+COPY ~%MOD_FOLDER%\generated\a\sto\xaa112.sto~ ~override~
+	WRITE_LONG 12 RESOLVE_STR_REF(@10004) /*~Lucky Aello's Discount Store~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa105.sto~ ~override~
 	WRITE_LONG 12 RESOLVE_STR_REF(@10007) /*~Shop of Silence~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa103.sto~ ~override~
@@ -4684,8 +4686,6 @@ COPY ~%MOD_FOLDER%\generated\a\sto\xaa113.sto~ ~override~
 	WRITE_LONG 224 RESOLVE_STR_REF(@10759) /*~Shadowdark Ale~*/
 	WRITE_LONG 244 RESOLVE_STR_REF(@10743) /*~Suz-ale~*/
 	WRITE_LONG 264 RESOLVE_STR_REF(@10744) /*~Old One Eye Beer~*/
-COPY ~%MOD_FOLDER%\generated\a\sto\xaa112.sto~ ~override~
-	WRITE_LONG 12 RESOLVE_STR_REF(@10004) /*~Lucky Aello's Discount Store~*/
 COPY ~%MOD_FOLDER%\generated\a\sto\xaa100.sto~ ~override~
 	WRITE_LONG 12 RESOLVE_STR_REF(@10006) /*~Keexie Tavern~*/
 	WRITE_LONG 164 RESOLVE_STR_REF(@10741) /*~Westgate Ruby Wine~*/

@@ -848,9 +848,36 @@ Requires:
 
 Weight: 4~
 @10728 = ~Angel the Cat's Angel Skin Ring~
-@10729 = ~Two-handed Sword~
-@10730 = ~Gold Digger +1~
-@10731 = ~The two-handed sword is a derivative of the long sword. Weaponsmiths have always looked for ways to improve existing weapons. In an effort to improve the long sword, the blade was lengthened. Eventually, the handle had to be extended and two hands became necessary to properly swing the sword. The primary function of two-handed swords is cleaving mounted knights and breaking up pike formations.
+@10729 = ~Flail ~
+@10730 = ~The Thresher +2~
+@10731 = ~The flail is a sturdy wooden handle attached to an iron rod, a wooden rod with spikes, or a spiked iron ball. Between the handle and its implement is either a hinge or chain link. The weapon was originally used as a tool for threshing grain.
+
+STATISTICS:
+
+Damage: 1d6+1 (crushing)
+Speed Factor: 7
+Proficiency Type: Flail/Morning Star
+Type: One-handed
+Requires:
+ 13 Strength
+
+Weight: 15~
+@10732 = ~With one rod of steel and another of bronze, this double-headed flail metes out punishment right and left. The weapon's carved wooden haft depicts scenes of battle in which champions of Helm, each wielding an identical flail, wade through a field of orcs, threshing them like so much wheat.
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d6+3 (crushing)
+Speed Factor: 5
+Proficiency Type: Flail/Morning Star
+Type: One-handed
+Requires:
+ 13 Strength
+
+Weight: 13~
+@10733 = ~Two-handed Sword~
+@10734 = ~Gold Digger +1~
+@10735 = ~The two-handed sword is a derivative of the long sword. Weaponsmiths have always looked for ways to improve existing weapons. In an effort to improve the long sword, the blade was lengthened. Eventually, the handle had to be extended and two hands became necessary to properly swing the sword. The primary function of two-handed swords is cleaving mounted knights and breaking up pike formations.
 
 STATISTICS:
 
@@ -862,7 +889,7 @@ Requires:
  14 Strength
 
 Weight: 15~
-@10732 = ~Crafted by dwarves in service to the temple of Waukeen in Amn, this two-handed sword draws power from the gold in its wielder's purse. For the wealthy it strikes mighty blows. For the impoverished, the Gold Digger is no better than a mundane greatsword.
+@10736 = ~Crafted by dwarves in service to the temple of Waukeen in Amn, this two-handed sword draws power from the gold in its wielder's purse. For the wealthy it strikes mighty blows. For the impoverished, the Gold Digger is no better than a mundane greatsword.
 
 STATISTICS:
 
@@ -878,9 +905,9 @@ Requires:
  14 Strength
 
 Weight: 15~
-@10733 = ~Quarterstaff~
-@10734 = ~The Ossifier~
-@10735 = ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High-quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
+@10737 = ~Quarterstaff~
+@10738 = ~The Ossifier~
+@10739 = ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High-quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
 
 STATISTICS:
 
@@ -892,7 +919,7 @@ Requires:
  5 Strength
 
 Weight: 4~
-@10736 = ~Cursed Staff of Petrification: The Ossifier
+@10740 = ~Cursed Staff of Petrification: The Ossifier
 The surface of this seven-foot shaft more resembles stone than wood, but in the hands of a skilled wielder it weighs little more than a staff of oak. Along its length appear the ghost-like images of various foes caught in defensive postures, appearing almost as thought they had been suddenly turned to stone.
 
 STATISTICS:
@@ -911,33 +938,6 @@ Requires:
  5 Strength
 
 Weight: 4~
-@10737 = ~Flail ~
-@10738 = ~The Thresher +2~
-@10739 = ~The flail is a sturdy wooden handle attached to an iron rod, a wooden rod with spikes, or a spiked iron ball. Between the handle and its implement is either a hinge or chain link. The weapon was originally used as a tool for threshing grain.
-
-STATISTICS:
-
-Damage: 1d6+1 (crushing)
-Speed Factor: 7
-Proficiency Type: Flail/Morning Star
-Type: One-handed
-Requires:
- 13 Strength
-
-Weight: 15~
-@10740 = ~With one rod of steel and another of bronze, this double-headed flail metes out punishment right and left. The weapon's carved wooden haft depicts scenes of battle in which champions of Helm, each wielding an identical flail, wade through a field of orcs, threshing them like so much wheat.
-
-STATISTICS:
-
-THAC0: +2
-Damage: 1d6+3 (crushing)
-Speed Factor: 5
-Proficiency Type: Flail/Morning Star
-Type: One-handed
-Requires:
- 13 Strength
-
-Weight: 13~
 @10741 = ~Westgate Ruby Wine~
 @10742 = ~Golden Sands Brews~
 @10743 = ~Suz-ale~
