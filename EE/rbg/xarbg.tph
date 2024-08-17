@@ -4830,6 +4830,7 @@ SILENT
 					fj_structure_type = region
 					fj_name = ~CSTrigger~
 			END
+			WRITE_LONG 0x2614 65 // open door to Corwin's Home
 		END ELSE BEGIN
 			LAF xa_copy_area_music
 				STR_VAR
