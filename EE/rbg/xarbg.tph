@@ -3281,17 +3281,11 @@ SILENT
 	//}
 	
 	//{ Ducal Palace 1FL (Kidnap) ar0108 xaa246
-		ACTION_IF(xa_regenerate = 1) THEN BEGIN
-			COPY_EXISTING ~xaa246.are~ ~override/xaducal.are~ 
-			WRITE_LONG 0x99C xamu07
-			WRITE_LONG 0x9A0 xamu07
+		COPY_EXISTING ~xaa246.are~ ~override/xaducal.are~ 
+			WRITE_LONG 0x1624 xamu07
+			WRITE_LONG 0x1628 xamu07
 			
-			// Disable Travel Triggers
-			WRITE_LONG 0xD2C 256
-			WRITE_LONG 0xDF0 256
-			WRITE_LONG 0xEB4 256
-			WRITE_LONG 0xF78 256
-			
+			LPF xa_delete_are_triggers END			
 			LPF xa_delete_are_actors END
 			
 			LPF fj_are_structure
@@ -3381,16 +3375,6 @@ SILENT
 					fj_name = Valiant
 					fj_cre_resref = xaffval2
 			END
-		END ELSE BEGIN
-			LAF xa_copy_area_music
-				STR_VAR
-					xa_sourcearea = ~xaa246.are~
-					xa_destinationarea = ~%MOD_FOLDER%/rbg/are/xaducal.are~
-			END
-			COPY_EXISTING ~xaducal.are~ ~override~
-			WRITE_LONG 0x99C xamu07
-			WRITE_LONG 0x9A0 xamu07
-		END
 		
 	//}
 	

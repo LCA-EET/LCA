@@ -5,22 +5,10 @@ THEN
 		CutSceneId(Player1)
 		ClearAllActions()
 		FadeToColor([30.0],0)
-		SetGlobal("XA_LC_CorwinProposalCS", "GLOBAL", 1)
 		Wait(3)
-		ZoomLock(TRUE)
-		DayNight(MIDNIGHT)
-		LeaveAreaLUA("XAWYRM","",[1420.480],NE)
 		ActionOverride("XACORWIN",LeaveAreaLUA("XAWYRM","",[1430.435],NE)) 
-		
-		ActionOverride(Player1,Rest())
-		ActionOverride(Player2,Rest())
-		ActionOverride(Player3,Rest())
-		ActionOverride(Player4,Rest())
-		ActionOverride(Player5,Rest())
-		ActionOverride(Player6,Rest())		
-
-		FadeFromColor([30.0],0)
-		Wait(2)
+		LeaveAreaLUA("XAWYRM","",[1420.480],NE)
 		SetGlobal("XA_LC_CorwinProposalCS", "GLOBAL", 1)
+		
 		EndCutSceneMode() 
 END

@@ -3,6 +3,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_LeftToK", "GLOBAL", 3)
+		Wait(1)
 		StartCutSceneMode()
 		StartCutScene("XAPROPOS")
 END
@@ -12,6 +13,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_LeftToK", "GLOBAL", 3)
+		Wait(1)
 		StartCutSceneMode()
 		StartCutScene("XAWLKHOM")
 END
