@@ -1395,7 +1395,7 @@ SILENT
 		COPY ~%MOD_FOLDER%/rbg/itm/xaring99.itm~ ~override~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@4017)
 		WRITE_LONG 0x0C RESOLVE_STR_REF(@4017)
-		WRITE_LONG 0x536 RESOLVE_STR_REF(@2010)
+		WRITE_LONG 0x54E RESOLVE_STR_REF(@2010)
 		
 		COPY_EXISTING ~xaring99.itm~ ~override/xaring07.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@4018)
@@ -3329,7 +3329,7 @@ SILENT
 				STR_VAR
 					fj_structure_type = actor
 					fj_name = Liia
-					fj_cre_resref = xalia
+					fj_cre_resref = xaliia
 			END
 			
 			LPF fj_are_structure
