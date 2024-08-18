@@ -963,7 +963,7 @@ SILENT
 		COPY_EXISTING ~bonebld.cre~ ~override/xabondag.cre~ // Bone Dagger
 		SAY NAME1 @4159 /* ~Bone Dagger~ */
 		SAY NAME2 @4159 /* ~Bone Dagger~ */
-		WRITE_ASCII 0x248 ~~ #8		// Override Script
+		WRITE_ASCII 0x248 ~xaucspwn~ #8		// Override Script
 		WRITE_LONG 0x14 500	// Exp
 		WRITE_SHORT 0x24 10		// Current HP
 		WRITE_SHORT 0x26 10 	// Max HP

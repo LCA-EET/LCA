@@ -1,0 +1,7 @@
+IF
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		MoveToObject(NearestEnemyOf(Myself))
+		Continue()
+END
