@@ -23,6 +23,7 @@ OUTER_SET xa_regenerate = 0 // set to 1 to regenerate areas, 0 (default) to copy
 		APPEND ~animate.ids~ ~0x7F59 ABISHAI_GREEN~
 		APPEND ~animate.ids~ ~0xE258 HERPHERNAAN~
 		APPEND ~animate.ids~ ~0xE279 OROG_SHAMAN~
+		APPEND ~animate.ids~ ~0xEA10 SHADOW_SMALL~
 		
 		// The hashes of these bams are the same. No sense in including them in the download.
 		COPY_EXISTING ~mbe2dee.bam~ ~override/mbe2gue.bam~
@@ -965,7 +966,7 @@ SILENT
 		WRITE_ASCII 0x248 ~~ #8		// Override Script
 		WRITE_LONG 0x14 500	// Exp
 		WRITE_SHORT 0x24 10		// Current HP
-		WRITE_SHORT 0x24 10 	// Max HP
+		WRITE_SHORT 0x26 10 	// Max HP
 		WRITE_SHORT 0x46 0		// Natural AC
 		WRITE_SHORT 0x48 0		// Effective AC
 		
