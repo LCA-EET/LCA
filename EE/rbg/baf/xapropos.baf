@@ -19,5 +19,8 @@ THEN
 		ActionOverride(Player5,Rest())
 		ActionOverride(Player6,Rest())		
 
-		StartCutScene("XAPROPO1") 
+		FadeFromColor([30.0],0)
+		Wait(2)
+		SetGlobal("XA_LC_CorwinProposalCS", "GLOBAL", 1)
+		EndCutSceneMode() 
 END

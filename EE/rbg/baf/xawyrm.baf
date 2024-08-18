@@ -1,9 +1,19 @@
 IF
-	InMyArea(Player1)
-	InMyArea("XACORWIN")
+	Global("XA_LC_CorwinProposalCS", "GLOBAL", 1)
 	GlobalLT("XA_LC_ContinueWyrm", "MYAREA", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_ContinueWyrm", "MYAREA", 1)
-		StartCutScene("XAPROPO1") 
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+END
+
+IF
+	Global("XA_LC_CorwinProposalCS", "GLOBAL", 2)
+	Global("XA_LC_ContinueWyrm", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_ContinueWyrm", "MYAREA", 2)
+		ActionOverride("XACORWIN", FaceObject(Player1))
+		Wait(1)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
 END

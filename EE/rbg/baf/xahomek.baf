@@ -4,7 +4,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_CSPause", "MYAREA", 1)
-		Wait(2)
+		Wait(1)
 		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
 END
 
