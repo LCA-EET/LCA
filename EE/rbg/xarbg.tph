@@ -2009,64 +2009,27 @@ SILENT
 		// Replace Area Triggers
 		WRITE_ASCII 0x1474 ~xauctemp~ #8
 		
-		//{ Update Spawn Points to use BG2 and SoD Assets
-			//{ Spawn Point 0
-				WRITE_ASCII 0x15E8 ~xabondag~ #8 // Bone Dagger
-				WRITE_ASCII 0x15F0 ~skelsu07~ #8
-				WRITE_ASCII 0x15F8 ~skelsu11~ #8
-				WRITE_ASCII 0x1600 ~xac158~ #8 // bdshsoul Shadowed Soul
-			//}
-			
-			//{ Spawn Point 1
-				WRITE_ASCII 0x16B0 ~xabondag~ #8 // Bone Dagger
-				WRITE_ASCII 0x16B8 ~ghastgsu~ #8
-				WRITE_ASCII 0x16C0 ~ghastf01~ #8
-				WRITE_ASCII 0x16C8 ~xac154~ #8 // bdwight2 Imbued Wight
-			//}
-			
-			//{ Spawn Point 2
-				WRITE_ASCII 0x1778 ~xabondag~ #8
-				WRITE_ASCII 0x1780 ~xac153~ #8 // bdbonbat Bone Bat
-				WRITE_ASCII 0x1788 ~xac155~ #8 // bdskgr07 Skeletal Mage
-			//}
-			
-			//{ Spawn Point 3
-				WRITE_ASCII 0x1840 ~xabondag~ #8
-				WRITE_ASCII 0x1848 ~ghast01~ #8
-			//}
-			
-			//{ Spawn Point 4
-				WRITE_ASCII 0x1908 ~xabondag~ #8 // Bone Dagger
-				WRITE_ASCII 0x1910 ~skelsu01~ #8
-				WRITE_ASCII 0x1912 ~zombie01~ #8
-			//}
-			
-			//{ Spawn Point 5
-				WRITE_ASCII 0x19D0 ~xabondag~ #8 // Bone Dagger
-				WRITE_ASCII 0x19D8 ~xac162~ #8 // bdwrai02
-				WRITE_ASCII 0x19E0 ~xac158~ #8 // bdshsoul Shadowed Soul
-			//}
-			
-			//{ Spawn Point 6
-				WRITE_ASCII 0x1A98 ~xabondag~ #8 // Bone Dagger
-			//}
-			
-			//{ Spawn Point 7
-				WRITE_ASCII 0x1B60 ~xabondag~ #8 // Bone Dagger
-			//}
-			
-			//{ Spawn Point 8
-				WRITE_ASCII 0x1C28 ~xabondag~ #8 // Bone Dagger
-			//}
-			
-			//{ Spawn Point 9
-				WRITE_ASCII 0x1CF0 ~xabondag~ #8 // Bone Dagger
-			//}
-			
-			//{ Spawn Point 10
-				WRITE_ASCII 0x1DB8 ~xabondag~ #8 // Bone Dagger
-			//}
-		//}
+		PATCH_DEFINE_ARRAY xa_spawnRefs
+		BEGIN
+			xabondag
+			skelsu07
+			skelsu11
+			xac158
+			ghastgsu
+			ghastf01
+			xac154
+			xac153
+			xac155
+			skelsu01
+			zombie01
+			xac162
+		END
+		
+		LPF xa_replaceSpawns
+			INT_VAR
+				xa_arrayLength = 12
+		END
+		
 		LPF fj_are_structure
 			INT_VAR
 				fj_loc_x = 4600
