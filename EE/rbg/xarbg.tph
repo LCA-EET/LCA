@@ -1985,7 +1985,7 @@ SILENT
 	//{ ar0123 xaa106 Undercity
 		EXTEND_TOP ~xaas106.bcs~ 	~%MOD_FOLDER%/rbg/baf/xauc.baf~
 	
-		COPY_EXISTING ~xaa106.are~ ~override~
+		COPY_EXISTING ~xaa106.are~ ~override/xauc.are~
 		
 		// Deactivate Exit Back to Maze
 		WRITE_LONG 0x1560 256
