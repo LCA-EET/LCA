@@ -1381,7 +1381,6 @@ APPEND XACORWIJ
 	IF ~~ THEN BEGIN XA_WalkHome3
 		SAY @988 /* ~Oh, Gods! Father! Rohma!~ */
 		
-		= @989 /* ~(She runs inside, and you follow her in.)~ */
 		IF ~~ THEN 
 		EXIT
 	END
@@ -1503,8 +1502,8 @@ APPEND XACORWIJ
 		
 		IF ~~ THEN REPLY @918 /* ~You'll see. Afterwards, I'll walk you home. Let's go.~*/
 		DO ~
-			SaveGame(0)
 			SetGlobal("XA_LC_LeftToK", "GLOBAL", 1)
+			SaveGame(0)
 		~
 		EXIT
 	END
@@ -1646,8 +1645,8 @@ APPEND XACORWIJ
 		
 		IF ~~ THEN
 		DO ~
-			SaveGame(0)
 			SetGlobal("XA_LC_LeftToK", "GLOBAL", 2)
+			SaveGame(0)
 		~
 		EXIT
 	END
@@ -1657,8 +1656,8 @@ APPEND XACORWIJ
 		
 		IF ~~ THEN
 		DO ~
-			SaveGame(0)
 			SetGlobal("XA_LC_LeftToK", "GLOBAL", 2)
+			SaveGame(0)
 		~
 		EXIT
 	END

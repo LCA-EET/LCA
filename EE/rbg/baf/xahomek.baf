@@ -7,3 +7,13 @@ THEN
 		Wait(2)
 		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
 END
+
+IF
+	Global("XA_LC_RohmaKidnapped", "GLOBAL", 4)
+	GlobalLT("XA_LC_CSPause", "MYAREA", 2)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_CSPause", "MYAREA", 2)
+		StartCutsceneMode()
+		StartCutscene("XADUCAL")
+END

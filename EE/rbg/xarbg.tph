@@ -4933,11 +4933,11 @@ SILENT
 	
 	//{ Proposal Area ar0900
 		COPY_EXISTING ~xaa100.are~ ~override/xawyrm.are~
-		WRITE_LONG 0x30BC xamu03
-		WRITE_LONG 0x30C0 xamu03
+		LPF xa_delete_are_actors END
+		WRITE_LONG 0x3E48 xamu02
+		WRITE_LONG 0x3E4C xamu02
 		WRITE_ASCII 0x94 ~xawyrm~ #8 // area script
 		WRITE_ASCII 0x3C ~~ #8 // area west
-		LPF xa_delete_are_actors END
 	//}
 //}
 

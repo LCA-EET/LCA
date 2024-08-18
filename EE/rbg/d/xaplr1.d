@@ -91,8 +91,7 @@ APPEND ~PLAYER1~
 		IF ~~ THEN
 		DO ~
 			SetGlobal("XA_LC_RohmaKidnapped", "GLOBAL", 4)
-			StartCutsceneMode()
-			StartCutscene("XADUCAL")
+			SaveGame(0)
 		~
 		EXIT
 	END
