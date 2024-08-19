@@ -90,9 +90,9 @@ ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaf100.are~) BEGIN
 END
 ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaf101.are~) BEGIN
 	COPY ~%MOD_FOLDER%\generated\f\are\xaf101.are~ ~override~
-	WRITE_LONG 1396 RESOLVE_STR_REF(@11359) /*~Exit~*/
-	WRITE_LONG 1448 RESOLVE_STR_REF(@11359) /*~Exit~*/
-	WRITE_LONG 1500 RESOLVE_STR_REF(@11359) /*~Exit~*/
+	WRITE_LONG 1396 RESOLVE_STR_REF(@11361) /*~Exit~*/
+	WRITE_LONG 1448 RESOLVE_STR_REF(@11361) /*~Exit~*/
+	WRITE_LONG 1500 RESOLVE_STR_REF(@11361) /*~Exit~*/
 	WRITE_LONG 1020 %xaf2%
 	WRITE_LONG 1024 %xaf2%
 	WRITE_LONG 1028 %xaf3%
@@ -101,54 +101,54 @@ ACTION_IF NOT(FILE_EXISTS_IN_GAME ~xaf101.are~) BEGIN
 END
 
 COPY ~%MOD_FOLDER%\generated\f\cre\xaf100.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11360) /*~Angelo~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11360) /*~Angelo~*/
-	WRITE_LONG 164 RESOLVE_STR_REF(@11361) /*~ So, these are the infamous murderers, finally brought to justice.~*/
-	WRITE_LONG 200 RESOLVE_STR_REF(@11362) /*~ Dreadfully sorry, but I'm afraid... I'm gonna have ta kill ya.~[xaa12064]*/
-	WRITE_LONG 236 RESOLVE_STR_REF(@11363) /*~~[xaf10005]*/
-	WRITE_LONG 240 RESOLVE_STR_REF(@11364) /*~~[xaf10006]*/
-	WRITE_LONG 268 RESOLVE_STR_REF(@11365) /*~ Justice may be blind, but I'm not.~[xaf10007]*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11362) /*~Angelo~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11362) /*~Angelo~*/
+	WRITE_LONG 164 RESOLVE_STR_REF(@11363) /*~ So, these are the infamous murderers, finally brought to justice.~*/
+	WRITE_LONG 200 RESOLVE_STR_REF(@11364) /*~ Dreadfully sorry, but I'm afraid... I'm gonna have ta kill ya.~[xaa12064]*/
+	WRITE_LONG 236 RESOLVE_STR_REF(@11365) /*~~[xaf10005]*/
+	WRITE_LONG 240 RESOLVE_STR_REF(@11366) /*~~[xaf10006]*/
+	WRITE_LONG 268 RESOLVE_STR_REF(@11367) /*~ Justice may be blind, but I'm not.~[xaf10007]*/
 
 COPY ~%MOD_FOLDER%\generated\f\cre\xaf101.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11366) /*~Halatathlaer~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11366) /*~Halatathlaer~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11368) /*~Halatathlaer~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11368) /*~Halatathlaer~*/
 
 COPY ~%MOD_FOLDER%\generated\f\cre\xaf102.cre~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11367) /*~Blind Albino Wyrmling~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11367) /*~Blind Albino Wyrmling~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11369) /*~Blind Albino Wyrmling~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11369) /*~Blind Albino Wyrmling~*/
 
 
 COPY ~%MOD_FOLDER%\generated\f\spl\xaf100.spl~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11368) /*~Dragon Fear~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11370) /*~Dragon Fear~*/
 COPY ~%MOD_FOLDER%\generated\f\spl\xaf101.spl~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11369) /*~Ghost Dragon Breath~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11371) /*~Ghost Dragon Breath~*/
 COPY ~%MOD_FOLDER%\generated\f\spl\xaf102.spl~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11370) /*~Tail Constriction~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11372) /*~Tail Constriction~*/
 COPY ~%MOD_FOLDER%\generated\f\spl\xaf103.spl~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11371) /*~Breath Weapon~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11373) /*~Breath Weapon~*/
 
 
 
 
 COPY ~%MOD_FOLDER%\generated\f\itm\xaf100.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11372) /*~Ring~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11372) /*~Ring~*/
-	WRITE_LONG 80 RESOLVE_STR_REF(@11373) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+	WRITE_LONG 8 RESOLVE_STR_REF(@11374) /*~Ring~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11374) /*~Ring~*/
+	WRITE_LONG 80 RESOLVE_STR_REF(@11375) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~*/
-	WRITE_LONG 84 RESOLVE_STR_REF(@11373) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+	WRITE_LONG 84 RESOLVE_STR_REF(@11375) /*~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
 
 STATISTICS:
 
 Weight: 0~*/
 COPY ~%MOD_FOLDER%\generated\f\itm\xaf101.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11374) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11374) /*~Attack~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11376) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11376) /*~Attack~*/
 COPY ~%MOD_FOLDER%\generated\f\itm\xaf102.itm~ ~override~
-	WRITE_LONG 8 RESOLVE_STR_REF(@11374) /*~Attack~*/
-	WRITE_LONG 12 RESOLVE_STR_REF(@11374) /*~Attack~*/
+	WRITE_LONG 8 RESOLVE_STR_REF(@11376) /*~Attack~*/
+	WRITE_LONG 12 RESOLVE_STR_REF(@11376) /*~Attack~*/
 
 
 
