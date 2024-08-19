@@ -1983,6 +1983,11 @@ SILENT
 		WRITE_LONG 0x154 0 // Areana
 	//}
 	
+	//{ Update Shadowed Soul Script to use correct spells
+		COPY_EXISTING ~xac158.cre~ ~override~
+		WRITE_ASCII 0x268 ~xashsoul~ #8
+	//}
+	
 	//{ ar0123 xaa106 Undercity
 		EXTEND_TOP ~xaas106.bcs~ 	~%MOD_FOLDER%/rbg/baf/xauc.baf~
 	
