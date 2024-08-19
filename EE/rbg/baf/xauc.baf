@@ -17,3 +17,34 @@ THEN
 		Wait(1)
 		ActionOverride("XAGLINT2", StartDialog("XAGLINT", Player1))
 END
+
+IF
+	GlobalLT("XA_LC_DaggerTimerSet", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_DaggerTimerSet", "MYAREA", 1)
+		Wait(10)
+		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", ONE_ROUND)
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("XA_LC_DaggerTimerSet", "MYAREA", 1)
+	GlobalTimerExpired("XA_LC_DaggerTimer", "MYAREA")
+THEN
+	RESPONSE #20
+		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", ONE_ROUND)
+		ActionOverride(Player1, CreateCreature("XABONDAG", [20.0], S))
+	RESPONSE #20
+		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", ONE_ROUND)
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-20.0], S))
+	RESPONSE #20
+		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", ONE_ROUND)
+		ActionOverride(Player1, CreateCreature("XABONDAG", [0.20], S))
+	RESPONSE #20
+		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", ONE_ROUND)
+		ActionOverride(Player1, CreateCreature("XABONDAG", [0.-20], S))
+	RESPONSE #20
+		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", ONE_ROUND)
+END
