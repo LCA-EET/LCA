@@ -44,6 +44,7 @@ SILENT
 INCLUDE ~%MOD_FOLDER%/generated/a/generated.tph~
 INCLUDE ~%MOD_FOLDER%/generated/c/generated.tph~
 INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
+INCLUDE ~%MOD_FOLDER%/generated/g/generated.tph~
 
 //{ Worldmap
 	COPY ~%MOD_FOLDER%/rbg/mos/xamaprbg.mos~ ~override~
@@ -1747,9 +1748,6 @@ SILENT
 
 	//{ Adjust Script & Dialogue Music
 		COPY_EXISTING ~xanarzu.dlg~ ~override~
-		DECOMPILE_AND_PATCH BEGIN
-			REPLACE_TEXTUALLY ~PlaySong(1022)~ ~PlaySong(%xaa22%)~
-		END
 		
 		COPY_EXISTING ~player1.dlg~ ~override~
 		DECOMPILE_AND_PATCH BEGIN
@@ -2038,6 +2036,10 @@ SILENT
 		
 		// Replace Battle Song
 		WRITE_LONG 0x1DC0 xaf3
+		
+		// Replace Area Song
+		WRITE_LONG 0x1DB4 xag0
+		WRITE_LONG 0x1DB8 xag0
 	//}
 	
 	//{ ar0126 xaa361 Ragefast's Home
@@ -4595,7 +4597,7 @@ SILENT
 		// Add Music
 		WRITE_LONG 0x630 xamu05
 		WRITE_LONG 0x634 xamu05
-		WRITE_LONG 0x63C xaa22
+		WRITE_LONG 0x63C xag3
 
 		// Add Area Script
 		WRITE_ASCII 0x94 ~xademsan~ #8
@@ -4780,11 +4782,9 @@ SILENT
 	//}
 	
 	//{ Undercity Temple ar0125
-		COPY_EXISTING ~xaa101.are~ ~override/xauctemp.are~
-		
+		COPY_EXISTING ~xaa101.are~ ~override/xauctemp.are~		
 		WRITE_ASCII 0x94 ~xauctemp~ #8 // Area Script
-		WRITE_LONG 0x24B8 xaa22 // Battle Music
-		
+
 		LPF xa_delete_are_triggers END
 		
 		LPF xa_delete_are_actors
@@ -4853,6 +4853,9 @@ SILENT
 				fj_structure_type = region
 				fj_name = ~xatrbeno~
 		END
+		WRITE_LONG 0x1358 xag0 // Day
+		WRITE_LONG 0x135C xag0 // Night
+		WRITE_LONG 0x1364 xaa22 // Battle Music
 		//}
 	//}
 	

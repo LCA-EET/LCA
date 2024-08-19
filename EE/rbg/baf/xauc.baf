@@ -42,12 +42,12 @@ THEN
 		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
 		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
 	RESPONSE #20
-		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", ONE_ROUND)
+		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", TWO_ROUNDS)
 		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
 		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
 		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
 	RESPONSE #20
-		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", ONE_ROUND)
+		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", THREE_ROUNDS)
 		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
 		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
 		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))

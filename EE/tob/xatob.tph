@@ -1,6 +1,6 @@
 PRINT @5000  /* ~Processing ToB changes...~ */
 SILENT
-INCLUDE ~%MOD_FOLDER%/generated/g/generated.tph~
+
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/baf~
 
@@ -171,6 +171,19 @@ END
 				xa_default = ~wtasight~
 		END
 		BUT_ONLY
+		
+		COPY_EXISTING ~gorbat3.cre~ ~override/xanarzs0.cre~
+		WRITE_ASCII 0x248 ~xanevsum~ #8 // override
+		WRITE_ASCII 0x280 ~xanarzs0~ #8 // script name
+		
+		COPY_EXISTING ~xanarzs0.cre~ ~override/xanarzs1.cre~
+		WRITE_ASCII 0x280 ~xanarzs1~ #8 // script name
+		
+		COPY_EXISTING ~xanarzs0.cre~ ~override/xanarzs2.cre~
+		WRITE_ASCII 0x280 ~xanarzs2~ #8 // script name
+		
+		COPY_EXISTING ~xanarzs0.cre~ ~override/xanarzs3.cre~
+		WRITE_ASCII 0x280 ~xanarzs3~ #8 // script name
 		
 		COPY_EXISTING ~xaavc5.cre~ ~override/xanarz01.cre~
 		WRITE_ASCII 0x248 ~xanevsum~ #8 // override

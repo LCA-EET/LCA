@@ -9,7 +9,6 @@ IF ~
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_LC_ConfrontNarzugon", "GLOBAL", 2)
-		PlaySong(1022) // replace with xaa22
 	~
 	GOTO XA_ConfrontDemon2
 END
