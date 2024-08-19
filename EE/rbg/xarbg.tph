@@ -2009,25 +2009,9 @@ SILENT
 		// Replace Area Triggers
 		WRITE_ASCII 0x1474 ~xauctemp~ #8
 		
-		PATCH_DEFINE_ARRAY xa_spawnRefs
-		BEGIN
-			xabondag
-			skelsu07
-			skelsu11
-			xac158
-			ghastgsu
-			ghastf01
-			xac154
-			xac153
-			xac155
-			skelsu01
-			zombie01
-			xac162
-		END
-		
 		LPF xa_replaceSpawns
-			INT_VAR
-				xa_arrayLength = 12
+			STR_VAR
+				xa_spawnRef = ~xabondag~
 		END
 		
 		LPF fj_are_structure

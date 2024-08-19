@@ -208,34 +208,23 @@ DEFINE_PATCH_FUNCTION xa_dlgb_soa_to_tob
 		REPLACE_TEXTUALLY ~BVALYGA~ ~BVALYG25~
 		REPLACE_TEXTUALLY ~BVICONI~ ~BVICON25~
 	END
-	
+
 DEFINE_PATCH_FUNCTION xa_replaceSpawns
-	INT_VAR
-		xa_arrayLength = 0
+	STR_VAR
+		xa_spawnRef = ~~
 	BEGIN
 		READ_LONG 0x60 xa_spawnOffset
 		READ_LONG 0x64 xa_spawnPoints
-		xa_spawnOffset = (xa_spawnOffset + 0x24)
-		SET xa_nextArrayIndex = 0
+		xa_spawnOffset = (xa_spawnOffset + 36)
 		SET xa_spawnsProcessed = 0
 		SET xa_creatureID = 0
+		SET xa_writeOffset = 0
+		SET xa_nextIndex = 0
 		WHILE (xa_spawnsProcessed < xa_spawnPoints) BEGIN
-			WHILE(xa_creatureID < 10) BEGIN
-				READ_ASCII xa_spawnOffset xa_existingCreature
-				PATCH_PRINT ~%xa_spawnOffset%~
-				PATCH_PRINT ~%xa_creatureID% --- %xa_existingCreature%~
-				PATCH_IF NOT(%xa_existingCreature% STR_EQ ~~) THEN BEGIN
-					PATCH_PRINT ~%xa_existingCreature%~
-					SPRINT xa_replacementRef $xa_spawnRefs(%xa_nextArrayIndex%)
-					PATCH_IF((xa_nextArrayIndex + 1) = xa_arrayLength) THEN BEGIN
-						xa_nextArrayIndex = 0
-					END ELSE BEGIN
-						xa_nextArrayIndex = (xa_nextArrayIndex + 1)
-					END
-					WRITE_ASCIIE (xa_spawnOffset + (xa_creatureID * 8)) ~%xa_replacementRef%~ #8
-				END ELSE BEGIN
-					PATCH_PRINT ~Skipped~
-				END
+			READ_SHORT (xa_spawnOffset + 80) xa_numCreatures 
+			WHILE(xa_creatureID < xa_numCreatures) BEGIN
+				xa_writeOffset = xa_spawnOffset + (xa_creatureID * 8)
+				WRITE_ASCIIE xa_writeOffset ~%xa_spawnRef%~ #8
 				xa_creatureID = (xa_creatureID + 1)
 			END
 			xa_creatureID = 0
@@ -244,6 +233,37 @@ DEFINE_PATCH_FUNCTION xa_replaceSpawns
 		END
 	END 
 
+/*	Doesn't work because SPRINT can reference a variable. It needs a fixed index to read from an array.
+DEFINE_PATCH_FUNCTION xa_replaceSpawns
+	INT_VAR
+		xa_arrayLength = 0
+	BEGIN
+		READ_LONG 0x60 xa_spawnOffset
+		READ_LONG 0x64 xa_spawnPoints
+		xa_spawnOffset = (xa_spawnOffset + 36)
+		SET xa_nextArrayIndex = 0
+		SET xa_spawnsProcessed = 0
+		SET xa_creatureID = 0
+		SET xa_writeOffset = 0
+		WHILE (xa_spawnsProcessed < xa_spawnPoints) BEGIN
+			READ_SHORT (xa_spawnOffset + 80) xa_numCreatures 
+			WHILE(xa_creatureID < xa_numCreatures) BEGIN
+				SPRINT xa_replacementRef $xa_spawnRefs(%xa_nextArrayIndex%) <-- Doesn't work
+				xa_writeOffset = xa_spawnOffset + (xa_creatureID * 8)
+				WRITE_ASCIIE xa_writeOffset ~%xa_replacementRef%~ #8
+				PATCH_IF((xa_nextArrayIndex + 1) = xa_arrayLength) THEN BEGIN
+					xa_nextArrayIndex = 0
+				END ELSE BEGIN
+					xa_nextArrayIndex = (xa_nextArrayIndex + 1)
+				END
+				xa_creatureID = (xa_creatureID + 1)
+			END
+			xa_creatureID = 0
+			xa_spawnOffset = (xa_spawnOffset + 0xC8)
+			xa_spawnsProcessed = (xa_spawnsProcessed + 1)
+		END
+	END 
+*/
 DEFINE_PATCH_FUNCTION xa_delete_are_actors 
 	INT_VAR xa_component_count = 0
 	
