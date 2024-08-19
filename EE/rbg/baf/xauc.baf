@@ -32,19 +32,26 @@ IF
 	InMyArea(Player1)
 	Global("XA_LC_DaggerTimerSet", "MYAREA", 1)
 	GlobalTimerExpired("XA_LC_DaggerTimer", "MYAREA")
+	GlobalLT("XA_LC_SpawnsActive", "MYAREA", 10)
 THEN
 	RESPONSE #20
 		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", ONE_ROUND)
-		ActionOverride(Player1, CreateCreature("XABONDAG", [20.0], S))
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
 	RESPONSE #20
 		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", ONE_ROUND)
-		ActionOverride(Player1, CreateCreature("XABONDAG", [-20.0], S))
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
 	RESPONSE #20
 		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", ONE_ROUND)
-		ActionOverride(Player1, CreateCreature("XABONDAG", [0.20], S))
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
 	RESPONSE #20
 		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", ONE_ROUND)
-		ActionOverride(Player1, CreateCreature("XABONDAG", [0.-20], S))
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
 	RESPONSE #20
 		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", ONE_ROUND)
 END

@@ -264,43 +264,79 @@ DEFINE_PATCH_FUNCTION xa_replaceSpawns
 		END
 	END 
 */
-DEFINE_PATCH_FUNCTION xa_delete_are_actors 
-	INT_VAR xa_component_count = 0
-	
+DEFINE_PATCH_FUNCTION xa_delete_are_components
+	INT_VAR
+		xa_component_count_offset = 0
+		xa_count_to_delete = 0
+	STR_VAR
+		xa_component_type = ~~
 	BEGIN
-		PATCH_IF (xa_component_count = 0) THEN BEGIN
-			READ_SHORT 0x58 xa_component_count
+		PATCH_IF(xa_count_to_delete = 0) THEN BEGIN
+			READ_SHORT xa_component_count_offset xa_count_to_delete
 		END
 		SET xa_itemsProcessed = 0
-		WHILE (xa_itemsProcessed < xa_component_count) BEGIN
+		WHILE (xa_itemsProcessed < xa_count_to_delete) BEGIN
 			LPF fj_are_structure
 				INT_VAR
 					fj_delete_mode = 0
 				STR_VAR
-					fj_structure_type = actor
+					fj_structure_type = ~%xa_component_type%~
 			END
 			xa_itemsProcessed = (xa_itemsProcessed + 1)
 		END
-	END 
+	END
 	
-DEFINE_PATCH_FUNCTION xa_delete_are_containers 
-	INT_VAR xa_component_count = 0
-	
+DEFINE_PATCH_FUNCTION xa_delete_are_spawns 	
+	INT_VAR
+		xa_component_count = 0
 	BEGIN
-		PATCH_IF(xa_component_count = 0) THEN BEGIN
-			READ_SHORT 0x74 xa_component_count
-		END
-		SET xa_itemsProcessed = 0
-		WHILE (xa_itemsProcessed < xa_component_count) BEGIN
-			LPF fj_are_structure
-				INT_VAR
-					fj_delete_mode = 0
-				STR_VAR
-					fj_structure_type = container
-			END
-			xa_itemsProcessed = (xa_itemsProcessed + 1)
+		LPF xa_delete_are_components
+			INT_VAR
+				xa_component_count_offset = 0x64
+				xa_count_to_delete = xa_component_count
+			STR_VAR
+				xa_component_type = ~spawn~
 		END
 	END 
+
+DEFINE_PATCH_FUNCTION xa_delete_are_actors
+	INT_VAR
+		xa_component_count = 0 	
+	BEGIN
+		LPF xa_delete_are_components
+			INT_VAR
+				xa_component_count_offset = 0x58
+				xa_count_to_delete = xa_component_count
+			STR_VAR
+				xa_component_type = ~actor~
+		END
+	END 
+	
+DEFINE_PATCH_FUNCTION xa_delete_are_containers	
+	INT_VAR
+		xa_component_count = 0 	
+	BEGIN
+		LPF xa_delete_are_components
+			INT_VAR
+				xa_component_count_offset = 0x74
+				xa_count_to_delete = xa_component_count
+			STR_VAR
+				xa_component_type = ~container~
+		END
+	END
+	
+DEFINE_PATCH_FUNCTION xa_delete_are_triggers
+	INT_VAR
+		xa_component_count = 0
+	BEGIN
+		LPF xa_delete_are_components
+			INT_VAR
+				xa_component_count_offset = 0x5A
+				xa_count_to_delete = xa_component_count
+			STR_VAR
+				xa_component_type = ~region~
+		END
+	END
 	
 DEFINE_PATCH_FUNCTION xa_delete_actor_at_index 
 	INT_VAR xa_index = 0
@@ -313,25 +349,6 @@ DEFINE_PATCH_FUNCTION xa_delete_actor_at_index
 				fj_structure_type = actor
 		END
 	END
-	
-DEFINE_PATCH_FUNCTION xa_delete_are_triggers 
-	INT_VAR xa_component_count = 0
-	
-	BEGIN
-		PATCH_IF(xa_component_count = 0) THEN BEGIN
-			READ_SHORT 0x5A xa_component_count
-		END
-		SET xa_itemsProcessed = 0
-		WHILE (xa_itemsProcessed < xa_component_count) BEGIN
-			LPF fj_are_structure
-				INT_VAR
-					fj_delete_mode = 0
-				STR_VAR
-					fj_structure_type = region
-			END
-			xa_itemsProcessed = (xa_itemsProcessed + 1)
-		END
-	END 
 	
 DEFINE_PATCH_FUNCTION xa_reset_cre
 	STR_VAR 

@@ -964,7 +964,7 @@ SILENT
 		SAY NAME1 @4159 /* ~Bone Dagger~ */
 		SAY NAME2 @4159 /* ~Bone Dagger~ */
 		WRITE_ASCII 0x248 ~xaucspwn~ #8		// Override Script
-		WRITE_LONG 0x14 500	// Exp
+		WRITE_LONG 0x14 200	// Exp
 		WRITE_SHORT 0x24 10		// Current HP
 		WRITE_SHORT 0x26 10 	// Max HP
 		WRITE_SHORT 0x46 0		// Natural AC
@@ -2003,16 +2003,12 @@ SILENT
 		WRITE_ASCII 0x1FEC ~POTN55~ #8
 		WRITE_SHORT 0x1FF6 2
 		
-		// Replace Battle Song
-		WRITE_LONG 0x24B8 xaf3
+		
 		
 		// Replace Area Triggers
 		WRITE_ASCII 0x1474 ~xauctemp~ #8
 		
-		LPF xa_replaceSpawns
-			STR_VAR
-				xa_spawnRef = ~xabondag~
-		END
+		LPF xa_delete_are_spawns END
 		
 		LPF fj_are_structure
 			INT_VAR
@@ -2034,6 +2030,9 @@ SILENT
 				fj_name = xaglint2
 				fj_cre_resref = xaglint2
 		END
+		
+		// Replace Battle Song
+		WRITE_LONG 0x1DC0 xaf3
 	//}
 	
 	//{ ar0126 xaa361 Ragefast's Home

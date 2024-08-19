@@ -1,7 +1,24 @@
 IF
+	Die()
+THEN
+	RESPONSE #100
+		IncrementGlobal("XA_LC_SpawnsActive", "MYAREA", -1)
+END
+
+IF
+	GlobalLT("XA_LC_Spawn", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_Spawn", "LOCALS",1)
+		IncrementGlobal("XA_LC_SpawnsActive", "MYAREA", 1)
+		Continue()
+END
+
+IF
 	ActionListEmpty()
 THEN
 	RESPONSE #100
 		MoveToObject(NearestEnemyOf(Myself))
 		Continue()
 END
+
