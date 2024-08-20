@@ -1,7 +1,7 @@
 BEGIN ~XASKIE~
 
 IF ~
-	Global("XA_LC_ByeRohma", "GLOBAL", 1)
+	GlobalGT("XA_LC_RohmaSaved", "GLOBAL", 0)
 	RandomNum(2,1)
 ~ THEN BEGIN XA_EndBGQuest_CorwinRequested
 	SAY @77 /* ~Rohma's just too sweet - I love her!~*/
@@ -9,7 +9,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_LC_ByeRohma", "GLOBAL", 1)
+	GlobalGT("XA_LC_RohmaSaved", "GLOBAL", 0)
 	RandomNum(2,2)
 ~ THEN BEGIN XA_EndBGQuest_CorwinRequested
 	SAY @78 /* ~Thanks for keeping your word. My father would have locked up in my room if he knew I had any part in the rescue.~*/

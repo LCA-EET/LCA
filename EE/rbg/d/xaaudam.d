@@ -1,5 +1,14 @@
 BEGIN ~XAAUDAM~
 
+IF ~
+	GlobalGT("XA_LC_RohmaSaved", "GLOBAL", 0)
+~ THEN BEGIN XA_Sleeping
+	SAY @7 /* ~Zzz...zzz...~ */
+	=@8 /* ~(You decide against disturbing his rest.)~ */
+	
+	IF ~~ THEN EXIT
+END
+
 //{ Dialog M-0
 IF ~
 	Global("XA_LC_CorwinFamilyTalk", "GLOBAL", 1)
@@ -13,14 +22,7 @@ IF ~
 	EXTERN XACORWIJ XA_CorwinFamilyReunite2
 END
 //}
-IF ~
-	Global("XA_LC_ByeRohma", "GLOBAL", 1)
-~ THEN BEGIN XA_Sleeping
-	SAY @7 /* ~Zzz...zzz...~ */
-	=@8 /* ~(You decide against disturbing his rest.)~ */
-	
-	IF ~~ THEN EXIT
-END
+
 
 IF ~
 	IsGabber("XACORWIN")

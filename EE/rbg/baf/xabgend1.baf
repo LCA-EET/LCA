@@ -17,7 +17,7 @@ THEN
 		ActionOverride("XACORWIN", MoveToPoint([485.292]))
 		SmallWait(1)
 		SmallWait(1)
-		MoveToObject("TrigP1")
+		MoveToPoint([495.295])
 		Wait(1)
 		ActionOverride("XAROHMA", FaceObject("XACORWIN"))
 		FaceObject("XAROHMA")

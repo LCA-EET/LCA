@@ -1,7 +1,7 @@
 BEGIN ~XAFFVALI~
 
 IF ~
-	Global("XA_LC_ByeRohma", "GLOBAL", 1)
+	GlobalGT("XA_LC_RohmaSaved", "GLOBAL", 0)
 	IsGabber("XACORWIN")
 ~ THEN BEGIN XA_Evening
 	SAY @14 /* ~Evening, Major.~ */
@@ -10,7 +10,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_LC_ByeRohma", "GLOBAL", 1)
+	GlobalGT("XA_LC_RohmaSaved", "GLOBAL", 0)
 	!IsGabber("XACORWIN")
 	Gender(Player1, MALE)
 ~ THEN BEGIN XA_Evening
@@ -20,7 +20,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_LC_ByeRohma", "GLOBAL", 1)
+	GlobalGT("XA_LC_RohmaSaved", "GLOBAL", 0)
 	!IsGabber("XACORWIN")
 	Gender(Player1, FEMALE)
 ~ THEN BEGIN XA_Evening
