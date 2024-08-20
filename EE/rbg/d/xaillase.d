@@ -1,7 +1,7 @@
 BEGIN ~XAILLASE~
 
 IF ~
-	!Global("XA_LC_MeetIllasera", "GLOBAL", 1)
+	GlobalLT("XA_LC_MeetIllasera", "GLOBAL", 1)
 ~ THEN BEGIN XA_MeetIllasera
 	SAY @0 /* ~Finally, you've come.~ */
 	

@@ -1074,6 +1074,7 @@ SILENT
 		COPY_EXISTING ~illasera.cre~ ~override/xaillase.cre~ // Illasera
 		WRITE_ASCII 0x2CC ~xaillase~ #8 	// Dialogue
 		WRITE_ASCII 0x250 ~xaillase~ #8	// Class Script
+		WRITE_ASCII 0x260 ~xailadlg~ #8	// General Script
 	//}
 	
 	COPY_EXISTING ~xalcspy.cre~ ~override/xahowspy.cre~ // Hall of Wonders Spy
@@ -3579,216 +3580,208 @@ SILENT
 	//}
 	
 	//{ Ducal Palace 3FL ar0110	Post-Kidnap
-		ACTION_IF (xa_regenerate = 1) THEN BEGIN
-			COPY_EXISTING ~xaa614.are~ ~override/xaduc3.are~ 
-			WRITE_LONG 0xEF8 xamu06
-			WRITE_LONG 0xEFC xamu06
-			
-			LPF xa_delete_are_actors END
-			LPF xa_delete_are_triggers END
-			
-			//{ Add NPCs
-			LPF fj_are_structure
-				INT_VAR
-					fj_loc_x = 331
-					fj_loc_y = 311
-					fj_orientation = 14 // SE 
-				STR_VAR
-					fj_structure_type = actor
-					fj_name = Valiant
-					fj_cre_resref = xaffval2
-			END
-			
-			LPF fj_are_structure
-				INT_VAR
-					fj_loc_x = 650
-					fj_loc_y = 590
-					fj_orientation = 10 // NE 
-				STR_VAR
-					fj_structure_type = actor
-					fj_name = Belt
-					fj_cre_resref = xabelt
-			END
-			
-			LPF fj_are_structure
-				INT_VAR
-					fj_loc_x = 730
-					fj_loc_y = 550
-					fj_orientation = 2 // SW 
-				STR_VAR
-					fj_structure_type = actor
-					fj_name = Eltan
-					fj_cre_resref = xaeltan
-			END
-			
-			LPF fj_are_structure
-				INT_VAR
-					fj_loc_x = 718
-					fj_loc_y = 622
-					fj_orientation = 8 // N 
-				STR_VAR
-					fj_structure_type = actor
-					fj_name = Nederlok
-					fj_cre_resref = xanederl
-			END
-			
-			LPF fj_are_structure
-				INT_VAR
-					fj_loc_x = 400
-					fj_loc_y = 385
-					fj_orientation = 2 // SW 
-				STR_VAR
-					fj_structure_type = actor
-					fj_name = Skie
-					fj_cre_resref = xaskie
-			END
-			
-			LPF fj_are_structure
-				INT_VAR
-					fj_loc_x = 370
-					fj_loc_y = 370
-					fj_orientation = 2 // SW 
-				STR_VAR
-					fj_structure_type = actor
-					fj_name = Rohma
-					fj_cre_resref = xarohma
-			END
-			
-			LPF fj_are_structure
-				INT_VAR
-					fj_loc_x = 400
-					fj_loc_y = 460
-					fj_orientation = 10 // NE
-				STR_VAR
-					fj_structure_type = actor
-					fj_name = Liia
-					fj_cre_resref = xaliia
-			END
-			
-			LPF fj_are_structure
-				INT_VAR
-					fj_loc_x = 630
-					fj_loc_y = 455
-					fj_orientation = 14 // SE 
-				STR_VAR
-					fj_structure_type = actor
-					fj_name = Valiant
-					fj_cre_resref = xaffval3
-			END
-			
-			LPF fj_are_structure
-				INT_VAR
-					fj_loc_x = 666		
-					fj_loc_y = 210
-					fj_orientation = 2 // SW 
-				STR_VAR
-					fj_structure_type = actor
-					fj_name = Valiant
-					fj_cre_resref = xaffval1
-			END
-			
-			LPF fj_are_structure
-				INT_VAR
-					fj_loc_x = 790
-					fj_loc_y = 580
-					fj_orientation = 4 // W 
-				STR_VAR
-					fj_structure_type = actor
-					fj_name = Entar
-					fj_cre_resref = xaentar
-			END
-			
-			LPF fj_are_structure
-				INT_VAR
-					fj_loc_x = 216
-					fj_loc_y = 399
-					fj_orientation = 4 // W 
-				STR_VAR
-					fj_structure_type = actor
-					fj_name = Audamar
-					fj_cre_resref = xaaudam2
-			END
-			//}
-			
-			//{ Add Triggers
-			LPF fj_are_structure
-				INT_VAR
-					fj_type 		= 0
-					fj_box_left		= 454
-					fj_box_top		= 313
-					fj_box_right	= 456
-					fj_box_bottom	= 311
-					fj_cursor_idx	= 0
-					fj_vertex_0     = 454 + (311 << 16)
-					fj_vertex_1     = 454 + (313 << 16)
-					fj_vertex_2     = 456 + (313 << 16)
-					fj_vertex_3     = 456 + (311<< 16)
-				STR_VAR
-					fj_structure_type = region
-					fj_name = ~TrigRom~
-			END
-			
-			LPF fj_are_structure
-				INT_VAR
-					fj_type 		= 0
-					fj_box_left		= 485
-					fj_box_top		= 292
-					fj_box_right	= 487
-					fj_box_bottom	= 290
-					fj_cursor_idx	= 0
-					fj_vertex_0     = 487 + (292 << 16)
-					fj_vertex_1     = 487 + (290 << 16)
-					fj_vertex_2     = 485 + (290 << 16)
-					fj_vertex_3     = 485 + (292 << 16)
-				STR_VAR
-					fj_structure_type = region
-					fj_name = ~TrigCor~
-			END
-			
-			LPF fj_are_structure
-				INT_VAR
-					fj_type 		= 0
-					fj_box_left		= 585
-					fj_box_top		= 200
-					fj_box_right	= 587
-					fj_box_bottom	= 198
-					fj_cursor_idx	= 0
-					fj_vertex_0     = 587 + (200 << 16)
-					fj_vertex_1     = 587 + (198 << 16)
-					fj_vertex_2     = 585 + (198 << 16)
-					fj_vertex_3     = 585 + (200 << 16)
-				STR_VAR
-					fj_structure_type = region
-					fj_name = ~TrigExit~
-			END
-			
-			LPF fj_are_structure
-				INT_VAR
-					fj_type 		= 0
-					fj_box_left		= 545
-					fj_box_top		= 285
-					fj_box_right	= 547
-					fj_box_bottom	= 287
-					fj_cursor_idx	= 0
-					fj_vertex_0     = 545 + (285 << 16)
-					fj_vertex_1     = 545 + (287 << 16)
-					fj_vertex_2     = 547 + (287 << 16)
-					fj_vertex_3     = 547 + (285 << 16)
-				STR_VAR
-					fj_structure_type = region
-					fj_name = ~TrigExit~
-			END
-			//}
-		END ELSE BEGIN
-			LAF xa_copy_area_music
-				STR_VAR
-					xa_sourcearea = ~xaa614.are~
-					xa_destinationarea = ~%MOD_FOLDER%/rbg/are/xaduc3.are~
-			END
-			COPY_EXISTING ~xaduc3.are~ ~override~
-			WRITE_LONG 0xEF8 xamu06
-			WRITE_LONG 0xEFC xamu06
+		
+		COPY_EXISTING ~xaa614.are~ ~override/xaduc3.are~ 
+		WRITE_LONG 0xEF8 xamu06
+		WRITE_LONG 0xEFC xamu06
+		WRITE_ASCII 0x94 ~xaduc3~ #8
+		
+		LPF xa_delete_are_actors END
+		LPF xa_delete_are_triggers END
+		
+		//{ Add NPCs
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 331
+				fj_loc_y = 311
+				fj_orientation = 14 // SE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Valiant
+				fj_cre_resref = xaffval2
 		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 650
+				fj_loc_y = 590
+				fj_orientation = 10 // NE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Belt
+				fj_cre_resref = xabelt
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 730
+				fj_loc_y = 550
+				fj_orientation = 2 // SW 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Eltan
+				fj_cre_resref = xaeltan
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 718
+				fj_loc_y = 622
+				fj_orientation = 8 // N 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Nederlok
+				fj_cre_resref = xanederl
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 400
+				fj_loc_y = 385
+				fj_orientation = 2 // SW 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Skie
+				fj_cre_resref = xaskie
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 370
+				fj_loc_y = 370
+				fj_orientation = 2 // SW 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Rohma
+				fj_cre_resref = xarohma
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 400
+				fj_loc_y = 460
+				fj_orientation = 10 // NE
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Liia
+				fj_cre_resref = xaliia
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 630
+				fj_loc_y = 455
+				fj_orientation = 14 // SE 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Valiant
+				fj_cre_resref = xaffval3
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 666		
+				fj_loc_y = 210
+				fj_orientation = 2 // SW 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Valiant
+				fj_cre_resref = xaffval1
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 790
+				fj_loc_y = 580
+				fj_orientation = 4 // W 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Entar
+				fj_cre_resref = xaentar
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 216
+				fj_loc_y = 399
+				fj_orientation = 4 // W 
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = Audamar
+				fj_cre_resref = xaaudam2
+		END
+		//}
+		
+		//{ Add Triggers
+		LPF fj_are_structure
+			INT_VAR
+				fj_type 		= 0
+				fj_box_left		= 454
+				fj_box_top		= 313
+				fj_box_right	= 456
+				fj_box_bottom	= 311
+				fj_cursor_idx	= 0
+				fj_vertex_0     = 454 + (311 << 16)
+				fj_vertex_1     = 454 + (313 << 16)
+				fj_vertex_2     = 456 + (313 << 16)
+				fj_vertex_3     = 456 + (311<< 16)
+			STR_VAR
+				fj_structure_type = region
+				fj_name = ~TrigRom~
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_type 		= 0
+				fj_box_left		= 485
+				fj_box_top		= 292
+				fj_box_right	= 487
+				fj_box_bottom	= 290
+				fj_cursor_idx	= 0
+				fj_vertex_0     = 487 + (292 << 16)
+				fj_vertex_1     = 487 + (290 << 16)
+				fj_vertex_2     = 485 + (290 << 16)
+				fj_vertex_3     = 485 + (292 << 16)
+			STR_VAR
+				fj_structure_type = region
+				fj_name = ~TrigCor~
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_type 		= 0
+				fj_box_left		= 585
+				fj_box_top		= 200
+				fj_box_right	= 587
+				fj_box_bottom	= 198
+				fj_cursor_idx	= 0
+				fj_vertex_0     = 587 + (200 << 16)
+				fj_vertex_1     = 587 + (198 << 16)
+				fj_vertex_2     = 585 + (198 << 16)
+				fj_vertex_3     = 585 + (200 << 16)
+			STR_VAR
+				fj_structure_type = region
+				fj_name = ~TrigExit~
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_type 		= 0
+				fj_box_left		= 545
+				fj_box_top		= 285
+				fj_box_right	= 547
+				fj_box_bottom	= 287
+				fj_cursor_idx	= 0
+				fj_vertex_0     = 545 + (285 << 16)
+				fj_vertex_1     = 545 + (287 << 16)
+				fj_vertex_2     = 547 + (287 << 16)
+				fj_vertex_3     = 547 + (285 << 16)
+			STR_VAR
+				fj_structure_type = region
+				fj_name = ~TrigExit~
+		END
+		//}
+
 		
 	//}
 	

@@ -1,8 +1,37 @@
+//{ Kill Beno
+	IF 
+		OR(2)
+			Global("XA_LC_CorwinKillBeno", "GLOBAL", 1)
+			Global("XA_LC_CorwinBenoST", "GLOBAL", 1)
+		ActionListEmpty()
+		!TriggerOverride("XACORWIN",Range("XABENO2", 4))
+	THEN
+		RESPONSE #100
+			ActionOverride("XACORWIN", MoveToObject("XATRBENO"))
+			Continue()
+	END
+
+	IF 
+		OR(2)
+			Global("XA_LC_CorwinKillBeno", "GLOBAL", 1)
+			Global("XA_LC_CorwinBenoST", "GLOBAL", 1)
+		!TriggerOverride("XACORWIN", Range("XABENO2", 4))
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			ActionOverride("XACORWIN", FaceObject("XABENO2"))
+			//Dialog J-5
+			ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+			SetInterrupt(TRUE)
+	END
+//}
+
 IF
 	!HasItemEquipedReal("XBOW04", "XABENO")
 THEN
 	RESPONSE #100
 		ActionOverride("XABENO", EquipRanged())
+		Continue()
 END
 
 IF

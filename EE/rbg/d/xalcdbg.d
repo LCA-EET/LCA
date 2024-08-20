@@ -79,6 +79,18 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_RBG_InteractionTest
 		SAY @6054
 		
+		IF ~~ THEN REPLY @6091
+		DO ~
+			Kill("XACORWIN")
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @6092
+		DO ~
+			ApplyDamage("XACORWIN",255,PIERCING)
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @6055
 		DO ~
 			CreateCreature("XANARZU", [-1.-1], N)
