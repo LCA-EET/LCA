@@ -11,7 +11,7 @@ THEN
 		ApplySpellRES("cdpr417","XACORWIN")  // Lesser Restoration
 		Wait(3)
 		ActionOverride("XACORWIN",LeaveAreaLUA("XADUC3","",[540.250],SW)) 
-		LeaveAreaLUA("XADUC3","",[580.210],SW) 
+		LeaveAreaLUA("XADUC3","",[620.225],SW) 
 		SetGlobal("XA_LC_RohmaSaved", "GLOBAL", 1)
 		Wait(2)
 		FadeFromColor([30.0],0)
