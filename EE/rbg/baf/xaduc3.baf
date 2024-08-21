@@ -59,9 +59,9 @@ IF
 	Global("XA_LC_StartTOB", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		AdvanceTime(FOURTEEN_DAYS)
-		DayNight(8)
-		MoveToCampaign("ToB")
+		SetGlobal("XA_LC_StartTOB", "GLOBAL", 2)
+		StartCutSceneMode()
+		StartCutScene("XASARA")
 END
 IF
 	Global("XA_LC_SkieModActive", "GLOBAL", 1)
