@@ -14,10 +14,10 @@ THEN
 		//216 393
 		DisplayStringHead("XAROHMA", @1)
 		ActionOverride("XAROHMA", MoveToObject("TrigRom"))
-		ActionOverride("XACORWIN", MoveToPoint([485.292]))
+		ActionOverride("XACORWIN", MoveToObject("TrigCor"))
 		SmallWait(1)
 		SmallWait(1)
-		MoveToPoint([495.295])
+		MoveToObject("TrigP1")
 		Wait(1)
 		ActionOverride("XAROHMA", FaceObject("XACORWIN"))
 		FaceObject("XAROHMA")

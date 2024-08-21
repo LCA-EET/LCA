@@ -65,7 +65,6 @@
 		Global("XA_LC_AVComplimentFamily", "GLOBAL", 1)
 		Global("XA_LC_CanTalk", "LOCALS", 1)
 		IsValidForPartyDialogue("Valygar")
-		
 	THEN
 		//Dialog B-66, B-79, B-82, B-83, B-84
 		RESPONSE #100
@@ -170,66 +169,6 @@
 			SetInterrupt(TRUE)
 	END
 	//}
-
-	//{ Request Corwin ToB
-	IF
-		Global("XA_LC_BGEND3", "GLOBAL", 1)
-		Global("XA_LC_DidNotRequestCorwin", "GLOBAL", 1)
-		GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 99)
-		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			Wait(3)
-			//Dialog J-2
-			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
-	END
-
-	IF
-		Global("XA_LC_BGEND3", "GLOBAL", 1)
-		Global("XA_LC_DidNotRequestCorwin", "GLOBAL", 1)
-		GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 99)
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			Wait(3)
-			PlaySong(1001)
-			//Dialog J-2
-			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
-	END
-
-	IF
-		Global("XA_LC_BGEND4", "GLOBAL", 1)
-		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
-		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			Wait(3)
-			//Dialog J-2
-			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
-	END
-
-	IF
-		Global("XA_LC_BGEND4", "GLOBAL", 1)
-		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			Wait(3)
-			PlaySong(1001)
-			//Dialog J-2
-			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
-	END
-	//}
-
-	
 	
 	//{ Meeting Neoma
 	IF 

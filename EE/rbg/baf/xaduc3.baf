@@ -1,3 +1,60 @@
+//{ Request Corwin ToB
+	IF
+		Global("XA_LC_BGEND3", "GLOBAL", 1)
+		Global("XA_LC_DidNotRequestCorwin", "GLOBAL", 1)
+		GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 99)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalLT("XA_LC_CorwinTalk", "MYAREA", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CorwinTalk", "MYAREA", 1)
+			Wait(3)
+			//Dialog J-2
+			ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	END
+
+	IF
+		Global("XA_LC_BGEND3", "GLOBAL", 1)
+		Global("XA_LC_DidNotRequestCorwin", "GLOBAL", 1)
+		GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 99)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalLT("XA_LC_CorwinTalk", "MYAREA", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CorwinTalk", "MYAREA", 1)
+			Wait(3)
+			PlaySong(1001)
+			//Dialog J-2
+			ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	END
+
+	IF
+		Global("XA_LC_BGEND4", "GLOBAL", 1)
+		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalLT("XA_LC_CorwinTalk", "MYAREA", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CorwinTalk", "MYAREA", 1)
+			Wait(3)
+			//Dialog J-2
+			ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	END
+
+	IF
+		Global("XA_LC_BGEND4", "GLOBAL", 1)
+		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalLT("XA_LC_CorwinTalk", "MYAREA", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CorwinTalk", "MYAREA", 1)
+			Wait(3)
+			PlaySong(1001)
+			//Dialog J-2
+			ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+	END
+	//}
 IF
 	Global("XA_LC_StartTOB", "GLOBAL", 1)
 THEN

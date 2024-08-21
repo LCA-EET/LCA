@@ -3761,7 +3761,7 @@ SILENT
 				fj_vertex_3     = 585 + (200 << 16)
 			STR_VAR
 				fj_structure_type = region
-				fj_name = ~TrigExit~
+				fj_name = ~TrigP1~
 		END
 		
 		LPF fj_are_structure
