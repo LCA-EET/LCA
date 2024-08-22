@@ -9,6 +9,6 @@ THEN
 		SetGlobal("XA_LC_ReturnToBG", "GLOBAL", 2)
 		/* So long, old friend :) */
 		Wait(1)
-		MoveToCampaign("ToB")
+		MoveToExpansion()
 		EndCutSceneMode()
 END

@@ -17,9 +17,9 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
-		IF ~~ THEN REPLY @3191 /*@3191=~MoveToCampaign("ToB")~*/
+		IF ~~ THEN REPLY @7005 /*@3191=~MoveToCampaign("ToB")~*/
 		DO ~
-			MoveToCampaign("ToB")
+			MoveToExpansion()
 		~
 		EXIT
 		
