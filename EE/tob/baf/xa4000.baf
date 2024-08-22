@@ -9,7 +9,7 @@ END
 
 //{ Corwin
 	IF
-		GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+		GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
 		InParty("XACORWIN")
 	THEN
 		RESPONSE #100
@@ -20,7 +20,7 @@ END
 
 //{ Imoen
 	IF
-		GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+		GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
 		Global("XA_LC_BackToBG_Imoen", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -32,7 +32,7 @@ END
 
 //{ Jaheira
 	IF
-		GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+		GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
 		Global("XA_LC_BackToBG_Jaheira", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -44,7 +44,7 @@ END
 
 //{ Viconia
 	IF
-		GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+		GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
 		Global("XA_LC_BackToBG_Viconia", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -56,7 +56,7 @@ END
 
 //{ Jan
 	IF
-		GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+		GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
 		Global("XA_LC_BackToBG_Jan", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -68,7 +68,7 @@ END
 
 //{ Aerie
 	IF
-		GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+		GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
 		Global("XA_LC_BackToBG_Aerie", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -80,7 +80,7 @@ END
 
 //{ Nalia
 	IF
-		GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+		GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
 		Global("XA_LC_BackToBG_Nalia", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -92,7 +92,7 @@ END
 
 //{ Korgan
 	IF
-		GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+		GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
 		Global("XA_LC_BackToBG_Korgan", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -104,7 +104,7 @@ END
 
 //{ Anomen
 	IF
-		GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+		GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
 		Global("XA_LC_BackToBG_Anomen", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -116,7 +116,7 @@ END
 
 //{ Dorn
 	IF
-		GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+		GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
 		Global("XA_LC_BackToBG_Dorn", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -128,7 +128,7 @@ END
 
 //{ Valygar
 	IF
-		GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+		GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
 		Global("XA_LC_BackToBG_Valygar", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -140,7 +140,7 @@ END
 
 //{ Neera
 	IF
-		GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+		GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
 		Global("XA_LC_BackToBG_Neera", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -152,7 +152,7 @@ END
 
 //{ Rasaad
 	IF
-		GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+		GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
 		Global("XA_LC_BackToBG_Rasaad", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -163,10 +163,10 @@ END
 //}
 
 IF
-	GlobalLT("XA_LC_MovedParty", "GLOBAL", 1)
+	GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LC_MovedParty", "GLOBAL", 1)
+		SetGlobal("XA_LC_MovedParty", "LOCALS", 1)
 		Continue()
 END
 
@@ -279,32 +279,23 @@ THEN
 END
 
 IF
-	Global("SolarDream","GLOBAL",0)
-	GlobalTimerExpired("DreamSolarTimer","GLOBAL")
+	InPartyAllowDead("XACORWIN")  // Corwin
+	Global("CorwinSummoned","GLOBAL",0)
 THEN
 	RESPONSE #100
-		ClearAllActions()
-		SetGlobal("SolarDream","GLOBAL",1)
-		StartCutSceneMode()
-		StartCutScene("Cut205a")
-END
-
-IF
-	InPartyAllowDead("Minsc")  // Minsc
-	Global("MinscSummoned","GLOBAL",0)
-THEN
-	RESPONSE #100
-		ActionOverride("Minsc",ChangeAIScript("MINS25",OVERRIDE))
-		SetGlobal("MinscSummoned","GLOBAL",2)
+		ActionOverride("XACORWIN",ChangeAIScript("XACOR25",OVERRIDE))
+		SetGlobal("CorwinSummoned","GLOBAL",2)
+		Continue()
 END
 
 //{ Reset Worldmap
 IF
 	Global("XA_LC_RBGWorldMap", "GLOBAL", 1)
-	GlobalLT("XA_ToBMapSet", "GLOBAL", 1)
+	GlobalLT("XA_LC_ToBMapSet", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_ToBMapSet", "GLOBAL", 1)
+		SetGlobal("XA_LC_ToBMapSet", "MYAREA", 1)
 		SetWorldmap("WORLDM25")
+		Continue()
 END
 //}

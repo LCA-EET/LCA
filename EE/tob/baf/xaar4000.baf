@@ -3,6 +3,13 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_EnteredToB", "GLOBAL", 1)
+		// Prevent entry into states associated with AR4000
+		SetGlobal("IllaseraSpawn", "GLOBAL", 1)
+		SetGlobal("TurnDay", "AR4000", 1)
+		SetGlobal("FORCETOBPARTYMOVE4000","GLOBAL",1)
+		SetGlobal("EnteredAR4000","AR4000",1)
+		SetGlobal("SetSolarDreamTimer","AR4000",1)
+		SetGlobal("HeadsSave","AR4000",3)
 		Continue()
 END
 
