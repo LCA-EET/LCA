@@ -21,7 +21,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 	EXTEND_BOTTOM ~baldur25.bcs~	~%MOD_FOLDER%/bg2/baf/xasboost.baf~
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/tob/baf/xap1d.baf~
 	
-	EXTEND_TOP ~xa4000.bcs~ 	~ar4000.bcs~
 	EXTEND_TOP ~ar4000.bcs~ 	~%MOD_FOLDER%/tob/baf/xaar4000.baf~
 //}
 
@@ -565,11 +564,6 @@ END
 //}
 
 //{ New Areas
-	//{ xa4000 ar4000 Spirit Heads (LCA - Forest Outside Saradush)
-		COPY_EXISTING ~ar4000.are~ ~override/xa4000.are~
-		WRITE_ASCII 0x94 ~xa4000~ #8
-	//}
-	
 	//{ xag100 bd4500 Avernus Bridge
 		EXTEND_TOP ~xags100.bcs~ ~%MOD_FOLDER%/tob/baf/xa4500.baf~
 		

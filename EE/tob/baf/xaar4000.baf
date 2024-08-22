@@ -1,75 +1,240 @@
-IF
-	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_LC_EnteredToB", "GLOBAL", 1)
-		// Prevent entry into states associated with AR4000
-		SetGlobal("IllaseraSpawn", "GLOBAL", 1)
-		SetGlobal("TurnDay", "AR4000", 1)
-		SetGlobal("FORCETOBPARTYMOVE4000","GLOBAL",1)
-		SetGlobal("EnteredAR4000","AR4000",1)
-		SetGlobal("SetSolarDreamTimer","AR4000",1)
-		SetGlobal("HeadsSave","AR4000",3)
-		Continue()
-END
+//{ LCA Related Changes
 
-IF
-	Global("XA_LC_ReturnToBG", "GLOBAL", 2)
-	InMyArea(Player1)
-THEN
-	RESPONSE #100
-		ActionOverride(Player1, LeaveAreaLUA("XA4000","",[1300.1840],S))
-		Continue()
-END
+	IF
+		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_EnteredToB", "GLOBAL", 1)
+			// Prevent entry into states associated with AR4000
+			SetGlobal("IllaseraSpawn", "GLOBAL", 1)
+			SetGlobal("TurnDay", "AR4000", 1)
+			SetGlobal("FORCETOBPARTYMOVE4000","GLOBAL",1)
+			SetGlobal("EnteredAR4000","AR4000",1)
+			SetGlobal("SetSolarDreamTimer","AR4000",1)
+			SetGlobal("HeadsSave","AR4000",3)
+			Continue()
+	END
+	//{ Party Members that went back to BG will rejoin at this point.
+		IF
+			GlobalLT("XA_LC_Entered4000", "MYAREA", 0)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_LC_Entered4000", "MYAREA", 1)
+				FadeFromColor([30.0],0)
+		END
 
-IF
-	Global("XA_LC_ReturnToBG", "GLOBAL", 2)
-	InMyArea(Player2)
-THEN
-	RESPONSE #100
-		ActionOverride(Player2, LeaveAreaLUA("XA4000","",[1300.1840],S))
-		Continue()
-END
+		//{ Corwin
+			IF
+				GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
+				InParty("XACORWIN")
+			THEN
+				RESPONSE #100
+					MoveGlobal("AR4000", "XACORWIN", [1300.1835])
+					Continue()
+			END
+		//}
 
-IF
-	Global("XA_LC_ReturnToBG", "GLOBAL", 2)
-	InMyArea(Player3)
-THEN
-	RESPONSE #100
-		ActionOverride(Player3, LeaveAreaLUA("XA4000","",[1300.1840],S))
-		Continue()
-END
+		//{ Imoen
+			IF
+				GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
+				Global("XA_LC_BackToBG_Imoen", "GLOBAL", 1)
+			THEN
+				RESPONSE #100
+					MoveGlobal("AR4000", "Imoen2", [1300.1830])
+					ActionOverride("Imoen2", JoinParty())
+					Continue()
+			END
+		//}
 
-IF
-	Global("XA_LC_ReturnToBG", "GLOBAL", 2)
-	InMyArea(Player4)
-THEN
-	RESPONSE #100
-		ActionOverride(Player4, LeaveAreaLUA("XA4000","",[1300.1840],S))
-		Continue()
-END
+		//{ Jaheira
+			IF
+				GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
+				Global("XA_LC_BackToBG_Jaheira", "GLOBAL", 1)
+			THEN
+				RESPONSE #100
+					MoveGlobal("AR4000", "Jaheira", [1300.1825])
+					ActionOverride("Jaheira", JoinParty())
+					Continue()
+			END
+		//}
 
-IF
-	Global("XA_LC_ReturnToBG", "GLOBAL", 2)
-	InMyArea(Player5)
-THEN
-	RESPONSE #100
-		ActionOverride(Player5, LeaveAreaLUA("XA4000","",[1300.1840],S))
-		Continue()
-END
+		//{ Viconia
+			IF
+				GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
+				Global("XA_LC_BackToBG_Viconia", "GLOBAL", 1)
+			THEN
+				RESPONSE #100
+					MoveGlobal("AR4000", "Viconia", [1300.1820])
+					ActionOverride("Viconia", JoinParty())
+					Continue()
+			END
+		//}
 
-IF
-	Global("XA_LC_ReturnToBG", "GLOBAL", 2)
-	InMyArea(Player6)
-THEN
-	RESPONSE #100
-		ActionOverride(Player6, LeaveAreaLUA("XA4000","",[1300.1840],S))
-		Continue()
-END
+		//{ Jan
+			IF
+				GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
+				Global("XA_LC_BackToBG_Jan", "GLOBAL", 1)
+			THEN
+				RESPONSE #100
+					MoveGlobal("AR4000", "Jan", [1295.1840])
+					ActionOverride("Jan", JoinParty())
+					Continue()
+			END
+		//}
 
-IF
-	Global("XA_LC_ReturnToBG", "GLOBAL", 2)
-THEN
-	RESPONSE #100
-		NoAction()
-END
+		//{ Aerie
+			IF
+				GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
+				Global("XA_LC_BackToBG_Aerie", "GLOBAL", 1)
+			THEN
+				RESPONSE #100
+					MoveGlobal("AR4000", "Aerie", [1290.1840])
+					ActionOverride("Aerie", JoinParty())
+					Continue()
+			END
+		//}
+
+		//{ Nalia
+			IF
+				GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
+				Global("XA_LC_BackToBG_Nalia", "GLOBAL", 1)
+			THEN
+				RESPONSE #100
+					MoveGlobal("AR4000", "Nalia", [1285.1840])
+					ActionOverride("Nalia", JoinParty())
+					Continue()
+			END
+		//}
+
+		//{ Korgan
+			IF
+				GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
+				Global("XA_LC_BackToBG_Korgan", "GLOBAL", 1)
+			THEN
+				RESPONSE #100
+					MoveGlobal("AR4000", "Korgan", [1280.1840])
+					ActionOverride("Korgan", JoinParty())
+					Continue()
+			END
+		//}
+
+		//{ Anomen
+			IF
+				GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
+				Global("XA_LC_BackToBG_Anomen", "GLOBAL", 1)
+			THEN
+				RESPONSE #100
+					MoveGlobal("AR4000", "Anomen", [1275.1840])
+					ActionOverride("Anomen", JoinParty())
+					Continue()
+			END
+		//}
+
+		//{ Dorn
+			IF
+				GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
+				Global("XA_LC_BackToBG_Dorn", "GLOBAL", 1)
+			THEN
+				RESPONSE #100
+					MoveGlobal("AR4000", "Dorn", [1270.1840])
+					ActionOverride("Dorn", JoinParty())
+					Continue()
+			END
+		//}
+
+		//{ Valygar
+			IF
+				GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
+				Global("XA_LC_BackToBG_Valygar", "GLOBAL", 1)
+			THEN
+				RESPONSE #100
+					MoveGlobal("AR4000", "Valygar", [1265.1840])
+					ActionOverride("Valygar", JoinParty())
+					Continue()
+			END
+		//}
+
+		//{ Neera
+			IF
+				GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
+				Global("XA_LC_BackToBG_Neera", "GLOBAL", 1)
+			THEN
+				RESPONSE #100
+					MoveGlobal("AR4000", "Neera", [1260.1840])
+					ActionOverride("Neera", JoinParty())
+					Continue()
+			END
+		//}
+
+		//{ Rasaad
+			IF
+				GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
+				Global("XA_LC_BackToBG_Rasaad", "GLOBAL", 1)
+			THEN
+				RESPONSE #100
+					MoveGlobal("AR4000", "Rasaad", [1255.1840])
+					ActionOverride("Rasaad", JoinParty())
+					Continue()
+			END
+		//}
+
+		IF
+			GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_LC_MovedParty", "LOCALS", 1)
+				Continue()
+		END
+	//}
+
+	//{ Reset Worldmap
+		IF
+			Global("XA_LC_RBGWorldMap", "GLOBAL", 1)
+			GlobalLT("XA_LC_ToBMapSet", "MYAREA", 1)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_LC_ToBMapSet", "MYAREA", 1)
+				SetWorldmap("WORLDM25")
+				Continue()
+		END
+	//}
+	
+	//{ Fire Giant Scouting Party
+		IF
+			GlobalLT("XA_LC_GiantsSpawned", "GLOBAL", 1)
+			GlobalTimerExpired("XA_LC_GiantSpawnTimer", "GLOBAL")
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_LC_GiantsSpawned", "GLOBAL", 1)
+				//760 380
+				ScreenShake([20.20],20)
+				CreateCreature("XAFGSC1",[800.1600],N)
+				CreateCreature("XAFGSC2",[639.1684],N)
+				CreateCreature("XAFGSC3",[1040.1772],NW)
+		END
+
+		IF
+			Global("XA_LC_GiantsSpawned", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_LC_GiantsSpawned","GLOBAL",2)  // Spirit Heads
+				Wait(1)
+				DisplayStringNoName(Player1,@2)
+				ActionOverride("XAFGSC1", MoveToPoint([720.670]))
+				ActionOverride("XAFGSC2", MoveToPoint([720.670]))
+				ActionOverride("XAFGSC3", MoveToPoint([720.670]))
+		END
+
+		IF
+			Dead("XAFGSC1")
+			Dead("XAFGSC2")
+			Dead("XAFGSC3")
+			GlobalGT("XA_LC_GiantsSpawned", "GLOBAL", 0)
+			GlobalLT("XA_LC_SolarTimer", "MYAREA", 1)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_LC_SolarTimer", "MYAREA", 1)
+				SetGlobalTimer("DreamSolarTimer", "GLOBAL", ONE_MINUTE)
+		END
+	//}
+//} 
