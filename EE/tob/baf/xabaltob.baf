@@ -1,3 +1,13 @@
+//{ Script Reporter
+IF
+	!Global("XA_LC_ActiveScript", "GLOBAL", 4)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_ActiveScript", "GLOBAL", 4)
+		Continue()
+END
+//}
+
 //{ Kanaglym Dream
 	IF
 		GlobalLT("XA_LC_KanaDreamTimerSet", "GLOBAL",1)

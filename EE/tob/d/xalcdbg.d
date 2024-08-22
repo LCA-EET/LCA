@@ -17,6 +17,12 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @3191 /*@3191=~MoveToCampaign("ToB")~*/
+		DO ~
+			MoveToCampaign("ToB")
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 13
 		

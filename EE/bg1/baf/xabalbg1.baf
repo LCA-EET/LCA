@@ -1,3 +1,13 @@
+//{ Script Reporter
+IF
+	!Global("XA_LC_ActiveScript", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_ActiveScript", "GLOBAL", 1)
+		Continue()
+END
+//}
+
 //{ Helm of Balduran Possessed
 IF
 	PartyHasItem("HELM07")

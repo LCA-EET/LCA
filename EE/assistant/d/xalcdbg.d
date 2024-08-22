@@ -425,6 +425,9 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 		~
 		GOTO XA_Assistant
 		
+		IF ~~ THEN REPLY @2076
+		GOTO XA_CheckScript
+		
 		COPY_TRANS XALCDBG XA_ClosingOptions 
 	END
 	
@@ -455,5 +458,31 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 		
 		IF ~~ THEN REPLY @2014 /*~Exit.~ */
 		GOTO XA_Exit
+	END
+	
+	IF ~~ THEN BEGIN XA_CheckScript
+		SAY @2076 /**/
+		
+		IF ~
+			Global("XA_LC_ActiveScript", "GLOBAL", 1)
+		~ THEN REPLY @2072 /*@2072=~Baldur.bcs (BG1) is active.~*/
+		GOTO XA_MainMenu
+		
+		IF ~
+			Global("XA_LC_ActiveScript", "GLOBAL", 2)
+		~ THEN REPLY @2073 /*@2073=~BDBaldur.bcs (SoD) is active.~*/
+		GOTO XA_MainMenu
+		
+		IF ~
+			Global("XA_LC_ActiveScript", "GLOBAL", 3)
+		~ THEN REPLY @2074 /*@2074=~Baldur.bcs (BG2) is active.~*/
+		GOTO XA_MainMenu
+		
+		IF ~
+			Global("XA_LC_ActiveScript", "GLOBAL", 4)
+		~ THEN REPLY @2075 /*@2075=~Baldur25.bcs (ToB) is active.*/
+		GOTO XA_MainMenu
+		
+		COPY_TRANS XALCDBG XA_ClosingOptions 
 	END
 //}
