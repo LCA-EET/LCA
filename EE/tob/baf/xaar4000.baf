@@ -2,7 +2,7 @@
 
 	IF
 		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
-		Global("XA_LC_ReturnToBG", "GLOBAL", 2)
+		GlobalGT("XA_LC_ReturnToBG", "GLOBAL", 0)
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_EnteredToB", "GLOBAL", 1)
@@ -15,7 +15,7 @@
 	END
 	//{ Replace Journal Entry
 		IF
-			Global("XA_LC_ReturnToBG", "GLOBAL", 2)
+			GlobalGT("XA_LC_ReturnToBG", "GLOBAL", 0)
 			Global("TurnDay", "AR4000", 1)
 			GlobalLT("XA_LC_ToBStartJournal", "MYAREA", 1)
 		THEN
@@ -29,7 +29,7 @@
 	//{ Party Members that went back to BG will rejoin at this point.
 		IF
 			GlobalLT("XA_LC_Entered4000", "MYAREA", 0)
-			Global("XA_LC_ReturnToBG", "GLOBAL", 2)
+			GlobalGT("XA_LC_ReturnToBG", "GLOBAL", 0)
 		THEN
 			RESPONSE #100
 				SetGlobal("XA_LC_Entered4000", "MYAREA", 1)
@@ -38,7 +38,7 @@
 
 		//{ Corwin
 			IF
-				Global("XA_LC_ReturnToBG", "GLOBAL", 2)
+				GlobalGT("XA_LC_ReturnToBG", "GLOBAL", 0)
 				GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
 				InParty("XACORWIN")
 			THEN
@@ -194,7 +194,7 @@
 
 		IF
 			GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
-			Global("XA_LC_ReturnToBG", "GLOBAL", 2)
+			GlobalGT("XA_LC_ReturnToBG", "GLOBAL", 0)
 		THEN
 			RESPONSE #100
 				SetGlobal("XA_LC_MovedParty", "LOCALS", 1)
