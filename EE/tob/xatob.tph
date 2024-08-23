@@ -1,7 +1,6 @@
 PRINT @5000  /* ~Processing ToB changes...~ */
 SILENT
 
-
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/baf~
 
 COPY_EXISTING ~xacorwib.dlg~ ~override/xacor25b.dlg~
