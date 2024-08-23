@@ -8,12 +8,14 @@ EXTEND_BOTTOM HEAD1 4
 END
 
 APPEND ~HEAD1~
-	SAY @5 /* ~The storm approaches. We speak no more.~ [5HEAD04] */
-	IF ~~ THEN 
-	DO ~
-		SetGlobalTimer("XA_LC_GiantSpawnTimer","GLOBAL",ONE_ROUND)
-		StartCutSceneMode()
-		StartCutSceneEx("XA204g",FALSE)
-	~ 
-	EXIT
+	IF ~~ THEN BEGIN XA_HEAD1_LCA
+		SAY #73846 /* ~The storm approaches. We speak no more.~ [5HEAD04] */
+		IF ~~ THEN 
+		DO ~
+			SetGlobalTimer("XA_LC_GiantSpawnTimer","GLOBAL",ONE_ROUND)
+			StartCutSceneMode()
+			StartCutSceneEx("XA204g",FALSE)
+		~ 
+		EXIT
+	END
 END
