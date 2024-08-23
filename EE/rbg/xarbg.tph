@@ -229,12 +229,13 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 		Rasaad
 		Valygar
 		Viconia
+		XACORWIN
 	END
 	
 	LAF xa_replaceIn
 		STR_VAR
 			xa_copyFrom = ~xabgrec~
-			xa_extendTarget = ~xaar0900~
+			xa_extendTarget = ~xaas100~
 			xa_fileextension = ~bcs~
 			xa_strToReplace = ~TO_REPLACE~
 	END

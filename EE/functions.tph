@@ -10,14 +10,14 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 
 //{ Action Functions
 DEFINE_ACTION_FUNCTION xa_replaceIn
+	INT_VAR
+		xa_extendTop = 1
+		xa_extendBottom = 0
 	STR_VAR
 		xa_copyFrom = ~~
 		xa_extendTarget = ~~
 		xa_fileextension = ~bcs~
 		xa_strToReplace = ~TO_REPLACE~
-	INT_VAR
-		xa_extendTop = 1
-		xa_extendBottom = 0
 	BEGIN
 		OUTER_SET xa_id = 0
 		ACTION_PHP_EACH xa_replacements AS _ => xa_replacement
@@ -26,14 +26,16 @@ DEFINE_ACTION_FUNCTION xa_replaceIn
 			DECOMPILE_AND_PATCH BEGIN
 				REPLACE_TEXTUALLY ~TO_REPLACE~ ~%xa_replacement%~
 			END
-			xa_id = (xa_id + 1)
+			
+			ACTION_IF (xa_extendTop = 1) THEN BEGIN
+				EXTEND_TOP ~%xa_extendTarget%.%xa_fileextension%~ 	~override/%xa_copyFrom%%xa_id%.%xa_fileextension%~
+			END
+			ACTION_IF (xa_extendBottom = 1) THEN BEGIN
+				EXTEND_BOTTOM ~%xa_extendTarget%.%xa_fileextension%~ 	~override/%xa_copyFrom%%xa_id%.%xa_fileextension%~
+			END
+			OUTER_SET xa_id = (xa_id + 1)
 		END
-		ACTION_IF (xa_extendTop = 1) THEN BEGIN
-			EXTEND_TOP ~%xa_extendTop%.%xa_fileextension%~ 	~override/%xa_copyFrom%%xa_id%.%xa_fileextension%~
-		END
-		ACTION_IF (xa_extendBottom = 1) THEN BEGIN
-			EXTEND_BOTTOM ~%xa_extendTarget%.%xa_fileextension%~ 	~override/%xa_copyFrom%%xa_id%.%xa_fileextension%~
-		END
+		
 END
 DEFINE_ACTION_FUNCTION xa_copy_area_music
 	STR_VAR
