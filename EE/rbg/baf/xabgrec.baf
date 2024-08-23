@@ -1,0 +1,10 @@
+//{ Record which party members were in BG
+IF
+	InMyArea("TO_REPLACE")
+	GlobalLT("XA_LC_BackToBG_TO_REPLACE", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_BackToBG_TO_REPLACE", "GLOBAL", 1)
+		Continue()
+END
+//}

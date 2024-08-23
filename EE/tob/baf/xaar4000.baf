@@ -27,15 +27,30 @@
 	//}
 	
 	//{ Party Members that went back to BG will rejoin at this point.
-		IF
-			GlobalLT("XA_LC_Entered4000", "MYAREA", 0)
-			GlobalGT("XA_LC_ReturnToBG", "GLOBAL", 0)
-		THEN
-			RESPONSE #100
-				SetGlobal("XA_LC_Entered4000", "MYAREA", 1)
-				FadeFromColor([30.0],0)
-		END
-
+		//{ Aerie
+			IF
+				GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
+				Global("XA_LC_BackToBG_Aerie", "GLOBAL", 1)
+			THEN
+				RESPONSE #100
+					MoveGlobal("AR4000", "Aerie", [1290.1840])
+					ActionOverride("Aerie", JoinParty())
+					Continue()
+			END
+		//}
+	
+		//{ Imoen
+			IF
+				GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
+				Global("XA_LC_BackToBG_Imoen", "GLOBAL", 1)
+			THEN
+				RESPONSE #100
+					MoveGlobal("AR4000", "Imoen2", [1300.1830])
+					ActionOverride("Imoen2", JoinParty())
+					Continue()
+			END
+		//}
+	
 		//{ Corwin
 			IF
 				GlobalGT("XA_LC_ReturnToBG", "GLOBAL", 0)
@@ -48,17 +63,7 @@
 			END
 		//}
 
-		//{ Imoen
-			IF
-				GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
-				Global("XA_LC_BackToBG_Imoen", "GLOBAL", 1)
-			THEN
-				RESPONSE #100
-					MoveGlobal("AR4000", "Imoen2", [1300.1830])
-					ActionOverride("Imoen2", JoinParty())
-					Continue()
-			END
-		//}
+		
 
 		//{ Jaheira
 			IF
@@ -96,17 +101,7 @@
 			END
 		//}
 
-		//{ Aerie
-			IF
-				GlobalLT("XA_LC_MovedParty", "LOCALS", 1)
-				Global("XA_LC_BackToBG_Aerie", "GLOBAL", 1)
-			THEN
-				RESPONSE #100
-					MoveGlobal("AR4000", "Aerie", [1290.1840])
-					ActionOverride("Aerie", JoinParty())
-					Continue()
-			END
-		//}
+		
 
 		//{ Nalia
 			IF

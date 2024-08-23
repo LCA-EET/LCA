@@ -212,6 +212,34 @@ INCLUDE ~%MOD_FOLDER%/generated/g/generated.tph~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/d~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 
+//{ Record who was in BG
+	ACTION_DEFINE_ARRAY xa_replacements
+	BEGIN
+		Aerie
+		Anomen
+		Dorn
+		Edwin
+		HaerDalis
+		Imoen2
+		Jaheira
+		Jan
+		Keldorn
+		Korgan
+		Nalia
+		Rasaad
+		Valygar
+		Viconia
+	END
+	
+	LAF xa_replaceIn
+		STR_VAR
+			xa_copyFrom = ~xabgrec~
+			xa_extendTarget = ~xaar0900~
+			xa_fileextension = ~bcs~
+			xa_strToReplace = ~TO_REPLACE~
+	END
+//}
+
 //{ Replace Rumors
 	COPY_EXISTING_REGEXP GLOB ~xaa.+\.sto$~ ~override~ 
 	WRITE_ASCII 0x44 ~xarumor~ #8
@@ -234,7 +262,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 
 PRINT @4173 /*  ~Processing creatures...*/
 SILENT
-
+	
 //{ CRE
 	//{ Pause / Rewind
 		COPY_EXISTING ~xalcspy.cre~ ~override/xapause.cre~

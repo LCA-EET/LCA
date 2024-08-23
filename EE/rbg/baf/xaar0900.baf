@@ -29,15 +29,6 @@ THEN
 END
 //}
 
-IF
-	InMyArea("Aerie")
-	GlobalLT("XA_LC_AerieInBG", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_LC_AerieInBG", "GLOBAL", 1)
-		Continue()
-END
-
 //Spawn Creatures
 
 IF 

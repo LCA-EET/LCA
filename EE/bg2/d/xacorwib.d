@@ -4332,22 +4332,22 @@ END
 			@101 /* ~Sure. What's on your mind?~ */
 			== BAERIE
 			IF ~
-				!Global("XA_LC_AerieInBG", "GLOBAL", 1)
+				!Global("XA_LC_BackToBG_Aerie", "GLOBAL", 1)
 			~
 			@102 /* ~I've encountered so many d-different people, cultures and races while in the circus. The circus never travelled to Baldur's Gate before. What are the people there like?~ */
 			== BAERIE
 			IF ~
-				Global("XA_LC_AerieInBG", "GLOBAL", 1)
+				Global("XA_LC_BackToBG_Aerie", "GLOBAL", 1)
 			~
 			@796 /* ~~In your travels, have you ever met one of my k-kind? An Avariel? Before me, I mean.~*/
 			== XACORWIB
 			IF ~
-				!Global("XA_LC_AerieInBG", "GLOBAL", 1)
+				!Global("XA_LC_BackToBG_Aerie", "GLOBAL", 1)
 			~
 			@103 /* ~Not much different than Athkatla, Aerie. Most of the population is human, but there are dwarves, gnomes, elves, even some half-orcs in the city.~*/
 			== BAERIE
 			IF ~
-				!Global("XA_LC_AerieInBG", "GLOBAL", 1)
+				!Global("XA_LC_BackToBG_Aerie", "GLOBAL", 1)
 			~
 			@104 /* ~I see.. have you m-met an Avariel before? Before me, I mean.~ */
 			== XACORWIB

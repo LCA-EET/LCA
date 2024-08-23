@@ -9,6 +9,16 @@ DECOMPILE_AND_PATCH BEGIN
 	LPF xa_dlgb_soa_to_tob END	
 END
 
+//{ Restore Party Members who went to BG during RBG
+	LAF xa_replaceIn
+		STR_VAR
+			xa_copyFrom = ~xabgres~
+			xa_extendTarget = ~ar4000~
+			xa_fileextension = ~bcs~
+			xa_strToReplace = ~TO_REPLACE~
+	END
+//}
+
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 
 //{ Script Extensions
