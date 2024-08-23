@@ -557,11 +557,6 @@ END
 	//}
 //}
 
-//{ Modification to Existing Areas
-	COPY_EXISTING ~ar4000.are~ ~override~
-	WRITE_ASCII 0x94 ~xaar4000~ #8
-//}
-
 //{ New Areas
 	//{ xag100 bd4500 Avernus Bridge
 		EXTEND_TOP ~xags100.bcs~ ~%MOD_FOLDER%/tob/baf/xa4500.baf~
