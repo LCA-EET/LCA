@@ -348,6 +348,21 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @6090=~SetGlobal("XA_LC_CorwinNeomaRelationship", "GLOBAL", 2)~
 @6091=~Kill Corwin~
 @6092=~Obliterate Corwin~
+@6093=~SetGlobal("XA_LC_BackToBG_XACORWIN","GLOBAL",1)~
+@6094=~SetGlobal("XA_LC_BackToBG_Viconia","GLOBAL",1)~
+@6095=~SetGlobal("XA_LC_BackToBG_Valygar","GLOBAL",1)~
+@6096=~SetGlobal("XA_LC_BackToBG_Rasaad","GLOBAL",1)~
+@6097=~SetGlobal("XA_LC_BackToBG_Nalia","GLOBAL",1)~
+@6098=~SetGlobal("XA_LC_BackToBG_Korgan","GLOBAL",1)~
+@6099=~SetGlobal("XA_LC_BackToBG_Keldorn","GLOBAL",1)~
+@6100=~SetGlobal("XA_LC_BackToBG_Jan","GLOBAL",1)~
+@6101=~SetGlobal("XA_LC_BackToBG_Jaheira","GLOBAL",1)~
+@6102=~SetGlobal("XA_LC_BackToBG_Imoen2","GLOBAL",1)~
+@6103=~SetGlobal("XA_LC_BackToBG_HaerDalis","GLOBAL",1)~
+@6104=~SetGlobal("XA_LC_BackToBG_Edwin","GLOBAL",1)~
+@6105=~SetGlobal("XA_LC_BackToBG_Dorn","GLOBAL",1)~
+@6106=~SetGlobal("XA_LC_BackToBG_Anomen","GLOBAL",1)~
+@6107=~SetGlobal("XA_LC_BackToBG_Aerie","GLOBAL",1)~
 
 @7000=~ToB Debug~
 @7001=~XAG104 (BD5300) - Kanaglym~

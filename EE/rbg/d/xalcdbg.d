@@ -666,6 +666,12 @@ APPEND ~XALCDBG~
 		~
 		GOTO XA_RBG_AdjustVariables
 		
+		IF ~~ THEN REPLY @6102
+		DO ~
+			SetGlobal("XA_LC_BackToBG_Imoen2","GLOBAL",1)
+		~
+		GOTO XA_RBG_AdjustVariables
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
