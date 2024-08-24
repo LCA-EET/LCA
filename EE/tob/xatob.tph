@@ -8,7 +8,7 @@ DECOMPILE_AND_PATCH BEGIN
 	REPLACE_TEXTUALLY ~XACORWIB~ ~XACOR25B~
 	LPF xa_dlgb_soa_to_tob END	
 END
-
+/*
 //{ Restore Party Members who went to BG during RBG
 	LAF xa_replaceIn
 		STR_VAR
@@ -18,7 +18,7 @@ END
 			xa_strToReplace = ~TO_REPLACE~
 	END
 //}
-
+*/
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 
 //{ Script Extensions

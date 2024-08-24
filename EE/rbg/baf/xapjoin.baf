@@ -1,0 +1,9 @@
+IF
+	AreaCheck("XAPEN")
+	InMyArea(Player1)
+	!InParty(Myself)
+	Global("XA_LC_ReturnToBG", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		JoinParty()
+END

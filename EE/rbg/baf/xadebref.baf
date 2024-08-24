@@ -9,27 +9,27 @@ THEN
 		//Send the other companions to the holding area. They will rejoin once the mini-quest ends.
 		
 		ActionOverride(Player2, SetLeavePartyDialogFile())
-		ActionOverride(Player2, ChangeAIScript("", DEFAULT))
+		ActionOverride(Player2, ChangeAIScript("xapjoin", DEFAULT))
 		ActionOverride(Player2, LeaveParty())
 		ActionOverride(Player2, LeaveAreaLUA("XAPEN", "", [500.500],N))
 		
 		ActionOverride(Player3, SetLeavePartyDialogFile())
-		ActionOverride(Player3, ChangeAIScript("", DEFAULT))
+		ActionOverride(Player3, ChangeAIScript("xapjoin", DEFAULT))
 		ActionOverride(Player3, LeaveParty())
 		ActionOverride(Player3, LeaveAreaLUA("XAPEN", "", [500.500],N))
 		
 		ActionOverride(Player4, SetLeavePartyDialogFile())
-		ActionOverride(Player4, ChangeAIScript("", DEFAULT))
+		ActionOverride(Player4, ChangeAIScript("xapjoin", DEFAULT))
 		ActionOverride(Player4, LeaveParty())
 		ActionOverride(Player4, LeaveAreaLUA("XAPEN", "", [500.500],N))
 		
 		ActionOverride(Player5, SetLeavePartyDialogFile())
-		ActionOverride(Player5, ChangeAIScript("", DEFAULT))
+		ActionOverride(Player5, ChangeAIScript("xapjoin", DEFAULT))
 		ActionOverride(Player5, LeaveParty())
 		ActionOverride(Player5, LeaveAreaLUA("XAPEN", "", [500.500],N))
 				
 		ActionOverride(Player6, SetLeavePartyDialogFile())
-		ActionOverride(Player6, ChangeAIScript("", DEFAULT))
+		ActionOverride(Player6, ChangeAIScript("xapjoin", DEFAULT))
 		ActionOverride(Player6, LeaveParty())
 		ActionOverride(Player6, LeaveAreaLUA("XAPEN", "", [500.500],N))
 		

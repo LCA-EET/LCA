@@ -7,8 +7,8 @@ THEN
 		AdvanceTime(FOURTEEN_DAYS)
 		DayNight(8)
 		SetGlobal("XA_LC_ReturnToBG", "GLOBAL", 2)
-		/* So long, old friend :) */
 		Wait(1)
-		MoveToExpansion()
+		ActionOverride("XACORWIN", LeaveAreaLUA("XAPEN", "", [500.500],N))
+		LeaveAreaLUA("XAPEN", "", [500.500],N)
 		EndCutSceneMode()
 END

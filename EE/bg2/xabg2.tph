@@ -264,6 +264,7 @@ END
 				xa_component_count = 2 // will delete Tiax & Corwin
 	END
 	COPY_EXISTING ~xablck.are~ ~override/xapen.are~
+	WRITE_ASCII 0x94 ~xapen~ #8
 //}
 
 //{ Modifications to already-existing areas

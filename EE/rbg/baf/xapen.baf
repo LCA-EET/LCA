@@ -1,0 +1,10 @@
+IF
+	Global("XA_LC_ReturnToBG", "GLOBAL", 2)
+	GlobalLT("XA_LC_PartyRejoin", "MYAREA", 1)
+	InMyArea(Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_PartyRejoin", "MYAREA", 1)
+		Wait(3)
+		MoveToExpansion()
+END
