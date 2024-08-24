@@ -6,6 +6,12 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_EnteredToB", "GLOBAL", 1)
+			ChangeStat(Player1,FATIGUE,1,SET)
+			ChangeStat(Player2,FATIGUE,1,SET)
+			ChangeStat(Player3,FATIGUE,1,SET)
+			ChangeStat(Player4,FATIGUE,1,SET)
+			ChangeStat(Player5,FATIGUE,1,SET)
+			ChangeStat(Player6,FATIGUE,1,SET)
 			// Prevent entry into states associated with AR4000
 			SetGlobal("IllaseraSpawn", "GLOBAL", 1)
 			SetGlobal("FORCETOBPARTYMOVE4000","GLOBAL",1)
