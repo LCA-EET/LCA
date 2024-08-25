@@ -1,5 +1,6 @@
 IF
 	Global("XA_LC_DingsCorwin", "GLOBAL", 2)
+	GlobalLT("XA_LC_DebriefTriggered", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		StartDialog("XADINGS", Player1)
@@ -7,6 +8,7 @@ END
 
 IF 
 	Global("XA_LC_DingsRohma", "GLOBAL", 2)
+	GlobalLT("XA_LC_DebriefTriggered", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		StartDialog("XADINGS", Player1)
@@ -14,6 +16,7 @@ END
 
 IF
 	GlobalLT("XA_LC_MeowTimerDingsSet", "LOCALS", 1)
+	GlobalLT("XA_LC_DebriefTriggered", "GLOBAL", 1)
 THEN
 	RESPONSE #50
 		SetInterrupt(FALSE)
@@ -30,6 +33,7 @@ THEN
 END
 
 IF 
+	GlobalLT("XA_LC_DebriefTriggered", "GLOBAL", 1)
 	GlobalTimerExpired("XA_LC_MeowTimerDings", "GLOBAL")
 THEN
 	RESPONSE #50
