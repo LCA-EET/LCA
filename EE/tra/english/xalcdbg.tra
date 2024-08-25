@@ -363,6 +363,7 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @6105=~SetGlobal("XA_LC_BackToBG_Dorn","GLOBAL",1)~
 @6106=~SetGlobal("XA_LC_BackToBG_Anomen","GLOBAL",1)~
 @6107=~SetGlobal("XA_LC_BackToBG_Aerie","GLOBAL",1)~
+@6108=~XAPEN~
 
 @7000=~ToB Debug~
 @7001=~XAG104 (BD5300) - Kanaglym~

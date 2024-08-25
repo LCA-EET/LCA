@@ -520,6 +520,17 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @6108
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XAPEN", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAPEN", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAPEN", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAPEN", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAPEN", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAPEN", "", [0.0], S))
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @6050
 		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("XAUC", "", [0.0], S))

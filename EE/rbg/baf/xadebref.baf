@@ -4,39 +4,24 @@ THEN
 	RESPONSE #100
 		CutSceneId(Player1)
 		FadeToColor([30.0],0)
+		
 		Wait(1)
 		
 		//Send the other companions to the holding area. They will rejoin once the mini-quest ends.
 		
-		ActionOverride(Player2, SetLeavePartyDialogFile())
-		ActionOverride(Player2, ChangeAIScript("xapjoin", DEFAULT))
-		ActionOverride(Player2, LeaveParty())
-		ActionOverride(Player2, LeaveAreaLUA("XAPEN", "", [500.500],N))
+		ActionOverride(Player2, ChangeAIScript("xapenpm", DEFAULT))
+		ActionOverride(Player3, ChangeAIScript("xapenpm", DEFAULT))
+		ActionOverride(Player4, ChangeAIScript("xapenpm", DEFAULT))
+		ActionOverride(Player5, ChangeAIScript("xapenpm", DEFAULT))
+		ActionOverride(Player6, ChangeAIScript("xapenpm", DEFAULT))
 		
-		ActionOverride(Player3, SetLeavePartyDialogFile())
-		ActionOverride(Player3, ChangeAIScript("xapjoin", DEFAULT))
-		ActionOverride(Player3, LeaveParty())
-		ActionOverride(Player3, LeaveAreaLUA("XAPEN", "", [500.500],N))
-		
-		ActionOverride(Player4, SetLeavePartyDialogFile())
-		ActionOverride(Player4, ChangeAIScript("xapjoin", DEFAULT))
-		ActionOverride(Player4, LeaveParty())
-		ActionOverride(Player4, LeaveAreaLUA("XAPEN", "", [500.500],N))
-		
-		ActionOverride(Player5, SetLeavePartyDialogFile())
-		ActionOverride(Player5, ChangeAIScript("xapjoin", DEFAULT))
-		ActionOverride(Player5, LeaveParty())
-		ActionOverride(Player5, LeaveAreaLUA("XAPEN", "", [500.500],N))
-				
-		ActionOverride(Player6, SetLeavePartyDialogFile())
-		ActionOverride(Player6, ChangeAIScript("xapjoin", DEFAULT))
-		ActionOverride(Player6, LeaveParty())
-		ActionOverride(Player6, LeaveAreaLUA("XAPEN", "", [500.500],N))
+		Wait(1)
 		
 		CopyGroundPilesTo("XADUCAL", [650.370])
-		
 		LeaveAreaLUA("XAHOME","",[700.465],NE)
 		ActionOverride("XACORWIN", JoinParty())
+		
 		Wait(1)
+		
 		StartCutScene("XADEBRST")
 END
