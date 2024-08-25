@@ -1,9 +1,11 @@
 IF
+	InMyArea(Player1)
 	Global("XA_LC_DebriefTriggered", "GLOBAL", 3)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_DebriefTriggered", "GLOBAL", 4)
 		ActionOverride("XACORWIN",JoinParty())
+		Wait(1)
 		StartCutSceneMode()
 		StartCutScene("XADEBRST")
 END

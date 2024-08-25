@@ -67,6 +67,7 @@ END
 IF
 	Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 	Global("XA_LC_DebriefTriggered", "GLOBAL", 2)
+	InMyArea(Player1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_DebriefTriggered", "GLOBAL", 3)

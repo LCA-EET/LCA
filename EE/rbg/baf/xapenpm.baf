@@ -1,13 +1,4 @@
 IF
-	AreaCheck("XAPEN")
-	GlobalLT("XA_LC_LeftPartyDebrief", "LOCALS", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_LC_LeftPartyDebrief", "LOCALS", 1)
-		IncrementGlobal("XA_LC_PartyMembersInPen", "GLOBAL", 1)
-END
-
-IF
 	Global("XA_LC_LeftPartyDebrief", "LOCALS", 1)
 	InMyArea(Player1)
 THEN
