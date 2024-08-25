@@ -1,3 +1,24 @@
+//{ Party Members Leave Until Start of ToB
+	IF
+		Global("XA_LC_DebriefTriggered", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_DebriefTriggered", "GLOBAL", 2)
+			FadeToColor([30.0],0)
+			SmallWait(5)
+			HideGUI()
+			Wait(1)
+			ActionOverride(Player2, ChangeAIScript("xapenpm", DEFAULT))
+			ActionOverride(Player3, ChangeAIScript("xapenpm", DEFAULT))
+			ActionOverride(Player4, ChangeAIScript("xapenpm", DEFAULT))
+			ActionOverride(Player5, ChangeAIScript("xapenpm", DEFAULT))
+			ActionOverride(Player6, ChangeAIScript("xapenpm", DEFAULT))
+			Wait(2)
+			StartCutSceneMode()
+			StartCutScene("XADEBREF")
+	END
+//}
+
 //{ Return to Baldur's Gate Timers
 	IF
 		Global("XA_LC_ReturnToBG", "GLOBAL", 1)

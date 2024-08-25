@@ -3,19 +3,6 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
-		FadeToColor([30.0],0)
-		
-		Wait(1)
-		
-		//Send the other companions to the holding area. They will rejoin once the mini-quest ends.
-		
-		ActionOverride(Player2, ChangeAIScript("xapenpm", DEFAULT))
-		ActionOverride(Player3, ChangeAIScript("xapenpm", DEFAULT))
-		ActionOverride(Player4, ChangeAIScript("xapenpm", DEFAULT))
-		ActionOverride(Player5, ChangeAIScript("xapenpm", DEFAULT))
-		ActionOverride(Player6, ChangeAIScript("xapenpm", DEFAULT))
-		
-		Wait(1)
 		
 		CopyGroundPilesTo("XADUCAL", [650.370])
 		LeaveAreaLUA("XAHOME","",[700.465],NE)
