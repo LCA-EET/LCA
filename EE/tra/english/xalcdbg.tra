@@ -364,6 +364,12 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @6106=~SetGlobal("XA_LC_BackToBG_Anomen","GLOBAL",1)~
 @6107=~SetGlobal("XA_LC_BackToBG_Aerie","GLOBAL",1)~
 @6108=~XAPEN~
+@6109=~ActionOverride(Player2, ChangeAIScript("xapenpm", DEFAULT))~
+@6110=~ActionOverride(Player2, ChangeAIScript("xapenpm", DEFAULT))~
+@6111=~ActionOverride(Player2, ChangeAIScript("xapenpm", DEFAULT))~
+@6112=~ActionOverride(Player2, ChangeAIScript("xapenpm", DEFAULT))~
+@6113=~ActionOverride(Player2, ChangeAIScript("xapenpm", DEFAULT))~
+@6114=~Script Test~
 
 @7000=~ToB Debug~
 @7001=~XAG104 (BD5300) - Kanaglym~

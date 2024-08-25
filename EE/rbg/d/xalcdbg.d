@@ -26,6 +26,9 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @6054 /* ~Interaction Test~*/
 		GOTO XA_RBG_InteractionTest
 		
+		IF ~~ THEN REPLY @6114 
+		GOTO XA_RBG_ScriptTest
+		
 		IF ~~ THEN REPLY @6069 /* ~Store Test~*/
 		GOTO XA_RBG_StoreTest
 		
@@ -38,14 +41,46 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 13
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 9
+		COPY_TRANS XALCDBG 14	
+	END
+	
+	IF ~~ THEN BEGIN XA_RBG_ScriptTest
+		SAY @6114
 		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
+		IF ~~ THEN REPLY @6109
 		DO ~
-			DestroySelf()
+			ActionOverride(Player2, ChangeAIScript("xapenpm", DEFAULT))
 		~
-		EXIT	
+		GOTO XA_RBG_ScriptTest
+		
+		IF ~~ THEN REPLY @6110
+		DO ~
+			ActionOverride(Player3, ChangeAIScript("xapenpm", DEFAULT))
+		~
+		GOTO XA_RBG_ScriptTest
+		
+		IF ~~ THEN REPLY @6111
+		DO ~
+			ActionOverride(Player4, ChangeAIScript("xapenpm", DEFAULT))
+		~
+		GOTO XA_RBG_ScriptTest
+		
+		IF ~~ THEN REPLY @6112
+		DO ~
+			ActionOverride(Player5, ChangeAIScript("xapenpm", DEFAULT))
+		~
+		GOTO XA_RBG_ScriptTest
+		
+		IF ~~ THEN REPLY @6113
+		DO ~
+			ActionOverride(Player6, ChangeAIScript("xapenpm", DEFAULT))
+		~
+		GOTO XA_RBG_ScriptTest
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_RBG_Debug
+		
+		COPY_TRANS XALCDBG 14
 	END
 	
 	IF ~~ THEN BEGIN XA_RBG_StoreTest
@@ -112,14 +147,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 9
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		COPY_TRANS XALCDBG 14
 	END
 	
 	IF ~~ THEN BEGIN XA_RBG_CutsceneTest
@@ -170,14 +198,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 9
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		COPY_TRANS XALCDBG 14
 	END
 	
 	IF ~~ THEN BEGIN XA_RBG_TextScreenTest
@@ -252,14 +273,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 9
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		COPY_TRANS XALCDBG 14
 	END
 	
 	IF ~~ THEN BEGIN XA_RBG_AreaTest
@@ -580,14 +594,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 9
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		COPY_TRANS XALCDBG 14
 	END
 	
 	IF ~~ THEN BEGIN XA_RBG_AdjustVariables
@@ -686,14 +693,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 9
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		COPY_TRANS XALCDBG 14
 	END
 	
 	IF ~~ THEN BEGIN XA_RBG_ItemTest
@@ -838,14 +838,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 9
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		COPY_TRANS XALCDBG 14
 		
 	END
 END	
