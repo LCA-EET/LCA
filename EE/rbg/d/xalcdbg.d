@@ -29,6 +29,9 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @6114 
 		GOTO XA_RBG_ScriptTest
 		
+		IF ~~ THEN REPLY @6115 
+		GOTO XA_RBG_PenCheck
+		
 		IF ~~ THEN REPLY @6069 /* ~Store Test~*/
 		GOTO XA_RBG_StoreTest
 		
@@ -42,6 +45,40 @@ APPEND ~XALCDBG~
 		GOTO 13
 		
 		COPY_TRANS XALCDBG 14	
+	END
+	
+	IF ~~ THEN BEGIN XA_RBG_PenCheck
+		SAY @6115
+		
+		IF ~ 
+			Global("XA_LC_PartyMembersInPen", "GLOBAL", 0)
+		~ THEN REPLY @6116
+		GOTO XA_RBG_Debug
+		
+		IF ~ 
+			Global("XA_LC_PartyMembersInPen", "GLOBAL", 1)
+		~ THEN REPLY @6117
+		GOTO XA_RBG_Debug
+		
+		IF ~ 
+			Global("XA_LC_PartyMembersInPen", "GLOBAL", 2)
+		~ THEN REPLY @6118
+		GOTO XA_RBG_Debug
+		
+		IF ~ 
+			Global("XA_LC_PartyMembersInPen", "GLOBAL", 3)
+		~ THEN REPLY @6119
+		GOTO XA_RBG_Debug
+		
+		IF ~ 
+			Global("XA_LC_PartyMembersInPen", "GLOBAL", 4)
+		~ THEN REPLY @6120
+		GOTO XA_RBG_Debug
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_RBG_Debug
+		
+		COPY_TRANS XALCDBG 14
 	END
 	
 	IF ~~ THEN BEGIN XA_RBG_ScriptTest

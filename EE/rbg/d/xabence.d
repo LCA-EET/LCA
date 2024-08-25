@@ -93,6 +93,8 @@ IF ~~ THEN BEGIN XA_StartDukeDebriefing
 	DO ~
 		SetGlobal("XA_LC_DukesDebriefed", "GLOBAL", 1)
 		SetGlobal("XA_LC_DebriefTriggered", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutScene("XADEBREF")
 	~
 	EXIT
 END

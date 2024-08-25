@@ -1,7 +1,84 @@
 IF
+	InMyArea(Player6)
+	Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+	Global("XA_LC_DebriefTriggered", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		IncrementGlobal("XA_LC_PartyMembersInPen", "GLOBAL", 1)
+		ActionOverride(Player6, SetLeavePartyDialogFile())
+		ActionOverride(Player6, ChangeAIScript("xapenpm",DEFAULT))
+		ActionOverride(Player6, LeaveParty())
+		Continue()
+END
+
+
+IF
+	InMyArea(Player5)
+	Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+	Global("XA_LC_DebriefTriggered", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		IncrementGlobal("XA_LC_PartyMembersInPen", "GLOBAL", 1)
+		ActionOverride(Player5, SetLeavePartyDialogFile())
+		ActionOverride(Player5, ChangeAIScript("xapenpm",DEFAULT))
+		ActionOverride(Player5, LeaveParty())
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+	Global("XA_LC_DebriefTriggered", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		IncrementGlobal("XA_LC_PartyMembersInPen", "GLOBAL", 1)
+		ActionOverride(Player4, SetLeavePartyDialogFile())
+		ActionOverride(Player4, ChangeAIScript("xapenpm",DEFAULT))
+		ActionOverride(Player4, LeaveParty())
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+	Global("XA_LC_DebriefTriggered", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		IncrementGlobal("XA_LC_PartyMembersInPen", "GLOBAL", 1)
+		ActionOverride(Player3, SetLeavePartyDialogFile())
+		ActionOverride(Player3, ChangeAIScript("xapenpm",DEFAULT))
+		ActionOverride(Player3, LeaveParty())
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+	Global("XA_LC_DebriefTriggered", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		IncrementGlobal("XA_LC_PartyMembersInPen", "GLOBAL", 1)
+		ActionOverride(Player2, SetLeavePartyDialogFile())
+		ActionOverride(Player2, ChangeAIScript("xapenpm",DEFAULT))
+		ActionOverride(Player2, LeaveParty())
+		Continue()
+END
+
+IF
+	Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+	Global("XA_LC_DebriefTriggered", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_DebriefTriggered", "GLOBAL", 3)
+		CopyGroundPilesTo("XADUCAL",[650.370])
+		ActionOverride(Player1, LeaveAreaLUA("XAHOME","",[700.465],NE))
+END
+
+IF
 	InMyArea(Player1)
 	Global("XA_LC_PartyMembersInPen", "GLOBAL", 0)
 	GlobalLT("XA_LC_LeftForToB", "MYAREA", 1)
+	Global("XA_LC_ReturnToBG", "GLOBAL", 2)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_LeftForToB", "MYAREA", 1)

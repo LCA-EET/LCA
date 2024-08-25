@@ -1,4 +1,15 @@
 IF
+	Global("XA_LC_DebriefTriggered", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_DebriefTriggered", "GLOBAL", 4)
+		ActionOverride("XACORWIN",JoinParty())
+		StartCutSceneMode()
+		StartCutScene("XADEBRST")
+END
+
+IF
+	GlobalLT("XA_LC_DebriefTriggered", "GLOBAL", 1)
 	GlobalLT("XA_LC_CorwinMetFamily", "GLOBAL", 1)
 	GlobalLT("XA_LC_GoHome", "XAHOME", 1)
 	OR(2)
@@ -12,6 +23,7 @@ THEN
 END
 
 IF
+	GlobalLT("XA_LC_DebriefTriggered", "GLOBAL", 1)
 	GlobalLT("XA_LC_CorwinMetFamily", "GLOBAL", 1)
 	InMyArea("XACORWIN")
 	InMyArea(Player1)
