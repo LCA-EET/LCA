@@ -75,8 +75,6 @@ IF ~~ THEN BEGIN XA_MeetIllasera3A
 	
 	=@10 /* ~That is, until I met this lowly thief.~ */
 	
-	=@11 /* ~(She gestures to Famari.)~ */
-	
 	=@12 /* ~He told me of your relationship with Major Corwin, and how we could use the child to bring you to us.~ */
 	
 	IF ~~ THEN GOTO XA_MeetIllasera5

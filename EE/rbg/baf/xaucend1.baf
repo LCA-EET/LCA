@@ -7,9 +7,13 @@ THEN
 		Wait(3)
 		CopyGroundPilesTo("XADUC3",[780.500])
 		ApplySpell("XACORWIN",CLERIC_RESURRECTION)  // SPPR712.SPL (Resurrection)
+		Wait(1)
 		ApplySpellRES("cdpr417",Myself)  // Lesser Restoration
 		ApplySpellRES("cdpr417","XACORWIN")  // Lesser Restoration
-		Wait(3)
+		Wait(1)
+		ApplySpellRES("SPPR607",Myself)  // Heal
+		ApplySpellRES("SPPR607","XACORWIN")  // Heal
+		Wait(1)
 		ActionOverride("XACORWIN",LeaveAreaLUA("XADUC3","",[540.250],SW)) 
 		LeaveAreaLUA("XADUC3","",[620.225],SW) 
 		SetGlobal("XA_LC_RohmaSaved", "GLOBAL", 1)

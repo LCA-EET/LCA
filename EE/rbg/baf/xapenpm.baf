@@ -1,9 +1,9 @@
 IF
-	Global("XA_LC_LeftPartyDebrief", "LOCALS", 1)
+	Global("XA_LC_ReturnToBG", "GLOBAL", 2)
 	InMyArea(Player1)
+	!InParty(Myself)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LC_LeftPartyDebrief", "LOCALS", 2)
 		JoinParty()
 		IncrementGlobal("XA_LC_PartyMembersInPen", "GLOBAL", -1)
 END
