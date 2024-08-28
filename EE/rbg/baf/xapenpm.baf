@@ -4,6 +4,6 @@ IF
 	!InParty(Myself)
 THEN
 	RESPONSE #100
-		JoinParty()
 		IncrementGlobal("XA_LC_PartyMembersInPen", "GLOBAL", -1)
+		JoinParty()
 END
