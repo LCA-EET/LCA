@@ -1,3 +1,14 @@
+//{ ShowGUI after transition from SoA
+IF
+	GlobalLT("XA_LC_ShowGUI", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_ShowGUI", "MYAREA", 1)
+		ShowGUI()
+		Continue()
+END
+//}
+
 //{ See if the player already completed the Helm of Balduran quest
 IF
 	Global("XA_LC_PossessedHelm", "GLOBAL", 1)
