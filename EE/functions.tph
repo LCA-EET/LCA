@@ -66,20 +66,26 @@ DEFINE_ACTION_FUNCTION xa_copy_area_music
 END
 
 DEFINE_ACTION_FUNCTION xa_replace_recompile
+	INT_VAR
+		xa_indexStart = 1
+		xa_includeInitial = 1
 	STR_VAR
 		xa_bcs = ~~
 		xa_extend = ~~
 		xa_prefix = ~~
+		xa_replace = ~Player2~
 	BEGIN
-		EXTEND_TOP ~%xa_extend%.bcs~ ~override/%xa_bcs%.bcs~
-		OUTER_SET index = 1
+		ACTION_IF(xa_includeInitial = 1) THEN BEGIN
+			EXTEND_TOP ~%xa_extend%.bcs~ ~override/%xa_bcs%.bcs~
+		END
+		OUTER_SET index = xa_indexStart
 		OUTER_WHILE(index < 6) BEGIN
 			OUTER_SET index = (index + 1)
 			OUTER_SPRINT xa_newfile ~override/%xa_prefix%%index%.bcs~
 			COPY_EXISTING ~%xa_bcs%.bcs~ ~%xa_newfile%~
 			DECOMPILE_AND_PATCH
 			BEGIN
-				REPLACE_TEXTUALLY ~Player1~ ~Player%index%~
+				REPLACE_TEXTUALLY ~%xa_replace%~ ~Player%index%~
 			END
 			EXTEND_TOP ~%xa_extend%.bcs~ ~%xa_newfile%~
 		END

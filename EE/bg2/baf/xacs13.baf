@@ -77,48 +77,22 @@ THEN
 		SetGlobal("XA_LC_PartyRemovalProcessing", "GLOBAL", 2)
 END
 
-IF 
+IF
 	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 2)
-	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-THEN 
+	GlobalLT("XA_LC_TransitionRBG", "MYAREA", 1)
+THEN
 	RESPONSE #100
+		SetGlobal("XA_LC_TransitionRBG", "MYAREA", 1)
 		FadeToColor([30.0],0)
+		HideGUI()
 		Wait(1)
-		TextScreen("XABGROM")
-		AdvanceTime(SEVEN_DAYS)
-		DayNight(8)
-		CopyGroundPilesTo("XAA100", [1628.1456])
-		ActionOverride(Player1,LeaveAreaLUAPanic("XAA100","",[1628.1456],NW))
-		ActionOverride(Player1,LeaveAreaLUA("XAA100","",[1628.1456],NW))
-		ActionOverride(Player2,LeaveAreaLUA("XAA100","",[1664.1531],NW))
-		ActionOverride(Player3,LeaveAreaLUA("XAA100","",[1797.1452],NW))
-		ActionOverride(Player4,LeaveAreaLUA("XAA100","",[1719.1544],NW))
-		ActionOverride(Player5,LeaveAreaLUA("XAA100","",[1777.1510],NW))
-		ActionOverride(Player6,LeaveAreaLUA("XAA100","",[1770.1517],NW))
-		ActionOverride("XACORWIN",LeaveAreaLUA("XAA100","",[1694.1423],NW)) 
-		SetMasterArea("XAA100")		
+		ActionOverride(Player1,LeaveAreaLUA("XAPEN","",[1628.1456],NW))
+		ActionOverride(Player2,LeaveAreaLUA("XAPEN","",[1664.1531],NW))
+		ActionOverride(Player3,LeaveAreaLUA("XAPEN","",[1797.1452],NW))
+		ActionOverride(Player4,LeaveAreaLUA("XAPEN","",[1719.1544],NW))
+		ActionOverride(Player5,LeaveAreaLUA("XAPEN","",[1777.1510],NW))
+		ActionOverride(Player6,LeaveAreaLUA("XAPEN","",[1770.1517],NW))
 END
 
-IF 
-	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 2)
-	!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-THEN 
-	RESPONSE #100
-		FadeToColor([30.0],0)
-		Wait(1)
-		TextScreen("XABG")
-		AdvanceTime(SEVEN_DAYS)
-		DayNight(8)
-		CopyGroundPilesTo("XAA100", [1628.1456])
-		ActionOverride(Player1,LeaveAreaLUAPanic("XAA100","",[1628.1456],NW))
-		ActionOverride(Player1,LeaveAreaLUA("XAA100","",[1628.1456],NW))
-		ActionOverride(Player2,LeaveAreaLUA("XAA100","",[1664.1531],NW))
-		ActionOverride(Player3,LeaveAreaLUA("XAA100","",[1797.1452],NW))
-		ActionOverride(Player4,LeaveAreaLUA("XAA100","",[1719.1544],NW))
-		ActionOverride(Player5,LeaveAreaLUA("XAA100","",[1777.1510],NW))
-		ActionOverride(Player6,LeaveAreaLUA("XAA100","",[1770.1517],NW))
-		ActionOverride("XACORWIN",LeaveAreaLUA("XAA100","",[1694.1423],NW)) 
-		SetMasterArea("XAA100")		
-END
 
 

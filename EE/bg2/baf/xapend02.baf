@@ -1,0 +1,12 @@
+IF
+	InMyArea(Player2)
+	TriggerOverride(Player2, Global("XA_LC_LeaveInPen", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		IncrementGlobal("XA_LC_PartyMembersInPen", "GLOBAL", 1)
+		ActionOverride(Player2, SetGlobal("XA_LC_LeaveInPen", "LOCALS", 0))
+		ActionOverride(Player2, SetLeavePartyDialogFile())
+		ActionOverride(Player2, ChangeAIScript("xapenpm",DEFAULT))
+		ActionOverride(Player2, LeaveParty())
+		Continue()
+END

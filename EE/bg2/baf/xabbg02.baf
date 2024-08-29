@@ -4,9 +4,10 @@ IF
 	TriggerOverride(Player2, GlobalLT("XA_LC_BackToBG", "LOCALS", 1))
 THEN
 	RESPONSE #100
-		ActionOverride(Player2, ChangeAIScript("",DEFAULT))
-		ActionOverride(Player2, SetLeavePartyDialogFile())
-		ActionOverride(Player2, LeaveParty())
-		ActionOverride(Player2, EscapeAreaObject("ExitNull"))
+		ActionOverride(Player2, SetGlobal("XA_LC_LeaveInPen", "LOCALS", 1))
+		//ActionOverride(Player2, ChangeAIScript("",DEFAULT))
+		//ActionOverride(Player2, SetLeavePartyDialogFile())
+		//ActionOverride(Player2, LeaveParty())
+		//ActionOverride(Player2, EscapeAreaObject("ExitNull"))
 		Continue()
 END
