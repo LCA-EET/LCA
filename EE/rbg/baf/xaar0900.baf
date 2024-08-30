@@ -4,7 +4,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_ShowGUI", "MYAREA", 1)
-		ShowGUI()
+		UnhideGUI()
 		Continue()
 END
 //}

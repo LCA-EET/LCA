@@ -727,6 +727,36 @@ APPEND ~XALCDBG~
 		~
 		GOTO XA_RBG_AdjustVariables
 		
+		IF ~~ THEN REPLY @6121
+		DO ~
+			SetGlobal("XA_LC_PartyMembersInPen", "GLOBAL", 0)
+		~
+		GOTO XA_RBG_AdjustVariables
+		
+		IF ~~ THEN REPLY @6122
+		DO ~
+			SetGlobal("XA_LC_PartyMembersInPen", "GLOBAL", 1)
+		~
+		GOTO XA_RBG_AdjustVariables
+		
+		IF ~~ THEN REPLY @6123
+		DO ~
+			SetGlobal("XA_LC_PartyMembersInPen", "GLOBAL", 2)
+		~
+		GOTO XA_RBG_AdjustVariables
+		
+		IF ~~ THEN REPLY @6124
+		DO ~
+			SetGlobal("XA_LC_PartyMembersInPen", "GLOBAL", 3)
+		~
+		GOTO XA_RBG_AdjustVariables
+		
+		IF ~~ THEN REPLY @6125
+		DO ~
+			SetGlobal("XA_LC_PartyMembersInPen", "GLOBAL", 4)
+		~
+		GOTO XA_RBG_AdjustVariables
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
