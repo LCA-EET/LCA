@@ -18,6 +18,24 @@ APPEND XALIIA
 		SAY @9 /* ~It will take a couple of days to prepare... */
 		
 		IF ~
+			GlobalLT("XA_LC_MembersLeftBehind", "GLOBAL", 1)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN GOTO XA_SaradushDiscussion5A
+		
+		IF ~
+			GlobalLT("XA_LC_MembersLeftBehind", "GLOBAL", 1)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN GOTO XA_SaradushDiscussion5B
+		
+		IF ~
+			GlobalGT("XA_LC_MembersLeftBehind", "GLOBAL", 0)
+		~ THEN GOTO XA_SaradushPartyMembers
+	END
+	
+	IF ~~ THEN BEGIN XA_SaradushPartyMembers
+		SAY @12 /* ~Beyond that, we will need to reach out to your old adventuring companions — those who remained with the elves or returned to Athkatla. I'm sure you'll agree that their help will prove invaluable in dealing with the dangers that lie ahead.~ */
+		
+		IF ~
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN GOTO XA_SaradushDiscussion5A
 		
@@ -27,13 +45,13 @@ APPEND XALIIA
 	END
 
 	IF ~~ THEN BEGIN XA_SaradushDiscussion5A
-		SAY @10 /* ~I suggest that you and Major Corwin use the time to rest and relax after your latest ordeal.~ */
+		SAY @10 /* ~While we wait, I suggest that you and Major Corwin rest and relax after this latest ordeal. It will likely be a long while before you're able to return to us.~ */
 		
 		IF ~~ THEN GOTO XA_SaradushDiscussion6
 	END
 
 	IF ~~ THEN BEGIN XA_SaradushDiscussion5B
-		SAY @11 /* ~Use the time to rest and relax after your latest ordeal.~ */
+		SAY @11 /* ~While we wait, I suggest that you rest and relax after this latest ordeal. It will likely be a long while before you're able to return to us.~ */
 		
 		IF ~~ THEN GOTO XA_SaradushDiscussion6
 	END

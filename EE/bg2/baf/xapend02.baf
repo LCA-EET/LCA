@@ -1,3 +1,15 @@
+//{ Record members left behind at the conclusion of SoA.
+IF
+	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_MarkedLB", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_MarkedLB", "LOCALS", 1)
+		IncrementGlobal("XA_LC_MembersLeftBehind", "GLOBAL", 1)
+		Continue()
+END
+//}
+
 IF
 	InMyArea(Player2)
 	TriggerOverride(Player2, Global("XA_LC_LeaveInPen", "LOCALS", 1))
