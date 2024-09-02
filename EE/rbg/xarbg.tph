@@ -46,6 +46,15 @@ INCLUDE ~%MOD_FOLDER%/generated/c/generated.tph~
 INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 INCLUDE ~%MOD_FOLDER%/generated/g/generated.tph~
 
+//{ Music Update - Kanaglym Dream
+	COPY_EXISTING ~xablck.are~ ~override~
+	WRITE_LONG 0x22C xag0
+	WRITE_LONG 0x230 xag0
+	WRITE_LONG 0x234 xag0
+	WRITE_LONG 0x238 xag0
+	WRITE_LONG 0x23C xag0
+//}
+
 //{ Worldmap
 	COPY ~%MOD_FOLDER%/rbg/mos/xamaprbg.mos~ ~override~
 	COPY ~%MOD_FOLDER%/rbg/wmp/xamaprbg.wmp~ ~override~

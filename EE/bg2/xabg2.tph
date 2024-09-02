@@ -255,9 +255,15 @@ END
 			INT_VAR 
 				xa_component_count = 2 // will delete Tiax & Corwin
 	END
+	
 	COPY_EXISTING ~xablck.are~ ~override/xapen.are~
 	LPF xa_delete_are_actors END
 	WRITE_ASCII 0x94 ~xapen~ #8
+	WRITE_LONG 0x11C 0
+	WRITE_LONG 0x120 0
+	WRITE_LONG 0x124 0
+	WRITE_LONG 0x128 0
+	WRITE_LONG 0x12C 0
 //}
 
 //{ Modifications to already-existing areas
