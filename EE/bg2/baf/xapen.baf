@@ -61,6 +61,14 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_LeftForToB", "MYAREA", 1)
+		RestPartyEx(0,0,1)
+END
+
+IF
+	Global("XA_LC_LeftForToB", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_LeftForToB", "MYAREA", 2)
 		MoveToExpansion()
 END
 //}
