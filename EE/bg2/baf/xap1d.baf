@@ -46,16 +46,6 @@ THEN
 		StartCutSceneEx("XAcs05a",FALSE)
 END
 
-IF
-	GlobalTimerExpired("XA_LC_CS01","GLOBAL")
-	!Global("XA_LC_CS01_Done", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		//DisplayStringHead(Myself,~Debug Player1D - 13~)
-		SetGlobal("XA_LC_CS01_Done", "GLOBAL", 1)
-		StartCutSceneMode()
-		StartCutSceneEx("XAcs01a",FALSE)
-END
 
 
 

@@ -26,6 +26,11 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/tob/baf/xap1d.baf~
 	
 	EXTEND_TOP ~ar4000.bcs~ 	~%MOD_FOLDER%/tob/baf/xaar4000.baf~
+	EXTEND_TOP ~ar4500.bcs~ 	~%MOD_FOLDER%/tob/baf/xaar4500.baf~
+	EXTEND_TOP ~ar5000.bcs~		~%MOD_FOLDER%/tob/baf/xaar5000.baf~
+	EXTEND_TOP ~ar5500.bcs~		~%MOD_FOLDER%/tob/baf/xaar5500.baf~
+	EXTEND_TOP ~ar5501.bcs~		~%MOD_FOLDER%/tob/baf/xaar5501.baf~
+	EXTEND_TOP ~ar6200.bcs~		~%MOD_FOLDER%/tob/baf/xaar6200.baf~
 //}
 
 //{ Corwin Script
