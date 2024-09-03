@@ -8,17 +8,11 @@ DECOMPILE_AND_PATCH BEGIN
 	REPLACE_TEXTUALLY ~XACORWIB~ ~XACOR25B~
 	LPF xa_dlgb_soa_to_tob END	
 END
-/*
-//{ Restore Party Members who went to BG during RBG
-	LAF xa_replaceIn
-		STR_VAR
-			xa_copyFrom = ~xabgres~
-			xa_extendTarget = ~ar4000~
-			xa_fileextension = ~bcs~
-			xa_strToReplace = ~TO_REPLACE~
-	END
+
+//{ Update Volo's Dialog to mention the events of SoD
+	STRING_SET 71481 @5032 // SARVOLO State 6
 //}
-*/
+
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 
 //{ Script Extensions
