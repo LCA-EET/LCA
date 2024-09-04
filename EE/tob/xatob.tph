@@ -313,7 +313,7 @@ END
 		ACTION_PHP_EACH crusaderSpirits AS _ => cSpirit
 		BEGIN
 			COPY_EXISTING ~%cSpirit%.cre~ ~override/xacrug0%cid%.cre~
-			WRITE_LONG 0x20 0 
+			WRITE_LONG 0x20 0 // remove "dead" flag, if it's set
 			LPF xa_reset_cre
 				STR_VAR
 					xa_override = ~xacrug~
