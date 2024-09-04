@@ -373,6 +373,19 @@ DEFINE_PATCH_FUNCTION xa_delete_are_triggers
 				xa_component_type = ~region~
 		END
 	END
+
+DEFINE_PATCH_FUNCTION xa_replace_trigger_scripts
+	STR_VAR
+		xa_newscript = ~None~
+	BEGIN
+		READ_LONG 0x5C xa_triggeroffset
+		READ_SHORT 0x5A xa_numtriggers
+		SET xa_idx = 0
+		WHILE (xa_idx < xa_numtriggers) BEGIN
+			WRITE_ASCIIE ((xa_triggeroffset + 124) + (xa_idx * 0xC4)) ~%xa_newscript%~ #8
+			xa_idx = (xa_idx + 1)
+		END
+	END
 	
 DEFINE_PATCH_FUNCTION xa_delete_actor_at_index 
 	INT_VAR xa_index = 0
@@ -385,6 +398,8 @@ DEFINE_PATCH_FUNCTION xa_delete_actor_at_index
 				fj_structure_type = actor
 		END
 	END
+
+
 	
 DEFINE_PATCH_FUNCTION xa_reset_cre
 	STR_VAR 

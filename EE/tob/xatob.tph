@@ -316,6 +316,7 @@ END
 			LPF xa_reset_cre
 				STR_VAR
 					xa_override = ~xacrug~
+					xa_scriptName = ~None~
 			END	
 			LPF ADD_CRE_EFFECT
 				INT_VAR
@@ -656,6 +657,8 @@ END
 		EXTEND_TOP ~xags102.bcs~ ~%MOD_FOLDER%/tob/baf/xa5300.baf~
 		
 		COPY_EXISTING ~xag102.are~ ~override~
+		
+		LPF xa_replace_trigger_scripts END
 		
 		PATCH_DEFINE_ARRAY xa_extras
 		BEGIN
