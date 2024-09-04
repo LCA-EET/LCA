@@ -38,20 +38,14 @@ APPEND ~XALCDBG~
 	
 	IF ~~ THEN BEGIN XA_ToB_AreaTest
 		SAY @6020 /* ~Area Test~*/
-		
-		IF ~~ THEN REPLY @7004 /* ~XAG104 (BD5300) - Kanaglym~ */
+	
+		IF ~~ THEN REPLY @7001 /* ~XAG102 (BD5300) - Kanaglym~ */
 		DO ~
-			ActionOverride(Player1, LeaveAreaLUA("XA4000", "", [665.325], S))
+			ActionOverride(Player1, LeaveAreaLUA("XAG102", "", [665.325], S))
 		~
 		EXIT
 		
-		IF ~~ THEN REPLY @7001 /* ~XAG104 (BD5300) - Kanaglym~ */
-		DO ~
-			ActionOverride(Player1, LeaveAreaLUA("XAG104", "", [665.325], S))
-		~
-		EXIT
-		
-		IF ~~ THEN REPLY @7003 /* ~XAG104 (BD5300) - Kanaglym~ */
+		IF ~~ THEN REPLY @7003 /* ~XAG100 Avernus Bridge~ */
 		DO ~
 			ActionOverride(Player1, LeaveAreaLUA("XAG100", "", [665.325], S))
 		~

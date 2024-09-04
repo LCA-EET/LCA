@@ -313,6 +313,7 @@ END
 		ACTION_PHP_EACH crusaderSpirits AS _ => cSpirit
 		BEGIN
 			COPY_EXISTING ~%cSpirit%.cre~ ~override/xacrug0%cid%.cre~
+			WRITE_LONG 0x20 0 
 			LPF xa_reset_cre
 				STR_VAR
 					xa_override = ~xacrug~
@@ -690,8 +691,8 @@ END
 		//{ Crusader Spirit NPCs
 			LPF fj_are_structure
 				INT_VAR
-					fj_loc_x = 800
-					fj_loc_y = 590
+					fj_loc_x = 775
+					fj_loc_y = 530
 				STR_VAR
 					fj_structure_type = actor
 					fj_name = Ashatiel
@@ -699,11 +700,35 @@ END
 			END
 			LPF xa_add_extras
 				INT_VAR
-					xa_minX = 400
-					xa_minY = 420
-					xa_maxX = 1000
-					xa_maxY = 680
-					xa_numToGenerate = 30
+					xa_minX = 552
+					xa_minY = 469
+					xa_maxX = 709
+					xa_maxY = 636
+					xa_numToGenerate = 8
+			END
+			LPF xa_add_extras
+				INT_VAR
+					xa_minX = 592
+					xa_minY = 266
+					xa_maxX = 692
+					xa_maxY = 377
+					xa_numToGenerate = 8
+			END
+			LPF xa_add_extras
+				INT_VAR
+					xa_minX = 845
+					xa_minY = 448
+					xa_maxX = 977
+					xa_maxY = 612
+					xa_numToGenerate = 8
+			END
+			LPF xa_add_extras
+				INT_VAR
+					xa_minX = 767
+					xa_minY = 674
+					xa_maxX = 898
+					xa_maxY = 770
+					xa_numToGenerate = 8
 			END
 		//}
 		
