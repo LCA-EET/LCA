@@ -294,8 +294,16 @@ END
 		END	
 		LPF ADD_CRE_EFFECT
 			INT_VAR
-				opcode = 65
-				target = 1
+				opcode = 65 // blur
+				target = 1 // self
+				timing = 1 // permanent until death
+		END
+		LPF ADD_CRE_EFFECT
+			INT_VAR
+				opcode = 208 // min hp
+				parameter1 = 1 // min hp 1
+				target = 1 // self
+				timing = 1 // permanent until death
 		END
 		
 		SET cid = 0
@@ -320,8 +328,16 @@ END
 			END	
 			LPF ADD_CRE_EFFECT
 				INT_VAR
-					opcode = 65
-					target = 1
+					opcode = 65 // blur
+					target = 1 // self
+					timing = 1 // permanent until death
+			END
+			LPF ADD_CRE_EFFECT
+				INT_VAR
+					opcode = 208 // min hp
+					parameter1 = 1 // min hp 1
+					target = 1 // self
+					timing = 1 // permanent until death
 			END
 			cid = (cid + 1)
 		END
