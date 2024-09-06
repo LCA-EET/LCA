@@ -38,6 +38,7 @@ THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself,~Debug Player1D - 4~)
 		SetGlobal("XA_LC_KanaDream", "GLOBAL", 3)
+		SetGlobal("XA_LC_HadFinalKanaDream", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XADREAM")
 END

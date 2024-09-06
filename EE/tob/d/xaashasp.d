@@ -124,18 +124,21 @@ IF ~
 	IF ~~ THEN REPLY @1 /* ~I recognize you... Ashatiel. Caelar's right hand.~*/
 	DO ~
 		SetGlobal("XA_LC_AshatielSpirit", "GLOBAL", 2)
+		SetGlobal("XA_LC_KanaDream", "GLOBAL", 4)
 	~
 	GOTO XA_Ashatiel
 	
 	IF ~~ THEN REPLY @19 /* ~I recognize you... Ashatiel. The Shining Lady's lapdog.~*/
 	DO ~
 		SetGlobal("XA_LC_AshatielSpirit", "GLOBAL", 2)
+		SetGlobal("XA_LC_KanaDream", "GLOBAL", 4)
 	~
 	GOTO XA_Ashatiel
 	
 	IF ~~ THEN REPLY @23 /* ~I remember you, Ashatiel. You were as brave as you were foolish.~*/
 	DO ~
 		SetGlobal("XA_LC_AshatielSpirit", "GLOBAL", 2)
+		SetGlobal("XA_LC_KanaDream", "GLOBAL", 4)
 	~
 	GOTO XA_Ashatiel
 END
@@ -153,7 +156,7 @@ IF ~~ THEN BEGIN XA_Ashatiel
 	GOTO XA_CantDie
 	
 	IF ~
-		Global("XA_LC_KanaDream", "GLOBAL", 4)
+		Global("XA_LC_HadFinalKanaDream", "GLOBAL", 1)
 	~ THEN REPLY @29 /* ~What do you mean? Wasn't it you who told me to come here, in my dream?~*/
 	GOTO XA_Dream
 END
@@ -203,7 +206,7 @@ IF ~~ THEN BEGIN XA_CaelarAlive2
 	GOTO XA_HowMany
 	
 	IF ~
-		Global("XA_LC_KanaDream", "GLOBAL", 4)
+		Global("XA_LC_HadFinalKanaDream", "GLOBAL", 1)
 	~ THEN REPLY @31 /*  ~The voice in the dream... it must have been Caelar's! She told me that she needed my help against some powerful force.~*/
 	GOTO XA_Dream_Help
 END
@@ -222,7 +225,7 @@ IF ~~ THEN BEGIN XA_HowMany
 	GOTO XA_HelpCaelar
 	
 	IF ~
-		Global("XA_LC_KanaDream", "GLOBAL", 4)
+		Global("XA_LC_HadFinalKanaDream", "GLOBAL", 1)
 	~ THEN REPLY @31 /*  ~The voice in the dream... it must have been Caelar's! She told me that she needed my help against some powerful force.~*/
 	GOTO XA_Dream_Help
 END
