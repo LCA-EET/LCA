@@ -694,13 +694,6 @@ END
 			WRITE_LONG 0x2AF0 RESOLVE_STR_REF(@5008)
 		//}
 		
-		//{ Disable Triggers
-			WRITE_LONG 0x2DFC 256
-			WRITE_LONG 0x2BB0 256
-			WRITE_LONG 0x2C74 256
-			WRITE_LONG 0x2D38 256
-		//}
-		
 		LPF xa_delete_are_actors END
 		LPF xa_delete_are_containers END
 		
@@ -749,6 +742,7 @@ END
 		//}
 		
 		WRITE_ASCII 0x3270 ~xafugue~ #8
+		WRITE_ASCII 0x256C ~xa5300t1~ #8
 	//}
 	
 	//{ xa5501 Amkethran Tavern
