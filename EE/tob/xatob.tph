@@ -280,6 +280,7 @@ END
 		WRITE_LONG 0x1CC RESOLVE_STR_REF(@5009) // Bio
 		
 		COPY_EXISTING ~xacaelar.cre~ ~override/xacaela2.cre~
+		WRITE_BYTE 0x270 128 // set allegiance to neutral
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xacaela2~
@@ -662,6 +663,7 @@ END
 		//}
 		
 		LPF xa_delete_are_actors END
+		WRITE_LONG 0xA9C 513 // set door flags open, see through
 	//}
 	
 	//{ xag102 bd5300 Kanaglym
