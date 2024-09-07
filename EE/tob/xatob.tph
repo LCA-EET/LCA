@@ -474,6 +474,7 @@ END
 				opcode = 65
 				target = 1
 		END
+		WRITE_LONG 0x524 3 // immunity to level 3 & below
 	//}
 	
 	//{ Nederlok
@@ -743,6 +744,7 @@ END
 		
 		WRITE_ASCII 0x3270 ~xafugue~ #8
 		WRITE_ASCII 0x256C ~xa5300t1~ #8
+		WRITE_LONG 0x2550 0 // activate sd info trigger
 	//}
 	
 	//{ xa5501 Amkethran Tavern
