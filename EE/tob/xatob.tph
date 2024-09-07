@@ -179,6 +179,10 @@ END
 				xa_override = ~xasummon~
 				xa_default = ~wtasight~
 		END
+		LPF xa_inc_cre_difficulty
+			INT_VAR
+				xa_factor = 3
+		END
 		BUT_ONLY
 		
 		COPY_EXISTING ~gorbat3.cre~ ~override/xanarzs0.cre~
