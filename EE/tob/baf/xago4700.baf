@@ -5,7 +5,7 @@ THEN
 		CutSceneId(Player1)
 		FadeToColor([30.0],0)
 		Wait(1)
-		LeaveAreaLUA("XAG103","",[1660.630],NE)
+		LeaveAreaLUA("XAG101","",[1660.630],NE)
 		ActionOverride(Player2,LeaveAreaLUA("XAG101","",[1500.640],NE))
 		ActionOverride(Player3,LeaveAreaLUA("XAG101","",[1680.775],NE))
 		ActionOverride(Player4,LeaveAreaLUA("XAG101","",[1540.670],NE))
