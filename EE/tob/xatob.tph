@@ -361,48 +361,37 @@ END
 	
 	//{ Elven Spirits
 		COPY_EXISTING ~suelf13.cre~ ~override/xaelf01.cre~
-		SAY NAME1 @5016
-		SAY NAME2 @5016
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xaelf01~
 				xa_scriptName = ~xaelf01~
 				xa_default = ~wtasight~
 		END	
-		LPF ADD_CRE_EFFECT
-			INT_VAR
-				opcode = 65
-				target = 1
-		END
 	
-		COPY_EXISTING ~suelf12.cre~ ~override/xaelf02.cre~
-		SAY NAME1 @5016
-		SAY NAME2 @5016
+		COPY_EXISTING ~suelf12.cre~ ~override/xaelf02.cre~ 
 		LPF xa_reset_cre
 			STR_VAR
 				xa_scriptName = ~xaelf02~
 				xa_default = ~wtasight~
 		END	
-		LPF ADD_CRE_EFFECT
-			INT_VAR
-				opcode = 65
-				target = 1
-		END
 		
 		COPY_EXISTING ~suelf10.cre~ ~override/xaelf03.cre~
-		SAY NAME1 @5016
-		SAY NAME2 @5016
 		LPF xa_reset_cre
 			STR_VAR
 				xa_scriptName = ~xaelf03~
 				xa_race = ~priet12b~
 				xa_default = ~wtasight~
 		END
+				
+		COPY_EXISTING_REGEXP GLOB ~xaelf0.+\.cre$~ ~override~
+		SAY NAME1 @5016
+		SAY NAME2 @5016
+		WRITE_BYTE 0x270 29 // change allegiance to good but blue
 		LPF ADD_CRE_EFFECT
 			INT_VAR
 				opcode = 65
 				target = 1
-		END
+		END		
 	//}
 	
 	//{ Fire Giant Scouts
