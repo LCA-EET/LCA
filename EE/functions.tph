@@ -152,17 +152,17 @@ DEFINE_PATCH_FUNCTION xa_inc_cre_difficulty
 		READ_SHORT 0x46 xa_ac
 		READ_LONG 0x14 xa_exp
 		
-		SET xa_newHP = xa_currentHP + (xa_factor * 10) // each factor increase hp by 10
+		SET xa_newHP = xa_currentHP + ((xa_currentHP / 3) * xa_factor) // each factor increase hp by a third
 		SET xa_newTHAC0 = xa_thac0 - xa_factor 
 		SET xa_newAC = xa_ac - xa_factor 
 		SET xa_newXP = xa_exp + ((xa_exp / 3) * xa_factor) // each factor increase xp by a third
 		
 		WRITE_SHORT 0x24 xa_newHP
 		WRITE_SHORT 0x26 xa_newHP
-		WRITE_BYTE 0x52 xa_thac0
+		WRITE_BYTE 0x52 xa_newTHAC0
 		WRITE_SHORT 0x46 xa_newAC
 		WRITE_SHORT 0x48 xa_newAC
-		WRITE_LONG 0x14 xa_exp
+		WRITE_LONG 0x14 xa_newXP
 END
 
 DEFINE_PATCH_FUNCTION xa_replacesongs
