@@ -129,7 +129,32 @@ DEFINE_ACTION_FUNCTION xa_determine_quantity
 //}
 
 //{ Patch Functions
-
+DEFINE_PATCH_FUNCTION xa_buff_creature
+	INT_VAR
+		xa_factor = 1
+	STR_VAR
+		xa_creref_old = ~~
+		xa_creref_new = ~~
+	BEGIN
+		COPY_EXISTING ~%xa_creref_old%.cre~ ~override/%xa_creref_new%.cre~
+		
+		READ_SHORT 0x24 xa_currentHP
+		READ_BYTE 0x52 xa_thac0
+		READ_SHORT 0x46 xa_ac
+		READ_LONG 0x14 xa_exp
+		
+		SET xa_newHP = xa_currentHP + (xa_factor * 20)
+		SET xa_newTHAC0 = xa_thac0 - (xa_factor * 2)
+		SET xa_newAC = xa_ac - (xa_factor * 2)
+		SET xa_newXP = xa_exp + (xa_exp * xa_factor)
+		
+		WRITE_SHORT 0x24 xa_newHP
+		WRITE_SHORT 0x26 xa_newHP
+		WRITE_BYTE 0x52 xa_thac0
+		WRITE_SHORT 0x46 xa_newAC
+		WRITE_SHORT 0x48 xa_newAC
+		WRITE_LONG 0x14 xa_exp
+END
 
 DEFINE_PATCH_FUNCTION xa_replacesongs
 	INT_VAR
