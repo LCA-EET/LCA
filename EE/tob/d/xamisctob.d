@@ -121,17 +121,17 @@
 			GlobalLT("XA_LC_ReturnToAvernus", "GLOBAL", 1)
 		~ THEN REPLY @3 /* ~Send me to Caelar Argent, in Avernus.~ */
 		DO ~
-			SetGlobal("XA_LC_BringCaelar", "LOCALS", 1)
+			SetGlobal("XA_LC_BringCaelar", "MYAREA", 1)
 		~
 		GOTO XA_Avernus
 		
 		IF ~
 			GlobalGT("XA_LC_AshatielSpirit", "GLOBAL", 1)
-			GlobalLT("XA_LC_BringCaelar", "LOCALS", 1)
+			GlobalLT("XA_LC_BringCaelar", "MYAREA", 1)
 			GlobalLT("XA_LC_ReturnToAvernus", "GLOBAL", 1)
 		~ THEN REPLY @4 /* ~~Bring me Caelar Argent.~ */
 		DO ~
-			SetGlobal("XA_LC_BringCaelar", "LOCALS", 1)
+			SetGlobal("XA_LC_BringCaelar", "MYAREA", 1)
 		~
 		GOTO XA_BringCaelar
 	END
@@ -159,17 +159,17 @@
 			GlobalLT("XA_LC_ReturnToAvernus", "GLOBAL", 1)
 		~ THEN REPLY @3 /* ~Send me to Caelar Argent, in Avernus.~ */
 		DO ~
-			SetGlobal("XA_LC_BringCaelar", "LOCALS", 1)
+			SetGlobal("XA_LC_BringCaelar", "MYAREA", 1)
 		~
 		GOTO XA_Avernus
 		
 		IF ~
 			GlobalGT("XA_LC_AshatielSpirit", "GLOBAL", 1)
-			GlobalLT("XA_LC_BringCaelar", "LOCALS", 1)
+			GlobalLT("XA_LC_BringCaelar", "MYAREA", 1)
 			GlobalLT("XA_LC_ReturnToAvernus", "GLOBAL", 1)
 		~ THEN REPLY @4 /* ~~Bring me Caelar Argent.~ */
 		DO ~
-			SetGlobal("XA_LC_BringCaelar", "LOCALS", 1)
+			SetGlobal("XA_LC_BringCaelar", "MYAREA", 1)
 		~
 		GOTO XA_BringCaelar
 	END
