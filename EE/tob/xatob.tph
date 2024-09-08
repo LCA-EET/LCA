@@ -31,6 +31,8 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 	EXTEND_TOP ~ar5500.bcs~		~%MOD_FOLDER%/tob/baf/xaar5500.baf~
 	EXTEND_TOP ~ar5501.bcs~		~%MOD_FOLDER%/tob/baf/xaar5501.baf~
 	EXTEND_TOP ~ar6200.bcs~		~%MOD_FOLDER%/tob/baf/xaar6200.baf~
+	
+	EXTEND_TOP ~botsmith.bcs~	~%MOD_FOLDER%/tob/baf/xacespy.baf~
 //}
 
 //{ Corwin Script
