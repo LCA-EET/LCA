@@ -149,7 +149,7 @@ END
 //{ Patch Functions
 DEFINE_PATCH_FUNCTION xa_remove_cre_sounds
 	BEGIN
-		SET xa_sound_ref = -1
+		SET xa_sound_ref = (0 - 1)
 		SET xa_sound_offset = 0xA4
 		SET xa_sound_endOffset = 0x230
 		

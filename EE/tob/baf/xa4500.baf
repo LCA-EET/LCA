@@ -4,8 +4,17 @@ THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_ThrixSpawn","MYAREA",2)
 		CreateVisualEffect("SPSUMGTE",[2270.460])
+END
+
+IF
+	Global("XA_LC_ThrixSpawn","MYAREA",2)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_ThrixSpawn","MYAREA",3)
 		Wait(4)
 		CreateCreature("XATHRIX",[2270.490],W)  // Thrix
+		Wait(1)
+		ActionOverride("XATHRIX",SetSequence(SEQ_AWAKE))
 		Wait(1)
 		ActionOverride("XATHRIX",StartDialogueNoSet(Player1))
 END
