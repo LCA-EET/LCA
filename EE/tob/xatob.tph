@@ -141,12 +141,13 @@ END
 	
 		//{ Thrix
 			COPY_EXISTING ~xag101.cre~ ~override/xathrix.cre~
+			REMOVE_CRE_ITEMS
 			LPF xa_reset_cre
-			STR_VAR
-				xa_dialog = ~xathrix~
-				xa_override = ~xathrix~
-				xa_scriptName = ~xathrix~
-		END
+				STR_VAR
+					xa_dialog = ~xathrix~
+					xa_override = ~xathrix~
+					xa_scriptName = ~xathrix~
+			END
 		//}
 		
 		COPY_EXISTING ~xag102.cre~ ~override/xaavc1.cre~ // bdhelcat

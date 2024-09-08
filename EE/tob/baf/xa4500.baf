@@ -14,8 +14,8 @@ THEN
 		Wait(4)
 		CreateCreature("XATHRIX",[2270.490],W)  // Thrix
 		Wait(1)
-		ActionOverride("XATHRIX",SetSequence(SEQ_AWAKE))
-		Wait(1)
+		//ActionOverride("XATHRIX",SetSequence(SEQ_AWAKE))
+		//Wait(1)
 		ActionOverride("XATHRIX",StartDialogueNoSet(Player1))
 END
 
