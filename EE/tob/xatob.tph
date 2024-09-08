@@ -634,24 +634,6 @@ END
 				fj_name = TRBR02		
 				fj_structure_type = region
 		END
-		
-		LPF fj_are_structure
-			INT_VAR
-				fj_type = 0
-				fj_box_left 	= 1770
-				fj_box_top 		= 365
-				fj_box_right 	= 2200
-				fj_box_bottom 	= 690
-				fj_vertex_0 = (1638 + (479 << 16))
-				fj_vertex_1 = (1810 + (365 << 16))
-				fj_vertex_2 = (2200 + (670 << 16))
-				fj_vertex_3 = (1803 + (586 << 16))
-				fj_flags = 128
-			STR_VAR
-				fj_reg_script = XA4500T3
-				fj_name = TRBR03		
-				fj_structure_type = region
-		END
 	//}
 	
 	//{ xag101 bd4700 Avernus Tower Roof
