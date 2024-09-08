@@ -36,10 +36,10 @@ THEN
 END
 
 IF
-	Global("XA_LC_ThrixLeave","GLOBAL",1)
+	Global("XA_LC_ThrixSpawn","MYAREA",4)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LC_ThrixLeave","GLOBAL",2)
+		SetGlobal("XA_LC_ThrixSpawn","MYAREA",5)
 		ForceSpellRES("XAG100","XATHRIX")  // Teleport Without Error bdtelaw
 END
 

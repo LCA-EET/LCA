@@ -1,6 +1,5 @@
 IF
-	See(Player1)
-	Global("XA_LC_ThrixSpawn","GLOBAL",1)
+	Global("XA_LC_ThrixSpawn","MYAREA",3)
 THEN
 	RESPONSE #100
 		StartDialog("XATHRIX", Player1)

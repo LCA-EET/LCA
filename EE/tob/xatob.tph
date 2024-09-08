@@ -149,7 +149,7 @@ END
 					xa_scriptName = ~xathrix~
 			END
 			WRITE_BYTE 0x274 19
-			WRITE_ASCII 0x8AC ~xadoorav~ #8
+			
 		//}
 		
 		COPY_EXISTING ~xag102.cre~ ~override/xaavc1.cre~ // bdhelcat
@@ -638,6 +638,7 @@ END
 				fj_name = TRBR02		
 				fj_structure_type = region
 		END
+		WRITE_ASCII 0x8AC ~xadoorav~ #8
 	//}
 	
 	//{ xag101 bd4700 Avernus Tower Roof
