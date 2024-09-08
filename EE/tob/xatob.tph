@@ -148,6 +148,8 @@ END
 					xa_override = ~xathrix~
 					xa_scriptName = ~xathrix~
 			END
+			WRITE_BYTE 0x274 19
+			WRITE_ASCII 0x8AC ~xadoorav~ #8
 		//}
 		
 		COPY_EXISTING ~xag102.cre~ ~override/xaavc1.cre~ // bdhelcat
