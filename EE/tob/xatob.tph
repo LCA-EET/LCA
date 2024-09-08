@@ -281,9 +281,9 @@ END
 				xa_class = ~xafigh01~
 		END
 		WRITE_LONG 0x1CC RESOLVE_STR_REF(@5009) // Bio
+		WRITE_BYTE 0x270 128 // set allegiance to neutral
 		
 		COPY_EXISTING ~xacaelar.cre~ ~override/xacaela2.cre~
-		WRITE_BYTE 0x270 128 // set allegiance to neutral
 		LPF xa_remove_cre_sounds END
 		LPF xa_reset_cre
 			STR_VAR
