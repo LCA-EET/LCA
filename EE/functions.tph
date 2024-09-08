@@ -127,26 +127,37 @@ DEFINE_ACTION_FUNCTION xa_determine_quantity
 		END
 	END
 
-	DEFINE_ACTION_FUNCTION xa_inc_cre_difficulty_newref
-		INT_VAR
-			xa_diff_factor = 1
-			xa_hp_divisor = 3
-			xa_exp_divisor = 6
-		STR_VAR
-			xa_creref_old = ~~
-			xa_creref_new = ~~
-		BEGIN
-			COPY_EXISTING ~%xa_creref_old%.cre~ ~override/%xa_creref_new%.cre~
-			LPF xa_inc_cre_difficulty
-				INT_VAR
-					xa_factor = xa_diff_factor
-					xa_hpdivisor = xa_hp_divisor
-					xa_expdivisor = xa_exp_divisor
-			END
-	END
+DEFINE_ACTION_FUNCTION xa_inc_cre_difficulty_newref
+	INT_VAR
+		xa_diff_factor = 1
+		xa_hp_divisor = 3
+		xa_exp_divisor = 6
+	STR_VAR
+		xa_creref_old = ~~
+		xa_creref_new = ~~
+	BEGIN
+		COPY_EXISTING ~%xa_creref_old%.cre~ ~override/%xa_creref_new%.cre~
+		LPF xa_inc_cre_difficulty
+			INT_VAR
+				xa_factor = xa_diff_factor
+				xa_hpdivisor = xa_hp_divisor
+				xa_expdivisor = xa_exp_divisor
+		END
+END
 //}
 
 //{ Patch Functions
+DEFINE_PATCH_FUNCTION xa_remove_cre_sounds
+	BEGIN
+		SET xa_sound_ref = -1
+		SET xa_sound_offset = 0xA4
+		SET xa_sound_endOffset = 0x230
+		
+		WHILE(xa_sound_offset <= xa_sound_endOffset) BEGIN
+			WRITE_LONG xa_sound_offset xa_sound_ref
+			xa_sound_offset = (xa_sound_offset + 4)
+		END
+END
 DEFINE_PATCH_FUNCTION xa_inc_cre_difficulty
 	INT_VAR
 		xa_factor = 1

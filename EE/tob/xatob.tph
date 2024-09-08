@@ -281,6 +281,7 @@ END
 		
 		COPY_EXISTING ~xacaelar.cre~ ~override/xacaela2.cre~
 		WRITE_BYTE 0x270 128 // set allegiance to neutral
+		LPF xa_remove_cre_sounds END
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xacaela2~

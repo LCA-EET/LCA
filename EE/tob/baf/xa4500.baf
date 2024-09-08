@@ -6,6 +6,7 @@ THEN
 		CreateVisualEffect("SPSUMGTE",[2270.460])
 		Wait(4)
 		CreateCreature("XATHRIX",[2270.490],W)  // Thrix
+		Wait(1)
 		ActionOverride("XATHRIX",StartDialogueNoSet(Player1))
 END
 
