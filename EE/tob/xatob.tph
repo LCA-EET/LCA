@@ -66,6 +66,10 @@ ACTION_IF (sod_carryover = 0) THEN BEGIN
 	INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
 END
 
+//{ Caelar VVC 
+	COPY ~%MOD_FOLDER%/tob/vvc/xaaasim.vvc~ ~override~
+//}
+
 //{ Sounds
 	COPY ~%MOD_FOLDER%/tob/wav/caelar~ ~override~
 //}
@@ -512,6 +516,7 @@ END
 
 	//{ Caelar's Cloak new
 		COPY ~%MOD_FOLDER%/tob/itm/xafinca1.itm~ ~override~
+		WRITE_ASCII 0x2C6 ~xaaasim~ #8 // vvc
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@5020)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@5020)
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@5021)
