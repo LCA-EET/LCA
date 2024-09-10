@@ -17,6 +17,13 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @7006 /* ~Spawn BDCaelar (xac109) and add her to the party.~*/
+		DO ~
+			CreateCreature("xac109", [-1.-1], N)
+			ActionOverride("xac109", JoinParty())
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @7005 /*@3191=~MoveToCampaign("ToB")~*/
 		DO ~
 			MoveToExpansion()
