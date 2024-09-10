@@ -278,6 +278,13 @@ END
 	//}
 	
 	//{ Caelar
+		//{ Change spell string refs
+			COPY_EXISTING ~xac106.spl~ ~override~ // Bless
+			WRITE_LONG 0xCE 17408 // Blessed
+			
+			COPY_EXISTING ~xac104.spl~ ~override~ // Cure Critical Wounds
+			WRITE_LONG 0xFE 14022 // Healed
+		//}
 		COPY_EXISTING ~xac109.cre~ ~override/xacaelar.cre~ 
 		REMOVE_CRE_ITEMS
 		ADD_CRE_ITEM ~xabroken~ #0 #0 #0 ~IDENTIFIED~ ~INV1~
