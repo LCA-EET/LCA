@@ -777,31 +777,7 @@
 	END
 //}
 
-//{ SARMEL01
-	EXTEND_BOTTOM SARMEL01 68 /* OK */
-		IF ~
-			IsValidForPartyDialogue("XACORWIN")
-			Global("XA_LC_MeetIllasera", "GLOBAL", 1)
-		~ THEN
-		EXTERN XACOR25J XA_SARMEL01_68
-	END
 
-	APPEND SARMEL01
-		IF ~~ THEN BEGIN XA_SARMEL01_68_2
-			SAY @48 /* ~Oh, dear! I trust your daughter is alright?~ */
-			
-			IF ~~ THEN
-			EXTERN XACOR25J XA_SARMEL01_68_3
-		END
-		
-		IF ~~ THEN BEGIN XA_SARMEL01_68_4
-			SAY @49 /* ~I'm glad to hear that your child is fine... but I've not heard of the Five before.~ */
-			
-			IF ~~ THEN REPLY @50 /* ~That's odd. I'd have thought that someone with as much knowledge on the matter would be familiar with them. In any case, with Illasera gone, what other Bhaalspawn should I be concerned with?~ */
-			GOTO 69
-		END
-	END
-//}
 
 //{ SARPROVF
 EXTEND_BOTTOM SARPROVF 0 /* OK */
