@@ -533,6 +533,7 @@ END
 	
 	//{ Caelar's Helmet bdhelmca
 		COPY_EXISTING ~xac107.itm~ ~override/xahelmca.itm~
+		WRITE_LONG 0x18 108 // make circlet droppable
 		WRITE_ASCII 0x656 ~xacaelar~ #8
 		WRITE_LONG 0x66E RESOLVE_STR_REF(@5028)
 	//}
