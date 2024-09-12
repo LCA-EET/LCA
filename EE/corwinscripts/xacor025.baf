@@ -215,7 +215,7 @@
 		RESPONSE #100
 			//Dialog J-73
 			SetInterrupt(FALSE)
-			ActionOverride("Imoen2", StartDialog("IMOEN2J", Player1))
+			ActionOverride("Imoen2", StartDialog("IMOEN25J", Player1))
 			SetInterrupt(TRUE)
 	END
 	//}
@@ -249,7 +249,7 @@
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinPregBabyName_Aerie", "GLOBAL", 1)
 			//Dialog J-74
-			ActionOverride("Aerie", StartDialog("AERIEJ", Player1))
+			ActionOverride("Aerie", StartDialog("AERIE25J", Player1))
 			SetInterrupt(TRUE)
 	END
 	//}
@@ -284,7 +284,7 @@
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinPregnantBabyName_Jah", "GLOBAL", 1)
 			//Dialog J-75
-			ActionOverride("Jaheira", StartDialog("JAHEIRAJ", Player1))
+			ActionOverride("Jaheira", StartDialog("JAHEI25J", Player1))
 			SetInterrupt(TRUE)
 	END
 	//}
