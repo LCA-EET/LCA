@@ -555,7 +555,7 @@ END
 		WRITE_LONG 0x18E RESOLVE_STR_REF(@5028)
 	//}
 
-	//{ Caelar's Sword + 3 bdsw1hca
+	//{ Caelar's Sword Aster's Edge + 3 bdsw1hca 
 		COPY_EXISTING ~xac111.itm~ ~override/xasw1hca.itm~
 		WRITE_ASCII 0x11E ~xacaelar~ #8
 		WRITE_LONG 0x136 RESOLVE_STR_REF(@5028)
@@ -565,7 +565,9 @@ END
 		COPY ~%MOD_FOLDER%/tob/bam/xasw1hc5.bam~ ~override~
 	
 		COPY ~%MOD_FOLDER%/tob/itm/xasw1hc5.itm~ ~override~
-		WRITE_LONG 0x1F6 RESOLVE_STR_REF(@5028)
+		WRITE_LONG 0x1F6 RESOLVE_STR_REF(@5028) // Desc note
+		WRITE_LONG 0xC RESOLVE_STR_REF(@5033) // Aster's Edge + 5
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@5034) // Identified Desc
 	//}
 	
 	//{ Corwin's Bow + 4 (Gond) new 
