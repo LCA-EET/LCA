@@ -254,6 +254,7 @@ END
 	
 	//{ Beno (Amkethran)
 		COPY_EXISTING ~xabeno.cre~ ~override/xabenoam.cre~ 
+		REMOVE_CRE_ITEMS
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xabenoam~
