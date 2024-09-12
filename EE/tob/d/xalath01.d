@@ -112,7 +112,7 @@ END
 
 //{ Initial Meeting
 IF ~
-	Global("XA_LC_LathMetPlayer", "GLOBAL", 1)
+	Global("XA_LC_LathMetPlayer", "LOCALS", 1)
 	OR(2)
 		PartyHasItem("XABENOHD")
 		PartyHasItem("XASTDAGB")
@@ -123,7 +123,7 @@ IF ~
 		PartyHasItem("XABENOHD")
 	~ THEN REPLY @1 /* ~What is it?~ */
 	DO ~
-		SetGlobal("XA_LC_LathMetPlayer", "GLOBAL", 2)
+		SetGlobal("XA_LC_LathMetPlayer", "LOCALS", 2)
 	~
 	GOTO XA_MissingHead
 	
@@ -131,7 +131,7 @@ IF ~
 		PartyHasItem("XASTDAGB")
 	~ THEN REPLY @1 /* ~What is it?~*/
 	DO ~
-		SetGlobal("XA_LC_LathMetPlayer", "GLOBAL", 2)
+		SetGlobal("XA_LC_LathMetPlayer", "LOCALS", 2)
 	~
 	GOTO XA_MissingSoul
 	
@@ -139,7 +139,7 @@ IF ~
 		PartyHasItem("XABENOHD")
 	~ THEN REPLY @2 /* ~Who are you?~*/
 	DO ~
-		SetGlobal("XA_LC_LathMetPlayer", "GLOBAL", 2)
+		SetGlobal("XA_LC_LathMetPlayer", "LOCALS", 2)
 	~
 	GOTO XA_MissingHead
 	
@@ -147,7 +147,7 @@ IF ~
 		PartyHasItem("XASTDAGB")
 	~ THEN REPLY @2 /* ~Who are you?~*/
 	DO ~
-		SetGlobal("XA_LC_LathMetPlayer", "GLOBAL", 2)
+		SetGlobal("XA_LC_LathMetPlayer", "LOCALS", 2)
 	~
 	GOTO XA_MissingSoul
 END
@@ -161,7 +161,6 @@ IF ~~ THEN BEGIN XA_MissingHead
 	= @7  /* ~Without his head, he cannot be resurrected.~ */
 	
 	IF ~
-		See("XACORWIN")
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN REPLY @9 /* ~Schael, do you want to handle this, or should I?~ */
 	EXTERN XACOR25J XA_LathBeno_Head
@@ -190,7 +189,6 @@ IF ~~ THEN BEGIN XA_MissingSoul
 	= @8  /* ~Without his soul, he cannot be resurrected.~ */
 	
 	IF ~
-		See("XACORWIN")
 		IsValidForPartyDialogue("XACORWIN")
 	~ THEN REPLY @9 /* ~Schael, do you want to handle this, or should I?~ */
 	EXTERN XACOR25J XA_LathBeno_Soul
@@ -387,7 +385,6 @@ IF ~~ THEN BEGIN XA_BroughtBody_Head2
 	
 	IF ~
 		IsValidForPartyDialogue("XACORWIN")
-		See("XACORWIN")
 	~
 	GOTO XA_TargetPractice
 END
