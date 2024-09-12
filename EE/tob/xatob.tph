@@ -507,14 +507,24 @@ END
 				xa_scriptName = ~xarohma4~
 		END
 	//}
-	
-	//{ Spirit Head
-		COPY_EXISTING ~head1.cre~ ~override/xahead1.cre~
-		WRITE_ASCII 0x2CC ~xahead1~ #8 	// Dialogue
+
+	//{ Summoned Ankheg
+		COPY_EXISTING ~ankheg01.cre~ ~override/xaankhsu.cre~
+		WRITE_BYTE 0x270 5 // Allegiance = Controlled
+		WRITE_BYTE 0x275 6 // Gender = Summoned
 	//}
 //}
 
+//{ Effects
+	//{ Amulet of Ankheg Effect
+		COPY_EXISTING ~xac101.eff~ ~override~
+		WRITE_ASCII 0x30 ~xaankhsu~ #8
+	//}
+
+//}
+
 //{ Items
+	
 	//{ Caelar's Chainmail bdchanca
 		COPY_EXISTING ~xac108.itm~ ~override/xachanca.itm~
 		WRITE_ASCII 0x446 ~xacaelar~ #8
