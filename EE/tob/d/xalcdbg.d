@@ -30,17 +30,74 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @7007 /* ~Epilogue Test~*/
+		GOTO XA_ToB_EpilogueTest
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 13
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 9
+		COPY_TRANS XALCDBG 14
+	END
+	
+	IF ~~ THEN BEGIN XA_ToB_EpilogueTest
+		SAY @7007 /* ~Epilogue Test~*/
 		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
+		IF ~~ THEN REPLY @7008
+		DO ~TextScreen("xacornd1")~
 		EXIT
+		
+		IF ~~ THEN REPLY @7009
+		DO ~TextScreen("xacornd2")~
+		EXIT
+		
+		IF ~~ THEN REPLY @7010
+		DO ~TextScreen("xacornd3")~
+		EXIT
+		
+		IF ~~ THEN REPLY @7011
+		DO ~TextScreen("xacornd4")~
+		EXIT
+		
+		IF ~~ THEN REPLY @7012
+		DO ~TextScreen("xacornd5")~
+		EXIT
+		
+		IF ~~ THEN REPLY @7013
+		DO ~TextScreen("xacornd6")~
+		EXIT
+		
+		IF ~~ THEN REPLY @7014
+		DO ~TextScreen("xalcand1")~
+		EXIT
+		
+		IF ~~ THEN REPLY @7015
+		DO ~TextScreen("xalcand2")~
+		EXIT
+		
+		IF ~~ THEN REPLY @7016
+		DO ~TextScreen("xalcand3")~
+		EXIT
+		
+		IF ~~ THEN REPLY @7017
+		DO ~TextScreen("xalcand4")~
+		EXIT
+		
+		IF ~~ THEN REPLY @7018
+		DO ~TextScreen("xalcand5")~
+		EXIT
+		
+		IF ~~ THEN REPLY @7019
+		DO ~TextScreen("xalcand6")~
+		EXIT
+		
+		IF ~~ THEN REPLY @7020
+		DO ~TextScreen("xacaeend")~
+		EXIT
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_ToB_Debug
+		
+		COPY_TRANS XALCDBG 14
 	END
 	
 	IF ~~ THEN BEGIN XA_ToB_AreaTest
@@ -61,13 +118,8 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_ToB_Debug
 		
-		IF ~~ THEN REPLY @3012 /*~Exit.~ */
-		GOTO 9
-		
-		IF ~~ THEN REPLY @3013 /*~Dismiss Debugger.~*/
-		DO ~
-			DestroySelf()
-		~
-		EXIT
+		COPY_TRANS XALCDBG 14
 	END
+	
+
 END
