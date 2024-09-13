@@ -30,11 +30,71 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @7021
+		GOTO XA_ToB_AdjustVariables
+		
+		IF ~~ THEN REPLY @7026
+		GOTO XA_ToB_CreateItem
+		
 		IF ~~ THEN REPLY @7007 /* ~Epilogue Test~*/
 		GOTO XA_ToB_EpilogueTest
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 13
+		
+		COPY_TRANS XALCDBG 14
+	END
+	
+	IF ~~ THEN BEGIN XA_ToB_CreateItem
+		SAY @7026
+		
+		IF ~~ THEN REPLY @7027
+		DO ~
+			GiveItemCreate("compon10", Player1, 0, 0, 0)
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @7028
+		DO ~
+			GiveItemCreate("compon02", Player1, 0, 0, 0)
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_ToB_Debug
+		
+		COPY_TRANS XALCDBG 14
+	END
+	
+	IF ~~ THEN BEGIN XA_ToB_AdjustVariables
+		SAY @7021
+		
+		IF ~~ THEN REPLY @7022
+		DO ~
+			SetGlobal("XA_LC_UsedGond", "GLOBAL", 0)
+		~
+		GOTO XA_ToB_AdjustVariables
+		
+		IF ~~ THEN REPLY @7023
+		DO ~
+			SetGlobal("XA_LC_UsedGond", "GLOBAL", 1)
+		~
+		GOTO XA_ToB_AdjustVariables
+		
+		IF ~~ THEN REPLY @7024
+		DO ~
+			SetGlobal("XA_LC_UsedTyr", "GLOBAL", 0)
+		~
+		GOTO XA_ToB_AdjustVariables
+		
+		IF ~~ THEN REPLY @7025
+		DO ~
+			SetGlobal("XA_LC_UsedTyr", "GLOBAL", 1)
+		~
+		GOTO XA_ToB_AdjustVariables
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_ToB_Debug
 		
 		COPY_TRANS XALCDBG 14
 	END

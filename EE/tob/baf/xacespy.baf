@@ -5,6 +5,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("ImpForgeStuff","GLOBAL",0)
+		SetGlobal("XA_LC_UsedGond", "GLOBAL", 1)
 		GiveItemCreate("XACORBO4",Player1,0,0,0)
 		StartDialogueNoSet(Player1)
 		SetInterrupt(TRUE)
@@ -17,6 +18,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("ImpForgeStuff","GLOBAL",0)
+		SetGlobal("XA_LC_UsedGond", "GLOBAL", 1)
 		GiveItemCreate("XACORBO5",Player1,0,0,0)
 		StartDialogueNoSet(Player1)
 		SetInterrupt(TRUE)
@@ -46,6 +48,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("ImpForgeStuff","GLOBAL",0)
+		SetGlobal("XA_LC_UsedTyr", "GLOBAL", 1)
 		GiveItemCreate("XASW1HC5",Player1,0,0,0)
 		StartDialogueNoSet(Player1)
 		SetInterrupt(TRUE)

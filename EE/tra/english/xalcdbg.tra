@@ -403,3 +403,11 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @7018=~TextScreen("xalcand5")~
 @7019=~TextScreen("xalcand6")~
 @7020=~TextScreen("xacaeend")~
+@7021=~Adjust Variables~
+@7022=~SetGlobal("XA_LC_UsedGond", "GLOBAL", 0)~
+@7023=~SetGlobal("XA_LC_UsedGond", "GLOBAL", 1)~
+@7024=~SetGlobal("XA_LC_UsedTyr", "GLOBAL", 0)~
+@7025=~SetGlobal("XA_LC_UsedTyr", "GLOBAL", 1)~
+@7026=~Create Item~
+@7027=~compon10 (Gond Bowstring)~
+@7028=~compon02 (Eye of Tyr)~

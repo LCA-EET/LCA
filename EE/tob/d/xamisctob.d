@@ -420,6 +420,34 @@
 //}
 
 //{ BOTSMITH
+	ADD_TRANS_TRIGGER BOTSMITH 4
+	~
+		GlobalLT("XA_LC_UsedGond", "GLOBAL", 1)
+	~
+	9 15 19 23 27 31 35 39 43 47 51 55 59 63 67 72 76 162
+	DO 15 17
+	
+	ADD_TRANS_TRIGGER BOTSMITH 82
+	~
+		GlobalLT("XA_LC_UsedGond", "GLOBAL", 1)
+	~
+	86
+	DO 15
+	
+	ADD_TRANS_TRIGGER BOTSMITH 4
+	~
+		GlobalLT("XA_LC_UsedTyr", "GLOBAL", 1)
+	~
+	9 15 19 162
+	DO 31
+	
+	ADD_TRANS_TRIGGER BOTSMITH 4
+	~
+		GlobalLT("XA_LC_UsedTyr", "GLOBAL", 1)
+	~
+	9 15 19 23 27 162
+	DO 29
+
 	ADD_STATE_TRIGGER BOTSMITH 2
 	~
 		Global("XA_LC_ItemMaker","GLOBAL",0)
@@ -545,6 +573,7 @@
 	EXTEND_BOTTOM BOTSMITH 4
 		IF ~
 			PartyHasItem("compon02")
+			PartyHasItem("xasw1hca")
 			!PartyHasItem("sw1h64")
 			!PartyHasItem("sw2h10")
 		~
