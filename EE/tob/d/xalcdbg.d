@@ -93,6 +93,30 @@ APPEND ~XALCDBG~
 		~
 		GOTO XA_ToB_AdjustVariables
 		
+		IF ~~ THEN REPLY @7037
+		DO ~
+			SetGlobal("XA_LC_ResetCaelarBanters", "GLOBAL", 1)
+		~
+		GOTO XA_ToB_AdjustVariables
+		
+		IF ~~ THEN REPLY @7038
+		DO ~
+			SetGlobal("XA_LC_ResetCorwinBanters", "GLOBAL", 1)
+		~
+		GOTO XA_ToB_AdjustVariables
+		
+		IF ~~ THEN REPLY @7040
+		DO ~
+			SetGlobal("XA_LC_Banter_CorwinSarevok", "GLOBAL", 1)
+		~
+		GOTO XA_ToB_AdjustVariables
+		
+		IF ~~ THEN REPLY @7041
+		DO ~
+			SetGlobal("XA_LC_Banter_CorwinCaelar", "GLOBAL", 1)
+		~
+		GOTO XA_ToB_AdjustVariables
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_ToB_Debug
 		
