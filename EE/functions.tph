@@ -154,8 +154,10 @@ DEFINE_ACTION_FUNCTION xa_generate_talk_script
 			DECOMPILE_AND_PATCH BEGIN
 				REPLACE_TEXTUALLY ~%PM%~ ~%xa_scriptName%~
 			END
+			EXTEND_TOP ~xalctalk.bcs~ ~override/xatalk%xa_idx%.bcs~
 			xa_idx = xa_idx + 1
 		END
+		
 END
 //}
 

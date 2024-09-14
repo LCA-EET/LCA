@@ -6,6 +6,7 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_EnteredToB", "GLOBAL", 1)
+			SetGlobal("XA_LC_ArrivedInUndercity", "GLOBAL", 0)
 			ChangeStat(Player1,FATIGUE,1,SET)
 			ChangeStat(Player2,FATIGUE,1,SET)
 			ChangeStat(Player3,FATIGUE,1,SET)

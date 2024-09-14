@@ -1,5 +1,5 @@
 
-	//{ Corwin Can Talk
+	//{ Can Talk
 	IF 
 		ActionListEmpty()
 		Global("XA_LC_CanTalk", "LOCALS", 1)
@@ -20,9 +20,7 @@
 			AreaCheck("AR2900") // Abyss
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CanTalk", "LOCALS", 0)
-			SetInterrupt(TRUE)
 			Continue()
 	END
 
@@ -43,42 +41,35 @@
 		!AreaCheck("AR2900") // Abyss
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CanTalk", "LOCALS", 1)
-			SetInterrupt(TRUE)
 			Continue()
 	END
 	//}
 	
-	//{ Corwin Can Talk to Player Check
-	IF 
-		ActionListEmpty()
-		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
-		OR(3)
-			!Global("XA_LC_CanTalk", "LOCALS", 1)
-			!IsValidForPartyDialogue(Player1)
-			!See(Player1)
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_LC_CanTalkToPlayer", "LOCALS", 0)
-			SetInterrupt(TRUE)
-			Continue()
-	END
+	//{ Can Talk to Player Check
+		IF 
+			ActionListEmpty()
+			Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+			OR(3)
+				!Global("XA_LC_CanTalk", "LOCALS", 1)
+				!IsValidForPartyDialogue(Player1)
+				!See(Player1)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_LC_CanTalkToPlayer", "LOCALS", 0)
+				Continue()
+		END
 
-
-	IF
-		ActionListEmpty()
-		!Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
-		Global("XA_LC_CanTalk", "LOCALS", 1)
-		IsValidForPartyDialogue(Player1)
-		See(Player1)
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_LC_CanTalkToPlayer", "LOCALS", 1)
-			SetInterrupt(TRUE)
-			Continue()
-	END
+		IF
+			ActionListEmpty()
+			!Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+			Global("XA_LC_CanTalk", "LOCALS", 1)
+			IsValidForPartyDialogue(Player1)
+			See(Player1)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+				Continue()
+		END
 	//}
 	

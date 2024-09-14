@@ -41,9 +41,9 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor011.baf~ // Rejoin Processing
 		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor003.baf~ // Sound Adjustments
 		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor012.baf~ // Can Leave Check
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor014.baf~ // Can Talk - Corwin / Player
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor015.baf~ // Can Talk - BG2
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor016.baf~ // Can Talk - BG2
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xattp.baf~ // Can Talk - Player
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xatlkcae.baf~
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xalctalk.bcs~
 		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor013.baf~ // Rep Handling
 		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor004.baf~ // Opinion Baseline
 		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor007.baf~ // Romance Conflict Handling
@@ -55,7 +55,15 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor020.baf~ // Random Banters BG2
 		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor021.baf~ // Random Banters ToB
 		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor022.baf~ // Banter Error Handling
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor006.baf~ // Exp Boost on Join
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xajoinxp.baf~ // Exp Boost Join
+//}
+
+//{ Caelar Script
+	EXTEND_TOP ~xacaelar.bcs~ ~%MOD_FOLDER%/corwinscripts/xattp.baf~ // Can Talk - Player
+	EXTEND_TOP ~xacaelar.bcs~ ~%MOD_FOLDER%/corwinscripts/xatlkcor.baf~
+	
+	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xalctalk.bcs~
+	EXTEND_BOTTOM ~xacaelar.bcs~ ~%MOD_FOLDER%/corwinscripts/xajoinxp.baf~ // Exp Boost Join
 //}
 
 ACTION_IF (bg1_carryover = 0) THEN BEGIN
