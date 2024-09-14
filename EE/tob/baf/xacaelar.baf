@@ -978,11 +978,17 @@ END
 /* Initialize Banters */
 
 IF
+	Global("XA_LC_ResetCaelarBanters", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_BanterCountInit", "LOCALS", 0)
+		SetGlobal("XA_LC_ResetCaelarBanters", "GLOBAL", 0)
+END
+
+IF
 	ActionListEmpty()
 	InParty(Myself)
-	OR(2)
-		!Global("XA_LC_BanterCountInit", "LOCALS", 1)
-		Global("XA_LC_ResetCaelarBanters", "GLOBAL", 1)
+	GlobalLT("XA_LC_BanterCountInit", "LOCALS", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -1036,10 +1042,8 @@ THEN
 			SetGlobal("XA_LC_Banter_CaelarCorwinEnd", "GLOBAL", 1)		
 			SetGlobal("XA_LC_Banter_CaelarPlayerEnd", "GLOBAL", 3)		//OK		
 		//}
-		
 		SetGlobal("XA_LC_Banter_Pending", "LOCALS", 0)
 		SetGlobal("XA_LC_BanterCountInit", "LOCALS", 1)
-		SetGlobal("XA_LC_ResetCaelarBanters", "GLOBAL", 0)
 		SetInterrupt(TRUE)
 		Continue()
 END

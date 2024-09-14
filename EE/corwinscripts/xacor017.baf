@@ -1,14 +1,20 @@
 /* Randomized banters. Refer to the override script(s) for additional interactions. */
 
 //{ 22: Banter Initialization
+IF
+	Global("XA_LC_ResetCorwinBanters", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_BanterCountInitCorwin", "GLOBAL", 1)
+		SetGlobal("XA_LC_ResetCorwinBanters", "GLOBAL", 0)
+END
+
 
 /* Initialize Banters */
 IF
 	ActionListEmpty()
 	InParty(Myself)
-	OR(2)
-		GlobalLT("XA_LC_BanterCountInitCorwin", "GLOBAL", 1)
-		Global("XA_LC_ResetCorwinBanters", "GLOBAL", 1)
+	GlobalLT("XA_LC_BanterCountInitCorwin", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -63,7 +69,6 @@ THEN
 		
 		SetGlobal("XA_LC_Banter_Pending", "LOCALS", 0)
 		SetGlobal("XA_LC_BanterCountInitCorwin", "GLOBAL", 1)
-		SetGlobal("XA_LC_ResetCorwinBanters", "GLOBAL", 0)
 		////DisplayStringHead(Myself, ~Banters reset!~)
 		SetInterrupt(TRUE)
 		Continue()

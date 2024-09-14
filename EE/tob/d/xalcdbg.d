@@ -105,6 +105,12 @@ APPEND ~XALCDBG~
 		~
 		GOTO XA_ToB_AdjustVariables
 		
+		IF ~~ THEN REPLY @7030
+		DO ~
+			SetGlobal("XA_LC_Banter_CaelarSarevok", "GLOBAL", 1)
+		~
+		GOTO XA_ToB_AdjustVariables
+		
 		IF ~~ THEN REPLY @7040
 		DO ~
 			SetGlobal("XA_LC_Banter_CorwinSarevok", "GLOBAL", 1)
