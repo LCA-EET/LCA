@@ -909,19 +909,14 @@ END
 //}
 
 //{ SARVOLO.D
-EXTEND_TOP SARVOLO 9 /* OK */
+EXTEND_TOP SARVOLO 9 #14
 	IF ~
 		InParty("XACAELAR")
 	~ THEN REPLY @55 /*~Tell me about Caelar.~*/
 	GOTO XA_Caelar
+END
 
-	IF ~
-		InParty("XACORWIN")
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		Global("XA_LC_MeetIllasera", "GLOBAL", 1)
-	~ THEN REPLY @56 /* ~Tell me about Schael.~*/
-	GOTO XA_Schael_Illasera
-	
+EXTEND_TOP SARVOLO 9 #16
 	IF ~
 		InParty("XACORWIN")
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -931,17 +926,26 @@ EXTEND_TOP SARVOLO 9 /* OK */
 	
 	IF ~
 		InParty("XACORWIN")
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-		!Global("XA_LC_MeetIllasera", "GLOBAL", 1)
-	~ THEN REPLY @56 /* ~Tell me about Schael.~*/
-	GOTO XA_Schael
-	
-	IF ~
-		InParty("XACORWIN")
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!Global("XA_LC_MeetIllasera", "GLOBAL", 1)
 	~ THEN REPLY @57 /* ~Tell me about Corwin.~*/
 	GOTO XA_Corwin
+END
+
+EXTEND_TOP SARVOLO 9 #30 /* OK */
+	IF ~
+		InParty("XACORWIN")
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		Global("XA_LC_MeetIllasera", "GLOBAL", 1)
+	~ THEN REPLY @56 /* ~Tell me about Schael.~*/
+	GOTO XA_Schael_Illasera
+	
+	IF ~
+		InParty("XACORWIN")
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		!Global("XA_LC_MeetIllasera", "GLOBAL", 1)
+	~ THEN REPLY @56 /* ~Tell me about Schael.~*/
+	GOTO XA_Schael
 END
 
 APPEND SARVOLO

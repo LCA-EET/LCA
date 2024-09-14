@@ -7,7 +7,7 @@
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
 # v1.3 2024-09-30
-* LCA no longer requires the Enhanced Edition Trilogy mod to be installed. It is, however, still compatible with EET.
+* Initial EE release.
 * Multitudes of bug fixes and improvements to sound, cutscenes, scripting and dialogs.
 * Added a new quest: Trouble in the Tower, which is accessible during the Return to Baldur's Gate portion of the mod.
 * Added new items: Basilisk Figurine, Dragonscale Chain, Dragonskin Robes and Dragonscale Shield. All are accessible during the Return to Baldur's Gate portion of the mod.
