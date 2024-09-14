@@ -165,13 +165,44 @@ END
 		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu03%)~
 	END
 	
+	//{ Script Names
+		ACTION_DEFINE_ARRAY xa_scriptNames
+		BEGIN
+			Aerie
+			Anomen
+			Caelar
+			Cernd
+			Dorn
+			Edwin
+			HaerDalis
+			Hexxat
+			Imoen2
+			Jaheira
+			Jan
+			Keldorn
+			Korgan
+			Mazzy
+			Minsc
+			Nalia
+			Neera
+			Rasaad
+			Sarevok
+			Valygar
+			Viconia
+			Yoshimo
+			XACORWIN
+		END
+	//}
+	
+	
 	//{ Corwin Script
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor011.baf~ // Rejoin Processing
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor005.baf~ // BG2 Misc
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor003.baf~ // Sound Adjustments
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor012.baf~ // Can Leave Check
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor014.baf~ // Can Talk - Corwin / Player
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor015.baf~ // Can Talk - BG2
+		//EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor015.baf~ // Can Talk - BG2
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xalctalk.bcs~
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor013.baf~ // Rep Handling
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor004.baf~ // Opinion Baseline
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor007.baf~ // Romance Conflict Handling

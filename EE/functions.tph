@@ -144,6 +144,18 @@ DEFINE_ACTION_FUNCTION xa_inc_cre_difficulty_newref
 				xa_expdivisor = xa_exp_divisor
 		END
 END
+
+DEFINE_ACTION_FUNCTION xa_generate_talk_script
+	STR_VAR
+		xa_extendto = ~~
+	BEGIN
+		ACTION_PHP_EACH xa_scriptNames AS _ => xa_scriptName
+		BEGIN
+			COPY_EXISTING ~xatalk.bcs~ ~override/xalctalk.bcs~
+			DECOMPILE_AND_PATCH BEGIN
+				REPLACE_TEXTUALLY ~%PM%~ ~%xa_scriptName%~
+			END
+END
 //}
 
 //{ Patch Functions
