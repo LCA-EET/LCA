@@ -146,15 +146,16 @@ DEFINE_ACTION_FUNCTION xa_inc_cre_difficulty_newref
 END
 
 DEFINE_ACTION_FUNCTION xa_generate_talk_script
-	STR_VAR
-		xa_extendto = ~~
 	BEGIN
+		OUTER_SET xa_idx = 0
 		ACTION_PHP_EACH xa_scriptNames AS _ => xa_scriptName
 		BEGIN
-			COPY_EXISTING ~xatalk.bcs~ ~override/xalctalk.bcs~
+			COPY_EXISTING ~xatalk.bcs~ ~override/xatalk%xa_idx%.bcs~
 			DECOMPILE_AND_PATCH BEGIN
 				REPLACE_TEXTUALLY ~%PM%~ ~%xa_scriptName%~
 			END
+			xa_idx = xa_idx + 1
+		END
 END
 //}
 
