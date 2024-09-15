@@ -61,8 +61,8 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 //{ Caelar Script
 	EXTEND_TOP ~xacaelar.bcs~ ~%MOD_FOLDER%/corwinscripts/xattp.baf~ // Can Talk - Player
 	EXTEND_TOP ~xacaelar.bcs~ ~%MOD_FOLDER%/corwinscripts/xatlkcor.baf~
+	EXTEND_TOP ~xacaelar.bcs~ ~override/xalctalk.bcs~
 	
-	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xalctalk.bcs~
 	EXTEND_BOTTOM ~xacaelar.bcs~ ~%MOD_FOLDER%/corwinscripts/xajoinxp.baf~ // Exp Boost Join
 //}
 
