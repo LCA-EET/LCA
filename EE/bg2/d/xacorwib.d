@@ -483,7 +483,8 @@ END
 
 //{ Dialog J-62 - CC OK
 IF ~
-	Global("XA_LC_Banter_CorwinPlayer", "GLOBAL", 2)
+	TriggerOverride(Player1, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+	TriggerOverride(Player1, Global("XA_LC_CorwinBanters", "LOCALS", 0))
 	Global("XA_LC_CorwinContinue", "GLOBAL", 1) //Friend
 	//play romance song
 ~
@@ -491,13 +492,15 @@ THEN BEGIN XA_SkieMessageDelivered_Friend
 	SAY @646 /* ~<CHARNAME>, do you have a moment?~ */
 	IF ~~ THEN REPLY @647 /* ~Of course Schael, what's on your mind?~ */
 	DO ~
-		SetGlobal("XA_LC_Banter_CorwinPlayer", "GLOBAL", 3)
+		ActionOverride(Player1, SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0))
+		ActionOverride(Player1, IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1))
 	~
 	GOTO XAA31
 	
 	IF ~~ THEN REPLY @648 /* ~Not right now.~*/
 	DO ~
-		SetGlobal("XA_LC_Banter_CorwinPlayer", "GLOBAL", 3)
+		ActionOverride(Player1, SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0))
+		ActionOverride(Player1, IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1))
 	~
 	GOTO XAA31A
 END
@@ -528,7 +531,8 @@ END
 
 //{ Dialog J-63 - CC OK
 IF ~
-	Global("XA_LC_Banter_CorwinPlayer", "GLOBAL", 2)
+	TriggerOverride(Player1, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+	TriggerOverride(Player1, Global("XA_LC_CorwinBanters", "LOCALS", 0))
 	Global("XA_LC_CorwinContinue", "GLOBAL", 2) //Romance
 	//play romance song
 ~
@@ -536,20 +540,23 @@ THEN BEGIN XA_SkieMessageDelivered_Romance
 	SAY @654 /* ~My love, do you have a moment?~ */
 	IF ~~ THEN REPLY @655 /* ~Of course dear, what's on your mind?~ */
 	DO ~
-		SetGlobal("XA_LC_Banter_CorwinPlayer", "GLOBAL", 3)
+		ActionOverride(Player1, SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0))
+		ActionOverride(Player1, IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1))
 	~
 	GOTO XAA31
 	
 	IF ~~ THEN REPLY @648 /* ~Not right now.~*/
 	DO ~
-		SetGlobal("XA_LC_Banter_CorwinPlayer", "GLOBAL", 3)
+		ActionOverride(Player1, SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0))
+		ActionOverride(Player1, IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1))
 	~
 	GOTO XAA31A
 END
 //}
 //{ Dialog J-60 - CC OK
 IF ~
-	Global("XA_LC_Banter_CorwinPlayer", "GLOBAL", 4)
+	TriggerOverride(Player1, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+	TriggerOverride(Player1, Global("XA_LC_CorwinBanters", "LOCALS", 1))
 	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	// play romance song
 ~
@@ -558,13 +565,15 @@ THEN BEGIN XA_CorwinPlayerBant2A
 	
 	IF ~~ THEN REPLY @657 /* ~Yes love, I am fine. I was just thinking about some of the places and people we've seen...~ */
 	DO ~
-		SetGlobal("XA_LC_Banter_CorwinPlayer", "GLOBAL", 5)
+		ActionOverride(Player1, SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0))
+		ActionOverride(Player1, IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1))
 	~
 	GOTO XAA48 //OK
 	
 	IF ~~ THEN REPLY @659 /* ~It's nothing... Let's go.~ */
 	DO ~
-		SetGlobal("XA_LC_Banter_CorwinPlayer", "GLOBAL", 5)
+		ActionOverride(Player1, SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0))
+		ActionOverride(Player1, IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1))
 	~
 	EXIT
 END
@@ -573,7 +582,8 @@ END
 
 //{ Dialog J-61 - CC OK
 IF ~
-	Global("XA_LC_Banter_CorwinPlayer", "GLOBAL", 4)
+	TriggerOverride(Player1, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+	TriggerOverride(Player1, Global("XA_LC_CorwinBanters", "LOCALS", 2))
 	!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 ~
 THEN BEGIN XA_CorwinPlayerBant2B
@@ -581,13 +591,15 @@ THEN BEGIN XA_CorwinPlayerBant2B
 	
 	IF ~~ THEN REPLY @662 /* ~Yes Schael, I am fine. I was just thinking about some of the places and people we've seen...~ */ 
 	DO ~
-		SetGlobal("XA_LC_Banter_CorwinPlayer", "GLOBAL", 5)
+		ActionOverride(Player1, SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0))
+		ActionOverride(Player1, IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1))
 	~
 	GOTO XAA48 //OK
 	
 	IF ~~ THEN REPLY @659 /* ~It's nothing... Let's go.~ */
 	DO ~
-		SetGlobal("XA_LC_Banter_CorwinPlayer", "GLOBAL", 5)
+		ActionOverride(Player1, SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0))
+		ActionOverride(Player1, IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1))
 	~
 	EXIT
 END
@@ -1059,7 +1071,7 @@ END
 		IF ~~ THEN
 		DO ~
 			SetGlobal("XA_LC_CorwinAnomenTalk", "LOCALS", 2)
-			SetGlobal("XA_LC_Banter_CorwinAnomenEnd", "GLOBAL", 3)	
+			ActionOverride("Anomen", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))	
 		~ 
 		EXIT
 		
@@ -1068,7 +1080,7 @@ END
 		~ THEN 
 		DO ~
 			SetGlobal("XA_LC_CorwinAnomenTalk", "LOCALS", 2)
-			SetGlobal("XA_LC_Banter_CorwinAnomenEnd", "GLOBAL", 3)	
+			ActionOverride("Anomen", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))	
 		~ 
 		EXTERN BANOMEN BCorwinAnomen1A
 	END
@@ -1764,15 +1776,13 @@ END
 	//{ region Dialog B-9
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinMazzy", "GLOBAL", 2)
+			TriggerOverride("Mazzy", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Mazzy", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			IsValidForPartyDialogue("Mazzy")
 		~
 		THEN XACORWIB BCorwinMazzy1A
 			@526 /* ~Mazzy? What do you need?~ [BD56086]*/
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinMazzy", "GLOBAL", 3)
-			~
 			== BMAZZY
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
@@ -1791,6 +1801,10 @@ END
 			@521 /* ~I see. Have you considered adventuring as a profession? Your leadership and skill with the bow would benefit almost any party.~ */
 			=
 			@522 /* ~Think of the good you can do.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@523 /* ~It's not that simple. I've responsibilities to tend to at home. My daughter and father being the most important.~  */
 			== BMAZZY
@@ -1803,15 +1817,13 @@ END
 	//{ region Dialog B-10
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinMazzy", "GLOBAL", 2)
+			TriggerOverride("Mazzy", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Mazzy", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			IsValidForPartyDialogue("Mazzy")
 		~
 		THEN XACORWIB BCorwinMazzy1B
 			@526 /* ~Mazzy? What do you need?~ [BD56086]*/
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinMazzy", "GLOBAL", 3)
-			~
 			== BMAZZY
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
@@ -1833,6 +1845,10 @@ END
 			@521 /* ~I see. Have you considered adventuring as a profession? Your leadership and skill with the bow would benefit almost any party.~ */
 			=
 			@522 /* ~Think of the good you can do.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@523 /* ~It's not that simple. I've responsibilities to tend to at home. My daughter and father being the most important.~  */
 			== BMAZZY
@@ -1892,14 +1908,16 @@ END
 	//{ Dialog B-11
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinNalia", "GLOBAL", 2)
+			TriggerOverride("Nalia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Nalia", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			GlobalGT("XA_LC_ReturnToBG", "GLOBAL", 0)
 			IsValidForPartyDialogue("Nalia")
 		~
 		THEN XACORWIB BCorwinNalia1_RBG
 			@375 /* ~Nalia — you seem agitated. What's bothering you?~ [XA100040] */
 			DO ~
-				SetGlobal("XA_LC_Banter_CorwinNalia", "GLOBAL", 3)
+				ActionOverride("Nalia", SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0))
+				ActionOverride("Nalia", IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1))
 			~
 			== BNALIA
 			@784 /* ~It seems that everywhere we go, we're confronted with maddening wealth disparities. I used to think that it was unique to Amn, but clearly I was mistaken.~ */
@@ -1911,17 +1929,19 @@ END
 	//{ Dialog B-12
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinNalia", "GLOBAL", 2)
+			TriggerOverride("Nalia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Nalia", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 			IsValidForPartyDialogue("Nalia")
 		~
 		THEN XACORWIB BCorwinNalia1
 			@375 /* ~~Nalia — you seem agitated. What's bothering you?~ [XA100040] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinNalia", "GLOBAL", 3)
-			~
 			== BNALIA
 			@381 /* ~The wealth disparity throughout Amn is maddening. Gilded cities full of slaves, and people who can't afford even a decent meal.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== BNALIA
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
@@ -1951,14 +1971,16 @@ END
 	//{ Dialog B-13A
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinNalia", "GLOBAL", 4)
+			TriggerOverride("Nalia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Nalia", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 			GlobalLT("XA_LC_CorwinPromoted", "GLOBAL", 1)
 			IsValidForPartyDialogue("XACORWIN")
 		~
 		THEN BNALIA BCorwinNalia2
 			@16 /* ~Captain, do you have a moment?~*/
 			DO ~
-				SetGlobal("XA_LC_Banter_CorwinNalia", "GLOBAL", 5)
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
 			~
 			== XACORWIB
 			@384 /* ~Sure, Nalia. What's on your mind?~ [XA100026] */
@@ -1982,14 +2004,16 @@ END
 	//{ Dialog B-13B
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinNalia", "GLOBAL", 4)
+			TriggerOverride("Nalia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Nalia", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 			GlobalGT("XA_LC_CorwinPromoted", "GLOBAL", 0)
 			IsValidForPartyDialogue("XACORWIN")
 		~
 		THEN BNALIA BCorwinNalia2
 			@74 /* ~Captain, do you have a moment?~*/
 			DO ~
-				SetGlobal("XA_LC_Banter_CorwinNalia", "GLOBAL", 5)
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
 			~
 			== XACORWIB
 			@384 /* ~Sure, Nalia. What's on your mind?~ [XA100026] */
@@ -2013,17 +2037,20 @@ END
 	//{ Dialog B-14
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinNalia", "GLOBAL", 6)
+			TriggerOverride("Nalia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Nalia", Global("XA_LC_CorwinBanters", "LOCALS", 2))
 			GlobalGT("XA_LC_ReturnToBG", "GLOBAL", 0)
 			IsValidForPartyDialogue("Nalia")
 		~
 		THEN XACORWIB BCorwinNalia3_RBG
 			@560 /* ~Nalia? You alright?~ [BD64597]*/
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinNalia", "GLOBAL", 7)
-			~
+			
 			== BNALIA
 			@459 /*  ~Not really.. I just have a lot on my mind. I've been hearing rumors that Amnish leaders are planning to criminalize vagrancy. Those that can't afford to pay the fines will be imprisoned~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@461 /* ~That seems ridiculous. There isn't enough room in the jails for that many people.~ */
 			== BNALIA
@@ -2046,17 +2073,20 @@ END
 	//{ Dialog B-15
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinNalia", "GLOBAL", 6)
+			TriggerOverride("Nalia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Nalia", Global("XA_LC_CorwinBanters", "LOCALS", 2))
 			GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 			IsValidForPartyDialogue("Nalia")
 		~
 		THEN XACORWIB BCorwinNalia3
 			@560 /* ~Nalia? You alright?~ [BD64597]*/
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinNalia", "GLOBAL", 7)
-			~
+			
 			== BNALIA
 			@459 /*  ~Not really.. I just have a lot on my mind. I've been hearing rumors that Amnish leaders are planning to criminalize vagrancy. Those that can't afford to pay the fines will be imprisoned~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@461 /* ~That seems ridiculous. There isn't enough room in the jails for that many people.~ */
 			== BNALIA
@@ -2087,7 +2117,8 @@ END
 	//{ Dialog B-16
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinHaerDalis", "GLOBAL", 2)
+			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 			IsValidForPartyDialogue("XACORWIN")
 		~
@@ -2099,7 +2130,8 @@ END
 	//{ Dialog B-17
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinHaerDalis", "GLOBAL", 2)
+			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 			IsValidForPartyDialogue("XACORWIN")
 		~
@@ -2110,10 +2142,7 @@ END
 
 	//{ End of B-16, B-17
 	CHAIN XACORWIB BCorwinHaerDalis1
-		@363 /* ~Sure. What do you need?~ [BD56086]*/
-		DO ~
-			SetGlobal("XA_LC_Banter_CorwinHaerDalis", "GLOBAL", 3)
-		~		
+		@363 /* ~Sure. What do you need?~ [BD56086]*/		
 		== BHAERDA
 		@364 /* ~Did you know, my raven, that your arrows sing to me as they fly?~ */
 		=
@@ -2124,6 +2153,10 @@ END
 		@358 /* ~You certainly have a talent for making the mundane seem dramatic.~ [XACORB61]*/
 		== BHAERDA
 		@359 /*  ~There is nothing mundane about you - a bird of prey, as deadly as she is beautiful.~*/
+		DO ~
+			SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+			IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+		~
 		== XACORWIB
 		@356 /* ~That's kind of you to say...~ [BD67552] */
 		=
@@ -2140,7 +2173,8 @@ END
 	//{ Dialog B-18
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinHaerDalis", "GLOBAL", 4)
+			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 			IsValidForPartyDialogue("HaerDalis")
 			OR(2)
@@ -2149,11 +2183,12 @@ END
 		~
 		THEN XACORWIB BCorwinHaerDalis2
 			@366 /* ~Haer'Dalis? What is it?~ [XA100039] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinHaerDalis", "GLOBAL", 5)
-			~
 			== BHAERDA
 			@367 /*~Have you given any thought to what we discussed earlier? What you will do once this adventure is over, my raven?~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@368 /* ~I have. My goal is to complete my mission, then return home, with <CHARNAME>, to my daughter and father.~*/
 			=
@@ -2171,7 +2206,8 @@ END
 	//{ Dialog B-19
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinHaerDalis", "GLOBAL", 4)
+			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 			IsValidForPartyDialogue("HaerDalis")
 			!Global("HaerDalisRomanceActive","GLOBAL",2)
@@ -2179,11 +2215,12 @@ END
 		~
 		THEN XACORWIB BCorwinHaerDalis2
 			@366 /* ~Haer'Dalis? What is it?~ [XACORB56]*/
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinHaerDalis", "GLOBAL", 5)
-			~
 			== BHAERDA
 			@367 /*~Have you given any thought to what we discussed earlier? What you will do once this adventure is over, my raven?~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@368 /* ~I have. My goal is to complete my mission, then return home, with <CHARNAME>, to my daughter and father.~*/
 			=
@@ -2199,7 +2236,8 @@ END
 	//{ Dialog B-20
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinHaerDalis", "GLOBAL", 4)
+			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 			!Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 			IsValidForPartyDialogue("HaerDalis")
 			OR(2)
@@ -2208,11 +2246,12 @@ END
 		~
 		THEN XACORWIB BCorwinHaerDalis2
 			@366 /* ~Haer'Dalis? What is it?~ [XACORB56] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinHaerDalis", "GLOBAL", 5)
-			~
 			== BHAERDA
 			@367 /*~Have you given any thought to what we discussed earlier? What you will do once this adventure is over, my raven?~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@369 /*  ~I have. My goal is to complete my mission, then return home to my daughter and father.~*/
 			=
@@ -2230,7 +2269,8 @@ END
 	//{ Dialog B-21
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinHaerDalis", "GLOBAL", 4)
+			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 			!Global("HaerDalisRomanceActive","GLOBAL",2)
 			!Global("HaerDalisRomanceActive","GLOBAL",1)
 			!Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
@@ -2238,11 +2278,12 @@ END
 		~
 		THEN XACORWIB BCorwinHaerDalis2
 			@366 /* ~Haer'Dalis? What is it?~ [XACORB56] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinHaerDalis", "GLOBAL", 5)
-			~
 			== BHAERDA
 			@367 /*~Have you given any thought to what we discussed earlier? What you will do once this adventure is over, my raven?~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@369 /*  ~I have. My goal is to complete my mission, then return home to my daughter and father.~*/
 			=
@@ -2262,17 +2303,19 @@ END
 	//{ Dialog B-2
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinMinsc", "GLOBAL", 2)
+			TriggerOverride("Minsc", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Minsc", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 			IsValidForPartyDialogue("Minsc")
 		~
 		THEN XACORWIB BCorwinMinsc1_M
 			@343 /* ~Minsc, I'm sorry about Dynaheir. I know that you two were very close.~ [XACORB45] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinMinsc", "GLOBAL", 3)
-			~
 			== BMINSC
 			@792 /* ~Thank you, dear Major soldier lady. Boo is glad that skull crushing justice was exacted upon the wizard that murdered her.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@345/* ~Um.. right. So am I.~*/
 			== BMINSC
@@ -2297,17 +2340,19 @@ END
 	//{ Dialog B-22
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinMinsc", "GLOBAL", 2)
+			TriggerOverride("Minsc", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Minsc", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 			IsValidForPartyDialogue("Minsc")
 		~
 		THEN XACORWIB BCorwinMinsc1_C
 			@343 /* ~Minsc, I'm sorry about Dynaheir. I know that you two were very close.~ [XACORB45] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinMinsc", "GLOBAL", 3)
-			~
 			== BMINSC
 			@353 /* ~Thank you, dear Captain soldier lady. Justice demands that I crush the skull of the wizard that killed her. I am glad that you are here to help inflict the most painful goodness on the forces of evil.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@345/* ~Um.. right. So am I.~*/
 			== BMINSC
@@ -2332,13 +2377,15 @@ END
 	//{ Dialog B-23
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinMinsc", "GLOBAL", 4)
+			TriggerOverride("Minsc", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Minsc", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 			IsValidForPartyDialogue("XACORWIN")
 		~
 		THEN BMINSC BCorwinMinsc2_M
 			@399  /*~Soldier lady, Boo has a question for you.~ */
 			DO ~
-				SetGlobal("XA_LC_Banter_CorwinMinsc", "GLOBAL", 5)
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
 			~
 			== XACORWIB
 			@325 /* ~Oh let's not, please.~ [BD63913] */
@@ -2369,14 +2416,12 @@ END
 	//{ Dialog B-24
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinMinsc", "GLOBAL", 6)
+			TriggerOverride("Minsc", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Minsc", Global("XA_LC_CorwinBanters", "LOCALS", 2))
 			IsValidForPartyDialogue("Minsc")
 		~
 		THEN XACORWIB BCorwinMinsc3
 			@333 /* ~I have a question for you.~ [XACORB44] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinMinsc", "GLOBAL", 7)
-			~
 			== BMINSC
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
@@ -2391,6 +2436,10 @@ END
 			@335 /* ~How long did you and Dynaheir travel together?~*/
 			== BMINSC
 			@336 /* ~I prefer to gauge time by measuring the change in the length of Boo's whiskers.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@337 /* ~...What.~*/
 			== BMINSC
@@ -2413,17 +2462,19 @@ END
 	//{ Dialog B-25
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinRasaad", "GLOBAL", 2)
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 			IsValidForPartyDialogue("XACORWIN")
 		~
 		THEN BRASAAD BCorwinRasaad1_C
 			@795 /* Captain, you seem troubled.~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@283 /* ~Rasaad.. it's nothing, I...~ [XACORB28] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinRasaad", "GLOBAL", 3)
-			~
 			== BRASAAD
 			@284 /* ~Yes?~ */
 			== XACORWIB
@@ -2446,17 +2497,19 @@ END
 	//{ Dialog B-26
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinRasaad", "GLOBAL", 2)
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 			IsValidForPartyDialogue("XACORWIN")
 		~
 		THEN BRASAAD BCorwinRasaad1_M
 			@794 /* ~Major, you seem troubled.~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@283 /* ~Rasaad.. it's nothing, I...~ [XACORB28] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinRasaad", "GLOBAL", 3)
-			~
 			== BRASAAD
 			@284 /* ~Yes?~ */
 			== XACORWIB
@@ -2479,15 +2532,12 @@ END
 	//{ Dialog B-27
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinRasaad", "GLOBAL", 4)
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 			IsValidForPartyDialogue("Rasaad")
 		~
 		THEN XACORWIB BCorwinRasaad1
 			@303 /* ~Rasaad, about that breathing exercise.~ [XACORB27] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinRasaad", "GLOBAL", 5)
-				SetGlobal("XA_LC_BreathingExercise", "GLOBAL", 1)
-			~
 			== BRASAAD
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
@@ -2504,6 +2554,10 @@ END
 			@295 /* ~Of course. It's a simple but effective exercise. It has helped me to control my anxiety and improve my focus.~ */
 			= @296 /* ~You take a deep breath, count to six. Breathe out for six counts. Breathe in, one, two, three, four, five, six. Breathe out, one, two, three, four, five, six.~ */
 			= @297 /* ~Try it - breathe in for six counts, then exhale for six.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@298 /*  ~Here goes... breathe in.. .. .. .. .. ..~ */
 			= @299 /* ~Breathe out.. .. .. .. .. ..~ */
@@ -2527,14 +2581,12 @@ END
 	//{ Dialog B-28
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinRasaad", "GLOBAL", 6)
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 2))
 			IsValidForPartyDialogue("Rasaad")
 		~
 		THEN XACORWIB BCorwinRasaad1
 			@304 /* ~Rasaad - I wanted to thank you. [xalc1292] ~ */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinRasaad", "GLOBAL", 7)
-			~
 			== BRASAAD
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
@@ -2549,6 +2601,10 @@ END
 			@306 /* ~I've been practicing that breathing exercise you showed me. It's been a big help.~ */
 			== BRASAAD
 			@307 /* ~Oh, I'm glad I was able to help.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@308 /*  ~Me too. One of these days, I'll show you some of the stretching exercises I do to loosen up my back and shoulder muscles.~ */
 			== BRASAAD
@@ -2575,7 +2631,8 @@ END
 	//{ Dialog B-29
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinRasaad", "GLOBAL", 8)
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 3))
 			!IsValidForPartyDialogue("Korgan")
 			!IsValidForPartyDialogue("Yoshimo")
 			IsValidForPartyDialogue("Rasaad")
@@ -2585,11 +2642,12 @@ END
 		~
 		THEN XACORWIB BCorwinRasaad4A
 			@483 /* ~Rasaad, do you have some time now? I can show you that back exercise we were talking about.~ [xalc1293] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinRasaad", "GLOBAL", 9)
-			~
 			== BRASAAD
 			@484 /*  ~Yes Schael, now is a good time.~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@485 /* ~Good. I'll demonstrate, you can follow along. Start by standing up staight. Place your arms behind your head, with your elbows bent, like this.~ */
 			== BRASAAD
@@ -2610,7 +2668,8 @@ END
 	//{ Dialog B-30
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinRasaad", "GLOBAL", 8)
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 3))
 			IsValidForPartyDialogue("Korgan")
 			!IsValidForPartyDialogue("Yoshimo")
 			IsValidForPartyDialogue("Rasaad")
@@ -2620,11 +2679,12 @@ END
 		~
 		THEN XACORWIB BCorwinRasaad4B
 			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XA100067] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinRasaad", "GLOBAL", 9)
-			~
 			== BRASAAD
 			@484 /*  ~Yes Schael, now is a good time.~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@485 /* ~Good. I'll demonstrate, you can follow along. Start by standing up staight. Place your arms behind your head, with your elbows bent, like this.~ */
 			== BRASAAD
@@ -2653,7 +2713,8 @@ END
 	//{ Dialog B-31
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinRasaad", "GLOBAL", 8)
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 3))
 			IsValidForPartyDialogue("Korgan")
 			IsValidForPartyDialogue("Yoshimo")
 			IsValidForPartyDialogue("Rasaad")
@@ -2663,11 +2724,12 @@ END
 		~
 		THEN XACORWIB BCorwinRasaad4B
 			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XA100067] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinRasaad", "GLOBAL", 9)
-			~
 			== BRASAAD
 			@484 /*  ~Yes Schael, now is a good time.~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@485 /* ~Good. I'll demonstrate, you can follow along. Start by standing up staight. Place your arms behind your head, with your elbows bent, like this.~ */
 			== BRASAAD
@@ -2696,7 +2758,8 @@ END
 	//{ Dialog B-32
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinRasaad", "GLOBAL", 8)
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 3))
 			!IsValidForPartyDialogue("Korgan")
 			IsValidForPartyDialogue("Yoshimo")
 			IsValidForPartyDialogue("Rasaad")
@@ -2706,11 +2769,12 @@ END
 		~
 		THEN XACORWIB BCorwinRasaad4C
 			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XA100067] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinRasaad", "GLOBAL", 9)
-			~
 			== BRASAAD
 			@484 /*  ~Yes Schael, now is a good time.~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@485 /* ~Good. I'll demonstrate, you can follow along. Start by standing up staight. Place your arms behind your head, with your elbows bent, like this.~ */
 			== BRASAAD
@@ -2747,7 +2811,8 @@ END
 	//{ Dialog B-33
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinRasaad", "GLOBAL", 8)
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 3))
 			!IsValidForPartyDialogue("Korgan")
 			!IsValidForPartyDialogue("Yoshimo")
 			IsValidForPartyDialogue("Viconia")
@@ -2756,11 +2821,12 @@ END
 		~
 		THEN XACORWIB BCorwinRasaad4D
 			@483 /* ~Rasaad - do you have some time now? I can show you that back exercise we were talking about. ~ [XA100067] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinRasaad", "GLOBAL", 9)
-			~
 			== BRASAAD
 			@484 /*  ~Yes Schael, now is a good time.~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@485 /* ~Good. I'll demonstrate while you follow along. Start by standing up staight. Place your arms behind your head, with your elbows bent, like this.~ */
 			== BRASAAD
@@ -2795,14 +2861,12 @@ END
 	//{ region Dialog B-34
 	CHAIN 
 		IF ~
-			Global("XA_LC_Banter_CorwinYoshimo", "GLOBAL", 2)
+			TriggerOverride("Yoshimo", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Yoshimo", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			IsValidForPartyDialogue("Yoshimo")
 		~
 		THEN XACORWIB BCorwinYoshimo1
 			@269 /* ~Yoshimo — what is it?~ [xalc1294] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinYoshimo", "GLOBAL", 3)
-			~
 			== BYOSHIM
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
@@ -2815,6 +2879,10 @@ END
 			@753 /* ~My lovely Major, a question if you will.~ */
 			== BYOSHIM
 			@282 /* ~Do the tales of my exploits reach as far north as Baldur's Gate?~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@273 /* ~No, they don't.~ */
 			== BYOSHIM
@@ -2853,9 +2921,6 @@ END
 		~
 		THEN XACORWIB BCorwinCernd1A
 			@258 /* ~Cernd, you have a beautiful child.~ [XACORB33] */
-			DO ~
-				SetGlobal("XA_LC_CorwinCerndBaby", "GLOBAL", 3)
-			~
 			== BCERND
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
@@ -2870,6 +2935,10 @@ END
 			@260 /* ~I remember when my daughter Rohma was just a baby. Holding your baby in your arms changes you, doesn't it?~ */
 			== BCERND
 			@261 /* ~It does! When I held Ahsdale, I felt a... clarity, that I had never experienced before, like my purpose in this world had changed.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@262 /* ~That's almost exactly how I felt with Rohma.. like my life had suddenly gained a meaning that it lacked before.~ */
 			== BCERND
@@ -2931,15 +3000,13 @@ END
 	//{ Dialog B-37
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinValygar", "GLOBAL", 2)
+			TriggerOverride("Valygar", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Valygar", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			!InParty("Minsc")
 			IsValidForPartyDialogue("Valygar")
 		~
 		THEN XACORWIB BCorwinValygar1A
 			@245 /* ~Valygar. It's good to have another Ranger on the team.~ [XA100033] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinValygar", "GLOBAL", 3)
-			~ 
 			== BVALYGA
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
@@ -2954,6 +3021,10 @@ END
 			@803 /* ~Of course. What's on your mind?~ */
 			== BVALYGA
 			@248 /* ~I've always felt that a Ranger's strength lies in their versatility. I'm interested in hearing why you chose to specialize in archery.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@864 /* ~There's a reason for that...~ [XA100142]*/
 			=@249 /* ~Well, unlike most Rangers, I'm not typically sent out on my own. The need for that versatility is reduced.~ */
@@ -2968,15 +3039,13 @@ END
 	//{ Dialog B-38
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinValygar", "GLOBAL", 2)
+			TriggerOverride("Valygar", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Valygar", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			InParty("Minsc")
 			IsValidForPartyDialogue("Valygar")
 		~
 		THEN XACORWIB BCorwinValygar1B
 			@245 /* ~Valygar. It's good to have another Ranger on the team.~ [XA100033]*/
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinValygar", "GLOBAL", 3)
-			~ 
 			= @246 /* ~Well */
 			= @886 /*~(She looks at Minsc, and shakes her head.)~*/
 			= @887 /* ~...One that isn't completely out of his mind, anyway. ~*/
@@ -2992,6 +3061,10 @@ END
 			@755 /* ~Yes, thank you Major. I'm interested in hearing why you chose to specialize in archery.~*/
 			== BVALYGA
 			@248 /* ~I've always felt that a Ranger's strength lies in their versatility.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@249 /* ~Well, unlike most Rangers, I'm not typically sent out on my own. The need for that versatility is reduced.~ */
 			= @250 /* ~I tend to work as part of a team, and having a specialization can contribute more to the team's success.~ */
@@ -3081,15 +3154,17 @@ END
 	//{ Dialog B-40
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinNeera", "GLOBAL", 2)
+			TriggerOverride("Neera", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Neera", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			IsValidForPartyDialogue("Neera")
 		~ THEN XACORWIB BCorwinNeera1
 			@215 /* ~Neera, how are you?~ [XACORB36] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinNeera", "GLOBAL", 3)
-			~ 
 			== BNEERA
 			@216 /* ~Good, Schael! What's new?~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@217 /* ~Nothing, it seems. I noticed you're still struggling to control your magic.~*/
 			== BNEERA
@@ -3189,13 +3264,11 @@ END
 	//{ region Dialog B-43
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinKorgan", "GLOBAL", 2)
+			TriggerOverride("Korgan", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Korgan", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			IsValidForPartyDialogue("Korgan")
 		~ THEN XACORWIB BCorwinKorgan1
 			@138 /* ~Get your filthy hands off me!~ [XACORB05] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinKorgan", "GLOBAL", 3)
-			~ 
 			== BKORGAN
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
@@ -3208,6 +3281,10 @@ END
 			@758 /* ~But Major, ye be the rarest of sights! A strong beauty, in uniform no less! ~ */
 			== BKORGAN
 			@139 /*  ~Ole Korgan nae hath seen one such as yerself. I simply needed a hand on yer wondrous bottom to see if ye be an illusion.~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@140 /* ~Well, I hope you got all you needed. Touch me like that again, dwarf, and you'll regret it.~ */
 			== BKORGAN
@@ -3224,15 +3301,17 @@ END
 	//{ region Dialog B-44
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinKorgan", "GLOBAL", 4)
+			TriggerOverride("Korgan", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Korgan", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 			IsValidForPartyDialogue("Korgan")
 		~ THEN XACORWIB BCorwinKorgan1
-			@194 /*  ~What is it Korgan?~ [XACORB42] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinKorgan", "GLOBAL", 5)
-			~ 
+			@194 /*  ~What is it Korgan?~ [XACORB42] */ 
 			== BKORGAN
 			@195 /* ~Aye, girlie. I feel yer eyes on me rear in battle. Doth ye like what ye see?~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@196 /*  ~Not particularly, no. Well - I must admit that your skill with the axe is impressive.~ */
 			== BKORGAN
@@ -3253,7 +3332,8 @@ END
 	//{ Dialog B-45
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinViconia", "GLOBAL", 2)
+			TriggerOverride("Viconia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Viconia", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			IsValidForPartyDialogue("Viconia")
 			OR(2)
 				!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -3261,7 +3341,6 @@ END
 		~ THEN XACORWIB BCorwinViconia1A
 			@114 /*  ~Never forget that I'm watching you.~ [BD67545] */
 			DO ~
-				SetGlobal("XA_LC_Banter_CorwinViconia", "GLOBAL", 3)
 				SetGlobalTimer("XA_LC_ViconiaBanter2Timer", "LOCALS", ONE_DAY)
 			~ 
 			== BVICONI
@@ -3278,6 +3357,10 @@ END
 			@116 /*  ~What? No, of course not!~ */
 			== BVICONI
 			@117 /* ~Oh come now, Schael. It is quite natural for females in our society to express and act upon their attraction for one another. Do not be bashful, my dear.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@118 /* ~Hmph. I'd never -- not with a drow!~ */
 			== BVICONI
@@ -3300,14 +3383,14 @@ END
 	//{ Dialog B-46
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinViconia", "GLOBAL", 2)
+			TriggerOverride("Viconia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Viconia", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			IsValidForPartyDialogue("Viconia")
 			Gender(Player1, MALE)
 		~ THEN XACORWIB BCorwinViconia1B
 			@114 /* ~Never forget that I'm watching you.~ [BD67545] */
 			DO ~
-				SetGlobal("XA_LC_Banter_CorwinViconia", "GLOBAL", 3)
 				SetGlobalTimer("XA_LC_ViconiaBanter2Timer", "LOCALS", ONE_DAY)
 			~ 
 			== BVICONI
@@ -3324,6 +3407,10 @@ END
 			@116 /*  ~What? No, of course not!~ */
 			== BVICONI
 			@117 /* ~Oh come now, Schael. It is quite natural for females in our society to express and act upon their attraction for one another. Do not be bashful, my dear.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@118 /* ~Hmph. I'd never -- not with a drow!~ */
 			== BVICONI
@@ -3428,7 +3515,8 @@ END
 	//{ Dialog B-49
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinImoen", "GLOBAL", 2)
+			TriggerOverride("Imoen2", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Imoen2", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			IsValidForPartyDialogue("Imoen2")
 		~ THEN XACORWIB BCorwinImoen1
 			@226 /* ~Imoen - what do you need?~ [XACORB58] */ 
@@ -3449,6 +3537,10 @@ END
 			@228 /*  ~I'm just glad that you're free from the wizard. Duke Jannath was very worried when she learned that you'd been kidnapped.~ */
 			== BIMOEN2
 			@229 /* ~Liia was worried about me? I miss her... she's a wonderful person, and a great teacher.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@230 /* ~Don't worry, you'll see her again once this is over. I'm sure she'd be proud of your progress in the magical arts.~ [XACORB59] */
 			== BIMOEN2
@@ -3529,16 +3621,18 @@ END
 	//{ Dialog B-52
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinImoen", "GLOBAL", 4)
+			TriggerOverride("Imoen2", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Imoen2", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			IsValidForPartyDialogue("Imoen2")
 		~ THEN XACORWIB BCorwinImoen2A
 			@448 /* ~Imoen, could I ask you something?~ [XACORB57] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinImoen", "GLOBAL", 5)
-			~ 
 			== BIMOEN2
 			@449 /* ~Sure, Schael. What's on your mind?~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@450 /*  ~You grew up with <CHARNAME>, in Candlekeep, right?~ */
 			== BIMOEN2
@@ -3570,16 +3664,18 @@ END
 	//{ Dialog B-53
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinImoen", "GLOBAL", 4)
+			TriggerOverride("Imoen2", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Imoen2", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			IsValidForPartyDialogue("Imoen2")
 		~ THEN XACORWIB BCorwinImoen2A
 			@448 /* ~Imoen, could I ask you something?~ [XA100067] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinImoen", "GLOBAL", 5)
-			~ 
 			== BIMOEN2
 			@449 /* ~Sure, Schael. What's on your mind?~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@450 /*  ~You grew up with <CHARNAME>, in Candlekeep, right?~ */
 			== BIMOEN2
@@ -3641,16 +3737,18 @@ END
 	//{ Dialog B-56
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinEdwin", "GLOBAL", 2)
+			TriggerOverride("Edwin", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Edwin", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			Gender("Edwin",MALE)
 			IsValidForPartyDialogue("Edwin")
 		~ THEN XACORWIB BCorwinEdwin1
 			@106 /* ~Edwin, a word, please.~ [XACORB06]*/
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinEdwin", "GLOBAL", 3)
-			~ 
 			== BEDWIN
 			@107 /* ~Yes? What is it that you want? (Can't this cretin see that I am busy?)~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@108 /*  ~As much as I hate to admit it, you are one of the finest spelXAasters I have ever seen. You are an essential part of our success.~ */
 			== BEDWIN
@@ -3672,15 +3770,17 @@ END
 	//{ Dialog B-57
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinEdwin", "GLOBAL", 4)
+			TriggerOverride("Edwin", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Edwin", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 			IsValidForPartyDialogue("Edwin")
 		~ THEN XACORWIB BCorwinEdwin2
 			@392 /*  ~What is it, Edwin?~ [XACORB42]*/
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinEdwin", "GLOBAL", 5)
-			~ 
 			== BEDWIN
 			@393 /* ~I wish to discuss your potential.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@394 /*   ~My potential?~ */
 			== BEDWIN
@@ -3705,15 +3805,17 @@ END
 	//{ Dialog B-58
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinEdwin", "GLOBAL", 6)
+			TriggerOverride("Edwin", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Edwin", Global("XA_LC_CorwinBanters", "LOCALS", 2))
 			IsValidForPartyDialogue("Edwin")
 		~ THEN XACORWIB BCorwinEdwin3
 			@404 /*  ~Edwin? What is it?~ [XACORB42] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinEdwin", "GLOBAL", 7)
-			~ 
 			== BEDWIN
 			@405 /* ~It is time for you to make your decision. (Yes, I have waited quite long enough.) Will you become by bethrothed in exchange for the mystical knowledge I offer you?~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@403 /*~You aren't going to let this go, are you?~ [BD66686]*/
 			=
@@ -3744,13 +3846,11 @@ END
 	//{ Dialog B-59
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinJan", "GLOBAL", 2)
+			TriggerOverride("Jan", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Jan", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			IsValidForPartyDialogue("Jan")
 		~ THEN XACORWIB BCorwinJan1
 			@440 /* ~Uh, what are you doing?~ [BD40510]*/
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinJan", "GLOBAL", 3)
-			~ 
 			== BJAN
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
@@ -3765,6 +3865,10 @@ END
 			@76 /*  ~Um... sure, Jan.~ */
 			== BJAN
 			@77 /* ~I added a few spices to give it a nice kick. I hope you find it to you liking!~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@78 /* ~Wow that's ... actually very good. Can I have another taste? */
 			== BJAN
@@ -3785,16 +3889,20 @@ END
 	//{ Dialog B-60
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinJan", "GLOBAL", 4)
+			TriggerOverride("Jan", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Jan", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 			IsValidForPartyDialogue("Jan")
 		~ THEN XACORWIB BCorwinJan2
 			@514 /* ~Jan? About the turnip stew recipe - ~ [XA100067] */
 			DO ~
 				SetGlobal("XA_LC_JanWantsToSeeBG", "GLOBAL", 1)
-				SetGlobal("XA_LC_Banter_CorwinJan", "GLOBAL", 5)
 			~ 
 			== BJAN
 			@515 /* ~Ah yes, here it is.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@516 /* Thanks again. ~ */
 			== BJAN
@@ -3912,13 +4020,11 @@ END
 	//{ Dialog B-63
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinKeldorn", "GLOBAL", 2)
+			TriggerOverride("Keldorn", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Keldorn", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			IsValidForPartyDialogue("Keldorn")
 		~ THEN XACORWIB BCorwinKeldorn1
 			@60 /* ~Keldorn, a moment of your time?~ [XACORB12] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinKeldorn", "GLOBAL", 3)
-			~ 
 			== BKELDOR
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
@@ -3933,6 +4039,10 @@ END
 			@62 /*  ~Do you have any children?~ [BD54420] */
 			== BKELDOR
 			@145 /* ~Yes, two daughters. I love them dearly.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@146 /* How do you balance your duties to your Order with your responsibilities as a parent?~ */
 			=
@@ -3951,14 +4061,12 @@ END
 	//{ Dialog B-64
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinKeldorn", "GLOBAL", 4)
+			TriggerOverride("Keldorn", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Keldorn", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			IsValidForPartyDialogue("Keldorn")
 		~ THEN XACORWIB BCorwinKeldorn1
 			@201 /* ~Yes, Keldorn?~ [BD68260]*/
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinKeldorn", "GLOBAL", 5)
-			~ 
 			== BKELDOR
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
@@ -3973,6 +4081,10 @@ END
 			@203 /* ~Yes, that's right.~ */
 			== BKELDOR
 			@67 /* ~And where is your husband? Is he not helping to raise her?~  */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@51 /* ~I'm not married - her father has never been a part of her life, which in this case is a good thing. ~ */
 			== BKELDOR
@@ -4000,14 +4112,12 @@ END
 	//{ Dialog B-65
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinKeldorn", "GLOBAL", 4)
+			TriggerOverride("Keldorn", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Keldorn", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			IsValidForPartyDialogue("Keldorn")
 		~ THEN XACORWIB BCorwinKeldorn1
 			@201 /* ~Yes, Keldorn?~ [BD68260] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinKeldorn", "GLOBAL", 5)
-			~ 
 			== BKELDOR
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
@@ -4022,6 +4132,10 @@ END
 			@203 /* ~Yes, that's right.~ */
 			== BKELDOR
 			@67 /* ~And where is your husband? Is he not helping to raise her?~  */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@68 /* ~I'm not married - her father has never been a part of her life, which in this case is a good thing. ~ */
 			= @59 /* ~You know, it's ironic that you'd ask about him. When Rohma was born, he wanted me to leave her at a temple of the Radiant Heart. Could you imagine? Giving up my baby like that? That was when I knew that it would never work between us.~ */
@@ -4061,14 +4175,12 @@ END
 	//{ Dialog B-67
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinAnomen", "GLOBAL", 2)
+			TriggerOverride("Anomen", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Anomen", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			!Global("XA_LC_CorwinHatesAnomen", "GLOBAL", 1)
 			IsValidForPartyDialogue("Anomen")
 		~ THEN XACORWIB BCorwinAnomen2
 			@174 /* ~Anomen. What is it?~ [XACORB02] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinAnomen", "GLOBAL", 3)
-			~ 
 			== BANOMEN
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
@@ -4081,6 +4193,10 @@ END
 			@768 /* ~Major Corwin, I wish to apologize to you for my earlier behaviour.~ */
 			== BANOMEN
 			@165 /* = ~It's just that I'm quite unaccustomed to seeing a woman serve in a military organization, let alone in a leadership position.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@166 /* ~The Flaming Fist doesn't care if a recruit is a man or a woman. What matters is their ability and willingness to do what's needed of them.~ */
 			== BANOMEN
@@ -4106,16 +4222,18 @@ END
 	//{ Dialog B-68
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinJaheira", "GLOBAL", 2)
+			TriggerOverride("Jaheira", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Jaheira", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			Global("XA_LC_IrenicusBeat", "GLOBAL", 1)
 			IsValidForPartyDialogue("Jaheira")
 		~ THEN XACORWIB jahRemorseChain1
 			@0 /* ~Jaheira.~ [XACORB16] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinJaheira", "GLOBAL", 3)
-			~
 			== BJAHEIR
 			@6 /*Yes?*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@344 /* I'm sorry for your loss.*/
 			
@@ -4138,16 +4256,18 @@ END
 	//{ Dialog B-69
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinJaheira", "GLOBAL", 2)
+			TriggerOverride("Jaheira", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Jaheira", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			!Global("XA_LC_IrenicusBeat", "GLOBAL", 1)
 			IsValidForPartyDialogue("Jaheira")
 		~ THEN XACORWIB jahRemorseChain2
 			@0 /* ~Jaheira.~ [XACORB16] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinJaheira", "GLOBAL", 3)
-			~
 			== BJAHEIR
 			@17 /* ~Yes, Captain?~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@344 /* I'm sorry for your loss.*/
 			= @1 /* ~I'm very sorry about Khalid. Your husband was good man, and a great warrior. Those who survived the siege on Bridgefort owe him their lives.~ */
@@ -4169,13 +4289,11 @@ END
 	//{ Dialog B-70
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinJaheira", "GLOBAL", 4)
+			TriggerOverride("Jaheira", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Jaheira", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 			IsValidForPartyDialogue("Jaheira")
 		~ THEN XACORWIB BCorwinJaheira1
 			@30 /* ~(She adjusts the string on her bow)~ [XA100067]   */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinJaheira", "GLOBAL", 5)
-			~ 
 			== BJAHEIR
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
@@ -4190,6 +4308,10 @@ END
 			@10 /* ~Yes, Jaheira?~ */
 			== BJAHEIR
 			@11 /*  ~You are quite skilled as a fighter, far moreso than the Flaming Fist I've encountered in my travels. Where did you acquire such skill?~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@12	/* ~My father was a Fist as well. He taught me how to fight at a young age. ~  */
 			== BJAHEIR
@@ -4209,13 +4331,11 @@ END
 	//{ Dialog B-71
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinJaheira", "GLOBAL", 6)
+			TriggerOverride("Jaheira", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Jaheira", Global("XA_LC_CorwinBanters", "LOCALS",2))
 			IsValidForPartyDialogue("Jaheira")
 		~ THEN XACORWIB BCorwinJaheira2
 			@0 /* ~~Jaheira.~ [XA100055]~*/
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinJaheira", "GLOBAL", 7)
-			~ 
 			== BJAHEIR
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
@@ -4232,6 +4352,10 @@ END
 			@19 /* ~I did not know her well. You see, she was killed when I was very young.~*/
 			== BJAHEIR
 			@20 /* ~I am sorry to hear that. I did not mean to stir up bad memories...~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@21 /* ~Yes.. my father does not speak of her often, but I know it still hurts him, and that he feels partly responsible.~*/
 			== BJAHEIR
@@ -4267,12 +4391,12 @@ END
 	//{ Dialog B-72
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinAerie", "GLOBAL", 2)
+			TriggerOverride("Aerie", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Aerie", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			IsValidForPartyDialogue("Aerie")
 		~ THEN XACORWIB BCorwinAerie1
 			@39 /* ~Aerie, what's wrong? You seem worried... more than usual, anyway.~ [XACORB13] */
 			DO ~
-				SetGlobal("XA_LC_Banter_CorwinAerie", "GLOBAL", 3)
 				SetGlobal("XA_LC_CorwinAerieScars", "GLOBAL", 1)
 			~  
 			== BAERIE
@@ -4289,6 +4413,10 @@ END
 			@41 /* ~Yes, what is it Aerie?~ */
 			== BAERIE
 			@42 /* ~I often worry about how my s-scars affect how people think of me. You have scars as well, yet you are always so c-confident and assertive. Why don't your scars affect you in the same way that my scars affect me?~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@43 /* ~Aerie, scars serve as a reminder to us. They show us that we are stronger than the person that tried to hurt us.~ */
 			== BAERIE
@@ -4311,15 +4439,17 @@ END
 	//{ Dialog B-74
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinAerie", "GLOBAL", 4)
+			TriggerOverride("Aerie", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Aerie", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 			IsValidForPartyDialogue("Aerie")
 		~ THEN XACORWIB BCorwinAerie2
 			@124 /*  ~Damn it!~ [XA100035]  */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinAerie", "GLOBAL", 5)
-			~  
 			== BAERIE
 			@125 /* ~Schael? What's wrong?~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@126 /* ~It's nothing, Aerie... one of the links in the back of my armor is pinched up against my vest. I can't quite reach it to pull it loose.~ */
 			== BAERIE
@@ -4372,16 +4502,18 @@ END
 	//{ Dialog B-75
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinAerie", "GLOBAL", 6)
+			TriggerOverride("Aerie", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Aerie", Global("XA_LC_CorwinBanters", "LOCALS", 2))
 			Global("XA_LC_HonorableDuel", "GLOBAL", 1) //CHARNAME dueled Ashatiel honorably
 			IsValidForPartyDialogue("Aerie")
 		~ THEN XACORWIB BCorwinAerie3A
-			@132 /* ~Aerie, you wanted to learn more about Ashatiel.. do you have some time now?~ [XACORB08]*/
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinAerie", "GLOBAL", 7)
-			~  
+			@132 /* ~Aerie, you wanted to learn more about Ashatiel.. do you have some time now?~ [XACORB08]*/ 
 			== BAERIE
 			@133 /* ~Yes, Schael. Please continue with your story.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@92/* ~<CHARNAME> and I were part of a coalition of forces from Baldur's Gate, Daggerford and Waterdeep. We marched north from Baldur's Gate to rendevous with the coalition and confront Caelar Argent and her crusaders.~*/
 			== BAERIE
@@ -4412,19 +4544,20 @@ END
 	//{ Dialog B-76
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinAerie", "GLOBAL", 8)
+			TriggerOverride("Aerie", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Aerie", Global("XA_LC_CorwinBanters", "LOCALS", 3))
 			Global("XA_LC_HonorableDuel", "GLOBAL", 1) //CHARNAME dueled Ashatiel honorably
 			IsValidForPartyDialogue("XACORWIN")
 		~ THEN BAERIE BCorwinAerie4A
 			@441 /* ~Schael? Do you have time now to finish the story a-about Ashatiel?~ [XA100067] */
-			
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@446 /* ~Ah, sure Aerie. We left off at the duel, between Ashatiel and <CHARNAME>.~*/
 			=
 			@95 /* ~Ashatiel fought bravely, but she was killed by <CHARNAME> after a long battle. In her last moments, she cried out for Caelar to save her, but no help came - I think she realized at that point that her faith in Caelar was misplaced.~   */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinAerie", "GLOBAL", 9)
-			~  
 			== BAERIE
 			@96 /* ~But that's - that's cruel! How could <PRO_HESHE> have killed her? Wasn't there another way?~*/
 			== XACORWIB
@@ -4449,16 +4582,18 @@ END
 	//{ Dialog B-77
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinAerie", "GLOBAL", 6)
+			TriggerOverride("Aerie", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Aerie", Global("XA_LC_CorwinBanters", "LOCALS",2))
 			!Global("XA_LC_HonorableDuel", "GLOBAL", 1) //CHARNAME refused to duel Ashatiel, or cheated
 			IsValidForPartyDialogue("Aerie")
 		~ THEN XACORWIB BCorwinAerie3B
 			@132 /* ~Aerie, you wanted to learn more about Ashatiel.. do you have some time now?~ [XACORB08]*/
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinAerie", "GLOBAL", 7)
-			~ 
 			== BAERIE
 			@133 /* ~Yes, Schael. Please continue with your story.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@92/* ~<CHARNAME> and I were part of a coalition of forces from Baldur's Gate, Daggerford and Waterdeep. We marched north from Baldur's Gate to rendevous with the coalition and confront Caelar Argent and her crusaders.~*/
 			== BAERIE
@@ -4487,18 +4622,20 @@ END
 	//{ Dialog B-78
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinAerie", "GLOBAL", 8)
+			TriggerOverride("Aerie", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Aerie", Global("XA_LC_CorwinBanters", "LOCALS", 3))
 			!Global("XA_LC_HonorableDuel", "GLOBAL", 1)//CHARNAME refused to duel Ashatiel, or cheated
 			IsValidForPartyDialogue("Aerie")
 		~ THEN BAERIE BCorwinAerie4B
 			@441 /* ~Schael? Do you have time now to finish the story a-about Ashatiel?~ [XA100067] */
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@442 /* ~Ah, sure Aerie. Right, Ashatiel left the keep to lead the crusaders' counterattack.~ */
 			=
 			@150 /* ~She, and the other crusaders that took part in the counterattack fought bravely. <CHARNAME> rallied the coalition and defeated the crusaders, and Ashatiel was killed. We were victorious, but many lives on both sides were lost.~*/
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinAerie", "GLOBAL", 9)
-			~
 			== BAERIE
 			@151 /* ~But that's - that's terrible! Wasn't there another way Schael, b-besides bloodshed?~*/
 			== XACORWIB
@@ -4526,13 +4663,11 @@ END
 	//{ Dialog B-80
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinDorn", "GLOBAL", 2)
+			TriggerOverride("Dorn", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Dorn", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			IsValidForPartyDialogue("Dorn")
 		~ THEN XACORWIB BCorwinDorn1
 			@32 /* ~Dorn - I thought you'd have learned by now that you can't serve two masters.~ [XACORB22] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinDorn", "GLOBAL", 3)
-			~ 
 			== BDORN
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
@@ -4549,6 +4684,10 @@ END
 			@35 /* ~Watch your tongue, woman. You are very far from home, and your precious Flaming Fist.~*/
 			= 
 			@36 /* ~You are the one who is trying to serve two masters.~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@37 /* ~The difference is that <CHARNAME>'s goals and those of the Dukes are aligned. Your patron only wants to feed on the death and destruction left in your wake.~*/
 			== BDORN
@@ -4567,16 +4706,18 @@ END
 	//{ Dialog B-81
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinDorn", "GLOBAL", 4)
+			TriggerOverride("Dorn", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Dorn", Global("XA_LC_CorwinBanters", "LOCALS",1))
 			!Global("XA_LC_DornPatronsDead", "GLOBAL", 1)
 			IsValidForPartyDialogue("Dorn")
 		~ THEN XACORWIB BCorwinDorn2
 			@156 /* ~Dorn, I give orders to those under my command either verbally, or in writing. How do you receive orders from your patron?~ [XACORB04] */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinDorn", "GLOBAL", 5)
-			~ 
 			== BDORN
 			@157 /* ~What concern of it is yours?~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@158 /* = ~How do you know that the orders you receive are legitimate? That they aren't sent by some other person, or thing?~ */
 			== BDORN
@@ -4604,16 +4745,18 @@ END
 	//{ Dialog B-81A
 	CHAIN
 		IF ~
-			Global("XA_LC_Banter_CorwinDorn", "GLOBAL", 4)
+			TriggerOverride("Dorn", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Dorn", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 			Global("XA_LC_DornPatronsDead", "GLOBAL", 1)
 			IsValidForPartyDialogue("Dorn")
 		~ THEN XACORWIB BCorwinDorn2
 			@586 /* ~Dorn, I'm curious.~ */
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinDorn", "GLOBAL", 5)
-			~ 
 			== BDORN
 			@587 /* ~And? Out with it.~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
 			== XACORWIB
 			@588 /* = ~I give orders to those under my command either verbally, or in writing. How did you receive orders from your patron?~*/
 			== BDORN

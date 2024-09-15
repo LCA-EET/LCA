@@ -1,0 +1,89 @@
+IF
+	ActionListEmpty()
+	!ActuallyInCombat()
+	GlobalTimerExpired("XA_LC_BanterTimer", "LOCALS")
+	InParty(Myself)
+	Global("XA_LC_BanterTarget", "LOCALS", 0)
+	NumInParty(6)
+THEN
+	RESPONSE #17
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 1)
+	RESPONSE #16
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 2)
+	RESPONSE #16
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 3)
+	RESPONSE #16
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 4)
+	RESPONSE #16
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 5)
+	RESPONSE #16
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 6)
+END
+
+IF
+	ActionListEmpty()
+	!ActuallyInCombat()
+	GlobalTimerExpired("XA_LC_BanterTimer", "LOCALS")
+	InParty(Myself)
+	Global("XA_LC_BanterTarget", "LOCALS", 0)
+	NumInParty(5)
+THEN
+	RESPONSE #20
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 1)
+	RESPONSE #20
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 2)
+	RESPONSE #20
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 3)
+	RESPONSE #20
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 4)
+	RESPONSE #20
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 5)
+END
+
+IF
+	ActionListEmpty()
+	!ActuallyInCombat()
+	GlobalTimerExpired("XA_LC_BanterTimer", "LOCALS")
+	InParty(Myself)
+	Global("XA_LC_BanterTarget", "LOCALS", 0)
+	NumInParty(4)
+THEN
+	RESPONSE #25
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 1)
+	RESPONSE #25
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 2)
+	RESPONSE #25
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 3)
+	RESPONSE #25
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 4)
+END
+
+IF
+	ActionListEmpty()
+	!ActuallyInCombat()
+	GlobalTimerExpired("XA_LC_BanterTimer", "LOCALS")
+	InParty(Myself)
+	Global("XA_LC_BanterTarget", "LOCALS", 0)
+	NumInParty(3)
+THEN
+	RESPONSE #34
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 1)
+	RESPONSE #33
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 2)
+	RESPONSE #33
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 3)
+END
+
+IF
+	ActionListEmpty()
+	!ActuallyInCombat()
+	GlobalTimerExpired("XA_LC_BanterTimer", "LOCALS")
+	InParty(Myself)
+	Global("XA_LC_BanterTarget", "LOCALS", 0)
+	NumInParty(2)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 1)
+END	
+
+

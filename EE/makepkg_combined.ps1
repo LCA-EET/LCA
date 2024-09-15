@@ -9,7 +9,7 @@ $folders = @(
 'bg1',
 'bg2',
 'compat',
-'corwinscripts',
+'cre_scripts',
 'generated/a',
 'generated/c',
 'generated/d',

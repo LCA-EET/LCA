@@ -1,0 +1,9 @@
+IF
+	ActionListEmpty()
+	!ActuallyInCombat()
+	GlobalGT("XA_LC_BanterTarget", "LOCALS", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_BanterTarget", "LOCALS", 0)
+		Continue()
+END

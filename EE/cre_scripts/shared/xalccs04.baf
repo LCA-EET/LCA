@@ -1,0 +1,15 @@
+IF
+	ActionListEmpty()
+	!ActuallyInCombat()
+	InParty(Myself)
+	Global("XA_LC_CanTalk", "LOCALS", 1)
+	TriggerOverride(Player1, Global("XA_LC_%NAME%BanterPending", "LOCALS", 1))
+	IsValidForPartyDialogue(Player1)
+	IsValidForPartyDialogue(Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ActionOverride(Player1, Interact("%SN%"))
+		Interact(Player1)
+		SetInterrupt(TRUE)
+END

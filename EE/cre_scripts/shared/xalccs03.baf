@@ -1,0 +1,18 @@
+IF
+	ActionListEmpty()
+	!ActuallyInCombat()
+	InParty(Myself)
+	Global("XA_LC_CanTalk", "LOCALS", 1)
+	Global("XA_LC_BanterTarget", "LOCALS", 100)
+	IsValidForPartyDialogue(Myself)
+	IsValidForPartyDialogue(Player1)
+	See(Player1)
+	TriggerOverride(Player1, LocalsLT("XA_LC_[NAME]Banters", "XA_LC_[NAME]BantersEnd"))
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+		ActionOverride(Player1, SetGlobal("XA_LC_[NAME]BanterPending", "LOCALS", 1))
+		SetInterrupt(TRUE)
+		Continue()
+END

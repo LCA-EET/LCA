@@ -1,7 +1,8 @@
 PRINT @3000  /* ~Processing BG2 changes...~ */
 SILENT
 
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/corwinscripts~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/cre_scripts/corwin~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/cre_scripts/shared~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf/params~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf/cutscenes~
@@ -192,28 +193,51 @@ END
 		END
 	//}
 	
+	//{ Script Builders
+		LAF xa_generate_talk_script END // xalctalk.bcs
+		LAF xa_replace_recompile_string 
+			INT_VAR
+				xa_top = 0
+			STR_VAR
+				xa_strToReplace = ~%NAME%~
+				xa_replacement = ~Corwin~
+				xa_output = ~%MOD_FOLDER%/temp/xalcbico~
+				xa_bcs = ~xalccs01~
+		END
+		LAF xa_build_banter_pending_script
+			STR_VAR
+				xa_replacement = ~Corwin~
+				xa_bcs = ~xalccs03~
+				xa_extendTo = ~xacor029~
+		END
+	//}
 	
 	//{ Corwin Script
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor011.baf~ // Rejoin Processing
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor005.baf~ // BG2 Misc
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor003.baf~ // Sound Adjustments
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor012.baf~ // Can Leave Check
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xattp.baf~ // Can Talk - Corwin / Player
-		LAF xa_generate_talk_script END
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xatlkcae.baf~
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xalctalk.bcs~
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor013.baf~ // Rep Handling
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor004.baf~ // Opinion Baseline
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor007.baf~ // Romance Conflict Handling
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor008.baf~ // BG2 Event Handling
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor009.baf~ // RBG Event Handling
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor023.baf~ // BG2 NPC Interactions
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor017.baf~ // Banter init / NBI
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor018.baf~ // Banter Primers BG2
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor020.baf~ // Random Banters BG2
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor022.baf~ // Banter Error Handling
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor006.baf~ // Exp Boost Spellhold
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xajoinxp.baf~ // Exp Boost Join
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor011.baf~ // Rejoin Processing
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor005.baf~ // BG2 Misc
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor003.baf~ // Sound Adjustments
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor012.baf~ // Can Leave Check
+		
+		
+		
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs00.baf~ // Can Talk - Corwin / Player
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~xalctalk.bcs~ // Talk to NPCs
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~xacor028.bcs~ // Talk to Caelar
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/temp/xalcbico.bcs~ // Banter Interval - Corwin
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~xacor030.bcs~ // Banter Pending
+		
+		
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor013.baf~ // Rep Handling
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor004.baf~ // Opinion Baseline
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor007.baf~ // Romance Conflict Handling
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor008.baf~ // BG2 Event Handling
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor009.baf~ // RBG Event Handling
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor023.baf~ // BG2 NPC Interactions
+		
+		
+		
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor006.baf~ // Exp Boost Spellhold
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs06.baf~ // Exp Boost Join
 	//}
 	
 	ACTION_IF (isEET = 1) THEN BEGIN
