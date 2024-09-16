@@ -2,11 +2,11 @@
 
 IF 
 	ActionListEmpty()
-	Global("XA_LC_%NAME%BanterTimerReset", "GLOBAL", 1)
+	Global("XA_LC_[NAME]BanterTimerReset", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_%NAME%BanterTimerReset", "GLOBAL", 0)
+		SetGlobal("XA_LC_[NAME]BanterTimerReset", "GLOBAL", 0)
 		SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
 		////DisplayStringHead(Myself, ~DEBUG: 22-01~)
 		SetInterrupt(TRUE)
@@ -28,16 +28,16 @@ END
 
 IF 
 	ActionListEmpty()
-	Global("XA_LC_%NAME%BanterInterval", "GLOBAL", 0) // Default
+	Global("XA_LC_[NAME]BanterInterval", "GLOBAL", 0) // Default
 	Global("XA_LC_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LC_%NAME%BanterInterval", "GLOBAL", 10)
+		SetGlobal("XA_LC_[NAME]BanterInterval", "GLOBAL", 10)
 END
 
 IF 
 	ActionListEmpty()
-	Global("XA_LC_%NAME%BanterInterval", "GLOBAL", 1) 
+	Global("XA_LC_[NAME]BanterInterval", "GLOBAL", 1) 
 	Global("XA_LC_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
@@ -52,7 +52,7 @@ END
 
 IF 
 	ActionListEmpty()
-	Global("XA_LC_%NAME%BanterInterval", "GLOBAL", 2) 
+	Global("XA_LC_[NAME]BanterInterval", "GLOBAL", 2) 
 	Global("XA_LC_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
@@ -67,7 +67,7 @@ END
 
 IF 
 	ActionListEmpty()
-	Global("XA_LC_%NAME%BanterInterval", "GLOBAL", 3) 
+	Global("XA_LC_[NAME]BanterInterval", "GLOBAL", 3) 
 	Global("XA_LC_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
@@ -82,7 +82,7 @@ END
 
 IF 
 	ActionListEmpty()
-	Global("XA_LC_%NAME%BanterInterval", "GLOBAL", 4) 
+	Global("XA_LC_[NAME]BanterInterval", "GLOBAL", 4) 
 	Global("XA_LC_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
@@ -97,7 +97,7 @@ END
 
 IF 
 	ActionListEmpty()
-	Global("XA_LC_%NAME%BanterInterval", "GLOBAL", 5) 
+	Global("XA_LC_[NAME]BanterInterval", "GLOBAL", 5) 
 	Global("XA_LC_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
@@ -112,7 +112,7 @@ END
 
 IF 
 	ActionListEmpty()
-	Global("XA_LC_%NAME%BanterInterval", "GLOBAL", 6) 
+	Global("XA_LC_[NAME]BanterInterval", "GLOBAL", 6) 
 	Global("XA_LC_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
@@ -127,7 +127,7 @@ END
 
 IF 
 	ActionListEmpty()
-	Global("XA_LC_%NAME%BanterInterval", "GLOBAL", 7) 
+	Global("XA_LC_[NAME]BanterInterval", "GLOBAL", 7) 
 	Global("XA_LC_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
@@ -142,7 +142,7 @@ END
 
 IF 
 	ActionListEmpty()
-	Global("XA_LC_%NAME%BanterInterval", "GLOBAL", 8) 
+	Global("XA_LC_[NAME]BanterInterval", "GLOBAL", 8) 
 	Global("XA_LC_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
@@ -157,7 +157,7 @@ END
 
 IF 
 	ActionListEmpty()
-	Global("XA_LC_%NAME%BanterInterval", "GLOBAL", 9) 
+	Global("XA_LC_[NAME]BanterInterval", "GLOBAL", 9) 
 	Global("XA_LC_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
@@ -172,7 +172,7 @@ END
 
 IF 
 	ActionListEmpty()
-	Global("XA_LC_%NAME%BanterInterval", "GLOBAL", 10) 
+	Global("XA_LC_[NAME]BanterInterval", "GLOBAL", 10) 
 	Global("XA_LC_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
@@ -187,7 +187,7 @@ END
 
 IF 
 	ActionListEmpty()
-	Global("XA_LC_%NAME%BanterInterval", "GLOBAL", 11) 
+	Global("XA_LC_[NAME]BanterInterval", "GLOBAL", 11) 
 	Global("XA_LC_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
@@ -202,7 +202,7 @@ END
 
 IF 
 	ActionListEmpty()
-	Global("XA_LC_%NAME%BanterInterval", "GLOBAL", 12) 
+	Global("XA_LC_[NAME]BanterInterval", "GLOBAL", 12) 
 	Global("XA_LC_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100

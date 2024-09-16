@@ -11,7 +11,7 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 //{ Action Functions
 DEFINE_ACTION_FUNCTION xa_build_banter_pending_script
 	STR_VAR
-		xa_toReplace = ~[NAME]~
+		xa_toReplace = ~\[NAME\]~
 		xa_replacement = ~~
 		xa_bcs = ~~
 		xa_extendTo = ~~
@@ -21,15 +21,17 @@ DEFINE_ACTION_FUNCTION xa_build_banter_pending_script
 		BEGIN
 			REPLACE_TEXTUALLY ~%xa_toReplace%~ ~%xa_replacement%~
 		END
-		EXTEND_BOTTOM ~%xa_extendTo%.bcs~ ~%MOD_FOLDER%/temp/%xa_replacement%%xa_bcs%.bcs~
+		EXTEND_BOTTOM ~%xa_extendTo%.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
+		OUTER_SET xa_basefileID = xa_tempID
 		OUTER_SET xa_index = 2
-		OUTER_WHILE (xa_index < 6) BEGIN
-			COPY_EXISTING ~%MOD_FOLDER%/temp/%xa_replacement%%xa_bcs%.bcs~ ~%MOD_FOLDER%/temp/%xa_extendTo%%xa_index%.bcs~
+		OUTER_WHILE (xa_index < 7) BEGIN
+			COPY_EXISTING ~%MOD_FOLDER%/temp/%xa_basefileID%.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
 			DECOMPILE_AND_PATCH
 			BEGIN
 				REPLACE_TEXTUALLY ~Player1~ ~Player%xa_index%~
 			END
-			EXTEND_BOTTOM ~%xa_extendTo%.bcs~ ~%MOD_FOLDER%/temp/%xa_extendTo%%xa_index%.bcs~
+			EXTEND_BOTTOM ~%xa_extendTo%.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
+			xa_tempID = xa_tempID + 1
 			xa_index = xa_index + 1
 		END
 END
@@ -43,7 +45,7 @@ DEFINE_ACTION_FUNCTION xa_replace_recompile_string
 		COPY_EXISTING ~%xa_bcs%.bcs~ ~%xa_output%.bcs~
 		DECOMPILE_AND_PATCH
 		BEGIN
-			REPLACE_TEXTUALLY ~%xa_replace%~ ~Player%index%~
+			REPLACE_TEXTUALLY ~%xa_strToReplace%~ ~%xa_replacement%~
 		END
 		ACTION_IF(xa_top = 1) BEGIN
 			EXTEND_TOP ~%xa_extend%.bcs~ ~%xa_output%.bcs~
@@ -190,15 +192,14 @@ END
 
 DEFINE_ACTION_FUNCTION xa_generate_talk_script
 	BEGIN
-		OUTER_SET xa_idx = 0
 		ACTION_PHP_EACH xa_scriptNames AS _ => xa_scriptName
 		BEGIN
-			COPY_EXISTING ~xatalk.bcs~ ~%MOD_FOLDER%/temp/xatalk%xa_idx%.bcs~
+			COPY_EXISTING ~xalccs07.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
 			DECOMPILE_AND_PATCH BEGIN
-				REPLACE_TEXTUALLY ~%PM%~ ~%xa_scriptName%~
+				REPLACE_TEXTUALLY ~\[PM\]~ ~%xa_scriptName%~
 			END
-			EXTEND_TOP ~xalctalk.bcs~ ~%MOD_FOLDER%/temp/xatalk%xa_idx%.bcs~
-			xa_idx = xa_idx + 1
+			EXTEND_TOP ~xalccs08.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
+			xa_tempID = xa_tempID + 1
 		END
 		
 END

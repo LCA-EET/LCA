@@ -62,6 +62,9 @@ OUTER_SET rbg_carryover = 0
 OUTER_SET bg2_carryover = 0
 OUTER_SET bg1_carryover = 0
 OUTER_SET sod_carryover = 0
+OUTER_SET xa_tempID = 0
+
+DELETE ~%MOD_FOLDER%/temp/*~
 
 ACTION_IF (GAME_IS ~eet~) THEN BEGIN
 	OUTER_SET isEET = 1

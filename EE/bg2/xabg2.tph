@@ -199,7 +199,7 @@ END
 			INT_VAR
 				xa_top = 0
 			STR_VAR
-				xa_strToReplace = ~%NAME%~
+				xa_strToReplace = ~\[NAME\]~
 				xa_replacement = ~Corwin~
 				xa_output = ~%MOD_FOLDER%/temp/xalcbico~
 				xa_bcs = ~xalccs01~
@@ -221,10 +221,10 @@ END
 		
 		
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs00.baf~ // Can Talk - Corwin / Player
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~xalctalk.bcs~ // Talk to NPCs
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~xacor028.bcs~ // Talk to Caelar
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xalccs08.bcs~ // Talk to NPCs
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor028.bcs~ // Talk to Caelar
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/temp/xalcbico.bcs~ // Banter Interval - Corwin
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~xacor030.bcs~ // Banter Pending
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor029.bcs~ // Banter Pending
 		
 		
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor013.baf~ // Rep Handling
