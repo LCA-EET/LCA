@@ -18,8 +18,8 @@ DEFINE_ACTION_FUNCTION xa_build_banter_interaction
 		COPY_EXISTING ~xalccs04.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
 		DECOMPILE_AND_PATCH
 		BEGIN
-			REPLACE_TEXTUALLY ~%\[NAME\]%~ ~%xa_name%~
-			REPLACE_TEXTUALLY ~%\[SN\]%~ ~%xa_scriptName%~
+			REPLACE_TEXTUALLY ~\[NAME\]~ ~%xa_name%~
+			REPLACE_TEXTUALLY ~\[SN\]~ ~%xa_scriptName%~
 		END
 		OUTER_SET xa_basefileID = xa_tempID
 		EXTEND_BOTTOM ~%xa_outputbcs%.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
@@ -29,10 +29,11 @@ DEFINE_ACTION_FUNCTION xa_build_banter_interaction
 			COPY_EXISTING ~%MOD_FOLDER%/temp/%xa_basefileID%.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
 			DECOMPILE_AND_PATCH
 			BEGIN
-				REPLACE_TEXTUALLY ~%Player1%~ ~Player%xa_index%~
+				REPLACE_TEXTUALLY ~Player1~ ~Player%xa_index%~
 			END
 			EXTEND_BOTTOM ~%xa_outputbcs%.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
 			xa_tempID = xa_tempID + 1
+			xa_index = xa_index + 1
 		END
 	END
 DEFINE_ACTION_FUNCTION xa_build_banter_pending_script

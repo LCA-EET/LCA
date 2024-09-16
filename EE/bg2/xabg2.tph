@@ -224,14 +224,13 @@ END
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor003.baf~ // Sound Adjustments
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor012.baf~ // Can Leave Check
 		
-		
-		
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs00.baf~ // Can Talk - Corwin / Player
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xalccs08.bcs~ // Talk to NPCs
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor028.bcs~ // Talk to Caelar
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/temp/xalcbico.bcs~ // Banter Interval - Corwin
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor029.bcs~ // Banter Pending
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor030.bcs~ // Banter Interaction
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xalccs05.bcs~ // Banter Target Selector Close
 		
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor013.baf~ // Rep Handling
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor004.baf~ // Opinion Baseline
@@ -240,15 +239,13 @@ END
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor009.baf~ // RBG Event Handling
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor023.baf~ // BG2 NPC Interactions
 		
-		
-		
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor006.baf~ // Exp Boost Spellhold
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs06.baf~ // Exp Boost Join
 	//}
 	
 	ACTION_IF (isEET = 1) THEN BEGIN
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor002.baf~ // Corwin Stat Matching
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor026.baf~ // Corwin SoD Item Check
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor002.baf~ // Corwin Stat Matching
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor026.baf~ // Corwin SoD Item Check
 	END
 	
 	COPY_EXISTING ~xacorwin.bcs~ ~override~
