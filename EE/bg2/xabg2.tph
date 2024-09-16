@@ -210,6 +210,12 @@ END
 				xa_bcs = ~xalccs03~
 				xa_extendTo = ~xacor029~
 		END
+		LAF xa_build_banter_interaction
+			STR_VAR
+				xa_name = ~Corwin~
+				xa_scriptName = ~XACORWIN~
+				xa_outputbcs = ~xacor030~
+		END
 	//}
 	
 	//{ Corwin Script
@@ -225,7 +231,7 @@ END
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor028.bcs~ // Talk to Caelar
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/temp/xalcbico.bcs~ // Banter Interval - Corwin
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor029.bcs~ // Banter Pending
-		
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor030.bcs~ // Banter Interaction
 		
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor013.baf~ // Rep Handling
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor004.baf~ // Opinion Baseline

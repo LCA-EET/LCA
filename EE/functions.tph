@@ -9,6 +9,32 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 */
 
 //{ Action Functions
+DEFINE_ACTION_FUNCTION xa_build_banter_interaction
+	STR_VAR
+		xa_name = ~~
+		xa_scriptName = ~~
+		xa_outputbcs = ~~
+	BEGIN
+		COPY_EXISTING ~xalccs04.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
+		DECOMPILE_AND_PATCH
+		BEGIN
+			REPLACE_TEXTUALLY ~%\[NAME\]%~ ~%xa_name%~
+			REPLACE_TEXTUALLY ~%\[SN\]%~ ~%xa_scriptName%~
+		END
+		OUTER_SET xa_basefileID = xa_tempID
+		EXTEND_BOTTOM ~%xa_outputbcs%.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
+		xa_tempID = xa_tempID + 1
+		OUTER_SET xa_index = 2
+		OUTER_WHILE (xa_index < 7) BEGIN
+			COPY_EXISTING ~%MOD_FOLDER%/temp/%xa_basefileID%.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
+			DECOMPILE_AND_PATCH
+			BEGIN
+				REPLACE_TEXTUALLY ~%Player1%~ ~Player%xa_index%~
+			END
+			EXTEND_BOTTOM ~%xa_outputbcs%.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
+			xa_tempID = xa_tempID + 1
+		END
+	END
 DEFINE_ACTION_FUNCTION xa_build_banter_pending_script
 	STR_VAR
 		xa_toReplace = ~\[NAME\]~
