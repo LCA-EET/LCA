@@ -2,6 +2,7 @@ PRINT @5000  /* ~Processing ToB changes...~ */
 SILENT
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/cre_scripts/caelar~
 
 COPY_EXISTING ~xacorwib.dlg~ ~override/xacor25b.dlg~
 DECOMPILE_AND_PATCH BEGIN
@@ -38,32 +39,62 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 //}
 
 //{ Corwin Script
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor011.baf~ // Rejoin Processing
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor003.baf~ // Sound Adjustments
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor012.baf~ // Can Leave Check
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xattp.baf~ // Can Talk - Player
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xatlkcae.baf~
-		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xalctalk.bcs~
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor013.baf~ // Rep Handling
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor004.baf~ // Opinion Baseline
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor007.baf~ // Romance Conflict Handling
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor010.baf~ // ToB Event Handling
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor025.baf~ // ToB NPC Interactions
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor017.baf~ // Banter init / NBI
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor018.baf~ // Banter Primers BG2
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor019.baf~ // Banter Primers ToB
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor020.baf~ // Random Banters BG2
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor021.baf~ // Random Banters ToB
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xacor022.baf~ // Banter Error Handling
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/corwinscripts/xajoinxp.baf~ // Exp Boost Join
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor011.baf~ // Rejoin Processing
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor003.baf~ // Sound Adjustments
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor012.baf~ // Can Leave Check
+		
+		
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs00.baf~ // Can Talk - Corwin / Player
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xalccs08.bcs~ // Talk to NPCs
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor028.bcs~ // Talk to Caelar
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/temp/xalcbico.bcs~ // Banter Interval - Corwin
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor029.bcs~ // Banter Pending
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor030.bcs~ // Banter Interaction
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xalccs05.bcs~ // Banter Target Selector Close
+		
+		
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor013.baf~ // Rep Handling
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor004.baf~ // Opinion Baseline
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor007.baf~ // Romance Conflict Handling
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor010.baf~ // ToB Event Handling
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor025.baf~ // ToB NPC Interactions
+		
+		
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor020.baf~ // Non-Random Banters BG2
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor021.baf~ // Non-Random Banters ToB
+		
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs06.baf~ // Exp Boost Join
 //}
 
+COPY ~%MOD_FOLDER%/temp/xalcbico.bcs~ ~%MOD_FOLDER%/temp/xalcbica.bcs~
+DECOMPILE_AND_PATCH
+BEGIN
+	REPLACE_TEXTUALLY ~Corwin~ ~Caelar~
+END
+
+COPY ~override/xacor029.bcs~ ~override/xacae01.bcs~
+DECOMPILE_AND_PATCH
+BEGIN
+	REPLACE_TEXTUALLY ~Corwin~ ~Caelar~
+END
+
+COPY ~override/xacor030.bcs~ ~override/xacae02.bcs~
+DECOMPILE_AND_PATCH
+BEGIN
+	REPLACE_TEXTUALLY ~Corwin~ ~Caelar~
+END
+
 //{ Caelar Script
-	EXTEND_TOP ~xacaelar.bcs~ ~%MOD_FOLDER%/corwinscripts/xattp.baf~ // Can Talk - Player
-	EXTEND_TOP ~xacaelar.bcs~ ~%MOD_FOLDER%/corwinscripts/xatlkcor.baf~
-	EXTEND_TOP ~xacaelar.bcs~ ~override/xalctalk.bcs~
+	EXTEND_TOP ~xacaelar.bcs~ ~override/xacae00.baf~ // Can Talk to Corwin
+	EXTEND_TOP ~xacaelar.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs00.baf~ // Can Talk to Player
+	EXTEND_TOP ~xacaelar.bcs~ ~override/xalccs08.bcs~ // Talk to NPCs
+	EXTEND_BOTTOM ~xacaelar.bcs~ ~%MOD_FOLDER%/temp/xalcbica.bcs~ // Banter Interval - Caelar
+	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xalccs02.bcs~ // Banter Target Selector
+	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xacae01.bcs~ // Banter Pending
+	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xacae02.bcs~ // Banter Interaction
+	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xalccs05.bcs~ // Banter Target Selector Close
 	
-	EXTEND_BOTTOM ~xacaelar.bcs~ ~%MOD_FOLDER%/corwinscripts/xajoinxp.baf~ // Exp Boost Join
+	EXTEND_BOTTOM ~xacaelar.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs06.baf~ // Exp Boost Join
 //}
 
 ACTION_IF (bg1_carryover = 0) THEN BEGIN

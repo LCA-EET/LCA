@@ -40,7 +40,8 @@ END
 
 //{ Dialog B-101
 IF ~
-	Global("XA_LC_Banter_CaelarPlayer", "GLOBAL", 2)
+	TriggerOverride(Player1, Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride(Player1, Global("XA_LC_CaelarBanters", "LOCALS", 0))
 ~ THEN BEGIN XA_CaelarPlayerBanter1Chain
 	SAY @120 /* ~<CHARNAME>, a moment if I may. What happened after I stayed behind in Avernus? To you, I mean. Your power has grown significantly since I first saw you at the Coast Way Crossing.~*/
 	
@@ -48,7 +49,8 @@ IF ~
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @89 /* ~That's going to take a while... (Explain what happened after the events of Dragonspear.)~ */
 	DO ~
-		SetGlobal("XA_LC_Banter_CaelarPlayer", "GLOBAL", 3)
+		ActionOverride(Player1, SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0))
+		ActionOverride(Player1, IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1))
 	~
 	GOTO XA_ExplainTrial_NR
 	
@@ -56,13 +58,15 @@ IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @89 /* ~That's going to take a while... (Explain what happened after the events of Dragonspear.)~ */
 	DO ~
-		SetGlobal("XA_LC_Banter_CaelarPlayer", "GLOBAL", 3)
+		ActionOverride(Player1, SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0))
+		ActionOverride(Player1, IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1))
 	~
 	GOTO XA_ExplainTrial_R
 	
 	IF ~~ THEN REPLY @102 /*~I'd rather not discuss it.~*/
 	DO ~
-		SetGlobal("XA_LC_Banter_CaelarPlayer", "GLOBAL", 3)
+		ActionOverride(Player1, SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0))
+		ActionOverride(Player1, IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1))
 	~
 	GOTO XA_NoDiscuss
 END
@@ -221,11 +225,13 @@ END
 
 //{ Dialog B-91
 CHAIN IF ~
-	Global("XA_LC_Banter_CaelarSarevok", "GLOBAL", 2)
+	TriggerOverride("Sarevok", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride("Sarevok", Global("XA_LC_CaelarBanters", "LOCALS", 0))
 ~ THEN BSAREV25 XA_CaelarSarevokBanter1Chain
 	@0 /*~It's interesting isn't it?~*/
 	DO ~
-		SetGlobal("XA_LC_Banter_CaelarSarevok", "GLOBAL", 3)
+		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
+		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
 	~
 	== XACAELAB
 	@1 /*~Pardon?~*/
@@ -245,11 +251,13 @@ EXIT
 
 //{ Dialog B-92
 CHAIN IF ~
-	Global("XA_LC_Banter_CaelarKeldorn", "GLOBAL", 2)
+	TriggerOverride("Keldorn", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride("Keldorn", Global("XA_LC_CaelarBanters", "LOCALS", 0))
 ~ THEN BKELDO25 XA_CaelarKeldornBanter1Chain
 	@8 /* ~Lady Argent, I never dreamed that I would one day fight alongside an aasimar. It's been quite an honor.~ */
 	DO ~
-		SetGlobal("XA_LC_Banter_CaelarKeldorn", "GLOBAL", 3)
+		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
+		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
 	~
 	== XACAELAB
 	@9 /* ~The honor is mine. <CHARNAME> chose <PRO_HISHER> companions well, Sir Keldorn.~*/
@@ -266,11 +274,13 @@ EXIT
 
 //{ Dialog B-93
 CHAIN IF ~
-	Global("XA_LC_Banter_CaelarRasaad", "GLOBAL", 2)
+	TriggerOverride("Rasaad", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride("Rasaad", Global("XA_LC_CaelarBanters", "LOCALS", 0))
 ~ THEN BRASAA25 XA_CaelarRasaadBanter1Chain
 	@21 /*~Caelar? Your hand is trembling — is something wrong?~*/
 	DO ~
-		SetGlobal("XA_LC_Banter_CaelarRasaad", "GLOBAL", 3)
+		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
+		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
 	~
 	== XACAELAB
 	@22 /*~It's nothing, Rasaad. I was just remembering...~*/ 
@@ -290,14 +300,16 @@ EXIT
 
 //{ Dialog B-94
 CHAIN IF ~
-	Global("XA_LC_Banter_CaelarJaheira", "GLOBAL", 2)
+	TriggerOverride("Jaheira", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride("Jaheira", Global("XA_LC_CaelarBanters", "LOCALS", 0))
 ~ THEN XACAELAB XA_CaelarJaheiraBanter1Chain
 	@29 /*~Jaheria... a moment of your time?~*/
-	DO ~
-		SetGlobal("XA_LC_Banter_CaelarJaheira", "GLOBAL", 3)
-	~
 	== BJAHEI25
 	@30 /*~Of course, Lady Argent. What is it?~*/
+	DO ~
+		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
+		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
+	~
 	== XACAELAB
 	@31 /*~I learned from the others that you recently lost your husband, Khalid. Is he the very same Khalid that led the defense of Bridgefort?~*/
 	== BJAHEI25
@@ -315,11 +327,13 @@ EXIT
 
 //{ Dialog B-95
 CHAIN IF ~
-	Global("XA_LC_Banter_CaelarMazzy", "GLOBAL", 2)
+	TriggerOverride("Mazzy", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride("Mazzy", Global("XA_LC_CaelarBanters", "LOCALS", 0))
 ~ THEN BMAZZY25 XA_CaelarMazzyBanter1Chain
 	@55 /*~Lady Argent, do you have a moment?~*/
 	DO ~
-		SetGlobal("XA_LC_Banter_CaelarMazzy", "GLOBAL", 3)
+		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
+		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
 	~
 	== XACAELAB
 	@37 /*~Yes, Mazzy. What can I do for you?~ */
@@ -438,14 +452,16 @@ EXIT
 
 //{ Dialog B-99
 CHAIN IF ~
-	Global("XA_LC_Banter_CaelarNeera", "GLOBAL", 2)
+	TriggerOverride("Neera", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride("Neera", Global("XA_LC_CaelarBanters", "LOCALS", 0))
 ~ THEN XACAELAB XA_CaelarNeeraBanter1Chain
 	@76 /*~Neera, a word please.~*/
-	DO ~
-		SetGlobal("XA_LC_Banter_CaelarNeera", "GLOBAL", 3)
-	~
 	== BNEERA25
 	@77 /*~Sure Caelar, what's on your mind?~*/
+	DO ~
+		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
+		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
+	~
 	== XACAELAB
 	@78 /*~I've heard of your kind before... wild mages, yes?~*/
 	== BNEERA25
