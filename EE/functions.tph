@@ -9,6 +9,11 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 */
 
 //{ Action Functions
+DEFINE_ACTION_FUNCTION xa_cleartempfiles
+	BEGIN
+		DELETE ~%MOD_FOLDER%/temp/*~
+	END
+
 DEFINE_ACTION_FUNCTION xa_build_banter_interaction
 	STR_VAR
 		xa_name = ~~
