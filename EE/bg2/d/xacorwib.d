@@ -1123,14 +1123,15 @@ END
 
 //{ region Dialog B-4
 IF ~
-	Global("XA_LC_Banter_CorwinMazzy", "GLOBAL", 4)
+	TriggerOverride("Mazzy", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 	IsValidForPartyDialogue("Mazzy")
 ~ THEN BEGIN XA_Banter_CorwinMazzy2_Init
 	SAY @528 /* ~Mazzy, I'm curious as to why you chose to specialize in the crossbow instead of the longbow.~ [XA100071]*/
 	
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_LC_Banter_CorwinMazzy", "GLOBAL", 5)
+		ActionOverride("Mazzy", SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0))
+		ActionOverride("Mazzy", IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1))
 		SetGlobal("XA_LC_TM_ArcheryChallenge", "GLOBAL", 1)
 	~
 	EXTERN BMAZZY BCorwinMazzy2
@@ -3520,9 +3521,6 @@ END
 			IsValidForPartyDialogue("Imoen2")
 		~ THEN XACORWIB BCorwinImoen1
 			@226 /* ~Imoen - what do you need?~ [XACORB58] */ 
-			DO ~
-				SetGlobal("XA_LC_Banter_CorwinImoen", "GLOBAL", 3)
-			~ 
 			== BIMOEN2
 			IF ~
 				!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)

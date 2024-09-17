@@ -2,17 +2,18 @@
 //{ BAERIE
 EXTEND_BOTTOM BAERIE 112
 	IF ~
+		TriggerOverride("Aerie", !GlobalGT("XA_LC_CorwinBanters", "LOCALS", 2))
 		!GlobalGT("XA_LC_Banter_CorwinAerie", "GLOBAL", 5)
 	~ THEN REPLY @0 /* ~I've met one of your kind before.~ */
 	GOTO XA_Ashatiel
 	
 	IF ~
-		GlobalGT("XA_LC_Banter_CorwinAerie", "GLOBAL", 5)
+		TriggerOverride("Aerie", GlobalGT("XA_LC_CorwinBanters", "LOCALS", 2))
 	~ THEN REPLY @3 /* ~Schael's already told you of my experience with Ashatiel. Could you tell me more about your people? Your society?~ */
 	GOTO 114
 	
 	IF ~
-		GlobalGT("XA_LC_Banter_CorwinAerie", "GLOBAL", 5)
+		TriggerOverride("Aerie", GlobalGT("XA_LC_CorwinBanters", "LOCALS", 2))
 	~ THEN REPLY @5 /* ~Schael's already told you of my experience with Ashatiel. We really should get moving.~ */
 	GOTO 116
 END

@@ -27,6 +27,42 @@ APPEND ~XALCDBG~
 		~
 		GOTO XA_BG2_Debug
 		
+		IF ~~ THEN REPLY @5122
+		DO ~
+			ActionOverride(Player1, SetGlobal("XA_LC_CorwinBanters", "LOCALS", 0))
+		~
+		GOTO XA_BG2_Debug
+		
+		IF ~~ THEN REPLY @5123
+		DO ~
+			ActionOverride(Player2, SetGlobal("XA_LC_CorwinBanters", "LOCALS", 0))
+		~
+		GOTO XA_BG2_Debug
+		
+		IF ~~ THEN REPLY @5124
+		DO ~
+			ActionOverride(Player3, SetGlobal("XA_LC_CorwinBanters", "LOCALS", 0))
+		~
+		GOTO XA_BG2_Debug
+		
+		IF ~~ THEN REPLY @5125
+		DO ~
+			ActionOverride(Player4, SetGlobal("XA_LC_CorwinBanters", "LOCALS", 0))
+		~
+		GOTO XA_BG2_Debug
+		
+		IF ~~ THEN REPLY @5126
+		DO ~
+			ActionOverride(Player5, SetGlobal("XA_LC_CorwinBanters", "LOCALS", 0))
+		~
+		GOTO XA_BG2_Debug
+		
+		IF ~~ THEN REPLY @5127
+		DO ~
+			ActionOverride(Player6, SetGlobal("XA_LC_CorwinBanters", "LOCALS", 0))
+		~
+		GOTO XA_BG2_Debug
+		
 		IF ~~ THEN REPLY @5033 /* Reset Corwin's Banters. */
 		DO ~
 			SetGlobal("XA_LC_ResetCorwinBanters", "GLOBAL", 1)

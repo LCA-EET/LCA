@@ -256,7 +256,12 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @5119=~SetGlobal("DefeatedJon", "GLOBAL", 0)~
 @5120=~SetMasterArea("AR2800")~
 @5121=~CreateCreature("XADINGS", [-1.-1], N)~ 
-
+@5122=~Reset Player 1 Corwin Banters~
+@5123=~Reset Player 2 Corwin Banters~
+@5124=~Reset Player 3 Corwin Banters~
+@5125=~Reset Player 4 Corwin Banters~
+@5126=~Reset Player 5 Corwin Banters~
+@5127=~Reset Player 6 Corwin Banters~
 
 
 @6000=~Return to Baldur's Gate Debug~
@@ -426,3 +431,9 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @7039=~SetGlobal("XA_LC_ResetCorwinBanters", "GLOBAL", 1)~
 @7040=~SetGlobal("XA_LC_Banter_CorwinSarevok", "GLOBAL", 1)~
 @7041=~SetGlobal("XA_LC_Banter_CorwinCaelar", "GLOBAL", 1)~
+@7042=~Reset Player 1 Caelar Banters~
+@7043=~Reset Player 2 Caelar Banters~
+@7044=~Reset Player 3 Caelar Banters~
+@7045=~Reset Player 4 Caelar Banters~
+@7046=~Reset Player 5 Caelar Banters~
+@7047=~Reset Player 6 Caelar Banters~

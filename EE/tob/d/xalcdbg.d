@@ -30,6 +30,42 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @7042
+		DO ~
+			ActionOverride(Player1, SetGlobal("XA_LC_CaelarBanters", "LOCALS", 0))
+		~
+		GOTO XA_ToB_Debug
+		
+		IF ~~ THEN REPLY @7043
+		DO ~
+			ActionOverride(Player2, SetGlobal("XA_LC_CaelarBanters", "LOCALS", 0))
+		~
+		GOTO XA_ToB_Debug
+		
+		IF ~~ THEN REPLY @7044
+		DO ~
+			ActionOverride(Player3, SetGlobal("XA_LC_CaelarBanters", "LOCALS", 0))
+		~
+		GOTO XA_ToB_Debug
+		
+		IF ~~ THEN REPLY @7045
+		DO ~
+			ActionOverride(Player4, SetGlobal("XA_LC_CaelarBanters", "LOCALS", 0))
+		~
+		GOTO XA_ToB_Debug
+		
+		IF ~~ THEN REPLY @7046
+		DO ~
+			ActionOverride(Player5, SetGlobal("XA_LC_CaelarBanters", "LOCALS", 0))
+		~
+		GOTO XA_ToB_Debug
+		
+		IF ~~ THEN REPLY @7047
+		DO ~
+			ActionOverride(Player6, SetGlobal("XA_LC_CaelarBanters", "LOCALS", 0))
+		~
+		GOTO XA_ToB_Debug
+		
 		IF ~~ THEN REPLY @7021
 		GOTO XA_ToB_AdjustVariables
 		
