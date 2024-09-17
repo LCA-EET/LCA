@@ -1275,6 +1275,12 @@ APPEND SAREV25J
 	
 	END
 
+	
+END
+//}
+
+//{ BSAREV25
+APPEND BSAREV25
 	IF ~~ THEN BEGIN XA_SarevokBanter3Chain_END
 		SAY @99 /* ~I realize now that I was wrong. Your skill in battle is considerable, as is your ability to lead others.~ */
 		

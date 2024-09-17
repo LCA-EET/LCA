@@ -61,8 +61,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 		
 		
 		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor020.baf~ // Non-Random Banters BG2
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor021.baf~ // Non-Random Banters ToB
-		
 		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs06.baf~ // Exp Boost Join
 //}
 
@@ -85,7 +83,7 @@ BEGIN
 END
 
 //{ Caelar Script
-	EXTEND_TOP ~xacaelar.bcs~ ~override/xacae00.baf~ // Can Talk to Corwin
+	EXTEND_TOP ~xacaelar.bcs~ ~override/xacae00.bcs~ // Can Talk to Corwin
 	EXTEND_TOP ~xacaelar.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs00.baf~ // Can Talk to Player
 	EXTEND_TOP ~xacaelar.bcs~ ~override/xalccs08.bcs~ // Talk to NPCs
 	EXTEND_BOTTOM ~xacaelar.bcs~ ~%MOD_FOLDER%/temp/xalcbica.bcs~ // Banter Interval - Caelar

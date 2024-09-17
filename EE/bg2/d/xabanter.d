@@ -2,8 +2,7 @@
 //{ BAERIE
 EXTEND_BOTTOM BAERIE 112
 	IF ~
-		TriggerOverride("Aerie", !GlobalGT("XA_LC_CorwinBanters", "LOCALS", 2))
-		!GlobalGT("XA_LC_Banter_CorwinAerie", "GLOBAL", 5)
+		TriggerOverride("Aerie", GlobalLT("XA_LC_CorwinBanters", "LOCALS", 3))
 	~ THEN REPLY @0 /* ~I've met one of your kind before.~ */
 	GOTO XA_Ashatiel
 	

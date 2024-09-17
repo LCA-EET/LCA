@@ -97,8 +97,8 @@ END ELSE BEGIN
 	ACTION_IF(GAME_IS ~bg2ee~) THEN BEGIN
 		PRINT @805  // ~Baldur's Gate II Enhanced Edition detected.~ 
 		INCLUDE ~%MOD_FOLDER%/bg2/xabg2.tph~
-		//INCLUDE ~%MOD_FOLDER%/rbg/xarbg.tph~
-		//INCLUDE ~%MOD_FOLDER%/tob/xatob.tph~
+		INCLUDE ~%MOD_FOLDER%/rbg/xarbg.tph~
+		INCLUDE ~%MOD_FOLDER%/tob/xatob.tph~
 	END
 END
 
