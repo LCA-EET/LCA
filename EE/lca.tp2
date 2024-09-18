@@ -64,8 +64,6 @@ OUTER_SET bg1_carryover = 0
 OUTER_SET sod_carryover = 0
 OUTER_SET xa_tempID = 0
 
-LAF xa_cleartempfiles END
-
 ACTION_IF (GAME_IS ~eet~) THEN BEGIN
 	OUTER_SET isEET = 1
 	PRINT @801  // ~Enhanced Edition Trilogy (EET) mod has been detected.~ 
@@ -78,6 +76,8 @@ INCLUDE ~%MOD_FOLDER%/assistant/xaassistant.tph~
 INCLUDE ~%MOD_FOLDER%/functions.tph~
 
 SILENT
+
+LAF xa_cleartempfiles END
 
 ACTION_IF (isEET = 1) THEN BEGIN
 	INCLUDE ~%MOD_FOLDER%/bg1/xabg1.tph~
