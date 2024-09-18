@@ -94,11 +94,54 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @5077 /* ~Music Test~*/
 		GOTO XA_BG2_MusicTest
 		
+		IF ~~ THEN REPLY @5128
+		GOTO XA_BG2_CheckBantersPending
+		
 		IF ~~ THEN REPLY @5114
 		GOTO XA_BG2_Sex2ConditionCheck
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 13
+		
+		COPY_TRANS XALCDBG 14
+	END
+	
+	IF ~~ THEN BEGIN XA_BG2_CheckBantersPending
+		SAY @5128
+		
+		IF ~
+			TriggerOverride(Player1, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+		~ THEN REPLY @5129
+		GOTO XA_BG2_Debug
+		
+		IF ~
+			TriggerOverride(Player2, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+		~ THEN REPLY @5130
+		GOTO XA_BG2_Debug
+		
+		IF ~
+			TriggerOverride(Player3, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+		~ THEN REPLY @5131
+		GOTO XA_BG2_Debug
+		
+		IF ~
+			TriggerOverride(Player4, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+		~ THEN REPLY @5132
+		GOTO XA_BG2_Debug
+		
+		IF ~
+			TriggerOverride(Player5, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+		~ THEN REPLY @5133
+		GOTO XA_BG2_Debug
+		
+		IF ~
+			TriggerOverride(Player6, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+		~ THEN REPLY @5134
+		GOTO XA_BG2_Debug
+		
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_BG2_Debug
 		
 		COPY_TRANS XALCDBG 14
 	END

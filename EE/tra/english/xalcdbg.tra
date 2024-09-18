@@ -262,7 +262,13 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @5125=~Reset Player 4 Corwin Banters~
 @5126=~Reset Player 5 Corwin Banters~
 @5127=~Reset Player 6 Corwin Banters~
-
+@5128=~Check Banters Pending~
+@5129=~TriggerOverride(Player1, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))~
+@5130=~TriggerOverride(Player2, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))~
+@5131=~TriggerOverride(Player3, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))~
+@5132=~TriggerOverride(Player4, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))~
+@5133=~TriggerOverride(Player5, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))~
+@5134=~TriggerOverride(Player6, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))~
 
 @6000=~Return to Baldur's Gate Debug~
 @6001=~Item Test~

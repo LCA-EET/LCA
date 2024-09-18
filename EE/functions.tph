@@ -53,15 +53,16 @@ DEFINE_ACTION_FUNCTION xa_build_banter_pending_script
 		BEGIN
 			REPLACE_TEXTUALLY ~%xa_toReplace%~ ~%xa_replacement%~
 		END
-		EXTEND_BOTTOM ~%xa_extendTo%.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
+		//EXTEND_BOTTOM ~%xa_extendTo%.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
 		OUTER_SET xa_basefileID = xa_tempID
-		OUTER_SET xa_index = 2
+		OUTER_SET xa_index = 1
 		OUTER_WHILE (xa_index < 7) BEGIN
 			OUTER_SET xa_tempID = xa_tempID + 1
 			COPY_EXISTING ~%MOD_FOLDER%/temp/%xa_basefileID%.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
 			DECOMPILE_AND_PATCH
 			BEGIN
 				REPLACE_TEXTUALLY ~Player1~ ~Player%xa_index%~
+				REPLACE_TEXTUALLY ~100~ ~%xa_index%~
 			END
 			EXTEND_BOTTOM ~%xa_extendTo%.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
 			xa_index = xa_index + 1
