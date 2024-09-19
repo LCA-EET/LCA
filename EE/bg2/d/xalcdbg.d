@@ -110,6 +110,16 @@ APPEND ~XALCDBG~
 		SAY @5128
 		
 		IF ~
+			GlobalTimerExpired("XA_LC_BanterTimer","LOCALS")
+		~ THEN REPLY @5142
+		GOTO XA_BG2_Debug
+		
+		IF ~
+			!GlobalTimerExpired("XA_LC_BanterTimer","LOCALS")
+		~ THEN REPLY @5143
+		GOTO XA_BG2_Debug
+		
+		IF ~
 			TriggerOverride("XACORWIN", Global("XA_LC_BanterTarget", "LOCALS", 0))
 		~ THEN REPLY @5135
 		GOTO XA_BG2_Debug

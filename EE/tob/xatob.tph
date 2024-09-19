@@ -46,6 +46,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 		
 		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs00.baf~ // Can Talk - Corwin / Player
 		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xalccs08.bcs~ // Talk to NPCs
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor024.bcs~ // Set banter end states
 		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor028.bcs~ // Talk to Caelar
 		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/temp/xalcbico.bcs~ // Banter Interval - Corwin
 		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xalccs02.bcs~ // Banter Target Selector

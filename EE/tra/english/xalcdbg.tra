@@ -276,6 +276,8 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @5139=~TriggerOverride("XACORWIN", Global("XA_LC_BanterTarget", "LOCALS", 4))~
 @5140=~TriggerOverride("XACORWIN", Global("XA_LC_BanterTarget", "LOCALS", 5))~
 @5141=~TriggerOverride("XACORWIN", Global("XA_LC_BanterTarget", "LOCALS", 6))~
+@5142=~GlobalTimerExpired("XA_LC_BanterTimer","LOCALS")~
+@5143=~!GlobalTimerExpired("XA_LC_BanterTimer","LOCALS")~
 @6000=~Return to Baldur's Gate Debug~
 @6001=~Item Test~
 @6003=~Engagement Rings (Unenchanted)~
