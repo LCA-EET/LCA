@@ -110,6 +110,41 @@ APPEND ~XALCDBG~
 		SAY @5128
 		
 		IF ~
+			TriggerOverride("XACORWIN", Global("XA_LC_BanterTarget", "LOCALS", 0))
+		~ THEN REPLY @5135
+		GOTO XA_BG2_Debug
+		
+		IF ~
+			TriggerOverride("XACORWIN", Global("XA_LC_BanterTarget", "LOCALS", 1))
+		~ THEN REPLY @5136
+		GOTO XA_BG2_Debug
+		
+		IF ~
+			TriggerOverride("XACORWIN", Global("XA_LC_BanterTarget", "LOCALS", 2))
+		~ THEN REPLY @5137
+		GOTO XA_BG2_Debug
+		
+		IF ~
+			TriggerOverride("XACORWIN", Global("XA_LC_BanterTarget", "LOCALS", 3))
+		~ THEN REPLY @5138
+		GOTO XA_BG2_Debug
+		
+		IF ~
+			TriggerOverride("XACORWIN", Global("XA_LC_BanterTarget", "LOCALS", 4))
+		~ THEN REPLY @5139
+		GOTO XA_BG2_Debug
+		
+		IF ~
+			TriggerOverride("XACORWIN", Global("XA_LC_BanterTarget", "LOCALS", 5))
+		~ THEN REPLY @5140
+		GOTO XA_BG2_Debug
+		
+		IF ~
+			TriggerOverride("XACORWIN", Global("XA_LC_BanterTarget", "LOCALS", 6))
+		~ THEN REPLY @5141
+		GOTO XA_BG2_Debug
+		
+		IF ~
 			TriggerOverride(Player1, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 		~ THEN REPLY @5129
 		GOTO XA_BG2_Debug
