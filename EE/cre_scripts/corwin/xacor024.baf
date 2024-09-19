@@ -1,0 +1,19 @@
+
+IF
+	InParty(Myself)
+	InParty("Sarevok")
+	TriggerOverride("Sarevok", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Sarevok", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 3))
+END
+
+IF
+	InParty(Myself)
+	InParty("XACAELAR")
+	TriggerOverride("XACAELAR", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("XACAELAR", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+END
+
