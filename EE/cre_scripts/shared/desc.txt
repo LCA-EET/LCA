@@ -5,8 +5,8 @@
 04: Banter Interaction*^ 
 05: Banter Target Selector Close
 06: Exp Join on Boost
-07: Can Talk NPC Check%
-08: Can Talk NPC Check (Built) 
+07: Can Talk NPC Check% [UNUSED]
+08: Can Talk NPC Check (Built) [UNUSED] 
 * ==> Replace & recompile with the appropriate character name (Caelar or Corwin).
 ^ ==> Replace & recompile with players 2 through 6
 % ==> Replace & recompile with script names. Handled by functions.tph
