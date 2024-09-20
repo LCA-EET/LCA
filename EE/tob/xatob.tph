@@ -85,9 +85,7 @@ BEGIN
 END
 
 //{ Caelar Script
-	EXTEND_TOP ~xacaelar.bcs~ ~override/xacae00.bcs~ // Can Talk to Corwin
 	EXTEND_TOP ~xacaelar.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs00.baf~ // Can Talk to Player
-	EXTEND_TOP ~xacaelar.bcs~ ~override/xalccs08.bcs~ // Talk to NPCs
 	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xacae03.bcs~ // Set banter end states
 	EXTEND_BOTTOM ~xacaelar.bcs~ ~%MOD_FOLDER%/temp/xalcbica.bcs~ // Banter Interval - Caelar
 	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xalccs02.bcs~ // Banter Target Selector

@@ -194,7 +194,7 @@ END
 	//}
 	
 	//{ Script Builders
-		LAF xa_generate_talk_script END // xalctalk.bcs
+		//LAF xa_generate_talk_script END // xalctalk.bcs
 		LAF xa_replace_recompile_string 
 			INT_VAR
 				xa_top = 0
@@ -226,7 +226,7 @@ END
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor012.baf~ // Can Leave Check
 		
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs00.baf~ // Can Talk - Corwin / Player
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xalccs08.bcs~ // Talk to NPCs
+		//EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xalccs08.bcs~ // Talk to NPCs
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor027.bcs~ // Set banter end states
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/temp/xalcbico.bcs~ // Banter Interval - Corwin
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xalccs02.bcs~ // Banter Target Selector

@@ -223,6 +223,7 @@ DEFINE_ACTION_FUNCTION xa_inc_cre_difficulty_newref
 		END
 END
 
+/*
 DEFINE_ACTION_FUNCTION xa_generate_talk_script
 	BEGIN
 		ACTION_PHP_EACH xa_scriptNames AS _ => xa_scriptName
@@ -236,6 +237,7 @@ DEFINE_ACTION_FUNCTION xa_generate_talk_script
 		END
 		
 END
+*/
 //}
 
 //{ Patch Functions

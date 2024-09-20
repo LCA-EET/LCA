@@ -2,7 +2,7 @@
 	//{ Anomen Banters
 	IF
 		ActionListEmpty()
-		Global("XA_LC_CanTalkToAnomen", "LOCALS", 1)
+		InParty("Anomen")
 		GlobalLT("XA_LC_CorwinAnomenTimerSet", "LOCALS", 1)
 	THEN
 		RESPONSE #100
@@ -15,7 +15,9 @@
 	
 	IF
 		ActionListEmpty()
-		Global("XA_LC_CanTalkToAnomen", "LOCALS", 1)
+		InParty("Anomen")
+		See("Anomen")
+		IsValidForPartyDialogue("Anomen")
 		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 		GlobalTimerExpired("XA_LC_CorwinAnomenTimer", "LOCALS")
 		GlobalLT("XA_LC_CorwinAnomenTalk", "LOCALS", 1)
@@ -36,7 +38,9 @@
 		ActionListEmpty()
 		!ActuallyInCombat()
 		GlobalTimerExpired("XA_LC_ViconiaBanter2Timer", "LOCALS")
-		Global("XA_LC_CanTalkToViconia", "LOCALS", 1)
+		InParty("Viconia")
+		See("Viconia")
+		IsValidForPartyDialogue("Viconia")
 		TriggerOverride("Viconia", GlobalGT("XA_LC_CorwinBanters", "LOCALS", 0))
 		GlobalLT("XA_LC_Banter_CorwinViconiaDay", "LOCALS", 1)
 		!TimeOfDay(NIGHT)
@@ -59,7 +63,9 @@
 		ActionListEmpty()
 		!ActuallyInCombat()
 		GlobalTimerExpired("XA_LC_ViconiaBanter3Timer", "LOCALS")
-		Global("XA_LC_CanTalkToViconia", "LOCALS", 1)
+		InParty("Viconia")
+		See("Viconia")
+		IsValidForPartyDialogue("Viconia")
 		Global("XA_LC_Banter_CorwinViconiaDay", "LOCALS", 2)
 		GlobalLT("XA_LC_Banter_CorwinViconiaCity", "GLOBAL", 1)
 		AreaType(CITY)

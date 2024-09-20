@@ -1,7 +1,9 @@
 //{ Sarevok - <CHARNAME> Soul Interaction
 	IF
 		ActionListEmpty()
-		Global("XA_LC_CanTalkToSarevok", "LOCALS", 1)
+		InParty("Sarevok")
+		IsValidForPartyDialogue("Sarevok")
+		See("Sarevok")
 		GlobalTimerExpired("XA_LC_SarevokSoulTimer", "GLOBAL")
 		GlobalLT("XA_LC_SarevokSoul", "GLOBAL", 1)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -196,7 +198,9 @@
 		ActionListEmpty()
 		GlobalTimerExpired("XA_LC_CorwinPregnantImoenTimer", "GLOBAL")
 		GlobalLT("XA_LC_CorwinPregBabyName_Imoen", "GLOBAL", 1)
-		Global("XA_LC_CanTalkToImoen2", "LOCALS", 1)
+		InParty("Imoen2")
+		See("Imoen2")
+		IsValidForPartyDialogue("Imoen2")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -208,7 +212,9 @@
 	
 	IF
 		Global("XA_LC_CorwinPregBabyName_Imoen", "GLOBAL", 1)
-		Global("XA_LC_CanTalkToImoen2", "LOCALS", 1)
+		InParty("Imoen2")
+		See("Imoen2")
+		IsValidForPartyDialogue("Imoen2")
 		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 		!ActuallyInCombat()
 	THEN
@@ -240,7 +246,9 @@
 	
 	IF
 		GlobalTimerExpired("XA_LC_CorwinPregnantAerieTimer", "GLOBAL")
-		Global("XA_LC_CanTalkToAerie", "LOCALS", 1)
+		InParty("Aerie")
+		See("Aerie")
+		IsValidForPartyDialogue("Aerie")
 		GlobalLT("XA_LC_CorwinPregBabyName_Aerie", "GLOBAL", 1)
 		See(Player1)
 		!ActuallyInCombat()

@@ -5,7 +5,9 @@
 	IF 
 		ActionListEmpty()
 		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
-		Global("XA_LC_CanTalkToMazzy", "LOCALS", 1)
+		InParty("Mazzy")
+		See("Mazzy")
+		IsValidForPartyDialogue("Mazzy")
 		Global("XA_LC_TM_ArcheryChallenge", "GLOBAL", 2)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!ActuallyInCombat()
@@ -21,7 +23,9 @@
 	IF 
 		ActionListEmpty()
 		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
-		Global("XA_LC_CanTalkToMazzy", "LOCALS", 1)
+		InParty("Mazzy")
+		See("Mazzy")
+		IsValidForPartyDialogue("Mazzy")
 		Global("XA_LC_TM_ArcheryChallenge", "GLOBAL", 2)
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		!ActuallyInCombat()
@@ -42,7 +46,9 @@
 		ActionListEmpty()
 		Global("CerndBaby","GLOBAL",1)
 		GlobalLT("XA_LC_CorwinCerndBaby", "GLOBAL", 1)
-		Global("XA_LC_CanTalkToCernd", "LOCALS", 1)
+		InParty("Cernd")
+		See("Cernd")
+		IsValidForPartyDialogue("Cernd")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -57,7 +63,9 @@
 		Global("CerndBaby","GLOBAL", 1)
 		Global("XA_LC_CorwinCerndBaby", "GLOBAL", 1)
 		GlobalTimerExpired("XA_LC_CorwinCerndBabyTimer", "LOCALS")
-		Global("XA_LC_CanTalkToCernd", "LOCALS", 1)
+		InParty("Cernd")
+		See("Cernd")
+		IsValidForPartyDialogue("Cernd")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -75,7 +83,9 @@
 	IF
 		ActionListEmpty()
 		//GlobalTimerExpired("XA_LC_PauseBeforeBanterTimer", "LOCALS")
-		Global("XA_LC_CanTalkToValygar", "LOCALS", 1)
+		InParty("Valygar")
+		See("Valygar")
+		IsValidForPartyDialogue("Valygar")
 		Global("LavokDead", "GLOBAL", 1)
 		!Global("XA_LC_CorwinLavokTimerSet", "GLOBAL", 1)
 	THEN
@@ -88,7 +98,9 @@
 	
 	IF 
 		ActionListEmpty()
-		Global("XA_LC_CanTalkToValygar", "LOCALS", 1)
+		InParty("Valygar")
+		See("Valygar")
+		IsValidForPartyDialogue("Valygar")
 		GlobalTimerExpired("XA_LC_CorwinLavokTimer", "GLOBAL")
 		GlobalLT("XA_LC_CorwinValygarLavok", "GLOBAL", 1)
 		GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
@@ -109,7 +121,9 @@
 	IF
 		ActionListEmpty()
 		GlobalTimerExpired("XA_LC_CorwinValygarTimer", "GLOBAL")
-		Global("XA_LC_CanTalkToValygar", "LOCALS", 1)
+		InParty("Valygar")
+		See("Valygar")
+		IsValidForPartyDialogue("Valygar")
 		GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 		GlobalLT("XA_LC_CorwinValygarBG", "GLOBAL", 1)
 	THEN
@@ -128,7 +142,9 @@
 	//{ First Interaction
 	IF
 		ActionListEmpty()
-		Global("XA_LC_CanTalkToHexxat", "LOCALS", 1)
+		InParty("Hexxat")
+		See("Hexxat")
+		IsValidForPartyDialogue("Hexxat")
 		Global("XA_LC_CorwinHexxat", "GLOBAL", 2)
 		GlobalTimerExpired("XA_LC_CorwinHexxatTimer", "LOCALS")
 		!ActuallyInCombat()
@@ -145,7 +161,9 @@
 	//{ Second Interaction
 	IF
 		ActionListEmpty()
-		Global("XA_LC_CanTalkToHexxat", "LOCALS", 1)
+		InParty("Hexxat")
+		See("Hexxat")
+		IsValidForPartyDialogue("Hexxat")
 		Global("XA_LC_CorwinHexxat", "GLOBAL", 4)
 		GlobalTimerExpired("XA_LC_CorwinHexxatTimer", "LOCALS")
 		!ActuallyInCombat()
@@ -166,8 +184,12 @@
 	//{ Neera - Corwin Second Interaction 
 	IF
 		ActionListEmpty()
-		Global("XA_LC_CanTalkToNeera", "LOCALS", 1)
-		Global("XA_LC_CanTalkToImoen2", "LOCALS", 1)
+		InParty("Neera")
+		See("Neera")
+		IsValidForPartyDialogue("Neera")
+		InParty("Imoen2")
+		See("Imoen2")
+		IsValidForPartyDialogue("Imoen2")
 		GlobalGT("XA_LC_Banter_CorwinNeera", "GLOBAL", 2)
 		GlobalLT("XA_LC_NeeraBanterBump", "LOCALS", 1)
 	THEN
@@ -181,8 +203,12 @@
 	IF
 		ActionListEmpty()
 		GlobalTimerExpired("XA_LC_CorwinNeeraImoenTimer", "LOCALS")
-		Global("XA_LC_CanTalkToNeera", "LOCALS", 1)
-		Global("XA_LC_CanTalkToImoen2", "LOCALS", 1)
+		InParty("Neera")
+		See("Neera")
+		IsValidForPartyDialogue("Neera")
+		InParty("Imoen2")
+		See("Imoen2")
+		IsValidForPartyDialogue("Imoen2")
 		GlobalLT("XA_LC_CorwinNeeraImoen", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -201,7 +227,9 @@
 	//{ Dorn / Corwin Love Conflict
 	IF
 		ActionListEmpty()
-		Global("XA_LC_CanTalkToDorn", "LOCALS", 1)
+		InParty("Dorn")
+		See("Dorn")
+		IsValidForPartyDialogue("Dorn")
 		OR(2)
 			Global("DornRomanceActive","GLOBAL",1)
 			Global("DornRomanceActive","GLOBAL",2)
@@ -221,7 +249,9 @@
 
 	IF
 		ActionListEmpty()
-		Global("XA_LC_CanTalkToDorn", "LOCALS", 1)
+		InParty("Dorn")
+		See("Dorn")
+		IsValidForPartyDialogue("Dorn")
 		OR(2)
 			Global("DornRomanceActive","GLOBAL",1)
 			Global("DornRomanceActive","GLOBAL",2)
@@ -237,7 +267,9 @@
 	END
 
 	IF
-		Global("XA_LC_CanTalkToDorn", "LOCALS", 1)
+		InParty("Dorn")
+		See("Dorn")
+		IsValidForPartyDialogue("Dorn")
 		!AreaType(DUNGEON)
 		!See([ENEMY])
 		Global("OHD_corwinconflict","GLOBAL",2)
@@ -275,7 +307,9 @@
 	//{ Keldorn Audamar
 	IF
 		ActionListEmpty()
-		Global("XA_LC_CanTalkToKeldorn", "LOCALS", 1)
+		InParty("Keldorn")
+		See("Keldorn")
+		IsValidForPartyDialogue("Keldorn")
 		GlobalLT("XA_LC_KeldornAudamarTimerSet", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
@@ -288,7 +322,9 @@
 	
 	IF
 		ActionListEmpty()
-		Global("XA_LC_CanTalkToKeldorn", "LOCALS", 1)
+		InParty("Keldorn")
+		See("Keldorn")
+		IsValidForPartyDialogue("Keldorn")
 		GlobalTimerExpired("XA_LC_KeldornAudamarTimer", "GLOBAL")
 		GlobalLT("XA_LC_Banter_CorwinKeldInitial", "GLOBAL", 1)
 	THEN
@@ -304,7 +340,9 @@
 	//{ Corwin Mad at Keldorn - Underdark
 	IF
 		ActionListEmpty()
-		Global("XA_LC_CanTalkToKeldorn", "LOCALS", 1)
+		InParty("Keldorn")
+		See("Keldorn")
+		IsValidForPartyDialogue("Keldorn")
 		GlobalTimerExpired("XA_LC_CorwinScoldKeldornTimer", "LOCALS")
 		Global("XA_LC_CorwinCoverUD", "GLOBAL", 1)
 		GlobalLT("DrowCityHostile","GLOBAL",1)
@@ -322,7 +360,9 @@
 	//{ Keldorn - Corwin Optional Interaction (Reconciled with Maria) 
 	IF
 		ActionListEmpty()
-		Global("XA_LC_CanTalkToKeldorn", "LOCALS", 1)
+		InParty("Keldorn")
+		See("Keldorn")
+		IsValidForPartyDialogue("Keldorn")
 		Global("XA_LC_Banter_CorwinKeldornOpt1", "GLOBAL", 1)
 		!ActuallyInCombat()
 	THEN
@@ -336,7 +376,9 @@
 
 	IF
 		ActionListEmpty()
-		Global("XA_LC_CanTalkToKeldorn", "LOCALS", 1)
+		InParty("Keldorn")
+		See("Keldorn")
+		IsValidForPartyDialogue("Keldorn")
 		Global("XA_LC_Banter_CorwinKeldornOpt1", "GLOBAL", 2)
 		GlobalTimerExpired("XA_LC_Banter_CorwinKeldornOpt1", "LOCALS")
 		!ActuallyInCombat()
@@ -361,7 +403,9 @@
 		ActionListEmpty()
 		GlobalTimerExpired("XA_LC_CorwinEdwinThayTimer", "GLOBAL")
 		GlobalLT("XA_LC_CorwinEdwinThay", "GLOBAL", 1)
-		Global("XA_LC_CanTalkToEdwin", "LOCALS", 1)
+		InParty("Edwin")
+		See("Edwin")
+		IsValidForPartyDialogue("Edwin")
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -379,7 +423,9 @@
 	//{ Imoen Soul Returned
 	IF 
 		ActionListEmpty()
-		Global("XA_LC_CanTalkToImoen2", "LOCALS", 1)
+		InParty("Imoen2")
+		See("Imoen2")
+		IsValidForPartyDialogue("Imoen2")
 		GlobalTimerExpired("XA_LC_CorwinImoenSoulTimer", "GLOBAL")
 		GlobalLT("XA_LC_CorwinImoenSoulTalk", "GLOBAL", 1)
 		!ActuallyInCombat()

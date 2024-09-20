@@ -916,7 +916,7 @@ APPEND ~XACOR25J~
 		
 		IF ~
 			GlobalGT("XA_LC_CorwinPregnant", "GLOBAL", 4)
-			Global("XA_LC_CanTalkToRasaad", "LOCALS", 1)
+			IsValidForPartyDialogue("Rasaad")
 		~ THEN
 		DO ~
 			SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 2)
@@ -925,7 +925,7 @@ APPEND ~XACOR25J~
 		
 		IF ~
 			GlobalLT("XA_LC_CorwinPregnant", "GLOBAL", 5)
-			Global("XA_LC_CanTalkToRasaad", "LOCALS", 1)
+			IsValidForPartyDialogue("Rasaad")
 		~ THEN
 		DO ~
 			SetGlobal("XA_LC_Journal_Progress", "GLOBAL", 1)
