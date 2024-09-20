@@ -6,6 +6,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("Sarevok", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 3))
+		Continue()
 END
 
 IF
@@ -15,5 +16,6 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("XACAELAR", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+		Continue()
 END
 

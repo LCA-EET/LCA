@@ -5,6 +5,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("Mazzy", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 2))
+		Continue()
 END
 
 IF
@@ -14,6 +15,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("Nalia", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 3))
+		Continue()
 END
 
 IF
@@ -23,6 +25,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("HaerDalis", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 2))
+		Continue()
 END
 
 IF
@@ -32,6 +35,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("Minsc", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 3))
+		Continue()
 END
 
 IF
@@ -41,6 +45,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("Rasaad", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 4))
+		Continue()
 END
 
 IF
@@ -50,6 +55,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("Yoshimo", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+		Continue()
 END
 
 IF
@@ -59,6 +65,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("Valygar", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+		Continue()
 END
 
 IF
@@ -68,6 +75,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("Jaheira", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 3))
+		Continue()
 END
 
 IF
@@ -77,6 +85,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("Neera", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+		Continue()
 END
 
 IF
@@ -86,6 +95,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("Dorn", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 2))
+		Continue()
 END
 
 IF
@@ -95,6 +105,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("Keldorn", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 2))
+		Continue()
 END
 
 IF
@@ -104,6 +115,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("Korgan", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 2))
+		Continue()
 END
 
 IF
@@ -113,6 +125,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("Jan", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 2))
+		Continue()
 END
 
 IF
@@ -122,6 +135,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("Edwin", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 3))
+		Continue()
 END
 
 IF
@@ -131,6 +145,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("Aerie", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 4))
+		Continue()
 END
 
 IF
@@ -140,6 +155,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("Viconia", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+		Continue()
 END
 
 IF
@@ -149,6 +165,7 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride("Imoen2", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 2))
+		Continue()
 END
 
 
@@ -158,4 +175,5 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride(Player1, SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 2))
+		Continue()
 END
