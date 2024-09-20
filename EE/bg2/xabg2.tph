@@ -226,15 +226,13 @@ END
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor012.baf~ // Can Leave Check
 		
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs00.baf~ // Can Talk - Corwin / Player
-		//EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xalccs08.bcs~ // Talk to NPCs
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor027.bcs~ // Set banter end states
-		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/temp/xalcbico.bcs~ // Banter Interval - Corwin
+		
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xalccs02.bcs~ // Banter Target Selector
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor029.bcs~ // Banter Pending
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor030.bcs~ // Banter Interaction
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xalccs05.bcs~ // Banter Target Selector Close
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor020.bcs~ // Non-Random BG2 Banters
-		
 		
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor013.baf~ // Rep Handling
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor004.baf~ // Opinion Baseline
@@ -245,6 +243,7 @@ END
 		
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor006.baf~ // Exp Boost Spellhold
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs06.baf~ // Exp Boost Join
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/temp/xalcbico.bcs~ // Banter Interval - Corwin
 	//}
 	
 	ACTION_IF (isEET = 1) THEN BEGIN
