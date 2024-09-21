@@ -13,7 +13,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
 		ActionOverride(Player1, SetGlobal("XA_LC_[NAME]BanterPending", "LOCALS", 1))
-		DisplayStringHead(Player1, ~DEBUG: Setting Banter Pending.~)
+		//DisplayStringHead(Player1, ~DEBUG: Setting Banter Pending.~)
 		SetInterrupt(TRUE)
 		Continue()
 END

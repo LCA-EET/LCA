@@ -4,7 +4,7 @@ IF
 	GlobalGT("XA_LC_BanterTarget", "LOCALS", 0)
 THEN
 	RESPONSE #100
-		DisplayStringHead(Myself, ~DEBUG: Resetting Banter Target to 0.~)
+		//DisplayStringHead(Myself, ~DEBUG: Resetting Banter Target to 0.~)
 		SetGlobal("XA_LC_BanterTarget", "LOCALS", 0)
 		Continue()
 END
