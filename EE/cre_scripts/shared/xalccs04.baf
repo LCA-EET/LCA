@@ -9,7 +9,7 @@ IF
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		DisplayStringHead(Myself, ~Interacting with [SN]~) // Debugging
+		//DisplayStringHead(Myself, ~Interacting with [SN]~) // Debugging
 		ActionOverride(Player1, Interact("[SN]"))
 		Interact(Player1)
 		SetInterrupt(TRUE)

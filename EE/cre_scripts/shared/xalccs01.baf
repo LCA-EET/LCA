@@ -20,6 +20,7 @@ IF
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_BanterTarget","LOCALS",1)
 		SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 2)
 		SetGlobal("XA_LC_BanterPendingTimerSet", "LOCALS", 0)
 		////DisplayStringHead(Myself, ~DEBUG: 22-02~)		
