@@ -46,7 +46,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs00.baf~ // Can Talk - Corwin / Player
 		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xalccs08.bcs~ // Talk to NPCs
 		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor024.bcs~ // Set banter end states
-
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/temp/xalcbico.bcs~ // Banter Interval - Corwin
 		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xalccs02.bcs~ // Banter Target Selector
 		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor029.bcs~ // Banter Pending
 		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor030.bcs~ // Banter Interaction
@@ -59,7 +59,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/cre_scripts/corwin/xacor025.baf~ // ToB NPC Interactions
 		
 		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs06.baf~ // Exp Boost Join
-		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/temp/xalcbico.bcs~ // Banter Interval - Corwin
+		
 //}
 
 COPY ~%MOD_FOLDER%/temp/xalcbico.bcs~ ~%MOD_FOLDER%/temp/xalcbica.bcs~
@@ -83,13 +83,14 @@ END
 //{ Caelar Script
 	EXTEND_TOP ~xacaelar.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs00.baf~ // Can Talk to Player
 	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xacae03.bcs~ // Set banter end states
+	EXTEND_BOTTOM ~xacaelar.bcs~ ~%MOD_FOLDER%/temp/xalcbica.bcs~ // Banter Interval - Caelar
 	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xalccs02.bcs~ // Banter Target Selector
 	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xacae01.bcs~ // Banter Pending
 	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xacae02.bcs~ // Banter Interaction
 	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xalccs05.bcs~ // Banter Target Selector Close
 	
 	EXTEND_BOTTOM ~xacaelar.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs06.baf~ // Exp Boost Join
-	EXTEND_BOTTOM ~xacaelar.bcs~ ~%MOD_FOLDER%/temp/xalcbica.bcs~ // Banter Interval - Caelar
+	
 //}
 
 ACTION_IF (bg1_carryover = 0) THEN BEGIN
