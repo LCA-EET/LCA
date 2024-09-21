@@ -110,6 +110,36 @@ APPEND ~XALCDBG~
 		SAY @5128
 		
 		IF ~
+			TriggerOverride(Player1,LocalsLT("XA_LC_CorwinBanters","XA_LC_CorwinBantersEnd"))
+		~ THEN REPLY @5144
+		GOTO XA_BG2_Debug
+		
+		IF ~
+			TriggerOverride(Player2,LocalsLT("XA_LC_CorwinBanters","XA_LC_CorwinBantersEnd"))
+		~ THEN REPLY @5145
+		GOTO XA_BG2_Debug
+		
+		IF ~
+			TriggerOverride(Player3,LocalsLT("XA_LC_CorwinBanters","XA_LC_CorwinBantersEnd"))
+		~ THEN REPLY @5146
+		GOTO XA_BG2_Debug
+		
+		IF ~
+			TriggerOverride(Player4,LocalsLT("XA_LC_CorwinBanters","XA_LC_CorwinBantersEnd"))
+		~ THEN REPLY @5147
+		GOTO XA_BG2_Debug
+		
+		IF ~
+			TriggerOverride(Player5,LocalsLT("XA_LC_CorwinBanters","XA_LC_CorwinBantersEnd"))
+		~ THEN REPLY @5148
+		GOTO XA_BG2_Debug
+		
+		IF ~
+			TriggerOverride(Player6,LocalsLT("XA_LC_CorwinBanters","XA_LC_CorwinBantersEnd"))
+		~ THEN REPLY @5149
+		GOTO XA_BG2_Debug
+		
+		IF ~
 			GlobalTimerExpired("XA_LC_BanterTimer","LOCALS")
 		~ THEN REPLY @5142
 		GOTO XA_BG2_Debug
