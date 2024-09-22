@@ -1,9 +1,17 @@
 IF
 	TookDamage()
-	HPLT(Myself,2)
-	OR(2)
-		HasItemEquipedReal(Myself, "XARNG19A")
-		HasItemEquipedReal(Myself, "XARING19")
+	HPLT(Myself,3)
+	OR(10)
+		HasItemEquiped("XARNG19A", Myself)  // Love Conquers All
+		HasItemEquiped("XARING19", Myself)  // Love Conquers All
+		HasItemEquiped("XARING21", Myself)  // Love Conquers All
+		HasItemEquiped("XARNG21A", Myself)  // Love Conquers All
+		HasItemEquiped("XARING25", Myself)  // Love Conquers All
+		HasItemEquiped("XARNG25A", Myself)  // Love Conquers All
+		HasItemEquiped("XARING26", Myself)  // Love Conquers All
+		HasItemEquiped("XARNG26A", Myself)  // Love Conquers All
+		HasItemEquiped("XARING28", Myself)  // Love Conquers All
+		HasItemEquiped("XARNG28A", Myself)  // Love Conquers All
 THEN
 	RESPONSE #100
 		Kill(Myself)
