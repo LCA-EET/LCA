@@ -1,0 +1,10 @@
+IF
+	TookDamage()
+	HPLT(Myself,2)
+	OR(2)
+		HasItemEquipped(Myself, "XARNG19A")
+		HasItemEquipped(Myself, "XARING19")
+THEN
+	RESPONSE #100
+		Kill(Myself)
+END

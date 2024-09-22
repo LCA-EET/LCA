@@ -22,6 +22,7 @@ All probabilities are zero by default. Enable Ring Abilities by Adjusting Probab
 	WRITE_BYTE 0x654 100
 	WRITE_BYTE 0x684 100
 	WRITE_BYTE 0x6B4 100
+	WRITE_BYTE 0x954 100
 //}
 
 //{ Mental Resistance
