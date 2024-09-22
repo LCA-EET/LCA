@@ -607,6 +607,7 @@ END
 	//}
 	
 	//{ Corwin's Bow + 4 (Gond) new 
+		OUTER_SET xa_negative = 0 - 1
 		COPY_EXISTING ~xacorbo3.itm~ ~override/xacorbo4.itm~
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@5024)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@5024)
@@ -619,7 +620,7 @@ END
 		WRITE_SHORT 0x8C 6 // Set damage bonus to 6
 		WRITE_LONG 0x60 4 // Set enchantment to 4
 		WRITE_BYTE 0x1DC 22 // Set entangle chance to 22%
-		WRITE_LONG 0x1F2 (-1 * 2) // Apply -2 save penalty
+		WRITE_LONG 0x1F2 (xa_negative * 2) // Apply -2 save penalty
 	//}
 	
 	//{ Corwin's Bow + 5 (Gond) new 
