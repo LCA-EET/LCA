@@ -147,8 +147,8 @@ END
 	//}
 	
 	//{ Corwin Romance B
-		ADD_MUSIC xamu03	~%MOD_FOLDER%/bg2/mus/xamu03.mus~
-		COPY ~%MOD_FOLDER%/bg2/mus/xamu03a.acm~ ~MUSIC/xamu03/xamu03a.acm~
+		//ADD_MUSIC xamu03	~%MOD_FOLDER%/bg2/mus/xamu03.mus~
+		//COPY ~%MOD_FOLDER%/bg2/mus/xamu03a.acm~ ~MUSIC/xamu03/xamu03a.acm~
 	//}
 	
 	//{ Concern xamu06 ngoblina (SoD)
@@ -158,12 +158,12 @@ END
 	
 	COPY_EXISTING ~xacs09b.bcs~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu03%)~
+		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu02%)~
 	END
 	
 	COPY_EXISTING ~xaclean.bcs~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu03%)~
+		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu02%)~
 	END
 	
 	//{ Script Names
@@ -257,7 +257,7 @@ END
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY ~PlaySong(1001)~ ~PlaySong(%xamu01%)~
 		REPLACE_TEXTUALLY ~PlaySong(1002)~ ~PlaySong(%xamu02%)~
-		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu03%)~
+		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu02%)~
 		REPLACE_TEXTUALLY ~PlaySong(1009)~ ~PlaySong(%xamu09%)~
 	END
 	
@@ -265,7 +265,7 @@ END
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY ~PlaySong(1001)~ ~PlaySong(%xamu01%)~
 		REPLACE_TEXTUALLY ~PlaySong(1002)~ ~PlaySong(%xamu02%)~
-		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu03%)~
+		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu02%)~
 		REPLACE_TEXTUALLY ~PlaySong(1009)~ ~PlaySong(%xamu09%)~
 	END
 //}

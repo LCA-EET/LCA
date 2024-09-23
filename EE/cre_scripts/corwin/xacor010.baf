@@ -259,7 +259,7 @@
 		THEN
 			RESPONSE #100
 				SetInterrupt(FALSE)
-				PlaySong(1001)
+				PlaySong(1009)
 				SetGlobal("XA_LC_MessageToBG", "GLOBAL", 1)
 				StartDialog("xacor25j", Player1)
 				SetInterrupt(TRUE)
