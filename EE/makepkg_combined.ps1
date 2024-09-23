@@ -42,7 +42,7 @@ foreach($folder in $toExclude){
 	Remove-Item ($modPath + "/" + $folder) -Recurse
 }
 
-#& $PSScriptRoot/d_compactor.ps1 -dPath $modPath
+& $PSScriptRoot/d_compactor.ps1 -dPath $modPath
 
 Copy-Item -Path ("functions.tph") -Destination $modPath 
 Copy-Item -Path ($tp2Name + ".tp2") -Destination $modPath 
