@@ -1,7 +1,7 @@
 IF
 	TookDamage()
 	HPLT(Myself,3)
-	OR(10)
+	OR(11)
 		HasItemEquiped("XARNG19A", Myself)  // Love Conquers All
 		HasItemEquiped("XARING19", Myself)  // Love Conquers All
 		HasItemEquiped("XARING21", Myself)  // Love Conquers All
@@ -12,6 +12,7 @@ IF
 		HasItemEquiped("XARNG26A", Myself)  // Love Conquers All
 		HasItemEquiped("XARING28", Myself)  // Love Conquers All
 		HasItemEquiped("XARNG28A", Myself)  // Love Conquers All
+		HasItemEquiped("XAAMUL2", Myself)  // Corwin's Amulet
 THEN
 	RESPONSE #100
 		Kill(Myself)
