@@ -4,6 +4,7 @@ IF
 	InParty(Myself)
 	Global("XA_LC_CanTalk", "LOCALS", 1)
 	TriggerOverride(Player1, Global("XA_LC_[NAME]BanterPending", "LOCALS", 1))
+	TriggerOverride(Player1, LocalsLT("XA_LC_[NAME]Banters", "XA_LC_[NAME]BantersEnd"))
 	IsValidForPartyDialogue(Player1)
 	IsValidForPartyDialogue(Myself)
 THEN
