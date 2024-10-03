@@ -154,7 +154,7 @@ DEFINE_ACTION_FUNCTION xa_replace_recompile
 		xa_replace = ~Player2~
 	BEGIN
 		ACTION_IF(xa_includeInitial = 1) THEN BEGIN
-			EXTEND_TOP ~%xa_extend%.bcs~ ~%MOD_FOLDER%/temp/%xa_bcs%.bcs~
+			EXTEND_TOP ~%xa_extend%.bcs~ ~override/%xa_bcs%.bcs~
 		END
 		OUTER_SET index = xa_indexStart
 		OUTER_WHILE(index < 6) BEGIN

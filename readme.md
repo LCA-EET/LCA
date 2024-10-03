@@ -1,4 +1,4 @@
-# Love Conquers All (LCA) Mod for Baldur's Gate Enhanced Edition Trilogy (EET)
+# Love Conquers All (LCA) Mod for Baldur's Gate 2 Enhanced Edition (EE), and Enhanced Edition Trilogy (EET)
  
 <img align="right" src="XACORWIN.PNG">
 <p>
