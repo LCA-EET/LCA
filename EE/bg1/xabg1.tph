@@ -80,28 +80,19 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/d~
 			OUTER_SPRINT filename ~ar1317.are~
 		END
 		COPY_EXISTING ~%filename%~ ~override~
-		LPF ALTER_AREA_ACTOR
-			STR_VAR
-			actor_name = ~Sleeping Man~
-			script_override = ~XA1317DS~
-		END
-		LPF ALTER_AREA_ACTOR
-			STR_VAR
-			actor_name = ~Sleeping Woman~
-			script_override = ~XA1317DS~
-		END
+		LPF xa_delete_are_actors END
 	//}
 
 //}
 
 //{ Replace Michael & Taxek with Assassins
 	ACTION_IF (corwinEET = 0) THEN BEGIN
-		COPY_EXISTING ~michae.cre~ ~override/xacoras0.cre~
+		COPY_EXISTING ~michae.cre~ ~override~
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@1015)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@1015)
 		WRITE_ASCII 0x2CC ~xacoras1~ #8
 		
-		COPY_EXISTING ~taxek.cre~ ~override/xacoras1.cre~
+		COPY_EXISTING ~taxek.cre~ ~override~
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@1015)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@1015)
 		WRITE_ASCII 0x2CC ~xacoras0~ #8
@@ -109,10 +100,9 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/d~
 //}
 
 //{ Rohma's Friend
-	COPY_EXISTING ~girba3.cre~ ~override/xagirba3.cre~
-	WRITE_ASCII 0x2CC ~xagirl~ #8 	// Dialogue
+	COPY_EXISTING ~girba3.cre~ ~override~
+	WRITE_ASCII 0x250 ~xasw0~ #8		// Class Script
 	WRITE_ASCII 0x280 ~xagirba3~ #20  	// Script Name
-	WRITE_ASCII 0x250 ~xagirba3~ #8		// Class Script
 //}
 
 //{ AR1300 / BG1300 modification
