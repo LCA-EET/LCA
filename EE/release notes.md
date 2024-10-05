@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+# v1.3.1b 2024-10-05
+* Improvements / corrections to the BG1 portion of the mod.
+
 # v1.3.1a 2024-10-02
 * Corrected the logic used to detect whether CorwinEET is installed, for EET playthroughs.
 
