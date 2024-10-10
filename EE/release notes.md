@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+# v1.3.1c 2024-10-10
+* Fixed a compatibility error concerning the Cost of One Girl's Soul mod.
+
 # v1.3.1b 2024-10-05
 * Improvements / corrections to the BG1 portion of the mod.
 
