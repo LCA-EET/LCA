@@ -34,3 +34,4 @@ If you have any questions, or would like to provide feedback, please contact me 
 	
 </ul>
 	
+ Crossmodding is allowed! Forking is allowed as well, pursuant to the MIT license.
