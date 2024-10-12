@@ -1,5 +1,4 @@
 IF
-	Global("XA_LC_StartedInBG2", "GLOBAL", 1)
 	Global("XA_LC_CorwinContinue", "GLOBAL", 2)
 	GlobalLT("XA_LC_0602Items", "MYAREA", 1)
 THEN
@@ -11,7 +10,6 @@ THEN
 END
 
 IF
-	Global("XA_LC_StartedInBG2", "GLOBAL", 1)
 	Global("XA_LC_CorwinContinue", "GLOBAL", 1)
 	GlobalLT("XA_LC_0602Items", "MYAREA", 1)
 THEN

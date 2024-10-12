@@ -4,7 +4,43 @@ IF
 	!PartyHasItem("XASTDAG")
 THEN
 	RESPONSE #100
-		ActionOverride("A7-Rubble1", CreateItem("XASTDAG", 1, 0, 0))
+		ActionOverride("A7-Rubble1", CreateItem("XASTDAG", 0, 0, 0))
 		SetGlobal("XA_LC_Dagger0700", "MYAREA", 1)
+		Continue()
+END
+
+IF
+	GlobalGT("A7-TransferItems", "MYAREA", 0)
+	Global("XA_LC_CorwinContinue", "GLOBAL", 1)
+	GlobalLT("XA_LC_LetterCorwin0700", "MYAREA", 1)
+	!PartyHasItem("XALTRCOR")
+THEN
+	RESPONSE #100
+		ActionOverride("A7-Rubble1", CreateItem("XALTRCOR", 0, 0, 0))
+		SetGlobal("XA_LC_LetterCorwin0700", "MYAREA", 1)
+		Continue()
+END
+
+IF
+	GlobalGT("A7-TransferItems", "MYAREA", 0)
+	Global("XA_LC_CorwinContinue", "GLOBAL", 2)
+	GlobalLT("XA_LC_LetterSchael0700", "MYAREA", 1)
+	!PartyHasItem("XALTRSCH")
+THEN
+	RESPONSE #100
+		ActionOverride("A7-Rubble1", CreateItem("XALTRCSCH", 0, 0, 0))
+		SetGlobal("XA_LC_LetterSchael0700", "MYAREA", 1)
+		Continue()
+END
+
+IF
+	GlobalGT("A7-TransferItems", "MYAREA", 0)
+	Global("XA_LC_CorwinContinue", "GLOBAL", 2)
+	GlobalLT("XA_LC_Amulet0700", "MYAREA", 1)
+	!PartyHasItem("XAAMULET")
+THEN
+	RESPONSE #100
+		ActionOverride("A7-Rubble1", CreateItem("XAAMULET", 0, 0, 0))
+		SetGlobal("XA_LC_Amulet0700", "MYAREA", 1)
 		Continue()
 END
