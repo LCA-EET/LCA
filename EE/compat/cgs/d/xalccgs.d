@@ -5,5 +5,4 @@ BEGIN 12 END
 BEGIN 0 END
 ~
 	GiveItemCreate("XASTDAG",LastTalkedToBy(Myself),1,0,0)
-	AddJournalEntry(@0, INFO)
 ~

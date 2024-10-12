@@ -1,0 +1,10 @@
+IF
+	GlobalGT("A7-TransferItems", "MYAREA", 0)
+	GlobalLT("XA_LC_Dagger0700", "MYAREA", 1)
+	!PartyHasItem("XASTDAG")
+THEN
+	RESPONSE #100
+		ActionOverride("A7-Rubble1", CreateItem("XASTDAG", 1, 0, 0))
+		SetGlobal("XA_LC_Dagger0700", "MYAREA", 1)
+		Continue()
+END
