@@ -127,8 +127,8 @@ The LCA_Explicit mod adds several explicit, sexual encounters intended for matur
 ### Banter Timers
 <a name="a_banter"></a>
 Corwin’s (and Caelar’s) scripts each have a banter timer. When the banter timer expires, the script will randomly select a character in your party to initiate a banter. Once a banter is initiated, the banter timer is reset. If there are no more banters available for that character, the script will randomly select another character and repeat the process. The process will continue until all available banters have been exhausted.
-[!NOTE]
-The interval for the banter timer is configurable with the use of the LCA Assistant. By default, it is set to two days.
+> [!NOTE]
+> The interval for the banter timer is configurable with the use of the LCA Assistant. By default, it is set to two days.
 
 ### Using the Configuration Assistant
 <a name="a_config"></a>
@@ -140,7 +140,7 @@ A debugging utility is provided to assist testers with debugging the mod. You ca
 CLUAConsole:CreateCreature("XALCDBG")
 Talk to the creature that is spawned to access the debugging options. 
 > [!WARNING]
-> Use of the debugger is recommended for testing purposes only. 
+> Use of the debugger is recommended for testing purposes only. Improper alterations to the game state may prevent you from completing your playthrough.
 
 ### Bug Reports
 <a name="a_bugs"></a>
@@ -161,12 +161,14 @@ Cross modding and forking are allowed, pursuant to the MIT license.
 ### Baldur's Gate 1 Changes
 <a name="a_bg1"></a>
 
-#### Dialog Changes
-Various dialogues were changed to explain what Captain Corwin and other high-ranking Flaming Fist personnel were doing during the events of BG1.
+<details>
+	<summary>Spoiler Warning!</summary>
+		#### Dialog Changes
+		Various dialogues were changed to explain what Captain Corwin and other high-ranking Flaming Fist personnel were doing during the events of BG1.
 
-#### Corwin's Home
-Speak to the crying girl in Southeast Baldur’s Gate. If you choose the appropriate dialog option, she will mark Corwin’s home on the map for you. Inside the home is an ammo belt and a Flaming Fist training manual. Be sure to check the fireplace as well.
-
+		#### Corwin's Home
+		Speak to the crying girl in Southeast Baldur’s Gate. If you choose the appropriate dialog option, she will mark Corwin’s home on the map for you. Inside the home is an ammo belt and a Flaming Fist training manual. Be sure to check the fireplace as well.
+</details>
 ### Siege of Dragonspear Changes
 <a name="a_sod"></a>
 
