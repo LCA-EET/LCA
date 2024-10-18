@@ -189,6 +189,7 @@ In the Coast Way Crossing or the Siege Camp, talk to Thaird while Corwin is in y
 
 #### Archery Lesson
 If you chose to help with the refugee situation (see note below) while in Baldur’s Gate, Corwin will offer to give CHARNAME an archery lesson, if CHARNAME’s proficiency with the shortbow or longbow is greater than zero. She will offer CHARNAME this lesson if CHARNAME has a bow equipped, if CHARNAME is in the Coast Way Crossing, Troll Forest, or the Allied Siege camp, and she has spent the requisite amount of time in the party (at least eighteen hours). Be sure that Corwin and CHARNAME are both standing within sight of Quartermaster Belegarm, otherwise the lesson won’t trigger. The lesson, when completed, will give CHARNAME a permanent +1 boost to missile damage and missile THAC0.
+
 > [!NOTE]
 > You must do at least three of the following:
 > -	Killed Lon in the old Iron Throne Headquarters.
