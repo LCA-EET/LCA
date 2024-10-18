@@ -1,6 +1,7 @@
 # Love Conquers All (LCA) Mod for Baldur's Gate 2 Enhanced Edition (EE), and Enhanced Edition Trilogy (EET)
 
 <a name="a_mod_overview"></a>
+### Overview
 <img align="right" src="XACORWIN.PNG">
 <p>
 This mod allows Corwin to be added to the party in Shadows of Amn, and Caelar to be added in Throne of Bhaal. Players can either continue the romance they started with Corwin in Siege of Dragonspear, or they can start a new romance with her after her arrival in Athkatla. The mod adds more than 200 new dialogs spread across the four games of the Bhaalspawn saga. Moreover, there are dozens of new items, quests, and cutscenes to enjoy. The <a href="User%20Guide.pdf" target="_blank">User Guide</a> includes instructions on how to add Corwin and Caelar to your party.   
@@ -39,9 +40,14 @@ LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET)
 		<td><b>Install LCA</b></td>
 	</tr>
 	<tr>
-		<td>AutoIdentify</b></td>
-		<td>Compatible</b></td>
-		<td>Before</b></td>
+		<td>AutoIdentify</td>
+		<td>Compatible</td>
+		<td>Before</td>
+	</tr>
+	<tr>
+		<td>AutoLoot</td>
+		<td>Compatible</td>
+		<td>Before</td>
 	</tr>
 </table>
 <a name="a_useful_links"></a>
