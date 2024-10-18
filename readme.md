@@ -42,7 +42,7 @@ If you have any questions, or would like to provide feedback, you can reach me o
 - [Throne of Bhaal Changes](#a_tob)
 - [Intimate Encounters](#a_explicit)
 
-### @@Compatibility Table
+### Compatibility Table
 <a name="a_compatibility_table"></a>
 LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET) mod. The table below lists different mods and whether they are compatible with LCA.
 <table>
