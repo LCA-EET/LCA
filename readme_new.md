@@ -7,7 +7,7 @@
 This mod allows Corwin to be added to the party in Shadows of Amn, and Caelar to be added in Throne of Bhaal. Players can either continue the romance they started with Corwin in Siege of Dragonspear, or they can start a new romance with her after her arrival in Athkatla. The mod adds more than 200 new dialogs spread across the four games of the Bhaalspawn saga. Moreover, there are dozens of new items, quests, and cutscenes to enjoy.
 </p>
 <p>
-If you have any questions, or would like to provide feedback, you can reach me on <a href="https://discord.gg/hwGf39gW9g">Discord</a>. Alternatively, you can send me an e-mail at <a href="mailto:LCAMod@danielvalle.net">LCAMod@danielvalle.net</a>, or, you can post your questions or concerns to the <a href="https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet" target="_blank">Gibberlings3 forum post</a>. I hope that you have as much enjoyment in playing this mod as I did in creating it. 
+If you have any questions, or would like to provide feedback, you can reach me on <a href="https://discord.gg/hwGf39gW9g">Discord</a>. Alternatively, you can send me an e-mail at <a href="mailto:LCAMod@danielvalle.net">LCAMod@danielvalle.net</a>, or you can post your questions or concerns to the <a href="https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet" target="_blank">Gibberlings3 forum post</a>. I hope that you have as much enjoyment in playing this mod as I did in creating it. 
 </p>
 
 ### New Quests
@@ -24,7 +24,7 @@ If you have any questions, or would like to provide feedback, you can reach me o
 - Tianna's Problem
 - Trouble in the Tower
 
-### Table of Contents
+### Contents
 - [Mod Overview](#a_mod_overview) 
 - [Compatibility Table](#a_compatibility_table)
 - [Installation Instructions](#a_installation_instructions)
@@ -35,6 +35,11 @@ If you have any questions, or would like to provide feedback, you can reach me o
 - [LCA Debugger](#a_debugger)
 - [Bug Reports](#a_bugs)
 - [Useful Links](#a_useful_links) 
+- [Spoilers Below!]
+- [Baldur's Gate 1 Changes](#a_bg1)
+- [Siege of Dragonspear Changes](#a_sod)
+- [Shadows of Amn Changes](#a_bg2)
+- [Throne of Bhaal Changes](#a_tob)
 
 ### Compatibility Table
 <a name="a_compatibility_table"></a>
@@ -122,7 +127,8 @@ The LCA_Explicit mod adds several explicit, sexual encounters intended for matur
 ### Banter Timers
 <a name="a_banter"></a>
 Corwin’s (and Caelar’s) scripts each have a banter timer. When the banter timer expires, the script will randomly select a character in your party to initiate a banter. Once a banter is initiated, the banter timer is reset. If there are no more banters available for that character, the script will randomly select another character and repeat the process. The process will continue until all available banters have been exhausted.
-NOTE: The interval for the banter timer is configurable with the use of the LCA Assistant. By default, it is set to two days.
+[!NOTE]
+The interval for the banter timer is configurable with the use of the LCA Assistant. By default, it is set to two days.
 
 ### Using the Configuration Assistant
 <a name="a_config"></a>
@@ -132,11 +138,16 @@ A configuration assistant has been provided to help you adjust certain character
 <a name="a_debugger"></a>
 A debugging utility is provided to assist testers with debugging the mod. You can access the debugger through the LCA Assistant, or by, typing the following command into the debugging console:
 CLUAConsole:CreateCreature("XALCDBG")
-Talk to the creature that is spawned to access the debugging options. Use of the debugger is recommended for testing purposes only. 
+Talk to the creature that is spawned to access the debugging options. 
+[!Warning]
+Use of the debugger is recommended for testing purposes only. 
 
 ### Bug Reports
 <a name="a_bugs"></a>
 If you encounter any bugs or unexplained behavior while playing the mod, please report it to LCAMod@danielvalle.net. You can also reach me through Discord, as well as the Beamdog and G3 forums (see links below). Including your save game with the bug report is helpful, though optional. I’d also appreciate any feedback or constructive criticism.
+
+### Cross Modding / Forking
+Cross modding and forking are allowed, pursuant to the MIT license.
 
 ### Useful Links
 <a name="a_useful_links"></a>
@@ -147,5 +158,20 @@ If you encounter any bugs or unexplained behavior while playing the mod, please 
 - Love Conquers All (LCA) Github: https://github.com/LCA-EET/LCA
 - LCA_Explicit Github: https://github.com/LCA-EET/LCA_Explicit
 
-	
- Crossmodding is allowed! Forking is allowed as well, pursuant to the MIT license.
+### Baldur's Gate 1 Changes
+<a name="a_bg1"></a>
+
+#### Dialog Changes
+Various dialogues were changed to explain what Captain Corwin and other high-ranking Flaming Fist personnel were doing during the events of BG1.
+
+#### Corwin's Home
+Speak to the crying girl in Southeast Baldur’s Gate. If you choose the appropriate dialog option, she will mark Corwin’s home on the map for you. Inside the home is an ammo belt and a Flaming Fist training manual. Be sure to check the fireplace as well.
+
+### Siege of Dragonspear Changes
+<a name="a_sod"></a>
+
+### Shadows of Amn (BG2) Changes
+<a name="a_bg2"></a>
+
+### Throne of Bhaal Changes
+<a name="a_tob"></a>
