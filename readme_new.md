@@ -139,8 +139,8 @@ A configuration assistant has been provided to help you adjust certain character
 A debugging utility is provided to assist testers with debugging the mod. You can access the debugger through the LCA Assistant, or by, typing the following command into the debugging console:
 CLUAConsole:CreateCreature("XALCDBG")
 Talk to the creature that is spawned to access the debugging options. 
-[!Warning]
-Use of the debugger is recommended for testing purposes only. 
+> [!WARNING]
+> Use of the debugger is recommended for testing purposes only. 
 
 ### Bug Reports
 <a name="a_bugs"></a>
