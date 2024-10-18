@@ -188,7 +188,6 @@ Speak to the crying girl in Southeast Baldur’s Gate. If you choose the appropr
 In the Coast Way Crossing or the Siege Camp, talk to Thaird while Corwin is in your party. Choose to rest for the night. A special cutscene involving Corwin and CHARNAME will take place.
 
 #### Archery Lesson
-<div style="padding-left: 2em; text-indent: -2em;">
 If you chose to help with the refugee situation (see below) while in Baldur’s Gate, Corwin will offer to give CHARNAME an archery lesson, if CHARNAME’s proficiency with the shortbow or longbow is greater than zero. She will offer CHARNAME this lesson if CHARNAME has a bow equipped, if CHARNAME is in the Coast Way Crossing, Troll Forest, or the Allied Siege camp, and she has spent the requisite amount of time in the party (at least eighteen hours). Be sure that Corwin and CHARNAME are both standing within sight of Quartermaster Belegarm, otherwise the lesson won’t trigger. The lesson, when completed, will give CHARNAME a permanent +1 boost to missile damage and missile THAC0.
 
 You must do at least three of the following to qualify for the lesson:
@@ -198,7 +197,7 @@ You must do at least three of the following to qualify for the lesson:
 - Helped Teera pay her debt.
 - Worked with Corwin to foil the plot by the nobles in Three Old Kegs to overthrow the Dukes.
 - Helped Officer Vida by requesting reinforcements on her behalf.
-</div>
+
 #### Trial Cutscene
 Depending on CHARNAME’s choices, Corwin will vouch for them during the trial in front of the Flaming Fist headquarters.
 
@@ -231,6 +230,56 @@ Upon joining your party, if you still possess Corwin’s Amulet, she will take t
 #### Slaver Stockade
 If Corwin is in your party when you rescue the children from the Slaver Stockade, it will set one of the conditions necessary for the Slaver Conspiracy quest during the Return to Baldur’s Gate.
 
+#### Corwin and Hexxat
+Be advised that Corwin and Hexxat, if in the same party, will eventually try to kill each other. Corwin will attempt to rally other good-aligned characters when the time comes.
+
+#### Corwin and Dorn
+Corwin and Dorn do not like each other, but they will not come to blows unless Dorn boasts of murdering children while in the service of his patron.
+
+#### Corwin and Neb
+If Corwin sees Neb, they will come to blows. If Neb isn’t killed in Athkatla, he will appear in the central sewers, during the Return to Baldur’s Gate quest. 
+
+#### Adventurer’s Mart – Returning the Stolen Artifacts
+Speak to Deidre in the Adventurer’s Mart, when Corwin is in the party. The encounter needs to be initiated by either Corwin or CHARNAME. This will begin a quest to return Balduran’s equipment to the Hall of Wonders.
+
+#### Spellhold Encounter
+Significant changes were made to the Spellhold encounter with Irenicus. These changes are triggered by Corwin being in the party when the party is captured. 
+
+#### Obtaining Corwin’s Bow + 3 (Gesen)
+Bring Corwin’s Bow +2 and Gesen’s bowstring to Cromwell in Athkatla. He will replace the bowstring for a price of 7,500 gold.
+
+#### Obtaining Corwin’s Bow + 3
+To obtain Corwin’s Bow + 3, Corwin must be in your party during the battle for Suldanessellar, the party must be in possession of Corwin’s Bow + 2, and you must save the life of the Master Bowyer. The bowyer is located in one of the houses in the city. If all three conditions are satisfied, Corwin’s Bow + 2 will be transformed into the + 3 version after Irenicus is defeated.   
+
+#### Obtaining Corwin’s Bow + 4 (Gesen)
+To obtain Corwin’s Bow + 4 (Gesen), Corwin must be in your party during the battle for Suldanessellar, the party must be in possession of Corwin’s Bow + 3 (Gesen), and you must save the life of the Master Bowyer. The bowyer is located in one of the houses in the city. If all three conditions are satisfied, Corwin’s Bow + 3 (Gesen) will be transformed into the + 4 version after Irenicus is defeated.   
+
+#### Obtaining Corwin’s Armor + 4
+To obtain Corwin’s Armor + 4, Corwin must be in your party during the battle for Suldanessellar, the party must be in possession of Corwin’s Armor + 2, and you must save the life of the Elven Armorsmith. The Armorsmith is located in one of the houses in the city. If all three conditions are satisfied, Corwin’s Armor + 2 will be transformed into the + 4 version after Irenicus is defeated.   
+
+#### Drizzt Encounter
+If CHARNAME attacked Drizzt in Baldur’s Gate 1, Corwin will vouch for CHARNAME if she is in the party when Drizzt and his party confront them after the escape from the Underdark.
+
+#### Trademeet Archery Competition
+If Mazzy and Corwin are both in your party, and they’ve completed three rounds of banters, you’ll have the option of visiting Trademeet and have them join an archery competition.
+
+#### Returning to Baldur’s Gate
+If Corwin is in your party at the conclusion of the events of Shadows of Amn, you will return to Baldur’s Gate, instead of proceeding immediately with the events of Throne of Bhaal. Upon your arrival, a one-day timer will start, that when expired will initiate the debriefing to the Dukes. The conclusion of the debriefing sets off a series of events that culminate in CHARNAME’s arrival in Saradush. Some people and places you will want to check out while in Baldur’s Gate are listed below:
+- Elfsong Tavern 
+- Ramazith’s Tower
+- Hall of Wonders Cutscene – Requires Corwin to be in the party.
+- Hall of Wonders – Returning the Farseer (Triggers if CHARNAME stole the Farseer telescope in BG1)
+- Corwin’s Home (Located in SE Baldur’s Gate)
+- Flaming Fist Headquarters L1 and L2 – Be sure to speak to Marshal Nederlok on the second floor to receive a special gift.
+- Haspur the Diviner
+- Low Lantern (Tianna’s Problem) – Requires Corwin to be in the party.
+- Central Sewers, if Neb wasn’t killed in Athkatla
+- Silvershield Estate
+- Iron Throne Headquarters, particularly if you rescued the slaver children in BG2 while Corwin was in your party.
+- If CHARNAME is in a romance with Corwin
+  - Merchant’s League (assuming Aldeth didn’t die during the events of BG1)
+  - Seven Suns (assuming Jhasso didn’t die during the events of BG1)
+  - Sorcerous Sundries, after visiting the Merchant’s League or Seven Suns and having the discussion about the engagement ring. Speak to Halbazzer and have him enchanted the ring; doing so will enable a very special cutscene after the conclusion of the debriefing for the Dukes.
 </details>
 
 ### Throne of Bhaal Changes
