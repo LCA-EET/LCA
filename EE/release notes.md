@@ -8,6 +8,7 @@
 
 # v1.3.3 2024-10-17
 * Minor dialog and sound improvements.
+* Replaced the PDF User Guide with a link to the online LCA User Guide.
 
 # v1.3.2 2024-10-12
 * Added compatibility with the Skip Chateau Irenicus mod.

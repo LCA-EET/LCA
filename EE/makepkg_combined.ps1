@@ -48,8 +48,11 @@ Copy-Item -Path ("functions.tph") -Destination $modPath
 Copy-Item -Path ($tp2Name + ".tp2") -Destination $modPath 
 Copy-Item -Path "weidu.exe" -Destination ($basePath + "/" + $exePath)
 Copy-Item -Path "Discord Server.url" -Destination ($basePath + "/Discord Server.url")
+Copy-Item -Path "LCA User Guide.url" -Destination ($basePath + "/LCA User Guide.url")
+Copy-Item -Path "G3 Forum Post.url" -Destination ($basePath + "/G3 Forum Post.url")
+Copy-Item -Path "Beamdog Forum Post.url" -Destination ($basePath + "/Beamdog Forum Post.url")
 Copy-Item -Path "Release Notes.md" -Destination ($basePath + "/Release_Notes_LCA.md")
-Copy-Item -Path "../User Guide.pdf" -Destination ($basePath + "/User Guide.pdf")
+#Copy-Item -Path "../User Guide.pdf" -Destination ($basePath + "/User Guide.pdf")
 #Remove-Item -LiteralPath ($testDir + $tp2Name) -Force -Recurse
 
 #Copy-Item -Path $modPath -Destination $testDir -Recurse
