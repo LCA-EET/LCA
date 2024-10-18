@@ -34,6 +34,7 @@ If you have any questions, or would like to provide feedback, you can reach me o
 - [Using the Configuration Assistant](#a_config)
 - [LCA Debugger](#a_debugger)
 - [Bug Reports](#a_bugs)
+- [Cross Modding / Forking](#a_crossmodding)
 - [Useful Links](#a_useful_links) 
 - [Baldur's Gate 1 Changes](#a_bg1)
 - [Siege of Dragonspear Changes](#a_sod)
@@ -154,7 +155,8 @@ Talk to the creature that is spawned to access the debugging options.
 If you encounter any bugs or unexplained behavior while playing the mod, please report it to LCAMod@danielvalle.net. You can also reach me through Discord, as well as the Beamdog and G3 forums (see links below). Including your save game with the bug report is helpful, though optional. I’d also appreciate any feedback or constructive criticism.
 
 ### Cross Modding / Forking
-Cross modding and forking are allowed, pursuant to the MIT license.
+<a name="a_crossmodding"></a>
+Cross modding and forking are allowed, pursuant to the MIT license. I'd be happy to review your proposed additions to help ensure that they're consistent with what has already been established.
 
 ### Useful Links
 <a name="a_useful_links"></a>
