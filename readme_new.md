@@ -30,6 +30,8 @@ If you have any questions, or would like to provide feedback, please contact me 
 - [Mod Overview](#a_mod_overview) 
 - [Compatibility Table](#a_compatibility_table)
 - [Installation Instructions](#a_installation_instructions)
+- [EE Playthrough Parameters](#a_ee_params)
+- [LCA Explicit Mod](#a_lca_explicit)
 - [Useful Links](#a_useful_links) 
 
 ### Compatibility Table
@@ -106,6 +108,14 @@ LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET)
 ### Installation Instructions
 <a name="a_installation_instructions"></a>
 Unzip the LoveConquersAll_EE.zip archive, and place the LCA folder in your Game Directory (the directory where BG1, SoD, or BG2 is installed. For EET playthroughs, LCA must be installed in the BG2 directory and after EET core, but before EET_End. If you plan to install the LCA_Explicit mod, that mod must be installed after this mod (LCA) is installed. Run the provided setup-LCA.exe to install the mod. 
+
+### EE Playthrough Parameters
+<a name="a_ee_params"></a>
+For non-EET playthroughs, you can adjust certain parameters to reflect actions that CHARNAME took in a prior game of the series. The parameters file is %MOD_FOLDER%/bg2/lca_bg2_params.txt. Open it and make any desired changes prior to installing the LCA mod.
+
+### LCA Explicit Mod
+<a name="a_lca_explicit"></a>
+The LCA_Explicit mod adds several explicit, sexual encounters intended for mature audiences only. Current release is available here: <a href="https://github.com/LCA-EET/LCA_Explicit/releases">Releases: LCA_Explicit</a>.
 
 ### Useful Links
 <a name="a_useful_links"></a>
