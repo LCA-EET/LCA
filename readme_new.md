@@ -81,9 +81,14 @@ LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET)
 		<td>After</td>
 	</tr>
 	<tr>
-		<td>Enhanced Edition Trilogy (EET)</td>
+		<td>Enhanced Edition Trilogy (EET) Core</td>
 		<td>Yes</td>
 		<td>After</td>
+	</tr>
+	<tr>
+		<td>Enhanced Edition Trilogy (EET) End</td>
+		<td>Yes</td>
+		<td>Before</td>
 	</tr>
 	<tr>
 		<td><a href="https://github.com/LCA-EET/LCA_Explicit">LCA_Explicit</a></td>
@@ -114,8 +119,9 @@ LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET)
 
 ### Installation Instructions
 <a name="a_installation_instructions"></a>
-Unzip the LoveConquersAll_EE.zip archive, and place the LCA folder in your Game Directory (the directory where BG1, SoD, or BG2 is installed. For EET playthroughs, LCA must be installed in the BG2 directory and after EET core, but before EET_End. If you plan to install the LCA_Explicit mod, that mod must be installed after this mod (LCA) is installed. Run the provided setup-LCA.exe to install the mod. 
-
+Unzip the LoveConquersAll_EE.zip archive, and place the LCA folder in your Game Directory (the directory where BG1, SoD, or BG2 is installed. If you plan to install the LCA_Explicit mod, that mod must be installed after this mod (LCA) is installed. Run the provided setup-LCA.exe to install the mod. 
+> [!NOTE]
+> For EET playthroughs, LCA must be installed in the BG2 directory and after EET core, but before EET_End. 
 ### EE Playthrough Parameters
 <a name="a_ee_params"></a>
 For non-EET playthroughs, you can adjust certain parameters to reflect actions that CHARNAME took in a prior game of the series. The parameters file is %MOD_FOLDER%/bg2/lca_bg2_params.txt. Open it and make any desired changes prior to installing the LCA mod.
@@ -171,8 +177,14 @@ Various dialogues were changed to explain what Captain Corwin and other high-ran
 Speak to the crying girl in Southeast Baldur’s Gate. If you choose the appropriate dialog option, she will mark Corwin’s home on the map for you. Inside the home is an ammo belt and a Flaming Fist training manual. Be sure to check the fireplace as well.
 		
 </details>
+
 ### Siege of Dragonspear Changes
 <a name="a_sod"></a>
+
+<details>
+	<summary>Spoiler Warning!</summary>
+
+</details>
 
 ### Shadows of Amn (BG2) Changes
 <a name="a_bg2"></a>
