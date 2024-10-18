@@ -39,6 +39,7 @@ If you have any questions, or would like to provide feedback, you can reach me o
 - [Siege of Dragonspear Changes](#a_sod)
 - [Shadows of Amn Changes](#a_bg2)
 - [Throne of Bhaal Changes](#a_tob)
+- [Intimate Encounters](#a_explicit)
 
 ### Compatibility Table
 <a name="a_compatibility_table"></a>
@@ -267,19 +268,21 @@ If Mazzy and Corwin are both in your party, and they’ve completed three rounds
 If Corwin is in your party at the conclusion of the events of Shadows of Amn, you will return to Baldur’s Gate, instead of proceeding immediately with the events of Throne of Bhaal. Upon your arrival, a one-day timer will start, that when expired will initiate the debriefing to the Dukes. The conclusion of the debriefing sets off a series of events that culminate in CHARNAME’s arrival in Saradush. Some people and places you will want to check out while in Baldur’s Gate are listed below:
 - Elfsong Tavern 
 - Ramazith’s Tower
-- Hall of Wonders Cutscene – Requires Corwin to be in the party.
+- Hall of Wonders Cutscene – Requires Corwin to be in the party
 - Hall of Wonders – Returning the Farseer (Triggers if CHARNAME stole the Farseer telescope in BG1)
 - Corwin’s Home (Located in SE Baldur’s Gate)
-- Flaming Fist Headquarters L1 and L2 – Be sure to speak to Marshal Nederlok on the second floor to receive a special gift.
+- Flaming Fist Headquarters L1 and L2 – Be sure to speak to Marshal Nederlok on the second floor to receive a special gift
 - Haspur the Diviner
-- Low Lantern (Tianna’s Problem) – Requires Corwin to be in the party.
+- Low Lantern (Tianna’s Problem) – Requires Corwin to be in the party
 - Central Sewers, if Neb wasn’t killed in Athkatla
 - Silvershield Estate
-- Iron Throne Headquarters, particularly if you rescued the slaver children in BG2 while Corwin was in your party.
+- Iron Throne Headquarters, particularly if you rescued the slaver children in BG2 while Corwin was in your party
 - If CHARNAME is in a romance with Corwin
   - Merchant’s League (assuming Aldeth didn’t die during the events of BG1)
   - Seven Suns (assuming Jhasso didn’t die during the events of BG1)
-  - Sorcerous Sundries, after visiting the Merchant’s League or Seven Suns and having the discussion about the engagement ring. Speak to Halbazzer and have him enchanted the ring; doing so will enable a very special cutscene after the conclusion of the debriefing for the Dukes.
+  - Sorcerous Sundries, after visiting the Merchant’s League or Seven Suns and having the discussion about the engagement ring. Speak to Halbazzer and have him enchanted the ring; doing so will enable a very special cutscene after the conclusion of the debriefing for the Dukes
+  
+The miniquest ends with Rohma’s abduction at the hands of Ilasera and Beno. Depending on the choices CHARNAME has made, at the end of the encounter Beno will be imprisoned, beheaded, or have his soul imprisoned through the use of the Soultaker Dagger. If he is beheaded or has his soul imprisoned, keep the appropriate item (either the head, or the dagger) through Amkethran to trigger a humorous cutscene.
 </details>
 
 ### Throne of Bhaal Changes
@@ -287,5 +290,87 @@ If Corwin is in your party at the conclusion of the events of Shadows of Amn, yo
 
 <details>
 	<summary>Spoiler Warning! (Click to View)</summary>
+
+#### Obtaining Corwin’s Bow + 4
+To obtain Corwin’s Bow + 4, bring Corwin’s Bow + 2 and the Bowstring of Gond to Cespenar. He will create Corwin’s Bow + 4 for 5,000 gold.
+
+#### Obtaining Corwin’s Bow + 5
+To obtain Corwin’s Bow + 5, bring Corwin’s Bow + 3 and the Bowstring of Gond to Cespenar. He will create Corwin’s Bow + 5 for 5,000 gold.
+
+#### Rescuing Caelar
+Conditions A, B and C must hold to initiate the timer that starts the Rescue Caelar quest.
+- Condition A: CHARNAME must have defeated the Narzugon during the Return to Baldur’s Gate – Trouble at the Elfsong quest.
+- Condition B: CHARNAME must have entered Saradush.
+- Condition C: CHARNAME must have destroyed the necromantic cult in Kanaglym, during the events of SoD.
+
+</details>
+
+### Intimate Encounters
+<a name="a_explicit"></a>
+
+<details>
+	<summary>Spoiler Warning! (Click to View)</summary>
+	
+The logic to initiate the following encounters is built into this mod, however, the content cannot be accessed unless the LCA_Explicit mod is installed. If the conditions to initiate an intimate encounter are achieved, but the LCA_Explicit mod is not installed, you will see the following message:
+"(Install the LCA_Explicit mod to experience this content.)"
+
+#### Siege of Dragonspear Encounter
+Pre-requisites:
+- CHARNAME must be in a romance with Corwin, and be male.
+- Corwin must be alive and in CHARNAME’s party.
+This encounter occurs immediately after CHARNAME’s escape from Avernus.
+
+#### Shadows of Amn Encounter 1
+Pre-requisites:
+- CHARNAME must be in a romance with Corwin, and be male.
+- Corwin must be alive and in CHARNAME’s party.
+- One of the following conditions must be satisfied:
+  - A: CHARNAME must have been in a romance with Corwin in SoD.
+  - B: CHARNAME must have defeated Bodhi.
+
+For condition A, this encounter can be initiated by speaking to Madame Nin in the Copper Coronet, while CHARNAME has a charisma of 15 or greater.
+
+For condition B, this encounter will be initiated by Corwin, approximately one day after Bodhi’s defeat.
+
+For both conditions, the encounter will only occur if CHARNAME rests in a suitable location:
+- Sea Bounty
+- Five Flagons
+- Inn at the Bridge District
+- Mithrest Inn
+- Den of the Seven Vales
+- Imnesvale Inn
+- Brynnlaw’s Inn
+- Trademeet’s Inn (Vyatri’s Pub)
+
+#### Shadows of Amn Encounter 2
+Pre-requisites:
+- CHARNAME must be in a romance with Corwin, and be male.
+- Corwin must be alive and in the CHARNAME’s party.
+- CHARNAME must have completed SoA Encounter 1.
+
+Corwin will initiate this encounter roughly four days after SoA Encounter 1. To complete the encounter, CHARNAME must rest in a suitable location: 
+
+For both conditions, the encounter will only occur if CHARNAME rests in a suitable location:
+- Sea Bounty
+- Five Flagons
+- Inn at the Bridge District
+- Mithrest Inn
+- Den of the Seven Vales
+- Imnesvale Inn
+- Brynnlaw’s Inn
+- Trademeet’s Inn (Vyatri’s Pub)
+
+#### Return to Baldur's Gate Encounter A
+Pre-requisites:
+- CHARNAME must be in a romance with Corwin, and be male.
+- Corwin must be alive and in CHARNAME’s party.
+- Corwin and CHARNAME must have met Neoma in BG0800 (East Baldur’s Gate), and CHARNAME must have expressed interest in the possibility of engaging in a threesome with the two of them.
+- CHARNAME must rest in the inn that they told Corwin they would be staying in.
+
+#### Return to Baldur's Gate Encounter B
+Pre-requisites:
+- CHARNAME must be in a romance with Corwin, and be male.
+- Corwin must be alive and in CHARNAME’s party.
+- CHARNAME must rest in the inn that they told Corwin they would be staying in.
 
 </details>
