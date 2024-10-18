@@ -7,7 +7,7 @@
 This mod allows Corwin to be added to the party in Shadows of Amn, and Caelar to be added in Throne of Bhaal. Players can either continue the romance they started with Corwin in Siege of Dragonspear, or they can start a new romance with her after her arrival in Athkatla. The mod adds more than 200 new dialogs spread across the four games of the Bhaalspawn saga. Moreover, there are dozens of new items, quests, and cutscenes to enjoy. The <a href="User%20Guide.pdf" target="_blank">User Guide</a> includes instructions on how to add Corwin and Caelar to your party.   
 </p>
 <p>
-If you have any questions, or would like to provide feedback, please contact me at <a href="mailto:LCAMod@danielvalle.net">LCAMod@danielvalle.net</a>. Alternatively, you can post any concerns to the <a href="https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet" target="_blank">Gibberlings3 forum post</a>. I hope you enjoy playing this mod as much as I enjoyed creating it. 
+If you have any questions, or would like to provide feedback, please contact me at <a href="mailto:LCAMod@danielvalle.net">LCAMod@danielvalle.net</a>. Alternatively, you can post any concerns to the <a href="https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet" target="_blank">Gibberlings3 forum post</a>. I hope that you have as much enjoyment in playing this mod as I did in creating it. 
 </p>
 
 ### New Quests
@@ -32,6 +32,7 @@ If you have any questions, or would like to provide feedback, please contact me 
 - [Installation Instructions](#a_installation_instructions)
 - [EE Playthrough Parameters](#a_ee_params)
 - [LCA Explicit Mod](#a_lca_explicit)
+- [Banter Timers](#a_banter)
 - [Useful Links](#a_useful_links) 
 
 ### Compatibility Table
@@ -116,6 +117,16 @@ For non-EET playthroughs, you can adjust certain parameters to reflect actions t
 ### LCA Explicit Mod
 <a name="a_lca_explicit"></a>
 The LCA_Explicit mod adds several explicit, sexual encounters intended for mature audiences only. Current release is available here: <a href="https://github.com/LCA-EET/LCA_Explicit/releases">Releases: LCA_Explicit</a>.
+
+### Banter Timers
+<a name="a_banter"></a>
+Corwin’s (and Caelar’s) scripts each have a banter timer. When the banter timer expires, the script will randomly select a character in your party to initiate a banter. Once a banter is initiated, the banter timer is reset. If there are no more banters available for that character, the script will randomly select another character and repeat the process. The process will continue until all available banters have been exhausted.
+NOTE: The interval for the banter timer is configurable with the use of the LCA Assistant. By default, it is set to two days.
+
+
+
+
+
 
 ### Useful Links
 <a name="a_useful_links"></a>
