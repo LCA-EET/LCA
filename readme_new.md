@@ -33,7 +33,7 @@ If you have any questions, or would like to provide feedback, please contact me 
 
 ### Compatibility Table
 <a name="a_compatibility_table"></a>
-<p>
+<p style="text-indent:50px;">
 	LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET) mod. The table below lists different mods and whether they are compatible with LCA.
 	<table>
 		<tr>
@@ -53,6 +53,7 @@ If you have any questions, or would like to provide feedback, please contact me 
 		</tr>
 	</table>
 </p>
+
 ### Useful Links
 <a name="a_useful_links"></a>
 
