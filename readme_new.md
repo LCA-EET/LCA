@@ -121,6 +121,7 @@ LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET)
 Unzip the LoveConquersAll_EE.zip archive, and place the LCA folder in your Game Directory (the directory where BG1, SoD, or BG2 is installed. If you plan to install the LCA_Explicit mod, that mod must be installed after this mod (LCA) is installed. Run the provided setup-LCA.exe to install the mod. 
 > [!NOTE]
 > For EET playthroughs, LCA must be installed in the BG2 directory and after EET core, but before EET_End. 
+
 ### EE Playthrough Parameters
 <a name="a_ee_params"></a>
 For non-EET playthroughs, you can adjust certain parameters to reflect actions that CHARNAME took in a prior game of the series. The parameters file is %MOD_FOLDER%/bg2/lca_bg2_params.txt. Open it and make any desired changes prior to installing the LCA mod.
@@ -187,15 +188,15 @@ Speak to the crying girl in Southeast Baldur’s Gate. If you choose the appropr
 In the Coast Way Crossing or the Siege Camp, talk to Thaird while Corwin is in your party. Choose to rest for the night. A special cutscene involving Corwin and CHARNAME will take place.
 
 #### Archery Lesson
-If you chose to help with the refugee situation (see note below) while in Baldur’s Gate, Corwin will offer to give CHARNAME an archery lesson, if CHARNAME’s proficiency with the shortbow or longbow is greater than zero. She will offer CHARNAME this lesson if CHARNAME has a bow equipped, if CHARNAME is in the Coast Way Crossing, Troll Forest, or the Allied Siege camp, and she has spent the requisite amount of time in the party (at least eighteen hours). Be sure that Corwin and CHARNAME are both standing within sight of Quartermaster Belegarm, otherwise the lesson won’t trigger. The lesson, when completed, will give CHARNAME a permanent +1 boost to missile damage and missile THAC0.
-> [!NOTE]
-> You must do at least three of the following:
-> -	Killed Lon in the old Iron Throne Headquarters.
-> -	Helped Garachen outside the Ducal Palace by providing him the food from Alyth.
-> -	Dealt with the thieves outside of Three Old Kegs.
-> -	Helped Teera pay her debt.
-> -	Worked with Corwin to foil the plot by the nobles in Three Old Kegs to overthrow the Dukes.
-> -	Helped Officer Vida by requesting reinforcements on her behalf.
+If you chose to help with the refugee situation (see below) while in Baldur’s Gate, Corwin will offer to give CHARNAME an archery lesson, if CHARNAME’s proficiency with the shortbow or longbow is greater than zero. She will offer CHARNAME this lesson if CHARNAME has a bow equipped, if CHARNAME is in the Coast Way Crossing, Troll Forest, or the Allied Siege camp, and she has spent the requisite amount of time in the party (at least eighteen hours). Be sure that Corwin and CHARNAME are both standing within sight of Quartermaster Belegarm, otherwise the lesson won’t trigger. The lesson, when completed, will give CHARNAME a permanent +1 boost to missile damage and missile THAC0.
+
+You must do at least three of the following to qualify for the lesson:
+- Killed Lon in the old Iron Throne Headquarters.
+- Helped Garachen outside the Ducal Palace by providing him the food from Alyth.
+- Dealt with the thieves outside of Three Old Kegs.
+- Helped Teera pay her debt.
+- Worked with Corwin to foil the plot by the nobles in Three Old Kegs to overthrow the Dukes.
+- Helped Officer Vida by requesting reinforcements on her behalf.
 
 #### Trial Cutscene
 Depending on CHARNAME’s choices, Corwin will vouch for them during the trial in front of the Flaming Fist headquarters.
