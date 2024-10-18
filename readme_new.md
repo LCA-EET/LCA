@@ -33,6 +33,9 @@ If you have any questions, or would like to provide feedback, please contact me 
 - [EE Playthrough Parameters](#a_ee_params)
 - [LCA Explicit Mod](#a_lca_explicit)
 - [Banter Timers](#a_banter)
+- [Using the Configuration Assistant](#a_config)
+- [LCA Debugger](#a_debugger)
+- [Bug Reports](#a_bugs)
 - [Useful Links](#a_useful_links) 
 
 ### Compatibility Table
@@ -80,7 +83,7 @@ LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET)
 		<td>After</td>
 	</tr>
 	<tr>
-		<td>LCA_Explicit</td>
+		<td><a href="https://github.com/LCA-EET/LCA_Explicit">LCA_Explicit</a></td>
 		<td>Yes</td>
 		<td>Before</td>
 	</tr>
@@ -123,21 +126,28 @@ The LCA_Explicit mod adds several explicit, sexual encounters intended for matur
 Corwin’s (and Caelar’s) scripts each have a banter timer. When the banter timer expires, the script will randomly select a character in your party to initiate a banter. Once a banter is initiated, the banter timer is reset. If there are no more banters available for that character, the script will randomly select another character and repeat the process. The process will continue until all available banters have been exhausted.
 NOTE: The interval for the banter timer is configurable with the use of the LCA Assistant. By default, it is set to two days.
 
+### Using the Configuration Assistant
+<a name="a_config"></a>
+A configuration assistant has been provided to help you adjust certain characteristics of the mod. The assistant can be accessed by selecting the “LCA Assistant” special ability from CHARNAME’s special ability menu. The ability is granted to you automatically shortly after the start of your playthrough. 
 
+### LCA Debugger
+<a name="a_debugger"></a>
+A debugging utility is provided to assist testers with debugging the mod. You can access the debugger through the LCA Assistant, or by, typing the following command into the debugging console:
+CLUAConsole:CreateCreature("XALCDBG")
+Talk to the creature that is spawned to access the debugging options. Use of the debugger is recommended for testing purposes only. 
 
-
-
+### Bug Reports
+<a name="a_bugs"></a>
+If you encounter any bugs or unexplained behavior while playing the mod, please report it to LCAMod@danielvalle.net. You can also reach me through Discord, as well as the Beamdog and G3 forums (see links below). Including your save game with the bug report is helpful, though optional. I’d also appreciate any feedback or constructive criticism.
 
 ### Useful Links
 <a name="a_useful_links"></a>
 
-<ul>
-	<li><a href="https://github.com/LCA-EET/LCA/releases">Releases</a></li>
-	<li><a href="https://github.com/LCA-EET/LCA/blob/main">Github Repository</a></li>
-	<li><a href="https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet">Gibberlings3 Forum Post</a></li>
-	<li><a href="https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet">Beamdog Forums Post</a></li>
-	<li><a href="https://www.youtube.com/channel/UCuD4dw9zg2sK9M1jwStkzSg">YouTube</a></li>
-	
-</ul>
+- Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
+- Discord Server: https://discord.gg/hwGf39gW9g
+- Gibberlings 3 Forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
+- Love Conquers All (LCA) Github: https://github.com/LCA-EET/LCA
+- LCA_Explicit Github: https://github.com/LCA-EET/LCA_Explicit
+
 	
  Crossmodding is allowed! Forking is allowed as well, pursuant to the MIT license.
