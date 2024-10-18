@@ -33,26 +33,74 @@ If you have any questions, or would like to provide feedback, please contact me 
 
 ### Compatibility Table
 <a name="a_compatibility_table"></a>
-<p style="margin-left:10%;">
-	LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET) mod. The table below lists different mods and whether they are compatible with LCA.
-	<table>
-		<tr>
-			<td><b>Mod Name</b></td>
-			<td><b>Status</b></td>
-			<td><b>Install LCA</b></td>
-		</tr>
-		<tr>
-			<td>AutoIdentify</td>
-			<td>Compatible</td>
-			<td>Before</td>
-		</tr>
-		<tr>
-			<td>AutoLoot</td>
-			<td>Compatible</td>
-			<td>Before</td>
-		</tr>
-	</table>
-</p>
+LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET) mod. The table below lists different mods and whether they are compatible with LCA.
+<table>
+	<tr>
+		<td><b>Mod Name</b></td>
+		<td><b>Compatible?</b></td>
+		<td><b>Install LCA</b></td>
+	</tr>
+	<tr>
+		<td>AutoIdentify</td>
+		<td>Yes</td>
+		<td>Before</td>
+	</tr>
+	<tr>
+		<td>AutoLoot</td>
+		<td>Yes</td>
+		<td>Before</td>
+	</tr>
+	<tr>
+		<td>Blackhearts</td>
+		<td>Yes</td>
+		<td>After</td>
+	</tr>
+	<tr>
+		<td>Corwin EET</td>
+		<td>Yes</td>
+		<td>After</td>
+	</tr>
+	<tr>
+		<td>Cost of One Girl's Soul</td>
+		<td>Yes</td>
+		<td>After</td>
+	</tr>
+	<tr>
+		<td>Cowled Menace</td>
+		<td>Yes</td>
+		<td>After</td>
+	</tr>
+	<tr>
+		<td>Enhanced Edition Trilogy (EET)</td>
+		<td>Yes</td>
+		<td>After</td>
+	</tr>
+	<tr>
+		<td>LCA_Explicit</td>
+		<td>Yes</td>
+		<td>Before</td>
+	</tr>
+	<tr>
+		<td>Lichdom</td>
+		<td>Yes</td>
+		<td>After</td>
+	</tr>
+	<tr>
+		<td>Shine on Caelar</td>
+		<td>No</td>
+		<td>N/A</td>
+	</tr>
+	<tr>
+		<td>Skip Chateau Irenicus</td>
+		<td>Yes</td>
+		<td>Doesn't Matter</td>
+	</tr>
+	<tr>
+		<td>Sword Coast Stratagems (SCS)</td>
+		<td>Yes</td>
+		<td>Doesn't Matter</td>
+	</tr>
+</table>
 
 ### Useful Links
 <a name="a_useful_links"></a>
