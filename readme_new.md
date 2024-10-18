@@ -205,6 +205,12 @@ Depending on CHARNAME’s choices, Corwin will vouch for them during the trial i
 #### Escape from Avernus
 If CHARNAME is male, and the LCA_Explicit mod is installed, a special cutscene will play after the escape from Avernus. Corwin must be in the party, and CHARNAME must be in a romance with her, in order for the cutscene to trigger.
 
+#### Miscellaneous
+A number of miscellaneous changes were made to dialogs, particularly the dialogs that occur after CHARNAME is arrested.
+
+#### Corwin's Amulet
+If CHARNAME was in a romance with Corwin at the end of SoD, and they were exiled from the city, Imoen will give CHARNAME a letter from Corwin that includes her amulet. The amulet grants some saving throw bonuses, but it can only be worn by CHARNAME.
+
 </details>
 
 ### Shadows of Amn (BG2) Changes
@@ -212,6 +218,18 @@ If CHARNAME is male, and the LCA_Explicit mod is installed, a special cutscene w
 
 <details>
 	<summary>Spoiler Warning!</summary>
+
+#### Adding Corwin to Your Party
+To add Corwin to your party, you must first obtain the Soultaker Dagger from the Djinn in the Plane of Air in Irenicus’ stronghold. Once you have the dagger, speak to Brega in the Athkatla magistrate. He will offer to send the dagger, along with a letter , to Baldur’s Gate if you help him solve the case of the murders in the Bridge District. 
+
+Once the letter is sent, a two-day timer will start. When the timer expires, you will see a cutscene that plays when you choose to sleep. The conclusion of the cutscene will trigger a four-hour timer, that, when expired, will show a second cutscene depicting the restoration of Skie Silvershield. The conclusion of the second cutscene starts the two-day timer that, when expired, will cause Corwin to appear in the Athkatla magistrate building (the same building where you meet Brega). CHARNAME will receive a dialogue prompt when this second timer has expired, so you will know when Corwin has arrived.
+
+To experience the most content possible, it is recommended that you add Corwin as soon as you are able. Hold off on performing quests or even exploring Athkatla (beyond what’s necessary to solve the bridge murders) until Corwin is in your party.
+
+Upon joining your party, if you still possess Corwin’s Amulet, she will take the amulet back and it will be converted to an amulet that can only be worn by Corwin. The saving throw bonuses will be removed, but while wearing the amulet Corwin will be protected from permanent death. The item description does not indicate as such, but it is one of the effects of the item.
+
+#### Slaver Stockade
+If Corwin is in your party when you rescue the children from the Slaver Stockade, it will set one of the conditions necessary for the Slaver Conspiracy quest during the Return to Baldur’s Gate.
 
 </details>
 
