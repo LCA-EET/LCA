@@ -168,7 +168,7 @@ Cross modding and forking are allowed, pursuant to the MIT license.
 <a name="a_bg1"></a>
 
 <details>
-	<summary>Spoiler Warning!</summary>
+	<summary>Spoiler Warning! (Click to View)</summary>
 	
 #### Dialog Changes
 Various dialogues were changed to explain what Captain Corwin and other high-ranking Flaming Fist personnel were doing during the events of BG1.
@@ -182,7 +182,7 @@ Speak to the crying girl in Southeast Baldur’s Gate. If you choose the appropr
 <a name="a_sod"></a>
 
 <details>
-	<summary>Spoiler Warning!</summary>
+	<summary>Spoiler Warning! (Click to View)</summary>
 
 #### Tent Cutscene
 In the Coast Way Crossing or the Siege Camp, talk to Thaird while Corwin is in your party. Choose to rest for the night. A special cutscene involving Corwin and CHARNAME will take place.
@@ -192,12 +192,7 @@ If you chose to help with the refugee situation (see note below) while in Baldur
 
 > [!NOTE]
 > You must do at least three of the following:
-> -	Killed Lon in the old Iron Throne Headquarters.
-> -	Helped Garachen outside the Ducal Palace by providing him the food from Alyth.
-> -	Dealt with the thieves outside of Three Old Kegs.
-> -	Helped Teera pay her debt.
-> -	Worked with Corwin to foil the plot by the nobles in Three Old Kegs to overthrow the Dukes.
-> -	Helped Officer Vida by requesting reinforcements on her behalf.
+
 
 #### Trial Cutscene
 Depending on CHARNAME’s choices, Corwin will vouch for them during the trial in front of the Flaming Fist headquarters.
@@ -217,7 +212,7 @@ If CHARNAME was in a romance with Corwin at the end of SoD, and they were exiled
 <a name="a_bg2"></a>
 
 <details>
-	<summary>Spoiler Warning!</summary>
+	<summary>Spoiler Warning! (Click to View)</summary>
 
 #### Adding Corwin to Your Party
 To add Corwin to your party, you must first obtain the Soultaker Dagger from the Djinn in the Plane of Air in Irenicus’ stronghold. Once you have the dagger, speak to Brega in the Athkatla magistrate. He will offer to send the dagger, along with a letter , to Baldur’s Gate if you help him solve the case of the murders in the Bridge District. 
@@ -237,6 +232,6 @@ If Corwin is in your party when you rescue the children from the Slaver Stockade
 <a name="a_tob"></a>
 
 <details>
-	<summary>Spoiler Warning!</summary>
+	<summary>Spoiler Warning! (Click to View)</summary>
 
 </details>
