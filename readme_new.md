@@ -184,10 +184,40 @@ Speak to the crying girl in Southeast Baldur’s Gate. If you choose the appropr
 <details>
 	<summary>Spoiler Warning!</summary>
 
+#### Tent Cutscene
+In the Coast Way Crossing or the Siege Camp, talk to Thaird while Corwin is in your party. Choose to rest for the night. A special cutscene involving Corwin and CHARNAME will take place.
+
+#### Archery Lesson
+If you chose to help with the refugee situation (see note below) while in Baldur’s Gate, Corwin will offer to give CHARNAME an archery lesson, if CHARNAME’s proficiency with the shortbow or longbow is greater than zero. She will offer CHARNAME this lesson if CHARNAME has a bow equipped, if CHARNAME is in the Coast Way Crossing, Troll Forest, or the Allied Siege camp, and she has spent the requisite amount of time in the party (at least eighteen hours). Be sure that Corwin and CHARNAME are both standing within sight of Quartermaster Belegarm, otherwise the lesson won’t trigger. The lesson, when completed, will give CHARNAME a permanent +1 boost to missile damage and missile THAC0.
+> [!NOTE]
+> You must do at least three of the following:
+> -	Killed Lon in the old Iron Throne Headquarters.
+> -	Helped Garachen outside the Ducal Palace by providing him the food from Alyth.
+> -	Dealt with the thieves outside of Three Old Kegs.
+> -	Helped Teera pay her debt.
+> -	Worked with Corwin to foil the plot by the nobles in Three Old Kegs to overthrow the Dukes.
+> -	Helped Officer Vida by requesting reinforcements on her behalf.
+
+#### Trial Cutscene
+Depending on CHARNAME’s choices, Corwin will vouch for them during the trial in front of the Flaming Fist headquarters.
+
+#### Escape from Avernus
+If CHARNAME is male, and the LCA_Explicit mod is installed, a special cutscene will play after the escape from Avernus. Corwin must be in the party, and CHARNAME must be in a romance with her, in order for the cutscene to trigger.
+
 </details>
 
 ### Shadows of Amn (BG2) Changes
 <a name="a_bg2"></a>
 
+<details>
+	<summary>Spoiler Warning!</summary>
+
+</details>
+
 ### Throne of Bhaal Changes
 <a name="a_tob"></a>
+
+<details>
+	<summary>Spoiler Warning!</summary>
+
+</details>
