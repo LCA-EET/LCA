@@ -494,7 +494,7 @@ APPEND XACORWIJ
 	END
 
 	IF ~~ THEN BEGIN XA_CorwinArrest4
-		SAY @566 /* ~That's right. I was arrested... and my 'friends' all ran away. It's a good thing that the egg wasn't damaged, otherwise I might still be in prison, hah.~ */
+		SAY @566 /* ~That's right. My 'friends' all ran away, and I was arrested... but not before I broke the nose of one guard, and knocked down the other. As Tymora would have it, Harold — Commander Scar — was outside, and came running in after hearing all the commotion. It was he who finally managed to subdue me. It's a good thing that the egg wasn't damaged, otherwise I might still be in prison, hah.~ */
 		
 		= @567 /* ~My father could've gotten me out like he did so many times before, but this time, he didn't — and I'm glad. Spending that night in that cold cell was a major wake up call for me.~ */
 		
