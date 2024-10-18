@@ -163,11 +163,13 @@ Cross modding and forking are allowed, pursuant to the MIT license.
 
 <details>
 	<summary>Spoiler Warning!</summary>
-		#### Dialog Changes
-		Various dialogues were changed to explain what Captain Corwin and other high-ranking Flaming Fist personnel were doing during the events of BG1.
+	
+#### Dialog Changes
+Various dialogues were changed to explain what Captain Corwin and other high-ranking Flaming Fist personnel were doing during the events of BG1.
 
-		#### Corwin's Home
-		Speak to the crying girl in Southeast Baldur’s Gate. If you choose the appropriate dialog option, she will mark Corwin’s home on the map for you. Inside the home is an ammo belt and a Flaming Fist training manual. Be sure to check the fireplace as well.
+#### Corwin's Home
+Speak to the crying girl in Southeast Baldur’s Gate. If you choose the appropriate dialog option, she will mark Corwin’s home on the map for you. Inside the home is an ammo belt and a Flaming Fist training manual. Be sure to check the fireplace as well.
+		
 </details>
 ### Siege of Dragonspear Changes
 <a name="a_sod"></a>
