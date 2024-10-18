@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+# v1.3.3 2024-10-17
+* Minor dialog and sound improvements.
+
 # v1.3.2 2024-10-12
 * Added compatibility with the Skip Chateau Irenicus mod.
 
