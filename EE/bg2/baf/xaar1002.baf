@@ -82,6 +82,16 @@ END
 //{ Corwin Inventory Handling
 IF
 	InMyArea("XACORWIN")
+	Global("XA_LC_TookCorwinItems", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		MoveGlobal("AR1002","XACORINV",[0.0])
+		SetGlobal("XA_LC_TookCorwinItems", "GLOBAL", 2)
+		Continue()
+END
+
+IF
+	InMyArea("XACORWIN")
 	GlobalLT("XA_LC_TakeCorwinGear", "GLOBAL", 1)
 	GlobalLT("XA_LC_StartedInBG2", "GLOBAL", 1)
 THEN
@@ -172,6 +182,7 @@ END
 
 IF
 	Global("XA_LC_TakeCorwinGear", "GLOBAL", 3)
+	Global("XA_LC_TookCorwinItems", "GLOBAL", 2)
 THEN
 	RESPONSE #100
 		ActionOverride("XACORWIN", TakeCreatureItems("XACORINV", BACKPACK))

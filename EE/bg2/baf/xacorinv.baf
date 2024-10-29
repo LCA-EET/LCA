@@ -15,12 +15,11 @@ END
 IF
 	AreaCheck("BD4100")
 	InParty("Corwin")
-	GlobalLT("XA_LC_TookCorwinItems", "LOCALS", 1)
+	GlobalLT("XA_LC_TookCorwinItems", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		TakeCreatureItems("Corwin", BACKPACK)
-		DisplayStringHead(Myself, ~Yoink!~)
-		SetGlobal("XA_LC_TookCorwinItems", "LOCALS", 1)
+		SetGlobal("XA_LC_TookCorwinItems", "GLOBAL", 1)
 END
 
 IF
