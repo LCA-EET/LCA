@@ -55,6 +55,14 @@ THEN
 		Continue()
 END
 
+IF
+	AreaCheck("BD4100")
+	Global("XA_LC_TookCorwinItems", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		MoveBetweenAreas("AR1002", [0.0], N)
+END
+
 /*
 IF
 	Global("XA_LC_TookCorwinItems", "LOCALS", 1)

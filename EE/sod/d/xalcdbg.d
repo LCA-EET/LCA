@@ -59,6 +59,12 @@ APPEND XALCDBG
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 0
 		
+		IF ~~ THEN REPLY @3014 /* Inventory Carry-over*/
+		DO ~
+			CreateCreature("XACORINV", [-1.-1], N)
+		~
+		GOTO XA_SoD_Debug
+		
 		COPY_TRANS XALCDBG 14
 	END
 	

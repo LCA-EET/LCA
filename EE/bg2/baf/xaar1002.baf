@@ -82,6 +82,7 @@ END
 //{ Corwin Inventory Handling
 IF
 	InMyArea("XACORWIN")
+	InMyArea("XACORINV")
 	Global("XA_LC_TookCorwinItems", "GLOBAL", 1)
 THEN
 	RESPONSE #100
