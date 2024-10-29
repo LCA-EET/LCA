@@ -13,6 +13,17 @@ THEN
 END
 
 IF
+	AreaCheck("BD4100")
+	InParty("Corwin")
+	GlobalLT("XA_LC_TookCorwinItems", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		TakeCreatureItems("Corwin", BACKPACK)
+		DisplayStringHead(Myself, ~Yoink!~)
+		SetGlobal("XA_LC_TookCorwinItems", "LOCALS", 1)
+END
+
+IF
 	HasItem("BDCHAN05", Myself)
 THEN
 	RESPONSE #100
@@ -44,3 +55,14 @@ THEN
 		SetInterrupt(TRUE)
 		Continue()
 END
+
+/*
+IF
+	Global("XA_LC_TookCorwinItems", "LOCALS", 1)
+	AreaCheck("BD4100")
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself, ~Leaving Area~)
+		LeaveAreaLUA("AR1002", [1095.445], N)
+END
+*/

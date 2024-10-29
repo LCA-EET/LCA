@@ -1,0 +1,9 @@
+IF
+	GlobalGT("bd_plot","global",589)
+	InParty("Corwin")
+	GlobalLT("XA_LC_CorwinInventory", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("XACORINV", [1120.667], N)
+		SetGlobal("XA_LC_CorwinInventory", "MYAREA", 1)
+END

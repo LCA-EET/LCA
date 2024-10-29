@@ -78,6 +78,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 
 	ACTION_IF (isEET = 1) THEN BEGIN
 		EXTEND_TOP ~bd0100.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd0100.baf~
+		EXTEND_TOP ~bd4100.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd4100.baf~
 	END
 //}
 

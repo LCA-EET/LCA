@@ -82,19 +82,8 @@ END
 //{ Corwin Inventory Handling
 IF
 	InMyArea("XACORWIN")
-	InMyArea("XACORINV")
 	GlobalLT("XA_LC_TakeCorwinGear", "GLOBAL", 1)
 	GlobalLT("XA_LC_StartedInBG2", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		ActionOverride("XACORINV", TakeCreatureItems("Corwin", BACKPACK))
-		SetGlobal("XA_LC_TakeCorwinGear", "GLOBAL", 1)
-		SetInterrupt(TRUE)
-END
-
-IF
-	Global("XA_LC_TakeCorwinGear", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -217,7 +206,6 @@ IF
 		Global("XA_LC_CorwinDebug1002", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		CreateCreature("XACORINV", [1125.400], N)
 		SetGlobal("XA_LC_SkieSaved", "GLOBAL", 3) // mark complete
 		CreateCreature("XACORWIN", [1033.563], SW)
 		Continue()
@@ -231,7 +219,6 @@ IF
 		Global("XA_LC_LetterSent", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		CreateCreature("XACORINV", [1125.400], N)
 		CreateCreature("XACORWIN", [1033.563], SW)
 		SetGlobal("XA_LC_Spawn2", "AR1002", 1)
 		SetGlobal("XA_LC_SkieSaved", "GLOBAL", 3) // mark complete
