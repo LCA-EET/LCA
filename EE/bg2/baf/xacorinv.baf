@@ -6,14 +6,9 @@ THEN
 END
 
 IF
-	Global("XA_LC_TakeCorwinGear", "GLOBAL", 4)
-THEN
-	RESPONSE #100
-		DestroySelf()
-END
-
-IF
-	AreaCheck("BD4100")
+	OR(2)
+		AreaCheck("BD4100")
+		AreaCheck("BD4300")
 	InParty("Corwin")
 	GlobalLT("XA_LC_TookCorwinItems", "GLOBAL", 1)
 THEN
@@ -56,20 +51,11 @@ THEN
 END
 
 IF
-	AreaCheck("BD4100")
+	OR(2)
+		AreaCheck("BD4100")
+		AreaCheck("BD4300")
 	Global("XA_LC_TookCorwinItems", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		MoveBetweenAreas("AR1002", [0.0], N)
 END
-
-/*
-IF
-	Global("XA_LC_TookCorwinItems", "LOCALS", 1)
-	AreaCheck("BD4100")
-THEN
-	RESPONSE #100
-		DisplayStringHead(Myself, ~Leaving Area~)
-		LeaveAreaLUA("AR1002", [1095.445], N)
-END
-*/
