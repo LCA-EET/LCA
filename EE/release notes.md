@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+# v1.3.4a 2024-11-01
+* Corrected an installer error concerning integration with the Blackhearts EET mod.
+
 # v1.3.4 2024-10-29
 * For EET playthroughs, Corwin will now carry forward into BG2 any items that were in her inventory at the conclusion of SoD, not just her equipment.
 
