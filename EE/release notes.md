@@ -9,7 +9,7 @@
 # v1.3.4a 2024-11-01
 * Corrected an installer error concerning integration with the Blackhearts EET mod.
 * Fixed an issue that could cause duplicates of Corwin's Amulet and letter to appear in Irenicus' stronghold.
-* Fixed a bug that allowed Corwin's amulet (given to CHARNAME at the end of SoD) to be equipable by someone other than CHARNAME. 
+* Fixed a bug that allowed Corwin's amulet (given to CHARNAME at the end of SoD) to be equip-able by someone other than CHARNAME. 
 
 # v1.3.4 2024-10-29
 * For EET playthroughs, Corwin will now carry forward into BG2 any items that were in her inventory at the conclusion of SoD, not just her equipment.
