@@ -887,20 +887,24 @@ OUTER_SET bg2_carryover = 1
 	EXTEND_BOTTOM ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpaEE.baf~
 //}
 
-//{ Place Corwin's Amulet and Letter in Irenicus' stronghold, if the player has it at the end of SoD. Otherwise, they will be copied by the overridden AR0602 script, but only if the player started their game in BG2 (pursuant to the provided parameters).
-	
-	COPY_EXISTING ~IMPORT01.2DA~ ~override~
-	COUNT_2DA_ROWS 2 import1rows
-	INSERT_2DA_ROW (import1rows) 2 ~%import1rows% XALTRCOR~
-	
-	COPY_EXISTING ~IMPORT02.2DA~ ~override~
-	COUNT_2DA_ROWS 2 import2rows
-	INSERT_2DA_ROW (import2rows) 2 ~%import2rows% XALTRSCH~
-	
-	COPY_EXISTING ~IMPORT03.2DA~ ~override~
-	COUNT_2DA_ROWS 2 import3rows
-	INSERT_2DA_ROW (import3rows) 2 ~%import3rows% XAAMULET~
-//}
+/* 
+	NOTE: The below code is no longer needed, since the area script will add the items to the appropriate containers in Irenicus' stronghold. 
+
+	//{ Place Corwin's Amulet and Letter in Irenicus' stronghold, if the player has it at the end of SoD. Otherwise, they will be copied by the overridden AR0602 script, but only if the player started their game in BG2 (pursuant to the provided parameters).
+		
+		COPY_EXISTING ~IMPORT01.2DA~ ~override~
+		COUNT_2DA_ROWS 2 import1rows
+		INSERT_2DA_ROW (import1rows) 2 ~%import1rows% XALTRCOR~
+		
+		COPY_EXISTING ~IMPORT02.2DA~ ~override~
+		COUNT_2DA_ROWS 2 import2rows
+		INSERT_2DA_ROW (import2rows) 2 ~%import2rows% XALTRSCH~
+		
+		COPY_EXISTING ~IMPORT03.2DA~ ~override~
+		COUNT_2DA_ROWS 2 import3rows
+		INSERT_2DA_ROW (import3rows) 2 ~%import3rows% XAAMULET~
+	//}
+*/
 
 //{ Mod Compatibility
 	//{ Cost of One Girl's Soultaker
