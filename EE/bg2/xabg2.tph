@@ -162,6 +162,11 @@ END
 		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu02%)~
 	END
 	
+	COPY_EXISTING ~xacorwib.dlg~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu02%)~
+	END
+	
 	COPY_EXISTING ~xaclean.bcs~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu02%)~

@@ -542,6 +542,7 @@ THEN BEGIN XA_SkieMessageDelivered_Romance
 	DO ~
 		ActionOverride(Player1, SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0))
 		ActionOverride(Player1, IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1))
+		PlaySong(1003)
 	~
 	GOTO XAA31
 	
@@ -549,6 +550,7 @@ THEN BEGIN XA_SkieMessageDelivered_Romance
 	DO ~
 		ActionOverride(Player1, SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0))
 		ActionOverride(Player1, IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1))
+		PlaySong(1003)
 	~
 	GOTO XAA31A
 END
