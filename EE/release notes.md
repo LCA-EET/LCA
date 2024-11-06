@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+# v1.3.4b 2024-11-06
+* Fixed a potential issue with the triggering of the after sex party banter in SoA.
+
 # v1.3.4a 2024-11-01
 * Corrected an installer error concerning integration with the Blackhearts EET mod.
 * Fixed an issue that could cause duplicates of Corwin's Amulet and letter to appear in Irenicus' stronghold.
