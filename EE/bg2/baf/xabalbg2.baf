@@ -264,6 +264,7 @@ END
 		ActionListEmpty()
 		Global("XA_LC_CorwinSex_1", "GLOBAL", 4)
 		GlobalLT("XA_LC_CorwinSexNoSleepTimerSet", "GLOBAL", 1)
+		!AreaCheck("XAEXPL01")
 	THEN
 		RESPONSE #100	
 			SetInterrupt(FALSE)
