@@ -783,8 +783,12 @@
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
+			GlobalLT("XA_LC_CorwinViconiaInterject", "MYAREA", 1)
 		~
-		@88 /* ~I'm not sure I trust her either, but... she did prove her worth in supporting the coalition against Caelar's crusade. We should give her a chance.~ */
+		@37 /* ~I'm not sure I trust her either, but... she did prove her worth in supporting the coalition against Caelar's crusade. We should give her a chance.~ */
+		DO ~
+			SetGlobal("XA_LC_CorwinViconiaInterject", "MYAREA", 1)
+		~
 	END
 
 	INTERJECT_COPY_TRANS2 KELDORJ 182 XA_KELDORJ_182 // OK
@@ -1594,8 +1598,12 @@
 			== XACORWIB
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
+				GlobalLT("XA_LC_CorwinViconiaInterject", "MYAREA", 1)
 			~
 			@37 /* ~I'm not sure I trust her either, but... she did prove her worth in supporting the coalition against Caelar's crusade. We should give her a chance.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinViconiaInterject", "MYAREA", 1)
+			~
 		END
 	//}
 
