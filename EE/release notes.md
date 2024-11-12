@@ -7,7 +7,7 @@
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
 # v1.3.4c 2024-11-11
-* Fixed a potential issue with the triggering of the after sex party banter in SoA.
+* Minor dialog improvements.
 
 # v1.3.4b 2024-11-06
 * Fixed a potential issue with the triggering of the after sex party banter in SoA.

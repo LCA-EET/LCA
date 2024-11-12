@@ -48,6 +48,7 @@ Copy-Item -Path ("functions.tph") -Destination $modPath
 Copy-Item -Path ($tp2Name + ".tp2") -Destination $modPath 
 Copy-Item -Path "weidu.exe" -Destination ($basePath + "/" + $exePath)
 Copy-Item -Path "Discord Server.url" -Destination ($basePath + "/Discord Server.url")
+Copy-Item -Path "PayPal.url" -Destination ($basePath + "/PayPal.url")
 Copy-Item -Path "LCA User Guide.url" -Destination ($basePath + "/LCA User Guide.url")
 Copy-Item -Path "G3 Forum Post.url" -Destination ($basePath + "/G3 Forum Post.url")
 Copy-Item -Path "Venmo.url" -Destination ($basePath + "/Venmo.url")
