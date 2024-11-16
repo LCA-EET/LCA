@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+# v1.3.5 2024-11-15
+* Added compatibility with The Longer Road EE mod.
+
 # v1.3.4c 2024-11-11
 * Minor dialog improvements.
 
