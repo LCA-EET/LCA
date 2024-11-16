@@ -1,0 +1,87 @@
+IF
+	Global("IQTEST","GLOBAL",0)
+	CheckStatGT(Player1,10,INT)
+	CheckStatGT(Player1,10,WIS)
+THEN
+	RESPONSE #100
+		SetGlobal("IQTEST","GLOBAL",1)
+END
+
+IF
+	Global("IQTEST","GLOBAL",0)
+	CheckStatGT(Player1,10,INT)
+	CheckStat(Player1,10,WIS)
+THEN
+	RESPONSE #100
+		SetGlobal("IQTEST","GLOBAL",1)
+END
+
+IF
+	Global("IQTEST","GLOBAL",0)
+	CheckStat(Player1,10,INT)
+	CheckStatGT(Player1,10,WIS)
+THEN
+	RESPONSE #100
+		SetGlobal("IQTEST","GLOBAL",1)
+END
+
+IF
+	Global("IQTEST","GLOBAL",1)
+	OR(2)
+		CheckStatGT(Player1,13,INT)
+		CheckStatGT(Player1,13,WIS)
+THEN
+	RESPONSE #100
+		SetGlobal("IQTEST","GLOBAL",2)
+END
+
+IF
+	Global("IQTEST","GLOBAL",1)
+	OR(2)
+		CheckStat(Player1,13,INT)
+		CheckStat(Player1,13,WIS)
+	OR(2)
+		CheckStat(Player1,11,INT)
+		CheckStat(Player1,11,WIS)
+THEN
+	RESPONSE #100
+		SetGlobal("IQTEST","GLOBAL",2)
+END
+
+IF
+	GlobalLT("XA_LC_EnteredArea", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_EnteredArea", "MYAREA", 1)
+		FadeFromColor([30.0],0)
+		Wait(3)
+		ActionOverride("lrelle1", StartDialog("lrelle1", Player1))
+END
+
+IF
+	Global("ReceivedMask","GLOBAL",1)
+	Global("TalkedEllesime","GLOBAL",2)
+	Global("LRGiveBook","MYAREA",0)  // Spirit Heads
+THEN
+	RESPONSE #100
+		SetGlobal("LRGiveBook","MYAREA",1)  // Spirit Heads
+		GiveItemCreate("bookel6",Player1,0,0,0)  // Elves and the Elven Spirit
+		DisplayString(Player1,@0)  // Queen Ellesime left you a book of elven lore. Maybe you can collect more of them in your future travels.
+		Continue()
+END
+
+IF
+	GlobalGT("TalkedEllesime", "GLOBAL", 0)
+	GlobalLT("XA_LC_DepartArea", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_DepartArea", "MYAREA", 1)
+		FadeFromColor([30.0],0)
+		Wait(2)
+		ActionOverride(Player1, LeaveAreaLUA("XAPEN", "", [0.0], S))
+		ActionOverride(Player2, LeaveAreaLUA("XAPEN", "", [0.0], S))
+		ActionOverride(Player3, LeaveAreaLUA("XAPEN", "", [0.0], S))
+		ActionOverride(Player4, LeaveAreaLUA("XAPEN", "", [0.0], S))
+		ActionOverride(Player5, LeaveAreaLUA("XAPEN", "", [0.0], S))
+		ActionOverride(Player6, LeaveAreaLUA("XAPEN", "", [0.0], S))
+END

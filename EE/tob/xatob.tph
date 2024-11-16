@@ -814,4 +814,12 @@ END
 			INSERT_2DA_ROW 0 3 ~XACAELAR XACAELAB XACAELAB~
 		//}
 	//}
+	
+	//{ Mod Compatibility
+		//{ The Longer Road EE
+			ACTION_IF xa_tlr = 1 THEN BEGIN
+				COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/compat/tlr/baf/tob~ 
+			END
+		//}
+	//}
 //}
