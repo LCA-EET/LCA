@@ -101,7 +101,7 @@ DEFINE_ACTION_FUNCTION xa_extendScripts
 			END
 		END
 	END
-END
+
 DEFINE_ACTION_FUNCTION xa_replaceIn
 	INT_VAR
 		xa_extendTop = 1

@@ -6,7 +6,7 @@ APPEND XACOR25J
 		
 		IF ~~ THEN
 		DO ~
-			Global("XA_LC_CorwinIrenicusFight", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinIrenicusFight", "GLOBAL", 2)
 		~
 		EXIT
 	END
@@ -59,6 +59,10 @@ APPEND XACOR25J
 	IF ~~ THEN BEGIN XA_LC_Warning4
 		SAY @16 /*~Shut it! I believe in second chances. Tymora knows that I've made the most of mine. I don't believe in third chances, and I can't believe that you'd be so foolish, so... so STUPID to give one to that madman. You've made your choice, and I've made mine. Let's go.~*/
 		
-		COPY_TRANS XA_LC_Warning3
+		IF ~~ THEN
+		DO ~
+			SetGlobalTimer("XA_LC_CorwinIrenicusFightTimer", "GLOBAL", ONE_HOUR)
+		~
+		EXIT
 	END
 END
