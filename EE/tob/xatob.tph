@@ -818,7 +818,32 @@ END
 	//{ Mod Compatibility
 		//{ The Longer Road EE
 			ACTION_IF xa_tlr = 1 THEN BEGIN
-				COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/compat/tlr/baf/tob~ 
+				EXTEND_TOP ~ar4000.bcs~ ~%MOD_FOLDER%/compat/tlr/tob/baf/xaar4000.baf~
+				
+				EXTEND_TOP ~xacor25.bcs~ ~%MOD_FOLDER%/compat/tlr/tob/baf/xacorscr.baf~
+				
+				ACTION_DEFINE_ARRAY xa_scriptsToExtend
+				BEGIN
+					aeri25 	// Aerie
+					anom25 	// Anomen
+					xacor25	// Corwin
+					imoe25 	// Imoen
+					jan25 	// Jan
+					jahe25 	// Jaheira
+					keld25 	// Keldorn
+					mazz25 	// Mazzy
+					mins25	// Minsc
+					nali25 	// Nalia
+					neer25 	// Neera
+					rasa25 	// Rasaad
+				END
+				LAF xa_extendScripts
+					STR_VAR
+						xa_extension = ~%MOD_FOLDER%/compat/tlr/tob/baf/xacorally.baf~
+				END
+				EXTEND_TOP ~override/lriren.bcs~ ~%MOD_FOLDER%/compat/tlr/tob/baf/xalriren.baf~
+				
+				COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/compat/tlr/tob/d~ USING ~%MOD_FOLDER%/compat/tlr/tra/english/xalctlr.tra~
 			END
 		//}
 	//}

@@ -86,7 +86,22 @@ DEFINE_ACTION_FUNCTION xa_replace_recompile_string
 			EXTEND_BOTTOM ~%xa_extend%.bcs~ ~%xa_output%.bcs~
 		END
 	END
-	
+DEFINE_ACTION_FUNCTION xa_extendScripts
+	INT_VAR
+		xa_extendTop = 1
+	STR_VAR
+		xa_extension = ~~
+	BEGIN
+		ACTION_PHP_EACH xa_scriptsToExtend AS _ => xa_scriptToExtend
+		BEGIN
+			ACTION_IF(xa_extendTop = 1) BEGIN
+				EXTEND_TOP ~%xa_scriptToExtend%.bcs~ ~%xa_extension%~
+			END ELSE BEGIN
+				EXTEND_BOTTOM ~%xa_scriptToExtend%.bcs~ ~%xa_extension%~
+			END
+		END
+	END
+END
 DEFINE_ACTION_FUNCTION xa_replaceIn
 	INT_VAR
 		xa_extendTop = 1

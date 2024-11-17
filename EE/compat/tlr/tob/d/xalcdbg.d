@@ -35,6 +35,13 @@ APPEND XALCDBG
 		~
 		GOTO XA_LC_TLR_Debug
 		
+		IF ~~ THEN REPLY @18 /*~Create Irenicus and add him to the party.~*/
+		DO ~
+			CreateCreature("lrirenic", [-1.-1], N)
+			ActionOveride("lrirenic", JoinParty())
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @3/* ~Return to the previous menu.~*/
 		GOTO 13
 		

@@ -1,0 +1,36 @@
+IF
+	InParty("lrirenic")
+	InParty(Myself)
+	GlobalLT("XA_LC_TLR_CorwinUpsetTimerSet", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_TLR_CorwinUpsetTimerSet", "LOCALS", 1)
+		SetGlobalTimer("XA_LC_TLR_CorwinUpsetTimer", "LOCALS", ONE_HOUR)
+END
+
+IF 
+	Global("XA_LC_TLR_CorwinUpsetTimerSet", "LOCALS", 1)
+	GlobalLT("XA_LC_TLR_CorwinUpset", "LOCALS", 1)
+	GlobalTimerExpired("XA_LC_TLR_CorwinUpsetTimer", "LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_TLR_CorwinUpset", "LOCALS", 1)
+		StartDialog("XACOR25J", Player1) 
+END
+
+IF
+	GlobalTimerExpired("XA_LC_CorwinIrenicusFightTimer", "GLOBAL")
+	InParty(Myself)
+	See("lrirenic")
+	GlobalLT("XA_LC_CorwinIrenicusFight", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_CorwinIrenicusFight", "GLOBAL", 1)
+END
+
+IF 
+	Global("XA_LC_CorwinIrenicusFight", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		StartDialog("XACOR25J", Player1)
+END
