@@ -957,7 +957,7 @@ OUTER_SET bg2_carryover = 1
 			
 			COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/compat/tlr/bg2/d~ USING ~%MOD_FOLDER%/compat/tlr/tra/english/xalctlr.tra~
 			
-			EXTEND_TOP ~override/xapen.bcs~ ~%MOD_FOLDER%/compat/tlr/bg2/baf/xapentlr.baf~
+			EXTEND_TOP ~xapen.bcs~ ~%MOD_FOLDER%/compat/tlr/bg2/baf/xapentlr.baf~
 			
 			COPY_EXISTING ~AR2800.are~ ~override/xatlrrbg.are~
 			WRITE_ASCII 0x94 ~xatlrrbg~

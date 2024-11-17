@@ -842,7 +842,7 @@ END
 					STR_VAR
 						xa_extension = ~%MOD_FOLDER%/compat/tlr/tob/baf/xacorally.baf~
 				END
-				EXTEND_TOP ~override/lriren.bcs~ ~%MOD_FOLDER%/compat/tlr/tob/baf/xalriren.baf~
+				EXTEND_TOP ~lriren.bcs~ ~%MOD_FOLDER%/compat/tlr/tob/baf/xalriren.baf~
 				
 				COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/compat/tlr/tob/d~ USING ~%MOD_FOLDER%/compat/tlr/tra/english/xalctlr.tra~
 			END

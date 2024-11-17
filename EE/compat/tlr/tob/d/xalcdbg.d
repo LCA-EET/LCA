@@ -9,23 +9,23 @@ APPEND XALCDBG
 		
 		IF ~~ THEN REPLY @2
 		DO ~
-			ActionOverride(Player1,LeaveAreaLUA("xatlrrbg","",[4245.3115],NW))
-			ActionOverride(Player2,LeaveAreaLUA("xatlrrbg","",[4225.3125],NW))
-			ActionOverride(Player3,LeaveAreaLUA("xatlrrbg","",[4225.3125],NW))
-			ActionOverride(Player4,LeaveAreaLUA("xatlrrbg","",[4205.3105],NW))
-			ActionOverride(Player5,LeaveAreaLUA("xatlrrbg","",[4205.3105],NW))
-			ActionOverride(Player6,LeaveAreaLUA("xatlrrbg","",[4205.3105],NW))
+			ActionOverride(Player1,LeaveAreaLUA("xatlrrbg","",[4245.3115],SE))
+			ActionOverride(Player2,LeaveAreaLUA("xatlrrbg","",[4225.3125],SE))
+			ActionOverride(Player3,LeaveAreaLUA("xatlrrbg","",[4225.3125],SE))
+			ActionOverride(Player4,LeaveAreaLUA("xatlrrbg","",[4205.3105],SE))
+			ActionOverride(Player5,LeaveAreaLUA("xatlrrbg","",[4205.3105],SE))
+			ActionOverride(Player6,LeaveAreaLUA("xatlrrbg","",[4205.3105],SE))
 		~
 		EXIT
 		
 		IF ~~ THEN REPLY @5
 		DO ~
-			ActionOverride(Player1,LeaveAreaLUA("xapen","",[4245.3115],NW))
-			ActionOverride(Player2,LeaveAreaLUA("xapen","",[4225.3125],NW))
-			ActionOverride(Player3,LeaveAreaLUA("xapen","",[4225.3125],NW))
-			ActionOverride(Player4,LeaveAreaLUA("xapen","",[4205.3105],NW))
-			ActionOverride(Player5,LeaveAreaLUA("xapen","",[4205.3105],NW))
-			ActionOverride(Player6,LeaveAreaLUA("xapen","",[4205.3105],NW))
+			ActionOverride(Player1,LeaveAreaLUA("xapen","",[4245.3115],SE))
+			ActionOverride(Player2,LeaveAreaLUA("xapen","",[4225.3125],SE))
+			ActionOverride(Player3,LeaveAreaLUA("xapen","",[4225.3125],SE))
+			ActionOverride(Player4,LeaveAreaLUA("xapen","",[4205.3105],SE))
+			ActionOverride(Player5,LeaveAreaLUA("xapen","",[4205.3105],SE))
+			ActionOverride(Player6,LeaveAreaLUA("xapen","",[4205.3105],SE))
 		~
 		EXIT
 		
