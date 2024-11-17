@@ -52,6 +52,11 @@ LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET)
 		<td><b>Install LCA</b></td>
 	</tr>
 	<tr>
+		<td>Ascension</td>
+		<td>Yes</td>
+		<td>Doesn't Matter</td>
+	</tr>
+	<tr>
 		<td><a href="https://github.com/LCA-EET/AutoIdentify">AutoIdentify</a></td>
 		<td>Yes</td>
 		<td>Before</td>
@@ -115,6 +120,11 @@ LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET)
 		<td>Sword Coast Stratagems (SCS)</td>
 		<td>Yes</td>
 		<td>Doesn't Matter</td>
+	</tr>
+	<tr>
+		<td>The Longer Road EE</td>
+		<td>Yes</td>
+		<td>After</td>
 	</tr>
 </table>
 

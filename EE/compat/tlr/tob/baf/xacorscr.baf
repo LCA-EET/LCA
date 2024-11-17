@@ -23,6 +23,7 @@ IF
 	InParty(Myself)
 	See("lrirenic")
 	GlobalLT("XA_LC_TLR_CorwinIrenicusFight", "GLOBAL", 1)
+	HPPercentGT(Myself, 80)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_TLR_CorwinIrenicusFight", "GLOBAL", 1)

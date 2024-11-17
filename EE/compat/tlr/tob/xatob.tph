@@ -27,3 +27,4 @@ END
 EXTEND_TOP ~jonel25.bcs~ ~%MOD_FOLDER%/compat/tlr/tob/baf/xajonel.baf~
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/compat/tlr/tob/d~ USING ~%MOD_FOLDER%/compat/tlr/tra/english/xalctlr.tra~
+COMPILE ~%MOD_FOLDER%/compat/tlr/tob/baf/xarejoin.baf~

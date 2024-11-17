@@ -7,17 +7,8 @@ THEN
 		SetGlobal("XA_LC_TLR_LeftPartyFight", "LOCALS", 1)
 		LeaveParty()
 		SetLeavePartyDialogFile()
-		ChangeAIScript("",DEFAULT)
-		ChangeAIScript("",OVERRIDE)
+		ChangeAIScript("xarejoin",DEFAULT)
+		ChangeAIScript("xafigh01",OVERRIDE)
 		Attack("lrirenic")
 END
 
-IF
-	Global("XA_LC_TLR_LeftPartyFight", "LOCALS", 1)
-	Dead("lrirenic")
-THEN
-	RESPONSE #100
-		SetGlobal("XA_LC_TLR_LeftPartyFight", "LOCALS", 2)
-		SetGlobal("XA_LC_TLR_CorwinIrenicusFight", "GLOBAL", 3)
-		JoinParty()
-END
