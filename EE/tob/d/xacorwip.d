@@ -196,5 +196,115 @@ IF ~~ THEN BEGIN XA_Threat4_NoJoin
 	EXIT
 END
 
+IF ~~ THEN BEGIN XAA1
+	SAY @4 /* ~Gladly, my friend.~ */
+	IF ~~ THEN
+	DO ~
+		ChangeAIScript("XACORWIN", OVERRIDE)
+		SetGlobal("XA_LC_CorwinRejoinProcessed", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XAA2
+	SAY @3 /* ~That's all I needed to hear. Let's go.~ [BD54525] */
+	IF ~~ THEN
+	DO ~
+		ChangeAIScript("XACORWIN", OVERRIDE)
+		SetGlobal("XA_LC_CorwinRejoinProcessed", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XAA3
+	SAY @5 /* ~Very well. Don't take too long.~ [BDCORP5]*/ 
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
+	~
+	EXIT
+END
+
+//{ Ask to Rejoin
+IF ~
+	OR(2)
+		ReputationGT(Player1,6)
+		AreaCheck("AR4500")
+	!Race(Player1, LICH)
+~ THEN BEGIN XA_AreYouSure
+	SAY @0 /* ~<CHARNAME>? Are you sure you don't want me with you?~ [BDCORP6] */
+	
+	IF ~
+		!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @6 /* ~Your assistance would be welcome Captain. Join me.~ */
+	GOTO XAA1
+	
+	IF ~
+		Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @41 /* ~Your assistance would be welcome Major. Join me.~ */
+	GOTO XAA1
+	
+	IF ~
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1 /* ~I need you at my side, now more than ever. Join me.~ */
+	GOTO XAA2
+		
+	IF ~~ THEN REPLY @2 /* ~I do, but not at the moment. Wait here, I will come for you later.~ */
+	DO ~
+		SetGlobal("XA_LC_CorwinJoined", "LOCALS", 0)
+		SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
+	~
+	GOTO XAA3
+	
+	IF ~
+		!AreaCheck("AR4500")
+		!AreaCheck("AR6200")
+		Global("XA_LC_BeenToPocketPlane", "GLOBAL", 1)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY #65302 /* ~I'll send you back to the pocket plane. Wait for me there.~ */ 
+	DO ~
+		SetGlobal("XA_LC_CorwinJoined", "LOCALS", 0)
+		SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
+		CreateVisualEffectObject("SPDIMNDR",Myself)
+		Wait(2)
+		MoveBetweenAreas("AR4500",[1800.1465],S)
+	~
+	EXIT
+	
+	IF ~
+		!AreaCheck("AR4500")
+		!AreaCheck("AR6200")
+		Global("XA_LC_BeenToPocketPlane", "GLOBAL", 1)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @101 /* ~I'll send you back to the pocket plane. Wait for me there, dear.~ */ 
+	DO ~
+		SetGlobal("XA_LC_CorwinJoined", "LOCALS", 0)
+		SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
+		CreateVisualEffectObject("SPDIMNDR",Myself)
+		Wait(2)
+		MoveBetweenAreas("AR4500",[1800.1465],S)
+	~
+	EXIT
+END
+
+IF ~
+	OR(2)
+		ReputationLT(Player1,7)
+		Race(Player1, LICH)
+~ THEN BEGIN XA_AreYouSure_RepLT7
+	SAY @105 /* ~You want me out of here? Fine. You're too far gone to merit my assistance, anyway. Goodbye, <CHARNAME>.~ */
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_CorwinKickedOut", "LOCALS", 1)
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
+		EscapeArea()
+	~
+	EXIT
+END
+//}
+
 //}
 END

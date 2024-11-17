@@ -1,12 +1,12 @@
 APPEND XACOR25J
 	IF ~
-		Global("XA_LC_CorwinIrenicusFight", "GLOBAL", 1)
+		Global("XA_LC_TLR_CorwinIrenicusFight", "GLOBAL", 1)
 	~ THEN BEGIN XA_LC_Fight
 		SAY @17 /*~Back to the hells with you, wizard! Allies, to me!~*/
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_LC_CorwinIrenicusFight", "GLOBAL", 2)
+			SetGlobal("XA_LC_TLR_CorwinIrenicusFight", "GLOBAL", 2)
 		~
 		EXIT
 	END
@@ -33,12 +33,12 @@ APPEND XACOR25J
 		SAY @10 /*~You know exactly what I mean! You brought Irenicus back, after all that he did to you! To us! I had - have - a mission to kill or capture that wizard, and by the gods I will carry it out.~*/
 		
 		IF ~
-			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @11 /*~Major, I understand that you're upset —~*/
 		GOTO XA_LC_Warning3
 		
 		IF ~
-			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @13 /*~Love, I understand that you're upset —~ */
 		GOTO XA_LC_Warning3
 		
@@ -51,7 +51,7 @@ APPEND XACOR25J
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobalTimer("XA_LC_CorwinIrenicusFightTimer", "GLOBAL", ONE_HOUR)
+			SetGlobalTimer("XA_LC_TLR_CorwinIrenFightTimer", "GLOBAL", ONE_HOUR)
 		~
 		EXIT
 	END
@@ -61,7 +61,7 @@ APPEND XACOR25J
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobalTimer("XA_LC_CorwinIrenicusFightTimer", "GLOBAL", ONE_HOUR)
+			SetGlobalTimer("XA_LC_TLR_CorwinIrenFightTimer", "GLOBAL", ONE_HOUR)
 		~
 		EXIT
 	END

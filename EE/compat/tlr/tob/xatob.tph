@@ -1,0 +1,29 @@
+PRINT ~The Longer Road EE is installed. Applying compatibility patches for ToB.~
+SILENT
+EXTEND_TOP ~ar4000.bcs~ ~%MOD_FOLDER%/compat/tlr/tob/baf/xaar4000.baf~
+
+EXTEND_TOP ~xacor25.bcs~ ~%MOD_FOLDER%/compat/tlr/tob/baf/xacorscr.baf~
+
+ACTION_DEFINE_ARRAY xa_scriptsToExtend
+BEGIN
+	aeri25 	// Aerie
+	anom25 	// Anomen
+	xacaelar // Caelar
+	xacor25	// Corwin
+	imoe25 	// Imoen
+	jan25 	// Jan
+	jahe25 	// Jaheira
+	keld25 	// Keldorn
+	mazz25 	// Mazzy
+	mins25	// Minsc
+	nali25 	// Nalia
+	neer25 	// Neera
+	rasa25 	// Rasaad
+END
+LAF xa_extendScripts
+	STR_VAR
+		xa_extension = ~%MOD_FOLDER%/compat/tlr/tob/baf/xacorally.baf~
+END
+EXTEND_TOP ~jonel25.bcs~ ~%MOD_FOLDER%/compat/tlr/tob/baf/xajonel.baf~
+
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/compat/tlr/tob/d~ USING ~%MOD_FOLDER%/compat/tlr/tra/english/xalctlr.tra~

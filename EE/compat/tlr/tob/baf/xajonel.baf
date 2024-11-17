@@ -1,7 +1,7 @@
 IF
 	!Dead("xacorwin")
 	InParty(Myself)
-	Global("XA_LC_CorwinIrenicusFight", "GLOBAL", 2)
+	Global("XA_LC_TLR_CorwinIrenicusFight", "GLOBAL", 2)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_TLR_LeftPartyFight", "LOCALS", 1)
@@ -18,6 +18,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_TLR_LeftPartyFight", "LOCALS", 2)
-		SetGlobal("XA_LC_CorwinIrenicusFight", "GLOBAL", 3)
+		SetGlobal("XA_LC_TLR_CorwinIrenicusFight", "GLOBAL", 3)
 		JoinParty()
 END
