@@ -13,6 +13,7 @@ END
 
 //{ Move the party to RBG at the conclusion of SoA
 IF 
+	InMyArea(Player1)
 	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 2)
 	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 THEN 
@@ -32,6 +33,7 @@ THEN
 END
 
 IF 
+	InMyArea(Player1)
 	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 2)
 	!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 THEN 

@@ -67,7 +67,7 @@ THEN
 		SetGlobal("LRGiveBook","MYAREA",1)  // Spirit Heads
 		GiveItemCreate("bookel6",Player1,0,0,0)  // Elves and the Elven Spirit
 		DisplayString(Player1,@0)  // Queen Ellesime left you a book of elven lore. Maybe you can collect more of them in your future travels.
-		Continue()
+		//Continue()
 END
 
 IF
@@ -76,7 +76,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_DepartArea", "MYAREA", 1)
-		FadeFromColor([30.0],0)
+		FadeToColor([30.0],0)
 		Wait(2)
 		ActionOverride(Player1, LeaveAreaLUA("XAPEN", "", [0.0], S))
 		ActionOverride(Player2, LeaveAreaLUA("XAPEN", "", [0.0], S))

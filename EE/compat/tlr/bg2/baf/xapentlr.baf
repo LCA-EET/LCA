@@ -1,4 +1,5 @@
 IF 
+	InMyArea(Player1)
 	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 2)
 	GlobalLT("XA_LC_PenTLR", "MYAREA", 1)
 THEN 

@@ -24,7 +24,15 @@ ADD_TRANS_TRIGGER LRELLE1 40
 ~
 
 EXTEND_BOTTOM LRELLE1 40
-	COPY_TRANS LRELLE1 41
+	IF ~~ THEN
+	DO ~
+		GiveItemCreate("imask",Player1,0,0,0)
+		AddJournalEntry(@19,QUEST)
+		SetGlobal("ReceivedMask","GLOBAL",1)
+		SetGlobal("TalkedEllesime","GLOBAL",2)
+		ReallyForceSpell(Myself,DRYAD_TELEPORT)
+	~
+	EXIT
 END
 
 ADD_TRANS_TRIGGER LRELLE1 43
@@ -33,5 +41,13 @@ ADD_TRANS_TRIGGER LRELLE1 43
 ~
 
 EXTEND_BOTTOM LRELLE1 43
-	COPY_TRANS LRELLE1 44
+	IF ~~ THEN
+	DO ~
+		GiveItemCreate("imask",Player1,0,0,0)
+		AddJournalEntry(@19,QUEST)
+		SetGlobal("ReceivedMask","GLOBAL",1)
+		SetGlobal("TalkedEllesime","GLOBAL",2)
+		ReallyForceSpell(Myself,DRYAD_TELEPORT)
+	~
+	EXIT
 END
