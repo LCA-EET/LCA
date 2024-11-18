@@ -1,6 +1,6 @@
 PRINT ~The Longer Road EE is installed. Applying compatibility patches for SoA.~
 SILENT
-OUTER_SET xa_tlr = 1
+xa_tlr = 1
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/compat/tlr/bg2/baf~ USING ~%MOD_FOLDER%/compat/tlr/tra/english/xalctlr.tra~
 
