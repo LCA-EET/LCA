@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+# v1.4a 2024-11-17
+* Fixed an installer issue.
+
 # v1.4 2024-11-17
 * Added compatibility with The Longer Road EE mod.
 * Fixed a bug that could cause an inability for Corwin to rejoin the party after being kicked out, in ToB.
