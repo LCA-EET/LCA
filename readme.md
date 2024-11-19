@@ -317,6 +317,15 @@ Conditions A, B and C must hold to initiate the timer that starts the Rescue Cae
 
 </details>
 
+### The Longer Road EE Changes
+<a name="a_tob"></a>
+
+<details>
+	<summary>Spoiler Warning! (Click to View)</summary>
+	
+The encounter with Ellesime is moved from the Elder Grove (start of ToB) to Suldanessellar (end of SoA), just before <CHARNAME> and the party leave for the Return to Baldur's Gate. If Corwin and Irenicus are both in the party, Corwin, after a short time, will rally like-minded party members to kill him, in order to fulfill a second time the mission given to her by the Dukes. You'll get a warning about one in-game hour prior to the start of hostilities.
+</details>
+
 ### Intimate Encounters
 <a name="a_explicit"></a>
 
