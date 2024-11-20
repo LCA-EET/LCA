@@ -40,6 +40,7 @@ If you have any questions, or would like to provide feedback, you can reach me o
 - [Siege of Dragonspear Changes](#a_sod)
 - [Shadows of Amn Changes](#a_bg2)
 - [Throne of Bhaal Changes](#a_tob)
+- [The Longer Road EE Changes](#a_tlr)
 - [Intimate Encounters](#a_explicit)
 
 ### Compatibility Table
@@ -318,7 +319,7 @@ Conditions A, B and C must hold to initiate the timer that starts the Rescue Cae
 </details>
 
 ### The Longer Road EE Changes
-<a name="a_tob"></a>
+<a name="a_tlr"></a>
 
 <details>
 	<summary>Spoiler Warning! (Click to View)</summary>
