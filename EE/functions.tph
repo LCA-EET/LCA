@@ -158,6 +158,28 @@ DEFINE_ACTION_FUNCTION xa_copy_area_music
 		WRITE_LONG (xa_songsoffset + 16) xa_defeat
 END
 
+DEFINE_ACTION_FUNCTION xa_replace_recompile_iterate
+	INT_VAR
+		xa_max_iterations = 0
+		xa_find = 0
+	STR_VAR
+		xa_bcs = ~~
+		xa_extend = ~~
+	BEGIN
+		OUTER_SET xa_iterations = 0
+		OUTER_WHILE (xa_iterations < xa_max_iterations) BEGIN
+			OUTER_SET xa_basefileID = xa_tempID
+			COPY_EXISTING ~%xa_bcs%.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
+			DECOMPILE_AND_PATCH
+			BEGIN
+				REPLACE_TEXTUALLY ~%xa_find%~ ~%xa_iterations%~
+			END
+			EXTEND_TOP ~%xa_extend%.bcs~ ~override/%xa_tempID%.bcs~
+			xa_iterations = xa_iterations + 1
+			xa_tempID = xa_tempID + 1
+		END
+	END
+
 DEFINE_ACTION_FUNCTION xa_replace_recompile
 	INT_VAR
 		xa_indexStart = 1
