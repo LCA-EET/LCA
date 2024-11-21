@@ -50,7 +50,7 @@ LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET)
 	<tr>
 		<td><b>Mod Name</b></td>
 		<td><b>Compatible?</b></td>
-		<td><b>Install LCA</b></td>
+		<td><b>Order</b></td>
 	</tr>
 	<tr>
 		<td>Ascension</td>
@@ -60,52 +60,52 @@ LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET)
 	<tr>
 		<td><a href="https://github.com/LCA-EET/AutoIdentify">AutoIdentify</a></td>
 		<td>Yes</td>
-		<td>Before</td>
+		<td>After LCA</td>
 	</tr>
 	<tr>
 		<td><a href="https://github.com/LCA-EET/AutoLoot">AutoLoot</a></td>
 		<td>Yes</td>
-		<td>Before</td>
+		<td>After LCA</td>
 	</tr>
 	<tr>
 		<td>Blackhearts</td>
 		<td>Yes</td>
-		<td>After</td>
+		<td>Before LCA</td>
 	</tr>
 	<tr>
 		<td>Corwin EET</td>
 		<td>Yes</td>
-		<td>After</td>
+		<td>Before LCA</td>
 	</tr>
 	<tr>
 		<td>Cost of One Girl's Soul</td>
 		<td>Yes</td>
-		<td>After</td>
+		<td>Before LCA</td>
 	</tr>
 	<tr>
 		<td>Cowled Menace</td>
 		<td>Yes</td>
-		<td>After</td>
+		<td>Before LCA</td>
 	</tr>
 	<tr>
 		<td>Enhanced Edition Trilogy (EET) Core</td>
 		<td>Yes</td>
-		<td>After</td>
+		<td>Before LCA</td>
 	</tr>
 	<tr>
 		<td>Enhanced Edition Trilogy (EET) End</td>
 		<td>Yes</td>
-		<td>Before</td>
+		<td>After LCA</td>
 	</tr>
 	<tr>
 		<td><a href="https://github.com/LCA-EET/LCA_Explicit">LCA_Explicit</a></td>
 		<td>Yes</td>
-		<td>Before</td>
+		<td>After LCA</td>
 	</tr>
 	<tr>
 		<td><a href="https://github.com/LCA-EET/Lichdom">Lichdom</a></td>
 		<td>Yes</td>
-		<td>After</td>
+		<td>Before LCA</td>
 	</tr>
 	<tr>
 		<td>Shine on Caelar</td>
@@ -125,7 +125,7 @@ LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET)
 	<tr>
 		<td>The Longer Road EE</td>
 		<td>Yes</td>
-		<td>After</td>
+		<td>Before LCA</td>
 	</tr>
 </table>
 
