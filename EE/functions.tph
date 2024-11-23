@@ -192,9 +192,9 @@ DEFINE_ACTION_FUNCTION xa_replace_recompile
 	BEGIN
 		ACTION_IF(xa_includeInitial = 1) THEN BEGIN
 			ACTION_IF (xa_extendTop = 1) THEN BEGIN
-				EXTEND_TOP ~%xa_extend%.bcs~ ~%xa_bcs%.bcs~
+				EXTEND_TOP ~%xa_extend%.bcs~ ~override/%xa_bcs%.bcs~
 			END ELSE BEGIN
-				EXTEND_BOTTOM ~%xa_extend%.bcs~ ~%xa_bcs%.bcs~
+				EXTEND_BOTTOM ~%xa_extend%.bcs~ ~override/%xa_bcs%.bcs~
 			END
 		END
 		OUTER_SET index = xa_indexStart
