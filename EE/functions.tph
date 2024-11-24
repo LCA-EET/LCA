@@ -161,12 +161,12 @@ END
 DEFINE_ACTION_FUNCTION xa_replace_recompile_iterate
 	INT_VAR
 		xa_max_iterations = 0
+		xa_iterations = 0
 		xa_find = 0
 	STR_VAR
 		xa_bcs = ~~
 		xa_extend = ~~
 	BEGIN
-		OUTER_SET xa_iterations = 0
 		OUTER_WHILE (xa_iterations < xa_max_iterations) BEGIN
 			OUTER_SET xa_basefileID = xa_tempID
 			COPY_EXISTING ~%xa_bcs%.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
@@ -175,7 +175,7 @@ DEFINE_ACTION_FUNCTION xa_replace_recompile_iterate
 				REPLACE_TEXTUALLY ~%xa_find%~ ~%xa_iterations%~
 			END
 			EXTEND_TOP ~%xa_extend%.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
-			OUTER_SET xa_iterations = xa_iterations + 1
+			xa_iterations = xa_iterations + 1
 			OUTER_SET xa_tempID = xa_tempID + 1
 		END
 	END
@@ -249,6 +249,7 @@ DEFINE_ACTION_FUNCTION xa_determine_quantity
 			PRINT ~%xa_prompt%~
 			ACTION_READLN ~xa_quantity~
 		END
+		SILENT
 	END
 
 DEFINE_ACTION_FUNCTION xa_inc_cre_difficulty_newref
