@@ -1,4 +1,5 @@
 PRINT @1000  /* ~Processing BG1 changes...~ */
+SILENT
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/baf~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/d~
@@ -17,6 +18,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/d~
 		STRING_SET 202517 @1002 //BELAND State 1 /* */
 		ACTION_IF (corwinEET = 0) THEN BEGIN
 			PRINT @1010  /* ~CorwinEET is not installed. Strings will be patched accordingly.~ */
+			SILENT
 			STRING_SET 216992 @1003 //DELTAN2 State 1
 			STRING_SET 216991 @1004 //DELTAN2 State 4
 			STRING_SET 202152 @1005 //NEB_ State 3
@@ -25,11 +27,13 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/d~
 			STRING_SET 219473 @1008 //VAI State 6
 		END ELSE BEGIN
 			PRINT @1009  /* ~CorwinEET is installed. String sets skipped!~*/
+			SILENT
 		END
 	END ELSE BEGIN
 		STRING_SET 2516 @1001 //BELAND State 0 /* */
 		STRING_SET 2517 @1002 //BELAND State 1 /* */
 		PRINT @1010  /* ~CorwinEET is not installed. Strings will be patched accordingly.~ */
+		SILENT
 		STRING_SET 16992 @1003 //DELTAN2 State 1 /* */
 		STRING_SET 16991 @1004 //DELTAN2 State 4 /* */
 		STRING_SET 2152 @1005 //NEB_ State 3 /* */

@@ -1,4 +1,5 @@
 PRINT @2000  /* ~Processing SoD changes...~ */
+SILENT
 
 INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
 
