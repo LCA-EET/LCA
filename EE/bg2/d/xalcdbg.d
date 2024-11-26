@@ -91,6 +91,18 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @5150
+		DO ~
+			SetGlobal("XA_LC_IrenicusDead", "GLOBAL", 1)
+			ActionOverride(Player1,LeaveAreaLUA("XACS13","",[467.264],N))
+			ActionOverride(Player2,LeaveAreaLUA("XACS13","",[519.262],S))
+			ActionOverride(Player3,LeaveAreaLUA("XACS13","",[420.274],SSW))
+			ActionOverride(Player4,LeaveAreaLUA("XACS13","",[569.275],S))
+			ActionOverride(Player5,LeaveAreaLUA("XACS13","",[365.290],SSW))
+			ActionOverride(Player6,LeaveAreaLUA("XACS13","",[616.295],S))
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @5077 /* ~Music Test~*/
 		GOTO XA_BG2_MusicTest
 		
