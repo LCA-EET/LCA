@@ -1,6 +1,7 @@
 APPEND ~XACOR25P~
 
 IF ~
+	Global("XA_LC_EnteredToB", "GLOBAL", 1)
 	Race(Player1, LICH)
 ~ THEN BEGIN XA_CorwinLeaveLich
 	SAY @104 /*~I can't bear to fight at your side any longer. Listen, lich — set foot in Baldur's Gate again and I'll crush your bones to dust. Goodbye.~*/
@@ -14,6 +15,7 @@ END
 
 //{ Pocket Plane - Dialog P-7
 IF ~
+	Global("XA_LC_EnteredToB", "GLOBAL", 1)
 	Global("XA_LC_CorwinSpawnPlane", "GLOBAL", 1)
 	GlobalLT("XA_LC_CorwinSpawnComplain", "GLOBAL", 1)
 	!Race(Player1, LICH)
@@ -227,6 +229,7 @@ END
 
 //{ Ask to Rejoin
 IF ~
+	Global("XA_LC_EnteredToB", "GLOBAL", 1)
 	OR(2)
 		ReputationGT(Player1,6)
 		AreaCheck("AR4500")
@@ -290,6 +293,7 @@ IF ~
 END
 
 IF ~
+	Global("XA_LC_EnteredToB", "GLOBAL", 1)
 	OR(2)
 		ReputationLT(Player1,7)
 		Race(Player1, LICH)

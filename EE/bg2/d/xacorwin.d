@@ -12,6 +12,7 @@ END
 
 //{ Dialog I-1
 IF ~
+	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	Global("XA_LC_CorwinContinue", "GLOBAL", 2) 
 	GlobalLT("XA_LC_CorwinReunited", "GLOBAL", 1)
 	!Race(Player1, LICH)
@@ -37,6 +38,7 @@ END
 
 //{ Dialog I-2
 IF ~
+	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	Global("XA_LC_CorwinContinue", "GLOBAL", 1) // Friend
 	GlobalLT("XA_LC_CorwinReunited", "GLOBAL", 1)
 	!Race(Player1, LICH)

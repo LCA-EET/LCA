@@ -19,6 +19,7 @@ END
 
 //{ Spellhold
 IF ~
+	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	Global("XA_LC_CorwinIrenicus", "GLOBAL", 4)
 ~ THEN BEGIN XA_CorwinIrenicusRejoin
 	SAY @75  /* ~Get me out of here!~ */
@@ -55,6 +56,7 @@ IF ~
 END
 
 IF ~
+	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	Global("XA_LC_CorwinIrenicusTalk", "LOCALS", 1)
 ~ THEN BEGIN XA_CorwinIrenicusTalk
 	SAY @78  /* ~Thanks for the help back there.~ */
@@ -212,6 +214,7 @@ END
 
 //{ Corwin Can't Leave - See XACORSCR for Conditions. Dialog P-3
 IF ~
+	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	!Global("XA_LC_CanLeaveParty", "LOCALS", 1)
 ~
 THEN BEGIN XA_CantLeave
@@ -281,6 +284,7 @@ END
 
 //{ Ask to Rejoin
 IF ~
+	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	Global("XA_LC_CorwinJoined", "LOCALS", 1)
 	GlobalLT("XA_LC_CorwinKickedOut", "LOCALS", 1)
 	ReputationGT(Player1,6)
@@ -352,6 +356,7 @@ END
 
 //{ Kicked from Party - Don't Ask to Rejoin
 IF ~
+	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	Global("XA_LC_CorwinJoined", "LOCALS", 1)
 	GlobalLT("XA_LC_CorwinKickedOut", "LOCALS", 1)
 	ReputationLT(Player1,7)
@@ -447,6 +452,7 @@ END
 	//}
 
 	IF ~
+		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 		Global("XA_LC_CorwinKickedOut", "LOCALS", 1)
 		!AreaCheck("AR1002")
 		ReputationGT(Player1,6)
@@ -518,6 +524,7 @@ END
 
 	//{ Athkatla Magistrate - Rep Bad
 	IF ~
+		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 		Global("XA_LC_CorwinKickedOut", "LOCALS", 1)
 		!Race(Player1, LICH)
 		ReputationLT(Player1,7)
@@ -537,6 +544,7 @@ END
 	
 	//{ Athkatla Magistrate - Rep Bad
 	IF ~
+		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 		Global("XA_LC_CorwinKickedOut", "LOCALS", 1)
 		!Race(Player1, LICH)
 		!AreaCheck("AR1002")
@@ -665,6 +673,7 @@ END
 
 IF ~
 	Race(Player1, LICH)
+	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinLeaveLich
 	SAY @104 /*~I can't bear to fight at your side any longer. Listen, lich — set foot in Baldur's Gate again and I'll crush your bones to dust. Goodbye.~*/
 	
