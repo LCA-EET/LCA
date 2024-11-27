@@ -1089,9 +1089,7 @@ IF ~
 END
 
 IF ~~ THEN BEGIN XA_BackToBG2
-	SAY @1431 /* ~(She smiles.)~ */
-	
-	= @622 /* ~I think it'll pale in comparison to the one the city will throw for us upon our return. (She smiles.)~ */
+	SAY @622 /* ~I think it'll pale in comparison to the one the city will throw for us upon our return. (She smiles.)~ */
 
 	IF ~~ THEN REPLY @623 /* ~Baldur's Gate? Are they expecting us?~ */
 	GOTO XA_BackToBG3
