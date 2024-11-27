@@ -35,6 +35,21 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @6069 /* ~Store Test~*/
 		GOTO XA_RBG_StoreTest
 		
+		IF ~~ THEN REPLY @6126 /* ~Jump to RBG end~*/
+		DO ~
+			SetGlobal("XA_LC_DukesDebriefed", "GLOBAL", 5)
+			SetGlobal("XA_LC_DukesFullyDebriefed", "GLOBAL", 1)
+			SetGlobal("XA_LC_RohmaSaved", "GLOBAL", 1)
+			SetGlobal("XA_LC_PrepareCSBGEND1", "GLOBAL", 1)
+			ActionOverride(Player1,LeaveAreaLUA("XADUC3","",[540.250],SW))
+			ActionOverride(Player2,LeaveAreaLUA("XADUC3","",[540.250],SW))
+			ActionOverride(Player3,LeaveAreaLUA("XADUC3","",[540.250],SW))
+			ActionOverride(Player4,LeaveAreaLUA("XADUC3","",[540.250],SW))
+			ActionOverride(Player5,LeaveAreaLUA("XADUC3","",[540.250],SW))
+			ActionOverride(Player6,LeaveAreaLUA("XADUC3","",[540.250],SW))
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @6023 /* ~Change Worldmap (xamaprbg).~*/
 		DO ~
 			SetWorldmap("xamaprbg")
