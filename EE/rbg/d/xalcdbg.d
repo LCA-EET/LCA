@@ -781,9 +781,9 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_RBG_ItemTest
 		SAY @6001 /*  ~Item Test~ */
 		
-		IF ~~ THEN REPLY @6067 /* ~Basilisk Figurine~*/
+		IF ~~ THEN REPLY @6127 /* ~Seldarine Amulet~*/
 		DO ~
-			GiveItemCreate("xabasfig", Player1, 1,1,1)
+			GiveItemCreate("amul27", Player1, 1,1,1)
 		~
 		GOTO XA_RBG_ItemTest
 		

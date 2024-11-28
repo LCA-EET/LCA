@@ -264,6 +264,10 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	EXTEND_TOP ~xabalrbg.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalegg.baf~
 	EXTEND_TOP ~xabalrbg.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalamu.baf~
 	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalrbg.baf~	
+	
+	ACTION_IF (isEET = 1) THEN BEGIN
+		EXTEND_TOP ~override/xapen.bcs~ ~%MOD_FOLDER%/rbg/baf/xapeneet.baf~
+	END
 //}
 
 //{ BMP

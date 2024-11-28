@@ -80,4 +80,12 @@ THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_PossessedSeldarineAmulet", "GLOBAL", 1)
 		GiveItemCreate("AMUL27",Player1,1,0,0)  // Amulet of Seldarine
+		Continue()
+END
+
+IF
+	GlobalLT("XA_LC_4000ScriptPause", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_4000ScriptPause", "MYAREA", 1)
 END

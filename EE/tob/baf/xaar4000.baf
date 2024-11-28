@@ -1,4 +1,14 @@
 //{ LCA Related Changes
+	IF
+		GlobalGT("XA_LC_ReturnToBG", "GLOBAL", 0)
+		Global("HeadsSave","AR4000",1)  // Spirit Heads
+	THEN
+		RESPONSE #100
+			SetGlobal("HeadsSave","AR4000",3)  // Spirit Heads
+			SetGlobal("BD_Chapter_Save","GLOBAL",8)
+			SaveGame(22)
+			SaveGame(0)
+	END
 
 	IF
 		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
@@ -15,7 +25,7 @@
 			ChangeStat(Player6,FATIGUE,1,SET)
 			// Prevent entry into states associated with AR4000
 			SetGlobal("IllaseraSpawn", "GLOBAL", 1)
-			SetGlobal("FORCETOBPARTYMOVE4000","GLOBAL",1)
+			//SetGlobal("FORCETOBPARTYMOVE4000","GLOBAL",1)
 			SetGlobal("SetSolarDreamTimer","AR4000",1)
 			SetGlobal("HeadsSave","AR4000",3)
 			Continue()

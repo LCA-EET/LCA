@@ -1,6 +1,6 @@
 //{ Saradush
 	INTERJECT_COPY_TRANS2 SARBUL05 2 XA_SARBUL05_2
-		== XACOR25B
+		== XACOR25J
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
 		~
@@ -15,7 +15,7 @@
 
 //{ SAREV25A
 	INTERJECT_COPY_TRANS2 SAREV25A 52 XA_SAREV25A_52
-		== XACOR25B
+		== XACOR25J
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
 		~
@@ -23,7 +23,7 @@
 	END
 
 	INTERJECT_COPY_TRANS2 SAREV25A 53 XA_SAREV25A_53
-		== XACOR25B
+		== XACOR25J
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
 		~
@@ -33,7 +33,7 @@
 
 //{ BSAREV25
 	INTERJECT_COPY_TRANS2 BSAREV25 37 XA_BSAREV25_37
-		==XACOR25B
+		==XACOR25J
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
 		~
@@ -49,7 +49,7 @@
 
 //{ XA_GORDOR1_19
 	INTERJECT_COPY_TRANS2 GORODR1 19 XA_GORODR1_19 //OK
-		== XACOR25B
+		== XACOR25J
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
 		~
@@ -66,7 +66,7 @@
 
 //{ GORAPP1
 	INTERJECT_COPY_TRANS2 GORAPP1 17 XA_GORAPP1_17
-		== XACOR25B
+		== XACOR25J
 		IF ~
 			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsValidForPartyDialogue("XACORWIN")
@@ -74,7 +74,7 @@
 		~
 		@6 /* ~I'm not exactly eager to go up against the prince of demons. Whatever you decide, I'll have your back.~ */
 		
-		== XACOR25B
+		== XACOR25J
 		IF ~
 			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsValidForPartyDialogue("XACORWIN")
@@ -86,7 +86,7 @@
 
 //{ GORDEMO
 	INTERJECT_COPY_TRANS2 GORDEMO 1 XA_GORDEMO_1
-		== XACOR25B
+		== XACOR25J
 		IF ~
 			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsValidForPartyDialogue("XACORWIN")
@@ -98,7 +98,7 @@
 //{ Minsc
 	//{ BMINSC25
 		INTERJECT_COPY_TRANS2 BMINSC25 37 XA_BMINSC25_37
-			== XACOR25B
+			== XACOR25J
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
 			~
@@ -110,7 +110,7 @@
 //{ Neera
 	//{ BNEERA25
 		INTERJECT_COPY_TRANS2 BNEERA25 14 XA_BNEERA_14
-			== XACOR25B
+			== XACOR25J
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
 			~
@@ -121,7 +121,7 @@
 
 //{ BJAN25
 		INTERJECT_COPY_TRANS2 BJAN25 10 XA_BJAN25_10
-			== XACOR25B
+			== XACOR25J
 			IF ~
 				IsValidForPartyDialogue("XACORWIN")
 			~

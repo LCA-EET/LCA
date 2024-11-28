@@ -412,6 +412,7 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @6124=~SetGlobal("XA_LC_PartyMembersInPen", "GLOBAL", 3)~
 @6125=~SetGlobal("XA_LC_PartyMembersInPen", "GLOBAL", 4)~
 @6126=~Jump to RBG end.~
+@6127=~Seldarine Amulet~
 
 @7000=~ToB Debug~
 @7001=~XAG104 (BD5300) - Kanaglym~
