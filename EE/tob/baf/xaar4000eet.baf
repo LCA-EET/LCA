@@ -1,0 +1,83 @@
+IF
+	Global("K#NewGame","AR4000",0)  // Spirit Heads
+	Global("ENDOFBG1","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("K#NewGame","AR4000",1)  // Spirit Heads
+		SetGlobal("DREAM","GLOBAL",7)
+		SetGlobal("XPGiven","GLOBAL",0)
+		SetGlobal("INTOB","GLOBAL",1)
+		SetGlobal("StartMP","GLOBAL",1)
+		SetGlobal("HadEllesimeDream1","GLOBAL",1)
+		SetGlobal("HadImoenDream1","GLOBAL",1)
+		SetGlobal("HadSlayerDream","GLOBAL",1)
+		SetGlobal("HadJonDream1","GLOBAL",1)
+		SetGlobal("HadJonDream2","GLOBAL",1)
+		SetGlobal("HadEllesimeDream2","GLOBAL",1)
+		SetGlobal("ENDOFBG1","GLOBAL",2)
+		SetGlobal("SPRITE_IS_DEADYOSHIMO","GLOBAL",1)
+		SetGlobal("AeriePartyBG2","GLOBAL",1)
+		SetGlobal("AnomenPartyBG2","GLOBAL",1)
+		SetGlobal("CerndPartyBG2","GLOBAL",1)
+		SetGlobal("DornPartyBG2","GLOBAL",1)
+		SetGlobal("EdwinPartyBG2","GLOBAL",1)
+		SetGlobal("HaerDalisPartyBG2","GLOBAL",1)
+		SetGlobal("HexxatPartyBG2","GLOBAL",1)
+		SetGlobal("Imoen2PartyBG2","GLOBAL",1)
+		SetGlobal("JaheiraPartyBG2","GLOBAL",1)
+		SetGlobal("JanPartyBG2","GLOBAL",1)
+		SetGlobal("KeldornPartyBG2","GLOBAL",1)
+		SetGlobal("KorganPartyBG2","GLOBAL",1)
+		SetGlobal("MazzyPartyBG2","GLOBAL",1)
+		SetGlobal("MinscPartyBG2","GLOBAL",1)
+		SetGlobal("NaliaPartyBG2","GLOBAL",1)
+		SetGlobal("NeeraPartyBG2","GLOBAL",1)
+		SetGlobal("RasaadPartyBG2","GLOBAL",1)
+		SetGlobal("ValygarPartyBG2","GLOBAL",1)
+		SetGlobal("ViconiaPartyBG2","GLOBAL",1)
+		SetGlobal("YoshimoPartyBG2","GLOBAL",1)
+		SetGlobal("NEWGAME_TOB","GLOBAL",1)
+		AddWorldmapAreaFlag("AR4000",EXPLORED)  // Spirit Heads
+		RemoveWorldmapAreaFlag("AR0020",ENABLED)  // City Gates
+		ReallyForceSpellRES("K#REMBHA",Player1)  // No such index
+		ActionOverride(Player1,AddSpecialAbility("SPIN822"))  // Slayer Change
+		TakeItemListPartyNum("K#PLOT",99)
+		GiveItemCreate("BAG19",Player1,1,0,0)  // Bag of Holding
+		Continue()
+END
+
+IF
+	Global("K#NewGame","AR4000",0)  // Spirit Heads
+	!Global("ENDOFBG1","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("K#NewGame","AR4000",1)  // Spirit Heads
+		SetGlobal("XPGiven","GLOBAL",0)
+		SetGlobal("INTOB","GLOBAL",1)
+		SetGlobal("StartMP","GLOBAL",1)
+		SetGlobal("HadEllesimeDream1","GLOBAL",1)
+		SetGlobal("HadImoenDream1","GLOBAL",1)
+		SetGlobal("HadSlayerDream","GLOBAL",1)
+		SetGlobal("HadJonDream1","GLOBAL",1)
+		SetGlobal("HadJonDream2","GLOBAL",1)
+		SetGlobal("HadEllesimeDream2","GLOBAL",1)
+		SetGlobal("ENDOFBG1","GLOBAL",2)
+		SetGlobal("SPRITE_IS_DEADYOSHIMO","GLOBAL",1)
+		SetGlobal("SPRITE_IS_DEADSAREVOK","GLOBAL",0)
+		ChangeGender("Edwin",MALE)  // Edwin
+		ReallyForceSpellRES("K#FAMREM",Player1)  // No such index
+		ReallyForceSpellRES("K#FAMREM",Player2)  // No such index
+		ReallyForceSpellRES("K#FAMREM",Player3)  // No such index
+		ReallyForceSpellRES("K#FAMREM",Player4)  // No such index
+		ReallyForceSpellRES("K#FAMREM",Player5)  // No such index
+		ReallyForceSpellRES("K#FAMREM",Player6)  // No such index
+		Continue()
+END
+
+IF
+	GlobalLT("XA_LC_PossessedSeldarineAmulet", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_PossessedSeldarineAmulet", "GLOBAL", 1)
+		GiveItemCreate("AMUL27",Player1,1,0,0)  // Amulet of Seldarine
+END

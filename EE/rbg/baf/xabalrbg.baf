@@ -20,6 +20,18 @@
 	END
 //}
 */
+
+//{ Check for possession of Seldarine Amulet
+IF
+	PartyHasItem("AMUL27")
+	GlobalLT("XA_LC_PossessedSeldarineAmulet", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_PossessedSeldarineAmulet", "GLOBAL", 1)
+		Continue()
+END
+//}
+
 //{ Return to Baldur's Gate Timers
 	IF
 		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
