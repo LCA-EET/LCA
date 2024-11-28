@@ -267,6 +267,8 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 	
 	ACTION_IF (isEET = 1) THEN BEGIN
 		EXTEND_TOP ~override/xapen.bcs~ ~%MOD_FOLDER%/rbg/baf/xapeneet.baf~
+		PRINT ~Patched xapen.bcs for EET compatibility.~
+		SILENT
 	END
 //}
 
