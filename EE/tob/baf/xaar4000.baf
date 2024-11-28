@@ -47,6 +47,7 @@
 	
 	//{ Fire Giant Scouting Party
 		IF
+			GlobalGT("XA_LC_ReturnToBG", "GLOBAL", 0)
 			GlobalLT("XA_LC_GiantsSpawned", "GLOBAL", 1)
 			GlobalTimerExpired("XA_LC_GiantSpawnTimer", "GLOBAL")
 		THEN
