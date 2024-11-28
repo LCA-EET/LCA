@@ -1,0 +1,7 @@
+IF
+	Global("XA_LC_ReportCorwinScript", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_ReportCorwinScript", "GLOBAL", 0)
+		DisplayStringHead(Myself, ~xacorwin~)
+END

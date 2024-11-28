@@ -428,6 +428,13 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 		IF ~~ THEN REPLY @2076
 		GOTO XA_CheckScript
 		
+		
+		IF ~~ THEN REPLY @2077
+		DO ~
+			SetGlobal("XA_LC_ReportCorwinScript", "GLOBAL", 1)
+		~
+		EXIT
+		
 		COPY_TRANS XALCDBG XA_ClosingOptions 
 	END
 	
