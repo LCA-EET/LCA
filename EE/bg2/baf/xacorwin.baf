@@ -2,7 +2,7 @@ IF
 	Global("XA_LC_EnteredToB", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		ChangeAIScript("XACOR25",OVERRIDE))
+		ChangeAIScript("XACOR25",OVERRIDE)
 		Continue()
 END
 
