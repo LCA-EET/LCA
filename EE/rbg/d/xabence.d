@@ -93,6 +93,11 @@ IF ~~ THEN BEGIN XA_StartDukeDebriefing
 	DO ~
 		SetGlobal("XA_LC_DukesDebriefed", "GLOBAL", 1)
 		SetGlobal("XA_LC_DebriefTriggered", "GLOBAL", 1)
+		ActionOverride(Player2,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))
+		ActionOverride(Player3,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))
+		ActionOverride(Player4,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))
+		ActionOverride(Player5,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))
+		ActionOverride(Player6,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))
 		StartCutSceneMode()
 		StartCutScene("XADEBREF")
 	~

@@ -435,6 +435,17 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @2078
+		DO ~
+			ActionOverride(Player1, ClearAllActions())
+			ActionOverride(Player2, ClearAllActions())
+			ActionOverride(Player3, ClearAllActions())
+			ActionOverride(Player4, ClearAllActions())
+			ActionOverride(Player5, ClearAllActions())
+			ActionOverride(Player6, ClearAllActions())
+		~
+		EXIT
+		
 		COPY_TRANS XALCDBG XA_ClosingOptions 
 	END
 	

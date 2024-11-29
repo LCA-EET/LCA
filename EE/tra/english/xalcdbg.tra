@@ -63,6 +63,7 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @2075=~Baldur25.bcs (ToB) is active.~
 @2076=~Check active game script.~
 @2077=~Report active Corwin script.~
+@2078=~ClearAllActions()~
 
 @3000=~BG1 Debug~
 @3001=~Item Test~
@@ -415,6 +416,8 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @6125=~SetGlobal("XA_LC_PartyMembersInPen", "GLOBAL", 4)~
 @6126=~Jump to RBG end.~
 @6127=~Seldarine Amulet~
+@6128=~SetGlobal("XA_LC_BenceDukeDebrief", "GLOBAL", 1)~
+@6129=~Spawn XABENCE~
 
 @7000=~ToB Debug~
 @7001=~XAG104 (BD5300) - Kanaglym~
