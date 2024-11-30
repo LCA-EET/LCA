@@ -1,6 +1,7 @@
 OUTER_SET met_illasera = 1
 
 PRINT ~Blackhearts EET is installed. Patching dialogs accordingly.~
+SILENT
 
 /*
 	If a parameter file exists, overwrite the default parameter with the contents of the parameter file.
