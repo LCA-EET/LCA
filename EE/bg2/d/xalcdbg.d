@@ -380,6 +380,36 @@ APPEND ~XALCDBG~
 		~
 		GOTO XA_BG2_AdjustVariables
 		
+		IF ~~ THEN REPLY @5151
+		DO ~
+			ActionOverride(Player2,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))
+		~
+		GOTO XA_BG2_AdjustVariables
+		
+		IF ~~ THEN REPLY @5152
+		DO ~
+			ActionOverride(Player3,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))
+		~
+		GOTO XA_BG2_AdjustVariables
+		
+		IF ~~ THEN REPLY @5153
+		DO ~
+			ActionOverride(Player4,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))
+		~
+		GOTO XA_BG2_AdjustVariables
+		
+		IF ~~ THEN REPLY @5154
+		DO ~
+			ActionOverride(Player5,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))
+		~
+		GOTO XA_BG2_AdjustVariables
+		
+		IF ~~ THEN REPLY @5155
+		DO ~
+			ActionOverride(Player6,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))
+		~
+		GOTO XA_BG2_AdjustVariables
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		

@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+# v1.4.1a 2024-11-29
+* Fixed a bug that caused party members other than CHARNAME and Corwin to remain in the party after the start of the debriefing, during the Return to Baldur's Gate mini-quest.
+
 # v1.4.1 2024-11-28
 * Further improvements for EET compatibility.
 

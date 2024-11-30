@@ -14,7 +14,7 @@
 @2019=~Change Corwin's Portrait (SoD)~
 @2020=~Report a bug.~
 @2021=~Support the creator of the LCA mod.~
-@2024=~LCA v1.4.1, 2024-11-28~
+@2024=~LCA v1.4.1a, 2024-11-29~
 @2025=~Twelve Hours~
 @2026=~One Day~
 @2027=~Two Days~
@@ -289,6 +289,11 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @5148=~TriggerOverride(Player5,LocalsLT("XA_LC_CorwinBanters","XA_LC_CorwinBantersEnd"))~
 @5149=~TriggerOverride(Player6,LocalsLT("XA_LC_CorwinBanters","XA_LC_CorwinBantersEnd"))~
 @5150=~Pre-RBG Test~
+@5151=~ActionOverride(Player2,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))~
+@5152=~ActionOverride(Player3,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))~
+@5153=~ActionOverride(Player4,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))~
+@5154=~ActionOverride(Player5,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))~
+@5155=~ActionOverride(Player6,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))~
 
 @6000=~Return to Baldur's Gate Debug~
 @6001=~Item Test~
