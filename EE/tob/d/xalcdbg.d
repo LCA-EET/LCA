@@ -66,6 +66,12 @@ APPEND ~XALCDBG~
 		~
 		GOTO XA_ToB_Debug
 		
+		IF ~~ THEN REPLY @7048
+		DO ~
+			StartCutScene("cut218a")
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @7021
 		GOTO XA_ToB_AdjustVariables
 		
