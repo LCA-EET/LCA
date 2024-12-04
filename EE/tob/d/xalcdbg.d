@@ -68,6 +68,8 @@ APPEND ~XALCDBG~
 		
 		IF ~~ THEN REPLY @7048
 		DO ~
+			SetGlobal("WraithPunish","GLOBAL",0)
+			SetGlobal("XA_LC_RohmaWraith", "GLOBAL", 1)
 			StartCutScene("cut218a")
 		~
 		EXIT
@@ -162,6 +164,12 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @7041
 		DO ~
 			SetGlobal("XA_LC_Banter_CorwinCaelar", "GLOBAL", 1)
+		~
+		GOTO XA_ToB_AdjustVariables
+		
+		IF ~~ THEN REPLY @7049
+		DO ~
+			SetGlobal("WraithPunish","GLOBAL",0)
 		~
 		GOTO XA_ToB_AdjustVariables
 		

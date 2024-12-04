@@ -14,7 +14,7 @@
 @2019=~Change Corwin's Portrait (SoD)~
 @2020=~Report a bug.~
 @2021=~Support the creator of the LCA mod.~
-@2024=~LCA v1.4.1a, 2024-11-29~
+@2024=~LCA v1.4.1b, 2024-12-03~
 @2025=~Twelve Hours~
 @2026=~One Day~
 @2027=~Two Days~
@@ -473,3 +473,4 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @7046=~Reset Player 5 Caelar Banters~
 @7047=~Reset Player 6 Caelar Banters~
 @7048=~Wraith Fight Test~
+@7049=~SetGlobal("WraithPunish","GLOBAL",0)~
