@@ -42,6 +42,7 @@ If you have any questions, or would like to provide feedback, you can reach me o
 - [Throne of Bhaal Changes](#a_tob)
 - [The Longer Road EE Changes](#a_tlr)
 - [Intimate Encounters](#a_explicit)
+- [Release Notes](EE/release notes.md)
 
 ### Compatibility Table
 <a name="a_compatibility_table"></a>
