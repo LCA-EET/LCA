@@ -53,7 +53,8 @@ Copy-Item -Path "LCA User Guide.url" -Destination ($basePath + "/LCA User Guide.
 Copy-Item -Path "G3 Forum Post.url" -Destination ($basePath + "/G3 Forum Post.url")
 Copy-Item -Path "Venmo.url" -Destination ($basePath + "/Venmo.url")
 Copy-Item -Path "Beamdog Forum Post.url" -Destination ($basePath + "/Beamdog Forum Post.url")
-Copy-Item -Path "Release Notes.md" -Destination ($basePath + "/Release_Notes_LCA.md")
+Copy-Item -Path "LCA Release Notes.url" -Destination ($basePath + "/LCA Release Notes.url")
+#Copy-Item -Path "Release Notes.md" -Destination ($basePath + "/Release_Notes_LCA.md")
 #Copy-Item -Path "../User Guide.pdf" -Destination ($basePath + "/User Guide.pdf")
 #Remove-Item -LiteralPath ($testDir + $tp2Name) -Force -Recurse
 
