@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+### v1.4.1c 2024-12-14
+* Fixed a bug concerning the Underdark Slave Trader dialog, that could, in a very specific circumstance, result in a dialog that is unable to progress.
+
 ### v1.4.1b 2024-12-03
 * Fixed a bug that manifested itself in ToB, when Corwin hadn't exhausted all of the SoA banters for particular party members who were in the party at the time of the transition from SoA to ToB.
 
