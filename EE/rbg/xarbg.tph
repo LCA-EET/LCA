@@ -1665,14 +1665,19 @@ PRINT @4164 /* ~Please be patient. This may take a while.~ */
 SILENT
 
 //{ Block A Area Modifications
+	//{ Brevlik Spawn Fix 2024-12-18
+		COPY_EXISTING ~xaa159.are~ ~override~
+		WRITE_ASCII 0x94 ~xaas159~ #8
+	//}
+
 	//{ Places where Brevlik can spawn
 		ACTION_DEFINE_ARRAY brevSpawns
 		BEGIN
-			xaas137 // ar0114
-			xaas138 // ar0103
-			xaas159 // ar0133
-			xaas242 // ar0119
-			xaas478 // ar0116
+			xaas137 // ar0114 - CHECKED OK
+			xaas138 // ar0103 - CHECKED OK
+			xaas159 // ar0133 - CHECKED OK
+			xaas242 // ar0119 - CHECKED OK
+			xaas478 // ar0116 - CHECKED OK
 		END
 
 		ACTION_PHP_EACH brevSpawns AS _ => spawnArea
@@ -1811,7 +1816,7 @@ SILENT
 		EXTEND_TOP ~xaas478.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0116.baf~
 		
 		COPY_EXISTING ~xaa478.are~ ~override~
-		WRITE_ASCII 0x94 ~xaas478 ~#8 // the area script wasn't attached to the area, for some reason
+		WRITE_ASCII 0x94 ~xaas478~ #8 // the area script wasn't attached to the area, for some reason
 		
 		// Replace NPCs
 		WRITE_ASCII 0x2AC ~xaa166~ #8

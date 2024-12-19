@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+### v1.4.1d 2024-12-18
+* Corrected a detached area script issue that could cause Brevlik to fail to spawn during the Return the Farseer quest.
+
 ### v1.4.1c 2024-12-14
 * Fixed a bug concerning the Underdark Slave Trader dialog, that could, in a very specific circumstance, result in a dialog that is unable to progress.
 
