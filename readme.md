@@ -35,6 +35,7 @@ If you have any questions, or would like to provide feedback, you can reach me o
 - [LCA Debugger](#a_debugger)
 - [Bug Reports](#a_bugs)
 - [Cross Modding / Forking](#a_crossmodding)
+- [Frequently Asked Questions (FAQs)](#a_faq)
 - [Useful Links](#a_useful_links) 
 - [Baldur's Gate 1 Changes](#a_bg1)
 - [Siege of Dragonspear Changes](#a_sod)
@@ -169,6 +170,23 @@ If you encounter any bugs or unexplained behavior while playing the mod, please 
 ### Cross Modding / Forking
 <a name="a_crossmodding"></a>
 Cross modding and forking are allowed, pursuant to the MIT license. I'd be happy to review your proposed additions to help ensure that they're consistent with what has already been established.
+
+### Frequently Asked Questions
+<a name="a_faq"></a>
+Q: I finished BG2 and did the Tears of Bhaal bit and came back to Suldanessellar but I do not seem to be able to leave the room in order to go to Baldurs Gate. How do I progress?
+A: Talk to Corwin. You can talk to her even if she is a party member, same as you would any NPC. She will give you the option to start the "Return to Baldur's Gate" portion of the mod.
+<a name="a_faq"></a>
+
+Q: I've started the Returning the Farseer quest. Where can I find Brevlik?
+A: Brevlik will spawn randomly in one of five locations:
+<details>
+	<summary>Spoiler Warning! (Click to View)</summary>
+- Blushing Mermaid (xaa137)
+- Three Old Kegs, Level 1 (xaa242)
+- Low Lantern, Level B1 (xaa159)
+- Helm & Cloak, Level 1 (xaa478)
+- Splurging Sturgeon, Level 1 (xaa138)
+</details>
 
 ### Useful Links
 <a name="a_useful_links"></a>
