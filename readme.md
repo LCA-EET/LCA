@@ -173,17 +173,17 @@ Cross modding and forking are allowed, pursuant to the MIT license. I'd be happy
 
 ### Frequently Asked Questions
 <a name="a_faq"></a>
+<u><b>Question</b></u><br>
+I finished BG2 and did the Tears of Bhaal bit and came back to Suldanessellar but I do not seem to be able to leave the room in order to go to Baldurs Gate. How do I progress?
+
+<u><b>Answer</b></u><br>
+Talk to Corwin. You can talk to her even if she is a party member, same as you would any NPC. She will give you the option to start the "Return to Baldur's Gate" portion of the mod.
+
 <u><b>Question</b></u>
-\I finished BG2 and did the Tears of Bhaal bit and came back to Suldanessellar but I do not seem to be able to leave the room in order to go to Baldurs Gate. How do I progress?
+I've started the Returning<br> the Farseer quest. Where can I find Brevlik?
 
-<u><b>Answer</b></u>
-\Talk to Corwin. You can talk to her even if she is a party member, same as you would any NPC. She will give you the option to start the "Return to Baldur's Gate" portion of the mod.
-
-<u><b>Question</b></u>
-\I've started the Returning the Farseer quest. Where can I find Brevlik?
-
-<u><b>Answer</b></u>
-\Brevlik will spawn randomly in one of five locations:
+<u><b>Answer</b></u><br>
+Brevlik will spawn randomly in one of five locations:
 <details>
 	<summary>Spoiler Warning! (Click to View)</summary>
 - Blushing Mermaid (xaa137)
