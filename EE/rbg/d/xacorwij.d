@@ -2446,6 +2446,7 @@ APPEND XACORWIJ
 		DO ~
 			SetGlobal("XA_LC_CorwinWithFamily", "GLOBAL", 1)
 			SetGlobal("XA_LC_CorwinMetFamily", "GLOBAL", 2)
+			SetGlobal("XA_LC_CorwinSex_3", "GLOBAL", 1)
 		~
 		GOTO XA_SexTonight
 	END
@@ -2455,7 +2456,6 @@ APPEND XACORWIJ
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_LC_CorwinSex_3", "GLOBAL", 1)
 			SetLeavePartyDialogFile()
 			ChangeAIScript("", OVERRIDE)
 			ChangeAIScript("",DEFAULT)

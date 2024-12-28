@@ -21,6 +21,35 @@
 //}
 */
 
+//{ 1.4.1e Fixes
+IF
+	OR(4)
+		Global("XA_LC_StayingAtThreeOldKegs","GLOBAL",1)
+		Global("XA_LC_StayingAtBladeAndStars","GLOBAL",1)
+		Global("XA_LC_StayingAtElfsongTavern","GLOBAL",1)
+		Global("XA_LC_StayingAtBlushingMermaid","GLOBAL",1)
+	GlobalLT("XA_LC_CorwinSex_3", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_CorwinSex_3", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	GlobalGT("XA_LC_PrisonKnowledge", "GLOBAL", 0)
+	GlobalLT("XA_LC_PrisonKnowledge", "GLOBAL", 3)
+	!AreaCheck("XAG1")
+	!AreaCheck("XAG2")
+	!AreaCheck("XAG3")
+	!AreaCheck("XADEMSAN")
+	!AreaCheck("XAPAINT1")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_PrisonKnowledge", "GLOBAL", 3)
+		Continue()
+END
+//}
+
 //{ Check for possession of Seldarine Amulet
 IF
 	PartyHasItem("AMUL27")
