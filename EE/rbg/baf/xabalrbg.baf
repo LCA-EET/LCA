@@ -36,6 +36,7 @@ THEN
 END
 
 IF
+	GlobalGT("XA_LC_SavedElfsong", "GLOBAL", 0)
 	GlobalGT("XA_LC_PrisonKnowledge", "GLOBAL", 0)
 	GlobalLT("XA_LC_PrisonKnowledge", "GLOBAL", 3)
 	!AreaCheck("XAG1")
