@@ -410,6 +410,12 @@ APPEND ~XALCDBG~
 		~
 		GOTO XA_BG2_AdjustVariables
 		
+		IF ~~ THEN REPLY @5156 
+		DO ~
+			SetGlobal("XA_LC_BackToBG", "GLOBAL", 1)
+		~
+		GOTO XA_BG2_AdjustVariables
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		

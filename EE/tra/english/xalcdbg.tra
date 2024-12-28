@@ -294,6 +294,7 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @5153=~ActionOverride(Player4,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))~
 @5154=~ActionOverride(Player5,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))~
 @5155=~ActionOverride(Player6,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))~
+@5156=~SetGlobal("XA_LC_BackToBG", "GLOBAL", 1)~
 
 @6000=~Return to Baldur's Gate Debug~
 @6001=~Item Test~
