@@ -1,3 +1,16 @@
+//{ 1.4.2 Corwin Reminder
+IF
+	GlobalTimerExpired("XA_LC_Reminder", "XACS13")
+	GlobalLT("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
+	!Dead("XACORWIN")
+THEN
+	RESPONSE #100
+		ActionOverride("XACORWIN", DisplayStringHead(Myself, @1)) /* ~Talk to me when you're ready to leave.~ */
+		SetGlobalTimer("XA_LC_Reminder", "XACS13", THREE_ROUNDS)
+		Continue()
+END
+//}
+
 IF
 	Global("PCKeepOwner","GLOBAL",1)
 THEN
