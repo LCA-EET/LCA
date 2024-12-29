@@ -1156,7 +1156,7 @@ IF ~~ THEN BEGIN XA_BackToBG_RTL_NotYet
 	SAY @634 /* ~Take your time. Come and see me when you're ready.~ */
 	IF ~~ THEN
 	DO ~
-		SetGlobalTimer("XA_LC_Reminder", "XACS13", THREE_ROUNDS)
+		SetGlobalTimer("XA_LC_Reminder", "LOCALS", THREE_ROUNDS)
 	~
 	EXIT
 END

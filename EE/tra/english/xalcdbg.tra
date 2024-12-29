@@ -475,3 +475,10 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @7047=~Reset Player 6 Caelar Banters~
 @7048=~Wraith Fight Test~
 @7049=~SetGlobal("WraithPunish","GLOBAL",0)~
+@7050=~Check conditions for Caelar rescue quest.~
+@7051=~Global("XA_LC_IncubusDefeated", "GLOBAL", 0)~
+@7052=~Global("XA_LC_IncubusDefeated", "GLOBAL", 1)~
+@7053=~Global("XA_LC_EnteredSaradush", "GLOBAL", 0)~
+@7054=~Global("XA_LC_EnteredSaradush", "GLOBAL", 1)~
+@7055=~Global("XA_LC_ClearedKanaglym", "GLOBAL", 0)~
+@7056=~Global("XA_LC_ClearedKanaglym", "GLOBAL", 1)~

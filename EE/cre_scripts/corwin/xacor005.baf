@@ -95,3 +95,16 @@ THEN
 		Continue()
 END
 //}
+
+//{ 1.4.2 Corwin Reminder
+IF
+	AreaCheck("XACS13")
+	GlobalTimerExpired("XA_LC_Reminder", "LOCALS")
+	GlobalLT("XA_LC_PartyRemovalProcessing", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself, @1) /* ~Talk to me when you're ready to leave.~ */
+		SetGlobalTimer("XA_LC_Reminder", "LOCALS", THREE_ROUNDS)
+		Continue()
+END
+//}

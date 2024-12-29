@@ -80,11 +80,53 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @7026
 		GOTO XA_ToB_CreateItem
 		
+		IF ~~ THEN REPLY @7050
+		GOTO XA_ToB_CaelarConditions
+		
 		IF ~~ THEN REPLY @7007 /* ~Epilogue Test~*/
 		GOTO XA_ToB_EpilogueTest
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 13
+		
+		COPY_TRANS XALCDBG 14
+	END
+	
+	IF ~~ THEN BEGIN XA_ToB_CaelarConditions
+		SAY @7050 /* ~Check conditions for Caelar rescue quest.~*/
+		
+		IF ~
+			Global("XA_LC_IncubusDefeated", "GLOBAL", 0)
+		~ THEN REPLY @7051
+		GOTO XA_ToB_Debug
+		
+		IF ~
+			Global("XA_LC_IncubusDefeated", "GLOBAL", 1)
+		~ THEN REPLY @7052
+		GOTO XA_ToB_Debug
+		
+		IF ~
+			Global("XA_LC_EnteredSaradush", "GLOBAL", 0)
+		~ THEN REPLY @7053
+		GOTO XA_ToB_Debug
+		
+		IF ~
+			Global("XA_LC_EnteredSaradush", "GLOBAL", 1)
+		~ THEN REPLY @7054
+		GOTO XA_ToB_Debug
+		
+		IF ~
+			Global("XA_LC_ClearedKanaglym", "GLOBAL", 0)
+		~ THEN REPLY @7055
+		GOTO XA_ToB_Debug
+		
+		IF ~
+			Global("XA_LC_ClearedKanaglym", "GLOBAL", 1)
+		~ THEN REPLY @7056
+		GOTO XA_ToB_Debug
+		
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_ToB_Debug
 		
 		COPY_TRANS XALCDBG 14
 	END
