@@ -6,6 +6,12 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+## v1.4.3.1 2025-01-07
+* Removed Corwin, Caelar AI-voiced lines due to ethical concerns.
+
+## v1.4.3 2025-01-04
+* Added a description for the LCA Assistant launcher.
+
 ### v1.4.2 2024-12-30
 * Added a reminder to speak to Corwin at the conclusion of the events of SoA, to initiate the Return to Baldur's Gate portion of the mod.
 

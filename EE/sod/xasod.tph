@@ -84,7 +84,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 //}
 
 //{ New Sounds
-	COPY ~%MOD_FOLDER%/sod/wav/~ 	~override~
+	// COPY ~%MOD_FOLDER%/sod/wav/~ 	~override~
 //}
 
 //{ New Creatures

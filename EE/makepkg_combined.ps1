@@ -18,7 +18,8 @@ $folders = @(
 'rbg',
 'sod',
 'tob',
-'tra'
+'tra',
+'wav'
 )
 
 $toExclude = @(

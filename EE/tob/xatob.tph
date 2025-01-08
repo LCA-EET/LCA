@@ -118,7 +118,7 @@ END
 //}
 
 //{ Sounds
-	COPY ~%MOD_FOLDER%/tob/wav/caelar~ ~override~
+	// COPY ~%MOD_FOLDER%/tob/wav/caelar~ ~override~
 //}
 
 //{ Animations

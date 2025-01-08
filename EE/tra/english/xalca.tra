@@ -10,6 +10,7 @@
 @853=~Added LCA Assistant to BDBaldur.bcs~
 @854=~Added LCA Assistant to Baldur25.bcs~
 @855=~Target Dummy~
+@856=~Activate this ability to launch the LCA Assistant.~
 
 // BG1
 @1000=~Processing BG1 changes...~
@@ -3127,6 +3128,5 @@ Weight: 0~
 @11420 = ~Teleport Without Error~
 @11421 = ~Impale~
 @11422 = ~Attack~
-
 
 //}

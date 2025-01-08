@@ -403,8 +403,8 @@ END
 //}
 
 //{ cre
-	COPY ~%MOD_FOLDER%/bg2/wav~ ~override~
-	COPY ~%MOD_FOLDER%/bg2/wav/corwin~ ~override~
+	//COPY ~%MOD_FOLDER%/bg2/wav~ ~override~
+	//COPY ~%MOD_FOLDER%/bg2/wav/corwin~ ~override~
 
 	//{ xacorwin
 		COPY_EXISTING ~xad106.cre~ ~override/xacorwin.cre~ // corwin7

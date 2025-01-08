@@ -79,6 +79,8 @@ SILENT
 
 LAF xa_cleartempfiles END
 
+COPY ~%MOD_FOLDER%/wav~ ~override~
+
 ACTION_IF (isEET = 1) THEN BEGIN
 	INCLUDE ~%MOD_FOLDER%/bg1/xabg1.tph~
 	INCLUDE ~%MOD_FOLDER%/sod/xasod.tph~
