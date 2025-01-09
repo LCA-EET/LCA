@@ -8,6 +8,10 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf/params~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/baf/cutscenes~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg2/d~
 
+ACTION_IF (xalc_assistant = 1) THEN BEGIN
+	COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d/debug~
+END
+
 ACTION_IF (isEET = 0) THEN BEGIN
 	OUTER_SET specRef = IDS_OF_SYMBOL(SPECIFIC ~AUTINN_CREW~)
 	ACTION_IF(specRef < 0) THEN BEGIN
@@ -269,13 +273,16 @@ END
 		REPLACE_TEXTUALLY ~PlaySong(1009)~ ~PlaySong(%xamu09%)~
 	END
 	
-	COPY_EXISTING ~xalcdbg.dlg~ ~override~
-	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY ~PlaySong(1001)~ ~PlaySong(%xamu01%)~
-		REPLACE_TEXTUALLY ~PlaySong(1002)~ ~PlaySong(%xamu02%)~
-		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu02%)~
-		REPLACE_TEXTUALLY ~PlaySong(1009)~ ~PlaySong(%xamu09%)~
+	ACTION_IF (xalc_assistant = 1) THEN BEGIN
+		COPY_EXISTING ~xalcdbg.dlg~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY ~PlaySong(1001)~ ~PlaySong(%xamu01%)~
+			REPLACE_TEXTUALLY ~PlaySong(1002)~ ~PlaySong(%xamu02%)~
+			REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu02%)~
+			REPLACE_TEXTUALLY ~PlaySong(1009)~ ~PlaySong(%xamu09%)~
+		END
 	END
+	
 //}
 
 //{ bmp

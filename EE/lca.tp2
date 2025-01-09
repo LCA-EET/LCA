@@ -72,8 +72,24 @@ END ELSE BEGIN
 	PRINT @802  // ~Enhanced Edition Trilogy (EET) mod has NOT been detected.~ 
 END
 
-INCLUDE ~%MOD_FOLDER%/assistant/xaassistant.tph~
 INCLUDE ~%MOD_FOLDER%/functions.tph~
+
+OUTER_SET xalc_assistant = 0
+
+LAF xa_determine_quantity
+	INT_VAR
+		xa_min_qty = 0
+		xa_max_qty = 1
+		xa_str_ref = RESOLVE_STR_REF(@857)
+	RET
+		xalc_assistant = xa_quantity
+END
+
+SILENT 
+
+ACTION_IF (xalc_assistant = 1) THEN BEGIN
+	INCLUDE ~%MOD_FOLDER%/assistant/xaassistant.tph~
+END
 
 SILENT
 

@@ -219,6 +219,11 @@ INCLUDE ~%MOD_FOLDER%/generated/g/generated.tph~
 //}
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/d~
+
+ACTION_IF (xalc_assistant = 1) THEN BEGIN
+	COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/d/debug~
+END
+
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/rbg/baf~
 
 //{ Record who was in BG

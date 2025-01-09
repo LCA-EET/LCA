@@ -16,6 +16,10 @@ END
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 
+ACTION_IF (xalc_assistant = 1) THEN BEGIN
+	COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d/debug~
+END
+
 //{ Script Extensions
 	
 	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%/tob/baf/xabaltob.baf~

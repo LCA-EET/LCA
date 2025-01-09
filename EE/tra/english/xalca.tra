@@ -11,7 +11,10 @@
 @854=~Added LCA Assistant to Baldur25.bcs~
 @855=~Target Dummy~
 @856=~Activate this ability to launch the LCA Assistant.~
-
+@857=~Install LCA Assistant? It is a tool to help configure aspects of the mod, and includes a debugger.
+0.) No.
+1.) Yes.
+Enter a value (0 or 1):~
 // BG1
 @1000=~Processing BG1 changes...~
 //{ BELAND dialog change
