@@ -68,6 +68,27 @@ DEFINE_ACTION_FUNCTION xa_build_banter_pending_script
 			xa_index = xa_index + 1
 		END
 END
+DEFINE_ACTION_FUNCTION xa_replace_recompile_string2
+	INT_VAR
+		xa_top = 1
+	STR_VAR
+		xa_strToReplace = ~~
+		xa_replacement = ~~
+		xa_bcs = ~~
+		xa_extend = ~~
+	BEGIN
+		COPY_EXISTING ~%xa_bcs%.bcs~ ~%xa_tempID%.bcs~
+		DECOMPILE_AND_PATCH
+		BEGIN
+			REPLACE_TEXTUALLY ~%xa_strToReplace%~ ~%xa_replacement%~
+		END
+		ACTION_IF(xa_top = 1) BEGIN
+			EXTEND_TOP ~%xa_extend%.bcs~ ~%xa_tempID%.bcs~
+		END ELSE BEGIN
+			EXTEND_BOTTOM ~%xa_extend%.bcs~ ~%xa_tempID%.bcs~
+		END
+		OUTER_SET xa_tempID = xa_tempID + 1
+	END
 DEFINE_ACTION_FUNCTION xa_replace_recompile_string
 	STR_VAR
 		xa_strToReplace = ~~
