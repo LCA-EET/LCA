@@ -207,6 +207,7 @@ Brevlik will spawn randomly in one of five locations:
 <a name="a_reviews"></a>
 - Smoldering Mods Bar (More Subjective): <a href="https://smolderingmodsbar.com/love-conquers-all/">Link</a>
 - User Review (More Objective): <a href="https://github.com/LCA-EET/LCA/blob/main/EE/LCA%20MOD%20REVIEW%20AND%20FEEDBACK.pdf">Link</a>
+
 If you do decide to write a review, I only ask that you contact me if there are any problems with your playthrough, prior to publication.
 
 ### Baldur's Gate 1 Changes
