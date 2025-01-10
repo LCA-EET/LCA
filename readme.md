@@ -36,7 +36,8 @@ If you have any questions, or would like to provide feedback, you can reach me o
 - [Bug Reports](#a_bugs)
 - [Cross Modding / Forking](#a_crossmodding)
 - [Frequently Asked Questions (FAQs)](#a_faq)
-- [Useful Links](#a_useful_links) 
+- [Useful Links](#a_useful_links)
+- [Reviews of LCA] (#a_reviews)
 - [Baldur's Gate 1 Changes](#a_bg1)
 - [Siege of Dragonspear Changes](#a_sod)
 - [Shadows of Amn Changes](#a_bg2)
@@ -201,6 +202,12 @@ Brevlik will spawn randomly in one of five locations:
 - Gibberlings 3 Forum post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 - Love Conquers All (LCA) Github: https://github.com/LCA-EET/LCA
 - LCA_Explicit Github: https://github.com/LCA-EET/LCA_Explicit
+
+### LCA Mod Reviews
+<a name="a_reviews"></a>
+- Smoldering Mods Bar (More Subjective): <a href="https://smolderingmodsbar.com/love-conquers-all/">Link</a>
+- User Review (More Objective): <a href="https://github.com/LCA-EET/LCA/blob/main/EE/LCA%20MOD%20REVIEW%20AND%20FEEDBACK.pdf">Link</a>
+If you do decide to write a review, I only ask that you contact me if there are any problems with your playthrough, prior to publication.
 
 ### Baldur's Gate 1 Changes
 <a name="a_bg1"></a>
