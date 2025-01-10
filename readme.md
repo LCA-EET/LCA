@@ -144,7 +144,7 @@ For non-EET playthroughs, you can adjust certain parameters to reflect actions t
 
 ### LCA Explicit Mod
 <a name="a_lca_explicit"></a>
-The LCA_Explicit mod adds several explicit, sexual encounters intended for mature audiences only. Current release is available here: <a href="https://github.com/LCA-EET/LCA_Explicit/releases">Releases: LCA_Explicit</a>.
+The LCA_Explicit mod adds several explicit, sexual encounters intended for mature audiences only. Current release is available here: <a href="https://github.com/LCA-EET/LCA_Explicit">Link</a>.
 
 ### Banter Timers
 <a name="a_banter"></a>
