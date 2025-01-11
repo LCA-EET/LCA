@@ -171,7 +171,9 @@ If you encounter any bugs or unexplained behavior while playing the mod, please 
 ### Cross Modding / Forking
 <a name="a_crossmodding"></a>
 Cross modding and forking are allowed, pursuant to the MIT license. I'd be happy to review your proposed additions to help ensure that they're consistent with what has already been established.
+
 Corwin's LCA script name is xacorwin.
+
 Caelar's LCA script name is xacaelar.
 
 ### Frequently Asked Questions
