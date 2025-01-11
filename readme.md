@@ -37,7 +37,7 @@ If you have any questions, or would like to provide feedback, you can reach me o
 - [Cross Modding / Forking](#a_crossmodding)
 - [Frequently Asked Questions (FAQs)](#a_faq)
 - [Useful Links](#a_useful_links)
-- [Reviews of LCA](#a_reviews)
+- [LCA Mod Reviews](#a_reviews)
 - [Baldur's Gate 1 Changes](#a_bg1)
 - [Siege of Dragonspear Changes](#a_sod)
 - [Shadows of Amn Changes](#a_bg2)
