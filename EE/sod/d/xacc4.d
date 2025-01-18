@@ -85,6 +85,14 @@ IF ~~ THEN BEGIN XA_TentCS_Beautiful
 	GOTO XA_TentCS_END
 	
 	IF ~
+		GlobalLT("XA_LC_DeserterTalk", "LOCALS", 1)
+	~ THEN REPLY @36 /*~I imagine these rosters are helpful in identifying deserters, as well.~*/
+	DO ~
+		SetGlobal("XA_LC_DeserterTalk", "LOCALS", 1)
+	~
+	GOTO XA_Deserters
+	
+	IF ~
 		GlobalLT("CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @19 /* ~Are you single, by any chance?~ */
 	GOTO XA_Single
@@ -134,10 +142,7 @@ IF ~~ THEN BEGIN XA_Flattering
 	
 	IF ~~ THEN 
 	DO ~
-		AddJournalEntry(@15, INFO)
-		ChangeStat("Corwin", XP, 10000, ADD)
-		ChangeStat(Player1, XP, 10000, ADD)
-		//RestParty()
+		SetGlobal("XA_LC_Journal_TentCutscene", "GLOBAL", 1)
 	~
 	EXIT
 	
@@ -145,9 +150,7 @@ IF ~~ THEN BEGIN XA_Flattering
 		Global("XA_LC_XACC4_Debug","GLOBAL", 1)
 	~ THEN
 	DO ~
-		AddJournalEntry(@15, INFO)
-		ChangeStat("Corwin", XP, 10000, ADD)
-		ChangeStat(Player1, XP, 10000, ADD)
+		SetGlobal("XA_LC_Journal_TentCutscene", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -164,10 +167,7 @@ IF ~~ THEN BEGIN XA_Single3
 	
 	IF ~~ THEN 
 	DO ~
-		AddJournalEntry(@15, INFO)
-		ChangeStat("Corwin", XP, 10000, ADD)
-		ChangeStat(Player1, XP, 10000, ADD)
-		//RestParty()
+		SetGlobal("XA_LC_Journal_TentCutscene", "GLOBAL", 1)
 	~
 	EXIT
 	
@@ -175,9 +175,7 @@ IF ~~ THEN BEGIN XA_Single3
 		Global("XA_LC_XACC4_Debug","GLOBAL", 1)
 	~ THEN
 	DO ~
-		AddJournalEntry(@15, INFO)
-		ChangeStat("Corwin", XP, 10000, ADD)
-		ChangeStat(Player1, XP, 10000, ADD)
+		SetGlobal("XA_LC_Journal_TentCutscene", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -189,9 +187,7 @@ IF ~~ THEN BEGIN XA_TakeBreak
 	
 	IF ~~ THEN 
 	DO ~
-		AddJournalEntry(@15, INFO)
-		ChangeStat("Corwin", XP, 10000, ADD)
-		ChangeStat(Player1, XP, 10000, ADD)
+		SetGlobal("XA_LC_Journal_TentCutscene", "GLOBAL", 1)
 		//RestParty()
 	~
 	EXIT
@@ -200,9 +196,7 @@ IF ~~ THEN BEGIN XA_TakeBreak
 		Global("XA_LC_XACC4_Debug","GLOBAL", 1)
 	~ THEN
 	DO ~
-		AddJournalEntry(@15, INFO)
-		ChangeStat("Corwin", XP, 10000, ADD)
-		ChangeStat(Player1, XP, 10000, ADD)
+		SetGlobal("XA_LC_Journal_TentCutscene", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -212,9 +206,7 @@ IF ~~ THEN BEGIN XA_TentCS_END
 	
 	IF ~~ THEN 
 	DO ~
-		AddJournalEntry(@15, INFO)
-		ChangeStat("Corwin", XP, 10000, ADD)
-		ChangeStat(Player1, XP, 10000, ADD)
+		SetGlobal("XA_LC_Journal_TentCutscene", "GLOBAL", 1)
 		//RestParty()
 	~
 	EXIT
@@ -223,9 +215,104 @@ IF ~~ THEN BEGIN XA_TentCS_END
 		Global("XA_LC_XACC4_Debug","GLOBAL", 1)
 	~ THEN
 	DO ~
-		AddJournalEntry(@15, INFO)
-		ChangeStat("Corwin", XP, 10000, ADD)
-		ChangeStat(Player1, XP, 10000, ADD)
+		SetGlobal("XA_LC_Journal_TentCutscene", "GLOBAL", 1)
 	~
 	EXIT
+END
+
+IF ~~ THEN BEGIN XA_Deserters
+	SAY @37 /*~Deserters? Odd you'd mention that... we did have a new recruit abandon their post shortly after we made camp. He'll be executed at dawn.~*/
+	
+	IF ~~ THEN REPLY @38 /*~Executed! That seems severe, don't you think?~*/
+	GOTO XA_Deserters_1_A
+	
+	IF ~~ THEN REPLY @39 /*~Can you tell me more about him?~*/
+	GOTO XA_Deserters_1_B
+	
+	IF ~~ THEN REPLY @40 /*~That's unfortunate, but he knew what he was signing up for.~*/
+	GOTO XA_Deserters_1_C
+END
+
+IF ~~ THEN BEGIN XA_Deserters_1_A
+	SAY @41 /*~He swore the same oath that I and those under my command did. The punishment fits the crime, and it will serve as a warning to others to keep them from making the same mistake.~*/
+	
+	IF ~~ THEN REPLY @44 /*~I hadn't considered that... perhaps you're right, Captain.~*/
+	GOTO XA_Deserters_2
+	
+	IF ~~ THEN REPLY @42 /*~We'll need all the soldiers we can get if we're to success against Caelar. Execution seems like a mistake.~*/
+	GOTO XA_Deserters_1_A2
+END
+
+IF ~~ THEN BEGIN XA_Deserters_1_A2
+	SAY @43 /*~Don't you understand? That's the exact reason why he needs to be punished! If I were to let this slide, dozens, maybe hundreds more would follow in his footsteps! By the time we'd reach Caelar, the battle will have already been lost.~*/
+	
+	IF ~~ THEN REPLY @51 /*~It seems then that he's earned his fate.~*/
+	GOTO XA_Deserters_1_C
+	
+	IF ~~ THEN REPLY @45 /*~Then by all means, punish him! But don't *kill* him!~*/
+	GOTO XA_Deserters_1_A_End
+END
+
+IF ~~ THEN BEGIN XA_Deserters_1_A_End
+	SAY @46 /*~You aren't going to let this go, are you?~*/
+	
+	= @47 /*~If it were anyone else asking for this... fine. In lieu of the gallows, he'll be flogged — severely. But the next time he or anyone tries something like this again, I'll have their head.~*/
+	
+	IF ~~ THEN REPLY @48 /*~Thank you, Captain. I think in time you'll see you've made the right decision.~*/
+	DO ~
+		SetGlobal("XA_LC_Journal_Deserter", "GLOBAL", 1)
+	~
+	GOTO XA_Deserters_End
+END
+
+IF ~~ THEN BEGIN XA_Deserters_1_B
+	SAY @50 /*~He betrayed his oath, his comrades, and his city by deserting. He confessed to his crime shortly after he was caught.~ */
+	
+	IF ~~ THEN REPLY @51 /*~It seems then that he's earned his fate.~*/
+	GOTO XA_Deserters_1_C
+	
+	IF ~~ THEN REPLY @52 /*~We've all had moments of fear and doubt. Execution isn't the answer, in this case.~*/
+	GOTO XA_Deserters_1_A
+END
+
+IF ~~ THEN BEGIN XA_Deserters_1_C
+	SAY @54 /*~Indeed. His death, at least, will serve as a warning to keep others from making the same mistake.~*/
+
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_Journal_Deserter", "GLOBAL", 2)
+	~
+	GOTO XA_Deserters_End
+END
+
+IF ~~ THEN BEGIN XA_Deserters_2
+	SAY @53 /*~Being right doesn't make it any easier, unfortunately. But it must be done.~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_Journal_Deserter", "GLOBAL", 2)
+	~
+	GOTO XA_Deserters_End
+END
+
+IF ~~ THEN BEGIN XA_Deserters_End
+	SAY @55 /*~Was there anything else you wanted to discuss?~*/
+	
+	IF ~~ THEN REPLY @56 /*~Many things... but I've kept you from your work for too long, already. Thank you for indulging me.~*/
+	GOTO XA_TentCS_END
+	
+	IF ~
+		GlobalLT("CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @19 /* ~Are you single, by any chance?~ */
+	GOTO XA_Single
+	
+	IF ~
+		GlobalLT("CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @16 /* ~Why don't you take a break from those papers and join me in bed, Captain.~*/
+	GOTO XA_TakeBreak
+	
+	IF ~
+		Global("CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @30 /* ~Why don't you take a break from those papers and join me in bed, Schael.~*/
+	GOTO XA_Single3
 END

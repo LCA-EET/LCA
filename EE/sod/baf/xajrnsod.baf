@@ -86,3 +86,49 @@ After she questioned me, I told Captain Corwin the truth of my bloody lineage. T
 		Continue()
 END
 //}
+
+//{ Tent Cutscene
+IF
+	Global("XA_LC_Journal_TentCutscene", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		AddJournalEntry(@15, INFO)
+		ChangeStat("Corwin", XP, 5000, ADD)
+		ChangeStat(Player1, XP, 5000, ADD)
+		SetGlobal("XA_LC_Journal_TentCutscene", "GLOBAL", 0)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Deserter
+IF
+	Global("XA_LC_Journal_Deserter", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		AddJournalEntry(@7, INFO) /*~The Deserter
+I convinced Captain Corwin to spare the life of a soldier who had deserted his post. The coalition cannot afford to lose soldiers in such a manner; he'll be punished severely, and deservedly so.~*/
+		ChangeStat("Corwin", XP, 5000, ADD)
+		ChangeStat(Player1, XP, 5000, ADD)
+		SetGlobal("XA_LC_Journal_Deserter", "GLOBAL", 0)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Deserter", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		AddJournalEntry(@8, INFO) /*~The Deserter
+Captain Corwin informed me that a soldier had been caught after he had deserted his post. He'll be executed at daybreak, as a warning to others. Order and discipline must be maintained, sometimes at a severe cost.~ */
+		ChangeStat("Corwin", XP, 5000, ADD)
+		ChangeStat(Player1, XP, 5000, ADD)
+		SetGlobal("XA_LC_Journal_Deserter", "GLOBAL", 0)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
