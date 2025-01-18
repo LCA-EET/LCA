@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+## v1.4.4a 2025-01-13
+* Fixed a compatibility issue with The Longer Road that presented itself when the LCA Assistant was not installed.
+
 ## v1.4.4 2025-01-07
 * Made the LCA Assistant an optional component.
 

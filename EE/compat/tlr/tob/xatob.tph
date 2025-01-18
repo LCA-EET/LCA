@@ -27,4 +27,9 @@ END
 EXTEND_TOP ~jonel25.bcs~ ~%MOD_FOLDER%/compat/tlr/tob/baf/xajonel.baf~
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/compat/tlr/tob/d~ USING ~%MOD_FOLDER%/compat/tlr/tra/english/xalctlr.tra~
+
+ACTION_IF (xalc_assistant = 1) THEN BEGIN
+	COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/compat/tlr/tob/d/debug~ USING ~%MOD_FOLDER%/compat/tlr/tra/english/xalctlr.tra~
+END
+
 COMPILE ~%MOD_FOLDER%/compat/tlr/tob/baf/xarejoin.baf~
