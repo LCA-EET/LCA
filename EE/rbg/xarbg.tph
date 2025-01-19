@@ -1080,6 +1080,11 @@ SILENT
 				xa_default = ~wtasight~
 		END
 		
+		COPY_EXISTING ~xaa964.cre~ ~override/xades.cre~
+		WRITE_ASCII 0x280 ~xades~ #20  	// Script Name
+		WRITE_ASCII 0x250 ~xades~ #8	// Class Script		
+		WRITE_ASCII 0x2CC ~xades~ #8 	// Dialog
+		
 		COPY_EXISTING ~dopgre01.cre~ ~override/xagdop00.cre~
 		WRITE_ASCII 0x280 ~xagdop00~ #20  	// Script Name
 		WRITE_ASCII 0x248 ~xadopsp~ #8
@@ -1266,6 +1271,15 @@ SILENT
 //}
 
 //{ New Items
+	
+	//{ Darts
+		COPY_EXISTING ~dart08.itm~ ~override/xadarts.itm~
+		WRITE_LONG 0x34 3000
+		WRITE_SHORT 0x86 5
+		WRITE_SHORT 0x8C 5
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4183)
+		WRITE_LONG 0xC RESOLVE_STR_REF(@4184)
+	//}
 	
 	//{ Diary of Sarevok
 		COPY_EXISTING ~ohnnote5.itm~ ~override/xasdiary.itm~
