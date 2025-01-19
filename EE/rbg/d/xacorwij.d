@@ -1506,6 +1506,16 @@ APPEND XACORWIJ
 			SaveGame(0)
 		~
 		EXIT
+		
+		IF ~
+			Gender(Player1, MALE)
+		~ THEN REPLY @1855 /*~On second thought, you're right. I'll walk you home.~*/
+		GOTO XA_CorwinDinner_WalkHome_Male
+		
+		IF ~
+			Gender(Player1, FEMALE)
+		~ THEN REPLY @1855 /*~On second thought, you're right. I'll walk you home.~*/
+		GOTO XA_CorwinDinner_WalkHome_Female
 	END
 	//} #endregion
 

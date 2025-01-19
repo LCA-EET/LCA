@@ -897,6 +897,10 @@ OUTER_SET bg2_carryover = 1
 	ACTION_IF (corwin_lesson = 1) THEN BEGIN
 		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa23.baf~
 	END
+	
+	ACTION_IF (deserter_spared = 1) THEN BEGIN
+		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa24.baf~
+	END
 
 	EXTEND_BOTTOM ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpaEE.baf~
 //}

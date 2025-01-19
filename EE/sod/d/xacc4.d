@@ -261,6 +261,7 @@ IF ~~ THEN BEGIN XA_Deserters_1_A_End
 	IF ~~ THEN REPLY @48 /*~Thank you, Captain. I think in time you'll see you've made the right decision.~*/
 	DO ~
 		SetGlobal("XA_LC_Journal_Deserter", "GLOBAL", 1)
+		SetGlobal("XA_LC_DeserterSpared", "GLOBAL", 1)
 	~
 	GOTO XA_Deserters_End
 END

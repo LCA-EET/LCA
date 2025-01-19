@@ -363,11 +363,21 @@ IF ~~ THEN BEGIN XA_ByeRohmaChain2End
 	
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 105)
 	~ THEN REPLY @59 /* ~Goodnight Rohma.~ */
 	DO ~
 		SetGlobal("XA_LC_CorwinLoveBG2", "GLOBAL", 1)
 	~	
 	GOTO XA_ByeRohmaEnd_Romance
+	
+	IF ~
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		!GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 105)
+	~ THEN REPLY @59 /* ~Goodnight Rohma.~ */
+	DO ~
+		SetGlobal("XA_LC_CorwinLoveBG2", "GLOBAL", 1)
+	~	
+	GOTO XA_BedtimeRohmaChain
 	
 	IF ~
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -380,46 +390,10 @@ IF ~~ THEN BEGIN XA_ByeRohmaEnd_Romance
 	
 	= @61 /* ~I love you.~ */
 	
-	IF ~
-		Gender(Player1, MALE)
-		GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 97)
-	~ THEN REPLY @62 /* ~I love you too, honey. Sleep well - I'll see you in the morning.~ */
-	DO ~
-		SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 1)
-		SetGlobalTimer("XA_LC_CorwinPregnantTimer", "GLOBAL", SIXTEEN_DAYS)
-	~
+	IF ~~ THEN REPLY @62 /* ~I love you too, honey. Sleep well - I'll see you in the morning.~ */
 	EXTERN XACORWIJ XA_BedtimeRohmaChain
 	
-	IF ~
-		Gender(Player1, MALE)
-		!GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 97)
-	~ THEN REPLY @62 /* ~I love you too, honey. Sleep well - I'll see you in the morning.~ */
-	EXTERN XACORWIJ XA_BedtimeRohmaChain
-	
-	IF ~
-		Gender(Player1, MALE)
-		GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 97)
-	~ THEN REPLY @81 /* ~See you tomorrow.~ */
-	DO ~
-		SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 1)
-		SetGlobalTimer("XA_LC_CorwinPregnantTimer", "GLOBAL", SIXTEEN_DAYS)
-	~
-	EXTERN XACORWIJ XA_BedtimeRohmaChain
-	
-	IF ~
-		Gender(Player1, MALE)
-		!GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 97)
-	~ THEN REPLY @81 /* ~See you tomorrow.~ */
-	EXTERN XACORWIJ XA_BedtimeRohmaChain
-	
-	IF ~
-		!Gender(Player1, MALE)
-	~ THEN REPLY @62 /* ~I love you too, honey. Sleep well - I'll see you in the morning.~ */
-	EXTERN XACORWIJ XA_BedtimeRohmaChain
-	
-	IF ~
-		!Gender(Player1, MALE)
-	~ THEN REPLY @81 /* ~See you tomorrow.~*/
+	IF ~~ THEN REPLY @81 /* ~See you tomorrow.~*/
 	EXTERN XACORWIJ XA_BedtimeRohmaChain
 END
 

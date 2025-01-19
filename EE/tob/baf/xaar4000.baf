@@ -30,6 +30,20 @@
 			SetGlobal("HeadsSave","AR4000",3)
 			Continue()
 	END
+	
+	IF
+		Gender(Player1, MALE)
+		GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 101)
+		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalLT("XA_LC_CorwinPregnant", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 1)
+			SetGlobalTimer("XA_LC_CorwinPregnantTimer", "GLOBAL", TWO_DAYS)
+			Continue()
+	END
+	
 	//{ Replace Journal Entry
 		IF
 			GlobalGT("XA_LC_ReturnToBG", "GLOBAL", 0)

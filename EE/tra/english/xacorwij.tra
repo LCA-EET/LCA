@@ -734,7 +734,7 @@ I received the shipping manifests from the harbor master, but they are encoded a
 @915=~Very good. This is exactly what we need to prove Winston's guilt. <CHARNAME>, let's take this to Marshal Nederlok.~
 @916=~It's a nice night. Let's take a walk.~
 @917=~At this hour? What do you have in mind?~ [xalc1288]
-@918=~You'll see. Afterwards, I'll walk you home. Let's go, love.~
+@918=~(Propose to her.) You'll see. Afterwards, I'll walk you home. Let's go, love.~
 @920=~Mm. That was delicious.~ [xalc1177]
 @921=~It was. You ready for another drink?~
 @922=~No, thanks. Two was enough. Work in the morning, you know?~
@@ -1531,3 +1531,4 @@ Captain Corwin has identified some stolen merchandise that once belonged to Bald
 @1852=~You and me both. Come on, let's get going.~
 @1853=~Right.~ [xad10043]
 @1854=~(She points to the sky. Looking up, you see a large, reddish-brown dragon. As it flies between some low-hanging clouds and into the light, it casts an ominous shadow over the battlefield. It seems to be circling above the area just west of the central keep.)~
+@1855=~On second thought, you're right. I'll walk you home.~

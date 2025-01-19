@@ -136,3 +136,8 @@ OUTER_SET thrix_alive = 1
 */
 OUTER_SET corwin_lesson = 1
 
+/*
+	Parameter: deserter_spared
+	Set to 1 to proceed as though the player convinced Corwin to spare the life of the deserter during the events of SoD.
+*/
+OUTER_SET deserter_spared = 1
