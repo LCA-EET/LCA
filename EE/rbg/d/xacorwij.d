@@ -480,6 +480,9 @@ APPEND XACORWIJ
 		
 		IF ~~ THEN REPLY @561 /* ~Hah, some things never change. You still get into a lot of trouble, only with me instead!~ */
 		GOTO XA_CorwinArrest3
+		
+		IF ~~ THEN REPLY @1856 /*~No more than the ordinary teenager, I'm sure.~*/
+		GOTO XA_CorwinArrest3
 	END
 
 	IF ~~ THEN BEGIN XA_CorwinArrest3
@@ -490,6 +493,9 @@ APPEND XACORWIJ
 		= @564 /* ~Guess who was holding the egg when the music stopped?~ */
 		
 		IF ~~ THEN REPLY @565 /* ~You.~ */
+		GOTO XA_CorwinArrest4
+		
+		IF ~~ THEN REPLY @1857 /*~You're friends ditched you?~*/
 		GOTO XA_CorwinArrest4
 	END
 
@@ -549,6 +555,10 @@ APPEND XACORWIJ
 		
 		IF ~~ THEN REPLY @575 /* ~And would I be in love with such an incredible, beautiful and determined woman?~ */
 		GOTO XA_CorwinArrest6_RomanceEnd
+		
+		IF ~~ THEN REPLY @1858 /*~You flatter me. I feel like anyone in my position would've taken the same actions.~*/
+		GOTO XA_CorwinArrest6_RomanceEnd
+		
 	END
 
 	IF ~~ THEN BEGIN XA_CorwinArrest6_RomanceEnd
@@ -658,6 +668,24 @@ APPEND XACORWIJ
 			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		~
 		EXIT
+		
+		IF ~
+			!Global("XA_LC_PlayerExiled", "GLOBAL", 1)
+		~ THEN REPLY @1859 /* ~Somehow, I know that you're right. Thank you, Schael.~ */
+		DO ~
+			SetGlobal("XA_LC_Journal_DarkCircumstances", "GLOBAL", 2)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		~
+		EXIT
+		
+		IF ~
+			Global("XA_LC_PlayerExiled", "GLOBAL", 1)
+		~ THEN REPLY @1859 /* ~Somehow, I know that you're right. Thank you, Schael.~ */
+		DO ~
+			SetGlobal("XA_LC_Journal_DarkCircumstances", "GLOBAL", 1)
+			IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		~
+		EXIT
 	END
 	//} #endregion
 
@@ -746,6 +774,9 @@ APPEND XACORWIJ
 		SAY @1236 /* ~Fine... Just be careful out there, please. I can't bear to lose you.~ */
 		
 		IF ~~ THEN REPLY @1276 /* ~I will. I'll come back to you, my love - I promise.~ */
+		GOTO XA_BGEND3_DontWantCorwin2 //OK
+		
+		IF ~~ THEN REPLY @1860 /*~I feel the same way... Stay safe, love.~*/
 		GOTO XA_BGEND3_DontWantCorwin2 //OK
 	END
 
