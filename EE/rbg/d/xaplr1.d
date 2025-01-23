@@ -717,6 +717,7 @@ CHAIN IF ~
 	@39 /* ~Good. We need a few moments to discuss in private the information that you and <CHARNAME> have provided us. We won't take long.~*/
 	=@42 /* ~Corporal Duncan, please escort <CHARNAME> and Captain Corwin to the study.~*/
 END XABENCE XA_StartDebrief01
+
 CHAIN IF ~
 	Global("XA_LC_DukesDebriefed", "GLOBAL", 1)
 	!Global("XA_LC_SkieModActive", "GLOBAL", 1)
