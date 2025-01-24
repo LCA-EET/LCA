@@ -51,6 +51,23 @@ APPEND XAENTAR
 		EXTERN XACORWIJ XA_DontShow
 	END
 	
+	IF ~~ THEN BEGIN XA_RejectedOffer
+		SAY @62 /* ~I understand your concern. I, too, enjoyed a life of adventure before embracing a new role as a leader of the city. Give it some time. You'll find that it may suit you, and open up new opportunities for advancement. There will still be adventures along the way; of that I can assure you.~*/
+	
+		IF ~~ THEN REPLY @63 /*~Perhaps you're right. Very well, I accept.~ */
+		GOTO XA_AcceptedOfferChain
+		
+		IF ~
+			Gender(Player1, MALE)
+		~ THEN REPLY @64 /* ~Opportunities for advancement... you mean...~*/
+		EXTERN XAELTAN XA_GrandDuke
+		
+		IF ~
+			Gender(Player1, FEMALE)
+		~ THEN REPLY @64 /*~Opportunities for advancement... you mean...~ */
+		EXTERN XAELTAN XA_GrandDuchess
+	END
+	
 APPEND XALIIA
 	
 	IF ~~ THEN BEGIN XA_DebriefChain1_1_B
@@ -58,6 +75,16 @@ APPEND XALIIA
 		
 		IF ~~ THEN
 		EXTERN XAENTAR XA_DebriefChain1_2
+	END
+	
+	IF ~~ THEN BEGIN XA_BrotherContrast
+		SAY @66 /* ~You'll achieve in grace what your brother sought through bloodshed and treachery.~ */
+		
+		IF ~~ THEN REPLY @68 /* ~Very well. I accept your offer.~*/
+		EXTERN XAENTAR XA_AcceptedOfferChain
+		
+		IF ~~ THEN REPLY @69 /* ~I appreciate your transparency. You've given me much to consider; I'll accept your offer on the condition that I can back out at any time.~*/
+		EXTERN XAENTAR XA_AcceptedOfferChain
 	END
 
 APPEND XASKIE
@@ -92,7 +119,14 @@ APPEND XABELT
 	IF ~~ THEN BEGIN XA_DebriefAcceptOffer
 		SAY @57 /* ~What say you? Do you accept our offer?~ */
 		
-		IF ~~ THEN REPLY @
+		IF ~~ THEN REPLY @58 /* ~Yes, of course! I — I don't know what to say... thank you!~*/
+		EXTERN XAENTAR XA_AcceptedOfferChain
+		
+		IF ~~ THEN REPLY @59 /* ~I appreciate your generosity, but the palace life isn't for me.~ */
+		EXTERN XAENTAR XA_RejectedOffer
+		
+		IF ~~ THEN REPLY @60 /* That's all? A stipend and a stodgy old estate?~ */
+		EXTERN XAENTAR XA_RejectedOffer
 	END
 		
 APPEND XAELTAN
@@ -106,6 +140,20 @@ APPEND XAELTAN
 		EXTERN XALIIA XA_DebriefChain4
 	END
 	
+	IF ~~ THEN BEGIN XA_GrandDuke
+		SAY @65 /* ~Yes. You'll be the front-runner for Grand Duke, when the time comes.~ */
+		
+		IF ~~ THEN
+		EXTERN XALIIA XA_BrotherContrast
+	END
+	
+	IF ~~ THEN BEGIN XA_GrandDuchess
+		SAY @67 /* ~Yes. You'll be the front-runner for Grand Duchess, when the time comes.~ */
+		
+		IF ~~ THEN
+		EXTERN XALIIA XA_BrotherContrast
+	END
+	
 APPEND PLAYER1
 	IF ~
 		Global("XA_LC_DukesDebriefed", "GLOBAL", 3)
@@ -115,6 +163,45 @@ APPEND PLAYER1
 		IF ~~ THEN
 		EXTERN XAELTAN XA_DebriefChain3_2
 	END
+
+CHAIN IF ~~ THEN XAENTAR XA_AcceptedOfferChain
+	@61 /*~Excellent. Our adjutants will contact you in the coming days to finalize the arrangements. For now, you are welcome to use the palace as you see fit.~ */
+	
+	== XANEDERL
+	@70/* ~And Captain.~*/
+	
+	== XACORWIJ
+	@71/*~Sir?~ */
+	
+	== XANEDERL
+	@72/*~For your role in bringing Irenicus to justice, and for your fine work in supporting the coalition in defeating Caelar and her crusade, you are hereby promoted to the rank of Major. Congratulations, and keep up the good work!~ */
+	DO ~
+		SetGlobal("XA_LC_CorwinPromoted", "GLOBAL", 1)
+	~
+	== XACORWIJ
+	@73/*~Thank you, sir!~ */
+	
+	== XABELT
+	IF ~
+		!Global("XA_LC_SkieModActive", "GLOBAL", 1)
+	~
+	@74 /* ~Being that there is no other business to discuss, this meeting is adjourned.~ */
+	DO ~
+		SetGlobal("XA_LC_DukesDebriefed", "GLOBAL", 4)
+		StartCutSceneMode()
+		StartCutScene("XADEBR03")
+	~
+	== XABELT
+	IF ~
+		Global("XA_LC_SkieModActive", "GLOBAL", 1)
+	~
+	@74 /* ~Being that there is no other business to discuss, this meeting is adjourned.~ */
+	DO ~
+		SetGlobal("XA_LC_DukesDebriefed", "GLOBAL", 4)
+		StartCutSceneMode()
+		StartCutScene("XADEBR04")
+	~
+EXIT
 
 CHAIN IF ~~ THEN XACORWIJ XA_DontShow
 	@51 /* ~Sirs, maam, if I may; I have seen the transformation, and trust me — it is NOT something that you want to witness.~ */
