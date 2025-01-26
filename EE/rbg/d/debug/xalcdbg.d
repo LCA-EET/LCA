@@ -253,6 +253,20 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @6131
+		DO ~
+			SetGlobal("XA_LC_DukesDebriefed", "GLOBAL", 1)
+			SetGlobal("XA_LC_DebriefTriggered", "GLOBAL", 1)
+			ActionOverride(Player2,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))
+			ActionOverride(Player3,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))
+			ActionOverride(Player4,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))
+			ActionOverride(Player5,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))
+			ActionOverride(Player6,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))
+			StartCutSceneMode()
+			StartCutScene("XADEBREF")
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		

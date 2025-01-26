@@ -425,7 +425,7 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @6128=~SetGlobal("XA_LC_BenceDukeDebrief", "GLOBAL", 1)~
 @6129=~Spawn XABENCE~
 @6130=~Create History of Shadowdale Volumes~
-
+@6131=~Debriefing (XADEBREF)~
 
 @7000=~ToB Debug~
 @7001=~XAG104 (BD5300) - Kanaglym~
