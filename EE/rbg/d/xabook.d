@@ -1,4 +1,4 @@
-BEGIN XABOOK
+BEGIN ~XABOOK~
 
 IF ~
 	GlobalLT("XA_LC_QuestStarted", "LOCALS", 1)
@@ -74,6 +74,7 @@ IF ~~ THEN BEGIN XA_Reward
 	IF ~~ THEN REPLY @24 /*~We have a deal, then. I'll begin my search immediately.~*/
 	DO ~
 		SetGlobal("XA_LC_QuestStarted", "LOCALS", 1)
+		SetGlobal("XA_LC_Journal_Collector", "GLOBAL", 1)
 	~
 	GOTO XA_QuestStarted
 	
@@ -86,3 +87,230 @@ IF ~~ THEN BEGIN XA_QuestStarted
 	
 	IF ~~ THEN EXIT
 END
+
+IF ~
+	Global("XA_LC_QuestStarted", "LOCALS", 1)
+~ THEN BEGIN XA_Started
+	SAY @27 /*~Ah, you've returned. How fares your search?~*/
+	
+	IF ~~ THEN REPLY @37 /*~Which volumes are still missing?~*/
+	GOTO XA_StillMissing
+
+	IF ~
+		GlobalLT("XA_LC_ReturnedVolume_5", "LOCALS", 1)
+		PartyHasItem("BOOK23")
+	~ THEN REPLY @28 /*~Here's volume five.~ */
+	DO ~
+		SetGlobal("XA_LC_ReturnedVolume_5", "LOCALS", 1)
+		TakePartyItem("BOOK23")
+		AddExperienceParty(10000)
+	~
+	GOTO XA_FoundBook
+	
+	IF ~
+		GlobalLT("XA_LC_ReturnedVolume_6", "LOCALS", 1)
+		PartyHasItem("BOOK24")
+	~ THEN REPLY @29 /**/
+	DO ~
+		SetGlobal("XA_LC_ReturnedVolume_6", "LOCALS", 1)
+		TakePartyItem("BOOK24")
+		AddExperienceParty(10000)
+	~
+	GOTO XA_FoundBook
+	
+	IF ~
+		GlobalLT("XA_LC_ReturnedVolume_7", "LOCALS", 1)
+		PartyHasItem("BOOK25")
+	~ THEN REPLY @30 /**/
+	DO ~
+		SetGlobal("XA_LC_ReturnedVolume_7", "LOCALS", 1)
+		TakePartyItem("BOOK25")
+		AddExperienceParty(10000)
+	~
+	GOTO XA_FoundBook
+	
+	IF ~
+		GlobalLT("XA_LC_ReturnedVolume_8", "LOCALS", 1)
+		PartyHasItem("BOOK26")
+	~ THEN REPLY @31 /**/
+	DO ~
+		SetGlobal("XA_LC_ReturnedVolume_8", "LOCALS", 1)
+		TakePartyItem("BOOK26")
+		AddExperienceParty(10000)
+	~
+	GOTO XA_FoundBook
+	
+	IF ~
+		GlobalLT("XA_LC_ReturnedVolume_9", "LOCALS", 1)
+		PartyHasItem("BOOK27")
+	~ THEN REPLY @32 /**/
+	DO ~
+		SetGlobal("XA_LC_ReturnedVolume_9", "LOCALS", 1)
+		TakePartyItem("BOOK27")
+		AddExperienceParty(10000)
+	~
+	GOTO XA_FoundBook
+	
+	IF ~
+		GlobalLT("XA_LC_ReturnedVolume_10", "LOCALS", 1)
+		PartyHasItem("BOOK28")
+	~ THEN REPLY @33 /**/
+	DO ~
+		SetGlobal("XA_LC_ReturnedVolume_10", "LOCALS", 1)
+		TakePartyItem("BOOK28")
+		AddExperienceParty(10000)
+	~
+	GOTO XA_FoundBook
+	
+	IF ~
+		GlobalLT("XA_LC_ReturnedVolume_11", "LOCALS", 1)
+		PartyHasItem("BOOK29")
+	~ THEN REPLY @34 /**/
+	DO ~
+		SetGlobal("XA_LC_ReturnedVolume_11", "LOCALS", 1)
+		TakePartyItem("BOOK29")
+		AddExperienceParty(10000)
+	~
+	GOTO XA_FoundBook
+	
+	IF ~
+		GlobalLT("XA_LC_ReturnedVolume_12", "LOCALS", 1)
+		PartyHasItem("BOOK30")
+	~ THEN REPLY @35 /**/
+	DO ~
+		SetGlobal("XA_LC_ReturnedVolume_12", "LOCALS", 1)
+		TakePartyItem("BOOK30")
+		AddExperienceParty(10000)
+	~
+	GOTO XA_FoundBook
+	
+	IF ~
+		GlobalLT("XA_LC_ReturnedVolume_13", "LOCALS", 1)
+		PartyHasItem("BOOK31")
+	~ THEN REPLY @36 /**/
+	DO ~
+		SetGlobal("XA_LC_ReturnedVolume_13", "LOCALS", 1)
+		TakePartyItem("BOOK31")
+		AddExperienceParty(10000)
+	~
+	GOTO XA_FoundBook
+	
+	IF ~~ THEN REPLY @49 /*~I'll return once I've found one of the books you're seeking.~*/
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_FoundBook
+	SAY @50 /* ~Let me see... excellent!~ */
+	
+	IF ~
+		Global("XA_LC_ReturnedVolume_13", "LOCALS", 1)
+		Global("XA_LC_ReturnedVolume_12", "LOCALS", 1)
+		Global("XA_LC_ReturnedVolume_11", "LOCALS", 1)
+		Global("XA_LC_ReturnedVolume_10", "LOCALS", 1)
+		Global("XA_LC_ReturnedVolume_9", "LOCALS", 1)
+		Global("XA_LC_ReturnedVolume_8", "LOCALS", 1)
+		Global("XA_LC_ReturnedVolume_7", "LOCALS", 1)
+		Global("XA_LC_ReturnedVolume_6", "LOCALS", 1)
+		Global("XA_LC_ReturnedVolume_5", "LOCALS", 1)
+	~ THEN
+	DO ~
+		AddExperienceParty(25000)
+		SetGlobal("XA_LC_QuestStarted", "LOCALS", 2)
+	~
+	GOTO XA_FoundAll
+	
+	IF ~
+		OR(9)
+			GlobalLT("XA_LC_ReturnedVolume_13", "LOCALS", 1)
+			GlobalLT("XA_LC_ReturnedVolume_12", "LOCALS", 1)
+			GlobalLT("XA_LC_ReturnedVolume_11", "LOCALS", 1)
+			GlobalLT("XA_LC_ReturnedVolume_10", "LOCALS", 1)
+			GlobalLT("XA_LC_ReturnedVolume_9", "LOCALS", 1)
+			GlobalLT("XA_LC_ReturnedVolume_8", "LOCALS", 1)
+			GlobalLT("XA_LC_ReturnedVolume_7", "LOCALS", 1)
+			GlobalLT("XA_LC_ReturnedVolume_6", "LOCALS", 1)
+			GlobalLT("XA_LC_ReturnedVolume_5", "LOCALS", 1)
+	~ THEN
+	GOTO XA_KeepLooking
+END
+
+IF ~~ THEN BEGIN XA_FoundAll
+	SAY @6 /* ~The last volume of the set! Marvelous! Here is the book I promised you. May it serve you well.~ */
+	
+	IF ~~ THEN
+	DO ~
+		GiveItemCreate(LastTalkedToBy(Myself), "MISC3A", 1, 0, 0)
+	~
+	GOTO XA_GoodBye
+END
+
+IF ~~ THEN BEGIN XA_GoodBye
+	SAY @7 /* ~Time now to return to my library. Farewell.~ */
+	
+	IF ~~ THEN
+	DO ~
+		ReallyForceSpellRES("OHBTELWE",Myself)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_KeepLooking
+	SAY @48 /*~Please, continue with your search.~ */
+	
+	COPY_TRANS XABOOK XA_Started
+END
+
+IF ~~ THEN BEGIN XA_PleaseContinue
+	SAY @48 /*~Please, continue with your search.~ */
+	
+	IF ~~ THEN EXIT
+END
+
+CHAIN IF ~~ THEN XABOOK XA_StillMissing
+	@38/* ~Let's see...~*/
+	
+	IF ~
+		GlobalLT("XA_LC_ReturnedVolume_5", "LOCALS", 1)
+	~
+	= @39/* ~Volume five is missing.~*/
+	
+	IF ~
+		GlobalLT("XA_LC_ReturnedVolume_6", "LOCALS", 1)
+	~
+	= @40/* ~Volume six is missing.~*/
+	
+	IF ~
+		GlobalLT("XA_LC_ReturnedVolume_7", "LOCALS", 1)
+	~
+	= @41/* ~Volume seven is missing.~*/
+	
+	IF ~
+		GlobalLT("XA_LC_ReturnedVolume_8", "LOCALS", 1)
+	~
+	= @42/* ~Volume eight is missing.~*/
+	
+	IF ~
+		GlobalLT("XA_LC_ReturnedVolume_9", "LOCALS", 1)
+	~
+	= @43/* ~Volume nine is missing.~*/
+	
+	IF ~
+		GlobalLT("XA_LC_ReturnedVolume_10", "LOCALS", 1)
+	~
+	= @44/* ~Volume ten is missing.~*/
+	
+	IF ~
+		GlobalLT("XA_LC_ReturnedVolume_11", "LOCALS", 1)
+	~
+	= @45/*~Volume eleven is missing.~ */
+	
+	IF ~
+		GlobalLT("XA_LC_ReturnedVolume_12", "LOCALS", 1)
+	~
+	= @46/* ~Volume twelve is missing.~*/
+	
+	IF ~
+		GlobalLT("XA_LC_ReturnedVolume_13", "LOCALS", 1)
+	~
+	= @47/* ~Volume thirteen is missing.~*/
+END XABOOK XA_PleaseContinue

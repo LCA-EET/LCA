@@ -285,6 +285,15 @@ PRINT @4173 /*  ~Processing creatures...*/
 SILENT
 	
 //{ CRE
+	//{ Book Collector
+		COPY_EXISTING ~poghma3.cre~ ~override/xabook.cre~
+		WRITE_ASCII 0x248 ~xabook~ #8
+		WRITE_ASCII 0x250 ~None~ #8
+		WRITE_ASCII 0x2CC ~xabook~ #8
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@4185) 
+		WRITE_LONG 0xC RESOLVE_STR_REF(@4185)
+	//}
+	
 	//{ Pause / Rewind
 		COPY_EXISTING ~xalcspy.cre~ ~override/xapause.cre~
 		WRITE_ASCII 0x248 ~xapause~ #8 
@@ -1684,6 +1693,45 @@ PRINT @4164 /* ~Please be patient. This may take a while.~ */
 SILENT
 
 //{ Block A Area Modifications
+	//{ Book Areas
+		//{ ar0802 xaa204
+			WRITE_ASCII 0x7D8 ~BOOK23~ #8
+		//}
+		
+		//{ ar0617 xaa356
+			WRITE_ASCII 0x5C8 ~BOOK24~ #8
+		//}
+		
+		//{ ar0006 xaa244
+			WRITE_ASCII 0x700 ~BOOK25~ #8
+		//}
+		
+		//{ ar1214 xaa322
+			WRITE_ASCII 0x838 ~BOOK26~ #8
+		//}
+		
+		//{ ar0722 xaa169
+			WRITE_ASCII 0x7FC ~BOOK27~ #8
+		//}
+		
+		//{ ar0307 xaa140
+			WRITE_ASCII 0x954 ~BOOK28~ #8
+		//}
+		
+		//{ ar0160 xaa588
+			WRITE_ASCII 0x8E8 ~BOOK29~ #8
+		//}
+		
+		//{ ar0814 xaa415
+			WRITE_ASCII 0x8E8 ~BOOK30~ #8
+		//}
+		
+		//{ ar1103 xaa296
+			WRITE_ASCII 0x8F8 ~BOOK31~ #8
+		//}
+	//}
+
+
 	//{ Brevlik Spawn Fix 2024-12-18
 		COPY_EXISTING ~xaa159.are~ ~override~
 		WRITE_ASCII 0x94 ~xaas159~ #8
@@ -2652,6 +2700,7 @@ SILENT
 		WRITE_LONG 0x484 0 // Triadore
 	//}
 	
+	
 	//{ ar0619 xaa364
 		COPY_EXISTING ~xaa364.are~ ~override~
 		
@@ -2684,8 +2733,8 @@ SILENT
 	//{ ar0703 xaa115 Halbazzer's Shop L1
 		COPY_EXISTING ~xaa115.are~ ~override~
 		WRITE_ASCII 0x274 ~xahalbaz~ #8 // change halbazzer's dialog
-		// Disable NPCs
-		WRITE_LONG 0x154 0 // Ordulinian
+		// Replace Ordulinian with Book Collector
+		WRITE_ASCII 0x19C ~XABOOK~ #8
 	//}
 	
 	//{ ar0704 xaa202 Halbazzer's Shop L2
@@ -2833,6 +2882,8 @@ SILENT
 		END
 		//}
 	//}
+	
+	
 	
 	//{ ar0900 xaa100
 		EXTEND_TOP ~xaas100.bcs~ 	~%MOD_FOLDER%/rbg/baf/xaar0900.baf~

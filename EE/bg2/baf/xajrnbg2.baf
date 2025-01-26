@@ -1031,3 +1031,152 @@ Schael died in my arms, mere hours after being bit by Bodhi. I can barely contai
 		Continue()
 END
 //}
+
+//{ Book Collector
+	IF
+		Global("XA_LC_Journal_Collector", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Collector", "GLOBAL", 2)
+			AddJournalEntry(@82, QUEST) /* ~The History of Shadowdale
+	I've agreed to help a book collector complete his 'History of Shadowdale' set. Currently, he has volumes one through four. I'll need to find volumes five through thirteen. He assured me that the missing volumes can be found in the city. Though it will certainly take some time to locate the books needed to complete the collection, he promised to give me a Book of Infinite Spells for my trouble.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		GlobalGT("XA_LC_Journal_Collector", "GLOBAL", 0)
+		PartyHasItem("BOOK23")
+		GlobalLT("XA_LC_Journal_Collector_5", "GLOBAL", 1)
+		GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Collector_5", "GLOBAL", 1)
+			AddJournalEntry(@83, INFO) /* ~The History of Shadowdale, Volume V
+	I've recovered volume five of the 'History of Shadowdale'. I'll give it to Hebert the next time I visit Sorcerous Sundries.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalGT("XA_LC_Journal_Collector", "GLOBAL", 0)
+		PartyHasItem("BOOK24")
+		GlobalLT("XA_LC_Journal_Collector_6", "GLOBAL", 1)
+		GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Collector_6", "GLOBAL", 1)
+			AddJournalEntry(@84, INFO) /* ~The History of Shadowdale, Volume V
+	I've recovered volume five of the 'History of Shadowdale'. I'll give it to Hebert the next time I visit Sorcerous Sundries.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalGT("XA_LC_Journal_Collector", "GLOBAL", 0)
+		PartyHasItem("BOOK25")
+		GlobalLT("XA_LC_Journal_Collector_7", "GLOBAL", 1)
+		GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Collector_7", "GLOBAL", 1)
+			AddJournalEntry(@85, INFO) /* ~The History of Shadowdale, Volume V
+	I've recovered volume five of the 'History of Shadowdale'. I'll give it to Hebert the next time I visit Sorcerous Sundries.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalGT("XA_LC_Journal_Collector", "GLOBAL", 0)
+		PartyHasItem("BOOK26")
+		GlobalLT("XA_LC_Journal_Collector_8", "GLOBAL", 1)
+		GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Collector_8", "GLOBAL", 1)
+			AddJournalEntry(@86, INFO) /* ~The History of Shadowdale, Volume V
+	I've recovered volume five of the 'History of Shadowdale'. I'll give it to Hebert the next time I visit Sorcerous Sundries.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalGT("XA_LC_Journal_Collector", "GLOBAL", 0)
+		PartyHasItem("BOOK27")
+		GlobalLT("XA_LC_Journal_Collector_9", "GLOBAL", 1)
+		GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Collector_9", "GLOBAL", 1)
+			AddJournalEntry(@87, INFO) /* ~The History of Shadowdale, Volume V
+	I've recovered volume five of the 'History of Shadowdale'. I'll give it to Hebert the next time I visit Sorcerous Sundries.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalGT("XA_LC_Journal_Collector", "GLOBAL", 0)
+		PartyHasItem("BOOK28")
+		GlobalLT("XA_LC_Journal_Collector_10", "GLOBAL", 1)
+		GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Collector_10", "GLOBAL", 1)
+			AddJournalEntry(@88, INFO) /* ~The History of Shadowdale, Volume V
+	I've recovered volume five of the 'History of Shadowdale'. I'll give it to Hebert the next time I visit Sorcerous Sundries.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalGT("XA_LC_Journal_Collector", "GLOBAL", 0)
+		PartyHasItem("BOOK29")
+		GlobalLT("XA_LC_Journal_Collector_11", "GLOBAL", 1)
+		GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Collector_11", "GLOBAL", 1)
+			AddJournalEntry(@89, INFO) /* ~The History of Shadowdale, Volume V
+	I've recovered volume five of the 'History of Shadowdale'. I'll give it to Hebert the next time I visit Sorcerous Sundries.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalGT("XA_LC_Journal_Collector", "GLOBAL", 0)
+		PartyHasItem("BOOK30")
+		GlobalLT("XA_LC_Journal_Collector_12", "GLOBAL", 1)
+		GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Collector_12", "GLOBAL", 1)
+			AddJournalEntry(@90, INFO) /* ~The History of Shadowdale, Volume V
+	I've recovered volume five of the 'History of Shadowdale'. I'll give it to Hebert the next time I visit Sorcerous Sundries.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalGT("XA_LC_Journal_Collector", "GLOBAL", 0)
+		PartyHasItem("BOOK31")
+		GlobalLT("XA_LC_Journal_Collector_13", "GLOBAL", 1)
+		GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Collector_13", "GLOBAL", 1)
+			AddJournalEntry(@91, INFO) /* ~The History of Shadowdale, Volume V
+	I've recovered volume five of the 'History of Shadowdale'. I'll give it to Hebert the next time I visit Sorcerous Sundries.~*/
+			SetInterrupt(TRUE)
+			Continue()
+	END
+//}
