@@ -249,9 +249,6 @@ IF ~~ THEN BEGIN XA_GoodBye
 	SAY @7 /* ~Time now to return to my library. Farewell.~ */
 	
 	IF ~~ THEN
-	DO ~
-		ReallyForceSpellRES("OHBTELWE",Myself)
-	~
 	EXIT
 END
 

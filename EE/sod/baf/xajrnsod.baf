@@ -93,7 +93,8 @@ IF
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		AddJournalEntry(@15, INFO)
+		AddJournalEntry(@6, INFO) /*@6=~Duty Rosters
+Captain Corwin took some time to go over the duty rosters for the camp with me. It was an eye-opening experience, in more ways than one.~ */
 		ChangeStat("Corwin", XP, 5000, ADD)
 		ChangeStat(Player1, XP, 5000, ADD)
 		SetGlobal("XA_LC_Journal_TentCutscene", "GLOBAL", 0)

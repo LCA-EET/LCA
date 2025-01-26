@@ -233,7 +233,7 @@ CHAIN IF ~~ THEN XALIIA XA_DebriefChain2
 	
 	= @14 /*~Captain, it was at this time that you joined <CHARNAME> in <PRO_HISHER> hunt for the wizard, yes?~*/
 	
-	== XACORWIN
+	== XACORWIJ
 	@15 /*~Yes ma'am, that is correct.~*/
 	
 	= @16 /*~(Captain Corwin goes on to explain in painstaking detail the events that transpired after she arrived in Athkatla. The Council was equal parts stunned and amazed to hear of the rescue of Imoen from Spellhold, your transformation after your soul was stolen from you, and your epic battles with the drow on your way back to the surface.)~*/

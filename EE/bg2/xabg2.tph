@@ -429,6 +429,9 @@ END
 	WRITE_ASCII 0x248 ~xacorinv~ #8
 	WRITE_ASCII 0x280 ~xacorinv~ #20
 	
+	COPY_EXISTING ~xalcspy.cre~ ~override/xalcargs.cre~
+	WRITE_ASCII 0x248 ~xalcargs~ #8
+	
 	COPY_EXISTING ~xalcspy.cre~ ~override/xacrowd.cre~
 	WRITE_LONG 0x8 RESOLVE_STR_REF(@3188)
 	WRITE_LONG 0xC RESOLVE_STR_REF(@3188)	
@@ -805,104 +808,107 @@ OUTER_SET bg2_carryover = 1
 	END
 
 	ACTION_IF (player_exiled = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa00.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa00.baf~
 	END
 
 	ACTION_IF (corwin_romance = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa01.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa01.baf~
 	END ELSE BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa02.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa02.baf~
 	END
 
 	ACTION_IF (caelar_alive = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa03.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa03.baf~
 	END
 
 	ACTION_IF (drinks_with_corwin = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa04.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa04.baf~
 	END
 
 	ACTION_IF (ashatiel_duel = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa05.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa05.baf~
 	END
 
 	ACTION_IF (saved_jhasso = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa06.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa06.baf~
 	END
 
 	ACTION_IF (saved_aldeth = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa07.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa07.baf~
 	END
 
 	ACTION_IF (aldeth_ff = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa08.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa08.baf~
 	END
 
 	ACTION_IF (met_rohma = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa09.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa09.baf~
 	END
 
 	ACTION_IF (sacrifice_corwin = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa10.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa10.baf~
 	END
 
 	ACTION_IF (neoma_earrings = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa11.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa11.baf~
 	END
 
 	ACTION_IF (happy_ending = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa12.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa12.baf~
 	END
 
 	ACTION_IF (tricked_larze = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa13.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa13.baf~
 	END
 
 	ACTION_IF (helped_forthel = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa14.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa14.baf~
 	END
 
 	ACTION_IF (met_kerrachus = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa15.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa15.baf~
 	END
 
 	ACTION_IF (stole_farseer = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa16.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa16.baf~
 	END
 
 	ACTION_IF (helped_brielbara = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa17.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa17.baf~
 	END
 
 	ACTION_IF (brielbara_coran = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa18.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa18.baf~
 	END
 
 	ACTION_IF (fergus_ring = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa19.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa19.baf~
 	END
 
 	ACTION_IF (cleared_kanaglym = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa20.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa20.baf~
 	END
 	
 	ACTION_IF (corwin_avernus = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa21.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa21.baf~
 	END
 	
 	ACTION_IF (thrix_alive = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa22.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa22.baf~
 	END
 
 	ACTION_IF (corwin_lesson = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa23.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa23.baf~
 	END
 	
 	ACTION_IF (deserter_spared = 1) THEN BEGIN
-		EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa24.baf~
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa24.baf~
 	END
 
-	EXTEND_BOTTOM ~AR0602.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpaEE.baf~
+	EXTEND_BOTTOM ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpaEE.baf~
+	
+	EXTEND_TOP ~AR0602.bcs~ ~override/xalcargs.bcs~
+	EXTEND_TOP ~AR0700.bcs~ ~override/xalcargs.bcs~ // in case people are starting the game from the promenade
 //}
 
 /* 

@@ -69,6 +69,13 @@ APPEND ~XALCDBG~
 		~
 		GOTO XA_BG2_Debug
 		
+		IF ~~ THEN REPLY @5157 /* ~Re-apply Parameters~*/
+		DO ~
+			SetGlobal("XA_LC_SetParams", "GLOBAL", 1)
+			CreateCreature("xalcargs", [-1.-1], S)
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @5034 /* ~Parameter Check.~ */
 		GOTO XA_BG2_ParameterCheck
 		
