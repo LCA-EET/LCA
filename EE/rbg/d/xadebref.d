@@ -14,7 +14,7 @@ APPEND XAENTAR
 		SAY @4 /*~How did you know that it was the dagger used to imprison my daughter?~*/
 		
 		IF ~~ THEN REPLY @5 /*~I didn't, but I had a strong suspicion that it was. The djinn stated that it was a prison of souls that was of great consequence to me.~*/
-		GOTO XA_DebriefChain1_4
+		EXTERN XABELT XA_DebriefChain1_4
 		
 		IF ~~ THEN REPLY @6 /*~I knew as soon as I held the dagger in my hand. I could feel its power, and...~*/
 		EXTERN XASKIE XA_DebriefChain1_2_B
@@ -67,6 +67,7 @@ APPEND XAENTAR
 		~ THEN REPLY @64 /*~Opportunities for advancement... you mean...~ */
 		EXTERN XAELTAN XA_GrandDuchess
 	END
+END
 	
 APPEND XALIIA
 	
@@ -86,6 +87,7 @@ APPEND XALIIA
 		IF ~~ THEN REPLY @69 /* ~I appreciate your transparency. You've given me much to consider; I'll accept your offer on the condition that I can back out at any time.~*/
 		EXTERN XAENTAR XA_AcceptedOfferChain
 	END
+END
 
 APPEND XASKIE
 
@@ -95,6 +97,7 @@ APPEND XASKIE
 		IF ~~ THEN 
 		EXTERN XAENTAR XA_DebriefChain1_3
 	END
+END
 
 APPEND XABELT
 	IF ~~ THEN BEGIN XA_DebriefChain1_4
@@ -110,10 +113,10 @@ APPEND XABELT
 		= @42 /* ~(You notice how the expression on the faces of the Dukes has changed from one of admiration, to one of concern — and fear.)~*/
 		
 		IF ~~ THEN REPLY @43 /* ~I assure you that I'm in complete control, Duke Belt.~ */
-		GOTO XAELTAN XA_SilenceChain
+		EXTERN XAELTAN XA_SilenceChain
 		
 		IF ~~ THEN REPLY @46 /* ~You've nothing to fear from the Slayer... that is, so long as no one pisses me off.~ */
-		GOTO XAELTAN XA_SilenceChain
+		EXTERN XAELTAN XA_SilenceChain
 	END
 	
 	IF ~~ THEN BEGIN XA_DebriefAcceptOffer
@@ -128,6 +131,7 @@ APPEND XABELT
 		IF ~~ THEN REPLY @60 /* That's all? A stipend and a stodgy old estate?~ */
 		EXTERN XAENTAR XA_RejectedOffer
 	END
+END
 		
 APPEND XAELTAN
 	IF ~~ THEN BEGIN XA_DebriefChain3_2
@@ -153,16 +157,18 @@ APPEND XAELTAN
 		IF ~~ THEN
 		EXTERN XALIIA XA_BrotherContrast
 	END
+END
 	
 APPEND PLAYER1
 	IF ~
 		Global("XA_LC_DukesDebriefed", "GLOBAL", 3)
-	~ THEN PLAYER1 XA_DebriefChain3_1
-		@26 /*~(Again, you and Captain Corwin step into the meeting chamber. While you are inwardly annoyed at having been kept waiting for so long, you do a good job of concealing this from the Council. You briefly glance at the faces of the Dukes. They are expressionless, and yield no indication of what they discussed, or what is about to take place.)~ [xalc1159] */
+	~ THEN BEGIN XA_DebriefChain3_1
+		SAY @26 /*~(Again, you and Captain Corwin step into the meeting chamber. While you are inwardly annoyed at having been kept waiting for so long, you do a good job of concealing this from the Council. You briefly glance at the faces of the Dukes. They are expressionless, and yield no indication of what they discussed, or what is about to take place.)~ [xalc1159] */
 		
 		IF ~~ THEN
 		EXTERN XAELTAN XA_DebriefChain3_2
 	END
+END
 
 CHAIN IF ~~ THEN XAENTAR XA_AcceptedOfferChain
 	@61 /*~Excellent. Our adjutants will contact you in the coming days to finalize the arrangements. For now, you are welcome to use the palace as you see fit.~ */

@@ -239,7 +239,7 @@ IF ~~ THEN BEGIN XA_FoundAll
 	
 	IF ~~ THEN
 	DO ~
-		GiveItemCreate(LastTalkedToBy(Myself), "MISC3A", 1, 0, 0)
+		GiveItemCreate( "MISC3A", LastTalkedToBy(Myself), 1, 0, 0)
 	~
 	GOTO XA_GoodBye
 END
@@ -269,48 +269,57 @@ END
 CHAIN IF ~~ THEN XABOOK XA_StillMissing
 	@38/* ~Let's see...~*/
 	
+	== XABOOK
 	IF ~
 		GlobalLT("XA_LC_ReturnedVolume_5", "LOCALS", 1)
 	~
-	= @39/* ~Volume five is missing.~*/
+	@39/* ~Volume five is missing.~*/
 	
+	== XABOOK
 	IF ~
 		GlobalLT("XA_LC_ReturnedVolume_6", "LOCALS", 1)
 	~
-	= @40/* ~Volume six is missing.~*/
+	@40/* ~Volume six is missing.~*/
 	
+	== XABOOK
 	IF ~
 		GlobalLT("XA_LC_ReturnedVolume_7", "LOCALS", 1)
 	~
-	= @41/* ~Volume seven is missing.~*/
+	@41/* ~Volume seven is missing.~*/
 	
+	== XABOOK
 	IF ~
 		GlobalLT("XA_LC_ReturnedVolume_8", "LOCALS", 1)
 	~
-	= @42/* ~Volume eight is missing.~*/
+	@42/* ~Volume eight is missing.~*/
 	
+	== XABOOK
 	IF ~
 		GlobalLT("XA_LC_ReturnedVolume_9", "LOCALS", 1)
 	~
-	= @43/* ~Volume nine is missing.~*/
+	@43/* ~Volume nine is missing.~*/
 	
+	== XABOOK
 	IF ~
 		GlobalLT("XA_LC_ReturnedVolume_10", "LOCALS", 1)
 	~
-	= @44/* ~Volume ten is missing.~*/
+	@44/* ~Volume ten is missing.~*/
 	
+	== XABOOK
 	IF ~
 		GlobalLT("XA_LC_ReturnedVolume_11", "LOCALS", 1)
 	~
-	= @45/*~Volume eleven is missing.~ */
+	@45/*~Volume eleven is missing.~ */
 	
+	== XABOOK
 	IF ~
 		GlobalLT("XA_LC_ReturnedVolume_12", "LOCALS", 1)
 	~
-	= @46/* ~Volume twelve is missing.~*/
+	@46/* ~Volume twelve is missing.~*/
 	
+	== XABOOK
 	IF ~
 		GlobalLT("XA_LC_ReturnedVolume_13", "LOCALS", 1)
 	~
-	= @47/* ~Volume thirteen is missing.~*/
+	@47/* ~Volume thirteen is missing.~*/
 END XABOOK XA_PleaseContinue

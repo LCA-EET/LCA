@@ -377,7 +377,7 @@ IF ~~ THEN BEGIN XA_ByeRohmaChain2End
 	DO ~
 		SetGlobal("XA_LC_CorwinLoveBG2", "GLOBAL", 1)
 	~	
-	GOTO XA_BedtimeRohmaChain
+	EXTERN XACORWIJ XA_BedtimeRohmaChain
 	
 	IF ~
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)

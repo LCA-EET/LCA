@@ -1695,38 +1695,47 @@ SILENT
 //{ Block A Area Modifications
 	//{ Book Areas
 		//{ ar0802 xaa204
+			COPY_EXISTING ~xaa204.are~ ~override~
 			WRITE_ASCII 0x7D8 ~BOOK23~ #8
 		//}
 		
 		//{ ar0617 xaa356
+			COPY_EXISTING ~xaa356.are~ ~override~
 			WRITE_ASCII 0x5C8 ~BOOK24~ #8
 		//}
 		
 		//{ ar0006 xaa244
+			COPY_EXISTING ~xaa244.are~ ~override~
 			WRITE_ASCII 0x700 ~BOOK25~ #8
 		//}
 		
 		//{ ar1214 xaa322
+			COPY_EXISTING ~xaa322.are~ ~override~
 			WRITE_ASCII 0x838 ~BOOK26~ #8
 		//}
 		
 		//{ ar0722 xaa169
+			COPY_EXISTING ~xaa169.are~ ~override~
 			WRITE_ASCII 0x7FC ~BOOK27~ #8
 		//}
 		
 		//{ ar0307 xaa140
+			COPY_EXISTING ~xaa140.are~ ~override~
 			WRITE_ASCII 0x954 ~BOOK28~ #8
 		//}
 		
 		//{ ar0160 xaa588
+			COPY_EXISTING ~xaa588.are~ ~override~
 			WRITE_ASCII 0x8E8 ~BOOK29~ #8
 		//}
 		
 		//{ ar0814 xaa415
+			COPY_EXISTING ~xaa415.are~ ~override~
 			WRITE_ASCII 0x8E8 ~BOOK30~ #8
 		//}
 		
 		//{ ar1103 xaa296
+			COPY_EXISTING ~xaa296.are~ ~override~
 			WRITE_ASCII 0x8F8 ~BOOK31~ #8
 		//}
 	//}
