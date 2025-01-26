@@ -1179,4 +1179,26 @@ END
 			SetInterrupt(TRUE)
 			Continue()
 	END
+	
+	IF
+		Global("XA_LC_Journal_Collector", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_Journal_Collector", "GLOBAL", 0)
+			AddJournalEntry(@92, QUEST_DONE) /* ~Book Collector
+I've helped Hebert to complete his collection of the History of Shadowdale. In return for my assistance, he gave to me a Book of Infinite Spells... more than a fair trade, I'd say.~*/
+			EraseJournalEntry(@82)
+			EraseJournalEntry(@83)
+			EraseJournalEntry(@84)
+			EraseJournalEntry(@85)
+			EraseJournalEntry(@86)
+			EraseJournalEntry(@87)
+			EraseJournalEntry(@88)
+			EraseJournalEntry(@89)
+			EraseJournalEntry(@90)
+			EraseJournalEntry(@91)
+			SetInterrupt(TRUE)
+			Continue()
+	END
 //}

@@ -249,6 +249,9 @@ IF ~~ THEN BEGIN XA_GoodBye
 	SAY @7 /* ~Time now to return to my library. Farewell.~ */
 	
 	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_Journal_Collector", "GLOBAL", 2)
+	~
 	EXIT
 END
 
