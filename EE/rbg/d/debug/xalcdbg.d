@@ -794,6 +794,20 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_RBG_ItemTest
 		SAY @6001 /*  ~Item Test~ */
 		
+		IF ~~ THEN REPLY @6130 /* ~Create History of Shadowdale Volumes~*/
+		DO ~
+			GiveItemCreate("BOOK23", Player1, 0,0,0)
+			GiveItemCreate("BOOK24", Player1, 0,0,0)
+			GiveItemCreate("BOOK25", Player1, 0,0,0)
+			GiveItemCreate("BOOK26", Player1, 0,0,0)
+			GiveItemCreate("BOOK27", Player1, 0,0,0)
+			GiveItemCreate("BOOK28", Player1, 0,0,0)
+			GiveItemCreate("BOOK29", Player1, 0,0,0)
+			GiveItemCreate("BOOK30", Player1, 0,0,0)
+			GiveItemCreate("BOOK31", Player1, 0,0,0)
+		~
+		GOTO XA_RBG_ItemTest
+		
 		IF ~~ THEN REPLY @6127 /* ~Seldarine Amulet~*/
 		DO ~
 			GiveItemCreate("amul27", Player1, 1,1,1)
