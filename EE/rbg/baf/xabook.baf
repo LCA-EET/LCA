@@ -8,15 +8,3 @@ THEN
 		ReallyForceSpellRES("OHBTELWE",Myself)
 END
 
-IF
-	ActionListEmpty()
-THEN
-	RESPONSE #25
-		RandomWalk()
-	RESPONSE #25
-		NoAction()
-	RESPONSE #25
-		NoAction()
-	RESPONSE #25
-		NoAction()
-END

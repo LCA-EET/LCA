@@ -200,8 +200,9 @@ IF ~
 END
 
 IF ~~ THEN BEGIN XA_FoundBook
-	SAY @50 /* ~Let me see... excellent!~ */
-	
+	SAY @50 /* ~Let me see...~ */
+
+	= @51 /*~Yes, excellent!~ */
 	IF ~
 		Global("XA_LC_ReturnedVolume_13", "LOCALS", 1)
 		Global("XA_LC_ReturnedVolume_12", "LOCALS", 1)
