@@ -808,6 +808,12 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_RBG_ItemTest
 		SAY @6001 /*  ~Item Test~ */
 		
+		IF ~~ THEN REPLY @6132
+		DO ~
+			GiveItemCreate("xabook0", Player1, 0,0,0)
+		~
+		GOTO XA_RBG_ItemTest
+		
 		IF ~~ THEN REPLY @6130 /* ~Create History of Shadowdale Volumes~*/
 		DO ~
 			GiveItemCreate("BOOK23", Player1, 0,0,0)

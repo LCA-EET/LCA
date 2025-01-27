@@ -1282,8 +1282,7 @@ SILENT
 //{ New Items
 	
 	//{ Book of Infinite Spells
-		COPY_EXISTING ~misc3a.itm~ ~override/xab3a.itm~
-		
+		LAF xa_copyspellbook END		
 	//}
 	
 	//{ Darts
