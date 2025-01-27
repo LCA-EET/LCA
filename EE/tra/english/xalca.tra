@@ -872,6 +872,13 @@ Type: One-handed
 Weight: 0~
 @4184=~Belfort's Darts +5~
 @4185=~Hebert~
+@4186=~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is:~
 
 @5000=~Processing ToB changes...~
 @5001=~After leaving <CHARNAME>'s company, Caelar began the long journey back to Waterdeep, determined to face justice for the crimes that she and her soldiers had committed during the crusade. Upon her arrival in the city, she was detained and interrogated by the Waterdhavian authorities, who were stunned to learn of what had transpired in Avernus. 

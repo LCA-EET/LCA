@@ -1281,6 +1281,11 @@ SILENT
 
 //{ New Items
 	
+	//{ Book of Infinite Spells
+		COPY_EXISTING ~misc3a.itm~ ~override/xab3a.itm~
+		
+	//}
+	
 	//{ Darts
 		COPY_EXISTING ~dart08.itm~ ~override/xadarts.itm~
 		WRITE_LONG 0x34 3000

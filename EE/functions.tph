@@ -9,6 +9,41 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 */
 
 //{ Action Functions
+DEFINE_ACTION_FUNCTION xa_copyspellbook
+	BEGIN
+		OUTER_SET bookID = 0
+		OUTER_SET refID = 0
+		OUTER_SET address = 0x142
+		ACTION_DEFINE_ARRAY spellbook
+			BEGIN
+				misc3a
+				misc3a1
+				misc3a2
+				misc3a3
+				misc3a4
+				misc3a5
+				misc3a6
+				misc3a7
+				misc3a8
+				misc3a9
+				misc3aa
+			END
+			ACTION_PHP_EACH spellbook AS _ => book
+				BEGIN
+					refID = 0
+					address = 0x142
+					COPY_EXISTING ~%book%.itm~ ~override/xabook%bookID%.itm~
+					WHILE(refID < 10)
+						BEGIN
+							WRITE_ASCII %address% ~xabook%refID%~ #8
+							address = address + 0x30
+							refID = refID + 1
+						END
+					bookID = bookID + 1
+				END
+	END
+	
+
 DEFINE_ACTION_FUNCTION xa_cleartempfiles
 	BEGIN
 		DELETE ~%MOD_FOLDER%/temp/*~
