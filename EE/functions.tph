@@ -12,9 +12,7 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 DEFINE_ACTION_FUNCTION xa_copyspellbook
 	BEGIN
 		OUTER_SET bookID = 0
-		OUTER_SET refID = 0
-		OUTER_SET address = 0x142
-		ACTION_DEFINE_ASSOCIATIVE_ARRAY spellbooks BEGIN
+		ACTION_DEFINE_ASSOCIATIVE_ARRAY spellbooks
 			BEGIN
 				misc3a => spwi513 // Breach
 				misc3a1 => spwi405 // Improved Invisibility
@@ -25,22 +23,27 @@ DEFINE_ACTION_FUNCTION xa_copyspellbook
 				misc3a6 => spwi608 // Pierce Magic
 				misc3a7 => spwi118 // Chromatic Orb
 				misc3a8 => sppr729 // Mass Raise Dead
-				//misc3a9 => spwi721 // Mass Invisibility
+				misc3a9 => spwi721 // Mass Invisibility
 				misc3aa => spwi717 // Summon Efreeti
 			END
-			ACTION_PHP_EACH spellbooks AS book => spell BEGIN
+			ACTION_PHP_EACH spellbooks AS book => spell
 				BEGIN
-					refID = 0
-					address = 0x142
+					OUTER_SET refID = 0
+					OUTER_SET address = 0x156
+					//PRINT ~%book%.itm %bookID%~ 
 					COPY_EXISTING ~%book%.itm~ ~override/xabook%bookID%.itm~
-					WRITE_ASCII 0xF6 ~%spell%~ #8
-					WRITE_ASCII 0x126 ~xabook%bookID%~ #8
-					WHILE(refID < 10)
-						BEGIN
-							WRITE_ASCII %address% ~xabook%refID%~ #8
-							address = address + 0x30
-							refID = refID + 1
-						END
+					PATCH_IF(bookID != 9) BEGIN
+						WRITE_ASCII 0xF6 ~%spell%~ #8
+						WRITE_ASCII 0x126 ~xabook%bookID%~ #8
+						WHILE(refID < 10)
+							BEGIN
+								WRITE_ASCII %address% ~xabook%refID%~ #8
+								address = address + 0x30
+								refID = refID + 1
+							END
+					END ELSE BEGIN
+						WRITE_ASCII 0xBE ~%spell%~ #8
+					END
 					bookID = bookID + 1
 				END
 	END
