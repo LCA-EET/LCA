@@ -32,7 +32,11 @@ DEFINE_ACTION_FUNCTION xa_copyspellbook
 					OUTER_SET address = 0x156
 					//PRINT ~%book%.itm %bookID%~ 
 					COPY_EXISTING ~%book%.itm~ ~override/xabook%bookID%.itm~
+					WRITE_ASCII 0x3A ~xaibook~ #8
+					WRITE_ASCII 0x76 ~xaibook~ #8
 					PATCH_IF(bookID != 9) BEGIN
+						WRITE_ASCII 0xAE ~xaibook~ #8
+						WRITE_LONG 0xE6 14 // spell level
 						WRITE_ASCII 0xF6 ~%spell%~ #8
 						WRITE_ASCII 0x126 ~xabook%bookID%~ #8
 						WHILE(refID < 10)
@@ -42,6 +46,7 @@ DEFINE_ACTION_FUNCTION xa_copyspellbook
 								refID = refID + 1
 							END
 					END ELSE BEGIN
+						WRITE_LONG 0xAE 14 // spell level
 						WRITE_ASCII 0xBE ~%spell%~ #8
 					END
 					bookID = bookID + 1

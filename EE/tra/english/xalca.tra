@@ -878,7 +878,202 @@ A second function of the book is to turn to a different page of the book. This a
 
 Be warned: Once you turn to the last page of the book, you are stuck with that spell.
 
-The spell on this page is:~
+The spell on this page is: Breach
+(Abjuration)
+
+Level: 5
+Range: 40 ft.
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is cast at a creature, it breaches and dispels all of the specific and combat protections on the target creature. Here is a complete list of all the specific protection spells that are dispelled by Breach: Shield, Protection Circle, Resist Fear, Protection From Fire/Cold, Fireshield, Protection From Acid, Protection From Electricity, Protection From Magic Energy, Protection From The Elements, and Protection From Energy. The combat protection spells dispelled by Breach are Protection From Normal Missiles, Protection From Normal Weapons, Protection From Magical Weapons, Stoneskin, Armor, Ghost Armor, Spirit Armor, Absolute Immunity, Mantle, and Improved Mantle. The target's Magic Resistance, if any, does not affect this spell.~
+@4187=~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Improved Invisibility
+(Illusion/Phantasm)
+
+Level: 4
+Range: Touch
+Duration: 3 rounds + 1 round/level
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell is similar to Invisibility, but the recipient is able to attack by missile discharge, melee combat, or spellcasting while remaining unseen. However, telltale traces—a shimmering—allow an observant opponent to attack the invisible spell recipient. These traces are only noticeable when specifically looked for (after the invisible character has made <PRO_HISHER> presence known). Attacks against the invisible character suffer a -4 penalty to attack rolls, and the invisible character's Saving Throws are made with a +4 bonus.
+
+Note: After making an attack, the wizard is no longer completely invisible. Opponents can target the wizard.~
+@4188=~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Skull Trap
+(Necromancy)
+
+Level: 3
+Range: 60 ft.
+Duration: Special
+Casting Time: 3
+Area of Effect: 11-ft. radius
+Saving Throw: 1/2
+
+When this spell is cast, a skull is thrown by the caster at the target area. The skull floats in the area until a creature comes within 8 ft. of it. When this happens, the skull is triggered and explodes damaging everyone within a 11-ft. radius. The damage inflicted is equal to 1d6 per level of the caster, or half with a successful Saving Throw vs. Spell. When casting this spell, it is wise to set it far away from the party lest they set it off accidentally.~
+@4189=~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Improved Haste
+(Alteration)
+
+Level: 6
+Range: 40 ft.
+Duration: 3 rounds + 1 round/level
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+The affected creature functions at double its normal movement and attack rates and receives a +2 bonus to its initiative. Thus, a creature moving at 6 and attacking once per round would move at 12 and attack twice per round. Spellcasting and spell effects are not sped up. There are three major differences between the 3rd-level wizard spell Haste and this spell: First, there is no period of fatigue following the expiration of the spell; second, this spell will only affect one creature; third, this spell actually doubles the number of attacks per round of the hasted creature. This spell also negates the effects of a Slow spell, but it is not cumulative with itself or with other similar magic. Its effects will last for the duration or until dispelled.~
+@4190=~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Khelben's Warding Whip
+(Abjuration)
+
+Level: 7
+Range: 30 ft.
+Duration: 3 rounds
+Casting Time: 7
+Area of Effect: Special
+Saving Throw: None
+
+When this spell is cast, it dispels one spell protection of up to 8th level affecting the target creature. Every round thereafter till the duration of the spell expires, another spell protection will be removed from the target. The spells affected by Khelben's Warding Whip are Minor Spell Turning, Minor Globe of Invulnerability, Spell Immunity, Globe Of Invulnerability, Minor Spell Deflection, Spell Turning, Spell Deflection, and Spell Shield. This will always remove the highest-level spell protection affecting the target; if more than one same-level protection is active on the target simultaneously, one of them will be randomly chosen and dispelled. The target's Magic Resistance, if any, does not affect this spell.~
+@4191=~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Stoneskin
+(Alteration)
+
+Level: 4
+Range: 0
+Duration: 12 hours
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None 
+
+When a wizard casts this powerful spell upon <PRO_HIMHER>self, an outer skin of stone will move up from the ground, completely covering <PRO_HIMHER>. This skin is of course magical and will hinder the wizard in no way. The effect of this is to protect the wizard from physical attacks such as melee weapons and projectiles. For every 2 levels of the caster, an additional skin is gained upon casting. For example, a 10th-level wizard would receive 5 skins while a 20th-level wizard would receive 10. For each skin the wizard possesses, the spell will stop one attack, so a 10th-level wizard would be protected from the first 5 attacks made against <PRO_HIMHER>, but the 6th would affect <PRO_HIMHER> normally. The skins will remain on the wizard until <PRO_HESHE> is affected by a Dispel Magic, all of the skins are removed due to physical attacks, or the spell duration expires. It is important to note that this will not protect the wizard from any magical attacks, such as Fireball.~
+@4192=~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Pierce Magic
+(Abjuration)
+
+Level: 6
+Range: 40 ft.
+Duration: Instant
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is cast upon a target creature, there will be two major effects: First, the creature's Magic Resistance, if any, will be lowered by 1% per level of the caster; second, one spell protection of 8th level or lower affecting the creature, if any, will be canceled. For example, if this spell were cast by a 15th-level wizard, the target creature would lose 15% of its Magic Resistance from its current total (reducing it to 0 if less than that remains), and one 8th- or lower level spell protection affecting the creature would be dispelled. Spells affected by Pierce Magic are Minor Spell Deflection, Minor Spell Turning, Spell Deflection, Spell Turning, Minor Globe of Invulnerability, Spell Immunity, and Globe of Invulnerability. The target's Magic Resistance, if any, does not affect this spell, nor do any of the spell protections. Magic Resistance remains lowered for 1 round per level of the caster.~
+@4193=~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Chromatic Orb 
+(Evocation)
+
+Level: 1
+Range: 90 ft.
+Duration: Special
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell causes a 2-ft. diameter sphere to appear in the caster's hand. When thrown, the sphere heads unerringly to its target. The effect the orb has upon the target varies with the level of the caster. Each orb will do damage to the target against which there is no save and an effect against which the target must save vs. Spell with a +6 bonus:
+ 1st Level: 1d4 damage and blinds the target for 1 round.
+ 2nd Level: 1d4 damage and inflicts pain (-1 penalty to Strength, Dexterity, AC, and THAC0) upon the victim.
+ 3rd Level: 1d6 damage and burns the victim for an additional 1d8 damage.
+ 4th Level: 1d6 damage and blinds the target for 1 turn.
+ 5th Level: 1d8 damage and stuns the target for 3 rounds.
+ 6th Level: 1d8 damage and causes weakness (-4 penalty to THAC0) in the victim.
+ 7th Level: 1d10 damage and paralyzes the victim for 2 turns.
+ 10th Level: 1d12 acid damage and turns the victim to stone.
+ 12th Level: 2d8 acid damage and instantly kills the victim.
+
+NOTE: The victim saves vs. Spell with a +6 bonus against all the effects and gets no save against the damage.~
+@4194=~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Mass Raise Dead
+(Necromancy)
+
+Level: 7
+Sphere: Necromantic
+Range: 30 ft.
+Duration: Permanent
+Casting Time: 2
+Area of Effect: Up to 5 party members
+Saving Throw: None
+
+A more powerful version of Raise Dead, this spell brings up to 5 party members back to life and heals 3d10+1 Hit Points per level of the caster. They can regain the rest of their Hit Points by natural healing or curative magic. This spell restores life to dwarves, gnomes, half-elves, halflings, elves, half-orcs, and humans.~
+@4195=~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Mass Invisibility 
+(Illusion/Phantasm)
+
+Level: 7
+Range: Visual range of the caster 
+Duration: 1 round/level
+Casting Time: 7
+Area of Effect: 15-ft. radius 
+Saving Throw: None 
+
+Upon casting this spell, the wizard causes all friendly creatures within the area of effect to be affected by the spell Improved Invisibility. This spell is similar to the Invisibility spell, but the recipient is able to attack, either by missile discharge, melee combat, or spellcasting, and remain unseen. Note, however, that there are sometimes telltale traces, a shimmering, so that an observant opponent can attack the invisible spell recipient. These traces are only noticeable when specifically looked for (after the invisible character has made <PRO_HISHER> presence known). Attacks against the invisible character suffer -4 penalties to the attack rolls, and the invisible character's Saving Throws are made with a +4 bonus.~
+@4196=~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Summon Efreeti
+(Conjuration/Summoning)
+
+Level: 7
+Range: 120 ft.
+Duration: 8 rounds + 1 round/level
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+With this spell, the wizard can cajole an efreeti—a massive genie with powerful abilities—to leave the Elemental Plane of Fire and enter the Prime Material. The efreeti will serve the caster for the duration of the spell, attacking <PRO_HISHER> enemies.~
+
 
 @5000=~Processing ToB changes...~
 @5001=~After leaving <CHARNAME>'s company, Caelar began the long journey back to Waterdeep, determined to face justice for the crimes that she and her soldiers had committed during the crusade. Upon her arrival in the city, she was detained and interrogated by the Waterdhavian authorities, who were stunned to learn of what had transpired in Avernus. 
