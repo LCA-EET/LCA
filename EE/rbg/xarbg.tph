@@ -1282,10 +1282,29 @@ SILENT
 //{ New Items
 	
 	//{ Book of Infinite Spells
-		LAF xa_copyspellbook 
-			INT_VAR
-				strrefID = RESOLVE_STR_REF(@4186)
-		END		
+		LAF xa_copyspellbook END
+		COPY_EXISTING ~xabook0.itm~ ~override~
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4186)
+		COPY_EXISTING ~xabook1.itm~ ~override~
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4187)
+		COPY_EXISTING ~xabook2.itm~ ~override~
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4188)
+		COPY_EXISTING ~xabook3.itm~ ~override~
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4189)
+		COPY_EXISTING ~xabook4.itm~ ~override~
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4190)
+		COPY_EXISTING ~xabook5.itm~ ~override~
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4191)
+		COPY_EXISTING ~xabook6.itm~ ~override~
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4192)
+		COPY_EXISTING ~xabook7.itm~ ~override~
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4193)
+		COPY_EXISTING ~xabook8.itm~ ~override~
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4194)
+		COPY_EXISTING ~xabook9.itm~ ~override~
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4195)
+		COPY_EXISTING ~xabook10.itm~ ~override~
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@4196)
 	//}
 	
 	//{ Darts
