@@ -10,6 +10,8 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 
 //{ Action Functions
 DEFINE_ACTION_FUNCTION xa_copyspellbook
+	INT_VAR
+		strrefID = 0
 	BEGIN
 		OUTER_SET bookID = 0
 		ACTION_DEFINE_ASSOCIATIVE_ARRAY spellbooks
@@ -34,6 +36,8 @@ DEFINE_ACTION_FUNCTION xa_copyspellbook
 					COPY_EXISTING ~%book%.itm~ ~override/xabook%bookID%.itm~
 					WRITE_ASCII 0x3A ~xaibook~ #8
 					WRITE_ASCII 0x76 ~xaibook~ #8
+					WRITE_LONG 0x54 strrefID
+					strrefID = (strrefID + 1)
 					PATCH_IF(bookID != 9) BEGIN
 						WRITE_ASCII 0xAE ~xaibook~ #8
 						WRITE_LONG 0xE6 14 // spell level
