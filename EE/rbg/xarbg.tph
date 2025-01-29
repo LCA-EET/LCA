@@ -1284,29 +1284,81 @@ SILENT
 	//{ Book of Infinite Spells
 		LAF xa_copyspellbook END
 		
-		COPY_EXISTING ~xabook0.itm~ ~override~
-		WRITE_LONG 0x54 RESOLVE_STR_REF(@4186)
-		COPY_EXISTING ~xabook1.itm~ ~override~
-		WRITE_LONG 0x54 RESOLVE_STR_REF(@4187)
-		COPY_EXISTING ~xabook2.itm~ ~override~
-		WRITE_LONG 0x54 RESOLVE_STR_REF(@4188)
-		COPY_EXISTING ~xabook3.itm~ ~override~
-		WRITE_LONG 0x54 RESOLVE_STR_REF(@4189)
-		COPY_EXISTING ~xabook4.itm~ ~override~
-		WRITE_LONG 0x54 RESOLVE_STR_REF(@4190)
-		COPY_EXISTING ~xabook5.itm~ ~override~
-		WRITE_LONG 0x54 RESOLVE_STR_REF(@4191)
-		COPY_EXISTING ~xabook6.itm~ ~override~
-		WRITE_LONG 0x54 RESOLVE_STR_REF(@4192)
-		COPY_EXISTING ~xabook7.itm~ ~override~
-		WRITE_LONG 0x54 RESOLVE_STR_REF(@4193)
-		COPY_EXISTING ~xabook8.itm~ ~override~
-		WRITE_LONG 0x54 RESOLVE_STR_REF(@4194)
-		COPY_EXISTING ~xabook9.itm~ ~override~
-		WRITE_LONG 0x54 RESOLVE_STR_REF(@4195)
-		COPY_EXISTING ~xabook10.itm~ ~override~
-		WRITE_LONG 0x54 RESOLVE_STR_REF(@4196)
+		//{ Breach
+			COPY_EXISTING ~xabook0.itm~ ~override~ 
+			WRITE_LONG 0x54 RESOLVE_STR_REF(@4186)
+			WRITE_SHORT 0xE2 146 // Cast Spell
+			WRITE_BYTE 0xE4 2 // Preset Target
+		//}
 		
+		//{ Improved Invisibility
+			COPY_EXISTING ~xabook1.itm~ ~override~
+			WRITE_LONG 0x54 RESOLVE_STR_REF(@4187)
+			WRITE_SHORT 0xE2 146 // Cast Spell
+			WRITE_BYTE 0xE4 2 // Preset Target
+		//}
+		
+		//{ Skull Trap
+			COPY_EXISTING ~xabook2.itm~ ~override~
+			WRITE_LONG 0x54 RESOLVE_STR_REF(@4188)
+			WRITE_SHORT 0xE2 148 // Cast at point
+			WRITE_BYTE 0xE4 1 // Self
+		//}
+		
+		//{ Improved Haste
+			COPY_EXISTING ~xabook3.itm~ ~override~
+			WRITE_LONG 0x54 RESOLVE_STR_REF(@4189)
+			WRITE_SHORT 0xE2 146 // Cast Spell
+			WRITE_BYTE 0xE4 2 // Preset Target
+		//}
+		
+		//{ Warding Whip
+			COPY_EXISTING ~xabook4.itm~ ~override~
+			WRITE_LONG 0x54 RESOLVE_STR_REF(@4190)
+			WRITE_SHORT 0xE2 146 // Cast Spell
+			WRITE_BYTE 0xE4 2 // Preset Target
+		//}
+		
+		//{ Stoneskin
+			COPY_EXISTING ~xabook5.itm~ ~override~
+			WRITE_LONG 0x54 RESOLVE_STR_REF(@4191)
+			WRITE_SHORT 0xE2 148 // Cast Spell
+			WRITE_BYTE 0xE4 1 // Self
+		//}
+		
+		//{ Pierce Magic
+			COPY_EXISTING ~xabook6.itm~ ~override~
+			WRITE_LONG 0x54 RESOLVE_STR_REF(@4192)
+			WRITE_SHORT 0xE2 146 // Cast Spell
+			WRITE_BYTE 0xE4 2 // Preset Target
+		//}
+				
+		//{ Chromatic Orb
+			COPY_EXISTING ~xabook7.itm~ ~override~
+			WRITE_LONG 0x54 RESOLVE_STR_REF(@4193)
+			WRITE_SHORT 0xE2 146 // Cast Spell
+			WRITE_BYTE 0xE4 2 // Preset Target
+		//}
+		
+		//{ Mass Raise Dead
+			COPY_EXISTING ~xabook8.itm~ ~override~
+			WRITE_LONG 0x54 RESOLVE_STR_REF(@4194)
+			WRITE_SHORT 0xE2 148 // Cast at point
+		//}
+		
+		//{ Mass Invisibility
+			COPY_EXISTING ~xabook9.itm~ ~override~
+			WRITE_LONG 0x54 RESOLVE_STR_REF(@4195)
+			WRITE_SHORT 0xE2 148 // Cast at point
+			WRITE_BYTE 0xE4 1 // Self
+		//}
+		
+		//{ Summon Efreeti
+			COPY_EXISTING ~xabook10.itm~ ~override~
+			WRITE_LONG 0x54 RESOLVE_STR_REF(@4196)
+			WRITE_SHORT 0xE2 148 // Cast at point
+			WRITE_BYTE 0xE4 1 // Self
+		//}
 	//}
 	
 	//{ Darts
