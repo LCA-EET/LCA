@@ -1349,8 +1349,8 @@ SILENT
 		//{ Mass Invisibility
 			COPY_EXISTING ~xabook9.itm~ ~override~
 			WRITE_LONG 0x54 RESOLVE_STR_REF(@4195)
-			WRITE_SHORT 0xE2 148 // Cast at point
-			WRITE_BYTE 0xE4 1 // Self
+			WRITE_SHORT 0xAA 148 // Cast at point
+			WRITE_BYTE 0xAC 1 // Self
 		//}
 		
 		//{ Summon Efreeti
