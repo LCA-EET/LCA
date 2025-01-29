@@ -810,17 +810,17 @@ APPEND ~XALCDBG~
 		
 		IF ~~ THEN REPLY @6132
 		DO ~
-			GiveItemCreate("xabook0", Player1, 0,0,0)
-			GiveItemCreate("xabook1", Player1, 0,0,0)
-			GiveItemCreate("xabook2", Player1, 0,0,0)
-			GiveItemCreate("xabook3", Player1, 0,0,0)
-			GiveItemCreate("xabook4", Player1, 0,0,0)
-			GiveItemCreate("xabook5", Player1, 0,0,0)
-			GiveItemCreate("xabook6", Player1, 0,0,0)
-			GiveItemCreate("xabook7", Player1, 0,0,0)
-			GiveItemCreate("xabook8", Player1, 0,0,0)
-			GiveItemCreate("xabook9", Player1, 0,0,0)
-			GiveItemCreate("xabook10", Player1, 0,0,0)
+			GiveItemCreate("xabook0", Player1, 1,0,0)
+			GiveItemCreate("xabook1", Player1, 1,0,0)
+			GiveItemCreate("xabook2", Player1, 1,0,0)
+			GiveItemCreate("xabook3", Player1, 1,0,0)
+			GiveItemCreate("xabook4", Player1, 1,0,0)
+			GiveItemCreate("xabook5", Player1, 1,0,0)
+			GiveItemCreate("xabook6", Player1, 1,0,0)
+			GiveItemCreate("xabook7", Player1, 1,0,0)
+			GiveItemCreate("xabook8", Player1, 1,0,0)
+			GiveItemCreate("xabook9", Player1, 1,0,0)
+			GiveItemCreate("xabook10", Player1, 1,0,0)
 		~
 		GOTO XA_RBG_ItemTest
 		

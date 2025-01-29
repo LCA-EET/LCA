@@ -240,7 +240,7 @@ IF ~~ THEN BEGIN XA_FoundAll
 	
 	IF ~~ THEN
 	DO ~
-		GiveItemCreate( "MISC3A", LastTalkedToBy(Myself), 1, 0, 0)
+		GiveItemCreate( "XABOOK0", LastTalkedToBy(Myself), 1, 0, 0)
 	~
 	GOTO XA_GoodBye
 END

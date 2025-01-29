@@ -36,6 +36,7 @@ DEFINE_ACTION_FUNCTION xa_copyspellbook
 					COPY_EXISTING ~%book%.itm~ ~override/xabook%bookID%.itm~
 					WRITE_ASCII 0x3A ~xaibook~ #8
 					WRITE_ASCII 0x76 ~xaibook~ #8
+					WRITE_LONG 0xC RESOLVE_STR_REF(@4197)
 					PATCH_IF(bookID != 9) BEGIN
 						WRITE_ASCII 0xAE ~xaibook~ #8
 						WRITE_LONG 0xE6 14 // spell level
