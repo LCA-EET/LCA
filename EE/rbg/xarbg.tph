@@ -1289,6 +1289,7 @@ SILENT
 			WRITE_LONG 0x54 RESOLVE_STR_REF(@4186)
 			WRITE_SHORT 0xE2 146 // Cast Spell
 			WRITE_BYTE 0xE4 2 // Preset Target
+			WRITE_BYTE 0x7E 1 // Living Actor
 		//}
 		
 		//{ Improved Invisibility
@@ -1296,6 +1297,7 @@ SILENT
 			WRITE_LONG 0x54 RESOLVE_STR_REF(@4187)
 			WRITE_SHORT 0xE2 146 // Cast Spell
 			WRITE_BYTE 0xE4 2 // Preset Target
+			WRITE_BYTE 0x7E 1 // Living Actor
 		//}
 		
 		//{ Skull Trap
@@ -1303,6 +1305,7 @@ SILENT
 			WRITE_LONG 0x54 RESOLVE_STR_REF(@4188)
 			WRITE_SHORT 0xE2 148 // Cast at point
 			WRITE_BYTE 0xE4 1 // Self
+			WRITE_BYTE 0x7E 4 // Any Point in Range
 		//}
 		
 		//{ Improved Haste
@@ -1310,6 +1313,7 @@ SILENT
 			WRITE_LONG 0x54 RESOLVE_STR_REF(@4189)
 			WRITE_SHORT 0xE2 146 // Cast Spell
 			WRITE_BYTE 0xE4 2 // Preset Target
+			WRITE_BYTE 0x7E 1 // Living Actor
 		//}
 		
 		//{ Warding Whip
@@ -1317,6 +1321,7 @@ SILENT
 			WRITE_LONG 0x54 RESOLVE_STR_REF(@4190)
 			WRITE_SHORT 0xE2 146 // Cast Spell
 			WRITE_BYTE 0xE4 2 // Preset Target
+			WRITE_BYTE 0x7E 1 // Living Actor
 		//}
 		
 		//{ Stoneskin
@@ -1324,6 +1329,7 @@ SILENT
 			WRITE_LONG 0x54 RESOLVE_STR_REF(@4191)
 			WRITE_SHORT 0xE2 148 // Cast Spell
 			WRITE_BYTE 0xE4 1 // Self
+			WRITE_BYTE 0x7E 5 // Caster
 		//}
 		
 		//{ Pierce Magic
@@ -1331,6 +1337,7 @@ SILENT
 			WRITE_LONG 0x54 RESOLVE_STR_REF(@4192)
 			WRITE_SHORT 0xE2 146 // Cast Spell
 			WRITE_BYTE 0xE4 2 // Preset Target
+			WRITE_BYTE 0x7E 1 // Living Actor
 		//}
 				
 		//{ Chromatic Orb
@@ -1338,12 +1345,14 @@ SILENT
 			WRITE_LONG 0x54 RESOLVE_STR_REF(@4193)
 			WRITE_SHORT 0xE2 146 // Cast Spell
 			WRITE_BYTE 0xE4 2 // Preset Target
+			WRITE_BYTE 0x7E 1 // Living Actor
 		//}
 		
 		//{ Mass Raise Dead
 			COPY_EXISTING ~xabook8.itm~ ~override~
 			WRITE_LONG 0x54 RESOLVE_STR_REF(@4194)
 			WRITE_SHORT 0xE2 148 // Cast at point
+			WRITE_BYTE 0x7E 4 // Any Point in Range
 		//}
 		
 		//{ Mass Invisibility
@@ -1351,6 +1360,7 @@ SILENT
 			WRITE_LONG 0x54 RESOLVE_STR_REF(@4195)
 			WRITE_SHORT 0xAA 148 // Cast at point
 			WRITE_BYTE 0xAC 1 // Self
+			WRITE_BYTE 0x7E 4 // Any Point in Range
 		//}
 		
 		//{ Summon Efreeti
@@ -1358,6 +1368,7 @@ SILENT
 			WRITE_LONG 0x54 RESOLVE_STR_REF(@4196)
 			WRITE_SHORT 0xE2 148 // Cast at point
 			WRITE_BYTE 0xE4 1 // Self
+			WRITE_BYTE 0x7E 4 // Any Point in Range
 		//}
 	//}
 	
