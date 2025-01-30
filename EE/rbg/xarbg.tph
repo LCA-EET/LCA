@@ -1290,6 +1290,7 @@ SILENT
 			WRITE_SHORT 0xE2 146 // Cast Spell
 			WRITE_BYTE 0xE4 2 // Preset Target
 			WRITE_BYTE 0x7E 1 // Living Actor
+			WRITE_SHORT 0x80 30 // Range
 		//}
 		
 		//{ Improved Invisibility
@@ -1298,6 +1299,7 @@ SILENT
 			WRITE_SHORT 0xE2 146 // Cast Spell
 			WRITE_BYTE 0xE4 2 // Preset Target
 			WRITE_BYTE 0x7E 1 // Living Actor
+			WRITE_SHORT 0x80 30 // Range
 		//}
 		
 		//{ Skull Trap
@@ -1306,6 +1308,7 @@ SILENT
 			WRITE_SHORT 0xE2 148 // Cast at point
 			WRITE_BYTE 0xE4 1 // Self
 			WRITE_BYTE 0x7E 4 // Any Point in Range
+			WRITE_SHORT 0x80 30 // Range
 		//}
 		
 		//{ Improved Haste
@@ -1314,6 +1317,7 @@ SILENT
 			WRITE_SHORT 0xE2 146 // Cast Spell
 			WRITE_BYTE 0xE4 2 // Preset Target
 			WRITE_BYTE 0x7E 1 // Living Actor
+			WRITE_SHORT 0x80 30 // Range
 		//}
 		
 		//{ Warding Whip
@@ -1322,6 +1326,7 @@ SILENT
 			WRITE_SHORT 0xE2 146 // Cast Spell
 			WRITE_BYTE 0xE4 2 // Preset Target
 			WRITE_BYTE 0x7E 1 // Living Actor
+			WRITE_SHORT 0x80 30 // Range
 		//}
 		
 		//{ Stoneskin
@@ -1338,6 +1343,7 @@ SILENT
 			WRITE_SHORT 0xE2 146 // Cast Spell
 			WRITE_BYTE 0xE4 2 // Preset Target
 			WRITE_BYTE 0x7E 1 // Living Actor
+			WRITE_SHORT 0x80 30 // Range
 		//}
 				
 		//{ Chromatic Orb
@@ -1346,13 +1352,15 @@ SILENT
 			WRITE_SHORT 0xE2 146 // Cast Spell
 			WRITE_BYTE 0xE4 2 // Preset Target
 			WRITE_BYTE 0x7E 1 // Living Actor
+			WRITE_SHORT 0x80 30 // Range
 		//}
 		
-		//{ Mass Raise Dead
+		//{ Raise Dead
 			COPY_EXISTING ~xabook8.itm~ ~override~
 			WRITE_LONG 0x54 RESOLVE_STR_REF(@4194)
-			WRITE_SHORT 0xE2 148 // Cast at point
-			WRITE_BYTE 0x7E 4 // Any Point in Range
+			WRITE_SHORT 0xE2 146 // Cast Spell
+			WRITE_BYTE 0x7E 3 // Dead Actor
+			WRITE_SHORT 0x80 30 // Range
 		//}
 		
 		//{ Mass Invisibility
@@ -1361,6 +1369,7 @@ SILENT
 			WRITE_SHORT 0xAA 148 // Cast at point
 			WRITE_BYTE 0xAC 1 // Self
 			WRITE_BYTE 0x7E 4 // Any Point in Range
+			WRITE_SHORT 0x80 35 // Range
 		//}
 		
 		//{ Summon Efreeti
@@ -1369,6 +1378,7 @@ SILENT
 			WRITE_SHORT 0xE2 148 // Cast at point
 			WRITE_BYTE 0xE4 1 // Self
 			WRITE_BYTE 0x7E 4 // Any Point in Range
+			WRITE_SHORT 0x80 30 // Range
 		//}
 	//}
 	

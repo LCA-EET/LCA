@@ -1027,18 +1027,20 @@ A second function of the book is to turn to a different page of the book. This a
 
 Be warned: Once you turn to the last page of the book, you are stuck with that spell.
 
-The spell on this page is: Mass Raise Dead
+The spell on this page is: Raise Dead
 (Necromancy)
 
-Level: 7
-Sphere: Necromantic
-Range: 30 ft.
-Duration: Permanent
-Casting Time: 2
-Area of Effect: Up to 5 party members
-Saving Throw: None
+Level: 5
+Sphere: Necromantic 
+Range: Visual range of the caster
+Duration: Permanent 
+Casting Time: 9 
+Area of Effect: 1 person 
+Saving Throw: Special 
 
-A more powerful version of Raise Dead, this spell brings up to 5 party members back to life and heals 3d10+1 Hit Points per level of the caster. They can regain the rest of their Hit Points by natural healing or curative magic. This spell restores life to dwarves, gnomes, half-elves, halflings, elves, half-orcs, and humans.~
+When the priest casts a Raise Dead spell, <PRO_HESHE> can restore life to a dwarf, gnome, half-elf, halfling, elf, half-orc, or human.
+
+Note that the body of the person must be whole, otherwise missing parts are still missing when the person is brought back to life. The person has but 1 Hit Point when raised and must regain the rest by natural healing or curative magic.~
 @4195=~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
 
 A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
