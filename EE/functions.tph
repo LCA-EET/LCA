@@ -24,7 +24,7 @@ DEFINE_ACTION_FUNCTION xa_copyspellbook
 				misc3a5 => spwi408 // Stoneskin
 				misc3a6 => spwi608 // Pierce Magic
 				misc3a7 => spwi118 // Chromatic Orb
-				misc3a8 => sppr729 // Mass Raise Dead
+				misc3a8 => sppr504 // Raise Dead
 				misc3a9 => spwi721 // Mass Invisibility
 				misc3aa => spwi717 // Summon Efreeti
 			END
