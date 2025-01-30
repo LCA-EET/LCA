@@ -1291,6 +1291,7 @@ SILENT
 			WRITE_BYTE 0xE4 2 // Preset Target
 			WRITE_BYTE 0x7E 1 // Living Actor
 			WRITE_SHORT 0x80 30 // Range
+			WRITE_SHORT 0x42 0 // Lore
 		//}
 		
 		//{ Improved Invisibility
