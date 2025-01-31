@@ -1089,7 +1089,7 @@ SILENT
 				xa_default = ~wtasight~
 		END
 		
-		COPY_EXISTING ~xaa964.cre~ ~override/xades.cre~
+		COPY_EXISTING ~xaa970.cre~ ~override/xades.cre~
 		WRITE_ASCII 0x280 ~xades~ #20  	// Script Name
 		WRITE_ASCII 0x250 ~xades~ #8	// Class Script		
 		WRITE_ASCII 0x2CC ~xades~ #8 	// Dialog
