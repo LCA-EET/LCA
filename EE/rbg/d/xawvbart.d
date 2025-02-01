@@ -162,6 +162,9 @@ IF ~~ THEN BEGIN XA_AskBartender_Winston
 	
 	IF ~~ THEN REPLY @14 /* ~How does a commodities trader end up getting involved with refugees?~ */
 	GOTO XA_AskBartender_Winston2 //OK
+	
+	IF ~~ THEN REPLY @76 /* ~I see. And where is Winston now?~ */
+	GOTO XA_AskBartender_Winston3 //OK
 END
 
 IF ~~ THEN BEGIN XA_AskBartender_Winston2
@@ -222,6 +225,9 @@ IF ~~ THEN BEGIN XA_WelcomeCharname3
 	
 	IF ~~ THEN REPLY @14 /* ~How does a commodities trader end up getting involved with refugees?~ */
 	GOTO XA_WelcomeCharname4 //OK
+	
+	IF ~~ THEN REPLY @76 /* ~I see. And where is Winston now?~ */
+	GOTO XA_AskBartender_Winston3 //OK
 END
 
 IF ~~ THEN BEGIN XA_WelcomeCharname4
@@ -290,7 +296,7 @@ IF ~~ THEN BEGIN XA_SlaverQuestioning
 	GOTO XA_SlaverQuestioning2_KnowName //OK
 	
 	IF ~
-		Global("XA_LC_LearnedSlaveGirlsName", "GLOBAL", 1)
+		GlobalLT("XA_LC_LearnedSlaveGirlsName", "GLOBAL", 1)
 	~ THEN REPLY @62 /* ~While in Athkatla, we learned that the children of the refugees from Caelar's crusade were being sold as slaves. We asked the harbor master what he knew, and he told us that Winston and his company had sent refugees to cities up and down the coast, including Athkatla.~*/
 	GOTO XA_SlaverQuestioning2_DoesntKnowName //OK
 END
