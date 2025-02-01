@@ -66,6 +66,23 @@ APPEND XAENTAR
 			Gender(Player1, FEMALE)
 		~ THEN REPLY @64 /*~Opportunities for advancement... you mean...~ */
 		EXTERN XAELTAN XA_GrandDuchess
+		
+		IF ~
+			GlobalGT("KeepPlot", "GLOBAL", 0)
+			Global("RoenalControl","GLOBAL",0)
+			GlobalLT("XA_LC_AskedAboutKeep", "GLOBAL", 1)
+		~ THEN REPLY @75 /*~And what of my keep, and my lands? Will I need to relinquish them?~*/
+		DO ~
+			SetGlobal("XA_LC_AskedAboutKeep", "GLOBAL", 1)
+		~
+		GOTO XA_KeepTalk 
+	END
+	
+	IF ~~ THEN BEGIN XA_KeepTalk
+		SAY @76 /*=~You are of course referring to the those formerly held by the late Lord de'Arnise, yes? Word of his passing reached us a fortnight ago.~*/
+		
+		IF ~~ THEN
+		EXTERN XALIIA XA_KeepTalk2
 	END
 END
 	
@@ -86,6 +103,39 @@ APPEND XALIIA
 		
 		IF ~~ THEN REPLY @69 /* ~I appreciate your transparency. You've given me much to consider; I'll accept your offer on the condition that I can back out at any time.~*/
 		EXTERN XAENTAR XA_AcceptedOfferChain
+		
+		IF ~
+			GlobalGT("KeepPlot", "GLOBAL", 0)
+			Global("RoenalControl","GLOBAL",0)
+			GlobalLT("XA_LC_AskedAboutKeep", "GLOBAL", 1)
+		~ THEN REPLY @75 /*~And what of my keep, and my lands? Will I need to relinquish them?~*/
+		DO ~
+			SetGlobal("XA_LC_AskedAboutKeep", "GLOBAL", 1)
+		~
+		EXTERN XAENTAR XA_KeepTalk 
+	END
+	
+	IF ~~ THEN BEGIN XA_KeepTalk2
+		SAY @77 /*~To answer your question, no, you will not need to relinquish your holdings. It wouldn't be unusual for someone of your stature to have a summer estate, after all. We only request that you refrain from any extended excursions.~*/
+		
+		IF ~~ THEN REPLY @68 /* ~Very well. I accept your offer.~*/
+		EXTERN XAENTAR XA_AcceptedOfferChain
+		
+		IF ~
+			GlobalLT("XA_LC_RejectedOffer", "GLOBAL", 1)
+		~ THEN REPLY @59 /* ~I appreciate your generosity, but the palace life isn't for me.~ */
+		DO ~
+			SetGlobal("XA_LC_RejectedOffer", "GLOBAL", 1)
+		~
+		EXTERN XAENTAR XA_RejectedOffer
+		
+		IF ~
+			GlobalLT("XA_LC_RejectedOffer", "GLOBAL", 1)
+		~ THEN REPLY @78 /*~I see. Is there anything else you can offer besides a stipend and this stodgy old 'palace'?~*/
+		DO ~
+			SetGlobal("XA_LC_RejectedOffer", "GLOBAL", 1)
+		~
+		EXTERN XAENTAR XA_RejectedOffer
 	END
 END
 
@@ -125,11 +175,31 @@ APPEND XABELT
 		IF ~~ THEN REPLY @58 /* ~Yes, of course! I — I don't know what to say... thank you!~*/
 		EXTERN XAENTAR XA_AcceptedOfferChain
 		
-		IF ~~ THEN REPLY @59 /* ~I appreciate your generosity, but the palace life isn't for me.~ */
+		IF ~
+			GlobalLT("XA_LC_RejectedOffer", "GLOBAL", 1)
+		~ THEN REPLY @59 /* ~I appreciate your generosity, but the palace life isn't for me.~ */
+		DO ~
+			SetGlobal("XA_LC_RejectedOffer", "GLOBAL", 1)
+		~
 		EXTERN XAENTAR XA_RejectedOffer
 		
-		IF ~~ THEN REPLY @60 /* That's all? A stipend and a stodgy old estate?~ */
+		IF ~
+			GlobalLT("XA_LC_RejectedOffer", "GLOBAL", 1)
+		~ THEN REPLY @60 /* That's all? A stipend and a stodgy old estate?~ */
+		DO ~
+			SetGlobal("XA_LC_RejectedOffer", "GLOBAL", 1)
+		~
 		EXTERN XAENTAR XA_RejectedOffer
+		
+		IF ~
+			GlobalGT("KeepPlot", "GLOBAL", 0)
+			Global("RoenalControl","GLOBAL",0)
+			GlobalLT("XA_LC_AskedAboutKeep", "GLOBAL", 1)
+		~ THEN REPLY @75 /*~And what of my keep, and my lands? Will I need to relinquish them?~*/
+		DO ~
+			SetGlobal("XA_LC_AskedAboutKeep", "GLOBAL", 1)
+		~
+		EXTERN XAENTAR XA_KeepTalk 
 	END
 END
 		
