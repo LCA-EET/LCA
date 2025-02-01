@@ -332,7 +332,7 @@ APPEND BDCORWIJ
 	END
 	
 	IF ~~ THEN BEGIN XA_ProficiencyTalkWhy
-		SAY @35 /*~Consider it a thank you for the care and concern you showed back in the Gate. The refugee crisis has been a strain on everyone, and every bit of help makes a difference.~*/
+		SAY @48 /*~Consider it a thank you for the care and concern you showed back in the Gate. The refugee crisis has been a strain on everyone, and every bit of help makes a difference.~*/
 		
 		IF ~~ THEN GOTO XA_ProficiencyTalkWhy_Besides
 	END
