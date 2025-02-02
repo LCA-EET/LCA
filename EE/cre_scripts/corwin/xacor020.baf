@@ -88,7 +88,8 @@
 			ActionListEmpty()
 			Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 			Global("XA_LC_MetRohma", "GLOBAL", 1)
-			GlobalGT("XA_LC_Banter_CorwinPlayer", "GLOBAL", 2)
+			GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
+			TriggerOverride(Player1, GlobalGT("XA_LC_CorwinBanters", "LOCALS", 0))
 			GlobalLT("XA_LC_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
 		THEN
 			RESPONSE #100

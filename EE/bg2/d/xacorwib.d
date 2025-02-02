@@ -629,7 +629,7 @@ IF ~~ THEN BEGIN XAA31
 END
 
 IF ~~ THEN BEGIN XAA32
-	SAY @667 /* ~Entar was completely convinced of your guilt, as were many others.~  */
+	SAY @667 /* ~Grand Duke Silvershield and half the city, maybe more, were completely convinced of your guilt.~  */
 	
 	IF ~
 		Global("XA_LC_CorwinContinue", "GLOBAL", 1) //friend
@@ -642,10 +642,40 @@ IF ~~ THEN BEGIN XAA32
 	~ 
 	THEN REPLY @670 /* ~But not you. My love, your belief in my innocence was what kept me going. I want you to know that. I also want you to know that I appreciate dearly your being here. It must not have been easy for you to leave Rohma.~ */
 	GOTO XAA34B	
+	
+	IF ~~ THEN REPLY @1024 /*~He had nearly everyone convinced, except for those most important to me. The work that you and Imoen did to secure my release is the only reason I'm alive. I'm in your debt, Schael. Not just for saving my life, but for being here now.~*/
+	GOTO XA_InDebt
+END
+
+IF ~~ THEN BEGIN XA_InDebt
+	SAY @1025 /*~As far as I'm concerned, the entire Sword Coast, perhaps even all of Faerun, owes you a debt it can never repay. Fighting at your side is the least I can do.~*/
+	
+	IF ~
+		Global("XA_LC_CorwinContinue", "GLOBAL", 1) //friend
+	~ THEN REPLY @1026 /*~I just wish it didn't force you away from home... from Rohma. It couldn't have been easy for you to leave her.~*/
+	GOTO XAA34A	
+	
+	IF ~
+		Global("XA_LC_CorwinContinue", "GLOBAL", 1) //friend
+	~ THEN REPLY @1028 /*~I'll consider all debts paid in full once I have Irenicus' head on a platter. Come, my friend. We've work to do.~ */
+	DO ~
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 3)
+	~
+	EXIT
+	
+	IF ~
+		Global("XA_LC_CorwinContinue", "GLOBAL", 2) //romance
+	~ THEN REPLY @1026 /*~I just wish it didn't force you away from home... from Rohma. It couldn't have been easy for you to leave her.~*/
+	GOTO XAA34B	
+	
+	IF ~
+		Global("XA_LC_CorwinContinue", "GLOBAL", 2)
+	~ THEN REPLY @1027 /*~I appreciate that. And when this business with Irenicus is over, we'll be free to pursue the life together that he tried to take from us.~*/
+	GOTO XAA36
 END
 
 IF ~~ THEN BEGIN XAA33
-	SAY @668 /* ~Indeed. He had much of the city convinced of your guilt.~ */
+	SAY @668 /* ~Indeed. He had Grand Duke Silvershield and half of the city, maybe more, fully convinced of your guilt.~ */
 	
 	IF ~
 		Global("XA_LC_CorwinContinue", "GLOBAL", 1) //friend
@@ -657,7 +687,10 @@ IF ~~ THEN BEGIN XAA33
 		Global("XA_LC_CorwinContinue", "GLOBAL", 2) //romance
 	~ 
 	THEN REPLY @670 /* ~But not you. My love, your belief in my innocence was what kept me going. I want you to know that. I also want you to know that I appreciate dearly your being here. It must not have been easy for you to leave Rohma.~ */
-	GOTO XAA34B	
+	GOTO XAA34B
+
+	IF ~~ THEN REPLY @1024 /*~He had nearly everyone convinced, except for those most important to me. The work that you and Imoen did to secure my release is the only reason I'm alive. I'm in your debt, Schael. Not just for saving my life, but for being here now.~*/
+	GOTO XA_InDebt
 END
 
 IF ~~ THEN BEGIN XAA34A // friend
@@ -681,9 +714,9 @@ IF ~~ THEN BEGIN XAA34B // romance
 	SAY @671 /* ~It wasn't. I miss her everyday. But I need to be here, with you, dear. Irenicus must be punished for the crimes he has committed.~ */
 	
 	IF ~~ THEN REPLY @674 /*  ~He will be, my love. And when this is done, we will go back to Baldur's Gate and start our new life together, with Rohma.~ */
-	DO ~
-		SetGlobal("XA_LC_Banter_CorwinPlayer", "GLOBAL", 3)
-	~
+	GOTO XAA36
+	
+	IF ~~ THEN REPLY @1023 /*~And with your help, he will be. Then, we'll be free to pursue the life together that he tried to take from us.~*/
 	GOTO XAA36
 END
 
