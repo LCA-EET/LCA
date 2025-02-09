@@ -296,6 +296,7 @@ Please indicate 'LCA' in the notes for the payment. Thank you for your generosit
 @5155=~ActionOverride(Player6,SetGlobal("XA_LC_LeaveInPen","LOCALS",1))~
 @5156=~SetGlobal("XA_LC_BackToBG", "GLOBAL", 1)~
 @5157=~Re-apply Parameters~
+@5168=~SetGlobal("XA_LC_Journal_Sex1", "GLOBAL", 1)~
 
 
 @6000=~Return to Baldur's Gate Debug~

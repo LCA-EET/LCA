@@ -3924,6 +3924,157 @@ IF ~~ THEN BEGIN XA_MerethEnd
 	EXIT
 END
 
+IF ~
+	Global("XA_LC_AfterSexTalk", "LOCALS", 1)
+~ THEN BEGIN XA_PostSexTalk
+	SAY @1872 /*~<CHARNAME>. How are you?~*/
+	
+	IF ~
+		TimeOfDay(DAY)
+	~ THEN REPLY @1873 /*~I'm fine, Schael. And you? How is the day treating you?~*/
+	DO ~
+		SetGlobal("XA_LC_AfterSexTalk", "LOCALS", 2)
+	~
+	GOTO XA_PostSexTalk_2
+	
+	IF ~
+		TimeOfDay(NIGHT)
+	~ THEN REPLY @1881 /*~I'm fine, Schael. And you? How is the evening treating you?~*/
+	DO ~
+		SetGlobal("XA_LC_AfterSexTalk", "LOCALS", 2)
+	~
+	GOTO XA_PostSexTalk_2
+	
+	IF ~~ THEN REPLY @1874 /*~Better, now that I'm talking to you. How are you?~*/
+	DO ~
+		SetGlobal("XA_LC_AfterSexTalk", "LOCALS", 2)
+	~
+	GOTO XA_PostSexTalk_2
+	
+	IF ~~ THEN REPLY @1882 /*~Oh, don't mind me. Look at you, with that smile! You should do it more often.~*/
+	DO ~
+		SetGlobal("XA_LC_AfterSexTalk", "LOCALS", 2)
+	~
+	GOTO XA_PostSexTalk_2
+END
+
+IF ~~ THEN BEGIN XA_PostSexTalk_2
+	SAY @1861 /*~I feel wonderful. Better than I've felt in quite a while.~ */
+
+	= @1875 /*~You know... I haven't stopped thinking about how you made love to me.~*/
+	
+	IF ~~ THEN REPLY @1862 /*~You and I both.~*/
+	GOTO XA_PostSexTalk_3
+	
+	IF ~~ THEN REPLY @1863 /*~It was incredible, wasn't it?~*/
+	GOTO XA_PostSexTalk_3
+END
+
+IF ~~ THEN BEGIN XA_PostSexTalk_3
+	SAY @1868 /*~I was pleasantly surprised to see that you're as talented in the bedroom as you are on the battlefield. You must've had many lovers, mm?~ */
+	
+	IF ~~ THEN REPLY @1869 /*~Not too many... certainly no one as amazing as you, Schael.~ */
+	GOTO XA_PostSexTalk_3A
+	
+	IF ~~ THEN REPLY @1876 /*~Many lovers? Schael... you were my first.~*/
+	GOTO XA_PostSexTalk_3B
+END
+
+IF ~~ THEN BEGIN XA_PostSexTalk_3A
+	SAY @1879 /*~There's no need to be modest. I've had my share of lovers as well... and not just men, mind you. My last real relationship, with Tianna... well, you know how that turned out.~*/
+	
+	IF ~~ THEN
+	GOTO XA_PostSexTalk_5
+END
+
+IF ~~ THEN BEGIN XA_PostSexTalk_3B
+	SAY @1864 /*~Hahahah. Wait. You're kidding, right? The hero of Baldur's Gate, savior of the Sword Coast a... a virgin? You mean no one, ever?~*/
+		
+	IF ~~ THEN REPLY @1871 /*~Heh, you're right. I was only joking... though none of my prior lovers could compare to you, dear.~*/
+	GOTO XA_PostSexTalk_4A
+	
+	IF ~
+		Gender(Player1, MALE)
+	~ THEN REPLY @1867 /*~Is it really so hard to believe? Growing up in Candlekeep, there were hardly any women my age, and even less privacy. Then, after Sarevok, I couldn't step out of the palace without being mobbed by the citizens. I never had an opportunity to develop a relationship with someone special... someone like you.~*/
+	DO ~
+		SetGlobal("XA_LC_CharnameVirgin", "LOCALS", 1)
+	~
+	GOTO XA_PostSexTalk_4B
+	
+	IF ~
+		Gender(Player1, FEMALE)
+	~ THEN REPLY @1896 /*~Is it really so hard to believe? Growing up in Candlekeep, there were hardly any men my age, and even less privacy. Then, after Sarevok, I couldn't step out of the palace without being mobbed by the citizens. I never had an opportunity to develop a relationship with someone special... someone like you.~*/
+	DO ~
+		SetGlobal("XA_LC_CharnameVirgin", "LOCALS", 1)
+	~
+	GOTO XA_PostSexTalk_4B
+END
+
+IF ~~ THEN BEGIN XA_PostSexTalk_4A
+	SAY @1880 /*~Flatterer. I've had my share of lovers as well... and not just men, mind you. My last real relationship, with Tianna... well, you know how that turned out.~*/
+	
+	IF ~~ THEN
+	GOTO XA_PostSexTalk_5
+END
+
+IF ~~ THEN BEGIN XA_PostSexTalk_4B
+	SAY @1870 /*~Wow.. I mean.. thank you. I appreciate that. I'm honored to have been your first.~*/
+	
+	= @1884 /*I just can't believe that someone with so little experience could... I mean... for that long, and to make me... gods! Four times!~*/
+	
+	IF ~~ THEN REPLY @1883 /*~You'll find I'm full of surprises.~*/
+	GOTO XA_PostSexTalk_5
+	
+	IF ~~ THEN RPELY @1885 /*~The Candlekeep library has books on nearly every subject you can imagine, including one on the secrets to extraordinary lovemaking. I probably read that one a half-dozen times.~*/
+	GOTO XA_PostSexTalk_4C
+	
+	IF ~~ THEN REPLY @1887 /*~I think it was more than four, my dear.~*/
+	GOTO XA_PostSexTalk_4D
+END
+
+IF ~~ THEN BEGIN XA_PostSexTalk_4C
+	SAY @1886 /*~Hah! You'll need to show me everything that you've learned!~ */
+	
+	IF ~~ THEN 
+	GOTO XA_PostSexTalk_5
+END
+
+IF ~~ THEN BEGIN XA_PostSexTalk_4D
+	SAY @1888 /*~You know, you might be right. In any case, I've never experienced anything like it.~*/
+	
+	IF ~~ THEN 
+	GOTO XA_PostSexTalk_5
+END
+
+IF ~~ THEN BEGIN XA_PostSexTalk_5
+	SAY @1877 /*~I've always considered sex as a purely physical endeavor, never an emotional one. It's certainly something that I enjoy more than most. But with you...~*/
+	
+	= @1878 /*~With you, <CHARNAME>, I feel a much deeper connection. It was more than sex... it was love, in it's most pure, intense and, heh, messy form. I hope you understand that.~*/
+	
+	IF ~~ THEN REPLY @1890 /*~I see things the same way. What we have is more than simple physical attraction. It's love. And I couldn't be happier about it.~*/
+	GOTO XA_PostSexTalk_End
+	
+	IF ~
+		Global("XA_LC_CharnameVirgin", "LOCALS", 1)
+	~ THEN REPLY @1892 /*~I don't have the same experience you do when it comes to relationships. All I know is that what I feel for you is real.~*/
+	GOTO XA_PostSexTalk_End
+	
+	IF ~
+		GlobalLT("XA_LC_CharnameVirgin", "LOCALS", 1)
+	~ THEN REPLY @1891 /*~I can't tell you how refreshing it is to hear that. My prior relationships have ended because there wasn't that kind of deeper attraction that you're describing.~*/
+	GOTO XA_PostSexTalk_End
+END
+
+IF ~~ THEN BEGIN XA_PostSexTalk_End
+	SAY @1893 /*~That's good. Come here.~*/
+	
+	= @1894 /*~(You kiss and embrace.)~*/
+	
+	= @1895  /*~We better get a move on. Let's go, love.~*/
+	
+	IF ~~ THEN
+	EXIT
+END
 CHAIN
 	IF ~~ THEN XACORWIJ XA_CorwinArtifacts_Chain
 		@1816 /*~Let me have a look at that.~*/

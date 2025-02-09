@@ -321,6 +321,12 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_BG2_AdjustVariables
 		SAY @5083
 		
+		IF ~~ THEN REPLY @5168
+		DO ~
+			SetGlobal("XA_LC_Journal_Sex1", "GLOBAL", 1)
+		~
+		GOTO XA_BG2_AdjustVariables
+		
 		IF ~~ THEN REPLY @5092 /* */
 		DO ~
 			SetGlobal("XA_LC_CorwinLesson", "GLOBAL", 1)

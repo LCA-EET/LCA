@@ -1,3 +1,29 @@
+//{ Post Sex-1 Talk
+	IF
+		Global("XA_LC_Journal_Sex1", "GLOBAL", 2)
+		GlobalLT("XA_LC_AfterSexTalkTimerSet", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_LC_AfterSexTalkTimer", "LOCALS", SIXTEEN_HOURS)
+			SetGlobal("XA_LC_AfterSexTalkTimerSet", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_LC_AfterSexTalkTimer", "LOCALS")
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		GlobalLT("XA_LC_AfterSexTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_AfterSexTalk", "LOCALS", 1)
+			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
+	END
+//}
 
 //{ 03: Mark as In-Party in BG2 (For later summoning via the fate-spirit)
 IF
