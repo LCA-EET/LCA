@@ -4025,7 +4025,7 @@ IF ~~ THEN BEGIN XA_PostSexTalk_4B
 	IF ~~ THEN REPLY @1883 /*~You'll find I'm full of surprises.~*/
 	GOTO XA_PostSexTalk_5
 	
-	IF ~~ THEN RPELY @1885 /*~The Candlekeep library has books on nearly every subject you can imagine, including one on the secrets to extraordinary lovemaking. I probably read that one a half-dozen times.~*/
+	IF ~~ THEN REPLY @1885 /*~The Candlekeep library has books on nearly every subject you can imagine, including one on the secrets to extraordinary lovemaking. I probably read that one a half-dozen times.~*/
 	GOTO XA_PostSexTalk_4C
 	
 	IF ~~ THEN REPLY @1887 /*~I think it was more than four, my dear.~*/
