@@ -3998,6 +3998,7 @@ IF ~~ THEN BEGIN XA_PostSexTalk_3B
 	~ THEN REPLY @1867 /*~Is it really so hard to believe? Growing up in Candlekeep, there were hardly any women my age, and even less privacy. Then, after Sarevok, I couldn't step out of the palace without being mobbed by the citizens. I never had an opportunity to develop a relationship with someone special... someone like you.~*/
 	DO ~
 		SetGlobal("XA_LC_CharnameVirgin", "LOCALS", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	GOTO XA_PostSexTalk_4B
 	
@@ -4006,6 +4007,7 @@ IF ~~ THEN BEGIN XA_PostSexTalk_3B
 	~ THEN REPLY @1896 /*~Is it really so hard to believe? Growing up in Candlekeep, there were hardly any men my age, and even less privacy. Then, after Sarevok, I couldn't step out of the palace without being mobbed by the citizens. I never had an opportunity to develop a relationship with someone special... someone like you.~*/
 	DO ~
 		SetGlobal("XA_LC_CharnameVirgin", "LOCALS", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	GOTO XA_PostSexTalk_4B
 END
