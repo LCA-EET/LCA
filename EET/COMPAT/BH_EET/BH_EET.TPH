@@ -1,5 +1,0 @@
-PRINT ~Blackhearts EET is installed. Patching dialogs accordingly.~
-
-COMPILE ~%MOD_FOLDER%/COMPAT/BH_EET/D~ USING ~%MOD_FOLDER%/COMPAT/BH_EET/TRA/XABHEET.TRA~
-
-EXTEND_TOP ~AR0602.bcs~ ~%MOD_FOLDER%/compat/bh_eet/baf/xabh0602.baf~

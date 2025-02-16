@@ -7,7 +7,7 @@
 This mod allows Corwin to be added to the party in Shadows of Amn, and Caelar to be added in Throne of Bhaal. Players can either continue the romance they started with Corwin in Siege of Dragonspear, or they can start a new romance with her after her arrival in Athkatla. The mod adds more than 200 new dialogs spread across the four games of the Bhaalspawn saga. Moreover, there are dozens of new items, quests, and cutscenes to enjoy.
 </p>
 <p>
-If you have any questions, or would like to provide feedback, you can reach me on <a href="https://discord.gg/hwGf39gW9g">Discord</a>. Alternatively, you can send me an e-mail at <a href="mailto:LCAMod@danielvalle.net">LCAMod@danielvalle.net</a>, or you can post your questions or concerns to the <a href="https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet" target="_blank">Gibberlings3 forum post</a>. I hope that you have as much enjoyment in playing this mod as I did in creating it. 
+If you have any questions, or would like to provide feedback, you can reach me on <a href="https://discord.gg/hwGf39gW9g">Discord</a>. Alternatively, you can send me an e-mail at <a href="mailto:support@fosiemods.net">support@fosiemods.net</a>, or you can post your questions or concerns to the <a href="https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet" target="_blank">Gibberlings3 forum post</a>. I hope that you have as much enjoyment in playing this mod as I did in creating it. 
 </p>
 
 ### New Quests
@@ -165,7 +165,7 @@ Talk to the creature that is spawned to access the debugging options.
 
 ### Bug Reports
 <a name="a_bugs"></a>
-If you encounter any bugs or unexplained behavior while playing the mod, please report it to LCAMod@danielvalle.net. You can also reach me through Discord, as well as the Beamdog and G3 forums (see links below). Including your save game with the bug report is helpful, though optional. I’d also appreciate any feedback or constructive criticism.
+If you encounter any bugs or unexplained behavior while playing the mod, please report it to <a href="mailto:support@fosiemods.net">support@fosiemods.net</a>. You can also reach me through Discord, as well as the Beamdog and G3 forums (see links below). Including your save game with the bug report is helpful, though optional. I’d also appreciate any feedback or constructive criticism.
 
 ### Cross Modding / Forking
 <a name="a_crossmodding"></a>

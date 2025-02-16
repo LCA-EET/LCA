@@ -1,8 +1,0 @@
-IF
-	GlobalGT("BHBG1Quest","GLOBAL",0)
-	GlobalLT("XA_LC_BH_MetIllasera","GLOBAL",1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_LC_BH_MetIllasera","GLOBAL",1)
-		Continue()
-END

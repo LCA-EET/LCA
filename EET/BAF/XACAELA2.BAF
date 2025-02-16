@@ -1,9 +1,0 @@
-IF
-	GlobalGT("XA_AVBossFled", "GLOBAL", 1)
-	GlobalLT("XA_CaelarAVTalk", "GLOBAL", 1)
-	Range(Player1, 10)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_CaelarAVTalk", "GLOBAL", 1)
-		StartDialog("XACAELA2", Player1)
-END
