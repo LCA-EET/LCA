@@ -1,6 +1,6 @@
 //{ Copyright, Licensing & Credits
 	/* Copyright Notice
-	Copyright © 2024 Daniel Valle, LCA
+	Copyright © 2025 FOSIE Mods (https://fosiemods.net)
 	 
 	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -48,7 +48,7 @@
 //}
 
 BACKUP ~LCA/backup~
-AUTHOR ~Daniel Valle, lcamod@danielvalle.net~
+AUTHOR ~support@fosiemods.net~
 AUTO_TRA ~%MOD_FOLDER%/tra/%s~ //automatically associate .tras to their respective .D files
 AUTO_EVAL_STRINGS
 LANGUAGE ~English~ ~english~ ~%MOD_FOLDER%/tra/english/xalca.tra~
