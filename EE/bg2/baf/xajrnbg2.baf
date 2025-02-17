@@ -205,6 +205,7 @@ END
 //{ Sex 2
 IF 
 	Global("XA_LC_Journal_Sex2", "GLOBAL", 1)
+	GlobalLT("XA_LCE_UsedSafeWord", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
@@ -212,6 +213,18 @@ THEN
 		AddJournalEntry(@3, INFO)
 		AddXPObject("XACORWIN",50000)
 		AddXPObject(Player1,50000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	Global("XA_LC_Journal_Sex2", "GLOBAL", 1)
+	Global("XA_LCE_UsedSafeWord", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Sex2", "GLOBAL", 0)
+		AddJournalEntry(@93, INFO)
 		SetInterrupt(TRUE)
 		Continue()
 END

@@ -69,16 +69,10 @@ BEGIN ~XALCDBG~
 	END
 	
 	IF ~~ THEN BEGIN XA_LC_Support //1
-		SAY @2063 /* ~I accept payment through the following services (click below to learn more):~ */
+		SAY @2063 /* ~Please use the Venmo and / or Paypal links in the installation directory if you'd like to contribute monetarily. Thank you for your generosity. */
 		
-		IF ~~ THEN REPLY @2064 /* ~Patreon~ */
-		GOTO XA_LC_Support_Patreon
-		
-		IF ~~ THEN REPLY @2065 /* ~Paypal~ */
-		GOTO XA_LC_Support_Paypal
-		
-		IF ~~ THEN REPLY @2066 /* ~Venmo~ */
-		GOTO XA_LC_Support_Venmo
+		IF ~~ THEN REPLY @2067 /* ~Return to the prior menu.~*/
+		GOTO XA_LC_Support
 		
 		COPY_TRANS XALCDBG XA_ClosingOptions_Assistant
 	END

@@ -1,0 +1,10 @@
+IF
+	True() 
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		SetGlobal("XA_LC_CorwinSex_2", "GLOBAL", 5)
+		SetGlobal("XA_LC_SleepInn", "GLOBAL", 0)
+		SetGlobal("XA_LC_Journal_Sex2", "GLOBAL", 1)
+		StartCutscene("XAEXPLEX")
+END
