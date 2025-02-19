@@ -36,10 +36,10 @@
 @39=~<CHARNAME>, I'm going with you. We've come this far together, and I love you too much to turn back now.~
 @40=~I love you too Schael, more than you know. Thank you... for everything.~
 @41=~I love you too Schael. You needn't risk yourself any further. Think of your father. Think of Rohma.~
-@42=~Irenicus needs to be stopped. While he's alive no one is safe, and that includes Rohma. Being at your side is the best way I can protect her, and Baldur's Gate.~
+@42=~Irenicus needs to be stopped. While he's alive no one is safe, and that includes Rohma. Being at your side is the best way I can protect her, and Baldur's Gate.~ [xalc8026]
 @43=~Thank you, my love.~
 @44=~Schael, you're the strongest, most determined woman I've ever known. You'll be fine.~
-@45=~It's going to hurt, for a while. The pain of not having you near me, of not waking up in your arms... it might never go away. Rohma will be heartbroken too. But you're right... we'll learn to live with it, and we'll be stronger for it.~
+@45=~It's going to hurt, for a while. The pain of not having you near me, of not waking up in your arms... it might never go away. Rohma will be heartbroken too. But you're right... we'll learn to live with it, and we'll be stronger for it.~ 
 @46=~Got everything you need?~ [xalc1142]
 @47=~No, <CHARNAME>. I'm coming with you. Irenicus needs to be stopped. While he's alive no one is safe, and that includes Rohma. Being at your side is the best way I can protect her, and Baldur's Gate.~
 @48=~Thank you Schael... for everything.~
@@ -47,7 +47,7 @@
 @50=~I'm with you, <CHARNAME>. Irenicus must be stopped, before he can destroy any more innocent lives.~
 @51=~No, Madame, <PRO_HESHE> doesn't need anything from this whorehouse.~
 @53=~Heh. Don't look so disappointed, love. There'll be plenty of time for those... activities... once we get back to Baldur's Gate.~
-@54=~He kidnapped my daughter, so we killed him. His head was taken to prevent him from being resurrected yet again. If you're here to exact some sort of revenge, then you're making a big mistake.~
+@54=~He kidnapped my daughter, so we killed him. His head was taken to prevent him from being resurrected yet again. If you're here to exact some sort of revenge, then you're making a big mistake.~ [xalc8023]
 @55=~As do I. Let's go love. We've work to do.~
 @56=~He kidnapped my daughter, so we killed him. His soul was taken to prevent him from being resurrected yet again. If you're here to exact some sort of revenge, then you're making a big mistake.~
 @58=~I look forward to it.~
@@ -234,7 +234,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @329=~Not at all...~
 @331=~This must be a tough time for you, then.~ [xalc1133]
 @332=~(She tries, and fails, to stifle a laugh.)~
-@333=~You have enough on your plate to deal with. No need to get wrapped up with nobility, or their power and political games.~ [xalc1202]
+@333=~You have enough on your plate to deal with. No need to get wrapped up with nobility, or their power and political games.~ [xalc8003]
 @336=~<CHARNAME>... what happened?~ [xalc1159]
 @337=~(You notice that her skin and eye color have returned to normal.)~
 @338=~You collapsed as we ran the stake through Bodhi's heart. How are you feeling?~
@@ -384,7 +384,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @528=~Good.~
 @529=~I've been watching you, love, and of late I don't like what I see.~ [xalc1173]
 @530=~What? I don't understand.~
-@531=~For all of your power, your fighting skills are suspect. You're not bad with a weapon, but your hand-to-hand skills are sorely lacking. I shouldn't be surprised based on your upbringing in Candlekeep, but I'm concerned.~ [xalc1264]
+@531=~For all of your power, your fighting skills are suspect. You're not bad with a weapon, but your hand-to-hand skills are sorely lacking. I shouldn't be surprised based on your upbringing in Candlekeep, but I'm concerned.~ [xalc8009]
 @532=~You're speaking to the <PRO_MANWOMAN> who defeated Sarevok and stopped Caelar's crusade. You're clearly mistaken, love.~
 @533=~Perhaps you're right. I'm open to any tips you can give me.~
 @534=~You defeated them with raw power, not skill. Get us a room and I'll show you what I mean. Let's go.~
@@ -480,7 +480,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @626=~I never wanted any of that, Schael. All I want is a life together with you.~
 @627=~Don't you remember? I told you once long ago that some stories have happy endings. I'd like for our story to be one of them, Schael.~
 @628=~(She covers her mouth, as her eyes fill with tears of joy. After a moment, she regains her composure.)~
-@629=~Before we go, let's check with the rest of the team to see who's coming with us. I imagine some'll want to stay here and help the elves with their wounded.~ [xalc1272]
+@629=~Before we go, let's check with the rest of the team to see who's coming with us. I imagine some'll want to stay here and help the elves with their wounded.~ [xalc8010]
 @630=~Heh. It was tame compared to the one the coalition threw for us after Avernus.~
 @632=~Let's go.~
 @633=~Not yet.~
@@ -528,7 +528,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @677=~Changed? In what way?~
 @678=~Understood. <CHARNAME>, let's head in. We'll stop at my place first. It's in the southeast part of the city.~ [xalc1273]
 @679=~No — I still need to see my family.~
-@680=~Listen, I really need to see my family. My home's in the southeast part of the city. Let's go.~ [xalc1274]
+@680=~Listen, I really need to see my family. My home's in the southeast part of the city. Let's go.~ [xalc8012]
 @681=~(They share a long embrace, and Schael gives her daughter a big kiss.)~
 @683=~Oh, I've missed you so much!~
 @684=~I missed you too mommy!~
@@ -1129,7 +1129,7 @@ Captain Corwin shared with me the story of how she was arrested in the Hall of W
 @1376=~Lead the way, Curator Magda.~
 @1377=~Excuse us, ma'am.~
 @1378=~(She pulls you aside.)~
-@1379=~What's the problem? They're orphans — they have nothing. A few words from you could at least give them some inspiration.~ [xalc1326]
+@1379=~What's the problem? They're orphans — they have nothing. A few words from you could at least give them some inspiration.~ [xalc8022]
 @1380=~Public speaking isn't my forte... but I'll do it for you, dear.~
 @1381=~If it's just a few words, then fine.~
 @1382=~That's better. Lead the way, Curator Magda.~
@@ -1353,7 +1353,7 @@ Major Corwin offered me some valuable parenting advice, which I gladly accepted.
 @1647=~Where are you going with this?~
 @1648=~Hungry? I'm sure we can find something our packs to satisfy any new cravings.~
 @1649=~I see a change in you, love. Your skill in battle is unlike anything I've ever seen. You're becoming something... greater, if that makes sense.~
-@1650=~You know that I've never placed much value on prophecies. But, if you did have to choose between godhood, and this life...?~ [xalc1248]
+@1650=~You know that I've never placed much value on prophecies. But, if you did have to choose between godhood, and this life...?~ [xalc8031]
 @1651=~Your love is enough, Schael. It's more than any <PRO_MANWOMAN> can ask for.~
 @1652=~But don't you see, that's exactly it! A <PRO_MANWOMAN> is mortal, and a god is not. What are mortal concerns like love, children, and companionship, to an immortal being?~
 @1653=~If I did become a god, I'd still love you. I'd be able to do things for you, and our child, that I could never do as a <PRO_MANWOMAN>.~
@@ -1490,7 +1490,7 @@ Marshal Nederlok of the Baldur's Gate Flaming Fist was pleased to hear of Neb's 
 @1813=~If it helps to advance our mission, then yes. I have my limits though, and I won't stand for gratuitous crime. I trust I've made myself clear? Good. Now let's go.~ [xalc1204]
 @1814=~Breaking the Law
 Captain Corwin assured me that she's willing to do what is needed to accomplish her mission, including running afoul of local laws. She has her limits though, and she warned me not to test them.~
-@1815=~I'm on a special assignment from the Grand Dukes, and it doesn't involve shutting down whatever operation you and your boss have set up here. That's all you need to know.~ [xalc1205]
+@1815=~I'm on a special assignment from the Grand Dukes, and it doesn't involve shutting down whatever operation you and your boss have set up here. That's all you need to know.~ [xalc8004]
 @1816=~Let me have a look at that.~
 @1817=~Of course. It's yours, if you have the coin.~
 @1818=~As I suspected. These artifacts were reported stolen years ago. How did you acquire these?~ [xalc1207]
@@ -1520,7 +1520,7 @@ Captain Corwin has identified some stolen merchandise that once belonged to Bald
 @1841=~They seem like good kids. I'm sure from now on they'll be on their best behavior.~ [xalc1246]
 @1842=~If you say so.~
 @1843=~Boys will be boys, I suppose.~
-@1844=~I'm just glad things turned out as well as they did. It could have been a lot worse. I'll have the Fist wizards properly ward the tower so that something like this doesn't happen again.~ [xalc1247]
+@1844=~I'm just glad things turned out as well as they did. It could have been a lot worse. I'll have the Fist wizards properly ward the tower so that something like this doesn't happen again.~ [xalc8030]
 @1845=~Let's go, love.~
 @1846=~Let's go.~
 @1847=~Cute kid. She can't be more than a couple of years older than Rohma.~ [xalc1317]
