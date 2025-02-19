@@ -3,7 +3,7 @@
 @5=~Yes. It's a beautiful statue.~
 @6=~It doesn't do you justice, I'm afraid.~
 @7=~Flatterer.~ [xalc1063]
-@9=~Neb! By order of the Flaming Fist you are under arrest!~ [xalc1168]
+@9=~Neb! By order of the Flaming Fist you are under arrest!~ [xalc8051]
 @10=~Are you alright? It looked for a moment like you were about to keel over.~
 @11=~I felt some dizziness... it's nothing, I'll be fine.~
 @12=~Let's just focus on getting out of here. I'll feel better once I'm out of this hole.~
@@ -39,7 +39,7 @@
 @42=~Irenicus needs to be stopped. While he's alive no one is safe, and that includes Rohma. Being at your side is the best way I can protect her, and Baldur's Gate.~ [xalc8026]
 @43=~Thank you, my love.~
 @44=~Schael, you're the strongest, most determined woman I've ever known. You'll be fine.~
-@45=~It's going to hurt, for a while. The pain of not having you near me, of not waking up in your arms... it might never go away. Rohma will be heartbroken too. But you're right... we'll learn to live with it, and we'll be stronger for it.~ 
+@45=~It's going to hurt, for a while. The pain of not having you near me, of not waking up in your arms... it might never go away. Rohma will be heartbroken too. But you're right... we'll learn to live with it, and we'll be stronger for it.~ [xalc8024]
 @46=~Got everything you need?~ [xalc1142]
 @47=~No, <CHARNAME>. I'm coming with you. Irenicus needs to be stopped. While he's alive no one is safe, and that includes Rohma. Being at your side is the best way I can protect her, and Baldur's Gate.~
 @48=~Thank you Schael... for everything.~
@@ -81,7 +81,7 @@
 @93=~Fair enough. Let's get going.~
 @94=~Thank you, <CHARNAME>. I really appreciate it.~
 @95=~Dings, sweetie! Back in the pack, it's time to go.~
-@98=~At least he won't be coming back this time... Pray to Tymora that there's a bathhouse in this village. Let's go.~
+@98=~At least he won't be coming back this time... Pray to Tymora that there's a bathhouse in this village. Let's go.~ [xalc8050]
 @106=~I don't know what I should do.~
 @108=~(She smiles, and places her arms around your shoulders.)~
 @109=~Gods know it's been too long already.~
@@ -526,7 +526,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @675=~Yes, sir.~
 @676=~Corporal, I trust all is well with you? How is Skie?~
 @677=~Changed? In what way?~
-@678=~Understood. <CHARNAME>, let's head in. We'll stop at my place first. It's in the southeast part of the city.~ [xalc1273]
+@678=~Understood. <CHARNAME>, let's head in. We'll stop at my place first. It's in the southeast part of the city.~ [xalc8011]
 @679=~No — I still need to see my family.~
 @680=~Listen, I really need to see my family. My home's in the southeast part of the city. Let's go.~ [xalc8012]
 @681=~(They share a long embrace, and Schael gives her daughter a big kiss.)~
@@ -820,7 +820,7 @@ Do not keep us waiting for long."~
 Do not keep us waiting for long."~
 @1003=~The Five... I've read reports of a such a group causing havoc in the vicinity of Saradush.~
 @1004=~(She gives <GABBER> a sharp stare.)~
-@1005=~We nearly blew our cover back there.~ [xalc1319]
+@1005=~We nearly blew our cover back there.~ [xalc8032]
 @1006=~Rein it in. If you can't control yourself, you're a danger to us all.~ [xalc1073]
 @1007=~Yes. He's Rohma's father, as distasteful as it sounds.~
 @1009=~You'll almost certainly be walking into a trap. It'd be better to send some additional support, perhaps a platoon of Valiants —~
@@ -1053,7 +1053,7 @@ Corwin has arrested Beno Famari for kidnapping and attempted murder. Hopefully, 
 @1276=~I will. I'll come back to you, my love — I promise.~
 @1278=~It's late... I need to get Rohma to bed.~
 @1279=~I'll come with you.~
-@1280=~I'm glad that you chose me for this new assignment.~ [xalc1036]
+@1280=~I'm glad that you chose me for this new assignment.~ [xalc8049]
 @1282=~I've learned to rely on your skill and counsel, my friend.~
 @1283=~It was a difficult decision.~
 @1284=~How so?~
@@ -1493,7 +1493,7 @@ Captain Corwin assured me that she's willing to do what is needed to accomplish 
 @1815=~I'm on a special assignment from the Grand Dukes, and it doesn't involve shutting down whatever operation you and your boss have set up here. That's all you need to know.~ [xalc8004]
 @1816=~Let me have a look at that.~
 @1817=~Of course. It's yours, if you have the coin.~
-@1818=~As I suspected. These artifacts were reported stolen years ago. How did you acquire these?~ [xalc1207]
+@1818=~As I suspected. These artifacts were reported stolen years ago. How did you acquire these?~ [xalc8035]
 @1819=~I can assure you that I only procure from the most reputable vendors.~
 @1820=~Some of these items once belonged to Balduran, the founder of Baldur's Gate. They were stolen years ago from the Hall of Wonders. I'm sure the Council and the city historians would greatly appreciate it if we could bring them back to the Gate.~ [xalc1199]
 @1821=~I'm sure they would, but they must cost a fortune!~
