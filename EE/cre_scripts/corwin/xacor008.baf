@@ -1140,6 +1140,7 @@ END
 	//{ Corwin Sex Second Time
 	IF
 		ActionListEmpty()
+		!Class(Player1, MONK)
 		GlobalGT("XA_LC_TimesHadSex", "GLOBAL", 0)
 		GlobalLT("XA_LC_Sex2TimerSet", "LOCALS", 1)
 	THEN
