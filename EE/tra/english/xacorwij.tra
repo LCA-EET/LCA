@@ -576,7 +576,6 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @744=~I understand. Thank you for being honest about your feelings, love. I'll tell Neoma that from now on, we're to be friends and nothing more. Let's go.~ [xalc1276]
 @745=~I... see.~
 @746=~And I won't. Thank you for being honest about your feelings, love. Let's go.~ [xalc1277]
-@747=~(A mischievous smile graces her face.)~
 @748=~Heh. Somehow, I knew you'd be. I'll see if she's interested. Let's go.~ [xalc1278]
 @749=~What's your name, little girl? You said you were sent here from Baldur's Gate?~ [xalc1279]
 @750=~Do you know if there are others being held here?~
@@ -630,7 +629,6 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @807=~I need some more time for those manifests. Give me an hour, I should have 'em ready for you by then.~
 @808=~Not in an hour, now! Unless you want the Flaming Fist to turn these docks inside out.~ [xalc1281]
 @809=~Right... one moment.~
-@810=~Here they are. The shipping manifests for Winston Ventures for the period you mentioned.~
 @811=~Thank you for your cooperation.~
 @812=~Hmm.. <CHARNAME>, look. The manifests identify the company as Winston Ventures, but the contents are encoded.~
 @813=~We should pay a visit to the Thieves' Guild. They may know how to decode them.~
@@ -765,7 +763,6 @@ I received the shipping manifests from the harbor master, but they are encoded a
 @948=~Are you and Jaheira settled in?~
 @949=~Are you and Neera settled in?~
 @950=~I don't doubt it.~
-
 @952=~And you, Schael? How are you and Rohma adjusting to being together again?~
 @953=~It's been great... speaking of... look at the time. I should get going.~
 @954=~The stars... they're beautiful tonight...~ [xalc1178]
@@ -802,7 +799,6 @@ I received the shipping manifests from the harbor master, but they are encoded a
 @986=~Were you expecting guests?~
 @987=~No.. it looks like it was broken into..~
 @988=~Oh, Gods! Rohma! Father!~
-@989=~(She runs inside, and you follow in after her.)~
 @990=~(Audamar lies on the floor, bloodied and severely beaten.)~
 @991=~Beno...~ [xalc1000]
 @992=~(She quivers, then screams in rage.)~
@@ -1168,7 +1164,6 @@ Captain Corwin shared with me the story of how she was arrested in the Hall of W
 @1426=~Ma'am, did you report these disappearances to the Flaming Fist?~
 @1429=~Well? Go on.~
 @1430=~Ahh... forget I said anything. You have enough on your mind already. Let's go.~
-@1431=~(She smiles.)~
 @1432=~Seeing my cell again... it all came flooding back, Schael.~
 @1433=~I think about it, still. Not just my exile, but how close I was to being —~
 @1445=~And I'd rather you be open with me. Fine. Let's go.~
@@ -1178,7 +1173,6 @@ Captain Corwin shared with me the story of how she was arrested in the Hall of W
 @1451=~And I may still. Who knows what the future holds in store for us? Let's get going.~
 @1452=~Right... We have work to do. Let's go.~ [xalc1185]
 @1453=~With you as my commander? Sounds intriguing — I bet you'd *love* ordering me around, wouldn't you hon?~
-
 @1455=~I would. But not as much as you'd enjoy it.~ [xalc1354]
 @1456=~Get us a room, love, and we'll see how good you are at following orders.~ [xalc1355]
 @1457=~Yes, ma'am!~
@@ -1537,14 +1531,12 @@ Captain Corwin has identified some stolen merchandise that once belonged to Bald
 @1858=~You flatter me. I feel like anyone in my position would've taken the same actions.~
 @1859=~Somehow, I know that you're right. Thank you, Schael.~
 @1860=~I feel the same way... Stay safe, love.~
-@1861=~I feel great. Wonderful, even.~ 
+@1861=~I feel great. Wonderful, even.~
 @1862=~You and I both.~
 @1863=~It was incredible, wasn't it?~
 @1864=~Hahahah. Wait. You're kidding, right? The hero of Baldur's Gate, champion of the Sword Coast a... a virgin? You mean no one, ever?~
-@1865=~Not anymore, thanks to you.~
-@1866=~But — you mean no one? Ever?~
 @1867=~Is it really so hard to believe? Growing up in Candlekeep, there were hardly any women my age, and even less privacy. Then, after Sarevok, I couldn't step out of the palace without being mobbed by the citizens. I never had an opportunity to develop a relationship with someone special... someone like you.~
-@1868=~I was pleasantly surprised to see that you're as talented in the bedroom as you are on the battlefield. You must've had many lovers, mm?~ 
+@1868=~I was pleasantly surprised to see that you're as talented in the bedroom as you are on the battlefield. You must've had many lovers, mm?~
 @1869=~Not too many... certainly no one as amazing as you, Schael.~
 @1870=~Wow.. I mean.. thank you. I appreciate that. I'm honored to have been your first.~
 @1871=~Heh, you're right. I was only joking... though none of my prior lovers could compare to you, dear.~
@@ -1565,7 +1557,6 @@ Captain Corwin has identified some stolen merchandise that once belonged to Bald
 @1886=~Hah! You'll need to show me everything that you've learned!~
 @1887=~I think it was more than four, my dear.~
 @1888=~You know, you might be right. In any case, I've never experienced anything like it.~
-@1889=~I do understand, and I want you to know that I feel the same way.~
 @1890=~I see things the same way. What we have is far more than simple physical attraction. It's love. And I couldn't be happier about it.~
 @1891=~I can't tell you how refreshing it is to hear that. All of my prior relationships, if you can even call them that, ended because there wasn't that kind of deeper connection that you're describing.~
 @1892=~I don't have the same experience you do when it comes to relationships. All I know is that what I feel for you is real.~
@@ -1573,5 +1564,3 @@ Captain Corwin has identified some stolen merchandise that once belonged to Bald
 @1894=~(You kiss and embrace.)~
 @1895=~We better get a move on. Let's go, love.~
 @1896=~Is it really so hard to believe? Growing up in Candlekeep, there were hardly any men my age, and even less privacy. Then, after Sarevok, I couldn't step out of the palace without being mobbed by the citizens. I never had an opportunity to develop a relationship with someone special... someone like you.~
-
-  

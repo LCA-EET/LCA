@@ -45,9 +45,6 @@
 @2061=~Spawn Target Dummy~
 @2062=~~
 @2063=~Please visit https://fosiemods.net/support if you'd like to make a monetary contribution. Thank you for your generosity.~
-@2064=~~
-@2065=~~
-@2066=~~
 @2067=~Return to the prior menu.~
 @2068=~~
 @2069=~~
@@ -60,7 +57,6 @@
 @2076=~Check active game script.~
 @2077=~Report active Corwin script.~
 @2078=~ClearAllActions()~
-
 @3000=~BG1 Debug~
 @3001=~Item Test~
 @3002=~xaambelt.itm~
@@ -255,7 +251,7 @@
 @5118=~SetGlobal("DefeatedJon", "GLOBAL", 1)~
 @5119=~SetGlobal("DefeatedJon", "GLOBAL", 0)~
 @5120=~SetMasterArea("AR2800")~
-@5121=~CreateCreature("XADINGS", [-1.-1], N)~ 
+@5121=~CreateCreature("XADINGS", [-1.-1], N)~
 @5122=~Reset Player 1 Corwin Banters~
 @5123=~Reset Player 2 Corwin Banters~
 @5124=~Reset Player 3 Corwin Banters~
@@ -293,8 +289,6 @@
 @5156=~SetGlobal("XA_LC_BackToBG", "GLOBAL", 1)~
 @5157=~Re-apply Parameters~
 @5168=~SetGlobal("XA_LC_Journal_Sex1", "GLOBAL", 1)~
-
-
 @6000=~Return to Baldur's Gate Debug~
 @6001=~Item Test~
 @6003=~Engagement Rings (Unenchanted)~
@@ -386,21 +380,7 @@
 @6090=~SetGlobal("XA_LC_CorwinNeomaRelationship", "GLOBAL", 2)~
 @6091=~Kill Corwin~
 @6092=~Obliterate Corwin~
-@6093=~SetGlobal("XA_LC_BackToBG_XACORWIN","GLOBAL",1)~
-@6094=~SetGlobal("XA_LC_BackToBG_Viconia","GLOBAL",1)~
-@6095=~SetGlobal("XA_LC_BackToBG_Valygar","GLOBAL",1)~
-@6096=~SetGlobal("XA_LC_BackToBG_Rasaad","GLOBAL",1)~
-@6097=~SetGlobal("XA_LC_BackToBG_Nalia","GLOBAL",1)~
-@6098=~SetGlobal("XA_LC_BackToBG_Korgan","GLOBAL",1)~
-@6099=~SetGlobal("XA_LC_BackToBG_Keldorn","GLOBAL",1)~
-@6100=~SetGlobal("XA_LC_BackToBG_Jan","GLOBAL",1)~
-@6101=~SetGlobal("XA_LC_BackToBG_Jaheira","GLOBAL",1)~
 @6102=~SetGlobal("XA_LC_BackToBG_Imoen2","GLOBAL",1)~
-@6103=~SetGlobal("XA_LC_BackToBG_HaerDalis","GLOBAL",1)~
-@6104=~SetGlobal("XA_LC_BackToBG_Edwin","GLOBAL",1)~
-@6105=~SetGlobal("XA_LC_BackToBG_Dorn","GLOBAL",1)~
-@6106=~SetGlobal("XA_LC_BackToBG_Anomen","GLOBAL",1)~
-@6107=~SetGlobal("XA_LC_BackToBG_Aerie","GLOBAL",1)~
 @6108=~XAPEN~
 @6109=~ActionOverride(Player2, ChangeAIScript("xapenpm", DEFAULT))~
 @6110=~ActionOverride(Player2, ChangeAIScript("xapenpm", DEFAULT))~
@@ -426,12 +406,10 @@
 @6130=~Create History of Shadowdale Volumes~
 @6131=~Debriefing (XADEBREF)~
 @6132=~xabook0~
-
 @7000=~ToB Debug~
 @7001=~XAG104 (BD5300) - Kanaglym~
 @7002=~Spawn Caelar (XACAELAR) and add her to the party.~
 @7003=~XAG100 (BD4500) - Avernus Bridge~
-@7004=~XA4000 (AR4000) - LCA Spirit Heads~
 @7005=~MoveToExpansion()~
 @7006=~Spawn BDCaelar (xac109) and add her to the party.~
 @7007=~Epilogue Test~
@@ -456,17 +434,9 @@
 @7026=~Create Item~
 @7027=~compon10 (Gond Bowstring)~
 @7028=~compon02 (Eye of Tyr)~
-@7029=~SetGlobal("XA_LC_Banter_CaelarPlayer", "GLOBAL", 1)~
 @7030=~SetGlobal("XA_LC_Banter_CaelarSarevok", "GLOBAL", 1)~
-@7031=~SetGlobal("XA_LC_Banter_CaelarKeldorn", "GLOBAL", 1)~
-@7032=~SetGlobal("XA_LC_Banter_CaelarRasaad", "GLOBAL", 1)~
-@7033=~SetGlobal("XA_LC_Banter_CaelarJaheira", "GLOBAL", 1)~
-@7034=~SetGlobal("XA_LC_Banter_CaelarMazzy", "GLOBAL", 1)~
-@7035=~SetGlobal("XA_LC_Banter_CaelarNeera", "GLOBAL", 1)~
-@7036=~Reset Caelar Banters~
 @7037=~SetGlobal("XA_LC_ResetCaelarBanters", "GLOBAL", 1)~
 @7038=~SetGlobal("XA_LC_ResetCorwinBanters", "GLOBAL", 1)~
-@7039=~SetGlobal("XA_LC_ResetCorwinBanters", "GLOBAL", 1)~
 @7040=~SetGlobal("XA_LC_Banter_CorwinSarevok", "GLOBAL", 1)~
 @7041=~SetGlobal("XA_LC_Banter_CorwinCaelar", "GLOBAL", 1)~
 @7042=~Reset Player 1 Caelar Banters~

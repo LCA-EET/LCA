@@ -1,33 +1,29 @@
-@0 = ~I see — so you encountered a djinn that was guarding the dagger on behalf of its master, this Irenicus, yes?~
-@1 = ~Yes. The djinn was also in possession of my brother's sword.~
-@2 = ~That's correct.~
-@3 = ~Your half-brother Sarevok, that is.~
-@4 = ~How did you know that it was the dagger used to imprison my daughter?~
-@5 = ~I didn't, but I had a strong suspicion that it was. The djinn stated that it was a prison of souls, one that was of great consequence to me.~
-@6 = ~I knew as soon as I held the dagger in my hand. I could feel its power, and...~
-@7 = ~It was as though you could hear them, in your mind... right? I feel the same when I hold it...~
-@8 = ~Skie, my dear — that's enough.~
-@9 = ~Your daughter is right. That's exactly how it felt.~
-@10 = ~My hope is that one day, the souls still trapped within can be freed.~
-@11 = ~You were wise to act on your suspicion and have the dagger delivered to us.~
-@12 = ~Indeed. Skie, once resurrected, was able to corroborate your story... I feel I must apologize once again to you, <CHARNAME>. You were very nearly executed at my behest. Were it not for the efforts of the Captain and your sister —~
-@13 = ~Sufficeth to say, we are all glad that they were successful.~
-@14 = ~Captain, it was at this time that you joined <CHARNAME> in <PRO_HISHER> hunt for the wizard, yes?~
-
-
+@0=~I see — so you encountered a djinn that was guarding the dagger on behalf of its master, this Irenicus, yes?~
+@1=~Yes. The djinn was also in possession of my brother's sword.~
+@2=~That's correct.~
+@3=~Your half-brother Sarevok, that is.~
+@4=~How did you know that it was the dagger used to imprison my daughter?~
+@5=~I didn't, but I had a strong suspicion that it was. The djinn stated that it was a prison of souls, one that was of great consequence to me.~
+@6=~I knew as soon as I held the dagger in my hand. I could feel its power, and...~
+@7=~It was as though you could hear them, in your mind... right? I feel the same when I hold it...~
+@8=~Skie, my dear — that's enough.~
+@9=~Your daughter is right. That's exactly how it felt.~
+@10=~My hope is that one day, the souls still trapped within can be freed.~
+@11=~You were wise to act on your suspicion and have the dagger delivered to us.~
+@12=~Indeed. Skie, once resurrected, was able to corroborate your story... I feel I must apologize once again to you, <CHARNAME>. You were very nearly executed at my behest. Were it not for the efforts of the Captain and your sister —~
+@13=~Sufficeth to say, we are all glad that they were successful.~
+@14=~Captain, it was at this time that you joined <CHARNAME> in <PRO_HISHER> hunt for the wizard, yes?~
 @15=~Yes ma'am, that is correct.~
 @16=~(Captain Corwin goes on to explain in painstaking detail the events that transpired after she arrived in Athkatla. The Council was equal parts stunned and amazed to hear of the rescue of Imoen from Spellhold, your transformation after your soul was stolen from you, and your epic battles with the drow on your way back to the surface.)~
 @17=~(Throughout her telling of what transpired, she spoke highly of you, and your companions. She concludes by telling the Council of how Irenicus was made to pay for his crimes with his life, and how your soul was restored.)~
 @18=~Remarkable. Captain, if it were anyone else giving us this account, I may not have believed it... Simply, remarkable.~
 @19=~(The other Council members nod in agreement.)~
-
 @20=~(Unsure of what to expect, you enter the Ducal Palace for the debriefing. Captain Corwin is already there, and you can tell that she's eager to begin. Several minutes pass before you and the Captain are escorted into the meeting chamber on the second floor. The Council is seated behind a long, mahogany table, as are their adjutants.)~ [xalc1159]
 @21=~(Skie Silvershield is also present, and greets you and the Captain with a warm embrace. After exchanging some pleasantries with the Council, you and the Captain take a seat at the table. Duke Eltan begins the debriefing by asking you to explain the series of events that followed your exile from the city.)~
 @22=~(You tell how you and your companions were captured by the mad wizard Irenicus, and how you ended up in Athkatla. Their faces remain stoic as you recall finding the bodies of Khalid and Dynaheir. What piques their interest is your explanation of how you came to be in the possession of the Soultaker dagger.)~
 @23=~(After exchanging some pleasantries with the Council, you and the Captain take a seat at the table. Duke Eltan begins the debriefing by asking you to explain the series of events that followed your exile from the city.)~
 @24=~(You tell how you and your companions were captured by the mad wizard Irenicus, and how you ended up in Athkatla. Their faces remain stoic as you recall finding the bodies of Khalid and Dynaheir. What piques their interest is your explanation of how you came to be in the possession of the Soultaker dagger, and the steps you took to release Skie's soul.)~
 @25=~Skie, once resurrected, was able to corroborate your story... I feel I must apologize once again to you, <CHARNAME>. You were very nearly executed at my behest. If it weren't for the efforts of the Captain and your sister —~
-
 @26=~(Again, you and Captain Corwin step into the meeting chamber. While you are inwardly annoyed at having been kept waiting for so long, you do a good job of concealing this from the Council. You briefly glance at the faces of the Dukes. They are expressionless, and yield no indication of what they discussed, or what is about to take place.)~ [xalc1159]
 @27=~Ah, Captain, <CHARNAME> — please forgive us for the delay. We needed time to make the appropriate arrangements.~
 @28=~Arrangements?~
@@ -43,18 +39,16 @@
 @38=~You will need to take part in some civil activities, speeches, community events, and so forth. You will also need to work with Duke Eltan, Marshal Nederlok, and the Flaming Fist to protect the city from those who threaten it.~
 @39=~Furthermore, we are awarding you the Ducal Palace as your personal residence, on a permanent basis.~
 @40=~Lastly, we understand that a small number of citizens are still wary of you, and your ... nature. To that end, we will organize a week long, city-wide festival in honor of your many achievements. It is our hope that this will convince any hold-outs that you are indeed a powerful force for good, in spite of your lineage.~
-
 @41=~Forgive me, but I must ask. You, <CHARNAME>... you are in control of this transformative power you possess? This 'Slayer' that the Captain had referred to?~
 @42=~(You notice how the expression on the faces of the Dukes has changed from one of admiration, to one of concern — and fear.)~
 @43=~I assure you that I'm in complete control, Duke Belt.~
-@44=~(An awkward silence ensues.)~
 @45=~Could... could you show us? The transformation, I mean.~
 @46=~You've nothing to fear from the Slayer... that is, so long as you don't piss me off.~
 @47=~...~
 @48=~I'd rather not. It'd be as horrifying for me as it would be to you.~
 @49=~Be careful what you ask for.~
-@50=~Certainly, though I hope you have a change of trousers at the ready.~ 
-@51=~Sirs, ma'am, if I may; I have seen the transformation, and trust me — it is NOT something that you would ever want to witness.~ 
+@50=~Certainly, though I hope you have a change of trousers at the ready.~
+@51=~Sirs, ma'am, if I may; I have seen the transformation, and trust me — it is NOT something that you would ever want to witness.~
 @52=~I see. I'm inclined to trust the Captain's judgment on this matter.~
 @53=~As am I, but tell me, Captain — has <CHARNAME> been able to maintain <PRO_HISHER> control over this new power?~
 @54=~Yes, ma'am. I'd trust <PRO_HIMHER> with my life, any day.~
@@ -78,7 +72,7 @@
 @72=~For your role in bringing Irenicus to justice, and for your fine work in supporting the coalition in defeating Caelar and her crusade, you are hereby promoted to the rank of Major. Congratulations, and keep up the good work!~
 @73=~Thank you, sir!~
 @74=~Being that there is no other business to discuss, this meeting is adjourned.~
-@75=~And what of my keep, and my lands? Will I need to relinquish them?~ 
+@75=~And what of my keep, and my lands? Will I need to relinquish them?~
 @76=~You are of course referring to the those formerly held by the late Lord de'Arnise, yes? Word of his passing, and of your actions in driving off the trolls, reached us a fortnight ago.~
 @77=~To answer your question, no, you will not need to relinquish your holdings. It wouldn't be unusual for someone of your stature to have a summer estate, after all. We only request that you refrain from any extended excursions.~
 @78=~I see. Is there anything else you can offer besides a stipend and this stodgy old 'palace'?~
