@@ -1176,6 +1176,8 @@ IF ~
 ~ THEN BEGIN XA_Banter_CorwinMazzy2_Init
 	SAY @528 /* ~Mazzy, I'm curious as to why you chose to specialize in the crossbow instead of the longbow.~ [XA100071]*/
 	
+	= @1029/* ~The benefits in added power and range that the longbow provides would seem to outweigh the concealment and close-quarters advantages of the shortbow, wouldn't you agree?~*/
+	
 	IF ~~ THEN 
 	DO ~
 		ActionOverride("Mazzy", SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0))
