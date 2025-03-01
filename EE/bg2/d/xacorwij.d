@@ -4077,6 +4077,200 @@ IF ~~ THEN BEGIN XA_PostSexTalk_End
 	IF ~~ THEN
 	EXIT
 END
+
+IF ~
+	Global("XA_LC_WealthTalk", "LOCALS", 1)
+~ THEN BEGIN XA_WealthTalk
+	SAY @1897 /*~You know, back home, I'd hear people say how the streets of Athkatla were paved in gold.~*/
+	
+	= @1898 /*~That's not quite the case, but the overall point holds. Some of the finest noble families of the Gate would be little more than paupers, here.~*/
+	
+	IF ~~ THEN REPLY @1899 /*That there's more wealth is clear enough to see.*/
+	DO ~
+		SetGlobal("XA_LC_WealthTalk", "LOCALS", 2)
+	~
+	GOTO XA_WealthTalk2
+	
+	IF ~~ THEN REPLY @1901 /*~I think Duke Silvershield, at least, would be able to affort a nice flat.~*/
+	DO ~
+		SetGlobal("XA_LC_WealthTalk", "LOCALS", 2)
+	~
+	GOTO XA_WealthTalk2
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk2
+	SAY @1900 /*~Heh. I wonder what it would cost to have a decent living in a place like this.~*/
+	
+	IF ~~ THEN REPLY @1902 /*~Looking to make a move?~*/
+	GOTO XA_WealthTalk3A
+	
+	IF ~~ THEN REPLY @1904 /*~Something tells me you wouldn't be able to afford it. No offense.~*/
+	GOTO XA_WealthTalk3B
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk3A
+	SAY @1903 /*~Never. Baldur's Gate, for all of its faults, is home. I was born there, made a life there, and I hope to die there.~*/
+	
+	IF ~~ THEN 
+	GOTO XA_WealthTalk3C
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk3B
+	SAY @1905 /*~Yeah, definitely not on a Captain's salary. I'd need to make Major, or maybe even Colonel; even then I'd only barely manage.~*/
+	
+	IF ~~ THEN REPLY @1907 /*~Well, now that I'm in the Council's good graces again, I'll see about getting you a promotion.~*/
+	GOTO XA_WealthTalk4
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk3C
+	SAY @1906 /*~Even if I wanted to, I could never afford a home here on a Captain's salary. I'd need to make Major, or maybe even Colonel; even then I'd only barely manage.~*/
+	
+	COPY_TRANS XACORWIJ XA_WealthTalk3B
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk4
+	SAY @1908 /*~No, please don't. I mean... I'm fine. Thank you.~ [xalc7055]*/
+	
+	= @1909 /*~If — when I earn higher rank, I don't want anyone to think I received any special treatment. There have been enough of those sorts of rumors already.~*/
+	
+	IF ~~ THEN REPLY @1910 /*Rumors?*/
+	GOTO XA_WealthTalk5
+	
+	IF ~~ THEN REPLY @1911 /*I don't understand.*/
+	GOTO XA_WealthTalk5
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk5
+	SAY @1912 /*I think you know what I mean. I made Corporal faster than anyone in my cohort, and Captain sooner than any academy graduate in the last thirty years. Some people seem to believe that its because of my ... appearance, or the fact that I'm a woman, or that it's because of my father...*/
+	
+	= @1913 /*~Some have even suggested that I've risen so fast because I performed certain 'favors' for my superiors...~*/
+	
+	IF ~
+		GlobalLT("XA_LC_WT5A", "LOCALS", 1)
+	~ THEN REPLY @1914 /*~Appearance? You're attractiveness, you mean.~*/
+	DO ~
+		SetGlobal("XA_LC_WT5A", "LOCALS", 1)
+		IncrementGlobal("XA_LC_WT", "LOCALS", 1)
+	~
+	GOTO XA_WealthTalk5A
+	
+	IF ~
+		GlobalLT("XA_LC_WT5B", "LOCALS", 1)
+	~ THEN REPLY @1916 /*~I've never viewed the Flaming Fist as an organization that gives preference to certain genders.~*/
+	DO ~
+		SetGlobal("XA_LC_WT5B", "LOCALS", 1)
+		IncrementGlobal("XA_LC_WT", "LOCALS", 1)
+	~
+	GOTO XA_WealthTalk5B
+	
+	IF ~
+		GlobalLT("XA_LC_WT5C", "LOCALS", 1)
+	~ THEN REPLY @1918 /*~Children who follow in their parents' footsteps can rarely avoid accusations of nepotism.~*/
+	DO ~
+		SetGlobal("XA_LC_WT5C", "LOCALS", 1)
+		IncrementGlobal("XA_LC_WT", "LOCALS", 1)
+	~
+	GOTO XA_WealthTalk5C
+	
+	IF ~
+		GlobalLT("XA_LC_WT5D", "LOCALS", 1)
+	~ THEN REPLY @1919 /*~Favors, eh? Somehow, I don't think you're talking about fetching their morning tea...~*/
+	DO ~
+		SetGlobal("XA_LC_WT5D", "LOCALS", 1)
+		IncrementGlobal("XA_LC_WT", "LOCALS", 1)
+	~
+	GOTO XA_WealthTalk5D
+	
+	IF ~
+		GlobalLT("XA_LC_WT5E", "LOCALS", 1)
+	~ THEN REPLY @1921 /*~I don't care what anyone else has to say about you. Your leadership and skill in battle speak for themselves.~*/
+	DO ~
+		SetGlobal("XA_LC_WT5E", "LOCALS", 1)
+		IncrementGlobal("XA_LC_WT", "LOCALS", 1)
+	~
+	GOTO XA_WealthTalk5E
+	
+	IF ~
+		GlobalGT("XA_LC_WT", "LOCALS", 1)
+	~ THEN 
+	GOTO XA_WealthTalk6
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk5_Int
+	SAY @1926 /*~I'll still have my detractors, and there's little I can do to change their minds.~*/
+	
+	COPY_TRANS XACORWIJ XA_WealthTalk5
+END
+IF ~~ THEN BEGIN XA_WealthTalk5A
+	SAY @1915 /*~To put it bluntly, yes.~*/
+	
+	IF ~
+		Global("XA_LC_WT", "LOCALS", 1)
+	~ THEN 
+	GOTO XA_WealthTalk6
+	
+	IF ~
+		GlobalLT("XA_LC_WT", "LOCALS", 1)
+	~ THEN 
+	GOTO XA_WealthTalk5_Int
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk5B
+	SAY @1917 /*~You're right. Duke Eltan, and the rest of the Council for that matter, are forward-thinking in that regard.~*/
+	
+	COPY_TRANS XACORWIJ XA_WealthTalk5A
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk5C
+	SAY @1918 /*~Children who follow in their parents' footsteps can rarely avoid accusations of nepotism.~*/
+	
+	COPY_TRANS XACORWIJ XA_WealthTalk5A
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk5D
+	SAY @1920 /*~Right. It's extremely disrespectful, not just to me, but to the fine, honorable men that I'm fortunate to call my CO's.*/
+	
+	COPY_TRANS XACORWIJ XA_WealthTalk5A
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk5E
+	SAY @1925 /*~You don’t know how much I appreciate that.~ [xalc7065]*/
+	
+	COPY_TRANS XACORWIJ XA_WealthTalk5A
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk6
+	SAY @1922 /*~I worked hard to get where I am. Beyond the intense physical training, I couldn't tell you how many times I read the officers' training manual from front to back.~*/
+	
+	IF ~
+		Global("XA_LC_TookCorwinManual", "GLOBAL", 1)
+	~ THEN REPLY @1927 /*I see...*/
+	GOTO XA_WealthTalk_End
+	
+	IF ~
+		Global("XA_LC_TookCorwinManual", "GLOBAL", 1)
+	~ THEN REPLY @1923 /*~The training manual. Ah, about that... (Confess to taking it from her home).~*/
+	GOTO XA_WealthTalk_7
+	
+	IF ~
+		GlobalLT("XA_LC_TookCorwinManual", "GLOBAL", 1)
+	~ THEN
+	GOTO XA_WealthTalk_End
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk7
+	SAY @1924 /*~That explains why I couldn't find it. I initially thought that Rohma had hid it from me as part of one of her games, but she knows better than to touch mama's things. I appreciate your honesty, though it's anyone's guess as to why you'd take it in the first place.~*/
+	
+	IF ~~ THEN 
+	GOTO XA_WealthTalk_End
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk_End
+	SAY @1928 /*~Well, I appreciate the talk, <CHARNAME>. We've work to do, let's go.~*/
+	
+	IF ~~ THEN EXIT
+END
+
 CHAIN
 	IF ~~ THEN XACORWIJ XA_CorwinArtifacts_Chain
 		@1816 /*~Let me have a look at that.~*/

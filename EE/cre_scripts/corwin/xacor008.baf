@@ -1,3 +1,35 @@
+//{ Athkatla Wealth Talk
+	IF
+		InParty(Myself)
+		GlobalLT("XA_LC_WealthTalkTimerSet", "LOCALS", 1)
+		OR(3)
+			AreaCheck("AR0700")
+			AreaCheck("AR0900")
+			AreaCheck("AR1000")
+	THEN
+		RESPONSE #100
+			SetGlobalTimer("XA_LC_WealthTalkTimer", FOUR_HOURS, 1)
+			SetGlobal("XA_LC_WealthTalkTimerSet", "LOCALS", 1)
+			Continue()
+	END
+	
+	IF
+		ActionListEmpty()
+		GlobalTimerExpired("XA_LC_WealthTalkTimerSet", "LOCALS")
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		GlobalLT("XA_LC_WealthTalk", "LOCALS", 1)
+		OR(3)
+			AreaCheck("AR0700")
+			AreaCheck("AR0900")
+			AreaCheck("AR1000")
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_WealthTalk", "LOCALS", 1)
+			StartDialog("XACORWIJ", Player1)
+			Continue()
+	END
+//}
+
 //{ Post Sex-1 Talk
 	IF
 		Global("XA_LC_Journal_Sex1", "GLOBAL", 2)
