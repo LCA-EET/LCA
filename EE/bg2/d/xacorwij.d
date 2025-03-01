@@ -4120,6 +4120,9 @@ IF ~~ THEN BEGIN XA_WealthTalk3B
 	
 	IF ~~ THEN REPLY @1907 /*~Well, now that I'm in the Council's good graces again, I'll see about getting you a promotion.~*/
 	GOTO XA_WealthTalk4
+	
+	IF ~~ THEN REPLY @1929 /*~Enough talk, let's get going.~*/
+	GOTO XA_WealthTalk_End2
 END
 
 IF ~~ THEN BEGIN XA_WealthTalk3C
@@ -4187,13 +4190,12 @@ IF ~~ THEN BEGIN XA_WealthTalk5
 	DO ~
 		SetGlobal("XA_LC_WT5E", "LOCALS", 1)
 		IncrementGlobal("XA_LC_WT", "LOCALS", 1)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
 	GOTO XA_WealthTalk5E
 	
-	IF ~
-		GlobalGT("XA_LC_WT", "LOCALS", 1)
-	~ THEN 
-	GOTO XA_WealthTalk6
+	IF ~~ THEN REPLY @1929 /*~Come on, let's get going.~*/
+	GOTO XA_WealthTalk_End2
 END
 
 IF ~~ THEN BEGIN XA_WealthTalk5_Int
@@ -4268,7 +4270,18 @@ END
 IF ~~ THEN BEGIN XA_WealthTalk_End
 	SAY @1928 /*~Well, I appreciate the talk, <CHARNAME>. We've work to do, let's go.~*/
 	
-	IF ~~ THEN EXIT
+	IF ~~ THEN
+	DO ~
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk_End2
+	SAY @1930 /*~Right.~*/
+	
+	IF ~~ THEN
+	EXIT
 END
 
 CHAIN

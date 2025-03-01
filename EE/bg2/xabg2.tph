@@ -905,6 +905,10 @@ OUTER_SET bg2_carryover = 1
 		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa24.baf~
 	END
 
+	ACTION_IF (took_manual = 1) THEN BEGIN
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa25.baf~
+	END
+
 	EXTEND_BOTTOM ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpaEE.baf~
 	
 	EXTEND_TOP ~AR0602.bcs~ ~override/xalcargs.bcs~

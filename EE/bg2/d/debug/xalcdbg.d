@@ -484,6 +484,20 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @5169
+		DO ~
+			ActionOverride("XACORWIN", SetGlobal("XA_LC_WealthTalk", "LOCALS", 1))
+			ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @5170
+		DO ~
+			ActionOverride("XACORWIN", SetGlobal("XA_LC_AfterSexTalk", "LOCALS", 1))
+			ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		
