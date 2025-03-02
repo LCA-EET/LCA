@@ -470,11 +470,25 @@ END
 IF ~~ THEN BEGIN XA_OPT1ARomance4_NoDoll3
 	SAY @254 /* ~She deserves better.~ */
 	
-	IF ~~ THEN REPLY @255 /* ~She does. Listen, Schael - I don't know if I'd be a good step parent for Rohma. What I do know is that I'll do my best.~ */
+	IF ~
+		GlobalLT("XA_LC_StepParentTalk", "LOCALS", 1)
+	~ THEN REPLY @255 /* ~She does. Listen, Schael - I don't know if I'd be a good step parent for Rohma. What I do know is that I'll do my best.~ */
 	GOTO XA_OPT1ARomanceEnd //OK
 	
-	IF ~~ THEN REPLY @256 /* ~She does. Listen, Schael - I'm fully aware of the responsibilities and challenges of being a step parent, and I want you to know that I will welcome them.~ */
+	IF ~
+		GlobalLT("XA_LC_StepParentTalk", "LOCALS", 1)
+	~ THEN REPLY @256 /* ~She does. Listen, Schael - I'm fully aware of the responsibilities and challenges of being a step parent, and I want you to know that I will welcome them.~ */
 	GOTO XA_OPT1ARomanceEnd  //OK
+	
+	IF ~
+		Global("XA_LC_StepParentTalk", "LOCALS", 1)
+	~ THEN REPLY @1030 /* ~I'm going to give you both the life you deserve, no matter the cost.~*/
+	GOTO XA_OPT1ARomanceEnd
+	
+	IF ~
+		Global("XA_LC_StepParentTalk", "LOCALS", 1)
+	~ THEN REPLY @1031 /* ~She does. And I'm going to do my best to give her the type of life that I know you want for her.~ */
+	GOTO XA_OPT1ARomanceEnd
 END
 
 IF ~~ THEN BEGIN XA_OPT1ARomanceEnd 
@@ -1375,7 +1389,7 @@ IF ~~ THEN BEGIN XA_OPT1END
 		!Global("AnomenRomanceActive","GLOBAL",2)
 		!Global("JaheiraRomanceActive","GLOBAL",2)
 		!Global("HexxatRomanceActive","GLOBAL",2)
-		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalLT("XA_LC_CorwinRomanceActive", "GLOBAL", 1)
 		!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 	~ THEN REPLY @822 /* ~Capt — Schael, wait. There's something I need to tell you.~ */
 	GOTO XA_OPT1END_InitRomance //OK
@@ -1388,7 +1402,7 @@ IF ~~ THEN BEGIN XA_OPT1END
 		!Global("AnomenRomanceActive","GLOBAL",2)
 		!Global("JaheiraRomanceActive","GLOBAL",2)
 		!Global("HexxatRomanceActive","GLOBAL",2)
-		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalLT("XA_LC_CorwinRomanceActive", "GLOBAL", 1)
 		Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 	~ THEN REPLY @823 /* ~Maj — Schael, wait. There's something I need to tell you.~ */
 	GOTO XA_OPT1END_InitRomance //OK
@@ -1551,11 +1565,25 @@ END
 IF ~~ THEN BEGIN XA_OPT1Romance4_NoDoll3
 	SAY @254 /* ~She deserves better.~ */
 	
-	IF ~~ THEN REPLY @255 /* ~She does. Listen, Schael - I don't know if I'd be a good step parent for Rohma. What I do know is that I'll do my best.~ */
+	IF ~
+		GlobalLT("XA_LC_StepParentTalk", "LOCALS", 1)
+	~ THEN REPLY @255 /* ~She does. Listen, Schael - I don't know if I'd be a good step parent for Rohma. What I do know is that I'll do my best.~ */
 	GOTO XA_OPT1RomanceEnd //OK
 	
-	IF ~~ THEN REPLY @256 /* ~She does. Listen, Schael - I'm fully aware of the responsibilities and challenges of being a step parent, and I want you to know that I will welcome them.~ */
+	IF ~
+		GlobalLT("XA_LC_StepParentTalk", "LOCALS", 1)
+	~ THEN REPLY @256 /* ~She does. Listen, Schael - I'm fully aware of the responsibilities and challenges of being a step parent, and I want you to know that I will welcome them.~ */
 	GOTO XA_OPT1RomanceEnd  //OK
+	
+	IF ~
+		Global("XA_LC_StepParentTalk", "LOCALS", 1)
+	~ THEN REPLY @1030 /* ~I'm going to give you both the life you deserve, no matter the cost.~*/
+	GOTO XA_OPT1RomanceEnd
+	
+	IF ~
+		Global("XA_LC_StepParentTalk", "LOCALS", 1)
+	~ THEN REPLY @1031 /* ~She does. And I'm going to do my best to give her the type of life that I know you want for her.~ */
+	GOTO XA_OPT1RomanceEnd
 END
 
 IF ~~ THEN BEGIN XA_OPT1Romance4_GaveDoll

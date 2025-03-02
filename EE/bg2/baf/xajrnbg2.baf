@@ -1,3 +1,38 @@
+IF 
+	Global("XA_LC_Journal_Love", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Love", "GLOBAL", 0)
+		AddJournalEntry(@96, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	Global("XA_LC_Journal_Love", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Love", "GLOBAL", 0)
+		AddJournalEntry(@95, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+
+IF 
+	Global("XA_LC_Journal_Love", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Love", "GLOBAL", 0)
+		AddJournalEntry(@94, INFO)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+
 //{ Trouble in the Tower
 IF
 	GlobalGT("XA_LC_HelpMother", "GLOBAL", 0)

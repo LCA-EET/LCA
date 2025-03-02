@@ -4137,16 +4137,21 @@ IF ~~ THEN BEGIN XA_WealthTalk4
 	= @1909 /*~If — when I earn higher rank, I don't want anyone to think I received any special treatment. There have been enough of those sorts of rumors already.~*/
 	
 	IF ~~ THEN REPLY @1910 /*Rumors?*/
-	GOTO XA_WealthTalk5
+	GOTO XA_WealthTalk4B
 	
 	IF ~~ THEN REPLY @1911 /*I don't understand.*/
+	GOTO XA_WealthTalk4B
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk4B
+	SAY @1912 /*I think you know what I mean. I made Corporal faster than anyone in my cohort, and Captain sooner than any academy graduate in the last thirty years. Some people seem to believe that its because of my ... appearance, or the fact that I'm a woman, or that it's because of my father...*/
+	
+	IF ~~ THEN
 	GOTO XA_WealthTalk5
 END
 
 IF ~~ THEN BEGIN XA_WealthTalk5
-	SAY @1912 /*I think you know what I mean. I made Corporal faster than anyone in my cohort, and Captain sooner than any academy graduate in the last thirty years. Some people seem to believe that its because of my ... appearance, or the fact that I'm a woman, or that it's because of my father...*/
-	
-	= @1913 /*~Some have even suggested that I've risen so fast because I performed certain 'favors' for my superiors...~*/
+	SAY @1913 /*~Some have even suggested that I've risen so fast because I performed certain 'favors' for my superiors...~*/
 	
 	IF ~
 		GlobalLT("XA_LC_WT5A", "LOCALS", 1)
@@ -4207,7 +4212,7 @@ IF ~~ THEN BEGIN XA_WealthTalk5A
 	SAY @1915 /*~To put it bluntly, yes.~*/
 	
 	IF ~
-		Global("XA_LC_WT", "LOCALS", 1)
+		GlobalGT("XA_LC_WT", "LOCALS", 0)
 	~ THEN 
 	GOTO XA_WealthTalk6
 	
@@ -4224,7 +4229,7 @@ IF ~~ THEN BEGIN XA_WealthTalk5B
 END
 
 IF ~~ THEN BEGIN XA_WealthTalk5C
-	SAY @1918 /*~Children who follow in their parents' footsteps can rarely avoid accusations of nepotism.~*/
+	SAY @1931 /*~I love my father. Were it not for the example he set for me, I'd have never joined the Fist. But to say that everything I've achieved is because of him or his connections is simply wrong.~ */
 	
 	COPY_TRANS XACORWIJ XA_WealthTalk5A
 END
@@ -4246,17 +4251,17 @@ IF ~~ THEN BEGIN XA_WealthTalk6
 	
 	IF ~
 		Global("XA_LC_TookCorwinManual", "GLOBAL", 1)
-	~ THEN REPLY @1927 /*I see...*/
+	~ THEN REPLY @1932 /*~Reading voluminous works front to back, repeatedly? Sounds like my upbringing in Candlekeep.~*/
 	GOTO XA_WealthTalk_End
 	
 	IF ~
 		Global("XA_LC_TookCorwinManual", "GLOBAL", 1)
 	~ THEN REPLY @1923 /*~The training manual. Ah, about that... (Confess to taking it from her home).~*/
-	GOTO XA_WealthTalk_7
+	GOTO XA_WealthTalk7
 	
 	IF ~
 		GlobalLT("XA_LC_TookCorwinManual", "GLOBAL", 1)
-	~ THEN
+	~ THEN REPLY @1932 /*~Reading voluminous works front to back, repeatedly? Sounds like my upbringing in Candlekeep.~*/
 	GOTO XA_WealthTalk_End
 END
 
@@ -4264,16 +4269,131 @@ IF ~~ THEN BEGIN XA_WealthTalk7
 	SAY @1924 /*~That explains why I couldn't find it. I initially thought that Rohma had hid it from me as part of one of her games, but she knows better than to touch mama's things. I appreciate your honesty, though it's anyone's guess as to why you'd take it in the first place.~*/
 	
 	IF ~~ THEN 
-	GOTO XA_WealthTalk_End
+	GOTO XA_WealthTalk_End_B
 END
 
 IF ~~ THEN BEGIN XA_WealthTalk_End
-	SAY @1928 /*~Well, I appreciate the talk, <CHARNAME>. We've work to do, let's go.~*/
+	SAY @1933 /*~Heh. Your sense of humor certainly makes being away from home a lot easier. Thank you.~*/
 	
 	IF ~~ THEN
+	GOTO XA_WealthTalk_End_B
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk_End_B
+	SAY @1928 /*~Well, I appreciate the talk, <CHARNAME>. We've work to do, let's go.~*/
+	
+	IF ~~ THEN REPLY @1930 /* Right. */
 	DO ~
 		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
+	EXIT
+	
+	IF ~
+		GlobalLT("XA_LC_CorwinRomanceActive", "GLOBAL", 1)
+		!Global("AerieRomanceActive", "GLOBAL", 2)
+		!Global("JaheiraRomanceActive", "GLOBAL", 2)
+		!Global("DornRomanceActive", "GLOBAL", 2)
+		!Global("NeeraRomanceActive", "GLOBAL", 2)
+		!Global("ViconiaRomanceActive", "GLOBAL", 2)
+		!Global("AnomenRomanceActive", "GLOBAL", 2)
+		!Global("HexxatRomanceActive", "GLOBAL", 2)
+		!Global("RasaadRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1934 /* ~Captain... Schael, wait.~ */
+	DO ~
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk_Romance
+	SAY @1935 /* ~Hm?~ */
+	
+	IF ~~ THEN REPLY @1946 /* ~Ah, nevermind. Let's go.~ */
+	GOTO XA_WealthTalk_End2
+	
+	IF ~~ THEN REPLY @1936 /*~I've realized that the more time I spend with you, the more I ... the more I hate it when we are apart. Hate probably isn't a strong enough word. I ... I need you near me, Schael.~*/
+	GOTO XA_WealthTalk_Romance_2
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk_Romance_2
+	SAY @1937 /* ... */
+	
+	IF ~~ THEN REPLY @1937 /* ... */
+	GOTO XA_WealthTalk_Romance_3
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk_Romance_3
+	SAY @1938 /* ~<CHARNAME>, you ... are you saying that you have feelings for me?~ */
+	
+	IF ~~ THEN REPLY @1939 /* ~I am.~ */
+	GOTO XA_WealthTalk_Romance_4
+	
+	IF ~~ THEN REPLY @1947 /* ~In so many words, yes.~ */
+	GOTO XA_WealthTalk_Romance_4
+	
+	IF ~~ THEN REPLY @1948 /* ~I don't know what I'm saying.~ */
+	GOTO XA_WealthTalk_Romance_4X
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk_Romance_4
+	SAY @1940 /*~To be honest... I've had those same feelings for you, for a while now.~ */
+	
+	= @1941 /* ~I don't know exactly when they started... was it when you saved Bridgefort? When you led the assault on the Dragonspear? Or when you defeated Belhifet? Simple admiration and ... and attraction, turned into something more.~*/
+	
+	= @1942 /* ~Then, when I read your letter... my heart broke. More than anything, I wanted to be at your side, to comfort you. That was when I knew.~*/
+	
+	IF ~~ THEN REPLY @1953 /*~If you had these feelings, why didn't you say anything?~*/
+	GOTO XA_WealthTalk_Romance_4A
+	
+	IF ~~ THEN REPLY @1943 /* ~So, what happens now? Where do we go from here?~*/
+	GOTO XA_WealthTalk_Romance_5
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk_Romance_4A
+	SAY @1954 /* I ... I didn't know that you felt the same way. Also, I didn't want my feelings for you to jeopardize the mission. I still don't, for that matter.~*/
+	
+	IF ~~ THEN REPLY @1943 /* ~So, what happens now? Where do we go from here?~*/
+	GOTO XA_WealthTalk_Romance_5
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk_Romance_4X
+	SAY @1949 /*~I see. And that tells me everything that I need to know. Enough games — we have work to do.~*/
+	
+	IF ~~ THEN
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk_Romance_5
+	SAY @1944 /*~I appreciate your being so... forthright. But after what happened in my last relationship, with Tianna... Give me some time to consider this. Please.~ [xalc7102]*/
+
+	IF ~~ THEN REPLY @1945 /* ~I understand completely. Take your time. When you decide what you want, I'll be here. You're worth waiting for.~ */
+	GOTO XA_WealthTalk_Romance_6
+	
+	IF ~~ THEN REPLY @1964 /*~If you've not decided yet, you never will. Let me make this easy for you. We shall do as the Council wishes and end the threat of Irenicus. When that task is finished, so are we.~ */
+	GOTO XA_WealthTalk_Romance_6X
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk_Romance_6
+	SAY @1950 /*~Thank you, <CHARNAME>.~*/
+
+	= @1951 /* ~(She leans in and gives you a kiss on your cheek.)~ */
+	
+	= @1952 /* ~Let's get moving. We've work to do.~ */
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_CorwinRomanceInitTimer", "GLOBAL", THREE_DAYS)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk_Romance_6X
+	SAY @1965 /*~I see. Perhaps that's for the best. Yes. Let's leave it there, then.~ [xalc7106]*/
+	
+	IF ~
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 3)
+	~ THEN
 	EXIT
 END
 
@@ -4282,6 +4402,152 @@ IF ~~ THEN BEGIN XA_WealthTalk_End2
 	
 	IF ~~ THEN
 	EXIT
+END
+
+IF ~
+	Global("XA_LC_RomanceInitTalk", "LOCALS", 1)
+~ THEN BEGIN XA_RomanceInitTalk
+	SAY @130 /* <CHARNAME>. We need to talk. */
+	
+	IF ~~ THEN REPLY @131 /* ~What is it, Captain?~ */
+	GOTO XA_RomanceInitTalk_2
+	
+	IF ~~ THEN REPLY @260 /* ~Schael? What's wrong?~ */
+	GOTO XA_RomanceInitTalk_2
+END
+
+IF ~~ THEN BEGIN XA_RomanceInitTalk_2
+	SAY @1955 /* ~I've been doing a lot of thinking about what you said. About our feelings for one another.~*/
+	
+	= @1956 /* ~The life we lead pushes us to places we may not want to go—not yet. I've made mistakes before—too many mistakes. I'm trying to make better choices, not just for me, but for Rohma.~ */
+	
+	IF ~
+		OR(3)
+			ReputationLT(Player1,12)
+			Alignment(Player1, MASK_EVIL)
+			GlobalLT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 100)
+	~ THEN 
+	DO ~
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 3)
+		SetGlobal("XA_LC_Journal_Love", "GLOBAL", 3)
+	~
+	GOTO XA_RomanceInitTalk_2A
+	
+	IF ~
+		!ReputationLT(Player1,12)
+		!Alignment(Player1, MASK_EVIL)
+		!GlobalLT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 100)
+	~ THEN 
+	DO ~
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	~
+	GOTO XA_RomanceInitTalk_2B
+END
+
+IF ~~ THEN BEGIN XA_RomanceInitTalk_2A
+	SAY @1958 /*~In spite of my feelings for you, I don't see you as a good parental figure for Rohma. There are just too many red flags.~*/
+	
+	= @1959 /*~And if I can't trust you with my daughter, then there's no sense in us pursuing a deeper relationship. I'm sorry.~ */
+	
+	IF ~~ THEN REPLY @1960 /* ~Not the answer I wanted, but better to know a harsh truth than live in ignorance. For me, anyway. Let's go.~*/
+	EXIT
+	
+	IF ~~ THEN REPLY @1961 /* ~I understand. Maybe, one day, I can prove myself worthy in your eyes.~*/
+	GOTO XA_RomanceInitTalk_2A2
+	
+	IF ~~ THEN REPLY @1966 /* ~Fair enough. We will be comrades in arms, but nothing more.~*/
+	GOTO XA_RomanceInitTalk_2A3
+END
+
+IF ~~ THEN BEGIN XA_RomanceInitTalk_2B
+	SAY @1957 /* ~The last person I shared my bed with... It didn't turn out well with her. Not as bad as with Rohma's father, but not well.~ [xalc7104] */
+	
+	= @1963 /* ~If I'm to do this again, I need it to work. I need to think, not just feel. I can't rush into another doomed relationship. And it felt like that's what I was about to do.~ [xalc7105]*/
+	
+	IF ~~ THEN REPLY @1969 /* Doomed relationship? I'm not going to like what comes next, am I? */
+	GOTO XA_RomanceInitTalk_3
+	
+	IF ~~ THEN REPLY @1970 /* ~Please, go on.~ */
+	GOTO XA_RomanceInitTalk_3
+END
+
+IF ~~ THEN BEGIN XA_RomanceInitTalk_3
+	SAY @1971 /* ~What I mean to say is that for this relationship to work, it doesn't only have to work between us. It needs to work for Rohma. I can't allow her to be hurt.~*/
+	
+	IF ~~ THEN REPLY @1972 /*~Schael, I understand. I don't know if I'd be a good step parent for Rohma. What I do know is that I'll do my best, not just for you, but for her.~*/
+	DO ~
+		SetGlobal("XA_LC_StepParentTalk", "LOCALS", 1)
+	~
+	GOTO XA_RomanceInitTalk_3A
+	
+	IF ~~ THEN REPLY @1973 /*~I'm fully cognizant of the responsibilities and challenges of being a step parent, and I want you to know that I will welcome them.~*/
+	DO ~
+		SetGlobal("XA_LC_StepParentTalk", "LOCALS", 1)
+	~
+	GOTO XA_RomanceInitTalk_3A
+	
+	IF ~~ THEN REPLY @1974 /*~It seems then that we should end this here. I'm not parenting material, I'm afraid, and nothing is going to change that. I'd like to remain friends with you, however. Can we do that?~*/
+	GOTO XA_RomanceInitTalk_3B
+END
+
+IF ~~ THEN BEGIN XA_RomanceInitTalk_3A
+	SAY @1976 /*~That's perhaps the trait about you that I admire the most. You take on challenges, instead of running from them.~ */
+	
+	= @1977 /* ~Come here, hero.~ */
+	
+	= @1978 /* ~(The two of you embrace, and begin a long, passionate kiss. Slowly, you pull yourselves apart and gaze into each other's eyes.)~*/
+	
+	IF ~~ THEN REPLY @1979 /* ~Wow...~ */
+	GOTO XA_RomanceInitTalk_4
+	
+	IF ~~ THEN REPLY @1980 /* ~Everything we've had to endure... that kiss made it all worth it, Schael.~*/
+	GOTO XA_RomanceInitTalk_4
+	
+	IF ~~ THEN REPLY @1981 /* ~That was better than I could've imagined.~ */
+	GOTO XA_RomanceInitTalk_4
+END
+
+IF ~~ THEN BEGIN XA_RomanceInitTalk_4
+	SAY @1982 /* ~I'll take your words over roses any day, <CHARNAME>.~ [xalc7109]*/
+	
+	= @1983 /* ~Just remember that it's only a small taste of what awaits you when we finish this business with Irenicus, and return home.~*/
+	
+	IF ~~ THEN REPLY @1984 /* ~I can hardly wait!~*/
+	GOTO XA_RomanceInitTalk_5
+END
+
+IF ~~ THEN BEGIN XA_RomanceInitTalk_5
+	SAY @1985 /* ~Neither can I, love. Come on — we've work to do.~ */
+	
+	IF ~~ THEN 
+	DO ~
+		SetGlobal("XA_LC_Journal_Love", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinLoveBG2", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_RomanceInitTalk_3B
+	SAY @1975 /* ~Friends it is, then. Thank you, <CHARNAME>. Thank you for understanding. Let's go.~*/
+	
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_Journal_Love", "GLOBAL", 2)
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 3)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_RomanceInitTalk_2A2
+	SAY @1962 /* ~I hope so. If you do ever clean up your act, then maybe we can give this another shot. For now, let's just focus on the mission. Let's go.~*/
+	
+	IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN XA_RomanceInitTalk_2A3
+	SAY @1967 /* ~So long as we're still that, I'll be fine. We've a job to do. Let's go get it done.~ [xalc7107]*/
+	
+	IF ~~ THEN EXIT
 END
 
 CHAIN
