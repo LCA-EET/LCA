@@ -716,7 +716,9 @@ IF ~~ THEN BEGIN XAA34A // friend
 	~
 	EXIT
 	
-	IF ~~ THEN REPLY @1936 /* ~When we were separated because of my exile, I ... well. I've realized that the more time I spend with you, the more I ... the more I hate it when we are apart. Hate probably isn't a strong enough word. I need you near me, Schael.~*/
+	IF ~
+		GlobalLT("XA_LC_CorwinRomanceActive", "GLOBAL", 1)
+	~ THEN REPLY @1936 /* ~When we were separated because of my exile, I ... well. I've realized that the more time I spend with you, the more I ... the more I hate it when we are apart. Hate probably isn't a strong enough word. I need you near me, Schael.~*/
 	GOTO XA_WealthTalk_Romance_2
 END
 
@@ -1895,6 +1897,9 @@ IF ~~ THEN BEGIN XA_WealthTalk_Romance_4X
 	SAY @1949 /*~I see. And that tells me everything that I need to know. Enough games — we have work to do.~*/
 	
 	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 3)
+	~
 	EXIT
 END
 
