@@ -7,7 +7,7 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_RomanceInitTalk", "LOCALS", 1)
-			StartDialog("XACORWIJ", Player1)
+			Interact(Player1)
 	END
 //}
 
@@ -39,7 +39,7 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_WealthTalk", "LOCALS", 1)
-			StartDialog("XACORWIJ", Player1)
+			Interact(Player1)
 	END
 //}
 
