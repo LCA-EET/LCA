@@ -1931,9 +1931,10 @@ END
 IF ~~ THEN BEGIN XA_WealthTalk_Romance_6X
 	SAY @1965 /*~I see. Perhaps that's for the best. Yes. Let's leave it there, then.~ [xalc7106]*/
 	
-	IF ~
+	IF ~~ THEN
+	DO ~
 		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 3)
-	~ THEN
+	~
 	EXIT
 END
 
