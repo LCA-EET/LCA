@@ -1884,6 +1884,9 @@ IF ~~ THEN BEGIN XA_WealthTalk_Romance_4
 	
 	IF ~~ THEN REPLY @1943 /* ~So, what happens now? Where do we go from here?~*/
 	GOTO XA_WealthTalk_Romance_5
+	
+	IF ~~ THEN REPLY @2007 /*~When you knew what, exactly?~*/
+	GOTO XA_WealthTalk_Romance_4B
 END
 
 IF ~~ THEN BEGIN XA_WealthTalk_Romance_4A
@@ -1891,6 +1894,14 @@ IF ~~ THEN BEGIN XA_WealthTalk_Romance_4A
 	
 	IF ~~ THEN REPLY @1943 /* ~So, what happens now? Where do we go from here?~*/
 	GOTO XA_WealthTalk_Romance_5
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk4B
+	SAY @2005 /*~Isn't it obvious? That was when I knew that I...~*/
+	
+	= @2006 /*~Damn it, why is this so hard?~*/
+	
+
 END
 
 IF ~~ THEN BEGIN XA_WealthTalk_Romance_4X
@@ -2092,7 +2103,96 @@ IF ~~ THEN BEGIN XA_RomanceInitTalk_2A3
 END
 
 //} #endregion
+IF ~
+	Global("XA_LC_FlowerTalk", "LOCALS", 1)
+~ THEN BEGIN XA_FlowerTalk
+	SAY @1989 /*~Flowers? For me?~*/
+	
+	IF ~
+		OR(2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 1)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1994 /*With love.*/
+	DO ~
+		SetGlobal("XA_LC_FlowerTalk", "LOCALS", 2)
+	~
+	GOTO XA_FlowerTalk2
 
+	IF ~~ THEN REPLY @1995 /* Of course. */
+	DO ~
+		SetGlobal("XA_LC_FlowerTalk", "LOCALS", 2)
+	~
+	GOTO XA_FlowerTalk2
+END
+
+IF ~~ THEN BEGIN XA_FlowerTalk2
+	SAY @1996 /*~You shouldn't have!~*/
+	
+	= @1990 /*~What a wonderful scent... and the colors, they're so vibrant!~*/
+	
+	IF ~
+		OR(2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 1)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN
+	DO ~
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
+	~
+	GOTO XA_FlowerTalk3A
+	
+	IF ~
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 1)
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN
+	DO ~
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
+	~
+	GOTO XA_FlowerTalk3B
+END
+
+IF ~~ THEN BEGIN XA_FlowerTalk3A
+	SAY @1993 /*~Look, there are even some lilacs. They're my favorite. Thank you, dear.~*/
+	
+	IF ~~ THEN 
+	GOTO XA_FlowerTalk4A
+END
+
+IF ~~ THEN BEGIN XA_FlowerTalk3B
+	SAY @1991 /*~Look, there are even some lilacs. They're my favorite. Thank you, <CHARNAME>.~*/
+	
+	IF ~~ THEN REPLY @2000
+	GOTO XA_FlowerTalk4B
+	
+	IF ~~ THEN REPLY @1999
+	GOTO XA_FlowerTalk4B
+END
+
+IF ~~ THEN BEGIN XA_FlowerTalk4A
+	SAY @1998 /*~(You share a heartfelt embrace.)~*/
+	
+	IF ~~ THEN REPLY @1999 /*~It's the least I can do.~*/
+	GOTO XA_FlowerTalk4A_END
+	
+	IF ~~ THEN REPLY @2000 /*~I'm glad you like them.~ */
+	GOTO XA_FlowerTalk4A_END
+END
+
+IF ~~ THEN BEGIN XA_FlowerTalk4A_END
+	SAY @2001 /*I love them. Not because they're beautiful, but because they're from you. Come, dear. We should get moving.~*/
+	
+	IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN XA_FlowerTalk4B
+	SAY @2002 /*~Come. We should get moving.~*/
+	
+	IF ~~ THEN REPLY @1934 /* ~Captain... Schael, wait.~ */
+	GOTO XA_WealthTalk_Romance
+	
+	IF ~~ THEN REPLY @2003 /* Right*/
+	END
+	
+END
 
 //{ BMAZZY
 APPEND BMAZZY
