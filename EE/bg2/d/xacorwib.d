@@ -1817,7 +1817,7 @@ END
 IF ~~ THEN BEGIN XA_WealthTalk_End_B
 	SAY @1928 /*~Well, I appreciate the talk, <CHARNAME>. We've work to do, let's go.~*/
 	
-	IF ~~ THEN REPLY @1930 /* Right. */
+	IF ~~ THEN REPLY @1988 /* Right. */
 	DO ~
 		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
@@ -2105,8 +2105,9 @@ END
 //} #endregion
 IF ~
 	Global("XA_LC_FlowerTalk", "LOCALS", 1)
+	HasItem("xaflower", Player1)
 ~ THEN BEGIN XA_FlowerTalk
-	SAY @1989 /*~Flowers? For me?~*/
+	SAY @1989 /*~Flowers?~*/
 	
 	IF ~
 		OR(2)
@@ -2118,11 +2119,15 @@ IF ~
 	~
 	GOTO XA_FlowerTalk2
 
-	IF ~~ THEN REPLY @1995 /* Of course. */
+	IF ~
+		GlobalLT("XA_LC_CorwinRomanceActive", "GLOBAL", 1)
+	~ THEN REPLY @2008 /* ~For you, Captain.~ */
 	DO ~
 		SetGlobal("XA_LC_FlowerTalk", "LOCALS", 2)
 	~
 	GOTO XA_FlowerTalk2
+	
+	IF ~~ THEN REPLY @2010
 END
 
 IF ~~ THEN BEGIN XA_FlowerTalk2
@@ -2141,8 +2146,7 @@ IF ~~ THEN BEGIN XA_FlowerTalk2
 	GOTO XA_FlowerTalk3A
 	
 	IF ~
-		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 1)
-		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalLT("XA_LC_CorwinRomanceActive", "GLOBAL", 1)
 	~ THEN
 	DO ~
 		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
@@ -2160,10 +2164,10 @@ END
 IF ~~ THEN BEGIN XA_FlowerTalk3B
 	SAY @1991 /*~Look, there are even some lilacs. They're my favorite. Thank you, <CHARNAME>.~*/
 	
-	IF ~~ THEN REPLY @2000
+	IF ~~ THEN REPLY @2000/*~I'm glad you like them.~  */
 	GOTO XA_FlowerTalk4B
 	
-	IF ~~ THEN REPLY @1999
+	IF ~~ THEN REPLY @1999/* It's the least I can do.~*/
 	GOTO XA_FlowerTalk4B
 END
 

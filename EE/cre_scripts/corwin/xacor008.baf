@@ -1,3 +1,18 @@
+//{ Flowers
+	IF
+		InParty(Myself)
+		ActionListEmpty()
+		HasItem("xaflower", Player1)
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		GlobalLT("XA_LC_CorwinRomanceActive", "GLOBAL", 3)
+		GlobalLT("XA_LC_FlowerTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_FlowerTalk", "LOCALS", 1)
+			Interact(Player1)
+	END
+//}
+
 //{ Romance Init Timer Expiration
 	IF 
 		InParty(Myself)

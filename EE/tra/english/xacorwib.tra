@@ -952,12 +952,12 @@
 @1927=~I see...~
 @1928=~Well, I appreciate you taking the time to indulge me, <CHARNAME>. We've work to do, let's go.~
 @1929=~Enough talk, let's get going.~
-@1930=~Right.~
+@1930=~Right.~ [xad10043]
 @1931=~I love my father. Were it not for the example he set for me, I'd have never joined the Fist. But to say that everything I've achieved is because of him or his connections is simply wrong.~ 
 @1932=~Reading the same voluminous works front to back, over and over again? Sounds like my upbringing in Candlekeep.~
 @1933=~Heh. Your sense of humor certainly makes being away from home a lot easier. Thank you.~
 @1934=~Captain... Schael, wait.~
-@1935=~Hm?~
+@1935=~Hm?~ [xad10039]
 @1936=~When we were separated because of my exile, I ... well. I've realized that the more time I spend with you, the more I ... the more I hate it when we are apart. Hate probably isn't a strong enough word. I need you near me, Schael.~
 @1937=~...~
 @1938=~<CHARNAME>, you ... are you saying that you have feelings for me?~ 
@@ -993,7 +993,7 @@
 @1968=~That's why I asked for some time to think on it.~
 @1969=~Doomed relationship? I'm not going to like what comes next, am I?~
 @1970=~Please, go on.~
-@1971=~What I mean to say is that for this relationship to work, it doesn't only have to work between us. It needs to work for Rohma. I can't allow her to be hurt.~
+@1971=~What I mean to say is that for this relationship to succeed, it doesn't only have to work between us. It needs to work for Rohma. I won't allow her to be hurt.~
 @1972=~Schael, I understand. I don't know if I'd be a good step parent for Rohma. What I do know is that I'll do my best, not just for you, but for her.~
 @1973=~I'm fully cognizant of the responsibilities and challenges of being a step parent, and I want you to know that I will welcome them.~
 @1974=~It seems then that we should end this here. I'm not parenting material, I'm afraid, and nothing is going to change that. I'd like to remain friends with you, however. Can we do that?~
@@ -1010,8 +1010,8 @@
 @1985=~Neither can I, love. Come on — we've work to do.~
 @1986=~Schael? What's wrong?~
 @1987=~My admiration and ... and attraction toward you, turned into something more.~
-
-@1989=~Flowers? For me?~
+@1988=~Right.~
+@1989=~Flowers?~
 @1990=~Mm. What a wonderful scent... and the colors, they're so vibrant! Thank you, dear.~
 @1991=~Look, there are even some lilacs. They're my favorite. Thank you, <CHARNAME>.~
 @1992=~I'm glad you like them.~
@@ -1023,10 +1023,14 @@
 @1998=~(You share a heartfelt embrace.)~
 @1999=~It's the least I can do.~
 @2000=~I'm glad you like them.~ 
-@2001=~I love them. Not because they're beautiful, but because they're from you. Come, dear. We should get moving.~
+@2001=~I love them. Not because they're beautiful — I mean they are, of course — but because they're from you. Come, dear. We should get moving.~
 @2002=~Come. We should get moving.~
 @2003=~Right.~
 @2004=~When you knew what, exactly?~
 @2005=~Isn't it obvious? That was when I knew that I...~
 @2006=~Damn it, why is this so hard?~ [xalc7110]
 @2007=~That was when I realized I'm in love with you, <CHARNAME>.~ 
+@2008=~For you, my friend.~
+@2009=~For you, dear.~
+@2010=~Yes, but not for you I'm afraid.~
+@2011=~Oh, um... Carry on, then.
