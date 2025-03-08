@@ -15,8 +15,8 @@ IF ~
 END
 
 IF ~
-	GlobalLT("XA_LC_CorwinJoined", "GLOBAL", 1)
-	Global("XA_LC_PurchasedFlowers", "LOCALS", 1)
+	Global("XA_LC_CorwinJoined", "GLOBAL", 1)
+	GlobalLT("XA_LC_PurchasedFlowers", "LOCALS", 1)
 ~ THEN BEGIN XA_FlowersForSale
 	SAY @3 /*~Hi! Are you looking for a bouquet? I have a beautiful one here that you can have for just five gold.~*/
 	
