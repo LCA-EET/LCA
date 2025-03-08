@@ -359,6 +359,21 @@ END
 		
 	//}
 	
+	//{ Add the florist to Waukeen's Promenade
+	COPY_EXISTING ~ar0700.are~ ~override~
+	LPF fj_are_structure
+		INT_VAR
+			fj_name = ~Florist~
+			fj_loc_x = 3125
+			fj_loc_y = 960
+			fj_orientation = 0
+			fj_schedule = 262016 // 07:30 - 18:29
+		STR_VAR
+			fj_structure_type = actor
+			fj_cre_resref =~xaflor~
+	END
+	//}
+	
 	//{ If the playthrough is started in BG2, apply the default or overriden parameters (even for EET games).
 		EXTEND_TOP ~ar0602.bcs~		~%MOD_FOLDER%/bg2/baf/xalcaeet.baf~
 	//}
