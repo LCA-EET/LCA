@@ -1896,7 +1896,7 @@ IF ~~ THEN BEGIN XA_WealthTalk_Romance_4A
 	GOTO XA_WealthTalk_Romance_5
 END
 
-IF ~~ THEN BEGIN XA_WealthTalk4B
+IF ~~ THEN BEGIN XA_WealthTalk_Romance_4B
 	SAY @2005 /*~Isn't it obvious? That was when I knew that I...~*/
 	
 	= @2006 /*~Damn it, why is this so hard?~*/
@@ -2163,7 +2163,17 @@ IF ~
 	~
 	GOTO XA_FlowerTalk2
 	
-	IF ~~ THEN REPLY @2010
+	IF ~~ THEN REPLY @2010 /* ~Yes, but not for you I'm afraid.~*/
+	DO ~
+		SetGlobal("XA_LC_FlowerTalk", "LOCALS", 2)
+	~
+	GOTO XA_FlowerTalk_END
+END
+
+IF ~~ THEN BEGIN XA_FlowerTalk_END
+	SAY @2011 /*~Oh, um... carry on, then.~ */
+	
+	IF ~~ THEN EXIT
 END
 
 IF ~~ THEN BEGIN XA_FlowerTalk2
@@ -2230,7 +2240,7 @@ IF ~~ THEN BEGIN XA_FlowerTalk4B
 	GOTO XA_WealthTalk_Romance
 	
 	IF ~~ THEN REPLY @2003 /* Right*/
-	END
+	EXIT
 	
 END
 

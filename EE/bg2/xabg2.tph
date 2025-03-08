@@ -363,12 +363,12 @@ END
 	COPY_EXISTING ~ar0700.are~ ~override~
 	LPF fj_are_structure
 		INT_VAR
-			fj_name = ~Florist~
 			fj_loc_x = 3125
 			fj_loc_y = 960
 			fj_orientation = 0
 			fj_schedule = 262016 // 07:30 - 18:29
 		STR_VAR
+			fj_name = ~Florist~
 			fj_structure_type = actor
 			fj_cre_resref = ~xaflor~
 			fj_bcs_class = ~xaflor~
