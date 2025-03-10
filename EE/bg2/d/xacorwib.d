@@ -1896,12 +1896,35 @@ IF ~~ THEN BEGIN XA_WealthTalk_Romance_4A
 	GOTO XA_WealthTalk_Romance_5
 END
 
-IF ~~ THEN BEGIN XA_WealthTalk4B
+IF ~~ THEN BEGIN XA_WealthTalk_Romance_4B
 	SAY @2005 /*~Isn't it obvious? That was when I knew that I...~*/
 	
 	= @2006 /*~Damn it, why is this so hard?~*/
 	
+	IF ~~ THEN REPLY @2013 /* ~Said the courtesan to the cleric.~ */
+	GOTO XA_WealthTalk4B_1
+	
+	IF ~~ THEN REPLY @2011 /* ~The important things are never easy.~*/
+	GOTO XA_WealthTalk4B_2
+END
 
+IF ~~ THEN BEGIN XA_WealthTalk4B_1
+	SAY @2014 /* ~Can you try to be serious just for one gods damned minute?~ [xalc7111] */
+	
+	IF ~~ THEN GOTO XA_WealthTalk4B_3
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk4B_2
+	SAY @2015 /* ~Aye, you're right about that. All right, here it is...~ [xalc7112] */
+	
+	IF ~~ THEN GOTO XA_WealthTalk4B_3
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk4B_3
+	SAY @2007 /*~When I read your letter, that was when I realized that I'd fallen for you. I love you, <CHARNAME>.~ */
+	
+	IF ~~ THEN REPLY @1953 /*~If you had these feelings, why didn't you say anything until now? Why keep them inside?~*/
+	GOTO XA_WealthTalk_Romance_4A
 END
 
 IF ~~ THEN BEGIN XA_WealthTalk_Romance_4X
@@ -1917,6 +1940,19 @@ END
 IF ~~ THEN BEGIN XA_WealthTalk_Romance_5
 	SAY @1944 /*~I appreciate your being so... forthright. But after what happened in my last relationship, with Tianna... Give me some time to consider this. Please.~ [xalc7102]*/
 
+	IF ~~ THEN REPLY @1945 /* ~I understand completely. Take your time. When you decide what you want, I'll be here. You're worth waiting for.~ */
+	GOTO XA_WealthTalk_Romance_6
+	
+	IF ~~ THEN REPLY @1964 /*~If you've not decided yet, you never will. Let me make this easy for you. We shall do as the Council wishes and end the threat of Irenicus. When that task is finished, so are we.~ */
+	GOTO XA_WealthTalk_Romance_6X
+	
+	IF ~~ THEN REPLY @2016 /* ~I don't understand. If we feel the same way toward each other, then what else is there to consider?~*/
+	GOTO XA_WealthTalk_Romance_5A
+END
+
+IF ~~ THEN BEGIN XA_WealthTalk_Romance_5A
+	SAY @2017 /* ~It's not that simple. I can't afford to make any more mistakes. I need to be certain that you're the one... not just for me, but for Rohma.~ */
+	
 	IF ~~ THEN REPLY @1945 /* ~I understand completely. Take your time. When you decide what you want, I'll be here. You're worth waiting for.~ */
 	GOTO XA_WealthTalk_Romance_6
 	
@@ -2127,7 +2163,17 @@ IF ~
 	~
 	GOTO XA_FlowerTalk2
 	
-	IF ~~ THEN REPLY @2010
+	IF ~~ THEN REPLY @2010 /* ~Yes, but not for you I'm afraid.~*/
+	DO ~
+		SetGlobal("XA_LC_FlowerTalk", "LOCALS", 2)
+	~
+	GOTO XA_FlowerTalk_END
+END
+
+IF ~~ THEN BEGIN XA_FlowerTalk_END
+	SAY @2011 /*~Oh, um... carry on, then.~ */
+	
+	IF ~~ THEN EXIT
 END
 
 IF ~~ THEN BEGIN XA_FlowerTalk2
@@ -2194,7 +2240,7 @@ IF ~~ THEN BEGIN XA_FlowerTalk4B
 	GOTO XA_WealthTalk_Romance
 	
 	IF ~~ THEN REPLY @2003 /* Right*/
-	END
+	EXIT
 	
 END
 
