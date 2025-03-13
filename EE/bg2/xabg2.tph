@@ -820,10 +820,15 @@ OUTER_SET bg2_carryover = 1
 	OUTER_SET cleared_kanaglym = 1
 	OUTER_SET corwin_avernus = 1
 	OUTER_SET thrix_alive = 1
+	OUTER_SET corwin_lesson = 1
+	OUTER_SET deserter_spared = 1
+	OUTER_SET took_manual = 1
+	OUTER_SET corwin_portrait = 1
 
 	/*
 		If a parameter file exists, overwrite the default parameter with the contents of the parameter file.
 	*/
+
 	ACTION_IF (FILE_EXISTS ~%MOD_FOLDER%/bg2/lca_bg2_params.txt~) THEN BEGIN
 		INCLUDE ~%MOD_FOLDER%/bg2/lca_bg2_params.txt~
 	END
@@ -928,6 +933,10 @@ OUTER_SET bg2_carryover = 1
 
 	ACTION_IF (took_manual = 1) THEN BEGIN
 		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa25.baf~
+	END
+	
+	ACTION_IF (corwin_portrait = 1) THEN BEGIN
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa26.baf~
 	END
 
 	EXTEND_BOTTOM ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpaEE.baf~

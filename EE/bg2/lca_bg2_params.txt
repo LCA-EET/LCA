@@ -147,3 +147,9 @@ OUTER_SET deserter_spared = 1
 	Set to 1 to proceed as though the player took the Flaming Fist Officers' Manual from Corwin's home, during the events of BG1.
 */
 OUTER_SET took_manual = 1
+
+/*
+	Parameter: corwin_portrait
+	Set to 1 to use Corwin's LCA portrait. Set to 0 to use her SoD portrait instead.
+*/
+OUTER_SET corwin_portrait = 1
