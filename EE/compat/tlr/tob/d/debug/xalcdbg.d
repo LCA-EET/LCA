@@ -1,4 +1,4 @@
-EXTEND_BOTTOM XALCDBG 13
+EXTEND_BOTTOM XALCDBG 10
 	IF ~~ THEN REPLY @1 /* ~TLR Debug~*/
 	GOTO XA_LC_TLR_Debug
 END
@@ -43,7 +43,7 @@ APPEND XALCDBG
 		EXIT
 		
 		IF ~~ THEN REPLY @3/* ~Return to the previous menu.~*/
-		GOTO 13
+		GOTO 10
 		
 		COPY_TRANS XALCDBG 11
 	END

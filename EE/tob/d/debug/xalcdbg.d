@@ -1,4 +1,4 @@
-EXTEND_BOTTOM XALCDBG 13
+EXTEND_BOTTOM XALCDBG 10
 	IF ~~ THEN REPLY @7000 /* ~ToB Debug~ */
 	GOTO XA_ToB_Debug
 END
@@ -87,7 +87,7 @@ APPEND ~XALCDBG~
 		GOTO XA_ToB_EpilogueTest
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
-		GOTO 13
+		GOTO 10
 		
 		COPY_TRANS XALCDBG 11
 	END

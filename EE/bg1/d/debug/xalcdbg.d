@@ -1,4 +1,4 @@
-EXTEND_BOTTOM XALCDBG 13
+EXTEND_BOTTOM XALCDBG 10
 	IF ~~ THEN REPLY @3000 /* ~BG1 Debug~ */
 	GOTO XA_BG1_Debug
 END
@@ -44,7 +44,7 @@ APPEND XALCDBG
 		GOTO XA_BG1_ItemTest
 
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
-		GOTO 13
+		GOTO 10
 		
 		IF ~~ THEN REPLY @3012 /*~Exit.~ */
 		GOTO 9

@@ -1,4 +1,4 @@
-EXTEND_BOTTOM XALCDBG 13
+EXTEND_BOTTOM XALCDBG 10
 	IF ~~ THEN REPLY @5000 /* ~BG2 Debug~ */
 	GOTO XA_BG2_Debug
 END
@@ -120,7 +120,7 @@ APPEND ~XALCDBG~
 		GOTO XA_BG2_Sex2ConditionCheck
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
-		GOTO 13
+		GOTO 10
 		
 		COPY_TRANS XALCDBG 11
 	END

@@ -1,4 +1,4 @@
-EXTEND_BOTTOM XALCDBG 13
+EXTEND_BOTTOM XALCDBG 10
 	IF ~~ THEN REPLY @6000 /* ~RBG Debug~ */
 	GOTO XA_RBG_Debug
 END
@@ -57,7 +57,7 @@ APPEND ~XALCDBG~
 		GOTO XA_RBG_Debug
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
-		GOTO 13
+		GOTO 10
 		
 		COPY_TRANS XALCDBG 11	
 	END
