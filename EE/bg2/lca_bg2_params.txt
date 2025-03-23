@@ -153,8 +153,3 @@ OUTER_SET took_manual = 1
 	Set to 1 to use Corwin's LCA portrait. Set to 0 to use her SoD portrait instead.
 */
 OUTER_SET corwin_portrait = 1
-
-/*
-	Parameter: ai_voicing
-	Set to 1 to utilize AI generated voicing for Corwin.
-*/
