@@ -87,7 +87,11 @@ END
 //}
 
 //{ New Sounds
-	// COPY ~%MOD_FOLDER%/sod/wav/~ 	~override~
+	 COPY ~%MOD_FOLDER%/sod/wav/~ 	~override~
+	 
+	 ACTION_IF (ai_voicing = 1) THEN BEGIN
+		COPY ~%MOD_FOLDER%/sod/wav/ai~ 	~override~
+	 END
 //}
 
 //{ New Creatures

@@ -36,8 +36,6 @@ AUTO_TRA ~%MOD_FOLDER%/tra/%s~ //automatically associate .tras to their respecti
 AUTO_EVAL_STRINGS
 LANGUAGE ~English~ ~english~ ~%MOD_FOLDER%/tra/english/xalca.tra~
 
-
-
 BEGIN
 @800 /* ~Love Conquers All (LCA)~ */
 
@@ -46,6 +44,7 @@ OUTER_SET bg2_carryover = 0
 OUTER_SET bg1_carryover = 0
 OUTER_SET sod_carryover = 0
 OUTER_SET xa_tempID = 0
+OUTER_SET ai_voicing = 1 // Change to 0 to remove AI-generated voicing for Corwin
 
 ACTION_IF (GAME_IS ~eet~) THEN BEGIN
 	OUTER_SET isEET = 1
@@ -77,8 +76,6 @@ END
 SILENT
 
 LAF xa_cleartempfiles END
-
-COPY ~%MOD_FOLDER%/wav~ ~override~
 
 ACTION_IF (isEET = 1) THEN BEGIN
 	INCLUDE ~%MOD_FOLDER%/bg1/xabg1.tph~
