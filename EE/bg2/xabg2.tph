@@ -824,6 +824,7 @@ OUTER_SET bg2_carryover = 1
 	OUTER_SET deserter_spared = 1
 	OUTER_SET took_manual = 1
 	OUTER_SET corwin_portrait = 1
+	OUTER_SET ai_voicing = 1
 
 	/*
 		If a parameter file exists, overwrite the default parameter with the contents of the parameter file.
@@ -937,6 +938,10 @@ OUTER_SET bg2_carryover = 1
 	
 	ACTION_IF (corwin_portrait = 1) THEN BEGIN
 		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa26.baf~
+	END
+	
+	ACTION_IF (ai_voicing = 1) THEN BEGIN
+		COPY ~%MOD_FOLDER%/wav/ai~ ~override~
 	END
 
 	EXTEND_BOTTOM ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpaEE.baf~
