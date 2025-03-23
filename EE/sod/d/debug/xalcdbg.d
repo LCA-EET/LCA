@@ -65,7 +65,7 @@ APPEND XALCDBG
 		~
 		GOTO XA_SoD_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_SoD_DreamConditionCheck
@@ -124,7 +124,7 @@ APPEND XALCDBG
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_SoD_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_SoD_AdjustExperience
@@ -169,7 +169,7 @@ APPEND XALCDBG
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_SoD_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_SoD_AreaTest
@@ -211,7 +211,7 @@ APPEND XALCDBG
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_SoD_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_SoD_ItemTest
@@ -228,7 +228,7 @@ APPEND XALCDBG
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_SoD_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_SoD_AdjustVariables
@@ -357,7 +357,7 @@ APPEND XALCDBG
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_SoD_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 	IF ~~ THEN BEGIN XA_SoD_CutsceneTest
 		SAY @4001 /* ~Cutscene Test~*/
@@ -436,6 +436,6 @@ APPEND XALCDBG
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_SoD_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 END

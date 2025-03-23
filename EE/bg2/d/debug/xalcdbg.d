@@ -122,7 +122,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 13
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_BG2_CheckBantersPending
@@ -237,7 +237,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 
 	IF ~~ THEN BEGIN XA_BG2_Sex2ConditionCheck
@@ -294,7 +294,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 
 	IF ~~ THEN BEGIN XA_BG2_SpellTest
@@ -315,7 +315,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 
 	IF ~~ THEN BEGIN XA_BG2_AdjustVariables
@@ -432,7 +432,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 
 	IF ~~ THEN BEGIN XA_BG2_MusicTest
@@ -465,7 +465,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_BG2_InteractionTest
@@ -501,7 +501,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_BG2_ParameterCheck
@@ -549,7 +549,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_BG2_AreaTest
@@ -628,7 +628,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_BG2_ItemTest
@@ -767,7 +767,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_BG2_CutsceneTest
@@ -832,6 +832,6 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_BG2_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 END

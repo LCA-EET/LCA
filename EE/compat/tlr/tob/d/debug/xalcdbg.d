@@ -45,6 +45,6 @@ APPEND XALCDBG
 		IF ~~ THEN REPLY @3/* ~Return to the previous menu.~*/
 		GOTO 13
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 END

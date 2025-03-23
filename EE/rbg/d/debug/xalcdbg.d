@@ -59,7 +59,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 13
 		
-		COPY_TRANS XALCDBG 14	
+		COPY_TRANS XALCDBG 11	
 	END
 	
 	IF ~~ THEN BEGIN XA_RBG_PenCheck
@@ -93,7 +93,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_RBG_ScriptTest
@@ -132,7 +132,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_RBG_StoreTest
@@ -205,7 +205,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_RBG_CutsceneTest
@@ -270,7 +270,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_RBG_TextScreenTest
@@ -345,7 +345,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_RBG_AreaTest
@@ -666,7 +666,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_RBG_AdjustVariables
@@ -802,7 +802,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 	END
 	
 	IF ~~ THEN BEGIN XA_RBG_ItemTest
@@ -977,7 +977,7 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_RBG_Debug
 		
-		COPY_TRANS XALCDBG 14
+		COPY_TRANS XALCDBG 11
 		
 	END
 END	
