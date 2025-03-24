@@ -154,7 +154,7 @@ BEGIN ~XALCDBG~
 	END
 	
 	IF ~~ THEN BEGIN XA_ReportBug //5
-		SAY @2031 /*~You can report a bug by e-mailing LCAMod@danielvalle.net. It is recommended (but not required) that you include your save game with the bug report.~*/
+		SAY @2031 /*~You can report a bug by e-mailing support@fosiemods.net. It is recommended (but not required) that you include your save game with the bug report.~*/
 		
 		COPY_TRANS XALCDBG XA_ClosingOptions_Assistant
 	END

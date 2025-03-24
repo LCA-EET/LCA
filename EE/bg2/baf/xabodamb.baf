@@ -1,11 +1,3 @@
-//Modifications to BODHIAMB.BCS
-//Daniel Valle
-//dan@danielvalle.net
-/* Revision History
-
-2022-11-25: Initial Commit
-
-*/
 IF
 	Global("XA_LC_CorwinBit","GLOBAL",1)
 THEN

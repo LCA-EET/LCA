@@ -6,12 +6,15 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
-## v1.5 In development, expected release end of March
+## v1.5 2025-03-23
 * Fixed a bug in the Winston Venture's bartender dialog.
 * Added a new quest - The Book Collector
 * Overhauled the debriefing dialogs during the Return to Baldur's Gate portion of the mod.
 * Updated the SoD Tent Cutscene to include additional dialog options, and a tie-in to RBG content.
-* Various additional improvements.
+* Revised Corwin's portrait.
+* Re-incorporated VA-approved AI generated voicing for the Corwin character.
+* Added two new romance initiation dialogs and a new NPC.
+* Various additional refinements.
 
 ## v1.4.4a 2025-01-13
 * Fixed a compatibility issue with The Longer Road that presented itself when the LCA Assistant was not installed.

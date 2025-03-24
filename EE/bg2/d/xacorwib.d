@@ -1837,7 +1837,7 @@ IF ~~ THEN BEGIN XA_WealthTalk_End_B
 	DO ~
 		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 	~
-	EXIT
+	GOTO XA_WealthTalk_Romance
 END
 
 IF ~~ THEN BEGIN XA_WealthTalk_Romance
@@ -1885,7 +1885,7 @@ IF ~~ THEN BEGIN XA_WealthTalk_Romance_4
 	IF ~~ THEN REPLY @1943 /* ~So, what happens now? Where do we go from here?~*/
 	GOTO XA_WealthTalk_Romance_5
 	
-	IF ~~ THEN REPLY @2007 /*~When you knew what, exactly?~*/
+	IF ~~ THEN REPLY @2004 /*~When you knew what, exactly?~*/
 	GOTO XA_WealthTalk_Romance_4B
 END
 
@@ -1904,7 +1904,7 @@ IF ~~ THEN BEGIN XA_WealthTalk_Romance_4B
 	IF ~~ THEN REPLY @2013 /* ~Said the courtesan to the cleric.~ */
 	GOTO XA_WealthTalk4B_1
 	
-	IF ~~ THEN REPLY @2011 /* ~The important things are never easy.~*/
+	IF ~~ THEN REPLY @2012 /* ~The important things are never easy.~*/
 	GOTO XA_WealthTalk4B_2
 END
 
@@ -1998,9 +1998,15 @@ IF ~
 	SAY @923 /* <CHARNAME>. We need to talk. */
 	
 	IF ~~ THEN REPLY @925 /* ~What's on your mind?~ */
+	DO ~
+		SetGlobal("XA_LC_RomanceInitTalk", "LOCALS", 2)
+	~
 	GOTO XA_RomanceInitTalk_2
 	
 	IF ~~ THEN REPLY @1986 /* ~Schael? What's wrong?~ */
+	DO ~
+		SetGlobal("XA_LC_RomanceInitTalk", "LOCALS", 2)
+	~
 	GOTO XA_RomanceInitTalk_2
 END
 

@@ -1,13 +1,3 @@
-//Modifications to BCOFFIN.bcs
-//Daniel Valle
-//dan@danielvalle.net
-
-/* Revision History
-
-2022-11-26: Initial Commit
-
-*/
-
 IF
 	Clicked([ANYONE])
 	Range(LastTrigger,12)

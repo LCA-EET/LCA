@@ -19,6 +19,7 @@
 		ActionListEmpty()
 		GlobalTimerExpired("XA_LC_CorwinRomanceInitTimer", "GLOBAL")
 		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		GlobalLT("XA_LC_RomanceInitTalk", "LOCALS", 1)
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_RomanceInitTalk", "LOCALS", 1)
@@ -36,7 +37,7 @@
 			AreaCheck("AR1000")
 	THEN
 		RESPONSE #100
-			SetGlobalTimer("XA_LC_WealthTalkTimer", FOUR_HOURS, 1)
+			SetGlobalTimer("XA_LC_WealthTalkTimer", "LOCALS", FOUR_HOURS)
 			SetGlobal("XA_LC_WealthTalkTimerSet", "LOCALS", 1)
 			Continue()
 	END

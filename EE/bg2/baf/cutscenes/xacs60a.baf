@@ -1,13 +1,3 @@
-//Rewrite of cut60a, to send the player to a different location after Irenicus' death
-//Daniel Valle
-//dan@danielvalle.net
-
-/* Revision History
-
-2022-12-20: Initial Commit
-
-*/
-
 IF
 	True()
 THEN

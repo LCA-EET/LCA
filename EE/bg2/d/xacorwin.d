@@ -47,14 +47,12 @@ IF ~
 	IF ~~ THEN REPLY @30 /* ~Schael! What are you doing here?~ */ 
 	DO ~
 		SetGlobal("XA_LC_CorwinReunited", "GLOBAL", 1)
-		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 1)
 	~
 	GOTO XAA3
 	  
 	IF ~~ THEN REPLY @9 /* ~You're not here to have me arrested again, I hope?~ */ 
 	DO ~
 		SetGlobal("XA_LC_CorwinReunited", "GLOBAL", 1)
-		SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 1)
 	~
 	GOTO XAA2
 END
