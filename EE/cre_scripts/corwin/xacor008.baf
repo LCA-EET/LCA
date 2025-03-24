@@ -44,7 +44,7 @@
 	IF
 		InParty(Myself)
 		ActionListEmpty()
-		GlobalTimerExpired("XA_LC_WealthTalkTimerSet", "LOCALS")
+		GlobalTimerExpired("XA_LC_WealthTalkTimer", "LOCALS")
 		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 		GlobalLT("XA_LC_WealthTalk", "LOCALS", 1)
 		OR(3)

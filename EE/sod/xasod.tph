@@ -62,10 +62,6 @@ INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/baf~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 
-ACTION_IF (xalc_assistant = 1) THEN BEGIN
-	COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d/debug~
-END
-
 //{ Scripting Modifications
 	EXTEND_TOP ~bd0104.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd0104.baf~
 	EXTEND_TOP ~bdcorwin.bcs~ 	~%MOD_FOLDER%/sod/baf/xabdcorw.baf~

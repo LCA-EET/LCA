@@ -4,6 +4,10 @@ COMPILE ~%MOD_FOLDER%/sod/baf_co/xalcnull.baf~
 
 COPY ~%MOD_FOLDER%/sod/cre/xalcspy.cre~ ~override~
 
+ACTION_IF (xalc_assistant = 1) THEN BEGIN
+	COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d/debug~
+END
+
 //{ Archery Boost
 	COPY ~%MOD_FOLDER%/sod/spl/xalcarch.spl~ ~override~
 	SAY NAME1 @2002				 /* ~Corwin's Tutelage~*/

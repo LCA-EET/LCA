@@ -1,5 +1,9 @@
 OUTER_SET bg1_carryover = 1
 
+ACTION_IF (xalc_assistant = 1) THEN BEGIN
+	COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/d/debug~
+END
+
 //{ New Items
 	//{ Ammo Belt
 		COPY_EXISTING ~bag05.itm~ ~override/xaambelt.itm~

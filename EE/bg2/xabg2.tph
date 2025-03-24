@@ -758,6 +758,14 @@ OUTER_SET bg2_carryover = 1
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3160)
 	//}
 
+	//{ Floral Bouquet
+		COPY_EXISTING ~misc1i.itm~ ~override/xaflower.itm~
+		WRITE_ASCII 0x58 ~xaflower~ #8
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@3193)
+		WRITE_LONG 0xC RESOLVE_STR_REF(@3193)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@3191)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@3191)
+	//}
 //}
 
 //{ New Spells

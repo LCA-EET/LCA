@@ -2,7 +2,7 @@ BEGIN ~XAFLOR~
 
 IF ~
 	OR(2)
-		GlobalLT("XA_LC_CorwinJoined", "GLOBAL", 1)
+		!InParty("XACORWIN")
 		Global("XA_LC_PurchasedFlowers", "LOCALS", 1)
 ~ THEN BEGIN XA_Intro
 	SAY @0 /*~Hi! If you're looking for a bouquet, you're too late. I just sold my the last one. If you come back later, or tomorrow, I might have one for you.~*/
@@ -15,7 +15,7 @@ IF ~
 END
 
 IF ~
-	Global("XA_LC_CorwinJoined", "GLOBAL", 1)
+	InParty("XACORWIN")
 	GlobalLT("XA_LC_PurchasedFlowers", "LOCALS", 1)
 ~ THEN BEGIN XA_FlowersForSale
 	SAY @3 /*~Hi! Are you looking for a bouquet? I have a beautiful one here that you can have for just five gold.~*/
