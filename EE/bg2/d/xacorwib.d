@@ -609,7 +609,7 @@ END
 IF ~
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	TriggerOverride(Player1, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
-	TriggerOverride(Player1, Global("XA_LC_CorwinBanters", "LOCALS", 2))
+	TriggerOverride(Player1, Global("XA_LC_CorwinBanters", "LOCALS", 1))
 	!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 ~
 THEN BEGIN XA_CorwinPlayerBant2B
@@ -956,7 +956,9 @@ IF ~~ THEN BEGIN XAA54_NoCorwinEET
 	~ THEN REPLY @909 /* ~Even amidst the chaos of that night, I remember being capitvated by your beauty. I still am.~ */
 	GOTO XAA55 //OK
 	
-	IF ~~ THEN REPLY @910 /* ~We defeated the assassins and left for Dragonspear the next morning.~ */
+	IF ~
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @910 /* ~We defeated the assassins and left for Dragonspear the next morning.~ */
 	GOTO XAA56 //OK
 END
 
