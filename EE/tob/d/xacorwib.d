@@ -5,6 +5,7 @@
 	//{ Dialog B-89B
 	CHAIN
 		IF ~
+			IsGabber("Sarevok")
 			GlobalLT("ImoenGiveSoul","GLOBAL",2)
 			Global("XA_LC_SarevokSoul", "GLOBAL", 1)
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -40,6 +41,7 @@
 	//{ Dialog B-89A
 	CHAIN
 		IF ~
+			IsGabber("Sarevok")
 			GlobalLT("ImoenGiveSoul","GLOBAL",2)
 			Global("XA_LC_SarevokSoul", "GLOBAL", 1)
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -88,6 +90,7 @@
 	//{ Dialog B-86A
 	CHAIN
 		IF ~
+			IsGabber("Sarevok")
 			TriggerOverride("Sarevok", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Sarevok", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			!Alignment("Sarevok",CHAOTIC_GOOD)
@@ -123,6 +126,7 @@
 	//{ Dialog B-86B
 	CHAIN
 		IF ~
+			IsGabber("Sarevok")
 			TriggerOverride("Sarevok", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Sarevok", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 			Alignment("Sarevok",CHAOTIC_GOOD)
@@ -148,6 +152,7 @@
 	//{ Dialog B-87
 	CHAIN
 		IF ~
+			IsGabber("XACORWIN")
 			TriggerOverride("Sarevok", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Sarevok", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 		~ THEN BSAREV25 XA_SarevokBanter2
@@ -182,6 +187,7 @@
 	//{ Dialog B-88
 	CHAIN
 		IF ~
+			IsGabber("Sarevok")
 			TriggerOverride("Sarevok", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Sarevok", Global("XA_LC_CorwinBanters", "LOCALS", 2))
 		~ THEN XACOR25B XA_SarevokBanter3
@@ -238,6 +244,7 @@
 	//{ Dialog B-90
 	CHAIN 
 		IF ~
+			IsGabber("XACORWIN")
 			TriggerOverride("XACAELAR", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("XACAELAR", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 		~ THEN XACAELAB XA_CaelarCorwinBanter1Chain

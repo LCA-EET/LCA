@@ -363,21 +363,6 @@ DEFINE_ACTION_FUNCTION xa_inc_cre_difficulty_newref
 		END
 END
 
-/*
-DEFINE_ACTION_FUNCTION xa_generate_talk_script
-	BEGIN
-		ACTION_PHP_EACH xa_scriptNames AS _ => xa_scriptName
-		BEGIN
-			COPY_EXISTING ~xalccs07.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
-			DECOMPILE_AND_PATCH BEGIN
-				REPLACE_TEXTUALLY ~\[PM\]~ ~%xa_scriptName%~
-			END
-			EXTEND_TOP ~xalccs08.bcs~ ~%MOD_FOLDER%/temp/%xa_tempID%.bcs~
-			xa_tempID = xa_tempID + 1
-		END
-		
-END
-*/
 //}
 
 //{ Patch Functions

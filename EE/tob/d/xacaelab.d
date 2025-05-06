@@ -2,6 +2,7 @@ BEGIN ~XACAELAB~
 
 //{ Dialog B-102
 IF ~
+	IsGabber(Player1)
 	Global("XA_LC_SummonAun", "GLOBAL", 4)
 ~ THEN BEGIN XA_CaelarThanks
 	SAY @121 /*~<CHARNAME> — before we move on, I want you to know how much I truly appreciate everything that you've done for me. Thank you... my friend.~*/
@@ -40,6 +41,7 @@ END
 
 //{ Dialog B-101
 IF ~
+	IsGabber(Player1)
 	TriggerOverride(Player1, Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride(Player1, Global("XA_LC_CaelarBanters", "LOCALS", 0))
 ~ THEN BEGIN XA_CaelarPlayerBanter1Chain
@@ -225,6 +227,7 @@ END
 
 //{ Dialog B-91
 CHAIN IF ~
+	IsGabber("XACAELAR")
 	TriggerOverride("Sarevok", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride("Sarevok", Global("XA_LC_CaelarBanters", "LOCALS", 0))
 ~ THEN BSAREV25 XA_CaelarSarevokBanter1Chain
@@ -251,6 +254,7 @@ EXIT
 
 //{ Dialog B-92
 CHAIN IF ~
+	IsGabber("XACAELAR")
 	TriggerOverride("Keldorn", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride("Keldorn", Global("XA_LC_CaelarBanters", "LOCALS", 0))
 ~ THEN BKELDO25 XA_CaelarKeldornBanter1Chain
@@ -274,6 +278,7 @@ EXIT
 
 //{ Dialog B-93
 CHAIN IF ~
+	IsGabber("XACAELAR")
 	TriggerOverride("Rasaad", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride("Rasaad", Global("XA_LC_CaelarBanters", "LOCALS", 0))
 ~ THEN BRASAA25 XA_CaelarRasaadBanter1Chain
@@ -300,6 +305,7 @@ EXIT
 
 //{ Dialog B-94
 CHAIN IF ~
+	IsGabber("Jaheira")
 	TriggerOverride("Jaheira", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride("Jaheira", Global("XA_LC_CaelarBanters", "LOCALS", 0))
 ~ THEN XACAELAB XA_CaelarJaheiraBanter1Chain
@@ -327,6 +333,7 @@ EXIT
 
 //{ Dialog B-95
 CHAIN IF ~
+	IsGabber("XACAELAR")
 	TriggerOverride("Mazzy", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride("Mazzy", Global("XA_LC_CaelarBanters", "LOCALS", 0))
 ~ THEN BMAZZY25 XA_CaelarMazzyBanter1Chain
@@ -358,6 +365,7 @@ EXIT
 
 //{ Dialog B-96
 CHAIN IF ~
+	IsGabber("XACAELAR")
 	Global("XA_LC_DornProposal", "GLOBAL", 1)
 ~ THEN BDORN25 XA_CaelarDornBanter1Chain
 	@56 /*~Caelar...~*/
@@ -387,6 +395,7 @@ EXIT
 
 //{ Dialog B-97
 CHAIN IF ~
+	IsGabber("Aerie")
 	Global("XA_LC_CaelarAerieScars", "GLOBAL", 1)
 	Global("XA_LC_CorwinAerieScars", "GLOBAL", 1)
 	InParty("XACORWIN")
@@ -419,6 +428,7 @@ EXIT
 
 //{ Dialog B-98
 CHAIN IF ~
+	IsGabber("Aerie")
 	Global("XA_LC_CaelarAerieScars", "GLOBAL", 1)
 	OR(2)
 		!Global("XA_LC_CorwinAerieScars", "GLOBAL", 1)
@@ -452,6 +462,7 @@ EXIT
 
 //{ Dialog B-99
 CHAIN IF ~
+	IsGabber("Neera")
 	TriggerOverride("Neera", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride("Neera", Global("XA_LC_CaelarBanters", "LOCALS", 0))
 ~ THEN XACAELAB XA_CaelarNeeraBanter1Chain

@@ -1,17 +1,45 @@
 IF
 	ActionListEmpty()
 	!ActuallyInCombat()
+	TriggerOverride(Player1, Global("XA_LC_[NAME]BanterPending", "LOCALS", 0))
+	TriggerOverride(Player1, Global("XA_LC_[NAME]BanterAttempted", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, SetGlobal("XA_LC_[NAME]BanterAttempted", "LOCALS", 0))
+END
+
+IF
+	ActionListEmpty()
+	!ActuallyInCombat()
 	InParty(Myself)
 	Global("XA_LC_CanTalk", "LOCALS", 1)
 	TriggerOverride(Player1, Global("XA_LC_[NAME]BanterPending", "LOCALS", 1))
 	TriggerOverride(Player1, LocalsLT("XA_LC_[NAME]Banters", "XA_LC_[NAME]BantersEnd"))
+	TriggerOverride(Player1, Global("XA_LC_[NAME]BanterAttempted", "LOCALS", 0))
 	IsValidForPartyDialogue(Player1)
 	IsValidForPartyDialogue(Myself)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		//DisplayStringHead(Myself, ~DEBUG: Interacting.~)
-		ActionOverride(Player1, Interact("[SN]"))
+		ActionOverride(Player1, SetGlobal("XA_LC_[NAME]BanterAttempted", "LOCALS", 1))
 		Interact(Player1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	ActionListEmpty()
+	!ActuallyInCombat()
+	InParty(Myself)
+	Global("XA_LC_CanTalk", "LOCALS", 1)
+	TriggerOverride(Player1, Global("XA_LC_[NAME]BanterPending", "LOCALS", 1))
+	TriggerOverride(Player1, LocalsLT("XA_LC_[NAME]Banters", "XA_LC_[NAME]BantersEnd"))
+	TriggerOverride(Player1, Global("XA_LC_[NAME]BanterAttempted", "LOCALS", 1))
+	IsValidForPartyDialogue(Player1)
+	IsValidForPartyDialogue(Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ActionOverride(Player1, SetGlobal("XA_LC_[NAME]BanterAttempted", "LOCALS", 0))
+		ActionOverride(Player1, Interact("[SN]"))
 		SetInterrupt(TRUE)
 END

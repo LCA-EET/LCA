@@ -292,6 +292,7 @@
 @5169=~ActionOverride("XACORWIN", SetGlobal("XA_LC_WealthTalk", "LOCALS", 1))~
 @5170=~ActionOverride("XACORWIN", SetGlobal("XA_LC_AfterSexTalk", "LOCALS", 1))~
 @5171=~xaflower~
+
 @6000=~Return to Baldur's Gate Debug~
 @6001=~Item Test~
 @6003=~Engagement Rings (Unenchanted)~
@@ -409,6 +410,8 @@
 @6130=~Create History of Shadowdale Volumes~
 @6131=~Debriefing (XADEBREF)~
 @6132=~xabook0~
+
+
 @7000=~ToB Debug~
 @7001=~XAG104 (BD5300) - Kanaglym~
 @7002=~Spawn Caelar (XACAELAR) and add her to the party.~

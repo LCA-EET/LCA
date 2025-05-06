@@ -118,12 +118,13 @@ APPEND ~XALCDBG~
 		
 		IF ~~ THEN REPLY @5114
 		GOTO XA_BG2_Sex2ConditionCheck
-		
+			
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 10
 		
 		COPY_TRANS XALCDBG 11
 	END
+	
 	
 	IF ~~ THEN BEGIN XA_BG2_CheckBantersPending
 		SAY @5128
@@ -834,4 +835,5 @@ APPEND ~XALCDBG~
 		
 		COPY_TRANS XALCDBG 11
 	END
+		
 END

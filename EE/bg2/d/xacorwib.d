@@ -2,7 +2,8 @@ BEGIN ~XACORWIB~
 
 //{ Dialog J-83 - Romance Conflict - CC OK
 
-IF ~
+IF  ~
+	IsGabber(Player1)
 	Global("XA_LC_RomanceConflictTalk", "GLOBAL", 1)
 	OR(8)
 		Global("AerieRomanceActive","GLOBAL",2)
@@ -261,7 +262,8 @@ END
 //}
 
 //{ #region Corwin Rep Warning - Dialog J-27 - CC OK
-IF ~
+IF  ~
+	IsGabber(Player1)
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	Global("XA_LC_CorwinRepWarning", "GLOBAL", 2)
 ~ THEN BEGIN XA_RepComplain
@@ -287,7 +289,8 @@ END
 //} #endregion
 
 //{ #region Corwin Left - Bad Reputation - Dialog J-28A - CC OK
-IF ~
+IF  ~
+	IsGabber(Player1)
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	Global("XA_LC_CorwinLeftPoorRep", "GLOBAL", 1)
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
@@ -310,7 +313,8 @@ END
 //} #endregion
 
 //{ #region Corwin Left - Bad Reputation - Dialog J-28C - CC OK
-IF ~
+IF  ~
+	IsGabber(Player1)
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	Global("XA_LC_CorwinLeftPoorRep", "GLOBAL", 1)
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
@@ -332,7 +336,8 @@ END
 //}
 
 //{ #region Corwin Left - Bad Reputation - Dialog J-28B - CC OK
-IF ~
+IF  ~
+	IsGabber(Player1)
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	Global("XA_LC_CorwinLeftPoorRep", "GLOBAL", 1)
 	Global("XA_LC_EnteredToB", "GLOBAL", 1)
@@ -355,7 +360,8 @@ END
 //} #endregion
 
 //{ Optional Banter 1A
-IF ~
+IF  ~
+	IsGabber(Player1)
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	Global("XA_LC_Banter_CorwinPlayerOpt1A", "GLOBAL", 1)
 	!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -376,7 +382,8 @@ THEN BEGIN XA_OPT1AFriend
 	EXIT
 END
 
-IF ~
+IF  ~
+	IsGabber(Player1)
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	Global("XA_LC_Banter_CorwinPlayerOpt1A", "GLOBAL", 1)
 	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -502,7 +509,8 @@ END
 //}
 
 //{ Dialog J-62 - CC OK
-IF ~
+IF  ~
+	IsGabber(Player1)
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	TriggerOverride(Player1, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 	TriggerOverride(Player1, Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -551,7 +559,8 @@ IF ~~ THEN BEGIN XAA31B
 END
 
 //{ Dialog J-63 - CC OK
-IF ~
+IF  ~
+	IsGabber(Player1)
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	TriggerOverride(Player1, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 	TriggerOverride(Player1, Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -578,7 +587,8 @@ THEN BEGIN XA_SkieMessageDelivered_Romance
 END
 //}
 //{ Dialog J-60 - CC OK
-IF ~
+IF  ~
+	IsGabber(Player1)
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	TriggerOverride(Player1, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 	TriggerOverride(Player1, Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -606,7 +616,8 @@ END
 //}
 
 //{ Dialog J-61 - CC OK
-IF ~
+IF  ~
+	IsGabber(Player1)
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	TriggerOverride(Player1, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 	TriggerOverride(Player1, Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -1107,7 +1118,8 @@ IF ~~ THEN BEGIN XAA49
 END 
 
 //{ region: Dialog B-0
-IF ~
+IF  ~
+	IsGabber("Dorn")
 	Global("OHD_corwinconflict","GLOBAL",2)
 	IsValidForPartyDialogue("Dorn")
 ~ THEN BEGIN XA_CorwinDornConflict1
@@ -1122,7 +1134,8 @@ END
 //}
 
 //{ Dialog B-1
-	IF ~
+	IF  ~
+		IsGabber("Anomen")
 		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 		Global("XA_LC_CorwinAnomenTalk", "LOCALS", 1)
 		IsValidForPartyDialogue("Anomen")
@@ -1169,7 +1182,8 @@ END
 
 
 //{ region: Dialog B-3A
-IF ~
+IF  ~
+	IsGabber("Mazzy")
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	Global("XA_LC_TM_ArcheryChallenge", "GLOBAL", 2)
 	!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -1183,7 +1197,8 @@ END
 //}
 
 //{ region Dialog B-4
-IF ~
+IF  ~
+	IsGabber("Mazzy")
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	TriggerOverride("Mazzy", Global("XA_LC_CorwinBanters", "LOCALS", 1))
 	IsValidForPartyDialogue("Mazzy")
@@ -1289,7 +1304,8 @@ END
 //{ #region Met Rohma Interaction BG2 (Non-Romance) - Dialog J-40 - CC OK
 
 /* Optional Interaction - Met Rohma */
-IF ~
+IF  ~
+	IsGabber(Player1)
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	Global("XA_LC_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
 	!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -1454,7 +1470,8 @@ END
 //} #endregion
 
 //{ #region Met Corwin Interaction BG2 (Romance) - Dialog J-41 - CC OK
-IF ~
+IF  ~
+	IsGabber(Player1)
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 	Global("XA_LC_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
 	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -1615,7 +1632,7 @@ IF ~~ THEN BEGIN XA_OPT1RomanceEnd
 	EXIT
 END
 
-IF ~
+IF  ~
 	Global("XA_LC_WealthTalk", "LOCALS", 1)
 ~ THEN BEGIN XA_WealthTalk
 	SAY @1897 /*~You know, back home, I'd hear people say how the streets of Athkatla were paved in gold.~*/
@@ -1994,7 +2011,8 @@ IF ~~ THEN BEGIN XA_WealthTalk_End2
 	EXIT
 END
 
-IF ~
+IF  ~
+	IsGabber(Player1)
 	Global("XA_LC_RomanceInitTalk", "LOCALS", 1)
 ~ THEN BEGIN XA_RomanceInitTalk
 	SAY @923 /* <CHARNAME>. We need to talk. */
@@ -2147,7 +2165,8 @@ IF ~~ THEN BEGIN XA_RomanceInitTalk_2A3
 END
 
 //} #endregion
-IF ~
+IF  ~
+	IsGabber(Player1)
 	Global("XA_LC_FlowerTalk", "LOCALS", 1)
 	HasItem("xaflower", Player1)
 ~ THEN BEGIN XA_FlowerTalk
@@ -2381,6 +2400,7 @@ END
 	//{ Dialog B-5
 	CHAIN
 		IF ~
+			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_CorwinSick_Aerie", "GLOBAL", 1)
 			IsValidForPartyDialogue("XACORWIN")
@@ -2409,6 +2429,7 @@ END
 	//{ Dialog B-6
 	CHAIN
 		IF ~
+			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_CorwinSick_Jaheira", "GLOBAL", 1)
 			IsValidForPartyDialogue("XACORWIN")
@@ -2445,6 +2466,7 @@ END
 	//{ Dialog B-7
 	CHAIN
 		IF ~
+			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_CorwinSick_Korgan", "GLOBAL", 1)
 		~
@@ -2466,6 +2488,7 @@ END
 	//{ Dialog B-8
 	CHAIN
 		IF ~
+			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_CorwinSick_Imoen", "GLOBAL", 1)
 			IsValidForPartyDialogue("XACORWIN")
@@ -2496,6 +2519,7 @@ END
 	//{ region Dialog B-9
 	CHAIN
 		IF ~
+			IsGabber("Mazzy")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Mazzy", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Mazzy", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -2538,6 +2562,7 @@ END
 	//{ region Dialog B-10
 	CHAIN
 		IF ~
+			IsGabber("Mazzy")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Mazzy", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Mazzy", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -2630,6 +2655,7 @@ END
 	//{ Dialog B-11
 	CHAIN 
 		IF ~
+			IsGabber("Nalia")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Nalia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Nalia", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -2652,6 +2678,7 @@ END
 	//{ Dialog B-12
 	CHAIN 
 		IF ~
+			IsGabber("Nalia")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Nalia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Nalia", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -2695,6 +2722,7 @@ END
 	//{ Dialog B-13A
 	CHAIN 
 		IF ~
+			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Nalia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Nalia", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -2729,6 +2757,7 @@ END
 	//{ Dialog B-13B
 	CHAIN 
 		IF ~
+			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Nalia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Nalia", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -2763,6 +2792,7 @@ END
 	//{ Dialog B-14
 	CHAIN 
 		IF ~
+			IsGabber("Nalia")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Nalia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Nalia", Global("XA_LC_CorwinBanters", "LOCALS", 2))
@@ -2800,6 +2830,7 @@ END
 	//{ Dialog B-15
 	CHAIN 
 		IF ~
+			IsGabber("Nalia")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Nalia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Nalia", Global("XA_LC_CorwinBanters", "LOCALS", 2))
@@ -2845,6 +2876,7 @@ END
 	//{ Dialog B-16
 	CHAIN 
 		IF ~
+			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -2859,6 +2891,7 @@ END
 	//{ Dialog B-17
 	CHAIN 
 		IF ~
+			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -2903,6 +2936,7 @@ END
 	//{ Dialog B-18
 	CHAIN 
 		IF ~
+			IsGabber("HaerDalis")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -2937,6 +2971,7 @@ END
 	//{ Dialog B-19
 	CHAIN 
 		IF ~
+			IsGabber("HaerDalis")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -2968,6 +3003,7 @@ END
 	//{ Dialog B-20
 	CHAIN 
 		IF ~
+			IsGabber("HaerDalis")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -3002,6 +3038,7 @@ END
 	//{ Dialog B-21
 	CHAIN 
 		IF ~
+			IsGabber("HaerDalis")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -3037,6 +3074,7 @@ END
 	//{ Dialog B-2
 	CHAIN 
 		IF ~
+			IsGabber("Minsc")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Minsc", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Minsc", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -3075,6 +3113,7 @@ END
 	//{ Dialog B-22
 	CHAIN 
 		IF ~
+			IsGabber("Minsc")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Minsc", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Minsc", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -3113,6 +3152,7 @@ END
 	//{ Dialog B-23
 	CHAIN 
 		IF ~
+			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Minsc", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Minsc", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -3153,6 +3193,7 @@ END
 	//{ Dialog B-24
 	CHAIN 
 		IF ~
+			IsGabber("Minsc")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Minsc", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Minsc", Global("XA_LC_CorwinBanters", "LOCALS", 2))
@@ -3200,6 +3241,7 @@ END
 	//{ Dialog B-25
 	CHAIN 
 		IF ~
+			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -3236,6 +3278,7 @@ END
 	//{ Dialog B-26
 	CHAIN 
 		IF ~
+			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -3272,6 +3315,7 @@ END
 	//{ Dialog B-27
 	CHAIN 
 		IF ~
+			IsGabber("Rasaad")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -3322,6 +3366,7 @@ END
 	//{ Dialog B-28
 	CHAIN 
 		IF ~
+			IsGabber("Rasaad")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 2))
@@ -3373,6 +3418,7 @@ END
 	//{ Dialog B-29
 	CHAIN 
 		IF ~
+			IsGabber("Rasaad")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 3))
@@ -3411,6 +3457,7 @@ END
 	//{ Dialog B-30
 	CHAIN 
 		IF ~
+			IsGabber("Rasaad")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 3))
@@ -3457,6 +3504,7 @@ END
 	//{ Dialog B-31
 	CHAIN 
 		IF ~
+			IsGabber("Rasaad")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 3))
@@ -3503,6 +3551,7 @@ END
 	//{ Dialog B-32
 	CHAIN 
 		IF ~
+			IsGabber("Rasaad")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 3))
@@ -3557,6 +3606,7 @@ END
 	//{ Dialog B-33
 	CHAIN 
 		IF ~
+			IsGabber("Rasaad")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 3))
@@ -3608,6 +3658,7 @@ END
 	//{ region Dialog B-34
 	CHAIN 
 		IF ~
+			IsGabber("Yoshimo")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Yoshimo", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Yoshimo", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -3663,6 +3714,7 @@ END
 	//{ Dialog B-35
 	CHAIN
 		IF ~
+			IsGabber("Cernd")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_CorwinCerndBaby", "GLOBAL", 2)
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -3705,6 +3757,7 @@ END
 	//{ Dialog B-36
 	CHAIN
 		IF ~
+			IsGabber("Cernd")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_CorwinCerndBaby", "GLOBAL", 2)
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -3750,6 +3803,7 @@ END
 	//{ Dialog B-37
 	CHAIN
 		IF ~
+			IsGabber("Valygar")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Valygar", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Valygar", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -3790,6 +3844,7 @@ END
 	//{ Dialog B-38
 	CHAIN
 		IF ~
+			IsGabber("Valygar")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Valygar", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Valygar", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -3830,6 +3885,7 @@ END
 	//{ Dialog B-39
 	CHAIN 
 		IF ~
+			IsGabber("Valygar")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_CorwinValygarLavok", "GLOBAL", 1)
 			IsValidForPartyDialogue("Valygar")
@@ -3880,6 +3936,7 @@ END
 	//{ Dialog B-85
 	CHAIN
 		IF ~
+			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_CorwinValygarBG", "GLOBAL", 1)
 			IsValidForPartyDialogue("Valygar")
@@ -3908,6 +3965,7 @@ END
 	//{ Dialog B-40
 	CHAIN
 		IF ~
+			IsGabber("Neera")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Neera", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Neera", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -3944,6 +4002,7 @@ END
 	//{ Dialog B-41
 	CHAIN
 		IF ~
+			IsGabber("Neera")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_CorwinNeeraImoen", "GLOBAL", 1)
 			IsValidForPartyDialogue("Neera")
@@ -3979,6 +4038,7 @@ END
 	//{ Dialog B-42
 	CHAIN
 		IF ~
+			IsGabber("Hexxat")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_CorwinHexxat", "GLOBAL", 3)
 			IsValidForPartyDialogue("Hexxat")
@@ -4021,6 +4081,7 @@ END
 	//{ region Dialog B-43
 	CHAIN
 		IF ~
+			IsGabber("Korgan")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Korgan", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Korgan", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -4059,6 +4120,7 @@ END
 	//{ region Dialog B-44
 	CHAIN
 		IF ~
+			IsGabber("Korgan")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Korgan", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Korgan", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -4091,6 +4153,7 @@ END
 	//{ Dialog B-45
 	CHAIN
 		IF ~
+			IsGabber("Viconia")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Viconia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Viconia", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -4143,6 +4206,7 @@ END
 	//{ Dialog B-46
 	CHAIN
 		IF ~
+			IsGabber("Viconia")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Viconia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Viconia", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -4194,6 +4258,7 @@ END
 	//{ Dialog B-47
 	CHAIN
 		IF ~
+			IsGabber("Viconia")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_Banter_CorwinViconiaDay", "LOCALS", 1)
 			IsValidForPartyDialogue("Viconia")
@@ -4230,6 +4295,7 @@ END
 	//{ Dialog B-48
 	CHAIN
 		IF ~
+			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_Banter_CorwinViconiaCity", "GLOBAL", 1)
 			IsValidForPartyDialogue("XACORWIN")
@@ -4278,6 +4344,7 @@ END
 	//{ Dialog B-49
 	CHAIN
 		IF ~
+			IsGabber("Imoen2")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Imoen2", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Imoen2", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -4336,6 +4403,7 @@ END
 	//{ Dialog B-50
 	CHAIN 
 		IF ~
+			IsGabber("Imoen2")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			Global("XA_LC_CorwinImoenSoulTalk", "GLOBAL", 1)
@@ -4361,6 +4429,7 @@ END
 	//{ Dialog B-51
 	CHAIN 
 		IF ~
+			IsGabber("Imoen2")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			Global("XA_LC_CorwinImoenSoulTalk", "GLOBAL", 1)
@@ -4384,6 +4453,7 @@ END
 	//{ Dialog B-52
 	CHAIN
 		IF ~
+			IsGabber("Imoen2")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Imoen2", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Imoen2", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -4428,6 +4498,7 @@ END
 	//{ Dialog B-53
 	CHAIN
 		IF ~
+			IsGabber("Imoen2")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Imoen2", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Imoen2", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -4475,6 +4546,7 @@ END
 	//{ Dialog B-54
 	CHAIN
 		IF ~
+			IsGabber("Edwin")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_CorwinEdwinThay", "GLOBAL", 1)
 			IsValidForPartyDialogue("Edwin")
@@ -4503,6 +4575,7 @@ END
 	//{ Dialog B-56
 	CHAIN
 		IF ~
+			IsGabber("Edwin")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Edwin", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Edwin", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -4537,6 +4610,7 @@ END
 	//{ Dialog B-57
 	CHAIN
 		IF ~
+			IsGabber("Edwin")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Edwin", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Edwin", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -4573,6 +4647,7 @@ END
 	//{ Dialog B-58
 	CHAIN
 		IF ~
+			IsGabber("Edwin")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Edwin", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Edwin", Global("XA_LC_CorwinBanters", "LOCALS", 2))
@@ -4615,6 +4690,7 @@ END
 	//{ Dialog B-59
 	CHAIN
 		IF ~
+			IsGabber("Jan")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Jan", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Jan", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -4659,6 +4735,7 @@ END
 	//{ Dialog B-60
 	CHAIN
 		IF ~
+			IsGabber("Jan")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Jan", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Jan", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -4694,6 +4771,7 @@ END
 	//{ Dialog B-61
 	CHAIN 
 		IF ~
+			IsGabber("Keldorn")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_CorwinCoverUD", "GLOBAL", 2)
 			IsValidForPartyDialogue("Keldorn")
@@ -4720,6 +4798,7 @@ END
 	//{ Dialog B-62
 	CHAIN
 		IF ~
+			IsGabber("Keldorn")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_Banter_CorwinKeldornOpt1", "GLOBAL", 3)
 			IsValidForPartyDialogue("Keldorn")
@@ -4748,6 +4827,7 @@ END
 	//{ Dialog B-XX
 	CHAIN
 		IF ~
+			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_Banter_CorwinKeldInitial", "GLOBAL", 1)
 			IsValidForPartyDialogue("Keldorn")
@@ -4794,6 +4874,7 @@ END
 	//{ Dialog B-63
 	CHAIN
 		IF ~
+			IsGabber("Keldorn")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Keldorn", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Keldorn", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -4836,6 +4917,7 @@ END
 	//{ Dialog B-64
 	CHAIN
 		IF ~
+			IsGabber("Keldorn")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Keldorn", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Keldorn", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -4888,6 +4970,7 @@ END
 	//{ Dialog B-65
 	CHAIN
 		IF ~
+			IsGabber("Keldorn")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Keldorn", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Keldorn", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -4952,6 +5035,7 @@ END
 	//{ Dialog B-67
 	CHAIN
 		IF ~
+			IsGabber("Anomen")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Anomen", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Anomen", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -5000,6 +5084,7 @@ END
 	//{ Dialog B-68
 	CHAIN
 		IF ~
+			IsGabber("Jaheira")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Jaheira", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Jaheira", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -5035,6 +5120,7 @@ END
 	//{ Dialog B-69
 	CHAIN
 		IF ~
+			IsGabber("Jaheira")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Jaheira", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Jaheira", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -5069,6 +5155,7 @@ END
 	//{ Dialog B-70
 	CHAIN
 		IF ~
+			IsGabber("Jaheira")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Jaheira", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Jaheira", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -5112,6 +5199,7 @@ END
 	//{ Dialog B-71
 	CHAIN
 		IF ~
+			IsGabber("Jaheira")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Jaheira", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Jaheira", Global("XA_LC_CorwinBanters", "LOCALS",2))
@@ -5173,6 +5261,7 @@ END
 	//{ Dialog B-72
 	CHAIN
 		IF ~
+			IsGabber("Aerie")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Aerie", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Aerie", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -5222,6 +5311,7 @@ END
 	//{ Dialog B-74
 	CHAIN
 		IF ~
+			IsGabber("Aerie")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Aerie", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Aerie", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -5286,6 +5376,7 @@ END
 	//{ Dialog B-75
 	CHAIN
 		IF ~
+			IsGabber("Aerie")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Aerie", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Aerie", Global("XA_LC_CorwinBanters", "LOCALS", 2))
@@ -5329,6 +5420,7 @@ END
 	//{ Dialog B-76
 	CHAIN
 		IF ~
+			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Aerie", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Aerie", Global("XA_LC_CorwinBanters", "LOCALS", 3))
@@ -5368,6 +5460,7 @@ END
 	//{ Dialog B-77
 	CHAIN
 		IF ~
+			IsGabber("Aerie")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Aerie", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Aerie", Global("XA_LC_CorwinBanters", "LOCALS",2))
@@ -5409,6 +5502,7 @@ END
 	//{ Dialog B-78
 	CHAIN
 		IF ~
+			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Aerie", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Aerie", Global("XA_LC_CorwinBanters", "LOCALS", 3))
@@ -5451,6 +5545,7 @@ END
 	//{ Dialog B-80
 	CHAIN
 		IF ~
+			IsGabber("Dorn")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Dorn", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Dorn", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -5495,6 +5590,7 @@ END
 	//{ Dialog B-81
 	CHAIN
 		IF ~
+			IsGabber("Dorn")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Dorn", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Dorn", Global("XA_LC_CorwinBanters", "LOCALS",1))
@@ -5535,6 +5631,7 @@ END
 	//{ Dialog B-81A
 	CHAIN
 		IF ~
+			IsGabber("Dorn")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Dorn", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Dorn", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -5574,6 +5671,7 @@ END
 	//{ Dialog B-82
 	CHAIN
 		IF ~
+			IsGabber("Aerie")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsValidForPartyDialogue("Aerie")
 			!IsValidForPartyDialogue("Valygar")
@@ -5603,6 +5701,7 @@ END
 	//{ Dialog B-83
 	CHAIN
 		IF ~
+			IsGabber("Valygar")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			!IsValidForPartyDialogue("Aerie")
 			!IsValidForPartyDialogue("Neera")
@@ -5646,6 +5745,7 @@ END
 	//{ region Dialog B-84
 	CHAIN
 		IF ~
+			IsGabber("Aerie")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsValidForPartyDialogue("Aerie")
 			IsValidForPartyDialogue("Valygar")
@@ -5681,6 +5781,7 @@ END
 	//{ region Dialog B-66
 	CHAIN
 		IF ~
+			IsGabber("Neera")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsValidForPartyDialogue("Neera")
 			!IsValidForPartyDialogue("Valygar")
@@ -5709,6 +5810,7 @@ END
 	//{ region Dialog B-79
 	CHAIN
 		IF ~
+			IsGabber("Neera")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsValidForPartyDialogue("Neera")
 			IsValidForPartyDialogue("Valygar")

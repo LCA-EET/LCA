@@ -52,7 +52,6 @@ END
 		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor012.bcs~ // Can Leave Check
 		
 		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xalccs00.bcs~ // Can Talk - Corwin / Player
-		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xalccs08.bcs~ // Talk to NPCs
 		LAF xa_replace_recompile
 			INT_VAR
 				xa_extendTop = 0

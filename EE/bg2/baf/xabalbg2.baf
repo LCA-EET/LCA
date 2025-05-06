@@ -1,3 +1,17 @@
+IF
+	Joins([ANYONE])
+THEN
+	RESPONSE #100
+		DisplayStringHead(Player1, ~JOINED~)
+END
+
+IF 
+	Leaves([ANYONE])
+THEN
+	RESPONSE #100
+		DisplayStringHead(Player1, ~LEFT~)
+END
+
 //{ Script Reporter
 IF
 	!Global("XA_LC_ActiveScript", "GLOBAL", 3)
