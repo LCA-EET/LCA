@@ -63,6 +63,7 @@
 	
 	IF 
 		InParty("XACORWIN")
+		GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
 		GlobalLT("XA_LC_OnlySleep", "GLOBAL", 1)
 		GlobalLT("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
 		OR(2)

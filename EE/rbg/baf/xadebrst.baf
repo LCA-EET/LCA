@@ -15,5 +15,6 @@ THEN
 		ActionOverride(Player5,Rest())
 		ActionOverride(Player6,Rest())
 		
-		StartDialog("Player1", Myself)
+		SetGlobal("XA_LC_Ready", "MYAREA", 1)
+		EndCutSceneMode()
 END

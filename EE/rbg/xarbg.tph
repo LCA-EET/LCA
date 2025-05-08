@@ -3642,7 +3642,7 @@ SILENT
 			WRITE_LONG 0xA34 xaa12
 			WRITE_LONG 0xA38 xaa13
 		END
-		
+		EXTEND_BOTTOM ~xaas444.bcs~ ~%MOD_FOLDER%/rbg/baf/xaducal2.baf~
 	//}
 	
 	//{ Ducal Palace 3FL ar0110	Post-Kidnap

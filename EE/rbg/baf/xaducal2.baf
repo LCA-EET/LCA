@@ -1,0 +1,7 @@
+IF
+	Global("XA_LC_Ready", "MYAREA", 1)
+	Global("XA_LC_DukesDebriefed", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, StartDialog("Player1", Myself))
+END

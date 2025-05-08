@@ -54,6 +54,8 @@ Copy-Item -Path "G3 Forum Post.url" -Destination $modPath
 Copy-Item -Path "Venmo.url" -Destination $modPath
 Copy-Item -Path "Beamdog Forum Post.url" -Destination $modPath
 Copy-Item -Path "LCA Release Notes.url" -Destination $modPath
+Get-Date -Format "yyyy-MM-dd HH:mm K" > pkgdate.txt
+Copy-Item -Path pkgdate.txt -Destination $modPath
 #Copy-Item -Path "Release Notes.md" -Destination ($basePath + "/Release_Notes_LCA.md")
 #Copy-Item -Path "../User Guide.pdf" -Destination ($basePath + "/User Guide.pdf")
 #Remove-Item -LiteralPath ($testDir + $tp2Name) -Force -Recurse

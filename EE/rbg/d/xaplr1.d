@@ -172,6 +172,7 @@ APPEND ~PLAYER1~
 	IF ~
 		Global("XA_LC_MetIncubus", "GLOBAL", 1)
 		Global("XA_LC_PrisonKnowledge", "GLOBAL", 0)
+		AreaCheck("XAPAINT1")			
 	~ THEN BEGIN XA_PrisonKnowledge_1
 		SAY @122 /* ~(You awaken and find yourself back in the room that the demon created for Lyriel.)~ */
 		
@@ -189,6 +190,7 @@ APPEND ~PLAYER1~
 	IF ~
 		Global("XA_LC_MetIncubus", "GLOBAL", 2)
 		Global("XA_LC_PrisonKnowledge", "GLOBAL", 1)
+		AreaCheck("XAPAINT1")		
 	~ THEN BEGIN XA_PrisonKnowledge_2
 		SAY @125 /* ~(Again, you've been transported back to Lyriel's room.)~ */
 		
@@ -204,6 +206,7 @@ APPEND ~PLAYER1~
 	IF ~
 		Global("XA_LC_MetIncubus", "GLOBAL", 3)
 		Global("XA_LC_PrisonKnowledge", "GLOBAL", 2)
+		AreaCheck("XAPAINT1")		
 	~ THEN BEGIN XA_PrisonKnowledge_3
 		SAY @127 /* ~(The demon has again transported you to Lyriel's room.)~ */
 		
@@ -220,6 +223,7 @@ APPEND ~PLAYER1~
 	
 	IF ~
 		Global("XA_LC_G1_Intro", "GLOBAL", 1)
+		AreaCheck("XAG1")		
 	~ THEN BEGIN XA_G1_Intro
 		SAY @121 /* ~(You come to, and take stock of your surroundings. It would seem that somehow, the demon has recreated the coalition's siege of Dragonspear. The sounds of a raging battle emanate from the courtyard beyond the gate.)~ */
 		
@@ -239,6 +243,7 @@ APPEND ~PLAYER1~
 	END
 	IF ~
 		Global("XA_LC_EnterG1", "GLOBAL", 1)
+		AreaCheck("XAPAINT1")		
 	~ THEN BEGIN XA_EnterG1
 		SAY @118 /*~(As you approach the painting, you feel a force probing your thoughts and memories. The image swirls, then depicts a castle under siege. You recognize it as Dragonspear. Touch the painting?)~*/
 		
@@ -259,6 +264,7 @@ APPEND ~PLAYER1~
 	
 	IF ~
 		Global("XA_LC_G2_Intro", "GLOBAL", 2)
+		AreaCheck("XAG2")
 	~ THEN BEGIN XA_G2_Intro
 		SAY @134
 		= @135
@@ -273,6 +279,7 @@ APPEND ~PLAYER1~
 	
 	IF ~
 		Global("XA_LC_EnterG2", "GLOBAL", 1)
+		AreaCheck("XAPAINT1")		
 	~ THEN BEGIN XA_EnterG2
 		SAY @120 /*~(As you approach the painting, you feel a force probing your thoughts and memories. The image swirls, then depicts a magnificent library. You recognize it as Candlekeep. Touch the painting?)~*/
 		
@@ -293,6 +300,7 @@ APPEND ~PLAYER1~
 	
 	IF ~
 		Global("XA_LC_G3_Intro", "GLOBAL", 2)
+		AreaCheck("XAG3")		
 	~ THEN BEGIN XA_G3_Intro
 		SAY @137 /* ~(You regain consciousness and are greeted with the sight of a loving and familiar countenance...)~ */
 		
@@ -305,6 +313,7 @@ APPEND ~PLAYER1~
 	
 	IF ~
 		Global("XA_LC_EnterG3", "GLOBAL", 1)
+		AreaCheck("XAPAINT1")		
 	~ THEN BEGIN XA_EnterG3
 		SAY @119 /*~(As you approach the painting, you feel a force probing your thoughts and memories. The image swirls, then depicts a magnificent library. You recognize it as Candlekeep. Touch the painting?)~*/
 		

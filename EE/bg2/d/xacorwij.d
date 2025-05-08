@@ -2362,12 +2362,10 @@ END
 IF ~
 	!Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
 	Global("XA_LC_TryToSleep", "GLOBAL", 1)
-	OR(5)
+	GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
+	OR(2)
 		Global("XA_LC_CorwinSex_1", "GLOBAL", 1)
 		Global("XA_LC_CorwinSex_2", "GLOBAL", 1)
-		Global("XA_LC_CorwinSex_3", "GLOBAL", 1)
-		Global("XA_LC_CorwinSex_4", "GLOBAL", 1)
-		Global("XA_LC_CorwinSex_5", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinCantHaveSex
 	SAY @367 /* ~My dear... as much as I'd love to sleep with you...~*/
 	IF ~

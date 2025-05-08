@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+## v1.5.1a 2025-05-07
+* Fixed a bug that could cause the wrong dialog to be initiated during part one of the debriefing cutscene.
+
 ## v1.5.1 2025-05-05
 * Improved banter initiation scripting.
 * Miscellaneous additional improvements.
