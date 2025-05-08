@@ -14,7 +14,7 @@
 * Miscellaneous additional improvements.
 
 ## v1.5a 2025-05-04
-* Fixed a bug that could cause a dialog to fail to initiate when Corwin was in the party, but not in a romance with <CHARNAME>.
+* Fixed a bug that could cause a dialog to fail to initiate when Corwin was in the party, but not in a romance with CHARNAME.
 
 ## v1.5 2025-03-23
 * Fixed a bug in the Winston Venture's bartender dialog.
@@ -126,7 +126,7 @@
 ### v1.1e 2024-04-03
 * Fixed a compatibility issue with the Cost of One Girl's Soul mod that could cause the Djinn to erroneously give two copies of the Soultaker dagger to the protagonist.
 * Resolved a compatibility issue with the Another Fine Hell mod.
-* Fixed a bug in a transition concerning Corwin's departure from the party after <CHARNAME> had turned into a lich.
+* Fixed a bug in a transition concerning Corwin's departure from the party after CHARNAME had turned into a lich.
 
 ### v1.1d 2024-03-20
 * Fixed an intermittent trigger issue when trying to start the Archery Lesson cutscene from the Allied Siege Camp.
@@ -185,7 +185,7 @@
  
 ### v1.0.12b 2023-12-16
 * Minor improvements to the integration with the fourth intimate encounter in the LCA_Explicit mod.
-* Updated Volo's dialog to include mention of <CHARNAME>'s accomplishments during the Dragonspear campaign.  
+* Updated Volo's dialog to include mention of CHARNAME's accomplishments during the Dragonspear campaign.  
 
 ### v1.0.12a 2023-12-10
 * Fixed a bug that could cause Lantanara to spawn repeatedly after giving the player her prophecy.
