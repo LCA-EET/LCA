@@ -18,6 +18,7 @@
 		GlobalTimerExpired("XA_LC_AddLCAAssistantTimer", "GLOBAL")
 		Global("XA_LC_DisableAssistant", "GLOBAL", 0)
 		Global("XA_LC_AddLCAAssistantTimerSet", "GLOBAL", 1)
+		!CheckSpellState(Player1,SHAMANIC_DANCE)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
