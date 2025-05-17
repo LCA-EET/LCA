@@ -1131,7 +1131,7 @@ IF ~~ THEN BEGIN XA_BackToBG4
 END
 
 IF ~~ THEN BEGIN XA_BackToBG4_Romance
-	SAY @670 /* ~The elves were also gracious enough to provide us a caravan for the trip back. Are you ready to leave, love?~ */
+	SAY @671 /* ~The elves were also gracious enough to provide us a caravan for the trip back. Are you ready to leave, love?~ */
 	
 	IF ~~ THEN REPLY @632 /* ~Let's go.~*/
 	GOTO XA_BackToBG_RTL_Leave

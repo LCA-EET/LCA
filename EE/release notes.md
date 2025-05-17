@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+## v1.5.2 2025-05-17
+* Re-incorporated VA-approved audio files.
+
 ## v1.5.1b 2025-05-09
 * Fixed a bug that could cause the LCA Assistant to interrupt a Shamanic Dance.
 
