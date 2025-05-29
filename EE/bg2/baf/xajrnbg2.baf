@@ -225,11 +225,26 @@ END
 //{ Sex 1
 IF 
 	Global("XA_LC_Journal_Sex1", "GLOBAL", 1)
+	Gender(Player1, MALE)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_Journal_Sex1", "GLOBAL", 2)
 		AddJournalEntry(@2, INFO)
+		AddXPObject("XACORWIN",25000)
+		AddXPObject(Player1,25000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	Global("XA_LC_Journal_Sex1", "GLOBAL", 1)
+	Gender(Player1, FEMALE)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Sex1", "GLOBAL", 2)
+		AddJournalEntry(@97, INFO)
 		AddXPObject("XACORWIN",25000)
 		AddXPObject(Player1,25000)
 		SetInterrupt(TRUE)
