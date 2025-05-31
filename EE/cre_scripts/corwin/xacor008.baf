@@ -63,6 +63,9 @@
 	IF
 		Global("XA_LC_Journal_Sex1", "GLOBAL", 2)
 		GlobalLT("XA_LC_AfterSexTalkTimerSet", "LOCALS", 1)
+		OR(2)
+			Gender(Player1, MALE)
+			Global("XA_LC_CorwinSex_1_Penetration", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
@@ -1181,22 +1184,6 @@ END
 			SetInterrupt(TRUE)
 	END
 	//}
-
-	//{ Corwin After Sex Interaction 1
-	IF
-		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
-		Global("XA_LC_CorwinSex_1", "GLOBAL", 3)
-	THEN
-		RESPONSE #100
-			SetInterrupt(FALSE)
-			Wait(1)
-			//Dialog J-44
-			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
-	END
-	//}
-	
-	
 
 	//{ Corwin Sex Second Time
 	IF
