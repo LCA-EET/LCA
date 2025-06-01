@@ -373,7 +373,7 @@ This encounter occurs immediately after CHARNAME’s escape from Avernus.
 
 #### Shadows of Amn Encounter 1
 Pre-requisites:
-- CHARNAME must be in a romance with Corwin, and be male.
+- CHARNAME must be in a romance with Corwin.
 - Corwin must be alive and in CHARNAME’s party.
 - One of the following conditions must be satisfied:
   - A: CHARNAME must have been in a romance with Corwin in SoD.
