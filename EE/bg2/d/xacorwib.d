@@ -4579,7 +4579,7 @@ END
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Edwin", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Edwin", Global("XA_LC_CorwinBanters", "LOCALS", 0))
-			Gender("Edwin",MALE)
+			//Gender("Edwin",MALE)
 			IsValidForPartyDialogue("Edwin")
 		~ THEN XACORWIB BCorwinEdwin1
 			@106 /* ~Edwin, a word, please.~ [XACORB06]*/
