@@ -87,7 +87,7 @@ LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET)
 	<tr>
 		<td>Cowled Menace</td>
 		<td>Yes</td>
-		<td>Before LCA</td>
+		<td>Doesn't Matter</td>
 	</tr>
 	<tr>
 		<td>Enhanced Edition Trilogy (EET) Core</td>
