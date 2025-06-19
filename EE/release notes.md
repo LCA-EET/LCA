@@ -9,7 +9,7 @@
 ## v1.5.4 2025-06-18
 * Re-incorporated VA-approved audio files.
 * Fixed a bug related to Edwin's banters with Corwin, when Edwin was a woman.
-* Added support for the new (2 of 3) F/F intimate encounter introduced in the LCA_Explicit mod.
+* Added support for the second F/F intimate encounter introduced in the LCA_Explicit mod.
 
 ## v1.5.3 2025-06-01
 * Added support for the new (1 of 3) F/F intimate encounter introduced in the LCA_Explicit mod.
