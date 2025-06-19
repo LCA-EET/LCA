@@ -6,13 +6,13 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
-## v1.5.4 Expected Late June 2025
+## v1.5.4 2025-06-18
 * Re-incorporated VA-approved audio files.
 * Fixed a bug related to Edwin's banters with Corwin, when Edwin was a woman.
-* Added support for the new F/F intimate encounter introduced in the LCA_Explicit mod.
+* Added support for the new (2 of 3) F/F intimate encounter introduced in the LCA_Explicit mod.
 
 ## v1.5.3 2025-06-01
-* Added support for the new F/F intimate encounter introduced in the LCA_Explicit mod.
+* Added support for the new (1 of 3) F/F intimate encounter introduced in the LCA_Explicit mod.
 
 ## v1.5.2 2025-05-17
 * Re-incorporated VA-approved audio files.
