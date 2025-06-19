@@ -93,17 +93,17 @@ IF ~~ THEN BEGIN XA_TentCS_Beautiful
 	GOTO XA_Deserters
 	
 	IF ~
-		GlobalLT("CorwinRomanceActive", "GLOBAL", 2)
+		GlobalLT("bd_corwin_romanceactive", "GLOBAL", 2)
 	~ THEN REPLY @19 /* ~Are you single, by any chance?~ */
 	GOTO XA_Single
 	
 	IF ~
-		GlobalLT("CorwinRomanceActive", "GLOBAL", 2)
+		GlobalLT("bd_corwin_romanceactive", "GLOBAL", 2)
 	~ THEN REPLY @16 /* ~Why don't you take a break from those papers and join me in bed, Captain.~*/
 	GOTO XA_TakeBreak
 	
 	IF ~
-		Global("CorwinRomanceActive", "GLOBAL", 2)
+		Global("bd_corwin_romanceactive", "GLOBAL", 2)
 	~ THEN REPLY @30 /* ~Why don't you take a break from those papers and join me in bed, Schael.~*/
 	GOTO XA_Single3
 END
@@ -303,17 +303,17 @@ IF ~~ THEN BEGIN XA_Deserters_End
 	GOTO XA_TentCS_END
 	
 	IF ~
-		GlobalLT("CorwinRomanceActive", "GLOBAL", 2)
+		GlobalLT("bd_corwin_romanceactive", "GLOBAL", 2)
 	~ THEN REPLY @19 /* ~Are you single, by any chance?~ */
 	GOTO XA_Single
 	
 	IF ~
-		GlobalLT("CorwinRomanceActive", "GLOBAL", 2)
+		GlobalLT("bd_corwin_romanceactive", "GLOBAL", 2)
 	~ THEN REPLY @16 /* ~Why don't you take a break from those papers and join me in bed, Captain.~*/
 	GOTO XA_TakeBreak
 	
 	IF ~
-		Global("CorwinRomanceActive", "GLOBAL", 2)
+		Global("bd_corwin_romanceactive", "GLOBAL", 2)
 	~ THEN REPLY @30 /* ~Why don't you take a break from those papers and join me in bed, Schael.~*/
 	GOTO XA_Single3
 END
