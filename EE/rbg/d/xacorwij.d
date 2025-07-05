@@ -1477,12 +1477,21 @@ APPEND XACORWIJ
 		
 		IF ~~ THEN REPLY @926 /* ~I'm just about settled in.~*/
 		GOTO XA_CorwinDinner_Romance3A
+		
+		IF ~~ THEN REPLY @1897 /*~It's a bit boring, compared to adventuring... mind-numbingly boring, actually.~ */
+		GOTO XA_CorwinDinner_Romance4
+		
+		IF ~~ THEN REPLY @1898 /* ~The palace life is for me. Servants at my beckon call, great food, and luxurious amenities everywhere... it's hard to believe that only some weeks ago we were sleeping in a cave in the Underdark.~*/
+		GOTO XA_CorwinDinner_Romance4
 	END
 
 	IF ~~ THEN BEGIN XA_CorwinDinner_Romance3A
 		SAY @929 /* ~Just about? It's been three months since you moved in. How long does it take?~ */
 		
 		IF ~~ THEN REPLY @930 /* ~Well.. it's a bit lonely, to be honest. It won't feel like home until the three of you move in.~ */
+		GOTO XA_CorwinDinner_Romance4
+		
+		IF ~~ THEN REPLY @1906 /* ~It's an adjustment, that's all. Ever since I left Candlekeep, I haven't been in one place for very long. Plus, it doesn't feel like home since you're there with me.~ */
 		GOTO XA_CorwinDinner_Romance4
 	END
 
@@ -1491,6 +1500,9 @@ APPEND XACORWIJ
 		
 		IF ~~ THEN REPLY @931 /* ~Would that I could say the same about your father.~*/
 		GOTO XA_CorwinDinner_Romance5
+		
+		IF ~~ THEN REPLY @1900/* ~I agree... she's shown a lot of maturity about the situation, considering her age.~*/
+		GOTO XA_RohmaWantsHappinessForMommy
 	END
 
 	IF ~~ THEN BEGIN XA_CorwinDinner_Romance5
@@ -1498,12 +1510,18 @@ APPEND XACORWIJ
 		
 		IF ~~ THEN REPLY @933 /* ~You think so?~*/
 		GOTO XA_CorwinDinner_Romance6
+		
+		IF ~~ THEN REPLY @1901 /* ~If you say so. I'm sure he still has some doubts.~*/
+		GOTO XA_AudamarDoubts
 	END
 
 	IF ~~ THEN BEGIN XA_CorwinDinner_Romance6
 		SAY @934 /* ~I do. He told me that he liked your speech the other day at the Hall of Wonders, about your experience in Amn.~ */
 		
 		IF ~~ THEN REPLY @935 /* ~Oh, really? I'm glad. ~ */
+		GOTO XA_CorwinDinner_Romance7
+		
+		IF ~~ THEN REPLY @1905 /* ~He better have liked it. I spent a lot of time preparing that speech, you know. It's funny... I've slain dragons and beholders without blinking an eye, but public speaking still has me weak in the knees.~*/
 		GOTO XA_CorwinDinner_Romance7
 	END
 
@@ -1591,7 +1609,13 @@ APPEND XACORWIJ
 	IF ~~ THEN BEGIN XA_CorwinDinner_NonRomance3
 		SAY @943 /*~So, my friend. Tell me - how's life in the Ducal palace?~*/
 		
+		IF ~~ THEN REPLY @1897 /* ~Compared to adventuring? It's a bit boring... mind-numbingly boring, actually.~*/
+		GOTO XA_CorwinDinner_NonRomance6
+		
 		IF ~~ THEN REPLY @945 /* ~I'm just about settled in... it's just a big difference than what I'm used to.~ */
+		GOTO XA_CorwinDinner_NonRomance6
+		
+		IF ~~ THEN REPLY @1898 /* ~It's great... servants at my beck and call, great food, and luxurious amenities everywhere. It's hard to believe that only some weeks ago we were sleeping in a cave in the Underdark.~*/
 		GOTO XA_CorwinDinner_NonRomance6
 		
 		IF ~
@@ -3761,7 +3785,19 @@ APPEND XACORWIJ
 	END
 END
 
+IF ~~ THEN BEGIN XA_AudamarDoubts
+	SAY @1902/* ~Perhaps... I'm sure he's influenced by my track record when it comes to relationships. Give it time. He'll see the kind of <PRO_MANWOMAN> you are, and how you've won my heart.~ */
+	
+	IF ~~ THEN 
+	GOTO XA_CorwinDinner_Romance7
+END
 
+IF ~~ THEN BEGIN XA_RohmaWantsHappinessForMommy
+	SAY @1903 /* ~She wants me to be happy, and she's a sharp kid...~ [xalc7115]*/
+	
+	IF ~~ THEN REPLY @1904 /* ~Your father, in contrast...~*/
+	GOTO XA_CorwinDinner_Romance5
+END
 
 //{ Chains
 CHAIN XACORWIJ XA_MagdaChain
