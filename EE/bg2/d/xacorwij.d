@@ -1999,13 +1999,6 @@ IF ~~ THEN BEGIN XAA60A
 	
 	IF ~
 		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
-		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN
-	GOTO XAA62B
-	
-	IF ~
-		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN
 	GOTO XAA61B
 END
@@ -2063,7 +2056,7 @@ IF ~~ THEN BEGIN XAA61A
 END
 
 IF ~~ THEN BEGIN XAA61B
-	SAY @1629 /*~We better let Marshal Nederlok know what happened here. Let's go, love.~*/
+	SAY @1630 /*We better let Marshal Nederlok know what happened here. He'll be in his office back at headquarters. Let's go.*/
 	
 	IF ~~ THEN
 	DO ~
@@ -2076,7 +2069,9 @@ IF ~~ THEN BEGIN XAA62
 	
 	= @212 /* ~(She calms down.)~ */
 	
-	IF ~~ THEN 
+	IF ~
+		!Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+	~ THEN 
 	GOTO XAA62A
 	
 	IF ~

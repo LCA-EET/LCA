@@ -161,7 +161,7 @@
 @250=~(She nods in your direction.)~
 @251=~My <PRO_MANWOMAN>'s got me covered.~
 @252=~(A fleeting smile graces her face.)~
-@253=~Let's just get out of this hole and forget that it ever happened.~ [xalc1255]
+@253=~Let's just get out of this hole and forget that it ever happened.~ [xalc8249]
 @254=~That's enough, all of you. You there!~
 @255=~(She takes a moment to regain her composure.)~
 @256=~(He points at Corwin.)~
@@ -519,7 +519,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @666=~I will remain here for a time and help the elves repair the damage to the Tree of Life. Good-bye and safe travels, friends.~
 @667=~I will remain here for a time and help the elves repair the damage to the Tree of Life, then, I will return home to raise my son. Good-bye and safe travels, friends.~
 @668=~Yes my friend, I will return with you. I am interested to see what progress has been made in dealing with the refugee crisis. My help may still be needed.~
-@670=~The elves were also gracious enough to provide us a caravan for the trip back. Are you ready to leave, dear?~ [xalc1324]
+@670=~~
 @671=~The elves were also gracious enough to provide us a caravan for the trip back. Are you ready to leave?~ [xalc8191]
 @672=~<CHARNAME> — Take a few minutes to gather your belongings. Come and talk to me when you're ready to leave.~
 @674=~Thank you, sir.~
@@ -932,7 +932,7 @@ Schael has asked that I get us a room at one of the inns in Amn. I can hardly co
 @1147=~What is killing him again going to solve?~
 @1148=~Wait!~
 @1149=~Do your worst.~
-@1150=~What is it?~ [xalc1088]
+@1150=~What is it?~ [xalc8311]
 @1151=~Never mind — do your worst.~
 @1152=~Rohma... thank Tymora that Glint got her out in time.~
 @1154=~I have the Soultaker dagger. I'll do the deed. It's the only way you'll be free of him for good.~
@@ -1036,7 +1036,7 @@ Corwin has arrested Beno Famari for kidnapping and attempted murder. Hopefully, 
 @1262=~Thank you, sir.~ [xalc7091]
 @1263=~Glint, do you think you can sneak Rohma out of there?~
 @1265=~Schael — I really appreciate you doing this. I know it's not easy for you to be away from your family.~
-@1266=~It never is, but... you heard Nederlok, and the Dukes. The success of this mission is essential to the safety of this city. And that includes Rohma, and my father.~
+@1266=~It never is, but... you heard Nederlok, and the Council. The success of this mission is essential to the safety of this city. And that includes both Rohma and my father.~
 @1267=~Plus, I'd drive myself crazy if I had to stay here while the <PRO_MANWOMAN> I love was out risking <PRO_HISHER> life in some faraway land.~
 @1268=~I imagine that's how Rohma and your father feel about you.~
 @1269=~I know... it's definitely not easy for them, either.~
@@ -1058,9 +1058,9 @@ Corwin has arrested Beno Famari for kidnapping and attempted murder. Hopefully, 
 @1287=~This is going to be dangerous. You might get hurt, or worse.~
 @1288=~Really? I thought you might be upset.~
 @1290=~It is, but... it's worth the risk.~
-@1291=~You heard Nederlok, and the Dukes. The success of this mission is essential to the safety of this city. And that includes Rohma, and my father.~
-@1292=~And I need you. I'd drive myself crazy if I had to stay here while the <PRO_MANWOMAN> I love was out risking <PRO_HISHER> life in some faraway land.~
-@1293=~And all of us here rely on you. I'd drive myself crazy if I had to stay here while the hero of Baldur's Gate was in some faraway land, risking <PRO_HIMHER>self to protect us.~
+@1291=~You heard Nederlok, and the Council. The success of this mission is essential to the safety of this city. And that includes both Rohma and my father.~
+@1292=~And I need you. I'd drive myself crazy if I had to stay here while the <PRO_MANWOMAN> I love was out risking their life in some faraway land.~
+@1293=~And all of us here rely on you. I'd drive myself crazy if I had to stay here while the hero of Baldur's Gate was in some faraway land, risking <PRO_HISHER> life to protect us.~
 @1294=~And for that thing that ah.. we won't talk about.~
 @1295=~Better do what she says, lady. Trust me.~
 @1296=~Forgive me, Nalia.~
@@ -1117,7 +1117,7 @@ Captain Corwin shared with me the story of how she was arrested in the Hall of W
 @1368=~Ah, good. And who're you? I don't believe we've met.~
 @1369=~Curator Magda, allow me to introduce you to <CHARNAME>, the hero of Baldur's Gate.~
 @1370=~We're not paying for stolen merchandise, gnome. Hand it over, or I'll have you arrested.~
-@1371=~Not so fast. You're under arrest, for grand larceny.~
+@1371=~Not so fast. You're under arrest, on the charge of grand larceny.~
 @1372=~If you arrest him, you'll have to arrest me too, love. Let him go.~
 @1373=~For many years... enough time to watch the Captain here grow from a rapscallious child into the fine young woman she is today.~
 @1374=~(She blushes.)~
@@ -1143,11 +1143,11 @@ Captain Corwin shared with me the story of how she was arrested in the Hall of W
 @1399=~Of course, sir. Also, while in Athkatla, we encountered the fugitive Neb. I'm pleased to inform you that he's been brought to justice.~ [xalc8283]
 @1400=~It'll be ready in the morning, sir.~
 @1402=~<CHARNAME>, Captain, I'm so sorry about thi—~
-@1403=~While in Athkatla, we located the fugitive, Neb. I'm pleased to inform you that he's been brought to justice.~
+@1403=~While in Athkatla, we encountered the fugitive, Neb. I'm pleased to inform you that he's been brought to justice.~ [xalc8313]
 @1406=~That was wonderful, Captain. Thank you for sharing your experience with us today.~
 @1407=~Children? Do you have any questions for Captain Corwin?~
 @1408=~Who's the guy standing next to you?~
-@1409=~This is <CHARNAME>, hero of Baldur's Gate and the Sword Coast!~
+@1409=~This is <CHARNAME>, hero of Baldur's Gate and the champion of the Sword Coast!~
 @1410=~Ah, yes Hans, go ahead.~
 @1411=~He's gracefully agreed to share with you some words of encouragement.~
 @1412=~She's gracefully agreed to share with you some words of encouragement.~
@@ -1300,8 +1300,8 @@ Major Corwin offered me some valuable parenting advice, which I gladly accepted.
 @1598=~How do you think your father will take the news? And Rohma?~
 @1599=~Rohma will be thrilled, and I know she'll be a wonderful big sister to our baby. As for my father ... he'll be happy to have another grandchild, certainly, but he's going to have some stern words for me when I get back.~
 @1600=~What do you suggest we do, love?~
-@1603=~To be honest, I've never given much thought as to what people would say about us, and what we've accomplished. What's certain is that <CHARNAME> is the only hero here, Volo. I doubt people would be interested in my story.~
-@1604=~To be honest, I've never given much thought as to what people would say about us, and what we've accomplished. Or, for that matter, the love we share. What's certain is that <CHARNAME> is the only hero here, Volo. I doubt people would be interested in my story.~
+@1603=~To be honest, I've never given much thought as to what people would say about us, and what we've accomplished.~
+@1604=~To be honest, I've never given much thought as to what people would say about us, and what we've accomplished. Or, for that matter, the love we share.~
 @1605=~Love must dare to risk. Otherwise, it isn't love at all.~
 @1606=~R-Rohma!? How — come here! Honey, that man is dangerous!~
 @1607=~Mommy, why didn't you come home? Why weren't you there to protect us?~
@@ -1323,10 +1323,10 @@ Major Corwin offered me some valuable parenting advice, which I gladly accepted.
 @1623=~Are you alright?~
 @1624=~I don't approve of this, but I think there's more to this woman than meets the eye. Go with her, and watch your back.~
 @1625=~You know I don't approve of this... but there's something about her. She may have some important information that she'll only disclose in private. Go with her, but watch your back.~
-@1626=~Illasera's dead. <CHARNAME> and I saw to that after she kidnapped my daughter.~
+@1626=~Illasera's dead. We saw to that after she kidnapped my daughter.~
 @1627=~Something's not right here.~ [xalc7018]
 @1628=~She is... and neither I, nor the Dukes, nor the Flaming Fist will allow the Five to threaten Baldur's Gate or its citizens again.~
-@1629=~We better let Marshal Nederlok know what happened here. He'll be in his office back at headquarters. Let's go, love.~
+@1629=~~
 @1630=~We better let Marshal Nederlok know what happened here. He'll be in his office back at headquarters. Let's go.~
 @1631=~I won't be party to this madness any longer. If you ever clean up your act, you can find me in the Athkatla magistrate.~ [xalc8296]
 @1632=~She's right. If we can find a way to turn him, he may prove a valuable ally.~
@@ -1335,7 +1335,7 @@ Major Corwin offered me some valuable parenting advice, which I gladly accepted.
 @1635=~Soon, Captain.~
 @1636=~Soon, love.~
 @1637=~Lead the way.~
-@1638=~You've been saying that for the last four hours. Either come with me now, or I'll see you tomorrow during the debriefing.~
+@1638=~You've been saying that for the last four hours. Either come with me now, or I'll see you tomorrow at the debriefing.~
 @1639=~See you tomorrow, then.~
 @1640=~Mmm...~
 @1641=~How are you feeling, love?~
@@ -1421,7 +1421,7 @@ Major Corwin offered me some valuable parenting advice, which I gladly accepted.
 @1728=~...~
 @1729=~I, um... I don't know anything about that.~
 @1751=~(She gives you a kiss on the cheek.)~
-@1752=~Let's go.~ [xalc1188]
+@1752=~Let's go.~ [xalc8312]
 @1754=~I thought I'd *sob* lost you...~
 @1755=~(She lays her head down on your chest, and you hold her tenderly in your arms. In moments, she finally loses her composure and begins to weep in earnest.)~
 @1756=~Good. Let's deal with Chremy, then get those two kids out of here.~
@@ -1540,7 +1540,7 @@ Captain Corwin has identified some stolen merchandise that once belonged to Bald
 @1869=~Not too many... certainly no one as amazing as you, Schael.~
 @1870=~Wow.. I mean.. thank you. I appreciate that. I'm honored to have been your first.~
 @1871=~Heh, you're right. I was only joking... though none of my prior lovers could compare to you, dear.~
-@1872=~<CHARNAME>. How are you?~
+@1872=~<CHARNAME>. How are you?~ [xalc7116]
 @1873=~I'm fine, Schael. And you? How is the day treating you?~
 @1874=~Better, now that I'm talking to you. How are you?~
 @1875=~You know... I haven't stopped thinking about how you made love to me.~
@@ -1554,7 +1554,7 @@ Captain Corwin has identified some stolen merchandise that once belonged to Bald
 @1883=~You'll find that I'm full of surprises.~
 @1884=~I just can't believe that someone with so little experience could... I mean... for that long, and to make me... gods! Four times!~
 @1885=~The Candlekeep library has books on nearly every subject you can imagine, including one on the secrets to extraordinary lovemaking. I probably read that one a half-dozen times.~
-@1886=~Hah! You'll need to show me everything that you've learned!~
+@1886=~Hah! You'll need to show me everything you've learned!~
 @1887=~I think it was more than four, my dear.~
 @1888=~You know, you might be right. In any case, I've never experienced anything like it.~
 @1890=~I see things the same way. What we have is far more than simple physical attraction. It's love. And I couldn't be happier about it.~
@@ -1566,11 +1566,12 @@ Captain Corwin has identified some stolen merchandise that once belonged to Bald
 @1896=~Is it really so hard to believe? Growing up in Candlekeep, there were hardly any men or women my age, and even less privacy. Then, after Sarevok, I couldn't step out of the palace without being mobbed by the citizens. I never had an opportunity to develop a relationship with someone special... someone like you.~
 @1897=~It's a bit boring, compared to adventuring... mind-numbingly boring, actually.~
 @1898=~The palace life is for me. Servants at my beck and call, great food and drink, luxurious amenities everywhere... it's hard to believe that only some weeks ago we were sleeping in a cave in the Underdark.~
-@1899=~You know, you've been great with Rohma. She's adjusted well to our being together, I think.~
+@1899=~You know... you've been great with Rohma. She's adjusted well to our being together, I think.~
 @1900=~I agree... she's shown a lot of maturity, considering her age.~
 @1901=~If you say so. I'm sure he still has some doubts.~
-@1902=~Perhaps... after Beno and Tianna, I'm sure he doesn't want to see Rohma and I hurt again. Give it time. He'll see the kind of <PRO_MANWOMAN> you are, and how you've won my heart.~ 
+@1902=~After Beno and Tianna, I'm sure he doesn't want to see Rohma and I hurt again. Give it time. He'll see the kind of person you are, and how you've won my heart.~ 
 @1903=~She wants me to be happy, and she's a sharp kid.~ [xalc7115]
 @1904=~Your father, in contrast...~
 @1905=~He better have liked it. I spent a lot of time preparing that speech, you know. It's funny... I've slain dragons and beholders without batting an eye, but public speaking still has me weak in the knees.~
 @1906=~It's an adjustment, that's all. Ever since I left Candlekeep, I haven't been in one place for very long. Plus, it doesn't feel like home since you're there with me.~
+@1907=~What's certain is that <CHARNAME> is the only hero here, Volo. I doubt people would be interested in my story.~
