@@ -3615,6 +3615,7 @@ IF ~~ THEN BEGIN XA_CorwinIrenicusStart
 	
 	IF ~~ THEN
 	DO ~
+		SetGlobal("XA_LC_SchaelBound", "GLOBAL", 1)
 		StartCutSceneMode()
 		StartCutScene("XA41CS01")
 	~
