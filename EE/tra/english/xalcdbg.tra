@@ -43,11 +43,7 @@
 @2056=~Exit.~
 @2057=~How can I help you?~
 @2061=~Spawn Target Dummy~
-@2062=~~
 @2063=~Please visit https://fosiemods.net/support if you'd like to make a monetary contribution. Thank you for your generosity.~
-@2067=~Return to the prior menu.~
-@2068=~~
-@2069=~~
 @2070=~Save Game to Slot 0.~
 @2071=~Give six boots of speed.~
 @2072=~Baldur.bcs (BG1) is active.~
@@ -292,7 +288,6 @@
 @5169=~ActionOverride("XACORWIN", SetGlobal("XA_LC_WealthTalk", "LOCALS", 1))~
 @5170=~ActionOverride("XACORWIN", SetGlobal("XA_LC_AfterSexTalk", "LOCALS", 1))~
 @5171=~xaflower~
-
 @6000=~Return to Baldur's Gate Debug~
 @6001=~Item Test~
 @6003=~Engagement Rings (Unenchanted)~
@@ -410,8 +405,6 @@
 @6130=~Create History of Shadowdale Volumes~
 @6131=~Debriefing (XADEBREF)~
 @6132=~xabook0~
-
-
 @7000=~ToB Debug~
 @7001=~XAG104 (BD5300) - Kanaglym~
 @7002=~Spawn Caelar (XACAELAR) and add her to the party.~
