@@ -346,6 +346,7 @@ APPEND PPIRENI2
 		IF ~~ THEN
 		DO ~
 			SetGlobal("XA_LC_CorwinIrenicus", "GLOBAL", 3)
+			SetGlobal("XA_LC_SchaelBound", "GLOBAL", 1)
 		~
 		GOTO XA_CorwinIrenicus_Sleep2A
 		
