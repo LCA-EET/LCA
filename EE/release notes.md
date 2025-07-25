@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+## v1.5.5 2025-07-24
+* Re-incorporated VA-approved audio files.
+
 ## v1.5.4 2025-06-18
 * Re-incorporated VA-approved audio files.
 * Fixed a bug related to Edwin's banters with Corwin, when Edwin was a woman.
