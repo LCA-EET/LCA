@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+## v1.5.5a 2025-07-26
+* Fixed a compilation issue involving xacorwij.d.
+
 ## v1.5.5 2025-07-24
 * Re-incorporated VA-approved audio files.
 

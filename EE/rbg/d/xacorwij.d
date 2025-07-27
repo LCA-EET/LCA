@@ -3783,22 +3783,21 @@ APPEND XACORWIJ
 		~
 		EXIT
 	END
-END
 
-IF ~~ THEN BEGIN XA_AudamarDoubts
-	SAY @1902/* ~Perhaps... I'm sure he's influenced by my track record when it comes to relationships. Give it time. He'll see the kind of <PRO_MANWOMAN> you are, and how you've won my heart.~ */
-	
-	IF ~~ THEN 
-	GOTO XA_CorwinDinner_Romance7
-END
+	IF ~~ THEN BEGIN XA_AudamarDoubts
+		SAY @1902/* ~Perhaps... I'm sure he's influenced by my track record when it comes to relationships. Give it time. He'll see the kind of <PRO_MANWOMAN> you are, and how you've won my heart.~ */
+		
+		IF ~~ THEN 
+		GOTO XA_CorwinDinner_Romance7
+	END
 
-IF ~~ THEN BEGIN XA_RohmaWantsHappinessForMommy
-	SAY @1903 /* ~She wants me to be happy, and she's a sharp kid...~ [xalc7115]*/
-	
-	IF ~~ THEN REPLY @1904 /* ~Your father, in contrast...~*/
-	GOTO XA_CorwinDinner_Romance5
+	IF ~~ THEN BEGIN XA_RohmaWantsHappinessForMommy
+		SAY @1903 /* ~She wants me to be happy, and she's a sharp kid...~ [xalc7115]*/
+		
+		IF ~~ THEN REPLY @1904 /* ~Your father, in contrast...~*/
+		GOTO XA_CorwinDinner_Romance5
+	END
 END
-
 //{ Chains
 CHAIN XACORWIJ XA_MagdaChain
 	@1364 /* ~Curator Magda! It's good to see you, too.~*/
