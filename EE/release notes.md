@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+## v1.5.5b 2025-09-08
+* Improved handling of certain edge cases involving the triggering of the Duke debriefing.
+
 ## v1.5.5a 2025-07-26
 * Fixed a compilation issue involving xacorwij.d.
 

@@ -22,7 +22,9 @@ IF
 	Global("XA_LC_DukeDebrief_BenceSpawn", "GLOBAL", 1)
 	GlobalLT("XA_LC_DukesFullyDebriefed", "GLOBAL", 1)
 	GlobalLT("XA_LC_BenceLocalSpawn", "MYAREA", 1)
-	Global("XA_LC_CorwinMetFamily", "GLOBAL", 2)
+	OR(2)
+		Global("XA_LC_CorwinMetFamily", "GLOBAL", 2)
+		Global("XA_LC_CorwinWithFamily", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_BenceLocalSpawn", "MYAREA", 1)

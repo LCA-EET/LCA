@@ -292,8 +292,10 @@ END
 			Global("XA_LC_DukeDebriefTimerTick", "GLOBAL", 1)
 			GlobalGT("XA_LC_DukeDebriefTimer_Hours", "GLOBAL", 23)
 			GlobalLT("XA_LC_DukesDebriefed", "GLOBAL", 1)
-			Global("XA_LC_CorwinMetFamily", "GLOBAL", 2)
 			Global("XA_LC_HaltRBGTimers", "GLOBAL", 0)
+			OR(2)
+				Global("XA_LC_CorwinMetFamily", "GLOBAL", 2)
+				Global("XA_LC_CorwinWithFamily", "GLOBAL", 1)
 		THEN
 			RESPONSE #100
 				SetGlobal("XA_LC_DukeDebriefTimerTick", "GLOBAL", 2)
