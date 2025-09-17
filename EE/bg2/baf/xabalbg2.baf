@@ -281,11 +281,10 @@ END
 		Global("XA_LC_CorwinSex_1", "GLOBAL", 4)
 		GlobalLT("XA_LC_CorwinSexNoSleepTimerSet", "GLOBAL", 1)
 		!AreaCheck("XAEXPL01")
-		Gender(Player1, MALE)
 	THEN
 		RESPONSE #100	
 			SetInterrupt(FALSE)
-			SetGlobalTimer("XA_LC_CorwinSexNoSleepTimer", "GLOBAL", ONE_ROUND)
+			SetGlobalTimer("XA_LC_CorwinSexNoSleepTimer", "GLOBAL", THREE_ROUNDS)
 			SetGlobal("XA_LC_CorwinSexNoSleepTimerSet", "GLOBAL", 1)
 			SetInterrupt(TRUE)
 			Continue()

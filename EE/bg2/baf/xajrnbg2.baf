@@ -233,6 +233,7 @@ THEN
 		AddJournalEntry(@2, INFO)
 		AddXPObject("XACORWIN",25000)
 		AddXPObject(Player1,25000)
+		ActionOverride("XACORWIN", SetDialog("XACORWIJ"))
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -247,6 +248,7 @@ THEN
 		AddJournalEntry(@97, INFO)
 		AddXPObject("XACORWIN",25000)
 		AddXPObject(Player1,25000)
+		ActionOverride("XACORWIN", SetDialog("XACORWIJ"))
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -263,6 +265,7 @@ THEN
 		AddJournalEntry(@3, INFO)
 		AddXPObject("XACORWIN",50000)
 		AddXPObject(Player1,50000)
+		ActionOverride("XACORWIN", SetDialog("XACORWIJ"))
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -275,6 +278,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_Journal_Sex2", "GLOBAL", 0)
 		AddJournalEntry(@93, INFO)
+		ActionOverride("XACORWIN", SetDialog("XACORWIJ"))
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -290,6 +294,7 @@ THEN
 		AddJournalEntry(@4, INFO)
 		AddXPObject("XACORWIN",100000)
 		AddXPObject(Player1,100000)
+		ActionOverride("XACORWIN", SetDialog("XACORWIJ"))
 		SetInterrupt(TRUE)
 		Continue()
 END

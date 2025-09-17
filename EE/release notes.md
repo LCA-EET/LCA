@@ -6,6 +6,10 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+## v1.5.5c 2025-09-17
+* Fixed a bug that caused one of the intimate encounters to fail to trigger when <CHARNAME> is female.
+* Miscellaneous improvements.
+
 ## v1.5.5b 2025-09-08
 * Improved handling of certain edge cases involving the triggering of the Duke debriefing.
 
