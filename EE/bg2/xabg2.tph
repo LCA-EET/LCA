@@ -676,6 +676,7 @@ OUTER_SET bg2_carryover = 1
 		WRITE_LONG 0xC RESOLVE_STR_REF(@3057)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3154)
 		WRITE_ASCII 0x1AE ~xacorwin~ #8
+		WRITE_ASCII 0x1DE ~xacorbow~ #8 // Update Entangle proc
 		WRITE_SHORT 0x80 109 // Set range to 105
 		WRITE_BYTE 0x84 5 // Lower Speed from 6 to 5
 		WRITE_SHORT 0x86 3 // Increase to-hit bonus from 2 to 3
@@ -781,6 +782,8 @@ OUTER_SET bg2_carryover = 1
 	
 	COPY ~%MOD_FOLDER%/bg2/spl/xagameov.spl~ ~override~
 	WRITE_LONG 0x08 RESOLVE_STR_REF(@3170)
+	
+	COPY ~%MOD_FOLDER%/bg2/spl/xacorbow.spl~ ~override~
 	
 	COPY ~%MOD_FOLDER%/bg2/spl/xacorbo3.spl~ ~override~
 	COPY ~%MOD_FOLDER%/bg2/spl/xahide.spl~ ~override~
