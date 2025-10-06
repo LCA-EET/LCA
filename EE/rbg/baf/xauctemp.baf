@@ -54,8 +54,10 @@ IF
 	!ActuallyInCombat()
 THEN
 	RESPONSE #100
-		CreateCreature("XABENO2", [760.630], SE)
 		SetGlobal("XA_LC_IllaseraDead", "GLOBAL", 1)
+		CreateCreature("XABENO2", [760.630], SE)
+		PlaySong(1001)
+		SmallWait(5)
 		ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
 END
 

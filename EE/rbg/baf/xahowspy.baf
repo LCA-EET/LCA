@@ -3,6 +3,7 @@ IF
 	See("XACORWIN")
 THEN
 	RESPONSE #100
+		PlaySong(1003)
 		SetGlobal("XA_LC_CorwinArrest", "GLOBAL", 1)
 END
 

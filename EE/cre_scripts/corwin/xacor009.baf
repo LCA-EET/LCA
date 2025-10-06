@@ -116,8 +116,12 @@
 		Global("XA_LC_CorwinLeaveForFamily", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			//Dialogs J-19, J-20
+			//Dialogs R-28
+			SetInterrupt(FALSE)
+			PlaySong(1003)
+			SmallWait(5)
 			StartDialog("XACORWIJ", Player1)
+			SetInterrupt(TRUE)
 	END
 	//}
 	
@@ -132,7 +136,6 @@
 	THEN
 		RESPONSE #100
 			//Dialog J-18
-			
 			SetGlobal("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 2)
 			StartDialog("XACORWIJ", Player1)
 	END
@@ -145,6 +148,7 @@
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
+			PlaySong(1009)
 			Wait(1)
 			//Dialog J-15
 			StartDialog("XACORWIJ", Player1)
@@ -162,7 +166,7 @@
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			PlaySong(1002)
+			PlaySong(1003)
 			SetGlobal("XA_LC_XACS15Cutscene", "GLOBAL", 6)
 			//Dialog J-17
 			StartDialog("XACORWIJ", Player1)

@@ -1,4 +1,4 @@
-//{ Request Corwin ToB
+//{ Request Corwin ToB R-24
 	IF
 		Global("XA_LC_BGEND3", "GLOBAL", 1)
 		Global("XA_LC_DidNotRequestCorwin", "GLOBAL", 1)
@@ -8,7 +8,9 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinTalk", "MYAREA", 1)
-			Wait(3)
+			Wait(2)
+			PlaySong(1001)
+			Wait(1)
 			//Dialog J-2
 			ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
 	END
@@ -22,8 +24,9 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinTalk", "MYAREA", 1)
-			Wait(3)
+			Wait(2)
 			PlaySong(1001)
+			Wait(1)
 			//Dialog J-2
 			ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
 	END
@@ -36,7 +39,9 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinTalk", "MYAREA", 1)
-			Wait(3)
+			Wait(2)
+			PlaySong(1001)
+			Wait(1)
 			//Dialog J-2
 			ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
 	END
@@ -49,8 +54,9 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CorwinTalk", "MYAREA", 1)
-			Wait(3)
+			Wait(2)
 			PlaySong(1001)
+			Wait(1)
 			//Dialog J-2
 			ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
 	END

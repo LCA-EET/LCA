@@ -38,9 +38,12 @@
 			Global("XA_LC_CorwinComplainSarevok", "GLOBAL", 1)
 		THEN
 			RESPONSE #100
+				SetInterrupt(FALSE)
 				SetGlobal("XA_LC_CorwinComplainSarevok", "GLOBAL", 2)
+				PlaySong(1001)
+				SmallWait(5)
 				StartDialog("xacor25j", Player1)
-				Continue()
+				SetInterrupt(TRUE)
 		END
 	//}
 
@@ -83,6 +86,8 @@
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				SetGlobal("XA_LC_RohmaWraith", "GLOBAL", 3)
+				PlaySong(1009)
+				SmallWait(5)
 				StartDialog("xacor25j", Player1)
 				SetInterrupt(TRUE)
 		END
@@ -231,6 +236,8 @@
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				SetGlobal("XA_LC_CorwinBenoSoulTalk", "GLOBAL", 1)
+				PlaySong(1001)
+				SmallWait(5)
 				StartDialog("xacor25j", Player1)
 				SetInterrupt(TRUE)
 		END

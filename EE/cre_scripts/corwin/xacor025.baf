@@ -123,7 +123,8 @@
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			PlaySong(1003)
+			PlaySong(1009)
+			SmallWait(5)
 			StartDialog("xacor25j", Player1)
 			SetInterrupt(TRUE)
 	END
@@ -142,7 +143,8 @@
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 6)
-			PlaySong(1001)
+			PlaySong(1003)
+			SmallWait(5)
 			StartDialog("xacor25j", Player1)
 			SetInterrupt(TRUE)
 	END
@@ -162,6 +164,7 @@
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 8)
 			PlaySong(1001)
+			SmallWait(5)
 			StartDialog("xacor25j", Player1)
 			SetInterrupt(TRUE)
 	END
@@ -187,7 +190,8 @@
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			PlaySong(1003)
+			PlaySong(1001)
+			SmallWait(5)
 			StartDialog("xacor25j", Player1)
 			SetInterrupt(TRUE)
 	END

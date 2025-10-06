@@ -274,7 +274,8 @@
 //}
 
 //{ RBG
-	//{ Dialog R-21 xacorwij 
+/*
+	//{ Dialog R-21 xacorwij / xadebr04
 	IF
 		Global("XA_LC_DukesDebriefed", "GLOBAL", 4)
 		Global("XA_LC_SkieModActive", "GLOBAL", 1)
@@ -286,7 +287,7 @@
 	END
 	//}
 	
-	//{ Dialog R-22 xacorwij 
+	//{ Dialog R-22 xacorwij / xahowspy
 	IF
 		Global("XA_LC_CorwinArrest", "GLOBAL", 1)
 	THEN
@@ -297,7 +298,7 @@
 	END
 	//}
 	
-	//{ Dialog R-23 xacorwij 
+	//{ Dialog R-23 xacorwij / xacor009
 	IF
 		Global("XA_LC_SoDAnxiety", "GLOBAL", 2)
 	THEN
@@ -308,7 +309,7 @@
 	END
 	//}
 	
-	//{ Dialog R-24 xacorwij 
+	//{ Dialog R-24 xacorwij / xaduc3
 	IF
 		Global("XA_LC_BGEND3", "GLOBAL", 1)
 		Global("XA_LC_DidNotRequestCorwin", "GLOBAL", 1)
@@ -321,7 +322,7 @@
 	END
 	//}
 	
-	//{ Dialog R-25 xacorwij 
+	//{ Dialog R-25 xacorwij / xaduc3
 	IF
 		Global("XA_LC_BGEND4", "GLOBAL", 1)
 		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
@@ -389,10 +390,12 @@
 			Continue()
 	END
 	//}
+	*/
 //}
 
 //{ ToB
-	//{ Dialog R-31 xacorwij
+/*
+	//{ Dialog R-31 xacorwij / xacor010
 	IF
 		Global("XA_LC_RohmaWraith", "GLOBAL", 3)
 	THEN
@@ -403,7 +406,7 @@
 	END
 	//}
 	
-	//{ Dialog R-32 xacorwij
+	//{ Dialog R-32 xacorwij / xacor010
 	IF
 		Global("XA_LC_CorwinBenoSoulTalk", "GLOBAL", 1)
 	THEN
@@ -414,7 +417,7 @@
 	END
 	//}
 	
-	//{ Dialog R-33 xacorwij
+	//{ Dialog R-33 xacorwij / xacor025
 	IF
 		Global("XA_LC_CorwinPregnant", "GLOBAL", 10)
 	THEN
@@ -516,4 +519,5 @@
 			Continue()
 	END
 	//}
+	*/
 //}
