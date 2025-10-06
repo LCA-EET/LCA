@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+## v1.5.6 2025-10-06
+* Romance music scripting improvements.
+
 ## v1.5.5d 2025-10-04
 * Fixed a bug in Corwin's Bow that would cause the wrong text to appear when the Entangle proc fired.
 

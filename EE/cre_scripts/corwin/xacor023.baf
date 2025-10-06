@@ -509,7 +509,7 @@
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			ActionOverride(Player1, FaceObject("XACORWIN"))
-			PlaySong(1002)
+			PlaySong(1003)
 			// Dialog I-1
 			StartDialog("XACORWIN", Player1)
 			SetInterrupt(TRUE)
@@ -652,7 +652,7 @@
 		RESPONSE #100
 			//Dialog P-6
 			SetInterrupt(FALSE)
-			PlaySong(1002)
+			PlaySong(1003)
 			Wait(1)
 			StartDialogNoSet(Player1)
 			SetInterrupt(TRUE)

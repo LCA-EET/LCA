@@ -269,7 +269,7 @@ END
 	COPY_EXISTING ~xacorwin.bcs~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY ~PlaySong(1001)~ ~PlaySong(%xamu01%)~ // pensive
-		REPLACE_TEXTUALLY ~PlaySong(1002)~ ~PlaySong(%xamu02%)~ // romance
+		//REPLACE_TEXTUALLY ~PlaySong(1002)~ ~PlaySong(%xamu02%)~ // romance
 		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu02%)~ // romance
 		REPLACE_TEXTUALLY ~PlaySong(1009)~ ~PlaySong(%xamu09%)~ // concern
 	END

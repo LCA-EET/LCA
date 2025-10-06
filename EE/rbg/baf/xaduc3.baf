@@ -7,12 +7,14 @@
 		GlobalLT("XA_LC_CorwinTalk", "MYAREA", 1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinTalk", "MYAREA", 1)
 			Wait(2)
 			PlaySong(1001)
 			Wait(1)
 			//Dialog J-2
 			ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+			SetInterrupt(TRUE)
 	END
 
 	IF
@@ -23,12 +25,14 @@
 		GlobalLT("XA_LC_CorwinTalk", "MYAREA", 1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinTalk", "MYAREA", 1)
 			Wait(2)
 			PlaySong(1001)
 			Wait(1)
 			//Dialog J-2
 			ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+			SetInterrupt(TRUE)
 	END
 
 	IF
@@ -38,12 +42,14 @@
 		GlobalLT("XA_LC_CorwinTalk", "MYAREA", 1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinTalk", "MYAREA", 1)
 			Wait(2)
 			PlaySong(1001)
 			Wait(1)
 			//Dialog J-2
 			ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+			SetInterrupt(TRUE)
 	END
 
 	IF
@@ -53,12 +59,14 @@
 		GlobalLT("XA_LC_CorwinTalk", "MYAREA", 1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinTalk", "MYAREA", 1)
 			Wait(2)
 			PlaySong(1001)
 			Wait(1)
 			//Dialog J-2
 			ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+			SetInterrupt(TRUE)
 	END
 	//}
 IF
