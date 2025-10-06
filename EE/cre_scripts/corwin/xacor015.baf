@@ -1,0 +1,519 @@
+//{ SoA
+	//{ Dialog R-02 xacorwib / random banter
+	IF 
+		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
+		TriggerOverride(Player1, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+		TriggerOverride(Player1, Global("XA_LC_CorwinBanters", "LOCALS", 0))
+		Global("XA_LC_CorwinContinue", "GLOBAL", 2) 
+	THEN
+		RESPONSE #100
+			PlaySong(1003)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+
+	//{ Dialog R-03 xacorwib / random banter
+	IF 
+		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
+		TriggerOverride(Player1, Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+		TriggerOverride(Player1, Global("XA_LC_CorwinBanters", "LOCALS", 1))
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			PlaySong(1003)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+/* These should all be covered in the referenced scripts. Useful for self-check.
+	//{ Dialog R-00 xacorwib
+	IF 
+		Global("XA_LC_RomanceConflictTalk", "GLOBAL", 1)
+		OR(8)
+			Global("AerieRomanceActive","GLOBAL",2)
+			Global("ViconiaRomanceActive","GLOBAL",2)
+			Global("DornRomanceActive","GLOBAL",2)
+			Global("NeeraRomanceActive","GLOBAL",2)
+			Global("AnomenRomanceActive","GLOBAL",2)
+			Global("JaheiraRomanceActive","GLOBAL",2)
+			Global("HexxatRomanceActive","GLOBAL",2)
+			Global("RasaadRomanceActive","GLOBAL",2)
+	THEN
+		RESPONSE #100
+			PlaySong(1001)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+
+	
+	//{ Dialog R-01 xacorwib
+	IF
+		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
+		Global("XA_LC_Banter_CorwinPlayerOpt1A", "GLOBAL", 1)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			PlaySong(1001)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-04 xacorwib / xacor020
+	IF 
+		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
+		Global("XA_LC_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			PlaySong(1001)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+
+	//{ Dialog R-05 xacorwib / xacor008
+	IF
+		Global("XA_LC_WealthTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			PlaySong(1003)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+
+	//{ Dialog R-06 xacorwib / xacor008
+	IF
+		Global("XA_LC_RomanceInitTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			PlaySong(1001)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+
+	//{ Dialog R-07 xacorwib / xacor008
+	IF
+		Global("XA_LC_FlowerTalk", "LOCALS", 1)
+		HasItem("xaflower", Player1)
+	THEN
+		RESPONSE #100
+			PlaySong(1003)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+
+	//{ Dialog R-08 xacorwib / xacor023
+	IF
+		Global("XA_LC_TM_ArcheryChallenge", "GLOBAL", 2)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			PlaySong(1003)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+
+	//{ Dialog R-09 xacorwib / xacor023
+	IF
+		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
+		Global("XA_LC_CorwinSick_Aerie", "GLOBAL", 1)
+		IsValidForPartyDialogue("XACORWIN")
+	THEN
+		RESPONSE #100
+			PlaySong(1009)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+
+	//{ Dialog R-10 xacorwib / xacor023
+	IF
+		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
+		Global("XA_LC_CorwinSick_Jaheira", "GLOBAL", 1)
+		IsValidForPartyDialogue("XACORWIN")
+	THEN
+		RESPONSE #100
+			PlaySong(1009)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+
+	//{ Dialog R-11 xacorwib / xacor023
+	IF
+		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
+		Global("XA_LC_CorwinSick_Korgan", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			PlaySong(1009)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+
+	//{ Dialog R-12 xacorwib / xacor023
+	IF
+		GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
+		Global("XA_LC_CorwinSick_Imoen", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			PlaySong(1009)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+
+	//{ Dialog R-13 xacorwib / xacs09
+	IF
+		Global("XA_LC_CorwinSaved9", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			PlaySong(1003)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+
+	//{ Dialog R-14 xacorwij / xacor023
+	IF
+		Global("XA_LC_CorwinBit", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			PlaySong(1009)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+
+	//{ Dialog R-15 xacorwij
+	IF
+		Global("XA_LC_CorwinBit", "GLOBAL", 4)
+	THEN
+		RESPONSE #100
+			PlaySong(1009)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+
+	//{ Dialog R-16 xacorwij / xacor023
+	IF
+		Global("XA_LC_CorwinBit", "GLOBAL", 6)
+	THEN
+		RESPONSE #100
+			PlaySong(1009)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+
+	//{ Dialog R-17 xacorwij / xacor008
+	IF
+		Global("XA_LC_PhaereTalk", "GLOBAL", 1)
+		Global("PhaereInnuendo", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			PlaySong(1001)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+
+	//{ Dialog R-18 xacorwij / xacor008
+	IF
+		Global("XA_LC_PhaereTalk", "GLOBAL", 1)
+		Global("PhaereInnuendo", "GLOBAL", 3)
+	THEN
+		RESPONSE #100
+			PlaySong(1001)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+
+	//{ Dialog R-19 xacorwij / xacor008
+	IF
+		Global("XA_LC_CorwinSex2_Init", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			PlaySong(1009)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+
+	//{ Dialog R-20 xacorwij / xacor008
+	IF
+		Global("XA_LC_CorwinSexAfterBodhi", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			PlaySong(1001)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog RS-42 xacorwij / xacor008
+	IF
+		Global("XA_LC_AfterSexTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			PlaySong(1003)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+*/
+//}
+
+//{ RBG
+	//{ Dialog R-21 xacorwij 
+	IF
+		Global("XA_LC_DukesDebriefed", "GLOBAL", 4)
+		Global("XA_LC_SkieModActive", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			PlaySong(1003)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-22 xacorwij 
+	IF
+		Global("XA_LC_CorwinArrest", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			PlaySong(1003)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-23 xacorwij 
+	IF
+		Global("XA_LC_SoDAnxiety", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			PlaySong(1001)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-24 xacorwij 
+	IF
+		Global("XA_LC_BGEND3", "GLOBAL", 1)
+		Global("XA_LC_DidNotRequestCorwin", "GLOBAL", 1)
+		GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 99)
+	THEN
+		RESPONSE #100
+			PlaySong(1001)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-25 xacorwij 
+	IF
+		Global("XA_LC_BGEND4", "GLOBAL", 1)
+		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			PlaySong(1001)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-26 xacorwij 
+	IF
+		Global("XA_LC_IllaseraDead", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			PlaySong(1001)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-27 xacorwij 
+	IF
+		Global("XA_LC_CorwinProposalCS", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			PlaySong(1003)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-28 xacorwij 
+	IF
+		Global("XA_LC_CorwinLeaveForFamily", "GLOBAL", 1)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			PlaySong(1003)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-29 xacorwij 
+	IF
+		Global("XA_LC_XACS15Cutscene", "GLOBAL", 6)
+	THEN
+		RESPONSE #100
+			PlaySong(1003)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-30 xacorwij 
+	IF
+		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
+		Global("XA_LC_AskCorwinAboutTianna", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			PlaySong(1009)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+//}
+
+//{ ToB
+	//{ Dialog R-31 xacorwij
+	IF
+		Global("XA_LC_RohmaWraith", "GLOBAL", 3)
+	THEN
+		RESPONSE #100
+			PlaySong(1009)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-32 xacorwij
+	IF
+		Global("XA_LC_CorwinBenoSoulTalk", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			PlaySong(1001)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-33 xacorwij
+	IF
+		Global("XA_LC_CorwinPregnant", "GLOBAL", 10)
+	THEN
+		RESPONSE #100
+			PlaySong(1001)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-34 xacorwij
+	IF
+		Global("XA_LC_CorwinPregnant", "GLOBAL", 8)
+	THEN
+		RESPONSE #100
+			PlaySong(1003)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-35 xacorwij
+	IF
+		Global("XA_LC_CorwinPregnant", "GLOBAL", 6)
+	THEN
+		RESPONSE #100
+			PlaySong(1003)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-36 xacorwij
+	IF
+		Global("XA_LC_MessageToBG", "GLOBAL", 1)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalGT("XA_LC_CorwinPregnant", "GLOBAL", 4)
+	THEN
+		RESPONSE #100
+			PlaySong(1009)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-37 xacorwij
+	IF
+		Global("XA_LC_MessageToBG", "GLOBAL", 1)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalLT("XA_LC_CorwinPregnant", "GLOBAL", 5)
+	THEN
+		RESPONSE #100
+			PlaySong(1009)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-38 xacorwij
+	IF
+		Global("XA_LC_CorwinPregnant", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			PlaySong(1001)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-39 xacorwij
+	IF
+		Global("XA_LC_CorwinPregnant", "GLOBAL", 4)
+	THEN
+		RESPONSE #100
+			PlaySong(1001)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-40 xacorwij
+	IF
+		Global("XA_LC_CorwinComplainSarevok", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			PlaySong(1001)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+	
+	//{ Dialog R-41 xacorwij
+	IF
+		Global("XA_LC_CorwinHexxat", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			PlaySong(1001)
+			SmallWait(5)
+			Continue()
+	END
+	//}
+//}

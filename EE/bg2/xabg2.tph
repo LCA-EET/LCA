@@ -233,6 +233,7 @@ END
 	
 	//{ Corwin Script
 		EXTEND_TOP ~xacorwin.bcs~ ~override/xacor014.bcs~ // HP Check
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor015.bcs~ // Dialog Songs (e.g. Romance)
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor011.bcs~ // Rejoin Processing
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor005.bcs~ // BG2 Misc
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor003.bcs~ // Sound Adjustments
@@ -267,10 +268,10 @@ END
 	
 	COPY_EXISTING ~xacorwin.bcs~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
-		REPLACE_TEXTUALLY ~PlaySong(1001)~ ~PlaySong(%xamu01%)~
-		REPLACE_TEXTUALLY ~PlaySong(1002)~ ~PlaySong(%xamu02%)~
-		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu02%)~
-		REPLACE_TEXTUALLY ~PlaySong(1009)~ ~PlaySong(%xamu09%)~
+		REPLACE_TEXTUALLY ~PlaySong(1001)~ ~PlaySong(%xamu01%)~ // pensive
+		REPLACE_TEXTUALLY ~PlaySong(1002)~ ~PlaySong(%xamu02%)~ // romance
+		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu02%)~ // romance
+		REPLACE_TEXTUALLY ~PlaySong(1009)~ ~PlaySong(%xamu09%)~ // concern
 	END
 	
 	ACTION_IF (xalc_assistant = 1) THEN BEGIN

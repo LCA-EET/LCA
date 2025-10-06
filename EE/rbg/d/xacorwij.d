@@ -3,6 +3,7 @@ APPEND XACORWIJ
 	
 //{ Duke Debriefing Conclusion
 
+	// R-21
 	//{ End of Duke Debriefing - Skie Mod Active - CC OK
 	IF ~
 		Global("XA_LC_DukesDebriefed", "GLOBAL", 4)
@@ -439,7 +440,7 @@ APPEND XACORWIJ
 	END
 	//} #endregion
 
-	//{ #region Corwin Arrest - Dialog J-50 - Tested 2023-04-18 - CC OK
+	//{ #region Corwin Arrest - Dialog R-22
 	IF ~
 		Global("XA_LC_CorwinArrest", "GLOBAL", 1)
 	~ THEN BEGIN XA_CorwinArrest1
@@ -587,7 +588,7 @@ APPEND XACORWIJ
 	END
 	//} #endregion
 
-	//{ #region SoD Anxiety - Dialog J-39 - CC OK
+	//{ #region SoD Anxiety - Dialog R-23 - CC OK
 
 	IF ~
 		Global("XA_LC_SoDAnxiety", "GLOBAL", 2)
@@ -724,7 +725,7 @@ APPEND XACORWIJ
 	END
 	//} #endregion
 
-	//{ #region Corwin Not Chosen for Saradush - Dialog J-1 - CC OK
+	//{ #region Corwin Not Chosen for Saradush - Dialog R-24 - CC OK
 	IF ~
 		Global("XA_LC_BGEND3", "GLOBAL", 1)
 		Global("XA_LC_DidNotRequestCorwin", "GLOBAL", 1)
@@ -802,7 +803,7 @@ APPEND XACORWIJ
 
 	//} #endregion
 
-	//{ #region Corwin Chosen for Saradush - Dialog J-2 - CC OK
+	//{ #region Corwin Chosen for Saradush - Dialog R-25 - CC OK
 	IF ~
 		Global("XA_LC_BGEND4", "GLOBAL", 1)
 		Global("XA_LC_DidRequestCorwin", "GLOBAL", 1)
@@ -1087,7 +1088,7 @@ APPEND XACORWIJ
 
 	//} #endregion
 
-	//{ #region Illasera Killed - Dialog J-6 - CC OK
+	//{ #region Illasera Killed - Dialog R-26 - CC OK
 	IF ~
 		Global("XA_LC_IllaseraDead", "GLOBAL", 1)
 	~ THEN BEGIN XA_IllaseraDead
@@ -1979,7 +1980,7 @@ APPEND XACORWIJ
 	END
 	//}
 
-	//{ #region Corwin Proposal - Dialog J-12 - CC OK
+	//{ #region Corwin Proposal - Dialog R-27 - CC OK
 	IF ~
 		Global("XA_LC_CorwinProposalCS", "GLOBAL", 1)
 	~ THEN BEGIN XA_CorwinProposal
@@ -2419,7 +2420,7 @@ APPEND XACORWIJ
 	END
 	//} #endregion
 
-	//{ #region Corwin Family Timer Expired (Romance) - Dialog J-20 - CC OK
+	//{ #region Corwin Family Timer Expired (Romance) - Dialog R-28- CC OK
 	IF ~
 		Global("XA_LC_CorwinLeaveForFamily", "GLOBAL", 1)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -2533,7 +2534,7 @@ APPEND XACORWIJ
 	//} #endregion
 
 
-	//{ #region Corwin Post Neoma Meeting - Dialog J-17 - CC OK
+	//{ #region Corwin Post Neoma Meeting - Dialog R-29 - CC OK
 	IF ~
 		Global("XA_LC_XACS15Cutscene", "GLOBAL", 6)
 		//play romance song
@@ -2650,7 +2651,7 @@ APPEND XACORWIJ
 	END
 	//} #endregion
 
-	//{ #region Corwin / Tianna Dialog J-15 - CC OK
+	//{ #region Corwin / Tianna Dialog R-30 - CC OK
 	IF ~
 		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
 		Global("XA_LC_AskCorwinAboutTianna", "GLOBAL", 1)

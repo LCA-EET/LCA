@@ -127,7 +127,7 @@ APPEND ~XACOR25J~
 		EXTERN GORODR1 35
 	END
 
-	//{ Corwin Beno Soul Talk Dialog J-85 - CC OK
+	//{ Corwin Beno Soul Talk Dialog R-32 CC OK
 		IF ~
 			Global("XA_LC_CorwinBenoSoulTalk", "GLOBAL", 1)
 		~ THEN BEGIN XA_CorwinBenoSoulTalk
@@ -604,7 +604,7 @@ APPEND ~XACOR25J~
 	END
 	//}
 
-	//{ Dialog J-82 - CC OK
+	//{ Dialog R-33 - CC OK
 	IF ~
 		Global("XA_LC_CorwinPregnant", "GLOBAL", 10)
 	~ THEN BEGIN XA_CorwinPregnant_Final
@@ -701,7 +701,7 @@ APPEND ~XACOR25J~
 	END
 	//}
 
-	//{ Dialog J-81 - CC OK
+	//{ Dialog R-34
 	IF ~
 		Global("XA_LC_CorwinPregnant", "GLOBAL", 8)
 	~ THEN BEGIN XA_CorwinPregnant_Fourth
@@ -817,7 +817,7 @@ APPEND ~XACOR25J~
 	END
 	//}
 
-	//{ Dialog J-79 - CC OK
+	//{ Dialog R-36 - CC OK
 	IF ~
 		Global("XA_LC_MessageToBG", "GLOBAL", 1)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -852,7 +852,7 @@ APPEND ~XACOR25J~
 	END
 	//}
 
-	//{ Dialog J-78 - CC OK
+	//{ Dialog R-37 - CC OK
 	IF ~
 		Global("XA_LC_MessageToBG", "GLOBAL", 1)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -1014,7 +1014,7 @@ APPEND ~XACOR25J~
 	END
 	//}
 
-	//{ Dialog J-71 - CC OK
+	//{ Dialog R-38 - CC OK
 	IF ~
 		Global("XA_LC_CorwinPregnant", "GLOBAL", 2)
 	~ THEN BEGIN XA_CorwinPregnantInitial
@@ -1116,7 +1116,7 @@ APPEND ~XACOR25J~
 	END
 	//}
 
-	//{ Dialog J-72 - CC OK
+	//{ Dialog R-39 - CC OK
 	IF ~
 		Global("XA_LC_CorwinPregnant", "GLOBAL", 4)
 	~ THEN BEGIN XA_CorwinPregnant2
@@ -1621,7 +1621,7 @@ APPEND ~XACOR25J~
 	END
 	//}
 
-	//{ Dialog J-69 - CC OK
+	//{ Dialog R-40
 	IF ~
 		Global("XA_LC_CorwinComplainSarevok", "GLOBAL", 2)
 	~ THEN BEGIN XA_CorwinComplainSarevokInit

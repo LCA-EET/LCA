@@ -32,6 +32,7 @@
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_RomanceConflictTalk", "GLOBAL", 1)
+			PlaySong(1001)
 			//Dialog J-83
 			Interact(Player1)
 			SetInterrupt(TRUE)

@@ -110,7 +110,7 @@
 				SetInterrupt(FALSE)
 				SetGlobal("XA_LC_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
 				SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
-				PlaySong(1003)
+				PlaySong(1001)
 				Interact(Player1)
 				SetInterrupt(TRUE)
 		END
@@ -147,7 +147,7 @@
 				SetInterrupt(TRUE)
 				Continue()
 		END
-		
+		// R-01
 		IF
 			ActionListEmpty()
 			GlobalTimerExpired("XA_LC_PlayerOpt1ABanterTimer", "LOCALS")
@@ -157,6 +157,7 @@
 			RESPONSE #100
 				SetInterrupt(FALSE)
 				SetGlobal("XA_LC_Banter_CorwinPlayerOpt1A", "GLOBAL", 1)
+				PlaySong(1001)
 				Interact(Player1)
 				SetInterrupt(TRUE)
 		END

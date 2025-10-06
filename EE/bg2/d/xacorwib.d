@@ -1,6 +1,6 @@
 BEGIN ~XACORWIB~
 
-//{ Dialog J-83 - Romance Conflict - CC OK
+//{ Dialog R-00
 
 IF  ~
 	IsGabber(Player1)
@@ -382,6 +382,7 @@ THEN BEGIN XA_OPT1AFriend
 	EXIT
 END
 
+// Dialog R-01
 IF  ~
 	IsGabber(Player1)
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
@@ -558,7 +559,7 @@ IF ~~ THEN BEGIN XAA31B
 	EXIT
 END
 
-//{ Dialog J-63 - CC OK
+//{ Dialog R-02
 IF  ~
 	IsGabber(Player1)
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
@@ -586,7 +587,7 @@ THEN BEGIN XA_SkieMessageDelivered_Romance
 	GOTO XAA31A
 END
 //}
-//{ Dialog J-60 - CC OK
+//{ Dialog R-03
 IF  ~
 	IsGabber(Player1)
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
@@ -1469,7 +1470,7 @@ IF ~~ THEN BEGIN XA_OPT1END_InitRomance_End
 END
 //} #endregion
 
-//{ #region Met Corwin Interaction BG2 (Romance) - Dialog J-41 - CC OK
+//{ Dialog R-04
 IF  ~
 	IsGabber(Player1)
 	GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
@@ -1632,6 +1633,7 @@ IF ~~ THEN BEGIN XA_OPT1RomanceEnd
 	EXIT
 END
 
+// Dialog R-05
 IF  ~
 	Global("XA_LC_WealthTalk", "LOCALS", 1)
 ~ THEN BEGIN XA_WealthTalk
@@ -2011,6 +2013,7 @@ IF ~~ THEN BEGIN XA_WealthTalk_End2
 	EXIT
 END
 
+// Dialog R-06
 IF  ~
 	IsGabber(Player1)
 	Global("XA_LC_RomanceInitTalk", "LOCALS", 1)
@@ -2165,6 +2168,8 @@ IF ~~ THEN BEGIN XA_RomanceInitTalk_2A3
 END
 
 //} #endregion
+
+// Dialog R-07
 IF  ~
 	IsGabber(Player1)
 	Global("XA_LC_FlowerTalk", "LOCALS", 1)
@@ -2299,6 +2304,7 @@ APPEND BMAZZY
 		GOTO XA_MazzyWonCompetition2
 	END
 	
+	// Dialog R-08
 	IF ~
 		Global("XA_LC_TM_ArcheryChallenge", "GLOBAL", 2)
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -2397,7 +2403,7 @@ END
 
 //{ Corwin Sick Dialogs
 
-	//{ Dialog B-5
+	//{ Dialog R-09
 	CHAIN
 		IF ~
 			IsGabber("XACORWIN")
@@ -2426,7 +2432,7 @@ END
 	EXIT
 	//}
 
-	//{ Dialog B-6
+	//{ Dialog R-10
 	CHAIN
 		IF ~
 			IsGabber("XACORWIN")
@@ -2463,7 +2469,7 @@ END
 	EXIT
 	//}
 
-	//{ Dialog B-7
+	//{ Dialog R-11
 	CHAIN
 		IF ~
 			IsGabber("XACORWIN")
@@ -2485,7 +2491,7 @@ END
 	EXIT
 	//}
 
-	//{ Dialog B-8
+	//{ Dialog R-12
 	CHAIN
 		IF ~
 			IsGabber("XACORWIN")

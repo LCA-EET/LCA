@@ -689,6 +689,7 @@ END
 		EXIT
 	END
 	
+	// Dialog R-13
 	IF ~
 		Global("XA_LC_CorwinSaved9", "GLOBAL", 2)
 	~ THEN BEGIN XA_CorwinSaved9_3
@@ -1540,7 +1541,7 @@ IF ~~ THEN BEGIN XA_GorgeClimb1
 END
 //} #endregion
 
-//{ #region Corwin Bit - First - Dialog J-31 - CC OK
+//{ #region Corwin Bit - R-14
 IF ~
 	Global("XA_LC_CorwinBit", "GLOBAL", 2)
 ~
@@ -1602,7 +1603,7 @@ IF ~~ THEN BEGIN XA_CorwinBitWokeUp3
 END
 //} #endregion
 
-//{ #region Corwin Bit - Second - Dialog J-32 - CC OK
+//{ #region Corwin Bit - Second - Dialog R-15
 IF ~
 	Global("XA_LC_CorwinBit", "GLOBAL", 4)
 ~ THEN BEGIN XA_CorwinBitByBodhi2
@@ -1866,7 +1867,7 @@ IF ~~ THEN BEGIN XAA99
 END
 //} #endregion
 
-//{ #region Corwin Phaere No Sex - Dialog J-37 - CC OK
+//{ #region Corwin Phaere No Sex - Dialog R-18 - CC OK
 IF ~
 	InParty(Myself)
 	Global("XA_LC_PhaereTalk", "GLOBAL", 1)
@@ -2101,7 +2102,7 @@ IF ~~ THEN BEGIN XAA62B
 END
 //} #endregion
 
-//{ #region Corwin Sex 2 Timer Initial - Dialog J-46 - Tested 2023-04-17 - CC OK
+//{ #region Corwin Sex 2 Timer Initial - Dialog R-19
 IF ~
 	Global("XA_LC_CorwinSex2_Init", "GLOBAL", 1)
 	//play romance song
@@ -2140,7 +2141,7 @@ IF ~~ THEN BEGIN XA_CorwinSexSecond3B
 END
 //} #endregion
 
-//{ #region Corwin Intimate Bodhi - Dialog J-51 - CC OK
+//{ #region Corwin Intimate Bodhi - Dialog R-20
 IF ~
 	Global("XA_LC_CorwinSexAfterBodhi", "GLOBAL", 1)
 	//play romance song
@@ -3916,6 +3917,7 @@ IF ~~ THEN BEGIN XA_MerethEnd
 	~
 	EXIT
 END
+
 
 IF ~
 	Global("XA_LC_AfterSexTalk", "LOCALS", 1)

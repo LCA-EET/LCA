@@ -14,6 +14,7 @@
 	THEN
 		RESPONSE #100
 			//Dialog B-3A
+			PlaySong(1003)
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
 			ActionOverride("Mazzy", StartDialog("BMAZZY", Player1))
 	END
@@ -588,12 +589,13 @@
 		Range(Player1, 7)
 	THEN
 		RESPONSE #100
-			//Dialog J-31
+			//Dialog R-14
+			PlaySong(1009)
 			StartDialog("XACORWIJ", Player1)
 	END
 	//}
 
-	//{ Bite Death Warning 2
+	//{ Bite Death Warning 2 Dialog R-15
 	IF 
 		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_LC_CorwinBit", "GLOBAL", 3)
@@ -601,6 +603,7 @@
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
+			PlaySong(1009)
 			SetGlobal("XA_LC_CorwinBit", "GLOBAL", 4)
 			//Dialog J-32
 			StartDialog("XACORWIJ", Player1)
@@ -608,7 +611,7 @@
 	END
 	//}
 
-	//{ Bite Death Warning 3
+	//{ Bite Death Warning 3 Dialog R-16
 	IF 
 		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_LC_CorwinBit", "GLOBAL", 5)
@@ -616,6 +619,7 @@
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
+			PlaySong(1009)
 			SetGlobal("XA_LC_CorwinBit", "GLOBAL", 6)
 			//Dialog J-33
 			StartDialog("XACORWIJ", Player1)
@@ -725,6 +729,7 @@
 			Continue()
 	END
 	
+	// Dialog R-09
 	IF
 		Global("XA_LC_CorwinPartySick", "GLOBAL", 1)
 		IsValidForPartyDialogue("Jaheira")
@@ -733,10 +738,12 @@
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinSick_Jaheira", "GLOBAL", 1)
 			//Dialog B-6
+			PlaySong(1009)
 			ActionOverride("JAHEIRA", StartDialog("JAHEIRAJ", "XACORWIN"))
 			SetInterrupt(TRUE)
 	END
 	
+	// Dialog R-10 xacorwib
 	IF
 		Global("XA_LC_CorwinPartySick", "GLOBAL", 1)
 		IsValidForPartyDialogue("Aerie")
@@ -744,11 +751,13 @@
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinSick_Aerie", "GLOBAL", 1)
+			PlaySong(1009)
 			//Dialog B-5
 			ActionOverride("AERIE", StartDialog("AERIEJ", "XACORWIN"))
 			SetInterrupt(TRUE)
 	END
 
+	// Dialog R-11
 	IF
 		Global("XA_LC_CorwinPartySick", "GLOBAL", 1)
 		IsValidForPartyDialogue("Korgan")
@@ -756,11 +765,13 @@
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinSick_Korgan", "GLOBAL", 1)
+			PlaySong(1009)
 			//Dialog B-7
 			ActionOverride("KORGAN", StartDialog("KORGANJ", Player1))
 			SetInterrupt(TRUE)
 	END
 	
+	// Dialog R-12
 	IF
 		Global("XA_LC_CorwinPartySick", "GLOBAL", 1)
 		IsValidForPartyDialogue("Imoen2")
@@ -768,6 +779,7 @@
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinSick_Imoen", "GLOBAL", 1)
+			PlaySong(1009)
 			//Dialog B-8
 			ActionOverride("IMOEN2", StartDialog("IMOEN2J", "XACORWIN"))
 			SetInterrupt(TRUE)

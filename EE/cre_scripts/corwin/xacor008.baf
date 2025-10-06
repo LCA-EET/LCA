@@ -9,11 +9,12 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_FlowerTalk", "LOCALS", 1)
+			PlaySong(1003)
 			Interact(Player1)
 	END
 //}
 
-//{ Romance Init Timer Expiration
+//{ Romance Init Timer Expiration R-06
 	IF 
 		InParty(Myself)
 		ActionListEmpty()
@@ -23,11 +24,12 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_RomanceInitTalk", "LOCALS", 1)
+			PlaySong(1001)
 			Interact(Player1)
 	END
 //}
 
-//{ Athkatla Wealth Talk
+//{ Athkatla Wealth Talk 
 	IF
 		InParty(Myself)
 		GlobalLT("XA_LC_WealthTalkTimerSet", "LOCALS", 1)
@@ -42,6 +44,7 @@
 			Continue()
 	END
 	
+	// Dialog R-05
 	IF
 		InParty(Myself)
 		ActionListEmpty()
@@ -54,6 +57,7 @@
 			AreaCheck("AR1000")
 	THEN
 		RESPONSE #100
+			PlaySong(1003)
 			SetGlobal("XA_LC_WealthTalk", "LOCALS", 1)
 			Interact(Player1)
 	END
@@ -75,6 +79,7 @@
 			Continue()
 	END
 	
+	//{ Dialog RS-42
 	IF
 		ActionListEmpty()
 		GlobalTimerExpired("XA_LC_AfterSexTalkTimer", "LOCALS")
@@ -83,6 +88,7 @@
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
+			PlaySong(1003)
 			SetGlobal("XA_LC_AfterSexTalk", "LOCALS", 1)
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)
@@ -1003,7 +1009,7 @@ END
 	END
 	//}
 
-	//{ Phaere Alone With Player
+	//{ Phaere Alone With Player Dialog R-17, R-18
 	/* Checks if Corwin was in the party when the Player was alone with Phaere. */
 	IF 
 		GlobalGT("PhaereInnuendo","GLOBAL",1)
@@ -1167,7 +1173,7 @@ END
 			MoveToObject(Player1)
 			Continue()
 	END
-
+	//{ Dialog R-20
 	IF 
 		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_LC_CorwinSexAfterBodhi", "GLOBAL", 1)
@@ -1176,11 +1182,12 @@ END
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			PlaySong(1003)
+			PlaySong(1001)
 			//Dialog J-51
 			StartDialog("XACORWIJ", Player1)
 			SetInterrupt(TRUE)
 	END
+	//}
 	//}
 
 	//{ Corwin Sex Second Time
