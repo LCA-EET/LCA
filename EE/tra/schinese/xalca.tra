@@ -1,0 +1,3351 @@
+@800 = ~爱能战胜一切（LCA）~
+@801 = ~Enhanced Edition Trilogy (EET) mod has been detected.~
+@802 = ~Enhanced Edition Trilogy (EET) mod has NOT been detected.~
+@803 = ~Baldur's Gate Enhanced Edition detected.~
+@804 = ~Siege of Dragonspear detected.~
+@805 = ~Baldur's Gate II Enhanced Edition detected.~
+@850 = ~Processing LCA Assistant...~
+@851 = ~LCA助手~
+@852 = ~Added LCA Assistant to Baldur.bcs~
+@853 = ~Added LCA Assistant to BDBaldur.bcs~
+@854 = ~Added LCA Assistant to Baldur25.bcs~
+@855 = ~Target Dummy~
+@856 = ~Activate this ability to launch the LCA Assistant.~
+@857 = ~Install LCA Assistant? It is a tool to help configure aspects of the mod, and includes a debugger.
+0.) No.
+1.) Yes.
+Enter a value (0 or 1):~
+@1000 = ~Processing BG1 changes...~
+@1001 = ~Welcome all to the Hall of Wonders. A mere gold piece secures entry to the most curious collection of priceless historical artifacts and machination inspirations on all Abeir-Toril. The craft displayed within is truly a sight to see, and the gold raised goes to needed supplies, that future wonders will be wrought.~
+@1002 = ~Good on you, friend. Come inside the Hall of Wonders, but please remember the donation of one gold. It provides sponsorship for those that craft the curious wonders inspired by Gond, and for those that maintain and protect the priceless artifacts contained herein. This patronage supports the... not immediately salable works produced.~
+@1003 = ~我在此地应是安全的。然而，你面前的任务艰巨。若我猜测无误，铁王座正策划一场政变。恐怕奈德洛克、科温和其他人无法及时返回。唯有你们能阻止这场政变。~
+@1004 = ~I am again in your debt. That creature has kept me helpless for too long. Perhaps if I hadn't been incapacitated, I might have been able to prevent Scar's death. *cough* Angelo will soon hear of my recovery. It is important that you take me away from here; I'm sure Angelo won't want me coherent and among the living. Take me to the Harbor Master's building — he is a good friend of mine. I can rest there, and send word to Nederlok and Corwin to return to the city immediately. Their loyalty is beyond reproach, and they can retake control of the Fist while I recover. Take this letter; I managed to filch it off Rashad when he was "caring" for me. From what I read of it, it seems that Sarevok has dire plans for the city. I fear for the lives of my fellow Dukes, Liia and Belt. If they were to die, Sarevok would take over the city. You must find Slythe and Krystin, and stop them... *cough* Hurry! We must make haste.~
+@1005 = ~哦，是的，很多事情。你知道安塔公爵的事，对吧？他生病了。这就是为什么安其罗现在负责。本该是史卡，但他出去被暗杀了，那个逮捕我的科温贱人在和奈德洛克统帅一起在北方进行某种训练。是的，这座城市在过去一周里走下坡路了。太糟糕了，呵呵。~
+@1006 = ~They still have leadership. How effective it is, I do not know. With Marshal Nederlok sent on some training exercise up north, I hear Angelo Dosan is now effectively in control. Such a weasel he is. I am surprised he has the support of the troops. He's got powerful friends though, and I hear that he takes orders straight from Sarevok. You've heard of him, right? With Entar dead, the other Dukes have called an emergency election. Sarevok is the front-runner, and his stand against Amn is very popular. Imagine how much pull he will have if he actually has the Flaming Fist in his back pocket.~
+@1007 = ~There's trouble in the Fist, <CHARNAME>, big trouble. Duke Eltan's fallen sick and Scar was killed, supposedly in a simple robbery but I have my doubts... It's all Angelo, he's making a power grab, taking control of the Fist and, with Scar gone and Nederlok sent on some bogus errand up north, there's nothing to stop him! I've seen him paying visits to the Iron Throne, too, and I don't like it one bit... There are some of us that are still loyal to Eltan and, lucky for you, I happen to be one of them. Please, for your sake and ours, keep your head down and, if you get the chance, sniff around the Iron Throne's base. If you can find a way to talk to Duke Eltan, even better, but they're keeping him in the middle of Fist headquarters... Damn it, Angelo will pay dearly for this and I hope it's soon...~
+@1008 = ~Thank you, <CHARNAME>. You efforts have not been in vain. My commanding officer, Captain Corwin, has ordered my contingent and I back to the city to make our reports. You will figure prominently in them and I assure you that our accounts will be favorable.~
+@1009 = ~CorwinEET is installed. String sets skipped!~
+@1010 = ~CorwinEET is not installed. Strings will be patched accordingly.~
+@1011 = ~Officers' Training Manual~
+@1012 = ~This appears to be a Flaming Fist officers' training manual. It includes policies, procedures and guidelines covering incident investigations, suspect apprehension techniques, proper etiquette when dealing with city officials, and much more. The initials "S.C." are written on the inside cover. It's clear that "S.C.", whoever they are, has spent a great many hours intently studying the manual; it is well-worn, and several of the pages are coming loose from the binding.~
+@1013 = ~烧毁的文件~
+@1014 = ~这份文件已被烧毁，但部分内容仍然可读。从你能辨认的部分来看，收件人被命令前往城市北部的一个集结区，因为最近发生了一连串的暗杀事件。他们要在那里等待，准备夺回……一些东西。你无法辨认具体是什么。你无法确定这份文件是给谁的，尽管你看到了页面右下角似乎有焰拳的标志。有趣。~
+@1015 = ~Assassin~
+@2000 = ~Processing SoD changes...~
+@2001 = ~科温的信~
+@2002 = ~科温的指导~
+@2003 = ~舍尔的信~
+@2005 = ~科温的护身符~
+@2006 = ~<CHARNAME>，
+在你读完这封信的时候，你已经离开了这座城市。很遗憾，在你离去前，我未能与你见上最后一面。当贝尔特、伊尔坦和詹纳斯决定将你流放时，焰拳立刻进入最高警戒状态，以阻止安塔及其同伙私自采取行动。
+
+现在，你拥有了证明自己清白所需的时间。如果你能找回夺魂者匕首，你必须将它交给我。巫师们相信，只要匕首在手，他们便能让史姬复苏。一旦她得以复原，便能证实你在龙矛堡那晚所经历的一切。亲爱的，一旦你的清白得以证实，我们便能再度团聚。
+
+随信附上我的护身符。戴上它，我对你的爱，永远不变。
+
+你的，
+
+舍尔~
+@2007 = ~<CHARNAME>,
+
+By the time you read this, you'll have departed the city. I'm sorry that I wasn't able to see you one last time before you left. When Belt, Eltan and Jannath made the decision to exile you, the Fist was put on high alert to prevent Entar and his associates from trying to take matters into their own hands. 
+
+You now have the time you need to find some way to prove your innocence. If you're able to recover the Soultaker dagger, you must send it to me. The wizards believe they can restore Skie, but only if the dagger is in their possession. Once restored, she can corroborate your account of what happened on that night in Dragonspear. You'll be able to return to the city once your innocence is established.   
+
+Good luck to you, my friend. 
+
+Regards, 
+
+Captain Schael Corwin~
+@2008 = ~这枚护身符是舍尔·科温赠予你的，象征着她对你的深情。护身符上镶嵌着她女儿罗玛的小肖像。虽无魔法之力，但戴上它，你感到希望满怀，目标明确。你决心跨过一切难关，只为重归爱人的怀抱。
+
+数据资料：
+
+装备能力：
+– 魅力：+1
+– 豁免检定：+3
+– 魔法抗力：+5%~
+@2009 = ~<CHARNAME>~
+@2010 = ~科温~
+@2013 = ~科温的护身符~
+@2014 = ~这个护身符属于焰拳的舍尔·科温。它是一颗半切的翡翠，镶嵌在银色的背板上。背板上有一个扣环，包括她女儿罗玛的小肖像。~
+@2015 = ~舍尔的信~
+@3000 = ~Processing BG2 changes...~
+@3016 = ~叮当声~
+@3036 = ~Master Smith~
+@3055 = ~弓匠大师~
+@3057 = ~科温的弓+2~
+@3058 = ~Flaming Fist Officer~
+@3067 = ~Rohma~
+@3070 = ~Skie~
+@3071 = ~目标魔像~
+@3136 = ~科温——LCA 肖像更改~
+@3137 = ~科温——SoD 肖像更改~
+@3138 = ~科温的命运~
+@3139 = ~舍尔被芭荻变成了吸血鬼，在变身完成时死去。可能有办法让她复苏，但你尚不清楚。~
+@3140 = ~致邓肯的信~
+@3141 = ~致科温的信~
+@3142 = ~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
+
+My love,
+
+I pray this letter finds you, Rohma and your father well. There is much that I need to tell you. After being forced to depart Baldur’s Gate, our party was set upon by assassins and quickly incapacitated. We were delivered to Athkatla and held captive in the stronghold of a mad wizard named Irenicus – the very same “Hooded Man” that we encountered during the Dragonspear campaign. My recollection of events from that point is hazy… I do know that we were tortured and experimented upon for purposes that are unclear to me. We were not all fortunate to escape the wizard’s enclave with our lives. The bastard murdered Khalid and Dynaheir. By the time we found their corpses, nothing could be done to resurrect them.
+
+While fleeing the stronghold, I came upon the dagger that is enclosed with this letter. I believe that this is the very same Soultaker Dagger that was used to murder Skie; if I am correct, the city priests can use it to restore Skie’s soul to her body and perform the resurrection. Please take the dagger to the city priests as soon as you are able. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. 
+
+After our escape, Imoen and Irenicus were abducted by the Cowled Wizards for unsanctioned use of magical power within the city. They were taken to a prison for magic practitioners called Spellhold. I must venture forth to Spellhold, rescue Imoen, and exact my revenge on Irenicus. The mage will pay for what he did to Khalid and Dynaheir, for framing me for Skie’s murder, for my exile from the city, and for keeping us apart. I will see you again, my love, once my innocence is established and this matter with Irenicus is resolved.
+
+Yours always,
+	
+<CHARNAME>~
+@3143 = ~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
+
+Schael,
+
+I hope this letter finds you, Rohma and your father well. There is much that I need to tell you. After being forced to depart Baldur’s Gate, our party was set upon by assassins and quickly incapacitated. We were delivered to Athkatla and held captive in the stronghold of a mad wizard named Irenicus – the very same “Hooded Man” that we encountered during the Dragonspear campaign. My recollection of events from that point is hazy… I do know that we were tortured and experimented upon for purposes that are unclear to me. We were not all fortunate to escape the wizard’s enclave with our lives. The bastard murdered Khalid and Dynaheir. By the time we found their corpses, nothing could be done to resurrect them.
+
+While fleeing the stronghold, I came upon the dagger that is enclosed with this letter. I believe that this is the very same Soultaker Dagger that was used to murder Skie; if I am correct, the city priests can use it to restore Skie’s soul to her body and perform the resurrection. Please take the dagger to the city priests as soon as you are able. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. 
+
+After our escape, Imoen and Irenicus were abducted by the Cowled Wizards for unsanctioned use of magical power within the city. They were taken to a prison for magic practitioners called Spellhold. I must venture forth to Spellhold, rescue Imoen, and exact my revenge on Irenicus. The mage will pay for what he did to Khalid and Dynaheir, for framing me for Skie’s murder, and for my exile from the city. I hope to see you again once my innocence is established and this matter with Irenicus is resolved.
+
+Regards,
+
+<CHARNAME>~
+@3144 = ~这是你打算寄给博德之门的邓肯下士的信。你需要与阿斯卡特拉的总检察长交谈，以便将信件送达。
+
+邓肯下士，
+
+我有理由相信，随信附上的匕首正是那把用来谋杀史姬·银盾的夺魂者匕首。如果我的猜测正确，城市牧师可以用它将史姬的灵魂恢复到她的身体中并进行复活。请尽快将匕首交给城市牧师。一旦史姬复活，她将能够证实我所知道的事实，即我并非她的谋杀者。这把匕首属于一个名叫艾瑞尼卡斯的疯狂巫师。他正是那个谋杀了史姬并诬陷我的人。放心，他将为他对史姬、博德之门城市、我的同伴以及我本人的罪行付出沉重的代价。
+
+请代我向科温上尉和她的父亲问好。
+
+此致，
+
+<CHARNAME>~
+@3145 = ~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
+
+My love,
+
+I pray this letter finds you, Rohma and your father well. There is much that I need to tell you. After being forced to depart Baldur’s Gate, our party was set upon by assassins and quickly incapacitated. We were delivered to Athkatla and held captive in the stronghold of a mad wizard named Irenicus – the very same “Hooded Man” that we encountered during the Dragonspear campaign. My recollection of events from that point is hazy… I do know that we were tortured and experimented upon for purposes that are unclear to me. We were not all fortunate to escape the wizard’s enclave with our lives. The bastard murdered Khalid and Dynaheir. By the time we found their corpses, nothing could be done to resurrect them.
+
+While fleeing the stronghold, I came upon the Soultaker dagger. To put a long story short, I released Skie's soul, and I believe that the city priests can restore it to her body and perform the resurrection. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. 
+
+After our escape, Imoen and Irenicus were abducted by the Cowled Wizards for unsanctioned use of magical power within the city. They were taken to a prison for magic practitioners called Spellhold. I must venture forth to Spellhold, rescue Imoen, and exact my revenge on Irenicus. The mage will pay for what he did to Khalid and Dynaheir, for framing me for Skie’s murder, for my exile from the city, and for keeping us apart. I will see you again, my love, once my innocence is established and this matter with Irenicus is resolved.
+
+Yours always,
+	
+<CHARNAME>~
+@3146 = ~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
+
+Schael,
+
+I hope this letter finds you, Rohma and your father well. There is much that I need to tell you. After being forced to depart Baldur’s Gate, our party was set upon by assassins and quickly incapacitated. We were delivered to Athkatla and held captive in the stronghold of a mad wizard named Irenicus – the very same “Hooded Man” that we encountered during the Dragonspear campaign. My recollection of events from that point is hazy… I do know that we were tortured and experimented upon for purposes that are unclear to me. We were not all fortunate to escape the wizard’s enclave with our lives. The bastard murdered Khalid and Dynaheir. By the time we found their corpses, nothing could be done to resurrect them.
+
+While fleeing the stronghold, I came upon the Soultaker dagger. To put a long story short, I released Skie's soul, and I believe that the city priests can restore it to her body and perform the resurrection. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. 
+
+After our escape, Imoen and Irenicus were abducted by the Cowled Wizards for unsanctioned use of magical power within the city. They were taken to a prison for magic practitioners called Spellhold. I must venture forth to Spellhold, rescue Imoen, and exact my revenge on Irenicus. The mage will pay for what he did to Khalid and Dynaheir, for framing me for Skie’s murder, and for my exile from the city. I hope to see you again once my innocence is established and this matter with Irenicus is resolved.
+
+Regards,
+
+<CHARNAME>~
+@3147 = ~This is the letter you plan to send to Corporal Duncan in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
+
+Corporal,
+
+I'm writing to inform you that I recovered the Soultaker dagger, and that I have performed the necessary steps to release Skie's soul. I believe that the city priests can restore it to her body and perform the resurrection. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. The dagger belonged to a mad wizard named Irenicus. He is the “Hooded Man” that murdered Skie and framed me for the act. Rest assured, he will pay a heavy price for his transgressions against Skie, the city of Baldur’s Gate, my companions, and myself.
+  
+Please give my regards to Captain Corwin and her father. 
+
+Regards,
+
+<CHARNAME>~
+@3148 = ~梅尔科尔~
+@3149 = ~Wizard's Apprentice~
+@3150 = ~科温的护身符~
+@3151 = ~这个护身符属于焰拳的舍尔·科温。它是一颗半切的翡翠，镶嵌在银色的背板上。背板上有一个扣环，包括她女儿罗玛的小肖像。~
+@3152 = ~科温~
+@3154 = ~这把附魔弓增强了使用者的敏捷，使他们能够更准确地射击。偶尔，一支箭会爆炸成木屑的阵雨，这些木屑会生长并牢牢抓住目标，防止任何逃脱。
+
+焰拳法师进一步增强了这把弓，帮助科温上尉更好地协助<CHARNAME>追捕巫师艾瑞尼卡斯。
+
+装备能力：
+– 敏捷：+1
+
+战斗能力：
+– 每次击中目标有15%的几率使目标缠绕3轮（通过对喷吐豁免可解除）
+
+统计数据：
+
+零级命中值：+3
+伤害：+4
+使用速度：5
+武器特长类别：长弓
+使用类别：双手
+需求：
+力量18 
+
+重量：9~
+@3155 = ~科温的铠甲+3~
+@3156 = ~这套轻型链甲是科温上尉的父亲为她量身定做的，作为她加入焰拳组织时的礼物。它的轻盈和附魔特性使其即便由金属制成，也不会妨碍她的能力。
+焰拳的法师们进一步强化了这套护甲，帮助科温上尉在追捕巫师艾瑞尼卡斯的行动中更好地支援<CHARNAME>。
+
+数据资料：
+
+装备能力：
+– 移动速度：+1
+– 魔法抗力：+15%
+
+防御等级：2 （挥砍0，钝击4）
+需求：
+力量5
+
+重量：7~
+@3158 = ~夺魂者匕首~
+@3159 = ~你在艾瑞尼卡斯的要塞中发现了这把匕首。这会是那把用来谋杀史姬·银盾的匕首吗？~
+@3160 = ~仅仅携带这把武器就让你感到一种不祥的预感。握在手中，你几乎能听到被囚禁的灵魂的低语。刀柄上的宝石似乎有某种内在的光芒，尽管它的核心是如此死寂的黑色，你不知道它如何能发出这样的光。~
+@3161 = ~科温的盔甲 +4~
+@3162 = ~这套轻型链甲是科温上尉的父亲为她定制的，作为她加入焰拳时的礼物。它被制作得只适合她的身材。盔甲的异常轻盈和附魔使得它尽管由金属制成，也没有干扰她的能力。
+
+焰拳法师进一步增强了这套盔甲，帮助科温上尉更好地协助<CHARNAME>追捕巫师艾瑞尼卡斯。索丹尼斯拉的铁匠大师作为对拯救精灵城市的感激之情，额外附魔了盔甲。
+
+统计数据：
+
+装备能力：
+– 移动速度：+1
+– 魔法抗力：+15%
+– 豁免检定：+1
+
+防御等级：1（-1 对挥砍，3 对钝击）
+需求：
+力量5 
+
+重量：7~
+@3163 = ~科温的弓+3~
+@3164 = ~
+
+这把附魔弓可以增强持弓者的敏捷度，使他们能够更准确地射击。焰拳法师进一步增强了这把弓，以帮助当时的科温上尉更好地协助<CHARNAME>追捕巫师艾瑞尼卡斯。
+
+加上盖森的弓弦后，这把武器可以从另一个位面汲取能量，发射闪电之矛而不是箭。在像科温这样才华横溢的弓箭手手中，它能够像你见过的任何武器一样有效地造成死亡。
+
+装备能力：
+– 敏捷：+1
+– 电击抗性：+20%
+
+战斗能力：
+能力：
+–当未装备箭矢时，这张弓发射的箭矢被视为+3武器。这些箭矢在命中时包括下列加成获得+3的加值，并且总共造成2点穿刺伤害加上1d8的电击伤害。
+
+
+统计数据：
+
+零级命中值：+4
+伤害：+5
+使用速度：4
+武器特长类别：长弓
+使用类别：双手
+需求：
+力量18
+
+重量：9~
+@3166 = ~这把附魔弓增强了使用者的敏捷，使他们能够更准确地射击。偶尔，一支箭会爆炸成木屑的阵雨，这些木屑会生长并牢牢抓住目标，防止任何逃脱。
+
+焰拳法师进一步增强了这把弓，帮助科温上尉更好地协助<CHARNAME>追捕巫师艾瑞尼卡斯。索丹尼斯拉的弓匠大师作为对拯救精灵城市的感激之情，额外附魔以降低拉力，使武器使用起来体力消耗更少，从而提高了力量和准确性。
+
+装备能力：
+– 敏捷：+1
+
+战斗能力：
+– 每次击中目标有19%的几率使目标缠绕3轮（通过对喷吐豁免可解除）
+
+统计数据：
+
+零级命中值：+4
+伤害：+5
+使用速度：4
+武器特长类别：长弓
+使用类别：双手
+需求：
+力量18 
+
+重量：9~
+@3167 = ~科温的弓+4~
+@3168 = ~
+这把附魔弓提升了使用者的敏捷，使射击更为精准。焰拳的法师们进一步增强了这张弓，帮助当时的科温上尉更好地协助<CHARNAME>追捕巫师艾瑞尼卡斯。索丹尼斯拉的弓匠大师作为对拯救精灵城市的感激，额外附魔以降低拉力，使武器使用起来体力消耗更少，从而提高了力量和准确性。
+
+加上盖森的弓弦，这件武器能从另一个位面汲取能量，发射闪电长矛而非箭矢。在像科温这样有天赋的弓箭手手中，它能够像你见过的任何武器一样有效地致命。
+
+装备能力：
+– 敏捷：+1
+– 电击抗性：+20%
+
+战斗能力：
+–当未装备箭矢时，这张弓发射的箭矢被视为+4武器。这些箭矢在命中时包括下列加成获得+4的加值，并且总共造成2点穿刺伤害加上1d8的电击伤害。
+
+统计数据：
+
+零级命中值：+5
+伤害：+6
+使用速度：4
+武器特长类别：长弓
+使用类别：双手
+需求：
+力量18
+
+重量：9~
+@3169 = ~焰拳勇卫~
+@3170 = ~Soul Trap~
+@3171 = ~“奴役”这个词可能更贴切。我在自己的家中，在那个气元素位面上，被一位巫师捕获。他将我束缚在这个瓶子里，让我守护他的一把强大匕首——以及你的某件物品。~
+@3172 = ~你拥有我的东西？这个匕首又是怎么回事？~
+@3173 = ~我确实有。这是一件充满力量的物品，它仍然带有你本质的一丝痕迹。你在这件物品上留下的独特印记有些不寻常。我还掌握着我主人的匕首，一个囚禁灵魂的容器，我感觉到它对你来说意义重大。~
+@3174 = ~可以把它们交给我吗？~
+@3175 = ~别急。我手中有一件属于你的宝物。这是我们共同的敌人从你身上夺走的。我还拥有一把匕首，一个囚禁灵魂的容器，我感觉到它对你来说意义非凡。~
+@3176 = ~我当然愿意，凡人。我猜想，既然你已经逃脱，你一定是来寻找我们共同的敌人从你身上夺走的魔法物品？也许还有他的匕首？~
+@3177 = ~若你能帮我重获自由，我会将你的武器和主人的匕首交给你。~
+@3178 = ~你非得助我一臂之力不可。除此之外，你无法得到我手中的这些强大宝物。~
+@3179 = ~换作我，也不会轻言放弃这些强大的装备。请释放我，我恳求你，我将把这些宝物赠予你。~
+@3180 = ~我无法从另一个位面定位它的位置。你得自己去寻找。找到后回来见我，我们将用我的自由交换那把匕首和你的武器。~
+@3181 = ~现在，你是否愿意助我重获自由，以换取我主人的匕首和你的魔法武器？~
+@3182 = ~如果我能，我自然会将这些宝物交给你，但束缚我的力量太过强大。只要我被困在这瓶中，我就受制于那位法师。~
+@3183 = ~帮我找到与我被囚禁的瓶子相匹配的另一个瓶子。若你能做到，我将赠予你强大的宝物，包括我主人的匕首。~
+@3184 = ~通过从三个树精那里取回一个瓶子，我释放了精灵马拉克。作为交换，他归还了一些他为巫师艾瑞尼卡斯保管的装备。其中包括一把我肯定会使用的魔法武器，以及一把被精灵称为囚魂之器的匕首。这是否就是用来谋杀并囚禁史姬·银盾的夺魂者匕首？如果是的话，我必须尽快找到方法将它送往博德之门。~
+@3185 = ~尽管尝试吧。只要我被束缚，我和我的瓶子都不会受损。只要我被束缚，我就不能将主人的匕首或你的武器交给你。~
+@3186 = ~At last! I am free! Here is your item, fleshling, and my master's dagger. You are an honorable person, and I feel that I must warn you. Keep away from the master!~
+@3187 = ~Vitality Boost~
+@3188 = ~Crowd~
+@3189 = ~Disease~
+@3190 = ~This luxurious velvet bag (along with the small fortune within) was given to you by the Grand Dukes as a reward for restoring Skie Silvershield, as well as to assist you in your hunt for the wizard Irenicus. It opens into a nondimensional space, and its inside is larger than its outside dimensions. Regardless of what is put into this item, the bag always weighs a fixed amount.
+
+STATISTICS:
+
+Weight: 5~
+@3191 = ~Floral Bouquet
+
+A vibrant, beautiful assortment of various types of flowers, including roses, lilacs, cherry blossoms, chrysanthemums, lilies and dahlias. The refreshing scent reminds you of the spring season in your former home, Candlekeep.
+
+Weight: 1~
+@3192 = ~Florist~
+@3193 = ~Floral Bouquet~
+@3194 = ~Entangled~
+@4000 = ~Processing Return to Baldur's Gate Changes...~
+@4001 = ~生金蛋的母鸡~
+@4002 = ~Legend tells of a couple that was renowned throughout the town for their insatiable greed. One day, a playful goblin who was passing through overheard the townsfolk speak of just how greedy this husband and wife were. Wanting to learn if the rumors of their greed were true, the goblin decided to pay them a visit. 
+
+The goblin appeared to the husband from within a tree trunk, and asked him why he looked so troubled. "Are you ill? Are you hungry? Tired?"
+
+Though frightened by the presence of the goblin, the husband explained that he wasn't sick, tired or hungry. Instead, he told the goblin that he and his wife were poor, and that could not afford all of the fancy clothes, baubles, and other items that they wanted.
+
+"If you are not hungry, cold, or ill, then rejoice because you are not poor!", said the goblin. 
+
+"But I am poor! A man with little or no gold is poor!", explained the husband.
+
+Upon hearing this, the goblin erupted into laughter. He then produced a hen, and explained to the husband that this hen was magical. Every morning, it would produce a golden egg. The goblin offered the hen to the husband, but warned that it would not provide the happiness and contentment that he sought.
+
+The husband quickly took the hen from the goblin and ran home to his wife. Though she didn't believe that the hen was magical, she could at least use the eggs to make a nice omelet, she thought to herself. 
+
+Early the next morning the hen began to cluck, and shortly after, a huge, bright golden egg appeared beneath it! The couple was ecstatic as they held the egg in their hands, but their mood quickly turned sour.
+
+"Well... it seems we'll have to wait until tomorrow for another egg. It will take many weeks before we have enough eggs to be the richest in town. That must be why the goblin laughed when he gave me the hen.", the husband said.
+
+The wife replied, "I've always heard that hens already have all the eggs they will lay inside of them... if this is true, why do we not kill the hen and take all of the eggs at once!" The husband agreed, and without hesitation, the couple killed the poor hen, and opened up her body. To their dismay, they saw that the there were no eggs inside. They then began to weep, for they realized that through their own greed and stupidity, they had lost forever the hen that laid the golden eggs.
+
+Abilities:
+- While held in the party's inventory, this hen will produce one golden egg per day.
+ 
+Weight: 2~
+@4003 = ~莱瑞尔的感激~
+@4004 = ~作为拯救生命之树的奖励，精灵女王艾丽星赠予这个护身符，它可以保护佩戴者免受各种魔法和符咒的伤害。在你从魔鬼的监狱中释放出莱瑞尔，你在精灵之歌酒馆遇到的鬼魂之后，这个护身符被进一步增强了。
+
+统计数据：
+
+装备能力：
+
+豁免检定：+1
+魔法抗力：+10%
+充能能力：
+
+每天施放一次复活。
+每天施放一次治疗严重伤害。
+重量：1~
+@4005 = ~龙矛勋章~
+@4006 = ~The emblem of Dragonspear castle is depicted in the center of this heavy, golden medallion. The embroidery surrounding the emblem beautifully portrays the battle standards of Daggerford, Waterdeep, and Baldur's Gate — the three cities which formed the coalition that put an end to Caelar Argent's mad and woefully destructive crusade. The inscription on the back of the medal reads as follows:
+
+'Awarded to <CHARNAME>, champion of the Sword Coast, for exceptional courage and gallantry during the Dragonspear campaign.'
+
+The medallion is enchanted to increase the wearer's resilience against magical attacks.
+
+Saving Throws: +1 (All)
+Magic Resistance: +5%~
+@4007 = ~金蛋~
+@4008 = ~这颗沉甸甸的金蛋绝对值得等重的黄金。
+
+重量：2~
+@4009 = ~无尽箭袋+4~
+@4010 = ~地狱骑士是如何得到这个箭袋的，你永远也不会知道。但可以肯定的是，这些被强力附魔的箭矢将对你的敌人造成毁灭性的影响。
+
+统计数据：
+
+装备能力：
+– 无限的+4箭 
+
+重量：0~
+@4011 = ~心灵护盾戒指~
+@4012 = ~这枚强大的戒指可以保护佩戴者免受改变心灵效果的影响。传言说，戴着这样的戒指死去的人灵魂会转移到戒指里。你并不急于知道这些传言是否属实。
+
+
+能力
+
+免疫恐惧、混乱、弱智、魅惑和支配。~
+@4013 = ~贝诺的首级~
+@4014 = ~这是科温上尉的前男友贝诺·法马里的割下的人头。他因试图利用自己的女儿罗玛作为诱饵，诱使你和科温少校走向死亡而被杀。尽管他过去曾多次复活，但你现在认为，他的后台要再次让他复活将会非常困难，因为他的头已经和他的身体分离。
+
+唉，可怜的贝诺！你对他了如指掌……
+嗯，其实并没有。~
+@4015 = ~仅仅拿着这把武器便能感受到一股令人不安的气息。握在手中，仿佛能听到被囚禁灵魂的窃窃私语。匕首柄上的宝石似乎散发着内在的光芒，然而它那深邃黑暗的核心让人不解，这种光芒是如何存在的。
+
+这把匕首中，囚禁着科温少校的前恋人贝诺·法马里的灵魂等众多灵魂。~
+@4016 = ~尽管这似乎是夺魂者匕首，但感觉上有所不同。它没有之前那么沉重，你也没有了在安姆找到它时那种令人窒息的恐惧感。匕首柄上的宝石暗淡无光。真是奇怪。~
+@4017 = ~爱能战胜一切~
+@4018 = ~这枚耀眼的订婚戒指，镶嵌着钻石，由交织的黄金、白金和玫瑰金打造。它是你和科温上尉彼此爱情的见证，也是你们之间坚不可摧的纽带的象征。戒指上附着强大的魔法，增强佩戴者的魔法抵抗、对抗物理攻击的韧性和抵御精神效果的能力。你无私地奉献了自己的神性生命力，进一步增强了戒指上的魔法力量。
+
+装备能力：
+
+魔法和元素伤害抗性：+20%（全部）
+豁免检定：+2（全部）
+物理伤害抗性：+20%
+防御等级：+2
+对魅惑、困惑、狂暴、弱智和恐惧免疫~
+@4019 = ~这枚耀眼的订婚戒指，镶嵌着钻石，由交织的黄金、白金和玫瑰金打造。它是你和科温上尉彼此爱情的见证，也是你们之间坚不可摧的纽带的象征。戒指上附着强大的魔法，增强佩戴者的速度、对抗物理攻击的韧性和抵御精神效果的能力。你无私地奉献了自己的神性生命力，进一步增强了戒指上的魔法力量。
+
+装备能力：
+
+移动速度：+2
+每轮攻击次数：+1
+物理伤害抗性：+20%
+防御等级：+2
+对魅惑、困惑、狂暴、弱智和恐惧免疫~
+@4020 = ~这枚耀眼的订婚戒指，镶嵌着钻石，由交织的黄金、白金和玫瑰金打造。它是你和科温上尉彼此爱情的见证，也是你们之间坚不可摧的纽带的象征。戒指上附着强大的魔法，增强佩戴者的速度、魔法抵抗和抵御精神效果的能力。你无私地奉献了自己的神性生命力，进一步增强了戒指上的魔法力量。
+
+装备能力：
+
+移动速度：+2
+每轮攻击次数：+1
+魔法和元素伤害抗性：+20%（全部）
+豁免检定：+2（全部）
+对魅惑、困惑、狂暴、弱智和恐惧免疫~
+@4021 = ~这枚耀眼的订婚戒指，镶嵌着钻石，由交织的黄金、白金和玫瑰金打造。它是你和科温上尉彼此爱情的见证，也是你们之间坚不可摧的纽带的象征。戒指上附着强大的魔法，增强佩戴者的速度、魔法抵抗和对抗物理攻击的韧性。你无私地奉献了自己的神性生命力，进一步增强了戒指上的魔法力量。
+
+装备能力：
+
+移动速度：+2
+每轮攻击次数：+1
+魔法和元素伤害抗性：+20%（全部）
+豁免检定：+2（全部）
+物理伤害抗性：+20%
+防御等级：+2~
+@4022 = ~这枚耀眼的订婚戒指，镶嵌着钻石，由交织的黄金、白金和玫瑰金打造。它是你和科温上尉彼此爱情的见证，也是你们之间坚不可摧的纽带的象征。戒指上附着强大的魔法，增强佩戴者的生命力、对抗物理攻击的韧性和抵御精神效果的能力。你无私地奉献了自己的神性生命力，进一步增强了戒指上的魔法力量。
+
+装备能力：
+
+最大生命值：+15
+再生
+对毒素、疾病和永久死亡免疫
+物理伤害抗性：+20%
+防御等级：+2
+对魅惑、困惑、狂暴、弱智和恐惧免疫~
+@4023 = ~这枚耀眼的订婚戒指，镶嵌着钻石，由交织的黄金、白金和玫瑰金打造。它是你和科温上尉彼此爱情的见证，也是你们之间坚不可摧的纽带的象征。戒指上附着强大的魔法，增强佩戴者的生命力、魔法抵抗和抵御精神效果的能力。你无私地奉献了自己的神性生命力，进一步增强了戒指上的魔法力量。
+
+装备能力：
+
+最大生命值：+15
+再生
+对毒素、疾病和永久死亡免疫
+魔法和元素伤害抗性：+20%（全部）
+豁免检定：+2（全部）
+对魅惑、困惑、狂暴、弱智和恐惧免疫~
+@4024 = ~这枚耀眼的订婚戒指，镶嵌着钻石，由交织的黄金、白金和玫瑰金打造。它是你和科温上尉彼此爱情的见证，也是你们之间坚不可摧的纽带的象征。戒指上附着强大的魔法，增强佩戴者的生命力、魔法抵抗和对抗物理攻击的韧性。你无私地奉献了自己的神性生命力，进一步增强了戒指上的魔法力量。
+
+装备能力：
+
+最大生命值：+15
+再生
+对毒素、疾病和永久死亡免疫
+魔法和元素伤害抗性：+20%（全部）
+豁免检定：+2（全部）
+物理伤害抗性：+20%
+防御等级：+2~
+@4025 = ~这枚耀眼的订婚戒指，镶嵌着钻石，由交织的黄金、白金和玫瑰金打造。它是你和科温上尉彼此爱情的见证，也是你们之间坚不可摧的纽带的象征。戒指上附着强大的魔法，增强佩戴者的生命力、速度和抵御精神效果的能力。你无私地奉献了自己的神性生命力，进一步增强了戒指上的魔法力量。
+
+装备能力：
+
+最大生命值：+15
+再生
+对毒素、疾病和永久死亡免疫
+移动速度：+2
+每轮攻击次数：+1
+对魅惑、困惑、狂暴、弱智和恐惧免疫~
+@4026 = ~这枚耀眼的订婚戒指，镶嵌着钻石，由交织的黄金、白金和玫瑰金打造。它是你和科温上尉彼此爱情的见证，也是你们之间坚不可摧的纽带的象征。戒指上附着强大的魔法，增强佩戴者的生命力、速度和对抗物理攻击的韧性。你无私地奉献了自己的神性生命力，进一步增强了戒指上的魔法力量。
+
+装备能力：
+
+最大生命值：+15
+再生
+对毒素、疾病和永久死亡免疫
+移动速度：+2
+每轮攻击次数：+1
+物理伤害抗性：+20%
+防御等级：+2~
+@4027 = ~这枚耀眼的订婚戒指，镶嵌着钻石，由交织的黄金、白金和玫瑰金打造。它是你和科温上尉彼此爱情的见证，也是你们之间坚不可摧的纽带的象征。戒指上附着强大的魔法，增强佩戴者的生命力、速度和魔法抵抗。你无私地奉献了自己的神性生命力，进一步增强了戒指上的魔法力量。
+
+装备能力：
+
+最大生命值：+15
+再生
+对毒素、疾病和永久死亡免疫
+移动速度：+2
+每轮攻击次数：+1
+魔法和元素伤害抗性：+20%（全部）
+豁免检定：+2（全部）~
+@4028 = ~这枚耀眼的、镶有钻石的订婚戒指由交织的黄金、白金和玫瑰金打造。它是你与舍尔彼此分享的爱的象征，也是你们之间形成的不可破坏的纽带的标志。戒指上布满了强大的附魔，增强了佩戴者对魔法的抵抗力、对物理攻击的韧性以及对精神效果的防护。
+
+装备能力：
+
+魔法和元素伤害抗性：+10%（全部）
+豁免检定：+1（全部）
+物理伤害抗性：+10%
+防御等级：+1
+免疫魅惑、困惑、狂暴、弱智和恐惧~
+@4029 = ~这枚耀眼的、镶有钻石的订婚戒指由交织的黄金、白金和玫瑰金打造。它是你与舍尔彼此分享的爱的象征，也是你们之间形成的不可破坏的纽带的标志。戒指上布满了强大的附魔，增强了佩戴者的速度、对物理攻击的韧性以及对精神效果的防护。
+
+装备能力：
+
+移动速度：+1
+每轮攻击次数+0.5
+物理伤害抗性：+10%
+防御等级：+1
+免疫魅惑、困惑、狂暴、弱智和恐惧~
+@4030 = ~这枚耀眼的、镶有钻石的订婚戒指由交织的黄金、白金和玫瑰金打造。它是你与舍尔彼此分享的爱的象征，也是你们之间形成的不可破坏的纽带的标志。戒指上布满了强大的附魔，增强了佩戴者的速度、对魔法的抵抗力以及对精神效果的防护。
+
+装备能力：
+
+移动速度：+1
+每轮攻击次数+0.5
+魔法和元素伤害抗性：+10%（全部）
+豁免检定：+1（全部）
+免疫魅惑、困惑、狂暴、弱智和恐惧~
+@4031 = ~这枚耀眼的、镶有钻石的订婚戒指由交织的黄金、白金和玫瑰金打造。它是你与舍尔彼此分享的爱的象征，也是你们之间形成的不可破坏的纽带的标志。戒指上布满了强大的附魔，增强了佩戴者的速度、对魔法的抵抗力和对物理攻击的韧性。
+
+装备能力：
+
+移动速度：+1
+每轮攻击次数+0.5
+魔法和元素伤害抗性：+10%（全部）
+豁免检定：+1（全部）
+物理伤害抗性：+10%
+防御等级：+1~
+@4032 = ~这枚耀眼的、镶有钻石的订婚戒指由交织的黄金、白金和玫瑰金打造。它是你与舍尔彼此分享的爱的象征，也是你们之间形成的不可破坏的纽带的标志。戒指上布满了强大的附魔，增强了佩戴者的活力、对物理攻击的韧性和对精神效果的防护。
+
+装备能力：
+
+最大生命值：+5
+再生
+免疫毒素、疾病和永久死亡
+物理伤害抗性：+10%
+防御等级：+1
+免疫魅惑、困惑、狂暴、弱智和恐惧~
+@4033 = ~这枚耀眼的、镶有钻石的订婚戒指由交织的黄金、白金和玫瑰金打造。它是你与舍尔彼此分享的爱的象征，也是你们之间形成的不可破坏的纽带的标志。戒指上布满了强大的附魔，增强了佩戴者的活力、对魔法的抵抗力和对精神效果的防护。
+
+装备能力：
+
+最大生命值：+5
+再生
+免疫毒素、疾病和永久死亡
+魔法和元素伤害抗性：+10%（全部）
+豁免检定：+1（全部）
+免疫魅惑、困惑、狂暴、弱智和恐惧~
+@4034 = ~这枚耀眼的、镶有钻石的订婚戒指由交织的黄金、白金和玫瑰金打造。它是你与舍尔彼此分享的爱的象征，也是你们之间形成的不可破坏的纽带的标志。戒指上布满了强大的附魔，增强了佩戴者的活力、对魔法的抵抗力和对物理攻击的韧性。
+
+装备能力：
+
+最大生命值：+5
+再生
+免疫毒素、疾病和永久死亡
+魔法和元素伤害抗性：+10%（全部）
+豁免检定：+1（全部）
+物理伤害抗性：+10%
+防御等级：+1~
+@4035 = ~这枚耀眼的、镶有钻石的订婚戒指由交织的黄金、白金和玫瑰金打造。它是你与舍尔彼此分享的爱的象征，也是你们之间形成的不可破坏的纽带的标志。戒指上布满了强大的附魔，增强了佩戴者的活力、速度和对精神效果的防护。
+
+装备能力：
+
+最大生命值：+5
+再生
+免疫毒素、疾病和永久死亡
+移动速度：+1
+每轮攻击次数+0.5
+免疫魅惑、困惑、狂暴、弱智和恐惧~
+@4036 = ~这枚耀眼的、镶有钻石的订婚戒指由交织的黄金、白金和玫瑰金打造。它是你与舍尔彼此分享的爱的象征，也是你们之间形成的不可破坏的纽带的标志。戒指上布满了强大的附魔，增强了佩戴者的活力、速度和对物理攻击的韧性。
+
+装备能力：
+
+最大生命值：+5
+再生
+免疫毒素、疾病和永久死亡
+移动速度：+1
+每轮攻击次数+0.5
+物理伤害抗性：+10%
+防御等级：+1~
+@4037 = ~这枚耀眼的、镶有钻石的订婚戒指由交织的黄金、白金和玫瑰金打造。它是你与舍尔彼此分享的爱的象征，也是你们之间形成的不可破坏的纽带的标志。戒指上布满了强大的附魔，增强了佩戴者的活力、速度和对魔法的抵抗力。
+
+装备能力：
+
+最大生命值：+5
+再生
+免疫毒素、疾病和永久死亡
+移动速度：+1
+每轮攻击次数+0.5
+魔法和元素伤害抗性：+10%（全部）
+豁免检定：+1（全部）~
+@4039 = ~虚空之刃+5~
+@4040 = ~This is the blade that the Narzugon offered to you in exchange for Lyriel's amulet. The hilt is made of carved bone, and the jet black blade, if one can call it that, reflects no light. Looking at the blade for any length of time gives you the unnerving impression that some malevolent force is watching you from within the void.
+
+STATISTICS:
+
+THAC0: +5
+Damage: 2d4+5
+Damage type: Slashing
+Speed Factor: 4
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Special: ???
+
+Weight: 3~
+@4046 = ~妮欧玛~
+@4048 = ~玛格达馆长~
+@4049 = ~莱瑞尔~
+@4050 = ~地狱骑士~
+@4064 = ~Beno Famari~
+@4067 = ~Audamar~
+@4072 = ~焰拳刽子手~
+@4074 = ~Glint~
+@4077 = ~变异巨蚁~
+@4078 = ~蒂安娜~
+@4079 = ~Rohma~
+@4082 = ~维吉尔~
+@4092 = ~贾斯珀~
+@4097 = ~噩梦成真~
+@4098 = ~战斗已然结束。罗玛得救了，但代价是你心爱的女人。你知道无法将她带回来。悲痛之下，你跪地痛哭，尖叫着。悲痛欲绝，你跪地痛哭，发出撕心裂肺的尖叫。忽然，你听到了一声低沉的呻吟，转身一看，贝诺竟还在挣扎着生存。他那可怜兮兮的面容成了压垮你的最后一根稻草。你屈服于自己黑暗的本能，化身为无情的杀戮者。他的求饶声无法打动你，你残忍地撕出他的心脏。你将他失去生命的身躯扔向房间的另一侧，开始啃食那颗仍在跳动的心脏。
+
+你从地下城走出，踏入盗贼的迷宫。你轻易地摧毁一堵堵墙壁，直捣盗贼公会的心脏。他们微不足道的抵抗对你毫无作用，你欣喜若狂地将他们一一撕裂。你的暴行让整个城市的上空回荡着尖叫声，你继续无情地摧毁盗贼公会。你走上街头，朝公爵宫殿前进，那些愚蠢地挡在你路上的人轻易地被你清除。
+
+你从地下城走出，踏入盗贼的迷宫。你轻易地摧毁一堵堵墙壁，直捣盗贼公会的心脏。他们微不足道的抵抗对你毫无作用，你欣喜若狂地将他们一一撕裂。你的暴行让整个城市的上空回荡着尖叫声，你继续无情地摧毁盗贼公会。你走上街头，朝公爵宫殿前进，那些愚蠢地挡在你路上的人轻易地被你清除。
+
+进入宫殿后，焰拳迅速向你发起攻击。即便是他们特别训练的勇士和巫师也无法阻止你。你找到了公爵们藏身的房间，却听到了一声尖叫——不是来自公爵们，而是对你来说更为重要的人……罗玛。看到舍尔的女儿在恐惧中哭泣，足以让你从杀戮的迷梦中惊醒。你的变身解除了，公爵们惊恐地看着你，哑口无言。你向罗玛道歉；因为没有保护她的母亲，也因为你所做的一切。
+
+罗玛和公爵们被迅速带出房间。你请求一位幸存的勇士结束你的生命，他们很乐意这么做。当你感到巨大的战斧划过你的脖子时，你的一生在你眼前闪过。烛堡、爱蒙、葛立安、那西凯的矿井、沙洛佛克、你和舍尔的初次相遇、罗玛、龙矛之围、艾瑞尼卡斯、你所有的胜利和失败。你的最后记忆是舍尔，以及当她同意与你团聚在阿斯卡特拉时你是多么幸福。
+
+你的头沉闷地撞在地板上。无论是对你，还是对博德之门这座城市，噩梦都结束了。~
+@4099 = ~战斗已经结束，罗玛得救了，但代价是你深爱的女人。你知道无法将她复苏。你被悲痛所征服，跪地痛哭，尖叫着。听到一声低沉的呻吟，你转身看到贝诺在挣扎。不知怎的，他居然还活着。看到他那哭泣的脸，你彻底失去了控制。你屈服于你黑暗的本性，变成了杀戮者。他的求饶声无法打动你，你从他的胸膛撕出心脏。你将他无生命的身体扔到房间的另一边，开始啃食那颗仍在跳动的心脏。
+
+血腥的滋味并没有平息你的杀戮欲望。你渴望更多。你需要更多！你心想，这就是你，为何要抵抗这种力量？这是你与生俱来的权利！
+
+你走出地下城，进入盗贼迷宫。你轻易地撕裂一堵堵墙壁，闯入公会。他们微不足道的抵抗毫无效果，你愉快地将他们肢解。你的暴行让整个城市的尖叫声此起彼伏，你继续摧毁盗贼公会。你走上街头，朝公爵宫殿前进。那些愚蠢地挡在你路上的人轻易地被你扫清。
+
+进入宫殿后，焰拳很快向你发起攻击。即使是他们特别训练的勇士和巫师也无法阻止你。你找到了公爵们蜷缩的房间，你听到了一声尖叫——不是来自公爵们，而是对你来说更重要的人……罗玛。看到舍尔的女儿在恐惧中哭泣，足以让你从杀戮的迷梦中清醒过来。变身解除了，公爵们惊恐地看着你，无言以对。你告诉罗玛你很抱歉；因为没有保护她的母亲，以及你所做的一切。
+
+罗玛和公爵们被迅速带出房间。你请求一位幸存的勇士结束你的生命，他们很乐意这么做。当你感到巨大的战斧划过你的脖子时，你的一生在你眼前闪过。烛堡、爱蒙、葛立安、那西凯的矿井、沙洛佛克、你和舍尔第一次见面、罗玛、龙矛之围、艾瑞尼卡斯、你所有的胜利和失败。你的最后记忆是舍尔，以及当你们在阿斯卡特拉重逢时你是多么幸福。
+
+你的头沉闷地撞在地板上。无论是对你，还是对博德之门这座城市，噩梦都结束了。~
+@4100 = ~战斗结束了。罗玛得救了，但你亲爱的朋友舍尔却永远地离你而去。罗玛将成为孤儿，这都是因为你的身份和你所做的。悲痛之下，你跪地怒吼。听到一声低沉的呻吟，你转身看到贝诺在挣扎。不知怎的，他居然还活着。看到他那哭泣的脸，你彻底失控。你屈服于你黑暗的本性，变成了杀戮者。他的求饶声无法打动你，你从他的胸膛撕出心脏。你将他无生命的身体扔到房间的另一边，开始啃食那颗仍在跳动的心脏。
+
+血腥的滋味并没有平息你的杀戮欲望。你渴望更多。你需要更多！你心想，这就是你，为何要抵抗这种力量？这是你与生俱来的权利！
+
+你走出地下城，进入盗贼迷宫。你轻易地撕裂一堵堵墙壁，闯入公会。他们微不足道的抵抗毫无效果，你愉快地将他们肢解。你的暴行让整个城市的尖叫声此起彼伏，你继续摧毁盗贼公会。你走上街头，朝公爵宫殿前进。那些愚蠢地挡在你路上的人轻易地被你扫清。
+
+进入宫殿后，焰拳很快向你发起攻击。即使是他们特别训练的勇士和巫师也无法阻止你。你找到了公爵们蜷缩的房间，你听到了一声尖叫——不是来自公爵们，而是对你来说更重要的人……罗玛。看到舍尔的女儿在恐惧中哭泣，足以让你从杀戮的迷梦中清醒过来。变身解除了，公爵们惊恐地看着你，无言以对。你告诉罗玛你很抱歉；因为没有保护她的母亲，以及你所做的一切。
+
+罗玛和公爵们被迅速带出房间。你请求一位幸存的勇士结束你的生命，他们很乐意这么做。当你感到巨大的战斧划过你的脖子时，你的一生在你眼前闪过。烛堡、爱蒙、葛立安、那西凯的矿井、沙洛佛克、你和舍尔第一次见面、罗玛、龙矛之围、艾瑞尼卡斯、你所有的胜利和失败。你的最后记忆是公爵们为你举行的庆祝活动，以及你与战友们分享的爱与友谊。
+
+你的头颅沉闷地撞击在地板上。无论是对你，还是对博德之门这座城市，这场噩梦终于结束了。~
+@4101 = ~重返博德之门~
+@4102 = ~You, Schael, and the rest of your companions board the elvish caravan and begin the journey back to Baldur's Gate. The long journey provides the necessary time and privacy to have some frank, and often difficult, conversations concerning your relationship. Certain aspects, including living and security arrangements, your role in parenting Rohma, and dealing with your celebrity, are left unclear. What is certain is that the love you share for one another has never been stronger, and that you are both fully committed to making the relationship work. 
+
+Your excitement at the thought of returning to Baldur's Gate gradually turns to apprehension as the caravan moves closer to its destination. You were, after all, forced to leave the city under some very dark circumstances, and many wanted to see you executed. Seeing your growing unease, your love tries to reassure you:
+
+"The city and the Council will welcome you, I'm sure of it. You've nothing to worry about."
+
+Her words should comfort you, but they do not. If nothing else, your experiences over these past months have taught you to hope for the best, but to expect the worst. With that thought in mind, you hear the caravan driver make the announcement:
+
+"Wyrm's Crossing! We've reached Wyrm's Crossing!"   
+
+With Schael's hand in yours, you take a deep breath and step out of your wagon. A group of Flaming Fist officers and city officials approach as you stand on the bridge.~
+@4103 = ~You, Captain Corwin and the rest of your companions board the elvish caravan and begin the journey back to Baldur's Gate. The long trek affords you much time for some well-deserved rest and relaxation, which you are more than eager to take advantage of. Moreover, you finally have a chance to reflect on all that's happened since you left for Dragonspear many months ago... all of the twists and turns, your triumphs and defeats... perhaps now, things will settle down, and you'll be free to live your life on your terms. 
+
+During one of the caravan's many stops, you visit Captain Corwin's wagon. Unsurprisingly, she is quite energetic and eager to see her family again. In contrast, your initial excitement at the thought of returning to the city has turned into apprehension. The last time you were in Baldur's Gate, you were nearly executed for a crime you did not commit. Seeing your growing unease, the Captain tries to reassure you:
+
+"The city and the Council will welcome you, I'm sure of it. You've nothing to worry about."
+
+Her words should comfort you, but they do not. If nothing else, your experiences over these past months have taught you to hope for the best, but to expect the worst. With that thought in mind, you hear the caravan driver make the announcement:
+
+"Wyrm's Crossing! We've reached Wyrm's Crossing!"   
+
+You take a deep breath and step out of the wagon. A group of Flaming Fist officers and city officials approach as you stand on the bridge.~
+@4104 = ~The week long festival held by the Dukes in your honor was a spectacle that you'll never forget. Food, drink, song and dance were shared by all, rich and poor alike, and you experienced the wholehearted adoration of the city. In the weeks that followed, you slowly began to embrace your new role as the city's protector — the Defender of Baldur's Gate. Though you miss your days of adventuring, you cannot deny that for the first time in your adult life, you feel a true sense of belonging, as though this city is where you are meant to be...
+
+You recall the trepidation that you felt when you stepped out of the caravan onto Wyrm's Crossing. You were certain at the time that, somehow, fate would intervene for the worse, as it did so many times before. It seems now that you've been able to escape your father's shadow, and that you're finally free to live your life on your terms...
+
+To that end, you continue your friendship with Major Corwin. Though you don't see each other as often as you once did, your bond remains strong. Tonight, you've invited her to dinner at The Three Old Kegs, the very same tavern where the two of you shared a drink before embarking on the Dragonspear campaign...~
+@4105 = ~博德之门守卫者~
+@4106 = ~The week long festival held by the Dukes in your honor was a spectacle that you'll never forget. Food, drink, song and dance were shared by all, rich and poor alike, and you experienced the wholehearted adoration of the city. In the weeks that followed, you slowly began to embrace your new role as the city's protector — the Defender of Baldur's Gate. Though you miss your days of adventuring, you cannot deny that for the first time in your adult life, you feel a true sense of belonging, as though this city is where you are meant to be...
+
+You recall the trepidation that you felt when you stepped out of the caravan onto Wyrm's Crossing. You were certain at the time that, somehow, fate would intervene for the worse, as it did so many times before. It seems now that you've been able to escape your father's shadow, and that you're finally free to live your life on your terms...
+
+To that end, you continue your courtship of Schael Corwin. The love you share for one another has continued to grow. Over these past weeks, you've begun to build a good relationship with her young daughter, Rohma, and you sense that her father is finally warming up to you. It is your intention for them to move in with you to the Ducal Palace, but Schael has expressed some reservations. 
+
+"You've been great with Rohma, but she needs a little more time."
+
+Although you're not living together, the two of you spend a great deal of your free time with one another. Tonight is a date night, and you've decided to take Schael to dinner at The Three Old Kegs, the very same tavern where the two of you shared a drink before embarking on the Dragonspear campaign...~
+@4107 = ~前往萨拉都什的征程~
+@4108 = ~Your party boards the caravan for the long trek to Saradush. During the journey, your thoughts wander to Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, the two of them are safe within the Ducal Palace, under the watchful eye of the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger.
+
+Though your wagon is comfortable and well-provisioned, a good night's rest continues to elude you. When you're able to sleep, you suffer some truly disturbing nightmares, and tonight's no exception. You awaken startled and in a cold sweat, and your restlessness has woken up Schael. Concerned, she gently caresses your chest, and tries to settle you down.
+
+"More nightmares?"
+
+You explain how they've been plaguing you these past nights. Though you can't recall the details, you know that in each one, you're forced to make an extremely difficult and painful decision. 
+ 
+"Whatever happens, we'll face it together."
+
+She lays her head down on your chest, and you begin to slowly run your fingers through her soft, dark hair. After a time you're able to calm down, and the two of you fall asleep in a tender, loving embrace.
+
+It's the next morning, and the caravan has come to a halt. You and Schael get dressed and exit your wagon. The driver says that you've reached your destination, on the outskirts of the forest northwest of Saradush. The remainder of your journey will be on foot. As the party moves toward the forest, your nostrils are assailed by the acrid smoke. With your eyes watering, you look up and see that the sky is covered in a thick, gray haze; the fire giants have been busy.
+
+The forest, and the besieged city beyond it, await.~
+@4109 = ~Your party boards the caravan for the long trek to Saradush. During the journey, your thoughts wander to Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, Schael's family is safe within the Ducal Palace, under the watchful eye of the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger.
+
+Though your wagon is comfortable and well-provisioned, a good night's rest continues to elude you. When you're able to sleep, you suffer some truly disturbing nightmares, and tonight's no exception. You wake startled and in a cold sweat. Since the caravan has stopped for the night, you step outside of your wagon for some fresh air. While outside, you see Schael sitting next to a pond. She stands as you approach, and gestures to you.
+
+"Couldn't sleep either, eh?"
+
+You tell her of the nightmares that've been plaguing you of late. Though you can't recall the details, you know that in each one, you're forced to make an extremely difficult and painful decision. She places her hand on your shoulder to reassure you. 
+
+"Whatever happens, we'll face it together."
+
+After some idle chatter, you return to your wagons to get some sleep.
+
+It's the next morning, and the caravan has reached its destination on the outskirts of the forest northwest of Saradush. The remainder of your journey will be on foot. As the party moves toward the forest, your nostrils are assailed by the acrid smoke. With your eyes watering, you look up and see that the sky is covered in a thick, gray haze; the fire giants have been busy.
+
+The forest, and the besieged city beyond it, await.~
+@4110 = ~Your party boards the caravan for the long trek to Saradush. During the journey, your thoughts wander to Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, the two of them are safe within the Ducal Palace, under the watchful eye of the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger. 
+
+Your mind drifts to Schael. You fondly remember your last romantic evening with her, and you're eager to return to her warm, tender embrace. Though it pains you greatly to be apart from her, you're sure that you made the right decision in leaving her behind to protect the city, and her family. Furthermore, you've made good use of the time alone to steel yourself for what will likely be your most difficult challenge yet.
+
+Though your wagon is comfortable and well-provisioned, a good night's rest continues to elude you. When you are able to sleep, you experience some truly disturbing nightmares, and tonight is no exception. Startled and in a cold sweat, you wake up from your latest terror. Strangely, though you cannot recall any details, you know that in each nightmare you're forced to make an extremely difficult and painful decision.
+
+It's the next morning, and the caravan has reached its destination on the outskirts of the forest northwest of Saradush. The remainder of your journey will be on foot. As the party moves toward the forest, your nostrils are assailed by the acrid smoke. With your eyes watering, you look up and see that the sky is covered in a thick, gray haze. The fire giants have been busy.
+
+The forest, and the besieged city beyond it, await.~
+@4111 = ~Your party boards the caravan and begins the long trek to Saradush. During the journey, your thoughts wander to Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, the two of them are safe within the Ducal Palace, under the watchful eye of the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger. 
+
+Your mind drifts to Major Corwin. Though her skill, counsel and friendship have proven invaluable to you, you're sure that you made the right decision in leaving her behind to protect the city, and her family. Furthermore, you've made good use of the time alone to steel yourself for what will likely be your most difficult challenge yet.
+
+Though your wagon is comfortable and well-provisioned, a good night's rest continues to elude you. When you are able to sleep, you experience some truly disturbing nightmares, and tonight is no exception. Startled and in a cold sweat, you wake up from your latest terror. Strangely, though you cannot recall any details, you know that in each nightmare you're forced to make an extremely difficult and painful decision.
+
+It's the next morning, and the caravan has reached its destination on the outskirts of the forest northwest of Saradush. The remainder of your journey will be on foot. As the party moves toward the forest, your nostrils are assailed by the acrid smoke. With your eyes watering, you look up and see that the sky is covered in a thick, gray haze. The fire giants have been busy.
+
+The forest, and the besieged city beyond it, await.~
+@4115 = ~玩具娃娃~
+@4116 = ~一个玩具娃娃，孩子们会爱不释手。~
+@4117 = ~While the physics behind a telescope have been well known for some time, the glass-grinding skills required to actually construct one are still quite specialized. The outer lens of this telescope is cracked, however, and the collapsible tubing is dented such that the scope cannot fully extend.~
+@4119 = ~温斯顿的账本~
+@4120 = ~这本精心记录的账本详细列出了温斯顿风险投资公司的货运清单编号、发货日期及解码清单所需的密钥。记录始于难民危机时期，在仅仅几周前结束。~
+@4121 = ~货运清单（加密）
+你在调查博德之门奴隶贩子活动时，从港口主管那里收到了这些加密的货运清单。你无法破译它们，或许盗贼公会能助你一臂之力。~
+@4122 = ~货运清单（解密）
+你得到了盗贼公会的帮助，这些是解密后的货运清单。清单上列出了姓名、年龄和身体特征。有了这些清单，你可以证实温斯顿风险投资公司曾将人作为货物运输。~
+@4123 = ~货运清单（解密）~
+@4124 = ~在盗贼公会的帮助下解密的这些清单，上面记录了姓名、年龄和身体特征。你注意到一个熟悉的名字——梅拉·维尔森，她是你在阿斯卡特拉从奴隶贩子手中解救的女孩。有了这些清单，你可以证明温斯顿风险投资公司不仅将人作为货物运输，而且有些人被卖为了奴隶。~
+@4125 = ~货运清单（解密）~
+@4126 = ~旧铁王座标志被破坏了，在它下方的牌匾上刻着“温斯顿风险投资公司”的名字。~
+@4136 = ~Return to Baldur's Gate~
+@4137 = ~Wyrm's Crossing~
+@4138 = ~温斯顿风险投资公司~
+@4140 = ~City Official~
+@4146 = ~虚空精灵~
+@4147 = ~虚空魔鬼~
+@4148 = ~虚空领主~
+@4149 = ~Merchants' League~
+@4150 = ~Ye Olde Inn~
+@4151 = ~Flaming Fist Bridge Guard~
+@4152 = ~Basilisk Figurine~
+@4153 = ~You recovered this intricately carved basilisk figurine from the abandoned tower that was once home to the wizard Ramazith. Stroking the figurine from its head to its tail will call forth a fearsome basilisk. The basilisk will obey its master's commands for the duration of the spell or until slain. After one hour, regardless of whether the basilisk lived or died, the figurine returns. It takes a day to recharge the figurine.
+
+STATISTICS:
+
+Charge abilities:
+– Summons a Greater Basilisk once per day
+  Range: 20 ft.
+  Duration: 1 hour
+  The basilisk deals 2d8 crushing damage and can paralyze opponents during combat.
+
+Weight: 0~
+@4154 = ~Anguished Mother~
+@4155 = ~Percy~
+@4156 = ~Timotey~
+@4157 = ~Abandoned Tower~
+@4158 = ~紧急补给~
+@4159 = ~Bone Dagger~
+@4160 = ~科温的家~
+@4161 = ~Auburn Wyrmling~
+@4162 = ~Auburn Dragon~
+@4164 = ~Please be patient. This may take a while.~
+@4171 = ~Processing area modifications: Blocks A and C...~
+@4172 = ~Processing conversion blocks...~
+@4173 = ~Processing creatures...~
+@4174 = ~Almost done...~
+@4175 = ~Dragonskin Robe~
+@4176 = ~The scales of an auburn dragon have been masterfully woven into this exquisitely crafted robe. It affords the wearer protection against the elements, as well as physical and magical attacks. The scales are light enough that they do not encumber the wearer, and thus do not interfere with their spell-casting.
+
+STATISTICS
+
+Equipped abilities:
+– Armor Class: 3
+– Saving Throws: +2
+– Magic Resistance: +10%
+- Fire Resistance: +15%
+- Cold Resistance: +15%
+- Electricity Resistance: +15%
+
+Weight: 6~
+@4177 = ~Dragonscale Shield~
+@4178 = ~The shimmering auburn surface of this shield is made of interlocking dragon scales. Though thin and light, the shield is strong enough to turn aside even the heaviest blows, while affording the wielder protection against elemental and magical attacks.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +4
+– Saving Throws: +1
+- Fire Resistance: +15%
+- Cold Resistance: +15%
+- Electricity Resistance: +15%
+- Magic Resistance: +5%
+
+Requires:
+ 8 Strength
+
+Weight: 5~
+@4179 = ~Auburn Scale Armor~
+@4180 = ~This armor, made from the supple yet strong scales of an auburn dragon, provides the wearer with an array of protective benefits, while being light enough as to not interfere with spell-casting. 
+
+STATISTICS:
+
+Equipped abilities:
+- Fire Resistance: +15%
+- Cold Resistance: +15%
+- Electricity Resistance: +15%
+- Magic Resistance: +5%
+
+Armor Class: 0 
+
+Requires:
+ 8 Strength
+
+Weight: 10~
+@4181 = ~Shaman~
+@4182 = ~Still working... please be patient.~
+@4183 = ~This set of darts was given to you by Belfort, the Flaming Fist mercenary who deserted his post at the start of the Dragonspear campaign. He told you that he won them some years ago in a game of knucklebones, and that he hadn't lost a game of darts since. It's easy to see why; the darts are exquisitely crafted and are imbued with some powerful enchantments. 
+
+STATISTICS:
+
+Combat abilities:
+– Returns to the wielder's hand when thrown
+
+THAC0: +5
+Damage: 1d3+5 (missile)
+Speed Factor: 0
+Proficiency Type: Dart
+Type: One-handed
+
+Weight: 0~
+@4184 = ~Belfort's Darts +5~
+@4185 = ~Hebert~
+@4186 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Breach
+(Abjuration)
+
+Level: 5
+Range: 40 ft.
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is cast at a creature, it breaches and dispels all of the specific and combat protections on the target creature. Here is a complete list of all the specific protection spells that are dispelled by Breach: Shield, Protection Circle, Resist Fear, Protection From Fire/Cold, Fireshield, Protection From Acid, Protection From Electricity, Protection From Magic Energy, Protection From The Elements, and Protection From Energy. The combat protection spells dispelled by Breach are Protection From Normal Missiles, Protection From Normal Weapons, Protection From Magical Weapons, Stoneskin, Armor, Ghost Armor, Spirit Armor, Absolute Immunity, Mantle, and Improved Mantle. The target's Magic Resistance, if any, does not affect this spell.~
+@4187 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Improved Invisibility
+(Illusion/Phantasm)
+
+Level: 4
+Range: Touch
+Duration: 3 rounds + 1 round/level
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell is similar to Invisibility, but the recipient is able to attack by missile discharge, melee combat, or spellcasting while remaining unseen. However, telltale traces—a shimmering—allow an observant opponent to attack the invisible spell recipient. These traces are only noticeable when specifically looked for (after the invisible character has made <PRO_HISHER> presence known). Attacks against the invisible character suffer a -4 penalty to attack rolls, and the invisible character's Saving Throws are made with a +4 bonus.
+
+Note: After making an attack, the wizard is no longer completely invisible. Opponents can target the wizard.~
+@4188 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Skull Trap
+(Necromancy)
+
+Level: 3
+Range: 60 ft.
+Duration: Special
+Casting Time: 3
+Area of Effect: 11-ft. radius
+Saving Throw: 1/2
+
+When this spell is cast, a skull is thrown by the caster at the target area. The skull floats in the area until a creature comes within 8 ft. of it. When this happens, the skull is triggered and explodes damaging everyone within a 11-ft. radius. The damage inflicted is equal to 1d6 per level of the caster, or half with a successful Saving Throw vs. Spell. When casting this spell, it is wise to set it far away from the party lest they set it off accidentally.~
+@4189 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Improved Haste
+(Alteration)
+
+Level: 6
+Range: 40 ft.
+Duration: 3 rounds + 1 round/level
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+The affected creature functions at double its normal movement and attack rates and receives a +2 bonus to its initiative. Thus, a creature moving at 6 and attacking once per round would move at 12 and attack twice per round. Spellcasting and spell effects are not sped up. There are three major differences between the 3rd-level wizard spell Haste and this spell: First, there is no period of fatigue following the expiration of the spell; second, this spell will only affect one creature; third, this spell actually doubles the number of attacks per round of the hasted creature. This spell also negates the effects of a Slow spell, but it is not cumulative with itself or with other similar magic. Its effects will last for the duration or until dispelled.~
+@4190 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Khelben's Warding Whip
+(Abjuration)
+
+Level: 7
+Range: 30 ft.
+Duration: 3 rounds
+Casting Time: 7
+Area of Effect: Special
+Saving Throw: None
+
+When this spell is cast, it dispels one spell protection of up to 8th level affecting the target creature. Every round thereafter till the duration of the spell expires, another spell protection will be removed from the target. The spells affected by Khelben's Warding Whip are Minor Spell Turning, Minor Globe of Invulnerability, Spell Immunity, Globe Of Invulnerability, Minor Spell Deflection, Spell Turning, Spell Deflection, and Spell Shield. This will always remove the highest-level spell protection affecting the target; if more than one same-level protection is active on the target simultaneously, one of them will be randomly chosen and dispelled. The target's Magic Resistance, if any, does not affect this spell.~
+@4191 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Stoneskin
+(Alteration)
+
+Level: 4
+Range: 0
+Duration: 12 hours
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None 
+
+When a wizard casts this powerful spell upon <PRO_HIMHER>self, an outer skin of stone will move up from the ground, completely covering <PRO_HIMHER>. This skin is of course magical and will hinder the wizard in no way. The effect of this is to protect the wizard from physical attacks such as melee weapons and projectiles. For every 2 levels of the caster, an additional skin is gained upon casting. For example, a 10th-level wizard would receive 5 skins while a 20th-level wizard would receive 10. For each skin the wizard possesses, the spell will stop one attack, so a 10th-level wizard would be protected from the first 5 attacks made against <PRO_HIMHER>, but the 6th would affect <PRO_HIMHER> normally. The skins will remain on the wizard until <PRO_HESHE> is affected by a Dispel Magic, all of the skins are removed due to physical attacks, or the spell duration expires. It is important to note that this will not protect the wizard from any magical attacks, such as Fireball.~
+@4192 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Pierce Magic
+(Abjuration)
+
+Level: 6
+Range: 40 ft.
+Duration: Instant
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is cast upon a target creature, there will be two major effects: First, the creature's Magic Resistance, if any, will be lowered by 1% per level of the caster; second, one spell protection of 8th level or lower affecting the creature, if any, will be canceled. For example, if this spell were cast by a 15th-level wizard, the target creature would lose 15% of its Magic Resistance from its current total (reducing it to 0 if less than that remains), and one 8th- or lower level spell protection affecting the creature would be dispelled. Spells affected by Pierce Magic are Minor Spell Deflection, Minor Spell Turning, Spell Deflection, Spell Turning, Minor Globe of Invulnerability, Spell Immunity, and Globe of Invulnerability. The target's Magic Resistance, if any, does not affect this spell, nor do any of the spell protections. Magic Resistance remains lowered for 1 round per level of the caster.~
+@4193 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Chromatic Orb 
+(Evocation)
+
+Level: 1
+Range: 90 ft.
+Duration: Special
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell causes a 2-ft. diameter sphere to appear in the caster's hand. When thrown, the sphere heads unerringly to its target. The effect the orb has upon the target varies with the level of the caster. Each orb will do damage to the target against which there is no save and an effect against which the target must save vs. Spell with a +6 bonus:
+ 1st Level: 1d4 damage and blinds the target for 1 round.
+ 2nd Level: 1d4 damage and inflicts pain (-1 penalty to Strength, Dexterity, AC, and THAC0) upon the victim.
+ 3rd Level: 1d6 damage and burns the victim for an additional 1d8 damage.
+ 4th Level: 1d6 damage and blinds the target for 1 turn.
+ 5th Level: 1d8 damage and stuns the target for 3 rounds.
+ 6th Level: 1d8 damage and causes weakness (-4 penalty to THAC0) in the victim.
+ 7th Level: 1d10 damage and paralyzes the victim for 2 turns.
+ 10th Level: 1d12 acid damage and turns the victim to stone.
+ 12th Level: 2d8 acid damage and instantly kills the victim.
+
+NOTE: The victim saves vs. Spell with a +6 bonus against all the effects and gets no save against the damage.~
+@4194 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Raise Dead
+(Necromancy)
+
+Level: 5
+Sphere: Necromantic 
+Range: Visual range of the caster
+Duration: Permanent 
+Casting Time: 9 
+Area of Effect: 1 person 
+Saving Throw: Special 
+
+When the priest casts a Raise Dead spell, <PRO_HESHE> can restore life to a dwarf, gnome, half-elf, halfling, elf, half-orc, or human.
+
+Note that the body of the person must be whole, otherwise missing parts are still missing when the person is brought back to life. The person has but 1 Hit Point when raised and must regain the rest by natural healing or curative magic.~
+@4195 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Mass Invisibility 
+(Illusion/Phantasm)
+
+Level: 7
+Range: Visual range of the caster 
+Duration: 1 round/level
+Casting Time: 7
+Area of Effect: 15-ft. radius 
+Saving Throw: None 
+
+Upon casting this spell, the wizard causes all friendly creatures within the area of effect to be affected by the spell Improved Invisibility. This spell is similar to the Invisibility spell, but the recipient is able to attack, either by missile discharge, melee combat, or spellcasting, and remain unseen. Note, however, that there are sometimes telltale traces, a shimmering, so that an observant opponent can attack the invisible spell recipient. These traces are only noticeable when specifically looked for (after the invisible character has made <PRO_HISHER> presence known). Attacks against the invisible character suffer -4 penalties to the attack rolls, and the invisible character's Saving Throws are made with a +4 bonus.~
+@4196 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+
+A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+
+Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+
+The spell on this page is: Summon Efreeti
+(Conjuration/Summoning)
+
+Level: 7
+Range: 120 ft.
+Duration: 8 rounds + 1 round/level
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+With this spell, the wizard can cajole an efreeti—a massive genie with powerful abilities—to leave the Elemental Plane of Fire and enter the Prime Material. The efreeti will serve the caster for the duration of the spell, attacking <PRO_HISHER> enemies.~
+@4197 = ~Grimoire of Perpetual Conjuration~
+@5000 = ~Processing ToB changes...~
+@5001 = ~离开<CHARNAME>后，凯拉踏上了返回深水城的归途，决心为她和她的士兵在圣战中所犯下的罪行接受审判。抵达城中后，她被当地政府拘留并审问，当局对阿弗纳斯所发生的事情感到震惊。
+
+尽管她已经遭受了许多苦难，并且帮助<CHARNAME>击败了在泰瑟尔肆虐的巴尔之子，她仍被判处了绞刑。奥恩·白银得知后，向城市领袖恳求宽恕他的侄女。在奥恩的压力下——他在深水城市民中被视为英雄——并担心那些仍然同情她的人可能会起义，领袖们决定将她流放。奥恩与她一同隐居，两人相互帮助，治愈他们在阿弗纳斯留下的心灵创伤。
+
+奥恩在流放几年后去世，凯拉独自出发，成为了一名流浪者，四处行善，帮助他人。许多人相信，光辉女士仍在某处，默默地为她过去的罪孽赎罪。~
+@5002 = ~Schael and <CHARNAME> received a hero's welcome upon their return to Baldur's Gate. After the week-long celebration had ended, Schael, Rohma and Audamar moved in to the Ducal Palace to live with <CHARNAME>, who was finally free to pursue the life he'd dreamed with the woman he loved. Schael gave birth to healthy fraternal twins; a boy, Gorion, named after <CHARNAME>'s foster father, and a girl, Ilara, named after her late mother. <CHARNAME> excelled at fatherhood, and Rohma filled the role of a big sister wonderfully. Audamar, meanwhile, was ecstatic to watch his three grandchildren grow up together. 
+
+The two lovers were finally married on the steps of Candlekeep, roughly two years after the birth of the twins. Imoen, Skie, and many of their adventuring companions were present to witness the ceremony, as were Flaming Fist officials and local and foreign dignitaries. Included among these were the Grand Dukes, as well as officials from Waterdeep, Daggerford, Amn and Tethyr. Even some old friends from their coalition days attended, including Glint, Voghiln, Mizhena and Thaird, to name a few.
+
+Schael stayed on with the Flaming Fist, eventually rising to the rank of Colonel before retiring to start her own archery academy. The academy quickly gained renown, and under her instruction and leadership it produced some of the finest sharpshooters that the Sword Coast had ever seen. After the death of Duke Silvershield, <CHARNAME> was elected as the new Grand Duke, and he helped lead Baldur's Gate to a new era of peace and prosperity. Schael and <CHARNAME> proved inseparable, and they lived out their years in peace and contentment. The couple watched with delight as their children, and grandchildren, grew up to become well-regarded leaders in their respective fields. 
+
+The happy family was never troubled by Beno or his associates ever again.~
+@5003 = ~Schael and <CHARNAME> received a hero's welcome upon their return to Baldur's Gate. After the week-long celebration had ended, Schael, Rohma and Audamar moved in to the Ducal palace to live with <CHARNAME>, who was finally free to pursue the life she'd dreamed with the woman she loved. 
+
+The two lovers were finally married on the steps of Candlekeep, roughly two years after the events in Tethyr. Imoen, Skie, and many of their adventuring companions were present to witness the ceremony, as were Flaming Fist officials and local and foreign dignitaries. Included among these were the Grand Dukes, as well as officials from Waterdeep, Daggerford, Amn and Tethyr. Even some old friends from their coalition days attended, including Glint, Voghiln, Mizhena and Thaird, to name a few.
+
+Schael stayed on with the Flaming Fist, eventually rising to the rank of Colonel before retiring to start her own archery academy. The academy quickly gained renown, and under her instruction and leadership it produced some of the finest sharpshooters that the Sword Coast had ever seen. After the death of Duke Silvershield, <CHARNAME> was elected as the new Grand Duke, and she helped lead Baldur's Gate to a new era of peace and prosperity. Schael and <CHARNAME> proved inseparable, and they lived out their years in peace and contentment. The couple watched with delight as Rohma, and her children, grew up to become well-regarded leaders in their respective fields. 
+
+The happy family was never troubled by Beno or his associates ever again.~
+@5004 = ~Schael returned to Baldur's Gate and received a hero's welcome. Shortly after her return, she gave birth to healthy fraternal twins; a boy, Gorion, named after <CHARNAME>'s foster father, and a girl, Ilara, named after her late mother. Rohma filled the role of a big sister wonderfully, and Audamar was ecstatic to watch his three grandchildren grow up together. 
+
+Though she would always miss <CHARNAME>, she was able to solidify her on-again, off-again relationship with her close friend and lover Neoma, and the two of them eventually married. Imoen, Skie, and many of <CHARNAME>'s old adventuring companions were present to witness the ceremony. Even some old friends from the coalition days attended, including Glint, Voghiln, Mizhena and Thaird, to name a few. The evening after the ceremony, Schael gazed into the night sky and saw a glimmer in the heavens, and at that moment felt an indescribable outpouring of love and happiness... somehow, she knew that it was <CHARNAME> expressing his joy at seeing her marry Neoma.
+
+Schael stayed on with the Flaming Fist, eventually rising to the rank of Colonel before retiring to start her own archery academy. The academy quickly gained renown, and under her instruction and leadership it produced some of the finest sharpshooters that the Sword Coast had ever seen. Schael and her wife proved inseparable, and they lived out their years in peace and contentment. The couple watched with delight as Schael's children, and grandchildren, grew up to become well-regarded leaders in their respective fields. 
+
+The happy family was never troubled by Beno or his associates ever again.~
+@5005 = ~Schael returned to Baldur's Gate and received a hero's welcome. After the celebration, Neoma, her friend and on-again, off-again lover professed her love to her. Surprised, Schael initially rebuffed the idea of a romantic relationship, preferring instead to keep their relationship as it was. As time passed, Schael reflected more on her decision and realized that, although she would always miss <CHARNAME>, she did have feelings for Neoma, feelings that went beyond simple physical attraction. She decided to take a chance with Neoma, and to their mutual delight, their romance and love for one another blossomed. 
+
+The couple were married about a year later, on the steps of the Ducal Palace. Imoen, Skie, and many of <CHARNAME>'s old adventuring companions were present to witness the ceremony. Even some old friends from the coalition days attended, including Glint, Voghiln, Mizhena and Thaird, to name a few. The evening after the ceremony, Schael gazed into the night sky and saw a glimmer in the heavens, and at that moment felt an indescribable outpouring of love and happiness... somehow, she knew that it was <CHARNAME> expressing her joy at seeing her marry Neoma.
+
+Schael stayed on with the Flaming Fist, eventually rising to the rank of Colonel before retiring to start her own archery academy. The academy quickly gained renown, and under her instruction and leadership it produced some of the finest sharpshooters that the Sword Coast had ever seen. Schael and Neoma proved inseparable, and they lived out their years in peace and contentment. The couple watched with delight as Rohma, and her children, grew up to become well-regarded leaders in their respective fields. 
+
+The happy family was never troubled by Beno or his associates ever again.~
+@5006 = ~Major Schael Corwin received a hero's welcome upon her return to Baldur's Gate. After the celebration, Neoma, her friend and on-again, off-again lover professed her love to her. Surprised, Schael initially rebuffed the idea of a romantic relationship, preferring instead to keep their relationship as it was. As time passed, Schael reflected more on her decision and realized that she did have feelings for Neoma, feelings that went beyond simple physical attraction. She decided to take a chance with Neoma, and to their mutual delight, their romance and love for one another blossomed. The couple were married about a year later, on the steps of the Ducal Palace. <CHARNAME>, Imoen, Skie, and many of her old adventuring companions were present to witness the ceremony. Even some old friends from the coalition days attended, including Glint, Voghiln, Mizhena and Thaird to name a few.
+
+With her adventuring days behind her, Corwin resumed her duties to the Flaming Fist, eventually rising to the rank of Colonel before retiring to start her own archery academy. The academy quickly gained renown, and under her instruction and leadership it produced some of the finest sharpshooters that the Sword Coast had ever seen. Corwin and Neoma proved inseparable, and the couple lived out their years in peace and contentment. Together, they raised Rohma and watched with delight as she, and her children, grew up to become well-regarded leaders in their respective fields. 
+
+The happy family was never troubled by Beno or his associates ever again.~
+@5007 = ~Major Schael Corwin received a hero's welcome upon her return to Baldur's Gate. After the celebration, Neoma, her friend and on-again, off-again lover professed her love to her. Surprised, Schael initially rebuffed the idea of a romantic relationship, preferring instead to keep their relationship as it was. As time passed, Schael reflected more on her decision and realized that she did have feelings for Neoma, feelings that went beyond simple physical attraction. She decided to take a chance with Neoma, and to their mutual delight, their romance and love for one another blossomed. The couple were married about a year later, on the steps of the Ducal Palace. Imoen, Skie, and many of her old adventuring companions were present to witness the ceremony. Even some old friends from the coalition days attended, including Glint, Voghiln, Mizhena and Thaird to name a few.
+
+With her adventuring days behind her, Corwin resumed her duties to the Flaming Fist, eventually rising to the rank of Colonel before retiring to start her own archery academy. The academy quickly gained renown, and under her instruction and leadership it produced some of the finest sharpshooters that the Sword Coast had ever seen. Corwin and Neoma proved inseparable, and the couple lived out their years in peace and contentment. Together, they raised Rohma and watched with delight as she, and her children, grew up to become well-regarded leaders in their respective fields. 
+
+The happy family was never troubled by Beno or his associates ever again.~
+@5008 = ~The way back to the underground river has been blocked by tons of fallen rock, perhaps due to an explosion of some sort.~
+@5009 = ~
+当被问及她的过去时，凯拉讲述了一个在她脑海中重复了千百次的故事。作为一个孩子，凯拉·白银在半神血统带来的高期望下成长。她在紫苑骑士团的修道院长大，生活艰苦，因为凯拉喜怒无常的天性与紫苑骑士对纪律的奉献格格不入。她甚至在那时就相信，她注定要成就伟业。一天，她独自一人在图书馆，试图通过阅读一本禁忌知识的书籍来增强自己的力量。她无意中打开了一个通往魔鬼拜莱菲特领域的大门。凯拉的灵魂本应被献祭，但她的叔叔，奥恩·白银，向魔鬼王子提供了自己，并代替侄女被拉入了九层地狱。凯拉从未忘记他的牺牲。她发誓总有一天，无论如何，她会找到一种方法从阿弗纳斯的深渊中救出她的叔叔……她成功了，尽管代价巨大。你感觉到她在阿弗纳斯所遭受的痛苦已经改变了她，虽然你无法判断是变得更好还是更糟。你所能确定的，是她决心弥补自己那场命运多舛的圣战所带来的死亡与毁灭。~
+@5010 = ~Ahead, you can make out the legions of Avernus marching in formation across the blasted hellscape. To move forward will result in what is certain to be a painful and grisly demise.~
+@5011 = ~Lodob~
+@5012 = ~火巨人斥候~
+@5013 = ~黎明使者博纳提乌斯~
+@5014 = ~哈姆扎~
+@5015 = ~飘渺之声~
+@5016 = ~精灵之魂~
+@5017 = ~破碎的齿轮~
+@5018 = ~在离开阿弗纳斯之前，你协助凯拉收集了她剑与盔甲的残片。或许有巧手的铁匠能将这些碎片重新锻造，赋予它们新生，或者甚至修复它们。这也许是塞斯潘纳能够施展才华之处。~
+@5019 = ~携带这把武器便能感受到一股令人不安的气息。握在手中，仿佛能听到被囚禁灵魂的窃窃私语。匕首柄上的宝石似乎散发着内在的光芒，然而它那深邃黑暗的核心让人不解，这种光芒是如何存在的。
+
+这把匕首中，囚禁着科温少校前恋人贝诺·法马里的灵魂。曾有一群洛山达的牧师试图将他的灵魂恢复到他的躯体，却以失败告终。他们的计划——连同贝诺的躯体——在他们用匕首中困住的魔鬼灵魂复活尸体后，彻底破灭了。~
+@5020 = ~启迪之拥~
+@5021 = ~这件魔法斗篷是凯拉·白银在她的圣战前夕，由她的一位亲信副手赠予。斗篷的丝线被附魔，随着穿戴者的行动而闪耀，创造出一种迷人的效果，使敌人难以锁定目标。
+
+统计数据：
+
+装备能力：
+– 防御等级：+1
+– 豁免检定：+1~
+@5024 = ~科温的弓+4~
+@5025 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+
+The bow was further enhanced by Flaming Fist mages to help then Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. 
+
+With the addition of the Bowstring of Gond, this weapon has reached its full potential. In the hands of an archer as talented as Corwin, it is capable of dealing death faster than anything you've ever seen. 
+
+Equipped abilities: 
+– Dexterity: +1
+
+Combat abilities: 
+– 22% chance per hit of entangling the target for 3 rounds (Save vs. Breath at -2 negates)
+– Extra half attack per round
+
+STATISTICS:
+
+THAC0: +5
+Damage: +6
+Speed Factor: 3
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 9
+~
+@5026 = ~科温的弓+5~
+@5027 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+
+The bow was further enhanced by Flaming Fist mages to help then Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. Additional enchantments to reduce the draw weight were placed on the weapon by the master bowyer of Suldanessellar, as a token of gratitude for saving the elven city. The reduced draw weight makes the weapon less physically taxing to use, resulting in improved power and accuracy.
+
+With the addition of the Bowstring of Gond, this weapon has reached its full potential. In the hands of an archer as talented as Corwin, it is capable of dealing death faster than anything you've ever seen. 
+
+Equipped abilities: 
+– Dexterity: +1
+
+Combat abilities: 
+– 24% chance per hit of entangling the target for 3 rounds (Save vs. Breath at -2 negates)
+– Extra half attack per round
+
+STATISTICS:
+
+THAC0: +6
+Damage: +7
+Speed Factor: 2
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 9
+~
+@5028 = ~Caelar~
+@5029 = ~[The Personal Diary of Sarevok]Diary
+
+14th of Eleint, 1365: Today Cormyr has instituted a ban against the Iron Throne from operating within their borders. While this is a great blow to the Iron Throne, it is the perfect opportunity for Rieltar to approach the Throne high council with his proposal. If things go well, we could begin the operation within the year.
+
+25th of Marpenoth, 1365: Davaeorn has sent a message to Rieltar, informing him that the mine at Cloakwood has been drained and is ready for use. This revelation should help greatly in convincing the Throne high council.
+
+2nd of Nightal, 1365: The Iron Throne council has agreed to support Rieltar's plan. He has been given all the resources he needs, as well as leadership of the project. I have expressed interest to my "father," and he has promised to include me within the operations along the Sword Coast. He mentioned Mother in our conversation: how I wasn't to be unfaithful to him as she had. He made it clear that I would suffer her fate if I was. His threats are weak and hollow, and I shall listen to them for only so long. I have decided to take this time to make my visit to Candlekeep. I have waited a long time to research the prophecies of Alaundo, and I must know if the dreams speak the truth. I will not believe the words of phantoms without proof, and the priest of Bhaal I confronted gave me nothing. He was old and died quickly in my grasp. If the words are true, I shall surely groom stronger acolytes than this.
+
+11th of Ches, 1366: My research has gone well. The monks here at Candlekeep have been quite helpful. From what I have read, it would seem certain that the blood of Bhaal does indeed flow through my veins. His prophecies are (of course) ambiguous, but I think I understand them. He foresaw his coming death, and seeded his essence across the land. The children born as a result bear the marks of chaos, have power with no direction, and shall feel the blood of a god within them. The deaths they bring shall awaken the father, and through them he will rise. It does not explicitly say, but obviously this means that death wrought by the children will cause them to ascend. Fitting, and since the father was the Lord of Murder, proving one's worth must involve an act in accordance with his portfolio. I begin to see what I must do. Death on a god-like scale.
+
+3rd of Tarsakh, 1366: The monk Gorion troubles me. He seems to have taken an interest in my readings. I must be careful to be more clandestine in my research. I wish I could simply kill him, but I doubt I could safely murder him within this damnable library.
+
+11th of Tarsakh, 1366: I had a dream this night. My mother was talking to me, but as she did her face became bloated and discolored. Her voice became weaker as she spoke to me, telling me to save her from Rieltar. I could see the garrote cutting into her neck, but I did nothing. It was only a dream. 
+
+27th of Tarsakh, 1366: I take my leave of Candlekeep now, and not a moment too soon, for I am sure that Gorion has perceived my heritage. One thing that I am certain of: <CHARNAME> is, in actuality, one of Bhaal's brood as well. <CHARNAME> has all the markings, and it would explain Gorion's curiosity in my studies. Though there is nothing I can do now, I will have to make certain to return and kill the little brat. It would be foolish of me to let one of my siblings live, especially one being brought up by the Harpers (and I am sure that is where Gorion's allegiances lie).
+
+5th of Mirtul, 1366: Today I met with Rieltar in Baldur's Gate. The fool still insists on calling me his son, and for now I will let him. He assumes that I am loyal to him because he raised me. Well, loyal I am, but only as long as he is useful. He's set up a base in the mansion of a destitute noble family and says that everything is running smoothly. Mulahey has established himself at the mines of Nashkel, and his kobold minions should be already busily contaminating the iron ore. Only a few slaves have begun to mine out the ore at Cloakwood, though Rieltar assures me that once the bandit raids begin we'll have a steady supply of new slaves.
+
+8th of Hammer, 1367: I met with the leaders of the Chill and Blacktalons. I have little liking for Ardenor, the leader of the Chill, but Taurgosz seems to be a man of his word. It is a good thing, as I'll have to work with these mercenaries for the rest of the year.
+
+3rd of Tarsakh, 1368: Everything proceeds well. The ore coming from Nashkel has started to deteriorate, and my mercenaries have been doing a fine job of destroying any iron caravans on route to Baldur's Gate. Though some of my mercenaries have been captured, most think they work for the Zhents, so no trouble has fallen on the Iron Throne. I am sure that the Zhents at Darkhold won't be pleased to know that their name has been falsely used. I will have to be wary for Zhentish agents in the coming months.
+
+28th of Tarsakh, 1368: I think I now have the time to deal with that old codger Gorion, and his little whelp. I will have to inform my men that I'll be gone for the next few weeks.
+
+? of Mirtul
+No time to write, but I must not neglect my journals so. The future dead must know of how the Lord of Murder again came to them. I shall hire a scribe when time allows. Things have not gone completely as I have planned, but I will still be able to salvage the situation. <CHARNAME> is on the move to Baldur's Gate; if I could maneuver the whelp to Candlekeep, then I would have the perfect scapegoat for my plan. My mortal "father," Rieltar, is there to meet with the Knights of the Shield. He has been blocking all my attempts to escalate the hostilities between Amn and Baldur's Gate, and these meetings will only serve to smooth relations. I must rid myself of them all and assume control of the Iron Throne myself. I cannot allow petty business and monetary concerns to interfere. Terribly sorry, "Father," but my true parentage calls and you are in my way. I shall be sure to instruct the doppelgangers in the exact manner Rieltar should die. I think a garrote would be perfect for the task.
+
+12th of Eleasis: The plan to frame <CHARNAME> for the murder of my mortal father has succeeded. My spies informed me that <PRO_HESHE> was apprehended attempting to escape through the catacombs beneath Candlekeep. Angelo has sent a party of Fist enforcers to fetch him and deliver him to me.
+
+26th of Eleasis: Dukes Silvershield and Eltan are dead; Silvershield died at the hands of the assassins Slythe and Krystin, and Eltan finally succumbed to the poison last evening. There are still those within the Fist that are loyal to him, and through they've yet to be rooted out, Angelo should have no difficulty marshaling the Fist for their eventual march upon Amn. I sense that Dukes Belt and Jannath suspect that my role in recent events is greater than what I've let on, but without evidence of wrongdoing they'll be unable to take any action. As for <CHARNAME>, my first official act as Grand Duke will be to preside over <PRO_HISHER> execution, scheduled for tomorrow morning.~
+@5030 = ~Diary of Sarevok~
+@5031 = ~母鸡~
+@5032 = ~Saving the city of Baldur's Gate, ending the threat posed by Caelar Argent and her mad crusade, venturing into the first of the nine hells and emerging victorious ... not to mention defeating the deranged wizard Jon Irenicus and preserving the Tree of Life... such heroic accomplishments are mere footnotes in the epic tale of <CHARNAME>, greatest of the children of Bhaal!~
+@5033 = ~紫苑之刃+5~
+@5034 = ~
+传说很久以前，一位强大的天使将这把剑赠予了紫苑骑士团的一名成员。传说的细节已经随着时间的流逝而丢失，但许多人认为这把剑是杀死一个可怕的魔鬼，甚至可能是一只巴洛魔的奖赏。剑刃上装饰着精致的紫苑花蚀刻。
+
+由于剑柄上镶嵌着提尔之眼，这把华丽武器的力量现在与其美貌相得益彰。拔出剑刃时，这把增强的剑刃会发出超凡脱俗的光芒，象征着它的神圣力量。
+
+统计数据：
+
+装备能力：
+– 魔法抗力：+35%
+
+零级命中值：+5
+伤害：1d8+5，对邪魔额外+4
+伤害类型：挥砍
+使用速度：2
+武器特长类别：长剑
+使用类别：单手
+需求：
+力量5 
+
+重量：2~
+@10000 = ~Wyrm's Crossing~
+@10001 = ~Elfsong~
+@10002 = ~Sorcerous Sundries~
+@10003 = ~Maltz's Weapon Shop~
+@10004 = ~Lucky Aello's Discount Store~
+@10005 = ~General Store~
+@10006 = ~Keexie Tavern~
+@10007 = ~Shop of Silence~
+@10008 = ~The door to this house is rotting off its hinges. You assume the house has been abandoned for years.~
+@10009 = ~Thieves' Guild Entrance~
+@10010 = ~Elfsong Tavern~
+@10011 = ~Tavern and Inn~
+@10012 = ~Blushing Mermaid~
+@10013 = ~Splurging Sturgeon~
+@10014 = ~Ilmater's Shrine~
+@10015 = ~Blushing Mermaid Service Entrance. Please Do Not Enter!~
+@10016 = ~Merchants' League Counting House~
+@10017 = ~Shop~
+@10018 = ~Harbor Master's Building~
+@10019 = ~Low Lantern~
+@10020 = ~Water Queen's House~
+@10021 = ~Iron Throne~
+@10022 = ~Jopalin's Tavern~
+@10023 = ~Warehouse~
+@10024 = ~Iron Throne Headquarters~
+@10025 = ~The Fortune Teller~
+@10026 = ~Gambling Tent~
+@10027 = ~East to Marketplace~
+@10028 = ~Poultry Store~
+@10029 = ~Drakon Tavern~
+@10030 = ~Felonius Gist's Manor~
+@10031 = ~Oberan's Estate~
+@10032 = ~Three Old Kegs~
+@10033 = ~Ducal Palace~
+@10034 = ~Helm Temple~
+@10035 = ~Ramazith's Home~
+@10036 = ~Black Dragon Gate~
+@10037 = ~Temple of Helm~
+@10038 = ~Blade and Stars~
+@10039 = ~Inn and Tavern~
+@10040 = ~Gantolandan's House~
+@10041 = ~Seven Suns~
+@10042 = ~Flaming Fist~
+@10043 = ~Merchants' League Estate~
+@10044 = ~Ye Olde Inn~
+@10045 = ~Potion Shop~
+@10046 = ~Flaming Fist Castle~
+@10047 = ~The Lady's Hall~
+@10048 = ~Hall of Wonders~
+@10049 = ~High House of Wonders~
+@10050 = ~Ragefast's Home~
+@10051 = ~These stairs are closed due to poor workmanship.~
+@10052 = ~The cell door appears to have been tampered with.~
+@10053 = ~Entar Silvershield's Estate~
+@10054 = ~Helm and Cloak~
+@10055 = ~Quinn's House~
+@10056 = ~Degrodel's House~
+@10057 = ~Gondsman Leonardo's Helical Aerial Wonder~
+@10058 = ~Steam Dragon~
+@10059 = ~Pump of Gond~
+@10060 = ~Everlight~
+@10061 = ~This portion of the railing looks as if it's been recently repaired.~
+@10062 = ~It's a long way down. A fall might hurt a bit!~
+@10063 = ~Sarevok~
+@10064 = ~ Your death is inevitable.~
+@10065 = ~ Run as you will; you cannot hide forever!~
+@10066 = ~ Only the strongest shall prevail.~
+@10067 = ~ The streets will run red with blood when my work is finished!~
+@10068 = ~~
+@10069 = ~~
+@10070 = ~ Heh. I do not fear death. Do you?~
+@10071 = ~ Killing is our father's work! Embrace it as I have.~
+@10072 = ~ Face me! Face the new LORD OF MURDER!~
+@10073 = ~~
+@10074 = ~~
+@10075 = ~Flaming Fist Mercenary~
+@10076 = ~ I serve the Flaming Fist!~
+@10077 = ~ I AM the law!~
+@10078 = ~~
+@10079 = ~~
+@10080 = ~ Every crime must be punished!~
+@10081 = ~ You there! Give me fifty pushups!~
+@10082 = ~ You're not welcome here!~
+@10083 = ~Chicken~
+@10084 = ~~
+@10085 = ~ cluck caw bucbuc becaw~
+@10086 = ~ becawp bwa ca~
+@10087 = ~ There ain't nobody here but us chickens.~
+@10088 = ~~
+@10089 = ~Semaj~
+@10090 = ~ Tremble before the might of my sorcery!~
+@10091 = ~~
+@10092 = ~~
+@10093 = ~Bat~
+@10094 = ~~
+@10095 = ~~
+@10096 = ~~
+@10097 = ~~
+@10098 = ~~
+@10099 = ~Commoner~
+@10100 = ~ 'Ey, friend! Good to meet a fine sod such as yerself.~
+@10101 = ~~
+@10102 = ~~
+@10103 = ~ Bugger off! It'll be a blade fer your backside, elsewise!~
+@10104 = ~~
+@10105 = ~~
+@10106 = ~~
+@10107 = ~~
+@10108 = ~~
+@10109 = ~ Hullo.~
+@10110 = ~~
+@10111 = ~~
+@10112 = ~ Ye're a long-tongued lout, ain't ya?~
+@10113 = ~ Salutations.~
+@10114 = ~~
+@10115 = ~~
+@10116 = ~ Get away from me!~
+@10117 = ~ Hullo.~
+@10118 = ~怎么了？~
+@10119 = ~~
+@10120 = ~ My hubby don't want me talkin' to no strangers.~
+@10121 = ~ What do you need?~
+@10122 = ~ 'Ello, pal.~
+@10123 = ~ Me young 'uns are waitin'.~
+@10124 = ~ Yeah?~
+@10125 = ~ Hello there.~
+@10126 = ~~
+@10127 = ~Courtesan~
+@10128 = ~ I'm a fine-lookin' strumpet, ain't I?~
+@10129 = ~~
+@10130 = ~~
+@10131 = ~ You'll get nothing from me!~
+@10132 = ~~
+@10133 = ~ Well, if ya wants to go strappin' with this nab, you'll first have to give up the socket money.~
+@10134 = ~ Are ya interested in some thrills, darlin'?~
+@10135 = ~Sleeping Woman~
+@10136 = ~~
+@10137 = ~~
+@10138 = ~ ZZZzzzzzz...~
+@10139 = ~ ZZZzzzzz... *sniffle*~
+@10140 = ~ ZZZzzzzz...~
+@10141 = ~~
+@10142 = ~怎么了？~
+@10143 = ~~
+@10144 = ~~
+@10145 = ~ Oh, ye're a handsome bunch, ain't ya?~
+@10146 = ~ Hmm?~
+@10147 = ~ What's your tale?~
+@10148 = ~ Can I assist you?~
+@10149 = ~~
+@10150 = ~ Hi, friend.~
+@10151 = ~Boy~
+@10152 = ~ You funny lookin'.~
+@10153 = ~~
+@10154 = ~~
+@10155 = ~ Leave me alone! You're mean!~
+@10156 = ~ Loser, loser, loser!~
+@10157 = ~ You need somethin', stranger?~
+@10158 = ~Beggar~
+@10159 = ~ Alms, alms for the poor?~
+@10160 = ~~
+@10161 = ~~
+@10162 = ~I have nothing of value... p-please, let me be.~
+@10163 = ~*cough* *cough* *retch* My lung! It's flopping all over the dirt! Damn.~
+@10164 = ~Eh, miserable ragamuffins.~
+@10165 = ~ You've made no friends here! Move along!~
+@10166 = ~ Wife's been gettin' prickly on me arse.~
+@10167 = ~Mick Feelie~
+@10168 = ~Nobleman~
+@10169 = ~ Hello! Nice to make the acquaintance of such a cultured personage.~
+@10170 = ~~
+@10171 = ~~
+@10172 = ~别靠近我！我会把你打的落花流水，我会的！~
+@10173 = ~Skeleton Warrior~
+@10174 = ~ Die...~
+@10175 = ~~
+@10176 = ~~
+@10177 = ~~
+@10178 = ~~
+@10179 = ~~
+@10180 = ~~
+@10181 = ~~
+@10182 = ~~
+@10183 = ~~
+@10184 = ~ You wanna fight me? Come on, you wanna fight?~
+@10185 = ~Girl~
+@10186 = ~ I want my mommy.~
+@10187 = ~~
+@10188 = ~~
+@10189 = ~Lothander~
+@10190 = ~ Excuse me, please let me speak before you attack.~
+@10191 = ~ My life is in shambles.~
+@10192 = ~~
+@10193 = ~~
+@10194 = ~ Hmm... Bother 'n bother! Never a calm spot, never a break.~
+@10195 = ~~
+@10196 = ~~
+@10197 = ~Brielbara~
+@10198 = ~ Wait! I—I must speak with thee.~
+@10199 = ~~
+@10200 = ~~
+@10201 = ~ My poor, dear Namara. I hope she fares well.~
+@10202 = ~ I'll not speak a word after what you did!~
+@10203 = ~ I must thank you again for the service you have done.~
+@10204 = ~ How are you?~
+@10205 = ~ I lost my dolly.~
+@10206 = ~~
+@10207 = ~*啜泣*~
+@10208 = ~ Ooh, you smell!~
+@10209 = ~Kerrachus~
+@10210 = ~ Glad to meet you, friend.~
+@10211 = ~Kesheel~
+@10212 = ~ 'Ey! Get outta me way, ya crummy lager-head.~
+@10213 = ~ I have things to do—one NOT being sittin' on me duffer talkin' to you.~
+@10214 = ~Noblewoman~
+@10215 = ~~
+@10216 = ~~
+@10217 = ~ I'll not have you near me!~
+@10218 = ~ Don't give me any lip, peasant. Do you know who I am?~
+@10219 = ~ Touch me not! You are... unclean.~
+@10220 = ~~
+@10221 = ~~
+@10222 = ~ A man shouldn't speak to his better unless spoken to first.~
+@10223 = ~~
+@10224 = ~~
+@10225 = ~什么？~
+@10226 = ~~
+@10227 = ~ No time to chitchat.~
+@10228 = ~ A pleasure to meet a socially acceptable person such as yourself.~
+@10229 = ~ You need a new tailor; your clothes are absolutely dreadful!~
+@10230 = ~ Mother said not to talk with strangers.~
+@10231 = ~Rogue~
+@10232 = ~ Sorry, friend, but you've got a date down under.~
+@10233 = ~~
+@10234 = ~~
+@10235 = ~ Yeah, mate?~
+@10236 = ~Bartender~
+@10237 = ~ You want some whiskey?~
+@10238 = ~~
+@10239 = ~~
+@10240 = ~ I got some cheap beer for ya.~
+@10241 = ~ Urgh... I gotta stop dippin' into me own ale.~
+@10242 = ~ I got me some nice lookin' waitresses, don't I? Eh he hehehe...~
+@10243 = ~Ordulinian~
+@10244 = ~Halbazzer Drin~
+@10245 = ~Maltz~
+@10246 = ~ Welcome to my humble establishment.~
+@10247 = ~~
+@10248 = ~~
+@10249 = ~Arkion~
+@10250 = ~ Speak up, speak up!~
+@10251 = ~ Get out of my sight! I'll do nothing for you!~
+@10252 = ~Serving Wench~
+@10253 = ~ Please, seat yourselves wherever you wish.~
+@10254 = ~~
+@10255 = ~~
+@10256 = ~ Get away, you nobbish plonker!~
+@10257 = ~ Ye drop another careless hand near me and I swears you'll lose it! Order up at the bar.~
+@10258 = ~Brevlik~
+@10259 = ~ HELLO! SHHH... um... I mean... hello. *chuckle*~
+@10260 = ~~
+@10261 = ~~
+@10262 = ~ All that glitters is not gold, but all that's gold most certainly glitters.~
+@10263 = ~ Talking to you ain't worth the risk, no, <SIRMAAM>. Go away... please?~
+@10264 = ~Cauternus~
+@10265 = ~ Whatcha want?~
+@10266 = ~Cook~
+@10267 = ~ Hey, clear out. I don't need you meatheads roaming through my kitchen! *sigh* I wanna work somewhere where beer and blood aren't seasonings.~
+@10268 = ~Silence~
+@10269 = ~ Be ye friend or be ye dead?~
+@10270 = ~~
+@10271 = ~~
+@10272 = ~ I'll speak when I wills it. Not 'cause ye're proddin'.~
+@10273 = ~Lucky Aello~
+@10274 = ~ My prices are the best south of Waterdeep.~
+@10275 = ~Rat~
+@10276 = ~~
+@10277 = ~Squeak~
+@10278 = ~Squeak~
+@10279 = ~~
+@10280 = ~~
+@10281 = ~Jacil~
+@10282 = ~ You got somethin' comin', pal. Just you wait.~
+@10283 = ~~
+@10284 = ~~
+@10285 = ~Storekeep~
+@10286 = ~ Eh, business has been poor, what with the iron shortage and all.~
+@10287 = ~ The customers are always right.~
+@10288 = ~ Out! And never darken my door again!~
+@10289 = ~ It's you again. By the claws of Umberlee, I can't take these interruptions much longer. Get out of my kitchen, and stay out.~
+@10290 = ~Lantanara~
+@10291 = ~Lusselyn~
+@10292 = ~ Ha ha ha ha ha! Haa ha ha! *burp* ...eh, sorry—'scuse me!~
+@10293 = ~ W-whoa... Why're the streets so wobbly?~
+@10294 = ~~
+@10295 = ~~
+@10296 = ~ Blaaarrrghghgh... *cough* Corn? When did I eats corn...?~
+@10297 = ~~
+@10298 = ~Vivienne~
+@10299 = ~ 'Allo, mate! You look a friendly face.~
+@10300 = ~Larze~
+@10301 = ~~
+@10302 = ~ Me will crush you, crush you to goo!~
+@10303 = ~~
+@10304 = ~~
+@10305 = ~~
+@10306 = ~~
+@10307 = ~Bork~
+@10308 = ~ Something you require?~
+@10309 = ~~
+@10310 = ~Rodnim~
+@10311 = ~ I've no interest in speaking to the likes of you.~
+@10312 = ~ I needs some ale. *burp* Eh...~
+@10313 = ~Guard~
+@10314 = ~ Heya.~
+@10315 = ~ You're not welcome here! You'll pay with your life!~
+@10316 = ~Merchant~
+@10317 = ~ All my stuff is authentic. Really, it is.~
+@10318 = ~~
+@10319 = ~~
+@10320 = ~Triadore~
+@10321 = ~ Leave me! You've outstayed your welcome!~
+@10322 = ~ Don't go pokin' folk about the table, young 'un. You're liable to catch a nasty backhand.~
+@10323 = ~~
+@10324 = ~~
+@10325 = ~ Pleasure to meet you.~
+@10326 = ~Priestess of Umberlee~
+@10327 = ~ The storm shall take those who are unfaithful.~
+@10328 = ~~
+@10329 = ~~
+@10330 = ~ You've outstayed your welcome!~
+@10331 = ~ The Bitch Queen brooks no insolence.~
+@10332 = ~ Your life means nothing to me.~
+@10333 = ~Harbor Master~
+@10334 = ~ Nasty times are comin', I reckon.~
+@10335 = ~~
+@10336 = ~~
+@10337 = ~ You're rather outlandish folk to be wanderin' 'round here.~
+@10338 = ~ You've made no friends here! Get off my docks!~
+@10339 = ~ I'm really busy now, so I'm gonna have to ask ya ta come back some time later.~
+@10340 = ~ You guys shouldn't be hanging 'round here. Ya might bring attention to Duke Eltan.~
+@10341 = ~Sailor Al~
+@10342 = ~Sailor Dan~
+@10343 = ~Sailor Finch~
+@10344 = ~~
+@10345 = ~Sailor Joss~
+@10346 = ~ *hic* I think I h-had too much to drink.~
+@10347 = ~~
+@10348 = ~Sailor Ned~
+@10349 = ~Sailor Newf~
+@10350 = ~~
+@10351 = ~Cordyr~
+@10352 = ~~
+@10353 = ~~
+@10354 = ~Nivek~
+@10355 = ~ Raaagh! Help!~
+@10356 = ~ Don't touch me! I might catch something.~
+@10357 = ~ Not to be rude, but I'd rather you left immediately.~
+@10358 = ~ You visit again? It is not unwelcome, even though Carl and Jurgen may make it seem so. Do not overstay your welcome though, as I am unaccustomed to long visits.~
+@10359 = ~ Hope ye're havin' a great evening. I sure am.~
+@10360 = ~Lobar~
+@10361 = ~~
+@10362 = ~ I trust everything is satisfactory? Please don't hesitate to leave if it is not.~
+@10363 = ~ Hello again. A pleasure having you here, to be sure.~
+@10364 = ~Gamesman~
+@10365 = ~ Ye're a lucky fella, aren't ya?~
+@10366 = ~~
+@10367 = ~~
+@10368 = ~~
+@10369 = ~Sewer Cleaner~
+@10370 = ~~
+@10371 = ~~
+@10372 = ~ I hobe the monsterbs downd here get youb!~
+@10373 = ~~
+@10374 = ~~
+@10375 = ~~
+@10376 = ~~
+@10377 = ~Seagull~
+@10378 = ~~
+@10379 = ~Sleeping Man~
+@10380 = ~ ZZZZzzzzz... *snort*~
+@10381 = ~ ZZZZzzzzzz...~
+@10382 = ~ ZZZZzzzzzzz...~
+@10383 = ~~
+@10384 = ~Dun~
+@10385 = ~ I love money! Yes, I do.~
+@10386 = ~ I've got the best prices this side of Cormyr.~
+@10387 = ~Varci Roaringhorn~
+@10388 = ~ P-please, might I have your ear a moment?~
+@10389 = ~~
+@10390 = ~~
+@10391 = ~ Please help. 'Tis a wasted life at stake.~
+@10392 = ~Rabid Chicken~
+@10393 = ~Felonius Gist~
+@10394 = ~ Away with you, beggar.~
+@10395 = ~Statue~
+@10396 = ~ Leave us alone, will you? Nothin' for you here.~
+@10397 = ~ What?! Oh, oh, sorry for yelling.~
+@10398 = ~~
+@10399 = ~~
+@10400 = ~~
+@10401 = ~~
+@10402 = ~Diviner~
+@10403 = ~ Knowledge, used wisely, is the most powerful of tools.~
+@10404 = ~~
+@10405 = ~~
+@10406 = ~ Come on! Be a man. See if fortune smiles on ya!~
+@10407 = ~~
+@10408 = ~ Come in poor, walk out rich!~
+@10409 = ~~
+@10410 = ~ Take your chance with Lady Tymora!~
+@10411 = ~Nadine~
+@10412 = ~ Dallillia guides the way of all those that seek the path home.~
+@10413 = ~~
+@10414 = ~~
+@10415 = ~ May you know the happiness of a warm hearth and home.~
+@10416 = ~Husam~
+@10417 = ~ Greetingshh, fellow rogues. *hic*~
+@10418 = ~ There are too many. Retreat!~
+@10419 = ~ The Shadow Thieves send their regards.~
+@10420 = ~~
+@10421 = ~~
+@10422 = ~~
+@10423 = ~ You know, one day, I'lls have me mys revengsh. Ha ha ha ha ha! *hic* *burp*~
+@10424 = ~Resar~
+@10425 = ~ Apologies, but you must die!~
+@10426 = ~ I listen not to you! Your death by my hand!~
+@10427 = ~~
+@10428 = ~~
+@10429 = ~Narlen Darkwalk~
+@10430 = ~ So I's at daggers drawing with him, an' he drops the swag an' runs!~
+@10431 = ~ Draw your daggers and spells, and let's have at her!~
+@10432 = ~~
+@10433 = ~~
+@10434 = ~ Swiped the duchess's knickers once, if ya know what I mean.~
+@10435 = ~Alatos "Ravenscar" Thuibuld~
+@10436 = ~ Welcome, my little friends! Please, relax, and keep your weapons at your sides.~
+@10437 = ~~
+@10438 = ~~
+@10439 = ~ My apologies, but no time for idle chatter.~
+@10440 = ~Black Lily~
+@10441 = ~ 'Twill be the darkest day ye never seen before I don't have what ye need.~
+@10442 = ~~
+@10443 = ~~
+@10444 = ~ Off with ye now! I've got counting to do.~
+@10445 = ~ So I kicked 'im in the head till he was dead. Har har.~
+@10446 = ~~
+@10447 = ~~
+@10448 = ~ I hate dem Flamin' Fist pansies.~
+@10449 = ~ Whoa, now that was a stinker. Har har.~
+@10450 = ~ Stop pickin' yer nose!~
+@10451 = ~Rededge~
+@10452 = ~ I daresay, the guard is downright rude these days!~
+@10453 = ~~
+@10454 = ~~
+@10455 = ~ I'll not taint the beauty of the night with superfluous chatter.~
+@10456 = ~Niemain~
+@10457 = ~~
+@10458 = ~~
+@10459 = ~Oulam~
+@10460 = ~Wheber Ott~
+@10461 = ~ You said something?~
+@10462 = ~~
+@10463 = ~~
+@10464 = ~William Garst~
+@10465 = ~~
+@10466 = ~~
+@10467 = ~ Fear my wrath, for it is great indeed.~
+@10468 = ~~
+@10469 = ~"Lady" Alyth Elendara~
+@10470 = ~ It may be a touch unladylike, but I'm gonna slit your throat, I am!~
+@10471 = ~ 'Ello.~
+@10472 = ~ Those damnable bandits have been really bad for business.~
+@10473 = ~ I wouldn't trust you as far as I can spit!~
+@10474 = ~Cyrdemac~
+@10475 = ~ You shouldn't have come back here! Now you'll never leave!~
+@10476 = ~Ruffian~
+@10477 = ~ *yawn*~
+@10478 = ~ I shoulda joined the army.~
+@10479 = ~ Today, I saw a girl with the biggest pair of diddeys I've ever seen!~
+@10480 = ~ I could take Drizzt with both my arms tied behind my back.~
+@10481 = ~ You're not welcome here! Get out or be thrown out!~
+@10482 = ~ Get outta my face.~
+@10483 = ~ Hey, sexy. Do ya want to take a look at me diddeys?~
+@10484 = ~~
+@10485 = ~Dillar~
+@10486 = ~ It is a continuing annoyance to me that, because ANYONE is welcome in the Undercellar, they think anyone is welcome in my personal office. Were that so, I would not be bracketed by the beef you see before you. I ask you again to leave.~
+@10487 = ~~
+@10488 = ~Quenash~
+@10489 = ~~
+@10490 = ~~
+@10491 = ~Dra'tan~
+@10492 = ~Wiven~
+@10493 = ~ Methinks you'll be pushin' up daisies before the eve is through.~
+@10494 = ~Phandalyn~
+@10495 = ~ Helm sees all. Know that and be judged!~
+@10496 = ~~
+@10497 = ~Sunin~
+@10498 = ~ Your feeble skills are no match for my magic!~
+@10499 = ~~
+@10500 = ~~
+@10501 = ~ Lost your chance with me, you did! Get lost!~
+@10502 = ~ Please don't bother me, I have a lot on my mind.~
+@10503 = ~ Nothing to see here, <SIRMAAM>!~
+@10504 = ~Flaming Fist Enforcer~
+@10505 = ~Gardener~
+@10506 = ~Ocellis~
+@10507 = ~ Do you mind? I'm off to go shopping.~
+@10508 = ~Priest of Helm~
+@10509 = ~ The Vigilant One knows of all your sins.~
+@10510 = ~~
+@10511 = ~Drelik~
+@10512 = ~Shep~
+@10513 = ~Nantrin Bellowglyn~
+@10514 = ~~
+@10515 = ~~
+@10516 = ~ You've outstayed your welcome! Out with you!~
+@10517 = ~Bellamy~
+@10518 = ~Bheren~
+@10519 = ~~
+@10520 = ~~
+@10521 = ~Rinnie~
+@10522 = ~ I much prefer wooded regions, but one must be flexible in these times.~
+@10523 = ~~
+@10524 = ~~
+@10525 = ~Sleeping Halfling~
+@10526 = ~~
+@10527 = ~Elkart~
+@10528 = ~G'axir the Seer~
+@10529 = ~~
+@10530 = ~~
+@10531 = ~Shaella~
+@10532 = ~Innkeeper ~
+@10533 = ~Innkeeper~
+@10534 = ~ My rooms are the best kept on the Sword Coast.~
+@10535 = ~~
+@10536 = ~~
+@10537 = ~Michael~
+@10538 = ~Taxek~
+@10539 = ~ I've a blade with your name on it.~
+@10540 = ~Euric~
+@10541 = ~Nadarin~
+@10542 = ~ Me temper's bad enough without ye botherin' me.~
+@10543 = ~ By Moradin's hammer.~
+@10544 = ~~
+@10545 = ~~
+@10546 = ~ Your chatterin's startin' to wear on me nerves.~
+@10547 = ~ Greetin's.~
+@10548 = ~Nemphre~
+@10549 = ~ Your screams shall be music to my ears.~
+@10550 = ~ This way, good sir, over here!~
+@10551 = ~~
+@10552 = ~Prisoner~
+@10553 = ~~
+@10554 = ~~
+@10555 = ~ Help us, please.~
+@10556 = ~~
+@10557 = ~~
+@10558 = ~~
+@10559 = ~~
+@10560 = ~Fergus~
+@10561 = ~Dilos~
+@10562 = ~ Get away from me! I've work to do!~
+@10563 = ~~
+@10564 = ~ Somethin' on your mind?~
+@10565 = ~~
+@10566 = ~Chanthalas Ulbright~
+@10567 = ~ Forgive me, but I have meditations to attend to.~
+@10568 = ~Agnasia~
+@10569 = ~ You will die! I'll make double sure of it!~
+@10570 = ~ Yes, friend?~
+@10571 = ~Abela the Nymph~
+@10572 = ~ Destiny or no, I am not long for this place.~
+@10573 = ~ Monsters, attack me not!~
+@10574 = ~~
+@10575 = ~~
+@10576 = ~ I must be free!~
+@10577 = ~Priest of Gond~
+@10578 = ~~
+@10579 = ~~
+@10580 = ~ Gond's greatest gift was the ability to invent.~
+@10581 = ~ My friend Oppenheimer's got some cool invention cooked up.~
+@10582 = ~~
+@10583 = ~Forthel August~
+@10584 = ~~
+@10585 = ~~
+@10586 = ~Be'land~
+@10587 = ~ Welcome, travelers, to the archival stores of Gond, Wonderbringer to the realms.~
+@10588 = ~~
+@10589 = ~~
+@10590 = ~ 'Tis a pleasure to serve Gond's tinkering majesty.~
+@10591 = ~Brathlen~
+@10592 = ~ Please, follow, and I shall endeavor to introduce you to the majesty of Gond.~
+@10593 = ~~
+@10594 = ~~
+@10595 = ~ Please, don't touch the displays... or me.~
+@10596 = ~Sleeping Dwarf~
+@10597 = ~Doppelganger~
+@10598 = ~ SSSSsssssss.~
+@10599 = ~ It is useless to resist. SSSssssss.~
+@10600 = ~ Die, meat!~
+@10601 = ~~
+@10602 = ~~
+@10603 = ~~
+@10604 = ~ Your time is done, primates.~
+@10605 = ~Jhasso~
+@10606 = ~ *pant* Come to torment me some more, you shapeshifting bastards?~
+@10607 = ~~
+@10608 = ~~
+@10609 = ~ Damn, this would've cost my business a pretty penny!~
+@10610 = ~ You're barely better than my captors! Leave me!~
+@10611 = ~Maple Willow Aspen~
+@10612 = ~ Pleased to make your acquaintance.~
+@10613 = ~Angel the Cat~
+@10614 = ~~
+@10615 = ~~
+@10616 = ~Sleeping Elf~
+@10617 = ~~
+@10618 = ~Ithtyl Calantryn~
+@10619 = ~ 'Allo.~
+@10620 = ~ I should make my stay brief, if I were you.~
+@10621 = ~ I must ask you not to disturb me, as I have many financial matters that now occupy my attention.~
+@10622 = ~Jardak~
+@10623 = ~~
+@10624 = ~~
+@10625 = ~Servant~
+@10626 = ~Connoly Finn~
+@10627 = ~Laerta~
+@10628 = ~Louise~
+@10629 = ~Quinn~
+@10630 = ~Nelik~
+@10631 = ~Turpin~
+@10632 = ~Farluck~
+@10633 = ~~
+@10634 = ~~
+@10635 = ~Gorpel Hind~
+@10636 = ~~
+@10637 = ~~
+@10638 = ~Waiter~
+@10639 = ~Invisible Stalker~
+@10640 = ~~
+@10641 = ~~
+@10642 = ~~
+@10643 = ~~
+@10644 = ~~
+@10645 = ~~
+@10646 = ~Doom Guard~
+@10647 = ~~
+@10648 = ~~
+@10649 = ~~
+@10650 = ~~
+@10651 = ~~
+@10652 = ~Helmed Horror~
+@10653 = ~~
+@10654 = ~~
+@10655 = ~~
+@10656 = ~~
+@10657 = ~Degrodel~
+@10658 = ~Pheirkas~
+@10659 = ~ A stout hammer will fix most any bandit.~
+@10660 = ~~
+@10661 = ~~
+@10662 = ~Brandilar~
+@10663 = ~~
+@10664 = ~~
+@10665 = ~ It is good to see you all again. I'm very busy at the moment, so perhaps we can talk later.~
+@10666 = ~ Get out or be thrown out!~
+@10667 = ~Nortuary~
+@10668 = ~ 'Eya, friend.~
+@10669 = ~ Sorry, no food fer ya right now.~
+@10670 = ~ Get away from me! I wouldn't trust you as far as I can spit!~
+@10671 = ~Destus Gurn~
+@10672 = ~ Do you mind? I'm a very busy man, and I don't need these constant interruptions.~
+@10673 = ~~
+@10674 = ~Borinole Mann~
+@10675 = ~Brilla~
+@10676 = ~ Hmph! Well, I never!~
+@10677 = ~Areana~
+@10678 = ~Reginald "Longtooth" Worthington III~
+@10679 = ~Hobgoblin Elite~
+@10680 = ~ Forward march!~
+@10681 = ~ Spare no one!~
+@10682 = ~~
+@10683 = ~~
+@10684 = ~ You be quiet!~
+@10685 = ~ Manure mouth.~
+@10686 = ~~
+@10687 = ~Naaman~
+@10688 = ~Gardush~
+@10689 = ~~
+@10690 = ~~
+@10691 = ~Diyab~
+@10692 = ~ Dreadfully sorry, but I'm afraid... I'm gonna have ta kill ya.~
+@10693 = ~Aasim~
+@10694 = ~~
+@10695 = ~~
+@10696 = ~Alai~
+@10697 = ~ You're at the end of your rope, I'll wager!~
+@10698 = ~Zhalimar Cloudwulfe~
+@10699 = ~Thaldorn~
+@10700 = ~ H-hello, I don't want any trouble.~
+@10701 = ~ Leave me be or you'll regret it!~
+@10702 = ~Plate Mail~
+@10703 = ~The Magma Bulwark +2~
+@10704 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+
+STATISTICS:
+
+Armor Class: 3 (0 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 50~
+@10705 = ~Forged by the fire giant Varboti as a gift for a Cormyrian general who made peace with his clan, this red-and-black armor lends its wearer a molten aspect while providing protection against all but the most powerful blows. Due to its incredibly strong but thin material, it also weighs far less than ordinary plate mail.
+
+STATISTICS:
+
+Armor Class: 1 (-2 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 20~
+@10706 = ~Amulet~
+@10707 = ~Arkion's Bloodstone Amulet~
+@10708 = ~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
+
+STATISTICS:
+
+Weight: 1~
+@10709 = ~Club~
+@10710 = ~Night Club +1~
+@10711 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
+
+STATISTICS:
+
+Damage: 1d6 (crushing)
+Speed Factor: 4
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+@10712 = ~This darkwood shaft surrounds a core of lead, giving it both stealth and heft. Its enchantment connects the club to the Shadow Weave, lending it greater power under cloak of night.
+
+STATISTICS:
+
+THAC0: +1, +2 at night
+Damage: 1d6+1 (crushing)
+Speed Factor: 3
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+@10713 = ~Sling~
+@10714 = ~Sling of Unerring Accuracy +1~
+@10715 = ~Slings have existed since the beginning of recorded history. The basic sling consists of a leather or fabric strap with a pouch for holding the missile. The weapon is held by both ends of the strap and twirled around the wielder's head. When top speed is attained, the missile is launched by releasing one of the strap's ends.
+
+STATISTICS:
+
+Speed Factor: 6
+Proficiency Type: Sling
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 0~
+@10716 = ~Dandifox was one of the greatest heroes of the hin, the small people also known as halflings. From the concealment of forest arbors, he would attack rich caravans for a "tithe," which he then distributed among the local poor. The heroic robber finally met his end on the point of a guardsman's spear, but not before the constabulary had learned to fear and hate his infallible aim.
+
+STATISTICS:
+
+THAC0: +2
+Speed Factor: 6
+Proficiency Type: Sling
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 0~
+@10717 = ~War Hammer~
+@10718 = ~Hammer of Dawn +1~
+@10719 = ~Mounted knights cannot effectively use long pole weapons while on horseback and, as a result, many weapons have been fitted with shorter shafts so they may be wielded with just one hand. Maces and flails are two examples of this—the war hammer is another. The horseman's war hammer is the descendent of the Lucerne hammer. It is made entirely of steel, with rondels protecting and strengthening the grip. (Rondels are small disks of metal, often shaped into decorative designs.) The shaft is about eighteen inches long.
+
+STATISTICS:
+
+Damage: 1d4+1 (crushing)
+Speed Factor: 4
+Proficiency Type: War Hammer
+Type: One-handed
+Requires:
+ 9 Strength
+
+Weight: 6~
+@10720 = ~Crafted from the scales and bones of a gold dragon servant of Lathander, this warhammer sometimes channels the power of the ancient wyrm's mighty wings.
+
+STATISTICS:
+
+Combat abilities:
+– 10% chance per hit target is knocked back as if struck by a wing buffet
+
+Equipped abilities:
+– The wearer's non-detectable by magical means such as Detect Invisibility and Scrying
+
+THAC0: +1
+Damage: 1d4+2 (crushing)
+Speed Factor: 3
+Proficiency Type: War Hammer
+Type: One-handed
+Requires:
+ 9 Strength
+
+Weight: 6~
+@10721 = ~Ring~
+@10722 = ~Nemphre's Onyx Ring~
+@10723 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+
+STATISTICS:
+
+Weight: 0~
+@10724 = ~Long Sword~
+@10725 = ~Harrower +1~
+@10726 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+
+STATISTICS:
+
+Damage: 1d8 (slashing)
+Speed Factor: 5
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+@10727 = ~This double-edged long sword gleams white even in the reddest of torchlight. The Dethek runes along its sides name the blade "Harrower," a weapon once wielded by Ariabel, a Waterdhavian Paladin of Lathander who once carried the weapon into combat against the vampire Zerafex and her host of unholy spawn. Ariabel did not survive the contest, but decades later a gang of Tethyrian tomb robbers recovered her sword from the crypt where she fell.
+
+STATISTICS:
+
+THAC0: +1, +3 vs. undead
+Damage: 1d8+1, +3 vs. undead
+Damage type: Slashing
+Speed Factor: 4
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+@10728 = ~Angel the Cat's Angel Skin Ring~
+@10729 = ~Flail ~
+@10730 = ~The Thresher +2~
+@10731 = ~The flail is a sturdy wooden handle attached to an iron rod, a wooden rod with spikes, or a spiked iron ball. Between the handle and its implement is either a hinge or chain link. The weapon was originally used as a tool for threshing grain.
+
+STATISTICS:
+
+Damage: 1d6+1 (crushing)
+Speed Factor: 7
+Proficiency Type: Flail/Morning Star
+Type: One-handed
+Requires:
+ 13 Strength
+
+Weight: 15~
+@10732 = ~With one rod of steel and another of bronze, this double-headed flail metes out punishment right and left. The weapon's carved wooden haft depicts scenes of battle in which champions of Helm, each wielding an identical flail, wade through a field of orcs, threshing them like so much wheat.
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d6+3 (crushing)
+Speed Factor: 5
+Proficiency Type: Flail/Morning Star
+Type: One-handed
+Requires:
+ 13 Strength
+
+Weight: 13~
+@10733 = ~Two-handed Sword~
+@10734 = ~Gold Digger +1~
+@10735 = ~The two-handed sword is a derivative of the long sword. Weaponsmiths have always looked for ways to improve existing weapons. In an effort to improve the long sword, the blade was lengthened. Eventually, the handle had to be extended and two hands became necessary to properly swing the sword. The primary function of two-handed swords is cleaving mounted knights and breaking up pike formations.
+
+STATISTICS:
+
+Damage: 1d10 (slashing)
+Speed Factor: 10
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 15~
+@10736 = ~Crafted by dwarves in service to the temple of Waukeen in Amn, this two-handed sword draws power from the gold in its wielder's purse. For the wealthy it strikes mighty blows. For the impoverished, the Gold Digger is no better than a mundane greatsword.
+
+STATISTICS:
+
+Special:
+– Consumes 10 gold per successful hit
+
+THAC0: +1
+Damage: 1d10+4 (slashing)
+Speed Factor: 9
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 15~
+@10737 = ~Quarterstaff~
+@10738 = ~The Ossifier~
+@10739 = ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High-quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
+
+STATISTICS:
+
+Damage: 1d6 (crushing)
+Speed Factor: 4
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 4~
+@10740 = ~Cursed Staff of Petrification: The Ossifier
+The surface of this seven-foot shaft more resembles stone than wood, but in the hands of a skilled wielder it weighs little more than a staff of oak. Along its length appear the ghost-like images of various foes caught in defensive postures, appearing almost as thought they had been suddenly turned to stone.
+
+STATISTICS:
+
+Equipped abilities:
+– May only be removed by a Remove Curse spell
+
+Combat abilities:
+– Casts Barkskin on target upon each successful hit
+
+Damage: 1d6 (crushing)
+Speed Factor: 4
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 4~
+@10741 = ~Westgate Ruby Wine~
+@10742 = ~Golden Sands Brews~
+@10743 = ~Suz-ale~
+@10744 = ~Old One Eye Beer~
+@10745 = ~Saerloonian Topaz Wine~
+@10746 = ~Tanagyr's Stout Ale~
+@10747 = ~Alurlyath Wine~
+@10748 = ~Blood Wine~
+@10749 = ~Firewine~
+@10750 = ~Mead~
+@10751 = ~Evermead~
+@10752 = ~Winter Wine~
+@10753 = ~Berduskan Dark Wine~
+@10754 = ~Dragon's Breath Beer~
+@10755 = ~Luiren's Best Ale~
+@10756 = ~Bitter Black Ale~
+@10757 = ~Lady's Hall~
+@10758 = ~Tavern~
+@10759 = ~Shadowdark Ale~
+@10760 = ~Store~
+@10761 = ~Elminster's Choice Beer~
+@10762 = ~Glint~
+@10763 = ~You can't see me! I'm hiding! I'm hiding!~
+@10764 = ~I've traveled with a lot of great people in the past. More than you might believe. But this is the best team ever.~
+@10765 = ~Seriously? Seriously. We're making some seriously bad calls.~
+@10766 = ~I'm at the end of my rope here. There are ample opportunities elsewhere for a gnome of my caliber.~
+@10767 = ~That's it! I've had it with you and your poor leadership choices. I'm done. DONE!~
+@10768 = ~Nobody panic! I'm in charge now. Well, perhaps you should panic after all. But don't!~
+@10769 = ~My eyelids are as heavy as lead. Or steel. Or gold. Oooh, let's say gold! What I mean is, I'm tired.~
+@10770 = ~If you don't give me something to do, I'll have to amuse myself, and NO ONE wants that.~
+@10771 = ~Come at me!~
+@10772 = ~For Cloakshadow!~
+@10773 = ~Death comes for you on short legs!~
+@10774 = ~I killed two ogres with a bent fork and some bootblack once!~
+@10775 = ~Destruction! Ruin! Mayhem! Other synonyms for death!~
+@10776 = ~Owww!~
+@10777 = ~I regret nothing...~
+@10778 = ~My insides are becoming my outsides!~
+@10779 = ~Ah, fresh air and the beauty of nature! So... how long do we have to stay out here?~
+@10780 = ~Look at all these marks—I, I mean, potential converts to the glory of Cloakshadow.~
+@10781 = ~The Sly One protects us in the darkness. Good thing too, 'cause this place is nasty.~
+@10782 = ~Without the sun, we'd have no shadows.~
+@10783 = ~Night time is the right time for sneaking!~
+@10784 = ~You called?~
+@10785 = ~Yes, yes?~
+@10786 = ~Whaddaya need?~
+@10787 = ~Time to go?~
+@10788 = ~Uh-huh?~
+@10789 = ~Hey!~
+@10790 = ~You bet!~
+@10791 = ~With FLAIR!~
+@10792 = ~没错！~
+@10793 = ~Trust no one.~
+@10794 = ~I've done this a million times.~
+@10795 = ~I've done this a million and ONE times.~
+@10796 = ~Gnomes are the best! HUZZAH!~
+@10797 = ~Oh dear. That's an unfortunate turn of events.~
+@10798 = ~Neera! You can't die, not like this—there isn't nearly enough fire!~
+@10799 = ~In Baravar's name!~
+@10800 = ~No one saw that.~
+@10801 = ~This isn't doing any good!~
+@10802 = ~My pockets are a little full right now. Had to drop it.~
+@10803 = ~Oooh, what have we here?~
+@10804 = ~It's the amazing vanishing gnome!~
+@10805 = ~Darn, lost the spell!~
+@10806 = ~Trap's on the ground. Step carefully.~
+@10807 = ~When asked about his past, GLINT GARDNERSONSON tends to use three words where one will do and constantly breaks off on tangents as he speaks. Eventually, you learn that he comes from a large family and has always been seen as something of a troublemaker. He gained his nickname, "Three-Eyes," when his exasperated mother exclaimed that she needed three eyes to keep watch on him. 
+
+Glint happily expounds on his many adventures since leaving home; it's difficult to tell where reality ends and exaggeration begins. Though Glint initially ventured from Baldur's Gate in search of several missing relatives, he seems to have been caught up in the mission of ending Caelar's crusade.~
+@10808 = ~Rohma~
+@10809 = ~ I want my mommy.~
+@10810 = ~~
+@10811 = ~~
+@10812 = ~ I lost my dolly.~
+@10813 = ~*啜泣*~
+@10814 = ~Audamar~
+@10815 = ~Marshal Nederlok~
+@10816 = ~It's too late to surrender.~
+@10817 = ~Courage will carry us through.~
+@10818 = ~The Flaming Fist stands ready.~
+@10819 = ~Aldeth Sashenstar~
+@10820 = ~ You there! Identify yourselves!~
+@10821 = ~ Come now, old chaps, can't we be friends?~
+@10822 = ~ For Baldur's Gate!~
+@10823 = ~~
+@10824 = ~~
+@10825 = ~ Learn some manners, brute.~
+@10826 = ~ Nothing is more vulgar than bad manners.~
+@10827 = ~ Learn to bathe, lout.~
+@10828 = ~ Oh my goodness!~
+@10829 = ~ I don't think that I have anything to say to you! Why don't you leave me be?!~
+@10830 = ~Kent~
+@10831 = ~ Every crime must be punished!~
+@10832 = ~ I AM the law!~
+@10833 = ~~
+@10834 = ~~
+@10835 = ~ I serve the Flaming Fist!~
+@10836 = ~ You there! Give me fifty pushups!~
+@10837 = ~ You're not welcome here!~
+@10838 = ~Beno Famari~
+@10839 = ~Skie~
+@10840 = ~ Please, help me!~
+@10841 = ~ You're the finest group of friends I've ever had.~
+@10842 = ~ I don't think what we're doing is morally right.~
+@10843 = ~ All of you are such pigs.~
+@10844 = ~ I can't take this anymore. I'm going back home!~
+@10845 = ~ I don't know if I can handle this leadership thing, but I'm gonna try.~
+@10846 = ~ I'm getting tired. Couldn't we take a rest soon?~
+@10847 = ~ I'm so bored.~
+@10848 = ~ Let's go shopping!~
+@10849 = ~~
+@10850 = ~ Ahh! I'm hurt. Help!~
+@10851 = ~需要帮忙吗？~
+@10852 = ~ Aw, I broke a nail.~
+@10853 = ~ Oh, I've mussed my hair.~
+@10854 = ~ Oh, my feet hurt.~
+@10855 = ~ I have a cold.~
+@10856 = ~ I have a headache.~
+@10857 = ~ Eldoth, why do you treat our companions so badly?~
+@10858 = ~ I love you, Eldoth.~
+@10859 = ~ Why do you always have to make fun of me?! I hate you! Get away from me!~
+@10860 = ~ I'd love to hear your music, Garrick.~
+@10861 = ~ Eldoth is a kind man. He cares about me, Garrick.~
+@10862 = ~ You're a good friend.~
+@10863 = ~ I feel safe with you in the party.~
+@10864 = ~ I think you're a beautiful person.~
+@10865 = ~ I wanna go home.~
+@10866 = ~ *sniffle* I can't believe he's dead.~
+@10867 = ~ What am I gonna do? *sniffle* You can't die, Eldoth, you can't.~
+@10868 = ~ Thank you. You're very kind.~
+@10869 = ~ Uh, I'm sorry. Did I do something wrong?~
+@10870 = ~ Eldoth, tell them to stop being so cruel.~
+@10871 = ~ Do you like my perfume?~
+@10872 = ~ It's been so long since I've had a hot meal.~
+@10873 = ~Caelar Argent~
+@10874 = ~Retreat! Regroup!~
+@10875 = ~Fatigue plagues me, but I press on.~
+@10876 = ~Triumph or death!~
+@10877 = ~Honor, blood, and victory!~
+@10878 = ~Ah!~
+@10879 = ~Aye?~
+@10880 = ~I listen.~
+@10881 = ~Orders?~
+@10882 = ~怎么了？~
+@10883 = ~Speak to me.~
+@10884 = ~什么事？~
+@10885 = ~Without fail.~
+@10886 = ~是的。~
+@10887 = ~At once!~
+@10888 = ~同意。~
+@10889 = ~I... have... THE POWER!~
+@10890 = ~Feel the power of the divine!~
+@10891 = ~I shall strike again.~
+@10892 = ~I cannot harm this enemy. We must try something else.~
+@10893 = ~My spell is lost.~
+@10894 = ~When pressed to reveal her past, Caelar tells a tale repeated a thousand times over in her mind. As a child, Caelar Argent labored under the high expectations that came with her semi-divine heritage. Her early life in a monastery of the Order of the Aster was a hard one as Caelar's temperamental nature did not fit comfortably with the Asters' devotion to discipline. She believed, even then, that she was destined for great things. One day, alone in the chapterhouse library, she attempted to grow her powers by reading from a tome of forbidden knowledge. Instead she unwittingly opened a gate to the realm of the devil Belhifet. Caelar's soul should have been forfeit, but her uncle, Aun Argent, offered himself to the devil prince and was pulled down into the Nine Hells in his niece's place. Caelar never forgot his sacrifice. She vowed that someday, somehow, she would find a way to rescue her uncle from the pit of Avernus. After more than a decade in seclusion, she made contact with the Revered Brother Hephernaan. He offered her a path to Avernus, but walking it would not be easy. She would, he claimed, require three things: an army to fight the legions of the Nine Hells, possession of Dragonspear Castle, and the divine blood that was the key to opening the portal beneath the castle...~
+@10895 = ~Surely the gods of light smile on us.~
+@10896 = ~ 'Tis easy to walk astray from the path of righteousness. Watch your steps.~
+@10897 = ~We wander too far into darkness. Put me or another righteous soul in charge. I will soon steer us back on course.~
+@10898 = ~This is wrong. I'll not stand by and watch you make a mockery of all the principles I hold to. We part ways here.~
+@10899 = ~Follow me and I shall lead us unto righteousness.~
+@10900 = ~We should not stand idle while there are good works to be done.~
+@10901 = ~For glory!~
+@10902 = ~The damned shall fall!~
+@10903 = ~I shall send you to the light!~
+@10904 = ~I go now... to the light...~
+@10905 = ~By the light, heal me!~
+@10906 = ~The beauty of our world strengthens my resolve. This land is worth protecting.~
+@10907 = ~Even strong walls such as these cannot keep evil from the doors of innocents.~
+@10908 = ~Here, we shall find enemies worth fighting!~
+@10909 = ~The radiance of the light blesses us.~
+@10910 = ~Another day passed. Tomorrow shall bring new evil for us to strive against.~
+@10911 = ~By the light.~
+@10912 = ~Verily.~
+@10913 = ~For the glory of the Morninglord.~
+@10914 = ~What do you demand of a daughter of Argent?~
+@10915 = ~I am an aasimar. A child of the heavens. You would do well to heed me.~
+@10916 = ~Go into the light.~
+@10917 = ~Sister! I will avenge you!~
+@10918 = ~I have no room to carry that. It is dropped.~
+@10919 = ~I claim this for the crusade.~
+@10920 = ~I am hidden from evil's eyes.~
+@10921 = ~I have a laid a trap for our enemies.~
+@10922 = ~Gorion~
+@10923 = ~ Ahhh, my child, I am glad I have found you.~
+@10924 = ~ Run, child! Get out of here!~
+@10925 = ~~
+@10926 = ~~
+@10927 = ~ You must learn to be patient, child.~
+@10928 = ~ Everything will be explained to you in time.~
+@10929 = ~ *cough* *cough* I'm too old for this.~
+@10930 = ~ We have very little time!~
+@10931 = ~Ashatiel~
+@10932 = ~Somethin' you need?~
+@10933 = ~As the light wills.~
+@10934 = ~Hephernaan~
+@10935 = ~Greetings. Your power impresses.~
+@10936 = ~Mercy! Have mercy!~
+@10937 = ~You will pray for death when I am done with you!~
+@10938 = ~~
+@10939 = ~~
+@10940 = ~What do you want amongst the faithful?~
+@10941 = ~Bow down before the gods and beg for mercy!~
+@10942 = ~The gods are unforgiving, fool!~
+@10943 = ~The Barghest~
+@10944 = ~Fall before the Barghest!~
+@10945 = ~Do not question my orders.~
+@10946 = ~Caelar brought me to the light.~
+@10947 = ~Einer~
+@10948 = ~Me will smash your face!~
+@10949 = ~I will crush!~
+@10950 = ~Me will crush you, crush you to goo!~
+@10951 = ~Betror~
+@10952 = ~Yarok~
+@10953 = ~Rhayla~
+@10954 = ~~
+@10955 = ~~
+@10956 = ~ Good day and hello to you.~
+@10957 = ~ I much prefer wooded regions, but one must be flexible in these times.~
+@10958 = ~ Few of the Fair Folk concern themselves with the affairs of the state.~
+@10959 = ~Grimgor~
+@10960 = ~Ferrusk~
+@10961 = ~~
+@10962 = ~~
+@10963 = ~Daggerford Militia~
+@10964 = ~ By Moradin's hammer.~
+@10965 = ~~
+@10966 = ~~
+@10967 = ~ I need a swig o' some strong dwarven ale.~
+@10968 = ~ Me temper's bad enough without ye botherin' me.~
+@10969 = ~ Your chatterin's startin' to wear on me nerves.~
+@10970 = ~Defend our allies!~
+@10971 = ~怎么了？~
+@10972 = ~I'm here to fight.~
+@10973 = ~Kill 'em all!~
+@10974 = ~We're few but fierce!~
+@10975 = ~Soon we march.~
+@10976 = ~ You're rather outlandish folk to be wanderin' 'round here.~
+@10977 = ~~
+@10978 = ~~
+@10979 = ~ Nasty times are comin', I reckon.~
+@10980 = ~ Queer things have been afoot lately.~
+@10981 = ~ I wish I had my old tobacco pipe.~
+@10982 = ~Flaming Fist Mercenary~
+@10983 = ~Punish the lawbreakers!~
+@10984 = ~We're more than mercenaries.~
+@10985 = ~War is almost here.~
+@10986 = ~Show them our steel!~
+@10987 = ~Order is what matters.~
+@10988 = ~For Baldur's Gate.~
+@10989 = ~Flaming Fist Watcher~
+@10990 = ~~
+@10991 = ~~
+@10992 = ~ Helm sees all. Know that and be judged!~
+@10993 = ~ The Vigilant One knows of all your sins.~
+@10994 = ~Flaming Fist Battlemage~
+@10995 = ~Flaming Fist Veteran~
+@10996 = ~Waterdhavian Soldier~
+@10997 = ~To arms! To arms!~
+@10998 = ~Still we wait.~
+@10999 = ~The City of Splendors is my home.~
+@11000 = ~Lift up your blades and fight!~
+@11001 = ~For Waterdeep.~
+@11002 = ~什么事？~
+@11003 = ~Crusader Archer~
+@11004 = ~为了光辉女士！~
+@11005 = ~You need somethin'?~
+@11006 = ~We serve the light.~
+@11007 = ~Crusader~
+@11008 = ~ A pleasure it is to meet ya.~
+@11009 = ~ A stout hammer will fix most any bandit.~
+@11010 = ~~
+@11011 = ~~
+@11012 = ~ You canna get better than the stability stone walls provide.~
+@11013 = ~~
+@11014 = ~~
+@11015 = ~ The Fair Folk rarely have time for small talk.~
+@11016 = ~ Troubled times are upon us.~
+@11017 = ~ Soon, we shall all be together upon Evermeet.~
+@11018 = ~Crusader Recruit~
+@11019 = ~Die in her name!~
+@11020 = ~Mercenary~
+@11021 = ~ Spare no one!~
+@11022 = ~ You be quiet!~
+@11023 = ~ Forward march!~
+@11024 = ~ Die, scum!~
+@11025 = ~~
+@11026 = ~~
+@11027 = ~Crusader Cleric~
+@11028 = ~I welcome you with outstretched hand.~
+@11029 = ~Justice shall be swift and final!~
+@11030 = ~~
+@11031 = ~~
+@11032 = ~I trust you are here in good faith.~
+@11033 = ~May the gods look upon you kindly.~
+@11034 = ~All of the faithful are welcome here.~
+@11035 = ~Crusader Mage~
+@11036 = ~~
+@11037 = ~~
+@11038 = ~ Your acquaintance I am glad to have made.~
+@11039 = ~ Soon to go back to the grotto, I am. I miss the tunnels of home.~
+@11040 = ~ The underground seems safer by far, and gems to find are welcome too.~
+@11041 = ~Troll Wrangler~
+@11042 = ~Stay back, or you'll regret it.~
+@11043 = ~I give! I give!~
+@11044 = ~All right! You and me! Let's go!~
+@11045 = ~~
+@11046 = ~~
+@11047 = ~I can break an arm or a leg fer a copper or two.~
+@11048 = ~Ahhh, be off with ya.~
+@11049 = ~Ye're a piece o' iron, you are.~
+@11050 = ~Bonebat~
+@11051 = ~Imbued Wight~
+@11052 = ~Skeletal Mage~
+@11053 = ~Skeleton Archer~
+@11054 = ~Tattered Skeleton~
+@11055 = ~Shadowed Soul~
+@11056 = ~Burning Skeleton~
+@11057 = ~Skeleton~
+@11058 = ~Wraith~
+@11059 = ~Priest of Oghma~
+@11060 = ~ These walls contain the world's knowledge.~
+@11061 = ~~
+@11062 = ~ Wisdom is only possessed by the learned.~
+@11063 = ~Piato~
+@11064 = ~ Our library is a man's harem of knowledge.~
+@11065 = ~ Oh—'scuse me, but I am late for my classes.~
+@11066 = ~Crusader Guard~
+@11067 = ~Crusader Officer~
+@11068 = ~I'll test your mettle with cold steel!~
+@11069 = ~~
+@11070 = ~~
+@11071 = ~Declare yourself!~
+@11072 = ~Do not disturb my duties.~
+@11073 = ~At ease, citizen.~
+@11074 = ~I trust you have no hostile intentions.~
+@11075 = ~Nooooooo!~
+@11076 = ~RAAAHHHHR! You die! You die!~
+@11077 = ~I will crush you, puny one!~
+@11078 = ~~
+@11079 = ~~
+@11080 = ~Uhh? What you want?~
+@11081 = ~I watching you!~
+@11082 = ~Speak, manling. Speak quick!~
+@11083 = ~You and my kind not get along!~
+@11084 = ~If I get paid, I fight.~
+@11085 = ~I like smashin' heads.~
+@11086 = ~Crusader Commander~
+@11087 = ~Sindret~
+@11088 = ~Troll~
+@11089 = ~Leopas~
+@11090 = ~Corinth~
+@11091 = ~Valis~
+@11092 = ~Ravoc~
+@11093 = ~Delton~
+@11094 = ~ I am happy not. No, I'm not.~
+@11095 = ~~
+@11096 = ~~
+@11097 = ~ Happy I am. Yes, I am!~
+@11098 = ~ Who you are, know not I.~
+@11099 = ~Damarr~
+@11100 = ~What you looking at?~
+@11101 = ~Go 'way.~
+@11102 = ~Tristian~
+@11103 = ~Crusader Sergeant~
+@11104 = ~Crusader Elite~
+@11105 = ~Zare~
+@11106 = ~Recruit Kjarvan~
+@11107 = ~Recruit Qing~
+@11108 = ~Deneld~
+@11109 = ~Glory and honor.~
+@11110 = ~The light will reward you.~
+@11111 = ~Commander Dreon~
+@11112 = ~Sallo~
+@11113 = ~ ZZZZzzzzzzz...~
+@11114 = ~ ZZZZzzzzz... *snort*~
+@11115 = ~Crusader Nan~
+@11116 = ~ Ooh, it's a fine day for meeting new friends.~
+@11117 = ~~
+@11118 = ~~
+@11119 = ~ May you know the happiness of a warm hearth and home.~
+@11120 = ~ Dallillia guides the way of all those that seek the path home.~
+@11121 = ~Crusader Pedro~
+@11122 = ~ Grrrrrrrr... grrrr!~
+@11123 = ~~
+@11124 = ~~
+@11125 = ~ Grrrr, yip yip yap! Yip yip *snarl*...~
+@11126 = ~ Yap! Grrr grr... yip yip yip yap! Look, we don't speak Common, all right?! *snarl* Yip yip yap!~
+@11127 = ~ *snarl* Yip! Yip yip yip yip yap!~
+@11128 = ~Mercenary Captain~
+@11129 = ~Kara-Turan Mercenary~
+@11130 = ~Crusader Scout~
+@11131 = ~This heavy slab displays the holy symbol of Tempus.~
+@11132 = ~This magical barrier hums with arcane power. Beyond, the camp buzzes with activity as the crusaders prepare for battle.~
+@11133 = ~A translucent field of force glimmers before the gate, its magic repelling any attempt to enter the courtyard.~
+@11134 = ~Though the crusade's symbol is a sun upon the horizon, this banner offers little warmth or light to the oppressive gloom permeating Dragonspear Castle.~
+@11135 = ~Properly positioned, this recently repaired catapult could inflict serious damage upon Caelar's enemies.~
+@11136 = ~Though dead for decades, the red dragon remains that crown this castle radiate menace.~
+@11137 = ~Exit~
+@11138 = ~Protection From Good~
+@11139 = ~Draw Upon Unholy Might~
+@11140 = ~Shadow Pact~
+@11141 = ~Drain Life~
+@11142 = ~Cure Critical Wounds~
+@11143 = ~Cure Critical Wounds
+(Necromancy)
+
+Level: 5
+Sphere: Healing 
+Range: Touch
+Duration: Permanent
+Casting Time: 8
+Area of Effect: 1 creature
+Saving Throw: None
+
+The Cure Critical Wounds spell is a very potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hands upon a creature and heals 27 points of damage from wounds or other injuries. The spell does not affect creatures without corporeal bodies, those of extraplanar origin, or those not living.~
+@11144 = ~Shining Bolt~
+@11145 = ~Shining Bolt
+(Invocation/Evocation)
+
+Level: 1
+Range: 60 ft.
+Duration: Instant
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+This unique ability allows Caelar to hurl a bolt of divine energy at an enemy once per day, dealing them 5d6 points of magic damage. Undead creatures and fiends are particularly susceptible to the bolt's effects, suffering double damage when they are struck. The target's Magic Resistance, if any, does not affect this ability.~
+@11146 = ~Bless~
+@11147 = ~Bless
+(Conjuration/Summoning)
+
+Level: 1
+Sphere: All
+Range: 40 ft.
+Duration: 6 rounds
+Casting Time: 9
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+Upon uttering the Bless spell, the caster raises the morale of friendly creatures by +1. Furthermore, it raises their attack and damage rolls by +1. The caster determines at what range (up to 40 ft.) the spell will be cast. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster (thus, affected creatures leaving the area are still subject to the spell's effects; those entering the area after the casting is completed are not).~
+@11148 = ~Darkness, 15' Radius~
+@11149 = ~Darkness, 15' Radius
+(Alteration)
+
+Level: 2
+Range: 30 ft.
+Duration: 1 turn
+Casting Time: 2
+Area of Effect: 8-ft. radius
+Saving Throw: None
+
+This spell causes total, impenetrable darkness. Neither normal nor magical light works in the area of effect. All vision (including infravision) is severely limited; anyone hostile caught in the area of effect is for all practical purposes blinded as per the 1st-level wizard spell. Creatures that leave the area covered by darkness will have their vision restored after 1 round.~
+@11150 = ~Girdle~
+@11151 = ~Girdle of Bluntness~
+@11152 = ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+
+STATISTICS:
+
+Weight: 2~
+@11153 = ~Covered in intricate designs sewn into its leather with golden thread, at first glance this girdle seems more decorative than practical. Closer examination is rewarded by the realization that it functions as far more than it appears, bestowing magical protection from hammers, clubs, and other blunt weapons to its wearer.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +4 vs. crushing attacks
+
+Weight: 2~
+@11154 = ~Belt~
+@11155 = ~Belt of the Cunning Rogue~
+@11156 = ~This wide leather belt has been dyed a deep magenta. The belt was created over a decade ago by a human thief who saw his larcenous activities as a means of worshiping Mask. All his burglaries were undertaken with prayers to Mask, and he hoarded his stolen goods at a hidden altar to the god of thieves. He favored purple clothing, believing it was a color the god preferred, and he crafted this belt to match his ensemble. The thief was eventually caught and killed on one of his missions and the belt confiscated by the city guard. The next night, the belt vanished from a locked chest in the guardhouse, though, whisked away by Mask so that it could continue to serve the god's ends. Even today, the belt often finds its way into the path of those who will put it to good use.
+
+The pouches attached to the belt contain a number of small tools, wires, picks, and blades that can be used to pick locks and disable traps. 
+
+STATISTICS:
+
+Equipped abilities:
+– Open Locks: +15%
+– Find Traps: +15%
+
+Weight: 2~
+@11157 = ~Bullet~
+@11158 = ~Bullet of Fire +1~
+@11159 = ~A bullet is simply a rounded, well-balanced stone.
+
+STATISTICS:
+
+Damage: 1d4+1 (missile)
+Launcher: Sling
+
+Weight: 0~
+@11160 = ~Carved from the knucklebones of slain salamanders, these incendiary missiles burst into flames once they are hurled from a sling.
+
+STATISTICS:
+
+Damage: 1d4+1, +1d6 fire damage (Save vs. Spell for none)
+Damage type: Missile
+Launcher: Sling
+
+Weight: 0~
+@11161 = ~Ring~
+@11162 = ~Ring of Protection +1~
+@11163 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+
+STATISTICS:
+
+Weight: 0~
+@11164 = ~A ring of protection improves the wearer's Armor Class and Saving Throws versus all forms of attack. The magical properties of such a ring prevent it from being worn with other magical items of protection, including enchanted armor.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Saving Throws: +1
+
+Weight: 0~
+@11165 = ~Circlet~
+@11166 = ~Circlet of the Cynosure~
+@11167 = ~A circlet is a circular band, typically made of precious metal, worn on the head as an ornament or symbol of status. Circlets carrying low-level enchantments are commonly worn by mages across Faerûn.
+
+Weight: 1~
+@11168 = ~Almost a century ago, paladin of Lathander Edythe Brightsworn commissioned this helm while preparing to face a powerful vampire. During her many years as a knight of the Morninglord, Lady Brightsworn had accumulated some wealth, most of which she spent in preparation for her quest. After tracking the vampire to Waterdeep's City of the Dead, she assembled a party of adventurers and led them into the monster's lair. Only one of the group returned. Bloodied and wild-eyed, clutching Lady Brightsworn's helm in his hands, he relayed a tale of the nightmarish warrens the group had found and the vampire who culled them from their group, slaughtering them one by one. Investigations into the City of the Dead uncovered some of the tunnels, but all had collapsed. Of the vampire, there was no trace.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to fear, charm, and paralysis
+– Protects against critical hits
+
+Weight: 1~
+@11169 = ~Chain Mail~
+@11170 = ~Mail of the Hallowed Hero +3~
+@11171 = ~A chain mail tunic fashioned from some sort of bright metal. It is always worn over a layer of padded fabric or soft leather to prevent chafing and lessen the impact of blows.
+
+STATISTICS:
+
+Armor Class: 5 (3 vs. slashing, 7 vs. crushing)
+Requires:
+ 6 Strength
+
+Weight: 40~
+@11172 = ~This armor was first worn by Olen Argent, Caelar's great-grandfather. Olen Argent's quest to hunt down a cult of Malar led him to the Misty Forest, where he encountered a group of elves living in the woods. At first, the elves were suspicious of Olen and tried to drive him out of the forest, but he spoke so eloquently of his quest that they agreed to help him. The elves tracked the cult to their hiding place within the forest, where Olen eradicated the cultists for their murderous deeds. Thankful to have the evil presence out of their homeland, the elves crafted a fine suit of mail for the paladin.
+
+STATISTICS:
+
+Equipped abilities:
+– Protection From Evil
+– Immunity to poison and disease
+
+Armor Class: 2 (0 vs. slashing, 4 vs. crushing)
+Requires:
+ 6 Strength
+
+Weight: 7~
+@11173 = ~Medium Shield~
+@11174 = ~Solar Aegis +3~
+@11175 = ~A medium shield is carried in the same manner as a small shield. Unlike the small shield, however, its weight prevents the character from using <PRO_HISHER> shield hand for anything other than carrying the medium shield. Medium shields are usually made of metal, range from three to four feet in diameter, and can be of any shape, from round to square to a dragon's spread wings. A typical medieval shield resembles a triangle with one point facing downward.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+
+Requires:
+ 12 Strength
+
+Weight: 8~
+@11176 = ~Engraved wings stretch across the face of this ornate shield. The silver shield, inlaid with pure sapphire, gleams with a high polish no matter how much damage it suffers or what rough environs it is carried through. Often crafted for paladins and members of holy militaristic orders, a solar aegis provides substantial protection for the pure of heart.
+
+STATISTICS:
+
+Equipped abilities:
+– Constitution: +1
+– Armor Class: +4
+– Fire Resistance: +40%
+
+Requires:
+ 12 Strength
+
+Weight: 3~
+@11177 = ~Golden Girdle~
+@11178 = ~Though its battered condition speaks to its past use in combat, few of the cuts in this leather girdle were made by an enemy's blade. It would seem the magical symbols gouged into the hide have the practical effect of making the item's wearer less vulnerable to the swords of their foes.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +3 vs. slashing attacks
+
+Weight: 2~
+@11179 = ~Long Sword~
+@11180 = ~Aster's Edge +3~
+@11181 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+
+STATISTICS:
+
+Damage: 1d8 (slashing)
+Speed Factor: 5
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+@11182 = ~Legend tells that a powerful angelic being gifted this blade to a member of the Order of the Aster long ago. Details of the legend have been lost over time, but many believe the sword was a reward for slaying a monstrous fiend, perhaps even a balor. Delicate etchings of asters decorate the blade, which glows with a silver-blue flame when drawn.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +30%
+
+THAC0: +3
+Damage: 1d8+3, +2 extra vs. fiends
+Damage type: Slashing
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 2~
+@11183 = ~Belt of Antipode~
+@11184 = ~Trimmed in the fur of a polar bear, this sturdy belt is tooled with images of blue moons and white ice floes. The wearer is immune to all cold-based effects but suffers double any fire damage.
+
+STATISTICS:
+
+Equipped abilities:
+– Cold Resistance: +100%
+– Doubles all fire-based damage taken
+
+Weight: 2~
+@11185 = ~Bracers~
+@11186 = ~Bracers of Defense AC 5~
+@11187 = ~Bracers are thick bands of metal or leather that are strapped, belted, or tied to a character's forearm. Generally, the magic that is instilled in bracers is good only during combat, since most bracers help protect the wearer from injury or improve their chances to strike an opponent. Exceptions do exist, though such specialized items are rare at best.
+
+STATISTICS:
+
+Weight: 2~
+@11188 = ~Standard bracers support the forearm, which often proves handy in combat situations. This magically altered pair is handier still, bestowing the wearer with protection comparable to a full suit of armor. Unlike armor, the bracers allow a full range of motion. This makes them highly prized by wizards and sorcerers, who cannot allow physical restriction to be imposed upon them if they're to successfully manipulate the Weave.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: 5
+
+Weight: 2~
+@11189 = ~Ring of Free Action~
+@11190 = ~Enemies have a hard time slowing this ring's wearer down. The runes etched in the silver band ward off spells designed to impede movement, granting its owner a freedom of mobility others affected by such magic are denied.
+
+STATISTICS:
+
+Equipped abilities:
+– The wearer is immune to everything, magical and otherwise, that affects mobility in any way. This includes Haste and Slow spells.
+
+Weight: 0~
+@11191 = ~Battle Axe~
+@11192 = ~Chill Axe +2~
+@11193 = ~The most common version of the battle axe is a stout pole about four feet in length with a single-edged, trumpet-shaped blade mounted on one end. Battle axes are also called broad axes.
+
+STATISTICS:
+
+Damage: 1d8 (slashing)
+Speed Factor: 7
+Proficiency Type: Axe
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 7~
+@11194 = ~This finely crafted axe bears the sigil of the Ice Dragon Berserker Lodge. Glowing white runes edge its cold silver blade, and a cloud of chill air trails behind the axe whenever it is swung. The most powerful rangers of the Ice Dragon Berserker Lodge carry these axes with them on their dejemmas, as protection from southern threats.
+
+STATISTICS:
+
+Equipped abilities:
+– Strength: +1
+
+Combat abilities:
+– 2% chance per hit that the wielder will become berserk, losing control of <PRO_HISHER> actions for 3 rounds
+
+THAC0: +2
+Damage: 1d8+2, +1 cold
+Damage Type: Slashing
+Speed Factor: 5
+Proficiency Type: Axe
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 5~
+@11195 = ~Gloves of Gripping~
+@11196 = ~Found in the possession of Einer the ogre, these gloves, while roomy, give you a measure of gripping power, even to greased metal.
+
+STATISTICS:
+
+Weight: 2~
+@11197 = ~Hide Armor~
+@11198 = ~Cornugon's Revenge +2~
+@11199 = ~Hide armor is made from the thick hide of a very large animal (an elephant for example) or from many layers of normal leather from common animals, like cows. Hide armor is far too bulky, inflexible and heavy to be used much in advanced human cultures. However, among the barbaric humanoid masses throughout the dark forests and misty jungles of the world, hide armor is common. Even though it does offer more protection than leather armor, one must get by the offensive odor and shoddy appearance in order to wear it effectively. Even though Thieves can wear this armor, it has a negative effect on their abilities.
+
+STATISTICS:
+
+Equipped abilities:
+– Open Locks: -10%
+– Find Traps: -10%
+– Pick Pockets: -10% 
+– Move Silently: -20%
+
+Armor Class: 6 (8 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 40~
+@11200 = ~The devil Thel’blax was a scourge against the armies of the Abyss until he was assassinated by the servants of his own master, Dispater. With his final breath, Thel’blax cursed his own body to never lie still even in death. When his body was carried to the Iron Tower, Thel’blax’s horns and barbs continued to thrash about as though alive.
+
+The cursed cornugon’s body was dismantled by his peers, in the hopes that destroying him would end the curse; but the disparate pieces of Thel’blax’s body continued to prick and tear at any who approached. At last, Dispater ordered his ironsmiths to forge the pieces into a suit of armor, intending to use it as a means of torturing insubordinates. Inevitably, the armor fell into the hands of intrepid (if foolhardy) adventurers, who then brought the piece to Faerûn.
+
+Even now, the curse of Thel’blax affects the armor, causing its barbs to sink painfully into the flesh of anyone wearing it. It provides a measure of protection, behaving like hide armor, and even allows the wearer to benefit from Thel’blax’s resilience; but the constant stinging and flaying from the cornugon’s still-living barbs make this armor unsuitable for the faint of heart or the weak of stomach.
+
+STATISTICS:
+
+Equipped abilities:
+– Open Locks: -10%
+– Find Traps: -10%
+– Pick Pockets: -10%
+– Move Silently: -20%
+– Regenerate 2 Hit Points every round
+– Constitution: -2
+– Wearer cannot be protected from evil
+– May only be removed with a Remove Curse spell
+
+Armor Class: 4 (6 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 35~
+@11201 = ~A Key~
+@11202 = ~Troll Pen Key~
+@11203 = ~This is a standard key. Keys are used to open doors.
+
+STATISTICS:
+
+Weight: 1~
+@11204 = ~This heavy iron key has a handle shaped like a troll's face.
+
+STATISTICS:
+
+Weight: 1~
+@11205 = ~Crusader Uniform~
+@11206 = ~This colorful tunic displays the sigil of Caelar's crusaders.
+
+STATISTICS:
+
+Weight: 10~
+@11207 = ~Plate Mail~
+@11208 = ~Bloody Bone Plate +2~
+@11209 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+
+STATISTICS:
+
+Armor Class: 3 (0 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 50~
+@11210 = ~The warrior who once wore this armor died at the hands of a friend she trusted. The mark of her betrayal remains in the bloodstains that have darkened to brown on the gleaming bone-white armor. The armor functions properly, though it makes the wearer unappealing to look at.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to backstab
+– Charisma: -1
+
+Armor Class: 1 (-2 vs. slashing)
+Requires:
+ 8 Strength
+
+Weight: 20~
+@11211 = ~Amulet~
+@11212 = ~Amulet of Abnormally Awesome Ankheg Summoning~
+@11213 = ~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
+
+STATISTICS:
+
+Weight: 1~
+@11214 = ~Crafted by the dark druid Ferrusk, this amulet resembles the curved pincers of an ankheg hanging from an iron chain. The pincers' polished green carapace catches the light, gleaming with an emerald sheen. Ferrusk created this amulet to summon a passel of ankhegs to fight at its wearer's command.
+
+STATISTICS:
+
+Equipped abilities:
+– Acid Resistance: +15%
+
+Charge abilities:
+– Summons two ankhegs
+  Range: 30 ft.
+  Duration: 2 turns
+
+Weight: 0~
+@11215 = ~Club~
+@11216 = ~Club +1~
+@11217 = ~Most clubs are stout, hardwood sticks, narrow at the grip and wider at the end. This simple weapon has been used since people first began using tools. Anyone can find a good stout piece of wood and swing it; hence the club's widespread use.
+
+STATISTICS:
+
+Damage: 1d6 (crushing)
+Speed Factor: 4
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+@11218 = ~From chair legs to felled trees, clubs are the universal weapons of everyone from tavern brawlers to hill giants. A little extra weight, maybe a spike or two, and a little enchantment never hurt. Which is to say, it always hurts.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1d6+1 (crushing)
+Speed Factor: 3
+Proficiency Type: Club
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+@11219 = ~Potion~
+@11220 = ~Slime Sickness Curative~
+@11221 = ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
+
+STATISTICS:
+
+Weight: 1~
+@11222 = ~This bottle contains a special healing potion that counteracts fungal poison found in the caverns beneath Dragonspear Castle. One sip from the bottle is enough to cure the afflicted.
+
+STATISTICS:
+
+Weight: 1~
+@11223 = ~Helmet~
+@11224 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+
+Weight: 2~
+@11225 = ~Attack~
+@11226 = ~Dreon's Signet Ring~
+@11227 = ~This heavy gold ring displays the seal of Caelar Argent, leader of the Shining Lady's crusade.
+
+STATISTICS:
+
+Weight: 0~
+@11228 = ~Ring of the Crusade~
+@11229 = ~Two small round topazes flank the symbol of Caelar Argent engraved on this ring's silver band. Such rings testify to the high status of crusaders who have shown their prowess in battle or in some way demonstrated unwavering commitment to the Shining Lady's cause.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1, +3 vs. demons and devils
+– Saving Throws: +1, +3 vs. demons and devils
+
+Weight: 0~
+@11230 = ~Long Sword +1~
+@11231 = ~These swords are usually referred to as double-edged swords, war swords, or military swords. The blade hums slightly in your hand, the only overt evidence that magic runs through it.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1d8+1 (slashing)
+Speed Factor: 4
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+@11232 = ~Composite Longbow~
+@11233 = ~Corinth's Bow +2~
+@11234 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
+
+STATISTICS:
+
+THAC0: +1
+Damage: +2
+Speed Factor: 7
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 10~
+@11235 = ~Though obviously well-used, someone has taken excellent care of this finely crafted bow. A small golden seal on one side appears to be a family crest.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+
+Combat abilities: 
+– After scoring a critical hit, the wielder is affected by the Luck spell
+
+THAC0: +3
+Damage: +4
+Speed Factor: 5
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 8~
+@11236 = ~This class of open-face helmet, made of reinforced leather or metal, covers most of the head save the face and neck. These helmets commonly provide protection for the nose. 
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+
+Weight: 2~
+@11237 = ~Belt~
+@11238 = ~~
+@11239 = ~~
+@11240 = ~Duke Eltan~
+@11241 = ~Entar Silvershield~
+@11242 = ~ Mon Dieu!~
+@11243 = ~~
+@11244 = ~Liia Jannath~
+@11245 = ~Bence Duncan~
+@11246 = ~Punish the lawbreakers!~
+@11247 = ~We're more than mercenaries.~
+@11248 = ~War is almost here.~
+@11249 = ~Flaming Fist Battle Wizard~
+@11250 = ~科温~
+@11251 = ~Rohma needs a mother!~
+@11252 = ~A team like this can't be beat.~
+@11253 = ~This isn't working. We need to do better.~
+@11254 = ~Watch it. You're straying farther off the path than I'm ready to go.~
+@11255 = ~I can't support this effort, not anymore. Farewell.~
+@11256 = ~I'm used to being in charge. I'll lead us to victory.~
+@11257 = ~An army can't march forever. We've got to rest.~
+@11258 = ~We've work to do. Let's get moving.~
+@11259 = ~To battle!~
+@11260 = ~Let's see how long you last against me.~
+@11261 = ~Fight if you must, but you're not winning this.~
+@11262 = ~I'm looking forward to this.~
+@11263 = ~Time to end you!~
+@11264 = ~哎呦！~
+@11265 = ~No... Rohma...~
+@11266 = ~医生！~
+@11267 = ~The forest is so serene. I always catch myself watching for bandits, though.~
+@11268 = ~Ah, noise and crowds. Feels like home.~
+@11269 = ~Watch your step. Nothing good comes out of a place like this.~
+@11270 = ~Light and warmth. I'm glad for both.~
+@11271 = ~In the city, you rarely see the stars. They're beautiful tonight.~
+@11272 = ~怎么了？~
+@11273 = ~Your orders?~
+@11274 = ~嗯？~
+@11275 = ~什么？~
+@11276 = ~去吧。~
+@11277 = ~I'm listening.~
+@11278 = ~好的。~
+@11279 = ~我懂了。~
+@11280 = ~是的。~
+@11281 = ~What are your orders, hero?~
+@11282 = ~I'm a ranger. I want to RANGE.~
+@11283 = ~Do you think love can bloom even on a battlefield?~
+@11284 = ~Sometimes I dream I'm a chaotic good elf.~
+@11285 = ~I won't forget you. Your sacrifice won't have been in vain.~
+@11286 = ~We're better off without him.~
+@11287 = ~Hah! My aim is true.~
+@11288 = ~I'll recover.~
+@11289 = ~This isn't working! We have to try something else.~
+@11290 = ~I can't carry that too. I dropped it.~
+@11291 = ~I'll just take that...~
+@11292 = ~Shhh. I'm hidden.~
+@11293 = ~My spell! I lost it.~
+@11294 = ~Careful—I've put a trap down.~
+@11295 = ~When asked about her past, Schael Corwin reluctantly admits she ran wild as a child on the streets of Baldur's Gate. Her rebelliousness soon got her into trouble with the Flaming Fist. 
+
+Left alone in a cell with nothing but her thoughts for company, she began to reflect on the decisions she'd made in the past and see where they would inevitably take her. When she was eventually freed, she decided to change the direction of her life. She enlisted in the Flaming Fist and rose quickly through the ranks.
+
+You sense there is little Schael Corwin would not do for her family or for the Flaming Fist.~
+@11296 = ~Officer Fritz~
+@11297 = ~I'll test your mettle with cold steel!~
+@11298 = ~~
+@11299 = ~~
+@11300 = ~Declare yourself!~
+@11301 = ~Do not disturb my duties.~
+@11302 = ~At ease, citizen.~
+@11303 = ~I trust you have no hostile intentions.~
+@11304 = ~Officer Jenks~
+@11305 = ~Flaming Fist Enforcer~
+@11306 = ~ I serve the Flaming Fist!~
+@11307 = ~ I AM the law!~
+@11308 = ~~
+@11309 = ~~
+@11310 = ~ Every crime must be punished!~
+@11311 = ~ You there! Give me fifty pushups!~
+@11312 = ~Sleeping Man~
+@11313 = ~ ZZZZzzzzzzz...~
+@11314 = ~ ZZZZzzzzz... *snort*~
+@11315 = ~Sleeping Woman~
+@11316 = ~Refugee~
+@11317 = ~Please, help us.~
+@11318 = ~We have nowhere else to go.~
+@11319 = ~A pox on the crusade!~
+@11320 = ~Commoner~
+@11321 = ~I'm so tired.~
+@11322 = ~I've lost everything.~
+@11323 = ~Can the Grand Dukes help us?~
+@11324 = ~Show them our steel!~
+@11325 = ~Order is what matters.~
+@11326 = ~For Baldur's Gate.~
+@11327 = ~Thug~
+@11328 = ~I'll wipe your filthy lineage right out of the realms!~
+@11329 = ~You deserve no less than death... and no more.~
+@11330 = ~What can it be now?~
+@11331 = ~Let us speak and be done with this!~
+@11332 = ~Sailor~
+@11333 = ~~
+@11334 = ~~
+@11335 = ~The seas are sure rough this time o' year.~
+@11336 = ~Nothin' like some time ashore... all I needs is some grog an' a good lass on me lap.~
+@11337 = ~I best not be gone long... 'fore me captain has me hide.~
+@11338 = ~Rat~
+@11339 = ~Imoen lies still on the bed. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~
+@11340 = ~Imoen lies still on the floor. Her chest rises and falls—she lives. That is all you can be sure of. For now, it will have to be enough.~
+@11341 = ~Below you, the streets of Baldur's Gate are so packed it's difficult to make out individual figures.~
+@11342 = ~Even with the window closed, the dull roar of the crowded street outside is hard to ignore.~
+@11343 = ~This comfortable bed offers luxury you never found in Candlekeep.~
+@11344 = ~<CHARNAME>'s Equipment~
+@11345 = ~<CHARNAME>'s chamber~
+@11346 = ~Imoen's Equipment~
+@11347 = ~The second floor is securely locked and guarded. No one is permitted upstairs. ~
+@11348 = ~There's no escape this way. The sewers are the only way out.~
+@11349 = ~Thick iron bars keep these cells secure. Within, scratches and claw marks on the wall indicate the passage of time.~
+@11350 = ~Tiax's Cell~
+@11351 = ~Exit~
+@11352 = ~Trap the Soul~
+@11353 = ~Helmet~
+@11354 = ~This class of decorative helmet, made of reinforced leather or metal, covers the face and head. Eye slits and breathing holes come highly recommended. 
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against critical hits
+
+Weight: 2~
+@11355 = ~Corwin's Armor +2~
+@11356 = ~This suit of light chain armor was commissioned for Captain Schael Corwin by her father, a gift for her when she first joined the Flaming Fist. It has been crafted to fit her form and no one else's. The unusual lightness and enchantments of the armor kept the suit from interfering with her abilities, despite its metal composition.
+
+STATISTICS:
+
+Equipped abilities:
+– Movement Speed: +1
+– Magic Resistance: +10%
+
+Armor Class: 3 (1 vs. slashing, 5 vs. crushing)
+Requires: 
+ 5 Strength
+
+Weight: 7~
+@11357 = ~Composite Longbow~
+@11358 = ~Corwin's Bow +1~
+@11359 = ~Composite bows are longbows or shortbows whose staves are made from more than one type of material. This gives greater flexibility and makes arrows fired from this bow deliver more damage. These were developed after the normal longbow.
+
+STATISTICS:
+
+THAC0: +1
+Damage: +2
+Speed Factor: 7
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 10~
+@11360 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+
+Equipped abilities: 
+– Dexterity: +1
+
+Combat abilities: 
+– 10% chance per hit of entangling the target for 3 rounds (Save vs. Breath negates)
+
+STATISTICS:
+
+THAC0: +2
+Damage: +3
+Speed Factor: 6
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 18 Strength
+
+Weight: 9~
+@11361 = ~Exit~
+@11362 = ~Angelo~
+@11363 = ~ So, these are the infamous murderers, finally brought to justice.~
+@11364 = ~ Dreadfully sorry, but I'm afraid... I'm gonna have ta kill ya.~
+@11365 = ~~
+@11366 = ~~
+@11367 = ~ Justice may be blind, but I'm not.~
+@11368 = ~Halatathlaer~
+@11369 = ~Blind Albino Wyrmling~
+@11370 = ~Dragon Fear~
+@11371 = ~Ghost Dragon Breath~
+@11372 = ~Tail Constriction~
+@11373 = ~Breath Weapon~
+@11374 = ~Ring~
+@11375 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+
+STATISTICS:
+
+Weight: 0~
+@11376 = ~Attack~
+@11377 = ~Aun Argent~
+@11378 = ~If this is how it ends, then so be it!~
+@11379 = ~Ugh!~
+@11380 = ~~
+@11381 = ~I will do what I can to help you.~
+@11382 = ~Thrix~
+@11383 = ~Hellcat~
+@11384 = ~Erinyes~
+@11385 = ~Abishai~
+@11386 = ~Imp~
+@11387 = ~Crusader Elite~
+@11388 = ~Lemure~
+@11389 = ~Black Abishai~
+@11390 = ~Green Abishai~
+@11391 = ~Red Abishai~
+@11392 = ~Hamatula~
+@11393 = ~Bone Fiend~
+@11394 = ~为了光辉女士！~
+@11395 = ~You need somethin'?~
+@11396 = ~We serve the light.~
+@11397 = ~Die in her name!~
+@11398 = ~Somethin' you need?~
+@11399 = ~As the light wills.~
+@11400 = ~~
+@11401 = ~~
+@11402 = ~ The Fair Folk rarely have time for small talk.~
+@11403 = ~ Troubled times are upon us.~
+@11404 = ~ Soon, we shall all be together upon Evermeet.~
+@11405 = ~Stairs Down~
+@11406 = ~Massive Door~
+@11407 = ~In the distance, you can make out the legions of Avernus marching in formation.~
+@11408 = ~Through the haze that envelops Avernus you can see a blasted landscape dotted with lakes of bubbling magma amongst towering ruins of iron and basalt.~
+@11409 = ~The utter desolation of the First Hell is an awe-inspiring, if terrifying, sight. Red skies periodically rain down fireballs, battering the landscape.~
+@11410 = ~Horrifying creatures are chained up by the thousands far below. Enormous devils rake them with whips, shaking with laughter after each strike.~
+@11411 = ~Filled with razor-sharp edges and lancing points, for anyone ill-fated enough to occupy it, this cage is as much a device of torture as it is a prison.~
+@11412 = ~Cage~
+@11413 = ~This sturdy, well-crafted door resists all efforts to open it.~
+@11414 = ~Years of accumulated rust have transformed this door into a wall. It will not open, for you or anyone else.~
+@11415 = ~This door's dwarven craftspeople made certain none but the one who held its key would ever be able to open it. Peering through a crack, the light that leaks inward reveals nothing of interest or value.~
+@11416 = ~An unearthly light glows from deep within the chasm. Voices echo throughout the gaping crevasse, pressing against the walls, seeking escape.~
+@11417 = ~Exit~
+@11418 = ~Ritual Chamber~
+@11419 = ~Portal to the Fugue Plane~
+@11420 = ~Teleport Without Error~
+@11421 = ~Impale~
+@11422 = ~Attack~
