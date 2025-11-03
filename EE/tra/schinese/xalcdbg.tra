@@ -41,7 +41,7 @@
 @2054 = ~您所请求的更改已处理。~
 @2055 = ~返回主菜单。~
 @2056 = ~退出。~
-@2057 = ~您需要什么帮助？~
+@2057 = ~我要如何帮助你们？~
 @2061 = ~Spawn Target Dummy~
 @2063 = ~Please visit https://fosiemods.net/support if you'd like to make a monetary contribution. Thank you for your generosity.~
 @2070 = ~Save Game to Slot 0.~
@@ -430,7 +430,7 @@
 @7023 = ~SetGlobal("XA_LC_UsedGond", "GLOBAL", 1)~
 @7024 = ~SetGlobal("XA_LC_UsedTyr", "GLOBAL", 0)~
 @7025 = ~SetGlobal("XA_LC_UsedTyr", "GLOBAL", 1)~
-@7026 = ~Create Item~
+@7026 = ~创造物品~
 @7027 = ~compon10 (Gond Bowstring)~
 @7028 = ~compon02 (Eye of Tyr)~
 @7030 = ~SetGlobal("XA_LC_Banter_CaelarSarevok", "GLOBAL", 1)~
