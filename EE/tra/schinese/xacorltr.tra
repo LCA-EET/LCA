@@ -1,19 +1,17 @@
 @0 = ~（信件内容如下。）~
-@1 = ~<CHARNAME>,
+@1 = ~<CHARNAME>：
 
-By the time you read this, you'll have escaped from the city. I'm sorry that I wasn't able to see you one last time before you left. When Belt, Eltan and Jannath made the decision to exile you, the Fist was put on high alert to prevent Entar and his associates from trying to take matters into their own hands.~
-@2 = ~You now have the time you need to find some way to prove your innocence. If you're able to recover the Soultaker dagger, you must send it to me. The wizards believe they can restore Skie, but only if the dagger is in their possession. Once restored, she can corroborate your account of what happened on that night in Dragonspear. With your innocence established, love, we'll be together once again.~
-@3 = ~I've enclosed my amulet with this letter. Wear it and know that I love you, always. 
+当你读到这封信时，你应当已逃离这座城市。很抱歉未能在你离开前见你最后一面。当贝尔特、伊尔坦和詹纳斯女士决定将你流放时，焰拳便进入高度戒备状态，以防安塔·银盾及其党羽试图私下采取行动。~
+@2 = ~现在你有了所需的时间去寻找证明自己清白的方法。若能寻回夺魂匕首，务必将它寄送给我。法师们相信只要持有那柄匕首，就能让史姬恢复。一旦她复原，便能佐证你在龙矛堡那晚的经过。待你洗清冤屈，亲爱的，我们就能重逢。~
+@3 = ~随信附上我的护身符。戴着它，望你知我心意永驻。
 
-Yours, 
+你的
+舍尔~
+@4 = ~<CHARNAME>：
 
-Schael~
-@4 = ~<CHARNAME>,
+当你读到这封信时，你应当已逃离这座城市。很抱歉未能在你离开前见你最后一面。当贝尔特、伊尔坦和詹纳斯女士决定将你流放时，焰拳便进入高度戒备状态，以防安塔·银盾及其党羽试图私下采取行动。~
+@5 = ~现在你有了所需的时间去寻找证明自己清白的方法。若能寻回夺魂匕首，务必将它寄送给我。法师们相信只要持有那柄匕首，就能让史姬恢复。一旦她复原，便能佐证你在龙矛堡那晚的经过。待你洗清冤屈，即可重返这座城市。~
+@6 = ~祝你好运，我的朋友。
 
-By the time you read this, you'll have escaped from the city. I'm sorry that I wasn't able to see you one last time before you left. When Belt, Eltan and Jannath made the decision to exile you, the Fist was put on high alert to prevent Entar and his associates from trying to take matters into their own hands.~
-@5 = ~You now have the time you need to find some way to prove your innocence. If you're able to recover the Soultaker dagger, you must send it to me. The wizards believe they can restore Skie, but only if the dagger is in their possession. Once restored, she can corroborate your account of what happened on that night in Dragonspear. You'll be able to return to the city once your innocence is established.~
-@6 = ~Good luck to you, my friend. 
-
-Regards, 
-
-Captain Schael Corwin~
+此致
+舍尔·科温队长~

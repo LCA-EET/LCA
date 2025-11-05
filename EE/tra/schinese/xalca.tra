@@ -1,37 +1,37 @@
 @800 = ~爱能战胜一切（LCA）~
-@801 = ~Enhanced Edition Trilogy (EET) mod has been detected.~
-@802 = ~Enhanced Edition Trilogy (EET) mod has NOT been detected.~
-@803 = ~Baldur's Gate Enhanced Edition detected.~
-@804 = ~Siege of Dragonspear detected.~
-@805 = ~Baldur's Gate II Enhanced Edition detected.~
-@850 = ~Processing LCA Assistant...~
+@801 = ~检测到已安装 增强版三部曲（EET）模组。~
+@802 = ~未检测到 增强版三部曲（EET）模组。~
+@803 = ~检测到 博德之门：增强版。~
+@804 = ~检测到 龙矛围攻。~
+@805 = ~检测到 博德之门II：增强版。~
+@850 = ~正在处理 LCA 助手……~
 @851 = ~LCA助手~
-@852 = ~Added LCA Assistant to Baldur.bcs~
-@853 = ~Added LCA Assistant to BDBaldur.bcs~
-@854 = ~Added LCA Assistant to Baldur25.bcs~
-@855 = ~Target Dummy~
-@856 = ~Activate this ability to launch the LCA Assistant.~
-@857 = ~Install LCA Assistant? It is a tool to help configure aspects of the mod, and includes a debugger.
-0.) No.
-1.) Yes.
-Enter a value (0 or 1):~
-@1000 = ~Processing BG1 changes...~
-@1001 = ~Welcome all to the Hall of Wonders. A mere gold piece secures entry to the most curious collection of priceless historical artifacts and machination inspirations on all Abeir-Toril. The craft displayed within is truly a sight to see, and the gold raised goes to needed supplies, that future wonders will be wrought.~
-@1002 = ~Good on you, friend. Come inside the Hall of Wonders, but please remember the donation of one gold. It provides sponsorship for those that craft the curious wonders inspired by Gond, and for those that maintain and protect the priceless artifacts contained herein. This patronage supports the... not immediately salable works produced.~
+@852 = ~已将 LCA 助手添加到 Baldur.bcs~
+@853 = ~已将 LCA 助手添加到 BDBaldur.bcs~
+@854 = ~已将 LCA 助手添加到 Baldur25.bcs~
+@855 = ~训练假人~
+@856 = ~激活此能力以启动 LCA 助手。~
+@857 = ~是否安装 LCA 助手？这是一个帮助配置模组功能的工具，并包含调试器。
+0.) 否。
+1.) 是。
+请输入一个值（0 或 1）：~
+@1000 = ~正在处理博德之门1的改动……~
+@1001 = ~欢迎各位来到玄奇大厅。只需一枚金币，即可进入托瑞尔世上最奇妙的无价历史遗物与灵感机械收藏馆。馆内陈列的工艺着实值得一看，而筹集的资金将用于购买必要物资，以期锻造出未来的奇迹之作。~
+@1002 = ~做得好，朋友。请进玄奇大厅参观，但请记得捐献一枚金币。这笔捐款将资助那些受贡德启示而创造奇巧妙物的匠人，以及维护馆内无价遗宝的守护者。此类资助旨在支持那些……无法立即售出的艺术创作。~
 @1003 = ~我在此地应是安全的。然而，你面前的任务艰巨。若我猜测无误，铁王座正策划一场政变。恐怕奈德洛克、科温和其他人无法及时返回。唯有你们能阻止这场政变。~
-@1004 = ~I am again in your debt. That creature has kept me helpless for too long. Perhaps if I hadn't been incapacitated, I might have been able to prevent Scar's death. *cough* Angelo will soon hear of my recovery. It is important that you take me away from here; I'm sure Angelo won't want me coherent and among the living. Take me to the Harbor Master's building — he is a good friend of mine. I can rest there, and send word to Nederlok and Corwin to return to the city immediately. Their loyalty is beyond reproach, and they can retake control of the Fist while I recover. Take this letter; I managed to filch it off Rashad when he was "caring" for me. From what I read of it, it seems that Sarevok has dire plans for the city. I fear for the lives of my fellow Dukes, Liia and Belt. If they were to die, Sarevok would take over the city. You must find Slythe and Krystin, and stop them... *cough* Hurry! We must make haste.~
-@1005 = ~哦，是的，很多事情。你知道安塔公爵的事，对吧？他生病了。这就是为什么安其罗现在负责。本该是史卡，但他出去被暗杀了，那个逮捕我的科温贱人在和奈德洛克统帅一起在北方进行某种训练。是的，这座城市在过去一周里走下坡路了。太糟糕了，呵呵。~
-@1006 = ~They still have leadership. How effective it is, I do not know. With Marshal Nederlok sent on some training exercise up north, I hear Angelo Dosan is now effectively in control. Such a weasel he is. I am surprised he has the support of the troops. He's got powerful friends though, and I hear that he takes orders straight from Sarevok. You've heard of him, right? With Entar dead, the other Dukes have called an emergency election. Sarevok is the front-runner, and his stand against Amn is very popular. Imagine how much pull he will have if he actually has the Flaming Fist in his back pocket.~
-@1007 = ~There's trouble in the Fist, <CHARNAME>, big trouble. Duke Eltan's fallen sick and Scar was killed, supposedly in a simple robbery but I have my doubts... It's all Angelo, he's making a power grab, taking control of the Fist and, with Scar gone and Nederlok sent on some bogus errand up north, there's nothing to stop him! I've seen him paying visits to the Iron Throne, too, and I don't like it one bit... There are some of us that are still loyal to Eltan and, lucky for you, I happen to be one of them. Please, for your sake and ours, keep your head down and, if you get the chance, sniff around the Iron Throne's base. If you can find a way to talk to Duke Eltan, even better, but they're keeping him in the middle of Fist headquarters... Damn it, Angelo will pay dearly for this and I hope it's soon...~
-@1008 = ~Thank you, <CHARNAME>. You efforts have not been in vain. My commanding officer, Captain Corwin, has ordered my contingent and I back to the city to make our reports. You will figure prominently in them and I assure you that our accounts will be favorable.~
-@1009 = ~CorwinEET is installed. String sets skipped!~
-@1010 = ~CorwinEET is not installed. Strings will be patched accordingly.~
-@1011 = ~Officers' Training Manual~
-@1012 = ~This appears to be a Flaming Fist officers' training manual. It includes policies, procedures and guidelines covering incident investigations, suspect apprehension techniques, proper etiquette when dealing with city officials, and much more. The initials "S.C." are written on the inside cover. It's clear that "S.C.", whoever they are, has spent a great many hours intently studying the manual; it is well-worn, and several of the pages are coming loose from the binding.~
+@1004 = ~我又欠你一份情。那怪物让我无助太久了。如果我没失去行动能力，或许能阻止史卡的死亡。*咳嗽* 安其罗很快就会得知我康复的消息。你必须带我离开这里——他绝不会希望我清醒地活着。带我去港务局局长大楼，他是我的好友。我可以在那里休养，并传信让奈德洛克和科温立即返回城里。他们的忠诚无可指摘，能在我康复期间接管焰拳的控制权。拿着这封信，这是拉沙德"照顾"我时，我设法偷来的。从内容来看，沙洛佛克似乎对这座城市有险恶图谋。我担心莉拉和贝尔特两位公爵的性命。若他们遭遇不测，沙洛佛克将接管整座城市。你们必须找到斯莱斯和克莉斯汀，阻止他们……*咳嗽* 快！我们必须抓紧时间。~
+@1005 = ~哦，是啊，事情可多了。你知道伊尔坦公爵的事吧？他病倒了。所以现在由安其罗掌权。本该是史卡接班，但他外出时遭暗杀了，那个逮捕我的贱人科温正和奈德洛克统帅在北方搞什么训练。要我说，这城一周之内就垮了。真糟糕啊，呵呵。~
+@1006 = ~他们仍有领导层。但效率如何，我不清楚。自从奈德洛克统帅被派往北方进行训练演习后，听说现在实权落在安其罗·都森手里。他就是个卑劣小人。我惊讶的是居然有士兵支持他。不过他背后有强援，而且听说他直接听命于沙洛佛克。你听说过这人吧？安塔死后，其他公爵召开了紧急选举。沙洛佛克是最热门人选，他对抗安姆的立场很得民心。想想吧，要是连焰拳都成了他的私人武装，他的势力该有多大。~
+@1007 = ~<CHARNAME>，焰拳内部出大乱子了。伊尔坦公爵病倒，史卡也遇害——表面说是普通劫案，但我怀疑根本是阴谋……全是安其罗在夺权！趁着史卡身亡、奈德洛克被支到北方执行虚假任务，现在没人能阻止他！我还亲眼见过他出入铁王座，这绝不是什么好兆头……我们当中仍有忠于伊尔坦的人，而你很幸运正与其中一员交谈。请为了你我双方的利益暂且低调，若有机会就去铁王座基地探查。若能设法与伊尔坦公爵对话更好，但他们把他软禁在焰拳总部深处……该死的，安其罗迟早要为此付出代价，我只希望这天早点到来……~
+@1008 = ~谢谢你，<CHARNAME>。你的努力没有白费。我的指挥官科温上尉已下令我和所属分队回城汇报。你的事迹将占据重要篇幅，我保证报告内容会对你有利。~
+@1009 = ~CorwinEET模组已安装。字符串集跳过处理！~
+@1010 = ~CorwinEET模组未安装。字符串将进行相应修改。~
+@1011 = ~军官训练手册~
+@1012 = ~这似乎是焰拳军官训练手册，内容涵盖事件调查规程、嫌犯拘捕技巧、与城市官员交往的礼仪规范等众多方面。扉页写有姓名缩写“S.C.”。显然无论这位“S.C.”是谁，都曾投入大量时间潜心研读——手册已破旧不堪，多处书页即将从装订处脱落。~
 @1013 = ~烧毁的文件~
 @1014 = ~这份文件已被烧毁，但部分内容仍然可读。从你能辨认的部分来看，收件人被命令前往城市北部的一个集结区，因为最近发生了一连串的暗杀事件。他们要在那里等待，准备夺回……一些东西。你无法辨认具体是什么。你无法确定这份文件是给谁的，尽管你看到了页面右下角似乎有焰拳的标志。有趣。~
 @1015 = ~刺客~
-@2000 = ~Processing SoD changes...~
+@2000 = ~正在处理龙矛围攻的更改……~
 @2001 = ~科温的信~
 @2002 = ~科温的指导~
 @2003 = ~舍尔的信~
@@ -39,40 +39,40 @@ Enter a value (0 or 1):~
 @2006 = ~<CHARNAME>，
 在你读完这封信的时候，你已经离开了这座城市。很遗憾，在你离去前，我未能与你见上最后一面。当贝尔特、伊尔坦和詹纳斯决定将你流放时，焰拳立刻进入最高警戒状态，以阻止安塔及其同伙私自采取行动。
 
-现在，你拥有了证明自己清白所需的时间。如果你能找回夺魂者匕首，你必须将它交给我。巫师们相信，只要匕首在手，他们便能让史姬复苏。一旦她得以复原，便能证实你在龙矛堡那晚所经历的一切。亲爱的，一旦你的清白得以证实，我们便能再度团聚。
+现在，你拥有了证明自己清白所需的时间。如果你能找回夺魂匕首，你必须将它交给我。巫师们相信，只要匕首在手，他们便能让史姬复苏。一旦她得以复原，便能证实你在龙矛堡那晚所经历的一切。亲爱的，一旦你的清白得以证实，我们便能再度团聚。
 
 随信附上我的护身符。戴上它，我对你的爱，永远不变。
 
 你的，
 
 舍尔~
-@2007 = ~<CHARNAME>,
+@2007 = ~<CHARNAME>：
 
-By the time you read this, you'll have departed the city. I'm sorry that I wasn't able to see you one last time before you left. When Belt, Eltan and Jannath made the decision to exile you, the Fist was put on high alert to prevent Entar and his associates from trying to take matters into their own hands. 
+当你读到这封信时，你应当已经离开了这座城市。很抱歉没能在你离开前再见你一面。当贝尔特、安塔和詹纳斯决定将你流放时，“焰拳”进入了高度戒备状态，以防伊尔坦和他的同伙试图自行了断。
 
-You now have the time you need to find some way to prove your innocence. If you're able to recover the Soultaker dagger, you must send it to me. The wizards believe they can restore Skie, but only if the dagger is in their possession. Once restored, she can corroborate your account of what happened on that night in Dragonspear. You'll be able to return to the city once your innocence is established.   
+现在你有了所需的时间去寻找证明自己清白的方法。如果你能找回夺魂匕首，务必将其寄送给我。法师们相信他们能复活史姬——但前提是匕首必须在他们手中。一旦史姬被复活，她就能证实你在龙矛城堡那晚的经过。待你的清白得以证实，你便可重返这座城市。
 
-Good luck to you, my friend. 
+祝你好运，我的朋友。
 
-Regards, 
+此致，
 
-Captain Schael Corwin~
+舍尔·科温队长~
 @2008 = ~这枚护身符是舍尔·科温赠予你的，象征着她对你的深情。护身符上镶嵌着她女儿罗玛的小肖像。虽无魔法之力，但戴上它，你感到希望满怀，目标明确。你决心跨过一切难关，只为重归爱人的怀抱。
 
 数据资料：
 
 装备能力：
-– 魅力：+1
-– 豁免检定：+3
-– 魔法抗力：+5%~
+–魅力：+1
+–豁免检定：+3
+–魔法抗力：+5%~
 @2009 = ~<CHARNAME>~
 @2010 = ~科温~
 @2013 = ~科温的护身符~
 @2014 = ~这个护身符属于焰拳的舍尔·科温。它是一颗半切的翡翠，镶嵌在银色的背板上。背板上有一个扣环，包括她女儿罗玛的小肖像。~
 @2015 = ~舍尔的信~
-@3000 = ~Processing BG2 changes...~
+@3000 = ~正在处理《博德之门2》更改……~
 @3016 = ~丁斯~
-@3036 = ~Master Smith~
+@3036 = ~铁匠大师~
 @3055 = ~弓匠大师~
 @3057 = ~科温的弓+2~
 @3058 = ~焰拳军官~
@@ -85,82 +85,82 @@ Captain Schael Corwin~
 @3139 = ~舍尔被芭荻变成了吸血鬼，在变身完成时死去。可能有办法让她复苏，但你尚不清楚。~
 @3140 = ~致邓肯的信~
 @3141 = ~致科温的信~
-@3142 = ~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
+@3142 = ~这是你打算寄往博德之门给科温上尉的信。你需要去跟阿斯卡特拉的行政官谈一谈，才能把信寄出去。
 
-My love,
+我的爱人：
 
-I pray this letter finds you, Rohma and your father well. There is much that I need to tell you. After being forced to depart Baldur’s Gate, our party was set upon by assassins and quickly incapacitated. We were delivered to Athkatla and held captive in the stronghold of a mad wizard named Irenicus – the very same “Hooded Man” that we encountered during the Dragonspear campaign. My recollection of events from that point is hazy… I do know that we were tortured and experimented upon for purposes that are unclear to me. We were not all fortunate to escape the wizard’s enclave with our lives. The bastard murdered Khalid and Dynaheir. By the time we found their corpses, nothing could be done to resurrect them.
+祈愿此信送达时，你、罗玛和你的父亲一切安好。我有太多事需要告诉你。在被迫离开博德之门后，我们的队伍遭遇了刺客伏击，迅速就被制服了。我们被带到了阿斯卡特拉，囚禁在一个名叫艾瑞尼卡斯的疯狂法师的地堡里——正是我们在龙矛战役中遇到的那个“兜帽男”。从那之后，我的记忆就变得模糊不清……我只知道我们遭到了折磨和实验，目的为何，我并不清楚。我们并非所有人都幸运地活着逃出了那个法师的领地。那个混蛋杀害了卡立德和戴娜黑。等我们找到他们的尸体时，已经无法复活他们了。
 
-While fleeing the stronghold, I came upon the dagger that is enclosed with this letter. I believe that this is the very same Soultaker Dagger that was used to murder Skie; if I am correct, the city priests can use it to restore Skie’s soul to her body and perform the resurrection. Please take the dagger to the city priests as soon as you are able. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. 
+在逃离地堡的过程中，我找到了随信附上的这把匕首。我相信这就是当年用来杀害史姬的那把夺魂匕首；如果我的判断正确，城里的祭司可以用它把史姬的灵魂归还给她的身体，并施行复活。请你尽快将这把匕首带给城里的祭司。一旦史姬被复活，她就能证实我所知的真相——我对她的谋杀并无责任。
 
-After our escape, Imoen and Irenicus were abducted by the Cowled Wizards for unsanctioned use of magical power within the city. They were taken to a prison for magic practitioners called Spellhold. I must venture forth to Spellhold, rescue Imoen, and exact my revenge on Irenicus. The mage will pay for what he did to Khalid and Dynaheir, for framing me for Skie’s murder, for my exile from the city, and for keeping us apart. I will see you again, my love, once my innocence is established and this matter with Irenicus is resolved.
+在我们逃脱后，爱蒙和艾瑞尼卡斯因为未经许可在城内使用魔法力量而被蒙面法师会掳走了。他们被带往一个名为“禁魔监狱”的魔法使用者监狱。我必须前往禁魔监狱，救出爱蒙，并向艾瑞尼卡斯复仇。那个法师将为他所做的一切付出代价：为他杀害卡立德和戴娜黑，为他诬陷我谋杀史姬，为我被逐出城市，也为我们被迫分离。我会再见到你的，我的爱人，待我洗清冤屈，并与艾瑞尼卡斯做个了断之后。
 
-Yours always,
-	
+你永远的，
+
 <CHARNAME>~
-@3143 = ~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
+@3143 = ~这是你打算寄往博德之门给科温上尉的信。你需要去跟阿斯卡特拉的行政官谈一谈，才能把信寄出去。
 
-Schael,
+舍尔：
 
-I hope this letter finds you, Rohma and your father well. There is much that I need to tell you. After being forced to depart Baldur’s Gate, our party was set upon by assassins and quickly incapacitated. We were delivered to Athkatla and held captive in the stronghold of a mad wizard named Irenicus – the very same “Hooded Man” that we encountered during the Dragonspear campaign. My recollection of events from that point is hazy… I do know that we were tortured and experimented upon for purposes that are unclear to me. We were not all fortunate to escape the wizard’s enclave with our lives. The bastard murdered Khalid and Dynaheir. By the time we found their corpses, nothing could be done to resurrect them.
+希望此信送达时，你、罗玛和你的父亲一切安好。我有太多事需要告诉你。在被迫离开博德之门后，我们的队伍遭遇了刺客伏击，迅速就被制服了。我们被带到了阿斯卡特拉，囚禁在一个名叫艾瑞尼卡斯的疯狂法师的地堡里——正是我们在龙矛战役中遇到的那个“兜帽男”。从那之后，我的记忆就变得模糊不清……我只知道我们遭到了折磨和实验，目的为何，我并不清楚。我们并非所有人都幸运地活着逃出了那个法师的领地。那个混蛋杀害了卡立德和戴娜黑。等我们找到他们的尸体时，已经无法复活他们了。
 
-While fleeing the stronghold, I came upon the dagger that is enclosed with this letter. I believe that this is the very same Soultaker Dagger that was used to murder Skie; if I am correct, the city priests can use it to restore Skie’s soul to her body and perform the resurrection. Please take the dagger to the city priests as soon as you are able. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. 
+在逃离地堡的过程中，我找到了随信附上的这把匕首。我相信这就是当年用来杀害史姬的那把夺魂匕首；如果我的判断正确，城里的祭司可以用它把史姬的灵魂归还给她的身体，并施行复活。请你尽快将这把匕首带给城里的祭司。一旦史姬被复活，她就能证实我所知的真相——我对她的谋杀并无责任。
 
-After our escape, Imoen and Irenicus were abducted by the Cowled Wizards for unsanctioned use of magical power within the city. They were taken to a prison for magic practitioners called Spellhold. I must venture forth to Spellhold, rescue Imoen, and exact my revenge on Irenicus. The mage will pay for what he did to Khalid and Dynaheir, for framing me for Skie’s murder, and for my exile from the city. I hope to see you again once my innocence is established and this matter with Irenicus is resolved.
+在我们逃脱后，爱蒙和艾瑞尼卡斯因为未经许可在城内使用魔法力量而被蒙面法师会掳走了。他们被带往一个名为“禁魔监狱”的魔法使用者监狱。我必须前往禁魔监狱，救出爱蒙，并向艾瑞尼卡斯复仇。那个法师将为他所做的一切付出代价：为他杀害卡立德和戴娜黑，为他诬陷我谋杀史姬，以及为我被逐出城市。希望待我洗清冤屈，并与艾瑞尼卡斯做个了断之后，能与你重逢。
 
-Regards,
+此致，
 
 <CHARNAME>~
 @3144 = ~这是你打算寄给博德之门的邓肯下士的信。你需要与阿斯卡特拉的总检察长交谈，以便将信件送达。
 
 邓肯下士，
 
-我有理由相信，随信附上的匕首正是那把用来谋杀史姬·银盾的夺魂者匕首。如果我的猜测正确，城市牧师可以用它将史姬的灵魂恢复到她的身体中并进行复活。请尽快将匕首交给城市牧师。一旦史姬复活，她将能够证实我所知道的事实，即我并非她的谋杀者。这把匕首属于一个名叫艾瑞尼卡斯的疯狂巫师。他正是那个谋杀了史姬并诬陷我的人。放心，他将为他对史姬、博德之门城市、我的同伴以及我本人的罪行付出沉重的代价。
+我有理由相信，随信附上的匕首正是那把用来谋杀史姬·银盾的夺魂匕首。如果我的猜测正确，城市牧师可以用它将史姬的灵魂恢复到她的身体中并进行复活。请尽快将匕首交给城市牧师。一旦史姬复活，她将能够证实我所知道的事实，即我并非她的谋杀者。这把匕首属于一个名叫艾瑞尼卡斯的疯狂巫师。他正是那个谋杀了史姬并诬陷我的人。放心，他将为他对史姬、博德之门城市、我的同伴以及我本人的罪行付出沉重的代价。
 
 请代我向科温上尉和她的父亲问好。
 
 此致，
 
 <CHARNAME>~
-@3145 = ~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
+@3145 = ~这是你打算寄往博德之门给科温上尉的信。你需要去和阿斯卡特拉的治安法官谈谈，才能把它寄出去。
 
-My love,
+我的爱人：
 
-I pray this letter finds you, Rohma and your father well. There is much that I need to tell you. After being forced to depart Baldur’s Gate, our party was set upon by assassins and quickly incapacitated. We were delivered to Athkatla and held captive in the stronghold of a mad wizard named Irenicus – the very same “Hooded Man” that we encountered during the Dragonspear campaign. My recollection of events from that point is hazy… I do know that we were tortured and experimented upon for purposes that are unclear to me. We were not all fortunate to escape the wizard’s enclave with our lives. The bastard murdered Khalid and Dynaheir. By the time we found their corpses, nothing could be done to resurrect them.
+祈愿此信抵达时，你、罗玛和你的父亲都一切安好。我有太多事需要告诉你。在被迫离开博德之门后，我们的队伍遭到了刺客伏击，很快便全部倒下。我们被带到了阿斯卡特拉，囚禁在一个名叫艾瑞尼卡斯的疯法师的堡垒里——他就是我们在龙矛围攻战役中遇到的那个“兜帽男”。从那以后，我的记忆就变得模糊不清……我只知道我们遭受了折磨和实验，目的为何，我并不清楚。并非我们所有人都幸运地活着逃出了那个法师的据点。那个混蛋杀害了卡立德和戴娜黑。等我们找到他们的尸体时，已经无法复活他们了。
 
-While fleeing the stronghold, I came upon the Soultaker dagger. To put a long story short, I released Skie's soul, and I believe that the city priests can restore it to her body and perform the resurrection. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. 
+在逃离堡垒的过程中，我找到了夺魂匕首。长话短说，我释放了史姬的灵魂，我相信城里的祭司们能将其复归她的躯体，并施行复活术。一旦史姬被救回，她就能证实我所知的真相——她的谋杀案并非我所为。
 
-After our escape, Imoen and Irenicus were abducted by the Cowled Wizards for unsanctioned use of magical power within the city. They were taken to a prison for magic practitioners called Spellhold. I must venture forth to Spellhold, rescue Imoen, and exact my revenge on Irenicus. The mage will pay for what he did to Khalid and Dynaheir, for framing me for Skie’s murder, for my exile from the city, and for keeping us apart. I will see you again, my love, once my innocence is established and this matter with Irenicus is resolved.
+在我们逃脱后，爱蒙和艾瑞尼卡斯因在城内未经许可使用魔法力量而被蒙面法师会掳走。他们被带往一座名为禁魔监狱的法师监牢。我必须前往禁魔监狱，救出爱蒙，并向艾瑞尼卡斯复仇。那个法师必将为他所做的一切付出代价：为他杀害卡立德和戴娜黑，为他陷害我谋杀史姬，为我被逐出城市，也为他让我们分离。我会再见到你的，我的爱人，待我洗清冤屈，并与艾瑞尼卡斯做个了断之后。
 
-Yours always,
-	
-<CHARNAME>~
-@3146 = ~This is the letter you plan to send to Captain Corwin in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
-
-Schael,
-
-I hope this letter finds you, Rohma and your father well. There is much that I need to tell you. After being forced to depart Baldur’s Gate, our party was set upon by assassins and quickly incapacitated. We were delivered to Athkatla and held captive in the stronghold of a mad wizard named Irenicus – the very same “Hooded Man” that we encountered during the Dragonspear campaign. My recollection of events from that point is hazy… I do know that we were tortured and experimented upon for purposes that are unclear to me. We were not all fortunate to escape the wizard’s enclave with our lives. The bastard murdered Khalid and Dynaheir. By the time we found their corpses, nothing could be done to resurrect them.
-
-While fleeing the stronghold, I came upon the Soultaker dagger. To put a long story short, I released Skie's soul, and I believe that the city priests can restore it to her body and perform the resurrection. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. 
-
-After our escape, Imoen and Irenicus were abducted by the Cowled Wizards for unsanctioned use of magical power within the city. They were taken to a prison for magic practitioners called Spellhold. I must venture forth to Spellhold, rescue Imoen, and exact my revenge on Irenicus. The mage will pay for what he did to Khalid and Dynaheir, for framing me for Skie’s murder, and for my exile from the city. I hope to see you again once my innocence is established and this matter with Irenicus is resolved.
-
-Regards,
+永远属于你的，
 
 <CHARNAME>~
-@3147 = ~This is the letter you plan to send to Corporal Duncan in Baldur's Gate. You will need to speak to the Athkatla magistrate in order to have it delivered.
+@3146 = ~这是你打算寄往博德之门给科温上尉的信。你需要去和阿斯卡特拉的治安法官谈谈，才能把它寄出去。
 
-Corporal,
+舍尔：
 
-I'm writing to inform you that I recovered the Soultaker dagger, and that I have performed the necessary steps to release Skie's soul. I believe that the city priests can restore it to her body and perform the resurrection. Once Skie is restored, she will be able to corroborate what I know to be true, that I was not responsible for her murder. The dagger belonged to a mad wizard named Irenicus. He is the “Hooded Man” that murdered Skie and framed me for the act. Rest assured, he will pay a heavy price for his transgressions against Skie, the city of Baldur’s Gate, my companions, and myself.
-  
-Please give my regards to Captain Corwin and her father. 
+希望此信抵达时，你、罗玛和你的父亲都一切安好。我有太多事需要告诉你。在被迫离开博德之门后，我们的队伍遭到了刺客伏击，很快便全部倒下。我们被带到了阿斯卡特拉，囚禁在一个名叫艾瑞尼卡斯的疯法师的堡垒里——他就是我们在龙矛围攻战役中遇到的那个“兜帽男”。从那以后，我的记忆就变得模糊不清……我只知道我们遭受了折磨和实验，目的为何，我并不清楚。并非我们所有人都幸运地活着逃出了那个法师的据点。那个混蛋杀害了卡立德和戴娜黑。等我们找到他们的尸体时，已经无法复活他们了。
 
-Regards,
+在逃离堡垒的过程中，我找到了夺魂匕首。长话短说，我释放了史姬的灵魂，我相信城里的祭司们能将其复归她的躯体，并施行复活术。一旦史姬被救回，她就能证实我所知的真相——她的谋杀案并非我所为。
+
+在我们逃脱后，爱蒙和艾瑞尼卡斯因在城内未经许可使用魔法力量而被蒙面法师会掳走。他们被带往一座名为禁魔监狱的法师监牢。我必须前往禁魔监狱，救出爱蒙，并向艾瑞尼卡斯复仇。那个法师必将为他所做的一切付出代价：为他杀害卡立德和戴娜黑，为他陷害我谋杀史姬，以及为我被逐出城市。我希望在洗清我的冤屈并与艾瑞尼卡斯做个了断之后，能再次与你相见。
+
+此致，
+
+<CHARNAME>~
+@3147 = ~这是你打算寄往博德之门给邓肯下士的信。你需要去和阿斯卡特拉的治安法官谈谈，才能把它寄出去。
+
+下士：
+
+特此致信告知，我已找回夺魂匕首，并已完成释放史姬灵魂的必要步骤。我相信城里的祭司们能将其复归她的躯体，并施行复活术。一旦史姬被救回，她就能证实我所知的真相——她的谋杀案并非我所为。这把匕首属于一个名叫艾瑞尼卡斯的疯法师。他就是谋杀史姬并陷害我的那个“兜帽男”。请放心，他必将为他对史姬、对博德之门城、对我的同伴以及对我本人所犯下的罪行付出沉重的代价。
+
+请代我向科温上尉和她的父亲问好。
+
+此致，
 
 <CHARNAME>~
 @3148 = ~梅尔科尔~
-@3149 = ~Wizard's Apprentice~
+@3149 = ~法师学徒~
 @3150 = ~科温的护身符~
 @3151 = ~这个护身符属于焰拳的舍尔·科温。它是一颗半切的翡翠，镶嵌在银色的背板上。背板上有一个扣环，包括她女儿罗玛的小肖像。~
 @3152 = ~科温~
@@ -169,10 +169,10 @@ Regards,
 焰拳法师进一步增强了这把弓，帮助科温上尉更好地协助<CHARNAME>追捕巫师艾瑞尼卡斯。
 
 装备能力：
-– 敏捷：+1
+–敏捷：+1
 
 战斗能力：
-– 每次击中目标有15%的几率使目标缠绕3轮（通过对喷吐豁免可解除）
+–每次击中目标有15%的几率使目标缠绕3轮（通过对喷吐豁免可解除）
 
 统计数据：
 
@@ -192,8 +192,8 @@ Regards,
 数据资料：
 
 装备能力：
-– 移动速度：+1
-– 魔法抗力：+15%
+–移动速度：+1
+–魔法抗力：+15%
 
 防御等级：2 （挥砍0，钝击4）
 需求：
@@ -211,9 +211,9 @@ Regards,
 统计数据：
 
 装备能力：
-– 移动速度：+1
-– 魔法抗力：+15%
-– 豁免检定：+1
+–移动速度：+1
+–魔法抗力：+15%
+–豁免检定：+1
 
 防御等级：1（-1 对挥砍，3 对钝击）
 需求：
@@ -228,8 +228,8 @@ Regards,
 加上盖森的弓弦后，这把武器可以从另一个位面汲取能量，发射闪电之矛而不是箭。在像科温这样才华横溢的弓箭手手中，它能够像你见过的任何武器一样有效地造成死亡。
 
 装备能力：
-– 敏捷：+1
-– 电击抗性：+20%
+–敏捷：+1
+–电击抗性：+20%
 
 战斗能力：
 能力：
@@ -252,10 +252,10 @@ Regards,
 焰拳法师进一步增强了这把弓，帮助科温上尉更好地协助<CHARNAME>追捕巫师艾瑞尼卡斯。索丹尼斯拉的弓匠大师作为对拯救精灵城市的感激之情，额外附魔以降低拉力，使武器使用起来体力消耗更少，从而提高了力量和准确性。
 
 装备能力：
-– 敏捷：+1
+–敏捷：+1
 
 战斗能力：
-– 每次击中目标有19%的几率使目标缠绕3轮（通过对喷吐豁免可解除）
+–每次击中目标有19%的几率使目标缠绕3轮（通过对喷吐豁免可解除）
 
 统计数据：
 
@@ -275,8 +275,8 @@ Regards,
 加上盖森的弓弦，这件武器能从另一个位面汲取能量，发射闪电长矛而非箭矢。在像科温这样有天赋的弓箭手手中，它能够像你见过的任何武器一样有效地致命。
 
 装备能力：
-– 敏捷：+1
-– 电击抗性：+20%
+–敏捷：+1
+–电击抗性：+20%
 
 战斗能力：
 –当未装备箭矢时，这张弓发射的箭矢被视为+4武器。这些箭矢在命中时包括下列加成获得+4的加值，并且总共造成2点穿刺伤害加上1d8的电击伤害。
@@ -293,7 +293,7 @@ Regards,
 
 重量：9~
 @3169 = ~焰拳勇卫~
-@3170 = ~Soul Trap~
+@3170 = ~灵魂陷阱~
 @3171 = ~“奴役”这个词可能更贴切。我在自己的家中，在那个气元素位面上，被一位巫师捕获。他将我束缚在这个瓶子里，让我守护他的一把强大匕首——以及你的某件物品。~
 @3172 = ~你拥有我的东西？这个匕首又是怎么回事？~
 @3173 = ~我确实有。这是一件充满力量的物品，它仍然带有你本质的一丝痕迹。你在这件物品上留下的独特印记有些不寻常。我还掌握着我主人的匕首，一个囚禁灵魂的容器，我感觉到它对你来说意义重大。~
@@ -307,51 +307,51 @@ Regards,
 @3181 = ~现在，你是否愿意助我重获自由，以换取我主人的匕首和你的魔法武器？~
 @3182 = ~如果我能，我自然会将这些宝物交给你，但束缚我的力量太过强大。只要我被困在这瓶中，我就受制于那位法师。~
 @3183 = ~帮我找到与我被囚禁的瓶子相匹配的另一个瓶子。若你能做到，我将赠予你强大的宝物，包括我主人的匕首。~
-@3184 = ~通过从三个树精那里取回一个瓶子，我释放了精灵马拉克。作为交换，他归还了一些他为巫师艾瑞尼卡斯保管的装备。其中包括一把我肯定会使用的魔法武器，以及一把被精灵称为囚魂之器的匕首。这是否就是用来谋杀并囚禁史姬·银盾的夺魂者匕首？如果是的话，我必须尽快找到方法将它送往博德之门。~
+@3184 = ~通过从三个树精那里取回一个瓶子，我释放了精灵马拉克。作为交换，他归还了一些他为巫师艾瑞尼卡斯保管的装备。其中包括一把我肯定会使用的魔法武器，以及一把被精灵称为囚魂之器的匕首。这是否就是用来谋杀并囚禁史姬·银盾的夺魂匕首？如果是的话，我必须尽快找到方法将它送往博德之门。~
 @3185 = ~尽管尝试吧。只要我被束缚，我和我的瓶子都不会受损。只要我被束缚，我就不能将主人的匕首或你的武器交给你。~
-@3186 = ~At last! I am free! Here is your item, fleshling, and my master's dagger. You are an honorable person, and I feel that I must warn you. Keep away from the master!~
-@3187 = ~Vitality Boost~
-@3188 = ~Crowd~
-@3189 = ~Disease~
-@3190 = ~This luxurious velvet bag (along with the small fortune within) was given to you by the Grand Dukes as a reward for restoring Skie Silvershield, as well as to assist you in your hunt for the wizard Irenicus. It opens into a nondimensional space, and its inside is larger than its outside dimensions. Regardless of what is put into this item, the bag always weighs a fixed amount.
+@3186 = ~终于！我自由了！这是你的物品，肉身凡胎，以及我主人的匕首。你是个可敬之人，我觉得必须警告你。远离主人！~
+@3187 = ~活力提升~
+@3188 = ~人群~
+@3189 = ~疾病~
+@3190 = ~这个豪华的天鹅绒袋子（连同里面的一小笔财富）是大公们为奖励你救回史姬·银盾而赠予你的，同时也用于协助你追捕巫师艾瑞尼卡斯。它通向一个异次元空间，内部比外部尺寸更大。无论放入何物，此袋重量恒定。
 
-STATISTICS:
+属性：
 
-Weight: 5~
-@3191 = ~Floral Bouquet
+重量：5~
+@3191 = ~花束
 
-A vibrant, beautiful assortment of various types of flowers, including roses, lilacs, cherry blossoms, chrysanthemums, lilies and dahlias. The refreshing scent reminds you of the spring season in your former home, Candlekeep.
+一束鲜艳美丽的各式花朵，包括玫瑰、丁香、樱花、菊花、百合和大丽花。清新的香气让你想起昔日故乡烛堡的春日。
 
-Weight: 1~
-@3192 = ~Florist~
-@3193 = ~Floral Bouquet~
+重量：1~
+@3192 = ~花商~
+@3193 = ~花束~
 @3194 = ~被缠住~
-@4000 = ~Processing Return to Baldur's Gate Changes...~
+@4000 = ~正在处理返回博德之门的变更……~
 @4001 = ~生金蛋的母鸡~
-@4002 = ~Legend tells of a couple that was renowned throughout the town for their insatiable greed. One day, a playful goblin who was passing through overheard the townsfolk speak of just how greedy this husband and wife were. Wanting to learn if the rumors of their greed were true, the goblin decided to pay them a visit. 
+@4002 = ~传说有一对夫妇因其难以满足的贪婪而闻名全镇。某天，一个路过的顽皮地精听到镇民谈论这对夫妻究竟有多贪婪。想验证传闻是否属实，地精决定去拜访他们。
 
-The goblin appeared to the husband from within a tree trunk, and asked him why he looked so troubled. "Are you ill? Are you hungry? Tired?"
+地精从树干中现身，问丈夫为何看起来如此烦恼。"你病了吗？饿了？累了？"
 
-Though frightened by the presence of the goblin, the husband explained that he wasn't sick, tired or hungry. Instead, he told the goblin that he and his wife were poor, and that could not afford all of the fancy clothes, baubles, and other items that they wanted.
+虽然被地精的出现吓了一跳，丈夫解释说自已没病、不累也不饿。他告诉地精，他和妻子很穷，买不起他们想要的华丽衣服、小饰品和其他物品。
 
-"If you are not hungry, cold, or ill, then rejoice because you are not poor!", said the goblin. 
+“如果你不饿、不冷、也没病，那就庆幸吧，因为你并不穷！”地精说。
 
-"But I am poor! A man with little or no gold is poor!", explained the husband.
+“但我就是穷！一个没什么金子的人就是穷人！”丈夫解释道。
 
-Upon hearing this, the goblin erupted into laughter. He then produced a hen, and explained to the husband that this hen was magical. Every morning, it would produce a golden egg. The goblin offered the hen to the husband, but warned that it would not provide the happiness and contentment that he sought.
+听到这话，地精爆发出一阵大笑。他随后拿出一只母鸡，向丈夫解释说这是只魔法母鸡。每天早晨，它都会下一颗金蛋。地精将母鸡送给丈夫，但警告说它并不能提供他所追求的快乐和满足。
 
-The husband quickly took the hen from the goblin and ran home to his wife. Though she didn't believe that the hen was magical, she could at least use the eggs to make a nice omelet, she thought to herself. 
+丈夫飞快地从地精手中抓过母鸡，跑回家找妻子。虽然妻子不相信母鸡是魔法的，但至少可以用鸡蛋做个不错的煎蛋卷，她心想。
 
-Early the next morning the hen began to cluck, and shortly after, a huge, bright golden egg appeared beneath it! The couple was ecstatic as they held the egg in their hands, but their mood quickly turned sour.
+第二天清早，母鸡开始咯咯叫，不久后，一颗巨大闪亮的金蛋出现在它身下！夫妻俩手握金蛋欣喜若狂，但情绪很快变得恶劣。
 
-"Well... it seems we'll have to wait until tomorrow for another egg. It will take many weeks before we have enough eggs to be the richest in town. That must be why the goblin laughed when he gave me the hen.", the husband said.
+“嗯……看来我们得等到明天才能有另一颗蛋了。要好几周我们才能成为镇上最富的人。这肯定就是地精给我母鸡时大笑的原因。”丈夫说。
 
-The wife replied, "I've always heard that hens already have all the eggs they will lay inside of them... if this is true, why do we not kill the hen and take all of the eggs at once!" The husband agreed, and without hesitation, the couple killed the poor hen, and opened up her body. To their dismay, they saw that the there were no eggs inside. They then began to weep, for they realized that through their own greed and stupidity, they had lost forever the hen that laid the golden eggs.
+妻子回答：“我一直听说母鸡肚子里装着所有要下的蛋……如果这是真的，我们为什么不杀了母鸡，一次把所有的蛋都拿出来呢！”丈夫表示同意，于是这对夫妇毫不犹豫地杀死了可怜的母鸡，剖开它的身体。令他们沮丧的是，他们看到里面根本没有蛋。他们随即开始哭泣，意识到因为自己的贪婪和愚蠢，他们永远失去了那只下金蛋的母鸡。
 
-Abilities:
-- While held in the party's inventory, this hen will produce one golden egg per day.
- 
-Weight: 2~
+能力：
+–在队伍物品栏中持有期间，此母鸡每天会生产一枚金蛋。
+
+重量：2~
 @4003 = ~莱瑞尔的感激~
 @4004 = ~作为拯救生命之树的奖励，精灵女王艾丽星赠予这个护身符，它可以保护佩戴者免受各种魔法和符咒的伤害。在你从魔鬼的监狱中释放出莱瑞尔，你在精灵之歌酒馆遇到的鬼魂之后，这个护身符被进一步增强了。
 
@@ -367,14 +367,14 @@ Weight: 2~
 每天施放一次治疗严重伤害。
 重量：1~
 @4005 = ~龙矛勋章~
-@4006 = ~The emblem of Dragonspear castle is depicted in the center of this heavy, golden medallion. The embroidery surrounding the emblem beautifully portrays the battle standards of Daggerford, Waterdeep, and Baldur's Gate — the three cities which formed the coalition that put an end to Caelar Argent's mad and woefully destructive crusade. The inscription on the back of the medal reads as follows:
+@4006 = ~这枚沉重的金色大奖章中央镌刻着龙矛城堡的纹章。纹章周围的刺绣精美地描绘了博德之门、深水城与匕首滩的战旗——正是这三座城市组成的联盟，终结了凯拉·银手那疯狂且极具破坏性的圣战。奖章背面的铭文如下：
 
-'Awarded to <CHARNAME>, champion of the Sword Coast, for exceptional courage and gallantry during the Dragonspear campaign.'
+“授予<CHARNAME>，剑湾的捍卫者，以表彰其在龙矛战役中展现出的非凡勇气与英勇气概。”
 
-The medallion is enchanted to increase the wearer's resilience against magical attacks.
+这枚奖章被施以魔法，可提高佩戴者对魔法攻击的抵御能力。
 
-Saving Throws: +1 (All)
-Magic Resistance: +5%~
+豁免检定：+1（全部）
+魔法抗性：+5%~
 @4007 = ~金蛋~
 @4008 = ~这颗沉甸甸的金蛋绝对值得等重的黄金。
 
@@ -385,7 +385,7 @@ Magic Resistance: +5%~
 统计数据：
 
 装备能力：
-– 无限的+4箭 
+–无限的+4箭 
 
 重量：0~
 @4011 = ~心灵护盾戒指~
@@ -396,14 +396,14 @@ Magic Resistance: +5%~
 
 免疫恐惧、混乱、弱智、魅惑和支配。~
 @4013 = ~贝诺的首级~
-@4014 = ~这是科温上尉的前男友贝诺·法马里的割下的人头。他因试图利用自己的女儿罗玛作为诱饵，诱使你和科温少校走向死亡而被杀。尽管他过去曾多次复活，但你现在认为，他的后台要再次让他复活将会非常困难，因为他的头已经和他的身体分离。
+@4014 = ~这是科温上尉的前男友贝诺·法玛里的割下的人头。他因试图利用自己的女儿罗玛作为诱饵，诱使你和科温少校走向死亡而被杀。尽管他过去曾多次复活，但你现在认为，他的后台要再次让他复活将会非常困难，因为他的头已经和他的身体分离。
 
 唉，可怜的贝诺！你对他了如指掌……
 嗯，其实并没有。~
 @4015 = ~仅仅拿着这把武器便能感受到一股令人不安的气息。握在手中，仿佛能听到被囚禁灵魂的窃窃私语。匕首柄上的宝石似乎散发着内在的光芒，然而它那深邃黑暗的核心让人不解，这种光芒是如何存在的。
 
-这把匕首中，囚禁着科温少校的前恋人贝诺·法马里的灵魂等众多灵魂。~
-@4016 = ~尽管这似乎是夺魂者匕首，但感觉上有所不同。它没有之前那么沉重，你也没有了在安姆找到它时那种令人窒息的恐惧感。匕首柄上的宝石暗淡无光。真是奇怪。~
+这把匕首中，囚禁着科温少校的前恋人贝诺·法玛里的灵魂等众多灵魂。~
+@4016 = ~尽管这似乎是夺魂匕首，但感觉上有所不同。它没有之前那么沉重，你也没有了在安姆找到它时那种令人窒息的恐惧感。匕首柄上的宝石暗淡无光。真是奇怪。~
 @4017 = ~爱能战胜一切~
 @4018 = ~这枚耀眼的订婚戒指，镶嵌着钻石，由交织的黄金、白金和玫瑰金打造。它是你和科温上尉彼此爱情的见证，也是你们之间坚不可摧的纽带的象征。戒指上附着强大的魔法，增强佩戴者的魔法抵抗、对抗物理攻击的韧性和抵御精神效果的能力。你无私地奉献了自己的神性生命力，进一步增强了戒指上的魔法力量。
 
@@ -606,23 +606,23 @@ Magic Resistance: +5%~
 魔法和元素伤害抗性：+10%（全部）
 豁免检定：+1（全部）~
 @4039 = ~虚空之刃+5~
-@4040 = ~This is the blade that the Narzugon offered to you in exchange for Lyriel's amulet. The hilt is made of carved bone, and the jet black blade, if one can call it that, reflects no light. Looking at the blade for any length of time gives you the unnerving impression that some malevolent force is watching you from within the void.
+@4040 = ~这便是那纳祖刚为换取莉瑞尔的护身符而献予你的刀刃。剑柄由雕琢过的骨头制成，而那乌黑的刀身——倘若还能称之为刀身的话——不透丝毫光亮。凝视刀身稍久，便会令人心生不安，仿佛有某种恶毒的力量正从那片虚空中窥视着你。
 
-STATISTICS:
+属性：
 
-THAC0: +5
-Damage: 2d4+5
-Damage type: Slashing
-Speed Factor: 4
-Proficiency Type: Bastard Sword
-Type: One-handed
-Requires:
- 6 Strength
+零级命中值：+5
+伤害：2d4+5
+伤害类型：挥砍
+使用速度：4
+熟练类型：巨剑
+类型：单手
+使用要求：
+力量 6
 
-Special: ???
+特殊：？？？
 
-Weight: 3~
-@4046 = ~妮欧玛~
+重量：3~
+@4046 = ~纽玛~
 @4048 = ~玛格达馆长~
 @4049 = ~莱瑞尔~
 @4050 = ~地狱骑士~
@@ -631,7 +631,7 @@ Weight: 3~
 @4072 = ~焰拳刽子手~
 @4074 = ~格林特~
 @4077 = ~变异巨蚁~
-@4078 = ~蒂安娜~
+@4078 = ~狄安娜~
 @4079 = ~罗玛~
 @4082 = ~维吉尔~
 @4092 = ~贾斯珀~
@@ -670,95 +670,95 @@ Weight: 3~
 
 你的头颅沉闷地撞击在地板上。无论是对你，还是对博德之门这座城市，这场噩梦终于结束了。~
 @4101 = ~重返博德之门~
-@4102 = ~You, Schael, and the rest of your companions board the elvish caravan and begin the journey back to Baldur's Gate. The long journey provides the necessary time and privacy to have some frank, and often difficult, conversations concerning your relationship. Certain aspects, including living and security arrangements, your role in parenting Rohma, and dealing with your celebrity, are left unclear. What is certain is that the love you share for one another has never been stronger, and that you are both fully committed to making the relationship work. 
+@4102 = ~你、舍尔，以及其余的伙伴们登上了精灵商队的大车，启程返回博德之门。漫长的旅途提供了必要的时间和隐私，让你们能够就彼此的关系进行一些坦诚且往往艰难的对话。某些方面，包括居住与安保安排、你在抚养罗玛中的角色、以及如何处理你的名声问题，都尚未明确。但可以确定的是，你们对彼此的爱从未如此强烈，并且你们都完全致力于经营好这段关系。
 
-Your excitement at the thought of returning to Baldur's Gate gradually turns to apprehension as the caravan moves closer to its destination. You were, after all, forced to leave the city under some very dark circumstances, and many wanted to see you executed. Seeing your growing unease, your love tries to reassure you:
+当商队逐渐接近目的地时，你对重返博德之门的兴奋渐渐转为忧虑。毕竟，你当初是在极其黑暗的情形下被迫离开这座城市的，而且有许多人曾想将你处死。看到你越来越不安，你的爱人试图安慰你：
 
-"The city and the Council will welcome you, I'm sure of it. You've nothing to worry about."
+“城市和议会都会欢迎你的，我确信。你没什么可担心的。”
 
-Her words should comfort you, but they do not. If nothing else, your experiences over these past months have taught you to hope for the best, but to expect the worst. With that thought in mind, you hear the caravan driver make the announcement:
+她的话本应让你安心，但却没有。至少，过去这几个月的经历教会了你抱最好的希望，但同时要做最坏的打算。怀着这个念头，你听到商队车夫高声宣布：
 
-"Wyrm's Crossing! We've reached Wyrm's Crossing!"   
+“蜿龙桥！我们到蜿龙桥了！”
 
-With Schael's hand in yours, you take a deep breath and step out of your wagon. A group of Flaming Fist officers and city officials approach as you stand on the bridge.~
-@4103 = ~You, Captain Corwin and the rest of your companions board the elvish caravan and begin the journey back to Baldur's Gate. The long trek affords you much time for some well-deserved rest and relaxation, which you are more than eager to take advantage of. Moreover, you finally have a chance to reflect on all that's happened since you left for Dragonspear many months ago... all of the twists and turns, your triumphs and defeats... perhaps now, things will settle down, and you'll be free to live your life on your terms. 
+你紧握着舍尔的手，深吸一口气，步下了大车。当你站在桥上时，一队焰拳军官和城市官员向你走来。~
+@4103 = ~你、科温上尉以及其余的伙伴们登上了精灵商队的大车，启程返回博德之门。漫长的旅途让你有充足时间进行一些应得的休息和放松，而你也很乐意利用这点。此外，你终于有机会反思自数月前前往龙矛以来所发生的一切……所有的曲折迂回，你的胜利与挫败……或许现在，一切将尘埃落定，你将能自由地按照自己的意愿生活。
 
-During one of the caravan's many stops, you visit Captain Corwin's wagon. Unsurprisingly, she is quite energetic and eager to see her family again. In contrast, your initial excitement at the thought of returning to the city has turned into apprehension. The last time you were in Baldur's Gate, you were nearly executed for a crime you did not commit. Seeing your growing unease, the Captain tries to reassure you:
+在商队多次停留的其中一次，你造访了科温上尉的大车。不出所料，她精力充沛，并且渴望再次见到家人。相比之下，你最初想到回城的兴奋已转变为忧虑。上次你在博德之门时，曾因一项莫须有的罪名而险些被处决。看到你越来越不安，上尉试图安慰你：
 
-"The city and the Council will welcome you, I'm sure of it. You've nothing to worry about."
+“城市和议会都会欢迎你的，我确信。你没什么可担心的。”
 
-Her words should comfort you, but they do not. If nothing else, your experiences over these past months have taught you to hope for the best, but to expect the worst. With that thought in mind, you hear the caravan driver make the announcement:
+她的话本应让你安心，但却没有。至少，过去这几个月的经历教会了你抱最好的希望，但同时要做最坏的打算。怀着这个念头，你听到商队车夫高声宣布：
 
-"Wyrm's Crossing! We've reached Wyrm's Crossing!"   
+“蜿龙桥！我们到蜿龙桥了！”
 
-You take a deep breath and step out of the wagon. A group of Flaming Fist officers and city officials approach as you stand on the bridge.~
-@4104 = ~The week long festival held by the Dukes in your honor was a spectacle that you'll never forget. Food, drink, song and dance were shared by all, rich and poor alike, and you experienced the wholehearted adoration of the city. In the weeks that followed, you slowly began to embrace your new role as the city's protector — the Defender of Baldur's Gate. Though you miss your days of adventuring, you cannot deny that for the first time in your adult life, you feel a true sense of belonging, as though this city is where you are meant to be...
+你深吸一口气，步下了大车。当你站在桥上时，一队焰拳军官和城市官员向你走来。~
+@4104 = ~公爵们为你举办的为期一周的庆典是一场你永生难忘的盛况。无论贫富，所有人都共享着食物、美酒、歌舞，你感受到了这座城市全心全意的爱戴。在接下来的几周里，你开始慢慢接受自己作为这座城市守护者的新角色——博德之门的守卫者。虽然你怀念冒险的岁月，但不可否认，在你成年后的生活中，这是第一次感受到了真正的归属感，仿佛这座城市就是你命中注定的归宿……
 
-You recall the trepidation that you felt when you stepped out of the caravan onto Wyrm's Crossing. You were certain at the time that, somehow, fate would intervene for the worse, as it did so many times before. It seems now that you've been able to escape your father's shadow, and that you're finally free to live your life on your terms...
+你回想起当初步下商队、踏上蜿龙桥时心中的那份忐忑。当时你确信，命运会像过去无数次那样，以某种方式插手，让事情变糟。现在看来，你似乎已经能够摆脱你父亲的阴影，终于可以自由地按照自己的意愿生活了……
 
-To that end, you continue your friendship with Major Corwin. Though you don't see each other as often as you once did, your bond remains strong. Tonight, you've invited her to dinner at The Three Old Kegs, the very same tavern where the two of you shared a drink before embarking on the Dragonspear campaign...~
+为此，你与科温少校保持着友谊。虽然你们不再像以前那样频繁见面，但你们的纽带依然牢固。今晚，你邀请了她到“三个老酒桶” 酒馆共进晚餐，这正是你们当初启程前往龙矛战役前共饮一杯的那家酒馆……~
 @4105 = ~博德之门守卫者~
-@4106 = ~The week long festival held by the Dukes in your honor was a spectacle that you'll never forget. Food, drink, song and dance were shared by all, rich and poor alike, and you experienced the wholehearted adoration of the city. In the weeks that followed, you slowly began to embrace your new role as the city's protector — the Defender of Baldur's Gate. Though you miss your days of adventuring, you cannot deny that for the first time in your adult life, you feel a true sense of belonging, as though this city is where you are meant to be...
+@4106 = ~公爵们为你举办的为期一周的庆典是一场你永生难忘的盛况。无论贫富，所有人都共享着食物、美酒、歌舞，你感受到了这座城市全心全意的爱戴。在接下来的几周里，你开始慢慢接受自己作为这座城市守护者的新角色——博德之门的守卫者。虽然你怀念冒险的岁月，但不可否认，在你成年后的生活中，这是第一次感受到了真正的归属感，仿佛这座城市就是你命中注定的归宿……
 
-You recall the trepidation that you felt when you stepped out of the caravan onto Wyrm's Crossing. You were certain at the time that, somehow, fate would intervene for the worse, as it did so many times before. It seems now that you've been able to escape your father's shadow, and that you're finally free to live your life on your terms...
+你回想起当初步下商队、踏上蜿龙桥时心中的那份忐忑。当时你确信，命运会像过去无数次那样，以某种方式插手，让事情变糟。现在看来，你似乎已经能够摆脱你父亲的阴影，终于可以自由地按照自己的意愿生活了……
 
-To that end, you continue your courtship of Schael Corwin. The love you share for one another has continued to grow. Over these past weeks, you've begun to build a good relationship with her young daughter, Rohma, and you sense that her father is finally warming up to you. It is your intention for them to move in with you to the Ducal Palace, but Schael has expressed some reservations. 
+为此，你继续追求着舍尔·科温。你们对彼此的爱持续增长。在过去这几周里，你已经开始与她年幼的女儿罗玛建立了良好的关系，并且你感觉到她的父亲也终于开始接纳你。你打算让她们搬来公爵宫殿与你同住，但舍尔表示了一些保留意见。
 
-"You've been great with Rohma, but she needs a little more time."
+“你对罗玛一直很好，但她还需要一点时间。”
 
-Although you're not living together, the two of you spend a great deal of your free time with one another. Tonight is a date night, and you've decided to take Schael to dinner at The Three Old Kegs, the very same tavern where the two of you shared a drink before embarking on the Dragonspear campaign...~
+尽管没有同居，你们二人还是在闲暇时共度了许多时光。今晚是约会之夜，你决定带舍尔去“三个老酒桶” 酒馆共进晚餐，这正是你们当初启程前往龙矛战役前共饮一杯的那家酒馆……~
 @4107 = ~前往萨拉都什的征程~
-@4108 = ~Your party boards the caravan for the long trek to Saradush. During the journey, your thoughts wander to Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, the two of them are safe within the Ducal Palace, under the watchful eye of the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger.
+@4108 = ~你的队伍登上了商队，开始了前往萨拉都什的漫长旅程。途中，你的思绪飘向了罗玛和欧达玛。他们曾因为你的身份和本质而险些丧命。这无疑是一个严峻的提醒：任何与你亲近的人将永远处于危险之中。至少现在，他们二人在焰拳的严密保护下，安全地待在公爵宫殿里。而且，你离开了城市，针对你生命的进一步企图也不会让他们或任何其他人陷入危险。
 
-Though your wagon is comfortable and well-provisioned, a good night's rest continues to elude you. When you're able to sleep, you suffer some truly disturbing nightmares, and tonight's no exception. You awaken startled and in a cold sweat, and your restlessness has woken up Schael. Concerned, she gently caresses your chest, and tries to settle you down.
+尽管你的大车舒适且补给充足，但你仍然无法安眠。当你能够入睡时，总会遭受一些极其扰人的噩梦，今晚也不例外。你惊醒过来，浑身冷汗，你的不安也吵醒了舍尔。她关切地轻轻抚摸着你的胸膛，试图让你平静下来。
 
-"More nightmares?"
+“又做噩梦了？”
 
-You explain how they've been plaguing you these past nights. Though you can't recall the details, you know that in each one, you're forced to make an extremely difficult and painful decision. 
- 
-"Whatever happens, we'll face it together."
+你向她解释过去这几晚噩梦一直折磨着你。虽然记不清细节，但你知道在每一个噩梦中，你都被迫做出极其艰难和痛苦的决定。
 
-She lays her head down on your chest, and you begin to slowly run your fingers through her soft, dark hair. After a time you're able to calm down, and the two of you fall asleep in a tender, loving embrace.
+“无论发生什么，我们都将共同面对。”
 
-It's the next morning, and the caravan has come to a halt. You and Schael get dressed and exit your wagon. The driver says that you've reached your destination, on the outskirts of the forest northwest of Saradush. The remainder of your journey will be on foot. As the party moves toward the forest, your nostrils are assailed by the acrid smoke. With your eyes watering, you look up and see that the sky is covered in a thick, gray haze; the fire giants have been busy.
+她把头靠在你的胸膛上，你开始用手指慢慢梳理她柔软的黑发。过了一会儿，你终于平静下来，两人在温柔、充满爱意的拥抱中入睡。
 
-The forest, and the besieged city beyond it, await.~
-@4109 = ~Your party boards the caravan for the long trek to Saradush. During the journey, your thoughts wander to Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, Schael's family is safe within the Ducal Palace, under the watchful eye of the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger.
+第二天早晨，商队停了下来。你和舍尔穿好衣服，走出大车。车夫说你们已经抵达目的地，位于萨拉都什西北森林的外围。剩下的路程需要步行。当队伍向森林进发时，刺鼻的烟味扑面而来。你被熏得眼泪直流，抬头望去，只见天空被厚厚的灰色烟雾笼罩；那些火巨人看来没闲着。
 
-Though your wagon is comfortable and well-provisioned, a good night's rest continues to elude you. When you're able to sleep, you suffer some truly disturbing nightmares, and tonight's no exception. You wake startled and in a cold sweat. Since the caravan has stopped for the night, you step outside of your wagon for some fresh air. While outside, you see Schael sitting next to a pond. She stands as you approach, and gestures to you.
+森林，以及森林后面那座被围困的城市，正等待着你们。~
+@4109 = ~你的队伍登上了商队，开始了前往萨拉都什的漫长旅程。途中，你的思绪飘向了罗玛和欧达玛。他们曾因为你的身份和本质而险些丧命。这无疑是一个严峻的提醒：任何与你亲近的人将永远处于危险之中。至少现在，舍尔的家人在焰拳的严密保护下，安全地待在公爵宫殿里。而且，你离开了城市，针对你生命的进一步企图也不会让他们或任何其他人陷入危险。
 
-"Couldn't sleep either, eh?"
+尽管你的大车舒适且补给充足，但你仍然无法安眠。当你能够入睡时，总会遭受一些极其扰人的噩梦，今晚也不例外。你惊醒过来，浑身冷汗。由于商队已停下过夜，你走出大车想呼吸些新鲜空气。在外面，你看到舍尔坐在一个池塘边。你走近时，她站了起来，并向你打了个手势。
 
-You tell her of the nightmares that've been plaguing you of late. Though you can't recall the details, you know that in each one, you're forced to make an extremely difficult and painful decision. She places her hand on your shoulder to reassure you. 
+“也睡不着吗，嗯？”
 
-"Whatever happens, we'll face it together."
+你告诉她最近一直困扰你的那些噩梦。虽然记不清细节，但你知道在每一个噩梦中，你都被迫做出极其艰难和痛苦的决定。她把手放在你的肩上安慰你。
 
-After some idle chatter, you return to your wagons to get some sleep.
+“无论发生什么，我们都将共同面对。”
 
-It's the next morning, and the caravan has reached its destination on the outskirts of the forest northwest of Saradush. The remainder of your journey will be on foot. As the party moves toward the forest, your nostrils are assailed by the acrid smoke. With your eyes watering, you look up and see that the sky is covered in a thick, gray haze; the fire giants have been busy.
+闲聊一阵之后，你们回到各自的大车休息。
 
-The forest, and the besieged city beyond it, await.~
-@4110 = ~Your party boards the caravan for the long trek to Saradush. During the journey, your thoughts wander to Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, the two of them are safe within the Ducal Palace, under the watchful eye of the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger. 
+第二天早晨，商队已抵达位于萨拉都什西北森林外围的目的地。剩下的路程需要步行。当队伍向森林进发时，刺鼻的烟味扑面而来。你被熏得眼泪直流，抬头望去，只见天空被厚厚的灰色烟雾笼罩；那些火巨人看来没闲着。
 
-Your mind drifts to Schael. You fondly remember your last romantic evening with her, and you're eager to return to her warm, tender embrace. Though it pains you greatly to be apart from her, you're sure that you made the right decision in leaving her behind to protect the city, and her family. Furthermore, you've made good use of the time alone to steel yourself for what will likely be your most difficult challenge yet.
+森林，以及森林后面那座被围困的城市，正等待着你们。~
+@4110 = ~你的队伍登上了商队，开始了前往萨拉都什的漫长旅程。途中，你的思绪飘向了罗玛和欧达玛。他们曾因为你的身份和本质而险些丧命。这无疑是一个严峻的提醒：任何与你亲近的人将永远处于危险之中。至少现在，他们二人在焰拳的严密保护下，安全地待在公爵宫殿里。而且，你离开了城市，针对你生命的进一步企图也不会让他们或任何其他人陷入危险。
 
-Though your wagon is comfortable and well-provisioned, a good night's rest continues to elude you. When you are able to sleep, you experience some truly disturbing nightmares, and tonight is no exception. Startled and in a cold sweat, you wake up from your latest terror. Strangely, though you cannot recall any details, you know that in each nightmare you're forced to make an extremely difficult and painful decision.
+你的思绪飘向了舍尔。你深情地回忆着与她共度的最后一个浪漫夜晚，渴望回到她温暖温柔的怀抱中。虽然与她分离让你非常痛苦，但你确信将她留在后方保护城市和她的家人是正确的决定。此外，你也很好地利用了这段独处的时间，为迎接这很可能是有史以来最艰难的挑战做好准备。
 
-It's the next morning, and the caravan has reached its destination on the outskirts of the forest northwest of Saradush. The remainder of your journey will be on foot. As the party moves toward the forest, your nostrils are assailed by the acrid smoke. With your eyes watering, you look up and see that the sky is covered in a thick, gray haze. The fire giants have been busy.
+尽管你的大车舒适且补给充足，但你仍然无法安眠。当你能够入睡时，总会经历一些极其扰人的噩梦，今晚也不例外。你惊醒过来，浑身冷汗，从最新的恐怖中醒来。奇怪的是，虽然你记不起任何细节，但你知道在每一个噩梦中，你都被迫做出极其艰难和痛苦的决定。
 
-The forest, and the besieged city beyond it, await.~
-@4111 = ~Your party boards the caravan and begins the long trek to Saradush. During the journey, your thoughts wander to Rohma and Audamar. They were nearly killed because of who, and what you are. This is a grim reminder that anyone close to you will always be at risk. At least now, the two of them are safe within the Ducal Palace, under the watchful eye of the Flaming Fist. Moreover, with you out of the city, further attempts on your life won't place them, or any others, in danger. 
+第二天早晨，商队已抵达位于萨拉都什西北森林外围的目的地。剩下的路程需要步行。当队伍向森林进发时，刺鼻的烟味扑面而来。你被熏得眼泪直流，抬头望去，只见天空被厚厚的灰色烟雾笼罩。那些火巨人看来没闲着。
 
-Your mind drifts to Major Corwin. Though her skill, counsel and friendship have proven invaluable to you, you're sure that you made the right decision in leaving her behind to protect the city, and her family. Furthermore, you've made good use of the time alone to steel yourself for what will likely be your most difficult challenge yet.
+森林，以及森林后面那座被围困的城市，正等待着你们。~
+@4111 = ~你的队伍登上了商队，开始了前往萨拉都什的漫长旅程。途中，你的思绪飘向了罗玛和欧达玛。他们曾因为你的身份和本质而险些丧命。这无疑是一个严峻的提醒：任何与你亲近的人将永远处于危险之中。至少现在，他们二人在焰拳的严密保护下，安全地待在公爵宫殿里。而且，你离开了城市，针对你生命的进一步企图也不会让他们或任何其他人陷入危险。
 
-Though your wagon is comfortable and well-provisioned, a good night's rest continues to elude you. When you are able to sleep, you experience some truly disturbing nightmares, and tonight is no exception. Startled and in a cold sweat, you wake up from your latest terror. Strangely, though you cannot recall any details, you know that in each nightmare you're forced to make an extremely difficult and painful decision.
+你的思绪飘向了科温少校。尽管她的技能、建议和友谊对你来说是无价之宝，但你确信将她留在后方保护城市和她的家人是正确的决定。此外，你也很好地利用了这段独处的时间，为迎接这很可能是有史以来最艰难的挑战做好准备。
 
-It's the next morning, and the caravan has reached its destination on the outskirts of the forest northwest of Saradush. The remainder of your journey will be on foot. As the party moves toward the forest, your nostrils are assailed by the acrid smoke. With your eyes watering, you look up and see that the sky is covered in a thick, gray haze. The fire giants have been busy.
+尽管你的大车舒适且补给充足，但你仍然无法安眠。当你能够入睡时，总会经历一些极其扰人的噩梦，今晚也不例外。你惊醒过来，浑身冷汗，从最新的恐怖中醒来。奇怪的是，虽然你记不起任何细节，但你知道在每一个噩梦中，你都被迫做出极其艰难和痛苦的决定。
 
-The forest, and the besieged city beyond it, await.~
+第二天早晨，商队已抵达位于萨拉都什西北森林外围的目的地。剩下的路程需要步行。当队伍向森林进发时，刺鼻的烟味扑面而来。你被熏得眼泪直流，抬头望去，只见天空被厚厚的灰色烟雾笼罩。那些火巨人看来没闲着。
+
+森林，以及森林后面那座被围困的城市，正等待着你们。~
 @4115 = ~玩具娃娃~
 @4116 = ~一个玩具娃娃，孩子们会爱不释手。~
-@4117 = ~While the physics behind a telescope have been well known for some time, the glass-grinding skills required to actually construct one are still quite specialized. The outer lens of this telescope is cracked, however, and the collapsible tubing is dented such that the scope cannot fully extend.~
+@4117 = ~尽管望远镜背后的物理原理早已为人所知，但实际制造它所需的玻璃研磨技艺仍然相当专业。然而，这个望远镜的外层镜片有裂痕，并且可伸缩的镜筒也有凹痕，导致镜筒无法完全伸出。~
 @4119 = ~温斯顿的账本~
 @4120 = ~这本精心记录的账本详细列出了温斯顿风险投资公司的货运清单编号、发货日期及解码清单所需的密钥。记录始于难民危机时期，在仅仅几周前结束。~
 @4121 = ~货运清单（加密）
@@ -769,361 +769,361 @@ The forest, and the besieged city beyond it, await.~
 @4124 = ~在盗贼公会的帮助下解密的这些清单，上面记录了姓名、年龄和身体特征。你注意到一个熟悉的名字——梅拉·维尔森，她是你在阿斯卡特拉从奴隶贩子手中解救的女孩。有了这些清单，你可以证明温斯顿风险投资公司不仅将人作为货物运输，而且有些人被卖为了奴隶。~
 @4125 = ~货运清单（解密）~
 @4126 = ~旧铁王座标志被破坏了，在它下方的牌匾上刻着“温斯顿风险投资公司”的名字。~
-@4136 = ~Return to Baldur's Gate~
+@4136 = ~返回博德之门~
 @4137 = ~蜿龙桥~
 @4138 = ~温斯顿风险投资公司~
-@4140 = ~City Official~
+@4140 = ~城市官员~
 @4146 = ~虚空精灵~
 @4147 = ~虚空魔鬼~
 @4148 = ~虚空领主~
-@4149 = ~Merchants' League~
+@4149 = ~行商联盟~
 @4150 = ~耶欧得旅店~
-@4151 = ~Flaming Fist Bridge Guard~
-@4152 = ~Basilisk Figurine~
-@4153 = ~You recovered this intricately carved basilisk figurine from the abandoned tower that was once home to the wizard Ramazith. Stroking the figurine from its head to its tail will call forth a fearsome basilisk. The basilisk will obey its master's commands for the duration of the spell or until slain. After one hour, regardless of whether the basilisk lived or died, the figurine returns. It takes a day to recharge the figurine.
+@4151 = ~焰拳大桥守卫~
+@4152 = ~石化蜥蜴雕像~
+@4153 = ~你从曾是巫师拉玛西斯的居所的废弃高塔中找到了这尊雕刻精美的石化蜥蜴雕像。从头到尾抚摸雕像即可召唤出一只可怕的石化蜥蜴。在法术持续期间或被杀死之前，石化蜥蜴会服从主人的命令。一小时后，无论石化蜥蜴存活与否，雕像都会回归。雕像需要一天时间充能。
 
-STATISTICS:
+属性：
 
-Charge abilities:
-– Summons a Greater Basilisk once per day
-  Range: 20 ft.
-  Duration: 1 hour
-  The basilisk deals 2d8 crushing damage and can paralyze opponents during combat.
+充能能力：
+–每日一次召唤巨型石化蜥蜴
+  范围：20英尺
+  持续时间：1小时
+  石化蜥蜴造成2d8粉碎伤害，并能在战斗中麻痹敌人。
 
-Weight: 0~
-@4154 = ~Anguished Mother~
-@4155 = ~Percy~
-@4156 = ~Timotey~
-@4157 = ~Abandoned Tower~
+重量：0~
+@4154 = ~悲痛的母亲~
+@4155 = ~珀西~
+@4156 = ~提摩泰~
+@4157 = ~废弃高塔~
 @4158 = ~紧急补给~
 @4159 = ~白骨匕首~
 @4160 = ~科温的家~
-@4161 = ~Auburn Wyrmling~
-@4162 = ~Auburn Dragon~
-@4164 = ~Please be patient. This may take a while.~
-@4171 = ~Processing area modifications: Blocks A and C...~
-@4172 = ~Processing conversion blocks...~
-@4173 = ~Processing creatures...~
-@4174 = ~Almost done...~
-@4175 = ~Dragonskin Robe~
-@4176 = ~The scales of an auburn dragon have been masterfully woven into this exquisitely crafted robe. It affords the wearer protection against the elements, as well as physical and magical attacks. The scales are light enough that they do not encumber the wearer, and thus do not interfere with their spell-casting.
+@4161 = ~赤褐雏龙~
+@4162 = ~赤褐龙~
+@4164 = ~请耐心等待。这可能需要一些时间。~
+@4171 = ~正在处理区域修改：A区与C区……~
+@4172 = ~正在处理转换区块……~
+@4173 = ~正在处理生物……~
+@4174 = ~即将完成……~
+@4175 = ~龙皮袍~
+@4176 = ~这件工艺精湛的长袍由赤褐龙的鳞片巧妙编织而成。它为穿戴者提供对元素伤害、物理攻击和魔法攻击的防护。鳞片足够轻便，不会为穿戴者带来负担，因此不会干扰其施法。
 
-STATISTICS
+属性
 
-Equipped abilities:
-– Armor Class: 3
-– Saving Throws: +2
-– Magic Resistance: +10%
-- Fire Resistance: +15%
-- Cold Resistance: +15%
-- Electricity Resistance: +15%
+装备能力：
+–防护等级：3
+–豁免检定：+2
+–魔法抗性：+10%
+- 火焰抗性：+15%
+- 寒冷抗性：+15%
+- 电击抗性：+15%
 
-Weight: 6~
-@4177 = ~Dragonscale Shield~
-@4178 = ~The shimmering auburn surface of this shield is made of interlocking dragon scales. Though thin and light, the shield is strong enough to turn aside even the heaviest blows, while affording the wielder protection against elemental and magical attacks.
+重量：6~
+@4177 = ~龙鳞盾~
+@4178 = ~这面盾牌闪耀的赤褐色表面由交叠的龙鳞制成。尽管轻薄，盾牌却足够坚固，能偏转最沉重的打击，同时为持有者提供对元素和魔法攻击的防护。
 
-STATISTICS:
+属性：
 
-Equipped abilities:
-– Armor Class: +4
-– Saving Throws: +1
-- Fire Resistance: +15%
-- Cold Resistance: +15%
-- Electricity Resistance: +15%
-- Magic Resistance: +5%
+装备能力：
+–防护等级：+4
+–豁免检定：+1
+- 火焰抗性：+15%
+- 寒冷抗性：+15%
+- 电击抗性：+15%
+- 魔法抗性：+5%
 
-Requires:
- 8 Strength
+要求：
+ 8点力量
 
-Weight: 5~
-@4179 = ~Auburn Scale Armor~
-@4180 = ~This armor, made from the supple yet strong scales of an auburn dragon, provides the wearer with an array of protective benefits, while being light enough as to not interfere with spell-casting. 
+重量：5~
+@4179 = ~赤褐鳞甲~
+@4180 = ~这套护甲由赤褐龙柔韧而坚固的鳞片制成，为穿戴者提供全方位的防护，同时足够轻便，不会干扰施法。
 
-STATISTICS:
+属性：
 
-Equipped abilities:
-- Fire Resistance: +15%
-- Cold Resistance: +15%
-- Electricity Resistance: +15%
-- Magic Resistance: +5%
+装备能力：
+- 火焰抗性：+15%
+- 寒冷抗性：+15%
+- 电击抗性：+15%
+- 魔法抗性：+5%
 
-Armor Class: 0 
+防护等级：0
 
-Requires:
- 8 Strength
+要求：
+ 8点力量
 
-Weight: 10~
+重量：10~
 @4181 = ~萨满~
-@4182 = ~Still working... please be patient.~
-@4183 = ~This set of darts was given to you by Belfort, the Flaming Fist mercenary who deserted his post at the start of the Dragonspear campaign. He told you that he won them some years ago in a game of knucklebones, and that he hadn't lost a game of darts since. It's easy to see why; the darts are exquisitely crafted and are imbued with some powerful enchantments. 
+@4182 = ~仍在努力……请耐心等待。~
+@4183 = ~这套飞镖是由贝尔福特——那个在龙矛围攻战役初期擅离职守的焰拳佣兵——送给你的。他告诉你，这是几年前在一次掷骰子游戏中赢来的，并且自此以后他在投掷飞镖的游戏中就再没输过。原因显而易见：这些飞镖工艺精湛，并注入了强大的魔法。
 
-STATISTICS:
+属性：
 
-Combat abilities:
-– Returns to the wielder's hand when thrown
+战斗能力：
+–投掷后会自动返回使用者手中
 
-THAC0: +5
-Damage: 1d3+5 (missile)
-Speed Factor: 0
-Proficiency Type: Dart
-Type: One-handed
+命中值：+5
+伤害：1d3+5（远程）
+使用速度：0
+武器类型：飞镖
+类型：单手
 
-Weight: 0~
-@4184 = ~Belfort's Darts +5~
-@4185 = ~Hebert~
-@4186 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+重量：0~
+@4184 = ~贝尔福特飞镖 +5~
+@4185 = ~赫伯特~
+@4186 = ~当你打开这本古老的书时，它会发出吱呀声。《无限法术书》的每一页都以浅显的语言描述了一个法术，即使是盗贼、牧师，甚至战士都能轻松理解和施放。每页上的法术每天可以施放一次。
 
-A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+此书的第二个功能是翻到另一页。这有可能获得一个更好的法术。然而，一旦翻过页，之前的法术就将永远失去，除非它碰巧再次出现。
 
-Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+请注意：一旦你翻到书的最后一页，你就只能使用该页的法术，无法再更改。
 
-The spell on this page is: Breach
-(Abjuration)
+此页的法术为：破解术
+（防护系）
 
-Level: 5
-Range: 40 ft.
-Duration: Instant
-Casting Time: 5
-Area of Effect: 1 creature
-Saving Throw: None
+等级：5
+射程：40 英尺
+持续时间：立即
+施法时间：5
+作用范围：1个生物
+豁免检定：无
 
-When this spell is cast at a creature, it breaches and dispels all of the specific and combat protections on the target creature. Here is a complete list of all the specific protection spells that are dispelled by Breach: Shield, Protection Circle, Resist Fear, Protection From Fire/Cold, Fireshield, Protection From Acid, Protection From Electricity, Protection From Magic Energy, Protection From The Elements, and Protection From Energy. The combat protection spells dispelled by Breach are Protection From Normal Missiles, Protection From Normal Weapons, Protection From Magical Weapons, Stoneskin, Armor, Ghost Armor, Spirit Armor, Absolute Immunity, Mantle, and Improved Mantle. The target's Magic Resistance, if any, does not affect this spell.~
-@4187 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+此法术对生物施放时，会破解并驱散目标生物身上所有的特定防护和战斗防护法术。以下是会被破解术驱散的所有特定防护法术的完整列表：防护护盾、防护邪恶法阵、抵抗恐惧、防护火焰/寒冷、火焰护盾、防护强酸、防护闪电、防护魔法能量、防护元素伤害以及防护能量。会被破解术驱散的战斗防护法术有：防护普通箭矢、防护普通武器、防护魔法武器、石肤术、法师护甲、幽灵护甲、灵甲、绝对免疫、法师之 mantle 以及高级法师之 mantle。目标的魔法抗性（如果有）不影响此法术。~
+@4187 = ~当你打开这本古老的书时，它会发出吱呀声。《无限法术书》的每一页都以浅显的语言描述了一个法术，即使是盗贼、牧师，甚至战士都能轻松理解和施放。每页上的法术每天可以施放一次。
 
-A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+此书的第二个功能是翻到另一页。这有可能获得一个更好的法术。然而，一旦翻过页，之前的法术就将永远失去，除非它碰巧再次出现。
 
-Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+请注意：一旦你翻到书的最后一页，你就只能使用该页的法术，无法再更改。
 
-The spell on this page is: Improved Invisibility
-(Illusion/Phantasm)
+此页的法术为：高等隐形术
+（幻术系/魅影系）
 
-Level: 4
-Range: Touch
-Duration: 3 rounds + 1 round/level
-Casting Time: 4
-Area of Effect: 1 creature
-Saving Throw: None
+等级：4
+射程：接触
+持续时间：3轮 + 每等级1轮
+施法时间：4
+作用范围：1个生物
+豁免检定：无
 
-This spell is similar to Invisibility, but the recipient is able to attack by missile discharge, melee combat, or spellcasting while remaining unseen. However, telltale traces—a shimmering—allow an observant opponent to attack the invisible spell recipient. These traces are only noticeable when specifically looked for (after the invisible character has made <PRO_HISHER> presence known). Attacks against the invisible character suffer a -4 penalty to attack rolls, and the invisible character's Saving Throws are made with a +4 bonus.
+该法术与隐形术类似，但受术者可以在保持隐形状态的同时进行远程射击、近战攻击或施法。然而，一些泄露行踪的痕迹——一片微光——使得观察力敏锐的对手能够攻击这名隐形的法术受术者。这些痕迹只有当被特意寻找时（在隐形角色暴露了<PRO_HISHER>的存在之后）才会被注意到。攻击隐形角色的攻击检定会受到-4惩罚，而隐形角色的豁免检定则获得+4加值。
 
-Note: After making an attack, the wizard is no longer completely invisible. Opponents can target the wizard.~
-@4188 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+注意：在发动攻击后，法师将不再完全隐形。对手可以以该法师为目标。~
+@4188 = ~当你打开这本古老的书时，它会发出吱呀声。《无限法术书》的每一页都以浅显的语言描述了一个法术，即使是盗贼、牧师，甚至战士都能轻松理解和施放。每页上的法术每天可以施放一次。
 
-A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+此书的第二个功能是翻到另一页。这有可能获得一个更好的法术。然而，一旦翻过页，之前的法术就将永远失去，除非它碰巧再次出现。
 
-Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+请注意：一旦你翻到书的最后一页，你就只能使用该页的法术，无法再更改。
 
-The spell on this page is: Skull Trap
-(Necromancy)
+此页的法术为：死亡法阵
+（死灵系）
 
-Level: 3
-Range: 60 ft.
-Duration: Special
-Casting Time: 3
-Area of Effect: 11-ft. radius
-Saving Throw: 1/2
+等级：3
+射程：60 英尺
+持续时间：特殊
+施法时间：3
+作用范围：11英尺半径
+豁免检定：伤害减半
 
-When this spell is cast, a skull is thrown by the caster at the target area. The skull floats in the area until a creature comes within 8 ft. of it. When this happens, the skull is triggered and explodes damaging everyone within a 11-ft. radius. The damage inflicted is equal to 1d6 per level of the caster, or half with a successful Saving Throw vs. Spell. When casting this spell, it is wise to set it far away from the party lest they set it off accidentally.~
-@4189 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+施放此法术时，施法者会向目标区域投掷一个骷髅头。该骷髅头会悬浮在该区域，直到有生物进入其8英尺范围内。当这种情况发生时，骷髅头会被触发并爆炸，对11英尺半径内的所有人造成伤害。造成的伤害等于施法者每等级1d6，成功通过法术豁免检定则伤害减半。施放此法术时，最好将其设置在远离队伍的地方，以免他们意外触发它。~
+@4189 = ~当你打开这本古老的书时，它会发出吱呀声。《无限法术书》的每一页都以浅显的语言描述了一个法术，即使是盗贼、牧师，甚至战士都能轻松理解和施放。每页上的法术每天可以施放一次。
 
-A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+此书的第二个功能是翻到另一页。这有可能获得一个更好的法术。然而，一旦翻过页，之前的法术就将永远失去，除非它碰巧再次出现。
 
-Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+请注意：一旦你翻到书的最后一页，你就只能使用该页的法术，无法再更改。
 
-The spell on this page is: Improved Haste
-(Alteration)
+此页的法术为：高级加速术
+（变化系）
 
-Level: 6
-Range: 40 ft.
-Duration: 3 rounds + 1 round/level
-Casting Time: 3
-Area of Effect: 1 creature
-Saving Throw: None
+等级：6
+射程：40 英尺
+持续时间：3轮 + 每等级1轮
+施法时间：3
+作用范围：1个生物
+豁免检定：无
 
-The affected creature functions at double its normal movement and attack rates and receives a +2 bonus to its initiative. Thus, a creature moving at 6 and attacking once per round would move at 12 and attack twice per round. Spellcasting and spell effects are not sped up. There are three major differences between the 3rd-level wizard spell Haste and this spell: First, there is no period of fatigue following the expiration of the spell; second, this spell will only affect one creature; third, this spell actually doubles the number of attacks per round of the hasted creature. This spell also negates the effects of a Slow spell, but it is not cumulative with itself or with other similar magic. Its effects will last for the duration or until dispelled.~
-@4190 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+受术生物将以双倍的正常速度和攻击频率行动，并在先攻权上获得+2加值。因此，一个移动速度为6且每轮攻击一次的生物，将能够以速度12移动且每轮攻击两次。施法和法术效果不会被加速。3级法师法术加速术与此法术有三个主要区别：第一，法术效果结束后不会出现疲劳期；第二，此法术只影响一个生物；第三，此法术实际上使被加速生物每轮的攻击次数翻倍。此法术同样会消除缓慢术的效果，但它不能与自身或其他类似魔法效果叠加。其效果将持续整个持续时间或被驱散。~
+@4190 = ~当你打开这本古老的书时，它会发出吱呀声。《无限法术书》的每一页都以浅显的语言描述了一个法术，即使是盗贼、牧师，甚至战士都能轻松理解和施放。每页上的法术每天可以施放一次。
 
-A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+此书的第二个功能是翻到另一页。这有可能获得一个更好的法术。然而，一旦翻过页，之前的法术就将永远失去，除非它碰巧再次出现。
 
-Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+请注意：一旦你翻到书的最后一页，你就只能使用该页的法术，无法再更改。
 
-The spell on this page is: Khelben's Warding Whip
-(Abjuration)
+此页的法术为：凯尔本的守护之鞭
+（防护系）
 
-Level: 7
-Range: 30 ft.
-Duration: 3 rounds
-Casting Time: 7
-Area of Effect: Special
-Saving Throw: None
+等级：7
+射程：30 英尺
+持续时间：3轮
+施法时间：7
+作用范围：特殊
+豁免检定：无
 
-When this spell is cast, it dispels one spell protection of up to 8th level affecting the target creature. Every round thereafter till the duration of the spell expires, another spell protection will be removed from the target. The spells affected by Khelben's Warding Whip are Minor Spell Turning, Minor Globe of Invulnerability, Spell Immunity, Globe Of Invulnerability, Minor Spell Deflection, Spell Turning, Spell Deflection, and Spell Shield. This will always remove the highest-level spell protection affecting the target; if more than one same-level protection is active on the target simultaneously, one of them will be randomly chosen and dispelled. The target's Magic Resistance, if any, does not affect this spell.~
-@4191 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+当此法术被施放时，它会驱散目标生物身上一个最高8级的法术防护。在法术持续时间结束前，此后每轮都会从目标身上移除另一个法术防护。受凯尔本的守护之鞭影响的法术有：小型法术偏转、小型法术无效结界、法术免疫、法术无效结界、小型法术转向、法术转向、法术偏转以及法术护盾。此法术总会移除目标身上最高等级的法术防护；如果目标身上同时有多个同等级防护生效，则会随机选择其中一个并驱散。目标的魔法抗性（如果有）不影响此法术。~
+@4191 = ~当你打开这本古老的书时，它会发出吱呀声。《无限法术书》的每一页都以浅显的语言描述了一个法术，即使是盗贼、牧师，甚至战士都能轻松理解和施放。每页上的法术每天可以施放一次。
 
-A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+此书的第二个功能是翻到另一页。这有可能获得一个更好的法术。然而，一旦翻过页，之前的法术就将永远失去，除非它碰巧再次出现。
 
-Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+请注意：一旦你翻到书的最后一页，你就只能使用该页的法术，无法再更改。
 
-The spell on this page is: Stoneskin
-(Alteration)
+此页的法术为：石肤术
+（变化系）
 
-Level: 4
-Range: 0
-Duration: 12 hours
-Casting Time: 1
-Area of Effect: The caster
-Saving Throw: None 
+等级：4
+射程：0
+持续时间：12小时
+施法时间：1
+作用范围：施法者自身
+豁免检定：无
 
-When a wizard casts this powerful spell upon <PRO_HIMHER>self, an outer skin of stone will move up from the ground, completely covering <PRO_HIMHER>. This skin is of course magical and will hinder the wizard in no way. The effect of this is to protect the wizard from physical attacks such as melee weapons and projectiles. For every 2 levels of the caster, an additional skin is gained upon casting. For example, a 10th-level wizard would receive 5 skins while a 20th-level wizard would receive 10. For each skin the wizard possesses, the spell will stop one attack, so a 10th-level wizard would be protected from the first 5 attacks made against <PRO_HIMHER>, but the 6th would affect <PRO_HIMHER> normally. The skins will remain on the wizard until <PRO_HESHE> is affected by a Dispel Magic, all of the skins are removed due to physical attacks, or the spell duration expires. It is important to note that this will not protect the wizard from any magical attacks, such as Fireball.~
-@4192 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+当法师将此强大的法术施于<PRO_HIMHER>自身时，一层石质外皮会从地面升起，完全覆盖<PRO_HIMHER>。这层外皮当然是魔法效果，不会以任何方式妨碍法师。其效果是保护法师免受物理攻击，例如近战武器和投射物。施法者每2个等级，在施法时可以获得一层额外的石肤。例如，一个10级法师将获得5层石肤，而一个20级法师将获得10层。法师拥有的每一层石肤，都将阻挡一次攻击，因此一个10级法师将免受前5次针对<PRO_HIMHER>的攻击，但第6次攻击将正常影响<PRO_HIMHER>。石肤将一直存在于法师身上，直到<PRO_HESHE>受到驱逐魔法的影响、所有石肤因物理攻击而被消耗、或者法术持续时间结束。需要注意的是，这不会保护法师免受任何魔法攻击，例如火球术。~
+@4192 = ~当你打开这本古老的书时，它会发出吱呀声响。《无限法术书》的每一页都以通俗易懂的语言记载了一个法术，即使是盗贼、牧师，乃至战士都能理解并施放。每页上的法术每日可施放一次。
 
-A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+此书的第二项功能是翻至不同书页。这让你有机会获得更好的法术。但请注意：一旦书页被翻过，之前的法术将永久消失，除非它再次出现。
 
-Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+务必当心：当你翻至本书最后一页时，你将只能使用该页的法术。
 
-The spell on this page is: Pierce Magic
-(Abjuration)
+本页法术为：穿透魔法
+（防护系）
 
-Level: 6
-Range: 40 ft.
-Duration: Instant
-Casting Time: 6
-Area of Effect: 1 creature
-Saving Throw: None
+等级：6
+射程：40英尺
+持续时间：立即
+施法时间：6
+作用范围：1个生物
+豁免检定：无
 
-When this spell is cast upon a target creature, there will be two major effects: First, the creature's Magic Resistance, if any, will be lowered by 1% per level of the caster; second, one spell protection of 8th level or lower affecting the creature, if any, will be canceled. For example, if this spell were cast by a 15th-level wizard, the target creature would lose 15% of its Magic Resistance from its current total (reducing it to 0 if less than that remains), and one 8th- or lower level spell protection affecting the creature would be dispelled. Spells affected by Pierce Magic are Minor Spell Deflection, Minor Spell Turning, Spell Deflection, Spell Turning, Minor Globe of Invulnerability, Spell Immunity, and Globe of Invulnerability. The target's Magic Resistance, if any, does not affect this spell, nor do any of the spell protections. Magic Resistance remains lowered for 1 round per level of the caster.~
-@4193 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+此法术对目标生物产生两大效果：第一，目标的魔法抗性（若有）会按施法者等级每级降低1%；第二，目标身上一个8级或以下的法术防护效果（若有）将被解除。例如，若由15级法师施放此法术，目标生物的魔法抗性将从当前总值降低15%（若剩余值不足则归零），且其身上的一个8级或以下法术防护将被驱散。受穿透魔法影响的法术包括：小型法术偏转、小型法术反转、法术偏转、法术反转、小型法术无效结界、法术免疫、法术无效结界。目标的魔法抗性（若有）对此法术无效，任何法术防护亦无法抵挡。魔法抗性降低效果持续时间为施法者每级1轮。~
+@4193 = ~当你打开这本古老的书时，它会发出吱呀声响。《无限法术书》的每一页都以通俗易懂的语言记载了一个法术，即使是盗贼、牧师，乃至战士都能理解并施放。每页上的法术每日可施放一次。
 
-A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+此书的第二项功能是翻至不同书页。这让你有机会获得更好的法术。但请注意：一旦书页被翻过，之前的法术将永久消失，除非它再次出现。
 
-Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+务必当心：当你翻至本书最后一页时，你将只能使用该页的法术。
 
-The spell on this page is: Chromatic Orb 
-(Evocation)
+本页法术为：彩珠术
+（塑能系）
 
-Level: 1
-Range: 90 ft.
-Duration: Special
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: Special
+等级：1
+射程：90英尺
+持续时间：特殊
+施法时间：1
+作用范围：1个生物
+豁免检定：特殊
 
-This spell causes a 2-ft. diameter sphere to appear in the caster's hand. When thrown, the sphere heads unerringly to its target. The effect the orb has upon the target varies with the level of the caster. Each orb will do damage to the target against which there is no save and an effect against which the target must save vs. Spell with a +6 bonus:
- 1st Level: 1d4 damage and blinds the target for 1 round.
- 2nd Level: 1d4 damage and inflicts pain (-1 penalty to Strength, Dexterity, AC, and THAC0) upon the victim.
- 3rd Level: 1d6 damage and burns the victim for an additional 1d8 damage.
- 4th Level: 1d6 damage and blinds the target for 1 turn.
- 5th Level: 1d8 damage and stuns the target for 3 rounds.
- 6th Level: 1d8 damage and causes weakness (-4 penalty to THAC0) in the victim.
- 7th Level: 1d10 damage and paralyzes the victim for 2 turns.
- 10th Level: 1d12 acid damage and turns the victim to stone.
- 12th Level: 2d8 acid damage and instantly kills the victim.
+此法术会在施法者手中形成一个直径2英尺的球体。投掷时，球体会精准飞向目标。球体对目标产生的效果随施法者等级变化。每个球体均会对目标造成无法通过豁免减免的伤害，并附带一项效果（目标可进行法术豁免，但有+6惩罚）：
+1级：1d4伤害，致盲目标1轮。
+2级：1d4伤害，使目标陷入痛苦（力量、敏捷、防护等级和命中率各-1）。
+3级：1d6伤害，并造成额外1d8火焰伤害。
+4级：1d6伤害，致盲目标1回合。
+5级：1d8伤害，击晕目标3轮。
+6级：1d8伤害，使目标陷入虚弱（命中率-4）。
+7级：1d10伤害，麻痹目标2回合。
+10级：1d12强酸伤害，将目标变为石头。
+12级：2d8强酸伤害，立即杀死目标。
 
-NOTE: The victim saves vs. Spell with a +6 bonus against all the effects and gets no save against the damage.~
-@4194 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+注意：目标可进行带有+6奖励的法术豁免来抵抗所有效果，但无法豁免伤害。~
+@4194 = ~当你打开这本古老的书时，它会发出吱呀声响。《无限法术书》的每一页都以通俗易懂的语言记载了一个法术，即使是盗贼、牧师，乃至战士都能理解并施放。每页上的法术每日可施放一次。
 
-A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+此书的第二项功能是翻至不同书页。这让你有机会获得更好的法术。但请注意：一旦书页被翻过，之前的法术将永久消失，除非它再次出现。
 
-Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+务必当心：当你翻至本书最后一页时，你将只能使用该页的法术。
 
-The spell on this page is: Raise Dead
-(Necromancy)
+本页法术为：起死回生
+（死灵系）
 
-Level: 5
-Sphere: Necromantic 
-Range: Visual range of the caster
-Duration: Permanent 
-Casting Time: 9 
-Area of Effect: 1 person 
-Saving Throw: Special 
+等级：5
+法域：死灵
+射程：施法者视野范围
+持续时间：永久
+施法时间：9
+作用范围：1人
+豁免检定：特殊
 
-When the priest casts a Raise Dead spell, <PRO_HESHE> can restore life to a dwarf, gnome, half-elf, halfling, elf, half-orc, or human.
+当牧师施放此法术时，<PRO_HESHE>可以使矮人、侏儒、半精灵、半身人、精灵、半兽人或人类复活。
 
-Note that the body of the person must be whole, otherwise missing parts are still missing when the person is brought back to life. The person has but 1 Hit Point when raised and must regain the rest by natural healing or curative magic.~
-@4195 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+注意：亡者的躯体必须完整，否则复活时缺失的部分仍然缺失。复活时该人物仅有1点生命值，必须通过自然恢复或治疗魔法来恢复其余生命值。~
+@4195 = ~当你打开这本古老的书时，它会发出吱呀声响。《无限法术书》的每一页都以通俗易懂的语言记载了一个法术，即使是盗贼、牧师，乃至战士都能理解并施放。每页上的法术每日可施放一次。
 
-A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+此书的第二项功能是翻至不同书页。这让你有机会获得更好的法术。但请注意：一旦书页被翻过，之前的法术将永久消失，除非它再次出现。
 
-Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+务必当心：当你翻至本书最后一页时，你将只能使用该页的法术。
 
-The spell on this page is: Mass Invisibility 
-(Illusion/Phantasm)
+本页法术为：群体隐形
+（幻术系/魅影系）
 
-Level: 7
-Range: Visual range of the caster 
-Duration: 1 round/level
-Casting Time: 7
-Area of Effect: 15-ft. radius 
-Saving Throw: None 
+等级：7
+射程：施法者视野范围
+持续时间：每等级1轮
+施法时间：7
+作用范围：15英尺半径
+豁免检定：无
 
-Upon casting this spell, the wizard causes all friendly creatures within the area of effect to be affected by the spell Improved Invisibility. This spell is similar to the Invisibility spell, but the recipient is able to attack, either by missile discharge, melee combat, or spellcasting, and remain unseen. Note, however, that there are sometimes telltale traces, a shimmering, so that an observant opponent can attack the invisible spell recipient. These traces are only noticeable when specifically looked for (after the invisible character has made <PRO_HISHER> presence known). Attacks against the invisible character suffer -4 penalties to the attack rolls, and the invisible character's Saving Throws are made with a +4 bonus.~
-@4196 = ~This ancient tome creaks as you open it. Each page of the Book of Infinite Spells contains a spell described in layman's terms, easy enough for a thief, a cleric, or even a fighter to understand and cast it. Each spell on a page can be cast once per day.
+施放此法术后，法师可使作用范围内所有友方生物获得“高级隐形术”效果。此法术类似于“隐形术”，但受术者可以在发动攻击（包括远程射击、近战或施法）时保持隐形状态。但需注意，有时仍会留下可循的痕迹（例如微光闪烁），警觉的对手因而可能发现并攻击隐形目标。这些痕迹仅在特意寻找时（即隐形角色已暴露自身存在后）才会被察觉。攻击隐形角色时命中率承受-4惩罚，而隐形角色的豁免检定则获得+4奖励。~
+@4196 = ~当你打开这本古老的书时，它会发出吱呀声响。《无限法术书》的每一页都以通俗易懂的语言记载了一个法术，即使是盗贼、牧师，乃至战士都能理解并施放。每页上的法术每日可施放一次。
 
-A second function of the book is to turn to a different page of the book. This allows for the possibility of getting a better spell. However, once the page has been turned, the previous spell is lost forever unless it happens to appear again.
+此书的第二项功能是翻至不同书页。这让你有机会获得更好的法术。但请注意：一旦书页被翻过，之前的法术将永久消失，除非它再次出现。
 
-Be warned: Once you turn to the last page of the book, you are stuck with that spell.
+务必当心：当你翻至本书最后一页时，你将只能使用该页的法术。
 
-The spell on this page is: Summon Efreeti
-(Conjuration/Summoning)
+本页法术为：召唤巨灵
+（咒法系/召唤系）
 
-Level: 7
-Range: 120 ft.
-Duration: 8 rounds + 1 round/level
-Casting Time: 9
-Area of Effect: Special
-Saving Throw: None
+等级：7
+射程：120英尺
+持续时间：8轮 + 每等级1轮
+施法时间：9
+作用范围：特殊
+豁免检定：无
 
-With this spell, the wizard can cajole an efreeti—a massive genie with powerful abilities—to leave the Elemental Plane of Fire and enter the Prime Material. The efreeti will serve the caster for the duration of the spell, attacking <PRO_HISHER> enemies.~
-@4197 = ~Grimoire of Perpetual Conjuration~
-@5000 = ~Processing ToB changes...~
+通过此法术，法师可以说服一个巨灵——一个来自火元素位面、拥有强大能力的大型精怪——离开其位面进入主物质位面。巨灵将在法术持续时间内为施法者服务，攻击<PRO_HISHER>的敌人。~
+@4197 = ~永久咒法魔典~
+@5000 = ~正在处理《巴尔王座》变更……~
 @5001 = ~离开<CHARNAME>后，凯拉踏上了返回深水城的归途，决心为她和她的士兵在圣战中所犯下的罪行接受审判。抵达城中后，她被当地政府拘留并审问，当局对阿弗纳斯所发生的事情感到震惊。
 
 尽管她已经遭受了许多苦难，并且帮助<CHARNAME>击败了在泰瑟尔肆虐的巴尔之子，她仍被判处了绞刑。奥恩·白银得知后，向城市领袖恳求宽恕他的侄女。在奥恩的压力下——他在深水城市民中被视为英雄——并担心那些仍然同情她的人可能会起义，领袖们决定将她流放。奥恩与她一同隐居，两人相互帮助，治愈他们在阿弗纳斯留下的心灵创伤。
 
 奥恩在流放几年后去世，凯拉独自出发，成为了一名流浪者，四处行善，帮助他人。许多人相信，光辉女士仍在某处，默默地为她过去的罪孽赎罪。~
-@5002 = ~Schael and <CHARNAME> received a hero's welcome upon their return to Baldur's Gate. After the week-long celebration had ended, Schael, Rohma and Audamar moved in to the Ducal Palace to live with <CHARNAME>, who was finally free to pursue the life he'd dreamed with the woman he loved. Schael gave birth to healthy fraternal twins; a boy, Gorion, named after <CHARNAME>'s foster father, and a girl, Ilara, named after her late mother. <CHARNAME> excelled at fatherhood, and Rohma filled the role of a big sister wonderfully. Audamar, meanwhile, was ecstatic to watch his three grandchildren grow up together. 
+@5002 = ~舍尔与<CHARNAME>返回博德之门时受到了英雄般的欢迎。为期一周的庆祝活动结束后，舍尔、罗玛与欧达玛搬入了公爵府，与<CHARNAME>共同生活。他终于能够自由地与心爱的女人一起追寻梦想中的生活。舍尔生下了一对健康的异卵双胞胎：男孩取名葛立安，以纪念<CHARNAME>的养父；女孩取名伊菈菈，随她已故的母亲。<CHARNAME>是一位出色的父亲，罗玛也完美地扮演了大姐姐的角色。与此同时，欧达玛欣喜若狂地看着他的三个孙辈一起长大。
 
-The two lovers were finally married on the steps of Candlekeep, roughly two years after the birth of the twins. Imoen, Skie, and many of their adventuring companions were present to witness the ceremony, as were Flaming Fist officials and local and foreign dignitaries. Included among these were the Grand Dukes, as well as officials from Waterdeep, Daggerford, Amn and Tethyr. Even some old friends from their coalition days attended, including Glint, Voghiln, Mizhena and Thaird, to name a few.
+大约在双胞胎出生两年后，这对爱侣终于在烛堡的台阶上举行了婚礼。爱蒙、史姬以及他们许多冒险伙伴都到场见证了仪式，焰拳官员、本地及外国使节亦纷纷出席。其中包括大公爵们，以及来自深水城、匕首滩、安姆和泰斯尔的官员。甚至一些他们联盟时期的老友也前来参加，包括但不限于格林特、沃格林、米珍娜和塞尔德等人。
 
-Schael stayed on with the Flaming Fist, eventually rising to the rank of Colonel before retiring to start her own archery academy. The academy quickly gained renown, and under her instruction and leadership it produced some of the finest sharpshooters that the Sword Coast had ever seen. After the death of Duke Silvershield, <CHARNAME> was elected as the new Grand Duke, and he helped lead Baldur's Gate to a new era of peace and prosperity. Schael and <CHARNAME> proved inseparable, and they lived out their years in peace and contentment. The couple watched with delight as their children, and grandchildren, grew up to become well-regarded leaders in their respective fields. 
+舍尔继续留在焰拳服役，最终晋升至上校军衔，之后退役创办了自己的箭术学院。该学院迅速声名鹊起，在她的指导和领导下，培养出了一些剑湾有史以来最杰出的神射手。银盾公爵去世后，<CHARNAME>被推选为新任大公爵，他协助引领博德之门步入了一个和平与繁荣的新时代。舍尔与<CHARNAME>证明彼此不可分离，他们在宁静与满足中度过了余生。夫妇俩欣喜地看着他们的子女，以及孙辈们，成长为各自领域内备受尊敬的领袖。
 
-The happy family was never troubled by Beno or his associates ever again.~
-@5003 = ~Schael and <CHARNAME> received a hero's welcome upon their return to Baldur's Gate. After the week-long celebration had ended, Schael, Rohma and Audamar moved in to the Ducal palace to live with <CHARNAME>, who was finally free to pursue the life she'd dreamed with the woman she loved. 
+这个幸福的家庭再也没有受到贝诺或其同伙的困扰。~
+@5003 = ~舍尔与<CHARNAME>返回博德之门时受到了英雄般的欢迎。为期一周的庆祝活动结束后，舍尔、罗玛与欧达玛搬入了公爵府，与<CHARNAME>共同生活。她终于能够自由地与心爱的女人一起追寻梦想中的生活。
 
-The two lovers were finally married on the steps of Candlekeep, roughly two years after the events in Tethyr. Imoen, Skie, and many of their adventuring companions were present to witness the ceremony, as were Flaming Fist officials and local and foreign dignitaries. Included among these were the Grand Dukes, as well as officials from Waterdeep, Daggerford, Amn and Tethyr. Even some old friends from their coalition days attended, including Glint, Voghiln, Mizhena and Thaird, to name a few.
+在泰斯尔的事件发生大约两年后，这对爱侣终于在烛堡的台阶上举行了婚礼。爱蒙、史姬以及她们许多冒险伙伴都到场见证了仪式，焰拳官员、本地及外国使节亦纷纷出席。其中包括大公爵们，以及来自深水城、匕首滩、安姆和泰斯尔的官员。甚至一些她们联盟时期的老友也前来参加，包括但不限于格林特、沃格林、米珍娜和塞尔德等人。
 
-Schael stayed on with the Flaming Fist, eventually rising to the rank of Colonel before retiring to start her own archery academy. The academy quickly gained renown, and under her instruction and leadership it produced some of the finest sharpshooters that the Sword Coast had ever seen. After the death of Duke Silvershield, <CHARNAME> was elected as the new Grand Duke, and she helped lead Baldur's Gate to a new era of peace and prosperity. Schael and <CHARNAME> proved inseparable, and they lived out their years in peace and contentment. The couple watched with delight as Rohma, and her children, grew up to become well-regarded leaders in their respective fields. 
+舍尔继续留在焰拳服役，最终晋升至上校军衔，之后退役创办了自己的箭术学院。该学院迅速声名鹊起，在她的指导和领导下，培养出了一些剑湾有史以来最杰出的神射手。银盾公爵去世后，<CHARNAME>被推选为新任大公爵，她协助引领博德之门步入了一个和平与繁荣的新时代。舍尔与<CHARNAME>证明彼此不可分离，她们在宁静与满足中度过了余生。夫妇俩欣喜地看着罗玛，以及她的孩子们，成长为各自领域内备受尊敬的领袖。
 
-The happy family was never troubled by Beno or his associates ever again.~
-@5004 = ~Schael returned to Baldur's Gate and received a hero's welcome. Shortly after her return, she gave birth to healthy fraternal twins; a boy, Gorion, named after <CHARNAME>'s foster father, and a girl, Ilara, named after her late mother. Rohma filled the role of a big sister wonderfully, and Audamar was ecstatic to watch his three grandchildren grow up together. 
+这个幸福的家庭再也没有受到贝诺或其同伙的困扰。~
+@5004 = ~舍尔返回博德之门，并受到了英雄般的欢迎。返回后不久，她生下了一对健康的异卵双胞胎：男孩取名葛立安，以纪念<CHARNAME>的养父；女孩取名伊菈菈，随她已故的母亲。罗玛完美地扮演了大姐姐的角色，欧达玛则欣喜若狂地看着他的三个孙辈一起长大。
 
-Though she would always miss <CHARNAME>, she was able to solidify her on-again, off-again relationship with her close friend and lover Neoma, and the two of them eventually married. Imoen, Skie, and many of <CHARNAME>'s old adventuring companions were present to witness the ceremony. Even some old friends from the coalition days attended, including Glint, Voghiln, Mizhena and Thaird, to name a few. The evening after the ceremony, Schael gazed into the night sky and saw a glimmer in the heavens, and at that moment felt an indescribable outpouring of love and happiness... somehow, she knew that it was <CHARNAME> expressing his joy at seeing her marry Neoma.
+尽管她将永远思念<CHARNAME>，但她还是巩固了与挚友兼爱人纽玛那段分分合合的关系，两人最终结婚了。爱蒙、史姬以及<CHARNAME>的许多老冒险伙伴都到场见证了仪式。甚至一些联盟时期的老友也前来参加，包括但不限于格林特、沃格林、米珍娜和塞尔德等人。仪式后的那个夜晚，舍尔凝望夜空，看到天际有一丝微光闪烁，那一刻她感受到一股难以言喻的爱与幸福奔涌而出……不知何故，她知道那是<CHARNAME>在表达他看到她与纽玛结婚的喜悦。
 
-Schael stayed on with the Flaming Fist, eventually rising to the rank of Colonel before retiring to start her own archery academy. The academy quickly gained renown, and under her instruction and leadership it produced some of the finest sharpshooters that the Sword Coast had ever seen. Schael and her wife proved inseparable, and they lived out their years in peace and contentment. The couple watched with delight as Schael's children, and grandchildren, grew up to become well-regarded leaders in their respective fields. 
+舍尔继续留在焰拳服役，最终晋升至上校军衔，之后退役创办了自己的箭术学院。该学院迅速声名鹊起，在她的指导和领导下，培养出了一些剑湾有史以来最杰出的神射手。舍尔与她的妻子证明彼此不可分离，她们在宁静与满足中度过了余生。夫妇俩欣喜地看着舍尔的子女，以及孙辈们，成长为各自领域内备受尊敬的领袖。
 
-The happy family was never troubled by Beno or his associates ever again.~
-@5005 = ~Schael returned to Baldur's Gate and received a hero's welcome. After the celebration, Neoma, her friend and on-again, off-again lover professed her love to her. Surprised, Schael initially rebuffed the idea of a romantic relationship, preferring instead to keep their relationship as it was. As time passed, Schael reflected more on her decision and realized that, although she would always miss <CHARNAME>, she did have feelings for Neoma, feelings that went beyond simple physical attraction. She decided to take a chance with Neoma, and to their mutual delight, their romance and love for one another blossomed. 
+这个幸福的家庭再也没有受到贝诺或其同伙的困扰。~
+@5005 = ~舍尔返回博德之门，并受到了英雄般的欢迎。庆祝活动结束后，她的朋友兼分分合合的恋人纽玛向她吐露了爱意。舍尔起初感到惊讶，拒绝开始浪漫关系的想法，宁愿维持现状。随着时间的推移，舍尔反思了自己的决定，意识到尽管她会永远思念<CHARNAME>，但她确实对纽玛怀有超越单纯肉体吸引的感情。她决定与纽玛尝试交往，令双方都欣喜的是，她们的浪漫与爱意绽放了。
 
-The couple were married about a year later, on the steps of the Ducal Palace. Imoen, Skie, and many of <CHARNAME>'s old adventuring companions were present to witness the ceremony. Even some old friends from the coalition days attended, including Glint, Voghiln, Mizhena and Thaird, to name a few. The evening after the ceremony, Schael gazed into the night sky and saw a glimmer in the heavens, and at that moment felt an indescribable outpouring of love and happiness... somehow, she knew that it was <CHARNAME> expressing her joy at seeing her marry Neoma.
+大约一年后，这对伴侣在公爵府的台阶上举行了婚礼。爱蒙、史姬以及<CHARNAME>的许多老冒险伙伴都到场见证了仪式。甚至一些联盟时期的老友也前来参加，包括但不限于格林特、沃格林、米珍娜和塞尔德等人。仪式后的那个夜晚，舍尔凝望夜空，看到天际有一丝微光闪烁，那一刻她感受到一股难以言喻的爱与幸福奔涌而出……不知何故，她知道那是<CHARNAME>在表达她看到她与纽玛结婚的喜悦。
 
-Schael stayed on with the Flaming Fist, eventually rising to the rank of Colonel before retiring to start her own archery academy. The academy quickly gained renown, and under her instruction and leadership it produced some of the finest sharpshooters that the Sword Coast had ever seen. Schael and Neoma proved inseparable, and they lived out their years in peace and contentment. The couple watched with delight as Rohma, and her children, grew up to become well-regarded leaders in their respective fields. 
+舍尔继续留在焰拳服役，最终晋升至上校军衔，之后退役创办了自己的箭术学院。该学院迅速声名鹊起，在她的指导和领导下，培养出了一些剑湾有史以来最杰出的神射手。舍尔与纽玛证明彼此不可分离，她们在宁静与满足中度过了余生。夫妇俩欣喜地看着罗玛，以及她的孩子们，成长为各自领域内备受尊敬的领袖。
 
-The happy family was never troubled by Beno or his associates ever again.~
-@5006 = ~Major Schael Corwin received a hero's welcome upon her return to Baldur's Gate. After the celebration, Neoma, her friend and on-again, off-again lover professed her love to her. Surprised, Schael initially rebuffed the idea of a romantic relationship, preferring instead to keep their relationship as it was. As time passed, Schael reflected more on her decision and realized that she did have feelings for Neoma, feelings that went beyond simple physical attraction. She decided to take a chance with Neoma, and to their mutual delight, their romance and love for one another blossomed. The couple were married about a year later, on the steps of the Ducal Palace. <CHARNAME>, Imoen, Skie, and many of her old adventuring companions were present to witness the ceremony. Even some old friends from the coalition days attended, including Glint, Voghiln, Mizhena and Thaird to name a few.
+这个幸福的家庭再也没有受到贝诺或其同伙的困扰。~
+@5006 = ~舍尔·科温上尉返回博德之门时受到了英雄般的欢迎。庆祝活动结束后，她的朋友兼分分合合的恋人纽玛向她吐露了爱意。舍尔起初感到惊讶，拒绝开始浪漫关系的想法，宁愿维持现状。随着时间的推移，舍尔反思了自己的决定，意识到她确实对纽玛怀有超越单纯肉体吸引的感情。她决定与纽玛尝试交往，令双方都欣喜的是，她们的浪漫与爱意绽放了。大约一年后，这对伴侣在公爵府的台阶上举行了婚礼。<CHARNAME>、爱蒙、史姬以及她许多老冒险伙伴都到场见证了仪式。甚至一些联盟时期的老友也前来参加，包括但不限于格林特、沃格林、米珍娜和塞尔德等人。
 
-With her adventuring days behind her, Corwin resumed her duties to the Flaming Fist, eventually rising to the rank of Colonel before retiring to start her own archery academy. The academy quickly gained renown, and under her instruction and leadership it produced some of the finest sharpshooters that the Sword Coast had ever seen. Corwin and Neoma proved inseparable, and the couple lived out their years in peace and contentment. Together, they raised Rohma and watched with delight as she, and her children, grew up to become well-regarded leaders in their respective fields. 
+冒险生涯结束后，科温恢复了在焰拳的职责，最终晋升至上校军衔，之后退役创办了自己的箭术学院。该学院迅速声名鹊起，在她的指导和领导下，培养出了一些剑湾有史以来最杰出的神射手。科温与纽玛证明彼此不可分离，这对伴侣在宁静与满足中度过了余生。他们共同抚养罗玛，并欣喜地看着她，以及她的孩子们，成长为各自领域内备受尊敬的领袖。
 
-The happy family was never troubled by Beno or his associates ever again.~
-@5007 = ~Major Schael Corwin received a hero's welcome upon her return to Baldur's Gate. After the celebration, Neoma, her friend and on-again, off-again lover professed her love to her. Surprised, Schael initially rebuffed the idea of a romantic relationship, preferring instead to keep their relationship as it was. As time passed, Schael reflected more on her decision and realized that she did have feelings for Neoma, feelings that went beyond simple physical attraction. She decided to take a chance with Neoma, and to their mutual delight, their romance and love for one another blossomed. The couple were married about a year later, on the steps of the Ducal Palace. Imoen, Skie, and many of her old adventuring companions were present to witness the ceremony. Even some old friends from the coalition days attended, including Glint, Voghiln, Mizhena and Thaird to name a few.
+这个幸福的家庭再也没有受到贝诺或其同伙的困扰。~
+@5007 = ~舍尔·科温上尉返回博德之门时受到了英雄般的欢迎。庆祝活动结束后，她的朋友兼分分合合的恋人纽玛向她吐露了爱意。舍尔起初感到惊讶，拒绝开始浪漫关系的想法，宁愿维持现状。随着时间的推移，舍尔反思了自己的决定，意识到她确实对纽玛怀有超越单纯肉体吸引的感情。她决定与纽玛尝试交往，令双方都欣喜的是，她们的浪漫与爱意绽放了。大约一年后，这对伴侣在公爵府的台阶上举行了婚礼。爱蒙、史姬以及她许多老冒险伙伴都到场见证了仪式。甚至一些联盟时期的老友也前来参加，包括但不限于格林特、沃格林、米珍娜和塞尔德等人。
 
-With her adventuring days behind her, Corwin resumed her duties to the Flaming Fist, eventually rising to the rank of Colonel before retiring to start her own archery academy. The academy quickly gained renown, and under her instruction and leadership it produced some of the finest sharpshooters that the Sword Coast had ever seen. Corwin and Neoma proved inseparable, and the couple lived out their years in peace and contentment. Together, they raised Rohma and watched with delight as she, and her children, grew up to become well-regarded leaders in their respective fields. 
+冒险生涯结束后，科温恢复了在焰拳的职责，最终晋升至上校军衔，之后退役创办了自己的箭术学院。该学院迅速声名鹊起，在她的指导和领导下，培养出了一些剑湾有史以来最杰出的神射手。科温与纽玛证明彼此不可分离，这对伴侣在宁静与满足中度过了余生。他们共同抚养罗玛，并欣喜地看着她，以及她的孩子们，成长为各自领域内备受尊敬的领袖。
 
-The happy family was never troubled by Beno or his associates ever again.~
-@5008 = ~The way back to the underground river has been blocked by tons of fallen rock, perhaps due to an explosion of some sort.~
+这个幸福的家庭再也没有受到贝诺或其同伙的困扰。~
+@5008 = ~返回地下河的道路已被数吨落石阻塞，或许是某种爆炸所致。~
 @5009 = ~
 当被问及她的过去时，凯拉讲述了一个在她脑海中重复了千百次的故事。作为一个孩子，凯拉·白银在半神血统带来的高期望下成长。她在紫苑骑士团的修道院长大，生活艰苦，因为凯拉喜怒无常的天性与紫苑骑士对纪律的奉献格格不入。她甚至在那时就相信，她注定要成就伟业。一天，她独自一人在图书馆，试图通过阅读一本禁忌知识的书籍来增强自己的力量。她无意中打开了一个通往魔鬼拜莱菲特领域的大门。凯拉的灵魂本应被献祭，但她的叔叔，奥恩·白银，向魔鬼王子提供了自己，并代替侄女被拉入了九层地狱。凯拉从未忘记他的牺牲。她发誓总有一天，无论如何，她会找到一种方法从阿弗纳斯的深渊中救出她的叔叔……她成功了，尽管代价巨大。你感觉到她在阿弗纳斯所遭受的痛苦已经改变了她，虽然你无法判断是变得更好还是更糟。你所能确定的，是她决心弥补自己那场命运多舛的圣战所带来的死亡与毁灭。~
-@5010 = ~Ahead, you can make out the legions of Avernus marching in formation across the blasted hellscape. To move forward will result in what is certain to be a painful and grisly demise.~
-@5011 = ~Lodob~
+@5010 = ~前方，你可以辨认出阿弗纳斯的军团正在荒芜地狱中列队行进。继续前进必将导致痛苦而可怖的死亡。~
+@5011 = ~罗多布~
 @5012 = ~火巨人斥候~
 @5013 = ~黎明使者博纳提乌斯~
 @5014 = ~哈姆扎~
@@ -1133,111 +1133,108 @@ The happy family was never troubled by Beno or his associates ever again.~
 @5018 = ~在离开阿弗纳斯之前，你协助凯拉收集了她剑与盔甲的残片。或许有巧手的铁匠能将这些碎片重新锻造，赋予它们新生，或者甚至修复它们。这也许是塞斯潘纳能够施展才华之处。~
 @5019 = ~携带这把武器便能感受到一股令人不安的气息。握在手中，仿佛能听到被囚禁灵魂的窃窃私语。匕首柄上的宝石似乎散发着内在的光芒，然而它那深邃黑暗的核心让人不解，这种光芒是如何存在的。
 
-这把匕首中，囚禁着科温少校前恋人贝诺·法马里的灵魂。曾有一群洛山达的牧师试图将他的灵魂恢复到他的躯体，却以失败告终。他们的计划——连同贝诺的躯体——在他们用匕首中困住的魔鬼灵魂复活尸体后，彻底破灭了。~
+这把匕首中，囚禁着科温少校前恋人贝诺·法玛里的灵魂。曾有一群洛山达的牧师试图将他的灵魂恢复到他的躯体，却以失败告终。他们的计划——连同贝诺的躯体——在他们用匕首中困住的魔鬼灵魂复活尸体后，彻底破灭了。~
 @5020 = ~启迪之拥~
 @5021 = ~这件魔法斗篷是凯拉·白银在她的圣战前夕，由她的一位亲信副手赠予。斗篷的丝线被附魔，随着穿戴者的行动而闪耀，创造出一种迷人的效果，使敌人难以锁定目标。
 
 统计数据：
 
 装备能力：
-– 防御等级：+1
-– 豁免检定：+1~
+–防御等级：+1
+–豁免检定：+1~
 @5024 = ~科温的弓+4~
-@5025 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+@5025 = ~这把魔法长弓能提高使用者的敏捷，使其射击更为精准。偶尔，射出的箭矢会炸裂成一阵木屑之雨，这些碎片会迅速生长并紧紧缠绕目标，令其无法逃脱。
 
-The bow was further enhanced by Flaming Fist mages to help then Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. 
+此弓后来经由焰拳法师的进一步强化，以帮助当时的舍尔·科温上尉更好地协助<CHARNAME>追捕巫师艾瑞尼卡斯。
 
-With the addition of the Bowstring of Gond, this weapon has reached its full potential. In the hands of an archer as talented as Corwin, it is capable of dealing death faster than anything you've ever seen. 
+在装备了贡德的弓弦后，这把武器终于发挥了其全部潜力。在科温这般技艺精湛的弓箭手手中，它夺取生命的速度超乎你的想象。
 
-Equipped abilities: 
-– Dexterity: +1
+装备能力：
+– 敏捷：+1
 
-Combat abilities: 
-– 22% chance per hit of entangling the target for 3 rounds (Save vs. Breath at -2 negates)
-– Extra half attack per round
+战斗能力：
+– 每次命中有22%几率缠绕目标3轮（通过难度-2的喷吐豁免检定则无效）
+– 每回合额外增加半次攻击
 
-STATISTICS:
+属性：
 
-THAC0: +5
-Damage: +6
-Speed Factor: 3
-Proficiency Type: Longbow
-Type: Two-handed
-Requires:
- 18 Strength
+零级命中值：+5
+伤害：+6
+使用速度：3
+熟练类型：长弓
+类型：双手武器
+需求：
+ 18 力量
 
-Weight: 9
-~
+重量：9~
 @5026 = ~科温的弓+5~
-@5027 = ~This enchanted bow enhances the wielder's dexterity, allowing them to fire more accurately. Every so often, a shot will explode into a shower of wooden splinters that sprout and grasp the target firmly, preventing any escape.
+@5027 = ~这把魔法长弓能提高使用者的敏捷，使其射击更为精准。偶尔，射出的箭矢会炸裂成一阵木屑之雨，这些碎片会迅速生长并紧紧缠绕目标，令其无法逃脱。
 
-The bow was further enhanced by Flaming Fist mages to help then Captain Schael Corwin better assist <CHARNAME> in the hunt for the wizard Irenicus. Additional enchantments to reduce the draw weight were placed on the weapon by the master bowyer of Suldanessellar, as a token of gratitude for saving the elven city. The reduced draw weight makes the weapon less physically taxing to use, resulting in improved power and accuracy.
+此弓后来经由焰拳法师的进一步强化，以帮助当时的舍尔·科温上尉更好地协助<CHARNAME>追捕巫师艾瑞尼卡斯。索丹尼斯拉的制弓大师为表达对拯救这座精灵城市的感激之情，对武器施加了额外的附魔以降低其拉弓所需的力量。降低拉弓力量使得使用这把武器对身体负担更小，从而提升了威力和精准度。
 
-With the addition of the Bowstring of Gond, this weapon has reached its full potential. In the hands of an archer as talented as Corwin, it is capable of dealing death faster than anything you've ever seen. 
+在装备了贡德的弓弦后，这把武器终于发挥了其全部潜力。在科温这般技艺精湛的弓箭手手中，它夺取生命的速度超乎你的想象。
 
-Equipped abilities: 
-– Dexterity: +1
+装备能力：
+– 敏捷：+1
 
-Combat abilities: 
-– 24% chance per hit of entangling the target for 3 rounds (Save vs. Breath at -2 negates)
-– Extra half attack per round
+战斗能力：
+– 每次命中有24%几率缠绕目标3轮（通过难度-2的喷吐豁免检定则无效）
+– 每回合额外增加半次攻击
 
-STATISTICS:
+属性：
 
-THAC0: +6
-Damage: +7
-Speed Factor: 2
-Proficiency Type: Longbow
-Type: Two-handed
-Requires:
- 18 Strength
+零级命中值：+6
+伤害：+7
+使用速度：2
+熟练类型：长弓
+类型：双手武器
+需求：
+ 18 力量
 
-Weight: 9
-~
-@5028 = ~Caelar~
-@5029 = ~[The Personal Diary of Sarevok]Diary
+重量：9~
+@5028 = ~凯拉~
+@5029 = ~[The Personal Diary of Sarevok]日记
 
-14th of Eleint, 1365: Today Cormyr has instituted a ban against the Iron Throne from operating within their borders. While this is a great blow to the Iron Throne, it is the perfect opportunity for Rieltar to approach the Throne high council with his proposal. If things go well, we could begin the operation within the year.
+1365年，落叶之月14日：今日科米尔王国已颁布禁令，禁止铁王座在其境内活动。这对铁王座虽是一记重击，却正是瑞塔向铁王座最高议会提出他计划的绝佳机会。若一切顺利，我们年内便可开始运作。
 
-25th of Marpenoth, 1365: Davaeorn has sent a message to Rieltar, informing him that the mine at Cloakwood has been drained and is ready for use. This revelation should help greatly in convincing the Throne high council.
+1365年，落叶之月25日：达瓦恩已传信给瑞塔，告知他斗篷森林的矿脉已经枯竭并准备启用。这一发现对说服最高议会应有极大助益。
 
-2nd of Nightal, 1365: The Iron Throne council has agreed to support Rieltar's plan. He has been given all the resources he needs, as well as leadership of the project. I have expressed interest to my "father," and he has promised to include me within the operations along the Sword Coast. He mentioned Mother in our conversation: how I wasn't to be unfaithful to him as she had. He made it clear that I would suffer her fate if I was. His threats are weak and hollow, and I shall listen to them for only so long. I have decided to take this time to make my visit to Candlekeep. I have waited a long time to research the prophecies of Alaundo, and I must know if the dreams speak the truth. I will not believe the words of phantoms without proof, and the priest of Bhaal I confronted gave me nothing. He was old and died quickly in my grasp. If the words are true, I shall surely groom stronger acolytes than this.
+1365年，冬之月2日：铁王座议会已同意支持瑞塔的计划。他获得了所需的一切资源，以及该项目的领导权。我已向我的“父亲”表达了兴趣，他承诺让我参与剑湾沿线的事务。他在谈话中提到了母亲：说我绝不能像她那样对他不忠。他明确表示，如果我那么做，就会遭受和她一样的命运。他的威胁软弱而空洞，我只能容忍它们一时。我已决定趁此时机前往烛堡。我为研究阿蓝多的预言已等待多时，我必须知道那些梦境所言是否属实。我不会毫无证据地相信幻影之言，而我遭遇的那个巴尔祭司什么也没给我。他年老体衰，在我手中很快便死去了。如果预言属实，我定要培养出比这更强的信徒。
 
-11th of Ches, 1366: My research has gone well. The monks here at Candlekeep have been quite helpful. From what I have read, it would seem certain that the blood of Bhaal does indeed flow through my veins. His prophecies are (of course) ambiguous, but I think I understand them. He foresaw his coming death, and seeded his essence across the land. The children born as a result bear the marks of chaos, have power with no direction, and shall feel the blood of a god within them. The deaths they bring shall awaken the father, and through them he will rise. It does not explicitly say, but obviously this means that death wrought by the children will cause them to ascend. Fitting, and since the father was the Lord of Murder, proving one's worth must involve an act in accordance with his portfolio. I begin to see what I must do. Death on a god-like scale.
+1366年，芽殖之月11日：我的研究进展顺利。烛堡的僧侣们帮了很大忙。从我所读到的来看，似乎可以肯定巴尔之血确实在我血管中流淌。他的预言（当然）是模棱两可的，但我想我理解了。他预见了自己的死亡，并将他的本质散布到这片土地上。因此诞生的孩子们带有混乱的印记，拥有无方向的力量，并将感受到体内神之血的存在。他们所造就的死亡将唤醒父亲，并通过他们，他将崛起。虽未明说，但显然这意味着由孩子们造成的死亡将使他们得以晋升。很恰当，既然父亲是谋杀之主，证明自己的价值必然需要符合其神职的行为。我开始明白我必须做什么了。神祇级别的死亡。
 
-3rd of Tarsakh, 1366: The monk Gorion troubles me. He seems to have taken an interest in my readings. I must be careful to be more clandestine in my research. I wish I could simply kill him, but I doubt I could safely murder him within this damnable library.
+1366年，嫩芽之月3日：那个叫葛立安的僧侣让我感到不安。他似乎对我的阅读内容产生了兴趣。我必须更隐秘地进行研究。真希望我能直接杀了他，但我怀疑能在这该死的图书馆里安然无恙地干掉他。
 
-11th of Tarsakh, 1366: I had a dream this night. My mother was talking to me, but as she did her face became bloated and discolored. Her voice became weaker as she spoke to me, telling me to save her from Rieltar. I could see the garrote cutting into her neck, but I did nothing. It was only a dream. 
+1366年，嫩芽之月11日：今夜我做了一个梦。我的母亲在对我说话，但说着说着她的脸就变得浮肿失色。她对我说话的声音越来越弱，叫我从瑞塔手中救救她。我能看到勒进她脖子的绞索，但我什么也没做。那只是个梦。
 
-27th of Tarsakh, 1366: I take my leave of Candlekeep now, and not a moment too soon, for I am sure that Gorion has perceived my heritage. One thing that I am certain of: <CHARNAME> is, in actuality, one of Bhaal's brood as well. <CHARNAME> has all the markings, and it would explain Gorion's curiosity in my studies. Though there is nothing I can do now, I will have to make certain to return and kill the little brat. It would be foolish of me to let one of my siblings live, especially one being brought up by the Harpers (and I am sure that is where Gorion's allegiances lie).
+1366年，嫩芽之月27日：我现在要离开烛堡了，一刻也不能耽搁，因为我确信葛立安已经察觉了我的身世。有一件事我可以肯定：<CHARNAME>实际上也是巴尔的子嗣之一。<CHARNAME>具备所有的特征，这也能解释葛立安为何对我的研究感到好奇。虽然我现在无能为力，但我必须确保日后回来杀掉那个小混蛋。让我的一个同胞兄弟姐妹活着是愚蠢的，尤其是一个由竖琴手养大的（我敢肯定葛立安就是站在他们那边的）。
 
-5th of Mirtul, 1366: Today I met with Rieltar in Baldur's Gate. The fool still insists on calling me his son, and for now I will let him. He assumes that I am loyal to him because he raised me. Well, loyal I am, but only as long as he is useful. He's set up a base in the mansion of a destitute noble family and says that everything is running smoothly. Mulahey has established himself at the mines of Nashkel, and his kobold minions should be already busily contaminating the iron ore. Only a few slaves have begun to mine out the ore at Cloakwood, though Rieltar assures me that once the bandit raids begin we'll have a steady supply of new slaves.
+1366年，花开之月5日：今日我在博德之门与瑞塔会面。那个蠢货仍坚持称我为他的儿子，目前我会随他去。他以为因为他养育了我，我就对他忠心耿耿。嗯，我是忠心，但仅限于他还有用的时候。他在一个破落贵族家族的宅邸里建立了基地，并表示一切运行顺利。穆塔hey已在那西凯矿场站稳脚跟，他的狗头人仆从应该已经在忙于污染铁矿石了。虽然只有少数奴隶开始在斗篷森林开采矿石，但瑞塔向我保证，一旦强盗袭击开始，我们就会有稳定的新奴隶供应。
 
-8th of Hammer, 1367: I met with the leaders of the Chill and Blacktalons. I have little liking for Ardenor, the leader of the Chill, but Taurgosz seems to be a man of his word. It is a good thing, as I'll have to work with these mercenaries for the rest of the year.
+1367年，锤击之月8日：我会见了寒冰和黑爪的首领。我不太喜欢寒冰的首领阿德诺，但陶尔戈兹似乎是个守信之人。这很好，因为今年剩下的时间我都得和这些雇佣兵一起工作。
 
-3rd of Tarsakh, 1368: Everything proceeds well. The ore coming from Nashkel has started to deteriorate, and my mercenaries have been doing a fine job of destroying any iron caravans on route to Baldur's Gate. Though some of my mercenaries have been captured, most think they work for the Zhents, so no trouble has fallen on the Iron Throne. I am sure that the Zhents at Darkhold won't be pleased to know that their name has been falsely used. I will have to be wary for Zhentish agents in the coming months.
+1368年，嫩芽之月3日：一切进展顺利。来自那西凯的矿石已经开始变质，我的雇佣兵在摧毁前往博德之门的铁矿石商队方面做得非常出色。虽然我的一些雇佣兵被抓了，但大多数人都认为他们是在为散塔林会工作，所以铁王座没有惹上麻烦。我敢说黑暗堡的散塔林会成员知道他们的名号被冒用一定不会高兴。未来几个月我必须提防散塔林会的探子。
 
-28th of Tarsakh, 1368: I think I now have the time to deal with that old codger Gorion, and his little whelp. I will have to inform my men that I'll be gone for the next few weeks.
+1368年，嫩芽之月28日：我想我现在有时间去处理那个老家伙葛立安和他的小崽子了。我得通知我的人，我接下来几周要离开。
 
-? of Mirtul
-No time to write, but I must not neglect my journals so. The future dead must know of how the Lord of Murder again came to them. I shall hire a scribe when time allows. Things have not gone completely as I have planned, but I will still be able to salvage the situation. <CHARNAME> is on the move to Baldur's Gate; if I could maneuver the whelp to Candlekeep, then I would have the perfect scapegoat for my plan. My mortal "father," Rieltar, is there to meet with the Knights of the Shield. He has been blocking all my attempts to escalate the hostilities between Amn and Baldur's Gate, and these meetings will only serve to smooth relations. I must rid myself of them all and assume control of the Iron Throne myself. I cannot allow petty business and monetary concerns to interfere. Terribly sorry, "Father," but my true parentage calls and you are in my way. I shall be sure to instruct the doppelgangers in the exact manner Rieltar should die. I think a garrote would be perfect for the task.
+花开之月？日
+没时间写东西，但我绝不能如此疏忽我的日记。未来的死者必须知道谋杀之主是如何再次降临到他们身上的。有空时我得雇个抄写员。事情进展并非完全如我计划，但我仍能挽回局面。<CHARNAME>正前往博德之门；如果我能把这小崽子引到烛堡，那我的计划就有了完美的替罪羊。我凡人的“父亲”瑞塔正在那里与盾之骑士会面。他一直阻挠我试图加剧安姆与博德之门之间敌对关系的所有努力，而这些会面只会缓和关系。我必须除掉他们所有人，自己掌控铁王座。我不能让琐碎的商业和金钱问题来干扰。非常抱歉，“父亲”，但我真正的血脉在召唤，而你挡了我的路。我定会详细指示变形怪瑞塔该如何死去。我觉得用绞索来完成这个任务再完美不过了。
 
-12th of Eleasis: The plan to frame <CHARNAME> for the murder of my mortal father has succeeded. My spies informed me that <PRO_HESHE> was apprehended attempting to escape through the catacombs beneath Candlekeep. Angelo has sent a party of Fist enforcers to fetch him and deliver him to me.
+暑热之月12日：陷害<CHARNAME>谋杀我凡人父亲的计划成功了。我的探子告知我，<PRO_HESHE>在试图通过烛堡地下墓穴逃跑时被抓住了。安其罗已派出一队焰拳执法者去抓<PRO_HIMHER>，并将其押送给我。
 
-26th of Eleasis: Dukes Silvershield and Eltan are dead; Silvershield died at the hands of the assassins Slythe and Krystin, and Eltan finally succumbed to the poison last evening. There are still those within the Fist that are loyal to him, and through they've yet to be rooted out, Angelo should have no difficulty marshaling the Fist for their eventual march upon Amn. I sense that Dukes Belt and Jannath suspect that my role in recent events is greater than what I've let on, but without evidence of wrongdoing they'll be unable to take any action. As for <CHARNAME>, my first official act as Grand Duke will be to preside over <PRO_HISHER> execution, scheduled for tomorrow morning.~
-@5030 = ~Diary of Sarevok~
+暑热之月26日：银盾公爵和伊尔坦公爵已死；银盾死于刺客斯莱斯和克里斯汀之手，而伊尔坦昨晚终于毒发身亡。焰拳内部仍有忠于他的人，虽然尚未根除，但安其罗在集结焰拳最终向安姆进军时应无困难。我感觉贝尔特公爵和詹纳斯公爵怀疑我在近期事件中扮演的角色比我透露的要重要，但没有不当行为的证据，他们也无法采取任何行动。至于<CHARNAME>，我作为大公的第一个正式行动将是主持定于明天早上进行的<PRO_HISHER>处决。~
+@5030 = ~沙洛佛克日记~
 @5031 = ~母鸡~
-@5032 = ~Saving the city of Baldur's Gate, ending the threat posed by Caelar Argent and her mad crusade, venturing into the first of the nine hells and emerging victorious ... not to mention defeating the deranged wizard Jon Irenicus and preserving the Tree of Life... such heroic accomplishments are mere footnotes in the epic tale of <CHARNAME>, greatest of the children of Bhaal!~
+@5032 = ~拯救博德之门，终结凯拉·白银和她的疯狂圣战带来的威胁，闯入九层地狱第一层并胜利归来……更不用说击败疯狂的巫师琼·艾瑞尼卡斯并守护了生命之树……如此英雄的成就，在<CHARNAME>——这位巴尔之子中最伟大者的史诗传奇中，都仅仅是小小注脚！~
 @5033 = ~紫苑之刃+5~
-@5034 = ~
-传说很久以前，一位强大的天使将这把剑赠予了紫苑骑士团的一名成员。传说的细节已经随着时间的流逝而丢失，但许多人认为这把剑是杀死一个可怕的魔鬼，甚至可能是一只巴洛魔的奖赏。剑刃上装饰着精致的紫苑花蚀刻。
+@5034 = ~传说很久以前，一位强大的天使将这把剑赠予了紫苑骑士团的一名成员。传说的细节已经随着时间的流逝而丢失，但许多人认为这把剑是杀死一个可怕的魔鬼，甚至可能是一只巴洛魔的奖赏。剑刃上装饰着精致的紫苑花蚀刻。
 
 由于剑柄上镶嵌着提尔之眼，这把华丽武器的力量现在与其美貌相得益彰。拔出剑刃时，这把增强的剑刃会发出超凡脱俗的光芒，象征着它的神圣力量。
 
 统计数据：
 
 装备能力：
-– 魔法抗力：+35%
+–魔法抗力：+35%
 
 零级命中值：+5
 伤害：1d8+5，对邪魔额外+4
@@ -1314,567 +1311,566 @@ No time to write, but I must not neglect my journals so. The future dead must kn
 @10061 = ~这部分围栏看起来似乎最近才经过整修。~
 @10062 = ~这里很高……掉下去可能很痛！~
 @10063 = ~沙洛佛克~
-@10064 = ~你难逃一死。~
-@10065 = ~尽管逃吧。逃的了一时，逃不了一世！~
-@10066 = ~只有最强者才能生存！~
-@10067 = ~ The streets will run red with blood when my work is finished!~
-@10068 = ~~
-@10069 = ~~
-@10070 = ~ Heh. I do not fear death. Do you?~
-@10071 = ~ Killing is our father's work! Embrace it as I have.~
-@10072 = ~面对我！面对新的谋杀之王！~
-@10073 = ~~
-@10074 = ~~
+@10064 = ~你难逃一死。~[xaa10025]
+@10065 = ~尽管逃吧。逃的了一时，逃不了一世！~[xaa10026]
+@10066 = ~只有最强者才能生存！~[xaa10028]
+@10067 = ~待我功成之日，街道必将血流成河！~[xaa10029]
+@10068 = ~ ~[xaa10030]
+@10069 = ~ ~[xaa10031]
+@10070 = ~嘿。我可不怕死。你呢？~[xaa10032]
+@10071 = ~杀戮本是父亲的行当！像我一样拥抱它吧。~[xaa10033]
+@10072 = ~面对我！面对新的谋杀之王！~[xaa10036]
+@10073 = ~~[xaa10032]
+@10074 = ~~[xaa10033]
 @10075 = ~焰拳佣兵~
-@10076 = ~我是焰拳的成员！~
-@10077 = ~我就是法律！~
-@10078 = ~~
-@10079 = ~~
-@10080 = ~所有的罪都应该受到惩罚！~
-@10081 = ~喂！给我作五十个扶地挺身！~
+@10076 = ~我是焰拳的成员！~[xaa10039]
+@10077 = ~我就是法律！~[xaa10040]
+@10078 = ~~[xaa10041]
+@10079 = ~~[xaa10042]
+@10080 = ~所有的罪都应该受到惩罚！~[xaa10044]
+@10081 = ~喂！给我作五十个扶地挺身！~[xaa10045]
 @10082 = ~你在这边不受欢迎！~
 @10083 = ~鸡~
-@10084 = ~~
-@10085 = ~咕咯嘎呱~
-@10086 = ~咕咕咯咯~
-@10087 = ~ There ain't nobody here but us chickens.~
-@10088 = ~~
+@10084 = ~~[xaa10046]
+@10085 = ~咕咯嘎呱~[xaa10047]
+@10086 = ~咕咕咯咯~[xaa10046]
+@10087 = ~这儿除了咱们这些小鸡仔，啥人都没有。~
+@10088 = ~~[xaa10047]
 @10089 = ~瑟玛吉~
-@10090 = ~在我的魔法神威之前低头吧！~
-@10091 = ~~
-@10092 = ~~
+@10090 = ~在我的魔法神威之前低头吧！~[xaa10094]
+@10091 = ~~[xaa10095]
+@10092 = ~~[xaa10096]
 @10093 = ~蝙蝠~
-@10094 = ~~
-@10095 = ~~
-@10096 = ~~
-@10097 = ~~
-@10098 = ~~
+@10094 = ~~[xaa10098]
+@10095 = ~~[xaa10099]
+@10096 = ~~[xaa10100]
+@10097 = ~~[xaa10101]
+@10098 = ~~[xaa10102]
 @10099 = ~平民~
-@10100 = ~嘿，朋友！真高兴可以遇到像你这样的好人。~
-@10101 = ~~
-@10102 = ~~
-@10103 = ~ Bugger off! It'll be a blade fer your backside, elsewise!~
-@10104 = ~~
-@10105 = ~~
-@10106 = ~~
-@10107 = ~~
-@10108 = ~~
-@10109 = ~你好。~
-@10110 = ~~
-@10111 = ~~
-@10112 = ~你这个家伙可真长舌，是啊？~
-@10113 = ~向您致意。~
-@10114 = ~~
-@10115 = ~~
+@10100 = ~嘿，朋友！真高兴可以遇到像你这样的好人。~[xaa10106]
+@10101 = ~~[xaa10107]
+@10102 = ~~[xaa10108]
+@10103 = ~滚开！不然叫你吃刀子！~[xaa10110]
+@10104 = ~~[xaa10111]
+@10105 = ~~[xaa10112]
+@10106 = ~~[xaa10113]
+@10107 = ~~[xaa10114]
+@10108 = ~~[xaa10115]
+@10109 = ~你好。~[xaa10116]
+@10110 = ~~[xaa10117]
+@10111 = ~~[xaa10118]
+@10112 = ~你这个家伙可真长舌，是啊？~[xaa10120]
+@10113 = ~向您致意。~[xaa10124]
+@10114 = ~~[xaa10125]
+@10115 = ~~[xaa10126]
 @10116 = ~滚开我身边！~
-@10117 = ~你好。~
-@10118 = ~嗯？~
-@10119 = ~~
-@10120 = ~我老公不准我和陌生人讲话。~
-@10121 = ~您需要什么？~
-@10122 = ~ 'Ello, pal.~
-@10123 = ~我孩子还在等哩。~
-@10124 = ~有什么事？~
-@10125 = ~你好啊。~
-@10126 = ~~
+@10117 = ~你好。~[xaa10128]
+@10118 = ~嗯？~[xaa10132]
+@10119 = ~~[xaa10132]
+@10120 = ~我老公不准我和陌生人讲话。~[xaa10137]
+@10121 = ~您需要什么？~[xaa10141]
+@10122 = ~嘿，老兄。~[xaa10145]
+@10123 = ~我孩子还在等哩。~[xaa10149]
+@10124 = ~有什么事？~[xaa10153]
+@10125 = ~你好啊。~[xaa10157]
+@10126 = ~~[xaa10157]
 @10127 = ~高级娼妓~
-@10128 = ~我是个漂亮的妓女，是不是啊？~
-@10129 = ~~
-@10130 = ~~
+@10128 = ~我是个漂亮的妓女，是不是啊？~[xaa10162]
+@10129 = ~~[xaa10163]
+@10130 = ~~[xaa10164]
 @10131 = ~我没啥可以帮你的。~
-@10132 = ~~
-@10133 = ~不管你想要怎么玩，都请先付钱。~
-@10134 = ~亲爱的，你想要来点紧张刺激的吗？~
+@10132 = ~~[xaa10162]
+@10133 = ~不管你想要怎么玩，都请先付钱。~[xaa10167]
+@10134 = ~亲爱的，你想要来点紧张刺激的吗？~[xaa10171]
 @10135 = ~睡着的女人~
-@10136 = ~~
-@10137 = ~~
-@10138 = ~ZZZzzzzzz……~
-@10139 = ~ZZZzzzzz……说梦话~
-@10140 = ~ZZZzzzzz……~
-@10141 = ~~
-@10142 = ~嗯？~
-@10143 = ~~
-@10144 = ~~
-@10145 = ~唷，你们可真帅啊！~
-@10146 = ~嗯？~
-@10147 = ~你要说什么？~
-@10148 = ~有什么我可以帮忙的吗？~
-@10149 = ~~
-@10150 = ~嗨，朋友。~
+@10136 = ~~[xaa10175]
+@10137 = ~~[xaa10176]
+@10138 = ~ZZZzzzzzz……~[xaa10177]
+@10139 = ~ZZZzzzzz……说梦话~[xaa10178]
+@10140 = ~ZZZzzzzz……~[xaa10177]
+@10141 = ~~[xaa10177]
+@10142 = ~嗯？~[xaa10111]
+@10143 = ~~[xaa10185]
+@10144 = ~~[xaa10189]
+@10145 = ~唷，你们可真帅啊！~[xaa10190]
+@10146 = ~嗯？~[xaa10112]
+@10147 = ~你要说什么？~[xaa10198]
+@10148 = ~有什么我可以帮忙的吗？~[xaa10202]
+@10149 = ~~[xaa10210]
+@10150 = ~嗨，朋友。~[xaa10211]
 @10151 = ~男孩~
-@10152 = ~你看起来好好笑。~
-@10153 = ~~
-@10154 = ~~
+@10152 = ~你看起来好好笑。~[xaa10215]
+@10153 = ~~[xaa10216]
+@10154 = ~~[xaa10217]
 @10155 = ~离我远一点！你这个坏人！~
-@10156 = ~失败者，失败者，失败者！~
-@10157 = ~需要些什么吗，陌生人？~
+@10156 = ~失败者，失败者，失败者！~[xaa10219]
+@10157 = ~需要些什么吗，陌生人？~[xaa10113]
 @10158 = ~乞丐~
-@10159 = ~施舍穷人一点钱吧？~
-@10160 = ~~
-@10161 = ~~
-@10162 = ~我没有值钱的东西，请……请饶了我。~
-@10163 = ~我的肺，里面全部都是灰尘，该死。~
-@10164 = ~可怜的流浪儿。~
+@10159 = ~施舍穷人一点钱吧？~[xaa10227]
+@10160 = ~~[xaa10228]
+@10161 = ~~[xaa10229]
+@10162 = ~我没有值钱的东西，请……请饶了我。~[xaa10230]
+@10163 = ~我的肺，里面全部都是灰尘，该死。~[xaa10232]
+@10164 = ~可怜的流浪儿。~[xaa10233]
 @10165 = ~你在这里已没有朋友！快走开！~
-@10166 = ~我老婆最近对我很挑剔。~
+@10166 = ~我老婆最近对我很挑剔。~[xaa10185]
 @10167 = ~米克·费赖~
 @10168 = ~贵族~
-@10169 = ~您好！真高兴可以认识这么有教养的人。~
-@10170 = ~~
-@10171 = ~~
+@10169 = ~您好！真高兴可以认识这么有教养的人。~[xaa10263]
+@10170 = ~~[xaa10264]
+@10171 = ~~[xaa10265]
 @10172 = ~别靠近我！否则我就要对你不客气！~
 @10173 = ~骷髅战士~
-@10174 = ~死……~
-@10175 = ~~
-@10176 = ~~
-@10177 = ~~
-@10178 = ~~
-@10179 = ~~
-@10180 = ~~
-@10181 = ~~
-@10182 = ~~
-@10183 = ~~
-@10184 = ~ You wanna fight me? Come on, you wanna fight?~
+@10174 = ~死……~[xaa10396]
+@10175 = ~ ~[xaa10397]
+@10176 = ~ ~[xaa10398]
+@10177 = ~ ~[xaa10399]
+@10178 = ~ ~[xaa10400]
+@10179 = ~ ~[xaa10401]
+@10180 = ~ ~[xaa10402]
+@10181 = ~~[xaa10403]
+@10182 = ~ ~[xaa10404]
+@10183 = ~~[xaa10276]
+@10184 = ~你想跟我打架？来啊，你想打架吗？~[xaa10441]
 @10185 = ~女孩~
-@10186 = ~我要找妈咪。~
-@10187 = ~~
-@10188 = ~~
-@10189 = ~罗山达~
-@10190 = ~请稍等，在你攻击之前请让我先说几句话。~
-@10191 = ~我的人生毁了。~
-@10192 = ~~
-@10193 = ~~
-@10194 = ~ Hmm... Bother 'n bother! Never a calm spot, never a break.~
-@10195 = ~~
-@10196 = ~~
+@10186 = ~我要找妈咪。~[xaa10445]
+@10187 = ~~[xaa10446]
+@10188 = ~~[xaa10447]
+@10189 = ~洛山达~
+@10190 = ~请稍等，在你攻击之前请让我先说几句话。~[xaa10453]
+@10191 = ~我的人生毁了。~[xaa10454]
+@10192 = ~~[xaa10455]
+@10193 = ~~[xaa10456]
+@10194 = ~唉……真是烦死了！从来不得安宁，一刻也歇不了。~[xaa10458]
+@10195 = ~~[xaa10459]
+@10196 = ~~[xaa10460]
 @10197 = ~贝蕾芭拿~
-@10198 = ~ Wait! I—I must speak with thee.~
-@10199 = ~~
-@10200 = ~~
-@10201 = ~ My poor, dear Namara. I hope she fares well.~
+@10198 = ~等等！我——我必须和汝谈一谈。~[xaa10462]
+@10199 = ~~[xaa10463]
+@10200 = ~~[xaa10464]
+@10201 = ~我可怜亲爱的娜玛拉……希望她一切安好。~[xaa10465]
 @10202 = ~你做了这些坏事，我不要再跟你说话了！~
 @10203 = ~我得再次谢谢你们，感谢你们的协助。~
-@10204 = ~你好吗？~
-@10205 = ~我的娃娃不见了。~
-@10206 = ~~
-@10207 = ~*啜泣*~
-@10208 = ~ Ooh, you smell!~
+@10204 = ~你好吗？~[xaa10506]
+@10205 = ~我的娃娃不见了。~[xaa10510]
+@10206 = ~~[xaa10275]
+@10207 = ~*啜泣*~[xaa10515]
+@10208 = ~哦，你有味道！~[xaa10519]
 @10209 = ~凯勒朱斯~
-@10210 = ~朋友，很高兴见到你。~
+@10210 = ~朋友，很高兴见到你。~[xaa10523]
 @10211 = ~凯辛~
-@10212 = ~喂，别挡路，你这个下流醉鬼。~
-@10213 = ~我有很多事情要作，愣在这里和你聊天可不包含在其中。~
+@10212 = ~喂，别挡路，你这个下流醉鬼。~[xaa10530]
+@10213 = ~我有很多事情要作，愣在这里和你聊天可不包含在其中。~[xaa10532]
 @10214 = ~女贵族~
-@10215 = ~~
-@10216 = ~~
+@10215 = ~~[xaa10628]
+@10216 = ~~[xaa10629]
 @10217 = ~你不要靠近我！~
-@10218 = ~不要啰唆，死农民，你可知道我是什么人？~
-@10219 = ~别碰我……你真脏。~
-@10220 = ~~
-@10221 = ~~
-@10222 = ~除非高阶者先开口，否则下位者不应该和对方主动攀谈。~
-@10223 = ~~
-@10224 = ~~
-@10225 = ~什么？~
-@10226 = ~~
-@10227 = ~没时间闲聊。~
-@10228 = ~真高兴能够遇见像你这种受过社会规范洗礼的人。~
-@10229 = ~你最好找个新裁缝，你穿的衣服真是糟糕透了。~
-@10230 = ~妈妈说不要和陌生人讲话。~
+@10218 = ~不要啰唆，死农民，你可知道我是什么人？~[xaa10635]
+@10219 = ~别碰我……你真脏。~[xaa10639]
+@10220 = ~~[xaa10640]
+@10221 = ~~[xaa10641]
+@10222 = ~除非高阶者先开口，否则下位者不应该和对方主动攀谈。~[xaa10643]
+@10223 = ~~[xaa10644]
+@10224 = ~~[xaa10645]
+@10225 = ~什么？~[xaa10647]
+@10226 = ~~[xaa10647]
+@10227 = ~没时间闲聊。~[xaa10652]
+@10228 = ~真高兴能够遇见像你这种受过社会规范洗礼的人。~[xaa10656]
+@10229 = ~你最好找个新裁缝，你穿的衣服真是糟糕透了。~[xaa10660]
+@10230 = ~妈妈说不要和陌生人讲话。~[xaa10664]
 @10231 = ~盗贼~
-@10232 = ~真抱歉，看来你得下地狱去约会了。~
-@10233 = ~~
-@10234 = ~~
-@10235 = ~诶，朋友？~
+@10232 = ~真抱歉，看来你得下地狱去约会了。~[xaa10717]
+@10233 = ~~[xaa10718]
+@10234 = ~~[xaa10719]
+@10235 = ~诶，朋友？~[xaa10189]
 @10236 = ~酒保~
-@10237 = ~要来点威士忌吗？~
-@10238 = ~~
-@10239 = ~~
-@10240 = ~我有便宜的啤酒可以给你。~
-@10241 = ~我不应该老是喝自己的酒。~
-@10242 = ~我的女侍很漂亮，对吧？~
+@10237 = ~要来点威士忌吗？~[xaa10727]
+@10238 = ~~[xaa10728]
+@10239 = ~~[xaa10729]
+@10240 = ~我有便宜的啤酒可以给你。~[xaa10731]
+@10241 = ~我不应该老是喝自己的酒。~[xaa10732]
+@10242 = ~我的女侍很漂亮，对吧？~[xaa10733]
 @10243 = ~奥都林南~
 @10244 = ~哈巴瑟·德林~
 @10245 = ~玛尔兹~
-@10246 = ~欢迎来到小店。~
-@10247 = ~~
-@10248 = ~~
+@10246 = ~欢迎来到小店。~[xaa10751]
+@10247 = ~~[xaa10752]
+@10248 = ~~[xaa10753]
 @10249 = ~阿肯恩~
-@10250 = ~有话快讲，快讲！~
+@10250 = ~有话快讲，快讲！~[xaa10115]
 @10251 = ~滚开我的面前！我不会再帮你任何事情！~
 @10252 = ~女侍~
-@10253 = ~ Please, seat yourselves wherever you wish.~
-@10254 = ~~
-@10255 = ~~
+@10253 = ~请随意就座。~[xaa10765]
+@10254 = ~~[xaa10766]
+@10255 = ~~[xaa10767]
 @10256 = ~滚开，你这个下流胚子！~
 @10257 = ~你要是敢再碰我一下，我就把你的手给剁了！要点东西到吧台去！~
 @10258 = ~贝佛力克~
-@10259 = ~ HELLO! SHHH... um... I mean... hello. *chuckle*~
-@10260 = ~~
-@10261 = ~~
-@10262 = ~闪耀的不见得是黄金，但是黄金都会闪耀。~
-@10263 = ~ Talking to you ain't worth the risk, no, <SIRMAAM>. Go away... please?~
+@10259 = ~你好！嘘……呃……我是说……你好。*轻笑*~[xaa10769]
+@10260 = ~~[xaa10770]
+@10261 = ~~[xaa10771]
+@10262 = ~闪耀的不见得是黄金，但是黄金都会闪耀。~[xaa10772]
+@10263 = ~跟您说话风险太大，<SIRMAAM>，不划算。走开……求你了？~
 @10264 = ~寇特努斯~
-@10265 = ~要干嘛？~
+@10265 = ~要干嘛？~[xaa10773]
 @10266 = ~厨师~
 @10267 = ~喂！不要进来！我可不想要看见你们这些家伙老是在我的厨房里跑来跑去！哎，我真希望能够在那种不会有啤酒和血液四溅的地方工作。~
 @10268 = ~沉默~
-@10269 = ~你选择当朋友还是选择死？~
-@10270 = ~~
-@10271 = ~~
-@10272 = ~我该说话的时候就会说话，不要费心。~
+@10269 = ~你选择当朋友还是选择死？~[xaa10788]
+@10270 = ~~[xaa10789]
+@10271 = ~~[xaa10790]
+@10272 = ~我该说话的时候就会说话，不要费心。~[xaa10791]
 @10273 = ~幸运艾罗的店~
-@10274 = ~我的价格是深水城以南最合理的。~
+@10274 = ~我的价格是深水城以南最合理的。~[xaa10798]
 @10275 = ~老鼠~
-@10276 = ~~
-@10277 = ~~
-@10278 = ~~
-@10279 = ~~
-@10280 = ~~
+@10276 = ~~[xaa10802]
+@10277 = ~吱吱~[xaa10803]
+@10278 = ~吱吱~[xaa10804]
+@10279 = ~~[xaa10803]
+@10280 = ~~[xaa10804]
 @10281 = ~贾西儿~
-@10282 = ~这是你自找的，咱们走着瞧。~
-@10283 = ~~
-@10284 = ~~
+@10282 = ~这是你自找的，咱们走着瞧。~[xaa10865]
+@10283 = ~~[xaa10867]
+@10284 = ~~[xaa10868]
 @10285 = ~店主~
-@10286 = ~由于铁矿短缺导致经济不景气，最近生意很差。~
-@10287 = ~顾客永远是对的。~
+@10286 = ~由于铁矿短缺导致经济不景气，最近生意很差。~[xaa10873]
+@10287 = ~顾客永远是对的。~[xaa10874]
 @10288 = ~滚出去！永远都不要再踏进我的房门！~
 @10289 = ~又是你。以安柏丽之名，我实在不能够再忍受你不断的打搅，给我滚出去，不要再进来！~
 @10290 = ~兰妲娜拉~
 @10291 = ~路雪琳~
-@10292 = ~嘻，嘻，嘻……嗝～。~
-@10293 = ~哇，为什么……街道一直晃来晃去。~
-@10294 = ~~
-@10295 = ~~
-@10296 = ~玉米？我什么时候吃了玉米……？~
-@10297 = ~~
+@10292 = ~嘻，嘻，嘻……嗝～。~[xaa10210]
+@10293 = ~哇，为什么……街道一直晃来晃去。~[xaa10885]
+@10294 = ~~[xaa10886]
+@10295 = ~~[xaa10887]
+@10296 = ~玉米？我什么时候吃了玉米……？~[xaa10889]
+@10297 = ~~[xaa10890]
 @10298 = ~薇薇安~
-@10299 = ~嗨！你看起来很顺眼。~
+@10299 = ~嗨！你看起来很顺眼。~[xaa10902]
 @10300 = ~拉兹~
-@10301 = ~~
-@10302 = ~我要打烂你，把你打烂！~
-@10303 = ~~
-@10304 = ~~
-@10305 = ~~
-@10306 = ~~
+@10301 = ~~[xaa10906]
+@10302 = ~我要打烂你，把你打烂！~[xaa10907]
+@10303 = ~ ~[xaa10908]
+@10304 = ~ ~[xaa10909]
+@10305 = ~ ~[xaa10911]
+@10306 = ~~[xaa10912]
 @10307 = ~柏克~
-@10308 = ~你需要什么吗？~
-@10309 = ~~
+@10308 = ~你需要什么吗？~[xaa10926]
+@10309 = ~~[xaa10926]
 @10310 = ~罗德南~
-@10311 = ~ I've no interest in speaking to the likes of you.~
-@10312 = ~再来点酒－嗝－~
+@10311 = ~ 我没兴趣跟你这种人说话。 ~[xaa10975]
+@10312 = ~再来点酒——嗝－~[xaa10890]
 @10313 = ~守卫~
-@10314 = ~嘿啊~
+@10314 = ~嘿啊~[xaa11025]
 @10315 = ~这里不欢迎你！你去死吧！~
 @10316 = ~商人~
-@10317 = ~我所有的货品全都是真的，真的是真的。~
-@10318 = ~~
-@10319 = ~~
+@10317 = ~我所有的货品全都是真的，真的是真的。~[xaa11029]
+@10318 = ~~[xaa11030]
+@10319 = ~~[xaa11031]
 @10320 = ~特来多尔~
 @10321 = ~你已经不受欢迎了！~
 @10322 = ~不要到处打搅用餐的人，小心被打！~
-@10323 = ~~
-@10324 = ~~
-@10325 = ~真高兴见到你。~
+@10323 = ~~[xaa10530]
+@10324 = ~~[xaa10110]
+@10325 = ~真高兴见到你。~[xaa11050]
 @10326 = ~安博里的女牧师~
-@10327 = ~暴风将会卷走那些不虔诚的人。~
-@10328 = ~~
-@10329 = ~~
+@10327 = ~暴风将会卷走那些不虔诚的人。~[xaa11054]
+@10328 = ~~[xaa11055]
+@10329 = ~~[xaa11056]
 @10330 = ~你已经不受欢迎了！~
-@10331 = ~婊后绝不容忍冒犯。~
-@10332 = ~你的狗命对我来说根本不算什么。~
+@10331 = ~婊后绝不容忍冒犯。~[xaa11058]
+@10332 = ~你的狗命对我来说根本不算什么。~[xaa11059]
 @10333 = ~港务总管~
-@10334 = ~坏日子要来了，我可以看得出来。~
-@10335 = ~~
-@10336 = ~~
-@10337 = ~你实在是此地难得一见的陌生人。~
+@10334 = ~坏日子要来了，我可以看得出来。~[xaa11063]
+@10335 = ~~[xaa11064]
+@10336 = ~~[xaa11065]
+@10337 = ~你实在是此地难得一见的陌生人。~[xaa11066]
 @10338 = ~你在这里已没有朋友！快走开！~
 @10339 = ~我现在非常忙，所以请你晚点再回来。~
 @10340 = ~你们不应该在这边出现，你们可能会让人注意到伊尔坦公爵。~
 @10341 = ~水手艾尔~
 @10342 = ~水手丹恩~
 @10343 = ~水手芬奇~
-@10344 = ~~
+@10344 = ~~[xaa10889]
 @10345 = ~水手乔斯~
-@10346 = ~ *hic* I think I h-had too much to drink.~
-@10347 = ~~
+@10346 = ~*嗝*……我觉得我喝-喝多了。~[xaa11081]
+@10347 = ~~[xaa11081]
 @10348 = ~水手尼德~
 @10349 = ~水手纽夫~
-@10350 = ~~
+@10350 = ~~[xaa10885]
 @10351 = ~柯达~
-@10352 = ~~
-@10353 = ~~
+@10352 = ~~[xaa11104]
+@10353 = ~~[xaa11105]
 @10354 = ~尼维克~
-@10355 = ~ Raaagh! Help!~
-@10356 = ~别碰我！我搞不好会被传染什么病。~
+@10355 = ~哇啊！救命啊！~[xaa11108]
+@10356 = ~别碰我！我搞不好会被传染什么病。~[xaa11117]
 @10357 = ~我不想失了礼数，但是我希望你能够立刻离开。~
 @10358 = ~你又来了？我不是不想欢迎你，虽然卡尔和乔根可能会让你这样觉得。重点是不要待太久，因为我很讨厌待太久的客人。~
-@10359 = ~ Hope ye're havin' a great evening. I sure am.~
 @10360 = ~罗巴~
-@10361 = ~~
+@10361 = ~~[xaa11126]
 @10362 = ~我相信一切都还满意吧？要是有不满意的地方，请不要迟疑，随时都可以离开。~
 @10363 = ~你好，又见面了。是啊，见到你在这儿真好。~
 @10364 = ~赌场人员~
-@10365 = ~ Ye're a lucky fella, aren't ya?~
-@10366 = ~~
-@10367 = ~~
-@10368 = ~~
+@10365 = ~你这家伙可真走运，对吧？~[xaa11129]
+@10366 = ~~[xaa11130]
+@10367 = ~~[xaa11131]
+@10368 = ~~[xaa11129]
 @10369 = ~下水道清道夫~
-@10370 = ~~
-@10371 = ~~
+@10370 = ~~[xaa11146]
+@10371 = ~~[xaa11147]
 @10372 = ~我真希望你被怪物抓走！~
-@10373 = ~~
-@10374 = ~~
-@10375 = ~~
-@10376 = ~~
+@10373 = ~~[xaa11149]
+@10374 = ~~[xaa11150]
+@10375 = ~~[xaa11151]
+@10376 = ~~[xaa11152]
 @10377 = ~海鸥~
-@10378 = ~~
+@10378 = ~~[xaa10293]
 @10379 = ~睡着的男人~
-@10380 = ~ZZZZzzzzz……打鼾~
-@10381 = ~ ZZZZzzzzzz...~
-@10382 = ~ZZZZzzzzzzz~
-@10383 = ~~
+@10380 = ~呼呼呼……*打鼾*~[xaa11167]
+@10381 = ~呼呼呼……~[xaa11168]
+@10382 = ~呼呼呼~[xaa11168]
+@10383 = ~~[xaa11168]
 @10384 = ~当恩~
-@10385 = ~我爱钱，我真的很爱钱！~
-@10386 = ~ I've got the best prices this side of Cormyr.~
+@10385 = ~我爱钱，我真的很爱钱！~[xaa11171]
+@10386 = ~我这里的价格是科米尔这一带最公道的。~[xaa11174]
 @10387 = ~法希·罗洪~
-@10388 = ~对……对不起，您可以听我说几句话吗？~
-@10389 = ~~
-@10390 = ~~
-@10391 = ~求求你帮个忙，性命攸关哪！~
+@10388 = ~对……对不起，您可以听我说几句话吗？~[xaa11176]
+@10389 = ~~[xaa11177]
+@10390 = ~~[xaa11178]
+@10391 = ~求求你帮个忙，性命攸关哪！~[xaa11179]
 @10392 = ~疯鸡~
 @10393 = ~费伦诺·基思特~
-@10394 = ~乞丐快滚。~
+@10394 = ~乞丐快滚。~[xaa11204]
 @10395 = ~雕像~
-@10396 = ~ Leave us alone, will you? Nothin' for you here.~
-@10397 = ~什么！喔，真……真抱歉，我不该吼的。~
-@10398 = ~~
-@10399 = ~~
-@10400 = ~~
-@10401 = ~~
+@10396 = ~让我们清静点，行吗？这儿没你的事。~[xaa11211]
+@10397 = ~什么！喔，真……真抱歉，我不该吼的。~[xaa11212]
+@10398 = ~~[xaa11213]
+@10399 = ~~[xaa11214]
+@10400 = ~~[xaa11221]
+@10401 = ~~[xaa11222]
 @10402 = ~预言师~
-@10403 = ~善用知识，它将是最有力的工具。~
-@10404 = ~~
-@10405 = ~~
-@10406 = ~ Come on! Be a man. See if fortune smiles on ya!~
-@10407 = ~~
-@10408 = ~进来的时候穷，出去的时候富！~
-@10409 = ~~
-@10410 = ~和幸运女神太摩拉赌一把吧！~
+@10403 = ~善用知识，它将是最有力的工具。~[xaa11228]
+@10404 = ~~[xaa11229]
+@10405 = ~~[xaa11230]
+@10406 = ~来吧！像个男子汉！试试你的运气如何！~[xaa11237]
+@10407 = ~~[xaa11237]
+@10408 = ~进来的时候穷，出去的时候富！~[xaa11242]
+@10409 = ~~[xaa11242]
+@10410 = ~和幸运女神太摩拉赌一把吧！~[xaa11247]
 @10411 = ~娜汀~
-@10412 = ~达理拉会引导回家的人找到路。~
-@10413 = ~~
-@10414 = ~~
-@10415 = ~愿你能享受火炉的温暖与家的快乐。~
+@10412 = ~达理拉会引导回家的人找到路。~[xaa11251]
+@10413 = ~~[xaa11252]
+@10414 = ~~[xaa11253]
+@10415 = ~愿你能享受火炉的温暖与家的快乐。~[xaa11255]
 @10416 = ~霍山~
-@10417 = ~ Greetingshh, fellow rogues. *hic*~
-@10418 = ~对方人太多啦，撤退！~
-@10419 = ~影贼向各位致意。~
-@10420 = ~~
-@10421 = ~~
-@10422 = ~~
-@10423 = ~有一天，我会复仇。哈哈－嗝——嗝－~
+@10417 = ~问候啊啊，盗贼哥们儿。*嗝*~[xaa11264]
+@10418 = ~对方人太多啦，撤退！~[xaa11265]
+@10419 = ~影贼向各位致意。~[xaa11266]
+@10420 = ~~[xaa11267]
+@10421 = ~~[xaa11268]
+@10422 = ~~[xaa11270]
+@10423 = ~有一天，我会复仇。哈哈－嗝——嗝－~[xaa11271]
 @10424 = ~利沙尔~
-@10425 = ~真抱歉，但是你们必须死！~
-@10426 = ~我才不听你讲话！你的生命即将结束在我手中！~
-@10427 = ~~
-@10428 = ~~
+@10425 = ~真抱歉，但是你们必须死！~[xaa11272]
+@10426 = ~我才不听你讲话！你的生命即将结束在我手中！~[xaa11273]
+@10427 = ~~[xaa11274]
+@10428 = ~~[xaa11275]
 @10429 = ~那伦·达克渥~
-@10430 = ~他一看见我掏出的匕首，马上就跑啦！~
-@10431 = ~亮出你的家伙和法术，决斗吧！~
-@10432 = ~~
-@10433 = ~~
-@10434 = ~ Swiped the duchess's knickers once, if ya know what I mean.~
+@10430 = ~他一看见我掏出的匕首，马上就跑啦！~[xaa11277]
+@10431 = ~亮出你的家伙和法术，决斗吧！~[xaa11278]
+@10432 = ~~[xaa11279]
+@10433 = ~~[xaa11280]
+@10434 = ~当年咱连公爵夫人的内裤都顺手摸来过，你懂的……~[xaa11281]
 @10435 = ~阿拉托斯·“鸦疤”·苏巴德~
-@10436 = ~ Welcome, my little friends! Please, relax, and keep your weapons at your sides.~
-@10437 = ~~
-@10438 = ~~
-@10439 = ~抱歉，我恐怕没时间和你闲聊。~
+@10436 = ~欢迎你，我的小朋友！请放松，把武器放在身边就好。~[xaa11283]
+@10437 = ~~[xaa11285]
+@10438 = ~~[xaa11286]
+@10439 = ~抱歉，我恐怕没时间和你闲聊。~[xaa11288]
 @10440 = ~黑百合~
-@10441 = ~今天将会是你所遇过最黑暗的一天，我没有你需要的东西。~
-@10442 = ~~
-@10443 = ~~
-@10444 = ~ Off with ye now! I've got counting to do.~
-@10445 = ~ So I kicked 'im in the head till he was dead. Har har.~
-@10446 = ~~
-@10447 = ~~
-@10448 = ~ I hate dem Flamin' Fist pansies.~
-@10449 = ~ Whoa, now that was a stinker. Har har.~
-@10450 = ~不要一直挖鼻孔！~
+@10441 = ~今天将会是你所遇过最黑暗的一天，我没有你需要的东西。~[xaa11290]
+@10442 = ~~[xaa11292]
+@10443 = ~~[xaa11293]
+@10444 = ~快走开吧！我还有账要算。~[xaa11294]
+@10445 = ~所以我一直照他脑袋踹，直到他断气儿。哈哈。~[xaa11301]
+@10446 = ~~[xaa11302]
+@10447 = ~~[xaa11303]
+@10448 = ~我讨厌那群焰拳软蛋。~[xaa11305]
+@10449 = ~ 嚯，刚才那个可真够烂的。哈哈。~[xaa11306]
+@10450 = ~不要一直挖鼻孔！~[xaa11307]
 @10451 = ~红瞳~
-@10452 = ~ I daresay, the guard is downright rude these days!~
-@10453 = ~~
-@10454 = ~~
-@10455 = ~我可不愿让喧嚣的对话破坏这宁静的夜晚。~
+@10452 = ~要我说，如今的卫兵真是粗暴无礼！~[xaa11309]
+@10453 = ~~[xaa11310]
+@10454 = ~~[xaa11311]
+@10455 = ~我可不愿让喧嚣的对话破坏这宁静的夜晚。~[xaa11312]
 @10456 = ~尼曼~
-@10457 = ~~
-@10458 = ~~
+@10457 = ~~[xaa11316]
+@10458 = ~~[xaa11317]
 @10459 = ~欧朗~
 @10460 = ~伟伯·奥特~
-@10461 = ~你刚说什么？~
-@10462 = ~~
-@10463 = ~~
+@10461 = ~你刚说什么？~[xaa10114]
+@10462 = ~~[xaa11324]
+@10463 = ~~[xaa11325]
 @10464 = ~威廉·加斯特~
-@10465 = ~~
-@10466 = ~~
-@10467 = ~惹我生气的后果是很不好的。~
-@10468 = ~~
+@10465 = ~~[xaa11328]
+@10466 = ~~[xaa11329]
+@10467 = ~惹我生气的后果是很不好的。~[xaa11330]
+@10468 = ~~[xaa11167]
 @10469 = ~阿莱丝·埃兰达拉女士~
-@10470 = ~听起来可能有点不太淑女，但我要割断你的喉咙！~
-@10471 = ~你好。~
-@10472 = ~那些该死的强盗对生意影响非常大。~
+@10470 = ~听起来可能有点不太淑女，但我要割断你的喉咙！~[xaa11338]
+@10471 = ~你好。~[xaa11342]
+@10472 = ~那些该死的强盗对生意影响非常大。~[xaa11348]
 @10473 = ~只要我还活着，我就不会相信你！~
 @10474 = ~赛狄麦克~
 @10475 = ~你不该回来这里！现在你已没机会离开了！~
 @10476 = ~盗匪~
-@10477 = ~（打哈欠）~
-@10478 = ~我应该加入军队才对。~
-@10479 = ~ Today, I saw a girl with the biggest pair of diddeys I've ever seen!~
-@10480 = ~ I could take Drizzt with both my arms tied behind my back.~
+@10477 = ~（打哈欠）~[xaa11362]
+@10478 = ~我应该加入军队才对。~[xaa11366]
+@10479 = ~今天，我看到了一个女孩，有着我见过的最大的奶子！~[xaa11367]
+@10480 = ~我能用双手绑在背后来对付崔斯特！~[xaa11368]
 @10481 = ~这里不欢迎你！给我滚出去，不然我就把你丢出去！~
 @10482 = ~滚远一点。~
-@10483 = ~~
-@10484 = ~~
+@10483 = ~~[xaa11369]
+@10484 = ~~[xaa11369]
 @10485 = ~狄拉~
 @10486 = ~对我来讲这实在是种继续不断的打扰，因为任何人都欢迎来到地窖，他们就以为也可以自由进出我的办公室。要是真的可以这样，我早就不会被你们这些人乱搞吵来吵去了。我得再说一次，请你们离开。~
-@10487 = ~~
+@10487 = ~~[xaa10171]
 @10488 = ~奎娜西~
-@10489 = ~~
-@10490 = ~~
+@10489 = ~~[xaa11417]
+@10490 = ~~[xaa11362]
 @10491 = ~杜拉坦~
 @10492 = ~维芬~
-@10493 = ~我说今晚就是你的死期啦。~
+@10493 = ~我说今晚就是你的死期啦。~[xaa11453]
 @10494 = ~凡达林~
-@10495 = ~海姆可知过去未来，也可以审判一切。~
-@10496 = ~~
+@10495 = ~海姆可知过去未来，也可以审判一切。~[xaa11459]
+@10496 = ~~[xaa11463]
 @10497 = ~苏宁~
-@10498 = ~你那可笑的技巧无法和我的魔法相比！~
-@10499 = ~~
-@10500 = ~~
+@10498 = ~你那可笑的技巧无法和我的魔法相比！~[xaa11464]
+@10499 = ~~[xaa11466]
+@10500 = ~~[xaa11467]
 @10501 = ~你已没机会离开了！快滚开！~
 @10502 = ~请不要打搅我，我有很多事要操心！~
 @10503 = ~这里没什么好看的！~
 @10504 = ~焰拳士兵~
 @10505 = ~园丁~
 @10506 = ~欧西里斯~
-@10507 = ~不好意思，我要去大采购了。~
+@10507 = ~不好意思，我要去大采购了。~[xaa11515]
 @10508 = ~海姆牧师~
-@10509 = ~警觉者知道你所有的罪。~
-@10510 = ~~
+@10509 = ~警觉者知道你所有的罪。~[xaa11463]
+@10510 = ~~[xaa11328]
 @10511 = ~卓利克~
 @10512 = ~谢普~
 @10513 = ~南屈·拜罗格林~
-@10514 = ~~
-@10515 = ~~
+@10514 = ~~[xaa11539]
+@10515 = ~~[xaa11540]
 @10516 = ~你已经不受欢迎了！快滚开！~
 @10517 = ~贝拉迈~
 @10518 = ~拜伦~
-@10519 = ~~
-@10520 = ~~
+@10519 = ~~[xaa11546]
+@10520 = ~~[xaa11547]
 @10521 = ~瑞内~
-@10522 = ~ I much prefer wooded regions, but one must be flexible in these times.~
-@10523 = ~~
-@10524 = ~~
+@10522 = ~ 我更喜欢林木茂密的地区，但在这些时期，一个人必须灵活。~[xaa11550]
+@10523 = ~~[xaa11551]
+@10524 = ~~[xaa11552]
 @10525 = ~睡着的半身人~
-@10526 = ~~
+@10526 = ~~[xaa10178]
 @10527 = ~艾卡特~
 @10528 = ~预言者盖瑟~
-@10529 = ~~
-@10530 = ~~
+@10529 = ~~[xaa11584]
+@10530 = ~~[xaa11585]
 @10531 = ~雪拉~
 @10532 = ~旅店老板~
 @10533 = ~旅店老板~
-@10534 = ~我的旅店是剑湾附近最好的啦！~
-@10535 = ~~
-@10536 = ~~
+@10534 = ~我的旅店是剑湾附近最好的啦！~[xaa11591]
+@10535 = ~~[xaa11592]
+@10536 = ~~[xaa11593]
 @10537 = ~麦可~
 @10538 = ~达瑟克~
-@10539 = ~我的刀上写着你的名字。~
+@10539 = ~我的刀上写着你的名字。~[xaa11600]
 @10540 = ~尤瑞克~
 @10541 = ~纳达林~
-@10542 = ~不用你烦我，我的脾气就已经够糟糕了。~
-@10543 = ~ By Moradin's hammer.~
-@10544 = ~~
-@10545 = ~~
-@10546 = ~你的啰哩啰唆开始在考验我的耐性。~
-@10547 = ~ Greetin's.~
+@10542 = ~不用你烦我，我的脾气就已经够糟糕了。~[xaa11622]
+@10543 = ~凭摩拉丁之锤！~[xaa11623]
+@10544 = ~~[xaa11624]
+@10545 = ~~[xaa11625]
+@10546 = ~你的啰哩啰唆开始在考验我的耐性。~[xaa11627]
+@10547 = ~你好啊。~[xaa11628]
 @10548 = ~奈菲儿~
-@10549 = ~你的尖叫声将是我悦耳的音乐。~
-@10550 = ~先生，这里，到这边来！~
-@10551 = ~~
+@10549 = ~你的尖叫声将是我悦耳的音乐。~[xaa11633]
+@10550 = ~先生，这里，到这边来！~[xaa11637]
+@10551 = ~~[xaa11637]
 @10552 = ~囚犯~
-@10553 = ~~
-@10554 = ~~
-@10555 = ~求求你，救救我们。~
-@10556 = ~~
-@10557 = ~~
-@10558 = ~~
-@10559 = ~~
+@10553 = ~~[xaa11645]
+@10554 = ~~[xaa11646]
+@10555 = ~求求你，救救我们。~[xaa11647]
+@10556 = ~~[xaa11648]
+@10557 = ~~[xaa11647]
+@10558 = ~~[xaa11650]
+@10559 = ~~[xaa11651]
 @10560 = ~费尔加斯~
 @10561 = ~迪罗斯~
 @10562 = ~离我远一点！我还有工作要做！~
-@10563 = ~~
-@10564 = ~有何贵事呢？~
-@10565 = ~~
+@10563 = ~~[xaa11108]
+@10564 = ~有何贵事呢？~[xaa11720]
+@10565 = ~~[xaa11720]
 @10566 = ~钱萨勒斯·乌尔布莱特~
-@10567 = ~对不起，我得进行冥思了。~
+@10567 = ~对不起，我得进行冥思了。~[xaa11734]
 @10568 = ~安娜西亚~
-@10569 = ~你会死！我非常肯定这点！~
-@10570 = ~有什么事吗，朋友？~
+@10569 = ~你会死！我非常肯定这点！~[xaa11736]
+@10570 = ~有什么事吗，朋友？~[xaa11739]
 @10571 = ~水妖精阿贝拉~
-@10572 = ~不管这是不是命运，我对这个地方已经厌烦了。~
-@10573 = ~ Monsters, attack me not!~
-@10574 = ~~
-@10575 = ~~
-@10576 = ~放我自由！~
+@10572 = ~不管这是不是命运，我对这个地方已经厌烦了。~[xaa11740]
+@10573 = ~怪物们，别攻击我！~[xaa11741]
+@10574 = ~~[xaa11742]
+@10575 = ~~[xaa11743]
+@10576 = ~放我自由！~[xaa11744]
 @10577 = ~贡德牧师~
-@10578 = ~~
-@10579 = ~~
-@10580 = ~贡德的大礼，就是赐予人发明的能力。~
-@10581 = ~我的朋友欧本海默有些很酷的发明喔。~
+@10578 = ~~[xaa11745]
+@10579 = ~~[xaa11746]
+@10580 = ~贡德的大礼，就是赐予人发明的能力。~[xaa11747]
+@10581 = ~我的朋友欧本海默有些很酷的发明喔。~[xaa11748]
 @10582 = ~~
 @10583 = ~佛瑟·威风~
-@10584 = ~~
-@10585 = ~~
+@10584 = ~~[xaa11750]
+@10585 = ~~[xaa11751]
 @10586 = ~贝兰德~
-@10587 = ~旅行者，欢迎来到贡德的档案馆，奇迹创造者的殿堂。~
-@10588 = ~~
-@10589 = ~~
-@10590 = ~能够服侍贡德真是荣幸。~
+@10587 = ~旅行者，欢迎来到贡德的档案馆，奇迹创造者的殿堂。~[xaa11753]
+@10588 = ~~[xaa11754]
+@10589 = ~~[xaa11755]
+@10590 = ~能够服侍贡德真是荣幸。~[xaa11756]
 @10591 = ~布拉斯兰~
-@10592 = ~ Please, follow, and I shall endeavor to introduce you to the majesty of Gond.~
-@10593 = ~~
-@10594 = ~~
-@10595 = ~ Please, don't touch the displays... or me.~
-@10596 = ~睡着的矮人~
+@10592 = ~请随我来，我将尽力为您展现贡德的庄严与伟大。~[xaa11757]
+@10593 = ~~[xaa11758]
+@10594 = ~~[xaa11759]
+@10595 = ~请勿触碰展品……或者我。~[xaa11760]
+@10596 = ~沉睡的矮人~
 @10597 = ~变形怪~
-@10598 = ~嘶嘶嘶嘶。~
-@10599 = ~ It is useless to resist. SSSssssss.~
-@10600 = ~去死吧！~
-@10601 = ~~
-@10602 = ~~
-@10603 = ~~
-@10604 = ~灵长类，你的寿命已尽。~
+@10598 = ~嘶嘶嘶嘶嘶……~[xaa11799]
+@10599 = ~抵抗是徒劳的。嘶嘶嘶……~[xaa11800]
+@10600 = ~死吧，肉块！~[xaa11801]
+@10601 = ~ ~[xaa11803]
+@10602 = ~ ~[xaa11804]
+@10603 = ~ ~[xaa11805]
+@10604 = ~你们的时代结束了，猿类。~[xaa11808]
 @10605 = ~贾索~
-@10606 = ~ *pant* Come to torment me some more, you shapeshifting bastards?~
-@10607 = ~~
-@10608 = ~~
-@10609 = ~ Damn, this would've cost my business a pretty penny!~
+@10606 = ~喘气 又来折磨我了吗，你们这些变形的杂种？~[xaa11809]
+@10607 = ~~[xaa11810]
+@10608 = ~~[xaa11811]
+@10609 = ~该死，这下我的生意可要损失一大笔钱了！~[xaa11812]
 @10610 = ~你们不比那些抓我的人好到哪里去！走开！~
 @10611 = ~槭柳杨~
-@10612 = ~很高兴认识你。~
+@10612 = ~很高兴认识你。~[xaa11820]
 @10613 = ~小猫安吉儿~
-@10614 = ~~
-@10615 = ~~
+@10614 = ~~[xaa11828]
+@10615 = ~~[xaa11829]
 @10616 = ~睡着的精灵~
-@10617 = ~~
+@10617 = ~~[xaa11838]
 @10618 = ~伊斯帝尔.卡兰特恩~
-@10619 = ~你好。~
+@10619 = ~你好。~[xaa11846]
 @10620 = ~如果我是你的话，我就会速速离开。~
 @10621 = ~我必须要请你不要打扰我，因为我有许多的财务琐事要忙着处理。~
 @10622 = ~贾达克~
-@10623 = ~~
-@10624 = ~~
+@10623 = ~~[xaa11852]
+@10624 = ~~[xaa11853]
 @10625 = ~仆役~
 @10626 = ~康诺利·芬恩~
 @10627 = ~蕾塔~
@@ -1883,74 +1879,74 @@ No time to write, but I must not neglect my journals so. The future dead must kn
 @10630 = ~乃立克~
 @10631 = ~屠二炳~
 @10632 = ~狗运强~
-@10633 = ~~
-@10634 = ~~
+@10633 = ~~[xaa11900]
+@10634 = ~~[xaa11901]
 @10635 = ~高培·海德~
-@10636 = ~~
-@10637 = ~~
+@10636 = ~~[xaa11904]
+@10637 = ~~[xaa11905]
 @10638 = ~侍者~
 @10639 = ~隐形灵体~
-@10640 = ~~
-@10641 = ~~
-@10642 = ~~
-@10643 = ~~
-@10644 = ~~
-@10645 = ~~
+@10640 = ~~[xaa10594]
+@10641 = ~~[xaa10595]
+@10642 = ~~[xaa11913]
+@10643 = ~~[xaa11914]
+@10644 = ~~[xaa11915]
+@10645 = ~~[xaa11916]
 @10646 = ~毁灭铁卫~
-@10647 = ~~
-@10648 = ~~
-@10649 = ~~
-@10650 = ~~
-@10651 = ~~
+@10647 = ~~[xaa11925]
+@10648 = ~~[xaa11926]
+@10649 = ~~[xaa11927]
+@10650 = ~~[xaa11928]
+@10651 = ~~[xaa11930]
 @10652 = ~恐惧铠甲~
-@10653 = ~~
-@10654 = ~~
-@10655 = ~~
-@10656 = ~~
+@10653 = ~~[xaa11939]
+@10654 = ~~[xaa11940]
+@10655 = ~~[xaa11941]
+@10656 = ~~[xaa11943]
 @10657 = ~迪果德~
 @10658 = ~菲尔卡斯~
-@10659 = ~一把硬锤子就可以教训大部分的强盗。~
-@10660 = ~~
-@10661 = ~~
+@10659 = ~一把硬锤子就可以教训大部分的强盗。~[xaa11949]
+@10660 = ~~[xaa11950]
+@10661 = ~~[xaa11951]
 @10662 = ~布岚迪拉~
-@10663 = ~~
-@10664 = ~~
+@10663 = ~~[xaa11955]
+@10664 = ~~[xaa11956]
 @10665 = ~真高兴再看见你。我现在非常的忙，也许我们可以晚一点再谈谈。~
 @10666 = ~快出去，免得我把你轰出去！~
 @10667 = ~诺特威~
-@10668 = ~你好呀，朋友们。~
+@10668 = ~你好呀，朋友们。~[xaa11980]
 @10669 = ~抱歉，现在没食物可以给你。~
 @10670 = ~离我远一点！只要我还活着，我就不会相信你！~
 @10671 = ~戴斯塔司·格恩~
 @10672 = ~不好意思，我是个很忙碌的人，我不希望常常被人家这样打搅。~
-@10673 = ~~
+@10673 = ~~[xaa11171]
 @10674 = ~波立诺·曼恩~
 @10675 = ~布里拉~
-@10676 = ~哼，我不要！~
+@10676 = ~哼，我不要！~[xaa12028]
 @10677 = ~亚丽安娜~
 @10678 = ~瑞金那·“长牙”·沃星顿三世~
 @10679 = ~大地精精英~
-@10680 = ~向前冲！~
-@10681 = ~一个不留！~
-@10682 = ~~
-@10683 = ~~
-@10684 = ~你给我安静点！~
-@10685 = ~臭嘴巴。~
-@10686 = ~~
+@10680 = ~向前冲！~[xaa12049]
+@10681 = ~一个不留！~[xaa12050]
+@10682 = ~~[xaa12051]
+@10683 = ~~[xaa12052]
+@10684 = ~你给我安静点！~[xaa12053]
+@10685 = ~臭嘴巴。~[xaa12054]
+@10686 = ~~[xaa12055]
 @10687 = ~那曼~
 @10688 = ~加达叙~
-@10689 = ~~
-@10690 = ~~
+@10689 = ~~[xaa12061]
+@10690 = ~~[xaa12062]
 @10691 = ~迪雅~
-@10692 = ~实在很遗憾，但恐怕我得要……杀了你。~
+@10692 = ~实在很遗憾，但恐怕我得要……杀了你。~[xaa12064]
 @10693 = ~阿席姆~
-@10694 = ~~
-@10695 = ~~
+@10694 = ~~[xaa12070]
+@10695 = ~~[xaa12071]
 @10696 = ~艾莱~
-@10697 = ~你已经穷途末路了！~
+@10697 = ~你已经穷途末路了！~[xaa12073]
 @10698 = ~札立玛·克劳德渥夫~
 @10699 = ~萨东~
-@10700 = ~你……你好，我不想惹麻烦。~
+@10700 = ~你……你好，我不想惹麻烦。~[xaa12083]
 @10701 = ~走开，不然你会后悔！~
 @10702 = ~板链甲~
 @10703 = ~岩浆堡垒~
@@ -2257,52 +2253,52 @@ No time to write, but I must not neglect my journals so. The future dead must kn
 
 格林特开心地讲述他离家以来的众多冒险；很难分辨哪里是真相，哪里是夸大。虽然格林特最初去博德之门是寻找几个失踪亲戚，他似乎很投入终结凯拉的圣战的任务。~
 @10808 = ~罗玛~
-@10809 = ~我要找妈咪。~
-@10810 = ~~
-@10811 = ~~
-@10812 = ~我的娃娃不见了。~
-@10813 = ~*啜泣*~
+@10809 = ~我要找妈咪。~[xaa10445]
+@10810 = ~~[xaa10446]
+@10811 = ~~[xaa10447]
+@10812 = ~我的娃娃不见了。~[xaa10510]
+@10813 = ~*啜泣*~[xaa10515]
 @10814 = ~欧达玛~
 @10815 = ~奈德洛克统领~
-@10816 = ~现在投降太迟了。~
-@10817 = ~勇气会支持我们。~
-@10818 = ~焰拳准备就绪。~
+@10816 = ~现在投降太迟了。~[xac10052]
+@10817 = ~勇气会支持我们。~[xac10053]
+@10818 = ~焰拳准备就绪。~[xac10054]
 @10819 = ~艾德斯·萨森斯达~
-@10820 = ~喂！表明你的身份！~
-@10821 = ~别这样嘛，难道我们不能作朋友吗？~
-@10822 = ~为了博德之门！~
-@10823 = ~~
-@10824 = ~~
-@10825 = ~学点礼貌吧，野蛮人。~
-@10826 = ~没有任何事情比粗俗无理更令人难以忍受了。~
-@10827 = ~你应该要学学怎么洗澡。~
-@10828 = ~喔，天哪！~
+@10820 = ~喂！表明你的身份！~[xac10055]
+@10821 = ~别这样嘛，难道我们不能作朋友吗？~[xac10056]
+@10822 = ~为了博德之门！~[xac10057]
+@10823 = ~~[xac10058]
+@10824 = ~~[xac10059]
+@10825 = ~学点礼貌吧，野蛮人。~[xac10060]
+@10826 = ~没有任何事情比粗俗无理更令人难以忍受了。~[xac10061]
+@10827 = ~你应该要学学怎么洗澡。~[xac10062]
+@10828 = ~喔，天哪！~[xac10063]
 @10829 = ~我想我跟你已经没什么话好说了！你最好离我远一点！~
 @10830 = ~肯特~
-@10831 = ~所有的罪都应该受到惩罚！~
-@10832 = ~我就是法律！~
-@10833 = ~~
-@10834 = ~~
-@10835 = ~我是焰拳的成员！~
-@10836 = ~喂！给我作五十个扶地挺身！~
+@10831 = ~所有的罪都应该受到惩罚！~[xaa10044]
+@10832 = ~我就是法律！~[xaa10040]
+@10833 = ~~[xaa10041]
+@10834 = ~~[xaa10042]
+@10835 = ~我是焰拳的成员！~[xaa10039]
+@10836 = ~喂！给我作五十个扶地挺身！~[xaa10045]
 @10837 = ~你在这边不受欢迎！~
 @10838 = ~贝诺·法玛里~
 @10839 = ~史姬~
-@10840 = ~ Please, help me!~
-@10841 = ~你们是我所遇过最好的一群朋友。~
-@10842 = ~我不认为我们刚刚做的事情是合乎道德的。~
-@10843 = ~你们这些人都是猪。~
-@10844 = ~ I can't take this anymore. I'm going back home!~
-@10845 = ~ I don't know if I can handle this leadership thing, but I'm gonna try.~
-@10846 = ~我有点累了，我们可以休息一下吗？~
-@10847 = ~我好无聊喔。~
-@10848 = ~我们赶快去大采购吧！~
+@10840 = ~救命啊，请帮帮我！~
+@10841 = ~你们是我有过的最棒的一群朋友。~
+@10842 = ~我觉得我们现在做的事在道义上是不对的。~
+@10843 = ~你们全都是一群猪。~
+@10844 = ~我受不了了。我要回家了！~
+@10845 = ~我不知道自己能不能担起领导的责任，但我会试试。~
+@10846 = ~我累了。我们能不能快休息一下？~
+@10847 = ~我好无聊。~
+@10848 = ~我们去逛街吧！~
 @10849 = ~~
-@10850 = ~ Ahh! I'm hurt. Help!~
-@10851 = ~我可以帮得上忙吗？~
-@10852 = ~ Aw, I broke a nail.~
-@10853 = ~ Oh, I've mussed my hair.~
-@10854 = ~ Oh, my feet hurt.~
+@10850 = ~啊！我受伤了。救命！~
+@10851 = ~需要我帮忙吗？~
+@10852 = ~噢，我指甲断了。~
+@10853 = ~哦，我头发弄乱了。~
+@10854 = ~哦，我的脚好痛。~
 @10855 = ~我感冒了。~
 @10856 = ~我头很痛。~
 @10857 = ~亚多士，为什么你对同伴这么恶劣？~
@@ -2313,88 +2309,88 @@ No time to write, but I must not neglect my journals so. The future dead must kn
 @10862 = ~你真是个好朋友。~
 @10863 = ~有你和我在一起我感觉很安全。~
 @10864 = ~我觉得你是个相当棒的人。~
-@10865 = ~ I wanna go home.~
-@10866 = ~呜呜呜，我不相信他已经死了。~
-@10867 = ~ What am I gonna do? *sniffle* You can't die, Eldoth, you can't.~
-@10868 = ~ Thank you. You're very kind.~
-@10869 = ~ Uh, I'm sorry. Did I do something wrong?~
+@10865 = ~我想回家。~
+@10866 = ~*抽泣*我真不敢相信他死了。~
+@10867 = ~我该怎么办？抽泣 你不能死，艾多斯，你不能死。~
+@10868 = ~谢谢你。你真好。~
+@10869 = ~呃，对不起。我做错了什么吗？~
 @10870 = ~亚多士，叫他们不要这么残忍。~
 @10871 = ~你觉得我的香水怎么样？~
 @10872 = ~我好久没吃过一顿热腾腾的饭菜了。~
 @10873 = ~凯拉·白银~
-@10874 = ~撤退！重组！~
-@10875 = ~疲劳折磨着我，但我还会继续前进。~
-@10876 = ~胜利或死亡！~
-@10877 = ~荣誉、鲜血和胜利！~
-@10878 = ~~
-@10879 = ~哎？~
-@10880 = ~我听着。~
-@10881 = ~命令？~
-@10882 = ~嗯？~
-@10883 = ~对我说。~
-@10884 = ~~
-@10885 = ~不会失败。~
-@10886 = ~是的。~
-@10887 = ~立刻！~
-@10888 = ~同意。~
-@10889 = ~我……有……力量！！~
-@10890 = ~感受神圣的力量！~
-@10891 = ~我要再来一次。~
-@10892 = ~我无法伤害这个敌人。我们得试试别的办法。~
-@10893 = ~我的法术丢失了。~
+@10874 = ~撤退！重组！~[xac10107]
+@10875 = ~疲劳折磨着我，但我还会继续前进。~[xac10108]
+@10876 = ~胜利或死亡！~[xac10109]
+@10877 = ~荣誉、鲜血和胜利！~[xac10110]
+@10878 = ~~[xac10111]
+@10879 = ~哎？~[xac10112]
+@10880 = ~我听着。~[xac10113]
+@10881 = ~命令？~[xac10114]
+@10882 = ~嗯？~[xac10115]
+@10883 = ~对我说。~[xac10116]
+@10884 = ~~[xac10117]
+@10885 = ~不会失败。~[xac10118]
+@10886 = ~是的。~[xac10119]
+@10887 = ~立刻！~[xac10120]
+@10888 = ~同意。~[xac10121]
+@10889 = ~我……有……力量！！~[xac10122]
+@10890 = ~感受神圣的力量！~[xac10123]
+@10891 = ~我要再来一次。~[xac10124]
+@10892 = ~我无法伤害这个敌人。我们得试试别的办法。~[xac10125]
+@10893 = ~我的法术丢失了。~[xac10126]
 @10894 = ~被追问过去时，凯拉讲述脑中重复几千遍的故事。孩提时，伴随她的半神血统，凯拉·白银承受着高度期盼的重担。凯拉早年在紫苑骑士团的一所修道院过得很辛苦，因为她的神经质性格与紫苑骑士对纪律的热忱不合拍。即便如此，她相信自己注定不凡。一天，在修道院图书馆独处时，她企图通过阅读一本禁书增长力量。取而代之，她不智地打开一个通向魔鬼拜莱菲特的领域的门。凯拉本会失去灵魂，但她叔父奥恩·白银向魔鬼王子自荐，代替侄女被拉进九层地狱。凯拉从没忘记他的牺牲。她发誓有朝一日，以某种方式，她将找到从阿弗纳斯的深渊救出叔父的办法。在与世隔绝十多年后，她联系上尊者海夫南。他指给她一条去阿弗纳斯的路，但这并不好走。他宣称，她需要三件东西：一支与九层地狱军团战斗的军队，拥有龙矛堡，还有神圣之血作为开启龙矛堡地下传送门的钥匙……~
-@10895 = ~光之众神必将对我们微笑。~
-@10896 = ~偏离正道是很容易的。小心你的步伐。~
-@10897 = ~我们在黑暗中徘徊太久。让我或另一个正直的灵魂掌管一切。我将很快引导我们回到正轨。~
-@10898 = ~这是错误的。我不会袖手旁观，看着你嘲笑我所坚持的所有原则。我们就在这里分道扬镳。~
-@10899 = ~跟我来，我将引导我们走向正义。~
-@10900 = ~有好事就要去做，我们不能袖手旁观。~
-@10901 = ~为了荣耀！~
-@10902 = ~该死之人必将倒下！~
-@10903 = ~我要把你送给光明！~
-@10904 = ~我即将走向……圣光……~
-@10905 = ~借助圣光光，治疗我吧！~
-@10906 = ~我们世界的美丽增强了我的决心。这片土地值得保护。~
-@10907 = ~即使像这样坚固的墙也不能阻止邪恶进入无辜者的大门。~
-@10908 = ~在这里我们会找到值得一战的敌人！~
-@10909 = ~圣光之辉保佑我们。~
-@10910 = ~又一天过去了。明天我们将会与新的邪恶斗争。~
-@10911 = ~通过光。~
-@10912 = ~确实。~
-@10913 = ~为了晨曦之主的荣耀。~
-@10914 = ~你对白银之女有何要求？~
-@10915 = ~我是个阿斯莫。天堂之子。你最好还是听我的话。~
-@10916 = ~走向光明。~
-@10917 = ~姐妹！我会为你报仇！~
-@10918 = ~我没有地方放那个。扔了它。~
-@10919 = ~我以圣战军之名占有它。~
-@10920 = ~我会躲开邪恶之眼。~
-@10921 = ~我为我们的敌人设下了陷阱。~
+@10895 = ~光之众神必将对我们微笑。~[xac10128]
+@10896 = ~偏离正道是很容易的。小心你的步伐。~[xac10129]
+@10897 = ~我们在黑暗中徘徊太久。让我或另一个正直的灵魂掌管一切。我将很快引导我们回到正轨。~[xac10130]
+@10898 = ~这是错误的。我不会袖手旁观，看着你嘲笑我所坚持的所有原则。我们就在这里分道扬镳。~[xac10131]
+@10899 = ~跟我来，我将引导我们走向正义。~[xac10132]
+@10900 = ~有好事就要去做，我们不能袖手旁观。~[xac10134]
+@10901 = ~为了荣耀！~[xac10135]
+@10902 = ~该死之人必将倒下！~[xac10136]
+@10903 = ~我要把你送给光明！~[xac10137]
+@10904 = ~我即将走向……圣光……~[xac10141]
+@10905 = ~借助圣光光，治疗我吧！~[xac10142]
+@10906 = ~我们世界的美丽增强了我的决心。这片土地值得保护。~[xac10143]
+@10907 = ~即使像这样坚固的墙也不能阻止邪恶进入无辜者的大门。~[xac10144]
+@10908 = ~在这里我们会找到值得一战的敌人！~[xac10145]
+@10909 = ~圣光之辉保佑我们。~[xac10146]
+@10910 = ~又一天过去了。明天我们将会与新的邪恶斗争。~[xac10147]
+@10911 = ~通过光。~[xac10154]
+@10912 = ~确实。~[xac10156]
+@10913 = ~为了晨曦之主的荣耀。~[xac10157]
+@10914 = ~你对白银之女有何要求？~[xac10158]
+@10915 = ~我是个阿斯莫。天堂之子。你最好还是听我的话。~[xac10159]
+@10916 = ~走向光明。~[xac10161]
+@10917 = ~姐妹！我会为你报仇！~[xac10162]
+@10918 = ~我没有地方放那个。扔了它。~[xac10168]
+@10919 = ~我以圣战军之名占有它。~[xac10169]
+@10920 = ~我会躲开邪恶之眼。~[xac10170]
+@10921 = ~我为我们的敌人设下了陷阱。~[xac10172]
 @10922 = ~葛立安~
-@10923 = ~啊，我的孩子，找到你真高兴。~
-@10924 = ~孩子快跑，离开这里！~
-@10925 = ~~
-@10926 = ~~
-@10927 = ~孩子，你最好学着有耐心点。~
-@10928 = ~我终会将一切事情解释给你听。~
-@10929 = ~……咳……咳……我实在没体力玩这种东西了。~
-@10930 = ~我们没有多少时间了！~
+@10923 = ~啊，我的孩子，找到你真高兴。~[xac10173]
+@10924 = ~孩子快跑，离开这里！~[xac10174]
+@10925 = ~~[xaa11546]
+@10926 = ~~[xaa11547]
+@10927 = ~孩子，你最好学着有耐心点。~[xac10177]
+@10928 = ~我终会将一切事情解释给你听。~[xac10178]
+@10929 = ~……咳……咳……我实在没体力玩这种东西了。~[xac10179]
+@10930 = ~我们没有多少时间了！~[xac10180]
 @10931 = ~阿莎蒂尔~
-@10932 = ~你需要什么？~
-@10933 = ~服从光明的意志。~
+@10932 = ~你需要什么？~[xac10182]
+@10933 = ~服从光明的意志。~[xac10183]
 @10934 = ~海夫南~
-@10935 = ~你好，你的力量真叫人印象深刻。~
-@10936 = ~饶命！饶命啊！~
-@10937 = ~等我解决你以后，你将会祈祷希望赶快死掉！~
-@10938 = ~~
-@10939 = ~~
-@10940 = ~你在信徒中想要干嘛？~
-@10941 = ~像神恩低首磕谢，祈求怜悯！~
-@10942 = ~笨蛋，神是不会轻易饶恕人的！~
+@10935 = ~你好，你的力量真叫人印象深刻。~[xac10184]
+@10936 = ~饶命！饶命啊！~[xac10185]
+@10937 = ~等我解决你以后，你将会祈祷希望赶快死掉！~[xac10187]
+@10938 = ~~[xac10188]
+@10939 = ~~[xac10189]
+@10940 = ~你在信徒中想要干嘛？~[xac10190]
+@10941 = ~像神恩低首磕谢，祈求怜悯！~[xac10191]
+@10942 = ~笨蛋，神是不会轻易饶恕人的！~[xac10192]
 @10943 = ~犬魔~
-@10944 = ~败在犬魔脚下！~
-@10945 = ~别质疑我的命令。~
-@10946 = ~凯拉把我带向光明。~
+@10944 = ~败在犬魔脚下！~[xac10193]
+@10945 = ~别质疑我的命令。~[xac10194]
+@10946 = ~凯拉把我带向光明。~[xac10195]
 @10947 = ~艾纳~
 @10948 = ~我要打烂你的脸！~
 @10949 = ~我要打烂你。~
@@ -2402,102 +2398,102 @@ No time to write, but I must not neglect my journals so. The future dead must kn
 @10951 = ~別卓~
 @10952 = ~亚罗克~
 @10953 = ~瑞拉~
-@10954 = ~~
-@10955 = ~~
-@10956 = ~ Good day and hello to you.~
-@10957 = ~ I much prefer wooded regions, but one must be flexible in these times.~
-@10958 = ~ Few of the Fair Folk concern themselves with the affairs of the state.~
+@10954 = ~ ~[xaa11551]
+@10955 = ~ ~[xaa11552]
+@10956 = ~祝您日安，您好。~[xac10198]
+@10957 = ~我虽然更偏爱森林地区，但在这年头，人必须懂得变通。~[xaa11550]
+@10958 = ~我们精灵族很少过问国家事务。~[xac10200]
 @10959 = ~格里姆格~
 @10960 = ~费尔斯克~
-@10961 = ~~
-@10962 = ~~
+@10961 = ~~[xac10218]
+@10962 = ~~[xac10219]
 @10963 = ~匕首滩民兵~
-@10964 = ~ By Moradin's hammer.~
-@10965 = ~~
-@10966 = ~~
-@10967 = ~ I need a swig o' some strong dwarven ale.~
-@10968 = ~不用你烦我，我的脾气就已经够糟糕了。~
-@10969 = ~你的啰哩啰唆开始在考验我的耐性。~
-@10970 = ~保卫我们的盟友！~
-@10971 = ~嗯？~
-@10972 = ~我是来这里战斗的。~
-@10973 = ~杀光他们！~
-@10974 = ~我们的人少而精！~
-@10975 = ~我们即将进军。~
-@10976 = ~你实在是此地难得一见的陌生人。~
-@10977 = ~~
-@10978 = ~~
-@10979 = ~坏日子要来了，我可以看得出来。~
-@10980 = ~最近怪事特别多。~
-@10981 = ~真希望我的烟斗还在。~
+@10964 = ~以摩拉丁的铁锤为誓。~[xaa11623]
+@10965 = ~~[xaa11624]
+@10966 = ~~[xaa11625]
+@10967 = ~我得来一大口够劲的矮人麦酒。~[xac10223]
+@10968 = ~不用你烦我，我的脾气就已经够糟糕了。~[xaa11622]
+@10969 = ~你的啰哩啰唆开始在考验我的耐性。~[xaa11627]
+@10970 = ~保卫我们的盟友！~[xac10226]
+@10971 = ~嗯？~[xac10227]
+@10972 = ~我是来这里战斗的。~[xac10228]
+@10973 = ~杀光他们！~[xac10229]
+@10974 = ~我们的人少而精！~[xac10230]
+@10975 = ~我们即将进军。~[xac10231]
+@10976 = ~你实在是此地难得一见的陌生人。~[xaa11066]
+@10977 = ~~[xaa11064]
+@10978 = ~~[xaa11065]
+@10979 = ~坏日子要来了，我可以看得出来。~[xaa11063]
+@10980 = ~最近怪事特别多。~[xac10237]
+@10981 = ~真希望我的烟斗还在。~[xac10238]
 @10982 = ~焰拳佣兵~
-@10983 = ~惩罚犯法者！~
-@10984 = ~我们不只是佣兵。~
-@10985 = ~战争就快到这里了。~
-@10986 = ~让他们看家伙！~
-@10987 = ~重要的是秩序。~
-@10988 = ~为了博德之门。~
+@10983 = ~惩罚犯法者！~[xac10239]
+@10984 = ~我们不只是佣兵。~[xac10240]
+@10985 = ~战争就快到这里了。~[xac10241]
+@10986 = ~让他们看家伙！~[xac10245]
+@10987 = ~重要的是秩序。~[xac10246]
+@10988 = ~为了博德之门。~[xac10247]
 @10989 = ~焰拳守卫~
-@10990 = ~~
-@10991 = ~~
-@10992 = ~海姆可知过去未来，也可以审判一切。~
-@10993 = ~警觉者知道你所有的罪。~
+@10990 = ~~[xaa11328]
+@10991 = ~~[xaa11329]
+@10992 = ~海姆可知过去未来，也可以审判一切。~[xaa11459]
+@10993 = ~警觉者知道你所有的罪。~[xaa11463]
 @10994 = ~焰拳战斗法师~
 @10995 = ~焰拳老兵~
 @10996 = ~深水城士兵~
-@10997 = ~拿起武器！拿起武器！~
-@10998 = ~我们还在等。~
-@10999 = ~光辉之城是我的家乡。~
-@11000 = ~拿起你们的武器战斗！~
-@11001 = ~为了深水城。~
-@11002 = ~~
+@10997 = ~拿起武器！拿起武器！~[xac10261]
+@10998 = ~我们还在等。~[xac10262]
+@10999 = ~光辉之城是我的家乡。~[xac10263]
+@11000 = ~拿起你们的武器战斗！~[xac10270]
+@11001 = ~为了深水城。~[xac10271]
+@11002 = ~~[xac10272]
 @11003 = ~圣战者弓箭手~
-@11004 = ~为了光辉女士！~
-@11005 = ~你需要什么？~
-@11006 = ~我们侍奉光明。~
+@11004 = ~为了光辉女士！~[xac10278]
+@11005 = ~你需要什么？~[xac10279]
+@11006 = ~我们侍奉光明。~[xac10280]
 @11007 = ~圣战者~
-@11008 = ~ A pleasure it is to meet ya.~
-@11009 = ~一把硬锤子就可以教训大部分的强盗。~
-@11010 = ~~
-@11011 = ~~
-@11012 = ~你可比不上石墙稳定。~
-@11013 = ~~
-@11014 = ~~
-@11015 = ~ The Fair Folk rarely have time for small talk.~
-@11016 = ~时节变糟了。~
-@11017 = ~ Soon, we shall all be together upon Evermeet.~
+@11008 = ~见到你真是很高兴。~[xac10281]
+@11009 = ~结实的锤子能收拾绝大多数强盗。~[xaa11949]
+@11010 = ~~[xaa11950]
+@11011 = ~~[xaa11951]
+@11012 = ~石墙提供的稳固性无与伦比。~[xac10286]
+@11013 = ~~[xaa11126]
+@11014 = ~~[xaa11838]
+@11015 = ~精灵们很少有空闲聊。~[xac10289]
+@11016 = ~我们正身处动荡时期。~[xac10290]
+@11017 = ~很快，我们就能在永聚岛团聚了。~[xac10291]
 @11018 = ~圣战军新兵~
-@11019 = ~为她而死！~
+@11019 = ~为她而死！~[xac10292]
 @11020 = ~佣兵~
-@11021 = ~一个不留！~
-@11022 = ~你给我安静点！~
-@11023 = ~向前冲！~
-@11024 = ~死吧，废物！~
-@11025 = ~~
-@11026 = ~~
+@11021 = ~一个不留！~[xaa12050]
+@11022 = ~你给我安静点！~[xaa12053]
+@11023 = ~向前冲！~[xaa12049]
+@11024 = ~死吧，废物！~[xac10305]
+@11025 = ~~[xac10306]
+@11026 = ~~[xac10307]
 @11027 = ~圣战军牧师~
-@11028 = ~我敞开双手欢迎你。~
-@11029 = ~正义会迅速地打败你！~
-@11030 = ~~
-@11031 = ~~
-@11032 = ~我相信你是带着善意而来。~
-@11033 = ~愿天神仁慈地眷顾着你。~
-@11034 = ~所有忠诚的信徒都欢迎来到此处。~
+@11028 = ~我敞开双手欢迎你。~[xac10314]
+@11029 = ~正义会迅速地打败你！~[xac10315]
+@11030 = ~~[xac10316]
+@11031 = ~~[xac10317]
+@11032 = ~我相信你是带着善意而来。~[xac10318]
+@11033 = ~愿天神仁慈地眷顾着你。~[xac10319]
+@11034 = ~所有忠诚的信徒都欢迎来到此处。~[xac10320]
 @11035 = ~圣战者法师~
-@11036 = ~~
-@11037 = ~~
-@11038 = ~ Your acquaintance I am glad to have made.~
-@11039 = ~我很快就要回家乡了，好怀念那边的坑道。~
-@11040 = ~ The underground seems safer by far, and gems to find are welcome too.~
+@11036 = ~~[xac10336]
+@11037 = ~~[xac10337]
+@11038 = ~很高兴结识阁下。~[xac10338]
+@11039 = ~我很快就要回家乡了，好怀念那边的坑道。~[xac10339]
+@11040 = ~看来地下要安全得多，而且还能找到宝石，真是再好不过了。~[xac10340]
 @11041 = ~巨魔牧人~
-@11042 = ~退后，否则你就会后悔！~
-@11043 = ~我投降！我投降！~
-@11044 = ~好了！就是你跟我！来吧！~
-@11045 = ~~
-@11046 = ~~
-@11047 = ~只要一两个铜板，我就可以帮你去打断某人的手脚。~
-@11048 = ~啊，快滚开。~
-@11049 = ~你像块铁一样，真的。~
+@11042 = ~退后，否则你就会后悔！~[xac10349]
+@11043 = ~我投降！我投降！~[xac10350]
+@11044 = ~好了！就是你跟我！来吧！~[xac10351]
+@11045 = ~~[xac10352]
+@11046 = ~~[xac10353]
+@11047 = ~只要一两个铜板，我就可以帮你去打断某人的手脚。~[xac10354]
+@11048 = ~啊，快滚开。~[xac10355]
+@11049 = ~你像块铁一样，真的。~[xac10356]
 @11050 = ~骨蝠~
 @11051 = ~疫病尸妖~
 @11052 = ~骷髅法师~
@@ -2513,27 +2509,27 @@ No time to write, but I must not neglect my journals so. The future dead must kn
 @11062 = ~只有勤学才会得到智慧。~
 @11063 = ~皮耶多~
 @11064 = ~我们的图书馆是人类知识的圣堂。~
-@11065 = ~ Oh—'scuse me, but I am late for my classes.~
+@11065 = ~啊——失陪一下，我赶着去上课，要迟到了。~
 @11066 = ~圣战者守卫~
 @11067 = ~圣战军军官~
-@11068 = ~让冰冷的刀剑看看你有多厉害！~
-@11069 = ~~
-@11070 = ~~
-@11071 = ~报上名号来！~
-@11072 = ~不要打扰我的工作。~
-@11073 = ~放轻松点，市民。~
-@11074 = ~我相信你没有恶意。~
-@11075 = ~不～！！~
-@11076 = ~呃啊啊啊！你去死！你去死！~
-@11077 = ~我要打扁你，小家伙！~
-@11078 = ~~
-@11079 = ~~
-@11080 = ~嗯？要干嘛？~
-@11081 = ~我看着你！~
-@11082 = ~说，人类！快说！~
-@11083 = ~你和我们处不好。~
-@11084 = ~我要是有报酬，就卖命。~
-@11085 = ~我喜欢砸脑袋。~
+@11068 = ~让冰冷的刀剑看看你有多厉害！~[xac10382]
+@11069 = ~~[xac10383]
+@11070 = ~~[xac10384]
+@11071 = ~报上名号来！~[xac10385]
+@11072 = ~不要打扰我的工作。~[xac10386]
+@11073 = ~放轻松点，市民。~[xac10387]
+@11074 = ~我相信你没有恶意。~[xac10388]
+@11075 = ~不～！！~[xac10403]
+@11076 = ~呃啊啊啊！你去死！你去死！~[xac10404]
+@11077 = ~我要打扁你，小家伙！~[xac10405]
+@11078 = ~~[xac10406]
+@11079 = ~~[xac10407]
+@11080 = ~嗯？要干嘛？~[xac10408]
+@11081 = ~我看着你！~[xac10409]
+@11082 = ~说，人类！快说！~[xac10410]
+@11083 = ~你和我们处不好。~[xac10411]
+@11084 = ~我要是有报酬，就卖命。~[xac10412]
+@11085 = ~我喜欢砸脑袋。~[xac10413]
 @11086 = ~圣战军指挥官~
 @11087 = ~辛德瑞特~
 @11088 = ~巨魔~
@@ -2542,14 +2538,14 @@ No time to write, but I must not neglect my journals so. The future dead must kn
 @11091 = ~瓦利斯~
 @11092 = ~拉沃克~
 @11093 = ~德尔顿~
-@11094 = ~我不快乐，不快乐。~
-@11095 = ~~
-@11096 = ~~
-@11097 = ~我很快乐，很快乐。~
-@11098 = ~你是谁，我不知道。~
+@11094 = ~我不快乐，不快乐。~[xac10446]
+@11095 = ~~[xac10447]
+@11096 = ~~[xac10448]
+@11097 = ~我很快乐，很快乐。~[xac10450]
+@11098 = ~你是谁，我不知道。~[xac10451]
 @11099 = ~达玛尔~
-@11100 = ~你在看什么？~
-@11101 = ~滚开。~
+@11100 = ~你在看什么？~[xac10472]
+@11101 = ~滚开。~[xac10473]
 @11102 = ~特里斯迪安~
 @11103 = ~圣战者中士~
 @11104 = ~圣战军精英~
@@ -2561,21 +2557,21 @@ No time to write, but I must not neglect my journals so. The future dead must kn
 @11110 = ~光明会回报你。~
 @11111 = ~指挥官德隆~
 @11112 = ~萨罗~
-@11113 = ~ZZZZzzzzzzz~
-@11114 = ~ZZZZzzzzz……打鼾~
+@11113 = ~呼呼呼……~[xaa11168]
+@11114 = ~呼呼呼……*打鼾*~[xaa11167]
 @11115 = ~圣战军南~
-@11116 = ~ Ooh, it's a fine day for meeting new friends.~
-@11117 = ~~
-@11118 = ~~
-@11119 = ~愿你能享受火炉的温暖与家的快乐。~
-@11120 = ~达理拉会引导回家的人找到路。~
+@11116 = ~啊，今天真是认识新朋友的好天气。~[xac10524]
+@11117 = ~~[xaa11252]
+@11118 = ~~[xaa11253]
+@11119 = ~愿你能享受火炉的温暖与家的快乐。~[xaa11255]
+@11120 = ~达理拉会引导回家的人找到路。~[xaa11251]
 @11121 = ~圣战军佩德罗~
-@11122 = ~唬咯～～~
-@11123 = ~~
-@11124 = ~~
-@11125 = ~呜，呜呜，汪汪汪！~
-@11126 = ~听着，我们不会说通用语，懂吗？啰唆！~
-@11127 = ~ *snarl* Yip! Yip yip yip yip yap!~
+@11122 = ~唬咯～～~[xac10553]
+@11123 = ~~[xac10554]
+@11124 = ~~[xac10555]
+@11125 = ~呜，呜呜，汪汪汪！~[xac10556]
+@11126 = ~听着，我们不会说通用语，懂吗？啰唆！~[xac10557]
+@11127 = ~*呜嗷*汪！汪汪汪汪汪！~[xac10558]
 @11128 = ~佣兵队长~
 @11129 = ~卡拉-图佣兵~
 @11130 = ~圣战军斥候~
@@ -2734,8 +2730,8 @@ No time to write, but I must not neglect my journals so. The future dead must kn
 数据：
 
 装备效果：
-– 免疫毒液和疾病
-– 防护邪恶
+–免疫毒液和疾病
+–防护邪恶
 
 防御等级：2（0 vs 劈砍，4 vs 钝击）
 要求：
@@ -2760,9 +2756,9 @@ No time to write, but I must not neglect my journals so. The future dead must kn
 数据：
 
 装备能力：
-– 防御等级：+4
-– 体质：+1
-– 火焰抗性：+40%
+–防御等级：+4
+–体质：+1
+–火焰抗性：+40%
 
 要求：
 力量 12
@@ -2796,7 +2792,7 @@ No time to write, but I must not neglect my journals so. The future dead must kn
 数据：
 
 装备能力：
-– 魔法抗性：+30%
+–魔法抗性：+30%
 
 零级命中值：+ 3
 伤害：1d8+3，额外+2 vs 邪魔
@@ -2970,10 +2966,10 @@ No time to write, but I must not neglect my journals so. The future dead must kn
 属性：
 
 装备能力：
-– 强酸抗性：+15%
+–强酸抗性：+15%
 
 充能能力：
-– 召唤两只掘地虫（10次使用机会）
+–召唤两只掘地虫（10次使用机会）
   施法距离：30呎
   持续时间：2回合
 
@@ -3098,110 +3094,110 @@ No time to write, but I must not neglect my journals so. The future dead must kn
 
 重量：2~
 @11237 = ~贝尔特~
-@11238 = ~~
-@11239 = ~~
+@11238 = ~~[xaa11955]
+@11239 = ~~[xaa11956]
 @11240 = ~伊尔坦公爵~
 @11241 = ~安塔·银盾~
 @11242 = ~日安！~
 @11243 = ~~
 @11244 = ~莉拉·珍娜斯~
 @11245 = ~本斯·邓肯~
-@11246 = ~惩罚犯法者！~
-@11247 = ~我们不只是佣兵。~
-@11248 = ~战争就快到这里了。~
+@11246 = ~惩罚犯法者！~[xac10239]
+@11247 = ~我们不只是佣兵。~[xac10240]
+@11248 = ~战争就快到这里了。~[xac10241]
 @11249 = ~焰拳战斗法师~
 @11250 = ~科温~
-@11251 = ~罗玛需要个母亲！~
-@11252 = ~像这样的队伍是不可战胜的。~
-@11253 = ~这不管用。我们需要做得更好。~
-@11254 = ~小心。你离我准备走的道路距离太远了。~
-@11255 = ~我不能再支持这种尝试了。告辞。~
-@11256 = ~我惯于领导。我将带领我们走向胜利。~
-@11257 = ~军队不可能永远前进。我们必须休息。~
-@11258 = ~我们有工作要做。让我们行动起来。~
-@11259 = ~战斗吧！~
-@11260 = ~让我们看看你能和我对抗多久。~
-@11261 = ~如果你必须打一场的话，但这次你不会赢。~
-@11262 = ~我很期待。~
-@11263 = ~该了结你了。~
-@11264 = ~噢！~
-@11265 = ~不……罗玛……~
-@11266 = ~医生！~
-@11267 = ~森林是那么宁静。不过，我总觉得自己在提防强盗。~
-@11268 = ~啊，噪音和人群。有家的感觉。~
-@11269 = ~小心你的步伐。这样的地方出不了什么好东西。~
-@11270 = ~光和温暖。我为两者都感到高兴。~
-@11271 = ~在城市里，你很少看到星星。它们今晚很美。~
-@11272 = ~嗯？~
-@11273 = ~你的命令？~
-@11274 = ~呣？~
-@11275 = ~什么？~
-@11276 = ~说吧。~
-@11277 = ~我在听。~
-@11278 = ~没错。~
-@11279 = ~我明白。~
-@11280 = ~是的。~
-@11281 = ~你的命令是什么，英雄？~
-@11282 = ~我是个游侠。我要游荡下。~
-@11283 = ~你认为爱情可以在战场上绽放吗？~
-@11284 = ~有时我梦见自己是一个混乱善良的精灵。~
-@11285 = ~我不会忘记你的，你不会白白牺牲的。~
-@11286 = ~没有他我们会过得更好。~
-@11287 = ~哈！我瞄得真准。~
-@11288 = ~我会弥补。~
-@11289 = ~这不管用！我们得试试别的办法。~
-@11290 = ~我也拿不动那个。我扔了它。~
-@11291 = ~我只要那个……~
-@11292 = ~嘘。我隐藏好了。~
-@11293 = ~我的法术！我失去了它。~
-@11294 = ~小心——我放了个陷阱。~
+@11251 = ~罗玛需要个母亲！~[xad10016]
+@11252 = ~像这样的队伍是不可战胜的。~[xad10017]
+@11253 = ~这不管用。我们需要做得更好。~[xad10018]
+@11254 = ~小心。你离我准备走的道路距离太远了。~[xad10019]
+@11255 = ~我不能再支持这种尝试了。告辞。~[xad10020]
+@11256 = ~我惯于领导。我将带领我们走向胜利。~[xad10021]
+@11257 = ~军队不可能永远前进。我们必须休息。~[xad10022]
+@11258 = ~我们有工作要做。让我们行动起来。~[xad10023]
+@11259 = ~战斗吧！~[xad10024]
+@11260 = ~让我们看看你能和我对抗多久。~[xad10025]
+@11261 = ~如果你必须打一场的话，但这次你不会赢。~[xad10026]
+@11262 = ~我很期待。~[xad10027]
+@11263 = ~该了结你了。~[xad10028]
+@11264 = ~噢！~[xad10029]
+@11265 = ~不……罗玛……~[xad10030]
+@11266 = ~医生！~[xad10031]
+@11267 = ~森林是那么宁静。不过，我总觉得自己在提防强盗。~[xad10032]
+@11268 = ~啊，噪音和人群。有家的感觉。~[xad10033]
+@11269 = ~小心你的步伐。这样的地方出不了什么好东西。~[xad10034]
+@11270 = ~光和温暖。我为两者都感到高兴。~[xad10035]
+@11271 = ~在城市里，你很少看到星星。它们今晚很美。~[xad10036]
+@11272 = ~嗯？~[xad10037]
+@11273 = ~你的命令？~[xad10038]
+@11274 = ~呣？~[xad10039]
+@11275 = ~什么？~[xad10040]
+@11276 = ~说吧。~[xad10041]
+@11277 = ~我在听。~[xad10042]
+@11278 = ~没错。~[xad10043]
+@11279 = ~我明白。~[xad10044]
+@11280 = ~是的。~[xad10045]
+@11281 = ~你的命令是什么，英雄？~[xad10046]
+@11282 = ~我是个游侠。我要游荡下。~[xad10047]
+@11283 = ~你认为爱情可以在战场上绽放吗？~[xad10048]
+@11284 = ~有时我梦见自己是一个混乱善良的精灵。~[xad10049]
+@11285 = ~我不会忘记你的，你不会白白牺牲的。~[xad10050]
+@11286 = ~没有他我们会过得更好。~[xad10051]
+@11287 = ~哈！我瞄得真准。~[xad10054]
+@11288 = ~我会弥补。~[xad10055]
+@11289 = ~这不管用！我们得试试别的办法。~[xad10056]
+@11290 = ~我也拿不动那个。我扔了它。~[xad10057]
+@11291 = ~我只要那个……~[xad10058]
+@11292 = ~嘘。我隐藏好了。~[xad10059]
+@11293 = ~我的法术！我失去了它。~[xad10060]
+@11294 = ~小心——我放了个陷阱。~[xad10061]
 @11295 = ~当被问及过去时，舍尔·科温不情愿地承认，她小时候在博德之门的街头四处游荡，行为放荡不羁。她的叛逆行为很快让她与焰拳发生了冲突。
 
 独自一人待在牢房里，只有自己的思绪作伴，她开始反思过去所做的决定，并思考这些决定会把她带向何方。最终获释后，她决定改变人生的方向。她加入了焰拳，并迅速晋升。
 
 你感觉到，舍尔·科温会为她的家人或焰拳做任何事情。~
 @11296 = ~军官弗瑞兹~
-@11297 = ~让冰冷的刀剑看看你有多厉害！~
-@11298 = ~~
-@11299 = ~~
-@11300 = ~报上名号来！~
-@11301 = ~不要打扰我的工作。~
-@11302 = ~放轻松点，市民。~
-@11303 = ~我相信你没有恶意。~
+@11297 = ~让冰冷的刀剑看看你有多厉害！~[xac10382]
+@11298 = ~~[xac10383]
+@11299 = ~~[xac10384]
+@11300 = ~报上名号来！~[xac10385]
+@11301 = ~不要打扰我的工作。~[xac10386]
+@11302 = ~放轻松点，市民。~[xac10387]
+@11303 = ~我相信你没有恶意。~[xac10388]
 @11304 = ~军官詹克斯~
 @11305 = ~焰拳士兵~
-@11306 = ~我是焰拳的成员！~
-@11307 = ~我就是法律！~
-@11308 = ~~
-@11309 = ~~
-@11310 = ~所有的罪都应该受到惩罚！~
-@11311 = ~喂！给我作五十个扶地挺身！~
+@11306 = ~我是焰拳的成员！~[xaa10039]
+@11307 = ~我就是法律！~[xaa10040]
+@11308 = ~~[xaa10041]
+@11309 = ~~[xaa10042]
+@11310 = ~所有的罪都应该受到惩罚！~[xaa10044]
+@11311 = ~喂！给我作五十个扶地挺身！~[xaa10045]
 @11312 = ~睡着的男人~
-@11313 = ~ZZZZzzzzzzz~
-@11314 = ~ZZZZzzzzz……打鼾~
+@11313 = ~呼呼呼~[xaa11168]
+@11314 = ~呼呼呼……*打鼾*~[xaa11167]
 @11315 = ~睡着的女人~
 @11316 = ~难民~
-@11317 = ~求求你，救救我们。~
-@11318 = ~我们无处可去。~
-@11319 = ~天杀的圣战军！~
+@11317 = ~求求你，救救我们。~[xad10083]
+@11318 = ~我们无处可去。~[xad10084]
+@11319 = ~天杀的圣战军！~[xad10085]
 @11320 = ~平民~
-@11321 = ~我累坏了。~
-@11322 = ~我失去了一切。~
-@11323 = ~大公爵能帮我们吗？~
-@11324 = ~让他们看家伙！~
-@11325 = ~重要的是秩序。~
-@11326 = ~为了博德之门。~
+@11321 = ~我累坏了。~[xad10089]
+@11322 = ~我失去了一切。~[xad10090]
+@11323 = ~大公爵能帮我们吗？~[xad10091]
+@11324 = ~让他们看家伙！~[xac10245]
+@11325 = ~重要的是秩序。~[xac10246]
+@11326 = ~为了博德之门。~[xac10247]
 @11327 = ~恶棍~
 @11328 = ~我要把你的烂污血统从国度中消灭掉。~
 @11329 = ~你只应该去死，没有别的。~
 @11330 = ~现在又有什么事？~
 @11331 = ~说完就快点结束吧！~
 @11332 = ~水手~
-@11333 = ~~
-@11334 = ~~
-@11335 = ~这些海总是在一年的这时兴风作浪。~
-@11336 = ~待在岸上的时光真是无与伦比……如果还有烈酒和美人作伴，那就更完美了。~
-@11337 = ~我最好不要消失太久，免得皮被船长给扒了。~
+@11333 = ~~[xad10116]
+@11334 = ~~[xad10117]
+@11335 = ~这些海总是在一年的这时兴风作浪。~[xad10118]
+@11336 = ~待在岸上的时光真是无与伦比……如果还有烈酒和美人作伴，那就更完美了。~[xad10119]
+@11337 = ~我最好不要消失太久，免得皮被船长给扒了。~[xad10120]
 @11338 = ~老鼠~
 @11339 = ~爱蒙静静地躺在床上，胸腔随着呼吸缓慢起伏——她活着。这就是你能确定的所有了，而现在，这一点已然足够。~
 @11340 = ~爱蒙静静地躺在床上，胸腔随着呼吸缓慢起伏——她活着。这就是你能确定的所有了，而现在，这一点已然足够。~
@@ -3276,11 +3272,11 @@ No time to write, but I must not neglect my journals so. The future dead must kn
 重量：9~
 @11361 = ~出口~
 @11362 = ~安其罗~
-@11363 = ~ So, these are the infamous murderers, finally brought to justice.~
-@11364 = ~实在很遗憾，但恐怕我得要……杀了你。~
-@11365 = ~~
-@11366 = ~~
-@11367 = ~公理也是盲目的，我可不是。~
+@11363 = ~那么，这些就是臭名昭著的凶手们了，终于被绳之以法了。~
+@11364 = ~实在很遗憾，但恐怕我得要……杀了你。~[xaa12064]
+@11365 = ~~[xaf10005]
+@11366 = ~~[xaf10006]
+@11367 = ~公理也是盲目的，我可不是。~[xaf10007]
 @11368 = ~哈拉塔斯拉尔~
 @11369 = ~失明的白化雏龙~
 @11370 = ~龙威~
@@ -3295,10 +3291,10 @@ No time to write, but I must not neglect my journals so. The future dead must kn
 重量：0~
 @11376 = ~攻击~
 @11377 = ~奥恩·白银~
-@11378 = ~如果结果是这样，那就这样吧！~
-@11379 = ~~
-@11380 = ~~
-@11381 = ~我会尽全力帮助你。~
+@11378 = ~如果结果是这样，那就这样吧！~[xag10000]
+@11379 = ~~[xag10001]
+@11380 = ~~[xag10002]
+@11381 = ~我会尽全力帮助你。~[xag10003]
 @11382 = ~斯瑞克斯~
 @11383 = ~地狱猫~
 @11384 = ~欲魔~
@@ -3311,17 +3307,17 @@ No time to write, but I must not neglect my journals so. The future dead must kn
 @11391 = ~红阿比沙魔~
 @11392 = ~哈马图拉~
 @11393 = ~骨魔~
-@11394 = ~为了光辉女士！~
-@11395 = ~你需要什么？~
-@11396 = ~我们侍奉光明。~
-@11397 = ~为她而死！~
-@11398 = ~你需要什么？~
-@11399 = ~服从光明的意志。~
-@11400 = ~~
-@11401 = ~~
-@11402 = ~ The Fair Folk rarely have time for small talk.~
-@11403 = ~时节变糟了。~
-@11404 = ~ Soon, we shall all be together upon Evermeet.~
+@11394 = ~为了光辉女士！~[xac10278]
+@11395 = ~你需要什么？~[xac10279]
+@11396 = ~我们侍奉光明。~[xac10280]
+@11397 = ~为她而死！~[xac10292]
+@11398 = ~你需要什么？~[xac10182]
+@11399 = ~服从光明的意志。~[xac10183]
+@11400 = ~~[xaa11126]
+@11401 = ~~[xaa11838]
+@11402 = ~精灵们可没多少闲工夫聊家常。~[xac10289]
+@11403 = ~时节变糟了。~[xac10290]
+@11404 = ~很快，我们就能永聚了。~[xac10291]
 @11405 = ~往下楼梯~
 @11406 = ~巨大的门~
 @11407 = ~远远望去，你能看到阿弗纳斯军团汇成阵型。~
