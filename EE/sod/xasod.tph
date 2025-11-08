@@ -82,14 +82,6 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 	END
 //}
 
-//{ New Sounds
-	 COPY ~%MOD_FOLDER%/sod/ogg~ 	~override~
-	 
-	 ACTION_IF (ai_voicing = 1) THEN BEGIN
-		COPY ~%MOD_FOLDER%/sod/ogg/ai~ 	~override~
-	 END
-//}
-
 //{ New Creatures
 	COPY_EXISTING ~xalcspy.cre~ ~override/xacorltr.cre~
 	WRITE_BYTE 0x2E 119 // Darkest Orchid
