@@ -6,6 +6,10 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+## v1.5.7 2025-11-07
+* Added Simplified Chinese translation, courtesy of mogui45, MephistoSatanDevil and yoshimo0417.
+* Converted WAV voice clips to OGG format.
+
 ## v1.5.6 2025-10-06
 * Romance music scripting improvements.
 
