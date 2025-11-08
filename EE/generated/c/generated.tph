@@ -2012,9 +2012,9 @@ COPY ~%MOD_FOLDER%\generated\c\pvrz~ ~override~
 //=========================
 COPY ~%MOD_FOLDER%\generated\c\tis~ ~override~
 
-//wav files.
+//ogg files.
 //=========================
-COPY ~%MOD_FOLDER%\generated\c\wav~ ~override~
+//COPY ~%MOD_FOLDER%\generated\c\ogg~ ~override~
 
 //wed files.
 //=========================

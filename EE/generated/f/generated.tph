@@ -165,9 +165,9 @@ COPY ~%MOD_FOLDER%\generated\f\pvrz~ ~override~
 //=========================
 COPY ~%MOD_FOLDER%\generated\f\tis~ ~override~
 
-//wav files.
+//ogg files.
 //=========================
-COPY ~%MOD_FOLDER%\generated\f\wav~ ~override~
+//COPY ~%MOD_FOLDER%\generated\f\ogg~ ~override~
 
 //wed files.
 //=========================

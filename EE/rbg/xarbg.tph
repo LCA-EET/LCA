@@ -4,10 +4,6 @@ SILENT
 
 OUTER_SET xa_regenerate = 0 // set to 1 to regenerate areas, 0 (default) to copy pre-generated areas
 
-//{ WAV
-	//COPY ~%MOD_FOLDER%/rbg/wav~ ~override~
-//}
-
 //{ BAM
 	COPY ~%MOD_FOLDER%/rbg/bam~ ~override~
 //}

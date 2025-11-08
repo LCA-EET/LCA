@@ -120,10 +120,6 @@ END
 	COPY ~%MOD_FOLDER%/tob/vvc/xaaasim.vvc~ ~override~
 //}
 
-//{ Sounds
-	// COPY ~%MOD_FOLDER%/tob/wav/caelar~ ~override~
-//}
-
 //{ Animations
 	ACTION_IF(isEET = 0) THEN BEGIN
 		COPY ~%MOD_FOLDER%/tob/anim~ ~override~

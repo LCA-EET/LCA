@@ -1,0 +1,13 @@
+LAF HANDLE_AUDIO
+	STR_VAR
+		audio_path= ~%MOD_FOLDER%/ogg/files~
+		oggdec_path= ~%MOD_FOLDER%/ogg~
+END
+
+ACTION_IF (ai_voicing = 1) THEN BEGIN
+	LAF HANDLE_AUDIO
+		STR_VAR
+			audio_path= ~%MOD_FOLDER%/ogg/ai~
+			oggdec_path= ~%MOD_FOLDER%/ogg~
+	END
+END

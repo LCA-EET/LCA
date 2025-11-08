@@ -953,12 +953,6 @@ OUTER_SET bg2_carryover = 1
 		WRITE_ASCII 0x3C ~xacorwil~ #8
 	END
 	
-	COPY ~%MOD_FOLDER%/bg2/wav~ ~override~
-	
-	ACTION_IF (ai_voicing = 1) THEN BEGIN
-		COPY ~%MOD_FOLDER%/bg2/wav/ai~ ~override~
-	END
-
 	EXTEND_BOTTOM ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpaEE.baf~
 	
 	EXTEND_TOP ~AR0602.bcs~ ~override/xalcargs.bcs~
