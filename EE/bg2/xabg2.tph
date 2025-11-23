@@ -492,6 +492,7 @@ END
 	COPY_EXISTING ~xad121.cre~ ~override/xaffofcr.cre~ //bdffgirl
 	WRITE_ASCII 0x280 ~xaffofcr~ #20
 	WRITE_ASCII 0x2CC ~xaffofcr~ #8
+	WRITE_LONG 0x1C 10000 
 	SAY NAME1 @3058
 	SAY NAME2 @3058
 	
