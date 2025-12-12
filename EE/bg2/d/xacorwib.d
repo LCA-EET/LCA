@@ -4368,7 +4368,15 @@ END
 			~
 			@763 /* ~Nothing, Major Corwin. I wanted to tell you that I'm glad you're here. I know it's been difficult being away from your family.~ */
 			== XACORWIB
+			IF ~
+				Global("C#IM_ImoenStays", "GLOBAL", 0)
+			~
 			@228 /*  ~I'm just glad that you're free from the wizard. Duke Jannath was very worried when she learned that you'd been kidnapped.~ */
+			== XACORWIB
+			IF ~
+				!Global("C#IM_ImoenStays", "GLOBAL", 0)
+			~
+			@2018 /*  ~I'm just glad that you're safe. Duke Jannath was very worried when she learned that you and <CHARNAME> had been abducted.~*/
 			== BIMOEN2
 			@229 /* ~Liia was worried about me? I miss her... she's a wonderful person, and a great teacher.~ */
 			DO ~

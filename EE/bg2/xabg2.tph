@@ -632,38 +632,76 @@ OUTER_SET bg2_carryover = 1
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3147)
 	//}
 	
-	//{ Letter to Corwin, Romantic
-		COPY_EXISTING ~scrl2i.itm~  ~override/xalcorw1.itm~ 
-		WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
-		WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
-		WRITE_LONG 0x50 RESOLVE_STR_REF(@3142)
-		WRITE_LONG 0x54 RESOLVE_STR_REF(@3142)
-	//}
 	
-	//{ Letter to Corwin, Friend
-		COPY_EXISTING ~scrl2i.itm~  ~override/xalcorw2.itm~ 
-		WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
-		WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
-		WRITE_LONG 0x50 RESOLVE_STR_REF(@3143)
-		WRITE_LONG 0x54 RESOLVE_STR_REF(@3143)
-	//}
-	
-	//{ Letter to Corwin, Romantic (Cost)
-		COPY_EXISTING ~scrl2i.itm~  ~override/xalcor1a.itm~ 
-		WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
-		WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
-		WRITE_LONG 0x50 RESOLVE_STR_REF(@3145)
-		WRITE_LONG 0x54 RESOLVE_STR_REF(@3145)
-	//}
-	
-	//{ Letter to Corwin, Friend (Cost)
-		COPY_EXISTING ~scrl2i.itm~  ~override/xalcor2a.itm~ 
-		WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
-		WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
-		WRITE_LONG 0x50 RESOLVE_STR_REF(@3146)
-		WRITE_LONG 0x54 RESOLVE_STR_REF(@3146)
-	//}
+	ACTION_IF FILE_EXISTS_IN_GAME ~C#IMMET.dlg~ THEN BEGIN
+		// Compatibility with I4E
+		PRINT ~I4E mod detected.~
+		SILENT
+		//{ Letter to Corwin, Romantic
+			COPY_EXISTING ~scrl2i.itm~  ~override/xalcorw1.itm~ 
+			WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
+			WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
+			WRITE_LONG 0x50 RESOLVE_STR_REF(@3195)
+			WRITE_LONG 0x54 RESOLVE_STR_REF(@3195)
+		//}
 		
+		//{ Letter to Corwin, Friend
+			COPY_EXISTING ~scrl2i.itm~  ~override/xalcorw2.itm~ 
+			WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
+			WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
+			WRITE_LONG 0x50 RESOLVE_STR_REF(@3196)
+			WRITE_LONG 0x54 RESOLVE_STR_REF(@3196)
+		//}
+		
+		//{ Letter to Corwin, Romantic (Cost)
+			COPY_EXISTING ~scrl2i.itm~  ~override/xalcor1a.itm~ 
+			WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
+			WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
+			WRITE_LONG 0x50 RESOLVE_STR_REF(@3197)
+			WRITE_LONG 0x54 RESOLVE_STR_REF(@3197)
+		//}
+		
+		//{ Letter to Corwin, Friend (Cost)
+			COPY_EXISTING ~scrl2i.itm~  ~override/xalcor2a.itm~ 
+			WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
+			WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
+			WRITE_LONG 0x50 RESOLVE_STR_REF(@3198)
+			WRITE_LONG 0x54 RESOLVE_STR_REF(@3198)
+		//}
+	END ELSE BEGIN
+		//{ Letter to Corwin, Romantic
+			COPY_EXISTING ~scrl2i.itm~  ~override/xalcorw1.itm~ 
+			WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
+			WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
+			WRITE_LONG 0x50 RESOLVE_STR_REF(@3142)
+			WRITE_LONG 0x54 RESOLVE_STR_REF(@3142)
+		//}
+		
+		//{ Letter to Corwin, Friend
+			COPY_EXISTING ~scrl2i.itm~  ~override/xalcorw2.itm~ 
+			WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
+			WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
+			WRITE_LONG 0x50 RESOLVE_STR_REF(@3143)
+			WRITE_LONG 0x54 RESOLVE_STR_REF(@3143)
+		//}
+		
+		//{ Letter to Corwin, Romantic (Cost)
+			COPY_EXISTING ~scrl2i.itm~  ~override/xalcor1a.itm~ 
+			WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
+			WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
+			WRITE_LONG 0x50 RESOLVE_STR_REF(@3145)
+			WRITE_LONG 0x54 RESOLVE_STR_REF(@3145)
+		//}
+		
+		//{ Letter to Corwin, Friend (Cost)
+			COPY_EXISTING ~scrl2i.itm~  ~override/xalcor2a.itm~ 
+			WRITE_LONG 0x08 RESOLVE_STR_REF(@3141)
+			WRITE_LONG 0x0C RESOLVE_STR_REF(@3141)
+			WRITE_LONG 0x50 RESOLVE_STR_REF(@3146)
+			WRITE_LONG 0x54 RESOLVE_STR_REF(@3146)
+		//}
+	END
+			
 	//{ Corwin's Amulet (SoA)
 		COPY ~%MOD_FOLDER%/bg2/itm/xaamul2.itm~ ~override~
 		WRITE_LONG 0x08 RESOLVE_STR_REF(@3150)

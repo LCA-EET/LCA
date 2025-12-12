@@ -380,8 +380,15 @@
 		== XACORWIB
 		IF ~
 			IsValidForPartyDialogue("XACORWIN")
+			Global("C#IM_ImoenStays", "GLOBAL", 0)
 		~
 		@27 /* ~These guilds are all the same, in every city. I feel dirty just by speaking to them, let alone working for them. Still, they are a necessary means to an end if we're to rescue Imoen.~*/
+		== XACORWIB
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+			!Global("C#IM_ImoenStays", "GLOBAL", 0)
+		~
+		@193 /* ~These guilds are all the same, in every city. I feel dirty just by speaking to them, let alone working for them.~*/
 	END
 	
 	INTERJECT_COPY_TRANS2 ARAN 0 XA_ARAN_0

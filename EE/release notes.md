@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+## v1.5.8 2025-12-12
+* Improved compatibility with the Imoen4ever and Unfinished Business mods.
+
 ## v1.5.7b 2025-11-23
 * Fixed a bug concerning the encounter with the Flaming Fist officer in the Athkatla magistrate.
 

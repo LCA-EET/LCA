@@ -100,6 +100,11 @@ LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET)
 		<td>After LCA</td>
 	</tr>
 	<tr>
+		<td>Imoen 4 Ever</td>
+		<td>Yes</td>
+		<td>Before LCA</td>
+	</tr>
+	<tr>
 		<td><a href="https://github.com/LCA-EET/LCA_Explicit">LCA_Explicit</a></td>
 		<td>Yes</td>
 		<td>After LCA</td>
@@ -128,6 +133,11 @@ LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET)
 		<td>The Longer Road EE</td>
 		<td>Yes</td>
 		<td>Before LCA</td>
+	</tr>
+	<tr>
+		<td>Unfinished Business</td>
+		<td>Yes</td>
+		<td>Doesn't Matter</td>
 	</tr>
 </table>
 
