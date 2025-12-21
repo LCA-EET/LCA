@@ -151,11 +151,11 @@ Unzip the LoveConquersAll_EE.zip archive, and place the LCA folder in your Game 
 ### Command Line Options
 <a name="a_command_line"></a>
 To run the installer without the LCA Assistant prompt, use the appropriate command below:<br>
-> [!Install With the Assistant]
-> ./setup-LCA.exe --args 1 
-> [!Install Without the Assistant]
-> ./setup-LCA.exe --args 0 
-	
+
+Do not install the assistant: 	./setup-LCA.exe --args 0 
+
+Install the assistant: 			./setup-LCA.exe --args 1 
+
 ### EE Playthrough Parameters
 <a name="a_ee_params"></a>
 For non-EET playthroughs, you can adjust certain parameters to reflect actions that CHARNAME took in a prior game of the series. The parameters file is %MOD_FOLDER%/bg2/lca_bg2_params.txt. Open it and make any desired changes prior to installing the LCA mod.
