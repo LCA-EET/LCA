@@ -150,8 +150,8 @@ Unzip the LoveConquersAll_EE.zip archive, and place the LCA folder in your Game 
 
 ### Command Line Options
 <a name="a_command_line"></a>
-To run the installer without the LCA Assistant prompt, use the appropriate command below:
-Do not install the assistant: 	./setup-LCA.exe --args 0 
+To run the installer without the LCA Assistant prompt, use the appropriate command below:<br>
+Do not install the assistant: 	./setup-LCA.exe --args 0 <br>
 Install the assistant: 			./setup-LCA.exe --args 1 
 
 ### EE Playthrough Parameters
