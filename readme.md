@@ -28,6 +28,7 @@ If you have any questions, or would like to provide feedback, you can reach me o
 - [Mod Overview](#a_mod_overview) 
 - [Compatibility Table](#a_compatibility_table)
 - [Installation Instructions](#a_installation_instructions)
+- [Command Line Options](#a_command_line)
 - [EE Playthrough Parameters](#a_ee_params)
 - [LCA Explicit Mod](#a_lca_explicit)
 - [Banter Timers](#a_banter)
@@ -146,6 +147,12 @@ LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET)
 Unzip the LoveConquersAll_EE.zip archive, and place the LCA folder in your Game Directory (the directory where BG1, SoD, or BG2 is installed. If you plan to install the LCA_Explicit mod, that mod must be installed after this mod (LCA) is installed. Run the provided setup-LCA.exe to install the mod. 
 > [!NOTE]
 > For EET playthroughs, LCA must be installed in the BG2 directory and after EET core, but before EET_End. 
+
+### Command Line Options
+<a name="a_command_line"></a>
+To run the installer without the LCA Assistant prompt, use the appropriate command below:
+Do not install the assistant: 	./setup-LCA.exe --args 0 
+Install the assistant: 			./setup-LCA.exe --args 1 
 
 ### EE Playthrough Parameters
 <a name="a_ee_params"></a>
