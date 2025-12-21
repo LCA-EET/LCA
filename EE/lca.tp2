@@ -59,17 +59,29 @@ END
 
 INCLUDE ~%MOD_FOLDER%/functions.tph~
 
-OUTER_SET xalc_assistant = 0
+OUTER_SET xalc_assistant = 2
 
-LAF xa_determine_quantity
-	INT_VAR
-		xa_min_qty = 0
-		xa_max_qty = 1
-		xa_str_ref = RESOLVE_STR_REF(@857)
-	RET
-		xalc_assistant = xa_quantity
+ACTION_IF (VARIABLE_IS_SET %argv[0]%) THEN BEGIN
+	ACTION_IF(%argv[0]% = 0) THEN BEGIN
+		OUTER_SET xalc_assistant = 0
+		PRINT ~Skipped LCA Assistant prompt - the assistant will not be installed.~
+	END
+	ACTION_IF(%argv[0]% = 1) THEN BEGIN
+		OUTER_SET xalc_assistant = 1
+		PRINT ~Skipped LCA Assistant prompt - the assistant will be installed.~
+	END
 END
 
+ACTION_IF (xalc_assistant = 2) THEN BEGIN
+	LAF xa_determine_quantity
+		INT_VAR
+			xa_min_qty = 0
+			xa_max_qty = 1
+			xa_str_ref = RESOLVE_STR_REF(@857)
+		RET
+			xalc_assistant = xa_quantity
+	END
+END
 SILENT 
 
 ACTION_IF (xalc_assistant = 1) THEN BEGIN
