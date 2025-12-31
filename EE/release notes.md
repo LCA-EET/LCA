@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+## v1.5.9a 2025-12-30
+* Updated the Simplified Chinese language translation, courtesy of yoshimo0417.
+
 ## v1.5.9 2025-12-20
 * Added a command line option to skip the LCA Assistant installer prompt.
 
