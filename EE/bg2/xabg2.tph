@@ -886,6 +886,13 @@ OUTER_SET bg2_carryover = 1
 	ACTION_IF (player_exiled = 1) THEN BEGIN
 		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa00.baf~
 	END
+	
+	// Assign racial enemy based on whether Corwin ventured to Avernus during SoD
+	ACTION_IF (corwin_avernus = 1) THEN BEGIN
+		COPY_EXISTING ~xacorwin.cre~ ~override~
+	END ELSE BEGIN
+		COPY_EXISTING ~xacorwin.cre~ ~override~
+	END
 
 	ACTION_IF (corwin_romance = 1) THEN BEGIN
 		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa01.baf~
