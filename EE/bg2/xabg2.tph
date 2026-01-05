@@ -874,6 +874,7 @@ OUTER_SET bg2_carryover = 1
 	OUTER_SET deserter_spared = 1
 	OUTER_SET took_manual = 1
 	OUTER_SET corwin_portrait = 1
+	OUTER_SET skip_restore_cutscene = 0
 
 	/*
 		If a parameter file exists, overwrite the default parameter with the contents of the parameter file.
@@ -888,10 +889,11 @@ OUTER_SET bg2_carryover = 1
 	END
 	
 	// Assign racial enemy based on whether Corwin ventured to Avernus during SoD
-	ACTION_IF (corwin_avernus = 1) THEN BEGIN
-		COPY_EXISTING ~xacorwin.cre~ ~override~
+	COPY_EXISTING ~xacorwin.cre~ ~override/xacorwin.cre~
+	PATCH_IF (corwin_avernus = 1) THEN BEGIN
+		WRITE_BYTE 0x241 121 // Demonic
 	END ELSE BEGIN
-		COPY_EXISTING ~xacorwin.cre~ ~override~
+		WRITE_BYTE 0x241 115 // Skeleton
 	END
 
 	ACTION_IF (corwin_romance = 1) THEN BEGIN
@@ -997,6 +999,10 @@ OUTER_SET bg2_carryover = 1
 		COPY_EXISTING ~xacorwin.cre~ ~override~
 		WRITE_ASCII 0x34 ~xacorwim~ #8
 		WRITE_ASCII 0x3C ~xacorwil~ #8
+	END
+	
+	ACTION_IF (skip_restore_cutscene = 1) THEN BEGIN
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa27.baf~
 	END
 	
 	EXTEND_BOTTOM ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpaEE.baf~

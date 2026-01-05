@@ -1,6 +1,8 @@
+//{ Do not skip cutscenes
 IF
 	GlobalTimerExpired("XA_LC_STtoBG","GLOBAL") // see MBREGA.d state M34
 	!Global("XA_LC_CS03_Done", "GLOBAL", 1)
+	Global("XA_LC_SkipSkieCutscene", "GLOBAL", 0)
 	OR(2)
 		Global("XA_LC_LetterSent", "GLOBAL", 1) // Corwin Love
 		Global("XA_LC_LetterSent", "GLOBAL", 2) // Corwin 
@@ -16,6 +18,7 @@ IF
 	GlobalTimerExpired("XA_LC_STtoBG","GLOBAL") // see MBREGA.d state M34
 	Global("XA_LC_LetterSent", "GLOBAL", 3) // Duncan
 	!Global("XA_LC_CS02_Done", "GLOBAL", 1)
+	Global("XA_LC_SkipSkieCutscene", "GLOBAL", 0)
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself,~Debug Player1D - 10~)
@@ -27,6 +30,7 @@ END
 IF
 	GlobalTimerExpired("XA_LC_CS04","GLOBAL")
 	!Global("XA_LC_CS04_Done", "GLOBAL", 1)
+	Global("XA_LC_SkipSkieCutscene", "GLOBAL", 0)
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself,~Debug Player1D - 11~)
@@ -38,6 +42,7 @@ END
 IF
 	GlobalTimerExpired("XA_LC_CS05","GLOBAL")
 	!Global("XA_LC_CS05_Done", "GLOBAL", 1)
+	Global("XA_LC_SkipSkieCutscene", "GLOBAL", 0)
 THEN
 	RESPONSE #100
 		//DisplayStringHead(Myself,~Debug Player1D - 12~)
@@ -45,7 +50,59 @@ THEN
 		StartCutSceneMode()
 		StartCutSceneEx("XAcs05a",FALSE)
 END
+//}
 
+//{ Skip Cutscenes
+IF
+	GlobalTimerExpired("XA_LC_STtoBG","GLOBAL") // see MBREGA.d state M34
+	!Global("XA_LC_CS03_Done", "GLOBAL", 1)
+	Global("XA_LC_SkipSkieCutscene", "GLOBAL", 1)
+	OR(2)
+		Global("XA_LC_LetterSent", "GLOBAL", 1) // Corwin Love
+		Global("XA_LC_LetterSent", "GLOBAL", 2) // Corwin 
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 9~)
+		SetGlobal("XA_LC_CS03_Done", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_CS05","GLOBAL",FOUR_HOURS)
+END
+
+IF
+	GlobalTimerExpired("XA_LC_STtoBG","GLOBAL") // see MBREGA.d state M34
+	Global("XA_LC_LetterSent", "GLOBAL", 3) // Duncan
+	!Global("XA_LC_CS02_Done", "GLOBAL", 1)
+	Global("XA_LC_SkipSkieCutscene", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 10~)
+		SetGlobal("XA_LC_CS02_Done", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_CS04","GLOBAL",FOUR_HOURS)
+END
+
+IF
+	GlobalTimerExpired("XA_LC_CS04","GLOBAL")
+	!Global("XA_LC_CS04_Done", "GLOBAL", 1)
+	Global("XA_LC_SkipSkieCutscene", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 11~)
+		SetGlobal("XA_LC_CS04_Done", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_Ath","GLOBAL",TWO_DAYS)
+		SetGlobal("XA_LC_SkieSaved", "GLOBAL", 2)
+END
+
+IF
+	GlobalTimerExpired("XA_LC_CS05","GLOBAL")
+	!Global("XA_LC_CS05_Done", "GLOBAL", 1)
+	Global("XA_LC_SkipSkieCutscene", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		//DisplayStringHead(Myself,~Debug Player1D - 12~)
+		SetGlobal("XA_LC_CS05_Done", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_Ath","GLOBAL",TWO_DAYS)
+		SetGlobal("XA_LC_SkieSaved", "GLOBAL", 1)
+END
+//}
 
 
 

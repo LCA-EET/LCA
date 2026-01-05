@@ -155,6 +155,9 @@
 		@2 /* ~Easy now, Captain. Harm me, and the magic of this place will send you and your friends, sans disguise, right into the heart of Ust Natha. How much fun do you think they'll have tormenting an officer of the Flaming Fist, mm?~*/
 		
 		== XACORWIJ
+		IF ~
+			IsValidForPartyDialogue("XACORWIN")
+		~
 		@3 /* ~Gods damnit...~ */
 		= @4 /* ~(She lowers her weapon.)~*/
 		
@@ -694,21 +697,33 @@
 //{ UDLESA
 	INTERJECT_COPY_TRANS2 UDLESA 1 XA_UDLESA_1
 		== XACORWIB
+		IF ~ 
+			IsValidForPartyDialogue("XACORWIN")
+		~
 		@179 /*~We aren't here to pick fights with braggarts.~ [XA100110]*/
 	END
 	
 	INTERJECT_COPY_TRANS2 UDLESA 2 XA_UDLESA_2
 		== XACORWIB
+		IF ~ 
+			IsValidForPartyDialogue("XACORWIN")
+		~
 		@179 /*~We aren't here to pick fights with braggarts.~ [XA100110]*/
 	END
 	
 	INTERJECT_COPY_TRANS2 UDLESA 3 XA_UDLESA_3
 		== XACORWIB
+		IF ~ 
+			IsValidForPartyDialogue("XACORWIN")
+		~
 		@179 /*~We aren't here to pick fights with braggarts.~ [XA100110]*/
 	END
 	
 	INTERJECT_COPY_TRANS2 UDLESA 4 XA_UDLESA_4
 		== XACORWIB
+		IF ~ 
+			IsValidForPartyDialogue("XACORWIN")
+		~
 		@179 /*~We aren't here to pick fights with braggarts.~ [XA100110]*/
 	END
 //}
@@ -716,6 +731,9 @@
 //{ UDSIMYAZ
 	INTERJECT_COPY_TRANS2 UDSIMYAZ 16 XA_UDSIMYAZ_16
 		== XACORWIB
+		IF ~ 
+			IsValidForPartyDialogue("XACORWIN")
+		~
 		@180 /*~Hear him out. This might be our only option.~ */
 	END
 //}
@@ -1008,17 +1026,25 @@
 		@109 /* ~Don't let her get to you, Valygar. Calm down.~ */
 		== VALYGARJ
 		IF ~
+			IsValidForPartyDialogue("XACORWIN")
 			!Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 		~
 		@110 /*~But she - damnit! No, you're right, Captain.~ */
 		== VALYGARJ
 		IF ~
+			IsValidForPartyDialogue("XACORWIN")
 			Global("XA_LC_CorwinPromoted", "GLOBAL", 1)
 		~
 		@111 /*~But she - damnit! No, you're right, Major.~ */
 		== VICONIJ
+		IF ~
+			IsValidForPartyDialogue("VICONIA")
+		~
 		@112 /* ~Just as I thought. Pathetic.~ */
 		== XACORWIB
+		IF ~ 
+			IsValidForPartyDialogue("XACORWIN")
+		~
 		@113 /* ~That's enough from the both of you! Infighting isn't going to help any of us to achieve our goals. Let's move out.~ */
 	END
 

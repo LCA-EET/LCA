@@ -6,6 +6,12 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+## v1.5.10 2026-01-05
+* Corwin's racial enemy in BG2 onward is Demonic if she ventured to Avernus during the events of SoD, Skeleton otherwise.
+* Fixed a dialog bug that occurs when Corwin is not in the party when speaking to Simyaaz.
+* Fixed a dialog inconsistency concerning the rescue of the slave children in the slaver stockade.
+* Added a playthrough parameter to allow players to skip the cutscenes depicting the return of the Soultaker dagger to the Flaming Fist and the restoration of Skie Silvershield.
+
 ## v1.5.9a 2025-12-30
 * Updated the Simplified Chinese language translation, courtesy of yoshimo0417.
 

@@ -1004,7 +1004,7 @@ END
 
 IF ~
 	Global("XA_LC_CorwinSlaverPlot", "GLOBAL", 1)
-	GlobalLT("XA_LC_SlaveKidsFreed", "GLOBAL", 3)
+	Global("XA_LC_SlaveKidsFreed", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinBGSlaverDiscuss
 	SAY @764 /* ~That girl said that at least two other children were being held here. We have to find them.~*/
 	
@@ -4071,6 +4071,25 @@ IF ~~ THEN BEGIN XA_PostSexTalk_End
 	
 	IF ~~ THEN
 	EXIT
+END
+
+IF ~
+	Global("XA_LC_CorwinSlaverPlot", "GLOBAL", 1)
+	Global("XA_LC_SlaveKidsFreed", "GLOBAL", 2)
+~ THEN BEGIN XA_CorwinBGSlaverDiscuss
+	SAY @1908 /*~From what that little girl told us, there's one more child being held here. We have to find them.~*/
+	
+	IF ~~ THEN REPLY @765 /* ~Right.~ */
+	DO ~
+		SetGlobal("XA_LC_CorwinSlaverPlot", "GLOBAL", 2)
+	~
+	GOTO XA_CorwinBGSlaverDiscuss2
+	
+	IF ~~ THEN REPLY @766 /* ~Hopefully they're still alive.~ */
+	DO ~
+		SetGlobal("XA_LC_CorwinSlaverPlot", "GLOBAL", 2)
+	~
+	GOTO XA_CorwinBGSlaverDiscuss2
 END
 
 CHAIN

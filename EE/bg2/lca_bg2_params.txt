@@ -153,3 +153,9 @@ OUTER_SET took_manual = 1
 	Set to 1 to use Corwin's LCA portrait. Set to 0 to use her SoD portrait instead.
 */
 OUTER_SET corwin_portrait = 1
+
+/*
+	Parameter: skip_restore_cutscene
+	Set to 1 to skip cutscenes associated with Skie's restoration.
+*/
+OUTER_SET skip_restore_cutscene = 0
