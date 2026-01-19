@@ -1,0 +1,11 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ReallyForceSpellRES("SPWI402",Myself)
+		Wait(3)
+		CreateCreatureObject("XABENCE", Player1, 0,0,0)
+		CreateCreatureObject("XAMELKO2", Player1, 0,0,0)
+		EndCutSceneMode()
+END

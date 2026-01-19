@@ -1,25 +1,3 @@
-IF
-	!Range(Player1, 10)
-	!AreaCheck("XAA100") //ar0900
-	Global("XA_LC_DukeDebrief_TimerElapsed", "GLOBAL", 1)
-	GlobalLT("XA_LC_DukesDebriefed", "GLOBAL", 1)
-THEN 
-	RESPONSE #100
-		MoveToObjectFollow(Player1)
-		Continue()
-END
-
-IF 
-	!Range(Player1, 20)
-	!AreaCheck("XAA100") //ar0900
-	Global("XA_LC_DukeDebrief_TimerElapsed", "GLOBAL", 1)
-	GlobalLT("XA_LC_DukesDebriefed", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		JumpToObject(Player1)
-		Continue()
-END
-
 IF 
 	GlobalLT("XA_LC_DukesDebriefed", "GLOBAL", 1)
 	Global("XA_LC_DukeDebrief_TimerElapsed", "GLOBAL", 1)

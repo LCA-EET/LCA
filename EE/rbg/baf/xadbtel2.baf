@@ -1,0 +1,11 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ReallyForceSpellRES("SPWI402","XABENCE")
+		Wait(3)
+		ActionOverride("XABENCE", DestroySelf())
+		ActionOverride("XAMELKO2", DestroySelf())
+		EndCutSceneMode()
+END

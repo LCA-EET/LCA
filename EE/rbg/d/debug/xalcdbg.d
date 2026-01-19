@@ -913,6 +913,7 @@ APPEND ~XALCDBG~
 		
 		IF ~~ THEN REPLY @6006/* ~Demon's Gifts~*/
 		DO ~
+			GiveItemCreate("xanarbag", Player1, 0,0,0)
 			GiveItemCreate("xachick", Player1, 0,0,0)
 			GiveItemCreate("xasword", Player1, 0,0,0)
 			GiveItemCreate("xaquiver", Player1, 0,0,0)

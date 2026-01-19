@@ -16,23 +16,6 @@ THEN
 		Continue()
 END
 
-
-IF
-	!InMyArea("XABENCE")
-	Global("XA_LC_DukeDebrief_BenceSpawn", "GLOBAL", 1)
-	GlobalLT("XA_LC_DukesFullyDebriefed", "GLOBAL", 1)
-	GlobalLT("XA_LC_BenceLocalSpawn", "MYAREA", 1)
-	OR(2)
-		Global("XA_LC_CorwinMetFamily", "GLOBAL", 2)
-		Global("XA_LC_CorwinWithFamily", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_LC_BenceLocalSpawn", "MYAREA", 1)
-		CreateCreature("XABENCE",[-1.-1], N)
-		ActionOverride("XABENCE", JumpToObject(Player1))
-		Continue()
-END
-
 IF
 	AreaCheck("XAA287") // ar0607 FFHQ Level 1
 	GlobalLT("XA_LC_DukesFullyDebriefed", "GLOBAL", 1)
@@ -41,5 +24,35 @@ THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_BenceLocalSpawn", "MYAREA", 1)
 		CreateCreature("XABENCE",[935.810], NW)
+END
+
+/*
+IF
+	!InMyArea("XABENCE")
+	Global("XA_LC_DukeDebrief_BenceSpawn", "GLOBAL", 1)
+	GlobalLT("XA_LC_DukesFullyDebriefed", "GLOBAL", 1)
+	//GlobalLT("XA_LC_BenceLocalSpawn", "MYAREA", 1)
+	GlobalLT("XA_LC_BenceGlobalSpawn", "GLOBAL", 1)
+	OR(2)
+		Global("XA_LC_CorwinMetFamily", "GLOBAL", 2)
+		Global("XA_LC_CorwinWithFamily", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_BenceGlobalSpawn", "GLOBAL", 1)
+		CreateCreature("XABENCE",[-1.-1], N)
+		ActionOverride("XABENCE", JumpToObject(Player1))
 		Continue()
 END
+
+IF
+	!InMyArea("XABENCE")
+	!AreaCheck("XAA287")
+	Global("XA_LC_DukeDebrief_BenceSpawn", "GLOBAL", 1)
+	Global("XA_LC_BenceGlobalSpawn", "GLOBAL", 1)
+	GlobalLT("XA_LC_DukesFullyDebriefed", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride("XABENCE", JumpToObject(Player1))
+		Continue()
+END
+*/

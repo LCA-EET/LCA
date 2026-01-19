@@ -208,6 +208,9 @@ IF ~~ THEN BEGIN XA_CorwinFamilyReunite3A4B
 	
 	IF ~~ THEN REPLY @15 /* ~Your mommy was right. How old are you my dear?~ */
 	GOTO XA_CorwinFamilyReunite3A5
+	
+	IF ~~ THEN REPLY @2 /* ~And here I am. You've grown since I last saw you.~ */
+	GOTO XA_CorwinFamilyReunite3A5
 END
 
 IF ~~ THEN BEGIN XA_CorwinFamilyReunite3A5

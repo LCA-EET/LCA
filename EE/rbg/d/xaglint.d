@@ -37,7 +37,7 @@ THEN BEGIN XA_Greeting
 	
 	IF ~
 		Dead("GLINT")
-	~ THEN REPLY @29
+	~ THEN REPLY @29 /*~It can't be... you died, during the Dragonspear campaign!~*/
 	DO ~
 		SetGlobal("XA_LC_TalkedToGlint", "Global", 1)
 	~
@@ -59,17 +59,40 @@ IF ~~ THEN BEGIN XA_WhoAreYou
 	
 	IF ~~ THEN REPLY @4 /* ~Oh, right. What're you doing here?~*/
 	GOTO XA_WhatAreYouDoingHere
+	
+	IF ~~ THEN REPLY @33 /* ~Yes, forgive me. Dragonspear seems like eons ago. It's good to see you, Glint.~*/
+	GOTO XA_WhatAreYouDoingHere
+	
+	IF ~~ THEN REPLY @34 /* ~Ah yes, the pickpocketing cleric with a heart of gold. That mewling voice of yours jogged my memory.~*/
+	GOTO XA_WhatAreYouDoingHere
 END
 
 IF ~~ THEN BEGIN XA_WhatAreYouDoingHere
 	SAY @5  /*~I heard from a friend who heard from the friend of that friend's cousin's nephew that a certain hero was returning home. Welcome back!~ */
 	
 	IF ~~ THEN REPLY @6  /* ~Uh... thanks. What have you been up to these past months?~*/
+	GOTO XA_ThievesGuild
+	
+	IF ~~ THEN REPLY @35  /* ~I can scarcely believe that after all that has happened, I've found my way back to the Gate.~*/
+	GOTO XA_Machinations
+END
+
+IF ~~ THEN BEGIN XA_ThievesGuild
+	SAY @37 /*~Oh, not much. Just the usual odds and ends for the local thieves' guild.~*/
+	
+	IF ~~ THEN
+	GOTO XA_Alatos
+END
+
+IF ~~ THEN BEGIN XA_Machinations
+	SAY @36 /*~Indeed. The Sly One himself would've had a difficult time untangling all of the machinations that resulted in your exile. As for me, I've been busy with some odds and ends for the local thieves' guild.~*/
+	
+	IF ~~ THEN
 	GOTO XA_Alatos
 END
 
 IF ~~ THEN BEGIN XA_Alatos
-	SAY @8  /* ~Oh, you know, odds and ends for the local thieves' guild.~*/
+	SAY @8  /* ~Don't look at me like that! A gnome's got to eat, and besides, it's nothing that requires me to get my hands dirty.~*/
 	
 	IF ~~ THEN 
 	GOTO XA_Bye

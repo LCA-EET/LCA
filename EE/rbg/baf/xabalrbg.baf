@@ -21,6 +21,42 @@
 //}
 */
 
+IF
+	Global("XA_LC_DukeDebrief_BenceSpawn", "GLOBAL", 1)
+	GlobalLT("XA_LC_DukesFullyDebriefed", "GLOBAL", 1)
+	GlobalLT("XA_LC_BenceGlobalSpawn", "GLOBAL", 1)
+	GlobalLT("XA_LC_ExtensionNeeded", "GLOBAL", 1)
+	OR(2)
+		Global("XA_LC_CorwinMetFamily", "GLOBAL", 2)
+		Global("XA_LC_CorwinWithFamily", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_BenceGlobalSpawn", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutScene("xadbtele")
+END
+
+IF
+	Global("XA_LC_ExtensionNeeded", "GLOBAL", 1)
+	GlobalLT("XA_LC_BenceGlobalSpawn", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_BenceGlobalSpawn", "GLOBAL", 2)
+		StartCutSceneMode()
+		StartCutScene("xadbtel2")
+END
+
+IF
+	Global("XA_LC_BenceGlobalSpawn", "GLOBAL", 2)
+	GlobalTimerExpired("XA_LC_DukeDebriefOneHourTimer", "GLOBAL")
+	Global("XA_LC_ExtensionNeeded", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_BenceGlobalSpawn", "GLOBAL", 3)
+		StartCutSceneMode()
+		StartCutScene("xadbtele")
+END
+
 //{ 1.4.1e Fixes
 IF
 	OR(4)

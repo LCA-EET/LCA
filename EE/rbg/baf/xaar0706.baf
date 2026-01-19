@@ -68,59 +68,15 @@ END
 
 IF
 	InMyArea(Player1)
-	PartyHasItem("XAQUIVER")
-	GlobalLT("XA_LC_IncubusQuiver", "GLOBAL", 1)
+	PartyHasItem("XANARBAG")
 THEN
 	RESPONSE #100
-		ActionOverride(Player1, DestroyItem("XAQUIVER"))
-		ActionOverride(Player2, DestroyItem("XAQUIVER"))
-		ActionOverride(Player3, DestroyItem("XAQUIVER"))
-		ActionOverride(Player4, DestroyItem("XAQUIVER"))
-		ActionOverride(Player5, DestroyItem("XAQUIVER"))
-		ActionOverride(Player6, DestroyItem("XAQUIVER"))
-END
-
-IF
-	InMyArea(Player1)
-	PartyHasItem("XAMSRING")
-	GlobalLT("XA_LC_IncubusRing", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		ActionOverride(Player1, DestroyItem("XAMSRING"))
-		ActionOverride(Player2, DestroyItem("XAMSRING"))
-		ActionOverride(Player3, DestroyItem("XAMSRING"))
-		ActionOverride(Player4, DestroyItem("XAMSRING"))
-		ActionOverride(Player5, DestroyItem("XAMSRING"))
-		ActionOverride(Player6, DestroyItem("XAMSRING"))
-END
-
-IF
-	InMyArea(Player1)
-	PartyHasItem("XASWORD")
-	GlobalLT("XA_LC_IncubusSword", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		ActionOverride(Player1, DestroyItem("XASWORD"))
-		ActionOverride(Player2, DestroyItem("XASWORD"))
-		ActionOverride(Player3, DestroyItem("XASWORD"))
-		ActionOverride(Player4, DestroyItem("XASWORD"))
-		ActionOverride(Player5, DestroyItem("XASWORD"))
-		ActionOverride(Player6, DestroyItem("XASWORD"))
-END
-
-IF
-	InMyArea(Player1)
-	PartyHasItem("XACHICK")
-	GlobalLT("XA_LC_IncubusGoose", "GLOBAL", 1)
-	GlobalLT("XA_LC_PickUpGoose", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		ActionOverride(Player1, DestroyItem("XACHICK"))
-		ActionOverride(Player2, DestroyItem("XACHICK"))
-		ActionOverride(Player3, DestroyItem("XACHICK"))
-		ActionOverride(Player4, DestroyItem("XACHICK"))
-		ActionOverride(Player5, DestroyItem("XACHICK"))
-		ActionOverride(Player6, DestroyItem("XACHICK"))
+		ActionOverride(Player1, DestroyItem("XANARBAG"))
+		ActionOverride(Player2, DestroyItem("XANARBAG"))
+		ActionOverride(Player3, DestroyItem("XANARBAG"))
+		ActionOverride(Player4, DestroyItem("XANARBAG"))
+		ActionOverride(Player5, DestroyItem("XANARBAG"))
+		ActionOverride(Player6, DestroyItem("XANARBAG"))
 END
 
 IF

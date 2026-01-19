@@ -4,6 +4,12 @@ SILENT
 
 OUTER_SET xa_regenerate = 0 // set to 1 to regenerate areas, 0 (default) to copy pre-generated areas
 
+//{ Adds Wyrm's Crossing as a Master Area
+	COPY_EXISTING ~MASTAREA.2DA~ ~override~
+	COUNT_2DA_ROWS 2 import1rows
+	INSERT_2DA_ROW (import1rows) 2 ~xaa100 value~
+//}
+
 //{ BAM
 	COPY ~%MOD_FOLDER%/rbg/bam~ ~override~
 //}
@@ -281,6 +287,13 @@ PRINT @4173 /*  ~Processing creatures...*/
 SILENT
 	
 //{ CRE
+
+	//{ Melkor sans dialogue
+		COPY_EXISTING ~xamelkor.cre~ ~override/xamelko2.cre~
+		WRITE_ASCII 0x2CC ~~ #8
+		WRITE_ASCII 0x280 ~xamelko2~ #8
+	//}
+	
 	//{ Book Collector
 		COPY_EXISTING ~poghma3.cre~ ~override/xabook.cre~
 		WRITE_ASCII 0x248 ~xabook~ #8
@@ -1276,7 +1289,20 @@ SILENT
 //}
 
 //{ New Items
-	
+	//{ Narzugon's Bag of Holding
+		COPY_EXISTING ~BAG04.ITM~ ~override/xanarbag.itm~
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@4198)
+		WRITE_ASCII 0x3A ~xainrbag~ #8 // icon
+		WRITE_ASCII 0x58 ~xanarbag~ #8 // desc image
+		
+		COPY_EXISTING ~BAG04.STO~ ~override/xanarbag.sto~
+		WRITE_SHORT 0x22 4 // store up to 50 items
+		WRITE_LONG 0x10 0
+		ADD_STORE_ITEM "xasword" #1 #0 #0 ~IDENTIFIED~ #1
+		ADD_STORE_ITEM "xachick" #1 #0 #0 ~IDENTIFIED~ #1
+		ADD_STORE_ITEM "xamsring" #1 #0 #0 ~IDENTIFIED~ #1
+		ADD_STORE_ITEM "xaquiver" #1 #0 #0 ~IDENTIFIED~ #1
+	//}
 	//{ Book of Infinite Spells
 		LAF xa_copyspellbook END
 		

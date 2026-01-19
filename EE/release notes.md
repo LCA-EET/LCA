@@ -6,6 +6,12 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+## v1.5.11 2026-01-19
+* Added xaa100 (Wyrm's Crossing) as a Master Area.
+* Fixed a bug that could cause Bence to spawn multiple times during the RBG portion of the mod.
+* The party is now fully healed during the transition from SoA to RBG.
+* Added the Narzugon's Bag of Holding.
+
 ## v1.5.10 2026-01-05
 * Corwin's racial enemy in BG2 onward is Demonic if she ventured to Avernus during the events of SoD, Skeleton otherwise.
 * Fixed a dialog bug that occurs when Corwin is not in the party when speaking to Simyaaz.

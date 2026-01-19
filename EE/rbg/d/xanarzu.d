@@ -417,14 +417,7 @@ IF ~~ THEN BEGIN XA_WhatAreYouOffering
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_LC_GaveTreasure", "LOCALS", 1)
-		GiveItemCreate("XASWORD", LastTalkedToBy(Myself),1,0,0)
-		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XASWORD", IDENTIFIED,TRUE))
-		GiveItemCreate("XACHICK", LastTalkedToBy(Myself),1,0,0)
-		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XACHICK", IDENTIFIED,TRUE))
-		GiveItemCreate("XAMSRING", LastTalkedToBy(Myself),1,0,0)
-		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XAMSRING", IDENTIFIED,TRUE))
-		GiveItemCreate("XAQUIVER", LastTalkedToBy(Myself),1,0,0)
-		ActionOverride(LastTalkedToBy(Myself), SetItemFlags("XAQUIVER", IDENTIFIED,TRUE))
+		GiveItemCreate("XANARBAG", LastTalkedToBy(Myself),1,0,0)
 	~
 	EXIT
 END
