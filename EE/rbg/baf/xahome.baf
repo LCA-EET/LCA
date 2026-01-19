@@ -39,3 +39,14 @@ THEN
 		SetCutSceneLite(TRUE)
 		StartCutScene("XACS14")
 END
+
+IF 
+	GlobalLT("XA_LC_CorwinHealed", "MYAREA", 1)
+	InMyArea("XACORWIN")
+	!InParty("XACORWIN")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_CorwinHealed", "MYAREA", 1)
+		ApplySpell("XACORWIN", RESTORE_FULL_HEALTH)
+END
+	

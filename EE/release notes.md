@@ -11,6 +11,7 @@
 * Fixed a bug that could cause Bence to spawn multiple times during the RBG portion of the mod.
 * The party is now fully healed during the transition from SoA to RBG.
 * Added the Narzugon's Bag of Holding.
+* Miscellaneous dialog improvements.
 
 ## v1.5.10 2026-01-05
 * Corwin's racial enemy in BG2 onward is Demonic if she ventured to Avernus during the events of SoD, Skeleton otherwise.
