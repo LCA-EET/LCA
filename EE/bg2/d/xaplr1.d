@@ -96,12 +96,6 @@ APPEND ~PLAYER1~
 		IF ~~ THEN 
 		DO ~
 			SetGlobal("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-			SetGlobal("ViconiaRomanceActive", "GLOBAL", 3)
-			SetGlobal("AerieRomanceActive", "GLOBAL", 3)
-			SetGlobal("JaheiraRomanceActive", "GLOBAL", 3)
-			SetGlobal("AnomenRomanceActive", "GLOBAL", 3)
-			SetGlobal("DornRomanceActive", "GLOBAL", 3)
-			SetGlobal("NeeraRomanceActive", "GLOBAL", 3)
 		~
 		EXTERN ~XACORWIJ~ XAA37
 	END

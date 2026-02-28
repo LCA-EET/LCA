@@ -159,3 +159,9 @@ OUTER_SET corwin_portrait = 1
 	Set to 1 to skip cutscenes associated with Skie's restoration.
 */
 OUTER_SET skip_restore_cutscene = 0
+
+/*
+	Parameter: terminate_romances
+	Set to 1 to terminate romances with vanilla BG2 characters when Gorion's ward is in a romance with Corwin.
+*/
+OUTER_SET terminate_romances = 1

@@ -875,6 +875,7 @@ OUTER_SET bg2_carryover = 1
 	OUTER_SET took_manual = 1
 	OUTER_SET corwin_portrait = 1
 	OUTER_SET skip_restore_cutscene = 0
+	OUTER_SET terminate_romances = 1
 
 	/*
 		If a parameter file exists, overwrite the default parameter with the contents of the parameter file.
@@ -1003,6 +1004,10 @@ OUTER_SET bg2_carryover = 1
 	
 	ACTION_IF (skip_restore_cutscene = 1) THEN BEGIN
 		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa27.baf~
+	END
+	
+	ACTION_IF (terminate_romances = 1) THEN BEGIN
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa28.baf~
 	END
 	
 	EXTEND_BOTTOM ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpaEE.baf~
