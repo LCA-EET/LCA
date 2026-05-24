@@ -1,5 +1,14 @@
 //{ Altered Transitions
-		//{ FATESP
+	//{ Spirit head
+		ADD_TRANS_ACTION HEAD1
+		BEGIN 5 END
+		BEGIN 0 END
+		~
+			SetGlobalTimer("XA_LC_GiantSpawnTimer", "GLOBAL", TWO_ROUNDS)
+		~
+	//}
+	
+	//{ FATESP
 		//{ FATESP State 6 Trans 24
 		ALTER_TRANS FATESP
 		BEGIN 6 END
