@@ -1617,7 +1617,7 @@ EXTEND_TOP GORODR1 39 //OK
 			IsValidForPartyDialogue("Rasaad")
 			IsValidForPartyDialogue("Neera")
 	~
-	THEN REPLY @22 /* ~What say you, my loyal comrades? They wronged you as much as I. Should they be allowed to live, or must the treacherous cowards taste steel?~ */
+	THEN REPLY @170 /* ~What say you, my loyal comrades? They wronged you as much as I. Should they be allowed to live, or must the treacherous cowards taste steel?~ */
 	DO ~
 		SetGlobal("XA_LC_OdrenShouldDie", "GLOBAL", 100)
 	~
@@ -1726,12 +1726,21 @@ CHAIN
 		== SAREV25J
 		IF ~
 			IsValidForPartyDialogue("SAREVOK")
+			!Alignment("SAREVOK", MASK_GOOD)
 		~
 		@140  /* ~Must you even ask? Death. The more excruciating, the better.~ */
 		DO ~
 			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", 1)
 		~
-		
+		== SAREV25J
+		IF ~
+			IsValidForPartyDialogue("SAREVOK")
+			Alignment("SAREVOK", MASK_GOOD)
+		~
+		@171  /*... Were you to ask me but a short time ago, I'd have called for their deaths in the most excruciating manner possible. My crimes against you however were greater than theirs, and yet you forgave me. I ask that you do the same for them.~ */
+		DO ~
+			IncrementGlobal("XA_LC_OdrenShouldDie", "GLOBAL", -1)
+		~
 		== MINSC25J
 		IF ~
 			IsValidForPartyDialogue("MINSC")
