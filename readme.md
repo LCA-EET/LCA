@@ -392,6 +392,7 @@ This encounter occurs immediately after CHARNAME’s escape from Avernus.
 #### Shadows of Amn Encounter 1
 Pre-requisites:
 - CHARNAME must be in a romance with Corwin.
+- CHARNAME cannot have entered Suldanessellar.
 - Corwin must be alive and in CHARNAME’s party.
 - One of the following conditions must be satisfied:
   - A: CHARNAME must have been in a romance with Corwin in SoD.
@@ -399,7 +400,7 @@ Pre-requisites:
 
 For condition A, this encounter can be initiated by speaking to Madame Nin in the Copper Coronet, while CHARNAME has a charisma of 15 or greater.
 
-For condition B, this encounter will be initiated by Corwin, approximately one day after Bodhi’s defeat.
+For condition B, this encounter will be initiated by Corwin, approximately eight hours after Bodhi’s defeat.
 
 For both conditions, the encounter will only occur if CHARNAME rests in a suitable location:
 - Sea Bounty
@@ -413,9 +414,10 @@ For both conditions, the encounter will only occur if CHARNAME rests in a suitab
 
 #### Shadows of Amn Encounter 2
 Pre-requisites:
-- CHARNAME must be in a romance with Corwin, and be male.
-- Corwin must be alive and in the CHARNAME’s party.
+- CHARNAME must be in a romance with Corwin.
+- CHARNAME cannot have entered Suldanessellar.
 - CHARNAME must have completed SoA Encounter 1.
+- Corwin must be alive and in the CHARNAME’s party.
 
 Corwin will initiate this encounter roughly four days after SoA Encounter 1. To complete the encounter, CHARNAME must rest in a suitable location: 
 
@@ -431,14 +433,14 @@ For both conditions, the encounter will only occur if CHARNAME rests in a suitab
 
 #### Return to Baldur's Gate Encounter A
 Pre-requisites:
-- CHARNAME must be in a romance with Corwin, and be male.
+- CHARNAME must be in a romance with Corwin.
 - Corwin must be alive and in CHARNAME’s party.
 - Corwin and CHARNAME must have met Neoma in East Baldur’s Gate, and CHARNAME must have expressed interest in the possibility of engaging in a threesome with the two of them.
 - CHARNAME must rest in the inn that they told Corwin they would be staying in.
 
 #### Return to Baldur's Gate Encounter B
 Pre-requisites:
-- CHARNAME must be in a romance with Corwin, and be male.
+- CHARNAME must be in a romance with Corwin.
 - Corwin must be alive and in CHARNAME’s party.
 - CHARNAME must rest in the inn that they told Corwin they would be staying in.
 

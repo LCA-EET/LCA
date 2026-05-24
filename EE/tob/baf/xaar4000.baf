@@ -1,5 +1,14 @@
 //{ LCA Related Changes
 	IF
+		Global("ClickedHeads","AR4000",1)
+		GlobalLT("XA_LC_FGTimerSet", "AR4000", 1)
+	THEN
+		RESPONSE #100
+			SetGlobalTimer("XA_LC_GiantSpawnTimer", "GLOBAL", TWO_ROUNDS)
+			SetGlobal("XA_LC_FGTimerSet", "AR4000", 1)
+			Continue()
+	END
+	IF
 		GlobalGT("XA_LC_ReturnToBG", "GLOBAL", 0)
 		Global("HeadsSave","AR4000",1)  // Spirit Heads
 	THEN
