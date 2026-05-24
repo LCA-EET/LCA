@@ -121,6 +121,7 @@ END
 	EXTEND_TOP ~keldorn.bcs~ 	~%MOD_FOLDER%/bg2/baf/xasvir.baf~
 	EXTEND_TOP ~ar0700.bcs~		~%MOD_FOLDER%/bg2/baf/xaar0700.baf~
 	EXTEND_TOP ~ar2200.bcs~		~%MOD_FOLDER%/bg2/baf/xaar2200.baf~
+	EXTEND_TOP ~ar2800.bcs~		~%MOD_FOLDER%/bg2/baf/xaar2800.baf~
 	
 	
 	LAF xa_replace_recompile

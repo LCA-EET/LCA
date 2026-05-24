@@ -8,6 +8,8 @@
 
 ## v1.5.13a 2026-05-24
 * Fixed a string reference error in Odren's dialog.
+* Updated Odren's dialog to reflect the fact that Sarevok may be a good-aligned character in ToB.
+* Changed the timer for Corwin's post-rescue intimate encounter from 24 hours to 8 hours and updated the readme accordingly.
 * Updated Simplified Chinese translation, courtesy of MephistoSatanDevil.
 
 ## v1.5.13 2026-02-28

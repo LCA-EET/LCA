@@ -2143,6 +2143,7 @@ END
 
 //{ #region Corwin Intimate Bodhi - Dialog R-20
 IF ~
+	GlobalLT("XA_LC_EnteredSuld", "GLOBAL", 1)
 	Global("XA_LC_CorwinSexAfterBodhi", "GLOBAL", 1)
 	//play romance song
 ~ THEN BEGIN XA_CorwinWantsSex

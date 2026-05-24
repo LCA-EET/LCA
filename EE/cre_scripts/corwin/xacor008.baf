@@ -1138,13 +1138,14 @@ END
 	/* If Corwin has not already had sex with CHARNAME, she will ask for sex after being healed / resurrected (Bodhi Bite) */
 	IF 
 		ActionListEmpty()
+		GlobalLT("XA_LC_EnteredSuld", "GLOBAL", 1)
 		Global("XA_LC_CorwinCleansed", "GLOBAL", 2) 
 		GlobalLT("XA_LC_TimesHadSex", "GLOBAL", 1)
 		!Global("XA_LC_CorwinSexBodhiTimerSet", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
-			SetGlobalTimer("XA_LC_CorwinSexAfterBodhiTimer", "GLOBAL", ONE_DAY)
+			SetGlobalTimer("XA_LC_CorwinSexAfterBodhiTimer", "GLOBAL", EIGHT_HOURS)
 			SetGlobal("XA_LC_CorwinSexBodhiTimerSet", "GLOBAL", 1)
 			SetInterrupt(TRUE)
 			Continue()
@@ -1152,6 +1153,7 @@ END
 
 	IF 
 		ActionListEmpty()
+		GlobalLT("XA_LC_EnteredSuld", "GLOBAL", 1)
 		GlobalTimerExpired("XA_LC_CorwinSexAfterBodhiTimer", "GLOBAL")
 		GlobalLT("XA_LC_TimesHadSex", "GLOBAL", 1)
 		GlobalLT("XA_LC_CorwinSexAfterBodhi", "GLOBAL", 1) //She has not asked for sex after Bodhi episode
@@ -1164,6 +1166,7 @@ END
 		
 	IF 
 		ActionListEmpty()
+		GlobalLT("XA_LC_EnteredSuld", "GLOBAL", 1)
 		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_LC_CorwinSexAfterBodhi", "GLOBAL", 1)
 		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
@@ -1175,6 +1178,7 @@ END
 	END
 	//{ Dialog R-20
 	IF 
+		GlobalLT("XA_LC_EnteredSuld", "GLOBAL", 1)
 		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 		Global("XA_LC_CorwinSexAfterBodhi", "GLOBAL", 1)
 		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
@@ -1193,6 +1197,7 @@ END
 	//{ Corwin Sex Second Time
 	IF
 		ActionListEmpty()
+		GlobalLT("XA_LC_EnteredSuld", "GLOBAL", 1)
 		!Class(Player1, MONK)
 		GlobalGT("XA_LC_TimesHadSex", "GLOBAL", 0)
 		GlobalLT("XA_LC_Sex2TimerSet", "LOCALS", 1)
@@ -1212,6 +1217,7 @@ END
 		GlobalLT("XA_LC_CorwinSex2_Init", "GLOBAL", 1)
 		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
 		Global("XA_LC_CorwinCanHeal", "GLOBAL", 1)
+		GlobalLT("XA_LC_EnteredSuld", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
 			SetInterrupt(FALSE)
