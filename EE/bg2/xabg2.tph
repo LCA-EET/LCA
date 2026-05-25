@@ -633,6 +633,14 @@ OUTER_SET bg2_carryover = 1
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@3147)
 	//}
 	
+	//{ Unenchanted Bowstring
+		COPY_EXISTING ~bow19b.itm~  ~override/xabowstr.itm~
+		WRITE_LONG 0x08 RESOLVE_STR_REF(@3199)
+		WRITE_LONG 0x0C RESOLVE_STR_REF(@3199)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@3200)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@3200)
+	//}
+	
 	
 	ACTION_IF FILE_EXISTS_IN_GAME ~C#IMMET.dlg~ THEN BEGIN
 		// Compatibility with I4E
