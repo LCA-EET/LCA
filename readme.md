@@ -219,7 +219,7 @@ Brevlik will spawn randomly in one of five locations:
 ### Restringing Corwin's Bow
 <a name="a_restring"></a>
 
-If Corwin is in your party when either Cespenar or the Athkatla smith restring her bow, she will gain the Restring unique ability. The ability allows her to switch between Corwin's Bow and the upgraded Gond or Gesen versions (and back), provided she has the appropriate bowstrings in her inventory. The Restring ability cannot be used when enemies are nearby. 
+If Corwin is in your party when either Cespenar or the Athkatla smith restring her bow with either the Gond or Gesen bowstrings, she will gain the Restring unique ability. The ability allows her to switch between Corwin's Bow and the upgraded Gond or Gesen versions (and back), provided she has the appropriate bowstrings in her inventory. The Restring ability cannot be used when enemies are nearby. 
 
 ### Useful Links
 <a name="a_useful_links"></a>
