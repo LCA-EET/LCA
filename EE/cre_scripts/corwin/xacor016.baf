@@ -1,0 +1,22 @@
+//{ Learned Restring
+	IF
+		Global("XA_LC_CorwinLearnedRestring", "GLOBAL", 1)
+		InParty(Myself)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_LC_RestringDialogTimer", "GLOBAL", THREE_ROUNDS)
+			SetGlobal("XA_LC_CorwinLearnedRestring", "GLOBAL", 2)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		GlobalTimerExpired("XA_LC_RestringDialogTimer", "GLOBAL")
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CorwinLearnedRestring", "GLOBAL", 3)
+			StartDialog("[JDLG]", Player1)
+	END
+//}
