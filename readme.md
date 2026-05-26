@@ -216,6 +216,15 @@ Brevlik will spawn randomly in one of five locations:
 - Splurging Sturgeon, Level 1 (xaa138)<br>
 </details>
 
+### The Longer Road EE Changes
+<a name="a_tlr"></a>
+
+<details>
+	<summary>Spoiler Warning! (Click to View)</summary>
+	
+The encounter with Ellesime is moved from the Elder Grove (start of ToB) to Suldanessellar (end of SoA), just before CHARNAME and the party leave for the Return to Baldur's Gate. If Corwin and Irenicus are both in the party, Corwin, after a short time, will rally like-minded party members to kill him, in order to fulfill – a second time – the mission given to her by the Dukes. You'll get a warning about one in-game hour prior to the start of hostilities.
+</details>
+
 ### Useful Links
 <a name="a_useful_links"></a>
 
@@ -369,15 +378,6 @@ Conditions A, B and C must hold to initiate the timer that starts the Rescue Cae
 <a name="a_restring"></a>
 
 If Corwin is in your party when either Cespenar or the Athkatla smith restring her bow, she will gain the ability to restring on demand. With her Restring unique ability, she will be able to switch between Corwin's Bow and the upgraded Gond or Gesen versions (and back), provided she has the appropriate bowstrings in her inventory. The Restring ability cannot be used when enemies are nearby. 
-
-### The Longer Road EE Changes
-<a name="a_tlr"></a>
-
-<details>
-	<summary>Spoiler Warning! (Click to View)</summary>
-	
-The encounter with Ellesime is moved from the Elder Grove (start of ToB) to Suldanessellar (end of SoA), just before CHARNAME and the party leave for the Return to Baldur's Gate. If Corwin and Irenicus are both in the party, Corwin, after a short time, will rally like-minded party members to kill him, in order to fulfill – a second time – the mission given to her by the Dukes. You'll get a warning about one in-game hour prior to the start of hostilities.
-</details>
 
 ### Intimate Encounters
 <a name="a_explicit"></a>
