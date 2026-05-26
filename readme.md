@@ -37,12 +37,12 @@ If you have any questions, or would like to provide feedback, you can reach me o
 - [Bug Reports](#a_bugs)
 - [Cross Modding / Forking](#a_crossmodding)
 - [Frequently Asked Questions (FAQs)](#a_faq)
+- [Restringing Corwin's Bow](#a_restring)
 - [Useful Links](#a_useful_links)
 - [Baldur's Gate 1 Changes](#a_bg1)
 - [Siege of Dragonspear Changes](#a_sod)
 - [Shadows of Amn Changes](#a_bg2)
 - [Throne of Bhaal Changes](#a_tob)
-- [Restringing Corwin's Bow](#a_restring)
 - [The Longer Road EE Changes](#a_tlr)
 - [Intimate Encounters](#a_explicit)
 - <a href="https://github.com/LCA-EET/LCA/blob/main/EE/release%20notes.md" target="_blank">Release Notes</a>
