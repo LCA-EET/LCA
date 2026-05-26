@@ -42,6 +42,7 @@ If you have any questions, or would like to provide feedback, you can reach me o
 - [Siege of Dragonspear Changes](#a_sod)
 - [Shadows of Amn Changes](#a_bg2)
 - [Throne of Bhaal Changes](#a_tob)
+- [Restringing Corwin's Bow](#a_restring)
 - [The Longer Road EE Changes](#a_tlr)
 - [Intimate Encounters](#a_explicit)
 - <a href="https://github.com/LCA-EET/LCA/blob/main/EE/release%20notes.md" target="_blank">Release Notes</a>
@@ -362,6 +363,13 @@ Conditions A, B and C must hold to initiate the timer that starts the Rescue Cae
 - Condition B: CHARNAME must have entered Saradush.
 - Condition C: CHARNAME must have destroyed the necromantic cult in Kanaglym, during the events of SoD.
 
+</details>
+
+### Restringing Corwin's Bow
+<a name="a_restring"></a>
+
+<details>
+If Corwin is in your party when either Cespenar or the Athkatla smith restring her bow, she will gain the ability to restring on demand. With her Restring unique ability, she will be able to switch between Corwin's Bow and the upgraded Gond or Gesen versions (and back), provided she has the appropriate bowstrings in her inventory. The Restring ability cannot be used when enemies are nearby. 
 </details>
 
 ### The Longer Road EE Changes

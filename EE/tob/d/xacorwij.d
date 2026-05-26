@@ -1999,137 +1999,178 @@ APPEND ~XACOR25J~
 	IF ~
 		Global("XA_LC_Restring", "LOCALS", 1)
 	~ THEN BEGIN XA_RestringAbility
-		// Corwin's Bow + 2: XACORBOW
-		// Corwin's Bow + 3: XACORBO3
-		// Corwin's Bow + 3 (Gesen): XACORBG3
-		// Corwin's Bow + 4 (Gesen): XACORBG4
-		// Corwin's Bow + 4 (Gond): XACORBO4
-		// Corwin's Bow + 5 (Gond): XACORBO5
-		
+		/*
+			Corwin's Bow + 2: 			XACORBOW
+			Corwin's Bow + 3: 			XACORBO3
+			Corwin's Bow + 3 (Gesen): 	XACORBG3
+			Corwin's Bow + 4 (Gesen): 	XACORBG4
+			Corwin's Bow + 4 (Gond): 	XACORBO4
+			Corwin's Bow + 5 (Gond): 	XACORBO5
+			Gond Bowstring: 			COMPON10
+			Gesen Bowstring:			BOW19B
+			Unenchanted bowstring		XABOWSTR
+			
+			XACORBOW + COMPON10 = XACORBO4 + XABOWSTR
+			XACORBOW + BOW19B	= XACORBG3 + XABOWSTR
+			XACORBO3 + COMPON10 = XACORBO5 + XABOWSTR
+			XACORBO3 + BOW19B	= XACORBG4 + XABOWSTR	
+			XACORBO4 + XABOWSTR = XACORBOW + COMPON10
+			XACORBO4 + BOW19B	= XACORBG3 + COMPON10
+			XACORBO5 + XABOWSTR = XACORBO3 + COMPON10
+			XACORBO5 + BOW19B	= XACORBG4 + COMPON10
+			XACORBG3 + COMPON10 = XACORBO4 + BOW19B
+			XACORBG3 + XABOWSTR = XACORBOW + BOW19B	
+			XACORBG4 + COMPON10 = XACORBO5 + BOW19B
+			XACORBG4 + XABOWSTR = XACORBO3 + BOW19B	
+		*/
 		SAY @1929 /* ~What are your orders, hero?~ */
 		
 		//{ Gond Bow Replacement
-			IF ~
+			IF ~ // OK
 				HasItem("XACORBO4", Myself)
 				HasItem("XABOWSTR", Myself)
 			~ THEN REPLY @1922 /* ~(Replace Gond's bowstring with the unenchanted bowstring.)~*/
 			DO ~
 				DestroyItem("XACORBO4")
 				DestroyItem("XABOWSTR")
+				CreateItem("COMPON10",0,0,0)
+				CreateItem("XACORBOW",0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 			
-			IF ~
+			IF ~ // OK
 				HasItem("XACORBO4", Myself)
 				HasItem("BOW19B", Myself) // Gesen Bowstring
 			~ THEN REPLY @1923 /* ~(Replace Gond's bowstring with Gesen's bowstring.)~*/
 			DO ~
 				DestroyItem("XACORBO4")
 				DestroyItem("BOW19B")
+				CreateItem("COMPON10",0,0,0)
+				CreateItem("XACORBG3",0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 			
-			IF ~
+			IF ~ // OK
 				HasItem("XACORBO5", Myself)
 				HasItem("XABOWSTR", Myself)
 			~ THEN REPLY @1922 /* ~(Replace Gond's bowstring with the unenchanted bowstring.)~*/
 			DO ~
 				DestroyItem("XACORBO5")
 				DestroyItem("XABOWSTR")
+				CreateItem("COMPON10",0,0,0)
+				CreateItem("XACORBO3",0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 			
-			IF ~
+			IF ~ // OK 
 				HasItem("XACORBO5", Myself)
 				HasItem("BOW19B", Myself) // Gesen Bowstring
 			~ THEN REPLY @1923 /* ~(Replace Gond's bowstring with Gesen's bowstring.)~*/
 			DO ~
 				DestroyItem("XACORBO5")
 				DestroyItem("BOW19B")
+				CreateItem("COMPON10",0,0,0)
+				CreateItem("XACORBG4",0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 		//}
 		
 		//{ Gesen Replacement
-			IF ~
+			IF ~ // OK 
 				HasItem("XACORBG3", Myself)
 				HasItem("XABOWSTR", Myself)
 			~ THEN REPLY @1924 /* ~(Replace Gesen's bowstring with the unenchanted bowstring.)~*/
 			DO ~
 				DestroyItem("XACORBG3")
 				DestroyItem("XABOWSTR")
+				CreateItem("BOW19B",0,0,0)
+				CreateItem("XACORBOW",0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 			
-			IF ~
+			IF ~ // OK 
 				HasItem("XACORBG3", Myself)
 				HasItem("COMPON10", Myself) // Gond Bowstring
 			~ THEN REPLY @1925 /* ~(Replace Gesen's bowstring with Gond's bowstring.)~*/
 			DO ~
 				DestroyItem("XACORBG3")
 				DestroyItem("COMPON10")
+				CreateItem("BOW19B",0,0,0)
+				CreateItem("XACORBO4",0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 			
-			IF ~
+			IF ~ // OK 
 				HasItem("XACORBG4", Myself)
 				HasItem("XABOWSTR", Myself)
 			~ THEN REPLY @1924 /* ~(Replace Gesen's bowstring with the unenchanted bowstring.)~*/
 			DO ~
 				DestroyItem("XACORBG4")
 				DestroyItem("XABOWSTR")
+				CreateItem("BOW19B",0,0,0)
+				CreateItem("XACORBO3",0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 			
-			IF ~
+			IF ~ // OK 
 				HasItem("XACORBG4", Myself)
 				HasItem("COMPON10", Myself) // Gond Bowstring
 			~ THEN REPLY @1925 /* ~(Replace Gesen's bowstring with Gond's bowstring.)~*/
 			DO ~
 				DestroyItem("XACORBG4")
 				DestroyItem("COMPON10")
+				CreateItem("BOW19B",0,0,0)
+				CreateItem("XACORBO5",0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 		//}
 		
 		//{ Unenchanted Bowstring
-			IF ~
+			IF ~ // OK
 				HasItem("XACORBOW", Myself)
 				HasItem("COMPON10", Myself) // Gond Bowstring
 			~ THEN REPLY @1926 /* ~(Replace the unenchanted bowstring with Gond's bowstring.)~*/
 			DO ~
 				DestroyItem("XACORBOW")
 				DestroyItem("COMPON10")
+				CreateItem("XABOWSTR",0,0,0)
+				CreateItem("XACORBO4",0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 			
-			IF ~
+			IF ~ // OK
 				HasItem("XACORBOW", Myself)
 				HasItem("BOW19B", Myself) // Gesen Bowstring
 			~ THEN REPLY @1927 /* ~(Replace the unenchanted bowstring with Gesen's bowstring.)~*/
 			DO ~
 				DestroyItem("XACORBOW")
 				DestroyItem("BOW19B")
+				CreateItem("XABOWSTR",0,0,0)
+				CreateItem("XACORBG3",0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 			
-			IF ~
+			IF ~ // OK
 				HasItem("XACORBO3", Myself)
 				HasItem("COMPON10", Myself) // Gond Bowstring
 			~ THEN REPLY @1926 /* ~(Replace the unenchanted bowstring with Gond's bowstring.)~*/
 			DO ~
 				DestroyItem("XACORBO3")
 				DestroyItem("COMPON10")
+				CreateItem("XABOWSTR",0,0,0)
+				CreateItem("XACORBO5",0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 			
-			IF ~
+			IF ~ // OK
 				HasItem("XACORBO3", Myself)
 				HasItem("BOW19B", Myself) // Gesen Bowstring
 			~ THEN REPLY @1927 /* ~(Replace the unenchanted bowstring with Gesen's bowstring.)~*/
 			DO ~
 				DestroyItem("XACORBO3")
 				DestroyItem("BOW19B")
+				CreateItem("XABOWSTR",0,0,0)
+				CreateItem("XACORBG4",0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 		//}
