@@ -675,6 +675,7 @@
 			SAY @39  /*~Ooo! Lets me see, lets me see! Very nice.... yes! Cespenar can replace the string on this bow, with Bowstring of Gond! Make very powerful, for 5000 gold. You wants?~ */
 			
 			IF ~
+				!InParty("XACORWIN")
 				PartyGoldGT(4999)
 				PartyHasItem("XACORBO3")
 			~
@@ -691,6 +692,81 @@
 			GOTO 11
 			
 			IF ~
+				!InParty("XACORWIN")
+				PartyGoldGT(4999)
+				PartyHasItem("XACORBOW")
+			~
+			THEN REPLY @40 /* ~Sure, go ahead.~ */
+			DO ~
+				SetGlobal("XA_LC_ItemMaker", "GLOBAL", 1)
+				TakePartyGold(5000)
+				TakePartyItemNum("XACORBOW",1)
+				DestroyItem("XACORBOW")
+				TakePartyItemNum("compon10",1)
+				DestroyItem("compon10")
+				DestroyGold(5000)
+			~
+			GOTO 11
+			
+			IF ~
+				InParty("XACORWIN")
+				GlobalLT("XA_LC_CorwinLearnedRestring", "GLOBAL", 1)
+				PartyGoldGT(4999)
+				PartyHasItem("XACORBO3")
+			~
+			THEN REPLY @40 /* ~Sure, go ahead.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinLearnedRestring", "GLOBAL", 1)
+				SetGlobal("XA_LC_ItemMaker", "GLOBAL", 2)
+				TakePartyGold(5000)
+				TakePartyItemNum("XACORBO3",1)
+				DestroyItem("XACORBO3")
+				TakePartyItemNum("compon10",1)
+				DestroyItem("compon10")
+				DestroyGold(5000)
+			~
+			GOTO 11
+			
+			IF ~
+				InParty("XACORWIN")
+				GlobalLT("XA_LC_CorwinLearnedRestring", "GLOBAL", 1)
+				PartyGoldGT(4999)
+				PartyHasItem("XACORBOW")
+			~
+			THEN REPLY @40 /* ~Sure, go ahead.~ */
+			DO ~
+				SetGlobal("XA_LC_CorwinLearnedRestring", "GLOBAL", 1)
+				SetGlobal("XA_LC_ItemMaker", "GLOBAL", 1)
+				TakePartyGold(5000)
+				TakePartyItemNum("XACORBOW",1)
+				DestroyItem("XACORBOW")
+				TakePartyItemNum("compon10",1)
+				DestroyItem("compon10")
+				DestroyGold(5000)
+			~
+			GOTO 11
+			
+			IF ~
+				InParty("XACORWIN")
+				!GlobalLT("XA_LC_CorwinLearnedRestring", "GLOBAL", 1)
+				PartyGoldGT(4999)
+				PartyHasItem("XACORBO3")
+			~
+			THEN REPLY @40 /* ~Sure, go ahead.~ */
+			DO ~
+				SetGlobal("XA_LC_ItemMaker", "GLOBAL", 2)
+				TakePartyGold(5000)
+				TakePartyItemNum("XACORBO3",1)
+				DestroyItem("XACORBO3")
+				TakePartyItemNum("compon10",1)
+				DestroyItem("compon10")
+				DestroyGold(5000)
+			~
+			GOTO 11
+			
+			IF ~
+				InParty("XACORWIN")
+				!GlobalLT("XA_LC_CorwinLearnedRestring", "GLOBAL", 1)
 				PartyGoldGT(4999)
 				PartyHasItem("XACORBOW")
 			~

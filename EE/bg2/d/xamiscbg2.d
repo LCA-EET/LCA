@@ -244,7 +244,34 @@
 		
 		IF ~~ THEN BEGIN XA_LC_CorwinBowGesen_Replace
 			SAY #59784 /* ~Two things, me friend. It will cost ye 7,500 gp for the work, no less, and without an apprentice, ye'll have to stay here a full day and help me run the forge.~ */
-			IF ~  
+			
+			IF ~
+				!InParty("XACORWIN")
+				PartyGoldGT(7499)
+			~ THEN REPLY #59785 /* ~That sounds fine. Let's do it.~ */ 
+			DO ~
+				TakePartyGold(7500)
+				DestroyGold(7500)
+				SetGlobal("XA_LC_Cromwell_CorwinBow", "GLOBAL", 1)
+			~
+			GOTO 56
+			
+			IF ~
+				InParty("XACORWIN")
+				GlobalLT("XA_LC_CorwinLearnedRestring", "GLOBAL", 1)
+				PartyGoldGT(7499)
+			~ THEN REPLY #59785 /* ~That sounds fine. Let's do it.~ */ 
+			DO ~
+				TakePartyGold(7500)
+				DestroyGold(7500)
+				SetGlobal("XA_LC_CorwinLearnedRestring", "GLOBAL", 1)
+				SetGlobal("XA_LC_Cromwell_CorwinBow", "GLOBAL", 1)
+			~
+			GOTO 56
+			
+			IF ~
+				InParty("XACORWIN")
+				!GlobalLT("XA_LC_CorwinLearnedRestring", "GLOBAL", 1)
 				PartyGoldGT(7499)
 			~ THEN REPLY #59785 /* ~That sounds fine. Let's do it.~ */ 
 			DO ~
