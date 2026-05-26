@@ -368,9 +368,7 @@ Conditions A, B and C must hold to initiate the timer that starts the Rescue Cae
 ### Restringing Corwin's Bow
 <a name="a_restring"></a>
 
-<details>
 If Corwin is in your party when either Cespenar or the Athkatla smith restring her bow, she will gain the ability to restring on demand. With her Restring unique ability, she will be able to switch between Corwin's Bow and the upgraded Gond or Gesen versions (and back), provided she has the appropriate bowstrings in her inventory. The Restring ability cannot be used when enemies are nearby. 
-</details>
 
 ### The Longer Road EE Changes
 <a name="a_tlr"></a>
