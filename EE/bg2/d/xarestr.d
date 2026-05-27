@@ -1,7 +1,7 @@
-
+APPEND_EARLY XACORWIJ
 	//{ Restringing knowledge
 	IF ~
-		Global("XA_LC_RestringingAbility", "GLOBAL", 1)
+		Global("XA_LC_CorwinLearnedRestring", "GLOBAL", 3)
 	~ THEN BEGIN XA_Restringing_1
 		SAY @1909 /* ~This is excellent...~ */
 		
@@ -10,7 +10,8 @@
 		
 		IF ~~ THEN REPLY @1911 /*~What is?~	*/
 		GOTO XA_Restringing_2
-		/* *//* *//* *//* *//* *//* */ REPLY @1912 /*~Happy with the improvements to your bow I take it?~	*/
+		
+		IF ~~ THEN REPLY @1912 /*~Happy with the improvements to your bow I take it?~	*/
 		GOTO XA_Restringing_2
 	END
 	
@@ -43,7 +44,7 @@
 		SAY @1921 /* ~The others are waiting. Let's move out.~*/
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_LC_RestringingAbility", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinLearnedRestring", "GLOBAL", 4)
 		~
 		EXIT
 	END
@@ -51,8 +52,9 @@
 	
 	//{ Restringing Ability
 	IF ~
-		Global("XA_LC_Restring", "LOCALS", 1)
-	~ THEN BEGIN XA_RestringAbility
+		RandomNum(2,1)
+		Global("XARSTRNG", "GLOBAL", 1)
+	~ THEN BEGIN XA_RestringAbility_Entry1
 		/*
 			Corwin's Bow + 2: 			XACORBOW
 			Corwin's Bow + 3: 			XACORBO3
@@ -230,9 +232,20 @@
 		//}
 		
 		IF ~~ THEN REPLY @1928 /* ~(Leave the bow as-is.)~*/
+		DO ~
+			SetGlobal("XARSTRNG", "GLOBAL", 0)
+		~
 		EXIT
 	END
+	IF ~
+		RandomNum(2,2)
+		Global("XARSTRNG", "GLOBAL", 1)
+	~ THEN BEGIN XA_RestringAbility_Entry2
+		SAY @1933 /*~Your orders?~ [xad10038] */
 		
+		COPY_TRANS XACORWIJ XA_RestringAbility_Entry1
+	END
+	
 	IF ~~ THEN BEGIN XA_RestringAbility_2
 		SAY @1930 /* ~Right.~ [xad10043]*/
 		
@@ -242,8 +255,9 @@
 		
 		IF ~~ THEN
 		DO ~
-			SetGlobal("XA_LC_Restring", "LOCALS", 0)
+			SetGlobal("XARSTRNG", "GLOBAL", 0)
 		~
 		EXIT
 	END
 	//}
+END

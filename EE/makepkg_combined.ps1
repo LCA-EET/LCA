@@ -1,9 +1,9 @@
+$currentDir = (Get-Location).Path
 $basePath = "LoveConquersAll_EE"
 $tp2Name = "LCA"
 $modPath = $basePath + "/" + $tp2Name 
 $archive = $basePath + ".zip"
 $exePath = "setup-" + $tp2Name + ".exe"
-$testDir = "F:\Baldur's Gate EE\00783\"
 $folders = @(
 'assistant',
 'bg1',
@@ -38,6 +38,17 @@ Remove-Item -LiteralPath $modPath -Force -Recurse
 foreach($folder in $folders){
 	Copy-Item -Path $folder -Destination ($modPath + "/" + $folder) -Recurse	
 }
+#region Restring Dialog
+<#
+	Recreates xarestr.d for ToB and changes the D reference from XACORWIJ to XACOR25J.
+#>
+$xarestrPath = ($modPath + "/tob/d/xarestr.d")
+
+Copy-Item -Path ($currentDir + "/bg2/d/xarestr.d") -Destination $xarestrPath
+
+(Get-Content -Path $xarestrPath) -replace "XACORWIJ", "XACOR25J" |
+    Set-Content -Path $xarestrPath
+#endregion
 
 foreach($folder in $toExclude){
 	Remove-Item ($modPath + "/" + $folder) -Recurse
@@ -57,14 +68,6 @@ Copy-Item -Path "Beamdog Forum Post.url" -Destination $modPath
 Copy-Item -Path "LCA Release Notes.url" -Destination $modPath
 Get-Date -Format "yyyy-MM-dd HH:mm K" > pkgdate.txt
 Copy-Item -Path pkgdate.txt -Destination $modPath
-#Copy-Item -Path "Release Notes.md" -Destination ($basePath + "/Release_Notes_LCA.md")
-#Copy-Item -Path "../User Guide.pdf" -Destination ($basePath + "/User Guide.pdf")
-#Remove-Item -LiteralPath ($testDir + $tp2Name) -Force -Recurse
-
-#Copy-Item -Path $modPath -Destination $testDir -Recurse
-
-#Remove-Item -LiteralPath $basePath -Force -Recurse
-
 
 $7zipPath = "$env:ProgramFiles/7-Zip/7z.exe"
 

@@ -230,6 +230,18 @@ END
 				xa_scriptName = ~XACORWIN~
 				xa_outputbcs = ~xacor030~
 		END
+		//{ Restring Script
+			LAF xa_replace_recompile_string 
+				INT_VAR
+					xa_top = 0
+				STR_VAR
+					xa_strToReplace = ~\[JDLG\]~
+					xa_replacement = ~XACORWIJ~
+					xa_output = ~%MOD_FOLDER%/temp/xa016soa~
+					xa_bcs = ~xacor016~
+			END
+			
+		//}
 	//}
 	
 	//{ Corwin Script
@@ -259,8 +271,10 @@ END
 		
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor006.bcs~ // Exp Boost Spellhold
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xalccs06.bcs~ // Exp Boost Join
-		
+		EXTEND_BOTTOM ~xacorwin.bcs~ ~%MOD_FOLDER%/temp/xa016soa.bcs~ // Restring
 	//}
+	
+	
 	
 	ACTION_IF (isEET = 1) THEN BEGIN
 		EXTEND_BOTTOM ~xacorwin.bcs~ ~override/xacor002.bcs~ // Corwin Stat Matching
@@ -820,6 +834,10 @@ OUTER_SET bg2_carryover = 1
 //}
 
 //{ New Spells
+	COPY  ~%MOD_FOLDER%/bg2/spl/xarstrng.spl~ ~override~
+	WRITE_LONG 0x08 RESOLVE_STR_REF(@3201)
+	WRITE_ASCII 0x3A ~XAD102~ #8
+	
 	COPY  ~%MOD_FOLDER%/bg2/spl/xasboost.spl~ ~override~
 	WRITE_LONG 0x08 RESOLVE_STR_REF(@3187)
 

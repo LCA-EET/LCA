@@ -20,6 +20,19 @@ ACTION_IF (xalc_assistant = 1) THEN BEGIN
 	COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d/debug~
 END
 
+//{ Restring Script
+	LAF xa_replace_recompile_string 
+		INT_VAR
+			xa_top = 0
+		STR_VAR
+			xa_strToReplace = ~\[JDLG\]~
+			xa_replacement = ~XACOR25J~
+			xa_output = ~%MOD_FOLDER%/temp/xa016tob~
+			xa_bcs = ~xacor016~
+	END
+	
+//}
+
 //{ Script Extensions
 	
 	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%/tob/baf/xabaltob.baf~
@@ -74,7 +87,7 @@ END
 		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor025.bcs~ // ToB NPC Interactions
 		
 		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xalccs06.bcs~ // Exp Boost Join
-		
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/temp/xa016tob.bcs~ // Restring
 //}
 
 COPY ~%MOD_FOLDER%/temp/xalcbico.bcs~ ~%MOD_FOLDER%/temp/xalcbica.bcs~
