@@ -68,6 +68,9 @@
 @3012=~Exit.~
 @3013=~Dismiss Debugger.~
 @3014=~Inventory Carryover~
+@3015=~Restring Item Test~
+@3016=~SetGlobal("XA_LC_CorwinLearnedRestring", "GLOBAL", 4)~
+@3017=~SetGlobal("XA_LC_CorwinLearnedRestring", "GLOBAL", 1)~
 @4000=~SoD Debug~
 @4001=~Cutscene Test~
 @4002=~Tent Cutscene (XATNTCS)~

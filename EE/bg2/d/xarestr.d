@@ -89,8 +89,8 @@ APPEND_EARLY XACORWIJ
 			DO ~
 				DestroyItem("XACORBO4")
 				DestroyItem("XABOWSTR")
-				CreateItem("COMPON10",0,0,0)
-				CreateItem("XACORBOW",0,0,0)
+				GiveItemCreate("COMPON10",Myself,0,0,0)
+				GiveItemCreate("XACORBOW",Myself,0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 			
@@ -101,8 +101,8 @@ APPEND_EARLY XACORWIJ
 			DO ~
 				DestroyItem("XACORBO4")
 				DestroyItem("BOW19B")
-				CreateItem("COMPON10",0,0,0)
-				CreateItem("XACORBG3",0,0,0)
+				GiveItemCreate("COMPON10",Myself,0,0,0)
+				GiveItemCreate("XACORBG3",Myself,0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 			
@@ -113,8 +113,8 @@ APPEND_EARLY XACORWIJ
 			DO ~
 				DestroyItem("XACORBO5")
 				DestroyItem("XABOWSTR")
-				CreateItem("COMPON10",0,0,0)
-				CreateItem("XACORBO3",0,0,0)
+				GiveItemCreate("COMPON10",Myself,0,0,0)
+				GiveItemCreate("XACORBO3",Myself,0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 			
@@ -125,8 +125,8 @@ APPEND_EARLY XACORWIJ
 			DO ~
 				DestroyItem("XACORBO5")
 				DestroyItem("BOW19B")
-				CreateItem("COMPON10",0,0,0)
-				CreateItem("XACORBG4",0,0,0)
+				GiveItemCreate("COMPON10",Myself,0,0,0)
+				GiveItemCreate("XACORBG4",Myself,0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 		//}
@@ -139,8 +139,8 @@ APPEND_EARLY XACORWIJ
 			DO ~
 				DestroyItem("XACORBG3")
 				DestroyItem("XABOWSTR")
-				CreateItem("BOW19B",0,0,0)
-				CreateItem("XACORBOW",0,0,0)
+				GiveItemCreate("BOW19B",Myself,0,0,0)
+				GiveItemCreate("XACORBOW",Myself,0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 			
@@ -151,8 +151,8 @@ APPEND_EARLY XACORWIJ
 			DO ~
 				DestroyItem("XACORBG3")
 				DestroyItem("COMPON10")
-				CreateItem("BOW19B",0,0,0)
-				CreateItem("XACORBO4",0,0,0)
+				GiveItemCreate("BOW19B",Myself,0,0,0)
+				GiveItemCreate("XACORBO4",Myself,0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 			
@@ -163,8 +163,8 @@ APPEND_EARLY XACORWIJ
 			DO ~
 				DestroyItem("XACORBG4")
 				DestroyItem("XABOWSTR")
-				CreateItem("BOW19B",0,0,0)
-				CreateItem("XACORBO3",0,0,0)
+				GiveItemCreate("BOW19B",Myself,0,0,0)
+				GiveItemCreate("XACORBO3",Myself,0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 			
@@ -175,8 +175,8 @@ APPEND_EARLY XACORWIJ
 			DO ~
 				DestroyItem("XACORBG4")
 				DestroyItem("COMPON10")
-				CreateItem("BOW19B",0,0,0)
-				CreateItem("XACORBO5",0,0,0)
+				GiveItemCreate("BOW19B",Myself,0,0,0)
+				GiveItemCreate("XACORBO5",Myself,0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 		//}
@@ -189,8 +189,8 @@ APPEND_EARLY XACORWIJ
 			DO ~
 				DestroyItem("XACORBOW")
 				DestroyItem("COMPON10")
-				CreateItem("XABOWSTR",0,0,0)
-				CreateItem("XACORBO4",0,0,0)
+				GiveItemCreate("XABOWSTR",Myself,0,0,0)
+				GiveItemCreate("XACORBO4",Myself,0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 			
@@ -201,8 +201,8 @@ APPEND_EARLY XACORWIJ
 			DO ~
 				DestroyItem("XACORBOW")
 				DestroyItem("BOW19B")
-				CreateItem("XABOWSTR",0,0,0)
-				CreateItem("XACORBG3",0,0,0)
+				GiveItemCreate("XABOWSTR",Myself,0,0,0)
+				GiveItemCreate("XACORBG3",Myself,0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 			
@@ -213,8 +213,8 @@ APPEND_EARLY XACORWIJ
 			DO ~
 				DestroyItem("XACORBO3")
 				DestroyItem("COMPON10")
-				CreateItem("XABOWSTR",0,0,0)
-				CreateItem("XACORBO5",0,0,0)
+				GiveItemCreate("XABOWSTR",Myself,0,0,0)
+				GiveItemCreate("XACORBO5",Myself,0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 			
@@ -225,8 +225,8 @@ APPEND_EARLY XACORWIJ
 			DO ~
 				DestroyItem("XACORBO3")
 				DestroyItem("BOW19B")
-				CreateItem("XABOWSTR",0,0,0)
-				CreateItem("XACORBG4",0,0,0)
+				GiveItemCreate("XABOWSTR",Myself,0,0,0)
+				GiveItemCreate("XACORBG4",Myself,0,0,0)
 			~
 			GOTO XA_RestringAbility_2
 		//}

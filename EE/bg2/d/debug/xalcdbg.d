@@ -122,6 +122,32 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 10
 		
+		IF ~~ THEN REPLY @3015 /*~Restring Item Test~ */
+		DO ~
+			GiveItemCreate("XACORBOW", Player1, 0, 0, 0)
+			GiveItemCreate("XACORBO3", Player1, 0, 0, 0)
+			GiveItemCreate("XACORBG3", Player1, 0, 0, 0)
+			GiveItemCreate("XACORBG4", Player1, 0, 0, 0)
+			GiveItemCreate("XACORBO4", Player1, 0, 0, 0)
+			GiveItemCreate("XACORBO5", Player1, 0, 0, 0)
+			GiveItemCreate("COMPON10", Player1, 0, 0, 0)
+			GiveItemCreate("BOW19B", Player1, 0, 0, 0)
+			GiveItemCreate("XABOWSTR", Player1, 0, 0, 0)
+		~
+		GOTO XA_BG2_Debug
+		
+		IF ~~ THEN REPLY @3016 /*~SetGlobal("XA_LC_CorwinLearnedRestring", "GLOBAL", 4)~ */
+		DO ~
+			SetGlobal("XA_LC_CorwinLearnedRestring", "GLOBAL", 4)
+		~
+		GOTO XA_BG2_Debug
+		
+		IF ~~ THEN REPLY @3017 /*~SetGlobal("XA_LC_CorwinLearnedRestring", "GLOBAL", 1)~ */
+		DO ~
+			SetGlobal("XA_LC_CorwinLearnedRestring", "GLOBAL", 1)
+		~
+		GOTO XA_BG2_Debug
+		
 		COPY_TRANS XALCDBG 11
 	END
 	

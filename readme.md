@@ -197,6 +197,12 @@ Caelar's LCA script name is xacaelar.
 ### Frequently Asked Questions
 <a name="a_faq"></a>
 #### Question
+I have the Cost of One Girl's Soul mod installed. Skie's soul has been saved, but I'm not sure how I can bring Corwin into my party.
+
+#### Answer
+Once the "L#2SkieDagger" global variable exceeds 30 you will receive a prompt to visit the Athkatla magistrate. Speak to Brega and have him send a letter to Baldur's Gate. Once the letter is sent, Corwin will appear in the Athkatla magistrate in five days' time.  
+
+#### Question
 I finished BG2 and did the Tears of Bhaal bit and came back to Suldanessellar but I do not seem to be able to leave the room in order to go to Baldurs Gate. How do I progress?
 
 #### Answer

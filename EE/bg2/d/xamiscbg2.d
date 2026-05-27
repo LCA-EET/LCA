@@ -271,7 +271,7 @@
 			
 			IF ~
 				InParty("XACORWIN")
-				!GlobalLT("XA_LC_CorwinLearnedRestring", "GLOBAL", 1)
+				GlobalGT("XA_LC_CorwinLearnedRestring", "GLOBAL", 0)
 				PartyGoldGT(7499)
 			~ THEN REPLY #59785 /* ~That sounds fine. Let's do it.~ */ 
 			DO ~

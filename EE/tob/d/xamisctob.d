@@ -748,7 +748,7 @@
 			
 			IF ~
 				InParty("XACORWIN")
-				!GlobalLT("XA_LC_CorwinLearnedRestring", "GLOBAL", 1)
+				GlobalGT("XA_LC_CorwinLearnedRestring", "GLOBAL", 0)
 				PartyGoldGT(4999)
 				PartyHasItem("XACORBO3")
 			~
@@ -766,7 +766,7 @@
 			
 			IF ~
 				InParty("XACORWIN")
-				!GlobalLT("XA_LC_CorwinLearnedRestring", "GLOBAL", 1)
+				GlobalGT("XA_LC_CorwinLearnedRestring", "GLOBAL", 0)
 				PartyGoldGT(4999)
 				PartyHasItem("XACORBOW")
 			~

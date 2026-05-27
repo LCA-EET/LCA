@@ -47,6 +47,7 @@
 //{ Add Restring Ability
 IF
 		ActionListEmpty()
+		Global("XA_LC_CorwinLearnedRestring", "GLOBAL", 4)
 		!TriggerOverride("XACORWIN",HaveSpellRES("XARSTRNG"))
 		GlobalLT("XA_LC_RestringTimerSet", "GLOBAL", 1)
 	THEN
@@ -60,6 +61,7 @@ IF
 	
 	IF
 		ActionListEmpty()
+		Global("XA_LC_CorwinLearnedRestring", "GLOBAL", 4)
 		GlobalTimerExpired("XA_LC_RestringTimer", "GLOBAL")
 		Global("XA_LC_RestringTimerSet", "GLOBAL", 1)
 	THEN
