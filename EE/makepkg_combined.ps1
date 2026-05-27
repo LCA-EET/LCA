@@ -15,6 +15,7 @@ $folders = @(
 'generated/d',
 'generated/f',
 'generated/g',
+'generated/h',
 'ogg',
 'rbg',
 'sod',

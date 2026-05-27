@@ -47,6 +47,7 @@ INCLUDE ~%MOD_FOLDER%/generated/a/generated.tph~
 INCLUDE ~%MOD_FOLDER%/generated/c/generated.tph~
 INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 INCLUDE ~%MOD_FOLDER%/generated/g/generated.tph~
+INCLUDE ~%MOD_FOLDER%/generated/h/generated.tph~
 
 //{ Music Update - Kanaglym Dream
 	COPY_EXISTING ~xablck.are~ ~override~
