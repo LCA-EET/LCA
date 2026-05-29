@@ -20,3 +20,40 @@ END
 			Continue()
 	END
 //}
+
+//{ Nightmare Talk
+	IF
+		InParty("XACORWIN")
+		InParty("JAHEIRA")
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalGT("XA_LC_EnteredSaradush", "GLOBAL", 0)
+		GlobalLT("XA_LC_NightmareTalkTimerSet", "GLOBAL", 1)
+	THEN 
+		RESPONSE #100
+			SetGlobalTimer("XA_LC_NightmareTalkTimer", "GLOBAL", FOUR_HOURS)
+			SetGlobal("XA_LC_NightmareTalkTimerSet", "GLOBAL", 1)
+			Continue()
+	END
+	
+	IF
+		GlobalTimerExpired("XA_LC_NightmareTalkTimer", "GLOBAL")
+		InParty("XACORWIN")
+		InParty("JAHEIRA")
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		GlobalLT("XA_LC_NightmareTalk", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_NightmareTalk", "GLOBAL", 1)
+			Continue()
+	END
+	
+	IF 
+		Global("XA_LC_NightmareTalk", "GLOBAL", 1)
+		InParty("XACORWIN")
+		InParty("JAHEIRA")
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	THEN 
+		RESPONSE #100
+			ActionOverride("JAHEIRA", StartDialog("JAHEI25J", Player1))
+	END
+//}

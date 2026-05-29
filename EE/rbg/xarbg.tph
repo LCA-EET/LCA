@@ -49,6 +49,30 @@ INCLUDE ~%MOD_FOLDER%/generated/f/generated.tph~
 INCLUDE ~%MOD_FOLDER%/generated/g/generated.tph~
 INCLUDE ~%MOD_FOLDER%/generated/h/generated.tph~
 
+//{ Block H Thralls
+	ACTION_DEFINE_ARRAY thralls
+	BEGIN
+		xah100		// carsto
+		xah101		// haseo
+		xah102		// rahvin
+		xah103		// shaldr
+		xah104		// wudei
+		xah105		// galdor
+	END
+		
+	ACTION_PHP_EACH thralls AS _ => thrall
+	BEGIN
+		COPY_EXISTING ~%thrall%.cre~ ~override~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@4199)
+		WRITE_LONG 0xC RESOLVE_STR_REF(@4199)
+		WRITE_LONG 0x28 0x6403 // Skeleton
+		WRITE_BYTE 0x270 255 // Enemy
+		WRITE_BYTE 0x271 4 // Undead
+		WRITE_BYTE 0x27B 35 // Neutral Evil
+		LPF xa_remove_cre_sounds
+	END
+//}
+
 //{ Music Update - Kanaglym Dream
 	COPY_EXISTING ~xablck.are~ ~override~
 	WRITE_LONG 0x22C xag0
