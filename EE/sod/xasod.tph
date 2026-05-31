@@ -3,6 +3,10 @@ SILENT
 
 INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
 
+//{ Hotspring Cutscene Area
+	COPY ~%MOD_FOLDER%/sod/are~ ~override~
+//}
+
 //{ Tent Cutscene Area
 	ACTION_IF (isEET = 1) THEN BEGIN
 		OUTER_SPRINT filename ~bg1906.are~

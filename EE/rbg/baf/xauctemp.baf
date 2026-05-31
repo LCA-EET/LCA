@@ -85,3 +85,24 @@ THEN
 		ActionOverride(Player1, StartDialog("Player1", Player1))
 END
 
+//{ Spawn Thralls
+IF
+	Global("XA_LC_SpawnUndeadUCTEMP", "MYAREA", 1) 
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_SpawnUndeadUCTEMP", "MYAREA", 2) 
+		CreateCreature("xah100",[660.1021],N)
+		CreateCreature("xah101",[1024.922],N)
+		CreateCreature("xah102",[527.823],N)
+		CreateCreature("xah103",[953.743],N)
+		CreateCreature("xah104",[583.652],N)
+		CreateCreature("xah105",[760.632],N)		
+		ActionOverride("xah100", FaceObject("XACORWIN"))
+		ActionOverride("xah101", FaceObject("XACORWIN"))
+		ActionOverride("xah102", FaceObject("XACORWIN"))
+		ActionOverride("xah103", FaceObject("XACORWIN"))
+		ActionOverride("xah104", FaceObject("XACORWIN"))
+		ActionOverride("xah105", FaceObject("XACORWIN"))
+		Continue()
+END
+//}

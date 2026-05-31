@@ -362,6 +362,13 @@ APPEND XALCDBG
 	IF ~~ THEN BEGIN XA_SoD_CutsceneTest
 		SAY @4001 /* ~Cutscene Test~*/
 		
+		IF ~~ THEN REPLY @4061/*  ~XASPRING~*/
+		DO ~
+			StorePartyLocations()
+			StartCutscene("XASPRING")
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @4002/*  ~Tent Cutscene (XATNTCS)~*/
 		DO ~
 			StorePartyLocations()

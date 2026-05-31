@@ -1,3 +1,50 @@
+//{ BDBELEGA
+EXTEND_BOTTOM BDBELEGA 0 5 40 47
+	IF ~
+		Global("XA_LC_HotSpring", "GLOBAL", 1)
+		TimeOfDay(DAY)
+		IsGabber(Player1)
+		AreaCheck("BD1000") // Coast Way Crossing
+		AreaCheck("BD7100") // Troll Forest
+	~ THEN REPLY @63/* @63=~Captain Corwin told me to talk to you about a hot spring.~*/
+	DO~
+		SetGlobal("XA_LC_HotSpring", "GLOBAL", 2)
+	~
+	GOTO XA_GoToHotSpring
+	
+	IF ~
+		Global("XA_LC_HotSpring", "GLOBAL", 1)
+		TimeOfDay(NIGHT)
+		IsGabber(Player1)
+		GlobalLT("XA_LC_AskedAboutSpringAtNight", "GLOBAL", 1)
+		AreaCheck("BD1000") // Coast Way Crossing
+		AreaCheck("BD7100") // Troll Forest
+	~ THEN REPLY @63/* @63=~Captain Corwin told me to talk to you about a hot spring.~*/
+	DO~
+		SetGlobal("XA_LC_AskedAboutSpringAtNight", "GLOBAL", 1)
+	~
+	GOTO XA_ComeBackInTheMorning
+END
+
+APPEND BDBELEGA
+	IF ~~ THEN BEGIN XA_GoToHotSpring
+		SAY @64 /* ~Oh, of course. The hero gets to use it, but not the quartermaster who keeps everything running smoothly. Kessler 'ere will escort you.~*/
+		IF ~~ THEN 
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XASPR1")
+		~
+		EXIT
+	END
+	
+	IF ~~ THEN BEGIN XA_ComeBackInTheMorning
+		SAY @65 /* @65=~Come back in the morning when there's someone to escort you. Need anything else?~ */
+		
+		COPY_TRANS BDBELEGA 5
+	END
+END
+//}
+
 //{ BDCAELAR
 	ADD_TRANS_ACTION BDCAELAR
 	BEGIN 87 END
@@ -138,6 +185,17 @@ END
 
 
 //{ BDCORWIJ
+EXTEND_BOTTOM BDCORWIJ 254
+	IF ~
+		GlobalLT("XA_LC_BathTalk", "LOCALS", 1)
+	~ THEN REPLY @55 /* ~Has the field bath been set up yet? I could really use a wash.~*/
+	DO ~
+		SetGlobal("XA_LC_BathTalk", "LOCALS", 1)
+		SetGlobal("XA_LC_HotSpring", "GLOBAL", 1)
+	~
+	GOTO XA_NeedBath
+END
+
 ADD_TRANS_ACTION BDCORWIJ
 BEGIN 186 END
 BEGIN 0 1 2 3 END
@@ -436,6 +494,36 @@ APPEND BDCORWIJ
 		
 		IF ~~ THEN
 		GOTO XA_ProficiencyTalk7
+	END
+	
+	IF ~~ THEN BEGIN XA_NeedBath
+		SAY @56 /* ~We don't set up field baths for temporary encampments.~ */
+		
+		IF ~~ THEN REPLY @57 /* ~Oh. I guess I'll have to do with a bucket of stream water and a rag, again.~ */
+		GOTO XA_NeedBath2A
+		
+		IF ~~ THEN REPLY @61 /* ~Gods, I haven't had a bath since we left Baldur's Gate. You never really appreciate something until it's gone.~ */
+		GOTO XA_NeedBath2B
+	END
+	
+	IF ~~ THEN BEGIN XA_NeedBath2A
+		SAY @58 /* @58=~Maybe not. One of our scouts identified a hot spring not far from camp. We were planning to limit its use to officers only, but I'll make an exception for you. Talk to the quartermaster when you're ready to head over.~*/
+		
+		IF ~~ THEN 
+		GOTO XA_NeedBathThanks
+	END
+	
+	IF ~~ THEN BEGIN XA_NeedBath2B
+		SAY @62 /* @62=~I know what you mean... listen — one of our scouts identified a hot spring not far from camp. We were planning to limit its use to officers only, but I'll make an exception for you — and only you. Speak to the quartermaster when you're ready to head over.~. */
+		
+		IF ~~ THEN 
+		GOTO XA_NeedBathThanks
+	END
+	
+	IF ~~ THEN BEGIN XA_NeedBathThanks
+		SAY @60 /* @60=Was there anything else?~ */
+		
+		COPY_TRANS BDCORWIJ 254
 	END
 END
 //}

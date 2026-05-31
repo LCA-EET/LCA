@@ -65,11 +65,12 @@ INCLUDE ~%MOD_FOLDER%/generated/h/generated.tph~
 		COPY_EXISTING ~%thrall%.cre~ ~override~
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@4199)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@4199)
-		WRITE_LONG 0x28 0x6403 // Skeleton
+		WRITE_LONG 0x28 0x6403 // Skeleton Animation
 		WRITE_BYTE 0x270 255 // Enemy
-		WRITE_BYTE 0x271 4 // Undead
+		WRITE_BYTE 0x271 4 // Undead (General)
+		WRITE_BYTE 0x272 115 // Skeleton (Race)
 		WRITE_BYTE 0x27B 35 // Neutral Evil
-		LPF xa_remove_cre_sounds
+		LPF xa_remove_cre_sounds END
 	END
 //}
 

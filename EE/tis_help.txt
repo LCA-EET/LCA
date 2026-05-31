@@ -1,0 +1,7 @@
+Crafting TIS Files
+
+Width = Image Width / 64
+Height = Image Height / 64
+
+# of tiles should at a minimum equal (W x H) / 4096.
+

@@ -1,0 +1,20 @@
+IF
+	InMyArea(Player1)
+	GlobalLT("XA_LC_SceneInit", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_SceneInit", "MYAREA", 1)
+		CreateCreature("bdfist23", [355.273], SE)
+		FadeFromColor([20.0],0)
+		Wait(2)
+		SetGlobal("XA_LC_Spring", "GLOBAL", 1)
+END
+
+IF
+	Global("XA_LC_Spring", "GLOBAL", 5)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_Spring", "GLOBAL", 6)
+		StartCutSceneMode()
+		StartCutScene("XASPR4")
+END

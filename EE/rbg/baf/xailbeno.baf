@@ -41,7 +41,7 @@ THEN
 		CreateCreature("ZILARC01",[810.575],NW)  // Black Reaver
 		ActionOverride("ZILARC01", FaceObject(Player1))
 		
-		
+		SetGlobal("XA_LC_SpawnUndeadUCTEMP", "MYAREA", 1) 
 		ActionOverride(Player1,EndCutSceneMode())
 		ActionOverride("ZILARC01", Enemy())
 		ActionOverride("ZILFGT02", Enemy())

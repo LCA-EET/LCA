@@ -1,0 +1,19 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		DisplayStringHead(@0, "BDFIST23") /* @0=~Here it is.~ */
+		Wait(3)
+		ActionOverride("BDFIST23", Face(NW))
+		DisplayStringHead(@1, "BDFIST23") /* @1=~Head on in. I'll stand guard.~ */
+		Wait(3)
+		CreateCreature("XACORSPR", [131.195], SE)
+		Wait(1)
+		ActionOverride("XACORSPR", MoveToPoint([277.258]))
+		Wait(1)
+		DisplayStringHead(@2, "BDFIST23") /* @2=~Captain.~*/ 
+		Wait(1)
+		ActionOverride("XACORSPR", Face(SE))
+		DisplayStringHead(@3, "XACORSPR")
+END
