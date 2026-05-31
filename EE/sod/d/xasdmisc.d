@@ -6,6 +6,7 @@ EXTEND_BOTTOM BDBELEGA 0 5 40 47
 		IsGabber(Player1)
 		AreaCheck("BD1000") // Coast Way Crossing
 		AreaCheck("BD7100") // Troll Forest
+		InParty("CORWIN")
 	~ THEN REPLY @63/* @63=~Captain Corwin told me to talk to you about a hot spring.~*/
 	DO~
 		SetGlobal("XA_LC_HotSpring", "GLOBAL", 2)
@@ -19,6 +20,7 @@ EXTEND_BOTTOM BDBELEGA 0 5 40 47
 		GlobalLT("XA_LC_AskedAboutSpringAtNight", "GLOBAL", 1)
 		AreaCheck("BD1000") // Coast Way Crossing
 		AreaCheck("BD7100") // Troll Forest
+		InParty("CORWIN")
 	~ THEN REPLY @63/* @63=~Captain Corwin told me to talk to you about a hot spring.~*/
 	DO~
 		SetGlobal("XA_LC_AskedAboutSpringAtNight", "GLOBAL", 1)

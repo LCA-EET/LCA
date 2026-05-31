@@ -117,6 +117,10 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
 	WRITE_ASCII 0x260 ~~ #8		// General Script
 	WRITE_ASCII 0x268 ~~ #8		// Default Script
 	
+	COPY_EXISTING ~xatricor.cre~ ~override/xacorspr.cre~
+	WRITE_ASCII 0x2CC ~xacorspr~ #8 	// Dialogue
+	WRITE_ASCII 0x280 ~xacorspr~ #20  	// Script Name
+	
 	COPY_EXISTING ~xatricor.cre~ ~override/xacc4.cre~
 	REMOVE_CRE_ITEMS
 	WRITE_ASCII 0x2CC ~xacc4~ #8 	// Dialogue

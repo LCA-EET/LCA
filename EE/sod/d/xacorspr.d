@@ -83,7 +83,7 @@ IF ~~ THEN BEGIN XA_Spring_1_2D
 END
 
 IF ~~ THEN BEGIN XA_Spring_1_2B_1
-	SAY @5 /* @5=~I can't leave you out here alone. The Coalition needs you.~ */
+	SAY @8 /* @8=~Uh huh. And what if a bear or mountain lion come looking for lunch while you're naked as a jaybird?~ */
 	
 	COPY_TRANS XACORSPR XA_Spring_1
 END
@@ -130,7 +130,10 @@ IF ~~ THEN BEGIN XA_Spring_2_3
 END
 
 IF ~~ THEN BEGIN XA_Spring_2_3A
-	SAY @20 /*@20=~I do want one, just not with you. It would be wildly inappropriate.~ */
+	SAY @20 /*@20=~I do want one, just not with you. It would be wildly inappropriate. Now turn around, please.~ */
+	
+	IF ~~ THEN
+	GOTO XA_Spring_2_4
 END
 
 IF ~~ THEN BEGIN XA_Spring_2_4

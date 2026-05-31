@@ -11,10 +11,40 @@ THEN
 END
 
 IF
+	Global("XA_LC_Spring", "GLOBAL", 1)
+	GlobalLT("XA_Spr2", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Spr2", "MYAREA", 1)
+		StartCutSceneMode()
+		StartCutScene("XASPR2")
+END
+
+IF
+	Global("XA_LC_Spring", "GLOBAL", 2)
+	GlobalLT("XA_Spr3", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Spr3", "MYAREA", 1)
+		StartCutSceneMode()
+		StartCutScene("XASPR3")
+END
+
+IF
+	Global("XA_LC_Spring", "GLOBAL", 4)
+	GlobalLT("XA_Spr4", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_Spr4", "MYAREA", 1)
+		StartCutSceneMode()
+		StartCutScene("XASPR4")
+END
+
+IF
 	Global("XA_LC_Spring", "GLOBAL", 5)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_Spring", "GLOBAL", 6)
 		StartCutSceneMode()
-		StartCutScene("XASPR4")
+		StartCutScene("XASPR5")
 END

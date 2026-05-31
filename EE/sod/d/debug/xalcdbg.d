@@ -365,7 +365,7 @@ APPEND XALCDBG
 		IF ~~ THEN REPLY @4061/*  ~XASPRING~*/
 		DO ~
 			StorePartyLocations()
-			StartCutscene("XASPRING")
+			StartCutscene("XASPR1")
 		~
 		EXIT
 		
