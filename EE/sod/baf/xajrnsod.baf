@@ -1,3 +1,18 @@
+//{ Mineral Spring
+IF
+	Global("XA_LC_Journal_Spring", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Spring", "GLOBAL", 0)
+		AddJournalEntry(@9, INFO) /* @9=~Mineral Spring
+Captain Corwin and I enjoyed a relaxing, though brief, respite in a hot spring not far from the Flaming Fist encampment. I feel revitalized and ready for whatever awaits me.~ */
+		AddXPObject(Player1, 2000)
+		AddXPObject("CORWIN", 2000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
 //{ Storeroom Intimate Encounter
 IF
 	Global("XA_LC_Journal_Intimate", "GLOBAL", 1)
