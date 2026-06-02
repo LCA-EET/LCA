@@ -93,6 +93,16 @@ END
 
 IF
 	InMyArea("XACORWIN")
+	Global("XA_LC_HotSpring", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_HotSpring", "GLOBAL", 2)
+		ChangeStat("XACORWIN", MAXHITPOINTS, 2, ADD)
+		Continue()
+END
+
+IF
+	InMyArea("XACORWIN")
 	GlobalLT("XA_LC_TakeCorwinGear", "GLOBAL", 1)
 	GlobalLT("XA_LC_StartedInBG2", "GLOBAL", 1)
 THEN

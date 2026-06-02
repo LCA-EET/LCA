@@ -1,10 +1,14 @@
 IF
 	InMyArea(Player1)
-	GlobalLT("XA_LC_SceneInit", "MYAREA", 1)
+	Global("XA_LC_SpringInit", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LC_SceneInit", "MYAREA", 1)
+		SetGlobal("XA_LC_SpringInit", "GLOBAL", 0)
+		SetGlobal("XA_Spr2", "MYAREA", 0)
+		SetGlobal("XA_Spr3", "MYAREA", 0)
+		SetGlobal("XA_Spr4", "MYAREA", 0)
 		CreateCreature("bdfist23", [355.273], SE)
+		CreateCreature("xasprspy", [460.450], N)
 		FadeFromColor([20.0],0)
 		Wait(2)
 		SetGlobal("XA_LC_Spring", "GLOBAL", 1)

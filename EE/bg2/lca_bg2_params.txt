@@ -1,4 +1,4 @@
-/*
+ /*
 	LCA Params, for non-EET playthroughs. These parameters do not affect EET playthroughs, unless the player is beginning their playthrough in Shadows of Amn. For EET playthroughs beginning in BG1 or Siege of Dragonspear, your choices are automatically carried forward from one game into the next.
 	
 	Enjoy!
@@ -165,3 +165,9 @@ OUTER_SET skip_restore_cutscene = 0
 	Set to 1 to terminate romances with vanilla BG2 characters when Gorion's ward is in a romance with Corwin.
 */
 OUTER_SET terminate_romances = 1
+
+/*
+	Parameter: hot_spring
+	Set to 1 to proceed as though Corwin entered into the hot spring during the events of SoD.
+*/
+OUTER_SET hot_spring = 1

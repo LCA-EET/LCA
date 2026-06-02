@@ -7,7 +7,7 @@
 This mod allows Corwin to be added to the party in Shadows of Amn, and Caelar to be added in Throne of Bhaal. Players can either continue the romance they started with Corwin in Siege of Dragonspear, or they can start a new romance with her after her arrival in Athkatla. The mod adds more than 200 new dialogs spread across the four games of the Bhaalspawn saga. Moreover, there are dozens of new items, quests, and cutscenes to enjoy.
 </p>
 <p>
-If you have any questions, or would like to provide feedback, you can reach me on <a href="https://discord.gg/hwGf39gW9g">Discord</a>. Alternatively, you can send me an e-mail at <a href="mailto:support@fosiemods.net">support@fosiemods.net</a>, or you can post your questions or concerns to the <a href="https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet" target="_blank">Gibberlings3 forum post</a>. I hope that you have as much enjoyment in playing this mod as I did in creating it. 
+If you have any questions, or would like to provide feedback, you can reach me on <a href="https://discord.gg/hwGf39gW9g">Discord</a>. You may also send me an e-mail at <a href="mailto:support@fosiemods.net">support@fosiemods.net</a>, or you can post your questions or concerns to the <a href="https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet" target="_blank">Gibberlings3 forum post</a>. I hope that you have as much enjoyment in playing this mod as I did in creating it. 
 </p>
 
 ### New Quests
@@ -145,7 +145,7 @@ LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET)
 
 ### Installation Instructions
 <a name="a_installation_instructions"></a>
-Unzip the LoveConquersAll_EE.zip archive, and place the LCA folder in your Game Directory (the directory where BG1, SoD, or BG2 is installed. If you plan to install the LCA_Explicit mod, that mod must be installed after this mod (LCA) is installed. Run the provided setup-LCA.exe to install the mod. 
+Unzip the LoveConquersAll_EE.zip archive (See <a href="https://github.com/LCA-EET/LCA/releases">Releases</a>), and place the LCA folder in your Game Directory. The Game Directory is where the BG1, SoD, or BG2 executable is located. If you plan to install the LCA_Explicit mod, that mod must be installed after this mod (LCA) is installed. Run the provided setup-LCA.exe to install the mod. 
 > [!NOTE]
 > For EET playthroughs, LCA must be installed in the BG2 directory and after EET core, but before EET_End. 
 

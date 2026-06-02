@@ -364,7 +364,9 @@ APPEND XALCDBG
 		
 		IF ~~ THEN REPLY @4061/*  ~XASPRING~*/
 		DO ~
+			SetGlobal("XA_LC_SpringInit", "GLOBAL", 1)
 			StorePartyLocations()
+			StartCutsceneMode()
 			StartCutscene("XASPR1")
 		~
 		EXIT

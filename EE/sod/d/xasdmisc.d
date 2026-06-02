@@ -33,6 +33,8 @@ APPEND BDBELEGA
 		SAY @64 /* ~Oh, of course. The hero gets to use it, but not the quartermaster who keeps everything running smoothly. Kessler 'ere will escort you.~*/
 		IF ~~ THEN 
 		DO ~
+			SetGlobal("XA_LC_SpringInit", "GLOBAL", 1)
+			StorePartyLocations()
 			StartCutSceneMode()
 			StartCutScene("XASPR1")
 		~

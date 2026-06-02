@@ -2,31 +2,21 @@ IF
 	True()
 THEN
 	RESPONSE #100
-		CutSceneId("XACORSPR")
-		ActionOverride(Player1, Face(NW))
+		CutSceneId(Player1)
+		Face(NW)
 		Wait(1)
-		FadeToColor([20.0],0)
-		Wait(3)
-		MoveToPoint([475.425])
-		Wait(3)
-		DisplayStringHead(Myself, @0) /*@0=~(Your pulse quickens as you hear the Captain set aside her gear and undress herself, followed by the soft sounds of her entering and wading through the spring.)~*/
-		Wait(6)
-		DisplayStringHead(Myself, @1) /*@1=~Oh, gods...~*/
+		FadeToColor([30.0],0)
 		Wait(2)
-		DisplayStringHead(Myself, @2) /*@2=~Ahhh...~*/
-		Wait(2)
-		DisplayStringHead(Myself, @3) /*@3=~This water is perfect...~*/
-		Wait(2)
-		DisplayStringHead(Myself, @4) /*@4=~Mmmm...Ohh...~*/
-		Wait(2)
-		DisplayStringHead(Myself, @5) /*@5=~(Several minutes pass before you hear Corwin step out of the pool, get dressed, and approach you...)~*/
-		Wait(6)
-		MoveToPoint([277.258])
-		Wait(3)
-		FaceObject(Player1)
-		ActionOverride(Player1, FaceObject("XACORSPR"))
-		FadeFromColor([20.0],0)
+		SmallWait(1)
+		DisplayStringHead("XASPRSPY", @0)
+		Wait(8)
+		ActionOverride("XACORSPR", FaceObject(Player1))
+		FaceObject("XACORSPR")
+		ChangeStat("CORWIN", MAXHITPOINTS, 2, ADD)
+		Wait(1)
+		ReallyForceSpellRES("bdrejuve", "CORWIN")
+		FadeFromColor([30.0],0)
 		Wait(3)
 		EndCutSceneMode()
-		StartDialog("XACORSPR", Player1)
+		ActionOverride("XACORSPR", StartDialog("XACORSPR", Player1))
 END
