@@ -1,1 +1,0 @@
-BEGIN~XABRANDI~IF~IsGabber(Player1)GlobalLT("XA_LC_Intro","LOCALS",1)~THEN BEGIN XA_Intro SAY@0 IF~~THEN DO~SetGlobal("XA_LC_Intro","LOCALS",1)~+ XA_Welcome END IF~True()~THEN BEGIN XA_Welcome SAY@1 IF~~THEN EXIT END 

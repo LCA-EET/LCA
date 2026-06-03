@@ -1,9 +1,0 @@
-IF
-	Global("bd_player_exiled","global",1)
-	GlobalLT("XA_LC_PlayerExiled", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_LC_PlayerExiled", "GLOBAL", 1)
-		Continue()
-END
-

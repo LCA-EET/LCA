@@ -1,7 +1,0 @@
-IF
-	DifficultyLT(NORMAL)
-THEN
-	RESPONSE #100
-		DestroySelf()
-END
-

@@ -1,1 +1,0 @@
- BEGIN~XAA182~IF~RandomNum(3,1)~THEN BEGIN 0 SAY@1++@2 DO~StartStore("xaa113",LastTalkedToBy(Myself))~EXIT++@3 EXIT END IF~RandomNum(3,2)~THEN BEGIN 1 SAY@4++@2 DO~StartStore("xaa113",LastTalkedToBy(Myself))~EXIT++@3 EXIT END IF~RandomNum(3,3)~THEN BEGIN 2 SAY@5++@2 DO~StartStore("xaa113",LastTalkedToBy(Myself))~EXIT++@3 EXIT END 

@@ -1,1 +1,0 @@
-BEGIN~XABOWSMI~IF~Global("XA_LC_2802_EnemiesDead","MYAREA",1)~THEN BEGIN XA_ThankYou SAY@0++@1 DO~SetGlobal("XA_LC_2802_EnemiesDead","MYAREA",2)~+ XA_ThankYou2 END IF~~THEN BEGIN XA_ThankYou2 SAY@2 IF~~THEN DO~EscapeArea()~EXIT END 

@@ -1,1 +1,0 @@
-BEGIN~XATIMOTY~IF~GlobalLT("XA_LC_SavedTimotey","GLOBAL",1)CombatCounter(0)~THEN BEGIN XA_Intro SAY@0++@1+XA_HowAreYou END IF~~THEN BEGIN XA_HowAreYou SAY@2 IF~~THEN DO~GiveItemCreate("xabasfig",Player1,1,1,1)~+ XA_GoHome END IF~~THEN BEGIN XA_GoHome SAY@3++@4 DO~SetGlobal("XA_LC_SavedTimotey","GLOBAL",1)~EXIT END 

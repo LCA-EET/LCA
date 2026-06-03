@@ -1,9 +1,0 @@
-IF 
-	See(Player1)
-	!ActuallyInCombat()
-	GlobalLT("XA_LC_LathMetPlayer", "LOCALS", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_LC_LathMetPlayer", "LOCALS", 1)
-		StartDialog("XALATH01", Player1)
-END

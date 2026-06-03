@@ -1,7 +1,0 @@
-IF
-	PickPocketFailed("SKIE")  // Skie
-THEN
-	RESPONSE #100
-		Recoil()
-END
-

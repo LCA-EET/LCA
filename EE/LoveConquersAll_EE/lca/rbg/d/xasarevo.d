@@ -1,1 +1,0 @@
-BEGIN~XASAREVO~IF~Global("XA_LC_G2_Intro","GLOBAL",4)~THEN BEGIN XA_Intro SAY@2++@3+XA_Execute++@5+XA_Execute++@7+XA_Execute END IF~~THEN BEGIN XA_Execute SAY@6 IF~~THEN DO~StartCutSceneMode()StartCutScene("XACSG2B")~EXIT END 
