@@ -4254,7 +4254,7 @@ IF ~~ THEN BEGIN XA_WorkOut_End_Romance
 
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_LC_Workout, "GLOBAL", 2)
+		SetGlobal("XA_LC_Workout", "GLOBAL", 2)
 		RestParty()
 	~
 	EXIT
@@ -4265,7 +4265,7 @@ IF ~~ THEN BEGIN XA_WorkOut_End_NonRomance
 
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_LC_Workout, "GLOBAL", 2)
+		SetGlobal("XA_LC_Workout", "GLOBAL", 2)
 		RestParty()
 	~
 	EXIT

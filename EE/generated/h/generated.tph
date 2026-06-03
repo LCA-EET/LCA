@@ -1,10 +1,10 @@
 PRINT ~Processing converted asset block: xah...~
 SILENT
-COPY ~%MOD_FOLDER%\generated\h\cre\xah100.cre~ ~override~
-COPY ~%MOD_FOLDER%\generated\h\cre\xah101.cre~ ~override~
-COPY ~%MOD_FOLDER%\generated\h\cre\xah102.cre~ ~override~
-COPY ~%MOD_FOLDER%\generated\h\cre\xah103.cre~ ~override~
-COPY ~%MOD_FOLDER%\generated\h\cre\xah104.cre~ ~override~
-COPY ~%MOD_FOLDER%\generated\h\cre\xah105.cre~ ~override~
+COPY ~%MOD_FOLDER%/generated/h/cre/xah100.cre~ ~override~
+COPY ~%MOD_FOLDER%/generated/h/cre/xah101.cre~ ~override~
+COPY ~%MOD_FOLDER%/generated/h/cre/xah102.cre~ ~override~
+COPY ~%MOD_FOLDER%/generated/h/cre/xah103.cre~ ~override~
+COPY ~%MOD_FOLDER%/generated/h/cre/xah104.cre~ ~override~
+COPY ~%MOD_FOLDER%/generated/h/cre/xah105.cre~ ~override~
 
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%\generated\h\baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/generated/h/baf~
