@@ -1,7 +1,0 @@
-IF
-	Global("XA_LC_CorwinBit","GLOBAL",1)
-THEN
-	RESPONSE #100
-		SetGlobal("Deactivate0801","AR0800",3)  // Graveyard
-		ForceSpell(Myself,DRYAD_TELEPORT)  // SPWI995.SPL (Dimension Door)
-END

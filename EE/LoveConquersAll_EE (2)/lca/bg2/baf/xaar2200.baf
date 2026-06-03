@@ -1,8 +1,0 @@
-IF
-	GlobalGT("XA_LC_CorwinCoverUD", "GLOBAL", 0)
-	GlobalLT("KeldornOutrage", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetGlobal("KeldornOutrage", "GLOBAL", 1)
-		Continue()
-END

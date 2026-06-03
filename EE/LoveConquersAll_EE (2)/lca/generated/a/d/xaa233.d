@@ -1,1 +1,0 @@
- BEGIN~XAA233~IF~True()~THEN BEGIN 0 SAY@1++@2 DO~StartStore("xaa124",LastTalkedToBy(Myself))~EXIT++@3 EXIT END 

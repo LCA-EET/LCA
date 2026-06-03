@@ -1,1 +1,0 @@
- BEGIN~XAA315~IF~OR(3)Global("ScarKilled","GLOBAL",1)Global("ScarKilled","GLOBAL",2)Global("OpenDialogue","GLOBAL",1)~THEN BEGIN 0 SAY@1 IF~~THEN EXIT END IF~OR(3)!Global("ScarKilled","GLOBAL",1)!Global("ScarKilled","GLOBAL",2)!Global("OpenDialogue","GLOBAL",1)~THEN BEGIN 1 SAY@2 IF~~THEN EXIT END 

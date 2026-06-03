@@ -1,1 +1,0 @@
- BEGIN~XAA189~IF~True()~THEN BEGIN 0 SAY@1 IF~~THEN DO~CreateCreature("DOGBLINK",[429.535],S)CreateCreature("DOGBLINK",[429.535],S)CreateCreature("DOGBLINK",[429.535],S)CreateCreature("DOGBLINK",[429.535],S)CreateCreature("DOGBLINK",[429.535],S)CreateCreature("DOGBLINK",[429.535],S)CreateCreature("DOGBLINK",[429.535],S)Enemy()~EXIT END 
