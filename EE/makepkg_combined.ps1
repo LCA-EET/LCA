@@ -69,20 +69,20 @@ Copy-Item -Path "Beamdog Forum Post.url" -Destination $modPath
 Copy-Item -Path "LCA Release Notes.url" -Destination $modPath
 Get-Date -Format "yyyy-MM-dd HH:mm K" > pkgdate.txt
 Copy-Item -Path pkgdate.txt -Destination $modPath
-<#
-$7zipPath = "$env:ProgramFiles/7-Zip/7z.exe"
-
-if (-not (Test-Path -Path $7zipPath -PathType Leaf)) {
-	$7zipPath = "F:/Program Files/7-Zip/7z.exe"
-}
-
-Set-Alias Start-SevenZip $7zipPath
-#>
 $Source = "./" + $basePath + "/*"
 $Target = "./" + $archive
 
-7z a -mx=9 $Target $Source
-#Start-SevenZip a -mx=9 $Target $Source
+
+$7zipPath = "F:/Program Files/7-Zip/7z.exe"
+
+if(Test-Path -Path $7zipPath){
+	Set-Alias Start-SevenZip $7zipPath
+	Start-SevenZip a -mx=9 $Target $Source
+}
+else{
+	#Linux
+	7z a -mx=9 $Target $Source
+}
 
 Remove-Item -LiteralPath $basePath -Force -Recurse
 Get-FileHash $archive -Algorithm SHA256 > SHA256.txt
