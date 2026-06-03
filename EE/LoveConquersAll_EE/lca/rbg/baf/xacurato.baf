@@ -1,0 +1,31 @@
+IF
+	See("XACORWIN")
+	InParty("XACORWIN")
+	ActionListEmpty()
+	GlobalLT("XA_LC_MagdaTalk", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_MagdaTalk", "GLOBAL", 1)
+		MoveToObject("XACORWIN")
+		Continue()
+END
+
+IF
+	Global("XA_LC_MagdaTalk", "GLOBAL", 1)
+	Range("XACORWIN", 8)
+THEN
+	RESPONSE #100
+		FaceObject("XACORWIN")
+		SmallWait(5)
+		StartDialogNoSet(Player1)
+END
+
+IF
+	Global("XA_LC_MagdaTalk", "GLOBAL", 1)
+	!Range("XACORWIN", 8)
+	InMyArea("XACORWIN")
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		MoveToObject("XACORWIN")
+END

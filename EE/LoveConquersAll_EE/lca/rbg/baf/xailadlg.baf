@@ -1,0 +1,9 @@
+IF
+	NumberOfTimesTalkedTo(0)
+	OR(2)
+		Range(Player1, 24)
+		Range("XACORWIN", 24)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END

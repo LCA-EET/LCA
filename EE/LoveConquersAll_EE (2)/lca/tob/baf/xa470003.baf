@@ -1,0 +1,44 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		MoveViewObject(Player1, INSTANT)
+		Wait(1)
+		DisplayStringHead("XAAVBOSS", @0) /* ~Caelar! Rise!~*/
+		Wait(2)
+		DisplayStringHead("XACAELA2", @8) /* ~Ugh...~*/
+		Wait(1)
+		ActionOverride("XACAELA2", SetSequence(SEQ_AWAKE))
+		Wait(1)
+		DisplayStringHead("XAAVBOSS", @3) /* ~Who is your master?~*/
+		Wait(3)
+		DisplayStringHead("XACAELA2", @4) /* ~Y-you are m-my lord...~*/
+		Wait(2)
+		DisplayStringHead("XAAVBOSS", @1) /* ~Very good, my pet. And what is your purpose?~ */
+		Wait(3)
+		DisplayStringHead("XACAELA2", @5) /* ~To serve you and to...~*/
+		Wait(2)
+		DisplayStringHead("XAAVBOSS", @7) /* ~And to what?~*/
+		Wait(2)
+		DisplayStringHead("XACAELA2", @6) /* ~To... to pleasure you, master.~ */
+		Wait(1)
+		DisplayStringHead("Jaheira", @13) 	/* ~Have some self-respect!~*/
+		DisplayStringHead("XACORWIN", @10) 	/* ~Pitiful.~*/
+		DisplayStringHead("Keldorn", @14) 	/* ~To see an aasimar treated in such a way...~*/
+		DisplayStringHead("Imoen2", @12) 	/* ~Disgusting.~*/
+		DisplayStringHead("Aerie", @15) 	/* ~Wh..why has she given up?~*/
+		Wait(1)
+		DisplayStringHead("XAAVBOSS", @9) /* ~Hahahah... Excellent. You may return to your cage, my pet.~ */
+		Wait(2)
+		DisplayStringHead("XACAELA2", @16)  /* ~Thank you, master.~ */
+		Wait(2)
+		ActionOverride("XACAELA2", MoveToPoint([1877.533]))
+		Wait(3)
+		ActionOverride("XACAELA2", FaceObject(Player1))
+		CloseDoor("Door03")
+		Lock("Door03")
+		Wait(1)
+		ActionOverride("XAAVBOSS", StartDialog("XAAVBOSS", Player1))
+		
+END

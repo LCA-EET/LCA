@@ -1,0 +1,76 @@
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,38224)  // You are too far away to use that.
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("bd_inner_gate_ot","bd4000",0)  // Dragonspear Castle, Exterior
+THEN
+	RESPONSE #100
+		SetGlobal("bd_inner_gate_ot","bd4000",1)  // Dragonspear Castle, Exterior
+		DisplayString(Myself,40901)  // These sturdy gates are very likely to hold off any assault conducted without the use of heavy siege machines. Or a good deal of explosive material.
+END
+
+IF
+	GlobalLT("bd_plot","global",450)
+	GlobalTimerExpired("bd_caelar_delay","bd4000")  // Dragonspear Castle, Exterior
+	Dead("bdashati")  // Ashatiel
+	TriggerOverride("gate_proxy",Range([PC],23))
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		SetGlobal("bd_plot","global",450)
+		ActionOverride("cutspy",DestroySelf())
+		ActionOverride("cutspy2",DestroySelf())
+		MoveViewPoint([2740.1553],9)
+		CreateCreature("cutspy",[2910.1590],S)  // No such index
+		CreateCreature("cutspy2",[2570.1775],S)  // No such index
+		SmallWait(15)
+		CreateCreature("bdcutid",[2795.1790],S)  // No such index
+		CreateVisualEffect("spdimndr",[2740.1553])
+		SmallWait(40)
+		CreateCreatureImpassable("bdcaelar",[2740.1553],SW)  // Caelar Argent
+		ActionOverride("bdcaelar",SetSequence(SEQ_READY))
+		SmallWait(4)
+		MoveViewObject("bdcaelar",INSTANT)  // Caelar Argent
+		SmallWait(6)
+		DisplayStringHead("bdcaelar",38354)  // Hear me, people of Waterdeep, of Daggerford, and Baldur's Gate. Heed my words. I am not your enemy!
+		SmallWait(6)
+		ActionOverride("bdcaelar",SetSequence(SEQ_ATTACK_BACKSLASH))
+		SmallWait(20)
+		ActionOverride("bdcaelar",SetSequence(SEQ_HEAD_TURN))
+		SmallWait(15)
+		ActionOverride(Player1,FaceObject("bdcaelar"))  // Caelar Argent
+		ActionOverride(Player2,FaceObject("bdcaelar"))  // Caelar Argent
+		ActionOverride(Player3,FaceObject("bdcaelar"))  // Caelar Argent
+		ActionOverride(Player4,FaceObject("bdcaelar"))  // Caelar Argent
+		ActionOverride(Player5,FaceObject("bdcaelar"))  // Caelar Argent
+		ActionOverride(Player6,FaceObject("bdcaelar"))  // Caelar Argent
+		ActionOverride("bdbence",FaceObject("bdcaelar"))  // Caelar Argent
+		ActionOverride("bddelanc",FaceObject("bdcaelar"))  // Caelar Argent
+		ActionOverride("bdnederl",FaceObject("bdcaelar"))  // Caelar Argent
+		ActionOverride("bdstoneh",FaceObject("bdcaelar"))  // Caelar Argent
+		ActionOverride("bdwarma1",FaceObject("bdcaelar"))  // Caelar Argent
+		ActionOverride("bdwarma2",FaceObject("bdcaelar"))  // Caelar Argent
+		ActionOverride("bdwarma3",FaceObject("bdcaelar"))  // Caelar Argent
+		ActionOverride("bdhensle",FaceObject("bdcaelar"))  // Caelar Argent
+		ActionOverride("bddosia",FaceObject("bdcaelar"))  // Caelar Argent
+		ActionOverride("bdsorali",FaceObject("bdcaelar"))  // Caelar Argent
+		SmallWait(115)
+		ActionOverride("bdcaelar",StartDialogueNoSet(Player1))
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,40901)  // These sturdy gates are very likely to hold off any assault conducted without the use of heavy siege machines. Or a good deal of explosive material.
+END
+

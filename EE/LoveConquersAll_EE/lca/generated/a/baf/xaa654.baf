@@ -1,0 +1,23 @@
+IF
+	Opened([ANYONE])
+	See([NOTGOOD.HUMANOID])
+	!StateCheck(LastSeenBy(Myself),STATE_SLEEPING)
+	InMyArea(LastTrigger)
+	!Name("alora",LastSeenBy(Myself))  // Alora
+	!StateCheck(LastTrigger,STATE_INVISIBLE)
+	!StateCheck(LastTrigger,STATE_IMPROVEDINVISIBILITY)
+THEN
+	RESPONSE #100
+		DisplayString(LastTrigger,9896)  // Someone has noticed you! You hear the guards being summoned!
+		Wait(3)
+		CreateCreature("FLAMEN",[-1.-1],S)  // Flaming Fist Enforcer
+		ActionOverride("FlamingEnforcer",ChangeAIScript("FLAM6",CLASS))
+		ActionOverride("FlamingEnforcer",ChangeAIScript("SHOUT",RACE))
+		CreateCreature("FLAMEN2",[-1.-1],S)  // Flaming Fist Enforcer
+		ActionOverride("FlamingEnforcer",ChangeAIScript("FLAM6",CLASS))
+		ActionOverride("FlamingEnforcer",ChangeAIScript("SHOUT",RACE))
+		CreateCreature("FLAMEN2",[-1.-1],S)  // Flaming Fist Enforcer
+		ActionOverride("FlamingEnforcer",ChangeAIScript("FLAM6",CLASS))
+		ActionOverride("FlamingEnforcer",ChangeAIScript("SHOUT",RACE))
+END
+

@@ -1,0 +1,22 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		Face(NW)
+		Wait(1)
+		FadeToColor([30.0],0)
+		Wait(2)
+		SmallWait(1)
+		DisplayStringHead("XASPRSPY", @0)
+		Wait(8)
+		ActionOverride("XACORSPR", FaceObject(Player1))
+		FaceObject("XACORSPR")
+		ChangeStat("CORWIN", MAXHITPOINTS, 2, ADD)
+		Wait(1)
+		ReallyForceSpellRES("bdrejuve", "CORWIN")
+		FadeFromColor([30.0],0)
+		Wait(3)
+		EndCutSceneMode()
+		ActionOverride("XACORSPR", StartDialog("XACORSPR", Player1))
+END

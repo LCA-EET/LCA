@@ -1,0 +1,10 @@
+IF 
+	Global("XA_LC_Briel1300", "MYAREA", 1)
+	Global("XA_LC_HelpedBrielbara", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("xabrielb", [1660.1360], NE)
+		SetGlobal("XA_LC_Briel1300", "MYAREA", 1)
+		Continue()
+END
+

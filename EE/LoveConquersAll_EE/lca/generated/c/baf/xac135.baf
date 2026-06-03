@@ -1,0 +1,89 @@
+IF
+	Detect(Myself)
+	Global("bd_no_combat","locals",2)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("bd_no_retreat","locals",0)
+	Global("bd_retreat","locals",1)
+	Global("bd_no_combat","locals",1)
+	Global("bd_combat","locals",0)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	OR(2)
+		DifficultyGT(EASIEST)
+		Allegiance(Myself,GOODCUTOFF)
+	HasItem("potn52",Myself)  // Potion of Extra Healing
+	HPPercentLT(Myself,75)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		UseItem("potn52",Myself)  // Potion of Extra Healing
+		SetInterrupt(TRUE)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Global("bd_no_innates","locals",0)
+	See(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(BERSERKER_RAGE)  // SPCL321.SPL (Enrage)
+	CheckStat(Myself,0,OFFENSIVE_MODIFIER)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		RemoveSpell(BERSERKER_RAGE)  // SPCL321.SPL (Enrage)
+		ForceSpell(Myself,BERSERKER_RAGE)  // SPCL321.SPL (Enrage)
+	RESPONSE #35
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Global("bd_no_innates","locals",0)
+	See(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+	HasItem("potn41",Myself)  // Potion of Power
+	!CheckSpellState(Myself,BUFF_ENHANCEMENT)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		UseItem("potn41",Myself)  // Potion of Power
+		SetInterrupt(TRUE)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),5)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+

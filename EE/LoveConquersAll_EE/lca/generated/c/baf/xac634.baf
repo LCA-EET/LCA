@@ -1,0 +1,87 @@
+IF
+	Detect(Myself)
+	Global("bd_no_combat","locals",2)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("bd_no_retreat","locals",0)
+	Global("bd_retreat","locals",1)
+	Global("bd_no_combat","locals",1)
+	Global("bd_combat","locals",0)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+/*IF
+	Global("bd_hide_in_ambush","locals",0)
+	OR(4)
+		Specifics(Myself,CRUSADERS)
+		Specifics(Myself,HOSTILES2)
+		Specifics(Myself,HOSTILES3)
+		Allegiance(Myself,ENEMY)
+	!Detect(NearestEnemyOf(Myself))
+	!StateCheck(Myself,STATE_INVISIBLE :: STATE_CHARMED :: STATE_BLIND)
+	!CheckStatLT(Myself,150,HIDEINSHADOWS)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_hide_in_ambush","locals",1)
+		ApplySpellRES("bdinvis",Myself)  // No such index
+END*/
+
+IF
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!CheckSpellState(Myself,CANNOT_TURN_INVISIBLE)
+	!Allegiance(Myself,NEUTRAL)
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HasItem("potn10",Myself)  // Potion of Invisibility
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		UseItem("potn10",Myself)  // Potion of Invisibility
+		SetInterrupt(TRUE)
+END
+
+IF
+	!GlobalTimerNotExpired("bd_cast","locals")
+	Global("bd_no_innates","locals",0)
+	See(NearestEnemyOf(Myself))
+	OR(2)
+		DifficultyGT(EASY)
+		Allegiance(Myself,GOODCUTOFF)
+	HaveSpell(ASSASSIN_POISON)  // SPCL423.SPL (Poison Weapon)
+	CheckStatLT(Myself,4,OFFENSIVE_MODIFIER)
+	Range(NearestEnemyOf(Myself),10)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		Spell(Myself,ASSASSIN_POISON)  // SPCL423.SPL (Poison Weapon)
+	RESPONSE #35
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	OR(3)
+		Range(LastSeenBy(Myself),5)
+		StateCheck(Myself,STATE_INVISIBLE)
+		CheckSpellState(Myself,CANNOT_TURN_INVISIBLE)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	!StateCheck(Myself,STATE_INVISIBLE)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+

@@ -1,0 +1,8 @@
+IF 
+	Global("XA_LC_VirgilInCustody", "GLOBAL", 1)
+	InMyArea("XAVIRGIL")
+THEN
+	RESPONSE #100
+		ActionOverride("XAVIRGIL", DestroySelf())
+		Continue()
+END

@@ -1,0 +1,70 @@
+IF
+	OR(2)
+		GlobalGT("chapter","global",10)
+		GlobalGT("bd_plot","global",399)
+	AreaCheck("bd4300")  // Dragonspear Castle Basement
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Global("bd_ai_controls","locals",0)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_ai_controls","locals",1)
+		SetGlobal("bd_no_retreat","locals",1)
+		SetGlobal("bd_no_search","locals",1)
+		SetGlobal("bd_no_assist","locals",1)
+		ChangeSpecifics(Myself,CRUSADERS)
+END
+
+IF
+	GlobalLT("bd_plot","global",361)
+	AreaCheck("bd4300")  // Dragonspear Castle Basement
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_plot","global",361)
+END
+
+IF
+	GlobalGT("bd_plot","global",360)
+	AreaCheck("bd4300")  // Dragonspear Castle Basement
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Range("Door02",8)
+	OpenState("Door02",FALSE)
+THEN
+	RESPONSE #100
+		OpenDoor("Door02")
+END
+
+IF
+	GlobalGT("bd_plot","global",359)
+	Global("bd_move","locals",0)
+	!See(NearestEnemyOf(Myself))
+	!NearLocation(Myself,775,1595,8)
+THEN
+	RESPONSE #100
+		MoveToPoint([775.1595])
+END
+
+IF
+	GlobalGT("bd_plot","global",359)
+	Global("bd_move","locals",0)
+	NearLocation(Myself,775,1595,8)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_move","locals",1)
+		SetGlobal("bd_search","locals",1)
+		SetGlobal("bd_combat","locals",1)
+		SetGlobal("bd_no_search","locals",0)
+		SetGlobalTimer("bd_search_timer","locals",TWO_ROUNDS)
+END
+

@@ -1,0 +1,45 @@
+IF 
+	See("XACORWIN")
+	GlobalLT("XA_LC_XACS15Started", "GLOBAL", 1)
+	!AreaCheck("XAEXPL03")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_XACS15Started", "GLOBAL", 1)
+		FaceObject("XACORWIN")
+		SmallWait(5)
+		DisplayStringHead("XANEOMA", @0)/* Schael!*/
+		SmallWait(5)
+		ActionOverride("XACORWIN", FaceObject("XANEOMA"))
+		SmallWait(5)
+		DisplayStringHead("XACORWIN", @1)/* Neoma!*/
+		SmallWait(5)
+		MoveToObject("XACORWIN")
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF 
+	GlobalLT("XA_LC_XACS15Cutscene", "GLOBAL", 3)
+	Range("XACORWIN", 10)
+	!AreaCheck("XAEXPL03")
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_XACS15Cutscene", "GLOBAL", 3)
+		ActionOverride("XACORWIN", FaceObject("XANEOMA"))
+		SmallWait(5)
+		ActionOverride("XACORWIN", StartDialog("XACORWIJ", "XANEOMA"))
+		SetInterrupt(TRUE)
+END
+
+IF 
+	Global("XA_LC_XACS15Cutscene", "GLOBAL", 4)
+	!AreaCheck("XAEXPL03")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_XACS15Cutscene", "GLOBAL", 5)
+		EscapeArea()
+END
+

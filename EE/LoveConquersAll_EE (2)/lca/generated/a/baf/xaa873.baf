@@ -1,0 +1,12 @@
+IF
+	StealFailed([ANYONE])
+THEN
+	RESPONSE #100
+		DialogInterrupt(FALSE)
+		Recoil()
+		SmallWait(6)
+		CreateCreature("FLAMEN",[375.288],S)  // Flaming Fist Enforcer
+		CreateCreature("FLAMEN2",[375.288],S)  // Flaming Fist Enforcer
+		CreateCreature("FLAMEN2",[375.288],S)  // Flaming Fist Enforcer
+END
+

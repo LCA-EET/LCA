@@ -1,0 +1,23 @@
+IF
+	Opened([ANYONE])
+	See([NOTGOOD.HUMANOID])
+	!StateCheck(LastSeenBy(Myself),STATE_SLEEPING)
+	!StateCheck(LastTrigger,STATE_INVISIBLE)
+	!StateCheck(LastTrigger,STATE_IMPROVEDINVISIBILITY)
+THEN
+	RESPONSE #100
+		DisplayString(LastTrigger,9896)  // Someone has noticed you! You hear the guards being summoned!
+		Wait(3)
+		CreateCreature("WATCHN",[-1.-1],S)  // Watcher
+		CreateCreature("WATCHN2",[-1.-1],S)  // Watcher
+END
+
+IF
+	OR(2)
+		!Range(LastTrigger,0)
+		!See(LastTrigger)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+

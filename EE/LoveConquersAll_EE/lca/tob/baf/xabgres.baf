@@ -1,0 +1,14 @@
+//{ Restore party members who were in BG
+IF
+	!Dead("TO_REPLACE")
+	!InParty("TO_REPLACE")
+	InMyArea("TO_REPLACE")
+	Global("XA_LC_BackToBG_TO_REPLACE", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_BackToBG_TO_REPLACE", "GLOBAL", 2)
+		MoveGlobal("AR4000", "TO_REPLACE", [1255.1840])
+		ActionOverride("TO_REPLACE", JoinParty())
+		Continue()
+END
+//}

@@ -1,0 +1,89 @@
+IF
+	Global("bd_enemy_gone_gostile","bd2000",1)  // Boareskyr Bridge & Bridgefort
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Difficulty(EASIEST)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+
+IF
+	GlobalLT("bd_plot","global",240)
+	Global("bd_enemy_gone_gostile","bd2000",0)  // Boareskyr Bridge & Bridgefort
+	Global("bd_enlightment","locals",0)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_enlightment","locals",2)
+END
+
+IF
+	GlobalLT("bd_plot","global",240)
+	Global("bd_enemy_gone_gostile","bd2000",0)  // Boareskyr Bridge & Bridgefort
+	Allegiance(Myself,NEUTRAL)
+	!GlobalTimerNotExpired("bd_trainee_timer","locals")
+	Global("bd_retreat","locals",0)
+	Global("bd_enlightment","locals",2)
+	NearSavedLocation(Myself,"LOCALSbd_default_loc",3)
+	TimeLT(DUSK_START)
+	TimeGT(DAWN_START)
+	OR(2)
+		Global("bd_enlightment_plot","bd2000",0)  // Boareskyr Bridge & Bridgefort
+		Global("bd_enlightment_plot","bd2000",5)  // Boareskyr Bridge & Bridgefort
+	See(NearestMyGroupOfType([0.0.0.0.CRUSADERS]))
+	Range(LastSeenBy(Myself),7)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_trainee_timer","locals",3)
+		ActionOverride(LastSeenBy(Myself),SetGlobalTimer("bd_trainee_timer","locals",3))
+		FaceObject(LastSeenBy(Myself))
+		ActionOverride(LastSeenBy(Myself),FaceObject(NearestMyGroupOfType([0.0.0.0.CRUSADERS])))
+		SmallWait(5)
+		SetSequence(SEQ_ATTACK_SLASH)
+	RESPONSE #100
+		SetGlobalTimer("bd_trainee_timer","locals",3)
+		ActionOverride(LastSeenBy(Myself),SetGlobalTimer("bd_trainee_timer","locals",ONE_MINUTE))
+		FaceObject(LastSeenBy(Myself))
+		ActionOverride(LastSeenBy(Myself),FaceObject(NearestMyGroupOfType([0.0.0.0.CRUSADERS])))
+		SmallWait(5)
+		SetSequence(SEQ_ATTACK_BACKSLASH)
+	RESPONSE #100
+		SetGlobalTimer("bd_trainee_timer","locals",3)
+		ActionOverride(LastSeenBy(Myself),SetGlobalTimer("bd_trainee_timer","locals",7))
+		FaceObject(LastSeenBy(Myself))
+		ActionOverride(LastSeenBy(Myself),FaceObject(NearestMyGroupOfType([0.0.0.0.CRUSADERS])))
+		SmallWait(5)
+		SetSequence(SEQ_ATTACK_JAB)
+END
+
+IF
+	AreaCheck("bd4000")  // Dragonspear Castle, Exterior
+	Allegiance(Myself,NEUTRAL)
+	!GlobalTimerNotExpired("bd_trainee_timer","locals")
+	Global("bd_retreat","locals",0)
+	NearSavedLocation(Myself,"LOCALSbd_default_loc",3)
+	See(NearestMyGroupOfType([0.0.0.0.CRUSADERS]))
+	Range(LastSeenBy(Myself),7)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_trainee_timer","locals",3)
+		ActionOverride(LastSeenBy(Myself),SetGlobalTimer("bd_trainee_timer","locals",3))
+		FaceObject(LastSeenBy(Myself))
+		ActionOverride(LastSeenBy(Myself),FaceObject(NearestMyGroupOfType([0.0.0.0.CRUSADERS])))
+		SmallWait(5)
+		SetSequence(SEQ_ATTACK_SLASH)
+	RESPONSE #100
+		SetGlobalTimer("bd_trainee_timer","locals",3)
+		ActionOverride(LastSeenBy(Myself),SetGlobalTimer("bd_trainee_timer","locals",ONE_MINUTE))
+		FaceObject(LastSeenBy(Myself))
+		ActionOverride(LastSeenBy(Myself),FaceObject(NearestMyGroupOfType([0.0.0.0.CRUSADERS])))
+		SmallWait(5)
+		SetSequence(SEQ_ATTACK_BACKSLASH)
+	RESPONSE #100
+		SetGlobalTimer("bd_trainee_timer","locals",3)
+		ActionOverride(LastSeenBy(Myself),SetGlobalTimer("bd_trainee_timer","locals",7))
+		FaceObject(LastSeenBy(Myself))
+		ActionOverride(LastSeenBy(Myself),FaceObject(NearestMyGroupOfType([0.0.0.0.CRUSADERS])))
+		SmallWait(5)
+		SetSequence(SEQ_ATTACK_JAB)
+END
+

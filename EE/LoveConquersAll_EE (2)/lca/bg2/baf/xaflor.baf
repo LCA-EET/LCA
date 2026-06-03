@@ -1,0 +1,27 @@
+IF
+	Global("XA_LC_Tick", "LOCALS", 0)
+	GlobalLT("XA_LC_PurchasedFlowers", "LOCALS", 1)
+	InParty("XACORWIN")
+	OR(6)
+		See(Player1)
+		See(Player2)
+		See(Player3)
+		See(Player4)
+		See(Player5)
+		See(Player6)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself, @8)
+		SetGlobal("XA_LC_Tick", "LOCALS", 10)
+END
+
+IF
+	GlobalGT("XA_LC_Tick", "LOCALS", 0)
+THEN
+	RESPONSE #100
+		IncrementGlobal("XA_LC_Tick", "LOCALS", -1)
+		Wait(1)
+		Continue()
+END
+
+

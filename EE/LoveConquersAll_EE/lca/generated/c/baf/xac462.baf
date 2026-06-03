@@ -1,0 +1,104 @@
+IF
+	Die()
+	Global("bd_dsc_hostile","bd4000",0)  // Dragonspear Castle, Exterior
+	GlobalGT("bd_sindret_plot","bd4000",1)  // Dragonspear Castle, Exterior
+	GlobalLT("bd_sindret_plot","bd4000",4)  // Dragonspear Castle, Exterior
+THEN
+	RESPONSE #100
+		AddJournalEntry(58703,QUEST)  // Troll Breakout I should talk to Sindret again. I tried to put the shackles on the troll but accidentally killed it instead. Hopefully Sindret won't be too upset.
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("bd_troll_wrangled","bd4000",0)  // Dragonspear Castle, Exterior
+	Global("bd_sindret_plot","bd4000",5)  // Dragonspear Castle, Exterior
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	Global("bd_troll_wrangled","bd4000",0)  // Dragonspear Castle, Exterior
+	OR(2)
+		Global("bd_dsc_hostile","bd4000",1)  // Dragonspear Castle, Exterior
+		See([ENEMY.0.0.0.CRUSADERS])
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	Global("bd_troll_wrangled","bd4000",0)  // Dragonspear Castle, Exterior
+	Global("bd_dsc_hostile","bd4000",0)  // Dragonspear Castle, Exterior
+	Detect([PC])
+	Detect(Myself)
+	Delay(1)
+	OR(2)
+		!See(NearestMyGroupOfType([NEUTRAL.0.0.0.CRUSADERS]))
+		RandomNumLT(4,4)
+	OR(2)
+		!See(SecondNearestMyGroupOfType([NEUTRAL.0.0.0.CRUSADERS]))
+		RandomNumLT(4,3)
+	OR(2)
+		!See(ThirdNearestMyGroupOfType([NEUTRAL.0.0.0.CRUSADERS]))
+		RandomNumLT(4,2)
+	!See(FourthNearestMyGroupOfType([NEUTRAL.0.0.0.CRUSADERS]))
+	False()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	Global("bd_troll_wrangled","bd4000",0)  // Dragonspear Castle, Exterior
+	Global("bd_dsc_hostile","bd4000",0)  // Dragonspear Castle, Exterior
+	Range([PC],30)
+	!Range(LastSeenBy(Myself),0)
+	See(LastSeenBy(Myself))
+	Delay(8)
+THEN
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(3)
+		ActionOverride(LastSeenBy(Myself),FaceObject(Nearest([NEUTRAL.0.TROLL])))
+		SmallWait(2)
+		DisplayStringHead(LastSeenBy,49136)  // Watch out!
+		ActionOverride(LastSeenBy(Myself),SetSequence(SEQ_DAMAGE))
+		SetSequence(SEQ_ATTACK_SLASH)
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(3)
+		ActionOverride(LastSeenBy(Myself),FaceObject(Nearest([NEUTRAL.0.TROLL])))
+		SmallWait(2)
+		DisplayStringHead(LastSeenBy,49137)  // Watch the claws, watch the claws!
+		ActionOverride(LastSeenBy(Myself),SetSequence(SEQ_DAMAGE))
+		SetSequence(SEQ_ATTACK_BACKSLASH)
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(3)
+		ActionOverride(LastSeenBy(Myself),FaceObject(Nearest([NEUTRAL.0.TROLL])))
+		SmallWait(2)
+		DisplayStringHead(LastSeenBy,49138)  // Shoot her! SHOOT HER!
+		ActionOverride(LastSeenBy(Myself),SetSequence(SEQ_DAMAGE))
+		SetSequence(SEQ_ATTACK_SLASH)
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(3)
+		ActionOverride(LastSeenBy(Myself),FaceObject(Nearest([NEUTRAL.0.TROLL])))
+		SmallWait(2)
+		DisplayStringHead(LastSeenBy,49139)  // Keep back! Everyone keep back!
+		ActionOverride(LastSeenBy(Myself),SetSequence(SEQ_DAMAGE))
+		SetSequence(SEQ_ATTACK_BACKSLASH)
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		SmallWait(3)
+		ActionOverride(LastSeenBy(Myself),FaceObject(Nearest([NEUTRAL.0.TROLL])))
+		SmallWait(2)
+		DisplayStringHead(LastSeenBy,49140)  // Be careful!
+		ActionOverride(LastSeenBy(Myself),SetSequence(SEQ_DAMAGE))
+		SetSequence(SEQ_ATTACK_SLASH)
+END
+

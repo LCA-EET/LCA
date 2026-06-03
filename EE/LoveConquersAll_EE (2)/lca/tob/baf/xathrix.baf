@@ -1,0 +1,7 @@
+IF
+	Global("XA_LC_ThrixSpawn","MYAREA",3)
+THEN
+	RESPONSE #100
+		StartDialog("XATHRIX", Player1)
+END
+

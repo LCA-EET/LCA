@@ -1,0 +1,159 @@
+IF
+	InMyArea(Player1)
+	GlobalGT("XA_LC_ExitPrison", "GLOBAL", 0)
+	GlobalLT("XA_LC_TimeRewind", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_TimeRewind", "MYAREA", 1)
+		CreateCreature("XAREWIND", [0.0], N)
+		Continue()
+END
+
+IF 
+	GlobalTimerExpired("XA_LC_Amulet3Timer", "GLOBAL")
+	PartyHasItem("AMUL27")
+	InMyArea(Player1)
+	GlobalLT("XA_LC_PaintSpySpawn", "MYAREA", 1)
+	GlobalLT("XA_LC_ExitPrison", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_PaintSpySpawn", "MYAREA", 1)
+		CreateCreature("XAPSPY", [250.560], NE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_AmuletPainting", "GLOBAL", 5)
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END
+
+IF
+	Global("XA_LC_DoppleSpawn_0706", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		CreateCreature("xagdop00", [433.466], SW)
+		CreateCreature("xagdop01", [386.584], NW)
+		CreateCreature("xagdop02", [303.607], NW)
+		SetGlobal("XA_LC_DoppleSpawn_0706", "GLOBAL", 2)
+END
+
+IF
+	Global("XA_LC_DoppleSpawn_0706", "GLOBAL", 2)
+	Dead("xagdop00")
+	Dead("xagdop01")
+	Dead("xagdop02")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_AmuletPainting", "GLOBAL", 7)
+		SetGlobal("XA_LC_DoppleSpawn_0706", "GLOBAL", 3)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END
+
+
+IF
+	InMyArea(Player1)
+	GlobalTimerExpired("XA_LC_LyrielSingTimer", "GLOBAL")
+	GlobalGT("XA_LC_SavedLyriel", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("XA_LC_LyrielSingTimer", "GLOBAL", TEN_MINUTES)
+		DisplayStringHead(Myself, @0) 
+		Continue()
+	RESPONSE #100
+		SetGlobalTimer("XA_LC_LyrielSingTimer", "GLOBAL", TEN_MINUTES)
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	PartyHasItem("XANARBAG")
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, DestroyItem("XANARBAG"))
+		ActionOverride(Player2, DestroyItem("XANARBAG"))
+		ActionOverride(Player3, DestroyItem("XANARBAG"))
+		ActionOverride(Player4, DestroyItem("XANARBAG"))
+		ActionOverride(Player5, DestroyItem("XANARBAG"))
+		ActionOverride(Player6, DestroyItem("XANARBAG"))
+END
+
+IF
+	Global("XA_LC_SavedLyriel", "GLOBAL", 1)
+	InMyArea(Player1)
+	Global("XA_LC_ExitPrison", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_SavedLyriel", "GLOBAL", 2)
+		//400,, 480
+		CreateVisualEffect("SPPORTAL",[400.480])
+		Wait(2)
+		CreateCreature("XALYRIEL",[400.480],SW)
+		Continue()
+END
+
+IF
+	GlobalLT("XA_LC_AmuletTimer1Started", "GLOBAL", 1)
+	PartyHasItem("AMUL27")
+	InMyArea(Player1)
+	GlobalLT("XA_LC_ExitPrison", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_AmuletTimer1Started", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_Amulet1Timer", "GLOBAL", ONE_ROUND)
+		Continue()
+END
+
+IF 
+	GlobalTimerExpired("XA_LC_Amulet1Timer", "GLOBAL")
+	GlobalLT("XA_LC_AmuletPainting", "GLOBAL", 1)
+	PartyHasItem("AMUL27")
+	InMyArea(Player1)
+	GlobalLT("XA_LC_ExitPrison", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_AmuletPainting", "GLOBAL", 1)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END
+
+IF 
+	GlobalLT("XA_LC_AmuletTimer2Started", "GLOBAL", 1)
+	PartyHasItem("AMUL27")
+	Global("XA_LC_AmuletPainting", "GLOBAL", 2)
+	InMyArea(Player1)
+	GlobalLT("XA_LC_ExitPrison", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_AmuletTimer2Started", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_Amulet2Timer", "GLOBAL", ONE_ROUND)
+		Continue()
+END
+
+IF 
+	GlobalTimerExpired("XA_LC_Amulet2Timer", "GLOBAL")
+	GlobalLT("XA_LC_AmuletPainting", "GLOBAL", 3)
+	PartyHasItem("AMUL27")
+	InMyArea(Player1)
+	GlobalLT("XA_LC_ExitPrison", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_AmuletPainting", "GLOBAL", 3)
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+END
+
+IF 
+	GlobalLT("XA_LC_AmuletTimer3Started", "GLOBAL", 1)
+	PartyHasItem("AMUL27")
+	Global("XA_LC_AmuletPainting", "GLOBAL", 4)
+	InMyArea(Player1)
+	GlobalLT("XA_LC_ExitPrison", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_AmuletTimer3Started", "GLOBAL", 1)
+		SetGlobalTimer("XA_LC_Amulet3Timer", "GLOBAL", ONE_ROUND)
+		Continue()
+END
+
+
+

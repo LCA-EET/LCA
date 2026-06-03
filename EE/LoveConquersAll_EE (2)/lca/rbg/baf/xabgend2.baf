@@ -1,0 +1,32 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		//415 445
+		ActionOverride("XAROHMA", MoveToPoint([520.305])
+		Wait(1)
+		DisplayStringHead("XAROHMA", @0)
+		Wait(3)
+		ActionOverride("XALIAA", FaceObject(Player1))
+		SmallWait(1)
+		DisplayStringHead("XALIIA", @1)
+		Wait(2)
+		DisplayStringHead("XALIIA", @2)
+		Wait(5)
+		DisplayStringHead("XACORWIN", @3)
+		Wait(3)
+		DisplayStringHead("XASKIE", @4)
+		Wait(2)
+		ActionOverride("XAROHMA", MoveToPoint([370.370]))
+		Wait(2)
+		ActionOverride("XALIIA", MoveToPoint([625.640]))
+		Wait(1)
+		ActionOverride("XACORWIN", MoveToPoint([585.540]))
+		Wait(2)
+		MoveToPoint([670.510])
+		SmallWait(1)
+		FaceObject("XALIAA")
+		ActionOverride("XALIAA", FaceObject(Player1))
+		ActionOverride("XAELTAN", StartDialog("XAELTAN", Player1))
+END

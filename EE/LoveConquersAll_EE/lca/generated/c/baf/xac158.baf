@@ -1,0 +1,80 @@
+IF
+	Global("bd_sentry_pass","bd4000",0)  // Dragonspear Castle, Exterior
+	Allegiance(Myself,NEUTRAL)
+	See([PC])
+	Range(LastSeenBy(Myself),15)
+	Name("bddssen",Myself)  // Crusader Officer
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	Global("bd_bump","locals",0)
+	!Name("sentry spy",Myself)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_bump","locals",1)
+		ApplySpellRES("bdbump1",Myself)  // No such index
+		ChangeSpecifics(Myself,CRUSADERS)
+END
+
+IF
+	Global("bd_bump","locals",0)
+	Name("sentry spy",Myself)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_bump","locals",1)
+		ApplySpellRES("bdinvis",Myself)  // No such index
+		ApplySpellRES("bdspace0",Myself)  // No such index
+		ChangeSpecifics(Myself,CRUSADERS)
+END
+
+IF
+	Global("bd_bump","locals",1)
+	!Name("stone golem",Myself)
+	GlobalGT("bd_sentry_pass","bd4000",2)  // Dragonspear Castle, Exterior
+THEN
+	RESPONSE #100
+		SetGlobal("bd_bump","locals",2)
+		ApplySpellRES("bdbump2",Myself)  // No such index
+END
+
+IF
+	Global("bd_myspace","locals",0)
+	Name("sentry spy",Myself)
+	Allegiance(Myself,NEUTRAL)
+	OR(4)
+		HitBy([GOODCUTOFF],CRUSHING)
+		AttackedBy([GOODCUTOFF],DEFAULT)
+		Heard([EVILCUTOFF.0.0.0.CRUSADERS],ASSIST)
+		Heard([NEUTRAL.0.0.0.CRUSADERS],ASSIST)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_myspace","locals",1)
+		ApplySpellRES("bdspace",Myself)  // No such index
+		Enemy()
+		Continue()
+END
+
+IF
+	GlobalGT("bd_sentry_pass","bd4000",2)  // Dragonspear Castle, Exterior
+	Global("bd_open_gate","locals",0)
+	Allegiance(Myself,NEUTRAL)
+	Name("bddssen",Myself)  // Crusader Officer
+THEN
+	RESPONSE #100
+		MoveToPointNoInterrupt([900.2945])
+		SetGlobal("bd_open_gate","locals",1)
+		Face(SW)
+END
+
+IF
+	Global("bd_MDD1102_setup","BD4000",1)  // Dragonspear Castle, Exterior
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+

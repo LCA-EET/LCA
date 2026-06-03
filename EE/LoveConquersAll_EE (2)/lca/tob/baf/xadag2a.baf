@@ -1,0 +1,26 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeFromColor([20.0],200)
+		SetSequence(SEQ_DIE)
+		ActionOverride(Player2,SetSequence(SEQ_DIE))
+		ActionOverride(Player3,SetSequence(SEQ_DIE))
+		ActionOverride(Player4,SetSequence(SEQ_DIE))
+		ActionOverride(Player5,SetSequence(SEQ_DIE))
+		ActionOverride(Player6,SetSequence(SEQ_DIE))
+		ScreenShake([900.1150], 15)
+		Wait(3)
+		SetSequence(SEQ_AWAKE)
+		ActionOverride(Player2,SetSequence(SEQ_AWAKE))
+		ActionOverride(Player3,SetSequence(SEQ_AWAKE))
+		ActionOverride(Player4,SetSequence(SEQ_AWAKE))
+		ActionOverride(Player5,SetSequence(SEQ_AWAKE))
+		ActionOverride(Player6,SetSequence(SEQ_AWAKE))
+		Wait(1)
+		CreateVisualEffect("SPPORTAL",[640.1200])
+		Wait(2)
+		CreateCreature("XALODOB", [640.1200], E)
+		EndCutSceneMode()
+END

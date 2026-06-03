@@ -1,0 +1,1 @@
+ EXTEND_BOTTOM BAERIE 112 IF~TriggerOverride("Aerie",GlobalLT("XA_LC_CorwinBanters","LOCALS",3))~THEN REPLY@0+XA_Ashatiel IF~TriggerOverride("Aerie",GlobalGT("XA_LC_CorwinBanters","LOCALS",2))~THEN REPLY@3+114 IF~TriggerOverride("Aerie",GlobalGT("XA_LC_CorwinBanters","LOCALS",2))~THEN REPLY@5+116 END APPEND BAERIE IF~~THEN BEGIN XA_Ashatiel SAY@1++@2+116++@4+114 END END 

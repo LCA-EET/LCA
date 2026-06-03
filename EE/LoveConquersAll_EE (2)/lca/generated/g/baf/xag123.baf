@@ -1,0 +1,11 @@
+IF
+	Opened([PC])
+	Global("BD_SDD221_KRUNTUR","GLOBAL",0)
+	IfValidForPartyDialog("MKHIIN")  // M'Khiin
+THEN
+	RESPONSE #100
+		SetGlobal("BD_SDD221_KRUNTUR","GLOBAL",1)
+		CreateCreature("BDKRUNTU",[1632.508],S)  // Hide Armor
+		ActionOverride("MKHIIN",StartDialogueNoSet(LastTrigger))
+END
+

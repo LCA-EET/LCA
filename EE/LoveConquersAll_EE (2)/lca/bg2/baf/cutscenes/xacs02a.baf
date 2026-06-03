@@ -1,0 +1,27 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ClearAllActions()
+		StorePartyLocations()
+		FadeToColor([30.0],0)
+		Wait(3)
+		ZoomLock(TRUE)
+		LeaveAreaLUA("xad101","",[2762.898],SW)
+		ActionOverride(Player2,LeaveAreaLUA("xad101","",[2802.919],SW))  
+		ActionOverride(Player3,LeaveAreaLUA("xad101","",[2800.848],SW))  
+		ActionOverride(Player4,LeaveAreaLUA("xad101","",[2839.875],SW))  
+		ActionOverride(Player5,LeaveAreaLUA("xad101","",[2830.801],SW))  
+		ActionOverride(Player6,LeaveAreaLUA("xad101","",[2871.833],SW))
+		Wait(1)
+		ApplySpellRES("xahide", Player1)
+		ApplySpellRES("xahide", Player2)
+		ApplySpellRES("xahide", Player3)
+		ApplySpellRES("xahide", Player4)
+		ApplySpellRES("xahide", Player5)
+		ApplySpellRES("xahide", Player6)		
+		CreateCreature("xabence",[1044.688],2) //BDBENCE
+		 
+		StartCutScene("XAcs02b")
+END

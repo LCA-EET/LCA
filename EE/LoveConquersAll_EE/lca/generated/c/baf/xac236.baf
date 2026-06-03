@@ -1,0 +1,44 @@
+IF
+	Name("bark_mdd1246a",Myself)
+	Global("bd_glint_mdd1246a_ot","bd4000",0)  // Dragonspear Castle, Exterior
+	Range("glint",35)  // Glint
+	Global("chapter","global",11)
+	IfValidForPartyDialog("glint")  // Glint
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_glint_mdd1246a_ot","bd4000",1)  // Dragonspear Castle, Exterior
+		SetGlobalTimer("bd_mdd1246a_ot_timer","bd4000",4)  // Dragonspear Castle, Exterior
+		DisplayStringHead("glint",38408)  // I just climbed a dragon's skeleton. Ah, Mum, if only you could see me now.
+END
+
+IF
+	Name("bark_mdd1246a",Myself)
+	Global("bd_minsc_mdd1246a_ot","bd4000",0)  // Dragonspear Castle, Exterior
+	Range("minsc",25)  // Minsc
+	Global("chapter","global",11)
+	!GlobalTimerNotExpired("bd_corwin_mdd1246a_ot","bd4000")  // Dragonspear Castle, Exterior
+	IfValidForPartyDialog("minsc")  // Minsc
+THEN
+	RESPONSE #50
+		SetGlobalTimer("bd_minsc_mdd1246a_ot","bd4000",1)  // Dragonspear Castle, Exterior
+		SetGlobalTimer("bd_mdd1246a_ot_timer","bd4000",3)  // Dragonspear Castle, Exterior
+		DisplayStringHead("minsc",38409)  // Minsc is here to fight! Where is everyone else?
+	RESPONSE #50
+		SetGlobalTimer("bd_minsc_mdd1246a_ot","bd4000",1)  // Dragonspear Castle, Exterior
+		SetGlobalTimer("bd_mdd1246a_ot_timer","bd4000",3)  // Dragonspear Castle, Exterior
+		DisplayStringHead("minsc",67620)  // That dragon in flight would have been a stirring sight!
+END
+
+IF
+	Name("bark_mdd1246a",Myself)
+	Global("bd_corwin_mdd1246a_ot","bd4000",0)  // Dragonspear Castle, Exterior
+	Range("corwin",25)  // Corwin
+	Global("chapter","global",11)
+	!GlobalTimerNotExpired("bd_corwin_mdd1246a_ot","bd4000")  // Dragonspear Castle, Exterior
+	IfValidForPartyDialog("corwin")  // Corwin
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_corwin_mdd1246a_ot","bd4000",1)  // Dragonspear Castle, Exterior
+		DisplayStringHead("corwin",38410)  // Caelar must be rallying her forces inside the castle. Let's go.
+END
+

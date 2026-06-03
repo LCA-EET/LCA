@@ -1,0 +1,19 @@
+IF
+	Global("XA_LC_AmuletPainting", "GLOBAL", 4)
+	PartyHasItem("AMUL27")
+	See(Player1)
+	Range(Player1, 10)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_AmuletPainting", "GLOBAL", 5)
+END
+
+IF
+	Global("XA_LC_AmuletPainting", "GLOBAL", 5)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+
+

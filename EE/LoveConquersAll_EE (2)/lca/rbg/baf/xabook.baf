@@ -1,0 +1,15 @@
+IF
+	OR(4)
+		See(NearestEnemyOf(Myself))
+		AttackedBy([ANYONE], DEFAULT)
+		PickPocketFailed([ANYONE])
+		Global("XA_LC_QuestStarted", "LOCALS", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		ReallyForceSpell(Myself,DRYAD_TELEPORT)
+		Wait(2)
+		DestroySelf()
+		SetInterrupt(TRUE)
+END
+

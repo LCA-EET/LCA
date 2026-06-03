@@ -1,0 +1,33 @@
+IF
+	WalkedToTrigger([ANYONE])
+	!PartyHasItem("BDMISC29")  // Empty Wineskin
+	Global("BD_SDD329_WINESKIN","MYAREA",0)
+	!GlobalTimerNotExpired("BD_WINESKIN","MYAREA")
+THEN
+	RESPONSE #100
+		DisplayStringNoName(Myself,61292)  // Without a suitable container, the wine in this keg would run onto the ground.
+		SetGlobalTimer("BD_WINESKIN","MYAREA",ONE_MINUTE)
+END
+
+IF
+	WalkedToTrigger([ANYONE])
+	PartyHasItem("BDMISC29")  // Empty Wineskin
+	Global("BD_SDD329_WINESKIN","MYAREA",0)
+THEN
+	RESPONSE #100
+		TakePartyItemAll("BDMISC29")  // Empty Wineskin
+		GiveItemCreate("BDMISC30",LastTrigger,0,0,0)  // Full Wineskin
+		SetGlobal("BD_SDD329_WINESKIN","MYAREA",1)
+		DisplayStringNoName(Myself,61293)  // Using the spigot, you fill up the wineskin.
+END
+
+IF
+	WalkedToTrigger([ANYONE])
+	Global("BD_SDD329_WINESKIN","MYAREA",1)
+	!GlobalTimerNotExpired("BD_WINESKIN","MYAREA")
+THEN
+	RESPONSE #100
+		DisplayStringNoName(Myself,61294)  // This keg serves no further purpose.
+		SetGlobalTimer("BD_WINESKIN","MYAREA",ONE_MINUTE)
+END
+

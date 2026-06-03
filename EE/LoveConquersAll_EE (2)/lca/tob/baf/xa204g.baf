@@ -1,0 +1,32 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeToColor([30.0],0)
+		Wait(2)
+		ActionOverride("Head1",DestroySelf())
+		ActionOverride("Head2",DestroySelf())
+		ActionOverride("Head3",DestroySelf())
+		ActionOverride("Head4",DestroySelf())
+		ActionOverride("Head5",DestroySelf())
+		SetGlobal("HeadsSave","XA4000",1)  // Spirit Heads
+		JumpToPoint([615.489])
+		Face(SSE)
+		ActionOverride(Player2,JumpToPoint([683.463]))
+		ActionOverride(Player2,Face(SSE))
+		ActionOverride(Player3,JumpToPoint([744.437]))
+		ActionOverride(Player3,Face(SSE))
+		ActionOverride(Player4,JumpToPoint([569.430]))
+		ActionOverride(Player4,Face(SSE))
+		ActionOverride(Player5,JumpToPoint([637.401]))
+		ActionOverride(Player5,Face(SSE))
+		ActionOverride(Player6,JumpToPoint([698.378]))
+		ActionOverride(Player6,Face(SSE))
+		SmallWait(2)
+		Face(SE)
+		MoveViewObject(Player1,INSTANT)
+		Wait(2)
+		FadeFromColor([30.0],0)
+		EndCutSceneMode()
+END

@@ -1,0 +1,30 @@
+IF
+	See([PC])
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SmallWait(5)
+		Enemy()
+END
+
+IF
+	!Global("AttackedThieves","GLOBAL",1)
+	!Global("ThiefSecretQuestion","GLOBAL",1)
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	NumberOfTimesTalkedTo(0)
+THEN
+	RESPONSE #100
+		Dialogue([PC])
+END
+
+IF
+	See([PC])
+	Allegiance(Myself,NEUTRAL)
+	Global("ThiefSecretQuestion","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetDialog("thiefm")
+END
+

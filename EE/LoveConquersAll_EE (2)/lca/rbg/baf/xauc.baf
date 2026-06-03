@@ -1,0 +1,57 @@
+IF
+	Global("XA_LC_ArrivedInUndercity", "GLOBAL", 2)
+	GlobalLT("XA_LC_SkieModActive", "GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_ArrivedInUndercity", "GLOBAL", 3)
+		Wait(1)
+		ActionOverride("XASKIE2", StartDialog("XASKIE", Player1))
+END
+
+IF
+	Global("XA_LC_ArrivedInUndercity", "GLOBAL", 2)
+	Global("XA_LC_SkieModActive", "GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_ArrivedInUndercity", "GLOBAL", 3)
+		Wait(1)
+		ActionOverride("XAGLINT2", StartDialog("XAGLINT", Player1))
+END
+
+IF
+	GlobalLT("XA_LC_DaggerTimerSet", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_DaggerTimerSet", "MYAREA", 1)
+		Wait(10)
+		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", ONE_ROUND)
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("XA_LC_DaggerTimerSet", "MYAREA", 1)
+	GlobalTimerExpired("XA_LC_DaggerTimer", "MYAREA")
+	GlobalLT("XA_LC_SpawnsActive", "MYAREA", 10)
+THEN
+	RESPONSE #20
+		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", ONE_ROUND)
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
+	RESPONSE #20
+		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", ONE_ROUND)
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
+	RESPONSE #20
+		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", TWO_ROUNDS)
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
+	RESPONSE #20
+		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", THREE_ROUNDS)
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
+		ActionOverride(Player1, CreateCreature("XABONDAG", [-1.-1], S))
+	RESPONSE #20
+		SetGlobalTimer("XA_LC_DaggerTimer", "MYAREA", ONE_ROUND)
+END

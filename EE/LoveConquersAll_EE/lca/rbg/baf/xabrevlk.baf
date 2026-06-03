@@ -1,0 +1,16 @@
+IF 
+	Global("XA_LC_BrevlikArrested", "GLOBAL", 1)
+	!AreaCheck("XAA287") // ar0607
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	ActionListEmpty()
+THEN
+	RESPONSE #50
+		RandomWalk()
+	RESPONSE #50
+		Wait(3)
+END

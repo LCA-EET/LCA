@@ -1,0 +1,77 @@
+IF
+	Die()
+THEN
+	RESPONSE #100
+		ReallyForceSpellDead(Myself,ILLUSION_DEATH)  // SPIN835.SPL (No such index)
+		Wait(1)
+		DestroySelf()
+END
+
+IF
+	Dead("XANEB")  // Neb
+	Global("ChildrenGone","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ChildrenGone","LOCALS",1)
+		SetGlobal("ChildWraithsFreed","GLOBAL",1)
+		DisplayStringHead(Myself,@0)  // Thank you! I am released!
+		AddexperienceParty(3333)
+		ForceSpell(Myself,TRAP_SHADOW_DEATH)  // SPWI023.SPL (No such index)
+	RESPONSE #100
+		SetGlobal("ChildrenGone","LOCALS",1)
+		SetGlobal("ChildWraithsFreed","GLOBAL",1)
+		DisplayStringHead(Myself,@1)  // Thank you! I am released!
+		AddexperienceParty(3333)
+		ForceSpell(Myself,TRAP_SHADOW_DEATH)  // SPWI023.SPL (No such index)
+	RESPONSE #100
+		SetGlobal("ChildrenGone","LOCALS",1)
+		SetGlobal("ChildWraithsFreed","GLOBAL",1)
+		DisplayStringHead(Myself,@2)  // Thank you! I am released!
+		AddexperienceParty(3333)
+		ForceSpell(Myself,TRAP_SHADOW_DEATH)  // SPWI023.SPL (No such index)
+	RESPONSE #100
+		SetGlobal("ChildrenGone","LOCALS",1)
+		SetGlobal("ChildWraithsFreed","GLOBAL",1)
+		DisplayStringHead(Myself,@3)  // Thank you! I am released!
+		AddexperienceParty(3333)
+		ForceSpell(Myself,TRAP_SHADOW_DEATH)  // SPWI023.SPL (No such index)
+	RESPONSE #100
+		SetGlobal("ChildrenGone","LOCALS",1)
+		SetGlobal("ChildWraithsFreed","GLOBAL",1)
+		DisplayStringHead(Myself,@4)  // Thank you! I am released!
+		AddexperienceParty(3333)
+		ForceSpell(Myself,TRAP_SHADOW_DEATH)  // SPWI023.SPL (No such index)
+	RESPONSE #100
+		SetGlobal("ChildrenGone","LOCALS",1)
+		SetGlobal("ChildWraithsFreed","GLOBAL",1)
+		DisplayStringHead(Myself,@5)  // Thank you! I am released!
+		AddexperienceParty(3333)
+		ForceSpell(Myself,TRAP_SHADOW_DEATH)  // SPWI023.SPL (No such index)
+	RESPONSE #100
+		SetGlobal("ChildrenGone","LOCALS",1)
+		SetGlobal("ChildWraithsFreed","GLOBAL",1)
+		DisplayStringHead(Myself,@6)  // Thank you! I am released!
+		AddexperienceParty(3333)
+		ForceSpell(Myself,TRAP_SHADOW_DEATH)  // SPWI023.SPL (No such index)
+	RESPONSE #100
+		SetGlobal("ChildrenGone","LOCALS",1)
+		SetGlobal("ChildWraithsFreed","GLOBAL",1)
+		DisplayStringHead(Myself,@7)  // Thank you! I am released!
+		AddexperienceParty(3333)
+		ForceSpell(Myself,TRAP_SHADOW_DEATH)  // SPWI023.SPL (No such index)
+	RESPONSE #100
+		SetGlobal("ChildrenGone","LOCALS",1)
+		SetGlobal("ChildWraithsFreed","GLOBAL",1)
+		DisplayStringHead(Myself,@8)  // Thank you! I am released!
+		AddexperienceParty(3333)
+		ForceSpell(Myself,TRAP_SHADOW_DEATH)  // SPWI023.SPL (No such index)
+	RESPONSE #100
+		SetGlobal("ChildrenGone","LOCALS",1)
+		SetGlobal("ChildWraithsFreed","GLOBAL",1)
+		DisplayStringHead(Myself,@9)  // Thank you! I am released!
+		AddexperienceParty(3333)
+		ForceSpell(Myself,TRAP_SHADOW_DEATH)  // SPWI023.SPL (No such index)
+END
+
+
+

@@ -1,0 +1,59 @@
+IF
+	Global("bd_plot","global",300)
+	GlobalTimerExpired("bd_nederlok_delay","bd3000")  // Allied Siege Camp
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	AreaCheck("bd3000")  // Allied Siege Camp
+	GlobalGT("bd_plot","global",304)
+	GlobalLT("bd_skie_plot","global",4)
+	Global("bd_nederlok_ot","locals",0)
+	Detect([PC])
+	NearLocation(Myself,1985,1500,5)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_nederlok_ot","locals",1)
+		Face(NW)
+		DisplayStringHead(Myself,43959)  // She's about yea tall, brown hair. Whining loudly, if I understand things correctly. You haven't seen her...? 
+END
+
+IF
+	Global("bd_plot","global",401)
+	AreaCheck("BD3000")  // Allied Siege Camp
+	See([PC])
+	Range(LastSeenBy,25)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	Global("bd_lanewalk","locals",0)
+	Global("bd_outer_gate_explosion","bd4000",1)  // Dragonspear Castle, Exterior
+	AreaCheck("bd4000")  // Dragonspear Castle, Exterior
+THEN
+	RESPONSE #100
+		SetGlobal("bd_lanewalk","locals",1)
+		SetGlobal("bd_no_retreat","locals",1)
+		SetGlobal("bd_no_search","locals",1)
+		SaveObjectLocation("LOCALS","bd_walk_point1","dsc_gate_outer")
+		SaveObjectLocation("LOCALS","bd_walk_point2","camp_arrival2")
+		SaveObjectLocation("LOCALS","bd_default_loc","camp_arrival2")
+		ChangeEnemyAlly(Myself,GOODBUTBLUE)
+END
+
+IF
+	Global("bd_nederlok_plot","bd4000",1)  // Dragonspear Castle, Exterior
+	GlobalLT("bd_asha_duel","global",1)
+	GlobalLT("bd_plot","global",440)
+	AreaCheck("BD4000")  // Dragonspear Castle, Exterior
+	See([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet([PC])
+END
+

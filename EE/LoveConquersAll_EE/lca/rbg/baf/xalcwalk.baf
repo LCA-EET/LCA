@@ -1,0 +1,8 @@
+IF
+	!See([ENEMY])
+THEN
+	RESPONSE #10
+		RandomWalk()
+	RESPONSE #90
+		NoAction()
+END

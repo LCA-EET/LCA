@@ -1,0 +1,14 @@
+IF 
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ZoomLock(TRUE)
+		AdvanceTime(FOURTEEN_DAYS)
+		DayNight(8)
+		SetGlobal("XA_LC_ReturnToBG", "GLOBAL", 2)
+		Wait(1)
+		ActionOverride("XACORWIN", LeaveAreaLUA("XAPEN", "", [500.500],N))
+		LeaveAreaLUA("XAPEN", "", [500.500],N)
+		EndCutSceneMode()
+END

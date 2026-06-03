@@ -1,0 +1,167 @@
+//{ Random Banters
+	//{ Anomen Banters
+	IF
+		ActionListEmpty()
+		InParty("Anomen")
+		GlobalLT("XA_LC_CorwinAnomenTimerSet", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_CorwinAnomenTimerSet", "LOCALS", 1)
+			SetGlobalTimer("XA_LC_CorwinAnomenTimer", "LOCALS", TWO_DAYS)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+	
+	IF
+		ActionListEmpty()
+		InParty("Anomen")
+		See("Anomen")
+		IsValidForPartyDialogue("Anomen")
+		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_CorwinAnomenTimer", "LOCALS")
+		GlobalLT("XA_LC_CorwinAnomenTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			SetGlobal("XA_LC_CorwinAnomenTalk", "LOCALS", 1)
+			Interact(Player1)
+			SetInterrupt(TRUE)
+	END
+	//}
+	
+	//{ Viconia Banters
+	
+	//{ Viconia - Corwin Second Interaction*/
+	IF
+		ActionListEmpty()
+		!ActuallyInCombat()
+		GlobalTimerExpired("XA_LC_ViconiaBanter2Timer", "LOCALS")
+		InParty("Viconia")
+		See("Viconia")
+		IsValidForPartyDialogue("Viconia")
+		TriggerOverride("Viconia", GlobalGT("XA_LC_CorwinBanters", "LOCALS", 0))
+		GlobalLT("XA_LC_Banter_CorwinViconiaDay", "LOCALS", 1)
+		!TimeOfDay(NIGHT)
+		!TimeOfDay(DUSK)
+		AreaType(OUTDOOR)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobalTimer("XA_LC_ViconiaBanter3Timer", "LOCALS", ONE_DAY)
+			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			SetGlobal("XA_LC_Banter_CorwinViconiaDay", "LOCALS", 1)
+			Interact("Viconia")
+			ActionOverride("Viconia", Interact("XACORWIN"))
+			SetInterrupt(TRUE)
+	END
+	//}
+
+	//{ Viconia - Corwin Third Interaction*/
+	IF
+		ActionListEmpty()
+		!ActuallyInCombat()
+		GlobalTimerExpired("XA_LC_ViconiaBanter3Timer", "LOCALS")
+		InParty("Viconia")
+		See("Viconia")
+		IsValidForPartyDialogue("Viconia")
+		Global("XA_LC_Banter_CorwinViconiaDay", "LOCALS", 2)
+		GlobalLT("XA_LC_Banter_CorwinViconiaCity", "GLOBAL", 1)
+		AreaType(CITY)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			SetGlobal("XA_LC_Banter_CorwinViconiaCity", "GLOBAL", 1)
+			Interact("Viconia")
+			ActionOverride("Viconia", Interact("XACORWIN"))
+			SetInterrupt(TRUE)
+	END
+	//}
+	//}
+
+	//{ Player Banters
+		
+		//{ Optional Banter 1
+		IF
+			ActionListEmpty()
+			Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+			Global("XA_LC_MetRohma", "GLOBAL", 1)
+			GlobalLT("XA_LC_ReturnToBG", "GLOBAL", 1)
+			TriggerOverride(Player1, GlobalGT("XA_LC_CorwinBanters", "LOCALS", 0))
+			GlobalLT("XA_LC_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobalTimer("XA_LC_PlayerOpt1BanterTimer", "LOCALS", THREE_DAYS)
+				SetGlobal("XA_LC_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
+				SetInterrupt(TRUE)
+		END
+
+		IF
+			ActionListEmpty()
+			Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+			Global("XA_LC_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+			GlobalTimerExpired("XA_LC_PlayerOpt1BanterTimer", "LOCALS")
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_LC_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
+				SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+				PlaySong(1001)
+				Interact(Player1)
+				SetInterrupt(TRUE)
+		END
+		
+		IF
+			ActionListEmpty()
+			Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+			Global("XA_LC_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+			GlobalTimerExpired("XA_LC_PlayerOpt1BanterTimer", "LOCALS")
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_LC_Banter_CorwinPlayerOpt1", "GLOBAL", 2)
+				SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+				Interact(Player1)
+				SetInterrupt(TRUE)
+		END
+		//}
+		
+		//{ Optional Banter 1A
+		IF
+			ActionListEmpty()
+			Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+			GlobalLT("XA_LC_Banter_CorwinPlayerOpt1", "GLOBAL", 1)
+			Global("XA_LC_ReturnToBG", "GLOBAL", 2)
+			GlobalGT("GavePocketPlane","GLOBAL",0)
+			GlobalLT("XA_LC_1ATimerSet", "LOCALS", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_LC_1ATimerSet", "LOCALS", 1)
+				SetGlobalTimer("XA_LC_PlayerOpt1ABanterTimer", "LOCALS", THREE_DAYS)
+				SetInterrupt(TRUE)
+				Continue()
+		END
+		// R-01
+		IF
+			ActionListEmpty()
+			GlobalTimerExpired("XA_LC_PlayerOpt1ABanterTimer", "LOCALS")
+			Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
+			GlobalLT("XA_LC_Banter_CorwinPlayerOpt1A", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
+				SetInterrupt(FALSE)
+				SetGlobal("XA_LC_Banter_CorwinPlayerOpt1A", "GLOBAL", 1)
+				PlaySong(1001)
+				Interact(Player1)
+				SetInterrupt(TRUE)
+		END
+		//}
+
+	//}
+//}

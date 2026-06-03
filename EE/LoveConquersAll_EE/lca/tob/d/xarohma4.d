@@ -1,0 +1,1 @@
+BEGIN~XAROHMA4~IF~GlobalLT("XA_LC_RohmaWraith","GLOBAL",1)~THEN BEGIN XA_RohmaWraith SAY@0 IF~~THEN DO~SetGlobal("XA_LC_RohmaWraith","GLOBAL",1)~EXTERN XACOR25J XA_RohmaWraithChain END 

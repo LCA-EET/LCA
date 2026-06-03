@@ -1,0 +1,8 @@
+IF
+	OR(2)
+		Dead("Aldeth")
+		GlobalLT("XA_LC_SavedAldeth", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END

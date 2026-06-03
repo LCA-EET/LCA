@@ -1,0 +1,23 @@
+
+IF
+	GlobalTimerExpired("XA_LC_LyrielSingTimer", "GLOBAL")
+	GlobalGT("XA_LC_SavedLyriel", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("XA_LC_LyrielSingTimer", "GLOBAL", TEN_MINUTES)
+		DisplayStringHead(Myself, @0) 
+		Continue()
+	RESPONSE #100
+		SetGlobalTimer("XA_LC_LyrielSingTimer", "GLOBAL", TEN_MINUTES)
+		Continue()
+END
+
+IF
+	GlobalLT("XA_LC_CreateAlyth", "MYAREA", 1)
+	!Dead("alyth")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_CreateAlyth", "MYAREA", 1)
+		CreateCreature("xaalyth", [870.640], SE) //Alyth
+		Continue()
+END

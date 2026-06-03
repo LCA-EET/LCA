@@ -1,0 +1,122 @@
+IF
+	OR(4)
+		!Allegiance(Myself,EVILCUTOFF)
+		StateCheck(Myself,STATE_IMMOBILE)
+		StateCheck(Myself,STATE_REALLY_DEAD)
+		Global("BD_Engaged","LOCALS",0)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!InActiveArea(Myself)
+	!Range(NearestEnemyOf(Myself),30)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	Detect(NearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),5)
+	OR(4)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+		StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+		Gender(LastSeenBy(Myself),ILLUSIONARY)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		DisplayString(Myself,70053)  // Unaffected by Illusions
+		ApplySpellRES("bdlemure",LastSeenBy(Myself))  // No such index
+END
+
+IF
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	Detect(SecondNearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),5)
+	OR(4)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+		StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+		Gender(LastSeenBy(Myself),ILLUSIONARY)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		DisplayString(Myself,70053)  // Unaffected by Illusions
+		ApplySpellRES("bdlemure",LastSeenBy(Myself))  // No such index
+END
+
+IF
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	Detect(ThirdNearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),5)
+	OR(4)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+		StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+		Gender(LastSeenBy(Myself),ILLUSIONARY)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		DisplayString(Myself,70053)  // Unaffected by Illusions
+		ApplySpellRES("bdlemure",LastSeenBy(Myself))  // No such index
+END
+
+IF
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	Detect(FourthNearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),5)
+	OR(4)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+		StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+		Gender(LastSeenBy(Myself),ILLUSIONARY)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		DisplayString(Myself,70053)  // Unaffected by Illusions
+		ApplySpellRES("bdlemure",LastSeenBy(Myself))  // No such index
+END
+
+IF
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	Detect(FifthNearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),5)
+	OR(4)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+		StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+		Gender(LastSeenBy(Myself),ILLUSIONARY)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		DisplayString(Myself,70053)  // Unaffected by Illusions
+		ApplySpellRES("bdlemure",LastSeenBy(Myself))  // No such index
+END
+
+IF
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	Detect(SixthNearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),5)
+	OR(4)
+		StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
+		StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+		StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+		Gender(LastSeenBy(Myself),ILLUSIONARY)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		DisplayString(Myself,70053)  // Unaffected by Illusions
+		ApplySpellRES("bdlemure",LastSeenBy(Myself))  // No such index
+END
+

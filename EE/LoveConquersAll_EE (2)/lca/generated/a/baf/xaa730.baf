@@ -1,0 +1,39 @@
+IF
+	OR(2)
+		AttackedBy([GOODCUTOFF],DEFAULT)
+		Heard([ANYONE],1)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Shout(1)
+		Enemy()
+END
+
+IF
+	Name("banditcy",Myself)  // Ruffian
+	!See([PC])
+	!See("Cyrdemac")  // Cyrdemac
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		MoveToObject(LastSeenBy("Cyrdemac"))  // Cyrdemac
+END
+
+IF
+	Name("banditcy",Myself)  // Ruffian
+	Global("CharmedCyrdemac","GLOBAL",1)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		ChangeAIScript("",CLASS)
+END
+
+IF
+	Name("banditcy",Myself)  // Ruffian
+	GlobalLT("AcceptedJob","GLOBAL",2)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+

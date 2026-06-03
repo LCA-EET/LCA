@@ -1,0 +1,27 @@
+IF
+	Allegiance(Myself,NEUTRAL)
+	GlobalLT("BD_FOEHAMMER_BLESSING","GLOBAL",2)
+	Detect([PC])
+	!GlobalTimerNotExpired("bd_sdd332_ot_timer","bd4000")  // Dragonspear Castle, Exterior
+THEN
+	RESPONSE #33
+		SetGlobalTimerRandom("bd_sdd332_ot_timer","bd4000",8,THREE_MINUTES)  // Dragonspear Castle, Exterior
+		DisplayStringHead(Myself,51505)  // Praise be to Tempus!
+	RESPONSE #33
+		SetGlobalTimerRandom("bd_sdd332_ot_timer","bd4000",8,THREE_MINUTES)  // Dragonspear Castle, Exterior
+		DisplayStringHead(Myself,51506)  // I don't feel any different.
+	RESPONSE #33
+		SetGlobalTimerRandom("bd_sdd332_ot_timer","bd4000",8,THREE_MINUTES)  // Dragonspear Castle, Exterior
+		DisplayStringHead(Myself,51507)  // This isn't working.
+END
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	Specifics(Myself,HOSTILES3)
+	Global("BD_FOEHAMMER_BLESSING","GLOBAL",2)
+	Dead("BDSENTRY")  // Sentry of Tempus
+THEN
+	RESPONSE #100
+		ChangeSpecifics(Myself,CRUSADERS)
+END
+

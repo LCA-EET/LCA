@@ -1,0 +1,63 @@
+IF
+	AreaCheck("ar0300")  // NE Baldur's Gate (Blushing Mermaid, Splurging Sturgeon, Counting House)
+	Global("NarlenMove","GLOBAL",2)
+THEN
+	RESPONSE #100
+		Deactivate(Myself)
+END
+
+IF
+	See([PC.0.0.THIEF_ALL])
+	Global("TalkedToNarlen","GLOBAL",0)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Dialogue([PC.0.0.THIEF_ALL])
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	!Class(LastAttackerOf(Myself),THIEF_ALL)
+	Global("NarlenMove","GLOBAL",11)
+THEN
+	RESPONSE #100
+		Enemy()
+		Shout(1)
+END
+
+IF
+	Global("NarlenMove","GLOBAL",10)
+THEN
+	RESPONSE #100
+		SetGlobal("NarlenMove","GLOBAL",11)
+		Attack([PC.0.0.THIEF_ALL])
+END
+
+IF
+	Global("NarlenMove","GLOBAL",11)
+	Allegiance(Myself,NEUTRAL)
+	See([PC.0.0.THIEF_ALL])
+	CombatCounter(0)
+THEN
+	RESPONSE #100
+		Attack([PC.0.0.THIEF_ALL])
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	!Global("NarlenMove","GLOBAL",11)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SetGlobal("AttackedThieves","GLOBAL",1)
+		Enemy()
+END
+
+IF
+	Global("AttackedThieves","GLOBAL",1)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+

@@ -1,0 +1,23 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeToColor([30.0],0)
+		Wait(3)
+		FadeFromColor([30.0],0)
+		Wait(2)
+		DisplayStringHead("XABENCE", @0)
+		Wait(1)
+		ActionOverride("XABENCE", MoveToPoint([550.370]))
+		Wait(1)
+		ActionOverride("XACORWIN", MoveToObject("TrigCC2"))
+		Wait(2)
+		MoveToObject("TrigP12")
+		Wait(2)
+		Face(NE)
+		ActionOverride("XACORWIN", Face(NE))
+		ActionOverride("XABENCE", FaceObject(Player1))
+		Wait(1)
+		StartDialog("Player1", Myself)
+END

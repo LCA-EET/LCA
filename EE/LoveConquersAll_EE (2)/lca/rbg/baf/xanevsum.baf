@@ -1,0 +1,36 @@
+IF
+	Dead("XANARZU")
+THEN
+	RESPONSE #100
+		Kill(Myself)
+END
+
+// If the player has completed the three paintings, the summons have a 2/3 chance of rebelling against the Narzugon
+
+IF
+	Global("XA_LC_PrisonKnowledge", "GLOBAL", 3)
+	GlobalLT("XA_LC_ChooseAllegiance", "LOCALS", 1)
+THEN
+	RESPONSE #33
+		SetGlobal("XA_LC_ChooseAllegiance", "LOCALS", 1)
+		ChangeEnemyAlly(Myself,ALLY)
+		DisplayStringHead(Myself, @0)
+	RESPONSE #33
+		SetGlobal("XA_LC_ChooseAllegiance", "LOCALS", 1)
+		ChangeEnemyAlly(Myself,ALLY)
+		DisplayStringHead(Myself, @0)
+	RESPONSE #34
+		SetGlobal("XA_LC_ChooseAllegiance", "LOCALS", 1)
+		ChangeEnemyAlly(Myself,ENEMY)
+		DisplayStringHead(Myself, @1)
+END
+
+IF 
+	GlobalLT("XA_LC_PrisonKnowledge", "GLOBAL", 3)
+	GlobalLT("XA_LC_ChooseAllegiance", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_ChooseAllegiance", "LOCALS", 1)
+		ChangeEnemyAlly(Myself,ENEMY)
+		DisplayStringHead(Myself, @1)
+END

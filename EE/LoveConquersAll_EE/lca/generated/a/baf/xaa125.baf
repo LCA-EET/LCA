@@ -1,0 +1,30 @@
+IF
+	!Range([ENEMY],5)
+	See([ENEMY])
+	!Allegiance(Myself,EVILCUTOFF)
+	!Class(LastSeenBy(Myself),INNOCENT)
+	!Class(LastSeenBy(Myself),FLAMING_FIST)
+	!Class(LastSeenBy(Myself),CANDLEKEEP_WATCHER)
+	!Class(LastSeenBy(Myself),AMNISH_SOLDIER)
+	!Class(LastSeenBy(Myself),TOWN_GUARD)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate([ENEMY],30)
+END
+
+IF
+	Range([ENEMY],5)
+	See([ENEMY])
+	!Allegiance(Myself,EVILCUTOFF)
+	!Class(LastSeenBy(Myself),INNOCENT)
+	!Class(LastSeenBy(Myself),FLAMING_FIST)
+	!Class(LastSeenBy(Myself),CANDLEKEEP_WATCHER)
+	!Class(LastSeenBy(Myself),AMNISH_SOLDIER)
+	!Class(LastSeenBy(Myself),TOWN_GUARD)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate([ENEMY],30)
+END
+

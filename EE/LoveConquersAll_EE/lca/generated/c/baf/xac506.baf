@@ -1,0 +1,214 @@
+IF
+	Die()
+	Switch("bd_enemy_gone_hostile","bd2000")  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #0
+		IncrementGlobal("bd_crusaders_aggroed","bd2000",1)  // Boareskyr Bridge & Bridgefort
+		ChangeAIScript("",RACE)
+		ChangeAIScript("",GENERAL)
+		Continue()
+	RESPONSE #1
+		IncrementGlobal("bd_crusaders_killed","bd2000",1)  // Boareskyr Bridge & Bridgefort
+		ChangeAIScript("",RACE)
+		ChangeAIScript("",GENERAL)
+		Continue()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("bd_aggroed","locals",0)
+THEN
+	RESPONSE #100
+		IncrementGlobal("bd_crusaders_aggroed","bd2000",1)  // Boareskyr Bridge & Bridgefort
+		SetGlobal("bd_aggroed","locals",1)
+		Continue()
+END
+
+IF
+	Global("bd_crusaders_retreat","bd2000",1)  // Boareskyr Bridge & Bridgefort
+	OR(2)
+		GlobalTimerExpired("bd_bf_escape_timer","locals")
+		Range("barrel_spot",7)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Global("bd_crusaders_retreat","bd2000",1)  // Boareskyr Bridge & Bridgefort
+	Global("bd_bf_escape","locals",0)
+	Switch("bd_enemy_gone_hostile","bd2000")  // Boareskyr Bridge & Bridgefort
+THEN
+	RESPONSE #0
+		DestroySelf()
+	RESPONSE #1
+		SetGlobal("bd_bf_escape","locals",1)
+		SetGlobalTimer("bd_bf_escape_timer","locals",TWO_ROUNDS)
+		SetGlobal("bd_no_combat","locals",1)
+		SetGlobal("bd_combat","locals",0)
+		ChangeEnemyAlly(Myself,NEUTRAL)
+		DialogInterrupt(FALSE)
+		SaveObjectLocation("LOCALS","bd_default_loc","barrel_spot")
+		SetGlobal("bd_retreat","locals",1)
+		SetGlobal("bd_retreat_escape","locals",1)
+		SetGlobal("bd_no_retreat","locals",0)
+END
+
+IF
+	Global("bd_enemy_gone_hostile","myarea",1)
+	Global("bd_crusaders_retreat","bd2000",0)  // Boareskyr Bridge & Bridgefort
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		ChangeSpecifics(Myself,CRUSADERS)
+		SetGlobal("bd_no_assist","locals",0)
+		Enemy()
+END
+
+IF
+	Global("bd_enemy_gone_hostile","bd2000",0)  // Boareskyr Bridge & Bridgefort
+	Allegiance(Myself,ENEMY)
+	GlobalTimerExpired("bd_sound_alarm_timer","locals")
+THEN
+	RESPONSE #100
+		SetGlobal("bd_enemy_gone_hostile","bd2000",1)  // Boareskyr Bridge & Bridgefort
+		Continue()
+END
+
+IF
+	Global("bd_enemy_gone_hostile","bd2000",0)  // Boareskyr Bridge & Bridgefort
+	!GlobalTimerNotExpired("bd_sound_alarm_timer","locals")
+	Allegiance(Myself,ENEMY)
+	OR(2)
+		TimeGT(DUSK_START)
+		TimeLT(DAWN_START)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_sound_alarm_timer","locals",EIGHT_ROUNDS)
+		SetGlobal("bd_no_assist","locals",0)
+		Continue()
+END
+
+IF
+	Global("bd_enemy_gone_hostile","bd2000",0)  // Boareskyr Bridge & Bridgefort
+	!GlobalTimerNotExpired("bd_sound_alarm_timer","locals")
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("bd_sound_alarm_timer","locals",FOUR_ROUNDS)
+		SetGlobal("bd_no_assist","locals",0)
+		Continue()
+END
+
+IF
+	Global("bd_default_loc","locals",0)
+THEN
+	RESPONSE #100
+		SaveObjectLocation("LOCALS","bd_default_loc",Myself)
+		SetGlobal("bd_no_assist","locals",1)
+END
+
+IF
+	GlobalLT("bd_plot","global",240)
+	Global("bd_enlightment_plot","bd2000",1)  // Boareskyr Bridge & Bridgefort
+	Global("bd_enlightment","locals",2)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_enlightment","locals",3)
+END
+
+IF
+	GlobalLT("bd_plot","global",240)
+	OR(2)
+		Global("bd_enlightment_plot","bd2000",1)  // Boareskyr Bridge & Bridgefort
+		Global("bd_enlightment_plot","bd2000",2)  // Boareskyr Bridge & Bridgefort
+	OR(2)
+		Global("bd_enlightment","locals",3)
+		Global("bd_enlightment","locals",4)
+	Allegiance(Myself,NEUTRAL)
+	Range("enlightment",8)
+THEN
+	RESPONSE #100
+		RunAwayFrom("enlightment",15)
+		FaceObject("enlightment")
+END
+
+IF
+	GlobalLT("bd_plot","global",240)
+	OR(2)
+		Global("bd_enlightment_plot","bd2000",1)  // Boareskyr Bridge & Bridgefort
+		Global("bd_enlightment_plot","bd2000",2)  // Boareskyr Bridge & Bridgefort
+	Global("bd_enlightment","locals",3)
+	Allegiance(Myself,NEUTRAL)
+	Range("enlightment",20)
+	!Range("enlightment",8)
+THEN
+	RESPONSE #100
+		FaceObject("enlightment")
+		SetGlobal("bd_enlightment","locals",4)
+END
+
+IF
+	GlobalLT("bd_plot","global",240)
+	Global("bd_enlightment_plot","bd2000",1)  // Boareskyr Bridge & Bridgefort
+	Global("bd_enlightment","locals",3)
+	Allegiance(Myself,NEUTRAL)
+	!Range("enlightment",20)
+THEN
+	RESPONSE #100
+		MoveToObject("enlightment")
+END
+
+IF
+	GlobalLT("bd_plot","global",240)
+	Global("bd_enlightment_plot","bd2000",3)  // Boareskyr Bridge & Bridgefort
+	OR(2)
+		Global("bd_enlightment","locals",3)
+		Global("bd_enlightment","locals",4)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SmallWait(10)
+		FaceObject("enlightment")
+		SmallWait(10)
+		SetSequence(SEQ_CAST)
+	RESPONSE #100
+		SmallWait(25)
+		FaceObject("enlightment")
+		SmallWait(5)
+		SetSequence(SEQ_CAST)
+	RESPONSE #100
+		SmallWait(15)
+		FaceObject("enlightment")
+		SmallWait(15)
+		SetSequence(SEQ_CAST)
+END
+
+IF
+	GlobalLT("bd_plot","global",240)
+	Global("bd_enemy_gone_hostile","bd2000",0)  // Boareskyr Bridge & Bridgefort
+	OR(2)
+		Global("bd_enlightment_plot","bd2000",0)  // Boareskyr Bridge & Bridgefort
+		GlobalGT("bd_enlightment_plot","bd2000",4)  // Boareskyr Bridge & Bridgefort
+	GlobalGT("bd_enlightment","locals",2)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("bd_enlightment","locals",2)
+		SetGlobal("bd_retreat","locals",1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("bd_crusaders_retreat","bd2000",1)  // Boareskyr Bridge & Bridgefort
+	OR(3)
+		Heard([ANYONE],ASSIST)
+		AttackedBy([GOODCUTOFF],DEFAULT)
+		HitBy([GOODCUTOFF],CRUSHING)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+

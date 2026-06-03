@@ -1,0 +1,49 @@
+IF
+	AreaCheck("XAA137") // ar0114
+	Global("XA_LC_SpawnBrevlik", "GLOBAL", 2) 
+THEN
+	RESPONSE #100
+		CreateCreature("XABREVLK", [810.700], S)
+		SetGlobal("XA_LC_SpawnBrevlik", "GLOBAL", 0)
+		Continue()
+END
+
+IF
+	AreaCheck("XAA242")  // ar0119
+	Global("XA_LC_SpawnBrevlik", "GLOBAL", 3)
+THEN
+	RESPONSE #100
+		CreateCreature("XABREVLK", [478.495], SW)
+		SetGlobal("XA_LC_SpawnBrevlik", "GLOBAL", 0)
+		Continue()
+END
+
+IF
+	AreaCheck("XAA159")  // ar0133
+	Global("XA_LC_SpawnBrevlik", "GLOBAL", 4)
+THEN
+	RESPONSE #100
+		CreateCreature("XABREVLK", [494.469], NE)
+		SetGlobal("XA_LC_SpawnBrevlik", "GLOBAL", 0)
+		Continue()
+END
+
+IF
+	AreaCheck("XAA478")  // ar0116
+	Global("XA_LC_SpawnBrevlik", "GLOBAL", 5)
+THEN
+	RESPONSE #100
+		CreateCreature("XABREVLK", [510.885], E)
+		SetGlobal("XA_LC_SpawnBrevlik", "GLOBAL", 0)
+		Continue()
+END
+
+IF
+	AreaCheck("XAA138")  // ar0103
+	Global("XA_LC_SpawnBrevlik", "GLOBAL", 6)
+THEN
+	RESPONSE #100
+		CreateCreature("XABREVLK", [650.440], NW)
+		SetGlobal("XA_LC_SpawnBrevlik", "GLOBAL", 0)
+		Continue()
+END

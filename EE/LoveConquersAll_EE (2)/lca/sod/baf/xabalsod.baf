@@ -1,0 +1,35 @@
+//{ Script Reporter
+IF
+	!Global("XA_LC_ActiveScript", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_ActiveScript", "GLOBAL", 2)
+		Continue()
+END
+//}
+
+//{ Helm of Balduran Possessed
+IF
+	PartyHasItem("HELM07")
+	GlobalLT("XA_LC_PossessedHelm", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_PossessedHelm", "GLOBAL", 1)
+		Continue()
+END
+//}
+
+//{ Proficiency Talk
+	IF
+		Global("XA_LC_ProficiencyTalk", "GLOBAL", 6) // set in xalbpro3.baf
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_ProficiencyTalk", "GLOBAL", 7)
+			SetGlobal("XA_LC_Journal_ArcheryLesson", "GLOBAL", 1)
+			ActionOverride(Player1, ReallyForceSpellRES("XALCARCH", Myself))
+			SetInterrupt(TRUE)
+			Continue()
+	END
+//}
+

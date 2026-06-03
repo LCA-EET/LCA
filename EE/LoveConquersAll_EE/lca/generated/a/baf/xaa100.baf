@@ -1,0 +1,15 @@
+IF
+	Delay(10)
+	Entered([ANYONE])
+	ReputationLT(Player1,4)
+	!StateCheck(LastTrigger,STATE_INVISIBLE)
+	!StateCheck(LastTrigger,STATE_IMPROVEDINVISIBILITY)
+	Global("ReputationTelano","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ReputationTelano","GLOBAL",1)
+		DisplayString(LastTrigger,16458)  // Your reputation precedes you! Guards have been alerted.
+		Wait(3)
+		CreateCreature("TELANO",[-1.-1],S)  // Tel-anon
+END
+

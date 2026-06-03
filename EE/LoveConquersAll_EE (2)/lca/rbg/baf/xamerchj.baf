@@ -1,0 +1,15 @@
+IF
+	OR(2)
+		Dead("Jhasso")
+		GlobalLT("XA_LC_SavedJhasso", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		RandomWalk()
+END

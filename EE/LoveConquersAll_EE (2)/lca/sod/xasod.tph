@@ -1,0 +1,163 @@
+PRINT @2000  /* ~Processing SoD changes...~ */
+SILENT
+
+INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
+
+//{ Hotspring Cutscene Area
+	COPY ~%MOD_FOLDER%/sod/are~ ~override~
+//}
+
+//{ Tent Cutscene Area
+	ACTION_IF (isEET = 1) THEN BEGIN
+		OUTER_SPRINT filename ~bg1906.are~
+		OUTER_SET song = 142 // BDBGNX
+	END ELSE BEGIN
+		OUTER_SPRINT filename ~ar1906.are~
+		OUTER_SET song = 63 // BDBGNX
+	END
+
+	COPY_EXISTING ~%filename%~ ~override/xatent.are~
+	WRITE_ASCII 0x94 ~xatntscr~ #8
+	WRITE_LONG 0x688 song
+	WRITE_LONG 0x68C song
+	LPF fj_are_structure
+		INT_VAR
+			fj_loc_x = 293
+			fj_loc_y = 131
+			fj_orientation = 8 
+		STR_VAR
+			fj_structure_type = actor
+			fj_name = Corwin
+			fj_cre_resref = xacc4
+	END
+	
+//}
+
+//{ Archery Clearing Cutscene Area
+	ACTION_IF (isEET = 1) THEN BEGIN
+		OUTER_SPRINT filename ~bg6001.are~
+		OUTER_SET song = 146 // BD100X
+	END ELSE BEGIN
+		OUTER_SPRINT filename ~ar6001.are~
+		OUTER_SET song = 67 // BD100X
+	END
+
+	COPY_EXISTING ~%filename%~ ~override/xaclrg.are~ 
+	WRITE_ASCII 0x94 ~xaclrg~ #8
+	WRITE_SHORT 0x4A 0 // set rain probability to zero
+	WRITE_LONG 0x11C song
+	WRITE_LONG 0x120 song
+	LPF fj_are_structure 
+		INT_VAR
+			fj_box_left 	= 367
+			fj_box_top 		= 230
+			fj_box_right 	= 368
+			fj_box_bottom 	= 231
+			fj_vertex_0     = 367 + (230 << 16)
+			fj_vertex_1     = 367 + (231 << 16)
+			fj_vertex_2     = 368 + (231 << 16)
+			fj_vertex_3     = 368 + (230 << 16)
+		STR_VAR
+			fj_structure_type = region
+			fj_name = ~XATREE~
+	END
+//}
+
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/sod/d~
+
+//{ Scripting Modifications
+	EXTEND_TOP ~bd0104.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd0104.baf~
+	EXTEND_TOP ~bdcorwin.bcs~ 	~%MOD_FOLDER%/sod/baf/xabdcorw.baf~
+	EXTEND_TOP ~bd1000.bcs~		~%MOD_FOLDER%/sod/baf/xaartrig.baf~
+	EXTEND_TOP ~bd3000.bcs~		~%MOD_FOLDER%/sod/baf/xaartrig.baf~
+	EXTEND_TOP ~bd4400.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd4400.baf~
+	EXTEND_TOP ~bd4600.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd4600.baf~
+	EXTEND_TOP ~bd5300.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd5300.baf~
+	EXTEND_TOP ~bd7100.bcs~		~%MOD_FOLDER%/sod/baf/xaartrig.baf~
+	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xabalsod.baf~
+	EXTEND_TOP ~bdbaldur.bcs~ 	~%MOD_FOLDER%/sod/baf/xajrnsod.baf~
+	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/sod/baf/xap1d.baf~
+	EXTEND_TOP ~bd4300.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd4300.baf~ 	
+
+	ACTION_IF (isEET = 1) THEN BEGIN
+		EXTEND_TOP ~bd0100.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd0100.baf~
+		EXTEND_TOP ~bd4100.bcs~ 	~%MOD_FOLDER%/sod/baf/xabd4100.baf~
+	END
+//}
+
+//{ New Creatures
+	COPY_EXISTING ~xalcspy.cre~ ~override/xacorltr.cre~
+	WRITE_BYTE 0x2E 119 // Darkest Orchid
+	WRITE_LONG 0x08 RESOLVE_STR_REF(@2001)
+	WRITE_LONG 0x0C RESOLVE_STR_REF(@2001)
+	WRITE_ASCII 0x34 ~SCHAELS~ #8
+	WRITE_ASCII 0x3C ~SCHAELS~ #8
+	WRITE_ASCII 0x2CC ~XACORLTR~ #8
+	WRITE_ASCII 0x248 ~XACORLTR~ #8
+	
+	COPY_EXISTING ~xacorltr.cre~ ~override/xaschltr.cre~
+	WRITE_LONG 0x08 RESOLVE_STR_REF(@2015)
+	WRITE_LONG 0x0C RESOLVE_STR_REF(@2015)
+	
+	COPY_EXISTING ~xacorltr.cre~ ~override/xasprspy.cre~
+	WRITE_LONG 0x08 RESOLVE_STR_REF(@2010)
+	WRITE_LONG 0x0C RESOLVE_STR_REF(@2010)
+	WRITE_ASCII 0x2CC ~~ #8 	// Dialogue
+	WRITE_ASCII 0x280 ~xasprspy~ #20  	// Script Name
+	WRITE_ASCII 0x248 ~~ #8		// Override Script
+	WRITE_ASCII 0x250 ~~ #8		// Class Script
+	WRITE_ASCII 0x258 ~~ #8		// Race Script
+	WRITE_ASCII 0x260 ~~ #8		// General Script
+	WRITE_ASCII 0x268 ~~ #8		// Default Script
+
+	COPY_EXISTING ~bdwtr31.cre~ ~override/xawtrex.cre~
+	WRITE_ASCII 0x2CC ~xawtrex~ #8 	// Dialogue
+	WRITE_ASCII 0x280 ~xawtrex~ #20  	// Script Name
+	
+	COPY_EXISTING ~bdfist31.cre~ ~override/xafistex.cre~
+	WRITE_ASCII 0x2CC ~xafistex~ #8 	// Dialogue
+	WRITE_ASCII 0x280 ~xafistex~ #20  	// Script Name
+	
+	COPY_EXISTING ~bdschael.cre~ ~override/xatricor.cre~
+	WRITE_ASCII 0x2CC ~xatricor~ #8 	// Dialogue
+	WRITE_ASCII 0x280 ~xatricor~ #20  	// Script Name
+	WRITE_ASCII 0x248 ~~ #8		// Override Script
+	WRITE_ASCII 0x250 ~~ #8		// Class Script
+	WRITE_ASCII 0x258 ~~ #8		// Race Script
+	WRITE_ASCII 0x260 ~~ #8		// General Script
+	WRITE_ASCII 0x268 ~~ #8		// Default Script
+	
+	COPY_EXISTING ~xatricor.cre~ ~override/xacorspr.cre~
+	WRITE_ASCII 0x2CC ~xacorspr~ #8 	// Dialogue
+	WRITE_ASCII 0x280 ~xacorspr~ #20  	// Script Name
+	
+	COPY_EXISTING ~xatricor.cre~ ~override/xacc4.cre~
+	REMOVE_CRE_ITEMS
+	WRITE_ASCII 0x2CC ~xacc4~ #8 	// Dialogue
+	WRITE_ASCII 0x280 ~xacc4~ #20  	// Script Name
+//}
+
+//{ Creature modifications
+	COPY_EXISTING ~BDFAMARI.CRE~ ~override~
+	READ_LONG 0x10 benoflags
+	WRITE_LONG 0x10 (benoflags + 1048576) /* Set Flag 20 to True(No exploding on death). 1048576 = 2^20*/
+
+	COPY_EXISTING ~BDFAMAR1.CRE~ ~override~
+	READ_LONG 0x10 benoflags
+	WRITE_LONG 0x10 (benoflags + 1048576) /* Set Flag 20 to True(No exploding on death). 1048576 = 2^20*/
+
+	COPY_EXISTING ~BDFAMAR2.CRE~ ~override~
+	READ_LONG 0x10 benoflags
+	WRITE_LONG 0x10 (benoflags + 1048576) /* Set Flag 20 to True(No exploding on death). 1048576 = 2^20*/
+	
+	
+//}
+
+ACTION_IF (bg1_carryover = 0) THEN BEGIN
+	INCLUDE ~%MOD_FOLDER%/bg1/xabg1_co.tph~
+END
+
+
+
+

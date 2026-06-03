@@ -1,0 +1,12 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		//Jail
+		CutSceneId(Player1)
+		MoveToObject("XATRBENO")
+		Wait(3)
+		DisplayStringHead(Myself, @0)
+		Wait(5)
+		StartCutscene("XAUCEND1")
+END

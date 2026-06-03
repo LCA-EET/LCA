@@ -1,0 +1,21 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ActionOverride("XACORSPR", Face(NW))
+		Wait(1)
+		FadeToColor([20.0],0)
+		Wait(3)
+		JumpToPoint([226.256])
+		FaceObject("XACORSPR")
+		ActionOverride("XACORSPR", FaceObject(Player1))
+		FadeFromColor([20.0], 0)
+		Wait(2)
+		ChangeStat(Player1, MAXHITPOINTS, 2, ADD)
+		Wait(1)
+		SetGlobal("XA_LC_Spring", "GLOBAL", 3)
+		ReallyForceSpellRES("bdrejuve", Myself)
+		EndCutSceneMode()
+		ActionOverride("XACORSPR", StartDialog("XACORSPR", Player1))
+END

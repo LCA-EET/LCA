@@ -1,0 +1,17 @@
+IF
+	Global("XA_LC_SavedTimotey", "GLOBAL", 5)
+	InMyArea("XATIMOTY")
+THEN
+	RESPONSE #100
+		ActionOverride("XATIMOTY", DestroySelf())
+END
+
+IF
+	Global("XA_LC_SavedTimotey", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_SavedTimotey", "GLOBAL", 2)
+		StartCutSceneMode()
+		StartCutScene("XATIMOT1")
+END
+

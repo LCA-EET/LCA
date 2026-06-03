@@ -1,0 +1,13 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneID(Player1)
+        FadeToColor([20.0],0)
+        Wait(3)
+        DisplayStringHead("XACORWIN", @0)
+        Wait(3)
+        FadeFromColor([20.0],0)
+        EndCutSceneMode()
+        ActionOverride("XACORWIN", StartDialog("XACORWIJ", Player1))
+END

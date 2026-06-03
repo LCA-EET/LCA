@@ -1,0 +1,251 @@
+//{ Exp Boosts on Join
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,249999)
+		XPLT(Player1,500000)
+		XPLT(Myself,500000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,250000,SET)
+			Continue()
+	END
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,499999)
+		XPLT(Player1,750000)
+		XPLT(Myself,750000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,500000,SET)
+			Continue()
+	END
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,749999)
+		XPLT(Player1,1000000)
+		XPLT(Myself,1000000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,750000,SET)
+			Continue()
+	END
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,999999)
+		XPLT(Player1,1250000)
+		XPLT(Myself,1250000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,1000000,SET)
+			Continue()
+	END
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,1249999)
+		XPLT(Player1,1500000)
+		XPLT(Myself,1500000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,1250000,SET)
+			Continue()
+	END
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,1499999)
+		XPLT(Player1,1750000)
+		XPLT(Myself,1750000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,1500000,SET)
+			Continue()
+	END
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,1749999)
+		XPLT(Player1,2000000)
+		XPLT(Myself,2000000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,1750000,SET)
+			Continue()
+	END
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,1999999)
+		XPLT(Player1,2250000)
+		XPLT(Myself,2250000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,2000000,SET)
+			Continue()
+	END
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,2249999)
+		XPLT(Player1,2500000)
+		XPLT(Myself,2500000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,2250000,SET)
+			Continue()
+	END
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,2499999)
+		XPLT(Player1,2750000)
+		XPLT(Myself,2750000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,2500000,SET)
+			Continue()
+	END
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,2749999)
+		XPLT(Player1,3000000)
+		XPLT(Myself,3000000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,2750000,SET)
+			Continue()
+	END
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,2999999)
+		XPLT(Player1,3250000)
+		XPLT(Myself,3250000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,3000000,SET)
+			Continue()
+	END
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,3249999)
+		XPLT(Player1,3500000)
+		XPLT(Myself,3500000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,3250000,SET)
+			Continue()
+	END
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,3499999)
+		XPLT(Player1,3750000)
+		XPLT(Myself,3750000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,3500000,SET)
+			Continue()
+	END
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,3749999)
+		XPLT(Player1,4000000)
+		XPLT(Myself,4000000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,3750000,SET)
+			Continue()
+	END
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,3999999)
+		XPLT(Player1,4250000)
+		XPLT(Myself,4250000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,4000000,SET)
+			Continue()
+	END
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,4249999)
+		XPLT(Player1,4500000)
+		XPLT(Myself,4500000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,4250000,SET)
+			Continue()
+	END
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,4499999)
+		XPLT(Player1,4750000)
+		XPLT(Myself,4750000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,4500000,SET)
+			Continue()
+	END
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,4749999)
+		XPLT(Player1,5000000)
+		XPLT(Myself,5000000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,4750000,SET)
+			Continue()
+	END
+
+	IF
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+		XPGT(Player1,4999999)
+		XPLT(Myself,5000000)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself,XP,5000000,SET)
+			Continue()
+	END
+
+	IF 
+		Global("BD_JOINXP","LOCALS",0)
+		InParty(Myself)
+	THEN
+		RESPONSE #100
+			SetGlobal("BD_JOINXP","LOCALS",1)
+			Continue()
+	END
+
+//} End Exp Boosts on Join

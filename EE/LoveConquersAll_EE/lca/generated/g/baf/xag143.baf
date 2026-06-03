@@ -1,0 +1,73 @@
+IF
+	Global("bd_dialog_interrupt","locals",0)
+	!Name("bddarnas",Myself)  // Darnas
+THEN
+	RESPONSE #100
+		SetGlobal("bd_dialog_interrupt","locals",1)
+		DialogInterrupt(FALSE)
+		Continue()
+END
+
+IF
+	Global("bd_darnas_plot","global",2)
+	AreaCheck("bd4400")  // Avernus
+	CombatCounter(0)
+	Name("bddarnas",Myself)  // Darnas
+	!Detect([ENEMY])
+	See([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	GlobalGT("bd_plot","global",510)
+	AreaCheck("bd4400")  // Avernus
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	AreaCheck("bd4400")  // Avernus
+	Switch("bd_darnas_plot","global")
+THEN
+	RESPONSE #3
+		SetGlobal("bd_darnas_plot","global",4)
+	RESPONSE #4
+		EscapeAreaObject("portal")
+	RESPONSE #5
+		SetGlobal("bd_darnas_plot","global",6)
+	RESPONSE #6
+		EscapeAreaObject("portal")
+END
+
+IF
+	Global("bd_darnas_plot","global",9)
+	AreaCheck("bd4400")  // Avernus
+	Specifics(Myself,ALLIES)
+THEN
+	RESPONSE #100
+		ChangeSpecifics(Myself,CRUSADERS)
+		Enemy()
+END
+
+IF
+	Global("BD_Precast","LOCALS",0)
+	Name("BDDARNAS",Myself)  // Darnas
+	AreaCheck("bd4400")  // Avernus
+	Detect([EVILCUTOFF])
+THEN
+	RESPONSE #100
+		SetGlobal("BD_Precast","LOCALS",1)
+		ReallyForceSpell(Myself,CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
+END
+
+IF
+	!Name("bddarnas",Myself)  // Darnas
+	Dead("bddarnas")  // Darnas
+THEN
+	RESPONSE #100
+		EscapeAreaObject("TranBD4500")
+END
+

@@ -1,0 +1,1 @@
+APPEND XABELT IF~Global("XA_LC_RohmaKidnapped","GLOBAL",5)~THEN BEGIN XA_RohmaKidnapped SAY@0 IF~~THEN EXIT END END 

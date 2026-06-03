@@ -1,0 +1,12 @@
+IF
+	GlobalLT("bd_plot","global",530)
+	Range([PC],30)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_plot","global",530)
+		StartCutSceneMode()
+		CreateCreature("bdcutid2",[1940.600],N)  // No such index
+		ClearAllActions()
+		StartCutScene("bdcut50")
+END
+

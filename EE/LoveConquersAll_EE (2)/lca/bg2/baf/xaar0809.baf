@@ -1,0 +1,10 @@
+IF
+	Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	GlobalLT("XA_LC_ImoenDialogOverride", "MYAREA", 1)
+	InPartyAllowDead("XACORWIN")
+	InPartyAllowDead("IMOEN2")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_ImoenDialogOverride", "MYAREA", 1)
+		ActionOverride("IMOEN2", SetGlobal("DeathOfBodhi","LOCALS",1))
+END

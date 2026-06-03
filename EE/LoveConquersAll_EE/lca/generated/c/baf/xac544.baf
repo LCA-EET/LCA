@@ -1,0 +1,32 @@
+IF
+	Allegiance(Myself,NEUTRAL)
+	Detect([PC])
+	!GlobalTimerNotExpired("bd_deneld_barks_timer","LOCALS")
+	Switch("bd_deneld_barks","locals")
+THEN
+	RESPONSE #0
+		DisplayStringHead(Myself,48926)  // You have been chosen not because you are the strongest or the wisest.
+		SetGlobalTimer("bd_deneld_barks_timer","locals",FIVE_ROUNDS)
+		IncrementGlobal("bd_deneld_barks","locals",1)
+	RESPONSE #1
+		DisplayStringHead(Myself,48927)  // You have been chosen because you have heart and the faith to see the crusade to its end!
+		SetGlobalTimer("bd_deneld_barks_timer","locals",FIVE_ROUNDS)
+		IncrementGlobal("bd_deneld_barks","locals",1)
+	RESPONSE #2
+		DisplayStringHead(Myself,48928)  // You will storm the gates of the Nine Hells!
+		SetGlobalTimer("bd_deneld_barks_timer","locals",FIVE_ROUNDS)
+		IncrementGlobal("bd_deneld_barks","locals",1)
+	RESPONSE #3
+		DisplayStringHead(Myself,48929)  // You will slay the devils within and claim their realm for good!
+		SetGlobalTimer("bd_deneld_barks_timer","locals",FIVE_ROUNDS)
+		IncrementGlobal("bd_deneld_barks","locals",1)
+	RESPONSE #4
+		DisplayStringHead(Myself,48930)  // You may be frightened, but you will cast aside all doubt!
+		SetGlobalTimer("bd_deneld_barks_timer","locals",FIVE_ROUNDS)
+		IncrementGlobal("bd_deneld_barks","locals",1)
+	RESPONSE #5
+		DisplayStringHead(Myself,48931)  // You are MEANT to be here! You will do great deeds here, because YOU are Caelar's chosen!
+		SetGlobalTimer("bd_deneld_barks_timer","locals",FIVE_ROUNDS)
+		SetGlobal("bd_deneld_barks","locals",0)
+END
+

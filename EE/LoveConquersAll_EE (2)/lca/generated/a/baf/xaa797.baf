@@ -1,0 +1,9 @@
+IF
+	Global("flamalenemy","GLOBAL",1)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Shout(99)
+		Enemy()
+END
+

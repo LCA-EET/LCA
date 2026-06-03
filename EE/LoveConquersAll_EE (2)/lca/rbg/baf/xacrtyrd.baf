@@ -1,0 +1,10 @@
+IF
+	OR(3)
+		ActionListEmpty()
+		!ActuallyInCombat()
+		!OnScreen(Myself)
+THEN
+	RESPONSE #100
+		MoveToObject("CYARD")
+		Continue()
+END

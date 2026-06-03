@@ -1,0 +1,12 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		HideGUI()
+		FadeToColor([20.0],0)
+		Wait(2)
+		LeaveAreaLUA("XAHSPR", "", [320.305], SE) 
+		Wait(2)
+		EndCutSceneMode()
+END

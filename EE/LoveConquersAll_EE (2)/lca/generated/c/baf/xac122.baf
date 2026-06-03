@@ -1,0 +1,151 @@
+IF
+	AreaCheck("BD0102")  // Ducal Palace, First Floor
+	OR(3)
+		StateCheck(Myself,STATE_REALLY_DEAD)
+		HitBy([GOODCUTOFF],CRUSHING)
+		AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(LastAttackerOf(Myself),PC)
+	Allegiance(Myself,NEUTRAL)
+	Global("bd_city_hostile","myarea",0)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_city_hostile","global",1)
+		SetGlobal("bd_city_hostile","myarea",1)
+END
+
+IF
+	AreaCheck("BD0102")  // Ducal Palace, First Floor
+	Allegiance(Myself,NEUTRAL)
+	OR(2)
+		Global("bd_city_hostile","global",1)
+		Global("bd_city_hostile","myarea",1)
+THEN
+	RESPONSE #100
+		ChangeAIScript("wdarsgt",DEFAULT)
+		Enemy()
+END
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	NumberOfTimesTalkedTo(0)
+	AreaCheck("BD0102")  // Ducal Palace, First Floor
+	Switch("BD_SKIE_BANTER","BD0102")  // Ducal Palace, First Floor
+	GlobalGT("BD_PLOT","GLOBAL",51)
+	See([PC])
+THEN
+	RESPONSE #0
+		FaceObject(Player1)
+		DisplayStringHead(Myself,55750)  // Hey. Hey, over here.
+		SetGlobal("BD_SKIE_BANTER","BD0102",1)  // Ducal Palace, First Floor
+		Wait(8)
+	RESPONSE #1
+		FaceObject(Player1)
+		DisplayStringHead(Myself,55751)  // Psst. <CHARNAME>. Over here.
+		SetGlobal("BD_SKIE_BANTER","BD0102",2)  // Ducal Palace, First Floor
+		Wait(8)
+	RESPONSE #2
+		FaceObject(Player1)
+		DisplayStringHead(Myself,55752)  // What are you waiting for? Come and talk to me.
+		SetGlobal("BD_SKIE_BANTER","BD0102",3)  // Ducal Palace, First Floor
+		Wait(8)
+	RESPONSE #3
+		FaceObject(Player1)
+		DisplayStringHead(Myself,55753)  // Come ON. Come over HERE. Talk to meeee...
+		SetGlobal("BD_SKIE_BANTER","BD0102",4)  // Ducal Palace, First Floor
+		Wait(8)
+	RESPONSE #4
+		FaceObject(Player1)
+		DisplayStringHead(Myself,55754)  // Why won't you talk to me? You're not angry with me, are you?
+		SetGlobal("BD_SKIE_BANTER","BD0102",0)  // Ducal Palace, First Floor
+		Wait(16)
+END
+
+IF
+	Global("EscapeBD0102","BD0102",1)  // Ducal Palace, First Floor
+	!NearLocation(Myself,401,728,2)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		MoveToPoint([401.728])
+END
+
+IF
+	Global("EscapeBD0102","BD0102",1)  // Ducal Palace, First Floor
+	NearLocation(Myself,401,728,2)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Global("bd_plot","global",293)
+	Global("bd_skie_ot","locals",0)
+	AreaCheck("bd2000")  // Boareskyr Bridge & Bridgefort
+	Range([PC],25)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("bd_skie_ot","locals",1)
+		MoveViewObject(Myself,INSTANT)
+		DisplayStringHead(Myself,65092)  // <CHARNAME>!
+		FaceObject([PC])
+		Wait(1)
+		StartDialogueNoSet(Player1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	GlobalLT("bd_skie_plot","global",5)
+	AreaCheck("bd4000")  // Dragonspear Castle, Exterior
+	Range([PC],22)
+	!See([ENEMY])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	GlobalGT("bd_skie_plot","global",5)
+	GlobalLT("bd_skie_plot","global",10)
+	AreaCheck("bd4000")  // Dragonspear Castle, Exterior
+	!Range([0.0.0.0.HOSTILES4],30)
+	CombatCounter(0)
+	See([PC])
+	Range(LastSeenBy,22)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	GlobalLT("bd_skie_plot","global",10)
+	AreaCheck("bd4000")  // Dragonspear Castle, Exterior
+	Global("chapter","global",11)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_skie_plot","global",10)
+		DestroySelf()
+END
+
+IF
+	OR(2)
+		Global("bd_skie_plot","global",10)
+		Global("bd_skie_plot","global",15)
+	AreaCheck("bd4000")  // Dragonspear Castle, Exterior
+THEN
+	RESPONSE #100
+		EscapeAreaObject("npc_exit_road")
+END
+
+IF
+	Global("bd_skie_plot","global",10)
+	AreaCheck("BD4100")  // Dragonspear Castle Keep, First Floor
+	CombatCounter(0)
+	See([PC])
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,55750)  // Hey. Hey, over here.
+		Dialogue(Player1)
+END
+

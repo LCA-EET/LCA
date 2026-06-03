@@ -1,0 +1,9 @@
+IF
+	Global("Doppleganger","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Doppleganger","GLOBAL",1)
+		SetGlobal("Laola","GLOBAL",1)
+		SetGlobal("CheckedSevenSuns","GLOBAL",2)
+END
+

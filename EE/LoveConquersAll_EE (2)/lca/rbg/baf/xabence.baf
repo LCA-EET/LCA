@@ -1,0 +1,20 @@
+IF 
+	GlobalLT("XA_LC_DukesDebriefed", "GLOBAL", 1)
+	Global("XA_LC_DukeDebrief_TimerElapsed", "GLOBAL", 1)
+	!AreaCheck("XAA100") //ar0900
+	GlobalLT("XA_LC_BenceDukeDebrief", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_BenceDukeDebrief", "GLOBAL", 1)
+		StartDialog("XABENCE", Player1)
+		SetInterrupt(TRUE)
+END
+
+IF 
+	Global("XA_LC_ExtensionNeeded", "GLOBAL", 1)
+	GlobalTimerExpired("XA_LC_DukeDebriefOneHourTimer", "GLOBAL")
+THEN
+	RESPONSE #100
+		StartDialog("XABENCE", Player1)
+END

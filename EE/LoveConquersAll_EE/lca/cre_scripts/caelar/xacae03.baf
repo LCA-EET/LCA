@@ -1,0 +1,78 @@
+IF
+	InParty(Myself)
+	TriggerOverride(Player1, GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	InParty("Sarevok")
+	TriggerOverride("Sarevok", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Sarevok", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	InParty("Keldorn")
+	TriggerOverride("Keldorn", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Keldorn", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	InParty("Rasaad")
+	TriggerOverride("Rasaad", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Rasaad", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	InParty("Jaheira")
+	TriggerOverride("Jaheira", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Jaheira", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	InParty("Mazzy")
+	TriggerOverride("Mazzy", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Mazzy", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	InParty("Dorn")
+	TriggerOverride("Dorn", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Dorn", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	InParty("Neera")
+	TriggerOverride("Neera", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Neera", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END

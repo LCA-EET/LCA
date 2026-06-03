@@ -1,0 +1,17 @@
+IF
+	!Dead("Corwin")
+	InMyArea("Corwin")
+	OR(3)
+		AreaCheck("BD7100") // Troll Forest
+		AreaCheck("BD3000") //Allied Siege Camp
+		AreaCheck("BD1000") // Coast Way Crossing
+	See("BDTHAIRD")
+	OR(2)
+		Global("XA_LC_TNTCSDebug", "GLOBAL", 1)
+		GlobalLT("XA_LC_TentCS", "GLOBAL", 1)	
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_TentCS", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutSceneEx("XATNTCS",FALSE)
+END

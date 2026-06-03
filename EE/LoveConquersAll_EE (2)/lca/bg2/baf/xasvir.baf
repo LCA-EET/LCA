@@ -1,0 +1,12 @@
+IF
+	InParty(Myself)
+	Global("SvirHostile", "GLOBAL", 1)
+	Global("XA_LC_CorwinHostile", "GLOBAL", 1)
+	!Global("XA_LC_LeftPartySvir", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_LeftPartySvir", "LOCALS", 1)
+		LeaveParty()
+		ClearActions(Myself)
+		Enemy()
+END

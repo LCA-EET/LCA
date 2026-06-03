@@ -1,0 +1,147 @@
+PRINT @1000  /* ~Processing BG1 changes...~ */
+SILENT
+
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bg1/d~
+
+
+//{ See if CorwinEET is installed
+	ACTION_IF FILE_EXISTS_IN_GAME ~EEAmul.itm~ THEN BEGIN
+		OUTER_SET corwinEET = 1
+	END ELSE BEGIN
+		OUTER_SET corwinEET = 0
+	END
+//}
+
+//{ String Sets
+	ACTION_IF (isEET = 1) THEN BEGIN
+		STRING_SET 202516 @1001 //BELAND State 0 /* */
+		STRING_SET 202517 @1002 //BELAND State 1 /* */
+		ACTION_IF (corwinEET = 0) THEN BEGIN
+			PRINT @1010  /* ~CorwinEET is not installed. Strings will be patched accordingly.~ */
+			SILENT
+			STRING_SET 216992 @1003 //DELTAN2 State 1
+			STRING_SET 216991 @1004 //DELTAN2 State 4
+			STRING_SET 202152 @1005 //NEB_ State 3
+			STRING_SET 209737 @1006 //ALANBL State 5
+			STRING_SET 209701 @1007 //SORREL State 2
+			STRING_SET 219473 @1008 //VAI State 6
+		END ELSE BEGIN
+			PRINT @1009  /* ~CorwinEET is installed. String sets skipped!~*/
+			SILENT
+		END
+	END ELSE BEGIN
+		STRING_SET 2516 @1001 //BELAND State 0 /* */
+		STRING_SET 2517 @1002 //BELAND State 1 /* */
+		PRINT @1010  /* ~CorwinEET is not installed. Strings will be patched accordingly.~ */
+		SILENT
+		STRING_SET 16992 @1003 //DELTAN2 State 1 /* */
+		STRING_SET 16991 @1004 //DELTAN2 State 4 /* */
+		STRING_SET 2152 @1005 //NEB_ State 3 /* */
+		STRING_SET 9737 @1006 //ALANBL State 5 /* */
+		STRING_SET 9701 @1007 //SORREL State 2 /* */
+		STRING_SET 19473 @1008 //VAI State 6 /* */
+	END
+//}
+
+
+//{ Modifications to Existing Areas
+	
+	//{ Corwin's House (SE Baldur's Gate)
+		ACTION_IF (isEET = 1) THEN BEGIN
+			OUTER_SPRINT filename ~bg1316.are~
+		END ELSE BEGIN
+			OUTER_SPRINT filename ~ar1316.are~
+		END
+		COPY_EXISTING ~%filename%~ ~override~
+		LPF fj_are_structure
+			INT_VAR
+			fj_type 		= 2
+			fj_box_left		= 533
+			fj_box_top		= 108
+			fj_box_right	= 580
+			fj_box_bottom	= 205
+			fj_cursor_idx	= 22
+			fj_alt_x		= 550
+			fj_alt_y		= 150
+			fj_flags		= 1024
+			fj_vertex_0     = 533 + (156 << 16)
+			fj_vertex_1     = 580 + (205 << 16)
+			fj_vertex_2     = 580 + (158 << 16)
+			fj_vertex_3     = 533 + (108 << 16)
+			STR_VAR
+			fj_structure_type = region
+			fj_name = ~XA1316FP~
+			fj_reg_script = ~XA1316FP~
+		END
+		
+		
+	//}
+	
+	//{ Corwin's House (SE Baldur's Gate), Second Floor
+		ACTION_IF (isEET = 1) THEN BEGIN
+			OUTER_SPRINT filename ~bg1317.are~
+		END ELSE BEGIN
+			OUTER_SPRINT filename ~ar1317.are~
+		END
+		COPY_EXISTING ~%filename%~ ~override~
+		LPF xa_delete_are_actors END
+	//}
+
+//}
+
+	ACTION_IF (corwinEET = 0) THEN BEGIN
+	
+		//{ Replace Michael & Taxek with Assassins
+			COPY_EXISTING ~michae.cre~ ~override~
+			WRITE_LONG 0x8 RESOLVE_STR_REF(@1015)
+			WRITE_LONG 0xC RESOLVE_STR_REF(@1015)
+			WRITE_ASCII 0x2CC ~xacoras1~ #8
+			
+			COPY_EXISTING ~taxek.cre~ ~override~
+			WRITE_LONG 0x8 RESOLVE_STR_REF(@1015)
+			WRITE_LONG 0xC RESOLVE_STR_REF(@1015)
+			WRITE_ASCII 0x2CC ~xacoras0~ #8
+		//}
+
+		//{ Rohma's Friend
+			COPY_EXISTING ~girba3.cre~ ~override/xagirba3.cre~
+			WRITE_ASCII 0x250 ~xagirba3~ #8		// Class Script
+			WRITE_ASCII 0x280 ~xagirba3~ #20  	// Script Name
+			WRITE_ASCII 0x2CC ~xagirl~ #8		// Dialog
+			
+			ACTION_IF (isEET = 1) THEN BEGIN
+				OUTER_SPRINT filename ~bg1300.are~
+			END ELSE BEGIN
+				OUTER_SPRINT filename ~ar1300.are~
+			END
+
+			COPY_EXISTING ~%filename%~ ~override~
+
+			LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 1950
+				fj_loc_y = 1250
+				fj_schedule = 261632 // appear from 0900 to 1700 hours
+			STR_VAR
+				fj_structure_type = actor
+				fj_name = ~rohmafriend~
+				fj_cre_resref = ~xagirba3~
+			END
+		//}
+	END
+
+//{ Script Modifications
+	ACTION_IF (isEET = 1) THEN BEGIN
+		EXTEND_TOP ~BG1300.BCS~ ~%MOD_FOLDER%/bg1/baf/xabg1300.baf~
+		EXTEND_TOP ~BG1317.BCS~ ~%MOD_FOLDER%/bg1/baf/xabg1317.baf~
+		EXTEND_TOP ~BG2600.BCS~ ~%MOD_FOLDER%/bg1/baf/xabg2600.baf~
+		EXTEND_TOP ~BG4200.BCS~ ~%MOD_FOLDER%/bg1/baf/xabg4200.baf~
+		EXTEND_TOP ~BALDUR.BCS~ ~%MOD_FOLDER%/bg1/baf/xabalbg1.baf~
+	END ELSE BEGIN
+		EXTEND_TOP ~AR1317.BCS~ ~%MOD_FOLDER%/bg1/baf/xabg1317.baf~
+		EXTEND_TOP ~AR1300.BCS~ ~%MOD_FOLDER%/bg1/baf/xabg1300.baf~
+	END
+//}
+
+INCLUDE ~%MOD_FOLDER%/bg1/xabg1_co.tph~

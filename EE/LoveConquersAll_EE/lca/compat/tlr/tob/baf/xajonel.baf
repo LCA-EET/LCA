@@ -1,0 +1,14 @@
+IF
+	!Dead("xacorwin")
+	InParty(Myself)
+	Global("XA_LC_TLR_CorwinIrenicusFight", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_TLR_LeftPartyFight", "LOCALS", 2)
+		LeaveParty()
+		SetLeavePartyDialogFile()
+		ChangeAIScript("xarejoin",DEFAULT)
+		ChangeAIScript("lriren",OVERRIDE)
+		Attack("xacorwin")
+END
+

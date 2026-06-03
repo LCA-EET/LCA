@@ -1,0 +1,848 @@
+PRINT @5000  /* ~Processing ToB changes...~ */
+SILENT
+
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/cre_scripts/caelar~
+
+COPY_EXISTING ~xacorwib.dlg~ ~override/xacor25b.dlg~
+DECOMPILE_AND_PATCH BEGIN
+	REPLACE_TEXTUALLY ~XACORWIB~ ~XACOR25B~
+	LPF xa_dlgb_soa_to_tob END	
+END
+
+//{ Update Volo's Dialog to mention the events of SoD
+	STRING_SET 71481 @5032 // SARVOLO State 6
+//}
+
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
+
+ACTION_IF (xalc_assistant = 1) THEN BEGIN
+	COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d/debug~
+END
+
+//{ Restring Script
+	LAF xa_replace_recompile_string 
+		INT_VAR
+			xa_top = 0
+		STR_VAR
+			xa_strToReplace = ~\[JDLG\]~
+			xa_replacement = ~XACOR25J~
+			xa_output = ~%MOD_FOLDER%/temp/xa016tob~
+			xa_bcs = ~xacor016~
+	END
+	
+//}
+
+//{ Script Extensions
+	
+	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%/tob/baf/xabaltob.baf~
+	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalamu.baf~
+	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalegg.baf~
+	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%/bg2/baf/xachfight.baf~
+	EXTEND_TOP ~baldur25.bcs~	~%MOD_FOLDER%/tob/baf/xajrntob.baf~
+	EXTEND_BOTTOM ~baldur25.bcs~	~%MOD_FOLDER%/bg2/baf/xasboost.baf~
+	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/tob/baf/xap1d.baf~
+	
+	ACTION_IF (isEET = 1) THEN BEGIN
+		EXTEND_TOP ~ar4000.bcs~ 	~%MOD_FOLDER%/tob/baf/xaar4000eet.baf~
+	END
+	EXTEND_TOP ~ar4000.bcs~ 	~%MOD_FOLDER%/tob/baf/xaar4000.baf~
+	EXTEND_TOP ~ar4500.bcs~ 	~%MOD_FOLDER%/tob/baf/xaar4500.baf~
+	EXTEND_TOP ~ar5000.bcs~		~%MOD_FOLDER%/tob/baf/xaar5000.baf~
+	EXTEND_TOP ~ar5500.bcs~		~%MOD_FOLDER%/tob/baf/xaar5500.baf~
+	EXTEND_TOP ~ar5501.bcs~		~%MOD_FOLDER%/tob/baf/xaar5501.baf~
+	EXTEND_TOP ~ar6200.bcs~		~%MOD_FOLDER%/tob/baf/xaar6200.baf~
+	
+	EXTEND_TOP ~botsmith.bcs~	~%MOD_FOLDER%/tob/baf/xacespy.baf~
+	
+	EXTEND_BOTTOM ~cut218g.bcs~	~%MOD_FOLDER%/tob/baf/xa218g.baf~
+//}
+
+//{ Corwin Script
+		EXTEND_TOP ~xacor25.bcs~ ~override/xacor014.bcs~ // HP Check
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor011.bcs~ // Rejoin Processing
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor003.bcs~ // Sound Adjustments
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor012.bcs~ // Can Leave Check
+		
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xalccs00.bcs~ // Can Talk - Corwin / Player
+		LAF xa_replace_recompile
+			INT_VAR
+				xa_extendTop = 0
+			STR_VAR
+				xa_bcs = ~xacor021~
+				xa_extend = ~xacor25~
+				xa_replace = ~Player1~
+		END
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor024.bcs~ // Set banter end states
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/temp/xalcbico.bcs~ // Banter Interval - Corwin
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xalccs02.bcs~ // Banter Target Selector
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor029.bcs~ // Banter Pending
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor030.bcs~ // Banter Interaction
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xalccs05.bcs~ // Banter Target Selector Close
+		
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor013.bcs~ // Rep Handling
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor004.bcs~ // Opinion Baseline
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor007.bcs~ // Romance Conflict Handling
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor010.bcs~ // ToB Event Handling
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xacor025.bcs~ // ToB NPC Interactions
+		
+		EXTEND_BOTTOM ~xacor25.bcs~ ~override/xalccs06.bcs~ // Exp Boost Join
+		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/temp/xa016tob.bcs~ // Restring
+//}
+
+COPY ~%MOD_FOLDER%/temp/xalcbico.bcs~ ~%MOD_FOLDER%/temp/xalcbica.bcs~
+DECOMPILE_AND_PATCH
+BEGIN
+	REPLACE_TEXTUALLY ~Corwin~ ~Caelar~
+END
+
+COPY ~override/xacor029.bcs~ ~override/xacae01.bcs~
+DECOMPILE_AND_PATCH
+BEGIN
+	REPLACE_TEXTUALLY ~Corwin~ ~Caelar~
+END
+
+COPY ~override/xacor030.bcs~ ~override/xacae02.bcs~
+DECOMPILE_AND_PATCH
+BEGIN
+	REPLACE_TEXTUALLY ~Corwin~ ~Caelar~
+END
+
+//{ Caelar Script
+	EXTEND_TOP ~xacaelar.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs00.baf~ // Can Talk to Player
+	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xacae03.bcs~ // Set banter end states
+	EXTEND_BOTTOM ~xacaelar.bcs~ ~%MOD_FOLDER%/temp/xalcbica.bcs~ // Banter Interval - Caelar
+	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xalccs02.bcs~ // Banter Target Selector
+	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xacae01.bcs~ // Banter Pending
+	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xacae02.bcs~ // Banter Interaction
+	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xalccs05.bcs~ // Banter Target Selector Close
+	
+	EXTEND_BOTTOM ~xacaelar.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs06.baf~ // Exp Boost Join
+	
+//}
+
+ACTION_IF (bg1_carryover = 0) THEN BEGIN
+	INCLUDE ~%MOD_FOLDER%/bg1/xabg1_co.tph~
+END
+
+ACTION_IF (sod_carryover = 0) THEN BEGIN
+	INCLUDE ~%MOD_FOLDER%/sod/xasod_co.tph~
+END
+
+//{ Caelar VVC 
+	COPY ~%MOD_FOLDER%/tob/vvc/xaaasim.vvc~ ~override~
+//}
+
+//{ Animations
+	ACTION_IF(isEET = 0) THEN BEGIN
+		COPY ~%MOD_FOLDER%/tob/anim~ ~override~
+		APPEND ~animate.ids~ ~0xE276 LEMURE~
+		
+		COPY_EXISTING ~mlemsc.bam~ ~override/mlemsp.bam~
+		COPY_EXISTING ~mlemsce.bam~ ~override/mlemspe.bam~
+		COPY_EXISTING ~mlemde.bam~ ~override/mlemsl.bam~
+		COPY_EXISTING ~mlema1.bam~ ~override/mlemca.bam~
+		COPY_EXISTING ~mlema1e.bam~ ~override/mlemcae.bam~
+		COPY_EXISTING ~mlemdee.bam~ ~override/mlemsle.bam~
+	END
+//}
+
+//{ Epilogues
+	//{ Caelar
+		COPY ~%MOD_FOLDER%/tob/2da/xacaeend.2da~ ~override~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5001)
+	//}
+	
+	//{ Corwin, SoD Portrait
+		COPY ~%MOD_FOLDER%/tob/2da/xacornd1.2da~ ~override~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5002)
+		
+		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd2.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5003)
+		
+		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd3.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5004)
+		
+		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd4.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5005)
+		
+		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd5.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5006)
+		
+		COPY_EXISTING ~xacornd1.2da~ ~override/xacornd6.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5007)
+	//}
+	
+	//{ Corwin, LCA Portrait
+		COPY ~%MOD_FOLDER%/tob/2da/xalcand1.2da~ ~override~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5002)
+		
+		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand2.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5003)
+		
+		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand3.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5004)
+		
+		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand4.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5005)
+		
+		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand5.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5006)
+		
+		COPY_EXISTING ~xalcand1.2da~ ~override/xalcand6.2da~
+		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5007)
+	//}
+//}
+
+//{ New Creatures
+	//{ Aun Argent
+		COPY_EXISTING ~xag100.cre~ ~override/xaaun.cre~ 
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xaaun~
+				xa_scriptName = ~xaaun~
+		END
+	//}
+	
+	//{ Baatezu
+	
+		//{ Thrix
+			COPY_EXISTING ~xag101.cre~ ~override/xathrix.cre~
+			REMOVE_CRE_ITEMS
+			LPF xa_reset_cre
+				STR_VAR
+					xa_dialog = ~xathrix~
+					xa_override = ~xathrix~
+					xa_scriptName = ~xathrix~
+			END
+			WRITE_BYTE 0x274 19
+			
+		//}
+		
+		COPY_EXISTING ~xag102.cre~ ~override/xaavc1.cre~ // bdhelcat
+		COPY_EXISTING ~xag119.cre~ ~override/xaavc2.cre~ // bdbonefi
+		COPY_EXISTING ~telpit1.cre~ ~override/xaavc3.cre~ 
+		COPY_EXISTING ~demcor01.cre~ ~override/xaavc4.cre~
+		COPY_EXISTING ~xag115.cre~ ~override/xaavc5.cre~ // bdabibla
+		WRITE_ASCII 0x280 ~xaavc5~ #20
+		COPY_EXISTING ~xag116.cre~ ~override/xaavc6.cre~ // bdabigre
+		WRITE_ASCII 0x280 ~xaavc6~ #20
+		COPY_EXISTING ~xag117.cre~ ~override/xaavc7.cre~ // bdabired
+		WRITE_ASCII 0x280 ~xaavc7~ #20
+		COPY_EXISTING ~xag118.cre~ ~override/xaavc8.cre~ // bdhamatu
+		WRITE_ASCII 0x280 ~xaavc8~ #20
+		COPY_EXISTING ~xag114.cre~ ~override/xaavc9.cre~ // bdimp
+		COPY_EXISTING ~xag111.cre~ ~override/xaavc10.cre~ // bdlemure
+		COPY_EXISTING ~elfirg01.cre~ ~override/xaavc11.cre~
+		COPY_EXISTING ~elfir01.cre~ ~override/xaavc12.cre~
+		COPY_EXISTING ~xag103.cre~ ~override/xaavc13.cre~ // bderinye
+		
+		COPY_EXISTING_REGEXP GLOB ~xaavc.+\.cre$~ ~override~ 
+		WRITE_BYTE 0x270 255 	// Set Allegiance to Enemy
+		WRITE_BYTE 0x271 255 	// Set General to Monster
+		WRITE_BYTE 0x272 121 	// Set Race to Demonic
+		WRITE_BYTE 0x273 179 	// Set Class to Imp (Baatezu)
+		WRITE_BYTE 0x274 0 		// Set Specifics to None
+		WRITE_BYTE 0x27B 19 	// Set Alignment to Lawful Evil
+		LPF xa_reset_cre
+			STR_VAR
+				xa_override = ~xasummon~
+				xa_default = ~wtasight~
+		END
+		LPF xa_inc_cre_difficulty
+			INT_VAR
+				xa_factor = 3
+		END
+		BUT_ONLY
+		
+		COPY_EXISTING ~gorbat3.cre~ ~override/xanarzs0.cre~
+		WRITE_ASCII 0x248 ~xanevsum~ #8 // override
+		WRITE_ASCII 0x280 ~xanarzs0~ #8 // script name
+		
+		COPY_EXISTING ~xanarzs0.cre~ ~override/xanarzs1.cre~
+		WRITE_ASCII 0x280 ~xanarzs1~ #8 // script name
+		
+		COPY_EXISTING ~xanarzs0.cre~ ~override/xanarzs2.cre~
+		WRITE_ASCII 0x280 ~xanarzs2~ #8 // script name
+		
+		COPY_EXISTING ~xanarzs0.cre~ ~override/xanarzs3.cre~
+		WRITE_ASCII 0x280 ~xanarzs3~ #8 // script name
+		
+		COPY_EXISTING ~xaavc5.cre~ ~override/xanarz01.cre~
+		WRITE_ASCII 0x248 ~xanevsum~ #8 // override
+		WRITE_ASCII 0x280 ~xanarz01~ #8 // script name
+		
+		COPY_EXISTING ~xaavc6.cre~ ~override/xanarz02.cre~
+		WRITE_ASCII 0x248 ~xanevsum~ #8
+		WRITE_ASCII 0x280 ~xanarz02~ #8 // script name
+		
+		COPY_EXISTING ~xaavc7.cre~ ~override/xanarz03.cre~
+		WRITE_ASCII 0x248 ~xanevsum~ #8
+		WRITE_ASCII 0x280 ~xanarz03~ #8 // script name
+		
+		COPY_EXISTING ~xaavc8.cre~ ~override/xanarz04.cre~
+		WRITE_ASCII 0x248 ~xanevsum~ #8
+		WRITE_ASCII 0x280 ~xanarz04~ #8 // script name
+		
+		COPY_EXISTING ~xaavc4.cre~ ~override~
+		WRITE_ASCII 0x268 ~cornugon~ #8
+		
+		COPY_EXISTING ~xaavc13.cre~ ~override~
+		WRITE_ASCII 0x268 ~xaerin~ #8
+		
+		COPY_EXISTING ~xanarzu.cre~ ~override/xanarzu2.cre~
+		WRITE_LONG 0x14 36000 // Exp
+		WRITE_SHORT 0x24 444 // HP
+		WRITE_SHORT 0x26 444 // HP
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xanarzu~
+				xa_scriptName = ~xaavboss~
+				xa_override = ~xaavboss~
+				xa_default = ~xanarzu~
+		END
+	
+	//{ Bence Duncan
+		COPY_EXISTING ~xabence.cre~ ~override/xabence2.cre~ 
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xabence2~
+				xa_scriptName = ~xabence2~
+		END
+	//}
+	
+	//{ Beno (Amkethran)
+		COPY_EXISTING ~xabeno.cre~ ~override/xabenoam.cre~ 
+		REMOVE_CRE_ITEMS
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xabenoam~
+				xa_scriptName = ~xabenoam~
+		END
+	//}
+	
+	//{ Beno (Kanaglym Spirit)
+		COPY_EXISTING ~xabenoam.cre~ ~override/xabenosp.cre~
+		ADD_CRE_ITEM ~minhp1~ #0 #0 #0 ~identified&unstealable&undroppable~ ~LRING~	
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xabenosp~
+				xa_scriptName = ~xabenosp~
+				xa_general = ~xabenof~
+		END
+		LPF ADD_CRE_EFFECT
+			INT_VAR
+				opcode = 65
+				target = 1
+		END
+	//}
+	
+	//{ Caelar
+		//{ Change spell string refs
+			COPY_EXISTING ~xac106.spl~ ~override~ // Bless
+			WRITE_LONG 0xCE 17408 // Blessed
+			
+			COPY_EXISTING ~xac104.spl~ ~override~ // Cure Critical Wounds
+			WRITE_LONG 0xFE 14022 // Healed
+		//}
+		COPY_EXISTING ~xac109.cre~ ~override/xacaelar.cre~ 
+		REMOVE_CRE_ITEMS
+		ADD_CRE_ITEM ~xabroken~ #0 #0 #0 ~IDENTIFIED~ ~INV1~
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xacaelar~
+				xa_scriptName = ~xacaelar~
+				xa_override = ~xacaelar~
+				xa_class = ~xafigh01~
+		END
+		WRITE_LONG 0x1CC RESOLVE_STR_REF(@5009) // Bio
+		WRITE_BYTE 0x270 128 // set allegiance to neutral
+		
+		COPY_EXISTING ~xacaelar.cre~ ~override/xacaela2.cre~
+		LPF xa_remove_cre_sounds END
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xacaela2~
+				xa_scriptName = ~xacaela2~
+				xa_override = ~xacaela2~
+		END	
+	//}
+	
+	//{ Crusader Spirits
+		COPY_EXISTING ~xac111.cre~ ~override/xaashasp.cre~
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xaashasp~
+				xa_scriptName = ~xaashasp~
+				xa_override = ~xacrug~
+		END	
+		LPF ADD_CRE_EFFECT
+			INT_VAR
+				opcode = 65 // blur
+				target = 1 // self
+				timing = 1 // permanent until death
+		END
+		LPF ADD_CRE_EFFECT
+			INT_VAR
+				opcode = 208 // min hp
+				parameter1 = 1 // min hp 1
+				target = 1 // self
+				timing = 1 // permanent until death
+		END
+		
+		SET cid = 0
+		ACTION_DEFINE_ARRAY crusaderSpirits
+		BEGIN
+			xag131 // bdcrue50
+			xag135 // bdcrue51
+			xag124 // bdcrue52
+			xag126 // bdcrue53
+			xag127 // bdcrue54
+			xag110 // bdcrus5d
+			xag139 // bdcrus6d
+			xag140 // bdcrus7d
+		END
+		ACTION_PHP_EACH crusaderSpirits AS _ => cSpirit
+		BEGIN
+			COPY_EXISTING ~%cSpirit%.cre~ ~override/xacrug0%cid%.cre~
+			WRITE_LONG 0x20 0 // remove "dead" flag, if it's set
+			LPF xa_reset_cre
+				STR_VAR
+					xa_override = ~xacrug~
+					xa_scriptName = ~None~
+			END	
+			LPF ADD_CRE_EFFECT
+				INT_VAR
+					opcode = 65 // blur
+					target = 1 // self
+					timing = 1 // permanent until death
+			END
+			LPF ADD_CRE_EFFECT
+				INT_VAR
+					opcode = 208 // min hp
+					parameter1 = 1 // min hp 1
+					target = 1 // self
+					timing = 1 // permanent until death
+			END
+			cid = (cid + 1)
+		END
+	//}
+	
+	//{ Dream Voice
+		COPY_EXISTING ~xalcspy.cre~ ~override/xakana1.cre~
+		SAY NAME1 @5015
+		SAY NAME2 @5015
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xakana1~
+				xa_scriptName = ~xakana1~
+		END	
+	//}
+	
+	//{ Elven Spirits
+		COPY_EXISTING ~suelf13.cre~ ~override/xaelf01.cre~
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xaelf01~
+				xa_scriptName = ~xaelf01~
+				xa_default = ~wtasight~
+		END	
+	
+		COPY_EXISTING ~suelf12.cre~ ~override/xaelf02.cre~ 
+		LPF xa_reset_cre
+			STR_VAR
+				xa_scriptName = ~xaelf02~
+				xa_default = ~wtasight~
+		END	
+		
+		COPY_EXISTING ~suelf10.cre~ ~override/xaelf03.cre~
+		LPF xa_reset_cre
+			STR_VAR
+				xa_scriptName = ~xaelf03~
+				xa_race = ~priet12b~
+				xa_default = ~wtasight~
+		END
+				
+		COPY_EXISTING_REGEXP GLOB ~xaelf0.+\.cre$~ ~override~
+		SAY NAME1 @5016
+		SAY NAME2 @5016
+		WRITE_BYTE 0x270 29 // change allegiance to good but blue
+		LPF ADD_CRE_EFFECT
+			INT_VAR
+				opcode = 65
+				target = 1
+		END		
+	//}
+	
+	//{ Fire Giant Scouts
+		COPY_EXISTING ~giafir01.cre~ ~override/xafgsc1.cre~
+		SAY NAME1 @5012
+		SAY NAME2 @5012
+		WRITE_SHORT 0x24 100
+		WRITE_SHORT 0x26 100
+		WRITE_ASCII 0x280 ~xafgsc1~ #8
+		
+		COPY_EXISTING ~xafgsc1.cre~ ~override/xafgsc2.cre~
+		WRITE_ASCII 0x280 ~xafgsc2~ #8
+		
+		COPY_EXISTING ~xafgsc1.cre~ ~override/xafgsc3.cre~
+		WRITE_ASCII 0x280 ~xafgsc3~ #8
+	//}
+	
+	//{ Hamza
+		COPY_EXISTING ~plfarm01.cre~ ~override/xahamza.cre~
+		SAY NAME1 @5014
+		SAY NAME2 @5014
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xahamza~
+				xa_scriptName = ~xahamza~
+				xa_override = ~gensht01~
+		END
+	//}
+	
+	//{ Lathander Clergymen
+		COPY_EXISTING ~dawnmas.cre~ ~override/xalath01.cre~
+		SAY NAME1 @5013
+		SAY NAME2 @5013
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xalath01~
+				xa_scriptName = ~xalath01~
+				xa_race = ~priest6~
+				xa_general = ~xalath01~
+				xa_default = ~wtasight~
+		END
+	
+		COPY_EXISTING ~latkni01.cre~ ~override/xalath02.cre~
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xalath02~
+				xa_scriptName = ~xalath02~
+				xa_default = ~wtasight~
+		END
+		
+		COPY_EXISTING ~latkni02.cre~ ~override/xalath03.cre~
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xalath03~
+				xa_scriptName = ~xalath03~
+				xa_default = ~wtasight~
+		END
+	//}
+	
+	//{ Lodob
+		COPY_EXISTING ~demlord.cre~ ~override/xalodob.cre~
+		SAY NAME1 @5011
+		SAY NAME2 @5011
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xalodob~
+				xa_scriptName = ~xalodob~
+				xa_class = ~demlord~
+				xa_default = ~wtasight~
+		END
+		LPF ADD_CRE_EFFECT
+			INT_VAR
+				opcode = 65
+				target = 1
+		END
+		WRITE_LONG 0x524 3 // immunity to level 3 & below
+	//}
+	
+	//{ Nederlok
+		COPY_EXISTING ~xanederl.cre~ ~override/xatobned.cre~
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xatobned~
+				xa_scriptName = ~xatobned~
+		END
+	//}
+	
+	//{ Rohma (Child Wraith)
+		COPY_EXISTING ~xarohma.cre~ ~override/xarohma4.cre~
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~xarohma4~
+				xa_scriptName = ~xarohma4~
+		END
+	//}
+
+	//{ Summoned Ankheg
+		COPY_EXISTING ~ankheg01.cre~ ~override/xaankhsu.cre~
+		WRITE_BYTE 0x270 5 // Allegiance = Controlled
+		WRITE_BYTE 0x275 6 // Gender = Summoned
+	//}
+//}
+
+//{ Effects
+	//{ Amulet of Ankheg Effect
+		COPY_EXISTING ~xac101.eff~ ~override~
+		WRITE_ASCII 0x30 ~xaankhsu~ #8
+	//}
+
+//}
+
+//{ Items
+	
+	//{ Caelar's Chainmail bdchanca
+		COPY_EXISTING ~xac108.itm~ ~override/xachanca.itm~
+		WRITE_ASCII 0x446 ~xacaelar~ #8
+		WRITE_LONG 0x45E RESOLVE_STR_REF(@5028)
+	//}
+
+	//{ Caelar's Cloak new
+		COPY ~%MOD_FOLDER%/tob/itm/xafinca1.itm~ ~override~
+		WRITE_ASCII 0x2C6 ~xaaasim~ #8 // vvc
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@5020)
+		WRITE_LONG 0xC RESOLVE_STR_REF(@5020)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@5021)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@5021)
+		WRITE_LONG 0x3FE RESOLVE_STR_REF(@5028)
+	//}
+	
+	//{ Caelar's Helmet bdhelmca
+		COPY_EXISTING ~xac107.itm~ ~override/xahelmca.itm~
+		WRITE_LONG 0x18 108 // make circlet droppable
+		WRITE_ASCII 0x656 ~xacaelar~ #8
+		WRITE_LONG 0x66E RESOLVE_STR_REF(@5028)
+	//}
+
+	//{ Caelar's Shield bdshldca
+		COPY_EXISTING ~xac109.itm~ ~override/xashldca.itm~
+		WRITE_ASCII 0x176 ~xacaelar~ #8
+		WRITE_LONG 0x18E RESOLVE_STR_REF(@5028)
+	//}
+
+	//{ Caelar's Sword Aster's Edge + 3 bdsw1hca 
+		COPY_EXISTING ~xac111.itm~ ~override/xasw1hca.itm~
+		WRITE_ASCII 0x11E ~xacaelar~ #8
+		WRITE_LONG 0x136 RESOLVE_STR_REF(@5028)
+	//}
+	
+	//{ Caelar's Sword + 5 new 
+		COPY ~%MOD_FOLDER%/tob/bam/xasw1hc5.bam~ ~override~
+	
+		COPY ~%MOD_FOLDER%/tob/itm/xasw1hc5.itm~ ~override~
+		WRITE_LONG 0x1F6 RESOLVE_STR_REF(@5028) // Desc note
+		WRITE_LONG 0xC RESOLVE_STR_REF(@5033) // Aster's Edge + 5
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@5034) // Identified Desc
+	//}
+	
+	//{ Corwin's Bow + 4 (Gond) new 
+		OUTER_SET xa_negative = 0 - 1
+		COPY_EXISTING ~xacorbo3.itm~ ~override/xacorbo4.itm~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@5024)
+		WRITE_LONG 0xC RESOLVE_STR_REF(@5024)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@5025)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@5025)
+		WRITE_LONG 0x13E 8 // Increase attacks to 2.5 per round
+		WRITE_SHORT 0x80 112 // Set range to 112
+		WRITE_BYTE 0x84 3 // Set speed to 3
+		WRITE_SHORT 0x86 5 // Set to hit bonus to 5
+		WRITE_SHORT 0x8C 6 // Set damage bonus to 6
+		WRITE_LONG 0x60 4 // Set enchantment to 4
+		WRITE_BYTE 0x1DC 22 // Set entangle chance to 22%
+		WRITE_LONG 0x1F2 (xa_negative * 2) // Apply -2 save penalty
+	//}
+	
+	//{ Corwin's Bow + 5 (Gond) new 
+		COPY_EXISTING ~xacorbo4.itm~ ~override/xacorbo5.itm~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@5026)
+		WRITE_LONG 0xC RESOLVE_STR_REF(@5026)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@5027)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@5027)
+		WRITE_SHORT 0x80 114 // Set range to 114
+		WRITE_BYTE 0x84 2 // Set speed to 2
+		WRITE_SHORT 0x86 6 // Set to hit bonus to 6
+		WRITE_SHORT 0x8C 7 // Set damage bonus to 7
+		WRITE_LONG 0x60 5 // Set enchantment to 5
+		WRITE_BYTE 0x1DC 24 // Set entangle chance to 24%
+	//}
+	
+	//{ Shattered Gear 
+		COPY_EXISTING ~misc59.itm~ ~override/xabroken.itm~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@5017)
+		WRITE_LONG 0xC RESOLVE_STR_REF(@5017)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@5018)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@5018)
+	//}
+	
+	//{ Soultaker Dagger (Demon)
+		COPY_EXISTING ~dagg10.itm~ ~override/xastdagd.itm~
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@5019)
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@5019)
+	//}
+//}
+
+//{ New Areas
+	//{ xag100 bd4500 Avernus Bridge
+		EXTEND_TOP ~xags100.bcs~ ~%MOD_FOLDER%/tob/baf/xa4500.baf~
+		
+		COPY_EXISTING ~xag100.are~ ~override~
+		WRITE_ASCII 0x14E4 ~xaavdoor~ #8
+		
+		//{ Disable Triggers
+			WRITE_LONG 0x1404 256 // Hell Bridge
+		//}
+		
+		//{ Change 4400 Travel Trigger to an Info Trigger
+			WRITE_SHORT 0x123C 1
+			WRITE_LONG 0x127C 0
+			WRITE_LONG 0x1280 RESOLVE_STR_REF(@5010)
+		//}
+		
+		LPF xa_delete_are_actors END
+
+		LPF fj_are_structure
+			INT_VAR
+				fj_type = 0
+				fj_box_left 	= 582
+				fj_box_top 		= 1184
+				fj_box_right 	= 830
+				fj_box_bottom 	= 1346
+				fj_vertex_0 = (634 + (1184 << 16))
+				fj_vertex_1 = (466 + (1304 << 16))
+				fj_vertex_2 = (655 + (1440 << 16))
+				fj_vertex_3 = (830 + (1320 << 16))
+				fj_flags = 128
+			STR_VAR
+				fj_reg_script = XA4500T1
+				fj_name = TRBR01	
+				fj_structure_type = region
+		END
+		
+		LPF fj_are_structure
+			INT_VAR
+				fj_type = 0
+				fj_box_left 	= 975
+				fj_box_top 		= 940
+				fj_box_right 	= 1420
+				fj_box_bottom 	= 1240
+				fj_vertex_0 = (1390 + (1240 << 16))
+				fj_vertex_1 = (1492 + (1166 << 16))
+				fj_vertex_2 = (1080 + (880 << 16))
+				fj_vertex_3 = (975 + (950 << 16))
+				fj_flags = 128
+			STR_VAR
+				fj_reg_script = XA4500T2
+				fj_name = TRBR02		
+				fj_structure_type = region
+		END
+		WRITE_ASCII 0x8AC ~xadoorav~ #8
+	//}
+	
+	//{ xag101 bd4700 Avernus Tower Roof
+		EXTEND_TOP ~xags101.bcs~ ~%MOD_FOLDER%/tob/baf/xa4700.baf~
+		
+		COPY_EXISTING ~xag101.are~ ~override~
+		//{ Disable Hellevator
+			WRITE_LONG 0x19EC 256
+		//}
+		
+		LPF xa_delete_are_actors END
+		WRITE_LONG 0xA9C 513 // set door flags open, see through
+	//}
+	
+	//{ xag102 bd5300 Kanaglym
+		EXTEND_TOP ~xags102.bcs~ ~%MOD_FOLDER%/tob/baf/xa5300.baf~
+		
+		COPY_EXISTING ~xag102.are~ ~override~
+		
+		LPF xa_replace_trigger_scripts END
+		
+		PATCH_DEFINE_ARRAY xa_extras
+		BEGIN
+			xacrug00 // bdcrue50
+			xacrug01 // bdcrue51
+			xacrug02 // bdcrue52
+			xacrug03 // bdcrue53
+			xacrug04 // bdcrue54
+			xacrug05 // bdcrus5d
+			xacrug06 // bdcrus6d
+			xacrug07 // bdcrus7d
+		END
+		
+		//{ Change Travel Trigger to Info Trigger, and Update Text String
+			WRITE_SHORT 0x2AAC 1
+			WRITE_LONG 0x2AF0 RESOLVE_STR_REF(@5008)
+		//}
+		
+		LPF xa_delete_are_actors END
+		LPF xa_delete_are_containers END
+		
+		//{ Crusader Spirit NPCs
+			LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 775
+					fj_loc_y = 530
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = Ashatiel
+					fj_cre_resref = xaashasp
+			END
+			LPF xa_add_extras
+				INT_VAR
+					xa_minX = 552
+					xa_minY = 469
+					xa_maxX = 709
+					xa_maxY = 636
+					xa_numToGenerate = 8
+			END
+			LPF xa_add_extras
+				INT_VAR
+					xa_minX = 592
+					xa_minY = 266
+					xa_maxX = 692
+					xa_maxY = 377
+					xa_numToGenerate = 8
+			END
+			LPF xa_add_extras
+				INT_VAR
+					xa_minX = 845
+					xa_minY = 448
+					xa_maxX = 977
+					xa_maxY = 612
+					xa_numToGenerate = 8
+			END
+			LPF xa_add_extras
+				INT_VAR
+					xa_minX = 767
+					xa_minY = 674
+					xa_maxX = 898
+					xa_maxY = 770
+					xa_numToGenerate = 8
+			END
+		//}
+		
+		WRITE_ASCII 0x3270 ~xafugue~ #8
+		WRITE_ASCII 0x256C ~xa5300t1~ #8
+		WRITE_LONG 0x2550 0 // activate sd info trigger
+	//}
+	
+	//{ xa5501 Amkethran Tavern
+		COPY ~%MOD_FOLDER%/tob/are/xa5501.are~ ~override~
+	//}
+	
+	//{ xabye ar4500 Pocket Plane
+		COPY ~%MOD_FOLDER%/tob/are/xabye.are~ ~override~
+	//}
+	
+	//{ 2DA Modifications
+		//{ XACAELAR
+			COPY_EXISTING ~pdialog.2da~ ~override~
+			INSERT_2DA_ROW 0 8 ~XACAELAR XACAELAP XACAELAJ XACAELAD XACAELAP XACAELAJ XACAELAD XACAELAR~
+
+			COPY_EXISTING ~interdia.2da~ ~override~
+			INSERT_2DA_ROW 0 3 ~XACAELAR XACAELAB XACAELAB~
+		//}
+	//}
+	
+	//{ Mod Compatibility
+		//{ The Longer Road EE
+			ACTION_IF xa_tlr = 1 THEN BEGIN
+				INCLUDE ~%MOD_FOLDER%/compat/tlr/tob/xatob.tph~
+			END
+		//}
+	//}
+//}

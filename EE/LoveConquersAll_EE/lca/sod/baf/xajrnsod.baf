@@ -1,0 +1,150 @@
+//{ Mineral Spring
+IF
+	Global("XA_LC_Journal_Spring", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Spring", "GLOBAL", 0)
+		AddJournalEntry(@9, INFO) /* @9=~Mineral Spring
+Captain Corwin and I enjoyed a relaxing, though brief, respite in a hot spring not far from the Flaming Fist encampment. I feel revitalized and ready for whatever awaits me.~ */
+		AddXPObject(Player1, 2000)
+		AddXPObject("CORWIN", 2000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+//{ Storeroom Intimate Encounter
+IF
+	Global("XA_LC_Journal_Intimate", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Intimate", "GLOBAL", 0)
+		AddJournalEntry(@5, INFO) /* @5 = ~A Taste of What's to Come
+Schael and I shared an intimate moment in the storeroom in Dragonspear castle. She assured me that it's only a small taste of what she has planned for me when we finally return to Baldur's Gate.~*/
+		AddXPObject(Player1, 5000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Archery Lesson
+IF 
+	Global("XA_LC_Journal_ArcheryLesson", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_ArcheryLesson", "GLOBAL", 0)
+		AddJournalEntry(@0, INFO) /* @0 = ~Corwin's Tutelage
+Captain Corwin noticed a couple of problems with my bow grip. She taught me the difference between the pivot and pressure points, and showed me the proper use of my palm to support the pressure of the bow. With these changes, my accuracy and power have improved.~*/
+		AddXPObject(Player1,10000)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Cell Visit
+IF
+	Global("XA_LC_Journal_CellVisit", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_CellVisit", "GLOBAL", 0)
+		AddJournalEntry(@1, INFO) /* ~Schael Corwin
+Words cannot describe the pain and anger that I feel. Schael and I can never be together so long as the city holds me responsible for Skie's death. I must be freed from this cell so that I can find something or someone that can exonerate me, otherwise, I fear I may never see my love again.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_CellVisit", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_CellVisit", "GLOBAL", 0)
+		AddJournalEntry(@2, INFO) /* ~Captain Corwin
+Captain Corwin visited my cell this morning. She told me that there are those in the city that believe in my innocence, and that she and others are pleading with the Dukes on my behalf. If they're successful, my life may be spared, though I'll be forced into exile. Exile, however, would afford me the time that I need to find Skie's murderer and prove my innocence. So long as I have friends like her, there is hope.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Waterfall Escape
+IF
+	Global("XA_LC_Journal_Escape", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_Escape", "GLOBAL", 0)
+		AddJournalEntry(@3, INFO) /* ~It Wasn't Me
+
+I have one chance to escape—by going over the waterfall.
+
+The Flaming Fist cornered me. Although I was able to convince Corwin of my innocence, she would not take up arms against her comrades who want me dead. I've no choice but to run.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Corwin Bhaal Conversation 
+IF
+	Global("XA_LC_ToldTruthBhaal", "GLOBAL", 1)
+	GlobalLT("XA_LC_Journal_ToldTruthBhaal", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_Journal_ToldTruthBhaal", "GLOBAL", 1)
+		AddJournalEntry(@4, INFO) /* ~Child of Bhaal
+
+After she questioned me, I told Captain Corwin the truth of my bloody lineage. Though she was appreciative of my honesty, she expressed concern that it could complicate things significantly. As far as the coalition is concerned, the fewer people who know of my connection to Bhaal, the better.~*/
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Tent Cutscene
+IF
+	Global("XA_LC_Journal_TentCutscene", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		AddJournalEntry(@6, INFO) /*@6=~Duty Rosters
+Captain Corwin took some time to go over the duty rosters for the camp with me. It was an eye-opening experience, in more ways than one.~ */
+		ChangeStat("Corwin", XP, 5000, ADD)
+		ChangeStat(Player1, XP, 5000, ADD)
+		SetGlobal("XA_LC_Journal_TentCutscene", "GLOBAL", 0)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}
+
+//{ Deserter
+IF
+	Global("XA_LC_Journal_Deserter", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		AddJournalEntry(@7, INFO) /*~The Deserter
+I convinced Captain Corwin to spare the life of a soldier who had deserted his post. The coalition cannot afford to lose soldiers in such a manner; he'll be punished severely, and deservedly so.~*/
+		ChangeStat("Corwin", XP, 5000, ADD)
+		ChangeStat(Player1, XP, 5000, ADD)
+		SetGlobal("XA_LC_Journal_Deserter", "GLOBAL", 0)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("XA_LC_Journal_Deserter", "GLOBAL", 2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		AddJournalEntry(@8, INFO) /*~The Deserter
+Captain Corwin informed me that a soldier had been caught after he had deserted his post. He'll be executed at daybreak, as a warning to others. Order and discipline must be maintained, sometimes at a severe cost.~ */
+		ChangeStat("Corwin", XP, 5000, ADD)
+		ChangeStat(Player1, XP, 5000, ADD)
+		SetGlobal("XA_LC_Journal_Deserter", "GLOBAL", 0)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+		Continue()
+END
+//}

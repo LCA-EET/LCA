@@ -1,0 +1,16 @@
+// Override Script
+IF
+	Die()
+THEN
+	RESPONSE #100
+		IncrementGlobal("XA_LC_CrusadersAlive", "GLOBAL", -1)
+END
+
+IF
+	GlobalLT("XA_LC_CrusaderEnemy", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		ChangeEnemyAlly(Myself, ENEMY)
+		SetGlobal("XA_LC_CrusaderEnemy", "LOCALS", 1)
+		Continue()
+END

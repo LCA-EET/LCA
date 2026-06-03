@@ -1,0 +1,34 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		DisplayStringHead("BDFIST23", @0) /* @0=~Here it is.~ */
+		Wait(3)
+		ActionOverride("BDFIST23", Face(NW))
+		DisplayStringHead("BDFIST23", @1) /* @1=~Head on in. I'll stand guard.~ */
+		Wait(3)
+		CreateCreature("XACORSPR", [131.195], SE)
+		Wait(1)
+		ActionOverride("XACORSPR", MoveToPoint([277.258]))
+		Wait(1)
+		ActionOverride("BDFIST23", FaceObject("XACORSPR"))
+		DisplayStringHead("BDFIST23", @2) /* @2=~Captain.~*/ 
+		Wait(1)
+		FaceObject("XACORSPR")
+		ActionOverride("XACORSPR", FaceObject("BDFIST23"))
+		DisplayStringHead("XACORSPR", @3) /*@3=~At ease, private.~*/
+		Wait(2)
+		DisplayStringHead("XACORSPR", @4) /*@4=~Head back to camp. I'll manage things here.~*/
+		Wait(2)
+		DisplayStringHead("BDFIST23", @5) /*@5=~Yes ma'am.~*/
+		Wait(1)
+		ActionOverride("BDFIST23", MoveToPoint([16.58]))
+		Wait(1)
+		ActionOverride("XACORSPR", FaceObject(Player1))
+		Wait(3)
+		ActionOverride("BDFIST23", DestroySelf())
+		Wait(1)
+		EndCutSceneMode()
+		ActionOverride("XACORSPR", StartDialog("XACORSPR", Player1))
+END

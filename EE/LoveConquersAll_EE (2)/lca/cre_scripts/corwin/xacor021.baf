@@ -1,0 +1,22 @@
+//{ Mark SoA Banters Complete in ToB, otherwise the script may try to initiate banters that no longer exist.
+IF
+	InParty(Myself)
+	TriggerOverride(Player1, GlobalGT("XA_LC_CorwinBantersEnd", "LOCALS", 0))
+	TriggerOverride(Player1, GlobalLT("XA_LC_SoABantersSkipped", "LOCALS", 1))
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 0))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	TriggerOverride(Player1, GlobalLT("XA_LC_SoABantersSkipped", "LOCALS", 1))
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, SetGlobal("XA_LC_SoABantersSkipped", "LOCALS", 1))
+		Continue()
+END
+//}

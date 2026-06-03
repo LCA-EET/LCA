@@ -1,0 +1,74 @@
+IF
+	Global("bd_ai_controls","locals",0)
+THEN
+	RESPONSE #100
+		SetGlobal("bd_ai_controls","locals",1)
+		SetGlobal("bd_no_assist","locals",2)
+		SetGlobal("bd_no_search","locals",1)
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	NumberOfTimesTalkedTo(0)
+	See([PC])
+THEN
+	RESPONSE #100
+		SaveLocation("LOCALS","bd_default_loc",[3920.3409])
+		ApplySpellRES("bdcutspy",Myself)  // No such index
+		StartDialogueNoSet([PC])
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	NearLocation(Myself,3920,3409,6)
+	!See([PC])
+THEN
+	RESPONSE #100
+		RandomWalk()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("bd_amulet","locals",0)
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HasItem("bdamul03",Myself)  // Amulet of Abnormally Awesome Ankheg Summoning
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("bd_amulet","locals",1)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		SetGlobalTimerRandom("bd_use_amulet","locals",TWO_ROUNDS,THREE_ROUNDS)
+		UseItem("bdamul03",Myself)  // Amulet of Abnormally Awesome Ankheg Summoning
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("bd_amulet","locals",1)
+	!GlobalTimerNotExpired("bd_cast","locals")
+	HasItem("bdamul03",Myself)  // Amulet of Abnormally Awesome Ankheg Summoning
+	!GlobalTimerNotExpired("bd_use_amulet","locals")
+	DifficultyGT(EASY)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+		SetGlobalTimerRandom("bd_use_amulet","locals",TWO_ROUNDS,THREE_ROUNDS)
+		UseItem("bdamul03",Myself)  // Amulet of Abnormally Awesome Ankheg Summoning
+		SetInterrupt(TRUE)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	NearLocation(Myself,3920,3409,30)
+	Global("BD_Ferrusk_Allies","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("BD_Ferrusk_Allies","MYAREA",1)
+		Continue()
+END
+

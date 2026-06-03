@@ -1,0 +1,28 @@
+//{ Normal, non-cutscene sex
+	IF
+		Global("XA_LC_CorwinCanHaveSex", "GLOBAL", 1)
+		GlobalGT("XA_LC_TimesHadSex", "GLOBAL", 0)
+		RandomNum(3,1)
+		GlobalGT("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 100)
+		OR(15)
+			AreaCheck("AR0313") //Sea Bounty 1FL
+			AreaCheck("AR0314") //Sea Bounty 2FL
+			AreaCheck("AR0509") //Five Flagons, 1FL
+			AreaCheck("AR0511") //Five Flagons, 2FL
+			AreaCheck("AR0513") //Inn at Bridge District, 1FL
+			AreaCheck("AR0514") //Inn at Bridge District, 2FL
+			AreaCheck("AR0515") //Inn at Bridge District, 3FL
+			AreaCheck("AR0704") //Mithrest Inn
+			AreaCheck("AR0709") //Den of the Seven Vales
+			AreaCheck("AR0712") //Den of the Seven Vales, 2FL
+			AreaCheck("AR1105") //Imnesvale Inn
+			AreaCheck("AR1602") //Brynnlaw's Inn
+			AreaCheck("AR2010") //Trademeet's Inn
+			AreaCheck("AR5003") //Tankard Tree
+			AreaCheck("AR5501") //Amkethran Inn
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CorwinSexBoost", "GLOBAL", 1)
+			RestPartyEx(0,0,FALSE)
+	END
+//}

@@ -1,0 +1,8 @@
+IF
+	GlobalLT("XA_LC_TLR_Fix", "MYAREA", 1) 
+THEN
+	RESPONSE #100
+		SetGlobal("ElleSpawn", "GLOBAL", 3)
+		SetGlobal("LRGiveBook","MYAREA",1)
+		SetGlobal("XA_LC_TLR_Fix", "MYAREA", 1)
+END
