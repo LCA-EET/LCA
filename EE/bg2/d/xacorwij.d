@@ -4118,11 +4118,7 @@ IF ~
 ~ THEN BEGIN XA_WorkOut
 	SAY @1910 /*@1910=~...twenty-seven... twenty-eight... twenty-nine...~~*/
 	
-	IF ~~ THEN REPLY @1911 /* ~(Go back to sleep.)~*/
-	DO ~
-		SetGlobal("XA_LC_Workout", "GLOBAL", 2)
-	~
-	EXIT
+	COPY_TRANS XACORWIJ XA_ExitWorkout
 	
 	IF ~~ THEN REPLY @1912 /* ~*Yawn*... what're you doing?~*/
 	GOTO XA_WorkOut_2
