@@ -16,5 +16,5 @@ THEN
         Wait(1)
         FadeFromColor([20.0],0)
         EndCutSceneMode()
-        RestPartyEx(0,0,FALSE)
+        RestPartyEx(0,0,TRUE)
 END
