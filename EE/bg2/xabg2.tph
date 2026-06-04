@@ -144,9 +144,14 @@ END
 //}
 
 //{ Music	
-	//{ SoD Track
+	//{ SoD Track A
 		ADD_MUSIC xamu01	~%MOD_FOLDER%/bg2/mus/xamu01.mus~
 		COPY ~%MOD_FOLDER%/bg2/mus/xamu01a.acm~ ~MUSIC/xamu01/xamu01a.acm~
+	//}
+	
+	//{ SoD Track B, Workout Cutscene
+		ADD_MUSIC xamu04	~%MOD_FOLDER%/bg2/mus/xamu04.mus~
+		COPY ~%MOD_FOLDER%/bg2/mus/xamu04a.acm~ ~MUSIC/xamu04/xamu04a.acm~
 	//}
 	
 	//{ Corwin Romance A
@@ -158,7 +163,7 @@ END
 		//ADD_MUSIC xamu03	~%MOD_FOLDER%/bg2/mus/xamu03.mus~
 		//COPY ~%MOD_FOLDER%/bg2/mus/xamu03a.acm~ ~MUSIC/xamu03/xamu03a.acm~
 	//}
-	
+		
 	//{ Concern xamu06 ngoblina (SoD)
 		ADD_MUSIC xamu09	~%MOD_FOLDER%/bg2/mus/xamu09.mus~
 		COPY ~%MOD_FOLDER%/bg2/mus/xamu09a.acm~ ~MUSIC/xamu09/xamu09a.acm~
@@ -339,7 +344,10 @@ END
 			fj_structure_type = region
 			fj_name = ~ExitNull~
 	END
-
+	COPY_EXISTING ~xabedr.are~ ~override~ // Workout Cutscene
+	WRITE_LONG 0x11C xamu04 // update day song
+	WRITE_LONG 0x120 xamu04 // update night song
+	
 	COPY_EXISTING ~xad100.are~ ~override~ // bd0103, Ducal Palace 3 Fl
 	LPF xa_delete_actor_at_index END
 	
@@ -583,6 +591,11 @@ END
 	
 	COPY_EXISTING ~xad109.cre~ ~override/xaschael.cre~ // bdschael
 	WRITE_ASCII 0x280 ~xaschael~ #20  	// Script Name
+	
+	COPY_EXISTING ~xad109.cre~ ~override/xacorwo.cre~ // bdschael
+	LPF xa_reset_cre END
+	WRITE_ASCII 0x280 ~xacorwo~ #20  	// Script Name
+	WRITE_ASCII 0x2CC ~xacorwo~ #8 		// Dialog
 //}
 
 OUTER_SET bg2_carryover = 1

@@ -21,7 +21,7 @@ IF
 THEN
 	RESPONSE #100
 		StartCutSceneMode()
-		StartCutScene("xaexer")
+		StartCutScene("xacswo")
 END
 //}
 

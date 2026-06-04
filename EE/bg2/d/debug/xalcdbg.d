@@ -806,6 +806,13 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_BG2_CutsceneTest
 		SAY @5025
 		
+		IF ~~ THEN REPLY @5173
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("xacswo")
+		~
+		EXIT
+
 		IF ~~ THEN REPLY @5026
 		DO ~
 			StartCutSceneMode()
