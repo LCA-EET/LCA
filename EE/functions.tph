@@ -433,6 +433,17 @@ DEFINE_PATCH_FUNCTION xa_lcaring_activate_mind
 		WRITE_BYTE 0x924 100
 END
 
+DEFINE_PATCH_FUNCTION xa_remove_cre_equipment
+	BEGIN
+		READ_LONG 0x2B8 xa_index // Item slots offset
+		SET xa_eqRef = (0 - 1)
+		SET xa_endIndex = (xa_index + 0x4A)
+		WHILE(xa_index <= xa_endIndex) BEGIN
+			WRITE_SHORT xa_index xa_eqRef
+			xa_index = (xa_index + 2)
+		END
+END
+
 DEFINE_PATCH_FUNCTION xa_remove_cre_sounds
 	BEGIN
 		SET xa_sound_ref = (0 - 1)

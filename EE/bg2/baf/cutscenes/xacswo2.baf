@@ -1,0 +1,12 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneID("XACORWO")
+        SetSequence(SEQ_AWAKE)
+        Wait(1)
+        FaceObject(Player1)
+        Wait(1)
+        SetGlobal("XA_LC_Workout", "GLOBAL", 3)
+        EndCutSceneMode()
+END

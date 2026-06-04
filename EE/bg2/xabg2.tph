@@ -150,8 +150,8 @@ END
 	//}
 	
 	//{ SoD Track B, Workout Cutscene
-		ADD_MUSIC xamu04	~%MOD_FOLDER%/bg2/mus/xamu04.mus~
-		COPY ~%MOD_FOLDER%/bg2/mus/xamu04a.acm~ ~MUSIC/xamu04/xamu04a.acm~
+		ADD_MUSIC xamu10	~%MOD_FOLDER%/bg2/mus/xamu10.mus~
+		COPY ~%MOD_FOLDER%/bg2/mus/xamu10a.acm~ ~MUSIC/xamu10/xamu10a.acm~
 	//}
 	
 	//{ Corwin Romance A
@@ -345,8 +345,9 @@ END
 			fj_name = ~ExitNull~
 	END
 	COPY_EXISTING ~xabedr.are~ ~override~ // Workout Cutscene
-	WRITE_LONG 0x11C xamu04 // update day song
-	WRITE_LONG 0x120 xamu04 // update night song
+	WRITE_LONG 0x11C xamu10 // update day song
+	WRITE_LONG 0x120 xamu10 // update night song
+	WRITE_ASCII 0x94 ~xabedr~ #8
 	
 	COPY_EXISTING ~xad100.are~ ~override~ // bd0103, Ducal Palace 3 Fl
 	LPF xa_delete_actor_at_index END
@@ -594,6 +595,7 @@ END
 	
 	COPY_EXISTING ~xad109.cre~ ~override/xacorwo.cre~ // bdschael
 	LPF xa_reset_cre END
+	LPF xa_remove_cre_equipment END	
 	WRITE_ASCII 0x280 ~xacorwo~ #20  	// Script Name
 	WRITE_ASCII 0x2CC ~xacorwo~ #8 		// Dialog
 //}

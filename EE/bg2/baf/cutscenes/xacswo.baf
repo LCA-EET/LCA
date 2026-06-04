@@ -3,16 +3,19 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneID(Player1)
+		StorePartyLocations()
 		FadeToColor([20.0],0)
 		Wait(3)
-		SetGlobal("XA_LC_Workout", "GLOBAL", 1)
 		LeaveAreaLUA("XABEDR","",[350.410], NW) 
 		Wait(1)
+		SetGlobal("XA_LC_Workout", "GLOBAL", 1)
 		CreateCreature("XACORWO", [485.515], NW)
 		Wait(1)
 		ActionOverride("XACORWO", SetSequence(SEQ_DIE))
 		SetSequence(SEQ_DIE)
+		Wait(2)
 		FadeFromColor([20.0],0)
 		EndCutSceneMode()
+		Wait(1)
 		ActionOverride("XACORWO", StartDialog("XACORWO", Player1))
 END

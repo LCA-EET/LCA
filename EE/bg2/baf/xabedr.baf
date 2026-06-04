@@ -1,0 +1,30 @@
+IF
+    Global("XA_LC_Workout", "GLOBAL", 1)
+THEN
+    RESPONSE #100
+        ActionOverride("XACORWO", StartDialog("XACORWO", Player1))
+END
+
+IF
+    Global("XA_LC_Workout", "GLOBAL", 2)
+THEN
+    RESPONSE #100
+        StartCutSceneMode()
+        StartCutScene("xacswo2")
+END
+
+IF
+    Global("XA_LC_Workout", "GLOBAL", 3)
+THEN
+    RESPONSE #100
+        ActionOverride("XACORWO", StartDialog("XACORWO", Player1))
+END
+
+IF
+    Global("XA_LC_Workout", "GLOBAL", 4)
+THEN
+    RESPONSE #100
+        SetGlobal("XA_LC_Workout", "GLOBAL", 5)
+        StartCutSceneMode()
+        StartCutScene("xacswo3")
+END

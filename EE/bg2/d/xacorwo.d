@@ -25,7 +25,7 @@ IF ~
 ~ THEN BEGIN XA_WorkOut
 	SAY @1910 /*@1910=~...twenty-seven... twenty-eight... twenty-nine...~~*/
 	
-	COPY_TRANS XACORWIJ XA_ExitWorkout
+	COPY_TRANS XACORWO XA_ExitWorkout
 	
 	IF ~~ THEN REPLY @1912 /* ~*Yawn*... what're you doing?~*/
 	GOTO XA_WorkOut_2
@@ -34,16 +34,25 @@ END
 IF ~~ THEN BEGIN XA_WorkOut_2
 	SAY @1913 /* @1913=~...thirty... what does it *pant* look like... thirty-one... I'm doing?~*/
 	
-	COPY_TRANS XACORWIJ XA_ExitWorkout2
+	COPY_TRANS XACORWO XA_ExitWorkout2
 	
-	IF ~~ THEN REPLY @1918 /* @1918=~How many of those are you planning to do?~*/
-	GOTO XA_WorkOut_3
+	IF ~~ THEN REPLY @1914 /* @1914=~Well, you're on your back, and lifting your knees to your opposite elbows, in sequence.~*/
+	GOTO XA_WorkOut_3A
 END
 
-IF ~~ THEN BEGIN XA_WorkOut_3
+IF ~~ THEN BEGIN XA_WorkOut_3A
+	SAY @1915 /* @1915=~Very good... thirty-six... it's a specialized  *pant* type of... thirty-eight... crunch for improving... thirty-nine... *pant* core strength.~*/
+	
+	COPY_TRANS XACORWO XA_ExitWorkout2
+	
+	IF ~~ THEN REPLY @1918 /* @1918=~How many of those are you planning to do?~*/
+	GOTO XA_WorkOut_3B
+END
+
+IF ~~ THEN BEGIN XA_WorkOut_3B
 	SAY @1919 /* @1919=~One-hundered... forty-seven... forty-eight...~*/
 	
-	COPY_TRANS XACORWIJ XA_ExitWorkout2
+	COPY_TRANS XACORWO XA_ExitWorkout2
 	
 	IF ~~ THEN REPLY @1920 /* @1920=~Is this some sort of daily routine?~*/
 	GOTO XA_WorkOut_4
@@ -52,7 +61,7 @@ END
 IF ~~ THEN BEGIN XA_WorkOut_4
 	SAY @1921 /* @1921=~...not daily... fifty-one... just most days... fifty-two...~*/
 	
-	COPY_TRANS XACORWIJ XA_ExitWorkout2
+	COPY_TRANS XACORWO XA_ExitWorkout2
 	
 	IF ~~ THEN REPLY @1940 /* @1940=~Why this particular exercise?~*/
 	GOTO XA_WorkOut_5
@@ -61,7 +70,7 @@ END
 IF ~~ THEN BEGIN XA_WorkOut_5
 	SAY @1941 /* @1941=~...core stability... fifty-eight... and strength... fifty-nine... are essential for... sixty... an archer's accuracy and... sixty-one... endurance...~~*/
 	
-	COPY_TRANS XACORWIJ XA_ExitWorkout2
+	COPY_TRANS XACORWO XA_ExitWorkout2
 	
 	IF ~~ THEN REPLY @1922 /* @1922=~Sixty-three, seventy-five, ninety-three...~*/
 	GOTO XA_WorkOut_6
@@ -71,7 +80,7 @@ END
 IF ~~ THEN BEGIN XA_WorkOut_6
 	SAY @1923 /* @1923=~Stop *pant* that! ... sixty-three... you're making me lose *pant* count... sixty-four...~*/
 	
-	COPY_TRANS XACORWIJ XA_ExitWorkout2
+	COPY_TRANS XACORWO XA_ExitWorkout2
 	
 	IF ~~ THEN REPLY @1924 /* @1924=~Sorry. Just having a bit of fun.~*/
 	GOTO XA_WorkOut_7
@@ -80,7 +89,7 @@ END
 IF ~~ THEN BEGIN XA_WorkOut_7
 	SAY @1925 /* @1925=~...very... sixty-seven... *pant* ...sixty-eight...~*/
 	
-	COPY_TRANS XACORWIJ XA_ExitWorkout2
+	COPY_TRANS XACORWO XA_ExitWorkout2
 	
 	IF ~~ THEN REPLY @1926 /* @1926=~Wow... you're working up quite the sweat, aren't you?~*/
 	GOTO XA_WorkOut_8
@@ -89,7 +98,7 @@ END
 IF ~~ THEN BEGIN XA_WorkOut_8
 	SAY @1927 /* @1927=~Yes, well... seventy-one... it takes *pant* a lot... seventy-two... of work to maintain... seventy-three... a physique like mine...~*/
 	
-	COPY_TRANS XACORWIJ XA_ExitWorkout2
+	COPY_TRANS XACORWO XA_ExitWorkout2
 	
 	IF ~~ THEN REPLY @1928 /* @1928=~Is it worth the effort?~*/
 	GOTO XA_WorkOut_9
@@ -98,7 +107,7 @@ END
 IF ~~ THEN BEGIN XA_WorkOut_9
 	SAY @1929 /* @1929=~...you *pant*... seventy-nine... tell me... eighty...~*/
 	
-	COPY_TRANS XACORWIJ XA_ExitWorkout2
+	COPY_TRANS XACORWO XA_ExitWorkout2
 	
 	IF ~~ THEN REPLY @1930 /* @1930=~From where I'm sitting, it absolutely is.~*/
 	GOTO XA_WorkOut_10
@@ -107,7 +116,7 @@ END
 IF ~~ THEN BEGIN XA_WorkOut_10
 	SAY @1931 /* ~...good... eighty-four... I worked very hard... eighty-five... for this kind of body...~*/
 	
-	COPY_TRANS XACORWIJ XA_ExitWorkout2
+	COPY_TRANS XACORWO XA_ExitWorkout2
 	
 	IF ~~ THEN REPLY @1932 /* @1932=~Don't you worry about fatigue?~~*/
 	GOTO XA_WorkOut_11
@@ -116,29 +125,38 @@ END
 IF ~~ THEN BEGIN XA_WorkOut_11
 	SAY @1933 /* @1933=~...this helps... ninety-one... me sleep more *pant* soundly... ninety-two... and to push through... ninety-three... when others *pant* would falter... ninety-four.~*/
 	
-	COPY_TRANS XACORWIJ XA_ExitWorkout2
+	COPY_TRANS XACORWO XA_ExitWorkout2
 	
 	IF ~~ THEN REPLY @1934 /* @@1934=~You're almost there... just a couple more.~*/
 	GOTO XA_WorkOut_12
 END
 
 IF ~~ THEN BEGIN XA_WorkOut_12
-	SAY @1935 /* @1935=~...ninety-eight... ninety-nine... *pant*... one-hundred. Whew!~*/
+	SAY @1935 /* @1935=~...ninety-eight... ninety-nine... *pant*... one-hundred.~*/
 	
-	= @1942 /* @1942=~(She lays on the floor for a moment to catch her breath before rising to her feet.)~ */
+	IF ~~ THEN DO
+	~
+		SetGlobal("XA_LC_Workout", "GLOBAL", 2)
+	~
+	EXIT	
+END
+
+IF ~
+	Global("XA_LC_Workout", "GLOBAL", 3)
+~ THEN BEGIN XA_WorkOut_13
+	SAY @1945 /* @1945=~Whew!~ */
 	
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @1936 /* @1936=~Congratulations. Now, will you hop back into bed?~*/
-	GOTO XA_WorkOut_13
+	GOTO XA_WorkOut_13A
 	
 	IF ~
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @1943 /* @1943=~Congratulations. Now, will you finally go to bed?~*/
-	GOTO XA_WorkOut_13
+	GOTO XA_WorkOut_13A
 END
-
-IF ~~ THEN BEGIN XA_WorkOut_13
+IF ~~ THEN BEGIN XA_WorkOut_13A
 	SAY @1937 /* @1937=~Not yet. Push-ups and squats are next. Care to join me?~*/
 	
 	IF ~
@@ -157,8 +175,7 @@ IF ~~ THEN BEGIN XA_WorkOut_End_Romance
 
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_LC_Workout", "GLOBAL", 2)
-		RestParty()
+		SetGlobal("XA_LC_Workout", "GLOBAL", 4)
 	~
 	EXIT
 END
@@ -168,8 +185,7 @@ IF ~~ THEN BEGIN XA_WorkOut_End_NonRomance
 
 	IF ~~ THEN 
 	DO ~
-		SetGlobal("XA_LC_Workout", "GLOBAL", 2)
-		RestParty()
+		SetGlobal("XA_LC_Workout", "GLOBAL", 4)
 	~
 	EXIT
 END

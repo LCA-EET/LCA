@@ -588,6 +588,12 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_BG2_AreaTest
 		SAY @5001
 		
+		IF ~~ THEN REPLY @5072
+		DO ~
+			ActionOverride(Player1, LeaveAreaLUA("XABEDR", "", [400.400], S))
+		~
+		EXIT
+
 		IF ~~ THEN REPLY @5120
 		DO ~
 			ActionOverride(Player1, SetMasterArea("AR2800"))
