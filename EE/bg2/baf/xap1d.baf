@@ -3,6 +3,9 @@ IF
 	Global("XA_LC_Workout", "GLOBALS", 1)
 	InParty("XACORWIN")
 	TriggerOverride("XACORWIN", Global("XA_LC_CanTalkToPlayer", "LOCALS", 1))
+	GlobalLT("XA_LC_CorwinBit", "GLOBAL", 1)
+	!Global("XA_LC_CorwinSex_1", "GLOBAL", 1)
+	!Global("XA_LC_CorwinSex_2", "GLOBAL", 1)
 	OR(14)
 		AreaCheck("AR0313") //Sea Bounty 1FL
 		AreaCheck("AR0314") //Sea Bounty 2FL

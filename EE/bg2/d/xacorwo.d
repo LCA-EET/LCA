@@ -5,7 +5,7 @@ IF ~~ THEN BEGIN XA_ExitWorkout
 	
 	IF ~~ THEN REPLY @1911 /* ~(Go back to sleep.)~*/
 	DO ~
-		SetGlobal("XA_LC_Workout", "GLOBAL", 2)
+		SetGlobal("XA_LC_Workout", "GLOBAL", 4)
 	~
 	EXIT
 END
@@ -15,7 +15,7 @@ IF ~~ THEN BEGIN XA_ExitWorkout2
 	
 	IF ~~ THEN REPLY @1916 /* ~(I'll leave you to it, then.)~*/
 	DO ~
-		SetGlobal("XA_LC_Workout", "GLOBAL", 2)
+		SetGlobal("XA_LC_Workout", "GLOBAL", 4)
 	~
 	EXIT
 END
