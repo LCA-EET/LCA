@@ -40,6 +40,7 @@ END
 	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%/rbg/baf/xabalegg.baf~
 	EXTEND_TOP ~baldur25.bcs~ 	~%MOD_FOLDER%/bg2/baf/xachfight.baf~
 	EXTEND_TOP ~baldur25.bcs~	~%MOD_FOLDER%/tob/baf/xajrntob.baf~
+	EXTEND_TOP ~baldur25.bcs~	~%MOD_FOLDER%/cre_scripts/corwin/xacor022.baf~ // shared journal entries (SoA + ToB)
 	EXTEND_BOTTOM ~baldur25.bcs~	~%MOD_FOLDER%/bg2/baf/xasboost.baf~
 	EXTEND_TOP ~player1d.bcs~ 	~%MOD_FOLDER%/tob/baf/xap1d.baf~
 	

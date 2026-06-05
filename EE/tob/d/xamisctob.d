@@ -555,7 +555,66 @@
 		GOTO XA_SoulTakerFamiliar
 		
 		IF ~
-			PartyHasItem("XABROKEN")
+			PartyHasItem("XABROK00") // Sword
+			OR(4)
+				!PartyHasItem("XABROK01") // Tiara
+				!PartyHasItem("XABROK02") // Mail
+				!PartyHasItem("XABROK03") // Robes
+				!PartyHasItem("XABROK04") // Shield
+		~
+		THEN REPLY @172 /*@172=~Can this broken sword be reforged?~*/
+		GOTO XA_FixCaelarSword
+
+		IF ~
+			PartyHasItem("XABROK01") // Tiara
+			OR(4)
+				!PartyHasItem("XABROK00") // Sword
+				!PartyHasItem("XABROK02") // Mail
+				!PartyHasItem("XABROK03") // Robes
+				!PartyHasItem("XABROK04") // Shield
+		~
+		THEN REPLY @173 /*@173=~Are you able to repair this broken tiara?~*/
+		GOTO XA_FixCaelarTiara
+
+		IF ~
+			PartyHasItem("XABROK02") // Mail
+			OR(4)
+				!PartyHasItem("XABROK00") // Sword
+				!PartyHasItem("XABROK01") // Tiara
+				!PartyHasItem("XABROK03") // Robes
+				!PartyHasItem("XABROK04") // Shield
+		~
+		THEN REPLY @174 /*@174=~This chain mail is in bad shape. Are you able to mend it?~*/
+		GOTO XA_FixCaelarMail
+
+		IF ~
+			PartyHasItem("XABROK03") // Robes
+			OR(4)
+				!PartyHasItem("XABROK00") // Sword
+				!PartyHasItem("XABROK01") // Tiara
+				!PartyHasItem("XABROK02") // Mail
+				!PartyHasItem("XABROK04") // Shield
+		~
+		THEN REPLY @175 /*@175=~This chain mail is in bad shape. Are you able to mend it?~*/
+		GOTO XA_FixCaelarRobes
+
+		IF ~
+			PartyHasItem("XABROK04") // Shield
+			OR(4)
+				!PartyHasItem("XABROK00") // Sword
+				!PartyHasItem("XABROK01") // Tiara
+				!PartyHasItem("XABROK02") // Mail
+				!PartyHasItem("XABROK03") // Robes
+		~
+		THEN REPLY @176 /*@176=~Are you able to do anything about this battered shield?~*/
+		GOTO XA_FixCaelarShield
+
+		IF ~
+			PartyHasItem("XABROK00") // Sword
+			PartyHasItem("XABROK01") // Tiara
+			PartyHasItem("XABROK02") // Mail
+			PartyHasItem("XABROK03") // Robes
+			PartyHasItem("XABROK04") // Shield
 			GlobalLT("XA_LC_AskHowMuch", "LOCALS", 1)
 		~
 		THEN REPLY @26 /*~Take a look at this broken sword and armor. Can they be repaired?~*/
@@ -565,16 +624,28 @@
 		GOTO XA_FixCaelarArmor
 		
 		IF ~
-			PartyHasItem("XABROKEN")
+			PartyHasItem("XABROK00") // Sword
+			PartyHasItem("XABROK01") // Tiara
+			PartyHasItem("XABROK02") // Mail
+			PartyHasItem("XABROK03") // Robes
+			PartyHasItem("XABROK04") // Shield
 			Global("XA_LC_AskHowMuch", "LOCALS", 1)
 			PartyGoldGT(14999)
 		~
 		THEN REPLY @27 /* ~The broken armor and sword we discussed. Here's the gold you need to fix it. (Pay 15,000 gold.)~*/
 		DO ~
-			SetGlobal("XA_LC_ItemMaker","GLOBAL",3)
+			SetGlobal("XA_LC_ItemMaker","GLOBAL",99)
 			TakePartyGold(15000)
-			TakePartyItemNum("XABROKEN", 1)
-			DestroyItem("XABROKEN")
+			TakePartyItemNum("XABROK00", 1)
+			TakePartyItemNum("XABROK01", 1)
+			TakePartyItemNum("XABROK02", 1)
+			TakePartyItemNum("XABROK03", 1)
+			TakePartyItemNum("XABROK04", 1)
+			DestroyItem("XABROK00")
+			DestroyItem("XABROK01")
+			DestroyItem("XABROK02")
+			DestroyItem("XABROK03")
+			DestroyItem("XABROK04")
 		~
 		GOTO 11
 	END
@@ -589,7 +660,106 @@
 		GOTO XA_LC_Eye
 	END
 	
+	APPEND_EARLY BOTSMITH
+		IF ~~ THEN BEGIN XA_CaelarExitTransition
+			SAY @30
+
+			IF ~
+				PartyGoldLT(3000)
+			~ THEN REPLY @41 /* ~I don't have that much gold.~ */
+			GOTO 10
+			
+			IF ~~ THEN REPLY @42 /* ~No. What else?~ */ 
+			GOTO 23
+		END
+	END
+
 	APPEND BOTSMITH
+		IF ~~ THEN BEGIN XA_FixCaelarMail
+			SAY @178 /*@178=~Lets me see... Oof! Torn to shreds this was! Cespenar can fix for 3,000 gold.~*/
+
+			IF ~
+				PartyGoldGT(2999)
+			~ THEN REPLY @180
+			DO ~
+				TakePartyGold(3000)
+				TakePartyItemNum("XABROK02", 1)
+				DestroyItem("XABROK02")
+				SetGlobal("XA_LC_ItemMaker", "GLOBAL", 4)
+			~
+			GOTO 11
+
+			COPY_TRANS BOTSMITH XA_CaelarExitTransition
+		END
+
+		IF ~~ THEN BEGIN XA_FixCaelarSword
+			SAY @179 /*@179=~Oooh! You has all pieces, yes? Cespenar can fix for 3,000 gold.~*/
+
+			IF ~
+				PartyGoldGT(2999)
+			~ THEN REPLY @180
+			DO ~
+				TakePartyGold(3000)
+				TakePartyItemNum("XABROK00", 1)
+				DestroyItem("XABROK00")
+				SetGlobal("XA_LC_ItemMaker", "GLOBAL", 6)
+			~
+			GOTO 11
+
+			COPY_TRANS BOTSMITH XA_CaelarExitTransition
+		END
+
+		IF ~~ THEN BEGIN XA_FixCaelarShield
+			SAY @177 /* @177=~Oooh! Shiny, very shiny! Cespenar can fix, yes, but I needs 3,000 gold.~ */
+
+			IF ~
+				PartyGoldGT(2999)
+			~ THEN REPLY @180
+			DO ~
+				TakePartyGold(3000)
+				TakePartyItemNum("XABROK04", 1)
+				DestroyItem("XABROK04")
+				SetGlobal("XA_LC_ItemMaker", "GLOBAL", 5)
+			~
+			GOTO 11
+
+			COPY_TRANS BOTSMITH XA_CaelarExitTransition
+		END
+
+		IF ~~ THEN BEGIN XA_FixCaelarRobes
+			SAY @181 /*@181=~Ew! Covered in blood of the righteous, this is. Cespenar can stitch back together for 3,000 gold.~*/
+
+			IF ~
+				PartyGoldGT(2999)
+			~ THEN REPLY @180
+			DO ~
+				TakePartyGold(3000)
+				TakePartyItemNum("XABROK03", 1)
+				DestroyItem("XABROK03")
+				SetGlobal("XA_LC_ItemMaker", "GLOBAL", 7)
+			~
+			GOTO 11
+
+			COPY_TRANS BOTSMITH XA_CaelarExitTransition
+		END
+
+		IF ~~ THEN BEGIN XA_FixCaelarTiara
+			SAY @182 /*@182=~Oooh! Cespenar fix pointy shiny for 3,000 gold.~*/
+
+			IF ~
+				PartyGoldGT(2999)
+			~ THEN REPLY @180
+			DO ~
+				TakePartyGold(3000)
+				TakePartyItemNum("XABROK01", 1)
+				DestroyItem("XABROK01")
+				SetGlobal("XA_LC_ItemMaker", "GLOBAL", 3)
+			~
+			GOTO 11
+
+			COPY_TRANS BOTSMITH XA_CaelarExitTransition
+		END
+		
 		IF ~~ THEN BEGIN XA_FixCaelarArmor
 			SAY @28 /*~Ooo let's me see... yuck! These stink like righteousness! Cespenar can fix, yes, but I needs lots and lots of gold... 15,000 gold!~*/
 			
@@ -597,10 +767,18 @@
 				PartyGoldGT(14999)
 			~ THEN REPLY @29 /* ~Here. (Pay 15,000 gold.)~ */
 			DO ~
-				SetGlobal("XA_LC_ItemMaker","GLOBAL",3)
+				SetGlobal("XA_LC_ItemMaker","GLOBAL",99)
 				TakePartyGold(15000)
-				TakePartyItemNum("XABROKEN", 1)
-				DestroyItem("XABROKEN")
+				TakePartyItemNum("XABROK00", 1)
+				TakePartyItemNum("XABROK01", 1)
+				TakePartyItemNum("XABROK02", 1)
+				TakePartyItemNum("XABROK03", 1)
+				TakePartyItemNum("XABROK04", 1)
+				DestroyItem("XABROK00")
+				DestroyItem("XABROK01")
+				DestroyItem("XABROK02")
+				DestroyItem("XABROK03")
+				DestroyItem("XABROK04")
 			~
 			GOTO 11
 			

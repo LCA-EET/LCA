@@ -146,6 +146,16 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @7057
+		DO ~
+			GiveItemCreate("xabrok00", Player1, 0, 0, 0)
+			GiveItemCreate("xabrok01", Player1, 0, 0, 0)
+			GiveItemCreate("xabrok02", Player1, 0, 0, 0)
+			GiveItemCreate("xabrok03", Player1, 0, 0, 0)
+			GiveItemCreate("xabrok04", Player1, 0, 0, 0)
+		~
+		EXIT
+
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_ToB_Debug
 		

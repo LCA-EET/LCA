@@ -98,6 +98,7 @@ END
 	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/bg2/baf/xabalbg2.baf~
 	EXTEND_TOP ~baldur.bcs~ 	~%MOD_FOLDER%/bg2/baf/xachfight.baf~
 	EXTEND_TOP ~baldur.bcs~		~%MOD_FOLDER%/bg2/baf/xajrnbg2.baf~
+	EXTEND_TOP ~baldur.bcs~		~%MOD_FOLDER%/cre_scripts/corwin/xacor022.baf~ // shared journal entries (SoA + ToB)
 	
 	ACTION_IF (isEET = 0) THEN BEGIN
 		EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/bg2/baf/xasdjrnl.baf~ // carryover SoD journal entries

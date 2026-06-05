@@ -26,7 +26,7 @@ APPEND ~XALCDBG~
 			SetGlobal("XA_LC_CorwinContinue", "GLOBAL", 2)
 		~
 		GOTO XA_BG2_Debug
-		
+
 		IF ~~ THEN REPLY @5122
 		DO ~
 			ActionOverride(Player1, SetGlobal("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -348,6 +348,12 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_BG2_AdjustVariables
 		SAY @5083
 		
+		IF ~~ THEN REPLY @5174
+		DO ~
+			SetGlobal("XA_LC_Workout", "GLOBAL", 5)
+		~
+		GOTO XA_BG2_Debug
+
 		IF ~~ THEN REPLY @5172
 		DO ~
 			SetGlobal("XA_LC_Workout", "GLOBALS", 1)

@@ -226,7 +226,6 @@ IF ~~ THEN BEGIN XA_WorkOut_15A_Romance
 		SetGlobalTimer("XA_LC_WorkOutStrengthTimer", "GLOBAL", ONE_MONTH)
 		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
 		SetGlobal("XA_LC_Workout", "GLOBAL", 4)
-		SetGlobal("XA_LC_Journal_Workout", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -234,14 +233,7 @@ END
 IF ~~ THEN BEGIN XA_WorkOut_15A_NonRomance
 	SAY @1950 /* @1950=~Well, let me know when you're ready to start training. For now, get some rest, hero... One... two...~ */
 
-	IF ~~ THEN
-	DO ~
-		SetGlobalTimer("XA_LC_WorkOutStrengthTimer", "GLOBAL", ONE_MONTH)
-		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
-		SetGlobal("XA_LC_Workout", "GLOBAL", 4)
-		SetGlobal("XA_LC_Journal_Workout", "GLOBAL", 2)
-	~
-	EXIT
+	COPY_TRANS XACORWO XA_WorkOut_15A_Romance
 END
 
 IF ~~ THEN BEGIN XA_WorkOut_15B_Romance

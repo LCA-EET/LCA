@@ -1,0 +1,78 @@
+//{ First Entry 
+    //{ Romance
+        IF
+            InParty("XACORWIN")
+            Global("XA_LC_Workout", "GLOBAL", 5)
+            GlobalLT("XA_LC_Journal_Workout", "GLOBAL", 1)
+            Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+        THEN
+            RESPONSE #100
+                SetGlobal("XA_LC_Journal_Workout", "GLOBAL", 1)
+                SetGlobalTimer("XA_LC_WorkOutStrengthTimer", "GLOBAL", ONE_MONTH)
+                AddJournalEntry(@0, INFO) 
+                Continue()
+        END
+    //}
+
+    //{ Non-Romance
+        IF
+            InParty("XACORWIN")
+            Global("XA_LC_Workout", "GLOBAL", 5)
+            GlobalLT("XA_LC_Journal_Workout", "GLOBAL", 1)
+            !Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+        THEN
+            RESPONSE #100
+                SetGlobal("XA_LC_Journal_Workout", "GLOBAL", 2)
+                SetGlobalTimer("XA_LC_WorkOutStrengthTimer", "GLOBAL", ONE_MONTH)
+                AddJournalEntry(@1, INFO) 
+                Continue()
+        END
+    //}
+//}
+
+//{ Second Entry
+    //{ Experience Boost Romance
+        IF
+            InParty("XACORWIN")
+            GlobalTimerExpired("XA_LC_WorkOutStrengthTimer", "GLOBAL")
+            GlobalLT("XA_LC_WorkoutStrengthBoost", "GLOBAL", 1)
+            Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+        THEN
+            RESPONSE #100
+                SetGlobal("XA_LC_WorkoutStrengthBoost", "GLOBAL", 1)
+                AddJournalEntry(@2, INFO)
+                AddXPObject(Player1,10000)
+                Continue()
+        END
+    //} 
+
+    
+    //{ Experience Boost Non-Romance
+        IF
+            InParty("XACORWIN")
+            GlobalTimerExpired("XA_LC_WorkOutStrengthTimer", "GLOBAL")
+            GlobalLT("XA_LC_WorkoutStrengthBoost", "GLOBAL", 1)
+            !Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+        THEN
+            RESPONSE #100
+                SetGlobal("XA_LC_WorkoutStrengthBoost", "GLOBAL", 1)
+                AddJournalEntry(@3, INFO)
+                AddXPObject(Player1,10000)
+                Continue()
+        END
+    //}
+
+    //{ Strength Boost 
+        IF
+            InParty("XACORWIN")
+            GlobalTimerExpired("XA_LC_WorkOutStrengthTimer", "GLOBAL")
+            GlobalLT("XA_LC_WorkoutStrengthBoost", "GLOBAL", 1)
+            CheckStatLT(Player1, 18, STR)
+        THEN
+            RESPONSE #100
+                ChangeStat(Player1, STR, 1, ADD)
+                Continue()
+        END
+    //}
+//}
+
