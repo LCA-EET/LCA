@@ -660,6 +660,47 @@ END
 		WRITE_BYTE 0x1DC 24 // Set entangle chance to 24%
 	//}
 	
+	//{ Aster's Edge Broken
+		COPY_EXISTING ~misc59.itm~ ~override/xabrok00.itm~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@5041) // Title
+		WRITE_LONG 0xC RESOLVE_STR_REF(@5041)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@5036) // Desc
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@5036)
+	//}
+
+	//{ Tiara Broken
+		COPY_EXISTING ~misc59.itm~ ~override/xabrok01.itm~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@5042) // Title
+		WRITE_LONG 0xC RESOLVE_STR_REF(@5042)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@5037) // Desc
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@5037)
+	//}
+
+	//{ Mail Broken
+		COPY_EXISTING ~misc59.itm~ ~override/xabrok02.itm~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@5044) // Title
+		WRITE_LONG 0xC RESOLVE_STR_REF(@5044)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@5039) // Desc
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@5039)
+	//}
+
+	//{ Robes Broken
+		COPY_EXISTING ~misc59.itm~ ~override/xabrok03.itm~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@5040) // Title
+		WRITE_LONG 0xC RESOLVE_STR_REF(@5040)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@5035) // Desc
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@5035)
+	//}
+
+	//{ Shield Broken
+		COPY_EXISTING ~misc59.itm~ ~override/xabrok04.itm~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@5043) // Title
+		WRITE_LONG 0xC RESOLVE_STR_REF(@5043)
+		WRITE_LONG 0x50 RESOLVE_STR_REF(@5038) // Desc
+		WRITE_LONG 0x54 RESOLVE_STR_REF(@5038)
+	//}
+
+	/*
 	//{ Shattered Gear 
 		COPY_EXISTING ~misc59.itm~ ~override/xabroken.itm~
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@5017)
@@ -667,7 +708,7 @@ END
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@5018)
 		WRITE_LONG 0x54 RESOLVE_STR_REF(@5018)
 	//}
-	
+	*/
 	//{ Soultaker Dagger (Demon)
 		COPY_EXISTING ~dagg10.itm~ ~override/xastdagd.itm~
 		WRITE_LONG 0x50 RESOLVE_STR_REF(@5019)
