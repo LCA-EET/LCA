@@ -168,6 +168,10 @@ IF ~~ THEN BEGIN XA_WorkOut_13A
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @1938 /* ~I'll pass. Back to bed for me.~*/
 	GOTO XA_WorkOut_End_NonRomance
+
+	IF ~~ THEN REPLY @1946 /*@1946=~Another time, perhaps. I'm not sure that I'd be able to keep up with you.~*/
+	GOTO XA_WorkOut_14
+
 END
 
 IF ~~ THEN BEGIN XA_WorkOut_End_Romance
@@ -188,4 +192,66 @@ IF ~~ THEN BEGIN XA_WorkOut_End_NonRomance
 		SetGlobal("XA_LC_Workout", "GLOBAL", 4)
 	~
 	EXIT
+END
+
+IF ~~ THEN BEGIN XA_WorkOut_14
+	SAY @1947 /*@1947=~With enough time and discipline, you could. I imagine it would be easier for you than it was for me, given your divine blood.~*/
+
+	IF ~
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1948 /*@1948=~Maybe you're right...~*/
+	GOTO XA_WorkOut_15A_Romance
+
+	IF ~
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1949 /*~Discipline, unfortunately, is something that I tend to lack.~*/
+	GOTO XA_WorkOut_15B_Romance
+
+	IF ~
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1948 /*@1948=~Maybe you're right...~*/
+	GOTO XA_WorkOut_15A_NonRomance
+
+	IF ~
+		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+	~ THEN REPLY @1949 /*~Discipline, unfortunately, is something that I tend to lack.~*/
+	GOTO XA_WorkOut_15B_NonRomance
+END
+
+IF ~~ THEN BEGIN XA_WorkOut_15A_Romance
+	SAY @1951 /* =~Well, let me know when you're ready to start training. For now, get some rest, dear... One... two...~ */
+
+	IF ~~ THEN
+	DO ~
+		SetGlobalTimer("XA_LC_WorkOutStrengthTimer", "GLOBAL", ONE_MONTH)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC_Workout", "GLOBAL", 4)
+		SetGlobal("XA_LC_Journal_Workout", "GLOBAL", 1)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_WorkOut_15A_NonRomance
+	SAY @1950 /* @1950=~Well, let me know when you're ready to start training. For now, get some rest, hero... One... two...~ */
+
+	IF ~~ THEN
+	DO ~
+		SetGlobalTimer("XA_LC_WorkOutStrengthTimer", "GLOBAL", ONE_MONTH)
+		IncrementGlobal("XA_LC_CorwinOpinionOfPlayer", "GLOBAL", 1)
+		SetGlobal("XA_LC_Workout", "GLOBAL", 4)
+		SetGlobal("XA_LC_Journal_Workout", "GLOBAL", 2)
+	~
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_WorkOut_15B_Romance
+	SAY @1953 /*@1953=~I've noticed. Get some rest, love... One... two... three...~*/
+
+	COPY_TRANS XACORWO XA_WorkOut_End_NonRomance
+END
+
+IF ~~ THEN BEGIN XA_WorkOut_15B_NonRomance
+	SAY @1952 /*@1952=~I've noticed. Get some rest, hero... One... two... three...~*/
+
+	COPY_TRANS XACORWO XA_WorkOut_End_NonRomance
 END
