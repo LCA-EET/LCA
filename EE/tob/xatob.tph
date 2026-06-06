@@ -291,10 +291,55 @@ END
 		COPY_EXISTING ~xaavc13.cre~ ~override~
 		WRITE_ASCII 0x268 ~xaerin~ #8
 		
-		COPY_EXISTING ~xanarzu.cre~ ~override/xanarzu2.cre~
+		COPY_EXISTING ~xanarzu.cre~ ~override/xanarzus.cre~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@5045)
+		WRITE_LONG 0xC RESOLVE_STR_REF(@5045)
+		WRITE_LONG 0x14 20000
+		REMOVE_CRE_ITEM ~MINHP1~ ~XASWORD~ ~XAMSRING~ ~XAQUIVER~
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~~
+				xa_scriptName = ~~
+				xa_override = ~xanarzus~
+				xa_default = ~~
+		END
+
+		COPY_EXISTING ~xanarzus.cre~ ~override/xanarzus.cre~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@5045)
+		WRITE_LONG 0xC RESOLVE_STR_REF(@5045)
+		WRITE_LONG 0x14 20000
+		REMOVE_CRE_ITEM ~MINHP1~ ~XASWORD~ ~XAMSRING~ ~XAQUIVER~
+		LPF xa_reset_cre
+			STR_VAR
+				xa_dialog = ~~
+				xa_scriptName = ~~
+				xa_override = ~xanarzus~
+				xa_default = ~~
+		END
+
+		COPY_EXISTING ~xanarzus.cre~ ~override/xanarzu6.cre~
+		WRITE_ASCII 0x280 ~xanarzu6~ #20
+		ADD_CRE_ITEM ~xabrok00~ #0 #0 #0 ~identified&unstealable~ ~INV1~
+
+		COPY_EXISTING ~xanarzus.cre~ ~override/xanarzu5.cre~
+		WRITE_ASCII 0x280 ~xanarzu5~ #20
+		ADD_CRE_ITEM ~xabrok01~ #0 #0 #0 ~identified&unstealable~ ~INV1~
+
+		COPY_EXISTING ~xanarzus.cre~ ~override/xanarzu4.cre~
+		WRITE_ASCII 0x280 ~xanarzu4~ #20
+		ADD_CRE_ITEM ~xabrok02~ #0 #0 #0 ~identified&unstealable~ ~INV1~
+
+		COPY_EXISTING ~xanarzus.cre~ ~override/xanarzu3.cre~
+		WRITE_ASCII 0x280 ~xanarzu3~ #20
+		ADD_CRE_ITEM ~xabrok03~ #0 #0 #0 ~identified&unstealable~ ~INV1~
+
+		COPY_EXISTING ~xanarzus.cre~ ~override/xanarzu2.cre~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@4050)
+		WRITE_LONG 0xC RESOLVE_STR_REF(@4050)
 		WRITE_LONG 0x14 36000 // Exp
 		WRITE_SHORT 0x24 444 // HP
 		WRITE_SHORT 0x26 444 // HP
+		ADD_CRE_ITEM ~xabrok04~ #0 #0 #0 ~identified&unstealable~ ~INV1~
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xanarzu~
@@ -302,7 +347,7 @@ END
 				xa_override = ~xaavboss~
 				xa_default = ~xanarzu~
 		END
-	
+
 	//{ Bence Duncan
 		COPY_EXISTING ~xabence.cre~ ~override/xabence2.cre~ 
 		LPF xa_reset_cre
