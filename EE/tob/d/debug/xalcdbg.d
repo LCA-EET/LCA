@@ -309,6 +309,12 @@ APPEND ~XALCDBG~
 
 		IF ~~ THEN REPLY @7058 /* ~XAG101 Tower Rooftop~ */
 		DO ~
+			SetGlobal("XA_LC_CaelarRescue", "GLOBAL", 0)
+			SetGlobal("XA_LC_Hostile4700", "GLOBAL", 0)
+			SetGlobal("XA_LC_AVBossFled", "GLOBAL", 0)
+			SetGlobal("XA_LC_SimulacraKilled", "GLOBAL", 0)
+			SetGlobal("XA_LC_BossPortal", "XAG101", 0)
+			SetGlobal("XA_LC_Return5300", "XAG101", 0)
 			StartCutSceneMode()
 			StartCutScene("XAGO4700")
 		~
