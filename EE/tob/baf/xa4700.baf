@@ -1,3 +1,22 @@
+//{ Collapse Timer
+IF
+	GlobalLT("XA_LC_CollapseTimerSet", "MYAREA", 1)
+	GlobalGT("XA_LC_AVBossFled", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_CollapseTimerSet", "MYAREA", 1)
+		SetGlobalTimer("XA_LC_CollapseTimer", "MYAREA", FIVE_ROUNDS)
+END
+
+IF
+	Global("XA_LC_CollapseTimerSet", "MYAREA", 0)
+	GlobalTimerExpired("XA_LC_CollapseTimer", "MYAREA")
+THEN
+	RESPONSE #100
+		GameOver(103098)
+END
+//}
+
 //{ Screenshake On Simulacrum death
 IF
 	Global("XA_LC_ScreenShakeTower", "MYAREA", 1)
@@ -25,16 +44,6 @@ END
 	END
 //}
 
-//{ Portal In
-	IF
-		Global("XA_LC_Hostile4700", "GLOBAL", 1)
-	THEN
-		RESPONSE #100
-			StartCutSceneMode()
-			StartCutScene("xaavport")
-	END
-//}
-
 //{ Final Battle
 	IF 
 		GlobalGT("XA_LC_SimulacraKilled", "GLOBAL", 4)
@@ -56,7 +65,9 @@ END
 			SetGlobal("XA_LC_AVBossFled", "GLOBAL", 1)
 			DisplayStringHead("xaavboss", @1) /*~Impressive. But this is not the end, <CHARNAME>. I'll find a way back to the Prime Material Plane, and when I do...~ */
 			AddexperienceParty(75000)
-			Wait(3)
+			Wait(2)
+			ScreenShake([1275.905],300)
+			Wait(1)
 			ForceSpellRES("xag100","xaavboss")  // Teleport Without Error bdtelaw
 			SetInterrupt(TRUE)
 	END

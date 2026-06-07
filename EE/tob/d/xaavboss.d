@@ -91,7 +91,8 @@ IF ~~ THEN BEGIN XA_Fight
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_LC_Hostile4700", "GLOBAL", 1)
-		Enemy()
+		StartCutSceneMode()
+		StartCutScene("xaavport")
 	~
 	EXIT
 END
