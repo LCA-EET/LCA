@@ -196,6 +196,13 @@ END
 //}
 
 //{ New Creatures
+
+	//{ BT Spy
+		COPY_EXISTING ~xalcspy.cre~ ~override/xabtspy.cre~
+		WRITE_LONG 0x8 RESOLVE_STR_REF(@5046)
+		WRITE_LONG 0xC RESOLVE_STR_REF(@5046)
+		WRITE_ASCII ~xabtspy~ 0x280 #20
+	//}
 	//{ Aun Argent
 		COPY_EXISTING ~xag100.cre~ ~override/xaaun.cre~ 
 		LPF xa_reset_cre
