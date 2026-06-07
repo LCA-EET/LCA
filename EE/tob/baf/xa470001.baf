@@ -16,6 +16,5 @@ THEN
 		ActionOverride(Player6, FaceObject("XAAVBOSS"))
 		Wait(1)
 		ActionOverride("XAAVBOSS", StartDialog("XAAVBOSS", Player1))
-		
 		EndCutSceneMode()
 END

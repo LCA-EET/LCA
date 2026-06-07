@@ -1,15 +1,18 @@
 IF
 	Global("XA_LC_Hostile4700", "GLOBAL", 1)
-	GlobalLT("XA_LC_IncubusBuff", "LOCALS", 1)
+	OR(2)
+		GlobalLT("XA_LC_NarzuBuff", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_BuffTimer", "LOCALS")
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_IncubusBuff", "LOCALS", 1)
+		SetGlobal("XA_LC_NarzuBuff", "LOCALS", 1)
 		ClearActions(Myself)
 		ReallyForceSpell(Myself, WIZARD_GLOBE_OF_INVULNERABILITY)
 		ReallyForceSpell(Myself, WIZARD_MIRROR_IMAGE)
 		ReallyForceSpell(Myself, WIZARD_STONE_SKIN)
-		ReallyForceSpell(Myself, WIZARD_SHIELD)		
+		ReallyForceSpell(Myself, WIZARD_SHIELD)
+		SetGlobalTimer("XA_LC_BuffTimer", "LOCALS", TEN_ROUNDS)		
 		SetInterrupt(TRUE)
 		Continue()
 END
@@ -20,12 +23,12 @@ IF
 	See(NearestEnemyOfType([0.0.0.0.0.SUMMONED]))
 	Range(LastSeenBy(Myself),15)
 	LevelLT(LastSeenBy(Myself),10)
-	!GlobalTimerNotExpired("XA_LC_IncubusDeath","LOCALS")
+	!GlobalTimerNotExpired("XA_LC_NarzuDeath","LOCALS")
 	RandomNum(2,1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobalTimer("XA_LC_IncubusDeath","LOCALS",TWO_ROUNDS)
+		SetGlobalTimer("XA_LC_NarzuDeath","LOCALS",TWO_ROUNDS)
 		ForceSpell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)  // SPWI605.SPL (Death Spell)
 		SetInterrupt(TRUE)
 END
@@ -34,11 +37,11 @@ IF
 	See(NearestEnemyOf(Myself))
 	Range(LastSeenBy(Myself),10)
 	CheckStat(Myself,0,STONESKINS)
-	!GlobalTimerNotExpired("XA_LC_IncubusStone","LOCALS")
+	!GlobalTimerNotExpired("XA_LC_NarzuStone","LOCALS")
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobalTimer("XA_LC_IncubusStone","LOCALS",TWO_MINUTES)
+		SetGlobalTimer("XA_LC_NarzuStone","LOCALS",TWO_MINUTES)
 		ForceSpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
 		SetInterrupt(TRUE)
 END

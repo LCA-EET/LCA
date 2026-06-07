@@ -1,3 +1,16 @@
+//{ Screenshake On Simulacrum death
+IF
+	Global("XA_LC_ScreenShakeTower", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("XA_LC_ScreenShakeTower", "MYAREA", 0)
+		ScreenShake([1275.905],15)
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+//}
 //{ Remove Pocket Plane Ability - Avernus Tower
 	IF
 		GlobalLT("XA_LC_AVBossFled", "GLOBAL", 1)
@@ -12,20 +25,41 @@
 	END
 //}
 
+//{ Portal In
+	IF
+		Global("XA_LC_Hostile4700", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			StartCutSceneMode()
+			StartCutScene("xaavport")
+	END
+//}
+
+//{ Final Battle
+	IF 
+		GlobalGT("XA_LC_SimulacraKilled", "GLOBAL", 4)
+		GlobalLT("XA_LC_BossPortal", "MYAREA", 1)
+	THEN
+		RESPONSE #100
+			StartCutSceneMode()
+			StartCutScene("xaavfbat")
+	END
+//}
+
 //{ Narzugon flee
-IF
-	HPPercentLT("xaavboss", 21)
-	GlobalLT("XA_LC_AVBossFled", "GLOBAL", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_AVBossFled", "GLOBAL", 1)
-		DisplayStringHead("xaavboss", @1) /*~Impressive. But this is not the end, <CHARNAME>. I'll find a way back to the Prime Material Plane, and when I do...~ */
-		AddexperienceParty(75000)
-		Wait(3)
-		ForceSpellRES("xag100","xaavboss")  // Teleport Without Error bdtelaw
-		SetInterrupt(TRUE)
-END
+	IF
+		HPPercentLT("xaavboss", 21)
+		GlobalLT("XA_LC_AVBossFled", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_AVBossFled", "GLOBAL", 1)
+			DisplayStringHead("xaavboss", @1) /*~Impressive. But this is not the end, <CHARNAME>. I'll find a way back to the Prime Material Plane, and when I do...~ */
+			AddexperienceParty(75000)
+			Wait(3)
+			ForceSpellRES("xag100","xaavboss")  // Teleport Without Error bdtelaw
+			SetInterrupt(TRUE)
+	END
 //}
 
 IF
@@ -54,7 +88,8 @@ THEN
 END
 
 IF
-	Global("XA_LC_Hostile4700", "GLOBAL", 1)
+	GlobalGT("XA_LC_Hostile4700", "GLOBAL", 0)
+	GlobalGT("XA_LC_SimulacraKilled", "GLOBAL", 4)
 	GlobalLT("XA_LC_AVBossFled", "GLOBAL", 1)
 	GlobalLT("XA_LC_4700_Adds", "MYAREA", 4)
 THEN

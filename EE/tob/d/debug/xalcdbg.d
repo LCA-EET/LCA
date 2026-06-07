@@ -306,6 +306,13 @@ APPEND ~XALCDBG~
 			ActionOverride(Player1, LeaveAreaLUA("XAG100", "", [665.325], S))
 		~
 		EXIT
+
+		IF ~~ THEN REPLY @7058 /* ~XAG101 Tower Rooftop~ */
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XAGO4700")
+		~
+		EXIT
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_ToB_Debug

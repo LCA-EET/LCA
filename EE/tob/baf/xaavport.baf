@@ -1,0 +1,26 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneID(Player1)
+        ForceSpellRES("xag100","xaavboss")
+        CreateVisualEffect("SPPORTAL",[1280.900])
+        CreateVisualEffect("SPPORTAL",[1300.530])
+        CreateVisualEffect("SPPORTAL",[1800.910])
+        CreateVisualEffect("SPPORTAL",[1620.500])
+        CreateVisualEffect("SPPORTAL",[1820.635])
+        Wait(2)
+        CreateCreature("XANARZU3", [1280.900], NE)
+        CreateCreature("XANARZU4", [1300.530], SE)
+        CreateCreature("XANARZU5", [1800.910], NW)
+        CreateCreature("XANARZU6", [1620.500], SW)
+        CreateCreature("XANARZU7", [1820.635], SW)
+        Wait(1)
+        ActionOverride("XANARZU3", Enemy())
+        ActionOverride("XANARZU4", Enemy())
+        ActionOverride("XANARZU5", Enemy())
+        ActionOverride("XANARZU6", Enemy())
+        ActionOverride("XANARZU7", Enemy())
+        SetGlobal("XA_LC_Hostile4700", "GLOBAL", 2)
+        EndCutSceneMode()
+END

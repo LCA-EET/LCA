@@ -317,21 +317,25 @@ END
 				xa_default = ~~
 		END
 
+		COPY_EXISTING ~xanarzus.cre~ ~override/xanarzu7.cre~
+		WRITE_ASCII 0x280 ~xanarzu7~ #20
+		ADD_CRE_ITEM ~xabrok00~ #0 #0 #0 ~identified&unstealable~ ~INV1~
+
 		COPY_EXISTING ~xanarzus.cre~ ~override/xanarzu6.cre~
 		WRITE_ASCII 0x280 ~xanarzu6~ #20
-		ADD_CRE_ITEM ~xabrok00~ #0 #0 #0 ~identified&unstealable~ ~INV1~
+		ADD_CRE_ITEM ~xabrok01~ #0 #0 #0 ~identified&unstealable~ ~INV1~
 
 		COPY_EXISTING ~xanarzus.cre~ ~override/xanarzu5.cre~
 		WRITE_ASCII 0x280 ~xanarzu5~ #20
-		ADD_CRE_ITEM ~xabrok01~ #0 #0 #0 ~identified&unstealable~ ~INV1~
+		ADD_CRE_ITEM ~xabrok02~ #0 #0 #0 ~identified&unstealable~ ~INV1~
 
 		COPY_EXISTING ~xanarzus.cre~ ~override/xanarzu4.cre~
 		WRITE_ASCII 0x280 ~xanarzu4~ #20
-		ADD_CRE_ITEM ~xabrok02~ #0 #0 #0 ~identified&unstealable~ ~INV1~
+		ADD_CRE_ITEM ~xabrok03~ #0 #0 #0 ~identified&unstealable~ ~INV1~
 
 		COPY_EXISTING ~xanarzus.cre~ ~override/xanarzu3.cre~
 		WRITE_ASCII 0x280 ~xanarzu3~ #20
-		ADD_CRE_ITEM ~xabrok03~ #0 #0 #0 ~identified&unstealable~ ~INV1~
+		ADD_CRE_ITEM ~xabrok04~ #0 #0 #0 ~identified&unstealable~ ~INV1~
 
 		COPY_EXISTING ~xanarzus.cre~ ~override/xanarzu2.cre~
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@4050)
@@ -384,6 +388,8 @@ END
 	//}
 	
 	//{ Caelar
+		COPY ~%MOD_FOLDER%/tob/bmp~ ~override~
+
 		//{ Change spell string refs
 			COPY_EXISTING ~xac106.spl~ ~override~ // Bless
 			WRITE_LONG 0xCE 17408 // Blessed
@@ -392,8 +398,9 @@ END
 			WRITE_LONG 0xFE 14022 // Healed
 		//}
 		COPY_EXISTING ~xac109.cre~ ~override/xacaelar.cre~ 
+		WRITE_ASCII 0x34 ~xacael2s~ #8
+		WRITE_ASCII 0x3c ~xacael2l~ #8
 		REMOVE_CRE_ITEMS
-		ADD_CRE_ITEM ~xabroken~ #0 #0 #0 ~IDENTIFIED~ ~INV1~
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xacaelar~

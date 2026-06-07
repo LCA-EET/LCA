@@ -1,0 +1,14 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneID(Player1)
+        CreateVisualEffect("SPPORTAL",[1266.897])
+        Wait(2)
+        CreateCreature("XANARZU2", [1266.897], NE)
+        Wait(1)
+        ActionOverride("xaavboss", FaceObject(Player1))
+        ActionOverride("xaavboss", Enemy())
+        SetGlobal("XA_LC_BossPortal", "MYAREA", 1)
+        EndCutSceneMode()
+END
