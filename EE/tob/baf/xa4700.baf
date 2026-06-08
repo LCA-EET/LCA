@@ -7,6 +7,51 @@ THEN
 		SetGlobal("XA_LC_TowerCollapseCorwin", "MYAREA", 1)
 		DisplayStringHead("XACORWIN", @4)
 END
+
+IF
+	!Name(Player2, "XACORWIN")
+	GlobalLT("XA_LT_TowerCollapseP2", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LT_TowerCollapseP2", "MYAREA", 1)
+		DisplayStringHead(Player2, @3)
+END
+
+IF
+	!Name(Player3, "XACORWIN")
+	GlobalLT("XA_LT_TowerCollapseP3", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LT_TowerCollapseP3", "MYAREA", 1)
+		DisplayStringHead(Player3, @5)
+END
+
+IF
+	!Name(Player4, "XACORWIN")
+	GlobalLT("XA_LT_TowerCollapseP4", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LT_TowerCollapseP4", "MYAREA", 1)
+		DisplayStringHead(Player4, @6)
+END
+
+IF
+	!Name(Player5, "XACORWIN")
+	GlobalLT("XA_LT_TowerCollapseP5", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LT_TowerCollapseP5", "MYAREA", 1)
+		DisplayStringHead(Player5, @7)
+END
+
+IF
+	!Name(Player6, "XACORWIN")
+	GlobalLT("XA_LT_TowerCollapseP6", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LT_TowerCollapseP6", "MYAREA", 1)
+		DisplayStringHead(Player6, @8)
+END
 //}
 
 //{ Collapse Timer
