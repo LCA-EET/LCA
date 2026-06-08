@@ -1,3 +1,14 @@
+//{ Collapse Messaging
+IF
+	InParty("XACORWIN")
+	GlobalLT("XA_LC_TowerCollapseCorwin", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_TowerCollapseCorwin", "MYAREA", 1)
+		DisplayStringHead("XACORWIN", @4)
+END
+//}
+
 //{ Collapse Timer
 IF
 	GlobalLT("XA_LC_CollapseTimerSet", "MYAREA", 1)
