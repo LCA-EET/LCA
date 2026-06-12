@@ -1,0 +1,62 @@
+IF
+    Global("XA_LC_CaelarRestored", "GLOBAL", 1)
+    GlobalLT("XA_LC_AbilitiesAdded", "LOCALS", 1)
+THEN
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("XA_LC_AbilitiesAdded", "LOCALS", 1)
+        AddSpecialAbility("xamartyr")
+        AddSpecialAbility("xapiety")
+        SetInterrupt(TRUE)
+        Continue()
+END
+
+//{ Martyrdom
+    IF
+        Global("XA_LC_AbilitiesAdded", "LOCALS", 1)
+        Global("xalc0000", "LOCALS", 1)
+    THEN
+        RESPONSE #100
+            SetInterrupt(FALSE)
+            SetGlobalTimer("XA_LC_MartyrdomTimer", "LOCALS", EIGHT_HOURS)
+            SetGlobal("xalc0000", "LOCALS", 0)
+            SetInterrupt(TRUE)
+            Continue()
+    END
+
+    IF
+        Global("XA_LC_AbilitiesAdded", "LOCALS", 1)
+        GlobalTimerExpired("XA_LC_MartyrdomTimer", "LOCALS")
+        Global("xalc0000", "LOCALS", 0)
+        !HaveSpellRES("xamartyr")
+    THEN
+        RESPONSE #100
+            AddSpecialAbility("xamartyr")
+            Continue()
+    END
+//}
+
+//{ Piety
+    IF
+        Global("XA_LC_AbilitiesAdded", "LOCALS", 1)
+        Global("xalc0001", "LOCALS", 1)
+    THEN
+        RESPONSE #100
+            SetInterrupt(FALSE) 
+            SetGlobalTimer("XA_LC_PietyTimer", "LOCALS", FOUR_HOURS)
+            SetGlobal("xalc0001", "LOCALS", 0)
+            SetInterrupt(TRUE)
+            Continue()
+    END
+
+    IF
+        Global("XA_LC_AbilitiesAdded", "LOCALS", 1)
+        GlobalTimerExpired("XA_LC_PietyTimer", "LOCALS")
+        Global("xalc0001", "LOCALS", 0)
+        !HaveSpellRES("xapiety")
+    THEN
+        RESPONSE #100
+            AddSpecialAbility("xapiety")
+            Continue()
+    END
+//}

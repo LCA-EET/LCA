@@ -27,10 +27,11 @@
 
 	IF
 		Global("XA_LC_RestoreTimerSet", "LOCALS", 1)
+		GlobalLT("XA_LC_CaelarRestored", "GLOBAL", 1)
 		GlobalTimerExpired("XA_LC_RestoreTimer", "LOCALS")
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_LC_RestoreTimerSet", "LOCALS", 2)
+			SetGlobal("XA_LC_CaelarRestored", "GLOBAL", 1)
 			ChangeAlignment(Myself, NEUTRAL_GOOD)
 			ApplySpellRES(Myself, "XACHNG03")
 			Continue()
