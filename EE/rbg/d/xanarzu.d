@@ -31,15 +31,9 @@ IF ~~ THEN BEGIN XA_LastChance
 	
 	IF ~
 		PartyHasItem("AMUL27")
-		Gender(Player1, MALE)
 	~ THEN REPLY @13 /* Here, take it.~ */
-	GOTO XA_GiveAmuletToDemon_M
+	GOTO XA_GiveAmuletToDemon
 	
-	IF ~
-		PartyHasItem("AMUL27")
-		Gender(Player1, FEMALE)
-	~ THEN REPLY @13 /* Here, take it.~ */
-	GOTO XA_GiveAmuletToDemon_F
 	
 	IF ~~ THEN REPLY @86 /* Never! */
 	GOTO XA_ConfrontDemon3
@@ -109,76 +103,36 @@ IF ~
 	SAY @54 /* ~So? What've you decided?~ */
 	
 	IF ~
-		Gender(Player1,MALE)
 		PartyHasItem("AMUL27")
 	~ THEN REPLY @55 /*~The amulet, and our freedom, in exchange for the sword.~*/
 	DO ~
 		SetGlobal("XA_LC_IncubusSword", "GLOBAL", 1)
 	~
-	GOTO XA_GiveAmuletToDemon_M
+	GOTO XA_GiveAmuletToDemon
 	
 	IF ~
-		Gender(Player1,FEMALE)
-		PartyHasItem("AMUL27")
-	~ THEN REPLY @55 /* ~The amulet, and our freedom, in exchange for the sword.~*/
-	DO ~
-		SetGlobal("XA_LC_IncubusSword", "GLOBAL", 1)
-	~
-	GOTO XA_GiveAmuletToDemon_F
-	
-	IF ~
-		Gender(Player1,MALE)
 		PartyHasItem("AMUL27")
 	~ THEN REPLY @89 /*~The amulet, and our freedom, in exchange for the quiver.~*/
 	DO ~
 		SetGlobal("XA_LC_IncubusQuiver", "GLOBAL", 1)
 	~
-	GOTO XA_GiveAmuletToDemon_M
+	GOTO XA_GiveAmuletToDemon
 	
 	IF ~
-		Gender(Player1,FEMALE)
-		PartyHasItem("AMUL27")
-	~ THEN REPLY @89 /*~The amulet, and our freedom, in exchange for the quiver.~*/
-	DO ~
-		SetGlobal("XA_LC_IncubusQuiver", "GLOBAL", 1)
-	~
-	GOTO XA_GiveAmuletToDemon_F
-	
-	IF ~
-		Gender(Player1, MALE)
 		PartyHasItem("AMUL27")
 	~ THEN REPLY @56 /* ~The amulet, and our freedom, in exchange for the hen.~*/
 	DO ~
 		SetGlobal("XA_LC_IncubusGoose", "GLOBAL", 1)
 	~
-	GOTO XA_GiveAmuletToDemon_M
+	GOTO XA_GiveAmuletToDemon
 	
 	IF ~
-		Gender(Player1, FEMALE)
-		PartyHasItem("AMUL27")
-	~ THEN REPLY @56 /* ~The amulet, and our freedom, in exchange for the ring.~ */
-	DO ~
-		SetGlobal("XA_LC_IncubusGoose", "GLOBAL", 1)
-	~
-	GOTO XA_GiveAmuletToDemon_F
-	
-	IF ~
-		Gender(Player1, MALE)
 		PartyHasItem("AMUL27")
 	~ THEN REPLY @57 /* ~The amulet, and our freedom, in exchange for the ring.~ */
 	DO ~
 		SetGlobal("XA_LC_IncubusRing", "GLOBAL", 1)
 	~
-	GOTO XA_GiveAmuletToDemon_M
-	
-	IF ~
-		Gender(Player1, FEMALE)
-		PartyHasItem("AMUL27")
-	~ THEN REPLY @57 /* ~The amulet, and our freedom, in exchange for the ring.~ */
-	DO ~
-		SetGlobal("XA_LC_IncubusRing", "GLOBAL", 1)
-	~
-	GOTO XA_GiveAmuletToDemon_F
+	GOTO XA_GiveAmuletToDemon
 	
 	IF ~~ THEN REPLY @60 /* ~I need more time to choose.~*/
 	GOTO XA_ComeBackLater
@@ -339,32 +293,16 @@ IF ~~ THEN BEGIN XA_SecondMeeting
 	
 	IF ~
 		!NumInPartyGT(1)
-		Gender(Player1, MALE)
 		PartyHasItem("AMUL27")
 	~ THEN REPLY @30 /* ~I grow tired of your games. Take the amulet and release me.~*/
-	GOTO XA_GiveAmuletToDemon_M //OK
+	GOTO XA_GiveAmuletToDemon //OK
 	
 	IF ~
 		NumInPartyGT(1)
-		Gender(Player1, MALE)
 		PartyHasItem("AMUL27")
 	~ THEN REPLY @31 /* ~We're tired of your games. Take the amulet and release us.~ */
-	GOTO XA_GiveAmuletToDemon_M //OK
-	
-	IF ~
-		!NumInPartyGT(1)
-		Gender(Player1, FEMALE)
-		PartyHasItem("AMUL27")
-	~ THEN REPLY @30 /* ~I grow tired of your games. Take the amulet and release me.~*/
-	GOTO XA_GiveAmuletToDemon_F //OK
-	
-	IF ~
-		NumInPartyGT(1)
-		Gender(Player1, FEMALE)
-		PartyHasItem("AMUL27")
-	~ THEN REPLY @31 /* ~We're tired of your games. Take the amulet and release us.~ */
-	GOTO XA_GiveAmuletToDemon_F //OK
-		
+	GOTO XA_GiveAmuletToDemon //OK
+			
 	IF ~
 		PartyHasItem("AMUL27")
 	~ THEN REPLY @29 /* ~The amulet is mine. If you want it, come and take it!~*/
@@ -448,14 +386,8 @@ IF ~~ THEN BEGIN XA_WontGiveAmulet
 	COPY_TRANS XANARZU XA_ReturnToPainting
 END
 
-IF ~~ THEN BEGIN XA_GiveAmuletToDemon_M
+IF ~~ THEN BEGIN XA_GiveAmuletToDemon
 	SAY @20 /* ~You are as wise as you are mighty, son of Bhaal. Now, you will have your freedom...~ */
-	
-	COPY_TRANS XANARZU XA_GiveAmuletTransition
-END
-
-IF ~~ THEN BEGIN XA_GiveAmuletToDemon_F
-	SAY @21 /* ~You are as wise as you are mighty, daughter of Bhaal. Now, you will have your freedom...~ */
 	
 	COPY_TRANS XANARZU XA_GiveAmuletTransition
 END
@@ -515,32 +447,18 @@ IF ~~ THEN BEGIN XA_AmuletTransitions_0
 	
 	
 	IF ~
-		Gender(Player1, MALE)
 		PartyHasItem("AMUL27")
 	~ THEN REPLY @13 /*~Here, take it.~*/
-	GOTO XA_GiveAmuletToDemon_M //OK
-	
-	IF ~
-		Gender(Player1, FEMALE)
-		PartyHasItem("AMUL27")
-	~ THEN REPLY @13 /*~Here, take it.~*/
-	GOTO XA_GiveAmuletToDemon_F //OK
+	GOTO XA_GiveAmuletToDemon //OK
 END
 
 IF ~~ THEN BEGIN XA_AmuletTransitions_1
 	SAY @13
 	
 	IF ~
-		Gender(Player1, MALE)
 		PartyHasItem("AMUL27")
 	~ THEN REPLY @9 /*~The amulet of the Seldarine? Fine, take it.~*/
-	GOTO XA_GiveAmuletToDemon_M //OK
-	
-	IF ~
-		Gender(Player1, FEMALE)
-		PartyHasItem("AMUL27")
-	~ THEN REPLY @9 /*~The amulet of the Seldarine? Fine, take it.~*/
-	GOTO XA_GiveAmuletToDemon_F //OK
+	GOTO XA_GiveAmuletToDemon //OK
 	
 	IF ~
 		!Global("XA_LC_AskDemonAmulet", "GLOBAL", 1)

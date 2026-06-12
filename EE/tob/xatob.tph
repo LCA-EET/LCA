@@ -91,6 +91,10 @@ END
 		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/temp/xa016tob.bcs~ // Restring
 //}
 
+//{ Caelar Portrait Changes
+	COPY ~%MOD_FOLDER%/tob/spl/~ ~override~
+//}
+
 COPY ~%MOD_FOLDER%/temp/xalcbico.bcs~ ~%MOD_FOLDER%/temp/xalcbica.bcs~
 DECOMPILE_AND_PATCH
 BEGIN
@@ -150,8 +154,15 @@ END
 
 //{ Epilogues
 	//{ Caelar
-		COPY ~%MOD_FOLDER%/tob/2da/xacaeend.2da~ ~override~
-		SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5001)
+		//{ Restored
+			COPY ~%MOD_FOLDER%/tob/2da/xaca2end.2da~ ~override~ 
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5001)
+		//}
+
+		//{ Disgraced
+			COPY ~%MOD_FOLDER%/tob/2da/xacaeend.2da~ ~override~
+			SET_2DA_ENTRY 3 2 2 RESOLVE_STR_REF(@5047)
+		//}
 	//}
 	
 	//{ Corwin, SoD Portrait
@@ -197,12 +208,15 @@ END
 
 //{ New Creatures
 
-	//{ BT Spy
+	//{ BTSPY
 		COPY_EXISTING ~xalcspy.cre~ ~override/xabtspy.cre~
+		WRITE_ASCII 0x248 ~xabtspy~ #8
+		WRITE_ASCII 0x280 ~xabtspy~ #8
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@5046)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@5046)
-		WRITE_ASCII ~xabtspy~ 0x280 #20
+		WRITE_BYTE 0x2E 27 // Gray Color
 	//}
+
 	//{ Aun Argent
 		COPY_EXISTING ~xag100.cre~ ~override/xaaun.cre~ 
 		LPF xa_reset_cre
@@ -350,7 +364,7 @@ END
 		WRITE_LONG 0x14 36000 // Exp
 		WRITE_SHORT 0x24 444 // HP
 		WRITE_SHORT 0x26 444 // HP
-		ADD_CRE_ITEM ~xabrok04~ #0 #0 #0 ~identified&unstealable~ ~INV1~
+		ADD_CRE_ITEM ~minhp1~ #0 #0 #0 ~identified&unstealable~ ~AMULET~
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xanarzu~
@@ -408,6 +422,7 @@ END
 		WRITE_ASCII 0x34 ~xacael2s~ #8
 		WRITE_ASCII 0x3c ~xacael2l~ #8
 		REMOVE_CRE_ITEMS
+		WRITE_BYTE 0x27B 34 // Change Alignment to TN
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xacaelar~
@@ -843,6 +858,7 @@ END
 		
 		LPF xa_delete_are_actors END
 		WRITE_LONG 0xA9C 513 // set door flags open, see through
+		//WRITE_ASCII 0x198 ~xavator~ #8
 	//}
 	
 	//{ xag102 bd5300 Kanaglym

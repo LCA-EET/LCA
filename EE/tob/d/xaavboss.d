@@ -20,8 +20,9 @@ IF ~~ THEN BEGIN XA_2B
 END
 
 IF ~~ THEN BEGIN XA_Caelar
-	SAY @3 /* ~Caelar, hah! Could you believe that the puny aasimar tried to stop me? It took a while, but I did manage to beat some humility into the arrogant plaything. Allow me to demonstrate.~*/
+	SAY @3 /* ~Caelar, hah! Could you believe that the puny aasimar tried to destroy me?~*/
 	
+	= @4 /*~It took a while, but I did manage to beat a modicum of obedience and humility into the arrogant plaything. Allow me to demonstrate.~ [xalc8404]*/
 	IF ~~ THEN
 	DO ~
 		StartCutSceneMode()

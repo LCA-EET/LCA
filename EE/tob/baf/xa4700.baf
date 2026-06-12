@@ -2,6 +2,7 @@
 IF
 	InParty("XACORWIN")
 	GlobalLT("XA_LC_TowerCollapseCorwin", "MYAREA", 1)
+	Global("XA_LC_CollapseTimerSet", "MYAREA", 1)
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_TowerCollapseCorwin", "MYAREA", 1)
@@ -9,47 +10,52 @@ THEN
 END
 
 IF
-	!Name(Player2, "XACORWIN")
-	GlobalLT("XA_LT_TowerCollapseP2", "MYAREA", 1)
+	!Name("XACORWIN",Player2)
+	GlobalLT("XA_LC_TowerCollapseP2", "MYAREA", 1)
+	Global("XA_LC_CollapseCount", "MYAREA", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LT_TowerCollapseP2", "MYAREA", 1)
+		SetGlobal("XA_LC_TowerCollapseP2", "MYAREA", 1)
 		DisplayStringHead(Player2, @3)
 END
 
 IF
-	!Name(Player3, "XACORWIN")
-	GlobalLT("XA_LT_TowerCollapseP3", "MYAREA", 1)
+	!Name("XACORWIN",Player3)
+	GlobalLT("XA_LC_TowerCollapseP3", "MYAREA", 1)
+	Global("XA_LC_CollapseCount", "MYAREA", 2)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LT_TowerCollapseP3", "MYAREA", 1)
+		SetGlobal("XA_LC_TowerCollapseP3", "MYAREA", 1)
 		DisplayStringHead(Player3, @5)
 END
 
 IF
-	!Name(Player4, "XACORWIN")
-	GlobalLT("XA_LT_TowerCollapseP4", "MYAREA", 1)
+	!Name("XACORWIN",Player4)
+	GlobalLT("XA_LC_TowerCollapseP4", "MYAREA", 1)
+	Global("XA_LC_CollapseCount", "MYAREA", 3)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LT_TowerCollapseP4", "MYAREA", 1)
+		SetGlobal("XA_LC_TowerCollapseP4", "MYAREA", 1)
 		DisplayStringHead(Player4, @6)
 END
 
 IF
-	!Name(Player5, "XACORWIN")
-	GlobalLT("XA_LT_TowerCollapseP5", "MYAREA", 1)
+	!Name("XACORWIN",Player5)
+	GlobalLT("XA_LC_TowerCollapseP5", "MYAREA", 1)
+	Global("XA_LC_CollapseCount", "MYAREA", 4)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LT_TowerCollapseP5", "MYAREA", 1)
+		SetGlobal("XA_LC_TowerCollapseP5", "MYAREA", 1)
 		DisplayStringHead(Player5, @7)
 END
 
 IF
-	!Name(Player6, "XACORWIN")
-	GlobalLT("XA_LT_TowerCollapseP6", "MYAREA", 1)
+	!Name("XACORWIN",Player6)
+	GlobalLT("XA_LC_TowerCollapseP6", "MYAREA", 1)
+	Global("XA_LC_CollapseCount", "MYAREA", 5)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LT_TowerCollapseP6", "MYAREA", 1)
+		SetGlobal("XA_LC_TowerCollapseP6", "MYAREA", 1)
 		DisplayStringHead(Player6, @8)
 END
 //}
@@ -61,31 +67,30 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_CollapseTimerSet", "MYAREA", 1)
-		SetGlobalTimer("XA_LC_CollapseTimer", "MYAREA", FIVE_ROUNDS)
+		SetGlobalTimer("XA_LC_CollapseTimer", "MYAREA", ONE_ROUND)
 END
 
 IF
-	Global("XA_LC_CollapseTimerSet", "MYAREA", 0)
+	GlobalGT("XA_LC_CollapseTimerSet", "MYAREA", 0)
 	GlobalTimerExpired("XA_LC_CollapseTimer", "MYAREA")
+	GlobalLT("XA_LC_CollapseCount", "MYAREA", 5)
+THEN
+	RESPONSE #100
+		IncrementGlobal("XA_LC_CollapseCount", "MYAREA", 1)
+		SetGlobal("XA_LC_Collapse", "MYAREA", 1)
+		SetGlobalTimer("XA_LC_CollapseTimer", "MYAREA", ONE_ROUND)
+END
+
+IF
+	GlobalGT("XA_LC_CollapseTimerSet", "MYAREA", 0)
+	GlobalTimerExpired("XA_LC_CollapseTimer", "MYAREA")
+	GlobalGT("XA_LC_CollapseCount", "MYAREA", 4)
 THEN
 	RESPONSE #100
 		GameOver(103098)
 END
 //}
 
-//{ Screenshake On Simulacrum death
-IF
-	Global("XA_LC_ScreenShakeTower", "MYAREA", 1)
-THEN
-	RESPONSE #100
-		SetInterrupt(FALSE)
-		SetGlobal("XA_LC_ScreenShakeTower", "MYAREA", 0)
-		ScreenShake([1275.905],15)
-		SetInterrupt(TRUE)
-		Continue()
-END
-
-//}
 //{ Remove Pocket Plane Ability - Avernus Tower
 	IF
 		GlobalLT("XA_LC_AVBossFled", "GLOBAL", 1)
@@ -121,9 +126,7 @@ END
 			SetGlobal("XA_LC_AVBossFled", "GLOBAL", 1)
 			DisplayStringHead("xaavboss", @1) /*~Impressive. But this is not the end, <CHARNAME>. I'll find a way back to the Prime Material Plane, and when I do...~ */
 			AddexperienceParty(75000)
-			Wait(2)
-			ScreenShake([1275.905],300)
-			Wait(1)
+			Wait(3)
 			ForceSpellRES("xag100","xaavboss")  // Teleport Without Error bdtelaw
 			SetInterrupt(TRUE)
 	END
@@ -148,7 +151,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_AVBossFled", "GLOBAL", 2)
 		OpenDoor("Door03")
-		DisplayStringHead(Player1, @0)
+		//DisplayStringHead(Player1, @0)
 		//Wait(1)
 		//ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 		

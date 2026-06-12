@@ -236,15 +236,29 @@ END
 
 
 //{ Caelar
-IF 
-	Global("StartEndBios","AR6200",1) 
-	InParty("XACAELAR")
-	Global("XA_LC_CaelarBio", "GLOBAL", 0)
-THEN
-	RESPONSE #100
-		SetGlobal("XA_LC_CaelarBio", "GLOBAL", 1)
-		TextScreen("XACAEEND")
-		SmallWait(1)
-		Continue()
-END
+	IF 
+		Global("StartEndBios","AR6200",1) 
+		InParty("XACAELAR")
+		Global("XA_LC_CaelarBio", "GLOBAL", 0)
+		Alignment("XACAELAR", NEUTRAL)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CaelarBio", "GLOBAL", 1)
+			TextScreen("XACAEEND") // TN Ending
+			SmallWait(1)
+			Continue()
+	END
+
+	IF 
+		Global("StartEndBios","AR6200",1) 
+		InParty("XACAELAR")
+		Global("XA_LC_CaelarBio", "GLOBAL", 0)
+		!Alignment("XACAELAR", NEUTRAL)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CaelarBio", "GLOBAL", 1)
+			TextScreen("XACA2END") // NG Ending
+			SmallWait(1)
+			Continue()
+	END
 //}

@@ -1,3 +1,42 @@
+//{ Restoration
+	IF
+		GlobalLT("XA_LC_CaelarGear", "GLOBAL", 1)
+		OR(6)
+			HasItem("XASHLDCA", Myself)
+			HasItem("XAHELMCA", Myself)
+			HasItem("XASW1HCA", Myself)
+			HasItem("XASW1HC5", Myself)
+			HasItem("XACHANCA", Myself)
+			HasItem("XAFINCA1", Myself)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_CaelarGear", "GLOBAL", 1)
+			Interact(Player1)
+	END
+
+	IF
+		GlobalGT("XA_LC_CaelarGear", "GLOBAL", 1)
+		GlobalGT("XA_LC_CaelarMetAun", "GLOBAL", 0)
+		GlobalLT("XA_LC_RestoreTimerSet", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobalTimer("XA_LC_RestoreTimer", "LOCALS", THREE_ROUNDS)
+			SetGlobal("XA_LC_RestoreTimerSet", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_RestoreTimerSet", "LOCALS", 1)
+		GlobalTimerExpired("XA_LC_RestoreTimer", "LOCALS")
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_RestoreTimerSet", "LOCALS", 2)
+			ChangeAlignment(Myself, NEUTRAL_GOOD)
+			ApplySpellRES(Myself, "XACHNG03")
+			Continue()
+	END
+//}
+
 IF
 	InParty(Myself)
 	TriggerOverride(Player1, GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))

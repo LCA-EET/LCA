@@ -17,6 +17,20 @@ APPEND ~XALCDBG~
 		~
 		EXIT
 		
+		IF ~~ THEN REPLY @7060
+		DO ~
+			ReallyForceSpellRES("XACHNG04", "XACAELAR")
+				SetGlobal("XA_LC_CaelarPortrait_LCA", "GLOBAL", 4)
+		~
+		EXIT
+		
+		IF ~~ THEN REPLY @7061
+		DO ~
+			ReallyForceSpellRES("XACHNG03", "XACAELAR")
+			SetGlobal("XA_LC_CaelarPortrait", "GLOBAL", 3)
+		~
+		EXIT
+		
 		IF ~~ THEN REPLY @7006 /* ~Spawn BDCaelar (xac109) and add her to the party.~*/
 		DO ~
 			CreateCreature("xac109", [-1.-1], N)
@@ -85,6 +99,14 @@ APPEND ~XALCDBG~
 		
 		IF ~~ THEN REPLY @7007 /* ~Epilogue Test~*/
 		GOTO XA_ToB_EpilogueTest
+
+		IF ~~ THEN REPLY @7059
+		DO ~
+			SetGlobal("XA_LC_AVBossFled", "GLOBAL", 2)
+			SetGlobal("XA_LC_CaelarRescue", "GLOBAL", 1)
+			CreateCreature("XACAELA2", [-1.-1], S)
+		~
+		EXIT
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO 10
@@ -285,6 +307,10 @@ APPEND ~XALCDBG~
 		IF ~~ THEN REPLY @7020
 		DO ~TextScreen("xacaeend")~
 		EXIT
+
+		IF ~~ THEN REPLY @7062
+		DO ~TextScreen("xaca2end")~
+		EXIT
 		
 		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
 		GOTO XA_ToB_Debug
@@ -311,6 +337,13 @@ APPEND ~XALCDBG~
 		DO ~
 			StartCutSceneMode()
 			StartCutScene("XAGO4700")
+		~
+		EXIT
+
+		IF ~~ THEN REPLY @7059 /* ~XAG101 Tower Rooftop~ */
+		DO ~
+			StartCutSceneMode()
+			StartCutScene("XA4700NF")
 		~
 		EXIT
 		

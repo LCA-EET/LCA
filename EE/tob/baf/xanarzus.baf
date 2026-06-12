@@ -5,7 +5,7 @@
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			IncrementGlobal("XA_LC_SimulacraKilled", "GLOBAL", 1)
-			SetGlobal("XA_LC_ScreenShakeTower", "MYAREA", 1)
+			SetGlobal("XA_LC_Collapse", "MYAREA", 1)
 			SetInterrupt(TRUE)
 	END
 //}

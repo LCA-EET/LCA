@@ -8,7 +8,7 @@
 @7=~It looks like you received your just punishment.~
 @15=~Caelar... your ordeal is over. Come with me. (Take her hand.)~
 @16=~You defeated him? Praise be ... I can't believe it.~
-@17=~Where? Where can I go? No one would have me after what I've done, and what he did to me...~
+@17=~And go where? No one would have me after what I've done, and what he did to me... it is better that I die here. Leave, <CHARNAME>! You and your companions may still have time to escape!~
 @18=~I know at least one person who'd be happy to see you. But first, we need to go to Kanaglym.~
 @19=~Thank you, <CHARNAME>. Let's go.~
 @20=~My loyal Adras... forgive me. Why are you confined to this place?~
@@ -31,8 +31,8 @@
 @37=~I will show you, but first you must release these spirits from their oath to you.~
 @38=~Very well. (Kill her.)~
 @39=~Right...~
-@40=~Crusaders, hear me! Long ago, you swore to serve me in our battle against the forces of evil. I tell you now, that the battle is over! You are released from your servitude. Go, and be at peace!~
-@41=~(She rises to her feet.)~
+@40=~Crusaders, hear me!~
+@41=~(She rises to her feet, then takes a deep breath as she gazes upon those who sacrificed everything for her.)~
 @42=~Before I go. <CHARNAME>, thank you for rescuing me from Avernus, and for allowing me to release the spirits of my fallen crusaders. Farewell.~
 @43=~Corporal, the gate will bring you to the Flaming Fist Headquarters.~
 @44=~They're free... <CHARNAME>, you spared my life, but for what purpose? What do you intend to do with me?~
@@ -57,3 +57,14 @@
 @64=~Humility suits you. Come, you've suffered enough. (Take her hand.)~
 @65=~No... NO! I won't let him touch me again!~
 @66=~(Desperate and wild-eyed, she rises to her feet and nearly bowls you over. Before you can stop her, she runs toward the edge of the tower...)~
+@67=~You can thank me later. We need to get out of here, now!~
+@68=~Leave me. Escape with the others.~
+@69=~Wait here, for just a moment.~
+@70=~Would that your crusaders could see you now. The so-called 'Shining Lady', broken, humbled and begging at my feet. Pathetic. Fortunately, your suffering is at an end; this tower is mere moments from collapse. Goodbye, Caelar.~
+@71=~I know at least one person who'd be happy to see you. But first, we need to go to Kanaglym. Take my hand, now!~
+@72=~But I... very well. Thank you, <CHARNAME>.~
+@73=~If that is what you desire, then so be it. Farewell, Caelar.~
+@74=~Walk in the light, <CHARNAME>.~
+@75=~Long ago, you swore to serve me in our struggle against the forces of evil. I tell you now, that the battle is over! You are released from your servitude. Go, and be at peace!~
+@76=~(For a brief instant, the glorious leader that she once was shone through. It seems that her experience in Avernus did not fully extinguish her spirit.)~
+@77=~Damn you!~

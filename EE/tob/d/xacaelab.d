@@ -1,5 +1,33 @@
 BEGIN ~XACAELAB~
 
+//{ Gear Repaired
+IF ~
+	Global("XA_LC_CaelarGear", "GLOBAL", 1)
+~ THEN BEGIN XA_LC_CaelarGear
+	SAY @130 /*@130=~...~*/
+
+	IF ~~ THEN REPLY @131
+	GOTO XA_LC_CaelarGear2
+
+	IF ~~ THEN REPLY @132
+	GOTO XA_LC_CaelarGear2
+END
+
+IF ~~ THEN BEGIN XA_LC_CaelarGear2
+	SAY @127 /*~Before I began the crusade, I thought myself worthy of these holy artifacts by virtue of my bloodline alone. How could I have been so foolish, so... so arrogant?~*/
+
+	= @128 /*~Putting my selfish desires above the lives and livelihoods of so many... I willingly traded piety for sanctimony, and humility for pride.~*/
+
+	= @129 /*~This time... this time, I swear by Lathander that I will use these holy artifacts in furtherance of all that is right and good.~*/
+
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_CaelarGear", "GLOBAL", 2)
+	~
+	EXIT
+END
+//}
+
 //{ Dialog B-102
 IF ~
 	IsGabber(Player1)
@@ -33,6 +61,7 @@ IF ~~ THEN BEGIN XA_CaelarThanks2
 	DO ~
 		AddXPObject(Myself, 25000)
 		AddXPObject(Player1, 25000)
+		SetGlobal("XA_LC_CaelarMetAun", "GLOBAL", 1)
 		AddJournalEntry(@125, INFO)
 	~
 	EXIT

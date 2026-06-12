@@ -1,5 +1,5 @@
 IF
-	Global("XA_LC_Hostile4700", "GLOBAL", 1)
+	GlobalGT("XA_LC_SimulacraKilled", "GLOBAL", 4)
 	OR(2)
 		GlobalLT("XA_LC_NarzuBuff", "LOCALS", 1)
 		GlobalTimerExpired("XA_LC_BuffTimer", "LOCALS")

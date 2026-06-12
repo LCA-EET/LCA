@@ -110,7 +110,7 @@ IF ~~ THEN BEGIN XA_CaelarWait
 	= @34 /* ~Please... end this. End this suffering...~ */
 	
 	
-	IF ~~ THEN REPLY @56 /* */
+	IF ~~ THEN REPLY @56 /* @56=~Get a hold of yourself woman! This is not the end for you!~ */
 	GOTO XA_CaelarWait2
 	
 	IF ~~ THEN REPLY @35  /* ~Caelar, you may have given up on yourself, but I haven't given up on you. There's still a path forward, and you'll come out of this stronger, and wiser, if you give yourself the chance.~ */
@@ -135,9 +135,14 @@ END
 IF ~~ THEN BEGIN XA_CaelarWait3
 	SAY @39 /* ~Right...~*/
 	
-	= @41  /* ~(She rises to her feet.)~ */
-	= @40 /*  ~Crusaders, hear me! Long ago, you swore to serve me in our battle against the forces of evil. I tell you now, that the battle is over! You are released from your servitude. Go, and be at peace!~*/
+	= @41  /* @41=~(She rises to her feet, and takes a deep breath as she gazes upon those who sacrificed everything for her.)~ */
+
+	= @40 /*  ~Crusaders, hear me!~*/
 	
+	= @75 /*@75=~Long ago, you swore to serve me in our struggle against the forces of evil. I tell you now, that the battle is over! You are released from your servitude. Go, and be at peace!~*/
+
+	= @76 /*@76=~(For a brief instant, the glorious leader that she once was shone through. It seems that her experience with the Narzugon did not fully extinguish her spirit.)~*/
+
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_LC_SparedCaelar", "GLOBAL", 1)
@@ -153,61 +158,64 @@ IF ~
 ~ THEN BEGIN XA_WonBattle
 	SAY @16 /* ~You defeated him? Praise be ... I can't believe it.~*/
 	
-	IF ~~ THEN REPLY @15  /* ~Caelar... your ordeal is over. Come with me. (Take her hand.)~*/
+	IF ~~ THEN REPLY @67  /* @67=~You can thank me later. We need to get out of here, now!~*/
 	DO ~
 		SetGlobal("XA_LC_CaelarAVTalk", "GLOBAL", 2)
 	~
 	GOTO XA_WonBattle2
 	
-	IF ~~ THEN REPLY @57  /* ~Of course I did. Now, back in your cage.~ */
+	IF ~~ THEN REPLY @57 /*@57=~Of course I did. Now, back in your cage.~*/
 	DO ~
 		SetGlobal("XA_LC_CaelarAVTalk", "GLOBAL", 2)
 	~
 	GOTO XA_LeaveInCage
+
+	IF ~~ THEN REPLY @69  /* ~Wait here, for just a moment.~ */
+	EXIT
+END
+
+IF ~~ THEN BEGIN XA_LeaveHerToDie
+	SAY @58
+
+	IF ~~ THEN
+	DO ~
+		SetGlobal("XA_LC_CaelarSuicide", "GLOBAL", 1)
+		SetGlobal("XA_LC_Return5300", "MYAREA", 1)
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN XA_LeaveInCage
 	SAY @58  /* ~What? You mean to... to leave me here? Please, take me with you! I can't bear this any longer!~*/
 	
-	IF ~~ THEN REPLY @59  /* ~You're right... you've suffered enough. Come with me. (Take her hand.)~*/
-	GOTO XA_WonBattle2
-	
-	IF ~~ THEN REPLY @61  /* ~What a pathetic sight. The so-called 'Shining Lady', broken, humbled and begging at my feet. Would that your crusaders could see you now.~*/
-	GOTO XA_LeaveInCage2
-END
-
-IF ~~ THEN BEGIN XA_LeaveInCage2
-	SAY @62  /* ~Please... I - I'll do anything! Just take me from this place!~ */
-	
-	IF ~~ THEN REPLY @63  /*~You've suffered much, but not nearly enough. No, you will remain here.~*/
-	GOTO XA_CaelarSuicide
-	
 	IF ~~ THEN REPLY @64  /* ~Humility suits you. Come, you've suffered enough. (Take her hand.)~ */
-	GOTO XA_WonBattle2
+	GOTO XA_WonBattle3
+	
+	IF ~~ THEN REPLY @70  /* @70=~Would that your crusaders could see you now. The so-called 'Shining Lady', broken, humbled and begging at my feet. Pathetic. Fortunately, you're suffering is at an end. The tower is on the verge of collapse. Goodbye, Caelar.~*/
+	GOTO XA_DamnYou
 END
 
-IF ~~ THEN BEGIN XA_CaelarSuicide
-	SAY @65  /* ~No... NO! I won't let him touch me again!~ */
-	
-	= @66  /* ~(Desparate and wild-eyed, she rises to her feet and nearly bowls you over. Using the last of her divine strength, she runs toward the edge of the tower...)~*/
-	
-	IF ~~ THEN 
-	DO ~
-		SetGlobal("XA_LC_CaelarSuicide", "GLOBAL", 1)
-		StartCutSceneMode()
-		StartCutScene("XACAESUI")
-	~
-	EXIT
+IF ~~ THEN BEGIN XA_DamnYou
+	SAY @77
+
+	COPY_TRANS XACAELA2 XA_LeaveHerToDie
 END
+
 
 IF ~~ THEN BEGIN XA_WonBattle2
-	SAY @17  /*  ~Where? Where can I go? No one would have me, after what I've done, and what he did to me...~ */
+	SAY @17  /*  @17=~Go where? No one would have me after what I've done, and what he did to me... it is better that I die here. Leave, <CHARNAME>! You and your companions may still have time to escape!~ */
 	
-	IF ~~ THEN REPLY @18 /* ~I know at least one person who'd be happy to see you. But first, we need to go to Kanaglym.~*/
-	GOTO XA_WonBattle3
+	IF ~~ THEN REPLY @71 /* ~I know at least one person who'd be happy to see you. But first, we need to go to Kanaglym. Take my hand, now!~*/
+	GOTO XA_WonBattle4
 	
-	IF ~~ THEN REPLY @60 /* ~We'll figure that out later. We need to leave before the demon returns.~*/
-	GOTO XA_WonBattle3
+	IF ~~ THEN REPLY @73 /* @73=~If that is what you desire, then so be it. Farewell, Caelar.~*/
+	GOTO XA_Farewell
+END
+
+IF ~~ THEN BEGIN XA_Farewell
+	SAY @74 /*@74=~Walk in the light, <CHARNAME>.~*/
+
+	COPY_TRANS XACAELA2 XA_LeaveHerToDie
 END
 
 IF ~~ THEN BEGIN XA_WonBattle3
@@ -218,6 +226,12 @@ IF ~~ THEN BEGIN XA_WonBattle3
 		SetGlobal("XA_LC_Return5300", "MYAREA", 1)
 	~
 	EXIT
+END
+
+IF ~~ THEN BEGIN XA_WonBattle4
+	SAY @72 /*@72=~But I... very well. Thank you, <CHARNAME>.~*/
+	
+	COPY_TRANS XACAELA2 XA_WonBattle3
 END
 
 IF ~
