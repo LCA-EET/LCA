@@ -672,6 +672,12 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_RBG_AdjustVariables
 		SAY @6016 /* ~Adjust Variables~*/
 		
+		IF ~~ THEN REPLY @6133
+		DO ~
+			SetGlobal("XA_LC_IncubusDefeated", "GLOBAL", 1)
+		~
+		GOTO XA_RBG_AdjustVariables
+
 		IF ~~ THEN REPLY @6128
 		DO ~
 			SetGlobal("XA_LC_BenceDukeDebrief", "GLOBAL", 1)
