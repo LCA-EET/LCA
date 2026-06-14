@@ -1,3 +1,12 @@
+IF
+	Global("XA_LC_CSStart", "MYAREA", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_CSStart", "MYAREA", 0)
+		StartCutSceneMode()
+		StartCutScene("XA470001")
+END
+
 //{ Collapse Messaging
 IF
 	InParty("XACORWIN")
@@ -159,7 +168,7 @@ END
 
 IF
 	GlobalGT("XA_LC_Hostile4700", "GLOBAL", 0)
-	GlobalGT("XA_LC_SimulacraKilled", "GLOBAL", 4)
+	GlobalGT("XA_LC_SimulacraKilled", "GLOBAL", 0)
 	GlobalLT("XA_LC_AVBossFled", "GLOBAL", 1)
 	GlobalLT("XA_LC_4700_Adds", "MYAREA", 4)
 THEN

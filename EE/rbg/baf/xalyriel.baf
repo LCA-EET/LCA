@@ -8,7 +8,7 @@ THEN
 		StartDialog("XALYRIEL", Player1)
 END
 IF
-	AreaCheck("XADEMSAN")
+	AreaCheck("XADSAN")
 	Global("XA_LC_DemonDead", "GLOBAL", 1)
 THEN
 	RESPONSE #100

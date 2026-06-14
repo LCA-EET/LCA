@@ -5,11 +5,11 @@ THEN
 		StartCutSceneMode()
 		CutSceneId(Player1)
 		DisplayStringHead("XANARZU", @0)
-		CreateVisualEffect("SPPORTAL",[200.225])
-		CreateVisualEffect("SPPORTAL",[430.235])
+		CreateVisualEffect("SPPORTAL",[475.460])
+		CreateVisualEffect("SPPORTAL",[656.596])
 		Wait(2)
-		CreateCreature("xanarzs0",[200.225],SE)  // bdabibla
-		CreateCreature("xanarzs1",[430.235],SW)  // bdabigre
+		CreateCreature("xanarzs0",[475.460],SE)  // bdabibla
+		CreateCreature("xanarzs1",[656.596],SW)  // bdabigre
 		ActionOverride("XANARZU", Enemy())
 		SetGlobal("XA_LC_DemonSpawn", "GLOBAL", 2)
 		EndCutSceneMode()

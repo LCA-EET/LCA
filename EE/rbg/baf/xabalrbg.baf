@@ -78,7 +78,7 @@ IF
 	!AreaCheck("XAG1")
 	!AreaCheck("XAG2")
 	!AreaCheck("XAG3")
-	!AreaCheck("XADEMSAN")
+	!AreaCheck("XADSAN")
 	!AreaCheck("XAPAINT1")
 THEN
 	RESPONSE #100
@@ -109,7 +109,7 @@ END
 			AreaCheck("XAG1")
 			AreaCheck("XAG2")
 			AreaCheck("XAG3")
-			AreaCheck("XADEMSAN")
+			AreaCheck("XADSAN")
 			AreaCheck("XACSHOW")
 	THEN
 		RESPONSE #100
@@ -125,7 +125,7 @@ END
 		!AreaCheck("XAG1")
 		!AreaCheck("XAG2")
 		!AreaCheck("XAG3")
-		!AreaCheck("XADEMSAN")
+		!AreaCheck("XADSAN")
 		!AreaCheck("XACSHOW")
 		OR(2)
 			!AreaCheck("XAA210") // Elfsong L2 ar0706

@@ -89,6 +89,7 @@ IF ~
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_LC_ParleyAttack", "GLOBAL", 0)
+		ReallyForceSpellRES("SPPR607", Myself)
 		StartCutSceneMode()
 		StartCutScene("XAPENT0")
 	~

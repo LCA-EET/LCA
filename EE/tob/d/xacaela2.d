@@ -273,8 +273,7 @@ IF ~~ THEN BEGIN XA_CaelarRescue3
 	
 	IF ~~ THEN
 	DO ~
-		StartCutSceneMode()
-		StartCutScene("XA470001")
+		SetGlobal("XA_LC_CSStart", "MYAREA", 1)
 	~
 	EXIT
 END

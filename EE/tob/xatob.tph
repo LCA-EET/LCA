@@ -91,8 +91,16 @@ END
 		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/temp/xa016tob.bcs~ // Restring
 //}
 
-//{ Caelar Portrait Changes
+//{ Caelar Abilities and Portrait Changes
 	COPY ~%MOD_FOLDER%/tob/spl/~ ~override~
+
+	COPY_EXISTING ~xamartyr.spl~ ~override~
+	WRITE_LONG 0x8 RESOLVE_STR_REF(@5048)
+	WRITE_LONG 0x58 RESOLVE_STR_REF(@5049)
+
+	COPY_EXISTING ~xapiety.spl~ ~override~
+	WRITE_LONG 0x8 RESOLVE_STR_REF(@5050)
+	WRITE_LONG 0x58 RESOLVE_STR_REF(@5051)
 //}
 
 COPY ~%MOD_FOLDER%/temp/xalcbico.bcs~ ~%MOD_FOLDER%/temp/xalcbica.bcs~
@@ -115,6 +123,7 @@ END
 
 //{ Caelar Script
 	EXTEND_TOP ~xacaelar.bcs~ ~%MOD_FOLDER%/cre_scripts/shared/xalccs00.baf~ // Can Talk to Player
+	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xacae04.bcs~ // Caelar abilities
 	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xacae03.bcs~ // Set banter end states
 	EXTEND_BOTTOM ~xacaelar.bcs~ ~%MOD_FOLDER%/temp/xalcbica.bcs~ // Banter Interval - Caelar
 	EXTEND_BOTTOM ~xacaelar.bcs~ ~override/xalccs02.bcs~ // Banter Target Selector
@@ -858,7 +867,7 @@ END
 		
 		LPF xa_delete_are_actors END
 		WRITE_LONG 0xA9C 513 // set door flags open, see through
-		//WRITE_ASCII 0x198 ~xavator~ #8
+		WRITE_LONG 0x1840 xaa22 // change battle music 
 	//}
 	
 	//{ xag102 bd5300 Kanaglym

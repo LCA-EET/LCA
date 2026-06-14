@@ -498,12 +498,12 @@ APPEND ~XALCDBG~
 		
 		IF ~~ THEN REPLY @6053
 		DO ~
-			ActionOverride(Player1, LeaveAreaLUA("XADEMSAN", "", [0.0], S))
-			ActionOverride(Player2, LeaveAreaLUA("XADEMSAN", "", [0.0], S))
-			ActionOverride(Player3, LeaveAreaLUA("XADEMSAN", "", [0.0], S))
-			ActionOverride(Player4, LeaveAreaLUA("XADEMSAN", "", [0.0], S))
-			ActionOverride(Player5, LeaveAreaLUA("XADEMSAN", "", [0.0], S))
-			ActionOverride(Player6, LeaveAreaLUA("XADEMSAN", "", [0.0], S))
+			ActionOverride(Player1, LeaveAreaLUA("XADSAN", "", [530.570], NE))
+			ActionOverride(Player2, LeaveAreaLUA("XADSAN", "", [430.566], NE))
+			ActionOverride(Player3, LeaveAreaLUA("XADSAN", "", [457.589], NE))
+			ActionOverride(Player4, LeaveAreaLUA("XADSAN", "", [477.606], NE))
+			ActionOverride(Player5, LeaveAreaLUA("XADSAN", "", [500.620], NE))
+			ActionOverride(Player6, LeaveAreaLUA("XADSAN", "", [520.635], NE))
 		~
 		EXIT
 		

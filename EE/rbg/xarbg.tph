@@ -4697,32 +4697,30 @@ SILENT
 	//}
 	
 	//{ Demon's Sanctum
-		COPY_EXISTING ~xaf100.are~ ~override/xademsan.are~
-		
-		WRITE_LONG 0x5EC 1 // Disable Ambient
 
-		// Add Music
-		WRITE_LONG 0x630 xamu05
-		WRITE_LONG 0x634 xamu05
-		WRITE_LONG 0x63C xag3
+		COPY ~%MOD_FOLDER%/rbg/are/xadsan/~ ~override~
+		COPY_EXISTING ~xadsan.are~ ~override~
 
-		// Add Area Script
-		WRITE_ASCII 0x94 ~xademsan~ #8
-		
-		LPF xa_delete_are_actors END
-		
-		//{ Add Narzugon NPC
-		LPF fj_are_structure
-			INT_VAR
-				fj_loc_x = 327
-				fj_loc_y = 180
-				fj_orientation = 0 // S 
-			STR_VAR
-				fj_structure_type = actor
-				fj_name = xanarzu
-				fj_cre_resref = xanarzu
-		END
+		//{ Add Music
+			WRITE_LONG 0x11C xamu05
+			WRITE_LONG 0x120 xamu05
+			WRITE_LONG 0x128 xag3
 		//}
+
+		//{ Add Narzugon NPC
+			LPF fj_are_structure
+				INT_VAR
+					fj_loc_x = 687
+					fj_loc_y = 418
+					fj_orientation = 2 // SW
+				STR_VAR
+					fj_structure_type = actor
+					fj_name = xanarzu
+					fj_cre_resref = xanarzu
+			END
+		//}
+
+		WRITE_ASCII 0x94 ~xademsan~ #8 // Add Area Script
 	//}
 	
 	//{ Lyriel Painting
