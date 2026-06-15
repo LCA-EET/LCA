@@ -32,6 +32,7 @@ THEN
 END
 
 IF
+	GlobalGT("MelissanYagaKillJob", "GLOBAL", 0)
 	GlobalTimerExpired("XA_LC_KanaDreamTimer", "GLOBAL")
 	Global("XA_LC_KanaDream", "GLOBAL", 2)
 THEN
