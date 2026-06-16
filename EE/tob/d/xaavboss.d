@@ -154,7 +154,9 @@ END
 
 CHAIN
 	IF ~~ THEN XAAVBOSS XA_DontDoItChain
-		@28 /* @28=~I will spare the lives of you and your companions. I'll even allow you to take the aasimar, to do with as you please. I've trained her well, and she will obey your every whim... won't you, Caelar?~*/
+		@28 /* @28=~I will spare the lives of you and your companions, and allow you to take my pet aasimar to do with as you please. She's quite durable, and I've trained her to enjoy whatever abuse you have in store for her, should you or one of your companions have such proclivities.~*/
+
+		= @48 /*@48=~Moreover, she will eagerly obey your every whim, no matter how debased... won't you, my pet?~*/
 
 		== XACAELA2
 		@42 /*~Y-yes, master.~*/

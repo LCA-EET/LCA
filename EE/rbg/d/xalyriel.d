@@ -62,24 +62,6 @@ IF ~~ THEN BEGIN XA_GoodBye
 END
 
 IF ~
-	Global("XA_LC_DemonDead", "GLOBAL", 5)
-~ THEN BEGIN XA_ReadyToLeave
-	SAY @73 /* ~Are you ready to leave?~ */
-	
-	IF ~~ THEN REPLY @74 /* ~Yes. Let's go.~ */
-	DO ~
-		SetGlobal("XA_LC_SavedLyriel", "GLOBAL", 1)
-		StartCutSceneMode()
-		StartCutScene("XAPEXIT")
-	~
-	EXIT
-	
-	IF ~~ THEN REPLY @75 /* ~I need more time to prepare.~ */
-	EXIT
-	
-END
-
-IF ~
 	OR(2)
 		Global("XA_LC_DemonDead", "GLOBAL", 2)
 		Global("XA_LC_DemonDead", "GLOBAL", 3)
@@ -89,6 +71,7 @@ IF ~
 	IF ~~ THEN
 	DO ~
 		SetGlobal("XA_LC_DemonDead", "GLOBAL", 3)
+		SetGlobal("XA_LC_SavedLyriel", "GLOBAL", 1)
 	~
 	EXIT
 END
@@ -96,30 +79,30 @@ END
 IF ~
 	Global("XA_LC_DemonDead", "GLOBAL", 4)
 ~ THEN BEGIN XA_IncubusDead2
-	SAY @67 /* ~You were able to break the wards and defeat the demon in his own enclave. Surely, you can lead us out of this place.~ */
+	SAY @67 /* @67=~You were able to break the wards and defeat the baatezu in his own enclave. Already I can feel this reality begin to waver.~*/
 	
 	IF ~~ THEN 
 	DO ~
 		SetGlobal("XA_LC_DemonDead", "GLOBAL", 5)
+		SetGlobal("XA_LC_SavedLyriel", "GLOBAL", 1)
 	~
 	GOTO XA_IncubusDead3
 END
 
-IF ~~ THEN BEGIN XA_IncubusDead3
-	SAY @76 /* ~Surely, you can lead us out of this place.~ */
+IF ~
+	Global("XA_LC_DemonDead", "GLOBAL", 5)
+~ THEN BEGIN XA_IncubusDead3
+	SAY @95 /* @95=~It won't be long before we are returned to the outside world.~ */
 	
-	IF ~~ THEN REPLY @69 /* ~Right. Let's go.~ */
+	IF ~~ THEN REPLY @96 /* @96=~I better use the time to gather my belongings.~*/
+	EXIT
+	
+	IF ~
+		GlobalLT("XA_LC_NarzLove", "LOCALS", 1)
+	~ THEN REPLY @70 /* ~Before he died... he told me that he loved you.~ */
 	DO ~
-		SetGlobal("XA_LC_SavedLyriel", "GLOBAL", 1)
-		StartCutSceneMode()
-		StartCutScene("XAPEXIT")
+		SetGlobal("XA_LC_NarzLove", "LOCALS", 1)
 	~
-	EXIT
-	
-	IF ~~ THEN REPLY @68 /* ~I need a moment to prepare.~ */
-	EXIT
-	
-	IF ~~ THEN REPLY @70 /* ~Before he died... he told me that he loved you.~ */
 	GOTO XA_IncubusLove
 END
 
@@ -128,15 +111,7 @@ IF ~~ THEN BEGIN XA_IncubusLove
 	
 	= @72 /*  ~As much as he wronged me, I feel... I feel pity for him. I'm glad that his long imprisonment is finally over.~ */
 	
-	IF ~~ THEN REPLY @77 /* ~It's time to leave.~ */
-	DO ~
-		SetGlobal("XA_LC_SavedLyriel", "GLOBAL", 1)
-		StartCutSceneMode()
-		StartCutScene("XAPEXIT")
-	~
-	EXIT
-	
-	IF ~~ THEN REPLY @78 /* ~Listen, I need a moment to gather some things. I'll speak to you again when I'm ready to leave.~ */
+	IF ~~ THEN
 	EXIT
 END
 
