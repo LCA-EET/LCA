@@ -156,9 +156,22 @@ CHAIN
 	IF ~~ THEN XAAVBOSS XA_DontDoItChain
 		@28 /* @28=~I will spare the lives of you and your companions, and allow you to take my pet aasimar to do with as you please. She's quite durable, and I've trained her to enjoy whatever abuse you have in store for her, should you or one of your companions have such proclivities.~*/
 
-		= @48 /*@48=~Moreover, she will eagerly obey your every whim, no matter how debased... won't you, my pet?~*/
+		== XAAVBOSS
+		IF ~
+			!Gender(Player1, MALE)
+		~
+		@48 /*@48=~Moreover, she will eagerly obey your every whim, no matter how debased... won't you, my pet?~*/
+
+		== XAAVBOSS
+		IF ~
+			Gender(Player1, MALE)
+		~
+		@49 /*@49=~Moreover, I've left her womanhood intact, should you wish to breed her. Think of the possibilities, <CHARNAME>! The progeny of an aasimar and a Bhaalspawn would inspire fear and awe among anyone unfortunate enough to cross their path.~*/
 
 		== XACAELA2
+		IF ~
+			!Gender(Player1, MALE)
+		~
 		@42 /*~Y-yes, master.~*/
 
 		== XACOR25J
@@ -210,6 +223,25 @@ CHAIN
 			IsValidForPartyDialogue("VALYGAR")
 		~
 		@40 /*~A deal with a devil? No. I have seen too many men convince themselves that the price is worth paying.~*/	
-		
+
+		== MAZZY25J
+		IF ~
+			IsValidForPartyDialogue("MAZZY")
+		~
+		@50 /*@50=~I will not shed a single tear for the disgraced aasimar. The debts incurred through her innumerable atrocities can never be repaid. That said, any dealings with this repulsive baatezu are ill-advised.~ */
+
+		== IMOEN25J
+		IF
+		~ 
+			IsValidForPartyDialogue("Imoen")
+		~
+		@51 /*@51=~Gorion taught us better than to trust the word of a devil.~*/
+
+		== ANOME25J
+		IF 
+		~
+			IsValidForPartyDialogue("Anomen")
+		~
+		@52 /*~Infuriating! To see an aasimar treated so!~*/
 	END
 	IF ~~ THEN GOTO XA_DontDoItChain_End 
