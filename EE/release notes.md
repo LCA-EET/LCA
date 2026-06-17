@@ -12,7 +12,7 @@
 * Revised the conclusion of the first and second Narzugon encounters.
 * Updated the triggering conditions for the Rescue Caelar quest.
 * Added new abilities for Caelar - Martyrdom and Piety.
-* Miscellaneous other improvements.
+* Fixed a bug that prevented Caelar's race from being shown in the character overview window.
 
 ## v1.6 2026-05-27
 * If Corwin is in your party when either Cespenar or the Athkatla smith restring her bow with either the Gond or Gesen bowstrings, she will gain the Restring unique ability. The ability allows her to switch between Corwin's Bow and the upgraded Gond or Gesen versions (and back), provided she has the appropriate bowstrings in her inventory. The Restring ability cannot be used when enemies are nearby.

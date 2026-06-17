@@ -147,7 +147,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_Return5300", "MYAREA", 2)
 		SetGlobal("GavePocketPlane","GLOBAL",1)
-		//ActionOverride(Player1,AddSpecialAbility("SPIN649")) --> already handled by the baldur25 script
+		ActionOverride(Player1,AddSpecialAbility("SPIN649"))
 		//CopyGroundPilesTo("AR4500", [1985.1250])
 		StartCutSceneMode()
 		StartCutScene("XAGO5300")

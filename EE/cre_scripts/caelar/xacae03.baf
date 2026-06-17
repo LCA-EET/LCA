@@ -49,6 +49,7 @@ END
 
 IF
 	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
 	InParty("Sarevok")
 	TriggerOverride("Sarevok", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
 THEN
@@ -59,6 +60,7 @@ END
 
 IF
 	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
 	InParty("Keldorn")
 	TriggerOverride("Keldorn", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
 THEN
@@ -69,6 +71,7 @@ END
 
 IF
 	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
 	InParty("Rasaad")
 	TriggerOverride("Rasaad", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
 THEN
@@ -79,6 +82,7 @@ END
 
 IF
 	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
 	InParty("Jaheira")
 	TriggerOverride("Jaheira", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
 THEN
@@ -89,6 +93,7 @@ END
 
 IF
 	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
 	InParty("Mazzy")
 	TriggerOverride("Mazzy", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
 THEN
@@ -99,6 +104,7 @@ END
 
 IF
 	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
 	InParty("Dorn")
 	TriggerOverride("Dorn", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
 THEN
@@ -109,6 +115,7 @@ END
 
 IF
 	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
 	InParty("Neera")
 	TriggerOverride("Neera", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
 THEN

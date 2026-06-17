@@ -459,7 +459,7 @@ DEFINE_PATCH_FUNCTION xa_inc_cre_difficulty
 	INT_VAR
 		xa_factor = 1
 		xa_hpdivisor = 3
-		xa_expdivisor = 6
+		xa_expdivisor = 10
 	BEGIN
 		READ_SHORT 0x24 xa_currentHP
 		READ_BYTE 0x52 xa_thac0
@@ -469,7 +469,7 @@ DEFINE_PATCH_FUNCTION xa_inc_cre_difficulty
 		SET xa_newHP = xa_currentHP + ((xa_currentHP / xa_hpdivisor ) * xa_factor) // each factor increase hp by a third
 		SET xa_newTHAC0 = xa_thac0 - xa_factor 
 		SET xa_newAC = xa_ac - xa_factor 
-		SET xa_newXP = xa_exp + ((xa_exp / xa_expdivisor) * xa_factor) // each factor increase xp by a sixth
+		SET xa_newXP = xa_exp + ((xa_exp / xa_expdivisor) * xa_factor) // each factor increase xp by a tenth
 		
 		WRITE_SHORT 0x24 xa_newHP
 		WRITE_SHORT 0x26 xa_newHP

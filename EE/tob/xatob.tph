@@ -91,6 +91,16 @@ END
 		EXTEND_BOTTOM ~xacor25.bcs~ ~%MOD_FOLDER%/temp/xa016tob.bcs~ // Restring
 //}
 
+//{ Add Aasimar to racetext.2DA so that it displays in the character overview window for Caelar
+	xa_aasimarRef = RESOLVE_STR_REF(@5052)
+	xa_aasimarUCRef = RESOLVE_STR_REF(@5053)
+	xa_rowCount = 0
+	
+	COPY_EXISTING ~racetext.2da~ ~override~
+	COUNT_2DA_ROWS 6 xa_rowCount
+	INSERT_2DA_ROW xa_rowCount 6 ~AASIMAR	185 %xa_aasimarRef% -1 %xa_aasimarUCRef% -1~		
+//}
+
 //{ Caelar Abilities and Portrait Changes
 	COPY ~%MOD_FOLDER%/tob/spl/~ ~override~
 
