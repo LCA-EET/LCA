@@ -187,6 +187,12 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_ToB_AdjustVariables
 		SAY @7021
 		
+		IF ~~ THEN REPLY @5175
+		DO ~
+			SetGlobal("XA_LC_CaelarRestored", "GLOBAL", 1)
+		~
+		GOTO XA_ToB_AdjustVariables
+
 		IF ~~ THEN REPLY @7022
 		DO ~
 			SetGlobal("XA_LC_UsedGond", "GLOBAL", 0)

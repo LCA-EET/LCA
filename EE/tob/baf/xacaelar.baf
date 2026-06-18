@@ -18,6 +18,7 @@
 	
 //{ Reputation Handling
 IF 
+	Global("XA_LC_CaelarRestored", "GLOBAL", 2)
 	Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 	ReputationLT(Player1,7)
 THEN

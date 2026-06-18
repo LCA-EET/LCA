@@ -32,8 +32,24 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CaelarRestored", "GLOBAL", 1)
+			Continue()
+	END
+
+	IF 
+		Global("XA_LC_CaelarRestored", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
 			ChangeAlignment(Myself, NEUTRAL_GOOD)
+			ChangeStat(Myself, STR, 3, ADD)
+			ChangeStat(Myself, DEX, 3, ADD)
+			ChangeStat(Myself, WIS, 3, ADD)
+			ChangeStat(Myself, INT, 3, ADD)
+			ChangeStat(Myself, CHA, 3, ADD)
+			ChangeStat(Myself, CON, 3, ADD)
 			ApplySpellRES(Myself, "XACHNG03")
+			SetGlobal("XA_LC_CaelarRestored", "GLOBAL", 2)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 //}

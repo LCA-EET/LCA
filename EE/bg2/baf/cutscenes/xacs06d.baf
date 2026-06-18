@@ -33,6 +33,8 @@ THEN
 		ActionOverride("Mazzy", MoveToPoint([3546.2373]))
 		ActionOverride("Mazzy", FaceObject("TargetGolem"))
 		Wait(2)
+		DisplayStringHead("celogan", @55) /* ~Loose!~  */
+		Wait(1)
 		ActionOverride("Mazzy", SetSequence(SEQ_ATTACK))
 		DisplayStringHead("Mazzy", @54)
 		Wait(1)
@@ -57,6 +59,8 @@ THEN
 		ActionOverride("xaschael", MoveToPoint([3546.2373]))
 		ActionOverride("xaschael", FaceObject("TargetGolem"))
 		Wait(2)
+		DisplayStringHead("celogan", @55) /* ~Loose!~  */
+		Wait(1)
 		ActionOverride("xaschael", SetSequence(SEQ_ATTACK))
 		DisplayStringHead("xaschael", @54)
 		Wait(1)
@@ -80,6 +84,8 @@ THEN
 		ActionOverride("trgrd03", MoveToPoint([3546.2373]))
 		ActionOverride("trgrd03", FaceObject("TargetGolem"))
 		Wait(2)
+		DisplayStringHead("celogan", @55) /* ~Loose!~  */
+		Wait(1)
 		ActionOverride("trgrd03", SetSequence(SEQ_ATTACK))
 		DisplayStringHead("trgrd03", @54)
 		Wait(1)
