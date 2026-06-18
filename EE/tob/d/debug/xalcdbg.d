@@ -187,6 +187,18 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_ToB_AdjustVariables
 		SAY @7021
 		
+		IF ~~ THEN REPLY @7063
+		DO ~
+			SetGlobal("XA_LC_SkipNarzuTalk", "GLOBAL", 0)
+		~
+		GOTO XA_ToB_AdjustVariables
+
+		IF ~~ THEN REPLY @7064
+		DO ~
+			SetGlobal("XA_LC_SkipNarzuTalk", "GLOBAL", 1)
+		~
+		GOTO XA_ToB_AdjustVariables
+
 		IF ~~ THEN REPLY @5175
 		DO ~
 			SetGlobal("XA_LC_CaelarRestored", "GLOBAL", 1)

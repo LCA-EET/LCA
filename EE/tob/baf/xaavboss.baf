@@ -1,5 +1,9 @@
 IF
-	GlobalGT("XA_LC_SimulacraKilled", "GLOBAL", 4)
+	Global("XA_LC_Narzu7Killed", "MYAREA", 1)
+	Global("XA_LC_Narzu6Killed", "MYAREA", 1)
+	Global("XA_LC_Narzu5Killed", "MYAREA", 1)
+	Global("XA_LC_Narzu4Killed", "MYAREA", 1)
+	Global("XA_LC_Narzu3Killed", "MYAREA", 1)
 	OR(2)
 		GlobalLT("XA_LC_NarzuBuff", "LOCALS", 1)
 		GlobalTimerExpired("XA_LC_BuffTimer", "LOCALS")

@@ -5,11 +5,23 @@ IF ~
 ~ THEN BEGIN XA_Intro
 	SAY @7  /* ~Ah, welcome <CHARNAME>. How good it is to see you once again.~   */
 	
-	IF ~~ THEN REPLY @25 /*  ~The Incubus. I should've known.~*/
+	IF ~
+		GlobalLT("XA_LC_SkipNarzuTalk","GLOBAL", 1)
+	~ THEN REPLY @25 /*  ~The Incubus. I should've known.~*/
 	DO ~
 		SetGlobal("XA_LC_AVBossTalk", "LOCALS", 1)
 	~
 	GOTO XA_2B
+
+	IF ~
+		Global("XA_LC_SkipNarzuTalk", "GLOBAL", 1)
+	~ THEN 
+	DO ~
+		SetGlobal("XA_LC_Hostile4700", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutScene("xaavport")
+	~
+	EXIT
 END
 
 IF ~~ THEN BEGIN XA_2B

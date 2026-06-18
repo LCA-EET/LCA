@@ -335,20 +335,7 @@ END
 		WRITE_LONG 0x8 RESOLVE_STR_REF(@5045)
 		WRITE_LONG 0xC RESOLVE_STR_REF(@5045)
 		WRITE_LONG 0x14 20000
-		REMOVE_CRE_ITEM ~MINHP1~ ~XASWORD~ ~XAMSRING~ ~XAQUIVER~
-		LPF xa_reset_cre
-			STR_VAR
-				xa_dialog = ~~
-				xa_scriptName = ~~
-				xa_override = ~xanarzus~
-				xa_default = ~~
-		END
-
-		COPY_EXISTING ~xanarzus.cre~ ~override/xanarzus.cre~
-		WRITE_LONG 0x8 RESOLVE_STR_REF(@5045)
-		WRITE_LONG 0xC RESOLVE_STR_REF(@5045)
-		WRITE_LONG 0x14 20000
-		REMOVE_CRE_ITEM ~MINHP1~ ~XASWORD~ ~XAMSRING~ ~XAQUIVER~
+		REMOVE_CRE_ITEM ~XASWORD~ ~XAMSRING~ ~XAQUIVER~
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~~
@@ -383,7 +370,6 @@ END
 		WRITE_LONG 0x14 36000 // Exp
 		WRITE_SHORT 0x24 444 // HP
 		WRITE_SHORT 0x26 444 // HP
-		ADD_CRE_ITEM ~minhp1~ #0 #0 #0 ~identified&unstealable~ ~AMULET~
 		LPF xa_reset_cre
 			STR_VAR
 				xa_dialog = ~xanarzu~
@@ -446,6 +432,8 @@ END
 		WRITE_BYTE 0x23E 9 		// CHA
 		WRITE_SHORT 0x78C 0		// Set charisma effect probability to 0
 		WRITE_SHORT 0x894 0		// Set wisdom effect probability to 0
+		WRITE_LONG 0x77C 0
+		WRITE_LONG 0x884 0
 		REMOVE_CRE_ITEMS
 		WRITE_BYTE 0x27B 34 // Change Alignment to TN
 		LPF xa_reset_cre

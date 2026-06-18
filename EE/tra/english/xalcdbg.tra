@@ -468,3 +468,5 @@
 @7060=~Caelar Portrait Change (Disgraced)~
 @7061=~Caelar Portrait Change (Restored)~
 @7062=~xaca2end~
+@7063=~SetGlobal("XA_LC_SkipNarzuTalk", "GLOBAL", 0)~
+@7064=~SetGlobal("XA_LC_SkipNarzuTalk", "GLOBAL", 1)~

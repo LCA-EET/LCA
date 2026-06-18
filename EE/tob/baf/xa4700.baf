@@ -1,3 +1,65 @@
+//{ Simulacra Monitoring
+IF
+	HPLT("xanarzu7", 10)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_Narzu7Killed", "MYAREA", 1)
+		SetGlobal("XA_LC_Collapse", "MYAREA", 1)
+		CreateVisualEffectObject("1WDCMDAM", "xanarzu7")
+		ActionOverride("xanarzu7", DropInventory())
+		ActionOverride("xanarzu7", DestroySelf())
+		Continue()
+END
+
+IF
+	HPLT("xanarzu6", 10)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_Narzu6Killed", "MYAREA", 1)
+		SetGlobal("XA_LC_Collapse", "MYAREA", 1)
+		CreateVisualEffectObject("1WDCMDAM", "xanarzu6")
+		ActionOverride("xanarzu6", DropInventory())
+		ActionOverride("xanarzu6", DestroySelf())
+		Continue()
+END
+
+IF
+	HPLT("xanarzu5", 10)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_Narzu5Killed", "MYAREA", 1)
+		SetGlobal("XA_LC_Collapse", "MYAREA", 1)
+		CreateVisualEffectObject("1WDCMDAM", "xanarzu5")
+		ActionOverride("xanarzu5", DropInventory())
+		ActionOverride("xanarzu5", DestroySelf())
+		Continue()
+END
+
+IF
+	HPLT("xanarzu4", 10)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_Narzu4Killed", "MYAREA", 1)
+		SetGlobal("XA_LC_Collapse", "MYAREA", 1)
+		CreateVisualEffectObject("1WDCMDAM", "xanarzu4")
+		ActionOverride("xanarzu4", DropInventory())
+		ActionOverride("xanarzu4", DestroySelf())
+		Continue()
+END
+
+IF
+	HPLT("xanarzu3", 10)
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_Narzu3Killed", "MYAREA", 1)
+		SetGlobal("XA_LC_Collapse", "MYAREA", 1)
+		CreateVisualEffectObject("1WDCMDAM", "xanarzu3")
+		ActionOverride("xanarzu3", DropInventory())
+		ActionOverride("xanarzu3", DestroySelf())
+		Continue()
+END
+//}
+
 IF
 	Global("XA_LC_CSStart", "MYAREA", 1)
 THEN
@@ -116,7 +178,11 @@ END
 
 //{ Final Battle
 	IF 
-		GlobalGT("XA_LC_SimulacraKilled", "GLOBAL", 4)
+		Global("XA_LC_Narzu7Killed", "MYAREA", 1)
+		Global("XA_LC_Narzu6Killed", "MYAREA", 1)
+		Global("XA_LC_Narzu5Killed", "MYAREA", 1)
+		Global("XA_LC_Narzu4Killed", "MYAREA", 1)
+		Global("XA_LC_Narzu3Killed", "MYAREA", 1)
 		GlobalLT("XA_LC_BossPortal", "MYAREA", 1)
 	THEN
 		RESPONSE #100
@@ -168,9 +234,14 @@ END
 
 IF
 	GlobalGT("XA_LC_Hostile4700", "GLOBAL", 0)
-	GlobalGT("XA_LC_SimulacraKilled", "GLOBAL", 0)
 	GlobalLT("XA_LC_AVBossFled", "GLOBAL", 1)
 	GlobalLT("XA_LC_4700_Adds", "MYAREA", 4)
+	OR(5)
+		Global("XA_LC_Narzu7Killed", "MYAREA", 1)
+		Global("XA_LC_Narzu6Killed", "MYAREA", 1)
+		Global("XA_LC_Narzu5Killed", "MYAREA", 1)
+		Global("XA_LC_Narzu4Killed", "MYAREA", 1)
+		Global("XA_LC_Narzu3Killed", "MYAREA", 1)
 THEN
 	RESPONSE #100
 		CreateVisualEffect("SPFLESHS",[1050.1075])	/* SW */
