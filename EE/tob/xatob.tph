@@ -440,6 +440,12 @@ END
 		COPY_EXISTING ~xac109.cre~ ~override/xacaelar.cre~ 
 		WRITE_ASCII 0x34 ~xacael2s~ #8
 		WRITE_ASCII 0x3c ~xacael2l~ #8
+		WRITE_BYTE 0x238 15 	// STR
+		WRITE_BYTE 0x23B 7 		// WIS
+		WRITE_BYTE 0x23C 14		// DEX
+		WRITE_BYTE 0x23E 9 		// CHA
+		WRITE_SHORT 0x78C 0		// Set charisma effect probability to 0
+		WRITE_SHORT 0x894 0		// Set wisdom effect probability to 0
 		REMOVE_CRE_ITEMS
 		WRITE_BYTE 0x27B 34 // Change Alignment to TN
 		LPF xa_reset_cre

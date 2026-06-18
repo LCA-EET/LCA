@@ -30,6 +30,7 @@ THEN
 END
 
 IF
+	Global("XA_LC_CaelarRestored", "GLOBAL", 2)
 	InParty(Myself)
 	ReputationLT(Player1,8)
 	GlobalLT("XA_LC_CaelarRepWarning", "GLOBAL", 1)
@@ -43,6 +44,7 @@ THEN
 END
 
 IF 
+	Global("XA_LC_CaelarRestored", "GLOBAL", 2)
 	Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 	Global("XA_LC_CaelarRepWarning", "GLOBAL", 1)
 	ReputationLT(Player1,8)
@@ -56,6 +58,7 @@ THEN
 END
 
 IF 
+	Global("XA_LC_CaelarRestored", "GLOBAL", 2)
 	GlobalGT("XA_LC_CaelarRepWarning", "GLOBAL", 0)
 	ReputationGT(Player1,7)
 THEN
