@@ -106,11 +106,25 @@ END
 
 	COPY_EXISTING ~xamartyr.spl~ ~override~
 	WRITE_LONG 0x8 RESOLVE_STR_REF(@5048)
-	WRITE_LONG 0x58 RESOLVE_STR_REF(@5049)
+	WRITE_LONG 0x50 RESOLVE_STR_REF(@5049)
+	WRITE_ASCII 0x3A ~xamartyr~ #8
+	WRITE_ASCII 0x76 ~xamartyr~ #8
 
 	COPY_EXISTING ~xapiety.spl~ ~override~
 	WRITE_LONG 0x8 RESOLVE_STR_REF(@5050)
-	WRITE_LONG 0x58 RESOLVE_STR_REF(@5051)
+	WRITE_LONG 0x50 RESOLVE_STR_REF(@5051)
+	WRITE_ASCII 0x3A ~xapiety~ #8
+	WRITE_ASCII 0x76 ~xapiety~ #8
+
+	COPY_EXISTING ~xachng03.spl~ ~override~
+	WRITE_LONG 0x8 RESOLVE_STR_REF(@5054)
+	WRITE_LONG 0x50 RESOLVE_STR_REF(@5054)
+	
+	
+	COPY_EXISTING ~xachng04.spl~ ~override~
+	WRITE_LONG 0x8 RESOLVE_STR_REF(@5055)
+	WRITE_LONG 0x50 RESOLVE_STR_REF(@5055)
+	
 //}
 
 COPY ~%MOD_FOLDER%/temp/xalcbico.bcs~ ~%MOD_FOLDER%/temp/xalcbica.bcs~
@@ -671,6 +685,10 @@ END
 
 //}
 
+//{ BAM
+	COPY ~%MOD_FOLDER%/tob/bam~ ~override~
+//}
+
 //{ Items
 	
 	//{ Caelar's Chainmail bdchanca
@@ -709,8 +727,6 @@ END
 	//}
 	
 	//{ Caelar's Sword + 5 new 
-		COPY ~%MOD_FOLDER%/tob/bam/xasw1hc5.bam~ ~override~
-	
 		COPY ~%MOD_FOLDER%/tob/itm/xasw1hc5.itm~ ~override~
 		WRITE_LONG 0x1F6 RESOLVE_STR_REF(@5028) // Desc note
 		WRITE_LONG 0xC RESOLVE_STR_REF(@5033) // Aster's Edge + 5
