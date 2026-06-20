@@ -15,7 +15,7 @@ IF
 	TriggerOverride("XACAELAR", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
 THEN
 	RESPONSE #100
-		ActionOverride("XACAELAR", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+		ActionOverride("XACAELAR", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 2))
 		Continue()
 END
 

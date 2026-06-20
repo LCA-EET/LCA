@@ -64,55 +64,11 @@ END
 IF
 	InParty(Myself)
 	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
-	InParty("Sarevok")
-	TriggerOverride("Sarevok", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+	InParty("Anomen")
+	TriggerOverride("Anomen", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
 THEN
 	RESPONSE #100
-		ActionOverride("Sarevok", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
-		Continue()
-END
-
-IF
-	InParty(Myself)
-	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
-	InParty("Keldorn")
-	TriggerOverride("Keldorn", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
-THEN
-	RESPONSE #100
-		ActionOverride("Keldorn", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
-		Continue()
-END
-
-IF
-	InParty(Myself)
-	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
-	InParty("Rasaad")
-	TriggerOverride("Rasaad", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
-THEN
-	RESPONSE #100
-		ActionOverride("Rasaad", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
-		Continue()
-END
-
-IF
-	InParty(Myself)
-	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
-	InParty("Jaheira")
-	TriggerOverride("Jaheira", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
-THEN
-	RESPONSE #100
-		ActionOverride("Jaheira", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
-		Continue()
-END
-
-IF
-	InParty(Myself)
-	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
-	InParty("Mazzy")
-	TriggerOverride("Mazzy", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
-THEN
-	RESPONSE #100
-		ActionOverride("Mazzy", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		ActionOverride("Anomen", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
 		Continue()
 END
 
@@ -130,10 +86,153 @@ END
 IF
 	InParty(Myself)
 	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
+	InParty("HaerDalis")
+	TriggerOverride("HaerDalis", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("HaerDalis", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
+	InParty("Hexxat")
+	TriggerOverride("Hexxat", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Hexxat", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
+	InParty("Imoen2")
+	TriggerOverride("Imoen2", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Imoen2", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
+	InParty("Jaheira")
+	TriggerOverride("Jaheira", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Jaheira", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
+	InParty("Jan")
+	TriggerOverride("Jan", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Jan", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
+	InParty("Keldorn")
+	TriggerOverride("Keldorn", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Keldorn", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
+	InParty("Korgan")
+	TriggerOverride("Korgan", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Korgan", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
+	InParty("Mazzy")
+	TriggerOverride("Mazzy", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Mazzy", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
+	InParty("Nalia")
+	TriggerOverride("Nalia", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Nalia", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
 	InParty("Neera")
 	TriggerOverride("Neera", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
 THEN
 	RESPONSE #100
 		ActionOverride("Neera", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
+	InParty("Rasaad")
+	TriggerOverride("Rasaad", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Rasaad", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
+	InParty("Sarevok")
+	TriggerOverride("Sarevok", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Sarevok", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
+	InParty("Valygar")
+	TriggerOverride("Valygar", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Valygar", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
+	InParty("Viconia")
+	TriggerOverride("Viconia", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Viconia", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
 		Continue()
 END

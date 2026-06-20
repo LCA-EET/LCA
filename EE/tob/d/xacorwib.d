@@ -266,6 +266,43 @@
 		@863 /* ~I appreciate that Major, and I want to assure you that when the time comes, I'll accept whatever justice awaits me. Let's move out.~ */
 	EXIT
 	
-	
+	CHAIN 
+		IF ~
+			IsGabber("XACORWIN")
+			TriggerOverride("XACAELAR", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("XACAELAR", Global("XA_LC_CorwinBanters", "LOCALS", 1))
+		~ THEN XACAELAB XA_CaelarCorwinBanter1Chain
+		@2019 /* @2019=~Major, may I make an observation?~*/
+		DO ~
+			SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+			IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+		~
+		== XACOR25B
+		@2020 /* @2020=~That depends. Is it about my shooting?~*/
+
+		== XACAELAB
+		@2021 /* @2021=~Not this time. I was reflecting on how fortunate the Flaming Fist must be to have an archer of your skill in its ranks.~*/
+
+		== XACOR25B
+		@2022 /* @2022=~Flattery from the 'Shining Lady'? This should be interesting.~*/
+
+		== XACAELAB
+		@2023 /* @2023=~I merely speak the truth. You possess a commanding presence — striking features, unwavering confidence, and the physique of someone who has spent years mastering her craft.~*/
+
+		== XACOR25B
+		@2024 /* @2024=~That's a surprisingly thorough assessment.~*/
+
+		== XACAELAB
+		@2025 /* @2025=~Years of leadership teach one to notice exceptional people.~*/
+
+		== XACOR25B
+		@2026 /* @2026=~And here I thought people only noticed the bow.~*/
+
+		== XACAELAB
+		@2027 /* @2027=~False modesty in a woman of your caliber? You know as well as I that people notice far more than just the bow.~*/
+
+		== XACOR25B
+		@2028 /* @2028=~Remind me never to ask what you think of my marksmanship. At this rate, I'll be blushing for a tenday.~*/
+	EXIT
 	//}
 //}

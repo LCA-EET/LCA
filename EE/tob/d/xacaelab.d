@@ -532,3 +532,552 @@ CHAIN IF ~
 EXIT
 
 //}
+
+//{ Dialog B-103
+CHAIN IF ~
+	IsGabber("Jan")
+	TriggerOverride("Jan", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride("Jan", Global("XA_LC_CaelarBanters", "LOCALS", 0))
+~ THEN XACAELAB XA_CaelarJanBanter1Chain
+	@133 /*@133=~Stand aside, Jan.~*/
+	== BJAN25
+	@134 /*@134=~Not so fast. You know, I once led a crusade myself.~*/
+	DO ~
+		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
+		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
+	~
+	== XACAELAB
+	@135 /*@135=~Is that so?~*/
+	== BJAN25
+	@136 /*@136=~Yes. Against turnip weeds. Rooted everywhere. Impossible to negotiate with. My Uncle Scratchy lost three garden sheds before we finally pushed them back beyond the cabbage patch.~*/
+	== XACAELAB
+	@137 /*@137=~I suspect none of that is true.~ */
+	== BJAN25
+	@138 /*@138=~That's exactly what the turnip weeds wanted people to think.~ */
+	== XACAELAB
+	@139 /*@139=~I have no time for foolishness. Lives are at stake.~ */
+	== BJAN25
+	@140 /* @140=~Oh, I understand completely. Why, my Aunt Pindle once became convinced her teapot was possessed by a fiend. Turned out to be a raccoon, but the principle remains.~*/
+	== XACAELAB
+	@141 /* @141=~Those situations seem remarkably different.~*/
+	== BJAN25
+	@142 /* @142=~You'd be surprised how often raccoons and fiends overlap.~*/
+	== XACAELAB
+	@143 /*@143=~...~ */
+	== BJAN25
+	@143 /*@143=~...~ */
+	== XACAELAB
+	@143 /*@143=~...~ */
+	== BJAN25
+	@144 /*@144=~If you encounter any raccoons claiming infernal heritage, remember what I told you.~ */
+	== XACAELAB
+	@145 /* @145=~I won't.~*/
+	== BJAN25 
+	@146 /*@146=~That's usually how these things start.~ */
+EXIT
+//}
+
+//{ Dialog B-104
+CHAIN IF ~
+	IsGabber("Edwin")
+	TriggerOverride("Edwin", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride("Edwin", Global("XA_LC_CaelarBanters", "LOCALS", 0))
+~ THEN BEDWIN25 XA_CaelarEdwinBanter1Chain
+	@147 /*@147=~You continue to stare at me, Argent. I can only assume you are admiring the rare combination of intellect, grace, and arcane mastery before you.~*/
+	DO ~
+		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
+		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
+	~
+	== XACAELAB
+	@148 /*@148=~I was remembering why I expelled you from my crusade.~~ */
+	== BEDWIN25
+	@149 /* @149=~Ah, yes. A regrettable decision born of insecurity.~*/
+	== XACAELAB
+	@150 /*@150=~It was born of necessity.~ */
+	== BEDWIN25
+	@151 /* @151=~Nonsense. My strategic insights were invaluable.~*/
+	== XACAELAB
+	@152 /*@152=~Your first strategic insight was to charge admission to the camp chapel. You stationed mercenaries at the entrance and called it "The Sacred Fast-Pass."~ */
+	== BEDWIN25
+	@153	/* @153=~Maintenance is expensive.~*/		
+	== XACAELAB
+	@154	/*@154=~It was a tent. I should have dismissed you then, before you attempted to reorganize the officer corps.~ */
+	== BEDWIN25
+	@155	/*@155=~They lacked proper hierarchy.~ */	
+	== XACAELAB
+	@156	/* @156=~You replaced every title with "Assistant to Edwin."~*/
+	== BEDWIN25
+	@157	/*@157=~Clear chains of command save lives.~ */
+	== XACAELAB
+	@158	/* @158=~There were thirty-seven Assistants to Edwin. It was then that I summoned you and informed you that your services were no longer required. You responded by attempting to invoice the crusade. You billed us for "intellectual enrichment.", and you even charged a consultation fee for the dismissal itself.~*/
+	== BEDWIN25
+	@159	/*~That invoice you mock is in arrears. I intend to collect before our little adventure concludes.~ */
+	== XACAELAB
+	@160 /*@160=~I'd gladly give you the last copper to my name if it means I never have to deal with your pedantry again.~ */
+	== BEDWIN25
+	@161 /* @161=~Hmph.~*/
+EXIT
+//}
+
+//{ Dialog B-105
+CHAIN IF ~
+	IsGabber("Minsc")
+	TriggerOverride("Minsc", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride("Minsc", Global("XA_LC_CaelarBanters", "LOCALS", 0))
+~ THEN XACAELAB XA_CaelarMinscBanter1Chain
+	@162 /*@162=~You charge into battle as though fear were a thing that happens only to other people.~*/
+	== BMINSC25
+	@163 /*~That is because Boo and I have an agreement! Fear stays away, and in return we bring him many evil-doers to chew on.~ */
+	DO ~
+		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
+		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
+	~
+	== XACAELAB
+	@164	/* @164=~A remarkable arrangement. I assume Boo negotiated the terms?~*/
+	
+	== BMINSC25
+	@165	/*@165=~Naturally. Boo is a hamster of uncommon wisdom. I merely provide the muscles, the shouting, and occasional tactical brilliance.~ */
+	
+	== XACAELAB
+	@166	/* @166=~Occasional?~*/
+	
+	== BMINSC25
+	@167	/* @167=~Even heroes must remain humble.~*/
+	
+	== XACAELAB
+	@168	/* @168=~I have led crusades across the Sword Coast, and I confess I have never once received military advice from a hamster.~*/
+	
+	== BMINSC25
+	@169	/* @169=~Then your crusade suffered from a lack of hamsters.~*/
+	
+	== XACAELAB
+	@170	/* @170=~That was not among the problems listed by my commanders.~*/
+	
+	== BMINSC25
+	@174	/* @174=~Ah! Then they were poor commanders.~*/
+
+	== XACAELAB
+	@171	/* @171=~You reduce every matter to astonishing simplicity.~~*/
+	
+	== BMINSC25
+	@172	/* @172=~@172=~Evil is simple. It hurts people. Then Minsc hits it with a sword. Very efficient.~*/
+
+	== XACAELAB
+	@173	/* @173=~If only the world were so easily mended.~*/
+EXIT
+//}
+
+//{ Dialog B-106
+CHAIN IF ~
+	IsGabber("Nalia")
+	TriggerOverride("Nalia", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride("Nalia", Global("XA_LC_CaelarBanters", "LOCALS", 0))
+~ THEN BNALIA25 XA_CaelarNaliaBanter1Chain
+	@175 /*@175=~Lady Argent, you speak of sacrifice as though it were a virtue unto itself.~*/
+	DO ~
+		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
+		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
+	~
+	== XACAELAB
+	@176	/* @176=~Sacrifice is a virtue when it serves a greater purpose.~*/
+	
+	== BNALIA25
+	@177 /*@177=~That's easy to say when others are the ones making it.~ */
+	== XACAELAB
+	@178 /* @178=~And easy to criticize when one has inherited comfort and privilege.~*/
+	
+	== BNALIA25
+	@179 /* @179=~I didn't ask to inherit either. I only refuse to pretend they're a substitute for justice.~*/
+	== XACAELAB
+	@180 /*@180=~Justice often demands difficult choices.~ */
+
+	== BNALIA25
+	@181 /* @181=~It also demands listening to the people who must live with those choices.~*/
+	== XACAELAB
+	@182 /* @182=~A leader who listens to every voice risks never acting at all.~*/
+
+	== BNALIA25
+	@183 /*@183=~A leader who listens to none risks becoming convinced that every mistake is necessary.~ */
+	== XACAELAB
+	@184 /* @184=~...Perhaps that is why neither of us finds leadership as simple as we'd hoped.~*/
+
+EXIT
+//}
+
+//{ Dialog B-107
+CHAIN IF ~
+	IsGabber("XACORWIN")
+	TriggerOverride("XACORWIN", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride("XACORWIN", Global("XA_LC_CaelarBanters", "LOCALS", 1))
+~ THEN XACAELAB XA_CaelarCorwinBanter2Chain
+	@185 /*@185=~Major, may I make an observation?~*/
+	
+	== XACOR25B
+	@186	/* @186=~That depends. Is it about my shooting?~*/
+	DO ~
+		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
+		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
+	~
+	
+	== XACAELAB
+	@187 /* @187=~Not this time. I was reflecting on how fortunate the Flaming Fist must be to have an archer of your skill in its ranks.~*/
+
+	== XACOR25B
+	@188 /* @188=~Flattery from the 'Shining Lady'? This should be interesting.~*/
+
+	== XACAELAB
+	@189 /* @189=~I merely speak the truth. You possess a commanding presence — striking features, unwavering confidence, and the physique of someone who has spent years mastering her craft.~*/
+
+	== XACOR25B
+	@190 /* @190=~That's a surprisingly thorough assessment.~*/
+
+	== XACAELAB
+	@191 /* @191=~Years of leadership teach one to notice exceptional people.~*/
+
+	== XACOR25B
+	@192 /* @192=~And here I thought people only noticed the bow.~*/
+
+	== XACAELAB
+	@193 /* @193=~No need to be so modest. You know as well as I that people notice far more than just the bow.~*/
+
+	== XACOR25B
+	@194 /*@194=~Remind me never to ask what you think of my marksmanship. At this rate, I'll be blushing for a tenday.~ */
+EXIT
+//}
+
+//{ Dialog B-108
+CHAIN IF ~
+	IsGabber("HaerDalis")
+	TriggerOverride("HaerDalis", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride("HaerDalis", Global("XA_LC_CaelarBanters", "LOCALS", 0))
+~ THEN BHAERD25 XA_CaelarHaerDalisBanter1Chain
+	@195 /*@195=~Ah, the Shining Lady. A heroine draped in conviction, marching across the stage of Faerûn as though destiny itself had written her cues.~*/
+	DO ~
+		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
+		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
+	~
+
+	== XACAELAB
+	@196	/* @186=~That depends. Is it about my shooting?~*/
+
+	== BHAERD25	
+	@197 /* @197=~Quite the opposite. Conviction is a splendid thing. It gives tragedies their momentum.~*/
+
+	== XACAELAB
+	@198	/* @198=~You view everything as a performance.~*/
+
+	== BHAERD25	
+	@199 /* @199=~Is it not so? Lovers deliver monologues, kings wear costumes, villains enter from stage left with alarming regularity.~*/
+
+	== XACAELAB
+	@200	/* @200=~And what role do you imagine for yourself?~*/
+
+	== BHAERD25	
+	@201 /* @201=~The clever supporting character who survives by speaking in riddles.~*/
+
+	== XACAELAB
+	@202	/* @202=~That's not what I would call an ambitious goal.~*/
+
+	== BHAERD25	
+	@203 /* @203=~Better than the hero. Heroes attract far too much suffering.~*/
+
+	== XACAELAB
+	@204	/*@204=~On that point, at least, we agree.~ */
+
+	== BHAERD25	
+	@205 /* @205=~Ah! Then perhaps this play yet holds hope for one of its leading ladies.~*/
+
+	== XACAELAB
+	@206	/*@206=~If it does, I suspect the playwright has a cruel sense of humor.~ */
+
+	== BHAERD25	
+	@207 /*@207=~The finest playwrights always do.~ */
+EXIT
+//}
+
+//{ Dialog B-109
+CHAIN IF ~
+	IsGabber("Korgan")
+	TriggerOverride("Korgan", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride("Korgan", Global("XA_LC_CaelarBanters", "LOCALS", 0))
+~ THEN BKORGA25 XA_CaelarKorganBanter1Chain
+	@208 /*@208=~Bah, another self-righteous knight. Tell me, lass, do ye polish that armor more than ye swing that sword?~*/
+	DO ~
+		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
+		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
+	~
+
+	== XACAELAB
+	@209	/* @209=~Only when I'm expecting dwarves with strong opinions and weak manners.~*/
+
+	== BKORGA25	
+	@210 /* @210=~Hah! Ye've got a tongue on ye, I'll grant that.~*/
+
+	== XACAELAB
+	@211	/* @211=~And you have a penchant for solving every problem with an axe.~*/
+
+	== BKORGA25	
+	@212 /* @212=~Aye, that's because it works.~*/
+
+	== XACAELAB
+	@213	/*@213=~For chopping wood, certainly.~ */
+
+	== BKORGA25	
+	@214 /*@214=~And skulls. Never forget skulls.~ */
+
+	== XACAELAB
+	@215	/*@215=~An important distinction. I shall amend my notes accordingly.~ */
+
+	== BKORGA25	
+	@216 /*@216=~Yer mockin' me, but I almost like ye.~ */
+
+	== XACAELAB
+	@217	/* @217=~That's the nicest threat I've received all week.~*/
+EXIT
+//}
+
+//{ Dialog B-110
+CHAIN IF ~
+	IsGabber("Anomen")
+	TriggerOverride("Anomen", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride("Anomen", Global("XA_LC_CaelarBanters", "LOCALS", 0))
+~ THEN BANOME25 XA_CaelarAnomenBanter1Chain
+	@218 /*@218=~Lady Argent, your crusade inspired a remarkable degree of loyalty. Such devotion could not have been easily won.~*/
+	DO ~
+		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
+		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
+	~
+
+	== XACAELAB
+	@219	/* @219=~Nor was it easily kept. Leadership is a burden, not a reward.~*/
+
+	== BANOME25	
+	@220 /* @220=~A sentiment with which I am familiar. Many expect greatness from those chosen to lead.~.~*/
+
+	== XACAELAB
+	@221	/* @221=~And do you consider yourself among the chosen?~*/
+
+	== BANOME25	
+	@222 /* @222=~I strive to be worthy of such distinction.~~.~*/
+
+	== XACAELAB
+	@223	/* @223=~That is not quite an answer.~*/
+
+	== BANOME25	
+	@224 /* @224=~Then allow me to be clearer: yes.~~.~*/
+
+	== XACAELAB
+	@225	/* @225=~Your honesty is refreshing, if somewhat alarming.~*/
+
+	== BANOME25	
+	@226 /* @226=~Ambition is not a vice when tempered by duty.~.~*/
+
+	== XACAELAB
+	@227	/* @227=~No. But duty has a way of revealing whether ambition serves others or merely itself.~*/
+
+	== BANOME25	
+	@228 /* @228=~You speak as though you have never wrestled with pride.~*/
+
+	== XACAELAB
+	@229	/* @229=~On the contrary. I better than most know that pride leads to one's downfall. Take care not to repeat my mistakes.~*/
+
+	== BANOME25
+	@230	/* @230=~Aye. Duty calls us both. After you, my lady.~*/
+
+EXIT
+//}
+
+//{ Dialog B-111
+CHAIN IF ~
+	IsGabber("Imoen2")
+	TriggerOverride("Imoen2", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride("Imoen2", Global("XA_LC_CaelarBanters", "LOCALS", 0))
+~ THEN BIMOEN25 XA_CaelarImoenBanter1Chain
+	@231 /*~Retired menace to world peace, professional regret-haver, and turner of a new leaf Caelar Argent. How's post-epic-villain life treating you?~*/
+	DO ~
+		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
+		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
+	~
+
+	== XACAELAB
+	@232	/* @219=~Nor was it easily kept. Leadership is a burden, not a reward.~*/
+
+	== BIMOEN25
+	@233 /*@233=~I like you already. Most people go for "misunderstood icon" or "tragic legend." You went with honesty.~ */
+
+	== XACAELAB
+	@234 /*@234=~Honesty is... easier now. There is no army to impress, no crusade to justify.~ */
+
+	== BIMOEN25
+	@235 /*@235=~Look at that. We're basically bonding. Next thing you know, you'll be telling me your deepest tragic backstory over tea.~ */
+
+	== XACAELAB
+	@236 /* @236=~I suspect mine is already widely known.~*/
+
+	== BIMOEN25
+	@237 /* @237=~Sure, but I want the unpublished edition. The footnotes. The embarrassing parts.~*/
+
+	== XACAELAB
+	@238 /* @238=~There are no embarrassing parts.~*/
+
+	== BIMOEN25
+	@239 /* @239=~That was too fast. Definitely suspicious.~*/
+
+	== XACAELAB
+	@240 /* @240=~Perhaps I will revise my answer.~*/
+
+	== BIMOEN25
+	@241 /* @241=~Ha! There it is. Growth.~*/
+
+	== XACAELAB
+	@242 /* @242=~And what of you? Do you ever tire of levity?~*/
+
+	== BIMOEN25
+	@243 /* @243=~Only when I'm asleep. Or being chased. Or trapped. Or tortured by a maladjusted, scar-faced wizard. Or... okay, I guess I'm serious plenty.~*/
+
+	== XACAELAB
+	@244 /* @244=~Good, because I have a feeling that seriousness will see us though the battles ahead. Let's go.~*/
+EXIT
+//}
+
+//{ Dialog B-112
+	CHAIN IF ~
+	IsGabber("Viconia")
+	TriggerOverride("Viconia", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride("Viconia", Global("XA_LC_CaelarBanters", "LOCALS", 0))
+~ THEN BVICON25 XA_CaelarViconiaBanter1Chain
+	@245 /*~The Shining Lady, unburdened of her ill-fated crusade. Tell me, how many drow answered your grand call to salvation?~*/
+	DO ~
+		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
+		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
+	~
+
+	== XACAELAB
+	@246 /*@246=~None. I did not expect otherwise.~ */
+
+	== BVICON25
+	@247 /* @247=~None. How remarkable. Even Lolth's least loyal children found your vision unconvincing.~*/
+
+	== XACAELAB
+	@248 /*@248=~Or they saw no place for themselves in it.~ */
+
+	== BVICON25
+	@249 /* @249=~A generous interpretation. I would call it clarity of judgment.~*/
+
+	== XACAELAB
+	@250 /*@250=~You take satisfaction in that?~ */
+
+	== BVICON25
+	@251 /* @251=~I take satisfaction in truth. Your war promised redemption through force. Drow know force intimately. We are unimpressed by it.~*/
+
+	== XACAELAB
+	@252 /* @252=~My crusade was not meant to impress.~*/
+
+	== BVICON25
+	@253 /* @253=~And yet it failed to inspire even desperation. That is a harsher verdict.~*/
+
+	== XACAELAB
+	@254 /* @254=~You assume I measure worth by numbers of followers.~*/
+
+	== BVICON25
+	@255 /* @255=~Do you not? Most leaders do, whether they admit it or not.~*/
+
+	== XACAELAB
+	@256 /* @256=~I have learned that numbers can be as misleading as devotion.~*/
+
+	== BVICON25
+	@257 /* @257=~A useful lesson. Pity it arrived after your army did.~ */
+EXIT
+//}
+
+//{ Dialog B-113
+	CHAIN IF ~
+	IsGabber("Hexxat")
+	TriggerOverride("Hexxat", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride("Hexxat", Global("XA_LC_CaelarBanters", "LOCALS", 0))
+~ THEN BHEXXA25 XA_CaelarHexxatBanter1Chain
+	@271 /*@271=~The Shining Lady. How tiresome that mortals still whisper your name instead of forgetting it.~*/
+	DO ~
+		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
+		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
+	~
+
+	== XACAELAB
+	@272 /* @272=~I would say the same of you, but I doubt you've ever been worth remembering — only feared.~*/
+
+	== BHEXXA25
+	@273 /* @273=~Fear has its uses. It keeps people honest. Unlike your little crusade of delusions.~*/
+
+	== XACAELAB
+	@274 /* @274=~You cling to undeath as though it were triumph, and you accuse me of delusions?~*/
+
+	== BHEXXA25
+	@275 /*@275=~It is survival perfected. No doubt, no fading, no pathetic end in some muddy field.~ */
+
+	== XACAELAB
+	@276 /* @276=~Only a hollow existence masquerading as victory.~*/
+
+	== BHEXXA25
+	@277 /*@277=~Says the woman whose crusade ended in ruin and reflection.~ */
+
+	== XACAELAB
+	@278 /* @278=~Ruin is temporary. What you are is permanent degradation.~*/
+
+	== BHEXXA25
+	@279 /*@279=~And yet I persist, while your righteousness required a grave to collapse.~ */
+
+	== XACAELAB
+	@280 /* @280=~Then take care to safeguard your persistence. Speak to me in such a way again and I will end it.~*/
+EXIT
+//}
+
+//{ Dialog B-114
+	CHAIN IF ~
+	IsGabber("Valygar")
+	TriggerOverride("Valygar", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride("Valygar", Global("XA_LC_CaelarBanters", "LOCALS", 0))
+~ THEN BVALYG25 XA_CaelarValygarBanter1Chain
+	@258 /*@258=~So you're the Shining Lady. I expected... more certainty, given your reputation.~*/
+	DO ~
+		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
+		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
+	~
+
+	== XACAELAB
+	@259 /* @259=~Certainty is often what leads men into fire thinking it is light.~*/
+
+	== BVALYG25 
+	@260 /* @260=~And yet you led many into fire all the same.~*/
+
+	== XACAELAB
+	@261 /* @261=~I led them believing it was salvation.~*/
+
+	== BVALYG25 
+	@262 /* @262=~Even if that were true, intent does not change outcome.~*/
+
+	== XACAELAB
+	@263 /* @263=~No. But it changes what one becomes after the outcome.~*/
+
+	== BVALYG25 
+	@264 /* @264=~A dangerous comfort.~*/
+
+	== XACAELAB
+	@265 /*@265=~Perhaps. You speak as one who avoids leadership entirely.~ */
+
+	== BVALYG25 
+	@266 /* @266=~I avoid causes that demand blind faith. I've seen what they do to people.~*/
+
+	== XACAELAB
+	@267 /* @267=~Then we share at least one lesson learned through loss.~*/
+
+	== BVALYG25 
+	@268 /* @268=~Maybe. But I learned mine before I brought others with me.~*/
+
+	== XACAELAB
+	@269 /* @269=~And I learned mine after. That is the difference you judge me by.~*/
+
+	== BVALYG25 
+	@270 /* @270=~It is not judgment. It is an acknowledgement of fact.~*/
+
+EXIT
+//}
