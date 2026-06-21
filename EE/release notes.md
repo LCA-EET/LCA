@@ -7,7 +7,8 @@
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
 ## v1.7 2026-06-XX
-* Added new dialogs and cutscenes (SoD, SoA).
+* Corwin's racial enemy will change from Skeleton to Vampire after being bitten by Bodhi.
+* Added new dialogs and cutscenes (SoD, SoA), including over a dozen new banters for Corwin and Caelar.
 * Increased the difficulty of the Illasera and Narzugon battles.
 * Revised the conclusion of the first and second Narzugon encounters.
 * Updated the triggering conditions for the Rescue Caelar quest.

@@ -151,7 +151,7 @@
 
 	//{ Dialog B-87
 	CHAIN
-		IF ~
+		IF WEIGHT #0~
 			IsGabber("XACORWIN")
 			TriggerOverride("Sarevok", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Sarevok", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -243,7 +243,7 @@
 //{ Caelar Banters
 	//{ Dialog B-90
 	CHAIN 
-		IF ~
+		IF WEIGHT #0~
 			IsGabber("XACORWIN")
 			TriggerOverride("XACAELAR", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("XACAELAR", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -267,7 +267,7 @@
 	EXIT
 	
 	CHAIN 
-		IF ~
+		IF WEIGHT #0~
 			IsGabber("XACORWIN")
 			TriggerOverride("XACAELAR", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("XACAELAR", Global("XA_LC_CorwinBanters", "LOCALS", 1))
@@ -305,4 +305,203 @@
 		@2028 /* @2028=~Remind me never to ask what you think of my marksmanship. At this rate, I'll be blushing for a tenday.~*/
 	EXIT
 	//}
+//}
+
+//{ Keldorn Banter
+	CHAIN
+		IF ~
+			IsGabber("Keldorn")
+			TriggerOverride("Keldorn", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Keldorn", Global("XA_LC_CorwinBanters", "LOCALS", 0))
+		~ THEN XACOR25B XA_KeldornBanter1Chain
+			@2029 /* ~Tell me, Sir Keldorn — have you ever faced a foe who wasn't a demon, dragon, or avatar of some dark power?~*/
+			
+			== BKELDO25
+			@2030 /* @2030=~Certainly. Once I spent three hours negotiating a property dispute in Athkatla.~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
+			
+			== XACOR25B
+			@2031 /* @2031=~More terrifying than Yaga-Shura?~*/
+
+			== BKELDO25
+			@2032 /* @2032=~Considerably.~*/
+			
+			== XACOR25B
+			@2033 /* @2033=~Gods, I believe you.~*/
+
+			== BKELDO25
+			@2034 /* @2034=~Experience teaches that evil is predictable. Bureaucracy is not.~*/
+			
+			== XACOR25B
+			@2035 /* @2035=~And here I thought paladins feared nothing.~*/
+
+			== BKELDO25
+			@2036 /* @2036=~We do not fear. We merely recognize threats.~*/
+			
+			== XACOR25B
+			@2037 /* @2037=~Then I shall pray in Tymora's name that our next enemy carries a sword instead of legal documents.~*/
+
+			== BKELDO25
+			@2038 /* @2038=~A wise precaution, Major.~*/
+			
+			== XACOR25B
+			@2039 /* @2039=~That's the first time I've heard "wise" and "major" in the same sentence.~*/
+
+			== BKELDO25
+			@2040 /* @2040=~Then your companions have been neglecting their duties.~*/
+	EXIT
+//}
+
+//{ Mazzy Banter
+	CHAIN
+		IF ~
+			IsGabber("Mazzy")
+			TriggerOverride("Mazzy", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Mazzy", Global("XA_LC_CorwinBanters", "LOCALS", 0))
+		~ THEN XACOR25B XA_MazzyBanter1Chain
+			@2041 /* @2041=~Mazzy, do halflings ever get tired of being compared to children?~/
+			
+			== BMAZZY25
+			@2042 /* @2042=~Constantly. Though it does make enemies underestimate me.~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
+			
+			== XACOR25B
+			@2043 /* @2043=~Until you charge them with a sword and a battle cry.~*/
+
+			== BMAZZY25
+			@2044 /* @2044=~Precisely. By then, it is too late for them to revise their assumptions~*/
+
+			== XACOR25B
+			@2045 /* @2045=~I admit, the first time I saw you challenge an ogre, I was concerned.~*/
+
+			== BMAZZY25
+			@2046 /*@2046=~And the second time?~ */
+
+			== XACOR25B
+			@2047 /* @2047=~I was concerned for the ogre.~*/
+
+			== BMAZZY25
+			@2048 /* @2048=~A reasonable adjustment.~*/
+
+			== XACOR25B
+			@2049 /* @2049=~Have you always been this confident?~*/
+
+			== BMAZZY25
+			@2050 /* @2050=~No. I simply learned that if one is only half as tall as everyone else, one must be twice as stubborn.~*/
+
+			== XACOR25B
+			@2051 /* @2051=~That explains why you've survived this long.~*/
+
+	EXIT
+
+//}
+
+//{ Edwin Banter
+	CHAIN
+		IF ~
+			IsGabber("Edwin")
+			TriggerOverride("Edwin", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Edwin", Global("XA_LC_CorwinBanters", "LOCALS", 0))
+		~ THEN XACOR25B XA_EdwinBanter1Chain
+			@2052 /* @2052=~Edwin, I've noticed you never help carry supplies.~~/
+			
+			== BEDWIN25
+			@2053 /* @2053=~Of course not. Great wizards carry the burden of intellect. The rest is delegated.~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
+			
+			== XACOR25B
+			@2054 /* ~How convenient. I've got three bedrolls, a quiver, and enough rations for a week.~*/
+
+			== BEDWIN25
+			@2055 /* @2055=~And yet you remain infuriatingly unbowed beneath the weight.~*/
+
+			== XACOR25B
+			@2056 /* @2056=~Years of training.~*/
+			= @2057 /* @2057=~(She flexes and taps her tensed bicep.)~*/
+
+			== BEDWIN25
+			@2058 /* @2058=~A tragic waste. Imagine if all that effort had been spent studying the arcane arts.~*/
+
+			== XACOR25B
+			@2059 /* @2059=~Then who would drag your ass out of danger when your spells fail to get the job done?~*/
+
+			== BEDWIN25
+			@2060 /* @2060=~My magic requires no such assistance.~*/
+
+			== XACOR25B
+			@2061 /* @2061=~That's not what happened during our last encounter with that marilith.~*/
+
+			== BEDWIN25
+			@2062 /* @2062=~The fiend's tactical decisions were highly irregular.~*/
+
+			== XACOR25B
+			@2063 /* @2063=~Is that Thayan for "I ran"?~*/
+
+			== BEDWIN25
+			@2064 /* @2064=~It is Thayan for "I repositioned with exceptional foresight."~*/
+
+	EXIT
+
+//}
+
+//{ Rasaad Banter
+	CHAIN
+		IF ~
+			IsGabber("Rasaad")
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
+			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 0))
+		~ THEN XACOR25B XA_RasaadBanter1Chain
+			@2065 /* @2065=~Rasaad, has anyone ever told you that your order attracts an unusual number of dramatic people?~/
+			
+			== BRASAA25
+			@2066 /* @2066=~More than once. Why do you ask?~*/
+			DO ~
+				SetGlobal("XA_LC_CorwinBanterPending", "LOCALS", 0)
+				IncrementGlobal("XA_LC_CorwinBanters", "LOCALS", 1)
+			~
+			
+			== XACOR25B
+			@2067 /* @2067=~Because every story you've told involves some grand revelation or prophecy, or the appearance of a long-lost relative.~*/
+
+			== BRASAA25
+			@2068 /* @2068=~The path of the Sun Soul is rarely simple.~*/
+
+			== XACOR25B
+			@2069 /* @2069=~Mine is. I see danger, I shoot danger.~*/
+
+			== BRASAA25
+			@2070 /*@2070=~An admirably direct philosophy.~ */
+
+			== XACOR25B
+			@2071 /* @2071=~It's served me well thus far, and it leaves little room for mysterious revelations.~*/
+
+			== BRASAA25
+			@2072 /* @2072=~Yet somehow you travel with a Bhaalspawn and several individuals who could fill a library with their personal tragedies.~ */
+
+			== XACOR25B
+			@2073 /*@2073=~That's different. I don't seek out dramatic people.~*/
+
+			== BRASAA25
+			@2074 /*@2074=~You simply attract them? Male, and female?~ */
+
+			== XACOR25B
+			@2075 /* @2075=~Like moths to a flame.~*/
+
+			== BRASAA25
+			@2076 /* @2076=~An analogy that may explain more than you intended.~*/
+	EXIT
+
+//}
+
+//{ Valygar Banter
+
 //}

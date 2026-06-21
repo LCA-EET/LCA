@@ -11,6 +11,7 @@ END
 
 IF
 	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
 	InParty("XACAELAR")
 	TriggerOverride("XACAELAR", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
 THEN

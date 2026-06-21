@@ -255,7 +255,7 @@ END
 //}
 
 //{ Dialog B-91
-CHAIN IF ~
+CHAIN IF WEIGHT #0~
 	IsGabber("XACAELAR")
 	TriggerOverride("Sarevok", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride("Sarevok", Global("XA_LC_CaelarBanters", "LOCALS", 0))
@@ -282,7 +282,7 @@ EXIT
 //}
 
 //{ Dialog B-92
-CHAIN IF ~
+CHAIN IF WEIGHT #0~
 	IsGabber("XACAELAR")
 	TriggerOverride("Keldorn", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride("Keldorn", Global("XA_LC_CaelarBanters", "LOCALS", 0))
@@ -306,7 +306,7 @@ EXIT
 //}
 
 //{ Dialog B-93
-CHAIN IF ~
+CHAIN IF WEIGHT #0~
 	IsGabber("XACAELAR")
 	TriggerOverride("Rasaad", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride("Rasaad", Global("XA_LC_CaelarBanters", "LOCALS", 0))
@@ -361,7 +361,7 @@ EXIT
 //}
 
 //{ Dialog B-95
-CHAIN IF ~
+CHAIN IF WEIGHT #0~
 	IsGabber("XACAELAR")
 	TriggerOverride("Mazzy", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride("Mazzy", Global("XA_LC_CaelarBanters", "LOCALS", 0))
@@ -393,7 +393,7 @@ EXIT
 //}
 
 //{ Dialog B-96
-CHAIN IF ~
+CHAIN IF WEIGHT #0~
 	IsGabber("XACAELAR")
 	Global("XA_LC_DornProposal", "GLOBAL", 1)
 ~ THEN BDORN25 XA_CaelarDornBanter1Chain
@@ -533,7 +533,7 @@ EXIT
 
 //}
 
-//{ Dialog B-103
+//{ Dialog B-103 OK
 CHAIN IF ~
 	IsGabber("Jan")
 	TriggerOverride("Jan", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
@@ -577,8 +577,8 @@ CHAIN IF ~
 EXIT
 //}
 
-//{ Dialog B-104
-CHAIN IF ~
+//{ Dialog B-104 OK
+CHAIN IF WEIGHT #0~
 	IsGabber("Edwin")
 	TriggerOverride("Edwin", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride("Edwin", Global("XA_LC_CaelarBanters", "LOCALS", 0))
@@ -609,9 +609,9 @@ CHAIN IF ~
 	== BEDWIN25
 	@157	/*@157=~Clear chains of command save lives.~ */
 	== XACAELAB
-	@158	/* @158=~There were thirty-seven Assistants to Edwin. It was then that I summoned you and informed you that your services were no longer required. You responded by attempting to invoice the crusade. You billed us for "intellectual enrichment.", and you even charged a consultation fee for the dismissal itself.~*/
+	@158	/* @158=~There were thirty-seven Assistants to Edwin. It was then that I summoned you and informed you that your services were no longer required. You responded by invoicing the crusade for "intellectual enrichment services", and you even charged a consultation fee for the dismissal itself.~*/
 	== BEDWIN25
-	@159	/*~That invoice you mock is in arrears. I intend to collect before our little adventure concludes.~ */
+	@159	/*~@159=~That invoice you are referring to is in arrears. I intend to collect before our little adventure concludes.~*/
 	== XACAELAB
 	@160 /*@160=~I'd gladly give you the last copper to my name if it means I never have to deal with your pedantry again.~ */
 	== BEDWIN25
@@ -619,7 +619,7 @@ CHAIN IF ~
 EXIT
 //}
 
-//{ Dialog B-105
+//{ Dialog B-105 OK
 CHAIN IF ~
 	IsGabber("Minsc")
 	TriggerOverride("Minsc", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
@@ -667,8 +667,8 @@ CHAIN IF ~
 EXIT
 //}
 
-//{ Dialog B-106
-CHAIN IF ~
+//{ Dialog B-106 OK
+CHAIN IF WEIGHT #0~
 	IsGabber("Nalia")
 	TriggerOverride("Nalia", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride("Nalia", Global("XA_LC_CaelarBanters", "LOCALS", 0))
@@ -704,49 +704,8 @@ CHAIN IF ~
 EXIT
 //}
 
-//{ Dialog B-107
-CHAIN IF ~
-	IsGabber("XACORWIN")
-	TriggerOverride("XACORWIN", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
-	TriggerOverride("XACORWIN", Global("XA_LC_CaelarBanters", "LOCALS", 1))
-~ THEN XACAELAB XA_CaelarCorwinBanter2Chain
-	@185 /*@185=~Major, may I make an observation?~*/
-	
-	== XACOR25B
-	@186	/* @186=~That depends. Is it about my shooting?~*/
-	DO ~
-		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
-		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
-	~
-	
-	== XACAELAB
-	@187 /* @187=~Not this time. I was reflecting on how fortunate the Flaming Fist must be to have an archer of your skill in its ranks.~*/
-
-	== XACOR25B
-	@188 /* @188=~Flattery from the 'Shining Lady'? This should be interesting.~*/
-
-	== XACAELAB
-	@189 /* @189=~I merely speak the truth. You possess a commanding presence — striking features, unwavering confidence, and the physique of someone who has spent years mastering her craft.~*/
-
-	== XACOR25B
-	@190 /* @190=~That's a surprisingly thorough assessment.~*/
-
-	== XACAELAB
-	@191 /* @191=~Years of leadership teach one to notice exceptional people.~*/
-
-	== XACOR25B
-	@192 /* @192=~And here I thought people only noticed the bow.~*/
-
-	== XACAELAB
-	@193 /* @193=~No need to be so modest. You know as well as I that people notice far more than just the bow.~*/
-
-	== XACOR25B
-	@194 /*@194=~Remind me never to ask what you think of my marksmanship. At this rate, I'll be blushing for a tenday.~ */
-EXIT
-//}
-
-//{ Dialog B-108
-CHAIN IF ~
+//{ Dialog B-108 OK
+CHAIN IF WEIGHT #0~
 	IsGabber("HaerDalis")
 	TriggerOverride("HaerDalis", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride("HaerDalis", Global("XA_LC_CaelarBanters", "LOCALS", 0))
@@ -795,8 +754,8 @@ CHAIN IF ~
 EXIT
 //}
 
-//{ Dialog B-109
-CHAIN IF ~
+//{ Dialog B-109 OK
+CHAIN IF WEIGHT #0~
 	IsGabber("Korgan")
 	TriggerOverride("Korgan", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride("Korgan", Global("XA_LC_CaelarBanters", "LOCALS", 0))
@@ -836,8 +795,8 @@ CHAIN IF ~
 EXIT
 //}
 
-//{ Dialog B-110
-CHAIN IF ~
+//{ Dialog B-110 OK
+CHAIN IF WEIGHT #0~
 	IsGabber("Anomen")
 	TriggerOverride("Anomen", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride("Anomen", Global("XA_LC_CaelarBanters", "LOCALS", 0))
@@ -887,8 +846,8 @@ CHAIN IF ~
 EXIT
 //}
 
-//{ Dialog B-111
-CHAIN IF ~
+//{ Dialog B-111 OK
+CHAIN IF WEIGHT #0~
 	IsGabber("Imoen2")
 	TriggerOverride("Imoen2", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride("Imoen2", Global("XA_LC_CaelarBanters", "LOCALS", 0))
@@ -940,8 +899,8 @@ CHAIN IF ~
 EXIT
 //}
 
-//{ Dialog B-112
-	CHAIN IF ~
+//{ Dialog B-112 OK
+CHAIN IF WEIGHT #0~
 	IsGabber("Viconia")
 	TriggerOverride("Viconia", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride("Viconia", Global("XA_LC_CaelarBanters", "LOCALS", 0))
@@ -990,8 +949,8 @@ EXIT
 EXIT
 //}
 
-//{ Dialog B-113
-	CHAIN IF ~
+//{ Dialog B-113 OK
+CHAIN IF WEIGHT #0~
 	IsGabber("Hexxat")
 	TriggerOverride("Hexxat", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride("Hexxat", Global("XA_LC_CaelarBanters", "LOCALS", 0))
@@ -1031,8 +990,8 @@ EXIT
 EXIT
 //}
 
-//{ Dialog B-114
-	CHAIN IF ~
+//{ Dialog B-114 OK
+CHAIN IF WEIGHT #0~
 	IsGabber("Valygar")
 	TriggerOverride("Valygar", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
 	TriggerOverride("Valygar", Global("XA_LC_CaelarBanters", "LOCALS", 0))
@@ -1078,6 +1037,49 @@ EXIT
 
 	== BVALYG25 
 	@270 /* @270=~It is not judgment. It is an acknowledgement of fact.~*/
+
+EXIT
+//}
+
+
+//{ Dialog B-115 OK
+CHAIN IF ~
+	IsGabber("Cernd")
+	TriggerOverride("Cernd", Global("XA_LC_CaelarBanterPending", "LOCALS", 1))
+	TriggerOverride("Cernd", Global("XA_LC_CaelarBanters", "LOCALS", 0))
+~ THEN XACAELAB XA_CaelarCerndBanter1Chain
+	@281 /* @281=~I once believed my crusade was righteous. Now I wake to the echo of every life it shattered.~*/	
+
+	== BCERND25
+	@282 /*@282=~Remorse is the first soil in which wisdom may take root, though it is often bitter ground.~ */
+	DO ~
+		SetGlobal("XA_LC_CaelarBanterPending", "LOCALS", 0)
+		IncrementGlobal("XA_LC_CaelarBanters", "LOCALS", 1)
+	~
+
+	== XACAELAB 
+	@283 /*@283=~Bitter, yes. I see now I brought ruin where I swore to bring salvation.~ */
+
+	== BCERND25
+	@284 /* @284=~Many who seek to save the world forget it does not wish to be conquered, even for its own good.~*/
+
+	== XACAELAB 
+	@285 /* @285=~In convincing myself the ends justified the march forward, I've become a warning more than a champion.~*/
+
+	== BCERND25
+	@286 /* @286=~A warning, perhaps, but also a living branch that may yet bend differently in new winds.~*/
+
+	== XACAELAB 
+	@287 /* @287=~Do you think balance can forgive what I have done?~ */
+
+	== BCERND25
+	@288 /* @288=~Balance does not forgive or condemn; it absorbs, and in time, reshapes even tragedy.~*/
+
+	== XACAELAB 
+	@289 /* @289=~Then I will endure whatever shape it gives me next, if it means no more such devastation.~*/
+
+	== BCERND25
+	@290 /* @290=~That resolve, tempered by sorrow, is closer to harmony than your crusade ever was.~ */
 
 EXIT
 //}

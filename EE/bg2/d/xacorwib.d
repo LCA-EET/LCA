@@ -2405,7 +2405,7 @@ END
 
 	//{ Dialog R-09
 	CHAIN
-		IF ~
+		IF WEIGHT #0~
 			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_CorwinSick_Aerie", "GLOBAL", 1)
@@ -2434,7 +2434,7 @@ END
 
 	//{ Dialog R-10
 	CHAIN
-		IF ~
+		IF WEIGHT #0~
 			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_CorwinSick_Jaheira", "GLOBAL", 1)
@@ -2471,7 +2471,7 @@ END
 
 	//{ Dialog R-11
 	CHAIN
-		IF ~
+		IF WEIGHT #0~
 			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_CorwinSick_Korgan", "GLOBAL", 1)
@@ -2493,7 +2493,7 @@ END
 
 	//{ Dialog R-12
 	CHAIN
-		IF ~
+		IF WEIGHT #0~
 			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_CorwinSick_Imoen", "GLOBAL", 1)
@@ -2727,7 +2727,7 @@ END
 	
 	//{ Dialog B-13A
 	CHAIN 
-		IF ~
+		IF WEIGHT #0~
 			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Nalia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
@@ -2762,7 +2762,7 @@ END
 	
 	//{ Dialog B-13B
 	CHAIN 
-		IF ~
+		IF WEIGHT #0~
 			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Nalia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
@@ -2881,7 +2881,7 @@ END
 
 	//{ Dialog B-16
 	CHAIN 
-		IF ~
+		IF WEIGHT #0~
 			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
@@ -2896,7 +2896,7 @@ END
 
 	//{ Dialog B-17
 	CHAIN 
-		IF ~
+		IF WEIGHT #0~
 			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
@@ -3157,7 +3157,7 @@ END
 
 	//{ Dialog B-23
 	CHAIN 
-		IF ~
+		IF WEIGHT #0~
 			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Minsc", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
@@ -3246,7 +3246,7 @@ END
 
 	//{ Dialog B-25
 	CHAIN 
-		IF ~
+		IF WEIGHT #0~
 			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
@@ -3283,7 +3283,7 @@ END
 
 	//{ Dialog B-26
 	CHAIN 
-		IF ~
+		IF WEIGHT #0~
 			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
@@ -3941,7 +3941,7 @@ END
 
 	//{ Dialog B-85
 	CHAIN
-		IF ~
+		IF WEIGHT #0~
 			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_CorwinValygarBG", "GLOBAL", 1)
@@ -4300,7 +4300,7 @@ END
 
 	//{ Dialog B-48
 	CHAIN
-		IF ~
+		IF WEIGHT #0~
 			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_Banter_CorwinViconiaCity", "GLOBAL", 1)
@@ -4840,7 +4840,7 @@ END
 
 	//{ Dialog B-XX
 	CHAIN
-		IF ~
+		IF WEIGHT #0~
 			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			Global("XA_LC_Banter_CorwinKeldInitial", "GLOBAL", 1)
@@ -5433,7 +5433,7 @@ END
 
 	//{ Dialog B-76
 	CHAIN
-		IF ~
+		IF WEIGHT #0~
 			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Aerie", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
@@ -5515,7 +5515,7 @@ END
 
 	//{ Dialog B-78
 	CHAIN
-		IF ~
+		IF WEIGHT #0~
 			IsGabber("XACORWIN")
 			GlobalLT("XA_LC_EnteredToB", "GLOBAL", 1)
 			TriggerOverride("Aerie", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))

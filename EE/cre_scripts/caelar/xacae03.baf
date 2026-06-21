@@ -75,6 +75,17 @@ END
 IF
 	InParty(Myself)
 	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
+	InParty("Cernd")
+	TriggerOverride("Cernd", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+THEN
+	RESPONSE #100
+		ActionOverride("Cernd", SetGlobal("XA_LC_CaelarBantersEnd", "LOCALS", 1))
+		Continue()
+END
+
+IF
+	InParty(Myself)
+	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
 	InParty("Dorn")
 	TriggerOverride("Dorn", GlobalLT("XA_LC_CaelarBantersEnd", "LOCALS", 1))
 THEN
