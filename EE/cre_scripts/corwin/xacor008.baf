@@ -1,3 +1,14 @@
+//{ Change Racial Enemy
+	IF
+		Global("XA_LC_CorwinVampireRacialEnemy", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			ChangeStat(Myself, HATEDRACE, 125, SET)
+			SetGlobal("XA_LC_CorwinVampireRacialEnemy", "LOCALS", 0)
+			Continue()
+	END
+//}
+
 //{ Exercise Dialog
 	IF
 		InParty(Myself)

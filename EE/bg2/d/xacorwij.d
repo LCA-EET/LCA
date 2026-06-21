@@ -1553,6 +1553,7 @@ THEN BEGIN XA_CorwinBitWokeUp
 		SetGlobalTimer("XA_LC_CorwinBitTimer", "GLOBAL", EIGHT_HOURS)
 		SetGlobal("XA_LC_CorwinBit", "GLOBAL", 3)
 		SetGlobal("XA_LC_CorwinCured", "GLOBAL", 0)
+		SetGlobal("XA_LC_CorwinVampireRacialEnemy", "LOCALS", 1)
 	~
 	GOTO XA_CorwinBitWokeUp2
 END

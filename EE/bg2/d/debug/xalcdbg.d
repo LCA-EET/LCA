@@ -348,6 +348,12 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_BG2_AdjustVariables
 		SAY @5083
 		
+		IF ~~ THEN REPLY @5176
+		DO ~
+			ActionOverride("XACORWIN", SetGlobal("XA_LC_CorwinVampireRacialEnemy", "LOCALS", 0))
+		~
+		GOTO XA_BG2_Debug
+
 		IF ~~ THEN REPLY @5174
 		DO ~
 			SetGlobal("XA_LC_Workout", "GLOBAL", 5)
