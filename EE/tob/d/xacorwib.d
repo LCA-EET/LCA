@@ -362,7 +362,7 @@
 			TriggerOverride("Mazzy", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Mazzy", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 		~ THEN XACOR25B XA_MazzyBanter1Chain
-			@2041 /* @2041=~Mazzy, do halflings ever get tired of being compared to children?~/
+			@2041 /* @2041=~Mazzy, do halflings ever get tired of being compared to children?~*/
 			
 			== BMAZZY25
 			@2042 /* @2042=~Constantly. Though it does make enemies underestimate me.~*/
