@@ -409,7 +409,7 @@
 			TriggerOverride("Edwin", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Edwin", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 		~ THEN XACOR25B XA_EdwinBanter1Chain
-			@2052 /* @2052=~Edwin, I've noticed you never help carry supplies.~~/
+			@2052 /* @2052=~Edwin, I've noticed you never help carry supplies.~~*/
 			
 			== BEDWIN25
 			@2053 /* @2053=~Of course not. Great wizards carry the burden of intellect. The rest is delegated.~*/
@@ -682,31 +682,31 @@
 			== XACOR25B
 			@2119 /* @2119=~Less comfortable than you'd think. Destiny snores after a hard march.~*/
 			
-			== BVICONI25
+			== BVICON25
 			@2120 /* @2120=~Heh. You make light of it, yet the child of Bhaal stands mere steps from godhood.~*/
 
 			== XACOR25B
 			@2121 /* @2121=~That's exactly why I make light of it.~*/
 			
-			== BVICONI25
+			== BVICON25
 			@2122 /* @2122=~I find it curious. The child of Bhaal could have power, worship, almost any lover <PRO_HESHE> desired... yet <PRO_HESHE> choose a soldier.~*/
 
 			== XACOR25B
 			@2123 /* @2123=~Maybe <PRO_HESHE>'s tired of people seeing a prophecy instead of a person.~*/
 			
-			== BVICONI25
+			== BVICON25
 			@2124 /* @2124=~Hmph. A surprisingly wise answer.~*/
 
 			== XACOR25B
 			@2125 /* @2125=~Careful. Someone might mistake that for a compliment.~*/
 			
-			== BVICONI25
+			== BVICON25
 			@2126 /* @2126=~Do not press thy luck. I simply understand the burden of being desired for what one is rather than who one is.~*/
 
 			== XACOR25B
 			@2127 /* @2127=~Then we understand each other more than either of us would like.~~*/
 			
-			== BVICONI25
+			== BVICON25
 			@2128 /* @2128=~Perhaps. Though if you break <PRO_HISHER> heart, Corwin, I shall enjoy proving that strength and beauty are no defense against divine magic.~*/
 	EXIT
 
@@ -761,7 +761,7 @@
 	CHAIN
 		IF WEIGHT #0~
 			IsGabber("Anomen")
-			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			TriggerOverride("Anomen", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Anomen", Global("XA_LC_CorwinBanters", "LOCALS", 0))
 		~ THEN BANOME25 XA_AnomenBanter1Chain
@@ -1027,7 +1027,7 @@ CHAIN
 			@2204 /*@2204=~I hope not. Most balladeers I've met improved the truth until it became nonsense.~ */
 
 			== BHAERD25
-			@2205 /* @2205=~A cruel wound to my profession.~
+			@2205 /* @2205=~A cruel wound to my profession.~ */
 
 			== XACOR25B
 			@2206 /*@2206=~You'll survive. Bards usually do.~ */

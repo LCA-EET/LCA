@@ -57,7 +57,7 @@
 @56=~We don't all grow up in wealthy households. Some of us have to work to support their family instead of playing dress up as a knight in shining armor.~ [xalc8008]
 @57=~I think you heard me quite clearly. Let's move out.~
 @58=~Hm. I appreciate you sharing this with me, Major. Such things are never easy to talk about.~
-@59=~You know, it's ironic that you'd ask about him. When Rohma was born, he wanted me to leave her at a temple of the Radiant Heart. Could you imagine? Giving up my baby like that? That was when I knew that it could never work between us.~ [xalc8121]
+@59=~You know, it's ironic that you'd ask about him. When Rohma was born, he wanted me to leave her at a temple of the Radiant Heart.~ 
 @60=~Keldorn, a moment of your time?~ [xalc8123]
 @61=~Of course Captain. How can I help you?~
 @62=~Do you have any children?~ [xalc7005]
@@ -849,7 +849,7 @@
 /* 1.0.8 */
 @906=~Perhaps she is. But it doesn't matter. I don't think we'll need to worry about her ever again. Even if she did manage to escape, I doubt she would try to raise up a new army. She'd do better to lay low and live her days in peace.~
 @907=~Perhaps he is. I'm grateful for his sacrifice. I can't imagine the heartbreak he felt watching his niece pledge herself to a devil like Belhifet.~
-@908=~Of course. It was at the Ducal palace... we were under attack from Caelar's forces. I ran upstairs to make sure you and Imoen were alright.~
+@908=~Of course. It was at the Ducal palace... we were under attack from I'm not sure I trust's forces. I ran upstairs to make sure you and Imoen were alright.~
 @909=~And amidst all that chaos, I remember being captivated by your beauty... I still am.~
 @910=~We defeated the assassins and left for Dragonspear shortly thereafter.~
 @911=~Of course. It was at Wyrm's Crossing. Scar, rest his soul, introduced us. <CHARNAME>, the intrepid adventurer who had been battling bandits up and down the Sword Coast.~
@@ -931,7 +931,7 @@
 @1906=~Even if I wanted to, I could never afford a home here on a Captain's salary. I'd need to make Major, or maybe even Colonel; even then I'd only barely manage.~
 @1907=~Well, now that I'm in the Council's good graces again, I'll see about getting you a promotion.~
 @1908=~No, please don't. I mean... I'm fine. Thank you.~ [xalc7055]
-@1909=~If — no, when I earn a higher rank, I don't want anyone to think I received any special treatment. There have been enough of those sorts of rumors already.~ [xalc8169]
+@1909=~If — no, WHEN I earn a higher rank, I don't want anyone to think I received any special treatment. There have been enough of those sorts of rumors already.~ [xalc8169]
 @1910=~Rumors?~
 @1911=~I don't understand.~
 @1912=~I think you know what I mean. I made Corporal faster than anyone in my cohort, and Captain sooner than any academy graduate in the last thirty years. Some people seem to believe that its because of my ... appearance, or the fact that I'm a woman, or that it's because of my father...~
@@ -1056,7 +1056,7 @@
 @2034=~Experience teaches that evil is predictable. Bureaucracy is not.~
 @2035=~And here I thought paladins feared nothing.~
 @2036=~We do not fear. We merely recognize threats.~
-@2037=~Then I shall pray in Tymora's name that our next enemy carries a sword instead of legal documents.~
+@2037=~Then I shall pray in Tymora's name that our next enemy carries a sword instead of a stack of paperwork.~
 @2038=~A wise precaution, Major.~
 @2039=~That's the first time I've heard "wise" and "major" in the same sentence.~
 @2040=~Then your companions have been neglecting their duties.~
@@ -1084,7 +1084,7 @@
 @2062=~The fiend's tactical decisions were highly irregular.~
 @2063=~Is that Thayan for "I ran"?~
 @2064=~It is Thayan for "I repositioned with exceptional foresight."~
-@2065=~Rasaad, has anyone ever told you that your order attracts an unusual number of dramatic people?~
+@2065=~Rasaad—has anyone ever told you that your order attracts an unusual number of dramatic people?~
 @2066=~More than once. Why do you ask?~
 @2067=~Because every story you've told involves some grand revelation or prophecy, or the appearance of a long-lost relative.~
 @2068=~The path of the Sun Soul is rarely simple.~
@@ -1110,7 +1110,7 @@
 @2088=~Every day. Yet I remind myself that the burden has changed <PRO_HIMHER>, not erased <PRO_HIMHER>.~
 @2089=~I fear what waits at the end. Not for Faerûn — for <PRO_HIMHER>. Each victory seems to take something.~
 @2090=~That is the nature of power. The danger is not what it grants, but what it demands in return.~
-@2091=~Then perhaps I am selfish. I do not care whether history remembers <PRO_HIMHER> as a hero or a god. I only want them to survive this.~
+@2091=~Then perhaps I am selfish. I don't care whether history remembers <PRO_HIMHER> as a hero or a god. I only want them to survive this.~
 @2092=~That is not selfishness. It is love.~
 @2093=~And if love is not enough?~
 @2094=~Then stand beside them anyway. We cannot choose another's path, Schael. We can only ensure they do not walk it alone.~
@@ -1178,7 +1178,7 @@
 @2156=~It bothers me every day. I just don’t let it decide my actions.~
 @2157=~That’s the spirit. Waste o’ time worryin’ about doom when there’s fightin’ to be done.~
 @2158=~Ye’ve got the arms of a smith and the glare of a magistrate, lass. Shame ye waste it on arrows instead of axes.~
-@2159=~I prefer precision over splintering my own shield arm with every blocked blow.~
+@2159=~I prefer precision over the risk of fracturing my shield arm with every blocked blow.~
 @2161=~Hah! Aye, but there’s somethin’ honest about a good axe. None o’ that dainty distance killin’.~
 @2162=~Tell that to the things trying to kill us from beyond blade range.~
 @2163=~Tch. Ye just like keepin’ yer lovely tush out o’ the mess.~
@@ -1257,3 +1257,4 @@
 @2236=~No, but you've learned to ask. I'm proud of you.~
 @2237=~One day, Jan, I'm going to get a straight answer from you.~
 @2238=~Then the gods truly are doomed.~
+@2239=~Could you imagine? Giving up my baby like that? That was when I knew that it could never work between us.~ [xalc8121]
