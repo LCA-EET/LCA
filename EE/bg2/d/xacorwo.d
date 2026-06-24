@@ -197,10 +197,8 @@ END
 IF ~~ THEN BEGIN XA_WorkOut_14
 	SAY @1947 /*@1947=~With enough time and discipline, you could. I imagine it would be easier for you than it was for me, given your divine blood.~*/
 
-	IF ~
-		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @1948 /*@1948=~Maybe you're right...~*/
-	GOTO XA_WorkOut_15A_Romance
+	IF ~~ THEN REPLY @1948 /*@1948=~Maybe you're right...~*/
+	GOTO XA_WorkOut_15A
 
 	IF ~
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
@@ -209,17 +207,12 @@ IF ~~ THEN BEGIN XA_WorkOut_14
 
 	IF ~
 		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
-	~ THEN REPLY @1948 /*@1948=~Maybe you're right...~*/
-	GOTO XA_WorkOut_15A_NonRomance
-
-	IF ~
-		!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	~ THEN REPLY @1949 /*~Discipline, unfortunately, is something that I tend to lack.~*/
 	GOTO XA_WorkOut_15B_NonRomance
 END
 
-IF ~~ THEN BEGIN XA_WorkOut_15A_Romance
-	SAY @1951 /* =~Well, let me know when you're ready to start training. For now, get some rest, dear... One... two...~ */
+IF ~~ THEN BEGIN XA_WorkOut_15A
+	SAY @1950 /* =~Well, let me know when you're ready to start training. For now, get some rest, hero... One... two...~ */
 
 	IF ~~ THEN
 	DO ~
@@ -228,12 +221,6 @@ IF ~~ THEN BEGIN XA_WorkOut_15A_Romance
 		SetGlobal("XA_LC_Workout", "GLOBAL", 4)
 	~
 	EXIT
-END
-
-IF ~~ THEN BEGIN XA_WorkOut_15A_NonRomance
-	SAY @1950 /* @1950=~Well, let me know when you're ready to start training. For now, get some rest, hero... One... two...~ */
-
-	COPY_TRANS XACORWO XA_WorkOut_15A_Romance
 END
 
 IF ~~ THEN BEGIN XA_WorkOut_15B_Romance

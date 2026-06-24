@@ -1,22 +1,220 @@
+//{ Aerie
+	IF
+		InParty(Myself)
+		InParty("Aerie")
+		TriggerOverride("Aerie", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("Aerie", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+			Continue()
+	END
+//}
 
-IF
-	InParty(Myself)
-	InParty("Sarevok")
-	TriggerOverride("Sarevok", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
-THEN
-	RESPONSE #100
-		ActionOverride("Sarevok", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 3))
-		Continue()
-END
+//{ Anomen
+	IF
+		InParty(Myself)
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		InParty("Anomen")
+		TriggerOverride("Anomen", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("Anomen", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+			Continue()
+	END
+//}
 
-IF
-	InParty(Myself)
-	GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
-	InParty("XACAELAR")
-	TriggerOverride("XACAELAR", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
-THEN
-	RESPONSE #100
-		ActionOverride("XACAELAR", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 2))
-		Continue()
-END
+//{ Caelar
+	IF
+		InParty(Myself)
+		GlobalGT("XA_LC_CaelarRestored", "GLOBAL", 0)
+		InParty("XACAELAR")
+		TriggerOverride("XACAELAR", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("XACAELAR", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 2))
+			Continue()
+	END
+//}
 
+//{ Cernd
+	IF
+		InParty(Myself)
+		InParty("Cernd")
+		TriggerOverride("Cernd", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("Cernd", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+			Continue()
+	END
+//}
+
+//{ Edwin
+	IF
+		InParty(Myself)
+		InParty("Edwin")
+		TriggerOverride("Edwin", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("Edwin", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+			Continue()
+	END
+//}
+
+//{ HaerDalis
+	IF
+		InParty(Myself)
+		InParty("HaerDalis")
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		TriggerOverride("HaerDalis", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("EdHaerDaliswin", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+			Continue()
+	END
+//}
+
+//{ Imoen
+	IF
+		InParty(Myself)
+		InParty("Imoen2")
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		TriggerOverride("Imoen2", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("Imoen2", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+			Continue()
+	END
+//}
+
+//{ Jaheira
+	IF
+		InParty(Myself)
+		InParty("Jaheira")
+		TriggerOverride("Jaheira", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("Jaheira", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+			Continue()
+	END
+//}
+
+//{ Jan
+	IF
+		InParty(Myself)
+		InParty("Jan")
+		TriggerOverride("Jan", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("Jan", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+			Continue()
+	END
+//}
+
+//{ Keldorn
+	IF
+		InParty(Myself)
+		InParty("Keldorn")
+		TriggerOverride("Keldorn", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("Keldorn", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+			Continue()
+	END
+//}
+
+//{ Korgan
+	IF
+		InParty(Myself)
+		InParty("Korgan")
+		TriggerOverride("Korgan", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("KeldKorganorn", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+			Continue()
+	END
+//}
+
+//{ Mazzy
+	IF
+		InParty(Myself)
+		InParty("Mazzy")
+		TriggerOverride("Mazzy", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("Mazzy", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+			Continue()
+	END
+//}
+
+//{ Nalia
+	IF
+		InParty(Myself)
+		InParty("Nalia")
+		TriggerOverride("Nalia", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("Nalia", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+			Continue()
+	END
+//}
+
+//{ Neera
+	IF
+		InParty(Myself)
+		InParty("Neera")
+		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		TriggerOverride("Neera", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("Neera", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+			Continue()
+	END
+//}
+
+//{ Rasaad
+	IF
+		InParty(Myself)
+		InParty("Rasaad")
+		TriggerOverride("Rasaad", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("Rasaad", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+			Continue()
+	END
+//}
+
+//{ Sarevok
+	IF
+		InParty(Myself)
+		InParty("Sarevok")
+		TriggerOverride("Sarevok", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("Sarevok", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 3))
+			Continue()
+	END
+//}
+
+//{ Valygar
+	IF
+		InParty(Myself)
+		InParty("Valygar")
+		TriggerOverride("Valygar", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("Valygar", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+			Continue()
+	END
+//}
+
+//{ Viconia
+	IF
+		InParty(Myself)
+		InParty("Viconia")
+		TriggerOverride("Viconia", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("Viconia", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+			Continue()
+	END
+//}

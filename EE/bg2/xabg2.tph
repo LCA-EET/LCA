@@ -249,6 +249,14 @@ END
 			
 		//}
 	//}
+
+	//{ Corwin Hated Race
+		ACTION_IF (isEET = 0) THEN BEGIN
+			COPY_EXISTING ~haterace.2da~ ~override~
+			COUNT_2DA_ROWS 4 xa_rowCount
+			INSERT_2DA_ROW xa_rowCount 4 ~SKELETON	8765 115 15999~
+		END		
+	//}
 	
 	//{ Corwin Script
 		EXTEND_TOP ~xacorwin.bcs~ ~override/xacor014.bcs~ // HP Check
