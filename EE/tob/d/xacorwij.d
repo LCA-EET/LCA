@@ -1946,6 +1946,137 @@ APPEND ~XACOR25J~
 	END
 	//}
 	
+	//{ Last Dialog Before Melissan
+	IF ~~ THEN BEGIN XA_FinalFight
+		SAY @1909 /*@1909=~Wait!~*/
+
+		IF ~
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @1910 /*@1910=~Major?~*/
+		GOTO XA_FinalFight2
+
+		IF ~
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @1911 /*@1911=~Schael?~*/
+		GOTO XA_FinalFight2
+	END
+
+	IF ~~ THEN BEGIN XA_FinalFight2
+		SAY @1912 /*@1912=~Whatever happens... when this is over... remember that your life belongs to you. Don't let Melissan define you.~*/
+
+		IF ~~ THEN REPLY @1913 /*@1913=~Meaning?~*/
+		GOTO XA_FinalFight3
+
+		IF ~~ THEN REPLY @1914 /*@1914=~I don't understand.~*/
+		GOTO XA_FinalFight3
+	END
+
+	IF ~~ THEN BEGIN XA_FinalFight3
+		SAY @1915 /*@1915=~She sees a vessel. Bhaal saw an heir. Irenicus saw a means to an end. The Five saw a rival. Every enemy you've faced has looked at you and seen what they wanted.~*/
+
+		IF ~~ THEN REPLY @1916 /*~And what do you see?~*/
+		GOTO XA_FinalFight4
+	END
+
+	IF ~~ THEN BEGIN XA_FinalFight4
+		SAY @1917 /*@1917=~Someone who always had a choice. Not because destiny allowed it. But because you fought for it, every step of the way.~*/
+
+		IF ~
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @1933 /*@1933=~We fought for it, Schael. I couldn't have made it this far without you.~*/
+		GOTO XA_FinalFight5
+
+		IF ~
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN REPLY @1934 /*@1934=~We fought for it, love. I couldn't have made it this far without you.~*/
+		GOTO XA_FinalFight5
+
+		IF ~~ THEN REPLY @1935 /*@1935=~And there is but one more step... one that we will take together.~*/
+		GOTO XA_FinalFight5
+	END
+
+	IF ~~ THEN BEGIN XA_FinalFight5
+		SAY @1918 /*@1918=~(She reaches forward and takes hold of your hand.)~*/
+
+		IF ~
+			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN 
+		GOTO XA_FinalFight6
+
+		IF ~
+			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
+		~ THEN
+		GOTO XA_FinalFight9
+	END
+
+	IF ~~ THEN BEGIN XA_FinalFight6
+		SAY @1919 /*@1919=~I've spent much of my life around soldiers. You learn very quickly not to make promises before a battle. You don't speak of futures. You don't discuss plans for next year. You don't tempt fate. And yet...~*/
+
+		IF ~~ THEN REPLY @1920 /*@1920=~And yet?~*/
+		GOTO XA_FinalFight7
+
+		IF ~~ THEN REPLY @1936 /*@1936=~Go on.~*/
+		GOTO XA_FinalFight7
+
+		IF ~~ THEN REPLY @1939 /*@1939=~That's good advice. Let's not tempt fate.~*/
+		GOTO XA_FinalFight9
+	END
+
+	IF ~~ THEN BEGIN XA_FinalFight7
+		SAY @1921 /*@1921=~And yet I've spent the last tenday imagining a hundred futures with you.~*/
+
+		IF ~~ THEN REPLY @1922 /*@1922=~Heh. Any good ones?~*/
+		GOTO XA_FinalFight8
+	END
+
+	IF ~~ THEN BEGIN XA_FinalFight8
+		SAY @1923 /*@1923=~Mm. A few.~*/
+
+		= @1924 /*@1924=~(She looks directly into your eyes, and a solitary tear rolls softly down her face.)~*/
+
+		= @1925 /*@1925=~Even one where nobody needs you to save the world anymore.~*/
+
+		= @1926 /*@1926=~(She kisses you gently. For a brief instant, the Throne of Bhaal, Melissan, the war of the Bhaalspawn—all of it fades away. When you finally part, she rests her forehead against yours.)~*/
+
+		IF ~~ THEN GOTO XA_FinalFight9
+	END
+
+	IF ~~ THEN BEGIN XA_FinalFight9
+		SAY @1927=~Come on, then.~
+
+		IF ~~ THEN REPLY @1928 /*@1928=~Ready?~*/
+		GOTO XA_FinalFight10
+
+		IF ~~ THEN REPLY @1937 /*@1937=~You sure about this?~*/
+		GOTO XA_FinalFight10
+	END
+
+	IF ~~ THEN BEGIN XA_FinalFight10
+		SAY @1929=~No.~ /*@1929=~No.~*/
+
+		IF ~~ THEN REPLY @1930 /*@1930=~Good. Neither am I.~*/
+		GOTO XA_FinalFight11
+
+		IF ~~ THEN REPLY @1938 /*@1938=~Heh. There's a first time for everything, I suppose.~*/
+		GOTO XA_FinalFight11
+	END
+
+	IF ~~ THEN BEGIN XA_FinalFight11
+		SAY @1931 /*@1931=~(She smirks and nocks an arrow.)~*/
+
+		= @1932=~Let's go save the world anyway... one more time.~
+
+		IF ~~ THEN 
+		DO ~
+			ClearAllActions()
+			SaveGame(2)
+			SmallWait(5)
+			StartCutSceneMode()
+			StartCutScene("cut248a")
+		~
+		EXIT
+	END
+	//}
 END
 
 CHAIN
