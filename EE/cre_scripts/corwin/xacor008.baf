@@ -1,10 +1,46 @@
 //{ Change Racial Enemy
 	IF
+		Global("XA_LC_CorwinAvernus", "GLOBAL", 1)
+		GlobalLT("XA_LC_RacialEnemyChangeAvernus", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_RacialEnemyChangeAvernus", "LOCALS", 1)
+			SetGlobal("XA_LC_CorwinDemonicRacialEnemy", "LOCALS", 1)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
 		Global("XA_LC_CorwinVampireRacialEnemy", "LOCALS", 1)
 	THEN
 		RESPONSE #100
+			SetInterrupt(FALSE)
 			ChangeStat(Myself, HATEDRACE, 125, SET)
 			SetGlobal("XA_LC_CorwinVampireRacialEnemy", "LOCALS", 0)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_CorwinDemonicRacialEnemy", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			ChangeStat(Myself, HATEDRACE, 121, SET)
+			SetGlobal("XA_LC_CorwinDemonicRacialEnemy", "LOCALS", 0)
+			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_CorwinSkeletonRacialEnemy", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			ChangeStat(Myself, HATEDRACE, 115, SET)
+			SetGlobal("XA_LC_CorwinSkeletonRacialEnemy", "LOCALS", 0)
+			SetInterrupt(TRUE)
 			Continue()
 	END
 //}

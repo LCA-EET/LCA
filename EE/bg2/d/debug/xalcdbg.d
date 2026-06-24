@@ -350,7 +350,19 @@ APPEND ~XALCDBG~
 		
 		IF ~~ THEN REPLY @5176
 		DO ~
-			ActionOverride("XACORWIN", SetGlobal("XA_LC_CorwinVampireRacialEnemy", "LOCALS", 0))
+			ActionOverride("XACORWIN", SetGlobal("XA_LC_CorwinVampireRacialEnemy", "LOCALS", 1))
+		~
+		GOTO XA_BG2_Debug
+
+		IF ~~ THEN REPLY @5177
+		DO ~
+			ActionOverride("XACORWIN", SetGlobal("XA_LC_CorwinDemonicRacialEnemy", "LOCALS", 1))
+		~
+		GOTO XA_BG2_Debug
+
+		IF ~~ THEN REPLY @5178
+		DO ~
+			ActionOverride("XACORWIN", SetGlobal("XA_LC_CorwinSkeletonRacialEnemy", "LOCALS", 1))
 		~
 		GOTO XA_BG2_Debug
 

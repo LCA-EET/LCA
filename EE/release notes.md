@@ -8,6 +8,7 @@
 
 ## v1.7 2026-06-XX
 * Corwin's racial enemy will change from Skeleton to Vampire after being bitten by Bodhi.
+* Corrected an issue that prevented Corwin's hated race from being displayed when her hated race was set to Skeleton.
 * Added new dialogs and cutscenes (SoD, SoA), and over a dozen new banters (ToB) for Corwin and Caelar.
 * Increased the difficulty of the Illasera and Narzugon battles.
 * Revised the conclusion of the first and second Narzugon encounters.

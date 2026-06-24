@@ -4963,7 +4963,8 @@ END
 			@52  /* ~I'm afraid I don't understand.~*/
 			== XACORWIB
 			@53 /* ~He was there when she was conceived. He was never her father. When I told him about Rohma...~ [BD52089]*/
-			= @59 /* ~You know, it's ironic that you'd ask about him. When Rohma was born, he wanted me to leave her at a temple of the Radiant Heart. Could you imagine? Giving up my baby like that? That was when I knew that it would never work between us.~ */
+			= @59 /* ~You know, it's ironic that you'd ask about him. When Rohma was born, he wanted me to leave her at a temple of the Radiant Heart.
+			= @2239 /* Could you imagine? Giving up my baby like that? That was when I knew that it could never work between us.~ [xalc8121]*/
 			== BKELDOR
 			@69 /* ~I see... it's important for a child's father, or a father figure, to be a part of a child's life.~  */
 			== XACORWIB
