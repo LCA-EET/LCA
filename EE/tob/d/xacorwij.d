@@ -1947,17 +1947,25 @@ APPEND ~XACOR25J~
 	//}
 	
 	//{ Last Dialog Before Melissan
-	IF ~~ THEN BEGIN XA_FinalFight
+	IF ~
+		Global("XA_LC_FinalFightInteraction", "GLOBAL", 1)
+	~ THEN BEGIN XA_FinalFight
 		SAY @1909 /*@1909=~Wait!~*/
 
 		IF ~
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1910 /*@1910=~Major?~*/
+		DO ~
+			SetGlobal("XA_LC_FinalFightInteraction", "GLOBAL", 0)
+		~
 		GOTO XA_FinalFight2
 
 		IF ~
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @1911 /*@1911=~Schael?~*/
+		DO ~
+			SetGlobal("XA_LC_FinalFightInteraction", "GLOBAL", 0)
+		~
 		GOTO XA_FinalFight2
 	END
 
@@ -2027,22 +2035,31 @@ APPEND ~XACOR25J~
 
 		IF ~~ THEN REPLY @1922 /*@1922=~Heh. Any good ones?~*/
 		GOTO XA_FinalFight8
+
+		IF ~~ THEN REPLY @1940 /* @1940=~You and I both.~ */
+		GOTO XA_FinalFight8A
 	END
 
 	IF ~~ THEN BEGIN XA_FinalFight8
 		SAY @1923 /*@1923=~Mm. A few.~*/
 
-		= @1924 /*@1924=~(She looks directly into your eyes, and a solitary tear rolls softly down her face.)~*/
+		IF ~~ THEN 
+		GOTO XA_FinalFight8A
+	END
+
+	IF ~~ THEN BEGIN XA_FinalFight8A
+		SAY @1924 /*@1924=~(She looks directly into your eyes, and a solitary tear rolls softly down her face.)~*/
 
 		= @1925 /*@1925=~Even one where nobody needs you to save the world anymore.~*/
 
 		= @1926 /*@1926=~(She kisses you gently. For a brief instant, the Throne of Bhaal, Melissan, the war of the Bhaalspawn—all of it fades away. When you finally part, she rests her forehead against yours.)~*/
 
-		IF ~~ THEN GOTO XA_FinalFight9
+		IF ~~ THEN 
+		GOTO XA_FinalFight9
 	END
 
 	IF ~~ THEN BEGIN XA_FinalFight9
-		SAY @1927=~Come on, then.~
+		SAY @1927 /*@1927 ~Come on, then.~ */
 
 		IF ~~ THEN REPLY @1928 /*@1928=~Ready?~*/
 		GOTO XA_FinalFight10
@@ -2052,7 +2069,7 @@ APPEND ~XACOR25J~
 	END
 
 	IF ~~ THEN BEGIN XA_FinalFight10
-		SAY @1929=~No.~ /*@1929=~No.~*/
+		SAY @1929 /*@1929 ~No.~ */
 
 		IF ~~ THEN REPLY @1930 /*@1930=~Good. Neither am I.~*/
 		GOTO XA_FinalFight11
@@ -2064,7 +2081,7 @@ APPEND ~XACOR25J~
 	IF ~~ THEN BEGIN XA_FinalFight11
 		SAY @1931 /*@1931=~(She smirks and nocks an arrow.)~*/
 
-		= @1932=~Let's go save the world anyway... one more time.~
+		= @1932 /*@1932=~Let's go save the world anyway... one more time.~*/
 
 		IF ~~ THEN 
 		DO ~

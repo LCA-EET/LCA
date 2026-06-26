@@ -1302,7 +1302,7 @@ Major Corwin offered me some valuable parenting advice, which I gladly accepted.
 @1603=~To be honest, I've never given much thought as to what people would say about us, and what we've accomplished.~ [xalc8395]
 @1604=~To be honest, I've never given much thought as to what people would say about us, and what we've accomplished. Or, for that matter, the love we share.~ [xalc8361]
 @1605=~Love must dare to risk. Otherwise, it isn't love at all.~ [xalc8360]
-@1606=~R-Rohma!? How — come here! Honey, that man is dangerous!~
+@1606=~R-Rohma!? How — come here! Honey, that man is dangerous!~ [xalc8487]
 @1607=~Mommy, why didn't you come home? Why weren't you there to protect us?~
 @1608=~What ... what do you mean? What happened!?~
 @1609=~They came... they killed grandpa and then they killed me, mommy... You killed me!~
@@ -1438,7 +1438,7 @@ I proposed to Schael, and she accepted! We're to be married!~
 @1771=~.....~
 @1772=~Corwin! Let her go gods damn it, I'm the one you want!~
 @1773=~... No .... Rohma...~ [xad10030]
-@1774=~You won't get away with this, wizard!~
+@1774=~You won't get away with this, wizard!~ [xalc8488]
 @1776=~Mazzy — rein it in. If you can't control yourself, you're a danger to us all.~ [xalc7006]
 @1777=~Nalia — rein it in. If you can't control yourself, you're a danger to us all.~ [xalc7006]
 @1778=~HaerDalis — rein it in. If you can't control yourself, you're a danger to us all.~ [xalc7006]
@@ -1463,15 +1463,15 @@ I proposed to Schael, and she accepted! We're to be married!~
 Marshal Nederlok of the Baldur's Gate Flaming Fist was pleased to hear of Neb's demise in the sewers beneath the city.~
 @1797=~I see. After you, my dear.~
 @1798=~I see. After you, Captain.~
-@1799=~Peace, General. I'm Major Schael Corwin of the Baldur's Gate Flaming Fist, assisting <CHARNAME> on a special assignment. The Grand Dukes have ordered—~
+@1799=~Peace, General. I'm Major Schael Corwin of the Baldur's Gate Flaming Fist, assisting <CHARNAME> on a special assignment. The Grand Dukes have ordered—~ [xalc8452]
 @1800=~The Flaming Fist and the Grand Dukes, in league with a Bhaalspawn? Did I hear you correctly?~
-@1801=~Yes sir. We are hunting the members of an organization known as The Five. I can assure you that <CHARNAME> is innocent of the crimes you describe.~
+@1801=~Yes sir. We are hunting the members of an organization known as The Five. I can assure you that <CHARNAME> is innocent of the crimes you describe.~[xalc8458]
 @1802=~My orders are clear. <CHARNAME>, and any who travel with <PRO_HIMHER>, are to be executed on sight. May the gods have mercy on your soul.~
 @1803=~I hoped to talk you out of this madness, but I see words alone won't get this job done. All right then. Let's go.~ [xalc7073]
 @1804=~This is bad. We better get out of here before the Tethyrian reinforcements arrive. Let's go.~[xalc8354]
 
 // v1.04 Additions 11/05/2023
-@1805=~Come on. We need to get that amulet.~
+@1805=~Come on. We need to get that amulet.~ [xalc8497]
 @1806=~Right. Let's go.~
 @1807=~Are you sure you're okay with this?~
 @1808=~Captain Corwin endorsing larceny? I'd not have thought it possible.~
@@ -1561,7 +1561,7 @@ Captain Corwin has identified some stolen merchandise that once belonged to Bald
 @1893=~That's good. Come here.~
 @1894=~(You kiss and embrace.)~
 @1895=~We better get a move on. Let's go, love.~
-@1896=~Is it really so hard to believe? Growing up in Candlekeep, there were hardly any men or women my age, and even less privacy. Then, after Sarevok, I couldn't step out of the palace without being mobbed by the citizens. I never had an opportunity to develop a relationship with someone special... someone like you.~
+@1896=~Is it really so hard to believe? Growing up in Candlekeep, there were hardly any men or women my age, and even less privacy. Then, after Sarevok, I couldn't step out of the palace without being mobbed by the citizens. I never had an opportunity to develop a relationship with someone special... someone like you.~ [xalc8496]
 @1897=~It's a bit boring, compared to adventuring... mind-numbingly boring, actually.~
 @1898=~The palace life is for me. Servants at my beck and call, great food and drink, luxurious amenities everywhere... it's hard to believe that only some weeks ago we were sleeping in a cave in the Underdark.~
 @1900=~I agree... she's shown a lot of maturity, considering her age.~
@@ -1573,30 +1573,30 @@ Captain Corwin has identified some stolen merchandise that once belonged to Bald
 @1906=~It's an adjustment, that's all. Ever since I left Candlekeep, I haven't been in one place for very long. Plus, it doesn't feel like home since you're there with me.~
 @1907=~What's certain is that <CHARNAME> is the only hero here, Volo. I doubt people would be interested in my story.~
 @1908=~From what that little girl told us, there's one more child being held here. We have to find them.~
-@1909=~Wait!~
+@1909=~Wait!~ [xalc8495]
 @1910=~Major?~
 @1911=~Schael?~
-@1912=~Whatever happens... remember that your life belongs to you. Don't let Mellisaan or anyone else define you.~
+@1912=~Whatever happens... remember that your life belongs to you. Don't let Mellisaan or anyone else define you.~ [xalc8498]
 @1913=~Meaning?~
 @1914=~I don't understand.~
-@1915=~She sees a vessel. The Five saw a rival. Irenicus saw a means to an end.  Every enemy you've faced has looked at you and seen what they wanted.~
+@1915=~She sees a vessel. The Five saw a rival. Irenicus saw a means to an end.  Every enemy you've faced has looked at you and seen what they wanted.~ [xalc8494]
 @1916=~And what do you see?~
-@1917=~Someone who always had a choice. Not because destiny allowed it. But because you fought for it, every step of the way.~
+@1917=~Someone who always had a choice. Not because destiny allowed it. But because you fought for it, every step of the way.~ [xalc8493]
 @1918=~(She reaches forward and takes hold of your hand.)~
-@1919=~I've spent much of my life around soldiers. You learn very quickly not to make promises before a battle. You don't speak of futures. You don't discuss plans for next year. You don't tempt fate. And yet...~
+@1919=~I've spent much of my life around soldiers. You learn very quickly not to make promises before a battle. You don't speak of futures. You don't discuss plans for next year. You don't tempt fate. And yet...~  [xalc8492]
 @1920=~And yet?~
-@1921=~And yet I've spent the last tenday imagining a hundred futures with you.~
+@1921=~And yet I've spent the last tenday imagining a hundred futures with you.~ [xalc8490]
 @1922=~Heh. Any good ones?~
 @1923=~Mm... A few.~
 @1924=~(She looks directly into your eyes, as a solitary tear rolls softly down her cheek.)~
-@1925=~Even one where nobody needs you to save the world anymore.~
+@1925=~Even one where nobody needs you to save the world anymore.~ [xalc8489]
 @1926=~(She kisses you gently. For a brief instant, the Throne of Bhaal, Melissan, the war of the Bhaalspawn—all of it fades away. When you finally part, she rests her forehead against yours.)~
-@1927=~Come on, then.~
+@1927=~Come on, then.~ [xalc8499]
 @1928=~Ready?~
-@1929=~No.~
+@1929=~No.~ [xalc8486]
 @1930=~Good. Neither am I.~
 @1931=~(She smirks and nocks an arrow.)~
-@1932=~Let's go save the world anyway... one more time.~
+@1932=~Let's go save the world anyway... one more time.~ [xalc8485]
 @1933=~We fought for it, Schael. I couldn't have made it this far without you.~
 @1934=~We fought for it, love. I couldn't have made it this far without you.~
 @1935=~And there is but one more step... one that we will take together.~
@@ -1604,3 +1604,4 @@ Captain Corwin has identified some stolen merchandise that once belonged to Bald
 @1937=~You sure about this?~
 @1938=~Heh. There's a first time for everything, I suppose.~
 @1939=~That's good advice. Let's not start tempting fate, now.~
+@1940=~You and I both.~

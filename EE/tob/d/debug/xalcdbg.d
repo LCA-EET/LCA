@@ -16,6 +16,9 @@ APPEND ~XALCDBG~
 			ActionOverride("XACAELAR", JoinParty())
 		~
 		EXIT
+
+		IF ~~ THEN REPLY @7065	
+		GOTO XA_ToB_InteractionTest
 		
 		IF ~~ THEN REPLY @7060
 		DO ~
@@ -153,6 +156,22 @@ APPEND ~XALCDBG~
 		COPY_TRANS XALCDBG 11
 	END
 	
+	IF ~~ THEN BEGIN XA_ToB_InteractionTest
+		SAY @7065 
+
+		IF ~~ THEN REPLY @7066
+		DO ~
+			SetGlobal("XA_LC_FinalFightInteraction", "GLOBAL", 1)
+			ActionOverride("XACORWIN", StartDialog("XACOR25J", Player1))
+		~
+		EXIT
+
+		IF ~~ THEN REPLY @3011/* ~Return to the previous menu.~*/
+		GOTO XA_ToB_Debug
+		
+		COPY_TRANS XALCDBG 11
+	END
+
 	IF ~~ THEN BEGIN XA_ToB_CreateItem
 		SAY @7026
 		

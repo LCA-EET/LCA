@@ -101,6 +101,12 @@
 //}
 
 //{ PPGUY01
+	ADD_TRANS_TRIGGER PPGUY01 4
+	~
+		!IsValidForPartyDialog("XACORWIN")
+	~
+	DO 1
+
 	ADD_TRANS_TRIGGER PPGUY01 0
 	~
 		!Global("SaradushSacked","GLOBAL",1)
@@ -146,6 +152,15 @@
 	END
 	
 	EXTEND_BOTTOM PPGUY01 4
+		IF ~
+			Global("ChallengesDone","GLOBAL",1)
+			IsValidForPartyDialog("XACORWIN")
+			OR(2)
+				GlobalLT("OHN_TOB_PLOT","GLOBAL",7)
+				GlobalGT("OHN_TOB_PLOT","GLOBAL",14)
+		~ THEN REPLY #71088 /*~I am ready. It is time for the end.~ */
+		EXTERN XACOR25J XA_FinalFight
+		
 		IF ~
 			!Global("XA_LC_KanaDream", "GLOBAL", 4)
 			OR(2)

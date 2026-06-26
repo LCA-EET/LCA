@@ -16,9 +16,7 @@ END
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d~
 
-ACTION_IF (xalc_assistant = 1) THEN BEGIN
-	COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d/debug~
-END
+
 
 //{ Restring Script
 	LAF xa_replace_recompile_string 
@@ -991,4 +989,18 @@ END
 			END
 		//}
 	//}
+
+	//{ Update song references
+		COPY_EXISTING ~xacor25.bcs~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY ~PlaySong(1001)~ ~PlaySong(%xamu01%)~ // pensive
+			//REPLACE_TEXTUALLY ~PlaySong(1002)~ ~PlaySong(%xamu02%)~ // romance
+			REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu02%)~ // romance
+			REPLACE_TEXTUALLY ~PlaySong(1009)~ ~PlaySong(%xamu09%)~ // concern
+		END
+	//}
+
+	ACTION_IF (xalc_assistant = 1) THEN BEGIN
+		COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/tob/d/debug~
+	END
 //}

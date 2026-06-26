@@ -32,8 +32,21 @@ IF
 	Global("XA_LC_ResetBanterTimer", "LOCALS", 2)
 THEN
 	RESPONSE #100
-		SetGlobal("XA_LC_[NAME]BanterInterval", "GLOBAL", 10)
+		SetGlobal("XA_LC_[NAME]BanterInterval", "GLOBAL", 10) // Two Days
 END
+
+//{ Resets the ToB Banter Interval
+	IF
+		ActionListEmpty()
+		GlobalLT("XA_LC_ToBBanterIntervalSet", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetInterrupt(FALSE)
+			SetGlobal("XA_LC_[NAME]BanterInterval", "GLOBAL", 5) // 12 Hours
+			SetGlobal("XA_LC_ToBBanterIntervalSet", "LOCALS", 1)
+			SetInterrupt(TRUE)
+	END
+//}
 
 IF 
 	ActionListEmpty()

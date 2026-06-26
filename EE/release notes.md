@@ -8,12 +8,14 @@
 
 ## v1.7 2026-06-XX
 * Corwin's racial enemy will change from Skeleton to Vampire after being bitten by Bodhi.
-* Corrected an issue that prevented Corwin's hated race from being displayed when her hated race was set to Skeleton.
+* Corrected an issue that prevented Corwin's hated race from being displayed when it was set to Skeleton in non-EET playthroughs.
 * Added new dialogs and cutscenes (SoD, SoA), and over a dozen new banters (ToB) for Corwin and Caelar.
 * Increased the difficulty of the Illasera and Narzugon battles.
 * Revised the conclusion of the first and second Narzugon encounters.
 * Updated the triggering conditions for the Rescue Caelar quest.
 * Fixed a bug that prevented Caelar's race from being shown in the character overview window.
+* Adjusted the default ToB banter interval for Caelar and Corwin to 12 hours. This setting is configurable through the LCA Assistant.
+* Fixed a bug that prevented Corwin's romance songs from being played in ToB, when those songs were started by the xacor25.bcs script.
 * Added new abilities for Caelar - Martyrdom and Piety. These abilities are available to Caelar once she has been restored to grace.
   - Martyrdom: Caelar can sacrifice herself to resurrect one fallen party member.  
   - Piety: Applies a powerful blessing to the caster and nearby party members.
