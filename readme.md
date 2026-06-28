@@ -382,7 +382,7 @@ Conditions A, B and C must hold to initiate the timer that starts the Rescue Cae
 - Condition C: Gorion's Ward must have destroyed the necromantic cult in Kanaglym, during the events of SoD.
 
 #### Caelar's Restoration
-Caelar is a disgraced shell of her former self at the time of her rescue from Avernus. To restore her to grace, Gorion's Ward must uplift and inspire her, as well as repair and provide her with her old weapons and armor. Once restored, Caelar will gain a statistic boost, as well as the Piety and Martyrdom abilities. Piety is a powerful, long duration, area of effect boon for all party members, and Martyrdom allows Caelar to resurrect a fallen ally at the cost of her own life.
+Caelar is a disgraced shell of her former self at the time of her rescue from Avernus. To restore her to grace, Gorion's Ward must uplift and inspire her, as well as repair and provide her with her old weapons and armor. Once restored, Caelar will gain a statistic boost, as well as the Piety and Martyrdom abilities. Piety is a powerful, long duration, area of effect boon affecting all party members, and Martyrdom allows Caelar to resurrect a fallen ally at the cost of her own life.
 </details>
 
 ### The Longer Road EE Changes
