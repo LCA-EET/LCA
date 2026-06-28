@@ -184,34 +184,7 @@ END
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY ~PlaySong(1003)~ ~PlaySong(%xamu02%)~
 	END
-	
-	//{ Script Names
-		ACTION_DEFINE_ARRAY xa_scriptNames
-		BEGIN
-			Aerie
-			Anomen
-			Cernd
-			Dorn
-			Edwin
-			HaerDalis
-			Hexxat
-			Imoen2
-			Jaheira
-			Jan
-			Keldorn
-			Korgan
-			Mazzy
-			Minsc
-			Nalia
-			Neera
-			Rasaad
-			Sarevok
-			Valygar
-			Viconia
-			Yoshimo
-		END
-	//}
-	
+			
 	//{ Script Builders
 		//LAF xa_generate_talk_script END // xalctalk.bcs
 		LAF xa_replace_recompile_string 
