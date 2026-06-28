@@ -104,6 +104,11 @@ LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET)
 		<td>After LCA</td>
 	</tr>
 	<tr>
+		<td><a href="https://github.com/LCA-EET/ForcedSlayerTransform">Forced Slayer Change</a></td>
+		<td>Yes</td>
+		<td>After LCA</td>
+	</tr>
+	<tr>
 		<td>Imoen 4 Ever</td>
 		<td>Yes</td>
 		<td>Before LCA</td>
@@ -160,7 +165,7 @@ To run the installer without the LCA Assistant prompt, use the appropriate comma
 
 ### EE Playthrough Parameters
 <a name="a_ee_params"></a>
-For non-EET playthroughs, you can adjust certain parameters to reflect actions that CHARNAME took in a prior game of the series. The parameters file is %MOD_FOLDER%/bg2/lca_bg2_params.txt. Open it and make any desired changes prior to installing the LCA mod.
+For non-EET playthroughs, you can adjust certain parameters to reflect actions that Gorion's Ward took in a prior game of the series. The parameters file is %MOD_FOLDER%/bg2/lca_bg2_params.txt. Open it and make any desired changes prior to installing the LCA mod.
 
 ### LCA Explicit Mod
 <a name="a_lca_explicit"></a>
@@ -174,7 +179,7 @@ Corwin’s (and Caelar’s) scripts each have a banter timer. When the banter ti
 
 ### Using the Configuration Assistant
 <a name="a_config"></a>
-A configuration assistant has been provided to help you adjust certain characteristics of the mod. The assistant can be accessed by selecting the “LCA Assistant” special ability from CHARNAME’s special ability menu. The ability is granted to you automatically shortly after the start of your playthrough. 
+A configuration assistant has been provided to help you adjust certain characteristics of the mod. The assistant can be accessed by selecting the “LCA Assistant” special ability from Gorion's Ward’s special ability menu. The ability is granted to you automatically shortly after the start of your playthrough. 
 
 ### LCA Debugger
 <a name="a_debugger"></a>
@@ -259,10 +264,10 @@ Speak to the crying girl in Southeast Baldur’s Gate. If you choose the appropr
 	<summary>Spoiler Warning! (Click to View)</summary>
 
 #### Tent Cutscene
-In the Coast Way Crossing or the Siege Camp, talk to Thaird while Corwin is in your party. Choose to rest for the night. A special cutscene involving Corwin and CHARNAME will take place.
+In the Coast Way Crossing or the Siege Camp, talk to Thaird while Corwin is in your party. Choose to rest for the night. A special cutscene involving Corwin and Gorion's Ward will take place.
 
 #### Archery Lesson
-If you chose to help with the refugee situation (see below) while in Baldur’s Gate, Corwin will offer to give CHARNAME an archery lesson, if CHARNAME’s proficiency with the shortbow or longbow is greater than zero. She will offer CHARNAME this lesson if CHARNAME has a bow equipped, if CHARNAME is in the Coast Way Crossing, Troll Forest, or the Allied Siege camp, and she has spent the requisite amount of time in the party (at least eighteen hours). Be sure that Corwin and CHARNAME are both standing within sight of Quartermaster Belegarm, otherwise the lesson won’t trigger. The lesson, when completed, will give CHARNAME a permanent +1 boost to missile damage and missile THAC0.
+If you chose to help with the refugee situation (see below) while in Baldur’s Gate, Corwin will offer to give Gorion's Ward an archery lesson, if Gorion's Ward’s proficiency with the shortbow or longbow is greater than zero. She will offer Gorion's Ward this lesson if Gorion's Ward has a bow equipped, if Gorion's Ward is in the Coast Way Crossing, Troll Forest, or the Allied Siege camp, and she has spent the requisite amount of time in the party (at least eighteen hours). Be sure that Corwin and Gorion's Ward are both standing within sight of Quartermaster Belegarm, otherwise the lesson won’t trigger. The lesson, when completed, will give Gorion's Ward a permanent +1 boost to missile damage and missile THAC0.
 
 You must do at least three of the following to qualify for the lesson:
 - Killed Lon in the old Iron Throne Headquarters.
@@ -273,16 +278,16 @@ You must do at least three of the following to qualify for the lesson:
 - Helped Officer Vida by requesting reinforcements on her behalf.
 
 #### Trial Cutscene
-Depending on CHARNAME’s choices, Corwin will vouch for them during the trial in front of the Flaming Fist headquarters.
+Depending on Gorion's Ward’s choices, Corwin will vouch for them during the trial in front of the Flaming Fist headquarters.
 
 #### Escape from Avernus
-If CHARNAME is male, and the LCA_Explicit mod is installed, a special cutscene will play after the escape from Avernus. Corwin must be in the party, and CHARNAME must be in a romance with her, in order for the cutscene to trigger.
+If Gorion's Ward is male, and the LCA_Explicit mod is installed, a special cutscene will play after the escape from Avernus. Corwin must be in the party, and Gorion's Ward must be in a romance with her, in order for the cutscene to trigger.
 
 #### Miscellaneous
-A number of miscellaneous changes were made to dialogs, particularly the dialogs that occur after CHARNAME is arrested.
+A number of miscellaneous changes were made to dialogs, particularly the dialogs that occur after Gorion's Ward is arrested.
 
 #### Corwin's Amulet
-If CHARNAME was in a romance with Corwin at the end of SoD, and they were exiled from the city, Imoen will give CHARNAME a letter from Corwin that includes her amulet. The amulet grants some saving throw bonuses, but it can only be worn by CHARNAME.
+If Gorion's Ward was in a romance with Corwin at the end of SoD, and they were exiled from the city, Imoen will give Gorion's Ward a letter from Corwin that includes her amulet. The amulet grants some saving throw bonuses, but it can only be worn by Gorion's Ward.
 
 </details>
 
@@ -295,7 +300,7 @@ If CHARNAME was in a romance with Corwin at the end of SoD, and they were exiled
 #### Adding Corwin to Your Party
 To add Corwin to your party, you must first obtain the Soultaker Dagger from the Djinn in the Plane of Air in Irenicus’ stronghold. Once you have the dagger, speak to Brega in the Athkatla magistrate. He will offer to send the dagger, along with a letter , to Baldur’s Gate if you help him solve the case of the murders in the Bridge District. 
 
-Once the letter is sent, a two-day timer will start. When the timer expires, you will see a cutscene that plays when you choose to sleep. The conclusion of the cutscene will trigger a four-hour timer, that, when expired, will show a second cutscene depicting the restoration of Skie Silvershield. The conclusion of the second cutscene starts the two-day timer that, when expired, will cause Corwin to appear in the Athkatla magistrate building (the same building where you meet Brega). CHARNAME will receive a dialogue prompt when this second timer has expired, so you will know when Corwin has arrived.
+Once the letter is sent, a two-day timer will start. When the timer expires, you will see a cutscene that plays when you choose to sleep. The conclusion of the cutscene will trigger a four-hour timer, that, when expired, will show a second cutscene depicting the restoration of Skie Silvershield. The conclusion of the second cutscene starts the two-day timer that, when expired, will cause Corwin to appear in the Athkatla magistrate building (the same building where you meet Brega). Gorion's Ward will receive a dialogue prompt when this second timer has expired, so you will know when Corwin has arrived.
 
 To experience the most content possible, it is recommended that you add Corwin as soon as you are able. Hold off on performing quests or even exploring Athkatla (beyond what’s necessary to solve the bridge murders) until Corwin is in your party.
 
@@ -314,7 +319,7 @@ Corwin and Dorn do not like each other, but they will not come to blows unless D
 If Corwin sees Neb, they will come to blows. If Neb isn’t killed in Athkatla, he will appear in the central sewers, during the Return to Baldur’s Gate quest. 
 
 #### Adventurer’s Mart – Returning the Stolen Artifacts
-Speak to Deidre in the Adventurer’s Mart, when Corwin is in the party. The encounter needs to be initiated by either Corwin or CHARNAME. This will begin a quest to return Balduran’s equipment to the Hall of Wonders.
+Speak to Deidre in the Adventurer’s Mart, when Corwin is in the party. The encounter needs to be initiated by either Corwin or Gorion's Ward. This will begin a quest to return Balduran’s equipment to the Hall of Wonders.
 
 #### Spellhold Encounter
 Significant changes were made to the Spellhold encounter with Irenicus. These changes are triggered by Corwin being in the party when the party is captured. 
@@ -332,17 +337,17 @@ To obtain Corwin’s Bow + 4 (Gesen), Corwin must be in your party during the ba
 To obtain Corwin’s Armor + 4, Corwin must be in your party during the battle for Suldanessellar, the party must be in possession of Corwin’s Armor + 2, and you must save the life of the Elven Armorsmith. The Armorsmith is located in one of the houses in the city. If all three conditions are satisfied, Corwin’s Armor + 2 will be transformed into the + 4 version after Irenicus is defeated.   
 
 #### Drizzt Encounter
-If CHARNAME attacked Drizzt in Baldur’s Gate 1, Corwin will vouch for CHARNAME if she is in the party when Drizzt and his party confront them after the escape from the Underdark.
+If Gorion's Ward attacked Drizzt in Baldur’s Gate 1, Corwin will vouch for Gorion's Ward if she is in the party when Drizzt and his party confront them after the escape from the Underdark.
 
 #### Trademeet Archery Competition
 If Mazzy and Corwin are both in your party, and they’ve completed three rounds of banters, you’ll have the option of visiting Trademeet and have them join an archery competition.
 
 #### Returning to Baldur’s Gate
-If Corwin is in your party at the conclusion of the events of Shadows of Amn, you will return to Baldur’s Gate, instead of proceeding immediately with the events of Throne of Bhaal. Upon your arrival, a one-day timer will start, that when expired will initiate the debriefing to the Dukes. The conclusion of the debriefing sets off a series of events that culminate in CHARNAME’s arrival in Saradush. Some people and places you will want to check out while in Baldur’s Gate are listed below:
+If Corwin is in your party at the conclusion of the events of Shadows of Amn, you will return to Baldur’s Gate, instead of proceeding immediately with the events of Throne of Bhaal. Upon your arrival, a one-day timer will start, that when expired will initiate the debriefing to the Dukes. The conclusion of the debriefing sets off a series of events that culminate in Gorion's Ward’s arrival in Saradush. Some people and places you will want to check out while in Baldur’s Gate are listed below:
 - Elfsong Tavern 
 - Ramazith’s Tower
 - Hall of Wonders Cutscene – Requires Corwin to be in the party
-- Hall of Wonders – Returning the Farseer (Triggers if CHARNAME stole the Farseer telescope in BG1)
+- Hall of Wonders – Returning the Farseer (Triggers if Gorion's Ward stole the Farseer telescope in BG1)
 - Corwin’s Home (Located in SE Baldur’s Gate)
 - Flaming Fist Headquarters L1 and L2 – Be sure to speak to Marshal Nederlok on the second floor to receive a special gift
 - Haspur the Diviner
@@ -350,12 +355,12 @@ If Corwin is in your party at the conclusion of the events of Shadows of Amn, yo
 - Central Sewers, if Neb wasn’t killed in Athkatla
 - Silvershield Estate
 - Iron Throne Headquarters, particularly if you rescued the slaver children in BG2 while Corwin was in your party
-- If CHARNAME is in a romance with Corwin
+- If Gorion's Ward is in a romance with Corwin
   - Merchant’s League (assuming Aldeth didn’t die during the events of BG1)
   - Seven Suns (assuming Jhasso didn’t die during the events of BG1)
   - Sorcerous Sundries, after visiting the Merchant’s League or Seven Suns and having the discussion about the engagement ring. Speak to Halbazzer and have him enchanted the ring; doing so will enable a very special cutscene after the conclusion of the debriefing for the Dukes
   
-The miniquest ends with Rohma’s abduction at the hands of Ilasera and Beno. Depending on the choices CHARNAME has made, at the end of the encounter Beno will be imprisoned, beheaded, or have his soul imprisoned through the use of the Soultaker Dagger. If he is beheaded or has his soul imprisoned, keep the appropriate item (either the head, or the dagger) through Amkethran to trigger a humorous cutscene.
+The miniquest ends with Rohma’s abduction at the hands of Ilasera and Beno. Depending on the choices Gorion's Ward has made, at the end of the encounter Beno will be imprisoned, beheaded, or have his soul imprisoned through the use of the Soultaker Dagger. If he is beheaded or has his soul imprisoned, keep the appropriate item (either the head, or the dagger) through Amkethran to trigger a humorous cutscene.
 </details>
 
 ### Throne of Bhaal Changes
@@ -372,10 +377,12 @@ To obtain Corwin’s Bow + 5, bring Corwin’s Bow + 3 and the Bowstring of Gond
 
 #### Rescuing Caelar
 Conditions A, B and C must hold to initiate the timer that starts the Rescue Caelar quest.
-- Condition A: CHARNAME must have defeated the Narzugon during the Return to Baldur’s Gate – Trouble at the Elfsong quest.
-- Condition B: CHARNAME must have entered Saradush.
-- Condition C: CHARNAME must have destroyed the necromantic cult in Kanaglym, during the events of SoD.
+- Condition A: Gorion's Ward must have defeated the Narzugon during the Return to Baldur’s Gate – Trouble at the Elfsong quest.
+- Condition B: Gorion's Ward must have entered Saradush.
+- Condition C: Gorion's Ward must have destroyed the necromantic cult in Kanaglym, during the events of SoD.
 
+#### Caelar's Restoration
+Caelar is a disgraced shell of her former self at the time of her rescue from Avernus. To restore her to grace, Gorion's Ward must uplift and inspire her, as well as repair and provide her with her old weapons and armor. Once restored, Caelar will gain a statistic boost, as well as the Piety and Martyrdom abilities. Piety is a powerful, long duration, area of effect boon for all party members, and Martyrdom allows Caelar to resurrect a fallen ally at the cost of her own life.
 </details>
 
 ### The Longer Road EE Changes
@@ -384,7 +391,7 @@ Conditions A, B and C must hold to initiate the timer that starts the Rescue Cae
 <details>
 	<summary>Spoiler Warning! (Click to View)</summary>
 	
-The encounter with Ellesime is moved from the Elder Grove (start of ToB) to Suldanessellar (end of SoA), just before CHARNAME and the party leave for the Return to Baldur's Gate. If Corwin and Irenicus are both in the party, Corwin, after a short time, will rally like-minded party members to kill him, in order to fulfill – a second time – the mission given to her by the Dukes. You'll get a warning about one in-game hour prior to the start of hostilities.
+The encounter with Ellesime is moved from the Elder Grove (start of ToB) to Suldanessellar (end of SoA), just before Gorion's Ward and the party leave for the Return to Baldur's Gate. If Corwin and Irenicus are both in the party, Corwin, after a short time, will rally like-minded party members to kill him, in order to fulfill – a second time – the mission given to her by the Dukes. You'll get a warning about one in-game hour prior to the start of hostilities.
 </details>
 
 ### Intimate Encounters
@@ -399,24 +406,24 @@ The logic to initiate the following encounters is built into this mod, however, 
 
 #### Siege of Dragonspear Encounter
 Pre-requisites:
-- CHARNAME must be in a romance with Corwin, and be male.
-- Corwin must be alive and in CHARNAME’s party.
-This encounter occurs immediately after CHARNAME’s escape from Avernus.
+- Gorion's Ward must be in a romance with Corwin, and be male.
+- Corwin must be alive and in Gorion's Ward’s party.
+This encounter occurs immediately after Gorion's Ward’s escape from Avernus.
 
 #### Shadows of Amn Encounter 1
 Pre-requisites:
-- CHARNAME must be in a romance with Corwin.
-- CHARNAME cannot have entered Suldanessellar.
-- Corwin must be alive and in CHARNAME’s party.
+- Gorion's Ward must be in a romance with Corwin.
+- Gorion's Ward cannot have entered Suldanessellar.
+- Corwin must be alive and in Gorion's Ward’s party.
 - One of the following conditions must be satisfied:
-  - A: CHARNAME must have been in a romance with Corwin in SoD.
-  - B: CHARNAME must have defeated Bodhi.
+  - A: Gorion's Ward must have been in a romance with Corwin in SoD.
+  - B: Gorion's Ward must have defeated Bodhi.
 
-For condition A, this encounter can be initiated by speaking to Madame Nin in the Copper Coronet, while CHARNAME has a charisma of 15 or greater.
+For condition A, this encounter can be initiated by speaking to Madame Nin in the Copper Coronet, while Gorion's Ward has a charisma of 15 or greater.
 
 For condition B, this encounter will be initiated by Corwin, approximately eight hours after Bodhi’s defeat.
 
-For both conditions, the encounter will only occur if CHARNAME rests in a suitable location:
+For both conditions, the encounter will only occur if Gorion's Ward rests in a suitable location:
 - Sea Bounty
 - Five Flagons
 - Inn at the Bridge District
@@ -428,14 +435,14 @@ For both conditions, the encounter will only occur if CHARNAME rests in a suitab
 
 #### Shadows of Amn Encounter 2
 Pre-requisites:
-- CHARNAME must be in a romance with Corwin.
-- CHARNAME cannot have entered Suldanessellar.
-- CHARNAME must have completed SoA Encounter 1.
-- Corwin must be alive and in the CHARNAME’s party.
+- Gorion's Ward must be in a romance with Corwin.
+- Gorion's Ward cannot have entered Suldanessellar.
+- Gorion's Ward must have completed SoA Encounter 1.
+- Corwin must be alive and in the Gorion's Ward’s party.
 
-Corwin will initiate this encounter roughly four days after SoA Encounter 1. To complete the encounter, CHARNAME must rest in a suitable location: 
+Corwin will initiate this encounter roughly four days after SoA Encounter 1. To complete the encounter, Gorion's Ward must rest in a suitable location: 
 
-For both conditions, the encounter will only occur if CHARNAME rests in a suitable location:
+For both conditions, the encounter will only occur if Gorion's Ward rests in a suitable location:
 - Sea Bounty
 - Five Flagons
 - Inn at the Bridge District
@@ -447,15 +454,15 @@ For both conditions, the encounter will only occur if CHARNAME rests in a suitab
 
 #### Return to Baldur's Gate Encounter A
 Pre-requisites:
-- CHARNAME must be in a romance with Corwin.
-- Corwin must be alive and in CHARNAME’s party.
-- Corwin and CHARNAME must have met Neoma in East Baldur’s Gate, and CHARNAME must have expressed interest in the possibility of engaging in a threesome with the two of them.
-- CHARNAME must rest in the inn that they told Corwin they would be staying in.
+- Gorion's Ward must be in a romance with Corwin.
+- Corwin must be alive and in Gorion's Ward’s party.
+- Corwin and Gorion's Ward must have met Neoma in East Baldur’s Gate, and Gorion's Ward must have expressed interest in the possibility of engaging in a threesome with the two of them.
+- Gorion's Ward must rest in the inn that they told Corwin they would be staying in.
 
 #### Return to Baldur's Gate Encounter B
 Pre-requisites:
-- CHARNAME must be in a romance with Corwin.
-- Corwin must be alive and in CHARNAME’s party.
-- CHARNAME must rest in the inn that they told Corwin they would be staying in.
+- Gorion's Ward must be in a romance with Corwin.
+- Corwin must be alive and in Gorion's Ward’s party.
+- Gorion's Ward must rest in the inn that they told Corwin they would be staying in.
 
 </details>
