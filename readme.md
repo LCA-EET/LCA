@@ -175,7 +175,7 @@ The LCA_Explicit mod adds several explicit, sexual encounters intended for matur
 <a name="a_banter"></a>
 Corwin’s (and Caelar’s) scripts each have a banter timer. When the banter timer expires, the script will randomly select a character in your party to initiate a banter. Once a banter is initiated, the banter timer is reset. If there are no more banters available for that character, the script will randomly select another character and repeat the process. The process will continue until all available banters have been exhausted.
 > [!NOTE]
-> The interval for the banter timer is configurable with the use of the LCA Assistant. By default, it is set to two days.
+> The interval for the banter timer is configurable with the use of the LCA Assistant. By default, it is set to two days for SoA, and twelve hours for ToB.
 
 ### Using the Configuration Assistant
 <a name="a_config"></a>
