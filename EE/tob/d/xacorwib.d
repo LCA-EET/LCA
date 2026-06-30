@@ -310,6 +310,7 @@
 //{ Keldorn Banter
 	CHAIN
 		IF ~
+			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsGabber("Keldorn")
 			TriggerOverride("Keldorn", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Keldorn", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -358,6 +359,7 @@
 //{ Mazzy Banter
 	CHAIN
 		IF ~
+			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsGabber("Mazzy")
 			TriggerOverride("Mazzy", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Mazzy", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -405,6 +407,7 @@
 //{ Edwin Banter
 	CHAIN
 		IF ~
+			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsGabber("Edwin")
 			TriggerOverride("Edwin", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Edwin", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -456,6 +459,7 @@
 //{ Rasaad Banter
 	CHAIN
 		IF ~
+			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsGabber("Rasaad")
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Rasaad", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -505,6 +509,7 @@
 //{ Valygar Banter
 	CHAIN
 		IF ~
+			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsGabber("Valygar")
 			TriggerOverride("Valygar", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Valygar", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -538,6 +543,7 @@
 //{ Jaheira Banter
 	CHAIN
 		IF ~
+			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsGabber("Jaheira")
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			TriggerOverride("Jaheira", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
@@ -580,6 +586,7 @@
 
 	CHAIN
 		IF ~
+			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsGabber("Jaheira")
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			TriggerOverride("Jaheira", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
@@ -619,6 +626,7 @@
 //{ Aerie Banters
 	CHAIN
 		IF WEIGHT #0~
+			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsGabber("Aerie")
 			TriggerOverride("Aerie", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Aerie", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -669,6 +677,7 @@
 //{ Viconia Banter
 	CHAIN
 		IF WEIGHT #0~
+			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsGabber("Viconia")
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			TriggerOverride("Viconia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
@@ -712,6 +721,7 @@
 
 	CHAIN
 		IF WEIGHT #0~
+			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsGabber("Viconia")
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			TriggerOverride("Viconia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
@@ -760,6 +770,7 @@
 //{ Anomen Banters
 	CHAIN
 		IF WEIGHT #0~
+			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsGabber("Anomen")
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			TriggerOverride("Anomen", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
@@ -803,6 +814,7 @@
 //{ Korgan
 	CHAIN
 		IF WEIGHT #0~
+			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsGabber("Korgan")
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			TriggerOverride("Korgan", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
@@ -834,6 +846,7 @@
 
 	CHAIN
 		IF WEIGHT #0~
+			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsGabber("Korgan")
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			TriggerOverride("Korgan", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
@@ -873,6 +886,7 @@
 //{ Imoen
 	CHAIN
 		IF WEIGHT #0~
+			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsGabber("Imoen2")
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			TriggerOverride("Imoen2", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
@@ -921,6 +935,7 @@
 //{ Neera
 	CHAIN
 		IF WEIGHT #0~
+			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsGabber("Neera")
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			TriggerOverride("Neera", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
@@ -966,6 +981,7 @@
 //{ Nalia
 	CHAIN
 		IF WEIGHT #0~
+			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsGabber("Nalia")
 			TriggerOverride("Nalia", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 			TriggerOverride("Nalia", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -1013,6 +1029,7 @@
 //{ HaerDalis
 CHAIN
 		IF WEIGHT #0~
+			Global("XA_LC_EnteredToB", "GLOBAL", 1)
 			IsGabber("HaerDalis")
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 			TriggerOverride("HaerDalis", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
@@ -1061,6 +1078,7 @@ CHAIN
 //{ Cernd
 CHAIN
 	IF WEIGHT #0~
+		Global("XA_LC_EnteredToB", "GLOBAL", 1)
 		IsGabber("Cernd")
 		TriggerOverride("Cernd", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 		TriggerOverride("Cernd", Global("XA_LC_CorwinBanters", "LOCALS", 0))
@@ -1110,6 +1128,7 @@ CHAIN
 
 CHAIN
 	IF ~
+		Global("XA_LC_EnteredToB", "GLOBAL", 1)
 		IsGabber("Jan")
 		TriggerOverride("Jan", Global("XA_LC_CorwinBanterPending", "LOCALS", 1))
 		TriggerOverride("Jan", Global("XA_LC_CorwinBanters", "LOCALS", 0))
