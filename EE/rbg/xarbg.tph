@@ -4696,6 +4696,17 @@ SILENT
 		END
 	//}
 	
+	//{ Botanical Garden
+		COPY ~%MOD_FOLDER%/rbg/are/xagard/~ ~override~
+		COPY_EXISTING ~xagard.are~ ~override~
+		WRITE_ASCII 0x94 ~xagard~ #8 // area script
+		//{ Add Music
+			WRITE_LONG 0x11C xamu02
+			WRITE_LONG 0x120 xamu02
+			WRITE_LONG 0x128 xamu02
+		//}
+	//}
+	
 	//{ Demon's Sanctum
 
 		COPY ~%MOD_FOLDER%/rbg/are/xadsan/~ ~override~
@@ -4973,15 +4984,6 @@ SILENT
 		// Deactivate Triggers
 		WRITE_LONG 0xCE0 256
 		WRITE_LONG 0xC1C 256
-	//}
-	
-	//{ Proposal Area ar0900
-		COPY_EXISTING ~xaa100.are~ ~override/xawyrm.are~
-		LPF xa_delete_are_actors END
-		WRITE_LONG 0x3E48 xamu02
-		WRITE_LONG 0x3E4C xamu02
-		WRITE_ASCII 0x94 ~xawyrm~ #8 // area script
-		WRITE_ASCII 0x3C ~~ #8 // area west
 	//}
 //}
 

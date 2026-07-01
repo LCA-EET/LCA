@@ -1548,7 +1548,7 @@ APPEND XACORWIJ
 	END
 
 	IF ~~ THEN BEGIN XA_CorwinDinner_Romance8
-		SAY @917 /* ~At this hour? What do you have in mind?~*/
+		SAY @917 /* ~ What do you have in mind?~*/
 		
 		IF ~~ THEN REPLY @918 /* ~You'll see. Afterwards, I'll walk you home. Let's go.~*/
 		DO ~
@@ -1984,14 +1984,13 @@ APPEND XACORWIJ
 	IF ~
 		Global("XA_LC_CorwinProposalCS", "GLOBAL", 1)
 	~ THEN BEGIN XA_CorwinProposal
-		SAY @954 /* ~The stars are beautiful tonight... */
-		= @72 /* ...and look at the reflection of the moonlight on the river...~*/
-		
-		IF ~~ THEN
-		DO ~
-			SetGlobal("XA_LC_CorwinProposalCS", "GLOBAL", 2)
-		~	
-		GOTO XA_CorwinProposal2
+		SAY @1941 /* ~Wow... the Dukes' new botanical garden. I never imagined it would be so beautiful...~ */
+
+		IF ~~ THEN REPLY @1942 /*@1942=~I knew you'd enjoy it.~*/
+		GOTO XA_Stars
+
+		IF ~~ THEN REPLY @1943 /*@1943=~Duke Jannath was kind enough to allow us a first look... being the 'hero of Baldur's Gate' certainly has its perks.~*/
+		GOTO XA_Stars
 	END
 
 	IF ~~ THEN BEGIN XA_CorwinProposal2
@@ -3797,6 +3796,18 @@ APPEND XACORWIJ
 		
 		IF ~~ THEN REPLY @1904 /* ~Your father, in contrast...~*/
 		GOTO XA_CorwinDinner_Romance5
+	END
+
+	IF ~~ THEN BEGIN XA_Stars
+		SAY @1944 /* Mm... */
+		= @954 /* ~The stars are beautiful tonight... */
+		= @72 /* ...and look at the reflection of the moonlight on the river...~*/
+		
+		IF ~~ THEN
+		DO ~
+			SetGlobal("XA_LC_CorwinProposalCS", "GLOBAL", 2)
+		~	
+		GOTO XA_CorwinProposal2
 	END
 END
 //{ Chains

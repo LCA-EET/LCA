@@ -6,8 +6,8 @@ THEN
 		ClearAllActions()
 		FadeToColor([30.0],0)
 		Wait(3)
-		ActionOverride("XACORWIN",LeaveAreaLUA("XAWYRM","",[1430.435],NE)) 
-		LeaveAreaLUA("XAWYRM","",[1420.480],NE)
+		ActionOverride("XACORWIN",LeaveAreaLUA("XAGARD","",[815.500],NW)) 
+		LeaveAreaLUA("XAGARD","",[815.525],NW)
 		SetGlobal("XA_LC_CorwinProposalCS", "GLOBAL", 1)
 		
 		EndCutSceneMode() 

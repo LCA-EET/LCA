@@ -652,12 +652,12 @@ APPEND ~XALCDBG~
 		
 		IF ~~ THEN REPLY @6022
 		DO ~
-			ActionOverride(Player1, LeaveAreaLUA("XAWYRM", "", [0.0], S))
-			ActionOverride(Player2, LeaveAreaLUA("XAWYRM", "", [0.0], S))
-			ActionOverride(Player3, LeaveAreaLUA("XAWYRM", "", [0.0], S))
-			ActionOverride(Player4, LeaveAreaLUA("XAWYRM", "", [0.0], S))
-			ActionOverride(Player5, LeaveAreaLUA("XAWYRM", "", [0.0], S))
-			ActionOverride(Player6, LeaveAreaLUA("XAWYRM", "", [0.0], S))
+			ActionOverride(Player1, LeaveAreaLUA("XAGARD", "", [0.0], S))
+			ActionOverride(Player2, LeaveAreaLUA("XAGARD", "", [0.0], S))
+			ActionOverride(Player3, LeaveAreaLUA("XAGARD", "", [0.0], S))
+			ActionOverride(Player4, LeaveAreaLUA("XAGARD", "", [0.0], S))
+			ActionOverride(Player5, LeaveAreaLUA("XAGARD", "", [0.0], S))
+			ActionOverride(Player6, LeaveAreaLUA("XAGARD", "", [0.0], S))
 		~
 		EXIT
 		
