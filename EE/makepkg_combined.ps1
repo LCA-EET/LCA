@@ -1,9 +1,11 @@
-$currentDir = (Get-Location).Path
-$basePath = "LoveConquersAll_EE"
+$weiduApps		= @("weidu.exe", "weidu_linux")
+$weiduExts		= @(".exe", "")
+$weiduArchives 	= @("_win", "_linux")
+
+$basePath = "LCA"
 $tp2Name = "LCA"
 $modPath = $basePath + "/" + $tp2Name 
-$archive = $basePath + ".zip"
-$exePath = "setup-" + $tp2Name + ".exe"
+$exePath = "setup-" + $tp2Name
 $folders = @(
 'assistant',
 'bg1',
@@ -33,58 +35,68 @@ $toExclude = @(
 	'generated/g/songsList.txt'
 )
 
-Remove-Item -LiteralPath $archive -Force
-Remove-Item -LiteralPath $modPath -Force -Recurse
+foreach($weiduArchive in $weiduArchives){
+	Remove-Item -LiteralPath ($basePath + $weiduArchive + ".zip") -Force
+}
+
+Remove-Item -LiteralPath $basePath -Force -Recurse
 
 foreach($folder in $folders){
 	Copy-Item -Path $folder -Destination ($modPath + "/" + $folder) -Recurse	
 }
+
+& $PSScriptRoot/d_compactor.ps1 -dPath $modPath
+
 #region Restring Dialog
-<#
-	Recreates xarestr.d for ToB and changes the D reference from XACORWIJ to XACOR25J.
-#>
-$xarestrPath = ($modPath + "/tob/d/xarestr.d")
+	#Recreates xarestr.d for ToB and changes the D reference from XACORWIJ to XACOR25J.
+	$xarestrPath = ($modPath + "/tob/d/xarestr.d")
 
-Copy-Item -Path ($currentDir + "/bg2/d/xarestr.d") -Destination $xarestrPath
+	Copy-Item -Path ($currentDir + "/bg2/d/xarestr.d") -Destination $xarestrPath
 
-(Get-Content -Path $xarestrPath) -replace "XACORWIJ", "XACOR25J" |
-    Set-Content -Path $xarestrPath
+	(Get-Content -Path $xarestrPath) -replace "XACORWIJ", "XACOR25J" |
+		Set-Content -Path $xarestrPath
 #endregion
 
 foreach($folder in $toExclude){
 	Remove-Item ($modPath + "/" + $folder) -Recurse
 }
 
-& $PSScriptRoot/d_compactor.ps1 -dPath $modPath
-
-Copy-Item -Path ("functions.tph") -Destination $modPath 
 Copy-Item -Path ($tp2Name + ".tp2") -Destination $modPath 
-Copy-Item -Path "weidu.exe" -Destination ($basePath + "/" + $exePath)
-Copy-Item -Path "Discord Server.url" -Destination $modPath
-Copy-Item -Path "PayPal.url" -Destination $modPath
-Copy-Item -Path "LCA User Guide.url" -Destination $modPath
+Copy-Item -Path "functions.tph" -Destination ($modPath + "/functions.tph")
+Copy-Item -Path "LCA User Guide.url" -Destination ($modPath + "/LCA User Guide.url")
+Copy-Item -Path "Discord Server.url" -Destination ($modPath + "/Discord Server.url")
+Copy-Item -Path "Venmo.url" -Destination ($modPath + "/Venmo.url")
+Copy-Item -Path "PayPal.url" -Destination ($modPath + "/PayPal.url")
 Copy-Item -Path "G3 Forum Post.url" -Destination $modPath
-Copy-Item -Path "Venmo.url" -Destination $modPath
 Copy-Item -Path "Beamdog Forum Post.url" -Destination $modPath
-Copy-Item -Path "LCA Release Notes.url" -Destination $modPath
-Get-Date -Format "yyyy-MM-dd HH:mm K" > pkgdate.txt
-Copy-Item -Path pkgdate.txt -Destination $modPath
-$Source = "./" + $basePath + "/*"
-$Target = "./" + $archive
+Copy-Item -Path "release notes.md" -Destination ($modPath + "/Release Notes.md")
 
+for ($i = 0; $i -lt $weiduApps.Length; $i++) {
+	if($i -gt 0){
+		Write-Output "Deleting " ($basePath + "/" + $exePath + $weiduExts[$i-1])
+		Remove-Item -LiteralPath ($basePath + "/" + $exePath + $weiduExts[$i-1])
+	}
+    Copy-Item -Path $weiduApps[$i] -Destination ($basePath + "/" + $exePath + $weiduExts[$i])
+	
+	$7zipPath = "$env:ProgramFiles/7-Zip/7z.exe"
 
-$7zipPath = "F:/Program Files/7-Zip/7z.exe"
+	if (-not (Test-Path -Path $7zipPath -PathType Leaf)) {
+		$7zipPath = "F:/Program Files/7-Zip/7z.exe"
+	}
 
-if(Test-Path -Path $7zipPath){
 	Set-Alias Start-SevenZip $7zipPath
+
+	$archive = $basePath + $weiduArchives[$i] + ".zip"
+	$Source = "./" + $basePath + "/*"
+	$Target = "./" + $archive
+
 	Start-SevenZip a -mx=9 $Target $Source
-}
-else{
-	#Linux
-	7z a -mx=9 $Target $Source
+
+	#Remove-Item -LiteralPath $basePath -Force -Recurse
+	#Get-FileHash $archive -Algorithm SHA256 > SHA256.txt
+
+	Copy-Item -Path $archive -Destination ("\\nas.home.lan\smbuser\Home\Installers\" + $archive)
 }
 
 Remove-Item -LiteralPath $basePath -Force -Recurse
-Get-FileHash $archive -Algorithm SHA256 > SHA256.txt
 
-Copy-Item -Path $archive -Destination ("\\nas.home.lan\smbuser\Home\Installers\" + $archive)
