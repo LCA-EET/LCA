@@ -6,19 +6,22 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
-## v1.7 2026-06-XX
-* Corwin's racial enemy will change from Skeleton to Vampire after being bitten by Bodhi.
-* Corrected an issue that prevented Corwin's hated race from being displayed when it was set to Skeleton in non-EET playthroughs.
-* Added new dialogs and cutscenes (SoD, SoA), and over a dozen new banters (ToB) for Corwin and Caelar.
-* Increased the difficulty of the Illasera and Narzugon battles.
-* Revised the conclusion of the first and second Narzugon encounters.
-* Updated the triggering conditions for the Rescue Caelar quest.
-* Fixed a bug that prevented Caelar's race from being shown in the character overview window.
-* Adjusted the default ToB banter interval for Caelar and Corwin to 12 hours. This setting is configurable through the LCA Assistant.
-* Fixed a bug that prevented Corwin's romance songs from being played in ToB, when those songs were started by the xacor25.bcs script.
-* Added new abilities for Caelar - Martyrdom and Piety. These abilities are available to Caelar once she has been restored to grace.
-  - Martyrdom: Caelar can sacrifice herself to resurrect one fallen party member.  
-  - Piety: Applies a powerful blessing to the caster and nearby party members.
+## v1.7 (Expected Release July 2026)
+* New and Revised Content
+  * Corwin's racial enemy will change from Skeleton to Vampire after being bitten by Bodhi.
+  * Added new dialogs and cutscenes (SoD, SoA), and over a dozen new banters (ToB) for Corwin and Caelar.
+  * Increased the difficulty of the Illasera and Narzugon battles.
+  * Revised the conclusion of the first and second Narzugon encounters.
+  * Updated the triggering conditions for the Rescue Caelar quest.
+  * Adjusted the default ToB banter interval for Caelar and Corwin to 12 hours. This setting is configurable through the LCA Assistant.
+  * Replaced the marriage proposal cutscene area.
+  * Added new abilities for Caelar - Martyrdom and Piety. These abilities are available to Caelar once she has been restored to grace.
+    - Martyrdom: Caelar can sacrifice herself to resurrect one fallen party member.  
+    - Piety: Applies a powerful blessing to the caster and nearby party members.
+* Bug Fixes
+  * Fixed a bug that prevented Caelar's race from being shown in the character overview window.
+  * Fixed a bug that prevented Corwin's romance songs from being played in ToB, when those songs were started by the xacor25.bcs script.
+  * Corrected an issue that prevented Corwin's hated race from being displayed when it was set to Skeleton in non-EET playthroughs.
 
 ## v1.6 2026-05-27
 * If Corwin is in your party when either Cespenar or the Athkatla smith restring her bow with either the Gond or Gesen bowstrings, she will gain the Restring unique ability. The ability allows her to switch between Corwin's Bow and the upgraded Gond or Gesen versions (and back), provided she has the appropriate bowstrings in her inventory. The Restring ability cannot be used when enemies are nearby.
