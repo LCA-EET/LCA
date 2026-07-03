@@ -2,7 +2,7 @@ $weiduApps		= @("weidu.exe", "weidu_linux")
 $weiduExts		= @(".exe", "")
 $weiduArchives 	= @("_win", "_linux")
 
-$basePath = "LCA"
+$basePath = "LoveConquersAll"
 $tp2Name = "LCA"
 $modPath = $basePath + "/" + $tp2Name 
 $exePath = "setup-" + $tp2Name

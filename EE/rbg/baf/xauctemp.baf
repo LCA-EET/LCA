@@ -1,3 +1,15 @@
+//{ Change Illasera's Dialog
+	IF
+		TriggerOverride("illasera", GlobalLT("XA_LC_DialogChange", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("illasera", SetDialog("xaillase"))
+			ActionOverride("illasera", ChangeAIScript("xailadlg", GENERAL))
+			ActionOverride("illasera", SetGlobal("XA_LC_DialogChange", "LOCALS", 1))
+			Continue()
+	END
+//}
+
 //{ Kill Beno
 	IF 
 		OR(2)
@@ -85,8 +97,9 @@ THEN
 		ActionOverride(Player1, StartDialog("Player1", Player1))
 END
 
-//{ Spawn Thralls
+//{ Spawn Thralls, but only if Illasera is not the Ascension version
 IF
+	HPGT("illasera", 100) // Unupgraded Illasera only has 98 HP
 	Global("XA_LC_SpawnUndeadUCTEMP", "MYAREA", 1) 
 THEN
 	RESPONSE #100

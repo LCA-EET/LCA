@@ -11,9 +11,10 @@
   * Corwin's racial enemy will change from Skeleton to Vampire after being bitten by Bodhi.
   * Added new dialogs and cutscenes (SoD, SoA), and over a dozen new banters (ToB) for Corwin and Caelar.
   * Increased the difficulty of the Illasera and Narzugon battles.
+      - Note: If the Tougher Illasera component of the Ascension ToB mod is installed, those improvements are now reflected in the RBG encounter.  
   * Revised the conclusion of the first and second Narzugon encounters.
   * Updated the triggering conditions for the Rescue Caelar quest.
-  * Adjusted the default ToB banter interval for Caelar and Corwin to 12 hours. This setting is configurable through the LCA Assistant.
+  * Adjusted the default ToB banter interval for Caelar and Corwin to 12 hours. This setting is configurable through the LCA Assistant. The default banter interval for SoA was left unchanged at two days.
   * Replaced the marriage proposal cutscene area.
   * Added new abilities for Caelar - Martyrdom and Piety. These abilities are available to Caelar once she has been restored to grace.
     - Martyrdom: Caelar can sacrifice herself to resurrect one fallen party member.  

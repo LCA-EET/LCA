@@ -1168,13 +1168,6 @@ SILENT
 		END
 	//}
 	
-	//{ ToB Base
-		COPY_EXISTING ~illasera.cre~ ~override/xaillase.cre~ // Illasera
-		WRITE_ASCII 0x2CC ~xaillase~ #8 	// Dialogue
-		WRITE_ASCII 0x250 ~xaillase~ #8	// Class Script
-		WRITE_ASCII 0x260 ~xailadlg~ #8	// General Script
-	//}
-	
 	COPY_EXISTING ~xalcspy.cre~ ~override/xahowspy.cre~ // Hall of Wonders Spy
 	WRITE_ASCII 0x248 ~xahowspy~ #8		// Override Script
 	
@@ -4928,7 +4921,7 @@ SILENT
 			STR_VAR
 				fj_structure_type = actor
 				fj_name = Illasera
-				fj_cre_resref = xaillase
+				fj_cre_resref = illasera
 		END
 		
 		LPF fj_are_structure
