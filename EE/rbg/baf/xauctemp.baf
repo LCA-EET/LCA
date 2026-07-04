@@ -1,12 +1,60 @@
+//{ Corwin Enrage
+	IF
+		Allegiance("illasera", ENEMY)
+		TriggerOverride("XACORWIN", GlobalLT("XA_LC_EnrageUCTEMP", "LOCALS", 1))
+	THEN
+		RESPONSE #100
+			ActionOverride("XACORWIN", ReallyForceSpellRES("SPCL321", Myself))
+			ActionOverride("XACORWIN", SetGlobal("XA_LC_EnrageUCTEMP", "LOCALS", 1))
+			Continue()
+	END
+//}
+
+//{ Ascension Check
+	IF
+		InMyArea("illasera")
+		HPGT("illasera", 100)
+		GlobalLT("XA_LC_AscensionCheck", "MYAREA", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_AscensionCheck", "MYAREA", 1)
+			SetGlobal("XA_LC_AscensionInstalled", "GLOBAL", 1)
+			Continue()
+	END
+
+	IF
+		InMyArea("illasera")
+		HPLT("illasera", 101)
+		GlobalLT("XA_LC_AscensionCheck", "MYAREA", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_AscensionCheck", "MYAREA", 1)
+			SetGlobal("XA_LC_AscensionInstalled", "GLOBAL", 0)
+			Continue()
+	END
+//}
+
 //{ Change Illasera's Dialog
 	IF
 		TriggerOverride("illasera", GlobalLT("XA_LC_DialogChange", "LOCALS", 1))
 	THEN
 		RESPONSE #100
 			ActionOverride("illasera", SetDialog("xaillase"))
-			ActionOverride("illasera", ChangeAIScript("xailadlg", GENERAL))
+			ActionOverride("illasera", ChangeAIScript("", GENERAL))
 			ActionOverride("illasera", SetGlobal("XA_LC_DialogChange", "LOCALS", 1))
 			Continue()
+	END
+//}
+
+//{ Illasera Dialog Initiation - needs to be here instead of the general script for compatibility with Ascension, due to the NoAction() being tripped by Illasera's override script
+	IF
+		GlobalLT("XA_LC_MeetIllasera", "GLOBAL", 1)
+		OR(2)
+			TriggerOverride("illasera", Range(Player1, 24))
+			TriggerOverride("illasera", Range("XACORWIN", 24))
+	THEN
+		RESPONSE #100
+			ActionOverride("illasera", StartDialog("xaillase", Player1))
 	END
 //}
 
@@ -99,7 +147,7 @@ END
 
 //{ Spawn Thralls, but only if Illasera is not the Ascension version
 IF
-	HPGT("illasera", 100) // Unupgraded Illasera only has 98 HP
+	GlobalLT("XA_LC_AscensionInstalled", "GLOBAL", 1)
 	Global("XA_LC_SpawnUndeadUCTEMP", "MYAREA", 1) 
 THEN
 	RESPONSE #100
