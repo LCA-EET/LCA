@@ -1,0 +1,44 @@
+//{ Initially add the ability
+    IF
+        Global("XA_LC_FerocityAbility", "GLOBAL", 1)
+        GlobalLT("XA_LC_InitialFerocity", "LOCALS", 1)
+    THEN
+        RESPONSE #100
+            SetInterrupt(FALSE)
+            AddSpecialAbility("XACFEROC")
+            SetGlobal("XA_LC_InitialFerocity", "LOCALS", 1)
+            SetInterrupt(TRUE)
+            Continue()
+    END
+//}
+
+//{ The ability was used. Start the refresh timer.
+    IF
+        Global("XA_LC_InitialFerocity", "LOCALS", 1)
+        !HaveSpellRES("xacferoc")
+        GlobalLT("XA_LC_FerocityTimerStarted", "LOCALS", 1)
+    THEN
+        RESPONSE #100
+            SetInterrupt(FALSE)
+            SetGlobalTimer("XA_LC_FerocityTimer", "LOCALS", EIGHT_HOURS)
+            SetGlobal("XA_LC_FerocityTimerStarted", "LOCALS", 1)
+            SetInterrupt(TRUE)
+            Continue()
+    END
+//}
+
+//{ The ability was used, the timer has been set and has expired. Add the ability and reset the timer started variable.
+    IF
+        Global("XA_LC_InitialFerocity", "LOCALS", 1)
+        !HaveSpellRES("xacferoc")
+        Global("XA_LC_FerocityTimerStarted", "LOCALS", 1)
+        GlobalTimerExpired("XA_LC_FerocityTimer", "LOCALS")
+    THEN
+        RESPONSE #100
+            SetInterrupt(FALSE)
+            AddSpecialAbility("XACFEROC")
+            SetGlobal("XA_LC_FerocityTimerStarted", "LOCALS", 0)
+            SetInterrupt(TRUE)
+            Continue()
+    END
+//}

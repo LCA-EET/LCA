@@ -4,6 +4,19 @@ SILENT
 
 OUTER_SET xa_regenerate = 0 // set to 1 to regenerate areas, 0 (default) to copy pre-generated areas
 
+
+
+//{ Ferocity ability
+	COPY_EXISTING ~SPCL321.SPL~ ~override/xacferoc.spl~
+	WRITE_LONG 0x8 RESOLVE_STR_REF(@5057) // spell name
+	WRITE_LONG 0x50 RESOLVE_STR_REF(@5056) // spell desc
+	WRITE_LONG 0x75E RESOLVE_STR_REF(@5058) 
+	WRITE_ASCII 0xD6E ~xacfero2~ #8
+
+	COPY_EXISTING ~SPCL321D.SPL~ ~override/xacfero2.spl~
+	WRITE_LONG 0x12E RESOLVE_STR_REF(@5059)
+//}
+
 //{ Adds Wyrm's Crossing as a Master Area
 	COPY_EXISTING ~MASTAREA.2DA~ ~override~
 	COUNT_2DA_ROWS 2 import1rows
@@ -5021,3 +5034,19 @@ SILENT
 	END
 //}
 
+//{ Tougher Illasera Check
+	COPY_EXISTING ~illasera.cre~ ~override~
+	READ_SHORT 0x24 xa_illahp
+
+	ACTION_IF(xa_illahp > 100) THEN BEGIN
+		PRINT ~Ascension - Tougher Illasera detected...~
+		SILENT
+		COPY_EXISTING ~xauctemp.are~ ~override~
+		// Replace Battle Song
+		WRITE_LONG 0x1364 80 // bhaalspawn fight music
+
+		// Revert change to animation
+		COPY_EXISTING ~zilfgt01.cre~ ~override~
+		WRITE_LONG 0x28 0x6100
+	END
+//}

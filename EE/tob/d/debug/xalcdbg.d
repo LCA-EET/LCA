@@ -206,6 +206,12 @@ APPEND ~XALCDBG~
 	IF ~~ THEN BEGIN XA_ToB_AdjustVariables
 		SAY @7021
 		
+		IF ~~ THEN REPLY @7067
+		DO ~
+			SetGlobal("XA_LC_FerocityAbility", "GLOBAL", 1)
+		~
+		GOTO XA_ToB_AdjustVariables
+
 		IF ~~ THEN REPLY @7063
 		DO ~
 			SetGlobal("XA_LC_SkipNarzuTalk", "GLOBAL", 0)

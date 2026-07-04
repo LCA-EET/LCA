@@ -15,7 +15,8 @@
   * Revised the conclusion of the first and second Narzugon encounters.
   * Updated the triggering conditions for the Rescue Caelar quest.
   * Adjusted the default ToB banter interval for Caelar and Corwin to 12 hours. This setting is configurable through the LCA Assistant. The default banter interval for SoA was left unchanged at two days.
-  * Replaced the marriage proposal cutscene area.
+  * Replaced the engagement proposal cutscene area.
+  * Added a ferocity ability for Corwin, which she gains after the finale of RBG. The ability can be used again after eight hours have elapsed.
   * Added new abilities for Caelar - Martyrdom and Piety. These abilities are available to Caelar once she has been restored to grace.
     - Martyrdom: Caelar can sacrifice herself to resurrect one fallen party member.  
     - Piety: Applies a powerful blessing to the caster and nearby party members.

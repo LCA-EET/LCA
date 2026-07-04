@@ -1,11 +1,11 @@
-//{ Corwin Enrage
+//{ Corwin Ferocity
 	IF
 		Allegiance("illasera", ENEMY)
-		TriggerOverride("XACORWIN", GlobalLT("XA_LC_EnrageUCTEMP", "LOCALS", 1))
+		GlobalLT("XA_LC_FerocityAbility", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			ActionOverride("XACORWIN", ReallyForceSpellRES("SPCL321", Myself))
-			ActionOverride("XACORWIN", SetGlobal("XA_LC_EnrageUCTEMP", "LOCALS", 1))
+			ActionOverride("XACORWIN", ReallyForceSpellRES("xacferoc", Myself))
+			SetGlobal("XA_LC_FerocityAbility", "GLOBAL", 1)
 			Continue()
 	END
 //}

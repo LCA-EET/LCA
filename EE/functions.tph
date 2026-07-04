@@ -173,11 +173,6 @@ DEFINE_ACTION_FUNCTION xa_replace_recompile_string
 		BEGIN
 			REPLACE_TEXTUALLY ~%xa_strToReplace%~ ~%xa_replacement%~
 		END
-		ACTION_IF(xa_top = 1) BEGIN
-			EXTEND_TOP ~%xa_extend%.bcs~ ~%xa_output%.bcs~
-		END ELSE BEGIN
-			EXTEND_BOTTOM ~%xa_extend%.bcs~ ~%xa_output%.bcs~
-		END
 	END
 DEFINE_ACTION_FUNCTION xa_extendScripts
 	INT_VAR
