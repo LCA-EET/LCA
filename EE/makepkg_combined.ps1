@@ -26,6 +26,7 @@ $folders = @(
 )
 
 $toExclude = @(
+	'ogg/ai/unapproved',
 	'generated/a/dlg',
 	'generated/a/tra',
 	'generated/a/songsList.txt',
