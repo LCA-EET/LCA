@@ -68,6 +68,9 @@
 @3012 = ~退出。~
 @3013 = ~解散调试器。~
 @3014 = ~物品栏继承~
+@3015 = ~重新装弦物品测试~
+@3016 = ~SetGlobal("XA_LC_CorwinLearnedRestring", "GLOBAL", 4)~
+@3017 = ~SetGlobal("XA_LC_CorwinLearnedRestring", "GLOBAL", 1)~
 @4000 = ~龙矛围攻 调试~
 @4001 = ~过场动画测试~
 @4002 = ~帐篷过场 (XATNTCS)~
@@ -126,6 +129,7 @@
 @4058 = ~Global("bd_ddd", "global", 2)~
 @4059 = ~Global("bd_ddd", "global", 3)~
 @4060 = ~!GlobalTimerNotExpired("bd_dream_timer","global")~
+@4061 = ~XASPR1~
 @5000 = ~BG2 Debug~
 @5001 = ~区域测试~
 @5002 = ~xa1000~
@@ -288,6 +292,13 @@
 @5169 = ~ActionOverride("XACORWIN", SetGlobal("XA_LC_WealthTalk", "LOCALS", 1))~
 @5170 = ~ActionOverride("XACORWIN", SetGlobal("XA_LC_AfterSexTalk", "LOCALS", 1))~
 @5171 = ~xaflower~
+@5172 = ~SetGlobal("XA_LC_Workout", "GLOBALS", 1)~
+@5173 = ~xacswo~
+@5174 = ~SetGlobal("XA_LC_Workout", "GLOBAL", 5)~
+@5175 = ~SetGlobal("XA_LC_CaelarRestored", "GLOBAL", 1)~
+@5176 = ~ActionOverride("XACORWIN", SetGlobal("XA_LC_CorwinVampireRacialEnemy", "LOCALS", 1))~
+@5177 = ~ActionOverride("XACORWIN", SetGlobal("XA_LC_CorwinDemonicRacialEnemy", "LOCALS", 1))~
+@5178 = ~ActionOverride("XACORWIN", SetGlobal("XA_LC_CorwinSkeletonRacialEnemy", "LOCALS", 1))~
 @6000 = ~返回博德之门调试~
 @6001 = ~物品测试~
 @6003 = ~订婚戒指（未附魔）~
@@ -405,6 +416,7 @@
 @6130 = ~创建《阴影谷的历史》卷册~
 @6131 = ~行动汇报 (XADEBREF)~
 @6132 = ~xabook0~
+@6133 = ~SetGlobal("XA_LC_IncubusDefeated", "GLOBAL", 1)~
 @7000 = ~ToB 调试~
 @7001 = ~XAG104 (BD5300) - Kanaglym~
 @7002 = ~生成凯拉·白银 (XACAELAR) 并将其加入队伍。~
@@ -453,3 +465,14 @@
 @7054 = ~Global("XA_LC_EnteredSaradush", "GLOBAL", 1)~
 @7055 = ~Global("XA_LC_ClearedKanaglym", "GLOBAL", 0)~
 @7056 = ~Global("XA_LC_ClearedKanaglym", "GLOBAL", 1)~
+@7057 = ~凯拉的破损装备。~
+@7058 = ~XAG101 Tower Rooftop~
+@7059 = ~XACAELA2 Interaction Post Rescue~
+@7060 = ~Caelar Portrait Change (Disgraced)~
+@7061 = ~Caelar Portrait Change (Restored)~
+@7062 = ~xaca2end~
+@7063 = ~SetGlobal("XA_LC_SkipNarzuTalk", "GLOBAL", 0)~
+@7064 = ~SetGlobal("XA_LC_SkipNarzuTalk", "GLOBAL", 1)~
+@7065 = ~插话测试~
+@7066 = ~XACOR25J XA_FinalFight~
+@7067 = ~SetGlobal("XA_LC_FerocityAbility", "GLOBAL", 1)~
