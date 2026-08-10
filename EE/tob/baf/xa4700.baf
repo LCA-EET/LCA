@@ -170,7 +170,7 @@ END
 		RESPONSE #100
 			SetInterrupt(FALSE)
 			SetGlobal("GavePocketPlane","GLOBAL",0)
-			ActionOverride(Player1, RemoveSpellRES("SPIN649"))
+			ActionOverride(Player1, RemoveSpellRES("SPIN649", Player1))
 			SetInterrupt(TRUE)
 			Continue()
 	END
