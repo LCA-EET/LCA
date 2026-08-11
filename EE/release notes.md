@@ -7,6 +7,7 @@
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
 ## v1.7u2 2026-08-06
+* Addressed compilation issues when using WeiDU version 252, courtesy of DiabloIORI.
 * Updated the Simplified Chinese translation, courtesy of yoshimo0417.
 * New and Revised Content
   * Corwin's racial enemy will change from Skeleton to Vampire after being bitten by Bodhi.
