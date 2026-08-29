@@ -501,28 +501,6 @@ EXTEND_BOTTOM SUELLE2 8 /* OK */
 	EXTERN XACORWIJ XA_SUELLE2_8
 END
 
-EXTEND_BOTTOM SUELLE2 13 /* OK */
-	IF ~
-		IsValidForPartyDialogue("XACORWIN")
-	~
-	THEN
-	DO ~
-		GiveItemCreate("AMUL27",Player1,1,0,0)  // Amulet of Seldarine
-	~
-	GOTO 15
-END
-
-EXTEND_BOTTOM SUELLE2 14 /* OK */
-	IF ~
-		IsValidForPartyDialogue("XACORWIN")
-	~
-	THEN
-	DO ~
-		GiveItemCreate("AMUL27",Player1,1,0,0)  // Amulet of Seldarine
-	~
-	GOTO 15
-END
-
 EXTEND_BOTTOM SUELLE2 18 /* OK */
 	IF ~
 		GlobalLT("XA_LC_SoAExtended", "GLOBAL", 1)

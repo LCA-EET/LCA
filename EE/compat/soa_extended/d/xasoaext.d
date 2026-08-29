@@ -22,3 +22,14 @@ APPEND XACORWIJ
 		GOTO 83
 	END
 END
+
+INTERJECT_COPY_TRANS C0X1ELLE 24 XA_C0X1ELLE_24
+	== XACORWIJ
+	IF ~
+		IsValidForPartyDialogue("XACORWIN")
+	~
+	@5 /*~@5 = ~<CHARNAME>, I can't wait any longer. I'm returning home — my city and my family need me. Farewell.~ */
+	DO ~
+		LeaveParty()
+	~
+END

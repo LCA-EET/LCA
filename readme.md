@@ -404,7 +404,7 @@ The encounter with Ellesime is moved from the Elder Grove (start of ToB) to Suld
 <a name="a_soa_extended"></a>
 
 <details>
-If Corwin is in the party at the end of SoA, the player can initiate the Return to Baldur's Gate portion of LCA simply by talking to her. Corwin will leave the party and return home if the player, after speaking with Ellesime, initiates the transition to ToB.
+If Corwin is in the party at the end of SoA, the player can initiate the Return to Baldur's Gate portion of LCA simply by talking to her. Corwin will leave the party and return home if the player, after speaking with Ellesime, initiates the transition to ToB.  
 </details>
 
 ### Intimate Encounters

@@ -1,3 +1,13 @@
+IF
+	GlobalLT("XA_LC_AmuletProvision", "MYAREA", 1)
+	!PartyHasItem("AMUL27")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_AmuletProvision", "MYAREA", 1)
+		GiveItemCreate("AMUL27",Player1,1,0,0)
+		Continue()
+END
+
 IF 
 	Global("XA_LC_PartyRemovalProcessing", "GLOBAL", 2)
 	GlobalLT("XA_LC_900_Entry", "MYAREA", 1)
