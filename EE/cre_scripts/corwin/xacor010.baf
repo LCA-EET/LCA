@@ -1,6 +1,17 @@
 
 //{ ToB Events
 	
+	//{ Entered ToB; Unpause Banters
+		IF
+			GlobalLT("XA_LC_UnpauseBanters", "LOCALS", 1)
+		THEN
+			RESPONSE #100
+				SetGlobal("XA_LC_BanterPause", "LOCALS", 0)
+				SetGlobal("XA_LC_UnpauseBanters", "LOCALS", 1)
+				Continue()
+		END
+	//}
+	
 	//{ Player became a Lich
 		IF
 			Race(Player1, LICH)

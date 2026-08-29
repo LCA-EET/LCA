@@ -525,6 +525,7 @@ END
 
 EXTEND_BOTTOM SUELLE2 18 /* OK */
 	IF ~
+		GlobalLT("XA_LC_SoAExtended", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 		ReputationLT(Player1,10)
 	~
@@ -537,6 +538,7 @@ EXTEND_BOTTOM SUELLE2 18 /* OK */
 	EXIT
 	
 	IF ~
+		GlobalLT("XA_LC_SoAExtended", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 		ReputationGT(Player1,9)
 	~
@@ -549,6 +551,7 @@ EXTEND_BOTTOM SUELLE2 18 /* OK */
 	EXIT
 	
 	IF ~
+		GlobalLT("XA_LC_SoAExtended", "GLOBAL", 1)
 		IsValidForPartyDialogue("XACORWIN")
 		ReputationLT(Player1,10)
 		Global("XA_LC_LeaveAfterSoA", "GLOBAL", 1)
@@ -567,6 +570,7 @@ EXTEND_BOTTOM SUELLE2 18 /* OK */
 	EXIT
 	
 	IF ~
+		GlobalLT("XA_LC_SoAExtended", "GLOBAL", 1)	
 		IsValidForPartyDialogue("XACORWIN")
 		ReputationGT(Player1,9)
 		Global("XA_LC_LeaveAfterSoA", "GLOBAL", 1)

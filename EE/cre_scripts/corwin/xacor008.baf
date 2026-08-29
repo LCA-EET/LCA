@@ -1,3 +1,14 @@
+//{ Pause Banters - Entered Hell
+	IF
+		AreaCheck("AR2900")
+		GlobalLT("XA_LC_BanterPause", "LOCALS", 1)
+	THEN
+		RESPONSE #100
+			SetGlobal("XA_LC_BanterPause", "LOCALS", 1)
+			Continue()
+	END	
+//}
+
 //{ Change Racial Enemy
 	IF
 		Global("XA_LC_CorwinAvernus", "GLOBAL", 1)

@@ -1,0 +1,19 @@
+IF
+	GlobalGT("C0X1Begin","GLOBAL",4)
+	GlobalLT("XA_LC_SoAExTimerSet", "LOCALS", 1)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("XA_LC_SoAExTimer", "GLOBAL", ONE_ROUND)
+		SetGlobal("XA_LC_SoAExTimerSet", "LOCALS", 1)
+		Continue()
+END
+
+IF 
+	GlobalLT("XA_LC_BackToBG", "GLOBAL", 2)
+	Global("XA_LC_SoAExTimerSet", "LOCALS", 1)
+	GlobalTimerExpired("XA_LC_SoAExTimer", "GLOBAL")
+THEN
+	RESPONSE #100
+		SetGlobal("XA_LC_BackToBG", "GLOBAL", 1)
+		StartDialog("XACORWIJ", Player1)
+END

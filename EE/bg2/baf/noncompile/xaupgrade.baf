@@ -1,0 +1,44 @@
+IF
+	!Dead("XAESMITH")
+	PartyHasItem("XACORCHN")
+	GlobalGT("DefeatedJon","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, TransformItem("XACORCHN", "XACORCH4"))
+		ActionOverride(Player2, TransformItem("XACORCHN", "XACORCH4"))
+		ActionOverride(Player3, TransformItem("XACORCHN", "XACORCH4"))
+		ActionOverride(Player4, TransformItem("XACORCHN", "XACORCH4"))
+		ActionOverride(Player5, TransformItem("XACORCHN", "XACORCH4"))
+		ActionOverride(Player6, TransformItem("XACORCHN", "XACORCH4"))
+		Continue()
+END
+
+IF
+	!Dead("XABOWYER")
+	PartyHasItem("XACORBOW")
+	GlobalGT("DefeatedJon","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, TransformItem("XACORBOW", "XACORBO3"))
+		ActionOverride(Player2, TransformItem("XACORBOW", "XACORBO3"))
+		ActionOverride(Player3, TransformItem("XACORBOW", "XACORBO3"))
+		ActionOverride(Player4, TransformItem("XACORBOW", "XACORBO3"))
+		ActionOverride(Player5, TransformItem("XACORBOW", "XACORBO3"))
+		ActionOverride(Player6, TransformItem("XACORBOW", "XACORBO3"))
+		Continue()
+END
+
+IF
+	!Dead("XABOWYER")
+	PartyHasItem("XACORBG3")
+	GlobalGT("DefeatedJon","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, TransformItem("XACORBG3", "XACORBG4"))
+		ActionOverride(Player2, TransformItem("XACORBG3", "XACORBG4"))
+		ActionOverride(Player3, TransformItem("XACORBG3", "XACORBG4"))
+		ActionOverride(Player4, TransformItem("XACORBG3", "XACORBG4"))
+		ActionOverride(Player5, TransformItem("XACORBG3", "XACORBG4"))
+		ActionOverride(Player6, TransformItem("XACORBG3", "XACORBG4"))
+		Continue()
+END

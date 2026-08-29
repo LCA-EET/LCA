@@ -6,6 +6,9 @@
 * Gibberlings 3 Forum Post: https://www.gibberlings3.net/forums/topic/36832-announcing-love-conquers-all-lca-%E2%80%93-corwin-romance-mod-for-eet
 * Beamdog Forum Post: https://forums.beamdog.com/discussion/87688/announcing-love-conquers-all-lca-corwin-romance-mod-for-eet
 
+## v1.7.1 2026-08-29
+* Added compatibility with the Shadows of Amn - Extended mod. The readme provides instructions on how to initiate the Return to Baldur's Gate when in Suldaneselaar.
+
 ## v1.7u2 2026-08-06
 * Addressed compilation issues when using WeiDU version 252, courtesy of DiabloIORI.
 * Updated the Simplified Chinese translation, courtesy of yoshimo0417.

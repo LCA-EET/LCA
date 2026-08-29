@@ -46,6 +46,7 @@ If you have any questions, or would like to provide feedback, you can reach me o
 - [Shadows of Amn Changes](#a_bg2)
 - [Throne of Bhaal Changes](#a_tob)
 - [The Longer Road EE Changes](#a_tlr)
+- [Shadows of Amn - Extended Changes](#a_soa_extended)
 - [Intimate Encounters](#a_explicit)
 - <a href="https://github.com/LCA-EET/LCA/blob/main/EE/release%20notes.md" target="_blank">Release Notes</a>
 
@@ -120,6 +121,11 @@ LCA is compatible with standard EE as well as the Enhanced Edition Trilogy (EET)
 	</tr>
 	<tr>
 		<td><a href="https://github.com/LCA-EET/Lichdom">Lichdom</a></td>
+		<td>Yes</td>
+		<td>Before LCA</td>
+	</tr>
+	<tr>
+		<td>Shadows of Amn Extended</td>
 		<td>Yes</td>
 		<td>Before LCA</td>
 	</tr>
@@ -392,6 +398,13 @@ Caelar is a disgraced shell of her former self at the time of her rescue from Av
 	<summary>Spoiler Warning! (Click to View)</summary>
 	
 The encounter with Ellesime is moved from the Elder Grove (start of ToB) to Suldanessellar (end of SoA), just before Gorion's Ward and the party leave for the Return to Baldur's Gate. If Corwin and Irenicus are both in the party, Corwin, after a short time, will rally like-minded party members to kill him, in order to fulfill – a second time – the mission given to her by the Dukes. You'll get a warning about one in-game hour prior to the start of hostilities.
+</details>
+
+### Shadows of Amn - Extended Changes
+<a name="a_soa_extended"></a>
+
+<details>
+If Corwin is in the party at the end of SoA, the player can initiate the Return to Baldur's Gate portion of LCA simply by talking to her. Corwin will leave the party and return home if the player, after speaking with Ellesime, initiates the transition to ToB.
 </details>
 
 ### Intimate Encounters

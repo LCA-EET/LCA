@@ -5050,3 +5050,11 @@ SILENT
 		WRITE_LONG 0x28 0x6100
 	END
 //}
+
+//{ Shadows of Amn - Extended 
+	ACTION_IF FILE_EXISTS_IN_GAME ~C0X1DEMI.dlg~ THEN BEGIN
+		INCLUDE ~%MOD_FOLDER%/compat/soa_extended/soa_extended.tph~
+	END ELSE BEGIN
+		EXTEND_TOP ~xacs13.bcs~ ~%MOD_FOLDER%/bg2/baf/noncompile/xaupgrade.baf~ 
+	END
+//}

@@ -1067,33 +1067,28 @@ END
 //{ #region Corwin End BG2 (Romance) - Dialog J-23 - CC OK
 IF ~
 	Global("XA_LC_BackToBG", "GLOBAL", 1)
+	GlobalLT("XA_LC_SoAExtended", "GLOBAL", 1)
 ~ THEN BEGIN XA_BackToBG_Romance
 	SAY @619 /* ~That was one hell of a party.~ [xalc1271] */
 	
 	IF ~~ THEN REPLY @620 /* ~It definitely was.~ */
-	DO ~
-		SetGlobal("XA_LC_BackToBG", "GLOBAL", 2)
-	~
 	GOTO XA_BackToBG2
 	
 	IF ~~ THEN REPLY @621 /* ~A better liquor selection would have been nice...~*/
-	DO ~
-		SetGlobal("XA_LC_BackToBG", "GLOBAL", 2)
-	~
 	GOTO XA_BackToBG2
 	
 	IF ~~ THEN REPLY @630 /*~It was tame compared to the one the coalition threw for us after Avernus.~*/
-	DO ~
-		SetGlobal("XA_LC_BackToBG", "GLOBAL", 2)
-	~
 	GOTO XA_BackToBG2
 END
+
+
 
 IF ~~ THEN BEGIN XA_BackToBG2
 	SAY @622 /* ~I think it'll pale in comparison to the one the city will throw for us upon our return. (She smiles.)~ */
 
 	IF ~~ THEN REPLY @623 /* ~Baldur's Gate? Are they expecting us?~ */
 	DO ~
+		SetGlobal("XA_LC_BackToBG", "GLOBAL", 2)
 		SetGlobalTimer("XA_LC_Reminder", "LOCALS", THREE_ROUNDS)
 	~
 	GOTO XA_BackToBG3

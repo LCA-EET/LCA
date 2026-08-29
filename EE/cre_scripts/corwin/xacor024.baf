@@ -68,7 +68,7 @@
 		TriggerOverride("HaerDalis", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
 	THEN
 		RESPONSE #100
-			ActionOverride("EdHaerDaliswin", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+			ActionOverride("HaerDalis", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
 			Continue()
 	END
 //}
@@ -129,7 +129,7 @@
 		TriggerOverride("Korgan", GlobalLT("XA_LC_CorwinBantersEnd", "LOCALS", 1))
 	THEN
 		RESPONSE #100
-			ActionOverride("KeldKorganorn", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
+			ActionOverride("Korgan", SetGlobal("XA_LC_CorwinBantersEnd", "LOCALS", 1))
 			Continue()
 	END
 //}

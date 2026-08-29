@@ -1,4 +1,5 @@
 IF
+	GlobalLT("XA_LC_BanterPause", "LOCALS", 1)
 	ActionListEmpty()
 	!ActuallyInCombat()
 	GlobalTimerExpired("XA_LC_BanterTimer", "LOCALS")
@@ -27,6 +28,7 @@ THEN
 END
 
 IF
+	GlobalLT("XA_LC_BanterPause", "LOCALS", 1)
 	ActionListEmpty()
 	!ActuallyInCombat()
 	GlobalTimerExpired("XA_LC_BanterTimer", "LOCALS")
@@ -47,6 +49,7 @@ THEN
 END
 
 IF
+	GlobalLT("XA_LC_BanterPause", "LOCALS", 1)
 	ActionListEmpty()
 	!ActuallyInCombat()
 	GlobalTimerExpired("XA_LC_BanterTimer", "LOCALS")
@@ -65,6 +68,7 @@ THEN
 END
 
 IF
+	GlobalLT("XA_LC_BanterPause", "LOCALS", 1)
 	ActionListEmpty()
 	!ActuallyInCombat()
 	GlobalTimerExpired("XA_LC_BanterTimer", "LOCALS")
@@ -81,6 +85,7 @@ THEN
 END
 
 IF
+	GlobalLT("XA_LC_BanterPause", "LOCALS", 1)
 	ActionListEmpty()
 	!ActuallyInCombat()
 	GlobalTimerExpired("XA_LC_BanterTimer", "LOCALS")

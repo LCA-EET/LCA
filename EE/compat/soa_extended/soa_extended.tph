@@ -1,0 +1,8 @@
+PRINT ~SoA Extended is installed. Applying compatibility update.~
+SILENT
+
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/compat/soa_extended/d~ USING ~%MOD_FOLDER%/compat/soa_extended/tra/english/xasoaext.tra~
+
+EXTEND_TOP ~AR2900.bcs~ ~%MOD_FOLDER%/compat/soa_extended/baf/xaext.baf~ 
+EXTEND_TOP ~XACORWIN.bcs~ ~%MOD_FOLDER%/compat/soa_extended/baf/xacorext.baf~ 
+EXTEND_TOP ~AR2800.bcs~ ~%MOD_FOLDER%/bg2/baf/noncompile/xaupgrade.baf~ 
