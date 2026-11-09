@@ -2002,7 +2002,7 @@ COPY ~%MOD_FOLDER%/generated/c/bam~ ~override~
 //bmp files.
 //=========================
 COPY ~%MOD_FOLDER%/generated/c/bmp~ ~override~
-COPY ~%MOD_FOLDER%/generated/c/mos~ ~override~
+//COPY ~%MOD_FOLDER%/generated/c/mos~ ~override~
 
 //pvrz files.
 //=========================

@@ -155,7 +155,7 @@ COPY ~%MOD_FOLDER%/generated/f/itm/xaf102.itm~ ~override~
 //bmp files.
 //=========================
 COPY ~%MOD_FOLDER%/generated/f/bmp~ ~override~
-COPY ~%MOD_FOLDER%/generated/f/mos~ ~override~
+//COPY ~%MOD_FOLDER%/generated/f/mos~ ~override~
 
 //pvrz files.
 //=========================

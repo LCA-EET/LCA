@@ -432,7 +432,7 @@ COPY ~%MOD_FOLDER%/generated/d/bam~ ~override~
 //bmp files.
 //=========================
 COPY ~%MOD_FOLDER%/generated/d/bmp~ ~override~
-COPY ~%MOD_FOLDER%/generated/d/mos~ ~override~
+//COPY ~%MOD_FOLDER%/generated/d/mos~ ~override~
 
 //pvrz files.
 //=========================
