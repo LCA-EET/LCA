@@ -32,6 +32,13 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_TroubleTalk", "GLOBAL", 1)
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_TroubleTalk", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
 			StartDialog("XACORWIJ", Player1)
 	END
 	//}
@@ -78,7 +85,6 @@
 		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
-			//Dialog J-50
 			StartDialog("XACORWIJ", Player1)
 	END
 	//}
@@ -89,7 +95,6 @@
 		//See(Player1)
 	THEN
 		RESPONSE #100
-			//Dialog J-68
 			StartDialog("XACORWIJ", Player1)
 	END
 	//}
@@ -101,13 +106,18 @@
 		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_SoDAnxiety", "GLOBAL", 2)
 			PlaySong(1001)
-			//Dialog J-39
-			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
+			Continue()
 	END
+
+	IF
+		Global("XA_LC_SoDAnxiety", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			StartDialog("XACORWIJ", Player1)
+	END
+
 	//}
 	
 	//{ Corwin Leave for Family
@@ -116,12 +126,7 @@
 		Global("XA_LC_CorwinLeaveForFamily", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			//Dialogs R-28
-			SetInterrupt(FALSE)
-			PlaySong(1003)
-			SmallWait(5)
 			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
 	END
 	//}
 	
@@ -135,8 +140,14 @@
 			GlobalGT("XA_LC_SavedTimotey", "GLOBAL", 4)
 	THEN
 		RESPONSE #100
-			//Dialog J-18
 			SetGlobal("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 2)
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_CorwinNeedSeeFamily", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
 			StartDialog("XACORWIJ", Player1)
 	END
 	//}	
@@ -147,12 +158,17 @@
 		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			PlaySong(1009)
+			SetGlobal("XA_LC_AskCorwinAboutTianna", "GLOBAL", 2)
 			Wait(1)
-			//Dialog J-15
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_AskCorwinAboutTianna", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
 			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -165,12 +181,16 @@
 		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			PlaySong(1003)
 			SetGlobal("XA_LC_XACS15Cutscene", "GLOBAL", 6)
-			//Dialog J-17
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_XACS15Cutscene", "GLOBAL", 6)
+	THEN
+		RESPONSE #100
 			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
 	END
 	//}
 	
@@ -182,12 +202,16 @@
 	THEN
 		RESPONSE #100
 			ClearAllActions()
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_XACS15Cutscene", "GLOBAL", 3)
 			FaceObject("XANEOMA")
-			SmallWait(5)
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_XACS15Cutscene", "GLOBAL", 3)
+	THEN
+		RESPONSE #100
 			StartDialog("XACORWIJ", "XANEOMA")
-			SetInterrupt(TRUE)
 	END
 	//}
 

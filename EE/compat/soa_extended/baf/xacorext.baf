@@ -8,6 +8,13 @@ THEN
 		Continue()
 END
 
+IF
+	Global("XA_LC_BackToBG", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		StartDialog("XACORWIJ", Player1)
+END
+
 IF 
 	GlobalLT("XA_LC_BackToBG", "GLOBAL", 2)
 	Global("XA_LC_SoAExTimerSet", "LOCALS", 1)
@@ -15,5 +22,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_BackToBG", "GLOBAL", 1)
-		StartDialog("XACORWIJ", Player1)
+		Continue()
 END
+

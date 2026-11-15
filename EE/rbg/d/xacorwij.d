@@ -2653,13 +2653,13 @@ APPEND XACORWIJ
 	//{ #region Corwin / Tianna Dialog R-30 - CC OK
 	IF ~
 		Global("XA_LC_ReturnToBG", "GLOBAL", 1)
-		Global("XA_LC_AskCorwinAboutTianna", "GLOBAL", 1)
+		Global("XA_LC_AskCorwinAboutTianna", "GLOBAL", 2)
 	~ THEN BEGIN XA_AskCorwinAboutTianna
 		SAY @861 /* ~(You hear her muttering under her breath.)~ */
 		
 		IF ~~ THEN REPLY @148 /* ~(Leave her be.)~*/
 		DO ~
-			SetGlobal("XA_LC_AskCorwinAboutTianna", "GLOBAL", 2)
+			SetGlobal("XA_LC_AskCorwinAboutTianna", "GLOBAL", 3)
 		~
 		EXIT	
 		
@@ -2667,7 +2667,7 @@ APPEND XACORWIJ
 			!Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @603 /* ~Something wrong?~*/
 		DO ~
-			SetGlobal("XA_LC_AskCorwinAboutTianna", "GLOBAL", 2)
+			SetGlobal("XA_LC_AskCorwinAboutTianna", "GLOBAL", 3)
 		~
 		GOTO XA_CorwinTianna2
 		
@@ -2675,7 +2675,7 @@ APPEND XACORWIJ
 			Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 		~ THEN REPLY @838 /* ~My love... that name, Tianna - haven't you mentioned her to me before?~ */
 		DO ~
-			SetGlobal("XA_LC_AskCorwinAboutTianna", "GLOBAL", 2)
+			SetGlobal("XA_LC_AskCorwinAboutTianna", "GLOBAL", 3)
 		~
 		GOTO XA_CorwinTianna2
 	END

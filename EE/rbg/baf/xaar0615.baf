@@ -1,0 +1,7 @@
+IF
+	Global("XA_LC_StoleLedger", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+		Continue()
+END

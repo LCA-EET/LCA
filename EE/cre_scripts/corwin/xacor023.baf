@@ -527,10 +527,8 @@
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinCoverUD_Party", "GLOBAL", 2)
-			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
+			Continue()
 	END
 	//}
 
@@ -545,12 +543,19 @@
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinCoverUD_Player", "GLOBAL", 2)
-			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
+			Continue()
 	END
 	//}
+
+	IF
+		OR(2)
+			Global("XA_LC_CorwinCoverUD_Player", "GLOBAL", 2)
+			Global("XA_LC_CorwinCoverUD_Party", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
+			StartDialog("XACORWIJ", Player1)
+	END
 
 	
 //} End Player Interactions

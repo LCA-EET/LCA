@@ -51,11 +51,15 @@
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinParentAdvice", "GLOBAL", 2)
-			//Dialog J-76
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_CorwinParentAdvice", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
 			StartDialog("xacor25j", Player1)
-			SetInterrupt(TRUE)
 	END
 	//}
 	
@@ -141,15 +145,17 @@
 			GlobalTimerExpired("XA_LC_C3Timer", "LOCALS")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinPregnant", "GLOBAL", 6)
 			PlaySong(1003)
-			SmallWait(5)
-			StartDialog("xacor25j", Player1)
-			SetInterrupt(TRUE)
+			Continue()
 	END
 	
-
+	IF
+		Global("XA_LC_CorwinPregnant", "GLOBAL", 6)
+	THEN
+		RESPONSE #100
+			StartDialog("xacor25j", Player1)
+	END
 	//}
 	
 	//{ Fourth Interaction

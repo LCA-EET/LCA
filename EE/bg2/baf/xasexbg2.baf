@@ -1,3 +1,5 @@
+// THIS SCRIPT IS TRIGGERED WHEN CHARNAME ELECTS TO REST
+
 //{ Sex 1 & 2
 	IF
 		Global("XA_LC_Sex1Debug", "GLOBAL", 1)

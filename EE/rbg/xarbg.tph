@@ -2798,6 +2798,7 @@ SILENT
 	PRINT @4182 /* ~Still working... please be patient.~*/
 	SILENT
 	//{ ar0615 xaa662 Iron Throne Fifth Floor
+		EXTEND_TOP ~xaas662.bcs~	~%MOD_FOLDER%/rbg/baf/xaar0615.baf~
 		COPY_EXISTING ~xaa662.are~ ~override~	
 		//{ Change scrolls in container 3
 			WRITE_ASCII 0x1130 ~SCRL56~ #8

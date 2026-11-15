@@ -5,7 +5,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_StoleLedger", "GLOBAL", 1)
-		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
+		Continue()
 END
 
 IF
@@ -14,13 +14,4 @@ IF
 THEN
 	RESPONSE #100
 		DisplayString(Myself,@0)  /* ~You are too far away to use that.~ */
-END
-
-IF 
-	Clicked([ANYONE])
-	!Global("XA_LC_ReturnToBG", "GLOBAL", 1)
-	Range(LastTrigger,10)
-THEN
-	RESPONSE #100
-		DisplayString(Myself,@1)  /* ~The painting depicts a fire-breathing dragon.~ */
 END

@@ -195,11 +195,9 @@ END
 			Global("XA_LC_HaltRBGTimers", "GLOBAL", 0)
 		THEN
 			RESPONSE #100
-				SetInterrupt(FALSE)
 				SetGlobal("XA_LC_CorwinLeaveForFamilyTicked", "GLOBAL", 2)
 				SetGlobal("XA_LC_CorwinLeaveForFamily", "GLOBAL", 1)
-				//DisplayStringHead(Player1, @9)
-				SetInterrupt(TRUE)
+				PlaySong(1003)
 				Continue()
 		END
 		//}

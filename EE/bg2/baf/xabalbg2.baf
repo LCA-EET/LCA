@@ -45,10 +45,15 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_SkieModActive", "GLOBAL",1)
 		SetGlobal("XA_LC_PromptToSendLetter", "GLOBAL", 1)
-		////DisplayStringHead(Player1, @1)
-		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 		SetInterrupt(TRUE)
 		Continue()
+END
+
+IF
+	Global("XA_LC_PromptToSendLetter", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		ActionOverride(Player1, StartDialog("PLAYER1", Player1))
 END
 //}
 
@@ -59,6 +64,14 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_CheckWithBrega", "GLOBAL", 1)
+		Continue()
+		
+END
+
+IF
+	Global("XA_LC_CheckWithBrega", "GLOBAL", 1)
+THEN
+	RESPONSE #100
 		ActionOverride(Player1,StartDialog("player1",Player1))
 END
 
@@ -68,6 +81,14 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("XA_LC_CheckWithBrega2", "GLOBAL", 1)
+		Continue()
+		
+END
+
+IF 
+	Global("XA_LC_CheckWithBrega2", "GLOBAL", 1)
+THEN
+	RESPONSE #100
 		ActionOverride(Player1,StartDialog("player1",Player1))
 END
 //}
@@ -340,9 +361,7 @@ END
 		!AreaCheck("AR0028")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			ActionOverride("Aerie", StartDialog("AERIEJ", Player1))
-			SetInterrupt(TRUE)
 	END
 	
 	IF
@@ -356,9 +375,7 @@ END
 		!AreaCheck("AR0028")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			ActionOverride("Imoen2", StartDialog("IMOEN2J", Player1))
-			SetInterrupt(TRUE)
 	END
 	
 	IF
@@ -372,9 +389,7 @@ END
 		!AreaCheck("AR0028")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			ActionOverride("Nalia", StartDialog("NALIAJ", Player1))
-			SetInterrupt(TRUE)
 	END
 	
 	IF
@@ -388,9 +403,7 @@ END
 		!AreaCheck("AR0028")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			ActionOverride("Neera", StartDialog("NEERAJ", Player1))
-			SetInterrupt(TRUE)
 	END
 	
 	IF
@@ -404,9 +417,7 @@ END
 		!AreaCheck("AR0028")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			ActionOverride("Jaheira", StartDialog("JAHEIRAJ", Player1))
-			SetInterrupt(TRUE)
 	END
 	
 	IF 

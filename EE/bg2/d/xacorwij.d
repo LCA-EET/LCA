@@ -1913,16 +1913,47 @@ END
 //{ #region Corwin Bodhi Deal - Dialog J-38 - CC OK
 IF ~
 	InParty(Myself)
-	Global("XA_LC_CorwinBodhiDeal", "GLOBAL", 1)
+	OR(3)
+		Global("XA_LC_CorwinBodhiDeal", "GLOBAL", 1)
+		Global("XA_LC_CorwinBodhiDeal2", "GLOBAL", 1)
+		Global("XA_LC_CorwinBodhiDeal3", "GLOBAL", 1)
 ~ THEN BEGIN XA_CorwinBodhiDeal
 	SAY @199 /* ~I've gone as far as I can. When you regain your senses, you can find me at the Athkatla council building.~ */
 	
-	IF ~~ THEN
+	IF ~
+		Global("XA_LC_CorwinBodhiDeal", "GLOBAL", 1)
+	~ THEN
 	DO ~
 		ChangeAIScript("", OVERRIDE)
 		ChangeAIScript("", DEFAULT)
 		SetGlobal("XA_LC_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
 		SetGlobal("XA_LC_CorwinBodhiDeal", "GLOBAL", 2)
+		LeaveParty()
+		EscapeAreaMove("AR1002",1033,563, SW)
+	~
+	EXIT
+
+	IF ~
+		Global("XA_LC_CorwinBodhiDeal2", "GLOBAL", 1)
+	~ THEN
+	DO ~
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
+		SetGlobal("XA_LC_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinBodhiDeal2", "GLOBAL", 2)
+		LeaveParty()
+		EscapeAreaMove("AR1002",1033,563, SW)
+	~
+	EXIT
+
+	IF ~
+		Global("XA_LC_CorwinBodhiDeal3", "GLOBAL", 1)
+	~ THEN
+	DO ~
+		ChangeAIScript("", OVERRIDE)
+		ChangeAIScript("", DEFAULT)
+		SetGlobal("XA_LC_CorwinMeetAthkatlaCouncil", "GLOBAL", 1)
+		SetGlobal("XA_LC_CorwinBodhiDeal3", "GLOBAL", 2)
 		LeaveParty()
 		EscapeAreaMove("AR1002",1033,563, SW)
 	~
@@ -2140,20 +2171,20 @@ END
 //{ #region Corwin Intimate Bodhi - Dialog R-20
 IF ~
 	GlobalLT("XA_LC_EnteredSuld", "GLOBAL", 1)
-	Global("XA_LC_CorwinSexAfterBodhi", "GLOBAL", 1)
+	Global("XA_LC_CorwinSexAfterBodhi", "GLOBAL", 2)
 	//play romance song
 ~ THEN BEGIN XA_CorwinWantsSex
 	SAY @374 /* ~My love... do you have a moment?~ */
 	
 	IF ~~ THEN REPLY @376 /* ~Not right now, Schael.~ */
 	DO ~
-		SetGlobal("XA_LC_CorwinSexAfterBodhi", "GLOBAL", 2)
+		SetGlobal("XA_LC_CorwinSexAfterBodhi", "GLOBAL", 3)
 	~
 	GOTO XA_CorwinWantsSex2A //OK
 	
 	IF ~~ THEN REPLY @375 /* ~Of course, dear. What's on your mind?~ */
 	DO ~
-		SetGlobal("XA_LC_CorwinSexAfterBodhi", "GLOBAL", 2)
+		SetGlobal("XA_LC_CorwinSexAfterBodhi", "GLOBAL", 4)
 	~
 	GOTO XA_CorwinWantsSex2B //OK
 END
