@@ -76,11 +76,14 @@ END
 		GlobalLT("XA_LC_SummonAun", "GLOBAL", 4)
 	THEN
 		RESPONSE #100
-			SetInterrupt(TRUE)
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_LC_SummonAun", "GLOBAL", 4)
-			Interact(Player1)
-			SetInterrupt(FALSE)
 	END
 
+	IF
+		Global("XA_LC_SummonAun", "GLOBAL", 4)
+	THEN
+		RESPONSE #100
+			Interact(Player1)
+	END
 //} End Player Interactions

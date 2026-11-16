@@ -69,11 +69,15 @@
 		IsValidForPartyDialogue("Cernd")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_LC_CorwinCerndBaby", "GLOBAL", 2)
+	END
+
+	IF
+		Global("XA_LC_CorwinCerndBaby", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
 			Interact("Cernd")
-			SetInterrupt(TRUE)
 	END
 	//}
 //} End Cernd Interactions
@@ -108,13 +112,15 @@
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_LC_CorwinValygarLavok", "GLOBAL", 1)
-			//Dialog B-39
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
-			IncrementGlobal("XA_LC_Banter_CorwinValygar", "GLOBAL", 1)
+			SetGlobal("XA_LC_CorwinValygarLavok", "GLOBAL", 1)
+	END
+
+	IF
+		Global("XA_LC_CorwinValygarLavok", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
 			Interact("Valygar")
-			SetInterrupt(TRUE)
 	END
 	//}
 	
@@ -156,11 +162,15 @@
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_LC_CorwinHexxat", "GLOBAL", 3)
+	END
+
+	IF
+		Global("XA_LC_CorwinHexxat", "GLOBAL", 3)
+	THEN
+		RESPONSE #100
 			Interact("Hexxat")
-			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -224,11 +234,15 @@
 		GlobalLT("XA_LC_CorwinNeeraImoen", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_LC_CorwinNeeraImoen", "GLOBAL", 1)
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			SetGlobal("XA_LC_CorwinNeeraImoen", "GLOBAL", 1)
+ 	END
+
+	IF
+		Global("XA_LC_CorwinNeeraImoen", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
 			Interact("Neera")
-			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -371,11 +385,14 @@
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinCoverUD", "GLOBAL", 2)
-			//Dialog B-61
+	END
+
+	IF
+		Global("XA_LC_CorwinCoverUD", "GLOBAL", 2)
+	THEN
+		RESPONSE #100
 			Interact("Keldorn")
-			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -406,12 +423,15 @@
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
-			//Dialog B-62
-			SetGlobal("XA_LC_Banter_CorwinKeldornOpt1", "GLOBAL", 3)
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			SetGlobal("XA_LC_Banter_CorwinKeldornOpt1", "GLOBAL", 3)
+	END
+
+	IF
+		Global("XA_LC_Banter_CorwinKeldornOpt1", "GLOBAL", 3)
+	THEN
+		RESPONSE #100
 			Interact("Keldorn")
-			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -430,11 +450,14 @@
 		IsValidForPartyDialogue("Edwin")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinEdwinThay", "GLOBAL", 1)
-			//Dialog B-54
+	END
+
+	IF
+		Global("XA_LC_CorwinEdwinThay", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
 			Interact("Edwin")
-			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -453,11 +476,14 @@
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinImoenSoulTalk", "GLOBAL", 1)
-			//Dialogs B-50, B-51
+	END
+
+	IF
+		Global("XA_LC_CorwinImoenSoulTalk", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
 			Interact("Imoen2")
-			SetInterrupt(TRUE)
 	END
 	//}
 

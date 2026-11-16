@@ -32,12 +32,15 @@
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_LC_RomanceConflictTalk", "GLOBAL", 1)
 			PlaySong(1001)
-			//Dialog J-83
+			SetGlobal("XA_LC_RomanceConflictTalk", "GLOBAL", 1)
+	END
+
+	IF
+		Global("XA_LC_RomanceConflictTalk", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
 			Interact(Player1)
-			SetInterrupt(TRUE)
 	END
 	//}
 

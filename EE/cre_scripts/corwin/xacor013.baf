@@ -7,10 +7,15 @@ IF
 	Global("XA_LC_CanLeaveParty", "LOCALS", 1)
 THEN
 	RESPONSE #100
-		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_CorwinLeftPoorRep", "GLOBAL", 1)
+		Continue()
+END
+
+IF
+	Global("XA_LC_CorwinLeftPoorRep", "GLOBAL", 1)
+THEN
+	RESPONSE #100
 		Interact(Player1)
-		SetInterrupt(TRUE)
 END
 
 IF
@@ -35,10 +40,15 @@ IF
 	GlobalTimerExpired("XA_LC_CorwinRepWarningTimer", "GLOBAL")
 THEN
 	RESPONSE #100
-		SetInterrupt(FALSE)
 		SetGlobal("XA_LC_CorwinRepWarning", "GLOBAL", 2)
+		Continue()
+END
+
+IF
+	Global("XA_LC_CorwinRepWarning", "GLOBAL", 2)
+THEN
+	RESPONSE #100
 		Interact(Player1)
-		SetInterrupt(TRUE)
 END
 
 IF 

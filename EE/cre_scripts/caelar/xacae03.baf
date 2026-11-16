@@ -11,7 +11,15 @@
 	THEN
 		RESPONSE #100
 			SetGlobal("XA_LC_CaelarGear", "GLOBAL", 1)
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_CaelarGear", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
 			Interact(Player1)
+
 	END
 
 	IF

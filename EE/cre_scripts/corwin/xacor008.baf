@@ -90,8 +90,15 @@
 		GlobalLT("XA_LC_FlowerTalk", "LOCALS", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_LC_FlowerTalk", "LOCALS", 1)
 			PlaySong(1003)
+			SetGlobal("XA_LC_FlowerTalk", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_FlowerTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
 			Interact(Player1)
 	END
 //}
@@ -105,8 +112,15 @@
 		GlobalLT("XA_LC_RomanceInitTalk", "LOCALS", 1)
 	THEN
 		RESPONSE #100
-			SetGlobal("XA_LC_RomanceInitTalk", "LOCALS", 1)
 			PlaySong(1001)
+			SetGlobal("XA_LC_RomanceInitTalk", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_RomanceInitTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
 			Interact(Player1)
 	END
 //}
@@ -141,6 +155,13 @@
 		RESPONSE #100
 			PlaySong(1003)
 			SetGlobal("XA_LC_WealthTalk", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_WealthTalk", "LOCALS", 1)
+	THEN
+		RESPONSE #100
 			Interact(Player1)
 	END
 //}

@@ -5,8 +5,13 @@ IF
 	GlobalLT("XA_LC_CaelarAerieScars", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		//DisplayStringHead(Myself,~Debug Player1D - 1~)
 		SetGlobal("XA_LC_CaelarAerieScars", "GLOBAL", 1)
+END
+
+IF 
+	Global("XA_LC_CaelarAerieScars", "GLOBAL", 1)
+THEN
+	RESPONSE #100
 		ActionOverride("XACAELAR", Interact("Aerie"))
 END
 //}

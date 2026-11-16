@@ -9,11 +9,16 @@
 		Global("XA_LC_CorwinRomanceActive", "GLOBAL", 2)
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_SarevokSoul", "GLOBAL", 1)
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		SetGlobal("XA_LC_SarevokSoul", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
 			Interact("Sarevok")
-			SetInterrupt(TRUE)
 	END
 //}
 	

@@ -3898,6 +3898,7 @@ END
 		~ THEN XACORWIB BCorwinValygar2
 			@573 /* ~So, Valygar.~*/
 			DO ~
+				IncrementGlobal("XA_LC_Banter_CorwinValygar", "GLOBAL", 1)
 				SetGlobal("XA_LC_CorwinValygarLavok", "GLOBAL", 2)
 				SetGlobalTimer("XA_LC_CorwinValygarTimer", "GLOBAL", THREE_DAYS)
 			~
