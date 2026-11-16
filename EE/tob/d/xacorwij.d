@@ -1623,8 +1623,7 @@ APPEND ~XACOR25J~
 
 	//{ Dialog R-40
 	IF ~
-		GlobalTimerExpired("XA_LC_CorwinComplainSarevokTimer", "GLOBAL")
-		Global("XA_LC_CorwinComplainSarevok", "GLOBAL", 1)
+		Global("XA_LC_CorwinComplainSarevok", "GLOBAL", 2)
 	~ THEN BEGIN XA_CorwinComplainSarevokInit
 		SAY @1472 /* ~We need to talk.~ [BD54471]*/
 		

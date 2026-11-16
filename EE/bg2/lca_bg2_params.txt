@@ -171,3 +171,9 @@ OUTER_SET terminate_romances = 1
 	Set to 1 to proceed as though Corwin entered into the hot spring during the events of SoD.
 */
 OUTER_SET hot_spring = 1
+
+/*
+	Parameter: disable_hexxat_fight
+	Set to 1 to prevent Corwin and Hexxat from fighting during the events of SoA or ToB.
+*/
+OUTER_SET disable_hexxat_fight = 0

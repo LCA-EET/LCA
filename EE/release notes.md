@@ -8,6 +8,7 @@
 
 ## v1.7.2 2026-11-15
 * Improved scripting in the Return to Baldur's Gate portion of the mod.
+* Included an additional parameter to control whether Corwin and Hexxat will fight if they are both in the party.
 
 ## v1.7.1u1 2026-11-08
 * Added compatibility with the 2026-08-29 version of the Shadows of Amn - Extended mod. The readme provides instructions on how to initiate the Return to Baldur's Gate when in Suldaneselaar.

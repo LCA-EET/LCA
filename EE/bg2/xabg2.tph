@@ -897,6 +897,7 @@ OUTER_SET bg2_carryover = 1
 	OUTER_SET skip_restore_cutscene = 0
 	OUTER_SET terminate_romances = 1
 	OUTER_SET hot_spring = 1
+	OUTER_SET disable_hexxat_fight = 0
 
 	/*
 		If a parameter file exists, overwrite the default parameter with the contents of the parameter file.
@@ -1033,6 +1034,10 @@ OUTER_SET bg2_carryover = 1
 	
 	ACTION_IF (hot_spring = 1) THEN BEGIN
 		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa29.baf~
+	END
+
+	ACTION_IF (disable_hexxat_fight = 1) THEN BEGIN
+		EXTEND_TOP ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpa30.baf~
 	END
 	
 	EXTEND_BOTTOM ~xalcargs.bcs~ ~%MOD_FOLDER%/bg2/baf/params/xalcpaEE.baf~

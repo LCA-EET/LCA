@@ -17,10 +17,15 @@
 		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinLearnedRestring", "GLOBAL", 3)
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_CorwinLearnedRestring", "GLOBAL", 3)
+	THEN
+		RESPONSE #100
 			StartDialog("[JDLG]", Player1)
-			SetInterrupt(TRUE)
 	END
 //}
 

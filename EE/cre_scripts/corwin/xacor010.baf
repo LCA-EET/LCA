@@ -53,11 +53,16 @@
 			Global("XA_LC_CorwinComplainSarevok", "GLOBAL", 1)
 		THEN
 			RESPONSE #100
-				SetInterrupt(FALSE)
 				PlaySong(1001)
-				SmallWait(5)
+				SetGlobal("XA_LC_CorwinComplainSarevok", "GLOBAL", 2)
+				Continue()
+		END
+
+		IF
+			Global("XA_LC_CorwinComplainSarevok", "GLOBAL", 2)
+		THEN
+			RESPONSE #100
 				StartDialog("xacor25j", Player1)
-				SetInterrupt(TRUE)
 		END
 	//}
 
@@ -70,11 +75,15 @@
 			!ActuallyInCombat()
 		THEN
 			RESPONSE #100
-				SetInterrupt(FALSE)
 				SetGlobal("XA_LC_SaradushDestroyed", "GLOBAL", 1)
-				//Dialog J-70
+				Continue()
+		END
+
+		IF
+			Global("XA_LC_SaradushDestroyed", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
 				StartDialog("xacor25j", Player1)
-				SetInterrupt(TRUE)
 		END
 	//}
 
@@ -98,12 +107,16 @@
 			GlobalTimerExpired("XA_LC_RohmaWraithTimer", "LOCALS")
 		THEN
 			RESPONSE #100
-				SetInterrupt(FALSE)
-				SetGlobal("XA_LC_RohmaWraith", "GLOBAL", 3)
 				PlaySong(1009)
-				SmallWait(5)
+				SetGlobal("XA_LC_RohmaWraith", "GLOBAL", 3)
+				Continue()
+		END
+
+		IF
+			Global("XA_LC_RohmaWraith", "GLOBAL", 3)
+		THEN
+			RESPONSE #100
 				StartDialog("xacor25j", Player1)
-				SetInterrupt(TRUE)
 		END
 		//}
 
@@ -205,10 +218,15 @@
 			GlobalLT("XA_LC_CorwinCaelarJailTalk", "GLOBAL", 1)
 		THEN
 			RESPONSE #100
-				SetInterrupt(FALSE)
 				SetGlobal("XA_LC_CorwinCaelarJailTalk", "GLOBAL", 1)
+				Continue()
+		END
+
+		IF
+			Global("XA_LC_CorwinCaelarJailTalk", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
 				StartDialog("xacor25j", Player1)
-				SetInterrupt(TRUE)
 		END
 	//}
 
@@ -232,10 +250,15 @@
 			GlobalLT("XA_LC_CorwinCaelarHomeTalk", "GLOBAL", 1)
 		THEN
 			RESPONSE #100
-				SetInterrupt(FALSE)
 				SetGlobal("XA_LC_CorwinCaelarHomeTalk", "GLOBAL", 1)
+				Continue()				
+		END
+
+		IF
+			Global("XA_LC_CorwinCaelarHomeTalk", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
 				StartDialog("xacor25j", Player1)
-				SetInterrupt(TRUE)
 		END
 	//}
 
@@ -248,12 +271,16 @@
 			GlobalLT("XA_LC_CorwinBenoSoulTalk", "GLOBAL", 1)
 		THEN
 			RESPONSE #100
-				SetInterrupt(FALSE)
 				SetGlobal("XA_LC_CorwinBenoSoulTalk", "GLOBAL", 1)
 				PlaySong(1001)
-				SmallWait(5)
+				Continue()
+		END
+
+		IF
+			Global("XA_LC_CorwinBenoSoulTalk", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
 				StartDialog("xacor25j", Player1)
-				SetInterrupt(TRUE)
 		END
 	//}
 
@@ -279,11 +306,16 @@
 			GlobalLT("XA_LC_MessageToBG", "GLOBAL", 1)
 		THEN
 			RESPONSE #100
-				SetInterrupt(FALSE)
 				PlaySong(1009)
 				SetGlobal("XA_LC_MessageToBG", "GLOBAL", 1)
+				Continue()
+		END
+
+		IF
+			Global("XA_LC_MessageToBG", "GLOBAL", 1)
+		THEN
+			RESPONSE #100
 				StartDialog("xacor25j", Player1)
-				SetInterrupt(TRUE)
 		END
 		//}
 
@@ -357,10 +389,8 @@
 			GlobalLT("XA_LC_CorwinComplainSarevok", "GLOBAL", 1)
 		THEN
 			RESPONSE #100
-				SetInterrupt(FALSE)
 				SetGlobalTimer("XA_LC_CorwinComplainSarevokTimer", "GLOBAL", ONE_HOUR)
 				SetGlobal("XA_LC_CorwinComplainSarevok", "GLOBAL", 1)
-				SetInterrupt(TRUE)
 				Continue()
 		END
 	//}
@@ -390,10 +420,15 @@
 			Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)
 		THEN
 			RESPONSE #100
-				SetInterrupt(FALSE)
 				SetGlobal("XA_LC_GeneralDeadTalk", "LOCALS", 1)
+				Continue()
+		END
+
+		IF
+			Global("XA_LC_GeneralDeadTalk", "LOCALS", 1)
+		THEN
+			RESPONSE #100
 				StartDialog("XACOR25J", Player1)
-				SetInterrupt(TRUE)
 		END
 	//}
 

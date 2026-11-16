@@ -129,10 +129,15 @@
 		GlobalLT("XA_LC_CorwinValygarBG", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinValygarBG", "GLOBAL", 1)
+			Continue()			
+	END
+
+	IF
+		Global("XA_LC_CorwinValygarBG", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
 			ActionOverride("Valygar", StartDialog("VALYGARJ", "XACORWIN"))
-			SetInterrupt(TRUE)
 	END
 	//}
 	
@@ -167,14 +172,20 @@
 		IsValidForPartyDialogue("Hexxat")
 		Global("XA_LC_CorwinHexxat", "GLOBAL", 4)
 		GlobalTimerExpired("XA_LC_CorwinHexxatTimer", "LOCALS")
+		GlobalLT("XA_LC_PreventCorwinHexxatFight", "GLOBAL", 1)
 		!ActuallyInCombat()
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
 			SetGlobal("XA_LC_CorwinHexxat", "GLOBAL", 5)
-			StartDialogue("XACORWIJ","Hexxat")
-			SetInterrupt(TRUE)
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_CorwinHexxat", "GLOBAL", 5)
+	THEN
+		RESPONSE #100
+			StartDialog("XACORWIJ","Hexxat")
 	END
 	//}
 
@@ -285,19 +296,24 @@
 	IF
 		Global("OHD_sexreactions","GLOBAL",1)
 		Global("XA_LC_CanTalkToPlayer", "LOCALS", 1)  
-		!Global("XA_LC_DornSex", "GLOBAL", 1)
+		GlobalLT("XA_LC_DornSex", "GLOBAL", 1)
+		GlobalLT("XA_LC_ComplainDornSex", "GLOBAL", 1)
 		!ActuallyInCombat()
 		OR(2)
 			Global("XA_LC_CorwinRomanceActive","GLOBAL",1)
 			Global("XA_LC_CorwinRomanceActive","GLOBAL",2)
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_DornSex", "GLOBAL", 1)
 			SetGlobal("XA_LC_ComplainDornSex", "GLOBAL", 1)
-			//Dialog J-25
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_ComplainDornSex", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
 			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
 	END
 	//}
 	
@@ -330,11 +346,16 @@
 		GlobalLT("XA_LC_Banter_CorwinKeldInitial", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_Banter_CorwinKeldInitial", "GLOBAL", 1)
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_Banter_CorwinKeldInitial", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
 			ActionOverride("Keldorn", StartDialog("KELDORJ", "XACORWIN"))
-			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -482,11 +503,16 @@
 		GlobalLT("XA_LC_CorwinHexxat", "GLOBAL", 1)
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_LC_CorwinHexxat", "GLOBAL", 1)
 			SetGlobal("XA_LC_ResetBanterTimer", "LOCALS", 1)
+			SetGlobal("XA_LC_CorwinHexxat", "GLOBAL", 1)
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_CorwinHexxat", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
 			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -514,6 +540,7 @@
 			StartDialog("XACORWIN", Player1)
 			SetInterrupt(TRUE)
 	END
+
 	//}
 
 	//{ Scold Player UD - Party
@@ -607,12 +634,16 @@
 		GlobalTimerExpired("XA_LC_CorwinBitTimer", "GLOBAL")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			PlaySong(1009)
 			SetGlobal("XA_LC_CorwinBit", "GLOBAL", 4)
-			//Dialog J-32
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_CorwinBit", "GLOBAL", 4)
+	THEN
+		RESPONSE #100
 			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -623,12 +654,16 @@
 		GlobalTimerExpired("XA_LC_CorwinBitTimer", "GLOBAL")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			PlaySong(1009)
 			SetGlobal("XA_LC_CorwinBit", "GLOBAL", 6)
-			//Dialog J-33
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_CorwinBit", "GLOBAL", 6)
+	THEN
+		RESPONSE #100
 			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -639,11 +674,15 @@
 		GlobalTimerExpired("XA_LC_CorwinBitTimer", "GLOBAL")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
 			SetGlobal("XA_LC_CorwinBit", "GLOBAL", 8)
-			//Dialog J-34
+			Continue()
+	END
+
+	IF
+		Global("XA_LC_CorwinBit", "GLOBAL", 8)
+	THEN
+		RESPONSE #100
 			StartDialog("XACORWIJ", Player1)
-			SetInterrupt(TRUE)
 	END
 	//}
 
@@ -662,6 +701,7 @@
 			StartDialogNoSet(Player1)
 			SetInterrupt(TRUE)
 	END
+
 	//}
 
 	//{ Corwin Bit - Apply Disease
@@ -737,57 +777,73 @@
 	// Dialog R-09
 	IF
 		Global("XA_LC_CorwinPartySick", "GLOBAL", 1)
+		GlobalLT("XA_LC_CorwinSick_Jaheira", "GLOBAL", 1)
 		IsValidForPartyDialogue("Jaheira")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_LC_CorwinSick_Jaheira", "GLOBAL", 1)
-			//Dialog B-6
 			PlaySong(1009)
+			SetGlobal("XA_LC_CorwinSick_Jaheira", "GLOBAL", 1)
+	END
+
+	IF
+		Global("XA_LC_CorwinSick_Jaheira", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
 			ActionOverride("JAHEIRA", StartDialog("JAHEIRAJ", "XACORWIN"))
-			SetInterrupt(TRUE)
 	END
 	
 	// Dialog R-10 xacorwib
 	IF
 		Global("XA_LC_CorwinPartySick", "GLOBAL", 1)
+		GlobalLT("XA_LC_CorwinSick_Aerie", "GLOBAL", 1)
 		IsValidForPartyDialogue("Aerie")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_LC_CorwinSick_Aerie", "GLOBAL", 1)
 			PlaySong(1009)
-			//Dialog B-5
+			SetGlobal("XA_LC_CorwinSick_Aerie", "GLOBAL", 1)
+	END
+
+	IF
+		Global("XA_LC_CorwinSick_Aerie", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
 			ActionOverride("AERIE", StartDialog("AERIEJ", "XACORWIN"))
-			SetInterrupt(TRUE)
 	END
 
 	// Dialog R-11
 	IF
 		Global("XA_LC_CorwinPartySick", "GLOBAL", 1)
+		GlobalLT("XA_LC_CorwinSick_Korgan", "GLOBAL", 1)
 		IsValidForPartyDialogue("Korgan")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_LC_CorwinSick_Korgan", "GLOBAL", 1)
 			PlaySong(1009)
-			//Dialog B-7
+			SetGlobal("XA_LC_CorwinSick_Korgan", "GLOBAL", 1)
+	END
+
+	IF
+		Global("XA_LC_CorwinSick_Korgan", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
 			ActionOverride("KORGAN", StartDialog("KORGANJ", Player1))
-			SetInterrupt(TRUE)
 	END
 	
 	// Dialog R-12
 	IF
 		Global("XA_LC_CorwinPartySick", "GLOBAL", 1)
+		GlobalLT("XA_LC_CorwinSick_Imoen", "GLOBAL", 1)
 		IsValidForPartyDialogue("Imoen2")
 	THEN
 		RESPONSE #100
-			SetInterrupt(FALSE)
-			SetGlobal("XA_LC_CorwinSick_Imoen", "GLOBAL", 1)
 			PlaySong(1009)
-			//Dialog B-8
+			SetGlobal("XA_LC_CorwinSick_Imoen", "GLOBAL", 1)
+	END
+
+	IF
+		Global("XA_LC_CorwinSick_Imoen", "GLOBAL", 1)
+	THEN
+		RESPONSE #100
 			ActionOverride("IMOEN2", StartDialog("IMOEN2J", "XACORWIN"))
-			SetInterrupt(TRUE)
 	END
 
 	IF

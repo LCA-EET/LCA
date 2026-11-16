@@ -316,7 +316,7 @@ Upon joining your party, if you still possess Corwin’s Amulet, she will take t
 If Corwin is in your party when you rescue the children from the Slaver Stockade, it will set one of the conditions necessary for the Slaver Conspiracy quest during the Return to Baldur’s Gate.
 
 #### Corwin and Hexxat
-Be advised that Corwin and Hexxat, if in the same party, will eventually try to kill each other. Corwin will attempt to rally other good-aligned characters when the time comes.
+Be advised that Corwin and Hexxat, if in the same party, will eventually try to kill each other. Corwin will attempt to rally other good-aligned characters when the time comes. You can prevent this by changing the disable_hexxat_fight parameter to 1 in lca_bg2_params.txt prior to installing the mod.
 
 #### Corwin and Dorn
 Corwin and Dorn do not like each other, but they will not come to blows unless Dorn boasts of murdering children while in the service of his patron.
